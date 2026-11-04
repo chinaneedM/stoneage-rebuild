@@ -1,0 +1,1853 @@
+{
+  "schema": "stoneage.integration_module02_original_DAT_TW10_RD_scene_source_crossmodule.r1",
+  "date": "2026-11-04",
+  "starting_main_commit": "8a5ee6a11c9e5228a24aab38a41273e6d6e858e9",
+  "starting_main_tree": "683ef3f952c1083212fe877e9c15d34cb529663f",
+  "prior_large_CURRENT_STATE_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "exact_original_source_Git_blobs": {
+    "INTEGRATION01": "5e526512c0277e19ca41dfcd934c230404d1dfb4",
+    "MAP02": "445b6f846ae3d541bcd3ff46bd916934a19171ec",
+    "MAP04": "1ef8c004179128ea44ffa4fb4259748bc8c83911",
+    "MAP05": "4e87533f9d3431632b0e8ccee50630679849141c"
+  },
+  "original_source_boundary": "SAME_MIXED25_LATER_COMMUNITY_DAT_FOR_55_AND_INDEPENDENT_O31_SOURCE_FOR_1000; TW10_RETAIL_SPR_RD_IS_CROSS_CARRIER_VISUAL_CANDIDATE_NOT_NATIVE_SAME_DEPLOYMENT",
+  "summary": {
+    "unique_NPC_or_GetPet_source_floors": 60,
+    "map04_original_main_client_DAT_exact_SHA_floors": 55,
+    "map02_independent_DAT_original_SHA_floors": 1,
+    "complete_original_DAT_unverified_floors": 4,
+    "unverified_floor_ids": [
+      100,
+      200,
+      3000,
+      3021
+    ],
+    "GetPet_original_CREATE_refs": 24,
+    "NPCEnemy_original_CREATE_refs": 279,
+    "GetPet_CREATE_refs_by_DAT_qualification": {
+      "map04_sha_matched": 21,
+      "map02_independent": 1,
+      "unqualified_complete_DAT": 2
+    },
+    "NPCEnemy_CREATE_refs_by_DAT_qualification": {
+      "map04_sha_matched": 174,
+      "map02_independent": 0,
+      "unqualified_complete_DAT": 105
+    },
+    "map04_55_floors_nonzero_first_two_plane_numeric_refs": 400100,
+    "map04_55_floors_TW10_RD_candidate_matched_refs": 390351,
+    "map04_55_floors_missing_TW10_RD_candidate_refs": 9749,
+    "map02_independent_1000_nonzero_first_two_plane_numeric_refs": 26324,
+    "map02_independent_1000_TW10_RD_candidate_matched_refs": 26310,
+    "map02_independent_1000_missing_TW10_RD_candidate_refs": 14,
+    "map05_prior_private_source_observation_windows": 5,
+    "map05_windows_on_INTEGRATION01_floor": 4,
+    "map05_windows_not_in_INTEGRATION01_floor": 1
+  },
+  "per_floor_source_qualification": [
+    {
+      "floor_id": 41,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 2,
+      "original_main_client_DAT_source_SHA256_if_success": "49d6a1b24430027fac4aaa29a982ffb6844d4e0244e33ef868fb16c57d5dc01b",
+      "original_main_client_MAP_source_SHA256_if_success": "acdc884a0c516c9246743d1a041fb85765ff7bfea9ac16019254da5f63481760",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "49d6a1b24430027fac4aaa29a982ffb6844d4e0244e33ef868fb16c57d5dc01b",
+        "source_bytes": 29408,
+        "width": 70,
+        "height": 70,
+        "cells": 4900,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 7003,
+        "tw10_verified_RD_numeric_candidate_references": 7003,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 115,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 42,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 2,
+      "original_main_client_DAT_source_SHA256_if_success": "4b622f7fc80b2498fde0a6ce8664962e49fae69dc4bde37e6e8214c69240b2f6",
+      "original_main_client_MAP_source_SHA256_if_success": "5ddd56b64d644199b84cadf7f4d68961fe5bf54f1edf2c323f69606bdaf47ad4",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "4b622f7fc80b2498fde0a6ce8664962e49fae69dc4bde37e6e8214c69240b2f6",
+        "source_bytes": 29408,
+        "width": 70,
+        "height": 70,
+        "cells": 4900,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 7003,
+        "tw10_verified_RD_numeric_candidate_references": 7003,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 115,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 100,
+      "source_GetPet_CREATE_refs": 1,
+      "source_NPCEnemy_CREATE_refs": 4,
+      "original_main_client_DAT_source_SHA256_if_success": null,
+      "original_main_client_MAP_source_SHA256_if_success": null,
+      "preserved_MAP01_extraction_error_rows": [
+        {
+          "source_original_path": "100.DAT",
+          "source_original_bytes_expected": 3840008,
+          "original_libarchive_error": "Parsing filters is unsupported."
+        },
+        {
+          "source_original_path": "100.MAP",
+          "source_original_bytes_expected": 1280008,
+          "original_libarchive_error": "File CRC error"
+        }
+      ],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "COMPLETE_SOURCE_DAT_UNVERIFIED",
+      "qualified_complete_original_DAT": null,
+      "original_TW10_RD_pixel_candidate_join": null
+    },
+    {
+      "floor_id": 118,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 6,
+      "original_main_client_DAT_source_SHA256_if_success": "f4116dbcd8625bc81270a6215748c2ef46d67f0098161365669eb385f5798f9e",
+      "original_main_client_MAP_source_SHA256_if_success": "c2a8a7e4f1e0984e6e9cfbadd91a3722923b909e0a90d9ed67b8c0220c3baa3a",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "f4116dbcd8625bc81270a6215748c2ef46d67f0098161365669eb385f5798f9e",
+        "source_bytes": 270008,
+        "width": 250,
+        "height": 180,
+        "cells": 45000,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 46260,
+        "tw10_verified_RD_numeric_candidate_references": 46260,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 74,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 122,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 6,
+      "original_main_client_DAT_source_SHA256_if_success": "64217be4a7e96959099e8872e332cfdabcbdfd71ed9420c4fe1086ba3ee35438",
+      "original_main_client_MAP_source_SHA256_if_success": null,
+      "preserved_MAP01_extraction_error_rows": [
+        {
+          "source_original_path": "122.MAP",
+          "source_original_bytes_expected": 120008,
+          "original_libarchive_error": "File CRC error"
+        }
+      ],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "64217be4a7e96959099e8872e332cfdabcbdfd71ed9420c4fe1086ba3ee35438",
+        "source_bytes": 360008,
+        "width": 300,
+        "height": 200,
+        "cells": 60000,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 57496,
+        "tw10_verified_RD_numeric_candidate_references": 57496,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 75,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 200,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": null,
+      "original_main_client_MAP_source_SHA256_if_success": null,
+      "preserved_MAP01_extraction_error_rows": [
+        {
+          "source_original_path": "200.dat",
+          "source_original_bytes_expected": 5760008,
+          "original_libarchive_error": "Prefix found"
+        },
+        {
+          "source_original_path": "200.MAP",
+          "source_original_bytes_expected": 1920008,
+          "original_libarchive_error": "File CRC error"
+        }
+      ],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "COMPLETE_SOURCE_DAT_UNVERIFIED",
+      "qualified_complete_original_DAT": null,
+      "original_TW10_RD_pixel_candidate_join": null
+    },
+    {
+      "floor_id": 810,
+      "source_GetPet_CREATE_refs": 1,
+      "source_NPCEnemy_CREATE_refs": 0,
+      "original_main_client_DAT_source_SHA256_if_success": "d9742045076ac2d19b8b0e182683f449e73f083f936e859be7ce182a36062ca3",
+      "original_main_client_MAP_source_SHA256_if_success": "529b37394bbbac43a35c9c9fafdf4ef1b4e57bdd5444f59164718cb32017551b",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "d9742045076ac2d19b8b0e182683f449e73f083f936e859be7ce182a36062ca3",
+        "source_bytes": 15008,
+        "width": 50,
+        "height": 50,
+        "cells": 2500,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 1628,
+        "tw10_verified_RD_numeric_candidate_references": 1624,
+        "unmatched_tw10_verified_RD_references": 4,
+        "tw10_verified_unique_aliases_in_source": 43,
+        "unmatched_tw10_unique_aliases_in_source": 4,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 812,
+      "source_GetPet_CREATE_refs": 1,
+      "source_NPCEnemy_CREATE_refs": 0,
+      "original_main_client_DAT_source_SHA256_if_success": "500841e03f43f3e171266b47e09658eee32917fd363790370033b82b8320056a",
+      "original_main_client_MAP_source_SHA256_if_success": "cd66d2cb3885f576bab81beef8ed27e0c3a3b5f548f8174c04ffddce74be3d34",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "500841e03f43f3e171266b47e09658eee32917fd363790370033b82b8320056a",
+        "source_bytes": 15008,
+        "width": 50,
+        "height": 50,
+        "cells": 2500,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 1688,
+        "tw10_verified_RD_numeric_candidate_references": 1688,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 46,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 850,
+      "source_GetPet_CREATE_refs": 1,
+      "source_NPCEnemy_CREATE_refs": 0,
+      "original_main_client_DAT_source_SHA256_if_success": "113d074760bd3f0ecb29bfb5298df649c0547480513bb0d2dcfb95db23d54d77",
+      "original_main_client_MAP_source_SHA256_if_success": "529b37394bbbac43a35c9c9fafdf4ef1b4e57bdd5444f59164718cb32017551b",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "113d074760bd3f0ecb29bfb5298df649c0547480513bb0d2dcfb95db23d54d77",
+        "source_bytes": 15008,
+        "width": 50,
+        "height": 50,
+        "cells": 2500,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 1683,
+        "tw10_verified_RD_numeric_candidate_references": 1679,
+        "unmatched_tw10_verified_RD_references": 4,
+        "tw10_verified_unique_aliases_in_source": 43,
+        "unmatched_tw10_unique_aliases_in_source": 4,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 1000,
+      "source_GetPet_CREATE_refs": 1,
+      "source_NPCEnemy_CREATE_refs": 0,
+      "original_main_client_DAT_source_SHA256_if_success": null,
+      "original_main_client_MAP_source_SHA256_if_success": "6cda7b50c94aa2ea77bbef48a364c39ad96e8fd154cc1858418dac64e26539b4",
+      "preserved_MAP01_extraction_error_rows": [
+        {
+          "source_original_path": "1000.DAT",
+          "source_original_bytes_expected": 153608,
+          "original_libarchive_error": "File CRC error"
+        }
+      ],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP02_INDEPENDENT_PRIOR_O31_DAT_SHA_WITH_MAP01_READ_FAILURE_RETAINED",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+        "source_bytes": 153608,
+        "width": 160,
+        "height": 160,
+        "cells": 25600,
+        "source_provenance": "INDEPENDENT_VERIFIED_O31_ORIGINAL_DAT_NOT_RECLASSIFIED_MAP01_ERROR"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 26324,
+        "tw10_verified_RD_numeric_candidate_references": 26310,
+        "unmatched_tw10_verified_RD_references": 14,
+        "unmatched_tw10_unique_aliases": [
+          11208,
+          22413,
+          24305,
+          24306,
+          24307,
+          24308,
+          24309,
+          24310,
+          24311,
+          24312,
+          24316,
+          24322
+        ],
+        "provenance": "CROSS_CARRIER_O31_MAP02_MAP05_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 1021,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 100,
+      "original_main_client_DAT_source_SHA256_if_success": "92abd0a38c5e876d985c33437a252358d1aaa812ce1da99f18752d0a97c81197",
+      "original_main_client_MAP_source_SHA256_if_success": "45846daa47346a0063ae230fdb8804a03eefd16073ce998c2436881901508393",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "92abd0a38c5e876d985c33437a252358d1aaa812ce1da99f18752d0a97c81197",
+        "source_bytes": 351656,
+        "width": 407,
+        "height": 144,
+        "cells": 58608,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 59918,
+        "tw10_verified_RD_numeric_candidate_references": 59918,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 117,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 2000,
+      "source_GetPet_CREATE_refs": 2,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "d75231434c69118a518a8d5dd34f266264b8551fe4f2d55a20cdfa11b46584b3",
+      "original_main_client_MAP_source_SHA256_if_success": "7502839013922499aae2b9a9682aad026c49d4bd365e05415ef8fab2852a6deb",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "d75231434c69118a518a8d5dd34f266264b8551fe4f2d55a20cdfa11b46584b3",
+        "source_bytes": 135008,
+        "width": 150,
+        "height": 150,
+        "cells": 22500,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 17461,
+        "tw10_verified_RD_numeric_candidate_references": 17447,
+        "unmatched_tw10_verified_RD_references": 14,
+        "tw10_verified_unique_aliases_in_source": 634,
+        "unmatched_tw10_unique_aliases_in_source": 11,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 3000,
+      "source_GetPet_CREATE_refs": 1,
+      "source_NPCEnemy_CREATE_refs": 0,
+      "original_main_client_DAT_source_SHA256_if_success": null,
+      "original_main_client_MAP_source_SHA256_if_success": null,
+      "preserved_MAP01_extraction_error_rows": [
+        {
+          "source_original_path": "3000.dat",
+          "source_original_bytes_expected": 135008,
+          "original_libarchive_error": "File CRC error"
+        },
+        {
+          "source_original_path": "3000.MAP",
+          "source_original_bytes_expected": 45008,
+          "original_libarchive_error": "File CRC error"
+        }
+      ],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "COMPLETE_SOURCE_DAT_UNVERIFIED",
+      "qualified_complete_original_DAT": null,
+      "original_TW10_RD_pixel_candidate_join": null
+    },
+    {
+      "floor_id": 3021,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 100,
+      "original_main_client_DAT_source_SHA256_if_success": null,
+      "original_main_client_MAP_source_SHA256_if_success": "57a230c56ab77c418101e296480f7a04ce653e0aaf0512e15050e22b335ab789",
+      "preserved_MAP01_extraction_error_rows": [
+        {
+          "source_original_path": "3021.DAT",
+          "source_original_bytes_expected": 351656,
+          "original_libarchive_error": "File CRC error"
+        }
+      ],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "COMPLETE_SOURCE_DAT_UNVERIFIED",
+      "qualified_complete_original_DAT": null,
+      "original_TW10_RD_pixel_candidate_join": null
+    },
+    {
+      "floor_id": 4000,
+      "source_GetPet_CREATE_refs": 1,
+      "source_NPCEnemy_CREATE_refs": 0,
+      "original_main_client_DAT_source_SHA256_if_success": "9d327505c74ccb27b62bcce7259be246c9c4a0477c6ee0fceb78f921e7a0dfa5",
+      "original_main_client_MAP_source_SHA256_if_success": "e71366bfd954e5e010349273f330502567485cf399161c974bccb6bc4759868f",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "9d327505c74ccb27b62bcce7259be246c9c4a0477c6ee0fceb78f921e7a0dfa5",
+        "source_bytes": 135008,
+        "width": 150,
+        "height": 150,
+        "cells": 22500,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 10140,
+        "tw10_verified_RD_numeric_candidate_references": 9998,
+        "unmatched_tw10_verified_RD_references": 142,
+        "tw10_verified_unique_aliases_in_source": 418,
+        "unmatched_tw10_unique_aliases_in_source": 9,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 5510,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "a7be854d0767203b547984269e34e72c2c443c011c35027d727d7fd192c00cfc",
+      "original_main_client_MAP_source_SHA256_if_success": "669df2fc4c977a54c475a612cbfa4b0dbcf2f346135e589f00b6365509a12440",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "a7be854d0767203b547984269e34e72c2c443c011c35027d727d7fd192c00cfc",
+        "source_bytes": 21608,
+        "width": 60,
+        "height": 60,
+        "cells": 3600,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 3414,
+        "tw10_verified_RD_numeric_candidate_references": 3414,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 68,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 5511,
+      "source_GetPet_CREATE_refs": 1,
+      "source_NPCEnemy_CREATE_refs": 0,
+      "original_main_client_DAT_source_SHA256_if_success": "5d44ea8c70c2537447926714fc0f84f5900c63e4008917fabcd3885d73dc0884",
+      "original_main_client_MAP_source_SHA256_if_success": "48fa9ae40b53714108536b7c1741ed86f23238a504a13d83fd4f65ebc077bc4e",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "5d44ea8c70c2537447926714fc0f84f5900c63e4008917fabcd3885d73dc0884",
+        "source_bytes": 5408,
+        "width": 30,
+        "height": 30,
+        "cells": 900,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 1155,
+        "tw10_verified_RD_numeric_candidate_references": 1155,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 57,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 5530,
+      "source_GetPet_CREATE_refs": 1,
+      "source_NPCEnemy_CREATE_refs": 0,
+      "original_main_client_DAT_source_SHA256_if_success": "295a6e85b40a3ac6f319c784013b84df78896381375c1c580481306b922f9c36",
+      "original_main_client_MAP_source_SHA256_if_success": "1e166492dd8e58847e4efe6717e0cd1bc0efd8d9803be21d08476142f2a43aca",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "295a6e85b40a3ac6f319c784013b84df78896381375c1c580481306b922f9c36",
+        "source_bytes": 21608,
+        "width": 60,
+        "height": 60,
+        "cells": 3600,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 4235,
+        "tw10_verified_RD_numeric_candidate_references": 4235,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 141,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 5532,
+      "source_GetPet_CREATE_refs": 1,
+      "source_NPCEnemy_CREATE_refs": 0,
+      "original_main_client_DAT_source_SHA256_if_success": "a3441109153a3829a813313dbdc2195599bae6354e3916117f24a5d3a882e424",
+      "original_main_client_MAP_source_SHA256_if_success": "eb2bc528657f3df0bd95a627e1ba21f823043fc0e6ef1a460049433a597f212b",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "a3441109153a3829a813313dbdc2195599bae6354e3916117f24a5d3a882e424",
+        "source_bytes": 9608,
+        "width": 40,
+        "height": 40,
+        "cells": 1600,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 2124,
+        "tw10_verified_RD_numeric_candidate_references": 2124,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 130,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 5533,
+      "source_GetPet_CREATE_refs": 1,
+      "source_NPCEnemy_CREATE_refs": 0,
+      "original_main_client_DAT_source_SHA256_if_success": "d489aa730f215724e5ab32da7a80cab33536df8abae265186fb4cef3b50f2532",
+      "original_main_client_MAP_source_SHA256_if_success": "5df684e04422984588c1bbd9901cc1e26dc384e62d0dab90398f3bc21d842014",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "d489aa730f215724e5ab32da7a80cab33536df8abae265186fb4cef3b50f2532",
+        "source_bytes": 21608,
+        "width": 60,
+        "height": 60,
+        "cells": 3600,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 3695,
+        "tw10_verified_RD_numeric_candidate_references": 3695,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 223,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 5535,
+      "source_GetPet_CREATE_refs": 1,
+      "source_NPCEnemy_CREATE_refs": 0,
+      "original_main_client_DAT_source_SHA256_if_success": "078cdee79aee86bc8e53531bb0a09110b4fd2005c8fa0d38ef0a8cf0d7825814",
+      "original_main_client_MAP_source_SHA256_if_success": "8e027e1421a9d8b5c99afe6c6474de57e6cfc9eed035221905286b57ceea325a",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "078cdee79aee86bc8e53531bb0a09110b4fd2005c8fa0d38ef0a8cf0d7825814",
+        "source_bytes": 872,
+        "width": 12,
+        "height": 12,
+        "cells": 144,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 179,
+        "tw10_verified_RD_numeric_candidate_references": 179,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 28,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 5538,
+      "source_GetPet_CREATE_refs": 1,
+      "source_NPCEnemy_CREATE_refs": 0,
+      "original_main_client_DAT_source_SHA256_if_success": "d49b12e18d852fbe7032c47348a17cad26aa3e340efb246fbacb6bf61e13c4bc",
+      "original_main_client_MAP_source_SHA256_if_success": "8cb506c8ca8cbb3300373db321cef6c6fa7516c29c1d6e3368f7fd166163108d",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "d49b12e18d852fbe7032c47348a17cad26aa3e340efb246fbacb6bf61e13c4bc",
+        "source_bytes": 1808,
+        "width": 20,
+        "height": 15,
+        "cells": 300,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 373,
+        "tw10_verified_RD_numeric_candidate_references": 373,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 36,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 10007,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 3,
+      "original_main_client_DAT_source_SHA256_if_success": "054d794006e73f3f3ee67e66fcc49744a101bb1b46e29ecef418bd573f201b4e",
+      "original_main_client_MAP_source_SHA256_if_success": "0b21fdc2f2034010201e321323f576ef78988ce5e00d2d796de760feb0515305",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "054d794006e73f3f3ee67e66fcc49744a101bb1b46e29ecef418bd573f201b4e",
+        "source_bytes": 21608,
+        "width": 60,
+        "height": 60,
+        "cells": 3600,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 3342,
+        "tw10_verified_RD_numeric_candidate_references": 3342,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 131,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 10603,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "d64a87ebf4cc461c1a56ead3f268ef880a896aee1f0d85bd55096fcc5d5331f3",
+      "original_main_client_MAP_source_SHA256_if_success": "d613ef93526d5de6bd71e9a3461315ce41c9449d12dad5671d5e20d3313f8f66",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "d64a87ebf4cc461c1a56ead3f268ef880a896aee1f0d85bd55096fcc5d5331f3",
+        "source_bytes": 15008,
+        "width": 50,
+        "height": 50,
+        "cells": 2500,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 3721,
+        "tw10_verified_RD_numeric_candidate_references": 3721,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 101,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 10701,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "dd2f0d0b7e94390dc38aa52a15943a427b6e6d65c8b480221b254c953079801e",
+      "original_main_client_MAP_source_SHA256_if_success": "5873c95dd5d56255c1f07d6ef084dc98620804bc4ad426594e8c83987af9b931",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "dd2f0d0b7e94390dc38aa52a15943a427b6e6d65c8b480221b254c953079801e",
+        "source_bytes": 38408,
+        "width": 80,
+        "height": 80,
+        "cells": 6400,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 8843,
+        "tw10_verified_RD_numeric_candidate_references": 8843,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 165,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 10703,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "fa27b7f773ba42e59b246594b08f13757bad028e579412f8bdca2e11ed1f3949",
+      "original_main_client_MAP_source_SHA256_if_success": "3c82b0e37761f69cd70a878d15b1292bb2c9e4cfdc6cf785b2d8e75d61f4e900",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "fa27b7f773ba42e59b246594b08f13757bad028e579412f8bdca2e11ed1f3949",
+        "source_bytes": 38408,
+        "width": 80,
+        "height": 80,
+        "cells": 6400,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 9184,
+        "tw10_verified_RD_numeric_candidate_references": 9184,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 147,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 10705,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "6e46020c9534e6ec2a5f72ad1c0a79b4f3836c543e5c8b7c45f568be3dbe9695",
+      "original_main_client_MAP_source_SHA256_if_success": "125cdf54c848d3eaf223fae35f97900f8db2bd93b9bb9163ebf887458aeabe23",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "6e46020c9534e6ec2a5f72ad1c0a79b4f3836c543e5c8b7c45f568be3dbe9695",
+        "source_bytes": 38408,
+        "width": 80,
+        "height": 80,
+        "cells": 6400,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 8813,
+        "tw10_verified_RD_numeric_candidate_references": 8796,
+        "unmatched_tw10_verified_RD_references": 17,
+        "tw10_verified_unique_aliases_in_source": 162,
+        "unmatched_tw10_unique_aliases_in_source": 1,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 10919,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "0813f01f6826549c2c9d5dc7b8b197b6881850502a1df721b159d3004b77fb60",
+      "original_main_client_MAP_source_SHA256_if_success": "629ee9236c762675f2d2b665b12880f040f85a156a273b247770af4fd550b18e",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "0813f01f6826549c2c9d5dc7b8b197b6881850502a1df721b159d3004b77fb60",
+        "source_bytes": 2408,
+        "width": 20,
+        "height": 20,
+        "cells": 400,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 605,
+        "tw10_verified_RD_numeric_candidate_references": 605,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 31,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 11006,
+      "source_GetPet_CREATE_refs": 1,
+      "source_NPCEnemy_CREATE_refs": 0,
+      "original_main_client_DAT_source_SHA256_if_success": "fbf61337a1b397db8a2abcf6b2d804f926e384f240000d2301636ee4a17ce403",
+      "original_main_client_MAP_source_SHA256_if_success": "a7f6d27f255e20d81f520858b8c29634250bfbc99f81db500d54a3686fcf3045",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "fbf61337a1b397db8a2abcf6b2d804f926e384f240000d2301636ee4a17ce403",
+        "source_bytes": 15008,
+        "width": 50,
+        "height": 50,
+        "cells": 2500,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 3576,
+        "tw10_verified_RD_numeric_candidate_references": 3576,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 137,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 11107,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 2,
+      "original_main_client_DAT_source_SHA256_if_success": "1adbf43476b9e1745f7b38b7f48a1c0632fb2d2a47952774cae3d025ed9ef3cc",
+      "original_main_client_MAP_source_SHA256_if_success": "3e503e7e3b80a6ad8c980093ba1f74b1858bc83c6322c8741fbc3b27579697a5",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "1adbf43476b9e1745f7b38b7f48a1c0632fb2d2a47952774cae3d025ed9ef3cc",
+        "source_bytes": 15008,
+        "width": 50,
+        "height": 50,
+        "cells": 2500,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 3774,
+        "tw10_verified_RD_numeric_candidate_references": 3774,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 84,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 11208,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 2,
+      "original_main_client_DAT_source_SHA256_if_success": "3ba162593f41db28bb82b8478e3fddfafabcb57b8381c78cd3ca778678fe1f0f",
+      "original_main_client_MAP_source_SHA256_if_success": "55bb456e1142ba5694ed1178c70237d92ec7fa1dc1d23308b581ad96c30dd5dc",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "3ba162593f41db28bb82b8478e3fddfafabcb57b8381c78cd3ca778678fe1f0f",
+        "source_bytes": 21608,
+        "width": 60,
+        "height": 60,
+        "cells": 3600,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 5256,
+        "tw10_verified_RD_numeric_candidate_references": 5256,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 33,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 11214,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "4d243b320f05dd598f49a05cfd008957379a75a3ee23bdd4e51d122c36443dca",
+      "original_main_client_MAP_source_SHA256_if_success": "5c30aa05dc86d7ad0cf4eba4be98dd6f032a08fc6ebadf735b18250dd0e30d83",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "4d243b320f05dd598f49a05cfd008957379a75a3ee23bdd4e51d122c36443dca",
+        "source_bytes": 15008,
+        "width": 50,
+        "height": 50,
+        "cells": 2500,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 3278,
+        "tw10_verified_RD_numeric_candidate_references": 3278,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 32,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 20309,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 4,
+      "original_main_client_DAT_source_SHA256_if_success": "b1e727dc62a0abc818e2aa68eae29d7910f8bfd3086fb36dfc675f24b06cadfd",
+      "original_main_client_MAP_source_SHA256_if_success": "c621ee9b4e03cbfa80f19f3aa0501c36479148e4b543e110b440c9195c9944ae",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "b1e727dc62a0abc818e2aa68eae29d7910f8bfd3086fb36dfc675f24b06cadfd",
+        "source_bytes": 100808,
+        "width": 120,
+        "height": 140,
+        "cells": 16800,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 7275,
+        "tw10_verified_RD_numeric_candidate_references": 7275,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 283,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 20401,
+      "source_GetPet_CREATE_refs": 1,
+      "source_NPCEnemy_CREATE_refs": 0,
+      "original_main_client_DAT_source_SHA256_if_success": "05d6ea5cfc82cff744aca78e733b50bd17633146443d2ac85749c5d742d963b7",
+      "original_main_client_MAP_source_SHA256_if_success": "2e615cb79c590e8ddc76042b60926329644be5a56cc27b41206798c964431984",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "05d6ea5cfc82cff744aca78e733b50bd17633146443d2ac85749c5d742d963b7",
+        "source_bytes": 15008,
+        "width": 50,
+        "height": 50,
+        "cells": 2500,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 3350,
+        "tw10_verified_RD_numeric_candidate_references": 3350,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 109,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 20607,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 3,
+      "original_main_client_DAT_source_SHA256_if_success": "61030ae7ad974ec396074f3bb7a44c3741694be093fb91abec145392a8a67845",
+      "original_main_client_MAP_source_SHA256_if_success": "b7afa2d55e37fe8d1bbc4d9a9ce54b4992750d02977a92dcd5cf31961c8bb90c",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "61030ae7ad974ec396074f3bb7a44c3741694be093fb91abec145392a8a67845",
+        "source_bytes": 28808,
+        "width": 80,
+        "height": 60,
+        "cells": 4800,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 6639,
+        "tw10_verified_RD_numeric_candidate_references": 6639,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 151,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 20711,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "3c186e1357c0ffae56a0395da04855f12fa5cd87b1807f7078ab38894c756b8b",
+      "original_main_client_MAP_source_SHA256_if_success": "1c48956d5f4b3c6122b6e2f6e7911ceb209bcd97a325935c93b196173dc452d3",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "3c186e1357c0ffae56a0395da04855f12fa5cd87b1807f7078ab38894c756b8b",
+        "source_bytes": 7208,
+        "width": 30,
+        "height": 40,
+        "cells": 1200,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 1746,
+        "tw10_verified_RD_numeric_candidate_references": 1746,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 33,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 21009,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "037da453e79238413677c021708668a5efe0f250504d18f78660be9a4ed0ee1c",
+      "original_main_client_MAP_source_SHA256_if_success": "73d961f75a3484fc3faf4382131d927bf149307362b5707650c2d6d62b667af2",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "037da453e79238413677c021708668a5efe0f250504d18f78660be9a4ed0ee1c",
+        "source_bytes": 18158,
+        "width": 55,
+        "height": 55,
+        "cells": 3025,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 3547,
+        "tw10_verified_RD_numeric_candidate_references": 3547,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 74,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 21014,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "d038479b5297a83d4e1adb1ecdf1523cc5439bd8422592870ef8f51f61e0216e",
+      "original_main_client_MAP_source_SHA256_if_success": "b675b479d26b9ae75c01c9a0b6e801ab11656f5365c9367d2ef8f80d8ae1409c",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "d038479b5297a83d4e1adb1ecdf1523cc5439bd8422592870ef8f51f61e0216e",
+        "source_bytes": 5408,
+        "width": 30,
+        "height": 30,
+        "cells": 900,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 1173,
+        "tw10_verified_RD_numeric_candidate_references": 1173,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 45,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 21208,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "35e3bc6268953c192b8cc4fcf5f89d67bb937c9d4d76a24637b481e874c0432b",
+      "original_main_client_MAP_source_SHA256_if_success": "2789e3adfd2fcd85aa358dcc4fdd19f7ce3662a9daa39bd9ebca86d7930e1f5a",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "35e3bc6268953c192b8cc4fcf5f89d67bb937c9d4d76a24637b481e874c0432b",
+        "source_bytes": 21608,
+        "width": 60,
+        "height": 60,
+        "cells": 3600,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 3920,
+        "tw10_verified_RD_numeric_candidate_references": 3920,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 84,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 21214,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "023c54cc20f5b6885e611ee5b063b29541384adf7fa199445681d134708ba1da",
+      "original_main_client_MAP_source_SHA256_if_success": "68e5dc03fde82b33c6b8e9af66f113d0c0ffda4ac538d1e8bc727390e9f9327e",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "023c54cc20f5b6885e611ee5b063b29541384adf7fa199445681d134708ba1da",
+        "source_bytes": 21608,
+        "width": 60,
+        "height": 60,
+        "cells": 3600,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 4391,
+        "tw10_verified_RD_numeric_candidate_references": 4391,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 90,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 30007,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "793a45482468653eea2611456f76a5957cc3e46cfed37560671fe8d71089f79d",
+      "original_main_client_MAP_source_SHA256_if_success": "34f4d7afde81a53a9078555d224be1eb0fec722d8634870e003f81576ca04aa3",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "793a45482468653eea2611456f76a5957cc3e46cfed37560671fe8d71089f79d",
+        "source_bytes": 2408,
+        "width": 20,
+        "height": 20,
+        "cells": 400,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 568,
+        "tw10_verified_RD_numeric_candidate_references": 568,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 59,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 30009,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "27d94fabaefdf8a9c382dcef6dab5af76d1a09b0220b0a6d2937f3b7b5201ba6",
+      "original_main_client_MAP_source_SHA256_if_success": "e260337893b9ce25c067f9f76b27d85eee2975465d1388b69c8c2db12515d392",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "27d94fabaefdf8a9c382dcef6dab5af76d1a09b0220b0a6d2937f3b7b5201ba6",
+        "source_bytes": 9008,
+        "width": 50,
+        "height": 30,
+        "cells": 1500,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 2160,
+        "tw10_verified_RD_numeric_candidate_references": 2160,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 59,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 30016,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "066ba62d457519d4d7380231a25a871fdfb631f044917acef7cea06bde44e019",
+      "original_main_client_MAP_source_SHA256_if_success": "883784417aa7d689ef3bbfb0f6cab40e66464fcce787244972b184b7f9aa2638",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "066ba62d457519d4d7380231a25a871fdfb631f044917acef7cea06bde44e019",
+        "source_bytes": 30008,
+        "width": 50,
+        "height": 100,
+        "cells": 5000,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 3460,
+        "tw10_verified_RD_numeric_candidate_references": 3460,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 52,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 30600,
+      "source_GetPet_CREATE_refs": 1,
+      "source_NPCEnemy_CREATE_refs": 0,
+      "original_main_client_DAT_source_SHA256_if_success": "33578e416a9eb066e46e66c688d401d2ad6e13f7520cf907f2322db9df062004",
+      "original_main_client_MAP_source_SHA256_if_success": "cb6fdecd33ee0b2dda93b45cdccd6c4cc10826151656197edfcf963547dfdd33",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "33578e416a9eb066e46e66c688d401d2ad6e13f7520cf907f2322db9df062004",
+        "source_bytes": 5408,
+        "width": 30,
+        "height": 30,
+        "cells": 900,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 1014,
+        "tw10_verified_RD_numeric_candidate_references": 1014,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 49,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 30605,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "f3ef91de22ac6cef2b57458a50847d5dd93c3a497e4a75524156b383b118a047",
+      "original_main_client_MAP_source_SHA256_if_success": "a8235cf23d23e6583e53b1af1bcdc85f0650d93238738c1077b68710603ea2af",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "f3ef91de22ac6cef2b57458a50847d5dd93c3a497e4a75524156b383b118a047",
+        "source_bytes": 2258,
+        "width": 15,
+        "height": 25,
+        "cells": 375,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 568,
+        "tw10_verified_RD_numeric_candidate_references": 563,
+        "unmatched_tw10_verified_RD_references": 5,
+        "tw10_verified_unique_aliases_in_source": 66,
+        "unmatched_tw10_unique_aliases_in_source": 3,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 30619,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "4c26eebd5348ee537ea83eed6c15d621afd1cff3dbc883ed1ac97cdee0f6b345",
+      "original_main_client_MAP_source_SHA256_if_success": "d5cd0c9de3c7d8a39cbe5a7ea9333550ebd4bc2613e6c29523bda9142f87e097",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "4c26eebd5348ee537ea83eed6c15d621afd1cff3dbc883ed1ac97cdee0f6b345",
+        "source_bytes": 9608,
+        "width": 40,
+        "height": 40,
+        "cells": 1600,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 2030,
+        "tw10_verified_RD_numeric_candidate_references": 2030,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 125,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 30670,
+      "source_GetPet_CREATE_refs": 1,
+      "source_NPCEnemy_CREATE_refs": 0,
+      "original_main_client_DAT_source_SHA256_if_success": "42875c42b4a5e8d6bded54cd626bbbbcbfc169142b5412d23475bdca47688220",
+      "original_main_client_MAP_source_SHA256_if_success": "298ed04bb2a085496ecc21ccdb7d64c531c3bc7cbc7645e8ec687ee139b67402",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "42875c42b4a5e8d6bded54cd626bbbbcbfc169142b5412d23475bdca47688220",
+        "source_bytes": 5408,
+        "width": 30,
+        "height": 30,
+        "cells": 900,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 1178,
+        "tw10_verified_RD_numeric_candidate_references": 1178,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 75,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 30689,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "0edd2db1e46846e68f32cb4aab2ef2a6f1a77baadd62427351bbfc0bd0e305b1",
+      "original_main_client_MAP_source_SHA256_if_success": "be13690fb938d89458d19529a21b68cd570c59b96ea5e66aa096817a808e3c8d",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "0edd2db1e46846e68f32cb4aab2ef2a6f1a77baadd62427351bbfc0bd0e305b1",
+        "source_bytes": 21608,
+        "width": 60,
+        "height": 60,
+        "cells": 3600,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 517,
+        "tw10_verified_RD_numeric_candidate_references": 33,
+        "unmatched_tw10_verified_RD_references": 484,
+        "tw10_verified_unique_aliases_in_source": 10,
+        "unmatched_tw10_unique_aliases_in_source": 9,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 30691,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "d6409098c0599812f056c14b6af6bbac62486e7480b1d7477aac5cca2e056d17",
+      "original_main_client_MAP_source_SHA256_if_success": "ad7e96ae36ad1303539024c23789d95ebd3619b7ebb9d98deed3f9aa53459232",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "d6409098c0599812f056c14b6af6bbac62486e7480b1d7477aac5cca2e056d17",
+        "source_bytes": 60008,
+        "width": 100,
+        "height": 100,
+        "cells": 10000,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 5610,
+        "tw10_verified_RD_numeric_candidate_references": 4795,
+        "unmatched_tw10_verified_RD_references": 815,
+        "tw10_verified_unique_aliases_in_source": 89,
+        "unmatched_tw10_unique_aliases_in_source": 14,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 30692,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "fca6b347262fcd718df914b0d09a9aa531674fa7f519a0d9b21fd4ec22bdd2cf",
+      "original_main_client_MAP_source_SHA256_if_success": "c77cc66b3e88f37b29fb846abb9ac1870e976f3c37b1e0c528db638743eedc86",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "fca6b347262fcd718df914b0d09a9aa531674fa7f519a0d9b21fd4ec22bdd2cf",
+        "source_bytes": 38408,
+        "width": 80,
+        "height": 80,
+        "cells": 6400,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 3436,
+        "tw10_verified_RD_numeric_candidate_references": 2839,
+        "unmatched_tw10_verified_RD_references": 597,
+        "tw10_verified_unique_aliases_in_source": 84,
+        "unmatched_tw10_unique_aliases_in_source": 15,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 30693,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "0607b238011204f8b480c79a7a01d841f43ab12de6a6db139a1cea6705e6a407",
+      "original_main_client_MAP_source_SHA256_if_success": "caac34e9a0b289ce5bd0314abefe5779a523b5ef983eb300945f5357e7a96760",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "0607b238011204f8b480c79a7a01d841f43ab12de6a6db139a1cea6705e6a407",
+        "source_bytes": 38408,
+        "width": 80,
+        "height": 80,
+        "cells": 6400,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 3238,
+        "tw10_verified_RD_numeric_candidate_references": 2996,
+        "unmatched_tw10_verified_RD_references": 242,
+        "tw10_verified_unique_aliases_in_source": 92,
+        "unmatched_tw10_unique_aliases_in_source": 14,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 30694,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "6d982eda49a083d20304f4ea6e08b3b67ec6d30e8188ab2beadd89674acf9b20",
+      "original_main_client_MAP_source_SHA256_if_success": "7d2b6381557cc8d5648d83d906e4d511dc41a4ba0c905bcb273ac96781eef15d",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "6d982eda49a083d20304f4ea6e08b3b67ec6d30e8188ab2beadd89674acf9b20",
+        "source_bytes": 48608,
+        "width": 90,
+        "height": 90,
+        "cells": 8100,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 4653,
+        "tw10_verified_RD_numeric_candidate_references": 3759,
+        "unmatched_tw10_verified_RD_references": 894,
+        "tw10_verified_unique_aliases_in_source": 87,
+        "unmatched_tw10_unique_aliases_in_source": 15,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 31204,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "100ca8dabccb3deffb2d11128cbc7a8afcba23b0e72261ba306d4edd542a315e",
+      "original_main_client_MAP_source_SHA256_if_success": "efcc25623512541e2223f50b3bccc4cf68baf63fab895db48f00e3f28c69b31b",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "100ca8dabccb3deffb2d11128cbc7a8afcba23b0e72261ba306d4edd542a315e",
+        "source_bytes": 21608,
+        "width": 60,
+        "height": 60,
+        "cells": 3600,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 4888,
+        "tw10_verified_RD_numeric_candidate_references": 4888,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 107,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 31603,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 4,
+      "original_main_client_DAT_source_SHA256_if_success": "c13cda1684aa0f4084d8a4291bc95d309a2da77a942c5a6f2905c01e76939705",
+      "original_main_client_MAP_source_SHA256_if_success": "30e3ed04b31bd8af4e4394e7cb108549b0412cfa9aa2a7a689dda462e96d8a38",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "c13cda1684aa0f4084d8a4291bc95d309a2da77a942c5a6f2905c01e76939705",
+        "source_bytes": 60008,
+        "width": 100,
+        "height": 100,
+        "cells": 10000,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 9380,
+        "tw10_verified_RD_numeric_candidate_references": 9380,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 40,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 31606,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 4,
+      "original_main_client_DAT_source_SHA256_if_success": "866e384a42d45f9b05ade7f82116d5772fdde310c981b503433d3ed73ad4cd45",
+      "original_main_client_MAP_source_SHA256_if_success": "30e3ed04b31bd8af4e4394e7cb108549b0412cfa9aa2a7a689dda462e96d8a38",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "866e384a42d45f9b05ade7f82116d5772fdde310c981b503433d3ed73ad4cd45",
+        "source_bytes": 60008,
+        "width": 100,
+        "height": 100,
+        "cells": 10000,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 8813,
+        "tw10_verified_RD_numeric_candidate_references": 8813,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 40,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 31609,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 4,
+      "original_main_client_DAT_source_SHA256_if_success": "00b34e1a95e1275d9f7cabfa8f048cecbd1f1981891077fb72f3d0822efed83f",
+      "original_main_client_MAP_source_SHA256_if_success": "c1c8778aaa50d2b395264e3aa53573c1b9fccb3749229e79dce2f3313794c0a5",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "00b34e1a95e1275d9f7cabfa8f048cecbd1f1981891077fb72f3d0822efed83f",
+        "source_bytes": 60008,
+        "width": 100,
+        "height": 100,
+        "cells": 10000,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 8965,
+        "tw10_verified_RD_numeric_candidate_references": 8965,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 33,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 31706,
+      "source_GetPet_CREATE_refs": 5,
+      "source_NPCEnemy_CREATE_refs": 5,
+      "original_main_client_DAT_source_SHA256_if_success": "f32c2a55afda8c30c8805e6699f530aba8a9dfccf92c88a5f5d6df8ccfafb1cc",
+      "original_main_client_MAP_source_SHA256_if_success": "1750e0223a089e1265de84de53e4b4222de30eef60156c07a440f863a647cf58",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "f32c2a55afda8c30c8805e6699f530aba8a9dfccf92c88a5f5d6df8ccfafb1cc",
+        "source_bytes": 24008,
+        "width": 50,
+        "height": 80,
+        "cells": 4000,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 6337,
+        "tw10_verified_RD_numeric_candidate_references": 6337,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 35,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 31805,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "1766c7d378fdde4bcc2eb45a827cd33e2b2f967b32eae752cbe76372c49c0261",
+      "original_main_client_MAP_source_SHA256_if_success": "bc485087aa6eb7a66faf14e659fd4933fd3ef08bd25e820a1e577544fb57aa0c",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "1766c7d378fdde4bcc2eb45a827cd33e2b2f967b32eae752cbe76372c49c0261",
+        "source_bytes": 15008,
+        "width": 50,
+        "height": 50,
+        "cells": 2500,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 3116,
+        "tw10_verified_RD_numeric_candidate_references": 3116,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 122,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 32010,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "d099d55a8e2cf64ef1ce7de31bf671c05734dc5d906cb263bfa39cbebcfcf4e8",
+      "original_main_client_MAP_source_SHA256_if_success": "3f5cf3e80c020c7c44cbdb4c325dea5dcdaf197494e37cadcc088c063a28dc89",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "d099d55a8e2cf64ef1ce7de31bf671c05734dc5d906cb263bfa39cbebcfcf4e8",
+        "source_bytes": 60008,
+        "width": 100,
+        "height": 100,
+        "cells": 10000,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 15578,
+        "tw10_verified_RD_numeric_candidate_references": 15578,
+        "unmatched_tw10_verified_RD_references": 0,
+        "tw10_verified_unique_aliases_in_source": 25,
+        "unmatched_tw10_unique_aliases_in_source": 0,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    },
+    {
+      "floor_id": 32020,
+      "source_GetPet_CREATE_refs": 0,
+      "source_NPCEnemy_CREATE_refs": 1,
+      "original_main_client_DAT_source_SHA256_if_success": "75c4bc65fb5a71a36c13c4774376620c4a325b10433850969364a7f645bb827e",
+      "original_main_client_MAP_source_SHA256_if_success": "bb399faecb72863451a319cb655ed542cd6532b3d96a1b783eb0ad87e24d292d",
+      "preserved_MAP01_extraction_error_rows": [],
+      "original_mapset_master_membership_not_proven": true,
+      "source_DAT_qualification": "MAP04_EXACT_DAT_FULL_SHA",
+      "qualified_complete_original_DAT": {
+        "original_dat_sha256": "75c4bc65fb5a71a36c13c4774376620c4a325b10433850969364a7f645bb827e",
+        "source_bytes": 60008,
+        "width": 100,
+        "height": 100,
+        "cells": 10000,
+        "source_provenance": "SAME_MIXED25_ARCHIVE_MAIN_CLIENT_DAT"
+      },
+      "original_TW10_RD_pixel_candidate_join": {
+        "reference_basis": "ORIGINAL_DAT_FIRST_TWO_PLANES_NONZERO_NUMERIC_OCCURRENCES",
+        "nonzero_numeric_references": 6703,
+        "tw10_verified_RD_numeric_candidate_references": 172,
+        "unmatched_tw10_verified_RD_references": 6531,
+        "tw10_verified_unique_aliases_in_source": 25,
+        "unmatched_tw10_unique_aliases_in_source": 32,
+        "provenance": "CROSS_CARRIER_ORIGINAL_LATER_MAP_TO_RETAIL_TW10_RD_NOT_SAME_DEPLOYMENT"
+      }
+    }
+  ],
+  "previous_MAP05_source_window_observation_joins": [
+    {
+      "original_source_window": "1000-northwest-new",
+      "source_floor_id": 1000,
+      "source_rect_inclusive": [
+        0,
+        0,
+        31,
+        31
+      ],
+      "original_source_DAT_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+      "cells": 1024,
+      "original_first_two_planes_nonzero_numeric_references": 1025,
+      "original_TW10_RD_candidate_source_covered_references": 1025,
+      "original_TW10_RD_candidate_unmatched_references": 0,
+      "original_TW10_RD_candidate_unmatched_aliases": [],
+      "original_TW10_RD_candidate_unmatched_per_alias": [],
+      "in_INTEGRATION01_NPC_quest_floor_cohort": true,
+      "qualified_prior_private_pixel_observation_MAP05_only": true,
+      "historical_native_layer_palette_collision_and_game_execution_proven": false
+    },
+    {
+      "original_source_window": "1000-gap-cluster",
+      "source_floor_id": 1000,
+      "source_rect_inclusive": [
+        74,
+        74,
+        105,
+        105
+      ],
+      "original_source_DAT_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+      "cells": 1024,
+      "original_first_two_planes_nonzero_numeric_references": 1178,
+      "original_TW10_RD_candidate_source_covered_references": 1164,
+      "original_TW10_RD_candidate_unmatched_references": 14,
+      "original_TW10_RD_candidate_unmatched_aliases": [
+        11208,
+        22413,
+        24305,
+        24306,
+        24307,
+        24308,
+        24309,
+        24310,
+        24311,
+        24312,
+        24316,
+        24322
+      ],
+      "original_TW10_RD_candidate_unmatched_per_alias": [
+        [
+          11208,
+          1
+        ],
+        [
+          22413,
+          2
+        ],
+        [
+          24305,
+          1
+        ],
+        [
+          24306,
+          1
+        ],
+        [
+          24307,
+          1
+        ],
+        [
+          24308,
+          1
+        ],
+        [
+          24309,
+          1
+        ],
+        [
+          24310,
+          1
+        ],
+        [
+          24311,
+          2
+        ],
+        [
+          24312,
+          1
+        ],
+        [
+          24316,
+          1
+        ],
+        [
+          24322,
+          1
+        ]
+      ],
+      "in_INTEGRATION01_NPC_quest_floor_cohort": true,
+      "qualified_prior_private_pixel_observation_MAP05_only": true,
+      "historical_native_layer_palette_collision_and_game_execution_proven": false
+    },
+    {
+      "original_source_window": "1000-southeast-new",
+      "source_floor_id": 1000,
+      "source_rect_inclusive": [
+        110,
+        110,
+        141,
+        141
+      ],
+      "original_source_DAT_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+      "cells": 1024,
+      "original_first_two_planes_nonzero_numeric_references": 1060,
+      "original_TW10_RD_candidate_source_covered_references": 1060,
+      "original_TW10_RD_candidate_unmatched_references": 0,
+      "original_TW10_RD_candidate_unmatched_aliases": [],
+      "original_TW10_RD_candidate_unmatched_per_alias": [],
+      "in_INTEGRATION01_NPC_quest_floor_cohort": true,
+      "qualified_prior_private_pixel_observation_MAP05_only": true,
+      "historical_native_layer_palette_collision_and_game_execution_proven": false
+    },
+    {
+      "original_source_window": "1000-o29-overlap-baseline",
+      "source_floor_id": 1000,
+      "source_rect_inclusive": [
+        48,
+        92,
+        72,
+        132
+      ],
+      "original_source_DAT_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+      "cells": 1025,
+      "original_first_two_planes_nonzero_numeric_references": 1260,
+      "original_TW10_RD_candidate_source_covered_references": 1260,
+      "original_TW10_RD_candidate_unmatched_references": 0,
+      "original_TW10_RD_candidate_unmatched_aliases": [],
+      "original_TW10_RD_candidate_unmatched_per_alias": [],
+      "in_INTEGRATION01_NPC_quest_floor_cohort": true,
+      "qualified_prior_private_pixel_observation_MAP05_only": true,
+      "historical_native_layer_palette_collision_and_game_execution_proven": false
+    },
+    {
+      "original_source_window": "1001-complete-source-window",
+      "source_floor_id": 1001,
+      "source_rect_inclusive": [
+        0,
+        0,
+        29,
+        29
+      ],
+      "original_source_DAT_sha256": "62dbef1614ede0ba032ca9c69cbfdc3d43938e45baba78701885790937b86b90",
+      "cells": 900,
+      "original_first_two_planes_nonzero_numeric_references": 948,
+      "original_TW10_RD_candidate_source_covered_references": 948,
+      "original_TW10_RD_candidate_unmatched_references": 0,
+      "original_TW10_RD_candidate_unmatched_aliases": [],
+      "original_TW10_RD_candidate_unmatched_per_alias": [],
+      "in_INTEGRATION01_NPC_quest_floor_cohort": false,
+      "qualified_prior_private_pixel_observation_MAP05_only": true,
+      "historical_native_layer_palette_collision_and_game_execution_proven": false
+    }
+  ],
+  "bounds": {
+    "original_commercial_client_was_started_in_INTEGRATION02": false,
+    "original_commercial_server_was_started_in_INTEGRATION02": false,
+    "original_TW10_client_same_deployed_archive_as_mixed25_maps_proven": false,
+    "original_native_renderer_layers_palette_offsets_proven": false,
+    "original_native_walkability_or_collision_proven": false,
+    "original_NPC_or_GetPet_CREATE_static_refs_prove_spawn_or_quest_executed": false,
+    "original_unmatched_TW10_alias_proves_art_missing_from_later_build": false,
+    "original_MAP01_failed_extraction_reclassified_as_original_missing_file": false,
+    "source_proprietary_DAT_RD_pixels_PNG_published_publicly": false,
+    "original_complete_visual_scene_replayed_this_unit": false,
+    "stage_A": "7PARTIAL_2OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "INTEGRATION-MODULE-03_SOURCE_BOUND_NPC_PET_IMAGE_PLACEMENT_AND_STAGE_A_GAP_REVIEW_NO_REDESIGN"
+}

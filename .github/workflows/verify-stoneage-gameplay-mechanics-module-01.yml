@@ -1,4 +1,4 @@
-name: Verify GAMEPLAY01-07 and INTEGRATION01 original source evidence
+name: Verify GAMEPLAY01-07 and INTEGRATION01-02 original source evidence
 on:
   push:
     paths:
@@ -24,6 +24,11 @@ on:
       - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-01-ORIGINAL-SOURCE-MANIFEST-R1.json'
       - 'research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json'
       - 'tests/test_stoneage_integration_module_01.py'
+      - 'research/recovered/STONEAGE-INTEGRATION02-ORIGINAL-SCENE-DAT-RD-CROSSMODULE-R1.json'
+      - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-02-THREE-ORIGINAL-DAT-FLOOR-IMAGE-JOIN-R1.json'
+      - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-04-955-ORIGINAL-DAT-4166-RD-PIXEL-INDEX-R1.json'
+      - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-05-SOURCE-WINDOW-OBSERVATION-R1.json'
+      - 'tests/test_stoneage_integration_module_02.py'
       - 'research/recovered/item-module-01/**'
       - 'research/recovered/STONEAGE-O16-TW10-BATTLE-NATIVE-PALETTE-INTERLEAVE-R1.json'
       - 'research/recovered/STONEAGE-O40-TW10-NATIVE-BATTLE-PATH-SOURCE-R1.json'
@@ -51,6 +56,11 @@ on:
       - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-01-ORIGINAL-SOURCE-MANIFEST-R1.json'
       - 'research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json'
       - 'tests/test_stoneage_integration_module_01.py'
+      - 'research/recovered/STONEAGE-INTEGRATION02-ORIGINAL-SCENE-DAT-RD-CROSSMODULE-R1.json'
+      - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-02-THREE-ORIGINAL-DAT-FLOOR-IMAGE-JOIN-R1.json'
+      - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-04-955-ORIGINAL-DAT-4166-RD-PIXEL-INDEX-R1.json'
+      - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-05-SOURCE-WINDOW-OBSERVATION-R1.json'
+      - 'tests/test_stoneage_integration_module_02.py'
       - 'research/recovered/item-module-01/**'
       - 'research/recovered/STONEAGE-O16-TW10-BATTLE-NATIVE-PALETTE-INTERLEAVE-R1.json'
       - 'research/recovered/STONEAGE-O40-TW10-NATIVE-BATTLE-PATH-SOURCE-R1.json'
@@ -72,3 +82,4 @@ jobs:
       - run: python -m unittest discover -s tests -p 'test_stoneage_gameplay_mechanics_module_06.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_gameplay_mechanics_module_07.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_01.py' -v
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_02.py' -v
