@@ -1,0 +1,30 @@
+name: Verify Stage A independently recovered original maps
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/verify-stoneage-stage-a-independent-rar-recovery.yml'
+      - 'tests/test_stoneage_stage_a_independent_rar_recovery.py'
+      - 'research/recovered/STONEAGE-STAGE-A-INDEPENDENT-RAR-MAP-PIXEL-RECOVERY-R1.json'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/verify-stoneage-stage-a-independent-rar-recovery.yml'
+      - 'tests/test_stoneage_stage_a_independent_rar_recovery.py'
+      - 'research/recovered/STONEAGE-STAGE-A-INDEPENDENT-RAR-MAP-PIXEL-RECOVERY-R1.json'
+jobs:
+  source-receipt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify new and preserved map evidence
+        run: >
+          python -m unittest -v
+          tests.test_stoneage_stage_a_independent_rar_recovery
+          tests.test_stoneage_stage_a_original_rar_block_replay
+          tests.test_stoneage_stage_a_source_gap_20261104
+          tests.test_stoneage_map_scene_module_01
+          tests.test_stoneage_map_scene_module_03
+          tests.test_stoneage_map_scene_module_04
