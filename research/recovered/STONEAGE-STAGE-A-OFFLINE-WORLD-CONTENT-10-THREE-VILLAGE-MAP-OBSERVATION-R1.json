@@ -1,0 +1,1243 @@
+{
+  "schema": "stoneage.stage_a.world10.three_villages_source_observation.r1",
+  "source_scope": "PRESERVED_COMMUNITY_MIXED25_SINGLE_ARCHIVE_STATIC_CANDIDATE",
+  "original_archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "image_sources": {
+    "adrn_15.bin": {
+      "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/data/adrn_15.bin",
+      "bytes": 18765120,
+      "crc32": "3113c408",
+      "sha256": "92d0137590d35a7a1f4fb11af3ad13bbc585813a4b0e1e3f933c397007fbff74"
+    },
+    "real_15.bin": {
+      "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/data/real_15.bin",
+      "bytes": 763908374,
+      "crc32": "bd8bab8d",
+      "sha256": "c7640643804d550bc07e33661103fb7b5f557ee01e68a5a5d92382c5305c2b0d"
+    },
+    "Palet_1.sap": {
+      "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/data/pal/Palet_1.sap",
+      "bytes": 708,
+      "crc32": "dacb3fc9",
+      "sha256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0"
+    }
+  },
+  "source_observation_method": "U16_LE_TWO_PLANES_GT_99_UNIQUE_ADRN_ALIAS_RD_CANDIDATE",
+  "prior_private_dialogue_zip_sha256": "ddcc7879a5ea91cc63e5f41b338e5730953a2817608fad93c19d233fc90ca3b2",
+  "decoded_RD_aliases_across_three_full_floors": 1556,
+  "decoded_RD_numeric_and_hash_rows_sha256": "bb2b7cbe8c49d601650f3dc508ef0d00dbcfe6779b96a48c0d64bab16c957728",
+  "floors": [
+    {
+      "floor": 2000,
+      "original_DAT": {
+        "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/map/2000.DAT",
+        "bytes": 135008,
+        "crc32": "35bf728a",
+        "sha256": "d75231434c69118a518a8d5dd34f266264b8551fe4f2d55a20cdfa11b46584b3",
+        "plane_sha256_little_endian": [
+          "c638736cc9e65b3672b5a801f67e7ac615d040d0eb62154c06589bc2395aeb2b",
+          "dfee84190bdfa90911aed5d8abc5f38d6164ff84e1b3f94711cd2c88e8b1a452",
+          "3a12e5f13706657e33a8b8ea1a30cd3775dfc837f2ac3b46d4916ae29e448f57"
+        ]
+      },
+      "dimensions": [
+        150,
+        150
+      ],
+      "anchors": [
+        {
+          "coordinate": [
+            99,
+            78
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/2000npc_m.create",
+          "create_ordinal": 0,
+          "arg_sha256": "93a05865d82b1c793cca9aa4864591c1a27e651e5d1f82a86818cdf012476e3a",
+          "source_cell_u16": [
+            157,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            69,
+            33
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/2000npc_m.create",
+          "create_ordinal": 1,
+          "arg_sha256": "7b237160593313cbcdb9deb115a04ce3839e21c8ee6ff10da613d699bd5640cf",
+          "source_cell_u16": [
+            6151,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            97,
+            85
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/2000npc_m.create",
+          "create_ordinal": 2,
+          "arg_sha256": "8e04db29e7c672772b035f8eedbf6ea1e62e8290efb7ca17a81e1c39d32a62a1",
+          "source_cell_u16": [
+            170,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            59,
+            109
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/2000npc_m.create",
+          "create_ordinal": 3,
+          "arg_sha256": "59db9aed6ae8d316679e0d4aa41a3a7a9eeefded00b21846ba26fa8c87660177",
+          "source_cell_u16": [
+            6477,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            73,
+            108
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/2000npc_m.create",
+          "create_ordinal": 4,
+          "arg_sha256": "cd8f5958a588558572862df9b121200c1f5292c6b9a984c61cd9810e9dff66ae",
+          "source_cell_u16": [
+            6005,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            55,
+            52
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/2000npc_m.create",
+          "create_ordinal": 7,
+          "arg_sha256": "c57ebf1e36bda1491c2e6f569f64c881f8add46a04aef4ae4859d8821f5b4946",
+          "source_cell_u16": [
+            6018,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            59,
+            52
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/2000npc_m.create",
+          "create_ordinal": 8,
+          "arg_sha256": "ac49dba4552f866e38677d5d175af74955392b5b9801f2b97bb26e8e5f72eabd",
+          "source_cell_u16": [
+            6010,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            38,
+            78
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/2000npc_m.create",
+          "create_ordinal": 10,
+          "arg_sha256": "dc19dca4cb678790913616f04f3bad0a10ee29f56e83e1d46a02a0c7b95479fb",
+          "source_cell_u16": [
+            6012,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            73,
+            55
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/2000npc_m.create",
+          "create_ordinal": 11,
+          "arg_sha256": "e4c92dc272d24f60d3beecbed83a7c2a7d6fcd0b3a7414f93b55e46837ae4d99",
+          "source_cell_u16": [
+            6004,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            101,
+            86
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/airway.create",
+          "create_ordinal": 0,
+          "arg_sha256": "bad71dc0c9bfc970e68fe786f282222cd925ef140ee356682aaf7ce4cd85a5a8",
+          "source_cell_u16": [
+            260,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            106,
+            87
+          ],
+          "role": "SignBoard",
+          "create_path": "genout/airway.create",
+          "create_ordinal": 1,
+          "arg_sha256": "977a530e4cddb7f5974fa3473cbb5cc0d4c10640cd29e2d71bea68ce60cd447c",
+          "source_cell_u16": [
+            262,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            52,
+            71
+          ],
+          "role": "SignBoard",
+          "create_path": "genout/chatkanban.create",
+          "create_ordinal": 1,
+          "arg_sha256": "1e5353402dca0dda56365414946db93dc66d3a696fd186263e0a97fe67ba12ce",
+          "source_cell_u16": [
+            6445,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            80,
+            116
+          ],
+          "role": "SignBoard",
+          "create_path": "genout/oev2.create",
+          "create_ordinal": 3,
+          "arg_sha256": "e623bcf83e28f49007855b6a2cefd0959eb66ced106361caefc5d54bc3d9bec4",
+          "source_cell_u16": [
+            289,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            87,
+            78
+          ],
+          "role": "SignBoard",
+          "create_path": "genout/shop_m.create",
+          "create_ordinal": 95,
+          "arg_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "source_cell_u16": [
+            6010,
+            0,
+            49152
+          ]
+        }
+      ],
+      "window_inclusive": [
+        33,
+        28,
+        111,
+        121
+      ],
+      "full_floor_census": {
+        "candidate_occurrences": 16578,
+        "candidate_aliases": 640,
+        "raw_small_nonzero_omitted_occurrences": 883,
+        "decoded_occurrences": 16574,
+        "missing": [
+          [
+            22310,
+            1
+          ],
+          [
+            22356,
+            1
+          ],
+          [
+            22413,
+            2
+          ]
+        ],
+        "ambiguous": [],
+        "decoded_aliases": 637,
+        "reserved_color_aliases": [
+          [
+            10164,
+            1,
+            [
+              1,
+              2,
+              8,
+              14,
+              242,
+              243,
+              249
+            ]
+          ],
+          [
+            11208,
+            1,
+            [
+              1,
+              3,
+              11,
+              12,
+              13,
+              14,
+              240,
+              244,
+              249,
+              251,
+              254,
+              255
+            ]
+          ]
+        ]
+      },
+      "window_census": {
+        "candidate_occurrences": 7435,
+        "candidate_aliases": 592,
+        "raw_small_nonzero_omitted_occurrences": 866,
+        "decoded_occurrences": 7431,
+        "missing": [
+          [
+            22310,
+            1
+          ],
+          [
+            22356,
+            1
+          ],
+          [
+            22413,
+            2
+          ]
+        ],
+        "ambiguous": [],
+        "decoded_aliases": 589,
+        "reserved_color_aliases": [
+          [
+            10164,
+            1,
+            [
+              1,
+              2,
+              8,
+              14,
+              242,
+              243,
+              249
+            ]
+          ],
+          [
+            11208,
+            1,
+            [
+              1,
+              3,
+              11,
+              12,
+              13,
+              14,
+              240,
+              244,
+              249,
+              251,
+              254,
+              255
+            ]
+          ]
+        ]
+      },
+      "observation_png": {
+        "file": "floor-2000.png",
+        "bytes": 9782614,
+        "sha256": "6c97c49258c18e15f6f5f29dda0b949286fb6df6e8f12f1212024e21b77e6406",
+        "rgba_sha256": "ba3f3d261195e76b706657e725ae290d017286f66ed934c01f40a3250f5eed89",
+        "dimensions": [
+          5240,
+          3959
+        ],
+        "canvas_origin": [
+          1908,
+          -2028
+        ],
+        "drawn_RD_placements": 7431
+      },
+      "anchor_event_values": [
+        [
+          49152,
+          14
+        ]
+      ]
+    },
+    {
+      "floor": 3000,
+      "original_DAT": {
+        "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/map/3000.dat",
+        "bytes": 135008,
+        "crc32": "8a628975",
+        "sha256": "3337fb536f3e0938527ac3f6a650427424c20e3a824aae0eb17192fdd177013e",
+        "plane_sha256_little_endian": [
+          "a6848d20248895d5942f4d4a4cd595af294599aaadf2961c79abf28c5f07de29",
+          "34bec5e3060b51098c7d7aafdc5f6cbcc64c5e874c46361ade25756699d4d6dd",
+          "cc62e78709bad0e2daa122adab719a4dd45df31f1e1d8c9b304cd7f4a4cea3a5"
+        ]
+      },
+      "dimensions": [
+        150,
+        150
+      ],
+      "anchors": [
+        {
+          "coordinate": [
+            67,
+            120
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/3000npc_m.create",
+          "create_ordinal": 0,
+          "arg_sha256": "c373729a8252fe2a47f78809a0406257cb08403c126932b16a4ccb7d4974f176",
+          "source_cell_u16": [
+            408,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            77,
+            55
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/3000npc_m.create",
+          "create_ordinal": 1,
+          "arg_sha256": "e8069201d620532c831a5b782acf986a712753e4e68f952a963b515dfbf9a72a",
+          "source_cell_u16": [
+            2046,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            66,
+            107
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/3000npc_m.create",
+          "create_ordinal": 2,
+          "arg_sha256": "fe44c60a0ca785319e069bebec5c5330062ce83d089e1c32545ad0c5450687d6",
+          "source_cell_u16": [
+            386,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            56,
+            104
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/3000npc_m.create",
+          "create_ordinal": 3,
+          "arg_sha256": "3acfe22ef3345ff42eee1ae0d7e95c03671d73d785143fdcc12a883648fd68b9",
+          "source_cell_u16": [
+            2180,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            57,
+            105
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/3000npc_m.create",
+          "create_ordinal": 4,
+          "arg_sha256": "62645b4df8c931c82a38e4ac3ce73679a8af6544f0263d6519b2263fdf053efc",
+          "source_cell_u16": [
+            2020,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            103,
+            87
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/3000npc_m.create",
+          "create_ordinal": 5,
+          "arg_sha256": "b5bccdfd5be64ffa742b296b22c777dd69a472ccfa4c64fe90a37732e5a0dbc6",
+          "source_cell_u16": [
+            401,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            85,
+            100
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/3000npc_m.create",
+          "create_ordinal": 6,
+          "arg_sha256": "24acf1b92ff468c2750bb2a678578003b2d316c5e09a45290e2ce882290ce1fd",
+          "source_cell_u16": [
+            2037,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            103,
+            67
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/3000npc_m.create",
+          "create_ordinal": 7,
+          "arg_sha256": "387801bc925943c8dbebb9d62684b3e999d0f8cdf4b8867bd817a643860c1da7",
+          "source_cell_u16": [
+            408,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            91,
+            60
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/3000npc_m.create",
+          "create_ordinal": 9,
+          "arg_sha256": "6cda024fba52893ae3e266496273f3245357c7532950e50a8c8208f48647a334",
+          "source_cell_u16": [
+            2173,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            89,
+            60
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/3000npc_m.create",
+          "create_ordinal": 10,
+          "arg_sha256": "206c7bf231d47d63b7836bc1e618b9726c45471d7d9609acdc8800575d9f5d75",
+          "source_cell_u16": [
+            402,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            101,
+            98
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/3000npc_m.create",
+          "create_ordinal": 11,
+          "arg_sha256": "fc516f54f0f30a1a1b5687764c7b020515b3f14d5214b1fb0f46ab948cffdb33",
+          "source_cell_u16": [
+            175,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            109,
+            75
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/3000npc_m.create",
+          "create_ordinal": 12,
+          "arg_sha256": "ef2528f92df08f76d5bb0b9cf2abeabb485881e46d3d1036326c85be165bc56d",
+          "source_cell_u16": [
+            2021,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            51,
+            125
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/bus.create",
+          "create_ordinal": 16,
+          "arg_sha256": "5690429b132b0dbc93712dea15d5a047f4f978fd4ecb82c15d890f6a5afac3ff",
+          "source_cell_u16": [
+            165,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            53,
+            123
+          ],
+          "role": "SignBoard",
+          "create_path": "genout/bus.create",
+          "create_ordinal": 17,
+          "arg_sha256": "9e52ffc6a829d97f57bc42bb0d9271711a338e0bb748ce8b6229bb83078908a6",
+          "source_cell_u16": [
+            175,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            85,
+            74
+          ],
+          "role": "SignBoard",
+          "create_path": "genout/chatkanban.create",
+          "create_ordinal": 2,
+          "arg_sha256": "1e5353402dca0dda56365414946db93dc66d3a696fd186263e0a97fe67ba12ce",
+          "source_cell_u16": [
+            391,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            98,
+            63
+          ],
+          "role": "SignBoard",
+          "create_path": "genout/oev.create",
+          "create_ordinal": 0,
+          "arg_sha256": "9df23c21f4bf8a39ee44d13fc27c099ece0113144df9a9a1bcac179c7c05ac3e",
+          "source_cell_u16": [
+            2021,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            95,
+            86
+          ],
+          "role": "SignBoard",
+          "create_path": "genout/shop_m2.create",
+          "create_ordinal": 16,
+          "arg_sha256": "fe8bd24adf6c1237bd153c2529ac9e25dd8502ec6940a0a7ae615f3ea65007ec",
+          "source_cell_u16": [
+            407,
+            0,
+            49152
+          ]
+        }
+      ],
+      "window_inclusive": [
+        46,
+        50,
+        114,
+        130
+      ],
+      "full_floor_census": {
+        "candidate_occurrences": 10853,
+        "candidate_aliases": 1007,
+        "raw_small_nonzero_omitted_occurrences": 4364,
+        "decoded_occurrences": 10848,
+        "missing": [
+          [
+            22413,
+            2
+          ]
+        ],
+        "ambiguous": [
+          [
+            8326,
+            1,
+            [
+              3571,
+              3574
+            ]
+          ],
+          [
+            8327,
+            1,
+            [
+              3572,
+              3575
+            ]
+          ],
+          [
+            8328,
+            1,
+            [
+              3573,
+              3576
+            ]
+          ]
+        ],
+        "decoded_aliases": 1003,
+        "reserved_color_aliases": [
+          [
+            11208,
+            1,
+            [
+              1,
+              3,
+              11,
+              12,
+              13,
+              14,
+              240,
+              244,
+              249,
+              251,
+              254,
+              255
+            ]
+          ]
+        ]
+      },
+      "window_census": {
+        "candidate_occurrences": 6054,
+        "candidate_aliases": 930,
+        "raw_small_nonzero_omitted_occurrences": 348,
+        "decoded_occurrences": 6049,
+        "missing": [
+          [
+            22413,
+            2
+          ]
+        ],
+        "ambiguous": [
+          [
+            8326,
+            1,
+            [
+              3571,
+              3574
+            ]
+          ],
+          [
+            8327,
+            1,
+            [
+              3572,
+              3575
+            ]
+          ],
+          [
+            8328,
+            1,
+            [
+              3573,
+              3576
+            ]
+          ]
+        ],
+        "decoded_aliases": 926,
+        "reserved_color_aliases": [
+          [
+            11208,
+            1,
+            [
+              1,
+              3,
+              11,
+              12,
+              13,
+              14,
+              240,
+              244,
+              249,
+              251,
+              254,
+              255
+            ]
+          ]
+        ]
+      },
+      "observation_png": {
+        "file": "floor-3000.png",
+        "bytes": 13100829,
+        "sha256": "f1120b2572f5f4a4cc3752754dd5ace2936e6b2fc417abafe97ebb7b4510d7eb",
+        "rgba_sha256": "ffb7e238cb671456c73dfea6a46d7f028526cf1e55f083ebfe0d048953562103",
+        "dimensions": [
+          4824,
+          3780
+        ],
+        "canvas_origin": [
+          3028,
+          -1729
+        ],
+        "drawn_RD_placements": 6049
+      },
+      "anchor_event_values": [
+        [
+          49152,
+          17
+        ]
+      ]
+    },
+    {
+      "floor": 4000,
+      "original_DAT": {
+        "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/map/4000.DAT",
+        "bytes": 135008,
+        "crc32": "bbf5e51f",
+        "sha256": "9d327505c74ccb27b62bcce7259be246c9c4a0477c6ee0fceb78f921e7a0dfa5",
+        "plane_sha256_little_endian": [
+          "56a6930f5bf31969267377d8aff19a8db3949409ab73acba4ab6fc8e061b8de6",
+          "19ab6546c1d0cf332e091d9d2062c9989d43cc15cb93be72f1abf314ca6a4295",
+          "969a73b8f5a3b48a362f2a4c9ce2c99ba1c273e7ae016b66a0c1b1a2a1462798"
+        ]
+      },
+      "dimensions": [
+        150,
+        150
+      ],
+      "anchors": [
+        {
+          "coordinate": [
+            54,
+            38
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/1100npc_m.create",
+          "create_ordinal": 7,
+          "arg_sha256": "7d6fd1513ed1b1b96af3e60ef45a091153536657f1f54c77ab4293785ed14962",
+          "source_cell_u16": [
+            148,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            88,
+            94
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/4000npc_m.create",
+          "create_ordinal": 0,
+          "arg_sha256": "4924caa3d19fb2080b34b424f0c94fc9b27e262956fc557c432763aec814e522",
+          "source_cell_u16": [
+            161,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            67,
+            87
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/4000npc_m.create",
+          "create_ordinal": 1,
+          "arg_sha256": "fe44c60a0ca785319e069bebec5c5330062ce83d089e1c32545ad0c5450687d6",
+          "source_cell_u16": [
+            154,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            74,
+            105
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/4000npc_m.create",
+          "create_ordinal": 2,
+          "arg_sha256": "f22a863ea86d72306c6d79d88a6765f777c8fd108bebae8edecf29550b586321",
+          "source_cell_u16": [
+            159,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            66,
+            75
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/4000npc_m.create",
+          "create_ordinal": 3,
+          "arg_sha256": "e72acebe37e116d43d6977ed9495c059f2e0e7d528045e1b6735bffb1d662ba4",
+          "source_cell_u16": [
+            115,
+            36,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            74,
+            84
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/4000npc_m.create",
+          "create_ordinal": 4,
+          "arg_sha256": "a542eff9dd611710d778b8976d5119232dd168137047da9c9859393ab97e8c95",
+          "source_cell_u16": [
+            266,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            56,
+            59
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/4000npc_m.create",
+          "create_ordinal": 5,
+          "arg_sha256": "df88eec7112f0a16a08eb678b3783dbb833958fa611811e140c93b6d000b0a42",
+          "source_cell_u16": [
+            287,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            56,
+            60
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/4000npc_m.create",
+          "create_ordinal": 6,
+          "arg_sha256": "01b3e43f2f3f20d89c62e73f2a7440fb722f3d2028a9840582d9253ec5fc255f",
+          "source_cell_u16": [
+            287,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            75,
+            92
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/4000npc_m.create",
+          "create_ordinal": 7,
+          "arg_sha256": "89662a47c1d5ef2ab7c9fa4696ec51fe1fa67a3758807466eb0e340febe3f0a8",
+          "source_cell_u16": [
+            102,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            75,
+            89
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/4000npc_m.create",
+          "create_ordinal": 8,
+          "arg_sha256": "11fe5e54dd606b517c36ec9d36b1e8df522d66d73f44b5ccb1e2c689c0514865",
+          "source_cell_u16": [
+            190,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            70,
+            56
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/4000npc_m.create",
+          "create_ordinal": 9,
+          "arg_sha256": "0d8336ba62f0a9d483bffd657fb290d5e1a09d610913935ac76346e26f2d1048",
+          "source_cell_u16": [
+            153,
+            40,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            90,
+            69
+          ],
+          "role": "TownPeople",
+          "create_path": "genout/airway.create",
+          "create_ordinal": 13,
+          "arg_sha256": "c5a6ecc58b96f98071c87e586637967a1050ba778accd0bcda498ea4b079ba80",
+          "source_cell_u16": [
+            145,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            91,
+            72
+          ],
+          "role": "SignBoard",
+          "create_path": "genout/airway.create",
+          "create_ordinal": 14,
+          "arg_sha256": "977a530e4cddb7f5974fa3473cbb5cc0d4c10640cd29e2d71bea68ce60cd447c",
+          "source_cell_u16": [
+            157,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            80,
+            48
+          ],
+          "role": "SignBoard",
+          "create_path": "genout/chatkanban.create",
+          "create_ordinal": 3,
+          "arg_sha256": "1e5353402dca0dda56365414946db93dc66d3a696fd186263e0a97fe67ba12ce",
+          "source_cell_u16": [
+            147,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            64,
+            66
+          ],
+          "role": "SignBoard",
+          "create_path": "genout/oev.create",
+          "create_ordinal": 5,
+          "arg_sha256": "3b72f253268170098e90bda1d9a5a1bd77a35347183edd21ca3c22f0e53f638c",
+          "source_cell_u16": [
+            377,
+            0,
+            49152
+          ]
+        },
+        {
+          "coordinate": [
+            90,
+            61
+          ],
+          "role": "SignBoard",
+          "create_path": "genout/shop_m2.create",
+          "create_ordinal": 95,
+          "arg_sha256": "7dcdf726cf2cb82a986b245e709abd4126bac328dfb656ff19301d0ba5aa3054",
+          "source_cell_u16": [
+            269,
+            0,
+            49152
+          ]
+        }
+      ],
+      "window_inclusive": [
+        49,
+        33,
+        96,
+        110
+      ],
+      "full_floor_census": {
+        "candidate_occurrences": 8603,
+        "candidate_aliases": 421,
+        "raw_small_nonzero_omitted_occurrences": 1537,
+        "decoded_occurrences": 8599,
+        "missing": [
+          [
+            22356,
+            1
+          ],
+          [
+            22413,
+            2
+          ],
+          [
+            22434,
+            1
+          ]
+        ],
+        "ambiguous": [],
+        "decoded_aliases": 418,
+        "reserved_color_aliases": [
+          [
+            10164,
+            1,
+            [
+              1,
+              2,
+              8,
+              14,
+              242,
+              243,
+              249
+            ]
+          ],
+          [
+            11208,
+            1,
+            [
+              1,
+              3,
+              11,
+              12,
+              13,
+              14,
+              240,
+              244,
+              249,
+              251,
+              254,
+              255
+            ]
+          ]
+        ]
+      },
+      "window_census": {
+        "candidate_occurrences": 4039,
+        "candidate_aliases": 393,
+        "raw_small_nonzero_omitted_occurrences": 1059,
+        "decoded_occurrences": 4035,
+        "missing": [
+          [
+            22356,
+            1
+          ],
+          [
+            22413,
+            2
+          ],
+          [
+            22434,
+            1
+          ]
+        ],
+        "ambiguous": [],
+        "decoded_aliases": 390,
+        "reserved_color_aliases": [
+          [
+            11208,
+            1,
+            [
+              1,
+              3,
+              11,
+              12,
+              13,
+              14,
+              240,
+              244,
+              249,
+              251,
+              254,
+              255
+            ]
+          ]
+        ]
+      },
+      "observation_png": {
+        "file": "floor-4000.png",
+        "bytes": 6664507,
+        "sha256": "e40592dbce1fb63d5cedcd61827e36978ac419ebc96f15fe504817cf38fb63c8",
+        "rgba_sha256": "e179222518e9af5e2964419d655ec9fd9efe5616d279f52ca5d0cdc269cb8973",
+        "dimensions": [
+          4056,
+          3047
+        ],
+        "canvas_origin": [
+          2580,
+          -1548
+        ],
+        "drawn_RD_placements": 4035
+      },
+      "anchor_event_values": [
+        [
+          49152,
+          16
+        ]
+      ]
+    }
+  ],
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "evidence_limits": {
+    "official_release_attributed": false,
+    "original_runtime_executed": false,
+    "native_draw_order_proven": false,
+    "native_palette_proven": false,
+    "native_dialogue_trigger_proven": false,
+    "original_assets_in_public_git": false
+  },
+  "npc_archive_replay": {
+    "unique_CREATE_files": 11,
+    "unique_ARG_files": 47,
+    "verified_CREATE_blocks": 47,
+    "original_ARG_bytes": 5634,
+    "source_npc_replay_rows_sha256": "ab489ff43781746e08fb9c4d370adcd7d08849c4d70cd26aa1b7413c731f89c9"
+  },
+  "private_observer": {
+    "filename": "StoneAge-WORLD10-three-villages-private-observer.zip",
+    "bytes": 29175360,
+    "sha256": "80a78040bde6c92370308f73e1c5109e869ce4ea1dd513d04a3ad6b367fad88a",
+    "members": {
+      "index.html": "e6b3aa57c6c90183fe1782255358a54f270d23f58f235d4f64c581541791a51a",
+      "floor-2000.png": "6c97c49258c18e15f6f5f29dda0b949286fb6df6e8f12f1212024e21b77e6406",
+      "floor-3000.png": "f1120b2572f5f4a4cc3752754dd5ace2936e6b2fc417abafe97ebb7b4510d7eb",
+      "floor-4000.png": "e40592dbce1fb63d5cedcd61827e36978ac419ebc96f15fe504817cf38fb63c8",
+      "README.txt": "a4bce632d6211b918441ccbe5f2c9fa948fd2643a68c4ef72b21fb1ed0506c3c"
+    },
+    "archive_CRC_all_members_passed": true,
+    "offline_HTML_marker_links_checked": 47,
+    "browser_session_executed": false
+  },
+  "continuity": {
+    "base_main": "fa3e19d45f7cbc9774c18b7a0c1d26bb2fcb10c4",
+    "base_tree": "adad7c49bc1994118f5f79d447afafee8f087106",
+    "preserved_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "next": "WORLD11_SOURCE_QUALIFIED_NPC_APPEARANCE_FOR_ORIGINAL_VILLAGE_CREATE_ROWS"
+}
