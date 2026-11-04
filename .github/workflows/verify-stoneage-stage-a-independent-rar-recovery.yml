@@ -5,12 +5,16 @@ on:
       - '.github/workflows/verify-stoneage-stage-a-independent-rar-recovery.yml'
       - 'tests/test_stoneage_stage_a_independent_rar_recovery.py'
       - 'research/recovered/STONEAGE-STAGE-A-INDEPENDENT-RAR-MAP-PIXEL-RECOVERY-R1.json'
+      - 'research/recovered/STONEAGE-STAGE-A-GMSV-SAAC-ORIGINAL-CONFIG-PRECONDITIONS-R1.json'
+      - 'tests/test_stoneage_stage_a_gmsv_saac_config_preconditions.py'
   push:
     branches: [main]
     paths:
       - '.github/workflows/verify-stoneage-stage-a-independent-rar-recovery.yml'
       - 'tests/test_stoneage_stage_a_independent_rar_recovery.py'
       - 'research/recovered/STONEAGE-STAGE-A-INDEPENDENT-RAR-MAP-PIXEL-RECOVERY-R1.json'
+      - 'research/recovered/STONEAGE-STAGE-A-GMSV-SAAC-ORIGINAL-CONFIG-PRECONDITIONS-R1.json'
+      - 'tests/test_stoneage_stage_a_gmsv_saac_config_preconditions.py'
 jobs:
   source-receipt:
     runs-on: ubuntu-latest
@@ -19,10 +23,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Verify new and preserved map evidence
+      - name: Verify map and original server config evidence
         run: >
           python -m unittest -v
           tests.test_stoneage_stage_a_independent_rar_recovery
+          tests.test_stoneage_stage_a_gmsv_saac_config_preconditions
           tests.test_stoneage_stage_a_original_rar_block_replay
           tests.test_stoneage_stage_a_source_gap_20261104
           tests.test_stoneage_map_scene_module_01

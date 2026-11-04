@@ -1713,3 +1713,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-04 — Stage A：独立解压补齐 63 个原地图文件，复原 3021 道场和后期地图图块
 
 [来源、对照结果与续接](docs/continuity/STONEAGE-STAGE-A-INDEPENDENT-RAR-MAP-PIXEL-RECOVERY-20261104.md)及[数字证据收据](research/recovered/STONEAGE-STAGE-A-INDEPENDENT-RAR-MAP-PIXEL-RECOVERY-R1.json)。从相同私人混合 2.5 RAR 以 7-Zip 和 UnRAR 分别提取，3,060 项逐字节一致且通过原长度和 CRC。MAP01 原 63 条读取失败全部恢复，其中 100、200、3000、3021 的客户端 DAT 补齐 INTEGRATION02 四个楼层缺口。3021 同包服务端 LS2MAP 也已恢复，和客户端 DAT 前两层各有 14,080、42,921 个格值不同，分别保留。3022 对照前两层完全一致。763,908,374 字节的后期 REAL 完整通过原 CRC，1000 层旧 12 个缺图号有 11 个取得原索引像素，22413 两处仍缺。生成 1000、3021、3022 的私人静态预览，原服运行和初代版本归属仍待证。原 CURRENT blob 全部保留。另逐份验真 100 道场弟子 ARG，99 个原参数指向 3021 内下一处，第 100 个指向 3008/(20,20)，与另 200 个指向 3022/(1,7) 的跳跃配置分开。**最高 NEXT** 查找同源原行为实现或可复验运行环境，核实两条路线的触发与实际落点。Stage A 7 PARTIAL + 2 OPEN，B/Wiki GATED，R79 暂停，overall_percent=null。
+
+
+### 2026-11-04 — Stage A 同包原 GMSV/SAAC 账号连接配置先决条件
+
+[原配置静态连接证据与严格运行缺口](docs/continuity/STONEAGE-STAGE-A-GMSV-SAAC-CONFIG-PRECONDITIONS-20261104.md) / [原RAR三配置整件SHA/CRC及数字验收](research/recovered/STONEAGE-STAGE-A-GMSV-SAAC-ORIGINAL-CONFIG-PRECONDITIONS-R1.json)：独立重新从私人保存的社区混合2.5原RAR（361255180B，整SHA `d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5`）实际取出并按原RAR CRC/长度与原件SHA验真 `gmsv/setup.cf`、`gmsv/setup.cf.bak`、`saac/acserv.cf` 三份原配置。GMSV原参数指向本机SAAC 9200端口，游戏监听9065端口，两端账号认证原字段逐字节相同（**不公开认证原文或单独摘要**）；原NPC模板上限256、创建上限8192仅是配置参数。复核此前原服务端90秒监听9200/9065、716地图和119模板已记录，不追认为本轮新运行或双方连接完成。**真正的已建立TCP会话、NPC创建、原客户端登录与道场原生传送仍OPEN**；原客户端/服务端来源为后期社区混合2.5，不能混作JSS1999、TW1或大陆2001版1.82的官方实际运行。Stage A 7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null；原CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c` 原样保留。**最高 NEXT：** 使用已认证的原EXE与隔离来宾，验证地图/模板加载后原GMSV→SAAC真实连接与NPC创建阶段；无合格运行条件即保留缺件止点，不造原游戏运行证据。
