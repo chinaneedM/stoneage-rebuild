@@ -1,0 +1,35 @@
+name: Verify Stage A WORLD07 pinned GETPET source semantics
+on:
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-07-GETPET-HANDLER-SOURCE-SEMANTICS-R1.json'
+      - 'tests/test_stoneage_stage_a_world07_getpet_semantics.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world07.yml'
+      - 'docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-07-GETPET-SOURCE-SEMANTICS-20261104.md'
+  push:
+    branches: [main]
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-07-GETPET-HANDLER-SOURCE-SEMANTICS-R1.json'
+      - 'tests/test_stoneage_stage_a_world07_getpet_semantics.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world07.yml'
+      - 'docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-07-GETPET-SOURCE-SEMANTICS-20261104.md'
+jobs:
+  read-fixed-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch only three verified pinned original community C files
+        run: |
+          set -eu
+          mkdir -p /tmp/stoneage-world07-source
+          base=https://raw.githubusercontent.com/pimpcapital/longzoro-sa/57b14e2bb373ba851c14db28a239273e4a8831bb
+          curl --fail --location --silent --show-error --retry 3 "$base/gmsv/src/npc/npc_exchangeman.c" -o /tmp/stoneage-world07-source/npc_exchangeman.c
+          curl --fail --location --silent --show-error --retry 3 "$base/gmsv/src/char/enemy.c" -o /tmp/stoneage-world07-source/enemy.c
+          curl --fail --location --silent --show-error --retry 3 "$base/gmsv/setup.cf" -o /tmp/stoneage-world07-source/setup.cf
+      - name: Verify pinned source Git blobs, literal handler, and archive-derived numeric boundaries
+        env:
+          STONEAGE_WORLD07_PINNED_SOURCE_DIR: /tmp/stoneage-world07-source
+        run: python -m unittest -v tests.test_stoneage_stage_a_world07_getpet_semantics
