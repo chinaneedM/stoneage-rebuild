@@ -5,12 +5,16 @@ on:
       - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-02-VILLAGE1000-NPC-SOURCE-BRIDGE-R1.json'
       - 'tests/test_stoneage_stage_a_offline_village1000_source.py'
       - '.github/workflows/verify-stoneage-stage-a-offline-village1000.yml'
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-03-VILLAGE1000-32-WARP-DAT-SOURCE-R1.json'
+      - 'tests/test_stoneage_stage_a_offline_village1000_warp32.py'
   push:
     branches: [main]
     paths:
       - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-02-VILLAGE1000-NPC-SOURCE-BRIDGE-R1.json'
       - 'tests/test_stoneage_stage_a_offline_village1000_source.py'
       - '.github/workflows/verify-stoneage-stage-a-offline-village1000.yml'
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-03-VILLAGE1000-32-WARP-DAT-SOURCE-R1.json'
+      - 'tests/test_stoneage_stage_a_offline_village1000_warp32.py'
 jobs:
   source-acceptance:
     runs-on: ubuntu-latest
@@ -20,4 +24,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Verify source-preserving village rows and negative claim boundaries
-        run: python -m unittest -v tests.test_stoneage_stage_a_offline_village1000_source
+        run: >
+          python -m unittest -v
+          tests.test_stoneage_stage_a_offline_village1000_source
+          tests.test_stoneage_stage_a_offline_village1000_warp32
