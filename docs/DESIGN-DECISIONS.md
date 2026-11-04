@@ -741,3 +741,10 @@ Original world entry, battle, riding, audio-to-event mapping, official NPC/quest
 **工作队列取舍：** 当前仍严格历史复原。先利用现存经来源审计的**真实文件**恢复原场景、NPC/宠物原像、动作与源触发/属性；同版证据不足则保留UNKNOWN，必要时转其它有完整材料的版本/域。**只有**在明显影响当前原资源观察/身份判断时再追源码、旧版下载源和网页。不得把网页目录统计、额外工具/流程数量当成复原本身。单机历史观察无需先完成原商业网服兼容。未来新石器可选择性参考2.0—8.5/各地区优秀内容，但其引擎、玩法调整、平衡与体验优化继续属于独立未来阶段，并且不强制以台湾1.0世界内容为上限。
 
 **操作现状和边界：** 截至本轮当时Git HEAD `7eb5acdd96add4cc242faa0a62e962776efc5817`，`research/recovered/STONEAGE-FOUR-CLIENT-CONTENT-SUMMARY-R24.json`明示当前四样本中仅台湾1.0符合已认证纯净官方客户端身份；其余为大陆5.0保留载体、社区混合2.5和声称台湾8.5的候选/带来源限定载体。缺少已认证大陆1.82完整原包，不应无依据选它为唯一可执行数据底盘；有合格原件后再晋级。原`docs/CURRENT-STATE.md`保持全字节不变；Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING，整体完成百分比未知。
+
+
+## DD-031 — Restore StoneAge game content for offline single-player use; do not rebuild historical MMO infrastructure (2026-11-04)
+
+**Status: Accepted execution priority.** Original client files and original server-side game-data files are essential archaeological source carriers. Native online accounts, authentication, socket handshakes, login gateways, online state sync and production server uptime are not restoration deliverables for our intended offline game.
+
+Current Stage A work proceeds from source-qualified original maps, images/animations, pet and NPC data, tasks, item tables, sound and gameplay rules to existing private **offline observation**. The previously recorded GMSV/SAAC binary/configuration/runtime findings remain valid in their original evidence scope but do not gate source-based restoration. Do not confuse an offline observer with native original gameplay. Historical official-client builds and later community archives retain separate provenance. New game implementation, local-save engineering, engine choice and all player-experience changes remain future work. See [dated Stage A priority](continuity/STONEAGE-STAGE-A-OFFLINE-GAME-CONTENT-PRIORITY-20261104.md).
