@@ -166,7 +166,7 @@ def verify(d,m,q,g,n,shards):
     assert sum(1 for x in mfiles if x[1].lower().endswith(".map"))==s["source_main_client_MAP_file_count"]==1019
     assert sum(1 for x in mfiles if x[1].lower().endswith(".dat"))==s["source_main_client_DAT_file_count"]==971
     def statuses(links):
-        z=Counter()
+        z=Counter({"both":0,"map_only":0,"dat_only":0,"neither":0,"with_map":0,"with_dat":0,"with_source_extraction_errors":0})
         for v in links:
             f=byfloor[v["floor_id"]];has_m=f["original_main_client_MAP"] is not None
             has_d=f["original_main_client_DAT"] is not None
