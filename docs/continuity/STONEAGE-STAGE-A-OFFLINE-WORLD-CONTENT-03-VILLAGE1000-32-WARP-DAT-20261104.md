@@ -16,10 +16,13 @@
 
 ## 私人可见内容与验收
 
-私人 `StoneAge-World03-private-village1000-original-warp-atlas.zip` 2,033,376B、SHA `a4e14423bf1b729ae40a3921d31885f0416fd322581f239ce444ec3f14fc9ee8`。四成员CRC通过，包含纯本地32条配置/13目标选择、DAT原U16数值和来源哈希索引以及原样未修改的既有O34局部原画观察HTML。新画的彩色坐标点是现代资料示意，绝非原游戏真实画面/碰撞/行走/触发。Chromium Playwright按同字节HTML的`page.set_content`检验32全量、100目标9条、1011/1014各1条、M/A与原事件码及按钮；JS错误0、网络HTTP请求0。未认证直接file URL打开、原客户端世界进入或原服务器运行。
+私人 `StoneAge-World03-private-village1000-original-warp-atlas.zip` 2,033,372B、SHA `794220fc03b9eccef2c9b318cefcf5ee42cf4e88bc3ffb3437e880e37e086532`。四成员CRC通过，包含纯本地32条配置/13目标选择、DAT原U16数值和来源哈希索引以及原样未修改的既有O34局部原画观察HTML。新画的彩色坐标点是现代资料示意，绝非原游戏真实画面/碰撞/行走/触发。Chromium Playwright按同字节HTML的`page.set_content`检验32全量、100目标9条、1011/1014各1条、M/A与原事件码及按钮；JS错误0、网络HTTP请求0。未认证直接file URL打开、原客户端世界进入或原服务器运行。
 
 公开[来源与数值原格收据](../../research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-03-VILLAGE1000-32-WARP-DAT-SOURCE-R1.json)只含出处、原始CREATE块和文件SHA、坐标、原DAT格数值、目标文件已有资格及不确定边界，不含原DAT/CREATE正文、商用美术、私人HTML。Actions只验证已有公开派生报告相互守恒，不会读取私人商业原盘。
 
 ## 后续最优包
 
 **NEXT STAGE-A-OFFLINE-WORLD-CONTENT-04**：本村庄1000和道场3021静态资料批次到此止点；改从已合法取得的原实物里恢复另一类更有实际内容价值的宠物、NPC、任务、地图或原动作材料，不再重做静态索引/网络登录/服务器框架。Stage A仍7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体百分比null。未来单机新石器引擎、UX优化与新内容仍未开始。
+
+
+**发布前独立勘误（不更改原件）：** 私人有界原字节解析器在 `poru/dragon_warp.create` 跳过一个不相关的前序结构，初版临时索引把源配置序号写为31；先前已独立验收的完整CHAR01/WORLD02索引为32。再次按完整原CREATE块SHA、文件SHA及坐标逐条对照，32/32全部严格一致，仅此项源块排序索引需以原验收目录 **32** 为准。已重做私人ZIP、HTML及其SHA后再发布。公开收据原始CREATE块SHA与正确序号不变，原DAT源格/目标/事件数值不变。初次候选提交及旧ZIP哈希仅保留为更正记录，不再当最终私人交付。
