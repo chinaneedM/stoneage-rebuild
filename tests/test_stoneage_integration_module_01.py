@@ -216,11 +216,11 @@ class TestIntegration01(unittest.TestCase):
           json.loads(p.read_text(encoding="utf-8"))
           for p in [INT,MAP,QUEST,GAMEPLAY,NPC,*ITEMS]]
     def test_complete_cross_source_join(self):
-        self.assertTrue(verify(*self.args))
+        self.assertTrue(verify(*self.args[:5],self.args[5:]))
     def reject(self,act):
         args=[deepcopy(x) for x in self.args];act(args[0])
         with self.assertRaises((AssertionError,KeyError,IndexError,TypeError)):
-            verify(*args)
+            verify(*args[:5],args[5:])
     def test_source_create_SHA_swap_rejected(self):
         self.reject(lambda d:d["source_GetPet_CREATE_QUEST_script_AND_floor_joins"][0].__setitem__("source_CREATE_block_sha256","0"*64))
     def test_false_map_restoration_rejected(self):
