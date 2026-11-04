@@ -172,6 +172,71 @@ class IndependentRarRecovery(unittest.TestCase):
         self.assertFalse(native["bounds"]["server_or_client_executed"])
         self.assertFalse(native["bounds"]["live_coordinate_or_packet_observed"])
 
+    def test_bounded_route_replay_matches_every_source_config(self):
+        result = load("STONEAGE-STAGE-A-DOJO-ORIGINAL-ROUTE-BOUNDED-REPLAY-R1.json")
+        self.assertEqual(result["source_archive_sha256"], self.receipt["archive"]["sha256"])
+        original = self.receipt["floor3021"]["original_NPCEnemy_ARG_route"]
+        x86 = result["x86_probe"]
+        self.assertEqual(x86["shared_warp_function_entry_stop"], "0x440730")
+        self.assertEqual(x86["enemy"],
+                         [[row[0], row[6], row[3], 0x495cf2] for row in original["rows"]])
+        target = original["independent_CREATE_exit_target"]
+        centers = [row[2] for row in original["rows"]]
+        self.assertEqual(x86["warp"], [
+            [[x + 6, y + delta], target, 0x490c02]
+            for x, y in centers for delta in (2, 3)
+        ])
+        self.assertEqual(x86["observed_positive_count"], 300)
+        negatives = x86["negative"]
+        self.assertEqual(set(negatives), {
+            "dieact_zero_synthetic", "out_of_bounds_synthetic", "same_position",
+            "wrong_event", "wrong_object", "wrong_x",
+        })
+        self.assertTrue(all(not row["warp_called"] for row in negatives.values()))
+        self.assertEqual(negatives["dieact_zero_synthetic"]["stop"], "0x495d66")
+        self.assertFalse(x86["warp_function_body_executed"])
+        boot = result["full_program_launch"]
+        self.assertTrue(boot["qemu_no_network_card"])
+        self.assertEqual(boot["guest_network_interfaces"], ["lo"])
+        self.assertEqual(boot["windows_cmd_exit"], 0)
+        self.assertIn(9200, boot["observed_guest_tcp_listen_ports"])
+        traced = boot["instrumented_second_run"]
+        self.assertTrue(traced["gmsv_executable_loaded"])
+        self.assertTrue(traced["matching_cygwin_loaded"])
+        self.assertEqual((traced["gmsv_bind_port"], traced["gmsv_listen_return"]), (9065, 0))
+        self.assertEqual(
+            [(row["seconds_after_gmsv_launch"], row["listen_ports"]) for row in traced["guest_snapshots"]],
+            [(28, [9200]), (56, [9200]), (84, [9200])],
+        )
+        self.assertFalse(traced["sustained_game_listener_observed"])
+        self.assertFalse(traced["saac_gmsv_handshake_observed"])
+        readiness = boot["readiness_checked_run"]
+        self.assertTrue(readiness["waited_for_saac_listener_before_starting_gmsv"])
+        self.assertEqual(
+            [(row["seconds_after_gmsv_launch"], row["listen_ports"]) for row in readiness["guest_snapshots"]],
+            [(7, [9065, 9200]), (14, [9065, 9200]), (21, [9065, 9200]), (28, [9065, 9200])],
+        )
+        self.assertEqual(readiness["native_console_reported_map_files_found"], 716)
+        self.assertFalse(readiness["map_initialization_finished_observed"])
+        inventory = result["same_archive_server_map_inventory"]
+        self.assertEqual(inventory["ls2map_magic_files"], readiness["native_console_reported_map_files_found"])
+        self.assertEqual(inventory["strict_shape_match"], 714)
+        self.assertEqual(len(inventory["trailing_byte_exceptions"]), 2)
+        self.assertEqual(inventory["floor3008"]["dimensions"], [40, 40])
+        self.assertFalse(inventory["trailing_byte_exceptions_cause_runtime_failure_verified"])
+        long_run = boot["long_readiness_checked_run"]
+        self.assertEqual(
+            [(row["seconds_after_gmsv_launch"], row["listen_ports"]) for row in long_run["guest_snapshots"]],
+            [(seconds, [9065, 9200]) for seconds in range(15, 91, 15)],
+        )
+        self.assertEqual(long_run["native_console_correct_map_files_and_completed"], 716)
+        self.assertEqual((long_run["native_console_npc_files_searched"], long_run["native_console_correct_templates"]),
+                         (2203, 119))
+        self.assertFalse(long_run["template_loader_message_static_witness"]["message_itself_demonstrates_fatal_error"])
+        self.assertFalse(long_run["established_tcp_socket_observed"])
+        self.assertFalse(boot["full_client_server_login_or_warp_observed"])
+        self.assertFalse(result["historical_official_deployment_verified"])
+
     def test_historical_attribution_and_runtime_remain_open(self):
         bounds = self.receipt["bounds"]
         for flag in ("authenticated_early_official_deployment", "native_client_or_server_executed",
