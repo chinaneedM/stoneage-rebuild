@@ -12,7 +12,7 @@
 
 ## 独立公开保存来源：名字和长度相同，校验值却不同
 
-另一公共研究源 `chenmingbiao/stone-age` 的 `gmsv/data/map/jyaruga/jaja/3021` 当前 `master` 对应 Git blob **`e34245c7ed4346f863e1b3ed17a8beb464b673f6`**，可固定访问 [GitHub blob](https://github.com/chenmingbiao/stone-age/blob/e34245c7ed4346f863e1b3ed17a8beb464b673f6/gmsv/data/map/jyaruga/jaja/3021)（**此链接使用对象 SHA 而非提交 SHA 时不可用；可使用下列 API 内容寻址链接**：[Git blob API](https://api.github.com/repos/chenmingbiao/stone-age/git/blobs/e34245c7ed4346f863e1b3ed17a8beb464b673f6)）。
+另一公共研究源 `chenmingbiao/stone-age` 的 `gmsv/data/map/jyaruga/jaja/3021` 当前 `master` 对应 Git blob **`e34245c7ed4346f863e1b3ed17a8beb464b673f6`**，固定来源为 [Git blob API](https://api.github.com/repos/chenmingbiao/stone-age/git/blobs/e34245c7ed4346f863e1b3ed17a8beb464b673f6)；该对象以内容寻址，不依赖日后 `master` 指针。
 
 本轮通过 GitHub 连通接口读取该 blob 的**完整 base64 字节**，实际解码 **234476 B**，起始 ASCII **`LS2MAP`**，按全部字节重新计算 **CRC32 `8f4aaf0e`**。其来源属于第三方历史后代资料，未认证为当年同版同部署正式服务器。
 
@@ -24,7 +24,7 @@
 | 该来源完整字节可验 | **否** | **是，仅对应公开blob自身** |
 | 能否用来替换私人RAR成员 | 否 | **否，CRC不匹配** |
 
-**结论：同名、同长度、相同LS2MAP家族不等于同一地图原字节。** 公开后代文件最多在其自身已固定来源下单独研究，不能冒充与私人RAR逐字节相同，不能代替原RAS服务器成员，更无法补齐另一路 **客户端 `3021.DAT` 351656 B / RAR预期CRC `c0d8a645`**。未把文件大小相同当作任何地图像素、碰撞、进出点或正式部署一致的证明。
+**结论：同名、同长度、相同LS2MAP家族不等于同一地图原字节。** 公开后代文件最多在其自身已固定来源下单独研究，不能冒充与私人RAR逐字节相同，不能代替原RAR服务端成员，更无法补齐另一路 **客户端 `3021.DAT` 351656 B / RAR预期CRC `c0d8a645`**。未把文件大小相同当作任何地图像素、碰撞、进出点或正式部署一致的证明。
 
 原 `3021.MAP` 两份此前已完整认证相同 SHA，不会由这份服务端候选改变。既有 `recovered25` 服务端地图覆盖属于其独立后代版本来源，也不构成本包RAR完整解压成功。
 
