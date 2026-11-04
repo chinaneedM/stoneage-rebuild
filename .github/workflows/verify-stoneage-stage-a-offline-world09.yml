@@ -1,0 +1,33 @@
+name: Verify Stage A WORLD09 original random-item slot source
+on:
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-09-GETRANDITEM-SOURCE-SLOTS-R1.json'
+      - 'docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-09-ORIGINAL-RANDOM-ITEM-20261104.md'
+      - 'tests/test_stoneage_stage_a_world09_random_item.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world09.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-09-GETRANDITEM-SOURCE-SLOTS-R1.json'
+      - 'docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-09-ORIGINAL-RANDOM-ITEM-20261104.md'
+      - 'tests/test_stoneage_stage_a_world09_random_item.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world09.yml'
+jobs:
+  original-item-script-and-fixed-later-C:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Retrieve one pinned later community C file
+        run: |
+          set -eu
+          curl --fail --location --silent --show-error --retry 3 \
+            'https://raw.githubusercontent.com/pimpcapital/longzoro-sa/57b14e2bb373ba851c14db28a239273e4a8831bb/gmsv/src/npc/npc_exchangeman.c' \
+            -o /tmp/stoneage-world09-exchange.c
+      - name: Recount original 50 blocks and audit immutable C semantics
+        env:
+          STONEAGE_WORLD09_PINNED_EXCHANGE: /tmp/stoneage-world09-exchange.c
+        run: python -m unittest -v tests.test_stoneage_stage_a_world09_random_item
