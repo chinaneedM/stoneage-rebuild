@@ -1,0 +1,23 @@
+name: Verify Stage A offline village1000 source atlas
+on:
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-02-VILLAGE1000-NPC-SOURCE-BRIDGE-R1.json'
+      - 'tests/test_stoneage_stage_a_offline_village1000_source.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-village1000.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-02-VILLAGE1000-NPC-SOURCE-BRIDGE-R1.json'
+      - 'tests/test_stoneage_stage_a_offline_village1000_source.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-village1000.yml'
+jobs:
+  source-acceptance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify source-preserving village rows and negative claim boundaries
+        run: python -m unittest -v tests.test_stoneage_stage_a_offline_village1000_source

@@ -1,0 +1,1826 @@
+{
+  "schema": "stoneage.stage_a.offline_world_content02_village1000_original_NPC_source_bridge.r1",
+  "evidence": "ORIGINAL_CREATE_VERIFIED_PRIVATE_AND_CROSSCHECKED_PRIOR_GIT_SOURCE_INDEX; STATIC_NOT_NATIVE_PLAY",
+  "scope": "LATER_PRESERVED_COMMUNITY_MIXED25_NOT_AUTHENTICATED_OFFICIAL_EARLY_DEPLOYMENT",
+  "original_source_rar_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "private_original_NPC_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+  "private_NPC_zip_bytes": 995176,
+  "private_NPC_ZIP_CRC_failed_entries": 0,
+  "previous_derived_source_index_path": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json",
+  "previous_source_index_git_blob_sha": "a088b61a3212f7049e7793f587123ffb29bebad7",
+  "private_O34_source_zip_sha256": "0c9c38817f6b4c7838a7be0ec122f7dbe274b52a0153b6c7a23c27365fd1dbe2",
+  "private_O34_unmodified_html_sha256": "9e34d958d8897e2f740de83eafda517cdfbd4dbdd1a0bcc7fd917f45e807cdfb",
+  "private_O34_original_source_window": [
+    48,
+    92,
+    72,
+    132
+  ],
+  "private_O34_source_grid_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+  "private_offline_deliverable_zip_sha256": "5c4fbd5103b1f7ad309345a1f5c86fdb86d06c849fec371651dfbcc5bbf53433",
+  "private_offline_deliverable_zip_bytes": 2683249,
+  "private_html_sha256": "7acd38407d323b0ea9c2dac3560697e08babb4694b3450a1212345e9576fdf9b",
+  "private_browser_probe": {
+    "basis": "PLAYWRIGHT_CHROMIUM_PAGE_SET_CONTENT_SAME_HTML_BYTES",
+    "page_file_navigation": "BLOCKED_BY_ADMINISTRATOR_NOT_CLAIMED",
+    "records": 78,
+    "inside_window": 18,
+    "warp_function_token": 32,
+    "source_ref_63_103_found": true,
+    "original_image_natural_width": 1550,
+    "javascript_errors": 0,
+    "external_http_requests": 0
+  },
+  "counts": {
+    "original_floor1000_create_blocks": 78,
+    "create_files": 18,
+    "anchor_in_prior_pixel_window": 18,
+    "anchor_outside_prior_pixel_window": 60,
+    "explicit_file_source_references": 39,
+    "source_anchor_from_original_borncenter_beyond_prior_index": 2
+  },
+  "source_files": [
+    {
+      "path": "chatroom/chatroom.create",
+      "bytes": 2873,
+      "sha256": "068c36b326759fde126bc6cc72796645468c0823c46deb3a328e6a98814345cd",
+      "crc32": "19d034a5",
+      "floor1000_original_create_blocks": 1
+    },
+    {
+      "path": "chatroom/duelranking.create",
+      "bytes": 1276,
+      "sha256": "09c810a2b8d45efed438e7aea394e80b085098e10cb512fbcc13554a4ed7d6a5",
+      "crc32": "161eb725",
+      "floor1000_original_create_blocks": 2
+    },
+    {
+      "path": "genout/1000npc_m.create",
+      "bytes": 4413,
+      "sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "crc32": "b1af0e82",
+      "floor1000_original_create_blocks": 25
+    },
+    {
+      "path": "genout/100warp.create",
+      "bytes": 7950,
+      "sha256": "d61d5ada11e28a2cd22603d071fe69396f6f02cf04769226e6826184cd59af60",
+      "crc32": "1182a352",
+      "floor1000_original_create_blocks": 9
+    },
+    {
+      "path": "genout/chatkanban.create",
+      "bytes": 798,
+      "sha256": "6f1263dd0c67f81f0848c0cb02212d29c7074ed02bfe1cb8329f8964017936b6",
+      "crc32": "9d45c242",
+      "floor1000_original_create_blocks": 1
+    },
+    {
+      "path": "genout/duelroom.create",
+      "bytes": 5732,
+      "sha256": "4c47e9c320f9d3fe6616e6860d14d2681df1994bb8c4a849e5b6d93a38998a91",
+      "crc32": "b6f95c0e",
+      "floor1000_original_create_blocks": 1
+    },
+    {
+      "path": "genout/oev2.create",
+      "bytes": 4289,
+      "sha256": "0b12db5f4fac9ad32094445cf3251244696b975f9841990f5948c8cc47f7aa10",
+      "crc32": "90eabdc3",
+      "floor1000_original_create_blocks": 1
+    },
+    {
+      "path": "genout/shop_m.create",
+      "bytes": 20491,
+      "sha256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+      "crc32": "64f0e39d",
+      "floor1000_original_create_blocks": 2
+    },
+    {
+      "path": "genout/shop_nuke1.create",
+      "bytes": 2253,
+      "sha256": "699aeb07c7f06741a528022c2597c523fccca3159094482a371dc77c968f347f",
+      "crc32": "6d754a78",
+      "floor1000_original_create_blocks": 1
+    },
+    {
+      "path": "genout/sp.create",
+      "bytes": 3902,
+      "sha256": "f2e779423b269b8df91fc2a208bf298cc1e7204c015f92e7287944e1a4281679",
+      "crc32": "7a7dfdcc",
+      "floor1000_original_create_blocks": 1
+    },
+    {
+      "path": "genout/warp_y.create",
+      "bytes": 24588,
+      "sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "crc32": "681761ad",
+      "floor1000_original_create_blocks": 22
+    },
+    {
+      "path": "my/tiancai/transfer.create",
+      "bytes": 850,
+      "sha256": "6bec134cb0a67ca9ee96094a615a5e328a8759bbbb3bd65efe18daf8b07566e3",
+      "crc32": "152f822c",
+      "floor1000_original_create_blocks": 1
+    },
+    {
+      "path": "poru/dragon_warp.create",
+      "bytes": 4039,
+      "sha256": "9997543950ad1eacc59640ac8f4cf4c8456278709e5cf2249eff922cb02cfd59",
+      "crc32": "e383dba2",
+      "floor1000_original_create_blocks": 1
+    },
+    {
+      "path": "poru/samugiru01.create",
+      "bytes": 605,
+      "sha256": "27cc9a708f414cd0ead2f3a294124c66347114917ac72c456efb4c6370d2466f",
+      "crc32": "3005323b",
+      "floor1000_original_create_blocks": 3
+    },
+    {
+      "path": "poru/samugiru_grandfather.create",
+      "bytes": 384,
+      "sha256": "a94aae32b84f120655fb1bbb806886aad51583206c259dd531ff29ef690aaf91",
+      "crc32": "c9cc7dc8",
+      "floor1000_original_create_blocks": 2
+    },
+    {
+      "path": "sa60/newbie/newbie.create",
+      "bytes": 1548,
+      "sha256": "761dc3d1ed885fb76b22af446331e5a0db6cf3e59a27cf2ab136a62a88d81d0b",
+      "crc32": "3f411954",
+      "floor1000_original_create_blocks": 1
+    },
+    {
+      "path": "sainasu/event/event02.create",
+      "bytes": 534,
+      "sha256": "2b15884736a19d06caffa32e335c3604e5f8593c8ea051d2040f0c5d3b52e1e4",
+      "crc32": "7d30152c",
+      "floor1000_original_create_blocks": 1
+    },
+    {
+      "path": "sainasu/event/oev2.create",
+      "bytes": 4719,
+      "sha256": "aa970655e6123d050b2b3007f8b24135a5ec9380466db3f55e458e67bdb456b4",
+      "crc32": "85955c11",
+      "floor1000_original_create_blocks": 3
+    }
+  ],
+  "rows": [
+    {
+      "source_file": "chatroom/chatroom.create",
+      "source_sha256": "068c36b326759fde126bc6cc72796645468c0823c46deb3a328e6a98814345cd",
+      "original_block_ordinal": 9,
+      "original_block_sha256": "d3870832df0d13e90dc074555b7473a2bcdf462eb0f06d2ad6777c5b6c353490",
+      "floorid": 1000,
+      "source_graphicname": 16014,
+      "coordinate_anchor": [
+        50,
+        62
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "bf1361f35ef063f11ce776608d0bfc7bbbadc121a3a3cf6b34c91a6b52a68bf8",
+      "source_function_token": "changeevent",
+      "template_qualifier": "SAME_ARCHIVE_UNIQUE_EXACT_TOKEN_OTHER_DIRECTORY",
+      "source_references": [
+        {
+          "path": "chatroom/ticket1000",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "2391d7d2151da1599c2dfca53a34fc2a2f8e8fdf81f5d11df58aecb3479d34fd"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "chatroom/duelranking.create",
+      "source_sha256": "09c810a2b8d45efed438e7aea394e80b085098e10cb512fbcc13554a4ed7d6a5",
+      "original_block_ordinal": 2,
+      "original_block_sha256": "492e0097b5ff520cc4f825b2a15ce66d95e9cb1f0f66d5c8029eae2aa8967b6a",
+      "floorid": 1000,
+      "source_graphicname": 10070,
+      "coordinate_anchor": [
+        60,
+        61
+      ],
+      "source_anchor_kind": "borncenter",
+      "original_name_sha256": "ec2c0a20e723814776cf446ce889344623efd8f094646fd1b14c2febd4a35b3d",
+      "source_function_token": "duelranking",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "chatroom/duelranking.create",
+      "source_sha256": "09c810a2b8d45efed438e7aea394e80b085098e10cb512fbcc13554a4ed7d6a5",
+      "original_block_ordinal": 3,
+      "original_block_sha256": "283e9558e0374ca3296490782bcca2eeefc63844fe2e2ee368c101befd6bfec3",
+      "floorid": 1000,
+      "source_graphicname": 10069,
+      "coordinate_anchor": [
+        88,
+        105
+      ],
+      "source_anchor_kind": "borncenter",
+      "original_name_sha256": "ec2c0a20e723814776cf446ce889344623efd8f094646fd1b14c2febd4a35b3d",
+      "source_function_token": "duelranking",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 0,
+      "original_block_sha256": "f06c9868ee95f4ba21ad2c0cabe5515a0c5ad7f1dc72b8e1ba96f4f53fd470cf",
+      "floorid": 1000,
+      "source_graphicname": 16209,
+      "coordinate_anchor": [
+        62,
+        115
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "b85298e8f861ff8fc7d54ab43552e8c9892478eebf5aa04f764fb4ee13548bbd",
+      "source_function_token": "npcgen_man",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": true
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 1,
+      "original_block_sha256": "b6ae18da802db4b2f0adc592f98a1bbc5420e4f7b02bce0b42dfb1d2ccbafbc9",
+      "floorid": 1000,
+      "source_graphicname": 16048,
+      "coordinate_anchor": [
+        63,
+        103
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "b85298e8f861ff8fc7d54ab43552e8c9892478eebf5aa04f764fb4ee13548bbd",
+      "source_function_token": "npcgen_man",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/msg_1000_63_103",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "d1138b040fb31d0dc85cfdf4917f1c92facc67323c3a12544a8487039d0492ca"
+        }
+      ],
+      "in_prior_O34_window": true
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 2,
+      "original_block_sha256": "37131198e147ba7d35a0f44c8c87b555d57508e1a6bf4244f4467cf2e69cc254",
+      "floorid": 1000,
+      "source_graphicname": 16032,
+      "coordinate_anchor": [
+        118,
+        95
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "8fc63ef179e42636c692ae54242cfacf8365c4bd5c292aaed5eff41cfb7cc5e8",
+      "source_function_token": "npcgen_man",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/msg_1000_118_95",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "7c7ba0924e5d680f723988d1566094b3a758b27aea7cab5a37aa22807ff5fc26"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 3,
+      "original_block_sha256": "d1c6bac20e0a55509887ced85e7672e9f119d2f8457c8a76502fb163cdae0c27",
+      "floorid": 1000,
+      "source_graphicname": 16033,
+      "coordinate_anchor": [
+        118,
+        96
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "8fc63ef179e42636c692ae54242cfacf8365c4bd5c292aaed5eff41cfb7cc5e8",
+      "source_function_token": "npcgen_man",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 4,
+      "original_block_sha256": "894e55e8f0f895c8196569ee53697d6fd4a2b77e7c714940365c26e0a1bb1110",
+      "floorid": 1000,
+      "source_graphicname": 16038,
+      "coordinate_anchor": [
+        117,
+        95
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "8fc63ef179e42636c692ae54242cfacf8365c4bd5c292aaed5eff41cfb7cc5e8",
+      "source_function_token": "npcgen_man",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 5,
+      "original_block_sha256": "14515e6dc458b52e4d35e5e5cb57cfa4b5937e73f04ca01f7b61acd74da2cc21",
+      "floorid": 1000,
+      "source_graphicname": 16002,
+      "coordinate_anchor": [
+        42,
+        72
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "18acf260157ce0d04e4052f98efe9471f146449fd26ef281c84d505fdf109551",
+      "source_function_token": "npcgen_timeman",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/tman_1000_42_72",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "115134eedc681d9a1526ebd4bc2754c5c7c397a4500b08e7c597c467bfe2a190"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 6,
+      "original_block_sha256": "b5a73f34a3b256db82d080568b18ce182f573349061189c97bf58776edfc4973",
+      "floorid": 1000,
+      "source_graphicname": 16011,
+      "coordinate_anchor": [
+        42,
+        79
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "efa3dd07cc171c995724a137a5c400dc7f9415935fb81fe0c68445a7f9419067",
+      "source_function_token": "npcgen_timeman",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/tman_1000_42_79",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "f7d07e81040d0caec0b7c74fa185a9593cab15d9943b822586299e83b5ba9095"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 7,
+      "original_block_sha256": "7a9520f1072371397a97a14dc298a1759be82266fe543bad34206e9fe36ff8bb",
+      "floorid": 1000,
+      "source_graphicname": 16003,
+      "coordinate_anchor": [
+        42,
+        81
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "efa3dd07cc171c995724a137a5c400dc7f9415935fb81fe0c68445a7f9419067",
+      "source_function_token": "npcgen_timeman",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/tman_1000_42_81",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "4575ca48d80546d332e2b7b33024f8d8a0b95bec2d633129cf2a712030f7f48e"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 8,
+      "original_block_sha256": "8d98f947170d84bdf4035b303723c86d4db1fda3bbeef6aa44781d34d2b28f35",
+      "floorid": 1000,
+      "source_graphicname": 16004,
+      "coordinate_anchor": [
+        39,
+        75
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "efa3dd07cc171c995724a137a5c400dc7f9415935fb81fe0c68445a7f9419067",
+      "source_function_token": "npcgen_timeman",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/tman_1000_39_75",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "4f02df593dbe4b51676e1cb6c7d8ac21b8980c16df3f8d701061d1ee801d15bc"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 9,
+      "original_block_sha256": "c93dc4e25ed323d876fd3ec645737a5b91280727a19fe62188aa91f645962c23",
+      "floorid": 1000,
+      "source_graphicname": 16005,
+      "coordinate_anchor": [
+        36,
+        78
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "efa3dd07cc171c995724a137a5c400dc7f9415935fb81fe0c68445a7f9419067",
+      "source_function_token": "npcgen_timeman",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/tman_1000_36_78",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "b10fcd765caf501eff6642c05a24c59a82ad1efe265fdbeb481cf017f7aaf4b9"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 10,
+      "original_block_sha256": "c8778078f976a3e655a96526dd7dd06b8677bb1598ee7350059ac4e8a5aa8b4d",
+      "floorid": 1000,
+      "source_graphicname": 16006,
+      "coordinate_anchor": [
+        42,
+        75
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "efa3dd07cc171c995724a137a5c400dc7f9415935fb81fe0c68445a7f9419067",
+      "source_function_token": "npcgen_timeman",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/tman_1000_42_75",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "138ac51e303e245001da12f746e1c4dcfde8aabace87f9613fc1d631dbaaecc7"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 11,
+      "original_block_sha256": "d9ad3d93467debeca059207db1861e84f7a217a55c5cc98aa504b298b627beb3",
+      "floorid": 1000,
+      "source_graphicname": 16025,
+      "coordinate_anchor": [
+        119,
+        65
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "b829748c427f11102939ed4cd8b7b995e62d7fae173441ed3c110a7b32ba4036",
+      "source_function_token": "npcgen_timeman",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/tman_1000_119_65",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "97bd288385d1d7b06fdc5676ca924db9226422d108e03fe69348cb6ea09aabf6"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 12,
+      "original_block_sha256": "800708b3e160e773e7e5c81276766ea8072597fc41b1b28676fc8bdc5a6b58ab",
+      "floorid": 1000,
+      "source_graphicname": 16015,
+      "coordinate_anchor": [
+        116,
+        69
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "b752df0a77626635d79789e29f6d73543c59c645278356996d514becadca07b6",
+      "source_function_token": "npcgen_timeman",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/tman_1000_116_69",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "a23f3859dee65e5a2bf829a90e390eed03ea51189bbc6d8d6f1802d05a073a6c"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 13,
+      "original_block_sha256": "57d0c839c3c0bae4c4e97d642df5191cbc682bc9c619646891e9fa8c5e0d8e03",
+      "floorid": 1000,
+      "source_graphicname": 16013,
+      "coordinate_anchor": [
+        109,
+        63
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "ca9e9d7de85c51ef0abf32c022802881f45992ffb0c1585c5a22cf86ec47bf56",
+      "source_function_token": "npcgen_timeman",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/tman_1000_109_63",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "f2abb469faf28d6d7cc5d9562753a573d96ba1c64721fac2a3834fd03faf9b25"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 14,
+      "original_block_sha256": "d5fa8dbb95499cacf0e8d1773302761bd546ee33363b5fb1b91c3233033a7800",
+      "floorid": 1000,
+      "source_graphicname": 16016,
+      "coordinate_anchor": [
+        116,
+        66
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "4781f6b2a1586eeeda92722c09b2c9885d0f2c09e0a4de30b72f74c04b84286b",
+      "source_function_token": "npcgen_timeman",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/tman_1000_116_66",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "29d7908aa202439e54830b1c742e93f41facfcbf04c15f7343775da4a62c7a44"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 15,
+      "original_block_sha256": "8b9a7f553cc6d7d58849cd21689e973aa02b74de255d0434aef2cf1f7f2b55d7",
+      "floorid": 1000,
+      "source_graphicname": 16021,
+      "coordinate_anchor": [
+        82,
+        39
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "242be42baca943db19497315095981a908e485ab451e6e481a3637ea927c8e71",
+      "source_function_token": "npcgen_man",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/msg_1000_82_39",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "f3316fc83a7b95e871a8070bb9ce3154c45d7051216df77ff055f8e9fa8860f7"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 16,
+      "original_block_sha256": "c1b7441e40fd861a5a28bdcdcc2aae24315cf0913b518f0600eb9974dda52532",
+      "floorid": 1000,
+      "source_graphicname": 16019,
+      "coordinate_anchor": [
+        79,
+        37
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "b769e60345e468c73445134ca3e8ff48d982bbd456c8f3e8ea90053670fd3bda",
+      "source_function_token": "npcgen_man",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/msg_1000_79_37",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "76b34d79439f477cca1c271271e70054c5cdca6dbf4c2a81cfeea74b5417185a"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 17,
+      "original_block_sha256": "d8ce7e52269babaaef69fc5f11855114cfa2f23cf0796b0bd563ae1b457db732",
+      "floorid": 1000,
+      "source_graphicname": 16009,
+      "coordinate_anchor": [
+        128,
+        36
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "48d3a1b9fe293aa245ee935d45f4bd4a14d36bcb2c3b34bc64734f02678d978b",
+      "source_function_token": "npcgen_man",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/msg_1000_128_36",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "147fd7ad70d8fcc81a1cf3b525a3b5a248f1f1eabdcd54725f361a94ad42e46e"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 18,
+      "original_block_sha256": "28d65a35a12002424bcc92b77584fee9ea2cb160a80feae7069a4d923f21defa",
+      "floorid": 1000,
+      "source_graphicname": 16045,
+      "coordinate_anchor": [
+        106,
+        95
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "b85298e8f861ff8fc7d54ab43552e8c9892478eebf5aa04f764fb4ee13548bbd",
+      "source_function_token": "npcgen_man",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/msg_1000_106_95",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "413fa9d11db666baab19dd7a19185ddf5c6bb4f66ed2e3c5243e624ffdc3656d"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 19,
+      "original_block_sha256": "01094a0f2e8a96739567695f8766bb892434696f02cfb2aa3160320750c20b7a",
+      "floorid": 1000,
+      "source_graphicname": 16207,
+      "coordinate_anchor": [
+        97,
+        43
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "efdcb1dfb6e95368ce0f604915e928915db3733ea2e5da1057b687957cd58542",
+      "source_function_token": "npcgen_man",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/msg_1000_97_43",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "8b9370f1f866af9350ff2b32c009b7fa90c30d353d877713efb99b9db992cf68"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 20,
+      "original_block_sha256": "eb92acc10f6b05ea67fda3e6c60616cee0928f6667c4e14238570e596c8fb433",
+      "floorid": 1000,
+      "source_graphicname": 16207,
+      "coordinate_anchor": [
+        97,
+        46
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "598f3f61b918ecf7100dbbb751552ed4f3ddac157509857d566f0e1c7cbbf907",
+      "source_function_token": "npcgen_man",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/msg_1000_97_46",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "8b9370f1f866af9350ff2b32c009b7fa90c30d353d877713efb99b9db992cf68"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 21,
+      "original_block_sha256": "0e0c8a5425ab75c053b02a2845840641b13dbb46c3802dffb4ad77e5da478613",
+      "floorid": 1000,
+      "source_graphicname": 16202,
+      "coordinate_anchor": [
+        66,
+        128
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "8ea1f8b323dc9ea6274e26a6813d78e25c254616adc49976278c6359a6aa0119",
+      "source_function_token": "npcgen_man",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/msg_1000_66_128",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "d1ff288ba951bfacecd521fa6aedce60ce4d3a92f4bf871776f89f1c2576385c"
+        }
+      ],
+      "in_prior_O34_window": true
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 22,
+      "original_block_sha256": "10d6fbdfbeb1df88c25507a23268c4107eb1fef0a7f42c27cb3c6c78a3bfc0cd",
+      "floorid": 1000,
+      "source_graphicname": 16033,
+      "coordinate_anchor": [
+        74,
+        93
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "f1ade9aa673bc93bae260986a238b5054ff8676735c6b80dfdf17e10fbb07ef4",
+      "source_function_token": "npcgen_man",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/msg_1000_74_93",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "c1d376b35197ddc1c97e910d55668417765301a0d9bfe26670521a981919b203"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 23,
+      "original_block_sha256": "d9b68cf8deaa11399d93259fa0a22f764993a8163cc4e0015eac49eb5a3d145f",
+      "floorid": 1000,
+      "source_graphicname": 10062,
+      "coordinate_anchor": [
+        94,
+        93
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "a97046a3634b46e98a3767c49a0d880e6c939011a7f0b9c0daafb42acb0f5200",
+      "source_function_token": "npcgen_dengon",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/1000npc_m.create",
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "original_block_ordinal": 24,
+      "original_block_sha256": "814a3067a80387165f53a9af5cc702bb9977a0edb98cb6387db601721388459a",
+      "floorid": 1000,
+      "source_graphicname": 10062,
+      "coordinate_anchor": [
+        93,
+        66
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "a97046a3634b46e98a3767c49a0d880e6c939011a7f0b9c0daafb42acb0f5200",
+      "source_function_token": "npcgen_dengon",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/100warp.create",
+      "source_sha256": "d61d5ada11e28a2cd22603d071fe69396f6f02cf04769226e6826184cd59af60",
+      "original_block_ordinal": 4,
+      "original_block_sha256": "bb1a27837e11b0c1e3ec8ac1a4619685619eeeb5adff2b174864b9d5e236d708",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        49,
+        116
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": true
+    },
+    {
+      "source_file": "genout/100warp.create",
+      "source_sha256": "d61d5ada11e28a2cd22603d071fe69396f6f02cf04769226e6826184cd59af60",
+      "original_block_ordinal": 5,
+      "original_block_sha256": "56188ec645369d2d504baa079d391f4a4401fb5129957346fd6ea6d66e691aab",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        49,
+        117
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": true
+    },
+    {
+      "source_file": "genout/100warp.create",
+      "source_sha256": "d61d5ada11e28a2cd22603d071fe69396f6f02cf04769226e6826184cd59af60",
+      "original_block_ordinal": 6,
+      "original_block_sha256": "216f43d5028be35fff6c6ed3de022900ae43372d43b5ec176420a2de65223956",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        49,
+        118
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": true
+    },
+    {
+      "source_file": "genout/100warp.create",
+      "source_sha256": "d61d5ada11e28a2cd22603d071fe69396f6f02cf04769226e6826184cd59af60",
+      "original_block_ordinal": 7,
+      "original_block_sha256": "cc079608a0d2d6e952bd43507c8899ea2a40eacf1b7fc2048718210d06c45185",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        49,
+        119
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": true
+    },
+    {
+      "source_file": "genout/100warp.create",
+      "source_sha256": "d61d5ada11e28a2cd22603d071fe69396f6f02cf04769226e6826184cd59af60",
+      "original_block_ordinal": 13,
+      "original_block_sha256": "5fde0a545b25c5c8dc2f7aeeaf2c902a43b89a1287f883787075e36e1a205324",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        117,
+        112
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/100warp.create",
+      "source_sha256": "d61d5ada11e28a2cd22603d071fe69396f6f02cf04769226e6826184cd59af60",
+      "original_block_ordinal": 14,
+      "original_block_sha256": "f5e7a445f126da7b43ce8dbc94ea2f3e0e499234131fcd2ee41476ace60c6cf3",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        118,
+        112
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/100warp.create",
+      "source_sha256": "d61d5ada11e28a2cd22603d071fe69396f6f02cf04769226e6826184cd59af60",
+      "original_block_ordinal": 15,
+      "original_block_sha256": "5ced684734e1f7cb9fe9f59effa4cd2588cb7f93e4812588e0c6730804fb93a7",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        119,
+        112
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/100warp.create",
+      "source_sha256": "d61d5ada11e28a2cd22603d071fe69396f6f02cf04769226e6826184cd59af60",
+      "original_block_ordinal": 16,
+      "original_block_sha256": "c89d5d59854f3e7ba3d5c27e1e7778d79ea4a6408c918dce7a84121e67f37645",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        120,
+        112
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/100warp.create",
+      "source_sha256": "d61d5ada11e28a2cd22603d071fe69396f6f02cf04769226e6826184cd59af60",
+      "original_block_ordinal": 17,
+      "original_block_sha256": "fb0df2c7683467b50914d42ce6e86d1e2b084fa8409f31e7a1bfc581cbc1de8b",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        121,
+        112
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/chatkanban.create",
+      "source_sha256": "6f1263dd0c67f81f0848c0cb02212d29c7074ed02bfe1cb8329f8964017936b6",
+      "original_block_ordinal": 0,
+      "original_block_sha256": "be5e48ae2cde1958470352a4e1140a00be83551abb5a7f0527190994ad72cd18",
+      "floorid": 1000,
+      "source_graphicname": 10096,
+      "coordinate_anchor": [
+        111,
+        37
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "0072da457a093523a80caf31d81cd12098c58b2c5cbe940135d5337b5fdc7af8",
+      "source_function_token": "npcgen_signboard",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/signb_1000_111_37",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "1e5353402dca0dda56365414946db93dc66d3a696fd186263e0a97fe67ba12ce"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/duelroom.create",
+      "source_sha256": "4c47e9c320f9d3fe6616e6860d14d2681df1994bb8c4a849e5b6d93a38998a91",
+      "original_block_ordinal": 0,
+      "original_block_sha256": "64f8c5950960055f317ac18db041b2c56da63eca29c201dc54e11f3b0daa4fb9",
+      "floorid": 1000,
+      "source_graphicname": 16055,
+      "coordinate_anchor": [
+        56,
+        59
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "a09d147941a83217d55f561c50bf9a0e44a76743aa0b9a4aba78c2c37568b1c7",
+      "source_function_token": "npcgen_warpman",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/wpm_1000_56_59",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "9ebd7a48c3ab5e9b83f1e2d4b88b07ca623a42235f5b2e1867982119011f0cc9"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/oev2.create",
+      "source_sha256": "0b12db5f4fac9ad32094445cf3251244696b975f9841990f5948c8cc47f7aa10",
+      "original_block_ordinal": 0,
+      "original_block_sha256": "d3043780ac8e8a7222051f81df986176817482355e1d024b60b832a720630d44",
+      "floorid": 1000,
+      "source_graphicname": 10062,
+      "coordinate_anchor": [
+        127,
+        100
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "0072da457a093523a80caf31d81cd12098c58b2c5cbe940135d5337b5fdc7af8",
+      "source_function_token": "npcgen_signboard",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/signb_1000_127_100",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "a77800fdb1e1153463dcd0dbd9a689bc8ad490ffcdfc566a6ecb78c669e4c044"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/shop_m.create",
+      "source_sha256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+      "original_block_ordinal": 14,
+      "original_block_sha256": "952a3157a38840282ce7652fabebb0484e4c212ec6706095a7a2244e2ed890b8",
+      "floorid": 1000,
+      "source_graphicname": 10061,
+      "coordinate_anchor": [
+        52,
+        64
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "6808d6fdf8164b3d56e7ed2cfb7b9b047359c6dda0f44c85d2bc92e44ad7c258",
+      "source_function_token": "npcgen_signboard",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/signb_1000_52_64",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "00b71dc4a7601a2e922f694e1664f5539f61dd8d7d8e4b1eaa50e8f5f84a9d99"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/shop_m.create",
+      "source_sha256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+      "original_block_ordinal": 116,
+      "original_block_sha256": "4c885cabf0e700fb533b6be1e7e7df3ab89951c65a62154a6ec6c2fed554e488",
+      "floorid": 1000,
+      "source_graphicname": 16067,
+      "coordinate_anchor": [
+        64,
+        112
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "c87771f3360e02afb2c5280850422d9c3835c18e38aac2f4cccee88d31ba11aa",
+      "source_function_token": "npcgen_shop",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/ss_1000_64_112",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "15304ba66d5d37ccc4becdda944c0206189fdaaaec696ab193b07f1e6f4dfe72"
+        }
+      ],
+      "in_prior_O34_window": true
+    },
+    {
+      "source_file": "genout/shop_nuke1.create",
+      "source_sha256": "699aeb07c7f06741a528022c2597c523fccca3159094482a371dc77c968f347f",
+      "original_block_ordinal": 0,
+      "original_block_sha256": "e9e210f2fd1889958d895365cc74642c3bebd7540e0db5ee3fad1223b718f18a",
+      "floorid": 1000,
+      "source_graphicname": 16067,
+      "coordinate_anchor": [
+        94,
+        101
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "def0173ec2e72ea2c7ec872269b9ea0b2d634c92a2aeea96e3ef3e19a988ca85",
+      "source_function_token": "npcgen_shop",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/ss_1000_94_101",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "2f235c4a51a17b4ca6539604573cf05a08d7f3bbcfb598a99499a772c8b936e5"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/sp.create",
+      "source_sha256": "f2e779423b269b8df91fc2a208bf298cc1e7204c015f92e7287944e1a4281679",
+      "original_block_ordinal": 0,
+      "original_block_sha256": "56b9148c413ce235d7ebd5c747b1303e631fbcb8a25a16c26aaebf7002ec7b1c",
+      "floorid": 1000,
+      "source_graphicname": 10048,
+      "coordinate_anchor": [
+        94,
+        99
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "234ab8ca648a9d384c1cea2d533bfcf43dc13159bb219f1eb6180296a6be011e",
+      "source_function_token": "npcgen_savepoint",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "genout/sp_1000_94_99",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "37da20bdb3ecd6d2585eaba072baf4230b0ab37e58d782d3f35c07e0e49a6afb"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 0,
+      "original_block_sha256": "eef76bd779a9e20982f55328abce0ae9552d5d051976ae0a6a88ad2da52cb772",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        63,
+        99
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": true
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 2,
+      "original_block_sha256": "cd13c5ff6dff72089fc1b7eee4c11a7a712702c2b18464a72f4fe5c46a058986",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        63,
+        100
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": true
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 4,
+      "original_block_sha256": "985dccf8469c2742d16710cb30f8448dcdd71940324fd93b79e1c1ba2278a599",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        63,
+        98
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": true
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 5,
+      "original_block_sha256": "b0a9736edae318bc2311bd7158548258df65ec7e0399d39804d417a143853aa3",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        67,
+        108
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": true
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 7,
+      "original_block_sha256": "f7a3d103de551b828a88f0a12620e4fba2c728ab0e1a5cc4e0db7f482fdf212e",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        67,
+        109
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": true
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 9,
+      "original_block_sha256": "9b39abdaa686912a56b18a063fd0d9567a3fe5d638affa49ce490c288e0d8f2b",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        67,
+        107
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": true
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 10,
+      "original_block_sha256": "efff5a1745afb11f175627f1f95de29964e4bc136f66379c19f109aa149987ab",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        69,
+        72
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 12,
+      "original_block_sha256": "6d9250ac1f1a011dd6d529df59785f9a122246c8cbb440ac14e2c86369499651",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        68,
+        72
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 14,
+      "original_block_sha256": "c011335209ed44e6f96a12d3d3a1b9d8b3a17e5b7da9dc01bcdbe5d02bc300bf",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        54,
+        81
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 16,
+      "original_block_sha256": "527e6e04c8553e162f4bd55c6e36795923d97e3fe374e8bc95b1591262321ebd",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        53,
+        81
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 18,
+      "original_block_sha256": "054755219d267a446da050f8c076dcc47e118f4db4fff9beb90869be633c9d47",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        81,
+        66
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 20,
+      "original_block_sha256": "f01b796a39f0537ee66d7a3b0bc4a847c525d3e3cc68de9e2f856476da7a8a37",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        80,
+        66
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 22,
+      "original_block_sha256": "d5a5c0040de8c655a364fecc4ec77e0210c5c2434e9f89417ffd97d93941731d",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        98,
+        44
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 24,
+      "original_block_sha256": "07fb0ef2ca105187c8644d0290ebd48ec76af4c08d391e9195b27aab1d656a8e",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        98,
+        45
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 26,
+      "original_block_sha256": "bd84f4843f6fca9a42a62c043bebb759d0622a56e51cd4cdaa442d862074085e",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        106,
+        91
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 28,
+      "original_block_sha256": "10f46d6e5f6b668919d042c7761b853c23d07e538ad2795762dcc9fc3382ff09",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        106,
+        92
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 32,
+      "original_block_sha256": "94eceb95a6929b208d8f572089005d871ef93fbdf893bc32a44897495896270a",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        97,
+        110
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 34,
+      "original_block_sha256": "801c8cf53b54b75cf02a4683ddff4196123271777d90ea6278f8e203a9be747e",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        97,
+        111
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 40,
+      "original_block_sha256": "5390f7d6b2f886194846d05f62ad84fc2ef10ef10a58c7079b9a31bae4ace584",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        63,
+        117
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": true
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 43,
+      "original_block_sha256": "59ef7ee154b145712e7253efa980d98560e9bd2fb168762bc1b8c4528f4f4e82",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        63,
+        118
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": true
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 46,
+      "original_block_sha256": "60e333fe2ec59ad8c18073d2ee1434f9fe64455f6bbb68e340b5ca8adb44c85d",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        112,
+        37
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "genout/warp_y.create",
+      "source_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "original_block_ordinal": 48,
+      "original_block_sha256": "4088d233284de8b042fa17e4daa0ccb36b4162f31630299aab223f1f3d2037fb",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        113,
+        37
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "my/tiancai/transfer.create",
+      "source_sha256": "6bec134cb0a67ca9ee96094a615a5e328a8759bbbb3bd65efe18daf8b07566e3",
+      "original_block_ordinal": 0,
+      "original_block_sha256": "1845ca05b5d4353daa5341790a4114237ee899bcd453354c67f40d5dc5bb4569",
+      "floorid": 1000,
+      "source_graphicname": 16130,
+      "coordinate_anchor": [
+        94,
+        102
+      ],
+      "source_anchor_kind": "borncenter_verified_direct_original_20261104",
+      "original_name_sha256": "91e3169bf279395d550cccf8283266c722d3bc684746a0353ec057fc2b7c3243",
+      "source_function_token": "transman",
+      "template_qualifier": "SAME_DIRECTORY_EXACT_TOKEN",
+      "source_references": [
+        {
+          "path": "my/tiancai/transfer.arg",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "8c9c380f91aa7a7b515b0849ac9668986060a784dc2511863c71ce767c3ddefd"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "poru/dragon_warp.create",
+      "source_sha256": "9997543950ad1eacc59640ac8f4cf4c8456278709e5cf2249eff922cb02cfd59",
+      "original_block_ordinal": 31,
+      "original_block_sha256": "95bdd2940c7a360a6e959ac452b83c0be7ca5a4137c201f42631f9f892a9d50c",
+      "floorid": 1000,
+      "source_graphicname": null,
+      "coordinate_anchor": [
+        79,
+        112
+      ],
+      "source_anchor_kind": "borncenter",
+      "original_name_sha256": null,
+      "source_function_token": "npcgen_warp",
+      "template_qualifier": "SAME_ARCHIVE_UNIQUE_EXACT_TOKEN_OTHER_DIRECTORY",
+      "source_references": [],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "poru/samugiru01.create",
+      "source_sha256": "27cc9a708f414cd0ead2f3a294124c66347114917ac72c456efb4c6370d2466f",
+      "original_block_ordinal": 0,
+      "original_block_sha256": "54d8c5447fab9a1428589e44e3644387a4676a98f2dfbc25a30da8f14d012733",
+      "floorid": 1000,
+      "source_graphicname": 16039,
+      "coordinate_anchor": [
+        93,
+        72
+      ],
+      "source_anchor_kind": "borncenter",
+      "original_name_sha256": "4781f6b2a1586eeeda92722c09b2c9885d0f2c09e0a4de30b72f74c04b84286b",
+      "source_function_token": "npcgen_man",
+      "template_qualifier": "SAME_ARCHIVE_UNIQUE_EXACT_TOKEN_OTHER_DIRECTORY",
+      "source_references": [
+        {
+          "path": "poru/samugiru02",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "0f9483ee77e3f77869e820cdaf7fde48b349674fdb57dcf3b5086f0aec5bba37"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "poru/samugiru01.create",
+      "source_sha256": "27cc9a708f414cd0ead2f3a294124c66347114917ac72c456efb4c6370d2466f",
+      "original_block_ordinal": 1,
+      "original_block_sha256": "0395b05d4d4a5d34737728785a8f557ef898f3f8f880576cd607bf44cca17065",
+      "floorid": 1000,
+      "source_graphicname": 16028,
+      "coordinate_anchor": [
+        97,
+        32
+      ],
+      "source_anchor_kind": "borncenter",
+      "original_name_sha256": "33f32a8a032808bdf43a66ac012bb7b143a7bf72793eb36943db5161aacd6b1f",
+      "source_function_token": "npcgen_man",
+      "template_qualifier": "SAME_ARCHIVE_UNIQUE_EXACT_TOKEN_OTHER_DIRECTORY",
+      "source_references": [
+        {
+          "path": "poru/samugiru2",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "88652068e44b5fcd644bdb9f0808f5a6bcc98b8728d5d40040019c6453237d60"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "poru/samugiru01.create",
+      "source_sha256": "27cc9a708f414cd0ead2f3a294124c66347114917ac72c456efb4c6370d2466f",
+      "original_block_ordinal": 2,
+      "original_block_sha256": "40ceb45ad4da7f1928b58e34740874d9edc823de9bbfe1963b32ac22703b683a",
+      "floorid": 1000,
+      "source_graphicname": 16019,
+      "coordinate_anchor": [
+        50,
+        106
+      ],
+      "source_anchor_kind": "borncenter",
+      "original_name_sha256": "4781f6b2a1586eeeda92722c09b2c9885d0f2c09e0a4de30b72f74c04b84286b",
+      "source_function_token": "npcgen_man",
+      "template_qualifier": "SAME_ARCHIVE_UNIQUE_EXACT_TOKEN_OTHER_DIRECTORY",
+      "source_references": [
+        {
+          "path": "poru/samugiru03",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "85c705d5bbd1f6f2697d0990525d539ddedb01eff76e5a0e45bd98afb57d851d"
+        }
+      ],
+      "in_prior_O34_window": true
+    },
+    {
+      "source_file": "poru/samugiru_grandfather.create",
+      "source_sha256": "a94aae32b84f120655fb1bbb806886aad51583206c259dd531ff29ef690aaf91",
+      "original_block_ordinal": 0,
+      "original_block_sha256": "2dc4b23ce9d163c98e8316f17aa8d0ccd7f23ca01ad154725ddb642c409179d7",
+      "floorid": 1000,
+      "source_graphicname": 16001,
+      "coordinate_anchor": [
+        72,
+        48
+      ],
+      "source_anchor_kind": "borncenter",
+      "original_name_sha256": "31ce27889822184f94f9476077a4e9511c5179d2ce462cf83188926644a27f8e",
+      "source_function_token": "changeevent",
+      "template_qualifier": "SAME_ARCHIVE_UNIQUE_EXACT_TOKEN_OTHER_DIRECTORY",
+      "source_references": [
+        {
+          "path": "poru/samugiru04",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "23c647c7613284fa5e6a717a08a16eaa70fa754e8d418bbd1acd950aebd52593"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "poru/samugiru_grandfather.create",
+      "source_sha256": "a94aae32b84f120655fb1bbb806886aad51583206c259dd531ff29ef690aaf91",
+      "original_block_ordinal": 1,
+      "original_block_sha256": "025acceff32151ce3391de5330058bc2a6c70b6180f16be6f584f49afb090aba",
+      "floorid": 1000,
+      "source_graphicname": 100388,
+      "coordinate_anchor": [
+        71,
+        48
+      ],
+      "source_anchor_kind": "borncenter",
+      "original_name_sha256": "83ccb6a0789d318bea296061ac8f5d8b74aa15dbcd87d2d0acf2c9e52b649bd2",
+      "source_function_token": "npcgen_warpman",
+      "template_qualifier": "SAME_ARCHIVE_UNIQUE_EXACT_TOKEN_OTHER_DIRECTORY",
+      "source_references": [
+        {
+          "path": "poru/wpm_500_470_470",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "0d68d8be4666a80073eadc9385e429c0e7a1e3aeaa29a1e71dd7f7be53acfa28"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "sa60/newbie/newbie.create",
+      "source_sha256": "761dc3d1ed885fb76b22af446331e5a0db6cf3e59a27cf2ab136a62a88d81d0b",
+      "original_block_ordinal": 0,
+      "original_block_sha256": "3445cfae9816025c24ce9ffbb609bb83f3dff5fabd6b7e60b5ce7e6f1a63a32a",
+      "floorid": 1000,
+      "source_graphicname": 16496,
+      "coordinate_anchor": [
+        48,
+        62
+      ],
+      "source_anchor_kind": "borncenter_verified_direct_original_20261104",
+      "original_name_sha256": "0c37c7f1d42c1ea8116e6853ad4a12e70e8b06b7c946531332cf16c44bdc7648",
+      "source_function_token": "changeevent",
+      "template_qualifier": "SAME_ARCHIVE_UNIQUE_EXACT_TOKEN_OTHER_DIRECTORY",
+      "source_references": [
+        {
+          "path": "sa60/newbie/fighter",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "5cba22d6c22387b1b28576ab09d59989c3068d44c82e964da753caf4f9252289"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "sainasu/event/event02.create",
+      "source_sha256": "2b15884736a19d06caffa32e335c3604e5f8593c8ea051d2040f0c5d3b52e1e4",
+      "original_block_ordinal": 1,
+      "original_block_sha256": "7fc4ff24630eb7793095dac6f04dbcd1766906afc57b315ca819cf5709f77f9b",
+      "floorid": 1000,
+      "source_graphicname": 16030,
+      "coordinate_anchor": [
+        57,
+        124
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "0866acfac6dcff22cb820ee9b901b773ec4ac6eff9b1d0079cbe3fe63c92dfe6",
+      "source_function_token": "changeevent",
+      "template_qualifier": "SAME_ARCHIVE_UNIQUE_EXACT_TOKEN_OTHER_DIRECTORY",
+      "source_references": [
+        {
+          "path": "sainasu/event/event02_2",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "eb3f9a9c9bbf1776de7533f57c529c1948c2cc8c1fb22945c49d61950f153e9b"
+        }
+      ],
+      "in_prior_O34_window": true
+    },
+    {
+      "source_file": "sainasu/event/oev2.create",
+      "source_sha256": "aa970655e6123d050b2b3007f8b24135a5ec9380466db3f55e458e67bdb456b4",
+      "original_block_ordinal": 0,
+      "original_block_sha256": "14c1b45715b6187cbc99154bdebf7a838a4282cf7fd743972e2eb636885e4f6a",
+      "floorid": 1000,
+      "source_graphicname": 16027,
+      "coordinate_anchor": [
+        33,
+        56
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "4c7480ff3ff002b3a3e5572c6f56bcd685926b7846f2c04caf77aa7a39d10039",
+      "source_function_token": "changeevent",
+      "template_qualifier": "SAME_ARCHIVE_UNIQUE_EXACT_TOKEN_OTHER_DIRECTORY",
+      "source_references": [
+        {
+          "path": "sainasu/event/oev_0cd",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "dcac8cfba36107d278716c1da4835d4fdac580516a8fc3883528f0639231bc69"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "sainasu/event/oev2.create",
+      "source_sha256": "aa970655e6123d050b2b3007f8b24135a5ec9380466db3f55e458e67bdb456b4",
+      "original_block_ordinal": 1,
+      "original_block_sha256": "03c64e096f4090d9b819a368a6b1dbad7fbf1ed7ad12376b5f2ba4fe837e5159",
+      "floorid": 1000,
+      "source_graphicname": 16067,
+      "coordinate_anchor": [
+        126,
+        99
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "88a9e2f10a0139a333f102892b7d6898dae8865dd423fd0e4d17e2401da11fb1",
+      "source_function_token": "changeevent",
+      "template_qualifier": "SAME_ARCHIVE_UNIQUE_EXACT_TOKEN_OTHER_DIRECTORY",
+      "source_references": [
+        {
+          "path": "sainasu/event/oev_1c",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "8530af2810ead0878e527c3005fee622e228ef6c5bb730e3c4955c5ee1d8b0c1"
+        }
+      ],
+      "in_prior_O34_window": false
+    },
+    {
+      "source_file": "sainasu/event/oev2.create",
+      "source_sha256": "aa970655e6123d050b2b3007f8b24135a5ec9380466db3f55e458e67bdb456b4",
+      "original_block_ordinal": 25,
+      "original_block_sha256": "4fc0f0d92c099b87f60d235b4a31db9725258fdf032b5dae8939730313fd997d",
+      "floorid": 1000,
+      "source_graphicname": 16027,
+      "coordinate_anchor": [
+        108,
+        28
+      ],
+      "source_anchor_kind": "borncorner",
+      "original_name_sha256": "996442f92d8f75e49f344ceee6d91fb94495fae63ed309a55d59de643bd952af",
+      "source_function_token": "changeevent",
+      "template_qualifier": "SAME_ARCHIVE_UNIQUE_EXACT_TOKEN_OTHER_DIRECTORY",
+      "source_references": [
+        {
+          "path": "sainasu/event/oev_edc",
+          "qualification": "EXACT_SAME_NPC_SUBTREE_PATH",
+          "sha256": "a1891aef372be0012df9f830560f513c41e8334a62ff31f26b2da0124632f037"
+        }
+      ],
+      "in_prior_O34_window": false
+    }
+  ],
+  "source_evidence_limits": {
+    "ORIGINAL_TW1_OR_JSS1999_SAME_BUILD_NPC": false,
+    "ORIGINAL_CN182_SAME_DEPLOYMENT": false,
+    "NATIVE_NPC_ACTUAL_SPAWN": false,
+    "NATIVE_DIALOGUE_TRIGGER": false,
+    "ORIGINAL_GRAPHIC_PIXEL_BINDING_ALL": false,
+    "NATIVE_WALK_COLLISION": false,
+    "ORIGINAL_CLIENT_WORLD_ENTERED": false,
+    "MODERN_VIEWER_IS_OLD_CLIENT": false
+  },
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "STAGE-A-OFFLINE-WORLD-CONTENT-03: seek next material original pixel/behavior content connection in offline modules; don't repeat the 1000 atlas or MMO networking."
+}
