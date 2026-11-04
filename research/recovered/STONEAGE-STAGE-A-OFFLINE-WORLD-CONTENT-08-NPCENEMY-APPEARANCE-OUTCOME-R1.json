@@ -1,0 +1,136 @@
+{
+  "schema": "STONEAGE_STAGE_A_WORLD08_NPCENEMY_SOURCE_APPEARANCE_OUTCOME_R1",
+  "recorded_on": "2026-11-04",
+  "archived_source": {
+    "file": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-09-ORIGINAL-NPCENEMY-ROSTER-BRIDGE-R1.json",
+    "git_blob_sha": "3d827b98d00c3caa6e779f34a36d28bd70945b75",
+    "preserved_parent_rar_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "provenance": "LATER_COMMUNITY_MIXED25_ARCHIVE_NOT_AUTHENTICATED_SAME_DEPLOYMENT"
+  },
+  "pinned_code": {
+    "repository": "pimpcapital/longzoro-sa",
+    "commit": "57b14e2bb373ba851c14db28a239273e4a8831bb",
+    "path": "gmsv/src/npc/npc_npcenemy.c",
+    "git_blob_sha": "45c95d9df8b1e3e9d41443ca12f6ac8f4c105fc4",
+    "provenance": "LATER_COMMUNITY_SOURCE_SEPARATE_FROM_ARCHIVED_MIXED25",
+    "lines": {
+      "init_enemy_id_resolution": [
+        83,
+        104
+      ],
+      "init_gym_appearance": [
+        114,
+        122
+      ],
+      "init_dieact_warp_and_onebattle": [
+        123,
+        184
+      ],
+      "encounter_eligibility": [
+        216,
+        350
+      ],
+      "battle_entry_and_win_callback": [
+        557,
+        595
+      ],
+      "win_action": [
+        416,
+        529
+      ],
+      "revival_loop": [
+        532,
+        554
+      ]
+    }
+  },
+  "original_create_derived_counts": {
+    "create_refs": 279,
+    "unique_arg_files": 260,
+    "gym_positive_create_refs": 200,
+    "gym_absent_create_refs": 79,
+    "gym_levels_min": 1,
+    "gym_levels_max": 100,
+    "distinct_positive_gym_levels": 100,
+    "create_refs_per_positive_gym_level": 2,
+    "dieact_one_create_refs": 250,
+    "dieact_zero_create_refs": 29,
+    "entype_two_create_refs": 279,
+    "onebattle_one_create_refs": 10,
+    "onebattle_zero_create_refs": 13,
+    "onebattle_absent_create_refs": 256,
+    "NEWNPCENEMY_literal_marker_refs": 2,
+    "dieact_one_with_missing_static_warp_triple": 0,
+    "original_enemy_SPR_number_candidates": 117,
+    "new_original_pixel_decodes": 0
+  },
+  "original_NEWNPCENEMY_marker_witnesses": [
+    {
+      "arg_path": "king/event69_13.arg",
+      "arg_sha256": "b95c52bf72e88ddd8614b3dba274896416081c461e5191d3b6f2fa0674d4b742",
+      "create_path": "king/event69_alpha.create",
+      "create_block_ordinal": 10,
+      "raw_dieact": 1,
+      "raw_warp_triple": [
+        30619,
+        19,
+        22
+      ]
+    },
+    {
+      "arg_path": "my/zhuansheng/zhuans5.arg",
+      "arg_sha256": "c0fa785796dde98643dad733e9602378ccb5cb906362551dc682d7939f89eef0",
+      "create_path": "my/zhuansheng/zhuans.create",
+      "create_block_ordinal": 4,
+      "raw_dieact": 1,
+      "raw_warp_triple": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "static_source_rules": [
+    {
+      "id": "gym_avatar_override",
+      "meaning": "gym>0 selects a random symbolic map NPC body from gymbody[48], assigns both base image fields, and sets NPC level to gym",
+      "certainty": "PINNED_LATER_C_STATIC_ONLY"
+    },
+    {
+      "id": "gym_enemy_battle_mode",
+      "meaning": "gym>0 uses BATTLE_CreateVsEnemy mode 2, other NPCEnemy uses mode 1; these battle identities are not map-body identity",
+      "certainty": "PINNED_LATER_C_STATIC_ONLY"
+    },
+    {
+      "id": "dieact_zero",
+      "meaning": "win callback branches into hiding the NPC base image and scheduling NPCEnemyLoop revival; default revival parameter is 120 when time is -1",
+      "certainty": "PINNED_LATER_C_STATIC_ONLY"
+    },
+    {
+      "id": "dieact_one",
+      "meaning": "win callback branches into map warp; _NEW_WARPMAN and NEWNPCENEMY may change destination/eligibility, and no actual win/warp has been executed",
+      "certainty": "PINNED_LATER_C_STATIC_ONLY"
+    },
+    {
+      "id": "onebattle",
+      "meaning": "when onebattle==1, handler checks existing BattleArray[].createindex for this NPC before starting another encounter",
+      "certainty": "PINNED_LATER_C_STATIC_ONLY"
+    }
+  ],
+  "bounds": {
+    "original_mixed25_client_and_server_not_verified_same_deployment": true,
+    "source_code_repo_not_proven_same_binary_as_mixed25": true,
+    "build_macros_and_actual_runtime_behavior_not_proven": true,
+    "early_official_JSS1999_TW10_CN182_not_proven": true,
+    "original_enemy_SPR_numbers_do_not_identify_gym_map_body_sprites": true,
+    "actual_RAND_selection_and_battle_result_not_executed": true,
+    "original_proprietary_art_and_server_files_not_published": true
+  },
+  "historical_CURRENT_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "WORLD09: seek a different original-source-bearing item/quest/mechanics content relation; only real verified inputs and bounded scope, not GETPET/NPCEnemy recursion or MMO services."
+}

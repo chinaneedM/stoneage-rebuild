@@ -1,0 +1,33 @@
+name: Verify Stage A WORLD08 NPCEnemy appearance versus battle semantics
+on:
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-08-NPCENEMY-APPEARANCE-OUTCOME-R1.json'
+      - 'docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-08-NPCENEMY-APPEARANCE-OUTCOME-20261104.md'
+      - 'tests/test_stoneage_stage_a_offline_world08_npcenemy_appearance.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world08.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-08-NPCENEMY-APPEARANCE-OUTCOME-R1.json'
+      - 'docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-08-NPCENEMY-APPEARANCE-OUTCOME-20261104.md'
+      - 'tests/test_stoneage_stage_a_offline_world08_npcenemy_appearance.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world08.yml'
+jobs:
+  verify-source-and-original-archive-join:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Retrieve exactly one immutable later-community C original
+        run: |
+          set -eu
+          curl --fail --location --silent --show-error --retry 3 \
+            'https://raw.githubusercontent.com/pimpcapital/longzoro-sa/57b14e2bb373ba851c14db28a239273e4a8831bb/gmsv/src/npc/npc_npcenemy.c' \
+            -o /tmp/stoneage-world08-npc_npcenemy.c
+      - name: Reconcile 279 archived original CREATE refs and fixed C source
+        env:
+          STONEAGE_WORLD08_PINNED_NPCENEMY: /tmp/stoneage-world08-npc_npcenemy.c
+        run: python -m unittest -v tests.test_stoneage_stage_a_offline_world08_npcenemy_appearance
