@@ -1,0 +1,3376 @@
+{
+  "schema": "stoneage.stage_a_mixed25_independent_rar_recovery.r1",
+  "date": "2026-11-04",
+  "starting_main": "b0e4bed4f182b0ee00e30fd59a3aed95d586eedc",
+  "starting_tree": "b578b89eaa755159ccc23ed9547f9f551e67da64",
+  "preserved_current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "source_scope": "COMMUNITY_MIXED25_ARCHIVE_SUBTREES_NOT_AUTHENTICATED_OFFICIAL_DEPLOYMENT",
+  "archive": {
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "RAR_member_headers": 7952
+  },
+  "decoders": [
+    {
+      "name": "7-Zip",
+      "version": "26.05",
+      "source": "https://github.com/ip7z/7zip",
+      "revision": "b88c6bc09339de32f7d18bbab900686b244f42ba"
+    },
+    {
+      "name": "UnRAR",
+      "version": "7.30 beta 1",
+      "source": "https://github.com/pmachapman/unrar",
+      "revision": "160dcb5c9c1babbbdd3f0f1fc78cf48a7f8150cf"
+    }
+  ],
+  "verification": {
+    "selected_members_byte_equal": 3060,
+    "selected_members_RAR_CRC_equal": 3060,
+    "selected_total_uncompressed_bytes": 869561234,
+    "previous_MAP01_success_rows_rechecked": 2990,
+    "previous_MAP01_success_rows_outside_scope": 0,
+    "recovered_MAP01_rows": 63,
+    "selected_member_metadata_manifest_sha256": "956ebf96fa27e3aa606bcf9be6520a4f4c84b9a6eb844378a33fd8a23a25a110"
+  },
+  "recovered_MAP01_failures": [
+    {
+      "group": 1,
+      "name": "100.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 1245184,
+      "bytes": 1280008,
+      "crc32": "6de87ec3",
+      "sha256": "b2f49452634df3635cc9059f2df0c8ce07e8498221d66cbe0ca95d0f94fc9060",
+      "dimensions": [
+        800,
+        800
+      ]
+    },
+    {
+      "group": 1,
+      "name": "117.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 65536,
+      "bytes": 120008,
+      "crc32": "1e65a545",
+      "sha256": "787e97beae1e8f36b64559cf10b977e040b5486e4dd11eb422894853c5145e7b",
+      "dimensions": [
+        300,
+        200
+      ]
+    },
+    {
+      "group": 1,
+      "name": "122.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 65536,
+      "bytes": 120008,
+      "crc32": "95360cc6",
+      "sha256": "62147e4bc7aea27879a27eea06533a420728d1fd3928e1eadc4bc56049d9cce6",
+      "dimensions": [
+        300,
+        200
+      ]
+    },
+    {
+      "group": 1,
+      "name": "200.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 1900544,
+      "bytes": 1920008,
+      "crc32": "9f2db89a",
+      "sha256": "c28ea8f2f82714a7c6df22032eb058d83a2f1fd09890a339059c9c1df4e5c1c5",
+      "dimensions": [
+        800,
+        1200
+      ]
+    },
+    {
+      "group": 1,
+      "name": "300.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 655360,
+      "bytes": 720008,
+      "crc32": "8c5def79",
+      "sha256": "f810a0200b5eb81b417a1aa6eaa62f4bcd5adfc39007296a4446a8aed3355191",
+      "dimensions": [
+        600,
+        600
+      ]
+    },
+    {
+      "group": 1,
+      "name": "3000.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 0,
+      "bytes": 45008,
+      "crc32": "592183e7",
+      "sha256": "e5b757e80681c2182f51818836f23b2104488e6442dec134dd40cbea53cb67a3",
+      "dimensions": [
+        150,
+        150
+      ]
+    },
+    {
+      "group": 1,
+      "name": "500.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 1245184,
+      "bytes": 1280008,
+      "crc32": "e31c2002",
+      "sha256": "d230afcaeff700800acdcb471bbc6f3bed1f70d31de3aa5e2ebcaa1140b0be3f",
+      "dimensions": [
+        800,
+        800
+      ]
+    },
+    {
+      "group": 1,
+      "name": "5540.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 1245184,
+      "bytes": 1280008,
+      "crc32": "fae55779",
+      "sha256": "31205050049786196973f731bde2ffb0c5802153320bde8e1532a9679c2b2d8b",
+      "dimensions": [
+        800,
+        800
+      ]
+    },
+    {
+      "group": 1,
+      "name": "700.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 262144,
+      "bytes": 320008,
+      "crc32": "55ba9d05",
+      "sha256": "4a0f170d944755f295a737ca65427fa57ac880f9469d343f328c601a41849df4",
+      "dimensions": [
+        400,
+        400
+      ]
+    },
+    {
+      "group": 1,
+      "name": "707.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 262144,
+      "bytes": 320008,
+      "crc32": "1057a470",
+      "sha256": "a81176a2e4da21e29133db13f8102b8edc49f94493bfe0f71bc8c8fe8bcf6402",
+      "dimensions": [
+        400,
+        400
+      ]
+    },
+    {
+      "group": 1,
+      "name": "708.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 262144,
+      "bytes": 320008,
+      "crc32": "d5f5d165",
+      "sha256": "3cf5eb5355f27320e93795f666ca0a857af30ceab5f8dbe6e85927a9520db77f",
+      "dimensions": [
+        400,
+        400
+      ]
+    },
+    {
+      "group": 1,
+      "name": "7400.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 0,
+      "bytes": 51208,
+      "crc32": "99624ec0",
+      "sha256": "e17805bf4209ac06effb85a4b1efd87beb58080efac4a2b2efad0bbd65938911",
+      "dimensions": [
+        160,
+        160
+      ]
+    },
+    {
+      "group": 0,
+      "name": "100.DAT",
+      "prior_libarchive_error": "Parsing filters is unsupported.",
+      "prior_libarchive_emitted_bytes": 131072,
+      "bytes": 3840008,
+      "crc32": "aa7a58ad",
+      "sha256": "2456297e09861360f0fcfe48cf6ea18ef613b6b9d69d165c1b1844977bb6bfbf",
+      "dimensions": [
+        800,
+        800
+      ]
+    },
+    {
+      "group": 0,
+      "name": "100.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 1245184,
+      "bytes": 1280008,
+      "crc32": "f7774f08",
+      "sha256": "1fe6bfd40126caccb677090573711df6dc9364a94059472a5365f430d2436d8b",
+      "dimensions": [
+        800,
+        800
+      ]
+    },
+    {
+      "group": 0,
+      "name": "1000.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 131072,
+      "bytes": 153608,
+      "crc32": "cd608784",
+      "sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+      "dimensions": [
+        160,
+        160
+      ]
+    },
+    {
+      "group": 0,
+      "name": "10920.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 0,
+      "bytes": 60008,
+      "crc32": "3dd75cd0",
+      "sha256": "5286f4229796c4adc7e3b1ca6acec7e102939842b504470b624f75214485bc50",
+      "dimensions": [
+        100,
+        100
+      ]
+    },
+    {
+      "group": 0,
+      "name": "1100.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 65536,
+      "bytes": 117008,
+      "crc32": "639097d7",
+      "sha256": "50e01ffb3cdb66560543f01d4b371f9f160f57610fc1379b541679b3044f9831",
+      "dimensions": [
+        130,
+        150
+      ]
+    },
+    {
+      "group": 0,
+      "name": "117.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 65536,
+      "bytes": 120008,
+      "crc32": "1e65a545",
+      "sha256": "787e97beae1e8f36b64559cf10b977e040b5486e4dd11eb422894853c5145e7b",
+      "dimensions": [
+        300,
+        200
+      ]
+    },
+    {
+      "group": 0,
+      "name": "119.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 196608,
+      "bytes": 240008,
+      "crc32": "8ceff6ed",
+      "sha256": "b2b68446a3b1409c04aabb780d4f8b220fbc3d4f833aa10ad43ac4424984ad02",
+      "dimensions": [
+        200,
+        200
+      ]
+    },
+    {
+      "group": 0,
+      "name": "122.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 65536,
+      "bytes": 120008,
+      "crc32": "95360cc6",
+      "sha256": "62147e4bc7aea27879a27eea06533a420728d1fd3928e1eadc4bc56049d9cce6",
+      "dimensions": [
+        300,
+        200
+      ]
+    },
+    {
+      "group": 0,
+      "name": "1300.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 0,
+      "bytes": 60008,
+      "crc32": "940ba652",
+      "sha256": "97448b7e2478fdb8469b09b5f05a2b0b908174d0eb4bec066f7d526fa052af20",
+      "dimensions": [
+        100,
+        100
+      ]
+    },
+    {
+      "group": 0,
+      "name": "200.dat",
+      "prior_libarchive_error": "Prefix found",
+      "prior_libarchive_emitted_bytes": 2424832,
+      "bytes": 5760008,
+      "crc32": "8315f313",
+      "sha256": "c578faf5cab7bc5033accdb7ec98dcf4f0e8945910f5815f25e75dcff9d83f3d",
+      "dimensions": [
+        800,
+        1200
+      ]
+    },
+    {
+      "group": 0,
+      "name": "200.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 1900544,
+      "bytes": 1920008,
+      "crc32": "85ae7b2d",
+      "sha256": "10da5cf6b909e1d871552adba5f9f39692dad3307a7427a22833c5f6b769b528",
+      "dimensions": [
+        800,
+        1200
+      ]
+    },
+    {
+      "group": 0,
+      "name": "21201.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 65536,
+      "bytes": 86408,
+      "crc32": "3ceba1f0",
+      "sha256": "3cdecaa60f18fbfeec12dbfb895af1be5bc078e4988216c07e0b73c8eb12697d",
+      "dimensions": [
+        120,
+        120
+      ]
+    },
+    {
+      "group": 0,
+      "name": "300.DAT",
+      "prior_libarchive_error": "Parsing filters is unsupported.",
+      "prior_libarchive_emitted_bytes": 262144,
+      "bytes": 2160008,
+      "crc32": "94b110b9",
+      "sha256": "70f0012c28621b20a6610105cacbf49653a0b03e49a979eb176d13ca5675720d",
+      "dimensions": [
+        600,
+        600
+      ]
+    },
+    {
+      "group": 0,
+      "name": "300.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 655360,
+      "bytes": 720008,
+      "crc32": "8c5def79",
+      "sha256": "f810a0200b5eb81b417a1aa6eaa62f4bcd5adfc39007296a4446a8aed3355191",
+      "dimensions": [
+        600,
+        600
+      ]
+    },
+    {
+      "group": 0,
+      "name": "3000.dat",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 131072,
+      "bytes": 135008,
+      "crc32": "8a628975",
+      "sha256": "3337fb536f3e0938527ac3f6a650427424c20e3a824aae0eb17192fdd177013e",
+      "dimensions": [
+        150,
+        150
+      ]
+    },
+    {
+      "group": 0,
+      "name": "3000.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 0,
+      "bytes": 45008,
+      "crc32": "592183e7",
+      "sha256": "e5b757e80681c2182f51818836f23b2104488e6442dec134dd40cbea53cb67a3",
+      "dimensions": [
+        150,
+        150
+      ]
+    },
+    {
+      "group": 0,
+      "name": "3021.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 327680,
+      "bytes": 351656,
+      "crc32": "c0d8a645",
+      "sha256": "2ea145bcc356988607e243140ba11e505b7a8a9997e8d390a5bfae993c886dd8",
+      "dimensions": [
+        407,
+        144
+      ]
+    },
+    {
+      "group": 0,
+      "name": "3400.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 65536,
+      "bytes": 86408,
+      "crc32": "7e5f34db",
+      "sha256": "a3c6918ba21c909e6312329c936615aa6b6d8800d7967ed85a2146d55ca263c4",
+      "dimensions": [
+        120,
+        120
+      ]
+    },
+    {
+      "group": 0,
+      "name": "400.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 131072,
+      "bytes": 134108,
+      "crc32": "cb701507",
+      "sha256": "f579e8605d7dba878de3bf68279e8b98a8f36c0d3ec53e1350ea65281bcb88b4",
+      "dimensions": [
+        150,
+        149
+      ]
+    },
+    {
+      "group": 0,
+      "name": "500.DAT",
+      "prior_libarchive_error": "Internal error extracting RAR file",
+      "prior_libarchive_emitted_bytes": 720896,
+      "bytes": 3840008,
+      "crc32": "0a63cedb",
+      "sha256": "19888b5456d4124bd03eddbc30cf30b050286a8761d1477c324fb3435ef4b09c",
+      "dimensions": [
+        800,
+        800
+      ]
+    },
+    {
+      "group": 0,
+      "name": "500.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 1245184,
+      "bytes": 1280008,
+      "crc32": "3699002c",
+      "sha256": "d3883ada7c27b9658b310f89bb240d2e2faee84e7b8ed9f66bc29f87cc8ac080",
+      "dimensions": [
+        800,
+        800
+      ]
+    },
+    {
+      "group": 0,
+      "name": "5000.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 0,
+      "bytes": 48608,
+      "crc32": "fe4de144",
+      "sha256": "67dd5481ff91f27fc9e44dfeeb2b638c81e911bb3ec6a49d4b67ff5303d4d392",
+      "dimensions": [
+        90,
+        90
+      ]
+    },
+    {
+      "group": 0,
+      "name": "5540.DAT",
+      "prior_libarchive_error": "Parsing filters is unsupported.",
+      "prior_libarchive_emitted_bytes": 655360,
+      "bytes": 3840008,
+      "crc32": "016a4f19",
+      "sha256": "eafd0c5eb8a56da2ec1d707ada7250fdc0474426da411e8ab0316508c4b6c256",
+      "dimensions": [
+        800,
+        800
+      ]
+    },
+    {
+      "group": 0,
+      "name": "5540.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 1245184,
+      "bytes": 1280008,
+      "crc32": "d097e338",
+      "sha256": "ca12ad8b3f67cbd5ba4ed60fb449dd8c3aa7a6f5d731594f727e7e562880a50e",
+      "dimensions": [
+        800,
+        800
+      ]
+    },
+    {
+      "group": 0,
+      "name": "5561.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 196608,
+      "bytes": 240008,
+      "crc32": "2c4cbba5",
+      "sha256": "a19eb7e0d8be7a0b966a96b8c8ba2679d3ef25b7c8678c4537cc0493ddb07966",
+      "dimensions": [
+        200,
+        200
+      ]
+    },
+    {
+      "group": 0,
+      "name": "5581.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 131072,
+      "bytes": 135008,
+      "crc32": "bd907af9",
+      "sha256": "ce534e1ce05eee0273015f8ab13dc312360b78fecb56fbfeed4028c3430131ba",
+      "dimensions": [
+        150,
+        150
+      ]
+    },
+    {
+      "group": 0,
+      "name": "6000.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 0,
+      "bytes": 64592,
+      "crc32": "cd3e18eb",
+      "sha256": "b75c4602471c9096e8ce5d71eb4208202f57357946da210ef1fa43297b00127b",
+      "dimensions": [
+        92,
+        117
+      ]
+    },
+    {
+      "group": 0,
+      "name": "60054.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 0,
+      "bytes": 48608,
+      "crc32": "d5c9dda2",
+      "sha256": "0d4d351a28906172cd971c5944e4ccaa89a99091906bdfa771372b695872f2bd",
+      "dimensions": [
+        90,
+        90
+      ]
+    },
+    {
+      "group": 0,
+      "name": "60067.dat",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 65536,
+      "bytes": 101408,
+      "crc32": "5e9bbac7",
+      "sha256": "e0f448b0c2708f51b6ccb9837abbc4d5150f9c7835a716eda7c31f7a590c087d",
+      "dimensions": [
+        130,
+        130
+      ]
+    },
+    {
+      "group": 0,
+      "name": "700.DAT",
+      "prior_libarchive_error": "Parsing filters is unsupported.",
+      "prior_libarchive_emitted_bytes": 0,
+      "bytes": 960008,
+      "crc32": "c97c63aa",
+      "sha256": "fbb98e44eaa71f5e7f198bbc6c18e1c7d90ebe82d1b0f673fb115412f7b3fbc5",
+      "dimensions": [
+        400,
+        400
+      ]
+    },
+    {
+      "group": 0,
+      "name": "700.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 262144,
+      "bytes": 320008,
+      "crc32": "55ba9d05",
+      "sha256": "4a0f170d944755f295a737ca65427fa57ac880f9469d343f328c601a41849df4",
+      "dimensions": [
+        400,
+        400
+      ]
+    },
+    {
+      "group": 0,
+      "name": "7000.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 196608,
+      "bytes": 240008,
+      "crc32": "8058b5e8",
+      "sha256": "1711d4ec2d3c49af62b96a31638ac75946ad205aefa0e4c4cd6cb013585b87c0",
+      "dimensions": [
+        200,
+        200
+      ]
+    },
+    {
+      "group": 0,
+      "name": "701.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 917504,
+      "bytes": 960008,
+      "crc32": "6c5096cb",
+      "sha256": "86fd4bfcd297f68bef1973fcb374db20780437e7f45a3b0f1061b7f4b7d82173",
+      "dimensions": [
+        400,
+        400
+      ]
+    },
+    {
+      "group": 0,
+      "name": "702.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 917504,
+      "bytes": 960008,
+      "crc32": "a5968678",
+      "sha256": "f5a93bffee449848c3014b2226f4b9ce0d12db30744fad6ef6972c832976eb88",
+      "dimensions": [
+        400,
+        400
+      ]
+    },
+    {
+      "group": 0,
+      "name": "703.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 917504,
+      "bytes": 960008,
+      "crc32": "a982cba6",
+      "sha256": "c9f936121bd13811d19f2ac03ba7d65e761408fed1186073e6dc421e955def2e",
+      "dimensions": [
+        400,
+        400
+      ]
+    },
+    {
+      "group": 0,
+      "name": "7030.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 0,
+      "bytes": 46472,
+      "crc32": "0b8dd6db",
+      "sha256": "f978cc0441d0854f63912ba2da23de1521727fbef27316720e2dbd3661bdbcb9",
+      "dimensions": [
+        88,
+        88
+      ]
+    },
+    {
+      "group": 0,
+      "name": "704.DAT",
+      "prior_libarchive_error": "Invalid symbol",
+      "prior_libarchive_emitted_bytes": 786432,
+      "bytes": 960008,
+      "crc32": "866ffc16",
+      "sha256": "e5ed0e6ecef221e8695ee10c385345df528bd7895401e4901f810ee4cff84cce",
+      "dimensions": [
+        400,
+        400
+      ]
+    },
+    {
+      "group": 0,
+      "name": "705.DAT",
+      "prior_libarchive_error": "Truncated RAR file data",
+      "prior_libarchive_emitted_bytes": 655360,
+      "bytes": 960008,
+      "crc32": "158a857d",
+      "sha256": "e70ad5a43040a04fbddf59737028e31b03ce35b2b9c900436b71a04549ba325e",
+      "dimensions": [
+        400,
+        400
+      ]
+    },
+    {
+      "group": 0,
+      "name": "706.DAT",
+      "prior_libarchive_error": "Internal error extracting RAR file",
+      "prior_libarchive_emitted_bytes": 196608,
+      "bytes": 960008,
+      "crc32": "c74f9362",
+      "sha256": "a923df3bad3cf26c8b42a2afcc50b393602aa2e650b32e0aa246c4f675340130",
+      "dimensions": [
+        400,
+        400
+      ]
+    },
+    {
+      "group": 0,
+      "name": "707.DAT",
+      "prior_libarchive_error": "Internal error extracting RAR file",
+      "prior_libarchive_emitted_bytes": 131072,
+      "bytes": 960008,
+      "crc32": "cf938580",
+      "sha256": "f237b16062b810bee1dd6eb8a402d8b90d54454e52c09470c56849601b32aee0",
+      "dimensions": [
+        400,
+        400
+      ]
+    },
+    {
+      "group": 0,
+      "name": "707.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 262144,
+      "bytes": 320008,
+      "crc32": "1057a470",
+      "sha256": "a81176a2e4da21e29133db13f8102b8edc49f94493bfe0f71bc8c8fe8bcf6402",
+      "dimensions": [
+        400,
+        400
+      ]
+    },
+    {
+      "group": 0,
+      "name": "708.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 917504,
+      "bytes": 960008,
+      "crc32": "7ff277ba",
+      "sha256": "123640c467225aeed02a17a46865b8ce48080bd9eb7fd1d68008b097d1304064",
+      "dimensions": [
+        400,
+        400
+      ]
+    },
+    {
+      "group": 0,
+      "name": "708.MAP",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 262144,
+      "bytes": 320008,
+      "crc32": "d5f5d165",
+      "sha256": "3cf5eb5355f27320e93795f666ca0a857af30ceab5f8dbe6e85927a9520db77f",
+      "dimensions": [
+        400,
+        400
+      ]
+    },
+    {
+      "group": 0,
+      "name": "7104.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 327680,
+      "bytes": 351656,
+      "crc32": "bec57a21",
+      "sha256": "fdb8bb080650aadabf3d10dc26493024f160b3c44791fcb3d1fdd42ad23000f6",
+      "dimensions": [
+        407,
+        144
+      ]
+    },
+    {
+      "group": 0,
+      "name": "7200.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 65536,
+      "bytes": 86408,
+      "crc32": "b3137bb8",
+      "sha256": "34d974bde30a6657e12ff6a661c9e4cc6877a853b1a12f36e67acbffbb4a10c7",
+      "dimensions": [
+        120,
+        120
+      ]
+    },
+    {
+      "group": 0,
+      "name": "7300.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 131072,
+      "bytes": 135008,
+      "crc32": "4af7d6e8",
+      "sha256": "e93ef217c9ff030b4e2ea1656b03fa6ef9819511fd6572594adaacec3478a076",
+      "dimensions": [
+        150,
+        150
+      ]
+    },
+    {
+      "group": 0,
+      "name": "7402.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 131072,
+      "bytes": 180008,
+      "crc32": "c4ddb081",
+      "sha256": "1d9852e6bb57eaaeedd96e032bbe5590c79eea80d4aab8266a170f4cb3b3c456",
+      "dimensions": [
+        200,
+        150
+      ]
+    },
+    {
+      "group": 0,
+      "name": "7450.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 0,
+      "bytes": 60008,
+      "crc32": "78e1dc0e",
+      "sha256": "e7739f72ef1fe9a206178887d7a73fffe1e26c862e1f99663c64c54ee582ff2e",
+      "dimensions": [
+        100,
+        100
+      ]
+    },
+    {
+      "group": 0,
+      "name": "7455.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 65536,
+      "bytes": 90008,
+      "crc32": "44a1d636",
+      "sha256": "f558869d1c6d869b3cf613ae7211aa24c1d9946b7c827b5a7e0176be6f429f06",
+      "dimensions": [
+        100,
+        150
+      ]
+    },
+    {
+      "group": 0,
+      "name": "817.dat",
+      "prior_libarchive_error": "Invalid symbol",
+      "prior_libarchive_emitted_bytes": 720896,
+      "bytes": 1440008,
+      "crc32": "2eda93c0",
+      "sha256": "ca29cdf04f9f750712ef9afffe14aebfd571a0c6011eac2c7eff67dfde8cc380",
+      "dimensions": [
+        400,
+        600
+      ]
+    },
+    {
+      "group": 0,
+      "name": "999.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 196608,
+      "bytes": 240008,
+      "crc32": "366087a4",
+      "sha256": "d97088a7567b1f05a446ba60aa3be0dc0c052438206a766f5e2ed84396341083",
+      "dimensions": [
+        200,
+        200
+      ]
+    }
+  ],
+  "priority_four_floors": {
+    "3021": {
+      "group": 0,
+      "name": "3021.DAT",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 327680,
+      "bytes": 351656,
+      "crc32": "c0d8a645",
+      "sha256": "2ea145bcc356988607e243140ba11e505b7a8a9997e8d390a5bfae993c886dd8",
+      "dimensions": [
+        407,
+        144
+      ]
+    },
+    "100": {
+      "group": 0,
+      "name": "100.DAT",
+      "prior_libarchive_error": "Parsing filters is unsupported.",
+      "prior_libarchive_emitted_bytes": 131072,
+      "bytes": 3840008,
+      "crc32": "aa7a58ad",
+      "sha256": "2456297e09861360f0fcfe48cf6ea18ef613b6b9d69d165c1b1844977bb6bfbf",
+      "dimensions": [
+        800,
+        800
+      ]
+    },
+    "3000": {
+      "group": 0,
+      "name": "3000.dat",
+      "prior_libarchive_error": "File CRC error",
+      "prior_libarchive_emitted_bytes": 131072,
+      "bytes": 135008,
+      "crc32": "8a628975",
+      "sha256": "3337fb536f3e0938527ac3f6a650427424c20e3a824aae0eb17192fdd177013e",
+      "dimensions": [
+        150,
+        150
+      ]
+    },
+    "200": {
+      "group": 0,
+      "name": "200.dat",
+      "prior_libarchive_error": "Prefix found",
+      "prior_libarchive_emitted_bytes": 2424832,
+      "bytes": 5760008,
+      "crc32": "8315f313",
+      "sha256": "c578faf5cab7bc5033accdb7ec98dcf4f0e8945910f5815f25e75dcff9d83f3d",
+      "dimensions": [
+        800,
+        1200
+      ]
+    }
+  },
+  "floor3021": {
+    "dimensions": [
+      407,
+      144
+    ],
+    "cells_per_plane": 58608,
+    "client_DAT": {
+      "bytes": 351656,
+      "crc32": "c0d8a645",
+      "sha256": "2ea145bcc356988607e243140ba11e505b7a8a9997e8d390a5bfae993c886dd8"
+    },
+    "client_MAP": {
+      "bytes": 117224,
+      "crc32": "5ca00592",
+      "sha256": "57a230c56ab77c418101e296480f7a04ce653e0aaf0512e15050e22b335ab789"
+    },
+    "server_LS2MAP": {
+      "bytes": 234476,
+      "crc32": "5d7be038",
+      "sha256": "aa80a70723343765fc4ea84d3bd49422e26bfbc5f6f071db7fc00c9426fc19d9"
+    },
+    "client_plane_sha256_u16be": [
+      "d62238f0dfdcce1cacdc7016a591843cc94825a551759bd35f900cd7452280bd",
+      "6a4d45a86a505a847bf838c752f50ff816c3d1eece76b31e2d14fb67deff0dbb",
+      "82653698aa9d7fcc6366823829972b5fb3f2f367d1821af4ec150eab53be9713"
+    ],
+    "server_plane_sha256_u16be": [
+      "5e21a0e6c4f7dc7c859ac03e4db0e9c62a097d26f67e8275739bf6cd39101a7d",
+      "91da587f4c11db9ad8634f5c8ec28f7968dd921c74accdf477e3454dd987837b"
+    ],
+    "client_vs_same_archive_server_unequal_values": [
+      14080,
+      42921
+    ],
+    "client_event_counts": [
+      [
+        0,
+        41575
+      ],
+      [
+        16384,
+        12849
+      ],
+      [
+        49152,
+        4147
+      ],
+      [
+        49154,
+        11
+      ],
+      [
+        49155,
+        26
+      ]
+    ],
+    "prior_public_other_source_LS2MAP_sha256": "82e2d34062aad62673cad62c3b8d4aef7f1ffe167b83ef2d70839e5829a0dbc5",
+    "original_config_center_DAT_values": {
+      "sb_dou": {
+        "coordinates": 100,
+        "DAT_plane_value_counts": [
+          [
+            [
+              0,
+              89
+            ],
+            [
+              5062,
+              5
+            ],
+            [
+              5087,
+              6
+            ]
+          ],
+          [
+            [
+              0,
+              100
+            ]
+          ],
+          [
+            [
+              0,
+              66
+            ],
+            [
+              16384,
+              23
+            ],
+            [
+              49154,
+              11
+            ]
+          ]
+        ]
+      },
+      "npcgen_warp": {
+        "coordinates": 200,
+        "DAT_plane_value_counts": [
+          [
+            [
+              0,
+              174
+            ],
+            [
+              4000,
+              6
+            ],
+            [
+              4003,
+              6
+            ],
+            [
+              4007,
+              7
+            ],
+            [
+              4008,
+              7
+            ]
+          ],
+          [
+            [
+              0,
+              200
+            ]
+          ],
+          [
+            [
+              0,
+              132
+            ],
+            [
+              16384,
+              42
+            ],
+            [
+              49155,
+              26
+            ]
+          ]
+        ]
+      }
+    },
+    "public_vs_private_server_file": {
+      "public_git_blob": "e34245c7ed4346f863e1b3ed17a8beb464b673f6",
+      "byte_equal_payload_after_44_byte_header": true,
+      "header_differing_offsets_zero_based": [
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17,
+        19
+      ],
+      "private_name_first_c_string_cp950": "百人聯手道場|0",
+      "public_name_first_c_string_gbk": "百人联手道场|0",
+      "private_full_name_field_sha256": "baf014e41994791027c0e738825e409e00c3b474606dfea032e6162c465676e6",
+      "public_full_name_field_sha256": "2f9a416517a06967a8b4748821006c1930324d80872fb560dbb705af34683ef5"
+    },
+    "original_NPCEnemy_ARG_route": {
+      "source_template": {
+        "relative_path": "doujyou/dou.template",
+        "template": "sb_dou",
+        "functionset": "NPCEnemy",
+        "bytes": 162,
+        "crc32": "0b161dc7",
+        "sha256": "74e4978bbe8430c07cad7fa7324804463b74d0517080cc5230bdd1aca62d90fc"
+      },
+      "independently_recovered_ARG_members": 100,
+      "source_ARG_total_bytes": 30072,
+      "literal_entype": 2,
+      "literal_dieact": 1,
+      "literal_ENEMYNO_in_original_order": [
+        564,
+        565,
+        566,
+        567,
+        568,
+        569,
+        570,
+        571,
+        572,
+        573,
+        574,
+        575,
+        576,
+        577,
+        578,
+        579,
+        580
+      ],
+      "literal_ENEMYPETNO_in_original_order": [
+        687,
+        688,
+        689,
+        690,
+        691,
+        692,
+        693,
+        694,
+        695,
+        696,
+        697,
+        698,
+        699,
+        700,
+        701,
+        702,
+        703,
+        704,
+        705,
+        706,
+        707,
+        708,
+        709,
+        710,
+        711,
+        712,
+        713,
+        714,
+        715,
+        716,
+        717,
+        718,
+        719,
+        720
+      ],
+      "matched_CHAR09_original_ARG_sha256_rows": 100,
+      "literal_ARG_target_categories": {
+        "within_column": 90,
+        "next_column": 9,
+        "other_floor_3008": 1
+      },
+      "independent_CREATE_exit_target": [
+        3022,
+        1,
+        7
+      ],
+      "independent_CREATE_exit_configurations": 200,
+      "last_ARG_target_client_DAT": {
+        "floor": 3008,
+        "dimensions": [
+          40,
+          40
+        ],
+        "bytes": 9608,
+        "crc32": "64a74e17",
+        "sha256": "3a633a97cafa5b073d48a3238a70222156eaa2ad07cb5d73c7c99a6c7809012c"
+      },
+      "rows_columns": [
+        "gym_ordinal",
+        "CREATE_block_zero_based",
+        "CREATE_center_xy",
+        "ARG_literal_warp_floor_x_y",
+        "ARG_bytes",
+        "ARG_crc32",
+        "ARG_sha256",
+        "startmsg_bytes_sha256"
+      ],
+      "rows": [
+        [
+          1,
+          0,
+          [
+            400,
+            124
+          ],
+          [
+            3021,
+            400,
+            114
+          ],
+          300,
+          "72264519",
+          "64f6a347fd55784cde89b732d3029c3aab0e9fec9af70d9214f5e99fcbdf1d12",
+          "9fbd5baa3bd8225710b9a7fbb9f5aaf2f38a366dba219f6adafd7ae9150dc916"
+        ],
+        [
+          2,
+          3,
+          [
+            400,
+            112
+          ],
+          [
+            3021,
+            400,
+            102
+          ],
+          300,
+          "26b9fbf9",
+          "e1cb103201503371141e2527c608aceeaf760c6421185d1e0621ca7ea5f6c75c",
+          "43ec1ccac8357ae554f5f094e20d3c9118723c9b77b029afc515d241ba68dea6"
+        ],
+        [
+          3,
+          6,
+          [
+            400,
+            100
+          ],
+          [
+            3021,
+            400,
+            90
+          ],
+          299,
+          "d176302f",
+          "1211f531c7bc740e96f05e010c5e87bcf3252f3bd4331b82aa6398b64d10d084",
+          "04600324df02d879c0ecabe4e2589728b0e233a092c024620b3d034d6c8af75a"
+        ],
+        [
+          4,
+          9,
+          [
+            400,
+            88
+          ],
+          [
+            3021,
+            400,
+            78
+          ],
+          299,
+          "4e1d0cb3",
+          "34f3c822fa853cc4c93e2aa02933c655c9ae626f7012b58a31c0d0d7ce331553",
+          "8235fcd18185e22d4dd4006c0520b633a65e0cb53b5f2e9e3d3fda96d383363c"
+        ],
+        [
+          5,
+          12,
+          [
+            400,
+            76
+          ],
+          [
+            3021,
+            400,
+            66
+          ],
+          299,
+          "43bfc854",
+          "33daa647ce8388a530b963858d61dd46f9ad75c5a8483f3ad4e9bf8d100bee5a",
+          "5919d72ab377103ed8450685fed33b495bcb9f72897dc561eb41dcf2b9936da2"
+        ],
+        [
+          6,
+          15,
+          [
+            400,
+            64
+          ],
+          [
+            3021,
+            400,
+            54
+          ],
+          299,
+          "6ac7034d",
+          "f264647df782352a2fd04ff3d98367e7ccabbf0c9ae9cadece94787aaafd0bd6",
+          "4a4a7eab282b16f7ae2b754376b8696691573e81151823db48fbff7043f31e11"
+        ],
+        [
+          7,
+          18,
+          [
+            400,
+            52
+          ],
+          [
+            3021,
+            400,
+            42
+          ],
+          299,
+          "78aa04b2",
+          "c7ddaec1e177f0dda01dc1df0e9b81e26ac8115caa56b08e660125bc0af2e4b4",
+          "21f0050084f242f8dd8e8ead9af2d293630f20df427f8738aaa995df6c1c7807"
+        ],
+        [
+          8,
+          21,
+          [
+            400,
+            40
+          ],
+          [
+            3021,
+            400,
+            30
+          ],
+          299,
+          "f88d7742",
+          "ef623912c77155c5b5c114b17e10146c7561de9d9c336e61c9628be54ee1d280",
+          "71d64620aec1e883f252053bc136d38d58f0f6df1e3b631dbd3fbb0115761fe7"
+        ],
+        [
+          9,
+          24,
+          [
+            400,
+            28
+          ],
+          [
+            3021,
+            400,
+            18
+          ],
+          299,
+          "5b83ff80",
+          "2d3b4c05537f4bf4b164cefc734196b8e1c85e36a585c6a6c63b6a562ccb0c8d",
+          "d653a8091ee40f4010ba2ba37804b7f3166f183b17f4ea3921e9553ed6a97437"
+        ],
+        [
+          10,
+          27,
+          [
+            400,
+            16
+          ],
+          [
+            3021,
+            356,
+            128
+          ],
+          302,
+          "0553c514",
+          "b192da3dd120e82f5a18b4c2fe7e7269cc65ce9497b620b123aac141d0ea4615",
+          "880f9b560225538eb1d6b9c2d0e7f89541c53a105b2b3255383043719f1694f6"
+        ],
+        [
+          11,
+          30,
+          [
+            356,
+            124
+          ],
+          [
+            3021,
+            356,
+            114
+          ],
+          302,
+          "c1956750",
+          "758b1c28d7faf1789b148f58b3553c05039e13a0eb6dc559aa1d7acb26fe0ab0",
+          "5b85ad7f6750511feac134a9169486603f37325ae0aafb3aae8ed63f92b8d171"
+        ],
+        [
+          12,
+          33,
+          [
+            356,
+            112
+          ],
+          [
+            3021,
+            356,
+            102
+          ],
+          302,
+          "3d0b7a1e",
+          "9c28c8d100f151e7b5d21f25be09b2b33c9e123d3da9c4ebba53c04229bfbf26",
+          "4efd976c2f2f6995a7d055992469ccfde585af20a7206e1ccd3a3193101eca0a"
+        ],
+        [
+          13,
+          36,
+          [
+            356,
+            100
+          ],
+          [
+            3021,
+            356,
+            90
+          ],
+          301,
+          "50553d3a",
+          "46d0d5e43499dc5e8fc599032275060c4f36d4b327d8b1f67adddd3f5417e831",
+          "0f54eff2e058de79685521d3dd31e0c8e2b6f11949e2a0721ccb74692c146d21"
+        ],
+        [
+          14,
+          39,
+          [
+            356,
+            88
+          ],
+          [
+            3021,
+            356,
+            78
+          ],
+          301,
+          "a90ab540",
+          "ef82784f133d136c43c87d336187591135a227683702e0b4f957e6a896b90b04",
+          "7039e3c1e34bb76fdf20c76f0652a6d8a8872d09b7d82e3ab78c487addf6fe29"
+        ],
+        [
+          15,
+          42,
+          [
+            356,
+            76
+          ],
+          [
+            3021,
+            356,
+            66
+          ],
+          301,
+          "e8fb3acd",
+          "3654672f6c88d4abd9c941daa4be8150e6bfa64f79636d6c75f510e7947ab83d",
+          "e7826546dfb5fdd97fcb7c8b24cf3b629174b2b1dc3394a0d05dee11788ff76d"
+        ],
+        [
+          16,
+          45,
+          [
+            356,
+            64
+          ],
+          [
+            3021,
+            356,
+            54
+          ],
+          301,
+          "f1748523",
+          "2edd54356b1d8c0eb38f20907e14771ed6edf9c65d124f32db661351b27bd266",
+          "89c77c90e71c1de3a162b60d8d02fac7ec4411b2634318335050671a22c2bee3"
+        ],
+        [
+          17,
+          48,
+          [
+            356,
+            52
+          ],
+          [
+            3021,
+            356,
+            42
+          ],
+          301,
+          "30f31e32",
+          "88329ac1ebaf59f08a54cbc58d9f8f8f1bd9467ac890210237db02b376256d26",
+          "dab29ffaae6ea7b5bfa04cbcce3f6961c42b92833369ae4d650beb22760b0166"
+        ],
+        [
+          18,
+          51,
+          [
+            356,
+            40
+          ],
+          [
+            3021,
+            356,
+            30
+          ],
+          301,
+          "360de383",
+          "f7236dbbee21f6999d0c7bf8e18a7c589cb05aac080befe9526b0abb4710839f",
+          "d35f2e16a99aaec12f79edfc98271292694b10afa16e82ca371433639f1ce262"
+        ],
+        [
+          19,
+          54,
+          [
+            356,
+            28
+          ],
+          [
+            3021,
+            356,
+            18
+          ],
+          301,
+          "e0651ffe",
+          "7fc4e9af29762bcc9c24bd6fbbafc047e43d8e91d18b9292e8b3558e9bd6cef3",
+          "ece08408802eef02c76b71bc86bd4cbfb36c11679f7741f989808b910967c153"
+        ],
+        [
+          20,
+          57,
+          [
+            356,
+            16
+          ],
+          [
+            3021,
+            312,
+            128
+          ],
+          302,
+          "f1e2003b",
+          "7cb927dbe5ceec2f06da3c81f1bf90c3abfe0546e2230555df418b98d242f757",
+          "785d1838b9f765ac6780d9c778354d838ec17d20e9b6ec9f4487640393482b02"
+        ],
+        [
+          21,
+          60,
+          [
+            312,
+            124
+          ],
+          [
+            3021,
+            312,
+            114
+          ],
+          302,
+          "3524a27f",
+          "bb3bfb287f27901aa33190133b379f3b7fcc4fa0d5d8a9d20332c4f94581a247",
+          "e90432d3a4a7d5e5858e4c03bfdce393cbe572d9fc3e163015868e304bb2fd63"
+        ],
+        [
+          22,
+          63,
+          [
+            312,
+            112
+          ],
+          [
+            3021,
+            312,
+            102
+          ],
+          302,
+          "c9babf31",
+          "43293a4aa7c0786c3648a7b4b01d6d138a6b4911b649928a3897935f92fb3fe9",
+          "ed3c0aeafba2a7f3526b9164beb81463415114899f39e3a2a105eb414cc8f952"
+        ],
+        [
+          23,
+          66,
+          [
+            312,
+            100
+          ],
+          [
+            3021,
+            312,
+            90
+          ],
+          301,
+          "90adf94e",
+          "d3c2c03332ba6d3cf0b057f1b1df481a489ec5edf6f8c8e6df8c54a1cc06c26f",
+          "430a396146cc62325b4466a9911c41290f5413507200797a768d2471383d4d52"
+        ],
+        [
+          24,
+          69,
+          [
+            312,
+            88
+          ],
+          [
+            3021,
+            312,
+            78
+          ],
+          301,
+          "69f27134",
+          "d7b39b686ed434ba8d2f3945b8367f79b21ebde34e27bee5c8b86f940b996adb",
+          "0f18cdf3468f5247509231a1acbe3b6898f751cabbc0b82ee0120a9f5d8fe05b"
+        ],
+        [
+          25,
+          72,
+          [
+            312,
+            76
+          ],
+          [
+            3021,
+            312,
+            66
+          ],
+          301,
+          "2803feb9",
+          "f739e6f69a427f3ffae6eda8d6b55a028d029ed1cd95868d07195e60b8f35b5d",
+          "f07a084599fee7d80d7bd2aae0db01d3994b5e65835b93046a567b4931df7817"
+        ],
+        [
+          26,
+          75,
+          [
+            312,
+            64
+          ],
+          [
+            3021,
+            312,
+            54
+          ],
+          301,
+          "318c4157",
+          "a0462aff1e281d844acdb59c8602ac2cb512c92c6727257f887d4bd4838b8303",
+          "b6e32b05807ddd5b16ecd28a480f18baad9f86776b67f0a1c38d133f82c4c6fa"
+        ],
+        [
+          27,
+          78,
+          [
+            312,
+            52
+          ],
+          [
+            3021,
+            312,
+            42
+          ],
+          301,
+          "f00bda46",
+          "49aa00c81f5172bddc18b4c6251f572f0526cd90bcef651cfdb62e88c9fac2ff",
+          "9c9c7a610aecb239d611414bb705bf92b9482ad543f0e82f59b6497569d12360"
+        ],
+        [
+          28,
+          81,
+          [
+            312,
+            40
+          ],
+          [
+            3021,
+            312,
+            30
+          ],
+          301,
+          "f6f527f7",
+          "0e62598a605e45bb90b6315111583114ca586adbcd7c379c58b575c143261b35",
+          "ce0f41877e0bcc860ba68902fa6d0ce419b53c3f4578c95c7ab5690daec22814"
+        ],
+        [
+          29,
+          84,
+          [
+            312,
+            28
+          ],
+          [
+            3021,
+            312,
+            18
+          ],
+          301,
+          "209ddb8a",
+          "b4b02306bbe72b76bf3377d060e19be5e50ac782a4d14588fdfe6777529620cc",
+          "907dfe464aca136a851d226630fc019ad8a6071f88bc6cf574ca93e7c0bef246"
+        ],
+        [
+          30,
+          87,
+          [
+            312,
+            16
+          ],
+          [
+            3021,
+            268,
+            128
+          ],
+          302,
+          "050d9f61",
+          "df3a4e1783d1170c2048ebde96162da5290e4ae19f112d74b6b9bbc1150bf1da",
+          "b36b4535cfa92917790ff8ea4edc50dd7e12effccaa7339c87d2d87b3c83b7ea"
+        ],
+        [
+          31,
+          90,
+          [
+            268,
+            124
+          ],
+          [
+            3021,
+            268,
+            114
+          ],
+          302,
+          "c1cb3d25",
+          "abacb51e5a5ea365ce605e440d4140d99c6f28a3f93c674616992d9be4344822",
+          "84ac515e687e68d404d24d1597b8f2ed273ce12bbf2cd7f8340ceedfac9f99c2"
+        ],
+        [
+          32,
+          93,
+          [
+            268,
+            112
+          ],
+          [
+            3021,
+            268,
+            102
+          ],
+          302,
+          "3d55206b",
+          "840b5220ac77bccf4fe587cfd34339554d845b99c316be19990ae503901eb7fc",
+          "984de93fa388b13e4bca9039305d57af20a1f68fae977983efeb8a7e88e10f74"
+        ],
+        [
+          33,
+          96,
+          [
+            268,
+            100
+          ],
+          [
+            3021,
+            268,
+            90
+          ],
+          301,
+          "c8ff9b86",
+          "340bef26b905c4eb3aa6ea6382e352564031e0f27004349f3ffa0b30cbcbe2c9",
+          "d12a32d80fd1ec79109ce4f797a29dcb7aaaa9c6592e10bdd18756bef2b04b00"
+        ],
+        [
+          34,
+          99,
+          [
+            268,
+            88
+          ],
+          [
+            3021,
+            268,
+            78
+          ],
+          301,
+          "31a013fc",
+          "b57912e2ce52c01dc19909cb42e6cede0a8120756002f3d6b32f7002534ded2c",
+          "d8e15b40cf624e1928986e9ecda075106d03ecf3ec98e7077b41d400b19efbaa"
+        ],
+        [
+          35,
+          102,
+          [
+            268,
+            76
+          ],
+          [
+            3021,
+            268,
+            66
+          ],
+          301,
+          "70519c71",
+          "ee8764db7cbd7b8d8f45e94f002e5267f5cfedf86018a4a864da787264f109af",
+          "dac021286d7f1e77766837b9db2fb3db71949ec1a1ecb9db17b0bbc6ccbb3dba"
+        ],
+        [
+          36,
+          105,
+          [
+            268,
+            64
+          ],
+          [
+            3021,
+            268,
+            54
+          ],
+          301,
+          "69de239f",
+          "3494b78a40bee811f141cd6e97cc56a66010b9a4c475a615fa239714fccde99a",
+          "005142d1d3fc8957675b10bb4fe620f54e76988554bab48c48f89806f965be75"
+        ],
+        [
+          37,
+          108,
+          [
+            268,
+            52
+          ],
+          [
+            3021,
+            268,
+            42
+          ],
+          301,
+          "a859b88e",
+          "f2c6fb225c9ad048d849b5e9e30dcd048f3752c785942d1d758f6e656aa500d5",
+          "ce531818ee7b367b5f0c1995e63bd09c6fb72a8d1d440d361836e1a6f8fa6a52"
+        ],
+        [
+          38,
+          111,
+          [
+            268,
+            40
+          ],
+          [
+            3021,
+            268,
+            30
+          ],
+          301,
+          "aea7453f",
+          "ea9a79a354abf08335727e878d05107f0172a15097bf10c77b3c24f29fe148e5",
+          "f0fcac24c7cdd972b1630d328748bf565301c62bcecbd888f1442845e27150c6"
+        ],
+        [
+          39,
+          114,
+          [
+            268,
+            28
+          ],
+          [
+            3021,
+            268,
+            18
+          ],
+          301,
+          "78cfb942",
+          "a28d194580402d7d254838bf0f1ac4da9ee4f1f69909e896de4080aa31338e02",
+          "abf2c0ca1f46a95a49b53ae69eb2c74b920239198cc7dcc63cd3ff7bacca1cd5"
+        ],
+        [
+          40,
+          117,
+          [
+            268,
+            16
+          ],
+          [
+            3021,
+            224,
+            128
+          ],
+          302,
+          "158dfe36",
+          "f5572c5afac8191500f1d9424d17c4374acf719b278cf6ecf0a879d6b078e2c4",
+          "75b3b70a7a39efd5818ec88f5c1301ea91a9d7a99db61a8b93b35f3361d7fef9"
+        ],
+        [
+          41,
+          120,
+          [
+            224,
+            124
+          ],
+          [
+            3021,
+            224,
+            114
+          ],
+          302,
+          "d14b5c72",
+          "792f645fc44045e74b5bccb0f610c43e6dfce52a7afb4258875813372e703cbc",
+          "4253992a363364d81922fa7c7221da6afd7f75fed30387306f90b526c56f18e8"
+        ],
+        [
+          42,
+          123,
+          [
+            224,
+            112
+          ],
+          [
+            3021,
+            224,
+            102
+          ],
+          302,
+          "2dd5413c",
+          "a405a8382a970bc431f788c5ab802d4b8049dcc265d70c1bdb1f2a68aacf802f",
+          "710ba886425444037aa4bce8afa62bbca2e9830f06033bd7ee7ba27672b89c28"
+        ],
+        [
+          43,
+          126,
+          [
+            224,
+            100
+          ],
+          [
+            3021,
+            224,
+            90
+          ],
+          301,
+          "61fc8d47",
+          "969c17483acc296e21bfec1cc58c6a169585642546fa4d5bbd2e59266c3aba14",
+          "8bfb85fd1e559fb3ee962a9089dc15a90866879362285923d34736acaca17008"
+        ],
+        [
+          44,
+          129,
+          [
+            224,
+            88
+          ],
+          [
+            3021,
+            224,
+            78
+          ],
+          301,
+          "98a3053d",
+          "917a5881b9bb505c7392b1e43cca515ad09197bdca4206435b07bdb3924c9e14",
+          "a582751dce8958ea020c04c3c145edc82faad0854ae28cce7981ac50f66503ae"
+        ],
+        [
+          45,
+          132,
+          [
+            224,
+            76
+          ],
+          [
+            3021,
+            224,
+            66
+          ],
+          301,
+          "d9528ab0",
+          "7ff1c813d8d6482ccfecd9375b01d03f6571c6605e7086d3b71af503e7edb9aa",
+          "ca271464e7a776db6bafc690fd5f6fe9ba7ae65cb8d73e0e6013243a0d0aeda1"
+        ],
+        [
+          46,
+          135,
+          [
+            224,
+            64
+          ],
+          [
+            3021,
+            224,
+            54
+          ],
+          301,
+          "c0dd355e",
+          "d9eeeb1c24a2075f5b42c2b86e302952826a1fd2fdedb59ad0b92f952a0de349",
+          "d05182bcb2feea02ff6166225b05b13557c07b0beb39c24978c50ffd3a52e42c"
+        ],
+        [
+          47,
+          138,
+          [
+            224,
+            52
+          ],
+          [
+            3021,
+            224,
+            42
+          ],
+          301,
+          "015aae4f",
+          "8353feb070eeccf7ebb11db608100f506b45bf012402afa6500ad42bdb6419a8",
+          "7cea5033517ececf28126204fcd5027644fb4b7f4cdfb3ba77b01865cec6f25d"
+        ],
+        [
+          48,
+          141,
+          [
+            224,
+            40
+          ],
+          [
+            3021,
+            224,
+            30
+          ],
+          301,
+          "07a453fe",
+          "e06670ff3f0f92d7c1efcc838a77985e95cfd3dc8da322162963e788bce49273",
+          "412cd659dea8cb62fb54780cd23b4bd03ccfcd59e2c738740eeb534c55957139"
+        ],
+        [
+          49,
+          144,
+          [
+            224,
+            28
+          ],
+          [
+            3021,
+            224,
+            18
+          ],
+          301,
+          "d1ccaf83",
+          "39b77f7bfc479147410e0dc8c46ce42f5cd938a0225c6db621fa33b1cb15e790",
+          "1cea9ed0f581d76a876b2b2d3152d2460a5b83871b153526665af658479c0add"
+        ],
+        [
+          50,
+          147,
+          [
+            224,
+            16
+          ],
+          [
+            3021,
+            180,
+            128
+          ],
+          302,
+          "e0d10304",
+          "d2fee864280cc74ea0ae5b43b676a26e007ffd416fb2357965a6ad38588c35de",
+          "507053f07bf5152792095bd72d34946933ea7942722b91c05b5bf65c873a9b02"
+        ],
+        [
+          51,
+          150,
+          [
+            180,
+            124
+          ],
+          [
+            3021,
+            180,
+            114
+          ],
+          302,
+          "2417a140",
+          "4cbc9821e0ba6052d45035315a9cc012ec4730d6e66d310ba0d67e6de5868e2a",
+          "f6079b9ca87842d77ba7569becb6e304e63f152f8daa6576a32176325ec0d829"
+        ],
+        [
+          52,
+          153,
+          [
+            180,
+            112
+          ],
+          [
+            3021,
+            180,
+            102
+          ],
+          302,
+          "d889bc0e",
+          "b23e8798203515be92abfa8fbeb579d91030e49db12999c7dd2500a864bdaa19",
+          "8fc293dd652b741545fa2c0020e16d4afa95b07b2cf33e6e2a4cf3c68cd64e2e"
+        ],
+        [
+          53,
+          156,
+          [
+            180,
+            100
+          ],
+          [
+            3021,
+            180,
+            90
+          ],
+          301,
+          "51bd81ce",
+          "cd0281db66956172ad5f0dc83ab4d63fa6dc16ea8a609f47f0b89e7bf4af0a70",
+          "5e5c90058d41247b40b126547819f2ec527593754b929dac88ba0ddab936456f"
+        ],
+        [
+          54,
+          159,
+          [
+            180,
+            88
+          ],
+          [
+            3021,
+            180,
+            78
+          ],
+          301,
+          "a8e209b4",
+          "b237943dddb520903787c58aed49a723cf98c1cf45e98b2342ab78e9f4c9411c",
+          "ced0ca498ed05dcd7ca6b4729d8e24552c3c46f1b72be5f92d389099a3e31ef8"
+        ],
+        [
+          55,
+          162,
+          [
+            180,
+            76
+          ],
+          [
+            3021,
+            180,
+            66
+          ],
+          301,
+          "e9138639",
+          "7a7cbe53fcd8cbf56e7ff9108260b4caee2a80fbe8754eaf04827a5f2a66d34c",
+          "862fba0d548ef4f49747c047b3dc2b0d5efb076506bdc271d6fb1da200bcc040"
+        ],
+        [
+          56,
+          165,
+          [
+            180,
+            64
+          ],
+          [
+            3021,
+            180,
+            54
+          ],
+          301,
+          "f09c39d7",
+          "59dfca0dbb4af310218231aacbe9cf4ae7580deea4967cad6d3d132f420dd72e",
+          "cf5edc8300c2d9d07971e4b803978550f04dcef0862c19ae3988d1395401598b"
+        ],
+        [
+          57,
+          168,
+          [
+            180,
+            52
+          ],
+          [
+            3021,
+            180,
+            42
+          ],
+          301,
+          "311ba2c6",
+          "3ffb3e316db0f6a5ea527b3f7814d89caeab5e3b1d137813dca24d9518170916",
+          "3000f0afc3248d97c4b3446ebb418c66db998f4f11f888f5926096d9dd20a7ad"
+        ],
+        [
+          58,
+          171,
+          [
+            180,
+            40
+          ],
+          [
+            3021,
+            180,
+            30
+          ],
+          301,
+          "37e55f77",
+          "5507035668434f807ea1659036751d1d2cc4916a51b57be0e33b8f60d7eb7cac",
+          "ba66f88238fb9af1fa91e9f1292e5469f292d1fbc5e2af18ab4c47756c730752"
+        ],
+        [
+          59,
+          174,
+          [
+            180,
+            28
+          ],
+          [
+            3021,
+            180,
+            18
+          ],
+          301,
+          "e18da30a",
+          "ee1f7c6bce48a2543b290779ddea074a9004c0b35836afd6f07099bf93869752",
+          "bf76d49fa09cf0b3010de9cbdf9394ff8c6c8045a6fbd9d50dbf7db6150fea28"
+        ],
+        [
+          60,
+          177,
+          [
+            180,
+            16
+          ],
+          [
+            3021,
+            136,
+            128
+          ],
+          302,
+          "657c9653",
+          "abf6203458eee5ca8aace6cb1e60c4a6a6703a872620c994e7ac2d1a99948af7",
+          "1d8e5ad36766ec236531169653dbb3d0d09ee36a18f398ea4bd1aad11a57557a"
+        ],
+        [
+          61,
+          180,
+          [
+            136,
+            124
+          ],
+          [
+            3021,
+            136,
+            114
+          ],
+          302,
+          "a1ba3417",
+          "52f46243e899e1b5331cd381d2faf3a0101ef29c9acd6de71a7cff20326103e4",
+          "9e6ffb7bdbf54ff53a5d64ecaf0c07e5d971e8c0b49800de20d766c03f0fcc6f"
+        ],
+        [
+          62,
+          183,
+          [
+            136,
+            112
+          ],
+          [
+            3021,
+            136,
+            102
+          ],
+          302,
+          "5d242959",
+          "9d03e2dc8427efee68d58ea9453a9c0e18099922fa6d35b31c137b257e24ff95",
+          "5b7fa4e8ad4b270ae6b6a528596fba3d5ed93dcd4a673c4fad6e3ba9119b5955"
+        ],
+        [
+          63,
+          186,
+          [
+            136,
+            100
+          ],
+          [
+            3021,
+            136,
+            90
+          ],
+          301,
+          "3c90b4fe",
+          "3a9be438a400f29ec0f4da74ebc2079794a5165a2a054d92848aa450c42c6101",
+          "ae01a2134f1f08d7465a5707b738945f711f128917b88780785a47a132a1a7d0"
+        ],
+        [
+          64,
+          189,
+          [
+            136,
+            88
+          ],
+          [
+            3021,
+            136,
+            78
+          ],
+          301,
+          "c5cf3c84",
+          "dc29f6e0e2ad34fa9bb789143b438db52a37d17854381d04bc19f1530aa1fd72",
+          "dd5cc65de4b16d3f122f4826e68040db247004c4995c792336e4a628f3893727"
+        ],
+        [
+          65,
+          192,
+          [
+            136,
+            76
+          ],
+          [
+            3021,
+            136,
+            66
+          ],
+          301,
+          "843eb309",
+          "2507c02e10bf482a32ef3bb619d92c3d0d41653895959fab6981660a050c2391",
+          "92f6e7219dc8d432292abed2cee9b903ba19228005686a02a54f6a3f2535b6dc"
+        ],
+        [
+          66,
+          195,
+          [
+            136,
+            64
+          ],
+          [
+            3021,
+            136,
+            54
+          ],
+          301,
+          "9db10ce7",
+          "fd2983199de81af7112b0800e136537494705601f869a9c7b3156a8a50530521",
+          "1e74d68d76c57cb5a043803d26d38511c8fdb2bacc58505840fee2853eccb092"
+        ],
+        [
+          67,
+          198,
+          [
+            136,
+            52
+          ],
+          [
+            3021,
+            136,
+            42
+          ],
+          301,
+          "5c3697f6",
+          "74876c7c5c0bee44249c2ae7da0ddfb79e4a6d17cb6573895d29da62320545c8",
+          "5f99e24a2e93ae9feb150892c2f6cc0ea7b54f683c1d80527a45f85d1ac4958a"
+        ],
+        [
+          68,
+          201,
+          [
+            136,
+            40
+          ],
+          [
+            3021,
+            136,
+            30
+          ],
+          301,
+          "5ac86a47",
+          "5e783b7b60230f477b7513fd53285d739782b96cb22a22fbc593679952532d2b",
+          "2c6091b48f380628fe6d7fc26f4c620eaaa2e3df588e310088835ca7f672a21e"
+        ],
+        [
+          69,
+          204,
+          [
+            136,
+            28
+          ],
+          [
+            3021,
+            136,
+            18
+          ],
+          301,
+          "8ca0963a",
+          "3c2210491766e7df86018103c389d3444075928b452d672525521e50ebc63583",
+          "c19623d1bb470f3df799aa11b54fc708f48ec6b28e9ac0333cb5b049d242d1ab"
+        ],
+        [
+          70,
+          207,
+          [
+            136,
+            16
+          ],
+          [
+            3021,
+            92,
+            128
+          ],
+          301,
+          "a8018d0b",
+          "e994d3328307be03d5fd325e4a48c9f1f6bca6d52f324a5eda32c7794506037e",
+          "bfeb6cd0e5907ce972b70351f061d67987ee73f6270ebbbf719891d1da133cf0"
+        ],
+        [
+          71,
+          210,
+          [
+            92,
+            124
+          ],
+          [
+            3021,
+            92,
+            114
+          ],
+          301,
+          "6cc72f4f",
+          "ef7bb667e2b36fb78ddc93aebd852a2e607e13ee249183d917cb4d9212e79fef",
+          "01dc73da34e2fde5891c5f535caac54d07aa5ee6c311ae507224e15ccfd12a9a"
+        ],
+        [
+          72,
+          213,
+          [
+            92,
+            112
+          ],
+          [
+            3021,
+            92,
+            102
+          ],
+          301,
+          "90593201",
+          "c017c05edcdca2057cc04b11d0b7ddfc730cad7ff1df4be0b52fea79f19acb8d",
+          "62d09b40edac98ed24551b22ce8ab2cb75c901092179774291847f459bbbde5d"
+        ],
+        [
+          73,
+          216,
+          [
+            92,
+            100
+          ],
+          [
+            3021,
+            92,
+            90
+          ],
+          300,
+          "f5f516d5",
+          "12f76e7c47e262363374fbf2f01518ab85e77ffb16c0bae503a85fcf6139e073",
+          "c4abfcc10b5bcd1c97a4d59afdb3efedd0a2a67958a5305dabfb8c036875223b"
+        ],
+        [
+          74,
+          219,
+          [
+            92,
+            88
+          ],
+          [
+            3021,
+            92,
+            78
+          ],
+          300,
+          "0caa9eaf",
+          "57756c6cd9c7ae59b977ef9498c0fd3d947ecfc1d38369dc16a5dfba33c672e9",
+          "b5157c25f052060a2eded8e60c0938b1eb61f28e86bf2df66199f52015af8db1"
+        ],
+        [
+          75,
+          222,
+          [
+            92,
+            76
+          ],
+          [
+            3021,
+            92,
+            66
+          ],
+          300,
+          "4d5b1122",
+          "4f64922fbda134c1f51d5367d30276568f25f6ebc795e59f98d684dc24c380ff",
+          "1ad3cb921060217babb0e4166b5a0e9b6629e458144826bad449a1aaee161fac"
+        ],
+        [
+          76,
+          225,
+          [
+            92,
+            64
+          ],
+          [
+            3021,
+            92,
+            54
+          ],
+          300,
+          "54d4aecc",
+          "81e198994e66e6f82719cb319082c1bb8ca54f24ba34aafc2bb18d4e16fc526c",
+          "0280be548163e430d3155b176528c3b1580d437bba560c32fbe72e988cf774c5"
+        ],
+        [
+          77,
+          228,
+          [
+            92,
+            52
+          ],
+          [
+            3021,
+            92,
+            42
+          ],
+          300,
+          "955335dd",
+          "f5a8204274a3be1880f07f4a1dd96ef3b06438613e8cf51e909c6a60e3e64bbb",
+          "9878c7210a867a2d21e9199f67b87fdf95349d36f04eabca5a26e12a680e8ad2"
+        ],
+        [
+          78,
+          231,
+          [
+            92,
+            40
+          ],
+          [
+            3021,
+            92,
+            30
+          ],
+          300,
+          "93adc86c",
+          "9f8830a23512540ee0633baf08d55493737e975ff9761fe6931e440d9ff3a145",
+          "6e8210e5d6db9130114ceb0e405ee6868708bfd90cb8a2b3664d1a558d8da97d"
+        ],
+        [
+          79,
+          234,
+          [
+            92,
+            28
+          ],
+          [
+            3021,
+            92,
+            18
+          ],
+          300,
+          "45c53411",
+          "6d1a70053623c82288e0f73784b17b0bef0cabaa8dea6308421f59976331dd25",
+          "2fdbea95ee3ec670fb0e90504304be177f23aef0cc018dc8765dc94043c0a7b8"
+        ],
+        [
+          80,
+          237,
+          [
+            92,
+            16
+          ],
+          [
+            3021,
+            48,
+            128
+          ],
+          301,
+          "04bcc156",
+          "50353ea1885a4d7340ae0b198510d1a56bad42b17a047d9e7889f287f7dee01c",
+          "ebae8d19637ab975c354408a23afdf917691d46a4961a6b399c277b1e2f59035"
+        ],
+        [
+          81,
+          240,
+          [
+            48,
+            124
+          ],
+          [
+            3021,
+            48,
+            114
+          ],
+          301,
+          "c07a6312",
+          "ec9896fd54e897321e2630477522ae8b817befc31758063910de15842701fe70",
+          "aa18f27c9497d9ec763553b2b217278b5ec79fd9ca7e907034a0fd38b5524863"
+        ],
+        [
+          82,
+          243,
+          [
+            48,
+            112
+          ],
+          [
+            3021,
+            48,
+            102
+          ],
+          301,
+          "3ce47e5c",
+          "2ea382eb4ef82c8b871a94a28285b42fb3191ff5bc0d86048c39c9ebfac5be3b",
+          "58d6f44a0654a042a5a85de1911b81d967844e876cb8febbe14d81fb916dde28"
+        ],
+        [
+          83,
+          246,
+          [
+            48,
+            100
+          ],
+          [
+            3021,
+            48,
+            90
+          ],
+          300,
+          "aa7952d7",
+          "7616daa956fa00e12f57b6fd2198345f4231b9255cc89f286e9e30fe853f32c1",
+          "3605cd9b747fc09cf17e31e53e13c8a7adec30b17caea5ddaa81e6a9dd3abc5d"
+        ],
+        [
+          84,
+          249,
+          [
+            48,
+            88
+          ],
+          [
+            3021,
+            48,
+            78
+          ],
+          300,
+          "5326daad",
+          "37283fed51539f1f92f60f75d61883609526dccd74d4f3aec94a963d5683080e",
+          "3211c4265090cafa29ea835a3b422005cd29f016020e6d7624105263499e55c2"
+        ],
+        [
+          85,
+          252,
+          [
+            48,
+            76
+          ],
+          [
+            3021,
+            48,
+            66
+          ],
+          300,
+          "12d75520",
+          "6d448804e6fdba9af2536cb4f8e99b00c443dada666f2c999f4350b7f1cc36e2",
+          "dc3b2635b4e35f3955f0e588ff27c7bdd4b0ab932ac5c4813c913992ad9155b7"
+        ],
+        [
+          86,
+          255,
+          [
+            48,
+            64
+          ],
+          [
+            3021,
+            48,
+            54
+          ],
+          300,
+          "0b58eace",
+          "fea55972c5bebf7988f4e9ce7aafe155b9049fd0dddcc9aead3fb0760dbfb0d6",
+          "d45a995fd9e7a6fcb45affec89eb60ab10d59dd1bec1b8890336cdbd9010af4d"
+        ],
+        [
+          87,
+          258,
+          [
+            48,
+            52
+          ],
+          [
+            3021,
+            48,
+            42
+          ],
+          300,
+          "cadf71df",
+          "4cb6ea5a68c71e8a27f6d9275600b5c138b26bd0c05b9aceb2cf523e4fda5fb8",
+          "f51926691e647f55b20077ec8ba179ad51bd9ffce3c198502e54b889ac4d254d"
+        ],
+        [
+          88,
+          261,
+          [
+            48,
+            40
+          ],
+          [
+            3021,
+            48,
+            30
+          ],
+          300,
+          "cc218c6e",
+          "8360536ae222b8e828d0abfb11afbbd7f2d2773ce0bec308c74d064c879fa40a",
+          "b1fc73710840bda133545c628b4d1dfa3e01af54d485e82efbfb8d1880f1505a"
+        ],
+        [
+          89,
+          264,
+          [
+            48,
+            28
+          ],
+          [
+            3021,
+            48,
+            18
+          ],
+          300,
+          "1a497013",
+          "24628145c6d7f3c8e8eff5e0f2160232f01469746495480d6780236184b79af7",
+          "1a2da628cca4f13c092abc57b331a71aa555d23ccb7e0bcc250866e71722fb31"
+        ],
+        [
+          90,
+          267,
+          [
+            48,
+            16
+          ],
+          [
+            3021,
+            4,
+            128
+          ],
+          300,
+          "312069a6",
+          "6266a4c186f1721e4c9cd9fc6ddca7671424da7696901c136aadc748b721cb12",
+          "256aa4bf98c08a4d10ece8a3933be6c6bc320fd32885e4186289956c8dfff2fd"
+        ],
+        [
+          91,
+          270,
+          [
+            4,
+            124
+          ],
+          [
+            3021,
+            4,
+            114
+          ],
+          300,
+          "f5e6cbe2",
+          "25d4cba39111f6cf4a1f14c6e848b5f1e1813e22a5e5242d21c04da73b8960a7",
+          "e461182419aba11f370c234867d24044e30243f9bb130b8e15afc26b8a518d17"
+        ],
+        [
+          92,
+          273,
+          [
+            4,
+            112
+          ],
+          [
+            3021,
+            4,
+            102
+          ],
+          300,
+          "0978d6ac",
+          "df1993e4a6d2d108e091efecc76e3e5263342a6ab96fe21439a216ce64650600",
+          "53f1cdc29fa5a34a6c8ec791c47d5da8b6740450d981f01de9afc46ee210bfa3"
+        ],
+        [
+          93,
+          276,
+          [
+            4,
+            100
+          ],
+          [
+            3021,
+            4,
+            90
+          ],
+          299,
+          "e0013121",
+          "8aafd2392a67d5627cc5c025bd9720d5ea854ebffa5cd328a7f18dba8228a3c9",
+          "3ae01a6cc14204aa9d5ae723109e7e37e28ef9e753a774e2671dbbfeee4ea773"
+        ],
+        [
+          94,
+          279,
+          [
+            4,
+            88
+          ],
+          [
+            3021,
+            4,
+            78
+          ],
+          299,
+          "195eb95b",
+          "1b94a9b10c8cb4c82d4b9349678fdead3d5aafb9cbfb46bf58ffd1977e6a00a2",
+          "a99e5dec13d0e9ad0e465fd897ab1dce7af3f000aea5b3cc2c85f8d2d84bc813"
+        ],
+        [
+          95,
+          282,
+          [
+            4,
+            76
+          ],
+          [
+            3021,
+            4,
+            66
+          ],
+          299,
+          "58af36d6",
+          "cdbfd88bcb7a9010375d3691c5f850734d031c4ab5c7cb69336776a1e8780cbb",
+          "8365de96fa4f9901f780eb041a5a6316d4d0db9e53551e5b999193c8ae555a44"
+        ],
+        [
+          96,
+          285,
+          [
+            4,
+            64
+          ],
+          [
+            3021,
+            4,
+            54
+          ],
+          299,
+          "41208938",
+          "fbad9e05206485c747a155a357c910d58ca28319cefe2e5b3ef97142195ab58f",
+          "94c6a0cd46c19aa697e2dc2c92f39febab957997aad6a41aa08e6ae09dd7afca"
+        ],
+        [
+          97,
+          288,
+          [
+            4,
+            52
+          ],
+          [
+            3021,
+            4,
+            42
+          ],
+          299,
+          "80a71229",
+          "920cd7a3cabd3b23b13625320d279adae3289124882cbb8f3b0ebd039eac1c1b",
+          "8a4b7062019d337fe7351814041292937c536f58992f717355e6daca92f7c67c"
+        ],
+        [
+          98,
+          291,
+          [
+            4,
+            40
+          ],
+          [
+            3021,
+            4,
+            30
+          ],
+          299,
+          "8659ef98",
+          "7aaadaa46de4680070aac42f0560edcbf1886cf30a0044a73c1a23ba15029684",
+          "6569fe9834f45e0b947fa95283c16c5b8a1e29d49ca9126c136d908121507ad5"
+        ],
+        [
+          99,
+          294,
+          [
+            4,
+            28
+          ],
+          [
+            3021,
+            4,
+            18
+          ],
+          299,
+          "503113e5",
+          "561207ec1888d31e3db64d0beebf1dc3c9dba01b092605d989ea387f63842228",
+          "15ca1e834f4c4fd8c14e55983f3fcd4a659e5f112b8f282e0a508158e966c5b5"
+        ],
+        [
+          100,
+          297,
+          [
+            4,
+            16
+          ],
+          [
+            3008,
+            20,
+            20
+          ],
+          302,
+          "9ca5d24f",
+          "eccdb850baf6260280e789f308143c841afa8c998735f878cde447e543333fb0",
+          "4c6566cbbdd34ceea217288b4dbd52aada44dad70eed52c07cfc6f109e25536d"
+        ]
+      ],
+      "original_runtime_trigger_verified": false
+    }
+  },
+  "floor3022_control": {
+    "dimensions": [
+      15,
+      15
+    ],
+    "cells_per_plane": 225,
+    "client_DAT": {
+      "bytes": 1358,
+      "crc32": "b3fa3a66",
+      "sha256": "0ccb2996e70bc9aaef84c3b2b2fd5b4df639fffc8c98b013bbcff7030b80f26a"
+    },
+    "client_MAP": {
+      "bytes": 458,
+      "crc32": "dd04d3d7",
+      "sha256": "e6e19de904cb6ba16ae2d4d61e0ba9c7701c50101e074067702347881a4596db"
+    },
+    "server_LS2MAP": {
+      "bytes": 944,
+      "crc32": "26e16796",
+      "sha256": "f8dd7b61384b712b59b8df18c96776e27939af671fd45fd221b766927fcd7dea"
+    },
+    "client_plane_sha256_u16be": [
+      "826d99ba765609fd456858089f6298ee65ff333d098df3175d4265b8e7c26996",
+      "a78a7c9efbc876168d0fb551087d3f07409fcc2c5bf6a5016d06e4f402d9d015",
+      "8b56cd25a162584bc23220f75ce4b90b27c5b32878d2c5393f05ade9080ddf08"
+    ],
+    "server_plane_sha256_u16be": [
+      "826d99ba765609fd456858089f6298ee65ff333d098df3175d4265b8e7c26996",
+      "a78a7c9efbc876168d0fb551087d3f07409fcc2c5bf6a5016d06e4f402d9d015"
+    ],
+    "client_vs_same_archive_server_unequal_values": [
+      0,
+      0
+    ],
+    "client_event_counts": [
+      [
+        49152,
+        222
+      ],
+      [
+        49155,
+        3
+      ]
+    ]
+  },
+  "source_art_and_dojo_config": {
+    "adrn_15.bin": {
+      "bytes": 18765120,
+      "crc32": "3113c408",
+      "sha256": "92d0137590d35a7a1f4fb11af3ad13bbc585813a4b0e1e3f933c397007fbff74"
+    },
+    "real_15.bin": {
+      "bytes": 763908374,
+      "crc32": "bd8bab8d",
+      "sha256": "c7640643804d550bc07e33661103fb7b5f557ee01e68a5a5d92382c5305c2b0d"
+    },
+    "Palet_0.sap": {
+      "bytes": 708,
+      "crc32": "d33b5d24",
+      "sha256": "89709d906bbd9cd9f5c2b8e0bd993e2897a1c9136ada2e211109983bb3b06cbf"
+    },
+    "Palet_1.sap": {
+      "bytes": 708,
+      "crc32": "dacb3fc9",
+      "sha256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0"
+    },
+    "jyajyadou.create": {
+      "bytes": 44134,
+      "crc32": "536b6f2c",
+      "sha256": "ac3e46dc64d2e478cba4a115e15c2d32d3193c38e9de85f53ce8b06f3d99d925"
+    }
+  },
+  "bounds": {
+    "authenticated_early_official_deployment": false,
+    "native_client_or_server_executed": false,
+    "third_plane_collision_or_event_execution_verified": false,
+    "raw_proprietary_data_in_public_git": false,
+    "stage_A_families": {
+      "PARTIAL": 7,
+      "OPEN": 2
+    },
+    "overall_percent": null
+  },
+  "integration02_floor_source_coverage": {
+    "previously_qualified": 56,
+    "now_crc_qualified_structured_client_DAT": 60,
+    "new_floors": [
+      100,
+      200,
+      3000,
+      3021
+    ],
+    "associated_static_GetPet_CREATE": 2,
+    "associated_static_NPCEnemy_CREATE": 105
+  },
+  "same_archive_map_graphics": {
+    "ADRN_records": 234564,
+    "TW1_prefix_ADRN_records_sha256_rechecked": 125996,
+    "TW1_prefix_REAL_bytes_sha256_rechecked": 315842228,
+    "structured_client_DAT_members": 995,
+    "short_or_empty_DAT_members": 16,
+    "alias_rule": "first_two_client_DAT_planes_and_unsigned_values_above_99_candidate_only",
+    "unique_alias_counts_by_status": {
+      "dual_decoded_original_index_pixels": 5168,
+      "missing_alias": 2111,
+      "duplicate_alias": 4
+    },
+    "occurrence_counts_by_status": {
+      "dual_decoded_original_index_pixels": 3862605,
+      "missing_alias": 207645,
+      "duplicate_alias": 13851
+    },
+    "decoded_index_rows_sha256": "ccc8f529a46fc2b4d586712423d4b8dd602e042ba4452f532fa4a4023d0b4613",
+    "map1000_prior_TW1_missing_aliases": [
+      {
+        "alias": 11208,
+        "occurrences": 1,
+        "status": "dual_decoded_original_index_pixels",
+        "ADRN_ordinals": [
+          126011
+        ],
+        "ADRN_record_sha256": "792c3b80eaea539f72db30a42336db69556e86b546998998743911b0ecb69f96",
+        "bitmap": 126011,
+        "REAL_offset": 316068072,
+        "RD_bytes": 50541,
+        "offset_xy": [
+          -141,
+          -367
+        ],
+        "dimensions": [
+          292,
+          384
+        ],
+        "RD_sha256": "7f3aca0e138d26342a3ca9c4935c461d8c6ac35a9ab90ae13afb1fe3645f0f43",
+        "RD_flag": 1,
+        "index_sha256": "2f0f122421536fd1d7c04c467d9a448824c227a0e2acda5b09045ea27eed4ad5"
+      },
+      {
+        "alias": 22413,
+        "occurrences": 2,
+        "status": "missing_alias",
+        "ADRN_ordinals": []
+      },
+      {
+        "alias": 24305,
+        "occurrences": 1,
+        "status": "dual_decoded_original_index_pixels",
+        "ADRN_ordinals": [
+          126053
+        ],
+        "ADRN_record_sha256": "a3be0064602a0e700016af0097f752551cafaaf32eb540cc5fb326f8e3782ada",
+        "bitmap": 126053,
+        "REAL_offset": 316171717,
+        "RD_bytes": 1566,
+        "offset_xy": [
+          -21,
+          -30
+        ],
+        "dimensions": [
+          44,
+          48
+        ],
+        "RD_sha256": "1be04fe1b9a534e13e63c7319be911f91c72fe2736fabd465d805993704b1ba1",
+        "RD_flag": 1,
+        "index_sha256": "933a24ff7223bbdd7d209337102774c918180c929092e2230d4cbd0016945f66"
+      },
+      {
+        "alias": 24306,
+        "occurrences": 1,
+        "status": "dual_decoded_original_index_pixels",
+        "ADRN_ordinals": [
+          126054
+        ],
+        "ADRN_record_sha256": "8579bb1123804e5346dd7b76f2de3b3ee23f2b9c2152ef93720c7e254ff7d9bb",
+        "bitmap": 126054,
+        "REAL_offset": 316173283,
+        "RD_bytes": 1560,
+        "offset_xy": [
+          -21,
+          -30
+        ],
+        "dimensions": [
+          44,
+          48
+        ],
+        "RD_sha256": "d5d3aaa1be456b0eb892e76da69b1a92ecb9bfed26e87d06bca70bcdd1e93fb0",
+        "RD_flag": 1,
+        "index_sha256": "037eed74b67d4763f4a521cb7e9e262267ba0ad1e06e1b6901718a6487839d40"
+      },
+      {
+        "alias": 24307,
+        "occurrences": 1,
+        "status": "dual_decoded_original_index_pixels",
+        "ADRN_ordinals": [
+          126055
+        ],
+        "ADRN_record_sha256": "8a407f6a46fb60bd2c612d063d757f847391236b8089a901762f363ad6375eaf",
+        "bitmap": 126055,
+        "REAL_offset": 316174843,
+        "RD_bytes": 1632,
+        "offset_xy": [
+          -22,
+          -32
+        ],
+        "dimensions": [
+          48,
+          50
+        ],
+        "RD_sha256": "0137d1b866ccc77ea914dc8bb85e216417adc1db92f031d6259a5a1f9f7bd49b",
+        "RD_flag": 1,
+        "index_sha256": "116fbfb64692202772f00eb52d644dd89621667cfc1973e17e831d7c53c6b652"
+      },
+      {
+        "alias": 24308,
+        "occurrences": 1,
+        "status": "dual_decoded_original_index_pixels",
+        "ADRN_ordinals": [
+          126056
+        ],
+        "ADRN_record_sha256": "b9633c700960477e4d7e165bc53bc40530af9ac1e612d25a8e79a28dc95bdbda",
+        "bitmap": 126056,
+        "REAL_offset": 316176475,
+        "RD_bytes": 1614,
+        "offset_xy": [
+          -22,
+          -32
+        ],
+        "dimensions": [
+          48,
+          50
+        ],
+        "RD_sha256": "363d538871ac072b780651509b1e0f27c6cde3c02d66665e82afe0620006a512",
+        "RD_flag": 1,
+        "index_sha256": "9b6be8d4d7b21308bbc06b6c3333f74e54c0a3d709c06381de4cfad64f79aef2"
+      },
+      {
+        "alias": 24309,
+        "occurrences": 1,
+        "status": "dual_decoded_original_index_pixels",
+        "ADRN_ordinals": [
+          126057
+        ],
+        "ADRN_record_sha256": "81553b4733851fb6783e934242aed7ae7e24a15385f8fbb8e2eec40dec51fe07",
+        "bitmap": 126057,
+        "REAL_offset": 316178089,
+        "RD_bytes": 1648,
+        "offset_xy": [
+          -22,
+          -32
+        ],
+        "dimensions": [
+          48,
+          50
+        ],
+        "RD_sha256": "549f43fa3d38ca743de89e51e19205d67a460f3987622183c081752d5cd1f83e",
+        "RD_flag": 1,
+        "index_sha256": "a5e79a68591c9c7c81b1e7da89339022b49a226955e00797689cc7b9b8354e27"
+      },
+      {
+        "alias": 24310,
+        "occurrences": 1,
+        "status": "dual_decoded_original_index_pixels",
+        "ADRN_ordinals": [
+          126058
+        ],
+        "ADRN_record_sha256": "fd3de33cd2b7dd5e4aceb73498f5dc5440277c6e4183cf1a38451755d2114bc3",
+        "bitmap": 126058,
+        "REAL_offset": 316179737,
+        "RD_bytes": 739,
+        "offset_xy": [
+          -13,
+          -19
+        ],
+        "dimensions": [
+          32,
+          34
+        ],
+        "RD_sha256": "026e711ac61be4dd1b4dc66c23c130f4c4a58fca19b9ecbb61c1abc4c5039886",
+        "RD_flag": 1,
+        "index_sha256": "14f4b802e17b75f74aa48999b524106e8f057581e9b36efb1b87e11b27f4932c"
+      },
+      {
+        "alias": 24311,
+        "occurrences": 2,
+        "status": "dual_decoded_original_index_pixels",
+        "ADRN_ordinals": [
+          126059
+        ],
+        "ADRN_record_sha256": "7d5795abfc3989cb8db36dd4dc2b821f8134608ac4a1762f5bd074d8760905fd",
+        "bitmap": 126059,
+        "REAL_offset": 316180476,
+        "RD_bytes": 748,
+        "offset_xy": [
+          -13,
+          -19
+        ],
+        "dimensions": [
+          32,
+          34
+        ],
+        "RD_sha256": "53b846193498fedac97056773ba4d5924af2bfbaf768578c6947c0aba5b8c9d8",
+        "RD_flag": 1,
+        "index_sha256": "9ad754fafd40244fbf5ded97454e0273fb86447ed801e5884c2ea4d6b91247f5"
+      },
+      {
+        "alias": 24312,
+        "occurrences": 1,
+        "status": "dual_decoded_original_index_pixels",
+        "ADRN_ordinals": [
+          126060
+        ],
+        "ADRN_record_sha256": "32a1f4af7ab9e7b2ffbd84d847f68d4f2c519b4f84eced9b189e1cc8e36aa176",
+        "bitmap": 126060,
+        "REAL_offset": 316181224,
+        "RD_bytes": 745,
+        "offset_xy": [
+          -13,
+          -19
+        ],
+        "dimensions": [
+          32,
+          34
+        ],
+        "RD_sha256": "84e844cf8c3086979f2c927329889ab4b34df794a2053e799af8d317e3c5023e",
+        "RD_flag": 1,
+        "index_sha256": "c1a71be951b686f301e91cd2f54a21e6cc254ab7efa1ff4ecadf47989e90ba49"
+      },
+      {
+        "alias": 24316,
+        "occurrences": 1,
+        "status": "dual_decoded_original_index_pixels",
+        "ADRN_ordinals": [
+          126064
+        ],
+        "ADRN_record_sha256": "df0a230cda658bd5fe46492cfc6503acc8f6502a519d62870ba1307915b82ed6",
+        "bitmap": 126064,
+        "REAL_offset": 316183614,
+        "RD_bytes": 1608,
+        "offset_xy": [
+          -25,
+          -29
+        ],
+        "dimensions": [
+          48,
+          44
+        ],
+        "RD_sha256": "5346cb0d97b9d0c8602f6ca461bcd101c6d833081a92f7c104f259a461578c0a",
+        "RD_flag": 1,
+        "index_sha256": "5c3df193a90125eeddc85875fffb20c02ad939a7a4cb7e7478cbce5da7391faa"
+      },
+      {
+        "alias": 24322,
+        "occurrences": 1,
+        "status": "dual_decoded_original_index_pixels",
+        "ADRN_ordinals": [
+          233113
+        ],
+        "ADRN_record_sha256": "66d6dc2c8234fa94c2ad6fbf1f0726a323292165d7f621abe2be082d74033e5c",
+        "bitmap": 233113,
+        "REAL_offset": 753283962,
+        "RD_bytes": 868,
+        "offset_xy": [
+          -16,
+          -16
+        ],
+        "dimensions": [
+          36,
+          33
+        ],
+        "RD_sha256": "1cf8f441ec16b330e76418dfd0639b6873f8dd1d567a90f5cde58f34336ab156",
+        "RD_flag": 1,
+        "index_sha256": "6d65ac437d2f9394a8f881c7482e8b60c9c2eafb8cdd40adf802906e243fce5f"
+      }
+    ],
+    "previously_unmatched_map1000_aliases_with_original_pixels": 11,
+    "previously_unmatched_map1000_occurrences_with_original_pixels": 12,
+    "floor_candidate_pixels": {
+      "100": {
+        "unique_draw_candidate_aliases": 1943,
+        "unique_dual_decoded_aliases": 1941,
+        "total_occurrences": 327423,
+        "decoded_occurrences": 327391
+      },
+      "200": {
+        "unique_draw_candidate_aliases": 1986,
+        "unique_dual_decoded_aliases": 1983,
+        "total_occurrences": 427898,
+        "decoded_occurrences": 427895
+      },
+      "1000": {
+        "unique_draw_candidate_aliases": 744,
+        "unique_dual_decoded_aliases": 743,
+        "total_occurrences": 24746,
+        "decoded_occurrences": 24744
+      },
+      "3000": {
+        "unique_draw_candidate_aliases": 1007,
+        "unique_dual_decoded_aliases": 1003,
+        "total_occurrences": 10853,
+        "decoded_occurrences": 10848
+      },
+      "3021": {
+        "unique_draw_candidate_aliases": 116,
+        "unique_dual_decoded_aliases": 116,
+        "total_occurrences": 1648,
+        "decoded_occurrences": 1648
+      },
+      "3022": {
+        "unique_draw_candidate_aliases": 28,
+        "unique_dual_decoded_aliases": 28,
+        "total_occurrences": 286,
+        "decoded_occurrences": 286
+      }
+    },
+    "private_preview": {
+      "filename": "StoneAge-original-map-1000-3021-3022-private.png",
+      "bytes": 513496,
+      "sha256": "c0cb568678f9a83160f9fcc52db8ead7f05e1ec0147f40f74d125a98e254254a",
+      "size": [
+        810,
+        1948
+      ],
+      "frames": {
+        "1000": {
+          "source_DAT_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+          "bounds_inclusive": [
+            84,
+            84,
+            92,
+            91
+          ],
+          "canvas": [
+            580,
+            443
+          ],
+          "verified_raw_pixel_composite_sha256": "f8f5c451828c14f28acec2556085f5376a0007fa313692c3aca6cb2eb4679cda",
+          "projected_RD_placements": 85,
+          "decoded_aliases_omitted_from_color_preview_for_reserved_palette_slots": [
+            11208
+          ],
+          "unresolved_markers": [
+            [
+              11208,
+              87,
+              88
+            ],
+            [
+              22413,
+              88,
+              86
+            ],
+            [
+              22413,
+              88,
+              89
+            ]
+          ]
+        },
+        "3021": {
+          "source_DAT_sha256": "2ea145bcc356988607e243140ba11e505b7a8a9997e8d390a5bfae993c886dd8",
+          "bounds_inclusive": [
+            396,
+            120,
+            406,
+            130
+          ],
+          "canvas": [
+            745,
+            706
+          ],
+          "verified_raw_pixel_composite_sha256": "350c48f5f863285a5b5f4d12e20785454c20027868c0c3dd9c6eab29596af43b",
+          "projected_RD_placements": 135,
+          "decoded_aliases_omitted_from_color_preview_for_reserved_palette_slots": [],
+          "unresolved_markers": []
+        },
+        "3022": {
+          "source_DAT_sha256": "0ccb2996e70bc9aaef84c3b2b2fd5b4df639fffc8c98b013bbcff7030b80f26a",
+          "bounds_inclusive": [
+            0,
+            3,
+            9,
+            11
+          ],
+          "canvas": [
+            644,
+            499
+          ],
+          "verified_raw_pixel_composite_sha256": "1d02cfd6ab25b06ee61015f01eac54bdb13a4a15a4b24af4be22c3b013507cd3",
+          "projected_RD_placements": 97,
+          "decoded_aliases_omitted_from_color_preview_for_reserved_palette_slots": [],
+          "unresolved_markers": []
+        }
+      }
+    }
+  }
+}

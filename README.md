@@ -1708,3 +1708,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-04 — Stage A：3021道场100弟子/200静态跳跃配置与3022双层原地图同字节证据
 
 [私人原RAR重新实读与完整来源/止点](docs/continuity/STONEAGE-STAGE-A-3021-3022-ORIGINAL-STATIC-ROUTE-20261104.md) / [可核数字综合目录](research/recovered/STONEAGE-STAGE-A-3021-3022-ORIGINAL-STATIC-ROUTE-CONTENT-R1.json)：原同保存载体`doujyou/jyajyadou.create`整44134B/SHA回读核CHAR09，实际300个CREATE配置=100个编号弟子（10×10中心网格）+200个跳跃配置（静态目标3022/(1,7)）；300中心全部在已验3021.MAP 407×144格内，未证明挑战/跳跃实际执行。目标3022客户端MAP两份、DAT三层与同包服务端LS2MAP两层均已真正解压并通过原RAR头CRC/全SHA；其15×15大小一致、前两层原格225+225在大小端规范化后**逐值完全同一**，客户端独立事件层保留不补零。是来源明确的**静态配置→目标图数据**连接，不等于当年同服运行/正式官方身份。3021.DAT CRC仍未通过，原生游戏与初代/JSS同版缺件OPEN。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null和旧完整CURRENT原blob保持不变。最高NEXT：只有独立RAR3解压器或可信原件出现才重开3021.DAT，或转向其他源可读的原游戏实际内容模块；不得做无证优化和脚手架。
+
+
+### 2026-11-04 — Stage A：独立解压补齐 63 个原地图文件，复原 3021 道场和后期地图图块
+
+[来源、对照结果与续接](docs/continuity/STONEAGE-STAGE-A-INDEPENDENT-RAR-MAP-PIXEL-RECOVERY-20261104.md)及[数字证据收据](research/recovered/STONEAGE-STAGE-A-INDEPENDENT-RAR-MAP-PIXEL-RECOVERY-R1.json)。从相同私人混合 2.5 RAR 以 7-Zip 和 UnRAR 分别提取，3,060 项逐字节一致且通过原长度和 CRC。MAP01 原 63 条读取失败全部恢复，其中 100、200、3000、3021 的客户端 DAT 补齐 INTEGRATION02 四个楼层缺口。3021 同包服务端 LS2MAP 也已恢复，和客户端 DAT 前两层各有 14,080、42,921 个格值不同，分别保留。3022 对照前两层完全一致。763,908,374 字节的后期 REAL 完整通过原 CRC，1000 层旧 12 个缺图号有 11 个取得原索引像素，22413 两处仍缺。生成 1000、3021、3022 的私人静态预览，原服运行和初代版本归属仍待证。原 CURRENT blob 全部保留。另逐份验真 100 道场弟子 ARG，99 个原参数指向 3021 内下一处，第 100 个指向 3008/(20,20)，与另 200 个指向 3022/(1,7) 的跳跃配置分开。**最高 NEXT** 查找同源原行为实现或可复验运行环境，核实两条路线的触发与实际落点。Stage A 7 PARTIAL + 2 OPEN，B/Wiki GATED，R79 暂停，overall_percent=null。
