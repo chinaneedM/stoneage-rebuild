@@ -1,0 +1,25 @@
+name: Verify Stage A offline WORLD05 GETPET original source joins
+on:
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-05-GETPET-INSTANCE-TEMPLATE-SPR-R1.json'
+      - 'tests/test_stoneage_stage_a_offline_world05_getpet_pet.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world05.yml'
+      - 'docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-05-GETPET-PET-SOURCE-20261104.md'
+  push:
+    branches: [main]
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-05-GETPET-INSTANCE-TEMPLATE-SPR-R1.json'
+      - 'tests/test_stoneage_stage_a_offline_world05_getpet_pet.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world05.yml'
+      - 'docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-05-GETPET-PET-SOURCE-20261104.md'
+jobs:
+  source-derived-joins:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Independently recompute 36 original-source candidate links and conflicts
+        run: python -m unittest -v tests.test_stoneage_stage_a_offline_world05_getpet_pet

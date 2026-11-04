@@ -1,0 +1,1941 @@
+{
+  "schema": "stoneage.stage_a.offline_world05_quest_GETPET_instance_template_SPR_archive_join.r1",
+  "date": "2026-11-04",
+  "base_main_head": "3bd64c89b47647cad95c1d4c0547f67c6316b846",
+  "base_tree": "99f68012f11175e57b26656ed038cf24e78b1172",
+  "historical_CURRENT_Git_blob_sha": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "evidence_class": "NEW_CROSS_MODULE_RECOMPUTATION_OF_PREVIOUSLY_PRIVATE_SOURCE_VERIFIED_ARCHIVE_INDICES; NO_NEW_ORIGINAL_BINARY_OR_SCRIPT_BYTES_READ_IN_THIS_WORK_UNIT",
+  "provenance": {
+    "carrier": "LATER_COMMUNITY_PRESERVED_MIXED25_ARCHIVE_NOT_AUTHENTICATED_OFFICIAL_DEPLOYMENT",
+    "parent_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "quest_index_path": "research/recovered/STONEAGE-INTEGRATION01-NPC-PET-QUEST-ITEM-MAP-SOURCE-GRAPH-R1.json",
+    "quest_index_Git_blob": "5e526512c0277e19ca41dfcd934c230404d1dfb4",
+    "original_source_derived_table_index_path": "research/recovered/STONEAGE-PET-MODULE-10-ORIGINAL-MIXED25-SERVER-TABLES-R1.json",
+    "original_source_derived_table_Git_blob": "25a37aeb134fb180e322e7dc335029b7374452d8",
+    "original_member_sha256": {
+      "enemy.txt": "cc7418d3b6726f1c458fef9e44a24696d05f076b67c62a56ed2293e26ae63bb6",
+      "enemy2.txt": "507f173136b7f070e4a09bff4e067b3aada9ae8e49cfc99605dd67a57d6c1ba5",
+      "enemybase.txt": "1be7d5226798f7abaabe1f1e74aa1533fcd10e3eaf43f6497d63afa91df3e8b7",
+      "enemybase2.txt": "8ecb23231ae1aeb21fe943c7b459f0c0d10ef3599aedfeaeccca783b077f5fd4",
+      "spradrn_5.bin": "5f13c956cf013e073298ab91667d3aaa17767b26ba94d696514726950ce94de6"
+    }
+  },
+  "summary": {
+    "source_CREATE_links": 24,
+    "distinct_QUEST_script_paths": 23,
+    "GETPET_numeric_literal_occurrences": 41,
+    "distinct_GETPET_literals": 36,
+    "instance_ID_present_in_both_alternative_enemy_tables": 36,
+    "same_referenced_template_ID_in_both_enemy_tables": 36,
+    "referenced_template_ID_present_in_both_alternative_base_tables": 36,
+    "same_graphic_ID_in_both_base_tables": 36,
+    "preserved_SPR_graphic_index_unique_candidate": 36,
+    "direct_numeric_ID_collision_with_wrong_template_A": 26,
+    "instance_row_hash_different_between_alternatives": 36,
+    "template_row_hash_identical_between_alternatives": 1,
+    "PETFLG_source_conflicts": 3,
+    "PETFLG_conflict_template_IDs": [
+      718,
+      719,
+      720
+    ]
+  },
+  "CREATE_QUEST_GETPET_rows": [
+    {
+      "original_CREATE_file": "giiru/event/ev28.create",
+      "CREATE_ordinal": 25,
+      "CREATE_block_sha256": "e61d2a2d32e7d0aad9442ddd1e665f2cfa64283c66c2cab3bf21cd5eeec4614f",
+      "QUEST_script_path": "giiru/event/ev28_ed1",
+      "QUEST_script_original_sha256": "76248f064cbc443ab1452c0cd18a3b12067bc51d0ca98a2bbf4ae91a891b9c4c",
+      "CREATE_floor_id": 31706,
+      "GETPET_original_script_line_numbers": [
+        18
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        54
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "giiru/event/ev28.create",
+      "CREATE_ordinal": 26,
+      "CREATE_block_sha256": "98f5a9a1750ae3edc915506d62474e043e9cc3e54446e0d3aeb836e505d0d01a",
+      "QUEST_script_path": "giiru/event/ev28_ed2",
+      "QUEST_script_original_sha256": "5cd64953d462ac401a2a6f59ffae8fe5ee16086d68c9f682a292cf3daad80e4c",
+      "CREATE_floor_id": 31706,
+      "GETPET_original_script_line_numbers": [
+        18
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        57
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "giiru/event/ev28.create",
+      "CREATE_ordinal": 27,
+      "CREATE_block_sha256": "7d8ca327444e81d45820b260ad093c7ef56350a525c417d7cb192d440d87af17",
+      "QUEST_script_path": "giiru/event/ev28_ed3",
+      "QUEST_script_original_sha256": "aa9ca5b780ed6bff478fc59865bc2239a37c392698259b17abe3b863635f4f46",
+      "CREATE_floor_id": 31706,
+      "GETPET_original_script_line_numbers": [
+        18
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        55
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "giiru/event/ev28.create",
+      "CREATE_ordinal": 28,
+      "CREATE_block_sha256": "b2bd85032d752f857aeda16ee424847a387836c68385e05e4346f9becb0d7860",
+      "QUEST_script_path": "giiru/event/ev28_ed4",
+      "QUEST_script_original_sha256": "660784e8ad1b2a3d1ca9592caf2ab6d1eed5d9ea77fd1f6ea8156d9544e6d2a0",
+      "CREATE_floor_id": 31706,
+      "GETPET_original_script_line_numbers": [
+        18
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        56
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "giiru/event/ev28.create",
+      "CREATE_ordinal": 29,
+      "CREATE_block_sha256": "3f0c487e88285b4b495a8d96da7bba7d7ba1af4bb7dee2d5e089ef74c8300e32",
+      "QUEST_script_path": "giiru/event/ev28_ed5",
+      "QUEST_script_original_sha256": "612086ef08cd18aece794cb58b2a9e274676527ad144146f3e3ca4da7f9a517e",
+      "CREATE_floor_id": 31706,
+      "GETPET_original_script_line_numbers": [
+        18
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        481
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "jaruga/event/event06n.create",
+      "CREATE_ordinal": 0,
+      "CREATE_block_sha256": "144aaea869ea184bc9c03db5dd52b69edef70942024876e9162317fbcd602504",
+      "QUEST_script_path": "jaruga/event/event06_1",
+      "QUEST_script_original_sha256": "3ac3d3388f7914e497eb884de310633e5386f9aaaa784c66cc54b9ad1bbf4aae",
+      "CREATE_floor_id": 20401,
+      "GETPET_original_script_line_numbers": [
+        14,
+        25
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        44,
+        47
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "jaruga/event/oev.create",
+      "CREATE_ordinal": 25,
+      "CREATE_block_sha256": "25721759ac9e41a0575aef3a7c59592b388ad554a5cc6d62b772d58836fa39a3",
+      "QUEST_script_path": "jaruga/event/oev_ed1",
+      "QUEST_script_original_sha256": "169693318607445365974327825fbd4c491b6161a68b7e1e552ca04a69bf2cc5",
+      "CREATE_floor_id": 4000,
+      "GETPET_original_script_line_numbers": [
+        19
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        358,
+        96,
+        328,
+        309,
+        365
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "jaruga/event/oev.create",
+      "CREATE_ordinal": 26,
+      "CREATE_block_sha256": "c6ec4b491823319b40fe22501bf29db08f95257aaf0299b5ac2943decdc22438",
+      "QUEST_script_path": "jaruga/event/oev_edb",
+      "QUEST_script_original_sha256": "0fd527bd0817d0362b1cab22828b8f2c963e4ca88b088af6f736a6a4a254b423",
+      "CREATE_floor_id": 3000,
+      "GETPET_original_script_line_numbers": [
+        21
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        338,
+        360,
+        366,
+        482,
+        482,
+        78
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "giiru/event/event30.create",
+      "CREATE_ordinal": 4,
+      "CREATE_block_sha256": "0443e5dc229377ba6dd5c12df6e7533f713c5ee3feea0cf3142077c596d0befd",
+      "QUEST_script_path": "king/event69_1",
+      "QUEST_script_original_sha256": "634ff3e405b3829da55b9291cad2f98b3fbef3567a46cc048ae52a045df324e9",
+      "CREATE_floor_id": 30600,
+      "GETPET_original_script_line_numbers": [
+        34
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        355
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "king/event69_alpha.create",
+      "CREATE_ordinal": 21,
+      "CREATE_block_sha256": "ae65f5cb5faa933dcd9cc060a52485dfea8d58004a9e701a3b145ba880c80475",
+      "QUEST_script_path": "king/event69_24",
+      "QUEST_script_original_sha256": "90196083dc0be26e3d61787a1e3af1cd2b3d78e5d26566c6edcaaa67ee6862e8",
+      "CREATE_floor_id": 30670,
+      "GETPET_original_script_line_numbers": [
+        18
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        484
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "king/event69_alpha.create",
+      "CREATE_ordinal": 5,
+      "CREATE_block_sha256": "0508da018a6526f9388e92ad97188496cbce900f716b27c0f83acb783e33ccfa",
+      "QUEST_script_path": "king/event69_7",
+      "QUEST_script_original_sha256": "022aaa645db2074216bfb9f87b04d8a87626ea7f9fd2b5a25b175f7eb0111634",
+      "CREATE_floor_id": 2000,
+      "GETPET_original_script_line_numbers": [
+        120
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        1479
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "poru/boss.create",
+      "CREATE_ordinal": 0,
+      "CREATE_block_sha256": "c27f167dfcdc0f9966b1c6e892526955c6cace8caf61d4ce0eb84d3ef69525f2",
+      "QUEST_script_path": "poru/boy04",
+      "QUEST_script_original_sha256": "a945359e2375c513f056178d752b9777ec62214eaade9130f3661f40c0ca4e24",
+      "CREATE_floor_id": 5511,
+      "GETPET_original_script_line_numbers": [
+        22
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        352
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "poru/poru02.create",
+      "CREATE_ordinal": 5,
+      "CREATE_block_sha256": "0f367401a3c59147db054d4637ba243c8e99923484c11503e8dc2322a24101dc",
+      "QUEST_script_path": "poru/mary01",
+      "QUEST_script_original_sha256": "0c5c5fdd64ec72831cb473baf5aa39b05322dd80848aa024e0c6e9494e9b36cb",
+      "CREATE_floor_id": 5530,
+      "GETPET_original_script_line_numbers": [
+        13
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        310
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "poru/poru02.create",
+      "CREATE_ordinal": 8,
+      "CREATE_block_sha256": "cff8cc9ff3a919c1fcac9636bca5435e79989fd623a4ae4ec0ed23522bc893f1",
+      "QUEST_script_path": "poru/mary04",
+      "QUEST_script_original_sha256": "7d92e123a9983f8f043b1619be60238948ffc9185dee7b52403fa807f137c156",
+      "CREATE_floor_id": 5532,
+      "GETPET_original_script_line_numbers": [
+        39
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        1483
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "poru/poru02.create",
+      "CREATE_ordinal": 9,
+      "CREATE_block_sha256": "8464dbd143727b013c97c31b555c5a9695552f9d7ee75ceda20be7e2f08778d2",
+      "QUEST_script_path": "poru/mary05",
+      "QUEST_script_original_sha256": "4350eda28fb3f5c10aea4cabfca0c286a291bb23b8f25298cc5273d9b32229a9",
+      "CREATE_floor_id": 5533,
+      "GETPET_original_script_line_numbers": [
+        42
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        1482
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "poru/poru02.create",
+      "CREATE_ordinal": 10,
+      "CREATE_block_sha256": "a6beb220b43f7490c680601eafc07fd3da71df4f688f1af9fa9c05b83a090f09",
+      "QUEST_script_path": "poru/mary06",
+      "QUEST_script_original_sha256": "1fb426d776a18595cb539c28a496d97b77ed08ec19a8993d3d2ed31bbcd5923c",
+      "CREATE_floor_id": 5538,
+      "GETPET_original_script_line_numbers": [
+        37
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        1481
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "poru/poru02.create",
+      "CREATE_ordinal": 3,
+      "CREATE_block_sha256": "adac745d046ee28d353a5a9647288953524cda43ff5893e6a21f650964f5b068",
+      "QUEST_script_path": "poru/team03",
+      "QUEST_script_original_sha256": "9d9d8714cf8c9b86f22df3e626398bf0912e05dbcc6849ef46f4913d36af25c7",
+      "CREATE_floor_id": 5535,
+      "GETPET_original_script_line_numbers": [
+        39
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        333
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "quiz/quiz.create",
+      "CREATE_ordinal": 2,
+      "CREATE_block_sha256": "2be3cc8e1d0d0a31d89242aef6a25f2b38688180908ff97fbe7156eccd283264",
+      "QUEST_script_path": "quiz/equiz_02",
+      "QUEST_script_original_sha256": "c5b9ff6e85d8f392cc2a668c70de7f3c0a3adcbb0d1e5688006d7a153e999818",
+      "CREATE_floor_id": 810,
+      "GETPET_original_script_line_numbers": [
+        44
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        14
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "quiz/quiz.create",
+      "CREATE_ordinal": 5,
+      "CREATE_block_sha256": "05b129dcf5cbd9e44284408e1e867907859d48a61ff1b62f57ebf7f72f2e3b36",
+      "QUEST_script_path": "quiz/equiz_02",
+      "QUEST_script_original_sha256": "c5b9ff6e85d8f392cc2a668c70de7f3c0a3adcbb0d1e5688006d7a153e999818",
+      "CREATE_floor_id": 850,
+      "GETPET_original_script_line_numbers": [
+        44
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        14
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "quiz/quiz.create",
+      "CREATE_ordinal": 0,
+      "CREATE_block_sha256": "e7d605b5d4c5446a4289d383a309bcc2e1bb0093385e41fc0e248f9626b5c7fe",
+      "QUEST_script_path": "quiz/equiz_04",
+      "QUEST_script_original_sha256": "786a787c285ecd3821aa72cbb7262defe7d9156556dec2d8d9f9eea73b011bea",
+      "CREATE_floor_id": 812,
+      "GETPET_original_script_line_numbers": [
+        23
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        351
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "sainasu/event/event15.create",
+      "CREATE_ordinal": 0,
+      "CREATE_block_sha256": "91ef3b6a3860a52a255edbd1696663f3782a02dcb885e548687dd979824fc53d",
+      "QUEST_script_path": "sainasu/event/event15_1",
+      "QUEST_script_original_sha256": "cb90d02b6e9ad4ba9b4e8d21c01d0077ab2b82f8de1e5f018a4ccb1a80fae129",
+      "CREATE_floor_id": 11006,
+      "GETPET_original_script_line_numbers": [
+        22
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        95
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "sainasu/event/oev2.create",
+      "CREATE_ordinal": 25,
+      "CREATE_block_sha256": "4fc0f0d92c099b87f60d235b4a31db9725258fdf032b5dae8939730313fd997d",
+      "QUEST_script_path": "sainasu/event/oev_edc",
+      "QUEST_script_original_sha256": "a1891aef372be0012df9f830560f513c41e8334a62ff31f26b2da0124632f037",
+      "CREATE_floor_id": 1000,
+      "GETPET_original_script_line_numbers": [
+        19
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        48,
+        94,
+        350,
+        482
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "sainasu/event/oev2.create",
+      "CREATE_ordinal": 26,
+      "CREATE_block_sha256": "87d56178917fbc6e793c364a3cddd8c1137eaae60c906ea586c8ac2d1215cb36",
+      "QUEST_script_path": "sainasu/event/oev_edd",
+      "QUEST_script_original_sha256": "e36d22aa365dae29b57eded4bb3b8dd3ed3edab0f069186ae6041e4eb45a4537",
+      "CREATE_floor_id": 2000,
+      "GETPET_original_script_line_numbers": [
+        27
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        76,
+        309,
+        361,
+        96
+      ],
+      "source_origin_class": "UNRESOLVED"
+    },
+    {
+      "original_CREATE_file": "seimu/event/event02_n.create",
+      "CREATE_ordinal": 0,
+      "CREATE_block_sha256": "9b745670a7bd8fd849d0a84daace3ec50fd08b032cc3b62a54ba536338a27197",
+      "QUEST_script_path": "seimu/event/event02_1",
+      "QUEST_script_original_sha256": "63712fde0c36778b6b65af560a4c396ce8a04877243a05da41f63dd0359b8c34",
+      "CREATE_floor_id": 100,
+      "GETPET_original_script_line_numbers": [
+        11,
+        52
+      ],
+      "GETPET_numeric_literals_in_source_order": [
+        93,
+        341
+      ],
+      "source_origin_class": "UNRESOLVED"
+    }
+  ],
+  "GETPET_instance_template_graph": [
+    {
+      "source_GETPET_literal_numeric": 14,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 10,
+        "instance_id": 14,
+        "reference_template_id": 12,
+        "normalized_fields_sha256": "c9734f16e76520448333a9878cd2c6e8ed1b3bdc3274ba13b7c71368baa7f5db"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 10,
+        "instance_id": 14,
+        "reference_template_id": 12,
+        "normalized_fields_sha256": "968183095ef3ceb525c2126e26477c739660fa58780df07a9ee7d3a4d767f984"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 12,
+        "template_id": 12,
+        "graphic_id": 100255,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "aa62363ce42c388d16cfc25ae2661f57dc51d4fc8eb40e7f6646044ab0c57b85"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 8,
+        "template_id": 12,
+        "graphic_id": 100255,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "051945e12090e6d456956e79ead970af2655f311d957549e17b15138f727b024"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100255,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 245
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 44,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 32,
+        "instance_id": 44,
+        "reference_template_id": 63,
+        "normalized_fields_sha256": "dc4dc0802da9b0eefedc5070b2a35af0a40b778b660782e69791046e39bc3a5e"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 32,
+        "instance_id": 44,
+        "reference_template_id": 63,
+        "normalized_fields_sha256": "555a803ab4e5c5b8f6674ad99134ae7380322197c7ee51eaf2a62020f88f1903"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 63,
+        "template_id": 63,
+        "graphic_id": 100277,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "c4e96276ae26af1167c257d66210c2950c81bab89bb63295d911ba151fb711f4"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 30,
+        "template_id": 63,
+        "graphic_id": 100277,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "7934b45828c6e81c4f871ea526eadae44abddb5ff65b19793e2e3f32a593401d"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100277,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 267
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 47,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 35,
+        "instance_id": 47,
+        "reference_template_id": 72,
+        "normalized_fields_sha256": "333c3e609d3d53adbfae0c552746ad736f02f6c46a20e6880ba84aac9a3968bb"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 35,
+        "instance_id": 47,
+        "reference_template_id": 72,
+        "normalized_fields_sha256": "4f0f0f2ec195c45b104b75220f0ec1dfda2f16249f885d3aa46bf59f4155b6c1"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 72,
+        "template_id": 72,
+        "graphic_id": 100280,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "cb9e6705cc1a079793df2529ee24fa631ed7375d735d50f70e2dcd055ebb6e2a"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 34,
+        "template_id": 72,
+        "graphic_id": 100280,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "bfced692f7516646725463f1fa888ff166a8561c0bb87d4b56c4401a4776b464"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100280,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 270
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 48,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 36,
+        "instance_id": 48,
+        "reference_template_id": 73,
+        "normalized_fields_sha256": "cf8ecc55f3ac4b78aa27881bc1d98529e3f76a0f88755ac8e2b3093c733a432f"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 36,
+        "instance_id": 48,
+        "reference_template_id": 73,
+        "normalized_fields_sha256": "f196dcbddb2d174334f52ad7c0328a160237c08b0f83780ae8958635cfa2315e"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 73,
+        "template_id": 73,
+        "graphic_id": 100281,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "03b49f79349d8340fbdd508cbfab0a57ad883981ad1eb0836733f49eac2d7322"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 35,
+        "template_id": 73,
+        "graphic_id": 100281,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "061eac836112c933361ec47ce43df7d0ad3310c2a50ccb3119c095d42e31c290"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100281,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 271
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 54,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 42,
+        "instance_id": 54,
+        "reference_template_id": 91,
+        "normalized_fields_sha256": "05b5ed44354bdfa7d60ad63c2d997034179689a649f46bad05bc76c92bae46f6"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 42,
+        "instance_id": 54,
+        "reference_template_id": 91,
+        "normalized_fields_sha256": "6422526758e040fca4ecfba378d7ee210a90fa09a419839ed07cdbe9f09beafe"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 91,
+        "template_id": 91,
+        "graphic_id": 100287,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "0846694d945b8ead82d8b2a77d99edaf9c926c1e796458d576b9203c5ff4323b"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 45,
+        "template_id": 91,
+        "graphic_id": 100287,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "274942fdbfaf9746c63db548f53f2d50ef05d41bdae991a46e4421738a740eb0"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100287,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 277
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 55,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 43,
+        "instance_id": 55,
+        "reference_template_id": 92,
+        "normalized_fields_sha256": "060e73da277d89fa09078273301151efe4c3ab133db0838e51ed1c26122f2e58"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 43,
+        "instance_id": 55,
+        "reference_template_id": 92,
+        "normalized_fields_sha256": "c06b5b9942bcee05b4fd017fa216c57c5099ea1b6f21132ea675ddd99b95c077"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 92,
+        "template_id": 92,
+        "graphic_id": 100288,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "26ecf5bb853189372d5b48b8536a56d0c5a2e2c867060531d2dae62907f99d71"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 46,
+        "template_id": 92,
+        "graphic_id": 100288,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "e6d83bb060bd58fd1ea92e6c43da54d00c88a784d6cf0c3c30c050a078774b41"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100288,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 278
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 56,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 44,
+        "instance_id": 56,
+        "reference_template_id": 93,
+        "normalized_fields_sha256": "4d8ccac0c6a9383492cb6bba33621f7c9ed5710dd410fe4cf63f3accdb019586"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 44,
+        "instance_id": 56,
+        "reference_template_id": 93,
+        "normalized_fields_sha256": "e95f5ddc9fbf23555a88b115b6d8944e45932c14ba9ef514da5ad3e329770f9a"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 93,
+        "template_id": 93,
+        "graphic_id": 100289,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "f34bef898e13f1dd9b5489f8330f93714b4c1f916e5bb648e100c5a65d882765"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 47,
+        "template_id": 93,
+        "graphic_id": 100289,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "b1d54dacffab8ccabeb749242732f984057a9f584df11a35a49309abd42473c4"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100289,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 279
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 57,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 45,
+        "instance_id": 57,
+        "reference_template_id": 94,
+        "normalized_fields_sha256": "2069c96d091a36a7928e4da3bee93112729f74af71725e0c72f46671a60d50ea"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 45,
+        "instance_id": 57,
+        "reference_template_id": 94,
+        "normalized_fields_sha256": "c3f9e4b7abbb47e17b764e92d26868868ea933b5fcc3257fd213e68059d0f49f"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 94,
+        "template_id": 94,
+        "graphic_id": 100290,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "1340995134b9d6386c42476f45054d73a0edb56db316519a7de9fb37ab4e4d3a"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 48,
+        "template_id": 94,
+        "graphic_id": 100290,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "fa507cd9a299c6d0b81fea4d8af08f3aa223804cc795170039337b33fce61379"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100290,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 280
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 76,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 55,
+        "instance_id": 76,
+        "reference_template_id": 142,
+        "normalized_fields_sha256": "f13a16eb17bb2120e7450d30c190a73c8ae8bf587db76a865075761a8b52fbbd"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 55,
+        "instance_id": 76,
+        "reference_template_id": 142,
+        "normalized_fields_sha256": "0a68ab03252466892c38b92795d0c339bf4b25a867aaa851b2fee8bfa84a729c"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 142,
+        "template_id": 142,
+        "graphic_id": 100308,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "5f79bfc4b7e4fb5b431b68f587151b3cf8c8c0eb0eff9f2f637e513d49fa8fec"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 59,
+        "template_id": 142,
+        "graphic_id": 100308,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "6aabcf17651e63ee5106346dc2208a39cb2bf1d704aadcdc47af7d28fc0bc0ad"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100308,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 290
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 78,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 57,
+        "instance_id": 78,
+        "reference_template_id": 144,
+        "normalized_fields_sha256": "81867e0628dd4c81e5e0c10b01a4c2d89f323ab99c3c5dcb120d1ccdf7e6154a"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 57,
+        "instance_id": 78,
+        "reference_template_id": 144,
+        "normalized_fields_sha256": "16a7fe00d42d655720362f18ea9e6d6d0a338acbaa84f92f1b846586e4890f1c"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 144,
+        "template_id": 144,
+        "graphic_id": 100310,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "43dd64da8ab4df55e0a8e96c51e95afc0cc6aacf552fafd1c78ab18b64071266"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 61,
+        "template_id": 144,
+        "graphic_id": 100310,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "c55b6e3d9c8c5d5e99af06030ad3de4cd8a3c2eb2aab3bc434e37083e6d011f0"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100310,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 292
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 93,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 58,
+        "instance_id": 93,
+        "reference_template_id": 171,
+        "normalized_fields_sha256": "1314f0df08d21c5268a593288879aa8b624d6a7d8606ffbcf32578bc273f1618"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 58,
+        "instance_id": 93,
+        "reference_template_id": 171,
+        "normalized_fields_sha256": "76bf391f77001c39fb09821deb0b01bcd49f2bd2cec64c5aacd2572409dbf6f2"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 171,
+        "template_id": 171,
+        "graphic_id": 100319,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "1d6f7eb269247b2d19e102fa3646a337dfe29946fbd677316c6ad8a69678a84e"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 62,
+        "template_id": 171,
+        "graphic_id": 100319,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "4e16658b80c3b99ded20d70fcfcf93015015d125ee55f459076d1233d0e30358"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100319,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 293
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 94,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 59,
+        "instance_id": 94,
+        "reference_template_id": 172,
+        "normalized_fields_sha256": "235a0c7fd6a5d53058a711ff40aabb2061ff932d31b9fe1d5f3c61b2f205a075"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 59,
+        "instance_id": 94,
+        "reference_template_id": 172,
+        "normalized_fields_sha256": "d3bea0b917e20cae68e96bc85a0a9b14c8e74ffe9e5eda1daaad97baff033cd1"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 172,
+        "template_id": 172,
+        "graphic_id": 100320,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "dd312f5c1eb8755bec754522022bf49545e1ad7579b5a00e3e2f7737f66c3049"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 63,
+        "template_id": 172,
+        "graphic_id": 100320,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "583d1fdab7cdce2dcab9cf9c15d7ec9906b4fbb729639e1303cce96cd5c86d55"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100320,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 294
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 95,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 60,
+        "instance_id": 95,
+        "reference_template_id": 173,
+        "normalized_fields_sha256": "e182a8a39df0c812ee0f1ad4df179fadc440450077a0e7984e6fdd565196aa1f"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 60,
+        "instance_id": 95,
+        "reference_template_id": 173,
+        "normalized_fields_sha256": "5a1026a76387066a4ee5265267cf0871d166308b43335fc9d2e6a8b5af6aff5c"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 173,
+        "template_id": 173,
+        "graphic_id": 100321,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "eaed97351651fcba722f0f6541b16c8d1c4e82efd6ddd29a221fdd6fe70bdb81"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 64,
+        "template_id": 173,
+        "graphic_id": 100321,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "e61ccdcb8788f7b6cd6d9f8437da3dc23897c0d6c90c8b3f6683e39344258593"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100321,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 295
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 96,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 61,
+        "instance_id": 96,
+        "reference_template_id": 174,
+        "normalized_fields_sha256": "f1344b625b50f8525fe62d5eb3748533845adff2d8486a75c33c679ae689bad8"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 61,
+        "instance_id": 96,
+        "reference_template_id": 174,
+        "normalized_fields_sha256": "b45e7f076a7710342092f81af1c8b1e5321eef145275b71ad50bf676fee4f4b6"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 174,
+        "template_id": 174,
+        "graphic_id": 100322,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "72715e6b0c58fbd7f8e61c385b825308c7277912f09911f5de1ff4beb41a3fb3"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 65,
+        "template_id": 174,
+        "graphic_id": 100322,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "2626092fd84585cab26617c7bc0db35c1cda7f70fe8c89e8330660ff998da6e7"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100322,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 296
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 309,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 164,
+        "instance_id": 309,
+        "reference_template_id": 193,
+        "normalized_fields_sha256": "c3e42000e8ab0ae249da337835080e7304be9a9fbc6bc2d38ad17f6b794926f8"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 164,
+        "instance_id": 309,
+        "reference_template_id": 193,
+        "normalized_fields_sha256": "deb0557cd5f217b3c115ed6e7e4fa391cf9205f7eaee20544133487c82772ea6"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 186,
+        "template_id": 193,
+        "graphic_id": 100329,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "eb872db644b4397180f4c0685d85b5169c4409e6f24ea208a99ed731f289b161"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 73,
+        "template_id": 193,
+        "graphic_id": 100329,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "bd2a9a401a00334dc3d6c5ad83bf97c054b19d6d8481079ca706fc9d5e12f7f1"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100329,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 303
+      },
+      "direct_numeric_template_id_collision_in_A": false,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 310,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 165,
+        "instance_id": 310,
+        "reference_template_id": 194,
+        "normalized_fields_sha256": "905cf7505c28038e9c316346aa8b5d194d0ab304c9bcc415c74489933c93c1c7"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 165,
+        "instance_id": 310,
+        "reference_template_id": 194,
+        "normalized_fields_sha256": "38ac04b37c77ab0649982edaa92517f7fbbfea504f2a80df5bbaad1c1a2cf521"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 187,
+        "template_id": 194,
+        "graphic_id": 100330,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "64d4fe784e0754064b770044bef506aad392f04cbded11d3383244b3e72968d6"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 74,
+        "template_id": 194,
+        "graphic_id": 100330,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "2b078091e59f486406e3f96b75789ef831674a94eb25076cd08d348dd12ea992"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100330,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 304
+      },
+      "direct_numeric_template_id_collision_in_A": false,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 328,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 179,
+        "instance_id": 328,
+        "reference_template_id": 243,
+        "normalized_fields_sha256": "c803cb8bfab894c370c25337b6d891f0b51187a18c07bf112273868b44675f18"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 179,
+        "instance_id": 328,
+        "reference_template_id": 243,
+        "normalized_fields_sha256": "ad50ca801842b45c285a1634b0441c50a3a96baf6ae738ae1292ff04fec4a07d"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 211,
+        "template_id": 243,
+        "graphic_id": 100349,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "b8bbd276ee7c46abcdc0bed0d2cbbbfb480f9faa8cf0b2edef5ed23ef42b3716"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 89,
+        "template_id": 243,
+        "graphic_id": 100349,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "30ed91cf99d4e2f9d015fb978211e6a4dfb9f2d9ec70780879e47e4739f37ff4"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100349,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 319
+      },
+      "direct_numeric_template_id_collision_in_A": false,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 333,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 184,
+        "instance_id": 333,
+        "reference_template_id": 254,
+        "normalized_fields_sha256": "1139ba6d37a625cfe1b3ff9b4809fb0a69ce88e7cd469420a322a8b981f9b8cd"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 184,
+        "instance_id": 333,
+        "reference_template_id": 254,
+        "normalized_fields_sha256": "d67b36cff0c4d84fb4c1449249357a12e38e528696b9f60ec605cf2954e95c8d"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 216,
+        "template_id": 254,
+        "graphic_id": 100354,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "1f7560675fd6862960c37e6139853dbb8b491d4bade570018d01dc707a55cfb1"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 94,
+        "template_id": 254,
+        "graphic_id": 100354,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "fe7a1f3aa685a416066488298fa5f87cd6cab9d6b9c766606229cc004fd9e6a7"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100354,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 324
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 338,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 189,
+        "instance_id": 338,
+        "reference_template_id": 271,
+        "normalized_fields_sha256": "f81c1bdc7144a568eac9277ec1ab9cff49f6839f2407e46367d110fbf9e887e0"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 189,
+        "instance_id": 338,
+        "reference_template_id": 271,
+        "normalized_fields_sha256": "45e37324a63295afadf76770e2d53880f47116a89ef3bf3d92156ae7aafceaeb"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 224,
+        "template_id": 271,
+        "graphic_id": 100359,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "a4da2665e1feb587bb8b924f25ba3e2cf8748637bcf653c1b4198f7dfe687e6a"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 100,
+        "template_id": 271,
+        "graphic_id": 100359,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "9c02190c8f970a407186812183026c953fcc80336d10bfbdbaad287dcae85ce8"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100359,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 329
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 341,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 192,
+        "instance_id": 341,
+        "reference_template_id": 274,
+        "normalized_fields_sha256": "ddb1ccbc33ce06ff1b609173c6edf6d22c915d26ab576059a04b085bed86dce9"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 192,
+        "instance_id": 341,
+        "reference_template_id": 274,
+        "normalized_fields_sha256": "66745b940d7e70c79addb8d0d9dc817c3c0db62ee2024a7bf4f5a9ec956fc013"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 227,
+        "template_id": 274,
+        "graphic_id": 100362,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "ac5e168832416529fc5e32d9694a518d5699cc43e5f2243f0af3d754f2e5f9f3"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 103,
+        "template_id": 274,
+        "graphic_id": 100362,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "8a6efad5f70596466819736ac88dabf8fa23ceaeee02a67970dd32cfe01a6ecd"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100362,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 332
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 350,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 197,
+        "instance_id": 350,
+        "reference_template_id": 301,
+        "normalized_fields_sha256": "91fffdaa096b33faf55f9d877c88bc21a03848164229130954849547a64ca29d"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 197,
+        "instance_id": 350,
+        "reference_template_id": 301,
+        "normalized_fields_sha256": "428291b16228ddd4dc8c3be7ceca9cfdf7246be56cae4b358a58821e78e2e39b"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 233,
+        "template_id": 301,
+        "graphic_id": 100371,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "1f7c3a9f57e4d208743ba7b22fcfd2087b9f32b8d9927fa3edb0e78b8a800302"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 108,
+        "template_id": 301,
+        "graphic_id": 100371,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "e90b483d73497b1924090f16c5c5f477ed9ccbae834c33079281bb65927be529"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100371,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 337
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 351,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 198,
+        "instance_id": 351,
+        "reference_template_id": 302,
+        "normalized_fields_sha256": "4dc89e97dd26d077a4cf5965a5a47b24652f85ce92db78c1cb4e3e5ea6685b75"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 198,
+        "instance_id": 351,
+        "reference_template_id": 302,
+        "normalized_fields_sha256": "63ec8b2b77fd71cbb08c377f81800f38c5ea32783bc1871a09197d683cc8e23d"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 234,
+        "template_id": 302,
+        "graphic_id": 100372,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "4ee5141c63814cbca7694bed974057772254de3d18634a0e9aed2072bbbf57d1"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 109,
+        "template_id": 302,
+        "graphic_id": 100372,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "b6f7be7fb53dd25e5909f33e57853a39d175c7d90939ad09156263bd4f2323de"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100372,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 338
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 352,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 199,
+        "instance_id": 352,
+        "reference_template_id": 303,
+        "normalized_fields_sha256": "931f1b1c78018e65b087c60d048f7a922998072bdb3420ca45d6a05fb5876c41"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 199,
+        "instance_id": 352,
+        "reference_template_id": 303,
+        "normalized_fields_sha256": "b61bacdcafac0ed8e22518e052264abeb2343be1c53d82edb8d4e8562a8e96e0"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 235,
+        "template_id": 303,
+        "graphic_id": 100373,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "4b8a7573a855330f7dcb50556f74e28c1a836da9b822b694f26b4210352e2b97"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 110,
+        "template_id": 303,
+        "graphic_id": 100373,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "b50b4355cc3afcaa92c862aa6239ff81950cf958e550bd573bc99bcbfdd79ef6"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100373,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 339
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 355,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 202,
+        "instance_id": 355,
+        "reference_template_id": 312,
+        "normalized_fields_sha256": "e004f4c2c2b0727eb596ec112b26bf92d8e8d0f9e36edd59a9a9a7735deaffe6"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 202,
+        "instance_id": 355,
+        "reference_template_id": 312,
+        "normalized_fields_sha256": "f6982ae7f9d529c98897cc3a4a237a59aab70b7e2d74f48005c377b2330b58ac"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 238,
+        "template_id": 312,
+        "graphic_id": 100376,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "1521783aa07d32a604f720d6793e1baff036818240afbdf86cecd3c27aef1846"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 113,
+        "template_id": 312,
+        "graphic_id": 100376,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "9e6b1d6e1d15d022a1f50ba242233bef9ba646bc19a8491ccf8e72c479f7f2a7"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100376,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 342
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 358,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 205,
+        "instance_id": 358,
+        "reference_template_id": 321,
+        "normalized_fields_sha256": "a175e87211a0c101cf26c008263234eff4503976f47076678393ccfc7ca25cc8"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 205,
+        "instance_id": 358,
+        "reference_template_id": 321,
+        "normalized_fields_sha256": "5e2304973e53b9bc3d18103d33178946c199a0296a40167ca02066d95dcc9f1b"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 242,
+        "template_id": 321,
+        "graphic_id": 100379,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "87a6cc35fc270018e393c80324a740aecbb2b36b77850d647b5c5161758c5d4e"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 117,
+        "template_id": 321,
+        "graphic_id": 100379,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "474684b22776130daae3d355b8aee22397685e65ce2ffd26fc866356d720f71d"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100379,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 345
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 360,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 207,
+        "instance_id": 360,
+        "reference_template_id": 323,
+        "normalized_fields_sha256": "4acc82b0f954e4de764640511b4272349368f2e002792b75f41e6cbdadabedea"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 207,
+        "instance_id": 360,
+        "reference_template_id": 323,
+        "normalized_fields_sha256": "10c23a158ae6f4d580cd27dcf2c057011ba803db97d2e6ce8da79efaa3af3718"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 244,
+        "template_id": 323,
+        "graphic_id": 100381,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "148c493f1ce6ed1e21ef2b2e1f8ba5829255e696c93ae922ee04cd3f8ed57110"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 119,
+        "template_id": 323,
+        "graphic_id": 100381,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "d5e5e70a948d54547c00e4c743b977a2267d50c459b24d310599b8e0a10f8afc"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100381,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 347
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 361,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 208,
+        "instance_id": 361,
+        "reference_template_id": 324,
+        "normalized_fields_sha256": "8de9a4acc926065e7f6fcd6ccddab23d893a5ea12bec092435366d034ccac07c"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 208,
+        "instance_id": 361,
+        "reference_template_id": 324,
+        "normalized_fields_sha256": "6d0018a104a6e8d64d3dab360ce1ce8535ed9ad3cf19dfa633bd10fbd084bd45"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 245,
+        "template_id": 324,
+        "graphic_id": 100382,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "cd38572dc6f8f03d4d701e7ff51fc0e1c9c71e33a7ed44fcdb80f5fda262a2ef"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 120,
+        "template_id": 324,
+        "graphic_id": 100382,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "93fd484432744d5c26a05f4d094bc9a47935c41b7218fc98f806871e6dbc9ed6"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100382,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 348
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 365,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 212,
+        "instance_id": 365,
+        "reference_template_id": 333,
+        "normalized_fields_sha256": "9e8a54345d83e05cd0a8b10092be9fa77d8a05fe3d7b6c01315467d137c3f797"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 212,
+        "instance_id": 365,
+        "reference_template_id": 333,
+        "normalized_fields_sha256": "9a6ddb19dd57e4dfebce32a90b94079f6fd3fc1467b455c66c80373a62090d22"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 249,
+        "template_id": 333,
+        "graphic_id": 100386,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "16ef0a7e7cd3c78b48d7d05f5ce61c6891fb5531b16e0eebf48c790ad14bf6e0"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 124,
+        "template_id": 333,
+        "graphic_id": 100386,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "dc0d2fbd4ac58f29fb36d7e24d3c77dc221406e96a8bf13614cb849656e37300"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100386,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 352
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 366,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 213,
+        "instance_id": 366,
+        "reference_template_id": 334,
+        "normalized_fields_sha256": "c7757e2de864371eefb2d0cb80ecc7d72ced9cce47608924868b949f5961f0df"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 213,
+        "instance_id": 366,
+        "reference_template_id": 334,
+        "normalized_fields_sha256": "bec75b7eda873292ec78a0ae9806c917e90be2ce54956926e320e2a0e9e82fd1"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 250,
+        "template_id": 334,
+        "graphic_id": 100387,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "4d551e350e0be57c38444c127f9789d0279e034d99753cee2d76b68adb5b89a9"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 125,
+        "template_id": 334,
+        "graphic_id": 100387,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "25817bf521921132522b6269ba81d2f03a1676a3f0455bde06e538615bb2b2a1"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100387,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 353
+      },
+      "direct_numeric_template_id_collision_in_A": true,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 481,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 320,
+        "instance_id": 481,
+        "reference_template_id": 95,
+        "normalized_fields_sha256": "f77986cebe1c2076f8f2f8403354a84559b6e5e738e4524b98dde05f5fd4dc23"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 320,
+        "instance_id": 481,
+        "reference_template_id": 95,
+        "normalized_fields_sha256": "24fc60af307b7d1357d85e6487778db195b34f1a5805ba134f3b6bcb0cd6a854"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 95,
+        "template_id": 95,
+        "graphic_id": 100394,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "93970f8cbf0153211b9a930502efe3c1064e1869e17ffe35493553121f7f1a40"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 49,
+        "template_id": 95,
+        "graphic_id": 100394,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "b8efcae4fbc2be0f0f55c582b96a0595f13f8c012881d629525d38b7a663d8d4"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100394,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 360
+      },
+      "direct_numeric_template_id_collision_in_A": false,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 482,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 321,
+        "instance_id": 482,
+        "reference_template_id": 175,
+        "normalized_fields_sha256": "d39ad4c0f5a88f020e49f43c668b415029cfe817de847c67a5602c257a76a56e"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 321,
+        "instance_id": 482,
+        "reference_template_id": 175,
+        "normalized_fields_sha256": "3bdf61e83fee3936659c60b090c35b4f721a86353bc99363a2754b021d83869c"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 175,
+        "template_id": 175,
+        "graphic_id": 100395,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "90a5e0ae295c659dfb12f9f5eb0e1b0ce8b091b849d400076ca98af20d0b8b86"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 66,
+        "template_id": 175,
+        "graphic_id": 100395,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "0b06abb2da470f3b13ff09c63868edb04ecf364aacdf42e7ffbb97ca5027f453"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100395,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 361
+      },
+      "direct_numeric_template_id_collision_in_A": false,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 484,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 323,
+        "instance_id": 484,
+        "reference_template_id": 315,
+        "normalized_fields_sha256": "abe6a4f8cdcf8cccb4f506932795c1ef149996d5fb2bc26330268fc4d71c8c72"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 323,
+        "instance_id": 484,
+        "reference_template_id": 315,
+        "normalized_fields_sha256": "ab6fd9962feebaf5110aeb3acdb910c09e9acbd7b3238fa6243534deb797a786"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 241,
+        "template_id": 315,
+        "graphic_id": 100430,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "bae2892dc4d4c986b9ffb328eb186948a80f5a3ea64e4ffc1c5a7a83ef5cc22c"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 116,
+        "template_id": 315,
+        "graphic_id": 100430,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "c36a92313e995a1257825a6d83948aee7396cc271751bcdac29444a47b65580c"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100430,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 393
+      },
+      "direct_numeric_template_id_collision_in_A": false,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 1479,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 1103,
+        "instance_id": 1479,
+        "reference_template_id": 718,
+        "normalized_fields_sha256": "dabdedc5bd7f642a5f0dcac43db9a11ca616c6c34a2e54122358e3d422434bc1"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 1103,
+        "instance_id": 1479,
+        "reference_template_id": 718,
+        "normalized_fields_sha256": "abae6e21a93976d84de79b018ec8f11a3cd9bc301481bf2eab74369b68ed01d4"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 519,
+        "template_id": 718,
+        "graphic_id": 100451,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "1d7e737ee254a94aee09654a7e7ddfb4bed8fdcf99090d578b01d88918eb58b1"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 311,
+        "template_id": 718,
+        "graphic_id": 100451,
+        "PETFLG": 0,
+        "normalized_fields_sha256": "909ffdd630e00e9d023e33849ade9136d5f4d646d5702a2d702dbb22b39959ff"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100451,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 414
+      },
+      "direct_numeric_template_id_collision_in_A": false,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 1481,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 1104,
+        "instance_id": 1481,
+        "reference_template_id": 719,
+        "normalized_fields_sha256": "3c60b17e25ee7b385aa1e0f3668ef6251c465b7dd9ebf4423340081e5016a566"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 1104,
+        "instance_id": 1481,
+        "reference_template_id": 719,
+        "normalized_fields_sha256": "a9046370ea90debc45f6d1360978b738732efa08b0717ff01f3a257f7db8a7f3"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 520,
+        "template_id": 719,
+        "graphic_id": 100401,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "280c5ef8741e08e4a37ea710bbb7e482eed494d94d22b2985a3ceb1527ac4e81"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 312,
+        "template_id": 719,
+        "graphic_id": 100401,
+        "PETFLG": 0,
+        "normalized_fields_sha256": "71103e9f3e43e05d9823ddd773092af6564406e769bbb27970d4e7de04849aef"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100401,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 364
+      },
+      "direct_numeric_template_id_collision_in_A": false,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 1482,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 1105,
+        "instance_id": 1482,
+        "reference_template_id": 721,
+        "normalized_fields_sha256": "c79ae20fd3c677b33f21a2c6c065233b894b6226e427d2c1aecebab3c929cb64"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 1105,
+        "instance_id": 1482,
+        "reference_template_id": 721,
+        "normalized_fields_sha256": "8fed704116639405cb874f11772ee91fe8ac2c917b0206dcd7bbbe7bebe42292"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 522,
+        "template_id": 721,
+        "graphic_id": 100259,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "981b9fde65e0c229a9f8bf7c6d53f87f4c3dd11837f635d2c9dea0565fb57bd0"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 314,
+        "template_id": 721,
+        "graphic_id": 100259,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "981b9fde65e0c229a9f8bf7c6d53f87f4c3dd11837f635d2c9dea0565fb57bd0"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100259,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 249
+      },
+      "direct_numeric_template_id_collision_in_A": false,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    },
+    {
+      "source_GETPET_literal_numeric": 1483,
+      "enemy_instance_A": {
+        "member": "enemy.txt",
+        "source_row_1based": 1106,
+        "instance_id": 1483,
+        "reference_template_id": 720,
+        "normalized_fields_sha256": "de42ba2cb4cc229482dcec4be68e29c7bec52f87d6def8a627f8be0bd293494e"
+      },
+      "enemy_instance_B": {
+        "member": "enemy2.txt",
+        "source_row_1based": 1106,
+        "instance_id": 1483,
+        "reference_template_id": 720,
+        "normalized_fields_sha256": "1ac31845f5208509654dea838334383c0b7983b0686053be200aaf02913c3057"
+      },
+      "template_A": {
+        "member": "enemybase.txt",
+        "source_row_1based": 521,
+        "template_id": 720,
+        "graphic_id": 100432,
+        "PETFLG": 1,
+        "normalized_fields_sha256": "3311ed4cc5cd07faf9d64c93fd2902bb4a45e42ecb93de9093627092ffa6bae5"
+      },
+      "template_B": {
+        "member": "enemybase2.txt",
+        "source_row_1based": 313,
+        "template_id": 720,
+        "graphic_id": 100432,
+        "PETFLG": 0,
+        "normalized_fields_sha256": "5b14fac05d981f1de96a29270ff2702970e53cabb3ef6ba93293bf627a83b5de"
+      },
+      "preserved_SPR_index": {
+        "member": "spradrn_5.bin",
+        "graphic_id": 100432,
+        "exact_index_occurrences": 1,
+        "source_record_ordinal": 395
+      },
+      "direct_numeric_template_id_collision_in_A": false,
+      "direct_ID_lookup_is_not_the_INSTANCE_to_TEMPLATE_join": true
+    }
+  ],
+  "alternate_PETFLG_conflicts": [
+    {
+      "GETPET_literal": 1479,
+      "template_id": 718,
+      "PETFLG_A": 1,
+      "PETFLG_B": 0,
+      "graphic_id": 100451
+    },
+    {
+      "GETPET_literal": 1481,
+      "template_id": 719,
+      "PETFLG_A": 1,
+      "PETFLG_B": 0,
+      "graphic_id": 100401
+    },
+    {
+      "GETPET_literal": 1483,
+      "template_id": 720,
+      "PETFLG_A": 1,
+      "PETFLG_B": 0,
+      "graphic_id": 100432
+    }
+  ],
+  "evidence_limits": {
+    "GETPET_literal_command_syntax_not_native_executed": true,
+    "instance_template_two_alternative_tables_no_active_master_choice": true,
+    "source_identifier_not_authenticated_official_JSS1999_TW10_CN182": true,
+    "index_presence_not_RD_pixel_decode_or_published_original_game_frame": true,
+    "raw_commercial_scripts_sprites_names_not_published": true,
+    "no_native_client_combat_quest_or_pet_award_verified": true,
+    "same_archive_does_not_prove_co_deployed_live_server": true,
+    "original_bytes_reopened_in_this_unit": false
+  },
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "STAGE-A-OFFLINE-WORLD-CONTENT-06: source-qualify a bounded visible pet-graphic/quest interaction using already retained exact original bytes, or record absent carrier; keep branch alternatives and execution OPEN."
+}
