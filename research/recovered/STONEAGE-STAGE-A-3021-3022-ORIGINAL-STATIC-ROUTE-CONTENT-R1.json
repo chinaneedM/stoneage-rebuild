@@ -1,0 +1,223 @@
+{
+  "schema": "stoneage.stage_a_original_mixed25_3021_3022_static_route_content.r1",
+  "date": "2026-11-04",
+  "starting_main_head": "aed7edf0f86cb00eb61b25d5212070a1d0786416",
+  "source_scope": "SINGLE_PRESERVED_COMMUNITY_MIXED25_RAR_CLIENT_ADDON_SERVER_SUBTREES; NOT_AUTHENTICATED_OFFICIAL_OR_SINGLE_RUNTIME_DEPLOYMENT",
+  "source_original_RAR": {
+    "size_bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "member_count": 7952
+  },
+  "floor3021_client_MAP": {
+    "size_bytes": 117224,
+    "sha256": "57a230c56ab77c418101e296480f7a04ce653e0aaf0512e15050e22b335ab789",
+    "crc32": "5ca00592",
+    "width": 407,
+    "height": 144,
+    "cells": 58608,
+    "distinct_u16_values": 57,
+    "nonzero_u16_values": 37221,
+    "same_bytes_in_main_and_addon": true,
+    "most_frequent_raw_u16_values": [
+      [
+        0,
+        21387
+      ],
+      [
+        257,
+        21387
+      ],
+      [
+        42405,
+        5012
+      ],
+      [
+        47545,
+        1160
+      ],
+      [
+        41637,
+        902
+      ],
+      [
+        46517,
+        770
+      ]
+    ]
+  },
+  "floor3021_original_NPCCREATE": {
+    "path_suffix": "gmsv/data/npc/doujyou/jyajyadou.create",
+    "source_bytes": 44134,
+    "sha256": "ac3e46dc64d2e478cba4a115e15c2d32d3193c38e9de85f53ce8b06f3d99d925",
+    "crc32": "536b6f2c",
+    "source_raw_create_blocks": 300,
+    "floor_id": 3021,
+    "in_bounds_centers": 300,
+    "distinct_center_coordinates": 300,
+    "out_of_bounds": 0,
+    "disciple_create_blocks": 100,
+    "disciple_naming_ordinal_range": [
+      1,
+      100
+    ],
+    "disciple_function_prefix": "sb_dou",
+    "disciple_graphic_number": 100091,
+    "disciple_source_ARG_count": 100,
+    "disciple_x_coordinates": [
+      4,
+      48,
+      92,
+      136,
+      180,
+      224,
+      268,
+      312,
+      356,
+      400
+    ],
+    "disciple_y_coordinates": [
+      16,
+      28,
+      40,
+      52,
+      64,
+      76,
+      88,
+      100,
+      112,
+      124
+    ],
+    "disciple_grid": "10x10_100_POINTS",
+    "warp_create_blocks": 200,
+    "warp_graphic_number": 0,
+    "warp_function_prefix": "npcgen_warp",
+    "warp_exact_raw_target_numeric_fields": [
+      3022,
+      1,
+      7
+    ],
+    "warp_relation_to_each_disciple": "two positions at x+6,y+2 and x+6,y+3",
+    "raw_3021_MAP_values_at_disciple_centers": [
+      [
+        0,
+        25
+      ],
+      [
+        257,
+        26
+      ],
+      [
+        42405,
+        49
+      ]
+    ],
+    "raw_3021_MAP_values_at_warp_centers": [
+      [
+        0,
+        58
+      ],
+      [
+        257,
+        58
+      ],
+      [
+        41637,
+        13
+      ],
+      [
+        41674,
+        8
+      ],
+      [
+        41677,
+        21
+      ],
+      [
+        41893,
+        17
+      ],
+      [
+        41930,
+        4
+      ],
+      [
+        41932,
+        21
+      ]
+    ]
+  },
+  "floor3022_original_client_MAP": {
+    "size_bytes": 458,
+    "sha256": "e6e19de904cb6ba16ae2d4d61e0ba9c7701c50101e074067702347881a4596db",
+    "crc32": "dd04d3d7",
+    "width": 15,
+    "height": 15,
+    "same_bytes_in_main_and_addon": true
+  },
+  "floor3022_original_client_DAT": {
+    "size_bytes": 1358,
+    "sha256": "0ccb2996e70bc9aaef84c3b2b2fd5b4df639fffc8c98b013bbcff7030b80f26a",
+    "crc32": "b3fa3a66",
+    "width": 15,
+    "height": 15,
+    "planes": 3,
+    "event_plane_raw_values": [
+      [
+        49152,
+        222
+      ],
+      [
+        49155,
+        3
+      ]
+    ]
+  },
+  "floor3022_original_server_LS2MAP": {
+    "size_bytes": 944,
+    "sha256": "f8dd7b61384b712b59b8df18c96776e27939af671fd45fd221b766927fcd7dea",
+    "crc32": "26e16796",
+    "embedded_floor_id": 3022,
+    "width": 15,
+    "height": 15,
+    "planes": 2
+  },
+  "floor3022_cross_subtree_byte_order_normalized": {
+    "tile_u16_cells_exact": 225,
+    "object_u16_cells_exact": 225,
+    "tile_mismatch_count": 0,
+    "object_mismatch_count": 0,
+    "tile_big_endian_sha256": "826d99ba765609fd456858089f6298ee65ff333d098df3175d4265b8e7c26996",
+    "object_big_endian_sha256": "a78a7c9efbc876168d0fb551087d3f07409fcc2c5bf6a5016d06e4f402d9d015",
+    "server_event_plane_present": false,
+    "client_event_plane_retained": true
+  },
+  "floor3022_original_destination_coordinate": {
+    "x": 1,
+    "y": 7,
+    "in_bounds": true,
+    "client_MAP_raw_u16": 46003,
+    "client_DAT_tile_raw_u16": 4085,
+    "client_DAT_object_raw_u16": 0,
+    "client_DAT_event_raw_u16": 49152,
+    "server_LS2MAP_tile_raw_u16": 4085,
+    "server_LS2MAP_object_raw_u16": 0
+  },
+  "unresolved": {
+    "floor3021_original_client_DAT_full_crc_qualified": false,
+    "floor3021_original_client_DAT_original_RAR_CRC32": "c0d8a645",
+    "3021_to_3022_native_warp_observed": false,
+    "npc_enemy_battle_runtime_executed": false,
+    "official_deployment_and_earliest_era_verified": false,
+    "all_client_server_historical_source_consistency_proven": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "overall_percent": null
+  },
+  "verification": {
+    "original_RAR_and_seven_selected_source_file_full_SHA_and_CRC_validated_locally": true,
+    "second_create_coordinate_parser_passed": true,
+    "numpy_and_stdlib_3022_cross_endian_plane_comparison_passed": true,
+    "source_private_bytes_committed": false,
+    "public_ci_reexecutes_original_RAR": false
+  }
+}
