@@ -21,7 +21,7 @@ def load(name):
 
 
 def git_blob(data):
-    return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\\x00" + data).hexdigest()
+    return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\x00" + data).hexdigest()
 
 
 class World08NPCEnemy(unittest.TestCase):
@@ -115,7 +115,7 @@ class World08NPCEnemy(unittest.TestCase):
             'MAP_IsValidCoordinate(',
         ):
             self.assertIn(snippet, c)
-        self.assertEqual(len(re.findall(r'SPR_\\d{3}em|SPR_\\d{3}2m|SPR_\\d{3}3m|SPR_\\d{3}4m', c.split("static int gymbody[]")[1].split("};")[0])), 48)
+        self.assertEqual(len(re.findall(r'SPR_\d{3}em', c.split("static int gymbody[]")[1].split("};")[0])), 48)
         self.assertIn('if( CHAR_getWorkInt( meindex, CHAR_WORK_DIEACT) == 0 )', c)
         self.assertIn('if( tmp == -1 )', c)
         self.assertIn('NPC_ENEMY_REVIVALTIMA_DEFAULT', c)
