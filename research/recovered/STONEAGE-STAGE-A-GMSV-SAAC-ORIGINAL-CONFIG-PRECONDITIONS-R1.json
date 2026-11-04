@@ -1,0 +1,80 @@
+{
+  "schema": "stoneage.stage_a_gmsv_saac_original_config_preconditions.r1",
+  "date": "2026-11-04",
+  "source_head": "06d0a46547354c5b657ba0d84403074a2a1eb1ac",
+  "source_tree": "c6501c16b219f219805ce2daa7818d61bd50f5ce",
+  "preserved_current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "source_scope": "SAME_ARCHIVE_LATER_COMMUNITY_MIXED25_NOT_CERTIFIED_OFFICIAL_DEPLOYMENT",
+  "source_archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "source_archive_byte_length": 361255180,
+  "extraction_method": "LIBARCHIVE_3_7_4_COMPLETE_MEMBER_BYTES_VERIFIED_AGAINST_RAR4_DECLARED_LENGTH_AND_CRC32",
+  "extracted_member_receipts": [
+    {
+      "relative_path": "gmsv/setup.cf",
+      "source_bytes": 9715,
+      "rar_crc32": "3681dc01",
+      "sha256": "b4936c103efb7b3cad359e5c85c7965187306883a68c0be712ece6c374e3b12d"
+    },
+    {
+      "relative_path": "gmsv/setup.cf.bak",
+      "source_bytes": 9719,
+      "rar_crc32": "07b4b021",
+      "sha256": "257e84fa0f2f12a7cc9a666c2601b785b1f86648f2fb45660a9a9a89072981d8"
+    },
+    {
+      "relative_path": "saac/acserv.cf",
+      "source_bytes": 807,
+      "rar_crc32": "64b00bc7",
+      "sha256": "95d3414597dfb2617ea3fc6fd8bcf134652908661d55b03e04c4fe3e76979045"
+    }
+  ],
+  "static_original_configuration": {
+    "gmsv_account_server_loopback": true,
+    "gmsv_account_server_port": 9200,
+    "saac_listen_port": 9200,
+    "gmsv_game_listen_port": 9065,
+    "gmsv_npc_template_capacity_config": 256,
+    "gmsv_npc_create_capacity_config": 8192,
+    "gmsv_and_saac_account_auth_fields_present": true,
+    "gmsv_and_saac_account_auth_values_equal": true,
+    "gmsv_backup_and_saac_account_auth_values_equal": true,
+    "gmsv_live_backup_same_line_count": 525,
+    "gmsv_live_backup_differing_line_count": 1,
+    "gmsv_live_backup_only_differing_field": "PET1",
+    "raw_credential_values_published": false,
+    "credential_value_digests_published": false
+  },
+  "prior_verified_original_guest_run": {
+    "report_path": "research/recovered/STONEAGE-STAGE-A-DOJO-ORIGINAL-ROUTE-BOUNDED-REPLAY-R1.json",
+    "guest_no_network_card": true,
+    "sampled_seconds_after_gmsv_launch": [
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+    ],
+    "sampled_listener_ports": [
+      9065,
+      9200
+    ],
+    "reported_maps_correct": 716,
+    "npc_files_searched": 2203,
+    "correct_npc_templates_reported": 119,
+    "established_tcp_socket_observed": false,
+    "original_client_started": false
+  },
+  "current_evidence_status": "ORIGINAL_STATIC_CONFIG_PRECONDITIONS_VERIFIED_RUNTIME_HANDSHAKE_UNOBSERVED",
+  "server_to_account_handshake_verified": false,
+  "npc_create_event_runtime_verified": false,
+  "original_client_login_verified": false,
+  "original_dojo_warp_in_full_game_verified": false,
+  "official_jss1999_tw10_cn182_deployment_verified": false,
+  "public_ci_reextracts_private_rar": false,
+  "stage_a_status": "7_PARTIAL_2_OPEN",
+  "stage_b_wiki_status": "GATED",
+  "r79_status": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next_material_work": "Observe authentic GMSV-to-SAAC established session and NPC creation after native map/template loading; then attempt same-carrier client login/dojo warp only if qualified runtime input exists."
+}
