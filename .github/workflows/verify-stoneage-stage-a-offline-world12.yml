@@ -1,0 +1,22 @@
+name: Verify Stage A WORLD12 original three-village warp source
+on:
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-12-*'
+      - 'tests/test_stoneage_stage_a_world12_village_warps.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world12.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-12-*'
+      - 'tests/test_stoneage_stage_a_world12_village_warps.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world12.yml'
+jobs:
+  public-source-joins:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_stage_a_world12_village_warps.py' -v
