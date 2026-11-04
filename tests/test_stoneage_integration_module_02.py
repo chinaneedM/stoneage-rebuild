@@ -106,8 +106,8 @@ def validate(p, i, m2, m4, m5):
     assert s["unverified_floor_ids"] == [100,200,3000,3021]
     assert s["GetPet_original_CREATE_refs"] == sum(gp.values()) == 24
     assert s["NPCEnemy_original_CREATE_refs"] == sum(npc.values()) == 279
-    assert s["GetPet_CREATE_refs_by_DAT_qualification"] == dict(gp_status)
-    assert s["NPCEnemy_CREATE_refs_by_DAT_qualification"] == dict(npc_status)
+    assert s["GetPet_CREATE_refs_by_DAT_qualification"] == {k:gp_status[k] for k in ("map04_sha_matched","map02_independent","unqualified_complete_DAT")}
+    assert s["NPCEnemy_CREATE_refs_by_DAT_qualification"] == {k:npc_status[k] for k in ("map04_sha_matched","map02_independent","unqualified_complete_DAT")}
     assert (s["map04_55_floors_nonzero_first_two_plane_numeric_refs"],
             s["map04_55_floors_TW10_RD_candidate_matched_refs"],
             s["map04_55_floors_missing_TW10_RD_candidate_refs"]) == (n,covered,missing) == (400100,390351,9749)
