@@ -40,3 +40,12 @@ INTEGRATION02 的 60 个楼层现均有长度、CRC 和 SHA 合格的三平面�
 ## 后续复原
 
 Stage A 仍为 7 PARTIAL + 2 OPEN，Stage B/Wiki GATED，R79 暂停，整体百分比未知。四张 DAT 的提取缺口已闭合。下一工作优先查同一载体是否保留道场两条静态路线对应的服务端行为实现或可重复的原运行环境，再验证触发时机与实际落点。JSS 1999、台湾 1.0、2001 大陆 1.82 的同版原始运行证据继续独立追踪。
+
+## 同日追加｜原 GMSV 两条调用链已定位
+
+从已合并的 `main 68fa9b402db98c33b20a5124ba4eaaf94c680244` 继续。该提交的 PR 3 项检查及主线地图证据工作流均通过。两套解压器重新从同一 RAR 提取了客户端、GMSV、SAAC、两份对应的 Cygwin DLL 和 Warp 模板，六份逐字节一致且通过原 RAR CRC。旧 O67 的 GMSV libarchive 失败记录继续保留。本轮原 `gmsv.exe` 完整为 1,897,867 字节，CRC32 `6e31b63a`，SHA-256 `d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00`，是 Windows x86 PE32，保留可读的 COFF 函数符号。原程序和 DLL 均只私人保存。
+
+- **弟子 ARG 路径。** 同包模板把 `sb_dou` 绑定为 `NPCEnemy`。原 `NPC_NPCEnemyInit` 引用 `dieact`、`warpfl`、`warpx`、`warpy`，对应工作整数槽分别为 `0x54` 至 `0x57`。`NPC_NPCEnemy_Dying` 中的 `0x495cf2` 从三个坐标槽取值的路径直接调用 `CHAR_warpToSpecificPoint`（`0x440730`）。
+- **独立跳跃路径。** 同包 `genout/npcgen.template` 原索引 21 把 `npcgen_warp` 绑定为 `Warp`，与 CHAR01 的原块 SHA 相同。`NPC_WarpWatch` 在 `0x490f9d` 跳入 `NPC_WarpWarpCharacter`（`0x4904d0`），后者在 `0x490c02` 有一条直接调用同一落点函数的路径。两条配置路线分别保留。
+
+这三条直接边同时经 GNU objdump 符号反汇编与原 PE 字节的相对位移独立复算。证据保留原段地址、文件偏移和散列。静态控制流说明原二进制具有这两条调用路径，实际触发、进入分支的完整条件、网络结果和最终落点仍待验证。下一工作用已认证同包的 Windows x86 程序、运行库和配置建立隔离回放，先验证最小启动条件与两条路径能否分别触发，再判断是否能形成可操作的道场场景。 [原程序静态证据收据](../../research/recovered/STONEAGE-STAGE-A-DOJO-NATIVE-WARP-WITNESS-R1.json)
