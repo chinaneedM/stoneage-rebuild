@@ -1772,3 +1772,8 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 ## 2026-11-05 — WORLD10: original DAT and NPC anchors for three villages
 
 [WORLD10 source observation and continuation](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-10-THREE-VILLAGE-MAPS-20261105.md) re-reads maps 2000, 3000, 4000, the three original image files, and the 47 NPC/signboard source entries from one preserved community mixed25 archive. Three private windows use 17,515 source RD placements, with 13 missing or ambiguous references kept explicit. All 47 source coordinates have raw DAT plane-2 value 49152 (zero-based plane index). The source holds no new claim of original dialogue execution, original draw order, or official historical deployment. The public [numeric and hash receipt](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-10-THREE-VILLAGE-MAP-OBSERVATION-R1.json) preserves the joins. **Next WORLD11** qualifies original NPC and signboard appearances at these map anchors.
+
+
+## 2026-11-05 — WORLD11: original static appearances at the three village anchors
+
+[WORLD11](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-11-NPC-STATIC-APPEARANCE-20261105.md) independently decodes 29 preserved mixed25 RD images and joins all 47 NPC/signboard CREATE placements to the original numeric aliases and signed ADRN offsets. The private overlay preserves the WORLD10 map pixels, anchor links and original dialogue. The verified TW1 byte prefix excludes the two placements' shared sign alias 10400. [Public source receipt](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-11-NPC-STATIC-APPEARANCE-R1.json). **Next WORLD12** compares the original village door and warp records to DAT event cells.

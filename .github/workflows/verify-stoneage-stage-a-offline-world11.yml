@@ -1,0 +1,22 @@
+name: Verify Stage A WORLD11 original NPC static appearances
+on:
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-11-*'
+      - 'tests/test_stoneage_stage_a_world11_village_appearance.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world11.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-11-*'
+      - 'tests/test_stoneage_stage_a_world11_village_appearance.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world11.yml'
+jobs:
+  public-source-joins:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_stage_a_world11_village_appearance.py' -v
