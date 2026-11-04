@@ -1,0 +1,25 @@
+name: Verify Stage A WORLD06 original TW10 pixels and quest numeric candidate boundaries
+on:
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-06-TW10-GETPET-ORIGINAL-PIXEL-BRIDGE-R1.json'
+      - 'tests/test_stoneage_stage_a_offline_world06_pixel_provenance.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world06.yml'
+      - 'docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-06-PET-GETPET-TW10-PIXEL-20261104.md'
+  push:
+    branches: [main]
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-06-TW10-GETPET-ORIGINAL-PIXEL-BRIDGE-R1.json'
+      - 'tests/test_stoneage_stage_a_offline_world06_pixel_provenance.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world06.yml'
+      - 'docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-06-PET-GETPET-TW10-PIXEL-20261104.md'
+jobs:
+  historical-source-candidate-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify original RD SHA and version boundary sources
+        run: python -m unittest -v tests.test_stoneage_stage_a_offline_world06_pixel_provenance
