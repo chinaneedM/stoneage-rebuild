@@ -7,6 +7,8 @@ on:
       - 'research/recovered/STONEAGE-STAGE-A-INDEPENDENT-RAR-MAP-PIXEL-RECOVERY-R1.json'
       - 'research/recovered/STONEAGE-STAGE-A-GMSV-SAAC-ORIGINAL-CONFIG-PRECONDITIONS-R1.json'
       - 'tests/test_stoneage_stage_a_gmsv_saac_config_preconditions.py'
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-01-DOJO-SOURCE-ATLAS-R1.json'
+      - 'tests/test_stoneage_stage_a_offline_dojo_source_atlas.py'
   push:
     branches: [main]
     paths:
@@ -15,6 +17,8 @@ on:
       - 'research/recovered/STONEAGE-STAGE-A-INDEPENDENT-RAR-MAP-PIXEL-RECOVERY-R1.json'
       - 'research/recovered/STONEAGE-STAGE-A-GMSV-SAAC-ORIGINAL-CONFIG-PRECONDITIONS-R1.json'
       - 'tests/test_stoneage_stage_a_gmsv_saac_config_preconditions.py'
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-01-DOJO-SOURCE-ATLAS-R1.json'
+      - 'tests/test_stoneage_stage_a_offline_dojo_source_atlas.py'
 jobs:
   source-receipt:
     runs-on: ubuntu-latest
@@ -27,6 +31,7 @@ jobs:
         run: >
           python -m unittest -v
           tests.test_stoneage_stage_a_independent_rar_recovery
+          tests.test_stoneage_stage_a_offline_dojo_source_atlas
           tests.test_stoneage_stage_a_gmsv_saac_config_preconditions
           tests.test_stoneage_stage_a_original_rar_block_replay
           tests.test_stoneage_stage_a_source_gap_20261104
