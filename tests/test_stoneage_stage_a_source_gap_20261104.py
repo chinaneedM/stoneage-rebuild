@@ -74,7 +74,7 @@ def validate(d,m,i1,i2,i3,s):
         } for r in src_creates if r["floor_id"]==floor]
         expected_npc=[{
             "original_CREATE_file":r["original_CREATE_file"],
-            "source_CREATE_ordinal":r["original_CREATE_ordinal"],
+            "source_CREATE_ordinal":r["source_CREATE_ordinal"],
             "source_CREATE_block_sha256":r["source_CREATE_block_sha256"],
             "original_ARG_path":r["source_ARG_file"],
             "source_ARG_sha256":r["source_ARG_file_sha256"]
