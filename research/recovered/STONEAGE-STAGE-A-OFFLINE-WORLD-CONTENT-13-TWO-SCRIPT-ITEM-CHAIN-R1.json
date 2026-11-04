@@ -1,0 +1,644 @@
+{
+  "schema": "stoneage.stage_a.world13.two_source_script_item_chain.r1",
+  "recorded_on": "2026-11-05",
+  "source_scope": "PRESERVED_COMMUNITY_MIXED25_SOURCE_DERIVED_NUMERIC_CATALOG_NOT_OFFICIAL_OR_NATIVE_RUNTIME",
+  "original_archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "quest_catalog_blob_sha": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2",
+  "item_table_source_sha256": {
+    "source_a": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+    "source_b": "6d6d63fda59c6bda2f239fe18c9361b5c9da18c84f678b7cc95bde24544292fb"
+  },
+  "sources": [
+    {
+      "path": "sainasu/event/nevent01_2",
+      "original_size": 3275,
+      "original_sha256": "4ebbcc62d156e8578c1ac14e72cf7626e569cb8ece87c785dd173ba7226f9169",
+      "original_crc32": "20419d11",
+      "source_control_lines": {
+        "EventNo": 9,
+        "TYPE": 9,
+        "EVENT": 9,
+        "EventEnd": 9
+      },
+      "origin": "UNRESOLVED",
+      "create_references": [
+        {
+          "create_source_path": "sainasu/event/nevent.create",
+          "create_source_sha": "3b9b8657773ae36b8a0f35c28f838aea302eddfc1cebe38ce7c3b437190c6f7c",
+          "create_brace_ordinal": 1,
+          "floorid": 2000,
+          "borncenter_numeric": null,
+          "graphic_alias_numeric": 16024
+        },
+        {
+          "create_source_path": "sainasu/event/nevent.create",
+          "create_source_sha": "3b9b8657773ae36b8a0f35c28f838aea302eddfc1cebe38ce7c3b437190c6f7c",
+          "create_brace_ordinal": 3,
+          "floorid": 4000,
+          "borncenter_numeric": null,
+          "graphic_alias_numeric": 16024
+        }
+      ],
+      "blocks": [
+        {
+          "ordinal": 0,
+          "type": "ACCEPT",
+          "event_number": -1,
+          "source_type_line": 9,
+          "source_section_sha256": "bd14cc89df4fdfa871b7a37a41e1d9261b31e5b79b2a07cde73c084c6d718145",
+          "condition_sha256": "27f1926d4daf819e35f1ee93689579df0919986fcc720d95fb30747429803812",
+          "condition_keywords": {
+            "ITEM": 2,
+            "LV": 1,
+            "TIME": 1
+          },
+          "predicate_item_ids": [
+            2569,
+            2572
+          ],
+          "del_item_ids": [
+            2569,
+            2572
+          ],
+          "get_item_ids": [
+            2432
+          ]
+        },
+        {
+          "ordinal": 1,
+          "type": "ACCEPT",
+          "event_number": -1,
+          "source_type_line": 19,
+          "source_section_sha256": "06b7d097c936ee529a26acadf92d6c7b9177fbf9bdfa34f96838136d95e2c0a4",
+          "condition_sha256": "881eca91c253707bbfe886199c434c4107b069c120fb1a4abb325a83cdf4115c",
+          "condition_keywords": {
+            "ITEM": 2,
+            "LV": 1,
+            "TIME": 1
+          },
+          "predicate_item_ids": [
+            2569,
+            2573
+          ],
+          "del_item_ids": [
+            2569,
+            2573
+          ],
+          "get_item_ids": [
+            2432
+          ]
+        },
+        {
+          "ordinal": 2,
+          "type": "ACCEPT",
+          "event_number": -1,
+          "source_type_line": 35,
+          "source_section_sha256": "04f30d4ecaeaffa8075ec0f19f7b74023cfb855fcbf914d05b6a12d03461164d",
+          "condition_sha256": "e8eb288dd620c5d32e10d3f92ecbdf2eb2b46b29e5902ec04d338b45a8b2d914",
+          "condition_keywords": {
+            "ITEM": 2,
+            "LV": 1,
+            "TIME": 1
+          },
+          "predicate_item_ids": [
+            2569,
+            2574
+          ],
+          "del_item_ids": [
+            2569,
+            2574
+          ],
+          "get_item_ids": [
+            2433
+          ]
+        },
+        {
+          "ordinal": 3,
+          "type": "ACCEPT",
+          "event_number": -1,
+          "source_type_line": 46,
+          "source_section_sha256": "61667f536d9caf99b0f1691b4f893947d7ba3395b7f9fba4ba18253f40cd4531",
+          "condition_sha256": "d9bdad0c967d917dd75d9889cf71f1c9b82a96966034e25266dd31ff9c5fea88",
+          "condition_keywords": {
+            "ITEM": 2,
+            "LV": 1,
+            "TIME": 1
+          },
+          "predicate_item_ids": [
+            2570,
+            2572
+          ],
+          "del_item_ids": [
+            2570,
+            2572
+          ],
+          "get_item_ids": [
+            2433
+          ]
+        },
+        {
+          "ordinal": 4,
+          "type": "ACCEPT",
+          "event_number": -1,
+          "source_type_line": 57,
+          "source_section_sha256": "69fc5055ba2a8f2ac0ded91e41d0365bbe4c555502dc94847f531bf215c2fee4",
+          "condition_sha256": "d9f025906fff5302c15f4d4006d33c12b78fa9221300a1dc7c3cb69ab199bdea",
+          "condition_keywords": {
+            "ITEM": 2,
+            "LV": 1,
+            "TIME": 1
+          },
+          "predicate_item_ids": [
+            2570,
+            2573
+          ],
+          "del_item_ids": [
+            2570,
+            2573
+          ],
+          "get_item_ids": [
+            2433
+          ]
+        },
+        {
+          "ordinal": 5,
+          "type": "ACCEPT",
+          "event_number": -1,
+          "source_type_line": 69,
+          "source_section_sha256": "8eb29fdd742bbd24ff7eac269c8b339c85521685eb8d1fe6632da04457d50244",
+          "condition_sha256": "8effbae544a422551c64e68a6130a6fbf60fe3772621c58a1229ff36b80cbcec",
+          "condition_keywords": {
+            "ITEM": 2,
+            "LV": 1,
+            "TIME": 1
+          },
+          "predicate_item_ids": [
+            2571,
+            2572
+          ],
+          "del_item_ids": [
+            2571,
+            2572
+          ],
+          "get_item_ids": [
+            2433
+          ]
+        },
+        {
+          "ordinal": 6,
+          "type": "ACCEPT",
+          "event_number": -1,
+          "source_type_line": 87,
+          "source_section_sha256": "5cc1ecce0e86ed24bc4c9bb06a3f1a7a20b68f65f64837c6bbb74af979f966d5",
+          "condition_sha256": "6a9332ebf19d007177ecd25332c268c7b320c8c498b285bf27d5c6d9e0caccff",
+          "condition_keywords": {
+            "ITEM": 2,
+            "LV": 1,
+            "TIME": 1
+          },
+          "predicate_item_ids": [
+            2570,
+            2574
+          ],
+          "del_item_ids": [
+            2570,
+            2574
+          ],
+          "get_item_ids": [
+            2434
+          ]
+        },
+        {
+          "ordinal": 7,
+          "type": "ACCEPT",
+          "event_number": -1,
+          "source_type_line": 98,
+          "source_section_sha256": "5a63e42e2014cdf4f6a1859340c877280179fcfcabb5dd3641879152eb35fb43",
+          "condition_sha256": "224f72425e38c857b014ba21908bc41fc978f072ba7ca8df25eadc5e423977bd",
+          "condition_keywords": {
+            "ITEM": 2,
+            "LV": 1,
+            "TIME": 1
+          },
+          "predicate_item_ids": [
+            2571,
+            2573
+          ],
+          "del_item_ids": [
+            2571,
+            2573
+          ],
+          "get_item_ids": [
+            2434
+          ]
+        },
+        {
+          "ordinal": 8,
+          "type": "ACCEPT",
+          "event_number": -1,
+          "source_type_line": 109,
+          "source_section_sha256": "b75278c2f026678bb0622cdf2ea425c91d35de35ff5d1955996e1f866927255c",
+          "condition_sha256": "d17b1952f55a407e9387401617a5bd083d585633c3eeda8f0e8befab2494bc58",
+          "condition_keywords": {
+            "ITEM": 2,
+            "LV": 1,
+            "TIME": 1
+          },
+          "predicate_item_ids": [
+            2571,
+            2574
+          ],
+          "del_item_ids": [
+            2571,
+            2574
+          ],
+          "get_item_ids": [
+            2434
+          ]
+        }
+      ]
+    },
+    {
+      "path": "sainasu/event/nevent01_1",
+      "original_size": 1365,
+      "original_sha256": "d3808f36ddb8192289be007954b606139c8442ac78cc86d7449944445f2ed5a4",
+      "original_crc32": "b4414cda",
+      "source_control_lines": {
+        "EventNo": 4,
+        "TYPE": 4,
+        "EVENT": 4,
+        "EventEnd": 4
+      },
+      "origin": "UNRESOLVED",
+      "create_references": [
+        {
+          "create_source_path": "sainasu/event/nevent.create",
+          "create_source_sha": "3b9b8657773ae36b8a0f35c28f838aea302eddfc1cebe38ce7c3b437190c6f7c",
+          "create_brace_ordinal": 0,
+          "floorid": 2000,
+          "borncenter_numeric": null,
+          "graphic_alias_numeric": 16064
+        },
+        {
+          "create_source_path": "sainasu/event/nevent.create",
+          "create_source_sha": "3b9b8657773ae36b8a0f35c28f838aea302eddfc1cebe38ce7c3b437190c6f7c",
+          "create_brace_ordinal": 2,
+          "floorid": 4000,
+          "borncenter_numeric": null,
+          "graphic_alias_numeric": 16064
+        }
+      ],
+      "blocks": [
+        {
+          "ordinal": 0,
+          "type": "ACCEPT",
+          "event_number": -1,
+          "source_type_line": 4,
+          "source_section_sha256": "922e84e94a2e2241c79ca4cf63cb74fc44d4c566ac832fdc3621d45358d1f518",
+          "condition_sha256": "6425b26b64ddd46501056412ed530baf50c087ee8e731dcdf6c236f88cdde378",
+          "condition_keywords": {
+            "ITEM": 1,
+            "LV": 1
+          },
+          "predicate_item_ids": [
+            2434
+          ],
+          "del_item_ids": [
+            2434
+          ],
+          "get_item_ids": [
+            2437,
+            11863,
+            11872
+          ]
+        },
+        {
+          "ordinal": 1,
+          "type": "ACCEPT",
+          "event_number": -1,
+          "source_type_line": 15,
+          "source_section_sha256": "ae51c5373b09f823a68b1201d3a78f7323e910f4839a51dc11c8e2a431a74c43",
+          "condition_sha256": "292bc4531e013a3fe83fbb67e35bfbb97c2fcb66bad36256a45e015a904b8b27",
+          "condition_keywords": {
+            "ITEM": 1,
+            "LV": 1
+          },
+          "predicate_item_ids": [
+            2433
+          ],
+          "del_item_ids": [
+            2433
+          ],
+          "get_item_ids": [
+            2436,
+            11863,
+            11873
+          ]
+        },
+        {
+          "ordinal": 2,
+          "type": "ACCEPT",
+          "event_number": -1,
+          "source_type_line": 26,
+          "source_section_sha256": "52dee4bc7564c4c4fab7cf7e3476c0672fd346ce9d1fd0d69a877078029a23c6",
+          "condition_sha256": "3d37c60acdd30da037f77a4934bcd474a464b96e88997b8af7130c4319463ff9",
+          "condition_keywords": {
+            "ITEM": 1,
+            "LV": 1
+          },
+          "predicate_item_ids": [
+            2432
+          ],
+          "del_item_ids": [
+            2432
+          ],
+          "get_item_ids": [
+            2435,
+            11863,
+            11874
+          ]
+        },
+        {
+          "ordinal": 3,
+          "type": "MESSAGE",
+          "event_number": -1,
+          "source_type_line": 37,
+          "source_section_sha256": "b1638d6a77523e6a77443e7ea3d0807a0e98d82b690ca4696c4d56a14447059e",
+          "condition_sha256": "64a8b001acc3af91a16b35153bcfffce6076143c06049cfa072fb9b7ba37e1ac",
+          "condition_keywords": {
+            "LV": 1,
+            "TIME": 1
+          },
+          "predicate_item_ids": [],
+          "del_item_ids": [],
+          "get_item_ids": []
+        }
+      ]
+    }
+  ],
+  "bridge_links": [
+    {
+      "item_id": 2432,
+      "producer_script": "sainasu/event/nevent01_2",
+      "producer_block_ordinals": [
+        0,
+        1
+      ],
+      "consumer_script": "sainasu/event/nevent01_1",
+      "consumer_block_ordinals": [
+        2
+      ]
+    },
+    {
+      "item_id": 2433,
+      "producer_script": "sainasu/event/nevent01_2",
+      "producer_block_ordinals": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "consumer_script": "sainasu/event/nevent01_1",
+      "consumer_block_ordinals": [
+        1
+      ]
+    },
+    {
+      "item_id": 2434,
+      "producer_script": "sainasu/event/nevent01_2",
+      "producer_block_ordinals": [
+        6,
+        7,
+        8
+      ],
+      "consumer_script": "sainasu/event/nevent01_1",
+      "consumer_block_ordinals": [
+        0
+      ]
+    }
+  ],
+  "initial_item_ids": [
+    2569,
+    2570,
+    2571,
+    2572,
+    2573,
+    2574
+  ],
+  "intermediate_item_ids": [
+    2432,
+    2433,
+    2434
+  ],
+  "final_output_item_ids": [
+    2435,
+    2436,
+    2437,
+    11863,
+    11872,
+    11873,
+    11874
+  ],
+  "item_rows": [
+    {
+      "id": 2432,
+      "source_a_complete_row_sha256": "80f01083e51e36710c01aac78f18b6162b89dbcb6edc6be94e46b6bbe91385ca",
+      "source_b_complete_row_sha256": "80f01083e51e36710c01aac78f18b6162b89dbcb6edc6be94e46b6bbe91385ca",
+      "source_a_image_alias": 24123,
+      "source_b_image_alias": 24123,
+      "source_a_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "source_b_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_table_changed_column_positions": []
+    },
+    {
+      "id": 2433,
+      "source_a_complete_row_sha256": "2e794c59bf6765c9f1b25fd9bcf6159424840d1cd186e32c49422c31f41b5d4d",
+      "source_b_complete_row_sha256": "2e794c59bf6765c9f1b25fd9bcf6159424840d1cd186e32c49422c31f41b5d4d",
+      "source_a_image_alias": 24123,
+      "source_b_image_alias": 24123,
+      "source_a_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "source_b_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_table_changed_column_positions": []
+    },
+    {
+      "id": 2434,
+      "source_a_complete_row_sha256": "6e367ae72d42bc297d44bdaa403f6e2bd844f84b45ea2c35ac7d56b17d589813",
+      "source_b_complete_row_sha256": "6e367ae72d42bc297d44bdaa403f6e2bd844f84b45ea2c35ac7d56b17d589813",
+      "source_a_image_alias": 24123,
+      "source_b_image_alias": 24123,
+      "source_a_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "source_b_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_table_changed_column_positions": []
+    },
+    {
+      "id": 2435,
+      "source_a_complete_row_sha256": "a370947d3cb5a2c0aec47ae4e181fdc4e8d66bf9ffd9a1ab3a7efa1c752ad2ac",
+      "source_b_complete_row_sha256": "a370947d3cb5a2c0aec47ae4e181fdc4e8d66bf9ffd9a1ab3a7efa1c752ad2ac",
+      "source_a_image_alias": 24088,
+      "source_b_image_alias": 24088,
+      "source_a_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "source_b_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_table_changed_column_positions": []
+    },
+    {
+      "id": 2436,
+      "source_a_complete_row_sha256": "9f12230a2de9dfeaeb8c0489fabcaf62ca3dcf0f5fca2090bdea639576e0eba5",
+      "source_b_complete_row_sha256": "9f12230a2de9dfeaeb8c0489fabcaf62ca3dcf0f5fca2090bdea639576e0eba5",
+      "source_a_image_alias": 24091,
+      "source_b_image_alias": 24091,
+      "source_a_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "source_b_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_table_changed_column_positions": []
+    },
+    {
+      "id": 2437,
+      "source_a_complete_row_sha256": "9c38f4ef09bfec5073d77106ad44aa599a657f1f9c3b56e976352326f3485ed8",
+      "source_b_complete_row_sha256": "9c38f4ef09bfec5073d77106ad44aa599a657f1f9c3b56e976352326f3485ed8",
+      "source_a_image_alias": 24089,
+      "source_b_image_alias": 24089,
+      "source_a_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "source_b_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_table_changed_column_positions": []
+    },
+    {
+      "id": 2569,
+      "source_a_complete_row_sha256": "6bb9af4226008fb27b074a8b9e50f39c331c10bd6f65859c418a2d2128dbf00a",
+      "source_b_complete_row_sha256": "6bb9af4226008fb27b074a8b9e50f39c331c10bd6f65859c418a2d2128dbf00a",
+      "source_a_image_alias": 24113,
+      "source_b_image_alias": 24113,
+      "source_a_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "source_b_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_table_changed_column_positions": []
+    },
+    {
+      "id": 2570,
+      "source_a_complete_row_sha256": "bf435283627989821ec102db3865bf3f8e11eeb182bdba03fe43453603b0b5ea",
+      "source_b_complete_row_sha256": "bf435283627989821ec102db3865bf3f8e11eeb182bdba03fe43453603b0b5ea",
+      "source_a_image_alias": 24116,
+      "source_b_image_alias": 24116,
+      "source_a_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "source_b_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_table_changed_column_positions": []
+    },
+    {
+      "id": 2571,
+      "source_a_complete_row_sha256": "b5b948a00ee395413e8d57acf30dcc91c30dca5cd47eb750a5b2b8fe8698b3e2",
+      "source_b_complete_row_sha256": "b5b948a00ee395413e8d57acf30dcc91c30dca5cd47eb750a5b2b8fe8698b3e2",
+      "source_a_image_alias": 24115,
+      "source_b_image_alias": 24115,
+      "source_a_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "source_b_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_table_changed_column_positions": []
+    },
+    {
+      "id": 2572,
+      "source_a_complete_row_sha256": "13e524a00be9faa2e0c41041c387ee8b1c249393593809ecb0719070c80278eb",
+      "source_b_complete_row_sha256": "13e524a00be9faa2e0c41041c387ee8b1c249393593809ecb0719070c80278eb",
+      "source_a_image_alias": 24106,
+      "source_b_image_alias": 24106,
+      "source_a_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "source_b_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_table_changed_column_positions": []
+    },
+    {
+      "id": 2573,
+      "source_a_complete_row_sha256": "f23f520cd4ede1cf5e2fdd7bc75c88769e1408e1fa00dbaf24d31fedb8a14090",
+      "source_b_complete_row_sha256": "f23f520cd4ede1cf5e2fdd7bc75c88769e1408e1fa00dbaf24d31fedb8a14090",
+      "source_a_image_alias": 24104,
+      "source_b_image_alias": 24104,
+      "source_a_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "source_b_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_table_changed_column_positions": []
+    },
+    {
+      "id": 2574,
+      "source_a_complete_row_sha256": "772fbb84579cbd252c9129d96ccc40e38dab84ef210e95e4491cb9489b76a66c",
+      "source_b_complete_row_sha256": "772fbb84579cbd252c9129d96ccc40e38dab84ef210e95e4491cb9489b76a66c",
+      "source_a_image_alias": 24105,
+      "source_b_image_alias": 24105,
+      "source_a_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "source_b_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_table_changed_column_positions": []
+    },
+    {
+      "id": 11863,
+      "source_a_complete_row_sha256": "b108577ab25d5e33b9f30c90d005b2c0c0a4f63bec00468ee44a023a622f938f",
+      "source_b_complete_row_sha256": "b108577ab25d5e33b9f30c90d005b2c0c0a4f63bec00468ee44a023a622f938f",
+      "source_a_image_alias": 24131,
+      "source_b_image_alias": 24131,
+      "source_a_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "source_b_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_table_changed_column_positions": []
+    },
+    {
+      "id": 11872,
+      "source_a_complete_row_sha256": "eb2abeca9b782821aa773e1aa7500a8605a053ff3e4817d6562de2ac4cea857f",
+      "source_b_complete_row_sha256": "eb2abeca9b782821aa773e1aa7500a8605a053ff3e4817d6562de2ac4cea857f",
+      "source_a_image_alias": 24150,
+      "source_b_image_alias": 24150,
+      "source_a_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "source_b_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_table_changed_column_positions": []
+    },
+    {
+      "id": 11873,
+      "source_a_complete_row_sha256": "586aa9e93452bab67962a37d3b11dd6b265aa23ca362861129b617568908dd2d",
+      "source_b_complete_row_sha256": "586aa9e93452bab67962a37d3b11dd6b265aa23ca362861129b617568908dd2d",
+      "source_a_image_alias": 24149,
+      "source_b_image_alias": 24149,
+      "source_a_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "source_b_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_table_changed_column_positions": []
+    },
+    {
+      "id": 11874,
+      "source_a_complete_row_sha256": "b0ec6f7fd2fdd2d3555870d94a5e73cebd300b4fc765414d8e5942b81fdbeab9",
+      "source_b_complete_row_sha256": "b0ec6f7fd2fdd2d3555870d94a5e73cebd300b4fc765414d8e5942b81fdbeab9",
+      "source_a_image_alias": 24149,
+      "source_b_image_alias": 24149,
+      "source_a_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "source_b_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_table_changed_column_positions": []
+    }
+  ],
+  "counts": {
+    "script_files": 2,
+    "create_references": 4,
+    "source_control_blocks": 13,
+    "accept_blocks": 12,
+    "message_blocks": 1,
+    "del_item_positions": 21,
+    "get_item_positions": 18,
+    "input_distinct_ids": 6,
+    "bridge_distinct_ids": 3,
+    "final_output_distinct_ids": 7,
+    "all_distinct_item_ids": 16,
+    "distinct_item_image_aliases": 13,
+    "qualified_RD_candidates": 16
+  },
+  "qualification": {
+    "source_references_2000_and_4000_no_numeric_center": true,
+    "source_create_graphic_aliases_not_actual_NPC_pixels": true,
+    "all_item_ids_in_both_preserved_candidate_itemsets": true,
+    "item_alias_to_TW1_RD_previous_derivation_not_redecoded_this_turn": true,
+    "quest_script_create_and_item_table_from_same_preserved_archive": true,
+    "cross_carrier_TW1_art_not_same_official_deployment": true,
+    "condition_keywords_not_evaluated": true,
+    "GetItem_DelItem_are_static_operations_not_observed_success": true,
+    "script_origin_UNRESOLVED": true,
+    "original_asset_or_script_text_published": false,
+    "original_archive_reopened_this_turn": false,
+    "native_game_executed": false
+  },
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "continuity": {
+    "base_head": "50dfe541b1160e7d186e37ff20c6e03975932d89",
+    "base_tree": "c2f5ace554f7a8fee1d4d03c995c95567f305caf",
+    "preserved_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "next": "WORLD14_SOURCE_QUALIFIED_QUEST_OR_ITEM_MATERIAL_ROTATION"
+}
