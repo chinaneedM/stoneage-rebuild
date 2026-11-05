@@ -1802,3 +1802,8 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 ## 2026-11-05 — WORLD16：加加赛尚的原伐木回交
 
 [WORLD16](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-16-JAJA-LOGGING-RETURN-20261105.md) 从同包原 CREATE、模板和完整脚本确认赛尚在加加 3000／(114,69)。17 条原记录覆盖推荐书换证、无证提示、有证无木及 14 档木材回交。14 份写 20,000 石币和「杉的手環」，12 份删除字段省去推荐书，原运行与官方版别待证。[逐段派生收据](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-16-JAJA-LOGGING-RETURN-SOURCE-R1.json)。**Next WORLD17** 轮换到可核实的同源场景音频。
+
+
+## 2026-11-05 — WORLD17：地图原格与实际选曲路径
+
+[WORLD17](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-17-MAP-BGM-20261105.md) 从混合 2.5 保存版与认证台湾 1.0 的编译客户端实证格值 40–46 对应七首曲目。重读保存版 995 张结构有效 DAT，共 438 个楼层、3,236 个第二层标记。四村均见 `sabgm_t0.wav` 对应标记；野外 100 有 `f0`，200 有 `f1` 及一处 `t0`。台湾 1.0 WAV 逐件核实，保存版独立曲目载荷、台湾 1.0 官方地图归属及原生播放仍待证。[派生证据](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-17-MAP-BGM-SOURCE-R1.json)。**Next WORLD18** 核对认证早期客户端的战斗配乐分支。
