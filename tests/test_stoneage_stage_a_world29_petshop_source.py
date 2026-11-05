@@ -70,7 +70,9 @@ class World29PetshopSource(unittest.TestCase):
             self.skipTest("raw pinned C is checked on GitHub Actions from exact commit")
         raw = Path(path).read_bytes()
         self.assertEqual(git_blob_sha(raw), D["comparison_code"]["git_blob"])
-        s = raw.decode("utf-8")
+        # The fixed 2000s-era C file is not UTF-8. Preserve each byte
+        # exactly while checking the ASCII-only source tokens and branches.
+        s = raw.decode("latin-1")
         code = strip_comments(s)
         self.assertIn('"nomal_rate"', code)
         self.assertIn('"special_rate"', code)
