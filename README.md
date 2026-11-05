@@ -1862,3 +1862,12 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 [公开派生数值/代码窗SHA/22来源](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-24-SAVEPOINT-ITEM-ROLE-R1.json)经独立nm10符号、objdump14调用核同；39/39本地检查通过。私人22份原文/长度对照包已保存，仅HTML结构核验，无浏览器/原游戏运行。全部历史CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`及WORLD23的旧投影订正继续保留。
 
 **最高NEXT WORLD25：** 有限核原Quiz物品字段用途及4条GetItem来源，优先同保存版完整编译程序；不把SavePoint的消耗语义套入Quiz，不扩通用执行器、网服、新引擎或体验优化。Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，整体完成率未知。
+
+
+## 2026-11-05｜WORLD25：原答题GetItem的门槛、奖励及入场物品（最新连续节点）
+
+[WORLD25原编译证据与用途区别](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-25-QUIZ-ITEM-ROLE-20261105.md)核明同保存版Quiz GetItem按原序读“门槛,奖励载荷”对，载荷内部候选用点号分隔，并存在创建物品/加入背包/失败清理的编译路径。四份原参数中1和100是比较门槛，奖励候选分别为2754（三份）和2759（一份）；入场2752/2753另由EntryItem描述，不能套用SavePoint消耗语义。未运行答题、得分、发奖、扣物或原客户端，未认证初代官方同部署。
+
+[公开逐行用途限定](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-25-QUIZ-ITEM-ROLE-R1.json)保留四份源SHA、16条原编译调用和10个符号；独立nm/objdump核同，49/49本地测试通过。WORLD23原始数字投影完整保留，其中门槛不能按数字碰撞算物品；旧879不能当已核全游戏物品数，也不无据重算为878。WORLD24重放报告逐字节不变；私人四份原参数/门槛奖励阅读包已保存，仅结构检查，无浏览器运行。原CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`不改。
+
+**最高NEXT WORLD26：** 有限核剩余Raceman来源GetItem用途，优先同编译样本和确切参数；取得一类有据语义或精确缺源后离开物品字段辅助链，回已有模块内容队列。不扩整答题/竞速引擎、网服、新引擎或体验优化。Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，整体完成率未知。
