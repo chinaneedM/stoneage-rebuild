@@ -1837,3 +1837,10 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 新跨任务见证：`poru/team03` 原条件 `NOWEV=64&NOWEV=57&PET=33-721&ITEM=2432`、`GetPet=333`、`GetItem=18559`、`DelItem=2432`；其中2432与 WORLD13/14 原钓竿制作产物同一保存包 ID，可做静态来源关联，不能推任务真实执行。私人原繁体脚本文字和离线检索页已在个人 Library `/石器时代/StoneAge-WORLD21-private-getpet-quest-branches.zip` 保存并重新下载核ZIP全SHA/三成员CRC，Chromium实际29张卡片检索与展开，0JS错误/0外网。公开仅保存[WORLD21原源派生索引](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-21-GETPET-QUEST-BRANCHES-R1.json)、[证据记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-21-GETPET-QUEST-BRANCHES-20261105.md)、测试和Actions；原版权文本/图像不进Git，实际原服任务和官方同部署未认证。旧历史 CURRENT Git blob `c89e0e33537990aa2132b47c40fef49a985a935c` **不变**。
 
 **最高NEXT WORLD22**：转向另一个有原实物增量的 NPC／任务／物品内容缺口，不重复为这36个实例扩概率、账号/网服、新引擎或体验优化。Stage A 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体完成率未知。
+
+
+## 2026-11-05｜WORLD22：原任务石币奖励、扣费和124个道具来源（最新连续节点）
+
+[WORLD22来源与界限](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-22-QUEST-CURRENCY-20261105.md)完整重验私人CHAR01的2205原文件，提取26份脚本的115条原石币指令：99 GetStone奖励、16 DelStone扣费；108 ACCEPT / 7 REQUEST。99条奖励沿用QUEST01旧发现，本轮补足16条扣费、原条件/金额/道具/源行SHA。8条`LV*3`/`LV*20`/`LV*40`等级表达式不求值；两份osaisen原脚本无确切CREATE引用，不能当实际部署。关联124道具ID均可查ITEM01联合目录，2391只在另一候选表存在；123个原名经本轮完整SHA合格的itemset.txt原行再核。私人原文阅读ZIP已保存，本地静态HTML结构检查通过，浏览器/原游戏未执行。[公开派生索引](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-22-QUEST-CURRENCY-SOURCE-R1.json)只含来源数值/条件/哈希；26项相关本地测试通过。历史CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`不变。
+
+**最高NEXT WORLD23：** 在任务/物品内容模块寻找确有原实物增量的任务道具取得/消耗或奖励数量，并与WORLD09/13/14/16/21/22查重；本批货币条件不扩执行器或经济模拟。保持Stage A 7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体完成率未知。
