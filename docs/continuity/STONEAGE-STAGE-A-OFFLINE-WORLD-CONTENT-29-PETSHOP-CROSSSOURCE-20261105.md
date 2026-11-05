@@ -19,3 +19,12 @@
 [公开16店逐CREATE/原参数与后期源码条件对照索引](../../research/recovered/STONEAGE-STAGE-A-WORLD29-PETSHOP-STATIC-CODE-BOUNDARY-R1.json)保留原块SHA、原参数SHA、严格来源版本和源代码Git Blob及有效分支位置。私人16源配置逐源派生再校验报告6265B/SHA256 `8dc726bbb3456a60ab9eac95faa0b5f804ecd48683fb99f8a4c545140a894c3e`，不发表原版权全文。原 C 源码不复制进公开仓库，公开 CI 只拉取固定提交的单一 C 源文件做 Git blob 哈希和关键程序分支校验，并独立对 GAMEPLAY05 的16份来源索引重算，不执行历史游戏。
 
 **有界结论：** 对 pinned 后期社区 C 的处理规则和16个 preserved mixed25 原配置的静态取证成立；但尚未取得证明这两者同构建、同运营服的强证据，台湾1.0/JSS1999/大陆1.82历史规则仍OPEN。下一项优先转到另一条**可从同来源程序/数据复核、能够影响实际玩法规格**的内容；不因C源码还有很多函数就无限深挖，不开展新网游服务、引擎、新内容或体验优化。Stage A 7 PARTIAL+2 OPEN；Stage B/wiki GATED；R79 PAUSED_NON_BLOCKING；overall_percent=null。历史`CURRENT-STATE.md`完整Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`保持不写。
+
+
+## 远端 CI 修正和主线验收（2026-11-05，保留失败原记录）
+
+第一候选提交 `fef3d399bb13d94510758b5c1ccf53bbfba65caf` 运行的 PR Actions `42047145166`／job `127313085796` **failure**，原因仅是测试将此固定社区原 C 文件误按 UTF-8 解码，原文件含非 UTF-8 字节 `0xb6`。该失败不改写、不隐去；其他4个新专项测试此前已成功，**尚未**执行到后续旧回归。测试修复提交 `756c6ec049780263e88532b7413ad234b57182eb` 改用无损 `latin-1` 一字节映射检查**仅ASCII**程序字段，保持源文件原始 SHA、全部原配置来源、测试断言及历史边界不变，没有“修复”原C代码或原版游戏。
+
+第二候选4项 Actions 全部 `completed/success`；专用 PR `42047699138`／job `127315067224` 全部步骤success，包括5条新测试及GAMEPLAY01–07、INTEGRATION01–03与旧来源缺口回归。PR [#208](https://github.com/chinaneedM/stoneage-rebuild/pull/208) 在新HEAD和原main均重核且mergeable clean后，合并为主线 `376b22ab23181e3d512f0a99496a75dd30168818`，其内容tree `976888e352fa21d96961f6ecba0c550b2b2bd1a7`。**主线此HEAD的11项Actions全部 `completed/success`，0 failed、0 pending；专用run `42047842759`／job `127315580718` 的17个实质工作步骤均success**。主线内容未上传私人源脚本、原商业程序或图片。
+
+合并后的 Git tree 已**实际**确认 `docs/CURRENT-STATE.md` 原 blob `c89e0e33537990aa2132b47c40fef49a985a935c`／2,709,173字节、协议原 blob `5b3845819f8638e87213a36ade50e883cf53e65b`／18,396字节完全保留。此验收补录自身不预支新一轮 Actions；最高NEXT仍以有**同源**原运行或具体游戏内容证据的WORLD30为候选，禁止将本轮对照源码提升为正式版实服交易事实。Stage A 7 PARTIAL + 2 OPEN、Stage B/wiki GATED、R79暂停、总进度未知不变。
