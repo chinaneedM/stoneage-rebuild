@@ -47,16 +47,17 @@ def parse_fields(data):
     return out
 
 
-def currency_blocks(data):
+def source_command_blocks(data, command_keys):
+    """Locate selected source fields within original TYPE/EventNo/EventEnd spans."""
     fields = parse_fields(data)
     types = [f for f in fields if f['key'] == 'TYPE']
     result = []
     for f in fields:
-        if f['key'] not in CURRENCY:
+        if f['key'] not in command_keys:
             continue
         previous = [t for t in types if t['line'] < f['line']]
         if not previous:
-            raise ValueError('currency directive has no preceding TYPE')
+            raise ValueError('source directive has no preceding TYPE')
         t = previous[-1]
         following = next((x['line'] for x in types if x['line'] > t['line']), len(data.splitlines()) + 1)
         # EventNo belongs to the next TYPE, rather than the previous event.
@@ -67,11 +68,22 @@ def currency_blocks(data):
                            if t['line'] < n < next_event and line.strip() == b'EventEnd'), None)
         end = end_marker if end_marker is not None else next_event - 1
         if f['line'] > end:
-            raise ValueError('currency directive outside TYPE event scope')
+            raise ValueError('source directive outside TYPE event scope')
         section = [x for x in fields if start <= x['line'] <= end]
         conditions = [x['value'] for x in section if x['key'] == 'EVENT']
         if len(conditions) != 1:
             raise ValueError('expected exactly one source EVENT predicate')
+        result.append({'command': f, 'type_line': t['line'], 'type_literal': t['value'],
+                       'event_predicate_literal': conditions[0], 'scope_first_line': start,
+                       'scope_last_line': end, 'source_EventEnd_found': end_marker is not None,
+                       'ordered_control_fields': section})
+    return result
+
+
+def currency_blocks(data):
+    result = []
+    for b in source_command_blocks(data, CURRENCY):
+        f = b['command']
         literal = f['value']
         if re.fullmatch(r'[+-]?\d+', literal):
             amount = {'kind': 'INTEGER_LITERAL', 'integer': int(literal)}
@@ -81,10 +93,7 @@ def currency_blocks(data):
             amount = {'kind': 'UNRESOLVED_LITERAL'}
         result.append({'currency_line': f['line'], 'directive': f['key'], 'literal': literal,
                        'source_line_sha256': f['source_line_sha256'], 'amount': amount,
-                       'type_line': t['line'], 'type_literal': t['value'],
-                       'event_predicate_literal': conditions[0], 'scope_first_line': start,
-                       'scope_last_line': end, 'source_EventEnd_found': end_marker is not None,
-                       'ordered_control_fields': section})
+                       **{k: v for k, v in b.items() if k != 'command'}})
     return result
 
 

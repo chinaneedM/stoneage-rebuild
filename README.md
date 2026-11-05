@@ -1880,3 +1880,12 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 [公开来源限定报告](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-26-RACEMAN-SOURCE-BOUNDARY-R1.json)记录60项标识/哈希、三份原参数创建模板源SHA及名称查找边界；独立节读取器/nm/objdump核同，56/56本地测试通过。全2,205原NPC文件逐SHA/大小/CRC核同；原程序/对白不公开，旧CURRENT blob c89e0e33537990aa2132b47c40fef49a985a935c不改。
 
 **最高NEXT WORLD27：** 回任务模块，批量整理现有17份原脚本中97条DelPet所属完整原条件与奖励分支，先查重已有任务成果，区分常驻/运营活动/起源未明；不将字段数当任务数、不猜物种命名空间或原生删除行为。离开编译物品字段辅助链，不扩竞速引擎/账号网服/新引擎或体验优化。Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING，整体完成率未知。
+
+
+## 2026-11-05｜WORLD27：原交宠任务条件与奖励整批内容（最新连续节点）
+
+[WORLD27交宠任务来源与原文交付](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-27-PET-HANDOVER-QUESTS-20261105.md)整理17份原脚本、97条DelPet所属完整原条件/奖励分支、15次确切创建引用；不是97个已认证任务或15个独立NPC。55条旧QUEST01摘要保留，另外42条来自三份没有直接CREATE路径引用的实存原文件，不推可达/不可达。原147词元位置含140选择器字面和7个未展开EVDEL；保留缺显式数量、条件拼接异常及重复奖励，不猜全体物种命名空间或原生事务。
+
+[公开逐源目录](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-27-PET-HANDOVER-QUEST-BRANCHES-R1.json)联回90项物品行与4个已有WORLD21奖励实例证据；全批起源ORIGIN_UNRESOLVED，严格不混入已认证本体/永久/运营活动档。私人17原文/97分支/90道具名阅读包已保存，独立源范围与HTML原文本核同，无浏览器/原游戏运行。77/77本地测试通过；WORLD22完整源报告重放逐字节不变，CURRENT历史blob保持。
+
+**最高NEXT WORLD28：** 任务模块统一内容入口：复用已有钓竿、领宠、交宠、委托及运营活动资料，按来源/归属四档集中原文与物品/宠物/地图关联、明确缺环。不扩DelPet/EVDEL编译辅助链、通用框架、网服、新引擎或体验优化。Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING，整体完成率未知。
