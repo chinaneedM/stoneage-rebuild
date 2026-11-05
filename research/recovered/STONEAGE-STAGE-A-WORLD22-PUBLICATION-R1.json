@@ -1,0 +1,193 @@
+{
+  "schema": "stoneage.world22.publication_receipt.r1",
+  "date": "2026-11-05",
+  "starting_head": "b4354472bf00a795bbe40be4b9e8c7f2963e2927",
+  "starting_tree": "260eea3ad40ae4dd6965ae5023e7283e5fde0aaf",
+  "preserved_CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "candidate_head": "a4abdfbd817be3969be566aa6f53e5098e2836c4",
+  "candidate_tree": "27d9f506515606715203bab59e0288470e46ec1b",
+  "pr": 201,
+  "merged_main": "25d3c89a404ece0feb87f8683acb8976406e52e8",
+  "merged_tree": "27d9f506515606715203bab59e0288470e46ec1b",
+  "all_six_uploaded_blobs_match_local": true,
+  "candidate_workflow_runs": [
+    {
+      "id": 42021909227,
+      "name": "Verify StoneAge O12 original compiled sound-number namespace (derived only)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42021909197,
+      "name": "Verify StoneAge O11 native source animation and bounded sound-word candidates",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42021909318,
+      "name": "Verify Stage A WORLD22 original quest currency branches",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42021905475,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42021905424,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42021905367,
+      "name": "Verify original four village interior materials R34",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42021905142,
+      "name": "Verify original local album name material and no master promotion R35",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42021905154,
+      "name": "Verify original same-build named-entity source gate R31",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42021905178,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42021905149,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42021905197,
+      "name": "Verify original native album table and saved-name joins R36",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42021905288,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42021905188,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "merged_main_workflow_runs": [
+    {
+      "id": 42022033798,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42022033769,
+      "name": "Verify Stage A WORLD22 original quest currency branches",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42022033702,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42022033594,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42022033820,
+      "name": "Verify original same-build named-entity source gate R31",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42022033788,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42022033697,
+      "name": "Verify original native album table and saved-name joins R36",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42022033689,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42022033745,
+      "name": "Verify original local album name material and no master promotion R35",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42022033755,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42022033893,
+      "name": "Verify original four village interior materials R34",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "dedicated_candidate_job": 127226481800,
+  "dedicated_main_job": 127226899066,
+  "actual_tests_in_each_dedicated_job": 10,
+  "local_related_tests": 26,
+  "independent_original_line_replay": 115,
+  "published_blob_shas": {
+    "README.md": "6e6e9e77b8e436d106b8dd1c02ce82847714ad12",
+    "tools/stoneage_quest_currency_source.py": "728bd6557a318a6b2b388c0ef253cb3daf8fdef6",
+    "tests/test_stoneage_stage_a_world22_quest_currency.py": "87d50e68cd033868e2cc45b3e891b201703231bc",
+    ".github/workflows/verify-stoneage-stage-a-offline-world22.yml": "5693cc0c635b4802c4b19f7de587ce6e98c61166",
+    "docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-22-QUEST-CURRENCY-20261105.md": "0e444191f4933fb648931d0900d58c05fc99d2a3",
+    "research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-22-QUEST-CURRENCY-SOURCE-R1.json": "bd75399f750990a8cc11cf2909f5dac85d91566b"
+  },
+  "private_delivery": {
+    "filename": "StoneAge-WORLD22-private-quest-currency.zip",
+    "bytes": 48421,
+    "sha256": "230245fe15687ee4d618ef6ee840887b87715b0ad52bcef25919e944094e0baf",
+    "save_succeeded": true,
+    "downloaded_back_after_save": false,
+    "local_ZIP_member_CRC_verified": 3,
+    "HTML_sha256": "1b359d4efbd3fb280b8a16d61d965ec165596065f98a64c25ef655a68514e2fe",
+    "HTML_structurally_checked": true,
+    "browser_executed": false
+  },
+  "source_CI_reread_private_originals": false,
+  "original_game_runtime_executed": false,
+  "official_early_deployment_verified": false,
+  "Stage_A": "7_PARTIAL_2_OPEN",
+  "Stage_B_and_wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "WORLD23_SOURCE_BACKED_QUEST_ITEM_ACQUISITION_CONSUMPTION_OR_REWARD_QUANTITY"
+}
