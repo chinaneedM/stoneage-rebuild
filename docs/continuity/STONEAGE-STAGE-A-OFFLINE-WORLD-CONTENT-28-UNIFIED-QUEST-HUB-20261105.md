@@ -32,3 +32,12 @@
 [公开机器来源／隔离收据](../../research/recovered/STONEAGE-STAGE-A-WORLD28-UNIFIED-QUEST-HUB-R1.json)固定原既有Git blob、私人原文包SHA、四档、五条运营活动、三条跨模块数字指向和必要负证。以前WORLD13/14字面顺序修正、WORLD09/23重复项订正、WORLD27无引用片段及所有旧失败记录全部保留，`docs/CURRENT-STATE.md` 完整 Git blob `c89e0e33537990aa2132b47c40fef49a985a935c` 不改。
 
 **下一最高：按内容模块轮换到另一个已有真实源、可恢复具体游戏行为的缺口。** 任务原源目录本轮达到当前已得资料的集中查阅止点；如取得同部署官方任务主档、原服行为或新的正版客户端，才增量重开对应任务。当前仍纯 Stage A 历史复原，7 PARTIAL + 2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，整体百分比未知。禁止为这套静态资料再做通用DelPet/EVDEL编译器、原账号网关、新引擎或体验调整。
+
+
+## 合并后追加验收与私人资料库二次回读（2026-11-05）
+
+之前「私人 Library 新包上传未得到成功回执」是**初次上传尝试**的真实失败历史，不删除。随后本轮改由已导出的**确切文件快照**上传，工具返回 `status=succeeded`，目标位置为用户私人 Library 的 `/石器时代/StoneAge-WORLD28-private-unified-original-quest-library.zip`。再从该已上传Library记录重新 materialize 全部 **323,915B**：与本地交付两份 ZIP 均为完整 SHA256 `7072e9180e46ab56af0f21733d0ae17ab0ca7f899bae1d66f660527c1cacde10`，10个ZIP成员CRC通过、7份原HTML成员SHA全匹配，新 `index.html` SHA `ffc673ef97bf7afbfb1814c6c0172402661c03b0268e4e1a0ed00d6d82d73887`。这证明本轮私人交付已有成功上传与完整字节回读，**不**替代原游戏/原服运行证明；私人ZIP未放公开Git。
+
+公开候选提交 `c52fdbc8859317b189fb325c89613d46883412d5`、tree `c7682c57c1fa5efa6687811b89c4f3f767fa0d90`，PR [#207](https://github.com/chinaneedM/stoneage-rebuild/pull/207) 原样合并为 `f81c3910bc8d8075469e36aa7d8c6d3566857380`。**候选13项 GitHub Actions 全部 `completed/success`，合并后主线11项全部 `completed/success`，未见失败/挂起**；新专项候选 run `42043999984`、job `127301927370` 和主线 run `42044244679` 明确成功，复用原WORLD27及其他原资料的回归并非私人ZIP版权源在CI重跑。全体原 `docs/CURRENT-STATE.md` 2,709,173B Git blob `c89e0e33537990aa2132b47c40fef49a985a935c` 与协议 blob `5b3845819f8638e87213a36ade50e883cf53e65b` 在合并树实际核对保持，未回写/截断。README、旧源报告保留原前缀，公开新报告 Git blob `7f6e2956fd1acf0342f9d3003d1503b7a65b1d8f`。
+
+另使用 Chromium 对统一首页及**每一份**7原HTML独立挂载 `pageerror` 与请求监听复核，8页均成功实际载入，0 JS 错误、0请求；仍用 `page.set_content`，未通过 `file://` 文件跳转测试，不运行原本游戏或发奖。最高NEXT与 Stage A、起源判定和版本资格均保持原本文末决定。
