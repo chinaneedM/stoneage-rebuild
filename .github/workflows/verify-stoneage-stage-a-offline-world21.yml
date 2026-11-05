@@ -1,0 +1,21 @@
+name: Verify Stage A WORLD21 source-backed GetPet quest branches
+on:
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-21-GETPET-QUEST-BRANCHES-R1.json'
+      - 'tests/test_stoneage_stage_a_world21_quest_getpet_conditions.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world21.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-21-GETPET-QUEST-BRANCHES-R1.json'
+      - 'tests/test_stoneage_stage_a_world21_quest_getpet_conditions.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world21.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run 11 source-graph and negative tests
+        run: python -m unittest discover -s tests -p 'test_stoneage_stage_a_world21_quest_getpet_conditions.py' -v

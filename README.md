@@ -1828,3 +1828,12 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 可实际查询的私人离线来源网页已保存个人 Library `/石器时代/StoneAge-WORLD20-private-encounter-habitat-atlas.zip` 并再次取回验证整ZIP SHA/成员CRC/HTML SHA；Chromium实际检验楼层与区域切换、缺组提示、跨版原图候选加载，0 JS 错误/0外网。公开Git仅保留[WORLD20批量完整数值/SHA来源索引](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-20-ENCOUNTER-HABITAT-SOURCE-R1.json)、[WORLD20工作记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-20-ENCOUNTER-HABITAT-20261105.md)、回归测试与CI，不上传原音图/原表全文或原程序。历史巨型 `docs/CURRENT-STATE.md` 原Git blob `c89e0e33537990aa2132b47c40fef49a985a935c` 不变。此处 208 不是官方宠物种数；台湾1.0与混合2.5不是同部署已证；无原生服务端执行。
 
 **最高 NEXT WORLD21**：轮换到另外一项有真实原实物增量的任务／宠物获得关系，先查已完成 WORLD05–16 的源覆盖，避免重复，本阶段仍只做历史复原。Stage A 7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING；整体完成百分比仍未知。
+
+
+## 2026-11-05｜WORLD21：29条原任务领宠分支、36个实例与野外配置交集（最新连续节点）
+
+本轮从实时 `main` `b7fe68faa7175a58f1a1693e3d4c4a0bca4f7282` / tree `e34fe62a0d07da94e52d1538f28f325a14ebcd71` 及 WORLD20 主线 11/11 成功 Actions 启动。重读保存版私人原 NPC ZIP 995176B / SHA `c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f`，2205 成员/1930332 原字节/全 CRC 复验；27份原脚本有29条 `GetPet`，涉及36不同原实例ID。新恢复29个源事件块的原 `EVENT` 条件、25 `ACCEPT` / 4 `MESSAGE`、22 `DelItem`、7 `GetItem`、4 `GetRandItem`、24 `EndSetFlg`；保留2份命名备份与奖励重复数字。重新验原 `enemy.txt` / `enemybase.txt` 完整SHA，36实例经真实外键均联到模板/图号，不能直把实例号当模板号。与 WORLD20 当前 `encount→group1→enemy` 719个野外引用实例的交集为**0**，仅限本保存包当前静态配置，**不是**历史绝对无法野外抓获的证据。
+
+新跨任务见证：`poru/team03` 原条件 `NOWEV=64&NOWEV=57&PET=33-721&ITEM=2432`、`GetPet=333`、`GetItem=18559`、`DelItem=2432`；其中2432与 WORLD13/14 原钓竿制作产物同一保存包 ID，可做静态来源关联，不能推任务真实执行。私人原繁体脚本文字和离线检索页已在个人 Library `/石器时代/StoneAge-WORLD21-private-getpet-quest-branches.zip` 保存并重新下载核ZIP全SHA/三成员CRC，Chromium实际29张卡片检索与展开，0JS错误/0外网。公开仅保存[WORLD21原源派生索引](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-21-GETPET-QUEST-BRANCHES-R1.json)、[证据记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-21-GETPET-QUEST-BRANCHES-20261105.md)、测试和Actions；原版权文本/图像不进Git，实际原服任务和官方同部署未认证。旧历史 CURRENT Git blob `c89e0e33537990aa2132b47c40fef49a985a935c` **不变**。
+
+**最高NEXT WORLD22**：转向另一个有原实物增量的 NPC／任务／物品内容缺口，不重复为这36个实例扩概率、账号/网服、新引擎或体验优化。Stage A 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体完成率未知。
