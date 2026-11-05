@@ -1871,3 +1871,12 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 [公开逐行用途限定](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-25-QUIZ-ITEM-ROLE-R1.json)保留四份源SHA、16条原编译调用和10个符号；独立nm/objdump核同，49/49本地测试通过。WORLD23原始数字投影完整保留，其中门槛不能按数字碰撞算物品；旧879不能当已核全游戏物品数，也不无据重算为878。WORLD24重放报告逐字节不变；私人四份原参数/门槛奖励阅读包已保存，仅结构检查，无浏览器运行。原CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`不改。
 
 **最高NEXT WORLD26：** 有限核剩余Raceman来源GetItem用途，优先同编译样本和确切参数；取得一类有据语义或精确缺源后离开物品字段辅助链，回已有模块内容队列。不扩整答题/竞速引擎、网服、新引擎或体验优化。Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，整体完成率未知。
+
+
+## 2026-11-05｜WORLD26：Raceman编译匹配缺源止点，回任务模块内容（最新连续节点）
+
+[WORLD26猎宠活动参数与编译表边界](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-26-RACEMAN-SOURCE-BOUNDARY-20261105.md)核对同保存版原EXE完整60项功能名称查找域：没有Raceman，另有PetRaceMaster/PetRacePet不能替代。唯一race2/second.arg的GetItem:20760用途保持OPEN；不是实际加载失败/所有版本缺实现。20760在原候选A表缺、B表有，旧O88/QUEST04结论和WORLD23原始目录保留；本轮无新活动发现、无原游戏执行。
+
+[公开来源限定报告](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-26-RACEMAN-SOURCE-BOUNDARY-R1.json)记录60项标识/哈希、三份原参数创建模板源SHA及名称查找边界；独立节读取器/nm/objdump核同，56/56本地测试通过。全2,205原NPC文件逐SHA/大小/CRC核同；原程序/对白不公开，旧CURRENT blob c89e0e33537990aa2132b47c40fef49a985a935c不改。
+
+**最高NEXT WORLD27：** 回任务模块，批量整理现有17份原脚本中97条DelPet所属完整原条件与奖励分支，先查重已有任务成果，区分常驻/运营活动/起源未明；不将字段数当任务数、不猜物种命名空间或原生删除行为。离开编译物品字段辅助链，不扩竞速引擎/账号网服/新引擎或体验优化。Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING，整体完成率未知。

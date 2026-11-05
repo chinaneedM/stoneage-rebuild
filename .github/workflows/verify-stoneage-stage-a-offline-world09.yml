@@ -1,7 +1,10 @@
-name: Verify WORLD25 compiled Quiz and SavePoint item roles
+name: Verify WORLD26 source roles and Raceman build boundary
 on:
   pull_request:
     paths:
+      - 'tools/stoneage_raceman_source_boundary.py'
+      - 'tests/test_stoneage_stage_a_world26_raceman.py'
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-26-RACEMAN-SOURCE-BOUNDARY-R1.json'
       - 'tools/stoneage_quiz_item_source.py'
       - 'tests/test_stoneage_stage_a_world25_quiz.py'
       - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-25-QUIZ-ITEM-ROLE-R1.json'
@@ -19,6 +22,9 @@ on:
   push:
     branches: [main]
     paths:
+      - 'tools/stoneage_raceman_source_boundary.py'
+      - 'tests/test_stoneage_stage_a_world26_raceman.py'
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-26-RACEMAN-SOURCE-BOUNDARY-R1.json'
       - 'tools/stoneage_quiz_item_source.py'
       - 'tests/test_stoneage_stage_a_world25_quiz.py'
       - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-25-QUIZ-ITEM-ROLE-R1.json'
@@ -50,4 +56,4 @@ jobs:
       - name: Verify literal item fields, frozen older projection, and separate fixed C evidence
         env:
           STONEAGE_WORLD09_PINNED_EXCHANGE: /tmp/stoneage-world09-exchange.c
-        run: python -m unittest -v tests.test_stoneage_stage_a_world25_quiz tests.test_stoneage_stage_a_world24_savepoint tests.test_stoneage_stage_a_world23_item_transfers tests.test_stoneage_stage_a_world22_quest_currency tests.test_stoneage_stage_a_world14_fishing_quest tests.test_stoneage_stage_a_world09_random_item
+        run: python -m unittest -v tests.test_stoneage_stage_a_world26_raceman tests.test_stoneage_stage_a_world25_quiz tests.test_stoneage_stage_a_world24_savepoint tests.test_stoneage_stage_a_world23_item_transfers tests.test_stoneage_stage_a_world22_quest_currency tests.test_stoneage_stage_a_world14_fishing_quest tests.test_stoneage_stage_a_world09_random_item
