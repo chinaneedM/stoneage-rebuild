@@ -1,0 +1,553 @@
+{
+  "schema": "stoneage.stage_a.world19.item_use_handlers.r1",
+  "source": {
+    "carrier": "community_mixed25_saved_not_official_clean",
+    "archive_bytes": 361255180,
+    "archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "rar_member_count": 7952,
+    "A": {
+      "member": "gmsv/data/itemset.txt",
+      "bytes": 3392473,
+      "sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+      "rows": 13254
+    },
+    "B": {
+      "member": "gmsv/data/itemset0710.txt",
+      "bytes": 3668487,
+      "sha256": "6d6d63fda59c6bda2f239fe18c9361b5c9da18c84f678b7cc95bde24544292fb",
+      "rows": 13915
+    },
+    "private_ITEM01_zip_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "all_original_CP950_94column_rows_reverified": true,
+    "zero_based_fields": {
+      "id": 16,
+      "argument": 3,
+      "handler": 10,
+      "type": 19,
+      "fieldtype": 20,
+      "target": 21,
+      "useaction": 77
+    }
+  },
+  "census": {
+    "ids_A": 13254,
+    "ids_B": 13915,
+    "shared_ids": 13254,
+    "B_only_ids": 661,
+    "shared_handler_unchanged": true,
+    "handler_rows_A": 958,
+    "handler_rows_B": 1082,
+    "distinct_handlers_A": 52,
+    "distinct_handlers_B": 59,
+    "new_ids_with_handler": 124,
+    "useaction_B": {
+      "4": 1,
+      "5": 1,
+      "6": 70,
+      "7": 38,
+      "11": 86,
+      "-1": 13719
+    },
+    "useaction_nonnegative_without_handler": [
+      1480
+    ]
+  },
+  "handlers": [
+    [
+      "ITEM_AddFame",
+      3,
+      3
+    ],
+    [
+      "ITEM_AddMemberPoint",
+      11,
+      11
+    ],
+    [
+      "ITEM_AddPRSkillPercent",
+      1,
+      1
+    ],
+    [
+      "ITEM_AddPRSkillPoint",
+      1,
+      1
+    ],
+    [
+      "ITEM_Addexp",
+      9,
+      26
+    ],
+    [
+      "ITEM_AngelToken",
+      0,
+      1
+    ],
+    [
+      "ITEM_BattlePK",
+      2,
+      2
+    ],
+    [
+      "ITEM_CharaMetamo",
+      13,
+      13
+    ],
+    [
+      "ITEM_ChikulaStone",
+      2,
+      2
+    ],
+    [
+      "ITEM_ColorMetamo",
+      7,
+      7
+    ],
+    [
+      "ITEM_Constitution",
+      12,
+      12
+    ],
+    [
+      "ITEM_GMFUNCTION",
+      1,
+      5
+    ],
+    [
+      "ITEM_Gold",
+      3,
+      3
+    ],
+    [
+      "ITEM_HeroToken",
+      0,
+      1
+    ],
+    [
+      "ITEM_LoverSelectUser",
+      1,
+      1
+    ],
+    [
+      "ITEM_LoverUnmarry",
+      1,
+      1
+    ],
+    [
+      "ITEM_LoverWarp",
+      1,
+      1
+    ],
+    [
+      "ITEM_Luck",
+      5,
+      5
+    ],
+    [
+      "ITEM_MapEffect",
+      3,
+      3
+    ],
+    [
+      "ITEM_MetamoTime",
+      1,
+      1
+    ],
+    [
+      "ITEM_MysteriousGift",
+      1,
+      1
+    ],
+    [
+      "ITEM_Refresh",
+      2,
+      4
+    ],
+    [
+      "ITEM_ResAndDef",
+      2,
+      2
+    ],
+    [
+      "ITEM_SetLoverUser",
+      1,
+      1
+    ],
+    [
+      "ITEM_SexMetamo",
+      1,
+      1
+    ],
+    [
+      "ITEM_ThrowItemBox",
+      1,
+      1
+    ],
+    [
+      "ITEM_VipRide",
+      1,
+      1
+    ],
+    [
+      "ITEM_WaterWordStatus",
+      1,
+      4
+    ],
+    [
+      "ITEM_changePetOwner",
+      1,
+      1
+    ],
+    [
+      "ITEM_contract",
+      1,
+      1
+    ],
+    [
+      "ITEM_firecracker",
+      3,
+      3
+    ],
+    [
+      "ITEM_metamo",
+      4,
+      4
+    ],
+    [
+      "ITEM_petFollow",
+      7,
+      7
+    ],
+    [
+      "ITEM_randEnemyEquipOne",
+      0,
+      2
+    ],
+    [
+      "ITEM_timeticket",
+      1,
+      1
+    ],
+    [
+      "ITEM_useCaptureUp",
+      26,
+      26
+    ],
+    [
+      "ITEM_useDeathcounter",
+      5,
+      5
+    ],
+    [
+      "ITEM_useEffectTohelos",
+      1,
+      1
+    ],
+    [
+      "ITEM_useEncounter",
+      2,
+      2
+    ],
+    [
+      "ITEM_useFieldChange",
+      4,
+      4
+    ],
+    [
+      "ITEM_useFusionEditBase",
+      0,
+      21
+    ],
+    [
+      "ITEM_useImprecate",
+      2,
+      15
+    ],
+    [
+      "ITEM_useLearnRideCode",
+      0,
+      16
+    ],
+    [
+      "ITEM_useMRecovery",
+      0,
+      12
+    ],
+    [
+      "ITEM_useMagic",
+      0,
+      1
+    ],
+    [
+      "ITEM_useMaxRedSocks",
+      1,
+      1
+    ],
+    [
+      "ITEM_useMaxRedSocksNew",
+      8,
+      8
+    ],
+    [
+      "ITEM_useMic",
+      3,
+      3
+    ],
+    [
+      "ITEM_useNoenemy",
+      3,
+      3
+    ],
+    [
+      "ITEM_useOtherEditBase",
+      20,
+      20
+    ],
+    [
+      "ITEM_useRecovery",
+      644,
+      663
+    ],
+    [
+      "ITEM_useRenameItem",
+      3,
+      3
+    ],
+    [
+      "ITEM_useRessurect",
+      5,
+      5
+    ],
+    [
+      "ITEM_useSkillCanned",
+      4,
+      15
+    ],
+    [
+      "ITEM_useSkup",
+      2,
+      2
+    ],
+    [
+      "ITEM_useStatusChange",
+      52,
+      52
+    ],
+    [
+      "ITEM_useStatusRecovery",
+      27,
+      27
+    ],
+    [
+      "ITEM_useWarp",
+      37,
+      38
+    ],
+    [
+      "ITEM_useWarpForNum",
+      5,
+      5
+    ]
+  ],
+  "witnesses": [
+    [
+      1230,
+      "ITEM_useRecovery",
+      "90421b8d5eb4248e0cce9ee849d2d91d0a1132ea9c4e4ca01761f8b62094360e",
+      "90421b8d5eb4248e0cce9ee849d2d91d0a1132ea9c4e4ca01761f8b62094360e",
+      "7"
+    ],
+    [
+      12530,
+      "ITEM_useRecovery",
+      "82d48d05bb57d168266aca14e30612927cd0be7dd971d5c142ca55ca65325a54",
+      "82d48d05bb57d168266aca14e30612927cd0be7dd971d5c142ca55ca65325a54",
+      "6"
+    ],
+    [
+      12555,
+      "ITEM_useRecovery",
+      "388ba13f1341807f00f14ab1de568d84fdbdb57f1811809e7c3759de33eec4e3",
+      "388ba13f1341807f00f14ab1de568d84fdbdb57f1811809e7c3759de33eec4e3",
+      "7"
+    ],
+    [
+      12500,
+      "ITEM_useRecovery",
+      "91c754a67f5e024be807b0e0f14bd732651bc9ccc50e331367e06df94f855992",
+      "91c754a67f5e024be807b0e0f14bd732651bc9ccc50e331367e06df94f855992",
+      "11"
+    ],
+    [
+      12823,
+      "ITEM_useRecovery",
+      "92137b2a59b05bb9dfa7551c1f08931c6d2da0495392e415b42a1e248107fe64",
+      "92137b2a59b05bb9dfa7551c1f08931c6d2da0495392e415b42a1e248107fe64",
+      "5"
+    ],
+    [
+      1345,
+      "ITEM_useWarpForNum",
+      "8d9c44be198a39f6fe5bd3d45dc851471e129009d0f8d53bcf212713fce40a0e",
+      "8d9c44be198a39f6fe5bd3d45dc851471e129009d0f8d53bcf212713fce40a0e",
+      "-1"
+    ],
+    [
+      13041,
+      "ITEM_useWarp",
+      "2fcd4da59cbd3e9e1b8f63256dfb49053a4f42016241ea5f4a761184b64b6435",
+      "2fcd4da59cbd3e9e1b8f63256dfb49053a4f42016241ea5f4a761184b64b6435",
+      "-1"
+    ],
+    [
+      19005,
+      "ITEM_useLearnRideCode",
+      "b1d45632cd12db3022120bb9709d65ccee6efe4d0f7fabdbcc42fd678dd3c66b",
+      null,
+      "-1"
+    ],
+    [
+      19008,
+      "ITEM_useLearnRideCode",
+      "f6d830320942c082947ce7115ef917b94130a38562ef785296448cba00639e75",
+      null,
+      "-1"
+    ],
+    [
+      1828,
+      "ITEM_useCaptureUp",
+      "b86e78466e127c0f3b41e4d692970cae1513cb181670de58158abd466a684f0d",
+      "b86e78466e127c0f3b41e4d692970cae1513cb181670de58158abd466a684f0d",
+      "-1"
+    ],
+    [
+      20811,
+      "ITEM_BattlePK",
+      "415039003a9210942fef45b96d43fd7c8b2a0230a87e0e359ee88433133e9ff1",
+      "415039003a9210942fef45b96d43fd7c8b2a0230a87e0e359ee88433133e9ff1",
+      "-1"
+    ],
+    [
+      20898,
+      "ITEM_BattlePK",
+      "005449443658527bfe8127784a5646041819eabcb0a9e19156a55cf1f0b9a51f",
+      "005449443658527bfe8127784a5646041819eabcb0a9e19156a55cf1f0b9a51f",
+      "-1"
+    ],
+    [
+      18545,
+      "ITEM_useRecovery",
+      "a6ad6685df039703275f18018cde3189ad690a8d46f7046434da3d771fef2b9c",
+      "a6ad6685df039703275f18018cde3189ad690a8d46f7046434da3d771fef2b9c",
+      "4"
+    ],
+    [
+      1751,
+      "ITEM_useSkillCanned",
+      "84de612b74a10d2fb9481a8f59c977b671c407cdfafdecc120d66bff38d02293",
+      null,
+      "-1"
+    ],
+    [
+      2451,
+      "ITEM_useFieldChange",
+      "a77b5a2fe7fe2b342e06b3640625b20d110f9c2e2e644feb3a3e4b7e7e145743",
+      "a77b5a2fe7fe2b342e06b3640625b20d110f9c2e2e644feb3a3e4b7e7e145743",
+      "-1"
+    ],
+    [
+      1480,
+      null,
+      "b91fe26bee729ee4b0e4684ee1bea4abe75233cc6439848a9ddf5965298a8c4e",
+      "b91fe26bee729ee4b0e4684ee1bea4abe75233cc6439848a9ddf5965298a8c4e",
+      "7"
+    ]
+  ],
+  "special_source_arguments": {
+    "warp_item_1345": {
+      "handler": "ITEM_useWarpForNum",
+      "raw_space_separated_numeric_cells": [
+        0,
+        1000,
+        92,
+        99
+      ]
+    },
+    "warp_item_13041": {
+      "handler": "ITEM_useWarp",
+      "raw_space_separated_numeric_cells": [
+        1,
+        1000,
+        92,
+        99
+      ]
+    },
+    "ride_item_19005": {
+      "handler": "ITEM_useLearnRideCode",
+      "literal_token": "RIDE_PET9",
+      "full_argument_not_published": true
+    }
+  },
+  "partial_executable": {
+    "same_carrier_member": "gmsv/gmsv.exe",
+    "previous_WORLD18_complete_member_sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00",
+    "previous_WORLD18_complete_member_bytes": 1897867,
+    "this_attempt_member_read_failed_crc": true,
+    "this_attempt_prefix_bytes": 1835008,
+    "this_attempt_prefix_sha256": "363201c00f57bd1b12e777d0c30e47d4151cebab78239970b2ed8d25a615f72d",
+    "whole_member_reverified_this_time": false,
+    "bounded_40byte_name_records_observed": 75,
+    "B_handler_names_seen_in_unqualified_prefix": 47,
+    "B_handler_names_not_seen_in_unqualified_prefix": 12,
+    "prefix_selected_symbols": {
+      "ITEM_BattlePK": {
+        "prefix_byte_offset": 1439224,
+        "observed_va": 5293424
+      },
+      "ITEM_useRecovery": {
+        "prefix_byte_offset": 1429104,
+        "observed_va": 5244304
+      },
+      "ITEM_useWarp": {
+        "prefix_byte_offset": 1429824,
+        "observed_va": 5269712
+      },
+      "ITEM_useCaptureUp": {
+        "prefix_byte_offset": 1429584,
+        "observed_va": 5247408
+      },
+      "ITEM_useLearnRideCode": null
+    },
+    "missing_from_prefix_does_not_prove_missing_in_full_exe": true
+  },
+  "world18_bridge": {
+    "source_table": "B",
+    "item_ids": [
+      20811,
+      20898
+    ],
+    "both_handler_token": "ITEM_BattlePK",
+    "world18_verified_same_saved_server_symbol": "ITEM_BattlePK",
+    "world18_downstream_function": "BATTLE_CreateVsPlayer",
+    "world18_EN_success_type": 2,
+    "world18_client_entry_track_slot": 6,
+    "world18_client_entry_audio_path": "data/bgm/sabgm_b1.wav",
+    "source_item_handler_to_compiled_function_link_certified": false,
+    "native_item_trigger_and_audio_playback_executed": false
+  },
+  "boundaries": {
+    "primary_handler_token_is_original_static_configuration_not_proven_runtime_dispatch": true,
+    "useaction_animation_code_not_same_as_function_dispatch_field": true,
+    "itemset0710_filename_proves_operating_date": false,
+    "official_TW1_server_item_table_identity_proven": false,
+    "community_mixed25_sourced_as_pure_original_official_release": false,
+    "original_client_or_server_executed": false,
+    "original_full_exe_verified_in_this_turn": false,
+    "original_proprietary_text_art_or_binary_published": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "STAGE-A-OFFLINE-WORLD-CONTENT-20_SOURCE_BOUND_ROTATION"
+}

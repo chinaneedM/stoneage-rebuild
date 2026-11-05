@@ -1812,3 +1812,10 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 ## 2026-11-05 — WORLD18：战斗入口的 b0／b1 原分支
 
 [WORLD18](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-18-BATTLE-ENTRY-BGM-20261105.md) 从认证台湾 1.0 和社区混合保存版的编译客户端核实：已核战斗入口的 EN 结果 1 选 b0、2 选 b1。该保存包服务端还实证对怪与对玩家的成功路径分别发送 1 和 2，DU 与 ITEM_BattlePK 可进后者。台湾 1.0 官方服务端、其他特殊战与实际播放仍待证。[派生收据](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-18-BATTLE-ENTRY-BGM-SOURCE-R1.json)。**Next WORLD19** 转向有原件的物品使用关系。
+
+
+### 2026-11-05｜Stage A WORLD19：原物品使用函数表与 WORLD18 跨模块连接（最新连续节点）
+
+从本轮重新核验的 `main` `20f45be175e91209829b5e392c70fb6525b082c9` 起，按 WORLD18 的 NEXT 完成**WORLD19 原物品使用关系**。从私人保存混合 2.5 原 RAR 重读 `itemset.txt` 和 `itemset0710.txt`，逐条与原 ITEM01 归档核实 13,254 / 13,915 条原 94 字段：后表物品使用函数原字段 59 种、1082 条，前表 52 种、958 条；原 `useaction` 数值与处理函数名严格分离。`ITEM_useRecovery`、`ITEM_useWarp`、`ITEM_useCaptureUp`、`ITEM_useLearnRideCode` 已建立有原行 SHA 的来源索引；原物品 ID 20811、20898 静态指向 `ITEM_BattlePK`，可与 WORLD18 保存版 `BATTLE_CreateVsPlayer` → EN 类型 2 → 客户端槽 6 `sabgm_b1.wav` 的已核编译入口形成来源关联。未证实原物品实际使用／原游戏实际战斗运行。
+
+本次原 EXE 用当前解包器在 1,835,008 字节发生 CRC 错误，不能声称重验完整程序；此前 WORLD18 **独立成功**取得完整 exe 的 SHA 保留。本次既无版权原文件上传公开仓库，也未覆写历史巨大 CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`。具体证据、59 种 handler 完整派生计数与反例、限定条件见 [WORLD19 增量记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-19-ITEM-USE-HANDLERS-20261105.md) 及 [WORLD19 派生收据](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-19-ITEM-USE-HANDLERS-R1.json)。公开验收：`tests/test_stoneage_stage_a_world19_item_use.py`。**最高 NEXT WORLD20**：按 Stage A 离线内容复原优先级转移到下一个有原实物证据增量的宠物／任务／地图缺口，不做帐号网游或新游戏体验优化。Stage A 7 PARTIAL + 2 OPEN；Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING；整体百分比未知。
