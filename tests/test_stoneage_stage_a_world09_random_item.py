@@ -1,4 +1,9 @@
-"""WORLD09: source-qualified original random-item lists, distinct later C implementation."""
+"""Frozen WORLD09 projection and separate later C evidence.
+
+WORLD23 establishes that the old catalog deduplicated/reordered raw fields.
+These archived 718 references are not literal positions or original order;
+the corrected source-position tests live in WORLD23. Preserve the old receipt.
+"""
 from pathlib import Path
 import hashlib
 import json
@@ -21,7 +26,7 @@ class World09RandomItem(unittest.TestCase):
         cls.old = load(SOURCE)
         cls.new = load(OUTPUT)
 
-    def test_all_50_original_source_slots_and_archive_shas(self):
+    def test_frozen_50_block_projection_and_archive_shas(self):
         rows = [x for x in self.old["source_event_blocks"] if x["source_operations"].get("GetRandItem")]
         expected = [{
             "script_path": x["script_path"],

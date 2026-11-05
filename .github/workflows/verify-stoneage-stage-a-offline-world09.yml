@@ -1,7 +1,11 @@
-name: Verify Stage A WORLD09 original random-item slot source
+name: Verify WORLD23 NPC item transfers and archived WORLD09 projection
 on:
   pull_request:
     paths:
+      - 'tools/stoneage_npc_item_transfers.py'
+      - 'tools/stoneage_quest_currency_source.py'
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-23-NPC-ITEM-TRANSFERS-R1.json'
+      - 'tests/test_stoneage_stage_a_world23_item_transfers.py'
       - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-09-GETRANDITEM-SOURCE-SLOTS-R1.json'
       - 'docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-09-ORIGINAL-RANDOM-ITEM-20261104.md'
       - 'tests/test_stoneage_stage_a_world09_random_item.py'
@@ -9,6 +13,10 @@ on:
   push:
     branches: [main]
     paths:
+      - 'tools/stoneage_npc_item_transfers.py'
+      - 'tools/stoneage_quest_currency_source.py'
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-23-NPC-ITEM-TRANSFERS-R1.json'
+      - 'tests/test_stoneage_stage_a_world23_item_transfers.py'
       - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-09-GETRANDITEM-SOURCE-SLOTS-R1.json'
       - 'docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-09-ORIGINAL-RANDOM-ITEM-20261104.md'
       - 'tests/test_stoneage_stage_a_world09_random_item.py'
@@ -27,7 +35,7 @@ jobs:
           curl --fail --location --silent --show-error --retry 3 \
             'https://raw.githubusercontent.com/pimpcapital/longzoro-sa/57b14e2bb373ba851c14db28a239273e4a8831bb/gmsv/src/npc/npc_exchangeman.c' \
             -o /tmp/stoneage-world09-exchange.c
-      - name: Recount original 50 blocks and audit immutable C semantics
+      - name: Verify literal item fields, frozen older projection, and separate fixed C evidence
         env:
           STONEAGE_WORLD09_PINNED_EXCHANGE: /tmp/stoneage-world09-exchange.c
-        run: python -m unittest -v tests.test_stoneage_stage_a_world09_random_item
+        run: python -m unittest -v tests.test_stoneage_stage_a_world23_item_transfers tests.test_stoneage_stage_a_world22_quest_currency tests.test_stoneage_stage_a_world14_fishing_quest tests.test_stoneage_stage_a_world09_random_item
