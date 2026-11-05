@@ -1819,3 +1819,12 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 从本轮重新核验的 `main` `20f45be175e91209829b5e392c70fb6525b082c9` 起，按 WORLD18 的 NEXT 完成**WORLD19 原物品使用关系**。从私人保存混合 2.5 原 RAR 重读 `itemset.txt` 和 `itemset0710.txt`，逐条与原 ITEM01 归档核实 13,254 / 13,915 条原 94 字段：后表物品使用函数原字段 59 种、1082 条，前表 52 种、958 条；原 `useaction` 数值与处理函数名严格分离。`ITEM_useRecovery`、`ITEM_useWarp`、`ITEM_useCaptureUp`、`ITEM_useLearnRideCode` 已建立有原行 SHA 的来源索引；原物品 ID 20811、20898 静态指向 `ITEM_BattlePK`，可与 WORLD18 保存版 `BATTLE_CreateVsPlayer` → EN 类型 2 → 客户端槽 6 `sabgm_b1.wav` 的已核编译入口形成来源关联。未证实原物品实际使用／原游戏实际战斗运行。
 
 本次原 EXE 用当前解包器在 1,835,008 字节发生 CRC 错误，不能声称重验完整程序；此前 WORLD18 **独立成功**取得完整 exe 的 SHA 保留。本次既无版权原文件上传公开仓库，也未覆写历史巨大 CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`。具体证据、59 种 handler 完整派生计数与反例、限定条件见 [WORLD19 增量记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-19-ITEM-USE-HANDLERS-20261105.md) 及 [WORLD19 派生收据](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-19-ITEM-USE-HANDLERS-R1.json)。公开验收：`tests/test_stoneage_stage_a_world19_item_use.py`。**最高 NEXT WORLD20**：按 Stage A 离线内容复原优先级转移到下一个有原实物证据增量的宠物／任务／地图缺口，不做帐号网游或新游戏体验优化。Stage A 7 PARTIAL + 2 OPEN；Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING；整体百分比未知。
+
+
+## 2026-11-05｜WORLD20：660个原遇敌区的完整来源链与私人原图候选（最新连续节点）
+
+本轮重新核远端 main `89ba427e6d16273ab970aab0e4577052b2e2328c` / tree `ad72395438eb1ff06c2fd7357989fcf429d864eb` 及 WORLD19 11 项成功 Actions，按高优先 WORLD20 批量复原实际游戏内容。完整重读同一已保管社区混合2.5原 RAR 361255180B/SHA `d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5` 及六份原数据全 SHA：`encount` 660行/421楼层/1965组槽 → 719不同组ID（688在当前指定`group1`有记录、31缺号共39次引用）→ 719不同敌人实例 → 208个不同宠物/人物/敌人模板 → 157不同图号；12个倒序原矩形、21个空组非空权重槽不修补。复用已有台湾1.0 PET07 **先前真实解码**的原RD候选，107图号跨样本同数字，其中104缩略图原PNG摘要吻合；不推官方物种/同服/原生遇敌成功或历史概率。
+
+可实际查询的私人离线来源网页已保存个人 Library `/石器时代/StoneAge-WORLD20-private-encounter-habitat-atlas.zip` 并再次取回验证整ZIP SHA/成员CRC/HTML SHA；Chromium实际检验楼层与区域切换、缺组提示、跨版原图候选加载，0 JS 错误/0外网。公开Git仅保留[WORLD20批量完整数值/SHA来源索引](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-20-ENCOUNTER-HABITAT-SOURCE-R1.json)、[WORLD20工作记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-20-ENCOUNTER-HABITAT-20261105.md)、回归测试与CI，不上传原音图/原表全文或原程序。历史巨型 `docs/CURRENT-STATE.md` 原Git blob `c89e0e33537990aa2132b47c40fef49a985a935c` 不变。此处 208 不是官方宠物种数；台湾1.0与混合2.5不是同部署已证；无原生服务端执行。
+
+**最高 NEXT WORLD21**：轮换到另外一项有真实原实物增量的任务／宠物获得关系，先查已完成 WORLD05–16 的源覆盖，避免重复，本阶段仍只做历史复原。Stage A 7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING；整体完成百分比仍未知。

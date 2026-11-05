@@ -1,0 +1,22 @@
+name: Verify Stage A WORLD20 source-bound encounter habitats
+on:
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-20-*'
+      - 'tests/test_stoneage_stage_a_world20_encounter_habitats.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world20.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-20-*'
+      - 'tests/test_stoneage_stage_a_world20_encounter_habitats.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world20.yml'
+jobs:
+  rights-safe-source-joins:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_stage_a_world20_encounter_habitats.py' -v
