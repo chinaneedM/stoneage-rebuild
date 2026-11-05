@@ -1,0 +1,27 @@
+name: Verify Stage A WORLD22 original quest currency branches
+on:
+  pull_request:
+    paths:
+      - 'tools/stoneage_quest_currency_source.py'
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-22-QUEST-CURRENCY-SOURCE-R1.json'
+      - 'tests/test_stoneage_stage_a_world22_quest_currency.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world22.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'tools/stoneage_quest_currency_source.py'
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-22-QUEST-CURRENCY-SOURCE-R1.json'
+      - 'tests/test_stoneage_stage_a_world22_quest_currency.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world22.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_stage_a_world22_quest_currency -v
