@@ -27,3 +27,8 @@ ITEM01的20760索引在表A原行SHA为null、表B有原行SHA。O88原A表缺�
 **最高NEXT WORLD27：任务模块原交宠分支整批来源联接。** 对现有完整NPC子树初筛，17份原脚本有97条`DelPet`物理字段。下轮以完整原条件块/创建引用、相关原奖励和物品/宠物来源整理这一批交宠任务资料，复用WORLD21/22的读取与私人原文观察能力；先查重已有QUEST/O系列成果，不把97字段叫97任务，不猜`PET>`等语法、物种命名空间或实际删除行为。常驻本体/运营活动/起源未明分开，有原件才联接，缺件精确记录。交付应是可连续查阅的有源任务内容，不能变成又一条无限处理器辅助链。
 
 Stage A **7 PARTIAL + 2 OPEN**，Stage B/wiki **GATED**，R79 **PAUSED_NON_BLOCKING**，整体完成率未知。当前仍为忠实历史复原；不做网游基础设施、新引擎或体验优化。
+
+
+## 实际远端终验（成功后追加）
+
+候选`3866de23ddf5a347c8825cf03a3798ab32aa744d`的13项Actions全部实际success；PR #205合并为内容主线`ffb724551bd07448a29f0361d244a8faec38b469`，主线11项Actions全部实际success。候选与内容主线完整tree均为`e77af695a6611dc2538266be8134ce2e7e8b9914`，六个上传Git blob与本地逐一相同。候选run42035129675/job127271168336和主线run42035291834/job127271732930真实日志均确认56项通过、无skip。原来源完整派生重放与公开18,061B报告逐字节相同；CURRENT/O88/WORLD23/24/25原blob及README全359,493B原前缀不改。公开CI未读原EXE/NPC、未执行实际活动或物品事务。[永久终验收据](../../research/recovered/STONEAGE-STAGE-A-WORLD26-PUBLICATION-R1.json)存全24个运行ID、两专用job与来源核验；收据提交自身不预支CI。最高NEXT WORLD27和所有阶段/运行边界保持。

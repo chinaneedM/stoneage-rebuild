@@ -1,0 +1,275 @@
+{
+  "schema": "stoneage.world26.publication_acceptance.r1",
+  "date": "2026-11-05",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "PR": 205,
+  "PR_url": "https://github.com/chinaneedM/stoneage-rebuild/pull/205",
+  "baseline_head": "09276c368c0b3d096eaa9f88c4d9a713bd2620c6",
+  "baseline_tree": "223da0a7c30c6650174e29d0dc9679a4a4cd376b",
+  "candidate_head": "3866de23ddf5a347c8825cf03a3798ab32aa744d",
+  "content_main_head": "ffb724551bd07448a29f0361d244a8faec38b469",
+  "candidate_and_content_main_tree": "e77af695a6611dc2538266be8134ce2e7e8b9914",
+  "uploaded_file_git_blobs": {
+    ".github/workflows/verify-stoneage-stage-a-offline-world09.yml": "f476987a5a59aa6a01928cb1b32591471b4b4f3d",
+    "README.md": "7b3b7b45e9b316b154a7a400c8aa9b3ce06c78d5",
+    "docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-26-RACEMAN-SOURCE-BOUNDARY-20261105.md": "5c2f286af2e9a7ed5760723d830b76b90a14f2eb",
+    "research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-26-RACEMAN-SOURCE-BOUNDARY-R1.json": "1285fb652d5801e58d3084a9938b3f442ea8fe71",
+    "tests/test_stoneage_stage_a_world26_raceman.py": "e10f9713ac254eedabc57770a4ce8c6adc64b05c",
+    "tools/stoneage_raceman_source_boundary.py": "8433a88bcfd285d2f2550d091b00d863ad58abb8"
+  },
+  "source_report": {
+    "path": "research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-26-RACEMAN-SOURCE-BOUNDARY-R1.json",
+    "git_blob": "1285fb652d5801e58d3084a9938b3f442ea8fe71",
+    "bytes": 18061,
+    "sha256": "85cf12f931872e040620f8cc92dfb495ab8dd3f926775fb4615c900235a6bc3f",
+    "second_full_source_replay_byte_identical": true,
+    "source_action_run_id": null
+  },
+  "private_source_verification": {
+    "compiled_server_bytes": 1897867,
+    "compiled_server_sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00",
+    "NPC_ZIP_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "NPC_members_full_SHA_size_CRC": 2205,
+    "original_three_NPC_sources_match_O88": true,
+    "parent_RAR_reread": false,
+    "full_itemset_B_reread": false,
+    "new_private_artifact_created": false,
+    "original_program_executed": false
+  },
+  "independent_checks": {
+    "separate_PE_section_reader_exact_table_name_record_hash_matches": 60,
+    "nm_selected_symbols_plus_strcasecmp": 4,
+    "objdump_lookup_stride_bounds_comparison_and_failure_return_verified": true,
+    "matching_Raceman_name_table_entries": 0,
+    "lookup_GetItem_role_remains": "OPEN"
+  },
+  "local_tests": {
+    "passed": 56,
+    "skipped": 0
+  },
+  "candidate_runs": [
+    {
+      "id": 42035129675,
+      "name": "Verify WORLD26 source roles and Raceman build boundary",
+      "head_sha": "3866de23ddf5a347c8825cf03a3798ab32aa744d",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035129675"
+    },
+    {
+      "id": 42035129646,
+      "name": "Verify StoneAge O11 native source animation and bounded sound-word candidates",
+      "head_sha": "3866de23ddf5a347c8825cf03a3798ab32aa744d",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035129646"
+    },
+    {
+      "id": 42035129710,
+      "name": "Verify StoneAge O12 original compiled sound-number namespace (derived only)",
+      "head_sha": "3866de23ddf5a347c8825cf03a3798ab32aa744d",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035129710"
+    },
+    {
+      "id": 42035122598,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "head_sha": "3866de23ddf5a347c8825cf03a3798ab32aa744d",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035122598"
+    },
+    {
+      "id": 42035122581,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "head_sha": "3866de23ddf5a347c8825cf03a3798ab32aa744d",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035122581"
+    },
+    {
+      "id": 42035122399,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "3866de23ddf5a347c8825cf03a3798ab32aa744d",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035122399"
+    },
+    {
+      "id": 42035122549,
+      "name": "Verify original same-build named-entity source gate R31",
+      "head_sha": "3866de23ddf5a347c8825cf03a3798ab32aa744d",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035122549"
+    },
+    {
+      "id": 42035122542,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "head_sha": "3866de23ddf5a347c8825cf03a3798ab32aa744d",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035122542"
+    },
+    {
+      "id": 42035122414,
+      "name": "Verify original four village interior materials R34",
+      "head_sha": "3866de23ddf5a347c8825cf03a3798ab32aa744d",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035122414"
+    },
+    {
+      "id": 42035122406,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "head_sha": "3866de23ddf5a347c8825cf03a3798ab32aa744d",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035122406"
+    },
+    {
+      "id": 42035122516,
+      "name": "Verify original local album name material and no master promotion R35",
+      "head_sha": "3866de23ddf5a347c8825cf03a3798ab32aa744d",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035122516"
+    },
+    {
+      "id": 42035122732,
+      "name": "Verify original native album table and saved-name joins R36",
+      "head_sha": "3866de23ddf5a347c8825cf03a3798ab32aa744d",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035122732"
+    },
+    {
+      "id": 42035122404,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "head_sha": "3866de23ddf5a347c8825cf03a3798ab32aa744d",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035122404"
+    }
+  ],
+  "content_main_runs": [
+    {
+      "id": 42035292008,
+      "name": "Verify original native album table and saved-name joins R36",
+      "head_sha": "ffb724551bd07448a29f0361d244a8faec38b469",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035292008"
+    },
+    {
+      "id": 42035291609,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "head_sha": "ffb724551bd07448a29f0361d244a8faec38b469",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035291609"
+    },
+    {
+      "id": 42035291717,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "head_sha": "ffb724551bd07448a29f0361d244a8faec38b469",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035291717"
+    },
+    {
+      "id": 42035291731,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "ffb724551bd07448a29f0361d244a8faec38b469",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035291731"
+    },
+    {
+      "id": 42035291752,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "head_sha": "ffb724551bd07448a29f0361d244a8faec38b469",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035291752"
+    },
+    {
+      "id": 42035291634,
+      "name": "Verify original four village interior materials R34",
+      "head_sha": "ffb724551bd07448a29f0361d244a8faec38b469",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035291634"
+    },
+    {
+      "id": 42035291733,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "head_sha": "ffb724551bd07448a29f0361d244a8faec38b469",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035291733"
+    },
+    {
+      "id": 42035292431,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "head_sha": "ffb724551bd07448a29f0361d244a8faec38b469",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035292431"
+    },
+    {
+      "id": 42035291772,
+      "name": "Verify original local album name material and no master promotion R35",
+      "head_sha": "ffb724551bd07448a29f0361d244a8faec38b469",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035291772"
+    },
+    {
+      "id": 42035291834,
+      "name": "Verify WORLD26 source roles and Raceman build boundary",
+      "head_sha": "ffb724551bd07448a29f0361d244a8faec38b469",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035291834"
+    },
+    {
+      "id": 42035291778,
+      "name": "Verify original same-build named-entity source gate R31",
+      "head_sha": "ffb724551bd07448a29f0361d244a8faec38b469",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42035291778"
+    }
+  ],
+  "dedicated_jobs": {
+    "candidate": {
+      "run": 42035129675,
+      "job": 127271168336,
+      "log_test_count": 56,
+      "log_result": "OK"
+    },
+    "content_main": {
+      "run": 42035291834,
+      "job": 127271732930,
+      "log_test_count": 56,
+      "log_result": "OK"
+    }
+  },
+  "preservation": {
+    "CURRENT_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "README_original_prefix_bytes": 359493,
+    "O88_WORLD23_WORLD24_WORLD25_blobs_unchanged": true,
+    "old_failures_not_rewritten": true
+  },
+  "limits": {
+    "private_sources_read_by_public_CI": false,
+    "original_NPC_load_or_inventory_transaction_executed": false,
+    "official_early_deployment_authenticated": false,
+    "whole_game_complete": false,
+    "overall_percent": null
+  },
+  "next": "WORLD27: source-batch pet-handover quest branches, conditions and rewards from 17 original scripts/97 DelPet physical fields; deduplicate prior work and preserve origin classification; leave compiled item-field helper chain",
+  "receipt_commit_CI": "NOT_PRECLAIMED; acceptance refers to the content-main commit above"
+}
