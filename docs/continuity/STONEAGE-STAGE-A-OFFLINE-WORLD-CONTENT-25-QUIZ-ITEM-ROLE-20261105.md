@@ -42,3 +42,7 @@ WORLD23保留原行、标点与通用数字投影，这些事实不改；其通�
 本地**49/49测试全部通过，无skip**，其中10项新增，覆盖原版本身份与独立容量、四份确切原字段、门槛非物品、奖励创建/插入/失败清理、入场字段、候选顺序/重复、未知语法止点和官方/运行边界。复用原物品来源工作流；公开CI不读取私人EXE/NPC，实际候选/主线结果成功后再追加。完整历史CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`不改，旧WORLD09位置订正亦保留。
 
 **最高NEXT WORLD26：** 有限核WORLD23剩余唯一Raceman来源的GetItem字段用途，优先同原编译程序和确切参数；取得这一剩余模板的有据语义或精确缺源后，离开物品字段辅助链，回已有模块内容队列。不得重跑本批词元、扩完整答题/竞速引擎、网服、新引擎或体验优化。Stage A **7 PARTIAL + 2 OPEN**，Stage B/wiki **GATED**，R79 **PAUSED_NON_BLOCKING**，整体完成率未知。
+
+## 实际远端终验（成功后追加）
+
+候选 `42033dae08a4841f7a5a9e21cf61e79f8d960265` 的13项Actions全部实际success；PR #204合并为内容主线 `fa69da6ded15fa340f254f1d17d1c6462209dff9`，主线11项Actions全部实际success。候选/内容主线完整tree同为 `f044b9f38f43682a3127324091b7fd1dd9edd232`，七个上传Git blob逐一与本地一致。候选专用run42031060509/job127257324772、主线专用run42031174791的真实日志均确认49项全部通过，无skip。公开CI未读取原EXE/NPC，未执行答题或原发奖。CURRENT、WORLD23、WORLD24原Git blob不改，README全部357868B历史前缀保留；共享读取逻辑的WORLD24完整源派生重放逐字节同旧报告。[永久终验收据](../../research/recovered/STONEAGE-STAGE-A-WORLD25-PUBLICATION-R1.json)记录全24个运行ID、两专用job、来源独立核验与私人交付SHA。收据自身提交不预支CI；最高NEXT WORLD26及所有阶段/运行边界不变。
