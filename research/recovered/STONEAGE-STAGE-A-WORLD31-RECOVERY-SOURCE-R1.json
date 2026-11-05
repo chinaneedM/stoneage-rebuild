@@ -1,0 +1,3071 @@
+{
+  "schema": "stoneage.world31.recovery_source.r1",
+  "scope": "SAME_PRESERVED_MIXED25_ARCHIVE_X86_CALLBACK_REPLAY_WITH_FIXTURES",
+  "archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "selected_source_members": [
+    {
+      "target": "gmsv/gmsv.exe",
+      "header_offset": 359906866,
+      "header_bytes": 154,
+      "packed_bytes": 605893,
+      "unpacked_bytes": 1897867,
+      "header_sha256": "8b8d28fb487f54d93d335caeb385bfb7239b467288087ceca434ffcf29716dea",
+      "packed_sha256": "330634f8ca453ba7c60ba2df0c474a6fc6aa95d2c126586e1b61a1206d79ce05",
+      "member_crc32": 1848751674,
+      "member_sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00"
+    },
+    {
+      "target": "gmsv/setup.cf",
+      "header_offset": 360516773,
+      "header_bytes": 154,
+      "packed_bytes": 4172,
+      "unpacked_bytes": 9715,
+      "header_sha256": "c953d11775fa19c279f71ef4380f11a6c40de5eb296e6caf785a12bc1b6d8730",
+      "packed_sha256": "1ba77f491e170a41407062159d72c184f02b240b794cedb6ba90d3832fab0918",
+      "member_crc32": 914480129,
+      "member_sha256": "b4936c103efb7b3cad359e5c85c7965187306883a68c0be712ece6c374e3b12d"
+    },
+    {
+      "target": "gmsv/data/itemset.txt",
+      "header_offset": 354691427,
+      "header_bytes": 172,
+      "packed_bytes": 230185,
+      "unpacked_bytes": 3392473,
+      "header_sha256": "3fc62fb1eea3761f2ea145503570be3fcdec74eaee8e953582460ecafb371859",
+      "packed_sha256": "f8e8d649429c33c9cc416c05466aceb3d2a1d421d4b19dffcdf071e329035b60",
+      "member_crc32": 2520348968,
+      "member_sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688"
+    }
+  ],
+  "configured_item_source": "itemset6file=data/itemset.txt",
+  "program": {
+    "symbols": {
+      "__CHAR_setInt": 4381936,
+      "_CHAR_CanCureFlg": 4404720,
+      "__CHAR_DelItem": 4405936,
+      "_CHAR_ItemUse": 4671200,
+      "_ITEM_useRecovery_Field": 5235920,
+      "_ITEM_useRecovery": 5244304,
+      "_BATTLE_MultiRecovery": 5541552,
+      "_ITEM_useRecovery_Battle": 5607744
+    },
+    "registration_sha256": "5f62bac6677fd077c0dd57e19b1cb23c1b08e43a47aa015b406b95e346ea39dd",
+    "edges": [
+      {
+        "address": 4272716,
+        "target": "_CHAR_ItemUse",
+        "instruction_sha256": "5802d12bf068dbab1f4f747e67d4a54c9435251e60ca45944779487a86f5e50a"
+      },
+      {
+        "address": 5412539,
+        "target": "_CHAR_ItemUse",
+        "instruction_sha256": "d0aa737f87de7bfe5a2a88077ef6e1bf0abe8e2f770bf8fcf31eda20ff2a14f8"
+      },
+      {
+        "address": 5244431,
+        "target": "_ITEM_useRecovery_Battle",
+        "instruction_sha256": "84a0e9ef07b9a55cf536765fb7cce973023f9d19f8f31ac64812c08c3d049f4c"
+      },
+      {
+        "address": 5244457,
+        "target": "_ITEM_useRecovery_Field",
+        "instruction_sha256": "43a95dba32e45af6a54472e587c9bef77497430491bbca9c533720f49f1f2bd0"
+      },
+      {
+        "address": 5237594,
+        "target": "_CHAR_CanCureFlg",
+        "instruction_sha256": "acfa7ec6f2119d167b6bdcd01d73b9ea8263469af11081bcb9db600f913330fa"
+      },
+      {
+        "address": 5237842,
+        "target": "__CHAR_setInt",
+        "instruction_sha256": "4bb182622f63e31fc1956c5a47be2b2e6ee92ab4102b8bb2773d650c8c219f0e"
+      },
+      {
+        "address": 5608060,
+        "target": "_BATTLE_MultiRecovery",
+        "instruction_sha256": "eae05f3daa52726bd3e6e8ae0c6eb03679418c1724aad204739ecc9c020d5a36"
+      },
+      {
+        "address": 5608379,
+        "target": "__CHAR_DelItem",
+        "instruction_sha256": "68b1b7272cad399058347dd7916004837879811998d4a01051336d7f97a6a686"
+      }
+    ],
+    "field_current_hp_mp_keys": [
+      10,
+      11
+    ],
+    "field_max_hp_mp_work_keys": [
+      13,
+      14
+    ],
+    "field_rand_constants": [
+      0.9,
+      1.1,
+      4.656612873077393e-10
+    ],
+    "emulator_source_windows": [
+      [
+        5235920,
+        5244464,
+        "80f29cc929a598b0d051294aeffd562cfe4e97fc31341d29580dd355bd258a5d"
+      ],
+      [
+        5607744,
+        5608624,
+        "03759336325dcab506900385cef6061c226672d8f50d44e5e0b409813b787b0c"
+      ],
+      [
+        5802352,
+        5802512,
+        "c027a2f9979f34aa70e12a4c8ffecddae7a09b629f7e9a148c0dbc27f94d84c8"
+      ],
+      [
+        5918360,
+        5918438,
+        "6aa2cdd05e81f2f70044f2bb0c67c6227ecea6bf00aacc86ab8bc15996536f58"
+      ],
+      [
+        5919606,
+        5919936,
+        "ca7b1b9f8ab97f0272d59349108906b881a1d7a82adf5f7e6928bd783434635e"
+      ],
+      [
+        5941398,
+        5941440,
+        "4bc941315a6795824935d0dcf32c145c9651566acb21985e9908b5fb2d7e96f7"
+      ]
+    ]
+  },
+  "catalog": {
+    "physical_callback_rows": 644,
+    "raw_hash_prefix_ids": [
+      13031
+    ],
+    "shape_scene_target_counts": [
+      [
+        "HP",
+        0,
+        0,
+        5
+      ],
+      [
+        "HP",
+        0,
+        1,
+        305
+      ],
+      [
+        "HP",
+        0,
+        2,
+        3
+      ],
+      [
+        "HP",
+        1,
+        1,
+        1
+      ],
+      [
+        "HP",
+        1,
+        2,
+        74
+      ],
+      [
+        "HP",
+        2,
+        1,
+        1
+      ],
+      [
+        "HP_MP",
+        0,
+        0,
+        2
+      ],
+      [
+        "HP_MP",
+        0,
+        1,
+        24
+      ],
+      [
+        "HP_MP",
+        2,
+        0,
+        1
+      ],
+      [
+        "HP_MP",
+        2,
+        1,
+        21
+      ],
+      [
+        "MP",
+        0,
+        0,
+        27
+      ],
+      [
+        "MP",
+        0,
+        1,
+        115
+      ],
+      [
+        "MP",
+        0,
+        2,
+        1
+      ],
+      [
+        "MP",
+        1,
+        2,
+        3
+      ],
+      [
+        "MP",
+        2,
+        0,
+        1
+      ],
+      [
+        "OTHER",
+        0,
+        0,
+        1
+      ],
+      [
+        "OTHER",
+        0,
+        1,
+        14
+      ],
+      [
+        "OTHER",
+        1,
+        2,
+        1
+      ],
+      [
+        "OTHER",
+        2,
+        0,
+        9
+      ],
+      [
+        "OTHER",
+        2,
+        1,
+        35
+      ]
+    ],
+    "all_derived_callback_rows_sha256": "eb89b7b936a675a2323b813870c8929420edbcc0930b8e1a20d84481514f3153",
+    "sample_rows": [
+      {
+        "id": 12530,
+        "line": 7269,
+        "row_sha256": "bc1f35f9cbb18dcae3fb4c7b1f7cc80aa5833fc5bb2bf0be01ca89b7c806fa15",
+        "scene": 0,
+        "target": 1,
+        "shape": "HP",
+        "raw_hash_prefix": false,
+        "values": {
+          "體": 320
+        },
+        "option_sha256": "f692b2b300be2b1ab4b8815439850ce442c9fcb612b3a012df97d33e31ac2910"
+      },
+      {
+        "id": 12500,
+        "line": 7239,
+        "row_sha256": "96bcbc9fb658ce6ee906a3929ac38d85c73072f6e2f0c34e532c02942527a2d6",
+        "scene": 0,
+        "target": 1,
+        "shape": "MP",
+        "raw_hash_prefix": false,
+        "values": {
+          "氣": 25
+        },
+        "option_sha256": "28008f1c8b7bd1c145ee3b9fc1634f0332396d67f44a328e1ab4753f1905dfaa"
+      },
+      {
+        "id": 12555,
+        "line": 7294,
+        "row_sha256": "b89a06a7a9ecbb56e1778f95ac350363b75b24ce4c36f7497d0a5bb5be7918b5",
+        "scene": 2,
+        "target": 1,
+        "shape": "HP_MP",
+        "raw_hash_prefix": false,
+        "values": {
+          "氣": 20,
+          "體": 185
+        },
+        "option_sha256": "6c34ada7764a8c5e0d86bf7369fd978563d03353bf10a99adc935b37d1ba18fd"
+      },
+      {
+        "id": 12780,
+        "line": 7513,
+        "row_sha256": "578b33ebc20f270b8a1ad7f7057ffd17ff12189d068fd84730c6da3796e1951f",
+        "scene": 0,
+        "target": 0,
+        "shape": "MP",
+        "raw_hash_prefix": false,
+        "values": {
+          "氣": 5
+        },
+        "option_sha256": "d97119b30af70a653a399f3db55fb018bee55491a7970cecdbfa3af57e86118f"
+      },
+      {
+        "id": 12754,
+        "line": 7492,
+        "row_sha256": "dffbe093b9089497479c58c2043282e58f740c1f1adf1004d1d903203e6045e8",
+        "scene": 0,
+        "target": 1,
+        "shape": "MP",
+        "raw_hash_prefix": false,
+        "values": {
+          "氣": 2
+        },
+        "option_sha256": "1caafbb03339ba9cfd34ebdd87c86435507ea31b3737c769a84df88d15421cc9"
+      }
+    ]
+  },
+  "emulated": {
+    "engine": "Unicorn x86-32",
+    "common_fixture": {
+      "hp": 100,
+      "mp": 10,
+      "batch_max_hp_mp": 10000,
+      "caster": 8,
+      "target": 9,
+      "inventory_slot": 7,
+      "rand_inputs": [
+        0,
+        2147483647
+      ],
+      "battle_mode": 2,
+      "x87_control_word": 895
+    },
+    "ordinary_option_replays": [
+      {
+        "tokens": [
+          [
+            "氣",
+            2
+          ]
+        ],
+        "source_rows": 6,
+        "field_rand_0": [
+          11
+        ],
+        "field_rand_max": [
+          12
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          2,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            3
+          ]
+        ],
+        "source_rows": 5,
+        "field_rand_0": [
+          12
+        ],
+        "field_rand_max": [
+          13
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          3,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            4
+          ]
+        ],
+        "source_rows": 8,
+        "field_rand_0": [
+          13
+        ],
+        "field_rand_max": [
+          14
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          4,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            5
+          ]
+        ],
+        "source_rows": 17,
+        "field_rand_0": [
+          14
+        ],
+        "field_rand_max": [
+          15
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          5,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            7
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          16
+        ],
+        "field_rand_max": [
+          18
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          7,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            8
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          17
+        ],
+        "field_rand_max": [
+          19
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          8,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            10
+          ]
+        ],
+        "source_rows": 24,
+        "field_rand_0": [
+          19
+        ],
+        "field_rand_max": [
+          21
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          10,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            10
+          ],
+          [
+            "體",
+            10
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          109,
+          19
+        ],
+        "field_rand_max": [
+          111,
+          21
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          10,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            10
+          ],
+          [
+            "體",
+            50
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          145,
+          19
+        ],
+        "field_rand_max": [
+          155,
+          21
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          50,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            10
+          ],
+          [
+            "體",
+            60
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          154,
+          19
+        ],
+        "field_rand_max": [
+          166,
+          21
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          60,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            10
+          ],
+          [
+            "體",
+            100
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          190,
+          19
+        ],
+        "field_rand_max": [
+          210,
+          21
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          100,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            10
+          ],
+          [
+            "體",
+            300
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          370,
+          19
+        ],
+        "field_rand_max": [
+          430,
+          21
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          300,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            12
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          20
+        ],
+        "field_rand_max": [
+          23
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          12,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            15
+          ]
+        ],
+        "source_rows": 9,
+        "field_rand_0": [
+          23
+        ],
+        "field_rand_max": [
+          26
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          15,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            15
+          ],
+          [
+            "體",
+            120
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          208,
+          23
+        ],
+        "field_rand_max": [
+          232,
+          26
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          120,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            15
+          ],
+          [
+            "體",
+            300
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          370,
+          23
+        ],
+        "field_rand_max": [
+          430,
+          26
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          300,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            18
+          ]
+        ],
+        "source_rows": 3,
+        "field_rand_0": [
+          26
+        ],
+        "field_rand_max": [
+          30
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          18,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            20
+          ]
+        ],
+        "source_rows": 6,
+        "field_rand_0": [
+          28
+        ],
+        "field_rand_max": [
+          32
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          20,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            20
+          ],
+          [
+            "體",
+            50
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          145,
+          28
+        ],
+        "field_rand_max": [
+          155,
+          32
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          50,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            20
+          ],
+          [
+            "體",
+            120
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          208,
+          28
+        ],
+        "field_rand_max": [
+          232,
+          32
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          120,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            20
+          ],
+          [
+            "體",
+            180
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          262,
+          28
+        ],
+        "field_rand_max": [
+          298,
+          32
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          180,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            20
+          ],
+          [
+            "體",
+            185
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          266,
+          28
+        ],
+        "field_rand_max": [
+          303,
+          32
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          185,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            20
+          ],
+          [
+            "體",
+            200
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          280,
+          28
+        ],
+        "field_rand_max": [
+          320,
+          32
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          200,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            20
+          ],
+          [
+            "體",
+            250
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          325,
+          28
+        ],
+        "field_rand_max": [
+          375,
+          32
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          250,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            20
+          ],
+          [
+            "體",
+            280
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          352,
+          28
+        ],
+        "field_rand_max": [
+          408,
+          32
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          280,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            20
+          ],
+          [
+            "體",
+            300
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          370,
+          28
+        ],
+        "field_rand_max": [
+          430,
+          32
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          300,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            20
+          ],
+          [
+            "體",
+            320
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          388,
+          28
+        ],
+        "field_rand_max": [
+          452,
+          32
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          320,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            20
+          ],
+          [
+            "體",
+            400
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          460,
+          28
+        ],
+        "field_rand_max": [
+          540,
+          32
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          400,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            22
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          29
+        ],
+        "field_rand_max": [
+          34
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          22,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            25
+          ]
+        ],
+        "source_rows": 12,
+        "field_rand_0": [
+          32
+        ],
+        "field_rand_max": [
+          37
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          25,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            25
+          ],
+          [
+            "體",
+            300
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          370,
+          32
+        ],
+        "field_rand_max": [
+          430,
+          37
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          300,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            30
+          ]
+        ],
+        "source_rows": 9,
+        "field_rand_0": [
+          37
+        ],
+        "field_rand_max": [
+          43
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          30,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            30
+          ],
+          [
+            "體",
+            50
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          145,
+          37
+        ],
+        "field_rand_max": [
+          155,
+          43
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          50,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            30
+          ],
+          [
+            "體",
+            100
+          ]
+        ],
+        "source_rows": 3,
+        "field_rand_0": [
+          190,
+          37
+        ],
+        "field_rand_max": [
+          210,
+          43
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          100,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            30
+          ],
+          [
+            "體",
+            150
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          235,
+          37
+        ],
+        "field_rand_max": [
+          265,
+          43
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          150,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            30
+          ],
+          [
+            "體",
+            200
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          280,
+          37
+        ],
+        "field_rand_max": [
+          320,
+          43
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          200,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            30
+          ],
+          [
+            "體",
+            300
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          370,
+          37
+        ],
+        "field_rand_max": [
+          430,
+          43
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          300,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            30
+          ],
+          [
+            "體",
+            400
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          460,
+          37
+        ],
+        "field_rand_max": [
+          540,
+          43
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          400,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            35
+          ]
+        ],
+        "source_rows": 6,
+        "field_rand_0": [
+          41
+        ],
+        "field_rand_max": [
+          48
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          35,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            35
+          ],
+          [
+            "體",
+            250
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          325,
+          41
+        ],
+        "field_rand_max": [
+          375,
+          48
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          250,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            35
+          ],
+          [
+            "體",
+            400
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          460,
+          41
+        ],
+        "field_rand_max": [
+          540,
+          48
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          400,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            38
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          44
+        ],
+        "field_rand_max": [
+          52
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          38,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            40
+          ]
+        ],
+        "source_rows": 5,
+        "field_rand_0": [
+          46
+        ],
+        "field_rand_max": [
+          54
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          40,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            40
+          ],
+          [
+            "體",
+            50
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          145,
+          46
+        ],
+        "field_rand_max": [
+          155,
+          54
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          50,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            40
+          ],
+          [
+            "體",
+            200
+          ]
+        ],
+        "source_rows": 3,
+        "field_rand_0": [
+          280,
+          46
+        ],
+        "field_rand_max": [
+          320,
+          54
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          200,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            45
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          50
+        ],
+        "field_rand_max": [
+          59
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          45,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            50
+          ]
+        ],
+        "source_rows": 5,
+        "field_rand_0": [
+          55
+        ],
+        "field_rand_max": [
+          65
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          50,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            50
+          ],
+          [
+            "體",
+            50
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          145,
+          55
+        ],
+        "field_rand_max": [
+          155,
+          65
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          50,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            50
+          ],
+          [
+            "體",
+            100
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          190,
+          55
+        ],
+        "field_rand_max": [
+          210,
+          65
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          100,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            50
+          ],
+          [
+            "體",
+            150
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          235,
+          55
+        ],
+        "field_rand_max": [
+          265,
+          65
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          150,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            50
+          ],
+          [
+            "體",
+            300
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          370,
+          55
+        ],
+        "field_rand_max": [
+          430,
+          65
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          300,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            60
+          ]
+        ],
+        "source_rows": 7,
+        "field_rand_0": [
+          64
+        ],
+        "field_rand_max": [
+          76
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          60,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            65
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          68
+        ],
+        "field_rand_max": [
+          81
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          65,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            70
+          ]
+        ],
+        "source_rows": 4,
+        "field_rand_0": [
+          73
+        ],
+        "field_rand_max": [
+          87
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          70,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            70
+          ],
+          [
+            "體",
+            200
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          280,
+          73
+        ],
+        "field_rand_max": [
+          320,
+          87
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          200,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            70
+          ],
+          [
+            "體",
+            300
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          370,
+          73
+        ],
+        "field_rand_max": [
+          430,
+          87
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          300,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            80
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          82
+        ],
+        "field_rand_max": [
+          98
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          80,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            100
+          ]
+        ],
+        "source_rows": 7,
+        "field_rand_0": [
+          100
+        ],
+        "field_rand_max": [
+          120
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          100,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            100
+          ],
+          [
+            "體",
+            300
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          370,
+          100
+        ],
+        "field_rand_max": [
+          430,
+          120
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          300,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            100
+          ],
+          [
+            "體",
+            500
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          550,
+          100
+        ],
+        "field_rand_max": [
+          650,
+          120
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          500,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            100
+          ],
+          [
+            "體",
+            3000
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          2800,
+          100
+        ],
+        "field_rand_max": [
+          3400,
+          120
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          3000,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "氣",
+            1000
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          910
+        ],
+        "field_rand_max": [
+          1110
+        ],
+        "battle_request_kind_value_percent": [
+          1,
+          1000,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            5
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          104
+        ],
+        "field_rand_max": [
+          105
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          5,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            10
+          ]
+        ],
+        "source_rows": 19,
+        "field_rand_0": [
+          109
+        ],
+        "field_rand_max": [
+          111
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          10,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            15
+          ]
+        ],
+        "source_rows": 24,
+        "field_rand_0": [
+          113
+        ],
+        "field_rand_max": [
+          116
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          15,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            20
+          ]
+        ],
+        "source_rows": 10,
+        "field_rand_0": [
+          118
+        ],
+        "field_rand_max": [
+          122
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          20,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            25
+          ]
+        ],
+        "source_rows": 18,
+        "field_rand_0": [
+          122
+        ],
+        "field_rand_max": [
+          127
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          25,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            30
+          ]
+        ],
+        "source_rows": 14,
+        "field_rand_0": [
+          127
+        ],
+        "field_rand_max": [
+          133
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          30,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            35
+          ]
+        ],
+        "source_rows": 3,
+        "field_rand_0": [
+          131
+        ],
+        "field_rand_max": [
+          138
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          35,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            40
+          ]
+        ],
+        "source_rows": 26,
+        "field_rand_0": [
+          136
+        ],
+        "field_rand_max": [
+          144
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          40,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            45
+          ]
+        ],
+        "source_rows": 3,
+        "field_rand_0": [
+          140
+        ],
+        "field_rand_max": [
+          149
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          45,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            50
+          ]
+        ],
+        "source_rows": 23,
+        "field_rand_0": [
+          145
+        ],
+        "field_rand_max": [
+          155
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          50,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            60
+          ]
+        ],
+        "source_rows": 24,
+        "field_rand_0": [
+          154
+        ],
+        "field_rand_max": [
+          166
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          60,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            65
+          ]
+        ],
+        "source_rows": 9,
+        "field_rand_0": [
+          158
+        ],
+        "field_rand_max": [
+          171
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          65,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            70
+          ]
+        ],
+        "source_rows": 9,
+        "field_rand_0": [
+          163
+        ],
+        "field_rand_max": [
+          177
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          70,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            75
+          ]
+        ],
+        "source_rows": 7,
+        "field_rand_0": [
+          167
+        ],
+        "field_rand_max": [
+          182
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          75,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            80
+          ]
+        ],
+        "source_rows": 8,
+        "field_rand_0": [
+          172
+        ],
+        "field_rand_max": [
+          188
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          80,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            85
+          ]
+        ],
+        "source_rows": 21,
+        "field_rand_0": [
+          176
+        ],
+        "field_rand_max": [
+          193
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          85,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            90
+          ]
+        ],
+        "source_rows": 9,
+        "field_rand_0": [
+          181
+        ],
+        "field_rand_max": [
+          199
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          90,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            95
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          185
+        ],
+        "field_rand_max": [
+          204
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          95,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            100
+          ]
+        ],
+        "source_rows": 22,
+        "field_rand_0": [
+          190
+        ],
+        "field_rand_max": [
+          210
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          100,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            105
+          ]
+        ],
+        "source_rows": 6,
+        "field_rand_0": [
+          194
+        ],
+        "field_rand_max": [
+          215
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          105,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            110
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          199
+        ],
+        "field_rand_max": [
+          221
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          110,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            115
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          203
+        ],
+        "field_rand_max": [
+          226
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          115,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            120
+          ]
+        ],
+        "source_rows": 7,
+        "field_rand_0": [
+          208
+        ],
+        "field_rand_max": [
+          232
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          120,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            125
+          ]
+        ],
+        "source_rows": 11,
+        "field_rand_0": [
+          212
+        ],
+        "field_rand_max": [
+          237
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          125,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            130
+          ]
+        ],
+        "source_rows": 3,
+        "field_rand_0": [
+          217
+        ],
+        "field_rand_max": [
+          243
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          130,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            140
+          ]
+        ],
+        "source_rows": 10,
+        "field_rand_0": [
+          226
+        ],
+        "field_rand_max": [
+          254
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          140,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            150
+          ]
+        ],
+        "source_rows": 9,
+        "field_rand_0": [
+          235
+        ],
+        "field_rand_max": [
+          265
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          150,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            160
+          ]
+        ],
+        "source_rows": 5,
+        "field_rand_0": [
+          244
+        ],
+        "field_rand_max": [
+          276
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          160,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            165
+          ]
+        ],
+        "source_rows": 7,
+        "field_rand_0": [
+          248
+        ],
+        "field_rand_max": [
+          281
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          165,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            170
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          253
+        ],
+        "field_rand_max": [
+          287
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          170,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            175
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          257
+        ],
+        "field_rand_max": [
+          292
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          175,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            180
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          262
+        ],
+        "field_rand_max": [
+          298
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          180,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            185
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          266
+        ],
+        "field_rand_max": [
+          303
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          185,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            200
+          ]
+        ],
+        "source_rows": 9,
+        "field_rand_0": [
+          280
+        ],
+        "field_rand_max": [
+          320
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          200,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            210
+          ]
+        ],
+        "source_rows": 3,
+        "field_rand_0": [
+          289
+        ],
+        "field_rand_max": [
+          331
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          210,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            220
+          ]
+        ],
+        "source_rows": 4,
+        "field_rand_0": [
+          298
+        ],
+        "field_rand_max": [
+          342
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          220,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            230
+          ]
+        ],
+        "source_rows": 3,
+        "field_rand_0": [
+          307
+        ],
+        "field_rand_max": [
+          353
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          230,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            240
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          316
+        ],
+        "field_rand_max": [
+          364
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          240,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            250
+          ]
+        ],
+        "source_rows": 4,
+        "field_rand_0": [
+          325
+        ],
+        "field_rand_max": [
+          375
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          250,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            260
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          334
+        ],
+        "field_rand_max": [
+          386
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          260,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            270
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          343
+        ],
+        "field_rand_max": [
+          397
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          270,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            280
+          ]
+        ],
+        "source_rows": 3,
+        "field_rand_0": [
+          352
+        ],
+        "field_rand_max": [
+          408
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          280,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            300
+          ]
+        ],
+        "source_rows": 7,
+        "field_rand_0": [
+          370
+        ],
+        "field_rand_max": [
+          430
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          300,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            320
+          ]
+        ],
+        "source_rows": 3,
+        "field_rand_0": [
+          388
+        ],
+        "field_rand_max": [
+          452
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          320,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            325
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          392
+        ],
+        "field_rand_max": [
+          457
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          325,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            330
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          397
+        ],
+        "field_rand_max": [
+          463
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          330,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            350
+          ]
+        ],
+        "source_rows": 3,
+        "field_rand_0": [
+          415
+        ],
+        "field_rand_max": [
+          485
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          350,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            390
+          ]
+        ],
+        "source_rows": 2,
+        "field_rand_0": [
+          451
+        ],
+        "field_rand_max": [
+          529
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          390,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            400
+          ]
+        ],
+        "source_rows": 7,
+        "field_rand_0": [
+          460
+        ],
+        "field_rand_max": [
+          540
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          400,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            500
+          ]
+        ],
+        "source_rows": 3,
+        "field_rand_0": [
+          550
+        ],
+        "field_rand_max": [
+          650
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          500,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            600
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          640
+        ],
+        "field_rand_max": [
+          760
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          600,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            1000
+          ]
+        ],
+        "source_rows": 6,
+        "field_rand_0": [
+          1000
+        ],
+        "field_rand_max": [
+          1200
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          1000,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            2000
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          1900
+        ],
+        "field_rand_max": [
+          2300
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          2000,
+          0
+        ]
+      },
+      {
+        "tokens": [
+          [
+            "體",
+            3000
+          ]
+        ],
+        "source_rows": 1,
+        "field_rand_0": [
+          2800
+        ],
+        "field_rand_max": [
+          3400
+        ],
+        "battle_request_kind_value_percent": [
+          0,
+          3000,
+          0
+        ]
+      }
+    ],
+    "boundary_fixture_replays": {
+      "initializing_battle": {
+        "changes": [],
+        "battle_requests": [],
+        "deleted": [],
+        "rand_calls": 0
+      },
+      "field_pet_mixed": {
+        "changes": [
+          [
+            9,
+            10,
+            266
+          ]
+        ],
+        "battle_requests": [],
+        "deleted": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "rand_calls": 1
+      },
+      "field_pet_mp_only": {
+        "changes": [],
+        "battle_requests": [],
+        "deleted": [],
+        "rand_calls": 0
+      },
+      "field_full_hp_mp": {
+        "changes": [
+          [
+            9,
+            10,
+            1000
+          ],
+          [
+            9,
+            11,
+            100
+          ]
+        ],
+        "battle_requests": [],
+        "deleted": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "rand_calls": 2
+      },
+      "field_cure_denied": {
+        "changes": [],
+        "battle_requests": [],
+        "deleted": [],
+        "rand_calls": 2
+      },
+      "battle_position_invalid": {
+        "changes": [],
+        "battle_requests": [],
+        "deleted": [],
+        "rand_calls": 0
+      },
+      "invalid_caster": {
+        "changes": [],
+        "battle_requests": [],
+        "deleted": [],
+        "rand_calls": 0
+      },
+      "invalid_item": {
+        "changes": [],
+        "battle_requests": [],
+        "deleted": [],
+        "rand_calls": 0
+      },
+      "field_self_mp": {
+        "changes": [
+          [
+            8,
+            11,
+            14
+          ]
+        ],
+        "battle_requests": [],
+        "deleted": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "rand_calls": 1
+      },
+      "field_marker_full": {
+        "changes": [
+          [
+            9,
+            10,
+            1000
+          ],
+          [
+            9,
+            11,
+            100
+          ]
+        ],
+        "battle_requests": [],
+        "deleted": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "rand_calls": 0
+      },
+      "field_missing_hp_number": {
+        "changes": [
+          [
+            9,
+            10,
+            101
+          ]
+        ],
+        "battle_requests": [],
+        "deleted": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "rand_calls": 0
+      },
+      "battle_missing_hp_number": {
+        "changes": [],
+        "battle_requests": [
+          [
+            4,
+            2,
+            9,
+            0,
+            0,
+            0,
+            100612,
+            100601
+          ]
+        ],
+        "deleted": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "rand_calls": 0
+      }
+    }
+  },
+  "original_client_or_server_started": false,
+  "live_battle_outcome_observed": false,
+  "inventory_actually_mutated": false,
+  "frontend_scene_or_target_enforcement_verified": false,
+  "official_early_version_equivalence_proven": false
+}

@@ -1903,3 +1903,7 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 ## 2026-11-06 — WORLD30：同包复原宠物料理的材料匹配和成品候选
 
 保存版混合 2.5 的编译程序、启动配置、宠技表和材料表共同确认，宠物加工 200／料理 201 进入同一回调，普通路径至少接受两件有效材料，首项类型 20 切入料理搜索。三道原主厨菜单已接到 36 条单原子输入候选行，原料值和程序调整后匹配区间分别记录。详见 [WORLD30 连续性记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-30-COOKING-SOURCE-20261106.md) 与 [派生收据](research/recovered/STONEAGE-STAGE-A-WORLD30-COOKING-SOURCE-R1.json)。样本为静态证据，尚无实服制作或早期官方版本认证。下一优先 WORLD31 为同包回复道具的实际回调与参数关系。
+
+## 2026-11-06 — WORLD31：场外与战斗回复参数分流
+
+同一混合 2.5 保存包的配置选中表有 644 行指向回复回调。对 583 行覆盖的 116 种普通参数回放原始 x86 回调后，确认场外对玩家可同时处理体力、气力，战斗回调遇两者并存时优先只传体力。物品场景／目标原字段、回调发出的扣物请求及最终战斗结算分别记录。详见 [WORLD31 证据和连续性](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-31-RECOVERY-SOURCE-20261106.md) 与 [派生收据](research/recovered/STONEAGE-STAGE-A-WORLD31-RECOVERY-SOURCE-R1.json)。下一优先 WORLD32 为同包战斗单目标结算。
