@@ -1,0 +1,239 @@
+{
+  "schema": "stoneage.stage_a.world18.battle_entry_bgm.r1",
+  "world17_sha256": "cffa8b1a68a094b93cca331873f7a9036d17a0630101e94dc525374fe6b2d85c",
+  "client_message": "EN",
+  "clients": {
+    "taiwan10_retail": {
+      "exe_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+      "message_call_va": 4298837,
+      "entry_call_va": 4213442,
+      "reader_va": 4480416,
+      "positive_result_controls": [
+        "result_2_flag",
+        "duel_word"
+      ],
+      "slot6_required_values": [
+        1,
+        1
+      ],
+      "windows": [
+        {
+          "va_start": 4298738,
+          "va_end_exclusive": 4298842,
+          "sha256": "5ff8783aeeeb42e7700b5c947ab2c78d09afccace3df81654ff7a58a18ac5762"
+        },
+        {
+          "va_start": 4402096,
+          "va_end_exclusive": 4402245,
+          "sha256": "cf2db491cb31ab7a554ba9ed8bab94c77214268f03c35a0897d3f783609e0e39"
+        },
+        {
+          "va_start": 4213299,
+          "va_end_exclusive": 4213447,
+          "sha256": "91cdd61c75f020998af21825940acc25b1ddcb784ea13642323c32cd6296dcca"
+        }
+      ]
+    },
+    "mixed25_saved": {
+      "exe_sha256": "ec678517f76564ebc9ab00cf3f66853ed9975ef6290eb48168b78909a68a5d16",
+      "netcom_exe_sha256": "79554dd8526cf30afc50575d178461338afd3c299bd959987390496f106cde50",
+      "message_call_va": 4342746,
+      "entry_call_va": 4221486,
+      "reader_va": 4522945,
+      "positive_result_controls": [
+        "result_2_flag",
+        "duel_word",
+        "special_word"
+      ],
+      "slot6_required_values": [
+        1,
+        1,
+        0
+      ],
+      "windows_equal_in_both_exes": [
+        {
+          "va_start": 4342690,
+          "va_end_exclusive": 4342751,
+          "sha256": "0397db22c81478d461d3ffdd45dbf486d697c0f465adf824dff803b83f41dffb"
+        },
+        {
+          "va_start": 4448747,
+          "va_end_exclusive": 4448917,
+          "sha256": "48a89f9fdcbaf912d1029cf6770915b32b8463791db5e01f889e86b901f057ba"
+        },
+        {
+          "va_start": 4221299,
+          "va_end_exclusive": 4221491,
+          "sha256": "b6abadf6d1581f065c580c55be663055b100a0edca95158b055c718cb7c4c422"
+        }
+      ]
+    }
+  },
+  "slots": {
+    "5": "data/bgm/sabgm_b0.wav",
+    "6": "data/bgm/sabgm_b1.wav"
+  },
+  "client_positive_result_witnesses": [
+    {
+      "result": 1,
+      "taiwan10_flags": [
+        0,
+        0
+      ],
+      "mixed25_flags": [
+        0,
+        0,
+        0
+      ],
+      "entry_slot_after_this_update": 5
+    },
+    {
+      "result": 2,
+      "taiwan10_flags": [
+        1,
+        1
+      ],
+      "mixed25_flags": [
+        1,
+        1,
+        0
+      ],
+      "entry_slot_after_this_update": 6
+    },
+    {
+      "result": 3,
+      "taiwan10_flags": [
+        0,
+        0
+      ],
+      "mixed25_flags": [
+        0,
+        0,
+        0
+      ],
+      "entry_slot_after_this_update": 5
+    },
+    {
+      "result": 4,
+      "taiwan10_flags": [
+        0,
+        0
+      ],
+      "mixed25_flags": [
+        0,
+        0,
+        1
+      ],
+      "entry_slot_after_this_update": 5
+    },
+    {
+      "result": 5,
+      "taiwan10_flags": [
+        0,
+        0
+      ],
+      "mixed25_flags": [
+        0,
+        0,
+        0
+      ],
+      "entry_slot_after_this_update": 5
+    },
+    {
+      "result": 6,
+      "taiwan10_flags": [
+        0,
+        1
+      ],
+      "mixed25_flags": [
+        0,
+        1,
+        0
+      ],
+      "entry_slot_after_this_update": 5
+    }
+  ],
+  "mixed25_server": {
+    "exe_bytes": 1897867,
+    "exe_sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00",
+    "exe_crc32": "6e31b63a",
+    "type_field_offset": 12,
+    "send_symbol": "lssproto_EN_send",
+    "positive_source_paths": [
+      {
+        "symbol": "BATTLE_CreateVsEnemy",
+        "result": 1,
+        "write_va": 5355125,
+        "send_calls_va": [
+          5355560
+        ],
+        "named_incoming_paths": [
+          "lssproto_EN_recv",
+          "NPC_NPCEnemy_BattleIn"
+        ]
+      },
+      {
+        "symbol": "BATTLE_CreateVsPlayer",
+        "result": 2,
+        "write_va": 5359414,
+        "send_calls_va": [
+          5359573,
+          5359974
+        ],
+        "named_incoming_paths": [
+          "lssproto_DU_recv",
+          "ITEM_BattlePK"
+        ]
+      }
+    ],
+    "windows": [
+      {
+        "va_start": 5355075,
+        "va_end_exclusive": 5355143,
+        "sha256": "6b959f71eb51fdec2a2ca4e6b2a5ba105050a1d41235ffeefa860fea2f259e2b"
+      },
+      {
+        "va_start": 5355533,
+        "va_end_exclusive": 5355565,
+        "sha256": "1acc99cbc0d9755655c64fcb1fca3e3928a6089e72eeb8858710a536e3dbddab"
+      },
+      {
+        "va_start": 5359395,
+        "va_end_exclusive": 5359427,
+        "sha256": "46b49c17f516d93b6149a204b7786d64f65119a54fc78733c3d9409b43299f65"
+      },
+      {
+        "va_start": 5359542,
+        "va_end_exclusive": 5359578,
+        "sha256": "cdd990028a39dd1b56118f559d2d951465657805dd4b7de22ffc9f1f9abb76a1"
+      },
+      {
+        "va_start": 5359943,
+        "va_end_exclusive": 5359979,
+        "sha256": "141729b8b0e281c6d74fa5f21a7d5292ac3318ca9524d1ec166ff8994512324d"
+      },
+      {
+        "va_start": 4278652,
+        "va_end_exclusive": 4278670,
+        "sha256": "fc139929f7ebad1ee469fcc1ed782deecabb22d7611795682489251c1064e2bf"
+      },
+      {
+        "va_start": 4798365,
+        "va_end_exclusive": 4798380,
+        "sha256": "fc58e24b5889698f710005df91003d329dee6405c1105b8bffba4625f2674da2"
+      },
+      {
+        "va_start": 5293632,
+        "va_end_exclusive": 5293649,
+        "sha256": "8e70561551521270ba5e38a2ae3b9b8375cabd1f2573e1b6ce8975e9a20bf87d"
+      }
+    ]
+  },
+  "bounds": {
+    "original_client_or_server_executed": false,
+    "taiwan10_official_server_identity_proven": false,
+    "all_battle_or_boss_entry_variants_exhausted": false,
+    "mixed25_wav_payload_verified": false,
+    "mapping_covers_nonpositive_or_guard_rejected_message": false
+  }
+}

@@ -1807,3 +1807,8 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 ## 2026-11-05 — WORLD17：地图原格与实际选曲路径
 
 [WORLD17](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-17-MAP-BGM-20261105.md) 从混合 2.5 保存版与认证台湾 1.0 的编译客户端实证格值 40–46 对应七首曲目。重读保存版 995 张结构有效 DAT，共 438 个楼层、3,236 个第二层标记。四村均见 `sabgm_t0.wav` 对应标记；野外 100 有 `f0`，200 有 `f1` 及一处 `t0`。台湾 1.0 WAV 逐件核实，保存版独立曲目载荷、台湾 1.0 官方地图归属及原生播放仍待证。[派生证据](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-17-MAP-BGM-SOURCE-R1.json)。**Next WORLD18** 核对认证早期客户端的战斗配乐分支。
+
+
+## 2026-11-05 — WORLD18：战斗入口的 b0／b1 原分支
+
+[WORLD18](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-18-BATTLE-ENTRY-BGM-20261105.md) 从认证台湾 1.0 和社区混合保存版的编译客户端核实：已核战斗入口的 EN 结果 1 选 b0、2 选 b1。该保存包服务端还实证对怪与对玩家的成功路径分别发送 1 和 2，DU 与 ITEM_BattlePK 可进后者。台湾 1.0 官方服务端、其他特殊战与实际播放仍待证。[派生收据](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-18-BATTLE-ENTRY-BGM-SOURCE-R1.json)。**Next WORLD19** 转向有原件的物品使用关系。
