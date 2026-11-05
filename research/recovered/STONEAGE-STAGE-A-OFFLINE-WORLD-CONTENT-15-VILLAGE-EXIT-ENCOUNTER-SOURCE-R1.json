@@ -1,0 +1,3301 @@
+{
+  "schema": "stoneage.stage_a.world15.village_exit_encounter_source.r1",
+  "source_scope": "LATER_COMMUNITY_MIXED25_SAME_PRESERVED_ARCHIVE_STATIC",
+  "archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "world12_git_blob": "95cdcdec412b534e4229b60a0950ce12e94571e6",
+  "verified_members": {
+    "encount.txt": {
+      "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/encount.txt",
+      "bytes": 43420,
+      "sha256": "70bbd997d98508a0587df183b5bdd48222ff42db91bf21bea632e0ed6f2fea87",
+      "crc32": "d58f5903"
+    },
+    "enemy.txt": {
+      "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/enemy.txt",
+      "bytes": 222463,
+      "sha256": "cc7418d3b6726f1c458fef9e44a24696d05f076b67c62a56ed2293e26ae63bb6",
+      "crc32": "0d60e57d"
+    },
+    "enemybase.txt": {
+      "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/enemybase.txt",
+      "bytes": 147750,
+      "sha256": "1be7d5226798f7abaabe1f1e74aa1533fcd10e3eaf43f6497d63afa91df3e8b7",
+      "crc32": "29258170"
+    },
+    "group.txt": {
+      "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/group.txt",
+      "bytes": 68201,
+      "sha256": "58f722822f5bd95070297092d106622f236f54a1cb1ee5865c91d90210295eac",
+      "crc32": "df3a8b4a"
+    },
+    "group1.txt": {
+      "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/group1.txt",
+      "bytes": 70176,
+      "sha256": "4a02f2a3fa3d2dcf5589d8a2a560313c35d5a0a7e5e0589cc8df5f7df159ea8f",
+      "crc32": "b7a6ed50"
+    },
+    "itemset.txt": {
+      "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/itemset.txt",
+      "bytes": 3392473,
+      "sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+      "crc32": "96397928"
+    },
+    "setup.cf": {
+      "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/setup.cf",
+      "bytes": 9715,
+      "sha256": "b4936c103efb7b3cad359e5c85c7965187306883a68c0be712ece6c374e3b12d",
+      "crc32": "3681dc01"
+    }
+  },
+  "setup_file_selections": {
+    "encountfile": "./data/encount.txt",
+    "groupfile": "./data/group1.txt",
+    "enemyfile": "./data/enemy.txt",
+    "enemybasefile": "./data/enemybase.txt",
+    "itemset3file": "data/itemset.txt",
+    "itemset4file": "data/itemset.txt",
+    "itemset5file": "data/itemset.txt",
+    "itemset6file": "data/itemset.txt"
+  },
+  "arrivals": [
+    {
+      "village": 2000,
+      "exit_xy": [
+        74,
+        33
+      ],
+      "destination": [
+        100,
+        79,
+        614
+      ],
+      "create_block_sha256": "6be8b8547826782715ab64df32ab339419d7ba069ec58c594c790e08c5b0f337",
+      "area_ids": [
+        28,
+        36,
+        64
+      ]
+    },
+    {
+      "village": 2000,
+      "exit_xy": [
+        74,
+        34
+      ],
+      "destination": [
+        100,
+        79,
+        615
+      ],
+      "create_block_sha256": "9f11149023f352f4e8089a5b737862b5cffe0ac53a57e30d93e73495230083b0",
+      "area_ids": [
+        28,
+        36,
+        64
+      ]
+    },
+    {
+      "village": 2000,
+      "exit_xy": [
+        74,
+        35
+      ],
+      "destination": [
+        100,
+        79,
+        616
+      ],
+      "create_block_sha256": "b270dc25c0ebf4f8e357d5aaa294d82003e1e220cd6caefcc9948d84163e3781",
+      "area_ids": [
+        28,
+        36,
+        64
+      ]
+    },
+    {
+      "village": 2000,
+      "exit_xy": [
+        74,
+        36
+      ],
+      "destination": [
+        100,
+        79,
+        617
+      ],
+      "create_block_sha256": "ba7f51e45305bc6bb9345e963eaa1f0e606a3d7b12ecbedadc6cff865a62e18f",
+      "area_ids": [
+        28,
+        36,
+        64
+      ]
+    },
+    {
+      "village": 2000,
+      "exit_xy": [
+        108,
+        79
+      ],
+      "destination": [
+        100,
+        114,
+        660
+      ],
+      "create_block_sha256": "be7c282cf9ef2cae672cf7b0b74c7e27c9abe87696b994ecf20aff751e3278fc",
+      "area_ids": [
+        28,
+        36,
+        64
+      ]
+    },
+    {
+      "village": 2000,
+      "exit_xy": [
+        108,
+        80
+      ],
+      "destination": [
+        100,
+        114,
+        661
+      ],
+      "create_block_sha256": "ed83a5f2cf5deaca90418f2e1943fa8da75d308f67ee52669831a46880f1c6c1",
+      "area_ids": [
+        28,
+        36,
+        64
+      ]
+    },
+    {
+      "village": 2000,
+      "exit_xy": [
+        108,
+        81
+      ],
+      "destination": [
+        100,
+        114,
+        662
+      ],
+      "create_block_sha256": "1085814af8fe301f071a31d6d9db48b10ef9e38a86e0e9cf7c0ddc3d073b8550",
+      "area_ids": [
+        28,
+        36,
+        64
+      ]
+    },
+    {
+      "village": 2000,
+      "exit_xy": [
+        108,
+        82
+      ],
+      "destination": [
+        100,
+        114,
+        663
+      ],
+      "create_block_sha256": "8223779ccfc17798a6d09474e86ca50037b43219b442f178bc8586ba325d8105",
+      "area_ids": [
+        28,
+        36,
+        64
+      ]
+    },
+    {
+      "village": 3000,
+      "exit_xy": [
+        56,
+        117
+      ],
+      "destination": [
+        200,
+        570,
+        376
+      ],
+      "create_block_sha256": "e7a054f02f62c7d4508350aa672decf920ad76d0c05fadd74b40a7802e422501",
+      "area_ids": [
+        87,
+        88
+      ]
+    },
+    {
+      "village": 3000,
+      "exit_xy": [
+        56,
+        118
+      ],
+      "destination": [
+        200,
+        570,
+        377
+      ],
+      "create_block_sha256": "e699d8c5e51145ebd1e80e834b7d3ff4f7b2ec47c71bf97095df1daf65403538",
+      "area_ids": [
+        87,
+        88
+      ]
+    },
+    {
+      "village": 3000,
+      "exit_xy": [
+        56,
+        119
+      ],
+      "destination": [
+        200,
+        570,
+        378
+      ],
+      "create_block_sha256": "f8543486932fa28ff3bb7f179dd5d8e4dd402328c1fc198d37366af1bd8e2b37",
+      "area_ids": [
+        87,
+        88
+      ]
+    },
+    {
+      "village": 3000,
+      "exit_xy": [
+        56,
+        120
+      ],
+      "destination": [
+        200,
+        570,
+        379
+      ],
+      "create_block_sha256": "172cdf8554cecccb7dbd79dafa6a0b360c5156178706ab6e6f0fa0f547fc48cb",
+      "area_ids": [
+        87,
+        88
+      ]
+    },
+    {
+      "village": 3000,
+      "exit_xy": [
+        73,
+        54
+      ],
+      "destination": [
+        200,
+        587,
+        313
+      ],
+      "create_block_sha256": "30cbacfe9bf6e688e4a42943a8e45b53e39916c899b3f2372e750314ed8bf48a",
+      "area_ids": [
+        87,
+        88
+      ]
+    },
+    {
+      "village": 3000,
+      "exit_xy": [
+        73,
+        55
+      ],
+      "destination": [
+        200,
+        587,
+        314
+      ],
+      "create_block_sha256": "104851253ac48598fb9862d0e276946412c8e79774e98478eb53f4cfeee4c113",
+      "area_ids": [
+        87,
+        88
+      ]
+    },
+    {
+      "village": 3000,
+      "exit_xy": [
+        73,
+        56
+      ],
+      "destination": [
+        200,
+        587,
+        315
+      ],
+      "create_block_sha256": "0496a1bd6be24118ac100efdaa5f827f2d74bc54e05eed879f7710fb9117920b",
+      "area_ids": [
+        87,
+        88
+      ]
+    },
+    {
+      "village": 3000,
+      "exit_xy": [
+        73,
+        57
+      ],
+      "destination": [
+        200,
+        587,
+        316
+      ],
+      "create_block_sha256": "27f8a09059cd8937bfce00eea2e15139dcee2cc557864db262a4261373784201",
+      "area_ids": [
+        87,
+        88
+      ]
+    },
+    {
+      "village": 3000,
+      "exit_xy": [
+        73,
+        58
+      ],
+      "destination": [
+        200,
+        587,
+        317
+      ],
+      "create_block_sha256": "2744798b1e726e9b82c03425588f6617067c46c4b4100d18770c446f66f99321",
+      "area_ids": [
+        87,
+        88
+      ]
+    },
+    {
+      "village": 3000,
+      "exit_xy": [
+        73,
+        59
+      ],
+      "destination": [
+        200,
+        587,
+        318
+      ],
+      "create_block_sha256": "a33b8c2a1bce34307ea95e46cec98111c9a38d81f43203163712af0295ebd59f",
+      "area_ids": [
+        87,
+        88
+      ]
+    },
+    {
+      "village": 4000,
+      "exit_xy": [
+        104,
+        55
+      ],
+      "destination": [
+        200,
+        304,
+        599
+      ],
+      "create_block_sha256": "2400d8ad357547a66dfd24fa259104b4507cf90d37f07ac048dfd4d6789faf1f",
+      "area_ids": [
+        95
+      ]
+    },
+    {
+      "village": 4000,
+      "exit_xy": [
+        104,
+        56
+      ],
+      "destination": [
+        200,
+        304,
+        600
+      ],
+      "create_block_sha256": "562cc6eb990e39fc4246c8d39a681700fcb1762a0e1e3cc879e0558f13debffe",
+      "area_ids": [
+        95
+      ]
+    },
+    {
+      "village": 4000,
+      "exit_xy": [
+        101,
+        96
+      ],
+      "destination": [
+        200,
+        301,
+        640
+      ],
+      "create_block_sha256": "839b24607aa0f6757cbef34f02ba07a2ff169013da3366ee51e3f322d61e1b26",
+      "area_ids": [
+        95
+      ]
+    },
+    {
+      "village": 4000,
+      "exit_xy": [
+        101,
+        97
+      ],
+      "destination": [
+        200,
+        301,
+        641
+      ],
+      "create_block_sha256": "e94d20d4434c43e6fbf9cc1baa5c413b6950055c351aad57a47d53c0cba2583c",
+      "area_ids": [
+        95
+      ]
+    }
+  ],
+  "area_rectangles": [
+    {
+      "id": 21,
+      "floor": 100,
+      "rectangle": [
+        582,
+        399,
+        783,
+        560
+      ],
+      "line": 1,
+      "line_sha256": "85154740ace1db12e2d078cbae6c29260810bb24c39dec112131a37d5179c24c"
+    },
+    {
+      "id": 22,
+      "floor": 100,
+      "rectangle": [
+        591,
+        552,
+        685,
+        695
+      ],
+      "line": 2,
+      "line_sha256": "363002d752edb7b227a0b4441262f90a57850ce5d6fbb9add509ddac0d83dacb"
+    },
+    {
+      "id": 23,
+      "floor": 100,
+      "rectangle": [
+        423,
+        552,
+        594,
+        788
+      ],
+      "line": 3,
+      "line_sha256": "8c6cecd213c206087d97898c430e8ebba86e4d6177d913f0ff1b5d8b4acd6e34"
+    },
+    {
+      "id": 24,
+      "floor": 100,
+      "rectangle": [
+        541,
+        375,
+        592,
+        554
+      ],
+      "line": 4,
+      "line_sha256": "10fb97cfe6e9eb9b14e74faec17ef5a30602d01dbc2492230c960bda0de79d3a"
+    },
+    {
+      "id": 25,
+      "floor": 100,
+      "rectangle": [
+        479,
+        355,
+        541,
+        557
+      ],
+      "line": 5,
+      "line_sha256": "2976540001da53b6773dbec8a4a3690ef360c1adde095d0700b5cf82fd936299"
+    },
+    {
+      "id": 26,
+      "floor": 100,
+      "rectangle": [
+        425,
+        387,
+        480,
+        554
+      ],
+      "line": 6,
+      "line_sha256": "d80690c1bdfb1d40f477bfafdae9431c8424b576d9131f22813001bf8d0f360b"
+    },
+    {
+      "id": 27,
+      "floor": 100,
+      "rectangle": [
+        403,
+        316,
+        526,
+        391
+      ],
+      "line": 7,
+      "line_sha256": "4b89d1ba67822267e80a43841b87f183701e37e1321bb66047664cfff9e1909c"
+    },
+    {
+      "id": 28,
+      "floor": 100,
+      "rectangle": [
+        11,
+        567,
+        155,
+        707
+      ],
+      "line": 8,
+      "line_sha256": "2e7693acb916940f06c88c5283c1b89467ecae66aa94c33448eb8b41d6373f70"
+    },
+    {
+      "id": 29,
+      "floor": 100,
+      "rectangle": [
+        208,
+        524,
+        308,
+        682
+      ],
+      "line": 9,
+      "line_sha256": "9c7291c3ace70691c6f552e3c9e43c7d5c673189c7d07ce3b6fa1f456c93722f"
+    },
+    {
+      "id": 30,
+      "floor": 100,
+      "rectangle": [
+        63,
+        392,
+        308,
+        524
+      ],
+      "line": 10,
+      "line_sha256": "648dacfbf2cb1cc0542b440898ccf843ea464e6f6032be4150ccac798be4e37c"
+    },
+    {
+      "id": 31,
+      "floor": 100,
+      "rectangle": [
+        308,
+        524,
+        426,
+        691
+      ],
+      "line": 11,
+      "line_sha256": "24d13dc91fd9d6d2d32d573209bcef85fae1a1ce1f001437143326a3413a8468"
+    },
+    {
+      "id": 32,
+      "floor": 100,
+      "rectangle": [
+        128,
+        315,
+        202,
+        392
+      ],
+      "line": 12,
+      "line_sha256": "48fee16cb157450e7397c9183afe934f061cc2a7c52794dbd46a791d8700fac0"
+    },
+    {
+      "id": 33,
+      "floor": 100,
+      "rectangle": [
+        308,
+        387,
+        426,
+        524
+      ],
+      "line": 13,
+      "line_sha256": "aacf26cc7b4ff8079b956b0e0ed0c797de4332cc586c8cba26a50a6b0ff131f8"
+    },
+    {
+      "id": 34,
+      "floor": 100,
+      "rectangle": [
+        444,
+        299,
+        494,
+        315
+      ],
+      "line": 14,
+      "line_sha256": "473e1a1cc7e88ebafd3dceaa858be438298bf66cb9f388f62d53cd21bc5b38b7"
+    },
+    {
+      "id": 36,
+      "floor": 100,
+      "rectangle": [
+        1,
+        1,
+        799,
+        799
+      ],
+      "line": 15,
+      "line_sha256": "1c0b983fb2482d7fe1a0b99870c9195a32cae4a08a46dcd2e588bb5b4bad7789"
+    },
+    {
+      "id": 37,
+      "floor": 100,
+      "rectangle": [
+        365,
+        440,
+        416,
+        486
+      ],
+      "line": 16,
+      "line_sha256": "46926d6ffc3c5d9014f89ec6d151c836eb708dd70c33aa74d65e347d9d97c3a9"
+    },
+    {
+      "id": 38,
+      "floor": 100,
+      "rectangle": [
+        547,
+        115,
+        699,
+        241
+      ],
+      "line": 17,
+      "line_sha256": "3827ef4634fa68c21132fa7e8bb14b2ed6b10055643c1eb83ecbaef26eed855d"
+    },
+    {
+      "id": 39,
+      "floor": 100,
+      "rectangle": [
+        547,
+        241,
+        679,
+        331
+      ],
+      "line": 18,
+      "line_sha256": "335344a46c68e050094b7fbdd1c23db9859f3cf6b70735f5d236b6acb1b7b833"
+    },
+    {
+      "id": 40,
+      "floor": 100,
+      "rectangle": [
+        539,
+        297,
+        587,
+        374
+      ],
+      "line": 19,
+      "line_sha256": "f23023c376b984c2ac760361340dbdd7a16707a44e3847966bc5402e136d30e3"
+    },
+    {
+      "id": 41,
+      "floor": 100,
+      "rectangle": [
+        587,
+        331,
+        630,
+        343
+      ],
+      "line": 20,
+      "line_sha256": "d05ec9872ba5ac2a81f40f22b429ca60406a7bc71aa46389048c0acc09f838d4"
+    },
+    {
+      "id": 42,
+      "floor": 100,
+      "rectangle": [
+        532,
+        332,
+        595,
+        361
+      ],
+      "line": 21,
+      "line_sha256": "6aa3d60b61e2d2ce418e7fb38653c4709e5c74d46a0270a37e9276234a90c35e"
+    },
+    {
+      "id": 43,
+      "floor": 100,
+      "rectangle": [
+        524,
+        325,
+        546,
+        346
+      ],
+      "line": 22,
+      "line_sha256": "f609355ce4fd6577f3844c2342239e2ffe89c2e76328163907018fd61e8542f1"
+    },
+    {
+      "id": 44,
+      "floor": 100,
+      "rectangle": [
+        504,
+        298,
+        547,
+        325
+      ],
+      "line": 23,
+      "line_sha256": "a1868d8af68667641f3c4e981811ec3c87518e88c2829ab9078d589707b6f2d2"
+    },
+    {
+      "id": 45,
+      "floor": 100,
+      "rectangle": [
+        434,
+        237,
+        547,
+        298
+      ],
+      "line": 24,
+      "line_sha256": "08ead493ee5f2d2f1950fc0a1d0f5fe7b51064d171738a9ed5884645c5b5246b"
+    },
+    {
+      "id": 46,
+      "floor": 100,
+      "rectangle": [
+        434,
+        176,
+        547,
+        237
+      ],
+      "line": 25,
+      "line_sha256": "5f4f032fca15ab7e4f85d0a262533b15e39e2096cb6d965a134b1cc252805023"
+    },
+    {
+      "id": 47,
+      "floor": 100,
+      "rectangle": [
+        434,
+        115,
+        547,
+        176
+      ],
+      "line": 26,
+      "line_sha256": "dcc3a71ba4ce4dbfc83636db13b7a3f3bd0ccaec3998a1b2d49538bad14fae29"
+    },
+    {
+      "id": 48,
+      "floor": 100,
+      "rectangle": [
+        180,
+        25,
+        434,
+        120
+      ],
+      "line": 27,
+      "line_sha256": "bb936dd3b87a318b1638589b1db5a07e34ba3cdb075d3f285cf5b2f6d1d07736"
+    },
+    {
+      "id": 49,
+      "floor": 100,
+      "rectangle": [
+        180,
+        120,
+        315,
+        200
+      ],
+      "line": 28,
+      "line_sha256": "ef0a4da31af33aedd9da34cb52d29fd0db81c38d21301a87ef315b798b84754a"
+    },
+    {
+      "id": 50,
+      "floor": 100,
+      "rectangle": [
+        315,
+        120,
+        434,
+        200
+      ],
+      "line": 29,
+      "line_sha256": "9c25b562887c0838c7079e8d57277e621b110232852a67298d6e19e1dad73b5e"
+    },
+    {
+      "id": 51,
+      "floor": 100,
+      "rectangle": [
+        180,
+        200,
+        360,
+        282
+      ],
+      "line": 30,
+      "line_sha256": "48bd1fd8b40e4c62ee07b88756ebcdc9d34ae124bdf3ba213deb8d663a8ca336"
+    },
+    {
+      "id": 52,
+      "floor": 100,
+      "rectangle": [
+        360,
+        200,
+        433,
+        314
+      ],
+      "line": 31,
+      "line_sha256": "7056678755f3cdf743768b6578606bb2d03369a49b4e7a205eaf2c4c714cf68e"
+    },
+    {
+      "id": 54,
+      "floor": 100,
+      "rectangle": [
+        556,
+        345,
+        621,
+        393
+      ],
+      "line": 32,
+      "line_sha256": "9800aa3896757b49d802810a27e443bbc3a7a477936455cac361501b95c3b64c"
+    },
+    {
+      "id": 55,
+      "floor": 100,
+      "rectangle": [
+        614,
+        393,
+        621,
+        403
+      ],
+      "line": 33,
+      "line_sha256": "cfc75838feb017367614c4b7157029c578c00175bc77d99dbbfe544625492038"
+    },
+    {
+      "id": 56,
+      "floor": 100,
+      "rectangle": [
+        621,
+        341,
+        645,
+        412
+      ],
+      "line": 34,
+      "line_sha256": "8bade3dc0b77970ba60c1e2edc4162b5e0a162850a5a588e6deb5f0d206c1b8c"
+    },
+    {
+      "id": 57,
+      "floor": 100,
+      "rectangle": [
+        633,
+        329,
+        662,
+        403
+      ],
+      "line": 35,
+      "line_sha256": "e5b16189c454e58ceb118ffe3862e3a59775145c3128e7421727d2ac151f6671"
+    },
+    {
+      "id": 58,
+      "floor": 100,
+      "rectangle": [
+        273,
+        282,
+        353,
+        366
+      ],
+      "line": 36,
+      "line_sha256": "4bc43e133fbc8d78fd7b1842787c5b296ae5cfeaaf2c855e5f599260480b7172"
+    },
+    {
+      "id": 64,
+      "floor": 100,
+      "rectangle": [
+        11,
+        524,
+        208,
+        708
+      ],
+      "line": 42,
+      "line_sha256": "5e90d0627b6dfc91a69393e6428026d144eb1352cc28a3f23adc33652358a302"
+    },
+    {
+      "id": 65,
+      "floor": 100,
+      "rectangle": [
+        568,
+        538,
+        610,
+        578
+      ],
+      "line": 43,
+      "line_sha256": "dfddcd4eb07d2faf05c2946627f2c64e28fad94dafa2c4d06e8e2a6d7b1471b2"
+    },
+    {
+      "id": 66,
+      "floor": 100,
+      "rectangle": [
+        432,
+        236,
+        546,
+        315
+      ],
+      "line": 44,
+      "line_sha256": "1c57dc1a9312dafd84f34af7a4b4f9b02290025c0cc309aa07928bcff10e1125"
+    },
+    {
+      "id": 67,
+      "floor": 100,
+      "rectangle": [
+        433,
+        306,
+        446,
+        315
+      ],
+      "line": 45,
+      "line_sha256": "c4fe59b9cb6c26a09c628671e2a81cbc47552185d3857d9b1c6bab6cded8e3cb"
+    },
+    {
+      "id": 68,
+      "floor": 100,
+      "rectangle": [
+        433,
+        310,
+        499,
+        315
+      ],
+      "line": 46,
+      "line_sha256": "f4a5b69ca8e8fbc9384fa132fa91a092d4795eceacb839b0442b62df56ca196b"
+    },
+    {
+      "id": 70,
+      "floor": 100,
+      "rectangle": [
+        520,
+        323,
+        538,
+        338
+      ],
+      "line": 47,
+      "line_sha256": "6404a7381dd549cb551aefe5336412792236bbf85ea3638d899ff871c41bff31"
+    },
+    {
+      "id": 87,
+      "floor": 200,
+      "rectangle": [
+        550,
+        282,
+        652,
+        403
+      ],
+      "line": 61,
+      "line_sha256": "3e5a2c4733efda4413023d4943c75d0d74696e3f84f895ba2ebcf96c0802121c"
+    },
+    {
+      "id": 88,
+      "floor": 200,
+      "rectangle": [
+        516,
+        238,
+        772,
+        452
+      ],
+      "line": 62,
+      "line_sha256": "9d4247fb32ff51117734bc40d6e09c1a7e46d24be65ccca0044b59feafc109c2"
+    },
+    {
+      "id": 89,
+      "floor": 200,
+      "rectangle": [
+        384,
+        42,
+        605,
+        238
+      ],
+      "line": 63,
+      "line_sha256": "5dbe843234621a14449b2f18c6790674daf1e325630238a3becb8939bd3d1edf"
+    },
+    {
+      "id": 90,
+      "floor": 200,
+      "rectangle": [
+        384,
+        42,
+        605,
+        238
+      ],
+      "line": 64,
+      "line_sha256": "48e9ad1bcb488948feee44acd0c36d601ab20ddb79dda3ad18d41b7b846951c7"
+    },
+    {
+      "id": 91,
+      "floor": 200,
+      "rectangle": [
+        384,
+        238,
+        516,
+        415
+      ],
+      "line": 65,
+      "line_sha256": "93d8ded2eda8b96d2256116471c41b346861d1093c22e22756f48056fa84227b"
+    },
+    {
+      "id": 92,
+      "floor": 200,
+      "rectangle": [
+        384,
+        415,
+        516,
+        528
+      ],
+      "line": 66,
+      "line_sha256": "c63d2c90408182039a9505f97c6ace85d8407281dd97a6e1db3f2cfcedce7c51"
+    },
+    {
+      "id": 93,
+      "floor": 200,
+      "rectangle": [
+        467,
+        156,
+        506,
+        197
+      ],
+      "line": 67,
+      "line_sha256": "1f7fb50c814193d7a1b049f54970ab53bb1f000d2ee0eefc5e7eb127d766924b"
+    },
+    {
+      "id": 94,
+      "floor": 200,
+      "rectangle": [
+        441,
+        123,
+        177,
+        480
+      ],
+      "line": 68,
+      "line_sha256": "e23be0a548d571e88d199aef86f61eae59a3d3f36894d51461199286b10289ef"
+    },
+    {
+      "id": 95,
+      "floor": 200,
+      "rectangle": [
+        262,
+        565,
+        333,
+        686
+      ],
+      "line": 69,
+      "line_sha256": "fc8d35122c7e6c8c93fed00d59dfa23177da15e85b8ec8f525d0ae56c3390254"
+    },
+    {
+      "id": 96,
+      "floor": 200,
+      "rectangle": [
+        95,
+        499,
+        304,
+        565
+      ],
+      "line": 70,
+      "line_sha256": "0783a4d80d7805658e1f7288a88f186035abb4a47024dc6c5e5f21c92b2a5dcc"
+    },
+    {
+      "id": 97,
+      "floor": 200,
+      "rectangle": [
+        30,
+        327,
+        251,
+        502
+      ],
+      "line": 71,
+      "line_sha256": "d215da083dff5a3741f0a62df8b790e70b2bad547b2f3625afd4142201032fbd"
+    },
+    {
+      "id": 98,
+      "floor": 200,
+      "rectangle": [
+        333,
+        565,
+        401,
+        666
+      ],
+      "line": 72,
+      "line_sha256": "871948107b549073f0c344635839f4462b0c76dba862bb891124a0d88fd29ae0"
+    },
+    {
+      "id": 99,
+      "floor": 200,
+      "rectangle": [
+        304,
+        494,
+        401,
+        565
+      ],
+      "line": 73,
+      "line_sha256": "1a195668bdfac62fbb68e8880661f74aa5a72d4d9f6223a8acb5eb1bf5a74d73"
+    },
+    {
+      "id": 100,
+      "floor": 200,
+      "rectangle": [
+        401,
+        506,
+        433,
+        617
+      ],
+      "line": 74,
+      "line_sha256": "3e6274765ccbeea977bbc59dc724fe6524d0163d9fd28ad80e6390d89daa4ff1"
+    },
+    {
+      "id": 101,
+      "floor": 200,
+      "rectangle": [
+        401,
+        506,
+        433,
+        617
+      ],
+      "line": 75,
+      "line_sha256": "4f5a4651498ab89fa15bfe606d59a011b102ce774e211e56a8e586b3e7a5f8bb"
+    },
+    {
+      "id": 102,
+      "floor": 200,
+      "rectangle": [
+        430,
+        526,
+        439,
+        544
+      ],
+      "line": 76,
+      "line_sha256": "f97fc6d7eeaf85e0db435f70cb01afad045a88fe7ee1bf5c96dbf05f9d4583d9"
+    },
+    {
+      "id": 103,
+      "floor": 200,
+      "rectangle": [
+        231,
+        248,
+        314,
+        327
+      ],
+      "line": 77,
+      "line_sha256": "03ab79e7e8012d34ad5fa5b3496ba1adb2c7bd1f3f79ef77eea492ff23da955c"
+    },
+    {
+      "id": 104,
+      "floor": 200,
+      "rectangle": [
+        314,
+        278,
+        320,
+        296
+      ],
+      "line": 78,
+      "line_sha256": "ecef9dac06459b74005b4e64dfcd91a3b8110b24f8d88e8de1704fa24dff2d19"
+    },
+    {
+      "id": 105,
+      "floor": 200,
+      "rectangle": [
+        320,
+        287,
+        326,
+        296
+      ],
+      "line": 79,
+      "line_sha256": "05ce1c6a974e6011ad5b42974ec56239d63493f889b52b1510e70f41330d836f"
+    },
+    {
+      "id": 106,
+      "floor": 200,
+      "rectangle": [
+        422,
+        325,
+        428,
+        359
+      ],
+      "line": 80,
+      "line_sha256": "01c631b47ecd22362e506c84470f04ca70bd06066eb31728c467fd08637d37a5"
+    },
+    {
+      "id": 107,
+      "floor": 200,
+      "rectangle": [
+        402,
+        320,
+        414,
+        327
+      ],
+      "line": 81,
+      "line_sha256": "2fa20715d220fe5bd719f4410136270490b6fa97f2a0a9dbec3965cc2f279739"
+    },
+    {
+      "id": 108,
+      "floor": 200,
+      "rectangle": [
+        384,
+        314,
+        402,
+        327
+      ],
+      "line": 82,
+      "line_sha256": "60995986eac34b4c614f34c9b1d0c95071fd551cf281d886231cea560c83c853"
+    },
+    {
+      "id": 109,
+      "floor": 200,
+      "rectangle": [
+        367,
+        305,
+        384,
+        327
+      ],
+      "line": 83,
+      "line_sha256": "a0a3cc2abb4929384b5d0598a92e6dcf355d0725430d6231faff00bbd4a57c48"
+    },
+    {
+      "id": 110,
+      "floor": 200,
+      "rectangle": [
+        410,
+        367,
+        417,
+        377
+      ],
+      "line": 84,
+      "line_sha256": "8c4fb427c78aa79c8d0f246c557c1db1bd7636d36e3214bf6efed20bfa94811a"
+    },
+    {
+      "id": 111,
+      "floor": 200,
+      "rectangle": [
+        407,
+        367,
+        410,
+        393
+      ],
+      "line": 85,
+      "line_sha256": "e94175d9ed286b4ac1f64ad36b5d58ed0cb929ae455c506ef4bb55e07246f795"
+    },
+    {
+      "id": 112,
+      "floor": 200,
+      "rectangle": [
+        407,
+        325,
+        422,
+        367
+      ],
+      "line": 86,
+      "line_sha256": "c449c08826a1e0d78a086b8214451346951145778c463204bbdf1b9102715f2b"
+    },
+    {
+      "id": 113,
+      "floor": 200,
+      "rectangle": [
+        332,
+        327,
+        407,
+        446
+      ],
+      "line": 87,
+      "line_sha256": "8281ec9a27ec38ac2cc7f76d706fae28a47e9b428ea361c4ea8ec5da1462ca5e"
+    },
+    {
+      "id": 114,
+      "floor": 200,
+      "rectangle": [
+        251,
+        446,
+        396,
+        499
+      ],
+      "line": 88,
+      "line_sha256": "6106b1483a30e7fb691a897023be6274a3cfa7cd5be2a77460f8b3a811121241"
+    },
+    {
+      "id": 115,
+      "floor": 200,
+      "rectangle": [
+        251,
+        327,
+        332,
+        446
+      ],
+      "line": 89,
+      "line_sha256": "cd48dec6a9556b4b21c401a030feceefeba2d577484ccb751ee8630de3a695bd"
+    },
+    {
+      "id": 116,
+      "floor": 200,
+      "rectangle": [
+        91,
+        564,
+        250,
+        671
+      ],
+      "line": 90,
+      "line_sha256": "1cadafa31071398871ef55828c3c4eaf757ded3ba02dd013538c3b4babe6faed"
+    },
+    {
+      "id": 117,
+      "floor": 200,
+      "rectangle": [
+        194,
+        551,
+        250,
+        577
+      ],
+      "line": 91,
+      "line_sha256": "00f884141ae5674ae1918c2489541a85c95f2f7cceccd2049d2a9e67564ec47e"
+    },
+    {
+      "id": 118,
+      "floor": 200,
+      "rectangle": [
+        91,
+        557,
+        158,
+        572
+      ],
+      "line": 92,
+      "line_sha256": "a479c966c0c58d3dbdbf80d453362a93dd724c0ab52165bfaafa09808eabd754"
+    },
+    {
+      "id": 119,
+      "floor": 200,
+      "rectangle": [
+        314,
+        296,
+        367,
+        327
+      ],
+      "line": 93,
+      "line_sha256": "a9a2db8eb71e0a86f35d151bcd98bbf59805304ae14a7c52ecdd0a38dbe9b5c0"
+    },
+    {
+      "id": 126,
+      "floor": 200,
+      "rectangle": [
+        500,
+        402,
+        513,
+        458
+      ],
+      "line": 100,
+      "line_sha256": "147440834f202402a830c95e694703c0bee7b8c0fe9da9759de891f925953ce7"
+    },
+    {
+      "id": 127,
+      "floor": 200,
+      "rectangle": [
+        497,
+        409,
+        517,
+        444
+      ],
+      "line": 101,
+      "line_sha256": "e74f2c3f9aa922ed65be3d913ef45dd7398bebf1863caac7fd30f0586bbdd1a2"
+    },
+    {
+      "id": 128,
+      "floor": 200,
+      "rectangle": [
+        515,
+        428,
+        527,
+        435
+      ],
+      "line": 102,
+      "line_sha256": "774df40bd9cbb1172f2aea0959f6a64ddafc8dedb1aa2aa5aa72f1ea758ed4e6"
+    },
+    {
+      "id": 129,
+      "floor": 200,
+      "rectangle": [
+        515,
+        416,
+        522,
+        428
+      ],
+      "line": 103,
+      "line_sha256": "f287b789f2cb14e54b3aae9a6a3fcb1d9263d87078530e5714ca6023433ffa70"
+    },
+    {
+      "id": 130,
+      "floor": 200,
+      "rectangle": [
+        513,
+        435,
+        520,
+        444
+      ],
+      "line": 104,
+      "line_sha256": "5b440b8972625703f6f4b61a18a13c368d272e97ca64fb7914b53b09d1b27ecf"
+    },
+    {
+      "id": 131,
+      "floor": 200,
+      "rectangle": [
+        513,
+        444,
+        520,
+        458
+      ],
+      "line": 105,
+      "line_sha256": "cdaa5a37a2fa9105568ffbafadea58b9ed5ef9205987535968235a48cf92dffe"
+    },
+    {
+      "id": 132,
+      "floor": 200,
+      "rectangle": [
+        503,
+        455,
+        527,
+        488
+      ],
+      "line": 106,
+      "line_sha256": "16db27384f749b6a83c2e9ef5f1a45e081824aba7ae175d50f4bd51083fda0ba"
+    },
+    {
+      "id": 133,
+      "floor": 200,
+      "rectangle": [
+        503,
+        462,
+        619,
+        618
+      ],
+      "line": 107,
+      "line_sha256": "2168a84aa3193707bb81913b5ac787df610ca4757fc80ba67a51cc1221d85d76"
+    },
+    {
+      "id": 134,
+      "floor": 200,
+      "rectangle": [
+        486,
+        498,
+        496,
+        512
+      ],
+      "line": 108,
+      "line_sha256": "fbdd6bf15e15aa77991a8addf66b2218cfe85a903cf2c71d8bea2d2a1251772f"
+    },
+    {
+      "id": 135,
+      "floor": 200,
+      "rectangle": [
+        471,
+        506,
+        493,
+        514
+      ],
+      "line": 109,
+      "line_sha256": "71e0d536e8c00be3b9086e3036a36c8c6bd7ecfd2d702796a69a9c87d49280d2"
+    },
+    {
+      "id": 136,
+      "floor": 200,
+      "rectangle": [
+        466,
+        513,
+        507,
+        618
+      ],
+      "line": 110,
+      "line_sha256": "414d8f22a9239b093de34b8b602ffa1280e82c389e5e12e6b0ddfe127695f070"
+    },
+    {
+      "id": 137,
+      "floor": 200,
+      "rectangle": [
+        481,
+        616,
+        695,
+        807
+      ],
+      "line": 111,
+      "line_sha256": "678311c84247f86d8626a442a4b6d55f8fc5551093af0d103cee7c390325232a"
+    },
+    {
+      "id": 138,
+      "floor": 200,
+      "rectangle": [
+        602,
+        616,
+        695,
+        722
+      ],
+      "line": 112,
+      "line_sha256": "b19432af49811aa344b6e277a5655aa2e8ff413da5c19d1ddc9cc3293197109b"
+    },
+    {
+      "id": 139,
+      "floor": 200,
+      "rectangle": [
+        451,
+        694,
+        493,
+        922
+      ],
+      "line": 113,
+      "line_sha256": "1cf08c3cd34b360cae88455151b1e0466b0095de17b0a3929bff046eefab97d5"
+    },
+    {
+      "id": 140,
+      "floor": 200,
+      "rectangle": [
+        77,
+        806,
+        553,
+        1068
+      ],
+      "line": 114,
+      "line_sha256": "c2f377df50dc882b2faf40f66c978dd804844bf2949287db8536dd348cf49425"
+    },
+    {
+      "id": 141,
+      "floor": 200,
+      "rectangle": [
+        365,
+        805,
+        452,
+        932
+      ],
+      "line": 115,
+      "line_sha256": "7ac544f4fabe8128920f783a22a703be5e2a69bc286184637b922ecc02ec21aa"
+    },
+    {
+      "id": 142,
+      "floor": 200,
+      "rectangle": [
+        339,
+        844,
+        365,
+        944
+      ],
+      "line": 116,
+      "line_sha256": "acfb69c58c40d48e8f81b5b07857ffccf2ccafaa7f3343a6d7dc8bb273768f25"
+    },
+    {
+      "id": 143,
+      "floor": 200,
+      "rectangle": [
+        238,
+        859,
+        340,
+        982
+      ],
+      "line": 117,
+      "line_sha256": "a51e3ce4ac97843a1b8004169cb9bec9550589e72fcee098e054a64304572e1f"
+    },
+    {
+      "id": 144,
+      "floor": 200,
+      "rectangle": [
+        155,
+        900,
+        237,
+        964
+      ],
+      "line": 118,
+      "line_sha256": "e658dfd1ddd0a1806e3dc09a031591f39be610711110b7e99dbf0515104abdc7"
+    },
+    {
+      "id": 145,
+      "floor": 200,
+      "rectangle": [
+        212,
+        964,
+        237,
+        999
+      ],
+      "line": 119,
+      "line_sha256": "f64c518f8f17357bc6b90aa8d5d738e33f0dfc95944ae554af281ffc464cdef2"
+    },
+    {
+      "id": 146,
+      "floor": 200,
+      "rectangle": [
+        63,
+        1067,
+        112,
+        1168
+      ],
+      "line": 120,
+      "line_sha256": "a07185540e52ce691c132643f0a7761ffc861aeda2168cfafa58615f79bd5803"
+    },
+    {
+      "id": 147,
+      "floor": 200,
+      "rectangle": [
+        346,
+        667,
+        360,
+        743
+      ],
+      "line": 121,
+      "line_sha256": "1dcb2f3e05beb8bccd766c18b870fdffbb1d4bb95766ed7d644c10c8b3f377ad"
+    },
+    {
+      "id": 148,
+      "floor": 200,
+      "rectangle": [
+        360,
+        667,
+        365,
+        735
+      ],
+      "line": 122,
+      "line_sha256": "5cb8856e7da98308c2cd6473fa90ea9d54142d9502462fbb804528fbcb36bd99"
+    },
+    {
+      "id": 149,
+      "floor": 200,
+      "rectangle": [
+        365,
+        667,
+        372,
+        713
+      ],
+      "line": 123,
+      "line_sha256": "2ad2876a26e9b8b99771e34724f50e645fc4ce7e7001c7ad09f95e03b0e99068"
+    },
+    {
+      "id": 150,
+      "floor": 200,
+      "rectangle": [
+        419,
+        619,
+        485,
+        644
+      ],
+      "line": 124,
+      "line_sha256": "0ea17fddd1be72d11446e5695619673571750812e779b479216a7f4913b1eca3"
+    },
+    {
+      "id": 151,
+      "floor": 200,
+      "rectangle": [
+        372,
+        639,
+        473,
+        713
+      ],
+      "line": 125,
+      "line_sha256": "a13fc3cb95cb51999c0d594e56e2460f601ac235da0a9818fe8b37091932aaa8"
+    },
+    {
+      "id": 152,
+      "floor": 200,
+      "rectangle": [
+        244,
+        687,
+        332,
+        814
+      ],
+      "line": 126,
+      "line_sha256": "075b4bd26dff5fa715c88400093633805a0d1542be3a7e2892ed7dd25aac7af7"
+    },
+    {
+      "id": 153,
+      "floor": 200,
+      "rectangle": [
+        226,
+        745,
+        244,
+        790
+      ],
+      "line": 127,
+      "line_sha256": "326ae8a3fbe0495076d87adb6e35d0d2d57c08430f7bee0506b9ec5ac115d25c"
+    },
+    {
+      "id": 154,
+      "floor": 200,
+      "rectangle": [
+        230,
+        790,
+        244,
+        796
+      ],
+      "line": 128,
+      "line_sha256": "4baf149c2c610b0749da06d348987dc64a45fd5a19006883169010d40d1e7180"
+    },
+    {
+      "id": 155,
+      "floor": 200,
+      "rectangle": [
+        236,
+        796,
+        244,
+        803
+      ],
+      "line": 129,
+      "line_sha256": "1af3d7233f2f7bff290d269143a4d6143b37da4a2659f946c0ec58cd6e2428dc"
+    },
+    {
+      "id": 156,
+      "floor": 200,
+      "rectangle": [
+        250,
+        814,
+        327,
+        819
+      ],
+      "line": 130,
+      "line_sha256": "dd04f5f8aef902cecfba35fe4d3b05b6cf5a53e1c5e2b356a8b03444d8997a80"
+    },
+    {
+      "id": 157,
+      "floor": 200,
+      "rectangle": [
+        284,
+        819,
+        320,
+        830
+      ],
+      "line": 131,
+      "line_sha256": "fb8e83a70d6048c07e34e4d3fa567a00cd745cfbda57e6144639f17741ab253f"
+    },
+    {
+      "id": 158,
+      "floor": 200,
+      "rectangle": [
+        320,
+        819,
+        324,
+        825
+      ],
+      "line": 132,
+      "line_sha256": "72eabe517ab5863d86bb1984f4ec7c3b81e21337f3fe0659500ea3f662ad173c"
+    },
+    {
+      "id": 159,
+      "floor": 200,
+      "rectangle": [
+        270,
+        819,
+        284,
+        826
+      ],
+      "line": 133,
+      "line_sha256": "6aefa5a9f2bd5ba81bddb2551a64a0e24c3871de6fca73a060f38b644c66b189"
+    },
+    {
+      "id": 160,
+      "floor": 200,
+      "rectangle": [
+        332,
+        750,
+        339,
+        805
+      ],
+      "line": 134,
+      "line_sha256": "ae1fc159d16524e793717bb98897da049bae559dd40b9c845149aff1f9be94cd"
+    },
+    {
+      "id": 161,
+      "floor": 200,
+      "rectangle": [
+        339,
+        741,
+        345,
+        775
+      ],
+      "line": 135,
+      "line_sha256": "190b953150de6040b45047c8e95d557895cd24a28690edcc2b6c252de2b8beef"
+    },
+    {
+      "id": 162,
+      "floor": 200,
+      "rectangle": [
+        345,
+        744,
+        352,
+        761
+      ],
+      "line": 136,
+      "line_sha256": "6c15180b61cb0e5435164038afc28518391dbd8098a7e5137cbef5ac317cd302"
+    },
+    {
+      "id": 163,
+      "floor": 200,
+      "rectangle": [
+        150,
+        750,
+        226,
+        806
+      ],
+      "line": 137,
+      "line_sha256": "4be04ff8dcb03540d1cb80825ac3ca9caac2e95473778b217cc2a23c59b1eaaf"
+    },
+    {
+      "id": 164,
+      "floor": 200,
+      "rectangle": [
+        39,
+        656,
+        150,
+        804
+      ],
+      "line": 138,
+      "line_sha256": "393bee22397bcf8f63bc20f6a91d910f2de15b437cb72096fe0a4fd868d3e0f9"
+    },
+    {
+      "id": 165,
+      "floor": 200,
+      "rectangle": [
+        151,
+        673,
+        243,
+        749
+      ],
+      "line": 139,
+      "line_sha256": "570173c8271828bfd3d406c03c4bdcdc238a49a049964525f07b4c02d39f0723"
+    },
+    {
+      "id": 166,
+      "floor": 200,
+      "rectangle": [
+        40,
+        666,
+        94,
+        719
+      ],
+      "line": 140,
+      "line_sha256": "40cf0f09aed159bac9d65d8fe8ef18875ef8dc4b23e325fc4d2d2ba022e218a6"
+    },
+    {
+      "id": 167,
+      "floor": 200,
+      "rectangle": [
+        311,
+        211,
+        441,
+        345
+      ],
+      "line": 141,
+      "line_sha256": "d94920bf1c68872602c7fa930b2e040ae3aa16ffefee5dac4b464c2045b2bda4"
+    },
+    {
+      "id": 168,
+      "floor": 200,
+      "rectangle": [
+        340,
+        170,
+        410,
+        211
+      ],
+      "line": 142,
+      "line_sha256": "5dad7b86c6b6566b9a91eb00fc75ceb35f191bbaf3f81a3ca0641b726e5d5f44"
+    },
+    {
+      "id": 169,
+      "floor": 200,
+      "rectangle": [
+        410,
+        192,
+        422,
+        211
+      ],
+      "line": 143,
+      "line_sha256": "4f54a9de357708464a936a605e546068d50d877af70028eb73f4d3fc813790b7"
+    },
+    {
+      "id": 170,
+      "floor": 200,
+      "rectangle": [
+        422,
+        203,
+        430,
+        211
+      ],
+      "line": 144,
+      "line_sha256": "cb41fb7137ccb3c9213079c9135c57d8c12da9bcd3aade09361d3b7ad8b51fc7"
+    },
+    {
+      "id": 171,
+      "floor": 200,
+      "rectangle": [
+        441,
+        257,
+        466,
+        324
+      ],
+      "line": 145,
+      "line_sha256": "dcead3f010a733cd678a30f6334712caf399b84d388601739dd23eae944d70fe"
+    },
+    {
+      "id": 172,
+      "floor": 200,
+      "rectangle": [
+        441,
+        324,
+        454,
+        338
+      ],
+      "line": 146,
+      "line_sha256": "5b5312e5d9479c6cbaa7b2e812daaf36b98dbcb97581b1d28389f19e4a84697c"
+    },
+    {
+      "id": 173,
+      "floor": 200,
+      "rectangle": [
+        454,
+        324,
+        461,
+        334
+      ],
+      "line": 147,
+      "line_sha256": "0cc0251f17c032785544f53924b338d63582b4ed51709ab129cc201fb57e1b1d"
+    },
+    {
+      "id": 174,
+      "floor": 200,
+      "rectangle": [
+        441,
+        226,
+        451,
+        257
+      ],
+      "line": 148,
+      "line_sha256": "e9b70d1440a17da3b8e7ce0697534383ea9a9f47bf681630c8961da24ddabf35"
+    },
+    {
+      "id": 175,
+      "floor": 200,
+      "rectangle": [
+        451,
+        236,
+        458,
+        257
+      ],
+      "line": 149,
+      "line_sha256": "95c3af86bf7f917a870c7e0ed0ea31c165fc39ca8312dc56d228b172d8b2d764"
+    },
+    {
+      "id": 176,
+      "floor": 200,
+      "rectangle": [
+        456,
+        253,
+        461,
+        261
+      ],
+      "line": 150,
+      "line_sha256": "dd6a093fc060413dc172d4e6d7671cd430e1a64d6535468355b2baafb318557f"
+    },
+    {
+      "id": 177,
+      "floor": 200,
+      "rectangle": [
+        189,
+        787,
+        205,
+        875
+      ],
+      "line": 151,
+      "line_sha256": "5a0f66124c0f9f52380f3a1c3d2964e8c9e4c1b4b5ac852be83c97d5384493a3"
+    },
+    {
+      "id": 178,
+      "floor": 200,
+      "rectangle": [
+        205,
+        780,
+        213,
+        864
+      ],
+      "line": 152,
+      "line_sha256": "a8c3c8d90f1bf75f4828ed8296f6d3d8837b4b9854b0e1703aa36b52a24a677b"
+    },
+    {
+      "id": 179,
+      "floor": 200,
+      "rectangle": [
+        213,
+        783,
+        219,
+        847
+      ],
+      "line": 153,
+      "line_sha256": "9e9240778ac37406fd4dc78854093ccc261840cf3cd54914fb0b648e8ffc8de1"
+    },
+    {
+      "id": 180,
+      "floor": 200,
+      "rectangle": [
+        219,
+        783,
+        232,
+        841
+      ],
+      "line": 154,
+      "line_sha256": "90e7cca1c316b7af425abec90b070421f7f948fa3feaca0609ddfa48147e7f28"
+    },
+    {
+      "id": 181,
+      "floor": 200,
+      "rectangle": [
+        232,
+        800,
+        243,
+        836
+      ],
+      "line": 155,
+      "line_sha256": "626d2deab24218ee5df9aef0afdd30f691ed94868112449d2c21445a20729e19"
+    },
+    {
+      "id": 182,
+      "floor": 200,
+      "rectangle": [
+        243,
+        815,
+        249,
+        826
+      ],
+      "line": 156,
+      "line_sha256": "0313214f5147df8c5b6a5fb5b7537eaaa8548a600eb6a265ffbb7a9ccf167d32"
+    },
+    {
+      "id": 183,
+      "floor": 200,
+      "rectangle": [
+        167,
+        791,
+        189,
+        869
+      ],
+      "line": 157,
+      "line_sha256": "94bf67842b1d728bcc2519e1bd560b40b60cf037b4b86cd48d65b8d1e3206062"
+    },
+    {
+      "id": 184,
+      "floor": 200,
+      "rectangle": [
+        150,
+        805,
+        167,
+        869
+      ],
+      "line": 158,
+      "line_sha256": "661a484f58a62ff57fc8ec427f8b4e5d642f294dc4e06d123d6ab4cca9f5ee5c"
+    },
+    {
+      "id": 185,
+      "floor": 200,
+      "rectangle": [
+        94,
+        805,
+        150,
+        875
+      ],
+      "line": 159,
+      "line_sha256": "2ceb0d8268ffc01b30b0da64f14ce35fd8ecccfd59d23e16605990ac6037fc8c"
+    },
+    {
+      "id": 186,
+      "floor": 200,
+      "rectangle": [
+        590,
+        438,
+        617,
+        479
+      ],
+      "line": 160,
+      "line_sha256": "a319872c402ba44591bb482f4b800fb21d3a5573542105173d5521129df26f8d"
+    },
+    {
+      "id": 187,
+      "floor": 200,
+      "rectangle": [
+        594,
+        453,
+        661,
+        514
+      ],
+      "line": 161,
+      "line_sha256": "d58e1fd4e271ad05c90536e5cc28f1641af1151f69f00fa83cec00f96a671845"
+    },
+    {
+      "id": 188,
+      "floor": 200,
+      "rectangle": [
+        588,
+        507,
+        598,
+        519
+      ],
+      "line": 162,
+      "line_sha256": "d73dfe5cac5e9d149105e00a5447cf027d202425a27e00f4395aaa014984070f"
+    },
+    {
+      "id": 189,
+      "floor": 200,
+      "rectangle": [
+        521,
+        435,
+        527,
+        454
+      ],
+      "line": 163,
+      "line_sha256": "8144df6db561d585e50252c682beb04b1ebf9aa62db810f63e42d99ae1d335a5"
+    },
+    {
+      "id": 190,
+      "floor": 200,
+      "rectangle": [
+        527,
+        425,
+        568,
+        475
+      ],
+      "line": 164,
+      "line_sha256": "df08d43580a0aeb9df13a504076f4821c1b9ea52b6d9dab61784911f6292a12b"
+    },
+    {
+      "id": 191,
+      "floor": 200,
+      "rectangle": [
+        532,
+        475,
+        561,
+        484
+      ],
+      "line": 165,
+      "line_sha256": "35f857c0976e043813dec98c3df08f1a597748ae09dd5b51060883247f717c73"
+    },
+    {
+      "id": 192,
+      "floor": 200,
+      "rectangle": [
+        548,
+        400,
+        565,
+        480
+      ],
+      "line": 166,
+      "line_sha256": "551884f22acffe21d1fa6e2b8868c47e3cd5526d59c5f879a9933fb2ace266f0"
+    },
+    {
+      "id": 193,
+      "floor": 200,
+      "rectangle": [
+        523,
+        416,
+        617,
+        427
+      ],
+      "line": 167,
+      "line_sha256": "3f98da4f985ee28bfab5a6489b91225a10254d6245b3b61a48bfd2fa5a40d367"
+    },
+    {
+      "id": 194,
+      "floor": 200,
+      "rectangle": [
+        540,
+        409,
+        619,
+        416
+      ],
+      "line": 168,
+      "line_sha256": "57e5bda1854170e613d2c9f1748f1ff6e382e0872313745574ec775a2c012b1a"
+    },
+    {
+      "id": 195,
+      "floor": 200,
+      "rectangle": [
+        600,
+        383,
+        626,
+        406
+      ],
+      "line": 169,
+      "line_sha256": "3b89f0b9208258702f8a6f69fe5ce3ea3f7b466f99d04a8fc9228c6aaafd2b9d"
+    },
+    {
+      "id": 196,
+      "floor": 200,
+      "rectangle": [
+        561,
+        402,
+        623,
+        409
+      ],
+      "line": 170,
+      "line_sha256": "5b2ae80cd9a3cbe9442c7c5a7ae8144bccf5164c7f9583d07377738f2c723560"
+    },
+    {
+      "id": 197,
+      "floor": 200,
+      "rectangle": [
+        582,
+        392,
+        591,
+        404
+      ],
+      "line": 171,
+      "line_sha256": "34526cb0fd6e9b4582af8d2b53793d29c9dd20d16899e2088554969a25064949"
+    },
+    {
+      "id": 198,
+      "floor": 200,
+      "rectangle": [
+        591,
+        387,
+        600,
+        406
+      ],
+      "line": 172,
+      "line_sha256": "fb481e363ecce7db506025c2db117dc7c148f28ae35979da2afca2e2125aa5f9"
+    },
+    {
+      "id": 199,
+      "floor": 200,
+      "rectangle": [
+        588,
+        425,
+        616,
+        441
+      ],
+      "line": 173,
+      "line_sha256": "4bfa1e876b98e66e24c982b17e4f18ea9bf21449297914e72bb2aa00b3371632"
+    },
+    {
+      "id": 200,
+      "floor": 200,
+      "rectangle": [
+        568,
+        423,
+        577,
+        467
+      ],
+      "line": 174,
+      "line_sha256": "e2bbba952e79ff7cd3626f983c5b2a7645e73ad989848c874072db635c733c2a"
+    },
+    {
+      "id": 201,
+      "floor": 200,
+      "rectangle": [
+        575,
+        421,
+        590,
+        460
+      ],
+      "line": 175,
+      "line_sha256": "fb9fc00db6f6acdb16f6a80258adaff3c5db71f6d48cfa7e3bf4e94b3156d453"
+    },
+    {
+      "id": 202,
+      "floor": 200,
+      "rectangle": [
+        582,
+        438,
+        595,
+        448
+      ],
+      "line": 176,
+      "line_sha256": "d142ae67f9673c4405739b87a4fbff3b3664269fdd5ef2ea6d5e04c27d6799d2"
+    },
+    {
+      "id": 222,
+      "floor": 200,
+      "rectangle": [
+        371,
+        866,
+        450,
+        926
+      ],
+      "line": 196,
+      "line_sha256": "6071d5e02a3294a872725540bb7ad40e73d1aee4be7c9f76bc2bbf2c41b02440"
+    },
+    {
+      "id": 223,
+      "floor": 100,
+      "rectangle": [
+        363,
+        122,
+        430,
+        198
+      ],
+      "line": 197,
+      "line_sha256": "dd49277f5220a61b03525929f134119393e71206df99bdeaca31331f7b19ab29"
+    },
+    {
+      "id": 224,
+      "floor": 100,
+      "rectangle": [
+        363,
+        202,
+        430,
+        252
+      ],
+      "line": 198,
+      "line_sha256": "eafedb612475522e15e8e6802b47b5827e8f34dc8ba188337ed1ba03afb93ddf"
+    },
+    {
+      "id": 257,
+      "floor": 200,
+      "rectangle": [
+        327,
+        708,
+        457,
+        813
+      ],
+      "line": 230,
+      "line_sha256": "e0106487920ae3dfdda814c732511e3ce6f553feb404c6dae9669040253cac12"
+    },
+    {
+      "id": 265,
+      "floor": 100,
+      "rectangle": [
+        463,
+        294,
+        480,
+        300
+      ],
+      "line": 238,
+      "line_sha256": "708003f647b2f07da52a17c9c6b78af2bf65bb910804ae2514518a9b30cd6142"
+    },
+    {
+      "id": 398,
+      "floor": 200,
+      "rectangle": [
+        360,
+        213,
+        424,
+        284
+      ],
+      "line": 370,
+      "line_sha256": "0fcead456bd4e27bf4673cd7e9746b8c2b4fdf39275f9f0f63f47a62481ca0b1"
+    }
+  ],
+  "matched_area_fields": [
+    {
+      "id": 28,
+      "fields_6_to_9": [
+        1,
+        5,
+        2,
+        20
+      ],
+      "group_slots": [
+        [
+          1,
+          104,
+          30
+        ],
+        [
+          2,
+          107,
+          30
+        ],
+        [
+          3,
+          110,
+          10
+        ],
+        [
+          4,
+          113,
+          10
+        ]
+      ],
+      "fields_30_to_32": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 36,
+      "fields_6_to_9": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "group_slots": [],
+      "fields_30_to_32": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 64,
+      "fields_6_to_9": [
+        1,
+        5,
+        5,
+        10
+      ],
+      "group_slots": [
+        [
+          1,
+          105,
+          30
+        ],
+        [
+          2,
+          108,
+          30
+        ],
+        [
+          3,
+          111,
+          20
+        ],
+        [
+          4,
+          114,
+          20
+        ],
+        [
+          5,
+          116,
+          10
+        ]
+      ],
+      "fields_30_to_32": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 87,
+      "fields_6_to_9": [
+        1,
+        5,
+        2,
+        1
+      ],
+      "group_slots": [
+        [
+          1,
+          226,
+          10
+        ],
+        [
+          2,
+          229,
+          10
+        ],
+        [
+          3,
+          227,
+          5
+        ],
+        [
+          4,
+          230,
+          5
+        ],
+        [
+          5,
+          232,
+          5
+        ],
+        [
+          6,
+          799,
+          45
+        ]
+      ],
+      "fields_30_to_32": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 88,
+      "fields_6_to_9": [
+        1,
+        5,
+        4,
+        1
+      ],
+      "group_slots": [
+        [
+          1,
+          228,
+          1
+        ],
+        [
+          2,
+          231,
+          1
+        ],
+        [
+          3,
+          233,
+          1
+        ],
+        [
+          4,
+          414,
+          3
+        ]
+      ],
+      "fields_30_to_32": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 95,
+      "fields_6_to_9": [
+        1,
+        5,
+        2,
+        5
+      ],
+      "group_slots": [
+        [
+          1,
+          240,
+          10
+        ],
+        [
+          2,
+          243,
+          10
+        ],
+        [
+          3,
+          246,
+          3
+        ],
+        [
+          4,
+          241,
+          5
+        ],
+        [
+          5,
+          244,
+          5
+        ]
+      ],
+      "fields_30_to_32": [
+        null,
+        null,
+        null
+      ]
+    }
+  ],
+  "groups": {
+    "104": [
+      {
+        "line": 15,
+        "line_sha256": "6cfa1db460f25faf5d02c7175a2c554de237cce98884a163f737ae25d1a4ee16",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            140,
+            1
+          ]
+        ]
+      }
+    ],
+    "105": [
+      {
+        "line": 16,
+        "line_sha256": "c448058801ab24c518b4a67ef680430321f8a32f7edfa15813f3db3fe1d72777",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            141,
+            1
+          ]
+        ]
+      }
+    ],
+    "107": [
+      {
+        "line": 18,
+        "line_sha256": "17807e49dac3c24baa7a7c73bc4145b612ae0a3165c49aa502ec963331d778df",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            143,
+            1
+          ]
+        ]
+      }
+    ],
+    "108": [
+      {
+        "line": 19,
+        "line_sha256": "850e182151551b2d5ec3a260d30885f4dd466b7c723d58a735b3c9dfd33e9f45",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            144,
+            1
+          ]
+        ]
+      }
+    ],
+    "110": [
+      {
+        "line": 21,
+        "line_sha256": "2ba1878f55fbebb78dd1aa8347558822529323e30615430d149dce7ee7f388c3",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            146,
+            1
+          ]
+        ]
+      }
+    ],
+    "111": [
+      {
+        "line": 22,
+        "line_sha256": "c004c1cea79f8f10924b257a8ec3fddb88df125c2df91ef075528f3bf444bdcf",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            147,
+            1
+          ]
+        ]
+      }
+    ],
+    "113": [
+      {
+        "line": 24,
+        "line_sha256": "1708c6019ed0b88b6ede28ff267904733878ad820cf21085eabaab2fd18fafcc",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            149,
+            1
+          ]
+        ]
+      }
+    ],
+    "114": [
+      {
+        "line": 25,
+        "line_sha256": "1a5101321c01984b95e986420c64067fb183c9fa411872fc9ed17da99963d94d",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            150,
+            1
+          ]
+        ]
+      }
+    ],
+    "116": [
+      {
+        "line": 27,
+        "line_sha256": "9260eab8be5f639dadba7ce22e12808300b1578c0126bcdc056a1f6c65a66fda",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            147,
+            1
+          ],
+          [
+            2,
+            150,
+            1
+          ]
+        ]
+      }
+    ],
+    "226": [
+      {
+        "line": 120,
+        "line_sha256": "c27bea6627f0dfe9f47eabdf1b025ae1ab919c98316f13d2332e61b2e7ed40f0",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            369,
+            1
+          ]
+        ]
+      }
+    ],
+    "227": [
+      {
+        "line": 121,
+        "line_sha256": "952e41f86765c45adb7e1a75247447ab72b6b58887f295114ec3e3bc51fcc4c7",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            370,
+            1
+          ]
+        ]
+      }
+    ],
+    "228": [
+      {
+        "line": 122,
+        "line_sha256": "2779d66fc92c9ab2852a9da8df03f26881ae2f57bbaeee8513ce9fb9f667986a",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            371,
+            1
+          ]
+        ]
+      }
+    ],
+    "229": [
+      {
+        "line": 123,
+        "line_sha256": "af9362154eff6935e579c37f88128b00bbe23446eaaeee8f88b8fe28fda315a6",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            372,
+            1
+          ]
+        ]
+      }
+    ],
+    "230": [
+      {
+        "line": 124,
+        "line_sha256": "6fabd3b87f255b578112f5f3c154b2b5aa106ab582be99c0b04a74e09fd00e18",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            373,
+            1
+          ]
+        ]
+      }
+    ],
+    "231": [
+      {
+        "line": 125,
+        "line_sha256": "9b2ed1128b395fcc80b282bf447b83334e2a0e817488910a702cd0700494b0d5",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            374,
+            1
+          ]
+        ]
+      }
+    ],
+    "232": [
+      {
+        "line": 126,
+        "line_sha256": "45e9ecff01a423c9041ed04dde9b4bfc66bf88db5c9b1e7cb2a74fbeb7bc7a7b",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            370,
+            1
+          ],
+          [
+            2,
+            373,
+            1
+          ]
+        ]
+      }
+    ],
+    "233": [
+      {
+        "line": 127,
+        "line_sha256": "b09e7fd72e2ee01854107ba785ff6c28fbd6b4d71f52fde422d2311688ec73c2",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            371,
+            1
+          ],
+          [
+            2,
+            374,
+            1
+          ]
+        ]
+      }
+    ],
+    "240": [
+      {
+        "line": 134,
+        "line_sha256": "feaa0b18fd5d464e203d2f731a280feec422d196ec0ad3f42efe6cc218daed71",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            382,
+            1
+          ]
+        ]
+      }
+    ],
+    "241": [
+      {
+        "line": 135,
+        "line_sha256": "6ba5bc5c06945ba0f09c2c316c6c5e36c18bec783fedefb0ae031e86a07439d9",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            383,
+            1
+          ]
+        ]
+      }
+    ],
+    "243": [
+      {
+        "line": 137,
+        "line_sha256": "e475911bd8186b4543afffef2dfd7f7315aa33f9a6d8ccd32b2d6752bc19c8b9",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            385,
+            1
+          ]
+        ]
+      }
+    ],
+    "244": [
+      {
+        "line": 138,
+        "line_sha256": "b17e4d092e231803b72fe8c17cd28586737d8fd9e44b0f3db0407c341f6cbc49",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            386,
+            1
+          ]
+        ]
+      }
+    ],
+    "246": [
+      {
+        "line": 140,
+        "line_sha256": "9a5c3064a3aea28c02e2bf935820cc4aa44fc2a91256ac19202f34cc2922f667",
+        "item_gate_fields": [
+          -1,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            383,
+            1
+          ],
+          [
+            2,
+            386,
+            1
+          ]
+        ]
+      }
+    ],
+    "414": [
+      {
+        "line": 301,
+        "line_sha256": "9d8af26a3a7e93aae44544c5cae9d14c6e8b50503033e4834b00eb3bb43664b4",
+        "item_gate_fields": [
+          2478,
+          -1
+        ],
+        "enemy_slots": [
+          [
+            1,
+            563,
+            1
+          ]
+        ]
+      }
+    ],
+    "799": []
+  },
+  "enemies": {
+    "140": [
+      {
+        "line": 74,
+        "line_sha256": "bb14e6836b725cb6ab1fe4bac3199d81160c97639dd269975287e64efb7d804a",
+        "template": 1,
+        "level_fields": [
+          1,
+          1
+        ],
+        "pet_flag": 1
+      }
+    ],
+    "141": [
+      {
+        "line": 75,
+        "line_sha256": "641cd0a48ced5a8573eea3a4bd6164ff9c4551e4cdec3d665950569b173b0740",
+        "template": 1,
+        "level_fields": [
+          2,
+          3
+        ],
+        "pet_flag": 1
+      }
+    ],
+    "143": [
+      {
+        "line": 77,
+        "line_sha256": "841965d96887aa08935218296b182f64e0827e0a833487acd074eb2c79545589",
+        "template": 3,
+        "level_fields": [
+          1,
+          1
+        ],
+        "pet_flag": 1
+      }
+    ],
+    "144": [
+      {
+        "line": 78,
+        "line_sha256": "f57684563dfc257c7b5610cb9ac45d4f95f2db10de37001bc35b55d1990e2cec",
+        "template": 3,
+        "level_fields": [
+          2,
+          3
+        ],
+        "pet_flag": 1
+      }
+    ],
+    "146": [
+      {
+        "line": 80,
+        "line_sha256": "cab7ddc9e2a4b070954c0d8982ef25ab726a263dbf28ea981a8cf8d561c7ed1e",
+        "template": 213,
+        "level_fields": [
+          1,
+          2
+        ],
+        "pet_flag": 1
+      }
+    ],
+    "147": [
+      {
+        "line": 81,
+        "line_sha256": "f937e67c9abdcaa7f8306202d72c9c2c92b0837931f16e1028dddc4b90cb53cd",
+        "template": 213,
+        "level_fields": [
+          2,
+          4
+        ],
+        "pet_flag": 1
+      }
+    ],
+    "149": [
+      {
+        "line": 83,
+        "line_sha256": "b766f746a08e46293c2ab7bd386ff2b6a0251d4b8b12c07b4e4e1a2fc3ea58aa",
+        "template": 212,
+        "level_fields": [
+          1,
+          2
+        ],
+        "pet_flag": 1
+      }
+    ],
+    "150": [
+      {
+        "line": 84,
+        "line_sha256": "c403b5cd21cf13ab38c483df63a6f4cecbe7b5e77f829af9010352c5c033ef3c",
+        "template": 212,
+        "level_fields": [
+          2,
+          4
+        ],
+        "pet_flag": 1
+      }
+    ],
+    "369": [
+      {
+        "line": 215,
+        "line_sha256": "62b36e2b03898572452aa179eefc6c1d280c6eeaceace9250449999b4ed6a7e7",
+        "template": 31,
+        "level_fields": [
+          1,
+          1
+        ],
+        "pet_flag": 1
+      }
+    ],
+    "370": [
+      {
+        "line": 216,
+        "line_sha256": "e468679795ca39d37e19b8e2944c58600a0715f3c6ebedaca6d9ee67d993ee76",
+        "template": 31,
+        "level_fields": [
+          1,
+          2
+        ],
+        "pet_flag": 1
+      }
+    ],
+    "371": [
+      {
+        "line": 217,
+        "line_sha256": "4160d152028f344de97f8a036ae7488acb41148ac5f21a65956e19fe4c3efbae",
+        "template": 31,
+        "level_fields": [
+          2,
+          4
+        ],
+        "pet_flag": 1
+      }
+    ],
+    "372": [
+      {
+        "line": 218,
+        "line_sha256": "6960477c7fc02cccf8092752ffc9f7f6a230b22a0e402a18c617c86e8a5107d9",
+        "template": 32,
+        "level_fields": [
+          1,
+          1
+        ],
+        "pet_flag": 1
+      }
+    ],
+    "373": [
+      {
+        "line": 219,
+        "line_sha256": "c4c298f80f50b185a08b3c7f458009498864fb14b7858ba8ae99e5835951246e",
+        "template": 32,
+        "level_fields": [
+          1,
+          2
+        ],
+        "pet_flag": 1
+      }
+    ],
+    "374": [
+      {
+        "line": 220,
+        "line_sha256": "361878f552bd85f557b9a1b5f5d66bb9fd66d75788bb9c99b91e71baf7d07f49",
+        "template": 32,
+        "level_fields": [
+          2,
+          4
+        ],
+        "pet_flag": 1
+      }
+    ],
+    "382": [
+      {
+        "line": 227,
+        "line_sha256": "6e6ee4bd9206e0af967fabdcc9ac8656b2f41f7ff8103f75e292b2bacce659bf",
+        "template": 101,
+        "level_fields": [
+          1,
+          1
+        ],
+        "pet_flag": 1
+      }
+    ],
+    "383": [
+      {
+        "line": 228,
+        "line_sha256": "10a0f141be3765dc23890361d087819d83cff1fe2417a83abb32eda3ba69fe91",
+        "template": 101,
+        "level_fields": [
+          2,
+          3
+        ],
+        "pet_flag": 1
+      }
+    ],
+    "385": [
+      {
+        "line": 230,
+        "line_sha256": "b5ce3b1416f2e9a73740e8f679e8519e99514c10ffda0788a386dc21c1f0e4ef",
+        "template": 104,
+        "level_fields": [
+          1,
+          1
+        ],
+        "pet_flag": 1
+      }
+    ],
+    "386": [
+      {
+        "line": 231,
+        "line_sha256": "8b7c734ccb9a14f3d15462d3ff119309615e062c4fe6b395926222dc9ca52047",
+        "template": 104,
+        "level_fields": [
+          2,
+          3
+        ],
+        "pet_flag": 1
+      }
+    ],
+    "563": [
+      {
+        "line": 387,
+        "line_sha256": "63779f13805d5b332d88aed0848e9207f9c6c7fccf54f0c737bab628d6d12be2",
+        "template": 531,
+        "level_fields": [
+          1,
+          1
+        ],
+        "pet_flag": 0
+      }
+    ]
+  },
+  "templates": {
+    "1": [
+      {
+        "line": 1,
+        "line_sha256": "6fffc9f53b39c7add15e55a8357729e0be9965040af6a598e25dd8b342406b27",
+        "image_number": 100250
+      }
+    ],
+    "3": [
+      {
+        "line": 3,
+        "line_sha256": "b24ce630db6e0961d023422f321258d496988d30fd2cfe01c4fdb83a60470283",
+        "image_number": 100252
+      }
+    ],
+    "31": [
+      {
+        "line": 31,
+        "line_sha256": "421f0ea276f230328834369f68f6b3668dece2562dd47f9766492e20adad5913",
+        "image_number": 100263
+      }
+    ],
+    "32": [
+      {
+        "line": 32,
+        "line_sha256": "c524f338242361f226c03b7958dc85905a0839a0ddb9066db86b199a851d653e",
+        "image_number": 100264
+      }
+    ],
+    "101": [
+      {
+        "line": 101,
+        "line_sha256": "8fe314f73b6836a617f07a15d9e60dc8aca89c9fd3f94ac4b486b7e000a986af",
+        "image_number": 100291
+      }
+    ],
+    "104": [
+      {
+        "line": 104,
+        "line_sha256": "3f2a368752ac338d4d13ce4087a9d22b1d64f8663dbbbffcf6e5e3f99a88c782",
+        "image_number": 100294
+      }
+    ],
+    "212": [
+      {
+        "line": 198,
+        "line_sha256": "6206334d8671245b271773c296c2d2b8555743d8ec02ba2f33abc21a485a2279",
+        "image_number": 100336
+      }
+    ],
+    "213": [
+      {
+        "line": 199,
+        "line_sha256": "f40629f7b201d08d57db2bad9dfd8d53f48b81df0ffdaedb34105f25e78ccb1d",
+        "image_number": 100337
+      }
+    ],
+    "531": [
+      {
+        "line": 353,
+        "line_sha256": "b9ff65f07626860ea8848933e962d962f8ad5d886227f55bb4efbd9946fd49bf",
+        "image_number": 100468
+      }
+    ]
+  },
+  "group_799_alternate_table_matches": 0,
+  "logging_relation": {
+    "area": 88,
+    "group": 414,
+    "appearance_item": 2478,
+    "enemy": 563,
+    "template": 531,
+    "template_name": "木",
+    "enemy_drop_slots": [
+      [
+        1,
+        2468,
+        700
+      ]
+    ],
+    "items": {
+      "2468": {
+        "line": 2051,
+        "line_sha256": "f9ba9da3ccbd8c77fbfc9a52f11057a3954a2dada0fbcec2b41e6d5774b31e50",
+        "name": "良質的木材",
+        "image_number": 24182
+      },
+      "2478": {
+        "line": 2061,
+        "line_sha256": "9949b4f438749b5bb48681b5c3706aa91f41234a3c3cc77f8623e2c353376048",
+        "name": "採伐許可證",
+        "image_number": 24222
+      }
+    }
+  },
+  "bounds": {
+    "native_area_selection_proven": false,
+    "native_encounter_executed": false,
+    "official_same_deployment_proven": false,
+    "raw_weights_are_probabilities": false,
+    "world12_DAT_reread_successfully": false
+  }
+}
