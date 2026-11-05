@@ -1,0 +1,261 @@
+{
+  "schema": "stoneage.world23.publication_receipt.r1",
+  "date": "2026-11-05",
+  "starting_head": "b09cf7f214c2f02cb50d7e30ddc48a6e3e5b513c",
+  "starting_tree": "42bdd3858677d78a9a4320be5032d5077540cde7",
+  "candidate_head": "a894c25101902db1a9ba04a174486b77a71548e3",
+  "candidate_tree": "0e4e4432d05e264486958ef8dfdf37ef42a06dc8",
+  "pr": 202,
+  "merged_main": "61a82bc79758be0c546ce72755c9905abb4c8daf",
+  "merged_tree": "0e4e4432d05e264486958ef8dfdf37ef42a06dc8",
+  "all_seven_uploaded_blobs_match_local": true,
+  "published_blobs": [
+    {
+      "path": ".github/workflows/verify-stoneage-stage-a-offline-world09.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15083b0b213d7e893a0eacd45a1c744636ff7d53"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b6aec484ab97812598acd06e4f25b609d9f85a6"
+    },
+    {
+      "path": "tests/test_stoneage_stage_a_world09_random_item.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04250d6f3d823226a17cd9ded967f8a1da53b189"
+    },
+    {
+      "path": "tools/stoneage_npc_item_transfers.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cbf32f0226b9bf6bf0b2038e554c3143cdf09682"
+    },
+    {
+      "path": "tests/test_stoneage_stage_a_world23_item_transfers.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17f386e701f8cacb662c9ad6d96ffa73e8cd6fa6"
+    },
+    {
+      "path": "docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-23-NPC-ITEM-TRANSFERS-20261105.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d75355d2d9889a7d45b8fa0f84aa337283fea0e"
+    },
+    {
+      "path": "research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-23-NPC-ITEM-TRANSFERS-R1.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b31accf02b95c63faa88a6055d99a78341eb099"
+    }
+  ],
+  "candidate_workflow_runs": [
+    {
+      "id": 42024757267,
+      "name": "Verify StoneAge O11 native source animation and bounded sound-word candidates",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024757423,
+      "name": "Verify WORLD23 NPC item transfers and archived WORLD09 projection",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024757512,
+      "name": "Verify StoneAge O12 original compiled sound-number namespace (derived only)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024754371,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024754414,
+      "name": "Verify original same-build named-entity source gate R31",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024754382,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024754368,
+      "name": "Verify original four village interior materials R34",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024754374,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024754375,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024754400,
+      "name": "Verify original local album name material and no master promotion R35",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024754396,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024754372,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024754404,
+      "name": "Verify original native album table and saved-name joins R36",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "merged_main_workflow_runs": [
+    {
+      "id": 42024903594,
+      "name": "Verify WORLD23 NPC item transfers and archived WORLD09 projection",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024903535,
+      "name": "Verify original four village interior materials R34",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024903488,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024903642,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024903373,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024903767,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024903309,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024903356,
+      "name": "Verify original native album table and saved-name joins R36",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024903331,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024903287,
+      "name": "Verify original same-build named-entity source gate R31",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42024903289,
+      "name": "Verify original local album name material and no master promotion R35",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "candidate_dedicated_job": 127236062795,
+  "main_dedicated_job": 127236544468,
+  "tests_in_each_dedicated_job": 29,
+  "local_final_tests": 29,
+  "independent_original_physical_field_line_and_punctuation_replay": 1246,
+  "source_bounds": {
+    "NPC_members_reverified": 2205,
+    "NPC_original_bytes": 1930332,
+    "source_files_with_fields": 410,
+    "GetItem": 532,
+    "DelItem": 659,
+    "GetRandItem": 55,
+    "item_integers": 879,
+    "items_missing_both_candidate_tables": [
+      2744,
+      2745
+    ],
+    "only_candidate_B_items": 11,
+    "original_parent_RAR_reread": false
+  },
+  "WORLD09_additive_correction": {
+    "same_SHA_source_fields": 50,
+    "old_unique_projection": 718,
+    "raw_integer_positions": 959,
+    "raw_empty_positions": 1,
+    "extra_duplicate_integer_positions": 241,
+    "fields_with_duplicates": 26,
+    "first_occurrence_order_different_fields": 26,
+    "actual_probability_verified": false
+  },
+  "preserved_original_blobs": {
+    "docs/CURRENT-STATE.md": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-09-GETRANDITEM-SOURCE-SLOTS-R1.json": "0c0841b43cfb6b3964b7f1f2753fc8405b004bfb",
+    "research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2"
+  },
+  "README_original_prefix_bytes_preserved": 354484,
+  "private_delivery": {
+    "filename": "StoneAge-WORLD23-private-npc-item-transfers.zip",
+    "bytes": 320003,
+    "sha256": "359a2c2cc804e3358022d2593163ac9c03cedc3cc11d6271018b724f8fc66cf6",
+    "save_succeeded": true,
+    "downloaded_back_after_save": false,
+    "local_ZIP_members_CRC_verified": 3,
+    "HTML_bytes": 946754,
+    "HTML_sha256": "63016dcaa055d838b88c280c5dce9e57be09f10aa66365f73cc333f1c457dc67",
+    "HTML_structurally_checked": true,
+    "browser_executed": false
+  },
+  "derived_JSON_sha256": "a9b54e70f062397b9b5046ed0a4091fc01b2a51856e8f82ccaf0bd05875445a5",
+  "public_CI_read_private_originals": false,
+  "original_game_or_transactions_executed": false,
+  "official_same_deployment_verified": false,
+  "Stage_A": "7_PARTIAL_2_OPEN",
+  "Stage_B_and_wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "WORLD24_BOUNDED_NON_EXCHANGEMAN_ITEM_FIELD_SEMANTICS_SAVEPOINT_OR_QUIZ"
+}

@@ -59,3 +59,7 @@ WORLD14已认证的钓鱼奖励原序`2437,11872*2,11863`在全批中保持一�
 复用既有WORLD09工作流，将验收名称改为“WORLD23物品字段与WORLD09历史投影”，同时运行新来源测试、WORLD22、WORLD14及旧WORLD09。旧测试名称和说明改为明确“冻结投影”，不再把旧718当原始位置证明。首次本地29项中28通过、1项因未提供独立后期C文件而skip；随后重新取得既定Git blob `7a9cc7ea6d76bfdae367c580db4ce6fcb42d7d15` 的同一后期C文件，**最终29/29全部通过，无skip**。这只核旧静态合同，不将其提升为同部署运行。远端CI结果待实际观测后追加。
 
 **最高NEXT WORLD24：** 优先用现成合格编译服务端或已固定且明确分版的源码，核实一类非ExChangeMan物品字段的实际用途（优先SavePoint或Quiz），解决同名字段是否代表给物品/条件/候选组的具体含义。只接受有限的同构建语义、明确后期独立语义或精确缺源；不扩通用执行器，不重算本批位置，不做网服账号、新引擎或体验优化。Stage A仍 **7 PARTIAL + 2 OPEN**；Stage B/wiki **GATED**；R79 **PAUSED_NON_BLOCKING**；整体完成百分比未知。
+
+## 实际远端终验（成功后追加）
+
+候选 `a894c25101902db1a9ba04a174486b77a71548e3` 的13项Actions全部实际completed/success；PR #202合并为主线 `61a82bc79758be0c546ce72755c9905abb4c8daf`，主线11项Actions亦全部实际success。候选/内容主线完整tree同为 `0e4e4432d05e264486958ef8dfdf37ef42a06dc8`，七个上传Git blob逐一与本地一致。候选专用run42024757423/job127236062795、主线专用run42024903594的真实日志均确认29项测试全部通过，含固定后期C文件的旧静态检查，无skip；这不是私人原件CI重解包或原游戏执行。CURRENT、原WORLD09和原QUEST01三个Git blob均未改，README全部354484B历史前缀保留。[永久终验收据](../../research/recovered/STONEAGE-STAGE-A-WORLD23-PUBLICATION-R1.json)记录全24个运行ID、两专用job、完整原行复验和交付SHA。验收收据自身提交不预支CI；最高NEXT WORLD24及所有阶段/运行边界不变。
