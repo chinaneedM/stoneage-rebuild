@@ -52,7 +52,8 @@ def ascii_copy_projection(value, capacity=128):
     return raw[:capacity - 1].decode('ascii')
 
 
-def compiled_evidence(data):
+def original_image(data, expected_symbols):
+    """Shared, exact-image byte access for bounded compiled NPC investigations."""
     if len(data) != 1897867 or sha(data) != EXE_SHA:
         raise ValueError('complete original compiled GMSV identity differs')
     inv = inventory_pe(data)
@@ -87,14 +88,19 @@ def compiled_evidence(data):
             name = data[start:end]
         name = name.rstrip(b'\0').decode('ascii', 'strict')
         value, section = struct.unpack_from('<Ih', data, p + 8)
-        if name in SYMBOLS and section > 0:
+        if name in expected_symbols and section > 0:
             address = base + inv['sections'][section - 1]['rva'] + value
-            if address != SYMBOLS[name] or name in found:
+            if address != expected_symbols[name] or name in found:
                 raise ValueError('original COFF symbol differs')
             found[name] = address
         i += 1 + data[p + 17]
-    if found != SYMBOLS:
+    if found != expected_symbols:
         raise ValueError('original selected COFF symbols missing')
+    return base, take, imm, literal, found
+
+
+def compiled_evidence(data):
+    base, take, imm, literal, found = original_image(data, SYMBOLS)
     calls = []
     for va, target, purpose in CALLS:
         b = take(va, 5)

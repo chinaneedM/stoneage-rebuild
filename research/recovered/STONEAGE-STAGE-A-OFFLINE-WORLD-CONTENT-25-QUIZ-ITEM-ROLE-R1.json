@@ -1,0 +1,636 @@
+{
+  "schema": "stoneage.world25.compiled_quiz_item_roles.r1",
+  "source_scope": "PRESERVED_COMMUNITY_MIXED25_STATIC_COMPILED_CODE_AND_SOURCE_PARAMETERS_NOT_OFFICIAL_EARLY_DEPLOYMENT",
+  "parent_RAR_reread": false,
+  "private_NPC_ZIP_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+  "all_2205_NPC_members_SHA_size_CRC_reverified": true,
+  "input_git_blobs": {
+    "STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-23-NPC-ITEM-TRANSFERS-R1.json": "6b31accf02b95c63faa88a6055d99a78341eb099",
+    "STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-24-SAVEPOINT-ITEM-ROLE-R1.json": "d288f7768b093b90fdbb2fe8e457027892bf83c8",
+    "STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-01-R1.json": "d39ef58c88f1326d227b2844ca06ed5e23e2965a",
+    "STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-02-R1.json": "b91bc8335db508998f4595144ce371979ea8c849",
+    "STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-03-R1.json": "c0a77b9f1266316a95c108cd1bbdd31f41289613",
+    "STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-04-R1.json": "14c7816054375863c91e474b58d2202f76e821c5",
+    "STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-05-R1.json": "361dfc5f626a5f2683dd7a5ca224f2854caf5d7c",
+    "STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-06-R1.json": "314f85e9a1969b79f50c935aeb4216348b6744a3",
+    "STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-07-R1.json": "dbb958e77aed796faf86570c7523d3f0dc5748fd"
+  },
+  "compiled_server": {
+    "bytes": 1897867,
+    "sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00",
+    "base": 4194304,
+    "COFF_symbols": {
+      "__CHAR_DelItem": 4405936,
+      "_CHAR_addItemSpecificItemIndex": 4676944,
+      "_NPC_Util_GetStrFromStrWithDelim": 4780992,
+      "_NPC_Quiz_selectWindow": 4956464,
+      "_NPC_QuizAddItem": 4950416,
+      "_NPC_QuizBorderLine": 4948880,
+      "_NPC_EntryItemDel": 4955040,
+      "_NPC_EntryItemCheck": 4954208,
+      "__ITEM_endExistItemsOne": 5206688,
+      "_ITEM_makeItemAndRegist": 5220304
+    },
+    "call_witnesses": [
+      {
+        "va": 4958627,
+        "target_va": 4780992,
+        "purpose": "GetItem_field_reader",
+        "instruction_sha256": "12fc7143a5102fc02068140ff33f2baf6a5e31d54004f7302a1fa50db3c8827e"
+      },
+      {
+        "va": 4958727,
+        "target_va": 4223120,
+        "purpose": "odd_comma_position_reader",
+        "instruction_sha256": "ac8a085cd09e72148e8b27a9473e93d9b63931012ef21dea8d08deb843ed3e86"
+      },
+      {
+        "va": 4960056,
+        "target_va": 4223120,
+        "purpose": "following_reward_payload_reader",
+        "instruction_sha256": "b7b61503c80202a52d1fa68d69af6816017c9ce34f344cad411e0e386f93ddc1"
+      },
+      {
+        "va": 4960074,
+        "target_va": 4950416,
+        "purpose": "reward_payload_to_QuizAddItem",
+        "instruction_sha256": "20daf8ee29bc18fb957e4719c6a4bef4b89c18fc8cbf0d613723f587c1a79c72"
+      },
+      {
+        "va": 4950496,
+        "target_va": 4223120,
+        "purpose": "count_dot_delimited_reward_candidates",
+        "instruction_sha256": "5de4955b83f136ee920ef8e14e6d3a6fbde98efaed26958596412b83535ad3fa"
+      },
+      {
+        "va": 4950515,
+        "target_va": 5615664,
+        "purpose": "multi_candidate_rand_call",
+        "instruction_sha256": "69493a997e35140db6576bc096c05f70cd7bd76d53b4dc46914181201b6fe0db"
+      },
+      {
+        "va": 4950571,
+        "target_va": 4223120,
+        "purpose": "selected_dot_position_reader",
+        "instruction_sha256": "60b219c59b860b6041eaf48f955a369fd45b1b078e063fe3808d8a256c1b285d"
+      },
+      {
+        "va": 4950579,
+        "target_va": 5615584,
+        "purpose": "selected_candidate_atoi",
+        "instruction_sha256": "7eeb9811546df9153b4bf4de61cd2fecf1a5d18848be141f00c9d4076208e811"
+      },
+      {
+        "va": 4950587,
+        "target_va": 5220304,
+        "purpose": "attempt_make_reward_item",
+        "instruction_sha256": "51449e9f10a282e23b675088678aa997d0e491c38e063cde978c253a5512d975"
+      },
+      {
+        "va": 4950634,
+        "target_va": 4676944,
+        "purpose": "attempt_add_reward_to_inventory",
+        "instruction_sha256": "3ae61320c4f3860c4f9afa915500cf011a505f31bf54678b7aa82148b15a6846"
+      },
+      {
+        "va": 4950749,
+        "target_va": 5206688,
+        "purpose": "cleanup_after_bad_inventory_slot",
+        "instruction_sha256": "cdd379dabc49ace5f306ed4dd833248deeb8a83acd8b5e4ae0dc896f756da85c"
+      },
+      {
+        "va": 4958154,
+        "target_va": 4954208,
+        "purpose": "entry_requirement_check",
+        "instruction_sha256": "8cf60c4d244a9812a6ef2923fc558210c2d60272d93ea2eb58e47f96f894549a"
+      },
+      {
+        "va": 4960190,
+        "target_va": 4780992,
+        "purpose": "EntryItem_field_reader",
+        "instruction_sha256": "c2e81d7676eb8225269ea5ca66060eaa386cf223b7bdb20158704a42a6d11f33"
+      },
+      {
+        "va": 4960218,
+        "target_va": 4955040,
+        "purpose": "entry_item_deletion",
+        "instruction_sha256": "ca36e493b61a252d8354c2d1b63b42855856eaa5ef5f73b2fad5e497c67bf622"
+      },
+      {
+        "va": 4955854,
+        "target_va": 4405936,
+        "purpose": "starred_entry_item_inventory_delete",
+        "instruction_sha256": "c9531dbadcadb7a93910515429adb08f2a1140f427f00b2d454248cdcf79c286"
+      },
+      {
+        "va": 4956424,
+        "target_va": 4405936,
+        "purpose": "bare_entry_item_inventory_delete",
+        "instruction_sha256": "88ac18f8a6625d75a3740ae3f1cbec2a442609d95f08650529d58e2d004a8f4c"
+      }
+    ],
+    "literals": [
+      {
+        "va": 5894155,
+        "literal": "GetItem",
+        "source_sha256": "faa28d447a2603dc9d92e19c2520eebf651009cd61837c317bd53ea6a0af27c4"
+      },
+      {
+        "va": 5894028,
+        "literal": "EntryItem",
+        "source_sha256": "b9c6cbeb8ae64a85f06653c7e80c27076ee7d7fd2f218f40a645103bba5b276c"
+      },
+      {
+        "va": 5893730,
+        "literal": ",",
+        "source_sha256": "d8fa32dd40b181d8250a4ecde2f2f17bd7bfdf2793278d06ea5afc647f3d5762"
+      },
+      {
+        "va": 5893732,
+        "literal": ".",
+        "source_sha256": "075d3ddf5a3a826e13a92288e853bc4b2cb17fb05367ae865f401a4bb11f05ce"
+      }
+    ],
+    "immediates": {
+      "GetItem_field_capacity": {
+        "va": 4958601,
+        "value": 256,
+        "source_instruction_sha256": "cd15bb5ae08a1d57c029b03c32f1019e76e957e87cadb25833b27fb99c82f53b"
+      },
+      "first_threshold_position": {
+        "va": 4958642,
+        "value": 1,
+        "source_instruction_sha256": "bce257e988d5cf159b57a7b1e2b2a4d627f25434f74ae88d7e83a2d9560a38b9"
+      },
+      "threshold_token_capacity": {
+        "va": 4958692,
+        "value": 32,
+        "source_instruction_sha256": "c034ac34546f774a6ea72832a35650e8db3d99db9581085f9d1b85803b9933bf"
+      },
+      "reward_payload_capacity": {
+        "va": 4960004,
+        "value": 256,
+        "source_instruction_sha256": "44656ec8ea97dfd24a04d58f74051405f76be59e641018449b43756941d53db2"
+      },
+      "candidate_item_token_capacity": {
+        "va": 4950467,
+        "value": 16,
+        "source_instruction_sha256": "7b2a94ec182aa3751488c71e1e8217b8b071157db144f20b292f884df167c929"
+      }
+    },
+    "signed_threshold_branch": {
+      "va": 4958663,
+      "target": 4959985,
+      "source_sha256": "004e8e818c7cb0cfae55f45ddc79950ea6ebb0e6ce79adce10c689fdb62deb9c"
+    },
+    "code_windows": [
+      {
+        "first_VA": 4948880,
+        "end_VA_exclusive": 4948997,
+        "sha256": "e5d3b3ad480dfdd6654c1371a9c152b686d7a776d74f1caa889a35568303a3d3"
+      },
+      {
+        "first_VA": 4958590,
+        "end_VA_exclusive": 4958736,
+        "sha256": "ca64d3075089174b1c569f76003ebb4906bdabfcd544a6fe4f8258b1aa856469"
+      },
+      {
+        "first_VA": 4959985,
+        "end_VA_exclusive": 4960092,
+        "sha256": "95ef1864e98960fd4d2d4554ecbbda75b8f51dc8ea4811919aa17e2693297ef2"
+      },
+      {
+        "first_VA": 4950416,
+        "end_VA_exclusive": 4950840,
+        "sha256": "e0869d51e6fe0b4b81fe66096634f8c5d9aa60611265ae6d833f559000e769cd"
+      },
+      {
+        "first_VA": 4960159,
+        "end_VA_exclusive": 4960231,
+        "sha256": "bb3324cda5f506ad96d211940dbf295048d43bd9ba84e6f6e0f767a17fd7a846"
+      },
+      {
+        "first_VA": 4958154,
+        "end_VA_exclusive": 4958159,
+        "sha256": "8cf60c4d244a9812a6ef2923fc558210c2d60272d93ea2eb58e47f96f894549a"
+      },
+      {
+        "first_VA": 4955040,
+        "end_VA_exclusive": 4956464,
+        "sha256": "be71dc398f815972a97ec8dafb6d61be24db73d9b75ec2af4baa57a86b6e7c1f"
+      }
+    ],
+    "manual_objdump_semantics": {
+      "threshold_scan": "FIRST_MATCHING_ODD_COMMA_POSITION_IN_SOURCE_ORDER",
+      "comparison": "SIGNED_SCORE_VALUE_GREATER_OR_EQUAL_THRESHOLD",
+      "threshold_position_step": 2,
+      "payload_position_relative_to_threshold": 1,
+      "reward_candidates_delimiter": ".",
+      "single_candidate_position": 1,
+      "multiple_candidates_selection": "rand()%candidate_count+1",
+      "GetItem_role": "SCORE_THRESHOLD_TO_REWARD_CANDIDATE_PAYLOAD",
+      "EntryItem_role": "SEPARATE_ENTRY_CHECK_AND_DELETION",
+      "guaranteed_original_reward_delivery": false,
+      "actual_score_computation_reaudited": false,
+      "original_program_executed": false
+    }
+  },
+  "source_Quiz_GetItem_rows": [
+    {
+      "path": "genout/quz_800_29_19",
+      "source_bytes": 486,
+      "source_sha256": "969a31995dcc4a144d90785af64d54247d86984ed4a2fb5d5c9b44d683ec89c1",
+      "source_crc32": "6d0e0bf4",
+      "exact_original_CREATE_refs": [
+        [
+          "genout/quizman.create",
+          0,
+          "526aee25b6a363a0e9df5f308d108999047e2ba837980aad258aee9771eff439",
+          800,
+          100060,
+          [
+            29,
+            19,
+            29,
+            19
+          ],
+          null,
+          [
+            [
+              "genout/npcgen.template",
+              16
+            ]
+          ],
+          [
+            "Quiz"
+          ]
+        ]
+      ],
+      "GetItem_line": 6,
+      "GetItem_line_sha256": "296cb33d133f30997c0982d886c49f5de21806996d7c1a51491f7e3d12db2b98",
+      "GetItem_raw_literal": "1,2754",
+      "GetItem_source_pairs": [
+        {
+          "threshold_comma_position": 1,
+          "comparison_threshold": 1,
+          "payload_comma_position": 2,
+          "payload_literal": "2754",
+          "ordered_dot_candidate_item_ids": [
+            2754
+          ]
+        }
+      ],
+      "original_numeric_and_entry_fields": {
+        "Type": {
+          "line": 1,
+          "literal": "1",
+          "line_sha256": "3f3372229bd95acb32fdfc771d3b03d66c572f8dac9c9bf4baa2044e92c9b2c8"
+        },
+        "Answer": {
+          "line": 2,
+          "literal": "7",
+          "line_sha256": "8a927d5480a2a455283a826c3d35d5f771147d6c962f63d81247b142add0f6dc"
+        },
+        "Level": {
+          "line": 3,
+          "literal": "16",
+          "line_sha256": "1fbb8ed8c0f702cad7fad6d27efc3dadeef534de93f278cfbc7823e4d2b0b43a"
+        },
+        "Quiznum": {
+          "line": 4,
+          "literal": "1",
+          "line_sha256": "730354319ce181edcaba428fbd7328f01a1402fc47824a2dca5c6fcc0b8cc3b2"
+        },
+        "EntryItem": {
+          "line": 11,
+          "literal": "2752*1",
+          "line_sha256": "03de14d6b745b79dc51595cef2c6a8d1d7638873f2836f73f500955c48f2de10"
+        }
+      },
+      "WORLD23_role_override": {
+        "field": "GetItem",
+        "odd_comma_positions": "COMPARISON_THRESHOLD_NOT_ITEM_ID",
+        "even_comma_positions": "DOT_DELIMITED_REWARD_ITEM_CANDIDATES",
+        "old_raw_token_record_preserved": true
+      }
+    },
+    {
+      "path": "genout/quz_812_28_14",
+      "source_bytes": 469,
+      "source_sha256": "802ffa66b9000402c08fd6f04e147aec10976c0e500a3596a96f2c8c6ac70047",
+      "source_crc32": "741267ce",
+      "exact_original_CREATE_refs": [
+        [
+          "genout/quizman.create",
+          21,
+          "a7a0750e489b5b9254a08a1fa09c225a7be100f9e38857b1ed78bbd895977da5",
+          812,
+          100010,
+          [
+            28,
+            14,
+            28,
+            14
+          ],
+          null,
+          [
+            [
+              "genout/npcgen.template",
+              16
+            ]
+          ],
+          [
+            "Quiz"
+          ]
+        ]
+      ],
+      "GetItem_line": 6,
+      "GetItem_line_sha256": "e15339c626b6bd668858a7fd2af52216c06f8f2d50eb63810d07f615174b7e06",
+      "GetItem_raw_literal": "100,2759",
+      "GetItem_source_pairs": [
+        {
+          "threshold_comma_position": 1,
+          "comparison_threshold": 100,
+          "payload_comma_position": 2,
+          "payload_literal": "2759",
+          "ordered_dot_candidate_item_ids": [
+            2759
+          ]
+        }
+      ],
+      "original_numeric_and_entry_fields": {
+        "Type": {
+          "line": 1,
+          "literal": "0",
+          "line_sha256": "0e6368a2f7cdcfbe6d298444719fdc256de9d19ead9a00aeefb554b9cb832a75"
+        },
+        "Answer": {
+          "line": 2,
+          "literal": "0",
+          "line_sha256": "5e8a7fbe47eb7560c2ad8097ec3794aa524c5582da9eb3001cf5b7c670271c9a"
+        },
+        "Level": {
+          "line": 3,
+          "literal": "31",
+          "line_sha256": "547368b7cbd9ba617c9ec1b189331d69b0981cea493c5b9ef485e289104dd342"
+        },
+        "Quiznum": {
+          "line": 4,
+          "literal": "100",
+          "line_sha256": "a5468860f7121f4680b905f2ebdbcb525f0eaf6ada6919912aeefeeddb54c37b"
+        },
+        "EntryItem": {
+          "line": 9,
+          "literal": "2753*1",
+          "line_sha256": "4a0e1c375cc27316a6aed3632ea35768a8a1c2bb13bd62d0f61c2ae328f3e5b5"
+        }
+      },
+      "WORLD23_role_override": {
+        "field": "GetItem",
+        "odd_comma_positions": "COMPARISON_THRESHOLD_NOT_ITEM_ID",
+        "even_comma_positions": "DOT_DELIMITED_REWARD_ITEM_CANDIDATES",
+        "old_raw_token_record_preserved": true
+      }
+    },
+    {
+      "path": "genout/quz_820_29_19",
+      "source_bytes": 492,
+      "source_sha256": "4c32926e9a8bbd00df05b444ce75e7ee65dedf216b9ed41de49194d8a67eb137",
+      "source_crc32": "fac907fe",
+      "exact_original_CREATE_refs": [
+        [
+          "genout/quizman.create",
+          7,
+          "d54d042cc768ca6ac0036261177cf9ae53e8ef6e81a0497a5f6ecd168af99816",
+          820,
+          100060,
+          [
+            29,
+            19,
+            29,
+            19
+          ],
+          null,
+          [
+            [
+              "genout/npcgen.template",
+              16
+            ]
+          ],
+          [
+            "Quiz"
+          ]
+        ]
+      ],
+      "GetItem_line": 6,
+      "GetItem_line_sha256": "296cb33d133f30997c0982d886c49f5de21806996d7c1a51491f7e3d12db2b98",
+      "GetItem_raw_literal": "1,2754",
+      "GetItem_source_pairs": [
+        {
+          "threshold_comma_position": 1,
+          "comparison_threshold": 1,
+          "payload_comma_position": 2,
+          "payload_literal": "2754",
+          "ordered_dot_candidate_item_ids": [
+            2754
+          ]
+        }
+      ],
+      "original_numeric_and_entry_fields": {
+        "Type": {
+          "line": 1,
+          "literal": "1",
+          "line_sha256": "3f3372229bd95acb32fdfc771d3b03d66c572f8dac9c9bf4baa2044e92c9b2c8"
+        },
+        "Answer": {
+          "line": 2,
+          "literal": "7",
+          "line_sha256": "8a927d5480a2a455283a826c3d35d5f771147d6c962f63d81247b142add0f6dc"
+        },
+        "Level": {
+          "line": 3,
+          "literal": "16",
+          "line_sha256": "1fbb8ed8c0f702cad7fad6d27efc3dadeef534de93f278cfbc7823e4d2b0b43a"
+        },
+        "Quiznum": {
+          "line": 4,
+          "literal": "1",
+          "line_sha256": "730354319ce181edcaba428fbd7328f01a1402fc47824a2dca5c6fcc0b8cc3b2"
+        },
+        "EntryItem": {
+          "line": 11,
+          "literal": "2752*1",
+          "line_sha256": "03de14d6b745b79dc51595cef2c6a8d1d7638873f2836f73f500955c48f2de10"
+        }
+      },
+      "WORLD23_role_override": {
+        "field": "GetItem",
+        "odd_comma_positions": "COMPARISON_THRESHOLD_NOT_ITEM_ID",
+        "even_comma_positions": "DOT_DELIMITED_REWARD_ITEM_CANDIDATES",
+        "old_raw_token_record_preserved": true
+      }
+    },
+    {
+      "path": "genout/quz_840_29_19",
+      "source_bytes": 488,
+      "source_sha256": "452a5e596dc118b977b499443492e7eed0ab4d8c071c530b38a085defd7f261e",
+      "source_crc32": "eb3bf31d",
+      "exact_original_CREATE_refs": [
+        [
+          "genout/quizman.create",
+          14,
+          "cb8dcb16e671fd5ad880df97f36f02834f4e0bf4520d19c04517859f1a78c5e5",
+          840,
+          100060,
+          [
+            29,
+            19,
+            29,
+            19
+          ],
+          null,
+          [
+            [
+              "genout/npcgen.template",
+              16
+            ]
+          ],
+          [
+            "Quiz"
+          ]
+        ]
+      ],
+      "GetItem_line": 6,
+      "GetItem_line_sha256": "296cb33d133f30997c0982d886c49f5de21806996d7c1a51491f7e3d12db2b98",
+      "GetItem_raw_literal": "1,2754",
+      "GetItem_source_pairs": [
+        {
+          "threshold_comma_position": 1,
+          "comparison_threshold": 1,
+          "payload_comma_position": 2,
+          "payload_literal": "2754",
+          "ordered_dot_candidate_item_ids": [
+            2754
+          ]
+        }
+      ],
+      "original_numeric_and_entry_fields": {
+        "Type": {
+          "line": 1,
+          "literal": "1",
+          "line_sha256": "3f3372229bd95acb32fdfc771d3b03d66c572f8dac9c9bf4baa2044e92c9b2c8"
+        },
+        "Answer": {
+          "line": 2,
+          "literal": "7",
+          "line_sha256": "8a927d5480a2a455283a826c3d35d5f771147d6c962f63d81247b142add0f6dc"
+        },
+        "Level": {
+          "line": 3,
+          "literal": "16",
+          "line_sha256": "1fbb8ed8c0f702cad7fad6d27efc3dadeef534de93f278cfbc7823e4d2b0b43a"
+        },
+        "Quiznum": {
+          "line": 4,
+          "literal": "1",
+          "line_sha256": "730354319ce181edcaba428fbd7328f01a1402fc47824a2dca5c6fcc0b8cc3b2"
+        },
+        "EntryItem": {
+          "line": 11,
+          "literal": "2752*1",
+          "line_sha256": "03de14d6b745b79dc51595cef2c6a8d1d7638873f2836f73f500955c48f2de10"
+        }
+      },
+      "WORLD23_role_override": {
+        "field": "GetItem",
+        "odd_comma_positions": "COMPARISON_THRESHOLD_NOT_ITEM_ID",
+        "even_comma_positions": "DOT_DELIMITED_REWARD_ITEM_CANDIDATES",
+        "old_raw_token_record_preserved": true
+      }
+    }
+  ],
+  "counts": {
+    "source_files": 4,
+    "GetItem_fields": 4,
+    "comparison_threshold_occurrences": 4,
+    "reward_candidate_positions": 4,
+    "distinct_reward_item_IDs": 2
+  },
+  "item01_source_joins": [
+    [
+      2752,
+      [
+        2752,
+        "31239fb9914a8d6ba410e86b5b777fc5c3e74dc21bf7f22306f3550b65504b62",
+        "31239fb9914a8d6ba410e86b5b777fc5c3e74dc21bf7f22306f3550b65504b62",
+        24314,
+        24314,
+        "0",
+        "16",
+        "0",
+        "TW1_INDEX_NOT_FOUND",
+        "TW1_INDEX_NOT_FOUND",
+        []
+      ]
+    ],
+    [
+      2753,
+      [
+        2753,
+        "fc6855f012115531ac5548be502cebcecf3fd5658429ec6ea9227af04b8d8c47",
+        "fc6855f012115531ac5548be502cebcecf3fd5658429ec6ea9227af04b8d8c47",
+        24222,
+        24222,
+        "5000",
+        "16",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ]
+    ],
+    [
+      2754,
+      [
+        2754,
+        "641b541b22b977105eecc7748e4ee893712cca7109be0ccbec41ff008372b979",
+        "641b541b22b977105eecc7748e4ee893712cca7109be0ccbec41ff008372b979",
+        24222,
+        24222,
+        "0",
+        "16",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ]
+    ],
+    [
+      2759,
+      [
+        2759,
+        "ef741aa99cb8af73be31362e07ec85cef2ee78459ae0de593cff421d79ffccf3",
+        "ef741aa99cb8af73be31362e07ec85cef2ee78459ae0de593cff421d79ffccf3",
+        24309,
+        24309,
+        "5000",
+        "16",
+        "0",
+        "TW1_INDEX_NOT_FOUND",
+        "TW1_INDEX_NOT_FOUND",
+        []
+      ]
+    ]
+  ],
+  "limits": {
+    "original_award_or_entry_consumption_executed": false,
+    "actual_question_or_score_runtime_executed": false,
+    "all_original_GetItem_numbers_are_item_IDs": false,
+    "WORLD23_raw_token_index_rewritten": false,
+    "whole_game_unique_item_count_established": false,
+    "official_TW1_JSS1999_CN182_rule_proven": false,
+    "overall_percent": null
+  },
+  "next": "WORLD26: bounded remaining Raceman GetItem source role; then leave item-field helper chain"
+}
