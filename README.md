@@ -1853,3 +1853,12 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 **明确订正旧WORLD09解释：** 同一50条列表、相同源SHA实际有959个数字位置+1空位置，26条含重复，另26条首次出现次序与旧投影不同。旧“718原始候选位置/组内无重复”来自去重后的ID投影，不能继续当原文位置证据；718个分块去重引用与328个不同ID仍是旧投影事实。原WORLD09/QUEST01 JSON和旧验收保留；[全批派生及逐列表订正](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-23-NPC-ITEM-TRANSFERS-R1.json)提供真实原行SHA、顺序和重复，不推实际概率。最终本地29/29通过；复用既有WORLD09工作流验收。历史CURRENT原blob `c89e0e33537990aa2132b47c40fef49a985a935c`不改。
 
 **最高NEXT WORLD24：** 有限核实一类非ExChangeMan物品字段的具体用途（优先SavePoint或Quiz），优先既有合格编译原件，后期源码须明确分版；取得一种有据语义或精确缺源即止，不扩通用执行器、网服、新引擎或体验优化。Stage A 7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体完成率未知。
+
+
+## 2026-11-05｜WORLD24：原编译存点物品条件与127字节读取边界（最新连续节点）
+
+[WORLD24原编译证据与界限](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-24-SAVEPOINT-ITEM-ROLE-20261105.md)完整重读同保存包GMSV原EXE并按WORLD18/SCENE33全SHA核同，核明SavePoint的GetItem用于检查及确认后消耗物品，不能当奖励。原对话传检查模式0，确认回复传消费模式1，明确到CHAR_DelItem的静态调用；没有运行原存点或原服务器。同包22份原参数中21份有GetItem，7份超过此编译读取器的127有效ASCII字节限制，完整原文209个逗号位置的复制投影为161个位置并含截断片段；161不是有效条件数。保留原文、缺失字段和1991*，不修补历史配置。
+
+[公开派生数值/代码窗SHA/22来源](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-24-SAVEPOINT-ITEM-ROLE-R1.json)经独立nm10符号、objdump14调用核同；39/39本地检查通过。私人22份原文/长度对照包已保存，仅HTML结构核验，无浏览器/原游戏运行。全部历史CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`及WORLD23的旧投影订正继续保留。
+
+**最高NEXT WORLD25：** 有限核原Quiz物品字段用途及4条GetItem来源，优先同保存版完整编译程序；不把SavePoint的消耗语义套入Quiz，不扩通用执行器、网服、新引擎或体验优化。Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，整体完成率未知。
