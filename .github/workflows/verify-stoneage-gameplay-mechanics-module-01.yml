@@ -43,6 +43,9 @@ on:
       - 'research/recovered/STONEAGE-O40-TW10-NATIVE-BATTLE-PATH-SOURCE-R1.json'
       - 'research/recovered/STONEAGE-STAGE-A-WORLD29-PETSHOP-STATIC-CODE-BOUNDARY-R1.json'
       - 'tests/test_stoneage_stage_a_world29_petshop_source.py'
+      - 'tools/stoneage_cooking_source.py'
+      - 'research/recovered/STONEAGE-STAGE-A-WORLD30-COOKING-SOURCE-R1.json'
+      - 'tests/test_stoneage_stage_a_world30_cooking_source.py'
       - '.github/workflows/verify-stoneage-gameplay-mechanics-module-01.yml'
   pull_request:
     paths:
@@ -84,6 +87,9 @@ on:
       - 'research/recovered/STONEAGE-O40-TW10-NATIVE-BATTLE-PATH-SOURCE-R1.json'
       - 'research/recovered/STONEAGE-STAGE-A-WORLD29-PETSHOP-STATIC-CODE-BOUNDARY-R1.json'
       - 'tests/test_stoneage_stage_a_world29_petshop_source.py'
+      - 'tools/stoneage_cooking_source.py'
+      - 'research/recovered/STONEAGE-STAGE-A-WORLD30-COOKING-SOURCE-R1.json'
+      - 'tests/test_stoneage_stage_a_world30_cooking_source.py'
       - '.github/workflows/verify-stoneage-gameplay-mechanics-module-01.yml'
   workflow_dispatch:
 jobs:
@@ -113,3 +119,4 @@ jobs:
       - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_03.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_stage_a_source_gap_20261104.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_stage_a_original_rar_block_replay.py' -v
+      - run: python -m unittest -v tests.test_stoneage_stage_a_world30_cooking_source

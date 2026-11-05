@@ -1899,3 +1899,7 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 ## 2026-11-05 — WORLD29：原宠物店收费、卖宠与骑乘限制的分版源码恢复
 
 从私人社区mixed25原NPC子树实际重读16个由CREATE直接引用的宠物商店原参数，再以独立的后期社区C源码固定提交审查售价与寄放规则，**不是已证明同部署或台湾1.0／大陆1.82原生运行**。C参考分支读取 `nomal_rate`／`special_rate` 乘1000，缺省1000／1200；`pool_flg==1`门控寄放；源码中`pool_cost`读取已注释，寄放走 `50 + 4×人物等级` 动态字面，而16份原配置却有5项200、一项2000，**矛盾保留，绝不宣称实际交易费率**。原代码还区分卖宠、店内寄放与可选宠物仓库，并拒售正在骑乘的宠物；静态释放后成本再计算的潜在问题列OPEN。完整来源/默认值/负例见 [WORLD29增量记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-29-PETSHOP-CROSSSOURCE-20261105.md) 和 [公开原源SHA及程序分支索引](research/recovered/STONEAGE-STAGE-A-WORLD29-PETSHOP-STATIC-CODE-BOUNDARY-R1.json)。不再展开原旧网游基础设施、引擎或体验优化；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总进度未知。
+
+## 2026-11-06 — WORLD30：同包复原宠物料理的材料匹配和成品候选
+
+保存版混合 2.5 的编译程序、启动配置、宠技表和材料表共同确认，宠物加工 200／料理 201 进入同一回调，普通路径至少接受两件有效材料，首项类型 20 切入料理搜索。三道原主厨菜单已接到 36 条单原子输入候选行，原料值和程序调整后匹配区间分别记录。详见 [WORLD30 连续性记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-30-COOKING-SOURCE-20261106.md) 与 [派生收据](research/recovered/STONEAGE-STAGE-A-WORLD30-COOKING-SOURCE-R1.json)。样本为静态证据，尚无实服制作或早期官方版本认证。下一优先 WORLD31 为同包回复道具的实际回调与参数关系。
