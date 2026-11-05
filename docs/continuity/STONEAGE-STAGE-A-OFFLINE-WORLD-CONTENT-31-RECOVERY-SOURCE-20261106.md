@@ -33,3 +33,10 @@
 公开 [WORLD31 派生收据](../../research/recovered/STONEAGE-STAGE-A-WORLD31-RECOVERY-SOURCE-R1.json) 仅存数值、程序位置、行及成员哈希与夹具观察。原 GMSV 未启动，背包未实扣，战斗未实际结算，历史官方版本的同一规则待同版证据。
 
 **下一优先 WORLD32。** 沿同包 `BATTLE_MultiRecovery` 只核普通单目标的体力／气力结算，从 WORLD31 的两个请求种类验证目标过滤、实际增量与上限。以能给出两条独立证据的结算路径为止点。Stage A 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79 暂停，整体进度未知。
+
+## 发布验收（2026-11-06）
+
+- 私人原件重放使用 Unicorn 1.0.3，构建提交 `52f90cda023abaca510d59f021c88629270ad6c0`。独立 CP950 CSV／SQLite 全表查询重现 644 条物理行、116 种普通参数原字面及全部分类计数。49 项相关测试通过，原件重放二次生成逐字节相同，派生报告 SHA-256 `f92d0d0be3055ee773d7e1fa846c492613ab05c3ab4e10e80f9260031ad788af`。
+- [PR #210](https://github.com/chinaneedM/stoneage-rebuild/pull/210) 候选 `d51d5d5387580f6d1e95ee0acd9cd474d19a4a1d` 的 14 项 Actions 均通过。其 [PR 专项](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42129929579) job `127603657550` 实际执行 WORLD31。
+- 内容主线 `e604698f31063ce9a54e04f6bc818a951740b062`、tree `ed2a2f21eeea8cead16f860afda33545e6a12f64` 与本地验收 tree 一致。该主线提交的 11 项 Actions 全部通过，[主线专项](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42130057005) job `127604085077` 的 WORLD31 六项测试成功。完整 CURRENT 与协议的 Git blob 和启动时相同。CI 验收派生数据，原件和 x86 回放在本地。
+- WORLD32 预检定位原 `BATTLE_MultiRecovery` 在 `0x548eb0`、`BATTLE_MultiList` 在 `0x5185e0`。固定无骑宠单目标和随机源 0，原指令已走到体力 320、气力 25 的首个属性写入，上限夹具分别限为 1000 和 100。原目标列表代码在请求位置 7 无效、同侧仅位置 0 有效的夹具中改选位置 0。该预检在首次属性写入即停，原生目标有效性判定、日志、通知及实际扣物尚未回放，留给 WORLD32。
