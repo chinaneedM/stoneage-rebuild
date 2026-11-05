@@ -1907,3 +1907,10 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 ## 2026-11-06 — WORLD31：场外与战斗回复参数分流
 
 同一混合 2.5 保存包的配置选中表有 644 行指向回复回调。对 583 行覆盖的 116 种普通参数回放原始 x86 回调后，确认场外对玩家可同时处理体力、气力，战斗回调遇两者并存时优先只传体力。物品场景／目标原字段、回调发出的扣物请求及最终战斗结算分别记录。详见 [WORLD31 证据和连续性](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-31-RECOVERY-SOURCE-20261106.md) 与 [派生收据](research/recovered/STONEAGE-STAGE-A-WORLD31-RECOVERY-SOURCE-R1.json)。下一优先 WORLD32 为同包战斗单目标结算。
+
+
+## 2026-11-06 — WORLD31 另存物品表差异实源核验（WORLD32 仍未完成）
+
+[来源限定记录](docs/continuity/STONEAGE-WORLD31-ITEMSET-VARIANT-20261106.md)、[公开19条原行哈希/数值证据](research/recovered/STONEAGE-STAGE-A-WORLD31-ITEMSET-VARIANT-R1.json)：复用此前已认证的私人 ITEM01 原表派生目录，完整 ZIP／成员 SHA 核同，按各版本每 ID 94 原字段逐列对照。配置选中 `itemset.txt` 的 644 条回复道具回调与 WORLD31 相符，另存 `itemset0710.txt` 为 663 条；共有 644 条逐字段完全相同，另存表独有 19 条，其中严格普通体力 6、气力 2、其它 11。19 条与已有七份 ITEM01 公开分片原行哈希均匹配，不能当成额外 19 件已部署可用恢复道具，也不能推已改平衡。新的私有原件下载 0、原程序执行 0。公开源限制脚本、测试和 CI 仅在具备原私有 ZIP 时才能重算完整派生；公共 CI 不运行原字节。
+
+**最高 NEXT WORLD32 保持不变：** `BATTLE_MultiRecovery` 同包单目标体力／气力结算，需完整、SHA 合格原 `gmsv.exe` 才能继续真实 x86 核查目标过滤、写入及上限。当前环境缺此原件，不能将 WORLD31 首次属性写入预检算结算完成；缺源已精确归档。不扩账号/网服、新引擎或体验优化。Stage A 7 PARTIAL + 2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、整体完成率未知；历史 CURRENT 原 blob `c89e0e33537990aa2132b47c40fef49a985a935c` 不变。
