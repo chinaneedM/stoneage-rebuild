@@ -1,0 +1,324 @@
+{
+  "schema": "stoneage.stage_a.world16.jaja_logging_return_source.r1",
+  "source_scope": "LATER_COMMUNITY_MIXED25_SAME_PRESERVED_ARCHIVE_STATIC",
+  "archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "world15_sha256": "587660c91863db6b9c994cb3ab9a2a34a4fe0d81b5bfe5b9f8703336d67b5f81",
+  "members": {
+    "create": {
+      "path": "npc/jaruga/event/20501ev.create",
+      "bytes": 1193,
+      "sha256": "735e8d0100341b144fbd00f16d9ec9ab15bc8a063eb69c6826330709b1f80448",
+      "crc32": "1f6dce3b"
+    },
+    "template": {
+      "path": "npc/jaruga/event/event.template",
+      "bytes": 122,
+      "sha256": "9c11ac0cbbd9b110e8ff7d0115730044673bf29c5df6d23034e56530c181d0b2",
+      "crc32": "a70fc73f"
+    },
+    "script": {
+      "path": "npc/jaruga/event/20501ev5",
+      "bytes": 4640,
+      "sha256": "e32ba569b6cfc3f430b5bf8b2d49a287c4a560fea74f912d0d85e35d921c24c0",
+      "crc32": "d48048f1"
+    }
+  },
+  "placement": {
+    "floor": 3000,
+    "borncorner": [
+      114,
+      69,
+      114,
+      69
+    ],
+    "graphics_field": 16000,
+    "name": "木材商人賽尚",
+    "create_block_number": 5,
+    "create_block_sha256": "3257437aca44f201cd77c9af384791c544ec9a87be3b85efa416bd72763422df",
+    "template_block_sha256": "af8953e91da6c36590bed53a08542f83acebaad5a2538c96b0bc4127b6fb30f0",
+    "template_key": "changeevent",
+    "functionset": "ExChangeMan",
+    "script_relative_path": "jaruga/event/20501ev5"
+  },
+  "source_item_rows": {
+    "2467": {
+      "name": "巴爾的推薦書",
+      "line": 2050,
+      "line_sha256": "561f90c13f66309cf3168813913f8d861e2f0f7e8069f953699b8b036a69835a"
+    },
+    "2468": {
+      "name": "良質的木材",
+      "line": 2051,
+      "line_sha256": "f9ba9da3ccbd8c77fbfc9a52f11057a3954a2dada0fbcec2b41e6d5774b31e50"
+    },
+    "2478": {
+      "name": "採伐許可證",
+      "line": 2061,
+      "line_sha256": "9949b4f438749b5bb48681b5c3706aa91f41234a3c3cc77f8623e2c353376048"
+    },
+    "2481": {
+      "name": "杉的手環",
+      "line": 2064,
+      "line_sha256": "e05364088cd7697cd51c2397ec6b1677a615c3edfa584995791980b2804a5409"
+    }
+  },
+  "records": [
+    {
+      "start_line": 9,
+      "end_line": 13,
+      "sha256": "9b2ea7ea442e805dc37431355d82b69fb8b204f32cfcaf2c33ac88dac47dbfd7",
+      "event_number": -1,
+      "type": "MESSAGE",
+      "predicate": "ITEM!=2478&ITEM=2468",
+      "get_stone": null,
+      "get_items": [],
+      "del_items": []
+    },
+    {
+      "start_line": 15,
+      "end_line": 25,
+      "sha256": "853de7c1b935483f3ff4d9f4deec8deee53e8803ab54706a5e9f311746051171",
+      "event_number": -1,
+      "type": "ACCEPT",
+      "predicate": "ITEM=2478&ITEM=2468*14",
+      "get_stone": 20000,
+      "get_items": [
+        "2481"
+      ],
+      "del_items": [
+        "2468",
+        "2478",
+        "2467"
+      ]
+    },
+    {
+      "start_line": 27,
+      "end_line": 35,
+      "sha256": "a0cd0a7e019dc9a8a504159fb82bbe5865738564ee4d5d812e3afac96b5567b2",
+      "event_number": -1,
+      "type": "ACCEPT",
+      "predicate": "ITEM=2478&ITEM=2468*13",
+      "get_stone": 16000,
+      "get_items": [],
+      "del_items": [
+        "2468",
+        "2478",
+        "2467"
+      ]
+    },
+    {
+      "start_line": 37,
+      "end_line": 45,
+      "sha256": "ec4d8514380cca5660d5f4370191ac3acabf53219d86ca07087e3f2758fa1f65",
+      "event_number": -1,
+      "type": "ACCEPT",
+      "predicate": "ITEM=2478&ITEM=2468*12",
+      "get_stone": 12000,
+      "get_items": [],
+      "del_items": [
+        "2468",
+        "2478"
+      ]
+    },
+    {
+      "start_line": 47,
+      "end_line": 55,
+      "sha256": "1e401b87cf5f6d431cc9a31f66347f3a29ff819512ed2daf749745496924a23d",
+      "event_number": -1,
+      "type": "ACCEPT",
+      "predicate": "ITEM=2478&ITEM=2468*11",
+      "get_stone": 10000,
+      "get_items": [],
+      "del_items": [
+        "2468",
+        "2478",
+        "2467"
+      ]
+    },
+    {
+      "start_line": 57,
+      "end_line": 65,
+      "sha256": "be790199ffcd9ddd609adcd552113383ce992a7240cef8213f457fd9a5733050",
+      "event_number": -1,
+      "type": "ACCEPT",
+      "predicate": "ITEM=2478&ITEM=2468*10",
+      "get_stone": 8000,
+      "get_items": [],
+      "del_items": [
+        "2468",
+        "2478",
+        "2467"
+      ]
+    },
+    {
+      "start_line": 67,
+      "end_line": 75,
+      "sha256": "6effb71ab2e154e9dfdb3533b6e83e6cc125968af56a3d4a13322c4667988d05",
+      "event_number": -1,
+      "type": "ACCEPT",
+      "predicate": "ITEM=2478&ITEM=2468*9",
+      "get_stone": 7200,
+      "get_items": [],
+      "del_items": [
+        "2468",
+        "2478",
+        "2467"
+      ]
+    },
+    {
+      "start_line": 77,
+      "end_line": 85,
+      "sha256": "60af65cd7817fdfdbb5e7ddeb3b4880b3f695e5a08a08a9ca0aaa8dd8848520a",
+      "event_number": -1,
+      "type": "ACCEPT",
+      "predicate": "ITEM=2478&ITEM=2468*8",
+      "get_stone": 6400,
+      "get_items": [],
+      "del_items": [
+        "2468",
+        "2478",
+        "2467"
+      ]
+    },
+    {
+      "start_line": 87,
+      "end_line": 95,
+      "sha256": "056786a59225a9341b905f9bc72b0b0587674db92bec1b0f6aff608f698831b4",
+      "event_number": -1,
+      "type": "ACCEPT",
+      "predicate": "ITEM=2478&ITEM=2468*7",
+      "get_stone": 5600,
+      "get_items": [],
+      "del_items": [
+        "2468",
+        "2478",
+        "2467"
+      ]
+    },
+    {
+      "start_line": 97,
+      "end_line": 106,
+      "sha256": "938cd46e2c1b87ea08581c9fefffca932418a0732de1a9b6c4481ea2fa254be0",
+      "event_number": -1,
+      "type": "ACCEPT",
+      "predicate": "ITEM=2478&ITEM=2468*6",
+      "get_stone": 4800,
+      "get_items": [],
+      "del_items": [
+        "2468",
+        "2478",
+        "2467"
+      ]
+    },
+    {
+      "start_line": 108,
+      "end_line": 116,
+      "sha256": "051922e3eb3b35c4ea7665a3cbd65223ed39f5f127cb3bd724d485916ca5ddcb",
+      "event_number": -1,
+      "type": "ACCEPT",
+      "predicate": "ITEM=2478&ITEM=2468*5",
+      "get_stone": 4000,
+      "get_items": [],
+      "del_items": [
+        "2468",
+        "2478",
+        "2467"
+      ]
+    },
+    {
+      "start_line": 118,
+      "end_line": 126,
+      "sha256": "27dc24ab11897f674c83b8c24e1d5699e6e78876304c7dd1cf3ece2206c58e9a",
+      "event_number": -1,
+      "type": "ACCEPT",
+      "predicate": "ITEM=2478&ITEM=2468*4",
+      "get_stone": 3200,
+      "get_items": [],
+      "del_items": [
+        "2468",
+        "2478",
+        "2467"
+      ]
+    },
+    {
+      "start_line": 128,
+      "end_line": 136,
+      "sha256": "955a3b7873fed972956a86c30dc6458e010696024c3acc1f3a7695c5c81ccce3",
+      "event_number": -1,
+      "type": "ACCEPT",
+      "predicate": "ITEM=2478&ITEM=2468*3",
+      "get_stone": 2400,
+      "get_items": [],
+      "del_items": [
+        "2468",
+        "2478",
+        "2467"
+      ]
+    },
+    {
+      "start_line": 138,
+      "end_line": 146,
+      "sha256": "bb4717814f257118583391dd7d634366bda9d8f40e7ad7f62e0e345d9cb48eb7",
+      "event_number": -1,
+      "type": "ACCEPT",
+      "predicate": "ITEM=2478&ITEM=2468*2",
+      "get_stone": 1600,
+      "get_items": [],
+      "del_items": [
+        "2468",
+        "2478",
+        "2467"
+      ]
+    },
+    {
+      "start_line": 148,
+      "end_line": 156,
+      "sha256": "49ddba829ffe0e53977262f5a84a06047d40228f210a547f4ecf7d6609fc7e36",
+      "event_number": -1,
+      "type": "ACCEPT",
+      "predicate": "ITEM=2478&ITEM=2468*1",
+      "get_stone": 400,
+      "get_items": [],
+      "del_items": [
+        "2468",
+        "2478",
+        "2467"
+      ]
+    },
+    {
+      "start_line": 158,
+      "end_line": 164,
+      "sha256": "c7bd11c2233856de56d7da640266636bf6034e4641e4a3e6332203e2edbc8900",
+      "event_number": -1,
+      "type": "ACCEPT",
+      "predicate": "ITEM=2478&ITEM!=2468",
+      "get_stone": null,
+      "get_items": [],
+      "del_items": [
+        "2478"
+      ]
+    },
+    {
+      "start_line": 166,
+      "end_line": 177,
+      "sha256": "d47062a492540c8d42360bbc9b0e6c6f248bbb959deaec3638a333a6a6cef483",
+      "event_number": -1,
+      "type": "REQUEST",
+      "predicate": "ITEM=2467",
+      "get_stone": null,
+      "get_items": [
+        "2478*1"
+      ],
+      "del_items": [
+        "2467*1"
+      ]
+    }
+  ],
+  "bounds": {
+    "historical_official_deployment_proven": false,
+    "native_branch_selection_proven": false,
+    "native_inventory_or_payout_execution_proven": false,
+    "tail_hit_rule_proven": false,
+    "quest_origin": "UNRESOLVED"
+  }
+}
