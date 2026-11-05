@@ -1,0 +1,484 @@
+{
+  "schema": "stoneage.stage_a.world29_petshop_reference_code_vs_preserved_configuration.r1",
+  "date": "2026-11-05",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "baseline": {
+    "head": "33a21612cda025e08dc57eb4c5fa1818b5c983c9",
+    "tree": "0a362f71e1c0ffbebc76e4e0d050297e39c915c1",
+    "old_CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "original_configuration": {
+    "source_scope": "PRIVATE_COMMUNITY_MIXED25_NPC_EXTRACT_NOT_AUTHENTICATED_OFFICIAL_SAME_DEPLOYMENT",
+    "original_parent_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "parent_RAR_reopened": false,
+    "private_NPC_zip_bytes": 995176,
+    "private_NPC_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "private_NPC_member_count": 2205,
+    "private_ZIP_all_CRC_passed": true,
+    "selected_CREATE_refs": 16,
+    "selected_source_files": 16,
+    "selected_all_bytes_SHA256_CRC32_checked_against_GAMEPLAY05": true,
+    "private_16_file_derived_recheck_sha256": "8dc726bbb3456a60ab9eac95faa0b5f804ecd48683fb99f8a4c545140a894c3e",
+    "prior_GAMEPLAY05_report_path": "research/recovered/STONEAGE-GAMEPLAY05-ORIGINAL-PETSHOP-SAVEPOINT-HEAL-SOURCE-R1.json",
+    "prior_GAMEPLAY05_git_blob": "878be2f05a4dc17f51d21ed2401fd7a7f3d73563",
+    "other_unselected_ps_named_files_exist": true,
+    "only_verified_CREATE_referenced_16_included": true
+  },
+  "comparison_code": {
+    "source_scope": "PINNED_SEPARATE_LATER_COMMUNITY_PUBLIC_C_REFERENCE_NOT_PROVEN_SAME_DEPLOYMENT_AS_MIXED25_CONFIG",
+    "repository": "pimpcapital/longzoro-sa",
+    "commit": "57b14e2bb373ba851c14db28a239273e4a8831bb",
+    "path": "gmsv/src/npc/npc_petshop.c",
+    "git_blob": "d965b2c22a7ce4624aa9849e646ef59a8e0ef498",
+    "original_text_republished": false,
+    "required_macro_config_unknown": true
+  },
+  "conditional_under_PINNED_C": {
+    "original_field_key": "nomal_rate",
+    "normal_millirate_default": 1000,
+    "special_millirate_default": 1200,
+    "pool_flg_enabled_only_if_source_integer_equals_1": true,
+    "source_pool_cost_read_is_commented_out": true,
+    "pool_deposit_fee_expression": "50 + 4 * CHAR_LV_OF_PLAYER",
+    "pool_fee_not_taken_from_pool_cost_source_field_in_pinned_C": true,
+    "sale_price_pipeline": [
+      "level_sq_times_10",
+      "acquisition_level_sq_times_10_or_10_for_transmigration_guarded",
+      "add_level_times_10",
+      "rarity_mapping_0_to_1_1_to_5_2_to_8",
+      "normal_rate_or_special_sprite_match_fraction",
+      "CHAR_WORKFIXCHARM_plus_pet_CHAR_WORKFIXAI_minimum_20_then_integer_divide_2",
+      "two_integer_truncation_assignments"
+    ],
+    "shop_sale_blocks_guardian_family_pet": true,
+    "shop_sale_blocks_currently_ridden_pet": true,
+    "shop_pool_deposit_blocks_ridden_pet": true,
+    "compiled_optional_depot_feature_macro": "_NPC_DEPOTPET",
+    "depot_add_blocks_guardian_family_pet": true,
+    "depot_take_conditional_level_check": "CHAR_PickAllPet_OR_PLAYER_TRANSMIGRATION_GT0_OR_PLAYER_LEVEL_PLUS5_GE_PET_LEVEL",
+    "pool_take_fee_in_selected_function": false,
+    "c_source_order_alert": "NPC_PetDel releases pet index via CHAR_endCharOneArray before re-evaluating NPC_GetCost(petindex); SOURCE_ORDER_ONLY; runtime result OPEN"
+  },
+  "code_source_line_ranges": {
+    "rate_and_pool_flag_init": [
+      85,
+      135
+    ],
+    "deposit_macro": [
+      68,
+      68
+    ],
+    "menu_and_pool_flag": [
+      184,
+      244
+    ],
+    "sale_price": [
+      688,
+      811
+    ],
+    "sale_confirmation_and_order_alert": [
+      817,
+      887
+    ],
+    "pool_deposit": [
+      889,
+      965
+    ],
+    "pool_retrieval": [
+      966,
+      1033
+    ],
+    "optional_depot_branch": [
+      349,
+      417
+    ],
+    "optional_depot_deposit": [
+      1196,
+      1279
+    ],
+    "optional_depot_withdraw": [
+      1284,
+      1341
+    ],
+    "optional_depot_level_guard": [
+      1422,
+      1456
+    ]
+  },
+  "source_referenced_shop_configs": [
+    {
+      "create_path": "genout/duelroom.create",
+      "create_ordinal": 21,
+      "create_block_sha256": "d835a82ccddd7545e18da6333a7878ca8a6209d21de0844c2e8a484e3ba09f19",
+      "floorid": 130,
+      "graphicname": 16038,
+      "source_parameter_path": "genout/ps_130_49_3",
+      "source_parameter_sha256": "b6147b9cf873c1a1af4643d0ac06b4ac557d54d97bea40d0b85b06340dfe2acc",
+      "nomal_rate_literal": "1.0",
+      "special_rate_literal": "1.5",
+      "pool_flg_literal": "1",
+      "pool_cost_literal": "200",
+      "special_pet_field_exists": true,
+      "special_pet_empty_if_exists": true,
+      "derived_under_pinned_c_only": {
+        "work_normal_rate_milli": 1000,
+        "work_special_rate_milli": 1500,
+        "pool_flg": 1,
+        "configured_pool_cost_consumed_by_this_source": false
+      }
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 3,
+      "create_block_sha256": "eac3ba16a251748c7e27cd8c42cbd5f0020516e6adf4278d029ede4b2c812536",
+      "floorid": 1003,
+      "graphicname": 16038,
+      "source_parameter_path": "genout/ps_1003_12_13",
+      "source_parameter_sha256": "f4759c08d7391033b8fcee4d2580832c77e8210d637009b608be460b51285cbe",
+      "nomal_rate_literal": "1.0",
+      "special_rate_literal": "1.5",
+      "pool_flg_literal": "1",
+      "pool_cost_literal": "200",
+      "special_pet_field_exists": true,
+      "special_pet_empty_if_exists": true,
+      "derived_under_pinned_c_only": {
+        "work_normal_rate_milli": 1000,
+        "work_special_rate_milli": 1500,
+        "pool_flg": 1,
+        "configured_pool_cost_consumed_by_this_source": false
+      }
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 26,
+      "create_block_sha256": "5cd18b23e98c61c1fd3107f51cbdf230ac44f15403cd4a1834b5ecfad49243c9",
+      "floorid": 1103,
+      "graphicname": 16046,
+      "source_parameter_path": "genout/ps_1103_19_17",
+      "source_parameter_sha256": "101f7d3affde660b494492023a5c017ce92c1872b13705c08764d816bd6fb5b0",
+      "nomal_rate_literal": "1.0",
+      "special_rate_literal": "1.5",
+      "pool_flg_literal": null,
+      "pool_cost_literal": null,
+      "special_pet_field_exists": true,
+      "special_pet_empty_if_exists": true,
+      "derived_under_pinned_c_only": {
+        "work_normal_rate_milli": 1000,
+        "work_special_rate_milli": 1500,
+        "pool_flg": 0,
+        "configured_pool_cost_consumed_by_this_source": false
+      }
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 41,
+      "create_block_sha256": "d8e48d46fbb56a850c365eeb56eac82abb343203d7b03b58c02e666f0bf222e8",
+      "floorid": 1203,
+      "graphicname": 16035,
+      "source_parameter_path": "genout/ps_1203_14_13",
+      "source_parameter_sha256": "db60d5e31f2478d8f59a9144c49b61c17448a0a978a63be98d81b6398c469463",
+      "nomal_rate_literal": "0.7",
+      "special_rate_literal": "1.5",
+      "pool_flg_literal": null,
+      "pool_cost_literal": null,
+      "special_pet_field_exists": true,
+      "special_pet_empty_if_exists": true,
+      "derived_under_pinned_c_only": {
+        "work_normal_rate_milli": 700,
+        "work_special_rate_milli": 1500,
+        "pool_flg": 0,
+        "configured_pool_cost_consumed_by_this_source": false
+      }
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 53,
+      "create_block_sha256": "478b8668a020ba8b0a76e50e4893b6e33d5e6712a0f6bf4658e02a9929498d57",
+      "floorid": 1303,
+      "graphicname": 16048,
+      "source_parameter_path": "genout/ps_1303_16_13",
+      "source_parameter_sha256": "8beaa8a89b834d90be34e9213abf40d5bdb9ff832a6b6c5bb674db738577f022",
+      "nomal_rate_literal": "1.0",
+      "special_rate_literal": "1.5",
+      "pool_flg_literal": null,
+      "pool_cost_literal": null,
+      "special_pet_field_exists": true,
+      "special_pet_empty_if_exists": true,
+      "derived_under_pinned_c_only": {
+        "work_normal_rate_milli": 1000,
+        "work_special_rate_milli": 1500,
+        "pool_flg": 0,
+        "configured_pool_cost_consumed_by_this_source": false
+      }
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 70,
+      "create_block_sha256": "9cc29403f761960c0c84d5fcfa2181ae87dabef4bb87279a33814c480657881c",
+      "floorid": 1403,
+      "graphicname": 16016,
+      "source_parameter_path": "genout/ps_1403_14_13",
+      "source_parameter_sha256": "26209a7b2b30c8cc9a8da3dd06bd3bc6bcd4b7284ffa689898b69035c59f50ca",
+      "nomal_rate_literal": "1.0",
+      "special_rate_literal": "1.5",
+      "pool_flg_literal": null,
+      "pool_cost_literal": null,
+      "special_pet_field_exists": true,
+      "special_pet_empty_if_exists": true,
+      "derived_under_pinned_c_only": {
+        "work_normal_rate_milli": 1000,
+        "work_special_rate_milli": 1500,
+        "pool_flg": 0,
+        "configured_pool_cost_consumed_by_this_source": false
+      }
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 82,
+      "create_block_sha256": "82fe064bf19f3284efe23d49d9209a51c8a235550f187a700361d18014ccc685",
+      "floorid": 2003,
+      "graphicname": 16036,
+      "source_parameter_path": "genout/ps_2003_18_17",
+      "source_parameter_sha256": "51c9bc03950cdd84a8a2661586010f737460212ce3a17992089401bb65046f36",
+      "nomal_rate_literal": "1.0",
+      "special_rate_literal": "1.5",
+      "pool_flg_literal": "1",
+      "pool_cost_literal": "200",
+      "special_pet_field_exists": true,
+      "special_pet_empty_if_exists": true,
+      "derived_under_pinned_c_only": {
+        "work_normal_rate_milli": 1000,
+        "work_special_rate_milli": 1500,
+        "pool_flg": 1,
+        "configured_pool_cost_consumed_by_this_source": false
+      }
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 3,
+      "create_block_sha256": "0eda1f01859b9027f1cbc10d27e0b5894846b950dbf011d9f5642cc38b21ca7d",
+      "floorid": 3003,
+      "graphicname": 16027,
+      "source_parameter_path": "genout/ps_3003_12_13",
+      "source_parameter_sha256": "c499b5fd06ba53537552614e6ea59222b0450d9e2301bc844afc4890bdcdf16f",
+      "nomal_rate_literal": "1.0",
+      "special_rate_literal": "1.5",
+      "pool_flg_literal": "1",
+      "pool_cost_literal": "200",
+      "special_pet_field_exists": true,
+      "special_pet_empty_if_exists": true,
+      "derived_under_pinned_c_only": {
+        "work_normal_rate_milli": 1000,
+        "work_special_rate_milli": 1500,
+        "pool_flg": 1,
+        "configured_pool_cost_consumed_by_this_source": false
+      }
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 30,
+      "create_block_sha256": "3dc25437b3089ee9bad74ab76bdd6fa87d7303c5e9f97bd53a72191f9ba8cb5b",
+      "floorid": 3103,
+      "graphicname": 16035,
+      "source_parameter_path": "genout/ps_3103_16_13",
+      "source_parameter_sha256": "3c3f45e2d95e6c4e0c302f39269beb7a9aebffdd19b99d4a550dc80d0ce4f35c",
+      "nomal_rate_literal": "1.0",
+      "special_rate_literal": null,
+      "pool_flg_literal": null,
+      "pool_cost_literal": null,
+      "special_pet_field_exists": false,
+      "special_pet_empty_if_exists": false,
+      "derived_under_pinned_c_only": {
+        "work_normal_rate_milli": 1000,
+        "work_special_rate_milli": 1200,
+        "pool_flg": 0,
+        "configured_pool_cost_consumed_by_this_source": false
+      }
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 43,
+      "create_block_sha256": "c22681df1b1c22c49cf6ce884151edf8cfd3ff6e64a1ed2baeae38f23b6fd13e",
+      "floorid": 3203,
+      "graphicname": 16033,
+      "source_parameter_path": "genout/ps_3203_18_18",
+      "source_parameter_sha256": "2f028a964aee5838349fafed6862a2bc0aa54d44ec78fca6228afcd97243de72",
+      "nomal_rate_literal": "1.0",
+      "special_rate_literal": null,
+      "pool_flg_literal": null,
+      "pool_cost_literal": null,
+      "special_pet_field_exists": false,
+      "special_pet_empty_if_exists": false,
+      "derived_under_pinned_c_only": {
+        "work_normal_rate_milli": 1000,
+        "work_special_rate_milli": 1200,
+        "pool_flg": 0,
+        "configured_pool_cost_consumed_by_this_source": false
+      }
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 56,
+      "create_block_sha256": "965fcc2113f65c7fa7387ce00591f65701b81f29ba40b47021ebc1a20130ca91",
+      "floorid": 3303,
+      "graphicname": 16218,
+      "source_parameter_path": "genout/ps_3303_16_14",
+      "source_parameter_sha256": "009623f1960ae3addbc5991dd435f49f8b11e3af10a1ff09f6a2e5c7b9c3b830",
+      "nomal_rate_literal": "1.0",
+      "special_rate_literal": "1.5",
+      "pool_flg_literal": null,
+      "pool_cost_literal": null,
+      "special_pet_field_exists": true,
+      "special_pet_empty_if_exists": true,
+      "derived_under_pinned_c_only": {
+        "work_normal_rate_milli": 1000,
+        "work_special_rate_milli": 1500,
+        "pool_flg": 0,
+        "configured_pool_cost_consumed_by_this_source": false
+      }
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 69,
+      "create_block_sha256": "d1ed73336a8181c5b162ff9051bd81cd47984937c434c8f76121048b18b67775",
+      "floorid": 3403,
+      "graphicname": 16033,
+      "source_parameter_path": "genout/ps_3403_18_18",
+      "source_parameter_sha256": "d78288914ddca095c83875b3e03ec9cfbf4d736b82a28ff9a6aa6e0a2f14c651",
+      "nomal_rate_literal": "1.0",
+      "special_rate_literal": "1.5",
+      "pool_flg_literal": null,
+      "pool_cost_literal": null,
+      "special_pet_field_exists": true,
+      "special_pet_empty_if_exists": true,
+      "derived_under_pinned_c_only": {
+        "work_normal_rate_milli": 1000,
+        "work_special_rate_milli": 1500,
+        "pool_flg": 0,
+        "configured_pool_cost_consumed_by_this_source": false
+      }
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 82,
+      "create_block_sha256": "faa0fddcd97819393bcaec3eba1c4173d5ef36cdde3758b79d23cffb094be1bd",
+      "floorid": 4003,
+      "graphicname": 16038,
+      "source_parameter_path": "genout/ps_4003_13_13",
+      "source_parameter_sha256": "82cfd710b0b84066c66c141a90e46c899119ae0e1b15814b3a85f1d33601c85f",
+      "nomal_rate_literal": "1.0",
+      "special_rate_literal": "1.5",
+      "pool_flg_literal": "1",
+      "pool_cost_literal": "200",
+      "special_pet_field_exists": true,
+      "special_pet_empty_if_exists": true,
+      "derived_under_pinned_c_only": {
+        "work_normal_rate_milli": 1000,
+        "work_special_rate_milli": 1500,
+        "pool_flg": 1,
+        "configured_pool_cost_consumed_by_this_source": false
+      }
+    },
+    {
+      "create_path": "genout/shop_m3.create",
+      "create_ordinal": 3,
+      "create_block_sha256": "61d250625860b93196a59c6f82f0913c48edb71da6cab9dc38e8e541fee05c77",
+      "floorid": 5003,
+      "graphicname": 16027,
+      "source_parameter_path": "genout/ps_5003_21_13",
+      "source_parameter_sha256": "75022fef15acf280d49e03c6c96144f40a5ccc0b24506ab1aafc20dfb4e75c5d",
+      "nomal_rate_literal": "0.6",
+      "special_rate_literal": "1.5",
+      "pool_flg_literal": null,
+      "pool_cost_literal": null,
+      "special_pet_field_exists": true,
+      "special_pet_empty_if_exists": true,
+      "derived_under_pinned_c_only": {
+        "work_normal_rate_milli": 600,
+        "work_special_rate_milli": 1500,
+        "pool_flg": 0,
+        "configured_pool_cost_consumed_by_this_source": false
+      }
+    },
+    {
+      "create_path": "genout/shop_m3.create",
+      "create_ordinal": 17,
+      "create_block_sha256": "d78cf1f67b078bc76dbc5da0720e9f5aa88672314923e9efc6ed969c280f69ec",
+      "floorid": 5103,
+      "graphicname": 16019,
+      "source_parameter_path": "genout/ps_5103_13_12",
+      "source_parameter_sha256": "62a7f817f0a6fd254db4b0c5b9d8a883d7a9b4459a3367940ed5541cc9e8116b",
+      "nomal_rate_literal": "0.6",
+      "special_rate_literal": "1.5",
+      "pool_flg_literal": null,
+      "pool_cost_literal": null,
+      "special_pet_field_exists": true,
+      "special_pet_empty_if_exists": true,
+      "derived_under_pinned_c_only": {
+        "work_normal_rate_milli": 600,
+        "work_special_rate_milli": 1500,
+        "pool_flg": 0,
+        "configured_pool_cost_consumed_by_this_source": false
+      }
+    },
+    {
+      "create_path": "my/zhuansheng/zhuans.create",
+      "create_ordinal": 5,
+      "create_block_sha256": "ddb57dfa755e8eef2c68ae422205946dc3aa47dd013ff00c0b226967036c60ca",
+      "floorid": 32021,
+      "graphicname": 16139,
+      "source_parameter_path": "my/zhuansheng/jifang.arg",
+      "source_parameter_sha256": "e811594a2ed9215d3e68ec5f246ef573ddbfd3cff13c98eac23884fb24653908",
+      "nomal_rate_literal": "1.0",
+      "special_rate_literal": "1.5",
+      "pool_flg_literal": "1",
+      "pool_cost_literal": "2000",
+      "special_pet_field_exists": true,
+      "special_pet_empty_if_exists": true,
+      "derived_under_pinned_c_only": {
+        "work_normal_rate_milli": 1000,
+        "work_special_rate_milli": 1500,
+        "pool_flg": 1,
+        "configured_pool_cost_consumed_by_this_source": false
+      }
+    }
+  ],
+  "summary": {
+    "selected_CREATE": 16,
+    "normal_rate_literal_counts": {
+      "1.0": 13,
+      "0.6": 2,
+      "0.7": 1
+    },
+    "special_rate_literal_counts": {
+      "1.5": 14,
+      "MISSING": 2
+    },
+    "poolflag_enabled_configs": 6,
+    "poolflag_missing_configs": 10,
+    "configured_pool_cost_counts": {
+      "200": 5,
+      "2000": 1,
+      "MISSING": 10
+    },
+    "special_pet_field_empty": 14,
+    "special_pet_missing": 2,
+    "actual_historical_price_calculated": 0
+  },
+  "evidence_boundaries": {
+    "same_build_match_proven": false,
+    "original_early_TW10_JSS1999_CN182_rule_proven": false,
+    "pinned_C_compilation_macros_proven": false,
+    "original_game_or_commercial_server_executed": false,
+    "source_code_static_observation_not_business_success": true,
+    "source_code_order_risk_not_claimed_as_observed_crash_or_payout_bug": true,
+    "missing_config_not_evidence_of_zero": true,
+    "source_rate_not_evidence_of_actual_trade": true,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "WORLD30 / choose an original-material gameplay semantic with same-carrier executable or exact source; do not turn static cross-carrier C into official runtime"
+}

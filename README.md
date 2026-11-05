@@ -1894,3 +1894,8 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 ## 2026-11-05 — WORLD28：原版任务统一私人原文入口
 
 [WORLD28 已保存原脚本的统一入口与证据界限](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-28-UNIFIED-QUEST-HUB-20261105.md) 由已验7份私人任务原文阅读器原字节拼成一份离线可查目录：原脚本、条件传送、钓竿制作交付、领宠、石币、物品转移、交宠；另独立列五项有日期/主题证据的运营活动。12档原资料按本体／永久／运营／起源未明四档明确隔离，社区混合2.5原源仍属起源未明，未证初代官方同部署。复用 WORLD14 的道具2432 与 WORLD21 静态条件/领宠333关联，保留 WORLD27 selector 与 GetPet 实例不同命名空间。原文和原图私人保存，Git只放[数字/SHA来源表](research/recovered/STONEAGE-STAGE-A-WORLD28-UNIFIED-QUEST-HUB-R1.json)、测试和连续性记录；Chromium 用同一HTML字节完成12卡/7原阅读页无外网检查，但没有原生游戏运行，无法测试本环境 file:// 导航。历史CURRENT原blob不变。**下一步：** 从当前已得资料中选择下一项真正可补原游戏行为的机制模块内容，证据不足才按原版别记录缺环；不扩任务执行器、账号服务器、新作或体验优化。Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、整体进度未知。
+
+
+## 2026-11-05 — WORLD29：原宠物店收费、卖宠与骑乘限制的分版源码恢复
+
+从私人社区mixed25原NPC子树实际重读16个由CREATE直接引用的宠物商店原参数，再以独立的后期社区C源码固定提交审查售价与寄放规则，**不是已证明同部署或台湾1.0／大陆1.82原生运行**。C参考分支读取 `nomal_rate`／`special_rate` 乘1000，缺省1000／1200；`pool_flg==1`门控寄放；源码中`pool_cost`读取已注释，寄放走 `50 + 4×人物等级` 动态字面，而16份原配置却有5项200、一项2000，**矛盾保留，绝不宣称实际交易费率**。原代码还区分卖宠、店内寄放与可选宠物仓库，并拒售正在骑乘的宠物；静态释放后成本再计算的潜在问题列OPEN。完整来源/默认值/负例见 [WORLD29增量记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-29-PETSHOP-CROSSSOURCE-20261105.md) 和 [公开原源SHA及程序分支索引](research/recovered/STONEAGE-STAGE-A-WORLD29-PETSHOP-STATIC-CODE-BOUNDARY-R1.json)。不再展开原旧网游基础设施、引擎或体验优化；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总进度未知。
