@@ -1,0 +1,24 @@
+name: Verify Stage A WORLD17 map BGM source
+on:
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-1[27]-*'
+      - 'research/recovered/STONEAGE-TW10-AUDIO-DATASET-R1.txt'
+      - 'tests/test_stoneage_stage_a_world17_map_bgm.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world17.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-1[27]-*'
+      - 'research/recovered/STONEAGE-TW10-AUDIO-DATASET-R1.txt'
+      - 'tests/test_stoneage_stage_a_world17_map_bgm.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world17.yml'
+jobs:
+  public-source-joins:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_stage_a_world17_map_bgm.py' -v
