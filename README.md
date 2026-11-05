@@ -1797,3 +1797,8 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 ## 2026-11-05 — WORLD15：三村野外出口与加加伐木原表
 
 [WORLD15](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-15-VILLAGE-EXIT-ENCOUNTERS-20261105.md) 从保存的社区混合 2.5 原档实取七件配置，核对地图 100/200 的 22 个出口落点与 6 个覆盖遇敌区。加加 10 个点均覆盖 87/88 两区。87 引用的组 799 在两份组表均缺失。88 的组 414 串起採伐許可證 2478、敌方变体 563／模板「木」531 及掉落槽「良質的木材」2468。权重、重叠区选择与实际发放仍待原运行验证。[公开源收据](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-15-VILLAGE-EXIT-ENCOUNTER-SOURCE-R1.json)。**Next WORLD16** 查同一载体是否保存木材回交和许可回收的确切原字段。
+
+
+## 2026-11-05 — WORLD16：加加赛尚的原伐木回交
+
+[WORLD16](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-16-JAJA-LOGGING-RETURN-20261105.md) 从同包原 CREATE、模板和完整脚本确认赛尚在加加 3000／(114,69)。17 条原记录覆盖推荐书换证、无证提示、有证无木及 14 档木材回交。14 份写 20,000 石币和「杉的手環」，12 份删除字段省去推荐书，原运行与官方版别待证。[逐段派生收据](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-16-JAJA-LOGGING-RETURN-SOURCE-R1.json)。**Next WORLD17** 轮换到可核实的同源场景音频。
