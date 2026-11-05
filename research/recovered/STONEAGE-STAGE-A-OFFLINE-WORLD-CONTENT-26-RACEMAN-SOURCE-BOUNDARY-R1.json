@@ -1,0 +1,563 @@
+{
+  "schema": "stoneage.world26.raceman_source_boundary.r1",
+  "source_scope": "PRESERVED_COMMUNITY_MIXED25_NOT_AUTHENTICATED_OFFICIAL_OR_MATCHING_DEPLOYMENT",
+  "compiled_server": {
+    "bytes": 1897867,
+    "sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00",
+    "base": 4194304,
+    "COFF_symbols": {
+      "_functionSet": 5741120,
+      "_NPC_searchFunctionSet": 4762144,
+      "_NPC_copyFunctionSetToChar": 4762224
+    },
+    "table_immediate": {
+      "va": 4762155,
+      "value": 5741120,
+      "source_instruction_sha256": "37e118611a7dfcfdc5230422687a26ef8f52e57263f38dde7849543def9db734"
+    },
+    "lookup_count": 60,
+    "record_stride": 68,
+    "last_inclusive_index": 59,
+    "comparison_call": {
+      "va": 4762183,
+      "target_va": 5615680,
+      "instruction_sha256": "5238b08f165dff1e6e52a1865618b25e42817884ee8c3016b887a3203dd6eb8f",
+      "nm_target": "_strcasecmp"
+    },
+    "lookup_code_window": {
+      "first_VA": 4762144,
+      "end_VA_exclusive": 4762215,
+      "sha256": "1e957d05c04eb3b02b0b754795db08c93add9a326aa23967784d37b5af3356d9"
+    },
+    "lookup_names": [
+      [
+        0,
+        5874368,
+        "Sample",
+        "c08c073e2531efd4c55d8ef80de23a3555ac4262c8c5cd0b65f15242fb523e7b",
+        "3f78becc956dc12451c951a0ab87325c657f2c3aac3bedb4388710d8d6d30091"
+      ],
+      [
+        1,
+        5874399,
+        "Door",
+        "af5dd1c15c2027386251e1bca18482517855b8ccf548fc202c6d9f67927b0b7b",
+        "ab943988c9c12457c7dbb6f14a2db76a60ea98836f9e044e041e4955b9e9ab68"
+      ],
+      [
+        2,
+        5874466,
+        "SimpleShop",
+        "009f4b65375cf7488f6d33c188bd1d7cdf66074c1eac1894f4f9248cad0956fb",
+        "3c48b75757fa0b66582bedb3d37a46040a8f12f64f70438525425349de394b4e"
+      ],
+      [
+        3,
+        5874533,
+        "Msg",
+        "1757843fde3876e604ef6ccfae25d03d74ee23dafc14a0f10cc5f9025d17c86b",
+        "64800da7b50e450788fbc35d020bd7f05a75885de9853fe602f09a34d8a9fd67"
+      ],
+      [
+        4,
+        5874555,
+        "Warp",
+        "1ac550c3cce5f2ac3430271ebaa8f80424223057eab5a5eff3f9c0b1211f3014",
+        "abd0d048a8c3a4991a503fe4eec724c3dea51c5e036d8edaa3f65bbb63d29227"
+      ],
+      [
+        5,
+        5874569,
+        "TownPeople",
+        "73a0b1934ea206604296e6ff3f03e9992fe35c7a4c17398432b44ecfce798d1a",
+        "3d1040245310e1ced51fe6c1092f9f7d1fd660de916dbed0fe70d6931697b3a7"
+      ],
+      [
+        6,
+        5874612,
+        "Oldman",
+        "6167ce54d48603fe7377f9a7d285ce1a4cc774e8a5c58ca95efb565c68c1cdaf",
+        "002292ab42406fe98fbc642781dc912d2b5f27a4c14a08c35069e5ac52ad372a"
+      ],
+      [
+        7,
+        5874643,
+        "SavePoint",
+        "7cdd14a1437668a0d9dee2647fd19c23225bb022809c9a8b99e321fccc1ef625",
+        "6c8b4ba02974c044a4466dc310cad12e54c824b26d3843c727662b6a5a91d4c0"
+      ],
+      [
+        8,
+        5874705,
+        "Healer",
+        "c02071a3057a0993a617528187a8544425b29da866e263a6e355e59f950b819f",
+        "c3c27c8374d9583d432639d5565c3f77bfdd5caeed1b826e7c59eabe217cf064"
+      ],
+      [
+        9,
+        5874736,
+        "FmHealer",
+        "b9b0d1847b44bc8f938274198bf932db51c8c49b132bcdc584b34a9b914c36eb",
+        "f59accffc03039fccce6abbdd1b9b77000b194d1512d9132605f7a3a72dd4951"
+      ],
+      [
+        10,
+        5874773,
+        "PetMaker",
+        "74452c441192d44a64fcdc5923117f0ec4e5a64d6a671201deacdd5f9da2e604",
+        "be1c178f7a041601102cddd2328b090a7d747d01c25c258370b7982f9e47ebe1"
+      ],
+      [
+        11,
+        5874810,
+        "StoryTeller",
+        "4fa49f4ad9d9061b686b04d8420231a1e821fe7bc98c909298951f8d6de90454",
+        "de6b6fa80b77b34a305643f6761aea136dcc8a9b002f104c932ecc8622288a9d"
+      ],
+      [
+        12,
+        5874856,
+        "RoomAdminNew",
+        "3b50aaf0a46d5fa2e867bd43fe2442fd5fdb30619cdd19ef5dffd023b6f031ff",
+        "3aecae089f618317e5d5cbd8a1f6e395269c5757b37aae01607c76fad0e11981"
+      ],
+      [
+        13,
+        5874922,
+        "Dengon",
+        "5f8d653fbfca5c7c523c865b5e22641e7fd625eb1707b692b7cd2196709d1a00",
+        "8f52b51d6ad539b50ff086d9ac14a0e962ecb6c900730181226571c53b64adc4"
+      ],
+      [
+        14,
+        5874972,
+        "FmDengon",
+        "317698f607d7a1a275e5de5d1d1c18e225323025c3bfdc692cbc80acbe43ccaa",
+        "be8007141c5b6ac0a621a94ab2899d7a37c4e978be42a9e34caafefe95a9c115"
+      ],
+      [
+        15,
+        5875030,
+        "ItemCompo",
+        "9beb1ade234ef43db4a842e053469499ec1de87627e7fbd23e9abae86b5f7f72",
+        "1b4e4c60aaf5b1c5604ef8a6e3c8af512cfa17095891b2a0623442e43298ad07"
+      ],
+      [
+        16,
+        5875070,
+        "NPCEnemy",
+        "5505519b8935814980f0bef525bedde08062d82db58350f9bda77ba033543b2c",
+        "b2b1c1ce968784d8ad7233c33326d05561820e6b8e53fb31afcfd640c9aa5cb4"
+      ],
+      [
+        17,
+        5875142,
+        "Action",
+        "385e03247dd0e10255ffc920a475a16e491a94c2c046176a0cd017af9e5e07aa",
+        "c0b7c895e59a4d4be7daca898c9ccbd97fe8979a00b5607f3e24e271489883b1"
+      ],
+      [
+        18,
+        5875185,
+        "Windowman",
+        "0632b5c385ee4d2e46ac4a5a1b6c5ca4b84f2faf7012b8d6b898fd761e77264b",
+        "94cfd33aa8b42e1b8b2200615752ff93dc72b50d15090856ff4044daeeabca2e"
+      ],
+      [
+        19,
+        5875263,
+        "WindowHealer",
+        "fbbc7d31b711a3be263231836adb19a322fbfa5f159e90a84a3672b455a1cda3",
+        "dcddcca41277a4f97a7548fc8424e00dc671d37c56b9016d31434041e27d9388"
+      ],
+      [
+        20,
+        5875356,
+        "ItemShop",
+        "a7b65ed23588a68a5b730194dcc657350010d40d251d4b9adb2f7a624e7f0806",
+        "ece5d39e972d19f47a9cc55a85dbd552309ef8bebcf0bf8b7bcaad955fac3ac0"
+      ],
+      [
+        21,
+        5875414,
+        "Sysinfo",
+        "f44e3184dbdac1d6dc838c8dbda5ff236249cadf48bb32d51096851329391e0f",
+        "809318a920fa948bfdca4eaba547a468d92fc0237bb70c81419543b1b09257cc"
+      ],
+      [
+        22,
+        5875460,
+        "Duelranking",
+        "90118c9524837d9514b82734c4f84214f6d22ac25193b4e67699950de2af175a",
+        "8ddc8aade3e68e7c99effb6beb6f0a909d8f9b8cd8c4222cf18577401821e753"
+      ],
+      [
+        23,
+        5875530,
+        "PetSkillShop",
+        "f7ead0e5ad248297fa11ed977184a66f8b3af233a88aab3c6b894a6474991420",
+        "47749e050dd2fbe6b87df3ca0bceb93df43eea72fe29205e9c0b0a7dbb5e5f4a"
+      ],
+      [
+        24,
+        5875604,
+        "PetShop",
+        "b73a9d4a564e68f540251cc4734a19bf74c5267694b56cedc283f426ff723b7c",
+        "7c5d3ae04a1a04ca5141c3f9bd03f0f74f2cc5418c8bb83f2bb195b1c61ae725"
+      ],
+      [
+        25,
+        5875658,
+        "SignBoard",
+        "16b5770b9bb9aa44c080572d48b47da1f898c5c217c0bc083744adfc427f6100",
+        "284c2b1aa012a136b36dfbf3a2e3b785453b97bc5222e3ca38735fb74ffa4631"
+      ],
+      [
+        26,
+        5875720,
+        "WarpMan",
+        "00d68e3803da19a802255becfa342c0b8d56f2cecdfefa27a3f351c9fffb2b22",
+        "3889a1dff95825635b7e761bb6f84dfc68a47ddce0e0703507a7d6a954f64c89"
+      ],
+      [
+        27,
+        5875799,
+        "ExChangeMan",
+        "6edc83a26b4b1bcd5e88c24d06d63364e7f7ebfe00a6923f8169b1107bda06c1",
+        "ddafca2e53bcdd892384b53019eb8280135e8b4a56902416318ef0b5ac608319"
+      ],
+      [
+        28,
+        5875869,
+        "TimeMan",
+        "4e6b537d29311b3fbc482fc43e0ef22d9bb90a10c4cf3346e216d4b0fcbb6e8e",
+        "3033802b6a0b18067ce3111a1a887912de6a8f9e933aa261b3ad9791db4637e1"
+      ],
+      [
+        29,
+        5875916,
+        "BodyLan",
+        "678f67538c2e7e5716707abcd7d00591c369fb28b6feec1698ff8397d4001842",
+        "7eeca40827c183171d21899740dcfef30dc49c627b94b7855d2e4a9a8d495ea2"
+      ],
+      [
+        30,
+        5875983,
+        "Mic",
+        "a03791e9fc3e15e0bb5e8a946f2c48b51c98158a9e68172d623d6ac3183d7b75",
+        "d39cd006a93ed01732d4eeff36cb147209350452df5861e36380aa16d0bc30dd"
+      ],
+      [
+        31,
+        5876005,
+        "LuckyMan",
+        "70f1a03ac73fa5ad1fea27c18476ec0978ff80413a4e0c50e335b41efd077f60",
+        "6255684209c30a96877a89f6f5f3feb1bfe0ff6cb652a06a7125adab4e77fa49"
+      ],
+      [
+        32,
+        5876063,
+        "Bus",
+        "06f628f4d27350cda724e97082dfa301097c3c6dcb1e43ae19206f3395efa7b2",
+        "6ca08e0fd20b099ae590beac4520e008726a95de5cb0326ec355112132a768ab"
+      ],
+      [
+        33,
+        5876093,
+        "Airplane",
+        "40f839f54863464d91629fc009252110752290094da28be57dc7b1adf8ae16a2",
+        "a0867f84c472555915c3706df9934b79cfda8bb65ab0c807707ebaef7e9aa61e"
+      ],
+      [
+        34,
+        5876128,
+        "Charm",
+        "5a078130f26e1932c7072e3901049383444b0d30d835544c0f2284c822560a7b",
+        "fea7a3bc1ef515c4891788b1c6566441e003328e40ecc6a8240552db4ca8fcd8"
+      ],
+      [
+        35,
+        5876174,
+        "Quiz",
+        "b6cc5e9610bc0a488eb42266dcd848c04b0ebcb3057d8f61a376da4b08eee3da",
+        "345b64e5fc00fbec1b6d207e94a33681888e84dd7799a66cfa2ed2ca8f169e4d"
+      ],
+      [
+        36,
+        5876216,
+        "PoolItemShop",
+        "180915970aa4fa0617e5574afd004e5a8a7e74fca625ff0dc88106aa81a565b1",
+        "a439127cd001a091b14570a0076464fd806c1d7dc598510dfc22b761c228d5c7"
+      ],
+      [
+        37,
+        5876307,
+        "CheckMan",
+        "142b6416bbf8c1504871ac7e66a3d4464af6f5c206e71dcb1342218bc44f5a34",
+        "c14ecd5d12eb77a7340bd86a46c27c083455735aa8afa43b3cdf5aecff824b02"
+      ],
+      [
+        38,
+        5876365,
+        "Janken",
+        "f02b5a6a173c7c77fa2e905321b227f7a6173a82426d602c6281b7acb2b1cbe9",
+        "79324ce348263ad0f24877dcdc4bdc23ccacd45103a154d5b7a750f47c67c656"
+      ],
+      [
+        39,
+        5876415,
+        "Transmigration",
+        "0e7e83f63037c19caac772e4c2ceb64861dbc3259c5bf6edfbb5ac75b0049dd0",
+        "110fa7a9d26772dbacbbdc729a6a8c2c6c2f6a646e6ff186826ff4b1e4cd3d39"
+      ],
+      [
+        40,
+        5876497,
+        "Familyman",
+        "392de9b01efa2d3cae4de43303087210b27917f7742cb58c5929fad7c39f0af7",
+        "6aa87c876c6e073d66955fcee74308a1b3cf60bc215b426f2d1843506ba5f179"
+      ],
+      [
+        41,
+        5876575,
+        "FMWarpMan",
+        "3c05ac2f9af1da1ee4d6701f35f0e3776b44e491965e0816b3bf205963170e23",
+        "cead1d52e187d3a3f2e491a64afd50bc33c85f263a5274cac5fb359edaedbbdd"
+      ],
+      [
+        42,
+        5876651,
+        "FMPKMan",
+        "73ec241397a0ac0b1ee4fbfb983788ca99a109fddd934e2977c94206263955d2",
+        "c382908eefb0629c73296eee5af736904e59e13dcad45093d881478d961c5a1a"
+      ],
+      [
+        43,
+        5876705,
+        "FMPKCallMan",
+        "6848cd4b05513ca01c2d9d3d7a651442f4d45cd5c25d4f0f2d3fe1ba305dc753",
+        "1d4285c50b4a3d06fd95bc206df5f32a41aa7ec57041913f7e2c97c897f8034f"
+      ],
+      [
+        44,
+        5876775,
+        "Bankman",
+        "45a336fe12cdc6cccdb908b77b79a9fc1ec614724f374305c6ed65715175f11c",
+        "02209ac619dda4e6ad1633875dacbfbefbb1ab14f52a1c16823bc7b88cdf116c"
+      ],
+      [
+        45,
+        5876843,
+        "Scheduleman",
+        "a80a3d415d944bea2d4255fb04d566001ce276f2a9e0613bd3962f169ed7e065",
+        "ad921a58b4b137d011cdb7e48c448aaf2f922d8741d2b6be4ad10af725bb2257"
+      ],
+      [
+        46,
+        5876929,
+        "ManorSman",
+        "38683e38295149e52c39642ea2f66955d7b0b58c552021867a6b1307623772ef",
+        "a3cb3121e4ab3976ce5aa626df0d00f82a776f455c20448d1ba72ef3b3a7357e"
+      ],
+      [
+        47,
+        5877005,
+        "Riderman",
+        "cc43896fb61b34e8543a9c23c974013d4983b9c20f8d0feda2b7092810d1b145",
+        "b40fb92e31899506126fbd7ca922223c15fc1a7b15e86506b9c5311a1bed57c6"
+      ],
+      [
+        48,
+        5877078,
+        "FmLetter",
+        "4874099e5ae4348b539438ce24e080dd66ce9e6ea4286da06c4f54b89afef904",
+        "2e6f49e7f346ee0d2a5be0165c9dd54aedf622a436bc57e3aac051f355c5036c"
+      ],
+      [
+        49,
+        5877151,
+        "NPC_GambleBank",
+        "68a2566b536a8abef790d503a73d75cccbad99f49147e7e2425a4ac674c0919a",
+        "015f71947b19fb637c4d35356ee8dcaaa9c2edff1c0d08bc74bd49ad9a5f7612"
+      ],
+      [
+        50,
+        5877236,
+        "NPC_GambleRoulette",
+        "522409369d513266ad9a8777ee443bbc11336f107ec3fde5a98e4fb1ae5b3938",
+        "5c2a01ca0acd765eb785d4f5ba8a56e888c9779dfcee08478593512db6ee5908"
+      ],
+      [
+        51,
+        5877341,
+        "NPC_GambleMaster",
+        "314e79f8441b244df9e33af29f91bc20083f0d0efb9435e9dac1a041db5eb9ef",
+        "5a007dcaee09a720fc40ef5a4521f6980da290adf3ceba16e91c34a57d5e9f11"
+      ],
+      [
+        52,
+        5877436,
+        "TranserMan",
+        "38c991a704e58bb4b354e06932a03b183c714a4f481a08a84966e10e68138556",
+        "1d4a4009725de4bba9f428c48b681609875f69396aec8678fb81e572883b0b01"
+      ],
+      [
+        53,
+        5877517,
+        "AutoPk",
+        "277c0eaa8f5d62a85fd522e62c40ce92a9804e71be1ec3d44201435c4c2fa833",
+        "bc163eeb2650bb10195f8e4ee1ffce2a88776bee2ef95d735b3d7245a996e60b"
+      ],
+      [
+        54,
+        5877567,
+        "ItemchangeMan",
+        "b9a4d452e4083e25696db38284dd275218c08891fd63efc6651b42bc8f33f2f9",
+        "6e19336e8c9092538ac43e93e8a8504244146dcbed2604141613e5fc883c4c97"
+      ],
+      [
+        55,
+        5877663,
+        "NPC_FreePetSkill",
+        "c612dd93bde05f9064c944fa5029c8a66bcaab28be3915c1b503ddf661316f76",
+        "cf009f53ed45879a361d41bf88cf94f1dc114e04ee9f228a3540eb134daae5a6"
+      ],
+      [
+        56,
+        5877741,
+        "PetRaceMaster",
+        "180655699bf45e3bd974c560809fe65ca3234f5846ae3aa7c4bae6e798bf6139",
+        "8d2d990745745edb5509c1c4293177e77f8e6751a6f079280e0e3540fdb74c26"
+      ],
+      [
+        57,
+        5877837,
+        "PetRacePet",
+        "03ae1c9e0ca10eacb291552687622f834db83eb4c8ca5b2e1b740a3d2099450f",
+        "f571a796e2791f21ae3cb71ec3fe8924da25df6492029208388623651ebd3f2c"
+      ],
+      [
+        58,
+        5877895,
+        "NPC_NewNpcMan",
+        "c173f2a5e8e3fdab10b4783537c4a495d3e7f688969a64ed456bff2cb8170b66",
+        "3e093ccba942747685b0b1aa4343cc3305fca5889b9bfb5a62d333dc4ff6e6bd"
+      ],
+      [
+        59,
+        5877975,
+        "Alldoman",
+        "625ebdb89a980e284377d46f851a9d97d80edc8a12a03040c3b8fc7d5d2b819e",
+        "fcff7bf651e14f65a8a84928ec17c09eb64d9f6c97052b8d44a014a88e37f327"
+      ]
+    ],
+    "Raceman_case_insensitive_table_matches": [],
+    "Raceman_case_insensitive_whole_image_substring_count": 0,
+    "static_failed_lookup_return": -1,
+    "original_program_executed": false
+  },
+  "input_git_blobs": {
+    "STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-23-NPC-ITEM-TRANSFERS-R1.json": "6b31accf02b95c63faa88a6055d99a78341eb099",
+    "STONEAGE-O88-FAMILY-PET-HUNT-DATED-EVENT-R1.json": "8424f7e4e15965297b03b1b6d5e713d1db826168",
+    "STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-01-R1.json": "d39ef58c88f1326d227b2844ca06ed5e23e2965a",
+    "STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-02-R1.json": "b91bc8335db508998f4595144ce371979ea8c849",
+    "STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-03-R1.json": "c0a77b9f1266316a95c108cd1bbdd31f41289613",
+    "STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-04-R1.json": "14c7816054375863c91e474b58d2202f76e821c5",
+    "STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-05-R1.json": "361dfc5f626a5f2683dd7a5ca224f2854caf5d7c",
+    "STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-06-R1.json": "314f85e9a1969b79f50c935aeb4216348b6744a3",
+    "STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-07-R1.json": "dbb958e77aed796faf86570c7523d3f0dc5748fd"
+  },
+  "all_2205_NPC_members_SHA_size_CRC_reverified": true,
+  "parent_RAR_reread": false,
+  "original_three_source_files": [
+    {
+      "path": "race2/second.arg",
+      "bytes": 903,
+      "sha256": "c72aad68acb737029635b07ef52c3b558d6ee12ea8a58d34b240d20525c3bb6e",
+      "crc32": "2568c3cf"
+    },
+    {
+      "path": "race2/second.create",
+      "bytes": 163,
+      "sha256": "7817ae66804862cd72150d718da34b06f8b04e11f9c2c857a95adfa6759418ec",
+      "crc32": "bc8bdc1a"
+    },
+    {
+      "path": "race2/second.template",
+      "bytes": 117,
+      "sha256": "b6757dbf874fde4a21a2f925faea8d430dfaa8a65c7ff6f700df295d81af277d",
+      "crc32": "4aafc90d"
+    }
+  ],
+  "exact_original_CREATE_refs": [
+    [
+      "race2/second.create",
+      0,
+      "720d274b161245891da85ecf5d03d482a21a1ec4b8ff16f50d9c80e2e5fa95a0",
+      3206,
+      16171,
+      [
+        15,
+        19,
+        15,
+        19
+      ],
+      null,
+      [
+        [
+          "race2/second.template",
+          0
+        ]
+      ],
+      [
+        "Raceman"
+      ]
+    ]
+  ],
+  "source_parameter_path": "race2/second.arg",
+  "source_item_fields": [
+    {
+      "line": 20,
+      "key": "CheckItem",
+      "raw_literal": "20760",
+      "line_sha256": "d864efe1cf9cfe220c0050b6ef8e68641f466018516308e6c8440e1bb3395804"
+    },
+    {
+      "line": 21,
+      "key": "GetItem",
+      "raw_literal": "20760",
+      "line_sha256": "8dbdd8cbb6b0cba008e0c4d6a8a99f587c4b7347a0003e63156c85d8bac86d27"
+    }
+  ],
+  "item01_source_join": [
+    20760,
+    null,
+    "8dafc883a5f4d226501e398a4ab2a51372d9ad3a535514b4abffc8729dbd3da7",
+    null,
+    24363,
+    "0",
+    "16",
+    "0",
+    null,
+    "TW1_INDEX_NOT_FOUND",
+    null
+  ],
+  "conclusion": "RACEMAN_HANDLER_NOT_IN_THIS_COMPILED_NAME_LOOKUP_GETITEM_ROLE_OPEN",
+  "different_registered_functions_not_substitutes": [
+    "PetRaceMaster",
+    "PetRacePet"
+  ],
+  "event_classification": "DATED_EVENT_CONFIG_ALREADY_RECORDED_BY_O88_AND_QUEST04_NOT_NEW_EVENT_DISCOVERY",
+  "WORLD23_raw_numeric_index_preserved": true,
+  "limits": {
+    "GetItem_grant_or_consumption_proven": false,
+    "event_live_deployment_proven": false,
+    "all_versions_missing_20760": false,
+    "matching_handler_source_acquired": false,
+    "official_TW1_JSS1999_CN182_rule_proven": false,
+    "overall_percent": null
+  },
+  "reopen_only_with": "Provenance-qualified matching Raceman handler/build or native trace for these exact parameters",
+  "next": "WORLD27: source-batch pet-handover quest branches, conditions and rewards; leave compiled item-field helper chain"
+}
