@@ -49,3 +49,7 @@
 本地**39/39测试通过，无skip**；其中10项新增，覆盖同原EXE身份、22份来源、GetItem非奖励用途、读取器调用链、7份截断原文、14份未截断、缺字段与NOITEM区别、ASCII/容量反例及运行/官方版本否定门槛。复用现有WORLD09→WORLD23验收工作流，加入本包；CI只核公开派生和既定独立后期C，不能代替私人EXE重新读取。候选/主线CI后验另据实际追加。
 
 **最高NEXT WORLD25：** 有限核同一保存版Quiz的物品字段用途及实际原参数，优先现成完整编译程序的命名函数与4条GetItem来源；缺精确控制关系就明确止点，不从SavePoint语义回填Quiz、不扩答题整引擎或账号网服。保持Stage A **7 PARTIAL + 2 OPEN**、Stage B/wiki **GATED**、R79 **PAUSED_NON_BLOCKING**、整体百分比未知。当前保存版原存点真实执行、初版官方规则及全游戏可玩性仍未认证。
+
+## 实际远端终验（成功后追加）
+
+候选 `ee87e645328a783bdc5dab767abe593ffbd6b80e` 的13项Actions全部实际success；PR #203合并为内容主线 `4ebb9ccf571b6aad117d9613bf2bf18ffde9b4e4`，主线11项Actions全部实际success。两者完整tree同为 `3149b7ba7a11e885397b9182fac172b43b434dec`，六个上传Git blob逐一与本地一致。候选专用run42027804115/job127246285591和主线专用run42027909055真实日志均确认39项全部通过、无skip；公开CI没有读取原EXE/NPC，也没有运行原存点。原CURRENT与WORLD23 Git blob未改，README全部356339B历史前缀保留。[永久终验收据](../../research/recovered/STONEAGE-STAGE-A-WORLD24-PUBLICATION-R1.json)记录全24个运行ID、两专用job、完整来源/调用独立核验和私人交付SHA。收据自身提交不预支Actions；最高NEXT WORLD25与阶段/运行边界不变。

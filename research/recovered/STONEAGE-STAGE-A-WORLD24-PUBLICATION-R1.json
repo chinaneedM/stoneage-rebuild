@@ -1,0 +1,243 @@
+{
+  "schema": "stoneage.world24.publication_receipt.r1",
+  "date": "2026-11-05",
+  "starting_head": "c448e6acfaae8364ab6948867256b4869c4a5629",
+  "starting_tree": "121b75e0033a183799710e0080cbd66b1d986909",
+  "candidate_head": "ee87e645328a783bdc5dab767abe593ffbd6b80e",
+  "candidate_tree": "3149b7ba7a11e885397b9182fac172b43b434dec",
+  "pr": 203,
+  "merged_main": "4ebb9ccf571b6aad117d9613bf2bf18ffde9b4e4",
+  "merged_tree": "3149b7ba7a11e885397b9182fac172b43b434dec",
+  "all_six_uploaded_blobs_match_local": true,
+  "published_blobs": [
+    {
+      "path": ".github/workflows/verify-stoneage-stage-a-offline-world09.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f7ecd29b19e9e2bca41e757e34ecbca806f00bcb"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dfc929829292710384f4be05690b43350d05dd51"
+    },
+    {
+      "path": "tools/stoneage_savepoint_item_source.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7326a52b32c1992a990f03fdf1ffa4b64b16d5ab"
+    },
+    {
+      "path": "tests/test_stoneage_stage_a_world24_savepoint.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a270cab91764a6920964adf856ed1955c5e93733"
+    },
+    {
+      "path": "docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-24-SAVEPOINT-ITEM-ROLE-20261105.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab4352c72e2dd5c75e1d263c49836e97211ff160"
+    },
+    {
+      "path": "research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-24-SAVEPOINT-ITEM-ROLE-R1.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d288f7768b093b90fdbb2fe8e457027892bf83c8"
+    }
+  ],
+  "candidate_workflow_runs": [
+    {
+      "id": 42027803791,
+      "name": "Verify StoneAge O11 native source animation and bounded sound-word candidates",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027803777,
+      "name": "Verify StoneAge O12 original compiled sound-number namespace (derived only)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027804115,
+      "name": "Verify WORLD24 compiled SavePoint item role and original item source indices",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027797391,
+      "name": "Verify original four village interior materials R34",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027797326,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027797666,
+      "name": "Verify original native album table and saved-name joins R36",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027797780,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027797798,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027797434,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027797502,
+      "name": "Verify original same-build named-entity source gate R31",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027797527,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027797546,
+      "name": "Verify original local album name material and no master promotion R35",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027797578,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "merged_main_workflow_runs": [
+    {
+      "id": 42027909202,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027909331,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027909055,
+      "name": "Verify WORLD24 compiled SavePoint item role and original item source indices",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027909000,
+      "name": "Verify original native album table and saved-name joins R36",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027909244,
+      "name": "Verify original local album name material and no master promotion R35",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027909321,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027909220,
+      "name": "Verify original same-build named-entity source gate R31",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027908926,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027909047,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027908905,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42027909092,
+      "name": "Verify original four village interior materials R34",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "candidate_dedicated_job": 127246285591,
+  "main_dedicated_job": 127246648943,
+  "tests_in_each_dedicated_job": 39,
+  "local_tests": 39,
+  "independent_objdump_call_targets": 14,
+  "independent_nm_symbols": 10,
+  "compiled_private_original": {
+    "bytes": 1897867,
+    "sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00",
+    "prior_WORLD18_identity_revalidated": true,
+    "original_program_executed": false,
+    "parent_RAR_redecompressed_this_unit": false
+  },
+  "source_NPC_members_reverified": 2205,
+  "source_NPC_original_bytes": 1930332,
+  "SavePoint_source_rows": 22,
+  "GetItem_source_fields": 21,
+  "copy_payload_ASCII_bytes_max": 127,
+  "source_fields_over_bound": 7,
+  "raw_comma_positions": 209,
+  "conditional_copy_comma_positions_not_validated_options": 161,
+  "public_derived_JSON_sha256": "70ee179837600c8b1de141eb381677cbb7215d911288675a6e8b9f62d4b6ad0b",
+  "preserved_CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "preserved_WORLD23_blob": "6b31accf02b95c63faa88a6055d99a78341eb099",
+  "README_original_prefix_preserved_bytes": 356339,
+  "private_delivery": {
+    "filename": "StoneAge-WORLD24-private-savepoint-item-role.zip",
+    "bytes": 13112,
+    "sha256": "2348f1ccede7efc7575d72b029e23823f3ad328f72f360b68de30359a1838312",
+    "save_succeeded": true,
+    "downloaded_back_after_save": false,
+    "local_ZIP_members_CRC_verified": 3,
+    "HTML_bytes": 23144,
+    "HTML_sha256": "ef9f49fe427792dd123ee4d83536282d00f5352d85fd20c4cc0e8c5c7a8dd5e8",
+    "details_structurally_verified": 22,
+    "browser_executed": false
+  },
+  "public_CI_read_private_EXE_or_NPCs": false,
+  "actual_inventory_or_activation_executed": false,
+  "official_historical_same_deployment_verified": false,
+  "Stage_A": "7_PARTIAL_2_OPEN",
+  "Stage_B_and_wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "WORLD25_BOUNDED_COMPILED_QUIZ_ITEM_ROLE_AND_FOUR_GetItem_SOURCE_FIELDS"
+}
