@@ -1,0 +1,220 @@
+{
+  "schema": "stoneage.stage_a.world28_unified_private_quest_navigation_public_source_receipt.r1",
+  "date": "2026-11-05",
+  "baseline": {
+    "repo": "chinaneedM/stoneage-rebuild",
+    "head": "1292a92e09fc46162f31603969b3609f8514aa33",
+    "tree": "05a35e2bdbe33d52f9c60888a3b46c1a21c639d6",
+    "current_state_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_state_preserved": true
+  },
+  "scope": "STAGE_A_HISTORICAL_RESTORATION_OFFLINE_PRIVATE_INDEX_ONLY",
+  "policy": "docs/QUEST-ORIGIN-TAXONOMY-R1.md",
+  "policy_classes": [
+    "BASE_GAME_QUEST",
+    "PERMANENT_VERSION_QUEST",
+    "OPERATOR_EVENT_QUEST",
+    "ORIGIN_UNRESOLVED"
+  ],
+  "private_delivery": {
+    "name": "StoneAge-WORLD28-private-unified-original-quest-library.zip",
+    "bytes": 323915,
+    "sha256": "7072e9180e46ab56af0f21733d0ae17ab0ca7f899bae1d66f660527c1cacde10",
+    "html_sha256": "ffc673ef97bf7afbfb1814c6c0172402661c03b0268e4e1a0ed00d6d82d73887",
+    "readers_count": 7,
+    "event_archive_cards": 5,
+    "index_cards": 12,
+    "member_count": 10,
+    "zip_members_sha_crc_checked": true,
+    "private_original_text_in_public_repo": false,
+    "library_uploaded_and_reread_verified": false
+  },
+  "original_source_readers": [
+    {
+      "id": "QUEST01",
+      "public_path": "research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json",
+      "public_git_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2",
+      "private_source_zip_sha256": "920e431fd972c58b2f94aba2997ce9415f77d71baf14d6e07fd26914b9729818",
+      "private_reader_html_sha256": "b69d1275ca1596fe4c0e7aab7af61d222996afeb754b2f2246894a996847b15d",
+      "private_reader_relative_path": "readers/quest01.html",
+      "summary": "315 CREATE references, 295 original scripts, 1349 TYPE scopes; not quests",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_role": "MIXED25_COMMUNITY_PRESERVED_UNAUTHENTICATED_OFFICIAL_DEPLOYMENT",
+      "original_game_execution_verified": false
+    },
+    {
+      "id": "QUEST02",
+      "public_path": "research/recovered/STONEAGE-QUEST-STORY-MODULE-02-ORIGINAL-WARPMAN-CONDITION-SOURCE-R1.json",
+      "public_git_blob": "006f47a7aed7a565a643d6bf0d1f477a584d63db",
+      "private_source_zip_sha256": "3e7c80f515452d0430c4eca7d55ee94388b0c0cecc827316e4e4b374d82eea5a",
+      "private_reader_html_sha256": "580953a56dc0d22c364c76172b659487e0837e558eb92400ec54f59863cb7c39",
+      "private_reader_relative_path": "readers/quest02.html",
+      "summary": "188 source input files; WarpMan conditions, not native warps",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_role": "MIXED25_COMMUNITY_PRESERVED_UNAUTHENTICATED_OFFICIAL_DEPLOYMENT",
+      "original_game_execution_verified": false
+    },
+    {
+      "id": "WORLD14",
+      "public_path": "research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-14-ORIGINAL-FISHING-QUEST-SOURCE-REPLAY-R1.json",
+      "public_git_blob": "a8e5ed2779ad008f8ef22961c3f629bdc2b4162a",
+      "private_source_zip_sha256": "08782b29b9f743b8b886a757448298edc46e919786ba99fd85446d01bdd4586b",
+      "private_reader_html_sha256": "d5eb67ff6743602972794cb2b5b7a63619d1c04842fc65da2e5edac79bd7c7fe",
+      "private_reader_relative_path": "readers/world14.html",
+      "summary": "9 craft + 3 handover + 1 MESSAGE; fishing rod IDs 2432–2434, quantity 11872*2",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_role": "MIXED25_COMMUNITY_PRESERVED_UNAUTHENTICATED_OFFICIAL_DEPLOYMENT",
+      "original_game_execution_verified": false
+    },
+    {
+      "id": "WORLD21",
+      "public_path": "research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-21-GETPET-QUEST-BRANCHES-R1.json",
+      "public_git_blob": "f8614b9e90e548efb6d61e269d725d17ea173a74",
+      "private_source_zip_sha256": "3e2524dbeb7b50265e23a50904da862c212d8672e08456a7ef5e6c878b543fa5",
+      "private_reader_html_sha256": "9244244b5f0e4e7e83b1f80f104ce5298ed9b0ac478f8e8b577a475a7040496e",
+      "private_reader_relative_path": "readers/world21.html",
+      "summary": "29 GetPet branch records, 36 instance IDs; distinct from templates and wild encounter refs",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_role": "MIXED25_COMMUNITY_PRESERVED_UNAUTHENTICATED_OFFICIAL_DEPLOYMENT",
+      "original_game_execution_verified": false
+    },
+    {
+      "id": "WORLD22",
+      "public_path": "research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-22-QUEST-CURRENCY-SOURCE-R1.json",
+      "public_git_blob": "bd75399f750990a8cc11cf2909f5dac85d91566b",
+      "private_source_zip_sha256": "230245fe15687ee4d618ef6ee840887b87715b0ad52bcef25919e944094e0baf",
+      "private_reader_html_sha256": "1b359d4efbd3fb280b8a16d61d965ec165596065f98a64c25ef655a68514e2fe",
+      "private_reader_relative_path": "readers/world22.html",
+      "summary": "115 literal currency directives; 99 GetStone and 16 DelStone",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_role": "MIXED25_COMMUNITY_PRESERVED_UNAUTHENTICATED_OFFICIAL_DEPLOYMENT",
+      "original_game_execution_verified": false
+    },
+    {
+      "id": "WORLD23",
+      "public_path": "research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-23-NPC-ITEM-TRANSFERS-R1.json",
+      "public_git_blob": "6b31accf02b95c63faa88a6055d99a78341eb099",
+      "private_source_zip_sha256": "359a2c2cc804e3358022d2593163ac9c03cedc3cc11d6271018b724f8fc66cf6",
+      "private_reader_html_sha256": "63016dcaa055d838b88c280c5dce9e57be09f10aa66365f73cc333f1c457dc67",
+      "private_reader_relative_path": "readers/world23.html",
+      "summary": "1246 physical item fields in 410 files; not 1246 quests",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_role": "MIXED25_COMMUNITY_PRESERVED_UNAUTHENTICATED_OFFICIAL_DEPLOYMENT",
+      "original_game_execution_verified": false
+    },
+    {
+      "id": "WORLD27",
+      "public_path": "research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-27-PET-HANDOVER-QUEST-BRANCHES-R1.json",
+      "public_git_blob": "0a058e859d08c2a3ee72933193e2983cdf7fec4e",
+      "private_source_zip_sha256": "950ed7970fca1c9874c0cbcd9fe04a21c9e077587df69cfe874e6a54d420f535",
+      "private_reader_html_sha256": "c85098807ac8ba21820f4986e4ef894f7ed062df73a24414854ab220d5e8933f",
+      "private_reader_relative_path": "readers/world27.html",
+      "summary": "97 DelPet fields in 17 scripts; 7 EVDEL unexpanded; 15 CREATE refs",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_role": "MIXED25_COMMUNITY_PRESERVED_UNAUTHENTICATED_OFFICIAL_DEPLOYMENT",
+      "original_game_execution_verified": false
+    }
+  ],
+  "independent_operator_event_archive": [
+    {
+      "id": "R110",
+      "region": "JP",
+      "title": "2004 日本圣诞",
+      "origin_class": "OPERATOR_EVENT_QUEST",
+      "record_kind": "EVENT_ACTIVITY_CLAIM",
+      "source": "research/recovered/STONEAGE-QUEST-ORIGIN-SEPARATION-R1.json",
+      "original_server_execution_verified": false
+    },
+    {
+      "id": "R111",
+      "region": "JP",
+      "title": "2009 日本十周年谜题迷宫",
+      "origin_class": "OPERATOR_EVENT_QUEST",
+      "record_kind": "EVENT_QUEST_CLAIM",
+      "source": "research/recovered/STONEAGE-QUEST-ORIGIN-SEPARATION-R1.json",
+      "original_server_execution_verified": false
+    },
+    {
+      "id": "R112",
+      "region": "CN",
+      "title": "2001 大陆情人节GM人工领奖",
+      "origin_class": "OPERATOR_EVENT_QUEST",
+      "record_kind": "EVENT_ACTIVITY_CLAIM_NOT_NPC_QUEST",
+      "source": "research/recovered/STONEAGE-QUEST-ORIGIN-SEPARATION-R1.json",
+      "original_server_execution_verified": false
+    },
+    {
+      "id": "R115",
+      "region": "CN",
+      "title": "2003 大陆中秋后羿嫦娥",
+      "origin_class": "OPERATOR_EVENT_QUEST",
+      "record_kind": "EVENT_QUEST_CLAIM",
+      "source": "research/recovered/STONEAGE-QUEST-ORIGIN-SEPARATION-R1.json",
+      "original_server_execution_verified": false
+    },
+    {
+      "id": "QUEST04-HUNT",
+      "region": "TW",
+      "title": "2004 华义第二届全民狩猎大赛",
+      "origin_class": "OPERATOR_EVENT_QUEST",
+      "record_kind": "CONTEMPORANEOUS_EVENT_REPORT_DISTINCT_FROM_MIXED25_RACE_SCRIPT",
+      "source": "docs/continuity/STONEAGE-QUEST-STORY-MODULE-04-SOURCE-BOUNDARY-20261103.md",
+      "original_server_execution_verified": false
+    }
+  ],
+  "original_script_origin_classification": "ORIGIN_UNRESOLVED_NOT_OFFICIAL_BASE",
+  "cross_module_links": [
+    {
+      "id": "FISHING_ROD_TO_PET_GRANT_CONDITION",
+      "item_id": 2432,
+      "from": "WORLD14 original craft result and fisherman handover source",
+      "to": "WORLD21 poru/team03 ITEM=2432 condition and GetPet=333 reward instance",
+      "relation": "SAME_PRESERVED_COMMUNITY_ARCHIVE_NUMERIC_STATIC_LINK",
+      "game_execution_verified": false
+    },
+    {
+      "id": "PET_HANDOVER_REWARD_NAMESPACE",
+      "from": "WORLD27 source pet selector PET=33-721*1",
+      "to": "WORLD21 same-source GetPet=333 enemy instance ID",
+      "relation": "SEPARATE_ID_FIELDS_DO_NOT_EQUATE_SELECTOR_TO_INSTANCE_OR_TEMPLATE",
+      "game_execution_verified": false
+    },
+    {
+      "id": "MAP_SOURCE_ONLY",
+      "from": "WORLD14 source create floorid 2000 / 4000",
+      "to": "MIXED25_SOURCE_FLOORID_NOT_VERIFIED_NPC_COORDINATE_OR_ORIGINAL_ACTIVE_MAP_ROUTE",
+      "relation": "PROVENANCE_BOUND_ONLY",
+      "game_execution_verified": false
+    }
+  ],
+  "counts_not_quest_population": true,
+  "operator_event_is_distinct_from_same_deployment_script": true,
+  "research_gaps": [
+    "CERTIFIED_JSS1999_OR_TW1_SAME_DEPLOYMENT_TASK_SERVER_MASTERS_NOT_RECOVERED",
+    "CN182_ORIGINAL_OFFICIAL_BUILD_NOT_CERTIFIED",
+    "MIXED25_UNREFERENCED_SCRIPT_BRANCH_REACHABILITY_OPEN",
+    "ORIGINAL_PET_SELECTOR_COMPILED_SEMANTICS_AND_EVDEL_OPEN",
+    "ORIGINAL_TASK_PROGRESSION_ITEM_REWARD_EXECUTION_AND_SAVE_ACK_OPEN",
+    "OFFICIAL_PERMANENT_VS_BASE_ORIGIN_NOT_PROVEN_FOR_MIXED25_SCRIPTS"
+  ],
+  "browser_verification": {
+    "method": "PLAYWRIGHT_CHROMIUM_PAGE_SET_CONTENT_SAME_HTML_BYTES",
+    "index_cards": 12,
+    "source_reader_documents_loaded": 7,
+    "console_or_page_errors": 0,
+    "external_requests": 0,
+    "static_zip_crc_verified": true,
+    "file_url_direct_navigation_tested": false,
+    "native_game_executed": false
+  },
+  "unchanged_old_reports": true,
+  "stage_a": {
+    "partial": 7,
+    "open": 2,
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "savedata_R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "MOVE_TO_NEXT_SOURCE_READY_ORIGINAL_GAMEPLAY_CONTENT_GAP; DO_NOT_EXPAND_QUEST_HELPER_WITHOUT_NEW_ORIGINAL_EVIDENCE"
+}

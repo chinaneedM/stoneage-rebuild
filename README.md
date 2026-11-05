@@ -1889,3 +1889,8 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 [公开逐源目录](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-27-PET-HANDOVER-QUEST-BRANCHES-R1.json)联回90项物品行与4个已有WORLD21奖励实例证据；全批起源ORIGIN_UNRESOLVED，严格不混入已认证本体/永久/运营活动档。私人17原文/97分支/90道具名阅读包已保存，独立源范围与HTML原文本核同，无浏览器/原游戏运行。77/77本地测试通过；WORLD22完整源报告重放逐字节不变，CURRENT历史blob保持。
 
 **最高NEXT WORLD28：** 任务模块统一内容入口：复用已有钓竿、领宠、交宠、委托及运营活动资料，按来源/归属四档集中原文与物品/宠物/地图关联、明确缺环。不扩DelPet/EVDEL编译辅助链、通用框架、网服、新引擎或体验优化。Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING，整体完成率未知。
+
+
+## 2026-11-05 — WORLD28：原版任务统一私人原文入口
+
+[WORLD28 已保存原脚本的统一入口与证据界限](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-28-UNIFIED-QUEST-HUB-20261105.md) 由已验7份私人任务原文阅读器原字节拼成一份离线可查目录：原脚本、条件传送、钓竿制作交付、领宠、石币、物品转移、交宠；另独立列五项有日期/主题证据的运营活动。12档原资料按本体／永久／运营／起源未明四档明确隔离，社区混合2.5原源仍属起源未明，未证初代官方同部署。复用 WORLD14 的道具2432 与 WORLD21 静态条件/领宠333关联，保留 WORLD27 selector 与 GetPet 实例不同命名空间。原文和原图私人保存，Git只放[数字/SHA来源表](research/recovered/STONEAGE-STAGE-A-WORLD28-UNIFIED-QUEST-HUB-R1.json)、测试和连续性记录；Chromium 用同一HTML字节完成12卡/7原阅读页无外网检查，但没有原生游戏运行，无法测试本环境 file:// 导航。历史CURRENT原blob不变。**下一步：** 从当前已得资料中选择下一项真正可补原游戏行为的机制模块内容，证据不足才按原版别记录缺环；不扩任务执行器、账号服务器、新作或体验优化。Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、整体进度未知。
