@@ -1,0 +1,24 @@
+name: Verify Stage A WORLD15 village exit encounters
+on:
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-1[25]-*'
+      - 'research/recovered/STONEAGE-MIXED25-SERVER-FULL-SOURCE-R18.json'
+      - 'tests/test_stoneage_stage_a_world15_village_exit_encounters.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world15.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-1[25]-*'
+      - 'research/recovered/STONEAGE-MIXED25-SERVER-FULL-SOURCE-R18.json'
+      - 'tests/test_stoneage_stage_a_world15_village_exit_encounters.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world15.yml'
+jobs:
+  public-source-joins:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_stage_a_world15_village_exit_encounters.py' -v
