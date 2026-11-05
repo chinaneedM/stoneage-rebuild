@@ -1,4 +1,4 @@
-name: Verify GAMEPLAY01-07, INTEGRATION01-03 and Stage A source-gap evidence
+name: Verify GAMEPLAY01-07, WORLD29 petshop code, INTEGRATION and source-gap evidence
 on:
   push:
     paths:
@@ -41,6 +41,8 @@ on:
       - 'research/recovered/item-module-01/**'
       - 'research/recovered/STONEAGE-O16-TW10-BATTLE-NATIVE-PALETTE-INTERLEAVE-R1.json'
       - 'research/recovered/STONEAGE-O40-TW10-NATIVE-BATTLE-PATH-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-STAGE-A-WORLD29-PETSHOP-STATIC-CODE-BOUNDARY-R1.json'
+      - 'tests/test_stoneage_stage_a_world29_petshop_source.py'
       - '.github/workflows/verify-stoneage-gameplay-mechanics-module-01.yml'
   pull_request:
     paths:
@@ -80,6 +82,8 @@ on:
       - 'research/recovered/item-module-01/**'
       - 'research/recovered/STONEAGE-O16-TW10-BATTLE-NATIVE-PALETTE-INTERLEAVE-R1.json'
       - 'research/recovered/STONEAGE-O40-TW10-NATIVE-BATTLE-PATH-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-STAGE-A-WORLD29-PETSHOP-STATIC-CODE-BOUNDARY-R1.json'
+      - 'tests/test_stoneage_stage_a_world29_petshop_source.py'
       - '.github/workflows/verify-stoneage-gameplay-mechanics-module-01.yml'
   workflow_dispatch:
 jobs:
@@ -90,6 +94,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Retrieve exact independent later community petshop C, never publish it
+        run: |
+          curl --fail --location --silent --show-error --retry 3 'https://raw.githubusercontent.com/pimpcapital/longzoro-sa/57b14e2bb373ba851c14db28a239273e4a8831bb/gmsv/src/npc/npc_petshop.c' -o /tmp/stoneage-world29-petshop.c
+      - name: Verify WORLD29 16 source-qualified shops against the separate pinned C
+        env:
+          STONEAGE_WORLD29_PINNED_C: /tmp/stoneage-world29-petshop.c
+        run: python -m unittest -v tests.test_stoneage_stage_a_world29_petshop_source
       - run: python -m unittest discover -s tests -p 'test_stoneage_gameplay_mechanics_module_01.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_gameplay_mechanics_module_02.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_gameplay_mechanics_module_03.py' -v
