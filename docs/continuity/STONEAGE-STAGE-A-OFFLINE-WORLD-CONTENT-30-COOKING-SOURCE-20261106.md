@@ -26,3 +26,10 @@
 [公开派生收据](../../research/recovered/STONEAGE-STAGE-A-WORLD30-COOKING-SOURCE-R1.json)保存同包成员出处、编译调用点及材料物品行。原件静态重放与公开 CI 的派生校验分开。未执行原程序，台湾 1.0、日本 JSS 和大陆 1.82 的对应历史规则仍待同版材料验证。
 
 **下一优先 WORLD31。** 按离线复原顺序，优先检查混合 2.5 同包的回复物品表与编译回调，先以 WORLD19 的普通回复道具和本次生薑湯为界，只有能核实回复目标或参数含义才推进。宠物料理在三道菜样本达到本轮止点。Stage A 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79 暂停，总进度未知。
+
+## 发布验收（2026-11-06）
+
+- 原档解压使用 UnRAR 7.30 beta 1，本地源码构建提交 `160dcb5c9c1babbbdd3f0f1fc78cf48a7f8150cf`。完整原档、八个成员及原文件头均重验。候选收据二次生成逐字节一致，SHA-256 `0312f4f1f60c88c775a5a4cdd4d6d56a46cb83d099bc1e606a9eacab3cf7f4d5`。独立 CP950 CSV 与 SQLite 全表联接对九个材料槽的 36 个不同候选物品逐项核同。42 项本地相关测试通过。
+- [PR #209](https://github.com/chinaneedM/stoneage-rebuild/pull/209) 候选提交 `05ca1d684a01914d867342bb13be2aeb5eb4b522` 共 14 项 Actions 成功（3 项 PR，11 项 push）。[PR 专项](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42128132552) 的 job `127597516213` 执行了 WORLD30 派生校验。
+- 内容已合入 `main` `96e2dea0a96fe5c928a1157ba48bff882056256f`，tree `8615dfd1f598dfb5bc278bbf9e4e6e115b458198` 与验收 tree 一致。该主线提交的 11 项 Actions 全部成功，[专项](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42128240928) job `127597882163` 中 WORLD30 五项测试通过。原历史 CURRENT 和连续性协议的 Git blob 仍与启动时一致。公开 CI 验收派生数据，私人原档重放在本地完成。
+- WORLD31 预检已在同一原程序找到 `ITEM_useRecovery` 的战斗入口 `0x559140` 与场外入口 `0x4fe4d0`。下一包以配置选中的原表物品 12530、12555、12500、12780、12754 为首批，分别验证体力、气力和复合参数在两个分支的实际解释，并保留场景与目标字段的来源区别。
