@@ -1,4 +1,4 @@
-name: Verify WORLD27 handover quests and source-role boundaries
+name: Verify WORLD27 and WORLD28 quest evidence boundaries
 on:
   pull_request:
     paths:
@@ -24,6 +24,8 @@ on:
       - 'docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-09-ORIGINAL-RANDOM-ITEM-20261104.md'
       - 'tests/test_stoneage_stage_a_world09_random_item.py'
       - '.github/workflows/verify-stoneage-stage-a-offline-world09.yml'
+      - 'research/recovered/STONEAGE-STAGE-A-WORLD28-UNIFIED-QUEST-HUB-R1.json'
+      - 'tests/test_stoneage_stage_a_world28_quest_hub.py'
   push:
     branches: [main]
     paths:
@@ -49,6 +51,8 @@ on:
       - 'docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-09-ORIGINAL-RANDOM-ITEM-20261104.md'
       - 'tests/test_stoneage_stage_a_world09_random_item.py'
       - '.github/workflows/verify-stoneage-stage-a-offline-world09.yml'
+      - 'research/recovered/STONEAGE-STAGE-A-WORLD28-UNIFIED-QUEST-HUB-R1.json'
+      - 'tests/test_stoneage_stage_a_world28_quest_hub.py'
 jobs:
   original-item-script-and-fixed-later-C:
     runs-on: ubuntu-latest
@@ -66,4 +70,4 @@ jobs:
       - name: Verify literal item fields, frozen older projection, and separate fixed C evidence
         env:
           STONEAGE_WORLD09_PINNED_EXCHANGE: /tmp/stoneage-world09-exchange.c
-        run: python -m unittest -v tests.test_stoneage_stage_a_world27_pet_handover tests.test_stoneage_stage_a_world26_raceman tests.test_stoneage_stage_a_world25_quiz tests.test_stoneage_stage_a_world24_savepoint tests.test_stoneage_stage_a_world23_item_transfers tests.test_stoneage_stage_a_world22_quest_currency tests.test_stoneage_stage_a_world21_quest_getpet_conditions tests.test_stoneage_stage_a_world14_fishing_quest tests.test_stoneage_stage_a_world09_random_item
+        run: python -m unittest -v tests.test_stoneage_stage_a_world28_quest_hub tests.test_stoneage_stage_a_world27_pet_handover tests.test_stoneage_stage_a_world26_raceman tests.test_stoneage_stage_a_world25_quiz tests.test_stoneage_stage_a_world24_savepoint tests.test_stoneage_stage_a_world23_item_transfers tests.test_stoneage_stage_a_world22_quest_currency tests.test_stoneage_stage_a_world21_quest_getpet_conditions tests.test_stoneage_stage_a_world14_fishing_quest tests.test_stoneage_stage_a_world09_random_item
