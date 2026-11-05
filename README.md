@@ -1844,3 +1844,12 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 [WORLD22来源与界限](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-22-QUEST-CURRENCY-20261105.md)完整重验私人CHAR01的2205原文件，提取26份脚本的115条原石币指令：99 GetStone奖励、16 DelStone扣费；108 ACCEPT / 7 REQUEST。99条奖励沿用QUEST01旧发现，本轮补足16条扣费、原条件/金额/道具/源行SHA。8条`LV*3`/`LV*20`/`LV*40`等级表达式不求值；两份osaisen原脚本无确切CREATE引用，不能当实际部署。关联124道具ID均可查ITEM01联合目录，2391只在另一候选表存在；123个原名经本轮完整SHA合格的itemset.txt原行再核。私人原文阅读ZIP已保存，本地静态HTML结构检查通过，浏览器/原游戏未执行。[公开派生索引](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-22-QUEST-CURRENCY-SOURCE-R1.json)只含来源数值/条件/哈希；26项相关本地测试通过。历史CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`不变。
 
 **最高NEXT WORLD23：** 在任务/物品内容模块寻找确有原实物增量的任务道具取得/消耗或奖励数量，并与WORLD09/13/14/16/21/22查重；本批货币条件不扩执行器或经济模拟。保持Stage A 7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体完成率未知。
+
+
+## 2026-11-05｜WORLD23：原NPC物品字段全批与WORLD09位置订正（最新连续节点）
+
+[WORLD23来源、加法订正与止点](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-23-NPC-ITEM-TRANSFERS-20261105.md)从2205件完整SHA/CRC合格原NPC文件整理410份脚本的1246条物品字段：GetItem532、DelItem659、GetRandItem55。确切模板用途分开保留任务、传送、存点、答题、比赛及无CREATE引用；数量、原序、重复、6个EVDEL、10空组件和1个1991*缺失数量不猜补。879个道具整数与两份候选物品表联接，2744/2745均缺，11个仅B表存在；866个A表原名逐原行核实。私人410份原文阅读包已保存，HTML只作结构检查，原游戏/浏览器未执行。
+
+**明确订正旧WORLD09解释：** 同一50条列表、相同源SHA实际有959个数字位置+1空位置，26条含重复，另26条首次出现次序与旧投影不同。旧“718原始候选位置/组内无重复”来自去重后的ID投影，不能继续当原文位置证据；718个分块去重引用与328个不同ID仍是旧投影事实。原WORLD09/QUEST01 JSON和旧验收保留；[全批派生及逐列表订正](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-23-NPC-ITEM-TRANSFERS-R1.json)提供真实原行SHA、顺序和重复，不推实际概率。最终本地29/29通过；复用既有WORLD09工作流验收。历史CURRENT原blob `c89e0e33537990aa2132b47c40fef49a985a935c`不改。
+
+**最高NEXT WORLD24：** 有限核实一类非ExChangeMan物品字段的具体用途（优先SavePoint或Quiz），优先既有合格编译原件，后期源码须明确分版；取得一种有据语义或精确缺源即止，不扩通用执行器、网服、新引擎或体验优化。Stage A 7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体完成率未知。
