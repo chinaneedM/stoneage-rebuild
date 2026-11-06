@@ -1975,3 +1975,11 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 从已保存并重新全 SHA 核对的混合 2.5 原 RAR 实际复取两份 `enemybase` 与 `spradrn_5.bin`，三文件 SHA/CRC 与 PET10 旧源记录一致。WORLD37 编译条件中 11 个 key53 的同包原模板数字候选分别联到第 37 列 11 个原图号，5 个在本包唯一 SPR 索引有位置、6 个仅此索引未命中；第 38 列 PETFLG 为 10 条 1／1 条 0，后者不删。5 个索引虽各带原 56 动画数量字段，本包没有同源实际 `spr_5.bin` 帧载荷，新增可视原帧 0。另存 enemybase2 仅 7 个匹配，原配置选择主表。此为新增 **11 条受限静态数字关系**，非原成功捕获、宠物历史身份或原版运行。详见[来源/未解边界](docs/continuity/STONEAGE-STAGE-A-WORLD37-R2B3-CAPTURE-SPR-SOURCE-20261106.md)和[公开逐键收据](research/recovered/STONEAGE-STAGE-A-WORLD37-R2B3-CAPTURE-ORIGINAL-SPR-BRIDGE-R1.json)。旧 CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c` 全文原样保留。
 
 **最高条件性 NEXT WORLD37-R2C**：完整合格 GMSV 与离线 x86 夹具齐备才验实际尾段；本环境缺合格完整 EXE，先转可新增原宠物 SPR 帧/其它内容载体。不得由动画索引宣称已有动画原帧，或重复无新源的静态辅助分析。Stage A 7 PARTIAL+2 OPEN，B/wiki GATED，R79 暂停，整体完成率未知。
+
+## 2026-11-06 — PET11｜捕捉条件同号的台湾1.0两组原SPR动作与496幅原位图实物观察
+
+从重新全SHA/379成员CRC合格的台湾1.0私人零售原包，及同包混合2.5实际原SPR索引，直接核实图号100329/100355在两种载体的12B SPRADRN索引记录逐字节相同，**不证明历史同一部署**。台湾1.0原SPR组各56原方向/动作序列，共112条、1120帧位置、496个不同原RD位图；真实整ADRN/REAL逐块解码495严格成功，位图113576原尾端0xC2零像素多输出一格，保留严格失败，仅将前9200原索引像素用于私人受限画布观察。每个原帧图片只存个人私人Library，已独立取回整ZIP SHA/CRC一致；程序实际打开112首帧联系图，但Chromium原页未运行，色盘/倒行/透色与原生动作秒数仍未认证。
+
+[PET11来源与边界](docs/continuity/STONEAGE-PET-MODULE-11-CAPTURE-LINKED-TW10-ORIGINAL-SPR-496-PIXELS-20261106.md)、[公开496摘要链与2组原SHA](research/recovered/STONEAGE-PET-MODULE-11-TW10-CAPTURE-SPR-ORIGINAL-496-PIXEL-SOURCE-R1.json)、[私人原件重放器](tools/stoneage_pet11_tw10_capture_sprite_source.py)。本批新增实际可见的**来源限定原像素观察**而非496个历史新发现宠物；100329原SPR元数据此前O63已知。旧 docs/CURRENT-STATE.md 原完整blob c89e0e33537990aa2132b47c40fef49a985a935c保持不变。
+
+**下一优先：** WORLD37-R2C真实捕捉成功尾段仍需完整合格GMSV及隔离x86，故有条件OPEN；可先从已保存合法载体里核剩余6个同版缺SPR索引图号是否有真实原像素，或转其它具原件的宠物/内容项，不扩旧网服/新引擎或改玩家体验。Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、overall percent未知。
