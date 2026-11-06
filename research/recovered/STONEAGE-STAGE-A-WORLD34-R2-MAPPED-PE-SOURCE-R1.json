@@ -1,0 +1,221 @@
+{
+  "schema": "stoneage.world34.r2.original_pe_code_qualification.r1",
+  "carrier": "community_mixed25_archive_not_official_clean_client_or_live_server",
+  "source_git_base": {
+    "head": "d5d0603e73849eb2b456b90e822164188b8ee4d7",
+    "tree_sha": "fd7c1e7d6d1ec0a9388daca2a3b798e27a211866",
+    "prior_report_git_blobs": {
+      "research/recovered/STONEAGE-STAGE-A-WORLD31-RECOVERY-SOURCE-R1.json": "a46987c558b5164346962dd653b49a76b791e24b",
+      "research/recovered/STONEAGE-STAGE-A-WORLD33-BATTLE-ITEM-GATE-SOURCE-R1.json": "ef3e4680e230e72f17140446832b371856f0685d",
+      "research/recovered/STONEAGE-STAGE-A-WORLD34-ORIGINAL-FIELD-PATH-SOURCE-R1.json": "03d0d1fe2d7be37ac845374b75b7b99931fa645d"
+    }
+  },
+  "archive": {
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+  },
+  "gmsv_decompression": {
+    "original_full_member_expected_bytes": 1897867,
+    "original_full_member_expected_sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00",
+    "libarchive_read_data_crc_error": true,
+    "verified_common_output_prefix_bytes": 1835008,
+    "prefix_sha256": "363201c00f57bd1b12e777d0c30e47d4151cebab78239970b2ed8d25a615f72d",
+    "libarchive_block_output_bytes": 1897867,
+    "block_output_sha256": "e61c417b18f939a22d25b800240f1d2d0f889a78024a8657e06502ff0ccdff0f",
+    "block_output_crc32": 3321589842,
+    "full_original_member_validated": false,
+    "first_difference_between_read_data_prefix_and_block_output": null,
+    "cutoff_is_inside_coff_symbols": true
+  },
+  "pe": {
+    "image_base": 4194304,
+    "coff_symbol_table_file_offset": 1742336,
+    "coff_symbol_count": 5210,
+    "coff_symbol_record_bytes": 18,
+    "coff_symbol_records_end": 1836116,
+    "last_file_backed_section_end": 1742336,
+    "all_file_backed_sections_within_read_data_prefix": true,
+    "sections": [
+      {
+        "name": ".text",
+        "virtual_address": 4198400,
+        "raw_offset": 1024,
+        "raw_bytes": 1418752,
+        "raw_end": 1419776,
+        "sha256": "2a42c0ce1951b0963898e2a5c95be920b8eb3b42bf329b012ba03a6d4ebcd11d"
+      },
+      {
+        "name": ".data",
+        "virtual_address": 5619712,
+        "raw_offset": 1419776,
+        "raw_bytes": 213504,
+        "raw_end": 1633280,
+        "sha256": "f30026ba6ed6212b59cdf580fed718610c70af47f03c6d41ac65f35fc5a5ae95"
+      },
+      {
+        "name": ".rdata",
+        "virtual_address": 5836800,
+        "raw_offset": 1633280,
+        "raw_bytes": 105984,
+        "raw_end": 1739264,
+        "sha256": "c2740af5992a885b4d4ba14c988525ff7fa3b3329e973d87d628a28d6b5c0611"
+      },
+      {
+        "name": ".idata",
+        "virtual_address": 33759232,
+        "raw_offset": 1739264,
+        "raw_bytes": 3072,
+        "raw_end": 1742336,
+        "sha256": "4838a3158456bd0a8eee76a8a666fa67222d5e3b432a87f50906f0b2c64ae0d4"
+      }
+    ],
+    "bss_has_no_raw_file_bytes": true
+  },
+  "qualified_code_evidence": {
+    "prior_world31_server_windows": 6,
+    "prior_world33_server_windows": 12,
+    "prior_world33_client_windows": 5,
+    "all_23_prior_windows_sha256_reverified": true,
+    "additional_static_call_sites": [
+      {
+        "role": "field_message_to_item_use",
+        "address": 4272716,
+        "kind": "jump",
+        "destination": 4671200,
+        "sha256": "5802d12bf068dbab1f4f747e67d4a54c9435251e60ca45944779487a86f5e50a"
+      },
+      {
+        "role": "item_callback_pointer_lookup",
+        "address": 4671656,
+        "kind": "call",
+        "destination": 5210032,
+        "sha256": "338fdd609bebeb44640bc4a3f89f4495a88e23d8168ea0a736cf1052604d20c8"
+      },
+      {
+        "role": "item_callback_invoke",
+        "address": 4672000,
+        "kind": "indirect",
+        "destination": null,
+        "sha256": "473c753932e9dad69f8f63831910bc1fd8a0cdb45f2835c878bcc0bb0be157d5"
+      },
+      {
+        "role": "recovery_caster_guard",
+        "address": 5244348,
+        "kind": "call",
+        "destination": 4381024,
+        "sha256": "5cbb39ebd90cd126caa6e54591c119858911a618a5a4b8358f61e044c8083c49"
+      },
+      {
+        "role": "recovery_work_state_key_zero",
+        "address": 5244396,
+        "kind": "call",
+        "destination": 4382144,
+        "sha256": "6652294dcec0b1fe3ec9f1ed3b2da564619ba89eb7fe5ef175cdc7e08e319e68"
+      },
+      {
+        "role": "recovery_to_battle",
+        "address": 5244431,
+        "kind": "jump",
+        "destination": 5607744,
+        "sha256": "84a0e9ef07b9a55cf536765fb7cce973023f9d19f8f31ac64812c08c3d049f4c"
+      },
+      {
+        "role": "recovery_to_field",
+        "address": 5244457,
+        "kind": "jump",
+        "destination": 5235920,
+        "sha256": "43a95dba32e45af6a54472e587c9bef77497430491bbca9c533720f49f1f2bd0"
+      },
+      {
+        "role": "field_inventory_slot_get",
+        "address": 5235993,
+        "kind": "call",
+        "destination": 4383456,
+        "sha256": "4ed4c5aa72d15b856424f5893e0f898eea722d7181e59772766013e13aab9149"
+      },
+      {
+        "role": "field_item_validity",
+        "address": 5236020,
+        "kind": "call",
+        "destination": 5206448,
+        "sha256": "e747d4edd7f3e51e1f21a3044b04e6f60ca444dd25f999df3d26dfeb919cf035"
+      },
+      {
+        "role": "field_target_validity",
+        "address": 5236071,
+        "kind": "call",
+        "destination": 4381024,
+        "sha256": "5c4ea103a21501342a88ceea76cb6a20a0933384972c7d91cd15fe55788e4420"
+      },
+      {
+        "role": "field_option_key_three",
+        "address": 5236092,
+        "kind": "call",
+        "destination": 5207776,
+        "sha256": "32d2672fa35ed7832d5fe34aaec58d964c38ac657b13a965b49483349229a2d6"
+      },
+      {
+        "role": "field_delete_call_branch_a",
+        "address": 5236382,
+        "kind": "call",
+        "destination": 4405936,
+        "sha256": "3728801b71a6cff50381c94809f4ee68331ee732f0958e6ffc95fd3c96cfcc8c"
+      },
+      {
+        "role": "field_stat_write_call",
+        "address": 5237842,
+        "kind": "call",
+        "destination": 4381936,
+        "sha256": "4bb182622f63e31fc1956c5a47be2b2e6ee92ab4102b8bb2773d650c8c219f0e"
+      },
+      {
+        "role": "field_delete_call_branch_b",
+        "address": 5238792,
+        "kind": "call",
+        "destination": 4405936,
+        "sha256": "39460784e367ff81277bbb40ba96b40f2cbbc4077d7d2ce0c76b2d6fb67ec0d5"
+      }
+    ],
+    "item_callback_pointer_lookup_runtime_key": 19,
+    "recovery_work_state_runtime_key": 0,
+    "field_option_runtime_key": 3,
+    "indirect_callback_pointer_stack_displacement": -284,
+    "source_windows_are_pinned_static_code_not_proof_of_full_execution": true
+  },
+  "item_original_rows": [
+    {
+      "id": 1232,
+      "row_sha256": "aa3ce4290b9f3d9d0f3007e33f113a45a9ea995fe81e18544bcef24e29bc46b2",
+      "argument_sha256": "6e0ad3ee815597005d1c3e88bf010e33b5808e0e8a293b2d18288dbf77b7d204",
+      "argument": "體600",
+      "fieldtype": 1,
+      "target": 2
+    },
+    {
+      "id": 12530,
+      "row_sha256": "bc1f35f9cbb18dcae3fb4c7b1f7cc80aa5833fc5bb2bf0be01ca89b7c806fa15",
+      "argument_sha256": "f692b2b300be2b1ab4b8815439850ce442c9fcb612b3a012df97d33e31ac2910",
+      "argument": "體320",
+      "fieldtype": 0,
+      "target": 1
+    },
+    {
+      "id": 12555,
+      "row_sha256": "b89a06a7a9ecbb56e1778f95ac350363b75b24ce4c36f7497d0a5bb5be7918b5",
+      "argument_sha256": "6c34ada7764a8c5e0d86bf7369fd978563d03353bf10a99adc935b37d1ba18fd",
+      "argument": "氣20體185",
+      "fieldtype": 2,
+      "target": 1
+    }
+  ],
+  "boundaries": {
+    "exact_original_complete_gmsv_member_recovered": false,
+    "newly_executed_original_client_or_server": false,
+    "field_packet_to_recovery_callback_return_replayed": false,
+    "actual_hp_mp_or_inventory_mutation_from_field_packet_verified": false,
+    "pet_party_targets_native_full_effect_verified": false,
+    "scene_type_1_server_final_allow_deny_proven": false,
+    "historical_same_deployment_proven": false,
+    "tw1_jss1999_182_rule_equivalence_proven": false
+  }
+}
