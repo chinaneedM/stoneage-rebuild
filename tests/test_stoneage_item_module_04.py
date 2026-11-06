@@ -17,7 +17,7 @@ class Item04SourceCanvasPrefixTest(unittest.TestCase):
         r=self.r;p=self.p
         self.assertEqual(r["source_sha256"]["TW1_ADRN"],p["source_sha256"]["TW1_ADRN"])
         self.assertEqual(r["source_sha256"]["TW1_REAL"],p["source_sha256"]["TW1_REAL"])
-        self.assertEqual(r["source_sha256"]["TW1_P3H_zip"],p["source_sha256"]["TW1_P3H"])
+        self.assertEqual(r["source_sha256"]["TW1_private_P3H_zip"],p["source_sha256"]["TW1_P3H"])
         self.assertEqual(r["source_sha256"]["mixed25_itemset_a"],p["source_sha256"]["itemset_a"])
         self.assertEqual(r["source_sha256"]["mixed25_itemset_b"],p["source_sha256"]["itemset_b"])
         self.assertEqual((r["source_item_aliases_reviewed"],r["TW1_ADRN_record_found"],r["TW1_no_ADRN_record"],r["TW1_strict_RD_decoded_retained"],r["TW1_strict_RD_failures_retained"]),(1667,836,831,832,4))
