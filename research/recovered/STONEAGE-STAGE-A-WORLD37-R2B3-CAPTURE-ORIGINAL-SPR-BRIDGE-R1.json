@@ -1,0 +1,348 @@
+{
+  "schema": "stoneage.world37_capture_condition_enemybase_spradrn_same_archive_numeric_bridge.r1",
+  "date": "2026-11-06",
+  "scope": "STAGE_A_MIXED25_COMMUNITY_PRESERVED_STATIC_SOURCE_NOT_AN_OFFICIAL_SAME_DEPLOYMENT",
+  "starting_remote": {
+    "main_head": "9ac494163908f98a419e24a3e6edcc32832495cc",
+    "tree": "2659c959114199c28d1ab2b9b88093e4ca75299f",
+    "source_current_state_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "prior_immutable_public_source_blobs": {
+    "world37_r2b": "11c79436aa784622771624a6fed1492cf1707d76",
+    "pet10": "25a37aeb134fb180e322e7dc335029b7374452d8"
+  },
+  "original_source_integrity": {
+    "private_original_archive_bytes": 361255180,
+    "private_original_archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "archive_full_sha256_reverified_in_this_session": true,
+    "original_archive_members_extracted_in_this_session": {
+      "enemybase.txt": {
+        "bytes": 147750,
+        "sha256": "1be7d5226798f7abaabe1f1e74aa1533fcd10e3eaf43f6497d63afa91df3e8b7",
+        "crc32": "29258170"
+      },
+      "enemybase2.txt": {
+        "bytes": 94248,
+        "sha256": "8ecb23231ae1aeb21fe943c7b459f0c0d10ef3599aedfeaeccca783b077f5fd4",
+        "crc32": "38193760"
+      },
+      "spradrn_5.bin": {
+        "bytes": 10164,
+        "sha256": "5f13c956cf013e073298ab91667d3aaa17767b26ba94d696514726950ce94de6",
+        "crc32": "6d939a7a"
+      }
+    },
+    "original_program_executable_complete_SHA_CRC_qualified_this_session": false,
+    "original_game_executed": false,
+    "source_original_spr_5_animation_payload_member_found_in_this_archive": false
+  },
+  "join_contract": {
+    "capture_source": "WORLD37-R2B compiled original static table first 11 nonzero slots, key53; no runtime identity",
+    "selected_master": "original same-archive setup.cf enemybasefile=./data/enemybase.txt; physical 56 CP950 fields; template numeric seventh field (zero-based 6)",
+    "graphic_source": "enemybase.txt original field column37 (zero-based 36); PETFLG original column38 (zero-based 37); not a dynamic species proof",
+    "original_sprite_index": "same-archive spradrn_5.bin 847 original physical <III records, matched on graphic number, no SPR animation payload",
+    "raw_row_sha": "original member row including newline (WORLD37-R2B), distinct from PET10 normalized fields SHA",
+    "alternate_master": "enemybase2.txt same archive, 7 matching template numbers; unselected variant, not equally deployed"
+  },
+  "conservation": {
+    "source_capture_rows": 11,
+    "source_item_references": 13,
+    "source_distinct_item_ids": 12,
+    "distinct_configured_graphic_numbers": 11,
+    "PETFLG_1_rows": 10,
+    "PETFLG_0_rows": 1,
+    "one_to_one_source_spr_index_graphics": 5,
+    "graph_numbers_absent_within_this_single_spradrn_index": 6,
+    "original_spradrn_total_positions": 847,
+    "original_spradrn_unique_graphic_ids": 841,
+    "alternate_enemybase2_same_numeric_graphic_and_PETFLG_rows": 7,
+    "original_sprite_images_or_animation_frames_recovered_now": 0
+  },
+  "rows": [
+    {
+      "source_capture_record_index": 0,
+      "source_char_int_key53": 524,
+      "source_required_item_ids": [
+        2456
+      ],
+      "configured_enemybase_name_original_cp950": "卡特利奴",
+      "configured_enemybase_physical_line": 346,
+      "configured_enemybase_original_line_sha256": "651e9aae655e2d68405b8b3cfb7f553e7b61f9c0133bb997026ffd3e93e55f55",
+      "configured_enemybase_column37_graphic_number": 100329,
+      "configured_enemybase_column38_PETFLG": 1,
+      "alternate_enemybase2": {
+        "physical_line": 150,
+        "original_line_sha256": "651e9aae655e2d68405b8b3cfb7f553e7b61f9c0133bb997026ffd3e93e55f55",
+        "column37_graphic_number": 100329,
+        "column38_PETFLG": 1,
+        "normalized_fields_sha256": "8f4357d1a7c295b219bbcc45f0530a74de0a42f10d12f685557080ab47becc9e"
+      },
+      "preserved_original_spradrn_5_match": {
+        "physical_index": 303,
+        "source_graphic_number": 100329,
+        "original_source_offset": 2070766,
+        "original_anim_count_field": 56,
+        "reserved_field": 16,
+        "original_animation_payload_recovered_in_this_archive": false
+      },
+      "source_relation_kind": "SAME_ARCHIVE_STATIC_NUMERIC_CANDIDATE",
+      "source_capture_runtime_entity_identity_verified": false,
+      "configured_enemybase_normalized_fields_sha256": "8f4357d1a7c295b219bbcc45f0530a74de0a42f10d12f685557080ab47becc9e"
+    },
+    {
+      "source_capture_record_index": 1,
+      "source_char_int_key53": 961,
+      "source_required_item_ids": [
+        20219
+      ],
+      "configured_enemybase_name_original_cp950": "艾蜜",
+      "configured_enemybase_physical_line": 759,
+      "configured_enemybase_original_line_sha256": "58686c0e2c2bd3fa43e66af1a5b4281941b1b8f0c46c620d3a50dadd0821794e",
+      "configured_enemybase_column37_graphic_number": 101280,
+      "configured_enemybase_column38_PETFLG": 1,
+      "alternate_enemybase2": {
+        "physical_line": 551,
+        "original_line_sha256": "58686c0e2c2bd3fa43e66af1a5b4281941b1b8f0c46c620d3a50dadd0821794e",
+        "column37_graphic_number": 101280,
+        "column38_PETFLG": 1,
+        "normalized_fields_sha256": "3bd53c7fc9d149e99a4a9ab104c1a38b7a0fb969f552f3520ec701c8d5bb3e5c"
+      },
+      "preserved_original_spradrn_5_match": null,
+      "source_relation_kind": "SAME_ARCHIVE_STATIC_NUMERIC_CANDIDATE",
+      "source_capture_runtime_entity_identity_verified": false,
+      "configured_enemybase_normalized_fields_sha256": "3bd53c7fc9d149e99a4a9ab104c1a38b7a0fb969f552f3520ec701c8d5bb3e5c"
+    },
+    {
+      "source_capture_record_index": 2,
+      "source_char_int_key53": 953,
+      "source_required_item_ids": [
+        20223
+      ],
+      "configured_enemybase_name_original_cp950": "雷誅",
+      "configured_enemybase_physical_line": 751,
+      "configured_enemybase_original_line_sha256": "1bd472388508cbe0cc2f4e5d5fde2555bc5cc99f236246b5088de8970379d070",
+      "configured_enemybase_column37_graphic_number": 101281,
+      "configured_enemybase_column38_PETFLG": 1,
+      "alternate_enemybase2": {
+        "physical_line": 543,
+        "original_line_sha256": "1bd472388508cbe0cc2f4e5d5fde2555bc5cc99f236246b5088de8970379d070",
+        "column37_graphic_number": 101281,
+        "column38_PETFLG": 1,
+        "normalized_fields_sha256": "0a1b6389975b88a15725b4d765149f4b09f6ebf424ca2eece315f9cb40fdd2ab"
+      },
+      "preserved_original_spradrn_5_match": null,
+      "source_relation_kind": "SAME_ARCHIVE_STATIC_NUMERIC_CANDIDATE",
+      "source_capture_runtime_entity_identity_verified": false,
+      "configured_enemybase_normalized_fields_sha256": "0a1b6389975b88a15725b4d765149f4b09f6ebf424ca2eece315f9cb40fdd2ab"
+    },
+    {
+      "source_capture_record_index": 3,
+      "source_char_int_key53": 962,
+      "source_required_item_ids": [
+        20222
+      ],
+      "configured_enemybase_name_original_cp950": "訐譙龍",
+      "configured_enemybase_physical_line": 760,
+      "configured_enemybase_original_line_sha256": "b648e966b894d1feb79e5fe268218030563ea65dd0cf5ae415e8b4e8446e2f6d",
+      "configured_enemybase_column37_graphic_number": 101279,
+      "configured_enemybase_column38_PETFLG": 1,
+      "alternate_enemybase2": {
+        "physical_line": 552,
+        "original_line_sha256": "b648e966b894d1feb79e5fe268218030563ea65dd0cf5ae415e8b4e8446e2f6d",
+        "column37_graphic_number": 101279,
+        "column38_PETFLG": 1,
+        "normalized_fields_sha256": "01f3c1cdce4af9624d79b564a52b057ff65af61cd89b22dfcc7309f05fdaac4a"
+      },
+      "preserved_original_spradrn_5_match": null,
+      "source_relation_kind": "SAME_ARCHIVE_STATIC_NUMERIC_CANDIDATE",
+      "source_capture_runtime_entity_identity_verified": false,
+      "configured_enemybase_normalized_fields_sha256": "01f3c1cdce4af9624d79b564a52b057ff65af61cd89b22dfcc7309f05fdaac4a"
+    },
+    {
+      "source_capture_record_index": 4,
+      "source_char_int_key53": 777,
+      "source_required_item_ids": [
+        20253
+      ],
+      "configured_enemybase_name_original_cp950": "佩露夏",
+      "configured_enemybase_physical_line": 576,
+      "configured_enemybase_original_line_sha256": "3473ed4cbe4b0f6932fb96bdec92289d290c8e5342a5f44d3deae97d063dc1a9",
+      "configured_enemybase_column37_graphic_number": 100872,
+      "configured_enemybase_column38_PETFLG": 1,
+      "alternate_enemybase2": {
+        "physical_line": 368,
+        "original_line_sha256": "19dd3d0211b65c4d11a798dea470cb70abf88e7fbc5805719617fb16459a2547",
+        "column37_graphic_number": 100872,
+        "column38_PETFLG": 1,
+        "normalized_fields_sha256": "f9a033103f018ae5801616c2134bd053cd2900138f436c05e5488af404fd33f0"
+      },
+      "preserved_original_spradrn_5_match": {
+        "physical_index": 636,
+        "source_graphic_number": 100872,
+        "original_source_offset": 4063744,
+        "original_anim_count_field": 56,
+        "reserved_field": 2,
+        "original_animation_payload_recovered_in_this_archive": false
+      },
+      "source_relation_kind": "SAME_ARCHIVE_STATIC_NUMERIC_CANDIDATE",
+      "source_capture_runtime_entity_identity_verified": false,
+      "configured_enemybase_normalized_fields_sha256": "10355387d0d292f3e0b9ac7da8ff591bb689cfab98b5c50a2d40e968ba53618e"
+    },
+    {
+      "source_capture_record_index": 5,
+      "source_char_int_key53": 796,
+      "source_required_item_ids": [
+        20247
+      ],
+      "configured_enemybase_name_original_cp950": "嘎吱拉",
+      "configured_enemybase_physical_line": 595,
+      "configured_enemybase_original_line_sha256": "e76f660a4b7fa7080c7e3fa30d533035d5d618ffba9229309fc4414d304fd7e0",
+      "configured_enemybase_column37_graphic_number": 100891,
+      "configured_enemybase_column38_PETFLG": 1,
+      "alternate_enemybase2": {
+        "physical_line": 387,
+        "original_line_sha256": "f27550956804f10ab2b10d128a20e2e92241e8271c0cf0ac34573a2acafe5ea3",
+        "column37_graphic_number": 100891,
+        "column38_PETFLG": 1,
+        "normalized_fields_sha256": "609c4764526af547ad4fb92b743f9dfa6f6d6d5fdee6bd65bf5efe0646e84e48"
+      },
+      "preserved_original_spradrn_5_match": {
+        "physical_index": 655,
+        "source_graphic_number": 100891,
+        "original_source_offset": 4150232,
+        "original_anim_count_field": 56,
+        "reserved_field": 2,
+        "original_animation_payload_recovered_in_this_archive": false
+      },
+      "source_relation_kind": "SAME_ARCHIVE_STATIC_NUMERIC_CANDIDATE",
+      "source_capture_runtime_entity_identity_verified": false,
+      "configured_enemybase_normalized_fields_sha256": "4db1ffe380c93152b4c9f92976394530ec07d0d305e3b31ce9cbea4b840aa750"
+    },
+    {
+      "source_capture_record_index": 6,
+      "source_char_int_key53": 812,
+      "source_required_item_ids": [
+        20259
+      ],
+      "configured_enemybase_name_original_cp950": "斑尼迪克",
+      "configured_enemybase_physical_line": 611,
+      "configured_enemybase_original_line_sha256": "b1c01e8f05092b9e58f99e587563fdaa74e6de1f183fbeb751fcfef188b761bb",
+      "configured_enemybase_column37_graphic_number": 100907,
+      "configured_enemybase_column38_PETFLG": 1,
+      "alternate_enemybase2": {
+        "physical_line": 403,
+        "original_line_sha256": "45198c58cb2f39f7efd90d6461f693d2d93f05f9c111e3db410f967d0c54334a",
+        "column37_graphic_number": 100907,
+        "column38_PETFLG": 1,
+        "normalized_fields_sha256": "32cbd120da1a07f3a29935a02a531a2b2b3eefa2df3a3e3dece2209c2c91e6ca"
+      },
+      "preserved_original_spradrn_5_match": {
+        "physical_index": 671,
+        "source_graphic_number": 100907,
+        "original_source_offset": 4261064,
+        "original_anim_count_field": 56,
+        "reserved_field": 2,
+        "original_animation_payload_recovered_in_this_archive": false
+      },
+      "source_relation_kind": "SAME_ARCHIVE_STATIC_NUMERIC_CANDIDATE",
+      "source_capture_runtime_entity_identity_verified": false,
+      "configured_enemybase_normalized_fields_sha256": "c5cb0e0c123207042ad00b2b12313121b2122c7bc52d690387222bea2b24ceea"
+    },
+    {
+      "source_capture_record_index": 7,
+      "source_char_int_key53": 1105,
+      "source_required_item_ids": [
+        1690,
+        1691,
+        1692
+      ],
+      "configured_enemybase_name_original_cp950": "夏普德",
+      "configured_enemybase_physical_line": 896,
+      "configured_enemybase_original_line_sha256": "3c0c1497d11f1d13a724ba393700b1b32ea809720c9e5588d5127a682e7c20ba",
+      "configured_enemybase_column37_graphic_number": 101564,
+      "configured_enemybase_column38_PETFLG": 1,
+      "alternate_enemybase2": null,
+      "preserved_original_spradrn_5_match": null,
+      "source_relation_kind": "SAME_ARCHIVE_STATIC_NUMERIC_CANDIDATE",
+      "source_capture_runtime_entity_identity_verified": false,
+      "configured_enemybase_normalized_fields_sha256": "e52c781e73b39681cf455b2cb8c2815472edf813f5cde992d559c55ed6cb9fd7"
+    },
+    {
+      "source_capture_record_index": 8,
+      "source_char_int_key53": 8,
+      "source_required_item_ids": [
+        1810
+      ],
+      "configured_enemybase_name_original_cp950": "巨大瑪恩摩",
+      "configured_enemybase_physical_line": 8,
+      "configured_enemybase_original_line_sha256": "09bd7ade4093db8f2ca825082fa239ad38ea43338039206133d2c2f9d361d71d",
+      "configured_enemybase_column37_graphic_number": 100355,
+      "configured_enemybase_column38_PETFLG": 0,
+      "alternate_enemybase2": null,
+      "preserved_original_spradrn_5_match": {
+        "physical_index": 325,
+        "source_graphic_number": 100355,
+        "original_source_offset": 2183800,
+        "original_anim_count_field": 56,
+        "reserved_field": 16,
+        "original_animation_payload_recovered_in_this_archive": false
+      },
+      "source_relation_kind": "SAME_ARCHIVE_STATIC_NUMERIC_CANDIDATE",
+      "source_capture_runtime_entity_identity_verified": false,
+      "configured_enemybase_normalized_fields_sha256": "95e342b79cdaaae3f91713c727df5ebd1dc945b1f806e6fb24e53fa329605f07"
+    },
+    {
+      "source_capture_record_index": 9,
+      "source_char_int_key53": 145,
+      "source_required_item_ids": [
+        2236
+      ],
+      "configured_enemybase_name_original_cp950": "薩德迪比",
+      "configured_enemybase_physical_line": 145,
+      "configured_enemybase_original_line_sha256": "48f844979106cd619f798d1886bf1cb9c036d703a9a022d350ac6dbd913538f8",
+      "configured_enemybase_column37_graphic_number": 101737,
+      "configured_enemybase_column38_PETFLG": 1,
+      "alternate_enemybase2": null,
+      "preserved_original_spradrn_5_match": null,
+      "source_relation_kind": "SAME_ARCHIVE_STATIC_NUMERIC_CANDIDATE",
+      "source_capture_runtime_entity_identity_verified": false,
+      "configured_enemybase_normalized_fields_sha256": "818280e49f7cd6e506e2522274a9e25f190b203bfdc875b7ceecaf331a88f190"
+    },
+    {
+      "source_capture_record_index": 10,
+      "source_char_int_key53": 146,
+      "source_required_item_ids": [
+        2236
+      ],
+      "configured_enemybase_name_original_cp950": "薩德斯凱",
+      "configured_enemybase_physical_line": 146,
+      "configured_enemybase_original_line_sha256": "c82365dabc82297a183ce5c69cb45d95a50e28e0f6d87baacb356972a0989157",
+      "configured_enemybase_column37_graphic_number": 101736,
+      "configured_enemybase_column38_PETFLG": 1,
+      "alternate_enemybase2": null,
+      "preserved_original_spradrn_5_match": null,
+      "source_relation_kind": "SAME_ARCHIVE_STATIC_NUMERIC_CANDIDATE",
+      "source_capture_runtime_entity_identity_verified": false,
+      "configured_enemybase_normalized_fields_sha256": "076eb541436d1183207cd2992bb484c8e3e0a8c8b46e33e01837b742970a30a7"
+    }
+  ],
+  "negative_boundaries": {
+    "key53_numeric_join_equals_runtime_species_assignment": false,
+    "PETFLG_1_proves_capture_success_or_wild_spawn": false,
+    "PETFLG_0_row_excluded_or_fixed_by_analyst": false,
+    "not_in_spradrn_5_means_absent_from_all_historical_versions": false,
+    "matching_spradrn_index_proves_animation_frame_bytes_available": false,
+    "original_sprite_payload_visualized_this_session": false,
+    "actual_capture_tail_executed_this_session": false,
+    "actual_conditional_item_consumption_proven": false,
+    "alternate_master_selected_in_original_setup": false,
+    "authenticated_official_TW1_or_JSS1999_same_deployment": false,
+    "proprietary_source_bytes_committed": false,
+    "stageA": "7_PARTIAL_2_OPEN",
+    "stageB_and_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percent": null
+  },
+  "result": "SAME_ARCHIVE_STATIC_CAPTURE_KEY_TO_ORIGINAL_GRAPHIC_INDEX_BRIDGE_11_KEYS_5_INDEXED_6_NOT_IN_THIS_INDEX",
+  "next": "WORLD37-R2C dynamic original tail remains conditional upon full CRC/SHA-verified original GMSV plus isolated x86 replay; otherwise continue source-ready original pet/animation or adjacent material content. Never treat 5 index hits as recovered original animation frames."
+}

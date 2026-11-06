@@ -7,6 +7,8 @@ on:
       - 'research/recovered/STONEAGE-STAGE-A-WORLD37-R2B-COMPILED-CAPTURE-REQUIRED-ITEMS-R1.json'
       - 'tests/test_stoneage_stage_a_world37_r2b_capture_required_items.py'
       - 'tools/stoneage_world37_capture_required_table.py'
+      - 'research/recovered/STONEAGE-STAGE-A-WORLD37-R2B3-CAPTURE-ORIGINAL-SPR-BRIDGE-R1.json'
+      - 'tests/test_stoneage_stage_a_world37_r2b3_capture_spr_bridge.py'
       - '.github/workflows/verify-stoneage-stage-a-world37-r2a-static.yml'
   pull_request:
     paths:
@@ -15,6 +17,8 @@ on:
       - 'research/recovered/STONEAGE-STAGE-A-WORLD37-R2B-COMPILED-CAPTURE-REQUIRED-ITEMS-R1.json'
       - 'tests/test_stoneage_stage_a_world37_r2b_capture_required_items.py'
       - 'tools/stoneage_world37_capture_required_table.py'
+      - 'research/recovered/STONEAGE-STAGE-A-WORLD37-R2B3-CAPTURE-ORIGINAL-SPR-BRIDGE-R1.json'
+      - 'tests/test_stoneage_stage_a_world37_r2b3_capture_spr_bridge.py'
       - '.github/workflows/verify-stoneage-stage-a-world37-r2a-static.yml'
 jobs:
   world37-r2a-static:
@@ -28,3 +32,5 @@ jobs:
         run: python -m unittest -v tests.test_stoneage_stage_a_world37_r2a_compiled_capture_tail_static
       - name: Validate original configured capture-item crosswalk and source-only boundaries
         run: python -m unittest -v tests.test_stoneage_stage_a_world37_r2b_capture_required_items
+      - name: Validate same-archive capture candidate to original SPR-index numeric bridge
+        run: python -m unittest -v tests.test_stoneage_stage_a_world37_r2b3_capture_spr_bridge
