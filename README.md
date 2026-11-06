@@ -1931,3 +1931,7 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 ## 2026-11-06 — WORLD34-R2 decoded PE code/data section boundary (original static source)
 
 Rechecked the preserved mixed25 RAR and verified the 23 previously pinned original source windows. The current libarchive GMSV decode fails the full EXE CRC in the COFF symbol table, after the end of all four file-backed PE sections; it does **not** certify the full original executable or prove end-to-end field item outcomes. The bounded original item callback/HP write/delete call sites are now recorded in [WORLD34-R2 static source note](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-34-R2-MAPPED-PE-SOURCE-20261106.md) and [derived source receipt](research/recovered/STONEAGE-STAGE-A-WORLD34-R2-MAPPED-PE-SOURCE-R1.json). **Highest NEXT WORLD34-R3**: original-source-qualified field intake through callback return; do not infer item scene bypass or inventory consumption from static call sites. Historical CURRENT blob unchanged.
+
+## 2026-11-06 — WORLD34-R3：场外回复回调完成与背包消耗
+
+用完整 SHA 和 CRC 合格的混合 2.5 原服务端程序，从场外命令回放到回复回调返回。三件代表道具在有效本人、宠物、队伍目标上均完成相应属性写入与夹具背包消耗。场景 1 的 1232 被原客户端场外检查拦下，同包服务端入口直接接收夹具参数时仍写体力并清槽。空宠物、空队伍与越界目标走到未检查的角色索引 `-1` 读取，隔离回放在边界停止。详见 [WORLD34-R3 连续性记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-34-R3-FIELD-ITEM-REPLAY-20261106.md) 和 [45 条派生轨迹](research/recovered/STONEAGE-STAGE-A-WORLD34-R3-FIELD-ITEM-REPLAY-R1.json)。最高优先 WORLD35 为捕捉增益道具与原捕捉判定的同包关系。
