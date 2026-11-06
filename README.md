@@ -1920,3 +1920,9 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 重新取回并核同混合 2.5 原保存档及其中完整 `gmsv.exe`，对 WORLD31 的 116 种普通参数恢复完整回调入参，回放其 79 组结算请求的两端随机值。原战斗指令证实有效目标保留、失效目标同侧重选，以及普通体力／气力分别封顶。临近上限时，原战斗缓冲仍保留截断前增量。同侧没有候选时，原函数返回 `-1` 而列表未填充，调用方下游留待证。详见 [WORLD32 连续性记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-32-BATTLE-RECOVERY-SOURCE-20261106.md) 和 [派生收据](research/recovered/STONEAGE-STAGE-A-WORLD32-BATTLE-RECOVERY-SOURCE-R1.json)。原档和原程序保持私有。回放范围为混合保存样本的隔离原指令，无实服回合或扣物证据。
 
 **最高 NEXT WORLD33**。核同保存版战斗物品命令对原表场景／目标字段的判定，复用已核回复物品，对照有限的允许／拒绝情形。Stage A 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体完成率未知。
+
+## 2026-11-06 — WORLD33：回复物品的客户端场景限制与战斗命令登记
+
+同包原客户端分别在战斗物品栏拒绝 `fieldtype=2`、在场外使用拒绝 `fieldtype=1`。原物品 12555 在客户端战斗栏被挡住，同包 GMSV 战斗入口却仍登记直接送入的普通槽位物品命令。受测服务端入口只读取物品目标字段，群体选择另受目标类型和施用者侧别限制。详见 [WORLD33 连续性记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-33-BATTLE-ITEM-GATE-SOURCE-20261106.md) 和 [派生收据](research/recovered/STONEAGE-STAGE-A-WORLD33-BATTLE-ITEM-GATE-SOURCE-R1.json)。证据范围为社区混合保存样本的客户端选择和服务端登记，无实战、联机或扣物验证。
+
+**最高 NEXT WORLD34**。核同保存版场外物品命令的场景字段与普通目标路径。Stage A 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体完成率未知。
