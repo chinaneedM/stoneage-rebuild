@@ -1926,3 +1926,8 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 同包原客户端分别在战斗物品栏拒绝 `fieldtype=2`、在场外使用拒绝 `fieldtype=1`。原物品 12555 在客户端战斗栏被挡住，同包 GMSV 战斗入口却仍登记直接送入的普通槽位物品命令。受测服务端入口只读取物品目标字段，群体选择另受目标类型和施用者侧别限制。详见 [WORLD33 连续性记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-33-BATTLE-ITEM-GATE-SOURCE-20261106.md) 和 [派生收据](research/recovered/STONEAGE-STAGE-A-WORLD33-BATTLE-ITEM-GATE-SOURCE-R1.json)。证据范围为社区混合保存样本的客户端选择和服务端登记，无实战、联机或扣物验证。
 
 **最高 NEXT WORLD34**。核同保存版场外物品命令的场景字段与普通目标路径。Stage A 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体完成率未知。
+
+
+## 2026-11-06 — WORLD34-R2 decoded PE code/data section boundary (original static source)
+
+Rechecked the preserved mixed25 RAR and verified the 23 previously pinned original source windows. The current libarchive GMSV decode fails the full EXE CRC in the COFF symbol table, after the end of all four file-backed PE sections; it does **not** certify the full original executable or prove end-to-end field item outcomes. The bounded original item callback/HP write/delete call sites are now recorded in [WORLD34-R2 static source note](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-34-R2-MAPPED-PE-SOURCE-20261106.md) and [derived source receipt](research/recovered/STONEAGE-STAGE-A-WORLD34-R2-MAPPED-PE-SOURCE-R1.json). **Highest NEXT WORLD34-R3**: original-source-qualified field intake through callback return; do not infer item scene bypass or inventory consumption from static call sites. Historical CURRENT blob unchanged.
