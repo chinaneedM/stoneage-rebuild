@@ -72,6 +72,8 @@ on:
       - 'research/recovered/STONEAGE-STAGE-A-WORLD36-CAPTURE-ROSTER-SOURCE-R1.json'
       - 'tests/test_stoneage_stage_a_world36_capture_roster_source.py'
       - 'tools/stoneage_capture_roster_source.py'
+      - 'research/recovered/STONEAGE-STAGE-A-WORLD37-CAPTURE-EXIT-DESCENDANT-SOURCE-R1.json'
+      - 'tests/test_stoneage_stage_a_world37_capture_exit_descendant.py'
       - '.github/workflows/verify-stoneage-gameplay-mechanics-module-01.yml'
   pull_request:
     paths:
@@ -142,6 +144,8 @@ on:
       - 'research/recovered/STONEAGE-STAGE-A-WORLD36-CAPTURE-ROSTER-SOURCE-R1.json'
       - 'tests/test_stoneage_stage_a_world36_capture_roster_source.py'
       - 'tools/stoneage_capture_roster_source.py'
+      - 'research/recovered/STONEAGE-STAGE-A-WORLD37-CAPTURE-EXIT-DESCENDANT-SOURCE-R1.json'
+      - 'tests/test_stoneage_stage_a_world37_capture_exit_descendant.py'
       - '.github/workflows/verify-stoneage-gameplay-mechanics-module-01.yml'
   workflow_dispatch:
 jobs:
@@ -181,3 +185,4 @@ jobs:
       - run: python -m unittest -v tests.test_stoneage_stage_a_world34_r3_field_item_replay
       - run: python -m unittest -v tests.test_stoneage_stage_a_world35_capture_item_source
       - run: python -m unittest -v tests.test_stoneage_stage_a_world36_capture_roster_source
+      - run: python -m unittest -v tests.test_stoneage_stage_a_world37_capture_exit_descendant

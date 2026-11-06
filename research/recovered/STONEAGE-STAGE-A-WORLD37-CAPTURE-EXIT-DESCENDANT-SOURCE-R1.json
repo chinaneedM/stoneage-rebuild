@@ -1,0 +1,178 @@
+{
+  "schema": "stoneage.world37.capture_exit_descendant_source_crosswalk.r1",
+  "date": "2026-11-06",
+  "source_scope": "THREE_PINNED_DESCENDANT_C_SOURCE_FUNCTION_CHAIN_NO_ORIGINAL_MIXED25_EXECUTION",
+  "starting_remote": {
+    "repo": "chinaneedM/stoneage-rebuild",
+    "main_head": "5c4cdd0023d88fbe1123645d03ea7f555d70de80",
+    "tree": "b96690a43447f53afec1d1a6fc99e8d08ddc2c9c",
+    "original_current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_current_state_bytes": 2709173
+  },
+  "world36_native_reference": "research/recovered/STONEAGE-STAGE-A-WORLD36-CAPTURE-ROSTER-SOURCE-R1.json",
+  "fixed_lineages": [
+    {
+      "lineage": "BismarckDD/stoneage",
+      "commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "capture": {
+        "path": "server/gmsv/battle/battle_event.c",
+        "blob": "be9f2d476f80540f4a458307b79192a94ae43690",
+        "lines": [
+          3941,
+          4074
+        ]
+      },
+      "battle_exit": {
+        "path": "server/gmsv/battle/battle.c",
+        "blob": "99c3ad4ccfc4210964db4f37d9e866a77a364e1d",
+        "lines": [
+          1097,
+          1189
+        ]
+      },
+      "char_end": {
+        "path": "server/gmsv/char/char_base.c",
+        "blob": "5f646eba671b39f5e90f53e3a95cbcc70ff56975",
+        "lines": [
+          2353,
+          2381
+        ]
+      }
+    },
+    {
+      "lineage": "gavinlinasd/StoneAge",
+      "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "capture": {
+        "path": "gmsv/src/battle/battle_event.c",
+        "blob": "76ecf3ffee0595b48daf5eea26e96cb170290d90",
+        "lines": [
+          4026,
+          4146
+        ]
+      },
+      "battle_exit": {
+        "path": "gmsv/src/battle/battle.c",
+        "blob": "df5a04b94cbd7bbdab0da3cf91f9b0fa01327c6c",
+        "lines": [
+          1149,
+          1206
+        ]
+      },
+      "char_end": {
+        "path": "gmsv/src/char/char_base.c",
+        "blob": "783b8803333bf3a63320b4379519a69b377e9037",
+        "lines": [
+          1824,
+          1853
+        ]
+      }
+    },
+    {
+      "lineage": "iriselia/StoneAge",
+      "commit": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "capture": {
+        "path": "Source/gmsv/battle/battle_event.c",
+        "blob": "8be4a044690e60ce4f22905cfb201e371e3e93da",
+        "lines": [
+          4020,
+          4141
+        ]
+      },
+      "battle_exit": {
+        "path": "Source/gmsv/battle/battle.c",
+        "blob": "3bd9f3603db416c46fc33cabf334592854bdddfd",
+        "lines": [
+          1154,
+          1212
+        ]
+      },
+      "char_end": {
+        "path": "Source/gmsv/char/char_base.c",
+        "blob": "bc35f7313b6a4b65caec286105807e4dc7d21187",
+        "lines": [
+          1587,
+          1616
+        ]
+      }
+    }
+  ],
+  "ordered_success_only_operations": [
+    "check_condition_items",
+    "check_capture_target_and_probability",
+    "clear_capture_modifier",
+    "create_pet_and_attach_owner",
+    "write_pet_get_level",
+    "consume_required_items_on_success_conditional",
+    "increment_capturer_get_pet_count",
+    "exit_captured_wild_from_battle",
+    "normalize_captured_pet_state",
+    "append_capture_result"
+  ],
+  "source_qualified_exit_effects": [
+    "entry.character_index_is_set_to_minus_one",
+    "entry.escape_flag_is_reset",
+    "wild.work_battle_mode_is_set_to_final",
+    "wild.work_battle_index_is_set_to_minus_one",
+    "CHAR_endCharOneArray_called_if_type_enemy",
+    "CHAR_endCharData_sets_record_use_false"
+  ],
+  "capture_failure_no_success_tail": [
+    "probability_or_target_rejected",
+    "pet_creation_returns_minus_one"
+  ],
+  "condition_item_variants": {
+    "no_required_item_match": "item_check_permits_without_item_consumption",
+    "ordinary_non_CAPTURE_FREES": "one_required_item_id_can_gate_capture; success_only_consumption_scans_carried_items_and_deletes_each_matched_id",
+    "CAPTURE_FREES": "required_id_array_per_enemy; success_helper_scans_all_item_slots_and_removes_each_matching_copy; do_not_assume_single_copy",
+    "CAPTURE_FREES_plus_NEED_ITEM_ENEMY_with_getDelNeedItem_nonzero": "some_matching_items_can_be_deleted_during_pre_probability_gate_even_if_capture_later_fails; cannot_generalize_success_only_rule",
+    "DEL_NOT_25_NEED_ITEM_and_WOLF_TAKE_AXE": "macro-dependent entries_not_canonical_TW1_deployment",
+    "source_table_entry_example": "descendant_pet_id_524_requires_item_id_2456_in_preserved_source; compiled_mixed25_configuration_unknown"
+  },
+  "control_cases": [
+    {
+      "name": "required_item_absent",
+      "gate": "reject",
+      "pet_created": false,
+      "count_increment": false,
+      "wild_exit": false,
+      "source_basis": "descendant_mainpath"
+    },
+    {
+      "name": "probability_rejected_after_item_gate",
+      "gate": "reject",
+      "pet_created": false,
+      "count_increment": false,
+      "wild_exit": false,
+      "source_basis": "descendant_mainpath"
+    },
+    {
+      "name": "capacity_or_pool_failure_after_score_success",
+      "gate": "pet_create_minus_one",
+      "pet_created": false,
+      "count_increment": false,
+      "wild_exit": false,
+      "source_basis": "descendant_mainpath_and_world36_original_binary"
+    },
+    {
+      "name": "successful_capture",
+      "gate": "success",
+      "pet_created": true,
+      "count_increment": true,
+      "wild_exit": true,
+      "source_basis": "descendant_source_success_tail_only"
+    }
+  ],
+  "negative_boundaries": {
+    "mixed25_original_binary_post_roster_execution_observed": false,
+    "mixed25_original_binary_capture_counter_field_verified": false,
+    "mixed25_original_binary_wild_exit_executed": false,
+    "mixed25_original_binary_condition_item_table_verified": false,
+    "mixed25_original_binary_compiled_condition_macros_verified": false,
+    "original_tw10_official_server_behaviour_verified": false,
+    "historical_save_or_network_delivery_verified": false,
+    "source_lineage_identity_is_not_deployment_identity": true,
+    "conjecture_count": 0
+  },
+  "status": "WORLD37-R1_DESCENDANT_SOURCE_QUALIFIED_MIXED25_NATIVE_OPEN",
+  "next": "WORLD37-R2_NATIVE_X86_GMSV_TAIL_IF_VERIFIED_ORIGINAL_ARCHIVE_AVAILABLE; else rotate to next content module; do not infer compiled condition table from descendant sources"
+}

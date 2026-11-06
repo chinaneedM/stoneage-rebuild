@@ -1943,3 +1943,8 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-06 — WORLD36：捕捉结果写入宠物携带栏
 
 隔离回放同包混合 2.5 原指令，从捕捉分数比较进入真实角色池分配、属性重算、宠物入栏与主人绑定。第一个空携带栏接收新角色索引，主人索引、账号与角色名写入新宠物。满携带栏与宠物角色池耗尽分别在不同阶段失败，原携带栏均保留。详见 [WORLD36 连续性记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-36-CAPTURE-ROSTER-SOURCE-20261106.md) 和 [派生收据](research/recovered/STONEAGE-STAGE-A-WORLD36-CAPTURE-ROSTER-SOURCE-R1.json)。最高优先 WORLD37 为入栏后战斗目标退出、计数及条件道具。
+
+
+## 2026-11-06 — WORLD37-R1：捕捉成功后的原野怪退出与条件道具版本分歧（后代源码证据）
+
+三条固定后代源码的九份原文件相互核对，补足 `BATTLE_Capture → _BATTLE_Exit → CHAR_endCharOneArray → CHAR_endCharData` 的成功尾段：战斗席位清除、野怪角色记录标为未使用、捕捉者计数增加；条件道具普通成功消费和宏控制的预检查消费必须分开。**本轮不是混合2.5原GMSV尾段原生回放，更不是台湾1.0官方服务器规则认证**。详见 [WORLD37-R1连续性记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-37-CAPTURE-EXIT-DESCENDANT-20261106.md)、[九份后代源码Git blob及版本收据](research/recovered/STONEAGE-STAGE-A-WORLD37-CAPTURE-EXIT-DESCENDANT-SOURCE-R1.json)。最高下一项WORLD37-R2：只有真实取得合格混合2.5原GMSV字节才进行其尾段指令回放；不能取得则转回有可读原件的模块内容。历史CURRENT文件原样保留，Stage A 7 PARTIAL + 2 OPEN不变。
