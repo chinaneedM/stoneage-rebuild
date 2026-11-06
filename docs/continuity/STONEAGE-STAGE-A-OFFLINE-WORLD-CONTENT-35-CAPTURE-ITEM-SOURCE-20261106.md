@@ -41,3 +41,10 @@ python -m unittest -v tests.test_stoneage_stage_a_world35_capture_item_source
 ```
 
 **最高 NEXT WORLD36｜捕捉判定之后的宠物入栏。** 优先同包原 `PET_createPetFromCharaIndex` 的一组成功入栏和满栏对照，核实复制的关键宠物状态、目标槽位与归属写入。先前后代源码规格继续分版使用。Stage A 仍为 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79 暂停，整体完成率未知。
+
+## 主线验收与 WORLD36 原件预检
+
+- [PR #217](https://github.com/chinaneedM/stoneage-rebuild/pull/217) 候选 `22af6d6f55e4f26204b24374fc85b48251b40724` 的 14 项 Actions 全部成功，[候选专项](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42204258422) 实际执行 WORLD35。主线内容提交 `ed583bc9d3212a35610a9ba9ce3d6ff21bf01eb0`、tree `78b9471a7fbbcb08c38a015cb199707803e46756` 与本地候选同树，11 项 Actions 全部成功。[主线专项](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42204458380) job `127847488804` 的 WORLD35 测试通过。专项工作流对应的 146 项测试在本地也全部通过。私下改动另存表一个字节后重跑，源资格检查拒绝改动。历史 CURRENT 完整字节再次核同。
+- 同包原 `CHAR_getCharPetElement` 在连续占用 0 至 5 栏的六组夹具中分别返回 0、1、2、3、4、−1。用全满夹具从原 `BATTLE_Capture` 比较通过后的分支进入，原 `PET_createPetFromCharaIndex` 返回 −1，原调用方把结果标志改为 0，五栏保持原值。此前比较通过由夹具设定。原扫描、创建入口、退出、栈探测及调用者窗口分别为 `0x42ec10..0x42eccc`、`0x468de0..0x468e11`、`0x4693be..0x4693cb`、`0x55ad60..0x55ad8d`、`0x5383c3..0x5383f1`，两版 Unicorn 观察一致。
+- 原创建函数确实请求模板数字 31010。编译 `CHAR_defaultCharacterGet` 的 53 项查找域（`0x570a60..0x570db0`，SHA-256 `c826a3214cbe4ad044641e0ad5112bc26cd69f3ed6e507550c41f2086fb2c57a`）没有这个键。用原 `CHAR_getDefaultChar` 回放 31010、两个表内端点 100000／100254 和缺失对照 999999，均得到同一 9,380 字节初始化缓冲，SHA-256 `c5bc49781d00ed690c4216bc8250e629e106ed70b7a23a778d5f8008159f062f`。缺失键使用原默认数据地址 `0x570dc0`，不能将调用参数称为独立模板记录。
+- 有空栏夹具 `[7,8,-1,10,-1]` 从原创建入口执行至 `CHAR_initCharOneArray` 调用前，选中槽 2。原暂存结构写人物类型 3，保留 28 个经核对的同键整数、七个技能槽（含两个 −1）与夹具原名。暂存结构 SHA-256 `675f01c8c589493e13eb5e923499b5880b912c82d74155c2a4d2d9bfae5ea454`，执行入口窗口 `0x468de0..0x46920c` 的 SHA-256 为 `e2a56f635176ab9412f958202ae19d64bcf0941c18d35eca480794f63e0fdc22`。两版 Unicorn 一致。施用者的五个宠物携带栏在此停点保持原值。WORLD36 的剩余目标是跨过角色分配，核实原入栏、归属字段和返回后的状态。
