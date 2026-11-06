@@ -1953,3 +1953,8 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-06 — ITEM04｜原TW1四个尾端透明RLE溢出图块可作私人有界像素观察
 
 在WORLD37-R2缺混合2.5原GMSV可执行文件时，转向已保存的原台湾1.0零售ADRN/REAL。完整复读并核对832个旧严格可解RD、831个原索引缺失及四个末尾恰多一个透明像素的旧失败RD；从四个原流各取严格画布上限内的**真实原索引像素**，独立解码相符，私有生成4灰度/4候选配色PNG和一联系页，私有ZIP已存Library并重读SHA/CRC。**原严格RD编码器未放宽，原客户端处理末端多一个像素仍未证，混合2.5物品表7个同号物品身份亦非TW1官方同服认定。** [详细连续性记录](docs/continuity/STONEAGE-ITEM-EQUIPMENT-SHOP-MODULE-04-FOUR-TERMINAL-RLE-PRIVATE-PIXELS-20261106.md)、[哈希与数据边界](research/recovered/STONEAGE-ITEM04-TW10-FOUR-TERMINAL-RLE-SOURCE-CANVAS-PREFIX-R1.json)。WORLD37-R2继续有条件OPEN；其余真实游戏内容按可读取原件排序。历史 CURRENT 原样不改。
+
+
+## 2026-11-06 — BATTLE181｜原台湾1.0战场第181图的400格来源候选画面（ITEM04联动）
+
+真正从原台湾1.0零售包重读战斗SAB181的400格及同包原ADRN/REAL：65个不同原位图号中64个严格RLE可解，余一图号6729只在此SAB出现一次，使用ITEM04独立验过的40×30原画布范围内1200索引像素，私人生成整张1350×1220现代候选战场图、源异常点标注、原图块放大图，并将805734B/4成员ZIP送入私人Library后独立回读整SHA/CRC。**O16旧217/218严格全可解统计保持不变；不能称原客户端对6729多一个透明像素的处理已认证，或218张已原生正常渲染。** [实际来源记录](docs/continuity/STONEAGE-STAGE-A-BATTLE181-TW10-ORIGINAL-SAB-CANVAS-20261106.md)、[原SHA/守恒与边界](research/recovered/STONEAGE-STAGE-A-BATTLE181-TW10-SAB6729-SOURCE-CANVAS-R1.json)、[公开回归测试](tests/test_stoneage_stage_a_battle181_canvas_source.py)。源图/400格原排列未入公开Git，原CURRENT完整保留，WORLD37-R2继续有条件OPEN。
