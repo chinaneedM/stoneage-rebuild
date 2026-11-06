@@ -1,0 +1,203 @@
+{
+  "schema": "stoneage.world34.field_item_bridge_from_prior_original_preflight.r1",
+  "scope": "CROSS_RECEIPT_SOURCE_BOUND_NO_NEW_NATIVE_EXECUTION",
+  "sources": {
+    "w31": {
+      "path": "research/recovered/STONEAGE-STAGE-A-WORLD31-RECOVERY-SOURCE-R1.json",
+      "git_blob": "a46987c558b5164346962dd653b49a76b791e24b"
+    },
+    "w33": {
+      "path": "research/recovered/STONEAGE-STAGE-A-WORLD33-BATTLE-ITEM-GATE-SOURCE-R1.json",
+      "git_blob": "ef3e4680e230e72f17140446832b371856f0685d"
+    },
+    "witness": {
+      "path": "docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-33-BATTLE-ITEM-GATE-SOURCE-20261106.md",
+      "git_blob": "014fc59fbef9245ba4dec3f3dc1e1337572e1323"
+    }
+  },
+  "parent_archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "server_program": {
+    "field_packet_entry": 4272432,
+    "field_intake_branch_to_character_use": 4272716,
+    "character_use": 4671200,
+    "recovery_callback": 5244304,
+    "field_recovery_callback": 5235920
+  },
+  "prior_field_intake_preflight": {
+    "observed_work_guard_keys": [
+      64,
+      0
+    ],
+    "observed_out_of_range_or_missing_pet_target_value": -1,
+    "observed_target_dispatch": [
+      {
+        "input": 0,
+        "lookup": "caster",
+        "slot": null
+      },
+      {
+        "input": 1,
+        "lookup": "pet_slot",
+        "slot": 0
+      },
+      {
+        "input": 2,
+        "lookup": "pet_slot",
+        "slot": 1
+      },
+      {
+        "input": 3,
+        "lookup": "pet_slot",
+        "slot": 2
+      },
+      {
+        "input": 4,
+        "lookup": "pet_slot",
+        "slot": 3
+      },
+      {
+        "input": 5,
+        "lookup": "pet_slot",
+        "slot": 4
+      },
+      {
+        "input": 6,
+        "lookup": "party_slot",
+        "slot": 0
+      },
+      {
+        "input": 7,
+        "lookup": "party_slot",
+        "slot": 1
+      },
+      {
+        "input": 8,
+        "lookup": "party_slot",
+        "slot": 2
+      },
+      {
+        "input": 9,
+        "lookup": "party_slot",
+        "slot": 3
+      },
+      {
+        "input": 10,
+        "lookup": "party_slot",
+        "slot": 4
+      }
+    ],
+    "result_scope": "previous self-target fixture halted at ITEM_useRecovery entry, not callback completion"
+  },
+  "original_items": [
+    {
+      "item_id": 1232,
+      "physical_row": {
+        "id": 1232,
+        "line": 1227,
+        "row_sha256": "aa3ce4290b9f3d9d0f3007e33f113a45a9ea995fe81e18544bcef24e29bc46b2",
+        "scene": 1,
+        "target": 2,
+        "shape": "HP",
+        "raw_hash_prefix": false
+      },
+      "client_field_gate_passed": false,
+      "client_battle_gate_passed": true,
+      "prior_native_intake_preflight_reached_callback_entry": true,
+      "prior_native_intake_preflight_item_int_keys": [
+        46,
+        3,
+        3,
+        0
+      ],
+      "independent_recovery_callback_fixture": null
+    },
+    {
+      "item_id": 12530,
+      "physical_row": {
+        "id": 12530,
+        "line": 7269,
+        "row_sha256": "bc1f35f9cbb18dcae3fb4c7b1f7cc80aa5833fc5bb2bf0be01ca89b7c806fa15",
+        "scene": 0,
+        "target": 1,
+        "shape": "HP",
+        "raw_hash_prefix": false
+      },
+      "client_field_gate_passed": true,
+      "client_battle_gate_passed": true,
+      "prior_native_intake_preflight_reached_callback_entry": true,
+      "prior_native_intake_preflight_item_int_keys": [
+        46,
+        3,
+        3,
+        0
+      ],
+      "independent_recovery_callback_fixture": {
+        "option_tokens": [
+          [
+            "體",
+            320
+          ]
+        ],
+        "field_written_stats_at_rand_zero": [
+          388
+        ],
+        "field_written_stats_at_rand_max": [
+          452
+        ],
+        "fixture_is_direct_callback_not_intake_chain": true
+      }
+    },
+    {
+      "item_id": 12555,
+      "physical_row": {
+        "id": 12555,
+        "line": 7294,
+        "row_sha256": "b89a06a7a9ecbb56e1778f95ac350363b75b24ce4c36f7497d0a5bb5be7918b5",
+        "scene": 2,
+        "target": 1,
+        "shape": "HP_MP",
+        "raw_hash_prefix": false
+      },
+      "client_field_gate_passed": true,
+      "client_battle_gate_passed": false,
+      "prior_native_intake_preflight_reached_callback_entry": true,
+      "prior_native_intake_preflight_item_int_keys": [
+        46,
+        3,
+        3,
+        0
+      ],
+      "independent_recovery_callback_fixture": {
+        "option_tokens": [
+          [
+            "氣",
+            20
+          ],
+          [
+            "體",
+            185
+          ]
+        ],
+        "field_written_stats_at_rand_zero": [
+          266,
+          28
+        ],
+        "field_written_stats_at_rand_max": [
+          303,
+          32
+        ],
+        "fixture_is_direct_callback_not_intake_chain": true
+      }
+    }
+  ],
+  "boundaries": {
+    "original_binary_reexecuted_this_change": false,
+    "self_target_intake_to_recovery_callback_return_observed": false,
+    "nonself_intake_to_recovery_callback_execution_observed": false,
+    "live_inventory_mutation_observed": false,
+    "scene_one_server_side_full_effect_block_or_allow_proven": false,
+    "original_client_and_server_live_connection_observed": false,
+    "official_same_deployment_proven": false,
+    "original_taiwan_v1_or_jss1999_equivalence_proven": false
+  }
+}
