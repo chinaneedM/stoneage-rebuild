@@ -3,7 +3,6 @@
 CI contains only rights-safe original-source-derived hashes and numbers; original
 RAR, enemybase text and SPR payload are never committed or executed here.
 """
-import copy
 import json
 import unittest
 from pathlib import Path
@@ -55,7 +54,7 @@ class CaptureSpriteBridge(unittest.TestCase):
             m=m[0]
             self.assertEqual((derived["configured_enemybase_column37_graphic_number"],
                               derived["configured_enemybase_column38_PETFLG"],
-                              derived["configured_enemybase_normalized_fields_sha256"]), (m[2],m[3],m[17]))
+                              derived["configured_enemybase_normalized_fields_sha256"]), (m[2],m[3],m[16]))
             original_line=original["configured_enemybase_field6_same_numeric_candidate"]
             self.assertEqual((derived["configured_enemybase_physical_line"],
                               derived["configured_enemybase_original_line_sha256"],
@@ -68,7 +67,7 @@ class CaptureSpriteBridge(unittest.TestCase):
                 self.assertEqual((derived["alternate_enemybase2"]["column37_graphic_number"],
                                   derived["alternate_enemybase2"]["column38_PETFLG"],
                                   derived["alternate_enemybase2"]["normalized_fields_sha256"]),
-                                 (alt[0][2],alt[0][3],alt[0][17]))
+                                 (alt[0][2],alt[0][3],alt[0][16]))
                 self.assertEqual(derived["alternate_enemybase2"]["original_line_sha256"],
                                  original["alternate_enemybase2_field6_same_numeric_candidate"]["original_row_sha256"])
             else:
