@@ -72,7 +72,7 @@ def derive():
         "summary":{
             "TW10_source_graphic_groups_in_PET07_sample":len(groups),
             "mixed25_main":stats(tables[0]),"mixed25_alternative":stats(tables[1]),
-            "TW10_graphics_without_any_mixed25_alternative_rows":sorted(keys-set(indices[tables[1]])),
+            "TW10_graphics_without_any_mixed25_alternative_rows":sorted(k for k in keys if not indices[tables[1]][k]),
             "TW10_graphics_without_mixed25_alternative_PETFLG_1_rows":sorted(k for k in keys if not any(r[3]==1 for r in indices[tables[1]][k])),
             "original_specimens_newly_downloaded":0,"original_pixel_blocks_newly_decoded":0,
         },
