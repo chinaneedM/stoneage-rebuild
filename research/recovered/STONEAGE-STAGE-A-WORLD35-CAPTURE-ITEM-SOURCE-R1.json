@@ -1,0 +1,5516 @@
+{
+  "schema": "stoneage.world35.capture_item_source.r1",
+  "scope": "PRESERVED_MIXED25_X86_ITEM_CALLBACK_AND_CAPTURE_SCORE_TAIL",
+  "archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "source_members": [
+    {
+      "target": "gmsv/gmsv.exe",
+      "header_offset": 359906866,
+      "header_bytes": 154,
+      "packed_bytes": 605893,
+      "unpacked_bytes": 1897867,
+      "header_sha256": "8b8d28fb487f54d93d335caeb385bfb7239b467288087ceca434ffcf29716dea",
+      "packed_sha256": "330634f8ca453ba7c60ba2df0c474a6fc6aa95d2c126586e1b61a1206d79ce05",
+      "member_crc32": 1848751674,
+      "member_sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00"
+    },
+    {
+      "target": "gmsv/setup.cf",
+      "header_offset": 360516773,
+      "header_bytes": 154,
+      "packed_bytes": 4172,
+      "unpacked_bytes": 9715,
+      "header_sha256": "c953d11775fa19c279f71ef4380f11a6c40de5eb296e6caf785a12bc1b6d8730",
+      "packed_sha256": "1ba77f491e170a41407062159d72c184f02b240b794cedb6ba90d3832fab0918",
+      "member_crc32": 914480129,
+      "member_sha256": "b4936c103efb7b3cad359e5c85c7965187306883a68c0be712ece6c374e3b12d"
+    },
+    {
+      "target": "gmsv/data/itemset.txt",
+      "header_offset": 354691427,
+      "header_bytes": 172,
+      "packed_bytes": 230185,
+      "unpacked_bytes": 3392473,
+      "header_sha256": "3fc62fb1eea3761f2ea145503570be3fcdec74eaee8e953582460ecafb371859",
+      "packed_sha256": "f8e8d649429c33c9cc416c05466aceb3d2a1d421d4b19dffcdf071e329035b60",
+      "member_crc32": 2520348968,
+      "member_sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688"
+    }
+  ],
+  "symbols": {
+    "__CHAR_getWorkInt": 4382144,
+    "__CHAR_setWorkInt": 4382256,
+    "_ITEM_itemconfentries": 5799520,
+    "_ITEM_useCaptureUp": 5247408,
+    "_BATTLE_Index2No": 5339328,
+    "_BATTLE_Capture": 5472480,
+    "_BATTLE_MultiCaptureUp": 5557296,
+    "_BATTLE_ItemUseDelete": 5604432,
+    "_ITEM_useCaptureUp_Battle": 5610992
+  },
+  "registration_sha256": "aeffe0562429ad7124bfc21792094baaee16861d3260e33b4833ef6a4707f923",
+  "work_key": 32,
+  "source_windows": [
+    [
+      5247408,
+      5247540,
+      "54c9fe6913246de42207a68277ea7f46a0036d067adfbaa5f6605892e76e66ab"
+    ],
+    [
+      5610992,
+      5611270,
+      "0b592233b7153fdb75966353403e50d61c9139ed8cd605efddc789a1df395cfc"
+    ],
+    [
+      5557296,
+      5557901,
+      "8c6deee27812ef2317b99046af077856431b93b5b02bfb768fa4a05d3bedc345"
+    ],
+    [
+      5474762,
+      5474974,
+      "d434e468da730746d14b44371555a8c1584392e17566a56b676966faa4b6f48f"
+    ],
+    [
+      5472697,
+      5472751,
+      "d472fedc95aedf123ad35f4782f48cc8d55888ebc6b803140c800ebdad79c69d"
+    ],
+    [
+      5604432,
+      5604869,
+      "7ccb3f7564308d05dd1fa09591fb6af589c2958fa997ee9bdf3ec310a44173a8"
+    ],
+    [
+      5339328,
+      5339504,
+      "92ef888cef8449139228f8ce9e197d37316ad3f480ba48e86ebda2b62d81499f"
+    ],
+    [
+      5338976,
+      5339152,
+      "e8b9b810514732a4f1407720aec07c8216e3246c2c7bd8a8be95d3458a889f94"
+    ],
+    [
+      5342272,
+      5344032,
+      "692a6f8d62da346d7438acd3111ac973eb56845ee043a540fdfecab3b607550b"
+    ],
+    [
+      5538656,
+      5539162,
+      "78d0016ae5189714be9a959ea164683522187a276289befef9b4cb1b56603755"
+    ],
+    [
+      4381024,
+      4381080,
+      "49c7a964957ec4de7d1d07880d933dd6667ba5f70118a5ae47240713baf5b0fd"
+    ],
+    [
+      4381584,
+      4381612,
+      "2f294b52d721bdd0d8bfc298432023c40d946ef3bb4bf77b7e6b30e5288bd18c"
+    ],
+    [
+      4381744,
+      4381936,
+      "57e2e5b4e4b4cf151a0dfb670e09da802c3baa1784f415f910c09531b7983aa1"
+    ],
+    [
+      4382144,
+      4382426,
+      "060772894288fe6c2ac45e2ede16aed6dab79f1a770e8beecfb5aa13a0d4c9ca"
+    ],
+    [
+      4383120,
+      4383240,
+      "1401c119b267ea60f6f1a27dab1d1a1e322a247cfbfb92c56fe4e4a3a8b3ab39"
+    ],
+    [
+      4383456,
+      4383664,
+      "7021eea015cabacdf9772806ccf246111a5f9eb1c4c763d326fe3637d90a8f16"
+    ],
+    [
+      4384368,
+      4384378,
+      "bf3111a00f8f91de532a66f26876496be4aef57e8bc1f4f1d7283da32fa6e693"
+    ],
+    [
+      4405936,
+      4406336,
+      "fafd5357e8b0385ad99d463d4ae8050ec009f995750b62d43503ac66a0e42f56"
+    ],
+    [
+      5206448,
+      5206560,
+      "28527b6d669449acd58aa2167cdd1720f6b7800d8672ffe06eef013547b9d0e0"
+    ],
+    [
+      5206688,
+      5207136,
+      "d91a76101e239bb135f9e8a3e89c5a850da1079326515221b9416d5464998435"
+    ],
+    [
+      5207296,
+      5207616,
+      "76220d6b1109210cce08f82033803bc7f504061f1f4c64ff863a75230a8f6572"
+    ],
+    [
+      5207776,
+      5207927,
+      "6f154905531318456006719bc698e9d9b91ef1ab9b1f2e99e5131762f63b7bf1"
+    ],
+    [
+      5926920,
+      5927145,
+      "c3d1814f1686a03aeb53b5d75c8229c7c2b4eba2dc28bfedff1b810b1276f9a1"
+    ],
+    [
+      5937992,
+      5938260,
+      "6c33f6e691ce1f23f27d23edf1c564d2ee273cf82753217c1e136ebdcce63a21"
+    ],
+    [
+      5675812,
+      5675820,
+      "5ac9831b2e30eb285ef34f8501620f878432d5c04331ad1ae47f977a83ba41a5"
+    ],
+    [
+      5917291,
+      5917292,
+      "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+    ],
+    [
+      5931012,
+      5931032,
+      "c2f7adf82fab4f375d301673e7786ac4a0866733eb34a4b6f96fd41e46949e54"
+    ],
+    [
+      5938802,
+      5938836,
+      "3f8307d3b72e4f05ebb93298fcc107bbbad64236bded3bab2d4ae94bac2caca3"
+    ],
+    [
+      5941401,
+      5941404,
+      "0b782fc3030dbdf3756f17e7adf2ce5808dfc513ca7589adeb679c7d25eaef6f"
+    ]
+  ],
+  "stub_names_by_address": {
+    "4292416": "item_log",
+    "4452416": "display_name",
+    "4667200": "inventory_notice",
+    "5614896": "diagnostic_context",
+    "5615104": "diagnostic_write",
+    "5615136": "snprintf",
+    "5615440": "diagnostic_log",
+    "5615456": "memset",
+    "5615568": "sscanf",
+    "5615664": "rand",
+    "5615952": "memcpy"
+  },
+  "roll_constants": [
+    0.9,
+    1.1,
+    4.656612873077393e-10
+  ],
+  "fixture": {
+    "actor": 8,
+    "teammate": 9,
+    "wild": 10,
+    "actor_slot": 2,
+    "teammate_slot": 7,
+    "wild_slot": 17,
+    "inventory_slot": 7,
+    "base_score": 10.0,
+    "score_rand": 0,
+    "x87_control_word": 895
+  },
+  "alternate_item_source": {
+    "member": "gmsv/data/itemset0710.txt",
+    "bytes": 3668487,
+    "sha256": "6d6d63fda59c6bda2f239fe18c9361b5c9da18c84f678b7cc95bde24544292fb",
+    "rows": 13915
+  },
+  "item_rows": [
+    {
+      "id": 1828,
+      "line": 1699,
+      "alternate_line": 1825,
+      "row_sha256": "68c408090be12700f5441f74647df22173941d3acddbb95543c13cf9debb5814",
+      "row_without_line_ending_sha256": "b86e78466e127c0f3b41e4d692970cae1513cb181670de58158abd466a684f0d",
+      "option_sha256": "624b60c58c9d8bfb6ff1886c2fd605d2adeb6ea4da576068201b6c6958ce93f4",
+      "base_option": 30,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 1829,
+      "line": 1700,
+      "alternate_line": 1826,
+      "row_sha256": "3e13b66e1bae073282714d4dd2cec2ba1e6d8c7b2f3cd4bc8e20bc43621b213b",
+      "row_without_line_ending_sha256": "1643b9e77fcbbaa9bfb2c745e6068fb0140b763233b3685f26e4a1954dd30aa8",
+      "option_sha256": "d59eced1ded07f84c145592f65bdf854358e009c5cd705f5215bf18697fed103",
+      "base_option": 40,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 1830,
+      "line": 1701,
+      "alternate_line": 1827,
+      "row_sha256": "e5e3679557375f753ad0336b53953de3259224de564ba7265164ad7a4c92cca4",
+      "row_without_line_ending_sha256": "3101b5105973e2fc501a86e98f3d0493e91b1b70845b72acba007935c2bdd195",
+      "option_sha256": "1a6562590ef19d1045d06c4055742d38288e9e6dcd71ccde5cee80f1d5a774eb",
+      "base_option": 50,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 1831,
+      "line": 1702,
+      "alternate_line": 1828,
+      "row_sha256": "ee35b732c0f30854393392cfe4fc97b3f71762e2459c7f5f485e8ffe3046ada8",
+      "row_without_line_ending_sha256": "926e85bc4da2b9eac1de4fa2fb49229b55dc068ad78fa02f4ce8c14632b77298",
+      "option_sha256": "39fa9ec190eee7b6f4dff1100d6343e10918d044c75eac8f9e9a2596173f80c9",
+      "base_option": 60,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 1832,
+      "line": 1703,
+      "alternate_line": 1829,
+      "row_sha256": "1d386afc9b47122124fa82b3db70f3ad42369254f38de9d9654bedf27371ab40",
+      "row_without_line_ending_sha256": "6b816c9d2c629cd974f69a0da9fd5138219ffce29569f56be9f30066bad1c58e",
+      "option_sha256": "ff5a1ae012afa5d4c889c50ad427aaf545d31a4fac04ffc1c4d03d403ba4250a",
+      "base_option": 70,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 1833,
+      "line": 1704,
+      "alternate_line": 1830,
+      "row_sha256": "7d4ad30c7fef12ac3a8acb5d8fc83bdccdc0a9b352a58d142e895b6ae663ee42",
+      "row_without_line_ending_sha256": "abe8e8c3854e61b8e01b35d5d6ba0eacfe0c46dad729c466e2d2ac29fa1774cf",
+      "option_sha256": "48449a14a4ff7d79bb7a1b6f3d488eba397c36ef25634c111b49baf362511afc",
+      "base_option": 80,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 2387,
+      "line": 1974,
+      "alternate_line": 2365,
+      "row_sha256": "d93153c9d46bbfc181163ac34e3f85001bef0b6be89bbab7130ebfabc07fa9fc",
+      "row_without_line_ending_sha256": "76b9e04b69a8dcf00cd1efeb1cfee9bfe53c963e6130b7b07a523cf35e974436",
+      "option_sha256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5",
+      "base_option": 10,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 2702,
+      "line": 2224,
+      "alternate_line": 2619,
+      "row_sha256": "75988b8567303cc9a4030fc3a9638984742de456ace4635062e7640b65bd536f",
+      "row_without_line_ending_sha256": "82e676b97ffa9892d8a9f43f0c25037ddc73b3c241c67c983ef408b22c8815c8",
+      "option_sha256": "48449a14a4ff7d79bb7a1b6f3d488eba397c36ef25634c111b49baf362511afc",
+      "base_option": 80,
+      "type": 16,
+      "fieldtype": 1,
+      "target": 1,
+      "useaction": -1
+    },
+    {
+      "id": 12654,
+      "line": 7393,
+      "alternate_line": 7844,
+      "row_sha256": "bd40ea6359b678213fa9b1781f68dc036fee6c6e63b96da387767a4a1fcb74e6",
+      "row_without_line_ending_sha256": "427016817fcb5718e136adb4e4d7e50ed4f28c7f0ee20f60f3646eac73456931",
+      "option_sha256": "3fdba35f04dc8c462986c992bcf875546257113072a909c162f7e470e581e278",
+      "base_option": 13,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 12656,
+      "line": 7395,
+      "alternate_line": 7846,
+      "row_sha256": "16ba2031df6b5e3cb5793525c4763833434b077a43afbb536922d047c0d1e2c6",
+      "row_without_line_ending_sha256": "4f1311670c1aa6f9e2b66714c2425e4f6eacf58ceb21c90a1334c34cf9ec5880",
+      "option_sha256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5",
+      "base_option": 10,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 12751,
+      "line": 7489,
+      "alternate_line": 7940,
+      "row_sha256": "6d6e2784bab2397e103034c2467ab9dffd0b6869bd76404ae0eefcd6f8f71946",
+      "row_without_line_ending_sha256": "c801843849cec3a0bf1787efc5b61e0c0d76e42bd885bddbcc2d6977cb40e2b3",
+      "option_sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+      "base_option": 4,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 12781,
+      "line": 7514,
+      "alternate_line": 7965,
+      "row_sha256": "f48f41db0ac6dd0d4ed69ca6fffe8b702838f18667207ec7a2482ed94d863f64",
+      "row_without_line_ending_sha256": "b2db16c9198acfbf04019a8ca2e696acda242cbb07875a7a839a463dac9e4891",
+      "option_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+      "base_option": 1,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 12782,
+      "line": 7515,
+      "alternate_line": 7966,
+      "row_sha256": "739f8ee9a9df8eb4d433603be4e11bbe151f9e59356d58065e613438fa560a38",
+      "row_without_line_ending_sha256": "ab1be1ba77466063bb14a4120551b55e3e8b9c35e4b39b96900d623f282880a5",
+      "option_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+      "base_option": 1,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 12783,
+      "line": 7516,
+      "alternate_line": 7967,
+      "row_sha256": "eb49ba5297461e67c9a8dd6774837fde9c88b66280a99d0993042a920721ce2f",
+      "row_without_line_ending_sha256": "4ca019486af7138807faebf3e41184192344d3d2fdbd8b2bceaf64261f1907f7",
+      "option_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+      "base_option": 1,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 12818,
+      "line": 7551,
+      "alternate_line": 8002,
+      "row_sha256": "768118920bf2684892cede7b1d8a6dff41876eaff66d13b5ef5d180885af1de5",
+      "row_without_line_ending_sha256": "53462036f8c872fe7b1a874f642f941170657cc3449d14ac8bd697a2dd01ea58",
+      "option_sha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+      "base_option": 3,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 12819,
+      "line": 7552,
+      "alternate_line": 8003,
+      "row_sha256": "2c58d275d627066ab0a240c53aac7af723aa9a46e7550dde464acde54a8a86a7",
+      "row_without_line_ending_sha256": "9f8d6077e5d018054db09f8e345ba4675eb03be8aa0894bca103a3a754e2c6fc",
+      "option_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+      "base_option": 6,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 12820,
+      "line": 7553,
+      "alternate_line": 8004,
+      "row_sha256": "f3dbe355e86653e52188c2bdbbbddda584831e8012cc0206f730dd570c38673e",
+      "row_without_line_ending_sha256": "e331aad85525cc8a5ba5a4f9f6882a8deced6ea12137fd8dbf9a450dc2d39a08",
+      "option_sha256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5",
+      "base_option": 10,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 12821,
+      "line": 7554,
+      "alternate_line": 8005,
+      "row_sha256": "a9bbd3463e5cb3be283b93ed4459c1fcad463573be1a3ec433dc287fd5cd86e5",
+      "row_without_line_ending_sha256": "15aaad32ff6b1acc84fe88d5daecc04fade968af2cd8b925de9404134bc8ab93",
+      "option_sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+      "base_option": 4,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 12822,
+      "line": 7555,
+      "alternate_line": 8006,
+      "row_sha256": "c7dae80094636f6f9df77f83782149744081d54eece55f962f6bde06886755b5",
+      "row_without_line_ending_sha256": "5ad07291d5e7e20b604740ca50990123271c5bef6b0ba1518c67bf87d9fe9b15",
+      "option_sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+      "base_option": 5,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 12828,
+      "line": 7561,
+      "alternate_line": 8012,
+      "row_sha256": "eb5d99eea7a462091ede56644cf7056ff5a6838bba70c7dbf06d10e495d2f15c",
+      "row_without_line_ending_sha256": "9e877bcfc9127a75bd21bf10334111ea37fcdcb3f6011880caf65084fbcd0e0e",
+      "option_sha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+      "base_option": 3,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 12832,
+      "line": 7565,
+      "alternate_line": 8016,
+      "row_sha256": "fe4d04bb9c58e003a26b2919a8a06e4e4347a5d8619674c912e89bf95cae20cc",
+      "row_without_line_ending_sha256": "dcc52512b7d283fc5f7567dabeb06a7f0c610d1c218b2aac5d98c5b760873184",
+      "option_sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+      "base_option": 4,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 12842,
+      "line": 7575,
+      "alternate_line": 8026,
+      "row_sha256": "3dbc99783a710084b1606d905bc830bc546c3b5fb4cd07638b412ca193d2fa59",
+      "row_without_line_ending_sha256": "85f9a53aab8af5436472a1fbfec8eb3dd45562f5f77ebf38e1ddfaa5493c794f",
+      "option_sha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+      "base_option": 3,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 12843,
+      "line": 7576,
+      "alternate_line": 8027,
+      "row_sha256": "163d6aa31a254e0995794d7c114c5037e9aba4c2506f95652d2be6dde24244ec",
+      "row_without_line_ending_sha256": "0d9a99279cf6166db1b1c069fc42152b282fe90e29620e9f8604a8a3204aee27",
+      "option_sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+      "base_option": 4,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 12854,
+      "line": 7587,
+      "alternate_line": 8038,
+      "row_sha256": "1e6524d91c25f89d348dfdd5974f272c8c20c1d85a66fa3b0eb86d10e262deef",
+      "row_without_line_ending_sha256": "48ceeb76ede5cd7b549f944011a1e52cf9edbcc7d1b195116e9ca58aa6d4dbad",
+      "option_sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+      "base_option": 5,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 12855,
+      "line": 7588,
+      "alternate_line": 8039,
+      "row_sha256": "12b65aa011be178cc95e550d4fc83a946ada8b8502b5ee5248d69ca32ff9cec3",
+      "row_without_line_ending_sha256": "ad0cdec832ee69802401c62b5ca96afcdee240fe98b9958796d448f21d4395e7",
+      "option_sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+      "base_option": 5,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    },
+    {
+      "id": 12856,
+      "line": 7589,
+      "alternate_line": 8040,
+      "row_sha256": "94917192dc05612626ebec2fbac6f4ee3cfee8a0d6102e5b89c16402aae800f7",
+      "row_without_line_ending_sha256": "b9626bf6ad49c89ffc67b004ded89df812282518c6a8e96cb478038fa90563fa",
+      "option_sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+      "base_option": 5,
+      "type": 20,
+      "fieldtype": 1,
+      "target": 0,
+      "useaction": -1
+    }
+  ],
+  "ordinary_cases": [
+    {
+      "id": 1828,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            30,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            27
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          27,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 27,
+          "points": 37.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              27,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 1828,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            30,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            33
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          33,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 33,
+          "points": 43.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              33,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 1829,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            40,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            36
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          36,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 36,
+          "points": 46.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              36,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 1829,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            40,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            44
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          44,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 44,
+          "points": 54.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              44,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 1830,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            50,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            45
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          45,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 45,
+          "points": 55.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              45,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 1830,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            50,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            55
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          55,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 55,
+          "points": 65.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              55,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 1831,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            60,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            54
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          54,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 54,
+          "points": 64.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              54,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 1831,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            60,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            66
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          66,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 66,
+          "points": 76.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              66,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 1832,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            70,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            63
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          63,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 63,
+          "points": 73.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              63,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 1832,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            70,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            77
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          77,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 77,
+          "points": 87.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              77,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 1833,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            80,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            72
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          72,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 72,
+          "points": 82.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              72,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 1833,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            80,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            88
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          88,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 88,
+          "points": 98.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              88,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 2387,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            10,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            9
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          9,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 9,
+          "points": 19.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              9,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 2387,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            10,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            11
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          11,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 11,
+          "points": 21.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              11,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 2702,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            7,
+            80,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          7
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            9,
+            32,
+            0,
+            72
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          0,
+          72,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r7|FF|B%|7|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 0,
+          "points": 10.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              0,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 2702,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            7,
+            80,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          7
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            9,
+            32,
+            0,
+            88
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          0,
+          88,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r7|FF|B%|7|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 0,
+          "points": 10.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              0,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12654,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            13,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            11
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          11,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 11,
+          "points": 21.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              11,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12654,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            13,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            14
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          14,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 14,
+          "points": 24.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              14,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12656,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            10,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            9
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          9,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 9,
+          "points": 19.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              9,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12656,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            10,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            11
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          11,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 11,
+          "points": 21.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              11,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12751,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            4,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            3
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          3,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 3,
+          "points": 13.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              3,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12751,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            4,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            4
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          4,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 4,
+          "points": 14.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              4,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12781,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            1,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            0
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          0,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 0,
+          "points": 10.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              0,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12781,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            1,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            1
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          1,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 1,
+          "points": 11.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              1,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12782,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            1,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            0
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          0,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 0,
+          "points": 10.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              0,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12782,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            1,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            1
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          1,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 1,
+          "points": 11.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              1,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12783,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            1,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            0
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          0,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 0,
+          "points": 10.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              0,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12783,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            1,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            1
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          1,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 1,
+          "points": 11.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              1,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12818,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            3,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            2
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          2,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 2,
+          "points": 12.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              2,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12818,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            3,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            3
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          3,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 3,
+          "points": 13.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              3,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12819,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            6,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            5
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          5,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 5,
+          "points": 15.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              5,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12819,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            6,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            7
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          7,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 7,
+          "points": 17.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              7,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12820,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            10,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            9
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          9,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 9,
+          "points": 19.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              9,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12820,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            10,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            11
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          11,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 11,
+          "points": 21.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              11,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12821,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            4,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            3
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          3,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 3,
+          "points": 13.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              3,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12821,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            4,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            4
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          4,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 4,
+          "points": 14.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              4,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12822,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            5,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            4
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          4,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 4,
+          "points": 14.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              4,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12822,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            5,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            5
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          5,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 5,
+          "points": 15.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              5,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12828,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            3,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            2
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          2,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 2,
+          "points": 12.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              2,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12828,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            3,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            3
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          3,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 3,
+          "points": 13.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              3,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12832,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            4,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            3
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          3,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 3,
+          "points": 13.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              3,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12832,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            4,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            4
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          4,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 4,
+          "points": 14.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              4,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12842,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            3,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            2
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          2,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 2,
+          "points": 12.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              2,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12842,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            3,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            3
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          3,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 3,
+          "points": 13.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              3,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12843,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            4,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            3
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          3,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 3,
+          "points": 13.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              3,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12843,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            4,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            4
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          4,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 4,
+          "points": 14.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              4,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12854,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            5,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            4
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          4,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 4,
+          "points": 14.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              4,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12854,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            5,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            5
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          5,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 5,
+          "points": 15.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              5,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12855,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            5,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            4
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          4,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 4,
+          "points": 14.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              4,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12855,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            5,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            5
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          5,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 5,
+          "points": 15.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              5,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12856,
+      "random": 0,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            5,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            4
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          4,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 4,
+          "points": 14.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              4,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    {
+      "id": 12856,
+      "random": 2147483647,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            5,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            5
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          5,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 5,
+          "points": 15.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              5,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    }
+  ],
+  "control_cases": {
+    "field_mode": {
+      "id": 12822,
+      "overrides": {
+        "actor_mode": 0
+      },
+      "synthetic_option": false,
+      "trace": {
+        "settlement_args": [],
+        "selected_slots": [],
+        "item_rand": [],
+        "item_work_writes": [],
+        "delete_args": [],
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1,
+        "post_item_modifiers": [
+          0,
+          0,
+          0
+        ],
+        "battle_buffer": "",
+        "score": {
+          "character": 8,
+          "modifier_before": 0,
+          "points": 10.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              0,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    "initializing_battle": {
+      "id": 12822,
+      "overrides": {
+        "actor_mode": 1
+      },
+      "synthetic_option": false,
+      "trace": {
+        "settlement_args": [],
+        "selected_slots": [],
+        "item_rand": [],
+        "item_work_writes": [],
+        "delete_args": [],
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1,
+        "post_item_modifiers": [
+          0,
+          0,
+          0
+        ],
+        "battle_buffer": "",
+        "score": {
+          "character": 8,
+          "modifier_before": 0,
+          "points": 10.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              0,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    "missing_item": {
+      "id": 12822,
+      "overrides": {
+        "occupied": false
+      },
+      "synthetic_option": false,
+      "trace": {
+        "settlement_args": [],
+        "selected_slots": [],
+        "item_rand": [],
+        "item_work_writes": [],
+        "delete_args": [],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          0,
+          0,
+          0
+        ],
+        "battle_buffer": "",
+        "score": {
+          "character": 8,
+          "modifier_before": 0,
+          "points": 10.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              0,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    "add_existing": {
+      "id": 12822,
+      "overrides": {
+        "existing": 12
+      },
+      "synthetic_option": false,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            5,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            12,
+            16
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          16,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 16,
+          "points": 26.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              16,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    "middle_random": {
+      "id": 12819,
+      "overrides": {
+        "rand": 1073741824
+      },
+      "synthetic_option": false,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            6,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          1073741824
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            6
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          6,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 6,
+          "points": 16.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              6,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    "nonplayer": {
+      "id": 2702,
+      "overrides": {
+        "target_slot": 17,
+        "recipient_kind": 2
+      },
+      "synthetic_option": false,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            17,
+            80,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          17
+        ],
+        "item_rand": [],
+        "item_work_writes": [],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          0,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r11|FF|",
+        "score": {
+          "character": 8,
+          "modifier_before": 0,
+          "points": 10.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              0,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    "dead_target_same_side_fallback": {
+      "id": 2702,
+      "overrides": {
+        "target_slot": 7,
+        "target_hp": 0
+      },
+      "synthetic_option": false,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            7,
+            80,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0,
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            72
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          72,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 72,
+          "points": 82.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              72,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    "failed_scan_default_5": {
+      "id": 12822,
+      "overrides": {},
+      "synthetic_option": true,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            5,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            4
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          4,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 4,
+          "points": 14.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              4,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    "empty_option_default_5": {
+      "id": 12822,
+      "overrides": {},
+      "synthetic_option": true,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            5,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            4
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          4,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 4,
+          "points": 14.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              4,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    "score_equal_rejected": {
+      "id": 12822,
+      "overrides": {
+        "actor_mode": 0,
+        "score_base": 1.0
+      },
+      "synthetic_option": false,
+      "trace": {
+        "settlement_args": [],
+        "selected_slots": [],
+        "item_rand": [],
+        "item_work_writes": [],
+        "delete_args": [],
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1,
+        "post_item_modifiers": [
+          0,
+          0,
+          0
+        ],
+        "battle_buffer": "",
+        "score": {
+          "character": 8,
+          "modifier_before": 0,
+          "points": 1.0,
+          "integer_roll": 1,
+          "comparison_flag": 0,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              0,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    "score_bonus_changes_comparison": {
+      "id": 12781,
+      "overrides": {
+        "rand": 2147483647,
+        "score_base": 1.0
+      },
+      "synthetic_option": false,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            1,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          2147483647
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            1
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          1,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 1,
+          "points": 2.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              1,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    "teammate_consumes_own_bonus": {
+      "id": 2702,
+      "overrides": {
+        "target_slot": 7,
+        "score_actor": 9
+      },
+      "synthetic_option": false,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            7,
+            80,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          7
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            9,
+            32,
+            0,
+            72
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          0,
+          72,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r7|FF|B%|7|0|",
+        "score": {
+          "character": 9,
+          "modifier_before": 72,
+          "points": 82.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              9,
+              32,
+              72,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    "sleep_bonus": {
+      "id": 12822,
+      "overrides": {
+        "sleep": 1
+      },
+      "synthetic_option": false,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            5,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            4
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          4,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 4,
+          "points": 29.0,
+          "integer_roll": 1,
+          "comparison_flag": 1,
+          "random_input": [
+            0
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              4,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    "cap_roll_98": {
+      "id": 1833,
+      "overrides": {
+        "score_base": 90.0,
+        "score_rand": 2083159138
+      },
+      "synthetic_option": false,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            80,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            72
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          72,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 72,
+          "points": 99.0,
+          "integer_roll": 98,
+          "comparison_flag": 1,
+          "random_input": [
+            2083159138
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              72,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    "cap_roll_99": {
+      "id": 1833,
+      "overrides": {
+        "score_base": 90.0,
+        "score_rand": 2104633975
+      },
+      "synthetic_option": false,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            80,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            72
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          72,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 72,
+          "points": 99.0,
+          "integer_roll": 99,
+          "comparison_flag": 0,
+          "random_input": [
+            2104633975
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              72,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    },
+    "cap_and_high_random": {
+      "id": 1833,
+      "overrides": {
+        "score_base": 90.0,
+        "score_rand": 2147483647
+      },
+      "synthetic_option": false,
+      "trace": {
+        "settlement_args": [
+          [
+            0,
+            2,
+            2,
+            80,
+            100612,
+            100605
+          ]
+        ],
+        "selected_slots": [
+          2
+        ],
+        "item_rand": [
+          0
+        ],
+        "item_work_writes": [
+          [
+            8,
+            32,
+            0,
+            72
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0,
+        "post_item_modifiers": [
+          72,
+          0,
+          0
+        ],
+        "battle_buffer": "BJ|a2|m0|e18904|e188FD|r2|FF|B%|2|0|",
+        "score": {
+          "character": 8,
+          "modifier_before": 72,
+          "points": 99.0,
+          "integer_roll": 100,
+          "comparison_flag": 0,
+          "random_input": [
+            2147483647
+          ],
+          "work_writes": [
+            [
+              8,
+              32,
+              72,
+              0
+            ]
+          ],
+          "modifier_after": 0
+        }
+      }
+    }
+  },
+  "world34_useaction_correction": {
+    "schema_evidence": {
+      "descriptor_ordinal": 62,
+      "physical_column": 77,
+      "runtime_int_key": 46,
+      "paired_descriptors": [
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61
+      ],
+      "paired_first_physical_columns": [
+        37,
+        39,
+        41,
+        43,
+        45,
+        47,
+        49,
+        51,
+        63,
+        65,
+        67,
+        69,
+        71,
+        73,
+        75
+      ],
+      "descriptors_sha256": "2de40b18eb04cca7799bac91355b17bf0c23c91e5778bb87bc3b56a33034b25d",
+      "parser_windows": [
+        [
+          5215967,
+          5216250,
+          "59fda361ace43106f79346e050f65f582603ed904937281e98ca584531c8453d"
+        ],
+        [
+          5216366,
+          5216440,
+          "245b3dd15123ca869d538bd9f40e1c9a038b20dc178208ec3e54717ec7ce98c1"
+        ]
+      ]
+    },
+    "rechecks": [
+      {
+        "id": 1232,
+        "scenario": "self_min",
+        "useaction": -1,
+        "action_notice_called": false,
+        "stat_writes": [
+          [
+            8,
+            10,
+            640
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "intake_returned": true
+      },
+      {
+        "id": 1232,
+        "scenario": "self_max",
+        "useaction": -1,
+        "action_notice_called": false,
+        "stat_writes": [
+          [
+            8,
+            10,
+            760
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "intake_returned": true
+      },
+      {
+        "id": 1232,
+        "scenario": "pet_min",
+        "useaction": -1,
+        "action_notice_called": false,
+        "stat_writes": [
+          [
+            10,
+            10,
+            640
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "intake_returned": true
+      },
+      {
+        "id": 1232,
+        "scenario": "pet_max",
+        "useaction": -1,
+        "action_notice_called": false,
+        "stat_writes": [
+          [
+            10,
+            10,
+            760
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "intake_returned": true
+      },
+      {
+        "id": 1232,
+        "scenario": "party_min",
+        "useaction": -1,
+        "action_notice_called": false,
+        "stat_writes": [
+          [
+            9,
+            10,
+            640
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "intake_returned": true
+      },
+      {
+        "id": 1232,
+        "scenario": "party_max",
+        "useaction": -1,
+        "action_notice_called": false,
+        "stat_writes": [
+          [
+            9,
+            10,
+            760
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "intake_returned": true
+      },
+      {
+        "id": 12530,
+        "scenario": "self_min",
+        "useaction": 6,
+        "action_notice_called": true,
+        "stat_writes": [
+          [
+            8,
+            10,
+            388
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "intake_returned": true
+      },
+      {
+        "id": 12530,
+        "scenario": "self_max",
+        "useaction": 6,
+        "action_notice_called": true,
+        "stat_writes": [
+          [
+            8,
+            10,
+            452
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "intake_returned": true
+      },
+      {
+        "id": 12530,
+        "scenario": "pet_min",
+        "useaction": 6,
+        "action_notice_called": false,
+        "stat_writes": [
+          [
+            10,
+            10,
+            388
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "intake_returned": true
+      },
+      {
+        "id": 12530,
+        "scenario": "pet_max",
+        "useaction": 6,
+        "action_notice_called": false,
+        "stat_writes": [
+          [
+            10,
+            10,
+            452
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "intake_returned": true
+      },
+      {
+        "id": 12530,
+        "scenario": "party_min",
+        "useaction": 6,
+        "action_notice_called": true,
+        "stat_writes": [
+          [
+            9,
+            10,
+            388
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "intake_returned": true
+      },
+      {
+        "id": 12530,
+        "scenario": "party_max",
+        "useaction": 6,
+        "action_notice_called": true,
+        "stat_writes": [
+          [
+            9,
+            10,
+            452
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "intake_returned": true
+      },
+      {
+        "id": 12555,
+        "scenario": "self_min",
+        "useaction": 7,
+        "action_notice_called": true,
+        "stat_writes": [
+          [
+            8,
+            10,
+            266
+          ],
+          [
+            8,
+            11,
+            28
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "intake_returned": true
+      },
+      {
+        "id": 12555,
+        "scenario": "self_max",
+        "useaction": 7,
+        "action_notice_called": true,
+        "stat_writes": [
+          [
+            8,
+            10,
+            303
+          ],
+          [
+            8,
+            11,
+            32
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "intake_returned": true
+      },
+      {
+        "id": 12555,
+        "scenario": "pet_min",
+        "useaction": 7,
+        "action_notice_called": false,
+        "stat_writes": [
+          [
+            10,
+            10,
+            266
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "intake_returned": true
+      },
+      {
+        "id": 12555,
+        "scenario": "pet_max",
+        "useaction": 7,
+        "action_notice_called": false,
+        "stat_writes": [
+          [
+            10,
+            10,
+            303
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "intake_returned": true
+      },
+      {
+        "id": 12555,
+        "scenario": "party_min",
+        "useaction": 7,
+        "action_notice_called": true,
+        "stat_writes": [
+          [
+            9,
+            10,
+            266
+          ],
+          [
+            9,
+            11,
+            28
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "intake_returned": true
+      },
+      {
+        "id": 12555,
+        "scenario": "party_max",
+        "useaction": 7,
+        "action_notice_called": true,
+        "stat_writes": [
+          [
+            9,
+            10,
+            303
+          ],
+          [
+            9,
+            11,
+            32
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "slot_after": -1,
+        "item_live_after": 0,
+        "intake_returned": true
+      }
+    ]
+  },
+  "original_process_started": false,
+  "capture_ownership_executed": false,
+  "network_messages_delivered": false,
+  "historical_official_deployment_verified": false
+}
