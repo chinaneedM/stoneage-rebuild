@@ -59,7 +59,7 @@ class OriginalRecoveryItemsetVariantTests(unittest.TestCase):
             20247, 20253, 20259])
         differences = {key: alt['shape_counts'][key] - selected['shape_counts'][key]
                        for key in alt['shape_counts']}
-        self.assertEqual(differences, dict(Counter(r['option_shape'] for r in extra)))
+        self.assertEqual(differences, {key: Counter(r['option_shape'] for r in extra)[key] for key in differences})
         for row in extra:
             self.assertGreater(row['source_row_1based'], 0)
             for key in ('source_row_sha256_from_item01_catalog', 'raw_option_sha256_cp950'):
@@ -70,6 +70,27 @@ class OriginalRecoveryItemsetVariantTests(unittest.TestCase):
         self.assertFalse(d['source_original_executable_replayed_in_this_package'])
         self.assertFalse(d['source_same_deployment_or_official_version_proven'])
         self.assertFalse(d['original_items_used_in_game'])
+
+    def test_each_extra_row_matches_independent_published_item01_source_index(self):
+        expected = {row['id']: row['source_row_sha256_from_item01_catalog']
+                    for row in self.doc['alternate_only_callback_rows']}
+        matched = {}
+        for shard_no in range(1, 8):
+            shard = ROOT / 'research/recovered/item-module-01' / (
+                f'STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-{shard_no:02d}-R1.json')
+            source = json.loads(shard.read_text(encoding='utf-8'))
+            self.assertEqual(source['source_itemset_rows_sha256_provenance'],
+                             self.doc['source_itemsets'][A]['original_member_sha256'])
+            self.assertEqual(source['source_itemset0710_rows_sha256_provenance'],
+                             self.doc['source_itemsets'][B]['original_member_sha256'])
+            for record in source['rows']:
+                ident = record[0]
+                if ident in expected:
+                    self.assertNotIn(ident, matched)
+                    self.assertIsNone(record[1])  # selected itemset lacks the original ID
+                    self.assertEqual(record[2], expected[ident])
+                    matched[ident] = record[2]
+        self.assertEqual(matched, expected)
 
     def test_option_tokens_are_not_inferred_from_spaced_or_unknown_parameters(self):
         self.assertEqual(class_of('體320'), 'HP')
