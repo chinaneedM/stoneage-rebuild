@@ -5,8 +5,8 @@ import struct
 import unittest
 
 from tools.stoneage_world37_capture_required_table import (
-    ARCHIVE_SHA, EXE_EXPECTED_SHA, MASTER_SHA, SECTIONS, DATA_VA,
-    read_compiled_rows, read_items,
+    ARCHIVE_SHA, EXE_EXPECTED_SHA, MASTER_SHA, ENEMY_MASTER_SHA, SETUP_CF_SHA, SECTIONS, DATA_VA,
+    read_compiled_rows, read_items, read_enemybase,
 )
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -56,7 +56,7 @@ class CaptureRequiredItems(unittest.TestCase):
             self.assertEqual(r['original_item_masters_sha256']['itemset.txt'], self.world31['source_itemsets']['itemset.txt']['original_member_sha256'])
             self.assertEqual(r['original_item_masters_sha256']['itemset0710.txt'], self.world31['source_itemsets']['itemset0710.txt']['original_member_sha256'])
             self.assertEqual(self.world31['configured_itemset_from_world31_setup_cf'],'itemset.txt')
-        self.assertEqual(r['summary'],{'selected_present':9,'alternate_present':12,'alternate_only_ids':[20247,20253,20259]})
+        self.assertEqual(r['summary'],{'selected_present':9,'alternate_present':12,'alternate_only_ids':[20247,20253,20259], 'selected_enemybase_matching_keys':11,'alternate_enemybase2_matching_keys':7})
         observed=r['original_item_id_crosswalk']
         self.assertEqual([x['item_id'] for x in observed],sorted(x['item_id'] for x in observed))
         self.assertEqual([x['item_id'] for x in observed if x['selected'] is None],[20247,20253,20259])
@@ -82,11 +82,38 @@ class CaptureRequiredItems(unittest.TestCase):
         for call in c.values():self.assertRegex(call['source_sha256'],r'^[0-9a-f]{64}$')
         b=self.report['negative_boundaries']
         for key in ('actual_conditional_item_consumption_executed','original_dynamic_capture_tail_executed',
-                    'original_enemy_species_names_proven_by_key53', 'configured_original_item_master_selected_is_alternate',
+                    'original_enemy_species_names_proven_by_key53','same_numeric_field6_enemybase_proves_live_role_key53_identity', 'configured_original_item_master_selected_is_alternate',
                     'all_128_capture_rows_are_real_pet_species','same_build_official_TW1_or_JSS1999_server_verified',
                     'missing_selected_item_ids_are_invented_or_filled'):
             self.assertIs(b[key],False,key)
         self.assertEqual(b['overall_percent'],None)
+
+    def test_original_enemybase_same_numeric_names_not_runtime_species(self):
+        r=self.report
+        self.assertEqual(r['original_enemybase_master_sha256'],ENEMY_MASTER_SHA)
+        self.assertEqual(r['source_setup_cf_sha256'],SETUP_CF_SHA)
+        self.assertEqual(r['source_setup_enemybasefile'],'./data/enemybase.txt')
+        links=r['enemybase_field6_numeric_join_candidates']
+        expected={524:'卡特利奴',961:'艾蜜',953:'雷誅',962:'訐譙龍',777:'佩露夏',796:'嘎吱拉',812:'斑尼迪克',
+                  1105:'夏普德',8:'巨大瑪恩摩',145:'薩德迪比',146:'薩德斯凱'}
+        self.assertEqual({x['char_int_key_53_value']:x['configured_enemybase_field6_same_numeric_candidate']['name_cp950'] for x in links},expected)
+        self.assertEqual({x['char_int_key_53_value'] for x in links if x['alternate_enemybase2_field6_same_numeric_candidate'] is None}, {8,1105,145,146})
+        for x in links:
+            self.assertFalse(x['semantic_join_runtime_verified'])
+            self.assertRegex(x['configured_enemybase_field6_same_numeric_candidate']['original_row_sha256'],r'^[0-9a-f]{64}$')
+            if x['alternate_enemybase2_field6_same_numeric_candidate']:
+                self.assertEqual(x['configured_enemybase_field6_same_numeric_candidate']['name_cp950'], x['alternate_enemybase2_field6_same_numeric_candidate']['name_cp950'])
+
+    def test_synthetic_enemybase_blank_lines_and_corruption(self):
+        fields=[b'']*56
+        fields[0]='卡特利奴'.encode('cp950')
+        fields[6]=b'524'
+        row=b','.join(fields)+b'\r\n'
+        self.assertEqual(list(read_enemybase(row+b'\r\n')), [524])
+        with self.assertRaisesRegex(ValueError,'duplicate'):
+            read_enemybase(row+row)
+        with self.assertRaisesRegex(ValueError,'enemybase row width'):
+            read_enemybase(b'bad\r\n')
 
     def test_synthetic_wrong_sentinel_rejected(self):
         blob=bytearray(128*64)
