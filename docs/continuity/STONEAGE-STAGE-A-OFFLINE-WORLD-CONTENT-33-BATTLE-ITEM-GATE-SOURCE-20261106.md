@@ -34,3 +34,10 @@ python -m unittest -v tests.test_stoneage_stage_a_world33_battle_item_gate_sourc
 ```
 
 **最高 NEXT WORLD34**。沿同包场外物品命令入口核查场景 1 是否还受服务端限制，并确定客户端单体目标字段到服务端场外目标的传递。优先复用 1232、12530、12555，做到一组允许／拒绝对照或准确记下原件边界。Stage A 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体完成率未知。
+
+## 主线验收与 WORLD34 预检（2026-11-06）
+
+- [PR #213](https://github.com/chinaneedM/stoneage-rebuild/pull/213) 候选 `d871b0a7b2525f55460e053ab385f6b7554beb1b` 共 14 项 Actions 成功（3 项 PR、11 项 push）。[PR 专项](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42163507286) 的 WORLD33 步骤通过。
+- 内容主线 `968a503ea4225183ebefc3c2a1652942a04023e9`、tree `38a1ab5999a3ab0caba79489e1ab07f7e716b449` 与候选及本地验收树相同。主线 11 项 Actions 全部成功，[主线专项](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42163842356) job `127715554914` 的 WORLD33 六项公开测试通过。历史 CURRENT 完整字节核同。独立核对四个 RAR4 文件头的长度、头 CRC 和成员 CRC，并以 `nm`／`objdump` 核同 11 个服务端符号、两处客户端场景判断和客户端物品状态字段地址。
+- WORLD34 场外入口确定位于 `lssproto_ID_recv`（`0x413130`），通过 `0x41324c` 跳到 `CHAR_ItemUse`。两个工作字段键 64／0 非零时提前返回。入参目标 0 取施用者，1–5 查宠物槽 0–4，6–10 查队伍槽 0–4，受测越界和缺宠物携带 `-1` 到下游。角色索引、宠物／队伍查询、位置处理在此预检中使用夹具。
+- 另用原物品 1232／12530／12555（场景 1／0／2，类型均为 20）在施用者自选夹具下走过原 `CHAR_ItemUse`，三者都到达已定位的 `ITEM_useRecovery` 回调入口。原物品整数读取序列均为 46、3、3、0，未读取场景／目标键 4／5。两版 Unicorn 得到同一预检记录。预检在回调入口收取实参，回调的完整场外结果、其它目标与后续库存变更仍为 WORLD34 取证目标。
