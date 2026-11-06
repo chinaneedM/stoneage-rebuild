@@ -1958,3 +1958,8 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-06 — BATTLE181｜原台湾1.0战场第181图的400格来源候选画面（ITEM04联动）
 
 真正从原台湾1.0零售包重读战斗SAB181的400格及同包原ADRN/REAL：65个不同原位图号中64个严格RLE可解，余一图号6729只在此SAB出现一次，使用ITEM04独立验过的40×30原画布范围内1200索引像素，私人生成整张1350×1220现代候选战场图、源异常点标注、原图块放大图，并将805734B/4成员ZIP送入私人Library后独立回读整SHA/CRC。**O16旧217/218严格全可解统计保持不变；不能称原客户端对6729多一个透明像素的处理已认证，或218张已原生正常渲染。** [实际来源记录](docs/continuity/STONEAGE-STAGE-A-BATTLE181-TW10-ORIGINAL-SAB-CANVAS-20261106.md)、[原SHA/守恒与边界](research/recovered/STONEAGE-STAGE-A-BATTLE181-TW10-SAB6729-SOURCE-CANVAS-R1.json)、[公开回归测试](tests/test_stoneage_stage_a_battle181_canvas_source.py)。源图/400格原排列未入公开Git，原CURRENT完整保留，WORLD37-R2继续有条件OPEN。
+
+
+## 2026-11-06 — WORLD37-R2A：原混合2.5编译捕捉成功尾段静态证据
+
+重新核实已保存的361255180B混合2.5 RAR整SHA，libarchive完整长度输出仍存在CRC及整SHA错误，未将其冒作合格EXE；但四个PE实际装载段SHA与此前独立UnRAR合格原程序的段摘要全部相同。原机器码静态核准：捕宠成功分支内宠物创建后存在条件道具处理、角色整数键44读取/加一/回写、战斗退出入口；退出路径存在清席位及野怪类型2角色释放调用。**仅证明受源限定的代码可达结构，未执行这些尾段、扣物、计数或角色池释放。** 详见[WORLD37-R2A连续性记录](docs/continuity/STONEAGE-STAGE-A-WORLD37-R2A-ORIGINAL-CAPTURE-TAIL-STATIC-20261106.md)、[派生收据](research/recovered/STONEAGE-STAGE-A-WORLD37-R2A-ORIGINAL-COMPILED-CAPTURE-TAIL-STATIC-R1.json)。最高条件性NEXT WORLD37-R2B：完整合格原GMSV和隔离x86回放环境可得时验证原指令实际写入，否则切换可读取原来源模块；Stage A 7PARTIAL+2OPEN，Stage B/wiki GATED，R79暂停，完成率未知；历史CURRENT完整原样保留。
