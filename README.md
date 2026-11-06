@@ -1939,3 +1939,7 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-06 — WORLD35：捕捉增益道具与捕捉分数
 
 同包两张物品表的 26 条捕捉增益原行逐字节相同。原指令回放确认道具对接收者累加工作键 32，捕捉判定读取捕捉者本人的该键，完成比较后清零。分数封顶 99，受测整数随机值 98 通过、99 拒绝。另按编译加载器订正 WORLD34-R3 的动作物理列和三个原值，重跑 18 组后属性写入与扣物结果一致。详见 [WORLD35 连续性记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-35-CAPTURE-ITEM-SOURCE-20261106.md) 和 [派生收据](research/recovered/STONEAGE-STAGE-A-WORLD35-CAPTURE-ITEM-SOURCE-R1.json)。最高优先 WORLD36 为捕捉判定之后的宠物入栏与归属。
+
+## 2026-11-06 — WORLD36：捕捉结果写入宠物携带栏
+
+隔离回放同包混合 2.5 原指令，从捕捉分数比较进入真实角色池分配、属性重算、宠物入栏与主人绑定。第一个空携带栏接收新角色索引，主人索引、账号与角色名写入新宠物。满携带栏与宠物角色池耗尽分别在不同阶段失败，原携带栏均保留。详见 [WORLD36 连续性记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-36-CAPTURE-ROSTER-SOURCE-20261106.md) 和 [派生收据](research/recovered/STONEAGE-STAGE-A-WORLD36-CAPTURE-ROSTER-SOURCE-R1.json)。最高优先 WORLD37 为入栏后战斗目标退出、计数及条件道具。
