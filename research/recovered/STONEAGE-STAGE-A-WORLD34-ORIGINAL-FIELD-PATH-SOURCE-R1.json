@@ -1,0 +1,180 @@
+{
+  "schema": "stoneage.world34.original_field_item_source_static.r1",
+  "phase": "HISTORICAL_ORIGINAL_CODE_AND_ITEM_TABLE_WINDOW_RECHECK",
+  "archive": {
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "full_parent_bytes": 361255180,
+    "original_member_headers_and_packed_segments_match_w33": true,
+    "client_exe_sha256": "ec678517f76564ebc9ab00cf3f66853ed9975ef6290eb48168b78909a68a5d16",
+    "itemset_sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+    "setup_sha256": "b4936c103efb7b3cad359e5c85c7965187306883a68c0be712ece6c374e3b12d"
+  },
+  "server_extraction": {
+    "expected_member_unpacked_bytes": 1897867,
+    "expected_member_sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00",
+    "expected_member_crc32": 1848751674,
+    "actual_libarchive_data_prefix_bytes": 1835008,
+    "actual_libarchive_data_prefix_sha256": "363201c00f57bd1b12e777d0c30e47d4151cebab78239970b2ed8d25a615f72d",
+    "actual_libarchive_block_read_bytes": 1897867,
+    "actual_libarchive_block_read_sha256": "e61c417b18f939a22d25b800240f1d2d0f889a78024a8657e06502ff0ccdff0f",
+    "actual_libarchive_block_read_crc32": 3321589842,
+    "whole_member_sha256_verified": false,
+    "whole_member_crc_verified": false,
+    "original_source_windows_qualified_by_independently_pinned_sha": true,
+    "qualification": "A libarchive decoding error prevents accepting the full reconstructed EXE; only original PE ranges equal to pinned WORLD31/WORLD33 window hashes qualify for static use"
+  },
+  "previously_pinned_windows": {
+    "world31_original_gmsv_code_data_windows": 6,
+    "world33_original_gmsv_code_data_windows": 12,
+    "world33_original_client_code_data_windows": 5,
+    "all_23_window_sha256_matches": true,
+    "pins_from_source_git_blobs": {
+      "world31": "a46987c558b5164346962dd653b49a76b791e24b",
+      "world33": "ef3e4680e230e72f17140446832b371856f0685d"
+    }
+  },
+  "newly_recovered_original_pe_windows": [
+    {
+      "role": "lssproto_ID_recv_field_intake",
+      "start_va": 4272432,
+      "end_va_exclusive": 4272770,
+      "sha256": "4ebd3e9739e133db3578cf468f095783a7f0ca8f5c860c47b5b373e024b29e33"
+    },
+    {
+      "role": "CHAR_ItemUse_source_until_callback_dispatch",
+      "start_va": 4671200,
+      "end_va_exclusive": 4672011,
+      "sha256": "a4dfa57784a7213fc68ab734d6e5e4c182e666c0054700a8327b75b6438e6800"
+    },
+    {
+      "role": "callback_lookup_uses_item_record_key19",
+      "start_va": 4671644,
+      "end_va_exclusive": 4671673,
+      "sha256": "1af27df7045ab7a67b8359cdc7de34de1a0b071be2ca38f557072d13a9cf9f27"
+    },
+    {
+      "role": "indirect_callback_three_parameter_forwarding",
+      "start_va": 4671986,
+      "end_va_exclusive": 4672006,
+      "sha256": "1a95aa6783457afd67387967a8c5cabc53f5bbf4a22f45ffbb74dffb78fdaf44"
+    }
+  ],
+  "compiled_field_call_sites": [
+    {
+      "site": 4272716,
+      "opcode": "relative_jump",
+      "destination": 4671200,
+      "role": "field_packet_to_CHAR_ItemUse"
+    },
+    {
+      "site": 4671656,
+      "opcode": "relative_call",
+      "destination": 5210032,
+      "role": "lookup_callback_pointer_by_item_runtime_int_key_19"
+    },
+    {
+      "site": 4672000,
+      "opcode": "indirect_call",
+      "local_ebp_disp": -284,
+      "role": "dispatch_actual_item_use_callback"
+    }
+  ],
+  "callback_arguments_from_original_instructions": [
+    {
+      "ordinal": 0,
+      "role": "caster_character_index",
+      "source": "CHAR_ItemUse arg0 at [ebp+8]"
+    },
+    {
+      "ordinal": 1,
+      "role": "resolved_field_target_character_or_pet_index",
+      "source": "CHAR_ItemUse arg1 at [ebp+12]"
+    },
+    {
+      "ordinal": 2,
+      "role": "inventory_item_slot",
+      "source": "CHAR_ItemUse arg2 at [ebp+16]"
+    }
+  ],
+  "original_itemset_rows": [
+    {
+      "id": 1232,
+      "source_line_number": 1227,
+      "original_row_sha256": "aa3ce4290b9f3d9d0f3007e33f113a45a9ea995fe81e18544bcef24e29bc46b2",
+      "zero_based_columns": {
+        "item_id": 16,
+        "argument": 3,
+        "callback_name": 10,
+        "item_type": 19,
+        "fieldtype": 20,
+        "target": 21
+      },
+      "item_type": 20,
+      "fieldtype": 1,
+      "target_type": 2,
+      "original_recovery_argument": "體600",
+      "original_argument_raw_cp950_sha256": "6e0ad3ee815597005d1c3e88bf010e33b5808e0e8a293b2d18288dbf77b7d204",
+      "callback_name": "ITEM_useRecovery",
+      "client_field_gate_passed": false,
+      "prior_intake_reached_callback_entry": true
+    },
+    {
+      "id": 12530,
+      "source_line_number": 7269,
+      "original_row_sha256": "bc1f35f9cbb18dcae3fb4c7b1f7cc80aa5833fc5bb2bf0be01ca89b7c806fa15",
+      "zero_based_columns": {
+        "item_id": 16,
+        "argument": 3,
+        "callback_name": 10,
+        "item_type": 19,
+        "fieldtype": 20,
+        "target": 21
+      },
+      "item_type": 20,
+      "fieldtype": 0,
+      "target_type": 1,
+      "original_recovery_argument": "體320",
+      "original_argument_raw_cp950_sha256": "f692b2b300be2b1ab4b8815439850ce442c9fcb612b3a012df97d33e31ac2910",
+      "callback_name": "ITEM_useRecovery",
+      "client_field_gate_passed": true,
+      "prior_intake_reached_callback_entry": true
+    },
+    {
+      "id": 12555,
+      "source_line_number": 7294,
+      "original_row_sha256": "b89a06a7a9ecbb56e1778f95ac350363b75b24ce4c36f7497d0a5bb5be7918b5",
+      "zero_based_columns": {
+        "item_id": 16,
+        "argument": 3,
+        "callback_name": 10,
+        "item_type": 19,
+        "fieldtype": 20,
+        "target": 21
+      },
+      "item_type": 20,
+      "fieldtype": 2,
+      "target_type": 1,
+      "original_recovery_argument": "氣20體185",
+      "original_argument_raw_cp950_sha256": "6c34ada7764a8c5e0d86bf7369fd978563d03353bf10a99adc935b37d1ba18fd",
+      "callback_name": "ITEM_useRecovery",
+      "client_field_gate_passed": true,
+      "prior_intake_reached_callback_entry": true
+    }
+  ],
+  "source_semantics": {
+    "client_field_rejects_item_1232": true,
+    "server_original_field_intake_previously_reached_callback_entry_for_three_items": true,
+    "client_and_field_target_namespace_distinct_from_battle_target_20_21_22": true,
+    "item_attribute_key_4_or_5_read_before_callback_entry_in_prior_field_preflight": false,
+    "original_character_attribute_getter_keys_4_and_5_are_not_item_fieldtype_keys": true
+  },
+  "unproven": {
+    "whole_executable_member_reconstructed_with_valid_crc": true,
+    "fresh_full_native_world34_emulator_trace_created": true,
+    "recovery_callback_return_observed_from_field_packet_entry": true,
+    "field_scene_one_full_effect_allow_or_deny_result_known": true,
+    "pet_or_party_target_full_effect_observed": true,
+    "inventory_slot_consumption_observed_from_field_packet_entry": true,
+    "same_build_official_client_server_verified": true
+  }
+}
