@@ -171,4 +171,124 @@ class Item01Acceptance(unittest.TestCase):
         s=copy.deepcopy(self.shops);s['npcgen_shop_creation_rows'][0]['argument_sha256']='0'
         with self.assertRaises(AssertionError):verify(self.summary,s,self.shards)
 
-if __name__=='__main__':unittest.main()
+
+class Item05StockAcceptance(unittest.TestCase):
+    """Rebuild the stock crosswalk from the public fingerprints and item ID shards."""
+
+    @classmethod
+    def setUpClass(cls):
+        from tools import stoneage_item05_shop_stock as item05
+
+        cls.tool = item05
+        cls.report = json.loads(item05.REPORT.read_bytes())
+        cls.prior = json.loads(SHOPS.read_bytes())
+
+    def test_public_replay_of_all_slots_and_source_links(self):
+        report = self.report
+        arguments, creations = report['ordered_argument_tokens'], report['creations']
+        self.tool.validate_projection(arguments, creations, self.prior)
+        self.assertEqual(self.tool.stock_projection(
+            arguments, creations, self.tool.old_items(), report['item_table_hash_marked_ids']),
+            report['projection'])
+        self.assertEqual((report['npc_subtree_files_verified'], report['npc_create_files_checked']), (2205, 189))
+        self.assertEqual((len(arguments), len(creations)), (224, 191))
+        self.assertEqual(sum(len(c['source_location_fields']) == 2 for c in creations), 3)
+        self.assertTrue(all(HEX.fullmatch(c['source_block_sha256']) for c in creations))
+        self.assertTrue(all(HEX.fullmatch(r['line_sha256']) and HEX.fullmatch(r['value_sha256'])
+                            for r in arguments.values()))
+
+    def test_configured_missing_ids_distinguish_literals_ranges_and_unlinked(self):
+        stock = self.report['projection']
+        linked = [r for r in stock['exception_slots'] if r[-1]]
+        self.assertEqual(len({r[0] for r in linked}), 6)
+        self.assertEqual({r[2] for r in linked if r[3] == 'literal'}, {1294, 1724, 1725, 1726, 1727})
+        self.assertEqual({r[2] for r in linked if r[3] == 'range'},
+                         {*range(1546, 1558), *range(1578, 1582)})
+        self.assertEqual({r[4] for r in stock['exception_slots']}, {'only_alternate'})
+        self.assertEqual((len({r[2] for r in stock['exception_slots']}), len(stock['exception_slots'])), (45, 49))
+        self.assertEqual(stock['counts']['linked_files']['distinct_ids'], 1091)
+        self.assertEqual(stock['counts']['linked_creations']['expanded_occurrences'], 2220)
+
+    def test_ordered_values_preserve_zero_and_reject_reordered_inventory(self):
+        arguments = copy.deepcopy(self.report['ordered_argument_tokens'])
+        path = 'genout/ss_1001_17_13'
+        self.assertEqual(arguments[path]['tokens'][:3], [0, 4, 10])
+        arguments[path]['tokens'][0:2] = [4, 0]
+        with self.assertRaises(ValueError):
+            self.tool.validate_projection(arguments, self.report['creations'], self.prior)
+
+    def test_source_creation_coordinates_and_absent_field_remain_distinct(self):
+        report = self.report
+        stock = report['projection']
+        row, = [r for r in report['creations'] if r['argument_path'] == 'genout/ss_1310_18_15']
+        self.assertEqual((row['source_floorid_raw'], row['source_location_fields']),
+                         (1310, {'borncorner': '16,16,16,16'}))
+        self.assertEqual(report['ordered_argument_tokens']['family/npc/shop5_3']['tokens'], [])
+        self.assertEqual({report['creations'][i]['argument_path'] for i in stock['creations_without_itemlist']},
+                         {'genout/ss_20712_25_4', 'poru/ss_5500_35_14'})
+
+    def test_original_number_grammar_retains_zero_single_value_range_and_duplicates(self):
+        parsed = self.tool.parse_argument(b'# ItemList:999\r\nItemList: 0, 1-1, 0\r\n')
+        self.assertEqual((parsed['line'], parsed['tokens']), (2, [0, [1, 1], 0]))
+        self.assertEqual(list(self.tool.occurrences(parsed['tokens'])),
+                         [(0, 0, 'literal'), (1, 1, 'range'), (2, 0, 'literal')])
+        with self.assertRaises(ValueError):
+            self.tool.parse_argument(b'ItemList:0\nItemList:1\n')
+
+    def test_scope_and_original_file_selection(self):
+        report = self.report
+        self.assertEqual(report['source_archive_sha256'], self.tool.ARCHIVE[1])
+        self.assertEqual(report['source_setup_sha256'], self.tool.EXPECTED['setup.cf'][1])
+        self.assertEqual(report['setup_fields'], {k: 'data/npc' if k == 'npcdir' else 'data/itemset.txt'
+                                                 for k in self.tool.KEYS})
+        self.assertEqual(report['item_table_hash_marked_ids'], [[13031, 19549], [1874, 1875, 1876, 13031, 19549]])
+        self.assertTrue(report['range_expansion_is_candidate'])
+        for key in ('native_server_executed', 'actual_sale_price_computed',
+                    'official_same_deployment_authenticated', 'original_art_or_item_names_published'):
+            self.assertIs(report[key], False)
+        self.assertTrue(all('name' not in r for r in report['creations']))
+
+
+class Item06PixelAcceptance(unittest.TestCase):
+    def test_original_alias_conservation_and_pixel_status(self):
+        from tools import stoneage_item05_shop_stock as item05
+        from tools import stoneage_item06_mixed25_item_pixels as item06
+
+        report = json.loads(item06.REPORT.read_bytes())
+        rows = report['aliases']
+        expected = item06.missing_aliases(item05.old_items())
+        self.assertEqual([r['alias'] for r in rows], sorted(expected))
+        self.assertEqual({r['alias']: r['references'] for r in rows}, expected)
+        self.assertEqual(collections.Counter(r['status'] for r in rows), {'strict': 415, 'absent': 416})
+        self.assertEqual(report['private_rendered_count'], 415)
+        shop = json.loads(item05.REPORT.read_bytes())['projection']['all_slot_ids_including_zero']
+        visible = [r for r in rows if r['status'] == 'strict']
+        for row in rows:
+            self.assertEqual(row['shop_item_ids'], sorted({i for _, i in row['references']} & set(shop)))
+        self.assertEqual(len({i for r in visible for i in r['shop_item_ids']}), 75)
+        self.assertEqual(len({i for r in visible for _, i in r['references']}), 5101)
+        self.assertTrue(all(HEX.fullmatch(r[k]) for r in visible
+                            for k in ('record_sha256', 'rd_sha256', 'indices_sha256', 'private_png_sha256')))
+        self.assertTrue(all('bitmap' not in r for r in rows if r['status'] == 'absent'))
+        self.assertIs(report['same_official_deployment_authenticated'], False)
+        self.assertIs(report['private_original_pixel_data_published'], False)
+        self.assertIs(report['uses_native_selector_or_palette'], False)
+
+    def test_alias_field_does_not_match_physical_bitmap_and_preserves_ambiguity(self):
+        import struct
+        from tools.stoneage_item06_mixed25_item_pixels import resolve_aliases
+
+        def record(bitmap, alias):
+            row = bytearray(80)
+            struct.pack_into('<I', row, 0, bitmap)
+            struct.pack_into('<I', row, 76, alias)
+            return row
+
+        rows = resolve_aliases(record(17, 240) + record(240, 41) + record(50, 240), {17, 240, 41})
+        self.assertNotIn(17, rows)
+        self.assertEqual([index for index, _ in rows[240]], [0, 2])
+        self.assertEqual([index for index, _ in rows[41]], [1])
+
+
+if __name__ == '__main__':
+    unittest.main()

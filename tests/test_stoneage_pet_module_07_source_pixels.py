@@ -81,4 +81,55 @@ class TestPet07(unittest.TestCase):
  def test_reject_pixel_sha_tamper(self):
   altered=copy.deepcopy(self.r);altered['source_actual_pixel_receipts'][0][2]='invalid'
   with self.assertRaises(AssertionError):certify(altered,self.prior,self.source_rows)
-if __name__=='__main__':unittest.main()
+
+
+class TestPet15(unittest.TestCase):
+    """Replay selection and motion metadata without distributing the original images."""
+
+    @classmethod
+    def setUpClass(cls):
+        from tools import stoneage_pet15_tw10_full_motion as pet15
+
+        cls.report = pet15.archived(pet15.REPORT)
+        cls.groups = pet15.selected_motion()
+        cls.pet15 = pet15
+
+    def test_all_source_sequences_and_frame_positions(self):
+        report = self.report
+        missing = {int(key) for key in report['unrendered_bitmaps']}
+        self.assertEqual(report['groups'], self.pet15.motion_summary(self.groups, missing))
+        frames = [frame for group in self.groups for frame in self.pet15.frames_of(group)]
+        self.assertEqual((len(self.groups), len(frames), len(set(frames))), (131, 73500, 32155))
+        self.assertEqual((report['frame_positions'], report['distinct_original_bitmaps']), (73500, 32155))
+        self.assertEqual(sum(group['source_sequences'] for group in report['groups']), 7672)
+        self.assertEqual(sum(group['fully_observable_sequences'] for group in report['groups']), 7672)
+
+    def test_backup_candidate_and_configured_table_flag_disagreement(self):
+        added, = [group for group in self.groups if not group['prior_pet07']]
+        self.assertEqual(added['graphic'], 100400)
+        expected = {'enemybase.txt': {574: 0, 600: 0}, 'enemybase2.txt': {574: 1, 600: 1}}
+        for table, rows in added['mixed25_same_number_rows'].items():
+            self.assertEqual(len(rows), 7)
+            by_template = {template: flag for _, template, flag in rows}
+            self.assertEqual({template: by_template[template] for template in (574, 600)}, expected[table])
+
+    def test_strict_and_bounded_pixels_stay_separate(self):
+        report = self.report
+        self.assertEqual(report['source_bitmap_statuses'], {
+            self.pet15.STRICT: 32150,
+            self.pet15.BOUNDED: 5,
+        })
+        self.assertEqual(report['bounded_bitmaps'], [82729, 100249, 109890, 113576, 118187])
+        self.assertEqual(report['unrendered_bitmaps'], {})
+        self.assertEqual(report['prior_pet07_strict_bitmaps_replayed'], 2176)
+        self.assertEqual(report['source_archive_sha256'], self.pet15.ZIP_SHA)
+        for key in ('actual_source_bitmap_receipts_sha256', 'private_zip_sha256'):
+            self.assertRegex(report[key], HEX)
+        for key in ('original_client_executed', 'same_historical_deployment_authenticated',
+                    'official_pet_identity_authenticated', 'native_palette_or_frame_timing_verified',
+                    'proprietary_images_published'):
+            self.assertIs(report[key], False)
+
+
+if __name__ == '__main__':
+    unittest.main()

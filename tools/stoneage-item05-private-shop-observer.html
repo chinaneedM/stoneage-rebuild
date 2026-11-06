@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>石器时代 · 原商店库存查阅</title>
+<style>
+:root{color-scheme:light;--paper:#f8f5ec;--ink:#292921;--dim:#625f50;--line:#ddd6c4;--clay:#8b3e28;--surface:#fffdf7}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 system-ui,sans-serif}
+main{max-width:1160px;padding:36px 24px 64px;margin:auto}header{border-bottom:2px solid var(--ink);padding-bottom:22px;margin-bottom:22px}
+h1{font:700 clamp(28px,5vw,48px)/1.16 system-ui,sans-serif;margin:8px 0}h2{font-size:20px;overflow-wrap:anywhere}
+.kicker{margin:0;color:var(--clay);font-weight:700;letter-spacing:.08em}p{margin:6px 0 12px}.muted{color:var(--dim)}
+.controls{display:flex;flex-wrap:wrap;gap:14px;align-items:end;margin:12px 0 20px}label{display:grid;gap:4px;font-weight:650}
+input,select{max-width:100%;font:inherit;color:inherit;padding:7px 9px;border:1px solid #857e69;border-radius:5px;background:var(--surface)}
+#shop{width:min(100%,620px)}.stock{overflow:auto;border:1px solid var(--line);border-radius:7px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;text-align:left}td,th{padding:10px 12px;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:#ede7d8;font-size:14px}.alt-only td:first-child{border-left:4px solid var(--clay)}.alt-only{background:#fff2e9}
+td small{display:block;color:var(--dim)}code{overflow-wrap:anywhere}.item{display:flex;align-items:start;gap:8px;min-width:160px}
+img{width:38px;height:38px;object-fit:contain;image-rendering:pixelated;border:1px solid var(--line);background:#f0ede4}
+#placements{margin:6px 0 16px;padding-left:1.4em}.summary{display:flex;gap:12px;flex-wrap:wrap}
+.summary span{border:1px solid var(--line);padding:3px 9px;border-radius:5px;background:var(--surface)}
+@media(max-width:600px){main{padding:22px 14px 42px}.controls label{width:100%}input,select{width:100%}td,th{padding:8px}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<p class="kicker">保存社区混合 2.5 · 原配置对照</p>
+<h1>原商店库存查阅</h1>
+<p class="muted">按原创建块、库存字面与两套物品表回看。范围按两端包含展开供比对。台湾 1.0 小图标只表示同号候选。表内价格是原数值栏，实际成交价待证。</p>
+<div class="summary"><span>191 条原创建引用</span><span>224 份原 ItemList</span><span>21 个已链接库存编号只在备表出现</span></div>
+</header>
+<div class="controls">
+<label>查配置路径、楼层、坐标、店员名、物品名或编号
+<input id="query" type="search" placeholder="例如 1310 或 #1294"></label>
+<label>配置范围
+<select id="scope">
+<option value="linked">有 ItemShop 创建引用</option>
+<option value="exceptions">有创建引用且主表缺条目</option>
+<option value="unlinked">仅见 ItemList 原参数</option>
+<option value="all">全部原参数</option>
+</select></label>
+</div>
+<label>原参数路径 <select id="shop"></select></label>
+<p id="matches" class="muted" aria-live="polite"></p>
+<h2 id="path"></h2>
+<ul id="placements"></ul>
+<p id="tokens"></p>
+<p id="status" aria-live="polite"></p>
+<div class="stock">
+<table>
+<thead><tr><th scope="col">源位置</th><th scope="col">编号</th><th scope="col">配置所指主表 itemset.txt</th><th scope="col">备表 itemset0710.txt</th></tr></thead>
+<tbody id="rows"></tbody>
+</table>
+</div>
+</main>
+<script id="private-data" type="application/json">/* PRIVATE_SOURCE_DATA */</script>
+<script>
+'use strict';
+const data = JSON.parse(document.querySelector('#private-data').textContent);
+const el = id => document.getElementById(id);
+const query = el('query'), scope = el('scope'), shop = el('shop');
+const slots = tokens => (tokens || []).flatMap((token, i) =>
+  Array.isArray(token)
+    ? Array.from({length:token[1]-token[0]+1}, (_, j) => [i+1, token[0]+j, token])
+    : [[i+1, token, null]]);
+const catalog = Object.entries(data.shops).map(([path, [tokens, placements]]) => ({
+  path, tokens, placements, entries: slots(tokens)
+}));
+const isException = row => row.entries.some(([, id]) => !data.items[id][0]);
+function matchesQuery(row, q) {
+  if (!q) return true;
+  if (/^#\d+$/.test(q)) return row.entries.some(([, id]) => id === Number(q.slice(1)));
+  return row.path.toLowerCase().includes(q) ||
+    row.placements.some(p => p.name.toLowerCase().includes(q) || String(p.source_floorid_raw) === q ||
+      Object.values(p.source_location_fields).some(value => value.includes(q))) ||
+    row.entries.some(([, id]) => String(id) === q ||
+      data.items[id].some(item => item && item.name.toLowerCase().includes(q)));
+}
+function filter() {
+  const previous = shop.value;
+  const q = query.value.trim().toLowerCase();
+  const list = catalog.filter(row => {
+    const linked = row.placements.length > 0;
+    const inScope = scope.value === 'all' || (scope.value === 'linked' && linked) ||
+      (scope.value === 'unlinked' && !linked) || (scope.value === 'exceptions' && linked && isException(row));
+    return inScope && matchesQuery(row, q);
+  });
+  shop.replaceChildren(...list.map(row => new Option(row.path, row.path)));
+  if (list.some(row => row.path === previous)) shop.value = previous;
+  shop.disabled = !list.length;
+  el('matches').textContent = `找到 ${list.length} 份原参数`;
+  render();
+}
+function itemCell(tr, item) {
+  const cell = tr.insertCell();
+  if (!item) { cell.textContent = '该源表无此编号'; return; }
+  const wrapper = document.createElement('div'); wrapper.className = 'item';
+  const picture = data.images[item.alias];
+  if (picture) {
+    const img = document.createElement('img');
+    img.src = 'data:image/png;base64,' + picture[1];
+    img.alt = picture[0] === 'bounded' ? '画布内原索引候选' : '台湾 1.0 同号原图候选';
+    img.title = img.alt;
+    wrapper.append(img);
+  }
+  const content = document.createElement('div');
+  content.textContent = item.name;
+  const source = document.createElement('small');
+  source.textContent = `原行 ${item.line} · 图号 ${item.alias} · 价格栏 ${item.cost || '空'} · 类型 ${item.type || '空'} · 等级 ${item.level || '空'}` +
+    (picture?.[0] === 'bounded' ? ' · 仅原画布范围' : '');
+  content.append(source); wrapper.append(content); cell.append(wrapper);
+}
+function render() {
+  const row = catalog.find(record => record.path === shop.value);
+  el('path').textContent = row?.path || '没有匹配的配置';
+  el('placements').replaceChildren();
+  el('rows').replaceChildren();
+  el('tokens').textContent = '';
+  el('status').textContent = '';
+  if (!row) return;
+  for (const entry of row.placements) {
+    const line = document.createElement('li');
+    const positions = Object.entries(entry.source_location_fields).map(([k,v]) => k + '=' + v).join(' · ');
+    line.textContent = `${entry.name} · 楼层 ${entry.source_floorid_raw} · ${positions} · ${entry.create_path} 第 ${entry.source_block_open_line} 行`;
+    el('placements').append(line);
+  }
+  if (!row.placements.length) {
+    const line = document.createElement('li');
+    line.textContent = '在已扫描的原 .create 文件中无 ItemShop 创建引用';
+    el('placements').append(line);
+  }
+  if (row.tokens === null) { el('status').textContent = '原参数没有 ItemList 字段'; return; }
+  if (!row.tokens.length) { el('status').textContent = '原参数的 ItemList 字段为空'; return; }
+  el('tokens').textContent = '原数字顺序　' + row.tokens.map(token => Array.isArray(token) ? token.join('–') : token).join(', ');
+  const missing = row.entries.filter(([, id]) => !data.items[id][0]).length;
+  el('status').textContent = `${row.entries.length} 个字面或范围候选位置 · ${missing} 个主表缺条目`;
+  for (const [index, id, interval] of row.entries) {
+    const tr = el('rows').insertRow();
+    const items = data.items[id];
+    tr.classList.toggle('alt-only', !items[0] && !!items[1]);
+    tr.insertCell().textContent = interval ? `${index} · ${interval.join('–')} 范围候选` : `${index} · 直接列号`;
+    tr.insertCell().textContent = id;
+    itemCell(tr, items[0]); itemCell(tr, items[1]);
+  }
+}
+query.addEventListener('input', filter); scope.addEventListener('change', filter); shop.addEventListener('change', render);
+filter();
+</script>
+</body>
+</html>

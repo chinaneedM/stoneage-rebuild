@@ -2000,3 +2000,13 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-06 — PET14｜台湾1.0既有原像素与混合2.5两份原宠物主表分源观察
 
 在完整保存的PET07 130个台湾1.0原SPR像素图号组与PET10私人原社区混合2.5双宠物主表中作**数值关系**，主表命中309原行（PETFLG=1有188、0有121），备用表命中258原行（PETFLG=1有142、0有116），没有把混合2.5繁体姓名/属性/技能误标成台湾1.0官方身份。私人原像素目录新增可切换图号的后代原名/数值分源查阅，生成HTML `15,198,113B` / SHA256 `949e1d28a228ecec6435ebdd463ac01804bb054c2578d1de839476e667e3b30f`，私人新页未成功上传Library，当前会话提供文件；本批**新增原像素解码0，新增原商服运行0**。公开仅130逐图号数字/原SHA、工具、回归测试和[完整受限证据](docs/continuity/STONEAGE-PET-MODULE-14-TW10-MIXED25-SOURCE-BOUNDARY-20261106.md)、[PET14公开数值桥](research/recovered/STONEAGE-PET-MODULE-14-TW10-MIXED25-SOURCE-SEPARATED-NUMERIC-BRIDGE-R1.json)，商业原像素和原表全文不入Git。旧完整CURRENT Git blob c89e0e33537990aa2132b47c40fef49a985a935c保持不变。PET模块本批SOURCE_BOUNDED_PARTIAL；下一原像素仅在TW85原REAL字节可重取后进行，条件R2C仍待合格原EXE/x86，当前按模块队列转已有来源可读内容；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停，完成率未知。
+
+
+## 2026-11-07 — PET15｜台湾1.0样本的全部原方向和动作
+
+重放 131 个候选图号的全部 7,672 条源动作与方向序列、73,500 帧位置。32,155 个原位图中 32,150 个严格解码，5 个仅展示原画布范围内的源索引。新增可查的图号 100400 在混合 2.5 备表有两条宠物标记，配置主表相同模板均标为 0，保留两源的分歧。私人图册保存实际原像素，公开 Git 保留[来源和状态](docs/continuity/STONEAGE-PET-MODULE-15-TW10-ALL-SELECTED-MOTION-20261107.md)及[派生收据](research/recovered/STONEAGE-PET-MODULE-15-TW10-ALL-SELECTED-MOTION-SOURCE-R1.json)。台湾 8.5 缺原 REAL 的六组待新来源；下一优先核原商店库存和两套物品主表。完整历史 CURRENT 原样保留。
+
+
+## 2026-11-07 — ITEM05–06｜原商店库存对表与 415 幅混合 2.5 原 RD 补图
+
+对照 191 条原 ItemShop 创建引用与 224 份原 ItemList。全库存配置 45 个不同编号只在备表，其中 21 个可追到实际源创建引用，5 个直接列号、16 个为范围候选。从已认证混合 2.5 原 ADRN/REAL 严格解码台湾 1.0 索引原缺的 415 个物品图号，剩余 416 个保留缺口。原 GMSV 完整字节现已重新取回并通过 SHA/CRC，下一优先 WORLD37-R2C 隔离回放。详见[原件、状态与私有观察边界](docs/continuity/STONEAGE-ITEM-MODULE-05-06-MIXED25-SHOPS-AND-RD-20261107.md)。旧完整 CURRENT 原样保留。
