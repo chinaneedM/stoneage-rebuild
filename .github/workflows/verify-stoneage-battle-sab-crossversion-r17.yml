@@ -8,6 +8,8 @@ on:
       - research/recovered/STONEAGE-TW10-CLIENT-INVENTORY-R1.txt
       - research/recovered/STONEAGE-25-GAMEPLAY-DATA-INVENTORY-R1.txt
       - README.md
+      - research/recovered/STONEAGE-STAGE-A-BATTLE181-TW10-SAB6729-SOURCE-CANVAS-R1.json
+      - tests/test_stoneage_stage_a_battle181_canvas_source.py
       - docs/SOURCE-REGISTRY-CLIENT-RECOVERY-R1.md
       - docs/specs/STONEAGE-BATTLE-SAB-CROSSVERSION-R17.md
       - docs/continuity/BATTLE-SAB-R17-MATERIAL-20261025.md
@@ -27,3 +29,4 @@ jobs:
           python-version: '3.12'
       - run: python -m unittest tests.test_stoneage_battle_sab_crossversion_r17 tests.test_stoneage_battle_sab_docs_r17 -v
       - run: python -m tools.stoneage_battle_sab_crossversion_r17
+      - run: python -m unittest tests.test_stoneage_stage_a_battle181_canvas_source -v

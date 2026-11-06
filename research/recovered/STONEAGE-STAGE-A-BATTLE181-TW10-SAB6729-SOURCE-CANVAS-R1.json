@@ -1,0 +1,92 @@
+{
+  "schema": "stoneage.battle181.tw10_original_full_sab_visible_by_one_bounded_rd6729_prefix.r1",
+  "origin": "TW_WAEI_JSS_1_0_ACCEPTED_RETAIL_REDUMP_104630",
+  "source_sha256": {
+    "P3H_full_archive": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "original_ADRN": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+    "original_REAL": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13",
+    "original_Palet_1": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0",
+    "original_battle_1_bin": "d99be6475982cf6098b90ff5dfd81ab275ec8c9271fa83daceb95e3fd4bb8859",
+    "original_battle181_SAB": "d65e80275b798639f435407259594399a03148dd8132d24d65f255e11926cab8",
+    "original_RD6729": "6a2e472dfb9d5c08dfdb0176345c7b2935b0fe900f3fffea98f53674b486977e",
+    "original_RD6729_bounded_canvas_indices": "583f80d679216d20d0d78fa03dbd3fbe25ce43ff4a9b6f56cc90cf62dbda96eb"
+  },
+  "source_size_bytes": {
+    "P3H": 372626292,
+    "ADRN": 10079680,
+    "REAL": 315842228,
+    "Palet_1": 708,
+    "battle_1": 185892,
+    "battle181_SAB": 804
+  },
+  "source_BATTLE181": {
+    "SAB_id": 181,
+    "source_400cell_grid_sha256": "61f53cf1f50fa30ee8dc5d15418a90a65c15196a82c877065073239d567505db",
+    "grid_rows": 20,
+    "grid_columns": 20,
+    "grid_u16_BE_cells": 400,
+    "unique_original_adrn_bitmap_IDs": 65,
+    "strict_original_RD_decoded_unique": 64,
+    "bounded_source_canvas_prefix_unique": 1,
+    "source_only_problem_bitmapno": 6729,
+    "problem_occurrences": 1,
+    "original_grid_6729_coordinate_zero_based": {
+      "x": 0,
+      "y": 13
+    },
+    "all_65_exact_original_RD_and_ADRN_SHA_verified": true,
+    "all_400_cells_resolved_to_original_source_canvas_indices": true,
+    "standalone_SAB181_equals_same_archive_battle_1_slice": true
+  },
+  "original_RD6729": {
+    "source_dimensions": [
+      40,
+      30
+    ],
+    "canvas_declared_pixels": 1200,
+    "original_RLE_stream_decoded_pixel_count": 1201,
+    "terminal_opcode": "0xC2",
+    "terminal_zeros": 2,
+    "terminal_zero_overrun_pixels": 1,
+    "original_full_RD_source_SHA_matches_ITEM04": true,
+    "independent_canvas_bounded_replay_matches": true,
+    "source_canvas_last_pixel_value": 0
+  },
+  "continuity": {
+    "starting_main": "9a58653b3d443f0e66f469d878f6ce0d153d9921",
+    "starting_tree": "c67964d917e1bd73b0e9d619ec0adcc82155ded3",
+    "original_CURRENT_STATE_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_CURRENT_STATE_bytes": 2709173,
+    "historical_O16_217_of_218_strict_full_RD_maps_preserved": true,
+    "strict_native_218_of_218_claim": false,
+    "incremental_modern_source_bounded_battle181_scene_view": true
+  },
+  "private_delivery": {
+    "file_name": "StoneAge-BATTLE181-private-TW10-original-SAB-source-scene.zip",
+    "file_bytes": 805734,
+    "sha256": "3c915d049eaf4a7627a6000239ee5a59698f57457ecc67c2b9b0005541f429ed",
+    "zip_members": 4,
+    "all_ZIP_CRC_verified": true,
+    "library_saved_and_re_read_full_sha_verified": true,
+    "candidate_isometric_PNG_sha256": "6a672e7fa5a800aea205bd8d60fbc7cc2d7fac165f239d131a9bd95939f1dcd7",
+    "annotated_source_location_PNG_sha256": "42e824d11898847d8b00c4882c63809432ab0b56bb775fdc14704caa9bfef2b8",
+    "source_tile_detail_PNG_sha256": "c09ddc61b011b3009664d60e2cb95cc94a7ce628e0904040de11676c643c1ae9",
+    "private_source_and_full_400_cell_grid_JSON_sha256": "c02320224789c9f5e60a17c97a3d6dc8bae7183f10559fa17435d9168f38f851"
+  },
+  "negative_boundaries": {
+    "whole_original_SAB_400_grid_and_original_RD_payload_in_Git": false,
+    "original_client_3d_or_battle_runtime_executed": false,
+    "original_native_terminal_RLE_extra_pixel_handling_proven": false,
+    "original_native_battle181_selected_as_map_in_real_fight": false,
+    "exact_original_native_palette_or_layer_order_verified": false,
+    "later_mixed25_item_id_to_official_TW10_bitmap_identity_promoted": false,
+    "source_bounded_canvas_pixels_are_not_a_strict_native_decode": true,
+    "Stage_A": "7_PARTIAL_2_OPEN",
+    "Stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null,
+    "WORLD37_R2_original_GMSV_available": false
+  },
+  "result": "SAB181_ONE_PREVIOUSLY_UNOBSERVABLE_BATTLE_SCENE_NOW_VIEWABLE_AS_SOURCE_BOUNDED_PRIVATE_CANDIDATE",
+  "next": "Continue next actual source-ready content batch, or reopen native source-byte proof only if primary bytes are available. Do not upgrade 217/218 strict metric or original native execution."
+}
