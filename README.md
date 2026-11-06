@@ -1935,3 +1935,7 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-06 — WORLD34-R3：场外回复回调完成与背包消耗
 
 用完整 SHA 和 CRC 合格的混合 2.5 原服务端程序，从场外命令回放到回复回调返回。三件代表道具在有效本人、宠物、队伍目标上均完成相应属性写入与夹具背包消耗。场景 1 的 1232 被原客户端场外检查拦下，同包服务端入口直接接收夹具参数时仍写体力并清槽。空宠物、空队伍与越界目标走到未检查的角色索引 `-1` 读取，隔离回放在边界停止。详见 [WORLD34-R3 连续性记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-34-R3-FIELD-ITEM-REPLAY-20261106.md) 和 [45 条派生轨迹](research/recovered/STONEAGE-STAGE-A-WORLD34-R3-FIELD-ITEM-REPLAY-R1.json)。最高优先 WORLD35 为捕捉增益道具与原捕捉判定的同包关系。
+
+## 2026-11-06 — WORLD35：捕捉增益道具与捕捉分数
+
+同包两张物品表的 26 条捕捉增益原行逐字节相同。原指令回放确认道具对接收者累加工作键 32，捕捉判定读取捕捉者本人的该键，完成比较后清零。分数封顶 99，受测整数随机值 98 通过、99 拒绝。另按编译加载器订正 WORLD34-R3 的动作物理列和三个原值，重跑 18 组后属性写入与扣物结果一致。详见 [WORLD35 连续性记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-35-CAPTURE-ITEM-SOURCE-20261106.md) 和 [派生收据](research/recovered/STONEAGE-STAGE-A-WORLD35-CAPTURE-ITEM-SOURCE-R1.json)。最高优先 WORLD36 为捕捉判定之后的宠物入栏与归属。
