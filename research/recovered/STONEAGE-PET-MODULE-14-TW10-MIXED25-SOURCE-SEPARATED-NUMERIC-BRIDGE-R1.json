@@ -1,0 +1,2017 @@
+{
+  "schema": "stoneage.pet14_original_tw10_pixel_gallery_mixed25_two_source_table_numeric_crosswalk.r1",
+  "date": "2026-11-06",
+  "source_git_blobs": {
+    "PET07": "0b5f81b41a642025ab53a12884638fdee887470e",
+    "PET10": "25a37aeb134fb180e322e7dc335029b7374452d8"
+  },
+  "private_replayed_source_sha256": {
+    "PET07_original_pixel_gallery": "58e8ee4ff5165ed2f61663d67ae1cd0a8183622fa3375c480232784bfce9dc76",
+    "PET10_original_mixed25_CP950_catalog": "640506addf01417390a7078f70aece167c99feecf4beeca8cb769f32972ff5d3"
+  },
+  "source_scope": {
+    "TW10": "ORIGINAL_RETAIL_SPR_ADRN_REAL_PET07_PREEXISTING_PRIVATE_PIXEL_OBSERVATIONS",
+    "MIXED25": "LATER_COMMUNITY_PRESERVED_RAR_TWO_DISTINCT_ORIGINAL_PET_TEMPLATE_TABLES_NOT_PROVEN_ACTIVE_TOGETHER",
+    "mixed25_archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "private_media_in_public_git": false
+  },
+  "summary": {
+    "TW10_source_graphic_groups_in_PET07_sample": 130,
+    "mixed25_main": {
+      "source_table_total_rows": 988,
+      "graphic_groups_with_any_source_rows": 130,
+      "graphic_groups_with_PETFLG_1": 130,
+      "PETFLG_1_rows_at_TW10_graphic_keys": 188,
+      "PETFLG_0_rows_at_TW10_graphic_keys": 121,
+      "all_source_rows_at_TW10_graphic_keys": 309,
+      "PETFLG_1_rows_outside_this_TW10_sample": 307
+    },
+    "mixed25_alternative": {
+      "source_table_total_rows": 640,
+      "graphic_groups_with_any_source_rows": 129,
+      "graphic_groups_with_PETFLG_1": 124,
+      "PETFLG_1_rows_at_TW10_graphic_keys": 142,
+      "PETFLG_0_rows_at_TW10_graphic_keys": 116,
+      "all_source_rows_at_TW10_graphic_keys": 258,
+      "PETFLG_1_rows_outside_this_TW10_sample": 174
+    },
+    "TW10_graphics_without_any_mixed25_alternative_rows": [
+      100454
+    ],
+    "TW10_graphics_without_mixed25_alternative_PETFLG_1_rows": [
+      100015,
+      100018,
+      100401,
+      100432,
+      100451,
+      100454
+    ],
+    "original_specimens_newly_downloaded": 0,
+    "original_pixel_blocks_newly_decoded": 0
+  },
+  "graphics": [
+    {
+      "original_TW10_spr_numeric_graphic": 100015,
+      "original_TW10_SPR_group_sha256": "5c0ee051075500b27707f13b3d57326b8719acf2b21a7b4cc654a05cb4236233",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 0,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100018,
+      "original_TW10_SPR_group_sha256": "450072691294679e510c0e58c764e8606a73bc35e7424e7edcee9492efd641af",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 0,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100250,
+      "original_TW10_SPR_group_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 3,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100251,
+      "original_TW10_SPR_group_sha256": "073278ba6ae1e623eea969deef11f99fd9be8b995af332506e830bd046c86764",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100252,
+      "original_TW10_SPR_group_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 5,
+        "PETFLG_1_rows": 4,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 5,
+        "PETFLG_1_rows": 4,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100253,
+      "original_TW10_SPR_group_sha256": "9796944a8c54a33832a8d3a89349bbdd86629fdc437d21fb163645d8c253802b",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100254,
+      "original_TW10_SPR_group_sha256": "764763f8dba2b73de6849f25d55fecdb5aac2433e90a93255a58b7ce2db184a7",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100255,
+      "original_TW10_SPR_group_sha256": "afdb53a9f70aa8b0cf3ef51ee201d47fa8acedacc1616fb3b12c0ccc71adc044",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100256,
+      "original_TW10_SPR_group_sha256": "9562d4d766c128d0342c35529c6cedbbc1efde8dddf14fa083645c1629ceb990",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100257,
+      "original_TW10_SPR_group_sha256": "931bb3a1e1455c403f25b8b836028d2787613fc35f237edad0adab93946e06cc",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100258,
+      "original_TW10_SPR_group_sha256": "098d92f9ea74a345c43680ce6e5c2f4add8772bb37a3c90c485f6c76f4c5cc08",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100259,
+      "original_TW10_SPR_group_sha256": "eb1be1d64b6e23a5302c5298d7a5d55a6466e0974bc2b4568c988349bb66c4e1",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100260,
+      "original_TW10_SPR_group_sha256": "d93a146e8dc07e5e786ab2a010133b291b36dd733004321f16ada5ed02a21743",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100261,
+      "original_TW10_SPR_group_sha256": "ccc39b539666ccd42c6b0d8de14dc0784981bd96a69f527f3ec5335b8ad62c08",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100262,
+      "original_TW10_SPR_group_sha256": "5d01c9a4466f26b1f2ec79f5a3a84621796c0e25f2aa273687d7863a1d73b8e0",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100263,
+      "original_TW10_SPR_group_sha256": "15db31dd6681ea540fb1e89fe792eb686fd4eb4a382d95518d08462a4f472ee6",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100264,
+      "original_TW10_SPR_group_sha256": "b4cc246fbecba64075fd1ee55e9b1a8e3723c42c960927230a99c1ba5c640b0e",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100265,
+      "original_TW10_SPR_group_sha256": "1e9b11eccbe88525bc55eaa613bc88ea18f21b6c3587a26adee89fed2ad12b2b",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100266,
+      "original_TW10_SPR_group_sha256": "fad067e8ee01a23c8305a3a4a2b72b7c07438694cde1bb4de3f5fceeda678777",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100267,
+      "original_TW10_SPR_group_sha256": "73091db2f79c4f92b1d30221b5c9e63b01bd793c86f235d5160ea172830d6452",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100268,
+      "original_TW10_SPR_group_sha256": "ae13018b2e80bb5caa801002461dfc9dbf0c9003a7055571924d846d5e9f85d7",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100269,
+      "original_TW10_SPR_group_sha256": "8249ab3abf570c44a3302afdc849c01b38e0166d3711defbc8ffb36b1c96ac8e",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100270,
+      "original_TW10_SPR_group_sha256": "113f37c6eb3cee48f75d3768e878b15f3924f24ae5c9270200bd5d7c6f176cec",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100271,
+      "original_TW10_SPR_group_sha256": "9d82c6429e1d8c7cd9949d969c1728536942094e77ae1cfa78aee8b756b2eaa9",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 5,
+        "PETFLG_1_rows": 3,
+        "PETFLG_0_rows": 2
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 2
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100272,
+      "original_TW10_SPR_group_sha256": "f2de589e39b12e5c4ed1c346818ae71fefbc2a6c692bce39e6115c9768566822",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100273,
+      "original_TW10_SPR_group_sha256": "c1efda8a7444a4d2da3c2a9334ce276d1b7098dc9142c2c75439ac5c24470dac",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100274,
+      "original_TW10_SPR_group_sha256": "12ec2cffab263c6b14f9f35e3a4f6dcf731d4c7aebeda2440f0b5bc207618bd2",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 5,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 4
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 3
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100275,
+      "original_TW10_SPR_group_sha256": "5174e6e37c46fae81c7a3f29f9ebff0390886d661f61eb666aadf0a4eecab6c5",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100276,
+      "original_TW10_SPR_group_sha256": "f323a47f5dba7c57cdaf05c1f3521514446a59a61827c670ee8bdf752732709d",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100277,
+      "original_TW10_SPR_group_sha256": "61e7aa1eb5029e6e87f37be5e0ec3b2d680fb2b7ad2760d5828bf81785b905b7",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100278,
+      "original_TW10_SPR_group_sha256": "c4d19f9248cb21fa8123eb7a997e3dd16314d46b9a8b63389092396f0ab233ce",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100279,
+      "original_TW10_SPR_group_sha256": "81414567556249573853ac844309a2b2cdcdc7d93ec36b7a5cede1ca1ec403ff",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 2
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100280,
+      "original_TW10_SPR_group_sha256": "d2e12702aacf131e513a56a752be544b69256e17928c4ba041e816f0dc162198",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 3
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 3
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100281,
+      "original_TW10_SPR_group_sha256": "329088eddcbe6718dc519d4cbce3027131af1549ee63d2aaaf1c3a77482b69e0",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100282,
+      "original_TW10_SPR_group_sha256": "72ba10b44c0bb90cb6c52eb5348ab86eaeecac5758fedea722788435407ccdfa",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100283,
+      "original_TW10_SPR_group_sha256": "1d9f67eb04bb39f0ca57f5df80514eefff54228ff7673f17b3ce7763467ae77b",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100284,
+      "original_TW10_SPR_group_sha256": "0359614436b28986877ca49e3f91fdf247257f351d451121315b506e346ea1c0",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100285,
+      "original_TW10_SPR_group_sha256": "2410c08290b27200cb9c077d245abd30a49c3d12920917ec1b7439ac5f4cd3eb",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100286,
+      "original_TW10_SPR_group_sha256": "585ee0e409e36111e411597dcc11b7a1d2f49018b8de380a2238e64cbfd317d7",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100287,
+      "original_TW10_SPR_group_sha256": "ef9b8508b2df8eae3865d279831ef78ff75ae3e8f5465b88211c7a8f7acfcc8a",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 5,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 3
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 3
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100288,
+      "original_TW10_SPR_group_sha256": "9668ac38f750d8a0d7d6022d46df8593e107fb6a37d465202466258cd53bf64d",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 2
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100289,
+      "original_TW10_SPR_group_sha256": "a7ca74c4d9b9cdf8992ff5dbe2692dfc3a006bd73d797c7b05799cbccbe451ec",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 2
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100290,
+      "original_TW10_SPR_group_sha256": "b8a07e6aaad3f273008477ee0563499115f11ac7ec1714f0fa09855cfc84e978",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 7,
+        "PETFLG_1_rows": 3,
+        "PETFLG_0_rows": 4
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 6,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 4
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100291,
+      "original_TW10_SPR_group_sha256": "533993d77c3b4c06ab82dbe3484330a59da9c5b6822411dc03189b975b815976",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100292,
+      "original_TW10_SPR_group_sha256": "1f7b960aebced3cc35cb1aa037c2e178584ae67de7673241a023449a7c9614bb",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100293,
+      "original_TW10_SPR_group_sha256": "84c700dab5357cf470268f4b72d066e844da273541ef1e6396b56430d07d71f5",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100294,
+      "original_TW10_SPR_group_sha256": "2d37af85c129ef51988ea2e78d09c6aa3e7d91a7606586a4b84fad4584d17f1e",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100295,
+      "original_TW10_SPR_group_sha256": "f3c9c360adb5c090bb4f21184ea563cb41f40f1f17b4798fddc7969a335bfdd7",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100296,
+      "original_TW10_SPR_group_sha256": "d93b5f3443eaad602e02f9d51e1d3bbd7db728a41a980d15d809101ada588a13",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100297,
+      "original_TW10_SPR_group_sha256": "0be2deee9bc390903efc8e6f5f600b4aaf3cac2f0ee140cdd4d590e2300d3ec9",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100298,
+      "original_TW10_SPR_group_sha256": "1f3dec860eff8133c9afcb8ed1d85d7ca0c659722b5b4d5d4cf008a4edcf651b",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100307,
+      "original_TW10_SPR_group_sha256": "e82d100a84a24c1d16b5a8c2edd4ab7e5cc9c1656bbaa080177f34378312c2b8",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100308,
+      "original_TW10_SPR_group_sha256": "b1da67c329bfb9f96769921e8a39374d9ae2236fbcdb01c258b7cc98fa447b26",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100309,
+      "original_TW10_SPR_group_sha256": "db6de1529a07b0bbcaaed24c29399bef11935d6ff2397eca6f13b76991f496af",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100310,
+      "original_TW10_SPR_group_sha256": "b6d2a586eb82a456d2e91ee37c25d25694475233074a6b57bedfbc05e0850505",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100319,
+      "original_TW10_SPR_group_sha256": "f776bacec9370a6f8f665ffd47fcdf84839f0f348e787e11b43af4f3d0909ef6",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100320,
+      "original_TW10_SPR_group_sha256": "9928bf4b0ead837cf7d82265059ab4e77b71ee86f26929a516d9c78c33b1a806",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100321,
+      "original_TW10_SPR_group_sha256": "a949b99c53f5863a85feb041504679d179f05ad42ed6569fc71e07a0200c5c03",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100322,
+      "original_TW10_SPR_group_sha256": "14af768381457de178568e8c65bc8a87becd0488c73d9c3a0cbd30ce0ff70b00",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100323,
+      "original_TW10_SPR_group_sha256": "8120d96a71e5ed67eb823a29fac4e7fdd103adf34c71cacf8088a85fdc769bce",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100324,
+      "original_TW10_SPR_group_sha256": "6dd9ee41a92cbefb58d91a0fd2822d404fccc015df031b4649ef858d72c93a7e",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100325,
+      "original_TW10_SPR_group_sha256": "4cf83444dd788c74f14e131aad49bee2ad441ff16a9c7b2340d26914a7d4eb35",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100326,
+      "original_TW10_SPR_group_sha256": "7a5a42c9150602c7b0da7a3179f368fd3eb24e3269b1f773401cf55cdb3d98e5",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100327,
+      "original_TW10_SPR_group_sha256": "4be5173b9f5d7b17901798de32598c437fbcd671bce74419a425fb1f15d356c2",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 3,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100328,
+      "original_TW10_SPR_group_sha256": "aba72fe1706a7fd5f4d016e4e82ee957b8e4efd38030b1a6fbbc930076347fad",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 5,
+        "PETFLG_1_rows": 3,
+        "PETFLG_0_rows": 2
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100329,
+      "original_TW10_SPR_group_sha256": "7e50e9e34385f29e64de256ad053bfe1c2540d17444b74d5218c37ee5b7d57ce",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 7,
+        "PETFLG_1_rows": 4,
+        "PETFLG_0_rows": 3
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 5,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 3
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100330,
+      "original_TW10_SPR_group_sha256": "25e98217d01253afe10088eccc1a8738d2b5b0f347fb2be2135b9611829cef39",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 3,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100335,
+      "original_TW10_SPR_group_sha256": "edfba5be50c121be29c7e864505a9706fe331bfb4747c4f675f707562ac1e965",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100336,
+      "original_TW10_SPR_group_sha256": "5e32c11804f6c231b8f31f143c8de9325dff466e34fa0f8f09cab6424165eb19",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100337,
+      "original_TW10_SPR_group_sha256": "831b746da6afe7dd93034115058ae91bc73d19e3ff179c9ed1bc83c76e4279b7",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100338,
+      "original_TW10_SPR_group_sha256": "13abd701cb10d7b9da7fe3b6ba4ba5cbd13a09ddb6745d1cfee64e4410c28ef5",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 2
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 2
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100339,
+      "original_TW10_SPR_group_sha256": "30a8c295b2f5898208bff43ee5acb76d1bc32341b54edb401dbc2c3df09a082f",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100340,
+      "original_TW10_SPR_group_sha256": "9306cf435d5a87c3c8a31f6afeea56f8e312d3a98547a9580d820fd23acac3e2",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100341,
+      "original_TW10_SPR_group_sha256": "4dec4ea259e4083d0b4a233ef1892075bb9bd48dec3d143e289b5b515b8505f3",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100342,
+      "original_TW10_SPR_group_sha256": "40e219521c55e2cba48b13b0b777bec7a552c8def2f14ef0354019171a32c382",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100343,
+      "original_TW10_SPR_group_sha256": "df891631ea3fd5004085716fb181ee88f2efe2d31ac894c47eec4cbdd2c2dab3",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 5,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 3
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 3
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100344,
+      "original_TW10_SPR_group_sha256": "257d724dafde5482fc6afb224f0f485efb46e96c095b40851607608ec364df93",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100345,
+      "original_TW10_SPR_group_sha256": "2629ca4250e3cc20235b85d36c3110bef14d1fbe9ea1eb611a71e502820aa168",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100346,
+      "original_TW10_SPR_group_sha256": "6d559775ca817d9e58c47370c2bdd1b54b71b2d4f16971e1958208e806e0edec",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100347,
+      "original_TW10_SPR_group_sha256": "e2e6b1cdc03b64ad6a60db9ea9a79d6024de03540dcfd1c853af601570c5bb90",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100348,
+      "original_TW10_SPR_group_sha256": "6422ee00f705a2996cc7fc043d3e8a3c0545edfbb116666efa9c8e38ec1ef75a",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100349,
+      "original_TW10_SPR_group_sha256": "02b1d5918e6a780ff6aaf65edb4efc08ffd324acb762654a0a52a5672ad3fc3e",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100350,
+      "original_TW10_SPR_group_sha256": "14f8d5b6ae32fda4d5f3768bd70f7ccfaa75aa66d536f0b4515e3984ab193d49",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100351,
+      "original_TW10_SPR_group_sha256": "0cfc2eabf5b43eb51b23bec35a3e23ed0171c84a56a2d79d3d44387e53a966b1",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 2
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100352,
+      "original_TW10_SPR_group_sha256": "c790f3156c0a62a18404a74af3b5eaf4c4f82670df25f31a551239f64f17620d",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100353,
+      "original_TW10_SPR_group_sha256": "2086365f81dc486e3e58a108a752c13bd960150e3857a461e771c06bf57ec7ae",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100354,
+      "original_TW10_SPR_group_sha256": "2d2f5076afd20caa4b1f0a819ec628198f78d3ca0cb07d858e6d9fa65e8bee20",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100355,
+      "original_TW10_SPR_group_sha256": "409081b2ead88925b44eeccca02005ff3de59906b8736ae6d2cdc3bcdcf070a3",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100356,
+      "original_TW10_SPR_group_sha256": "d8fff8110694e7726d87abcfb62a811869a2f066be7475f00f68912ffd233bbe",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100357,
+      "original_TW10_SPR_group_sha256": "813d101cad648b00cef2d435e8fecd7f2ed6d43854738081b674bef228bcab69",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100358,
+      "original_TW10_SPR_group_sha256": "fda4d9af12a80e633c848ae981795974bdf1fb303ecfe40a3f5bb8313c4f4dfd",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100359,
+      "original_TW10_SPR_group_sha256": "99c09a003670dd66480fb43876f5e1a0a3e4523c27c668b33b7bc463c8513828",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100360,
+      "original_TW10_SPR_group_sha256": "71111d4395a68bf72dc7fb068a6286fef66c4b1afeae17b697b4a336518ddf94",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100361,
+      "original_TW10_SPR_group_sha256": "066c7939f15860b4a3d322035fc337199debaeb085ee1460be1d7a66e807b5d5",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100362,
+      "original_TW10_SPR_group_sha256": "42a308083c2f8ca1a69b0818b3f621586fe9c351098ed32e095fd8b8c3ac70db",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100367,
+      "original_TW10_SPR_group_sha256": "ac37952e597ac450e4da63672d77a0dd817244dfd9461453e9be220123ab085e",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 2
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100368,
+      "original_TW10_SPR_group_sha256": "d7f7f9881cf685bcccfa73587f4c36f531fc57b6df0a6f0021fb58f414f07bea",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 6,
+        "PETFLG_1_rows": 4,
+        "PETFLG_0_rows": 2
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 5,
+        "PETFLG_1_rows": 3,
+        "PETFLG_0_rows": 2
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100369,
+      "original_TW10_SPR_group_sha256": "2386701de4a541403e6f5e27b462bfaf6263175b3114a440057d71a81bef3591",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100370,
+      "original_TW10_SPR_group_sha256": "63ba530888f46c6ccd0905ae978bf95d4adc52d4386c043cc417e80a0f1efc79",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 5,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 3
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100371,
+      "original_TW10_SPR_group_sha256": "fff075bbef9214c1220742f8714934564e232dbb59e1a5125714275c3e82cff4",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 3,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100372,
+      "original_TW10_SPR_group_sha256": "770cab7bb2ba84daa827692a3b5ce47f83ce36595a164d19cde8e54ebfdc3627",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 5,
+        "PETFLG_1_rows": 3,
+        "PETFLG_0_rows": 2
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100373,
+      "original_TW10_SPR_group_sha256": "f3d76b5cc31542a372b4a207a2fb5b58c6eddeea45891182c53330e343563721",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 7,
+        "PETFLG_1_rows": 4,
+        "PETFLG_0_rows": 3
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 5,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 3
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100374,
+      "original_TW10_SPR_group_sha256": "407dd04efad37832e1a938f93e4f2eb30138c13881726120e22622dffcd479de",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 2
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100375,
+      "original_TW10_SPR_group_sha256": "b5ad1a444b30c013f202aef8e4aa209589933a4489539c30e4d18adb611dca1c",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100376,
+      "original_TW10_SPR_group_sha256": "617db52b14409fdbdb24ca96fae3456a03183a327abb49aa9630914944d9d4d0",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100377,
+      "original_TW10_SPR_group_sha256": "630c5533e4a07e084214e63f2463940162128ee4d741ea4f38aa7d3792923d94",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100378,
+      "original_TW10_SPR_group_sha256": "fef68f600e6e301d109ea15d3aabd11e2f47765bd808ad79766b7a2be42e242e",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100379,
+      "original_TW10_SPR_group_sha256": "355f06e73d0e277beed5abf221f80babbac98c123047a732ca4f1181dd80b65d",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100380,
+      "original_TW10_SPR_group_sha256": "28045083c659de91c7c6288e30bbe6602d0b3a89f0ee6ce1c8176352a760f682",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 2
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 2
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100381,
+      "original_TW10_SPR_group_sha256": "41e0bcee88f18249bbe418311cac48c278d7412a1e4029ce920933124cadef82",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100382,
+      "original_TW10_SPR_group_sha256": "4a48eb56e7b161213305cdb3535e22830fc78e69d2f541da48a2d00502f35eed",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100383,
+      "original_TW10_SPR_group_sha256": "74bdacac0a96b7f73254280629c25fe3179c15f8ecb1c2e47abb047a09595bee",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100384,
+      "original_TW10_SPR_group_sha256": "38c47a6f86e858b3af0d608e751299d28ca5e30ad1a0cb884ed71f46f92a70b3",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100385,
+      "original_TW10_SPR_group_sha256": "167e0502ed8151e0b1ea237a94327e7df913e8c9f0e0a33726c81ab17a7bedff",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100386,
+      "original_TW10_SPR_group_sha256": "be2f65666905ab33531feb55fde56e716c889f839f8eb8b5580c11a2159e9aa0",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100387,
+      "original_TW10_SPR_group_sha256": "c10cddd22c44e433cd7fbc2e3bc750c345c936b3217f0f9a71782fe5378361d1",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100388,
+      "original_TW10_SPR_group_sha256": "d8ee442c59eaa9a3eec71336bff5ffb280d6296416c887c23b961a4d3cb49ebb",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100389,
+      "original_TW10_SPR_group_sha256": "324300f2f0f1b37d75dd74d274ef28a561984a7275d8865ba0feab652473855d",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100390,
+      "original_TW10_SPR_group_sha256": "b13d04cf59d372a15261159ad66a158362b53084ac9027ef2318934b6d4461e7",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100391,
+      "original_TW10_SPR_group_sha256": "92aedf30177e523e0d012210559aba490707b735474aa2328d3d932d956440be",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100392,
+      "original_TW10_SPR_group_sha256": "80238687e911c0f1393a2d79bb178fde02c6f826e35974ab56fe8f7f8e744789",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100393,
+      "original_TW10_SPR_group_sha256": "8616fba53e6a8b995577119cf22fd40199d14903b7dd7a0fc5050dcd546e914c",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100394,
+      "original_TW10_SPR_group_sha256": "3df3893d1528273fdd935d46c729713ec5ff4efd73df4eb64fc47b9e5ab7225e",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 7,
+        "PETFLG_1_rows": 3,
+        "PETFLG_0_rows": 4
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 6,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 4
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100395,
+      "original_TW10_SPR_group_sha256": "4a835ba8927bb19912541ed3ac9a45ce5a713d32796e099c9e0c43a54a9fa4ce",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100396,
+      "original_TW10_SPR_group_sha256": "c53a4d78b271438aa8c590c511af42f84d37170ba1268177bd0c8194730942b3",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100401,
+      "original_TW10_SPR_group_sha256": "0284af96efdff07da2b5b73ccc3f8a84a2a4158e9c653e3a4f3977293f3ec2a4",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 3
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 0,
+        "PETFLG_0_rows": 4
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100430,
+      "original_TW10_SPR_group_sha256": "7da183de051160b99c95791e326e75343d77955a4f79f3eba3c74ba6c5d1fb13",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 4,
+        "PETFLG_1_rows": 2,
+        "PETFLG_0_rows": 2
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 2,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100432,
+      "original_TW10_SPR_group_sha256": "d5e4f229a3f71457d000c8d07e7406423d97b321be00d587c671836d656690d1",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 2
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 3,
+        "PETFLG_1_rows": 0,
+        "PETFLG_0_rows": 3
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100451,
+      "original_TW10_SPR_group_sha256": "01b99009142ed6ddecdc467a324ee89b4ea5b28dfe7a8b488b8dee8a3c0d6df6",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 0,
+        "PETFLG_0_rows": 1
+      }
+    },
+    {
+      "original_TW10_spr_numeric_graphic": 100454,
+      "original_TW10_SPR_group_sha256": "13d1f6017a55d85d57af7b5a14b577ec30c50c9e48625c8b565e71d09325119a",
+      "TW10_original_pixel_preview": "PREEXISTING_PET07_SOURCE_PIXEL_SAMPLED_SEQUENCES_NOT_NATIVE_GAMEPLAY",
+      "mixed25_main": {
+        "source_template_rows": 1,
+        "PETFLG_1_rows": 1,
+        "PETFLG_0_rows": 0
+      },
+      "mixed25_alternative": {
+        "source_template_rows": 0,
+        "PETFLG_1_rows": 0,
+        "PETFLG_0_rows": 0
+      }
+    }
+  ],
+  "evidence_boundary": {
+    "same_number_proves_same_pet_species": false,
+    "same_deployment_or_official_mixed25_proven": false,
+    "original_TW10_server_names_stats_or_skills_proven": false,
+    "original_capture_success_replayed": false,
+    "original_pet_skill_or_growth_runtime_proven": false,
+    "PET07_original_pixels_observed_in_earlier_work_not_new_this_run": true,
+    "private_CP950_names_present_in_public_report": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  }
+}

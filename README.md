@@ -1995,3 +1995,8 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 在PET12六原动画组规格闭合后，重读和逐整SHA／CRC验证混合2.5私人原 `enemybase.txt`／新抽原 `petskill.txt`，11条原捕捉条件key53候选逐原行SHA匹配本包被配置选择的宠物模板第7字段；恢复11×原INITNUM、LVUP字面、四基础属性、四元素、技能槽及原需求道具，25个正数技能槽引用全部落在同源5个原技能ID及定义行。保留**PETFLG=10条1＋1条0（key53=8）**、13需求道具引用／12不同ID、技能空槽及后代社区样本来源资格。只有**静态同包候选关系**，不认证原GMSV真正读取key53的模板映射、不证明11条可捕、不把此后期社区服数值归于TW1/TW85/CN5官方或当代新游戏配置。
 
 [PET13原源核验与断言边界](docs/continuity/STONEAGE-PET-MODULE-13-ORIGINAL-CAPTURE-TEMPLATE-ATTRIBUTES-SKILLS-20261106.md)、[11模板／五原技能条目派生摘要](research/recovered/STONEAGE-PET-MODULE-13-ORIGINAL-CAPTURE-TEMPLATE-ATTRIBUTES-SKILLS-R1.json)、[原件／公开双路径校验工具](tools/stoneage_pet13_capture_template_stats_skills.py)。原商业全文/原像素不公开，旧CURRENT完整blob c89e0e33537990aa2132b47c40fef49a985a935c不改，Stage A 7PARTIAL+2OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING、overall_percent=null。WORLD37-R2C仅在真正齐备原EXE完整SHA/CRC和隔离x86时重开，PET内容继续以现存合格源的实际原像素与可实证名称归属为优先。
+
+
+## 2026-11-06 — PET14｜台湾1.0既有原像素与混合2.5两份原宠物主表分源观察
+
+在完整保存的PET07 130个台湾1.0原SPR像素图号组与PET10私人原社区混合2.5双宠物主表中作**数值关系**，主表命中309原行（PETFLG=1有188、0有121），备用表命中258原行（PETFLG=1有142、0有116），没有把混合2.5繁体姓名/属性/技能误标成台湾1.0官方身份。私人原像素目录新增可切换图号的后代原名/数值分源查阅，生成HTML `15,198,113B` / SHA256 `949e1d28a228ecec6435ebdd463ac01804bb054c2578d1de839476e667e3b30f`，私人新页未成功上传Library，当前会话提供文件；本批**新增原像素解码0，新增原商服运行0**。公开仅130逐图号数字/原SHA、工具、回归测试和[完整受限证据](docs/continuity/STONEAGE-PET-MODULE-14-TW10-MIXED25-SOURCE-BOUNDARY-20261106.md)、[PET14公开数值桥](research/recovered/STONEAGE-PET-MODULE-14-TW10-MIXED25-SOURCE-SEPARATED-NUMERIC-BRIDGE-R1.json)，商业原像素和原表全文不入Git。旧完整CURRENT Git blob c89e0e33537990aa2132b47c40fef49a985a935c保持不变。PET模块本批SOURCE_BOUNDED_PARTIAL；下一原像素仅在TW85原REAL字节可重取后进行，条件R2C仍待合格原EXE/x86，当前按模块队列转已有来源可读内容；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停，完成率未知。

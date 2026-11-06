@@ -1,4 +1,4 @@
-name: Verify PET08/PET09/PET10 source-qualified pet catalogs
+name: Verify PET08/PET09/PET10/PET14 source-qualified pet catalogs
 on:
   push:
     paths:
@@ -14,6 +14,9 @@ on:
       - 'tests/test_stoneage_pet_module_09_carrier_material.py'
       - 'research/recovered/STONEAGE-PET-MODULE-10-ORIGINAL-MIXED25-SERVER-TABLES-R1.json'
       - 'tests/test_stoneage_pet_module_10_original_server.py'
+      - 'research/recovered/STONEAGE-PET-MODULE-14-TW10-MIXED25-SOURCE-SEPARATED-NUMERIC-BRIDGE-R1.json'
+      - 'tools/stoneage_pet14_tw10_mixed25_source_bridge.py'
+      - 'tests/test_stoneage_pet_module_14_source_bridge.py'
       - '.github/workflows/verify-stoneage-pet-module-08-catalog.yml'
   workflow_dispatch:
 permissions:
@@ -27,4 +30,4 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m unittest tests.test_stoneage_pet_module_08_catalog tests.test_stoneage_pet_module_09_carrier_material tests.test_stoneage_pet_module_10_original_server -v
+      - run: python -m unittest tests.test_stoneage_pet_module_08_catalog tests.test_stoneage_pet_module_09_carrier_material tests.test_stoneage_pet_module_10_original_server tests.test_stoneage_pet_module_14_source_bridge -v
