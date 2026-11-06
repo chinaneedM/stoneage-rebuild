@@ -1,0 +1,2877 @@
+{
+  "schema": "stoneage.world33.battle_item_gate_source.r1",
+  "scope": "PRESERVED_MIXED25_CLIENT_ITEM_SELECTION_AND_SERVER_B_COMMAND_INTAKE",
+  "archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "member_witnesses": [
+    {
+      "target": "gmsv/gmsv.exe",
+      "header_offset": 359906866,
+      "header_bytes": 154,
+      "packed_bytes": 605893,
+      "unpacked_bytes": 1897867,
+      "header_sha256": "8b8d28fb487f54d93d335caeb385bfb7239b467288087ceca434ffcf29716dea",
+      "packed_sha256": "330634f8ca453ba7c60ba2df0c474a6fc6aa95d2c126586e1b61a1206d79ce05",
+      "member_crc32": 1848751674,
+      "member_sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00"
+    },
+    {
+      "target": "gmsv/setup.cf",
+      "header_offset": 360516773,
+      "header_bytes": 154,
+      "packed_bytes": 4172,
+      "unpacked_bytes": 9715,
+      "header_sha256": "c953d11775fa19c279f71ef4380f11a6c40de5eb296e6caf785a12bc1b6d8730",
+      "packed_sha256": "1ba77f491e170a41407062159d72c184f02b240b794cedb6ba90d3832fab0918",
+      "member_crc32": 914480129,
+      "member_sha256": "b4936c103efb7b3cad359e5c85c7965187306883a68c0be712ece6c374e3b12d"
+    },
+    {
+      "target": "gmsv/data/itemset.txt",
+      "header_offset": 354691427,
+      "header_bytes": 172,
+      "packed_bytes": 230185,
+      "unpacked_bytes": 3392473,
+      "header_sha256": "3fc62fb1eea3761f2ea145503570be3fcdec74eaee8e953582460ecafb371859",
+      "packed_sha256": "f8e8d649429c33c9cc416c05466aceb3d2a1d421d4b19dffcdf071e329035b60",
+      "member_crc32": 2520348968,
+      "member_sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688"
+    },
+    {
+      "target": "stoneage2.5/sa_2903.exe",
+      "header_offset": 352822544,
+      "header_bytes": 177,
+      "packed_bytes": 219049,
+      "unpacked_bytes": 561152,
+      "header_sha256": "144a087ea48b1a32f7c240eb0c3020f8d61a4b10b4f8e237605adb152b01af07",
+      "packed_sha256": "311d63d7f2314efaeefa45a769e9da0ed2a3ecbad3f94ebee7ea1119e7b406b4",
+      "member_crc32": 1312253662,
+      "member_sha256": "ec678517f76564ebc9ab00cf3f66853ed9975ef6290eb48168b78909a68a5d16"
+    }
+  ],
+  "world31_receipt_sha256": "f92d0d0be3055ee773d7e1fa846c492613ab05c3ab4e10e80f9260031ad788af",
+  "configured_recovery_rows": 644,
+  "program": {
+    "client_target_type_0_picker": {
+      "entry": 4213427,
+      "source_sha256": "3fa43e9563ec3f798e0214250e29f2ab4c48e5731bb20a41a8498396b5936653"
+    },
+    "item_columns": [
+      {
+        "column_zero_based": 20,
+        "field": "fieldtype",
+        "runtime_int_key": 4,
+        "item_record_offset": 20,
+        "descriptor_sha256": "1e0854f17bb81a6f2d11405b3ab11a74b4b049cf9e071a833ca43b2d22f6feee"
+      },
+      {
+        "column_zero_based": 21,
+        "field": "target",
+        "runtime_int_key": 5,
+        "item_record_offset": 24,
+        "descriptor_sha256": "c70d65b7e45c2859f93133b70bf269be0f0effe83cc0e1139ef1022f5c8f1236"
+      }
+    ],
+    "server_symbols": {
+      "_lssproto_B_recv": 4280112,
+      "__CHAR_CHECKINDEX": 4381024,
+      "_CHAR_getInt": 4381584,
+      "__CHAR_getWorkInt": 4382144,
+      "__CHAR_setWorkInt": 4382256,
+      "__CHAR_getItemIndex": 4383456,
+      "__ITEM_CHECKINDEX": 5206448,
+      "_ITEM_isTargetValid": 5226608,
+      "_checkErrorStatus": 5526944,
+      "_BattleCommandDispach": 5527200,
+      "_ITEM_itemconfentries": 5799520
+    },
+    "server_call_edges": [
+      [
+        4280194,
+        5527200,
+        "03c95e0398079dfe3ad67f8e1708bf0645a1e45bc2a9764ca9dec948d6fd23b9"
+      ],
+      [
+        5529877,
+        4383456,
+        "e75172d77ab3a2303fbe7a75440b311073e677d88bdb1024fe83c52823fb10b2"
+      ],
+      [
+        5529904,
+        5206448,
+        "2c745ac8b51ad17be4fa7a7c641721e43047fbb2134145821d92f2715578a284"
+      ],
+      [
+        5530780,
+        5226608,
+        "7c3a84a3c7e4e438bd50536303cd7fa44ea23956c444112caf2d1aa20c3de39c"
+      ]
+    ],
+    "status_record_bridge_windows": [
+      [
+        "server",
+        5219387,
+        5219495,
+        "2f8ea565643df3749904e153bc6f7cf92bdd5ce4517f0aabbe626f0a8198872c"
+      ],
+      [
+        "server",
+        5219745,
+        5219815,
+        "6e45a9bd1ca7744e3682ac16e61b6ae3d48f0a47162544b102d3739df01ff970"
+      ],
+      [
+        "client",
+        4447903,
+        4447952,
+        "6e9c90e404511ddb1f3dd550db1724a8fcb788e3b9141fefa9924665a02573bb"
+      ]
+    ],
+    "server_windows": [
+      [
+        4280112,
+        4280304,
+        "20dfc0cbe2cb6827e1abe21027802a1f81fab11a289894b80866902c81ffaca9"
+      ],
+      [
+        4381024,
+        4381080,
+        "49c7a964957ec4de7d1d07880d933dd6667ba5f70118a5ae47240713baf5b0fd"
+      ],
+      [
+        4381584,
+        4381612,
+        "2f294b52d721bdd0d8bfc298432023c40d946ef3bb4bf77b7e6b30e5288bd18c"
+      ],
+      [
+        4382144,
+        4382426,
+        "060772894288fe6c2ac45e2ede16aed6dab79f1a770e8beecfb5aa13a0d4c9ca"
+      ],
+      [
+        4383456,
+        4383664,
+        "7021eea015cabacdf9772806ccf246111a5f9eb1c4c763d326fe3637d90a8f16"
+      ],
+      [
+        5206448,
+        5206560,
+        "28527b6d669449acd58aa2167cdd1720f6b7800d8672ffe06eef013547b9d0e0"
+      ],
+      [
+        5226608,
+        5226864,
+        "4f5deb8779f8f75c5374422e899af1f23d21b5870fa544b60d232aa89d8a7e35"
+      ],
+      [
+        5526944,
+        5532096,
+        "9fb7495e0ca58b80565c7de784da210c3b38b21b518d643ee56cd1d401ac14c7"
+      ],
+      [
+        5845541,
+        5845562,
+        "03219b47e190ea14b32676a5d62c33ac3a507908beae9f25ace105610c9d29ce"
+      ],
+      [
+        5917125,
+        5917201,
+        "03ea5bd85a96a1cf5e1a74848f3eeef7e5765c98399887f7744b7ef61770cefe"
+      ],
+      [
+        5932424,
+        5932491,
+        "ce3c53b691b4bbac6b957ff39772db282d4458c34305bb228fc29656aac369a2"
+      ],
+      [
+        5936660,
+        5936752,
+        "a31b0ecd96fa7946b5d88ca9a6b0afbd1b13149a4fd31d08a92fbadc1222486b"
+      ]
+    ],
+    "client_windows": [
+      [
+        4213264,
+        4213304,
+        "15a0a6605ab6f0a2af8a16d0d04a2f885dd7464e00e96e88eb270aa4ae6637c0"
+      ],
+      [
+        4218130,
+        4218243,
+        "fdc0aea3a51620f77321eab8cceeed80c8e729cc07afacc9cb35d5ee818eb4c1"
+      ],
+      [
+        4405655,
+        4405710,
+        "01eb6f2a1e65a1c79a880b5832691b92c6c656e4f0ea4823a3cab5fc5d8ad89f"
+      ],
+      [
+        4214217,
+        4214249,
+        "5d767331c427910cc1607fcb5e45527717e489d4553a48b42256d0c305fd531f"
+      ],
+      [
+        4609300,
+        4609308,
+        "87aeeaba42351f28d0ef2e31a5f7e81375e86d0880b367cc17f87e7291776803"
+      ]
+    ]
+  },
+  "fixture": {
+    "engine": "Unicorn 2.1.4 x86-32",
+    "item_slot": 7,
+    "client_single_target_slot": 7,
+    "server_stubbed_functions": {
+      "4233216": "connection_to_character",
+      "4235280": "set_receive_time",
+      "4238880": "is_client_connection",
+      "4239360": "is_logged_in",
+      "5521024": "notify_action_setting",
+      "5614896": "libc_diagnostic_stream",
+      "5615440": "libc_diagnostic",
+      "5615456": "memset",
+      "5615568": "sscanf_ordinary_item_command"
+    },
+    "battle_work_keys": [
+      3,
+      4,
+      5,
+      0
+    ]
+  },
+  "source_class_witnesses": [
+    {
+      "source_rows": 35,
+      "row": {
+        "id": 12780,
+        "line": 7513,
+        "row_sha256": "578b33ebc20f270b8a1ad7f7057ffd17ff12189d068fd84730c6da3796e1951f",
+        "scene": 0,
+        "target": 0,
+        "shape": "MP",
+        "raw_hash_prefix": false
+      },
+      "client": {
+        "battle_slot_selectable": true,
+        "field_use_gate_passed": true,
+        "selector_endpoints": [
+          4213389,
+          4405710
+        ],
+        "client_format_args": [
+          7,
+          2
+        ]
+      },
+      "server": {
+        "7": {
+          "parsed_slot_target": [
+            7,
+            7
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              7
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        },
+        "17": {
+          "parsed_slot_target": [
+            7,
+            17
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              17
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        },
+        "20": {
+          "parsed_slot_target": [
+            7,
+            20
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "21": {
+          "parsed_slot_target": [
+            7,
+            21
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "22": {
+          "parsed_slot_target": [
+            7,
+            22
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "23": {
+          "parsed_slot_target": [
+            7,
+            23
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        }
+      },
+      "client_command_server_replay": {
+        "parsed_slot_target": [
+          7,
+          2
+        ],
+        "item_instance_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            24,
+            4
+          ]
+        ],
+        "battle_work_writes": [
+          [
+            4,
+            2
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "action_setting_calls": [
+          0
+        ]
+      }
+    },
+    {
+      "source_rows": 458,
+      "row": {
+        "id": 12530,
+        "line": 7269,
+        "row_sha256": "bc1f35f9cbb18dcae3fb4c7b1f7cc80aa5833fc5bb2bf0be01ca89b7c806fa15",
+        "scene": 0,
+        "target": 1,
+        "shape": "HP",
+        "raw_hash_prefix": false
+      },
+      "client": {
+        "battle_slot_selectable": true,
+        "field_use_gate_passed": true,
+        "selector_endpoints": [
+          4213389,
+          4405710
+        ],
+        "client_format_args": [
+          7,
+          7
+        ]
+      },
+      "server": {
+        "7": {
+          "parsed_slot_target": [
+            7,
+            7
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              7
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        },
+        "17": {
+          "parsed_slot_target": [
+            7,
+            17
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              17
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        },
+        "20": {
+          "parsed_slot_target": [
+            7,
+            20
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "21": {
+          "parsed_slot_target": [
+            7,
+            21
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "22": {
+          "parsed_slot_target": [
+            7,
+            22
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "23": {
+          "parsed_slot_target": [
+            7,
+            23
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        }
+      },
+      "client_command_server_replay": {
+        "parsed_slot_target": [
+          7,
+          7
+        ],
+        "item_instance_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            24,
+            4
+          ]
+        ],
+        "battle_work_writes": [
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "action_setting_calls": [
+          0
+        ]
+      }
+    },
+    {
+      "source_rows": 4,
+      "row": {
+        "id": 1974,
+        "line": 1782,
+        "row_sha256": "45977a3845cb0f63bb58649ee392c9af5942f05ded16d38ba80b986cb6f71537",
+        "scene": 0,
+        "target": 2,
+        "shape": "HP",
+        "raw_hash_prefix": false
+      },
+      "client": {
+        "battle_slot_selectable": true,
+        "field_use_gate_passed": true,
+        "selector_endpoints": [
+          4213389,
+          4405710
+        ],
+        "client_format_args": [
+          7,
+          20
+        ]
+      },
+      "server": {
+        "7": {
+          "parsed_slot_target": [
+            7,
+            7
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              7
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        },
+        "17": {
+          "parsed_slot_target": [
+            7,
+            17
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              17
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        },
+        "20": {
+          "parsed_slot_target": [
+            7,
+            20
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              20
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        },
+        "21": {
+          "parsed_slot_target": [
+            7,
+            21
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "22": {
+          "parsed_slot_target": [
+            7,
+            22
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "23": {
+          "parsed_slot_target": [
+            7,
+            23
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        }
+      },
+      "client_command_server_replay": {
+        "parsed_slot_target": [
+          7,
+          20
+        ],
+        "item_instance_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            24,
+            4
+          ]
+        ],
+        "battle_work_writes": [
+          [
+            4,
+            20
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "action_setting_calls": [
+          0
+        ]
+      }
+    },
+    {
+      "source_rows": 1,
+      "row": {
+        "id": 13031,
+        "line": 7681,
+        "row_sha256": "74e123ed888d9a08df17c8bb5b8130d5ad3676b5ec433f560b4a26520c157e99",
+        "scene": 1,
+        "target": 1,
+        "shape": "HP",
+        "raw_hash_prefix": true
+      },
+      "client": {
+        "battle_slot_selectable": true,
+        "field_use_gate_passed": false,
+        "selector_endpoints": [
+          4213389,
+          4405988
+        ],
+        "client_format_args": [
+          7,
+          7
+        ]
+      },
+      "server": {
+        "7": {
+          "parsed_slot_target": [
+            7,
+            7
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              7
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        },
+        "17": {
+          "parsed_slot_target": [
+            7,
+            17
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              17
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        },
+        "20": {
+          "parsed_slot_target": [
+            7,
+            20
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "21": {
+          "parsed_slot_target": [
+            7,
+            21
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "22": {
+          "parsed_slot_target": [
+            7,
+            22
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "23": {
+          "parsed_slot_target": [
+            7,
+            23
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        }
+      },
+      "client_command_server_replay": {
+        "parsed_slot_target": [
+          7,
+          7
+        ],
+        "item_instance_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            24,
+            4
+          ]
+        ],
+        "battle_work_writes": [
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "action_setting_calls": [
+          0
+        ]
+      }
+    },
+    {
+      "source_rows": 78,
+      "row": {
+        "id": 1232,
+        "line": 1227,
+        "row_sha256": "aa3ce4290b9f3d9d0f3007e33f113a45a9ea995fe81e18544bcef24e29bc46b2",
+        "scene": 1,
+        "target": 2,
+        "shape": "HP",
+        "raw_hash_prefix": false
+      },
+      "client": {
+        "battle_slot_selectable": true,
+        "field_use_gate_passed": false,
+        "selector_endpoints": [
+          4213389,
+          4405988
+        ],
+        "client_format_args": [
+          7,
+          20
+        ]
+      },
+      "server": {
+        "7": {
+          "parsed_slot_target": [
+            7,
+            7
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              7
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        },
+        "17": {
+          "parsed_slot_target": [
+            7,
+            17
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              17
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        },
+        "20": {
+          "parsed_slot_target": [
+            7,
+            20
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              20
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        },
+        "21": {
+          "parsed_slot_target": [
+            7,
+            21
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "22": {
+          "parsed_slot_target": [
+            7,
+            22
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "23": {
+          "parsed_slot_target": [
+            7,
+            23
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        }
+      },
+      "client_command_server_replay": {
+        "parsed_slot_target": [
+          7,
+          20
+        ],
+        "item_instance_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            24,
+            4
+          ]
+        ],
+        "battle_work_writes": [
+          [
+            4,
+            20
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "action_setting_calls": [
+          0
+        ]
+      }
+    },
+    {
+      "source_rows": 11,
+      "row": {
+        "id": 2618,
+        "line": 2201,
+        "row_sha256": "cdd3b9f3f9e2737b6ca7775f56354e4a6c30132bce98e888b0c30afb24001e01",
+        "scene": 2,
+        "target": 0,
+        "shape": "OTHER",
+        "raw_hash_prefix": false
+      },
+      "client": {
+        "battle_slot_selectable": false,
+        "field_use_gate_passed": true,
+        "selector_endpoints": [
+          4213304,
+          4405710
+        ]
+      },
+      "server": {
+        "7": {
+          "parsed_slot_target": [
+            7,
+            7
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              7
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        },
+        "17": {
+          "parsed_slot_target": [
+            7,
+            17
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              17
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        },
+        "20": {
+          "parsed_slot_target": [
+            7,
+            20
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "21": {
+          "parsed_slot_target": [
+            7,
+            21
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "22": {
+          "parsed_slot_target": [
+            7,
+            22
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "23": {
+          "parsed_slot_target": [
+            7,
+            23
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        }
+      },
+      "client_command_server_replay": null
+    },
+    {
+      "source_rows": 57,
+      "row": {
+        "id": 12555,
+        "line": 7294,
+        "row_sha256": "b89a06a7a9ecbb56e1778f95ac350363b75b24ce4c36f7497d0a5bb5be7918b5",
+        "scene": 2,
+        "target": 1,
+        "shape": "HP_MP",
+        "raw_hash_prefix": false
+      },
+      "client": {
+        "battle_slot_selectable": false,
+        "field_use_gate_passed": true,
+        "selector_endpoints": [
+          4213304,
+          4405710
+        ]
+      },
+      "server": {
+        "7": {
+          "parsed_slot_target": [
+            7,
+            7
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              7
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        },
+        "17": {
+          "parsed_slot_target": [
+            7,
+            17
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              17
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        },
+        "20": {
+          "parsed_slot_target": [
+            7,
+            20
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "21": {
+          "parsed_slot_target": [
+            7,
+            21
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "22": {
+          "parsed_slot_target": [
+            7,
+            22
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "23": {
+          "parsed_slot_target": [
+            7,
+            23
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        }
+      },
+      "client_command_server_replay": null
+    }
+  ],
+  "group_target_controls": [
+    {
+      "target_type": 2,
+      "caster_side": 0,
+      "client": {
+        "battle_slot_selectable": true,
+        "field_use_gate_passed": true,
+        "selector_endpoints": [
+          4213389,
+          4405710
+        ],
+        "client_format_args": [
+          7,
+          20
+        ]
+      },
+      "server": {
+        "20": {
+          "parsed_slot_target": [
+            7,
+            20
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              20
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        },
+        "21": {
+          "parsed_slot_target": [
+            7,
+            21
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "22": {
+          "parsed_slot_target": [
+            7,
+            22
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        }
+      }
+    },
+    {
+      "target_type": 2,
+      "caster_side": 1,
+      "client": {
+        "battle_slot_selectable": true,
+        "field_use_gate_passed": true,
+        "selector_endpoints": [
+          4213389,
+          4405710
+        ],
+        "client_format_args": [
+          7,
+          21
+        ]
+      },
+      "server": {
+        "20": {
+          "parsed_slot_target": [
+            7,
+            20
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "21": {
+          "parsed_slot_target": [
+            7,
+            21
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              21
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        },
+        "22": {
+          "parsed_slot_target": [
+            7,
+            22
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        }
+      }
+    },
+    {
+      "target_type": 3,
+      "caster_side": 0,
+      "client": {
+        "battle_slot_selectable": true,
+        "field_use_gate_passed": true,
+        "selector_endpoints": [
+          4213389,
+          4405710
+        ],
+        "client_format_args": [
+          7,
+          21
+        ]
+      },
+      "server": {
+        "20": {
+          "parsed_slot_target": [
+            7,
+            20
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "21": {
+          "parsed_slot_target": [
+            7,
+            21
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              21
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        },
+        "22": {
+          "parsed_slot_target": [
+            7,
+            22
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        }
+      }
+    },
+    {
+      "target_type": 3,
+      "caster_side": 1,
+      "client": {
+        "battle_slot_selectable": true,
+        "field_use_gate_passed": true,
+        "selector_endpoints": [
+          4213389,
+          4405710
+        ],
+        "client_format_args": [
+          7,
+          20
+        ]
+      },
+      "server": {
+        "20": {
+          "parsed_slot_target": [
+            7,
+            20
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              20
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        },
+        "21": {
+          "parsed_slot_target": [
+            7,
+            21
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "22": {
+          "parsed_slot_target": [
+            7,
+            22
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        }
+      }
+    },
+    {
+      "target_type": 4,
+      "caster_side": 0,
+      "client": {
+        "battle_slot_selectable": true,
+        "field_use_gate_passed": true,
+        "selector_endpoints": [
+          4213389,
+          4405710
+        ],
+        "client_format_args": [
+          7,
+          22
+        ]
+      },
+      "server": {
+        "20": {
+          "parsed_slot_target": [
+            7,
+            20
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "21": {
+          "parsed_slot_target": [
+            7,
+            21
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "22": {
+          "parsed_slot_target": [
+            7,
+            22
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              22
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        }
+      }
+    },
+    {
+      "target_type": 4,
+      "caster_side": 1,
+      "client": {
+        "battle_slot_selectable": true,
+        "field_use_gate_passed": true,
+        "selector_endpoints": [
+          4213389,
+          4405710
+        ],
+        "client_format_args": [
+          7,
+          22
+        ]
+      },
+      "server": {
+        "20": {
+          "parsed_slot_target": [
+            7,
+            20
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "21": {
+          "parsed_slot_target": [
+            7,
+            21
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              3,
+              11
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": []
+        },
+        "22": {
+          "parsed_slot_target": [
+            7,
+            22
+          ],
+          "item_instance_reads": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              24,
+              4
+            ]
+          ],
+          "battle_work_writes": [
+            [
+              4,
+              22
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "action_setting_calls": [
+            0
+          ]
+        }
+      }
+    }
+  ],
+  "negative_controls": {
+    "missing_inventory_item": {
+      "parsed_slot_target": [
+        7,
+        7
+      ],
+      "item_instance_reads": [],
+      "battle_work_writes": [
+        [
+          3,
+          11
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "action_setting_calls": []
+    },
+    "malformed_command": {
+      "parsed_slot_target": [],
+      "item_instance_reads": [],
+      "battle_work_writes": [
+        [
+          3,
+          11
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "action_setting_calls": []
+    },
+    "not_logged_in": {
+      "parsed_slot_target": [],
+      "item_instance_reads": [],
+      "battle_work_writes": [],
+      "action_setting_calls": []
+    }
+  },
+  "client_selection_controls": {
+    "unoccupied_slot": {
+      "battle_slot_selectable": false,
+      "field_use_gate_passed": false,
+      "selector_endpoints": [
+        4213359,
+        4405988
+      ]
+    },
+    "level_requirement_unmet": {
+      "battle_slot_selectable": false,
+      "field_use_gate_passed": false,
+      "selector_endpoints": [
+        4213304,
+        4405988
+      ]
+    }
+  },
+  "client_or_server_started": false,
+  "network_packets_sent": false,
+  "live_battle_effect_or_inventory_change_observed": false,
+  "official_same_deployment_proven": false
+}
