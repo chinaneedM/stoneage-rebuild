@@ -34,3 +34,10 @@ python -m unittest -v tests.test_stoneage_stage_a_world34_r3_field_item_replay
 ```
 
 **最高 NEXT WORLD35｜捕捉增益道具。** WORLD19 已索引配置选中表中 26 条 `ITEM_useCaptureUp`，历史捕捉核心已有后代源码模型。对照本轮同包原程序，静态预检已定位 `ITEM_useCaptureUp` → `ITEM_useCaptureUp_Battle` → `BATTLE_MultiCaptureUp`，以及后者写角色工作键 `0x20`。下一步核实实际原参数如何变成该字段增量，并在原捕捉函数中确认该字段的消费位置或具体缺口。单独保留最终捕获结果的证据等级。Stage A 仍为 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79 暂停，整体完成率未知。
+
+## 主线验收与 WORLD35 预检
+
+- [PR #216](https://github.com/chinaneedM/stoneage-rebuild/pull/216) 候选 `623447450feb767c7de08fb5ac4936cf579344a1` 的 14 项 Actions 全部成功。[候选专项](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42201734535) 及推送专项均实际执行 WORLD34-R3 测试。
+- 合并提交 `bbdcbbb3e9a20d1879e4e4692f6486ebd98e5f24` 的完整 tree `731b339d7e9b2244625a03b855a6a259b98864fa` 与候选及本地验收一致。主线 11 项 Actions 全部成功，[主线专项](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42201821618) job `127838689263` 的 WORLD34-R3 步骤通过。完整历史 CURRENT 重新逐字节比较一致。另用本轮认证原件重新生成 WORLD33 派生报告，与原归档逐字节一致。
+- WORLD35 同包原 `BATTLE_MultiCaptureUp` 在 `0x54cdae` 读取角色工作键 32，在 `0x54cde1` 累加写回。同包 `BATTLE_Capture` 在 `0x5389ca` 读取施用者同一键并加到已经算好的分数，`0x5381ea` 请求归零。对后半段做五次隔离原指令预检，直接设定基础分，工作字段访问和随机数由夹具供给。随机输入 0 时，基础分 1、增益 0 的比较标志为 0，增益 1 则为 1。基础分 40、增益 12 时分数为 52，目标工作键 43 非零的受测值 1 则为 67。基础分 90、增益 20 时封顶 99，在最大随机输入下比较标志为 0。五例都发出将施用者键 32 写回 0 的请求。两版 Unicorn 结果一致。
+- 预检源窗口 SHA-256 为 `0x5389ca..0x538a9e d434e468da730746d14b44371555a8c1584392e17566a56b676966faa4b6f48f`、`0x5381b9..0x5381ef d472fedc95aedf123ad35f4782f48cc8d55888ebc6b803140c800ebdad79c69d`、`0x5a8004..0x5a8018 c2f7adf82fab4f375d301673e7786ac4a0866733eb34a4b6f96fd41e46949e54`。道具增益写入静态窗口 `0x54cd32..0x54cde6` 为 `b10b718c6aed0b1dc2a07a41bb8bbcbda10ad5fe5feff9c278106e4d357619fe`。下一步仍为 WORLD35，重点在 26 条原道具参数经原指令生成键 32 增量的路径。预检在归零调用之后、取得宠物之前停止。
