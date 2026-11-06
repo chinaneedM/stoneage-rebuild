@@ -1914,3 +1914,9 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 [来源限定记录](docs/continuity/STONEAGE-WORLD31-ITEMSET-VARIANT-20261106.md)、[公开19条原行哈希/数值证据](research/recovered/STONEAGE-STAGE-A-WORLD31-ITEMSET-VARIANT-R1.json)：复用此前已认证的私人 ITEM01 原表派生目录，完整 ZIP／成员 SHA 核同，按各版本每 ID 94 原字段逐列对照。配置选中 `itemset.txt` 的 644 条回复道具回调与 WORLD31 相符，另存 `itemset0710.txt` 为 663 条；共有 644 条逐字段完全相同，另存表独有 19 条，其中严格普通体力 6、气力 2、其它 11。19 条与已有七份 ITEM01 公开分片原行哈希均匹配，不能当成额外 19 件已部署可用恢复道具，也不能推已改平衡。新的私有原件下载 0、原程序执行 0。公开源限制脚本、测试和 CI 仅在具备原私有 ZIP 时才能重算完整派生；公共 CI 不运行原字节。
 
 **最高 NEXT WORLD32 保持不变：** `BATTLE_MultiRecovery` 同包单目标体力／气力结算，需完整、SHA 合格原 `gmsv.exe` 才能继续真实 x86 核查目标过滤、写入及上限。当前环境缺此原件，不能将 WORLD31 首次属性写入预检算结算完成；缺源已精确归档。不扩账号/网服、新引擎或体验优化。Stage A 7 PARTIAL + 2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、整体完成率未知；历史 CURRENT 原 blob `c89e0e33537990aa2132b47c40fef49a985a935c` 不变。
+
+## 2026-11-06 — WORLD32：战斗单目标回复的目标过滤、写入与上限
+
+重新取回并核同混合 2.5 原保存档及其中完整 `gmsv.exe`，对 WORLD31 的 116 种普通参数恢复完整回调入参，回放其 79 组结算请求的两端随机值。原战斗指令证实有效目标保留、失效目标同侧重选，以及普通体力／气力分别封顶。临近上限时，原战斗缓冲仍保留截断前增量。同侧没有候选时，原函数返回 `-1` 而列表未填充，调用方下游留待证。详见 [WORLD32 连续性记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-32-BATTLE-RECOVERY-SOURCE-20261106.md) 和 [派生收据](research/recovered/STONEAGE-STAGE-A-WORLD32-BATTLE-RECOVERY-SOURCE-R1.json)。原档和原程序保持私有。回放范围为混合保存样本的隔离原指令，无实服回合或扣物证据。
+
+**最高 NEXT WORLD33**。核同保存版战斗物品命令对原表场景／目标字段的判定，复用已核回复物品，对照有限的允许／拒绝情形。Stage A 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体完成率未知。

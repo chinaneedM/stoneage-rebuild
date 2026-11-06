@@ -1,0 +1,3298 @@
+{
+  "schema": "stoneage.world32.battle_recovery_source.r1",
+  "scope": "PRESERVED_MIXED25_ORDINARY_SINGLE_TARGET_NO_MOUNT_X86_REPLAY",
+  "archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "original_member": {
+    "target": "gmsv/gmsv.exe",
+    "header_offset": 359906866,
+    "header_bytes": 154,
+    "packed_bytes": 605893,
+    "unpacked_bytes": 1897867,
+    "header_sha256": "8b8d28fb487f54d93d335caeb385bfb7239b467288087ceca434ffcf29716dea",
+    "packed_sha256": "330634f8ca453ba7c60ba2df0c474a6fc6aa95d2c126586e1b61a1206d79ce05",
+    "member_crc32": 1848751674,
+    "member_sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00"
+  },
+  "world31_receipt_sha256": "f92d0d0be3055ee773d7e1fa846c492613ab05c3ab4e10e80f9260031ad788af",
+  "program": {
+    "symbols": {
+      "_BATTLE_No2Index": 5338976,
+      "_BATTLE_MultiList": 5342688,
+      "_BATTLE_TargetCheck": 5342272,
+      "_BATTLE_getRidePet": 5439712,
+      "_BATTLE_MagicEffect": 5538656,
+      "_BATTLE_MultiRecovery": 5541552
+    },
+    "source_windows": [
+      [
+        5338976,
+        5339152,
+        "e8b9b810514732a4f1407720aec07c8216e3246c2c7bd8a8be95d3458a889f94"
+      ],
+      [
+        5342272,
+        5344032,
+        "692a6f8d62da346d7438acd3111ac973eb56845ee043a540fdfecab3b607550b"
+      ],
+      [
+        5439712,
+        5439832,
+        "dd9481fcdf6219b0401999370bcfd1c4b320ea476b92edabd71549ce693833b2"
+      ],
+      [
+        5538656,
+        5539162,
+        "78d0016ae5189714be9a959ea164683522187a276289befef9b4cb1b56603755"
+      ],
+      [
+        5541552,
+        5543966,
+        "36cf79dc4430a3769111d648faca36b451a5acf4173787a67d9f6bc15daf27bd"
+      ],
+      [
+        5926920,
+        5927145,
+        "c3d1814f1686a03aeb53b5d75c8229c7c2b4eba2dc28bfedff1b810b1276f9a1"
+      ],
+      [
+        5937992,
+        5938260,
+        "6c33f6e691ce1f23f27d23edf1c564d2ee273cf82753217c1e136ebdcce63a21"
+      ]
+    ],
+    "rng_constants": [
+      0.9,
+      1.1,
+      4.656612873077393e-10
+    ]
+  },
+  "fixture": {
+    "engine": "Unicorn 1.0.3 x86-32",
+    "x87_control_word": 895,
+    "hp_mp": [
+      100,
+      10
+    ],
+    "max_hp_mp": [
+      1000,
+      100
+    ],
+    "caster_slot_index": [
+      2,
+      8
+    ],
+    "requested_character_index": 9,
+    "fallback_character_index": 10,
+    "stubbed_functions": {
+      "4381024": "character_index_check",
+      "4381584": "read_attribute",
+      "4381936": "write_attribute",
+      "4382144": "read_work_attribute",
+      "4383120": "read_flag",
+      "4404720": "can_cure",
+      "5614896": "getreent",
+      "5615104": "fwrite",
+      "5615136": "snprintf",
+      "5615456": "memset",
+      "5615664": "rand",
+      "5615952": "memcpy"
+    },
+    "default_work_mode": 2,
+    "default_flags_1_8": [
+      1,
+      0
+    ],
+    "player_kind": 1,
+    "mounted_pet_slot": -1
+  },
+  "ordinary_request_batch": [
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        2,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 6,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            11
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            12
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        3,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 5,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            12
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            13
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        4,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 8,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            13
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            14
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        5,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 17,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            14
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            15
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        7,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 2,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            16
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            18
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        8,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 1,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            17
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            19
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        10,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 24,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            19
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            21
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        10,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 2,
+      "source_rows": 20,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            109
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            111
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        50,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 6,
+      "source_rows": 29,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            145
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            155
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        60,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 2,
+      "source_rows": 25,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            154
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            166
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        100,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 4,
+      "source_rows": 28,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            190
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            210
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        300,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 9,
+      "source_rows": 18,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            370
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            430
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        12,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 2,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            20
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            23
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        15,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 9,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            23
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            26
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        120,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 3,
+      "source_rows": 9,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            208
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            232
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        18,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 3,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            26
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            30
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        20,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 6,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            28
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            32
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        180,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 2,
+      "source_rows": 3,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            262
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            298
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        185,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 2,
+      "source_rows": 2,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            266
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            303
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        200,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 5,
+      "source_rows": 16,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            280
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            320
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        250,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 3,
+      "source_rows": 6,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            325
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            375
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        280,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 2,
+      "source_rows": 4,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            352
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            408
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        320,
+        0,
+        100612,
+        100603
+      ],
+      "ordinary_options": 2,
+      "source_rows": 4,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            388
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            452
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        400,
+        0,
+        100612,
+        100603
+      ],
+      "ordinary_options": 4,
+      "source_rows": 10,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            460
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            540
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        22,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 2,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            29
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            34
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        25,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 12,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            32
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            37
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        30,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 9,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            37
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            43
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        150,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 3,
+      "source_rows": 12,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            235
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            265
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        35,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 6,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            41
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            48
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        38,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 1,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            44
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            52
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        40,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 5,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            46
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            54
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        45,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 2,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            50
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            59
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        50,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 5,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            55
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            65
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        60,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 7,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            64
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            76
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        65,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 1,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            68
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            81
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        70,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 4,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            73
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            87
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        80,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 2,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            82
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            98
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        100,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 7,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            100
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            120
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        500,
+        0,
+        100612,
+        100603
+      ],
+      "ordinary_options": 2,
+      "source_rows": 4,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            550
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            650
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        3000,
+        0,
+        100612,
+        100603
+      ],
+      "ordinary_options": 2,
+      "source_rows": 2,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            2800
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            3400
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        1,
+        1000,
+        0,
+        100612,
+        100603
+      ],
+      "ordinary_options": 1,
+      "source_rows": 1,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            11,
+            10,
+            910
+          ]
+        ],
+        [
+          [
+            9,
+            11,
+            10,
+            1110
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        5,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 1,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            104
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            105
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        15,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 24,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            113
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            116
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        20,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 10,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            118
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            122
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        25,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 18,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            122
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            127
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        30,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 14,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            127
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            133
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        35,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 3,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            131
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            138
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        40,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 26,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            136
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            144
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        45,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 3,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            140
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            149
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        65,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 9,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            158
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            171
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        70,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 9,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            163
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            177
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        75,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 7,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            167
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            182
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        80,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 8,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            172
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            188
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        85,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 21,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            176
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            193
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        90,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 9,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            181
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            199
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        95,
+        0,
+        100612,
+        100601
+      ],
+      "ordinary_options": 1,
+      "source_rows": 2,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            185
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            204
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        105,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 1,
+      "source_rows": 6,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            194
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            215
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        110,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 1,
+      "source_rows": 2,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            199
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            221
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        115,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 1,
+      "source_rows": 2,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            203
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            226
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        125,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 1,
+      "source_rows": 11,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            212
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            237
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        130,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 1,
+      "source_rows": 3,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            217
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            243
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        140,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 1,
+      "source_rows": 10,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            226
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            254
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        160,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 1,
+      "source_rows": 5,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            244
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            276
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        165,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 1,
+      "source_rows": 7,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            248
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            281
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        170,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 1,
+      "source_rows": 2,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            253
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            287
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        175,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 1,
+      "source_rows": 1,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            257
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            292
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        210,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 1,
+      "source_rows": 3,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            289
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            331
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        220,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 1,
+      "source_rows": 4,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            298
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            342
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        230,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 1,
+      "source_rows": 3,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            307
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            353
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        240,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 1,
+      "source_rows": 2,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            316
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            364
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        260,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 1,
+      "source_rows": 1,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            334
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            386
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        270,
+        0,
+        100612,
+        100602
+      ],
+      "ordinary_options": 1,
+      "source_rows": 2,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            343
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            397
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        325,
+        0,
+        100612,
+        100603
+      ],
+      "ordinary_options": 1,
+      "source_rows": 1,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            392
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            457
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        330,
+        0,
+        100612,
+        100603
+      ],
+      "ordinary_options": 1,
+      "source_rows": 2,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            397
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            463
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        350,
+        0,
+        100612,
+        100603
+      ],
+      "ordinary_options": 1,
+      "source_rows": 3,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            415
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            485
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        390,
+        0,
+        100612,
+        100603
+      ],
+      "ordinary_options": 1,
+      "source_rows": 2,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            451
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            529
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        600,
+        0,
+        100612,
+        100603
+      ],
+      "ordinary_options": 1,
+      "source_rows": 1,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            640
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            760
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        1000,
+        0,
+        100612,
+        100603
+      ],
+      "ordinary_options": 1,
+      "source_rows": 6,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            1000
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            1200
+          ]
+        ]
+      ]
+    },
+    {
+      "world31_request": [
+        4,
+        2,
+        9,
+        0,
+        2000,
+        0,
+        100612,
+        100603
+      ],
+      "ordinary_options": 1,
+      "source_rows": 1,
+      "unclamped_writes": [
+        [
+          [
+            9,
+            10,
+            100,
+            1900
+          ]
+        ],
+        [
+          [
+            9,
+            10,
+            100,
+            2300
+          ]
+        ]
+      ]
+    }
+  ],
+  "observations": {
+    "hp_low": {
+      "request": [
+        0,
+        2,
+        7,
+        0,
+        320,
+        0,
+        100612,
+        100603
+      ],
+      "fixture_overrides": {},
+      "selected_slots": [
+        7
+      ],
+      "writes": [
+        [
+          9,
+          10,
+          100,
+          388
+        ]
+      ],
+      "cure_checks": [
+        9
+      ],
+      "rand": [
+        0
+      ],
+      "battle_buffer": "BJ|a2|mA|e18904|e188FB|r7|FF|BD|r7|0|1|d120|p0|",
+      "diagnostics": [],
+      "settlement_returned": true
+    },
+    "hp_high": {
+      "request": [
+        0,
+        2,
+        7,
+        0,
+        320,
+        0,
+        100612,
+        100603
+      ],
+      "fixture_overrides": {
+        "rand": [
+          2147483647
+        ]
+      },
+      "selected_slots": [
+        7
+      ],
+      "writes": [
+        [
+          9,
+          10,
+          100,
+          452
+        ]
+      ],
+      "cure_checks": [
+        9
+      ],
+      "rand": [
+        2147483647
+      ],
+      "battle_buffer": "BJ|a2|mA|e18904|e188FB|r7|FF|BD|r7|0|1|d160|p0|",
+      "diagnostics": [],
+      "settlement_returned": true
+    },
+    "hp_cap": {
+      "request": [
+        0,
+        2,
+        7,
+        0,
+        320,
+        0,
+        100612,
+        100603
+      ],
+      "fixture_overrides": {
+        "hp": 980
+      },
+      "selected_slots": [
+        7
+      ],
+      "writes": [
+        [
+          9,
+          10,
+          980,
+          1000
+        ]
+      ],
+      "cure_checks": [
+        9
+      ],
+      "rand": [
+        0
+      ],
+      "battle_buffer": "BJ|a2|mA|e18904|e188FB|r7|FF|BD|r7|0|1|d120|p0|",
+      "diagnostics": [],
+      "settlement_returned": true
+    },
+    "hp_full": {
+      "request": [
+        0,
+        2,
+        7,
+        0,
+        320,
+        0,
+        100612,
+        100603
+      ],
+      "fixture_overrides": {
+        "hp": 1000
+      },
+      "selected_slots": [
+        7
+      ],
+      "writes": [
+        [
+          9,
+          10,
+          1000,
+          1000
+        ]
+      ],
+      "cure_checks": [
+        9
+      ],
+      "rand": [
+        0
+      ],
+      "battle_buffer": "BJ|a2|mA|e18904|e188FB|r7|FF|BD|r7|0|1|d120|p0|",
+      "diagnostics": [],
+      "settlement_returned": true
+    },
+    "hp_cure_denied": {
+      "request": [
+        0,
+        2,
+        7,
+        0,
+        320,
+        0,
+        100612,
+        100603
+      ],
+      "fixture_overrides": {
+        "can_cure": 0
+      },
+      "selected_slots": [
+        7
+      ],
+      "writes": [],
+      "cure_checks": [
+        9
+      ],
+      "rand": [],
+      "battle_buffer": "BJ|a2|mA|e18904|e188FB|r7|FF|",
+      "diagnostics": [],
+      "settlement_returned": true
+    },
+    "mp_low": {
+      "request": [
+        0,
+        2,
+        7,
+        1,
+        25,
+        0,
+        100612,
+        100601
+      ],
+      "fixture_overrides": {},
+      "selected_slots": [
+        7
+      ],
+      "writes": [
+        [
+          9,
+          11,
+          10,
+          32
+        ]
+      ],
+      "cure_checks": [],
+      "rand": [
+        0
+      ],
+      "battle_buffer": "BJ|a2|mA|e18904|e188F9|r7|FF|BD|r7|1|1|d16|p0|",
+      "diagnostics": [],
+      "settlement_returned": true
+    },
+    "mp_high": {
+      "request": [
+        0,
+        2,
+        7,
+        1,
+        25,
+        0,
+        100612,
+        100601
+      ],
+      "fixture_overrides": {
+        "rand": [
+          2147483647
+        ]
+      },
+      "selected_slots": [
+        7
+      ],
+      "writes": [
+        [
+          9,
+          11,
+          10,
+          37
+        ]
+      ],
+      "cure_checks": [],
+      "rand": [
+        2147483647
+      ],
+      "battle_buffer": "BJ|a2|mA|e18904|e188F9|r7|FF|BD|r7|1|1|d1B|p0|",
+      "diagnostics": [],
+      "settlement_returned": true
+    },
+    "mp_cap": {
+      "request": [
+        0,
+        2,
+        7,
+        1,
+        25,
+        0,
+        100612,
+        100601
+      ],
+      "fixture_overrides": {
+        "mp": 95
+      },
+      "selected_slots": [
+        7
+      ],
+      "writes": [
+        [
+          9,
+          11,
+          95,
+          100
+        ]
+      ],
+      "cure_checks": [],
+      "rand": [
+        0
+      ],
+      "battle_buffer": "BJ|a2|m5F|e18904|e188F9|r7|FF|BD|r7|1|1|d16|p0|",
+      "diagnostics": [],
+      "settlement_returned": true
+    },
+    "mp_full": {
+      "request": [
+        0,
+        2,
+        7,
+        1,
+        25,
+        0,
+        100612,
+        100601
+      ],
+      "fixture_overrides": {
+        "mp": 100
+      },
+      "selected_slots": [
+        7
+      ],
+      "writes": [
+        [
+          9,
+          11,
+          100,
+          100
+        ]
+      ],
+      "cure_checks": [],
+      "rand": [
+        0
+      ],
+      "battle_buffer": "BJ|a2|m64|e18904|e188F9|r7|FF|BD|r7|1|1|d16|p0|",
+      "diagnostics": [],
+      "settlement_returned": true
+    },
+    "mp_cure_denied_fixture": {
+      "request": [
+        0,
+        2,
+        7,
+        1,
+        25,
+        0,
+        100612,
+        100601
+      ],
+      "fixture_overrides": {
+        "can_cure": 0
+      },
+      "selected_slots": [
+        7
+      ],
+      "writes": [
+        [
+          9,
+          11,
+          10,
+          32
+        ]
+      ],
+      "cure_checks": [],
+      "rand": [
+        0
+      ],
+      "battle_buffer": "BJ|a2|mA|e18904|e188F9|r7|FF|BD|r7|1|1|d16|p0|",
+      "diagnostics": [],
+      "settlement_returned": true
+    },
+    "dead_requested_slot": {
+      "request": [
+        0,
+        2,
+        7,
+        0,
+        320,
+        0,
+        100612,
+        100603
+      ],
+      "fixture_overrides": {
+        "target_hp": 0,
+        "rand": [
+          0,
+          0
+        ]
+      },
+      "selected_slots": [
+        0
+      ],
+      "writes": [
+        [
+          10,
+          10,
+          100,
+          388
+        ]
+      ],
+      "cure_checks": [
+        10
+      ],
+      "rand": [
+        0,
+        0
+      ],
+      "battle_buffer": "BJ|a2|mA|e18904|e188FB|r0|FF|BD|r0|0|1|d120|p0|",
+      "diagnostics": [],
+      "settlement_returned": true
+    },
+    "retarget_retry": {
+      "request": [
+        0,
+        2,
+        7,
+        0,
+        320,
+        0,
+        100612,
+        100603
+      ],
+      "fixture_overrides": {
+        "target_hp": 0,
+        "rand": [
+          9,
+          10,
+          2147483647
+        ]
+      },
+      "selected_slots": [
+        0
+      ],
+      "writes": [
+        [
+          10,
+          10,
+          100,
+          452
+        ]
+      ],
+      "cure_checks": [
+        10
+      ],
+      "rand": [
+        9,
+        10,
+        2147483647
+      ],
+      "battle_buffer": "BJ|a2|mA|e18904|e188FB|r0|FF|BD|r0|0|1|d160|p0|",
+      "diagnostics": [],
+      "settlement_returned": true
+    },
+    "dead_second_side_slot": {
+      "request": [
+        0,
+        2,
+        17,
+        1,
+        25,
+        0,
+        100612,
+        100601
+      ],
+      "fixture_overrides": {
+        "target_hp": 0,
+        "rand": [
+          0,
+          0
+        ]
+      },
+      "selected_slots": [
+        10
+      ],
+      "writes": [
+        [
+          10,
+          11,
+          10,
+          32
+        ]
+      ],
+      "cure_checks": [],
+      "rand": [
+        0,
+        0
+      ],
+      "battle_buffer": "BJ|a2|mA|e18904|e188F9|rA|FF|BD|rA|1|1|d16|p0|",
+      "diagnostics": [],
+      "settlement_returned": true
+    },
+    "inactive_mode": {
+      "request": [
+        0,
+        2,
+        7,
+        0,
+        320,
+        0,
+        100612,
+        100603
+      ],
+      "fixture_overrides": {
+        "mode": 0,
+        "target_hp": 100,
+        "rand": [
+          0,
+          0
+        ]
+      },
+      "selected_slots": [
+        0
+      ],
+      "writes": [
+        [
+          10,
+          10,
+          100,
+          388
+        ]
+      ],
+      "cure_checks": [
+        10
+      ],
+      "rand": [
+        0,
+        0
+      ],
+      "battle_buffer": "BJ|a2|mA|e18904|e188FB|r0|FF|BD|r0|0|1|d120|p0|",
+      "diagnostics": [],
+      "settlement_returned": true
+    },
+    "excluded_mode_5": {
+      "request": [
+        0,
+        2,
+        7,
+        0,
+        320,
+        0,
+        100612,
+        100603
+      ],
+      "fixture_overrides": {
+        "mode": 5,
+        "target_hp": 100,
+        "rand": [
+          0,
+          0
+        ]
+      },
+      "selected_slots": [
+        0
+      ],
+      "writes": [
+        [
+          10,
+          10,
+          100,
+          388
+        ]
+      ],
+      "cure_checks": [
+        10
+      ],
+      "rand": [
+        0,
+        0
+      ],
+      "battle_buffer": "BJ|a2|mA|e18904|e188FB|r0|FF|BD|r0|0|1|d120|p0|",
+      "diagnostics": [],
+      "settlement_returned": true
+    },
+    "required_flag_1_clear": {
+      "request": [
+        0,
+        2,
+        7,
+        0,
+        320,
+        0,
+        100612,
+        100603
+      ],
+      "fixture_overrides": {
+        "flag1": 0,
+        "target_hp": 100,
+        "rand": [
+          0,
+          0
+        ]
+      },
+      "selected_slots": [
+        0
+      ],
+      "writes": [
+        [
+          10,
+          10,
+          100,
+          388
+        ]
+      ],
+      "cure_checks": [
+        10
+      ],
+      "rand": [
+        0,
+        0
+      ],
+      "battle_buffer": "BJ|a2|mA|e18904|e188FB|r0|FF|BD|r0|0|1|d120|p0|",
+      "diagnostics": [],
+      "settlement_returned": true
+    },
+    "excluded_flag_8_set": {
+      "request": [
+        0,
+        2,
+        7,
+        0,
+        320,
+        0,
+        100612,
+        100603
+      ],
+      "fixture_overrides": {
+        "flag8": 1,
+        "target_hp": 100,
+        "rand": [
+          0,
+          0
+        ]
+      },
+      "selected_slots": [
+        0
+      ],
+      "writes": [
+        [
+          10,
+          10,
+          100,
+          388
+        ]
+      ],
+      "cure_checks": [
+        10
+      ],
+      "rand": [
+        0,
+        0
+      ],
+      "battle_buffer": "BJ|a2|mA|e18904|e188FB|r0|FF|BD|r0|0|1|d120|p0|",
+      "diagnostics": [],
+      "settlement_returned": true
+    },
+    "no_eligible_slot": {
+      "request": [
+        0,
+        2,
+        17,
+        0,
+        320,
+        0,
+        100612,
+        100603
+      ],
+      "fixture_overrides": {
+        "target_hp": 0,
+        "no_candidate": true
+      },
+      "selected_slots": [],
+      "writes": [],
+      "cure_checks": [],
+      "rand": [],
+      "battle_buffer": "",
+      "diagnostics": [
+        [
+          1,
+          10
+        ]
+      ],
+      "settlement_returned": false,
+      "incomplete_list": {
+        "return_value": -1,
+        "stack_words_after_call": [
+          305419896,
+          591751049
+        ],
+        "stack_words_before_call": [
+          305419896,
+          591751049
+        ]
+      }
+    }
+  },
+  "original_client_or_server_started": false,
+  "live_battle_outcome_observed": false,
+  "inventory_actually_mutated": false,
+  "official_early_version_equivalence_proven": false
+}

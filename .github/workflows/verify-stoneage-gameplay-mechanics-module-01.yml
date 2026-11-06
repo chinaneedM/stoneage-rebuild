@@ -50,6 +50,9 @@ on:
       - 'tools/stoneage_recovery_source.py'
       - 'research/recovered/STONEAGE-STAGE-A-WORLD31-RECOVERY-SOURCE-R1.json'
       - 'tests/test_stoneage_stage_a_world31_recovery_source.py'
+      - 'tools/stoneage_battle_recovery_source.py'
+      - 'research/recovered/STONEAGE-STAGE-A-WORLD32-BATTLE-RECOVERY-SOURCE-R1.json'
+      - 'tests/test_stoneage_stage_a_world32_battle_recovery_source.py'
       - '.github/workflows/verify-stoneage-gameplay-mechanics-module-01.yml'
   pull_request:
     paths:
@@ -98,6 +101,9 @@ on:
       - 'tools/stoneage_recovery_source.py'
       - 'research/recovered/STONEAGE-STAGE-A-WORLD31-RECOVERY-SOURCE-R1.json'
       - 'tests/test_stoneage_stage_a_world31_recovery_source.py'
+      - 'tools/stoneage_battle_recovery_source.py'
+      - 'research/recovered/STONEAGE-STAGE-A-WORLD32-BATTLE-RECOVERY-SOURCE-R1.json'
+      - 'tests/test_stoneage_stage_a_world32_battle_recovery_source.py'
       - '.github/workflows/verify-stoneage-gameplay-mechanics-module-01.yml'
   workflow_dispatch:
 jobs:
@@ -129,3 +135,4 @@ jobs:
       - run: python -m unittest discover -s tests -p 'test_stoneage_stage_a_original_rar_block_replay.py' -v
       - run: python -m unittest -v tests.test_stoneage_stage_a_world30_cooking_source
       - run: python -m unittest -v tests.test_stoneage_stage_a_world31_recovery_source
+      - run: python -m unittest -v tests.test_stoneage_stage_a_world32_battle_recovery_source
