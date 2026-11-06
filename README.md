@@ -1989,3 +1989,9 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 从源R28已认证台湾8.5*声称*社区保存样本的全SPR元数据，逐组重编码原机器字并全段SHA对照；与R29同一MSI保存包原ADRN/REAL已验整SHA及每RD块SHA逐图联接。WORLD37-R2B3所余六候选图号101279/101280/101281/101564/101736/101737在该TW85载体原索引均各唯一，原 **336条方向动作／2048帧位置／1568不同原位图号**，各位图已对应当时从同包真实原RD计算的SHA/尺寸；前三图号又与保存CN5整段原SPR字节相同，后三无CN5索引，不猜身份。新交付是**源限定原动画规格＋位图定位**，本轮没有重新读私人TW85原REAL像素，新增视觉原帧0；原名字仅混合25静态配置候选，不认证官方TW85捕宠或同一部署。
 
 [PET12详细证据和止点](docs/continuity/STONEAGE-PET-MODULE-12-SIX-CAPTURE-CANDIDATE-TW85-SPR-RD-20261106.md)、[六原段SHA／RD首帧来源与证据边界](research/recovered/STONEAGE-PET-MODULE-12-TW85-SIX-CAPTURE-SPR-RD-BRIDGE-R1.json)、[自动重放工具](tools/stoneage_pet12_tw85_capture_spr_rd_bridge.py)。旧CURRENT完整blob c89e0e33537990aa2132b47c40fef49a985a935c不改；WORLD37-R2C动态尾段有条件OPEN。剩余真正原像素须合法重获同包 `real_158.bin` 及相关资源后再进入私有观察，不重复扩纯索引工程；先继续可读取其它宠物原件内容。Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、overall_percent=null。
+
+## 2026-11-06 — PET13｜原编译捕捉键→同包原宠物模板数值及原技能定义
+
+在PET12六原动画组规格闭合后，重读和逐整SHA／CRC验证混合2.5私人原 `enemybase.txt`／新抽原 `petskill.txt`，11条原捕捉条件key53候选逐原行SHA匹配本包被配置选择的宠物模板第7字段；恢复11×原INITNUM、LVUP字面、四基础属性、四元素、技能槽及原需求道具，25个正数技能槽引用全部落在同源5个原技能ID及定义行。保留**PETFLG=10条1＋1条0（key53=8）**、13需求道具引用／12不同ID、技能空槽及后代社区样本来源资格。只有**静态同包候选关系**，不认证原GMSV真正读取key53的模板映射、不证明11条可捕、不把此后期社区服数值归于TW1/TW85/CN5官方或当代新游戏配置。
+
+[PET13原源核验与断言边界](docs/continuity/STONEAGE-PET-MODULE-13-ORIGINAL-CAPTURE-TEMPLATE-ATTRIBUTES-SKILLS-20261106.md)、[11模板／五原技能条目派生摘要](research/recovered/STONEAGE-PET-MODULE-13-ORIGINAL-CAPTURE-TEMPLATE-ATTRIBUTES-SKILLS-R1.json)、[原件／公开双路径校验工具](tools/stoneage_pet13_capture_template_stats_skills.py)。原商业全文/原像素不公开，旧CURRENT完整blob c89e0e33537990aa2132b47c40fef49a985a935c不改，Stage A 7PARTIAL+2OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING、overall_percent=null。WORLD37-R2C仅在真正齐备原EXE完整SHA/CRC和隔离x86时重开，PET内容继续以现存合格源的实际原像素与可实证名称归属为优先。
