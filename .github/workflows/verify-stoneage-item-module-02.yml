@@ -5,12 +5,16 @@ on:
       - 'research/recovered/STONEAGE-ITEM02-ORIGINAL-NUMERIC-EQUIPMENT-AND-TW1-RD-BOUNDARY-R1.json'
       - 'research/recovered/item-module-01/**'
       - 'tests/test_stoneage_item_module_02.py'
+      - 'research/recovered/STONEAGE-ITEM04-TW10-FOUR-TERMINAL-RLE-SOURCE-CANVAS-PREFIX-R1.json'
+      - 'tests/test_stoneage_item_module_04.py'
       - '.github/workflows/verify-stoneage-item-module-02.yml'
   pull_request:
     paths:
       - 'research/recovered/STONEAGE-ITEM02-ORIGINAL-NUMERIC-EQUIPMENT-AND-TW1-RD-BOUNDARY-R1.json'
       - 'research/recovered/item-module-01/**'
       - 'tests/test_stoneage_item_module_02.py'
+      - 'research/recovered/STONEAGE-ITEM04-TW10-FOUR-TERMINAL-RLE-SOURCE-CANVAS-PREFIX-R1.json'
+      - 'tests/test_stoneage_item_module_04.py'
       - '.github/workflows/verify-stoneage-item-module-02.yml'
   workflow_dispatch:
 jobs:
@@ -22,3 +26,4 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m unittest discover -s tests -p 'test_stoneage_item_module_02.py' -v
+      - run: python -m unittest discover -s tests -p 'test_stoneage_item_module_04.py' -v
