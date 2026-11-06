@@ -33,3 +33,10 @@ python -m unittest -v tests.test_stoneage_stage_a_world32_battle_recovery_source
 ```
 
 **最高 NEXT WORLD33**。先核同一保存版的战斗物品命令入口如何读物品表的场景／目标两个字段，优先拿 WORLD31 已有回复物品作为见证。目标是给出一个有实证的允许／拒绝对照，或明确缺少的客户端或服务端判定。WORLD32 的无骑宠普通单目标结算在以上夹具范围内已有原指令证据。骑宠、群体／特殊回复、空列表下游和真实扣物仍待证。Stage A 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体完成率未知。
+
+## 主线终验与 WORLD33 预检（2026-11-06）
+
+- [PR #212](https://github.com/chinaneedM/stoneage-rebuild/pull/212) 的候选提交 `a4cd99f21337aeea2e0cae8963d1ece500d64128` 共 14 项 Actions 成功（3 项 PR、11 项 push）。[PR 专项](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42161765497) 的 WORLD32 测试步骤通过。
+- 内容已合入主线 `ab253883df2197ac04aedfddd51fee0f6c7a707a`，tree `b64ef8497e0cde1d80067f89a2a89ccf574da452` 与本地和远端候选一致，主线 11 项 Actions 全部成功。[主线专项](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42161887394) job `127709250262` 的 WORLD32 六项公开测试通过。历史 CURRENT 完整字节核同。
+- 本地 138 项相关测试通过。另从同一原档重新提取 `setup.cf` 和 `itemset.txt`，与原 EXE 重放整个 WORLD31，结果和其公开收据逐字节相同。公开 Actions 校验派生结果，原件回放在本地。
+- WORLD33 预检已从 `ITEM_itemconfentries` 核得原零基列 20／21 为 `fieldtype`／`target`，写编译整数键 4／5。`BattleCommandDispach` 的 `0x54649c` 调用 `ITEM_isTargetValid`，下一条条件分支在返回负值时进入拒绝路径。用 180 个夹具隔离回放该检查：两侧的普通槽 7／17 在受测目标类型 0–4 均返回 0，群体选择值 20／21 受目标类型 2／3 和施用者侧别限制，22 要求目标类型 4，23 返回拒绝。改变 `fieldtype` 0／1／2 时，该函数的结果一致。此范围只及单个检查函数，完整战斗命令、场景字段的其它执行位置与客户端限制仍为 WORLD33 的取证目标。
