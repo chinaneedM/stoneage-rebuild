@@ -1968,3 +1968,10 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-06 — WORLD37-R2B：同包原编译捕捉条件表与两张物品主表实际联接
 
 在前轮WORLD37-R2A静态尾段基础上，重新直接核存混合2.5原RAR全SHA及原服务端可用四PE段SHA；从 `.data` 0x58CD60 完整逐记录解出128×64字节编译初始条件表：11条非零、117条零、13道具引用/12不同ID；原原型函数直接读取角色整数键53并存在条件物品检查/删除静态调用。重新从同包解得两份原始94列物品表完整SHA/行SHA，配置选中的 `itemset.txt` 有9个相关ID，另存 `itemset0710.txt` 有全部12个；20247/20253/20259三种魔法鑽戒只在另存表。重复2236两个关系和1105对应三ID全保留。此为**编译数据和物品内容实际来源联接**，不称捕捉成功/物品实际扣除或三钻戒已在选中表部署；当前解压的GMSV整CRC/SHA仍不合格，WORLD37动态尾段仍OPEN。详见[WORLD37-R2B记录](docs/continuity/STONEAGE-STAGE-A-WORLD37-R2B-CAPTURE-REQUIRED-ITEM-CROSSWALK-20261106.md)、[公开逐行派生收据](research/recovered/STONEAGE-STAGE-A-WORLD37-R2B-COMPILED-CAPTURE-REQUIRED-ITEMS-R1.json)。全部历史 CURRENT Git blob原样保留，Stage A 7PARTIAL+2OPEN、B/wiki GATED、R79暂停、percent=null。NEXT WORLD37-R2C 仅有合格完整EXE/模拟环境才做原指令动态实测，缺源转原内容模块。
+
+
+## 2026-11-06 — WORLD37-R2B3：同包原捕捉键到宠物图号与 SPR 索引的静态桥接
+
+从已保存并重新全 SHA 核对的混合 2.5 原 RAR 实际复取两份 `enemybase` 与 `spradrn_5.bin`，三文件 SHA/CRC 与 PET10 旧源记录一致。WORLD37 编译条件中 11 个 key53 的同包原模板数字候选分别联到第 37 列 11 个原图号，5 个在本包唯一 SPR 索引有位置、6 个仅此索引未命中；第 38 列 PETFLG 为 10 条 1／1 条 0，后者不删。5 个索引虽各带原 56 动画数量字段，本包没有同源实际 `spr_5.bin` 帧载荷，新增可视原帧 0。另存 enemybase2 仅 7 个匹配，原配置选择主表。此为新增 **11 条受限静态数字关系**，非原成功捕获、宠物历史身份或原版运行。详见[来源/未解边界](docs/continuity/STONEAGE-STAGE-A-WORLD37-R2B3-CAPTURE-SPR-SOURCE-20261106.md)和[公开逐键收据](research/recovered/STONEAGE-STAGE-A-WORLD37-R2B3-CAPTURE-ORIGINAL-SPR-BRIDGE-R1.json)。旧 CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c` 全文原样保留。
+
+**最高条件性 NEXT WORLD37-R2C**：完整合格 GMSV 与离线 x86 夹具齐备才验实际尾段；本环境缺合格完整 EXE，先转可新增原宠物 SPR 帧/其它内容载体。不得由动画索引宣称已有动画原帧，或重复无新源的静态辅助分析。Stage A 7 PARTIAL+2 OPEN，B/wiki GATED，R79 暂停，整体完成率未知。
