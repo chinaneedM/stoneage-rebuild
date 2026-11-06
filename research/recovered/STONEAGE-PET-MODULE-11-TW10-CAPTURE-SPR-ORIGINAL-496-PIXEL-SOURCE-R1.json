@@ -1,0 +1,188 @@
+{
+  "schema": "stoneage.pet11.tw10_capture_candidate_two_original_SPR_groups_actual_original_pixels.r1",
+  "date": "2026-11-06",
+  "work_status": "SOURCE_QUALIFIED_PRIVATE_ORIGINAL_PIXEL_OBSERVATION_COMPLETE_NATIVE_RUNTIME_OPEN",
+  "starting_git": {
+    "repository": "chinaneedM/stoneage-rebuild",
+    "main_head": "3dfc896bd78bf17a5d50b850ca79a2c95d1f04c0",
+    "tree": "f06ded40c37911b325d50a54bf543a5498a416c3",
+    "historical_current_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "prior_readonly_public_source_blobs": {
+    "WORLD37_R2B3_key_to_spr_index": "0e80e5a62dd59542c3e1ede18460d92e17927a30",
+    "O63_four_tiger_timeline_prior_for_spr_100329": "1c6fcf286f92739fd9d8c74fdce23bcfdde7be89"
+  },
+  "qualified_original_carrier": {
+    "retail": "AUTHENTICATED_TW_WAEI_JSS_1_0_RETAIL_P3H",
+    "original_private_zip_bytes": 372626292,
+    "original_private_zip_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "ZIP_members": 379,
+    "ZIP_all_CRC_pass": true,
+    "original_members": {
+      "spr_1.bin": {
+        "bytes": 2889630,
+        "sha256": "53d5b2d40453a30fd1569637ebf0db7b3010542b00970ec83af0295a3b3ae31a"
+      },
+      "spradrn_1.bin": {
+        "bytes": 5568,
+        "sha256": "275b64ff55667aec633a7e82e09d65c84141380521f0f2e64c9a28e0d3aa6c25"
+      },
+      "adrn_1.bin": {
+        "bytes": 10079680,
+        "sha256": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8"
+      },
+      "real_1.bin": {
+        "bytes": 315842228,
+        "sha256": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13"
+      },
+      "Palet_1.sap": {
+        "bytes": 708,
+        "sha256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0"
+      }
+    },
+    "community_mixed25_index_member_sha256": "5f13c956cf013e073298ab91667d3aaa17767b26ba94d696514726950ce94de6",
+    "mixed25_index_source": "MIXED25_PRESERVED_COMMUNITY_ARCHIVE_NOT_SAME_HISTORICAL_DEPLOYMENT"
+  },
+  "capture_candidate_links": [
+    {
+      "compiled_char_int_key53": 524,
+      "mixed25_numeric_candidate_name_cp950": "卡特利奴",
+      "original_source_graphic_no": 100329,
+      "source_PETFLG": 1,
+      "same_12byte_SPRADRN_record_in_TW1_and_mixed25": true,
+      "original_pet_species_runtime_mapping_verified": false
+    },
+    {
+      "compiled_char_int_key53": 8,
+      "mixed25_numeric_candidate_name_cp950": "巨大瑪恩摩",
+      "original_source_graphic_no": 100355,
+      "source_PETFLG": 0,
+      "same_12byte_SPRADRN_record_in_TW1_and_mixed25": true,
+      "original_pet_species_runtime_mapping_verified": false
+    }
+  ],
+  "actual_original_sprite_source": {
+    "groups": [
+      {
+        "spr_no": 100329,
+        "original_tw1_index": 303,
+        "original_mixed25_index": 303,
+        "source_index_record_sha256": "7e21be6e5e7ee1a67f390dd4eaff7e00fca1715b411ea1647573547502ece0b5",
+        "original_source_segment_bytes": 5472,
+        "original_source_segment_sha256": "7e50e9e34385f29e64de256ad053bfe1c2540d17444b74d5218c37ee5b7d57ce",
+        "original_animation_sequences": 56,
+        "original_frame_positions": 480,
+        "source_distinct_bitmap_keys": 248,
+        "original_source_sound_field_counts": {
+          "62": 8,
+          "10001": 8
+        },
+        "strict_rd_complete": 247,
+        "bounded_original_source_canvas_prefix": 1,
+        "original_adrn_record_sha256_sequence_sha256": "78b67ceacb5e437475708408280e1584cd6fd7a95cc61790f1fb08416e6a38a3",
+        "original_rd_sha256_sequence_sha256": "c1b426ca8825ed85abe7637fd7c87021c308246fd00565a18cf24d282056047d",
+        "canvas_index_sha256_sequence_sha256": "5adde9474ea9c5e9107257642f62595a14f1211e0580b7532ce393080f962c25"
+      },
+      {
+        "spr_no": 100355,
+        "original_tw1_index": 325,
+        "original_mixed25_index": 325,
+        "source_index_record_sha256": "1d0e4ad2475824acd9b0443c68270b1458536dde8d62292856d7a64c463b6f60",
+        "original_source_segment_bytes": 7072,
+        "original_source_segment_sha256": "409081b2ead88925b44eeccca02005ff3de59906b8736ae6d2cdc3bcdcf070a3",
+        "original_animation_sequences": 56,
+        "original_frame_positions": 640,
+        "source_distinct_bitmap_keys": 248,
+        "original_source_sound_field_counts": {
+          "60": 8,
+          "10001": 8
+        },
+        "strict_rd_complete": 248,
+        "bounded_original_source_canvas_prefix": 0,
+        "original_adrn_record_sha256_sequence_sha256": "30e1c19b1c7ae3d0654e675be351c06af9e09d80eee7161605094ae73c7cfb10",
+        "original_rd_sha256_sequence_sha256": "1470cfdfb3e18ad043973d0c40cfb2c8be668e92a513d584cdbe4f98b8cb1394",
+        "canvas_index_sha256_sequence_sha256": "f00de2e24d4ecc032f6074c4487356d875c2444ea1672fd9c340654f98f26ade"
+      }
+    ],
+    "totals": {
+      "TW1_SPR_groups": 2,
+      "original_animation_sequences": 112,
+      "original_directions_per_group": 8,
+      "original_action_literals_per_group": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        9,
+        10
+      ],
+      "original_frame_positions": 1120,
+      "distinct_original_RD_source_bitmaps": 496,
+      "strict_complete_RD_decode": 495,
+      "one_pixel_terminal_transparent_overrun_bounded_prefix": 1,
+      "distinct_original_source_frames_new_in_this_archive": 0,
+      "new_private_source_bound_image_views": 496,
+      "primary_and_independent_RLE_bytewise_agreement": true,
+      "private_PNG_L_index_and_candidate_P_PNG_roundtrip_pixel_indices": true,
+      "actual_visual_contact_sheet_opened_for_inspection": true,
+      "original_sprite_frame_displayed_by_native_client": false
+    },
+    "source_aggregate_sha256": {
+      "sorted_original_496_ADRN_record_sha256_text_chain": "1245476bd583b3829a1a7d7d16b7a718b119df1f9ecec9a05bf48057c6305a8b",
+      "sorted_original_496_RD_sha256_text_chain": "6992e10e16142e4421451dc982b30a290a40766f2cb9221435507457df005097",
+      "sorted_496_canvas_index_pixel_sha256_text_chain": "f755aa4ea320c2e5219ad74f8284136382cbbc00b635300aeb84bf51a79b6fdd"
+    },
+    "one_strict_RD_failure_preserved": {
+      "bitmapno": 113576,
+      "adrn_record_sha256": "c03a136b61d72071928b44cc208c4894d4eea3978cec042c8b48ab2f679d07a1",
+      "rd_sha256": "d8aafae70696e275399d1a26ba7585a2d31c8f467d78b1a7c024694dbceb1d31",
+      "indices_sha256": "080871a30bdd9a39835f5453dfc7e4fefb0066125d221afdff0a82e951ea2b68",
+      "strict_rd": false,
+      "decoded_count": 9201,
+      "canvas_count": 9200,
+      "source_size": 3548,
+      "source_real_offset": 270905985,
+      "source_rd_width": 100,
+      "source_rd_height": 92,
+      "last_RLE_opcode_hex": "c2",
+      "last_control_zero_count": 2,
+      "last_packet_before_pixel_count": 9199,
+      "last_packet_after_pixel_count": 9201,
+      "native_executable_overrun_handling_verified": false
+    }
+  },
+  "private_delivery": {
+    "library_path": "/石器时代/StoneAge-PET11-private-TW1-two-capture-linked-SPR-groups-496-original-bitmaps.zip",
+    "bytes": 4618141,
+    "zip_sha256": "d6f7c1e832833bf7bc00c5c870ba76debddbd447c52ca546cb4fcc72a45dbd5f",
+    "ZIP_members": 3,
+    "all_ZIP_CRC_verified": true,
+    "saved_private_library": true,
+    "downloaded_from_private_library_and_full_byte_equal_verified": true,
+    "self_contained_original_index_and_candidate_color_browser_html_sha256": "588ffa5ad384849a8038b8d83dfbe2f50d778de2e408e90a1e3acdd38120c647",
+    "private_full_496_bitmap_original_source_manifest_sha256": "9273ba06616fecc3f0474afa9fcbbbba06dc8eb5c52195e54d99446e29202208",
+    "modern_112_first_frame_contact_sheet_png_sha256": "11d373d9ece7cae1e9f1cba49eddb82b9b7ba68ba7fc964641cbf11b747c3d00",
+    "source_bitmap_pngs_embedded_in_HTML_index_gray_and_candidate_palette_each": 496,
+    "Chromium_original_html_runtime_test_passed": false,
+    "Chromium_reason": "Host Playwright Chromium executable missing; offline HTML structure/PNG source processing only",
+    "original_proprietary_PNG_HTML_and_text_in_public_Git": false
+  },
+  "evidence_boundaries": {
+    "TW1_original_graphic_numbers_source_qualified": true,
+    "WORLD37_R2B3_key_to_graphic_numeric_candidates_only": true,
+    "mixed25_spr_5_original_frame_bytes_verified": false,
+    "TW1_and_mixed25_exact_spradrn_12bytes_proves_same_historical_deployment": false,
+    "exact_native_original_palette_and_row_orientation_proven": false,
+    "actual_original_sound_event_map_and_timing_proven": false,
+    "native_original_capture_complete_or_items_consumed": false,
+    "WORLD37_R2C_dynamic_capture_tail_closed": false,
+    "original_client_or_server_executed": false,
+    "original_source_assets_committed_to_public_repo": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_and_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_restoration_percent": null
+  },
+  "next": "WORLD37-R2C original GMSV dynamic capture tail remains conditional upon complete CRC/SHA-certified EXE plus offline x86; source-ready next content: qualifying remaining 6 source keys in other verified client SPR carriers if genuine non-duplicate original frames become accessible; no synthetic species identity, no MMO infrastructure, no new engine."
+}

@@ -9,6 +9,9 @@ on:
       - 'tools/stoneage_world37_capture_required_table.py'
       - 'research/recovered/STONEAGE-STAGE-A-WORLD37-R2B3-CAPTURE-ORIGINAL-SPR-BRIDGE-R1.json'
       - 'tests/test_stoneage_stage_a_world37_r2b3_capture_spr_bridge.py'
+      - 'research/recovered/STONEAGE-PET-MODULE-11-TW10-CAPTURE-SPR-ORIGINAL-496-PIXEL-SOURCE-R1.json'
+      - 'tests/test_stoneage_pet_module_11_tw10_capture_sprite_source.py'
+      - 'tools/stoneage_pet11_tw10_capture_sprite_source.py'
       - '.github/workflows/verify-stoneage-stage-a-world37-r2a-static.yml'
   pull_request:
     paths:
@@ -19,6 +22,9 @@ on:
       - 'tools/stoneage_world37_capture_required_table.py'
       - 'research/recovered/STONEAGE-STAGE-A-WORLD37-R2B3-CAPTURE-ORIGINAL-SPR-BRIDGE-R1.json'
       - 'tests/test_stoneage_stage_a_world37_r2b3_capture_spr_bridge.py'
+      - 'research/recovered/STONEAGE-PET-MODULE-11-TW10-CAPTURE-SPR-ORIGINAL-496-PIXEL-SOURCE-R1.json'
+      - 'tests/test_stoneage_pet_module_11_tw10_capture_sprite_source.py'
+      - 'tools/stoneage_pet11_tw10_capture_sprite_source.py'
       - '.github/workflows/verify-stoneage-stage-a-world37-r2a-static.yml'
 jobs:
   world37-r2a-static:
@@ -34,3 +40,5 @@ jobs:
         run: python -m unittest -v tests.test_stoneage_stage_a_world37_r2b_capture_required_items
       - name: Validate same-archive capture candidate to original SPR-index numeric bridge
         run: python -m unittest -v tests.test_stoneage_stage_a_world37_r2b3_capture_spr_bridge
+      - name: Validate original TW1 capture-linked pet sprite pixels and retained negative evidence
+        run: python -m unittest -v tests.test_stoneage_pet_module_11_tw10_capture_sprite_source
