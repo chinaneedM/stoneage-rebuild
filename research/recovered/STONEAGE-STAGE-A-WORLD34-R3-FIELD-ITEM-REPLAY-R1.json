@@ -1,0 +1,4719 @@
+{
+  "schema": "stoneage.world34.r3.field_item_replay.r1",
+  "scope": "PRESERVED_MIXED25_FIELD_INTAKE_FIXTURE",
+  "archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "server_member": {
+    "target": "gmsv/gmsv.exe",
+    "header_offset": 359906866,
+    "header_bytes": 154,
+    "packed_bytes": 605893,
+    "unpacked_bytes": 1897867,
+    "header_sha256": "8b8d28fb487f54d93d335caeb385bfb7239b467288087ceca434ffcf29716dea",
+    "packed_sha256": "330634f8ca453ba7c60ba2df0c474a6fc6aa95d2c126586e1b61a1206d79ce05",
+    "member_crc32": 1848751674,
+    "member_sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00"
+  },
+  "client_member": {
+    "target": "stoneage2.5/sa_2903.exe",
+    "header_offset": 352822544,
+    "header_bytes": 177,
+    "packed_bytes": 219049,
+    "unpacked_bytes": 561152,
+    "header_sha256": "144a087ea48b1a32f7c240eb0c3020f8d61a4b10b4f8e237605adb152b01af07",
+    "packed_sha256": "311d63d7f2314efaeefa45a769e9da0ed2a3ecbad3f94ebee7ea1119e7b406b4",
+    "member_crc32": 1312253662,
+    "member_sha256": "ec678517f76564ebc9ab00cf3f66853ed9975ef6290eb48168b78909a68a5d16"
+  },
+  "r2_mapped_section_sha256": {
+    ".text": "2a42c0ce1951b0963898e2a5c95be920b8eb3b42bf329b012ba03a6d4ebcd11d",
+    ".data": "f30026ba6ed6212b59cdf580fed718610c70af47f03c6d41ac65f35fc5a5ae95",
+    ".rdata": "c2740af5992a885b4d4ba14c988525ff7fa3b3329e973d87d628a28d6b5c0611",
+    ".idata": "4838a3158456bd0a8eee76a8a666fa67222d5e3b432a87f50906f0b2c64ae0d4"
+  },
+  "original_sha256_at_r2_prefix_length": "e4c4b956f52f7be653e9b4a690f82fb42dd6be6d6303f5be5dc6bdc1bff32065",
+  "symbols": {
+    "_lssproto_ID_recv": 4272432,
+    "_CHAR_getPartyIndex": 4371808,
+    "__CHAR_setInt": 4381936,
+    "_CHAR_getCharPet": 4385296,
+    "__CHAR_DelItem": 4405936,
+    "_CHAR_ItemUse": 4671200,
+    "__ITEM_endExistItemsOne": 5206688,
+    "_ITEM_getFunctionPointer": 5210032,
+    "_ITEM_useRecovery_Field": 5235920,
+    "_ITEM_useRecovery": 5244304
+  },
+  "stub_names_by_address": {
+    "4233216": "connection_actor",
+    "4238880": "client_connection",
+    "4239360": "logged_in",
+    "4465472": "position_update",
+    "4292416": "item_log",
+    "4441696": "action_notice",
+    "4404720": "can_cure",
+    "4425792": "parameter_recalculation",
+    "4435840": "nearby_status_notice",
+    "4446672": "player_status_notice",
+    "4450976": "pet_status_notice",
+    "4448928": "party_update",
+    "4452416": "display_name",
+    "4661136": "client_text",
+    "4667200": "inventory_notice",
+    "5614896": "diagnostic_context",
+    "5615440": "diagnostic_log",
+    "5615136": "diagnostic_output",
+    "5615616": "message_format",
+    "5615664": "rand",
+    "5615920": "strstr",
+    "5615568": "scan_int"
+  },
+  "server_code_windows": [
+    [
+      4272432,
+      4272800,
+      "9a99227078e0e062eecbbc772f5bdafae2891a11200a16ed07862cd83fffecb6"
+    ],
+    [
+      4671200,
+      4672174,
+      "f3e115364e73ee9a4d2e89fdd61e65c5a678b3acf380fbd8a796f14b6181d775"
+    ],
+    [
+      4371808,
+      4372022,
+      "d7ae49071bc30c010f0aba7c53f18f7fbf302f7f962196c18f5a443e9c25a79d"
+    ],
+    [
+      4381024,
+      4381280,
+      "9e34b568c63cb47e1f7da5d5f6cc7ce412f9d3f0e084d33f8bed37d073b2fa23"
+    ],
+    [
+      4381584,
+      4381612,
+      "2f294b52d721bdd0d8bfc298432023c40d946ef3bb4bf77b7e6b30e5288bd18c"
+    ],
+    [
+      4381744,
+      4381936,
+      "57e2e5b4e4b4cf151a0dfb670e09da802c3baa1784f415f910c09531b7983aa1"
+    ],
+    [
+      4381936,
+      4382144,
+      "37aed01467c1b5f0b8e039ce9c9fb23386f022b528b02d29edc622a0f9962ffd"
+    ],
+    [
+      4382144,
+      4382256,
+      "4a0d4982c05110302399be2a8a4e99aea8a093226f2499870601f8840d907557"
+    ],
+    [
+      4383120,
+      4383240,
+      "1401c119b267ea60f6f1a27dab1d1a1e322a247cfbfb92c56fe4e4a3a8b3ab39"
+    ],
+    [
+      4383456,
+      4383664,
+      "7021eea015cabacdf9772806ccf246111a5f9eb1c4c763d326fe3637d90a8f16"
+    ],
+    [
+      4384368,
+      4384378,
+      "bf3111a00f8f91de532a66f26876496be4aef57e8bc1f4f1d7283da32fa6e693"
+    ],
+    [
+      4385296,
+      4385445,
+      "d0046bf70b38b939527e499c21d2233d04a54868eebabb2f7bd7ab774ba4625f"
+    ],
+    [
+      4405936,
+      4406336,
+      "fafd5357e8b0385ad99d463d4ae8050ec009f995750b62d43503ac66a0e42f56"
+    ],
+    [
+      5206448,
+      5206560,
+      "28527b6d669449acd58aa2167cdd1720f6b7800d8672ffe06eef013547b9d0e0"
+    ],
+    [
+      5206688,
+      5207136,
+      "d91a76101e239bb135f9e8a3e89c5a850da1079326515221b9416d5464998435"
+    ],
+    [
+      5207296,
+      5207616,
+      "76220d6b1109210cce08f82033803bc7f504061f1f4c64ff863a75230a8f6572"
+    ],
+    [
+      5207776,
+      5207927,
+      "6f154905531318456006719bc698e9d9b91ef1ab9b1f2e99e5131762f63b7bf1"
+    ],
+    [
+      5210032,
+      5210224,
+      "66871c6848dedca94bf6c0b8aaed8903adfdb834fe9cb58190bd578732720266"
+    ],
+    [
+      5235920,
+      5244464,
+      "80f29cc929a598b0d051294aeffd562cfe4e97fc31341d29580dd355bd258a5d"
+    ]
+  ],
+  "server_data_windows": [
+    [
+      5802352,
+      5802512,
+      "c027a2f9979f34aa70e12a4c8ffecddae7a09b629f7e9a148c0dbc27f94d84c8"
+    ],
+    [
+      5918360,
+      5918438,
+      "6aa2cdd05e81f2f70044f2bb0c67c6227ecea6bf00aacc86ab8bc15996536f58"
+    ],
+    [
+      5919606,
+      5919936,
+      "ca7b1b9f8ab97f0272d59349108906b881a1d7a82adf5f7e6928bd783434635e"
+    ],
+    [
+      5941398,
+      5941440,
+      "4bc941315a6795824935d0dcf32c145c9651566acb21985e9908b5fb2d7e96f7"
+    ],
+    [
+      5675812,
+      5675820,
+      "5ac9831b2e30eb285ef34f8501620f878432d5c04331ad1ae47f977a83ba41a5"
+    ],
+    [
+      5917291,
+      5917292,
+      "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+    ]
+  ],
+  "client_windows": [
+    [
+      4213264,
+      4213304,
+      "15a0a6605ab6f0a2af8a16d0d04a2f885dd7464e00e96e88eb270aa4ae6637c0"
+    ],
+    [
+      4218130,
+      4218243,
+      "fdc0aea3a51620f77321eab8cceeed80c8e729cc07afacc9cb35d5ee818eb4c1"
+    ],
+    [
+      4405655,
+      4405710,
+      "01eb6f2a1e65a1c79a880b5832691b92c6c656e4f0ea4823a3cab5fc5d8ad89f"
+    ],
+    [
+      4214217,
+      4214249,
+      "5d767331c427910cc1607fcb5e45527717e489d4553a48b42256d0c305fd531f"
+    ],
+    [
+      4609300,
+      4609308,
+      "87aeeaba42351f28d0ef2e31a5f7e81375e86d0880b367cc17f87e7291776803"
+    ]
+  ],
+  "common_fixture": {
+    "actor": 8,
+    "pet": 10,
+    "party": 9,
+    "slot": 7,
+    "initial_hp_mp": [
+      100,
+      10
+    ],
+    "max_hp_mp": [
+      1000,
+      100
+    ],
+    "empty_useaction_value": 0,
+    "random_inputs": [
+      0,
+      2147483647
+    ],
+    "x87_control_word": 895
+  },
+  "items": [
+    {
+      "id": 1232,
+      "line": 1227,
+      "row_sha256": "aa3ce4290b9f3d9d0f3007e33f113a45a9ea995fe81e18544bcef24e29bc46b2",
+      "option_sha256": "6e0ad3ee815597005d1c3e88bf010e33b5808e0e8a293b2d18288dbf77b7d204",
+      "ints": {
+        "0": 1232,
+        "3": 20,
+        "4": 1,
+        "5": 2
+      },
+      "raw_useaction_empty": true,
+      "client_field_gate": false
+    },
+    {
+      "id": 12530,
+      "line": 7269,
+      "row_sha256": "bc1f35f9cbb18dcae3fb4c7b1f7cc80aa5833fc5bb2bf0be01ca89b7c806fa15",
+      "option_sha256": "f692b2b300be2b1ab4b8815439850ce442c9fcb612b3a012df97d33e31ac2910",
+      "ints": {
+        "0": 12530,
+        "3": 20,
+        "4": 0,
+        "5": 1
+      },
+      "raw_useaction_empty": true,
+      "client_field_gate": true
+    },
+    {
+      "id": 12555,
+      "line": 7294,
+      "row_sha256": "b89a06a7a9ecbb56e1778f95ac350363b75b24ce4c36f7497d0a5bb5be7918b5",
+      "option_sha256": "6c34ada7764a8c5e0d86bf7369fd978563d03353bf10a99adc935b37d1ba18fd",
+      "ints": {
+        "0": 12555,
+        "3": 20,
+        "4": 2,
+        "5": 1
+      },
+      "raw_useaction_empty": true,
+      "client_field_gate": true
+    }
+  ],
+  "cases": [
+    {
+      "item": 1232,
+      "scenario": "self_min",
+      "target_input": 0,
+      "overrides": {
+        "rand": 0
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          8,
+          7
+        ],
+        "callback_args": [
+          8,
+          8,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            8,
+            63
+          ]
+        ],
+        "stat_writes": [
+          [
+            8,
+            10,
+            640
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "action_notice",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "party_update",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 1232,
+      "scenario": "self_max",
+      "target_input": 0,
+      "overrides": {
+        "rand": 2147483647
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          8,
+          7
+        ],
+        "callback_args": [
+          8,
+          8,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            8,
+            63
+          ]
+        ],
+        "stat_writes": [
+          [
+            8,
+            10,
+            760
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "action_notice",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "party_update",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 1232,
+      "scenario": "pet_min",
+      "target_input": 1,
+      "overrides": {
+        "rand": 0
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          10,
+          7
+        ],
+        "callback_args": [
+          8,
+          10,
+          7
+        ],
+        "int_keys": [
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            10,
+            13
+          ]
+        ],
+        "stat_writes": [
+          [
+            10,
+            10,
+            640
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "pet_status_notice",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 1232,
+      "scenario": "pet_max",
+      "target_input": 1,
+      "overrides": {
+        "rand": 2147483647
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          10,
+          7
+        ],
+        "callback_args": [
+          8,
+          10,
+          7
+        ],
+        "int_keys": [
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            10,
+            13
+          ]
+        ],
+        "stat_writes": [
+          [
+            10,
+            10,
+            760
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "pet_status_notice",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 1232,
+      "scenario": "party_min",
+      "target_input": 6,
+      "overrides": {
+        "rand": 0
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          9,
+          7
+        ],
+        "callback_args": [
+          8,
+          9,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            63
+          ],
+          [
+            8,
+            65
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            9,
+            13
+          ],
+          [
+            8,
+            63
+          ]
+        ],
+        "stat_writes": [
+          [
+            9,
+            10,
+            640
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "action_notice",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "player_status_notice",
+          "party_update",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "display_name",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 1232,
+      "scenario": "party_max",
+      "target_input": 6,
+      "overrides": {
+        "rand": 2147483647
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          9,
+          7
+        ],
+        "callback_args": [
+          8,
+          9,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            63
+          ],
+          [
+            8,
+            65
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            9,
+            13
+          ],
+          [
+            8,
+            63
+          ]
+        ],
+        "stat_writes": [
+          [
+            9,
+            10,
+            760
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "action_notice",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "player_status_notice",
+          "party_update",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "display_name",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 1232,
+      "scenario": "invalid_target",
+      "target_input": 11,
+      "overrides": {},
+      "trace": {
+        "item_use_args": [
+          8,
+          -1,
+          7
+        ],
+        "callback_args": [],
+        "int_keys": [],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor"
+        ],
+        "callback_returned": false,
+        "field_callback_entered": false,
+        "guarded_target_read": [
+          4381608,
+          7396408
+        ],
+        "intake_returned": false,
+        "item_reads": [
+          [
+            0,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1
+      }
+    },
+    {
+      "item": 1232,
+      "scenario": "empty_pet",
+      "target_input": 1,
+      "overrides": {
+        "pet_present": false
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          -1,
+          7
+        ],
+        "callback_args": [],
+        "int_keys": [],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor"
+        ],
+        "callback_returned": false,
+        "field_callback_entered": false,
+        "guarded_target_read": [
+          4381608,
+          7396408
+        ],
+        "intake_returned": false,
+        "item_reads": [
+          [
+            0,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1
+      }
+    },
+    {
+      "item": 1232,
+      "scenario": "empty_party",
+      "target_input": 6,
+      "overrides": {
+        "party_present": false
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          -1,
+          7
+        ],
+        "callback_args": [],
+        "int_keys": [],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            63
+          ],
+          [
+            8,
+            65
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor"
+        ],
+        "callback_returned": false,
+        "field_callback_entered": false,
+        "guarded_target_read": [
+          4381608,
+          7396408
+        ],
+        "intake_returned": false,
+        "item_reads": [
+          [
+            0,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1
+      }
+    },
+    {
+      "item": 1232,
+      "scenario": "empty_slot",
+      "target_input": 0,
+      "overrides": {
+        "item_present": false
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          8,
+          7
+        ],
+        "callback_args": [],
+        "int_keys": [],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor"
+        ],
+        "callback_returned": false,
+        "field_callback_entered": false,
+        "intake_returned": true,
+        "item_reads": [],
+        "slot_before": -1,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 1232,
+      "scenario": "work64_blocked",
+      "target_input": 0,
+      "overrides": {
+        "work64": 1
+      },
+      "trace": {
+        "item_use_args": [],
+        "callback_args": [],
+        "int_keys": [],
+        "work_keys": [
+          [
+            8,
+            64
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor"
+        ],
+        "callback_returned": false,
+        "field_callback_entered": false,
+        "intake_returned": true,
+        "item_reads": [],
+        "slot_before": 0,
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1
+      }
+    },
+    {
+      "item": 1232,
+      "scenario": "battle_mode_blocked",
+      "target_input": 0,
+      "overrides": {
+        "battle_mode": 2
+      },
+      "trace": {
+        "item_use_args": [],
+        "callback_args": [],
+        "int_keys": [],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor"
+        ],
+        "callback_returned": false,
+        "field_callback_entered": false,
+        "intake_returned": true,
+        "item_reads": [],
+        "slot_before": 0,
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1
+      }
+    },
+    {
+      "item": 1232,
+      "scenario": "cure_denied",
+      "target_input": 0,
+      "overrides": {
+        "can_cure": false
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          8,
+          7
+        ],
+        "callback_args": [
+          8,
+          8,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "action_notice",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "strstr",
+          "can_cure"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1
+      }
+    },
+    {
+      "item": 1232,
+      "scenario": "near_cap",
+      "target_input": 0,
+      "overrides": {
+        "hp": 980,
+        "mp": 95
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          8,
+          7
+        ],
+        "callback_args": [
+          8,
+          8,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            8,
+            63
+          ]
+        ],
+        "stat_writes": [
+          [
+            8,
+            10,
+            1000
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "action_notice",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "party_update",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 1232,
+      "scenario": "no_useaction",
+      "target_input": 0,
+      "overrides": {
+        "useaction": -1
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          8,
+          7
+        ],
+        "callback_args": [
+          8,
+          8,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            8,
+            63
+          ]
+        ],
+        "stat_writes": [
+          [
+            8,
+            10,
+            640
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "party_update",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 12530,
+      "scenario": "self_min",
+      "target_input": 0,
+      "overrides": {
+        "rand": 0
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          8,
+          7
+        ],
+        "callback_args": [
+          8,
+          8,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            8,
+            63
+          ]
+        ],
+        "stat_writes": [
+          [
+            8,
+            10,
+            388
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "action_notice",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "party_update",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 12530,
+      "scenario": "self_max",
+      "target_input": 0,
+      "overrides": {
+        "rand": 2147483647
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          8,
+          7
+        ],
+        "callback_args": [
+          8,
+          8,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            8,
+            63
+          ]
+        ],
+        "stat_writes": [
+          [
+            8,
+            10,
+            452
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "action_notice",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "party_update",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 12530,
+      "scenario": "pet_min",
+      "target_input": 1,
+      "overrides": {
+        "rand": 0
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          10,
+          7
+        ],
+        "callback_args": [
+          8,
+          10,
+          7
+        ],
+        "int_keys": [
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            10,
+            13
+          ]
+        ],
+        "stat_writes": [
+          [
+            10,
+            10,
+            388
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "pet_status_notice",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 12530,
+      "scenario": "pet_max",
+      "target_input": 1,
+      "overrides": {
+        "rand": 2147483647
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          10,
+          7
+        ],
+        "callback_args": [
+          8,
+          10,
+          7
+        ],
+        "int_keys": [
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            10,
+            13
+          ]
+        ],
+        "stat_writes": [
+          [
+            10,
+            10,
+            452
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "pet_status_notice",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 12530,
+      "scenario": "party_min",
+      "target_input": 6,
+      "overrides": {
+        "rand": 0
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          9,
+          7
+        ],
+        "callback_args": [
+          8,
+          9,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            63
+          ],
+          [
+            8,
+            65
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            9,
+            13
+          ],
+          [
+            8,
+            63
+          ]
+        ],
+        "stat_writes": [
+          [
+            9,
+            10,
+            388
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "action_notice",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "player_status_notice",
+          "party_update",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "display_name",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 12530,
+      "scenario": "party_max",
+      "target_input": 6,
+      "overrides": {
+        "rand": 2147483647
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          9,
+          7
+        ],
+        "callback_args": [
+          8,
+          9,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            63
+          ],
+          [
+            8,
+            65
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            9,
+            13
+          ],
+          [
+            8,
+            63
+          ]
+        ],
+        "stat_writes": [
+          [
+            9,
+            10,
+            452
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "action_notice",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "player_status_notice",
+          "party_update",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "display_name",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 12530,
+      "scenario": "invalid_target",
+      "target_input": 11,
+      "overrides": {},
+      "trace": {
+        "item_use_args": [
+          8,
+          -1,
+          7
+        ],
+        "callback_args": [],
+        "int_keys": [],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor"
+        ],
+        "callback_returned": false,
+        "field_callback_entered": false,
+        "guarded_target_read": [
+          4381608,
+          7396408
+        ],
+        "intake_returned": false,
+        "item_reads": [
+          [
+            0,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1
+      }
+    },
+    {
+      "item": 12530,
+      "scenario": "empty_pet",
+      "target_input": 1,
+      "overrides": {
+        "pet_present": false
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          -1,
+          7
+        ],
+        "callback_args": [],
+        "int_keys": [],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor"
+        ],
+        "callback_returned": false,
+        "field_callback_entered": false,
+        "guarded_target_read": [
+          4381608,
+          7396408
+        ],
+        "intake_returned": false,
+        "item_reads": [
+          [
+            0,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1
+      }
+    },
+    {
+      "item": 12530,
+      "scenario": "empty_party",
+      "target_input": 6,
+      "overrides": {
+        "party_present": false
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          -1,
+          7
+        ],
+        "callback_args": [],
+        "int_keys": [],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            63
+          ],
+          [
+            8,
+            65
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor"
+        ],
+        "callback_returned": false,
+        "field_callback_entered": false,
+        "guarded_target_read": [
+          4381608,
+          7396408
+        ],
+        "intake_returned": false,
+        "item_reads": [
+          [
+            0,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1
+      }
+    },
+    {
+      "item": 12530,
+      "scenario": "empty_slot",
+      "target_input": 0,
+      "overrides": {
+        "item_present": false
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          8,
+          7
+        ],
+        "callback_args": [],
+        "int_keys": [],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor"
+        ],
+        "callback_returned": false,
+        "field_callback_entered": false,
+        "intake_returned": true,
+        "item_reads": [],
+        "slot_before": -1,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 12530,
+      "scenario": "work64_blocked",
+      "target_input": 0,
+      "overrides": {
+        "work64": 1
+      },
+      "trace": {
+        "item_use_args": [],
+        "callback_args": [],
+        "int_keys": [],
+        "work_keys": [
+          [
+            8,
+            64
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor"
+        ],
+        "callback_returned": false,
+        "field_callback_entered": false,
+        "intake_returned": true,
+        "item_reads": [],
+        "slot_before": 0,
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1
+      }
+    },
+    {
+      "item": 12530,
+      "scenario": "battle_mode_blocked",
+      "target_input": 0,
+      "overrides": {
+        "battle_mode": 2
+      },
+      "trace": {
+        "item_use_args": [],
+        "callback_args": [],
+        "int_keys": [],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor"
+        ],
+        "callback_returned": false,
+        "field_callback_entered": false,
+        "intake_returned": true,
+        "item_reads": [],
+        "slot_before": 0,
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1
+      }
+    },
+    {
+      "item": 12530,
+      "scenario": "cure_denied",
+      "target_input": 0,
+      "overrides": {
+        "can_cure": false
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          8,
+          7
+        ],
+        "callback_args": [
+          8,
+          8,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "action_notice",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "strstr",
+          "can_cure"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1
+      }
+    },
+    {
+      "item": 12530,
+      "scenario": "near_cap",
+      "target_input": 0,
+      "overrides": {
+        "hp": 980,
+        "mp": 95
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          8,
+          7
+        ],
+        "callback_args": [
+          8,
+          8,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            8,
+            63
+          ]
+        ],
+        "stat_writes": [
+          [
+            8,
+            10,
+            1000
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "action_notice",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "party_update",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 12530,
+      "scenario": "no_useaction",
+      "target_input": 0,
+      "overrides": {
+        "useaction": -1
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          8,
+          7
+        ],
+        "callback_args": [
+          8,
+          8,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            8,
+            63
+          ]
+        ],
+        "stat_writes": [
+          [
+            8,
+            10,
+            388
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "party_update",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 12555,
+      "scenario": "self_min",
+      "target_input": 0,
+      "overrides": {
+        "rand": 0
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          8,
+          7
+        ],
+        "callback_args": [
+          8,
+          8,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            8,
+            63
+          ]
+        ],
+        "stat_writes": [
+          [
+            8,
+            10,
+            266
+          ],
+          [
+            8,
+            11,
+            28
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "action_notice",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "party_update",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 12555,
+      "scenario": "self_max",
+      "target_input": 0,
+      "overrides": {
+        "rand": 2147483647
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          8,
+          7
+        ],
+        "callback_args": [
+          8,
+          8,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            8,
+            63
+          ]
+        ],
+        "stat_writes": [
+          [
+            8,
+            10,
+            303
+          ],
+          [
+            8,
+            11,
+            32
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "action_notice",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "party_update",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 12555,
+      "scenario": "pet_min",
+      "target_input": 1,
+      "overrides": {
+        "rand": 0
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          10,
+          7
+        ],
+        "callback_args": [
+          8,
+          10,
+          7
+        ],
+        "int_keys": [
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            10,
+            13
+          ]
+        ],
+        "stat_writes": [
+          [
+            10,
+            10,
+            266
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "pet_status_notice",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 12555,
+      "scenario": "pet_max",
+      "target_input": 1,
+      "overrides": {
+        "rand": 2147483647
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          10,
+          7
+        ],
+        "callback_args": [
+          8,
+          10,
+          7
+        ],
+        "int_keys": [
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            10,
+            13
+          ]
+        ],
+        "stat_writes": [
+          [
+            10,
+            10,
+            303
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "pet_status_notice",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 12555,
+      "scenario": "party_min",
+      "target_input": 6,
+      "overrides": {
+        "rand": 0
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          9,
+          7
+        ],
+        "callback_args": [
+          8,
+          9,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            63
+          ],
+          [
+            8,
+            65
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            9,
+            13
+          ],
+          [
+            9,
+            14
+          ],
+          [
+            8,
+            63
+          ]
+        ],
+        "stat_writes": [
+          [
+            9,
+            10,
+            266
+          ],
+          [
+            9,
+            11,
+            28
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "action_notice",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "player_status_notice",
+          "party_update",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "display_name",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "display_name",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 12555,
+      "scenario": "party_max",
+      "target_input": 6,
+      "overrides": {
+        "rand": 2147483647
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          9,
+          7
+        ],
+        "callback_args": [
+          8,
+          9,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            63
+          ],
+          [
+            8,
+            65
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            9,
+            13
+          ],
+          [
+            9,
+            14
+          ],
+          [
+            8,
+            63
+          ]
+        ],
+        "stat_writes": [
+          [
+            9,
+            10,
+            303
+          ],
+          [
+            9,
+            11,
+            32
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "action_notice",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "player_status_notice",
+          "party_update",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "display_name",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "display_name",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 12555,
+      "scenario": "invalid_target",
+      "target_input": 11,
+      "overrides": {},
+      "trace": {
+        "item_use_args": [
+          8,
+          -1,
+          7
+        ],
+        "callback_args": [],
+        "int_keys": [],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor"
+        ],
+        "callback_returned": false,
+        "field_callback_entered": false,
+        "guarded_target_read": [
+          4381608,
+          7396408
+        ],
+        "intake_returned": false,
+        "item_reads": [
+          [
+            0,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1
+      }
+    },
+    {
+      "item": 12555,
+      "scenario": "empty_pet",
+      "target_input": 1,
+      "overrides": {
+        "pet_present": false
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          -1,
+          7
+        ],
+        "callback_args": [],
+        "int_keys": [],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor"
+        ],
+        "callback_returned": false,
+        "field_callback_entered": false,
+        "guarded_target_read": [
+          4381608,
+          7396408
+        ],
+        "intake_returned": false,
+        "item_reads": [
+          [
+            0,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1
+      }
+    },
+    {
+      "item": 12555,
+      "scenario": "empty_party",
+      "target_input": 6,
+      "overrides": {
+        "party_present": false
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          -1,
+          7
+        ],
+        "callback_args": [],
+        "int_keys": [],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            63
+          ],
+          [
+            8,
+            65
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor"
+        ],
+        "callback_returned": false,
+        "field_callback_entered": false,
+        "guarded_target_read": [
+          4381608,
+          7396408
+        ],
+        "intake_returned": false,
+        "item_reads": [
+          [
+            0,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1
+      }
+    },
+    {
+      "item": 12555,
+      "scenario": "empty_slot",
+      "target_input": 0,
+      "overrides": {
+        "item_present": false
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          8,
+          7
+        ],
+        "callback_args": [],
+        "int_keys": [],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor"
+        ],
+        "callback_returned": false,
+        "field_callback_entered": false,
+        "intake_returned": true,
+        "item_reads": [],
+        "slot_before": -1,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 12555,
+      "scenario": "work64_blocked",
+      "target_input": 0,
+      "overrides": {
+        "work64": 1
+      },
+      "trace": {
+        "item_use_args": [],
+        "callback_args": [],
+        "int_keys": [],
+        "work_keys": [
+          [
+            8,
+            64
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor"
+        ],
+        "callback_returned": false,
+        "field_callback_entered": false,
+        "intake_returned": true,
+        "item_reads": [],
+        "slot_before": 0,
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1
+      }
+    },
+    {
+      "item": 12555,
+      "scenario": "battle_mode_blocked",
+      "target_input": 0,
+      "overrides": {
+        "battle_mode": 2
+      },
+      "trace": {
+        "item_use_args": [],
+        "callback_args": [],
+        "int_keys": [],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor"
+        ],
+        "callback_returned": false,
+        "field_callback_entered": false,
+        "intake_returned": true,
+        "item_reads": [],
+        "slot_before": 0,
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1
+      }
+    },
+    {
+      "item": 12555,
+      "scenario": "cure_denied",
+      "target_input": 0,
+      "overrides": {
+        "can_cure": false
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          8,
+          7
+        ],
+        "callback_args": [
+          8,
+          8,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "stat_writes": [],
+        "delete_args": [],
+        "inventory_writes": [],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "action_notice",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "can_cure"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": 0,
+        "item_live_after": 1,
+        "active_item_count_after": 1
+      }
+    },
+    {
+      "item": 12555,
+      "scenario": "near_cap",
+      "target_input": 0,
+      "overrides": {
+        "hp": 980,
+        "mp": 95
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          8,
+          7
+        ],
+        "callback_args": [
+          8,
+          8,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            8,
+            63
+          ]
+        ],
+        "stat_writes": [
+          [
+            8,
+            10,
+            1000
+          ],
+          [
+            8,
+            11,
+            100
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "action_notice",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "party_update",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    },
+    {
+      "item": 12555,
+      "scenario": "no_useaction",
+      "target_input": 0,
+      "overrides": {
+        "useaction": -1
+      },
+      "trace": {
+        "item_use_args": [
+          8,
+          8,
+          7
+        ],
+        "callback_args": [
+          8,
+          8,
+          7
+        ],
+        "int_keys": [
+          46,
+          3,
+          3,
+          0,
+          0
+        ],
+        "work_keys": [
+          [
+            8,
+            64
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            8,
+            63
+          ]
+        ],
+        "stat_writes": [
+          [
+            8,
+            10,
+            266
+          ],
+          [
+            8,
+            11,
+            28
+          ]
+        ],
+        "delete_args": [
+          [
+            8,
+            7,
+            1,
+            0
+          ]
+        ],
+        "inventory_writes": [
+          -1
+        ],
+        "fixture_calls": [
+          "client_connection",
+          "logged_in",
+          "connection_actor",
+          "position_update",
+          "connection_actor",
+          "item_log",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "scan_int",
+          "rand",
+          "strstr",
+          "strstr",
+          "can_cure",
+          "parameter_recalculation",
+          "player_status_notice",
+          "party_update",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "display_name",
+          "diagnostic_output",
+          "client_text",
+          "item_log",
+          "inventory_notice"
+        ],
+        "callback_returned": true,
+        "field_callback_entered": true,
+        "intake_returned": true,
+        "item_reads": [
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            16,
+            4
+          ],
+          [
+            188,
+            4
+          ],
+          [
+            1900,
+            4
+          ]
+        ],
+        "slot_before": 0,
+        "slot_after": -1,
+        "item_live_after": 0,
+        "active_item_count_after": 0
+      }
+    }
+  ],
+  "original_process_started": false,
+  "live_inventory_changed": false,
+  "network_messages_delivered": false,
+  "historical_official_deployment_verified": false
+}
