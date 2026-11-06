@@ -1,0 +1,1372 @@
+{
+  "schema": "stoneage.world36.capture_roster_source.r1",
+  "scope": "PRESERVED_MIXED25_CAPTURE_SCORE_TO_PET_ROSTER_X86_FIXTURE",
+  "archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "source_member": {
+    "target": "gmsv/gmsv.exe",
+    "header_offset": 359906866,
+    "header_bytes": 154,
+    "packed_bytes": 605893,
+    "unpacked_bytes": 1897867,
+    "header_sha256": "8b8d28fb487f54d93d335caeb385bfb7239b467288087ceca434ffcf29716dea",
+    "packed_sha256": "330634f8ca453ba7c60ba2df0c474a6fc6aa95d2c126586e1b61a1206d79ce05",
+    "member_crc32": 1848751674,
+    "member_sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00"
+  },
+  "symbols": {
+    "__CHAR_setWorkInt": 4382256,
+    "__CHAR_setChar": 4382480,
+    "_CHAR_getCharPetElement": 4385808,
+    "_CHAR_initCharOneArray": 4388400,
+    "_CHAR_setCharPet": 4399664,
+    "_CHAR_setMaxExpFromLevel": 4405072,
+    "_CHAR_setPetUniCode": 4399008,
+    "__CHAR_complianceParameter": 4425792,
+    "_CHAR_getDefaultChar": 4492784,
+    "_PET_createPetFromCharaIndex": 4623840,
+    "_BATTLE_Capture": 5472480
+  },
+  "code_windows": [
+    [
+      5474762,
+      5474974,
+      "d434e468da730746d14b44371555a8c1584392e17566a56b676966faa4b6f48f"
+    ],
+    [
+      5472697,
+      5472764,
+      "d0e006bcb3e8c1f141f07800620e27f26b5ad03a22d6867376f5fa30bd36749f"
+    ],
+    [
+      5473219,
+      5473347,
+      "74c6161ddce185eb97ca2b5bde60442969af18f5b31eda74e06624a1b72249e9"
+    ],
+    [
+      4623840,
+      4625398,
+      "903aa320bf438dcb751c416cc5756b699db5a4b5d48f090e48d6b35c9eeb7734"
+    ],
+    [
+      5614944,
+      5614989,
+      "c993990301562b8a0a180f549e37ef64c9e8e64a503d212c2c3a5ea8289c531a"
+    ],
+    [
+      4492784,
+      4493197,
+      "d3a789c4a171af226f8b330add890bc7abeac2112be4dc4bfd0355e14ae15ae3"
+    ],
+    [
+      4385808,
+      4386048,
+      "4e6b7df862d0564d437de6cd7147caadc8235ca6be9706e3e9526acf45c3b694"
+    ],
+    [
+      4381584,
+      4381612,
+      "2f294b52d721bdd0d8bfc298432023c40d946ef3bb4bf77b7e6b30e5288bd18c"
+    ],
+    [
+      4381744,
+      4382426,
+      "bd66efa291deed56bcc909bf803f3895e1f9c23dcfea831987062066a20ebe5d"
+    ],
+    [
+      4382480,
+      4382655,
+      "d62ddef2225124846d243cbbb3b9a38e149253254fcb74598d57ca32f9d9db1c"
+    ],
+    [
+      4386976,
+      4387209,
+      "f3ea85a3da608f151d19afa2f0458b6b382db284f20b00a6117fca1227f92eda"
+    ],
+    [
+      4388400,
+      4389110,
+      "237507364d251c21fa3ed5955a5308caf81de665a33d13305da2a391871ea3b5"
+    ],
+    [
+      4399008,
+      4399659,
+      "b7b21c0307e22e7a22eab2dd9d1518d7f6a158fbb5d8dcaeec3d15181ac4dd20"
+    ],
+    [
+      4399664,
+      4399867,
+      "beef329978e5836bb9e7ab16709d1d1554da29d6fdc9b72e2564585109a16290"
+    ],
+    [
+      4405072,
+      4405193,
+      "e06417bf8d1611fc5f69a2a58a7b71e6c9bf58ebaa92ed737d3cb87372b6c7bf"
+    ],
+    [
+      4425792,
+      4430048,
+      "d44a1f9819d426304b8e92239254c4027e3a405130718f96c693240600673d35"
+    ],
+    [
+      5220752,
+      5224768,
+      "f6f9525fbc6e41b48818303a0519ebb0d709f81165d0167b40f57ae4e01eb4f0"
+    ],
+    [
+      4381024,
+      4381080,
+      "49c7a964957ec4de7d1d07880d933dd6667ba5f70118a5ae47240713baf5b0fd"
+    ],
+    [
+      4493360,
+      4493440,
+      "cfa2760d26c161a3c8b30c0e9b78b715e2a4a4cc6935d10a7512f007dd9c962a"
+    ],
+    [
+      4385296,
+      4385445,
+      "d0046bf70b38b939527e499c21d2233d04a54868eebabb2f7bd7ab774ba4625f"
+    ],
+    [
+      4383120,
+      4383240,
+      "1401c119b267ea60f6f1a27dab1d1a1e322a247cfbfb92c56fe4e4a3a8b3ab39"
+    ],
+    [
+      4383456,
+      4383664,
+      "7021eea015cabacdf9772806ccf246111a5f9eb1c4c763d326fe3637d90a8f16"
+    ],
+    [
+      5206448,
+      5206560,
+      "28527b6d669449acd58aa2167cdd1720f6b7800d8672ffe06eef013547b9d0e0"
+    ]
+  ],
+  "data_windows": [
+    [
+      5931012,
+      5931032,
+      "c2f7adf82fab4f375d301673e7786ac4a0866733eb34a4b6f96fd41e46949e54"
+    ],
+    [
+      5704288,
+      5705136,
+      "c826a3214cbe4ad044641e0ad5112bc26cd69f3ed6e507550c41f2086fb2c57a"
+    ],
+    [
+      5705152,
+      5706367,
+      "55fad81eb4881e0ddb058b3adfc1d2416db41adb4689a4aae31f3fdd3da55039"
+    ],
+    [
+      5864330,
+      5864334,
+      "9404012fda4aad9df49b3fc191eaaa5ed847291953ba0d6444672478d8fb85e0"
+    ],
+    [
+      5864498,
+      5864528,
+      "65c449a784cc91ed1215ead12d40ffb8c8cc9b7b1a28ada7a93e4cd984435733"
+    ],
+    [
+      5852133,
+      5852145,
+      "d4e77cf9a86b98477acf9606995ba372482bf0217a577a75c46740026fe5b600"
+    ],
+    [
+      5719584,
+      5719660,
+      "39f5c22bed38422bd81d15aec7631c36584e103fe123c97da210e8e1bc93e439"
+    ],
+    [
+      5853280,
+      5853316,
+      "ba5f493c5d1aebe9f7d6576f9793d4618502f7eefaa3e49176b39d76c6874475"
+    ],
+    [
+      5918220,
+      5918232,
+      "be16a7b2a29f0287ac4dc2a83d5f15b7044d995b369e137412e5f1313079429e"
+    ],
+    [
+      5697472,
+      5698816,
+      "b821a110fc874242300f242022359688ead23e6c282a5b5d40ace7aac3d69e39"
+    ],
+    [
+      5670464,
+      5672960,
+      "02ca945bc3c572e18d7a5405c16c5dcbf06dd97d7db615a26ae997ca914c3cce"
+    ],
+    [
+      5864470,
+      5864471,
+      "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+    ],
+    [
+      5864471,
+      5864485,
+      "e40097dfd4331864043d22490ee8b9f9659bcc033354c9673009659bc37a4a50"
+    ],
+    [
+      5864485,
+      5864498,
+      "3ff3486cfa8449b2b8b2ab0a4f3a0b5fde221ccc7afecdb1c9bb233d1511f6ab"
+    ],
+    [
+      5675776,
+      5675820,
+      "69d9c86f2ad15055f1d8fa8e706b22791144ff90810762030287b2339bb6f1f7"
+    ],
+    [
+      5676000,
+      5676112,
+      "75e79564f00ccd6cf6f6dfdfe894161b78ffcdf4d18f3c3d830e39d432c370eb"
+    ],
+    [
+      5801448,
+      5801976,
+      "3cda2103a5349922ee93c00b7c53621b08328ea72c2d174069e5737b7078d59c"
+    ],
+    [
+      5672960,
+      5675200,
+      "2f7eaacf490839d9c603736149286272aea4df46c0daf58f0c70062041c68230"
+    ],
+    [
+      5631320,
+      5631360,
+      "c5b9b1d00d092a44c83b6efcc820bcd53de8737eefe0f44d1b7bf91e7743741d"
+    ],
+    [
+      5631480,
+      5631520,
+      "3622b28cf7bb1635d6b4eead0bf1480e410baa0576f8dbbdfc180b85cd65ea69"
+    ]
+  ],
+  "default_template": {
+    "requested_key": 31010,
+    "table_count": 53,
+    "matching_entries": 0,
+    "fallback_address": 5705152
+  },
+  "fixture": {
+    "owner": 1,
+    "wild": 12,
+    "pet_partition": [
+      3,
+      12
+    ],
+    "base_score": 1.0,
+    "default_capture_modifier": 1,
+    "random": 0,
+    "timestamp": 123456789,
+    "server_number": 2,
+    "serial_counter": 41,
+    "source_hp_mp": [
+      1010,
+      1011
+    ],
+    "source_level": 1008,
+    "source_int_key_58": 98765
+  },
+  "fixtures_by_address": {
+    "4290544": "callback_resolution_from_original_registry",
+    "4425680": "status_notice",
+    "4214400": "server_number",
+    "4219552": "bounded_string_copy",
+    "5614896": "diagnostic_context",
+    "5615440": "diagnostic_log",
+    "5615120": "time",
+    "5615136": "snprintf",
+    "5615616": "sprintf",
+    "5615456": "memset",
+    "5615472": "strchr",
+    "5615664": "rand",
+    "5615952": "memcpy"
+  },
+  "cases": {
+    "two_roster_holes": {
+      "pool_records_initially_used": [
+        3,
+        4,
+        6
+      ],
+      "overrides": {},
+      "trace": {
+        "score": 2.0,
+        "roll": 1,
+        "modifier_after": 0,
+        "result_flag": 1,
+        "created_character": 5,
+        "endpoint": 5473347,
+        "roster_before": [
+          3,
+          4,
+          -1,
+          6,
+          -1
+        ],
+        "roster_after": [
+          3,
+          4,
+          5,
+          6,
+          -1
+        ],
+        "allocator_partition_start_cursor_end": [
+          3,
+          6,
+          12
+        ],
+        "allocation_sequence_after": 901,
+        "serial_counter_after": 42,
+        "changed_character_records": [
+          1,
+          5
+        ],
+        "wild_record_unchanged": true,
+        "staged": {
+          "slot": 2,
+          "sha256": "675f01c8c589493e13eb5e923499b5880b912c82d74155c2a4d2d9bfae5ea454",
+          "type": 3,
+          "experience_key_58": 0
+        },
+        "events": [
+          [
+            "work_write",
+            1,
+            32,
+            0
+          ],
+          [
+            "create",
+            1,
+            12
+          ],
+          [
+            "find_carried_slot",
+            1
+          ],
+          [
+            "default_template",
+            31010
+          ],
+          [
+            "allocate",
+            2
+          ],
+          [
+            "max_exp_helper",
+            5,
+            1008
+          ],
+          [
+            "compliance_before",
+            5,
+            1010,
+            1011
+          ],
+          [
+            "compliance_after",
+            5,
+            70,
+            1000,
+            70,
+            1000
+          ],
+          [
+            "work_write",
+            5,
+            83,
+            1
+          ],
+          [
+            "attach",
+            1,
+            2,
+            5
+          ],
+          [
+            "owner_string_write",
+            5,
+            3,
+            "OwnerAccount"
+          ],
+          [
+            "owner_string_write",
+            5,
+            4,
+            "OwnerName"
+          ],
+          [
+            "status_request",
+            1,
+            "K2"
+          ],
+          [
+            "status_request",
+            1,
+            "W2"
+          ]
+        ],
+        "fixture_call_counts": {
+          "bounded_string_copy": 23,
+          "callback_resolution_from_original_registry": 20,
+          "memcpy": 2,
+          "memset": 83,
+          "rand": 2,
+          "server_number": 1,
+          "snprintf": 2,
+          "sprintf": 1,
+          "status_notice": 2,
+          "time": 1
+        },
+        "pet": {
+          "type": 3,
+          "owner_work_83": 1,
+          "owner_name": "OwnerName",
+          "owner_account": "OwnerAccount",
+          "pet_name": "SourcePet",
+          "pet_serial": "123456789i241",
+          "fields": [
+            [
+              1,
+              1001
+            ],
+            [
+              8,
+              1008
+            ],
+            [
+              10,
+              70
+            ],
+            [
+              11,
+              1000
+            ],
+            [
+              12,
+              1012
+            ],
+            [
+              13,
+              1013
+            ],
+            [
+              14,
+              1014
+            ],
+            [
+              15,
+              1015
+            ],
+            [
+              16,
+              1016
+            ],
+            [
+              17,
+              1017
+            ],
+            [
+              18,
+              1018
+            ],
+            [
+              19,
+              1019
+            ],
+            [
+              20,
+              1020
+            ],
+            [
+              21,
+              1021
+            ],
+            [
+              22,
+              1022
+            ],
+            [
+              23,
+              1023
+            ],
+            [
+              24,
+              1024
+            ],
+            [
+              25,
+              1025
+            ],
+            [
+              26,
+              1026
+            ],
+            [
+              33,
+              1033
+            ],
+            [
+              34,
+              1034
+            ],
+            [
+              35,
+              1035
+            ],
+            [
+              36,
+              1036
+            ],
+            [
+              37,
+              1037
+            ],
+            [
+              38,
+              1038
+            ],
+            [
+              53,
+              1053
+            ],
+            [
+              61,
+              1061
+            ],
+            [
+              65,
+              1065
+            ],
+            [
+              28,
+              1008
+            ],
+            [
+              58,
+              0
+            ]
+          ],
+          "skill_slots": [
+            101,
+            102,
+            -1,
+            104,
+            -1,
+            106,
+            107
+          ],
+          "allocation_sequence": 900,
+          "callback_pointers": [
+            [
+              5,
+              4656928
+            ],
+            [
+              8,
+              4654912
+            ]
+          ]
+        }
+      }
+    },
+    "last_roster_slot_and_serial_wrap": {
+      "pool_records_initially_used": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "overrides": {
+        "serial": 999
+      },
+      "trace": {
+        "score": 2.0,
+        "roll": 1,
+        "modifier_after": 0,
+        "result_flag": 1,
+        "created_character": 7,
+        "endpoint": 5473347,
+        "roster_before": [
+          3,
+          4,
+          5,
+          6,
+          -1
+        ],
+        "roster_after": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "allocator_partition_start_cursor_end": [
+          3,
+          8,
+          12
+        ],
+        "allocation_sequence_after": 901,
+        "serial_counter_after": 0,
+        "changed_character_records": [
+          1,
+          7
+        ],
+        "wild_record_unchanged": true,
+        "staged": {
+          "slot": 4,
+          "sha256": "675f01c8c589493e13eb5e923499b5880b912c82d74155c2a4d2d9bfae5ea454",
+          "type": 3,
+          "experience_key_58": 0
+        },
+        "events": [
+          [
+            "work_write",
+            1,
+            32,
+            0
+          ],
+          [
+            "create",
+            1,
+            12
+          ],
+          [
+            "find_carried_slot",
+            1
+          ],
+          [
+            "default_template",
+            31010
+          ],
+          [
+            "allocate",
+            4
+          ],
+          [
+            "max_exp_helper",
+            7,
+            1008
+          ],
+          [
+            "compliance_before",
+            7,
+            1010,
+            1011
+          ],
+          [
+            "compliance_after",
+            7,
+            70,
+            1000,
+            70,
+            1000
+          ],
+          [
+            "work_write",
+            7,
+            83,
+            1
+          ],
+          [
+            "attach",
+            1,
+            4,
+            7
+          ],
+          [
+            "owner_string_write",
+            7,
+            3,
+            "OwnerAccount"
+          ],
+          [
+            "owner_string_write",
+            7,
+            4,
+            "OwnerName"
+          ],
+          [
+            "status_request",
+            1,
+            "K4"
+          ],
+          [
+            "status_request",
+            1,
+            "W4"
+          ]
+        ],
+        "fixture_call_counts": {
+          "bounded_string_copy": 23,
+          "callback_resolution_from_original_registry": 20,
+          "memcpy": 2,
+          "memset": 83,
+          "rand": 2,
+          "server_number": 1,
+          "snprintf": 2,
+          "sprintf": 1,
+          "status_notice": 2,
+          "time": 1
+        },
+        "pet": {
+          "type": 3,
+          "owner_work_83": 1,
+          "owner_name": "OwnerName",
+          "owner_account": "OwnerAccount",
+          "pet_name": "SourcePet",
+          "pet_serial": "123456789i2999",
+          "fields": [
+            [
+              1,
+              1001
+            ],
+            [
+              8,
+              1008
+            ],
+            [
+              10,
+              70
+            ],
+            [
+              11,
+              1000
+            ],
+            [
+              12,
+              1012
+            ],
+            [
+              13,
+              1013
+            ],
+            [
+              14,
+              1014
+            ],
+            [
+              15,
+              1015
+            ],
+            [
+              16,
+              1016
+            ],
+            [
+              17,
+              1017
+            ],
+            [
+              18,
+              1018
+            ],
+            [
+              19,
+              1019
+            ],
+            [
+              20,
+              1020
+            ],
+            [
+              21,
+              1021
+            ],
+            [
+              22,
+              1022
+            ],
+            [
+              23,
+              1023
+            ],
+            [
+              24,
+              1024
+            ],
+            [
+              25,
+              1025
+            ],
+            [
+              26,
+              1026
+            ],
+            [
+              33,
+              1033
+            ],
+            [
+              34,
+              1034
+            ],
+            [
+              35,
+              1035
+            ],
+            [
+              36,
+              1036
+            ],
+            [
+              37,
+              1037
+            ],
+            [
+              38,
+              1038
+            ],
+            [
+              53,
+              1053
+            ],
+            [
+              61,
+              1061
+            ],
+            [
+              65,
+              1065
+            ],
+            [
+              28,
+              1008
+            ],
+            [
+              58,
+              0
+            ]
+          ],
+          "skill_slots": [
+            101,
+            102,
+            -1,
+            104,
+            -1,
+            106,
+            107
+          ],
+          "allocation_sequence": 900,
+          "callback_pointers": [
+            [
+              5,
+              4656928
+            ],
+            [
+              8,
+              4654912
+            ]
+          ]
+        }
+      }
+    },
+    "low_hp_mp_retained": {
+      "pool_records_initially_used": [
+        3,
+        4,
+        6
+      ],
+      "overrides": {
+        "hp_mp": [
+          25,
+          20
+        ],
+        "level": 35
+      },
+      "trace": {
+        "score": 2.0,
+        "roll": 1,
+        "modifier_after": 0,
+        "result_flag": 1,
+        "created_character": 5,
+        "endpoint": 5473347,
+        "roster_before": [
+          3,
+          4,
+          -1,
+          6,
+          -1
+        ],
+        "roster_after": [
+          3,
+          4,
+          5,
+          6,
+          -1
+        ],
+        "allocator_partition_start_cursor_end": [
+          3,
+          6,
+          12
+        ],
+        "allocation_sequence_after": 901,
+        "serial_counter_after": 42,
+        "changed_character_records": [
+          1,
+          5
+        ],
+        "wild_record_unchanged": true,
+        "staged": {
+          "slot": 2,
+          "sha256": "072782412b88e4c2e9a3617135cf5e75d529fd14e20fb3c3976bdd17cdcb190b",
+          "type": 3,
+          "experience_key_58": 0
+        },
+        "events": [
+          [
+            "work_write",
+            1,
+            32,
+            0
+          ],
+          [
+            "create",
+            1,
+            12
+          ],
+          [
+            "find_carried_slot",
+            1
+          ],
+          [
+            "default_template",
+            31010
+          ],
+          [
+            "allocate",
+            2
+          ],
+          [
+            "max_exp_helper",
+            5,
+            35
+          ],
+          [
+            "compliance_before",
+            5,
+            25,
+            20
+          ],
+          [
+            "compliance_after",
+            5,
+            25,
+            20,
+            70,
+            1000
+          ],
+          [
+            "work_write",
+            5,
+            83,
+            1
+          ],
+          [
+            "attach",
+            1,
+            2,
+            5
+          ],
+          [
+            "owner_string_write",
+            5,
+            3,
+            "OwnerAccount"
+          ],
+          [
+            "owner_string_write",
+            5,
+            4,
+            "OwnerName"
+          ],
+          [
+            "status_request",
+            1,
+            "K2"
+          ],
+          [
+            "status_request",
+            1,
+            "W2"
+          ]
+        ],
+        "fixture_call_counts": {
+          "bounded_string_copy": 23,
+          "callback_resolution_from_original_registry": 20,
+          "memcpy": 2,
+          "memset": 83,
+          "rand": 2,
+          "server_number": 1,
+          "snprintf": 2,
+          "sprintf": 1,
+          "status_notice": 2,
+          "time": 1
+        },
+        "pet": {
+          "type": 3,
+          "owner_work_83": 1,
+          "owner_name": "OwnerName",
+          "owner_account": "OwnerAccount",
+          "pet_name": "SourcePet",
+          "pet_serial": "123456789i241",
+          "fields": [
+            [
+              1,
+              1001
+            ],
+            [
+              8,
+              35
+            ],
+            [
+              10,
+              25
+            ],
+            [
+              11,
+              20
+            ],
+            [
+              12,
+              1012
+            ],
+            [
+              13,
+              1013
+            ],
+            [
+              14,
+              1014
+            ],
+            [
+              15,
+              1015
+            ],
+            [
+              16,
+              1016
+            ],
+            [
+              17,
+              1017
+            ],
+            [
+              18,
+              1018
+            ],
+            [
+              19,
+              1019
+            ],
+            [
+              20,
+              1020
+            ],
+            [
+              21,
+              1021
+            ],
+            [
+              22,
+              1022
+            ],
+            [
+              23,
+              1023
+            ],
+            [
+              24,
+              1024
+            ],
+            [
+              25,
+              1025
+            ],
+            [
+              26,
+              1026
+            ],
+            [
+              33,
+              1033
+            ],
+            [
+              34,
+              1034
+            ],
+            [
+              35,
+              1035
+            ],
+            [
+              36,
+              1036
+            ],
+            [
+              37,
+              1037
+            ],
+            [
+              38,
+              1038
+            ],
+            [
+              53,
+              1053
+            ],
+            [
+              61,
+              1061
+            ],
+            [
+              65,
+              1065
+            ],
+            [
+              28,
+              35
+            ],
+            [
+              58,
+              0
+            ]
+          ],
+          "skill_slots": [
+            101,
+            102,
+            -1,
+            104,
+            -1,
+            106,
+            107
+          ],
+          "allocation_sequence": 900,
+          "callback_pointers": [
+            [
+              5,
+              4656928
+            ],
+            [
+              8,
+              4654912
+            ]
+          ]
+        }
+      }
+    },
+    "full_roster": {
+      "pool_records_initially_used": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "overrides": {},
+      "trace": {
+        "score": 2.0,
+        "roll": 1,
+        "modifier_after": 0,
+        "result_flag": 0,
+        "created_character": -1,
+        "endpoint": 5472764,
+        "roster_before": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "roster_after": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "allocator_partition_start_cursor_end": [
+          -1,
+          -1,
+          -1
+        ],
+        "allocation_sequence_after": 900,
+        "serial_counter_after": 41,
+        "changed_character_records": [
+          1
+        ],
+        "wild_record_unchanged": true,
+        "staged": {},
+        "events": [
+          [
+            "work_write",
+            1,
+            32,
+            0
+          ],
+          [
+            "create",
+            1,
+            12
+          ],
+          [
+            "find_carried_slot",
+            1
+          ]
+        ],
+        "fixture_call_counts": {
+          "rand": 1
+        }
+      }
+    },
+    "exhausted_pet_partition": {
+      "pool_records_initially_used": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "overrides": {},
+      "trace": {
+        "score": 2.0,
+        "roll": 1,
+        "modifier_after": 0,
+        "result_flag": 0,
+        "created_character": -1,
+        "endpoint": 5472764,
+        "roster_before": [
+          3,
+          4,
+          -1,
+          6,
+          -1
+        ],
+        "roster_after": [
+          3,
+          4,
+          -1,
+          6,
+          -1
+        ],
+        "allocator_partition_start_cursor_end": [
+          3,
+          3,
+          12
+        ],
+        "allocation_sequence_after": 900,
+        "serial_counter_after": 41,
+        "changed_character_records": [
+          1
+        ],
+        "wild_record_unchanged": true,
+        "staged": {
+          "slot": 2,
+          "sha256": "675f01c8c589493e13eb5e923499b5880b912c82d74155c2a4d2d9bfae5ea454",
+          "type": 3,
+          "experience_key_58": 0
+        },
+        "events": [
+          [
+            "work_write",
+            1,
+            32,
+            0
+          ],
+          [
+            "create",
+            1,
+            12
+          ],
+          [
+            "find_carried_slot",
+            1
+          ],
+          [
+            "default_template",
+            31010
+          ],
+          [
+            "allocate",
+            2
+          ]
+        ],
+        "fixture_call_counts": {
+          "bounded_string_copy": 20,
+          "diagnostic_context": 1,
+          "diagnostic_log": 1,
+          "memcpy": 1,
+          "memset": 82,
+          "rand": 2
+        }
+      }
+    },
+    "comparison_equal": {
+      "pool_records_initially_used": [
+        3,
+        4,
+        6
+      ],
+      "overrides": {
+        "modifier": 0
+      },
+      "trace": {
+        "score": 1.0,
+        "roll": 1,
+        "modifier_after": 0,
+        "result_flag": 0,
+        "created_character": -1,
+        "endpoint": 5472764,
+        "roster_before": [
+          3,
+          4,
+          -1,
+          6,
+          -1
+        ],
+        "roster_after": [
+          3,
+          4,
+          -1,
+          6,
+          -1
+        ],
+        "allocator_partition_start_cursor_end": [
+          -1,
+          -1,
+          -1
+        ],
+        "allocation_sequence_after": 900,
+        "serial_counter_after": 41,
+        "changed_character_records": [],
+        "wild_record_unchanged": true,
+        "staged": {},
+        "events": [
+          [
+            "work_write",
+            1,
+            32,
+            0
+          ]
+        ],
+        "fixture_call_counts": {
+          "rand": 1
+        }
+      }
+    }
+  },
+  "original_process_started": false,
+  "parameter_compliance_executed": true,
+  "network_messages_delivered": false,
+  "battle_removal_or_save_executed": false,
+  "historical_official_deployment_verified": false
+}
