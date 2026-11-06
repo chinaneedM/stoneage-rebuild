@@ -1948,3 +1948,8 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-06 — WORLD37-R1：捕捉成功后的原野怪退出与条件道具版本分歧（后代源码证据）
 
 三条固定后代源码的九份原文件相互核对，补足 `BATTLE_Capture → _BATTLE_Exit → CHAR_endCharOneArray → CHAR_endCharData` 的成功尾段：战斗席位清除、野怪角色记录标为未使用、捕捉者计数增加；条件道具普通成功消费和宏控制的预检查消费必须分开。**本轮不是混合2.5原GMSV尾段原生回放，更不是台湾1.0官方服务器规则认证**。详见 [WORLD37-R1连续性记录](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-37-CAPTURE-EXIT-DESCENDANT-20261106.md)、[九份后代源码Git blob及版本收据](research/recovered/STONEAGE-STAGE-A-WORLD37-CAPTURE-EXIT-DESCENDANT-SOURCE-R1.json)。最高下一项WORLD37-R2：只有真实取得合格混合2.5原GMSV字节才进行其尾段指令回放；不能取得则转回有可读原件的模块内容。历史CURRENT文件原样保留，Stage A 7 PARTIAL + 2 OPEN不变。
+
+
+## 2026-11-06 — ITEM04｜原TW1四个尾端透明RLE溢出图块可作私人有界像素观察
+
+在WORLD37-R2缺混合2.5原GMSV可执行文件时，转向已保存的原台湾1.0零售ADRN/REAL。完整复读并核对832个旧严格可解RD、831个原索引缺失及四个末尾恰多一个透明像素的旧失败RD；从四个原流各取严格画布上限内的**真实原索引像素**，独立解码相符，私有生成4灰度/4候选配色PNG和一联系页，私有ZIP已存Library并重读SHA/CRC。**原严格RD编码器未放宽，原客户端处理末端多一个像素仍未证，混合2.5物品表7个同号物品身份亦非TW1官方同服认定。** [详细连续性记录](docs/continuity/STONEAGE-ITEM-EQUIPMENT-SHOP-MODULE-04-FOUR-TERMINAL-RLE-PRIVATE-PIXELS-20261106.md)、[哈希与数据边界](research/recovered/STONEAGE-ITEM04-TW10-FOUR-TERMINAL-RLE-SOURCE-CANVAS-PREFIX-R1.json)。WORLD37-R2继续有条件OPEN；其余真实游戏内容按可读取原件排序。历史 CURRENT 原样不改。
