@@ -1,0 +1,362 @@
+{
+  "archive_expected_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "archive_in_this_invocation_sha256_verified": true,
+  "compiled_call_sites": {
+    "delete_inventory": {
+      "source_sha256": "43b05732ca67c5bf9add79393b9dc9cb8bee258ad07a655eea5c5e3637abb80e",
+      "source_va": 5472409,
+      "target_va": 4405936
+    },
+    "delete_key53": {
+      "source_sha256": "c63e5f4939ea8204805b135aab3f0190bfeb1fc1adf07afb91d52ea3e3d06ff4",
+      "source_va": 5471855,
+      "target_va": 4381584
+    },
+    "precheck_key53": {
+      "source_sha256": "2f703042c512834f9c0e70c979127e20bc3ded0a08891376f24e8a29d393fb8f",
+      "source_va": 5471569,
+      "target_va": 4381584
+    }
+  },
+  "exe_expected_sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00",
+  "exe_local_full_sha256": "e61c417b18f939a22d25b800240f1d2d0f889a78024a8657e06502ff0ccdff0f",
+  "exe_original_full_sha256_verified": false,
+  "negative_boundaries": {
+    "R79": "PAUSED_NON_BLOCKING",
+    "Stage_B_wiki": "GATED",
+    "actual_conditional_item_consumption_executed": false,
+    "all_128_capture_rows_are_real_pet_species": false,
+    "configured_original_item_master_selected_is_alternate": false,
+    "historical_STAGE_A": "7_PARTIAL_2_OPEN",
+    "missing_selected_item_ids_are_invented_or_filled": false,
+    "original_dynamic_capture_tail_executed": false,
+    "original_enemy_species_names_proven_by_key53": false,
+    "overall_percent": null,
+    "same_build_official_TW1_or_JSS1999_server_verified": false
+  },
+  "next": "WORLD37_R2B_DYNAMIC_TAIL_REQUIRES_FULL_VERIFIED_EXECUTABLE_AND_X86_EMULATOR; PRIORITIZE_FURTHER_MATERIAL_CONTENT_IF_UNAVAILABLE",
+  "original_condition_table": {
+    "active_rows": 11,
+    "capacity": 128,
+    "distinct_item_ids": 12,
+    "item_references": 13,
+    "raw_table_sha256": "fcec682619dbb83439f7160a99a35279290344c4b14d7190118c9de74648db56",
+    "record_bytes": 64,
+    "rows": [
+      {
+        "char_int_key_53_value": 524,
+        "record_sha256": "eddd236d470214846e1caf05d9ef51b5e04116a76413f5934b2f9f31834bb25f",
+        "required_item_id_candidates": [
+          2456
+        ],
+        "source_record_index": 0
+      },
+      {
+        "char_int_key_53_value": 961,
+        "record_sha256": "cfea81beaf07658a55127881a10cb5eca76843d8d7eeddbab2cb972bdc9089b8",
+        "required_item_id_candidates": [
+          20219
+        ],
+        "source_record_index": 1
+      },
+      {
+        "char_int_key_53_value": 953,
+        "record_sha256": "af7a9c262ce4f9a9c147ddd2595d1f1484b18b4ab8547fbf65ce311f0c72dbd5",
+        "required_item_id_candidates": [
+          20223
+        ],
+        "source_record_index": 2
+      },
+      {
+        "char_int_key_53_value": 962,
+        "record_sha256": "6ed58b2c23855ca4b4c6b22650e4e65d24dd874e55229cfca57eef0e1e0a2af7",
+        "required_item_id_candidates": [
+          20222
+        ],
+        "source_record_index": 3
+      },
+      {
+        "char_int_key_53_value": 777,
+        "record_sha256": "ef65626b22abd67faf02a4f3b9ffdef975e7adb95e0887d42a23de5c68620108",
+        "required_item_id_candidates": [
+          20253
+        ],
+        "source_record_index": 4
+      },
+      {
+        "char_int_key_53_value": 796,
+        "record_sha256": "c9c5a993f8b47f07bdbb2f6f8635d92b391afbe925f08ff0231b014bf115a122",
+        "required_item_id_candidates": [
+          20247
+        ],
+        "source_record_index": 5
+      },
+      {
+        "char_int_key_53_value": 812,
+        "record_sha256": "8700cd2661d0640444d57b2696320aa92659c633c66be1cb8d238ba9b7e63c27",
+        "required_item_id_candidates": [
+          20259
+        ],
+        "source_record_index": 6
+      },
+      {
+        "char_int_key_53_value": 1105,
+        "record_sha256": "61227f5926e61c149af0bade92bb24ff28abffcd64dedc64722fe0517ae14225",
+        "required_item_id_candidates": [
+          1690,
+          1691,
+          1692
+        ],
+        "source_record_index": 7
+      },
+      {
+        "char_int_key_53_value": 8,
+        "record_sha256": "5e163c149ca35a4af0f3ea2e33f766158ade33c79ef576c444cb9797b9cd307c",
+        "required_item_id_candidates": [
+          1810
+        ],
+        "source_record_index": 8
+      },
+      {
+        "char_int_key_53_value": 145,
+        "record_sha256": "8bb8c3510a42837f6cadd9fdb48470c0456b92759bc63c25fa98cf5d5dad8e50",
+        "required_item_id_candidates": [
+          2236
+        ],
+        "source_record_index": 9
+      },
+      {
+        "char_int_key_53_value": 146,
+        "record_sha256": "fcccae53ed2256b8b014bc92d816fcd4e75e2cb572d247785caa7cfe5d6864cf",
+        "required_item_id_candidates": [
+          2236
+        ],
+        "source_record_index": 10
+      }
+    ],
+    "source_va": 5819744,
+    "zero_rows": 117
+  },
+  "original_item_id_crosswalk": [
+    {
+      "alternate_0710": {
+        "callback_ascii": "",
+        "item_type_ascii": "2",
+        "line": 1687,
+        "name_cp950": "海藍之棒",
+        "original_row_sha256": "0f445fb7ee0c1232447cd2f25adfc9ca27ac863f161b3a64701cfbcff5d8ba00"
+      },
+      "item_id": 1690,
+      "presence": "IN_BOTH",
+      "selected": {
+        "callback_ascii": "",
+        "item_type_ascii": "2",
+        "line": 1605,
+        "name_cp950": "海藍之棒",
+        "original_row_sha256": "0f445fb7ee0c1232447cd2f25adfc9ca27ac863f161b3a64701cfbcff5d8ba00"
+      }
+    },
+    {
+      "alternate_0710": {
+        "callback_ascii": "",
+        "item_type_ascii": "6",
+        "line": 1688,
+        "name_cp950": "海藍之兜",
+        "original_row_sha256": "8a55697f63330c998e8ec18cec51741aee306543a9cef2dd4e60ee3db3e03143"
+      },
+      "item_id": 1691,
+      "presence": "IN_BOTH",
+      "selected": {
+        "callback_ascii": "",
+        "item_type_ascii": "6",
+        "line": 1606,
+        "name_cp950": "海藍之兜",
+        "original_row_sha256": "8a55697f63330c998e8ec18cec51741aee306543a9cef2dd4e60ee3db3e03143"
+      }
+    },
+    {
+      "alternate_0710": {
+        "callback_ascii": "",
+        "item_type_ascii": "7",
+        "line": 1689,
+        "name_cp950": "海藍之鎧",
+        "original_row_sha256": "62065b2be7954221615eef7aebcf67ba5a5202bc21d05202a835b92197f80d9a"
+      },
+      "item_id": 1692,
+      "presence": "IN_BOTH",
+      "selected": {
+        "callback_ascii": "",
+        "item_type_ascii": "7",
+        "line": 1607,
+        "name_cp950": "海藍之鎧",
+        "original_row_sha256": "62065b2be7954221615eef7aebcf67ba5a5202bc21d05202a835b92197f80d9a"
+      }
+    },
+    {
+      "alternate_0710": {
+        "callback_ascii": "",
+        "item_type_ascii": "16",
+        "line": 1807,
+        "name_cp950": "富商的貨物",
+        "original_row_sha256": "6dcee7c1801d5fcf6f269c7e562817d685b89e084c1a04c8e47a358ed21a0c6b"
+      },
+      "item_id": 1810,
+      "presence": "IN_BOTH",
+      "selected": {
+        "callback_ascii": "",
+        "item_type_ascii": "16",
+        "line": 1687,
+        "name_cp950": "富商的貨物",
+        "original_row_sha256": "6dcee7c1801d5fcf6f269c7e562817d685b89e084c1a04c8e47a358ed21a0c6b"
+      }
+    },
+    {
+      "alternate_0710": {
+        "callback_ascii": "",
+        "item_type_ascii": "1",
+        "line": 2233,
+        "name_cp950": "很鈍的斧",
+        "original_row_sha256": "595c643fbaa0ce9c864058bfc1373ae63b9e6afb81e1022d6a6255a6a95a0519"
+      },
+      "item_id": 2236,
+      "presence": "IN_BOTH",
+      "selected": {
+        "callback_ascii": "",
+        "item_type_ascii": "1",
+        "line": 1918,
+        "name_cp950": "很鈍的斧",
+        "original_row_sha256": "595c643fbaa0ce9c864058bfc1373ae63b9e6afb81e1022d6a6255a6a95a0519"
+      }
+    },
+    {
+      "alternate_0710": {
+        "callback_ascii": "ITEM_useRecovery",
+        "item_type_ascii": "20",
+        "line": 2434,
+        "name_cp950": "加特利奴喜愛的食物",
+        "original_row_sha256": "77a6d740a665e46efcef498d5e55676adb44de15defc1bf1f6a05c528c3022d6"
+      },
+      "item_id": 2456,
+      "presence": "IN_BOTH",
+      "selected": {
+        "callback_ascii": "ITEM_useRecovery",
+        "item_type_ascii": "20",
+        "line": 2039,
+        "name_cp950": "加特利奴喜愛的食物",
+        "original_row_sha256": "77a6d740a665e46efcef498d5e55676adb44de15defc1bf1f6a05c528c3022d6"
+      }
+    },
+    {
+      "alternate_0710": {
+        "callback_ascii": "ITEM_useRecovery",
+        "item_type_ascii": "16",
+        "line": 13269,
+        "name_cp950": "瑪麗娜絲莊園旅遊指南",
+        "original_row_sha256": "1020e87221026667a464105886a16a0ff6ed8ff27f7207db4d659350973624e5"
+      },
+      "item_id": 20219,
+      "presence": "IN_BOTH",
+      "selected": {
+        "callback_ascii": "ITEM_useRecovery",
+        "item_type_ascii": "16",
+        "line": 12766,
+        "name_cp950": "瑪麗娜絲莊園旅遊指南",
+        "original_row_sha256": "1020e87221026667a464105886a16a0ff6ed8ff27f7207db4d659350973624e5"
+      }
+    },
+    {
+      "alternate_0710": {
+        "callback_ascii": "ITEM_useRecovery",
+        "item_type_ascii": "16",
+        "line": 13272,
+        "name_cp950": "收據",
+        "original_row_sha256": "4067ff5ef8855d3aff193b25f97454acc0e390682d26830236f54d7679cc566f"
+      },
+      "item_id": 20222,
+      "presence": "IN_BOTH",
+      "selected": {
+        "callback_ascii": "ITEM_useRecovery",
+        "item_type_ascii": "16",
+        "line": 12769,
+        "name_cp950": "收據",
+        "original_row_sha256": "4067ff5ef8855d3aff193b25f97454acc0e390682d26830236f54d7679cc566f"
+      }
+    },
+    {
+      "alternate_0710": {
+        "callback_ascii": "ITEM_useRecovery",
+        "item_type_ascii": "16",
+        "line": 13273,
+        "name_cp950": "布伊比的牙",
+        "original_row_sha256": "79051d7c362fa8cb4352f140005655a61e0a79840e71ddfca791358a05776d47"
+      },
+      "item_id": 20223,
+      "presence": "IN_BOTH",
+      "selected": {
+        "callback_ascii": "ITEM_useRecovery",
+        "item_type_ascii": "16",
+        "line": 12770,
+        "name_cp950": "布伊比的牙",
+        "original_row_sha256": "79051d7c362fa8cb4352f140005655a61e0a79840e71ddfca791358a05776d47"
+      }
+    },
+    {
+      "alternate_0710": {
+        "callback_ascii": "ITEM_useRecovery",
+        "item_type_ascii": "11",
+        "line": 13297,
+        "name_cp950": "魔法鑽戒[地LV3-1]",
+        "original_row_sha256": "164863846b48d31a1ae28cbdc62daf40d4b431b7ce678aa26d2ba4f2bd1196f8"
+      },
+      "item_id": 20247,
+      "presence": "ONLY_ALTERNATE",
+      "selected": null
+    },
+    {
+      "alternate_0710": {
+        "callback_ascii": "ITEM_useRecovery",
+        "item_type_ascii": "11",
+        "line": 13303,
+        "name_cp950": "魔法鑽戒[水LV3-1]",
+        "original_row_sha256": "1b7a060bf8294fc85fc9b4d5a5231cc935dbfabb2446c2a08989b9e6d40e0dd7"
+      },
+      "item_id": 20253,
+      "presence": "ONLY_ALTERNATE",
+      "selected": null
+    },
+    {
+      "alternate_0710": {
+        "callback_ascii": "ITEM_useRecovery",
+        "item_type_ascii": "11",
+        "line": 13309,
+        "name_cp950": "魔法鑽戒[火LV3-1]",
+        "original_row_sha256": "739530a7b70799a5653f8c946ff614c648600e7f2fe425e2eb364a082126712f"
+      },
+      "item_id": 20259,
+      "presence": "ONLY_ALTERNATE",
+      "selected": null
+    }
+  ],
+  "original_item_masters_sha256": {
+    "itemset.txt": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+    "itemset0710.txt": "6d6d63fda59c6bda2f239fe18c9361b5c9da18c84f678b7cc95bde24544292fb"
+  },
+  "original_source_file_backed_sections_sha256": {
+    ".data": "f30026ba6ed6212b59cdf580fed718610c70af47f03c6d41ac65f35fc5a5ae95",
+    ".idata": "4838a3158456bd0a8eee76a8a666fa67222d5e3b432a87f50906f0b2c64ae0d4",
+    ".rdata": "c2740af5992a885b4d4ba14c988525ff7fa3b3329e973d87d628a28d6b5c0611",
+    ".text": "2a42c0ce1951b0963898e2a5c95be920b8eb3b42bf329b012ba03a6d4ebcd11d"
+  },
+  "qualification": "FOUR_PE_SECTIONS_REVERIFIED_NOT_FULL_EXE",
+  "schema": "stoneage.world37.r2b.compiled_capture_requirement_index.r1",
+  "summary": {
+    "alternate_only_ids": [
+      20247,
+      20253,
+      20259
+    ],
+    "alternate_present": 12,
+    "selected_present": 9
+  },
+  "version_scope": "PRESERVED_LATER_COMMUNITY_MIXED25_NOT_TW1_OFFICIAL_OR_1999_JSS"
+}

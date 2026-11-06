@@ -1963,3 +1963,8 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-06 — WORLD37-R2A：原混合2.5编译捕捉成功尾段静态证据
 
 重新核实已保存的361255180B混合2.5 RAR整SHA，libarchive完整长度输出仍存在CRC及整SHA错误，未将其冒作合格EXE；但四个PE实际装载段SHA与此前独立UnRAR合格原程序的段摘要全部相同。原机器码静态核准：捕宠成功分支内宠物创建后存在条件道具处理、角色整数键44读取/加一/回写、战斗退出入口；退出路径存在清席位及野怪类型2角色释放调用。**仅证明受源限定的代码可达结构，未执行这些尾段、扣物、计数或角色池释放。** 详见[WORLD37-R2A连续性记录](docs/continuity/STONEAGE-STAGE-A-WORLD37-R2A-ORIGINAL-CAPTURE-TAIL-STATIC-20261106.md)、[派生收据](research/recovered/STONEAGE-STAGE-A-WORLD37-R2A-ORIGINAL-COMPILED-CAPTURE-TAIL-STATIC-R1.json)。最高条件性NEXT WORLD37-R2B：完整合格原GMSV和隔离x86回放环境可得时验证原指令实际写入，否则切换可读取原来源模块；Stage A 7PARTIAL+2OPEN，Stage B/wiki GATED，R79暂停，完成率未知；历史CURRENT完整原样保留。
+
+
+## 2026-11-06 — WORLD37-R2B：同包原编译捕捉条件表与两张物品主表实际联接
+
+在前轮WORLD37-R2A静态尾段基础上，重新直接核存混合2.5原RAR全SHA及原服务端可用四PE段SHA；从 `.data` 0x58CD60 完整逐记录解出128×64字节编译初始条件表：11条非零、117条零、13道具引用/12不同ID；原原型函数直接读取角色整数键53并存在条件物品检查/删除静态调用。重新从同包解得两份原始94列物品表完整SHA/行SHA，配置选中的 `itemset.txt` 有9个相关ID，另存 `itemset0710.txt` 有全部12个；20247/20253/20259三种魔法鑽戒只在另存表。重复2236两个关系和1105对应三ID全保留。此为**编译数据和物品内容实际来源联接**，不称捕捉成功/物品实际扣除或三钻戒已在选中表部署；当前解压的GMSV整CRC/SHA仍不合格，WORLD37动态尾段仍OPEN。详见[WORLD37-R2B记录](docs/continuity/STONEAGE-STAGE-A-WORLD37-R2B-CAPTURE-REQUIRED-ITEM-CROSSWALK-20261106.md)、[公开逐行派生收据](research/recovered/STONEAGE-STAGE-A-WORLD37-R2B-COMPILED-CAPTURE-REQUIRED-ITEMS-R1.json)。全部历史 CURRENT Git blob原样保留，Stage A 7PARTIAL+2OPEN、B/wiki GATED、R79暂停、percent=null。NEXT WORLD37-R2C 仅有合格完整EXE/模拟环境才做原指令动态实测，缺源转原内容模块。
