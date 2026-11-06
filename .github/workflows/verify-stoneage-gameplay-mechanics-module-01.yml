@@ -58,6 +58,8 @@ on:
       - 'tests/test_stoneage_stage_a_world33_battle_item_gate_source.py'
       - 'research/recovered/STONEAGE-STAGE-A-WORLD34-FIELD-ITEM-BRIDGE-R1.json'
       - 'tests/test_stoneage_stage_a_world34_field_item_bridge.py'
+      - 'research/recovered/STONEAGE-STAGE-A-WORLD34-ORIGINAL-FIELD-PATH-SOURCE-R1.json'
+      - 'tests/test_stoneage_stage_a_world34_original_field_source.py'
       - '.github/workflows/verify-stoneage-gameplay-mechanics-module-01.yml'
   pull_request:
     paths:
@@ -114,6 +116,8 @@ on:
       - 'tests/test_stoneage_stage_a_world33_battle_item_gate_source.py'
       - 'research/recovered/STONEAGE-STAGE-A-WORLD34-FIELD-ITEM-BRIDGE-R1.json'
       - 'tests/test_stoneage_stage_a_world34_field_item_bridge.py'
+      - 'research/recovered/STONEAGE-STAGE-A-WORLD34-ORIGINAL-FIELD-PATH-SOURCE-R1.json'
+      - 'tests/test_stoneage_stage_a_world34_original_field_source.py'
       - '.github/workflows/verify-stoneage-gameplay-mechanics-module-01.yml'
   workflow_dispatch:
 jobs:
@@ -148,3 +152,4 @@ jobs:
       - run: python -m unittest -v tests.test_stoneage_stage_a_world32_battle_recovery_source
       - run: python -m unittest -v tests.test_stoneage_stage_a_world33_battle_item_gate_source
       - run: python -m unittest -v tests.test_stoneage_stage_a_world34_field_item_bridge
+      - run: python -m unittest -v tests.test_stoneage_stage_a_world34_original_field_source
