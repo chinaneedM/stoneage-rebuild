@@ -1,0 +1,22 @@
+name: Verify source-bounded original compiled capture tail WORLD37-R2A
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-WORLD37-R2A-ORIGINAL-COMPILED-CAPTURE-TAIL-STATIC-R1.json'
+      - 'tests/test_stoneage_stage_a_world37_r2a_compiled_capture_tail_static.py'
+      - '.github/workflows/verify-stoneage-stage-a-world37-r2a-static.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-WORLD37-R2A-ORIGINAL-COMPILED-CAPTURE-TAIL-STATIC-R1.json'
+      - 'tests/test_stoneage_stage_a_world37_r2a_compiled_capture_tail_static.py'
+      - '.github/workflows/verify-stoneage-stage-a-world37-r2a-static.yml'
+jobs:
+  world37-r2a-static:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate original-code receipt and negative evidence boundaries
+        run: python -m unittest -v tests.test_stoneage_stage_a_world37_r2a_compiled_capture_tail_static

@@ -1,0 +1,154 @@
+{
+  "schema": "stoneage.world37.r2a.mixed25_original_compiled_capture_tail_static.r1",
+  "source_scope": "LATER_COMMUNITY_PRESERVED_MIXED25_PE_FILE_BACKED_SECTIONS_NOT_TW1_OFFICIAL",
+  "original_archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "expected_original_gmsv_member_sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00",
+  "expected_original_gmsv_member_size": 1897867,
+  "local_libarchive_block_recovery": {
+    "bytes": 1897867,
+    "sha256": "e61c417b18f939a22d25b800240f1d2d0f889a78024a8657e06502ff0ccdff0f",
+    "complete_original_member_verified": false,
+    "error": "File CRC error after block output; full SHA mismatch; never use for full-program execution claims"
+  },
+  "source_qualification": {
+    "four_file_backed_section_sha256_equal_previously_independently_verified_WORLD34_R2_R3": {
+      ".text": "2a42c0ce1951b0963898e2a5c95be920b8eb3b42bf329b012ba03a6d4ebcd11d",
+      ".data": "f30026ba6ed6212b59cdf580fed718610c70af47f03c6d41ac65f35fc5a5ae95",
+      ".rdata": "c2740af5992a885b4d4ba14c988525ff7fa3b3329e973d87d628a28d6b5c0611",
+      ".idata": "4838a3158456bd0a8eee76a8a666fa67222d5e3b432a87f50906f0b2c64ae0d4"
+    },
+    "matched_previous_WORLD36_capture_code_windows": true,
+    "qualification_limited_to_file_backed_sections": true,
+    "original_full_exe_crc_or_sha_qualified_in_this_session": false
+  },
+  "original_x86_static_windows": [
+    {
+      "name": "capture_caller",
+      "start_va": 5430859,
+      "end_va": 5430933,
+      "length": 74,
+      "sha256": "6620cf24e5a62cf88c1912eda560e0e640683803e1744e00ed1ea38ac4318551"
+    },
+    {
+      "name": "capture_success_gate",
+      "start_va": 5472751,
+      "end_va": 5472770,
+      "length": 19,
+      "sha256": "0e18ca7dd2395473890def251cc8118b684f3ada334a44210c87485fe619a68c"
+    },
+    {
+      "name": "capture_creation",
+      "start_va": 5473219,
+      "end_va": 5473265,
+      "length": 46,
+      "sha256": "c1808b01aa5cbb9898cbeb547ab77f6a48b537dd6e1a2b6d3cec900b358b5255"
+    },
+    {
+      "name": "capture_success_tail",
+      "start_va": 5473633,
+      "end_va": 5473800,
+      "length": 167,
+      "sha256": "6085f89427b26405dcbc44ad913593599c9ea6db192ae4fc5cdd727cb7757d4b"
+    },
+    {
+      "name": "capture_required_item_delete",
+      "start_va": 5471824,
+      "end_va": 5472478,
+      "length": 654,
+      "sha256": "e308f7834f8b7d4e583b3fb21d81813a31c393d4eeb469a8554e349f2146be63"
+    },
+    {
+      "name": "battle_exit_enemy_cleanup",
+      "start_va": 5344884,
+      "end_va": 5345593,
+      "length": 709,
+      "sha256": "c207722cc108dcf14edbb7d696a5c57ff5957a63587f02a7a0d1605b41a679c1"
+    }
+  ],
+  "original_x86_direct_calls": [
+    {
+      "name": "capture_caller",
+      "source_va": 5430922,
+      "direct_target_va": 5472480,
+      "five_byte_call_sha256": "a47883534fe4b15d6359e02325f061bce79acb42c72735d1a4a5956f995c0aa7"
+    },
+    {
+      "name": "pet_create",
+      "source_va": 5473238,
+      "direct_target_va": 4623840,
+      "five_byte_call_sha256": "7e171fd7e4d7c6998e4856e15dd49cf841e2b9ccb03b261398be54fe9aeaf69e"
+    },
+    {
+      "name": "required_item_delete",
+      "source_va": 5473657,
+      "direct_target_va": 5471824,
+      "five_byte_call_sha256": "41a8e0874ec9a12ea8d63433c1a089f08d103bd2a9c6ae8bf69027ed783abb68"
+    },
+    {
+      "name": "capture_count_get",
+      "source_va": 5473675,
+      "direct_target_va": 4381584,
+      "five_byte_call_sha256": "073f94638bd15a21f5b46e80a304bf62b7fdbc4068264aec3b0a69bc5ce958a9"
+    },
+    {
+      "name": "capture_count_set",
+      "source_va": 5473720,
+      "direct_target_va": 4381936,
+      "five_byte_call_sha256": "ea3a69372a1e28433abddea280800df7e2649b8cb152b67961dceaf77a6e554d"
+    },
+    {
+      "name": "battle_exit",
+      "source_va": 5473763,
+      "direct_target_va": 5344032,
+      "five_byte_call_sha256": "496f8bb39aff641e042c8e8ccb1c38c8e01395402a023e9a588505678558e2aa"
+    },
+    {
+      "name": "inventory_delete_inside_helper",
+      "source_va": 5472409,
+      "direct_target_va": 4405936,
+      "five_byte_call_sha256": "43b05732ca67c5bf9add79393b9dc9cb8bee258ad07a655eea5c5e3637abb80e"
+    },
+    {
+      "name": "enemy_release_branch",
+      "source_va": 5345588,
+      "direct_target_va": 4389472,
+      "five_byte_call_sha256": "01087a20def6d125a3647da6bc2128dca97c6aaaedf079226919100d2ba3bc7b"
+    }
+  ],
+  "static_control_flow": {
+    "success_gate_source_va": 5472758,
+    "success_target_va": 5473219,
+    "pet_create_call_va": 5473238,
+    "pet_create_failure_test_va": 5473249,
+    "failure_route_va": 5472764,
+    "on_success_item_helper_va": 5471824,
+    "item_helper_contains_inventory_delete_call_va": 5472409,
+    "counter_original_int_key": 44,
+    "counter_read_call_va": 5473675,
+    "counter_inc_va": 5473680,
+    "counter_write_call_va": 5473720,
+    "exit_call_va": 5473763,
+    "exit_battle_slot_clear_va": 5344884,
+    "enemy_type_original_int_key": 54,
+    "enemy_type_equal_to": 2,
+    "exit_type_test_va": 5344997,
+    "exit_enemy_role_release_call_va": 5345588
+  },
+  "evidence_boundaries": {
+    "native_tail_dynamic_execution_performed": false,
+    "original_character_pool_cleanup_observed": false,
+    "original_inventory_item_consumption_observed": false,
+    "original_capture_counter_value_change_observed": false,
+    "all_required_item_table_values_verified_in_compiled_build": false,
+    "same_build_TW1_or_JSS1999_official_server_proven": false,
+    "COFF_suffix_entirely_verified": false,
+    "already_completed_WORLD36_dynamic_roster_replay_not_repeated_or_replaced": true,
+    "historical_CURRENT_STATE_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "Stage_A": "7_PARTIAL_2_OPEN",
+    "Stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "outcome": "SOURCE_QUALIFIED_STATIC_TAIL_CALL_CHAIN_ONLY",
+  "next": "WORLD37_R2B_original_qualified_complete_GMSV_and_bounded_dynamic_tail_replay; otherwise rotate to original source-ready content"
+}
