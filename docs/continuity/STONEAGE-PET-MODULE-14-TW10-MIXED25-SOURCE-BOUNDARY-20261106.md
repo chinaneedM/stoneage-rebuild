@@ -33,3 +33,7 @@
 所有源数字交集为**静态候选**。PET07台湾1.0原SPR/RD图号无法单凭同号/外观证明混合2.5表的名字、属性、技能就是台湾1.0官方数据或与其同服；PETFLG=1不能证明可捕获，成长/技能原生算法与捕捉成功都未执行。这一批不是原版游戏可玩性闭合。
 
 目前 PET07/PET10 已可用源的此批跨表内容有界闭合，**PET-MODULE-01 SOURCE_BOUNDED_PARTIAL**。PET12台湾8.5六原捕捉候选余下1,568个RD实际原像素，须同包 `real_158.bin` 原载荷可重新合法读取后才动手；WORLD37-R2C原编译捕捉尾段必须完整 SHA/CRC 合格GMSV和隔离x86实验环境，均保持条件OPEN。不展开重复纯索引或私服账号。下一任务按模块总队列检查现存ITEM-EQUIPMENT-SHOP-MODULE-02等来源就绪内容，PET源一旦有实物到位再分源增量重开。Stage A仍7 PARTIAL+2 OPEN，Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、overall_percent=null。
+
+## 2026-11-06 远端验收原始失败及修正（保留全部历史）
+
+本批初次候选提交 `dd5733f13c7ed9a43e7049535e37fab5f2d479b8` 的既有 PET08 综合工作流 [run 42240466125](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42240466125) **failure**，21个测试中20通过、PET14 exact replay失败。原因是公开Python派生器先通过 `defaultdict(list)` 查询缺失图号，导致备用表的空缺键 `100454` 被初始化成空列表，随后用 `set(dict)` 误当真实存在；JSON、原源及私人图像未变，更不能据错误输出宣称该源有记录。修复提交 `3f954e373147a9d76fb2460f9c9947070770d727` 改为显式 `if not indices[table][key]` 判空，保留原来完整不匹配的负证。再次运行的 [run 42240568631](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42240568631) `completed/success`，PET08/09/10/14原派生同仓总计21项成功。两次CI与修复提交均保留，未把首次失败涂改为成功。旧CURRENT 2,709,173B 全Git blob `c89e0e33537990aa2132b47c40fef49a985a935c` 仍完全原样保留。
