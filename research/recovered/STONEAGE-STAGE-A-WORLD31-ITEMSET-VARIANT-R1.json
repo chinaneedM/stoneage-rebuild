@@ -1,0 +1,227 @@
+{
+  "schema": "stoneage.world31.itemset_variant.r1",
+  "scope": "PRIVATE_ITEM01_ORIGINAL_DERIVED_CATALOG_CROSS_TABLE_STATIC_REPLAY",
+  "source_private_zip_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+  "source_private_catalog_member_sha256": "0438c4fc9bf945223d46c24e9d374de436f2ac981c23fa282776281c2e772e60",
+  "parent_original_mixed25_archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "source_itemsets": {
+    "itemset.txt": {
+      "original_member_sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+      "original_member_size": 3392473
+    },
+    "itemset0710.txt": {
+      "original_member_sha256": "6d6d63fda59c6bda2f239fe18c9361b5c9da18c84f678b7cc95bde24544292fb",
+      "original_member_size": 3668487
+    }
+  },
+  "configured_itemset_from_world31_setup_cf": "itemset.txt",
+  "callback_function_column_zero_based": 10,
+  "callback_option_column_zero_based": 3,
+  "item_id_column_zero_based": 16,
+  "source_field_count": 94,
+  "tables": {
+    "itemset.txt": {
+      "callback_rows": 644,
+      "shape_counts": {
+        "HP": 389,
+        "HP_MP": 48,
+        "MP": 147,
+        "OTHER": 60
+      },
+      "ids_sha256": "59991847d7329d4c4d630c477c989b736aeabf293ef5d263477cbc3a29f097db"
+    },
+    "itemset0710.txt": {
+      "callback_rows": 663,
+      "shape_counts": {
+        "HP": 395,
+        "HP_MP": 48,
+        "MP": 149,
+        "OTHER": 71
+      },
+      "ids_sha256": "20ef5c90868f4f4f7721be820b9e36cabcf261612907a7298813903fe28751a9"
+    }
+  },
+  "shared_callback_ids": 644,
+  "shared_changed_94_field_rows": 0,
+  "configured_only_callback_ids": [],
+  "alternate_only_callback_rows": [
+    {
+      "id": 1596,
+      "source_row_1based": 1597,
+      "source_row_sha256_from_item01_catalog": "18db41bec26d542e10f978dc231d8cbf3f863c93c0e54c1edbd48eb350857a6e",
+      "raw_option_sha256_cp950": "00c401dff1fd4722db19fee19e27d6a888166e871835bc295e4c4cdf4d67065d",
+      "option_shape": "MP",
+      "scene_raw": "0",
+      "target_raw": "2"
+    },
+    {
+      "id": 1597,
+      "source_row_1based": 1598,
+      "source_row_sha256_from_item01_catalog": "f9e9eedac9b7926767bcef21a08b6690c16ae9a11bdbb6c25f0086fb794ef7f6",
+      "raw_option_sha256_cp950": "3678fe267a148a1b7d118b9f0afcb119870bfa66aeac858f15ad2da1eeca3735",
+      "option_shape": "MP",
+      "scene_raw": "0",
+      "target_raw": "2"
+    },
+    {
+      "id": 1732,
+      "source_row_1based": 1729,
+      "source_row_sha256_from_item01_catalog": "24e05036ba1ca56c6eec8f237095d86bf7378a053568ce073713d2cae8f3b86a",
+      "raw_option_sha256_cp950": "17a696ee4b473fd9e323c6e454917ccb20dea0235ab834aa7b01935dbdb297d0",
+      "option_shape": "HP",
+      "scene_raw": "0",
+      "target_raw": "1"
+    },
+    {
+      "id": 1733,
+      "source_row_1based": 1730,
+      "source_row_sha256_from_item01_catalog": "9384edb90a6cbb98d7774adea668a05e7cbb006884978240512d3ae6fb9c9502",
+      "raw_option_sha256_cp950": "32e3656e41ba68d3703e3cb7268cc27d56fc0a80bf459bf4f9f3155389f4cccd",
+      "option_shape": "HP",
+      "scene_raw": "0",
+      "target_raw": "1"
+    },
+    {
+      "id": 1734,
+      "source_row_1based": 1731,
+      "source_row_sha256_from_item01_catalog": "8b8ac8ddfacced0b03f4ad1a5c4fcddc3080572a0703787a9c066e93e4004e49",
+      "raw_option_sha256_cp950": "ca1f6135a4447698353111e83bef072bbce0b15779a182a05a323eebb67e8dc7",
+      "option_shape": "HP",
+      "scene_raw": "0",
+      "target_raw": "1"
+    },
+    {
+      "id": 1735,
+      "source_row_1based": 1732,
+      "source_row_sha256_from_item01_catalog": "b8580d29617b3bf02fa77b274883cd7c03164a5f98e8f23fc2aee9ee924359db",
+      "raw_option_sha256_cp950": "321dcfb7aa92620dea9b7865774a411bc8930b921e703c4c3e93dbb9760ec55b",
+      "option_shape": "HP",
+      "scene_raw": "0",
+      "target_raw": "1"
+    },
+    {
+      "id": 1736,
+      "source_row_1based": 1733,
+      "source_row_sha256_from_item01_catalog": "769fa7fc368991c63ae131cf9472cd5444e03d05e4dabfd724e436d9498d5acd",
+      "raw_option_sha256_cp950": "e9c6736e2fe2bd9033cb3e717b6b210dded8943ee9c0894aad47ffb3808a458c",
+      "option_shape": "HP",
+      "scene_raw": "0",
+      "target_raw": "1"
+    },
+    {
+      "id": 1737,
+      "source_row_1based": 1734,
+      "source_row_sha256_from_item01_catalog": "6b3a7a90d91082de21399e89b9591785f0ff400b87c958c2a1e632ff97dc9280",
+      "raw_option_sha256_cp950": "08f4608d9a111a253f9c110de4b9a6d4288dee494894b4dcc77768142682ca6c",
+      "option_shape": "HP",
+      "scene_raw": "0",
+      "target_raw": "1"
+    },
+    {
+      "id": 1757,
+      "source_row_1based": 1754,
+      "source_row_sha256_from_item01_catalog": "450af7dec074218c6d3809bd89613a3580b3ea9db5e5b4b84f3c4e382cefd3b0",
+      "raw_option_sha256_cp950": "72e30c71863bce4faf4ff376b0d40fff0c5353a29150baf02b93ba2e5c7ea50b",
+      "option_shape": "OTHER",
+      "scene_raw": "2",
+      "target_raw": "1"
+    },
+    {
+      "id": 1758,
+      "source_row_1based": 1755,
+      "source_row_sha256_from_item01_catalog": "c199e5fadab4e8d1e7b76e7eda4796620e58453ba792873a61f3ccef98f98de5",
+      "raw_option_sha256_cp950": "b15a3ed2435031fc1dc416cf326327cab4ac8ad254919537e8a8c5501b50be46",
+      "option_shape": "OTHER",
+      "scene_raw": "0",
+      "target_raw": "1"
+    },
+    {
+      "id": 2186,
+      "source_row_1based": 2183,
+      "source_row_sha256_from_item01_catalog": "cdcc2429669161deaa57988cde6a0d660a72b6e25c8b4f0348ad6da74408e6eb",
+      "raw_option_sha256_cp950": "c40ee5e06db0bbb25af00ad1a8c6ad6c6cd132098928ddce702b0bb785e8addd",
+      "option_shape": "OTHER",
+      "scene_raw": "2",
+      "target_raw": "1"
+    },
+    {
+      "id": 2187,
+      "source_row_1based": 2184,
+      "source_row_sha256_from_item01_catalog": "714b249cdfcdcd94b01dd819c3f1d3843dff0f1ce23306ac2394500540c34bb9",
+      "raw_option_sha256_cp950": "1df3cb4962c707e456d6c471bf52b06cf616f424b478ced6c04c0edfbfd4b13e",
+      "option_shape": "OTHER",
+      "scene_raw": "0",
+      "target_raw": "1"
+    },
+    {
+      "id": 19545,
+      "source_row_1based": 12842,
+      "source_row_sha256_from_item01_catalog": "acc83a1ac883cc476b77e9a8b9c79ad55d36ed464b7c20a93de78e3dc9a0aac8",
+      "raw_option_sha256_cp950": "dffef69b3083e8a496ef4e198509ed2e7fa93df62a6ca2915c0d4e3f56b5f9ac",
+      "option_shape": "OTHER",
+      "scene_raw": "2",
+      "target_raw": "1"
+    },
+    {
+      "id": 19546,
+      "source_row_1based": 12843,
+      "source_row_sha256_from_item01_catalog": "659c70af4d8fcf52c9b6b07701e05e7d3ce851a6fa473bded29922077288d99d",
+      "raw_option_sha256_cp950": "607c17abfe64d523c9bdd70b8a06036b13b777d986bb96c6fc7ced47e399aa0b",
+      "option_shape": "OTHER",
+      "scene_raw": "2",
+      "target_raw": "1"
+    },
+    {
+      "id": 19547,
+      "source_row_1based": 12844,
+      "source_row_sha256_from_item01_catalog": "761b191f2329f7bb4ae56286a3315ccad1a166e6c7ff63e2af72e9c446afc84d",
+      "raw_option_sha256_cp950": "ac56efc016e439f2724f15fa07b72b271cf1b65140591edc2c39f2d637d8ba1f",
+      "option_shape": "OTHER",
+      "scene_raw": "2",
+      "target_raw": "1"
+    },
+    {
+      "id": 19548,
+      "source_row_1based": 12845,
+      "source_row_sha256_from_item01_catalog": "cb6118dcd06671f66d92cb3c1c6f3cccd3ac279989fc08c4c55aadb9cc075ebd",
+      "raw_option_sha256_cp950": "9132b6340952b26b0b7f8cd4213e16531f1940d7803b8fe4437835231ef05abc",
+      "option_shape": "OTHER",
+      "scene_raw": "2",
+      "target_raw": "1"
+    },
+    {
+      "id": 20247,
+      "source_row_1based": 13297,
+      "source_row_sha256_from_item01_catalog": "42e6b49a604f919c1e7fbe221164fa7a5d07962ba1b3c93a7f06278de9181d72",
+      "raw_option_sha256_cp950": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "option_shape": "OTHER",
+      "scene_raw": "0",
+      "target_raw": "0"
+    },
+    {
+      "id": 20253,
+      "source_row_1based": 13303,
+      "source_row_sha256_from_item01_catalog": "486325160f97e588b1da116f64d87d28157b32a4d1ba644c252d8cf43c941bf3",
+      "raw_option_sha256_cp950": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "option_shape": "OTHER",
+      "scene_raw": "0",
+      "target_raw": "0"
+    },
+    {
+      "id": 20259,
+      "source_row_1based": 13309,
+      "source_row_sha256_from_item01_catalog": "1c19496879a0de3dbf08f97ae502fcbab9cd214a8a5d08efcf9ceeac04b5030a",
+      "raw_option_sha256_cp950": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "option_shape": "OTHER",
+      "scene_raw": "0",
+      "target_raw": "0"
+    }
+  ],
+  "interpretation": "19 additional static callback rows in a nonconfigured candidate itemset, not 19 additional deployed usable items",
+  "source_original_executable_replayed_in_this_package": false,
+  "world32_combat_settlement_verified": false,
+  "source_same_deployment_or_official_version_proven": false,
+  "original_server_started": false,
+  "original_items_used_in_game": false
+}
+
