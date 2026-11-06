@@ -61,4 +61,6 @@ jobs:
         run: python -m unittest -v tests.test_stoneage_pet_module_12_tw85_capture_spr_rd_bridge
 
       - name: Crosscheck 11 original capture candidate numeric stats and same-source skill definitions
-        run: python tools/stoneage_pet13_capture_template_stats_skills.py --emit-json
+        run: python tools/stoneage_pet13_capture_template_stats_skills.py --check research/recovered/STONEAGE-PET-MODULE-13-ORIGINAL-CAPTURE-TEMPLATE-ATTRIBUTES-SKILLS-R1.json
+      - name: Verify 11 capture key source stats and 25 skill refs never promote runtime/official status
+        run: python -m unittest -v tests.test_stoneage_pet_module_13_capture_template_stats_skills

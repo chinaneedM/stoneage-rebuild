@@ -1,0 +1,649 @@
+{
+  "bounds": {
+    "TW85_original_RD_pixels_from_this_server_table": false,
+    "mixed25_template_names_or_stats_are_original_TW10_TW85_CN50_server_values": false,
+    "native_game_runtime_key53_is_enemybase_column7_proven": false,
+    "original_capture_success_sourced_now": false,
+    "original_proprietary_CP950_text_table_published": false,
+    "original_server_executed_this_turn": false,
+    "original_stat_growth_and_pet_skill_runtime_formula_verified_here": false,
+    "overall_percent": null,
+    "r79": "PAUSED_NON_BLOCKING",
+    "same_compiled_capture_conditions_present_in_TW10_official": false,
+    "same_numeric_graphic_confirms_same_pet_species_across_versions": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED"
+  },
+  "original_same_archive_member_sha256": {
+    "enemybase.txt": "1be7d5226798f7abaabe1f1e74aa1533fcd10e3eaf43f6497d63afa91df3e8b7",
+    "petskill.txt": "f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4"
+  },
+  "original_scope": "MIXED25_PRESERVED_COMMUNITY_SERVER_STATIC_NOT_AN_OFFICIAL_SAME_BUILD_GAME_RUN",
+  "same_source_original_petskill_short_labels_private_verified": [
+    {
+      "skill_id": 1,
+      "source_original_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+      "source_short_name": "攻擊"
+    },
+    {
+      "skill_id": 2,
+      "source_original_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+      "source_short_name": "防禦"
+    },
+    {
+      "skill_id": 60,
+      "source_original_row_sha256": "3e16e914b6295fb79edf9e9b37a6b10c37089c198cba22a4d52430019182cac6",
+      "source_short_name": "毒攻擊"
+    },
+    {
+      "skill_id": 90,
+      "source_original_row_sha256": "549294531250d92e2f17aaacced02068dde9b381a3cf6aaf6d9ec924b92edd14",
+      "source_short_name": "混亂攻擊"
+    },
+    {
+      "skill_id": 110,
+      "source_original_row_sha256": "299e2df5d1043bc2cb1055b9cfdc16729f2954b1785b244231852909845638a7",
+      "source_short_name": "催眠攻擊"
+    }
+  ],
+  "schema": "stoneage.pet13.eleven_compiled_capture_key_to_same_original_enemybase_template_and_petskill.r1",
+  "source_archive_full_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "source_git_blobs": {
+    "PET10": "25a37aeb134fb180e322e7dc335029b7374452d8",
+    "WORLD37_R2B3": "0e80e5a62dd59542c3e1ede18460d92e17927a30"
+  },
+  "source_numeric_field_mapping": "PET10 full original 56 source fields physical column7 ID, 8 INITNUM, 9 LVUP, 10-13 base, 16-19 attributes, 26-32 seven nullable skill slots, 36 slot, 37 graphic, 38 PETFLG",
+  "summary": {
+    "PETFLG_0_count": 1,
+    "PETFLG_1_count": 10,
+    "all_literal_level_up_words": "4.50",
+    "all_skill_references_defined_in_same_source_master": true,
+    "compiled_candidate_rows": 11,
+    "compiled_capture_required_item_references": 13,
+    "distinct_capture_required_item_IDs": 12,
+    "distinct_original_graphic_numbers": 11,
+    "distinct_positive_source_skill_IDs": 5,
+    "distinct_template_IDs": 11,
+    "positive_original_skill_slot_occurrences": 25
+  },
+  "templates": [
+    {
+      "capture_required_item_IDs": [
+        2456
+      ],
+      "compiled_capture_key53": 524,
+      "mixed25_configured_original_name": "卡特利奴",
+      "original_56_column_normalized_sha256": "8f4357d1a7c295b219bbcc45f0530a74de0a42f10d12f685557080ab47becc9e",
+      "original_PETFLG": 1,
+      "original_actual_capturable_pets_species_verified": false,
+      "original_base_stats_literal": {
+        "dexterity": "30",
+        "strength": "29",
+        "toughness": "12",
+        "vital": "19"
+      },
+      "original_compiled_runtime_key_to_template_loader_verified": false,
+      "original_earth_water_fire_wind_literals": {
+        "earth": "0",
+        "fire": "80",
+        "water": "0",
+        "wind": "20"
+      },
+      "original_graphic_numeric_ID": 100329,
+      "original_initnum_literal": "21",
+      "original_lvup_literal": "4.50",
+      "original_physical_line_including_newline_sha256": "651e9aae655e2d68405b8b3cfb7f553e7b61f9c0133bb997026ffd3e93e55f55",
+      "original_server_template_physical_row": 346,
+      "original_seven_skill_slots_nullable": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "original_slot_literal": 5,
+      "original_template_numeric_ID": 524,
+      "same_archive_original_skill_links": [
+        {
+          "original_skill_definition_physical_line": 2,
+          "original_skill_normalized_full_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+          "source_pet_skill_id": 1
+        },
+        {
+          "original_skill_definition_physical_line": 3,
+          "original_skill_normalized_full_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+          "source_pet_skill_id": 2
+        }
+      ]
+    },
+    {
+      "capture_required_item_IDs": [
+        20219
+      ],
+      "compiled_capture_key53": 961,
+      "mixed25_configured_original_name": "艾蜜",
+      "original_56_column_normalized_sha256": "3bd53c7fc9d149e99a4a9ab104c1a38b7a0fb969f552f3520ec701c8d5bb3e5c",
+      "original_PETFLG": 1,
+      "original_actual_capturable_pets_species_verified": false,
+      "original_base_stats_literal": {
+        "dexterity": "28",
+        "strength": "23",
+        "toughness": "24",
+        "vital": "23"
+      },
+      "original_compiled_runtime_key_to_template_loader_verified": false,
+      "original_earth_water_fire_wind_literals": {
+        "earth": "0",
+        "fire": "30",
+        "water": "0",
+        "wind": "70"
+      },
+      "original_graphic_numeric_ID": 101280,
+      "original_initnum_literal": "25",
+      "original_lvup_literal": "4.50",
+      "original_physical_line_including_newline_sha256": "58686c0e2c2bd3fa43e66af1a5b4281941b1b8f0c46c620d3a50dadd0821794e",
+      "original_server_template_physical_row": 759,
+      "original_seven_skill_slots_nullable": [
+        1,
+        2,
+        90,
+        null,
+        null,
+        null,
+        null
+      ],
+      "original_slot_literal": 5,
+      "original_template_numeric_ID": 961,
+      "same_archive_original_skill_links": [
+        {
+          "original_skill_definition_physical_line": 2,
+          "original_skill_normalized_full_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+          "source_pet_skill_id": 1
+        },
+        {
+          "original_skill_definition_physical_line": 3,
+          "original_skill_normalized_full_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+          "source_pet_skill_id": 2
+        },
+        {
+          "original_skill_definition_physical_line": 20,
+          "original_skill_normalized_full_row_sha256": "549294531250d92e2f17aaacced02068dde9b381a3cf6aaf6d9ec924b92edd14",
+          "source_pet_skill_id": 90
+        }
+      ]
+    },
+    {
+      "capture_required_item_IDs": [
+        20223
+      ],
+      "compiled_capture_key53": 953,
+      "mixed25_configured_original_name": "雷誅",
+      "original_56_column_normalized_sha256": "0a1b6389975b88a15725b4d765149f4b09f6ebf424ca2eece315f9cb40fdd2ab",
+      "original_PETFLG": 1,
+      "original_actual_capturable_pets_species_verified": false,
+      "original_base_stats_literal": {
+        "dexterity": "13",
+        "strength": "21",
+        "toughness": "16",
+        "vital": "44"
+      },
+      "original_compiled_runtime_key_to_template_loader_verified": false,
+      "original_earth_water_fire_wind_literals": {
+        "earth": "70",
+        "fire": "0",
+        "water": "30",
+        "wind": "0"
+      },
+      "original_graphic_numeric_ID": 101281,
+      "original_initnum_literal": "22",
+      "original_lvup_literal": "4.50",
+      "original_physical_line_including_newline_sha256": "1bd472388508cbe0cc2f4e5d5fde2555bc5cc99f236246b5088de8970379d070",
+      "original_server_template_physical_row": 751,
+      "original_seven_skill_slots_nullable": [
+        1,
+        2,
+        110,
+        null,
+        null,
+        null,
+        null
+      ],
+      "original_slot_literal": 5,
+      "original_template_numeric_ID": 953,
+      "same_archive_original_skill_links": [
+        {
+          "original_skill_definition_physical_line": 2,
+          "original_skill_normalized_full_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+          "source_pet_skill_id": 1
+        },
+        {
+          "original_skill_definition_physical_line": 3,
+          "original_skill_normalized_full_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+          "source_pet_skill_id": 2
+        },
+        {
+          "original_skill_definition_physical_line": 22,
+          "original_skill_normalized_full_row_sha256": "299e2df5d1043bc2cb1055b9cfdc16729f2954b1785b244231852909845638a7",
+          "source_pet_skill_id": 110
+        }
+      ]
+    },
+    {
+      "capture_required_item_IDs": [
+        20222
+      ],
+      "compiled_capture_key53": 962,
+      "mixed25_configured_original_name": "訐譙龍",
+      "original_56_column_normalized_sha256": "01f3c1cdce4af9624d79b564a52b057ff65af61cd89b22dfcc7309f05fdaac4a",
+      "original_PETFLG": 1,
+      "original_actual_capturable_pets_species_verified": false,
+      "original_base_stats_literal": {
+        "dexterity": "26",
+        "strength": "30",
+        "toughness": "24",
+        "vital": "24"
+      },
+      "original_compiled_runtime_key_to_template_loader_verified": false,
+      "original_earth_water_fire_wind_literals": {
+        "earth": "50",
+        "fire": "0",
+        "water": "50",
+        "wind": "0"
+      },
+      "original_graphic_numeric_ID": 101279,
+      "original_initnum_literal": "24",
+      "original_lvup_literal": "4.50",
+      "original_physical_line_including_newline_sha256": "b648e966b894d1feb79e5fe268218030563ea65dd0cf5ae415e8b4e8446e2f6d",
+      "original_server_template_physical_row": 760,
+      "original_seven_skill_slots_nullable": [
+        1,
+        2,
+        60,
+        null,
+        null,
+        null,
+        null
+      ],
+      "original_slot_literal": 4,
+      "original_template_numeric_ID": 962,
+      "same_archive_original_skill_links": [
+        {
+          "original_skill_definition_physical_line": 2,
+          "original_skill_normalized_full_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+          "source_pet_skill_id": 1
+        },
+        {
+          "original_skill_definition_physical_line": 3,
+          "original_skill_normalized_full_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+          "source_pet_skill_id": 2
+        },
+        {
+          "original_skill_definition_physical_line": 17,
+          "original_skill_normalized_full_row_sha256": "3e16e914b6295fb79edf9e9b37a6b10c37089c198cba22a4d52430019182cac6",
+          "source_pet_skill_id": 60
+        }
+      ]
+    },
+    {
+      "capture_required_item_IDs": [
+        20253
+      ],
+      "compiled_capture_key53": 777,
+      "mixed25_configured_original_name": "佩露夏",
+      "original_56_column_normalized_sha256": "10355387d0d292f3e0b9ac7da8ff591bb689cfab98b5c50a2d40e968ba53618e",
+      "original_PETFLG": 1,
+      "original_actual_capturable_pets_species_verified": false,
+      "original_base_stats_literal": {
+        "dexterity": "29",
+        "strength": "44",
+        "toughness": "20",
+        "vital": "30"
+      },
+      "original_compiled_runtime_key_to_template_loader_verified": false,
+      "original_earth_water_fire_wind_literals": {
+        "earth": "0",
+        "fire": "0",
+        "water": "100",
+        "wind": "0"
+      },
+      "original_graphic_numeric_ID": 100872,
+      "original_initnum_literal": "30",
+      "original_lvup_literal": "4.50",
+      "original_physical_line_including_newline_sha256": "3473ed4cbe4b0f6932fb96bdec92289d290c8e5342a5f44d3deae97d063dc1a9",
+      "original_server_template_physical_row": 576,
+      "original_seven_skill_slots_nullable": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "original_slot_literal": 7,
+      "original_template_numeric_ID": 777,
+      "same_archive_original_skill_links": [
+        {
+          "original_skill_definition_physical_line": 2,
+          "original_skill_normalized_full_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+          "source_pet_skill_id": 1
+        },
+        {
+          "original_skill_definition_physical_line": 3,
+          "original_skill_normalized_full_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+          "source_pet_skill_id": 2
+        }
+      ]
+    },
+    {
+      "capture_required_item_IDs": [
+        20247
+      ],
+      "compiled_capture_key53": 796,
+      "mixed25_configured_original_name": "嘎吱拉",
+      "original_56_column_normalized_sha256": "4db1ffe380c93152b4c9f92976394530ec07d0d305e3b31ce9cbea4b840aa750",
+      "original_PETFLG": 1,
+      "original_actual_capturable_pets_species_verified": false,
+      "original_base_stats_literal": {
+        "dexterity": "13",
+        "strength": "36",
+        "toughness": "42",
+        "vital": "27"
+      },
+      "original_compiled_runtime_key_to_template_loader_verified": false,
+      "original_earth_water_fire_wind_literals": {
+        "earth": "50",
+        "fire": "0",
+        "water": "50",
+        "wind": "0"
+      },
+      "original_graphic_numeric_ID": 100891,
+      "original_initnum_literal": "28",
+      "original_lvup_literal": "4.50",
+      "original_physical_line_including_newline_sha256": "e76f660a4b7fa7080c7e3fa30d533035d5d618ffba9229309fc4414d304fd7e0",
+      "original_server_template_physical_row": 595,
+      "original_seven_skill_slots_nullable": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "original_slot_literal": 4,
+      "original_template_numeric_ID": 796,
+      "same_archive_original_skill_links": [
+        {
+          "original_skill_definition_physical_line": 2,
+          "original_skill_normalized_full_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+          "source_pet_skill_id": 1
+        },
+        {
+          "original_skill_definition_physical_line": 3,
+          "original_skill_normalized_full_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+          "source_pet_skill_id": 2
+        }
+      ]
+    },
+    {
+      "capture_required_item_IDs": [
+        20259
+      ],
+      "compiled_capture_key53": 812,
+      "mixed25_configured_original_name": "斑尼迪克",
+      "original_56_column_normalized_sha256": "c5cb0e0c123207042ad00b2b12313121b2122c7bc52d690387222bea2b24ceea",
+      "original_PETFLG": 1,
+      "original_actual_capturable_pets_species_verified": false,
+      "original_base_stats_literal": {
+        "dexterity": "29",
+        "strength": "48",
+        "toughness": "21",
+        "vital": "26"
+      },
+      "original_compiled_runtime_key_to_template_loader_verified": false,
+      "original_earth_water_fire_wind_literals": {
+        "earth": "0",
+        "fire": "10",
+        "water": "0",
+        "wind": "90"
+      },
+      "original_graphic_numeric_ID": 100907,
+      "original_initnum_literal": "30",
+      "original_lvup_literal": "4.50",
+      "original_physical_line_including_newline_sha256": "b1c01e8f05092b9e58f99e587563fdaa74e6de1f183fbeb751fcfef188b761bb",
+      "original_server_template_physical_row": 611,
+      "original_seven_skill_slots_nullable": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "original_slot_literal": 6,
+      "original_template_numeric_ID": 812,
+      "same_archive_original_skill_links": [
+        {
+          "original_skill_definition_physical_line": 2,
+          "original_skill_normalized_full_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+          "source_pet_skill_id": 1
+        },
+        {
+          "original_skill_definition_physical_line": 3,
+          "original_skill_normalized_full_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+          "source_pet_skill_id": 2
+        }
+      ]
+    },
+    {
+      "capture_required_item_IDs": [
+        1690,
+        1691,
+        1692
+      ],
+      "compiled_capture_key53": 1105,
+      "mixed25_configured_original_name": "夏普德",
+      "original_56_column_normalized_sha256": "e52c781e73b39681cf455b2cb8c2815472edf813f5cde992d559c55ed6cb9fd7",
+      "original_PETFLG": 1,
+      "original_actual_capturable_pets_species_verified": false,
+      "original_base_stats_literal": {
+        "dexterity": "33",
+        "strength": "42",
+        "toughness": "20",
+        "vital": "27"
+      },
+      "original_compiled_runtime_key_to_template_loader_verified": false,
+      "original_earth_water_fire_wind_literals": {
+        "earth": "0",
+        "fire": "60",
+        "water": "0",
+        "wind": "40"
+      },
+      "original_graphic_numeric_ID": 101564,
+      "original_initnum_literal": "19",
+      "original_lvup_literal": "4.50",
+      "original_physical_line_including_newline_sha256": "3c0c1497d11f1d13a724ba393700b1b32ea809720c9e5588d5127a682e7c20ba",
+      "original_server_template_physical_row": 896,
+      "original_seven_skill_slots_nullable": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "original_slot_literal": 6,
+      "original_template_numeric_ID": 1105,
+      "same_archive_original_skill_links": [
+        {
+          "original_skill_definition_physical_line": 2,
+          "original_skill_normalized_full_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+          "source_pet_skill_id": 1
+        },
+        {
+          "original_skill_definition_physical_line": 3,
+          "original_skill_normalized_full_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+          "source_pet_skill_id": 2
+        }
+      ]
+    },
+    {
+      "capture_required_item_IDs": [
+        1810
+      ],
+      "compiled_capture_key53": 8,
+      "mixed25_configured_original_name": "巨大瑪恩摩",
+      "original_56_column_normalized_sha256": "95e342b79cdaaae3f91713c727df5ebd1dc945b1f806e6fb24e53fa329605f07",
+      "original_PETFLG": 0,
+      "original_actual_capturable_pets_species_verified": false,
+      "original_base_stats_literal": {
+        "dexterity": "8",
+        "strength": "25",
+        "toughness": "15",
+        "vital": "50"
+      },
+      "original_compiled_runtime_key_to_template_loader_verified": false,
+      "original_earth_water_fire_wind_literals": {
+        "earth": "90",
+        "fire": "0",
+        "water": "10",
+        "wind": "0"
+      },
+      "original_graphic_numeric_ID": 100355,
+      "original_initnum_literal": "27",
+      "original_lvup_literal": "4.50",
+      "original_physical_line_including_newline_sha256": "09bd7ade4093db8f2ca825082fa239ad38ea43338039206133d2c2f9d361d71d",
+      "original_server_template_physical_row": 8,
+      "original_seven_skill_slots_nullable": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "original_slot_literal": 4,
+      "original_template_numeric_ID": 8,
+      "same_archive_original_skill_links": [
+        {
+          "original_skill_definition_physical_line": 2,
+          "original_skill_normalized_full_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+          "source_pet_skill_id": 1
+        },
+        {
+          "original_skill_definition_physical_line": 3,
+          "original_skill_normalized_full_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+          "source_pet_skill_id": 2
+        }
+      ]
+    },
+    {
+      "capture_required_item_IDs": [
+        2236
+      ],
+      "compiled_capture_key53": 145,
+      "mixed25_configured_original_name": "薩德迪比",
+      "original_56_column_normalized_sha256": "818280e49f7cd6e506e2522274a9e25f190b203bfdc875b7ceecaf331a88f190",
+      "original_PETFLG": 1,
+      "original_actual_capturable_pets_species_verified": false,
+      "original_base_stats_literal": {
+        "dexterity": "35",
+        "strength": "44",
+        "toughness": "26",
+        "vital": "39"
+      },
+      "original_compiled_runtime_key_to_template_loader_verified": false,
+      "original_earth_water_fire_wind_literals": {
+        "earth": "10",
+        "fire": "0",
+        "water": "90",
+        "wind": "0"
+      },
+      "original_graphic_numeric_ID": 101737,
+      "original_initnum_literal": "30",
+      "original_lvup_literal": "4.50",
+      "original_physical_line_including_newline_sha256": "48f844979106cd619f798d1886bf1cb9c036d703a9a022d350ac6dbd913538f8",
+      "original_server_template_physical_row": 145,
+      "original_seven_skill_slots_nullable": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "original_slot_literal": 7,
+      "original_template_numeric_ID": 145,
+      "same_archive_original_skill_links": [
+        {
+          "original_skill_definition_physical_line": 2,
+          "original_skill_normalized_full_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+          "source_pet_skill_id": 1
+        },
+        {
+          "original_skill_definition_physical_line": 3,
+          "original_skill_normalized_full_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+          "source_pet_skill_id": 2
+        }
+      ]
+    },
+    {
+      "capture_required_item_IDs": [
+        2236
+      ],
+      "compiled_capture_key53": 146,
+      "mixed25_configured_original_name": "薩德斯凱",
+      "original_56_column_normalized_sha256": "076eb541436d1183207cd2992bb484c8e3e0a8c8b46e33e01837b742970a30a7",
+      "original_PETFLG": 1,
+      "original_actual_capturable_pets_species_verified": false,
+      "original_base_stats_literal": {
+        "dexterity": "36",
+        "strength": "53",
+        "toughness": "23",
+        "vital": "27"
+      },
+      "original_compiled_runtime_key_to_template_loader_verified": false,
+      "original_earth_water_fire_wind_literals": {
+        "earth": "0",
+        "fire": "90",
+        "water": "0",
+        "wind": "10"
+      },
+      "original_graphic_numeric_ID": 101736,
+      "original_initnum_literal": "30",
+      "original_lvup_literal": "4.50",
+      "original_physical_line_including_newline_sha256": "c82365dabc82297a183ce5c69cb45d95a50e28e0f6d87baacb356972a0989157",
+      "original_server_template_physical_row": 146,
+      "original_seven_skill_slots_nullable": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "original_slot_literal": 7,
+      "original_template_numeric_ID": 146,
+      "same_archive_original_skill_links": [
+        {
+          "original_skill_definition_physical_line": 2,
+          "original_skill_normalized_full_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+          "source_pet_skill_id": 1
+        },
+        {
+          "original_skill_definition_physical_line": 3,
+          "original_skill_normalized_full_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+          "source_pet_skill_id": 2
+        }
+      ]
+    }
+  ]
+}
