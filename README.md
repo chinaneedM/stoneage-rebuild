@@ -2010,3 +2010,8 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-07 — ITEM05–06｜原商店库存对表与 415 幅混合 2.5 原 RD 补图
 
 对照 191 条原 ItemShop 创建引用与 224 份原 ItemList。全库存配置 45 个不同编号只在备表，其中 21 个可追到实际源创建引用，5 个直接列号、16 个为范围候选。从已认证混合 2.5 原 ADRN/REAL 严格解码台湾 1.0 索引原缺的 415 个物品图号，剩余 416 个保留缺口。原 GMSV 完整字节现已重新取回并通过 SHA/CRC，下一优先 WORLD37-R2C 隔离回放。详见[原件、状态与私有观察边界](docs/continuity/STONEAGE-ITEM-MODULE-05-06-MIXED25-SHOPS-AND-RD-20261107.md)。旧完整 CURRENT 原样保留。
+
+
+## 2026-11-07 — WORLD37-R2C｜原捕捉入口及成功尾段的隔离回放
+
+完整混合 2.5 原 GMSV 经整 SHA、CRC 和原 RAR 成员复验后，执行 42 个有界 x86 回放。11 条编译条件全部验证，13 个逐项缺件对照均在评分前失败。成功路径实见条件道具移除、整数键 44 加一、野怪席位清除与角色池释放，新宠物仍在栏内。备表独有三件只验证夹具中的数字匹配。原服务端进程、网络、存档和官方部署仍待对应来源。详见[来源、轨迹和下一优先](docs/continuity/STONEAGE-STAGE-A-WORLD37-R2C-COMPILED-CAPTURE-REPLAY-20261107.md)。旧完整 CURRENT 原样保留。

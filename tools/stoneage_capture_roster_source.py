@@ -77,7 +77,8 @@ def program_data(take):
     return tuple(data), registry, expected
 
 
-def replay(take, slots, used_pool, *, modifier=1, base_score=1.0, serial=41, hp_mp=(1010, 1011), level=1008):
+def replay(take, slots, used_pool, *, modifier=1, base_score=1.0, serial=41, hp_mp=(1010, 1011), level=1008,
+           tail=None):
     from unicorn import Uc, UcError, UC_ARCH_X86, UC_MODE_32, UC_HOOK_CODE, UC_PROT_READ, UC_PROT_WRITE
     from unicorn.x86_const import (
         UC_X86_REG_EAX, UC_X86_REG_EBP, UC_X86_REG_EIP, UC_X86_REG_ESP, UC_X86_REG_FPCW, UC_X86_REG_ESI,
@@ -85,7 +86,13 @@ def replay(take, slots, used_pool, *, modifier=1, base_score=1.0, serial=41, hp_
 
     data, registry, expected_callbacks = program_data(take)
     cpu = Uc(UC_ARCH_X86, UC_MODE_32)
-    map_windows(cpu, take, CODE + data, (*STUBS, FAILURE_END, SUCCESS_END))
+    windows = CODE if tail is None else CODE + tail.code
+    success_end = SUCCESS_END if tail is None else tail.endpoint
+    from_entry = tail is not None and tail.from_entry
+    extra_data = () if tail is None else tail.data
+    stubs = STUBS if tail is None else {**STUBS, **tail.stubs}
+    stops = (success_end,) if from_entry else (FAILURE_END, success_end)
+    map_windows(cpu, take, windows + data + extra_data, (*stubs, *stops))
     for address, size in ((0x569000, 0x1000), (0x588000, 0x1000), (0x5ab000, 0x1000), (0x6c6000, 0x1000),
                           (0x61b000, 0x1000), (0x6bf000, 0x1000), (CHAR_TABLE, 0x1e000), (STACK, 0x7000)):
         cpu.mem_map(address, size, UC_PROT_READ | UC_PROT_WRITE)
@@ -138,6 +145,8 @@ def replay(take, slots, used_pool, *, modifier=1, base_score=1.0, serial=41, hp_
     put(char(WILD) + 4 + 58 * 4, 98765)
     put(char(WILD) + ROSTER_OFFSET, 101, 102, -1, 104, -1, 106, 107)
     cpu.mem_write(char(WILD) + STRINGS_OFFSET, b'SourcePet\0')
+    if tail is not None:
+        tail.initialize(cpu)
     before = snapshot()
 
     calls, events = Counter(), []
@@ -166,9 +175,12 @@ def replay(take, slots, used_pool, *, modifier=1, base_score=1.0, serial=41, hp_
     def format_notice():
         dest, capacity, fmt, slot = args(4)
         template = cstring(fmt)
-        if template not in (b'K%d', b'W%d'):
+        if template in (b'K%d', b'W%d'):
+            payload = template % slot
+        elif from_entry and fmt == 0x5a7fdb and template == b'BT|a%X|r%X|f%X|':
+            payload = template % tuple(value & 0xffffffff for value in args(6)[3:])
+        else:
             raise ValueError('Unexpected pet status format')
-        payload = template % slot
         cpu.mem_write(dest, payload[:capacity - 1] + b'\0')
         return len(payload)
 
@@ -182,7 +194,8 @@ def replay(take, slots, used_pool, *, modifier=1, base_score=1.0, serial=41, hp_
 
     def fixture_time():
         pointer, = args(1)
-        put(pointer, 123456789)
+        if pointer:
+            put(pointer, 123456789)
         return 123456789
 
     def resolve_callback():
@@ -203,15 +216,17 @@ def replay(take, slots, used_pool, *, modifier=1, base_score=1.0, serial=41, hp_
     }
 
     def hook(machine, address, size, _context):
-        if address == SUCCESS_END:
+        if address == success_end:
             machine.emu_stop()
             return
-        if address in STUBS:
-            calls[STUBS[address]] += 1
+        if tail is not None:
+            tail.observe(address)
+        if address in stubs:
+            calls[stubs[address]] += 1
             handler = handlers.get(address)
             machine.reg_write(UC_X86_REG_EAX, handler() if handler else 0)
             return
-        if not any(first <= address and address + size <= end for first, end in CODE):
+        if not any(first <= address and address + size <= end for first, end in windows):
             raise ValueError(f'Capture roster replay left approved windows at {address:#x}')
         if address == 0x468de0:
             events.append(['create', *args(2)])
@@ -243,27 +258,41 @@ def replay(take, slots, used_pool, *, modifier=1, base_score=1.0, serial=41, hp_
             events.append(['owner_string_write', who, key, cstring(source).decode('ascii')])
 
     cpu.hook_add(UC_HOOK_CODE, hook)
-    bp, sp = STACK + 0x6800, STACK + 0x5000
-    cpu.reg_write(UC_X86_REG_EBP, bp)
-    cpu.reg_write(UC_X86_REG_ESP, sp)
+    if tail is not None:
+        tail.probe_requirement()
     cpu.reg_write(UC_X86_REG_FPCW, X87_RESET_CONTROL)
-    put(bp - 0x628, ACTOR)
-    put(bp - 0x62c, WILD)
-    put(bp - 0x630, 1)
-    put(bp - 0x634, -1)
-    cpu.mem_write(bp - 0x688, struct.pack('<f', base_score))
-    put(sp, 0, 0, ACTOR, 32)
+    if from_entry:
+        bp, sp = STACK + 0x6800, STACK + 0x6804
+        entry, end = tail.prepare_entry_frame(sp)
+    else:
+        bp, sp = STACK + 0x6800, STACK + 0x5000
+        entry, end = 0x5389ca, FAILURE_END
+        cpu.reg_write(UC_X86_REG_EBP, bp)
+        cpu.reg_write(UC_X86_REG_ESP, sp)
+        put(bp - 0x628, ACTOR)
+        put(bp - 0x62c, WILD)
+        put(bp - 0x630, 1)
+        put(bp - 0x634, -1)
+        cpu.mem_write(bp - 0x688, struct.pack('<f', base_score))
+        put(sp, 0, 0, ACTOR, 32)
+        if tail is not None:
+            tail.prepare_score_frame(bp)
     try:
-        cpu.emu_start(0x5389ca, FAILURE_END, count=32000)
+        cpu.emu_start(entry, end, count=32000 if tail is None else 120000)
     except UcError as error:
         ip = cpu.reg_read(UC_X86_REG_EIP)
         raise ValueError(f'Capture roster fixture fault at {ip:#x}') from error
     endpoint = cpu.reg_read(UC_X86_REG_EIP)
-    if endpoint not in (SUCCESS_END, FAILURE_END):
+    if endpoint != success_end and (from_entry or endpoint != FAILURE_END):
         raise ValueError(f'Capture did not reach the bounded endpoint at {endpoint:#x}')
     after = snapshot()
     score, = struct.unpack('<f', cpu.mem_read(bp - 0x688, 4))
     flag, pet = get(bp - 0x630)[0], get(bp - 0x634)[0]
+    if from_entry:
+        if cpu.reg_read(UC_X86_REG_ESP) != sp + 4 or cpu.reg_read(UC_X86_REG_EAX) != int(bool(flag)):
+            raise ValueError('Original capture function did not return with the expected frame/result')
+        if flag != 1:
+            pet = -1
     result = {
         'score': score, 'roll': get(bp - 0x624)[0] + 1, 'modifier_after': get(char(ACTOR) + WORK_OFFSET + 32 * 4)[0],
         'result_flag': flag, 'created_character': pet, 'endpoint': endpoint,
@@ -289,6 +318,8 @@ def replay(take, slots, used_pool, *, modifier=1, base_score=1.0, serial=41, hp_
             'skill_slots': list(get(address + ROSTER_OFFSET, 7)), 'allocation_sequence': get(address + 0x2454)[0],
             'callback_pointers': [[i, va] for i, va in enumerate(callbacks) if va],
         }
+    if tail is not None:
+        result['tail'] = tail.result()
     return result
 
 
