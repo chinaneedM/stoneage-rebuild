@@ -50,4 +50,6 @@ jobs:
         run: python -m unittest -v tests.test_stoneage_pet_module_11_tw10_capture_sprite_source
 
       - name: Restore six captured-candidate TW85 complete source SPR segments and same-carrier RD bindings
-        run: python tools/stoneage_pet12_tw85_capture_spr_rd_bridge.py --emit-json
+        run: python tools/stoneage_pet12_tw85_capture_spr_rd_bridge.py --check research/recovered/STONEAGE-PET-MODULE-12-TW85-SIX-CAPTURE-SPR-RD-BRIDGE-R1.json
+      - name: Validate six TW85 native-source group/RD joins and negative game-evidence boundaries
+        run: python -m unittest -v tests.test_stoneage_pet_module_12_tw85_capture_spr_rd_bridge

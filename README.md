@@ -1983,3 +1983,9 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 [PET11来源与边界](docs/continuity/STONEAGE-PET-MODULE-11-CAPTURE-LINKED-TW10-ORIGINAL-SPR-496-PIXELS-20261106.md)、[公开496摘要链与2组原SHA](research/recovered/STONEAGE-PET-MODULE-11-TW10-CAPTURE-SPR-ORIGINAL-496-PIXEL-SOURCE-R1.json)、[私人原件重放器](tools/stoneage_pet11_tw10_capture_sprite_source.py)。本批新增实际可见的**来源限定原像素观察**而非496个历史新发现宠物；100329原SPR元数据此前O63已知。旧 docs/CURRENT-STATE.md 原完整blob c89e0e33537990aa2132b47c40fef49a985a935c保持不变。
 
 **下一优先：** WORLD37-R2C真实捕捉成功尾段仍需完整合格GMSV及隔离x86，故有条件OPEN；可先从已保存合法载体里核剩余6个同版缺SPR索引图号是否有真实原像素，或转其它具原件的宠物/内容项，不扩旧网服/新引擎或改玩家体验。Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、overall percent未知。
+
+## 2026-11-06 — PET12｜六个原捕捉图号各56条台湾8.5 SPR原动画与1568个同包RD索引
+
+从源R28已认证台湾8.5*声称*社区保存样本的全SPR元数据，逐组重编码原机器字并全段SHA对照；与R29同一MSI保存包原ADRN/REAL已验整SHA及每RD块SHA逐图联接。WORLD37-R2B3所余六候选图号101279/101280/101281/101564/101736/101737在该TW85载体原索引均各唯一，原 **336条方向动作／2048帧位置／1568不同原位图号**，各位图已对应当时从同包真实原RD计算的SHA/尺寸；前三图号又与保存CN5整段原SPR字节相同，后三无CN5索引，不猜身份。新交付是**源限定原动画规格＋位图定位**，本轮没有重新读私人TW85原REAL像素，新增视觉原帧0；原名字仅混合25静态配置候选，不认证官方TW85捕宠或同一部署。
+
+[PET12详细证据和止点](docs/continuity/STONEAGE-PET-MODULE-12-SIX-CAPTURE-CANDIDATE-TW85-SPR-RD-20261106.md)、[六原段SHA／RD首帧来源与证据边界](research/recovered/STONEAGE-PET-MODULE-12-TW85-SIX-CAPTURE-SPR-RD-BRIDGE-R1.json)、[自动重放工具](tools/stoneage_pet12_tw85_capture_spr_rd_bridge.py)。旧CURRENT完整blob c89e0e33537990aa2132b47c40fef49a985a935c不改；WORLD37-R2C动态尾段有条件OPEN。剩余真正原像素须合法重获同包 `real_158.bin` 及相关资源后再进入私有观察，不重复扩纯索引工程；先继续可读取其它宠物原件内容。Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、overall_percent=null。
