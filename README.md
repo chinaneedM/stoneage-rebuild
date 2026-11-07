@@ -2090,3 +2090,7 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-07 — SCENE26-R2｜原宠物常识导师第四间4003房间真实源像素补齐
 
 [SCENE26-R2来源及四间私人画面](docs/continuity/STONEAGE-SCENE26-R2-FOUR-PET-TUTOR-ORIGINAL-ROOMS-20261107.md)：重新从已保存MAP09私人691场景和955件原DAT取得4003整5,408B/SHA `0a9fa2a089b6936e86eea458bca464038b8d5cb7fee057b9d2b393ffc6c6d6d4`，与SCENE26/QUEST05源CREATE和MAP09原收据同号同SHA。原导师点位4003/(14,17)、图号16122，此原格三u16原值 `5002/12802/49152`；用已验45幅候选原RD重放143绘图位置和三张1889×1425画布，两种独立合成像素与MAP09三SHA一致。SCENE26旧1003/2003/3003三间原DAT/已标记画面复核，四间来源限定现代对照图和离线查阅页已私人保管并库回读。公开仅[来源限定数值规格](research/recovered/STONEAGE-SCENE26-R2-FOUR-ORIGINAL-PET-TUTOR-ROOMS-SOURCE-R1.json)及回归，原商业DAT/RD/CP950正文不入Git。未绘出真正16122/16127 NPC，没有原生执行、同版官方归属/碰撞/图层证明；新原DAT下载0、新RD解码0、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体完成率未知。NEXT不重复四房间，转其它真实原游戏内容。
+
+## 2026-11-07 — SCENE26-R3｜16122/16127原NPC图号的跨版本原位图索引实证
+
+[真实原索引和证据范围](docs/continuity/STONEAGE-SCENE26-R3-NPC16122-16127-ORIGINAL-ALIAS-CROSSVERSION-20261107.md)：将四个已验证导师CREATE的图号与仓库已有完整43,632条原资源目录实际匹配。台湾1.0当前逻辑别名两个均未命中；大陆5.0及台湾PATCH129各命中一次，CN50/patch各对应原RD块SHA完全一致：16122→物理232699/32×87/1930B，16127→物理232704/36×96/2089B。同整数物理位图号16122/16127的源查询均未命中，严禁混用命名空间。本轮是原源定位/完整内容散列，不是已取得图片像素、SPR动画、真实导师角色、同版客户端或原始运行。源Actions、[公开数值](research/recovered/STONEAGE-SCENE26-R3-NPC16122-16127-ORIGINAL-ALIAS-CROSSVERSION-R1.json)和负例CI保存，新原商业素材0，完整CURRENT原Git blob不变。下一项必须以真REAL原块的合法保管为前提，不重复地图图示和空白联表。
