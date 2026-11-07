@@ -1,0 +1,23 @@
+name: Verify MAP07 original TW1 ADRN offsets from saved Git metadata
+on:
+  push:
+    branches: [agent/map07-original-scenes-batch-20261107]
+    paths:
+      - tools/stoneage_map07_source_offsets.py
+      - .github/workflows/verify-stoneage-map07-original-offsets.yml
+permissions: {contents: read}
+jobs:
+  source-offsets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python -m tools.stoneage_map07_source_offsets --output /tmp/map07-public-offsets
+      - uses: actions/upload-artifact@v4
+        with:
+          name: map07-qualified-original-source-offsets-derived-only
+          path: /tmp/map07-public-offsets
+          retention-days: 7
+          if-no-files-found: error
