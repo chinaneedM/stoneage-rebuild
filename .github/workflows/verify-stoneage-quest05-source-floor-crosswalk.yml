@@ -28,6 +28,9 @@ on:
       - 'research/recovered/STONEAGE-QUEST10-QUARRY-SPIRITS-ORIGINAL-SOURCE-R1.json'
       - 'tools/stoneage_quest10_quarry_spirits_source.py'
       - 'tests/test_stoneage_quest10_quarry_spirits_source.py'
+      - 'research/recovered/STONEAGE-QUEST11-TWO-TRIBES-ORIGINAL-SOURCE-R1.json'
+      - 'tools/stoneage_quest11_two_tribes_source.py'
+      - 'tests/test_stoneage_quest11_two_tribes_source.py'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   pull_request:
     paths:
@@ -49,6 +52,9 @@ on:
       - 'research/recovered/STONEAGE-QUEST10-QUARRY-SPIRITS-ORIGINAL-SOURCE-R1.json'
       - 'tools/stoneage_quest10_quarry_spirits_source.py'
       - 'tests/test_stoneage_quest10_quarry_spirits_source.py'
+      - 'research/recovered/STONEAGE-QUEST11-TWO-TRIBES-ORIGINAL-SOURCE-R1.json'
+      - 'tools/stoneage_quest11_two_tribes_source.py'
+      - 'tests/test_stoneage_quest11_two_tribes_source.py'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   workflow_dispatch:
 
@@ -71,3 +77,5 @@ jobs:
         run: python -m unittest tests.test_stoneage_quest09_dream_cave_source -v
       - name: Validate QUEST10 original quarry-spirit source redirection and item conflicts
         run: python -m unittest tests.test_stoneage_quest10_quarry_spirits_source -v
+      - name: Validate QUEST11 two-tribe original branches and preserved malformed headers
+        run: python -m unittest tests.test_stoneage_quest11_two_tribes_source -v

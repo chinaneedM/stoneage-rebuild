@@ -1,0 +1,2905 @@
+{
+  "schema": "stoneage.quest11.two_tribes_literal_source.r1",
+  "date": "2026-11-08",
+  "origin_class": "ORIGIN_UNRESOLVED",
+  "source_scope": "LATER_COMMUNITY_MIXED25_NOT_AUTHENTICATED_OFFICIAL_DEPLOYMENT",
+  "baseline": {
+    "head": "492a80bbe435752a9c6a8dbc38d7ebcbce1d1c1b",
+    "tree": "f90d7221542124ff184b4946d135bd928b43973d",
+    "preserved_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "private_source_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+  "verified_original_NPC_members": 2205,
+  "source_files": [
+    {
+      "path": "giiru/event/garunaev1",
+      "bytes": 3859,
+      "sha256": "66cc395f3a2bb219a76fa989bb10b3f16a8dcedb0dd9774a4361aa86fe9c7db6",
+      "crc32": "c8f5815b"
+    },
+    {
+      "path": "giiru/event/garunaev1.create",
+      "bytes": 1983,
+      "sha256": "014b99bdb836d775f56fc7e84a3f8ff400cdb3d58eb1792d49877a440929be35",
+      "crc32": "136ad9e4"
+    },
+    {
+      "path": "giiru/event/garunaev2",
+      "bytes": 2606,
+      "sha256": "db015bddb63050dc087de8150502efc24d9348c796dbfbd84f872629359fc88f",
+      "crc32": "39b51285"
+    },
+    {
+      "path": "giiru/event/garunaev3",
+      "bytes": 3068,
+      "sha256": "538e5a28e4e5e72f9af133a0e60a8cacc4569db0f18601694b72d73ef06005c2",
+      "crc32": "87e1219b"
+    },
+    {
+      "path": "giiru/event/garunaev4",
+      "bytes": 3894,
+      "sha256": "eb4075ff97ef5ad00001de33d7ddf4a7676248eae463f625f8e622bc874a5fad",
+      "crc32": "3072d00a"
+    },
+    {
+      "path": "giiru/event/garunaev5",
+      "bytes": 2601,
+      "sha256": "4f9ef934cc023f22dd932433dc1c151f191b66b39d67be650c6b385bac764856",
+      "crc32": "7c3ee688"
+    },
+    {
+      "path": "giiru/event/garunaev6",
+      "bytes": 3704,
+      "sha256": "7e65595abe618ab67d2d2d444b6f3aeeadbe79a7b015efdb40f1b3865e04a45f",
+      "crc32": "42359721"
+    },
+    {
+      "path": "giiru/event/garunaev7",
+      "bytes": 639,
+      "sha256": "c6901ac109007774c66bfd3bdd4951a206f9c8eeeee87815c4f524fef9d0c53d",
+      "crc32": "f18607ab"
+    },
+    {
+      "path": "giiru/event/garunaev8",
+      "bytes": 638,
+      "sha256": "016dd4d8d0e8d2f5ded9180f6560edfd7e0eeb0ae42d2371ff2ea97cebc7d39b",
+      "crc32": "47ce2317"
+    },
+    {
+      "path": "jaruga/event/event.template",
+      "bytes": 122,
+      "sha256": "9c11ac0cbbd9b110e8ff7d0115730044673bf29c5df6d23034e56530c181d0b2",
+      "crc32": "a70fc73f"
+    }
+  ],
+  "source_creates": [
+    {
+      "file": "giiru/event/garunaev1.create",
+      "ordinal": 0,
+      "start_byte": 138,
+      "end_byte": 300,
+      "block_sha256": "7f2d2ea876c586c0b393f9614f6b7302034ae6e51c8104cc6c5de2bcce5538ac",
+      "floor": 31103,
+      "graphic_alias": 16206,
+      "borncorner_raw": [
+        18,
+        10,
+        18,
+        10
+      ],
+      "direction_raw": 6,
+      "template_token": "changeevent",
+      "template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "parameter_references": [
+        [
+          "giiru/event/garunaev1",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "66cc395f3a2bb219a76fa989bb10b3f16a8dcedb0dd9774a4361aa86fe9c7db6"
+        ]
+      ]
+    },
+    {
+      "file": "giiru/event/garunaev1.create",
+      "ordinal": 1,
+      "start_byte": 372,
+      "end_byte": 534,
+      "block_sha256": "e0adfc74105611c11d9dadcd098a699b111c5f80b82f860fd918853886966fbb",
+      "floor": 31103,
+      "graphic_alias": 16020,
+      "borncorner_raw": [
+        16,
+        8,
+        16,
+        8
+      ],
+      "direction_raw": 5,
+      "template_token": "changeevent",
+      "template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "parameter_references": [
+        [
+          "giiru/event/garunaev2",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "db015bddb63050dc087de8150502efc24d9348c796dbfbd84f872629359fc88f"
+        ]
+      ]
+    },
+    {
+      "file": "giiru/event/garunaev1.create",
+      "ordinal": 2,
+      "start_byte": 609,
+      "end_byte": 768,
+      "block_sha256": "24fe33973fc4475c1c6b05945097b6a5b866efb5b02f7ec21a00d6dc82daceb2",
+      "floor": 31205,
+      "graphic_alias": 100250,
+      "borncorner_raw": [
+        12,
+        11,
+        12,
+        11
+      ],
+      "direction_raw": 6,
+      "template_token": "changeevent",
+      "template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "parameter_references": [
+        [
+          "giiru/event/garunaev3",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "538e5a28e4e5e72f9af133a0e60a8cacc4569db0f18601694b72d73ef06005c2"
+        ]
+      ]
+    },
+    {
+      "file": "giiru/event/garunaev1.create",
+      "ordinal": 3,
+      "start_byte": 846,
+      "end_byte": 1010,
+      "block_sha256": "652a7c4037d5750431a5c640fc136c285c350854c98d4ed37bfcfe1e8adf7137",
+      "floor": 31003,
+      "graphic_alias": 16202,
+      "borncorner_raw": [
+        13,
+        5,
+        13,
+        5
+      ],
+      "direction_raw": 4,
+      "template_token": "changeevent",
+      "template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "parameter_references": [
+        [
+          "giiru/event/garunaev4",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "eb4075ff97ef5ad00001de33d7ddf4a7676248eae463f625f8e622bc874a5fad"
+        ]
+      ]
+    },
+    {
+      "file": "giiru/event/garunaev1.create",
+      "ordinal": 4,
+      "start_byte": 1088,
+      "end_byte": 1252,
+      "block_sha256": "19498fb11737159d1408053ba66c5124104a41821cdfde2d66d8c4f248972ba4",
+      "floor": 31003,
+      "graphic_alias": 16039,
+      "borncorner_raw": [
+        16,
+        8,
+        16,
+        8
+      ],
+      "direction_raw": 5,
+      "template_token": "changeevent",
+      "template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "parameter_references": [
+        [
+          "giiru/event/garunaev5",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "4f9ef934cc023f22dd932433dc1c151f191b66b39d67be650c6b385bac764856"
+        ]
+      ]
+    },
+    {
+      "file": "giiru/event/garunaev1.create",
+      "ordinal": 5,
+      "start_byte": 1331,
+      "end_byte": 1490,
+      "block_sha256": "0f42a7d77ae0ad605f72e1fb82f2d07f3cc3b5a88dfdc7b1c9548cb9d46ea6e6",
+      "floor": 31205,
+      "graphic_alias": 100252,
+      "borncorner_raw": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "direction_raw": 6,
+      "template_token": "changeevent",
+      "template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "parameter_references": [
+        [
+          "giiru/event/garunaev6",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "7e65595abe618ab67d2d2d444b6f3aeeadbe79a7b015efdb40f1b3865e04a45f"
+        ]
+      ]
+    },
+    {
+      "file": "giiru/event/garunaev1.create",
+      "ordinal": 6,
+      "start_byte": 1572,
+      "end_byte": 1736,
+      "block_sha256": "4ae6e036919609fd5d84aedce0bde0b63eb7d13acc4c6da7f4c21355c3d96d3c",
+      "floor": 31102,
+      "graphic_alias": 16065,
+      "borncorner_raw": [
+        45,
+        42,
+        45,
+        42
+      ],
+      "direction_raw": 6,
+      "template_token": "changeevent",
+      "template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "parameter_references": [
+        [
+          "giiru/event/garunaev7",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "c6901ac109007774c66bfd3bdd4951a206f9c8eeeee87815c4f524fef9d0c53d"
+        ]
+      ]
+    },
+    {
+      "file": "giiru/event/garunaev1.create",
+      "ordinal": 7,
+      "start_byte": 1818,
+      "end_byte": 1982,
+      "block_sha256": "d0f02fce763e6b50b9b65de7b9a6b3f7314d0cf24828ace591a4c2762e3c667a",
+      "floor": 31002,
+      "graphic_alias": 16050,
+      "borncorner_raw": [
+        45,
+        21,
+        45,
+        21
+      ],
+      "direction_raw": 6,
+      "template_token": "changeevent",
+      "template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "parameter_references": [
+        [
+          "giiru/event/garunaev8",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "016dd4d8d0e8d2f5ded9180f6560edfd7e0eeb0ae42d2371ff2ea97cebc7d39b"
+        ]
+      ]
+    }
+  ],
+  "source_event_scripts": [
+    {
+      "path": "giiru/event/garunaev1",
+      "sha256": "66cc395f3a2bb219a76fa989bb10b3f16a8dcedb0dd9774a4361aa86fe9c7db6",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 358,
+          "start_line": 13,
+          "header_key": "EventNo",
+          "header_numeric_literal": 23,
+          "event_number": 23,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 14,
+          "event": "NOWEV=23",
+          "end_byte": 510,
+          "end_line": 17,
+          "block_sha256": "cd042d396f4223cb04d90833bce34fa3c6320cdac94aa918fba4d7202dced83a"
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 592,
+          "start_line": 21,
+          "header_key": "EventNo",
+          "header_numeric_literal": 24,
+          "event_number": 24,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 22,
+          "event": "NOWEV=24",
+          "end_byte": 708,
+          "end_line": 25,
+          "block_sha256": "f6b7c5c4d7a3fb0f0c98568eb0e652484ef0995fb06b5c2690af3588a38ae401"
+        },
+        {
+          "ordinal": 2,
+          "start_byte": 790,
+          "start_line": 29,
+          "header_key": "EventNo",
+          "header_numeric_literal": 26,
+          "event_number": 26,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 30,
+          "event": "NOWEV=26&ITEM=2501",
+          "end_byte": 882,
+          "end_line": 33,
+          "block_sha256": "40b2c43e14067e116ec5a9f485de90d428a55ae0d8e9c56ba54098f29eea8ae1"
+        },
+        {
+          "ordinal": 3,
+          "start_byte": 883,
+          "start_line": 35,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "GetItem",
+              "raw_operand": "2501*1",
+              "operands": [
+                {
+                  "item_id": 2501,
+                  "explicit_quantity": 1
+                }
+              ]
+            },
+            {
+              "name": "DelItem",
+              "raw_operand": "2500",
+              "operands": [
+                {
+                  "item_id": 2500,
+                  "explicit_quantity": null
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "RequestMsg",
+            "ThanksMsg",
+            "StopMsg",
+            "EndStopMsg",
+            "NoStopMsg",
+            "ItemFullMsg"
+          ],
+          "type": "REQUEST",
+          "type_line": 36,
+          "event": "NOWEV=26&ITEM=2500",
+          "end_byte": 1297,
+          "end_line": 46,
+          "block_sha256": "6dbbe11f8001edd3c91da153d77c37f90b33d0092e43faa88133b4e22d82fbf5"
+        },
+        {
+          "ordinal": 4,
+          "start_byte": 1298,
+          "start_line": 48,
+          "header_key": "EventNo",
+          "header_numeric_literal": 26,
+          "event_number": 26,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 49,
+          "event": "NOWEV=26",
+          "end_byte": 1388,
+          "end_line": 52,
+          "block_sha256": "0e1a07aa1151d322ed5a7396b5504aa02a5c4df2cbd1ea6f2c34c1ffc547b496"
+        },
+        {
+          "ordinal": 5,
+          "start_byte": 1389,
+          "start_line": 54,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 55,
+          "event": "ENDEV=26&ITEM!=2391",
+          "end_byte": 1626,
+          "end_line": 58,
+          "block_sha256": "bb94d84b1fda3b3bb2b5b280e74998fde882c043a3503f044283e17834a1e071"
+        },
+        {
+          "ordinal": 6,
+          "start_byte": 1708,
+          "start_line": 62,
+          "header_key": "EventNo",
+          "header_numeric_literal": 25,
+          "event_number": 25,
+          "commands": [
+            {
+              "name": "GetItem",
+              "raw_operand": "2504*1",
+              "operands": [
+                {
+                  "item_id": 2504,
+                  "explicit_quantity": 1
+                }
+              ]
+            },
+            {
+              "name": "DelItem",
+              "raw_operand": "2502",
+              "operands": [
+                {
+                  "item_id": 2502,
+                  "explicit_quantity": null
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [
+            {
+              "name": "EndSetFlg",
+              "value": 25
+            }
+          ],
+          "message_keys": [
+            "AcceptMsg",
+            "ThanksMsg",
+            "ItemFullMsg"
+          ],
+          "type": "ACCEPT",
+          "type_line": 63,
+          "event": "NOWEV=25&ITEM=2502",
+          "end_byte": 2081,
+          "end_line": 71,
+          "block_sha256": "f24939ba9b38da07085839011ea9b679f883f6720bbfa4dc7178a505f8dddee3"
+        },
+        {
+          "ordinal": 7,
+          "start_byte": 2082,
+          "start_line": 73,
+          "header_key": "EventNo",
+          "header_numeric_literal": 25,
+          "event_number": 25,
+          "commands": [
+            {
+              "name": "GetItem",
+              "raw_operand": "2499*1",
+              "operands": [
+                {
+                  "item_id": 2499,
+                  "explicit_quantity": 1
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg",
+            "ItemFullMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 74,
+          "event": "NOWEV=25&ITEM!=2499",
+          "end_byte": 2283,
+          "end_line": 79,
+          "block_sha256": "8d10049452951a41a5d88c1bee5265f94a944889a7e300943865ea36efbd6d2e"
+        },
+        {
+          "ordinal": 8,
+          "start_byte": 2284,
+          "start_line": 81,
+          "header_key": "EventNo",
+          "header_numeric_literal": 25,
+          "event_number": 25,
+          "commands": [
+            {
+              "name": "GetItem",
+              "raw_operand": "2499*1",
+              "operands": [
+                {
+                  "item_id": 2499,
+                  "explicit_quantity": 1
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "RequestMsg",
+            "ThanksMsg",
+            "StopMsg",
+            "EndStopMsg",
+            "NoStopMsg",
+            "ItemFullMsg"
+          ],
+          "type": "REQUEST",
+          "type_line": 82,
+          "event": "ENDEV!=26&ENDEV=23,ENDEV!=26&ENDEV=24",
+          "end_byte": 2794,
+          "end_line": 91,
+          "block_sha256": "f81453f0c7c63ff18acc735b47fcf29abd8e6151ec6fdcf5a335cb6733e0294f"
+        },
+        {
+          "ordinal": 9,
+          "start_byte": 2795,
+          "start_line": 93,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 94,
+          "event": "ENDEV=25&ITEM!=2391",
+          "end_byte": 3032,
+          "end_line": 97,
+          "block_sha256": "fbe26e37b1fa9c744ac8ac37cd1af2d5333662ff9bfaee99aa68fd954e7185ae"
+        },
+        {
+          "ordinal": 10,
+          "start_byte": 3034,
+          "start_line": 100,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 101,
+          "event": "LV>79&ENDEV=4&ENDEV=26&ITEM=2391&ITEM!=2395&ITEM!=2393,LV>79&ENDEV=4&ENDEV=25&ITEM=2391&ITEM!=2395&ITEM!=2393",
+          "end_byte": 3295,
+          "end_line": 104,
+          "block_sha256": "9fd36ea1d66f6b0825a728f27c409ce0ec9e813198cdf05e317e58fe901d42c2"
+        },
+        {
+          "ordinal": 11,
+          "start_byte": 3296,
+          "start_line": 106,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "GetItem",
+              "raw_operand": "2393*1",
+              "operands": [
+                {
+                  "item_id": 2393,
+                  "explicit_quantity": 1
+                }
+              ]
+            },
+            {
+              "name": "DelItem",
+              "raw_operand": "2391*1,2395*1",
+              "operands": [
+                {
+                  "item_id": 2391,
+                  "explicit_quantity": 1
+                },
+                {
+                  "item_id": 2395,
+                  "explicit_quantity": 1
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "RequestMsg",
+            "ThanksMsg",
+            "ItemFullMsg"
+          ],
+          "type": "REQUEST",
+          "type_line": 107,
+          "event": "LV>79&ENDEV=26&ITEM=2391&ITEM=2395,LV>79&ENDEV=25&ITEM=2391&ITEM=2395",
+          "end_byte": 3670,
+          "end_line": 114,
+          "block_sha256": "9c886f2187e8de186f33e17129ac96b93542c537ffd4925ede7dbef06c913b79"
+        },
+        {
+          "ordinal": 12,
+          "start_byte": 3671,
+          "start_line": 116,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 117,
+          "event": "LV>79&ENDEV=4&ENDEV=26&ITEM=2391&ITEM!=2395&ITEM=2393,LV>79&ENDEV=4&ENDEV=25&ITEM=2391&ITEM!=2395&ITEM=2393",
+          "end_byte": 3859,
+          "end_line": 120,
+          "block_sha256": "efe0ac5cba96dee508e8e0bb11c8f58c8173abdcc7c91cf7f6dd9f36addd5041"
+        }
+      ]
+    },
+    {
+      "path": "giiru/event/garunaev2",
+      "sha256": "db015bddb63050dc087de8150502efc24d9348c796dbfbd84f872629359fc88f",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 423,
+          "start_line": 15,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "GetItem",
+              "raw_operand": "2414",
+              "operands": [
+                {
+                  "item_id": 2414,
+                  "explicit_quantity": null
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [
+            {
+              "name": "DelStone",
+              "value": 1200
+            }
+          ],
+          "message_keys": [
+            "RequestMsg",
+            "RequestMsg2",
+            "ThanksMsg",
+            "StopMsg",
+            "EndStopMsg",
+            "NoStopMsg",
+            "ItemFullMsg",
+            "StoneLessMsg"
+          ],
+          "type": "REQUEST",
+          "type_line": 16,
+          "event": "ENDEV=25&ITEM!=2414,ENDEV=26&ITEM!=2414",
+          "end_byte": 1002,
+          "end_line": 28,
+          "block_sha256": "226f1ab8cd72ff448a479946eca46d09a7ffdb53b77054d8351d3ace843d70da"
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 1003,
+          "start_line": 30,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 31,
+          "event": "ENDEV=25,ENDEV=26",
+          "end_byte": 1222,
+          "end_line": 34,
+          "block_sha256": "ccf9e35a75422216c49d3dfe2bfbacd04f6367fe63175b5e7cb75ae315e0c1c6"
+        },
+        {
+          "ordinal": 2,
+          "start_byte": 1304,
+          "start_line": 38,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 39,
+          "event": "NOWEV=24",
+          "end_byte": 1478,
+          "end_line": 42,
+          "block_sha256": "4e80e2b093940c230a16081f73d8f0fdd68b4cddc053d8e7ddc986e23ead5298"
+        },
+        {
+          "ordinal": 3,
+          "start_byte": 1560,
+          "start_line": 46,
+          "header_key": "EventNo",
+          "header_numeric_literal": 23,
+          "event_number": 23,
+          "commands": [
+            {
+              "name": "GetItem",
+              "raw_operand": "2414*1",
+              "operands": [
+                {
+                  "item_id": 2414,
+                  "explicit_quantity": 1
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "RequestMsg",
+            "ThanksMsg",
+            "StopMsg",
+            "EndStopMsg",
+            "NoStopMsg",
+            "ItemFullMsg"
+          ],
+          "type": "REQUEST",
+          "type_line": 47,
+          "event": "ENDEV!=24&LV>30",
+          "end_byte": 2106,
+          "end_line": 56,
+          "block_sha256": "adab543653075f77624e920d953b3d302a7fe34dbdb2f6dc31ef0198ebfc2604"
+        },
+        {
+          "ordinal": 4,
+          "start_byte": 2107,
+          "start_line": 58,
+          "header_key": "EventNo",
+          "header_numeric_literal": 23,
+          "event_number": 23,
+          "commands": [
+            {
+              "name": "GetItem",
+              "raw_operand": "2414",
+              "operands": [
+                {
+                  "item_id": 2414,
+                  "explicit_quantity": null
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg",
+            "ItemFullMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 59,
+          "event": "NOWEV=23&ITEM!=2414",
+          "end_byte": 2338,
+          "end_line": 64,
+          "block_sha256": "4ad53a86200075dddf11c4ca67142c67006c3c2dc9bbdaef387e10b84fb65cb9"
+        },
+        {
+          "ordinal": 5,
+          "start_byte": 2339,
+          "start_line": 66,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 67,
+          "event": "ENDEV=23,ENDEV=24",
+          "end_byte": 2524,
+          "end_line": 70,
+          "block_sha256": "8419d22918a665e32cde421e651786c3528513c1086ea71e006058a9e0a0a23a"
+        }
+      ]
+    },
+    {
+      "path": "giiru/event/garunaev3",
+      "sha256": "538e5a28e4e5e72f9af133a0e60a8cacc4569db0f18601694b72d73ef06005c2",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 262,
+          "start_line": 13,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "raw_operand": "2503*1,2504*1",
+              "operands": [
+                {
+                  "item_id": 2503,
+                  "explicit_quantity": 1
+                },
+                {
+                  "item_id": 2504,
+                  "explicit_quantity": 1
+                }
+              ]
+            },
+            {
+              "name": "GetItem",
+              "raw_operand": "2506",
+              "operands": [
+                {
+                  "item_id": 2506,
+                  "explicit_quantity": null
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "AcceptMsg",
+            "AcceptMsg2",
+            "ThanksMsg",
+            "ItemFullMsg"
+          ],
+          "type": "ACCEPT",
+          "type_line": 14,
+          "event": "ITEM=2503&ITEM=2504&ITEM=2414",
+          "end_byte": 688,
+          "end_line": 22,
+          "block_sha256": "1633416976a8132b7f639554b49ce9448c8b0c175108d6452024952a70a6a87f"
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 689,
+          "start_line": 24,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 25,
+          "event": "ITEM=2503&ITEM=2504",
+          "end_byte": 790,
+          "end_line": 28,
+          "block_sha256": "d11096e0e8ff39a82ff988610ca453561a8d96019705d5d7227a6f71630581b0"
+        },
+        {
+          "ordinal": 2,
+          "start_byte": 872,
+          "start_line": 32,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 33,
+          "event": "ENDEV=25&ITEM=2414,ENDEV=26&ITEM=2414",
+          "end_byte": 1097,
+          "end_line": 36,
+          "block_sha256": "0127d6e633121508a376a025364740a97e843564d5b43a7d93efe98a314145f5"
+        },
+        {
+          "ordinal": 3,
+          "start_byte": 1098,
+          "start_line": 38,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 39,
+          "event": "ENDEV=25,ENDEV=26",
+          "end_byte": 1197,
+          "end_line": 42,
+          "block_sha256": "d8e9da77db547aa2d04e83878e017cae5b0ab4d8af41e4bed2aef738b5589ca9"
+        },
+        {
+          "ordinal": 4,
+          "start_byte": 1279,
+          "start_line": 46,
+          "header_key": "EventNo",
+          "header_numeric_literal": 23,
+          "event_number": 23,
+          "commands": [],
+          "other_numeric_controls": [
+            {
+              "name": "EndSetFlg",
+              "value": 23
+            }
+          ],
+          "message_keys": [
+            "AcceptMsg",
+            "AcceptMsg2",
+            "ThanksMsg"
+          ],
+          "type": "ACCEPT",
+          "type_line": 47,
+          "event": "NOWEV=23&ITEM=2414",
+          "end_byte": 1693,
+          "end_line": 53,
+          "block_sha256": "4f1b13ec7244c378c7454f5e7cafe76cfa8d1acfa1a018835ebca2b712216860"
+        },
+        {
+          "ordinal": 5,
+          "start_byte": 1695,
+          "start_line": 56,
+          "header_key": "EventNo",
+          "header_numeric_literal": 23,
+          "event_number": 23,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 57,
+          "event": "NOWEV=23",
+          "end_byte": 1785,
+          "end_line": 60,
+          "block_sha256": "5b314e8f121668c49b9de9fee53f45709c5989414e1b07a6c21d8ebc7e8f0d35"
+        },
+        {
+          "ordinal": 6,
+          "start_byte": 1786,
+          "start_line": 62,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 63,
+          "event": "ENDEV=23&ITEM=2414",
+          "end_byte": 2004,
+          "end_line": 66,
+          "block_sha256": "0d3f5c954d296d5ec3d118ee073c7b326bfc3e4fd1f8e5f6ff4757881724eb0e"
+        },
+        {
+          "ordinal": 7,
+          "start_byte": 2005,
+          "start_line": 68,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 69,
+          "event": "ENDEV=23",
+          "end_byte": 2095,
+          "end_line": 72,
+          "block_sha256": "62709f71117a293f947b640887288fd859d26bb150b7ad6c1dc8862ca091d085"
+        },
+        {
+          "ordinal": 8,
+          "start_byte": 2177,
+          "start_line": 76,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 77,
+          "event": "NOWEV=24&ITEM=2414",
+          "end_byte": 2363,
+          "end_line": 80,
+          "block_sha256": "f9ab72afc34596e82af5563c46bfcdb270661b97155bed81d805bbd6ff0da757"
+        },
+        {
+          "ordinal": 9,
+          "start_byte": 2364,
+          "start_line": 82,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 83,
+          "event": "NOEEV=24",
+          "end_byte": 2454,
+          "end_line": 86,
+          "block_sha256": "9c155a40cae7ba02b0e4e2cb63e9f1bdec7a0d723f50cbe91fb91ddb49074b53"
+        },
+        {
+          "ordinal": 10,
+          "start_byte": 2455,
+          "start_line": 88,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 89,
+          "event": "ENDEV=24&ITEM=2414",
+          "end_byte": 2641,
+          "end_line": 92,
+          "block_sha256": "1c531ccdd56980ff13f44f06ed90feeb1a2670ff528362057da8d54c5f58bbc9"
+        },
+        {
+          "ordinal": 11,
+          "start_byte": 2642,
+          "start_line": 94,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 95,
+          "event": "ENDEV=24&ITEM=2414",
+          "end_byte": 2742,
+          "end_line": 98,
+          "block_sha256": "38befb3518e7869fea5c54c2a093820e54bdb0b5e467ac5e7a3245bcac5f941a"
+        },
+        {
+          "ordinal": 12,
+          "start_byte": 2824,
+          "start_line": 102,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 103,
+          "event": "ITEM=2414",
+          "end_byte": 3065,
+          "end_line": 106,
+          "block_sha256": "865f151757dfb6569ab99eb96b843a16359753819f4edbe20dbd2c469b950ec0"
+        }
+      ]
+    },
+    {
+      "path": "giiru/event/garunaev4",
+      "sha256": "eb4075ff97ef5ad00001de33d7ddf4a7676248eae463f625f8e622bc874a5fad",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 305,
+          "start_line": 13,
+          "header_key": "EventNo",
+          "header_numeric_literal": 24,
+          "event_number": 24,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 14,
+          "event": "NOWEV=24",
+          "end_byte": 467,
+          "end_line": 17,
+          "block_sha256": "7b8b9a4c56af75367364c88c9b4e8e78421bdfcafbb1985a673ead427d506588"
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 549,
+          "start_line": 21,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 22,
+          "event": "NOWEV=23",
+          "end_byte": 761,
+          "end_line": 25,
+          "block_sha256": "ade5710144825f93d95e3ccd9931d378805688e38bca5f67aef614abcd68edc8"
+        },
+        {
+          "ordinal": 2,
+          "start_byte": 843,
+          "start_line": 29,
+          "header_key": "EventNo",
+          "header_numeric_literal": 25,
+          "event_number": 25,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 30,
+          "event": "NOWEV=25&ITEM=2502",
+          "end_byte": 929,
+          "end_line": 33,
+          "block_sha256": "650d777077d6cda4be7ce9f876c6b5c222982e2bdd287fbe6b5a6f3830d37780"
+        },
+        {
+          "ordinal": 3,
+          "start_byte": 930,
+          "start_line": 35,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "GetItem",
+              "raw_operand": "2502*1",
+              "operands": [
+                {
+                  "item_id": 2502,
+                  "explicit_quantity": 1
+                }
+              ]
+            },
+            {
+              "name": "DelItem",
+              "raw_operand": "2499",
+              "operands": [
+                {
+                  "item_id": 2499,
+                  "explicit_quantity": null
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "RequestMsg",
+            "ThanksMsg",
+            "StopMsg",
+            "EndStopMsg",
+            "NoStopMsg",
+            "ItemFullMsg"
+          ],
+          "type": "REQUEST",
+          "type_line": 36,
+          "event": "NOWEV=25&ITEM=2499",
+          "end_byte": 1368,
+          "end_line": 46,
+          "block_sha256": "bc5a0bbc6235d980e41d8e3190638540deece8ccaf0ce1a789d221cbb578b60f"
+        },
+        {
+          "ordinal": 4,
+          "start_byte": 1369,
+          "start_line": 48,
+          "header_key": "EventNo",
+          "header_numeric_literal": 25,
+          "event_number": 25,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 49,
+          "event": "NOWEV=25",
+          "end_byte": 1467,
+          "end_line": 52,
+          "block_sha256": "a59a3d88d64512eda9ddc37ec21e9c726599939ad114fdd1f7d5d47c34bf650c"
+        },
+        {
+          "ordinal": 5,
+          "start_byte": 1468,
+          "start_line": 54,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 55,
+          "event": "ENDEV=25&ITEM!=2391",
+          "end_byte": 1727,
+          "end_line": 58,
+          "block_sha256": "e847c7cd301df6a33cea326a89d84302e31f508ddf70eb591ac0699b7978d321"
+        },
+        {
+          "ordinal": 6,
+          "start_byte": 1809,
+          "start_line": 62,
+          "header_key": "EventNo",
+          "header_numeric_literal": 26,
+          "event_number": 26,
+          "commands": [
+            {
+              "name": "GetItem",
+              "raw_operand": "2503*1",
+              "operands": [
+                {
+                  "item_id": 2503,
+                  "explicit_quantity": 1
+                }
+              ]
+            },
+            {
+              "name": "DelItem",
+              "raw_operand": "2501",
+              "operands": [
+                {
+                  "item_id": 2501,
+                  "explicit_quantity": null
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [
+            {
+              "name": "EndSetFlg",
+              "value": 26
+            }
+          ],
+          "message_keys": [
+            "AcceptMsg",
+            "ThanksMsg",
+            "ItemFullMsg"
+          ],
+          "type": "ACCEPT",
+          "type_line": 63,
+          "event": "NOWEV=26&ITEM=2501",
+          "end_byte": 2146,
+          "end_line": 71,
+          "block_sha256": "7c712f108d50657b581a881cd3fa56ea3799a535a8c9d355ee79fe7aaa871d69"
+        },
+        {
+          "ordinal": 7,
+          "start_byte": 2147,
+          "start_line": 73,
+          "header_key": "EventNo",
+          "header_numeric_literal": 26,
+          "event_number": 26,
+          "commands": [
+            {
+              "name": "GetItem",
+              "raw_operand": "2500*1",
+              "operands": [
+                {
+                  "item_id": 2500,
+                  "explicit_quantity": 1
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg",
+            "ItemFullMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 74,
+          "event": "NOWEV=26&ITEM!=2500",
+          "end_byte": 2348,
+          "end_line": 79,
+          "block_sha256": "115faf22800b90ee5f0b63573a5e5d9df288bc5d3c1e9bcecdbf92d0558306f8"
+        },
+        {
+          "ordinal": 8,
+          "start_byte": 2349,
+          "start_line": 81,
+          "header_key": "EventNo",
+          "header_numeric_literal": 26,
+          "event_number": 26,
+          "commands": [
+            {
+              "name": "GetItem",
+              "raw_operand": "2500*1",
+              "operands": [
+                {
+                  "item_id": 2500,
+                  "explicit_quantity": 1
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "RequestMsg",
+            "ThanksMsg",
+            "StopMsg",
+            "EndStopMsg",
+            "NoStopMsg",
+            "ItemFullMsg"
+          ],
+          "type": "REQUEST",
+          "type_line": 82,
+          "event": "ENDEV!=25&ENDEV=23,ENDEV!=25&ENDEV=24",
+          "end_byte": 2847,
+          "end_line": 91,
+          "block_sha256": "94ee945fb69f3c021a0a1eb58efde91e63b9ad621f9cc0ab94119b5c38ddc0b5"
+        },
+        {
+          "ordinal": 9,
+          "start_byte": 2848,
+          "start_line": 93,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 94,
+          "event": "ENDEV=26&ITEM!=2391",
+          "end_byte": 3079,
+          "end_line": 97,
+          "block_sha256": "1df0068e5923bc9f9d7bdd6d2d0577e57f78492eda5299cd2e0bcfec1f798c17"
+        },
+        {
+          "ordinal": 10,
+          "start_byte": 3161,
+          "start_line": 101,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "GetItem",
+              "raw_operand": "2395*1",
+              "operands": [
+                {
+                  "item_id": 2395,
+                  "explicit_quantity": 1
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "RequestMsg",
+            "ThanksMsg",
+            "StopMsg",
+            "EndStopMsg",
+            "NoStopMsg",
+            "ItemFullMsg"
+          ],
+          "type": "REQUEST",
+          "type_line": 102,
+          "event": "LV>79&ENDEV=26&ITEM=2391&ITEM!=2395&ITEM!=2393,LV>79&ENDEV=25&ITEM=2391&ITEM!=2395&ITEM!=2393",
+          "end_byte": 3545,
+          "end_line": 111,
+          "block_sha256": "d3cca5fe5d78e0b091694ab62430a2385d4565cc6611400b05bca14dcc01fb1c"
+        },
+        {
+          "ordinal": 11,
+          "start_byte": 3546,
+          "start_line": 113,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 114,
+          "event": "LV>79&ENDEV=26&ITEM=2391&ITEM=2395,LV>79&ENDEV=25&ITEM=2391&ITEM=2395",
+          "end_byte": 3705,
+          "end_line": 117,
+          "block_sha256": "824dd13abbf33dbe47316a26d70ccb249582ab12d4cecfd47a557e41a1305635"
+        },
+        {
+          "ordinal": 12,
+          "start_byte": 3706,
+          "start_line": 119,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 120,
+          "event": "LV>79&ENDEV=4&ENDEV=26&ITEM=2391&ITEM=2393,LV>79&ENDEV=4&ENDEV=25&ITEM=2391&ITEM=2393",
+          "end_byte": 3894,
+          "end_line": 123,
+          "block_sha256": "26a8a89fa4066c635814d6a17e7650b3021d1e506cadf48a15b57f45c628872b"
+        }
+      ]
+    },
+    {
+      "path": "giiru/event/garunaev5",
+      "sha256": "4f9ef934cc023f22dd932433dc1c151f191b66b39d67be650c6b385bac764856",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 314,
+          "start_line": 13,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "GetItem",
+              "raw_operand": "2414",
+              "operands": [
+                {
+                  "item_id": 2414,
+                  "explicit_quantity": null
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [
+            {
+              "name": "DelStone",
+              "value": 1200
+            }
+          ],
+          "message_keys": [
+            "RequestMsg",
+            "RequestMsg2",
+            "ThanksMsg",
+            "StopMsg",
+            "EndStopMsg",
+            "NoStopMsg",
+            "ItemFullMsg",
+            "StoneLessMsg"
+          ],
+          "type": "REQUEST",
+          "type_line": 14,
+          "event": "ENDEV=25&ITEM!=2414,ENDEV=26&ITEM!=2414",
+          "end_byte": 913,
+          "end_line": 26,
+          "block_sha256": "394175f9a0185eea89d8283353c8c0523dd56d36ebeef85eb1136f4e0341f913"
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 914,
+          "start_line": 28,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 29,
+          "event": "ENDEV=25,ENDEV=26",
+          "end_byte": 1117,
+          "end_line": 32,
+          "block_sha256": "49a3d4ee21dabff925891fda0f6ad6fc80ba0a7e3e782b6f7d81f9853c43e2e3"
+        },
+        {
+          "ordinal": 2,
+          "start_byte": 1199,
+          "start_line": 36,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 37,
+          "event": "NOWEV=23",
+          "end_byte": 1391,
+          "end_line": 40,
+          "block_sha256": "5374f1a1d2aa1f066ecb2019b023c024312102e6ed350f0f7ced51e3e9db1e11"
+        },
+        {
+          "ordinal": 3,
+          "start_byte": 1473,
+          "start_line": 44,
+          "header_key": "EventNo",
+          "header_numeric_literal": 24,
+          "event_number": 24,
+          "commands": [
+            {
+              "name": "GetItem",
+              "raw_operand": "2414",
+              "operands": [
+                {
+                  "item_id": 2414,
+                  "explicit_quantity": null
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "RequestMsg",
+            "ThanksMsg",
+            "StopMsg",
+            "EndStopMsg",
+            "NoStopMsg",
+            "ItemFullMsg"
+          ],
+          "type": "REQUEST",
+          "type_line": 45,
+          "event": "ENDEV!=23&LV>30",
+          "end_byte": 2097,
+          "end_line": 54,
+          "block_sha256": "cddffe6942860f94e95720871e442039e13e00927f90c513cebefa5aabe7acac"
+        },
+        {
+          "ordinal": 4,
+          "start_byte": 2098,
+          "start_line": 56,
+          "header_key": "EventNo",
+          "header_numeric_literal": 24,
+          "event_number": 24,
+          "commands": [
+            {
+              "name": "GetItem",
+              "raw_operand": "2414",
+              "operands": [
+                {
+                  "item_id": 2414,
+                  "explicit_quantity": null
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg",
+            "ItemFullMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 57,
+          "event": "NOWEV=24&ITEM!=2414",
+          "end_byte": 2329,
+          "end_line": 62,
+          "block_sha256": "9fa8e8793a1fc15212f3c57dcf0e3ebd7e94626e811544b861a8515a14a49374"
+        },
+        {
+          "ordinal": 5,
+          "start_byte": 2330,
+          "start_line": 64,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 65,
+          "event": "ENDEV=24,ENDEV=23",
+          "end_byte": 2519,
+          "end_line": 68,
+          "block_sha256": "dff779b8b3a8c06a413f3339b3e2144a34061f59b8949e9da8a45a225e579b87"
+        }
+      ]
+    },
+    {
+      "path": "giiru/event/garunaev6",
+      "sha256": "7e65595abe618ab67d2d2d444b6f3aeeadbe79a7b015efdb40f1b3865e04a45f",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 261,
+          "start_line": 12,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "raw_operand": "2503*1,2504*1",
+              "operands": [
+                {
+                  "item_id": 2503,
+                  "explicit_quantity": 1
+                },
+                {
+                  "item_id": 2504,
+                  "explicit_quantity": 1
+                }
+              ]
+            },
+            {
+              "name": "GetItem",
+              "raw_operand": "2506",
+              "operands": [
+                {
+                  "item_id": 2506,
+                  "explicit_quantity": null
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "AcceptMsg",
+            "AcceptMsg2",
+            "ThanksMsg",
+            "ItemFullMsg"
+          ],
+          "type": "ACCEPT",
+          "type_line": 13,
+          "event": "ITEM=2503&ITEM=2504&ITEM=2414",
+          "end_byte": 687,
+          "end_line": 21,
+          "block_sha256": "64884673ca9556eaffe01e020ef1b1ad09a9974d565c3402a34d820e3a18c6f3"
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 688,
+          "start_line": 23,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 24,
+          "event": "ITEM=2503&ITEM=2504",
+          "end_byte": 789,
+          "end_line": 27,
+          "block_sha256": "d11096e0e8ff39a82ff988610ca453561a8d96019705d5d7227a6f71630581b0"
+        },
+        {
+          "ordinal": 2,
+          "start_byte": 871,
+          "start_line": 31,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 32,
+          "event": "ENDEV=25&ITEM=1,ENDEV=26&ITEM=1",
+          "end_byte": 1034,
+          "end_line": 35,
+          "block_sha256": "57de506b41dbc554f0b36c151be005cd14285909a79e6bbab5d86240be2d487c"
+        },
+        {
+          "ordinal": 3,
+          "start_byte": 1035,
+          "start_line": 37,
+          "header_key": "EvebtNo",
+          "header_numeric_literal": -1,
+          "event_number": null,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWinodowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 38,
+          "event": "ITEM=2883",
+          "end_byte": 1177,
+          "end_line": 41,
+          "block_sha256": "f4c739207d76f741b2749814dece48eb095a52d00a09398ca09122f4269d3630"
+        },
+        {
+          "ordinal": 4,
+          "start_byte": 1178,
+          "start_line": 43,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "GetItem",
+              "raw_operand": "2883",
+              "operands": [
+                {
+                  "item_id": 2883,
+                  "explicit_quantity": null
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg",
+            "NomalWindowMsg1",
+            "NomalWindowMsg2",
+            "ItemFullMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 44,
+          "event": "ENDEV=25&ITEM=2414,ENDEV=26&ITEM=2414",
+          "end_byte": 1819,
+          "end_line": 51,
+          "block_sha256": "0ccfb064b40685eb421d41326e26e99d1fc074d1271249d7da8d1dc5e7cbfd91"
+        },
+        {
+          "ordinal": 5,
+          "start_byte": 1820,
+          "start_line": 53,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 54,
+          "event": "ENDEV=25,ENDEV=26",
+          "end_byte": 1919,
+          "end_line": 57,
+          "block_sha256": "d8e9da77db547aa2d04e83878e017cae5b0ab4d8af41e4bed2aef738b5589ca9"
+        },
+        {
+          "ordinal": 6,
+          "start_byte": 2001,
+          "start_line": 61,
+          "header_key": "EventNo",
+          "header_numeric_literal": 24,
+          "event_number": 24,
+          "commands": [],
+          "other_numeric_controls": [
+            {
+              "name": "EndSetFlg",
+              "value": 24
+            }
+          ],
+          "message_keys": [
+            "AcceptMsg",
+            "ThanksMsg"
+          ],
+          "type": "ACCEPT",
+          "type_line": 62,
+          "event": "NOWEV=24&ITEM=2414",
+          "end_byte": 2301,
+          "end_line": 67,
+          "block_sha256": "c254e144f914c2811a092b6d118bdc7a35995b2857cd3cd80f81106d3a33799b"
+        },
+        {
+          "ordinal": 7,
+          "start_byte": 2302,
+          "start_line": 69,
+          "header_key": "EventNo",
+          "header_numeric_literal": 24,
+          "event_number": 24,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 70,
+          "event": "NOWEV=24",
+          "end_byte": 2392,
+          "end_line": 73,
+          "block_sha256": "2eff59f5cf02d5a98c6581d04e21655b89a9036accc9f114d4a9b76f9fce2b5f"
+        },
+        {
+          "ordinal": 8,
+          "start_byte": 2393,
+          "start_line": 75,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 76,
+          "event": "ENDEV=24&ITEM=2414",
+          "end_byte": 2633,
+          "end_line": 79,
+          "block_sha256": "79a0d642ccea8e0fd3b1a8de39cc98b260c5e978861d4943455bc04bbf9b3fd0"
+        },
+        {
+          "ordinal": 9,
+          "start_byte": 2634,
+          "start_line": 81,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 82,
+          "event": "ENDEV=24",
+          "end_byte": 2724,
+          "end_line": 85,
+          "block_sha256": "d968a10b5af4b1a907562541d063235c8688daa8a88b654f8e8a7bbeacd96432"
+        },
+        {
+          "ordinal": 10,
+          "start_byte": 2806,
+          "start_line": 89,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 90,
+          "event": "NOWEV=23&ITEM=2414",
+          "end_byte": 3044,
+          "end_line": 93,
+          "block_sha256": "36e34bbf2edc3650bfec09ff41622f7c5e0f4ab7a21b7f7e2a18b1f7d7841070"
+        },
+        {
+          "ordinal": 11,
+          "start_byte": 3045,
+          "start_line": 95,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 96,
+          "event": "NOWEV=23",
+          "end_byte": 3135,
+          "end_line": 99,
+          "block_sha256": "ab9a0ce50015546f4abdbb237509c07496a5fd31d078c4526b896d3a847eaaa1"
+        },
+        {
+          "ordinal": 12,
+          "start_byte": 3136,
+          "start_line": 101,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 102,
+          "event": "ENDEV=23&ITEM=2414",
+          "end_byte": 3314,
+          "end_line": 105,
+          "block_sha256": "bad6aef7b1b1ea2d061ae6e6bb5ebff43610c05b2153eabd0cb6878c8ca9cb81"
+        },
+        {
+          "ordinal": 13,
+          "start_byte": 3315,
+          "start_line": 107,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 108,
+          "event": "ENDEV=23",
+          "end_byte": 3405,
+          "end_line": 111,
+          "block_sha256": "62709f71117a293f947b640887288fd859d26bb150b7ad6c1dc8862ca091d085"
+        },
+        {
+          "ordinal": 14,
+          "start_byte": 3488,
+          "start_line": 116,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [],
+          "other_numeric_controls": [],
+          "message_keys": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "type_line": 117,
+          "event": "ITEM=2414",
+          "end_byte": 3701,
+          "end_line": 120,
+          "block_sha256": "022107d5f9c5c9720629836746772f447ee2bb11af676cdc468be6e4cb903fd6"
+        }
+      ]
+    },
+    {
+      "path": "giiru/event/garunaev7",
+      "sha256": "c6901ac109007774c66bfd3bdd4951a206f9c8eeeee87815c4f524fef9d0c53d",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 212,
+          "start_line": 12,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "GetItem",
+              "raw_operand": "2504",
+              "operands": [
+                {
+                  "item_id": 2504,
+                  "explicit_quantity": null
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [
+            {
+              "name": "DelStone",
+              "value": 3000
+            }
+          ],
+          "message_keys": [
+            "RequestMsg",
+            "ThanksMsg",
+            "StopMsg",
+            "EndStopMsg",
+            "NoStopMsg",
+            "ItemFullMsg",
+            "StoneLessMsg"
+          ],
+          "type": "REQUEST",
+          "type_line": 13,
+          "event": "ENDEV=25,ENDEV=26",
+          "end_byte": 639,
+          "end_line": 24,
+          "block_sha256": "9c7ce696f3b8a4147d747a59a7e3974766aab69fc05063b3974ea2da6df9f719"
+        }
+      ]
+    },
+    {
+      "path": "giiru/event/garunaev8",
+      "sha256": "016dd4d8d0e8d2f5ded9180f6560edfd7e0eeb0ae42d2371ff2ea97cebc7d39b",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 211,
+          "start_line": 11,
+          "header_key": "EventNo",
+          "header_numeric_literal": -1,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "GetItem",
+              "raw_operand": "2503",
+              "operands": [
+                {
+                  "item_id": 2503,
+                  "explicit_quantity": null
+                }
+              ]
+            }
+          ],
+          "other_numeric_controls": [
+            {
+              "name": "DelStone",
+              "value": 3000
+            }
+          ],
+          "message_keys": [
+            "RequestMsg",
+            "ThanksMsg",
+            "StopMsg",
+            "EndStopMsg",
+            "NoStopMsg",
+            "ItemFullMsg",
+            "StoneLessMsg"
+          ],
+          "type": "REQUEST",
+          "type_line": 12,
+          "event": "ENDEV=25,ENDEV=26",
+          "end_byte": 638,
+          "end_line": 23,
+          "block_sha256": "572417d901b43be6efe9a151245e24c0c232c99c067fbcf7ffd0df439ce72277"
+        }
+      ]
+    }
+  ],
+  "prior_QUEST01_TYPE_blocks_verified": 68,
+  "source_item_evidence": [
+    {
+      "item_id": 1,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 273,
+          "sha256": "f96680e7376825e97f9530b22c97bda1569d35651e0860252120d556ec781afe"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 273,
+          "sha256": "f96680e7376825e97f9530b22c97bda1569d35651e0860252120d556ec781afe"
+        }
+      ],
+      "source_name_sha256": "1b2c0c20a379a19d101dc7599781a3d4790102cbfd0cd718b6ae056f66a01a44",
+      "source_image_alias": 20032,
+      "source_item01_numeric_row": [
+        1,
+        "f96680e7376825e97f9530b22c97bda1569d35651e0860252120d556ec781afe",
+        "f96680e7376825e97f9530b22c97bda1569d35651e0860252120d556ec781afe",
+        20032,
+        20032,
+        "125",
+        "1",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 20032,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "812342c5451f769a849f9a3791b2e9174fd1f266e7692c42f9fb8b968393811c",
+        "retail_ADRN_ordinal": 6005,
+        "physical_bitmap_number": 6005,
+        "source_offset_original": -17,
+        "source_offset_y_original": -15,
+        "source_width": 32,
+        "source_height": 28,
+        "original_RD_bytes": 593,
+        "original_RD_SHA256": "0dbf51438132d299af379a2cb338db13c833bc61ad2ea490ec27062929e9233f",
+        "original_indexed_pixel_SHA256": "879610d87ae99854aa33e15ebd37a88b62fed41d95fe19feb3464f950151d769",
+        "candidate_RGBA_SHA256": "815aaeb2391150f8ca60662d698ae674bbc5ef71b16464aaf56b594b199252b3",
+        "candidate_PNG_SHA256": "d17fcf15a93fee8768b63a4845914f0f6d079a63974cfbd9b024e3c8282b404f",
+        "private_PNG": "alias-20032.png"
+      },
+      "qualified_icon_present": true
+    },
+    {
+      "item_id": 2391,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset0710.txt",
+          "bytes": 186,
+          "sha256": "2540f2c0064c8311a2c6a3639db35ba20978c235f67f3ad5b3c1320536c6a56c"
+        }
+      ],
+      "source_name_sha256": "826ae97404ba96e0f7bf11154ab19c740ca1edfd44868afffd934076c1597cae",
+      "source_image_alias": 23903,
+      "source_item01_numeric_row": [
+        2391,
+        null,
+        "2540f2c0064c8311a2c6a3639db35ba20978c235f67f3ad5b3c1320536c6a56c",
+        null,
+        23903,
+        "0",
+        "16",
+        "0",
+        null,
+        "TW1_INDEX_NOT_FOUND",
+        null
+      ],
+      "source_icon_status": "NOT_IN_RETAIL_INDEX",
+      "qualified_icon_present": false
+    },
+    {
+      "item_id": 2393,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 193,
+          "sha256": "95074c8569d4b718acd7b92cedd5cccf1dedb079b44ca5fa337146fb9c5e7980"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 193,
+          "sha256": "95074c8569d4b718acd7b92cedd5cccf1dedb079b44ca5fa337146fb9c5e7980"
+        }
+      ],
+      "source_name_sha256": "5e6a9e13ad6424dabc53c60a828f4001dbb7b39e894c1e7881e35b9ddef66f5c",
+      "source_image_alias": 24222,
+      "source_item01_numeric_row": [
+        2393,
+        "95074c8569d4b718acd7b92cedd5cccf1dedb079b44ca5fa337146fb9c5e7980",
+        "95074c8569d4b718acd7b92cedd5cccf1dedb079b44ca5fa337146fb9c5e7980",
+        24222,
+        24222,
+        "0",
+        "16",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 24222,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "25bf791b5810a7462c63b8c0b696d2f5a1676f2f983030f9b8009ad5813205a5",
+        "retail_ADRN_ordinal": 6716,
+        "physical_bitmap_number": 6716,
+        "source_offset_original": -13,
+        "source_offset_y_original": -20,
+        "source_width": 28,
+        "source_height": 39,
+        "original_RD_bytes": 646,
+        "original_RD_SHA256": "d519e1dbfcf21cb23c7850eb741381698dc0ebd7437d69d68d877b0ad7cf8052",
+        "original_indexed_pixel_SHA256": "1effa165ba143f54cd79bd43bf780879f5016a7eb51c2bd5529e2913e97e91c2",
+        "candidate_RGBA_SHA256": "776d1549e59cdbb726a0a8bda2656251b917fe02375617cf39be574af6a683bf",
+        "candidate_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1",
+        "private_PNG": "alias-24222.png"
+      },
+      "qualified_icon_present": true
+    },
+    {
+      "item_id": 2395,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 199,
+          "sha256": "a27ce1ac153a74c1b76d1e7a8b68096779c712b721f85b7286f981b7c796d82d"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 199,
+          "sha256": "a27ce1ac153a74c1b76d1e7a8b68096779c712b721f85b7286f981b7c796d82d"
+        }
+      ],
+      "source_name_sha256": "2714ee78e9f9a79fe26937427869d47ed279f1c48a5248a45da958781aeeacd1",
+      "source_image_alias": 24222,
+      "source_item01_numeric_row": [
+        2395,
+        "a27ce1ac153a74c1b76d1e7a8b68096779c712b721f85b7286f981b7c796d82d",
+        "a27ce1ac153a74c1b76d1e7a8b68096779c712b721f85b7286f981b7c796d82d",
+        24222,
+        24222,
+        "0",
+        "16",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 24222,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "25bf791b5810a7462c63b8c0b696d2f5a1676f2f983030f9b8009ad5813205a5",
+        "retail_ADRN_ordinal": 6716,
+        "physical_bitmap_number": 6716,
+        "source_offset_original": -13,
+        "source_offset_y_original": -20,
+        "source_width": 28,
+        "source_height": 39,
+        "original_RD_bytes": 646,
+        "original_RD_SHA256": "d519e1dbfcf21cb23c7850eb741381698dc0ebd7437d69d68d877b0ad7cf8052",
+        "original_indexed_pixel_SHA256": "1effa165ba143f54cd79bd43bf780879f5016a7eb51c2bd5529e2913e97e91c2",
+        "candidate_RGBA_SHA256": "776d1549e59cdbb726a0a8bda2656251b917fe02375617cf39be574af6a683bf",
+        "candidate_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1",
+        "private_PNG": "alias-24222.png"
+      },
+      "qualified_icon_present": true
+    },
+    {
+      "item_id": 2414,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 213,
+          "sha256": "4618977dbec344a77f7a307dc996d2f1774bef4967b0c345910d5f0fd498eb96"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 213,
+          "sha256": "4618977dbec344a77f7a307dc996d2f1774bef4967b0c345910d5f0fd498eb96"
+        }
+      ],
+      "source_name_sha256": "a190daca9ca6d4f583a4e8be5aa2beb2c905075c9795a6c2a9434b84bbdcc1e8",
+      "source_image_alias": 24130,
+      "source_item01_numeric_row": [
+        2414,
+        "4618977dbec344a77f7a307dc996d2f1774bef4967b0c345910d5f0fd498eb96",
+        "4618977dbec344a77f7a307dc996d2f1774bef4967b0c345910d5f0fd498eb96",
+        24130,
+        24130,
+        "80",
+        "16",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 24130,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "9f85d7ca3e451ce8389ba83d702a11e1beed1343fd091c683ab5e6f7f751905d",
+        "retail_ADRN_ordinal": 6810,
+        "physical_bitmap_number": 6810,
+        "source_offset_original": -8,
+        "source_offset_y_original": -8,
+        "source_width": 16,
+        "source_height": 17,
+        "original_RD_bytes": 233,
+        "original_RD_SHA256": "4eda88ba0873d1e9f408f4c255d841c43dbdf4756893be099726f81c9dfdb6c6",
+        "original_indexed_pixel_SHA256": "1b51693b2c67c70b34b40454e67c4d52292895455d3755e36d49bf1b7646b85b",
+        "candidate_RGBA_SHA256": "b4231af0f202f4c5ead2fceea5e254a9ebae3870402d2a3797177273a2f9e20b",
+        "candidate_PNG_SHA256": "6ede96a25a984f568b2f52092f3af32c1d599beebfd02f021261f9843eaee1b4",
+        "private_PNG": "alias-24130.png"
+      },
+      "qualified_icon_present": true
+    },
+    {
+      "item_id": 2499,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 195,
+          "sha256": "d8d39455a66ea14622413523416678d47517ce72e6fdb4c071b017b3f19ebe44"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 195,
+          "sha256": "d8d39455a66ea14622413523416678d47517ce72e6fdb4c071b017b3f19ebe44"
+        }
+      ],
+      "source_name_sha256": "d4b7d950d89bbc6e267cc9515fda1db46c6552cf31b6b7e5d4d66e28eb4add4e",
+      "source_image_alias": 24222,
+      "source_item01_numeric_row": [
+        2499,
+        "d8d39455a66ea14622413523416678d47517ce72e6fdb4c071b017b3f19ebe44",
+        "d8d39455a66ea14622413523416678d47517ce72e6fdb4c071b017b3f19ebe44",
+        24222,
+        24222,
+        "0",
+        "16",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 24222,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "25bf791b5810a7462c63b8c0b696d2f5a1676f2f983030f9b8009ad5813205a5",
+        "retail_ADRN_ordinal": 6716,
+        "physical_bitmap_number": 6716,
+        "source_offset_original": -13,
+        "source_offset_y_original": -20,
+        "source_width": 28,
+        "source_height": 39,
+        "original_RD_bytes": 646,
+        "original_RD_SHA256": "d519e1dbfcf21cb23c7850eb741381698dc0ebd7437d69d68d877b0ad7cf8052",
+        "original_indexed_pixel_SHA256": "1effa165ba143f54cd79bd43bf780879f5016a7eb51c2bd5529e2913e97e91c2",
+        "candidate_RGBA_SHA256": "776d1549e59cdbb726a0a8bda2656251b917fe02375617cf39be574af6a683bf",
+        "candidate_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1",
+        "private_PNG": "alias-24222.png"
+      },
+      "qualified_icon_present": true
+    },
+    {
+      "item_id": 2500,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 203,
+          "sha256": "d57f8362ac922b79035dee576fd37c7401d93019622457844ff5d2d7c887ab91"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 203,
+          "sha256": "d57f8362ac922b79035dee576fd37c7401d93019622457844ff5d2d7c887ab91"
+        }
+      ],
+      "source_name_sha256": "b5c28c2c4ebbef41fe02bf47bbd2fe3e76b240d60dc9a9c19f387af98fb3f6a3",
+      "source_image_alias": 24222,
+      "source_item01_numeric_row": [
+        2500,
+        "d57f8362ac922b79035dee576fd37c7401d93019622457844ff5d2d7c887ab91",
+        "d57f8362ac922b79035dee576fd37c7401d93019622457844ff5d2d7c887ab91",
+        24222,
+        24222,
+        "0",
+        "16",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 24222,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "25bf791b5810a7462c63b8c0b696d2f5a1676f2f983030f9b8009ad5813205a5",
+        "retail_ADRN_ordinal": 6716,
+        "physical_bitmap_number": 6716,
+        "source_offset_original": -13,
+        "source_offset_y_original": -20,
+        "source_width": 28,
+        "source_height": 39,
+        "original_RD_bytes": 646,
+        "original_RD_SHA256": "d519e1dbfcf21cb23c7850eb741381698dc0ebd7437d69d68d877b0ad7cf8052",
+        "original_indexed_pixel_SHA256": "1effa165ba143f54cd79bd43bf780879f5016a7eb51c2bd5529e2913e97e91c2",
+        "candidate_RGBA_SHA256": "776d1549e59cdbb726a0a8bda2656251b917fe02375617cf39be574af6a683bf",
+        "candidate_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1",
+        "private_PNG": "alias-24222.png"
+      },
+      "qualified_icon_present": true
+    },
+    {
+      "item_id": 2501,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 201,
+          "sha256": "81929aa19ac8001070d9ac250812a8877f37c2d690acb398285abd450b4ac739"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 201,
+          "sha256": "81929aa19ac8001070d9ac250812a8877f37c2d690acb398285abd450b4ac739"
+        }
+      ],
+      "source_name_sha256": "2705588989f1979ab71248aa393b6ec3832f9ffd4e6c3152ac309b3c29e0d4cd",
+      "source_image_alias": 24222,
+      "source_item01_numeric_row": [
+        2501,
+        "81929aa19ac8001070d9ac250812a8877f37c2d690acb398285abd450b4ac739",
+        "81929aa19ac8001070d9ac250812a8877f37c2d690acb398285abd450b4ac739",
+        24222,
+        24222,
+        "0",
+        "16",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 24222,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "25bf791b5810a7462c63b8c0b696d2f5a1676f2f983030f9b8009ad5813205a5",
+        "retail_ADRN_ordinal": 6716,
+        "physical_bitmap_number": 6716,
+        "source_offset_original": -13,
+        "source_offset_y_original": -20,
+        "source_width": 28,
+        "source_height": 39,
+        "original_RD_bytes": 646,
+        "original_RD_SHA256": "d519e1dbfcf21cb23c7850eb741381698dc0ebd7437d69d68d877b0ad7cf8052",
+        "original_indexed_pixel_SHA256": "1effa165ba143f54cd79bd43bf780879f5016a7eb51c2bd5529e2913e97e91c2",
+        "candidate_RGBA_SHA256": "776d1549e59cdbb726a0a8bda2656251b917fe02375617cf39be574af6a683bf",
+        "candidate_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1",
+        "private_PNG": "alias-24222.png"
+      },
+      "qualified_icon_present": true
+    },
+    {
+      "item_id": 2502,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 209,
+          "sha256": "8554ea75c9e9a7d4126c9c8cdf6cea854bd731a89b24007da7116074df9a7eef"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 209,
+          "sha256": "8554ea75c9e9a7d4126c9c8cdf6cea854bd731a89b24007da7116074df9a7eef"
+        }
+      ],
+      "source_name_sha256": "b64dc59323ce89e14575816bff32bb9d112193da9a50a949bf3dad3ee79ea7f6",
+      "source_image_alias": 24222,
+      "source_item01_numeric_row": [
+        2502,
+        "8554ea75c9e9a7d4126c9c8cdf6cea854bd731a89b24007da7116074df9a7eef",
+        "8554ea75c9e9a7d4126c9c8cdf6cea854bd731a89b24007da7116074df9a7eef",
+        24222,
+        24222,
+        "0",
+        "16",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 24222,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "25bf791b5810a7462c63b8c0b696d2f5a1676f2f983030f9b8009ad5813205a5",
+        "retail_ADRN_ordinal": 6716,
+        "physical_bitmap_number": 6716,
+        "source_offset_original": -13,
+        "source_offset_y_original": -20,
+        "source_width": 28,
+        "source_height": 39,
+        "original_RD_bytes": 646,
+        "original_RD_SHA256": "d519e1dbfcf21cb23c7850eb741381698dc0ebd7437d69d68d877b0ad7cf8052",
+        "original_indexed_pixel_SHA256": "1effa165ba143f54cd79bd43bf780879f5016a7eb51c2bd5529e2913e97e91c2",
+        "candidate_RGBA_SHA256": "776d1549e59cdbb726a0a8bda2656251b917fe02375617cf39be574af6a683bf",
+        "candidate_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1",
+        "private_PNG": "alias-24222.png"
+      },
+      "qualified_icon_present": true
+    },
+    {
+      "item_id": 2503,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 204,
+          "sha256": "dd8aabc892463831040fafcbcd8fbf07d544fbaa2d1cf5ec9bcec7ba4e37c334"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 204,
+          "sha256": "dd8aabc892463831040fafcbcd8fbf07d544fbaa2d1cf5ec9bcec7ba4e37c334"
+        }
+      ],
+      "source_name_sha256": "df2ea31fed7e735943d561896c076e60b7c734df4c40228288d42a71271979be",
+      "source_image_alias": 24119,
+      "source_item01_numeric_row": [
+        2503,
+        "dd8aabc892463831040fafcbcd8fbf07d544fbaa2d1cf5ec9bcec7ba4e37c334",
+        "dd8aabc892463831040fafcbcd8fbf07d544fbaa2d1cf5ec9bcec7ba4e37c334",
+        24119,
+        24119,
+        "3000",
+        "16",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 24119,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "8cf81a318b3be8e1a03c7ec2113b287192af08bbd9f541c45c88e1dda3184683",
+        "retail_ADRN_ordinal": 6799,
+        "physical_bitmap_number": 6799,
+        "source_offset_original": -13,
+        "source_offset_y_original": -12,
+        "source_width": 28,
+        "source_height": 29,
+        "original_RD_bytes": 611,
+        "original_RD_SHA256": "6e5f5eb32cba4187cb55d4cb55e871287f4c3523d0b8b19200201acc5a9b90ea",
+        "original_indexed_pixel_SHA256": "43ee5ab3ba1db50a501bfc067a18c3c064af638ab0b1caab788c01fcb32fd3b0",
+        "candidate_RGBA_SHA256": "f3cbf3c607883d33d46dc88e5269940d594d61d272e26115013eb2c811836eb7",
+        "candidate_PNG_SHA256": "f5f8724e29f9773360dcccb511727145a3e200112e75c4d98b62eb812d4e94d4",
+        "private_PNG": "alias-24119.png"
+      },
+      "qualified_icon_present": true
+    },
+    {
+      "item_id": 2504,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 204,
+          "sha256": "e0bae3a6ca43300da8c51bd106594b8226adcbcfc9c7d1504539f81a3e6cad21"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 204,
+          "sha256": "e0bae3a6ca43300da8c51bd106594b8226adcbcfc9c7d1504539f81a3e6cad21"
+        }
+      ],
+      "source_name_sha256": "db7d710e9730d873b8282ef51e9de405cf5ed19bc4fd055eeccf37312eada29b",
+      "source_image_alias": 24118,
+      "source_item01_numeric_row": [
+        2504,
+        "e0bae3a6ca43300da8c51bd106594b8226adcbcfc9c7d1504539f81a3e6cad21",
+        "e0bae3a6ca43300da8c51bd106594b8226adcbcfc9c7d1504539f81a3e6cad21",
+        24118,
+        24118,
+        "3000",
+        "16",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 24118,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "933c119b6476b2183dd88b704341babf0b49641d0067a7bfffb82f0a6a2bdf5e",
+        "retail_ADRN_ordinal": 6798,
+        "physical_bitmap_number": 6798,
+        "source_offset_original": -14,
+        "source_offset_y_original": -12,
+        "source_width": 28,
+        "source_height": 29,
+        "original_RD_bytes": 619,
+        "original_RD_SHA256": "b6ca792a8fb83fc72df217f895ddb4641be21ad8dabd2a19e4d831525b0c9485",
+        "original_indexed_pixel_SHA256": "e2b9fadabf5f9c87aa4b9bb1c6404e7e5342a3008e5772c5f7dd8b4292332d85",
+        "candidate_RGBA_SHA256": "81de69ff0a242b2a75d44f66df49bbc8262fe91bc7e07741cbdd94f93de07128",
+        "candidate_PNG_SHA256": "3cd7d49164027809a85c15b072bba891ad926da4c01363be1026f3d98f90d7ec",
+        "private_PNG": "alias-24118.png"
+      },
+      "qualified_icon_present": true
+    },
+    {
+      "item_id": 2506,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 220,
+          "sha256": "1a7dec083164cecda53a9622043cdf2cd0ce0355edae13d38fcf9681cdfa8afe"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 220,
+          "sha256": "1a7dec083164cecda53a9622043cdf2cd0ce0355edae13d38fcf9681cdfa8afe"
+        }
+      ],
+      "source_name_sha256": "737deef22f1f4d9fb64a728678666521c536594d93f07f6d4fb09ad6928b3897",
+      "source_image_alias": 24122,
+      "source_item01_numeric_row": [
+        2506,
+        "1a7dec083164cecda53a9622043cdf2cd0ce0355edae13d38fcf9681cdfa8afe",
+        "1a7dec083164cecda53a9622043cdf2cd0ce0355edae13d38fcf9681cdfa8afe",
+        24122,
+        24122,
+        "10",
+        "16",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 24122,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "77521316333d0a8533096c430c7d3df59826008e80810c99a9b67d4a665bbb5b",
+        "retail_ADRN_ordinal": 6802,
+        "physical_bitmap_number": 6802,
+        "source_offset_original": -11,
+        "source_offset_y_original": -9,
+        "source_width": 24,
+        "source_height": 24,
+        "original_RD_bytes": 445,
+        "original_RD_SHA256": "72f065eedc1b234bd49aefb8e0609ab15def1499cff6825ccce5fe6130cb23f0",
+        "original_indexed_pixel_SHA256": "1e226816325159409d4027141139c446d638341ce2cc80769efd1ab03f2a9fc1",
+        "candidate_RGBA_SHA256": "c924a3885854e4ecea6a08730bab07ce0cda54f0045818d321bcfa506984107b",
+        "candidate_PNG_SHA256": "b7d3050125b50960c768e17a9bded4aef03fc5f818c4f19cf665ff3cb3b1e95d",
+        "private_PNG": "alias-24122.png"
+      },
+      "qualified_icon_present": true
+    },
+    {
+      "item_id": 2883,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 193,
+          "sha256": "0aa2566a4b520bd7d508a0e3466f482b5bfe565b4fa3804ef54aecc42eb66d95"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 193,
+          "sha256": "0aa2566a4b520bd7d508a0e3466f482b5bfe565b4fa3804ef54aecc42eb66d95"
+        }
+      ],
+      "source_name_sha256": "5898c99851a00374b18daf78782967eb47476b090c8a08de0af5fa83a9b11590",
+      "source_image_alias": 22060,
+      "source_item01_numeric_row": [
+        2883,
+        "0aa2566a4b520bd7d508a0e3466f482b5bfe565b4fa3804ef54aecc42eb66d95",
+        "0aa2566a4b520bd7d508a0e3466f482b5bfe565b4fa3804ef54aecc42eb66d95",
+        22060,
+        22060,
+        "0",
+        "20",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 22060,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "3526d99625ef7d7c2276e97a088703ed0fa248f877e842bd3a8ee9f7216fc40c",
+        "retail_ADRN_ordinal": 6427,
+        "physical_bitmap_number": 6427,
+        "source_offset_original": -18,
+        "source_offset_y_original": -12,
+        "source_width": 36,
+        "source_height": 22,
+        "original_RD_bytes": 612,
+        "original_RD_SHA256": "7f18430a03e3b274448c306c39341003b65b5cfc10869b6d831cd4dd578ee308",
+        "original_indexed_pixel_SHA256": "deb36a8b4fb0f1840e78f09ff2ae92ab03d3cd3dbfec4da5bb0880c02d9d6762",
+        "candidate_RGBA_SHA256": "f8dc5856ad978abecd9d8166c01ad2ae1aedbe5e9069491d68ab83899451b22e",
+        "candidate_PNG_SHA256": "fc12352e3e306530314ce5c37f7bd57a467c56d1ee44a36efc425a62fed58fbe",
+        "private_PNG": "alias-22060.png"
+      },
+      "qualified_icon_present": true
+    }
+  ],
+  "source_map_observations": [
+    {
+      "floor": 31002,
+      "source_DAT_sha256": "1c09c2d9aa40066c805a6aaf2767bfd1e8e212bc16b4c9185860b909cce85209",
+      "source_DAT_bytes": 15008,
+      "geometry": [
+        50,
+        50
+      ],
+      "prior_MAP09_thumbnail_sha256": "b2af49588a86a30012361b92855adc20c18a57796ced1b5b975042a8cb41cfe7",
+      "marked_thumbnail_sha256": "dc2cadf1589fe14ad6dd63416194ab4c88c794cfb1afbdcb627b0477cee3cd9f",
+      "source_points": [
+        {
+          "source_create_ordinal_or_target": 7,
+          "xy": [
+            45,
+            21
+          ],
+          "original_three_u16_values": [
+            4082,
+            0,
+            49152
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 31003,
+      "source_DAT_sha256": "81f1ade217140f31c0e6e6986e9049bc9b3a670bcb33a6da8dd8655c393a5232",
+      "source_DAT_bytes": 3758,
+      "geometry": [
+        25,
+        25
+      ],
+      "prior_MAP09_thumbnail_sha256": "88c2fb30f01a48d48d684056ac20af209b63bd954ad86ea8b5f681d484555c46",
+      "marked_thumbnail_sha256": "2473234e5a77c7839dbbbe656c3f8e943c59c6fc62838e1258bc47ed543772b3",
+      "source_points": [
+        {
+          "source_create_ordinal_or_target": 3,
+          "xy": [
+            13,
+            5
+          ],
+          "original_three_u16_values": [
+            4080,
+            0,
+            16384
+          ]
+        },
+        {
+          "source_create_ordinal_or_target": 4,
+          "xy": [
+            16,
+            8
+          ],
+          "original_three_u16_values": [
+            4123,
+            0,
+            49152
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 31102,
+      "source_DAT_sha256": "82c9cc79666a3348f7e3f9590dd5b6a2e569e67df13ea3081d87fc2eb5926f61",
+      "source_DAT_bytes": 15008,
+      "geometry": [
+        50,
+        50
+      ],
+      "prior_MAP09_thumbnail_sha256": "655bd5b86a6d3698647cb1784b853af70b8879660b3e525358e7174bcc51d5ac",
+      "marked_thumbnail_sha256": "94316f7f9b7666303f6636c786615375a347be6fe490ae7f557ff4224ed166b1",
+      "source_points": [
+        {
+          "source_create_ordinal_or_target": 6,
+          "xy": [
+            45,
+            42
+          ],
+          "original_three_u16_values": [
+            4085,
+            0,
+            49152
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 31103,
+      "source_DAT_sha256": "ce761bc312802f5443e58dc869ca90e5fed7702281d7c98a2ca1fe55c076275a",
+      "source_DAT_bytes": 3758,
+      "geometry": [
+        25,
+        25
+      ],
+      "prior_MAP09_thumbnail_sha256": "5e06c67574d4f7162d4d1a3f3953bcf8fcfc1b32835037a68ab6a5c7d60e2a51",
+      "marked_thumbnail_sha256": "b11590b0358add32eccf78ac33c670741e9ce5532b3aa5ef9ede506622e06007",
+      "source_points": [
+        {
+          "source_create_ordinal_or_target": 0,
+          "xy": [
+            18,
+            10
+          ],
+          "original_three_u16_values": [
+            4074,
+            0,
+            49152
+          ]
+        },
+        {
+          "source_create_ordinal_or_target": 1,
+          "xy": [
+            16,
+            8
+          ],
+          "original_three_u16_values": [
+            4082,
+            0,
+            49152
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 31205,
+      "source_DAT_sha256": "5fb967a40557cb185ee9402beb35e2b2e51e56a356dec6c6285cc0a101c2ed3d",
+      "source_DAT_bytes": 3758,
+      "geometry": [
+        25,
+        25
+      ],
+      "prior_MAP09_thumbnail_sha256": "f6702b6dc5f6307ad8fe2834865c0e19c66284a58bea8332b6414f96afc53ee2",
+      "marked_thumbnail_sha256": "98ac4af4063ca6ae84d244ea186b18cf76acb2dd8213d224e3d2a2efb6eea111",
+      "source_points": [
+        {
+          "source_create_ordinal_or_target": 2,
+          "xy": [
+            12,
+            11
+          ],
+          "original_three_u16_values": [
+            4015,
+            0,
+            49152
+          ]
+        },
+        {
+          "source_create_ordinal_or_target": 5,
+          "xy": [
+            12,
+            12
+          ],
+          "original_three_u16_values": [
+            4003,
+            0,
+            49152
+          ]
+        }
+      ]
+    }
+  ],
+  "private_item_archive_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+  "private_map_archive_sha256": "d84d0800dd600798769dfb7251a1d7816588ac061ccc27812ac64a37922d4a8a",
+  "derived_input_blobs": {
+    "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2",
+    "research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json": "137580e7c25aadf3d679b6ebfb5080b79912cc4f",
+    "research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-01-R1.json": "d39ef58c88f1326d227b2844ca06ed5e23e2965a",
+    "research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-02-R1.json": "b91bc8335db508998f4595144ce371979ea8c849"
+  },
+  "boundaries": {
+    "native_execution_verified": false,
+    "complete_deployed_quest_chain_verified": false,
+    "official_origin_verified": false,
+    "source_typos_repaired": false,
+    "condition_punctuation_interpreted": false,
+    "implicit_item_quantity_assumed": false,
+    "source_order_claimed_runtime_priority": false,
+    "ore_sellers_claimed_warps": false,
+    "new_original_RD_decodes": false,
+    "new_full_map_canvas_rendered": false,
+    "original_NPC_sprites_drawn": false,
+    "same_official_deployment_verified": false
+  },
+  "status": {
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  }
+}
