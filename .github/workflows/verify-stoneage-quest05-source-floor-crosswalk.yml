@@ -1,0 +1,31 @@
+name: Verify StoneAge QUEST05 original NPC-to-DAT source floor crosswalk
+
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-QUEST05-598-ORIGINAL-CREATE-FLOOR-MAP-AND-WARP-CROSSWALK-R1.json'
+      - 'research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json'
+      - 'research/recovered/STONEAGE-QUEST-STORY-MODULE-02-ORIGINAL-WARPMAN-CONDITION-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-QUEST-STORY-MODULE-03-QUIZ-TIMEMAN-ORIGINAL-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-QUEST04-SOURCE-BOUNDED-FAMILIES-R1.json'
+      - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-04-955-ORIGINAL-DAT-4166-RD-PIXEL-INDEX-R1.json'
+      - 'research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json'
+      - 'research/recovered/STONEAGE-MAP10-PUBLIC-ORIGINAL-SOURCE-CUSTODY-R1.json'
+      - 'tests/test_stoneage_quest05_original_floor_crosswalk.py'
+      - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-QUEST05-598-ORIGINAL-CREATE-FLOOR-MAP-AND-WARP-CROSSWALK-R1.json'
+      - 'tests/test_stoneage_quest05_original_floor_crosswalk.py'
+      - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
+  workflow_dispatch:
+
+jobs:
+  replay-original-source-only:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run deterministic source-bounded floor and warp checks
+        run: python -m unittest discover -s tests -p 'test_stoneage_quest05_original_floor_crosswalk.py' -v
