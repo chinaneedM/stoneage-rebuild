@@ -24,6 +24,9 @@ jobs:
         run: python3 -m unittest discover -s tests -p 'test_stoneage_item07_patch129_item_alias_crosswalk.py' -v
       - name: Rebuild from exact pinned original-derived metadata
         run: python3 tools/stoneage_item07_patch129_item_alias_crosswalk.py
+      - name: Reject stale checked-in source report on pull requests
+        if: github.event_name == 'pull_request'
+        run: git diff --exit-code -- research/recovered/STONEAGE-ITEM07-PATCH129-ITEM-ALIAS-CROSSVERSION-SOURCE-R1.json
       - name: Verify output can replay byte-identically
         shell: bash
         run: |
