@@ -21,7 +21,7 @@ def verify(a,m):
     assert a1["backup"]["original_block_count"]==34 and a1["active"]["original_block_count"]==8
     shared=a["shared_exact_original_blocks"]
     novel=a["backup_only_original_create_records"]
-    assert len(shared)==8 and len(novel)==26 and len({x["backup_block_ordinal"] for x in [*shared,*novel]})==34
+    assert len(shared)==8 and len(novel)==26 and len({x["source_backup_block_ordinal"] for x in shared} | {x["backup_block_ordinal"] for x in novel})==34
     assert {x["floor"] for x in shared}=={1000,2000,3000,4000,1003,2003,3003,4003}
     maps=a["source_nine_original_DAT_members"];byfloor={x["floor"]:x for x in maps}
     assert len(maps)==len(byfloor)==9
