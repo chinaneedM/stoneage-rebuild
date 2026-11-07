@@ -25,6 +25,9 @@ on:
       - 'research/recovered/STONEAGE-QUEST09-TWO-ORIGINAL-CAVE-MAPS-OBSERVATION-R1.json'
       - 'tools/stoneage_quest09_dream_cave_source.py'
       - 'tests/test_stoneage_quest09_dream_cave_source.py'
+      - 'research/recovered/STONEAGE-QUEST10-QUARRY-SPIRITS-ORIGINAL-SOURCE-R1.json'
+      - 'tools/stoneage_quest10_quarry_spirits_source.py'
+      - 'tests/test_stoneage_quest10_quarry_spirits_source.py'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   pull_request:
     paths:
@@ -43,6 +46,9 @@ on:
       - 'research/recovered/STONEAGE-QUEST09-TWO-ORIGINAL-CAVE-MAPS-OBSERVATION-R1.json'
       - 'tools/stoneage_quest09_dream_cave_source.py'
       - 'tests/test_stoneage_quest09_dream_cave_source.py'
+      - 'research/recovered/STONEAGE-QUEST10-QUARRY-SPIRITS-ORIGINAL-SOURCE-R1.json'
+      - 'tools/stoneage_quest10_quarry_spirits_source.py'
+      - 'tests/test_stoneage_quest10_quarry_spirits_source.py'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   workflow_dispatch:
 
@@ -63,3 +69,5 @@ jobs:
         run: python -m unittest tests.test_stoneage_quest08_mining_source -v
       - name: Validate QUEST09 original dream-cave controls and qualified map observations
         run: python -m unittest tests.test_stoneage_quest09_dream_cave_source -v
+      - name: Validate QUEST10 original quarry-spirit source redirection and item conflicts
+        run: python -m unittest tests.test_stoneage_quest10_quarry_spirits_source -v
