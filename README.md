@@ -2082,3 +2082,7 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-07 — QUEST06-R2｜四村原对白的跨村物品提示连接
 
 [来源边界与原文本限定关系](docs/continuity/STONEAGE-QUEST06-R2-ORIGINAL-DELIVERY-HINT-GRAPH-20261107.md)：私人复验四份原CP950 `worksell_*.conf` 的原SHA/CRC，在已验 QUEST06 原件中恢复8条 `TALKEVENT2/3` 的**源村名提示**，按同物品编号对应四份脚本的 `TALKEVENT4/5` 接收条件，形成四组候选有向脚本关联。1014→2014、2014→1014、3014→4014、4014→2014；本四脚本子集没有指向3014的提示，但不能推断全游戏缺任务。此为原静态对白、不是官方地图路线、运行NPC、发物或早期官方地理认证；公开仅[8条派生关系](research/recovered/STONEAGE-QUEST06-R2-ORIGINAL-COURIER-ITEM-HINT-GRAPH-R1.json)和来源回归。旧CURRENT完整blob不变、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall百分比未知。NEXT跨域转真实源字节/画面，缺新材料不续建路由框架。
+
+## 2026-11-07 — MAP11｜28间原房间三层复用关系与私人对比画面
+
+[MAP11源完整原DAT逐层关系](docs/continuity/STONEAGE-MAP11-28-ORIGINAL-DAT-PLANE-FAMILIES-20261107.md)：实际重读已保管MAP07源ZIP 34,044,818B、351成员CRC和28份真实5408B DAT；完整28原DAT整SHA各异，但单独三张900格u16数值层整SHA分别有18/28/20种，第0层5个相同组覆盖15份楼层。对其中10对逐原数值格和完整1889×1425合成原RD候选画面比较，相同源第0层的完整场景画面均不同；不得当官方村庄、同一地图、碰撞、可通行状态。新15张画面分组对照及28份完整源指纹已私人Library二次SHA回读；公开仅[派生数值/来源负例](research/recovered/STONEAGE-MAP11-28-ORIGINAL-DAT-PLANE-FAMILIES-R1.json)，原DAT/RD/图像不入Git。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体百分比未知。下一项切换其他可读原游戏内容，不继续扩写地图分类框架。
