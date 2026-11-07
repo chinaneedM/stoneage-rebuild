@@ -2045,3 +2045,7 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 - NEXT **MAP08**：继续地图模块真实原件优先的更大场景/缺图补证，按原源SHA与跨版本边界进行，Stage A 7PARTIAL+2OPEN不变，不进入引擎/网服建设。
 
 **MAP07私人档案保管后验（2026-11-07）：** 先前container_path上传失败已保留；改用精确文件快照成功保存在个人Library `/石器时代/StoneAge-MAP07-private-28-original-room-scene-candidates.zip`，并完整回读验证34,044,818B、SHA256 `2b356fefa1f5c634a2a64837b20904e124ab9839ad6a4e3b9a642e3c05df29a2`、351项CRC均一致。MAP07初次主线合并 `244c8cc5` 的11项Actions均成功。详细见MAP07连续性记录的“追加后验”，NEXT仍MAP08。
+
+## 2026-11-07 MAP08：955原DAT持久私人保管与6张来源场景
+
+[MAP08来源及实际观察续接](docs/continuity/STONEAGE-MAP08-955-DAT-SIX-LARGE-SCENES-20261107.md)：一次真实取回955份已固定摘要的原DAT（不是955张新发现地图），私人完整保存供后续复用；6张原图齐全场景1200/1400/3100/3300/5100/5500已合成18幅候选原素材画面，47874绘图位置、1298组原PNG。独立NumPy与Pillow全18画布RGBA一致，约120MB私人包完整回读SHA/CRC同一。公仓库仅方法/派生元数据，无商业原文件。原客户端/原生碰撞/官方同部署不晋升。最高NEXT **MAP09**：复用955原DAT与已有像素包批量续原场景，缺图明确保留；不重下大载体。旧CURRENT完整保留，Stage A 7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null不变。

@@ -1,0 +1,29 @@
+name: Recover qualified 955 original MAP08 DAT with private encrypted transfer
+on:
+  push:
+    branches: [agent/map08-village-scenes-20261107]
+    paths:
+      - tools/stoneage_map08_private_dat_batch.py
+      - research/recovered/STONEAGE-MAP08-TRANSFER-CERT.pem
+      - .github/workflows/source-stoneage-map08-private-dat.yml
+permissions:
+  contents: read
+jobs:
+  map08-private-dat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python -m pip install libarchive-c==5.3
+      - name: Byte-verify original carrier and 955 exact DAT source members
+        run: python -m tools.stoneage_map08_private_dat_batch --output /tmp/map08-output --certificate research/recovered/STONEAGE-MAP08-TRANSFER-CERT.pem
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: map08-original-private-dat-encrypted-and-derived-metadata
+          path: /tmp/map08-output
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7

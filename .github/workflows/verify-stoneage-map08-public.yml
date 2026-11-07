@@ -1,0 +1,23 @@
+name: Verify MAP08 955 DAT custody and six large scenes (public metadata only)
+on:
+  push:
+    branches: [main, agent/map08-village-scenes-20261107]
+    paths:
+      - research/recovered/STONEAGE-MAP08-*.json
+      - tests/test_stoneage_map08_source_scenes.py
+      - .github/workflows/verify-stoneage-map08-public.yml
+  pull_request:
+    paths:
+      - research/recovered/STONEAGE-MAP08-*.json
+      - tests/test_stoneage_map08_source_scenes.py
+      - .github/workflows/verify-stoneage-map08-public.yml
+permissions: {contents: read}
+jobs:
+  source-consistency:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python -m unittest discover -s tests -p 'test_stoneage_map0[678]*.py' -v
