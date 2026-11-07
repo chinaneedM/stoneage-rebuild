@@ -45,3 +45,7 @@
 **止点：** QUEST模块仍 `SOURCE_BOUNDED_PARTIAL`；原本体/永久/时限活动身份仍需各地区同版本证据。Stage A **7 PARTIAL + 2 OPEN**、Stage B/wiki **GATED**、R79 **PAUSED_NON_BLOCKING**，总体 `overall_percent=null`。历史CURRENT全blob保留，不能截断重写。
 
 **NEXT：** 若有真正可读且未审过的原任务来源可做`QUEST06`局部批量来源核验；否则按既有QUEST04源限定止点进入 **GAMEPLAY-MECHANICS-MODULE-01**，从真实客户端/服务端规则实物复原捕捉、战斗、骑宠、成长、合成与状态。新分类/关系只随真实原内容新增维护，不再建立另一套空架构。
+
+## 合并后独立原件回读补充（2026-11-07）
+
+PR #238的13项提交验收全部success，主线合并提交 `7b703a791b7c652b2d9d3b950d6940407667a505`。此外，本轮**直接读取私人MAP09原ZIP字节**（46844444B/SHA256 `d84d0800dd600798769dfb7251a1d7816588ac061ccc27812ac64a37922d4a8a`）及其中955原DAT的嵌套ZIP（1988312B/SHA256 `c079a1c25bfa11902b69c1f2839058d4fb20f025ef15c93f649f636c7e5f833a`），父/子ZIP全部成员CRC无错误。逐份原DAT从实际字节核SHA256、字节数、8字节宽高和 `8+6*width*height` 完整格结构：**955/955四项全部匹配**先前保留的MAP04源索引，未缺额外成员。安全派生记录：[QUEST05独立955原DAT字节复核收据](../../research/recovered/STONEAGE-QUEST05-955-ORIGINAL-DAT-BYTE-REPLAY-R1.json)。这项原件回读只证明存档DAT结构/摘要，不验证原游戏地图加载、真实传送、岛屿/村庄归属或商业服同部署。原DAT及商用图像未进入公开Git。
