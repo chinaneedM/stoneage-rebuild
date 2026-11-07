@@ -16,6 +16,8 @@ on:
       - 'research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-02-R1.json'
       - 'research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-05-R1.json'
       - 'tests/test_stoneage_quest06_four_courier_source.py'
+      - 'research/recovered/STONEAGE-QUEST06-R2-ORIGINAL-COURIER-ITEM-HINT-GRAPH-R1.json'
+      - 'tests/test_stoneage_quest06_r2_original_hint_graph.py'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   pull_request:
     paths:
@@ -25,6 +27,8 @@ on:
       - 'research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-02-R1.json'
       - 'research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-05-R1.json'
       - 'tests/test_stoneage_quest06_four_courier_source.py'
+      - 'research/recovered/STONEAGE-QUEST06-R2-ORIGINAL-COURIER-ITEM-HINT-GRAPH-R1.json'
+      - 'tests/test_stoneage_quest06_r2_original_hint_graph.py'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   workflow_dispatch:
 
@@ -39,3 +43,5 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_stoneage_quest05_original_floor_crosswalk.py' -v
       - name: Validate QUEST06 original source-only four-village courier contracts
         run: python -m unittest discover -s tests -p 'test_stoneage_quest06_four_courier_source.py' -v
+      - name: Validate QUEST06-R2 actual source dialogue hints and bounded item-receiver links
+        run: python -m unittest discover -s tests -p 'test_stoneage_quest06_r2_original_hint_graph.py' -v
