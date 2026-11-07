@@ -1,0 +1,604 @@
+{
+  "schema": "stoneage.quest06.four_village_mammoth_delivery_source_conditioned_item_pet_map.r1",
+  "date": "2026-11-07",
+  "baseline_main_head": "4885fb69ea0a2e374e5fd952d596edad725f3816",
+  "baseline_main_tree": "710e39af92745372fca8e32a80fe35ae439ce493",
+  "original_historical_CURRENT_blob_preserved": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "public_qualified_source_blobs": {
+    "quest05": {
+      "path": "research/recovered/STONEAGE-QUEST05-598-ORIGINAL-CREATE-FLOOR-MAP-AND-WARP-CROSSWALK-R1.json",
+      "sha": "b004e488e1d0a93ca7c14eb90abb584b23f341fe"
+    },
+    "item_shard02": {
+      "path": "research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-02-R1.json",
+      "sha": "b91bc8335db508998f4595144ce371979ea8c849"
+    },
+    "item_shard05": {
+      "path": "research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-05-R1.json",
+      "sha": "361dfc5f626a5f2683dd7a5ca224f2854caf5d7c"
+    }
+  },
+  "carrier": {
+    "mixed25_preserved_original_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "private_original_NPC_ZIP_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "cross_carrier_TW10_original_832_RD_ZIP_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "source_era_label": "LATER_COMMUNITY_MIXED25_NOT_AUTHENTICATED_CLEAN_OFFICIAL_FIRST_BUILD",
+    "private_reopened_source_files": {
+      "newbie2.create": {
+        "path": "npc/sa60/newbie/newbie2.create",
+        "bytes": 1548,
+        "sha256": "31ef809c62f2cc208d0e5439796ee3a2e5466cda64e7561b7094248bf8a7455f",
+        "zip_crc32": "132d6beb"
+      },
+      "worksell_1014.conf": {
+        "path": "npc/sa60/newbie/worksell_1014.conf",
+        "bytes": 1923,
+        "sha256": "d5139cb534128f4c4eb5551cd0bd3d4660a09b54a81a48911440b8d68fcea69b",
+        "zip_crc32": "fa739a4b"
+      },
+      "worksell_2014.conf": {
+        "path": "npc/sa60/newbie/worksell_2014.conf",
+        "bytes": 1885,
+        "sha256": "d9ad7e5f15a448238f9d7eec1339adee6cc8fbfb60525ab2f221d10d99d3f522",
+        "zip_crc32": "a799f9ec"
+      },
+      "worksell_3014.conf": {
+        "path": "npc/sa60/newbie/worksell_3014.conf",
+        "bytes": 1899,
+        "sha256": "eda96a3d8ce3d02e6235edf2425746aa8ddec3ce64ac72fde8351abab64410a0",
+        "zip_crc32": "ee930e3d"
+      },
+      "worksell_4014.conf": {
+        "path": "npc/sa60/newbie/worksell_4014.conf",
+        "bytes": 1937,
+        "sha256": "6ac7689410fa7af8ca75a1a25997217214fa32cb3861f00ccb90ec98c3c8298e",
+        "zip_crc32": "80fd5296"
+      }
+    }
+  },
+  "source_CREATEs": [
+    {
+      "original_CREATE_source_file": "sa60/newbie/newbie2.create",
+      "original_CREATE_whole_file_sha256": "31ef809c62f2cc208d0e5439796ee3a2e5466cda64e7561b7094248bf8a7455f",
+      "original_CREATE_block_ordinal": 0,
+      "source_floor_id": 1014,
+      "original_borncenter": [
+        14,
+        20
+      ],
+      "source_original_graphicname": 16018,
+      "source_original_script_pointer": "sa60/newbie/worksell_1014.conf",
+      "source_original_script_sha256": "d5139cb534128f4c4eb5551cd0bd3d4660a09b54a81a48911440b8d68fcea69b",
+      "source_DAT_sha256": "6e528c7ef2c3f336e3442c4865f5911ed8590bfb10627b5311c42a4398456711",
+      "source_DAT_bytes": 5408,
+      "original_DAT_source_grade": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "native_NPC_appearance_and_dialogue_executed": false
+    },
+    {
+      "original_CREATE_source_file": "sa60/newbie/newbie2.create",
+      "original_CREATE_whole_file_sha256": "31ef809c62f2cc208d0e5439796ee3a2e5466cda64e7561b7094248bf8a7455f",
+      "original_CREATE_block_ordinal": 1,
+      "source_floor_id": 1011,
+      "original_borncenter": [
+        14,
+        20
+      ],
+      "source_original_graphicname": 16018,
+      "source_original_script_pointer": "sa60/newbie/worksell_1014.conf",
+      "source_original_script_sha256": "d5139cb534128f4c4eb5551cd0bd3d4660a09b54a81a48911440b8d68fcea69b",
+      "source_DAT_sha256": "6e528c7ef2c3f336e3442c4865f5911ed8590bfb10627b5311c42a4398456711",
+      "source_DAT_bytes": 5408,
+      "original_DAT_source_grade": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "native_NPC_appearance_and_dialogue_executed": false
+    },
+    {
+      "original_CREATE_source_file": "sa60/newbie/newbie2.create",
+      "original_CREATE_whole_file_sha256": "31ef809c62f2cc208d0e5439796ee3a2e5466cda64e7561b7094248bf8a7455f",
+      "original_CREATE_block_ordinal": 2,
+      "source_floor_id": 2014,
+      "original_borncenter": [
+        16,
+        16
+      ],
+      "source_original_graphicname": 16092,
+      "source_original_script_pointer": "sa60/newbie/worksell_2014.conf",
+      "source_original_script_sha256": "d9ad7e5f15a448238f9d7eec1339adee6cc8fbfb60525ab2f221d10d99d3f522",
+      "source_DAT_sha256": "7e84efd660950e7e2968966ebcc35a3323d66a8406fb60f647a560616fb745ec",
+      "source_DAT_bytes": 5408,
+      "original_DAT_source_grade": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "native_NPC_appearance_and_dialogue_executed": false
+    },
+    {
+      "original_CREATE_source_file": "sa60/newbie/newbie2.create",
+      "original_CREATE_whole_file_sha256": "31ef809c62f2cc208d0e5439796ee3a2e5466cda64e7561b7094248bf8a7455f",
+      "original_CREATE_block_ordinal": 3,
+      "source_floor_id": 2011,
+      "original_borncenter": [
+        16,
+        16
+      ],
+      "source_original_graphicname": 16092,
+      "source_original_script_pointer": "sa60/newbie/worksell_2014.conf",
+      "source_original_script_sha256": "d9ad7e5f15a448238f9d7eec1339adee6cc8fbfb60525ab2f221d10d99d3f522",
+      "source_DAT_sha256": "b55ca88eecaaefa4227c7676015551331b27ba86361285c3d62be5622b4eb86e",
+      "source_DAT_bytes": 5408,
+      "original_DAT_source_grade": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "native_NPC_appearance_and_dialogue_executed": false
+    },
+    {
+      "original_CREATE_source_file": "sa60/newbie/newbie2.create",
+      "original_CREATE_whole_file_sha256": "31ef809c62f2cc208d0e5439796ee3a2e5466cda64e7561b7094248bf8a7455f",
+      "original_CREATE_block_ordinal": 4,
+      "source_floor_id": 3014,
+      "original_borncenter": [
+        16,
+        16
+      ],
+      "source_original_graphicname": 16092,
+      "source_original_script_pointer": "sa60/newbie/worksell_3014.conf",
+      "source_original_script_sha256": "eda96a3d8ce3d02e6235edf2425746aa8ddec3ce64ac72fde8351abab64410a0",
+      "source_DAT_sha256": "b9345e02dabdfa5182d216308f8d51a5c3e0cb6c95e46a13dce5cbdd19080e2a",
+      "source_DAT_bytes": 5408,
+      "original_DAT_source_grade": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "native_NPC_appearance_and_dialogue_executed": false
+    },
+    {
+      "original_CREATE_source_file": "sa60/newbie/newbie2.create",
+      "original_CREATE_whole_file_sha256": "31ef809c62f2cc208d0e5439796ee3a2e5466cda64e7561b7094248bf8a7455f",
+      "original_CREATE_block_ordinal": 5,
+      "source_floor_id": 3011,
+      "original_borncenter": [
+        16,
+        16
+      ],
+      "source_original_graphicname": 16092,
+      "source_original_script_pointer": "sa60/newbie/worksell_3014.conf",
+      "source_original_script_sha256": "eda96a3d8ce3d02e6235edf2425746aa8ddec3ce64ac72fde8351abab64410a0",
+      "source_DAT_sha256": "1f15b92dd7e89110f000b4b23a5e20e3b046bcd37767e6bf5a2d0729859b2122",
+      "source_DAT_bytes": 5408,
+      "original_DAT_source_grade": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "native_NPC_appearance_and_dialogue_executed": false
+    },
+    {
+      "original_CREATE_source_file": "sa60/newbie/newbie2.create",
+      "original_CREATE_whole_file_sha256": "31ef809c62f2cc208d0e5439796ee3a2e5466cda64e7561b7094248bf8a7455f",
+      "original_CREATE_block_ordinal": 6,
+      "source_floor_id": 4014,
+      "original_borncenter": [
+        19,
+        16
+      ],
+      "source_original_graphicname": 16018,
+      "source_original_script_pointer": "sa60/newbie/worksell_4014.conf",
+      "source_original_script_sha256": "6ac7689410fa7af8ca75a1a25997217214fa32cb3861f00ccb90ec98c3c8298e",
+      "source_DAT_sha256": "f7a4ad041cc0efb0a637ebb5e3db837a5a0a144546f3f6991194e5337aa67a6a",
+      "source_DAT_bytes": 5408,
+      "original_DAT_source_grade": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "native_NPC_appearance_and_dialogue_executed": false
+    },
+    {
+      "original_CREATE_source_file": "sa60/newbie/newbie2.create",
+      "original_CREATE_whole_file_sha256": "31ef809c62f2cc208d0e5439796ee3a2e5466cda64e7561b7094248bf8a7455f",
+      "original_CREATE_block_ordinal": 7,
+      "source_floor_id": 4011,
+      "original_borncenter": [
+        19,
+        16
+      ],
+      "source_original_graphicname": 16018,
+      "source_original_script_pointer": "sa60/newbie/worksell_4014.conf",
+      "source_original_script_sha256": "6ac7689410fa7af8ca75a1a25997217214fa32cb3861f00ccb90ec98c3c8298e",
+      "source_DAT_sha256": "3b4694983a3fb7cd660e746f0bd27ea5d20d2d9b2e92ceab4063bfea7380fcc0",
+      "source_DAT_bytes": 5408,
+      "original_DAT_source_grade": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "native_NPC_appearance_and_dialogue_executed": false
+    }
+  ],
+  "source_village_scripts": [
+    {
+      "original_source_script_file": "sa60/newbie/worksell_1014.conf",
+      "original_source_script_sha256": "d5139cb534128f4c4eb5551cd0bd3d4660a09b54a81a48911440b8d68fcea69b",
+      "original_source_TALKEVENT_count": 6,
+      "original_source_NOFREE_literal_guard": "LV>30",
+      "original_source_newcomer_literal_guard_head": "LV<30",
+      "linked_CREATE_floor_ids": [
+        1014,
+        1011
+      ],
+      "source_initial_hint_ITEM_equal_literals": [
+        2622,
+        4224
+      ],
+      "source_quest_stages": [
+        {
+          "talkevent": 4,
+          "source_level_literal_range": [
+            1,
+            9
+          ],
+          "source_required_ITEM": 2623,
+          "source_DelItem_literal": "2623",
+          "AddGold_literal": 1000,
+          "AddExps_literal": 1000,
+          "source_alternative_conditions_count": 9
+        },
+        {
+          "talkevent": 5,
+          "source_level_literal_range": [
+            10,
+            19
+          ],
+          "source_required_ITEM": 12879,
+          "source_DelItem_literal": "12879*1",
+          "AddGold_literal": 2000,
+          "AddExps_literal": 16000,
+          "source_alternative_conditions_count": 10
+        },
+        {
+          "talkevent": 6,
+          "source_level_literal_range": [
+            20,
+            29
+          ],
+          "source_required_PET_literal": "1-13",
+          "source_DelPet_command_present": false,
+          "AddGold_literal": 5000,
+          "AddExps_literal": 81000,
+          "source_alternative_conditions_count": 10
+        }
+      ],
+      "real_original_source_message_reopened_and_SHA_verified_privately": true,
+      "runtime_delivery_completion_observed": false
+    },
+    {
+      "original_source_script_file": "sa60/newbie/worksell_2014.conf",
+      "original_source_script_sha256": "d9ad7e5f15a448238f9d7eec1339adee6cc8fbfb60525ab2f221d10d99d3f522",
+      "original_source_TALKEVENT_count": 6,
+      "original_source_NOFREE_literal_guard": "LV>30",
+      "original_source_newcomer_literal_guard_head": "LV<30",
+      "linked_CREATE_floor_ids": [
+        2014,
+        2011
+      ],
+      "source_initial_hint_ITEM_equal_literals": [
+        2623,
+        12879
+      ],
+      "source_quest_stages": [
+        {
+          "talkevent": 4,
+          "source_level_literal_range": [
+            1,
+            9
+          ],
+          "source_required_ITEM": 2622,
+          "source_DelItem_literal": "2622",
+          "AddGold_literal": 1000,
+          "AddExps_literal": 1000,
+          "source_alternative_conditions_count": 9
+        },
+        {
+          "talkevent": 5,
+          "source_level_literal_range": [
+            10,
+            19
+          ],
+          "source_required_ITEM": 4224,
+          "source_DelItem_literal": "4224*1",
+          "AddGold_literal": 2000,
+          "AddExps_literal": 16000,
+          "source_alternative_conditions_count": 10
+        },
+        {
+          "talkevent": 6,
+          "source_level_literal_range": [
+            20,
+            29
+          ],
+          "source_required_PET_literal": "1-13",
+          "source_DelPet_command_present": false,
+          "AddGold_literal": 5000,
+          "AddExps_literal": 81000,
+          "source_alternative_conditions_count": 10
+        }
+      ],
+      "real_original_source_message_reopened_and_SHA_verified_privately": true,
+      "runtime_delivery_completion_observed": false
+    },
+    {
+      "original_source_script_file": "sa60/newbie/worksell_3014.conf",
+      "original_source_script_sha256": "eda96a3d8ce3d02e6235edf2425746aa8ddec3ce64ac72fde8351abab64410a0",
+      "original_source_TALKEVENT_count": 6,
+      "original_source_NOFREE_literal_guard": "LV>30",
+      "original_source_newcomer_literal_guard_head": "LV<30",
+      "linked_CREATE_floor_ids": [
+        3014,
+        3011
+      ],
+      "source_initial_hint_ITEM_equal_literals": [
+        2624,
+        12874
+      ],
+      "source_quest_stages": [
+        {
+          "talkevent": 4,
+          "source_level_literal_range": [
+            1,
+            9
+          ],
+          "source_required_ITEM": 2625,
+          "source_DelItem_literal": "2625",
+          "AddGold_literal": 1000,
+          "AddExps_literal": 1000,
+          "source_alternative_conditions_count": 9
+        },
+        {
+          "talkevent": 5,
+          "source_level_literal_range": [
+            10,
+            19
+          ],
+          "source_required_ITEM": 4212,
+          "source_DelItem_literal": "4212*1",
+          "AddGold_literal": 2000,
+          "AddExps_literal": 16000,
+          "source_alternative_conditions_count": 10
+        },
+        {
+          "talkevent": 6,
+          "source_level_literal_range": [
+            20,
+            29
+          ],
+          "source_required_PET_literal": "1-292",
+          "source_DelPet_command_present": false,
+          "AddGold_literal": 5000,
+          "AddExps_literal": 81000,
+          "source_alternative_conditions_count": 10
+        }
+      ],
+      "real_original_source_message_reopened_and_SHA_verified_privately": true,
+      "runtime_delivery_completion_observed": false
+    },
+    {
+      "original_source_script_file": "sa60/newbie/worksell_4014.conf",
+      "original_source_script_sha256": "6ac7689410fa7af8ca75a1a25997217214fa32cb3861f00ccb90ec98c3c8298e",
+      "original_source_TALKEVENT_count": 6,
+      "original_source_NOFREE_literal_guard": "LV>30",
+      "original_source_newcomer_literal_guard_head": "LV<30",
+      "linked_CREATE_floor_ids": [
+        4014,
+        4011
+      ],
+      "source_initial_hint_ITEM_equal_literals": [
+        2622,
+        4224
+      ],
+      "source_quest_stages": [
+        {
+          "talkevent": 4,
+          "source_level_literal_range": [
+            1,
+            9
+          ],
+          "source_required_ITEM": 2624,
+          "source_DelItem_literal": "2624",
+          "AddGold_literal": 1000,
+          "AddExps_literal": 1000,
+          "source_alternative_conditions_count": 9
+        },
+        {
+          "talkevent": 5,
+          "source_level_literal_range": [
+            10,
+            19
+          ],
+          "source_required_ITEM": 12874,
+          "source_DelItem_literal": "12874*1",
+          "AddGold_literal": 2000,
+          "AddExps_literal": 16000,
+          "source_alternative_conditions_count": 10
+        },
+        {
+          "talkevent": 6,
+          "source_level_literal_range": [
+            20,
+            29
+          ],
+          "source_required_PET_literal": "1-292",
+          "source_DelPet_command_present": false,
+          "AddGold_literal": 5000,
+          "AddExps_literal": 81000,
+          "source_alternative_conditions_count": 10
+        }
+      ],
+      "real_original_source_message_reopened_and_SHA_verified_privately": true,
+      "runtime_delivery_completion_observed": false
+    }
+  ],
+  "source_item_identity_and_image_qualifications": [
+    {
+      "numeric_item_ID": 2622,
+      "same_archive_original_itemset_saved_short_name_private_verified": "頂級的紅寶石",
+      "original_itemset_master_A_normalized_row_sha256": "50d70cb29365a12b748ea0857132d21d934877d7e380ee6ac8293d3db2055b2c",
+      "original_itemset_master_B_normalized_row_sha256": "50d70cb29365a12b748ea0857132d21d934877d7e380ee6ac8293d3db2055b2c",
+      "original_image_alias_in_both_original_itemsets": 22322,
+      "source_TW10_retail_RD_candidate_qualification": "TW1_INDEX_NOT_FOUND",
+      "cross_version_original_PNG_privately_verified_sha256": null,
+      "source_master_A_vs_B_full_row_identity": "IDENTICAL",
+      "same_official_deployment_with_retail_TW10_verified": false
+    },
+    {
+      "numeric_item_ID": 2623,
+      "same_archive_original_itemset_saved_short_name_private_verified": "頂級的貝殼",
+      "original_itemset_master_A_normalized_row_sha256": "621f942d165625ad37825a7147acd6a74e4a3ba062c0ebf0a16fa3671ee8967e",
+      "original_itemset_master_B_normalized_row_sha256": "621f942d165625ad37825a7147acd6a74e4a3ba062c0ebf0a16fa3671ee8967e",
+      "original_image_alias_in_both_original_itemsets": 24131,
+      "source_TW10_retail_RD_candidate_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_version_original_PNG_privately_verified_sha256": "7fe61cc9ef181cda8f3fccdf83d20ee1be15b4f0516e1e6d2064eff833c7eaf0",
+      "source_master_A_vs_B_full_row_identity": "IDENTICAL",
+      "same_official_deployment_with_retail_TW10_verified": false
+    },
+    {
+      "numeric_item_ID": 2624,
+      "same_archive_original_itemset_saved_short_name_private_verified": "特級的紅檜",
+      "original_itemset_master_A_normalized_row_sha256": "d1e19b129db07deeff192600d5d9a6a187823fda3d70546bef1f9d43b423aaa8",
+      "original_itemset_master_B_normalized_row_sha256": "d1e19b129db07deeff192600d5d9a6a187823fda3d70546bef1f9d43b423aaa8",
+      "original_image_alias_in_both_original_itemsets": 24182,
+      "source_TW10_retail_RD_candidate_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_version_original_PNG_privately_verified_sha256": "92ca7f40b3e7a797bc2b5ef49faaac70b184d6c4ad31b79dfc1a9fde7044254f",
+      "source_master_A_vs_B_full_row_identity": "IDENTICAL",
+      "same_official_deployment_with_retail_TW10_verified": false
+    },
+    {
+      "numeric_item_ID": 2625,
+      "same_archive_original_itemset_saved_short_name_private_verified": "特級的釣竿",
+      "original_itemset_master_A_normalized_row_sha256": "df067ce2e0905b4a4c5cad2db00ea444a4424f7ee21ba22b825575ebca98a87c",
+      "original_itemset_master_B_normalized_row_sha256": "df067ce2e0905b4a4c5cad2db00ea444a4424f7ee21ba22b825575ebca98a87c",
+      "original_image_alias_in_both_original_itemsets": 24123,
+      "source_TW10_retail_RD_candidate_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_version_original_PNG_privately_verified_sha256": "cba249c744991fd9b685da2bfb38df7061509cd1cf470579e1322c025640a6f4",
+      "source_master_A_vs_B_full_row_identity": "IDENTICAL",
+      "same_official_deployment_with_retail_TW10_verified": false
+    },
+    {
+      "numeric_item_ID": 4212,
+      "same_archive_original_itemset_saved_short_name_private_verified": "合成槍 1 [水]",
+      "original_itemset_master_A_normalized_row_sha256": "8716efcd363c0e690a2cb52dbea51dd4a60528d2dc87ba8a83224ebdba769e94",
+      "original_itemset_master_B_normalized_row_sha256": "37a0b271ab073608ef7958eb18ac77a80fab234adc051334c790e1389bb6f351",
+      "original_image_alias_in_both_original_itemsets": 20407,
+      "source_TW10_retail_RD_candidate_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_version_original_PNG_privately_verified_sha256": "57d095bc15a4be24a1d9266c158e1aaa8b6599891c4a6eceda3f1bf867e83623",
+      "source_master_A_vs_B_full_row_identity": "DIFFERENT",
+      "same_official_deployment_with_retail_TW10_verified": false
+    },
+    {
+      "numeric_item_ID": 4224,
+      "same_archive_original_itemset_saved_short_name_private_verified": "合成槍 1 [風]",
+      "original_itemset_master_A_normalized_row_sha256": "5fcb927b35767ba944adf4134130ce047358c58cfea874b02cfef3b8e6d47775",
+      "original_itemset_master_B_normalized_row_sha256": "25a7488a0f0ba6c0c46f951a183d5a93d16c9b8f05f55407d02e0a6ac976222e",
+      "original_image_alias_in_both_original_itemsets": 20407,
+      "source_TW10_retail_RD_candidate_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_version_original_PNG_privately_verified_sha256": "57d095bc15a4be24a1d9266c158e1aaa8b6599891c4a6eceda3f1bf867e83623",
+      "source_master_A_vs_B_full_row_identity": "DIFFERENT",
+      "same_official_deployment_with_retail_TW10_verified": false
+    },
+    {
+      "numeric_item_ID": 12874,
+      "same_archive_original_itemset_saved_short_name_private_verified": "蘋果醬汁牛排",
+      "original_itemset_master_A_normalized_row_sha256": "cf20293661d54f02240d8695211bfef32b4ca6cfeeb104894ca5d97475f121d3",
+      "original_itemset_master_B_normalized_row_sha256": "cf20293661d54f02240d8695211bfef32b4ca6cfeeb104894ca5d97475f121d3",
+      "original_image_alias_in_both_original_itemsets": 24450,
+      "source_TW10_retail_RD_candidate_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_version_original_PNG_privately_verified_sha256": "003af22005189c4d8128a742c6d23a3f82965a8a8b83dafe66b77b89ff63554a",
+      "source_master_A_vs_B_full_row_identity": "IDENTICAL",
+      "same_official_deployment_with_retail_TW10_verified": false
+    },
+    {
+      "numeric_item_ID": 12879,
+      "same_archive_original_itemset_saved_short_name_private_verified": "櫻桃醬汁牛排",
+      "original_itemset_master_A_normalized_row_sha256": "458ee6eae7b3d813659d206203e86aaeacd61683a0f0df864e9995621587786f",
+      "original_itemset_master_B_normalized_row_sha256": "458ee6eae7b3d813659d206203e86aaeacd61683a0f0df864e9995621587786f",
+      "original_image_alias_in_both_original_itemsets": 24451,
+      "source_TW10_retail_RD_candidate_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "cross_version_original_PNG_privately_verified_sha256": "1cbb6f99ef47ffeb060b12bab2bfabcf1912df71e7b1cd86bc2db084925520b6",
+      "source_master_A_vs_B_full_row_identity": "IDENTICAL",
+      "same_official_deployment_with_retail_TW10_verified": false
+    }
+  ],
+  "summary": {
+    "source_original_CREATE_refs": 8,
+    "source_distinct_floor_ids": 8,
+    "source_village_script_count": 4,
+    "source_original_talkevent_count_total": 24,
+    "source_literal_reward_stage_count": 12,
+    "source_distinct_item_ID_refs": 8,
+    "source_first_stage_original_delivery_items": [
+      2622,
+      2623,
+      2624,
+      2625
+    ],
+    "source_second_stage_items": [
+      4212,
+      4224,
+      12874,
+      12879
+    ],
+    "three_source_level_stage_ranges": [
+      [
+        1,
+        9
+      ],
+      [
+        10,
+        19
+      ],
+      [
+        20,
+        29
+      ]
+    ],
+    "script_no_free_literal_threshold": "LV>30",
+    "source_LV30_no_explicit_FREE_OR_NOFREE_literal_branch": true,
+    "source_pet_condition_literals": [
+      "1-13",
+      "1-292"
+    ],
+    "source_pet_required_stage_without_DelPet_count": 4,
+    "source_money_xp_literal_pairs_per_village": [
+      [
+        1000,
+        1000
+      ],
+      [
+        2000,
+        16000
+      ],
+      [
+        5000,
+        81000
+      ]
+    ],
+    "items_with_crosscarrier_TW10_real_RD_read_before": 7,
+    "distinct_reused_original_TW10_RD_icon_aliases": 6,
+    "source_absent_TW10_retail_ADRN_item_image_alias_IDs": [
+      2622
+    ],
+    "two_original_source_itemset_rows_differ_item_IDs": [
+      4212,
+      4224
+    ],
+    "the_two_weapon_item_IDs_share_graphic_alias": 20407,
+    "source_CREATE_1014_and_1011_DAT_sha_equal": true,
+    "source_genout_newbie2_CREATE_is_different_original_file_not_merged": true
+  },
+  "private_delivery": {
+    "private_library_path": "/石器时代/StoneAge-QUEST06-mammoth-courier-original-private.zip",
+    "ZIP_bytes": 40204,
+    "ZIP_sha256": "cd26689805ad0c40e23ef934aa7c9509fe461630dd0431f7a43740abd7c91254",
+    "ZIP_entries": 13,
+    "private_viewer_html_sha256": "4a2fb8f3c857246c4045e9df11352ca5ea65fb20c655b577525e4b8d39440ff6",
+    "full_library_retrieval_SHA_and_13_member_CRC_passed": true,
+    "contains_original_script_and_original_RD_bitmaps_stored_private_only": true,
+    "added_original_RD_decodes_this_unit": 0
+  },
+  "bounds": {
+    "quest_origins_are_confirmed_original_2001_official_core": false,
+    "script_event_branch_priority_or_reward_execution_native_verified": false,
+    "reward_gold_exp_or_item_loss_at_runtime_verified": false,
+    "original_pet_predicate_means_pet_was_removed": false,
+    "original_lvl30_game_state_necessarily_unhandled": false,
+    "source_npc_visible_in_original_scene_verified": false,
+    "the_original_8_floor_DATs_equal_eight_unique_visual_maps": false,
+    "same_orig_source_graphic_alias_proves_historical_image_selection": false,
+    "TW10_image_and_later_mixed25_server_official_same_deployment": false,
+    "source_village_grouping_proves_original_island_or_region": false,
+    "original_full_copywritten_scripts_or_pixels_published_in_Git": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Seek actual same-build original stage 1/2 item source and award code or verified 8-floor private DAT+source graphic before claiming playability. Otherwise rotate other qualified content. No speculative level30 fix."
+}
