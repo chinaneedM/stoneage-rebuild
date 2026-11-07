@@ -1,0 +1,888 @@
+{
+  "schema": "stoneage.integration05.GetPet_original_CREATE_script_item_floor_to_qualified_DAT_map_source.r1",
+  "date": "2026-11-07",
+  "baseline_main_head": "253da64e4d1e726e89a4389c17dc5a0baf8eabfe",
+  "baseline_main_tree": "89c6b3f9a9f8c557870a9c5e79526c92d53738d4",
+  "historical_CURRENT_blob_untouched": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "prior_qualified_public_source_blobs": {
+    "integration01": {
+      "path": "research/recovered/STONEAGE-INTEGRATION01-NPC-PET-QUEST-ITEM-MAP-SOURCE-GRAPH-R1.json",
+      "sha": "5e526512c0277e19ca41dfcd934c230404d1dfb4"
+    },
+    "integration02": {
+      "path": "research/recovered/STONEAGE-INTEGRATION02-ORIGINAL-SCENE-DAT-RD-CROSSMODULE-R1.json",
+      "sha": "2303f1df3749ca28a4f9539869359666021b8783"
+    },
+    "quest05": {
+      "path": "research/recovered/STONEAGE-QUEST05-598-ORIGINAL-CREATE-FLOOR-MAP-AND-WARP-CROSSWALK-R1.json",
+      "sha": "b004e488e1d0a93ca7c14eb90abb584b23f341fe"
+    },
+    "integration04": {
+      "path": "research/recovered/STONEAGE-INTEGRATION04-COMPILED-CAPTURE-PET-ITEM-SPR-SOURCE-BRIDGE-R1.json",
+      "sha": "69fbac7fd946f14b6ccad9e5882c79c62f86dbf0"
+    }
+  },
+  "source_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "scope": "DERIVED_SOURCE_ONLY: UPGRADE_PRIOR_24_GETPET_CREATES_TO_QUEST05_955_MAP_CATALOG_PLUS_VERIFIED_MAP02_1000; NO_NEW_PROPRIETARY_SOURCE_OR_GAME_EXECUTION",
+  "rows": [
+    {
+      "source_CREATE_file": "giiru/event/ev28.create",
+      "source_CREATE_block_ordinal": 25,
+      "source_CREATE_block_sha256": "e61d2a2d32e7d0aad9442ddd1e665f2cfa64283c66c2cab3bf21cd5eeec4614f",
+      "source_QUEST05_whole_CREATE_sha256": "35616eedb62b5fe5fa8c04a9d978bee7c0808ed092ce3fb6040f78e076ad74ce",
+      "source_script_path": "giiru/event/ev28_ed1",
+      "source_script_original_sha256": "76248f064cbc443ab1452c0cd18a3b12067bc51d0ca98a2bbf4ae91a891b9c4c",
+      "source_floor_id": 31706,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        18
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        54
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        2517,
+        2518
+      ],
+      "source_script_item_numeric_occurrences": 5,
+      "Q05_955_map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE",
+      "qualifying_source_DAT_sha256": "f32c2a55afda8c30c8805e6699f530aba8a9dfccf92c88a5f5d6df8ccfafb1cc",
+      "qualifying_source_DAT_bytes": 24008,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "giiru/event/ev28.create",
+      "source_CREATE_block_ordinal": 26,
+      "source_CREATE_block_sha256": "98f5a9a1750ae3edc915506d62474e043e9cc3e54446e0d3aeb836e505d0d01a",
+      "source_QUEST05_whole_CREATE_sha256": "35616eedb62b5fe5fa8c04a9d978bee7c0808ed092ce3fb6040f78e076ad74ce",
+      "source_script_path": "giiru/event/ev28_ed2",
+      "source_script_original_sha256": "5cd64953d462ac401a2a6f59ffae8fe5ee16086d68c9f682a292cf3daad80e4c",
+      "source_floor_id": 31706,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        18
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        57
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        2517,
+        2519
+      ],
+      "source_script_item_numeric_occurrences": 5,
+      "Q05_955_map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE",
+      "qualifying_source_DAT_sha256": "f32c2a55afda8c30c8805e6699f530aba8a9dfccf92c88a5f5d6df8ccfafb1cc",
+      "qualifying_source_DAT_bytes": 24008,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "giiru/event/ev28.create",
+      "source_CREATE_block_ordinal": 27,
+      "source_CREATE_block_sha256": "7d8ca327444e81d45820b260ad093c7ef56350a525c417d7cb192d440d87af17",
+      "source_QUEST05_whole_CREATE_sha256": "35616eedb62b5fe5fa8c04a9d978bee7c0808ed092ce3fb6040f78e076ad74ce",
+      "source_script_path": "giiru/event/ev28_ed3",
+      "source_script_original_sha256": "aa9ca5b780ed6bff478fc59865bc2239a37c392698259b17abe3b863635f4f46",
+      "source_floor_id": 31706,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        18
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        55
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        2517,
+        2520
+      ],
+      "source_script_item_numeric_occurrences": 5,
+      "Q05_955_map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE",
+      "qualifying_source_DAT_sha256": "f32c2a55afda8c30c8805e6699f530aba8a9dfccf92c88a5f5d6df8ccfafb1cc",
+      "qualifying_source_DAT_bytes": 24008,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "giiru/event/ev28.create",
+      "source_CREATE_block_ordinal": 28,
+      "source_CREATE_block_sha256": "b2bd85032d752f857aeda16ee424847a387836c68385e05e4346f9becb0d7860",
+      "source_QUEST05_whole_CREATE_sha256": "35616eedb62b5fe5fa8c04a9d978bee7c0808ed092ce3fb6040f78e076ad74ce",
+      "source_script_path": "giiru/event/ev28_ed4",
+      "source_script_original_sha256": "660784e8ad1b2a3d1ca9592caf2ab6d1eed5d9ea77fd1f6ea8156d9544e6d2a0",
+      "source_floor_id": 31706,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        18
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        56
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        2517,
+        2526
+      ],
+      "source_script_item_numeric_occurrences": 5,
+      "Q05_955_map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE",
+      "qualifying_source_DAT_sha256": "f32c2a55afda8c30c8805e6699f530aba8a9dfccf92c88a5f5d6df8ccfafb1cc",
+      "qualifying_source_DAT_bytes": 24008,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "giiru/event/ev28.create",
+      "source_CREATE_block_ordinal": 29,
+      "source_CREATE_block_sha256": "3f0c487e88285b4b495a8d96da7bba7d7ba1af4bb7dee2d5e089ef74c8300e32",
+      "source_QUEST05_whole_CREATE_sha256": "35616eedb62b5fe5fa8c04a9d978bee7c0808ed092ce3fb6040f78e076ad74ce",
+      "source_script_path": "giiru/event/ev28_ed5",
+      "source_script_original_sha256": "612086ef08cd18aece794cb58b2a9e274676527ad144146f3e3ca4da7f9a517e",
+      "source_floor_id": 31706,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        18
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        481
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        2517,
+        2525
+      ],
+      "source_script_item_numeric_occurrences": 4,
+      "Q05_955_map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE",
+      "qualifying_source_DAT_sha256": "f32c2a55afda8c30c8805e6699f530aba8a9dfccf92c88a5f5d6df8ccfafb1cc",
+      "qualifying_source_DAT_bytes": 24008,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "giiru/event/event30.create",
+      "source_CREATE_block_ordinal": 4,
+      "source_CREATE_block_sha256": "0443e5dc229377ba6dd5c12df6e7533f713c5ee3feea0cf3142077c596d0befd",
+      "source_QUEST05_whole_CREATE_sha256": "bef3faf56b9e4598ca432628ccc9dc32c13ded755cfedab95da4e46be4e037e0",
+      "source_script_path": "king/event69_1",
+      "source_script_original_sha256": "634ff3e405b3829da55b9291cad2f98b3fbef3567a46cc048ae52a045df324e9",
+      "source_floor_id": 30600,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        34
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        355
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        2532,
+        2547,
+        19621
+      ],
+      "source_script_item_numeric_occurrences": 13,
+      "Q05_955_map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE",
+      "qualifying_source_DAT_sha256": "33578e416a9eb066e46e66c688d401d2ad6e13f7520cf907f2322db9df062004",
+      "qualifying_source_DAT_bytes": 5408,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "jaruga/event/event06n.create",
+      "source_CREATE_block_ordinal": 0,
+      "source_CREATE_block_sha256": "144aaea869ea184bc9c03db5dd52b69edef70942024876e9162317fbcd602504",
+      "source_QUEST05_whole_CREATE_sha256": "195f73a42e97bd7b868fb9d7567a8a83e47180deb953856ec46cd257662d5108",
+      "source_script_path": "jaruga/event/event06_1",
+      "source_script_original_sha256": "3ac3d3388f7914e497eb884de310633e5386f9aaaa784c66cc54b9ad1bbf4aae",
+      "source_floor_id": 20401,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        14,
+        25
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        44,
+        47
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        2414
+      ],
+      "source_script_item_numeric_occurrences": 4,
+      "Q05_955_map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE",
+      "qualifying_source_DAT_sha256": "05d6ea5cfc82cff744aca78e733b50bd17633146443d2ac85749c5d742d963b7",
+      "qualifying_source_DAT_bytes": 15008,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "jaruga/event/oev.create",
+      "source_CREATE_block_ordinal": 25,
+      "source_CREATE_block_sha256": "25721759ac9e41a0575aef3a7c59592b388ad554a5cc6d62b772d58836fa39a3",
+      "source_QUEST05_whole_CREATE_sha256": "9139bb23527de0e819d6969e5b6cb5fe857b3b937aaa6fe1490879da99471da8",
+      "source_script_path": "jaruga/event/oev_ed1",
+      "source_script_original_sha256": "169693318607445365974327825fbd4c491b6161a68b7e1e552ca04a69bf2cc5",
+      "source_floor_id": 4000,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        19
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        358,
+        96,
+        328,
+        309,
+        365
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        59,
+        69,
+        254,
+        269,
+        351,
+        770,
+        1061,
+        1062,
+        2552,
+        2553,
+        2554,
+        2555,
+        2556,
+        2557,
+        2558,
+        2559,
+        2560,
+        2561,
+        2562,
+        2563,
+        2564,
+        2565,
+        2566,
+        12635,
+        12641,
+        12644
+      ],
+      "source_script_item_numeric_occurrences": 40,
+      "Q05_955_map_status": "DAT_PRESENT_GT99_QUALIFIED_RD_MISSING",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_GT99_RD_MISSING",
+      "qualifying_source_DAT_sha256": "9d327505c74ccb27b62bcce7259be246c9c4a0477c6ee0fceb78f921e7a0dfa5",
+      "qualifying_source_DAT_bytes": 135008,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "jaruga/event/oev.create",
+      "source_CREATE_block_ordinal": 26,
+      "source_CREATE_block_sha256": "c6ec4b491823319b40fe22501bf29db08f95257aaf0299b5ac2943decdc22438",
+      "source_QUEST05_whole_CREATE_sha256": "9139bb23527de0e819d6969e5b6cb5fe857b3b937aaa6fe1490879da99471da8",
+      "source_script_path": "jaruga/event/oev_edb",
+      "source_script_original_sha256": "0fd527bd0817d0362b1cab22828b8f2c963e4ca88b088af6f736a6a4a254b423",
+      "source_floor_id": 3000,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        21
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        338,
+        360,
+        366,
+        482,
+        482,
+        78
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        58,
+        68,
+        255,
+        352,
+        769,
+        1062,
+        1063,
+        2552,
+        2553,
+        2554,
+        2555,
+        2556,
+        2557,
+        2558,
+        2559,
+        2560,
+        2561,
+        2562,
+        2563,
+        2564,
+        2565,
+        2566,
+        12635,
+        12641,
+        12643,
+        12644,
+        12656
+      ],
+      "source_script_item_numeric_occurrences": 41,
+      "Q05_955_map_status": "NO_MATCHING_DAT_IN_955",
+      "qualifying_DAT_grade": "SOURCE_DAT_NOT_QUALIFIED",
+      "qualifying_source_DAT_sha256": null,
+      "qualifying_source_DAT_bytes": null,
+      "floor_has_prior_DAT_read_errors": true,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "king/event69_alpha.create",
+      "source_CREATE_block_ordinal": 5,
+      "source_CREATE_block_sha256": "0508da018a6526f9388e92ad97188496cbce900f716b27c0f83acb783e33ccfa",
+      "source_QUEST05_whole_CREATE_sha256": "ee3880c5c75daec92f640b95f26bf36c7b4595da20c14be66e6ef85ce0e7d4b4",
+      "source_script_path": "king/event69_7",
+      "source_script_original_sha256": "022aaa645db2074216bfb9f87b04d8a87626ea7f9fd2b5a25b175f7eb0111634",
+      "source_floor_id": 2000,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        120
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        1479
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        19624,
+        19625,
+        19626,
+        19627,
+        19628,
+        19629,
+        19630,
+        19631,
+        19632,
+        19672,
+        19673,
+        19674,
+        19675,
+        19676,
+        19677,
+        19678,
+        19679,
+        19680,
+        19681,
+        19682,
+        19683,
+        19684,
+        19685,
+        19686,
+        19687
+      ],
+      "source_script_item_numeric_occurrences": 58,
+      "Q05_955_map_status": "DAT_PRESENT_GT99_QUALIFIED_RD_MISSING",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_GT99_RD_MISSING",
+      "qualifying_source_DAT_sha256": "d75231434c69118a518a8d5dd34f266264b8551fe4f2d55a20cdfa11b46584b3",
+      "qualifying_source_DAT_bytes": 135008,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "king/event69_alpha.create",
+      "source_CREATE_block_ordinal": 21,
+      "source_CREATE_block_sha256": "ae65f5cb5faa933dcd9cc060a52485dfea8d58004a9e701a3b145ba880c80475",
+      "source_QUEST05_whole_CREATE_sha256": "ee3880c5c75daec92f640b95f26bf36c7b4595da20c14be66e6ef85ce0e7d4b4",
+      "source_script_path": "king/event69_24",
+      "source_script_original_sha256": "90196083dc0be26e3d61787a1e3af1cd2b3d78e5d26566c6edcaaa67ee6862e8",
+      "source_floor_id": 30670,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        18
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        484
+      ],
+      "source_script_item_candidate_numeric_ids": [],
+      "source_script_item_numeric_occurrences": 0,
+      "Q05_955_map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE",
+      "qualifying_source_DAT_sha256": "42875c42b4a5e8d6bded54cd626bbbbcbfc169142b5412d23475bdca47688220",
+      "qualifying_source_DAT_bytes": 5408,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "poru/boss.create",
+      "source_CREATE_block_ordinal": 0,
+      "source_CREATE_block_sha256": "c27f167dfcdc0f9966b1c6e892526955c6cace8caf61d4ce0eb84d3ef69525f2",
+      "source_QUEST05_whole_CREATE_sha256": "be204fb18123356bd6c3cd0a1e70e0552c77138ccbbbb0b03a91d351de4edbb5",
+      "source_script_path": "poru/boy04",
+      "source_script_original_sha256": "a945359e2375c513f056178d752b9777ec62214eaade9130f3661f40c0ca4e24",
+      "source_floor_id": 5511,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        22
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        352
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        18544
+      ],
+      "source_script_item_numeric_occurrences": 2,
+      "Q05_955_map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE",
+      "qualifying_source_DAT_sha256": "5d44ea8c70c2537447926714fc0f84f5900c63e4008917fabcd3885d73dc0884",
+      "qualifying_source_DAT_bytes": 5408,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "poru/poru02.create",
+      "source_CREATE_block_ordinal": 3,
+      "source_CREATE_block_sha256": "adac745d046ee28d353a5a9647288953524cda43ff5893e6a21f650964f5b068",
+      "source_QUEST05_whole_CREATE_sha256": "a4d45f6d6c153cb545e8a278374ad92a556822085d17ad13c811ef7832de469c",
+      "source_script_path": "poru/team03",
+      "source_script_original_sha256": "9d9d8714cf8c9b86f22df3e626398bf0912e05dbcc6849ef46f4913d36af25c7",
+      "source_floor_id": 5535,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        39
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        333
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        2432,
+        18559
+      ],
+      "source_script_item_numeric_occurrences": 6,
+      "Q05_955_map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE",
+      "qualifying_source_DAT_sha256": "078cdee79aee86bc8e53531bb0a09110b4fd2005c8fa0d38ef0a8cf0d7825814",
+      "qualifying_source_DAT_bytes": 872,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "poru/poru02.create",
+      "source_CREATE_block_ordinal": 5,
+      "source_CREATE_block_sha256": "0f367401a3c59147db054d4637ba243c8e99923484c11503e8dc2322a24101dc",
+      "source_QUEST05_whole_CREATE_sha256": "a4d45f6d6c153cb545e8a278374ad92a556822085d17ad13c811ef7832de469c",
+      "source_script_path": "poru/mary01",
+      "source_script_original_sha256": "0c5c5fdd64ec72831cb473baf5aa39b05322dd80848aa024e0c6e9494e9b36cb",
+      "source_floor_id": 5530,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        13
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        310
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        18556,
+        18557,
+        18558,
+        18559
+      ],
+      "source_script_item_numeric_occurrences": 11,
+      "Q05_955_map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE",
+      "qualifying_source_DAT_sha256": "295a6e85b40a3ac6f319c784013b84df78896381375c1c580481306b922f9c36",
+      "qualifying_source_DAT_bytes": 21608,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "poru/poru02.create",
+      "source_CREATE_block_ordinal": 8,
+      "source_CREATE_block_sha256": "cff8cc9ff3a919c1fcac9636bca5435e79989fd623a4ae4ec0ed23522bc893f1",
+      "source_QUEST05_whole_CREATE_sha256": "a4d45f6d6c153cb545e8a278374ad92a556822085d17ad13c811ef7832de469c",
+      "source_script_path": "poru/mary04",
+      "source_script_original_sha256": "7d92e123a9983f8f043b1619be60238948ffc9185dee7b52403fa807f137c156",
+      "source_floor_id": 5532,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        39
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        1483
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        2474
+      ],
+      "source_script_item_numeric_occurrences": 1,
+      "Q05_955_map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE",
+      "qualifying_source_DAT_sha256": "a3441109153a3829a813313dbdc2195599bae6354e3916117f24a5d3a882e424",
+      "qualifying_source_DAT_bytes": 9608,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "poru/poru02.create",
+      "source_CREATE_block_ordinal": 9,
+      "source_CREATE_block_sha256": "8464dbd143727b013c97c31b555c5a9695552f9d7ee75ceda20be7e2f08778d2",
+      "source_QUEST05_whole_CREATE_sha256": "a4d45f6d6c153cb545e8a278374ad92a556822085d17ad13c811ef7832de469c",
+      "source_script_path": "poru/mary05",
+      "source_script_original_sha256": "4350eda28fb3f5c10aea4cabfca0c286a291bb23b8f25298cc5273d9b32229a9",
+      "source_floor_id": 5533,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        42
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        1482
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        2432
+      ],
+      "source_script_item_numeric_occurrences": 1,
+      "Q05_955_map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE",
+      "qualifying_source_DAT_sha256": "d489aa730f215724e5ab32da7a80cab33536df8abae265186fb4cef3b50f2532",
+      "qualifying_source_DAT_bytes": 21608,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "poru/poru02.create",
+      "source_CREATE_block_ordinal": 10,
+      "source_CREATE_block_sha256": "a6beb220b43f7490c680601eafc07fd3da71df4f688f1af9fa9c05b83a090f09",
+      "source_QUEST05_whole_CREATE_sha256": "a4d45f6d6c153cb545e8a278374ad92a556822085d17ad13c811ef7832de469c",
+      "source_script_path": "poru/mary06",
+      "source_script_original_sha256": "1fb426d776a18595cb539c28a496d97b77ed08ec19a8993d3d2ed31bbcd5923c",
+      "source_floor_id": 5538,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        37
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        1481
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        2478
+      ],
+      "source_script_item_numeric_occurrences": 1,
+      "Q05_955_map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE",
+      "qualifying_source_DAT_sha256": "d49b12e18d852fbe7032c47348a17cad26aa3e340efb246fbacb6bf61e13c4bc",
+      "qualifying_source_DAT_bytes": 1808,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "quiz/quiz.create",
+      "source_CREATE_block_ordinal": 0,
+      "source_CREATE_block_sha256": "e7d605b5d4c5446a4289d383a309bcc2e1bb0093385e41fc0e248f9626b5c7fe",
+      "source_QUEST05_whole_CREATE_sha256": "364951c326a4d4dac81e2d1162ddc06af91ced0b01992a3234d052fabb355eb6",
+      "source_script_path": "quiz/equiz_04",
+      "source_script_original_sha256": "786a787c285ecd3821aa72cbb7262defe7d9156556dec2d8d9f9eea73b011bea",
+      "source_floor_id": 812,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        23
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        351
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        2759
+      ],
+      "source_script_item_numeric_occurrences": 2,
+      "Q05_955_map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE",
+      "qualifying_source_DAT_sha256": "500841e03f43f3e171266b47e09658eee32917fd363790370033b82b8320056a",
+      "qualifying_source_DAT_bytes": 15008,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "quiz/quiz.create",
+      "source_CREATE_block_ordinal": 2,
+      "source_CREATE_block_sha256": "2be3cc8e1d0d0a31d89242aef6a25f2b38688180908ff97fbe7156eccd283264",
+      "source_QUEST05_whole_CREATE_sha256": "364951c326a4d4dac81e2d1162ddc06af91ced0b01992a3234d052fabb355eb6",
+      "source_script_path": "quiz/equiz_02",
+      "source_script_original_sha256": "c5b9ff6e85d8f392cc2a668c70de7f3c0a3adcbb0d1e5688006d7a153e999818",
+      "source_floor_id": 810,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        44
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        14
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        2753,
+        2759
+      ],
+      "source_script_item_numeric_occurrences": 6,
+      "Q05_955_map_status": "DAT_PRESENT_GT99_QUALIFIED_RD_MISSING",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_GT99_RD_MISSING",
+      "qualifying_source_DAT_sha256": "d9742045076ac2d19b8b0e182683f449e73f083f936e859be7ce182a36062ca3",
+      "qualifying_source_DAT_bytes": 15008,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "quiz/quiz.create",
+      "source_CREATE_block_ordinal": 5,
+      "source_CREATE_block_sha256": "05b129dcf5cbd9e44284408e1e867907859d48a61ff1b62f57ebf7f72f2e3b36",
+      "source_QUEST05_whole_CREATE_sha256": "364951c326a4d4dac81e2d1162ddc06af91ced0b01992a3234d052fabb355eb6",
+      "source_script_path": "quiz/equiz_02",
+      "source_script_original_sha256": "c5b9ff6e85d8f392cc2a668c70de7f3c0a3adcbb0d1e5688006d7a153e999818",
+      "source_floor_id": 850,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        44
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        14
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        2753,
+        2759
+      ],
+      "source_script_item_numeric_occurrences": 6,
+      "Q05_955_map_status": "DAT_PRESENT_GT99_QUALIFIED_RD_MISSING",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_GT99_RD_MISSING",
+      "qualifying_source_DAT_sha256": "113d074760bd3f0ecb29bfb5298df649c0547480513bb0d2dcfb95db23d54d77",
+      "qualifying_source_DAT_bytes": 15008,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "sainasu/event/event15.create",
+      "source_CREATE_block_ordinal": 0,
+      "source_CREATE_block_sha256": "91ef3b6a3860a52a255edbd1696663f3782a02dcb885e548687dd979824fc53d",
+      "source_QUEST05_whole_CREATE_sha256": "3fdf94b92a55cfc9a8f3a57d33b5a051f52a2bdcf375ad90dab4228afa0ddc31",
+      "source_script_path": "sainasu/event/event15_1",
+      "source_script_original_sha256": "cb90d02b6e9ad4ba9b4e8d21c01d0077ab2b82f8de1e5f018a4ccb1a80fae129",
+      "source_floor_id": 11006,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        22
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        95
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        700,
+        1102,
+        1122,
+        1350,
+        1351,
+        1352,
+        1354,
+        1455
+      ],
+      "source_script_item_numeric_occurrences": 8,
+      "Q05_955_map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE",
+      "qualifying_source_DAT_sha256": "fbf61337a1b397db8a2abcf6b2d804f926e384f240000d2301636ee4a17ce403",
+      "qualifying_source_DAT_bytes": 15008,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "sainasu/event/oev2.create",
+      "source_CREATE_block_ordinal": 25,
+      "source_CREATE_block_sha256": "4fc0f0d92c099b87f60d235b4a31db9725258fdf032b5dae8939730313fd997d",
+      "source_QUEST05_whole_CREATE_sha256": "aa970655e6123d050b2b3007f8b24135a5ec9380466db3f55e458e67bdb456b4",
+      "source_script_path": "sainasu/event/oev_edc",
+      "source_script_original_sha256": "a1891aef372be0012df9f830560f513c41e8334a62ff31f26b2da0124632f037",
+      "source_floor_id": 1000,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        19
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        48,
+        94,
+        350,
+        482
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        59,
+        69,
+        254,
+        269,
+        351,
+        770,
+        1061,
+        1062,
+        2565,
+        2566,
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587,
+        12635,
+        12641,
+        12644
+      ],
+      "source_script_item_numeric_occurrences": 40,
+      "Q05_955_map_status": "NO_MATCHING_DAT_IN_955",
+      "qualifying_DAT_grade": "INDEPENDENT_VERIFIED_DAT_1000_NOT_IN_955",
+      "qualifying_source_DAT_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+      "qualifying_source_DAT_bytes": 153608,
+      "floor_has_prior_DAT_read_errors": true,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "sainasu/event/oev2.create",
+      "source_CREATE_block_ordinal": 26,
+      "source_CREATE_block_sha256": "87d56178917fbc6e793c364a3cddd8c1137eaae60c906ea586c8ac2d1215cb36",
+      "source_QUEST05_whole_CREATE_sha256": "aa970655e6123d050b2b3007f8b24135a5ec9380466db3f55e458e67bdb456b4",
+      "source_script_path": "sainasu/event/oev_edd",
+      "source_script_original_sha256": "e36d22aa365dae29b57eded4bb3b8dd3ed3edab0f069186ae6041e4eb45a4537",
+      "source_floor_id": 2000,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        27
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        76,
+        309,
+        361,
+        96
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        58,
+        68,
+        255,
+        352,
+        769,
+        1062,
+        1063,
+        2565,
+        2566,
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587,
+        12635,
+        12641,
+        12643,
+        12644,
+        12656
+      ],
+      "source_script_item_numeric_occurrences": 41,
+      "Q05_955_map_status": "DAT_PRESENT_GT99_QUALIFIED_RD_MISSING",
+      "qualifying_DAT_grade": "DAT_SHA_MATCH_GT99_RD_MISSING",
+      "qualifying_source_DAT_sha256": "d75231434c69118a518a8d5dd34f266264b8551fe4f2d55a20cdfa11b46584b3",
+      "qualifying_source_DAT_bytes": 135008,
+      "floor_has_prior_DAT_read_errors": false,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    },
+    {
+      "source_CREATE_file": "seimu/event/event02_n.create",
+      "source_CREATE_block_ordinal": 0,
+      "source_CREATE_block_sha256": "9b745670a7bd8fd849d0a84daace3ec50fd08b032cc3b62a54ba536338a27197",
+      "source_QUEST05_whole_CREATE_sha256": "b19afb9d62d48ba5c1eaec70839cc1f7d4ba3361af8ce7cb1b534cb5f283066c",
+      "source_script_path": "seimu/event/event02_1",
+      "source_script_original_sha256": "63712fde0c36778b6b65af560a4c396ce8a04877243a05da41f63dd0359b8c34",
+      "source_floor_id": 100,
+      "source_quest_origin_class": "ORIGIN_UNRESOLVED",
+      "original_GetPet_commands_source_lines": [
+        11,
+        52
+      ],
+      "original_GetPet_numeric_literals_ordered": [
+        93,
+        341
+      ],
+      "source_script_item_candidate_numeric_ids": [
+        2607
+      ],
+      "source_script_item_numeric_occurrences": 10,
+      "Q05_955_map_status": "NO_MATCHING_DAT_IN_955",
+      "qualifying_DAT_grade": "SOURCE_DAT_NOT_QUALIFIED",
+      "qualifying_source_DAT_sha256": null,
+      "qualifying_source_DAT_bytes": null,
+      "floor_has_prior_DAT_read_errors": true,
+      "source_visual_native_rendering_verified": false,
+      "original_GetPet_command_reward_actually_delivered": false
+    }
+  ],
+  "summary": {
+    "original_GetPet_source_CREATE_refs": 24,
+    "original_distinct_scripts": 23,
+    "original_distinct_floor_ids": 19,
+    "original_distinct_GetPet_numeric_literals": 36,
+    "original_QUEST01_GetPet_script_item_candidate_distinct_numeric_ids": 101,
+    "source_qualified_DAT_grade_counts": {
+      "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE": 16,
+      "DAT_SHA_MATCH_GT99_RD_MISSING": 5,
+      "SOURCE_DAT_NOT_QUALIFIED": 2,
+      "INDEPENDENT_VERIFIED_DAT_1000_NOT_IN_955": 1
+    },
+    "map02_independent_1000_source_floor_id": 1000,
+    "map02_independent_1000_source_DAT_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+    "unqualified_floor_ids": [
+      100,
+      3000
+    ],
+    "compiled_capture_keys_of_INTEGRATION04": [
+      8,
+      145,
+      146,
+      524,
+      777,
+      796,
+      812,
+      953,
+      961,
+      962,
+      1105
+    ],
+    "GetPet_literal_numeric_overlap_with_INTEGRATION04_compiled_capture_keys": []
+  },
+  "evidence_boundaries": {
+    "original_GetPet_script_literal_numeric_values_are_proven_runtime_pet_species": false,
+    "original_GetPet_script_pet_grants_executed": false,
+    "original_script_item_numeric_coincidence_proves_actual_transaction": false,
+    "original_different_GetPet_and_compiled_capture_numeric_IDs_imply_no_possible_relation": false,
+    "Q05_955_missing_DAT_means_original_map_never_existed": false,
+    "MAP09_GT99_source_ready_means_native_map_render_completed": false,
+    "native_original_map_warp_dialogue_or_NPC_exec_observed": false,
+    "same_official_deployment_or_TW10_original_game_content_verified": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "CROSSMODULE_CONTENT_SOURCE_GAP: 100 and 3000 original DAT extraction receipts remain unresolved; source-qualified Q05 NPC spawn/warp/quest links are static and not playable. Seek genuinely new source bytes or native material evidence; do not reextract 955 DAT or infer island/village/category."
+}
