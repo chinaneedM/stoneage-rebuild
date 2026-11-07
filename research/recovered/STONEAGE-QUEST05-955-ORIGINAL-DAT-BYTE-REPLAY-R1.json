@@ -1,0 +1,23 @@
+{
+  "schema": "stoneage.quest05.independent_actual_private_source_DAT_byte_replay.r1",
+  "date": "2026-11-07",
+  "qualification": "PRIVATE_MAP09_RETAINED_ALL_955_DAT_SUBARCHIVE_REPLAY_NOT_GITHUB_ACTIONS_SOURCE_BYTES",
+  "source_sha256": "d84d0800dd600798769dfb7251a1d7816588ac061ccc27812ac64a37922d4a8a",
+  "source_size": 46844444,
+  "expected_DAT_sources": 955,
+  "independently_SHA_matched": 955,
+  "independently_geometry_matched": 955,
+  "independently_size_matched": 955,
+  "source_member_CRC32_errors": 0,
+  "missing_or_extra_DAT_members": [],
+  "nested_original_DAT_ZIP_sha256": "c079a1c25bfa11902b69c1f2839058d4fb20f025ef15c93f649f636c7e5f833a",
+  "nested_original_DAT_ZIP_size_bytes": 1988312,
+  "parent_ZIP_CRC_error_filename": null,
+  "nested_ZIP_CRC_error_filename": null,
+  "nested_ZIP_members": 955,
+  "source_original_assets_published": false,
+  "source_original_game_executed": false,
+  "original_official_same_deployment_proven": false,
+  "related_source_crosswalk": "research/recovered/STONEAGE-QUEST05-598-ORIGINAL-CREATE-FLOOR-MAP-AND-WARP-CROSSWALK-R1.json",
+  "source_verify_method": "Read private MAP09 ZIP original bytes and nested original 955 DAT ZIP; verified parent and nested full CRC, nested archive SHA, 955 per-file raw SHA256/size, original width-height from raw 8-byte little-endian header, and 8+6*width*height original cell layout"
+}
