@@ -2106,3 +2106,8 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 
 
 **QUEST08同轮上游追加：** 又实际读取5原参数，定位权利书商店2475–2477于源floor100/(412,337)，入口原目标10601/(28,49)。其与NPC“第五层买权利书”说明的冲突原样保留，不改位置、不推收费或实际无限采矿。最终私人包18原文件/20成员已回读SHA/CRC；7项专项回归和28项相关本地检查通过。最终NEXT转其他真实任务族，实际采矿/许可运行待真源才重开，详见同一QUEST08连续性页的追加。
+
+
+## 2026-11-08 — QUEST09｜梦幻洞窟原脚本、两套迷宫与实际源画面
+
+[QUEST09来源、原字面冲突与私人两场景](docs/continuity/STONEAGE-QUEST09-DREAM-CAVE-ORIGINAL-SCRIPTS-AND-TWO-MAPS-20261108.md)：真正复读CHAR01完整2,205原文件，从15原配置恢复12事件、117条创建及106条字面传送；供物2603、固定奖励2604/2605/2606及20号随机池保留原序，伊甸/地精灵173分支单独标明。老人与2003攻略相差一格、入口多点及42守门仍指向41等冲突均不修正。又实际复用MAP09原DAT和原候选PNG，对41/42两70×70场景的6幅4K完整画布双实现核同原SHA，私人标出8个源位置；不画假NPC、不认证运行或同官方部署。25成员/28MB原文及画面包已保存并回读SHA/CRC。公开仅[控制值与来源](research/recovered/STONEAGE-QUEST09-DREAM-CAVE-ORIGINAL-CONTROLS-R1.json)、[原地图观察收据](research/recovered/STONEAGE-QUEST09-TWO-ORIGINAL-CAVE-MAPS-OBSERVATION-R1.json)、复用工具与8项回归；36项相关本地检查通过。旧CURRENT全文不改，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体百分比未知。NEXT转其他尚未具体恢复的真实任务族，本族运行语义待新证再开。

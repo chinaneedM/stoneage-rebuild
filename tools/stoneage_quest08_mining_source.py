@@ -71,7 +71,8 @@ def events(raw):
     return rows
 
 
-def extract(source_zip):
+def load_private_source(source_zip):
+    """Verify the complete preserved NPC subtree once for source-only packages."""
     archive_raw = source_zip.read_bytes()
     if len(archive_raw) != 995176 or sha(archive_raw) != ZIP_SHA:
         raise ValueError('Private source ZIP identity mismatch')
@@ -86,6 +87,11 @@ def extract(source_zip):
             if [len(raw), sha(raw), f'{zlib.crc32(raw):08x}'] != row[1:4]:
                 raise ValueError('Original member identity mismatch: ' + name)
             data[row[0]] = raw
+    return archive_raw, source, data
+
+
+def extract(source_zip):
+    archive_raw, source, data = load_private_source(source_zip)
     selected = {}
     for path in PARAMETERS + UPSTREAM:
         raw = data[path]
