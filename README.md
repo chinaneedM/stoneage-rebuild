@@ -2116,3 +2116,7 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-08 — QUEST10｜去重纠正后恢复吉鲁采石场与精灵原任务族
 
 [QUEST10原源、旧NEXT纠正与私人材料](docs/continuity/STONEAGE-QUEST10-QUARRY-SPIRITS-SOURCE-AND-DEDUP-CORRECTION-20261108.md)：先发现QUEST09的双村送物NEXT早已由O24/O32完成，不重算成果，转向12份采石/精灵原配置。实际恢复44事件/7创建关系，库伊原创建指向king/event69_1，旧event30_5及.old无本CREATE直接引用且条件/设旗不同；保留ENDEV=4ENDEV=29原异常，不修语法。11道具的21原行正文重建后SHA全匹配；2391只在B表且原名三墀蛇牙，与协议书注释冲突不改名，双镜同名同图不合并。9道具具6幅真原RD候选PNG，7原DAT的8源点在已验旧缩图私人标注；未重绘完整场景、未运行任务或补NPC精灵。56成员私人源/图文包已保存并回读SHA/CRC；公开仅[必要数字/散列](research/recovered/STONEAGE-QUEST10-QUARRY-SPIRITS-ORIGINAL-SOURCE-R1.json)、工具和6项回归，42项相关本地检查通过。完整CURRENT及Stage A/B/wiki/R79/总体未知不改；NEXT必须先查重再选另一来源就绪任务族。
+
+## QUEST11 — 两族误会原任务族（2026-11-08）
+
+[最新接力与来源止点](docs/continuity/STONEAGE-QUEST11-TWO-TRIBES-ORIGINAL-SOURCE-20261108.md)：8事件脚本、68原段、8配置点、13道具/25原行及5原图位置；原拼写和数量省略不修补。矿石商人不误称传送入口，未认证原运行或官方版本归属。
