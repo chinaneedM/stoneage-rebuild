@@ -41,6 +41,8 @@ on:
       - 'tests/test_stoneage_scene26_pet_tutor_original_source.py'
       - 'research/recovered/STONEAGE-SCENE26-R2-FOUR-ORIGINAL-PET-TUTOR-ROOMS-SOURCE-R1.json'
       - 'tests/test_stoneage_scene26_r2_four_original_pet_tutor_rooms.py'
+      - 'research/recovered/STONEAGE-QUEST07-INACTIVE-NEWBIE-BACKUP-26-CREATE-NINE-ORIGINAL-DAT-R1.json'
+      - 'tests/test_stoneage_quest07_inactive_newbie_backup_original_source.py'
       - 'research/recovered/STONEAGE-MAP11-28-ORIGINAL-DAT-PLANE-FAMILIES-R1.json'
       - 'tests/test_stoneage_map11_original_dat_plane_families.py'
       - 'research/recovered/STONEAGE-MAP07-28-ORIGINAL-DAT-SOURCE-SCENE-RECEIPT-R1.json'
@@ -127,6 +129,8 @@ on:
       - 'tests/test_stoneage_scene26_pet_tutor_original_source.py'
       - 'research/recovered/STONEAGE-SCENE26-R2-FOUR-ORIGINAL-PET-TUTOR-ROOMS-SOURCE-R1.json'
       - 'tests/test_stoneage_scene26_r2_four_original_pet_tutor_rooms.py'
+      - 'research/recovered/STONEAGE-QUEST07-INACTIVE-NEWBIE-BACKUP-26-CREATE-NINE-ORIGINAL-DAT-R1.json'
+      - 'tests/test_stoneage_quest07_inactive_newbie_backup_original_source.py'
       - 'research/recovered/STONEAGE-MAP11-28-ORIGINAL-DAT-PLANE-FAMILIES-R1.json'
       - 'tests/test_stoneage_map11_original_dat_plane_families.py'
       - 'research/recovered/STONEAGE-MAP07-28-ORIGINAL-DAT-SOURCE-SCENE-RECEIPT-R1.json'
@@ -201,6 +205,7 @@ jobs:
       - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_05.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_scene26_pet_tutor_original_source.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_scene26_r2_four_original_pet_tutor_rooms.py' -v
+      - run: python -m unittest -v tests.test_stoneage_quest07_inactive_newbie_backup_original_source
       - run: python -m unittest discover -s tests -p 'test_stoneage_map11_original_dat_plane_families.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_stage_a_source_gap_20261104.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_stage_a_original_rar_block_replay.py' -v
