@@ -37,3 +37,7 @@
 MAP08 **SOURCE_BOUNDED_PARTIAL**。现代观察层序、色盘、透明及视角仍候选；官方同部署、原生碰撞、NPC/任务/传送执行未证。Stage A **7 PARTIAL + 2 OPEN**、Stage B/wiki **GATED**、R79 **PAUSED_NON_BLOCKING**、overall_percent=`null` 保持。
 
 **最高NEXT MAP09：**直接复用本次私人955 DAT及已有4166像素包，批量恢复尚未交付的合格地图来源场景；按实际图像资格与画布预算成批选择，不再为同一载体重复下载。当前955索引中691份无缺资格位置，仅是来源准备度，不等于691份已合图/原生可玩。2000、3200、4000、7400等缺图场景保留精确缺口；若推进缺图，只接受实取原RD与原完整源资格，不补画、不猜同版。旧MAP05的12缺图不因此关闭，旧63失败另存。
+
+## 主线验收后验
+
+PR [#234](https://github.com/chinaneedM/stoneage-rebuild/pull/234) 已合并。候选 `1385db3f96e40b555836356b6ecdf38eb60aebd7` 的14项Actions全部实际completed/success；主线 `c2bde8315114cc29b981c4f8215a6f1062e38518` 的11项Actions亦全部completed/success，专用MAP08运行42362136260 / job128372547412。远端完整tree `5d40cf10f5c629ce336c25839410091bf30a41f8` 与本地已核树一致，全部上传blob亦逐SHA相同；候选日志确认19测试实际通过。公开CI未读原图。所有运行ID保存在 `STONEAGE-MAP08-PUBLICATION-R1.json`；该后验提交自身CI于创建时尚未观察，不将内容主线的成功预支给后验提交。NEXT MAP09与全部历史边界不变。
