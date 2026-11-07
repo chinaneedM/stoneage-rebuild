@@ -2043,3 +2043,5 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 - [MAP07源边界、私人验收和下一工作](docs/continuity/STONEAGE-MAP07-28-ORIGINAL-DAT-SOURCE-ROOM-SCENES-20261107.md)
 - [MAP07 28源图与234原图派生回执](research/recovered/STONEAGE-MAP07-28-ORIGINAL-DAT-SOURCE-SCENE-RECEIPT-R1.json)
 - NEXT **MAP08**：继续地图模块真实原件优先的更大场景/缺图补证，按原源SHA与跨版本边界进行，Stage A 7PARTIAL+2OPEN不变，不进入引擎/网服建设。
+
+**MAP07私人档案保管后验（2026-11-07）：** 先前container_path上传失败已保留；改用精确文件快照成功保存在个人Library `/石器时代/StoneAge-MAP07-private-28-original-room-scene-candidates.zip`，并完整回读验证34,044,818B、SHA256 `2b356fefa1f5c634a2a64837b20904e124ab9839ad6a4e3b9a642e3c05df29a2`、351项CRC均一致。MAP07初次主线合并 `244c8cc5` 的11项Actions均成功。详细见MAP07连续性记录的“追加后验”，NEXT仍MAP08。

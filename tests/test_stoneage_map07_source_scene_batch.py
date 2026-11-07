@@ -38,7 +38,14 @@ def assert_public_consistency(report, index):
     assert report['summary']['private_scene_PNG_count']==84
     assert report['summary']['new_original_RD_decodes']==0
     assert report['private_deliverable']['members']==351
-    assert report['private_deliverable']['durable_Library_custody_reconfirmed'] is False
+    assert report['private_deliverable']['durable_Library_custody_reconfirmed'] is True
+    custody=report['private_deliverable']['library_roundtrip']
+    assert custody['subsequent_exported_snapshot_upload']=='succeeded'
+    assert custody['independently_downloaded_back'] is True
+    assert custody['downloaded_bytes']==report['private_deliverable']['bytes']==34044818
+    assert custody['downloaded_sha256']==report['private_deliverable']['sha256']
+    assert custody['downloaded_zip_members']==report['private_deliverable']['members']==351
+    assert custody['downloaded_zip_crc_passed'] is True
     assert all(value is False for value in report['boundaries'].values())
     assert report['overall_percent'] is None and report['stage_B']=='GATED' and report['wiki']=='GATED'
 
@@ -61,8 +68,8 @@ class Map07(unittest.TestCase):
     def test_reject_invented_RD_fingerprint(self):
         r=json.loads(json.dumps(self.r));r['qualified_image_source_rows'][0]['original_RD_sha256']='invented'
         with self.assertRaises(AssertionError):assert_public_consistency(r,self.i)
-    def test_reject_unearned_Library_custody(self):
-        r=json.loads(json.dumps(self.r));r['private_deliverable']['durable_Library_custody_reconfirmed']=True
+    def test_reject_omitted_verified_Library_custody(self):
+        r=json.loads(json.dumps(self.r));r['private_deliverable']['durable_Library_custody_reconfirmed']=False
         with self.assertRaises(AssertionError):assert_public_consistency(r,self.i)
     def test_reject_false_source_lineage(self):
         r=json.loads(json.dumps(self.r));r['source_mixed25_parent_carrier']['sha256']='fake'
