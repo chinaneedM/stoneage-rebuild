@@ -2058,3 +2058,7 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-07 — MAP10｜60份低值语义未证原地图候选增量
 
 已真正复用源SHA/CRC认证的955原DAT包、台湾1.0完整ADRN及MAP04原PNG库：MAP09排除的60份低值语义OPEN地图，64526处大于99合格候选引用，补入此前未收进目录的138幅旧原图，并由Pillow/NumPy独立逐完整画布核得180个新RGBA候选状态。原691份/2073状态不改，私人目录合计751份原DAT索引/3634候选图/2253帧；但低值69830处仍未知，不能认为751严格地图或可玩。其余204份仍有1114种/29748处>99来源原图缺件（15999/9440/3150/22413分类不变），应待合格原REAL/RD而不是索引猜图。单机内容优先、Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null不变；最高NEXT QUEST-MODULE-01按模块批量梳理真实任务脚本与活动来源。完整[来源、断言边界与私人档案说明](docs/continuity/STONEAGE-MAP10-60-LOW-VALUE-751-SOURCE-OBSERVATIONS-20261107.md)、[公开数值原SHA收据](research/recovered/STONEAGE-MAP10-PUBLIC-ORIGINAL-SOURCE-CUSTODY-R1.json)及[负例测试](tests/test_stoneage_map10_public_source_custody.py)。旧CURRENT全文blob `c89e0e33537990aa2132b47c40fef49a985a935c`原样保留。
+
+### QUEST05（2026-11-07）｜598条来源创建点对应原地图与234条条件传送候选
+
+在旧任务QUEST01–04和MAP04/09/10地图实物基础上，新增可检索的**源创建脚本→原floorid→955份DAT原文件/原SHA→源图资格**联接：598条来源CREATE涉及236个不同楼层，352/11/147/88条分别对应MAP09候选源就绪、MAP10新增低值未明、存在DAT但>99原图有缺口、当前955批次无同号DAT。另有234条带脚本SHA、条件关键词和目标楼层/坐标的**静态传送字面候选**，排除94次零目标展开，全部不能冒称原版已运行路线；南北岛/村庄与任务本体身份继续UNKNOWN。原CURRENT全文blob `c89e0e33537990aa2132b47c40fef49a985a935c`不改；阶段不变。详见 [QUEST05来源限定交叉图](docs/continuity/STONEAGE-QUEST05-598-CREATE-FLOOR-DAT-AND-234-WARP-20261107.md)、[公开全部来源记录](research/recovered/STONEAGE-QUEST05-598-ORIGINAL-CREATE-FLOOR-MAP-AND-WARP-CROSSWALK-R1.json)和[源契约回归](tests/test_stoneage_quest05_original_floor_crosswalk.py)。目前NEXT：有新合格任务源则小批QUEST06，否则进入GAMEPLAY-MECHANICS-MODULE-01；不重复搭建已有任务索引。
