@@ -2053,3 +2053,8 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-07 MAP09：691份原地图的集中离线观察目录
 
 [MAP09来源与验收续接](docs/continuity/STONEAGE-MAP09-691-SOURCE-READY-MAP-CATALOG-20261107.md)：复用已保存955原DAT及原PNG包，691份来源就绪文件（688不同原SHA）与3496原PNG集中可查，全部2073完整平面/合层RGBA由两算法独立一致。新增按编号筛选/分层的离线观察器，合成浏览器9画布与控件实测通过，不冒充私人原图浏览器或原客户端运行。其余264份细分为60份仅低值资格缺口与204份大于99缺候选图号；历史状态不改。最高NEXT **MAP10**：以真实原RD来源有限补缺，原件不可得则明确止点；不重复下载同源大包。完整CURRENT保留，Stage A 7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null。
+
+
+## 2026-11-07 — MAP10｜60份低值语义未证原地图候选增量
+
+已真正复用源SHA/CRC认证的955原DAT包、台湾1.0完整ADRN及MAP04原PNG库：MAP09排除的60份低值语义OPEN地图，64526处大于99合格候选引用，补入此前未收进目录的138幅旧原图，并由Pillow/NumPy独立逐完整画布核得180个新RGBA候选状态。原691份/2073状态不改，私人目录合计751份原DAT索引/3634候选图/2253帧；但低值69830处仍未知，不能认为751严格地图或可玩。其余204份仍有1114种/29748处>99来源原图缺件（15999/9440/3150/22413分类不变），应待合格原REAL/RD而不是索引猜图。单机内容优先、Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null不变；最高NEXT QUEST-MODULE-01按模块批量梳理真实任务脚本与活动来源。完整[来源、断言边界与私人档案说明](docs/continuity/STONEAGE-MAP10-60-LOW-VALUE-751-SOURCE-OBSERVATIONS-20261107.md)、[公开数值原SHA收据](research/recovered/STONEAGE-MAP10-PUBLIC-ORIGINAL-SOURCE-CUSTODY-R1.json)及[负例测试](tests/test_stoneage_map10_public_source_custody.py)。旧CURRENT全文blob `c89e0e33537990aa2132b47c40fef49a985a935c`原样保留。
