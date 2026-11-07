@@ -2086,3 +2086,7 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-07 — MAP11｜28间原房间三层复用关系与私人对比画面
 
 [MAP11源完整原DAT逐层关系](docs/continuity/STONEAGE-MAP11-28-ORIGINAL-DAT-PLANE-FAMILIES-20261107.md)：实际重读已保管MAP07源ZIP 34,044,818B、351成员CRC和28份真实5408B DAT；完整28原DAT整SHA各异，但单独三张900格u16数值层整SHA分别有18/28/20种，第0层5个相同组覆盖15份楼层。对其中10对逐原数值格和完整1889×1425合成原RD候选画面比较，相同源第0层的完整场景画面均不同；不得当官方村庄、同一地图、碰撞、可通行状态。新15张画面分组对照及28份完整源指纹已私人Library二次SHA回读；公开仅[派生数值/来源负例](research/recovered/STONEAGE-MAP11-28-ORIGINAL-DAT-PLANE-FAMILIES-R1.json)，原DAT/RD/图像不入Git。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体百分比未知。下一项切换其他可读原游戏内容，不继续扩写地图分类框架。
+
+## 2026-11-07 — SCENE26-R2｜原宠物常识导师第四间4003房间真实源像素补齐
+
+[SCENE26-R2来源及四间私人画面](docs/continuity/STONEAGE-SCENE26-R2-FOUR-PET-TUTOR-ORIGINAL-ROOMS-20261107.md)：重新从已保存MAP09私人691场景和955件原DAT取得4003整5,408B/SHA `0a9fa2a089b6936e86eea458bca464038b8d5cb7fee057b9d2b393ffc6c6d6d4`，与SCENE26/QUEST05源CREATE和MAP09原收据同号同SHA。原导师点位4003/(14,17)、图号16122，此原格三u16原值 `5002/12802/49152`；用已验45幅候选原RD重放143绘图位置和三张1889×1425画布，两种独立合成像素与MAP09三SHA一致。SCENE26旧1003/2003/3003三间原DAT/已标记画面复核，四间来源限定现代对照图和离线查阅页已私人保管并库回读。公开仅[来源限定数值规格](research/recovered/STONEAGE-SCENE26-R2-FOUR-ORIGINAL-PET-TUTOR-ROOMS-SOURCE-R1.json)及回归，原商业DAT/RD/CP950正文不入Git。未绘出真正16122/16127 NPC，没有原生执行、同版官方归属/碰撞/图层证明；新原DAT下载0、新RD解码0、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体完成率未知。NEXT不重复四房间，转其它真实原游戏内容。
