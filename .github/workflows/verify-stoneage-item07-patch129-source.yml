@@ -1,0 +1,48 @@
+name: Verify StoneAge ITEM07 official-patch alias crosswalk
+on:
+  push:
+    branches:
+      - agent/item07-patch129-alias-20261107
+    paths:
+      - 'tools/stoneage_item07_patch129_item_alias_crosswalk.py'
+      - 'tests/test_stoneage_item07_patch129_item_alias_crosswalk.py'
+      - '.github/workflows/verify-stoneage-item07-patch129-source.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_item07_patch129_item_alias_crosswalk.py'
+      - 'tests/test_stoneage_item07_patch129_item_alias_crosswalk.py'
+      - 'research/recovered/STONEAGE-ITEM07-PATCH129-ITEM-ALIAS-CROSSVERSION-SOURCE-R1.json'
+      - '.github/workflows/verify-stoneage-item07-patch129-source.yml'
+permissions:
+  contents: write
+jobs:
+  source-crosswalk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run bounded source-counterexample tests
+        run: python3 -m unittest discover -s tests -p 'test_stoneage_item07_patch129_item_alias_crosswalk.py' -v
+      - name: Rebuild from exact pinned original-derived metadata
+        run: python3 tools/stoneage_item07_patch129_item_alias_crosswalk.py
+      - name: Reject stale checked-in source report on pull requests
+        if: github.event_name == 'pull_request'
+        run: git diff --exit-code -- research/recovered/STONEAGE-ITEM07-PATCH129-ITEM-ALIAS-CROSSVERSION-SOURCE-R1.json
+      - name: Verify output can replay byte-identically
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp research/recovered/STONEAGE-ITEM07-PATCH129-ITEM-ALIAS-CROSSVERSION-SOURCE-R1.json /tmp/item07-first.json
+          python3 tools/stoneage_item07_patch129_item_alias_crosswalk.py
+          cmp /tmp/item07-first.json research/recovered/STONEAGE-ITEM07-PATCH129-ITEM-ALIAS-CROSSVERSION-SOURCE-R1.json
+      - name: Commit source-derived report on designated branch only
+        if: github.event_name == 'push' && github.ref_name == 'agent/item07-patch129-alias-20261107'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/recovered/STONEAGE-ITEM07-PATCH129-ITEM-ALIAS-CROSSVERSION-SOURCE-R1.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'research(item07): archive exact patch129 item alias comparison'
+            git push origin HEAD:agent/item07-patch129-alias-20261107
+          fi

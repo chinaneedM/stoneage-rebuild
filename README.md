@@ -2015,3 +2015,8 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-07 — WORLD37-R2C｜原捕捉入口及成功尾段的隔离回放
 
 完整混合 2.5 原 GMSV 经整 SHA、CRC 和原 RAR 成员复验后，执行 42 个有界 x86 回放。11 条编译条件全部验证，13 个逐项缺件对照均在评分前失败。成功路径实见条件道具移除、整数键 44 加一、野怪席位清除与角色池释放，新宠物仍在栏内。备表独有三件只验证夹具中的数字匹配。原服务端进程、网络、存档和官方部署仍待对应来源。详见[来源、轨迹和下一优先](docs/continuity/STONEAGE-STAGE-A-WORLD37-R2C-COMPILED-CAPTURE-REPLAY-20261107.md)。旧完整 CURRENT 原样保留。
+
+
+## 2026-11-07 — ITEM07｜混合2.5物品缺图的2006台湾官方补丁索引交叉证据
+
+接续 WORLD37-R2C 后首先核台湾8.5六组宠物缺少的 `real_158.bin`，当前可访问私人库仍无同源载荷，**PET12六组本轮新增原像素0**，不把1568个旧RD索引当画面。转用已永久归档的 ITEM06 和2006-09-11官方补丁 `PATCH129` 全量别名源目录，真正逐项联接831个物品图别名：混合2.5原缺图416中，408在补丁有单一RD内容、1个（21600）有三物理位置/两RD内容、7个在补丁也无索引；已经恢复的415原RD在补丁逐项压缩内容SHA完全相同。本次新增**409个来源限定后期官方补丁图块关联**，但新读/新解码/新PNG为0，不代表同版官方道具身份或运行时选图。完整[ITEM07连续性记录](docs/continuity/STONEAGE-ITEM07-PATCH129-SOURCE-ALIAS-CROSSWALK-20261107.md)、[831条完整数值和压缩指纹](research/recovered/STONEAGE-ITEM07-PATCH129-ITEM-ALIAS-CROSSVERSION-SOURCE-R1.json)、源固定工具和测试均已归档。最高NEXT **ITEM08**：只在能合法重读完整SHA认证的官方补丁实际图块载荷时补真实像素；若源缺，明确止点再转其它源合格游戏内容。旧 CURRENT、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING、overall_percent=null保留。
