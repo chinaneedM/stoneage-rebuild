@@ -1,4 +1,4 @@
-name: Verify PET08/PET09/PET10/PET14 source-qualified pet catalogs
+name: Verify source-qualified pet catalogs and CHAR10 motion scope
 on:
   push:
     paths:
@@ -17,6 +17,10 @@ on:
       - 'research/recovered/STONEAGE-PET-MODULE-14-TW10-MIXED25-SOURCE-SEPARATED-NUMERIC-BRIDGE-R1.json'
       - 'tools/stoneage_pet14_tw10_mixed25_source_bridge.py'
       - 'tests/test_stoneage_pet_module_14_source_bridge.py'
+      - 'tools/stoneage_pet15_tw10_full_motion.py'
+      - 'tools/stoneage_char10_tw10_full_motion.py'
+      - 'tests/test_stoneage_char10_tw10_full_motion.py'
+      - 'research/recovered/STONEAGE-CHAR10-TW10-TWELVE-BODY-ALL-MOTION-R1.json'
       - '.github/workflows/verify-stoneage-pet-module-08-catalog.yml'
   workflow_dispatch:
 permissions:
@@ -30,4 +34,4 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m unittest tests.test_stoneage_pet_module_08_catalog tests.test_stoneage_pet_module_09_carrier_material tests.test_stoneage_pet_module_10_original_server tests.test_stoneage_pet_module_14_source_bridge -v
+      - run: python -m unittest tests.test_stoneage_pet_module_08_catalog tests.test_stoneage_pet_module_09_carrier_material tests.test_stoneage_pet_module_10_original_server tests.test_stoneage_pet_module_14_source_bridge tests.test_stoneage_char10_tw10_full_motion -v

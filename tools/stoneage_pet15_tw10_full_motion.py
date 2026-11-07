@@ -46,7 +46,7 @@ def tsv(name):
         yield from csv.DictReader(stream, delimiter='\t')
 
 
-def selected_motion():
+def selected_motion(graphics=None):
     """Use archived public records to select and independently replay the scope."""
     old = {row[0] for row in archived(PET07)['source_groups']}
     links = {table: defaultdict(list) for table in TABLES}
@@ -57,6 +57,9 @@ def selected_motion():
             links[table][graphic].append([ordinal, template_id, flag])
             if flag == 1:
                 keys.add(graphic)
+    if graphics is not None:
+        old = set()
+        keys = set(graphics)
     groups = {}
     for row in tsv(SPR_TABLES[0]):
         key = int(row['spr_no'])

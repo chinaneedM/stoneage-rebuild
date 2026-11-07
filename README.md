@@ -2020,3 +2020,8 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-07 — ITEM07｜混合2.5物品缺图的2006台湾官方补丁索引交叉证据
 
 接续 WORLD37-R2C 后首先核台湾8.5六组宠物缺少的 `real_158.bin`，当前可访问私人库仍无同源载荷，**PET12六组本轮新增原像素0**，不把1568个旧RD索引当画面。转用已永久归档的 ITEM06 和2006-09-11官方补丁 `PATCH129` 全量别名源目录，真正逐项联接831个物品图别名：混合2.5原缺图416中，408在补丁有单一RD内容、1个（21600）有三物理位置/两RD内容、7个在补丁也无索引；已经恢复的415原RD在补丁逐项压缩内容SHA完全相同。本次新增**409个来源限定后期官方补丁图块关联**，但新读/新解码/新PNG为0，不代表同版官方道具身份或运行时选图。完整[ITEM07连续性记录](docs/continuity/STONEAGE-ITEM07-PATCH129-SOURCE-ALIAS-CROSSWALK-20261107.md)、[831条完整数值和压缩指纹](research/recovered/STONEAGE-ITEM07-PATCH129-ITEM-ALIAS-CROSSVERSION-SOURCE-R1.json)、源固定工具和测试均已归档。最高NEXT **ITEM08**：只在能合法重读完整SHA认证的官方补丁实际图块载荷时补真实像素；若源缺，明确止点再转其它源合格游戏内容。旧 CURRENT、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING、overall_percent=null保留。
+
+
+## 2026-11-07 — ITEM08 / CHAR10｜像素来源澄清与十二组人物全部原动作
+
+[本轮连续记录](docs/continuity/STONEAGE-ITEM08-CHAR10-PIXEL-SOURCES-AND-BODY-MOTION-20261107.md)：官方PATCH129只提供ADRN索引；ITEM07的RD指纹来自另存的社区声称台湾8.5 `real_158.bin`。826条匹配经完整原记录SHA核同，409个缺图别名的411个精确原位置已归档；原载荷仍未找到，新物品像素0，旧报告保留。按缺源轮换规则，真正重取并核同台湾1.0原件，对CHAR02十二个数字人物候选补齐全部1,248条源动作/方向、6,920帧位置、4,152原位图；4,151严格解码，34699仅原画布范围观察。相对旧动作2增加3,576个可查位图，不是新人物数。私人逐帧查阅ZIP已保存，原商业图不入Git；浏览器因缺Chromium未运行，原色/动作命名/时序/原客户端仍未认证。下一优先CHAR11：同人物模块其余已有来源候选的批量原动作与像素，复用原包与工具、不猜身份。CURRENT原blob完整保留，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总进度未知。
