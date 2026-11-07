@@ -15,8 +15,8 @@
   "source_browser_scope": "SYNTHETIC_ONLY_NO_ORIGINAL_ASSETS",
   "original_client_executed": false,
   "public_CI_replays_original_assets": false,
-  "candidate_acceptance": "PENDING",
-  "main_acceptance": "PENDING",
+  "candidate_acceptance": "14_COMPLETED_SUCCESS",
+  "main_acceptance": "11_COMPLETED_SUCCESS",
   "highest_next": "MAP10_BOUNDED_SOURCE_RD_GAP_REVIEW",
   "derived_reports": {
     "research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json": {
@@ -39,5 +39,131 @@
       "sha256": "021c80fc32334b4ad7f1328b69a62d87028b589598d3343410429777655b4db0",
       "git_blob": "5d6b591c659563aef24d93a30d314dd1d13b8d2c"
     }
-  }
+  },
+  "candidate_head": "46425ccf4b00e86b2c94575f79f9d54686db7a41",
+  "candidate_tree": "8c61efa7f8465443dcfcafb76eeaca9317676294",
+  "candidate_runs": [
+    {
+      "id": 42364212727,
+      "event": "pull_request",
+      "conclusion": "success"
+    },
+    {
+      "id": 42364212835,
+      "event": "pull_request",
+      "conclusion": "success"
+    },
+    {
+      "id": 42364212825,
+      "event": "pull_request",
+      "conclusion": "success"
+    },
+    {
+      "id": 42364209863,
+      "event": "push",
+      "conclusion": "success"
+    },
+    {
+      "id": 42364209939,
+      "event": "push",
+      "conclusion": "success"
+    },
+    {
+      "id": 42364209857,
+      "event": "push",
+      "conclusion": "success"
+    },
+    {
+      "id": 42364209952,
+      "event": "push",
+      "conclusion": "success"
+    },
+    {
+      "id": 42364209994,
+      "event": "push",
+      "conclusion": "success"
+    },
+    {
+      "id": 42364209893,
+      "event": "push",
+      "conclusion": "success"
+    },
+    {
+      "id": 42364209896,
+      "event": "push",
+      "conclusion": "success"
+    },
+    {
+      "id": 42364209855,
+      "event": "push",
+      "conclusion": "success"
+    },
+    {
+      "id": 42364210008,
+      "event": "push",
+      "conclusion": "success"
+    },
+    {
+      "id": 42364209879,
+      "event": "push",
+      "conclusion": "success"
+    },
+    {
+      "id": 42364209872,
+      "event": "push",
+      "conclusion": "success"
+    }
+  ],
+  "main_head": "57daafb3084337ba5f57d966c009e6f09b97163a",
+  "main_tree": "8c61efa7f8465443dcfcafb76eeaca9317676294",
+  "main_runs": [
+    {
+      "id": 42364262244,
+      "conclusion": "success"
+    },
+    {
+      "id": 42364262222,
+      "conclusion": "success"
+    },
+    {
+      "id": 42364262306,
+      "conclusion": "success"
+    },
+    {
+      "id": 42364262333,
+      "conclusion": "success"
+    },
+    {
+      "id": 42364262296,
+      "conclusion": "success"
+    },
+    {
+      "id": 42364262197,
+      "conclusion": "success"
+    },
+    {
+      "id": 42364262320,
+      "conclusion": "success"
+    },
+    {
+      "id": 42364262185,
+      "conclusion": "success"
+    },
+    {
+      "id": 42364262255,
+      "conclusion": "success"
+    },
+    {
+      "id": 42364262248,
+      "conclusion": "success"
+    },
+    {
+      "id": 42364262221,
+      "conclusion": "success"
+    }
+  ],
+  "main_map09_job": 128378916772,
+  "full_remote_tree_matches_verified_local_tree": true,
+  "receipt_commit_own_CI_at_creation": "NOT_YET_OBSERVED",
+  "pull_request": 235
 }
