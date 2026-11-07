@@ -2094,3 +2094,7 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-07 — SCENE26-R3｜16122/16127原NPC图号的跨版本原位图索引实证
 
 [真实原索引和证据范围](docs/continuity/STONEAGE-SCENE26-R3-NPC16122-16127-ORIGINAL-ALIAS-CROSSVERSION-20261107.md)：将四个已验证导师CREATE的图号与仓库已有完整43,632条原资源目录实际匹配。台湾1.0当前逻辑别名两个均未命中；大陆5.0及台湾PATCH129各命中一次，CN50/patch各对应原RD块SHA完全一致：16122→物理232699/32×87/1930B，16127→物理232704/36×96/2089B。同整数物理位图号16122/16127的源查询均未命中，严禁混用命名空间。本轮是原源定位/完整内容散列，不是已取得图片像素、SPR动画、真实导师角色、同版客户端或原始运行。源Actions、[公开数值](research/recovered/STONEAGE-SCENE26-R3-NPC16122-16127-ORIGINAL-ALIAS-CROSSVERSION-R1.json)和负例CI保存，新原商业素材0，完整CURRENT原Git blob不变。下一项必须以真REAL原块的合法保管为前提，不重复地图图示和空白联表。
+
+## 2026-11-07 — QUEST07｜原新手NPC配置备份的26个未启用候选与九个真实地图
+
+[QUEST07完整来源、私人五房间对照及缺失边界](docs/continuity/STONEAGE-QUEST07-INACTIVE-NEWBIE-BACKUP-NINE-DAT-FIVE-SCENES-20261107.md)：已保存后期社区mixed25原RAR整SHA再验，原`sa60/newbie/newbie.create.bak` 6190B/SHA `fa83b8f1...` 有34条原CREATE，当前`newbie.create`1548B的8条原字段均同备份中8条；另26条**仅为备份候选，绝非已证明启用**，涵盖训练/医疗/商店/宠物技能/对战等9个旧楼层。9份原DAT逐原SHA/CRC取出且与另一私人MAP09完整955原DAT包逐文件相同；5房间9候选NPC站位已在真实原RD来源现代缩略图上私人观察，17个候选坐标仍无匹配来源完整视觉。备份24个外部文件引用仅1个当前同目录原文件存在，23个缺源不补造任务/奖励。原备份、九DAT、五场景及对照图私人Library真实回读ZIP18CRC/SHA；公开仅[来源受限数字](research/recovered/STONEAGE-QUEST07-INACTIVE-NEWBIE-BACKUP-26-CREATE-NINE-ORIGINAL-DAT-R1.json)和负例，未执行原NPC、未取新地图/精灵或改变原历史CURRENT。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、整体完成率未知。NEXT仅在缺失原脚本/官方启用证据到位时重开，其他真实游戏内容优先。
