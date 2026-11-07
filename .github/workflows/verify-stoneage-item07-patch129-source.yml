@@ -1,15 +1,23 @@
-name: Verify StoneAge ITEM07 official-patch alias crosswalk
+name: Verify StoneAge ITEM07-08 index and pixel carrier provenance
 on:
   push:
     branches:
       - agent/item07-patch129-alias-20261107
+      - agent/item08-char10-source-motion-20261107
+      - main
     paths:
       - 'tools/stoneage_item07_patch129_item_alias_crosswalk.py'
+      - 'tools/stoneage_item08_pixel_source_gate.py'
+      - 'tests/test_stoneage_item08_pixel_source_gate.py'
+      - 'research/recovered/STONEAGE-ITEM08-TW85-PIXEL-CARRIER-QUALIFICATION-R1.json'
       - 'tests/test_stoneage_item07_patch129_item_alias_crosswalk.py'
       - '.github/workflows/verify-stoneage-item07-patch129-source.yml'
   pull_request:
     paths:
       - 'tools/stoneage_item07_patch129_item_alias_crosswalk.py'
+      - 'tools/stoneage_item08_pixel_source_gate.py'
+      - 'tests/test_stoneage_item08_pixel_source_gate.py'
+      - 'research/recovered/STONEAGE-ITEM08-TW85-PIXEL-CARRIER-QUALIFICATION-R1.json'
       - 'tests/test_stoneage_item07_patch129_item_alias_crosswalk.py'
       - 'research/recovered/STONEAGE-ITEM07-PATCH129-ITEM-ALIAS-CROSSVERSION-SOURCE-R1.json'
       - '.github/workflows/verify-stoneage-item07-patch129-source.yml'
@@ -34,6 +42,11 @@ jobs:
           cp research/recovered/STONEAGE-ITEM07-PATCH129-ITEM-ALIAS-CROSSVERSION-SOURCE-R1.json /tmp/item07-first.json
           python3 tools/stoneage_item07_patch129_item_alias_crosswalk.py
           cmp /tmp/item07-first.json research/recovered/STONEAGE-ITEM07-PATCH129-ITEM-ALIAS-CROSSVERSION-SOURCE-R1.json
+      - name: Verify exact pixel carrier provenance and preserve legacy report
+        run: |
+          python3 -m unittest tests.test_stoneage_item08_pixel_source_gate -v
+          python3 -m tools.stoneage_item08_pixel_source_gate
+          git diff --exit-code -- research/recovered/STONEAGE-ITEM08-TW85-PIXEL-CARRIER-QUALIFICATION-R1.json
       - name: Commit source-derived report on designated branch only
         if: github.event_name == 'push' && github.ref_name == 'agent/item07-patch129-alias-20261107'
         shell: bash
