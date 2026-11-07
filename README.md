@@ -2030,3 +2030,8 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-07 — CHAR11｜其余228个人物源数字组的全部动作与原位图
 
 [CHAR11来源、私人原图与下一工作包](docs/continuity/STONEAGE-CHAR11-TW10-REMAINING-BODY-MOTION-20261107.md)：真正复用并核同台湾1.0原件，对其余228个数字候选组完成23,712条原方向/动作、130,592帧位置；69,620不同原位图中69,592严格解码，28仅原画布范围观察。四个0xFFFFFFFF原位置原样保留，不造图或丢帧，三序列因此仍有不可显示位置。相对CHAR10新增位图覆盖69,044，两轮联合240数字组/73,196原位图，不是对应数量的人物身份。196MB私人逐帧ZIP已保存，全PNG指纹与原索引二次复核；公开仅派生收据/工具/测试，原游戏、官方名册、动作名/时序/配色选择均未认证。下一最高MAP06：恢复有真实DAT和原图、尚未交付的完整场景候选。CURRENT全文与Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体未知保持。
+
+
+## 2026-11-07 — MAP06｜两份原地图的实际室内场景候选
+
+[MAP06原件、图像与边界](docs/continuity/STONEAGE-MAP06-TWO-ORIGINAL-ROOM-SCENES-20261107.md)：真正取回并核同1005/1006原DAT，以55幅已有台湾1.0原RD候选PNG生成单层/合层共6张场景图，两源仍不认证同一官方部署。464个现代绘图候选位置经独立全画布重算相同，1795个原1–99非零值保留不猜作可见图。两原DAT、55原图、六图和查阅页的私人包已保存；原生层序/配色/碰撞/原客户端运行未知。下一最高MAP07按地图模块继续有合格原件的批量场景，先保管/复用源批，避免逐图重下大包。CURRENT全文、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停与总体未知保持。

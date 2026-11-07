@@ -1,14 +1,22 @@
-name: Verify MAP05 original source-window candidate observations and negative boundaries
+name: Verify MAP05-06 original source scene candidates and negative boundaries
 on:
   pull_request:
     paths:
       - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-05-SOURCE-WINDOW-OBSERVATION-R1.json'
       - 'tests/test_stoneage_map_scene_module_05.py'
+      - 'tests/test_stoneage_map06_two_original_scenes.py'
+      - 'tools/stoneage_map06_two_original_scenes.py'
+      - 'research/recovered/STONEAGE-MAP06-TWO-ORIGINAL-DAT-SCENE-CANDIDATES-R1.json'
+      - 'research/recovered/STONEAGE-MAP06-ORIGINAL-DAT-SOURCE-RECEIPT-R1.json'
       - '.github/workflows/verify-stoneage-map-scene-module-05.yml'
   push:
     paths:
       - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-05-SOURCE-WINDOW-OBSERVATION-R1.json'
       - 'tests/test_stoneage_map_scene_module_05.py'
+      - 'tests/test_stoneage_map06_two_original_scenes.py'
+      - 'tools/stoneage_map06_two_original_scenes.py'
+      - 'research/recovered/STONEAGE-MAP06-TWO-ORIGINAL-DAT-SCENE-CANDIDATES-R1.json'
+      - 'research/recovered/STONEAGE-MAP06-ORIGINAL-DAT-SOURCE-RECEIPT-R1.json'
       - '.github/workflows/verify-stoneage-map-scene-module-05.yml'
   workflow_dispatch:
 
@@ -20,4 +28,4 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m unittest discover -s tests -p 'test_stoneage_map_scene_module_05.py' -v
+      - run: python -m unittest tests.test_stoneage_map_scene_module_05 tests.test_stoneage_map06_two_original_scenes -v
