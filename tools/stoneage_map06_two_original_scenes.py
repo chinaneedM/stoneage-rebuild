@@ -12,7 +12,6 @@ import struct
 import zipfile
 import zlib
 from tools.stoneage_map06_private_dat_source import PINS
-from tools.stoneage_scene21_town1000 import render
 from tools.stoneage_tw85_map_payload import parse
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -68,6 +67,7 @@ def source_images(tiles,wanted):
 
 
 def scene_frames(info,selected,images,records):
+    from tools.stoneage_scene21_town1000 import render
     rects=[(p['anchor'][0]+records[p['image_key']]['xoff'],p['anchor'][1]+records[p['image_key']]['yoff'],
             records[p['image_key']]['width'],records[p['image_key']]['height']) for p in selected]
     w,h=info['width'],info['height']

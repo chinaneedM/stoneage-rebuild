@@ -31,3 +31,8 @@ StoneAge-MAP06-two-original-room-scene-candidates-private.zip已成功保存：6
 
 **MAP06 SOURCE_BOUNDED_PARTIAL；最高NEXT MAP07：** 继续地图模块，优先复用私人原DAT/像素，查重后批量观察其余有合格原件的场景。如需再次取同大载体，优先一次保管合格原DAT源批，避免逐图重下大包。取得原DAT后才承诺画面，不把691旧覆盖行算新地图，不扩引擎/网服/NPC玩法或体验优化。原世界未进入、Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null保持。远端内容验收按实际后验另记。
 
+
+
+## 首次内容CI失败保留
+
+候选7715ccb4ece36e4879fca1c883ed71b998263367的MAP05–06 push run42343922563 / job128317423348及PR run42343925010实际failure：新增模块顶层复用SCENE21渲染函数，其间接导入Pillow，纯公共元数据CI未装Pillow而在测试导入时报ModuleNotFoundError。没有源DAT/原图资格失败。修正为仅在私人实际渲染时加载该已有函数；不增加公共图像依赖、不改源数据或已交付PNG。修正后的14测试另在python -S无第三方site-packages模式通过；远端改正验收按后验记录，不追认旧失败。
