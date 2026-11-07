@@ -748,3 +748,20 @@ Original world entry, battle, riding, audio-to-event mapping, official NPC/quest
 **Status: Accepted execution priority.** Original client files and original server-side game-data files are essential archaeological source carriers. Native online accounts, authentication, socket handshakes, login gateways, online state sync and production server uptime are not restoration deliverables for our intended offline game.
 
 Current Stage A work proceeds from source-qualified original maps, images/animations, pet and NPC data, tasks, item tables, sound and gameplay rules to existing private **offline observation**. The previously recorded GMSV/SAAC binary/configuration/runtime findings remain valid in their original evidence scope but do not gate source-based restoration. Do not confuse an offline observer with native original gameplay. Historical official-client builds and later community archives retain separate provenance. New game implementation, local-save engineering, engine choice and all player-experience changes remain future work. See [dated Stage A priority](continuity/STONEAGE-STAGE-A-OFFLINE-GAME-CONTENT-PRIORITY-20261104.md).
+
+
+## DD-032 — 原版内容按层级分类、跨模块关系组装、持续可演进（2026-11-07）
+
+**Status: Accepted for Stage A information organization.** 用户确认模块优先复原的长期方向，并委托助手根据实际材料持续选择、改进最简单有效的方法；这不是要求立即开发新游戏、选择引擎或把待证历史关系编造成事实。
+
+**核心原则：原证据不动，内容分类另建，关系可追溯。** 既有原始文件、物理ID、原数值、原图/SHA、版本身份和历史记录保留原样；在已经验证的派生目录上逐步增加可检索的**内容标签、层级与有向关联**，而不是重新抽取一遍数据、复制多套主表或另建庞大框架。可证实、推测、未分类分开，保留 UNKNOWN。历史原版档案和未来单机新作内容选用是两层决策。
+
+- **地图/世界：** 优先恢复同来源世界、岛屿/区域、村庄/城镇、野外/洞窟/房间、具体楼层/地图的层级，以及原传送点/出口/入口的有向连接关系；每条边保存起止地图原ID、坐标/触发字段、具体文件与构建证据。南岛、北岛、村名、地形归属只有原件/同代资料支持时才确认为原版分类，不能由数字ID、想象中的地理相邻或现代合成画布推断。最终世界图应由**经证实的地图连通图**逐步产生，不是靠图片排列直接宣布全世界恢复。
+- **宠物：** 族系（如虎系、暴龙系）作为便于检索的内容分组，但物种、外观变种、具体宠物实体、SPR动画组/原图号、服务器模板/实例ID必须分开；族系若仅据外形暂分，明确为视觉候选而非原版官方分类。元素/属性、成长、技能、出现地、捕捉、骑乘条件按原版本分列，并与具体地图/玩法的来源关系引用连接。
+- **物品/装备：** 用主要用途/原版类型（武器、防具、饰品、消耗品、材料、任务/特殊物品等）配合多个功能标签（攻击、防御、状态/精灵/合成等）；不将“攻击系/防御系”误作互斥且已证实的原始数据字段。原物品号、属性、图号、商店、合成配方、任务条件各自保留来源与版本。
+- **NPC与任务：** NPC角色/功能、地图坐标、对白、商店、任务步骤/奖励通过原ID与有来源的边连接；任务必须区别本体常驻、后期永久、运营/节日活动和起源未决，不能因文件名含event就推为节庆或因后期保存服脚本相似就接入初版。
+- **跨模块关系：** 采用单条实体的**稳定目录键 + 具体载体/版本 + 原ID/源位置**辨识对象，边上记录关系类型（例如“NPC位于地图”“出口通往地图”“宠物在区域出现”“任务要求物品”）、同部署资格、证据/置信度与缺口。禁止仅凭同编号、同名、同外形或跨构建猜测自动并表。一个对象可有多个目录标签，不复制多份事实正文。
+
+**执行顺序与取舍：** 每推进一批有实际原材料的模块，就在已有目录上补恰好必要的层级/标签/关联和负证，不为了完成漂亮的分类树而中断正在恢复的真实内容。先做来源可证、可自动核验且直接改善查找/集成的关系；不确定分类允许挂“待定”并在新证据到达时迭代。更优的方法可以用新版本记录替代旧索引视图，不能静默改写过去的事实、历史工作收据。无需现在规定每个岛/村庄/族系/装备类的完备名单，也不把完整分类当成已取得完整原服或已能运行游戏。
+
+**当前边界：** 只属于 Stage A 历史内容管理，Stage B/wiki 仍 GATED；新单机游戏的世界观重组、扩展、新机制、体验优化、正式新资产和引擎选型继续延期。保持现有模块队列：MAP10 来源限定止点之后最高 NEXT 仍为 **QUEST-MODULE-01**，分类原则在后续真实任务证据归档时顺手落地，不额外抢占复原主线。参见 §15–18 [连续性协议](PROJECT-CONTINUITY-PROTOCOL-R1.md)、[按模块复原](RESTORATION-MODULE-FIRST-20261102.md)及 [MAP10 的最新证据限定](continuity/STONEAGE-MAP10-60-LOW-VALUE-751-SOURCE-OBSERVATIONS-20261107.md)。
