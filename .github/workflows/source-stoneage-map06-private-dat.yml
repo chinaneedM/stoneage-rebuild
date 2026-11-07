@@ -1,0 +1,29 @@
+name: Recover two exact original MAP06 DAT files with private encrypted transfer
+on:
+  push:
+    branches: [agent/map06-original-scenes-20261107]
+    paths:
+      - tools/stoneage_map06_private_dat_source.py
+      - research/recovered/STONEAGE-MAP06-TRANSFER-CERT.pem
+      - .github/workflows/source-stoneage-map06-private-dat.yml
+permissions:
+  contents: read
+jobs:
+  source-two-dat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python -m pip install libarchive-c==5.3
+      - name: Verify entire original carrier and recover two fixed original DAT files
+        run: python -m tools.stoneage_map06_private_dat_source --output /tmp/map06-source-output --certificate research/recovered/STONEAGE-MAP06-TRANSFER-CERT.pem
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: map06-source-metadata-and-encrypted-dat-only
+          path: /tmp/map06-source-output
+          compression-level: 0
+          if-no-files-found: error
+          retention-days: 7
