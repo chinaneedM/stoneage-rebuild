@@ -1,0 +1,4013 @@
+{
+  "schema": "stoneage.quest09.dream_cave_original_static_controls.r1",
+  "date": "2026-11-08",
+  "origin_class": "ORIGIN_UNRESOLVED",
+  "source_scope": "LATER_COMMUNITY_MIXED25_NOT_AUTHENTICATED_OFFICIAL_DEPLOYMENT",
+  "baseline": {
+    "head": "ac06bc95cc6f572f7c7a866d024ac722dd5e49c1",
+    "tree": "947f5d08f43e5f188e503b373c0ed683f665f0f2",
+    "preserved_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "private_source_zip": {
+    "bytes": 995176,
+    "sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "verified_members": 2205,
+    "verified_member_bytes": 1930332
+  },
+  "parent_rar_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "derived_input_blobs": {
+    "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "research/recovered/STONEAGE-CN2003-DREAM-CAVE-SOURCE-R1.json": "94cf150f0efc9cab45f4d541051bb5f2efe0ab24",
+    "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-09-ORIGINAL-NPCENEMY-ROSTER-BRIDGE-R1.json": "3d827b98d00c3caa6e779f34a36d28bd70945b75",
+    "research/recovered/STONEAGE-QUEST05-598-ORIGINAL-CREATE-FLOOR-MAP-AND-WARP-CROSSWALK-R1.json": "b004e488e1d0a93ca7c14eb90abb584b23f341fe",
+    "research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-01-R1.json": "d39ef58c88f1326d227b2844ca06ed5e23e2965a",
+    "research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-02-R1.json": "b91bc8335db508998f4595144ce371979ea8c849",
+    "research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-04-R1.json": "14c7816054375863c91e474b58d2202f76e821c5",
+    "research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-07-R1.json": "dbb958e77aed796faf86570c7523d3f0dc5748fd"
+  },
+  "source_files": [
+    {
+      "path": "400/sb_muge1.arg",
+      "bytes": 253,
+      "sha256": "f5c2c25eb48eda2ac33f77bd054e39fa903c9a0f2a03193a24e56dc1c7ad9f17",
+      "crc32": "287fba38"
+    },
+    {
+      "path": "400/sb_muge2.arg",
+      "bytes": 253,
+      "sha256": "d4294d9144e1d1b3997cd84282ca5b6961109c23c394ea96253b442699c0559a",
+      "crc32": "bd972a85"
+    },
+    {
+      "path": "400/sb_mugen.create",
+      "bytes": 793,
+      "sha256": "cb3a40849078065a563a8d93c4a7a838846c1354ad5c4bbfd8700cb3053a7e25",
+      "crc32": "979965ea"
+    },
+    {
+      "path": "400/sb_mugen.template",
+      "bytes": 300,
+      "sha256": "0272a496b6739db53628494877c3b1a2762f1bfdd1f1ee03a51a9c7804c74ea6",
+      "crc32": "b2fe0303"
+    },
+    {
+      "path": "genout/mugendungeon.create",
+      "bytes": 6628,
+      "sha256": "61015d6f853bb39afc38d4462f62eeb2f78631e7d7246fcacfebbdb4d41d9bff",
+      "crc32": "5d4f800a"
+    },
+    {
+      "path": "genout/mugendungeon2.create",
+      "bytes": 6165,
+      "sha256": "f6df1a0e768d5a925e9165b6390a92c5435d49db25e20e7b6d97eb0d4e652ceb",
+      "crc32": "be7980df"
+    },
+    {
+      "path": "genout/npcgen.template",
+      "bytes": 4950,
+      "sha256": "0c5a58d5e31cafd3b58ccc1fa88fee7d1f95d12c0b87b04db9f06fea3b2a4df3",
+      "crc32": "56547578"
+    },
+    {
+      "path": "genout/tman_400_85_102",
+      "bytes": 127,
+      "sha256": "523f22a9957f28f7131f24da2cf6710a52e93f7a0fce96ad650094a4013f8f4d",
+      "crc32": "97fd55c2"
+    },
+    {
+      "path": "genout/tman_400_88_102",
+      "bytes": 127,
+      "sha256": "523f22a9957f28f7131f24da2cf6710a52e93f7a0fce96ad650094a4013f8f4d",
+      "crc32": "97fd55c2"
+    },
+    {
+      "path": "genout/tman_400_95_120",
+      "bytes": 125,
+      "sha256": "7494698774322f5b2cbf83d8218ae9ddb0b0a56fb0a64c181bf7b77fb78a8905",
+      "crc32": "45daa059"
+    },
+    {
+      "path": "genout/tman_400_98_120",
+      "bytes": 125,
+      "sha256": "7494698774322f5b2cbf83d8218ae9ddb0b0a56fb0a64c181bf7b77fb78a8905",
+      "crc32": "45daa059"
+    },
+    {
+      "path": "jaruga/event/event.template",
+      "bytes": 122,
+      "sha256": "9c11ac0cbbd9b110e8ff7d0115730044673bf29c5df6d23034e56530c181d0b2",
+      "crc32": "a70fc73f"
+    },
+    {
+      "path": "seimu/event/event01.create",
+      "bytes": 677,
+      "sha256": "df0d8f32422cc149ed1574a8b6f43a896aa690260c3d7cfd4aa83705efb980b2",
+      "crc32": "403ece23"
+    },
+    {
+      "path": "seimu/event/event01_1",
+      "bytes": 4750,
+      "sha256": "ac2c035d074904a575448ee424e1c5d0ff9939de60a73f149ddb47799ed9189d",
+      "crc32": "d55c4df9"
+    },
+    {
+      "path": "seimu/event/event01_2",
+      "bytes": 3079,
+      "sha256": "38479dec3f115343debb9d1ad74ee6383bf9847595fa514f0a720f7b77587d0b",
+      "crc32": "712a1e19"
+    }
+  ],
+  "source_event_scripts": [
+    {
+      "path": "seimu/event/event01_1",
+      "sha256": "ac2c035d074904a575448ee424e1c5d0ff9939de60a73f149ddb47799ed9189d",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 51,
+          "start_line": 3,
+          "event_number": 34,
+          "commands": [
+            {
+              "name": "GetItem",
+              "line": 14,
+              "line_sha256": "d33ffe93bcaca1afeb38a4758df7029023acd1b8e29e0d4022098ff319db13f0",
+              "item_id": 2603,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "REQUEST",
+          "event": "ENDEV=4&ENDEV=33&ENDEV=32",
+          "end_byte": 1110,
+          "end_line": 15,
+          "block_sha256": "3093d3f0d45d0e8dfbb816f252b348e27e875d7eed357140d276b8504c01247e",
+          "extra_controls": []
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 1111,
+          "start_line": 17,
+          "event_number": 33,
+          "commands": [
+            {
+              "name": "GetItem",
+              "line": 28,
+              "line_sha256": "d33ffe93bcaca1afeb38a4758df7029023acd1b8e29e0d4022098ff319db13f0",
+              "item_id": 2603,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "REQUEST",
+          "event": "ENDEV=4&ENDEV=32",
+          "end_byte": 2159,
+          "end_line": 29,
+          "block_sha256": "ed4a0f17bec98c670e14e165d3aa7e3659e020611bd2a1a68655714dbfa46e1b",
+          "extra_controls": []
+        },
+        {
+          "ordinal": 2,
+          "start_byte": 2160,
+          "start_line": 31,
+          "event_number": 32,
+          "commands": [
+            {
+              "name": "GetItem",
+              "line": 42,
+              "line_sha256": "d33ffe93bcaca1afeb38a4758df7029023acd1b8e29e0d4022098ff319db13f0",
+              "item_id": 2603,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "REQUEST",
+          "event": "ENDEV=4",
+          "end_byte": 3199,
+          "end_line": 43,
+          "block_sha256": "421484c6a3d98725c501ce9be45fd6b11942563d8ec3c86694cb4fadc927ffb1",
+          "extra_controls": []
+        },
+        {
+          "ordinal": 3,
+          "start_byte": 3200,
+          "start_line": 45,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 50,
+              "line_sha256": "4be5bbc76b4301803ab2e62d76d33e8a0a29613b39c33c5ad2b1c7e8d5043e0a",
+              "item_id": 2603,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "MESSAGE",
+          "event": "LV>0&ITEM=2603,ENDEV=4&ENDEV=33&ENDEV=32&ENDEV=34&ITEM=2603",
+          "end_byte": 3450,
+          "end_line": 51,
+          "block_sha256": "df7654c32ae8b2ccc90431f663bf9b2235702007107ffaaebb8178404dc68aa3",
+          "extra_controls": []
+        },
+        {
+          "ordinal": 4,
+          "start_byte": 3451,
+          "start_line": 53,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "GetItem",
+              "line": 64,
+              "line_sha256": "d33ffe93bcaca1afeb38a4758df7029023acd1b8e29e0d4022098ff319db13f0",
+              "item_id": 2603,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "REQUEST",
+          "event": "LV>34,ENDEV=4&ENDEV=33&ENDEV=32&ENDEV=34",
+          "end_byte": 4523,
+          "end_line": 65,
+          "block_sha256": "85a906b4095450e28f1a8e0f0530bd870a9290f29ed3b4b846abecd0e25fdf9c",
+          "extra_controls": []
+        },
+        {
+          "ordinal": 5,
+          "start_byte": 4525,
+          "start_line": 68,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "LV>0&LV<35",
+          "end_byte": 4749,
+          "end_line": 72,
+          "block_sha256": "73a260ea2cec2d87236b2be46ad93964e20c1569ced4899bb051b72886e0cc54",
+          "extra_controls": []
+        }
+      ]
+    },
+    {
+      "path": "seimu/event/event01_2",
+      "sha256": "38479dec3f115343debb9d1ad74ee6383bf9847595fa514f0a720f7b77587d0b",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 63,
+          "start_line": 3,
+          "event_number": 173,
+          "commands": [],
+          "type": "REQUEST",
+          "event": "ENDEV=4&ENDEV=34&ENDEV=33&ENDEV=32&ENDEV=105&NOWEV=172&ITEM=19550",
+          "end_byte": 711,
+          "end_line": 12,
+          "block_sha256": "9daee9f7d5e2fc28d5bdcde280f45e112dc5ff62bc12b342f728fbb5e08ee87b",
+          "extra_controls": []
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 712,
+          "start_line": 14,
+          "event_number": 34,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 21,
+              "line_sha256": "4be5bbc76b4301803ab2e62d76d33e8a0a29613b39c33c5ad2b1c7e8d5043e0a",
+              "item_id": 2603,
+              "explicit_quantity": null
+            },
+            {
+              "name": "GetItem",
+              "line": 22,
+              "line_sha256": "9ec7d10dbe8b2c64d7452c5f837adc18cf4235242c121d9380787625d2d68340",
+              "item_id": 2604,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ENDEV=4&ITEM=2603&ENDEV=33&ENDEV=32",
+          "end_byte": 1219,
+          "end_line": 24,
+          "block_sha256": "662e853b2dc902bffb3674947f3bdd43c1480b7407be8fcef460461ce36f2363",
+          "extra_controls": [
+            {
+              "name": "EndSetFlg",
+              "values_in_source_order": [
+                34
+              ]
+            }
+          ]
+        },
+        {
+          "ordinal": 2,
+          "start_byte": 1220,
+          "start_line": 26,
+          "event_number": 33,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 33,
+              "line_sha256": "4be5bbc76b4301803ab2e62d76d33e8a0a29613b39c33c5ad2b1c7e8d5043e0a",
+              "item_id": 2603,
+              "explicit_quantity": null
+            },
+            {
+              "name": "GetItem",
+              "line": 34,
+              "line_sha256": "d540f792c076a448e69a22dd2f164373c2bc2c51024eadd8b2a91164176860bb",
+              "item_id": 2605,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ENDEV=4&ITEM=2603&ENDEV=32",
+          "end_byte": 1719,
+          "end_line": 36,
+          "block_sha256": "d87a611bc40ffceaa0ad10e112fcb93fbc3c87e10dc6f6ea3f66e5e7ea1bf87c",
+          "extra_controls": [
+            {
+              "name": "EndSetFlg",
+              "values_in_source_order": [
+                33
+              ]
+            }
+          ]
+        },
+        {
+          "ordinal": 3,
+          "start_byte": 1720,
+          "start_line": 38,
+          "event_number": 32,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 45,
+              "line_sha256": "4be5bbc76b4301803ab2e62d76d33e8a0a29613b39c33c5ad2b1c7e8d5043e0a",
+              "item_id": 2603,
+              "explicit_quantity": null
+            },
+            {
+              "name": "GetItem",
+              "line": 46,
+              "line_sha256": "2a255f82e520c5c274e1fd8774ee8438ef30ced26e7134e6d50679a3d8d0048a",
+              "item_id": 2606,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ENDEV=4&ITEM=2603",
+          "end_byte": 2208,
+          "end_line": 48,
+          "block_sha256": "40c34863b78820a7cfedddb8ba35914687db6e72dee609b45307d0dd7846a090",
+          "extra_controls": [
+            {
+              "name": "EndSetFlg",
+              "values_in_source_order": [
+                32
+              ]
+            }
+          ]
+        },
+        {
+          "ordinal": 4,
+          "start_byte": 2209,
+          "start_line": 50,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 57,
+              "line_sha256": "4be5bbc76b4301803ab2e62d76d33e8a0a29613b39c33c5ad2b1c7e8d5043e0a",
+              "item_id": 2603,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ENDEV=4&ITEM=2603&ENDEV=34&ENDEV=33&ENDEV=32,LV>34&ITEM=2603",
+          "end_byte": 2832,
+          "end_line": 59,
+          "block_sha256": "3769e7ea90cadb0fb3fd787e3df3fdb0451f3876a775d2aac9a516bead09f0a3",
+          "extra_controls": [
+            {
+              "name": "GetRandItem",
+              "values_in_source_order": [
+                450,
+                451,
+                449,
+                549,
+                552,
+                543,
+                653,
+                646,
+                12623,
+                12648,
+                11895,
+                11926,
+                11936,
+                12052,
+                11803,
+                11814,
+                11824,
+                11833,
+                11843,
+                11853
+              ]
+            }
+          ]
+        },
+        {
+          "ordinal": 5,
+          "start_byte": 2833,
+          "start_line": 61,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "LV>0,ENDEV=4&ITEM!=2603&ITEM!=19550",
+          "end_byte": 3079,
+          "end_line": 65,
+          "block_sha256": "85fab7366d9a4704a48a76287ced816ec6fc8b8aad4f85d6e93b4b3b01bb75ac",
+          "extra_controls": []
+        }
+      ]
+    }
+  ],
+  "source_creates": [
+    {
+      "file": "400/sb_mugen.create",
+      "ordinal": 0,
+      "start_byte": 55,
+      "end_byte": 215,
+      "block_sha256": "37e8c760961c585db6f1a2f4dddcf094001ced8e62318d5d76703488214b6b9e",
+      "floor": 41,
+      "graphic_alias": 100343,
+      "borncorner_raw": null,
+      "borncenter_raw": [
+        34,
+        41,
+        1,
+        1
+      ],
+      "direction_raw": 4,
+      "template_token": "sb_muge1",
+      "parameter_references": [
+        [
+          "400/sb_muge1.arg",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "f5c2c25eb48eda2ac33f77bd054e39fa903c9a0f2a03193a24e56dc1c7ad9f17"
+        ]
+      ],
+      "time_raw": 60000
+    },
+    {
+      "file": "400/sb_mugen.create",
+      "ordinal": 1,
+      "start_byte": 241,
+      "end_byte": 401,
+      "block_sha256": "22f043f53e7d1a74b66d175be32dfd0c69c6ba6ddba68de4e7100a84f3922fe7",
+      "floor": 41,
+      "graphic_alias": 100346,
+      "borncorner_raw": null,
+      "borncenter_raw": [
+        33,
+        41,
+        1,
+        1
+      ],
+      "direction_raw": 4,
+      "template_token": "sb_muge2",
+      "parameter_references": [
+        [
+          "400/sb_muge2.arg",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "d4294d9144e1d1b3997cd84282ca5b6961109c23c394ea96253b442699c0559a"
+        ]
+      ],
+      "time_raw": 60000
+    },
+    {
+      "file": "400/sb_mugen.create",
+      "ordinal": 2,
+      "start_byte": 447,
+      "end_byte": 607,
+      "block_sha256": "c2de3b4a53b1b80dd9d5db8d74d7e5ff69c6b72c41a05b007fd215d087898e12",
+      "floor": 42,
+      "graphic_alias": 100343,
+      "borncorner_raw": null,
+      "borncenter_raw": [
+        34,
+        41,
+        1,
+        1
+      ],
+      "direction_raw": 4,
+      "template_token": "sb_muge1",
+      "parameter_references": [
+        [
+          "400/sb_muge1.arg",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "f5c2c25eb48eda2ac33f77bd054e39fa903c9a0f2a03193a24e56dc1c7ad9f17"
+        ]
+      ],
+      "time_raw": 60000
+    },
+    {
+      "file": "400/sb_mugen.create",
+      "ordinal": 3,
+      "start_byte": 633,
+      "end_byte": 793,
+      "block_sha256": "83845bdb113fb40aab5cbc216663864aa2c93d1f86394f6ddf50bcafed900cce",
+      "floor": 42,
+      "graphic_alias": 100346,
+      "borncorner_raw": null,
+      "borncenter_raw": [
+        33,
+        41,
+        1,
+        1
+      ],
+      "direction_raw": 4,
+      "template_token": "sb_muge2",
+      "parameter_references": [
+        [
+          "400/sb_muge2.arg",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "d4294d9144e1d1b3997cd84282ca5b6961109c23c394ea96253b442699c0559a"
+        ]
+      ],
+      "time_raw": 60000
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 0,
+      "start_byte": 123,
+      "end_byte": 230,
+      "block_sha256": "fa249150f5fa52eeefbef0baefa607ef2bc8fc09ca01c27b692d51530e41cf0e",
+      "floor": 400,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        97,
+        119,
+        97,
+        119
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        11,
+        8
+      ],
+      "trailing_token": "A"
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 1,
+      "start_byte": 238,
+      "end_byte": 341,
+      "block_sha256": "60cacba81894892e45e2cdb70b4cb9b699dd105aadee034c6860dd04d568c277",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        11,
+        8,
+        11,
+        8
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        400,
+        97,
+        120
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 2,
+      "start_byte": 350,
+      "end_byte": 457,
+      "block_sha256": "6058e8cca7a73bfa1e9ccbbd8b3659d30f50d583312600ecfdf93332e168bb36",
+      "floor": 400,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        98,
+        119,
+        98,
+        119
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        11,
+        8
+      ],
+      "trailing_token": "M"
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 3,
+      "start_byte": 466,
+      "end_byte": 573,
+      "block_sha256": "bb0b71c91c8f34e2ad828116f7eebe4b4f0077e0923bf7aa4e10493dd4239302",
+      "floor": 400,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        97,
+        120,
+        97,
+        120
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        11,
+        8
+      ],
+      "trailing_token": "M"
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 4,
+      "start_byte": 583,
+      "end_byte": 686,
+      "block_sha256": "60cacba81894892e45e2cdb70b4cb9b699dd105aadee034c6860dd04d568c277",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        11,
+        8,
+        11,
+        8
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        400,
+        97,
+        120
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 5,
+      "start_byte": 695,
+      "end_byte": 802,
+      "block_sha256": "056e4f05c730c8aee8987196a979988b8a4fe0cd1e86c4ce3f0e82ae879a5909",
+      "floor": 400,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        96,
+        119,
+        96,
+        119
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        11,
+        8
+      ],
+      "trailing_token": "M"
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 6,
+      "start_byte": 811,
+      "end_byte": 912,
+      "block_sha256": "c708672211f5f72f15424c7d6a77dd24d6931b6b2afae7dd069b2546185ca0f3",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        8,
+        14,
+        8,
+        14
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        56,
+        25
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 7,
+      "start_byte": 921,
+      "end_byte": 1022,
+      "block_sha256": "aeb3d824f51f1d96ef298fd464d8c23049d7e781fdaaaf4ad0e92277777297c1",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        8,
+        25,
+        8,
+        25
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        13,
+        59
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 8,
+      "start_byte": 1031,
+      "end_byte": 1132,
+      "block_sha256": "d7bc86f6f40f262b7b08d94567c2280b85b93255e9de2f3912951e67aaab0a31",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        8,
+        29,
+        8,
+        29
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        31,
+        44
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 9,
+      "start_byte": 1141,
+      "end_byte": 1242,
+      "block_sha256": "bf73f78ae55771b093de3b2ced78402712780835c79a22457ed3e5a93c91123c",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        8,
+        40,
+        8,
+        40
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        24,
+        59
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 10,
+      "start_byte": 1251,
+      "end_byte": 1352,
+      "block_sha256": "c425011d2518c95d19a102168240792aa14b4d28b9ef40308803ffe89a765041",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        8,
+        44,
+        8,
+        44
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        56,
+        29
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 11,
+      "start_byte": 1361,
+      "end_byte": 1462,
+      "block_sha256": "30d00d1bb818fccc0cbfff845e1570764ee62f98f32cfb2cba06e89f4d881e71",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        8,
+        55,
+        8,
+        55
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        29,
+        59
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 12,
+      "start_byte": 1471,
+      "end_byte": 1572,
+      "block_sha256": "e16e3ab6ba0396ec6bbceb38d1a4854a639400f8c985eebafdeb030135828dd8",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        8,
+        59,
+        8,
+        59
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        24,
+        14
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 13,
+      "start_byte": 1581,
+      "end_byte": 1684,
+      "block_sha256": "009ec6160e366a46d09f6769b1f2f66ed9ba33413682e04375b858707735e02e",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        61,
+        29,
+        61,
+        29
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        13,
+        14
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 14,
+      "start_byte": 1693,
+      "end_byte": 1795,
+      "block_sha256": "e5415fe51fb3f84261ee2dfd8e5031fa6a4f785601d1150d5a55deaf351faf31",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        13,
+        25,
+        13,
+        25
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        8,
+        40
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 15,
+      "start_byte": 1804,
+      "end_byte": 1907,
+      "block_sha256": "45174a3402210ee0d9ec4dd43cab5a727769d4672f41d50ce6cc0dcf7104d94b",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        13,
+        29,
+        13,
+        29
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        45,
+        59
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 16,
+      "start_byte": 1916,
+      "end_byte": 2019,
+      "block_sha256": "25cf2bd587e28a2b52a64c20c8bd3a7c0b1cf88c68217421e25c8e081122f836",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        13,
+        40,
+        13,
+        40
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        40,
+        55
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 17,
+      "start_byte": 2028,
+      "end_byte": 2131,
+      "block_sha256": "fce1547f9c1018fde6af9983300db0cbf2eda2c664c79899a9499902b1838d4d",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        13,
+        44,
+        13,
+        44
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        29,
+        55
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 18,
+      "start_byte": 2140,
+      "end_byte": 2243,
+      "block_sha256": "bbb567633f2dbf94c29c8cf3dd5a537e8602824752437b36058ebeb32f8ff356",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        13,
+        55,
+        13,
+        55
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        24,
+        10
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 19,
+      "start_byte": 2252,
+      "end_byte": 2355,
+      "block_sha256": "01da33269a44572d371d74680af435365070629bea99f6bc5e3efd8ae9033a4b",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        13,
+        59,
+        13,
+        59
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        24,
+        55
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 20,
+      "start_byte": 2364,
+      "end_byte": 2466,
+      "block_sha256": "56562113b0960e96deeb0675f0fc533ac502648d3c186a8405e7e0e54b780ba7",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        24,
+        10,
+        24,
+        10
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        8,
+        44
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 21,
+      "start_byte": 2475,
+      "end_byte": 2577,
+      "block_sha256": "decb9f9a2ca25f9bc9c946cc770317805f85b4fda9bab3452b779aa1587055aa",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        24,
+        14,
+        24,
+        14
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        8,
+        25
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 22,
+      "start_byte": 2586,
+      "end_byte": 2688,
+      "block_sha256": "9cd24a9925473d60098044843b6ca11d78ac38e2d3dd4cd48eed351c2deb24ff",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        24,
+        55,
+        24,
+        55
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        8,
+        29
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 23,
+      "start_byte": 2697,
+      "end_byte": 2800,
+      "block_sha256": "c4bcf185d5c18a09694762ca290041561671aeba244564bccf26ce9c8fc5b743",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        24,
+        59,
+        24,
+        59
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        56,
+        10
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 24,
+      "start_byte": 2809,
+      "end_byte": 2912,
+      "block_sha256": "fd343abdd8e246c03a3e2075a4feead3244ca588e3fbdedb41a0ec964c0e531b",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        29,
+        10,
+        29,
+        10
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        13,
+        44
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 25,
+      "start_byte": 2921,
+      "end_byte": 3024,
+      "block_sha256": "ec63afac5584fea5c5921a211410a47159ebbdab111545e82693c497185a0557",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        29,
+        14,
+        29,
+        14
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        13,
+        55
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 26,
+      "start_byte": 3033,
+      "end_byte": 3136,
+      "block_sha256": "fd66021924e17d03498ea0b9985147e401631d5f7351c4db20ee8080d34f13da",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        29,
+        55,
+        29,
+        55
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        56,
+        14
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 27,
+      "start_byte": 3145,
+      "end_byte": 3248,
+      "block_sha256": "2491dfc35f055a4794c1d3ed6ab82208f6e80d61e182265e831993be2515a51c",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        29,
+        59,
+        29,
+        59
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        61,
+        29
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 28,
+      "start_byte": 3257,
+      "end_byte": 3360,
+      "block_sha256": "8c0935182b1a76c8cf8818c8357f0a0a7b4ed6298dd1ab0b2f14d6fc393060ea",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        40,
+        10,
+        40,
+        10
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        61,
+        40
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 29,
+      "start_byte": 3369,
+      "end_byte": 3472,
+      "block_sha256": "80ac997f2888e76f0d75136fbea0fa41e6213413bb7e3974b5fd6e007197352f",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        40,
+        14,
+        40,
+        14
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        61,
+        55
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 30,
+      "start_byte": 3481,
+      "end_byte": 3584,
+      "block_sha256": "c04f3cb072b17c3dcee06774e9fca00e77efc0fa9838894d7326d60bc7c96e97",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        40,
+        55,
+        40,
+        55
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        56,
+        40
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 31,
+      "start_byte": 3593,
+      "end_byte": 3695,
+      "block_sha256": "9003871c8098d65f2b73942cf15155ce82bd409f94f4fd1ca0a3799b1788ad94",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        40,
+        59,
+        40,
+        59
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        8,
+        55
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 32,
+      "start_byte": 3704,
+      "end_byte": 3807,
+      "block_sha256": "2def92bf4ec5a228428ae59de3e36bbc440f7f1df3ba019ed57e427051ced40a",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        45,
+        10,
+        45,
+        10
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        56,
+        59
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 33,
+      "start_byte": 3816,
+      "end_byte": 3919,
+      "block_sha256": "a1f37cc2ba7531832ab5988e4afe2d4c50642c4d310641b43f94f1e7053bc74f",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        45,
+        14,
+        45,
+        14
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        13,
+        29
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 34,
+      "start_byte": 3928,
+      "end_byte": 4031,
+      "block_sha256": "831eb437d2c316f89ab760a3ae149ba9fe1dba661e312a4f6b86e652d2060fb7",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        45,
+        55,
+        45,
+        55
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        56,
+        55
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 35,
+      "start_byte": 4040,
+      "end_byte": 4143,
+      "block_sha256": "d7689e8bc22c1e5b25491d74d0c8b673f3d69baaf907297968abdbf0777dd0d0",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        45,
+        59,
+        45,
+        59
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        29,
+        10
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 36,
+      "start_byte": 4152,
+      "end_byte": 4255,
+      "block_sha256": "26371e27bf76594ecea32f91a05df06cf084c94e648fd7e0e0f40020c591c99b",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        56,
+        10,
+        56,
+        10
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        45,
+        10
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 37,
+      "start_byte": 4264,
+      "end_byte": 4367,
+      "block_sha256": "d6397a23c0ad8b9e2df1debdffc106778e63921afb66945c8749a9af12c5efc1",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        56,
+        14,
+        56,
+        14
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        40,
+        14
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 38,
+      "start_byte": 4376,
+      "end_byte": 4479,
+      "block_sha256": "33f9b83fec07a707564fab09b136c0c488bb09c0e6b3e083648116d55a59f23f",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        56,
+        25,
+        56,
+        25
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        61,
+        10
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 39,
+      "start_byte": 4488,
+      "end_byte": 4591,
+      "block_sha256": "00f77c3e06fb0867bdce054656b311dbd46c587327d0413f29d6e5fa5079847c",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        56,
+        29,
+        56,
+        29
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        56,
+        44
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 40,
+      "start_byte": 4600,
+      "end_byte": 4703,
+      "block_sha256": "3c2f09505145488a3be58ca22641eb8486bcf69250d390bab78a0cc530e3b912",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        56,
+        40,
+        56,
+        40
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        45,
+        14
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 41,
+      "start_byte": 4712,
+      "end_byte": 4815,
+      "block_sha256": "6c6e7e302e7c17de516493a88489dd262a435bf536fdd513d297da9e89c10002",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        56,
+        44,
+        56,
+        44
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        61,
+        59
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 42,
+      "start_byte": 4824,
+      "end_byte": 4926,
+      "block_sha256": "7b014e3e0ac2ae60518381306a328cc3dc25343dd1b861864561ead54fd8fe58",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        56,
+        55,
+        56,
+        55
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        8,
+        59
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 43,
+      "start_byte": 4935,
+      "end_byte": 5038,
+      "block_sha256": "728f5e3eb0d790e58f83515b60150dca9deb9a1103504b7e9e1a7d306e2edec8",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        56,
+        59,
+        56,
+        59
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        61,
+        44
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 44,
+      "start_byte": 5047,
+      "end_byte": 5150,
+      "block_sha256": "fecb615a63fa538433c05045efc2a6eed6ec5d25afcee77124e7483f8fe2f9b3",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        61,
+        10,
+        61,
+        10
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        40,
+        10
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 45,
+      "start_byte": 5159,
+      "end_byte": 5262,
+      "block_sha256": "ee06e81b969c292f1d97c6fb5032b28862c9830114806b073241e109cb0a5e64",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        61,
+        14,
+        61,
+        14
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        40,
+        59
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 46,
+      "start_byte": 5271,
+      "end_byte": 5374,
+      "block_sha256": "c57d5cfd8e689c4ca743c1369a5de0948c201b9b418f021a0d42197948bbeb29",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        61,
+        25,
+        61,
+        25
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        61,
+        14
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 47,
+      "start_byte": 5383,
+      "end_byte": 5486,
+      "block_sha256": "009ec6160e366a46d09f6769b1f2f66ed9ba33413682e04375b858707735e02e",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        61,
+        29,
+        61,
+        29
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        13,
+        14
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 48,
+      "start_byte": 5495,
+      "end_byte": 5598,
+      "block_sha256": "1c4e3475047968ea17a5e26630e1f144e1b646a0526ffa92aae5799c503d423b",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        61,
+        40,
+        61,
+        40
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        61,
+        25
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 49,
+      "start_byte": 5607,
+      "end_byte": 5710,
+      "block_sha256": "57f56ef920a820f2c19ec99fe8ef50ec4c299f11de577177b24a9e488bec67dc",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        61,
+        44,
+        61,
+        44
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        29,
+        14
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 50,
+      "start_byte": 5719,
+      "end_byte": 5822,
+      "block_sha256": "ed1e0de5097f2e186a264fcff879b4bbf4cfc380c3c585c44df6f44cae518ee6",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        61,
+        55,
+        61,
+        55
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        45,
+        55
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 51,
+      "start_byte": 5831,
+      "end_byte": 5934,
+      "block_sha256": "0c5300a29a5fb03d07e451ed931c03e87879ea32eea258d6f839218c541b1c3e",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        61,
+        59,
+        61,
+        59
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        13,
+        40
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 52,
+      "start_byte": 5943,
+      "end_byte": 6046,
+      "block_sha256": "906e5f6df56bb5fd01c1c636e6c5cf1264331bfd39391a178e93592109bf696e",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        36,
+        44,
+        36,
+        44
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        13,
+        25
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 53,
+      "start_byte": 6055,
+      "end_byte": 6158,
+      "block_sha256": "62f7013811b7f60826f9fab3b07137cee90578039c67eaaceac406430354ec40",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        34,
+        40,
+        34,
+        40
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        34,
+        43
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 54,
+      "start_byte": 6167,
+      "end_byte": 6270,
+      "block_sha256": "f2471bb959c5e2c723f6e22eef462f00b51691c762617dd226d8dfb59f7faba4",
+      "floor": 41,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        33,
+        40,
+        33,
+        40
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        41,
+        33,
+        43
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 55,
+      "start_byte": 6279,
+      "end_byte": 6449,
+      "block_sha256": "6ec4cf286e6b20fec286db2074b753f82e7ddb40308c8553ecefcdb09f846773",
+      "floor": 400,
+      "graphic_alias": 16203,
+      "borncorner_raw": [
+        95,
+        120,
+        95,
+        120
+      ],
+      "borncenter_raw": null,
+      "direction_raw": 6,
+      "template_token": "npcgen_timeman",
+      "parameter_references": [
+        [
+          "genout/tman_400_95_120",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "7494698774322f5b2cbf83d8218ae9ddb0b0a56fb0a64c181bf7b77fb78a8905"
+        ]
+      ],
+      "time_raw": 0
+    },
+    {
+      "file": "genout/mugendungeon.create",
+      "ordinal": 56,
+      "start_byte": 6458,
+      "end_byte": 6628,
+      "block_sha256": "aefd165de36d910e070e374c9e7558cf55749647ef051c4d76d4054b7013546d",
+      "floor": 400,
+      "graphic_alias": 16202,
+      "borncorner_raw": [
+        98,
+        120,
+        98,
+        120
+      ],
+      "borncenter_raw": null,
+      "direction_raw": 6,
+      "template_token": "npcgen_timeman",
+      "parameter_references": [
+        [
+          "genout/tman_400_98_120",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "7494698774322f5b2cbf83d8218ae9ddb0b0a56fb0a64c181bf7b77fb78a8905"
+        ]
+      ],
+      "time_raw": 0
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 0,
+      "start_byte": 124,
+      "end_byte": 231,
+      "block_sha256": "63c596056b29093478122989388161a272d45b2a286dc00f3d71b5e6f2482252",
+      "floor": 400,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        87,
+        101,
+        87,
+        101
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        11,
+        8
+      ],
+      "trailing_token": "N"
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 1,
+      "start_byte": 241,
+      "end_byte": 344,
+      "block_sha256": "d54df54ad80b91315159da45ae26f05cd9b4ce0ae51297dcf33766a2907ee56b",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        11,
+        8,
+        11,
+        8
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        400,
+        87,
+        101
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 2,
+      "start_byte": 352,
+      "end_byte": 455,
+      "block_sha256": "aac1d7566a5070103d3db1be16d28dbd27e1e186b26a33155d4da041fb30606e",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        45,
+        59,
+        45,
+        59
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        31,
+        44
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 3,
+      "start_byte": 464,
+      "end_byte": 567,
+      "block_sha256": "56d05daaef5ecfc6de64c50f677cd727ddbbeae1ddf6650b7137bbc945f4cd3d",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        36,
+        44,
+        36,
+        44
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        40,
+        55
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 4,
+      "start_byte": 576,
+      "end_byte": 679,
+      "block_sha256": "b63c19731d83e6d34fc612bcd5e12433401b51e0240a3139fba2b7e1c3b433cb",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        34,
+        40,
+        34,
+        40
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        34,
+        43
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 5,
+      "start_byte": 688,
+      "end_byte": 791,
+      "block_sha256": "201784f80da0cb522a1ac9248b3c651d26de1f5a6219929bb65f8d93d1a27a49",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        33,
+        40,
+        33,
+        40
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        33,
+        43
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 6,
+      "start_byte": 800,
+      "end_byte": 901,
+      "block_sha256": "ec2e74a0cffef95fc53531f27bf0a7d55bf3d49011aa2b6c65469619d61e9335",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        8,
+        14,
+        8,
+        14
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        61,
+        59
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 7,
+      "start_byte": 910,
+      "end_byte": 1011,
+      "block_sha256": "423db59e5d738c88f5bc0d52dc6a8d0938bd26b43ca3406937be30d2caa40fc9",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        8,
+        25,
+        8,
+        25
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        56,
+        25
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 8,
+      "start_byte": 1020,
+      "end_byte": 1121,
+      "block_sha256": "03b405026f20cd88b0976d0f195a12d226ab720099e170eecc142846650940cb",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        8,
+        29,
+        8,
+        29
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        61,
+        55
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 9,
+      "start_byte": 1130,
+      "end_byte": 1231,
+      "block_sha256": "8d45cd97324fe6bb9f8bb8d6a2cfaf87383eb5ecbabe74877841338deb4dc094",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        8,
+        40,
+        8,
+        40
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        13,
+        25
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 10,
+      "start_byte": 1240,
+      "end_byte": 1341,
+      "block_sha256": "7052f7545808c393e08b09b0ffe847d5cc269bcba7cac5522d25924a27745585",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        8,
+        44,
+        8,
+        44
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        13,
+        29
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 11,
+      "start_byte": 1350,
+      "end_byte": 1451,
+      "block_sha256": "ba120dde5ecd23141881cb87bc10bb9806b6dcc484b9b5a48c8df29e7c545f8f",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        8,
+        55,
+        8,
+        55
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        29,
+        55
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 12,
+      "start_byte": 1460,
+      "end_byte": 1561,
+      "block_sha256": "c4d99cddbb2e386e319c005f8ba52a8b34aa9b00cec38f64f385378d00f052cd",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        8,
+        59,
+        8,
+        59
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        61,
+        10
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 13,
+      "start_byte": 1570,
+      "end_byte": 1673,
+      "block_sha256": "ea6c747e9d290dcdd144aa351b826490be15b5a9a5f8dca2770b164d6a458889",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        13,
+        25,
+        13,
+        25
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        45,
+        59
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 14,
+      "start_byte": 1682,
+      "end_byte": 1785,
+      "block_sha256": "9b40551bd22509115b69771b48200935c0c5c94cb9022bbfcc9540304e0b9563",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        13,
+        29,
+        13,
+        29
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        61,
+        40
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 15,
+      "start_byte": 1794,
+      "end_byte": 1896,
+      "block_sha256": "735cb25c4779c75cf94914205ea7c6fa0644fcfa464446f85327e5e1f143452c",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        13,
+        40,
+        13,
+        40
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        8,
+        40
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 16,
+      "start_byte": 1905,
+      "end_byte": 2008,
+      "block_sha256": "f2750d9914e2092f90ca3695d8413315140f99ae46df80526ac44c3fc8376873",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        13,
+        44,
+        13,
+        44
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        61,
+        44
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 17,
+      "start_byte": 2017,
+      "end_byte": 2120,
+      "block_sha256": "f203e87e275259183adba4b409f8e96650bc755a1ed2f3c7ce25108d38e960ca",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        13,
+        55,
+        13,
+        55
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        56,
+        14
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 18,
+      "start_byte": 2129,
+      "end_byte": 2232,
+      "block_sha256": "f8a721502a3c567ad370f6f934b417788f1f5099c7f7c9389c5b0fe2b3da7db3",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        13,
+        59,
+        13,
+        59
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        24,
+        14
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 19,
+      "start_byte": 2241,
+      "end_byte": 2344,
+      "block_sha256": "4da9b0db05713dbddbd4b2cbbd85c72a5b47821b91213152cf2c79c3834443c3",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        24,
+        10,
+        24,
+        10
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        61,
+        29
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 20,
+      "start_byte": 2353,
+      "end_byte": 2456,
+      "block_sha256": "52c99b14dbc6818785bd5ee5fd84a3ed6d1e96984ee8bbc5a6a25211cdd6275f",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        24,
+        14,
+        24,
+        14
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        40,
+        59
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 21,
+      "start_byte": 2465,
+      "end_byte": 2568,
+      "block_sha256": "c09288e96f4aa3009588aacfc98d1e78ec6b8d45a0c820b674de7c4e6f4aec9a",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        24,
+        55,
+        24,
+        55
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        13,
+        14
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 22,
+      "start_byte": 2577,
+      "end_byte": 2680,
+      "block_sha256": "33cc394133e15f98199d66e21e311f6db7f4a9e83fa1df396d095e22f7b52bf1",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        24,
+        59,
+        24,
+        59
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        40,
+        10
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 23,
+      "start_byte": 2689,
+      "end_byte": 2792,
+      "block_sha256": "5f773de13c4081e6d3dc3d46ed6aaa25222fe4bd3cba347eda285d3a5d27a65d",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        29,
+        10,
+        29,
+        10
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        24,
+        55
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 24,
+      "start_byte": 2801,
+      "end_byte": 2904,
+      "block_sha256": "f849220777fdad6a238d764f5363dc21ed0d889b954053c8642cfbc0e7159fa7",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        29,
+        14,
+        29,
+        14
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        45,
+        14
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 25,
+      "start_byte": 2913,
+      "end_byte": 3015,
+      "block_sha256": "6ad932e7e51d5c1100acc00d26d59baff84322a8a5630af07053a68186243d3d",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        29,
+        55,
+        29,
+        55
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        8,
+        29
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 26,
+      "start_byte": 3024,
+      "end_byte": 3127,
+      "block_sha256": "c7cb8faf29209f90ffcd70139fe9290e1adb3dcff4590cac32416eed2b3f9d9b",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        29,
+        59,
+        29,
+        59
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        56,
+        55
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 27,
+      "start_byte": 3136,
+      "end_byte": 3239,
+      "block_sha256": "9e4af323758423ab20250be3eb2320d18847bb46727d1a95a4344bcba27cf184",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        40,
+        10,
+        40,
+        10
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        24,
+        10
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 28,
+      "start_byte": 3248,
+      "end_byte": 3351,
+      "block_sha256": "9b687c00ee20179a5e2dd18e04997b4e907b2905ebf7f83b135de08d15c8f503",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        40,
+        14,
+        40,
+        14
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        45,
+        10
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 29,
+      "start_byte": 3360,
+      "end_byte": 3463,
+      "block_sha256": "3274b3878c6e94934eb7819909e7fbdacc6109a643e9ab5a201d63ab6e889b2e",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        40,
+        55,
+        40,
+        55
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        56,
+        44
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 30,
+      "start_byte": 3472,
+      "end_byte": 3575,
+      "block_sha256": "a0b068d4cd55c84fd47e53b65a6237ba171ac7d6d9fe8d006296750e2e59ab4a",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        40,
+        59,
+        40,
+        59
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        29,
+        14
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 31,
+      "start_byte": 3584,
+      "end_byte": 3687,
+      "block_sha256": "1c38472a7ce039d232bc8ecf3e0dc6cbccbbb5ea1bfef553ba3a234f0e4d16d1",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        45,
+        10,
+        45,
+        10
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        24,
+        59
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 32,
+      "start_byte": 3696,
+      "end_byte": 3798,
+      "block_sha256": "fe9ee832c19e8db675eca310f38a08cf26934c8fd5763ea4c658b2f8f3b17808",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        45,
+        14,
+        45,
+        14
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        8,
+        25
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 33,
+      "start_byte": 3807,
+      "end_byte": 3910,
+      "block_sha256": "4ebdfbfb8b78f856f271922d52528d6770bd98d3e8d3ea3cfaaf68bb45406d93",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        45,
+        55,
+        45,
+        55
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        56,
+        29
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 34,
+      "start_byte": 3919,
+      "end_byte": 4022,
+      "block_sha256": "2779d3e62a539479cdfd38de25de7c479e3b90f008a614c62edaf72bdffacfc8",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        45,
+        59,
+        45,
+        59
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        36,
+        44
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 35,
+      "start_byte": 4031,
+      "end_byte": 4134,
+      "block_sha256": "0641ca05e33b94cec8a89ff130abac22c68d0b7f033fe96555aca3c2a1aef2f6",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        56,
+        10,
+        56,
+        10
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        56,
+        10
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 36,
+      "start_byte": 4143,
+      "end_byte": 4246,
+      "block_sha256": "8307b3b6716a8f4f872375f134213a4ea5ed8b17c980792a741d7a070d89d17c",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        56,
+        14,
+        56,
+        14
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        29,
+        59
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 37,
+      "start_byte": 4255,
+      "end_byte": 4358,
+      "block_sha256": "4c1b1d1640ef4810f07ac2ec0c4402474ef2bee9ec8ee4cd49953e969f056e1e",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        56,
+        25,
+        56,
+        25
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        61,
+        25
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 38,
+      "start_byte": 4367,
+      "end_byte": 4470,
+      "block_sha256": "e62b62709069e0e29c43f6a6a691cf5e2997b65f4600040646d310595f142014",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        56,
+        29,
+        56,
+        29
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        56,
+        59
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 39,
+      "start_byte": 4479,
+      "end_byte": 4582,
+      "block_sha256": "4b3e0990ff2c8f596af8559153622a0419689eeb471fef0c14058a83da294fae",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        56,
+        40,
+        56,
+        40
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        13,
+        59
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 40,
+      "start_byte": 4591,
+      "end_byte": 4694,
+      "block_sha256": "252029fa4a65fdda0cc61a89279a48fdc5c3bcc0fc5b0e8bf159f97bc9e3bc19",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        56,
+        44,
+        56,
+        44
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        13,
+        44
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 41,
+      "start_byte": 4703,
+      "end_byte": 4805,
+      "block_sha256": "ef9a880f6a5730740243fabe92ea689e28a810f9b1962fd7c448305925b5eb90",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        56,
+        55,
+        56,
+        55
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        8,
+        55
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 42,
+      "start_byte": 4814,
+      "end_byte": 4917,
+      "block_sha256": "04f4d74a838b4ccaf3275df04078d712c3b3b5b52da6f303652db74c361caa83",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        56,
+        59,
+        56,
+        59
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        13,
+        55
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 43,
+      "start_byte": 4926,
+      "end_byte": 5029,
+      "block_sha256": "9679ebaff14de0b773d87fa571d21c1931724ee2ea8f7ec61550f7e10152ec10",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        61,
+        10,
+        61,
+        10
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        61,
+        14
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 44,
+      "start_byte": 5038,
+      "end_byte": 5140,
+      "block_sha256": "4d7e92297c1e28b1ab2118d785b6e047a4d0e660550fa8d94ebc09c43e96add0",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        61,
+        14,
+        61,
+        14
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        8,
+        44
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 45,
+      "start_byte": 5149,
+      "end_byte": 5252,
+      "block_sha256": "b0a2c2ab6f601806d103c331a3326b0d7b9d6a993141fad0d94914c83f666630",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        61,
+        25,
+        61,
+        25
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        45,
+        55
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 46,
+      "start_byte": 5261,
+      "end_byte": 5363,
+      "block_sha256": "8f9dda675e66d90d691c6b63a8cec9efe9bd6407f4c821a7fd84b21be1cced9d",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        61,
+        29,
+        61,
+        29
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        8,
+        59
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 47,
+      "start_byte": 5372,
+      "end_byte": 5475,
+      "block_sha256": "343dbc5029d3c557f881e8cbb72a7dd79561c56d0794f10be7d13bd9b8082c7f",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        61,
+        40,
+        61,
+        40
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        56,
+        40
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 48,
+      "start_byte": 5484,
+      "end_byte": 5587,
+      "block_sha256": "fd69f944956cc6db0c84c0cb50a34cd005efb1a776fb57368222c218a0b5aa33",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        61,
+        44,
+        61,
+        44
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        13,
+        40
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 49,
+      "start_byte": 5596,
+      "end_byte": 5699,
+      "block_sha256": "5832e0094bbcb871ab1645245659ad61688a852ae43b4a6b90f9eca0607223ef",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        61,
+        55,
+        61,
+        55
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        29,
+        10
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 50,
+      "start_byte": 5708,
+      "end_byte": 5811,
+      "block_sha256": "51afe3cd0b1b46cae79d95454ba709ac3c16504da547ff4b61de133f64dedd25",
+      "floor": 42,
+      "graphic_alias": null,
+      "borncorner_raw": [
+        61,
+        59,
+        61,
+        59
+      ],
+      "borncenter_raw": null,
+      "direction_raw": null,
+      "template_token": "npcgen_warp",
+      "parameter_references": [],
+      "time_raw": 0,
+      "target_floor_x_y": [
+        42,
+        40,
+        14
+      ],
+      "trailing_token": null
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 51,
+      "start_byte": 5820,
+      "end_byte": 5988,
+      "block_sha256": "42abc6e90513930350fbd57a725a26d3fb742cc59b7fa5871245f15aeabf7d70",
+      "floor": 400,
+      "graphic_alias": 16202,
+      "borncorner_raw": [
+        85,
+        102,
+        85,
+        102
+      ],
+      "borncenter_raw": null,
+      "direction_raw": 6,
+      "template_token": "npcgen_timeman",
+      "parameter_references": [
+        [
+          "genout/tman_400_85_102",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "523f22a9957f28f7131f24da2cf6710a52e93f7a0fce96ad650094a4013f8f4d"
+        ]
+      ],
+      "time_raw": 0
+    },
+    {
+      "file": "genout/mugendungeon2.create",
+      "ordinal": 52,
+      "start_byte": 5997,
+      "end_byte": 6165,
+      "block_sha256": "884ae6e5354ac0d3529ccb198fe3d608bdad0272abd7879ef7f1cf3f79c69bb0",
+      "floor": 400,
+      "graphic_alias": 16201,
+      "borncorner_raw": [
+        88,
+        102,
+        88,
+        102
+      ],
+      "borncenter_raw": null,
+      "direction_raw": 6,
+      "template_token": "npcgen_timeman",
+      "parameter_references": [
+        [
+          "genout/tman_400_88_102",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "523f22a9957f28f7131f24da2cf6710a52e93f7a0fce96ad650094a4013f8f4d"
+        ]
+      ],
+      "time_raw": 0
+    },
+    {
+      "file": "seimu/event/event01.create",
+      "ordinal": 0,
+      "start_byte": 187,
+      "end_byte": 348,
+      "block_sha256": "98ededac626cfacfe21d4ad6db20848eac77be96af1eac96b8d6e49142937342",
+      "floor": 41,
+      "graphic_alias": 16024,
+      "borncorner_raw": [
+        34,
+        25,
+        34,
+        25
+      ],
+      "borncenter_raw": null,
+      "direction_raw": 4,
+      "template_token": "changeevent",
+      "parameter_references": [
+        [
+          "seimu/event/event01_2",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "38479dec3f115343debb9d1ad74ee6383bf9847595fa514f0a720f7b77587d0b"
+        ]
+      ],
+      "time_raw": 0
+    },
+    {
+      "file": "seimu/event/event01.create",
+      "ordinal": 1,
+      "start_byte": 350,
+      "end_byte": 511,
+      "block_sha256": "52f748a591708e97bf3f0c81d2c3a580d156e121c1410fe4aa300a1fb9aa424d",
+      "floor": 42,
+      "graphic_alias": 16024,
+      "borncorner_raw": [
+        34,
+        25,
+        34,
+        25
+      ],
+      "borncenter_raw": null,
+      "direction_raw": 4,
+      "template_token": "changeevent",
+      "parameter_references": [
+        [
+          "seimu/event/event01_2",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "38479dec3f115343debb9d1ad74ee6383bf9847595fa514f0a720f7b77587d0b"
+        ]
+      ],
+      "time_raw": 0
+    },
+    {
+      "file": "seimu/event/event01.create",
+      "ordinal": 2,
+      "start_byte": 513,
+      "end_byte": 676,
+      "block_sha256": "260fd9cb36b026663aeabd8cd8d71622ba719dfd68b2145702c5271d5a3989f9",
+      "floor": 6000,
+      "graphic_alias": 16001,
+      "borncorner_raw": [
+        73,
+        54,
+        73,
+        54
+      ],
+      "borncenter_raw": null,
+      "direction_raw": 4,
+      "template_token": "changeevent",
+      "parameter_references": [
+        [
+          "seimu/event/event01_1",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "ac2c035d074904a575448ee424e1c5d0ff9939de60a73f149ddb47799ed9189d"
+        ]
+      ],
+      "time_raw": 0
+    }
+  ],
+  "source_guard_arguments": [
+    {
+      "path": "400/sb_muge1.arg",
+      "sha256": "f5c2c25eb48eda2ac33f77bd054e39fa903c9a0f2a03193a24e56dc1c7ad9f17",
+      "entype_raw": 2,
+      "dieact_raw": 1,
+      "warp_floor_x_y": [
+        41,
+        34,
+        39
+      ],
+      "enemy_instance_ids_in_source_order": [
+        1095,
+        1095,
+        1095,
+        1087,
+        1086,
+        1096,
+        1096,
+        1096,
+        1096,
+        1096
+      ]
+    },
+    {
+      "path": "400/sb_muge2.arg",
+      "sha256": "d4294d9144e1d1b3997cd84282ca5b6961109c23c394ea96253b442699c0559a",
+      "entype_raw": 2,
+      "dieact_raw": 1,
+      "warp_floor_x_y": [
+        41,
+        33,
+        39
+      ],
+      "enemy_instance_ids_in_source_order": [
+        1095,
+        1095,
+        1095,
+        1087,
+        1086,
+        1096,
+        1096,
+        1096,
+        1096,
+        1096
+      ]
+    }
+  ],
+  "source_time_parameters": [
+    {
+      "path": "genout/tman_400_85_102",
+      "sha256": "523f22a9957f28f7131f24da2cf6710a52e93f7a0fce96ad650094a4013f8f4d",
+      "time_raw": "AFTER",
+      "change_graphic_alias_raw": 16204
+    },
+    {
+      "path": "genout/tman_400_88_102",
+      "sha256": "523f22a9957f28f7131f24da2cf6710a52e93f7a0fce96ad650094a4013f8f4d",
+      "time_raw": "AFTER",
+      "change_graphic_alias_raw": 16204
+    },
+    {
+      "path": "genout/tman_400_95_120",
+      "sha256": "7494698774322f5b2cbf83d8218ae9ddb0b0a56fb0a64c181bf7b77fb78a8905",
+      "time_raw": "AFTER",
+      "change_graphic_alias_raw": 16200
+    },
+    {
+      "path": "genout/tman_400_98_120",
+      "sha256": "7494698774322f5b2cbf83d8218ae9ddb0b0a56fb0a64c181bf7b77fb78a8905",
+      "time_raw": "AFTER",
+      "change_graphic_alias_raw": 16200
+    }
+  ],
+  "repeated_original_warp_blocks": [
+    {
+      "block_sha256": "60cacba81894892e45e2cdb70b4cb9b699dd105aadee034c6860dd04d568c277",
+      "occurrences": 2
+    },
+    {
+      "block_sha256": "009ec6160e366a46d09f6769b1f2f66ed9ba33413682e04375b858707735e02e",
+      "occurrences": 2
+    }
+  ],
+  "prior_item01_numeric_rows": [
+    [
+      449,
+      "3504267124f8ccccb5b2b563153cc8930eb5aedd0154a93dd117b46ba5364b1c",
+      "3504267124f8ccccb5b2b563153cc8930eb5aedd0154a93dd117b46ba5364b1c",
+      20332,
+      20332,
+      "7700",
+      "4",
+      "50",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      450,
+      "af5a074b6b60720af93eda3d9b6ace72d982da90cbf28b38c35a7670f007121f",
+      "af5a074b6b60720af93eda3d9b6ace72d982da90cbf28b38c35a7670f007121f",
+      20341,
+      20341,
+      "11050",
+      "4",
+      "35",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      451,
+      "77a36985281c7d0434e6caf0a3d55b5366a2e6224d9910232636efbe76301ef5",
+      "77a36985281c7d0434e6caf0a3d55b5366a2e6224d9910232636efbe76301ef5",
+      20328,
+      20328,
+      "14650",
+      "4",
+      "35",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      543,
+      "cfee860ebbee5a2428a707404feaab3a666f602757c5b2489c61a9c5ae0525b3",
+      "cfee860ebbee5a2428a707404feaab3a666f602757c5b2489c61a9c5ae0525b3",
+      20544,
+      20544,
+      "6800",
+      "17",
+      "30",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      549,
+      "85950bf858d0e70270c2f7051b9f99bb7ad60eb8cb6d03fbce36797ee5e98bc3",
+      "85950bf858d0e70270c2f7051b9f99bb7ad60eb8cb6d03fbce36797ee5e98bc3",
+      20544,
+      20544,
+      "7200",
+      "17",
+      "30",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      552,
+      "d2f85d251da8e3ccde6795adca8622e2b531a1804eb733b1104d763569f57c28",
+      "d2f85d251da8e3ccde6795adca8622e2b531a1804eb733b1104d763569f57c28",
+      20543,
+      20543,
+      "13200",
+      "17",
+      "35",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      646,
+      "4a5d5b95b0f39fad1df17151b4c83c95d6405bf4b79a24e228518bc00e697ecf",
+      "4a5d5b95b0f39fad1df17151b4c83c95d6405bf4b79a24e228518bc00e697ecf",
+      20506,
+      20506,
+      "6200",
+      "18",
+      "25",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      653,
+      "acffe9b4b4a466c4f85d27d914198ff967923df0a612700c0a54683e4af7f6a5",
+      "acffe9b4b4a466c4f85d27d914198ff967923df0a612700c0a54683e4af7f6a5",
+      20531,
+      20531,
+      "10900",
+      "18",
+      "30",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      2603,
+      "10faafea60aacc2a845c22de1be73924173effc45d82c654d6685579f98a26c4",
+      "10faafea60aacc2a845c22de1be73924173effc45d82c654d6685579f98a26c4",
+      14648,
+      14648,
+      "0",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      2604,
+      "71535042770a5b599a30fc62c7e0af83d4e2107ea4e4252ab450fa4e1936367d",
+      "71535042770a5b599a30fc62c7e0af83d4e2107ea4e4252ab450fa4e1936367d",
+      21000,
+      21000,
+      "0",
+      "7",
+      "35",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      2605,
+      "e1c02281f1f970b089af721a7a5b38e30f238dc14e40b1ede07ccadccd31be01",
+      "e1c02281f1f970b089af721a7a5b38e30f238dc14e40b1ede07ccadccd31be01",
+      21531,
+      21531,
+      "0",
+      "6",
+      "35",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      2606,
+      "60973204c881f073558d49e3227d283393e6ac30b69d5ab41369acac58a809c2",
+      "60973204c881f073558d49e3227d283393e6ac30b69d5ab41369acac58a809c2",
+      24212,
+      24212,
+      "0",
+      "9",
+      "35",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      11803,
+      "0a94633f8268a927cdede7308c74f9f06b96056478f69478efcdb61ecd1f17f2",
+      "0a94633f8268a927cdede7308c74f9f06b96056478f69478efcdb61ecd1f17f2",
+      24062,
+      24062,
+      "1368",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      11814,
+      "fad2f0dc00f9e99db4f5415234de002c3505b499202fbaaa4b28cdd8d6a62df4",
+      "fad2f0dc00f9e99db4f5415234de002c3505b499202fbaaa4b28cdd8d6a62df4",
+      24115,
+      24115,
+      "2250",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      11824,
+      "b8aa36893a56cc3853e731dc8cdfa4121975402f3eb5442f6f7fbaed7536162e",
+      "b8aa36893a56cc3853e731dc8cdfa4121975402f3eb5442f6f7fbaed7536162e",
+      24111,
+      24111,
+      "2700",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      11833,
+      "dc8064891a3403be071c4da1967be8741724fb6ae4a6ad3f8b4b469fb3dfb42d",
+      "dc8064891a3403be071c4da1967be8741724fb6ae4a6ad3f8b4b469fb3dfb42d",
+      24109,
+      24109,
+      "1254",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      11843,
+      "74a0432c4fc1d30fb8269c7311aeeffd0d3f151251559c922deb1e74ad2644b0",
+      "74a0432c4fc1d30fb8269c7311aeeffd0d3f151251559c922deb1e74ad2644b0",
+      24125,
+      24125,
+      "1140",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      11853,
+      "f52085c7f249fcbc3242b1ba5a070b49fc4dcfc1f5b96e7dfb1b98793e55e00e",
+      "f52085c7f249fcbc3242b1ba5a070b49fc4dcfc1f5b96e7dfb1b98793e55e00e",
+      24110,
+      24110,
+      "1254",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      11895,
+      "a1dc3a37b569fa18289ccbb1003811b1d30bc47214a273cd9bebee19c47f7a74",
+      "a1dc3a37b569fa18289ccbb1003811b1d30bc47214a273cd9bebee19c47f7a74",
+      24174,
+      24174,
+      "1050",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      11926,
+      "334539ef1d463b8c0a13609c4651cc5e8c3a9776404abb38f727712bd88d470a",
+      "334539ef1d463b8c0a13609c4651cc5e8c3a9776404abb38f727712bd88d470a",
+      24179,
+      24179,
+      "1452",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      11936,
+      "a6af2f5136e2b228539d5b862c4d5f7bb28121038d9fb43673dcb7ba52285e08",
+      "a6af2f5136e2b228539d5b862c4d5f7bb28121038d9fb43673dcb7ba52285e08",
+      23028,
+      23028,
+      "1575",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      12052,
+      "d0eb92ea478b2b667b4c169668a81321da573282599cc68fa6d8353137dc680e",
+      "d0eb92ea478b2b667b4c169668a81321da573282599cc68fa6d8353137dc680e",
+      24082,
+      24082,
+      "15",
+      "20",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      12623,
+      "5af31517be5dd2f2a482772944fc0cfacb5c262fad0c3a8c643a9619d107e5a1",
+      "5af31517be5dd2f2a482772944fc0cfacb5c262fad0c3a8c643a9619d107e5a1",
+      24476,
+      24476,
+      "10",
+      "20",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      12648,
+      "eb6c926a358c2bc600f24f804358ed1c65b9e88cdea32e6b302e2317500b5e97",
+      "eb6c926a358c2bc600f24f804358ed1c65b9e88cdea32e6b302e2317500b5e97",
+      24541,
+      24541,
+      "10",
+      "20",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      19550,
+      "8c64ae26aaa8a5f9db1c9a8a2235ba956908d0c48ad370762ddcaf0cd8a0cb75",
+      "8c64ae26aaa8a5f9db1c9a8a2235ba956908d0c48ad370762ddcaf0cd8a0cb75",
+      14659,
+      14659,
+      "10",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ]
+  ],
+  "prior_char09_enemy_numeric_rows": [
+    [
+      1086,
+      561,
+      100343,
+      0,
+      313,
+      2111896,
+      56,
+      16,
+      0,
+      1
+    ],
+    [
+      1087,
+      562,
+      100346,
+      0,
+      316,
+      2128312,
+      56,
+      16,
+      0,
+      1
+    ],
+    [
+      1095,
+      72,
+      100280,
+      1,
+      270,
+      1875950,
+      56,
+      16,
+      0,
+      0
+    ],
+    [
+      1096,
+      111,
+      100295,
+      1,
+      285,
+      1959790,
+      56,
+      16,
+      0,
+      0
+    ]
+  ],
+  "prior_quest05_map_qualification": [
+    {
+      "source_floor_id": 41,
+      "map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "source_DAT_file": "41.dat",
+      "source_DAT_sha256": "49d6a1b24430027fac4aaa29a982ffb6844d4e0244e33ef868fb16c57d5dc01b",
+      "source_CREATE_ref_count": 1,
+      "source_cohorts": {
+        "QUEST01": 1
+      }
+    },
+    {
+      "source_floor_id": 42,
+      "map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "source_DAT_file": "42.dat",
+      "source_DAT_sha256": "4b622f7fc80b2498fde0a6ce8664962e49fae69dc4bde37e6e8214c69240b2f6",
+      "source_CREATE_ref_count": 1,
+      "source_cohorts": {
+        "QUEST01": 1
+      }
+    },
+    {
+      "source_floor_id": 400,
+      "map_status": "NO_MATCHING_DAT_IN_955",
+      "source_DAT_file": null,
+      "source_DAT_sha256": null,
+      "source_CREATE_ref_count": 4,
+      "source_cohorts": {
+        "QUEST03": 4
+      }
+    },
+    {
+      "source_floor_id": 6000,
+      "map_status": "NO_MATCHING_DAT_IN_955",
+      "source_DAT_file": null,
+      "source_DAT_sha256": null,
+      "source_CREATE_ref_count": 2,
+      "source_cohorts": {
+        "QUEST01": 2
+      }
+    }
+  ],
+  "prior_R68_documentary_positions": {
+    "elder": [
+      73,
+      55
+    ],
+    "entrances": {
+      "day": [
+        96,
+        120
+      ],
+      "night": [
+        87,
+        102
+      ]
+    },
+    "exact_same_deployment_verified": false
+  },
+  "boundaries": {
+    "native_execution_verified": false,
+    "branch_priority_verified": false,
+    "actual_rewards_verified": false,
+    "random_weights_verified": false,
+    "time_tokens_interpreted": false,
+    "guide_coordinates_corrected": false,
+    "night_guard_warp_corrected": false,
+    "same_official_deployment_verified": false,
+    "original_pixel_read_in_this_report": false,
+    "maze_walkability_verified": false,
+    "item_namespace_19550_adopted_as_early_fact": false
+  },
+  "status": {
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  }
+}

@@ -21,6 +21,10 @@ on:
       - 'research/recovered/STONEAGE-QUEST08-MINING-APPRAISAL-AND-LIMITSHOP-SOURCE-R1.json'
       - 'tools/stoneage_quest08_mining_source.py'
       - 'tests/test_stoneage_quest08_mining_source.py'
+      - 'research/recovered/STONEAGE-QUEST09-DREAM-CAVE-ORIGINAL-CONTROLS-R1.json'
+      - 'research/recovered/STONEAGE-QUEST09-TWO-ORIGINAL-CAVE-MAPS-OBSERVATION-R1.json'
+      - 'tools/stoneage_quest09_dream_cave_source.py'
+      - 'tests/test_stoneage_quest09_dream_cave_source.py'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   pull_request:
     paths:
@@ -35,6 +39,10 @@ on:
       - 'research/recovered/STONEAGE-QUEST08-MINING-APPRAISAL-AND-LIMITSHOP-SOURCE-R1.json'
       - 'tools/stoneage_quest08_mining_source.py'
       - 'tests/test_stoneage_quest08_mining_source.py'
+      - 'research/recovered/STONEAGE-QUEST09-DREAM-CAVE-ORIGINAL-CONTROLS-R1.json'
+      - 'research/recovered/STONEAGE-QUEST09-TWO-ORIGINAL-CAVE-MAPS-OBSERVATION-R1.json'
+      - 'tools/stoneage_quest09_dream_cave_source.py'
+      - 'tests/test_stoneage_quest09_dream_cave_source.py'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   workflow_dispatch:
 
@@ -53,3 +61,5 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_stoneage_quest06_r2_original_hint_graph.py' -v
       - name: Validate QUEST08 source mining appraisal and limitshop boundaries
         run: python -m unittest tests.test_stoneage_quest08_mining_source -v
+      - name: Validate QUEST09 original dream-cave controls and qualified map observations
+        run: python -m unittest tests.test_stoneage_quest09_dream_cave_source -v
