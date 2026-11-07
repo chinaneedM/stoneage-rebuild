@@ -46,7 +46,7 @@ def tsv(name):
         yield from csv.DictReader(stream, delimiter='\t')
 
 
-def selected_motion(graphics=None):
+def selected_motion(graphics=None, *, allow_sentinels=False):
     """Use archived public records to select and independently replay the scope."""
     old = {row[0] for row in archived(PET07)['source_groups']}
     links = {table: defaultdict(list) for table in TABLES}
@@ -87,7 +87,9 @@ def selected_motion(graphics=None):
         key = int(row['spr_no'])
         if key in groups:
             frames = groups[key]['sequences'][int(row['anim_index'])]['frames']
-            need(int(row['frame_index']) == len(frames) and row['sentinel'] == '0',
+            valid_frame = row['sentinel'] == '0' or (allow_sentinels and
+                row['sentinel'] == '1' and int(row['bmp_no']) == 0xffffffff)
+            need(int(row['frame_index']) == len(frames) and valid_frame,
                  'source frame order or unsupported sentinel')
             frames.append([int(row[k]) for k in ('bmp_no', 'pos_x', 'pos_y', 'sound_no')])
     for group in groups.values():
