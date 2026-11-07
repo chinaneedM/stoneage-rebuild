@@ -2035,3 +2035,11 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-07 — MAP06｜两份原地图的实际室内场景候选
 
 [MAP06原件、图像与边界](docs/continuity/STONEAGE-MAP06-TWO-ORIGINAL-ROOM-SCENES-20261107.md)：真正取回并核同1005/1006原DAT，以55幅已有台湾1.0原RD候选PNG生成单层/合层共6张场景图，两源仍不认证同一官方部署。464个现代绘图候选位置经独立全画布重算相同，1795个原1–99非零值保留不猜作可见图。两原DAT、55原图、六图和查阅页的私人包已保存；原生层序/配色/碰撞/原客户端运行未知。下一最高MAP07按地图模块继续有合格原件的批量场景，先保管/复用源批，避免逐图重下大包。CURRENT全文、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停与总体未知保持。
+
+## 2026-11-07 MAP07｜28份原DAT与234组原RD候选像素批量室内场景
+
+已从远端源重新核验并恢复28张互异SHA的混合2.5原DAT（各30×30，共151,424B），与台湾1.0原RD候选234组原图像配对，在私人离线研究器中获得4,408次候选图形位置、84张分层/合层观察图、28张合层独立逐像素核对和84张私人回放RGBA核对。公开元数据/可重验反例测试和两次源Actions全部保留，私人源/图不进入公开Git。**这不是原客户端渲染、同一官方部署或可玩游戏认证**。私人ZIP已在本地生成、ZIP CRC通过，但Library全ZIP持久归档未确认。
+
+- [MAP07源边界、私人验收和下一工作](docs/continuity/STONEAGE-MAP07-28-ORIGINAL-DAT-SOURCE-ROOM-SCENES-20261107.md)
+- [MAP07 28源图与234原图派生回执](research/recovered/STONEAGE-MAP07-28-ORIGINAL-DAT-SOURCE-SCENE-RECEIPT-R1.json)
+- NEXT **MAP08**：继续地图模块真实原件优先的更大场景/缺图补证，按原源SHA与跨版本边界进行，Stage A 7PARTIAL+2OPEN不变，不进入引擎/网服建设。
