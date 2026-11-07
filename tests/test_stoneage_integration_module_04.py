@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 RECOVERED = ROOT / "research" / "recovered"
 OUTPUT = RECOVERED / "STONEAGE-INTEGRATION04-COMPILED-CAPTURE-PET-ITEM-SPR-SOURCE-BRIDGE-R1.json"
 SCHEMA = "stoneage.integration04.source_separated_original_compiled_capture_item_pet_template_visual_graph.r1"
-ARCHIVE = "d71e2e6766e8ac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+ARCHIVE = "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
 
 
 def source_blob_sha(data):

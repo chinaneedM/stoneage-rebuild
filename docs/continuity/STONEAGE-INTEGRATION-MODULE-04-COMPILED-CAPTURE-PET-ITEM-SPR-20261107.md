@@ -5,7 +5,7 @@
 按 GitHub 主线 `bfdcb70407988baa1660389b66e07ada85a0763a` / tree `15fefad254c312b2aeb21b7a8bb05df6bd2e12be` 重新读取连续性协议、整个历史 `CURRENT-STATE.md` 原生 Git blob（`c89e0e33537990aa2132b47c40fef49a985a935c`）、Actions、最近 QUEST05 和模块/路线文件。QUEST05 已把598条CREATE来源与955份DAT及234个条件WARP字面关联；无新合格任务源时优先玩法。先查重：GAMEPLAY01–07 以及 INTEGRATION01–03 在 11月3–4日已完成来源限定批次，故**不冒充新建GAMEPLAY01**，而将 11月7日新增 WORLD37-R2C 真实原x86隔离回放与既有PET11/12/13跨模块连接。本轮**只重新计算已发表、原样的来源派生数据**，没有重新执行商业程序，也没有重新读取原RAR、台湾1.0原位图或台湾8.5原REAL，新增原像素0。
 
 [11条逐项可复算综合关系](../../research/recovered/STONEAGE-INTEGRATION04-COMPILED-CAPTURE-PET-ITEM-SPR-SOURCE-BRIDGE-R1.json)保留4项已发表Git blob及对应相同/不同来源类别：
-- WORLD37-R2C `78c3b20222bc8b462d1fada6817d95542ee7ee4e`：社区保存混合2.5 RAR（SHA256 `d71e2e6766e8ac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5`）中的原GMSV（SHA256 `d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00`）原x86指令、人工初态、确定性桩隔离回放；
+- WORLD37-R2C `78c3b20222bc8b462d1fada6817d95542ee7ee4e`：社区保存混合2.5 RAR（SHA256 `d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5`）中的原GMSV（SHA256 `d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00`）原x86指令、人工初态、确定性桩隔离回放；
 - PET13 `835251479b2b7f55b3b6681af4d14b91008a305d`：**同保存RAR** `enemybase.txt` 宠物模板及 `petskill.txt`；原行哈希、原四基础属性、元素、七技能槽与道具字段，不证明该编译程序实际选中了这一份主表；
 - PET11 `dd52d2a4f050c577e627b6560e335db73382cb8e`：**台湾1.0认证零售**已实际私有解码的两组二维原SPR图像，且与混合2.5原索引12字节相同；数字和索引同一仍不是跨版已部署宠物身份；
 - PET12 `74f99360e847068797cf74eb596863ef492a0ac3`：**社区保存、声称台湾8.5，未经认证为纯净官方build**的六组原SPR完整动作与同包RD索引，PET12该批原REAL像素读取数为0，不能写成已恢复六组真原图。
