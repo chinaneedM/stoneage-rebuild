@@ -1,0 +1,310 @@
+{
+  "schema": "stoneage.quest06.r2.original_courier_dialogue_hints_to_matching_item_conditions.source_bounded.r1",
+  "date": "2026-11-07",
+  "baseline_main_head": "29c652e0a6704eb65f627431ae6f4dfed0ec74a2",
+  "baseline_main_tree": "7689a4ce3b409ba0869981197de683795e2ae812",
+  "original_historical_CURRENT_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "previous_QUEST06_source_receipt": "research/recovered/STONEAGE-QUEST06-FOUR-VILLAGE-MAMMOTH-COURIER-SOURCE-R1.json",
+  "private_recheck": {
+    "private_archive_name": "StoneAge-QUEST06-mammoth-courier-original-private.zip",
+    "private_archive_bytes": 40204,
+    "private_archive_sha256": "cd26689805ad0c40e23ef934aa7c9509fe461630dd0431f7a43740abd7c91254",
+    "original_ZIP_members_crc_passed": 13,
+    "private_CP950_source_files": [
+      {
+        "path": "npc/sa60/newbie/worksell_1014.conf",
+        "bytes": 1923,
+        "sha256": "d5139cb534128f4c4eb5551cd0bd3d4660a09b54a81a48911440b8d68fcea69b",
+        "zip_member_crc32": "fa739a4b"
+      },
+      {
+        "path": "npc/sa60/newbie/worksell_2014.conf",
+        "bytes": 1885,
+        "sha256": "d9ad7e5f15a448238f9d7eec1339adee6cc8fbfb60525ab2f221d10d99d3f522",
+        "zip_member_crc32": "a799f9ec"
+      },
+      {
+        "path": "npc/sa60/newbie/worksell_3014.conf",
+        "bytes": 1899,
+        "sha256": "eda96a3d8ce3d02e6235edf2425746aa8ddec3ce64ac72fde8351abab64410a0",
+        "zip_member_crc32": "ee930e3d"
+      },
+      {
+        "path": "npc/sa60/newbie/worksell_4014.conf",
+        "bytes": 1937,
+        "sha256": "6ac7689410fa7af8ca75a1a25997217214fa32cb3861f00ccb90ec98c3c8298e",
+        "zip_member_crc32": "80fd5296"
+      }
+    ],
+    "private_original_message_text_published": false
+  },
+  "original_source_hint_rows": [
+    {
+      "origin_script_floor_id": 1014,
+      "origin_SOURCE_CREATE_floor_ids": [
+        1014,
+        1011
+      ],
+      "source_TALKEVENT": 2,
+      "source_FREE_LV_literal": "LV<30",
+      "source_FREE_TRANS_literal": "TRANS=0",
+      "source_FREE_ITEM_equal": 2622,
+      "source_dialogue_named_destination": "瑪麗娜絲村",
+      "candidate_recipient_script_floor_by_exact_item": 2014,
+      "candidate_recipient_SOURCE_CREATE_floor_ids": [
+        2014,
+        2011
+      ],
+      "candidate_recipient_TALKEVENT": 4,
+      "original_source_script_sha256": "d5139cb534128f4c4eb5551cd0bd3d4660a09b54a81a48911440b8d68fcea69b",
+      "original_text_reopened_privately": true,
+      "original_runtime_NPC_delivery_observed": false
+    },
+    {
+      "origin_script_floor_id": 1014,
+      "origin_SOURCE_CREATE_floor_ids": [
+        1014,
+        1011
+      ],
+      "source_TALKEVENT": 3,
+      "source_FREE_LV_literal": "LV<30",
+      "source_FREE_TRANS_literal": "TRANS=0",
+      "source_FREE_ITEM_equal": 4224,
+      "source_dialogue_named_destination": "瑪麗娜絲村",
+      "candidate_recipient_script_floor_by_exact_item": 2014,
+      "candidate_recipient_SOURCE_CREATE_floor_ids": [
+        2014,
+        2011
+      ],
+      "candidate_recipient_TALKEVENT": 5,
+      "original_source_script_sha256": "d5139cb534128f4c4eb5551cd0bd3d4660a09b54a81a48911440b8d68fcea69b",
+      "original_text_reopened_privately": true,
+      "original_runtime_NPC_delivery_observed": false
+    },
+    {
+      "origin_script_floor_id": 2014,
+      "origin_SOURCE_CREATE_floor_ids": [
+        2014,
+        2011
+      ],
+      "source_TALKEVENT": 2,
+      "source_FREE_LV_literal": "LV<30",
+      "source_FREE_TRANS_literal": "TRANS=0",
+      "source_FREE_ITEM_equal": 2623,
+      "source_dialogue_named_destination": "薩姆吉爾村",
+      "candidate_recipient_script_floor_by_exact_item": 1014,
+      "candidate_recipient_SOURCE_CREATE_floor_ids": [
+        1014,
+        1011
+      ],
+      "candidate_recipient_TALKEVENT": 4,
+      "original_source_script_sha256": "d9ad7e5f15a448238f9d7eec1339adee6cc8fbfb60525ab2f221d10d99d3f522",
+      "original_text_reopened_privately": true,
+      "original_runtime_NPC_delivery_observed": false
+    },
+    {
+      "origin_script_floor_id": 2014,
+      "origin_SOURCE_CREATE_floor_ids": [
+        2014,
+        2011
+      ],
+      "source_TALKEVENT": 3,
+      "source_FREE_LV_literal": "LV<30",
+      "source_FREE_TRANS_literal": "TRANS=0",
+      "source_FREE_ITEM_equal": 12879,
+      "source_dialogue_named_destination": "薩姆吉爾村",
+      "candidate_recipient_script_floor_by_exact_item": 1014,
+      "candidate_recipient_SOURCE_CREATE_floor_ids": [
+        1014,
+        1011
+      ],
+      "candidate_recipient_TALKEVENT": 5,
+      "original_source_script_sha256": "d9ad7e5f15a448238f9d7eec1339adee6cc8fbfb60525ab2f221d10d99d3f522",
+      "original_text_reopened_privately": true,
+      "original_runtime_NPC_delivery_observed": false
+    },
+    {
+      "origin_script_floor_id": 3014,
+      "origin_SOURCE_CREATE_floor_ids": [
+        3014,
+        3011
+      ],
+      "source_TALKEVENT": 2,
+      "source_FREE_LV_literal": "LV<30",
+      "source_FREE_TRANS_literal": "TRANS=0",
+      "source_FREE_ITEM_equal": 2624,
+      "source_dialogue_named_destination": "卡魯他那村",
+      "candidate_recipient_script_floor_by_exact_item": 4014,
+      "candidate_recipient_SOURCE_CREATE_floor_ids": [
+        4014,
+        4011
+      ],
+      "candidate_recipient_TALKEVENT": 4,
+      "original_source_script_sha256": "eda96a3d8ce3d02e6235edf2425746aa8ddec3ce64ac72fde8351abab64410a0",
+      "original_text_reopened_privately": true,
+      "original_runtime_NPC_delivery_observed": false
+    },
+    {
+      "origin_script_floor_id": 3014,
+      "origin_SOURCE_CREATE_floor_ids": [
+        3014,
+        3011
+      ],
+      "source_TALKEVENT": 3,
+      "source_FREE_LV_literal": "LV<30",
+      "source_FREE_TRANS_literal": "TRANS=0",
+      "source_FREE_ITEM_equal": 12874,
+      "source_dialogue_named_destination": "卡魯他那村",
+      "candidate_recipient_script_floor_by_exact_item": 4014,
+      "candidate_recipient_SOURCE_CREATE_floor_ids": [
+        4014,
+        4011
+      ],
+      "candidate_recipient_TALKEVENT": 5,
+      "original_source_script_sha256": "eda96a3d8ce3d02e6235edf2425746aa8ddec3ce64ac72fde8351abab64410a0",
+      "original_text_reopened_privately": true,
+      "original_runtime_NPC_delivery_observed": false
+    },
+    {
+      "origin_script_floor_id": 4014,
+      "origin_SOURCE_CREATE_floor_ids": [
+        4014,
+        4011
+      ],
+      "source_TALKEVENT": 2,
+      "source_FREE_LV_literal": "LV<30",
+      "source_FREE_TRANS_literal": "TRANS=0",
+      "source_FREE_ITEM_equal": 2622,
+      "source_dialogue_named_destination": "瑪麗娜絲村",
+      "candidate_recipient_script_floor_by_exact_item": 2014,
+      "candidate_recipient_SOURCE_CREATE_floor_ids": [
+        2014,
+        2011
+      ],
+      "candidate_recipient_TALKEVENT": 4,
+      "original_source_script_sha256": "6ac7689410fa7af8ca75a1a25997217214fa32cb3861f00ccb90ec98c3c8298e",
+      "original_text_reopened_privately": true,
+      "original_runtime_NPC_delivery_observed": false
+    },
+    {
+      "origin_script_floor_id": 4014,
+      "origin_SOURCE_CREATE_floor_ids": [
+        4014,
+        4011
+      ],
+      "source_TALKEVENT": 3,
+      "source_FREE_LV_literal": "LV<30",
+      "source_FREE_TRANS_literal": "TRANS=0",
+      "source_FREE_ITEM_equal": 4224,
+      "source_dialogue_named_destination": "瑪麗娜絲村",
+      "candidate_recipient_script_floor_by_exact_item": 2014,
+      "candidate_recipient_SOURCE_CREATE_floor_ids": [
+        2014,
+        2011
+      ],
+      "candidate_recipient_TALKEVENT": 5,
+      "original_source_script_sha256": "6ac7689410fa7af8ca75a1a25997217214fa32cb3861f00ccb90ec98c3c8298e",
+      "original_text_reopened_privately": true,
+      "original_runtime_NPC_delivery_observed": false
+    }
+  ],
+  "derived_candidate_script_pairs": [
+    {
+      "origin_script_floor_id": 1014,
+      "candidate_recipient_script_floor_id": 2014,
+      "distinct_source_ITEM_equal": [
+        2622,
+        4224
+      ]
+    },
+    {
+      "origin_script_floor_id": 2014,
+      "candidate_recipient_script_floor_id": 1014,
+      "distinct_source_ITEM_equal": [
+        2623,
+        12879
+      ]
+    },
+    {
+      "origin_script_floor_id": 3014,
+      "candidate_recipient_script_floor_id": 4014,
+      "distinct_source_ITEM_equal": [
+        2624,
+        12874
+      ]
+    },
+    {
+      "origin_script_floor_id": 4014,
+      "candidate_recipient_script_floor_id": 2014,
+      "distinct_source_ITEM_equal": [
+        2622,
+        4224
+      ]
+    }
+  ],
+  "destination_source_dialogue_names_only": [
+    {
+      "candidate_recipient_script_floor_id": 1014,
+      "source_receivable_ITEM_ids": [
+        2623,
+        12879
+      ],
+      "incoming_hint_source_script_floors": [
+        2014
+      ],
+      "source_dialogue_named_place_when_present": "薩姆吉爾村"
+    },
+    {
+      "candidate_recipient_script_floor_id": 2014,
+      "source_receivable_ITEM_ids": [
+        2622,
+        4224
+      ],
+      "incoming_hint_source_script_floors": [
+        1014,
+        4014
+      ],
+      "source_dialogue_named_place_when_present": "瑪麗娜絲村"
+    },
+    {
+      "candidate_recipient_script_floor_id": 3014,
+      "source_receivable_ITEM_ids": [
+        2625,
+        4212
+      ],
+      "incoming_hint_source_script_floors": [],
+      "source_dialogue_named_place_when_present": null
+    },
+    {
+      "candidate_recipient_script_floor_id": 4014,
+      "source_receivable_ITEM_ids": [
+        2624,
+        12874
+      ],
+      "incoming_hint_source_script_floors": [
+        3014
+      ],
+      "source_dialogue_named_place_when_present": "卡魯他那村"
+    }
+  ],
+  "summary": {
+    "original_SOURCE_TALKEVENT2_3_hint_rows": 8,
+    "origin_script_count": 4,
+    "distinct_candidate_origin_to_recipient_pairs": 4,
+    "recipient_script_count_with_inbound_hint": 3,
+    "recipient_script_floor_without_inbound_hint_in_this_subset": [
+      3014
+    ],
+    "original_item_receipt_conditions_unchanged": true,
+    "original_item_or_pet_given_at_hint_event_proven": false,
+    "original_NPC_trigger_and_action_executed": false,
+    "original_map_route_verified": false,
+    "official_JSS1999_TW10_or_mainland_182_deployment_proven": false,
+    "official_village_geography_or_island_classification_proven": false,
+    "public_CI_replays_private_original_CP950_bytes": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  }
+}
