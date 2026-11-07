@@ -1,0 +1,1876 @@
+{
+  "schema": "stoneage.quest10.quarry_spirit_original_source_and_retargeted_next.r1",
+  "date": "2026-11-08",
+  "origin_class": "ORIGIN_UNRESOLVED",
+  "source_scope": "LATER_COMMUNITY_MIXED25_NOT_AUTHENTICATED_OFFICIAL_DEPLOYMENT",
+  "baseline": {
+    "head": "4ad87f657669b6c3ccb5b0368e9cb17656d74412",
+    "tree": "1ae2ae6700510cc8ce09c2ad940d8930bcc20257",
+    "preserved_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "prior_delivery_NEXT_was_already_completed_by_O24_O32": true,
+  "private_source_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+  "verified_original_NPC_members": 2205,
+  "source_files": [
+    {
+      "path": "genout/npcgen.template",
+      "bytes": 4950,
+      "sha256": "0c5a58d5e31cafd3b58ccc1fa88fee7d1f95d12c0b87b04db9f06fea3b2a4df3",
+      "crc32": "56547578"
+    },
+    {
+      "path": "giiru/event/event30.create",
+      "bytes": 1281,
+      "sha256": "bef3faf56b9e4598ca432628ccc9dc32c13ded755cfedab95da4e46be4e037e0",
+      "crc32": "f1da5944"
+    },
+    {
+      "path": "giiru/event/event30_1",
+      "bytes": 3007,
+      "sha256": "f0db13cf322115d5a862fc108b408edd9862676ee01d4c4d07ca54c2dad4fd24",
+      "crc32": "e696a305"
+    },
+    {
+      "path": "giiru/event/event30_2",
+      "bytes": 1552,
+      "sha256": "021319aa3883ba459975af97f32a147bdc26d522433cb14cbbc1e226b62fb0ae",
+      "crc32": "82fdebc2"
+    },
+    {
+      "path": "giiru/event/event30_3",
+      "bytes": 1433,
+      "sha256": "65610e3fdcebc7249d5bd6695e9656c1d84ca2b0fabff040508b8d4b9d115c4d",
+      "crc32": "ecd0cf82"
+    },
+    {
+      "path": "giiru/event/event30_4",
+      "bytes": 833,
+      "sha256": "42d5671317884e43e07eccf39c9dd353b4a1aa91bf0b5ffc50374f5e195ee51a",
+      "crc32": "8d354db8"
+    },
+    {
+      "path": "giiru/event/event30_5",
+      "bytes": 2127,
+      "sha256": "9c1983e4b21b307cffd8f3f2e46e95a1d68e1e0769862f9c32bf5fbd1c72c8b3",
+      "crc32": "98f79846"
+    },
+    {
+      "path": "giiru/event/event30_5.old",
+      "bytes": 2179,
+      "sha256": "2034e1564d1cb464bf79df0fb02c7453c920515d60de2d76404ea1af27fb0e4f",
+      "crc32": "46cd9700"
+    },
+    {
+      "path": "giiru/event/event30_6",
+      "bytes": 1266,
+      "sha256": "32c14e094fb456d348541060298f58936a7d920d5c4d4882aff421a182820291",
+      "crc32": "9d7ac451"
+    },
+    {
+      "path": "giiru/event/event30_7",
+      "bytes": 236,
+      "sha256": "df83e3e4fd4e8b8a4ca7ba816f6ebaf3440350cffb78cd029ab407cd85076ed2",
+      "crc32": "5c56ea87"
+    },
+    {
+      "path": "jaruga/event/event.template",
+      "bytes": 122,
+      "sha256": "9c11ac0cbbd9b110e8ff7d0115730044673bf29c5df6d23034e56530c181d0b2",
+      "crc32": "a70fc73f"
+    },
+    {
+      "path": "king/event69_1",
+      "bytes": 3367,
+      "sha256": "634ff3e405b3829da55b9291cad2f98b3fbef3567a46cc048ae52a045df324e9",
+      "crc32": "1b064ce3"
+    }
+  ],
+  "source_creates": [
+    {
+      "file": "giiru/event/event30.create",
+      "ordinal": 0,
+      "start_byte": 25,
+      "end_byte": 187,
+      "block_sha256": "2339d98a13c4c191f848a1ff6e34e9769cdb86d14b45ad71b2b5aa5b800a6c90",
+      "floor": 31902,
+      "graphic_alias": 16018,
+      "borncorner_raw": [
+        9,
+        7,
+        9,
+        7
+      ],
+      "direction_raw": 6,
+      "template_token": "changeevent",
+      "template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "parameter_references": [
+        [
+          "giiru/event/event30_1",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "f0db13cf322115d5a862fc108b408edd9862676ee01d4c4d07ca54c2dad4fd24"
+        ]
+      ]
+    },
+    {
+      "file": "giiru/event/event30.create",
+      "ordinal": 1,
+      "start_byte": 212,
+      "end_byte": 372,
+      "block_sha256": "d5999cd2e1843b6235627bcdb69eaab9d500d5195e38d43a5fcf98b0062b0d62",
+      "floor": 31909,
+      "graphic_alias": 14648,
+      "borncorner_raw": [
+        10,
+        8,
+        10,
+        8
+      ],
+      "direction_raw": 4,
+      "template_token": "changeevent",
+      "template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "parameter_references": [
+        [
+          "giiru/event/event30_2",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "021319aa3883ba459975af97f32a147bdc26d522433cb14cbbc1e226b62fb0ae"
+        ]
+      ]
+    },
+    {
+      "file": "giiru/event/event30.create",
+      "ordinal": 2,
+      "start_byte": 385,
+      "end_byte": 548,
+      "block_sha256": "46c22fccaa113302617875dd6d34b2c5e7edbeb1675e8db0797b90c22acc8274",
+      "floor": 5106,
+      "graphic_alias": 16024,
+      "borncorner_raw": [
+        25,
+        15,
+        25,
+        15
+      ],
+      "direction_raw": 4,
+      "template_token": "changeevent",
+      "template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "parameter_references": [
+        [
+          "giiru/event/event30_3",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "65610e3fdcebc7249d5bd6695e9656c1d84ca2b0fabff040508b8d4b9d115c4d"
+        ]
+      ]
+    },
+    {
+      "file": "giiru/event/event30.create",
+      "ordinal": 3,
+      "start_byte": 563,
+      "end_byte": 728,
+      "block_sha256": "b6a7f795638ce03ee15465203bbf171529f53cacd779b207c53c031c73cfcfa6",
+      "floor": 5005,
+      "graphic_alias": 16057,
+      "borncorner_raw": [
+        19,
+        15,
+        19,
+        15
+      ],
+      "direction_raw": 6,
+      "template_token": "changeevent",
+      "template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "parameter_references": [
+        [
+          "giiru/event/event30_4",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "42d5671317884e43e07eccf39c9dd353b4a1aa91bf0b5ffc50374f5e195ee51a"
+        ]
+      ]
+    },
+    {
+      "file": "giiru/event/event30.create",
+      "ordinal": 4,
+      "start_byte": 741,
+      "end_byte": 898,
+      "block_sha256": "0443e5dc229377ba6dd5c12df6e7533f713c5ee3feea0cf3142077c596d0befd",
+      "floor": 30600,
+      "graphic_alias": 16057,
+      "borncorner_raw": [
+        15,
+        10,
+        15,
+        10
+      ],
+      "direction_raw": 6,
+      "template_token": "changeevent",
+      "template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "parameter_references": [
+        [
+          "king/event69_1",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "634ff3e405b3829da55b9291cad2f98b3fbef3567a46cc048ae52a045df324e9"
+        ]
+      ]
+    },
+    {
+      "file": "giiru/event/event30.create",
+      "ordinal": 5,
+      "start_byte": 921,
+      "end_byte": 1081,
+      "block_sha256": "e6698ee41e462a1d4883ad1358fbe4bc445b5de0f3f6af89cf393fd19ae54d56",
+      "floor": 31911,
+      "graphic_alias": 11131,
+      "borncorner_raw": [
+        10,
+        6,
+        10,
+        6
+      ],
+      "direction_raw": 6,
+      "template_token": "changeevent",
+      "template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "parameter_references": [
+        [
+          "giiru/event/event30_6",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "32c14e094fb456d348541060298f58936a7d920d5c4d4882aff421a182820291"
+        ]
+      ]
+    },
+    {
+      "file": "giiru/event/event30.create",
+      "ordinal": 6,
+      "start_byte": 1116,
+      "end_byte": 1281,
+      "block_sha256": "7ab35f733350a1bf3c14e246a53565ae9dade5d21bd41c8410802906727371d9",
+      "floor": 31909,
+      "graphic_alias": 100461,
+      "borncorner_raw": [
+        11,
+        3,
+        11,
+        3
+      ],
+      "direction_raw": 4,
+      "template_token": "npcgen_warpman",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          11
+        ]
+      ],
+      "parameter_references": [
+        [
+          "giiru/event/event30_7",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "df83e3e4fd4e8b8a4ca7ba816f6ebaf3440350cffb78cd029ab407cd85076ed2"
+        ]
+      ]
+    }
+  ],
+  "source_event_scripts": [
+    {
+      "path": "giiru/event/event30_1",
+      "sha256": "f0db13cf322115d5a862fc108b408edd9862676ee01d4c4d07ca54c2dad4fd24",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 112,
+          "start_line": 4,
+          "event_number": -1,
+          "commands": [],
+          "type": "ACCEPT",
+          "event": "ENDEV=4&ENDEV=29&ENDEV=30&ITEM!=2391&ITEM!=2392",
+          "end_byte": 458,
+          "end_line": 9,
+          "block_sha256": "97de675c474f3dc3815a82846e0f5bb3379cf2f4e86ba77ce009312502640147",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 484,
+          "start_line": 11,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 17,
+              "line_sha256": "8a1d3abf58cfed0c93dfd43aeb42d5d8147f5ec0f5b728e9b87cc7eb61a473e1",
+              "item_id": 2391,
+              "explicit_quantity": 1
+            },
+            {
+              "name": "GetItem",
+              "line": 18,
+              "line_sha256": "8aa3451998ca6db6e74f4ff1defcdbf693f4a5dc2d144d0a79536b58b235bf70",
+              "item_id": 2392,
+              "explicit_quantity": 1
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ENDEV=4&ENDEV=29&ENDEV=30&ITEM=2391&ITEM=2394",
+          "end_byte": 789,
+          "end_line": 19,
+          "block_sha256": "2ff15ec17b3949076652ebdcfb8d8ba51398541c38371781783ee3324021e5ad",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 2,
+          "start_byte": 790,
+          "start_line": 21,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "LV>79&ENDEV=4ENDEV=29&ENDEV=30&ITEM=2392",
+          "end_byte": 914,
+          "end_line": 25,
+          "block_sha256": "a9290ee748a45cd81a19de339c6d5edb0a572b5a94eb9ff3f3c29f9ba3f8eed2",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 3,
+          "start_byte": 943,
+          "start_line": 28,
+          "event_number": -1,
+          "commands": [],
+          "type": "ACCEPT",
+          "event": "ENDEV=4&ENDEV=29&ENDEV=30&ITEM=2391&ITEM!=2394",
+          "end_byte": 1206,
+          "end_line": 33,
+          "block_sha256": "aa0b899ace74253ec60ec27bc56e5e437a3fa0c337e1f6d2f7c50707e8d97376",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 4,
+          "start_byte": 1221,
+          "start_line": 36,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "GetItem",
+              "line": 42,
+              "line_sha256": "749113c85ce2a0c8e1245817a01f4437dd70975c22f006e6b394854734523683",
+              "item_id": 2549,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ENDEV=4&ENDEV=29&ENDEV=30&ITEM!=2392&ITEM!=2391",
+          "end_byte": 1679,
+          "end_line": 43,
+          "block_sha256": "2c5e1d8735b7251cc429c34b3ed097941f024cbd439583355c9973c3c0e5f685",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 5,
+          "start_byte": 1694,
+          "start_line": 46,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "ENDEV=4&NOWEV=30&ITEM=2549,ENDEV=4&ENDEV=30&ITEM=2549,ENDEV=4&NOWEV=29&NOWEV=30&ITEM=2549",
+          "end_byte": 1875,
+          "end_line": 50,
+          "block_sha256": "ec8aa1b72c541ea2b4a6c8d6d46d360d94a7596ba45a23669cf9464126f4707a",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 6,
+          "start_byte": 1886,
+          "start_line": 53,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "GetItem",
+              "line": 59,
+              "line_sha256": "749113c85ce2a0c8e1245817a01f4437dd70975c22f006e6b394854734523683",
+              "item_id": 2549,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ENDEV=4&NOWEV=30,ENDEV=4&ENDEV=30,ENDEV=4&NOWEV=29&NOWEV=30",
+          "end_byte": 2184,
+          "end_line": 60,
+          "block_sha256": "2458aaa5489e751ff6c418545e94b2f43e95c92bb8caafebb2d6451d9158efb0",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 7,
+          "start_byte": 2209,
+          "start_line": 63,
+          "event_number": 30,
+          "commands": [
+            {
+              "name": "GetItem",
+              "line": 74,
+              "line_sha256": "749113c85ce2a0c8e1245817a01f4437dd70975c22f006e6b394854734523683",
+              "item_id": 2549,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "REQUEST",
+          "event": "ENDEV=4&ENDEV!=30",
+          "end_byte": 3007,
+          "end_line": 75,
+          "block_sha256": "86cb513ef20f69f170775c153653c91cc84766017db6777fbec1e1ab56874853",
+          "other_numeric_controls": []
+        }
+      ]
+    },
+    {
+      "path": "giiru/event/event30_2",
+      "sha256": "021319aa3883ba459975af97f32a147bdc26d522433cb14cbbc1e226b62fb0ae",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 69,
+          "start_line": 4,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "ENDEV=4&ENDEV=29&ENDEV=30&NOWEV=54,ENDEV=4&ENDEV=29&ENDEV=30&ENDEV=54",
+          "end_byte": 252,
+          "end_line": 8,
+          "block_sha256": "1837f7c70e994dde760dd675691b1c4c66cad2696103be5d04d819921cfa9a53",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 273,
+          "start_line": 11,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "ENDEV=4&NOWEV=29&ENDEV=30&NOWEV=54",
+          "end_byte": 409,
+          "end_line": 15,
+          "block_sha256": "def6fd29ebfccf2513a12d15ffebafca71cd559304b9983eaad2026136592971",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 2,
+          "start_byte": 432,
+          "start_line": 18,
+          "event_number": 29,
+          "commands": [],
+          "type": "REQUEST",
+          "event": "ENDEV=4&ENDEV=30&NOWEV=54&ITEM=2548",
+          "end_byte": 875,
+          "end_line": 24,
+          "block_sha256": "524fbc4900c6e00810a9f6a3ff7b8b641d76f45c5c888eeb91caf59ce58a3e25",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 3,
+          "start_byte": 892,
+          "start_line": 27,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "ENDEV=4&NOWEV=30&NOWEV=54,ENDEV=4&ENDEV=30&NOWEV=54",
+          "end_byte": 1143,
+          "end_line": 31,
+          "block_sha256": "1d586003b0c55abd6a28c4f934d6f122e7b5dbce5f15abc08a9cbc251814dd1b",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 4,
+          "start_byte": 1164,
+          "start_line": 34,
+          "event_number": 54,
+          "commands": [],
+          "type": "REQUEST",
+          "event": "ENDEV=4&NOWEV=30",
+          "end_byte": 1552,
+          "end_line": 40,
+          "block_sha256": "5ab7d24aba1fa63285a1e376f528c008d2ffec35f9fd84d6fb10547502781cec",
+          "other_numeric_controls": []
+        }
+      ]
+    },
+    {
+      "path": "giiru/event/event30_3",
+      "sha256": "65610e3fdcebc7249d5bd6695e9656c1d84ca2b0fabff040508b8d4b9d115c4d",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 184,
+          "start_line": 5,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "ENDEV=4&ENDEV=180",
+          "end_byte": 309,
+          "end_line": 9,
+          "block_sha256": "7e79331ad0468ddbc159043e9efa1e0106fc31a9b0a0acaeee2b6344a53d98eb",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 332,
+          "start_line": 12,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "ENDEV=4&ENDEV=177&ITEM=19304&ITEM!=19292",
+          "end_byte": 512,
+          "end_line": 16,
+          "block_sha256": "317354b98ecabd7b9df074f7338310962188fedd615daf211345c6f120e811ab",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 2,
+          "start_byte": 535,
+          "start_line": 19,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "ENDEV=4&ITEM=19292",
+          "end_byte": 661,
+          "end_line": 23,
+          "block_sha256": "bf98711f3420328ae055d825f709db0fd2cb14402c899e6735332af1636b2c6c",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 3,
+          "start_byte": 680,
+          "start_line": 26,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "ENDEV=4&ENDEV=29&ENDEV=30",
+          "end_byte": 805,
+          "end_line": 30,
+          "block_sha256": "ebc590a28512a9341d8f7c6883279a98acdc608a8f5064a9ae2989bd6b081659",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 4,
+          "start_byte": 824,
+          "start_line": 33,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "ENDEV=4&ENDEV=30&NOWEV=54",
+          "end_byte": 941,
+          "end_line": 37,
+          "block_sha256": "81b1f513ebc35531b2fccb5fee2e185bbbfad14fac5221505ad88e7a700a88be",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 5,
+          "start_byte": 966,
+          "start_line": 40,
+          "event_number": -1,
+          "commands": [],
+          "type": "ACCEPT",
+          "event": "ENDEV=4&NOWEV=30&NOWEV=54",
+          "end_byte": 1433,
+          "end_line": 46,
+          "block_sha256": "b9f1c06da73b240bac5c145dc23df30e30ad299196154f4eb9ca8e8437d69a94",
+          "other_numeric_controls": []
+        }
+      ]
+    },
+    {
+      "path": "giiru/event/event30_4",
+      "sha256": "42d5671317884e43e07eccf39c9dd353b4a1aa91bf0b5ffc50374f5e195ee51a",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 193,
+          "start_line": 4,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "ENDEV=4&ENDEV=29&ENDEV=30",
+          "end_byte": 312,
+          "end_line": 8,
+          "block_sha256": "4ab32f87bf5853b123ef5792feb3fc82358f06e9138fe0397651f1cb03187d5f",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 331,
+          "start_line": 11,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "ENDEV=4&ENDEV=30&NOWEV=54",
+          "end_byte": 442,
+          "end_line": 15,
+          "block_sha256": "7a1a7dc48d0e65469c70e797713a98320f4680709f24898c2f4e7f0983092e6b",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 2,
+          "start_byte": 461,
+          "start_line": 18,
+          "event_number": -1,
+          "commands": [],
+          "type": "ACCEPT",
+          "event": "ENDEV=4&NOWEV=30&NOWEV=54",
+          "end_byte": 833,
+          "end_line": 24,
+          "block_sha256": "c7fcebee852c9034ed57d9081ac7e209ce2ca1f710e2065d2b6259ffad33b19d",
+          "other_numeric_controls": []
+        }
+      ]
+    },
+    {
+      "path": "giiru/event/event30_5",
+      "sha256": "9c1983e4b21b307cffd8f3f2e46e95a1d68e1e0769862f9c32bf5fbd1c72c8b3",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 154,
+          "start_line": 6,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 13,
+              "line_sha256": "e84162ec538d5c55cd6740f9280d9fd1c552715a4ce30e33fb3cfbc096f17d21",
+              "item_id": 2547,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ENDEV=29&NOWEV=54&ITEM=2547",
+          "end_byte": 713,
+          "end_line": 16,
+          "block_sha256": "13827e225dd1db8c248b10419d4b7ec8d2866002aabfac4693b26f2a59176004",
+          "other_numeric_controls": [
+            {
+              "name": "GetPet",
+              "value": 355
+            },
+            {
+              "name": "EndSetFlg",
+              "value": 54
+            }
+          ]
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 736,
+          "start_line": 19,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 24,
+              "line_sha256": "44221637311a0670501aca53547dcf582c28de93f623073cf6cb3afc1a7e100f",
+              "item_id": 2532,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ENDEV=29&NOWEV=54&ITEM=2532",
+          "end_byte": 976,
+          "end_line": 26,
+          "block_sha256": "7b7ab8a177feba29aaf23fe7fe43bc42e5ad022dba4b7439de9b0a178b19c599",
+          "other_numeric_controls": [
+            {
+              "name": "EndSetFlg",
+              "value": 54
+            }
+          ]
+        },
+        {
+          "ordinal": 2,
+          "start_byte": 989,
+          "start_line": 29,
+          "event_number": 54,
+          "commands": [],
+          "type": "ACCEPT",
+          "event": "NOWEV=54&ENDEV=30&ITEM=2547,NOWEV=54&ENDEV=30&ITEM=2532",
+          "end_byte": 1187,
+          "end_line": 34,
+          "block_sha256": "36995b00b585ef76439dd6139ad4733d907b7070d326177bb6b550d29639cc2e",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 3,
+          "start_byte": 1200,
+          "start_line": 37,
+          "event_number": 54,
+          "commands": [
+            {
+              "name": "GetItem",
+              "line": 43,
+              "line_sha256": "8fdb4d7088dc5158c5b9d6012743b074e15aa5e9f989dad67ca50ac44082a76a",
+              "item_id": 2532,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "NOWEV=54&ENDEV=30&ITEM!=2547,NOWEV=54&ENDEV=30&ITEM!=2532",
+          "end_byte": 1452,
+          "end_line": 44,
+          "block_sha256": "22ed7ef55b93b874f272a205bd10521a17122cec85589f1000b28559a3df5b62",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 4,
+          "start_byte": 1466,
+          "start_line": 48,
+          "event_number": 29,
+          "commands": [
+            {
+              "name": "GetItem",
+              "line": 55,
+              "line_sha256": "1602656307fb43e8762e2060efb87738e56aaead878821ee98f7dbd8e0dc62d5",
+              "item_id": 2547,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "NOWEV=30&NOWEV=54&ITEM!=2547",
+          "end_byte": 2030,
+          "end_line": 57,
+          "block_sha256": "ed99cfa961bfd5f7bb42f52e5a2bcdd597c230b9ddab72e267fea3bc6ee11860",
+          "other_numeric_controls": [
+            {
+              "name": "EndSetFlg",
+              "value": 30
+            }
+          ]
+        },
+        {
+          "ordinal": 5,
+          "start_byte": 2031,
+          "start_line": 59,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "ENDEV=30&ENDEV=54",
+          "end_byte": 2124,
+          "end_line": 63,
+          "block_sha256": "202548cee1e71bad0c7d8cb9398acf775a7bf8701246dd56bc4c1d8ad10787ee",
+          "other_numeric_controls": []
+        }
+      ]
+    },
+    {
+      "path": "giiru/event/event30_6",
+      "sha256": "32c14e094fb456d348541060298f58936a7d920d5c4d4882aff421a182820291",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 115,
+          "start_line": 4,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "ENDEV=4&ENDEV=29&ENDEV=30&NOWEV=54",
+          "end_byte": 261,
+          "end_line": 8,
+          "block_sha256": "28589979cb7e72532141afcdf5006df7b0041ecab97ea70bdc5e754d0f62a704",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 276,
+          "start_line": 11,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "GetItem",
+              "line": 21,
+              "line_sha256": "0f57b7038cba47db1c5ad431bad81c5e0ba2e48b94d07fe42312bd19ee92b5cf",
+              "item_id": 2551,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ENDEV=4&NOWEV=29&ENDEV=30&NOWEV=54",
+          "end_byte": 1266,
+          "end_line": 24,
+          "block_sha256": "75e32446c8e0ed0df0a161a1fade88600a4bac821b3b0365dee4b4c63a66a474",
+          "other_numeric_controls": [
+            {
+              "name": "EndSetFlg",
+              "value": 29
+            },
+            {
+              "name": "Charm",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "giiru/event/event30_5.old",
+      "sha256": "2034e1564d1cb464bf79df0fb02c7453c920515d60de2d76404ea1af27fb0e4f",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 159,
+          "start_line": 6,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 13,
+              "line_sha256": "d0f3045bd4f0d58981a6e23fac269ae6c017037539a6f658496dff5aa199c0fa",
+              "item_id": 2547,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ENDEV=29&NOWEV=54&ITEM=2547",
+          "end_byte": 729,
+          "end_line": 16,
+          "block_sha256": "bd22bb1780dcb706c932430a7ac7ef2017fbb402185d94498d0d075a6245a5df",
+          "other_numeric_controls": [
+            {
+              "name": "GetPet",
+              "value": 355
+            },
+            {
+              "name": "EndSetFlg",
+              "value": 54
+            }
+          ]
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 754,
+          "start_line": 19,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 24,
+              "line_sha256": "77c8692dc43a26254e8928305cea14dd6d7175d61b4fed84da62bb6c0d3b0e32",
+              "item_id": 2532,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ENDEV=30&ENDEV=54&ITEM=2532",
+          "end_byte": 988,
+          "end_line": 25,
+          "block_sha256": "338e834b4a9a8b695b6379045938fcfcc8aa369fdd77c55dd3e46039b0968a91",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 2,
+          "start_byte": 1003,
+          "start_line": 28,
+          "event_number": 54,
+          "commands": [],
+          "type": "ACCEPT",
+          "event": "NOWEV=54&ENDEV=30&ITEM=2547,NOWEV=54&ENDEV=30&ITEM=2532",
+          "end_byte": 1207,
+          "end_line": 33,
+          "block_sha256": "619fff86b8e1fbab71dc202fb36b5ee94d8f8d5e8faaa4e941e7cf85bf88255c",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 3,
+          "start_byte": 1222,
+          "start_line": 36,
+          "event_number": 54,
+          "commands": [
+            {
+              "name": "GetItem",
+              "line": 42,
+              "line_sha256": "541724ae88b460d75ba83edfd2e8ea8080638b54f56055d9c2e82c9d6ae91286",
+              "item_id": 2532,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "NOWEV=54&ENDEV=30&ITEM!=2547,NOWEV=54&ENDEV=30&ITEM!=2532",
+          "end_byte": 1482,
+          "end_line": 43,
+          "block_sha256": "16252380ebdc258f5a4386aa20e070d0ab3dcc4f4bfcbdfa9a93b417e20ade67",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 4,
+          "start_byte": 1499,
+          "start_line": 47,
+          "event_number": 29,
+          "commands": [
+            {
+              "name": "GetItem",
+              "line": 54,
+              "line_sha256": "868cf12f3622e5224f3a3c8161b54ed82be222f7dedd4351e277d1695c5a61a8",
+              "item_id": 2547,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "NOWEV=30&NOWEV=54&ITEM!=2547",
+          "end_byte": 2073,
+          "end_line": 56,
+          "block_sha256": "cd4f6992ab4fce67a94baf3a13cb027d7399550169d1590be01494ae0702d49b",
+          "other_numeric_controls": [
+            {
+              "name": "EndSetFlg",
+              "value": 30
+            }
+          ]
+        },
+        {
+          "ordinal": 5,
+          "start_byte": 2075,
+          "start_line": 58,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "ENDEV=30&ENDEV=54",
+          "end_byte": 2173,
+          "end_line": 62,
+          "block_sha256": "5522507917e20ee49235675285fff4c7ebab2e0b023ab3cdb047aacacccf8eaf",
+          "other_numeric_controls": []
+        }
+      ]
+    },
+    {
+      "path": "king/event69_1",
+      "sha256": "634ff3e405b3829da55b9291cad2f98b3fbef3567a46cc048ae52a045df324e9",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 125,
+          "start_line": 4,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "GetItem",
+              "line": 10,
+              "line_sha256": "ca55817c5f8badbd96b33f8fd840f690e464dd96d6da0c450f3e6cc174cbc0a2",
+              "item_id": 19621,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ENDEV=4&NOWEV=69&NOWEV=70&ITEM!=19621",
+          "end_byte": 484,
+          "end_line": 11,
+          "block_sha256": "2f9388f1351f8b8d9364478784ce81ef5610fc3e9094ceba1870945c95d9747f",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 511,
+          "start_line": 14,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "GetItem",
+              "line": 22,
+              "line_sha256": "ca55817c5f8badbd96b33f8fd840f690e464dd96d6da0c450f3e6cc174cbc0a2",
+              "item_id": 19621,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ENDEV=4&NOWEV=69&ITEM!=19621",
+          "end_byte": 1150,
+          "end_line": 23,
+          "block_sha256": "0fe30019e8c76b8ad42fbf9d8c030d30e0fd9f0aa03fe717e5e590792ea5aacf",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 2,
+          "start_byte": 1175,
+          "start_line": 26,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 33,
+              "line_sha256": "e84162ec538d5c55cd6740f9280d9fd1c552715a4ce30e33fb3cfbc096f17d21",
+              "item_id": 2547,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ENDEV=4&ENDEV=29&ENDEV=30&NOWEV=54&ITEM=2547",
+          "end_byte": 1712,
+          "end_line": 36,
+          "block_sha256": "fb7b05de2f4e424e1288a603d3e0db1f6d9e19ae675ae2dafb2449a4d244a05f",
+          "other_numeric_controls": [
+            {
+              "name": "GetPet",
+              "value": 355
+            },
+            {
+              "name": "EndSetFlg",
+              "value": 54
+            }
+          ]
+        },
+        {
+          "ordinal": 3,
+          "start_byte": 1733,
+          "start_line": 39,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 44,
+              "line_sha256": "44221637311a0670501aca53547dcf582c28de93f623073cf6cb3afc1a7e100f",
+              "item_id": 2532,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ENDEV=4&ENDEV=29&ENDEV=30&NOWEV=54&ITEM=2532",
+          "end_byte": 1974,
+          "end_line": 46,
+          "block_sha256": "844eebb6b0b836c4e7778e4e6414e3c8cea78fa1c5fa11c0fe33ca625e778379",
+          "other_numeric_controls": [
+            {
+              "name": "EndSetFlg",
+              "value": 54
+            }
+          ]
+        },
+        {
+          "ordinal": 4,
+          "start_byte": 1995,
+          "start_line": 49,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "ENDEV=4&ENDEV=30&NOWEV=54&ITEM=2532,ENDEV=4&ENDEV=30&NOWEV=54&ITEM=2547",
+          "end_byte": 2262,
+          "end_line": 53,
+          "block_sha256": "63db639be725e0dfc6faa91b104ab6bbf18dc3db3e50eeeb16bebfbf766eaf73",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 5,
+          "start_byte": 2285,
+          "start_line": 56,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "GetItem",
+              "line": 63,
+              "line_sha256": "8fdb4d7088dc5158c5b9d6012743b074e15aa5e9f989dad67ca50ac44082a76a",
+              "item_id": 2532,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ENDEV=4&ENDEV=30&NOWEV=54&ITEM!=2547",
+          "end_byte": 2639,
+          "end_line": 64,
+          "block_sha256": "15a249a63f2144d557c6ea814e646309e25202d7b29b2b7c2add485cacfac4ee",
+          "other_numeric_controls": []
+        },
+        {
+          "ordinal": 6,
+          "start_byte": 2656,
+          "start_line": 67,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "GetItem",
+              "line": 74,
+              "line_sha256": "1602656307fb43e8762e2060efb87738e56aaead878821ee98f7dbd8e0dc62d5",
+              "item_id": 2547,
+              "explicit_quantity": null
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ENDEV=4&NOWEV=30&NOWEV=54",
+          "end_byte": 3164,
+          "end_line": 76,
+          "block_sha256": "061dd22425f38f3a85252437eaa945c08c42ec07ce22f854d5b6b16996497265",
+          "other_numeric_controls": [
+            {
+              "name": "EndSetFlg",
+              "value": 30
+            }
+          ]
+        },
+        {
+          "ordinal": 7,
+          "start_byte": 3179,
+          "start_line": 79,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "ENDEV=4",
+          "end_byte": 3367,
+          "end_line": 83,
+          "block_sha256": "6f01686410627f57e45fcd76dff07a0252179ac2281b2f09a0fa116a4e9434f0",
+          "other_numeric_controls": []
+        }
+      ]
+    }
+  ],
+  "source_warp_controls": [
+    {
+      "name": "FREE",
+      "raw": "LV>0"
+    },
+    {
+      "name": "WARP",
+      "raw": "31910,10,14"
+    },
+    {
+      "name": "FREE",
+      "raw": "ENDEV=4&NOWEV=29&ENDEV=30&NOWEV=54&ITEM=2548"
+    }
+  ],
+  "source_item_evidence": [
+    {
+      "item_id": 2391,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset0710.txt",
+          "bytes": 186,
+          "sha256": "2540f2c0064c8311a2c6a3639db35ba20978c235f67f3ad5b3c1320536c6a56c"
+        }
+      ],
+      "source_name_sha256": "826ae97404ba96e0f7bf11154ab19c740ca1edfd44868afffd934076c1597cae",
+      "source_image_alias": 23903,
+      "source_item01_numeric_row": [
+        2391,
+        null,
+        "2540f2c0064c8311a2c6a3639db35ba20978c235f67f3ad5b3c1320536c6a56c",
+        null,
+        23903,
+        "0",
+        "16",
+        "0",
+        null,
+        "TW1_INDEX_NOT_FOUND",
+        null
+      ],
+      "source_icon_status": "NOT_IN_RETAIL_INDEX",
+      "qualified_icon_present": false
+    },
+    {
+      "item_id": 2392,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 197,
+          "sha256": "6365a3005a3bfaffea0439a001d22e54c316832c31de21912ba1d9f3936debb7"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 197,
+          "sha256": "6365a3005a3bfaffea0439a001d22e54c316832c31de21912ba1d9f3936debb7"
+        }
+      ],
+      "source_name_sha256": "5e6a9e13ad6424dabc53c60a828f4001dbb7b39e894c1e7881e35b9ddef66f5c",
+      "source_image_alias": 24222,
+      "source_item01_numeric_row": [
+        2392,
+        "6365a3005a3bfaffea0439a001d22e54c316832c31de21912ba1d9f3936debb7",
+        "6365a3005a3bfaffea0439a001d22e54c316832c31de21912ba1d9f3936debb7",
+        24222,
+        24222,
+        "0",
+        "16",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 24222,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "25bf791b5810a7462c63b8c0b696d2f5a1676f2f983030f9b8009ad5813205a5",
+        "retail_ADRN_ordinal": 6716,
+        "physical_bitmap_number": 6716,
+        "source_offset_original": -13,
+        "source_offset_y_original": -20,
+        "source_width": 28,
+        "source_height": 39,
+        "original_RD_bytes": 646,
+        "original_RD_SHA256": "d519e1dbfcf21cb23c7850eb741381698dc0ebd7437d69d68d877b0ad7cf8052",
+        "original_indexed_pixel_SHA256": "1effa165ba143f54cd79bd43bf780879f5016a7eb51c2bd5529e2913e97e91c2",
+        "candidate_RGBA_SHA256": "776d1549e59cdbb726a0a8bda2656251b917fe02375617cf39be574af6a683bf",
+        "candidate_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1",
+        "private_PNG": "alias-24222.png"
+      },
+      "qualified_icon_present": true
+    },
+    {
+      "item_id": 2394,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 191,
+          "sha256": "b814f02d142023827fe56e636c169c6116db3d3f54a1234651bb39654e0c5c0d"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 191,
+          "sha256": "b814f02d142023827fe56e636c169c6116db3d3f54a1234651bb39654e0c5c0d"
+        }
+      ],
+      "source_name_sha256": "5e6a9e13ad6424dabc53c60a828f4001dbb7b39e894c1e7881e35b9ddef66f5c",
+      "source_image_alias": 24222,
+      "source_item01_numeric_row": [
+        2394,
+        "b814f02d142023827fe56e636c169c6116db3d3f54a1234651bb39654e0c5c0d",
+        "b814f02d142023827fe56e636c169c6116db3d3f54a1234651bb39654e0c5c0d",
+        24222,
+        24222,
+        "0",
+        "16",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 24222,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "25bf791b5810a7462c63b8c0b696d2f5a1676f2f983030f9b8009ad5813205a5",
+        "retail_ADRN_ordinal": 6716,
+        "physical_bitmap_number": 6716,
+        "source_offset_original": -13,
+        "source_offset_y_original": -20,
+        "source_width": 28,
+        "source_height": 39,
+        "original_RD_bytes": 646,
+        "original_RD_SHA256": "d519e1dbfcf21cb23c7850eb741381698dc0ebd7437d69d68d877b0ad7cf8052",
+        "original_indexed_pixel_SHA256": "1effa165ba143f54cd79bd43bf780879f5016a7eb51c2bd5529e2913e97e91c2",
+        "candidate_RGBA_SHA256": "776d1549e59cdbb726a0a8bda2656251b917fe02375617cf39be574af6a683bf",
+        "candidate_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1",
+        "private_PNG": "alias-24222.png"
+      },
+      "qualified_icon_present": true
+    },
+    {
+      "item_id": 2532,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 229,
+          "sha256": "22e35523ffd4478c953dac5b6fc651b73b6df67b140b4611b0522cd12e0d196d"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 229,
+          "sha256": "22e35523ffd4478c953dac5b6fc651b73b6df67b140b4611b0522cd12e0d196d"
+        }
+      ],
+      "source_name_sha256": "31ab2bad29768a8ee26f61f8629e364a20e9311ceb96b343ff0b9d36b12ab909",
+      "source_image_alias": 24142,
+      "source_item01_numeric_row": [
+        2532,
+        "22e35523ffd4478c953dac5b6fc651b73b6df67b140b4611b0522cd12e0d196d",
+        "22e35523ffd4478c953dac5b6fc651b73b6df67b140b4611b0522cd12e0d196d",
+        24142,
+        24142,
+        "0",
+        "15",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 24142,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "acc64a8168b992e6ba4454069bd78ffb75e3302b14654969c1b08dc11dced555",
+        "retail_ADRN_ordinal": 6814,
+        "physical_bitmap_number": 6814,
+        "source_offset_original": -21,
+        "source_offset_y_original": -15,
+        "source_width": 44,
+        "source_height": 33,
+        "original_RD_bytes": 1148,
+        "original_RD_SHA256": "4cf4ea1b531863132428d8f05269c0574892a0a4497dad4ea85b7552cd68a532",
+        "original_indexed_pixel_SHA256": "adc0a6947c3de0fac9bcd31c1223346c95202ac207f35c1d16557516c7ada960",
+        "candidate_RGBA_SHA256": "2f38b4a3ba7869b607246434d824d7918b64bc8810d96436cce9dbcd162a8e9f",
+        "candidate_PNG_SHA256": "e1bb929cf921d78ca68c51f5d4f813c6ed3dcea05113f478c084c3171deb82d7",
+        "private_PNG": "alias-24142.png"
+      },
+      "qualified_icon_present": true
+    },
+    {
+      "item_id": 2547,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 233,
+          "sha256": "4c9f1dc37c4851989fbbe2e448d5ae37fb8e72d596b9361b9e7155edfbc802c5"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 233,
+          "sha256": "4c9f1dc37c4851989fbbe2e448d5ae37fb8e72d596b9361b9e7155edfbc802c5"
+        }
+      ],
+      "source_name_sha256": "31ab2bad29768a8ee26f61f8629e364a20e9311ceb96b343ff0b9d36b12ab909",
+      "source_image_alias": 24142,
+      "source_item01_numeric_row": [
+        2547,
+        "4c9f1dc37c4851989fbbe2e448d5ae37fb8e72d596b9361b9e7155edfbc802c5",
+        "4c9f1dc37c4851989fbbe2e448d5ae37fb8e72d596b9361b9e7155edfbc802c5",
+        24142,
+        24142,
+        "50000",
+        "15",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 24142,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "acc64a8168b992e6ba4454069bd78ffb75e3302b14654969c1b08dc11dced555",
+        "retail_ADRN_ordinal": 6814,
+        "physical_bitmap_number": 6814,
+        "source_offset_original": -21,
+        "source_offset_y_original": -15,
+        "source_width": 44,
+        "source_height": 33,
+        "original_RD_bytes": 1148,
+        "original_RD_SHA256": "4cf4ea1b531863132428d8f05269c0574892a0a4497dad4ea85b7552cd68a532",
+        "original_indexed_pixel_SHA256": "adc0a6947c3de0fac9bcd31c1223346c95202ac207f35c1d16557516c7ada960",
+        "candidate_RGBA_SHA256": "2f38b4a3ba7869b607246434d824d7918b64bc8810d96436cce9dbcd162a8e9f",
+        "candidate_PNG_SHA256": "e1bb929cf921d78ca68c51f5d4f813c6ed3dcea05113f478c084c3171deb82d7",
+        "private_PNG": "alias-24142.png"
+      },
+      "qualified_icon_present": true
+    },
+    {
+      "item_id": 2548,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 191,
+          "sha256": "ec947bac68e629fbaeb56676be9a28a61d7072cfe19dcd774f40219e164decbf"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 191,
+          "sha256": "ec947bac68e629fbaeb56676be9a28a61d7072cfe19dcd774f40219e164decbf"
+        }
+      ],
+      "source_name_sha256": "d55e9e61818348ab89848fe1acddbc67e58e34672f619e63f60cb221c0d6efba",
+      "source_image_alias": 24058,
+      "source_item01_numeric_row": [
+        2548,
+        "ec947bac68e629fbaeb56676be9a28a61d7072cfe19dcd774f40219e164decbf",
+        "ec947bac68e629fbaeb56676be9a28a61d7072cfe19dcd774f40219e164decbf",
+        24058,
+        24058,
+        "0",
+        "16",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 24058,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "549cb89f7a161facc3f36e1451f97a18339d0f2fee36fa46bc0a4f67d31de26c",
+        "retail_ADRN_ordinal": 6768,
+        "physical_bitmap_number": 6768,
+        "source_offset_original": -10,
+        "source_offset_y_original": -10,
+        "source_width": 20,
+        "source_height": 22,
+        "original_RD_bytes": 373,
+        "original_RD_SHA256": "d1e68b865722eb1caac31a35f3bc29c8f968edeb8d393b4b1dce3282b69d1a20",
+        "original_indexed_pixel_SHA256": "6a1ea6b33443d029d272a08e835060dfbdb7b79d0e74ba2be448b14df0865aa8",
+        "candidate_RGBA_SHA256": "2dbc34a8a36e0d5c478c8fa1f98e242f4ce38a7652fc011a04bc761040ada429",
+        "candidate_PNG_SHA256": "e030b16e5da252cd4252304f56ec87446943f83338d7bae965922e9157e982d5",
+        "private_PNG": "alias-24058.png"
+      },
+      "qualified_icon_present": true
+    },
+    {
+      "item_id": 2549,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 199,
+          "sha256": "1e4c150dc863569b6e7cf0983cb6d88b31edaad9ac4598f5d79eef0cbaf47eee"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 199,
+          "sha256": "1e4c150dc863569b6e7cf0983cb6d88b31edaad9ac4598f5d79eef0cbaf47eee"
+        }
+      ],
+      "source_name_sha256": "bf11e01fe7342c97ee733fd63b0e14c604d336b8c0bc68aafe0f5cb693385717",
+      "source_image_alias": 24112,
+      "source_item01_numeric_row": [
+        2549,
+        "1e4c150dc863569b6e7cf0983cb6d88b31edaad9ac4598f5d79eef0cbaf47eee",
+        "1e4c150dc863569b6e7cf0983cb6d88b31edaad9ac4598f5d79eef0cbaf47eee",
+        24112,
+        24112,
+        "0",
+        "16",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 24112,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "3ac6a2f907ca649c05bf77db90a3499fcba367226f0c51b4d33f34d8f97685ff",
+        "retail_ADRN_ordinal": 6792,
+        "physical_bitmap_number": 6792,
+        "source_offset_original": -16,
+        "source_offset_y_original": -14,
+        "source_width": 36,
+        "source_height": 27,
+        "original_RD_bytes": 643,
+        "original_RD_SHA256": "46f27ff42cd6160dae4330f97bc29305cbe463dc63af77f6929a62f9577fd39d",
+        "original_indexed_pixel_SHA256": "604c467f4d5de04dc8ecdf31d36293bd5af970cb2dbbed15f55396c198280649",
+        "candidate_RGBA_SHA256": "4c9d7a45f1bfc2ecfc97c3e081cdc8f6fe0c4851bd445868bdcf7f207bdabffb",
+        "candidate_PNG_SHA256": "e1a626cfe7841b39b9df82768753f679a7d64fd3bca1eefc3dea87dca0e9c49f",
+        "private_PNG": "alias-24112.png"
+      },
+      "qualified_icon_present": true
+    },
+    {
+      "item_id": 2551,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 274,
+          "sha256": "7c3bf32a8370325f27d8774a633a333114cfa87aefd4b5f858e48b421f22e1d4"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 274,
+          "sha256": "7c3bf32a8370325f27d8774a633a333114cfa87aefd4b5f858e48b421f22e1d4"
+        }
+      ],
+      "source_name_sha256": "0ba6426aae0aad5e54e5c7a65630d55915ff880be57dde8523a572f29ba0675d",
+      "source_image_alias": 21042,
+      "source_item01_numeric_row": [
+        2551,
+        "7c3bf32a8370325f27d8774a633a333114cfa87aefd4b5f858e48b421f22e1d4",
+        "7c3bf32a8370325f27d8774a633a333114cfa87aefd4b5f858e48b421f22e1d4",
+        21042,
+        21042,
+        "20000",
+        "7",
+        "40",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 21042,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "1acaf05888f9b9db0bb64a9f92f6fbdddc42513b82c0f6e6e1d023964de68644",
+        "retail_ADRN_ordinal": 6343,
+        "physical_bitmap_number": 6343,
+        "source_offset_original": -13,
+        "source_offset_y_original": -24,
+        "source_width": 32,
+        "source_height": 46,
+        "original_RD_bytes": 1180,
+        "original_RD_SHA256": "f0be060f90498ea3910df647c88dd3b57423e77188d6f7a626031f378723a275",
+        "original_indexed_pixel_SHA256": "45e2879f7075b9b4c2e430e2daf27e7f6be581e9b5dfe1c18525f779fd6e9706",
+        "candidate_RGBA_SHA256": "67e4b2fef32ac4006d7cbb4b03cecaebf31e2da6ebbbeca6e14f916da56eb9bb",
+        "candidate_PNG_SHA256": "d3fb1f38d192b7435d4007d439d47fd234f415ed2d388d318fdf1f4e0786ef8f",
+        "private_PNG": "alias-21042.png"
+      },
+      "qualified_icon_present": true
+    },
+    {
+      "item_id": 19292,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 204,
+          "sha256": "581e2545cc246370bf564662ca84bfbd4c0f34fbeb5a8c0d977e443466aa67a9"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 204,
+          "sha256": "581e2545cc246370bf564662ca84bfbd4c0f34fbeb5a8c0d977e443466aa67a9"
+        }
+      ],
+      "source_name_sha256": "1b4d948ab054d37bc6957a3a2ed9d2e08ffd9b831b904a155d6c685bd832bd57",
+      "source_image_alias": 22011,
+      "source_item01_numeric_row": [
+        19292,
+        "581e2545cc246370bf564662ca84bfbd4c0f34fbeb5a8c0d977e443466aa67a9",
+        "581e2545cc246370bf564662ca84bfbd4c0f34fbeb5a8c0d977e443466aa67a9",
+        22011,
+        22011,
+        "0",
+        "16",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 22011,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "4b0f1a265642228566171be909561b13333aef1f89dc8c7ece5a7ef694ed87b0",
+        "retail_ADRN_ordinal": 6478,
+        "physical_bitmap_number": 6478,
+        "source_offset_original": -18,
+        "source_offset_y_original": -14,
+        "source_width": 40,
+        "source_height": 30,
+        "original_RD_bytes": 750,
+        "original_RD_SHA256": "31998fca4d0374bf93865d9fb7b6cf828abf7514115d67799f4c4c58b51e6231",
+        "original_indexed_pixel_SHA256": "e124b86553de6a0f974cfca8f1fa88daf09d0d4db30790f64db1f51bb3b51dc7",
+        "candidate_RGBA_SHA256": "783a7b53d6a3a5279db3ea3e8f668f654fb46d9d23462a250e949ddb49f67ea4",
+        "candidate_PNG_SHA256": "dd7d2f41d05bf8eabea43e346f42e38a103f6cb7d49fcf148c1745697803e6dd",
+        "private_PNG": "alias-22011.png"
+      },
+      "qualified_icon_present": true
+    },
+    {
+      "item_id": 19304,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 214,
+          "sha256": "be33e31a80c60985399e6bec4f20d0ba335f3fb3576d7d077603901d7853f459"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 214,
+          "sha256": "be33e31a80c60985399e6bec4f20d0ba335f3fb3576d7d077603901d7853f459"
+        }
+      ],
+      "source_name_sha256": "5c40c5746f0383290c0184d5dcd3fc3a8dc6d72970608332eaa64637a6e84efd",
+      "source_image_alias": 24222,
+      "source_item01_numeric_row": [
+        19304,
+        "be33e31a80c60985399e6bec4f20d0ba335f3fb3576d7d077603901d7853f459",
+        "be33e31a80c60985399e6bec4f20d0ba335f3fb3576d7d077603901d7853f459",
+        24222,
+        24222,
+        "0",
+        "16",
+        "0",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        "REAL_RD_DECODED_CROSS_CARRIER",
+        []
+      ],
+      "source_icon_receipt": {
+        "source_itemset_image_number_alias": 24222,
+        "tw1_retail_original_ADRN_record_matches": 1,
+        "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+        "original_ADRN_record_SHA256": "25bf791b5810a7462c63b8c0b696d2f5a1676f2f983030f9b8009ad5813205a5",
+        "retail_ADRN_ordinal": 6716,
+        "physical_bitmap_number": 6716,
+        "source_offset_original": -13,
+        "source_offset_y_original": -20,
+        "source_width": 28,
+        "source_height": 39,
+        "original_RD_bytes": 646,
+        "original_RD_SHA256": "d519e1dbfcf21cb23c7850eb741381698dc0ebd7437d69d68d877b0ad7cf8052",
+        "original_indexed_pixel_SHA256": "1effa165ba143f54cd79bd43bf780879f5016a7eb51c2bd5529e2913e97e91c2",
+        "candidate_RGBA_SHA256": "776d1549e59cdbb726a0a8bda2656251b917fe02375617cf39be574af6a683bf",
+        "candidate_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1",
+        "private_PNG": "alias-24222.png"
+      },
+      "qualified_icon_present": true
+    },
+    {
+      "item_id": 19621,
+      "source_row_reconstructions": [
+        {
+          "table": "itemset.txt",
+          "bytes": 209,
+          "sha256": "e5fccde0391f10fdd27b4eaaea4ec20ffe56b4e6d6834143c1bfa0aad8e53992"
+        },
+        {
+          "table": "itemset0710.txt",
+          "bytes": 209,
+          "sha256": "e5fccde0391f10fdd27b4eaaea4ec20ffe56b4e6d6834143c1bfa0aad8e53992"
+        }
+      ],
+      "source_name_sha256": "da4e517ec2912fe747cf24b1efa8ec21cf6289c24e52eb4d965856b5d5af3bdf",
+      "source_image_alias": 24320,
+      "source_item01_numeric_row": [
+        19621,
+        "e5fccde0391f10fdd27b4eaaea4ec20ffe56b4e6d6834143c1bfa0aad8e53992",
+        "e5fccde0391f10fdd27b4eaaea4ec20ffe56b4e6d6834143c1bfa0aad8e53992",
+        24320,
+        24320,
+        "65",
+        "16",
+        "0",
+        "TW1_INDEX_NOT_FOUND",
+        "TW1_INDEX_NOT_FOUND",
+        []
+      ],
+      "source_icon_status": "NOT_IN_RETAIL_INDEX",
+      "qualified_icon_present": false
+    }
+  ],
+  "source_map_observations": [
+    {
+      "floor": 5005,
+      "source_DAT_sha256": "924a7fde21d67d7019addba05d8435fc9c4cf14615abab593dc34429113be6f3",
+      "source_DAT_bytes": 7208,
+      "geometry": [
+        40,
+        30
+      ],
+      "prior_MAP09_thumbnail_sha256": "59bce7b7e88a96c0ff58288a1ce4d6fd36def00dbc14c0759215e6b8f7c26986",
+      "marked_thumbnail_sha256": "9df6ebaa609d2bbcf1f5065a21129da658741cbe06953eab96c48fee39bfe08f",
+      "source_points": [
+        {
+          "source_create_ordinal_or_target": 3,
+          "xy": [
+            19,
+            15
+          ],
+          "original_three_u16_values": [
+            4521,
+            0,
+            49152
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 5106,
+      "source_DAT_sha256": "fae3d3867e54557ad6bcb6ab54b0b33eedc9da31f93527fd0f6db107912ec619",
+      "source_DAT_bytes": 9008,
+      "geometry": [
+        30,
+        50
+      ],
+      "prior_MAP09_thumbnail_sha256": "b6bb88e20a0d7fb8c274b22d9fa0f9cacd6e606d4227971b555965c8e303d71a",
+      "marked_thumbnail_sha256": "0c47e73325c952eee790b2d37db04947155677e27da4916806acf6b3f0571d39",
+      "source_points": [
+        {
+          "source_create_ordinal_or_target": 2,
+          "xy": [
+            25,
+            15
+          ],
+          "original_three_u16_values": [
+            4519,
+            0,
+            49152
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 30600,
+      "source_DAT_sha256": "33578e416a9eb066e46e66c688d401d2ad6e13f7520cf907f2322db9df062004",
+      "source_DAT_bytes": 5408,
+      "geometry": [
+        30,
+        30
+      ],
+      "prior_MAP09_thumbnail_sha256": "e2c36acb643b4466ad17cba33ba8967101388379b76a6c775eb0d918094fbbe9",
+      "marked_thumbnail_sha256": "be98a81f68063bd8b5159ada7f52712358c2230587b242feb34427f8e3c3739b",
+      "source_points": [
+        {
+          "source_create_ordinal_or_target": 4,
+          "xy": [
+            15,
+            10
+          ],
+          "original_three_u16_values": [
+            4527,
+            0,
+            49152
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 31902,
+      "source_DAT_sha256": "27bc3d9573207552813469ba197ed4da5b8ad3de8e3f3a94219fc09ff389ad49",
+      "source_DAT_bytes": 908,
+      "geometry": [
+        15,
+        10
+      ],
+      "prior_MAP09_thumbnail_sha256": "658769793bff3ad401dfc20573e5849c3beaf2a95f9e016d2849d6b226c5b152",
+      "marked_thumbnail_sha256": "bfb514b15abdf0dd07efb41335a7481e6588c969e2ee48acda62559fce017bdf",
+      "source_points": [
+        {
+          "source_create_ordinal_or_target": 0,
+          "xy": [
+            9,
+            7
+          ],
+          "original_three_u16_values": [
+            4072,
+            12802,
+            49152
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 31909,
+      "source_DAT_sha256": "cb3cdc2dc47ba7219dfebca887ac6ef44b164fd0573d5adcf297da59740ec2f7",
+      "source_DAT_bytes": 3608,
+      "geometry": [
+        20,
+        30
+      ],
+      "prior_MAP09_thumbnail_sha256": "08b0db504f0932d4a14b1406a6a423d09b48427b5dd2007cfb1ce782b9ecca47",
+      "marked_thumbnail_sha256": "0442654678c9cfba7711af1aecce38a37df657136bce33fe5a3ce6b734ce888c",
+      "source_points": [
+        {
+          "source_create_ordinal_or_target": 1,
+          "xy": [
+            10,
+            8
+          ],
+          "original_three_u16_values": [
+            4004,
+            0,
+            49152
+          ]
+        },
+        {
+          "source_create_ordinal_or_target": 6,
+          "xy": [
+            11,
+            3
+          ],
+          "original_three_u16_values": [
+            4004,
+            0,
+            49152
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 31910,
+      "source_DAT_sha256": "ba569d55c7fa4b0412edf23437511338beca30de56b8d983ebd01173519a860f",
+      "source_DAT_bytes": 2408,
+      "geometry": [
+        20,
+        20
+      ],
+      "prior_MAP09_thumbnail_sha256": "1b0b9a7024c5e12a7a1b244dba391cefd6320373e30f15287b7b3055602aeff4",
+      "marked_thumbnail_sha256": "975d07cb621275bfcb17723627d3ce3b791fad7b8cea12a21d0a2594c6944e8e",
+      "source_points": [
+        {
+          "source_create_ordinal_or_target": "WARP_TARGET",
+          "xy": [
+            10,
+            14
+          ],
+          "original_three_u16_values": [
+            4006,
+            0,
+            49152
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 31911,
+      "source_DAT_sha256": "aaedac3493747974fb889240380b4b39c381c4de4db91715de17adb47bfba276",
+      "source_DAT_bytes": 2408,
+      "geometry": [
+        20,
+        20
+      ],
+      "prior_MAP09_thumbnail_sha256": "27f1c45c77d3dc7677debfe8aaff7c14228b56052573388af974d3ac3258c5f8",
+      "marked_thumbnail_sha256": "1c5b3699548124792c81a4c36384654853837dc38d4ac54b7ea5a6f9039cab03",
+      "source_points": [
+        {
+          "source_create_ordinal_or_target": 5,
+          "xy": [
+            10,
+            6
+          ],
+          "original_three_u16_values": [
+            4005,
+            0,
+            49152
+          ]
+        }
+      ]
+    }
+  ],
+  "private_item_archive_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+  "private_map_archive_sha256": "d84d0800dd600798769dfb7251a1d7816588ac061ccc27812ac64a37922d4a8a",
+  "derived_input_blobs": {
+    "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json": "137580e7c25aadf3d679b6ebfb5080b79912cc4f",
+    "research/recovered/STONEAGE-O24-TWO-TOWN-EVENT-SOURCE-R1.json": "eb8871634e64745e547c66bc60fff3b45e093fa6",
+    "research/recovered/STONEAGE-O32-CONTINUOUS-FLOWER-QUEST-R1.json": "a3a79464a3b7314e631d5adf524d448c86cb68d7",
+    "research/recovered/STONEAGE-GAMEPLAY07-GETPET-NPCENEMY-ORIGINAL-SKILL-SOURCE-R1.json": "6218d88450953684dafcf19a9f85ba94d907772a",
+    "research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-02-R1.json": "b91bc8335db508998f4595144ce371979ea8c849",
+    "research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-07-R1.json": "dbb958e77aed796faf86570c7523d3f0dc5748fd"
+  },
+  "boundaries": {
+    "native_execution_verified": false,
+    "complete_deployed_quest_chain_verified": false,
+    "official_origin_verified": false,
+    "runtime_condition_syntax_repaired": false,
+    "unreferenced_script_claimed_active": false,
+    "template355_pet_species_verified": false,
+    "new_original_RD_decodes": false,
+    "new_full_map_canvas_rendered": false,
+    "original_NPC_sprites_drawn": false,
+    "same_official_deployment_verified": false
+  },
+  "status": {
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  }
+}
