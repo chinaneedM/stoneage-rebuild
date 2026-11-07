@@ -1,0 +1,274 @@
+{
+  "schema": "stoneage.scene26.r3.npc16122_16127.original_alias_crossversion.r1",
+  "date": "2026-11-07",
+  "baseline_main_head": "ff08258e3b6fed497b70c291f3bbe400148055e7",
+  "baseline_main_tree": "6665e7f4d4ec4c34628cb21c4eb3cae18e636439",
+  "CURRENT_original_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "source_scope": "LATER_MIXED25_NPC_CREATE_VERSUS_INDEPENDENT_TW10_CN50_PATCH129_CLIENT_RESOURCES",
+  "upstream": [
+    {
+      "path": "research/recovered/STONEAGE-SCENE26-R2-FOUR-ORIGINAL-PET-TUTOR-ROOMS-SOURCE-R1.json",
+      "git_blob": "3446a7006478a748d2f273c85822df84ace893a0"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-04-SAME-CARRIER-GRAPHIC-FUNCTION-JOIN-R1.json",
+      "git_blob": "1c564b07e829bce8360f57e63d32866c03e225e3"
+    },
+    {
+      "path": "research/recovered/logical-alias-catalog-r1/REPORT-R1.json",
+      "git_blob": "3a694c3e6dc2f8bef291381674c53667c9a60507"
+    }
+  ],
+  "source_job": {
+    "branch_head": "0d70b1d0b9276487166a91615b6eb1226c1d91a3",
+    "run_id": 42383014954,
+    "job_id": 128434443556,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "source_original_NPC_CREATE": {
+    "four_pet_tutor_floors": [
+      {
+        "floor": 1003,
+        "graphicname": 16122,
+        "borncenter": [
+          19,
+          15
+        ],
+        "create_ordinal": 4,
+        "original_DAT_sha256": "fc3037a1850c8baf06ad5874a4cb49ca5e13e9315c020f64c019417c33b694e6"
+      },
+      {
+        "floor": 2003,
+        "graphicname": 16127,
+        "borncenter": [
+          11,
+          12
+        ],
+        "create_ordinal": 5,
+        "original_DAT_sha256": "054da66fc1f28133c3b1327b995cb704b3f95473b080bcbe2b14ddba6b851920"
+      },
+      {
+        "floor": 3003,
+        "graphicname": 16122,
+        "borncenter": [
+          16,
+          19
+        ],
+        "create_ordinal": 6,
+        "original_DAT_sha256": "f6ad234ac023a105ee0e44804df6d61a9125c05f9e063c57a6178351d962d827"
+      },
+      {
+        "floor": 4003,
+        "graphicname": 16122,
+        "borncenter": [
+          14,
+          17
+        ],
+        "create_ordinal": 7,
+        "original_DAT_sha256": "0a9fa2a089b6936e86eea458bca464038b8d5cb7fee057b9d2b393ffc6c6d6d4"
+      }
+    ],
+    "other_original_CREATE_counts_with_source_numeric_graphics": [
+      [
+        16122,
+        4
+      ],
+      [
+        16127,
+        2
+      ]
+    ],
+    "exact_16122_16127_in_source_SPR_index": false
+  },
+  "derived_original_reference_query": {
+    "catalog_report_git_sha256": "e5dc7249b20a60b13fc4bf12b299d4a6f386fcb928d5d8843017ded58f9c1951",
+    "compressed_REFERENCES_SHA256": "3092102e3ee83524ccbf27414ce0cf5bc5579d9a5c8638bfa073f9e62a4db1ea",
+    "not_proven": {
+      "NPC_graphic_is_rendered_by_original_client": true,
+      "later_NPC_config_official_same_build_as_TW10": true,
+      "missing_alias_in_some_catalog_proves_early_asset_never_existed": true,
+      "original_sprite_or_NPC_identity_from_client_bitmap_alone": true,
+      "physical_bitmap_identifier_is_logical_alias": true
+    },
+    "original_alias_catalog_source": "stoneage.crossversion_logical_alias_catalog.r1",
+    "original_derived_reference_count": 43632,
+    "schema": "stoneage.original_NPC16122_16127_derived_alias_probe.r1",
+    "sources": {
+      "16122": {
+        "logical_alias_entries": [
+          {
+            "content": {
+              "bytes": 1930,
+              "content_id": 13067,
+              "profiles": "CN50|PATCH129",
+              "rd_height": 87,
+              "rd_sha256": "70e97c406b2ac784a5b0e0cac7906ab8b044f6f4b9ebe14a92b4e727eb250022",
+              "rd_width": 32,
+              "reference_count": 2
+            },
+            "reference": {
+              "adrn_offset": 748989960,
+              "adrn_size": 1930,
+              "alias_evidence": "ORIGINAL_SNAPSHOT",
+              "attr_sha256": "073898e66898fbc9c1171014cae6cc14b6fc34455d4545c7ef1aeb419a5606f8",
+              "catalog_rd_qualification": "PRIOR_ORIGINAL_BLOCK_HASH",
+              "content_id": 13067,
+              "height": 87,
+              "logical_alias": 16122,
+              "physical_bitmapno": 232699,
+              "profile": "CN50",
+              "record_sha256": "",
+              "source_index": 232699,
+              "source_rd_status": "PRIOR_ORIGINAL_BLOCK_METADATA",
+              "width": 32,
+              "xoff": -16,
+              "yoff": -75
+            },
+            "role": "UNKNOWN_RESOURCE_ALIAS"
+          },
+          {
+            "content": {
+              "bytes": 1930,
+              "content_id": 13067,
+              "profiles": "CN50|PATCH129",
+              "rd_height": 87,
+              "rd_sha256": "70e97c406b2ac784a5b0e0cac7906ab8b044f6f4b9ebe14a92b4e727eb250022",
+              "rd_width": 32,
+              "reference_count": 2
+            },
+            "reference": {
+              "adrn_offset": 748989960,
+              "adrn_size": 1930,
+              "alias_evidence": "ORIGINAL_COMPLETE_OCCURRENCE_TABLE",
+              "attr_sha256": "073898e66898fbc9c1171014cae6cc14b6fc34455d4545c7ef1aeb419a5606f8",
+              "catalog_rd_qualification": "MATCHING_RD_HEADER",
+              "content_id": 13067,
+              "height": 87,
+              "logical_alias": 16122,
+              "physical_bitmapno": 232699,
+              "profile": "PATCH129",
+              "record_sha256": "bcb5002755d00dba0061123a01195fc2eedbcec6fd4a390273dd3f1d1db01110",
+              "source_index": 232699,
+              "source_rd_status": "HEADER_MATCH",
+              "width": 32,
+              "xoff": -16,
+              "yoff": -75
+            },
+            "role": "UNKNOWN_RESOURCE_ALIAS"
+          }
+        ],
+        "logical_alias_is_not_physical_bitmapno": true,
+        "logical_alias_occurrences": 2,
+        "same_integer_physical_entries": [],
+        "same_integer_physical_occurrences": 0
+      },
+      "16127": {
+        "logical_alias_entries": [
+          {
+            "content": {
+              "bytes": 2089,
+              "content_id": 13276,
+              "profiles": "CN50|PATCH129",
+              "rd_height": 96,
+              "rd_sha256": "c461402ebd18a9e87277c083f4b62218f99133380b74c26278ef916836aaaeb1",
+              "rd_width": 36,
+              "reference_count": 2
+            },
+            "reference": {
+              "adrn_offset": 749001779,
+              "adrn_size": 2089,
+              "alias_evidence": "ORIGINAL_SNAPSHOT",
+              "attr_sha256": "555eaaaa8a216232e7c84f9d5ed14bd311993d4497ff6d4df348143c8875c354",
+              "catalog_rd_qualification": "PRIOR_ORIGINAL_BLOCK_HASH",
+              "content_id": 13276,
+              "height": 96,
+              "logical_alias": 16127,
+              "physical_bitmapno": 232704,
+              "profile": "CN50",
+              "record_sha256": "",
+              "source_index": 232704,
+              "source_rd_status": "PRIOR_ORIGINAL_BLOCK_METADATA",
+              "width": 36,
+              "xoff": -19,
+              "yoff": -85
+            },
+            "role": "UNKNOWN_RESOURCE_ALIAS"
+          },
+          {
+            "content": {
+              "bytes": 2089,
+              "content_id": 13276,
+              "profiles": "CN50|PATCH129",
+              "rd_height": 96,
+              "rd_sha256": "c461402ebd18a9e87277c083f4b62218f99133380b74c26278ef916836aaaeb1",
+              "rd_width": 36,
+              "reference_count": 2
+            },
+            "reference": {
+              "adrn_offset": 749001779,
+              "adrn_size": 2089,
+              "alias_evidence": "ORIGINAL_COMPLETE_OCCURRENCE_TABLE",
+              "attr_sha256": "555eaaaa8a216232e7c84f9d5ed14bd311993d4497ff6d4df348143c8875c354",
+              "catalog_rd_qualification": "MATCHING_RD_HEADER",
+              "content_id": 13276,
+              "height": 96,
+              "logical_alias": 16127,
+              "physical_bitmapno": 232704,
+              "profile": "PATCH129",
+              "record_sha256": "da21079cba95e34eb79cd477aecf02fcc3cbcb37633ecbc142a4b2e580e6df98",
+              "source_index": 232704,
+              "source_rd_status": "HEADER_MATCH",
+              "width": 36,
+              "xoff": -19,
+              "yoff": -85
+            },
+            "role": "UNKNOWN_RESOURCE_ALIAS"
+          }
+        ],
+        "logical_alias_is_not_physical_bitmapno": true,
+        "logical_alias_occurrences": 2,
+        "same_integer_physical_entries": [],
+        "same_integer_physical_occurrences": 0
+      }
+    }
+  },
+  "source_findings": {
+    "aliases": [
+      16122,
+      16127
+    ],
+    "TW10_retained_logical_alias_count": {
+      "16122": 0,
+      "16127": 0
+    },
+    "CN50_logical_alias_count": {
+      "16122": 1,
+      "16127": 1
+    },
+    "PATCH129_logical_alias_count": {
+      "16122": 1,
+      "16127": 1
+    },
+    "numeric_physical_identity_not_inferred": true,
+    "two_source_RD_sha256_identity": true,
+    "original_NPC_pixels_newly_rendered": 0,
+    "new_original_client_carrier_acquired": 0
+  },
+  "negative_boundaries": {
+    "early_TW10_original_image_never_existed_proven": false,
+    "source_sprite_pixels_or_anim_16122_16127_rendered": false,
+    "native_game_NPC_graphics_and_dialogue_executed": false,
+    "official_same_deployment_mixed25_config_CN50_PATCH129": false,
+    "patch_frame_proves_original_tutor_sprite": false,
+    "copyrighted_original_RD_published": false,
+    "modern_game_engine_started": false
+  },
+  "status": {
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "NEXT": "Reopen only upon exact original CN50 or PATCH129 REAL RD-byte retrieval and private 2D decode with SHA verification; otherwise rotate to material game content."
+}

@@ -1,0 +1,23 @@
+name: Probe exact original retail NPC 16122/16127 logical aliases without original pixels
+on:
+  push:
+    branches: [agent/npc16122-16127-original-alias-qualification-20261107]
+    paths:
+      - .github/workflows/probe-stoneage-npc16122-alias-source.yml
+      - tools/stoneage_npc16122_alias_original_source.py
+      - tests/test_stoneage_npc16122_alias_original_source.py
+      - research/recovered/STONEAGE-SCENE26-R3-NPC16122-16127-ORIGINAL-ALIAS-CROSSVERSION-R1.json
+permissions:
+  contents: read
+jobs:
+  source-index-query:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Read pinned original-derived TW10/CN50/patch source references without old art
+        run: python -m tools.stoneage_npc16122_alias_original_source --print
+      - name: Verify original client-source qualifications and adversarial counterexamples
+        run: python -m unittest tests.test_stoneage_npc16122_alias_original_source -v
