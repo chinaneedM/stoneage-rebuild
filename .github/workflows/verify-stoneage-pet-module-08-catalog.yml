@@ -1,4 +1,4 @@
-name: Verify source-qualified pet catalogs and CHAR10 motion scope
+name: Verify source-qualified pet catalogs and CHAR10-11 motion scope
 on:
   push:
     paths:
@@ -19,6 +19,10 @@ on:
       - 'tests/test_stoneage_pet_module_14_source_bridge.py'
       - 'tools/stoneage_pet15_tw10_full_motion.py'
       - 'tools/stoneage_char10_tw10_full_motion.py'
+      - 'tools/stoneage_char11_tw10_remaining_body_motion.py'
+      - 'tools/stoneage_char11_synthetic_browser.cjs'
+      - 'tests/test_stoneage_char11_tw10_remaining_body_motion.py'
+      - 'research/recovered/STONEAGE-CHAR11-TW10-REMAINING-BODY-MOTION-R1.json'
       - 'tests/test_stoneage_char10_tw10_full_motion.py'
       - 'research/recovered/STONEAGE-CHAR10-TW10-TWELVE-BODY-ALL-MOTION-R1.json'
       - '.github/workflows/verify-stoneage-pet-module-08-catalog.yml'
@@ -34,4 +38,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m unittest tests.test_stoneage_pet_module_08_catalog tests.test_stoneage_pet_module_09_carrier_material tests.test_stoneage_pet_module_10_original_server tests.test_stoneage_pet_module_14_source_bridge tests.test_stoneage_char10_tw10_full_motion -v
+      - run: python -m unittest tests.test_stoneage_pet_module_08_catalog tests.test_stoneage_pet_module_09_carrier_material tests.test_stoneage_pet_module_10_original_server tests.test_stoneage_pet_module_14_source_bridge tests.test_stoneage_char10_tw10_full_motion tests.test_stoneage_char11_tw10_remaining_body_motion -v
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: npm install --prefix /tmp/char11-browser playwright@1.55.1
+      - name: Verify modern controls with source metadata and synthetic pixels only
+        run: |
+          python -m tools.stoneage_char11_tw10_remaining_body_motion --synthetic-fixture /tmp/char11-fixture.html
+          CHROME_PATH="$(command -v google-chrome)" PLAYWRIGHT_MODULE=/tmp/char11-browser/node_modules/playwright node tools/stoneage_char11_synthetic_browser.cjs /tmp/char11-fixture.html /tmp/char11-browser.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: char11-synthetic-observer-qa-only
+          path: /tmp/char11-browser.json
+          if-no-files-found: warn
+          retention-days: 7
