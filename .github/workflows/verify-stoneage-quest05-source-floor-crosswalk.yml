@@ -12,11 +12,19 @@ on:
       - 'research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json'
       - 'research/recovered/STONEAGE-MAP10-PUBLIC-ORIGINAL-SOURCE-CUSTODY-R1.json'
       - 'tests/test_stoneage_quest05_original_floor_crosswalk.py'
+      - 'research/recovered/STONEAGE-QUEST06-FOUR-VILLAGE-MAMMOTH-COURIER-SOURCE-R1.json'
+      - 'research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-02-R1.json'
+      - 'research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-05-R1.json'
+      - 'tests/test_stoneage_quest06_four_courier_source.py'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   pull_request:
     paths:
       - 'research/recovered/STONEAGE-QUEST05-598-ORIGINAL-CREATE-FLOOR-MAP-AND-WARP-CROSSWALK-R1.json'
       - 'tests/test_stoneage_quest05_original_floor_crosswalk.py'
+      - 'research/recovered/STONEAGE-QUEST06-FOUR-VILLAGE-MAMMOTH-COURIER-SOURCE-R1.json'
+      - 'research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-02-R1.json'
+      - 'research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-05-R1.json'
+      - 'tests/test_stoneage_quest06_four_courier_source.py'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   workflow_dispatch:
 
@@ -29,3 +37,5 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run deterministic source-bounded floor and warp checks
         run: python -m unittest discover -s tests -p 'test_stoneage_quest05_original_floor_crosswalk.py' -v
+      - name: Validate QUEST06 original source-only four-village courier contracts
+        run: python -m unittest discover -s tests -p 'test_stoneage_quest06_four_courier_source.py' -v
