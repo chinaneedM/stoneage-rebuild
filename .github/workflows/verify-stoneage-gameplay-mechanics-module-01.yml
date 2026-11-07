@@ -33,6 +33,8 @@ on:
       - 'research/recovered/STONEAGE-CHARACTER-NPC-MODULE-05-30-ORIGINAL-MOTION-SOURCE-BRIDGE-R1.json'
       - 'research/recovered/STONEAGE-PET-MODULE-07-TW10-BATCH-PUBLIC-R1.json'
       - 'tests/test_stoneage_integration_module_03.py'
+      - 'research/recovered/STONEAGE-INTEGRATION04-COMPILED-CAPTURE-PET-ITEM-SPR-SOURCE-BRIDGE-R1.json'
+      - 'tests/test_stoneage_integration_module_04.py'
       - 'research/recovered/STONEAGE-STAGE-A-ORIGINAL-DAT-AND-SAME-BUILD-SOURCE-GAP-R1.json'
       - 'research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R2.json'
       - 'tests/test_stoneage_stage_a_source_gap_20261104.py'
@@ -107,6 +109,8 @@ on:
       - 'research/recovered/STONEAGE-CHARACTER-NPC-MODULE-05-30-ORIGINAL-MOTION-SOURCE-BRIDGE-R1.json'
       - 'research/recovered/STONEAGE-PET-MODULE-07-TW10-BATCH-PUBLIC-R1.json'
       - 'tests/test_stoneage_integration_module_03.py'
+      - 'research/recovered/STONEAGE-INTEGRATION04-COMPILED-CAPTURE-PET-ITEM-SPR-SOURCE-BRIDGE-R1.json'
+      - 'tests/test_stoneage_integration_module_04.py'
       - 'research/recovered/STONEAGE-STAGE-A-ORIGINAL-DAT-AND-SAME-BUILD-SOURCE-GAP-R1.json'
       - 'research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R2.json'
       - 'tests/test_stoneage_stage_a_source_gap_20261104.py'
@@ -173,6 +177,7 @@ jobs:
       - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_01.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_02.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_03.py' -v
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_04.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_stage_a_source_gap_20261104.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_stage_a_original_rar_block_replay.py' -v
       - run: python -m unittest -v tests.test_stoneage_stage_a_world30_cooking_source
