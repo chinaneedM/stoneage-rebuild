@@ -1,0 +1,23 @@
+{
+  "schema": "stoneage.map09.synthetic_browser_custody.r1",
+  "failed_first_run": {
+    "run_id": 42363043080,
+    "job_id": 128375212872,
+    "head": "aa7953a7c3a8d86c7e200bb0a10ea0d3f45f05a4",
+    "conclusion": "failure",
+    "reason": "file-origin canvas tainted: getImageData SecurityError; not an original-pixel failure"
+  },
+  "accepted_source_run": {
+    "run_id": 42363184940,
+    "job_id": 128375633736,
+    "head": "c3ae2a9c7d0fae9091feb8105b217c9730ed6f90",
+    "conclusion": "success",
+    "artifact_id": 13570990231,
+    "artifact_zip_bytes": 930,
+    "artifact_zip_sha256": "0a801bd630259bbdd31424ef4c5a7731826ce2e9c2bf1bc6bd15fb050aa42555",
+    "raw_json_bytes": 2319,
+    "raw_json_sha256": "b579403a98ab6b80df3fa7395f702babe74d82870d64df875738ca9010513cdd"
+  },
+  "actual_original_assets_browser_executed": false,
+  "source_scope": "SYNTHETIC_ONLY_NO_ORIGINAL_ASSETS"
+}

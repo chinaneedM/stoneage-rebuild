@@ -133,9 +133,12 @@ def export(dat_zip,tiles,out):
         if no%25==0 or no==len(maps): print(json.dumps({'verified_maps':no,'total':len(maps)}),flush=True)
         # Keep a reproducible checkpoint while large maps are being processed.
         if no%50==0: (out/'progress.json').write_text(json.dumps({'completed_maps':no,'total':len(maps)}))
+    report['verified_maps']=len(maps);report['verified_full_canvas_states']=len(maps)*3
+    report['qualified_images']=len(wanted)
     (out/'dataset.js').write_text('window.MAP09_DATA='+json.dumps(model,separators=(',',':'))+';\n')
     (out/'scene-source-receipt.json').write_text(json.dumps(report,separators=(',',':'))+'\n')
     shutil.copyfile(ROOT/'tools/stoneage_map09_viewer.html',out/'MAP09.html')
+    shutil.copyfile(ROOT/'tools/stoneage_map09_private_replay.py',out/'replay-from-private.py')
     # Contact page deliberately samples 36 IDs; the catalogue contains all 691.
     ids=list(maps);chosen=[ids[i*(len(ids)-1)//35] for i in range(36)]
     contact=Image.new('RGB',(1800,1500),'#11232a');draw=ImageDraw.Draw(contact)
@@ -145,8 +148,6 @@ def export(dat_zip,tiles,out):
             contact.paste(im,(x+(300-im.width)//2,y+24));draw.text((x+8,y+5),'DAT '+floor,fill='white')
     contact.save(out.parent/'StoneAge-MAP09-691-scenes-contact.jpg',quality=90)
     (out/'progress.json').unlink(missing_ok=True)
-    report['verified_maps']=len(maps);report['verified_full_canvas_states']=len(maps)*3
-    report['qualified_images']=len(wanted)
     REPORT.write_text(json.dumps(report,separators=(',',':'))+'\n')
     return report
 
