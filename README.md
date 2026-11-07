@@ -2098,3 +2098,11 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-07 — QUEST07｜原新手NPC配置备份的26个未启用候选与九个真实地图
 
 [QUEST07完整来源、私人五房间对照及缺失边界](docs/continuity/STONEAGE-QUEST07-INACTIVE-NEWBIE-BACKUP-NINE-DAT-FIVE-SCENES-20261107.md)：已保存后期社区mixed25原RAR整SHA再验，原`sa60/newbie/newbie.create.bak` 6190B/SHA `fa83b8f1...` 有34条原CREATE，当前`newbie.create`1548B的8条原字段均同备份中8条；另26条**仅为备份候选，绝非已证明启用**，涵盖训练/医疗/商店/宠物技能/对战等9个旧楼层。9份原DAT逐原SHA/CRC取出且与另一私人MAP09完整955原DAT包逐文件相同；5房间9候选NPC站位已在真实原RD来源现代缩略图上私人观察，17个候选坐标仍无匹配来源完整视觉。备份24个外部文件引用仅1个当前同目录原文件存在，23个缺源不补造任务/奖励。原备份、九DAT、五场景及对照图私人Library真实回读ZIP18CRC/SHA；公开仅[来源受限数字](research/recovered/STONEAGE-QUEST07-INACTIVE-NEWBIE-BACKUP-26-CREATE-NINE-ORIGINAL-DAT-R1.json)和负例，未执行原NPC、未取新地图/精灵或改变原历史CURRENT。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、整体完成率未知。NEXT仅在缺失原脚本/官方启用证据到位时重开，其他真实游戏内容优先。
+
+
+## 2026-11-07 — QUEST08｜原采矿鉴定、救援赠矿与三处兑币配置
+
+[QUEST08来源、完整字面差异及私人原文](docs/continuity/STONEAGE-QUEST08-ORIGINAL-MINING-APPRAISAL-LIMITSHOP-20261107.md)：实际重读源SHA/CRC认证的CHAR01完整2,205原文件，在原有索引中新增恢复6份采矿脚本的21段条件/动作和3份LIMITSHOP数字配置，并逐原字节核9条CREATE。三类矿石2469–2471与鉴定书2472–2474关联明确；前两类低档4条裸DelItem数量保持null，第三类原写*8/*5，不修正为统一数量或宣称实际扣除。三处兑币原rate与6行旧物品原索引相连，不推成交公式；任务起源ORIGIN_UNRESOLVED、真实执行未知。本轮原DAT/RD新读0，13份原文件与全文查阅私人包已保存并回读SHA/15项CRC；公开仅[数字/散列](research/recovered/STONEAGE-QUEST08-MINING-APPRAISAL-AND-LIMITSHOP-SOURCE-R1.json)、提取器及6项来源验收。原CURRENT完整blob不改，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体百分比未知。NEXT只对真实可得的采矿权利书出售/矿石来源作有限上游补证，缺源则转其他任务族。
+
+
+**QUEST08同轮上游追加：** 又实际读取5原参数，定位权利书商店2475–2477于源floor100/(412,337)，入口原目标10601/(28,49)。其与NPC“第五层买权利书”说明的冲突原样保留，不改位置、不推收费或实际无限采矿。最终私人包18原文件/20成员已回读SHA/CRC；7项专项回归和28项相关本地检查通过。最终NEXT转其他真实任务族，实际采矿/许可运行待真源才重开，详见同一QUEST08连续性页的追加。

@@ -18,6 +18,9 @@ on:
       - 'tests/test_stoneage_quest06_four_courier_source.py'
       - 'research/recovered/STONEAGE-QUEST06-R2-ORIGINAL-COURIER-ITEM-HINT-GRAPH-R1.json'
       - 'tests/test_stoneage_quest06_r2_original_hint_graph.py'
+      - 'research/recovered/STONEAGE-QUEST08-MINING-APPRAISAL-AND-LIMITSHOP-SOURCE-R1.json'
+      - 'tools/stoneage_quest08_mining_source.py'
+      - 'tests/test_stoneage_quest08_mining_source.py'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   pull_request:
     paths:
@@ -29,6 +32,9 @@ on:
       - 'tests/test_stoneage_quest06_four_courier_source.py'
       - 'research/recovered/STONEAGE-QUEST06-R2-ORIGINAL-COURIER-ITEM-HINT-GRAPH-R1.json'
       - 'tests/test_stoneage_quest06_r2_original_hint_graph.py'
+      - 'research/recovered/STONEAGE-QUEST08-MINING-APPRAISAL-AND-LIMITSHOP-SOURCE-R1.json'
+      - 'tools/stoneage_quest08_mining_source.py'
+      - 'tests/test_stoneage_quest08_mining_source.py'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   workflow_dispatch:
 
@@ -45,3 +51,5 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_stoneage_quest06_four_courier_source.py' -v
       - name: Validate QUEST06-R2 actual source dialogue hints and bounded item-receiver links
         run: python -m unittest discover -s tests -p 'test_stoneage_quest06_r2_original_hint_graph.py' -v
+      - name: Validate QUEST08 source mining appraisal and limitshop boundaries
+        run: python -m unittest tests.test_stoneage_quest08_mining_source -v

@@ -1,0 +1,1153 @@
+{
+  "schema": "stoneage.quest08.original_mixed25_mining_static_source.r1",
+  "origin_class": "ORIGIN_UNRESOLVED",
+  "source_scope": "LATER_COMMUNITY_MIXED25_NOT_AUTHENTICATED_OFFICIAL_DEPLOYMENT",
+  "baseline": {
+    "head": "ceb75f7f2b0d5f1d1aab4cb4e32d92cdf06f31a3",
+    "tree": "d5ac2af43986b31d547105f36eb3db5bb5024e94",
+    "preserved_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "parent_rar_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "private_source_zip": {
+    "bytes": 995176,
+    "sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "verified_members": 2205,
+    "verified_member_bytes": 1930332
+  },
+  "derived_input_blobs": {
+    "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-02-R1.json": "b91bc8335db508998f4595144ce371979ea8c849",
+    "research/recovered/STONEAGE-QUEST05-598-ORIGINAL-CREATE-FLOOR-MAP-AND-WARP-CROSSWALK-R1.json": "b004e488e1d0a93ca7c14eb90abb584b23f341fe"
+  },
+  "selected_original_files": [
+    {
+      "path": "genout/lbis_10605_41_24",
+      "bytes": 355,
+      "sha256": "56cd207fdf7ae8b87b8b80c0cd64618855d7b5e2ff587761dccbea882b4816ce",
+      "crc32": "6d362dc5"
+    },
+    {
+      "path": "genout/lbis_1212_17_13",
+      "bytes": 353,
+      "sha256": "505cdc071648d6a37b5522c45d2a13a5c49a990d598f7efc415a2effb9e37cac",
+      "crc32": "caddfef1"
+    },
+    {
+      "path": "genout/lbis_1212_17_17",
+      "bytes": 343,
+      "sha256": "a371c933d5ede1f16fd0c2eafaf3d2e21ff64d4368ab8ffd9c6238fa13cc44a0",
+      "crc32": "82b0b1e7"
+    },
+    {
+      "path": "genout/nevent_03.create",
+      "bytes": 9673,
+      "sha256": "a949036b3b3080591378a67e08a7c82330158020c3be48d6188a84657c6c4c59",
+      "crc32": "7fc73470"
+    },
+    {
+      "path": "genout/npcgen.template",
+      "bytes": 4950,
+      "sha256": "0c5a58d5e31cafd3b58ccc1fa88fee7d1f95d12c0b87b04db9f06fea3b2a4df3",
+      "crc32": "56547578"
+    },
+    {
+      "path": "genout/signb_100_413_335",
+      "bytes": 181,
+      "sha256": "c538d80e7f770a2fc98977663faa301d3ad674cff34bd71e72f57965f7d23594",
+      "crc32": "1e024a2c"
+    },
+    {
+      "path": "genout/signb_10605_39_30",
+      "bytes": 193,
+      "sha256": "4556bd5bc80f0f7f532b9985ce519b731b0048b46c943532bce2937488f89d8f",
+      "crc32": "45807e15"
+    },
+    {
+      "path": "genout/signb_1212_15_4",
+      "bytes": 19,
+      "sha256": "ee241ba9085dd8d223bd7a193799eaf6b7bbc5a6c56156d3d4a16a3874beb5ac",
+      "crc32": "8b9944c6"
+    },
+    {
+      "path": "genout/ss_100_412_337",
+      "bytes": 476,
+      "sha256": "43d0b71367d3847d3ace63f33f5dcffda159734d04ca39638b089393a264e8a3",
+      "crc32": "3e41e012"
+    },
+    {
+      "path": "genout/wpm_100_412_339",
+      "bytes": 302,
+      "sha256": "3c8d9b42403ce284b3b39bac097129e420ec8bfe11eac13096be3f45c7dd92ea",
+      "crc32": "5dc19909"
+    },
+    {
+      "path": "jaruga/event/event.template",
+      "bytes": 122,
+      "sha256": "9c11ac0cbbd9b110e8ff7d0115730044673bf29c5df6d23034e56530c181d0b2",
+      "crc32": "a70fc73f"
+    },
+    {
+      "path": "sainasu/event/nevent03.create",
+      "bytes": 1033,
+      "sha256": "faa81a58c913121c4df9901383188f23aa189870761b8ce38e6319108e93c717",
+      "crc32": "7f382f36"
+    },
+    {
+      "path": "sainasu/event/nevent03_1",
+      "bytes": 2420,
+      "sha256": "0a513b89e868413f6f808ea0a789c4caaa50c43c3a89cd6d7f5839eb09ac490a",
+      "crc32": "bd7c4de3"
+    },
+    {
+      "path": "sainasu/event/nevent03_2",
+      "bytes": 2402,
+      "sha256": "88da1dfacc0b4560abf6b43ba3a2196a60148036bcf50a1f1388a6b45f2e6397",
+      "crc32": "dd394e59"
+    },
+    {
+      "path": "sainasu/event/nevent03_3",
+      "bytes": 2380,
+      "sha256": "d1ed5ace3fd2a150070244d44ce94cf1f51c94f94ccceb411783c83814fa0d3d",
+      "crc32": "2b09f80b"
+    },
+    {
+      "path": "sainasu/event/nevent03_4",
+      "bytes": 768,
+      "sha256": "a121650203fffb7464c953da76ef4391343054c8009bf3a4c0b949e9af48ad61",
+      "crc32": "b6023a57"
+    },
+    {
+      "path": "sainasu/event/nevent03_5",
+      "bytes": 956,
+      "sha256": "98e3ba7b2c6037a5fdded135da93ff6f4cac60f38594ddbfb7528fcbd9ce531d",
+      "crc32": "e802b949"
+    },
+    {
+      "path": "sainasu/event/nevent03_6",
+      "bytes": 462,
+      "sha256": "be163c91fa054008cf584da0771d488f1f07b04301e965635534b49624f24044",
+      "crc32": "b1169059"
+    }
+  ],
+  "source_creates": [
+    {
+      "source_file": "genout/nevent_03.create",
+      "source_block_ordinal": 0,
+      "source_start_byte": 120,
+      "source_end_byte": 291,
+      "source_block_sha256": "fc36b62acd1558884f28dbe294f2f0e413ac4b8493a502fa77bb8a1c3bd41e4a",
+      "floor": 1212,
+      "graphic_alias": 16033,
+      "borncorner": [
+        17,
+        13,
+        17,
+        13
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "npcgen_limitshop",
+      "parameter_file": "genout/lbis_1212_17_13",
+      "parameter_sha256": "505cdc071648d6a37b5522c45d2a13a5c49a990d598f7efc415a2effb9e37cac"
+    },
+    {
+      "source_file": "genout/nevent_03.create",
+      "source_block_ordinal": 1,
+      "source_start_byte": 300,
+      "source_end_byte": 473,
+      "source_block_sha256": "7ad48e906c89ec047851477e498366b624a2c94c3456ba43f30724202bdebedc",
+      "floor": 1212,
+      "graphic_alias": 16065,
+      "borncorner": [
+        17,
+        17,
+        17,
+        17
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "npcgen_limitshop",
+      "parameter_file": "genout/lbis_1212_17_17",
+      "parameter_sha256": "a371c933d5ede1f16fd0c2eafaf3d2e21ff64d4368ab8ffd9c6238fa13cc44a0"
+    },
+    {
+      "source_file": "genout/nevent_03.create",
+      "source_block_ordinal": 2,
+      "source_start_byte": 482,
+      "source_end_byte": 657,
+      "source_block_sha256": "2d3fcde4c41cbc4e8bdb5406814c957e12c81a684f49ef417b26dcfac31bca0c",
+      "floor": 10605,
+      "graphic_alias": 16046,
+      "borncorner": [
+        41,
+        24,
+        41,
+        24
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "npcgen_limitshop",
+      "parameter_file": "genout/lbis_10605_41_24",
+      "parameter_sha256": "56cd207fdf7ae8b87b8b80c0cd64618855d7b5e2ff587761dccbea882b4816ce"
+    },
+    {
+      "source_file": "sainasu/event/nevent03.create",
+      "source_block_ordinal": 0,
+      "source_start_byte": 11,
+      "source_end_byte": 182,
+      "source_block_sha256": "652d17c43b1cb85d74ab6f0881d3b8c9f94f4ec01c5aa2832dbecc1c2a19427a",
+      "floor": 10605,
+      "graphic_alias": 16017,
+      "borncorner": [
+        42,
+        32,
+        42,
+        32
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "changeevent",
+      "parameter_file": "sainasu/event/nevent03_1",
+      "parameter_sha256": "0a513b89e868413f6f808ea0a789c4caaa50c43c3a89cd6d7f5839eb09ac490a"
+    },
+    {
+      "source_file": "sainasu/event/nevent03.create",
+      "source_block_ordinal": 1,
+      "source_start_byte": 183,
+      "source_end_byte": 354,
+      "source_block_sha256": "6b6feaa34a1efccfd857e836221891c9731e92dd2b29c097db1b07a359106a44",
+      "floor": 10605,
+      "graphic_alias": 16018,
+      "borncorner": [
+        42,
+        34,
+        42,
+        34
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "changeevent",
+      "parameter_file": "sainasu/event/nevent03_2",
+      "parameter_sha256": "88da1dfacc0b4560abf6b43ba3a2196a60148036bcf50a1f1388a6b45f2e6397"
+    },
+    {
+      "source_file": "sainasu/event/nevent03.create",
+      "source_block_ordinal": 2,
+      "source_start_byte": 356,
+      "source_end_byte": 529,
+      "source_block_sha256": "53cbf61a3b8d5c3fa9947b24d657b8b9082db8bd4754d65c7397f4ee36c8e26d",
+      "floor": 10605,
+      "graphic_alias": 16025,
+      "borncorner": [
+        42,
+        36,
+        42,
+        36
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "changeevent",
+      "parameter_file": "sainasu/event/nevent03_3",
+      "parameter_sha256": "d1ed5ace3fd2a150070244d44ce94cf1f51c94f94ccceb411783c83814fa0d3d"
+    },
+    {
+      "source_file": "sainasu/event/nevent03.create",
+      "source_block_ordinal": 3,
+      "source_start_byte": 531,
+      "source_end_byte": 692,
+      "source_block_sha256": "54636094fce98b4c600ee1ea1e6adf682752e87babfbd228699814c575499aed",
+      "floor": 10603,
+      "graphic_alias": 16018,
+      "borncorner": [
+        45,
+        23,
+        45,
+        23
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "changeevent",
+      "parameter_file": "sainasu/event/nevent03_4",
+      "parameter_sha256": "a121650203fffb7464c953da76ef4391343054c8009bf3a4c0b949e9af48ad61"
+    },
+    {
+      "source_file": "sainasu/event/nevent03.create",
+      "source_block_ordinal": 4,
+      "source_start_byte": 695,
+      "source_end_byte": 865,
+      "source_block_sha256": "584e8562e85dc86acef8e6783b50a3c6366ff33b2cd65aabd09ffd723517f3f7",
+      "floor": 1212,
+      "graphic_alias": 16025,
+      "borncorner": [
+        17,
+        15,
+        17,
+        15
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "changeevent",
+      "parameter_file": "sainasu/event/nevent03_5",
+      "parameter_sha256": "98e3ba7b2c6037a5fdded135da93ff6f4cac60f38594ddbfb7528fcbd9ce531d"
+    },
+    {
+      "source_file": "sainasu/event/nevent03.create",
+      "source_block_ordinal": 5,
+      "source_start_byte": 867,
+      "source_end_byte": 1025,
+      "source_block_sha256": "2387366186a1f7cf4570a8c2e622326bcf84905f79b460d0b302d3a89647ed02",
+      "floor": 1212,
+      "graphic_alias": 16066,
+      "borncorner": [
+        11,
+        4,
+        11,
+        4
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "changeevent",
+      "parameter_file": "sainasu/event/nevent03_6",
+      "parameter_sha256": "be163c91fa054008cf584da0771d488f1f07b04301e965635534b49624f24044"
+    }
+  ],
+  "source_scripts": [
+    {
+      "path": "sainasu/event/nevent03_1",
+      "bytes": 2420,
+      "sha256": "0a513b89e868413f6f808ea0a789c4caaa50c43c3a89cd6d7f5839eb09ac490a",
+      "crc32": "bd7c4de3",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 305,
+          "start_line": 8,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 14,
+              "line_sha256": "79df3c0bd0468d7d35cbc232c05c0070e67120c683eca2b55261ba410eab2328",
+              "item_id": 2469,
+              "explicit_quantity": 14
+            },
+            {
+              "name": "GetItem",
+              "line": 15,
+              "line_sha256": "329f2ffe62ad1c447f0a6935a0e6b7fe9828f8be6a3b77d9634d3792d7b8026a",
+              "item_id": 2472,
+              "explicit_quantity": 4
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ITEM=2469*14",
+          "end_byte": 720,
+          "end_line": 16,
+          "block_sha256": "79b840b2c421138d6c541bbe27f6102af4db2b530de4ad3399d6c367347fa1b9"
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 722,
+          "start_line": 19,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 25,
+              "line_sha256": "64523e00643a53ab28fd881d8637886d0087601f259a5bf18d2062025c63c498",
+              "item_id": 2469,
+              "explicit_quantity": 11
+            },
+            {
+              "name": "GetItem",
+              "line": 26,
+              "line_sha256": "dfa148ff96b1866e76d2fd5adbfa20ccab2e289276e6ac131c6eaba1e48f6240",
+              "item_id": 2472,
+              "explicit_quantity": 3
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ITEM=2469*11,ITEM=2469*12,ITEM=2469*13",
+          "end_byte": 1193,
+          "end_line": 27,
+          "block_sha256": "e044ddf121e4b50603b01895a5dbec2159a54e28ccb66d7c5772fd4f30399927"
+        },
+        {
+          "ordinal": 2,
+          "start_byte": 1196,
+          "start_line": 31,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 37,
+              "line_sha256": "9717923cba2ffbedb8e4a0116c5e8fc280bd8d4e0e37cce8955c861f438e6a68",
+              "item_id": 2469,
+              "explicit_quantity": null
+            },
+            {
+              "name": "GetItem",
+              "line": 38,
+              "line_sha256": "de5fa090370333e085b41c9916b3bdeacbb26af35abd426e880b332394ee43b8",
+              "item_id": 2472,
+              "explicit_quantity": 2
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ITEM=2469*9,ITEM=2469*8,ITEM=2469*10",
+          "end_byte": 1678,
+          "end_line": 39,
+          "block_sha256": "8e8d8854816b7166bb7dbeea46399646c8b7d777b1050e99eca6fd705dd7cf6f"
+        },
+        {
+          "ordinal": 3,
+          "start_byte": 1682,
+          "start_line": 44,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 50,
+              "line_sha256": "9717923cba2ffbedb8e4a0116c5e8fc280bd8d4e0e37cce8955c861f438e6a68",
+              "item_id": 2469,
+              "explicit_quantity": null
+            },
+            {
+              "name": "GetItem",
+              "line": 51,
+              "line_sha256": "fdfe4bc2542d477d33efca1a486e233900543d80c8b4e83fa4a91387d54bad97",
+              "item_id": 2472,
+              "explicit_quantity": 1
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ITEM=2469*7,ITEM=2469*6,ITEM=2469*5",
+          "end_byte": 2141,
+          "end_line": 52,
+          "block_sha256": "453b2b381726697a03d4bad7e576b87036e14a08e50ea6d66ab4b89fb4ff89bd"
+        },
+        {
+          "ordinal": 4,
+          "start_byte": 2143,
+          "start_line": 55,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "ITEM=2469*4,ITEM=2469*3,ITEM=2469*2,ITEM=2469*1",
+          "end_byte": 2416,
+          "end_line": 59,
+          "block_sha256": "61e03d9ed6719e0151b98216137d7bd2a694895473f5b29ab96d7e56abab604f"
+        }
+      ]
+    },
+    {
+      "path": "sainasu/event/nevent03_2",
+      "bytes": 2402,
+      "sha256": "88da1dfacc0b4560abf6b43ba3a2196a60148036bcf50a1f1388a6b45f2e6397",
+      "crc32": "dd394e59",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 304,
+          "start_line": 9,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 16,
+              "line_sha256": "1044af9c98c6f358e57ba2b20223bebfdfad31e0339e466d20d0ecf57c53349c",
+              "item_id": 2470,
+              "explicit_quantity": 14
+            },
+            {
+              "name": "GetItem",
+              "line": 17,
+              "line_sha256": "346a224bfd1c0d9294901d3425d63cdbe81373d7795ab9840f3dd293266e01fc",
+              "item_id": 2473,
+              "explicit_quantity": 4
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ITEM=2470*14",
+          "end_byte": 720,
+          "end_line": 18,
+          "block_sha256": "ad279a026f4611dd5eeaa8b9bbd1fd1f0bd8d2650f0531d3074bc3dec203b207"
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 722,
+          "start_line": 21,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 28,
+              "line_sha256": "2a483f4e5dfb6fa5b1ee8e5532554c4d2c2df82e9c52a9d22f5da6e6c2e59c50",
+              "item_id": 2470,
+              "explicit_quantity": 11
+            },
+            {
+              "name": "GetItem",
+              "line": 29,
+              "line_sha256": "ef94ed270adb16843b626046eaeb6feded27e3d595bb9c467d78e5e0671183b8",
+              "item_id": 2473,
+              "explicit_quantity": 3
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ITEM=2470*11,ITEM=2470*12,ITEM=2470*13",
+          "end_byte": 1194,
+          "end_line": 30,
+          "block_sha256": "d5b63cb6022fec9fbe9a1e0cf490dc96cda298edb2dab5dd43fe02e83da56320"
+        },
+        {
+          "ordinal": 2,
+          "start_byte": 1196,
+          "start_line": 33,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 39,
+              "line_sha256": "9b8f949ba3168f948c18bde05661b54aba4fb2d4205efd3787d77cf41f16f08f",
+              "item_id": 2470,
+              "explicit_quantity": null
+            },
+            {
+              "name": "GetItem",
+              "line": 40,
+              "line_sha256": "52d034d3cbfd2fae3895c35bc77f28c551e9fbaa08dea57f2d24fae948959f38",
+              "item_id": 2473,
+              "explicit_quantity": 2
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ITEM=2470*9,ITEM=2470*8,ITEM=2470*10",
+          "end_byte": 1656,
+          "end_line": 41,
+          "block_sha256": "fbcab52142f209127021c7409bbb1c966421a9e84b1e1f275383e98b24066b69"
+        },
+        {
+          "ordinal": 3,
+          "start_byte": 1660,
+          "start_line": 46,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 52,
+              "line_sha256": "9b8f949ba3168f948c18bde05661b54aba4fb2d4205efd3787d77cf41f16f08f",
+              "item_id": 2470,
+              "explicit_quantity": null
+            },
+            {
+              "name": "GetItem",
+              "line": 53,
+              "line_sha256": "0d1f65993ce2c59ca0450b6c808b9f4423bdf67825727dbb6c9e96f20bc76b76",
+              "item_id": 2473,
+              "explicit_quantity": 1
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ITEM=2470*7,ITEM=2470*6,ITEM=2470*5",
+          "end_byte": 2119,
+          "end_line": 54,
+          "block_sha256": "3bec9c5f9e5a90a63ae56cbcf5391a663ea915958b985a7914000720ac9b3ee9"
+        },
+        {
+          "ordinal": 4,
+          "start_byte": 2121,
+          "start_line": 57,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "ITEM=2470*4,ITEM=2470*3,ITEM=2470*2,ITEM=2470*1",
+          "end_byte": 2398,
+          "end_line": 61,
+          "block_sha256": "845d7749774c23a265abf2d3a12462dfd20914c4ea8a66a9c1530708d66d9fbd"
+        }
+      ]
+    },
+    {
+      "path": "sainasu/event/nevent03_3",
+      "bytes": 2380,
+      "sha256": "d1ed5ace3fd2a150070244d44ce94cf1f51c94f94ccceb411783c83814fa0d3d",
+      "crc32": "2b09f80b",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 303,
+          "start_line": 8,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 14,
+              "line_sha256": "e3b32db22ae5c9cd1bfe574db7a36571b20f1dbb2591f31a33a9102763bc3f37",
+              "item_id": 2471,
+              "explicit_quantity": 14
+            },
+            {
+              "name": "GetItem",
+              "line": 15,
+              "line_sha256": "acf934056b78ce8c2ab8d95d987b50ac992e55692df93f1811bc24bfa88095df",
+              "item_id": 2474,
+              "explicit_quantity": 4
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ITEM=2471*14",
+          "end_byte": 720,
+          "end_line": 16,
+          "block_sha256": "1ea95394b845f33b1fc9cf06e186ca70a6ed4dc814806499ca0770dda2852a68"
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 721,
+          "start_line": 18,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 24,
+              "line_sha256": "bfec957658e0f47ff7b67aff28c236a7ab412a90bca1347eb66e0025b026ef1b",
+              "item_id": 2471,
+              "explicit_quantity": 11
+            },
+            {
+              "name": "GetItem",
+              "line": 25,
+              "line_sha256": "2f702786107fd5a756fa94e5fe38f7d032a556832112284f5a5cd8730f9afd4f",
+              "item_id": 2474,
+              "explicit_quantity": 3
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ITEM=2471*11,ITEM=2471*12,ITEM=2471*13",
+          "end_byte": 1194,
+          "end_line": 26,
+          "block_sha256": "8973167a3372325ae11abc1111fe000cd57656f66eeb97d30aecd28d5f6e2296"
+        },
+        {
+          "ordinal": 2,
+          "start_byte": 1195,
+          "start_line": 28,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 34,
+              "line_sha256": "07da8e812125c7c18037efe0ac19f38d45111226836c4b85e26d19c20c1dbca1",
+              "item_id": 2471,
+              "explicit_quantity": 8
+            },
+            {
+              "name": "GetItem",
+              "line": 35,
+              "line_sha256": "9f53050a38688cf3063e0a47b019fc54218d1734aa7a667f4a22653dae3d7daa",
+              "item_id": 2474,
+              "explicit_quantity": 2
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ITEM=2471*9,ITEM=2471*8,ITEM=2471*10",
+          "end_byte": 1643,
+          "end_line": 36,
+          "block_sha256": "124e14ffc47b289d5e771b909ce683d3924369ad2f13ea72b39c147216a79b32"
+        },
+        {
+          "ordinal": 3,
+          "start_byte": 1645,
+          "start_line": 39,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "DelItem",
+              "line": 45,
+              "line_sha256": "c5fed60758e0876dd4363de44dbd9c6387b662172f668ddc5c48a96d2f042f81",
+              "item_id": 2471,
+              "explicit_quantity": 5
+            },
+            {
+              "name": "GetItem",
+              "line": 46,
+              "line_sha256": "ded3890a4f8cae4dc152271e15ad36b5e18d4c4f1b40acb6cae1c0134ddb1a6d",
+              "item_id": 2474,
+              "explicit_quantity": 1
+            }
+          ],
+          "type": "ACCEPT",
+          "event": "ITEM=2471*7,ITEM=2471*6,ITEM=2471*5",
+          "end_byte": 2092,
+          "end_line": 47,
+          "block_sha256": "362077ae7f7abd593d292420979c85581f043073ec78a687198efb7b053269d8"
+        },
+        {
+          "ordinal": 4,
+          "start_byte": 2095,
+          "start_line": 51,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "ITEM=2471*4,ITEM=2471*3,ITEM=2471*2,ITEM=2471*1",
+          "end_byte": 2372,
+          "end_line": 55,
+          "block_sha256": "abf6fc72c936cec289201bc5ce17ad9fc56ec5710d03e5c3aa96db3d0dc52689"
+        }
+      ]
+    },
+    {
+      "path": "sainasu/event/nevent03_4",
+      "bytes": 768,
+      "sha256": "a121650203fffb7464c953da76ef4391343054c8009bf3a4c0b949e9af48ad61",
+      "crc32": "b6023a57",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 198,
+          "start_line": 7,
+          "event_number": -1,
+          "commands": [
+            {
+              "name": "GetItem",
+              "line": 12,
+              "line_sha256": "00e175c0319efc9268c26c7d734f3bca90d27e3e51dd24a60182af1eb2010fbb",
+              "item_id": 2471,
+              "explicit_quantity": 1
+            }
+          ],
+          "type": "MESSAGE",
+          "event": "LV>0&ITEM!=2471",
+          "end_byte": 539,
+          "end_line": 13,
+          "block_sha256": "4038c6eddba0aa5f2587be50ee86ff55f07b35104ca8a920b9678f02d2abd182"
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 541,
+          "start_line": 16,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "LV>0&ITEM=2471",
+          "end_byte": 763,
+          "end_line": 20,
+          "block_sha256": "50545fd4116a7d8899c24508026d22772676258fa59614e25b22044483bca289"
+        }
+      ]
+    },
+    {
+      "path": "sainasu/event/nevent03_5",
+      "bytes": 956,
+      "sha256": "98e3ba7b2c6037a5fdded135da93ff6f4cac60f38594ddbfb7528fcbd9ce531d",
+      "crc32": "e802b949",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 199,
+          "start_line": 8,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "LV>0&ITEM=2472,LV>0&ITEM=2473,LV>0&ITEM=2474",
+          "end_byte": 467,
+          "end_line": 12,
+          "block_sha256": "c22afa60a328f8787f76913f82d40dd091fb45cf18c0beaf73858916f8e4a42c"
+        },
+        {
+          "ordinal": 1,
+          "start_byte": 468,
+          "start_line": 14,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "LV>0&ITEM=2469,LV>0&ITEM=2470,LV>0&ITEM=2471",
+          "end_byte": 736,
+          "end_line": 18,
+          "block_sha256": "e1798316b8b0879d3bde565cb18b16924db16a23d1902f158d6d1c250a5b77b4"
+        },
+        {
+          "ordinal": 2,
+          "start_byte": 737,
+          "start_line": 20,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "LV>0",
+          "end_byte": 951,
+          "end_line": 24,
+          "block_sha256": "c23ca54ec1f2ab0199b88ceb9d5487ae9a66970361854b691c541934bbf6bfc7"
+        }
+      ]
+    },
+    {
+      "path": "sainasu/event/nevent03_6",
+      "bytes": 462,
+      "sha256": "be163c91fa054008cf584da0771d488f1f07b04301e965635534b49624f24044",
+      "crc32": "b1169059",
+      "events": [
+        {
+          "ordinal": 0,
+          "start_byte": 194,
+          "start_line": 8,
+          "event_number": -1,
+          "commands": [],
+          "type": "MESSAGE",
+          "event": "LV>0",
+          "end_byte": 458,
+          "end_line": 12,
+          "block_sha256": "2237a030587d11673583b23c176c2ba698f8293bc34f7013da57a1c9f7ce3475"
+        }
+      ]
+    }
+  ],
+  "source_limitshops": [
+    {
+      "path": "genout/lbis_10605_41_24",
+      "sha256": "56cd207fdf7ae8b87b8b80c0cd64618855d7b5e2ff587761dccbea882b4816ce",
+      "raw_numeric_controls": {
+        "sell_rate": "0.3",
+        "LimitItemNo": "2469-2471",
+        "special_item": "2471",
+        "special_rate": "0.4"
+      }
+    },
+    {
+      "path": "genout/lbis_1212_17_13",
+      "sha256": "505cdc071648d6a37b5522c45d2a13a5c49a990d598f7efc415a2effb9e37cac",
+      "raw_numeric_controls": {
+        "sell_rate": "1.0",
+        "LimitItemNo": "2472-2474",
+        "special_item": "2474",
+        "special_rate": "1.1"
+      }
+    },
+    {
+      "path": "genout/lbis_1212_17_17",
+      "sha256": "a371c933d5ede1f16fd0c2eafaf3d2e21ff64d4368ab8ffd9c6238fa13cc44a0",
+      "raw_numeric_controls": {
+        "sell_rate": "1.0",
+        "LimitItemNo": "2469-2471",
+        "special_item": "2471",
+        "special_rate": "1.1"
+      }
+    }
+  ],
+  "source_upstream_creates": [
+    {
+      "source_file": "genout/nevent_03.create",
+      "source_block_ordinal": 6,
+      "source_start_byte": 1188,
+      "source_end_byte": 1356,
+      "source_block_sha256": "321f5df1aa5ded0f90b672f179e30ce009a8e5b4ef631ca2de8f4bbefbc97780",
+      "floor": 100,
+      "graphic_alias": 16017,
+      "borncorner": [
+        412,
+        337,
+        412,
+        337
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "npcgen_shop",
+      "parameter_file": "genout/ss_100_412_337",
+      "parameter_sha256": "43d0b71367d3847d3ace63f33f5dcffda159734d04ca39638b089393a264e8a3"
+    },
+    {
+      "source_file": "genout/nevent_03.create",
+      "source_block_ordinal": 7,
+      "source_start_byte": 1365,
+      "source_end_byte": 1533,
+      "source_block_sha256": "cc1eb265de4ced0886f9fe5b77810cd1a9b31ad2473876eb4d4e89b5073fe01e",
+      "floor": 100,
+      "graphic_alias": 10062,
+      "borncorner": [
+        413,
+        335,
+        413,
+        335
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "npcgen_signboard",
+      "parameter_file": "genout/signb_100_413_335",
+      "parameter_sha256": "c538d80e7f770a2fc98977663faa301d3ad674cff34bd71e72f57965f7d23594"
+    },
+    {
+      "source_file": "genout/nevent_03.create",
+      "source_block_ordinal": 8,
+      "source_start_byte": 1542,
+      "source_end_byte": 1706,
+      "source_block_sha256": "fb8ce9f375d4df83ee2386f93b915fc0cdb6bf32fb05182a1fe755954fb61f4c",
+      "floor": 100,
+      "graphic_alias": 16056,
+      "borncorner": [
+        412,
+        339,
+        412,
+        339
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "npcgen_warpman",
+      "parameter_file": "genout/wpm_100_412_339",
+      "parameter_sha256": "3c8d9b42403ce284b3b39bac097129e420ec8bfe11eac13096be3f45c7dd92ea"
+    },
+    {
+      "source_file": "genout/nevent_03.create",
+      "source_block_ordinal": 11,
+      "source_start_byte": 2061,
+      "source_end_byte": 2222,
+      "source_block_sha256": "7e51b34d69b4d3cd62b3a11d9f999189616eaaa7bde3c230095b286d113d1130",
+      "floor": 1212,
+      "graphic_alias": 10063,
+      "borncorner": [
+        15,
+        4,
+        15,
+        4
+      ],
+      "borncenter": null,
+      "direction": 4,
+      "template_token": "npcgen_signboard",
+      "parameter_file": "genout/signb_1212_15_4",
+      "parameter_sha256": "ee241ba9085dd8d223bd7a193799eaf6b7bbc5a6c56156d3d4a16a3874beb5ac"
+    },
+    {
+      "source_file": "genout/nevent_03.create",
+      "source_block_ordinal": 49,
+      "source_start_byte": 8339,
+      "source_end_byte": 8505,
+      "source_block_sha256": "3610c1df7d194d8c01714b7f4ae31032085b7cab5f8c5b63722adc934cfc3325",
+      "floor": 10605,
+      "graphic_alias": 10062,
+      "borncorner": [
+        39,
+        30,
+        39,
+        30
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "npcgen_signboard",
+      "parameter_file": "genout/signb_10605_39_30",
+      "parameter_sha256": "4556bd5bc80f0f7f532b9985ce519b731b0048b46c943532bce2937488f89d8f"
+    }
+  ],
+  "source_upstream_parameters": [
+    {
+      "path": "genout/ss_100_412_337",
+      "bytes": 476,
+      "sha256": "43d0b71367d3847d3ace63f33f5dcffda159734d04ca39638b089393a264e8a3",
+      "crc32": "3e41e012",
+      "raw_numeric_controls": {
+        "buy_rate": "1.0",
+        "sell_rate": "0.5",
+        "ItemList": "2475-2477",
+        "LimitItemNo": "2475-2477"
+      }
+    },
+    {
+      "path": "genout/signb_100_413_335",
+      "bytes": 181,
+      "sha256": "c538d80e7f770a2fc98977663faa301d3ad674cff34bd71e72f57965f7d23594",
+      "crc32": "1e024a2c",
+      "raw_numeric_controls": {}
+    },
+    {
+      "path": "genout/wpm_100_412_339",
+      "bytes": 302,
+      "sha256": "3c8d9b42403ce284b3b39bac097129e420ec8bfe11eac13096be3f45c7dd92ea",
+      "crc32": "5dc19909",
+      "raw_numeric_controls": {
+        "WARP": "10601,28,49",
+        "FREE": "LV>0",
+        "MONEY": "-1"
+      }
+    },
+    {
+      "path": "genout/signb_10605_39_30",
+      "bytes": 193,
+      "sha256": "4556bd5bc80f0f7f532b9985ce519b731b0048b46c943532bce2937488f89d8f",
+      "crc32": "45807e15",
+      "raw_numeric_controls": {}
+    },
+    {
+      "path": "genout/signb_1212_15_4",
+      "bytes": 19,
+      "sha256": "ee241ba9085dd8d223bd7a193799eaf6b7bbc5a6c56156d3d4a16a3874beb5ac",
+      "crc32": "8b9944c6",
+      "raw_numeric_controls": {}
+    }
+  ],
+  "prior_item01_license_numeric_rows_2475_to_2477": [
+    [
+      2475,
+      "24a6e5e0fc6ed76f70e5153fbb3cb662f8fd9f9d76fd4c121a3356687d559606",
+      "24a6e5e0fc6ed76f70e5153fbb3cb662f8fd9f9d76fd4c121a3356687d559606",
+      24222,
+      24222,
+      "200",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      2476,
+      "79d8b3cc199b2b6600a9d84eaa89a57f38422eef991f48dbd79fc2d53e461665",
+      "79d8b3cc199b2b6600a9d84eaa89a57f38422eef991f48dbd79fc2d53e461665",
+      24222,
+      24222,
+      "600",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      2477,
+      "49a508c43c4c62878ff342e85494ca2bec584224df0157485fbb2dec47050e33",
+      "49a508c43c4c62878ff342e85494ca2bec584224df0157485fbb2dec47050e33",
+      24222,
+      24222,
+      "1000",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ]
+  ],
+  "prior_item01_numeric_rows_2469_to_2474": [
+    [
+      2469,
+      "b3cb2c957ecfdf9ac716d219c9e12f0c32cba47d53caa51289efb0c2879a9dc1",
+      "b3cb2c957ecfdf9ac716d219c9e12f0c32cba47d53caa51289efb0c2879a9dc1",
+      14659,
+      14659,
+      "100",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      2470,
+      "c36ccd547b3f6e66992270ee1b12bce25b64276d46bfb2b1ba0653b807a2b3bd",
+      "c36ccd547b3f6e66992270ee1b12bce25b64276d46bfb2b1ba0653b807a2b3bd",
+      14607,
+      14607,
+      "230",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      2471,
+      "2f4a8624ccd9b198067cc9e84627e93109d3371988585421ca1e5fa5ab8f070d",
+      "2f4a8624ccd9b198067cc9e84627e93109d3371988585421ca1e5fa5ab8f070d",
+      13443,
+      13443,
+      "350",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      2472,
+      "338353aab364c7c7c8ca973c25dd7340be40a21baa9e80ad1bed87cd36b8530e",
+      "338353aab364c7c7c8ca973c25dd7340be40a21baa9e80ad1bed87cd36b8530e",
+      24222,
+      24222,
+      "2000",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      2473,
+      "c0a385d826f6f8d088149444c7bb09d9801813a77cc7e446bcee4b3d306263cf",
+      "c0a385d826f6f8d088149444c7bb09d9801813a77cc7e446bcee4b3d306263cf",
+      24222,
+      24222,
+      "3500",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      2474,
+      "0391d8655a2662bb0976b469cb072aff10dbf795c78f7871a809a493da6e80d7",
+      "0391d8655a2662bb0976b469cb072aff10dbf795c78f7871a809a493da6e80d7",
+      24222,
+      24222,
+      "5500",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ]
+  ],
+  "prior_quest05_map_qualification": [
+    {
+      "source_floor_id": 1212,
+      "map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "source_DAT_file": "1212.dat",
+      "source_DAT_sha256": "783821fd2ad52da3c4daed94f6fcbb8c2996b1c72ddcf189071d01710c573503",
+      "source_CREATE_ref_count": 2,
+      "source_cohorts": {
+        "QUEST01": 2
+      }
+    },
+    {
+      "source_floor_id": 10603,
+      "map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "source_DAT_file": "10603.dat",
+      "source_DAT_sha256": "d64a87ebf4cc461c1a56ead3f268ef880a896aee1f0d85bd55096fcc5d5331f3",
+      "source_CREATE_ref_count": 1,
+      "source_cohorts": {
+        "QUEST01": 1
+      }
+    },
+    {
+      "source_floor_id": 10605,
+      "map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "source_DAT_file": "10605.dat",
+      "source_DAT_sha256": "741f997623686ce19954f59f3e4b20d15b050f70ceb54ac3559d65814ba4f5bd",
+      "source_CREATE_ref_count": 3,
+      "source_cohorts": {
+        "QUEST01": 3
+      }
+    }
+  ],
+  "boundaries": {
+    "native_execution_verified": false,
+    "actual_item_delivery_verified": false,
+    "actual_deletion_quantity_verified": false,
+    "cash_payout_formula_verified": false,
+    "event_comma_or_ampersand_interpreted": false,
+    "official_origin_verified": false,
+    "original_map_pixels_newly_read": false,
+    "original_item_pixels_newly_read": false
+  },
+  "status": {
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  }
+}
