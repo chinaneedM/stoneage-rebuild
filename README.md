@@ -2049,3 +2049,7 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-07 MAP08：955原DAT持久私人保管与6张来源场景
 
 [MAP08来源及实际观察续接](docs/continuity/STONEAGE-MAP08-955-DAT-SIX-LARGE-SCENES-20261107.md)：一次真实取回955份已固定摘要的原DAT（不是955张新发现地图），私人完整保存供后续复用；6张原图齐全场景1200/1400/3100/3300/5100/5500已合成18幅候选原素材画面，47874绘图位置、1298组原PNG。独立NumPy与Pillow全18画布RGBA一致，约120MB私人包完整回读SHA/CRC同一。公仓库仅方法/派生元数据，无商业原文件。原客户端/原生碰撞/官方同部署不晋升。最高NEXT **MAP09**：复用955原DAT与已有像素包批量续原场景，缺图明确保留；不重下大载体。旧CURRENT完整保留，Stage A 7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null不变。
+
+## 2026-11-07 MAP09：691份原地图的集中离线观察目录
+
+[MAP09来源与验收续接](docs/continuity/STONEAGE-MAP09-691-SOURCE-READY-MAP-CATALOG-20261107.md)：复用已保存955原DAT及原PNG包，691份来源就绪文件（688不同原SHA）与3496原PNG集中可查，全部2073完整平面/合层RGBA由两算法独立一致。新增按编号筛选/分层的离线观察器，合成浏览器9画布与控件实测通过，不冒充私人原图浏览器或原客户端运行。其余264份细分为60份仅低值资格缺口与204份大于99缺候选图号；历史状态不改。最高NEXT **MAP10**：以真实原RD来源有限补缺，原件不可得则明确止点；不重复下载同源大包。完整CURRENT保留，Stage A 7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null。
