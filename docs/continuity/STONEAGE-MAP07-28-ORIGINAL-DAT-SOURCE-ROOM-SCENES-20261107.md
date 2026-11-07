@@ -28,3 +28,9 @@
 MAP07 `SOURCE_BOUNDED_PARTIAL`。原客户端未启动，原地图未原生运行。Stage A **7 PARTIAL + 2 OPEN**、Stage B/wiki `GATED`、R79 `PAUSED_NON_BLOCKING`、overall_percent=`null`，均保持。
 
 **最高 NEXT MAP08：**优先在同一地图模块中继续实际原DAT规模较大的村庄/室内来源场景，或真实取得MAP05尚缺的12原图号；先核真实原字节、来源完整SHA和可观察像素，再扩合图。避免为每张地图重复下载361MB载体；后续优先成批取回并私人保管合格原件，不进入网游重建或Stage B。
+
+## 追加后验：私人Library保管与首次主线验收（2026-11-07）
+
+初次以container_path向Library上传34MB私人ZIP失败的原记录保持不变。随后通过已导出的精确文件快照向个人Library `/石器时代/StoneAge-MAP07-private-28-original-room-scene-candidates.zip` **上传成功**；为避免仅凭API返回推定存档，另从Library重新下载整个文件并在本地核验：**34,044,818B / SHA256 `2b356fefa1f5c634a2a64837b20904e124ab9839ad6a4e3b9a642e3c05df29a2` / 351成员 / 全成员CRC通过**，与原私人交付逐字节全文件SHA一致。此前“Library未确认”描述是早于这次成功操作的阶段记录，不再是最终保管状态；没有私人原地图和原图进入公开Git。
+
+PR [#232](https://github.com/chinaneedM/stoneage-rebuild/pull/232) 已合入主线 `244c8cc5e6258c7ac701bfb0efdd1ce110a126b2`；该**合并SHA**的实际11项 Actions 均为 `completed/success`，包括 MAP07 公开来源验收 [42350176227](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42350176227)。此后只增补私人持久保管后验与相应公开反例，地图恢复阶段边界和NEXT不变。
