@@ -35,4 +35,22 @@ class Item07(unittest.TestCase):
         self.assertEqual(d['summary']['patch129_matched_aliases'],0)
         self.assertNotIn('item_name',d['aliases'][0])
 
+@unittest.skipUnless(m.ITEM.is_file() and m.REF.is_file() and m.CONTENT.is_file() and m.OUTPUT.is_file(), "requires archived Git source and report")
+class Item07PublishedSource(unittest.TestCase):
+    def test_source_report_replays_exactly(self):
+        import json
+        stored=json.loads(m.OUTPUT.read_text(encoding='utf-8'))
+        replay=m.build()
+        self.assertEqual(replay,stored)
+        self.assertEqual(replay['summary']['by_status'],{
+            'absent|PATCH_MULTIPLE_RD_CANDIDATES':1,
+            'absent|PATCH_NOT_IN_ALIAS_CATALOG':7,
+            'absent|PATCH_ONE_RD_CANDIDATE':408,
+            'strict|PATCH_SAME_RD_AS_MIXED25':415,
+        })
+        self.assertEqual([x['mixed25_item_image_alias'] for x in replay['aliases'] if x['result']=='PATCH_NOT_IN_ALIAS_CATALOG'],
+            [22460,22461,22545,22561,22591,22749,22759])
+        multi=[x for x in replay['aliases'] if x['result']=='PATCH_MULTIPLE_RD_CANDIDATES']
+        self.assertEqual([(x['mixed25_item_image_alias'],x['distinct_patch_rd_candidates'],x['patch_original_alias_occurrences']) for x in multi],[(21600,2,3)])
+
 if __name__=='__main__':unittest.main()
