@@ -20,6 +20,8 @@ MAPS = ROOT / 'research/recovered/STONEAGE-QUEST05-598-ORIGINAL-CREATE-FLOOR-MAP
 REPORT = ROOT / 'research/recovered/STONEAGE-QUEST08-MINING-APPRAISAL-AND-LIMITSHOP-SOURCE-R1.json'
 PARAMETERS = [f'sainasu/event/nevent03_{n}' for n in range(1, 7)] + [
     'genout/lbis_10605_41_24', 'genout/lbis_1212_17_13', 'genout/lbis_1212_17_17']
+UPSTREAM = ['genout/ss_100_412_337', 'genout/signb_100_413_335',
+            'genout/wpm_100_412_339', 'genout/signb_10605_39_30', 'genout/signb_1212_15_4']
 ZIP_SHA = 'c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f'
 
 
@@ -85,15 +87,15 @@ def extract(source_zip):
                 raise ValueError('Original member identity mismatch: ' + name)
             data[row[0]] = raw
     selected = {}
-    for path in PARAMETERS:
+    for path in PARAMETERS + UPSTREAM:
         raw = data[path]
         text = raw.decode('cp950')
         if text.encode('cp950') != raw:
             raise ValueError('Non-reversible source text')
         selected[path] = raw
-    create_rows = [r for r in source['create_rows'] if any(ref[0] in PARAMETERS for ref in r[15])]
-    if len(create_rows) != 9:
-        raise ValueError('Expected six event and three limitshop creates')
+    create_rows = [r for r in source['create_rows'] if any(ref[0] in PARAMETERS + UPSTREAM for ref in r[15])]
+    if len(create_rows) != 14:
+        raise ValueError('Expected nine appraisal/shop and five upstream creates')
     creates = []
     for row in create_rows:
         raw = data[row[0]]
@@ -123,6 +125,17 @@ def extract(source_zip):
         shops.append({'path': path, 'sha256': sha(data[path]), 'raw_numeric_controls': controls})
     item_rows = json.loads(ITEMS.read_text())['rows']
     items = [row for row in item_rows if 2469 <= row[0] <= 2474]
+    upstream = []
+    for path in UPSTREAM:
+        controls = {}
+        for line in data[path].splitlines():
+            if b':' not in line:
+                continue
+            key, value = line.split(b':', 1)
+            if key in (b'ItemList', b'LimitItemNo', b'buy_rate', b'sell_rate', b'WARP', b'FREE', b'MONEY'):
+                controls[key.decode()] = value.decode('ascii')
+        upstream.append({'path': path, 'bytes': len(data[path]), 'sha256': sha(data[path]),
+                         'crc32': f'{zlib.crc32(data[path]):08x}', 'raw_numeric_controls': controls})
     map_rows = json.loads(MAPS.read_text())['floors']
     maps = [row for row in map_rows if row['source_floor_id'] in {1212, 10603, 10605}]
     report = {
@@ -138,7 +151,11 @@ def extract(source_zip):
         'derived_input_blobs': {p.relative_to(ROOT).as_posix(): blob(p.read_bytes()) for p in (SOURCE, ITEMS, MAPS)},
         'selected_original_files': [{'path': p, 'bytes': len(b), 'sha256': sha(b),
                                      'crc32': f'{zlib.crc32(b):08x}'} for p, b in sorted(selected.items())],
-        'source_creates': creates, 'source_scripts': scripts, 'source_limitshops': shops,
+        'source_creates': [r for r in creates if r['parameter_file'] in PARAMETERS],
+        'source_scripts': scripts, 'source_limitshops': shops,
+        'source_upstream_creates': [r for r in creates if r['parameter_file'] in UPSTREAM],
+        'source_upstream_parameters': upstream,
+        'prior_item01_license_numeric_rows_2475_to_2477': [r for r in item_rows if 2475 <= r[0] <= 2477],
         'prior_item01_numeric_rows_2469_to_2474': items,
         'prior_quest05_map_qualification': maps,
         'boundaries': {'native_execution_verified': False, 'actual_item_delivery_verified': False,

@@ -18,7 +18,7 @@ class MiningSource(unittest.TestCase):
         d = self.data
         original = json.loads((ROOT / 'research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json').read_text())
         manifest = {r[0]: r[1:4] for r in original['source_files']}
-        self.assertEqual(len(d['selected_original_files']), 13)
+        self.assertEqual(len(d['selected_original_files']), 18)
         for r in d['selected_original_files']:
             self.assertEqual([r['bytes'], r['sha256'], r['crc32']], manifest[r['path']])
         known = {(r[0], r[1]): r for r in original['create_rows']}
@@ -64,6 +64,26 @@ class MiningSource(unittest.TestCase):
             self.assertNotIn('actual_cash', row)
         self.assertEqual(self.data['origin_class'], 'ORIGIN_UNRESOLVED')
         self.assertTrue(all(value is False for value in self.data['boundaries'].values()))
+
+    def test_upstream_license_and_entry_preserve_source_disagreement(self):
+        upstream = self.data['source_upstream_parameters']
+        self.assertEqual(len(upstream), 5)
+        self.assertEqual(upstream[0]['raw_numeric_controls'],
+                         {'buy_rate':'1.0','sell_rate':'0.5','ItemList':'2475-2477','LimitItemNo':'2475-2477'})
+        self.assertEqual(upstream[2]['raw_numeric_controls'],
+                         {'WARP':'10601,28,49','FREE':'LV>0','MONEY':'-1'})
+        creates = self.data['source_upstream_creates']
+        self.assertEqual(len(creates), 5)
+        seller = next(r for r in creates if r['parameter_file'].endswith('ss_100_412_337'))
+        self.assertEqual((seller['floor'],seller['borncorner']), (100,[412,337,412,337]))
+        self.assertNotEqual(seller['floor'],10605)
+        old = json.loads((ROOT/'research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json').read_text())
+        for r in creates:
+            match = next(x for x in old['create_rows'] if x[0]==r['source_file'] and x[1]==r['source_block_ordinal'])
+            self.assertEqual([r['source_block_sha256'],r['floor'],r['graphic_alias'],r['borncorner']],match[4:8])
+        items = json.loads((ROOT/'research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-02-R1.json').read_text())
+        self.assertEqual(self.data['prior_item01_license_numeric_rows_2475_to_2477'],
+                         [r for r in items['rows'] if 2475<=r[0]<=2477])
 
     def test_independent_item_and_map_joins(self):
         items = json.loads((ROOT / 'research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-02-R1.json').read_text())

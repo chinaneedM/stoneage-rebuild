@@ -2103,3 +2103,6 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-07 — QUEST08｜原采矿鉴定、救援赠矿与三处兑币配置
 
 [QUEST08来源、完整字面差异及私人原文](docs/continuity/STONEAGE-QUEST08-ORIGINAL-MINING-APPRAISAL-LIMITSHOP-20261107.md)：实际重读源SHA/CRC认证的CHAR01完整2,205原文件，在原有索引中新增恢复6份采矿脚本的21段条件/动作和3份LIMITSHOP数字配置，并逐原字节核9条CREATE。三类矿石2469–2471与鉴定书2472–2474关联明确；前两类低档4条裸DelItem数量保持null，第三类原写*8/*5，不修正为统一数量或宣称实际扣除。三处兑币原rate与6行旧物品原索引相连，不推成交公式；任务起源ORIGIN_UNRESOLVED、真实执行未知。本轮原DAT/RD新读0，13份原文件与全文查阅私人包已保存并回读SHA/15项CRC；公开仅[数字/散列](research/recovered/STONEAGE-QUEST08-MINING-APPRAISAL-AND-LIMITSHOP-SOURCE-R1.json)、提取器及6项来源验收。原CURRENT完整blob不改，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体百分比未知。NEXT只对真实可得的采矿权利书出售/矿石来源作有限上游补证，缺源则转其他任务族。
+
+
+**QUEST08同轮上游追加：** 又实际读取5原参数，定位权利书商店2475–2477于源floor100/(412,337)，入口原目标10601/(28,49)。其与NPC“第五层买权利书”说明的冲突原样保留，不改位置、不推收费或实际无限采矿。最终私人包18原文件/20成员已回读SHA/CRC；7项专项回归和28项相关本地检查通过。最终NEXT转其他真实任务族，实际采矿/许可运行待真源才重开，详见同一QUEST08连续性页的追加。

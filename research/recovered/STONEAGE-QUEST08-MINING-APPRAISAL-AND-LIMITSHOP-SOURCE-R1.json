@@ -51,6 +51,36 @@
       "crc32": "56547578"
     },
     {
+      "path": "genout/signb_100_413_335",
+      "bytes": 181,
+      "sha256": "c538d80e7f770a2fc98977663faa301d3ad674cff34bd71e72f57965f7d23594",
+      "crc32": "1e024a2c"
+    },
+    {
+      "path": "genout/signb_10605_39_30",
+      "bytes": 193,
+      "sha256": "4556bd5bc80f0f7f532b9985ce519b731b0048b46c943532bce2937488f89d8f",
+      "crc32": "45807e15"
+    },
+    {
+      "path": "genout/signb_1212_15_4",
+      "bytes": 19,
+      "sha256": "ee241ba9085dd8d223bd7a193799eaf6b7bbc5a6c56156d3d4a16a3874beb5ac",
+      "crc32": "8b9944c6"
+    },
+    {
+      "path": "genout/ss_100_412_337",
+      "bytes": 476,
+      "sha256": "43d0b71367d3847d3ace63f33f5dcffda159734d04ca39638b089393a264e8a3",
+      "crc32": "3e41e012"
+    },
+    {
+      "path": "genout/wpm_100_412_339",
+      "bytes": 302,
+      "sha256": "3c8d9b42403ce284b3b39bac097129e420ec8bfe11eac13096be3f45c7dd92ea",
+      "crc32": "5dc19909"
+    },
+    {
       "path": "jaruga/event/event.template",
       "bytes": 122,
       "sha256": "9c11ac0cbbd9b110e8ff7d0115730044673bf29c5df6d23034e56530c181d0b2",
@@ -802,6 +832,195 @@
         "special_rate": "1.1"
       }
     }
+  ],
+  "source_upstream_creates": [
+    {
+      "source_file": "genout/nevent_03.create",
+      "source_block_ordinal": 6,
+      "source_start_byte": 1188,
+      "source_end_byte": 1356,
+      "source_block_sha256": "321f5df1aa5ded0f90b672f179e30ce009a8e5b4ef631ca2de8f4bbefbc97780",
+      "floor": 100,
+      "graphic_alias": 16017,
+      "borncorner": [
+        412,
+        337,
+        412,
+        337
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "npcgen_shop",
+      "parameter_file": "genout/ss_100_412_337",
+      "parameter_sha256": "43d0b71367d3847d3ace63f33f5dcffda159734d04ca39638b089393a264e8a3"
+    },
+    {
+      "source_file": "genout/nevent_03.create",
+      "source_block_ordinal": 7,
+      "source_start_byte": 1365,
+      "source_end_byte": 1533,
+      "source_block_sha256": "cc1eb265de4ced0886f9fe5b77810cd1a9b31ad2473876eb4d4e89b5073fe01e",
+      "floor": 100,
+      "graphic_alias": 10062,
+      "borncorner": [
+        413,
+        335,
+        413,
+        335
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "npcgen_signboard",
+      "parameter_file": "genout/signb_100_413_335",
+      "parameter_sha256": "c538d80e7f770a2fc98977663faa301d3ad674cff34bd71e72f57965f7d23594"
+    },
+    {
+      "source_file": "genout/nevent_03.create",
+      "source_block_ordinal": 8,
+      "source_start_byte": 1542,
+      "source_end_byte": 1706,
+      "source_block_sha256": "fb8ce9f375d4df83ee2386f93b915fc0cdb6bf32fb05182a1fe755954fb61f4c",
+      "floor": 100,
+      "graphic_alias": 16056,
+      "borncorner": [
+        412,
+        339,
+        412,
+        339
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "npcgen_warpman",
+      "parameter_file": "genout/wpm_100_412_339",
+      "parameter_sha256": "3c8d9b42403ce284b3b39bac097129e420ec8bfe11eac13096be3f45c7dd92ea"
+    },
+    {
+      "source_file": "genout/nevent_03.create",
+      "source_block_ordinal": 11,
+      "source_start_byte": 2061,
+      "source_end_byte": 2222,
+      "source_block_sha256": "7e51b34d69b4d3cd62b3a11d9f999189616eaaa7bde3c230095b286d113d1130",
+      "floor": 1212,
+      "graphic_alias": 10063,
+      "borncorner": [
+        15,
+        4,
+        15,
+        4
+      ],
+      "borncenter": null,
+      "direction": 4,
+      "template_token": "npcgen_signboard",
+      "parameter_file": "genout/signb_1212_15_4",
+      "parameter_sha256": "ee241ba9085dd8d223bd7a193799eaf6b7bbc5a6c56156d3d4a16a3874beb5ac"
+    },
+    {
+      "source_file": "genout/nevent_03.create",
+      "source_block_ordinal": 49,
+      "source_start_byte": 8339,
+      "source_end_byte": 8505,
+      "source_block_sha256": "3610c1df7d194d8c01714b7f4ae31032085b7cab5f8c5b63722adc934cfc3325",
+      "floor": 10605,
+      "graphic_alias": 10062,
+      "borncorner": [
+        39,
+        30,
+        39,
+        30
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "npcgen_signboard",
+      "parameter_file": "genout/signb_10605_39_30",
+      "parameter_sha256": "4556bd5bc80f0f7f532b9985ce519b731b0048b46c943532bce2937488f89d8f"
+    }
+  ],
+  "source_upstream_parameters": [
+    {
+      "path": "genout/ss_100_412_337",
+      "bytes": 476,
+      "sha256": "43d0b71367d3847d3ace63f33f5dcffda159734d04ca39638b089393a264e8a3",
+      "crc32": "3e41e012",
+      "raw_numeric_controls": {
+        "buy_rate": "1.0",
+        "sell_rate": "0.5",
+        "ItemList": "2475-2477",
+        "LimitItemNo": "2475-2477"
+      }
+    },
+    {
+      "path": "genout/signb_100_413_335",
+      "bytes": 181,
+      "sha256": "c538d80e7f770a2fc98977663faa301d3ad674cff34bd71e72f57965f7d23594",
+      "crc32": "1e024a2c",
+      "raw_numeric_controls": {}
+    },
+    {
+      "path": "genout/wpm_100_412_339",
+      "bytes": 302,
+      "sha256": "3c8d9b42403ce284b3b39bac097129e420ec8bfe11eac13096be3f45c7dd92ea",
+      "crc32": "5dc19909",
+      "raw_numeric_controls": {
+        "WARP": "10601,28,49",
+        "FREE": "LV>0",
+        "MONEY": "-1"
+      }
+    },
+    {
+      "path": "genout/signb_10605_39_30",
+      "bytes": 193,
+      "sha256": "4556bd5bc80f0f7f532b9985ce519b731b0048b46c943532bce2937488f89d8f",
+      "crc32": "45807e15",
+      "raw_numeric_controls": {}
+    },
+    {
+      "path": "genout/signb_1212_15_4",
+      "bytes": 19,
+      "sha256": "ee241ba9085dd8d223bd7a193799eaf6b7bbc5a6c56156d3d4a16a3874beb5ac",
+      "crc32": "8b9944c6",
+      "raw_numeric_controls": {}
+    }
+  ],
+  "prior_item01_license_numeric_rows_2475_to_2477": [
+    [
+      2475,
+      "24a6e5e0fc6ed76f70e5153fbb3cb662f8fd9f9d76fd4c121a3356687d559606",
+      "24a6e5e0fc6ed76f70e5153fbb3cb662f8fd9f9d76fd4c121a3356687d559606",
+      24222,
+      24222,
+      "200",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      2476,
+      "79d8b3cc199b2b6600a9d84eaa89a57f38422eef991f48dbd79fc2d53e461665",
+      "79d8b3cc199b2b6600a9d84eaa89a57f38422eef991f48dbd79fc2d53e461665",
+      24222,
+      24222,
+      "600",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ],
+    [
+      2477,
+      "49a508c43c4c62878ff342e85494ca2bec584224df0157485fbb2dec47050e33",
+      "49a508c43c4c62878ff342e85494ca2bec584224df0157485fbb2dec47050e33",
+      24222,
+      24222,
+      "1000",
+      "16",
+      "0",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      "REAL_RD_DECODED_CROSS_CARRIER",
+      []
+    ]
   ],
   "prior_item01_numeric_rows_2469_to_2474": [
     [
