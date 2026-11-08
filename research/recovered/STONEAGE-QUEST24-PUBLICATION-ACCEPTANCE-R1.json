@@ -1,0 +1,113 @@
+{
+  "schema": "stoneage.quest24.source_bounded_publication_acceptance.r1",
+  "date": "2026-11-08",
+  "status": "ACCEPTED_SOURCE_BOUNDED",
+  "PR": 264,
+  "start_head": "f26565d75231eb0d90cc7258b2496ec7eb22ea05",
+  "start_tree": "bce8b799ff8f2b3eec208720f0e3d7ad940b2e58",
+  "candidate_head": "de83e2be29c678cb1946e2897370b39c4f643b2a",
+  "content_main": "ca0c5bef8c5646f51d1c8796d1228cb9f03adb3d",
+  "content_tree": "a434d03b501f96514d59259552ef878e504dd003",
+  "candidate_runs": [
+    {
+      "run_id": 42476270580,
+      "head_sha": "de83e2be29c678cb1946e2897370b39c4f643b2a",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42476270436,
+      "head_sha": "de83e2be29c678cb1946e2897370b39c4f643b2a",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42476270510,
+      "head_sha": "de83e2be29c678cb1946e2897370b39c4f643b2a",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42476267604,
+      "head_sha": "de83e2be29c678cb1946e2897370b39c4f643b2a",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "main_runs": [
+    {
+      "run_id": 42476337546,
+      "head_sha": "ca0c5bef8c5646f51d1c8796d1228cb9f03adb3d",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "candidate_specialist_job": 128718219412,
+  "main_specialist_job": 128718425965,
+  "verification": {
+    "specialist_tests": 10,
+    "all_local_quest_tests": 286,
+    "source_NPC_members_SHA_CRC": 2205,
+    "actual_DAT_files_replayed": 4,
+    "complete_candidate_frames_Pillow_NumPy": 12,
+    "authenticated_original_candidate_tile_PNGs": 490,
+    "independent_three_plane_center_values_and_yellow_pixels": 27,
+    "private_original_transcripts_verified": 36,
+    "core_item_IDs": 12,
+    "exact_original_item_rows": 24,
+    "cross_source_TW1_candidate_icons": 11,
+    "private_HTML_all_local_links_verified": true,
+    "public_report_and_all_578_private_members_reproduced_byte_identically": true,
+    "remote_content_five_full_files_and_tree_exact": true,
+    "native_original_game_executed": false,
+    "public_CI_reads_private_original_assets": false
+  },
+  "private_package": {
+    "bytes": 23451751,
+    "members": 578,
+    "sha256": "75aad7150fe4ffd4db0da16bc5de92f8ed3c61073beb2fa709a9ad19c8ba83ac",
+    "saved_and_independently_reread_SHA_all_bytes_CRC": true,
+    "commercial_originals_published": false
+  },
+  "source_limits": {
+    "poru01_configs": 32,
+    "selected_boss_config_ordinals": [
+      0
+    ],
+    "selected_configs_total": 33,
+    "existing_QUEST01_events": 39,
+    "new_original_script_discoveries": 0,
+    "flag63_provider_statically_linked_to_QUEST23_prerequisite": true,
+    "old_WORLD21_GetPet_instance": 352,
+    "old_same_carrier_template": 303,
+    "actual_borncenter_spawn_semantics_verified": false,
+    "borncorner_borncenter_precedence_verified": false,
+    "original_DAT500_available": false,
+    "native_reward_or_warp_execution_verified": false,
+    "early_official_same_deployment_authenticated": false
+  },
+  "preserved_source_discrepancies": {
+    "message_item_18544_not_replaced_by_18558": true,
+    "wpm_named_ExChangeMan_not_promoted_to_WarpMan": true,
+    "meat_comma_condition_boolean_semantics_unresolved": true
+  },
+  "preserved_CURRENT": {
+    "bytes": 2709173,
+    "blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "modified": false
+  },
+  "stage_A": {
+    "PARTIAL": 7,
+    "OPEN": 2
+  },
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "QUEST25_MODULE_CONTENT_REVIEW_AFTER_PORU_FLAG63_AND64_SOURCE_LINKS",
+  "receipt_commit_CI": "NOT_PRECLAIMED_VERIFY_AFTER_PUBLICATION"
+}

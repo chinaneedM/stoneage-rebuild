@@ -63,3 +63,9 @@ boy05的原条件是`ITEM=2248,ITEM=2249,ITEM=2250,ITEM=2251,ITEM=2252,ITEM=2253
 **NEXT QUEST25_MODULE_CONTENT_REVIEW_AFTER_PORU_FLAG63_AND64_SOURCE_LINKS**：这两组波拉岛前置/四圣石的来源关系达到有限止点，先回任务模块和现有WORLD/角色/地图/宠物覆盖做材料复核，选另一组能增加实际内容关联的原件；不得只重算旧TYPE/目录、反复重放500缺图或穷举borncenter加载器。原生任务、500 DAT和历史官方归属等待相应新源再开，不进入未来新游戏设计。
 
 Stage A仍 **7 PARTIAL+2 OPEN**、Stage B/wiki **GATED**、R79 **PAUSED_NON_BLOCKING**，本体/常驻/活动起源 **UNRESOLVED**、总体完成率未知。
+
+## 远端实际验收与接力
+
+[PR #264](https://github.com/chinaneedM/stoneage-rebuild/pull/264) 已合并；候选 `de83e2be29c678cb1946e2897370b39c4f643b2a` 的四项 Actions（42476267604、42476270436、42476270510、42476270580）均 completed/success。内容主线 `ca0c5bef8c5646f51d1c8796d1228cb9f03adb3d` / tree `a434d03b501f96514d59259552ef878e504dd003` 的 [run 42476337546](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42476337546)、job 128718425965 已真实成功，日志含全部10项 PoruFlag63OriginalEvidence 测试成功。原生 Git 对远端五文件完整字节及 tree 核同，四份历史文档 blob 不变。
+
+[验收收据](../../research/recovered/STONEAGE-QUEST24-PUBLICATION-ACCEPTANCE-R1.json) 保存候选/主线与私人包回读证据。本段和README为大CURRENT的追加接力，不替代其全文；收据自身提交的CI须在发布后另行观察，不预先宣称成功。最高NEXT仍为上述QUEST25模块材料复核，停止扩波拉岛的旧索引与缺图分支。
