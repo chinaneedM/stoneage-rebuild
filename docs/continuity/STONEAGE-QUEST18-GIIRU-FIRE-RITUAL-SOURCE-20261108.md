@@ -34,3 +34,11 @@
 公开研究数据：`research/recovered/STONEAGE-QUEST18-GIIRU-SINK-SOURCE-R1.json`；可在 GitHub 纯公开原索引上运行的回归：`tests/test_stoneage_quest18_giiru_sink_source.py`；专门挂进已有 QUEST05–18 CI，不下载私有商业内容。本地原 ZIP 实际字节测得以上原哈希和新静态交叉关系；公开 CI 仅重新证明派生索引的自洽和负证条件，不替代原私人源完整再读或原版程序运行。
 
 **QUEST18=SOURCE_BOUNDED_STATIC**；未经后验不得称已被主线验收。Stage A **7 PARTIAL +2 OPEN**；Stage B/wiki **GATED**；R79 **PAUSED_NON_BLOCKING**；总体完成百分比不报告。**最高下一项：QUEST19**，先与 QUEST01 和 O 系列已审资料查重，再选一族真正不同且私有原源可逐字节核对的任务；有新同源可执行轨迹才重开 QUEST18 原NPC/传送/随机道具结算，避免循环增加没有新玩家内容的辅助工具。始终服务于离线单机复原，不启动账号、网络商业服务端或新引擎。
+
+## 6. 候选、PR、主线与后验实际验收（2026-11-08）
+
+- 本轮 **4 个公开路径**：派生来源 JSON、五项 GitHub 公共索引回归测试、本连续性报告、既有 QUEST05–18 CI 工作流的加法注册；没有原 .create/脚本正文、商业图像、ZIP、密钥或二进制原载荷。候选 commit `6d905472b9e1523196a018a639591ba3d5c895bd` / tree `f6ba6cbd65630f3f8d378949a2cffee2fc624dea`。
+- [PR #258](https://github.com/chinaneedM/stoneage-rebuild/pull/258) 已实际合并，merge/squash commit `f450b2018aad4c677efef323b7d030cb3e6f8566`，其 Git tree **与候选 tree 完全相同**。候选 push [#42465491231](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42465491231) 及 PR 专项 [#42465508734](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42465508734) 全部 completed/success；PR 另两项来源限定检查 [#42465508724](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42465508724)、[#42465508743](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42465508743) completed/success。
+- 合并后主线 QUEST05–18 专项 [#42465578251](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42465578251) **completed/success**，确实执行新加的 QUEST18 公共回归测试；这是对公开元数据和负证守卫的真实 CI 后验，不代表原商业客户端或服务器成功运行。私人母 ZIP / ITEM ZIP 本轮完整 SHA/CRC 在独立本地执行，公开 CI 不下载私有原件。
+- 多MB旧 `docs/CURRENT-STATE.md` Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`、2,709,173B 从起始到此合并均未修改，不覆盖过往史料。本篇 §5 的“未经后验不得称验收”已由上述实际结果满足，**正式状态 `QUEST18=ACCEPTED_SOURCE_BOUNDED`**。可证范围仅为后期混合2.5静态任务/道具/数值传送候选；原 TW1 同部署、原生支线执行、NPC移动、随机奖励、原初JSS1999身份仍 OPEN。
+- **最高 NEXT：`QUEST19-DEDUP-AND-NEXT_DISTINCT_ORIGINAL_FAMILY`**。下一轮从远端最新 main/Actions/协议/完整 CURRENT 和 QUEST18 后验重新续接；先剔除 O74 和 QUEST08–18 已明确审过的同源族，再选择另一套真正可读、能增加玩家可感知内容规则的私人原脚本。不要扩无限工具，不启动帐号、联网原服、引擎或 Stage B。全局 Stage A 仍 7 PARTIAL+2 OPEN；Stage B/wiki GATED；R79 PAUSED_NON_BLOCKING；overall_percent=null。
