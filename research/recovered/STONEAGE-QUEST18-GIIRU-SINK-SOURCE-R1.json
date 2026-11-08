@@ -1,0 +1,721 @@
+{
+  "schema": "stoneage.quest18.giiru_fire_ritual_owl_phoenix_water_npc_item_warp_source.r1",
+  "date": "2026-11-08",
+  "task": "QUEST18-DEDUP-AND-NEXT_SOURCE_READY_ORIGINAL_FAMILY",
+  "baseline_main": {
+    "head": "73823957f9a0b3343a029440a5b30282c452c186",
+    "tree": "69625b80f4d0f143d33e87699bba4d55d154079f"
+  },
+  "historical_scope": "LATER_PRESERVED_COMMUNITY_MIXED25_ORIGIN_UNRESOLVED_NOT_VERIFIED_JSS1999_TW10_CN182_OFFICIAL_DEPLOYMENT",
+  "original_private_archives": [
+    {
+      "role": "NPC source ZIP retained in private Library",
+      "bytes": 995176,
+      "sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+      "zip_members_crc_checked": 2205,
+      "all_pass": true
+    },
+    {
+      "role": "two original 94-column item tables and cross-carrier TW1 image candidates retained privately",
+      "bytes": 5868386,
+      "sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+      "zip_members_crc_checked": 838,
+      "all_pass": true
+    }
+  ],
+  "existing_source_index": {
+    "path": "research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json",
+    "git_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2",
+    "already_indexed_active_CREATE": 12,
+    "already_indexed_event_blocks": 79,
+    "not_newly_discovered_events": true,
+    "all_79_canonical_source_section_hashes_independently_equal_original_zip": true
+  },
+  "original_create": {
+    "path": "giiru/event/sink/sink.create",
+    "bytes": 2501,
+    "sha256": "2a2506a766194a7e203b78f8057814e0152ef7be0c9394b546b20240c99c5ab0",
+    "active_changeevent_npcs": 12,
+    "distinct_changeevent_scripts": 11,
+    "one_other_active_bus_config": true,
+    "commented_out_unloaded_creates": 2,
+    "source_only_unreferenced_siblings": [
+      "sink04",
+      "sink04a",
+      "sink04b",
+      "sink04c",
+      "sink05",
+      "sink05a"
+    ],
+    "no_active_create_reference_for_siblings_in_quest01": true,
+    "variant_chronology_unproven": true
+  },
+  "original_script_rows": [
+    {
+      "path": "giiru/event/sink/sink01",
+      "original_bytes": 964,
+      "original_sha256": "0184495a1104946c9791e419b87be5104b7626d514c4155a5a64c2ef9de4a69b",
+      "event_blocks": 4,
+      "type_counts": {
+        "MESSAGE": 3,
+        "ACCEPT": 1
+      }
+    },
+    {
+      "path": "giiru/event/sink/sink02",
+      "original_bytes": 3568,
+      "original_sha256": "c11dc7eae560f0b44d2fe673078a7132fdc9dba20a73382eb6a416308ac1d8ae",
+      "event_blocks": 12,
+      "type_counts": {
+        "ACCEPT": 2,
+        "MESSAGE": 10
+      }
+    },
+    {
+      "path": "giiru/event/sink/sink03",
+      "original_bytes": 1849,
+      "original_sha256": "0584b51b9d49aca7ef053a4d16fc9524a093f0045288b91ad5bf86c0f44e4a78",
+      "event_blocks": 6,
+      "type_counts": {
+        "ACCEPT": 4,
+        "MESSAGE": 2
+      }
+    },
+    {
+      "path": "giiru/event/sink/sink044",
+      "original_bytes": 1724,
+      "original_sha256": "d15f34d7158ff2f9bfc452537c3c506521026c610bfd161db607c968f77abb55",
+      "event_blocks": 5,
+      "type_counts": {
+        "ACCEPT": 4,
+        "MESSAGE": 1
+      }
+    },
+    {
+      "path": "giiru/event/sink/sink044a",
+      "original_bytes": 1762,
+      "original_sha256": "201d0f6a1f744ea3f0d0c4c8fa94d7d29a3531bfbe8038ab6b0d07bd8117b38d",
+      "event_blocks": 5,
+      "type_counts": {
+        "ACCEPT": 4,
+        "MESSAGE": 1
+      }
+    },
+    {
+      "path": "giiru/event/sink/sink044b",
+      "original_bytes": 1836,
+      "original_sha256": "aba11da3f4bb967df3dd6121bb1422e5b6e48c2a9f8560399c942119a69c024f",
+      "event_blocks": 5,
+      "type_counts": {
+        "ACCEPT": 4,
+        "MESSAGE": 1
+      }
+    },
+    {
+      "path": "giiru/event/sink/sink044c",
+      "original_bytes": 1836,
+      "original_sha256": "5e099893943c11f49a8d5f22a9ff647c2057918875a84665c33c3101e2729cc6",
+      "event_blocks": 5,
+      "type_counts": {
+        "ACCEPT": 4,
+        "MESSAGE": 1
+      }
+    },
+    {
+      "path": "giiru/event/sink/sink055",
+      "original_bytes": 3028,
+      "original_sha256": "6857a40895d8948b1e65d0bf3a3e289f9a2d680e83134fb2211d3399448d629b",
+      "event_blocks": 11,
+      "type_counts": {
+        "ACCEPT": 10,
+        "MESSAGE": 1
+      }
+    },
+    {
+      "path": "giiru/event/sink/sink055a",
+      "original_bytes": 3049,
+      "original_sha256": "b574f5f910dcec6590643188fe255e29f58634cde66969aeef80504159c6061d",
+      "event_blocks": 11,
+      "type_counts": {
+        "ACCEPT": 10,
+        "MESSAGE": 1
+      }
+    },
+    {
+      "path": "giiru/event/sink/sink06",
+      "original_bytes": 2741,
+      "original_sha256": "b22a619fb72ede666f1e13c060c0b99d5194f6acbd8d1a6d00333270b6c1d156",
+      "event_blocks": 12,
+      "type_counts": {
+        "MESSAGE": 5,
+        "ACCEPT": 7
+      }
+    },
+    {
+      "path": "giiru/event/sink/sink07",
+      "original_bytes": 1237,
+      "original_sha256": "817301f656b07eaa32c626fb4439b45f163bc9854ff9ae37eb4f20c12d3c73c4",
+      "event_blocks": 3,
+      "type_counts": {
+        "MESSAGE": 2,
+        "REQUEST": 1
+      }
+    }
+  ],
+  "active_changeevent_npc_rows": [
+    {
+      "script": "giiru/event/sink/sink01",
+      "floor": 20309,
+      "xy": [
+        46,
+        45
+      ],
+      "source_graphic_alias": 100370
+    },
+    {
+      "script": "giiru/event/sink/sink02",
+      "floor": 30016,
+      "xy": [
+        26,
+        30
+      ],
+      "source_graphic_alias": 100230
+    },
+    {
+      "script": "giiru/event/sink/sink06",
+      "floor": 30016,
+      "xy": [
+        29,
+        36
+      ],
+      "source_graphic_alias": 100190
+    },
+    {
+      "script": "giiru/event/sink/sink06",
+      "floor": 30016,
+      "xy": [
+        23,
+        36
+      ],
+      "source_graphic_alias": 100190
+    },
+    {
+      "script": "giiru/event/sink/sink03",
+      "floor": 300,
+      "xy": [
+        407,
+        298
+      ],
+      "source_graphic_alias": 16024
+    },
+    {
+      "script": "giiru/event/sink/sink044",
+      "floor": 30008,
+      "xy": [
+        30,
+        69
+      ],
+      "source_graphic_alias": 100322
+    },
+    {
+      "script": "giiru/event/sink/sink044a",
+      "floor": 30008,
+      "xy": [
+        80,
+        14
+      ],
+      "source_graphic_alias": 100322
+    },
+    {
+      "script": "giiru/event/sink/sink044b",
+      "floor": 30008,
+      "xy": [
+        84,
+        19
+      ],
+      "source_graphic_alias": 100322
+    },
+    {
+      "script": "giiru/event/sink/sink044c",
+      "floor": 30011,
+      "xy": [
+        32,
+        34
+      ],
+      "source_graphic_alias": 100322
+    },
+    {
+      "script": "giiru/event/sink/sink055",
+      "floor": 30012,
+      "xy": [
+        7,
+        4
+      ],
+      "source_graphic_alias": 100322
+    },
+    {
+      "script": "giiru/event/sink/sink055a",
+      "floor": 30001,
+      "xy": [
+        38,
+        5
+      ],
+      "source_graphic_alias": 100322
+    },
+    {
+      "script": "giiru/event/sink/sink07",
+      "floor": 5106,
+      "xy": [
+        26,
+        15
+      ],
+      "source_graphic_alias": 16031
+    }
+  ],
+  "original_source_command_totals": {
+    "NpcWarp": 37,
+    "GetItem": 43,
+    "DelItem": 49,
+    "GetRandItem": 7,
+    "GetStone": 1,
+    "EndSetFlg": 1
+  },
+  "original_numerical_events": {
+    "requested_EventNo_40_and_EndSetFlg_40_same_script_source": true,
+    "GetStone_literal_value": 1149,
+    "GetRandItem_source_lists": [
+      [
+        1352,
+        1466,
+        2566
+      ],
+      [
+        1451,
+        2567,
+        11865
+      ],
+      [
+        1165,
+        2568,
+        11907,
+        2614
+      ],
+      [
+        1052,
+        1269,
+        11836,
+        2565
+      ],
+      [
+        2692,
+        2695,
+        251,
+        562
+      ],
+      [
+        2693,
+        2696,
+        256,
+        459,
+        1460
+      ],
+      [
+        2691,
+        2694,
+        65,
+        266,
+        364,
+        971
+      ]
+    ],
+    "GetRandItem_random_result_or_probabilities_unverified": true
+  },
+  "repeated_NpcWarp_lists": [
+    {
+      "script": "giiru/event/sink/sink01",
+      "literal_NpcWarp_count": 1,
+      "one_verified_repeated_candidate_list": [
+        [
+          20309,
+          18,
+          13
+        ],
+        [
+          20309,
+          55,
+          49
+        ],
+        [
+          20309,
+          32,
+          28
+        ],
+        [
+          20309,
+          46,
+          45
+        ]
+      ],
+      "all_lists_in_this_script_equal": true
+    },
+    {
+      "script": "giiru/event/sink/sink044",
+      "literal_NpcWarp_count": 4,
+      "one_verified_repeated_candidate_list": [
+        [
+          30001,
+          42,
+          17
+        ],
+        [
+          30006,
+          5,
+          7
+        ],
+        [
+          30001,
+          10,
+          6
+        ],
+        [
+          30008,
+          22,
+          18
+        ],
+        [
+          30002,
+          9,
+          4
+        ],
+        [
+          30008,
+          80,
+          14
+        ],
+        [
+          30006,
+          29,
+          16
+        ],
+        [
+          30008,
+          30,
+          69
+        ]
+      ],
+      "all_lists_in_this_script_equal": true
+    },
+    {
+      "script": "giiru/event/sink/sink044a",
+      "literal_NpcWarp_count": 4,
+      "one_verified_repeated_candidate_list": [
+        [
+          30012,
+          7,
+          38
+        ],
+        [
+          30011,
+          21,
+          4
+        ],
+        [
+          30008,
+          22,
+          18
+        ],
+        [
+          30012,
+          18,
+          6
+        ],
+        [
+          30008,
+          30,
+          69
+        ],
+        [
+          30010,
+          13,
+          14
+        ],
+        [
+          30012,
+          7,
+          4
+        ],
+        [
+          30008,
+          80,
+          14
+        ]
+      ],
+      "all_lists_in_this_script_equal": true
+    },
+    {
+      "script": "giiru/event/sink/sink044b",
+      "literal_NpcWarp_count": 4,
+      "one_verified_repeated_candidate_list": [
+        [
+          30001,
+          42,
+          42
+        ],
+        [
+          30008,
+          41,
+          58
+        ],
+        [
+          30011,
+          32,
+          34
+        ],
+        [
+          30008,
+          78,
+          64
+        ],
+        [
+          30010,
+          25,
+          43
+        ],
+        [
+          30012,
+          34,
+          40
+        ],
+        [
+          30008,
+          23,
+          61
+        ],
+        [
+          30001,
+          42,
+          42
+        ],
+        [
+          30008,
+          84,
+          19
+        ]
+      ],
+      "all_lists_in_this_script_equal": true
+    },
+    {
+      "script": "giiru/event/sink/sink044c",
+      "literal_NpcWarp_count": 4,
+      "one_verified_repeated_candidate_list": [
+        [
+          30010,
+          25,
+          43
+        ],
+        [
+          30008,
+          78,
+          64
+        ],
+        [
+          30012,
+          34,
+          40
+        ],
+        [
+          30008,
+          23,
+          61
+        ],
+        [
+          30001,
+          42,
+          42
+        ],
+        [
+          30008,
+          84,
+          19
+        ],
+        [
+          30001,
+          42,
+          42
+        ],
+        [
+          30008,
+          41,
+          58
+        ],
+        [
+          30011,
+          32,
+          34
+        ]
+      ],
+      "all_lists_in_this_script_equal": true
+    },
+    {
+      "script": "giiru/event/sink/sink055",
+      "literal_NpcWarp_count": 10,
+      "one_verified_repeated_candidate_list": [
+        [
+          30001,
+          10,
+          6
+        ],
+        [
+          30010,
+          13,
+          14
+        ],
+        [
+          30006,
+          29,
+          16
+        ],
+        [
+          30012,
+          7,
+          4
+        ]
+      ],
+      "all_lists_in_this_script_equal": true
+    },
+    {
+      "script": "giiru/event/sink/sink055a",
+      "literal_NpcWarp_count": 10,
+      "one_verified_repeated_candidate_list": [
+        [
+          30011,
+          32,
+          34
+        ],
+        [
+          30008,
+          78,
+          64
+        ],
+        [
+          30012,
+          34,
+          40
+        ],
+        [
+          30001,
+          38,
+          5
+        ]
+      ],
+      "all_lists_in_this_script_equal": true
+    }
+  ],
+  "warp_result": {
+    "literal_NpcWarp_operations": 37,
+    "raw_candidate_occurrences": 220,
+    "distinct_destination_triples": 26,
+    "unique_destination_floors": [
+      20309,
+      30001,
+      30002,
+      30006,
+      30008,
+      30010,
+      30011,
+      30012
+    ],
+    "all_destination_xy_in_MAP09_qualified_geometry": true,
+    "MAP09_qualified_geometry_is_not_original_native_warp_execution": true,
+    "map_catalog": "research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json",
+    "source_create_floor_300_not_in_this_specific_MAP09_catalog": true,
+    "original_DAT_bytes_re_read_in_QUEST18": 0
+  },
+  "item_result": {
+    "original_ids_distinct": 44,
+    "source_ids": [
+      65,
+      251,
+      256,
+      266,
+      364,
+      459,
+      562,
+      971,
+      1052,
+      1165,
+      1269,
+      1352,
+      1451,
+      1460,
+      1466,
+      2396,
+      2565,
+      2566,
+      2567,
+      2568,
+      2614,
+      2691,
+      2692,
+      2693,
+      2694,
+      2695,
+      2696,
+      2706,
+      2707,
+      2708,
+      2709,
+      2710,
+      2711,
+      2712,
+      2713,
+      2714,
+      2715,
+      2716,
+      2717,
+      2718,
+      11836,
+      11865,
+      11907,
+      19292
+    ],
+    "all_44_present_in_each_saved_94_column_itemset": true,
+    "each_id_two_original_rows_exact_SHA_equal": true,
+    "TW10_cross_carrier_RD_decoded_candidate_count": 43,
+    "TW10_RD_nonqualified_item_id": 2614,
+    "pet_species_inferred_from_item_name": false,
+    "source_2706_role": "phoenix_feather",
+    "source_2707_role": "fire_feather_accessory",
+    "water_vessel_item_id_to_literal_fullness": {
+      "2708": "EMPTY_CONTAINER",
+      "2709": "7/7",
+      "2710": "4/7",
+      "2711": "3/7",
+      "2712": "6/7",
+      "2713": "5/7",
+      "2714": "4/7",
+      "2715": "3/7",
+      "2716": "2/7",
+      "2717": "1/7",
+      "2718": "EMPTY_CONTENT"
+    },
+    "water_vessel_item_graphic_alias": 12924,
+    "duplicate_fullness_different_item_ids": true,
+    "real_world_inventory_use_or_original_same_server_item_graphics_proven": false
+  },
+  "boundaries": {
+    "native_NPC_world_entry": false,
+    "native_quest_transaction": false,
+    "original_runtime_branch_priority": false,
+    "native_NpcWarp_selection_or_collision": false,
+    "native_GetRandItem_random_distribution": false,
+    "TW1_official_same_deployment": false,
+    "original_JSS1999_identity": false,
+    "Stage_A": "7_PARTIAL_2_OPEN",
+    "Stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "QUEST19_SOURCE_READY_DISTINCT_FAMILY_AFTER_DEDUP; re-open QUEST18 native branches only with same-source runnable trace or authenticated matching original server/runtime; keep offline-only single-player restoration priority"
+}

@@ -55,6 +55,9 @@ on:
       - 'tools/stoneage_quest17_dino_ranch_source.py'
       - 'tests/test_stoneage_quest17_dino_ranch_source.py'
       - 'docs/continuity/STONEAGE-QUEST17-DINO-RANCH-ORIGINAL-SOURCE-20261108.md'
+      - 'research/recovered/STONEAGE-QUEST18-GIIRU-SINK-SOURCE-R1.json'
+      - 'tests/test_stoneage_quest18_giiru_sink_source.py'
+      - 'docs/continuity/STONEAGE-QUEST18-GIIRU-FIRE-RITUAL-SOURCE-20261108.md'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   pull_request:
     paths:
@@ -103,6 +106,9 @@ on:
       - 'tools/stoneage_quest17_dino_ranch_source.py'
       - 'tests/test_stoneage_quest17_dino_ranch_source.py'
       - 'docs/continuity/STONEAGE-QUEST17-DINO-RANCH-ORIGINAL-SOURCE-20261108.md'
+      - 'research/recovered/STONEAGE-QUEST18-GIIRU-SINK-SOURCE-R1.json'
+      - 'tests/test_stoneage_quest18_giiru_sink_source.py'
+      - 'docs/continuity/STONEAGE-QUEST18-GIIRU-FIRE-RITUAL-SOURCE-20261108.md'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   workflow_dispatch:
 
@@ -139,3 +145,5 @@ jobs:
         run: python -m unittest tests.test_stoneage_quest16_axe_wood_source -v
       - name: Validate QUEST17 original dinosaur-ranch pet, voucher and payout source bounds
         run: python -m unittest tests.test_stoneage_quest17_dino_ranch_source -v
+      - name: Validate QUEST18 Giiru source item variants and warp candidate boundary
+        run: python -m unittest tests.test_stoneage_quest18_giiru_sink_source -v
