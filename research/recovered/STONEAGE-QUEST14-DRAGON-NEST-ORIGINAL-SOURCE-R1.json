@@ -1,0 +1,686 @@
+{
+  "schema": "stoneage.quest14.dragon_nest_three_dragons_original_source_bound.r1",
+  "source_scope": "MIXED25_COMMUNITY_COMBINED_PRESERVATION_NOT_CONFIRMED_OFFICIAL_EARLY_VERSION_OR_RUNNING_DEPLOYMENT",
+  "quest_id": "QUEST14-DRAGON-NEST-EVENT17",
+  "source_parent_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "source_parent_RAR_original_bytes": 361255180,
+  "public_source_NPC_inventory_git_blob": "a088b61a3212f7049e7793f587123ffb29bebad7",
+  "public_SOURCE_QUEST01_index_git_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2",
+  "source_NPC_archive_original_bytes": 995176,
+  "source_NPC_archive_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+  "source_original_NPC_members_checked": 2205,
+  "source_original_NPC_member_bytes_checked": 1930332,
+  "original_source_files": [
+    {
+      "path": "jaruga/event/event17.create",
+      "bytes": 701,
+      "original_sha256": "41383010307b5457d663b4ab6cc65404797e8f34b2664c6b1d05616e901fac8c",
+      "source_crc32": "43cfad1f"
+    },
+    {
+      "path": "jaruga/event/event17_1",
+      "bytes": 497,
+      "original_sha256": "6ba6be824fec8346e07d6e79d9fbbb062591fd4b392395573cf6751502fdef3e",
+      "source_crc32": "4a71c298"
+    },
+    {
+      "path": "jaruga/event/event17_2",
+      "bytes": 497,
+      "original_sha256": "60bee32094031e4322262eac080f34d322cf2f0181e0e57f007480dd032d6794",
+      "source_crc32": "2ff1e7bf"
+    },
+    {
+      "path": "jaruga/event/event17_3",
+      "bytes": 489,
+      "original_sha256": "5b9c6dc4d35b781b61e8c4466ff9aefca867d84bbe6611052a77aa699f3a4a13",
+      "source_crc32": "1ad1898f"
+    },
+    {
+      "path": "jaruga/event/event17_4",
+      "bytes": 914,
+      "original_sha256": "8a464e1e6d492038e7691249546606ae36838785634feeb8d782f8f1a9473193",
+      "source_crc32": "66d9577b"
+    },
+    {
+      "path": "jaruga/event/event.template",
+      "bytes": 122,
+      "original_sha256": "9c11ac0cbbd9b110e8ff7d0115730044673bf29c5df6d23034e56530c181d0b2",
+      "source_crc32": "a70fc73f"
+    }
+  ],
+  "original_create_rows": [
+    {
+      "ordinal": 0,
+      "original_sha256": "43568139a44bd2b21191fb4fb7ec20b50d1eef7d078d21546dd300e3b8c59d84",
+      "source_offset_start": 56,
+      "source_offset_end_exclusive": 214,
+      "floor": 20807,
+      "original_borncorner": [
+        7,
+        8,
+        7,
+        8
+      ],
+      "graphic_alias": 100384,
+      "direction": 4,
+      "enemy_function": "changeevent",
+      "script_ref": "jaruga/event/event17_1",
+      "exact_original_source_row": true
+    },
+    {
+      "ordinal": 1,
+      "original_sha256": "9a83258005a23c41abc17fad048e263547a59d42505add325c115fa269edfb0a",
+      "source_offset_start": 215,
+      "source_offset_end_exclusive": 375,
+      "floor": 20807,
+      "original_borncorner": [
+        23,
+        6,
+        23,
+        6
+      ],
+      "graphic_alias": 100385,
+      "direction": 4,
+      "enemy_function": "changeevent",
+      "script_ref": "jaruga/event/event17_2",
+      "exact_original_source_row": true
+    },
+    {
+      "ordinal": 2,
+      "original_sha256": "32068527336fe9659aa88b9e04ed4fbb429966efaa009c74bddda54525c64ccf",
+      "source_offset_start": 376,
+      "source_offset_end_exclusive": 538,
+      "floor": 20807,
+      "original_borncorner": [
+        41,
+        14,
+        41,
+        14
+      ],
+      "graphic_alias": 100386,
+      "direction": 4,
+      "enemy_function": "changeevent",
+      "script_ref": "jaruga/event/event17_3",
+      "exact_original_source_row": true
+    },
+    {
+      "ordinal": 3,
+      "original_sha256": "64dee4169319656348637d43f539c3bbd162ea97556c745ec0dd31c25f42466c",
+      "source_offset_start": 539,
+      "source_offset_end_exclusive": 700,
+      "floor": 20801,
+      "original_borncorner": [
+        13,
+        63,
+        13,
+        63
+      ],
+      "graphic_alias": 16208,
+      "direction": 6,
+      "enemy_function": "changeevent",
+      "script_ref": "jaruga/event/event17_4",
+      "exact_original_source_row": true
+    }
+  ],
+  "scripts": [
+    {
+      "path": "jaruga/event/event17_1",
+      "bytes": 497,
+      "original_sha256": "6ba6be824fec8346e07d6e79d9fbbb062591fd4b392395573cf6751502fdef3e",
+      "event_count": 2,
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": 17,
+          "type": "ACCEPT",
+          "predicate": "NOWEV=17&ITEM=2457&ITEM=2458&ITEM=2459&ITEM=2505",
+          "predicate_sha256": "d41e68c6c6b3bbd6e0ff4a2f79102e650dfccb234cdc18af3bef3785adc03d13",
+          "section_sha256": "fd0a4cdb639440006e1343cc27a100ec35796260290ea428f611b9107e08b30c",
+          "actions": {
+            "GetItem": [
+              "2462"
+            ],
+            "DelItem": [
+              "2457,2458,2459,2505"
+            ],
+            "EndSetFlg": [
+              "17"
+            ]
+          },
+          "has_eventend": true
+        },
+        {
+          "ordinal": 1,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "ENDEV=17",
+          "predicate_sha256": "f4a890ac0fb26c89d551295c7eee4303aa0b87f04699633c167d7084d262526d",
+          "section_sha256": "e3f6270012251014e249edaf58b28ec48ccca01bb279a85e0cbb46cc43c09d22",
+          "actions": {
+            "GetItem": [],
+            "DelItem": [],
+            "EndSetFlg": []
+          },
+          "has_eventend": true
+        }
+      ],
+      "independently_existing_QUEST01_index_verified": true
+    },
+    {
+      "path": "jaruga/event/event17_2",
+      "bytes": 497,
+      "original_sha256": "60bee32094031e4322262eac080f34d322cf2f0181e0e57f007480dd032d6794",
+      "event_count": 2,
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": 17,
+          "type": "ACCEPT",
+          "predicate": "NOWEV=17&ITEM=2457&ITEM=2458&ITEM=2459&ITEM=2505",
+          "predicate_sha256": "d41e68c6c6b3bbd6e0ff4a2f79102e650dfccb234cdc18af3bef3785adc03d13",
+          "section_sha256": "bfc3445e03c9266bdab95ab7181eaa287ba28903296d4e056425786306c2ed2f",
+          "actions": {
+            "GetItem": [
+              "2460"
+            ],
+            "DelItem": [
+              "2457,2458,2459,2505"
+            ],
+            "EndSetFlg": [
+              "17"
+            ]
+          },
+          "has_eventend": true
+        },
+        {
+          "ordinal": 1,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "ENDEV=17",
+          "predicate_sha256": "f4a890ac0fb26c89d551295c7eee4303aa0b87f04699633c167d7084d262526d",
+          "section_sha256": "ae15762af51962c296578ec7e305b6f2d36d86d4dae6e7aa8f20153d4395a0f7",
+          "actions": {
+            "GetItem": [],
+            "DelItem": [],
+            "EndSetFlg": []
+          },
+          "has_eventend": true
+        }
+      ],
+      "independently_existing_QUEST01_index_verified": true
+    },
+    {
+      "path": "jaruga/event/event17_3",
+      "bytes": 489,
+      "original_sha256": "5b9c6dc4d35b781b61e8c4466ff9aefca867d84bbe6611052a77aa699f3a4a13",
+      "event_count": 2,
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": 17,
+          "type": "ACCEPT",
+          "predicate": "NOWEV=17&ITEM=2457&ITEM=2458&ITEM=2459&ITEM=2505",
+          "predicate_sha256": "d41e68c6c6b3bbd6e0ff4a2f79102e650dfccb234cdc18af3bef3785adc03d13",
+          "section_sha256": "b95a4213ac4aa92807bf779c182072dc8ee632f012730a8c7148e9e8d3153529",
+          "actions": {
+            "GetItem": [
+              "2461"
+            ],
+            "DelItem": [
+              "2457,2458,2459,2505"
+            ],
+            "EndSetFlg": [
+              "17"
+            ]
+          },
+          "has_eventend": true
+        },
+        {
+          "ordinal": 1,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "ENDEV=17",
+          "predicate_sha256": "f4a890ac0fb26c89d551295c7eee4303aa0b87f04699633c167d7084d262526d",
+          "section_sha256": "ae15762af51962c296578ec7e305b6f2d36d86d4dae6e7aa8f20153d4395a0f7",
+          "actions": {
+            "GetItem": [],
+            "DelItem": [],
+            "EndSetFlg": []
+          },
+          "has_eventend": true
+        }
+      ],
+      "independently_existing_QUEST01_index_verified": true
+    },
+    {
+      "path": "jaruga/event/event17_4",
+      "bytes": 914,
+      "original_sha256": "8a464e1e6d492038e7691249546606ae36838785634feeb8d782f8f1a9473193",
+      "event_count": 4,
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": 17,
+          "type": "ACCEPT",
+          "predicate": "NOWEV=17&ITEM!=2505",
+          "predicate_sha256": "55db07bda60bd5233a2a062e3df9ca9ab78f62a6ff1aff902a8d64978b4a5a4a",
+          "section_sha256": "ef262d05958a452675ee5d9e7511c476519b5d0e381b20eb72a0c3224b497d22",
+          "actions": {
+            "GetItem": [
+              "2505"
+            ],
+            "DelItem": [],
+            "EndSetFlg": []
+          },
+          "has_eventend": true
+        },
+        {
+          "ordinal": 1,
+          "event_no": 17,
+          "type": "REQUEST",
+          "predicate": "LV>0&ITEM!=2505",
+          "predicate_sha256": "078257c03e45cc1f7c8fe8f8b90c37d1e207d7bb2ac5265f108dae402c5b3640",
+          "section_sha256": "21579a44070b3cd89f0296c92587c1a510e0344367bdcd9fcf37cf44db35ac09",
+          "actions": {
+            "GetItem": [
+              "2505"
+            ],
+            "DelItem": [],
+            "EndSetFlg": []
+          },
+          "has_eventend": true
+        },
+        {
+          "ordinal": 2,
+          "event_no": 17,
+          "type": "MESSAGE",
+          "predicate": "NOWEV=17&ITEM=2505",
+          "predicate_sha256": "fc562d07c135dae4e2f83505e07aea227e2982415e8fee347756f8066b381eeb",
+          "section_sha256": "be9e28a23e3d24bd8942298e3490f7409a4ba19304f8b38cbee66698ca443522",
+          "actions": {
+            "GetItem": [],
+            "DelItem": [],
+            "EndSetFlg": []
+          },
+          "has_eventend": true
+        },
+        {
+          "ordinal": 3,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "ENDEV=17",
+          "predicate_sha256": "f4a890ac0fb26c89d551295c7eee4303aa0b87f04699633c167d7084d262526d",
+          "section_sha256": "4799328b6189497a6f3bc7d6a70792664956bec34b90c2a0cf56d3a78b3acba7",
+          "actions": {
+            "GetItem": [],
+            "DelItem": [],
+            "EndSetFlg": []
+          },
+          "has_eventend": true
+        }
+      ],
+      "independently_existing_QUEST01_index_verified": true
+    }
+  ],
+  "script_total_events": 10,
+  "seven_item_IDs": [
+    2457,
+    2458,
+    2459,
+    2460,
+    2461,
+    2462,
+    2505
+  ],
+  "original_item_94_column_rows": [
+    {
+      "item_id": 2457,
+      "name_original": "疾速的龍的玉",
+      "row_identity": "IDENTICAL_RAW_LINE",
+      "two_source_original_lines": [
+        {
+          "table": "itemset.txt",
+          "physical_row_1based": 2040,
+          "source_sha256": "d05745a88d17632192c4d5419e02eb0c3aea347f17ca44b7169f9fb38f1569a1",
+          "original_94_columns": 94,
+          "source_graphic_alias": 24071
+        },
+        {
+          "table": "itemset0710.txt",
+          "physical_row_1based": 2435,
+          "source_sha256": "d05745a88d17632192c4d5419e02eb0c3aea347f17ca44b7169f9fb38f1569a1",
+          "original_94_columns": 94,
+          "source_graphic_alias": 24071
+        }
+      ],
+      "separate_TW1_carrying_source_graphic_alias": 24071,
+      "original_TW1_RD_candidate_png_sha256": "6b3579d33222ad4616794f4a0af4f322ca19bb3aed20bb6d758da81e2d14e756",
+      "cross_carrier_not_proof_of_same_official_deployment": true
+    },
+    {
+      "item_id": 2458,
+      "name_original": "剛氣的龍的玉",
+      "row_identity": "IDENTICAL_RAW_LINE",
+      "two_source_original_lines": [
+        {
+          "table": "itemset.txt",
+          "physical_row_1based": 2041,
+          "source_sha256": "7ab3e89a36550a71d83cf86be3e82241415a5048ec3199ca86814069320b70cd",
+          "original_94_columns": 94,
+          "source_graphic_alias": 24066
+        },
+        {
+          "table": "itemset0710.txt",
+          "physical_row_1based": 2436,
+          "source_sha256": "7ab3e89a36550a71d83cf86be3e82241415a5048ec3199ca86814069320b70cd",
+          "original_94_columns": 94,
+          "source_graphic_alias": 24066
+        }
+      ],
+      "separate_TW1_carrying_source_graphic_alias": 24066,
+      "original_TW1_RD_candidate_png_sha256": "585eb6b6bf9114d4c0214888511143fd2e8f2ba813fa91d9428db309ed60711e",
+      "cross_carrier_not_proof_of_same_official_deployment": true
+    },
+    {
+      "item_id": 2459,
+      "name_original": "鋼格的龍的玉",
+      "row_identity": "IDENTICAL_RAW_LINE",
+      "two_source_original_lines": [
+        {
+          "table": "itemset.txt",
+          "physical_row_1based": 2042,
+          "source_sha256": "d0b0d7420a342c8f9bd11e1d13f9bcd257a9a24575541697bf212d70a04b502e",
+          "original_94_columns": 94,
+          "source_graphic_alias": 24065
+        },
+        {
+          "table": "itemset0710.txt",
+          "physical_row_1based": 2437,
+          "source_sha256": "d0b0d7420a342c8f9bd11e1d13f9bcd257a9a24575541697bf212d70a04b502e",
+          "original_94_columns": 94,
+          "source_graphic_alias": 24065
+        }
+      ],
+      "separate_TW1_carrying_source_graphic_alias": 24065,
+      "original_TW1_RD_candidate_png_sha256": "64d99514f76266b0ffd0219225c66322b31f61b0bdc26257a62d53acfffee7bf",
+      "cross_carrier_not_proof_of_same_official_deployment": true
+    },
+    {
+      "item_id": 2460,
+      "name_original": "龍之槍",
+      "row_identity": "IDENTICAL_RAW_LINE",
+      "two_source_original_lines": [
+        {
+          "table": "itemset.txt",
+          "physical_row_1based": 2043,
+          "source_sha256": "ce4f27dd98820965eb2341830ac7023670241476a7fcd5fad5e098c69dbbfe5b",
+          "original_94_columns": 94,
+          "source_graphic_alias": 20449
+        },
+        {
+          "table": "itemset0710.txt",
+          "physical_row_1based": 2438,
+          "source_sha256": "ce4f27dd98820965eb2341830ac7023670241476a7fcd5fad5e098c69dbbfe5b",
+          "original_94_columns": 94,
+          "source_graphic_alias": 20449
+        }
+      ],
+      "separate_TW1_carrying_source_graphic_alias": 20449,
+      "original_TW1_RD_candidate_png_sha256": "13a4be74e30dc106f540a0ab7ee92bf7d7e102e28c3a7a31e794e01ac46084c6",
+      "cross_carrier_not_proof_of_same_official_deployment": true
+    },
+    {
+      "item_id": 2461,
+      "name_original": "龍之鎧",
+      "row_identity": "IDENTICAL_RAW_LINE",
+      "two_source_original_lines": [
+        {
+          "table": "itemset.txt",
+          "physical_row_1based": 2044,
+          "source_sha256": "584c6f883a6428c8699020b4880fa078767d99977abb0d916b22159c5dbbc6bd",
+          "original_94_columns": 94,
+          "source_graphic_alias": 21047
+        },
+        {
+          "table": "itemset0710.txt",
+          "physical_row_1based": 2439,
+          "source_sha256": "584c6f883a6428c8699020b4880fa078767d99977abb0d916b22159c5dbbc6bd",
+          "original_94_columns": 94,
+          "source_graphic_alias": 21047
+        }
+      ],
+      "separate_TW1_carrying_source_graphic_alias": 21047,
+      "original_TW1_RD_candidate_png_sha256": "6794f7eb83f05e7cb65e1900ad038ed4bc79b95a7151086d726765fb8766a0b7",
+      "cross_carrier_not_proof_of_same_official_deployment": true
+    },
+    {
+      "item_id": 2462,
+      "name_original": "龍之衣",
+      "row_identity": "IDENTICAL_RAW_LINE",
+      "two_source_original_lines": [
+        {
+          "table": "itemset.txt",
+          "physical_row_1based": 2045,
+          "source_sha256": "ecc5d556e55c2e5597cfa6bd5d5e86cfcd113415f3176c51f71ce2e7c170dba4",
+          "original_94_columns": 94,
+          "source_graphic_alias": 21005
+        },
+        {
+          "table": "itemset0710.txt",
+          "physical_row_1based": 2440,
+          "source_sha256": "ecc5d556e55c2e5597cfa6bd5d5e86cfcd113415f3176c51f71ce2e7c170dba4",
+          "original_94_columns": 94,
+          "source_graphic_alias": 21005
+        }
+      ],
+      "separate_TW1_carrying_source_graphic_alias": 21005,
+      "original_TW1_RD_candidate_png_sha256": "c614ab78ab590ec92c79e6d5f85bc86dfcd6db02e509c8eb3ea9bde215decdea",
+      "cross_carrier_not_proof_of_same_official_deployment": true
+    },
+    {
+      "item_id": 2505,
+      "name_original": "龍的魅力之笛",
+      "row_identity": "IDENTICAL_RAW_LINE",
+      "two_source_original_lines": [
+        {
+          "table": "itemset.txt",
+          "physical_row_1based": 2088,
+          "source_sha256": "43a514386ffa7f3c7c7888c1049fcd82788f8247eab54b922d8d852b5f14520f",
+          "original_94_columns": 94,
+          "source_graphic_alias": 24205
+        },
+        {
+          "table": "itemset0710.txt",
+          "physical_row_1based": 2483,
+          "source_sha256": "43a514386ffa7f3c7c7888c1049fcd82788f8247eab54b922d8d852b5f14520f",
+          "original_94_columns": 94,
+          "source_graphic_alias": 24205
+        }
+      ],
+      "separate_TW1_carrying_source_graphic_alias": 24205,
+      "original_TW1_RD_candidate_png_sha256": "b6ba5b129794976928fbd709166c688d5fb82150ebadfa1ecb149a739084cf65",
+      "cross_carrier_not_proof_of_same_official_deployment": true
+    }
+  ],
+  "source_item_physical_rows_verified": 14,
+  "two_original_dat_maps": [
+    {
+      "floor": 20801,
+      "original_bytes": 29408,
+      "original_sha256": "9d2ffe849f7f487337598b8c677d9ecfdce6946b701ca61e96315a7e376bda6c",
+      "dimensions": [
+        70,
+        70
+      ],
+      "source_positions": [
+        {
+          "create_ordinal": 3,
+          "at": [
+            13,
+            63
+          ],
+          "actual_three_original_u16": [
+            4001,
+            0,
+            49152
+          ]
+        }
+      ],
+      "rendered_original_draw_observer_composite_sha256": "17bc6fcea2722785eb8e1473775a5ea23dc79c7d23bfa19771ae4dacfa1395c9",
+      "scene_thumbnail_is_modern_source_observer_not_original_client": true
+    },
+    {
+      "floor": 20807,
+      "original_bytes": 15008,
+      "original_sha256": "5094abf78b0101d94cbbe47f475c9354a73da1f5d5fc2b1f15156a7c31516e94",
+      "dimensions": [
+        50,
+        50
+      ],
+      "source_positions": [
+        {
+          "create_ordinal": 0,
+          "at": [
+            7,
+            8
+          ],
+          "actual_three_original_u16": [
+            4004,
+            0,
+            49152
+          ]
+        },
+        {
+          "create_ordinal": 1,
+          "at": [
+            23,
+            6
+          ],
+          "actual_three_original_u16": [
+            4001,
+            0,
+            49152
+          ]
+        },
+        {
+          "create_ordinal": 2,
+          "at": [
+            41,
+            14
+          ],
+          "actual_three_original_u16": [
+            4008,
+            0,
+            49152
+          ]
+        }
+      ],
+      "rendered_original_draw_observer_composite_sha256": "09891b5086cf99bdc26297eae817f5ea3d7b5993066b55fcb488afe24d972bdb",
+      "scene_thumbnail_is_modern_source_observer_not_original_client": true
+    }
+  ],
+  "original_DAT_map_count": 2,
+  "literal_GetItem_occurrences_all_2205_NPC_files": {
+    "2505": [
+      {
+        "file": "jaruga/event/event17_4",
+        "line": 9,
+        "file_sha256": "8a464e1e6d492038e7691249546606ae36838785634feeb8d782f8f1a9473193"
+      },
+      {
+        "file": "jaruga/event/event17_4",
+        "line": 22,
+        "file_sha256": "8a464e1e6d492038e7691249546606ae36838785634feeb8d782f8f1a9473193"
+      }
+    ],
+    "2457": [],
+    "2459": [],
+    "2460": [
+      {
+        "file": "jaruga/event/event17_2",
+        "line": 10,
+        "file_sha256": "60bee32094031e4322262eac080f34d322cf2f0181e0e57f007480dd032d6794"
+      }
+    ],
+    "2461": [
+      {
+        "file": "jaruga/event/event17_3",
+        "line": 10,
+        "file_sha256": "5b9c6dc4d35b781b61e8c4466ff9aefca867d84bbe6611052a77aa699f3a4a13"
+      }
+    ],
+    "2462": [
+      {
+        "file": "jaruga/event/event17_1",
+        "line": 10,
+        "file_sha256": "6ba6be824fec8346e07d6e79d9fbbb062591fd4b392395573cf6751502fdef3e"
+      }
+    ],
+    "2458": []
+  },
+  "catalog_relationships": [
+    {
+      "relation": "guardian_source_instruction_get_item",
+      "source_script": "jaruga/event/event17_4",
+      "item_id": 2505,
+      "scope": "original_source_control_only"
+    },
+    {
+      "relation": "dragon_source_condition_exchange_to_reward",
+      "source_script": "jaruga/event/event17_1",
+      "required_item_ids_literal": [
+        2457,
+        2458,
+        2459,
+        2505
+      ],
+      "reward_item_id": 2462,
+      "original_end_set_flag_literal": 17,
+      "scope": "original_source_control_only"
+    },
+    {
+      "relation": "dragon_source_condition_exchange_to_reward",
+      "source_script": "jaruga/event/event17_2",
+      "required_item_ids_literal": [
+        2457,
+        2458,
+        2459,
+        2505
+      ],
+      "reward_item_id": 2460,
+      "original_end_set_flag_literal": 17,
+      "scope": "original_source_control_only"
+    },
+    {
+      "relation": "dragon_source_condition_exchange_to_reward",
+      "source_script": "jaruga/event/event17_3",
+      "required_item_ids_literal": [
+        2457,
+        2458,
+        2459,
+        2505
+      ],
+      "reward_item_id": 2461,
+      "original_end_set_flag_literal": 17,
+      "scope": "original_source_control_only"
+    }
+  ],
+  "unknowns": {
+    "dragon_jade_origin_in_this_original_NPC_inventory": "NO_MATCHING_GetItem_LITERAL_FOUND",
+    "script_operation_runtime": "UNPROVEN",
+    "three_rewards_repeatability": "UNPROVEN",
+    "original_early_official_version": "UNPROVEN",
+    "native_map_runtime": "UNPROVEN",
+    "native_dragon_encounter_or_battle": "UNPROVEN",
+    "cross_carrier_TW1_art_same_deployment": "UNPROVEN"
+  },
+  "stage_A": {
+    "PARTIAL": 7,
+    "OPEN": 2
+  },
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "QUEST15-DEDUP-AND-SOURCE-READY-UNRESTORED-ORIGINAL-FAMILY"
+}

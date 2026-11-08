@@ -39,6 +39,10 @@ on:
       - 'tools/stoneage_quest13_goa_uli_letter_source.py'
       - 'tests/test_stoneage_quest13_goa_uli_letter_source.py'
       - 'docs/continuity/STONEAGE-QUEST13-GOA-ULI-LETTERS-ORIGINAL-SOURCE-20261108.md'
+      - 'research/recovered/STONEAGE-QUEST14-DRAGON-NEST-ORIGINAL-SOURCE-R1.json'
+      - 'tools/stoneage_quest14_dragon_nest_source.py'
+      - 'tests/test_stoneage_quest14_dragon_nest_source.py'
+      - 'docs/continuity/STONEAGE-QUEST14-DRAGON-NEST-THREE-DRAGONS-ORIGINAL-SOURCE-20261108.md'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   pull_request:
     paths:
@@ -71,6 +75,10 @@ on:
       - 'tools/stoneage_quest13_goa_uli_letter_source.py'
       - 'tests/test_stoneage_quest13_goa_uli_letter_source.py'
       - 'docs/continuity/STONEAGE-QUEST13-GOA-ULI-LETTERS-ORIGINAL-SOURCE-20261108.md'
+      - 'research/recovered/STONEAGE-QUEST14-DRAGON-NEST-ORIGINAL-SOURCE-R1.json'
+      - 'tools/stoneage_quest14_dragon_nest_source.py'
+      - 'tests/test_stoneage_quest14_dragon_nest_source.py'
+      - 'docs/continuity/STONEAGE-QUEST14-DRAGON-NEST-THREE-DRAGONS-ORIGINAL-SOURCE-20261108.md'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   workflow_dispatch:
 
@@ -99,3 +107,5 @@ jobs:
         run: python -m unittest tests.test_stoneage_quest12_mining_competition_source -v
       - name: Validate QUEST13 original Goa mountain Uli letter and flower source guards
         run: python -m unittest tests.test_stoneage_quest13_goa_uli_letter_source -v
+      - name: Validate QUEST14 dragon nest literal original source and unknown-runtime guards
+        run: python -m unittest tests.test_stoneage_quest14_dragon_nest_source -v
