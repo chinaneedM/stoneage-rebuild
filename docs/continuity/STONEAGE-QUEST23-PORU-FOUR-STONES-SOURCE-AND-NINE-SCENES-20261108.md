@@ -62,3 +62,14 @@ NPC私人ZIP整SHA `c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3e
 **下一项 QUEST24**：先对`poru/poru01.create`及旧WORLD/QUEST记录查重，有限承接本族事件64所需的ENDEV63来源（旧目录唯一`poru/boy04`段1）与村落剧情/已有地图关系。保留borncenter及原异常，不穷举所有对白/网服/引擎，也不把已索引段数当新增任务或完成率。500原DAT及原生任务执行只在新源到位后重开。
 
 Stage A仍 **7 PARTIAL+2 OPEN**、Stage B/wiki **GATED**、R79 **PAUSED_NON_BLOCKING**，本体/常驻/活动起源 **UNRESOLVED**，overall_percent=null。
+
+
+## 实际远端验收与下一项
+
+候选 `f5b1bf743572e34ea409aa396ddc60033f9963fb` / tree `371873dea6c935bf9cd06840083a7bf8ed245445`，push QUEST `42473864274`、PR QUEST `42473883476`、PR O11 `42473883527`、PR O12 `42473883449` 四运行实际 completed/success；PR专项 job `128710761738` 日志确认新增10项检查成功。六份完整远端文件与本地同字节、完整tree相同；原资产没有进入Git。
+
+[PR #263](https://github.com/chinaneedM/stoneage-rebuild/pull/263)已squash合并为 `f20496df160b186dcdfda88bec996ff8e26dbdeb`，内容tree不变。内容主线 [run42473942928](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42473942928) / job `128710946117` completed/success，实际日志包含全部10个PoruOriginalEvidence检查。本地276任务相关检查、源场景27画布双实现、17原格/黄点与23原文/链接、1,014成员逐字节重生和私人整包保存后SHA/CRC回读均成立；公开CI只验元数据，不是原场景或原服执行。正式 **QUEST23=ACCEPTED_SOURCE_BOUNDED**。完整旧CURRENT blob及四大历史原字节保留，最初“后验另记”由本段真实结果补足；本验收追加提交自身CI不预支。
+
+实际运行、源SHA和边界见 `research/recovered/STONEAGE-QUEST23-PUBLICATION-ACCEPTANCE-R1.json`。本轮没有新短期原源工件；既有失败与本地首次StopIteration保持记录，不改写成首次即成功。
+
+**下一最高 QUEST24_PORU01_FLAG63_STORY_AND_EXISTING_MAP_SOURCE_REVIEW**：当前四圣石委托的ENDEV63，在旧QUEST01的唯一EndSetFlg63来源是 `poru/boy04` 第1 ordinal段。先重核`poru/poru01.create`的11个既有脚本/37旧段、村民/事件/告示/商店的不同功能和原borncenter，再有限连接原剧情、道具及已有5500/5510/5511原DAT。不是直接认定村庄官方历史身份或将11脚本当11任务，也不宣称QUEST24已完成。保留所有原异常和未取得地图，不扩账号网服、新引擎或源源不断的辅助框架。Stage A/B/wiki/R79与overall_percent=null保持。
