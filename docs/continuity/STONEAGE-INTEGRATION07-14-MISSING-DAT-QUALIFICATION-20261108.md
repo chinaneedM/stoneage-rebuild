@@ -43,3 +43,8 @@
 **下一优先**：回到 Stage A 代表性玩家路径的跨模块联合验收，优先从已有源完整的地图/NPC/宠物/任务关系做有界可查询的现实内容路径；在原素材没有实物时保留缺口而不运行新引擎或模拟“原生游戏已经能玩”。本次不继续扩大同一14层的工具。
 
 > 后验PR、Actions及接受收据应在真实GitHub运行后补写，不可提前称成功。
+
+
+## GitHub 实际合并与成功验收（后验）
+
+[PR #274](https://github.com/chinaneedM/stoneage-rebuild/pull/274)已squash合并。候选最终HEAD `d807c80026e2cab2628cd208bff3a4f3b61467c7` 原14项Actions全部 `completed/success`，包括本包push专项run42493812839、PR专项run42493844517；合并main `75e62ed4beddd2ed2086f5b91b3dcea81a84fd18`／tree `7bc75486b596e5b828a5bdb02a453e239a77bf1c` 的11项Actions全部 `completed/success`，包含[INTEGRATION07主线专项run42493921846](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42493921846)。真实运行IDs、公开源Git blob及10项专门回归见[正式收据](../../research/recovered/STONEAGE-INTEGRATION07-PUBLICATION-ACCEPTANCE-R1.json)。源文件里的`200.dat`/`3000.dat`大小写、原400.MAP双SHA差异都按旧档案精确保留。历史CURRENT完整blob `c89e0e33537990aa2132b47c40fef49a985a935c` 未改；本收据自身提交的CI未提前宣称通过。最高NEXT Stage A代表性真实来源合格场景中NPC/任务内容联接，仍不作原生可玩声明。
