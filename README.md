@@ -2149,3 +2149,7 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-08 — QUEST18 / QUEST19：来源限定任务、道具和地图关联续接
 
 [QUEST18 吉鲁火之仪式、羽毛、巴那姆水壶](docs/continuity/STONEAGE-QUEST18-GIIRU-FIRE-RITUAL-SOURCE-20261108.md) 已完成源脚本/44原道具ID/37条NpcWarp候选与现存MAP09的受限数字交叉核验，详见[公开派生数据](research/recovered/STONEAGE-QUEST18-GIIRU-SINK-SOURCE-R1.json)。[QUEST19 马祖送信、切绳石与迷宫十宝袋](docs/continuity/STONEAGE-QUEST19-MARJU-POST-TREASUREBAG-SOURCE-20261108.md) 重新验后期mixed25原 NPC 12配置/12脚本/27既有事件、10个NPC重定位脚本及50位置候选、两组重复数字随机奖品表和61物品ID缓存行；全部源 SHA/CRC 与旧QUEST01/ITEM01和MAP09交叉，原商业资料保持私人。QUEST19 PR #259 经首次测试字段误引失败、修复后的候选/主线 Actions 成功验收，**不能抹掉失败历史**。两包均仅 `ACCEPTED_SOURCE_BOUNDED`：不宣称JSS1999/TW1官方同服或原生NPC、奖品、客户端可玩。旧 `docs/CURRENT-STATE.md` 巨型历史原样保存。Stage A仍7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79暂停。下一项 QUEST20 先对整个任务模块去重/复核优先级，再投入真实可恢复玩家内容。
+
+## 2026-11-08 — QUEST20 五兄弟地下城与任务模块审计
+
+[QUEST20 来源限定静态任务和跨模块关系](docs/continuity/STONEAGE-QUEST20-FIVE-BROTHERS-SOURCE-AND-MODULE-REVIEW-20261108.md)已由[PR #260](https://github.com/chinaneedM/stoneage-rebuild/pull/260)合并并主线CI真实成功：QUEST08–19十二专项80脚本中78早已属于QUEST01的295脚本/1349事件目录，2份仅保留版本分叉，不能当“新增80份任务”；本族另30份原脚本85旧事件，复原23个原选择NPC、五组不同任务道具（十ID同一原图别名24222）、6个原DAT几何候选与五个WORLD21已验领宠实例→同源模板图号=NPC源图别名联接。新结果是源关联规格，非新增5条宠物奖、原游戏跑通或初代台湾/大陆官方同版。首候选CI字段名误引失败、修复后候选/主线全部通过，失败历史保留。原游戏/服务端原字节与私人图像没有公开，`docs/CURRENT-STATE.md` 全历史blob c89e0e33537990aa2132b47c40fef49a985a935c 完全保留。Stage A仍7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79暂停。最高 NEXT QUEST21 先审未专项的真实内容，避免无界重复旧索引。
