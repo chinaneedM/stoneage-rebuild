@@ -1,0 +1,1668 @@
+{
+  "schema": "stoneage.quest17.dino_ranch_pet_certificate_original_source.r1",
+  "source_scope": "MIXED25_COMMUNITY_PRESERVED_NOT_OFFICIAL_EARLY_BUILD",
+  "source_parent_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "original_npc_archive_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+  "original_npc_verified_member_count": 2205,
+  "original_item_archive_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+  "source_quest01_catalog_git_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2",
+  "source_map09_ledger_git_blob": "137580e7c25aadf3d679b6ebfb5080b79912cc4f",
+  "historical_current_git_blob_unmodified": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "source_manifest": [
+    {
+      "path": "jaruga/event/bait01.create",
+      "bytes": 1214,
+      "sha256": "2cf750ee29a12b924d4a76b23759daa16eaa84782c58b15d9a4e5e71f06685af",
+      "crc32": "40fcdac7"
+    },
+    {
+      "path": "jaruga/event/bait_01",
+      "bytes": 8574,
+      "sha256": "bcc260855c8a0fe77afac0d450e81d4b37ffd9368c7052b99f7a7b5b670ce6db",
+      "crc32": "b879ed16"
+    },
+    {
+      "path": "jaruga/event/bait_02",
+      "bytes": 2403,
+      "sha256": "7c8c23c51eecb8b317b6d4cc860904a28b248fd4ee2b60ca942dcbccad4a46d8",
+      "crc32": "f52a37b0"
+    },
+    {
+      "path": "jaruga/event/bait_03a2",
+      "bytes": 4348,
+      "sha256": "84808a5fc6b8fa4852696266fce5208df4c314a9877df19fcbbb039c3c477fe8",
+      "crc32": "3fb5802c"
+    },
+    {
+      "path": "jaruga/event/bait_03b2",
+      "bytes": 4351,
+      "sha256": "022182a33c2eeb11fe85a7b6e619e2d4ab62597090d25c0c942a94cc47264d1b",
+      "crc32": "8d4b16c2"
+    },
+    {
+      "path": "jaruga/event/bait_03c2",
+      "bytes": 4344,
+      "sha256": "b21c6664c41d3ecad62021101c0f44f6183a5d57c68b908b8c8b851660546f10",
+      "crc32": "3bda8b9f"
+    },
+    {
+      "path": "jaruga/event/bait_04",
+      "bytes": 384,
+      "sha256": "11dd74baf4350f8e8cd0154382fb575b0014146be592144ca3b7cf079eaa3030",
+      "crc32": "0493aafe"
+    },
+    {
+      "path": "jaruga/event/bait_03a",
+      "bytes": 7919,
+      "sha256": "2aba8bb854fb39f356a490b33cf50203201ca094d529447cc9c89adb93a0ff90",
+      "crc32": "c792e1c0"
+    },
+    {
+      "path": "jaruga/event/bait_03b",
+      "bytes": 7769,
+      "sha256": "f5d58d9d9e6cb6e748694e349a62186239dea1d8367417a59eea0e16ef8f2fce",
+      "crc32": "4a5ba6e0"
+    },
+    {
+      "path": "jaruga/event/bait_03c",
+      "bytes": 7768,
+      "sha256": "dfcd05bf0201bca9a3a4daaf0fb2ba8fcf8fbbf342a229b4a3f735210a9f2fe8",
+      "crc32": "b8dae482"
+    },
+    {
+      "path": "jaruga/event/event.template",
+      "bytes": 122,
+      "sha256": "9c11ac0cbbd9b110e8ff7d0115730044673bf29c5df6d23034e56530c181d0b2",
+      "crc32": "a70fc73f"
+    }
+  ],
+  "source_creates": [
+    {
+      "ordinal": 0,
+      "source_block_sha256": "cd05cdd6b12feda9d645bab7c703972fa0eba3eaa9053a6cd91ba492551f94ad",
+      "floor": 201,
+      "borncorner": [
+        19,
+        24,
+        19,
+        24
+      ],
+      "original_name": "牧場主人",
+      "graphic_alias": 16017,
+      "script_ref": "jaruga/event/bait_01"
+    },
+    {
+      "ordinal": 1,
+      "source_block_sha256": "3003ab0cc974c678d106692730d93f112d7e0f757e4f4c415982bde14d02e58e",
+      "floor": 20901,
+      "borncorner": [
+        14,
+        8,
+        14,
+        8
+      ],
+      "original_name": "洞窟管理者",
+      "graphic_alias": 16018,
+      "script_ref": "jaruga/event/bait_02"
+    },
+    {
+      "ordinal": 2,
+      "source_block_sha256": "70424a930b3ef6ca7900d540b73c11eecd7981167f0d3042d5bda08be84a4c9e",
+      "floor": 201,
+      "borncorner": [
+        19,
+        13,
+        19,
+        13
+      ],
+      "original_name": "證明發行(綠)",
+      "graphic_alias": 16067,
+      "script_ref": "jaruga/event/bait_03a2"
+    },
+    {
+      "ordinal": 3,
+      "source_block_sha256": "09c9e86465e956ec4c13d2b1712586f2ea7b4c977a15678102cf2422da232b19",
+      "floor": 201,
+      "borncorner": [
+        19,
+        14,
+        19,
+        14
+      ],
+      "original_name": "證明發行(紅)",
+      "graphic_alias": 16036,
+      "script_ref": "jaruga/event/bait_03b2"
+    },
+    {
+      "ordinal": 4,
+      "source_block_sha256": "fb0fc5ea2ba731e7aca9fafe6cbccec005080cfb09b457f58f0d522e9c3f2885",
+      "floor": 201,
+      "borncorner": [
+        19,
+        15,
+        19,
+        15
+      ],
+      "original_name": "證明發行(藍)",
+      "graphic_alias": 16065,
+      "script_ref": "jaruga/event/bait_03c2"
+    },
+    {
+      "ordinal": 5,
+      "source_block_sha256": "2ae46c4ca03f34034d58348c9351a922f158b4f76b9716c36b4dffcd0f13928a",
+      "floor": 20901,
+      "borncorner": [
+        22,
+        16,
+        22,
+        16
+      ],
+      "original_name": "洞窟管理人的次男",
+      "graphic_alias": 16046,
+      "script_ref": "jaruga/event/bait_04"
+    }
+  ],
+  "source_scripts": [
+    {
+      "path": "jaruga/event/bait_01",
+      "bytes": 8574,
+      "sha256": "bcc260855c8a0fe77afac0d450e81d4b37ffd9368c7052b99f7a7b5b670ce6db",
+      "crc32": "b879ed16",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2592*1&ITEM=2596",
+          "condition_sha256": "945c7706b981cdb1778de7575ccb46b9647780cf12a254d2b9ca6064d52f754f",
+          "section_sha256": "728d32207c35beb2af7fce26a6bd64ae7cf9cf95594b9c12aa50a5d8fbd00524",
+          "commands": {
+            "DelItem": [
+              "2592*1"
+            ],
+            "GetStone": [
+              "14400"
+            ]
+          }
+        },
+        {
+          "ordinal": 1,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2591*1&ITEM=2596",
+          "condition_sha256": "1315e1bdd4320f41d8cf906e3a735ea6229875ac448ae5451c8290cd15cef92a",
+          "section_sha256": "63318bda0d1d678bbaba15b6a4d0010fae97018f129cfe884249e6d4e88576fb",
+          "commands": {
+            "DelItem": [
+              "2591*1"
+            ],
+            "GetStone": [
+              "6300"
+            ]
+          }
+        },
+        {
+          "ordinal": 2,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2590*1&ITEM=2596",
+          "condition_sha256": "60d934f0a0df1ad631d0fe8d483ac4eb975e299bf1c5e9abb03a5c3f64352091",
+          "section_sha256": "7f77b8ed130e3a6da4cf48f4223e4e84a3962fc5fd49dad38fb92fddec1cf2b6",
+          "commands": {
+            "DelItem": [
+              "2590*1"
+            ],
+            "GetStone": [
+              "2860"
+            ]
+          }
+        },
+        {
+          "ordinal": 3,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2589*4&ITEM=2596",
+          "condition_sha256": "a05aa576cc699026e8cbf2148724e1cefaf94645a1266ebe6aa127922607600a",
+          "section_sha256": "9823ec8994e56c18e42d4bc7094f5646d9a2d48d87029510077ffe41abbee312",
+          "commands": {
+            "DelItem": [
+              "2589*4"
+            ],
+            "GetStone": [
+              "2160"
+            ]
+          }
+        },
+        {
+          "ordinal": 4,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2589*3&ITEM=2596",
+          "condition_sha256": "0ac7c729836453f0c6037383901bdad02516a04d047dd154d80a05cc161215ae",
+          "section_sha256": "6ce7b28fb49c2a82e5b069e8fe757c5f55d6d5d5793a843ca421d37b73c262a4",
+          "commands": {
+            "DelItem": [
+              "2589*3"
+            ],
+            "GetStone": [
+              "1620"
+            ]
+          }
+        },
+        {
+          "ordinal": 5,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2589*2&ITEM=2596",
+          "condition_sha256": "98695d923014046d94815ad88cfbb278e6725dabae317594868fbf84a8453327",
+          "section_sha256": "3f53ae21b209e788954d62d758c41dec670c0768dac3c528d8ca72ebcad4eed6",
+          "commands": {
+            "DelItem": [
+              "2589*2"
+            ],
+            "GetStone": [
+              "990"
+            ]
+          }
+        },
+        {
+          "ordinal": 6,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2589*1&ITEM=2596",
+          "condition_sha256": "0a568cd42d6710007bcd21013c4d15fec6a473c045ca52d55abba69cb3024111",
+          "section_sha256": "86245df2a19994c6f83e7f8a5b235bb8fb6780b0f3139681b87b3742fb621f13",
+          "commands": {
+            "DelItem": [
+              "2589*1"
+            ],
+            "GetStone": [
+              "450"
+            ]
+          }
+        },
+        {
+          "ordinal": 7,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2592*1&ITEM=2595",
+          "condition_sha256": "227befbd417c423ada7775166965974520b471c0b85d8139e70e7940c735cea5",
+          "section_sha256": "163fc8155fa43aed3d518a48dea49f42fb48f394ac21947f3f654753134518b6",
+          "commands": {
+            "DelItem": [
+              "2592*1"
+            ],
+            "GetStone": [
+              "11200"
+            ]
+          }
+        },
+        {
+          "ordinal": 8,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2591*1&ITEM=2595",
+          "condition_sha256": "a313f02291768dcdc8746d1eb1261d21ab322e3b999761c9e2ed9adc61b49ab2",
+          "section_sha256": "e5e6254005a1555841c8a1da23ac4397caa4bd635401cce729c807dfe003e5e3",
+          "commands": {
+            "DelItem": [
+              "2591*1"
+            ],
+            "GetStone": [
+              "4900"
+            ]
+          }
+        },
+        {
+          "ordinal": 9,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2590*1&ITEM=2595",
+          "condition_sha256": "24fd4b93c65119b108ffc51faaaf8c46f808d02d04b6cbd1a0e474439b76d19a",
+          "section_sha256": "6ec26aefa532e4018abbbc075eed5f9086c07c7347d337161946a8111790844d",
+          "commands": {
+            "DelItem": [
+              "2590*1"
+            ],
+            "GetStone": [
+              "2275"
+            ]
+          }
+        },
+        {
+          "ordinal": 10,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2589*4&ITEM=2595",
+          "condition_sha256": "366d1bc42ff08697a599d78b0770e975f13e2d88815bed7620a4caebed95de44",
+          "section_sha256": "addc80743b1c5fe3c0760d837a28774cb539059aed5d507d9c5928c588696792",
+          "commands": {
+            "DelItem": [
+              "2589*4"
+            ],
+            "GetStone": [
+              "1680"
+            ]
+          }
+        },
+        {
+          "ordinal": 11,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2589*3&ITEM=2595",
+          "condition_sha256": "a0001078c902969772c631eb61a2ca4812b3e6a465bf785b8cb60941e443c8a3",
+          "section_sha256": "2d86633d85bfead2e77c03072e7c1f39d368b789acb05c9f8c66d42b768e534f",
+          "commands": {
+            "DelItem": [
+              "2589*3"
+            ],
+            "GetStone": [
+              "1260"
+            ]
+          }
+        },
+        {
+          "ordinal": 12,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2589*2&ITEM=2595",
+          "condition_sha256": "2b65eddef61e34f33e0264013e20e70001a162cde8986a500d1365e1983258ae",
+          "section_sha256": "3d33b4ac883888e79fb2092df711c237aa8159e589dabdf9f1641cca099ff670",
+          "commands": {
+            "DelItem": [
+              "2589*2"
+            ],
+            "GetStone": [
+              "770"
+            ]
+          }
+        },
+        {
+          "ordinal": 13,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2589*1&ITEM=2595",
+          "condition_sha256": "9f7004f5906ba2fb1a06a230977d896674cb62a50afc0122078f5a21c5ba4ea7",
+          "section_sha256": "852f07d6d30b0d313f3d9961115d6f594cdc699bb6278703ead751a332e89de8",
+          "commands": {
+            "DelItem": [
+              "2589*1"
+            ],
+            "GetStone": [
+              "350"
+            ]
+          }
+        },
+        {
+          "ordinal": 14,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2592*1&ITEM=2594",
+          "condition_sha256": "af76071cfebc69dc417d1d25bfb7b216334a71dcaad4af73f0d5d82caa6c3d12",
+          "section_sha256": "be10b8f8b2ff93513db2b90e24d5cbc68d63e703ebb8b1ba9cc54f05631eca15",
+          "commands": {
+            "DelItem": [
+              "2592*1"
+            ],
+            "GetStone": [
+              "6400"
+            ]
+          }
+        },
+        {
+          "ordinal": 15,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2591*1&ITEM=2594",
+          "condition_sha256": "33645b3b4f8130ad7fa58f84d85021d152df81cc14f4e748695684363a6b9079",
+          "section_sha256": "ea18e99415f5619b4a58337f1e0209f85ec2f022562cf1405170cc1855335e88",
+          "commands": {
+            "DelItem": [
+              "2591*1"
+            ],
+            "GetStone": [
+              "2800"
+            ]
+          }
+        },
+        {
+          "ordinal": 16,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2590*1&ITEM=2594",
+          "condition_sha256": "93e5b32fd6b15dabc7a3d3430cd15a27f57c6623f5aec518817cfe430281957f",
+          "section_sha256": "e656c582fc0e79725dbedde54ad234cfc0132bf978b3108a4f8671b3fd54c1b8",
+          "commands": {
+            "DelItem": [
+              "2590*1"
+            ],
+            "GetStone": [
+              "1300"
+            ]
+          }
+        },
+        {
+          "ordinal": 17,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2589*4&ITEM=2594",
+          "condition_sha256": "2d64859f19d28088e512e90c8ed22ab14f507b16b81038a44a64166d57ed8f50",
+          "section_sha256": "f1a6cfe86ea329941c25584d71890a70baa6b14af5e85f41d5ff16858d46c16c",
+          "commands": {
+            "DelItem": [
+              "2589*4"
+            ],
+            "GetStone": [
+              "1030"
+            ]
+          }
+        },
+        {
+          "ordinal": 18,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2589*3&ITEM=2594",
+          "condition_sha256": "efdece53e8906d6ae7771f59c9ae59cd302f37f1daccb2b68818a59fbf7800e8",
+          "section_sha256": "449181ab23fcc657b5bc4dbcbea2ac32b4fee4badcc7c3737af1082c3ac2f7de",
+          "commands": {
+            "DelItem": [
+              "2589*3"
+            ],
+            "GetStone": [
+              "780"
+            ]
+          }
+        },
+        {
+          "ordinal": 19,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2589*2&ITEM=2594",
+          "condition_sha256": "c3f4bb2052943085f086208d4df6e27e8d28eb16b09ae16a3a09db2b904391cd",
+          "section_sha256": "11160de2ad702270118b771c63bc5e6c2bc4225b5dd33b52d4116577a9796bf9",
+          "commands": {
+            "DelItem": [
+              "2589*2"
+            ],
+            "GetStone": [
+              "480"
+            ]
+          }
+        },
+        {
+          "ordinal": 20,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2589*1&ITEM=2594",
+          "condition_sha256": "875fb203aff56dc7106b5cfbbc39736724da910a896f1f72d324b4cd269afe8d",
+          "section_sha256": "3add0a80d8c0e23d73ca2755feedf908b55d3d1ca46fbac5539dae19e8f4ecc8",
+          "commands": {
+            "DelItem": [
+              "2589*1"
+            ],
+            "GetStone": [
+              "200"
+            ]
+          }
+        },
+        {
+          "ordinal": 21,
+          "event_no": -1,
+          "type": "REQUEST",
+          "condition_literal": "LV>4&ITEM!=2593",
+          "condition_sha256": "be0ff5ceb213e77ee1342ed4a776c547be40a106f1813f40139e22f5a00d5f40",
+          "section_sha256": "6ecbc28c3b6071a5112aea21a91d6f83bf514cfd20383743c03cb2d87c7f6364",
+          "commands": {
+            "GetItem": [
+              "2593"
+            ]
+          }
+        },
+        {
+          "ordinal": 22,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ITEM!=2596&ITEM=2589&ITEM=2593,ITEM!=2596&ITEM=2590&ITEM=2593,ITEM!=2596&ITEM=2591&ITEM=2593,ITEM!=2596&ITEM=2592&ITEM=2593,ITEM!=2595&ITEM=2589&ITEM=2593,ITEM!=2595&ITEM=2590&ITEM=2593,ITEM!=2595&ITEM=2591&ITEM=2593,ITEM!=2595&ITEM=2592&ITEM=2593,ITEM!=2594&ITEM=2589&ITEM=2593,ITEM!=2594&ITEM=2590&ITEM=2593,ITEM!=2594&ITEM=2591&ITEM=2593,ITEM!=2594&ITEM=2592&ITEM=2593",
+          "condition_sha256": "7cb1338cc2ed6e1bbaaabdd3d1da6e1b44d974978c78288cc20a06ec5359203f",
+          "section_sha256": "a2802a4f3fad42b5e8df8f7fe457d5f1f9c05daafad5d30520fa1ad4ea9f7ca3",
+          "commands": {}
+        },
+        {
+          "ordinal": 23,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>4&ITEM=2593",
+          "condition_sha256": "b3930a5488f11473ed724c363e1c804560078987d14cb070ab5a97ce2cbb4a5a",
+          "section_sha256": "aa9fe618070491173f63b50ab599e8d5832a9225733149f39970208060337003",
+          "commands": {
+            "DelItem": [
+              "2593"
+            ]
+          }
+        },
+        {
+          "ordinal": 24,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>0&LV<4",
+          "condition_sha256": "1a5b117510d716c90ee95b32603e3563ecb478512de2415617f421be77597383",
+          "section_sha256": "14590b423f723fcd6482cbf43f1555e764576afc059c29c8809e8878019503f0",
+          "commands": {}
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/bait_02",
+      "bytes": 2403,
+      "sha256": "7c8c23c51eecb8b317b6d4cc860904a28b248fd4ee2b60ca942dcbccad4a46d8",
+      "crc32": "f52a37b0",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "LV>29&ITEM=2593&ITEM!=2596",
+          "condition_sha256": "2734659c0795125c1c7a385ab38f730dbee3a3c48b6fc343bc7491202c95eeed",
+          "section_sha256": "efd85a24190365b04bbcaea83f0e7cca2254e01be19c2e8038f106e30efd9879",
+          "commands": {
+            "GetItem": [
+              "2596"
+            ]
+          }
+        },
+        {
+          "ordinal": 1,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "LV>11&LV<30&ITEM=2593&ITEM!=2595",
+          "condition_sha256": "28da489a595217999221b878b99f3ff04c285208c3c590e01659c1100c1c1c9c",
+          "section_sha256": "5a0abd81a03fb3c335c98e1951f67c3598719691b24821963c89ea9178c5ae5e",
+          "commands": {
+            "GetItem": [
+              "2595"
+            ]
+          }
+        },
+        {
+          "ordinal": 2,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "LV>4&LV<12&ITEM=2593&ITEM!=2594",
+          "condition_sha256": "b0009da844933ace11a285c55684983230b6e69f103a94e86ed54c0e5e943ecf",
+          "section_sha256": "48432bb9702de420d17ec47903a4c9253fa71d478f3cf638837db43a919ae7f6",
+          "commands": {
+            "GetItem": [
+              "2594"
+            ]
+          }
+        },
+        {
+          "ordinal": 3,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ITEM=2594,ITEM=2595,ITEM=2596",
+          "condition_sha256": "bddaafade3010ac098b6faf537ac7c4fc7805fb6307ccc944337cccfaa6c83c5",
+          "section_sha256": "ea5dd557a0cbedc325cc566e6c3a902c03c427376dc403656a1acc5dc8aec091",
+          "commands": {}
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/bait_03a2",
+      "bytes": 4348,
+      "sha256": "84808a5fc6b8fa4852696266fce5208df4c314a9877df19fcbbb039c3c477fe8",
+      "crc32": "3fb5802c",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "PET>0-560*5&ITEM=2590*1&ITEM=2594,PET>0-560*4&ITEM=2590*1&ITEM=2589*1&ITEM=2594,PET>0-560*3&ITEM=2590*1&ITEM=2589*2&ITEM=2594,PET>0-560*2&ITEM=2590*1&ITEM=2589*3&ITEM=2594,PET>0-560*1&ITEM=2590*1&ITEM=2589*4&ITEM=2594",
+          "condition_sha256": "540776beb16af20e3733db95fbad6f00a4c7e3ebd05dc50cdf30d20f4ace6306",
+          "section_sha256": "0878c77a1c1bf0c8ce11466727b2956a9f0995f2d96bdab9eb467b60f83ddd58",
+          "commands": {
+            "GetItem": [
+              "2591*1"
+            ],
+            "DelItem": [
+              "EVDEL"
+            ],
+            "DelPet": [
+              "EVDEL"
+            ],
+            "NotDel": [
+              "2594"
+            ]
+          }
+        },
+        {
+          "ordinal": 1,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "PET>0-560*5&ITEM=2594,PET>0-560*4&ITEM=2589*1&ITEM=2594,PET>0-560*3&ITEM=2589*2&ITEM=2594,PET>0-560*2&ITEM=2589*3&ITEM=2594,PET>0-560*1&ITEM=2589*4&ITEM=2594",
+          "condition_sha256": "7681148cbc02ecbf549b836738ef84e936fc5cb26536fe3d89ac2182b95d770a",
+          "section_sha256": "754157d8910566ffebf911d2158890a78554278a7e903639f2f4e220ed8c61d3",
+          "commands": {
+            "GetItem": [
+              "2590*1"
+            ],
+            "DelItem": [
+              "EVDEL"
+            ],
+            "DelPet": [
+              "EVDEL"
+            ],
+            "NotDel": [
+              "2594"
+            ]
+          }
+        },
+        {
+          "ordinal": 2,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "PET>0-560*4&ITEM=2594",
+          "condition_sha256": "deb1d7e5a480979e9f7005fcee70136a668f183a75e36a6842d4f9241b70159f",
+          "section_sha256": "986ee5098cd4f20527e60b4b46b8d46f3d6c938e0a75280000de3d45e68bc69c",
+          "commands": {
+            "GetItem": [
+              "2589*4"
+            ],
+            "DelPet": [
+              "PET>0-560*4"
+            ]
+          }
+        },
+        {
+          "ordinal": 3,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "PET>0-560*3&ITEM=2594",
+          "condition_sha256": "60b1d306f6eb85b1b627670bfe18ce9fe70a85640d290b34e0ff4190014d6195",
+          "section_sha256": "61d7a71c2dc71e201cd8ef67e68da1189c31932c3a2407f91c7335a9ccf33a86",
+          "commands": {
+            "GetItem": [
+              "2589*3"
+            ],
+            "DelPet": [
+              "PET>0-560*3"
+            ]
+          }
+        },
+        {
+          "ordinal": 4,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "PET>0-560*2&ITEM=2594",
+          "condition_sha256": "36ab5dd6c87ad0fd6c43a0847ca8124b04db80b9487e5bf4fa70b1f4dc126253",
+          "section_sha256": "a619b58e943e9c04c1845d02ebcf7fc2102460fed5f63982bee82a0fa5429f51",
+          "commands": {
+            "GetItem": [
+              "2589*2"
+            ],
+            "DelPet": [
+              "PET>0-560*2"
+            ]
+          }
+        },
+        {
+          "ordinal": 5,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "PET>0-560*1&ITEM=2594",
+          "condition_sha256": "d7b7c18b96923ab61cb042be29affa254cc0097c2a22e8de1ca0addf570f763f",
+          "section_sha256": "ac951d31bb8f9bd7056619092b2d98333f9694e6ad1f58928483ecef57f6d729",
+          "commands": {
+            "GetItem": [
+              "2589*1"
+            ],
+            "DelPet": [
+              "PET>0-560*1"
+            ]
+          }
+        },
+        {
+          "ordinal": 6,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2591*2",
+          "condition_sha256": "9aac646cba3c83f299d2f041c94fdb15b5f182762656789929ea882f867b4871",
+          "section_sha256": "be8872adf2bd1604e29261a472ba5282b022560b8a5e7cb241d6975c3b71ef16",
+          "commands": {
+            "GetItem": [
+              "2592*1"
+            ],
+            "DelItem": [
+              "2591*2"
+            ]
+          }
+        },
+        {
+          "ordinal": 7,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2591*1&ITEM=2590*2",
+          "condition_sha256": "18febe23c2ececdbee7a66a12e865897c47469803ad74911898dea18a60ebf9e",
+          "section_sha256": "c419f956706dd9464a19efb7942c8fd20fbf21020748218612cada0662bf19d0",
+          "commands": {
+            "GetItem": [
+              "2592*1"
+            ],
+            "DelItem": [
+              "2590*2,2591*1"
+            ]
+          }
+        },
+        {
+          "ordinal": 8,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2590*4",
+          "condition_sha256": "b84b8d7f68c25868974bfb4923fcc1e526c8e8482ddd6662253bccb59d3e1bfe",
+          "section_sha256": "304647454f44ce918a84faedace0dc3cf427cc2eb49f6bd6950861c4f7f9c0e4",
+          "commands": {
+            "GetItem": [
+              "2592*1"
+            ],
+            "DelItem": [
+              "2590*4"
+            ]
+          }
+        },
+        {
+          "ordinal": 9,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ITEM=2594,ITEM=2595,ITEM=2596",
+          "condition_sha256": "bddaafade3010ac098b6faf537ac7c4fc7805fb6307ccc944337cccfaa6c83c5",
+          "section_sha256": "ac8fa6581ba87ed8f7f9410b23331acca1db4189f80f4fb094df908cf8387b98",
+          "commands": {}
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/bait_03b2",
+      "bytes": 4351,
+      "sha256": "022182a33c2eeb11fe85a7b6e619e2d4ab62597090d25c0c942a94cc47264d1b",
+      "crc32": "8d4b16c2",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "PET>0-559*5&ITEM=2590*1&ITEM=2595,PET>0-559*4&ITEM=2590*1&ITEM=2589*1&ITEM=2595,PET>0-559*3&ITEM=2590*1&ITEM=2589*2&ITEM=2595,PET>0-559*2&ITEM=2590*1&ITEM=2589*3&ITEM=2595,PET>0-559*1&ITEM=2590*1&ITEM=2589*4&ITEM=2595",
+          "condition_sha256": "5e021b7e03705ec341a1ce46dae01724335ce6802fadfe79abc70ae674e21551",
+          "section_sha256": "7c7dfb10006d6c723fc27c28ad4fd31bfe86ff547feb6067f65674fc9b35918b",
+          "commands": {
+            "GetItem": [
+              "2591*1"
+            ],
+            "DelItem": [
+              "EVDEL"
+            ],
+            "DelPet": [
+              "EVDEL"
+            ],
+            "NotDel": [
+              "2595"
+            ]
+          }
+        },
+        {
+          "ordinal": 1,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "PET>0-559*5&ITEM=2595,PET>0-559*4&ITEM=2589*1&ITEM=2595,PET>0-559*3&ITEM=2589*2&ITEM=2595,PET>0-559*2&ITEM=2589*3&ITEM=2595,PET>0-559*1&ITEM=2589*4&ITEM=2595",
+          "condition_sha256": "de1e908931193804de47a8356179670405cb2895bc0a582b7f214b6b9a531008",
+          "section_sha256": "a8f23de6ae5f970afe8ee703b12031778649c7723bfcf184d622d58b2be4df9a",
+          "commands": {
+            "GetItem": [
+              "2590*1"
+            ],
+            "DelItem": [
+              "EVDEL"
+            ],
+            "DelPet": [
+              "EVDEL"
+            ],
+            "NotDel": [
+              "2595"
+            ]
+          }
+        },
+        {
+          "ordinal": 2,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "PET>0-559*4&ITEM=2595",
+          "condition_sha256": "717219f60daa23869789be2b14ec6122c917cb6b85cc8f6f81c5ef3ebc98da57",
+          "section_sha256": "8ea78fe3ea3556622278f3a4ee93009027f0121ab6277e9411693eec8e54332a",
+          "commands": {
+            "GetItem": [
+              "2589*4"
+            ],
+            "DelPet": [
+              "PET>0-559*4"
+            ]
+          }
+        },
+        {
+          "ordinal": 3,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "PET>0-559*3&ITEM=2595",
+          "condition_sha256": "7487f8b10aa31b791a13c77f00a9f3a20e24c4ec9d6481d9015494f8c9c483ce",
+          "section_sha256": "794d24d0c7085dbb16ba8bc0fe95e94e1538845ec0dbeaed1bbb132b0fead8fc",
+          "commands": {
+            "GetItem": [
+              "2589*3"
+            ],
+            "DelPet": [
+              "PET>0-559*3"
+            ]
+          }
+        },
+        {
+          "ordinal": 4,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "PET>0-559*2&ITEM=2595",
+          "condition_sha256": "b4152dc6c111306669de4f6a262c13685bc3068ffd3c53ea1d1d03ac81988f59",
+          "section_sha256": "7f8b35fe896df19f19d0d8b6dafa65144eb90bc2c64001a839c89c8a308494d7",
+          "commands": {
+            "GetItem": [
+              "2589*2"
+            ],
+            "DelPet": [
+              "PET>0-559*2"
+            ]
+          }
+        },
+        {
+          "ordinal": 5,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "PET>0-559*1&ITEM=2595",
+          "condition_sha256": "0fbc6d4364c15fcc76ad1bb51a3902aebd566e66866544288f9aa3457a5f4ad9",
+          "section_sha256": "15f34d28e6e9df60f80c67a29cadedead446d9e0a327bf55449945df1b752ccb",
+          "commands": {
+            "GetItem": [
+              "2589*1"
+            ],
+            "DelPet": [
+              "PET>0-559*1"
+            ]
+          }
+        },
+        {
+          "ordinal": 6,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2591*2",
+          "condition_sha256": "9aac646cba3c83f299d2f041c94fdb15b5f182762656789929ea882f867b4871",
+          "section_sha256": "be8872adf2bd1604e29261a472ba5282b022560b8a5e7cb241d6975c3b71ef16",
+          "commands": {
+            "GetItem": [
+              "2592*1"
+            ],
+            "DelItem": [
+              "2591*2"
+            ]
+          }
+        },
+        {
+          "ordinal": 7,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2591*1&ITEM=2590*2",
+          "condition_sha256": "18febe23c2ececdbee7a66a12e865897c47469803ad74911898dea18a60ebf9e",
+          "section_sha256": "b184dc8c8052ed72b9fd432b1f19efbbcfa80f2d6d2ba8534a0fd5c1a58cf1f8",
+          "commands": {
+            "GetItem": [
+              "2592*1"
+            ],
+            "DelItem": [
+              "2590*2,2591*1"
+            ]
+          }
+        },
+        {
+          "ordinal": 8,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2590*4",
+          "condition_sha256": "b84b8d7f68c25868974bfb4923fcc1e526c8e8482ddd6662253bccb59d3e1bfe",
+          "section_sha256": "7f2e9df1d0d8aec981a7e3a92300922c77fea5ea3790224446176a44b336068e",
+          "commands": {
+            "GetItem": [
+              "2592*1"
+            ],
+            "DelItem": [
+              "2590*4"
+            ]
+          }
+        },
+        {
+          "ordinal": 9,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ITEM=2594,ITEM=2595,ITEM=2596",
+          "condition_sha256": "bddaafade3010ac098b6faf537ac7c4fc7805fb6307ccc944337cccfaa6c83c5",
+          "section_sha256": "ac8fa6581ba87ed8f7f9410b23331acca1db4189f80f4fb094df908cf8387b98",
+          "commands": {}
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/bait_03c2",
+      "bytes": 4344,
+      "sha256": "b21c6664c41d3ecad62021101c0f44f6183a5d57c68b908b8c8b851660546f10",
+      "crc32": "3bda8b9f",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "PET>0-558*5&ITEM=2590*1&ITEM=2596,PET>0-558*4&ITEM=2590*1&ITEM=2589*1&ITEM=2596,PET>0-558*3&ITEM=2590*1&ITEM=2589*2&ITEM=2596,PET>0-558*2&ITEM=2590*1&ITEM=2589*3&ITEM=2596,PET>0-558*1&ITEM=2590*1&ITEM=2589*4&ITEM=2596",
+          "condition_sha256": "2007c64b8f96d12402e53903f0d6a828fa115ae9ade6fe85785eb71c3dca90bc",
+          "section_sha256": "28437cf59f2b3e22f27701a6890aa34dc4457f70764d5eda830cef235dd187cb",
+          "commands": {
+            "GetItem": [
+              "2591*1"
+            ],
+            "DelItem": [
+              "EVDEL"
+            ],
+            "DelPet": [
+              "EVDEL"
+            ],
+            "NotDel": [
+              "2596"
+            ]
+          }
+        },
+        {
+          "ordinal": 1,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "PET>0-558*5&ITEM=2596,PET>0-558*4&ITEM=2589*1&ITEM=2596,PET>0-558*3&ITEM=2589*2&ITEM=2596,PET>0-558*2&ITEM=2589*3&ITEM=2596,PET>0-558*1&ITEM=2589*4&ITEM=2596",
+          "condition_sha256": "61f16ad191576a609d225b4d906f8659f071bd379cc57ec0ecdb8a74a3cb8d5c",
+          "section_sha256": "23fcce4fe4b2c20f0984ad507585c0e34803f5f7146cf7b12e344ebe1a3b2bff",
+          "commands": {
+            "GetItem": [
+              "2590*1"
+            ],
+            "DelItem": [
+              "EVDEL"
+            ],
+            "DelPet": [
+              "EVDEL"
+            ],
+            "NotDel": [
+              "2596"
+            ]
+          }
+        },
+        {
+          "ordinal": 2,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "PET>0-558*4&ITEM=2596",
+          "condition_sha256": "c782de617c578ba1f510902b3d487704dfe442f4b57eeeb4543e20080a2887f8",
+          "section_sha256": "0a2217eac3120ee40ad4334fb17d16c3979ebcb463c171d9e1ad107295570ab6",
+          "commands": {
+            "GetItem": [
+              "2589*4"
+            ],
+            "DelPet": [
+              "PET>0-558*4"
+            ]
+          }
+        },
+        {
+          "ordinal": 3,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "PET>0-558*3&ITEM=2596",
+          "condition_sha256": "c9677d53670401ec630cef092cef3dfec962057c534ba0e062ae9922a67e89e7",
+          "section_sha256": "bf523173c5df7c78bf760bb53b41c35f0c7adf97671197ed5a5c63972b2d329f",
+          "commands": {
+            "GetItem": [
+              "2589*3"
+            ],
+            "DelPet": [
+              "PET>0-558*3"
+            ]
+          }
+        },
+        {
+          "ordinal": 4,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "PET>0-558*2&ITEM=2596",
+          "condition_sha256": "76f1fd29846b85341d73b5a285c2564692cda8cc2b1460980cdc1ecc3367cb30",
+          "section_sha256": "2cf532969960b7cc0f8cd73c97b97d52300c3b1d54befe2da12f935a660ec335",
+          "commands": {
+            "GetItem": [
+              "2589*2"
+            ],
+            "DelPet": [
+              "PET>0-558*2"
+            ]
+          }
+        },
+        {
+          "ordinal": 5,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "PET>0-558*1&ITEM=2596",
+          "condition_sha256": "bfba5e5180325bb5c8aa88e3ca4461a28455d6ecf2e4d36411b15647c11fd14f",
+          "section_sha256": "71a0778c0343276ed6a5e397c17e45c8a12a57b4e56b8d736463add598c8634b",
+          "commands": {
+            "GetItem": [
+              "2589*1"
+            ],
+            "DelPet": [
+              "PET>0-558*1"
+            ]
+          }
+        },
+        {
+          "ordinal": 6,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2591*2",
+          "condition_sha256": "9aac646cba3c83f299d2f041c94fdb15b5f182762656789929ea882f867b4871",
+          "section_sha256": "da3edad7c8488366a9340bef63a17eff95726aa04c3914afca5da75c15bfa7f4",
+          "commands": {
+            "GetItem": [
+              "2592*1"
+            ],
+            "DelItem": [
+              "2591*2"
+            ]
+          }
+        },
+        {
+          "ordinal": 7,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2591*1&ITEM=2590*2",
+          "condition_sha256": "18febe23c2ececdbee7a66a12e865897c47469803ad74911898dea18a60ebf9e",
+          "section_sha256": "2dbe9eff3a3d4afefdbe8d2c8462c59262f28845895330238a3e9ee896c35893",
+          "commands": {
+            "GetItem": [
+              "2592*1"
+            ],
+            "DelItem": [
+              "2590*2,2591*1"
+            ]
+          }
+        },
+        {
+          "ordinal": 8,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2590*4",
+          "condition_sha256": "b84b8d7f68c25868974bfb4923fcc1e526c8e8482ddd6662253bccb59d3e1bfe",
+          "section_sha256": "dd2171861c9bb166c757699a6cee388ce632b262ecc5c4657980f36b3b9dd9f8",
+          "commands": {
+            "GetItem": [
+              "2592*1"
+            ],
+            "DelItem": [
+              "2590*4"
+            ]
+          }
+        },
+        {
+          "ordinal": 9,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ITEM=2594,ITEM=2595,ITEM=2596",
+          "condition_sha256": "bddaafade3010ac098b6faf537ac7c4fc7805fb6307ccc944337cccfaa6c83c5",
+          "section_sha256": "ac8fa6581ba87ed8f7f9410b23331acca1db4189f80f4fb094df908cf8387b98",
+          "commands": {}
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/bait_04",
+      "bytes": 384,
+      "sha256": "11dd74baf4350f8e8cd0154382fb575b0014146be592144ca3b7cf079eaa3030",
+      "crc32": "0493aafe",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ITEM=2594",
+          "condition_sha256": "f0436d71c55a3282147592b5c7b7fd5023c1416f8dc34f1bbdaf75b21b84a1c6",
+          "section_sha256": "83bc47621d4d5153208b5fb46b73db4e432f2e48a0dcdd7bd7bf15559b8a793c",
+          "commands": {}
+        },
+        {
+          "ordinal": 1,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ITEM!=2594",
+          "condition_sha256": "0c428040ca9e5bf12783b578d2a7b98dc6c92232309c0fcbab04092d4c8d1100",
+          "section_sha256": "d402ad508830e15d8d67467eee92ed7bb8e3ebf8a00852e1f50af1b7d5c3f771",
+          "commands": {}
+        }
+      ]
+    }
+  ],
+  "source_event_total": 61,
+  "source_event_type_totals": {
+    "ACCEPT": 51,
+    "MESSAGE": 9,
+    "REQUEST": 1
+  },
+  "source_command_totals": {
+    "DelItem": 37,
+    "DelPet": 18,
+    "GetItem": 31,
+    "GetStone": 21,
+    "NotDel": 6
+  },
+  "source_unreferenced_variants": [
+    {
+      "path": "jaruga/event/bait_03a",
+      "bytes": 7919,
+      "sha256": "2aba8bb854fb39f356a490b33cf50203201ca094d529447cc9c89adb93a0ff90",
+      "crc32": "c792e1c0",
+      "event_count": 18,
+      "create_file_reference_count_within_2205_retained_NPC_members": 0,
+      "source_command_counts": {
+        "DelItem": 12,
+        "DelPet": 14,
+        "GetItem": 17
+      },
+      "note": "ARCHIVED_ALTERNATE_NOT_REFERENCED_BY_THIS_PRESERVED_CREATE_CORPUS"
+    },
+    {
+      "path": "jaruga/event/bait_03b",
+      "bytes": 7769,
+      "sha256": "f5d58d9d9e6cb6e748694e349a62186239dea1d8367417a59eea0e16ef8f2fce",
+      "crc32": "4a5ba6e0",
+      "event_count": 18,
+      "create_file_reference_count_within_2205_retained_NPC_members": 0,
+      "source_command_counts": {
+        "DelItem": 12,
+        "DelPet": 14,
+        "GetItem": 17
+      },
+      "note": "ARCHIVED_ALTERNATE_NOT_REFERENCED_BY_THIS_PRESERVED_CREATE_CORPUS"
+    },
+    {
+      "path": "jaruga/event/bait_03c",
+      "bytes": 7768,
+      "sha256": "dfcd05bf0201bca9a3a4daaf0fb2ba8fcf8fbbf342a229b4a3f735210a9f2fe8",
+      "crc32": "b8dae482",
+      "event_count": 18,
+      "create_file_reference_count_within_2205_retained_NPC_members": 0,
+      "source_command_counts": {
+        "DelItem": 12,
+        "DelPet": 14,
+        "GetItem": 17
+      },
+      "note": "ARCHIVED_ALTERNATE_NOT_REFERENCED_BY_THIS_PRESERVED_CREATE_CORPUS"
+    }
+  ],
+  "source_items": [
+    {
+      "item_id": 2589,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2172,
+          "sha256": "5b3d31ca26304c0926bd7b69c6fd959c3e19c0a90ad44783212eb1d7db4d2337",
+          "original_column_count": 94,
+          "graphic_alias": 24222
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2567,
+          "sha256": "5b3d31ca26304c0926bd7b69c6fd959c3e19c0a90ad44783212eb1d7db4d2337",
+          "original_column_count": 94,
+          "graphic_alias": 24222
+        }
+      ],
+      "source_image_alias": 24222,
+      "cross_carrier_TW1_candidate_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1"
+    },
+    {
+      "item_id": 2590,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2173,
+          "sha256": "162d34e65e40585fa5cca5c97d0e73180c55a5aac66100aec4d1d3202c771609",
+          "original_column_count": 94,
+          "graphic_alias": 24222
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2568,
+          "sha256": "162d34e65e40585fa5cca5c97d0e73180c55a5aac66100aec4d1d3202c771609",
+          "original_column_count": 94,
+          "graphic_alias": 24222
+        }
+      ],
+      "source_image_alias": 24222,
+      "cross_carrier_TW1_candidate_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1"
+    },
+    {
+      "item_id": 2591,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2174,
+          "sha256": "c559a9a169c458e68c1e4d2086cb7a4cdcb8572e5d9e80402ea40589ee4c9d3f",
+          "original_column_count": 94,
+          "graphic_alias": 24222
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2569,
+          "sha256": "c559a9a169c458e68c1e4d2086cb7a4cdcb8572e5d9e80402ea40589ee4c9d3f",
+          "original_column_count": 94,
+          "graphic_alias": 24222
+        }
+      ],
+      "source_image_alias": 24222,
+      "cross_carrier_TW1_candidate_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1"
+    },
+    {
+      "item_id": 2592,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2175,
+          "sha256": "6294537c8a8cf74349bbf579ceb784659af969ca317a40a94308a69a01122e48",
+          "original_column_count": 94,
+          "graphic_alias": 24222
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2570,
+          "sha256": "6294537c8a8cf74349bbf579ceb784659af969ca317a40a94308a69a01122e48",
+          "original_column_count": 94,
+          "graphic_alias": 24222
+        }
+      ],
+      "source_image_alias": 24222,
+      "cross_carrier_TW1_candidate_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1"
+    },
+    {
+      "item_id": 2593,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2176,
+          "sha256": "1cb9c06e6afa9cef44306cdcf3447f6bb2afea33b92fdffc7b0a18eaaf47514a",
+          "original_column_count": 94,
+          "graphic_alias": 24222
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2571,
+          "sha256": "1cb9c06e6afa9cef44306cdcf3447f6bb2afea33b92fdffc7b0a18eaaf47514a",
+          "original_column_count": 94,
+          "graphic_alias": 24222
+        }
+      ],
+      "source_image_alias": 24222,
+      "cross_carrier_TW1_candidate_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1"
+    },
+    {
+      "item_id": 2594,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2177,
+          "sha256": "cbf3dc5e77c2436d1fd7d4b2b2aedbe2fe40dcd2287270c877bcb996dfe84f3a",
+          "original_column_count": 94,
+          "graphic_alias": 22120
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2572,
+          "sha256": "cbf3dc5e77c2436d1fd7d4b2b2aedbe2fe40dcd2287270c877bcb996dfe84f3a",
+          "original_column_count": 94,
+          "graphic_alias": 22120
+        }
+      ],
+      "source_image_alias": 22120,
+      "cross_carrier_TW1_candidate_PNG_SHA256": "9f5ee9a16971c48b8358b42d878d6b864699c1da0b2afc478af9de329a4bef71"
+    },
+    {
+      "item_id": 2595,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2178,
+          "sha256": "66151dc50f21a28edb7adef6c36a5cef6fc082c78739cc1405a526d498f0bf85",
+          "original_column_count": 94,
+          "graphic_alias": 22114
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2573,
+          "sha256": "66151dc50f21a28edb7adef6c36a5cef6fc082c78739cc1405a526d498f0bf85",
+          "original_column_count": 94,
+          "graphic_alias": 22114
+        }
+      ],
+      "source_image_alias": 22114,
+      "cross_carrier_TW1_candidate_PNG_SHA256": "0f529bb53c38f37c5284a8b52231a9fe712ad1363be4c69d27035d14d7645d40"
+    },
+    {
+      "item_id": 2596,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2179,
+          "sha256": "3e4a6ec27c7c5829732a9b1b1314bdfeca4f7ac8fba570f977278d361c664c37",
+          "original_column_count": 94,
+          "graphic_alias": 22118
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2574,
+          "sha256": "3e4a6ec27c7c5829732a9b1b1314bdfeca4f7ac8fba570f977278d361c664c37",
+          "original_column_count": 94,
+          "graphic_alias": 22118
+        }
+      ],
+      "source_image_alias": 22118,
+      "cross_carrier_TW1_candidate_PNG_SHA256": "05bd788c5ae1e0c807a5c9c930617ce92b70e73082cd37668ed0b0b8b1665b4a"
+    }
+  ],
+  "original_tw1_cross_carrier_candidate_images": [
+    {
+      "alias": 22114,
+      "private_png_sha256": "0f529bb53c38f37c5284a8b52231a9fe712ad1363be4c69d27035d14d7645d40",
+      "bytes": 1247,
+      "original_RD_sha256": "1c446820a4e7fd9a7f606fd7e18e1891fdf420da407de4cc7a356823d9bafb84",
+      "candidate_only_other_TW1_original_source": true
+    },
+    {
+      "alias": 22118,
+      "private_png_sha256": "05bd788c5ae1e0c807a5c9c930617ce92b70e73082cd37668ed0b0b8b1665b4a",
+      "bytes": 1209,
+      "original_RD_sha256": "30b03b6640e90febf28fef3c9588760305e659649a620cc11941a92440429773",
+      "candidate_only_other_TW1_original_source": true
+    },
+    {
+      "alias": 22120,
+      "private_png_sha256": "9f5ee9a16971c48b8358b42d878d6b864699c1da0b2afc478af9de329a4bef71",
+      "bytes": 1251,
+      "original_RD_sha256": "3d0405f4a0ee161085447194ab7a4ae45842dfbedb07c8ec0eb7d18152050cb0",
+      "candidate_only_other_TW1_original_source": true
+    },
+    {
+      "alias": 24222,
+      "private_png_sha256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1",
+      "bytes": 1438,
+      "original_RD_sha256": "d519e1dbfcf21cb23c7850eb741381698dc0ebd7437d69d68d877b0ad7cf8052",
+      "candidate_only_other_TW1_original_source": true
+    }
+  ],
+  "pet_certificate_branches": [
+    {
+      "script": "jaruga/event/bait_03a2",
+      "wristband_id": 2594,
+      "pet_predicate_numeric": 560,
+      "original_events": 10,
+      "unreferenced_variant_source": "jaruga/event/bait_03a",
+      "unreferenced_variant_events": 18,
+      "first_two_sections_use_EVDEL": true,
+      "first_two_sections_use_NotDel_wristband": true,
+      "four_following_sections_use_explicit_DelPet": true
+    },
+    {
+      "script": "jaruga/event/bait_03b2",
+      "wristband_id": 2595,
+      "pet_predicate_numeric": 559,
+      "original_events": 10,
+      "unreferenced_variant_source": "jaruga/event/bait_03b",
+      "unreferenced_variant_events": 18,
+      "first_two_sections_use_EVDEL": true,
+      "first_two_sections_use_NotDel_wristband": true,
+      "four_following_sections_use_explicit_DelPet": true
+    },
+    {
+      "script": "jaruga/event/bait_03c2",
+      "wristband_id": 2596,
+      "pet_predicate_numeric": 558,
+      "original_events": 10,
+      "unreferenced_variant_source": "jaruga/event/bait_03c",
+      "unreferenced_variant_events": 18,
+      "first_two_sections_use_EVDEL": true,
+      "first_two_sections_use_NotDel_wristband": true,
+      "four_following_sections_use_explicit_DelPet": true
+    }
+  ],
+  "source_21_payment_literals": [
+    {
+      "event_ordinal": 0,
+      "voucher_id": 2592,
+      "voucher_quantity": 1,
+      "wristband_id": 2596,
+      "source_getstone_literal": 14400,
+      "original_delitem_literal": "2592*1"
+    },
+    {
+      "event_ordinal": 1,
+      "voucher_id": 2591,
+      "voucher_quantity": 1,
+      "wristband_id": 2596,
+      "source_getstone_literal": 6300,
+      "original_delitem_literal": "2591*1"
+    },
+    {
+      "event_ordinal": 2,
+      "voucher_id": 2590,
+      "voucher_quantity": 1,
+      "wristband_id": 2596,
+      "source_getstone_literal": 2860,
+      "original_delitem_literal": "2590*1"
+    },
+    {
+      "event_ordinal": 3,
+      "voucher_id": 2589,
+      "voucher_quantity": 4,
+      "wristband_id": 2596,
+      "source_getstone_literal": 2160,
+      "original_delitem_literal": "2589*4"
+    },
+    {
+      "event_ordinal": 4,
+      "voucher_id": 2589,
+      "voucher_quantity": 3,
+      "wristband_id": 2596,
+      "source_getstone_literal": 1620,
+      "original_delitem_literal": "2589*3"
+    },
+    {
+      "event_ordinal": 5,
+      "voucher_id": 2589,
+      "voucher_quantity": 2,
+      "wristband_id": 2596,
+      "source_getstone_literal": 990,
+      "original_delitem_literal": "2589*2"
+    },
+    {
+      "event_ordinal": 6,
+      "voucher_id": 2589,
+      "voucher_quantity": 1,
+      "wristband_id": 2596,
+      "source_getstone_literal": 450,
+      "original_delitem_literal": "2589*1"
+    },
+    {
+      "event_ordinal": 7,
+      "voucher_id": 2592,
+      "voucher_quantity": 1,
+      "wristband_id": 2595,
+      "source_getstone_literal": 11200,
+      "original_delitem_literal": "2592*1"
+    },
+    {
+      "event_ordinal": 8,
+      "voucher_id": 2591,
+      "voucher_quantity": 1,
+      "wristband_id": 2595,
+      "source_getstone_literal": 4900,
+      "original_delitem_literal": "2591*1"
+    },
+    {
+      "event_ordinal": 9,
+      "voucher_id": 2590,
+      "voucher_quantity": 1,
+      "wristband_id": 2595,
+      "source_getstone_literal": 2275,
+      "original_delitem_literal": "2590*1"
+    },
+    {
+      "event_ordinal": 10,
+      "voucher_id": 2589,
+      "voucher_quantity": 4,
+      "wristband_id": 2595,
+      "source_getstone_literal": 1680,
+      "original_delitem_literal": "2589*4"
+    },
+    {
+      "event_ordinal": 11,
+      "voucher_id": 2589,
+      "voucher_quantity": 3,
+      "wristband_id": 2595,
+      "source_getstone_literal": 1260,
+      "original_delitem_literal": "2589*3"
+    },
+    {
+      "event_ordinal": 12,
+      "voucher_id": 2589,
+      "voucher_quantity": 2,
+      "wristband_id": 2595,
+      "source_getstone_literal": 770,
+      "original_delitem_literal": "2589*2"
+    },
+    {
+      "event_ordinal": 13,
+      "voucher_id": 2589,
+      "voucher_quantity": 1,
+      "wristband_id": 2595,
+      "source_getstone_literal": 350,
+      "original_delitem_literal": "2589*1"
+    },
+    {
+      "event_ordinal": 14,
+      "voucher_id": 2592,
+      "voucher_quantity": 1,
+      "wristband_id": 2594,
+      "source_getstone_literal": 6400,
+      "original_delitem_literal": "2592*1"
+    },
+    {
+      "event_ordinal": 15,
+      "voucher_id": 2591,
+      "voucher_quantity": 1,
+      "wristband_id": 2594,
+      "source_getstone_literal": 2800,
+      "original_delitem_literal": "2591*1"
+    },
+    {
+      "event_ordinal": 16,
+      "voucher_id": 2590,
+      "voucher_quantity": 1,
+      "wristband_id": 2594,
+      "source_getstone_literal": 1300,
+      "original_delitem_literal": "2590*1"
+    },
+    {
+      "event_ordinal": 17,
+      "voucher_id": 2589,
+      "voucher_quantity": 4,
+      "wristband_id": 2594,
+      "source_getstone_literal": 1030,
+      "original_delitem_literal": "2589*4"
+    },
+    {
+      "event_ordinal": 18,
+      "voucher_id": 2589,
+      "voucher_quantity": 3,
+      "wristband_id": 2594,
+      "source_getstone_literal": 780,
+      "original_delitem_literal": "2589*3"
+    },
+    {
+      "event_ordinal": 19,
+      "voucher_id": 2589,
+      "voucher_quantity": 2,
+      "wristband_id": 2594,
+      "source_getstone_literal": 480,
+      "original_delitem_literal": "2589*2"
+    },
+    {
+      "event_ordinal": 20,
+      "voucher_id": 2589,
+      "voucher_quantity": 1,
+      "wristband_id": 2594,
+      "source_getstone_literal": 200,
+      "original_delitem_literal": "2589*1"
+    }
+  ],
+  "source_map_qualification": {
+    "previously_verified_map09_DAT": [
+      {
+        "floor": 201,
+        "sha256": "ddc811bd4483403ae49ea7882650e3047a9abb29e67cbb0bd6e43377873314d1",
+        "geometry": [
+          30,
+          40
+        ],
+        "source_DAT_bytes_replayed_this_round": false
+      },
+      {
+        "floor": 20901,
+        "sha256": "71dd85505dabe06de069741fbc38b89d634cdfb956b880d21d09f6d1558e738b",
+        "geometry": [
+          70,
+          70
+        ],
+        "source_DAT_bytes_replayed_this_round": false
+      }
+    ],
+    "original_DAT_cells_replayed_this_round": 0
+  },
+  "source_work_scope": {
+    "quest01_old_source_script_records": 6,
+    "quest01_old_event_records": 61,
+    "original_npc_create_count": 6,
+    "same_archive_alt_scripts_not_in_current_create": 3,
+    "new_original_commercial_game_execution": 0,
+    "newly_found_original_source_bytes_outside_existing_private_archives": 0,
+    "special_subsystem": "ITEM_PET_PREDICATES_AND_CERTIFICATE_EXCHANGE_STATIC_SOURCE_ONLY"
+  },
+  "unverified": {
+    "native_pet_capture_exchange_executed": false,
+    "official_original_version_deployment": false,
+    "script_selection_priority_and_EVDEL_semantics": false,
+    "real_item_reward_or_currency_changes": false,
+    "pet_species_identity_from_numeric_PET_predicate": false,
+    "original_DAT_cells_at_created_NPC_coordinates": false,
+    "actual_same_build_TW1_image_and_community_item": false
+  },
+  "next": "QUEST18-DEDUP-AND-NEXT_SOURCE_READY_ORIGINAL_FAMILY",
+  "stage_A": {
+    "PARTIAL": 7,
+    "OPEN": 2
+  },
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}
