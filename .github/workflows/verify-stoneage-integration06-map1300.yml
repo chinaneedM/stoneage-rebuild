@@ -1,0 +1,23 @@
+name: Verify StoneAge INTEGRATION06 original MAP1300 source gap
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION06-MAP1300-MAP-DAT-SIX-CREATE-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_06.py'
+      - '.github/workflows/verify-stoneage-integration06-map1300.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION06-MAP1300-MAP-DAT-SIX-CREATE-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_06.py'
+      - '.github/workflows/verify-stoneage-integration06-map1300.yml'
+jobs:
+  public-derived-evidence:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_06.py' -v
