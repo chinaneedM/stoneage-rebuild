@@ -2220,3 +2220,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-08 — INTEGRATION07｜14份未匹配DAT楼层的真实来源分类与大小写漏项
 
 [INTEGRATION07全部14楼层、88原CREATE源数与MAP/DAT资格](docs/continuity/STONEAGE-INTEGRATION07-14-MISSING-DAT-QUALIFICATION-20261108.md)：复用QUEST05、MAP01、MAP02及INTEGRATION06已发表源SHA目录，实际查得QUEST05对955原DAT缺匹配的14层/88配置可细分为：1000独立已验完整DAT（19创建）、12层有原DAT目录及原解包失败（67创建）、830本选定来源无MAP/DAT成员（2创建）。**200.dat／3000.dat原错误名小写**，遗漏大小写会错判无记录；400.MAP两组完整原字节SHA不同，不可合并同图；13个原DAT错误长度与MAP成员尺寸公式相合不是成功解码。公开[来源守恒索引](research/recovered/STONEAGE-INTEGRATION07-FOURTEEN-UNMATCHED-DAT-QUALIFICATION-R1.json)、10项回归，不新取原DAT或启动原程序，不补造地图。原CURRENT全文保留，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体完成率未知。最高NEXT Stage A代表性玩家路径跨模块联合审查；CI合并后验另记。
+
+
+## 2026-11-08 — INTEGRATION08｜源地图1000和19配置原内容严格联接
+
+[INTEGRATION08 同源160×160原DAT与19个NPC/任务创建块](docs/continuity/STONEAGE-INTEGRATION08-FLOOR1000-NPC-SOURCE-20261108.md)：把MAP02独立已核1000.DAT 153608B/SHA94b19cb…，与QUEST05/CHAR01同混合2.5保存来源的19创建配置逐原路径+序号+适当SHA作用域严谨连接：7条changeevent、2条warp、10条timeman，17个有`borncorner`原四整数（且在尺寸界内）、1条仅`borncenter`、1条无两字段；18个不同图别名不是18个NPC。连通QUEST25三条环岛/检查站配置、QUEST26一条贝壳/花交换及INTEGRATION05原GetPet命令（非已获宠物）；TW1原RD 26310/26324只是跨载体数字候选、14次未命中。本轮没有重新解商业原文件、没有本地原游戏NPC运行、没有官方同服证明。公开[可核19行](research/recovered/STONEAGE-INTEGRATION08-FLOOR1000-19-CREATE-ORIGINAL-SOURCE-R1.json)和9项来源测试；历史CURRENT原blob完整保留，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停，percent未知。最高NEXT Stage A代表性玩家路径可证/缺口联合审查。
