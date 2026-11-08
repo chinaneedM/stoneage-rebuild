@@ -40,3 +40,7 @@
 **最高NEXT `QUEST28_MODULE_REVIEW_AFTER_TWO_COURIER_FAMILIES_SOURCE_STOP`**：两组村落交付达到来源止点，回任务模块材料复核，优先把剩余可取证的药草/药剂内容合成一批（`jaruga/event/event01_1/2` 与 `sainasu/event/nevent02_2/3/4`），先排除WORLD14、QUEST11与旧道具/任务目录已涵盖部分；保留后期1984药粉等原分叉，不把版本差异补为初代药草事实。有真实材料增量才批量恢复，不继续围绕单一CLEAN、SP、丢弃helper或同图斧头扩展。
 
 Stage A仍 **7 PARTIAL+2 OPEN**、Stage B/wiki **GATED**、R79 **PAUSED_NON_BLOCKING**、任务起源 **UNRESOLVED**、总体百分比未知。本篇为CURRENT的追加接力，所有原历史保持。
+
+## 实际远端验收
+
+[PR #267](https://github.com/chinaneedM/stoneage-rebuild/pull/267)已合并。候选 `8abccae1149d57a79cdd8881660b091c7ff638f1` 的四项Actions（42479393593、42479396179、42479396414、42479396549）全部completed/success；内容主线 `8221bfbb411e002f393dacf6a0b01704c101f908` / tree `e246ea1efb3161105b52c43e438f7a00527591a7` 的[run42479454504](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42479454504)、job128727992612实际成功，日志含8项AxeLetterSourceEvidence通过。原生Git对六份完整文件和tree核同；首次核验早于异步fetch完成而查不到本地main对象，等待完成后重验成功，此为本地时序问题，非源文件或远端CI失败，记录保留于[验收收据](../../research/recovered/STONEAGE-QUEST27-PUBLICATION-ACCEPTANCE-R1.json)。收据自身CI发布后另验，不预支成功。最高NEXT仍为上述QUEST28药草/药剂批次材料复核。
