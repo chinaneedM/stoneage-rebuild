@@ -1,0 +1,932 @@
+{
+  "schema": "stoneage.quest19.marju_mail_rope_stone_treasurebag_static_source.r1",
+  "date": "2026-11-08",
+  "work_package": "QUEST19-DEDUP-AND-NEXT_DISTINCT_ORIGINAL_FAMILY",
+  "start": {
+    "main_head": "8d53deb9aa5b6fd0580ac89426cfee6ae7b8ea6a",
+    "main_tree": "5a3e57cea67efa5dada1a8c9b0d2f28ef0197068",
+    "current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_state_bytes": 2709173
+  },
+  "source_class": "LATER_MIXED25_COMMUNITY_ORIGIN_UNRESOLVED_NOT_VERIFIED_OFFICIAL_JSS1999_TW10_CN182",
+  "private_source": {
+    "npc_zip": {
+      "bytes": 995176,
+      "sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+      "member_crc_pass": 2205
+    },
+    "item_cached_rows_and_cross_carrier_RD_zip": {
+      "bytes": 5868386,
+      "sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+      "member_crc_pass": 838
+    },
+    "parent_community_RAR_reverified_this_unit": false,
+    "full_original_itemset_text_reextracted_this_unit": false,
+    "public_quest01_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2",
+    "map09_blob": "137580e7c25aadf3d679b6ebfb5080b79912cc4f",
+    "original_commercial_bytes_published": false
+  },
+  "creator": {
+    "path": "extra/event/marju.create",
+    "source_bytes": 1896,
+    "sha256": "a93b179d1c5b4ac637d381d49f7aea9c5cdd161929ab128cf6d3e0eb6cd5a878",
+    "crc32": "dccec099",
+    "active_changeevent_config_count": 12
+  },
+  "original_scripts": [
+    {
+      "path": "extra/event/marju",
+      "source_bytes": 1439,
+      "sha256": "aa8ae38d76daf189b075befc55557f6f3e49fec81ee624c3a8e517d741fea904",
+      "crc32": "bddfb6ba",
+      "source_event_block_count": 3,
+      "source_type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 1,
+        "REQUEST": 1
+      }
+    },
+    {
+      "path": "extra/event/marju01",
+      "source_bytes": 1726,
+      "sha256": "496bbbf14ebc6b71a025c33f7d7410ce81cd479a09815712408f2a3b0e66467f",
+      "crc32": "d3d4505d",
+      "source_event_block_count": 4,
+      "source_type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 2,
+        "REQUEST": 1
+      }
+    },
+    {
+      "path": "extra/event/marju02",
+      "source_bytes": 757,
+      "sha256": "ed42b130817e7dcf394d41aeffa6448bceb0378b6bfd84f19084fa4c2b0aba25",
+      "crc32": "04e96f6c",
+      "source_event_block_count": 2,
+      "source_type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 1
+      }
+    },
+    {
+      "path": "extra/event/marju02a",
+      "source_bytes": 756,
+      "sha256": "0a41ce62c9370da79ae563dae4eb40dd6b6cb5588fed565aa513b06dd2f678d8",
+      "crc32": "f475f466",
+      "source_event_block_count": 2,
+      "source_type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 1
+      }
+    },
+    {
+      "path": "extra/event/marju03",
+      "source_bytes": 878,
+      "sha256": "b587fc3e5d20dbdc64f1f99a7ec5cbea995b261d64956087e6d7a203f7bebe8a",
+      "crc32": "592cfb0f",
+      "source_event_block_count": 2,
+      "source_type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 1
+      }
+    },
+    {
+      "path": "extra/event/marju03a",
+      "source_bytes": 880,
+      "sha256": "89b46628f2c47bab6d4256a41400d48a9a729783d8c6bad6cfbf34bf2f3a53c5",
+      "crc32": "eb815c81",
+      "source_event_block_count": 2,
+      "source_type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 1
+      }
+    },
+    {
+      "path": "extra/event/marju04",
+      "source_bytes": 758,
+      "sha256": "60cf31082477f32fe7e1dcdd8affae151ed7ab3a2e8067abfbab6d1f50a2f475",
+      "crc32": "898b0c07",
+      "source_event_block_count": 2,
+      "source_type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 1
+      }
+    },
+    {
+      "path": "extra/event/marju04a",
+      "source_bytes": 757,
+      "sha256": "e2099eac28f38905cb3764b7bf233e0b187fa2c2eb9687e972bf93845b9a7872",
+      "crc32": "152c7767",
+      "source_event_block_count": 2,
+      "source_type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 1
+      }
+    },
+    {
+      "path": "extra/event/marju05",
+      "source_bytes": 755,
+      "sha256": "019db98321c37024e2fa5b82b2a3b7313b2e2c8efc73c5b5f718409f65b2bdf8",
+      "crc32": "975675b0",
+      "source_event_block_count": 2,
+      "source_type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 1
+      }
+    },
+    {
+      "path": "extra/event/marju05a",
+      "source_bytes": 755,
+      "sha256": "6ad5d7941fbdbbd17264d63ef929d119301a9a3b5544ff193da426a978b4921d",
+      "crc32": "7237a0e2",
+      "source_event_block_count": 2,
+      "source_type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 1
+      }
+    },
+    {
+      "path": "extra/event/marju06",
+      "source_bytes": 882,
+      "sha256": "fe38b84c18129a5e17b3fd7b8bed61957733dc99c8f7dc808476cfc3523b3b55",
+      "crc32": "8bd868a8",
+      "source_event_block_count": 2,
+      "source_type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 1
+      }
+    },
+    {
+      "path": "extra/event/marju06a",
+      "source_bytes": 879,
+      "sha256": "1dd5029cc9ee4e4ff084aa6960348638cb127759ea424ab0f39fbdf9f1bfb4fe",
+      "crc32": "4adbab22",
+      "source_event_block_count": 2,
+      "source_type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 1
+      }
+    }
+  ],
+  "npc_placements": [
+    {
+      "ordinal": 0,
+      "script": "extra/event/marju",
+      "floor": 1300,
+      "spawn_xy": [
+        70,
+        51
+      ],
+      "graphic_alias": 16046
+    },
+    {
+      "ordinal": 1,
+      "script": "extra/event/marju01",
+      "floor": 119,
+      "spawn_xy": [
+        97,
+        88
+      ],
+      "graphic_alias": 16000
+    },
+    {
+      "ordinal": 2,
+      "script": "extra/event/marju02",
+      "floor": 122,
+      "spawn_xy": [
+        39,
+        164
+      ],
+      "graphic_alias": 16073
+    },
+    {
+      "ordinal": 3,
+      "script": "extra/event/marju02a",
+      "floor": 122,
+      "spawn_xy": [
+        216,
+        51
+      ],
+      "graphic_alias": 16073
+    },
+    {
+      "ordinal": 4,
+      "script": "extra/event/marju03",
+      "floor": 122,
+      "spawn_xy": [
+        54,
+        90
+      ],
+      "graphic_alias": 16073
+    },
+    {
+      "ordinal": 5,
+      "script": "extra/event/marju03a",
+      "floor": 122,
+      "spawn_xy": [
+        282,
+        48
+      ],
+      "graphic_alias": 16073
+    },
+    {
+      "ordinal": 6,
+      "script": "extra/event/marju04",
+      "floor": 122,
+      "spawn_xy": [
+        111,
+        127
+      ],
+      "graphic_alias": 16073
+    },
+    {
+      "ordinal": 7,
+      "script": "extra/event/marju04a",
+      "floor": 122,
+      "spawn_xy": [
+        162,
+        12
+      ],
+      "graphic_alias": 16073
+    },
+    {
+      "ordinal": 8,
+      "script": "extra/event/marju05",
+      "floor": 118,
+      "spawn_xy": [
+        167,
+        39
+      ],
+      "graphic_alias": 16073
+    },
+    {
+      "ordinal": 9,
+      "script": "extra/event/marju05a",
+      "floor": 118,
+      "spawn_xy": [
+        33,
+        153
+      ],
+      "graphic_alias": 16073
+    },
+    {
+      "ordinal": 10,
+      "script": "extra/event/marju06a",
+      "floor": 118,
+      "spawn_xy": [
+        69,
+        75
+      ],
+      "graphic_alias": 16073
+    },
+    {
+      "ordinal": 11,
+      "script": "extra/event/marju06",
+      "floor": 118,
+      "spawn_xy": [
+        219,
+        57
+      ],
+      "graphic_alias": 16073
+    }
+  ],
+  "original_event_blocks": {
+    "count": 27,
+    "types": {
+      "REQUEST": 2,
+      "ACCEPT": 12,
+      "MESSAGE": 13
+    },
+    "source_operations": {
+      "EVENT": 27,
+      "EventNo": 27,
+      "GetItem": 4,
+      "TYPE": 27,
+      "EndSetFlg": 2,
+      "GetRandItem": 11,
+      "DelItem": 11,
+      "NpcWarp": 10
+    },
+    "flags_37_and_38_appear": true,
+    "all_27_previously_indexed_with_normalized_SHA": true,
+    "not_27_newly_discovered_scripts": true
+  },
+  "script_lifecycle_literal": {
+    "postal_request": {
+      "script": "extra/event/marju",
+      "EventNo": 37,
+      "predicates": [
+        "LV>49",
+        "ENDEV!=38"
+      ],
+      "GetItem": 2687
+    },
+    "delivery": {
+      "script": "extra/event/marju01",
+      "EventNo": 38,
+      "predicates": [
+        "NOWEV=37",
+        "LV>49",
+        "ITEM=2687",
+        "ITEM!=2697"
+      ],
+      "DelItem": 2687,
+      "GetItem": 2697,
+      "EndSetFlg": 37
+    },
+    "promised_reward": {
+      "script": "extra/event/marju",
+      "EventNo": 38,
+      "predicates": [
+        "ENDEV=37",
+        "LV>49"
+      ],
+      "GetRandItem_pool": "MAIL",
+      "EndSetFlg": 38
+    },
+    "other_literal_cutstone_grants_exist": true,
+    "bag_accept_predicates": [
+      "LV>0",
+      "ITEM=2697"
+    ],
+    "bag_ACCEPT_source_contains_DelItem_2697": true,
+    "actual_server_execution_or_order_proven": false
+  },
+  "numeric_random_candidate_pools": {
+    "MAIL": {
+      "literal_list": [
+        2688,
+        2689,
+        2690
+      ],
+      "original_argument_sha256": "4c0443f0f3b71f7cb24d0c30782d2cc953e3afda35912a32ceb4cb0ba58fb1b7",
+      "script_occurrences": 1
+    },
+    "P36": {
+      "literal_list": [
+        32,
+        44,
+        59,
+        156,
+        164,
+        169,
+        243,
+        254,
+        260,
+        339,
+        343,
+        360,
+        439,
+        444,
+        457,
+        532,
+        544,
+        560,
+        643,
+        650,
+        668,
+        742,
+        752,
+        760,
+        32,
+        156,
+        243,
+        254,
+        339,
+        439,
+        532,
+        643,
+        742,
+        2694,
+        2695,
+        2696
+      ],
+      "original_argument_sha256": "c50df28bb03717b66c1470c080c710a0c815db2d6ca0786d105857f96e61cd3d",
+      "script_occurrences": 6
+    },
+    "P49": {
+      "literal_list": [
+        957,
+        964,
+        1034,
+        1045,
+        1141,
+        1154,
+        1357,
+        1358,
+        11805,
+        11804,
+        11814,
+        11834,
+        11835,
+        11845,
+        11846,
+        11855,
+        11865,
+        11875,
+        11884,
+        11904,
+        957,
+        964,
+        970,
+        1034,
+        1045,
+        1056,
+        1141,
+        1154,
+        1159,
+        1357,
+        1358,
+        1367,
+        11805,
+        11804,
+        11814,
+        11815,
+        11834,
+        11835,
+        11836,
+        11845,
+        11846,
+        11855,
+        11865,
+        11875,
+        11884,
+        11904,
+        2691,
+        2692,
+        2693
+      ],
+      "original_argument_sha256": "54f194fef9875bb94196d1bee6c20945b38b470e9b32cd3a992b8102390524a6",
+      "script_occurrences": 4
+    }
+  },
+  "random_candidates": {
+    "source_GetRandItem_commands": 11,
+    "literal_candidate_occurrences": 415,
+    "distinct_item_ids_in_random_lists": 59,
+    "duplicate_literally_listed_IDs_preserved": true,
+    "probability_model_UNKNOWN": true,
+    "actual_reward_UNPROVEN": true
+  },
+  "treasurebag_npc_relocation": {
+    "original_NpcWarp_commands": 10,
+    "source_candidate_coordinate_occurrences": 50,
+    "distinct_floor_x_y": 50,
+    "bag_spawn_in_own_candidates": 10,
+    "MAP09_118": {
+      "geometry": [
+        250,
+        180
+      ],
+      "source_DAT_sha256": "f4116dbcd8625bc81270a6215748c2ef46d67f0098161365669eb385f5798f9e"
+    },
+    "MAP09_122": {
+      "geometry": [
+        300,
+        200
+      ],
+      "source_DAT_sha256": "64217be4a7e96959099e8872e332cfdabcbdfd71ed9420c4fe1086ba3ee35438"
+    },
+    "floor_119_and_1300_missing_only_from_this_MAP09_691_catalog": true,
+    "original_DAT_reextracted_this_unit": false,
+    "not_player_teleport": true,
+    "actual_NPC_warp_selection_UNPROVEN": true,
+    "bag_rows": [
+      {
+        "script": "extra/event/marju02",
+        "floor": 122,
+        "source_spawn": [
+          39,
+          164
+        ],
+        "target_xy": [
+          [
+            57,
+            126
+          ],
+          [
+            168,
+            152
+          ],
+          [
+            246,
+            30
+          ],
+          [
+            156,
+            24
+          ],
+          [
+            39,
+            164
+          ]
+        ],
+        "literal_NpcWarp_arg_sha256": "cb5cb62b65b99f5cb972b8b5f27f041304b3de918ab5bf6bb284e34dc6f6f01a",
+        "item_pool": "P36"
+      },
+      {
+        "script": "extra/event/marju02a",
+        "floor": 122,
+        "source_spawn": [
+          216,
+          51
+        ],
+        "target_xy": [
+          [
+            144,
+            54
+          ],
+          [
+            216,
+            78
+          ],
+          [
+            16,
+            146
+          ],
+          [
+            144,
+            66
+          ],
+          [
+            216,
+            51
+          ]
+        ],
+        "literal_NpcWarp_arg_sha256": "1884ec149d3ad4491cfda7c483e053205592c6f47db2b1fcca934ae7e14bff08",
+        "item_pool": "P36"
+      },
+      {
+        "script": "extra/event/marju03",
+        "floor": 122,
+        "source_spawn": [
+          54,
+          90
+        ],
+        "target_xy": [
+          [
+            120,
+            63
+          ],
+          [
+            210,
+            12
+          ],
+          [
+            282,
+            66
+          ],
+          [
+            222,
+            90
+          ],
+          [
+            54,
+            90
+          ]
+        ],
+        "literal_NpcWarp_arg_sha256": "614d944ef55cb447b321e5ed4451a1c3059bb1025691a94a0a756daa7a82da88",
+        "item_pool": "P49"
+      },
+      {
+        "script": "extra/event/marju03a",
+        "floor": 122,
+        "source_spawn": [
+          282,
+          48
+        ],
+        "target_xy": [
+          [
+            174,
+            110
+          ],
+          [
+            282,
+            12
+          ],
+          [
+            72,
+            36
+          ],
+          [
+            192,
+            12
+          ],
+          [
+            282,
+            48
+          ]
+        ],
+        "literal_NpcWarp_arg_sha256": "733ddd8ee246b7073749c3b0902e315ccd4c616d085f4746b26a04043b9d8c0e",
+        "item_pool": "P49"
+      },
+      {
+        "script": "extra/event/marju04",
+        "floor": 122,
+        "source_spawn": [
+          111,
+          127
+        ],
+        "target_xy": [
+          [
+            120,
+            145
+          ],
+          [
+            234,
+            133
+          ],
+          [
+            114,
+            6
+          ],
+          [
+            126,
+            63
+          ],
+          [
+            111,
+            127
+          ]
+        ],
+        "literal_NpcWarp_arg_sha256": "6d354391b5fa9046653f544156fff53fa0385e4303e7b3d6dd0e88df1a03916e",
+        "item_pool": "P36"
+      },
+      {
+        "script": "extra/event/marju04a",
+        "floor": 122,
+        "source_spawn": [
+          162,
+          12
+        ],
+        "target_xy": [
+          [
+            198,
+            39
+          ],
+          [
+            234,
+            96
+          ],
+          [
+            105,
+            158
+          ],
+          [
+            246,
+            158
+          ],
+          [
+            162,
+            12
+          ]
+        ],
+        "literal_NpcWarp_arg_sha256": "ea57786e3fa62ec87309859771a6ed80172c341d585dfcbc54fa0ed4654f4fa6",
+        "item_pool": "P36"
+      },
+      {
+        "script": "extra/event/marju05",
+        "floor": 118,
+        "source_spawn": [
+          167,
+          39
+        ],
+        "target_xy": [
+          [
+            132,
+            126
+          ],
+          [
+            27,
+            75
+          ],
+          [
+            129,
+            33
+          ],
+          [
+            33,
+            63
+          ],
+          [
+            167,
+            39
+          ]
+        ],
+        "literal_NpcWarp_arg_sha256": "801c37b7f9d2b79a33c6d315e02d5ac2a76afa1842815673162ec28b9528229f",
+        "item_pool": "P36"
+      },
+      {
+        "script": "extra/event/marju05a",
+        "floor": 118,
+        "source_spawn": [
+          33,
+          153
+        ],
+        "target_xy": [
+          [
+            21,
+            75
+          ],
+          [
+            117,
+            27
+          ],
+          [
+            21,
+            123
+          ],
+          [
+            111,
+            39
+          ],
+          [
+            33,
+            153
+          ]
+        ],
+        "literal_NpcWarp_arg_sha256": "2c85182195fe4ce090c9f17c15bb169e581edf2e9ec015dc7257054fccfb400e",
+        "item_pool": "P36"
+      },
+      {
+        "script": "extra/event/marju06",
+        "floor": 118,
+        "source_spawn": [
+          219,
+          57
+        ],
+        "target_xy": [
+          [
+            201,
+            111
+          ],
+          [
+            69,
+            165
+          ],
+          [
+            225,
+            15
+          ],
+          [
+            111,
+            135
+          ],
+          [
+            219,
+            57
+          ]
+        ],
+        "literal_NpcWarp_arg_sha256": "29ac73ad1138d654c90b53c6a889f41d03a0a16a060ce7dffec2e17007fa7ad2",
+        "item_pool": "P49"
+      },
+      {
+        "script": "extra/event/marju06a",
+        "floor": 118,
+        "source_spawn": [
+          69,
+          75
+        ],
+        "target_xy": [
+          [
+            63,
+            27
+          ],
+          [
+            170,
+            105
+          ],
+          [
+            74,
+            69
+          ],
+          [
+            177,
+            117
+          ],
+          [
+            69,
+            75
+          ]
+        ],
+        "literal_NpcWarp_arg_sha256": "40fff0769885c4097681cd001ca8cf556e078a3c5444b36f6a46f3abc4d70773",
+        "item_pool": "P49"
+      }
+    ]
+  },
+  "item_crosswalk": {
+    "source_item_ID_count": 61,
+    "source_item_IDs": [
+      32,
+      44,
+      59,
+      156,
+      164,
+      169,
+      243,
+      254,
+      260,
+      339,
+      343,
+      360,
+      439,
+      444,
+      457,
+      532,
+      544,
+      560,
+      643,
+      650,
+      668,
+      742,
+      752,
+      760,
+      957,
+      964,
+      970,
+      1034,
+      1045,
+      1056,
+      1141,
+      1154,
+      1159,
+      1357,
+      1358,
+      1367,
+      2687,
+      2688,
+      2689,
+      2690,
+      2691,
+      2692,
+      2693,
+      2694,
+      2695,
+      2696,
+      2697,
+      11804,
+      11805,
+      11814,
+      11815,
+      11834,
+      11835,
+      11836,
+      11845,
+      11846,
+      11855,
+      11865,
+      11875,
+      11884,
+      11904
+    ],
+    "matching_original_row_SHA_in_both_cached_itemsets": true,
+    "qualified_cross_carrier_TW1_RD_candidates": 60,
+    "unmatched_TW1_index_item_id": 2687,
+    "unmatched_TW1_index_alias": 24314,
+    "distinct_source_image_aliases": 58,
+    "distinct_qualified_cross_carrier_RD_aliases": 57,
+    "source_item_graphic_identity_same_build_UNPROVEN": true,
+    "selected_named_item_roles": [
+      {
+        "id": 2687,
+        "name": "郵寄物",
+        "role": "postal_item"
+      },
+      {
+        "id": 2688,
+        "name": "馬祖的斧頭",
+        "role": "mail_reward_candidate"
+      },
+      {
+        "id": 2689,
+        "name": "馬祖的矛",
+        "role": "mail_reward_candidate"
+      },
+      {
+        "id": 2690,
+        "name": "馬祖的棍棒",
+        "role": "mail_reward_candidate"
+      },
+      {
+        "id": 2697,
+        "name": "切繩石",
+        "role": "treasurebag_access_literal"
+      }
+    ]
+  },
+  "bounds": {
+    "native_NPC_dialogue_or_transaction": false,
+    "native_random_reward_probability": false,
+    "native_NpcWarp_execution": false,
+    "original_1999_or_TW1_official_source_identity": false,
+    "original_119_1300_floor_nonexistence_proven": false,
+    "original_gameplay_module_complete": false
+  },
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "savedata_R79": "PAUSED_NON_BLOCKING",
+  "restoration_percent": null,
+  "next": "QUEST20_DISTINCT_SOURCE_FAMILY_AND_WHOLE_MODULE_PRIORITY_REVIEW"
+}
