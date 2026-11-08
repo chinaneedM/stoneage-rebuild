@@ -2205,3 +2205,8 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 
 
 QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACCEPTANCE-R1.json)：PR #271 已合并，最终候选14/14与内容主线11/11 Actions成功；复合EndSetFlg12未纳入旧纯整数目录的反例已补13项测试。私人原件不入公开Git，当前主线历史CURRENT完全不改，最高NEXT QUEST32进行任务模块阶段止点及跨模块审查。
+
+
+## 2026-11-08 — QUEST32 任务源脚本覆盖审计与有界收口
+
+[QUEST32 24份专项源脚本查重与保留缺口](docs/continuity/STONEAGE-QUEST32-MODULE-DEDUPE-AUDIT-20261108.md)使用同一后期社区混合源的QUEST01原295份CREATE引用脚本/1349 TYPE段及QUEST08–31全部24份公开派生报告，逐原脚本路径+完整源SHA核对：236次所选原脚本记录，235不同路径，233份与旧QUEST01目录同路径同SHA；QUEST10有2份未被旧CREATE引用目录收录的原保存变体，QUEST10/29共享king/event69_1同SHA，不能增加新发现计数。原295目录仍有62份未进入这24专项选集（不等于原件缺失或没有任务价值）。公开[重算工具](tools/stoneage_quest32_module_audit.py)、[守恒快照](research/recovered/STONEAGE-QUEST32-MODULE-DEDUPE-AUDIT-R1.json)及专项测试；私人原版权源不上传，原CURRENT巨型历史blob c89e0e33537990aa2132b47c40fef49a985a935c原样。任务模块SOURCE_BOUNDED_PARTIAL，不称早期官方同版或原生可玩，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体percent=null；最高NEXT INTEGRATION06跨NPC/地图/物品/宠物真实关系复核。CI/合并后验另据GitHub事实补证。

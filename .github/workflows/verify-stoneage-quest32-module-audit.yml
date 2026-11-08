@@ -1,0 +1,26 @@
+name: Verify StoneAge QUEST32 module source dedup audit
+on:
+  push:
+    paths:
+      - 'tools/stoneage_quest32_module_audit.py'
+      - 'tests/test_stoneage_quest32_module_audit.py'
+      - 'research/recovered/STONEAGE-QUEST32-MODULE-DEDUPE-AUDIT-R1.json'
+      - '.github/workflows/verify-stoneage-quest32-module-audit.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_quest32_module_audit.py'
+      - 'tests/test_stoneage_quest32_module_audit.py'
+      - 'research/recovered/STONEAGE-QUEST32-MODULE-DEDUPE-AUDIT-R1.json'
+      - '.github/workflows/verify-stoneage-quest32-module-audit.yml'
+jobs:
+  public-source-audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_quest32_module_audit.py' -v
+      - run: python -m tools.stoneage_quest32_module_audit
