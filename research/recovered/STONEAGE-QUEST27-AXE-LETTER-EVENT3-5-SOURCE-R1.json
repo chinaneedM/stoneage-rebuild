@@ -1,0 +1,461 @@
+{
+  "schema": "stoneage.quest27.axe_letter_event3_and5_source.r1",
+  "date": "2026-11-08",
+  "initial_remote": {
+    "head": "7af65dbda8bdb6f2d1c2c02098283f187e817adb",
+    "tree": "d17d9dcaf27d22f80bcf4b3796a6921b1b11ffd7",
+    "preserved_CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "source_scope": "MIXED25_COMMUNITY_PRESERVED_NOT_AUTHENTICATED_OFFICIAL_EARLY_BUILD",
+  "verified_private_carriers": {
+    "NPC_ZIP_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "NPC_members_SHA_CRC": 2205,
+    "ITEM_ZIP_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "ITEM_members_CRC": 838,
+    "parent_RAR_reread": false
+  },
+  "old_evidence_inputs": [
+    {
+      "path": "research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json",
+      "bytes": 1321481,
+      "sha256": "2995e5825ffd204d5fd31ccffc95f009d8abbcebad829c5824e490b7f20c2b2c",
+      "git_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json",
+      "bytes": 1798170,
+      "sha256": "f6beb17b76b23211d36113bcf462c16ac38435233b3891bb21765179b84e4566",
+      "git_blob": "a088b61a3212f7049e7793f587123ffb29bebad7"
+    },
+    {
+      "path": "research/recovered/STONEAGE-QUEST05-598-ORIGINAL-CREATE-FLOOR-MAP-AND-WARP-CROSSWALK-R1.json",
+      "bytes": 772585,
+      "sha256": "a12fae6fc316b6bd533f635bab0918d891d86f613c7d63089284e058e0e5947f",
+      "git_blob": "b004e488e1d0a93ca7c14eb90abb584b23f341fe"
+    },
+    {
+      "path": "research/recovered/STONEAGE-QUEST16-AXE-WOOD-SOURCE-R1.json",
+      "bytes": 38673,
+      "sha256": "70d203561007732ee4eb73a01c74b658a1d55ad800d0eab1fcb836d62b897f78",
+      "git_blob": "b72c208b02c07e9d8f98cd2fda0248a4b975cd8e"
+    },
+    {
+      "path": "research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-23-NPC-ITEM-TRANSFERS-R1.json",
+      "bytes": 947030,
+      "sha256": "a9b54e70f062397b9b5046ed0a4091fc01b2a51856e8f82ccaf0bd05875445a5",
+      "git_blob": "6b31accf02b95c63faa88a6055d99a78341eb099"
+    }
+  ],
+  "existing_WORLD23_mentions_in_serialized_report": {
+    "sainasu/event/event03_1": 1,
+    "sainasu/event/event03_2": 1
+  },
+  "existing_QUEST01_TYPE_sections": 5,
+  "new_original_script_discoveries": 0,
+  "source_manifest": [
+    {
+      "path": "jaruga/event/event.template",
+      "bytes": 122,
+      "sha256": "9c11ac0cbbd9b110e8ff7d0115730044673bf29c5df6d23034e56530c181d0b2",
+      "crc32": "a70fc73f"
+    },
+    {
+      "path": "sainasu/event/event03.create",
+      "bytes": 477,
+      "sha256": "f2769e89f6f0e82830bc64529996918b54c360a596a9257b69802fd18f16aa91",
+      "crc32": "ffa7ba35"
+    },
+    {
+      "path": "sainasu/event/event03_1",
+      "bytes": 891,
+      "sha256": "693adb44f269b1499e3bb4cc70af3d6143c38bc388584b9c4464ffdac4dc384e",
+      "crc32": "59f4e674"
+    },
+    {
+      "path": "sainasu/event/event03_2",
+      "bytes": 1035,
+      "sha256": "6337c685203e5a7eb89766243bb53f6f0babad4a90187d336c81337beea71728",
+      "crc32": "95c60215"
+    }
+  ],
+  "source_creates": [
+    {
+      "create_ordinal": 0,
+      "block_sha256": "2924b92847578eac92737774b9dd77d07a288b57196ce766fafd6e1a8a46dee1",
+      "floor": 1400,
+      "borncorner": [
+        69,
+        89,
+        69,
+        89
+      ],
+      "borncenter": null,
+      "graphic_alias": 16057,
+      "direction": 4,
+      "script_path": "sainasu/event/event03_2",
+      "template_path": "jaruga/event/event.template",
+      "template_ordinal": 0,
+      "functionset": "ExChangeMan"
+    },
+    {
+      "create_ordinal": 1,
+      "block_sha256": "ec1ed0d9a73f748834a2e1494b2afa34e9821f54a52153d4dbf7d9592535442a",
+      "floor": 1300,
+      "borncorner": [
+        18,
+        42,
+        18,
+        42
+      ],
+      "borncenter": null,
+      "graphic_alias": 16048,
+      "direction": 4,
+      "script_path": "sainasu/event/event03_1",
+      "template_path": "jaruga/event/event.template",
+      "template_ordinal": 0,
+      "functionset": "ExChangeMan"
+    }
+  ],
+  "source_scripts": [
+    {
+      "path": "sainasu/event/event03_1",
+      "bytes": 891,
+      "sha256": "693adb44f269b1499e3bb4cc70af3d6143c38bc388584b9c4464ffdac4dc384e",
+      "crc32": "59f4e674",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 9,
+          "event_no": 3,
+          "type": "ACCEPT",
+          "condition_literal": "NOWEV=3&ITEM=2416",
+          "condition_sha256": "18949c899ed96413da8c69b9501866b3f99d39691bf218441e10d9bbbb519cd2",
+          "section_sha256": "ce7c5c21d151cfc946df5299bd02262dd2e49df27c77a2224bd08b6d74faf694",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "DelItem": [
+              "2416"
+            ],
+            "EndSetFlg": [
+              "3"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 1,
+          "type_line": 18,
+          "event_no": 5,
+          "type": "REQUEST",
+          "condition_literal": "ENDEV=3",
+          "condition_sha256": "718fab536921fd074e64ba712edc0f6111f0ed2642e0268634e685ae4f9bf4c8",
+          "section_sha256": "ad5a753c0a858c4b9772036b20c6b67d3c28c83e8050333b5e1918cf14baec84",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "GetItem": [
+              "2423"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    },
+    {
+      "path": "sainasu/event/event03_2",
+      "bytes": 1035,
+      "sha256": "6337c685203e5a7eb89766243bb53f6f0babad4a90187d336c81337beea71728",
+      "crc32": "95c60215",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 9,
+          "event_no": 5,
+          "type": "ACCEPT",
+          "condition_literal": "NOWEV=5&ITEM=2423",
+          "condition_sha256": "97db080f9128de1a7d3f0ccd380cab38db5f31dbf2e48f0786178bdcb1c0eef9",
+          "section_sha256": "0416dce3b62fa36b036e8d6986faf4b6f37cfde19406568986b332d86d88f435",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "GetItem": [
+              "2448"
+            ],
+            "DelItem": [
+              "2423"
+            ],
+            "EndSetFlg": [
+              "5"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 1,
+          "type_line": 21,
+          "event_no": 3,
+          "type": "REQUEST",
+          "condition_literal": "LV>0",
+          "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+          "section_sha256": "e99b6c36d3511e3497f422600a037f5201fcf18032bfdbc75c979c1cc4089b47",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "GetItem": [
+              "2416"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 2,
+          "type_line": 33,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ENDEV=3,ENDEV=5",
+          "condition_sha256": "25542e575f6c4473467f6986f662ecfc5e62906e61360c999d86bda6aa9cc86d",
+          "section_sha256": "b849d6337d5eba2cb94ace1da1d97bf17909e9eef87db1e42f1a458673673e5e",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    }
+  ],
+  "source_item_and_flag_link_order": [
+    {
+      "script_path": "sainasu/event/event03_2",
+      "event_ordinal": 1,
+      "event_no": 3,
+      "type": "REQUEST",
+      "condition_literal": "LV>0",
+      "commands": {
+        "GetItem": [
+          "2416"
+        ]
+      },
+      "section_sha256": "e99b6c36d3511e3497f422600a037f5201fcf18032bfdbc75c979c1cc4089b47",
+      "source_create_ordinal": 0,
+      "source_floor": 1400
+    },
+    {
+      "script_path": "sainasu/event/event03_1",
+      "event_ordinal": 0,
+      "event_no": 3,
+      "type": "ACCEPT",
+      "condition_literal": "NOWEV=3&ITEM=2416",
+      "commands": {
+        "DelItem": [
+          "2416"
+        ],
+        "EndSetFlg": [
+          "3"
+        ]
+      },
+      "section_sha256": "ce7c5c21d151cfc946df5299bd02262dd2e49df27c77a2224bd08b6d74faf694",
+      "source_create_ordinal": 1,
+      "source_floor": 1300
+    },
+    {
+      "script_path": "sainasu/event/event03_1",
+      "event_ordinal": 1,
+      "event_no": 5,
+      "type": "REQUEST",
+      "condition_literal": "ENDEV=3",
+      "commands": {
+        "GetItem": [
+          "2423"
+        ]
+      },
+      "section_sha256": "ad5a753c0a858c4b9772036b20c6b67d3c28c83e8050333b5e1918cf14baec84",
+      "source_create_ordinal": 1,
+      "source_floor": 1300
+    },
+    {
+      "script_path": "sainasu/event/event03_2",
+      "event_ordinal": 0,
+      "event_no": 5,
+      "type": "ACCEPT",
+      "condition_literal": "NOWEV=5&ITEM=2423",
+      "commands": {
+        "GetItem": [
+          "2448"
+        ],
+        "DelItem": [
+          "2423"
+        ],
+        "EndSetFlg": [
+          "5"
+        ]
+      },
+      "section_sha256": "0416dce3b62fa36b036e8d6986faf4b6f37cfde19406568986b332d86d88f435",
+      "source_create_ordinal": 0,
+      "source_floor": 1400
+    }
+  ],
+  "source_items": [
+    {
+      "item_ID": 2416,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 1999,
+          "sha256": "609d51b269969eb64ac13e8ab4842a6999dd27cb680adcfe7e356de52ca263dd",
+          "image_alias": 20041
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2394,
+          "sha256": "609d51b269969eb64ac13e8ab4842a6999dd27cb680adcfe7e356de52ca263dd",
+          "image_alias": 20041
+        }
+      ],
+      "cross_carrier_candidate_alias": 20041,
+      "original_RD_sha256": "e9c2a16acb2072baae6d74a137a122587cf30ebab7bc48dffd5a66c71568e6fb",
+      "candidate_PNG_sha256": "fd187897c4c3d4886dc85174077d499c645ec59f07e470e978cf768db9d4d907"
+    },
+    {
+      "item_ID": 2423,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2006,
+          "sha256": "2300a89715cd8ac55f16793b060b64a2f449c00fb78b907954ab80c36635d968",
+          "image_alias": 24222
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2401,
+          "sha256": "2300a89715cd8ac55f16793b060b64a2f449c00fb78b907954ab80c36635d968",
+          "image_alias": 24222
+        }
+      ],
+      "cross_carrier_candidate_alias": 24222,
+      "original_RD_sha256": "d519e1dbfcf21cb23c7850eb741381698dc0ebd7437d69d68d877b0ad7cf8052",
+      "candidate_PNG_sha256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1"
+    },
+    {
+      "item_ID": 2448,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2031,
+          "sha256": "9d75a8f479146f5deee32c53b47c386ab298c8a76d6efda8df06748c12c0ba13",
+          "image_alias": 20041
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2426,
+          "sha256": "9d75a8f479146f5deee32c53b47c386ab298c8a76d6efda8df06748c12c0ba13",
+          "image_alias": 20041
+        }
+      ],
+      "cross_carrier_candidate_alias": 20041,
+      "original_RD_sha256": "e9c2a16acb2072baae6d74a137a122587cf30ebab7bc48dffd5a66c71568e6fb",
+      "candidate_PNG_sha256": "fd187897c4c3d4886dc85174077d499c645ec59f07e470e978cf768db9d4d907"
+    }
+  ],
+  "source_drop_field_values": [
+    {
+      "item_ID": 2416,
+      "table": "itemset.txt",
+      "row_sha256": "609d51b269969eb64ac13e8ab4842a6999dd27cb680adcfe7e356de52ca263dd",
+      "column78_dropatlogout": 0,
+      "column79_vanishatdrop": 1,
+      "named_by_existing_descendant94_schema": true,
+      "original_loader_or_drop_executed": false
+    },
+    {
+      "item_ID": 2416,
+      "table": "itemset0710.txt",
+      "row_sha256": "609d51b269969eb64ac13e8ab4842a6999dd27cb680adcfe7e356de52ca263dd",
+      "column78_dropatlogout": 0,
+      "column79_vanishatdrop": 1,
+      "named_by_existing_descendant94_schema": true,
+      "original_loader_or_drop_executed": false
+    },
+    {
+      "item_ID": 2423,
+      "table": "itemset.txt",
+      "row_sha256": "2300a89715cd8ac55f16793b060b64a2f449c00fb78b907954ab80c36635d968",
+      "column78_dropatlogout": 0,
+      "column79_vanishatdrop": 1,
+      "named_by_existing_descendant94_schema": true,
+      "original_loader_or_drop_executed": false
+    },
+    {
+      "item_ID": 2423,
+      "table": "itemset0710.txt",
+      "row_sha256": "2300a89715cd8ac55f16793b060b64a2f449c00fb78b907954ab80c36635d968",
+      "column78_dropatlogout": 0,
+      "column79_vanishatdrop": 1,
+      "named_by_existing_descendant94_schema": true,
+      "original_loader_or_drop_executed": false
+    },
+    {
+      "item_ID": 2448,
+      "table": "itemset.txt",
+      "row_sha256": "9d75a8f479146f5deee32c53b47c386ab298c8a76d6efda8df06748c12c0ba13",
+      "column78_dropatlogout": 0,
+      "column79_vanishatdrop": 0,
+      "named_by_existing_descendant94_schema": true,
+      "original_loader_or_drop_executed": false
+    },
+    {
+      "item_ID": 2448,
+      "table": "itemset0710.txt",
+      "row_sha256": "9d75a8f479146f5deee32c53b47c386ab298c8a76d6efda8df06748c12c0ba13",
+      "column78_dropatlogout": 0,
+      "column79_vanishatdrop": 0,
+      "named_by_existing_descendant94_schema": true,
+      "original_loader_or_drop_executed": false
+    }
+  ],
+  "source_map_metadata_reused": [
+    {
+      "source_floor_id": 1300,
+      "map_status": "NO_MATCHING_DAT_IN_955",
+      "source_DAT_file": null,
+      "source_DAT_sha256": null,
+      "source_CREATE_ref_count": 6,
+      "source_cohorts": {
+        "QUEST01": 4,
+        "QUEST03": 2
+      }
+    },
+    {
+      "source_floor_id": 1400,
+      "map_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "source_DAT_file": "1400.dat",
+      "source_DAT_sha256": "a706890eaa46f89e41ca171ce052d34fb1c18e8cc4602ac686fc1d19af54c73f",
+      "source_CREATE_ref_count": 4,
+      "source_cohorts": {
+        "QUEST01": 3,
+        "QUEST02": 1
+      }
+    }
+  ],
+  "boundaries": {
+    "source_link_order_executed_as_native_route": false,
+    "actual_handoff_or_reward_executed": false,
+    "omitted_quantity_replaced_with_one": false,
+    "comma_condition_interpreted": false,
+    "source_dialogue_claim_treated_as_actual_drop_observation": false,
+    "descendant94_field_names_prove_original_loader": false,
+    "original_DAT_or_NPC_sprite_replayed": false,
+    "official_early_same_deployment_authenticated": false,
+    "original_assets_or_dialogue_published": false,
+    "quest_origin": "UNRESOLVED"
+  },
+  "stage_A": {
+    "PARTIAL": 7,
+    "OPEN": 2
+  },
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "QUEST28_MODULE_REVIEW_AFTER_TWO_COURIER_FAMILIES_SOURCE_STOP"
+}

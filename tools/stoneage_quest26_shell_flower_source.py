@@ -21,6 +21,36 @@ Q24 = 'STONEAGE-QUEST24-PORU-FLAG63-FUNCTIONS-AND-FOUR-SCENES-R1.json'
 Q25 = 'STONEAGE-QUEST25-FOUR-ISLAND-TOUR-ROUTES-SOURCE-R1.json'
 
 
+def read_source_items(item_path, item_ids, private):
+    """Reuse exact two-table source rows and qualified candidate images."""
+    public = {r[0]: r for n in range(1, 8) for r in load(
+        f'item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-{n:02d}-R1.json')['rows']}
+    assert sha(item_path.read_bytes()) == ITEM_ZIP_SHA
+    items = []; item_labels = {}
+    with zipfile.ZipFile(item_path) as z:
+        assert len(z.namelist()) == 838 and z.testzip() is None
+        cat = json.loads(z.read('private-full-catalog.json'))
+        index = {x['id']: x for x in cat['items']}
+        images = {x['source_itemset_image_number_alias']: x for x in cat['image_source_receipts']}
+        for item in item_ids:
+            source_rows = []
+            for col, table in ((1, 'itemset.txt'), (2, 'itemset0710.txt')):
+                r = index[item][table]; columns = r['original_94_columns']; raw = ','.join(columns).encode('cp950')
+                assert len(columns) == 94 and int(columns[16]) == item
+                assert sha(raw) == r['original_row_sha256'] == public[item][col]
+                private[f'original-itemrows/{table}/{item}.txt'] = raw + b'\n'
+                source_rows.append(dict(table=table, row=r['source_row_1based'], sha256=sha(raw), image_alias=int(columns[17])))
+            alias = source_rows[0]['image_alias']; assert source_rows[1]['image_alias'] == alias
+            image = images[alias]; assert image['tw1_original_RD_status'] == 'VERIFIED_ORIGINAL_RD_INDEXED_PIXELS'
+            png = z.read(f'source-TW1-original-RD-candidates/alias-{alias}.png')
+            assert sha(png) == image['candidate_PNG_SHA256']
+            private[f'cross-carrier-TW1-item-candidates/{alias}.png'] = png
+            columns = index[item]['itemset.txt']['original_94_columns']; item_labels[item] = (columns[0], columns[2])
+            items.append(dict(item_ID=item, source_rows=source_rows, cross_carrier_candidate_alias=alias,
+                              original_RD_sha256=image['original_RD_SHA256'], candidate_PNG_sha256=sha(png)))
+    return items, item_labels
+
+
 def derive(npc_path, item_path):
     _, character, data = load_private_source(npc_path)
     quest, poru, tours = load(QUEST01), load(Q24), load(Q25)
@@ -57,31 +87,7 @@ def derive(npc_path, item_path):
                         condition_literal=event['condition_literal'], section_sha256=event['section_sha256']))
         scripts.append(dict(**source_info(path, data[path]), events=events))
     private = {'original-npc/' + p: data[p] for p in sorted(files)}
-    public = {r[0]: r for n in range(1, 8) for r in load(
-        f'item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-{n:02d}-R1.json')['rows']}
-    assert sha(item_path.read_bytes()) == ITEM_ZIP_SHA
-    items = []; item_labels = {}
-    with zipfile.ZipFile(item_path) as z:
-        assert len(z.namelist()) == 838 and z.testzip() is None
-        cat = json.loads(z.read('private-full-catalog.json'))
-        index = {x['id']: x for x in cat['items']}
-        images = {x['source_itemset_image_number_alias']: x for x in cat['image_source_receipts']}
-        for item in (2414, 2415):
-            source_rows = []
-            for col, table in ((1, 'itemset.txt'), (2, 'itemset0710.txt')):
-                r = index[item][table]; columns = r['original_94_columns']; raw = ','.join(columns).encode('cp950')
-                assert len(columns) == 94 and int(columns[16]) == item
-                assert sha(raw) == r['original_row_sha256'] == public[item][col]
-                private[f'original-itemrows/{table}/{item}.txt'] = raw + b'\n'
-                source_rows.append(dict(table=table, row=r['source_row_1based'], sha256=sha(raw), image_alias=int(columns[17])))
-            alias = source_rows[0]['image_alias']; assert source_rows[1]['image_alias'] == alias
-            image = images[alias]; assert image['tw1_original_RD_status'] == 'VERIFIED_ORIGINAL_RD_INDEXED_PIXELS'
-            png = z.read(f'source-TW1-original-RD-candidates/alias-{alias}.png')
-            assert sha(png) == image['candidate_PNG_SHA256']
-            private[f'cross-carrier-TW1-item-candidates/{alias}.png'] = png
-            columns = index[item]['itemset.txt']['original_94_columns']; item_labels[item] = (columns[0], columns[2])
-            items.append(dict(item_ID=item, source_rows=source_rows, cross_carrier_candidate_alias=alias,
-                              original_RD_sha256=image['original_RD_SHA256'], candidate_PNG_sha256=sha(png)))
+    items, item_labels = read_source_items(item_path, (2414, 2415), private)
     # Exact numeric-token match: never confuse ENDEV=2 with ENDEV=20 or =28.
     consumers = [dict(script_path=s['path'], event_ordinal=e['ordinal'], type=e['type'],
                      condition_literal=e['condition_literal'], section_sha256=e['section_sha256'])
