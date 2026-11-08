@@ -1,0 +1,94 @@
+{
+  "schema": "stoneage.quest32.module_source_dedup_audit.r1",
+  "date": "2026-11-08",
+  "baseline": {
+    "head": "d579fff4138a997eb9fd0594b5497c31fb26f413",
+    "tree": "0c28ed4c33b71bf583dbbe2977e5e2280cf376fe",
+    "quest01_catalog_git_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2",
+    "preserved_CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "derived": {
+    "report_count": 24,
+    "quest_range": [
+      "08",
+      "31"
+    ],
+    "catalogue_scripts": 295,
+    "catalogue_event_TYPE_sections": 1349,
+    "report_script_occurrences": 236,
+    "distinct_selected_paths": 235,
+    "matched_catalogue_paths": 233,
+    "outside_catalogue_paths": [
+      "giiru/event/event30_5",
+      "giiru/event/event30_5.old"
+    ],
+    "catalogue_not_selected": 62,
+    "cross_report_duplicate_paths": {
+      "king/event69_1": [
+        "10",
+        "29"
+      ]
+    },
+    "remaining_by_directory": {
+      "chatroom": 10,
+      "extra/event": 5,
+      "genout": 3,
+      "giiru/event": 10,
+      "jaruga/event": 6,
+      "my/chengren": 1,
+      "my/zhuansheng": 4,
+      "poru": 3,
+      "quiz": 6,
+      "sa60/newbie": 2,
+      "sainasu/event": 12
+    },
+    "per_quest_script_occurrences": {
+      "10": 8,
+      "11": 8,
+      "12": 2,
+      "13": 10,
+      "14": 4,
+      "15": 6,
+      "16": 5,
+      "17": 6,
+      "18": 11,
+      "19": 12,
+      "20": 30,
+      "21": 6,
+      "22": 7,
+      "23": 20,
+      "24": 12,
+      "25": 54,
+      "26": 2,
+      "27": 2,
+      "28": 5,
+      "29": 13,
+      "30": 1,
+      "31": 4,
+      "08": 6,
+      "09": 2
+    }
+  },
+  "classification": {
+    "matched_catalogue_paths": "Only path+original-script-SHA concordance, not distinct historical quests or runtime evidence",
+    "outside_catalogue_paths": "Q10 preserved unreferenced variants; their absence from CREATE-referenced QUEST01 is not evidence of absent original files",
+    "catalogue_not_selected": "Not covered in the QUEST08-31 selected-script batches; not proof of unavailable bytes, nonquest content, or an original-game absence",
+    "cross_report_duplicate_paths": "Same script re-reviewed, not a newly discovered task"
+  },
+  "bounds": {
+    "original_client_running": false,
+    "original_server_running": false,
+    "original_task_execution_proven": false,
+    "early_official_same_deployment_proven": false,
+    "world_map_complete": false,
+    "original_quest_module_complete": false,
+    "private_original_text_committed": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "status": "SOURCE_BOUNDED_PARTIAL",
+  "next": "INTEGRATION06_BOUNDED_CROSS_MODULE_RELATION_REVIEW_ON_EXISTING_SOURCE; reopen any unselected original script when a concrete gameplay-content relation and eligible original bytes warrant focused work"
+}
