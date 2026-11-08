@@ -1,0 +1,25 @@
+name: Verify StoneAge INTEGRATION10 recovered DAT source and checkpoint scenes
+on:
+  push:
+    paths:
+      - 'tools/stoneage_integration10*.py'
+      - 'tests/test_stoneage_integration_module_10.py'
+      - 'research/recovered/STONEAGE-INTEGRATION10-*.json'
+      - '.github/workflows/verify-stoneage-integration10-dat-recovery.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_integration10*.py'
+      - 'tests/test_stoneage_integration_module_10.py'
+      - 'research/recovered/STONEAGE-INTEGRATION10-*.json'
+      - '.github/workflows/verify-stoneage-integration10-dat-recovery.yml'
+jobs:
+  public-source-metadata:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_10.py' -v
