@@ -35,7 +35,7 @@ def encode_image(image):
     out = io.BytesIO(); image.save(out, format='PNG'); return out.getvalue()
 
 
-def scene_observation(map_path, creates, private):
+def scene_observation(map_path, creates, private, *, floors=FLOORS, coordinate_field='borncorner'):
     import numpy as np
     from PIL import Image, ImageDraw
     from tools.stoneage_map06_two_original_scenes import placements
@@ -58,7 +58,7 @@ def scene_observation(map_path, creates, private):
         archive = zipfile.ZipFile(io.BytesIO(original_zip))
         assert len(archive.namelist()) == 955 and archive.testzip() is None
         assert '3400.dat' not in archive.namelist()
-        for floor in FLOORS:
+        for floor in floors:
             name = str(floor); old = ledger['maps'][name]
             raw = archive.read(name + '.dat')
             assert raw == base64.b64decode(model['maps'][name]['dat_base64'])
@@ -84,13 +84,17 @@ def scene_observation(map_path, creates, private):
             points = []
             for c in creates:
                 if c['floor'] != floor: continue
-                x,y = c['borncorner'][:2]; assert 0 <= x < w and 0 <= y < h
+                x,y = c[coordinate_field][:2]; assert 0 <= x < w and 0 <= y < h
                 values = [struct.unpack_from('<H', raw, 8 + 2*(p*w*h + y*w+x))[0] for p in range(3)]
                 center = [origin[0]+(x+y)*32, origin[1]+(y-x)*24]
                 draw.ellipse((center[0]-10, center[1]-10, center[0]+10, center[1]+10), fill='#ffdf00', outline='black', width=2)
                 draw.text((center[0]+13, center[1]-12), str(c['ordinal'])+':'+str(x)+','+str(y), fill='#ffdf00', stroke_width=2, stroke_fill='black')
                 points.append(dict(create_ordinal=c['ordinal'], xy=[x,y], raw_three_u16=values,
                                    modern_projected_center=center, original_NPC_sprite_drawn=False))
+                if coordinate_field != 'borncorner':
+                    points[-1].update(source_coordinate_field=coordinate_field,
+                                      source_coordinate_literal=c[coordinate_field],
+                                      actual_spawn_cell_verified=False)
             marked_png = encode_image(marked)
             private[f'map-source/{floor}.dat'] = raw
             private[f'scenes/{floor}-original-candidate.png'] = encode_image(full)
@@ -107,10 +111,12 @@ def scene_observation(map_path, creates, private):
         wanted = {int(Path(n).stem) for n in private if n.startswith('map-source/tiles/')}
         private['map-source/records.json'] = json.dumps({str(k): model['records'][str(k)] for k in sorted(wanted)}).encode()
         private['map-source/image-source-receipts.json'] = json.dumps({str(k): sources[str(k)] for k in sorted(wanted)}).encode()
-    contact = Image.new('RGB', (2160,600), '#11232a'); draw = ImageDraw.Draw(contact)
+    columns=min(3,len(thumbs))
+    contact = Image.new('RGB', (720*columns,600*((len(thumbs)+columns-1)//columns)), '#11232a'); draw = ImageDraw.Draw(contact)
     for i,(floor,im) in enumerate(thumbs):
-        contact.paste(im,(720*i+(720-im.width)//2,45+(550-im.height)//2))
-        draw.text((720*i+20,15), 'DAT '+str(floor)+' / source coordinates only',fill='white')
+        left,top=720*(i%columns),600*(i//columns)
+        contact.paste(im,(left+(720-im.width)//2,top+45+(550-im.height)//2))
+        draw.text((left+20,top+15), 'DAT '+str(floor)+' / source coordinates only',fill='white')
     private['three-original-scenes-contact.png'] = encode_image(contact)
     return results, len(wanted)
 
