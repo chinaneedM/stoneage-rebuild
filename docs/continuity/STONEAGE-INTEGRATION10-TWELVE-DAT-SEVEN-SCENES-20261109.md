@@ -48,3 +48,10 @@
 Stage A仍7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79暂停，总体百分比未知。原生行走/碰撞、NPC创建、对话、奖品和早期官方同部署仍未认证。
 
 **最高NEXT：复用本12原DAT做有材料增量的地图—NPC/任务联接，优先1300六条既有CREATE和地图原源格/出入口；需全景时先核实际原图覆盖，缺图保留明细。** 不重新解相同12件以累加成果、不扩解包器或现代引擎；830若无合格原件继续OPEN。
+
+
+## 实际出版与主线验收后验
+
+[PR #277](https://github.com/chinaneedM/stoneage-rebuild/pull/277)候选 `f874ff67134fefff872d3cfc7632a82bebdc81fe` 经squash合并为内容main `0eb9ec0c286da55fb3c293b4e5cbe61f44f8558b`；两端tree均为 `fd658f0088a72fff6f3b0f377f5ede6c6cccb6eb`，与本地验证树完全一致。候选14/14、内容main11/11 Actions实际completed/success。专项PR [run42534232011](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42534232011)/job128894870246、push run42534229869，以及合并后[run42534448281](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42534448281)/job128895537983均成功执行公开派生unittest步骤；不等于CI读取原DAT/原像素。原件/21画布的独立验证发生在本地私人环境。
+
+原生Git push因无交互凭据失败，改用已连接GitHub接口发布；接口生成树与本地已验树SHA完全一致，未重写主线历史。合并提交父节点仍为启动时fresh main。原CURRENT完整blob未变。所有运行ID、文件Git blob、私人成果及原解包器包SHA见[正式验收收据](../../research/recovered/STONEAGE-INTEGRATION10-PUBLICATION-ACCEPTANCE-R1.json)。收据自身的后续Actions未提前认证。最高NEXT和Stage A/B/wiki/R79/整体未知边界保持。
