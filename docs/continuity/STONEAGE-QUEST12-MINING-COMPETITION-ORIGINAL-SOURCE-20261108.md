@@ -50,3 +50,14 @@
 **有界止点**：矿山比赛静态已取得的原任务族中这两位主角、许可证和矿工材料完成了来源受限复原。没有原实际选支/执行、物品 `2533/2534` 上游、同部署原任务全链、敌人胜利掉物或原版可玩角色证据；这些保持 **OPEN**。Stage A **7 PARTIAL + 2 OPEN**，Stage B/wiki **GATED**，R79 **PAUSED_NON_BLOCKING**，总体完成率 `null`。原商业文件留私人研究范围，新单机游戏引擎、注册/联网/服务器、新玩法均不在本批。
 
 **下一优先项：QUEST13-DEDUP-AND-SOURCE-READY-NEXT-FAMILY**。按任务模块原则先对本源中未成族的现存原事件脚本作有界索引对照（查旧 QUEST01/04/06–12），选择下一组确有来源、独立叙事或实际玩法增量的任务族；优先能连接既存地图/道具的另一族。不得只重复 `giruev2` 或虚构 `2533` 取得路径；若新的同部署原字节到手，再增量重开对应缺口。此 NEXT 不会凌驾后续更新的组合 portfolio 指令。
+
+
+## 5. 正式合并、远端 CI 与私人保管的后验（2026-11-08）
+
+[PR #252](https://github.com/chinaneedM/stoneage-rebuild/pull/252) 经候选源提交 `fbe9f1939cf3e50560b07d8faa568b97d7c03aa9`、tree `977a9b224cc74f3ba74e3ae63e1d56565abbcb7e` 发布并正式合并到 `main`：内容合并提交 `f6c3c6293e149bb2d76dbfc6a6baf20ca4fad3be`。本轮 GitHub 远端重取核对 6 个变动路径与候选已验 blob；旧 `docs/CURRENT-STATE.md` 仍是完整未改的 blob `c89e0e33537990aa2132b47c40fef49a985a935c`（2,709,173B）。提交中的工具、10 项新测试、派生 JSON 和本连续性记录均为可分发纯数字/文本，不含原商业 NPC 脚本全文、原 DAT、像素图或私人 HTML。
+
+GitHub 远端 **候选 14/14 项 Actions completed/success**，含专用 [QUEST05/06/08–12 复用校验工作流](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42440850239)：job `128609564147` 中本轮新步骤 **“Validate QUEST12 mining competition original source and negative provenance guards”** 为 success，旧 QUEST05/06/06-R2/08/09/10/11 的七组步骤亦全部 success。合并后 `main` **11/11 项 Actions completed/success**，专项 [`42440927130`](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42440927130) 与原资料来源边界等各项均成功。此处仅是实际结果，不追认后续文档提交自身 CI。
+
+原商业文件已打成私人 `StoneAge-QUEST12-mining-competition-original-private.zip`，**113,328B / SHA256 `d93aea416ea40a336e9c05a7cd851dbfc557916322f00152d91224f717c54cd9` / 32 成员**，成功保存于个人「石器时代」Library。保存后独立重新取回，整包 SHA 和 32 CRC 全同；并对 **9** 原配置整 SHA、**15** 原物品行 SHA、**2** 原 DAT 全 SHA 和 **5** 源点全部三 u16 值逐件重核通过。原来源 2,205 成员及保存源包的 SHA/CRC 则已在本包首次回读阶段全部验证，不把私人保管回读夸大成又一次原 RAR 取回。保留原来的 2533/2534 全族缺口与 2391 跨版冲突。
+
+**本轮验收状态**：QUEST12 此份来源受限任务族静态恢复与私人可读证据 **ACCEPTED_SOURCE_BOUNDED**；官方发行身份、任务运行、掉落、完整可玩性仍 **OPEN**。下一 NEXT 依 §4 的 QUEST13 有界查重/原件准备执行。Stage A/B/wiki/R79/总体百分比均与上述限制不变。
