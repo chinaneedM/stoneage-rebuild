@@ -14,11 +14,6 @@ import zlib
 
 from tools.stoneage_integration10_dat_recovery import dat_planes
 from tools.stoneage_map06_two_original_scenes import ADRN, META, need, placements, sha, source_images
-from tools.stoneage_scene14_independent_replay import decode, source_blocks
-from tools.stoneage_scene21_town1000 import check, package, render
-from tools.stoneage_private_scene_palette_r3 import candidate_rgba
-from tools.stoneage_rd_codec import decode_rd_block
-from tools.stoneage_tw10_palette import initial_rgb
 
 ROOT = Path(__file__).resolve().parents[1]
 REC = ROOT / 'research/recovered'
@@ -63,6 +58,8 @@ def parse_warps(raw):
 
 
 def static_join(data, dat, src):
+    from tools.stoneage_scene14_independent_replay import source_blocks
+
     width, height, planes = dat_planes(dat)
 
     def sample(xy):
@@ -172,6 +169,12 @@ def join_other_endpoints(originals, warps, src):
 
 def atlas(tiles, tw, wanted):
     from PIL import Image
+    from tools.stoneage_private_scene_palette_r3 import candidate_rgba
+    from tools.stoneage_rd_codec import decode_rd_block
+    from tools.stoneage_scene14_independent_replay import decode
+    from tools.stoneage_scene21_town1000 import check, package
+    from tools.stoneage_tw10_palette import initial_rgb
+
     available = {row[0] for row in json.loads(META.read_bytes())['source_TW1_real_RD_rows']}
     reused = wanted & available
     missing = wanted - available
@@ -218,7 +221,7 @@ def atlas(tiles, tw, wanted):
 
 def make_canvas(dat, images, records, draw):
     import numpy as np
-    from PIL import Image
+    from tools.stoneage_scene21_town1000 import render
 
     coords = [(x*32+y*32, (y-x)*24) for x, y in ((0, 0), (0, 99), (99, 0), (99, 99))]
     left, right = min(x for x, _ in coords), max(x for x, _ in coords)+1
@@ -260,6 +263,7 @@ def make_canvas(dat, images, records, draw):
 
 def export(originals, dat_path, tiles, tw, output):
     from PIL import Image, ImageDraw
+    from tools.stoneage_scene14_independent_replay import source_blocks
 
     output = output.resolve()
     need(output != ROOT and ROOT not in output.parents and not output.exists()
