@@ -35,6 +35,10 @@ on:
       - 'tools/stoneage_quest12_mining_competition_source.py'
       - 'tests/test_stoneage_quest12_mining_competition_source.py'
       - 'docs/continuity/STONEAGE-QUEST12-MINING-COMPETITION-ORIGINAL-SOURCE-20261108.md'
+      - 'research/recovered/STONEAGE-QUEST13-GOA-ULI-LETTERS-ORIGINAL-SOURCE-R1.json'
+      - 'tools/stoneage_quest13_goa_uli_letter_source.py'
+      - 'tests/test_stoneage_quest13_goa_uli_letter_source.py'
+      - 'docs/continuity/STONEAGE-QUEST13-GOA-ULI-LETTERS-ORIGINAL-SOURCE-20261108.md'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   pull_request:
     paths:
@@ -63,6 +67,10 @@ on:
       - 'tools/stoneage_quest12_mining_competition_source.py'
       - 'tests/test_stoneage_quest12_mining_competition_source.py'
       - 'docs/continuity/STONEAGE-QUEST12-MINING-COMPETITION-ORIGINAL-SOURCE-20261108.md'
+      - 'research/recovered/STONEAGE-QUEST13-GOA-ULI-LETTERS-ORIGINAL-SOURCE-R1.json'
+      - 'tools/stoneage_quest13_goa_uli_letter_source.py'
+      - 'tests/test_stoneage_quest13_goa_uli_letter_source.py'
+      - 'docs/continuity/STONEAGE-QUEST13-GOA-ULI-LETTERS-ORIGINAL-SOURCE-20261108.md'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   workflow_dispatch:
 
@@ -89,3 +97,5 @@ jobs:
         run: python -m unittest tests.test_stoneage_quest11_two_tribes_source -v
       - name: Validate QUEST12 mining competition original source and negative provenance guards
         run: python -m unittest tests.test_stoneage_quest12_mining_competition_source -v
+      - name: Validate QUEST13 original Goa mountain Uli letter and flower source guards
+        run: python -m unittest tests.test_stoneage_quest13_goa_uli_letter_source -v
