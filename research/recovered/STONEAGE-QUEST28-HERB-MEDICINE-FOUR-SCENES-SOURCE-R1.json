@@ -1,0 +1,1296 @@
+{
+  "schema": "stoneage.quest28.herbs_medicine_and_four_source_scenes.r1",
+  "date": "2026-11-08",
+  "initial_remote": {
+    "head": "d3181164d8cdf47a8d293c21da375f530960a3e3",
+    "tree": "04c679ea419249d6323064f5dfeaeabbb17d73bd",
+    "preserved_CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "source_scope": "MIXED25_COMMUNITY_PRESERVED_NOT_AUTHENTICATED_OFFICIAL_EARLY_BUILD",
+  "verified_private_carriers": {
+    "NPC_ZIP_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "NPC_members_SHA_CRC": 2205,
+    "ITEM_ZIP_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "ITEM_members_CRC": 838,
+    "MAP09_ZIP_sha256": "d84d0800dd600798769dfb7251a1d7816588ac061ccc27812ac64a37922d4a8a",
+    "MAP09_members_CRC": 4195,
+    "parent_RAR_reread": false
+  },
+  "old_evidence_inputs": [
+    {
+      "path": "research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json",
+      "bytes": 1321481,
+      "sha256": "2995e5825ffd204d5fd31ccffc95f009d8abbcebad829c5824e490b7f20c2b2c",
+      "git_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json",
+      "bytes": 1798170,
+      "sha256": "f6beb17b76b23211d36113bcf462c16ac38435233b3891bb21765179b84e4566",
+      "git_blob": "a088b61a3212f7049e7793f587123ffb29bebad7"
+    },
+    {
+      "path": "research/recovered/STONEAGE-QUEST05-598-ORIGINAL-CREATE-FLOOR-MAP-AND-WARP-CROSSWALK-R1.json",
+      "bytes": 772585,
+      "sha256": "a12fae6fc316b6bd533f635bab0918d891d86f613c7d63089284e058e0e5947f",
+      "git_blob": "b004e488e1d0a93ca7c14eb90abb584b23f341fe"
+    },
+    {
+      "path": "research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json",
+      "bytes": 398220,
+      "sha256": "bff796baed613c0308162602038b4f3a23db55f689ac97b9d8f62547550ea193",
+      "git_blob": "137580e7c25aadf3d679b6ebfb5080b79912cc4f"
+    },
+    {
+      "path": "research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-14-ORIGINAL-FISHING-QUEST-SOURCE-REPLAY-R1.json",
+      "bytes": 15968,
+      "sha256": "22c8a51adbfb0cb66597a1ee4d6f2e15e21d1475e43aef153c0682c2d1dd9cec",
+      "git_blob": "a8e5ed2779ad008f8ef22961c3f629bdc2b4162a"
+    },
+    {
+      "path": "research/recovered/STONEAGE-QUEST11-TWO-TRIBES-ORIGINAL-SOURCE-R1.json",
+      "bytes": 91145,
+      "sha256": "1423c3ead05394a3fc9a4c451766d323f7802882d5d86628c81b8746f1f035ac",
+      "git_blob": "d1248d3a1976332f57eab46d7a09d854075c3805"
+    },
+    {
+      "path": "research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-23-NPC-ITEM-TRANSFERS-R1.json",
+      "bytes": 947030,
+      "sha256": "a9b54e70f062397b9b5046ed0a4091fc01b2a51856e8f82ccaf0bd05875445a5",
+      "git_blob": "6b31accf02b95c63faa88a6055d99a78341eb099"
+    }
+  ],
+  "previous_explicit_script_mentions": {
+    "STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-14-ORIGINAL-FISHING-QUEST-SOURCE-REPLAY-R1.json": {
+      "jaruga/event/event01_1": 0,
+      "jaruga/event/event01_2": 0,
+      "sainasu/event/nevent02_2": 0,
+      "sainasu/event/nevent02_3": 0,
+      "sainasu/event/nevent02_4": 0
+    },
+    "STONEAGE-QUEST11-TWO-TRIBES-ORIGINAL-SOURCE-R1.json": {
+      "jaruga/event/event01_1": 0,
+      "jaruga/event/event01_2": 0,
+      "sainasu/event/nevent02_2": 0,
+      "sainasu/event/nevent02_3": 0,
+      "sainasu/event/nevent02_4": 0
+    },
+    "STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-23-NPC-ITEM-TRANSFERS-R1.json": {
+      "jaruga/event/event01_1": 1,
+      "jaruga/event/event01_2": 1,
+      "sainasu/event/nevent02_2": 1,
+      "sainasu/event/nevent02_3": 1,
+      "sainasu/event/nevent02_4": 1
+    }
+  },
+  "source_manifest": [
+    {
+      "path": "jaruga/event/event.create",
+      "bytes": 693,
+      "sha256": "ef033da9cd7a7f51a89cdac065dddb64deed9ca01c39a17953cb21de76b80737",
+      "crc32": "ba39ac32"
+    },
+    {
+      "path": "jaruga/event/event.template",
+      "bytes": 122,
+      "sha256": "9c11ac0cbbd9b110e8ff7d0115730044673bf29c5df6d23034e56530c181d0b2",
+      "crc32": "a70fc73f"
+    },
+    {
+      "path": "jaruga/event/event01_1",
+      "bytes": 769,
+      "sha256": "c0381a7554a6179489b3e4d39bcc24ff4d17331afec64f4a9d656e7dfff9de12",
+      "crc32": "9e972a3b"
+    },
+    {
+      "path": "jaruga/event/event01_2",
+      "bytes": 1272,
+      "sha256": "a174c20ddfb90c327255058dbc4f73090593180cc05139c3a06cecbacad0d7c0",
+      "crc32": "5f028678"
+    },
+    {
+      "path": "sainasu/event/nevent02.create",
+      "bytes": 852,
+      "sha256": "7ada47a84e3b7390e5056c726062f439ce2466e72bd476abd604bcd9f33a6f50",
+      "crc32": "3cba4b78"
+    },
+    {
+      "path": "sainasu/event/nevent02_2",
+      "bytes": 687,
+      "sha256": "7626e4c433f063979115bcb297f2587c7eadaa2826a15a2891bb8a9ce2c2a38a",
+      "crc32": "76d4e922"
+    },
+    {
+      "path": "sainasu/event/nevent02_3",
+      "bytes": 520,
+      "sha256": "c90ce74c2beff952a8c73849c8e2543bc33054443858b4469418ca7ab068bdf5",
+      "crc32": "af3d55d3"
+    },
+    {
+      "path": "sainasu/event/nevent02_4",
+      "bytes": 743,
+      "sha256": "34d78264d5a9327fffde9635480641dd7f9cb08068642cd73a0f6d6d46690b97",
+      "crc32": "c4e1b2d9"
+    }
+  ],
+  "source_creates": [
+    {
+      "marker_id": 0,
+      "create_path": "jaruga/event/event.create",
+      "create_ordinal": 0,
+      "block_sha256": "db868777b0967f7f72ef83731394bab2fda6f007709f6b143ce687c1370f4a88",
+      "floor": 3110,
+      "graphic_alias": 16065,
+      "borncorner": [
+        16,
+        15,
+        16,
+        15
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "script_path": "jaruga/event/event01_1",
+      "template_path": "jaruga/event/event.template",
+      "template_ordinal": 0,
+      "functionset": "ExChangeMan"
+    },
+    {
+      "marker_id": 1,
+      "create_path": "jaruga/event/event.create",
+      "create_ordinal": 1,
+      "block_sha256": "c10111a52bfedd0b11afa0835f4b22a65f81144306f0521398be061141cff7de",
+      "floor": 20105,
+      "graphic_alias": 16024,
+      "borncorner": [
+        16,
+        20,
+        16,
+        20
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "script_path": "jaruga/event/event01_2",
+      "template_path": "jaruga/event/event.template",
+      "template_ordinal": 0,
+      "functionset": "ExChangeMan"
+    },
+    {
+      "marker_id": 2,
+      "create_path": "sainasu/event/nevent02.create",
+      "create_ordinal": 0,
+      "block_sha256": "9d5f06811db94f342907ed23ccdd29cf99cd10fd1d22f7f6209726a7523fe802",
+      "floor": 3305,
+      "graphic_alias": 16016,
+      "borncorner": [
+        15,
+        14,
+        15,
+        14
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "script_path": "sainasu/event/nevent02_3",
+      "template_path": "jaruga/event/event.template",
+      "template_ordinal": 0,
+      "functionset": "ExChangeMan"
+    },
+    {
+      "marker_id": 3,
+      "create_path": "sainasu/event/nevent02.create",
+      "create_ordinal": 1,
+      "block_sha256": "5bcfb0cd45c73c09a49925a4a384e9fd8e556f025dc117c40922e4e0204648d7",
+      "floor": 3305,
+      "graphic_alias": 16215,
+      "borncorner": [
+        12,
+        14,
+        12,
+        14
+      ],
+      "borncenter": null,
+      "direction": 4,
+      "script_path": "sainasu/event/nevent02_2",
+      "template_path": "jaruga/event/event.template",
+      "template_ordinal": 0,
+      "functionset": "ExChangeMan"
+    },
+    {
+      "marker_id": 4,
+      "create_path": "sainasu/event/nevent02.create",
+      "create_ordinal": 2,
+      "block_sha256": "d06f1ab1ebf4af4a75ac1208ab688cbdd6418ceddf43541192e278d1c1fd7d0d",
+      "floor": 3105,
+      "graphic_alias": 16017,
+      "borncorner": [
+        12,
+        18,
+        12,
+        18
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "script_path": "sainasu/event/nevent02_3",
+      "template_path": "jaruga/event/event.template",
+      "template_ordinal": 0,
+      "functionset": "ExChangeMan"
+    },
+    {
+      "marker_id": 5,
+      "create_path": "sainasu/event/nevent02.create",
+      "create_ordinal": 3,
+      "block_sha256": "280d98617ed0d61193018198ebe5288bc1031e00e2ffa1344c5b3132bfa1f147",
+      "floor": 3105,
+      "graphic_alias": 16057,
+      "borncorner": [
+        14,
+        15,
+        14,
+        15
+      ],
+      "borncenter": null,
+      "direction": 4,
+      "script_path": "sainasu/event/nevent02_2",
+      "template_path": "jaruga/event/event.template",
+      "template_ordinal": 0,
+      "functionset": "ExChangeMan"
+    },
+    {
+      "marker_id": 6,
+      "create_path": "sainasu/event/nevent02.create",
+      "create_ordinal": 4,
+      "block_sha256": "6b9b48b943148aa3a1bd31579c2ca7194a245219dd970fdbda1b10a039bd5131",
+      "floor": 3200,
+      "graphic_alias": 16057,
+      "borncorner": [
+        85,
+        53,
+        85,
+        53
+      ],
+      "borncenter": null,
+      "direction": 4,
+      "script_path": "sainasu/event/nevent02_4",
+      "template_path": "jaruga/event/event.template",
+      "template_ordinal": 0,
+      "functionset": "ExChangeMan"
+    }
+  ],
+  "source_scripts": [
+    {
+      "path": "jaruga/event/event01_1",
+      "bytes": 769,
+      "sha256": "c0381a7554a6179489b3e4d39bcc24ff4d17331afec64f4a9d656e7dfff9de12",
+      "crc32": "9e972a3b",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 4,
+          "event_no": 1,
+          "type": "ACCEPT",
+          "condition_literal": "NOWEV=1&ITEM=2401",
+          "condition_sha256": "6dc5fcdec7f36ee2b4e51fba73f3bc9c13152c524a86f1de63fb29eb79c69c30",
+          "section_sha256": "883942b4a06076d82ac187b447abc08c2ff62501ff2bf9ee5459d1dcba575330",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "GetItem": [
+              "2427"
+            ],
+            "DelItem": [
+              "2401"
+            ],
+            "EndSetFlg": [
+              "1"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 1,
+          "type_line": 16,
+          "event_no": 1,
+          "type": "REQUEST",
+          "condition_literal": "LV>0",
+          "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+          "section_sha256": "90c650b644b9658a78413fa4e887decd25af03d34fe2cb16df3135ac2f58909a",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 2,
+          "type_line": 27,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ENDEV=1",
+          "condition_sha256": "90312b1bf4db88a87faef1a266dfb21ab0997f415d19282ccf551a1e45e538f8",
+          "section_sha256": "4e4279caab6278b3360365bc1cf43f8afb4b86dfda95d60944794dcc22957638",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/event01_2",
+      "bytes": 1272,
+      "sha256": "a174c20ddfb90c327255058dbc4f73090593180cc05139c3a06cecbacad0d7c0",
+      "crc32": "5f028678",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 5,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ITEM=2401",
+          "condition_sha256": "21e61220a47ef5aa9797dc8f7c3087a350195a647b84d4f530ba5a82e8474a76",
+          "section_sha256": "2bd4c081a8382d9e4c06ea113fb00a4c427043000115acfb0ce36f56d3cef27b",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 1,
+          "type_line": 11,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ITEM=1984",
+          "condition_sha256": "52f01dbe8e9fb0c710a65cc7fd87f28b55807ac3c2d9bdb300c6d5f672a1fd0f",
+          "section_sha256": "d81d7f2e24841b632ce7a85b7d80877ae6df5e236cfa0b4f55b1dc1326c32b3b",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 2,
+          "type_line": 18,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "LV>0&ITEM=1983&ITEM=1982",
+          "condition_sha256": "09d21349e6fe3ea58f4a457c63382b45791cacd270fa11e32222e5d49eb751ea",
+          "section_sha256": "8160f6ec14ae2a61d2ef483076dd00f98a04563602235dd58b5ffa6ec0059ddf",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "GetItem": [
+              "1984"
+            ],
+            "DelItem": [
+              "1983*1"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 3,
+          "type_line": 29,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "NOWEV=1&ITEM!=2401,NOWEV=87&ITEM!=2401,ENDEV=87&ITEM!=2401",
+          "condition_sha256": "693d6e86c7a47ed79e9e18da9ae9bacb658e1ad7e85595e4b987208b74058ad5",
+          "section_sha256": "5dd8463203a96abc0c1c27dfdc874c32a6f320ce5aa0447897f6e2278b514120",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "GetItem": [
+              "2401"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    },
+    {
+      "path": "sainasu/event/nevent02_2",
+      "bytes": 687,
+      "sha256": "7626e4c433f063979115bcb297f2587c7eadaa2826a15a2891bb8a9ce2c2a38a",
+      "crc32": "76d4e922",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 4,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "LV>0&ITEM=2446*10",
+          "condition_sha256": "4163ef8b8de887588d28b103c6f3369c1f2564aac1b38ac98ede5e85d9bf8c13",
+          "section_sha256": "13cdbd0463ac60a1b1b8dd94a5f312a4e4ae7869b72200db59a682a130dcfe80",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "GetItem": [
+              "2449"
+            ],
+            "DelItem": [
+              "2446"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 1,
+          "type_line": 15,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>0&ITEM=2446",
+          "condition_sha256": "8087739d90e55416e59d6a5946e8794f5df0f5dc4aaee49c8b839f2f84b5ad61",
+          "section_sha256": "03f81bb94fa4c56694bf224932ebc716cf25a34e2e5a05a0de6020308ea8986c",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 2,
+          "type_line": 22,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>0",
+          "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+          "section_sha256": "fda9aedd7b61dab6c435c4bda126628b9357af1712a645d3a881fdf5f7d7d5b6",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    },
+    {
+      "path": "sainasu/event/nevent02_3",
+      "bytes": 520,
+      "sha256": "c90ce74c2beff952a8c73849c8e2543bc33054443858b4469418ca7ab068bdf5",
+      "crc32": "af3d55d3",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 4,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "LV>0&ITEM=2449",
+          "condition_sha256": "1cd7ec20dfeb629846e9115b36c8328cae0ef48df08a839dcde4ac167e422508",
+          "section_sha256": "77b87587dcc24d841bcc2278a8b7a03bfe7fcaa6f835b47a42edcc1118a9c910",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "GetItem": [
+              "1264"
+            ],
+            "DelItem": [
+              "2449*1"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 1,
+          "type_line": 15,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>0",
+          "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+          "section_sha256": "a7b81d83fbdf76d9fefdd05a33244430ff7cd8373569b063f178a1518148ec1d",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    },
+    {
+      "path": "sainasu/event/nevent02_4",
+      "bytes": 743,
+      "sha256": "34d78264d5a9327fffde9635480641dd7f9cb08068642cd73a0f6d6d46690b97",
+      "crc32": "c4e1b2d9",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 2,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "LV>0&ITEM!=2447",
+          "condition_sha256": "e93bb01c210bb6da6fd263027d6a9ee482238f3b2edb6dc9b29052044f6082a5",
+          "section_sha256": "05bb1be399480bc4bc8a76f3f3825bffc3ff8e8b51640048ae499b76c65a121e",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "GetItem": [
+              "2447"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 1,
+          "type_line": 12,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>0&ITEM=2447",
+          "condition_sha256": "bfb5d5a07bac0419cecc69f62e157fe6faf36a23d73188f3b3c8a5824a4c4d3d",
+          "section_sha256": "1e3c903ca4c9a151bb307c5c44b10de88d644017871a0b89c32ffb0c7a93ed7a",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 2,
+          "type_line": 19,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>0",
+          "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+          "section_sha256": "eaf6d7675ea59b45d05669c5757751204933687aed6e22db249032609479fdee",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    }
+  ],
+  "old_QUEST01_TYPE_sections": 15,
+  "new_original_script_discoveries": 0,
+  "source_relations": [
+    {
+      "script_path": "jaruga/event/event01_1",
+      "event_ordinal": 0,
+      "condition_literal": "NOWEV=1&ITEM=2401",
+      "commands": {
+        "GetItem": [
+          "2427"
+        ],
+        "DelItem": [
+          "2401"
+        ],
+        "EndSetFlg": [
+          "1"
+        ]
+      },
+      "section_sha256": "883942b4a06076d82ac187b447abc08c2ff62501ff2bf9ee5459d1dcba575330"
+    },
+    {
+      "script_path": "jaruga/event/event01_2",
+      "event_ordinal": 2,
+      "condition_literal": "LV>0&ITEM=1983&ITEM=1982",
+      "commands": {
+        "GetItem": [
+          "1984"
+        ],
+        "DelItem": [
+          "1983*1"
+        ]
+      },
+      "section_sha256": "8160f6ec14ae2a61d2ef483076dd00f98a04563602235dd58b5ffa6ec0059ddf"
+    },
+    {
+      "script_path": "jaruga/event/event01_2",
+      "event_ordinal": 3,
+      "condition_literal": "NOWEV=1&ITEM!=2401,NOWEV=87&ITEM!=2401,ENDEV=87&ITEM!=2401",
+      "commands": {
+        "GetItem": [
+          "2401"
+        ]
+      },
+      "section_sha256": "5dd8463203a96abc0c1c27dfdc874c32a6f320ce5aa0447897f6e2278b514120"
+    },
+    {
+      "script_path": "sainasu/event/nevent02_2",
+      "event_ordinal": 0,
+      "condition_literal": "LV>0&ITEM=2446*10",
+      "commands": {
+        "GetItem": [
+          "2449"
+        ],
+        "DelItem": [
+          "2446"
+        ]
+      },
+      "section_sha256": "13cdbd0463ac60a1b1b8dd94a5f312a4e4ae7869b72200db59a682a130dcfe80"
+    },
+    {
+      "script_path": "sainasu/event/nevent02_3",
+      "event_ordinal": 0,
+      "condition_literal": "LV>0&ITEM=2449",
+      "commands": {
+        "GetItem": [
+          "1264"
+        ],
+        "DelItem": [
+          "2449*1"
+        ]
+      },
+      "section_sha256": "77b87587dcc24d841bcc2278a8b7a03bfe7fcaa6f835b47a42edcc1118a9c910"
+    },
+    {
+      "script_path": "sainasu/event/nevent02_4",
+      "event_ordinal": 0,
+      "condition_literal": "LV>0&ITEM!=2447",
+      "commands": {
+        "GetItem": [
+          "2447"
+        ]
+      },
+      "section_sha256": "05bb1be399480bc4bc8a76f3f3825bffc3ff8e8b51640048ae499b76c65a121e"
+    }
+  ],
+  "bone_recipe_quantity_mismatch": {
+    "script": "sainasu/event/nevent02_2",
+    "event_ordinal": 0,
+    "condition_literal": "LV>0&ITEM=2446*10",
+    "commands": {
+      "GetItem": [
+        "2449"
+      ],
+      "DelItem": [
+        "2446"
+      ]
+    },
+    "omitted_DelItem_quantity_not_replaced_with_ten": true
+  },
+  "powder_branch": {
+    "script": "jaruga/event/event01_2",
+    "event_ordinal": 2,
+    "condition_literal": "LV>0&ITEM=1983&ITEM=1982",
+    "commands": {
+      "GetItem": [
+        "1984"
+      ],
+      "DelItem": [
+        "1983*1"
+      ]
+    },
+    "item1982_deleted_by_this_source_section": false
+  },
+  "herb_grant": {
+    "script": "jaruga/event/event01_2",
+    "event_ordinal": 3,
+    "condition_literal": "NOWEV=1&ITEM!=2401,NOWEV=87&ITEM!=2401,ENDEV=87&ITEM!=2401",
+    "all_conditions_flattened_to_event1": false
+  },
+  "harp_keyword": {
+    "script": "sainasu/event/nevent02_4",
+    "event_ordinal": 0,
+    "keyword_UTF8_sha256": "bf7ce7444c7f4b78b1c24eb4a92822b6129e84224ad4b59c4ec6898537323c82",
+    "keyword_CP950_bytes": 10,
+    "answer_original_text_published": false,
+    "missing_nevent02_1_in_source_NPC_subtree": true,
+    "harp_trigger_or_bone_drop_recovered": false
+  },
+  "source_items": [
+    {
+      "item_ID": 1264,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 1259,
+          "sha256": "a040de887b0451a22130c291ac15a5a9685c004c7811520b0aca56f7db67d0a2",
+          "image_alias": 24208
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 1265,
+          "sha256": "a040de887b0451a22130c291ac15a5a9685c004c7811520b0aca56f7db67d0a2",
+          "image_alias": 24208
+        }
+      ],
+      "cross_carrier_candidate_alias": 24208,
+      "original_RD_sha256": "ca0c8b91e3d599fdd649561c70f28118d3e2fa703d89cf5bd0a2b4292a0983c1",
+      "candidate_PNG_sha256": "d157fa7ccd1e84cc1ab3c8fd2a63025a880618e5df3d574c5c30cd72ce7284aa"
+    },
+    {
+      "item_ID": 1982,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 1784,
+          "sha256": "acd5eacfeeb8710da688eb01398988e0deac350e7b69c32561e19a970e8a5daa",
+          "image_alias": 22265
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 1979,
+          "sha256": "acd5eacfeeb8710da688eb01398988e0deac350e7b69c32561e19a970e8a5daa",
+          "image_alias": 22265
+        }
+      ],
+      "cross_carrier_candidate_alias": 22265,
+      "original_RD_sha256": null,
+      "candidate_PNG_sha256": null,
+      "tw1_candidate_status": "NOT_IN_RETAIL_INDEX"
+    },
+    {
+      "item_ID": 1983,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 1785,
+          "sha256": "d65d98149a7c6a924e017a35bfa43c2f97de765a79ee4a371d681abf99d7c3d5",
+          "image_alias": 23024
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 1980,
+          "sha256": "d65d98149a7c6a924e017a35bfa43c2f97de765a79ee4a371d681abf99d7c3d5",
+          "image_alias": 23024
+        }
+      ],
+      "cross_carrier_candidate_alias": 23024,
+      "original_RD_sha256": "f9e575ca94aaf832102a0e234705563987419b85c45fa554f31de976f6be2cc8",
+      "candidate_PNG_sha256": "f627cf18712d4c70358040bf2352a2f7c579e6657d4953a0676662f4a68f0711"
+    },
+    {
+      "item_ID": 1984,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 1786,
+          "sha256": "a5e18365671684c7a0f3947ccc5a2886dc45128faec01640f6d6b59a42dfda9e",
+          "image_alias": 22410
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 1981,
+          "sha256": "a5e18365671684c7a0f3947ccc5a2886dc45128faec01640f6d6b59a42dfda9e",
+          "image_alias": 22410
+        }
+      ],
+      "cross_carrier_candidate_alias": 22410,
+      "original_RD_sha256": null,
+      "candidate_PNG_sha256": null,
+      "tw1_candidate_status": "NOT_IN_RETAIL_INDEX"
+    },
+    {
+      "item_ID": 2401,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 1984,
+          "sha256": "1ef42e337e5cfe26b566ede23ceb96ca7de70c7387bc8ea658d573516da6be49",
+          "image_alias": 23030
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2379,
+          "sha256": "1ef42e337e5cfe26b566ede23ceb96ca7de70c7387bc8ea658d573516da6be49",
+          "image_alias": 23030
+        }
+      ],
+      "cross_carrier_candidate_alias": 23030,
+      "original_RD_sha256": "daa85b0c59571c2ab4605a8b535ec5b002e6d2db5263957fa8d57d7e6d5c6558",
+      "candidate_PNG_sha256": "91799f6ef97848aab4c6662fd14b4bca931b1746e21669362e794485c92410ab"
+    },
+    {
+      "item_ID": 2427,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2010,
+          "sha256": "a7540afb17e213907d619270ccbc36dfd4e50f8f7ca9d6310149793aef7eb5a6",
+          "image_alias": 22002
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2405,
+          "sha256": "a7540afb17e213907d619270ccbc36dfd4e50f8f7ca9d6310149793aef7eb5a6",
+          "image_alias": 22002
+        }
+      ],
+      "cross_carrier_candidate_alias": 22002,
+      "original_RD_sha256": "13ff69bdc102a24e6d7b82bb564c56e6b126a91599987edee5c394239d35c153",
+      "candidate_PNG_sha256": "809bfb6f756f342e70c64a131fc7f02eff1a1525ae1058bd4733ec1f5b4c04f2"
+    },
+    {
+      "item_ID": 2446,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2029,
+          "sha256": "667a8ad521e5361c69dce823613821aa3aaeb6a77ebd51e5a214450be0cb1027",
+          "image_alias": 24108
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2424,
+          "sha256": "667a8ad521e5361c69dce823613821aa3aaeb6a77ebd51e5a214450be0cb1027",
+          "image_alias": 24108
+        }
+      ],
+      "cross_carrier_candidate_alias": 24108,
+      "original_RD_sha256": "016ab87f83281ea1d94a0b810a7f36652ea82295d312de9dfb3dfccad5f21019",
+      "candidate_PNG_sha256": "a5254330c76faf9542144a4fee2fb49eaaa23e951421528947dfb1ff9944d0f8"
+    },
+    {
+      "item_ID": 2447,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2030,
+          "sha256": "00eb06bd9a16a61d407c6f8f7e1dc7a06fe4069e6554cbd54aa49ab62b33b55e",
+          "image_alias": 24213
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2425,
+          "sha256": "00eb06bd9a16a61d407c6f8f7e1dc7a06fe4069e6554cbd54aa49ab62b33b55e",
+          "image_alias": 24213
+        }
+      ],
+      "cross_carrier_candidate_alias": 24213,
+      "original_RD_sha256": "465fec688874f0b0b3c1a3ac7ceff75c9844eedddbcfef5f42194bb10cb79208",
+      "candidate_PNG_sha256": "1e618ff53657aa159183d9a9ba4ff4df9e5474f789f9ed566274d86eab443379"
+    },
+    {
+      "item_ID": 2449,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2032,
+          "sha256": "fd7552f33715de5e9aa9d98b3dd16e38c118efb4fb5ef64a127965a385165caa",
+          "image_alias": 24189
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2427,
+          "sha256": "fd7552f33715de5e9aa9d98b3dd16e38c118efb4fb5ef64a127965a385165caa",
+          "image_alias": 24189
+        }
+      ],
+      "cross_carrier_candidate_alias": 24189,
+      "original_RD_sha256": "e2d3c095d832ed88933f76762aa2359985f88ea3e815f4be27963ed8d70a0fec",
+      "candidate_PNG_sha256": "b18b7fa9cb272f3748226feccf547b929a004e30cdf8cce261ff4aaf9085cadb"
+    }
+  ],
+  "source_item_control_columns": [
+    {
+      "item_ID": 1264,
+      "table": "itemset.txt",
+      "row_sha256": "a040de887b0451a22130c291ac15a5a9685c004c7811520b0aca56f7db67d0a2",
+      "column10_usefunc": "",
+      "column79_vanishatdrop": 0,
+      "names_from_existing_descendant94_schema": true,
+      "actual_item_effect_executed": false
+    },
+    {
+      "item_ID": 1264,
+      "table": "itemset0710.txt",
+      "row_sha256": "a040de887b0451a22130c291ac15a5a9685c004c7811520b0aca56f7db67d0a2",
+      "column10_usefunc": "",
+      "column79_vanishatdrop": 0,
+      "names_from_existing_descendant94_schema": true,
+      "actual_item_effect_executed": false
+    },
+    {
+      "item_ID": 1982,
+      "table": "itemset.txt",
+      "row_sha256": "acd5eacfeeb8710da688eb01398988e0deac350e7b69c32561e19a970e8a5daa",
+      "column10_usefunc": "",
+      "column79_vanishatdrop": 1,
+      "names_from_existing_descendant94_schema": true,
+      "actual_item_effect_executed": false
+    },
+    {
+      "item_ID": 1982,
+      "table": "itemset0710.txt",
+      "row_sha256": "acd5eacfeeb8710da688eb01398988e0deac350e7b69c32561e19a970e8a5daa",
+      "column10_usefunc": "",
+      "column79_vanishatdrop": 1,
+      "names_from_existing_descendant94_schema": true,
+      "actual_item_effect_executed": false
+    },
+    {
+      "item_ID": 1983,
+      "table": "itemset.txt",
+      "row_sha256": "d65d98149a7c6a924e017a35bfa43c2f97de765a79ee4a371d681abf99d7c3d5",
+      "column10_usefunc": "",
+      "column79_vanishatdrop": 1,
+      "names_from_existing_descendant94_schema": true,
+      "actual_item_effect_executed": false
+    },
+    {
+      "item_ID": 1983,
+      "table": "itemset0710.txt",
+      "row_sha256": "d65d98149a7c6a924e017a35bfa43c2f97de765a79ee4a371d681abf99d7c3d5",
+      "column10_usefunc": "",
+      "column79_vanishatdrop": 1,
+      "names_from_existing_descendant94_schema": true,
+      "actual_item_effect_executed": false
+    },
+    {
+      "item_ID": 1984,
+      "table": "itemset.txt",
+      "row_sha256": "a5e18365671684c7a0f3947ccc5a2886dc45128faec01640f6d6b59a42dfda9e",
+      "column10_usefunc": "",
+      "column79_vanishatdrop": 1,
+      "names_from_existing_descendant94_schema": true,
+      "actual_item_effect_executed": false
+    },
+    {
+      "item_ID": 1984,
+      "table": "itemset0710.txt",
+      "row_sha256": "a5e18365671684c7a0f3947ccc5a2886dc45128faec01640f6d6b59a42dfda9e",
+      "column10_usefunc": "",
+      "column79_vanishatdrop": 1,
+      "names_from_existing_descendant94_schema": true,
+      "actual_item_effect_executed": false
+    },
+    {
+      "item_ID": 2401,
+      "table": "itemset.txt",
+      "row_sha256": "1ef42e337e5cfe26b566ede23ceb96ca7de70c7387bc8ea658d573516da6be49",
+      "column10_usefunc": "ITEM_useRecovery",
+      "column79_vanishatdrop": 1,
+      "names_from_existing_descendant94_schema": true,
+      "actual_item_effect_executed": false
+    },
+    {
+      "item_ID": 2401,
+      "table": "itemset0710.txt",
+      "row_sha256": "1ef42e337e5cfe26b566ede23ceb96ca7de70c7387bc8ea658d573516da6be49",
+      "column10_usefunc": "ITEM_useRecovery",
+      "column79_vanishatdrop": 1,
+      "names_from_existing_descendant94_schema": true,
+      "actual_item_effect_executed": false
+    },
+    {
+      "item_ID": 2427,
+      "table": "itemset.txt",
+      "row_sha256": "a7540afb17e213907d619270ccbc36dfd4e50f8f7ca9d6310149793aef7eb5a6",
+      "column10_usefunc": "",
+      "column79_vanishatdrop": 0,
+      "names_from_existing_descendant94_schema": true,
+      "actual_item_effect_executed": false
+    },
+    {
+      "item_ID": 2427,
+      "table": "itemset0710.txt",
+      "row_sha256": "a7540afb17e213907d619270ccbc36dfd4e50f8f7ca9d6310149793aef7eb5a6",
+      "column10_usefunc": "",
+      "column79_vanishatdrop": 0,
+      "names_from_existing_descendant94_schema": true,
+      "actual_item_effect_executed": false
+    },
+    {
+      "item_ID": 2446,
+      "table": "itemset.txt",
+      "row_sha256": "667a8ad521e5361c69dce823613821aa3aaeb6a77ebd51e5a214450be0cb1027",
+      "column10_usefunc": "",
+      "column79_vanishatdrop": 1,
+      "names_from_existing_descendant94_schema": true,
+      "actual_item_effect_executed": false
+    },
+    {
+      "item_ID": 2446,
+      "table": "itemset0710.txt",
+      "row_sha256": "667a8ad521e5361c69dce823613821aa3aaeb6a77ebd51e5a214450be0cb1027",
+      "column10_usefunc": "",
+      "column79_vanishatdrop": 1,
+      "names_from_existing_descendant94_schema": true,
+      "actual_item_effect_executed": false
+    },
+    {
+      "item_ID": 2447,
+      "table": "itemset.txt",
+      "row_sha256": "00eb06bd9a16a61d407c6f8f7e1dc7a06fe4069e6554cbd54aa49ab62b33b55e",
+      "column10_usefunc": "",
+      "column79_vanishatdrop": 1,
+      "names_from_existing_descendant94_schema": true,
+      "actual_item_effect_executed": false
+    },
+    {
+      "item_ID": 2447,
+      "table": "itemset0710.txt",
+      "row_sha256": "00eb06bd9a16a61d407c6f8f7e1dc7a06fe4069e6554cbd54aa49ab62b33b55e",
+      "column10_usefunc": "",
+      "column79_vanishatdrop": 1,
+      "names_from_existing_descendant94_schema": true,
+      "actual_item_effect_executed": false
+    },
+    {
+      "item_ID": 2449,
+      "table": "itemset.txt",
+      "row_sha256": "fd7552f33715de5e9aa9d98b3dd16e38c118efb4fb5ef64a127965a385165caa",
+      "column10_usefunc": "",
+      "column79_vanishatdrop": 1,
+      "names_from_existing_descendant94_schema": true,
+      "actual_item_effect_executed": false
+    },
+    {
+      "item_ID": 2449,
+      "table": "itemset0710.txt",
+      "row_sha256": "fd7552f33715de5e9aa9d98b3dd16e38c118efb4fb5ef64a127965a385165caa",
+      "column10_usefunc": "",
+      "column79_vanishatdrop": 1,
+      "names_from_existing_descendant94_schema": true,
+      "actual_item_effect_executed": false
+    }
+  ],
+  "original_scene_observations": [
+    {
+      "floor": 3110,
+      "original_DAT_bytes": 5408,
+      "original_DAT_sha256": "0c07da23583a03fd3caaf6b1805d3665cfd35db18ec3176f4d96408d05ea6e97",
+      "geometry": [
+        30,
+        30
+      ],
+      "source_draw_positions": 159,
+      "unique_source_images": 41,
+      "canvas_size": [
+        1889,
+        1425
+      ],
+      "origin": [
+        16,
+        712
+      ],
+      "three_candidate_RGBA_sha256": {
+        "plane0": "0e685c88bad1ee58c0373c79aa64a2b3154df8eed7c3f092bd55f8d69ccb26f8",
+        "plane1": "db96eaee727896c71ca790f9647bf846c082158752a022558c63cb72160de6cb",
+        "combined": "6e7fe04befa305a19f29f2f0c51d0a9ea702eebb95888d05da7ea97af4201b69"
+      },
+      "independent_Pillow_and_NumPy_all_three_equal": true,
+      "marked_candidate_RGBA_sha256": "419d557754abdcc797f70e644791f745e70e7de9e285cb0ada39c770970307ef",
+      "marked_candidate_PNG_sha256": "91bdab44e4c97a86d599ca01df94f6a7e16dfa4c0192b2afa7baf85a2b86490e",
+      "source_points": [
+        {
+          "xy": [
+            16,
+            15
+          ],
+          "raw_three_u16": [
+            5000,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            1008,
+            688
+          ],
+          "original_NPC_sprite_drawn": false,
+          "modern_marker_id": 0,
+          "source_create_path": "jaruga/event/event.create",
+          "source_create_ordinal": 0
+        }
+      ]
+    },
+    {
+      "floor": 20105,
+      "original_DAT_bytes": 21008,
+      "original_DAT_sha256": "0f1f9728486cfe3ef15877153a864e5e82fb7b6274791253ae0c7e978e20de1e",
+      "geometry": [
+        50,
+        70
+      ],
+      "source_draw_positions": 2462,
+      "unique_source_images": 344,
+      "canvas_size": [
+        3809,
+        2865
+      ],
+      "origin": [
+        16,
+        1192
+      ],
+      "three_candidate_RGBA_sha256": {
+        "plane0": "2b54ec6a382c9ef5ec2d4065503f4f62c2c1f78d4651ebc0c334eb774c50161c",
+        "plane1": "c6a5835a0daa45f10640fc32aca0b4defe5db2d919c92de2f86a717f4662cfe8",
+        "combined": "855792ddb027c5c73456adc9288640df8e4b84be9bba37c3e219609d7c924ae9"
+      },
+      "independent_Pillow_and_NumPy_all_three_equal": true,
+      "marked_candidate_RGBA_sha256": "4016662b6bb715e3d9aec6aa05c1d9844532a3240cf2b8723a85730a682049d0",
+      "marked_candidate_PNG_sha256": "1b88e8f5b9e93dbc9d663a217806d1fa5516076836a7fe124f3ea9a17e076095",
+      "source_points": [
+        {
+          "xy": [
+            16,
+            20
+          ],
+          "raw_three_u16": [
+            2056,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            1168,
+            1288
+          ],
+          "original_NPC_sprite_drawn": false,
+          "modern_marker_id": 1,
+          "source_create_path": "jaruga/event/event.create",
+          "source_create_ordinal": 1
+        }
+      ]
+    },
+    {
+      "floor": 3305,
+      "original_DAT_bytes": 5408,
+      "original_DAT_sha256": "7188eafc9ad3dd2cd59643fd2b444520640ff5d60902cfbb7bfdd1c7a980dcaa",
+      "geometry": [
+        30,
+        30
+      ],
+      "source_draw_positions": 207,
+      "unique_source_images": 51,
+      "canvas_size": [
+        1889,
+        1425
+      ],
+      "origin": [
+        16,
+        712
+      ],
+      "three_candidate_RGBA_sha256": {
+        "plane0": "8be9b4a3a1811c03c8518bfee67e068b8ac0cefb92970f99fd6e3a144ace7446",
+        "plane1": "946d1308a0e03270c197313f796c5067c513862421c00b8d728a6931fae5e49c",
+        "combined": "64c1bfe40409c42668268f6a2c5c0dd61289b962cf331855ce64a4a930f6052b"
+      },
+      "independent_Pillow_and_NumPy_all_three_equal": true,
+      "marked_candidate_RGBA_sha256": "b39ccc77512877a93813170165d30a4208a128a86e227eadfb19c8545c3abe8a",
+      "marked_candidate_PNG_sha256": "1813b7605e234c33ceb758eae884c22347b10307950cc349e3da246d9f1a1774",
+      "source_points": [
+        {
+          "xy": [
+            15,
+            14
+          ],
+          "raw_three_u16": [
+            5000,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            944,
+            688
+          ],
+          "original_NPC_sprite_drawn": false,
+          "modern_marker_id": 2,
+          "source_create_path": "sainasu/event/nevent02.create",
+          "source_create_ordinal": 0
+        },
+        {
+          "xy": [
+            12,
+            14
+          ],
+          "raw_three_u16": [
+            5120,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            848,
+            760
+          ],
+          "original_NPC_sprite_drawn": false,
+          "modern_marker_id": 3,
+          "source_create_path": "sainasu/event/nevent02.create",
+          "source_create_ordinal": 1
+        }
+      ]
+    },
+    {
+      "floor": 3105,
+      "original_DAT_bytes": 5408,
+      "original_DAT_sha256": "b5d79c60c555b275f0c51f8eceb897f6442d470fe4c4c2088f1a703cfbc17948",
+      "geometry": [
+        30,
+        30
+      ],
+      "source_draw_positions": 148,
+      "unique_source_images": 41,
+      "canvas_size": [
+        1889,
+        1425
+      ],
+      "origin": [
+        16,
+        712
+      ],
+      "three_candidate_RGBA_sha256": {
+        "plane0": "7f49cb8ddd8cbab5de208d5becf14b372cb7efb7666da147acaf01ed3dc5ed2b",
+        "plane1": "600c25a1d2338ee09f0f857f405b8fc70f93dbbcbb528382c10f38c9e3fae6c1",
+        "combined": "55dafa73b340ae4fefe4dbb2ddb45fb508d369f66e2559d26206bd2c78345f68"
+      },
+      "independent_Pillow_and_NumPy_all_three_equal": true,
+      "marked_candidate_RGBA_sha256": "47c00dcd190dee73f8d24e6cdebb1526e8568761fbb7543269c8fe3d35ac8500",
+      "marked_candidate_PNG_sha256": "ed5a76a70f6178c41ae5d974675a8dc12c96c54960b301e01b38f9bc7213ff1f",
+      "source_points": [
+        {
+          "xy": [
+            12,
+            18
+          ],
+          "raw_three_u16": [
+            5000,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            976,
+            856
+          ],
+          "original_NPC_sprite_drawn": false,
+          "modern_marker_id": 4,
+          "source_create_path": "sainasu/event/nevent02.create",
+          "source_create_ordinal": 2
+        },
+        {
+          "xy": [
+            14,
+            15
+          ],
+          "raw_three_u16": [
+            5002,
+            12802,
+            49152
+          ],
+          "modern_projected_center": [
+            944,
+            736
+          ],
+          "original_NPC_sprite_drawn": false,
+          "modern_marker_id": 5,
+          "source_create_path": "sainasu/event/nevent02.create",
+          "source_create_ordinal": 3
+        }
+      ]
+    }
+  ],
+  "distinct_replayed_tile_PNGs": 439,
+  "new_original_RD_decodes": 0,
+  "source_floor3200_map_metadata": {
+    "source_floor_id": 3200,
+    "map_status": "MAP10_GT99_RD_SOURCE_BOUND_LOW_VALUES_OPEN",
+    "source_DAT_file": "3200.dat",
+    "source_DAT_sha256": "9a2726f7fd0a8661394efa904ee535c113c42cbf84bd5045ab9a9894aa5ea697",
+    "source_CREATE_ref_count": 8,
+    "source_cohorts": {
+      "QUEST01": 2,
+      "QUEST03": 6
+    }
+  },
+  "boundaries": {
+    "official_early_deployment_authenticated": false,
+    "original_client_or_server_executed": false,
+    "source_predicates_or_omitted_quantities_interpreted": false,
+    "harp_causes_native_encounter_verified": false,
+    "original_bone_drop_or_medicine_use_effect_verified": false,
+    "source_blank_usefunc_proves_unusable": false,
+    "missing_TW1_image_promoted_to_removed_or_new_content": false,
+    "native_spawn_or_palette_layer_collision_verified": false,
+    "original_assets_or_dialogue_published": false,
+    "quest_origin": "UNRESOLVED"
+  },
+  "stage_A": {
+    "PARTIAL": 7,
+    "OPEN": 2
+  },
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "QUEST29_MODULE_SOURCE_REVIEW_AFTER_MEDICINE_BATCH_STOP"
+}

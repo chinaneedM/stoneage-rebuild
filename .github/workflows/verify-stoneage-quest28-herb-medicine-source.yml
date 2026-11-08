@@ -1,0 +1,23 @@
+name: Verify StoneAge QUEST28 original herb/medicine derived source
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-QUEST28-HERB-MEDICINE-FOUR-SCENES-SOURCE-R1.json'
+      - 'tests/test_stoneage_quest28_herb_medicine_source.py'
+      - '.github/workflows/verify-stoneage-quest28-herb-medicine-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-QUEST28-HERB-MEDICINE-FOUR-SCENES-SOURCE-R1.json'
+      - 'tests/test_stoneage_quest28_herb_medicine_source.py'
+      - '.github/workflows/verify-stoneage-quest28-herb-medicine-source.yml'
+jobs:
+  derived-source:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_quest28_herb_medicine_source.py' -v
