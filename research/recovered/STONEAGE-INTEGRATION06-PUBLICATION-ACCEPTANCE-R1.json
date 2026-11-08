@@ -1,0 +1,245 @@
+{
+  "schema": "stoneage.integration06.map1300_publication_acceptance.r1",
+  "date": "2026-11-08",
+  "initial_remote": {
+    "head": "fbb4b2e4a1a50769ee6020c757d43c59e798076c",
+    "tree": "3673a41780a2809f4efa1d5f1cf3018552ddf82f",
+    "preserved_CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "candidate": {
+    "pr": 273,
+    "branch": "agent/integration06-map1300-original-gap-20261108",
+    "head": "5158a48891a50efc6e09f7ca7eb9ca9279957a24",
+    "tree": "2a1b5638e84da82d1126f9314aafa2485f6c67f8",
+    "pr_merged": true
+  },
+  "merged_main": {
+    "sha": "24dfa1d0aa5af2ad1c36c0c25f385609a1435e04",
+    "tree": "2a1b5638e84da82d1126f9314aafa2485f6c67f8",
+    "merge_method": "squash",
+    "current_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "actions": {
+    "candidate": [
+      {
+        "id": 42492031851,
+        "event": "pull_request",
+        "workflow": "O12",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492031659,
+        "event": "pull_request",
+        "workflow": "O11",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492031783,
+        "event": "pull_request",
+        "workflow": "INTEGRATION06",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492009653,
+        "event": "push",
+        "workflow": "INTEGRATION06",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492009580,
+        "event": "push",
+        "workflow": "Stage A review",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492009616,
+        "event": "push",
+        "workflow": "R34",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492009570,
+        "event": "push",
+        "workflow": "R31",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492009574,
+        "event": "push",
+        "workflow": "R35",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492009604,
+        "event": "push",
+        "workflow": "R32",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492009612,
+        "event": "push",
+        "workflow": "R18",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492009639,
+        "event": "push",
+        "workflow": "R17",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492009701,
+        "event": "push",
+        "workflow": "R36",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492009573,
+        "event": "push",
+        "workflow": "R16",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492009569,
+        "event": "push",
+        "workflow": "R28",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "candidate_success": 14,
+    "candidate_total": 14,
+    "main": [
+      {
+        "id": 42492077863,
+        "event": "push",
+        "workflow": "R32",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492077856,
+        "event": "push",
+        "workflow": "R36",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492077898,
+        "event": "push",
+        "workflow": "R16",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492078017,
+        "event": "push",
+        "workflow": "R18",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492078040,
+        "event": "push",
+        "workflow": "R31",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492077931,
+        "event": "push",
+        "workflow": "R28",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492077915,
+        "event": "push",
+        "workflow": "R17",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492077890,
+        "event": "push",
+        "workflow": "R35",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492077981,
+        "event": "push",
+        "workflow": "Stage A review",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492077895,
+        "event": "push",
+        "workflow": "INTEGRATION06",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42492077899,
+        "event": "push",
+        "workflow": "R34",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "main_success": 11,
+    "main_total": 11,
+    "specialized_candidate_push_run": 42492009653,
+    "specialized_candidate_PR_run": 42492031783,
+    "specialized_main_run": 42492077895,
+    "specialized_main_job": 128766424996,
+    "specialized_five_unit_tests_step_success": true
+  },
+  "publication_blobs": {
+    ".github/workflows/verify-stoneage-integration06-map1300.yml": "d9a9ffce55484699124275644c11b66f0ed771e8",
+    "README.md": "96a5f91b235252910ca4e51d22ed4825fec52cac",
+    "docs/continuity/STONEAGE-INTEGRATION06-MAP1300-QUALIFICATION-20261108.md": "70833624c082dd75298bc78b98202cc616d46b70",
+    "research/recovered/STONEAGE-INTEGRATION06-MAP1300-MAP-DAT-SIX-CREATE-SOURCE-R1.json": "5e1f49922731e55070cc6e43fbadf29a3609adeb",
+    "tests/test_stoneage_integration_module_06.py": "8a7812c5332fdecd6cc176cc9e0cf3909d206833"
+  },
+  "source_statement": {
+    "source_kind": "LATER_COMMUNITY_MIXED25_PRESERVED",
+    "original_1300_MAP_members_qualified": 2,
+    "original_1300_MAP_distinct_SHA": 1,
+    "original_1300_DAT_member_has_error_record": true,
+    "original_1300_DAT_bytes_recovered_in_MAP01": 0,
+    "original_1300_DAT_qualified_from_955": false,
+    "source_CREATE_records": 6,
+    "quest_create_records": 4,
+    "timeman_create_records": 2,
+    "independent_specialty_reports": 4,
+    "original_game_execution": false
+  },
+  "boundaries": {
+    "proprietary_original_content_in_public_git": false,
+    "original_1300_DAT_corruption_proven": false,
+    "official_early_same_deployment_proven": false,
+    "original_map_walkable": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "STAGE_A_CROSS_MODULE_GAP_REVIEW_OR_NEXT_MATERIAL_SOURCE_READY_DOMAIN",
+  "receipt_commit_actions": "NO_RUN_YET_AT_CREATION"
+}

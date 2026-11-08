@@ -27,3 +27,10 @@ QUEST05来源限定原598 CREATE 索引在floor1300有**6条**：QUEST01源 `npc
 只在重新取得该源版本或明确来源合格的完整 `1300.DAT`，并实际逐完整CRC/SHA核验后再打开场景/原图链接；不为此重新开发RAR驱动或用纯MAP猜DAT。保持 Stage A 7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体percent=null。**NEXT：** 综合审查其他有明确玩家内容影响且真实原件就绪的跨模块缺口；无新材料时转 Stage A 联合审阅，不继续任务编号或低层helper。
 
 > PR、Actions、合并和正式接收只有 GitHub 确认后才能补录，不能预写成功。
+
+
+## 合并后验与正式出版回执（实际GitHub状态）
+
+[PR #273](https://github.com/chinaneedM/stoneage-rebuild/pull/273) 已以 squash 合并到 main `24dfa1d0aa5af2ad1c36c0c25f385609a1435e04`／tree `2a1b5638e84da82d1126f9314aafa2485f6c67f8`；候选提交 `5158a48891a50efc6e09f7ca7eb9ca9279957a24` 的 **14/14** Actions 均实际 `completed/success`，包括专项 push run 42492009653 与 PR run 42492031783，另两个 O11/O12 PR 检查也成功。合并后 main **11/11** 运行实际 `completed/success`，INTEGRATION06专项 run [42492077895](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42492077895)、job 128766424996 的五项公开派生 unittest 已成功。完整运行ID、五公开文件Git SHA与来源限制见[正式验收收据](../../research/recovered/STONEAGE-INTEGRATION06-PUBLICATION-ACCEPTANCE-R1.json)。
+
+跨模块报告未读取私有 `1300.DAT` 原内容；原失败仍是失败，没有据历史错误记录反推损坏本身或世界内容。原 `CURRENT-STATE.md` Git Blob仍为 `c89e0e33537990aa2132b47c40fef49a985a935c`；全历史完全保留。本收据提交自身的Actions尚无运行结果，不能冒用前一次主线11/11成功。最高NEXT仍为综合Stage A有据材料缺口审查。
