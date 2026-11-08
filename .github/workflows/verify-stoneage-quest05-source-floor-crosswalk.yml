@@ -64,6 +64,10 @@ on:
       - 'research/recovered/STONEAGE-QUEST20-FIVE-BROTHERS-MODULE-REVIEW-R1.json'
       - 'tests/test_stoneage_quest20_five_brothers_source.py'
       - 'docs/continuity/STONEAGE-QUEST20-FIVE-BROTHERS-SOURCE-AND-MODULE-REVIEW-20261108.md'
+      - 'research/recovered/STONEAGE-QUEST21-LIULI-ORIGINAL-SOURCE-COMPARISON-R1.json'
+      - 'tools/stoneage_quest21_liuli_source.py'
+      - 'tests/test_stoneage_quest21_liuli_source.py'
+      - 'docs/continuity/STONEAGE-QUEST21-LIULI-ORIGINAL-SOURCE-COMPARISON-20261108.md'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   pull_request:
     paths:
@@ -121,6 +125,10 @@ on:
       - 'research/recovered/STONEAGE-QUEST20-FIVE-BROTHERS-MODULE-REVIEW-R1.json'
       - 'tests/test_stoneage_quest20_five_brothers_source.py'
       - 'docs/continuity/STONEAGE-QUEST20-FIVE-BROTHERS-SOURCE-AND-MODULE-REVIEW-20261108.md'
+      - 'research/recovered/STONEAGE-QUEST21-LIULI-ORIGINAL-SOURCE-COMPARISON-R1.json'
+      - 'tools/stoneage_quest21_liuli_source.py'
+      - 'tests/test_stoneage_quest21_liuli_source.py'
+      - 'docs/continuity/STONEAGE-QUEST21-LIULI-ORIGINAL-SOURCE-COMPARISON-20261108.md'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   workflow_dispatch:
 
@@ -163,3 +171,5 @@ jobs:
         run: python -m unittest tests.test_stoneage_quest19_marju_source -v
       - name: Validate QUEST20 five-brothers original source, 23 selections and same-archive pet graph
         run: python -m unittest tests.test_stoneage_quest20_five_brothers_source -v
+      - name: Validate QUEST21 original Liuli source and separately retained 2003 guide
+        run: python -m unittest tests.test_stoneage_quest21_liuli_source -v
