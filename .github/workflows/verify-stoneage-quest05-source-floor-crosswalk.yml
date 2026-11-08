@@ -68,6 +68,10 @@ on:
       - 'tools/stoneage_quest21_liuli_source.py'
       - 'tests/test_stoneage_quest21_liuli_source.py'
       - 'docs/continuity/STONEAGE-QUEST21-LIULI-ORIGINAL-SOURCE-COMPARISON-20261108.md'
+      - 'research/recovered/STONEAGE-QUEST22-HEKISEI-ORIGINAL-SOURCE-AND-THREE-SCENES-R1.json'
+      - 'tools/stoneage_quest22_hekisei_source.py'
+      - 'tests/test_stoneage_quest22_hekisei_source.py'
+      - 'docs/continuity/STONEAGE-QUEST22-HEKISEI-ORIGINAL-SOURCE-AND-THREE-SCENES-20261108.md'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   pull_request:
     paths:
@@ -129,6 +133,10 @@ on:
       - 'tools/stoneage_quest21_liuli_source.py'
       - 'tests/test_stoneage_quest21_liuli_source.py'
       - 'docs/continuity/STONEAGE-QUEST21-LIULI-ORIGINAL-SOURCE-COMPARISON-20261108.md'
+      - 'research/recovered/STONEAGE-QUEST22-HEKISEI-ORIGINAL-SOURCE-AND-THREE-SCENES-R1.json'
+      - 'tools/stoneage_quest22_hekisei_source.py'
+      - 'tests/test_stoneage_quest22_hekisei_source.py'
+      - 'docs/continuity/STONEAGE-QUEST22-HEKISEI-ORIGINAL-SOURCE-AND-THREE-SCENES-20261108.md'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   workflow_dispatch:
 
@@ -173,3 +181,5 @@ jobs:
         run: python -m unittest tests.test_stoneage_quest20_five_brothers_source -v
       - name: Validate QUEST21 original Liuli source and separately retained 2003 guide
         run: python -m unittest tests.test_stoneage_quest21_liuli_source -v
+      - name: Validate QUEST22 original water-spirit links and three original DAT scene observations
+        run: python -m unittest tests.test_stoneage_quest22_hekisei_source -v
