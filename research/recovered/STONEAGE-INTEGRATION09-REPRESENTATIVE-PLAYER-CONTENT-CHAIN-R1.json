@@ -184,6 +184,74 @@
           482
         ],
         "actually_delivered_in_native_game": false
+      },
+      "Q25_checkpoint_DAT_read_error_boundaries": {
+        "original_24_checkpoint_records": 24,
+        "selected_14_unmatched_floor_index_scope": "INTEGRATION07 known original archive DAT read-error subset; other checkpoints not here certified native renderable",
+        "C": {
+          "route": "C",
+          "source_checkpoint_count": 12,
+          "original_DAT_read_error_checkpoint_count": 2,
+          "records": [
+            {
+              "checkpoint": 2,
+              "floor": 1100,
+              "source_block_sha256": "7fbb5283b63382df2fe14f9a9cc90659b0bea31556ea254f525dc5835cc8673f",
+              "status": "INDEXED_DAT_READ_ERROR"
+            },
+            {
+              "checkpoint": 9,
+              "floor": 1300,
+              "source_block_sha256": "06d3890e457873c2268cec370e705965750f6bd9e7775d55d8a457ada88d06cb",
+              "status": "INDEXED_DAT_READ_ERROR"
+            }
+          ]
+        },
+        "D": {
+          "route": "D",
+          "source_checkpoint_count": 12,
+          "original_DAT_read_error_checkpoint_count": 5,
+          "records": [
+            {
+              "checkpoint": 1,
+              "floor": 100,
+              "source_block_sha256": "deecbb28747ecbc2d9fbd84a2aa49c002e7ce177a76cd1cb84846e0cf815dbaf",
+              "status": "INDEXED_DAT_READ_ERROR"
+            },
+            {
+              "checkpoint": 2,
+              "floor": 100,
+              "source_block_sha256": "7f1835887d2b98d17b86d1f399c27aab65330dd08200462ee28781bf2e91861f",
+              "status": "INDEXED_DAT_READ_ERROR"
+            },
+            {
+              "checkpoint": 5,
+              "floor": 100,
+              "source_block_sha256": "de7ca19755afa4020cb7bdf7fb55444e47d273c73ffb105e185385f7e87ff657",
+              "status": "INDEXED_DAT_READ_ERROR"
+            },
+            {
+              "checkpoint": 7,
+              "floor": 100,
+              "source_block_sha256": "d79a961fe0b9c9252ac586be60225ef9439f0b76ebf7e20f25d707e66baa1495",
+              "status": "INDEXED_DAT_READ_ERROR"
+            },
+            {
+              "checkpoint": 12,
+              "floor": 100,
+              "source_block_sha256": "0bc8d381173546544f42bd87220de4adb3d675c0d8d79c37aa6d81cd23cd5a77",
+              "status": "INDEXED_DAT_READ_ERROR"
+            }
+          ]
+        },
+        "total_failed_DAT_checkpoint_positions": 7,
+        "unique_affected_floor_ids": [
+          100,
+          1100,
+          1300
+        ],
+        "original_DAT_corrupted_proven": false,
+        "actual_native_quest_progression_or_walkability_proven": false
       }
     },
     "floor1300_quest_refs": {

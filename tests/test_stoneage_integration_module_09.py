@@ -95,5 +95,29 @@ class RepresentativeContentChain(unittest.TestCase):
         self.assertEqual(self.r["stage_A"],"7_PARTIAL_2_OPEN")
         self.assertFalse(self.r["verified_static_relationships"]["floor1000_existing_task_nodes"]["INTEGRATION05_existing_GetPet_literate"]["actually_delivered_in_native_game"])
 
+
+    def test_08_24_original_checkpoint_positions_with_known_DAT_read_failures(self):
+        rows=self.r["verified_static_relationships"]["floor1000_existing_task_nodes"]["Q25_checkpoint_DAT_read_error_boundaries"]
+        self.assertEqual(rows["original_24_checkpoint_records"],24)
+        observed={}
+        for label in ("C","D"):
+            source=next(x for x in self.src["q25"]["routes"] if x["label"]==label)
+            failures=[]
+            for cp in source["checkpoints"]:
+                floor=next((x for x in self.src["i07"]["floors"] if x["floor_id"]==cp["source"]["floor"]),None)
+                if floor is not None and floor["source_DAT_status"]=="INDEXED_DAT_READ_ERROR":
+                    failures.append({"checkpoint":cp["number"],"floor":cp["source"]["floor"],
+                                     "source_block_sha256":cp["source"]["block_sha256"],
+                                     "status":floor["source_DAT_status"]})
+            self.assertEqual(rows[label]["records"],failures)
+            self.assertEqual(rows[label]["original_DAT_read_error_checkpoint_count"],len(failures))
+            observed[label]=[(x["checkpoint"],x["floor"]) for x in failures]
+        self.assertEqual(observed["C"],[(2,1100),(9,1300)])
+        self.assertEqual(observed["D"],[(1,100),(2,100),(5,100),(7,100),(12,100)])
+        self.assertEqual(rows["total_failed_DAT_checkpoint_positions"],7)
+        self.assertEqual(rows["unique_affected_floor_ids"],[100,1100,1300])
+        self.assertFalse(rows["original_DAT_corrupted_proven"])
+        self.assertFalse(rows["actual_native_quest_progression_or_walkability_proven"])
+
 if __name__=="__main__":
     unittest.main()
