@@ -57,3 +57,13 @@
 **止点：** 本族的来源就绪静态叙事、原创建/道具/六图索引已恢复，原客户端实际人物与地图互动、脚本选择、道具变化、原版身份、活动属性、官方同部署仍 **OPEN**。Stage A **7 PARTIAL + 2 OPEN**，Stage B/wiki **GATED**，R79 **PAUSED_NON_BLOCKING**，整体复原百分比 **`null`**。不为这份任务补原网游账号、服务器兼容或未来新游戏玩法。
 
 **最高 NEXT：QUEST14-DRAGON-NEST-SOURCE-FAMILY。** 已以真正已保管 CHAR01 ZIP 初步核 `jaruga/event/event17.create` + `event17_1..4` 五原文件、4 条 CREATE、10 个 QUEST01 已有原事件段及 `2457/2458/2459/2460/2461/2462/2505` 七道具源索引；所需 `20801/20807` 两份原 DAT 和已有 MAP09 缩图均存在。下一轮重新从**新远端**核状况与查重，再恢复守护者／三龙奖励的完整原控制、位置与道具，绝不把 3 个可交换奖励推成已经能实战遇龙。若出现新组合 portfolio 更高优先级，以后验为准。
+
+
+## 5. 正式合并与远端独立验收后验
+
+- 候选内容提交 **`e8e6ad4f5392b88fa52b5322471b184206327536`**、候选 tree **`3d399d315a016c5e181e0066635a5bb15e4b04f5`**，六路径公开变动与本地已验来源 Git blob 完全一致；基线 parent **`955a633ea7b036d627ecc8d81b288a9251730deb`**。原 `CURRENT-STATE.md` 的完整 blob **`c89e0e33537990aa2132b47c40fef49a985a935c`** 保持未变。
+- [PR #253](https://github.com/chinaneedM/stoneage-rebuild/pull/253) 已实际合并，主线内容合并 **`619e4a6fd44dbbdb44956d49bc3f322f87187d06`**；其远端 Git tree 与候选**完全相同**，保留旧主线为第一 parent、候选为第二 parent，不改写历史。
+- 候选 **14/14 项 Actions completed/success**：专用 [QUEST05—QUEST13 同步来源核验运行 42441996027](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42441996027) / job **128612986005** 的新步骤 **“Validate QUEST13 original Goa mountain Uli letter and flower source guards”** 已实证 success；其旧 QUEST05/06/06-R2/08–12 等复用任务同为 success。其余候选检查也已实证完成并成功，不把本地 19 项测试冒充 GitHub 原文件执行。
+- 主线 **11/11 项 Actions completed/success**：`42442054026`、`42442053965`、`42442053963`、`42442053914`、`42442053997`、`42442054006`、`42442054025`、`42442054008`、`42442053915`、`42442053934`、`42442054185`。专项 [42442053934](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42442053934) completed/success。以上均为实际查询的后验；**本验收文字追加提交自身的 Actions 尚未在本段预告成功**。
+- 私人存档个人 Library 上传后另独立再次读取同 **219,161B/SHA256 `c6f86d050b22ab6fe3f6e56b8062fc21cbb576ace521a1d7752a12d0845773cd`**，全部 **40** ZIP 成员 CRC 正常。11 原配置、10 原道具物理行、6 DAT 全 SHA 与 10 个三平面原值已另用保存后的数据包独立核同。公开 Git 原商业素材 **0**；所有历史版本与原生运行负证继续保持。
+- **QUEST13 静态资料的来源限定验收为 `ACCEPTED_SOURCE_BOUNDED`，不是原版可玩任务或官方初版复原完成**。下一次从 fresh remote 延续 **QUEST14—龙之巢穴三龙奖励原任务族**，先真实查重与源身份核验；Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING、overall_percent=null 不变。
