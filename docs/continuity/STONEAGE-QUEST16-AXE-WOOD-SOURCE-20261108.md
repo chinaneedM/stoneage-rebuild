@@ -43,3 +43,11 @@
 **公开交付**：派生源报告、可选私人源再读提取器、12 项公共回归、本记录与最小必要连续性指针。CI 不下载私人原资产，只验证旧 QUEST01/ITEM01/MAP09 数值 SHA 和推导一致；远端 Actions 成功与否应另以后验确认，不预支状态。原 CURRENT 全 2,709,173B 历史不改写。
 
 **结论与止点**：`QUEST16=SOURCE_BOUNDED_STATIC`；未证实原脚本原生交易/掉落、14 档实际支付、同年代官方任务，地图 `3000` 源 DAT 和三张已验地图对应原格还未由本轮新读。Stage A **7 PARTIAL + 2 OPEN**，Stage B/wiki **GATED**，R79 **PAUSED_NON_BLOCKING**，`overall_percent=null`。本族已经达到来源就绪专项研究止点，下一最高 **`QUEST17-DEDUP-AND-NEXT-ORIGINAL-SOURCE_FAMILY`**：优先从旧 QUEST01 及已保管原文件中查重后挑另一组确有独立原条件/道具/地图证据的任务族；`3000` 的真正 DAT 或原生执行若有同源输入再单独增量重开，不扩空转工具，也不做单机新作引擎/联网服务器。
+
+## 6. 正式发布、私人保管与 CI 独立后验（2026-11-08）
+
+- 候选 `agent/quest16-axe-wood-source-20261108` 提交 **`9fa2a6b48f6464ee33f03510c4723162f9b93ddd`**，整 tree **`11e4fb95a71eecc6cdbdf444b3a9be63fc124157`**。远端先复核差异恰 **6 路径**：4 新文件（工具、12 专项公共回归、派生 JSON、本文）+ README 指针 + 原 QUEST05—16 工作流追加，无版权原脚本正文、DAT、RD/PNG 或私人 ZIP 入 Git；旧大 CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`/2,709,173B 原样保存。
+- **[PR #256](https://github.com/chinaneedM/stoneage-rebuild/pull/256)** 已 `merged=true`，合并主线提交 **`7020875eba396f5744c05bbb732afcfaf9c9d919`**；独立再读主线 Git tree，恰与已验候选 tree **`11e4fb95a71eecc6cdbdf444b3a9be63fc124157`** 相同。
+- 候选 push+PR **14/14 Actions completed/success**；专项原来源 [push run 42460199322](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42460199322) job `128667648268` 和 [PR run 42460244206](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42460244206) job `128667784595` 的新增步骤 `Validate QUEST16 original axe, water and wood trade source limits` 实际均为 completed/success；QUEST14/15 回归同通过。合并主线 **11/11 Actions completed/success**，含专项 [main run 42460303877](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42460303877)。这证明公开纯数值/旧来源索引验证成功，**不等于 CI 运行商业原客户端/私人资产**。
+- 私人 `StoneAge-QUEST16-axe-wood-original-private.zip` 已写个人 Library，并从新云端文件 ID 独立重新下载，真实全 **32,862B / SHA256 `b71dfd1244871b3d864621db7f7dc7c6822ac8646ceafb71a8670dfd996688e5` / 40成员 / CRC全部通过**；该包实际含 7 原 NPC 字节文件、24 原 itemset 物理行、8 跨来源候选 PNG、1 派生摘要，未进入 Git。保留旧原包全 SHA 与来源限定，不借此宣称早期官方同服。
+- **正式止点 `QUEST16=ACCEPTED_SOURCE_BOUNDED`（历史静态内容层）**。`3000` 原 DAT 同源实物仍待取、原商业 NPC 选支及 14 档实际 GetStone/DelItem 执行仍 OPEN；Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79 暂停、总体百分比 null。下一最高 `QUEST17-DEDUP-AND-NEXT-ORIGINAL-SOURCE_FAMILY`，必须先 fresh remote 重查，不从这次提交 SHA 假定未来仓库状态；本验收补记提交自己的 Actions 也需事后查看，不能提前算成通过。
