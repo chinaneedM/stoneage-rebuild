@@ -33,7 +33,7 @@
 | event09 #0 | `ENDEV=12&ENDEV=10&ENDEV=11` | `GetItem:1357`、`EndSetFlg:9` |
 | event12 #2/#3 | 源条件引用事件41、42及物品2736 | `GetItem:2736`；#3另有 `EndSetFlg:41` 和 `Charm:1` |
 
-另有五个 REQUEST、五个 MESSAGE 段均保存准确位置、条件 SHA。event12 #1的源原条件为 `ENDEV=12&ITEM=2736,ENDEV=42&ITEM=2736,ENDEV=41&ITEM=2736`，原逗号不可直接被理解成已验证的“或”求值。event10/11分别存在 `EndSetFlg:10,12`／`EndSetFlg:11,12` 的**一整条逗号字面**以及不含12的替代分支；它们是否会分别设置多个旗标、按何优先级匹配、能否反复获奖均 **OPEN**。event12 对41/42的引用与 QUEST22 先前所载的42门槛可以作为**数字旗标来源交叉线索**，但不是同任务顺序或所有玩家实际可达的证明。`Charm:1` 原字面不能擅自定成实际效果。
+另有五个 REQUEST、五个 MESSAGE 段均保存准确位置、条件 SHA。event12 #1的源原条件为 `ENDEV=12&ITEM=2736,ENDEV=42&ITEM=2736,ENDEV=41&ITEM=2736`，原逗号不可直接被理解成已验证的“或”求值。event10/11分别存在 `EndSetFlg:10,12`／`EndSetFlg:11,12` 的**一整条逗号字面**以及不含12的替代分支；它们是否会分别设置多个旗标、按何优先级匹配、能否反复获奖均 **OPEN**。**新查到一个旧目录投影缺口：** QUEST01 公开 `end_set_flags` 只收纯整数字面，整个旧索引中旗标12的正规化记录为0，但原脚本实际有上述两条 `10,12`／`11,12`。这个0不是源文件没有12，更不能因而否定该任务联接。本批把两条完整原字面与旧归一化0并列保存，**不**修旧历史、拆成已证明运行的两个旗标事务。event12 对41/42的引用与 QUEST22 先前所载的42门槛可以作为**数字旗标来源交叉线索**，但不是同任务顺序或所有玩家实际可达的证明。`Charm:1` 原字面不能擅自定成实际效果。
 
 ## 4. 物品与原图来源分开
 
@@ -43,9 +43,9 @@
 
 私人 `StoneAge-CHAR01-mixed25-all-npc-original-private.zip` **995,176B／SHA256 `c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f`** 及 `StoneAge-ITEM01-private-two-itemsets-832-original-RD-icon-observer.zip` **5,868,386B／SHA256 `cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa`** 本轮均全 ZIP SHA 重读，2,205 NPC 文件逐全文大小/SHA/CRC同CHAR01；物品 ZIP 838成员CRC，所选6原脚本/模板完整SHA与原目录、18个事件段规范 SHA 100%一致。未重新读取361MB父RAR，不重述为初版客户端启动。
 
-`StoneAge-QUEST31-four-village-original-private.zip` 已存个人 Library 并二次回读整包：**27,453 B／SHA256 `adc7dd83225e6b5719ce2ed0e1ecdef480f35b2a792886f586bf1241eca91e33`／26成员／CRC全通过**，包含6份NPC原文件、12份原物品行、6幅跨载体候选PNG、一份报告及一份私有离线原文查阅HTML。公开Git**不存**商业对白、原脚本全文、原物品行、原DAT、原图PNG或HTML。私人HTML浏览器执行／原NPC实际游戏交互均未声称验收。
+`StoneAge-QUEST31-four-village-original-private.zip` 已存个人 Library 并二次回读整包：**27,565 B／SHA256 `796682fd3621a2bfecab03e7e199ca16936f95cad75f6a7842e6517f1e04dd42`／26成员／CRC全通过**，包含6份NPC原文件、12份原物品行、6幅跨载体候选PNG、一份报告及一份私有离线原文查阅HTML。公开Git**不存**商业对白、原脚本全文、原物品行、原DAT、原图PNG或HTML。私人HTML浏览器执行／原NPC实际游戏交互均未声称验收。
 
-公开只提交[源数值、SHA与证据边界](../../research/recovered/STONEAGE-QUEST31-FOUR-VILLAGE-EVENT09-12-SOURCE-R1.json)、可选私人再提取工具、12项派生回归、最小专项工作流和连续性指针；该专项CI只能验证旧目录/派生数值，**不能**验证私人原像素／原商业游戏。最初独立脚本启动用直接Python路径遇到`ModuleNotFoundError`，随后改以正确`python -m`运行；源输入未改、12/12单测成功，修正过程如实保留。
+公开只提交[源数值、SHA与证据边界](../../research/recovered/STONEAGE-QUEST31-FOUR-VILLAGE-EVENT09-12-SOURCE-R1.json)、可选私人再提取工具、13项派生回归、最小专项工作流和连续性指针；该专项CI只能验证旧目录/派生数值，**不能**验证私人原像素／原商业游戏。最初独立脚本启动用直接Python路径遇到`ModuleNotFoundError`，随后改以正确`python -m`运行；源输入未改、13/13单测成功，修正过程如实保留。
 
 ## 6. 止点、模块转换和下一优先级
 

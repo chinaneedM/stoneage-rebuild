@@ -109,6 +109,10 @@ def derive(npc_path:Path,item_path:Path,quest01:Path,char01:Path,item_dir:Path):
         assert a[SCRIPTS[3]][1]['condition_literal']=='ENDEV=12&ITEM=2736,ENDEV=42&ITEM=2736,ENDEV=41&ITEM=2736'
         assert a[SCRIPTS[3]][2]['condition_literal']=='ENDEV=41&ITEM!=2736&ENDEV=4&NOWEV=42'
         assert a[SCRIPTS[3]][3]['condition_literal']=='LV>0&NOWEV=41&ENDEV=4&NOWEV=42'
+        # Old QUEST01 integer-only EndSetFlg projection drops both compound ',12' source values.
+        assert not any(12 in e['end_set_flags'] for e in q['source_event_blocks'])
+        assert not q['source_event_blocks'][next(i for i,v in enumerate(q['source_event_blocks'])
+            if v['script_path']==SCRIPTS[1] and v['script_block_ordinal']==0)]['end_set_flags']
     # Review all 14 prefixes, but don't turn them into claims of specialist coverage.
     directories=Counter('/'.join(s['path'].split('/')[:-1]) for s in q['source_scripts'])
     assert len(directories)==14 and sum(directories.values())==295
@@ -166,7 +170,12 @@ def derive(npc_path:Path,item_path:Path,quest01:Path,char01:Path,item_dir:Path):
         source_module_census=dict(prior_QUEST01_script_count=295,prior_QUEST01_TYPE_count=1349,
             prior_QUEST01_directories=dict(sorted(directories.items())),
             selected_original_scripts_already_in_QUEST01=4,selected_original_TYPE_already_in_QUEST01=18,
-            newly_discovered_original_scripts=0,newly_discovered_original_TYPE=0),
+            newly_discovered_original_scripts=0,newly_discovered_original_TYPE=0,
+            legacy_QUEST01_integer_EndSetFlg_flag12_matches=0,
+            source_compound_EndSetFlg_with_flag12=[
+                dict(script=SCRIPTS[1],event_ordinal=0,exact_line='10,12'),
+                dict(script=SCRIPTS[2],event_ordinal=0,exact_line='11,12')],
+            legacy_flag12_absence_not_source_absence=True),
         original_files=[info(p,private['original-npc/'+p]) for p in (CREATE,*SCRIPTS,TEMPLATE)],
         source_create_records=create_rows,
         source_scripts=scripts,

@@ -123,7 +123,15 @@ class Quest31SourceTests(unittest.TestCase):
         self.assertEqual(self.r['distinct_cross_carrier_image_aliases'],6)
         self.assertFalse(self.r['source_constraints']['cross_carrier_TW1_art_is_original_mixed25_quest_UI'])
 
-    def test_12_evidence_boundaries_and_next_module_stop(self):
+    def test_12_legacy_integer_index_misses_compound_flag12(self):
+        c=self.r['source_module_census']
+        self.assertEqual(c['legacy_QUEST01_integer_EndSetFlg_flag12_matches'],0)
+        self.assertFalse(any(12 in x['end_set_flags'] for x in self.q['source_event_blocks']))
+        self.assertEqual([(x['script'],x['event_ordinal'],x['exact_line']) for x in c['source_compound_EndSetFlg_with_flag12']],
+            [('sainasu/event/event10',0,'10,12'),('sainasu/event/event11',0,'11,12')])
+        self.assertTrue(c['legacy_flag12_absence_not_source_absence'])
+
+    def test_13_evidence_boundaries_and_next_module_stop(self):
         b=self.r['source_constraints']
         for k in ('original_client_or_server_running','early_official_same_deployment_proven',
                   'native_NPC_or_scene_rendered','geographic_island_or_village_hierarchy_authenticated'):
