@@ -1,0 +1,293 @@
+{
+  "schema": "stoneage.integration09.representative_player_content_chain_source_boundary.r1",
+  "date": "2026-11-08",
+  "initial_remote": {
+    "head": "a5950c17296fee3c421f44124b7c742c5ecd4468",
+    "tree": "37fb4dbc49dda2b276fe09a4943503b1ab13ffaf",
+    "preserved_CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "provenance": "SOURCE_DERIVED_ONLY_LATER_PRESERVED_MIXED25_ARCHIVE; NOT_EARLY_OFFICIAL_DEPLOYMENT_OR_NATIVE_PLAY",
+  "parent_original_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "source_pins": {
+    "s22": {
+      "path": "research/recovered/STONEAGE-SCENE22-NPC-ARGUMENT-R1.json",
+      "git_blob_sha": "4683e55fd5bd3558e40562aa70e6520c6183f45e"
+    },
+    "q26": {
+      "path": "research/recovered/STONEAGE-QUEST26-SHELL-FLOWER-FLAG2-SOURCE-R1.json",
+      "git_blob_sha": "c106547ab9228c9505d84f69d8198743a6c2c17c"
+    },
+    "i08": {
+      "path": "research/recovered/STONEAGE-INTEGRATION08-FLOOR1000-19-CREATE-ORIGINAL-SOURCE-R1.json",
+      "git_blob_sha": "0bc7ee630ae1a8becb1df15c49916876b5809be3"
+    },
+    "s15": {
+      "path": "research/recovered/STONEAGE-SCENE15-DOORWAY-SOURCE-R1.json",
+      "git_blob_sha": "bcc3af28d00847f4584236c779cc7eaf03ca7ee1"
+    },
+    "q25": {
+      "path": "research/recovered/STONEAGE-QUEST25-FOUR-ISLAND-TOUR-ROUTES-SOURCE-R1.json",
+      "git_blob_sha": "a52b4e5519912ac7e46e1f892cc01515861cf2e8"
+    },
+    "i06": {
+      "path": "research/recovered/STONEAGE-INTEGRATION06-MAP1300-MAP-DAT-SIX-CREATE-SOURCE-R1.json",
+      "git_blob_sha": "5e1f49922731e55070cc6e43fbadf29a3609adeb"
+    },
+    "i07": {
+      "path": "research/recovered/STONEAGE-INTEGRATION07-FOURTEEN-UNMATCHED-DAT-QUALIFICATION-R1.json",
+      "git_blob_sha": "d756b20c7ee1fe6d10ad2c6800739108daab0520"
+    }
+  },
+  "map_evidence": {
+    "indoor_1001": {
+      "floor": 1001,
+      "DAT_sha256": "62dbef1614ede0ba032ca9c69cbfdc3d43938e45baba78701885790937b86b90",
+      "dimensions": [
+        30,
+        30
+      ]
+    },
+    "outdoor_1000": {
+      "floor": 1000,
+      "DAT_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+      "dimensions": [
+        160,
+        160
+      ],
+      "source_Q05_CREATE_subcohort_count": 19
+    },
+    "blocked_1300": {
+      "floor": 1300,
+      "MAP_rows": 2,
+      "verified_DAT": false,
+      "source_CREATE_count": 6,
+      "known_DAT_read_failure": "File CRC error",
+      "source_i07_status": "INDEXED_DAT_READ_ERROR"
+    }
+  },
+  "verified_static_relationships": {
+    "preserved_warp_pair": {
+      "forward": {
+        "floor": 1001,
+        "xy": [
+          10,
+          15
+        ],
+        "original_block_sha256": "d35da32a65e7794acf619c4c959c81dcefc0a433c7d78a0c838b9d0c278c3085",
+        "destination_floor": 1000,
+        "destination_xy": [
+          63,
+          99
+        ]
+      },
+      "reverse": {
+        "floor": 1000,
+        "xy": [
+          63,
+          99
+        ],
+        "original_block_sha256": "d0b4f955cc6afe909579a3bdb555f549a5fc00e23f5e3555d6041f2dd2028f79",
+        "destination_floor": 1001,
+        "destination_xy": [
+          10,
+          15
+        ]
+      },
+      "origin": "SCENE15 source warp_y.create blocks; not QUEST05's 19 special CREATE subset",
+      "native_traversal_proven": false
+    },
+    "nearby_townperson": {
+      "floor": 1000,
+      "xy": [
+        63,
+        103
+      ],
+      "graphic_alias": 16048,
+      "functionset": "TownPeople",
+      "source_block_sha256": "bbc86e2ab64fa20e8f6702ee11e97c9ff659041c62fcf257bb8d16b2f06a4ce7",
+      "exact_message_sha256": "d1138b040fb31d0dc85cfdf4917f1c92facc67323c3a12544a8487039d0492ca",
+      "source_message_length_bytes": 143,
+      "source_text_semantic_scope": "one original preserved newcomer information/shop-command hint; no transaction",
+      "coordinate_difference_from_outdoor_warp_landing": [
+        0,
+        4
+      ],
+      "in_Q05_19_CREATE_subset": false,
+      "native_dialogue_or_movement_proven": false
+    },
+    "floor1000_existing_task_nodes": {
+      "Q25_C": {
+        "registration_floor": 1000,
+        "registration_xy": [
+          33,
+          56
+        ],
+        "registration_script": "sainasu/event/oev_0cd",
+        "finish_floor": 1000,
+        "finish_xy": [
+          108,
+          28
+        ],
+        "finish_script": "sainasu/event/oev_edc",
+        "original_checkpoint_source_count": 12,
+        "native_quest_completion_proven": false
+      },
+      "Q25_D": {
+        "registration_floor": 1000,
+        "registration_xy": [
+          33,
+          56
+        ],
+        "registration_script": "sainasu/event/oev_0cd",
+        "finish_floor": 2000,
+        "finish_xy": [
+          88,
+          116
+        ],
+        "finish_script": "sainasu/event/oev_edd",
+        "original_checkpoint_source_count": 12,
+        "native_quest_completion_proven": false
+      },
+      "Q26_exchange_pair": {
+        "floor1000": {
+          "floor": 1000,
+          "xy": [
+            57,
+            124
+          ],
+          "script": "sainasu/event/event02_2",
+          "block_sha256": "7fc4ff24630eb7793095dac6f04dbcd1766906afc57b315ca819cf5709f77f9b"
+        },
+        "floor2000": {
+          "floor": 2000,
+          "xy": [
+            55,
+            92
+          ],
+          "script": "sainasu/event/event02_1",
+          "block_sha256": "8209ad41ca56f33d01416c5fb32cab5159f89e12646fa3a32b92164bd1c32b24"
+        },
+        "original_flag2_control_rows": 4,
+        "flag2_runtime_meaning_verified": false
+      },
+      "INTEGRATION05_existing_GetPet_literate": {
+        "script": "sainasu/event/oev_edc",
+        "floor": 1000,
+        "xy": [
+          108,
+          28
+        ],
+        "original_numeric_tokens": [
+          48,
+          94,
+          350,
+          482
+        ],
+        "actually_delivered_in_native_game": false
+      },
+      "Q25_checkpoint_DAT_read_error_boundaries": {
+        "original_24_checkpoint_records": 24,
+        "selected_14_unmatched_floor_index_scope": "INTEGRATION07 known original archive DAT read-error subset; other checkpoints not here certified native renderable",
+        "C": {
+          "route": "C",
+          "source_checkpoint_count": 12,
+          "original_DAT_read_error_checkpoint_count": 2,
+          "records": [
+            {
+              "checkpoint": 2,
+              "floor": 1100,
+              "source_block_sha256": "7fbb5283b63382df2fe14f9a9cc90659b0bea31556ea254f525dc5835cc8673f",
+              "status": "INDEXED_DAT_READ_ERROR"
+            },
+            {
+              "checkpoint": 9,
+              "floor": 1300,
+              "source_block_sha256": "06d3890e457873c2268cec370e705965750f6bd9e7775d55d8a457ada88d06cb",
+              "status": "INDEXED_DAT_READ_ERROR"
+            }
+          ]
+        },
+        "D": {
+          "route": "D",
+          "source_checkpoint_count": 12,
+          "original_DAT_read_error_checkpoint_count": 5,
+          "records": [
+            {
+              "checkpoint": 1,
+              "floor": 100,
+              "source_block_sha256": "deecbb28747ecbc2d9fbd84a2aa49c002e7ce177a76cd1cb84846e0cf815dbaf",
+              "status": "INDEXED_DAT_READ_ERROR"
+            },
+            {
+              "checkpoint": 2,
+              "floor": 100,
+              "source_block_sha256": "7f1835887d2b98d17b86d1f399c27aab65330dd08200462ee28781bf2e91861f",
+              "status": "INDEXED_DAT_READ_ERROR"
+            },
+            {
+              "checkpoint": 5,
+              "floor": 100,
+              "source_block_sha256": "de7ca19755afa4020cb7bdf7fb55444e47d273c73ffb105e185385f7e87ff657",
+              "status": "INDEXED_DAT_READ_ERROR"
+            },
+            {
+              "checkpoint": 7,
+              "floor": 100,
+              "source_block_sha256": "d79a961fe0b9c9252ac586be60225ef9439f0b76ebf7e20f25d707e66baa1495",
+              "status": "INDEXED_DAT_READ_ERROR"
+            },
+            {
+              "checkpoint": 12,
+              "floor": 100,
+              "source_block_sha256": "0bc8d381173546544f42bd87220de4adb3d675c0d8d79c37aa6d81cd23cd5a77",
+              "status": "INDEXED_DAT_READ_ERROR"
+            }
+          ]
+        },
+        "total_failed_DAT_checkpoint_positions": 7,
+        "unique_affected_floor_ids": [
+          100,
+          1100,
+          1300
+        ],
+        "original_DAT_corrupted_proven": false,
+        "actual_native_quest_progression_or_walkability_proven": false
+      }
+    },
+    "floor1300_quest_refs": {
+      "source_CREATE_count": 6,
+      "distinct_specialty_reports": [
+        "QUEST03_PRIOR",
+        "QUEST19",
+        "QUEST25",
+        "QUEST27",
+        "QUEST31"
+      ],
+      "original_DAT_loaded": false,
+      "can_infer_traversable_original_route": false
+    }
+  },
+  "source_coverage": {
+    "Q05_floor1000_19_rows_include_SCENE22_townperson": false,
+    "original_source_NPC_config_is_not_population": true,
+    "full_1000_DAT_and_1001_DAT_verified_from_preserved_source": true,
+    "original_1300_MAP_presence_does_not_imply_DAT_success": true,
+    "floor1000_task_coordinates_do_not_prove_path_connectivity": true
+  },
+  "missing_for_native_play": {
+    "original_client_movement_collision_trigger_and_warp_execution": false,
+    "NPC_actual_spawn_dialogue_shop_native_effect": false,
+    "task_flags_item_exchange_and_completion_native_replay": false,
+    "source_ready_1300_original_DAT": false,
+    "authenticated_original_TW10_JSS1999_CN182_same_deployment": false,
+    "full_original_world_route_and_player_gameplay": false
+  },
+  "stop_and_reopen": "Retain a static source content graph, not a playable quest walkthrough. Reopen 1300 only with CRC/SHA-qualified complete DAT bytes. Promote game behavior only after bounded exact-version native execution or equally direct original-runtime evidence; do not build MMO infrastructure to simulate proof.",
+  "status": "SOURCE_BOUNDED_PARTIAL",
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "REVIEW_NEXT_SOURCE_READY_PLAYABLE_CONTENT_GAP_WITH_DISTINCT_ORIGINAL_BYTES; NO_SPECULATIVE_MOVEMENT_OR_DUPLICATE_PATH_HELPER"
+}

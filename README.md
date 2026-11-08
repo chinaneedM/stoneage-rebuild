@@ -2225,3 +2225,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-08 — INTEGRATION08｜源地图1000和19配置原内容严格联接
 
 [INTEGRATION08 同源160×160原DAT与19个NPC/任务创建块](docs/continuity/STONEAGE-INTEGRATION08-FLOOR1000-NPC-SOURCE-20261108.md)：把MAP02独立已核1000.DAT 153608B/SHA94b19cb…，与QUEST05/CHAR01同混合2.5保存来源的19创建配置逐原路径+序号+适当SHA作用域严谨连接：7条changeevent、2条warp、10条timeman，17个有`borncorner`原四整数（且在尺寸界内）、1条仅`borncenter`、1条无两字段；18个不同图别名不是18个NPC。连通QUEST25三条环岛/检查站配置、QUEST26一条贝壳/花交换及INTEGRATION05原GetPet命令（非已获宠物）；TW1原RD 26310/26324只是跨载体数字候选、14次未命中。本轮没有重新解商业原文件、没有本地原游戏NPC运行、没有官方同服证明。公开[可核19行](research/recovered/STONEAGE-INTEGRATION08-FLOOR1000-19-CREATE-ORIGINAL-SOURCE-R1.json)和9项来源测试；历史CURRENT原blob完整保留，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停，percent未知。最高NEXT Stage A代表性玩家路径可证/缺口联合审查。
+
+
+## 2026-11-08 — INTEGRATION09｜有据玩家内容链与原生可玩缺口
+
+[INTEGRATION09 1001⇄1000双向传送原块、邻近NPC及任务/宠物关系的来源审查](docs/continuity/STONEAGE-INTEGRATION09-REPRESENTATIVE-PLAYER-CONTENT-CHAIN-20261108.md)：复用同一受限mixed25存档和此前已出版SCENE15/22、INTEGRATION08、QUEST25/26、INTEGRATION06/07派生原证，1001(10,15)↔1000(63,99)源传送关系、1000(63,103)村民原提示输入（仅坐标差0,+4）及1000上C/D环岛/2414-2415交换/原GetPet字面组成**静态原始内容网络**；不能称实际可走、触发、通关或宠物领取。特别核出SCENE22村民不属于INTEGRATION08的19条QUEST05特殊CREATE样本，不以19算总人口。1300有原MAP和6条CREATE但DAT仍为原CRC读错。公开[逐来源SHA索引](research/recovered/STONEAGE-INTEGRATION09-REPRESENTATIVE-PLAYER-CONTENT-CHAIN-R1.json)与8项静态反例测试；其中原C线第2/9站floor1100/1300、D线5站floor100共7个检查站DAT源成员读取失败，不能据此断言原路线可行或文件不存在；CURRENT `c89e0e33537990aa2132b47c40fef49a985a935c` 全历史不动、原资产不入Git。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null。NEXT选择有**新合格原实物及真实玩家内容增量**的跨域缺口，不延伸虚构步行路线或网服。
