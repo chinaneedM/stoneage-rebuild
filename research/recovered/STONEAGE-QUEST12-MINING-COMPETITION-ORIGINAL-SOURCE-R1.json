@@ -1,0 +1,1512 @@
+{
+  "schema": "stoneage.quest12.mining_competition_original_source.r1",
+  "date": "2026-11-08",
+  "origin_class": "ORIGIN_UNRESOLVED",
+  "carrier": "LATER_COMMUNITY_MIXED25_NOT_OFFICIAL_DEPLOYMENT",
+  "verified_original_NPC_members": 2205,
+  "source_archive_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+  "private_item_archive_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+  "private_map_archive_sha256": "d84d0800dd600798769dfb7251a1d7816588ac061ccc27812ac64a37922d4a8a",
+  "parent_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "prior_manifest_git_blob_sha1": "a088b61a3212f7049e7793f587123ffb29bebad7",
+  "source_files": [
+    {
+      "path": "300/sb_bac.arg",
+      "bytes": 229,
+      "sha256": "93b2893ee9cf5b0229072a9283f8fbb703004cbc2ec3829fb35af71ebdf1bc30",
+      "crc32": "785db130"
+    },
+    {
+      "path": "300/sb_bac.create",
+      "bytes": 190,
+      "sha256": "3bd43fdb15482cbde4896ded79c5382b777f8e74fe0c0637b97bfa0034613388",
+      "crc32": "a067777a"
+    },
+    {
+      "path": "300/sb_bac.template",
+      "bytes": 157,
+      "sha256": "5904144d30d3e7f80d5949c87c3b02cd2486ea25a67b71711793487adbef524f",
+      "crc32": "06780cb4"
+    },
+    {
+      "path": "genout/giruev2.create",
+      "bytes": 3800,
+      "sha256": "81fc814f717e59e6e7ed055a44ed0a4a35c3cb05699bccdcd9834abcc5114bf1",
+      "crc32": "f33e02e3"
+    },
+    {
+      "path": "genout/wpm_31805_22_4",
+      "bytes": 171,
+      "sha256": "0a753a92c176602d3d93ba8042d5b0c59a97dbdc93785cd8de3d6326be15044d",
+      "crc32": "b5efa901"
+    },
+    {
+      "path": "giiru/event/giruev2.create",
+      "bytes": 593,
+      "sha256": "c04975eb9d46cb328df5d4bee99a235547fae10010d28de95ae1557b21037ace",
+      "crc32": "d59fbdd2"
+    },
+    {
+      "path": "giiru/event/giruev2_1",
+      "bytes": 2420,
+      "sha256": "e18cbf24d2f067bdcf6d797756e14c4b24d11f19b9698b5fc75e0f9405a86557",
+      "crc32": "33d488f8"
+    },
+    {
+      "path": "giiru/event/giruev2_2",
+      "bytes": 1626,
+      "sha256": "1e476a4d62e216fd891c527e1564dd70ad4e846f11c54a308f6f04381daf746f",
+      "crc32": "67f285f9"
+    },
+    {
+      "path": "jaruga/event/event.template",
+      "bytes": 122,
+      "sha256": "9c11ac0cbbd9b110e8ff7d0115730044673bf29c5df6d23034e56530c181d0b2",
+      "crc32": "a70fc73f"
+    }
+  ],
+  "principal_creates": [
+    {
+      "path": "giiru/event/giruev2.create",
+      "ordinal": 0,
+      "block_sha256": "7c0baea30371e316a9470396771c398ddd95850c63a13a540d6cba71b8d2f59e",
+      "start_byte": 127,
+      "end_byte": 287,
+      "floor": 31805,
+      "graphic_alias": 16062,
+      "borncorner": [
+        19,
+        21,
+        19,
+        21
+      ],
+      "borncenter": null,
+      "direction": 4,
+      "template_token": "changeevent",
+      "template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "parameter_references": [
+        [
+          "giiru/event/giruev2_1",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "e18cbf24d2f067bdcf6d797756e14c4b24d11f19b9698b5fc75e0f9405a86557"
+        ]
+      ]
+    },
+    {
+      "path": "giiru/event/giruev2.create",
+      "ordinal": 1,
+      "block_sha256": "de3b2f7b026b3422757391b96657c24123f3d71f5d03023ff8ffb47c67030a4b",
+      "start_byte": 359,
+      "end_byte": 519,
+      "floor": 31805,
+      "graphic_alias": 16017,
+      "borncorner": [
+        33,
+        23,
+        33,
+        23
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "changeevent",
+      "template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "parameter_references": [
+        [
+          "giiru/event/giruev2_2",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "1e476a4d62e216fd891c527e1564dd70ad4e846f11c54a308f6f04381daf746f"
+        ]
+      ]
+    }
+  ],
+  "miner_create": [
+    {
+      "path": "300/sb_bac.create",
+      "ordinal": 0,
+      "block_sha256": "a9131ce63efe1ddd3d71010f27588dbba0c471ad3c623aae42d6925706a04fe7",
+      "start_byte": 40,
+      "end_byte": 190,
+      "floor": 31805,
+      "graphic_alias": 100401,
+      "borncorner": null,
+      "borncenter": [
+        26,
+        23,
+        1,
+        1
+      ],
+      "direction": 6,
+      "template_token": "sb_bac",
+      "template_bindings": [
+        [
+          "300/sb_bac.template",
+          0
+        ]
+      ],
+      "parameter_references": [
+        [
+          "300/sb_bac.arg",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "93b2893ee9cf5b0229072a9283f8fbb703004cbc2ec3829fb35af71ebdf1bc30"
+        ]
+      ]
+    }
+  ],
+  "generated_support_creates": [
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 0,
+      "block_sha256": "c286eed867627b7a5ed8b89c0f6cb2e4a8ed7bd66bcf8e275cfee30690a5d09c",
+      "start_byte": 116,
+      "end_byte": 283,
+      "floor": 31805,
+      "graphic_alias": 16016,
+      "borncorner": [
+        18,
+        20,
+        18,
+        20
+      ],
+      "borncenter": null,
+      "direction": 4,
+      "template_token": "npcgen_man",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/msg_31805_18_20",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "fc188688ee1d0bf169e83c1b4430d561f480fe04db4ff92fc8bb2e1a91956aaf"
+        ]
+      ]
+    },
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 1,
+      "block_sha256": "4e41d63f538424dfb775e01f90539cf3583c67030a0f100c4ae493589b8be16c",
+      "start_byte": 291,
+      "end_byte": 458,
+      "floor": 31805,
+      "graphic_alias": 16019,
+      "borncorner": [
+        16,
+        19,
+        16,
+        19
+      ],
+      "borncenter": null,
+      "direction": 4,
+      "template_token": "npcgen_man",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/msg_31805_16_19",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "b54cf02a9dafe44a3786fad1c4af1588ce229ea32a138b8f9daa68266977d75b"
+        ]
+      ]
+    },
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 2,
+      "block_sha256": "10ccc2b4dafe741753e1cde55d743f24d944b1f294b8628b1ce7c29916b74133",
+      "start_byte": 467,
+      "end_byte": 634,
+      "floor": 31805,
+      "graphic_alias": 16047,
+      "borncorner": [
+        17,
+        16,
+        17,
+        16
+      ],
+      "borncenter": null,
+      "direction": 4,
+      "template_token": "npcgen_man",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/msg_31805_17_16",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "e3bee102851ffc9437cecc9364272b0a3cdcc46f05cdcd2d370022cd1ea7d258"
+        ]
+      ]
+    },
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 3,
+      "block_sha256": "f1524c897af46e8e406f276315cc1adb9824d317eca94e2bb60c1eec08fbdd1a",
+      "start_byte": 643,
+      "end_byte": 810,
+      "floor": 31805,
+      "graphic_alias": 16207,
+      "borncorner": [
+        14,
+        17,
+        14,
+        17
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "npcgen_man",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/msg_31805_14_17",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "46c8c8bad42cfdea7af7276bf1d329e4abfdf3553380762351254500b50999fc"
+        ]
+      ]
+    },
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 4,
+      "block_sha256": "88a979ee175b2bcbf58cc151be70f01d5b4f4e3765d0101eca1568c41f5f0c61",
+      "start_byte": 819,
+      "end_byte": 986,
+      "floor": 31805,
+      "graphic_alias": 16208,
+      "borncorner": [
+        14,
+        20,
+        14,
+        20
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "npcgen_man",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/msg_31805_14_20",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "21594c7d1acfe065137318e71c70c3c2b23e0247885c3f512e4055c52e78f370"
+        ]
+      ]
+    },
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 5,
+      "block_sha256": "45787bd02fc9f0b3246263ea379f48a2cfd0778f1a1d1509066b992a4f9e1593",
+      "start_byte": 995,
+      "end_byte": 1162,
+      "floor": 31805,
+      "graphic_alias": 16048,
+      "borncorner": [
+        21,
+        34,
+        21,
+        34
+      ],
+      "borncenter": null,
+      "direction": 4,
+      "template_token": "npcgen_man",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/msg_31805_21_34",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "30f4accced9abdbf2262ff9a4ff3891c194b9805e3c0fed8a0005a739e5c4b24"
+        ]
+      ]
+    },
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 6,
+      "block_sha256": "7056b702bda54d6c5455ba659df8c743648b8ee62368cdfd0d59b4574212b024",
+      "start_byte": 1171,
+      "end_byte": 1338,
+      "floor": 31805,
+      "graphic_alias": 16049,
+      "borncorner": [
+        17,
+        35,
+        17,
+        35
+      ],
+      "borncenter": null,
+      "direction": 4,
+      "template_token": "npcgen_man",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/msg_31805_17_35",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "f8dde6796aaa3507940714284c052b75f0b70449f1655bf12aa0b65e4fb32640"
+        ]
+      ]
+    },
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 7,
+      "block_sha256": "19271dc450a629e12fd2ca672cd7e01ce066faa62c3417479408919fc2219a26",
+      "start_byte": 1347,
+      "end_byte": 1514,
+      "floor": 31805,
+      "graphic_alias": 16055,
+      "borncorner": [
+        19,
+        28,
+        19,
+        28
+      ],
+      "borncenter": null,
+      "direction": 4,
+      "template_token": "npcgen_man",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/msg_31805_19_28",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "b2d6cd57a6dcd80bc4d706fa87ab5a6d348d007f370728709c568019c651f0e8"
+        ]
+      ]
+    },
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 8,
+      "block_sha256": "f14938c5963cfe19b9300927ef3e1c47f3e1df4529e9513217c35f1dad0a73c6",
+      "start_byte": 1523,
+      "end_byte": 1690,
+      "floor": 31805,
+      "graphic_alias": 16202,
+      "borncorner": [
+        22,
+        29,
+        22,
+        29
+      ],
+      "borncenter": null,
+      "direction": 4,
+      "template_token": "npcgen_man",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/msg_31805_22_29",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "fab86f3956d63ae162f8bcf81f9e336cb99b9379606dad820217e3d1b9434201"
+        ]
+      ]
+    },
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 9,
+      "block_sha256": "67d9fce36b74c128b30ea6a60a8a8e0cb7a07ddfa9c3b21820ae58b77ced4239",
+      "start_byte": 1699,
+      "end_byte": 1866,
+      "floor": 31805,
+      "graphic_alias": 16203,
+      "borncorner": [
+        23,
+        13,
+        23,
+        13
+      ],
+      "borncenter": null,
+      "direction": 4,
+      "template_token": "npcgen_man",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/msg_31805_23_13",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "9b1c6afaf8e02e73504bdcbed785a504a7bc06a162086c68208a2ed013cd5d44"
+        ]
+      ]
+    },
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 10,
+      "block_sha256": "2d67bc84c410bfb32b71d6cc6fdded47d9282a676455e1809a6ab637d659f6e4",
+      "start_byte": 1875,
+      "end_byte": 2042,
+      "floor": 31805,
+      "graphic_alias": 16018,
+      "borncorner": [
+        31,
+        14,
+        31,
+        14
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "npcgen_man",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/msg_31805_31_14",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "e6a26adcfad22cc71449560a03647b66f3ecff735a70644499515249f9c2f76c"
+        ]
+      ]
+    },
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 11,
+      "block_sha256": "ec1f017f341b7fc0ce26b00067c46bd56abac74aa3619473e9c02c2f49476ddf",
+      "start_byte": 2051,
+      "end_byte": 2218,
+      "floor": 31805,
+      "graphic_alias": 16041,
+      "borncorner": [
+        35,
+        16,
+        35,
+        16
+      ],
+      "borncenter": null,
+      "direction": 5,
+      "template_token": "npcgen_man",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/msg_31805_35_16",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "fe4a4b1f3b103229d9c0765c47a2d0019ab0b8e27a5cd89e1b4a23dd39d63f0c"
+        ]
+      ]
+    },
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 12,
+      "block_sha256": "02bb82794b068d85fabe2608fb851d64cd17b1d619937a3f7593ed162df56b40",
+      "start_byte": 2227,
+      "end_byte": 2394,
+      "floor": 31805,
+      "graphic_alias": 16042,
+      "borncorner": [
+        30,
+        10,
+        30,
+        10
+      ],
+      "borncenter": null,
+      "direction": 5,
+      "template_token": "npcgen_man",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/msg_31805_30_10",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "7beb760c834a1982d7c9772787f19f7f1abf16c252b1649a588064fb8f3ad02b"
+        ]
+      ]
+    },
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 13,
+      "block_sha256": "2f26a3036edbdbe37f381fcc22f84150bfc77d67b2798b61ff19c58f8bcc0aa4",
+      "start_byte": 2403,
+      "end_byte": 2570,
+      "floor": 31805,
+      "graphic_alias": 16043,
+      "borncorner": [
+        40,
+        18,
+        40,
+        18
+      ],
+      "borncenter": null,
+      "direction": 5,
+      "template_token": "npcgen_man",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/msg_31805_40_18",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "3acc7dbf5041d9820707657a5246e236a535908f6e7a4bc4cdbd176eb819ae71"
+        ]
+      ]
+    },
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 14,
+      "block_sha256": "80138a72abce27efcab194b1788ba5b0d51d2d87ac7ebf772bb9eb9a731e834d",
+      "start_byte": 2579,
+      "end_byte": 2746,
+      "floor": 31805,
+      "graphic_alias": 16046,
+      "borncorner": [
+        40,
+        24,
+        40,
+        24
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "npcgen_man",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/msg_31805_40_24",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "ea22661a413b6966f408f959f98405fbc47ed574be2817ff7f3058f129e06851"
+        ]
+      ]
+    },
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 15,
+      "block_sha256": "1444aa62a2465ec769f16726c95c16c2cc718f67b3cc24e64afa1fe16f9e3476",
+      "start_byte": 2755,
+      "end_byte": 2922,
+      "floor": 31805,
+      "graphic_alias": 16044,
+      "borncorner": [
+        35,
+        28,
+        35,
+        28
+      ],
+      "borncenter": null,
+      "direction": 5,
+      "template_token": "npcgen_man",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/msg_31805_35_28",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "d6b8d7a0bf2f072318ad02081edc3e3408508a0142f9ffd4954abf5097166d1d"
+        ]
+      ]
+    },
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 16,
+      "block_sha256": "6878490531e2a51923e50c14c32cd21c455d87776370fe87a5032c2ee5e419e2",
+      "start_byte": 2931,
+      "end_byte": 3098,
+      "floor": 31805,
+      "graphic_alias": 16045,
+      "borncorner": [
+        31,
+        34,
+        31,
+        34
+      ],
+      "borncenter": null,
+      "direction": 5,
+      "template_token": "npcgen_man",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/msg_31805_31_34",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "e0fff9031398b34ba737a5e3a5248321cd20168c93bc31e22f83faf9346d0746"
+        ]
+      ]
+    },
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 17,
+      "block_sha256": "d2ba90a580b1cf213ce86cd6c5d43781663e444c23439d9a19b9acedb2308573",
+      "start_byte": 3107,
+      "end_byte": 3274,
+      "floor": 31805,
+      "graphic_alias": 13052,
+      "borncorner": [
+        41,
+        27,
+        41,
+        27
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "npcgen_man",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/msg_31805_41_27",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "08041e2207103add067e74232c2e3f9290a80ed04cfdb9d5287b56b2933d1444"
+        ]
+      ]
+    },
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 18,
+      "block_sha256": "57f942292f095713e48cd4a24bfffc5c2fa35e0ba1e9eed15aebea2c82dd3b4d",
+      "start_byte": 3283,
+      "end_byte": 3450,
+      "floor": 31805,
+      "graphic_alias": 16056,
+      "borncorner": [
+        40,
+        32,
+        40,
+        32
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "npcgen_man",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/msg_31805_40_32",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "abe76fa14d2fb86573a4e5fdfadb14e1d4761364d9d81ec999b02e7708736691"
+        ]
+      ]
+    },
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 19,
+      "block_sha256": "e8a33b62ec147a535479a9ba04514c7dc4312a54a4ce828c9436c640254c84a0",
+      "start_byte": 3459,
+      "end_byte": 3626,
+      "floor": 31805,
+      "graphic_alias": 16039,
+      "borncorner": [
+        27,
+        29,
+        27,
+        29
+      ],
+      "borncenter": null,
+      "direction": 5,
+      "template_token": "npcgen_man",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/msg_31805_27_29",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "928f6020f2c4d0d3484716c523dec60ec52dd0042a01bf03c7958ee5c5684d54"
+        ]
+      ]
+    },
+    {
+      "path": "genout/giruev2.create",
+      "ordinal": 20,
+      "block_sha256": "f93f295fedb76ae8ac8a92265a5462b2b7a8a8a6bba9d41b9fef31bc984e1118",
+      "start_byte": 3635,
+      "end_byte": 3800,
+      "floor": 31805,
+      "graphic_alias": 16202,
+      "borncorner": [
+        22,
+        4,
+        22,
+        4
+      ],
+      "borncenter": null,
+      "direction": 4,
+      "template_token": "npcgen_warpman",
+      "template_bindings": [
+        [
+          "genout/npcgen.template",
+          11
+        ]
+      ],
+      "parameter_references": [
+        [
+          "genout/wpm_31805_22_4",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "0a753a92c176602d3d93ba8042d5b0c59a97dbdc93785cd8de3d6326be15044d"
+        ]
+      ]
+    }
+  ],
+  "scripts": [
+    {
+      "path": "giiru/event/giruev2_1",
+      "sha256": "e18cbf24d2f067bdcf6d797756e14c4b24d11f19b9698b5fc75e0f9405a86557",
+      "events": [
+        {
+          "ordinal": 0,
+          "source_start_line": 9,
+          "source_start_byte": 172,
+          "event_number": -1,
+          "commands": [
+            {
+              "key": "GetItem",
+              "raw_operand": "2527",
+              "operands": [
+                {
+                  "item_id": 2527,
+                  "explicit_quantity": null
+                }
+              ]
+            },
+            {
+              "key": "DelStone",
+              "raw_operand": "1000",
+              "value": 1000
+            }
+          ],
+          "messages_seen": [
+            "RequestMsg",
+            "ThanksMsg",
+            "StopMsg",
+            "EndStopMsg",
+            "NoStopMsg",
+            "ItemFullMsg",
+            "StoneLessMsg"
+          ],
+          "type": "REQUEST",
+          "raw_condition": "ENDEV=27&ITEM!=2391",
+          "source_end_line": 21,
+          "source_end_byte": 627,
+          "source_block_sha256": "5f4927163e51e71e935e6b0fb58b10e8c8f46cd4d7873c244d182d5b85a51a9b"
+        },
+        {
+          "ordinal": 1,
+          "source_start_line": 23,
+          "source_start_byte": 628,
+          "event_number": 27,
+          "commands": [
+            {
+              "key": "GetItem",
+              "raw_operand": "2527",
+              "operands": [
+                {
+                  "item_id": 2527,
+                  "explicit_quantity": null
+                }
+              ]
+            },
+            {
+              "key": "DelItem",
+              "raw_operand": "2533",
+              "operands": [
+                {
+                  "item_id": 2533,
+                  "explicit_quantity": null
+                }
+              ]
+            },
+            {
+              "key": "EndSetFlg",
+              "raw_operand": "27",
+              "value": 27
+            }
+          ],
+          "messages_seen": [
+            "AcceptMsg",
+            "ThanksMsg",
+            "ThanksMsg2",
+            "ItemFullMsg"
+          ],
+          "type": "ACCEPT",
+          "raw_condition": "ITEM=2533&ENDEV!=27",
+          "source_end_line": 33,
+          "source_end_byte": 1050,
+          "source_block_sha256": "71be41e67f2d4f3e2784597d91c4648bac37b5fd40314545982e20190bb8da2d"
+        },
+        {
+          "ordinal": 2,
+          "source_start_line": 35,
+          "source_start_byte": 1051,
+          "event_number": 27,
+          "commands": [],
+          "messages_seen": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "raw_condition": "NOWEV=27&ITEM=2535",
+          "source_end_line": 39,
+          "source_end_byte": 1157,
+          "source_block_sha256": "9453b56ab7215bbeb62961da9cc76fb357af00a73970c97c34b0dc0b18f53f0c"
+        },
+        {
+          "ordinal": 3,
+          "source_start_line": 41,
+          "source_start_byte": 1158,
+          "event_number": 27,
+          "commands": [],
+          "messages_seen": [
+            "RequestMsg",
+            "RequestMsg2",
+            "ThanksMsg",
+            "StopMsg",
+            "EndStopMsg",
+            "NoStopMsg"
+          ],
+          "type": "REQUEST",
+          "raw_condition": "LV>29&ENDEV!=27",
+          "source_end_line": 50,
+          "source_end_byte": 1763,
+          "source_block_sha256": "0e5244c073f25ebea4954c2e44b7e940bcb66c2154737751695610ea6c1222a2"
+        },
+        {
+          "ordinal": 4,
+          "source_start_line": 52,
+          "source_start_byte": 1781,
+          "event_number": -1,
+          "commands": [],
+          "messages_seen": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "raw_condition": "ENDEV=27&ITEM=2391&ITEM!=2393",
+          "source_end_line": 56,
+          "source_end_byte": 2008,
+          "source_block_sha256": "2b89467b337f4d7c886e0f9dfee71699f563646b1de1c81b4e787737a3aa8019"
+        },
+        {
+          "ordinal": 5,
+          "source_start_line": 58,
+          "source_start_byte": 2024,
+          "event_number": -1,
+          "commands": [
+            {
+              "key": "GetItem",
+              "raw_operand": "2394*1",
+              "operands": [
+                {
+                  "item_id": 2394,
+                  "explicit_quantity": 1
+                }
+              ]
+            },
+            {
+              "key": "DelItem",
+              "raw_operand": "2391*1",
+              "operands": [
+                {
+                  "item_id": 2391,
+                  "explicit_quantity": 1
+                }
+              ]
+            }
+          ],
+          "messages_seen": [
+            "RequestMsg",
+            "ThanksMsg",
+            "ItemFullMsg"
+          ],
+          "type": "REQUEST",
+          "raw_condition": "ENDEV=27&ITEM=2391&ITEM=2393&ITEM!=2394",
+          "source_end_line": 66,
+          "source_end_byte": 2303,
+          "source_block_sha256": "bbb1f4baf97c8905ae643a379b5ed9468e9c40aeacbdbe77ae5f20c4d2f09a42"
+        },
+        {
+          "ordinal": 6,
+          "source_start_line": 68,
+          "source_start_byte": 2304,
+          "event_number": -1,
+          "commands": [],
+          "messages_seen": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "raw_condition": "ENDEV=27&ITEM=2391&ITEM=2394",
+          "source_end_line": 72,
+          "source_end_byte": 2420,
+          "source_block_sha256": "42a718b84a40ff57d616654ac82ba62be264b8f53cab88417e32c1f82fb5a680"
+        }
+      ]
+    },
+    {
+      "path": "giiru/event/giruev2_2",
+      "sha256": "1e476a4d62e216fd891c527e1564dd70ad4e846f11c54a308f6f04381daf746f",
+      "events": [
+        {
+          "ordinal": 0,
+          "source_start_line": 9,
+          "source_start_byte": 208,
+          "event_number": -1,
+          "commands": [],
+          "messages_seen": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "raw_condition": "ENDEV=27",
+          "source_end_line": 13,
+          "source_end_byte": 344,
+          "source_block_sha256": "47a34aed0e86ee9a2c95605734ceaa765b885db42cf9b428fac616d81d25ace3"
+        },
+        {
+          "ordinal": 1,
+          "source_start_line": 15,
+          "source_start_byte": 345,
+          "event_number": 27,
+          "commands": [],
+          "messages_seen": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "raw_condition": "NOWEV=27&ITEM=2533",
+          "source_end_line": 19,
+          "source_end_byte": 511,
+          "source_block_sha256": "627e514b7887cac7fb46b50f38903ac850330a08130a71050e7bd53dacae948c"
+        },
+        {
+          "ordinal": 2,
+          "source_start_line": 21,
+          "source_start_byte": 512,
+          "event_number": 27,
+          "commands": [],
+          "messages_seen": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "raw_condition": "NOWEV=27&ITEM=2535",
+          "source_end_line": 25,
+          "source_end_byte": 644,
+          "source_block_sha256": "21a08310cc1df50e876301a1c8386d56fed9d1e0c3602e46ee0d6f6e77d62280"
+        },
+        {
+          "ordinal": 3,
+          "source_start_line": 27,
+          "source_start_byte": 645,
+          "event_number": 27,
+          "commands": [
+            {
+              "key": "GetItem",
+              "raw_operand": "2535",
+              "operands": [
+                {
+                  "item_id": 2535,
+                  "explicit_quantity": null
+                }
+              ]
+            },
+            {
+              "key": "DelItem",
+              "raw_operand": "2534*1,2536",
+              "operands": [
+                {
+                  "item_id": 2534,
+                  "explicit_quantity": 1
+                },
+                {
+                  "item_id": 2536,
+                  "explicit_quantity": null
+                }
+              ]
+            }
+          ],
+          "messages_seen": [
+            "AcceptMsg",
+            "ThanksMsg",
+            "ItemFullMsg"
+          ],
+          "type": "ACCEPT",
+          "raw_condition": "NOWEV=27&ITEM=2534",
+          "source_end_line": 35,
+          "source_end_byte": 982,
+          "source_block_sha256": "33969f3067ec266653947aa6c86871d7d0f94509c1d4e20504d2de2ac7e94696"
+        },
+        {
+          "ordinal": 4,
+          "source_start_line": 37,
+          "source_start_byte": 983,
+          "event_number": 27,
+          "commands": [],
+          "messages_seen": [
+            "NomalWindowMsg"
+          ],
+          "type": "MESSAGE",
+          "raw_condition": "NOWEV=27&ITEM=2536",
+          "source_end_line": 41,
+          "source_end_byte": 1117,
+          "source_block_sha256": "beb445c6976a24e09344579751922b26f6cd6bba28a2ec092cfc58dd6b90ffc5"
+        },
+        {
+          "ordinal": 5,
+          "source_start_line": 43,
+          "source_start_byte": 1118,
+          "event_number": -1,
+          "commands": [
+            {
+              "key": "GetItem",
+              "raw_operand": "2536*1",
+              "operands": [
+                {
+                  "item_id": 2536,
+                  "explicit_quantity": 1
+                }
+              ]
+            }
+          ],
+          "messages_seen": [
+            "RequestMsg",
+            "ThanksMsg",
+            "StopMsg",
+            "EndStopMsg",
+            "NoStopMsg",
+            "ItemFullMsg"
+          ],
+          "type": "REQUEST",
+          "raw_condition": "NOWEV=27",
+          "source_end_line": 53,
+          "source_end_byte": 1625,
+          "source_block_sha256": "d62e5e635f8b1170f9850690881c1dcd148bcfd9ef5b57a056a69600d0299b9a"
+        }
+      ]
+    }
+  ],
+  "other_original_controls": {
+    "300/sb_bac.arg": [
+      {
+        "line": 1,
+        "key": "entype",
+        "raw_value": "2"
+      },
+      {
+        "line": 6,
+        "key": "item",
+        "raw_value": "2535"
+      },
+      {
+        "line": 7,
+        "key": "steal",
+        "raw_value": "1"
+      },
+      {
+        "line": 9,
+        "key": "enemyno",
+        "raw_value": "1004"
+      },
+      {
+        "line": 11,
+        "key": "time",
+        "raw_value": "300"
+      }
+    ],
+    "genout/wpm_31805_22_4": [
+      {
+        "line": 1,
+        "key": "WARP",
+        "raw_value": "31806,34,6"
+      },
+      {
+        "line": 2,
+        "key": "FREE",
+        "raw_value": "ITEM=2527"
+      },
+      {
+        "line": 3,
+        "key": "DelItem",
+        "raw_value": "2527*1"
+      },
+      {
+        "line": 4,
+        "key": "MONEY",
+        "raw_value": "-1"
+      }
+    ]
+  },
+  "item_evidence": [
+    {
+      "item_id": 2391,
+      "original_rows": [
+        {
+          "table": "itemset0710.txt",
+          "source_row_1based": 2369,
+          "raw_line_without_newline_sha256": "2540f2c0064c8311a2c6a3639db35ba20978c235f67f3ad5b3c1320536c6a56c",
+          "source_name_cp950_sha256": "a4455486921c01707a8181f0a5c8d2b845843f43d5bbf9a7ed26c882bc351b35"
+        }
+      ],
+      "image_alias": 23903,
+      "tw1_original_RD_candidate_available": false,
+      "image_source_status": "NOT_IN_RETAIL_INDEX",
+      "image_PNG_SHA256": null
+    },
+    {
+      "item_id": 2393,
+      "original_rows": [
+        {
+          "table": "itemset.txt",
+          "source_row_1based": 1976,
+          "raw_line_without_newline_sha256": "95074c8569d4b718acd7b92cedd5cccf1dedb079b44ca5fa337146fb9c5e7980",
+          "source_name_cp950_sha256": "2035b4023c8824ffa9733a03cc7b6b80244c96e689afb88b6513893b10f2955c"
+        },
+        {
+          "table": "itemset0710.txt",
+          "source_row_1based": 2371,
+          "raw_line_without_newline_sha256": "95074c8569d4b718acd7b92cedd5cccf1dedb079b44ca5fa337146fb9c5e7980",
+          "source_name_cp950_sha256": "2035b4023c8824ffa9733a03cc7b6b80244c96e689afb88b6513893b10f2955c"
+        }
+      ],
+      "image_alias": 24222,
+      "tw1_original_RD_candidate_available": true,
+      "image_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "image_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1"
+    },
+    {
+      "item_id": 2394,
+      "original_rows": [
+        {
+          "table": "itemset.txt",
+          "source_row_1based": 1977,
+          "raw_line_without_newline_sha256": "b814f02d142023827fe56e636c169c6116db3d3f54a1234651bb39654e0c5c0d",
+          "source_name_cp950_sha256": "2035b4023c8824ffa9733a03cc7b6b80244c96e689afb88b6513893b10f2955c"
+        },
+        {
+          "table": "itemset0710.txt",
+          "source_row_1based": 2372,
+          "raw_line_without_newline_sha256": "b814f02d142023827fe56e636c169c6116db3d3f54a1234651bb39654e0c5c0d",
+          "source_name_cp950_sha256": "2035b4023c8824ffa9733a03cc7b6b80244c96e689afb88b6513893b10f2955c"
+        }
+      ],
+      "image_alias": 24222,
+      "tw1_original_RD_candidate_available": true,
+      "image_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "image_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1"
+    },
+    {
+      "item_id": 2527,
+      "original_rows": [
+        {
+          "table": "itemset.txt",
+          "source_row_1based": 2110,
+          "raw_line_without_newline_sha256": "6fe70b1dea28440504d9adc69a7dda08ec6d5a71f06300e45a741fa2e598f558",
+          "source_name_cp950_sha256": "601ed649b6c3506d47d58fadaabd1eb4be8ecd17ba7aeb8f11f18ff8866e11eb"
+        },
+        {
+          "table": "itemset0710.txt",
+          "source_row_1based": 2505,
+          "raw_line_without_newline_sha256": "6fe70b1dea28440504d9adc69a7dda08ec6d5a71f06300e45a741fa2e598f558",
+          "source_name_cp950_sha256": "601ed649b6c3506d47d58fadaabd1eb4be8ecd17ba7aeb8f11f18ff8866e11eb"
+        }
+      ],
+      "image_alias": 24222,
+      "tw1_original_RD_candidate_available": true,
+      "image_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "image_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1"
+    },
+    {
+      "item_id": 2533,
+      "original_rows": [
+        {
+          "table": "itemset.txt",
+          "source_row_1based": 2116,
+          "raw_line_without_newline_sha256": "cc61eeab8231d392437e8552843852efb58515570d989cd190fdcbb59cb4f697",
+          "source_name_cp950_sha256": "6b1893dd41fcbdaf7d29de49d4970e9c06b3aaa0cfe39524a64f197f0eb7495b"
+        },
+        {
+          "table": "itemset0710.txt",
+          "source_row_1based": 2511,
+          "raw_line_without_newline_sha256": "cc61eeab8231d392437e8552843852efb58515570d989cd190fdcbb59cb4f697",
+          "source_name_cp950_sha256": "6b1893dd41fcbdaf7d29de49d4970e9c06b3aaa0cfe39524a64f197f0eb7495b"
+        }
+      ],
+      "image_alias": 24222,
+      "tw1_original_RD_candidate_available": true,
+      "image_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "image_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1"
+    },
+    {
+      "item_id": 2534,
+      "original_rows": [
+        {
+          "table": "itemset.txt",
+          "source_row_1based": 2117,
+          "raw_line_without_newline_sha256": "64d2cb500cbc4425819cdcc02b887a6148e9f24c95e19620f2b82118fb08a390",
+          "source_name_cp950_sha256": "17f026c47082495c0d28aeafdbef48d5703fa5dc6aa22ae420558a6695941032"
+        },
+        {
+          "table": "itemset0710.txt",
+          "source_row_1based": 2512,
+          "raw_line_without_newline_sha256": "64d2cb500cbc4425819cdcc02b887a6148e9f24c95e19620f2b82118fb08a390",
+          "source_name_cp950_sha256": "17f026c47082495c0d28aeafdbef48d5703fa5dc6aa22ae420558a6695941032"
+        }
+      ],
+      "image_alias": 14607,
+      "tw1_original_RD_candidate_available": true,
+      "image_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "image_PNG_SHA256": "41ae367a2d3225b8c32adf4b5ca70431851100d740b3839553b6e4e14e37c0b2"
+    },
+    {
+      "item_id": 2535,
+      "original_rows": [
+        {
+          "table": "itemset.txt",
+          "source_row_1based": 2118,
+          "raw_line_without_newline_sha256": "56d2c6560ae90d3975a6b18aacfa246cc85db7c93b8881b65d69ed52215ab9e5",
+          "source_name_cp950_sha256": "3d2a44d161f580c4e2609e5488cc4d777d07ba3a041cbc40c85696406fefd0a1"
+        },
+        {
+          "table": "itemset0710.txt",
+          "source_row_1based": 2513,
+          "raw_line_without_newline_sha256": "56d2c6560ae90d3975a6b18aacfa246cc85db7c93b8881b65d69ed52215ab9e5",
+          "source_name_cp950_sha256": "3d2a44d161f580c4e2609e5488cc4d777d07ba3a041cbc40c85696406fefd0a1"
+        }
+      ],
+      "image_alias": 24222,
+      "tw1_original_RD_candidate_available": true,
+      "image_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "image_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1"
+    },
+    {
+      "item_id": 2536,
+      "original_rows": [
+        {
+          "table": "itemset.txt",
+          "source_row_1based": 2119,
+          "raw_line_without_newline_sha256": "8c2826aefd4a3fed027b749e1155efbb0175ee6841dbecaaf364a6ee557dff20",
+          "source_name_cp950_sha256": "5f5d1fd89472e55c2b5d13bd2ee9390b47741be2a595cbfe05b216cf7e09054b"
+        },
+        {
+          "table": "itemset0710.txt",
+          "source_row_1based": 2514,
+          "raw_line_without_newline_sha256": "8c2826aefd4a3fed027b749e1155efbb0175ee6841dbecaaf364a6ee557dff20",
+          "source_name_cp950_sha256": "5f5d1fd89472e55c2b5d13bd2ee9390b47741be2a595cbfe05b216cf7e09054b"
+        }
+      ],
+      "image_alias": 24222,
+      "tw1_original_RD_candidate_available": true,
+      "image_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "image_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1"
+    }
+  ],
+  "get_item_source_occurrences_across_all_2205_files": {
+    "2391": [],
+    "2393": [
+      {
+        "path": "giiru/event/garunaev1",
+        "source_line": 111
+      }
+    ],
+    "2394": [
+      {
+        "path": "giiru/event/giruev2_1",
+        "source_line": 63
+      }
+    ],
+    "2527": [
+      {
+        "path": "giiru/event/giruev2_1",
+        "source_line": 17
+      },
+      {
+        "path": "giiru/event/giruev2_1",
+        "source_line": 29
+      }
+    ],
+    "2533": [],
+    "2534": [],
+    "2535": [
+      {
+        "path": "giiru/event/giruev2_2",
+        "source_line": 32
+      }
+    ],
+    "2536": [
+      {
+        "path": "giiru/event/giruev2_2",
+        "source_line": 51
+      }
+    ]
+  },
+  "map_source_observations": [
+    {
+      "floor": 31805,
+      "original_DAT_sha256": "1766c7d378fdde4bcc2eb45a827cd33e2b2f967b32eae752cbe76372c49c0261",
+      "original_DAT_bytes": 15008,
+      "geometry": [
+        50,
+        50
+      ],
+      "original_thumbnail_sha256": "fe32e10503fafddb83c476b6645e16ed059e72f8346bbd6eae82ead0a2a89b42",
+      "source_points": [
+        {
+          "label": "tenim",
+          "xy": [
+            19,
+            21
+          ],
+          "source_three_u16_values": [
+            4200,
+            0,
+            49152
+          ]
+        },
+        {
+          "label": "babaro",
+          "xy": [
+            33,
+            23
+          ],
+          "source_three_u16_values": [
+            4301,
+            0,
+            49152
+          ]
+        },
+        {
+          "label": "miner_center",
+          "xy": [
+            26,
+            23
+          ],
+          "source_three_u16_values": [
+            5068,
+            0,
+            49157
+          ]
+        },
+        {
+          "label": "permit_gate",
+          "xy": [
+            22,
+            4
+          ],
+          "source_three_u16_values": [
+            4302,
+            0,
+            49152
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 31806,
+      "original_DAT_sha256": "a4c0899bd89f66b3fe918af1702f72fc9c997789706db936811096e74819571c",
+      "original_DAT_bytes": 15008,
+      "geometry": [
+        50,
+        50
+      ],
+      "original_thumbnail_sha256": "f265df005dbb96a508128155fe2476f6f84d7b326df9e0f666d502310c5f4c23",
+      "source_points": [
+        {
+          "label": "permit_dest",
+          "xy": [
+            34,
+            6
+          ],
+          "source_three_u16_values": [
+            4305,
+            0,
+            49152
+          ]
+        }
+      ]
+    }
+  ],
+  "boundaries": {
+    "original_game_runtime_executed": false,
+    "event_branch_order_verified": false,
+    "source_misspellings_corrected": false,
+    "implicit_quantity_assumed": false,
+    "item_2533_acquisition_proven": false,
+    "item_2534_acquisition_proven": false,
+    "item_2535_enemy_drops_verified": false,
+    "mining_rights_reward_runtime_verified": false,
+    "warp_runtime_verified": false,
+    "character_movement_or_collision_verified": false,
+    "original_NPC_pixels_rendered": false,
+    "original_2d_map_full_scene_redrawn": false,
+    "all_version_quest_completion_verified": false,
+    "same_official_deployment_verified": false,
+    "official_version_or_permanent_event_origin_verified": false
+  },
+  "status": {
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  }
+}

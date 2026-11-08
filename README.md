@@ -2120,3 +2120,8 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## QUEST11 — 两族误会原任务族（2026-11-08）
 
 [最新接力与来源止点](docs/continuity/STONEAGE-QUEST11-TWO-TRIBES-ORIGINAL-SOURCE-20261108.md)：8事件脚本、68原段、8配置点、13道具/25原行及5原图位置；原拼写和数量省略不修补。矿石商人不误称传送入口，未认证原运行或官方版本归属。
+
+
+## 2026-11-08 — QUEST12｜矿山比赛、采矿权与原许可证入口
+
+[QUEST12 真实来源与有界止点](docs/continuity/STONEAGE-QUEST12-MINING-COMPETITION-ORIGINAL-SOURCE-20261108.md)：重新回读后期社区 mixed25 私人原档 2,205 成员全 SHA/CRC，恢复 2 名原角色的 13 段任务脚本、1 矿工参数、21 个同名外围 CREATE（其中仅 1 个许可证入口），以及 31805/31806 两份原 DAT 的五处源格。8 件有关物品原 15 行来自既存 ITEM01 源表，原图源身份分离。静态数据表明原入口要求 2527 并指向 31806/(34,6)；全 2,205 文件的 GetItem 字面扫描没有 2533/2534 的发放行，不得据此补造取得路径或宣称所有官方版本不存在。人物与地图真正运行、胜负掉物、原版/活动属性均未认证。公开只存[派生数字/原来源 SHA](research/recovered/STONEAGE-QUEST12-MINING-COMPETITION-ORIGINAL-SOURCE-R1.json)与可复核测试，原游戏素材留私人，完整旧 CURRENT 不变；Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、总体百分比未知。NEXT 按 QUEST 模块对未复原的来源就绪任务族查重择一，不重复 QUEST12。
