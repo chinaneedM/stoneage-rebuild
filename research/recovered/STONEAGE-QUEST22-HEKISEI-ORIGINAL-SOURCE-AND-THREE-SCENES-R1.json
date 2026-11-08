@@ -1,0 +1,1052 @@
+{
+  "schema": "stoneage.quest22.hekisei_source_and_three_scene_observations.r1",
+  "date": "2026-11-08",
+  "initial_remote": {
+    "head": "0234d90c0e0c961c83fe9159cc14b825baf05935",
+    "tree": "2cf6dd796295da869618955c34b8cf56e5de29a0",
+    "preserved_CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "source_scope": "MIXED25_COMMUNITY_PRESERVED_NOT_AUTHENTICATED_OFFICIAL_EARLY_BUILD",
+  "private_verified_carriers": {
+    "NPC_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "NPC_all_member_CRC_and_SHA": 2205,
+    "item_ZIP_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "item_ZIP_CRC_members": 838,
+    "MAP09_ZIP_sha256": "d84d0800dd600798769dfb7251a1d7816588ac061ccc27812ac64a37922d4a8a",
+    "MAP09_ZIP_CRC_members": 4195,
+    "parent_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "parent_RAR_reread": false
+  },
+  "old_evidence_inputs": [
+    {
+      "path": "research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json",
+      "bytes": 1321481,
+      "sha256": "2995e5825ffd204d5fd31ccffc95f009d8abbcebad829c5824e490b7f20c2b2c",
+      "git_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json",
+      "bytes": 1798170,
+      "sha256": "f6beb17b76b23211d36113bcf462c16ac38435233b3891bb21765179b84e4566",
+      "git_blob": "a088b61a3212f7049e7793f587123ffb29bebad7"
+    },
+    {
+      "path": "research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-23-NPC-ITEM-TRANSFERS-R1.json",
+      "bytes": 947030,
+      "sha256": "a9b54e70f062397b9b5046ed0a4091fc01b2a51856e8f82ccaf0bd05875445a5",
+      "git_blob": "6b31accf02b95c63faa88a6055d99a78341eb099"
+    },
+    {
+      "path": "research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json",
+      "bytes": 398220,
+      "sha256": "bff796baed613c0308162602038b4f3a23db55f689ac97b9d8f62547550ea193",
+      "git_blob": "137580e7c25aadf3d679b6ebfb5080b79912cc4f"
+    }
+  ],
+  "source_manifest": [
+    {
+      "path": "jaruga/event/hekisei.create",
+      "bytes": 1342,
+      "sha256": "4ad27af5450d7f8820a005e3c0741e1fe966dcbc4d3f2a1d00aa2f954ddbe7a8",
+      "crc32": "6dc13201"
+    },
+    {
+      "path": "jaruga/event/hekisei",
+      "bytes": 2005,
+      "sha256": "03c44a71e8303886bae90af67d3c289f3eff97d32bf021470feb5ee5e5858079",
+      "crc32": "4ea59705"
+    },
+    {
+      "path": "jaruga/event/hekisei01",
+      "bytes": 1942,
+      "sha256": "f627b4bc1bee995caaf76127fac4335e7b08cb5db8b64f0702ab3c1b7f279449",
+      "crc32": "a49266bb"
+    },
+    {
+      "path": "jaruga/event/hekisei02",
+      "bytes": 745,
+      "sha256": "fb917840a164462e43c11d5d97a0bc55fb9becbb2e046532e44c49c34ee11b1e",
+      "crc32": "4b80cef7"
+    },
+    {
+      "path": "jaruga/event/hekisei03",
+      "bytes": 926,
+      "sha256": "620d6465b9ccfc69d5024a1df4b2ad908f96608fce133d8429778b6c8bd10e2f",
+      "crc32": "03a0716e"
+    },
+    {
+      "path": "jaruga/event/hekisei04",
+      "bytes": 784,
+      "sha256": "446dcd6e250d0ba19598bbbe67c6415ae201ca777469fdac560f53f250e155a5",
+      "crc32": "f85dedd3"
+    },
+    {
+      "path": "jaruga/event/hekisei05",
+      "bytes": 714,
+      "sha256": "23f3a3a61e47bf96e9f1f6530f8d60c0937f8b7b07c45bbcea1f5e82893def55",
+      "crc32": "eb278831"
+    },
+    {
+      "path": "jaruga/event/hekisei06",
+      "bytes": 714,
+      "sha256": "255265c425fff26bc492bb790f17b4f95fe606bbd2c0803b9c4ffebd0b62e993",
+      "crc32": "5e1447eb"
+    },
+    {
+      "path": "jaruga/event/event.template",
+      "bytes": 122,
+      "sha256": "9c11ac0cbbd9b110e8ff7d0115730044673bf29c5df6d23034e56530c181d0b2",
+      "crc32": "a70fc73f"
+    }
+  ],
+  "source_creates": [
+    {
+      "ordinal": 0,
+      "source_block_sha256": "c72638b6ae9aeab27d79ea2454fd117278776c3ad7f04ddaca06c005276000ff",
+      "floor": 21215,
+      "borncorner": [
+        25,
+        30,
+        25,
+        30
+      ],
+      "graphic_alias": 100210,
+      "script_ref": "jaruga/event/hekisei01",
+      "box_size_source_label": null
+    },
+    {
+      "ordinal": 1,
+      "source_block_sha256": "31984cbf8a2de6968527e8a41027c90ec4094da677e0e926ca2e52d87b8b9ee5",
+      "floor": 3400,
+      "borncorner": [
+        63,
+        72,
+        63,
+        72
+      ],
+      "graphic_alias": 100195,
+      "script_ref": "jaruga/event/hekisei",
+      "box_size_source_label": null
+    },
+    {
+      "ordinal": 2,
+      "source_block_sha256": "578def1874729a0484ee0832db3c56a632c39f79dccb32119cf8c53240d65bc8",
+      "floor": 21215,
+      "borncorner": [
+        22,
+        33,
+        22,
+        33
+      ],
+      "graphic_alias": 100195,
+      "script_ref": "jaruga/event/hekisei02",
+      "box_size_source_label": null
+    },
+    {
+      "ordinal": 3,
+      "source_block_sha256": "771c601e4c22a8b8c6bdbb04db1cf7e9c37e91bb770b181fbf69b2b357f57e92",
+      "floor": 21308,
+      "borncorner": [
+        20,
+        3,
+        20,
+        3
+      ],
+      "graphic_alias": 16024,
+      "script_ref": "jaruga/event/hekisei03",
+      "box_size_source_label": null
+    },
+    {
+      "ordinal": 4,
+      "source_block_sha256": "be2436dec0f3edf162c2eed762ba8c12ac3d3045cd2c7ef2c97db06898136019",
+      "floor": 31302,
+      "borncorner": [
+        27,
+        31,
+        27,
+        31
+      ],
+      "graphic_alias": 100195,
+      "script_ref": "jaruga/event/hekisei04",
+      "box_size_source_label": null
+    },
+    {
+      "ordinal": 5,
+      "source_block_sha256": "3ab88f6f2fabbf5635385e212422344d229bde771ff8270f789c1789c6d80d92",
+      "floor": 21215,
+      "borncorner": [
+        21,
+        34,
+        21,
+        34
+      ],
+      "graphic_alias": 24308,
+      "script_ref": "jaruga/event/hekisei06",
+      "box_size_source_label": "大箱子"
+    },
+    {
+      "ordinal": 6,
+      "source_block_sha256": "87e746196a2db74fc50ad82d7f86086c80dfcb72b96d5b476567ed74a6b2fb61",
+      "floor": 21215,
+      "borncorner": [
+        23,
+        34,
+        23,
+        34
+      ],
+      "graphic_alias": 24311,
+      "script_ref": "jaruga/event/hekisei05",
+      "box_size_source_label": "小箱子"
+    }
+  ],
+  "source_scripts": [
+    {
+      "path": "jaruga/event/hekisei",
+      "bytes": 2005,
+      "sha256": "03c44a71e8303886bae90af67d3c289f3eff97d32bf021470feb5ee5e5858079",
+      "crc32": "4ea59705",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": 46,
+          "type": "REQUEST",
+          "condition_literal": "LV>64&ENDEV=4&ENDEV=39",
+          "condition_sha256": "98eaa5a4a07126ca80ae51e6cc3d7ba11e4d48983a080e55e45482f5a06b0422",
+          "section_sha256": "da692198bad8e44493982093d12f9800f503250f25210a9d00c8214ef08c11ff",
+          "commands": {},
+          "bare_Break_lines": 0
+        },
+        {
+          "ordinal": 1,
+          "event_no": 46,
+          "type": "REQUEST",
+          "condition_literal": "LV>64&ENDEV=4&ENDEV=40",
+          "condition_sha256": "8e57ecf62e979bbb15a147b7aed261fe2516e0c5aebcd5287144113c0a5ca7d0",
+          "section_sha256": "ab96578b460c054dbe813d0a6c4d5a79fc3f8f193eacdd6a3ccb74c9aa75e7ed",
+          "commands": {},
+          "bare_Break_lines": 0
+        },
+        {
+          "ordinal": 2,
+          "event_no": 46,
+          "type": "REQUEST",
+          "condition_literal": "LV>64&ENDEV=4&ENDEV=42",
+          "condition_sha256": "b3502825e24e4d898e1a6d19a6ac627414c17ab8a57c15799accdad880010239",
+          "section_sha256": "d80089bb4c88d551bfaa803212b1550449710b4e420ea613c407cc7a04cede14",
+          "commands": {},
+          "bare_Break_lines": 0
+        },
+        {
+          "ordinal": 3,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>64&ENDEV=46",
+          "condition_sha256": "6482d5e8826c128a5a07f7bc7bff224802ea18c85bc61b0fd79e7c703e52752b",
+          "section_sha256": "4d18873fafbb9177d2c10eff16d3b3b89f4fccf6614761f45b5fd8d1ead727c0",
+          "commands": {},
+          "bare_Break_lines": 0
+        },
+        {
+          "ordinal": 4,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>0",
+          "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+          "section_sha256": "df5a8481ea891b09e59f9258b9fa6c9264b7a19ffef467e0848d8520a0fb348c",
+          "commands": {},
+          "bare_Break_lines": 0
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/hekisei01",
+      "bytes": 1942,
+      "sha256": "f627b4bc1bee995caaf76127fac4335e7b08cb5db8b64f0702ab3c1b7f279449",
+      "crc32": "a49266bb",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": 46,
+          "type": "ACCEPT",
+          "condition_literal": "LV>64&NOWEV=46&ITEM=2769",
+          "condition_sha256": "d4dff5c166b0fb2034fd7f8f5905880b6531429ca14c54856621b66b7b6dd39e",
+          "section_sha256": "8d508dc707cbf2322e2d0d7b98a810248012da6baefdadd01a62bff8ec4a8b32",
+          "commands": {
+            "GetItem": [
+              "2770"
+            ],
+            "DelItem": [
+              "2769"
+            ],
+            "EndSetFlg": [
+              "46"
+            ],
+            "Charm": [
+              "1"
+            ]
+          },
+          "bare_Break_lines": 0
+        },
+        {
+          "ordinal": 1,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>64&ENDEV=46&ITEM=2766,LV>64&ITEM=2766",
+          "condition_sha256": "e3d781ef2585a056b5ec78892a3bddbfba3e6181bdfe9af5f63d7dacb8c2faf8",
+          "section_sha256": "7131dc13c25a532ba12d04650fe6cf1ac14168c4137772c6b1f52f05d3c6673f",
+          "commands": {},
+          "bare_Break_lines": 0
+        },
+        {
+          "ordinal": 2,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "LV>64&NOWEV=46&ITEM!=2769,LV>64&NOWEV=46",
+          "condition_sha256": "f1856dc3e5a71be063f6fcc3b8956e359e6fef2b4b6a88c1f395b6e863b899c6",
+          "section_sha256": "b46fee19b6b570c14399333c6d6e327bd17d6edf63aad3fe6f41f870a2cc637b",
+          "commands": {},
+          "bare_Break_lines": 0
+        },
+        {
+          "ordinal": 3,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>64&ENDEV=46",
+          "condition_sha256": "6482d5e8826c128a5a07f7bc7bff224802ea18c85bc61b0fd79e7c703e52752b",
+          "section_sha256": "ac5d3b7a65dcd08f3ab9db1ce5130f912f060dec7e04c25656b595e8a63fe2c5",
+          "commands": {},
+          "bare_Break_lines": 0
+        },
+        {
+          "ordinal": 4,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>0",
+          "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+          "section_sha256": "468ff0899d582e3f4d78cbb402c941e55c8cfbc45244a26ea7bb56beec462f49",
+          "commands": {},
+          "bare_Break_lines": 0
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/hekisei02",
+      "bytes": 745,
+      "sha256": "fb917840a164462e43c11d5d97a0bc55fb9becbb2e046532e44c49c34ee11b1e",
+      "crc32": "4b80cef7",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>64&ITEM=2766,LV>0&ENDEV=46&ITEM=2766,LV>0&NOWEV=46&ITEM=2766",
+          "condition_sha256": "4896a14e477c61d0aed1fae5bbaf1131ca4e9153271e9f36f815022f2bf4de6e",
+          "section_sha256": "32206208cdfb33565d7a9e570c9f8573ca30ae08a1d257d26aa8e9725ac07d09",
+          "commands": {},
+          "bare_Break_lines": 0
+        },
+        {
+          "ordinal": 1,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>64&NOWEV=46",
+          "condition_sha256": "b99a0e1bede8ea07cba716e01a0555e574344fb60f4ee1bf302a51c5f8528bbf",
+          "section_sha256": "c9a834e4431f5b9f716f63747adf6e124020fff1abd46e8970360223eec2d95b",
+          "commands": {},
+          "bare_Break_lines": 0
+        },
+        {
+          "ordinal": 2,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>0",
+          "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+          "section_sha256": "59adf9cdce9b45ea43302547b838ee15e0a6cff2645d76c8e0d5b4f96e2a1297",
+          "commands": {},
+          "bare_Break_lines": 0
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/hekisei03",
+      "bytes": 926,
+      "sha256": "620d6465b9ccfc69d5024a1df4b2ad908f96608fce133d8429778b6c8bd10e2f",
+      "crc32": "03a0716e",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>64&ENDEV=46",
+          "condition_sha256": "6482d5e8826c128a5a07f7bc7bff224802ea18c85bc61b0fd79e7c703e52752b",
+          "section_sha256": "c4b31716aade092b57d16a92f4beb9202b20949e6ef6d3eef86aeba1993faf60",
+          "commands": {},
+          "bare_Break_lines": 0
+        },
+        {
+          "ordinal": 1,
+          "event_no": 46,
+          "type": "ACCEPT",
+          "condition_literal": "LV>64&NOWEV=46&ITEM=2767&ITEM=2768,LV>64&NOWEV=46&ITEM!=2769",
+          "condition_sha256": "233d2a390870b07349a540aaed191f6512b424e969b6e7946c8a88319aa431e1",
+          "section_sha256": "dc4d9fed98e82e1398c0a286605259b054e921c45b007e3110d4e661c0e05769",
+          "commands": {
+            "GetItem": [
+              "2769"
+            ],
+            "DelItem": [
+              "2767,2768"
+            ]
+          },
+          "bare_Break_lines": 0
+        },
+        {
+          "ordinal": 2,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>0",
+          "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+          "section_sha256": "73a4455c03689a6d63509ac29fd3a5e37f074457e3c2efe3eae22b03c7511bf7",
+          "commands": {},
+          "bare_Break_lines": 0
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/hekisei04",
+      "bytes": 784,
+      "sha256": "446dcd6e250d0ba19598bbbe67c6415ae201ca777469fdac560f53f250e155a5",
+      "crc32": "f85dedd3",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>64&ENDEV=46,LV>64&NOWEV=46&ITEM=2768",
+          "condition_sha256": "52b935054e94508a93e8a3ac8f10a063a06933778d91ac05b9182db18ee69a60",
+          "section_sha256": "2643da1d5855109530c6b731378c1333baf70928c37916934ebbf33c6d7c8ee3",
+          "commands": {},
+          "bare_Break_lines": 0
+        },
+        {
+          "ordinal": 1,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "LV>64&NOWEV=46&ITEM!=2768",
+          "condition_sha256": "49ff57ad7b24fd52e432bf4a5cfa162da921d82d52e8314562973b0b0607cc1a",
+          "section_sha256": "3ad3796f66a93f580c059029b9612b6460196e71793154790d7c632c7488841f",
+          "commands": {
+            "GetItem": [
+              "2768"
+            ]
+          },
+          "bare_Break_lines": 0
+        },
+        {
+          "ordinal": 2,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>0",
+          "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+          "section_sha256": "78d0652d5daa5cb99c890a2db7098ff56f43f8550b5089c94fb37b6e7865cffc",
+          "commands": {},
+          "bare_Break_lines": 0
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/hekisei05",
+      "bytes": 714,
+      "sha256": "23f3a3a61e47bf96e9f1f6530f8d60c0937f8b7b07c45bbcea1f5e82893def55",
+      "crc32": "eb278831",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "LV>0&ITEM=2766",
+          "condition_sha256": "d62feb815b6a7f6324a305b292723d8af242a383e54fc29cb496b9d0a76b0f3d",
+          "section_sha256": "4b61048a5aff7f8e62848623c8c14787061960c930aace3418f8a72518be4c6f",
+          "commands": {
+            "DelItem": [
+              "2766"
+            ],
+            "GetRandItem": [
+              "75,78,185,193,283,288,379,384,478,486,579,585,677,682,774,783,875,878,976,983,1065,1070,1169,1173,75,185,283,379,478,579,677,774,875,976,1065,1169"
+            ]
+          },
+          "bare_Break_lines": 1
+        },
+        {
+          "ordinal": 1,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>0&ITEM!=2766",
+          "condition_sha256": "d65ff6da89a69b8effc95eccb13b46936b0deffd855c8d8276a7c7f4dbbbcb94",
+          "section_sha256": "ec30d08f2d9b4f44cca64bc084c5f2128b3fe97466320d7857af80e6121d2459",
+          "commands": {},
+          "bare_Break_lines": 0
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/hekisei06",
+      "bytes": 714,
+      "sha256": "255265c425fff26bc492bb790f17b4f95fe606bbd2c0803b9c4ffebd0b62e993",
+      "crc32": "5e1447eb",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "LV>0&ITEM=2766",
+          "condition_sha256": "d62feb815b6a7f6324a305b292723d8af242a383e54fc29cb496b9d0a76b0f3d",
+          "section_sha256": "679a641052fa8340198ef035f1e4945fb37476b3f17681c954eb236e7bc9693b",
+          "commands": {
+            "DelItem": [
+              "2766"
+            ],
+            "GetRandItem": [
+              "74,77,184,192,282,287,378,383,477,485,578,584,676,681,773,782,874,877,975,982,1064,1069,1168,1172,74,184,282,378,477,578,676,773,874,975,1064,1168"
+            ]
+          },
+          "bare_Break_lines": 1
+        },
+        {
+          "ordinal": 1,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>0&ITEM!=2766",
+          "condition_sha256": "d65ff6da89a69b8effc95eccb13b46936b0deffd855c8d8276a7c7f4dbbbcb94",
+          "section_sha256": "ec30d08f2d9b4f44cca64bc084c5f2128b3fe97466320d7857af80e6121d2459",
+          "commands": {},
+          "bare_Break_lines": 0
+        }
+      ]
+    }
+  ],
+  "original_events_already_in_QUEST01": 23,
+  "newly_discovered_original_scripts": 0,
+  "prerequisites": {
+    "original_three_request_conditions": [
+      "LV>64&ENDEV=4&ENDEV=39",
+      "LV>64&ENDEV=4&ENDEV=40",
+      "LV>64&ENDEV=4&ENDEV=42"
+    ],
+    "all_existing_catalog_flag_setter_occurrences": {
+      "39": [
+        {
+          "script": "jaruga/event/ruri01",
+          "ordinal": 0,
+          "section_sha256": "eefa8d7d6eca58c2562bc6002dc6afb642d97127e564e113ee885403fdaa5a5a",
+          "catalog_only_cross_reference": true
+        },
+        {
+          "script": "my/zhuansheng/zhuans1.arg",
+          "ordinal": 0,
+          "section_sha256": "adf8802d94aac29ee74e27a5f28055572a0956609849a595762a663fad0d3494",
+          "catalog_only_cross_reference": true
+        }
+      ],
+      "40": [
+        {
+          "script": "giiru/event/sink/sink02",
+          "ordinal": 0,
+          "section_sha256": "f2bc06113fecb7698b4177efbec82e2068409e0cb6eebce51111cb52acc9a6ee",
+          "catalog_only_cross_reference": true
+        },
+        {
+          "script": "my/zhuansheng/zhuans2.arg",
+          "ordinal": 0,
+          "section_sha256": "8b1b26ffe5e767a418848fd0647b551f2067d6ac9e7ed4ba7c59820fbb9f1405",
+          "catalog_only_cross_reference": true
+        }
+      ],
+      "42": [
+        {
+          "script": "my/zhuansheng/zhuans3.arg",
+          "ordinal": 0,
+          "section_sha256": "0a1e824acd1355018a0648270ea0910a7a9b6b0a8cb0fbf98510e0289dc55abc",
+          "catalog_only_cross_reference": true
+        },
+        {
+          "script": "sainasu/event/genou_1",
+          "ordinal": 0,
+          "section_sha256": "6bc02a4e14f524ddcb3fcb68891bb6ee9e93cd73d300b74c3e247595068c21f4",
+          "catalog_only_cross_reference": true
+        }
+      ]
+    },
+    "flags_are_exclusive_quest_IDs_verified": false,
+    "original_three_requests_collapsed_into_AND": false
+  },
+  "preserved_crafting_condition": {
+    "script": "jaruga/event/hekisei03",
+    "ordinal": 1,
+    "literal": "LV>64&NOWEV=46&ITEM=2767&ITEM=2768,LV>64&NOWEV=46&ITEM!=2769",
+    "second_comma_clause_explicitly_checks_2767_and_2768": false,
+    "native_boolean_evaluation_priority_or_bug_verified": false
+  },
+  "old_WORLD09_and_WORLD23_pools": {
+    "old_comparison_rows": [
+      [
+        "jaruga/event/hekisei05",
+        14,
+        9,
+        24,
+        36,
+        36,
+        12,
+        false,
+        false,
+        "f475840d8ea747c8ae7cb40abebd961d64502985f36e5d24b1a713d131789545"
+      ],
+      [
+        "jaruga/event/hekisei06",
+        14,
+        9,
+        24,
+        36,
+        36,
+        12,
+        false,
+        false,
+        "e3f2a8b5656de31542faf5fcae270d3150ebcfb64b68db939babc014bfda6217"
+      ]
+    ],
+    "new_random_pool_discoveries": 0,
+    "ordered_source_positions": [
+      [
+        75,
+        78,
+        185,
+        193,
+        283,
+        288,
+        379,
+        384,
+        478,
+        486,
+        579,
+        585,
+        677,
+        682,
+        774,
+        783,
+        875,
+        878,
+        976,
+        983,
+        1065,
+        1070,
+        1169,
+        1173,
+        75,
+        185,
+        283,
+        379,
+        478,
+        579,
+        677,
+        774,
+        875,
+        976,
+        1065,
+        1169
+      ],
+      [
+        74,
+        77,
+        184,
+        192,
+        282,
+        287,
+        378,
+        383,
+        477,
+        485,
+        578,
+        584,
+        676,
+        681,
+        773,
+        782,
+        874,
+        877,
+        975,
+        982,
+        1064,
+        1069,
+        1168,
+        1172,
+        74,
+        184,
+        282,
+        378,
+        477,
+        578,
+        676,
+        773,
+        874,
+        975,
+        1064,
+        1168
+      ]
+    ],
+    "original_probability_distribution_verified": false
+  },
+  "core_items": [
+    {
+      "item_ID": 2766,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2277,
+          "sha256": "09a29e88330d3f847c9d16fd99f02a937316034fdcd547084088f5ebd9968077",
+          "image_alias": 24133
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2672,
+          "sha256": "09a29e88330d3f847c9d16fd99f02a937316034fdcd547084088f5ebd9968077",
+          "image_alias": 24133
+        }
+      ],
+      "cross_carrier_candidate_alias": 24133,
+      "original_RD_sha256": "844045d48575fbf4bad52de4552df7ffd9c576b4340e077c7d0a51d42697fc16",
+      "candidate_PNG_sha256": "3dfa95e103679568ff3005bfc61c8c94f7d9b13cef6f86414d8a6ff6f1b1f6c3"
+    },
+    {
+      "item_ID": 2767,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2278,
+          "sha256": "53a1426acc71e482c120f8a7c17e99c7a423b92dfe0ce815ef361612feb1c4ba",
+          "image_alias": 24198
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2673,
+          "sha256": "53a1426acc71e482c120f8a7c17e99c7a423b92dfe0ce815ef361612feb1c4ba",
+          "image_alias": 24198
+        }
+      ],
+      "cross_carrier_candidate_alias": 24198,
+      "original_RD_sha256": "36365378b3cd8a528167c50f3f6af3c03531c9c8798f3ee1bdcb1ec600955e38",
+      "candidate_PNG_sha256": "9a08a75f1fb6515bfa7634c861edf139f4237c94be73885d80445bbd393d72ad"
+    },
+    {
+      "item_ID": 2768,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2279,
+          "sha256": "85b89b6733b4950a77b119660713296f5f9e6b4c63b19e8745f5d27e89189391",
+          "image_alias": 23012
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2674,
+          "sha256": "85b89b6733b4950a77b119660713296f5f9e6b4c63b19e8745f5d27e89189391",
+          "image_alias": 23012
+        }
+      ],
+      "cross_carrier_candidate_alias": 23012,
+      "original_RD_sha256": "52bd6944dfc3a4f91e6de1514d94cdfca7d6d1b8095a96ce1e2461349f9b5f4f",
+      "candidate_PNG_sha256": "5015d5af4574d204475941857a6c2538817991ed3cb0bfe1c5e005a6decd6cf4"
+    },
+    {
+      "item_ID": 2769,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2280,
+          "sha256": "a6f776ed1b17b7bc3d8f70b05bfbf68a957348e22afb6ce2b95b07adcb0a109e",
+          "image_alias": 14648
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2675,
+          "sha256": "a6f776ed1b17b7bc3d8f70b05bfbf68a957348e22afb6ce2b95b07adcb0a109e",
+          "image_alias": 14648
+        }
+      ],
+      "cross_carrier_candidate_alias": 14648,
+      "original_RD_sha256": "8083cb881c02b15d38094c2c4cbfc5eecef1dce5cf27700eeca0698daf3d6bda",
+      "candidate_PNG_sha256": "0c3c58f78d03556552337973d4813b4aa4655b4e286206c6c4ca4c7c32e47f53"
+    },
+    {
+      "item_ID": 2770,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2281,
+          "sha256": "25c636121743f2eee5b368d70aa17361c0d900f020047926814cb5bd9b86cc15",
+          "image_alias": 22124
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2676,
+          "sha256": "25c636121743f2eee5b368d70aa17361c0d900f020047926814cb5bd9b86cc15",
+          "image_alias": 22124
+        }
+      ],
+      "cross_carrier_candidate_alias": 22124,
+      "original_RD_sha256": "1741b977b9772d8560d3d89ebec7c7aaa1d3ae85e5d2879a18f33ae9dfcef520",
+      "candidate_PNG_sha256": "690aa9b997079a662e3f17e782014e68a4354acf04bc513e504335b7b986eb70"
+    }
+  ],
+  "full_2205_NPC_GetItem_literal_occurrences": {
+    "2766": [],
+    "2767": [],
+    "2768": [
+      {
+        "path": "jaruga/event/hekisei04",
+        "physical_line": 24,
+        "source_line_sha256": "df1324c8fa142ab5172ef055df1448d164ec1719c39e749a712a5af843b40530"
+      }
+    ],
+    "2769": [
+      {
+        "path": "jaruga/event/hekisei03",
+        "physical_line": 25,
+        "source_line_sha256": "5c829228a5cfa343397087112e938fb375ff4bfaf1ca99048be39d7f51a6d143"
+      }
+    ],
+    "2770": [
+      {
+        "path": "jaruga/event/hekisei01",
+        "physical_line": 17,
+        "source_line_sha256": "f67350450107faac0ec80705b459abead0b59c855a858b531b7a6bb8ff199eb6"
+      }
+    ]
+  },
+  "three_actual_DAT_scene_observations": [
+    {
+      "floor": 21215,
+      "original_DAT_bytes": 30008,
+      "original_DAT_sha256": "6403ddd287e8fdcd2b1e0082a4250190eb04c6d7e32e61835d3a91e90a695113",
+      "geometry": [
+        50,
+        100
+      ],
+      "source_draw_positions": 4227,
+      "unique_source_images": 66,
+      "canvas_size": [
+        4769,
+        3585
+      ],
+      "origin": [
+        16,
+        1192
+      ],
+      "three_candidate_RGBA_sha256": {
+        "plane0": "eecfa002b18bb77e89b293c96dd4dbcdd1ea40f2b686ab9eda1bee9a8b47eec5",
+        "plane1": "0b4628ff3910fd625a40848d1478ddb5af5f7c8f745c99c2044078e5a173626e",
+        "combined": "76952a9d53e107339b54e1ff6531f3461ba2953f6f2d8a89560c891abe4e74f0"
+      },
+      "independent_Pillow_and_NumPy_all_three_equal": true,
+      "marked_candidate_RGBA_sha256": "f8080f82c206a94741bee7f1992fb2652ad20614bdbb3e3b2d48fd31f17b7251",
+      "marked_candidate_PNG_sha256": "702ea6cc445784bea3fd580d93e72dec9214d02e76c3227932329a9ea263bfce",
+      "source_points": [
+        {
+          "create_ordinal": 0,
+          "xy": [
+            25,
+            30
+          ],
+          "raw_three_u16": [
+            4005,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            1776,
+            1312
+          ],
+          "original_NPC_sprite_drawn": false
+        },
+        {
+          "create_ordinal": 2,
+          "xy": [
+            22,
+            33
+          ],
+          "raw_three_u16": [
+            4007,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            1776,
+            1456
+          ],
+          "original_NPC_sprite_drawn": false
+        },
+        {
+          "create_ordinal": 5,
+          "xy": [
+            21,
+            34
+          ],
+          "raw_three_u16": [
+            4064,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            1776,
+            1504
+          ],
+          "original_NPC_sprite_drawn": false
+        },
+        {
+          "create_ordinal": 6,
+          "xy": [
+            23,
+            34
+          ],
+          "raw_three_u16": [
+            4008,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            1840,
+            1456
+          ],
+          "original_NPC_sprite_drawn": false
+        }
+      ]
+    },
+    {
+      "floor": 21308,
+      "original_DAT_bytes": 9608,
+      "original_DAT_sha256": "936a31717792e11cfa37b274cfe317f44e0e323affc439b1a34f7c78eb20a4c5",
+      "geometry": [
+        40,
+        40
+      ],
+      "source_draw_positions": 1418,
+      "unique_source_images": 79,
+      "canvas_size": [
+        2561,
+        1969
+      ],
+      "origin": [
+        48,
+        1016
+      ],
+      "three_candidate_RGBA_sha256": {
+        "plane0": "18702d4f22f004d8417a2f8a5f4932e79f31ee71fb70cea77f583d042ee25eef",
+        "plane1": "8c2b504c0af3f935c779e9695a069bad0eaa817f803d6544b809d03d43196b2a",
+        "combined": "36d674ecbd78b166709682d454fd512e9ecbaff91feaa14291e51a652b61158c"
+      },
+      "independent_Pillow_and_NumPy_all_three_equal": true,
+      "marked_candidate_RGBA_sha256": "093108109b8563234feada743918ccbce3b0067700e75f0ed55bf6c310bcd8a9",
+      "marked_candidate_PNG_sha256": "b1a35bd40066cf792faa0791aa4cd02eeb56884cc5ade6817856dc98ed8168bb",
+      "source_points": [
+        {
+          "create_ordinal": 3,
+          "xy": [
+            20,
+            3
+          ],
+          "raw_three_u16": [
+            4408,
+            12827,
+            49152
+          ],
+          "modern_projected_center": [
+            784,
+            608
+          ],
+          "original_NPC_sprite_drawn": false
+        }
+      ]
+    },
+    {
+      "floor": 31302,
+      "original_DAT_bytes": 21608,
+      "original_DAT_sha256": "2d553684d1af4054330ab881d19559c5a8e323b8984f0f023f165fa2dde76dec",
+      "geometry": [
+        60,
+        60
+      ],
+      "source_draw_positions": 2283,
+      "unique_source_images": 75,
+      "canvas_size": [
+        3809,
+        2865
+      ],
+      "origin": [
+        16,
+        1432
+      ],
+      "three_candidate_RGBA_sha256": {
+        "plane0": "53ce29be43ff07066632d463a2bdf09990f0d14d8a5d701b90a3bb69601316f2",
+        "plane1": "87a2feb85f5500132fb5225f293e05ce98ff8631eb0dac5da1784c489f0afccf",
+        "combined": "33155c391b37fd8b446aca27c1264959f0223277aec6098a03d425a042d1cec5"
+      },
+      "independent_Pillow_and_NumPy_all_three_equal": true,
+      "marked_candidate_RGBA_sha256": "9d16c7607cf77c86760c2e6bd858bcc988910bc869bb1a1d5f6fadbb3346d5a3",
+      "marked_candidate_PNG_sha256": "a1a44584426a3b7eca8707bc1084d3284723439291d7b2152c3b948b3b73830b",
+      "source_points": [
+        {
+          "create_ordinal": 4,
+          "xy": [
+            27,
+            31
+          ],
+          "raw_three_u16": [
+            4004,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            1872,
+            1528
+          ],
+          "original_NPC_sprite_drawn": false
+        }
+      ]
+    }
+  ],
+  "distinct_replayed_original_scene_candidate_PNGs": 156,
+  "map_3400": {
+    "source_create_ordinal": 1,
+    "xy": [
+      63,
+      72
+    ],
+    "matching_original_DAT_in_955_batch": false,
+    "original_NPC_sprite_or_scene_drawn": false
+  },
+  "private_new_observation": {
+    "original_DAT_files_reread": 3,
+    "source_NPC_positions_measured": 6,
+    "complete_candidate_frames_independently_replayed": 9,
+    "new_original_RD_decodes": 0,
+    "original_assets_browser_executed": false,
+    "original_game_executed": false
+  },
+  "boundaries": {
+    "official_JSS1999_TW10_CN182_deployment_authenticated": false,
+    "native_item_exchange_random_reward_or_NPC_executed": false,
+    "source_condition_punctuation_promoted_to_runtime_semantics": false,
+    "original_NPC_sprites_drawn": false,
+    "native_palette_layer_order_or_collision_verified": false,
+    "private_original_dialogue_DAT_or_image_published": false,
+    "task_permanent_or_event_origin": "UNRESOLVED"
+  },
+  "stage_A": {
+    "PARTIAL": 7,
+    "OPEN": 2
+  },
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "QUEST23_MODULE_MATERIAL_REVIEW_AFTER_LIULI_AND_HEKISEI_SOURCE_INTEGRATION"
+}
