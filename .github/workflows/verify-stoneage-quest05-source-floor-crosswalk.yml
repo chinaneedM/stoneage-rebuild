@@ -83,6 +83,11 @@ on:
       - 'tests/test_stoneage_quest25_island_tour_source.py'
       - 'tools/stoneage_quest26_shell_flower_source.py'
       - 'tests/test_stoneage_quest26_shell_flower_source.py'
+      - 'tools/stoneage_quest27_axe_letter_source.py'
+      - 'tests/test_stoneage_quest27_axe_letter_source.py'
+      - 'research/recovered/STONEAGE-QUEST27-AXE-LETTER-EVENT3-5-SOURCE-R1.json'
+      - 'docs/continuity/STONEAGE-QUEST27-AXE-LETTER-EVENT3-5-20261108.md'
+      - 'tools/stoneage_itemset_schema_probe.py'
       - 'research/recovered/STONEAGE-QUEST26-SHELL-FLOWER-FLAG2-SOURCE-R1.json'
       - 'docs/continuity/STONEAGE-QUEST26-SHELL-FLOWER-FLAG2-20261108.md'
       - 'research/recovered/STONEAGE-QUEST25-FOUR-ISLAND-TOUR-ROUTES-SOURCE-R1.json'
@@ -164,6 +169,11 @@ on:
       - 'tests/test_stoneage_quest25_island_tour_source.py'
       - 'tools/stoneage_quest26_shell_flower_source.py'
       - 'tests/test_stoneage_quest26_shell_flower_source.py'
+      - 'tools/stoneage_quest27_axe_letter_source.py'
+      - 'tests/test_stoneage_quest27_axe_letter_source.py'
+      - 'research/recovered/STONEAGE-QUEST27-AXE-LETTER-EVENT3-5-SOURCE-R1.json'
+      - 'docs/continuity/STONEAGE-QUEST27-AXE-LETTER-EVENT3-5-20261108.md'
+      - 'tools/stoneage_itemset_schema_probe.py'
       - 'research/recovered/STONEAGE-QUEST26-SHELL-FLOWER-FLAG2-SOURCE-R1.json'
       - 'docs/continuity/STONEAGE-QUEST26-SHELL-FLOWER-FLAG2-20261108.md'
       - 'research/recovered/STONEAGE-QUEST25-FOUR-ISLAND-TOUR-ROUTES-SOURCE-R1.json'
@@ -223,3 +233,5 @@ jobs:
         run: python -m unittest tests.test_stoneage_quest25_island_tour_source -v
       - name: Validate QUEST26 source shell-flower exchange, CLEAN controls and flag2 cross-links
         run: python -m unittest tests.test_stoneage_quest26_shell_flower_source -v
+      - name: Validate QUEST27 axe-letter event3 and5 source links and original drop-field values
+        run: python -m unittest tests.test_stoneage_quest27_axe_letter_source -v
