@@ -1,0 +1,1259 @@
+{
+  "schema": "stoneage.quest20.five_brothers_quest_module_coverage_and_source_join.r1",
+  "date": "2026-11-08",
+  "initial_remote": {
+    "main_head": "12c1bd336ff2e98507bfa708553675f85290fa5d",
+    "git_tree": "835619b34de6927e6a8e76fcf25b6b656d5c42db",
+    "full_current_state_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "full_current_state_bytes": 2709173,
+    "main_actions_at_start": "11_COMPLETED_SUCCESS"
+  },
+  "source_scope": "LATER_COMMUNITY_MIXED25_STATIC_NPC_ITEM_ENEMY_MAP_SOURCE_NOT_EARLY_OFFICIAL_DEPLOYMENT",
+  "verified_private_carriers": {
+    "CHAR01_NPC_zip_bytes": 995176,
+    "CHAR01_NPC_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "members_CRC_all_pass": 2205,
+    "ITEM01_cached_original_item_rows_and_TW1_original_RD_zip_bytes": 5868386,
+    "ITEM01_zip_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "item_zip_members_CRC_all_pass": 838,
+    "original_30_scripts_bytes": 30333,
+    "all_source_script_CP950_strict_roundtrip": true,
+    "original_361MB_RAR_rehashed_this_unit": false,
+    "original_two_itemset_complete_texts_reextracted_this_unit": false,
+    "original_private_bytes_published": false
+  },
+  "previous_indices": {
+    "QUEST01_original_source_index_git_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2",
+    "WORLD21_prior_getpet_recovery_path": "research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-21-GETPET-QUEST-BRANCHES-R1.json",
+    "MAP09_qualified_geometry_git_blob": "137580e7c25aadf3d679b6ebfb5080b79912cc4f",
+    "pet_reward_directives_and_enemy_masters_newly_discovered": false
+  },
+  "portfolio_dedup": {
+    "QUEST01_create_references": 315,
+    "QUEST01_source_scripts": 295,
+    "QUEST01_event_blocks": 1349,
+    "QUEST08_19_specialty_distinct_script_paths": 80,
+    "QUEST08_19_QUEST01_indexed_scripts": 78,
+    "QUEST08_19_unindexed_preserved_variants": [
+      "giiru/event/event30_5",
+      "giiru/event/event30_5.old"
+    ],
+    "QUEST08_19_QUEST01_blocks_belonging_to_78_scripts": 403,
+    "QUEST01_scripts_without_QUEST08_19_specialty_analysis": 217,
+    "these_are_not_new_scripts_or_percentage_of_game_complete": true
+  },
+  "original_source_create": {
+    "path": "giiru/event/ev28.create",
+    "bytes": 5199,
+    "sha256": "35616eedb62b5fe5fa8c04a9d978bee7c0808ed092ce3fb6040f78e076ad74ce",
+    "crc32": "3ff92e1c",
+    "active_NPC_create_count": 30
+  },
+  "original_scripts": [
+    {
+      "path": "giiru/event/ev28_0",
+      "bytes": 946,
+      "sha256": "21bad342cdf82ec1afdc764df49144384f57ac04d4d7bbf28773c12998b85739",
+      "crc32": "56f4811c",
+      "event_blocks": 2,
+      "type_counts": {
+        "MESSAGE": 1,
+        "REQUEST": 1
+      }
+    },
+    {
+      "path": "giiru/event/ev28_1",
+      "bytes": 960,
+      "sha256": "4a0286fd70248426c05fe73fe6ca2fcb004e5f5fd8c2814b422dc0872c64260a",
+      "crc32": "1d9dadfd",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_10",
+      "bytes": 966,
+      "sha256": "467c4e60f19c1572f168ad4be4a680efc94a46c1881f75dbaeeeb46414231009",
+      "crc32": "30316db7",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_11",
+      "bytes": 981,
+      "sha256": "9bd0e9429dbb3c44e2607666ea04e781512bd29ee95362eb9cd68a090f1bb509",
+      "crc32": "4a69365d",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_12",
+      "bytes": 973,
+      "sha256": "8cddcecb1eb051f076d87401fdf3dd0a51bade13c0ad05cf0ae2a19b1357ca9c",
+      "crc32": "6d7cc2c3",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_13",
+      "bytes": 973,
+      "sha256": "50fcc4345c013055fc371c3463f535aa58136fde104167217d4bb9be3e82ee8e",
+      "crc32": "6466037f",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_14",
+      "bytes": 972,
+      "sha256": "48e94075c401c416bda83c90b4966afe9bf3c4a1eb8f68f7b871241e59927104",
+      "crc32": "97d45bda",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_15",
+      "bytes": 968,
+      "sha256": "10900454ab279ada89efb95d97225a536d86c6499ca904d1f32920b18b0f10c7",
+      "crc32": "eeec3939",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_16",
+      "bytes": 973,
+      "sha256": "4b8c554238226e31372b613d72d49a30e74e1229079b431f78d69d3a4a877fe6",
+      "crc32": "5793cd0e",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_17",
+      "bytes": 973,
+      "sha256": "c3528cbad403e57849b3b1c6ac42a158bb6d60c3b5c6cc7ad13aace7754d4876",
+      "crc32": "bd40366a",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_18",
+      "bytes": 981,
+      "sha256": "9c14907d03a2e7f38b19f1ad56f6fb18ef23d35433eb563ed0f2d647d05900e1",
+      "crc32": "38a945cd",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_19",
+      "bytes": 967,
+      "sha256": "bc453bb00ce4e4511bb688f21494c3afc39547b053fa0bcd5dbdc4d9a76e7330",
+      "crc32": "505e5986",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_2",
+      "bytes": 964,
+      "sha256": "57c76307df925e8e9eaa0963e68bf0da68cc2c251723599e668acdcca28dc1a7",
+      "crc32": "f7c16de1",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_20",
+      "bytes": 966,
+      "sha256": "889e743cbb6ddd912d891d788b01335a0c2f64642635fe03551a499a82d4f6ae",
+      "crc32": "641615cb",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_21",
+      "bytes": 973,
+      "sha256": "6978a290d888cc4aff92a38c2efaded45b8215ee709eacd8bbf405ff336a22c7",
+      "crc32": "810997ed",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_22",
+      "bytes": 981,
+      "sha256": "a68dd23966b93b4e9aa1e32a34c0cf0d9732457d32728c79147e795810ce9055",
+      "crc32": "57c50af5",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_23",
+      "bytes": 974,
+      "sha256": "4b8d085d77182a27578acfbe027d570020857463a886490768e577d20bf30cc8",
+      "crc32": "37861320",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_3",
+      "bytes": 976,
+      "sha256": "f702c3f9d86e0765daeebc2c8f8a59cd28f2566959a1af46ee40b92f2d4c8e05",
+      "crc32": "b92a07bc",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_4",
+      "bytes": 970,
+      "sha256": "f50456a9d44da011e3c164b126328f214354b031b299c5b1a6215245ca5b2b21",
+      "crc32": "3dd5de41",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_5",
+      "bytes": 979,
+      "sha256": "d5ed1fbca54b2eb8a57c5bdc89abed69943100b8d645e0c1754f6f4811ce2a7e",
+      "crc32": "2764783d",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_6",
+      "bytes": 994,
+      "sha256": "971f5f8eecde4fd368445c41bbb7497bf3be59e39cb4936fa62b5e389d890dbb",
+      "crc32": "a4f3e048",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_7",
+      "bytes": 990,
+      "sha256": "2e0be8edc47eaaf4d45c579b56a6667d7d56f969d14eac42c5622c921105dbb2",
+      "crc32": "efa1af31",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_8",
+      "bytes": 992,
+      "sha256": "ce85c152bd9ba10b53205a2ad4474750bfd1967236839bd91cd98f6981f4e604",
+      "crc32": "4b0e0e05",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_9",
+      "bytes": 973,
+      "sha256": "6d3fe89e9ebb9da5a9cfa636383cf1b22dfb3e2a32cc41836bc7f0a9240a35a2",
+      "crc32": "bdceef99",
+      "event_blocks": 3,
+      "type_counts": {
+        "ACCEPT": 3
+      }
+    },
+    {
+      "path": "giiru/event/ev28_ed1",
+      "bytes": 943,
+      "sha256": "76248f064cbc443ab1452c0cd18a3b12067bc51d0ca98a2bbf4ae91a891b9c4c",
+      "crc32": "9042b112",
+      "event_blocks": 2,
+      "type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 1
+      }
+    },
+    {
+      "path": "giiru/event/ev28_ed2",
+      "bytes": 913,
+      "sha256": "5cd64953d462ac401a2a6f59ffae8fe5ee16086d68c9f682a292cf3daad80e4c",
+      "crc32": "00592121",
+      "event_blocks": 2,
+      "type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 1
+      }
+    },
+    {
+      "path": "giiru/event/ev28_ed3",
+      "bytes": 968,
+      "sha256": "aa9ca5b780ed6bff478fc59865bc2239a37c392698259b17abe3b863635f4f46",
+      "crc32": "7c972e0d",
+      "event_blocks": 2,
+      "type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 1
+      }
+    },
+    {
+      "path": "giiru/event/ev28_ed4",
+      "bytes": 952,
+      "sha256": "660784e8ad1b2a3d1ca9592caf2ab6d1eed5d9ea77fd1f6ea8156d9544e6d2a0",
+      "crc32": "942c4b93",
+      "event_blocks": 2,
+      "type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 1
+      }
+    },
+    {
+      "path": "giiru/event/ev28_ed5",
+      "bytes": 906,
+      "sha256": "612086ef08cd18aece794cb58b2a9e274676527ad144146f3e3ca4da7f9a517e",
+      "crc32": "c0d7a971",
+      "event_blocks": 2,
+      "type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 1
+      }
+    },
+    {
+      "path": "giiru/event/ev28_end",
+      "bytes": 2286,
+      "sha256": "95b77fd25fb4346533c80101d934bcd6f3976c0cae30757e07a096415f4d18e3",
+      "crc32": "87f53bed",
+      "event_blocks": 4,
+      "type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 1,
+        "REQUEST": 2
+      }
+    }
+  ],
+  "source_create_positions": [
+    {
+      "ordinal": 0,
+      "script": "giiru/event/ev28_0",
+      "floor": 31701,
+      "xy": [
+        29,
+        44
+      ],
+      "npc_graphic_alias": 100290
+    },
+    {
+      "ordinal": 1,
+      "script": "giiru/event/ev28_1",
+      "floor": 31701,
+      "xy": [
+        6,
+        8
+      ],
+      "npc_graphic_alias": 24701
+    },
+    {
+      "ordinal": 2,
+      "script": "giiru/event/ev28_2",
+      "floor": 31701,
+      "xy": [
+        15,
+        5
+      ],
+      "npc_graphic_alias": 24701
+    },
+    {
+      "ordinal": 3,
+      "script": "giiru/event/ev28_3",
+      "floor": 31701,
+      "xy": [
+        14,
+        8
+      ],
+      "npc_graphic_alias": 24701
+    },
+    {
+      "ordinal": 4,
+      "script": "giiru/event/ev28_4",
+      "floor": 31701,
+      "xy": [
+        8,
+        12
+      ],
+      "npc_graphic_alias": 24701
+    },
+    {
+      "ordinal": 5,
+      "script": "giiru/event/ev28_5",
+      "floor": 31701,
+      "xy": [
+        8,
+        5
+      ],
+      "npc_graphic_alias": 24701
+    },
+    {
+      "ordinal": 6,
+      "script": "giiru/event/ev28_6",
+      "floor": 31702,
+      "xy": [
+        44,
+        37
+      ],
+      "npc_graphic_alias": 24700
+    },
+    {
+      "ordinal": 7,
+      "script": "giiru/event/ev28_7",
+      "floor": 31702,
+      "xy": [
+        44,
+        40
+      ],
+      "npc_graphic_alias": 24700
+    },
+    {
+      "ordinal": 8,
+      "script": "giiru/event/ev28_8",
+      "floor": 31702,
+      "xy": [
+        43,
+        43
+      ],
+      "npc_graphic_alias": 24700
+    },
+    {
+      "ordinal": 9,
+      "script": "giiru/event/ev28_9",
+      "floor": 31703,
+      "xy": [
+        31,
+        33
+      ],
+      "npc_graphic_alias": 24701
+    },
+    {
+      "ordinal": 10,
+      "script": "giiru/event/ev28_10",
+      "floor": 31703,
+      "xy": [
+        36,
+        37
+      ],
+      "npc_graphic_alias": 24701
+    },
+    {
+      "ordinal": 11,
+      "script": "giiru/event/ev28_11",
+      "floor": 31703,
+      "xy": [
+        33,
+        42
+      ],
+      "npc_graphic_alias": 24701
+    },
+    {
+      "ordinal": 12,
+      "script": "giiru/event/ev28_12",
+      "floor": 31703,
+      "xy": [
+        27,
+        43
+      ],
+      "npc_graphic_alias": 24701
+    },
+    {
+      "ordinal": 13,
+      "script": "giiru/event/ev28_13",
+      "floor": 31703,
+      "xy": [
+        26,
+        37
+      ],
+      "npc_graphic_alias": 24701
+    },
+    {
+      "ordinal": 14,
+      "script": "giiru/event/ev28_14",
+      "floor": 31704,
+      "xy": [
+        37,
+        18
+      ],
+      "npc_graphic_alias": 24700
+    },
+    {
+      "ordinal": 15,
+      "script": "giiru/event/ev28_15",
+      "floor": 31704,
+      "xy": [
+        40,
+        22
+      ],
+      "npc_graphic_alias": 24700
+    },
+    {
+      "ordinal": 16,
+      "script": "giiru/event/ev28_16",
+      "floor": 31704,
+      "xy": [
+        33,
+        23
+      ],
+      "npc_graphic_alias": 24700
+    },
+    {
+      "ordinal": 17,
+      "script": "giiru/event/ev28_17",
+      "floor": 31704,
+      "xy": [
+        35,
+        28
+      ],
+      "npc_graphic_alias": 24700
+    },
+    {
+      "ordinal": 18,
+      "script": "giiru/event/ev28_18",
+      "floor": 31704,
+      "xy": [
+        41,
+        27
+      ],
+      "npc_graphic_alias": 24700
+    },
+    {
+      "ordinal": 19,
+      "script": "giiru/event/ev28_19",
+      "floor": 31705,
+      "xy": [
+        17,
+        40
+      ],
+      "npc_graphic_alias": 24701
+    },
+    {
+      "ordinal": 20,
+      "script": "giiru/event/ev28_20",
+      "floor": 31705,
+      "xy": [
+        31,
+        55
+      ],
+      "npc_graphic_alias": 24700
+    },
+    {
+      "ordinal": 21,
+      "script": "giiru/event/ev28_21",
+      "floor": 31705,
+      "xy": [
+        36,
+        41
+      ],
+      "npc_graphic_alias": 24701
+    },
+    {
+      "ordinal": 22,
+      "script": "giiru/event/ev28_22",
+      "floor": 31705,
+      "xy": [
+        43,
+        64
+      ],
+      "npc_graphic_alias": 24700
+    },
+    {
+      "ordinal": 23,
+      "script": "giiru/event/ev28_23",
+      "floor": 31705,
+      "xy": [
+        6,
+        41
+      ],
+      "npc_graphic_alias": 24701
+    },
+    {
+      "ordinal": 24,
+      "script": "giiru/event/ev28_end",
+      "floor": 31705,
+      "xy": [
+        25,
+        21
+      ],
+      "npc_graphic_alias": 100288
+    },
+    {
+      "ordinal": 25,
+      "script": "giiru/event/ev28_ed1",
+      "floor": 31706,
+      "xy": [
+        23,
+        4
+      ],
+      "npc_graphic_alias": 100287
+    },
+    {
+      "ordinal": 26,
+      "script": "giiru/event/ev28_ed2",
+      "floor": 31706,
+      "xy": [
+        29,
+        4
+      ],
+      "npc_graphic_alias": 100290
+    },
+    {
+      "ordinal": 27,
+      "script": "giiru/event/ev28_ed3",
+      "floor": 31706,
+      "xy": [
+        20,
+        4
+      ],
+      "npc_graphic_alias": 100288
+    },
+    {
+      "ordinal": 28,
+      "script": "giiru/event/ev28_ed4",
+      "floor": 31706,
+      "xy": [
+        26,
+        4
+      ],
+      "npc_graphic_alias": 100289
+    },
+    {
+      "ordinal": 29,
+      "script": "giiru/event/ev28_ed5",
+      "floor": 31706,
+      "xy": [
+        32,
+        4
+      ],
+      "npc_graphic_alias": 100394
+    }
+  ],
+  "source_event_blocks": 85,
+  "source_command_totals": {
+    "DelItem": 52,
+    "GetItem": 75,
+    "EndSetFlg": 6,
+    "GetPet": 5
+  },
+  "six_original_map_geometries": [
+    {
+      "floor": 31701,
+      "geometry": [
+        50,
+        50
+      ],
+      "DAT_sha256": "a3c89bb5cf4c389ae07a4b1e4deeaee3de59f173554587e1a1b3784b5b729602",
+      "original_NPC_count": 6
+    },
+    {
+      "floor": 31702,
+      "geometry": [
+        50,
+        50
+      ],
+      "DAT_sha256": "01e5d181825e07900b47417d4c67d3718b7a248448551274823355f7f8c49292",
+      "original_NPC_count": 3
+    },
+    {
+      "floor": 31703,
+      "geometry": [
+        50,
+        50
+      ],
+      "DAT_sha256": "78e5fddd418943f8683a493b72c02cb9d9e5a2d6cdca4f0a8b98d445b91a75ba",
+      "original_NPC_count": 5
+    },
+    {
+      "floor": 31704,
+      "geometry": [
+        50,
+        50
+      ],
+      "DAT_sha256": "b68edbb60270a375af367abbd94e3a2a1c3255e2bf57b9dc848f3685ed7f04ea",
+      "original_NPC_count": 5
+    },
+    {
+      "floor": 31705,
+      "geometry": [
+        50,
+        70
+      ],
+      "DAT_sha256": "161fc06a7308316dacf0f39ab1c9abfa28364f82e5e92cff1dadc6242acfabd4",
+      "original_NPC_count": 6
+    },
+    {
+      "floor": 31706,
+      "geometry": [
+        50,
+        80
+      ],
+      "DAT_sha256": "f32c2a55afda8c30c8805e6699f530aba8a9dfccf92c88a5f5d6df8ccfafb1cc",
+      "original_NPC_count": 5
+    }
+  ],
+  "five_original_choice_layers": [
+    {
+      "floor": 31701,
+      "start": 1,
+      "end": 5,
+      "correct": 5,
+      "needed": 2507,
+      "other": 2508
+    },
+    {
+      "floor": 31702,
+      "start": 6,
+      "end": 8,
+      "correct": 8,
+      "needed": 2509,
+      "other": 2510
+    },
+    {
+      "floor": 31703,
+      "start": 9,
+      "end": 13,
+      "correct": 12,
+      "needed": 2511,
+      "other": 2512
+    },
+    {
+      "floor": 31704,
+      "start": 14,
+      "end": 18,
+      "correct": 15,
+      "needed": 2513,
+      "other": 2514
+    },
+    {
+      "floor": 31705,
+      "start": 19,
+      "end": 23,
+      "correct": 19,
+      "needed": 2515,
+      "other": 2516
+    }
+  ],
+  "source_choice_NPCs": [
+    {
+      "source_script": "giiru/event/ev28_1",
+      "floor": 31701,
+      "npc_spawn": [
+        6,
+        8
+      ],
+      "GetItem_ID": 2508,
+      "terminal_required": false,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_2",
+      "floor": 31701,
+      "npc_spawn": [
+        15,
+        5
+      ],
+      "GetItem_ID": 2508,
+      "terminal_required": false,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_3",
+      "floor": 31701,
+      "npc_spawn": [
+        14,
+        8
+      ],
+      "GetItem_ID": 2508,
+      "terminal_required": false,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_4",
+      "floor": 31701,
+      "npc_spawn": [
+        8,
+        12
+      ],
+      "GetItem_ID": 2508,
+      "terminal_required": false,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_5",
+      "floor": 31701,
+      "npc_spawn": [
+        8,
+        5
+      ],
+      "GetItem_ID": 2507,
+      "terminal_required": true,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_6",
+      "floor": 31702,
+      "npc_spawn": [
+        44,
+        37
+      ],
+      "GetItem_ID": 2510,
+      "terminal_required": false,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_7",
+      "floor": 31702,
+      "npc_spawn": [
+        44,
+        40
+      ],
+      "GetItem_ID": 2510,
+      "terminal_required": false,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_8",
+      "floor": 31702,
+      "npc_spawn": [
+        43,
+        43
+      ],
+      "GetItem_ID": 2509,
+      "terminal_required": true,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_9",
+      "floor": 31703,
+      "npc_spawn": [
+        31,
+        33
+      ],
+      "GetItem_ID": 2512,
+      "terminal_required": false,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_10",
+      "floor": 31703,
+      "npc_spawn": [
+        36,
+        37
+      ],
+      "GetItem_ID": 2512,
+      "terminal_required": false,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_11",
+      "floor": 31703,
+      "npc_spawn": [
+        33,
+        42
+      ],
+      "GetItem_ID": 2512,
+      "terminal_required": false,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_12",
+      "floor": 31703,
+      "npc_spawn": [
+        27,
+        43
+      ],
+      "GetItem_ID": 2511,
+      "terminal_required": true,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_13",
+      "floor": 31703,
+      "npc_spawn": [
+        26,
+        37
+      ],
+      "GetItem_ID": 2512,
+      "terminal_required": false,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_14",
+      "floor": 31704,
+      "npc_spawn": [
+        37,
+        18
+      ],
+      "GetItem_ID": 2514,
+      "terminal_required": false,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_15",
+      "floor": 31704,
+      "npc_spawn": [
+        40,
+        22
+      ],
+      "GetItem_ID": 2513,
+      "terminal_required": true,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_16",
+      "floor": 31704,
+      "npc_spawn": [
+        33,
+        23
+      ],
+      "GetItem_ID": 2514,
+      "terminal_required": false,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_17",
+      "floor": 31704,
+      "npc_spawn": [
+        35,
+        28
+      ],
+      "GetItem_ID": 2514,
+      "terminal_required": false,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_18",
+      "floor": 31704,
+      "npc_spawn": [
+        41,
+        27
+      ],
+      "GetItem_ID": 2514,
+      "terminal_required": false,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_19",
+      "floor": 31705,
+      "npc_spawn": [
+        17,
+        40
+      ],
+      "GetItem_ID": 2515,
+      "terminal_required": true,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_20",
+      "floor": 31705,
+      "npc_spawn": [
+        31,
+        55
+      ],
+      "GetItem_ID": 2516,
+      "terminal_required": false,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_21",
+      "floor": 31705,
+      "npc_spawn": [
+        36,
+        41
+      ],
+      "GetItem_ID": 2516,
+      "terminal_required": false,
+      "GetItem_source_lines": 2,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_22",
+      "floor": 31705,
+      "npc_spawn": [
+        43,
+        64
+      ],
+      "GetItem_ID": 2516,
+      "terminal_required": false,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 2
+    },
+    {
+      "source_script": "giiru/event/ev28_23",
+      "floor": 31705,
+      "npc_spawn": [
+        6,
+        41
+      ],
+      "GetItem_ID": 2516,
+      "terminal_required": false,
+      "GetItem_source_lines": 3,
+      "DelItem_source_lines": 1
+    }
+  ],
+  "end_exchange": {
+    "script": "giiru/event/ev28_end",
+    "floor": 31705,
+    "spawn_xy": [
+      25,
+      21
+    ],
+    "required_IDs": [
+      2507,
+      2509,
+      2511,
+      2513,
+      2515
+    ],
+    "DelItem_literal_required_five": true,
+    "GetItem_ID": 2517,
+    "EndSetFlg": 28,
+    "source_also_has_another_DelItem_ten_item_candidate": true,
+    "source_request_regive_when_ENDEV28_and_item2517_missing": true,
+    "native_branch_execution_proven": false
+  },
+  "reward_five_NPCs": [
+    {
+      "script": "giiru/event/ev28_ed1",
+      "final_exchange_item": 2517,
+      "GetItem_ID": 2518,
+      "GetPet_enemy_instance": 54,
+      "linked_enemy_template": 91,
+      "source_npc_graphic_alias": 100287,
+      "source_enemy_template_graphic_alias": 100287,
+      "enemy_master_row_sha256": "a9be060431ba00f46131322bf681f9b9cab4ed97361434ac667779216b280687",
+      "template_master_row_sha256": "8e7d40b7a7ec1acc150743a7abe6a1b329d5f6a6257174e9905bc10e90404e6f",
+      "prior_WORLD21_already_has_getpet": true
+    },
+    {
+      "script": "giiru/event/ev28_ed2",
+      "final_exchange_item": 2517,
+      "GetItem_ID": 2519,
+      "GetPet_enemy_instance": 57,
+      "linked_enemy_template": 94,
+      "source_npc_graphic_alias": 100290,
+      "source_enemy_template_graphic_alias": 100290,
+      "enemy_master_row_sha256": "0e5091cff2114a2e3cb500a2876a3aeb442665f6189766c3e426267ec003c2b7",
+      "template_master_row_sha256": "0f55136e1294c84455ba5c90005e8f4909ad3feb25f7cb7f38c4b3f8d0c830bb",
+      "prior_WORLD21_already_has_getpet": true
+    },
+    {
+      "script": "giiru/event/ev28_ed3",
+      "final_exchange_item": 2517,
+      "GetItem_ID": 2520,
+      "GetPet_enemy_instance": 55,
+      "linked_enemy_template": 92,
+      "source_npc_graphic_alias": 100288,
+      "source_enemy_template_graphic_alias": 100288,
+      "enemy_master_row_sha256": "d3c4dbd610bd246b68de524e0d697eae8b554690647214018b1550d411e16a04",
+      "template_master_row_sha256": "96635373356600b533e8c1fd5a7e76fcaaaf56d103835397f237e031dcb5aa4c",
+      "prior_WORLD21_already_has_getpet": true
+    },
+    {
+      "script": "giiru/event/ev28_ed4",
+      "final_exchange_item": 2517,
+      "GetItem_ID": 2526,
+      "GetPet_enemy_instance": 56,
+      "linked_enemy_template": 93,
+      "source_npc_graphic_alias": 100289,
+      "source_enemy_template_graphic_alias": 100289,
+      "enemy_master_row_sha256": "ba01d0870b5a5801dc39fd826fde39e00c9133937942e8eda3a54f5e8950a6b8",
+      "template_master_row_sha256": "0dca8c9084af6a60a8bea2fbc1eb16e8d9b80c58487857d92a3a77a8b34155d8",
+      "prior_WORLD21_already_has_getpet": true
+    },
+    {
+      "script": "giiru/event/ev28_ed5",
+      "final_exchange_item": 2517,
+      "GetItem_ID": 2525,
+      "GetPet_enemy_instance": 481,
+      "linked_enemy_template": 95,
+      "source_npc_graphic_alias": 100394,
+      "source_enemy_template_graphic_alias": 100394,
+      "enemy_master_row_sha256": "1c37cfdcd4b4f00b2f213385ff8279e8eb99bbd30993b161e539e3d20abd315a",
+      "template_master_row_sha256": "c1ff0b19a0556cd8a142f804ad802a9c35f955cf6851fb3139f54e9a76c364c9",
+      "prior_WORLD21_already_has_getpet": true
+    }
+  ],
+  "source_item_rows": [
+    {
+      "ID": 2507,
+      "original_two_94_column_rows_same_SHA256": "8828c189d6b0e4875dd7b826b9745ebea069e6356825c7c049f196efb068f96c",
+      "cross_carrier_TW1_bitmap_alias": 24222,
+      "qualification": "REAL_RD_DECODED_CROSS_CARRIER"
+    },
+    {
+      "ID": 2508,
+      "original_two_94_column_rows_same_SHA256": "be9cc4316c9dd10fdf8714e837bbaf6bbbd9dddf39a64cfbb53a169be0e718ef",
+      "cross_carrier_TW1_bitmap_alias": 24222,
+      "qualification": "REAL_RD_DECODED_CROSS_CARRIER"
+    },
+    {
+      "ID": 2509,
+      "original_two_94_column_rows_same_SHA256": "73d42f5294753c9c4ca0d873262fbe22caabe65c37f496292a06a5b8a064f7f4",
+      "cross_carrier_TW1_bitmap_alias": 24222,
+      "qualification": "REAL_RD_DECODED_CROSS_CARRIER"
+    },
+    {
+      "ID": 2510,
+      "original_two_94_column_rows_same_SHA256": "7b2a437de478d5ab9f589786115ac1755e9f53e62e200aef76e5920349b5e8c2",
+      "cross_carrier_TW1_bitmap_alias": 24222,
+      "qualification": "REAL_RD_DECODED_CROSS_CARRIER"
+    },
+    {
+      "ID": 2511,
+      "original_two_94_column_rows_same_SHA256": "cb02bb9821b0f44388b0acde06871e173aaa58818f5371b8ebf172ce9a5a8d7e",
+      "cross_carrier_TW1_bitmap_alias": 24222,
+      "qualification": "REAL_RD_DECODED_CROSS_CARRIER"
+    },
+    {
+      "ID": 2512,
+      "original_two_94_column_rows_same_SHA256": "6e5120c54f832e60b7d8cf9f25067406ec0cb3c036962791c489ce3e20ea118a",
+      "cross_carrier_TW1_bitmap_alias": 24222,
+      "qualification": "REAL_RD_DECODED_CROSS_CARRIER"
+    },
+    {
+      "ID": 2513,
+      "original_two_94_column_rows_same_SHA256": "1650f27dc8907ddea530d587fa2b2c04642f4fa4bb519f633a1672815bd78782",
+      "cross_carrier_TW1_bitmap_alias": 24222,
+      "qualification": "REAL_RD_DECODED_CROSS_CARRIER"
+    },
+    {
+      "ID": 2514,
+      "original_two_94_column_rows_same_SHA256": "968d8ea713f8caa53694d8ff5c641d166a34c57a92a9b46761dde1520d45dbce",
+      "cross_carrier_TW1_bitmap_alias": 24222,
+      "qualification": "REAL_RD_DECODED_CROSS_CARRIER"
+    },
+    {
+      "ID": 2515,
+      "original_two_94_column_rows_same_SHA256": "65aec4dc9d6e6f7719ce18d6ee8b5a0c99a73bc544352cccc599ad7218c4f110",
+      "cross_carrier_TW1_bitmap_alias": 24222,
+      "qualification": "REAL_RD_DECODED_CROSS_CARRIER"
+    },
+    {
+      "ID": 2516,
+      "original_two_94_column_rows_same_SHA256": "3aac7d517219c9a473c930c616274f7259104b840c3e75b6f56ba88d2ccac068",
+      "cross_carrier_TW1_bitmap_alias": 24222,
+      "qualification": "REAL_RD_DECODED_CROSS_CARRIER"
+    },
+    {
+      "ID": 2517,
+      "original_two_94_column_rows_same_SHA256": "dfcc6665bfbc491a0b94bf1ad3ce37a125708f5b6b1e413a85b23f81f16d4e32",
+      "cross_carrier_TW1_bitmap_alias": 14648,
+      "qualification": "REAL_RD_DECODED_CROSS_CARRIER"
+    },
+    {
+      "ID": 2518,
+      "original_two_94_column_rows_same_SHA256": "52105f8b46773ba3a05a636dc28b2dbbeb73475b3716ec8c5b74ad4bc1ab48b1",
+      "cross_carrier_TW1_bitmap_alias": 22073,
+      "qualification": "REAL_RD_DECODED_CROSS_CARRIER"
+    },
+    {
+      "ID": 2519,
+      "original_two_94_column_rows_same_SHA256": "781ff99ce107765fd5baa8badc41f3e7c967fcb2391fb26e047e99a3ed3706ac",
+      "cross_carrier_TW1_bitmap_alias": 22090,
+      "qualification": "REAL_RD_DECODED_CROSS_CARRIER"
+    },
+    {
+      "ID": 2520,
+      "original_two_94_column_rows_same_SHA256": "95c392afe8b7e3d756889ea4c41027223e12afd9990ae58f34fe7cc23579ad20",
+      "cross_carrier_TW1_bitmap_alias": 22118,
+      "qualification": "REAL_RD_DECODED_CROSS_CARRIER"
+    },
+    {
+      "ID": 2525,
+      "original_two_94_column_rows_same_SHA256": "583afde9a55f58a7d130db60057485ad48fc764e603bc9592659ed3799616cd8",
+      "cross_carrier_TW1_bitmap_alias": 24211,
+      "qualification": "REAL_RD_DECODED_CROSS_CARRIER"
+    },
+    {
+      "ID": 2526,
+      "original_two_94_column_rows_same_SHA256": "a5f8919ba8a50b63c6ba568c54bfd75b0f945fec346c6c4966d0763a6d982624",
+      "cross_carrier_TW1_bitmap_alias": 24201,
+      "qualification": "REAL_RD_DECODED_CROSS_CARRIER"
+    }
+  ],
+  "original_command_exceptions": [
+    {
+      "script": "giiru/event/ev28_21",
+      "GetItem_literal_lines": 2,
+      "typical_other_choice_GetItem_lines": 3,
+      "do_not_infer_missing_line": true
+    },
+    {
+      "script": "giiru/event/ev28_23",
+      "DelItem_literal_lines": 1,
+      "typical_other_choice_DelItem_lines": 2,
+      "do_not_infer_missing_line": true
+    }
+  ],
+  "uncertainties": {
+    "source_events_already_QUEST01_indexed": true,
+    "GetPet_5_source_directives_already_WORLD21_indexed": true,
+    "actual_game_dungeon_entered": false,
+    "original_reward_pet_received": false,
+    "original_same_build_TW1_official_server_scripts": false,
+    "native_conditions_priority_or_collision": false,
+    "source_NPC_graphic_equals_template_graphic_does_not_establish_same_object_identity": true,
+    "source_item_image_same_does_not_mean_same_item": true,
+    "gameplay_completion_percentage": null
+  },
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "QUEST21_SOURCE_READY_DISTINCT_FAMILY_OR_GAMEPLAY_CONTENT_MATERIAL_REVIEW_DO_NOT_REPEAT_WORLD21_OR_QUEST01"
+}
