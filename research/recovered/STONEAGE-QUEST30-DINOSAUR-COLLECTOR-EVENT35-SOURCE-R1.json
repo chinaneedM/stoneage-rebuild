@@ -1,0 +1,371 @@
+{
+  "schema": "stoneage.quest30.seimu_dinosaur_collector_event35_source.r1",
+  "date": "2026-11-08",
+  "initial_remote": {
+    "head": "95fc5875143c7635ee1773f4e2204c3116d2675f",
+    "tree": "8d4dfc86d6bd7f3b920a344073e0905b5de60068",
+    "preserved_CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "source_scope": "LATER_COMMUNITY_MIXED25_NOT_VERIFIED_EARLY_OFFICIAL",
+  "verified_carriers": {
+    "npc_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "npc_zip_all_members_SHA_and_CRC": 2205,
+    "item_zip_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "item_zip_CRC_members": 838,
+    "parent_RAR_reread": false
+  },
+  "existing_indices": [
+    {
+      "path": "STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json",
+      "bytes": 1321481,
+      "sha256": "2995e5825ffd204d5fd31ccffc95f009d8abbcebad829c5824e490b7f20c2b2c",
+      "git_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2"
+    },
+    {
+      "path": "STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json",
+      "bytes": 1798170,
+      "sha256": "f6beb17b76b23211d36113bcf462c16ac38435233b3891bb21765179b84e4566",
+      "git_blob": "a088b61a3212f7049e7793f587123ffb29bebad7"
+    }
+  ],
+  "dedupe": {
+    "QUEST01_indexed_original_scripts": 295,
+    "QUEST01_indexed_original_TYPE": 1349,
+    "selected_script_previously_in_QUEST01": true,
+    "selected_eight_TYPE_previously_in_QUEST01": true,
+    "QUEST09_existing_seimu_scripts": [
+      "seimu/event/event01_1",
+      "seimu/event/event01_2"
+    ],
+    "new_original_script_files": 0,
+    "new_original_TYPE_sections": 0,
+    "selected_family_not_QUEST17_bait_ranch": true
+  },
+  "source_files": [
+    {
+      "path": "seimu/event/event02_n.create",
+      "bytes": 348,
+      "sha256": "b19afb9d62d48ba5c1eaec70839cc1f7d4ba3361af8ce7cb1b534cb5f283066c",
+      "crc32": "36d97106"
+    },
+    {
+      "path": "seimu/event/event02_1",
+      "bytes": 3451,
+      "sha256": "63712fde0c36778b6b65af560a4c396ce8a04877243a05da41f63dd0359b8c34",
+      "crc32": "11f54a2b"
+    },
+    {
+      "path": "jaruga/event/event.template",
+      "bytes": 122,
+      "sha256": "9c11ac0cbbd9b110e8ff7d0115730044673bf29c5df6d23034e56530c181d0b2",
+      "crc32": "a70fc73f"
+    }
+  ],
+  "source_NPC_create": {
+    "file": "seimu/event/event02_n.create",
+    "ordinal": 0,
+    "source_block_sha256": "9b745670a7bd8fd849d0a84daace3ec50fd08b032cc3b62a54ba536338a27197",
+    "floor": 100,
+    "source_borncorner_four_integers": [
+      230,
+      180,
+      525,
+      200
+    ],
+    "range_not_proven_single_spawn_point": true,
+    "original_graphic_alias": 16033,
+    "original_direction": 4,
+    "source_script": "seimu/event/event02_1",
+    "original_functionset": "ExChangeMan",
+    "template_path": "jaruga/event/event.template",
+    "template_ordinal": 0
+  },
+  "source_script": {
+    "path": "seimu/event/event02_1",
+    "bytes": 3451,
+    "sha256": "63712fde0c36778b6b65af560a4c396ce8a04877243a05da41f63dd0359b8c34",
+    "crc32": "11f54a2b",
+    "events": [
+      {
+        "ordinal": 0,
+        "type": "ACCEPT",
+        "event_no": 35,
+        "condition_literal": "LV>0&PET=25-221*1&PET=25-222*1&ITEM=2607&NOWEV=35",
+        "condition_sha256": "728c15d55483c0e2cbfe25ccad5caca22adebf7b51cd83c2adc68b47b6cb9736",
+        "section_sha256": "f24b0d21595ad0bc1d4f58485abb712a8833ff57caeb74392aff91708f907aea",
+        "source_type_line": 4,
+        "commands": {
+          "DelItem": [
+            "2607"
+          ],
+          "GetPet": [
+            "93"
+          ],
+          "DelPet": [
+            "PET=25-221*1,PET=25-222*1"
+          ],
+          "EndSetFlg": [
+            "35"
+          ]
+        },
+        "exact_EventEnd_found": true
+      },
+      {
+        "ordinal": 1,
+        "type": "MESSAGE",
+        "event_no": -1,
+        "condition_literal": "LV>0&NOWEV=35&ITEM=2607",
+        "condition_sha256": "b4c050e7ef3310f19e0fcb881badb99ac0e9d6d3f5d41a23a7933e8effaa29ab",
+        "section_sha256": "76e2a62fe4c573ef5bad6a98069c95c7a5d4f9356c15f127be294262db67d8cf",
+        "source_type_line": 16,
+        "commands": {},
+        "exact_EventEnd_found": true
+      },
+      {
+        "ordinal": 2,
+        "type": "ACCEPT",
+        "event_no": -1,
+        "condition_literal": "LV>0&PET=25-223*1&PET=25-224*1&ITEM!=2607&NOWEV=35",
+        "condition_sha256": "5c6b8dd2d164847bc66561935076f7010965900d973bcbd72865578cd53a90f7",
+        "section_sha256": "4cf56be7927c4b543bd632d57e56f25d64712f966f92366930672eb004ff04e8",
+        "source_type_line": 23,
+        "commands": {
+          "GetItem": [
+            "2607"
+          ],
+          "DelPet": [
+            "PET=25-223*1,PET=25-224*1"
+          ]
+        },
+        "exact_EventEnd_found": true
+      },
+      {
+        "ordinal": 3,
+        "type": "REQUEST",
+        "event_no": 35,
+        "condition_literal": "LV>0&ENDEV!=35",
+        "condition_sha256": "1d6eab678903bf942242bcafb47fd8af8cf1b3641d1c0cf8ab6be7837287bd95",
+        "section_sha256": "1a6bd80e2d81a8ce080877818a47e0d0c6113a54acf879e52fcc0a56c69b49da",
+        "source_type_line": 33,
+        "commands": {},
+        "exact_EventEnd_found": true
+      },
+      {
+        "ordinal": 4,
+        "type": "ACCEPT",
+        "event_no": -1,
+        "condition_literal": "LV>0&PET=25-558*1&PET=25-293*1&ITEM=2607&ENDEV=35,LV>0&PET=25-292*1&PET=25-293*1&ITEM=2607&ENDEV=35",
+        "condition_sha256": "8823675927029325e4442b001c276820d6bc2830dc681803d64954c4a2f91877",
+        "section_sha256": "1a3bfb1625858ec6fd22100d917a8ea293d81a16d8e3730fa5d32565b4bbd8bc",
+        "source_type_line": 45,
+        "commands": {
+          "DelItem": [
+            "2607"
+          ],
+          "GetPet": [
+            "341"
+          ],
+          "DelPet": [
+            "EVDEL"
+          ]
+        },
+        "exact_EventEnd_found": true
+      },
+      {
+        "ordinal": 5,
+        "type": "MESSAGE",
+        "event_no": -1,
+        "condition_literal": "LV>0&ITEM=2607&ENDEV=35",
+        "condition_sha256": "518e49bf855653ca2fe70291524f0d8e90bffdc5378832eda87a8ffc3ee56602",
+        "section_sha256": "f4d275869568ec5eaaf55094820ea371845736494b05b23ad31fbd02b0d1335a",
+        "source_type_line": 56,
+        "commands": {},
+        "exact_EventEnd_found": true
+      },
+      {
+        "ordinal": 6,
+        "type": "ACCEPT",
+        "event_no": -1,
+        "condition_literal": "LV>0&PET=25-291*1&PET=25-294*1&ITEM!=2607&ENDEV=35",
+        "condition_sha256": "f3c1cb7ba28b192ece782433b9b1bd1330bcba9026fa0c685b00e3fc4d50a999",
+        "section_sha256": "1e2ce1e7f4ac7c24905ab2223aad558fde6db3d4dbbe15c435aa40bb2229a19a",
+        "source_type_line": 62,
+        "commands": {
+          "GetItem": [
+            "2607"
+          ],
+          "DelPet": [
+            "PET=25-291*1,PET=25-294*1"
+          ]
+        },
+        "exact_EventEnd_found": true
+      },
+      {
+        "ordinal": 7,
+        "type": "ACCEPT",
+        "event_no": -1,
+        "condition_literal": "LV>0&ENDEV=35",
+        "condition_sha256": "93b369bf30722e5fed11685ca1e87355c571d4e14d5f86ad3ddab45afa29e931",
+        "section_sha256": "7a3070b119817852453d3f9a7b28f440c43e94b6c8e3bc90f3c8a9e120346051",
+        "source_type_line": 72,
+        "commands": {},
+        "exact_EventEnd_found": true
+      }
+    ],
+    "original_EVENT_section_count": 8
+  },
+  "recovered_control_groups": [
+    {
+      "event_ordinal": 0,
+      "type": "ACCEPT",
+      "event_number": 35,
+      "original_condition_literal": "LV>0&PET=25-221*1&PET=25-222*1&ITEM=2607&NOWEV=35",
+      "original_DelPet_literals": [
+        "PET=25-221*1,PET=25-222*1"
+      ],
+      "original_GetItem_literals": [],
+      "original_DelItem_literals": [
+        "2607"
+      ],
+      "original_GetPet_literals": [
+        "93"
+      ],
+      "original_EndSetFlg_literals": [
+        "35"
+      ],
+      "section_sha256": "f24b0d21595ad0bc1d4f58485abb712a8833ff57caeb74392aff91708f907aea"
+    },
+    {
+      "event_ordinal": 2,
+      "type": "ACCEPT",
+      "event_number": -1,
+      "original_condition_literal": "LV>0&PET=25-223*1&PET=25-224*1&ITEM!=2607&NOWEV=35",
+      "original_DelPet_literals": [
+        "PET=25-223*1,PET=25-224*1"
+      ],
+      "original_GetItem_literals": [
+        "2607"
+      ],
+      "original_DelItem_literals": [],
+      "original_GetPet_literals": [],
+      "original_EndSetFlg_literals": [],
+      "section_sha256": "4cf56be7927c4b543bd632d57e56f25d64712f966f92366930672eb004ff04e8"
+    },
+    {
+      "event_ordinal": 4,
+      "type": "ACCEPT",
+      "event_number": -1,
+      "original_condition_literal": "LV>0&PET=25-558*1&PET=25-293*1&ITEM=2607&ENDEV=35,LV>0&PET=25-292*1&PET=25-293*1&ITEM=2607&ENDEV=35",
+      "original_DelPet_literals": [
+        "EVDEL"
+      ],
+      "original_GetItem_literals": [],
+      "original_DelItem_literals": [
+        "2607"
+      ],
+      "original_GetPet_literals": [
+        "341"
+      ],
+      "original_EndSetFlg_literals": [],
+      "section_sha256": "1a3bfb1625858ec6fd22100d917a8ea293d81a16d8e3730fa5d32565b4bbd8bc"
+    },
+    {
+      "event_ordinal": 6,
+      "type": "ACCEPT",
+      "event_number": -1,
+      "original_condition_literal": "LV>0&PET=25-291*1&PET=25-294*1&ITEM!=2607&ENDEV=35",
+      "original_DelPet_literals": [
+        "PET=25-291*1,PET=25-294*1"
+      ],
+      "original_GetItem_literals": [
+        "2607"
+      ],
+      "original_DelItem_literals": [],
+      "original_GetPet_literals": [],
+      "original_EndSetFlg_literals": [],
+      "section_sha256": "1e2ce1e7f4ac7c24905ab2223aad558fde6db3d4dbbe15c435aa40bb2229a19a"
+    }
+  ],
+  "source_2607_item_row": {
+    "item_ID": 2607,
+    "original_two_94_column_rows": [
+      {
+        "table": "itemset.txt",
+        "row_1based": 2190,
+        "sha256": "cf6d2f1dd560c1fa2d0dad360bf0bfef7b4eb582d65d52074d15fd9ea25f52bd",
+        "image_alias": 22102,
+        "original_name_UTF8_sha256": "87c0bcaf3a936a537913eb98ff0a8e19dc1b97e8392ac67e642eb33a3462a2f1"
+      },
+      {
+        "table": "itemset0710.txt",
+        "row_1based": 2585,
+        "sha256": "cf6d2f1dd560c1fa2d0dad360bf0bfef7b4eb582d65d52074d15fd9ea25f52bd",
+        "image_alias": 22102,
+        "original_name_UTF8_sha256": "87c0bcaf3a936a537913eb98ff0a8e19dc1b97e8392ac67e642eb33a3462a2f1"
+      }
+    ],
+    "source_image_alias": 22102,
+    "cross_carrier_TW1_candidate_PNG_sha256": "de5705244a0a6794b14a4e0336ce5a06f8d10f80df51d9a8cdb56756986ec34f",
+    "source_record_discrepancy": "NPC_SOURCE_CALLS_CAPTURE_PROOF_ITEMSET_NAMES_RING",
+    "dialogue_name_and_itemset_source_name_assumed_identical": false,
+    "mismatch_cause_known": false
+  },
+  "prior_WORLD21_existing_GetPet_instances": [
+    {
+      "source_GetPet_operand": 93,
+      "prior_enemy_instance": 93,
+      "prior_template_id": 171,
+      "prior_template_graphic_alias": 100319,
+      "original_enemy_instance_not_template_id": true,
+      "source": "WORLD21_EXISTING_SOURCE_LOOKUP"
+    },
+    {
+      "source_GetPet_operand": 341,
+      "prior_enemy_instance": 341,
+      "prior_template_id": 274,
+      "prior_template_graphic_alias": 100362,
+      "original_enemy_instance_not_template_id": true,
+      "source": "WORLD21_EXISTING_SOURCE_LOOKUP"
+    }
+  ],
+  "prior_WORLD21_git_blob": "f8614b9e90e548efb6d61e269d725d17ea173a74",
+  "prior_QUEST05_map_floor100": {
+    "source_floor_id": 100,
+    "existing_source_MAP_status": "NO_MATCHING_DAT_IN_955",
+    "no_matching_DAT_in_this_collection_not_proof_original_floor_absent": true,
+    "prior_QUEST05_git_blob": "b004e488e1d0a93ca7c14eb90abb584b23f341fe"
+  },
+  "original_variants_and_uncertainties": {
+    "first_reward_has_EndSetFlg35": true,
+    "second_reward_without_EndSetFlg": true,
+    "after_first_flag_second_run_native_reachability_proven": false,
+    "first_pair_original_PET_literals": "PET=25-223*1,PET=25-224*1",
+    "second_pair_original_PET_literals": "PET=25-221*1,PET=25-222*1",
+    "alternative_second_run_original_condition": "LV>0&PET=25-558*1&PET=25-293*1&ITEM=2607&ENDEV=35,LV>0&PET=25-292*1&PET=25-293*1&ITEM=2607&ENDEV=35",
+    "second_run_original_DelPet_is_EVDEL": true,
+    "original_DelPet_EVDEL_interpreted_as_specific_pets": false,
+    "original_PET25_minus_ID_encoding_interpreted_as_verified_level_or_species": false,
+    "original_comma_condition_executed": false,
+    "original_npc_dialogue_replayed": false
+  },
+  "boundaries": {
+    "original_game_or_server_executed": false,
+    "native_capture_or_handin_or_reward_observed": false,
+    "original_palette_or_client_scene_rendered": false,
+    "source_100_DAT_recovered_in_955": false,
+    "official_early_same_deployment_confirmed": false,
+    "pet_instance_ids_equated_to_template_ids": false,
+    "original_source_NPC_dialogue_or_item_rows_published": false,
+    "original_rarity_or_random_probabilities_proven": false,
+    "original_task_origin": "UNRESOLVED"
+  },
+  "stage_A": {
+    "PARTIAL": 7,
+    "OPEN": 2
+  },
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "QUEST31_MODULE_GAP_REVIEW_THEN_CROSS_MODULE_INTEGRATION_IF_NO_DISTINCT_SOURCE_READY_TASK"
+}

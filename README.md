@@ -2192,3 +2192,8 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-08 — QUEST29｜精灵王事件69来源与任务模块去重
 
 [QUEST29 原来源审查](docs/continuity/STONEAGE-QUEST29-SPIRIT-KING-ORIGINAL-SOURCE-20261108.md) 已经 [PR #269](https://github.com/chinaneedM/stoneage-rebuild/pull/269) 合并并经主线专项 CI 实测成功。复用原 QUEST01 的295脚本/1349段/14源目录查重，event69的13脚本/71段全部为旧已归档来源，不称新发现；本轮把25原CREATE、36原文件、48道具ID/96原行、随机重复位置和三条GetPet原操作数355/484/1479联接。仅5个道具具有TW1跨来源原像候选，43个没有合格候选；绝不视作初代没有物品。私人原脚本、物品行、图像留用户Library，最终138成员包91,171B/SHA256 e710f97dfc165e06680f3b016b19313c6a5569558cfc700759da1cc2f0f28407已二次回读整SHA及CRC同。公开仅[派生证据](research/recovered/STONEAGE-QUEST29-SPIRIT-KING-EVENT69-SOURCE-R1.json)、工具、10项回归及[主线验收收据](research/recovered/STONEAGE-QUEST29-PUBLICATION-ACCEPTANCE-R1.json)。候选4项、主线专项1项Actions实际成功。旧CURRENT blob c89e0e33537990aa2132b47c40fef49a985a935c全文不改，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null。最高 NEXT QUEST30：只选未专项整合且有真实来源增量的任务批次；否则有界转跨模块联合复核，不扩网服/引擎/体验优化。
+
+
+## 2026-11-08 — QUEST30｜恐龙收集任务与道具2607来源冲突
+
+[QUEST30 原来源、旗标35、两轮交宠与跨源矛盾](docs/continuity/STONEAGE-QUEST30-DINOSAUR-COLLECTOR-EVENT35-SOURCE-20261108.md)：严格去重排除已由QUEST16覆盖的20501ev1..5和QUEST09已覆盖的seimu/event/event01_1/2，本轮专项复读seimu/event/event02_1、对应原CREATE及功能模板，共8个QUEST01已有TYPE，0新增原脚本。保留两轮原PET/DelPet/EVDEL语法、GetPet93/341与WORLD21既有模板171/274的来源联接；最重要是同载体脚本将道具2607视为收集证明，但两原94栏itemset的2607均名为“火難的戒指”，未确定具体版本/加载原因，不能擅自统一。floor100四整数为CREATE范围、现955 DAT目录无匹配，未假造地图。私人商业正文和跨源原图仅入个人Library并复取验SHA/CRC；公开仅[数字与散列证据](research/recovered/STONEAGE-QUEST30-DINOSAUR-COLLECTOR-EVENT35-SOURCE-R1.json)、可选原件再读工具及11项派生回归。原客户端/宠物领奖未运行，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null；**最高NEXT QUEST31** 先全任务缺口审查，若缺来源就绪新增批次则转跨模块内容整合，不继续累加任务编号。

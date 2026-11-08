@@ -1,0 +1,25 @@
+name: Verify StoneAge QUEST30 original dinosaur collector derived source
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-QUEST30-DINOSAUR-COLLECTOR-EVENT35-SOURCE-R1.json'
+      - 'tools/stoneage_quest30_dino_collector_source.py'
+      - 'tests/test_stoneage_quest30_dino_collector_source.py'
+      - '.github/workflows/verify-stoneage-quest30-dino-collector-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-QUEST30-DINOSAUR-COLLECTOR-EVENT35-SOURCE-R1.json'
+      - 'tools/stoneage_quest30_dino_collector_source.py'
+      - 'tests/test_stoneage_quest30_dino_collector_source.py'
+      - '.github/workflows/verify-stoneage-quest30-dino-collector-source.yml'
+jobs:
+  derived-source:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_quest30_dino_collector_source.py' -v
