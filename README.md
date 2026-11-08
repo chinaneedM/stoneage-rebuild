@@ -2184,3 +2184,7 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-08 — QUEST27｜事件3／5斧头与感谢函完整双端来源
 
 [QUEST27原来源、同图异字段与接力](docs/continuity/STONEAGE-QUEST27-AXE-LETTER-EVENT3-5-20261108.md)经[PR #267](https://github.com/chinaneedM/stoneage-rebuild/pull/267)与内容主线CI验收：两旧脚本/五段连接原斧头2416交付→旗标3→感谢函2423→奖励斧头2448，保留CREATE0指event03_2、CREATE1指event03_1的反序、原物理段序及ENDEV3/5逗号。两原表六行原SHA一致，2416/2448共用候选图但原第79栏1/0不同；字段按既有后代94栏命名，与原对白差异并列，不称原丢弃/消失实验或官方同版。三ID仅两幅原候选PNG/RGBA核同并查看，无新原RD/DAT/NPC/浏览器或原程序执行。14成员私人包保存后二次整SHA/CRC一致，公开仅[源数值和散列](research/recovered/STONEAGE-QUEST27-AXE-LETTER-EVENT3-5-SOURCE-R1.json)、工具、8项验证及[验收收据](research/recovered/STONEAGE-QUEST27-PUBLICATION-ACCEPTANCE-R1.json)。全部314项任务相关检查通过；共用读取函数后QUEST26默认报告及12私人成员字节不变，候选四项与内容主线专项实际成功。旧CURRENT/四历史不改，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体百分比未知。最高NEXT QUEST28回任务模块查重，集中药草/药剂剩余来源材料，保留后期分叉，不继续扩CLEAN/SP/丢弃helper。
+
+## 2026-11-08 — QUEST28｜药草／药粉、骨头交换与四场景
+
+[QUEST28 原源脚本、道具与四 DAT 场景](docs/continuity/STONEAGE-QUEST28-HERBS-MEDICINE-FOUR-SCENES-20261108.md)完成独立私人包复验：五原脚本15段与旧 QUEST01 完全同源（新增脚本0），8原NPC/配置/模板文件、两原物品表9 ID/18行、4 原DAT场景6个CREATE格及439幅有据候选地图PNG逐散列核验。保留 `ITEM=2446*10` 与裸 `DelItem:2446` 不一致、1982未明确删除、药草旗标1/87逗号三条件、缺 `nevent02_1` 与地图3200的限定缺图，不将后代1984粉剂归于初代。私人原脚本/地图/像素仅留 Library，公开[数字和来源哈希](research/recovered/STONEAGE-QUEST28-HERB-MEDICINE-FOUR-SCENES-SOURCE-R1.json)、测试及验收说明，原客户端未运行。巨型 CURRENT 原样保留、Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、整体完成率未知。**最高NEXT QUEST29**：对任务模块全局查重后选另一实际新增玩家可见资料的批次；不得重复小范围辅助工具。
