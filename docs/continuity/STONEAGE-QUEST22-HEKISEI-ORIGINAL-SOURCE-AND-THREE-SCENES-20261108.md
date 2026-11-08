@@ -51,3 +51,14 @@ QUEST21的NEXT已选定本族，先检查QUEST01、WORLD09/23和R73：七个脚�
 **止点与下一项**：本族静态关系及三个原场景已有限闭合，QUEST23先回模块材料组合审计，对QUEST01–22、WORLD、宠物/地图/物品已有覆盖查重，再选有实际原字节或可观察内容增量的一项。不继续穷举四洞窟、箱子概率、网服/账号或新引擎。2766/2767取得、3400 DAT、原生选择/交付/地图交互仅在相应新源出现时重开。
 
 Stage A仍 **7 PARTIAL+2 OPEN**，Stage B/wiki **GATED**，R79 **PAUSED_NON_BLOCKING**，总体完成率未知；本体/常驻/活动归属 **UNRESOLVED**。
+
+
+## 实际候选／主线验收与下一材料批次
+
+候选 `a4d3b1ed0519977a9cc280eae4d3445e5a18c7c8` / tree `d57cb613c0d310b1cc7293f63d72288f3c82659b`，push QUEST `42472274781`、PR QUEST `42472289857`、PR O11 `42472289834`、PR O12 `42472289811` 四运行均 completed/success；PR专项 job `128705676253` 日志实际确认九项新增检查成功。五完整远端文件与本地字节相同，完整tree相同。
+
+[PR #262](https://github.com/chinaneedM/stoneage-rebuild/pull/262)已squash合并为 `dcdfc27d323be74441d0d9729a9f19009fcec091`，主线内容tree保持相同。主线 [run42472511732](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42472511732) / job `128706398027` completed/success，实际日志同样确认九项新检查。公开CI只读派生元数据，**不是源场景/原游戏运行**；三源场景九画布双实现、原DAT六格、194成员逐字节再生成和私人包保存后SHA/CRC回读均为本地原资料验收。查阅页九份原文与CP950解码逐字相同，链接及六黄点中心像素实核。本地266项任务相关检查通过，无新短期原源工件。正式 **QUEST22=ACCEPTED_SOURCE_BOUNDED**，最初“后验追加”由本段实际结果补足，旧失败记录不动。
+
+完整旧CURRENT blob及决策/历史/来源原字节保持。全部身份/运行与来源限制见 `research/recovered/STONEAGE-QUEST22-PUBLICATION-ACCEPTANCE-R1.json`；本验收追加提交自身CI不预支。
+
+**最高NEXT：QUEST23_MODULE_MATERIAL_REVIEW_THEN_PORU02_SOURCE_READY_STORY_BATCH。** 本轮有界审阅剩余原CREATE及旧专项记录后，选择 `poru/poru02.create` 作为下一候选批次：当前来源包含20条ExChangeMan引用和一个额外非该类型引用，相关9个室内floor已有MAP09原DAT候选，500大地图仍未在该就绪目录匹配。先回旧模块/WORLD/QUEST01–22查重，再恢复原剧情/道具/已有源地图的实质关系；不把20脚本或102旧段当新发现或完成百分比。源borncenter配置不能伪换成borncorner；`poru/titan`已知8 TYPE/7 EventEnd，必须保留缺失与按原TYPE的边界，不能直接套要求每段有EventEnd的严格解析器。此前只确认原文件可得性和旧目录范围，**没有声称QUEST23已完成**。Stage A/B/wiki/R79和所有来源边界不变。
