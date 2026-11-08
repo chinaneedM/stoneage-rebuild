@@ -2153,3 +2153,8 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-08 — QUEST20 五兄弟地下城与任务模块审计
 
 [QUEST20 来源限定静态任务和跨模块关系](docs/continuity/STONEAGE-QUEST20-FIVE-BROTHERS-SOURCE-AND-MODULE-REVIEW-20261108.md)已由[PR #260](https://github.com/chinaneedM/stoneage-rebuild/pull/260)合并并主线CI真实成功：QUEST08–19十二专项80脚本中78早已属于QUEST01的295脚本/1349事件目录，2份仅保留版本分叉，不能当“新增80份任务”；本族另30份原脚本85旧事件，复原23个原选择NPC、五组不同任务道具（十ID同一原图别名24222）、6个原DAT几何候选与五个WORLD21已验领宠实例→同源模板图号=NPC源图别名联接。新结果是源关联规格，非新增5条宠物奖、原游戏跑通或初代台湾/大陆官方同版。首候选CI字段名误引失败、修复后候选/主线全部通过，失败历史保留。原游戏/服务端原字节与私人图像没有公开，`docs/CURRENT-STATE.md` 全历史blob c89e0e33537990aa2132b47c40fef49a985a935c 完全保留。Stage A仍7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79暂停。最高 NEXT QUEST21 先审未专项的真实内容，避免无界重复旧索引。
+
+
+## 2026-11-08 — QUEST21｜琉璃洞窟原脚本、两袋奖励与2003攻略分源对照
+
+[QUEST21来源、差异和接力](docs/continuity/STONEAGE-QUEST21-LIULI-ORIGINAL-SOURCE-COMPARISON-20261108.md)已通过[PR #261](https://github.com/chinaneedM/stoneage-rebuild/pull/261)及主线CI验收：实际重读并核验2,205原NPC文件，6活动引用脚本/22段均属QUEST01既有材料；本轮恢复日记2698/项链2699交付2701、两袋各85原序奖品位置及2700交付字面、伊布9处移动字面含1重复位置，去重8坐标与既有2003攻略相同。63原地图CREATE含57传送字面，保留两组同坐标多目标、反向不同落点及攻略楼层/内部floor差异，不静默选覆盖规则；17份原DAT仅复用旧SHA/几何，200仍缺匹配本955件目录的原DAT。11原文件/12物品行/六跨源TW1候选PNG的31成员私人包已保存并回读SHA/CRC；公开仅[数字和散列](research/recovered/STONEAGE-QUEST21-LIULI-ORIGINAL-SOURCE-COMPARISON-R1.json)、工具、10专项验证和[实际验收收据](research/recovered/STONEAGE-QUEST21-PUBLICATION-ACCEPTANCE-R1.json)。本地257任务相关检查、候选四项及内容主线专项均成功；旧CURRENT全文不改。原生执行/同官方版本/掉落和随机概率仍未证，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体百分比未知。最高NEXT QUEST22：先查重，有限复核碧青洞窟七份真实原脚本与39/40/42前置、2766–2770道具关系，不扩四洞窟全集或新引擎。

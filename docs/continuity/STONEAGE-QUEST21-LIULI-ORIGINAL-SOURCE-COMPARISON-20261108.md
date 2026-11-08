@@ -52,3 +52,14 @@ ITEM01私人 ZIP 5,868,386B / SHA256 `cb88d0a837686edae507910bdc11fcf6abb35df9aa
 止点为本族静态关系与分源攻略对照。原生任务/奖品/迷宫均未运行，原始常驻/活动归属仍UNRESOLVED，Stage A **7 PARTIAL+2 OPEN**、Stage B/wiki **GATED**、R79 **PAUSED_NON_BLOCKING**、overall_percent=null不变。
 
 **NEXT：QUEST22_DISTINCT_SOURCE_READY_FAMILY_AFTER_DEDUP_OR_MATERIAL_GAMEPLAY_REVIEW。** 先查旧R73、WORLD及QUEST01–21，优先另一族有原字节且能增加玩家内容关系的任务；若只是重算旧TYPE/奖池计数，则回模块组合检查，选择真实宠物、回合战斗或地图实物缺口。琉璃仅在新同部署原掉落表、原DAT200、运行轨迹或坐标加载证据到位时重开；不扩四洞窟全集、网服/账号或新引擎。
+
+
+## 实际远端验收与下一接力（2026-11-08）
+
+候选 `346d56aeb11bba3b2b8ace93fe91718341dddaea` / tree `083ad3e66e9e2d58bf218e232284a4be212676ca` 的 push QUEST `42470414995`、PR QUEST `42470429480`、PR O11 `42470429498`、PR O12 `42470429430` 四运行均 completed/success。PR专项 job `128699661496` 实际日志确认新增10项通过。候选五份完整远端文件与本地字节全同，完整tree同一。
+
+[PR #261](https://github.com/chinaneedM/stoneage-rebuild/pull/261)已squash合并为 `8400b9ece904bfba7d4f8b17c423c8c5204452ab`，tree仍为上述已验内容tree。内容主线专用 [run42470721385](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42470721385) / job `128700592141` completed/success，日志同样确认10项新检查；公开CI仅读派生元数据，未重读私人原件。全257任务相关本地测试通过；另独立逐源行复核六脚本数字命令顺序、54个有资格目标坐标均在既存DAT几何内。没有新短期原源工件。正式 **QUEST21=ACCEPTED_SOURCE_BOUNDED**，此前“后验另记”由本段真实验收补足；旧失败历史不删除。
+
+完整原CURRENT blob及原攻略ID未知字段保持不变。实际身份与数值资格见 `research/recovered/STONEAGE-QUEST21-PUBLICATION-ACCEPTANCE-R1.json`。本验收追加提交自身Actions不预支；后续重新启动仍须从新远端HEAD/tree/Actions确认。
+
+下一最高明确为 **QUEST22_HEKISEI_WATER_SPIRIT_SEVEN_SOURCE_SCRIPTS_AFTER_DEDUP**：已在同一私人NPC载体确认 `jaruga/event/hekisei.create` 精确引用 `hekisei` 与 `hekisei01–06` 七脚本。先查旧WORLD/QUEST01–21/R73及相关文献覆盖，再仅核三类39/40/42前置与事件46、2766–2770的原获取/交付关系，有真原字节才关联道具/地图；不能把只含TYPE数重算当新内容。本轮仅做了候选可得性预检，**没有声称QUEST22已完成**。若无实质关联增量则回模块组合材料复核，不扩全部四洞窟、账号网服或引擎。所有Stage与未知边界保持。
