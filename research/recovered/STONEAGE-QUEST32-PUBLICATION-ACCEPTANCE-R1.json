@@ -1,0 +1,174 @@
+{
+  "schema": "stoneage.quest32.module_source_publication_acceptance.r1",
+  "date": "2026-11-08",
+  "initial_remote": {
+    "head": "d579fff4138a997eb9fd0594b5497c31fb26f413",
+    "tree": "0c28ed4c33b71bf583dbbe2977e5e2280cf376fe",
+    "preserved_CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "candidate": {
+    "pr": 272,
+    "branch": "agent/quest32-module-dedupe-audit-20261108",
+    "first_commit": "ef701038011a7b64a530d057379b075af73a815b",
+    "corrected_commit": "9622b8e746f2d9a0ea57ca31701aea754d677552",
+    "first_candidate_error": "Git blob NUL delimiter escaped twice in tool source; corrected without rewriting first commit",
+    "pr_mergeable_clean_before_merge": true,
+    "pr_merged": true
+  },
+  "merged_main": {
+    "sha": "40e0d31d4dc60108b371f19e8fe1e9607a3c7f78",
+    "tree": "2fef7d5b6bd3bbd5af7b9cfaf67029d0ba5546e8",
+    "merge_method": "squash",
+    "current_blob_after_merge": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "actions": {
+    "candidate": [
+      {
+        "id": 42490982958,
+        "event": "push",
+        "workflow": "QUEST32",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42491000171,
+        "event": "pull_request",
+        "workflow": "QUEST32",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42491000116,
+        "event": "pull_request",
+        "workflow": "O11",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42491000098,
+        "event": "pull_request",
+        "workflow": "O12",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "main": [
+      {
+        "id": 42491217809,
+        "event": "push",
+        "name": "Verify original local album name material and no master promotion R35",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42491217763,
+        "event": "push",
+        "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42491217726,
+        "event": "push",
+        "name": "Verify preserved mixed25 full server source conservation R18",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42491217771,
+        "event": "push",
+        "name": "Verify original native album table and saved-name joins R36",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42491217877,
+        "event": "push",
+        "name": "Verify original four village interior materials R34",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42491217709,
+        "event": "push",
+        "name": "Accept preserved original TW85 SPR137 full animation material R28",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42491217756,
+        "event": "push",
+        "name": "Verify original same-build named-entity source gate R31",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42491217738,
+        "event": "push",
+        "name": "Verify original dated map110 three actual cell values R32",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42491217748,
+        "event": "push",
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42491217829,
+        "event": "push",
+        "name": "Verify StoneAge QUEST32 module source dedup audit",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 42491217744,
+        "event": "push",
+        "name": "Accept primary-source TW1.0 character creation numeric join R16",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "candidate_success": 4,
+    "candidate_total": 4,
+    "main_success": 11,
+    "main_total": 11,
+    "quest32_main_run": 42491217829,
+    "quest32_main_job": 128763807893,
+    "unittest_step_success": true,
+    "derived_replay_step_success": true
+  },
+  "publication_blobs": {
+    ".github/workflows/verify-stoneage-quest32-module-audit.yml": "e7a04692e8d301ebd65976e9670dd11727adb18e",
+    "README.md": "ba0ccfb05253860979713e02e5d2f8eb1da6c67e",
+    "docs/continuity/STONEAGE-QUEST32-MODULE-DEDUPE-AUDIT-20261108.md": "8d8cf554fcbdd2e2c5e859a993b3ecf2cbbe60bf",
+    "research/recovered/STONEAGE-QUEST32-MODULE-DEDUPE-AUDIT-R1.json": "a2f907b7d8c1293c9e15f1bfc2afbc4b1fa3f35e",
+    "tests/test_stoneage_quest32_module_audit.py": "665b6e12d2e48364719f79056db9a44992e1f710",
+    "tools/stoneage_quest32_module_audit.py": "fedb3b60fc491e7a893028e144080f8d0ad4c1dd"
+  },
+  "replayed_derived_counts": {
+    "reports": 24,
+    "script_occurrences": 236,
+    "distinct_paths": 235,
+    "matched_quest01": 233,
+    "unreferenced_saved_variants": 2,
+    "quest01_unselected": 62,
+    "cross_report_exact_duplicate": "king/event69_1"
+  },
+  "bounds": {
+    "original_proprietary_files_published": false,
+    "original_1999_jss_early_gameplay_proven": false,
+    "original_client_runtime_executed": false,
+    "original_server_runtime_executed": false,
+    "original_quest_module_complete": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "INTEGRATION06_BOUNDED_CROSS_MODULE_RELATION_REVIEW_ON_EXISTING_SOURCE",
+  "receipt_commit_own_actions": "NOT_YET_CHECKED_AT_CREATION"
+}

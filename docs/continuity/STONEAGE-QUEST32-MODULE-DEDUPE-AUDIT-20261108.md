@@ -34,3 +34,10 @@
 **下一优先 INTEGRATION06**：优先用已有同来源证据选择一个真正影响玩家内容的 NPC／地图／物品／宠物跨模块关联，严格核原文件路径、SHA、地图资格与版本来源；若找不到新的可判定关系，则转综合阶段审阅，不扩TASK小编号。对上述62份，仅在新原字节或已有脚本数值确实改变游戏内容关系时有界重开；不为脚本目录分母穷举、开发网服、引擎、自动化战斗或新单机体验方案。
 
 > 本文记录候选改动的源核验；PR、Actions、合并后真实验收与主线HEAD须后验填写，不能以本段提前宣称发布成功。
+
+
+## 7. 实际 GitHub 合并、主线 Actions 与保存验收
+
+**真实后验**：[PR #272](https://github.com/chinaneedM/stoneage-rebuild/pull/272) 已以 squash 合并；候选最终提交 `9622b8e746f2d9a0ea57ca31701aea754d677552`，接受主线 `40e0d31d4dc60108b371f19e8fe1e9607a3c7f78`／tree `2fef7d5b6bd3bbd5af7b9cfaf67029d0ba5546e8`。候选同 SHA push 专项 run 42490982958、pull_request 专项 run 42491000171、PR原 O11 运行42491000116、O12运行42491000098，**4/4** 实际 `completed/success`。最初候选 `ef701038...` 曾有 Git blob NUL 分隔符的反斜杠错误，后续候选提交 `9622b8e...` 正确改为 `b"\\0"`（代码中转义是字面展示）并通过真实验收；两次提交历史都保留。
+
+合并主线 `40e0d31d4dc60108b371f19e8fe1e9607a3c7f78` 的 **11/11** Actions 全部 `completed/success`，包括 QUEST32 专项 run [42491217829](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42491217829)、job 128763807893，确证五项新 unittest 运行步骤与公开重算程序步骤均成功。六份已发表文件实际 Git blob及各 11 项 workflow ID详见[不可混淆的验收收据](../../research/recovered/STONEAGE-QUEST32-PUBLICATION-ACCEPTANCE-R1.json)。原 `docs/CURRENT-STATE.md` 的完整历史 blob `c89e0e33537990aa2132b47c40fef49a985a935c` 与首次核查相同，未追加截断、替换或删除。这个补录提交**自身** CI 需按新实际远端状态另行观察，绝不能反过来把此前验收认作补录后运行。Stage A 与下一任务仍按第6节保留。
