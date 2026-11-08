@@ -1,0 +1,1227 @@
+{
+  "schema": "stoneage.quest16.axe_wood_lumber_original_source_bound.r1",
+  "source_scope": "MIXED25_COMMUNITY_COMBINED_PRESERVATION_NOT_OFFICIAL_EARLY_VERSION",
+  "original_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "original_NPC_archive_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+  "original_NPC_zip_member_count": 2205,
+  "original_ITEM01_archive_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+  "original_source_QUEST01_public_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2",
+  "historical_current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "source_files": [
+    {
+      "path": "jaruga/event/20501ev.create",
+      "bytes": 1193,
+      "sha256": "735e8d0100341b144fbd00f16d9ec9ab15bc8a063eb69c6826330709b1f80448",
+      "crc32": "1f6dce3b"
+    },
+    {
+      "path": "jaruga/event/20501ev1",
+      "bytes": 2584,
+      "sha256": "1480b572a607efa84a6343e879fa32078b2b7abfa178fe474d65d749f283efae",
+      "crc32": "ee98f796"
+    },
+    {
+      "path": "jaruga/event/20501ev2",
+      "bytes": 694,
+      "sha256": "bc50fb7bca84b764b180e39a2109c7c3d85aa8ae05d64d84531f6714c74dd994",
+      "crc32": "6649613e"
+    },
+    {
+      "path": "jaruga/event/20501ev3",
+      "bytes": 2124,
+      "sha256": "e05020f8a5c5729451bffa332fe7927546fef5a2d80a5a53f5efe8ff9d821c2f",
+      "crc32": "b109e70b"
+    },
+    {
+      "path": "jaruga/event/20501ev4",
+      "bytes": 355,
+      "sha256": "43a15dfc162086996adb8e98b60edcba7d78a49cf962b8a870ee76f2939c6357",
+      "crc32": "dd0b66c3"
+    },
+    {
+      "path": "jaruga/event/20501ev5",
+      "bytes": 4640,
+      "sha256": "e32ba569b6cfc3f430b5bf8b2d49a287c4a560fea74f912d0d85e35d921c24c0",
+      "crc32": "d48048f1"
+    },
+    {
+      "path": "jaruga/event/event.template",
+      "bytes": 122,
+      "sha256": "9c11ac0cbbd9b110e8ff7d0115730044673bf29c5df6d23034e56530c181d0b2",
+      "crc32": "a70fc73f"
+    }
+  ],
+  "source_creates": [
+    {
+      "ordinal": 0,
+      "source_offset_start": 129,
+      "source_offset_end_exclusive": 294,
+      "original_block_sha256": "166f35c2f1f284ea6d0542c59164fea6686a383455e37ca1746243238d59cc9c",
+      "name_original": "造斧專家哈恩",
+      "floor": 20508,
+      "borncorner": [
+        12,
+        11,
+        12,
+        11
+      ],
+      "graphic_alias": 16024,
+      "direction": 4,
+      "function": "changeevent",
+      "script_ref": "jaruga/event/20501ev1"
+    },
+    {
+      "ordinal": 1,
+      "source_offset_start": 346,
+      "source_offset_end_exclusive": 517,
+      "original_block_sha256": "ddf280c05347799bbef57b9aef08c1028c58bc052085afec7e99e4603b3f149f",
+      "name_original": "看守用水的科巴爾特",
+      "floor": 20507,
+      "borncorner": [
+        32,
+        29,
+        32,
+        29
+      ],
+      "graphic_alias": 16207,
+      "direction": 6,
+      "function": "changeevent",
+      "script_ref": "jaruga/event/20501ev2"
+    },
+    {
+      "ordinal": 2,
+      "source_offset_start": 574,
+      "source_offset_end_exclusive": 734,
+      "original_block_sha256": "29564a9dee1919149b77315c67ea3219390b4ff7fd8acccf260145275ce2ce9a",
+      "name_original": "樵夫巴爾",
+      "floor": 3300,
+      "borncorner": [
+        60,
+        75,
+        60,
+        75
+      ],
+      "graphic_alias": 16018,
+      "direction": 6,
+      "function": "changeevent",
+      "script_ref": "jaruga/event/20501ev3"
+    },
+    {
+      "ordinal": 3,
+      "source_offset_start": 795,
+      "source_offset_end_exclusive": 963,
+      "original_block_sha256": "63a0ce9b5c951cb7a7850b7d896d1a1301a6d924893204aa4fd1d54517a0bf58",
+      "name_original": "喜歡八卦的年輕人",
+      "floor": 3300,
+      "borncorner": [
+        46,
+        55,
+        46,
+        55
+      ],
+      "graphic_alias": 16047,
+      "direction": 4,
+      "function": "changeevent",
+      "script_ref": "jaruga/event/20501ev4"
+    },
+    {
+      "ordinal": 4,
+      "source_offset_start": 1025,
+      "source_offset_end_exclusive": 1191,
+      "original_block_sha256": "3257437aca44f201cd77c9af384791c544ec9a87be3b85efa416bd72763422df",
+      "name_original": "木材商人賽尚",
+      "floor": 3000,
+      "borncorner": [
+        114,
+        69,
+        114,
+        69
+      ],
+      "graphic_alias": 16000,
+      "direction": 6,
+      "function": "changeevent",
+      "script_ref": "jaruga/event/20501ev5"
+    }
+  ],
+  "source_event_blocks": [
+    {
+      "path": "jaruga/event/20501ev1",
+      "bytes": 2584,
+      "sha256": "1480b572a607efa84a6343e879fa32078b2b7abfa178fe474d65d749f283efae",
+      "crc32": "ee98f796",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "NOWEV=19&ITEM!=2466",
+          "predicate_sha256": "3fb6df9d914b4bd2f80ca4998206b6e6acd5138d95da8a7fb441f659ba5cc5b7",
+          "section_sha256": "b3267db07439c8247e632f95f46ee24f47b20805c8b7a531b0541f1e9673db05",
+          "controls": {},
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 1,
+          "event_no": 19,
+          "type": "ACCEPT",
+          "predicate": "NOWEV=19&ITEM=2464&ITEM=2466",
+          "predicate_sha256": "51edae63d3c5220221e080adb177b6c407d704ceb82d3b18559b2e401e59df00",
+          "section_sha256": "5f175a1e1558b59873011b40e32a5538a13afd9b7545b3d45d986a13d690f848",
+          "controls": {
+            "GetItem": [
+              "2465*1"
+            ],
+            "DelItem": [
+              "2464,2466,2463"
+            ],
+            "EndSetFlg": [
+              "19"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 2,
+          "event_no": 19,
+          "type": "MESSAGE",
+          "predicate": "NOWEV=19&ITEM!=2463&ITEM=2466",
+          "predicate_sha256": "3241adcd6b8a8b9b47750e6eadeac0721fa763364adb9667a144d7904bb22046",
+          "section_sha256": "6669dece9a893e35334c99c2439b185ee67f66bc885d51e1dbdbeb663d7b857f",
+          "controls": {
+            "GetItem": [
+              "2463"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 3,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "ENDEV=19&ITEM=2465",
+          "predicate_sha256": "e8c4fd7f24a7feea5e074f3859a5905ce9a8c9481d46b54009dbf90cb408a8ae",
+          "section_sha256": "4d02c50d60ae35e45b60c6b6618e656150946474d381427c09ad37b2506e7c66",
+          "controls": {},
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 4,
+          "event_no": 19,
+          "type": "REQUEST",
+          "predicate": "ITEM=2466",
+          "predicate_sha256": "286789e5a1b4bb8e782eebe5c801d929ef327ee3bc1b57aa0766ebd9eebb7738",
+          "section_sha256": "f5df0a1f0d3237330d21bbdb82b664bedcc7e0b0b227b2cd47c8436aa215a889",
+          "controls": {
+            "GetItem": [
+              "2463"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 5,
+          "event_no": -1,
+          "type": "REQUEST",
+          "predicate": "ITEM=2484",
+          "predicate_sha256": "58d20989e3e0e277fff2c386b9f8476f7a9055a3c984c284de50041980834afa",
+          "section_sha256": "cbb704c14c3ac91afdc147ab08b12d7ae06d5a157542010d72bca2c65e20e464",
+          "controls": {
+            "GetItem": [
+              "2485*1"
+            ],
+            "DelItem": [
+              "2484*1"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 6,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "ITEM=2465",
+          "predicate_sha256": "cb7544fe757352efdbc37e03ccdeff251dfea1a94504e166f0132e420e4de903",
+          "section_sha256": "b26a0fab5ab747b77b5602a7378929c8fcd1484f3dcd2053f293aa361f1e0227",
+          "controls": {},
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 7,
+          "event_no": -1,
+          "type": "CLEAN",
+          "predicate": "ENDEV=19",
+          "predicate_sha256": "9401f77895735cfdc0eceb664ad839fdac5860e7029eb2dfb9bb3752cad1bf1e",
+          "section_sha256": "5a9b638937f8d3929935f1167b409f634894d8304a15a6c742d4d3f4b3dbdd12",
+          "controls": {},
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 8,
+          "event_no": -1,
+          "type": "REQUEST",
+          "predicate": "ITEM=1837",
+          "predicate_sha256": "180a97d4598c2bf3e87277b64caf1460a7f66f511bc30dc422959fc30c7ba949",
+          "section_sha256": "7aa6dd0834db9b00336d710f7286b7d0dadd68ced1b593e4be3757aa32fc2192",
+          "controls": {
+            "GetItem": [
+              "1838*1"
+            ],
+            "DelItem": [
+              "1837*1"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 9,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "ITEM=1838",
+          "predicate_sha256": "0f83c906e891032f5e3b82300c061ae51ee0818d134174970e4d7a1e2b78351d",
+          "section_sha256": "6987793451d2e1c28a9aeb6c89cd12422693156bb67f4e9e4d97e89fe3e2eb88",
+          "controls": {},
+          "literal_EventEnd_present": true
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/20501ev2",
+      "bytes": 694,
+      "sha256": "bc50fb7bca84b764b180e39a2109c7c3d85aa8ae05d64d84531f6714c74dd994",
+      "crc32": "6649613e",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "ITEM=2464",
+          "predicate_sha256": "1eeb130a49011289038409064f0375fc3b8820dbade1ecca6c38b68e222e3797",
+          "section_sha256": "7a4df4e94707173d51094931d287bdf03dd42a069e7dc81460c623b1f0aa0a97",
+          "controls": {},
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 1,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "ITEM=2463",
+          "predicate_sha256": "9bc50ba6470286b74bce0bdb141f25677c2632d73049f2e17510a71890793318",
+          "section_sha256": "b141263b8928ab602e4b485427eff3c4874bfb29582636f1063ddcf2f5044b0e",
+          "controls": {
+            "GetItem": [
+              "2464*1"
+            ],
+            "DelItem": [
+              "2463*1"
+            ]
+          },
+          "literal_EventEnd_present": true
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/20501ev3",
+      "bytes": 2124,
+      "sha256": "e05020f8a5c5729451bffa332fe7927546fef5a2d80a5a53f5efe8ff9d821c2f",
+      "crc32": "b109e70b",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "ENDEV=18",
+          "predicate_sha256": "e47f197d23e8fab627f306a1382f295e52f8127bde90586c757ea244465072d9",
+          "section_sha256": "cd8baf9f95fb37c8752dfa897ee890dad661be1699e1ce342007982ce950f9be",
+          "controls": {},
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 1,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "ITEM=2467",
+          "predicate_sha256": "53f71c1bd7c9ce529e22113580b81b109cc52bb084432f052da5d3aeb0158dd0",
+          "section_sha256": "9b0bcbed42c2d54f48516954b2042a04dd7b36d9cb1e4a8fb9db6d39598f00c6",
+          "controls": {},
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 2,
+          "event_no": 18,
+          "type": "ACCEPT",
+          "predicate": "NOWEV=18&ITEM=2465",
+          "predicate_sha256": "b6fc1f0b4fba9eb80239eb3c41dd8bbaac671a8572386e2e36e2f8f76c775d8f",
+          "section_sha256": "3586e3be9b83bb311d42dbcb5d25f10ba73fc3a38095d0fc3167578d08fea4ae",
+          "controls": {
+            "GetItem": [
+              "2467,2484"
+            ],
+            "DelItem": [
+              "2465*1"
+            ],
+            "EndSetFlg": [
+              "18"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 3,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "ITEM=2465",
+          "predicate_sha256": "cb7544fe757352efdbc37e03ccdeff251dfea1a94504e166f0132e420e4de903",
+          "section_sha256": "936e7e5a18a72ed0eb0e0afda3db4bccaa3d5ebed84999e2ba6317f0f54f473e",
+          "controls": {
+            "GetItem": [
+              "2467,2484"
+            ],
+            "DelItem": [
+              "2465*1"
+            ],
+            "EndSetFlg": [
+              "18"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 4,
+          "event_no": 18,
+          "type": "MESSAGE",
+          "predicate": "NOWEV=18&ITEM!=2466",
+          "predicate_sha256": "6923d64af27a71af52f660caed002963c9f95671803785990be1ea3a0739bb13",
+          "section_sha256": "144d14a2e00b198644cfad7bb8388fc5e6799a64152792b838abc1f1b0d8e143",
+          "controls": {
+            "GetItem": [
+              "2466"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 5,
+          "event_no": 18,
+          "type": "REQUEST",
+          "predicate": "LV>14",
+          "predicate_sha256": "a3db6c658b6fa362d31d9912d4611731002a6645c66612c41936d83588d72177",
+          "section_sha256": "efc60485861325dc271f35b9b903668310621372a877b2c805049479e4218982",
+          "controls": {
+            "GetItem": [
+              "2466"
+            ]
+          },
+          "literal_EventEnd_present": true
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/20501ev4",
+      "bytes": 355,
+      "sha256": "43a15dfc162086996adb8e98b60edcba7d78a49cf962b8a870ee76f2939c6357",
+      "crc32": "dd0b66c3",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "CLEAN",
+          "predicate": "ENDEV=18",
+          "predicate_sha256": "e47f197d23e8fab627f306a1382f295e52f8127bde90586c757ea244465072d9",
+          "section_sha256": "2eb5c70cf3ecb317810487d5be4543bbbe0e93fc673efc09d6a2e40cc6158895",
+          "controls": {},
+          "literal_EventEnd_present": true
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/20501ev5",
+      "bytes": 4640,
+      "sha256": "e32ba569b6cfc3f430b5bf8b2d49a287c4a560fea74f912d0d85e35d921c24c0",
+      "crc32": "d48048f1",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "ITEM!=2478&ITEM=2468",
+          "predicate_sha256": "81b6b949ec9e5afb93c5191e30121bee432f325182a66dd320ba8ae5f3b996bb",
+          "section_sha256": "f7c3a9c8d5554fae92760db15c44b0b2a0b8ff403dae0a8b0dc8d2cd01065bd0",
+          "controls": {},
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 1,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "ITEM=2478&ITEM=2468*14",
+          "predicate_sha256": "7bd7ccc0b469add69eb8e7c5146425ad328ed0f48f86c665b845276b242e157c",
+          "section_sha256": "4de8e1555a3ba76cf13176921bd46cb46d46040ff05f8ed7e1b1517a77a62309",
+          "controls": {
+            "GetItem": [
+              "2481"
+            ],
+            "DelItem": [
+              "2468,2478,2467"
+            ],
+            "GetStone": [
+              "20000"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 2,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "ITEM=2478&ITEM=2468*13",
+          "predicate_sha256": "9d2e78ff4d226145c3dce03dc7e716c2cc43ea36d315ea71b8fcc4371a2bfda5",
+          "section_sha256": "d87c1f19029a47cde4512ef7f285c8b480ec5a512c435b238fd70ff2e15959b8",
+          "controls": {
+            "DelItem": [
+              "2468,2478,2467"
+            ],
+            "GetStone": [
+              "16000"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 3,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "ITEM=2478&ITEM=2468*12",
+          "predicate_sha256": "4ced880f234a7e0096b76bc2b4f47a5721e614a4945716a341c9cf064755d8b1",
+          "section_sha256": "3a4f3285420f3b6b2063d9863f4a0abbd22d06c5320c097fe2a276c43f127a6b",
+          "controls": {
+            "DelItem": [
+              "2468,2478"
+            ],
+            "GetStone": [
+              "12000"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 4,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "ITEM=2478&ITEM=2468*11",
+          "predicate_sha256": "2eb740d6bdbb29ca7c9aee49f7d3c49e2c2bd17b729fb46b8b56833c1e8b8d87",
+          "section_sha256": "44404c2d774cd22917ff5350e4789566d89169f8977e6946f103e9ebd7f14b46",
+          "controls": {
+            "DelItem": [
+              "2468,2478,2467"
+            ],
+            "GetStone": [
+              "10000"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 5,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "ITEM=2478&ITEM=2468*10",
+          "predicate_sha256": "e6149a4e7860108152c8fed6469c19609817512d87a9460ef9d2b2f058ae3a64",
+          "section_sha256": "ac2a5a21e8fa6714562cf1dc9e7f6d3e28089508b5ff344479fac5fb36897350",
+          "controls": {
+            "DelItem": [
+              "2468,2478,2467"
+            ],
+            "GetStone": [
+              "8000"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 6,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "ITEM=2478&ITEM=2468*9",
+          "predicate_sha256": "7530ba02503b307514ee2626f99bc002aeeab2dfa3fdc77cd1ad0790f8275c7c",
+          "section_sha256": "e16798ccd60bc2f2f6a8c5edc4734b7949081ad850aeb60e847672172dcb23c9",
+          "controls": {
+            "DelItem": [
+              "2468,2478,2467"
+            ],
+            "GetStone": [
+              "7200"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 7,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "ITEM=2478&ITEM=2468*8",
+          "predicate_sha256": "e308193cbf4f3f5e3e9c11044d4284039733feec9c9a693cf22207431af29f3c",
+          "section_sha256": "bea17cc196494b59635eb71ab68067d7b65bc6e0f6a174f51550e85500e37c07",
+          "controls": {
+            "DelItem": [
+              "2468,2478,2467"
+            ],
+            "GetStone": [
+              "6400"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 8,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "ITEM=2478&ITEM=2468*7",
+          "predicate_sha256": "989ea10628bcbd7d22d2eb98d4758a2e4b3591f9c64971118f700d0a81d35933",
+          "section_sha256": "27dd1a7c6a24a3c061f91cd515c45400396b2645a74e65faba4c34fb25910236",
+          "controls": {
+            "DelItem": [
+              "2468,2478,2467"
+            ],
+            "GetStone": [
+              "5600"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 9,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "ITEM=2478&ITEM=2468*6",
+          "predicate_sha256": "66cc48ebbf17df86b67cbfe2f1afaa5d02dcf2b4d567b19c9ec94a0ef7c977be",
+          "section_sha256": "219db656f45660da605e6706af93d75be60810c138a239fea20d690816cb73d6",
+          "controls": {
+            "DelItem": [
+              "2468,2478,2467"
+            ],
+            "GetStone": [
+              "4800"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 10,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "ITEM=2478&ITEM=2468*5",
+          "predicate_sha256": "1241a069e58b9db084786cce7b4ab65ed143159cc8aa376937234f1dfe7468d7",
+          "section_sha256": "aac27b55c76681d631b2530e28c4675ee20c350d0abb7478e1920eb3f4e4c862",
+          "controls": {
+            "DelItem": [
+              "2468,2478,2467"
+            ],
+            "GetStone": [
+              "4000"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 11,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "ITEM=2478&ITEM=2468*4",
+          "predicate_sha256": "dbcd0193aeeb25fb25a61c82e098dcc62dabc40d16619946d61edeb09ce9cd3a",
+          "section_sha256": "4d1c11c4999bff9f61f15c33b517a7a93e3510eebd78ccb130fe757920d5c9b7",
+          "controls": {
+            "DelItem": [
+              "2468,2478,2467"
+            ],
+            "GetStone": [
+              "3200"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 12,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "ITEM=2478&ITEM=2468*3",
+          "predicate_sha256": "afb85a68c33cebf516121fcc74fcc1a83606cf76526ca12544fcc352d6003480",
+          "section_sha256": "45a74dd99950f7a48bcbb7fa05e1e2bba4e4d9eded7274fbec573b314d5550a5",
+          "controls": {
+            "DelItem": [
+              "2468,2478,2467"
+            ],
+            "GetStone": [
+              "2400"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 13,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "ITEM=2478&ITEM=2468*2",
+          "predicate_sha256": "5ed26df4392fd247a36c62e6bfad03c516b27f4ee887a9b2a77f3cdf4e244a56",
+          "section_sha256": "cf21432cc6b1bb29a5c31f9c41d4964a31f49dc6b9ca920349827fa7b164ea86",
+          "controls": {
+            "DelItem": [
+              "2468,2478,2467"
+            ],
+            "GetStone": [
+              "1600"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 14,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "ITEM=2478&ITEM=2468*1",
+          "predicate_sha256": "863ea68d596699879a5e8649c7278b7088826c7ed30d9cbfbbb59ee5d1af7f42",
+          "section_sha256": "a05e71eca80d15fc7c44c2c1fd667cf8da3fc62657567569c60cffd4d8ad6a1c",
+          "controls": {
+            "DelItem": [
+              "2468,2478,2467"
+            ],
+            "GetStone": [
+              "400"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 15,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "ITEM=2478&ITEM!=2468",
+          "predicate_sha256": "65ee6c11673396a434bbd75a3958173d9d0ea3245786e6701a9b207a755f6354",
+          "section_sha256": "1aa67e6352634f6d33edfbdeb2014070bafe323fa01c8a5a775ffd1f61796ea1",
+          "controls": {
+            "DelItem": [
+              "2478"
+            ]
+          },
+          "literal_EventEnd_present": true
+        },
+        {
+          "ordinal": 16,
+          "event_no": -1,
+          "type": "REQUEST",
+          "predicate": "ITEM=2467",
+          "predicate_sha256": "53f71c1bd7c9ce529e22113580b81b109cc52bb084432f052da5d3aeb0158dd0",
+          "section_sha256": "6a387bf814b6c70b2aee705cb5f824193c369ad0fe5c820abe447998549cb03a",
+          "controls": {
+            "GetItem": [
+              "2478*1"
+            ],
+            "DelItem": [
+              "2467*1"
+            ]
+          },
+          "literal_EventEnd_present": true
+        }
+      ]
+    }
+  ],
+  "source_event_total": 36,
+  "item_count": 12,
+  "items": [
+    {
+      "item_id": 1837,
+      "source_original_name": "斷掉的鑰匙",
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 1708,
+          "sha256": "c5292d39596ff5c51874bac81ca6dcaa3a1ddc721a3c9d6c517c3a3094e063ea",
+          "columns": 94,
+          "graphic_alias": 24112
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 1834,
+          "sha256": "c5292d39596ff5c51874bac81ca6dcaa3a1ddc721a3c9d6c517c3a3094e063ea",
+          "columns": 94,
+          "graphic_alias": 24112
+        }
+      ],
+      "graphic_alias": 24112,
+      "cross_carrier_TW1_candidate_image_sha256": "e1a626cfe7841b39b9df82768753f679a7d64fd3bca1eefc3dea87dca0e9c49f",
+      "official_same_deployment_unproven": true
+    },
+    {
+      "item_id": 1838,
+      "source_original_name": "修好的鑰匙",
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 1709,
+          "sha256": "8569e043789f9a0442a3284d5bf6402bc5e3d1c0f56c5d74db58fed0c4021e6e",
+          "columns": 94,
+          "graphic_alias": 24111
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 1835,
+          "sha256": "8569e043789f9a0442a3284d5bf6402bc5e3d1c0f56c5d74db58fed0c4021e6e",
+          "columns": 94,
+          "graphic_alias": 24111
+        }
+      ],
+      "graphic_alias": 24111,
+      "cross_carrier_TW1_candidate_image_sha256": "1b0742a4a8f0e488236c4289aef4cedcee0f6548585c26f0f34c14f0ebae31de",
+      "official_same_deployment_unproven": true
+    },
+    {
+      "item_id": 2463,
+      "source_original_name": "哈恩的壺",
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2046,
+          "sha256": "fdbdc8a0b3b14bb9fad8b2b3f4d131d7900c075cf17952fba3c81a83ae138584",
+          "columns": 94,
+          "graphic_alias": 23010
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2441,
+          "sha256": "fdbdc8a0b3b14bb9fad8b2b3f4d131d7900c075cf17952fba3c81a83ae138584",
+          "columns": 94,
+          "graphic_alias": 23010
+        }
+      ],
+      "graphic_alias": 23010,
+      "cross_carrier_TW1_candidate_image_sha256": "85a1f265ce4702ed7dfd6ce58981f3a4fbc9f4dcf33669640c5e10b562b6313a",
+      "official_same_deployment_unproven": true
+    },
+    {
+      "item_id": 2464,
+      "source_original_name": "哈恩的壺",
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2047,
+          "sha256": "a756adabb0399c985c6b258db7e7ec01c24b25d7afd6b8fb0da303ea523ca0b8",
+          "columns": 94,
+          "graphic_alias": 23010
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2442,
+          "sha256": "a756adabb0399c985c6b258db7e7ec01c24b25d7afd6b8fb0da303ea523ca0b8",
+          "columns": 94,
+          "graphic_alias": 23010
+        }
+      ],
+      "graphic_alias": 23010,
+      "cross_carrier_TW1_candidate_image_sha256": "85a1f265ce4702ed7dfd6ce58981f3a4fbc9f4dcf33669640c5e10b562b6313a",
+      "official_same_deployment_unproven": true
+    },
+    {
+      "item_id": 2465,
+      "source_original_name": "哈恩的斧頭",
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2048,
+          "sha256": "c32e30c51c7e1f9fd84291600d7e1caef32af16781eee5c95806d51e617430a5",
+          "columns": 94,
+          "graphic_alias": 20020
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2443,
+          "sha256": "c32e30c51c7e1f9fd84291600d7e1caef32af16781eee5c95806d51e617430a5",
+          "columns": 94,
+          "graphic_alias": 20020
+        }
+      ],
+      "graphic_alias": 20020,
+      "cross_carrier_TW1_candidate_image_sha256": "e6e5c478269328ed5bb6cc7d7cfe9c7fede39c149fc28b86557727c5af9d724c",
+      "official_same_deployment_unproven": true
+    },
+    {
+      "item_id": 2466,
+      "source_original_name": "斧頭製作依賴書",
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2049,
+          "sha256": "ef06ff0dbe2c07d6cc898327e6873f3a7103651f2d07aa9e2c8377e70e0a0c97",
+          "columns": 94,
+          "graphic_alias": 24222
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2444,
+          "sha256": "ef06ff0dbe2c07d6cc898327e6873f3a7103651f2d07aa9e2c8377e70e0a0c97",
+          "columns": 94,
+          "graphic_alias": 24222
+        }
+      ],
+      "graphic_alias": 24222,
+      "cross_carrier_TW1_candidate_image_sha256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1",
+      "official_same_deployment_unproven": true
+    },
+    {
+      "item_id": 2467,
+      "source_original_name": "巴爾的推薦書",
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2050,
+          "sha256": "dc51ac8919e3566a210a73114dd3d53b0c49e8b43f87eeda5a2cc7eaf429cfc7",
+          "columns": 94,
+          "graphic_alias": 24222
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2445,
+          "sha256": "dc51ac8919e3566a210a73114dd3d53b0c49e8b43f87eeda5a2cc7eaf429cfc7",
+          "columns": 94,
+          "graphic_alias": 24222
+        }
+      ],
+      "graphic_alias": 24222,
+      "cross_carrier_TW1_candidate_image_sha256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1",
+      "official_same_deployment_unproven": true
+    },
+    {
+      "item_id": 2468,
+      "source_original_name": "良質的木材",
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2051,
+          "sha256": "aa5ac8c8173001b590f0a0bcdb2ed80614cc964ae1299a41bc10e9ccf9ccd09e",
+          "columns": 94,
+          "graphic_alias": 24182
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2446,
+          "sha256": "aa5ac8c8173001b590f0a0bcdb2ed80614cc964ae1299a41bc10e9ccf9ccd09e",
+          "columns": 94,
+          "graphic_alias": 24182
+        }
+      ],
+      "graphic_alias": 24182,
+      "cross_carrier_TW1_candidate_image_sha256": "92ca7f40b3e7a797bc2b5ef49faaac70b184d6c4ad31b79dfc1a9fde7044254f",
+      "official_same_deployment_unproven": true
+    },
+    {
+      "item_id": 2478,
+      "source_original_name": "採伐許可證",
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2061,
+          "sha256": "24eed3342a1f74bd19651056345e7028bf5dae3d6ee658d6abe7743285682fa4",
+          "columns": 94,
+          "graphic_alias": 24222
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2456,
+          "sha256": "24eed3342a1f74bd19651056345e7028bf5dae3d6ee658d6abe7743285682fa4",
+          "columns": 94,
+          "graphic_alias": 24222
+        }
+      ],
+      "graphic_alias": 24222,
+      "cross_carrier_TW1_candidate_image_sha256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1",
+      "official_same_deployment_unproven": true
+    },
+    {
+      "item_id": 2481,
+      "source_original_name": "杉的手環",
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2064,
+          "sha256": "2da9f12389a027ef52c598f0250f8fe6b6ee4cbc6faaaa6829306d9ced589f8f",
+          "columns": 94,
+          "graphic_alias": 22050
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2459,
+          "sha256": "2da9f12389a027ef52c598f0250f8fe6b6ee4cbc6faaaa6829306d9ced589f8f",
+          "columns": 94,
+          "graphic_alias": 22050
+        }
+      ],
+      "graphic_alias": 22050,
+      "cross_carrier_TW1_candidate_image_sha256": "ca619075d701dfe2108880ef16728aae91a39dff3daaf269028871e5b4ba5e30",
+      "official_same_deployment_unproven": true
+    },
+    {
+      "item_id": 2484,
+      "source_original_name": "折斷的斧頭",
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2067,
+          "sha256": "71e52f7f06127b64170d383d5fbaf9ef2504a0d474829cab9a5b9e84af63cfd3",
+          "columns": 94,
+          "graphic_alias": 20054
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2462,
+          "sha256": "71e52f7f06127b64170d383d5fbaf9ef2504a0d474829cab9a5b9e84af63cfd3",
+          "columns": 94,
+          "graphic_alias": 20054
+        }
+      ],
+      "graphic_alias": 20054,
+      "cross_carrier_TW1_candidate_image_sha256": "93c7a4467bd5b210672cf79ead798f1b6568c7ad62d4e8079574d6fc982180a3",
+      "official_same_deployment_unproven": true
+    },
+    {
+      "item_id": 2485,
+      "source_original_name": "哈恩改造的斧頭",
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2068,
+          "sha256": "a9f7bd2494f023d5063bde6600d56b7d72f596e8dd09a3b5e59bb29d576afd89",
+          "columns": 94,
+          "graphic_alias": 20020
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2463,
+          "sha256": "a9f7bd2494f023d5063bde6600d56b7d72f596e8dd09a3b5e59bb29d576afd89",
+          "columns": 94,
+          "graphic_alias": 20020
+        }
+      ],
+      "graphic_alias": 20020,
+      "cross_carrier_TW1_candidate_image_sha256": "e6e5c478269328ed5bb6cc7d7cfe9c7fede39c149fc28b86557727c5af9d724c",
+      "official_same_deployment_unproven": true
+    }
+  ],
+  "source_item_rows": 24,
+  "original_TW1_cross_carrier_images": [
+    {
+      "alias": 20020,
+      "sha256": "e6e5c478269328ed5bb6cc7d7cfe9c7fede39c149fc28b86557727c5af9d724c",
+      "bytes": 1813
+    },
+    {
+      "alias": 20054,
+      "sha256": "93c7a4467bd5b210672cf79ead798f1b6568c7ad62d4e8079574d6fc982180a3",
+      "bytes": 1878
+    },
+    {
+      "alias": 22050,
+      "sha256": "ca619075d701dfe2108880ef16728aae91a39dff3daaf269028871e5b4ba5e30",
+      "bytes": 628
+    },
+    {
+      "alias": 23010,
+      "sha256": "85a1f265ce4702ed7dfd6ce58981f3a4fbc9f4dcf33669640c5e10b562b6313a",
+      "bytes": 1640
+    },
+    {
+      "alias": 24111,
+      "sha256": "1b0742a4a8f0e488236c4289aef4cedcee0f6548585c26f0f34c14f0ebae31de",
+      "bytes": 977
+    },
+    {
+      "alias": 24112,
+      "sha256": "e1a626cfe7841b39b9df82768753f679a7d64fd3bca1eefc3dea87dca0e9c49f",
+      "bytes": 1340
+    },
+    {
+      "alias": 24182,
+      "sha256": "92ca7f40b3e7a797bc2b5ef49faaac70b184d6c4ad31b79dfc1a9fde7044254f",
+      "bytes": 1502
+    },
+    {
+      "alias": 24222,
+      "sha256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1",
+      "bytes": 1438
+    }
+  ],
+  "original_TW1_cross_carrier_unique_image_count": 8,
+  "original_getstone_wood_tiers": [
+    {
+      "quantity_literal": 1,
+      "source_getstone_literal": "400",
+      "original_delitem_literals": [
+        "2468,2478,2467"
+      ],
+      "event_ordinal": 14
+    },
+    {
+      "quantity_literal": 2,
+      "source_getstone_literal": "1600",
+      "original_delitem_literals": [
+        "2468,2478,2467"
+      ],
+      "event_ordinal": 13
+    },
+    {
+      "quantity_literal": 3,
+      "source_getstone_literal": "2400",
+      "original_delitem_literals": [
+        "2468,2478,2467"
+      ],
+      "event_ordinal": 12
+    },
+    {
+      "quantity_literal": 4,
+      "source_getstone_literal": "3200",
+      "original_delitem_literals": [
+        "2468,2478,2467"
+      ],
+      "event_ordinal": 11
+    },
+    {
+      "quantity_literal": 5,
+      "source_getstone_literal": "4000",
+      "original_delitem_literals": [
+        "2468,2478,2467"
+      ],
+      "event_ordinal": 10
+    },
+    {
+      "quantity_literal": 6,
+      "source_getstone_literal": "4800",
+      "original_delitem_literals": [
+        "2468,2478,2467"
+      ],
+      "event_ordinal": 9
+    },
+    {
+      "quantity_literal": 7,
+      "source_getstone_literal": "5600",
+      "original_delitem_literals": [
+        "2468,2478,2467"
+      ],
+      "event_ordinal": 8
+    },
+    {
+      "quantity_literal": 8,
+      "source_getstone_literal": "6400",
+      "original_delitem_literals": [
+        "2468,2478,2467"
+      ],
+      "event_ordinal": 7
+    },
+    {
+      "quantity_literal": 9,
+      "source_getstone_literal": "7200",
+      "original_delitem_literals": [
+        "2468,2478,2467"
+      ],
+      "event_ordinal": 6
+    },
+    {
+      "quantity_literal": 10,
+      "source_getstone_literal": "8000",
+      "original_delitem_literals": [
+        "2468,2478,2467"
+      ],
+      "event_ordinal": 5
+    },
+    {
+      "quantity_literal": 11,
+      "source_getstone_literal": "10000",
+      "original_delitem_literals": [
+        "2468,2478,2467"
+      ],
+      "event_ordinal": 4
+    },
+    {
+      "quantity_literal": 12,
+      "source_getstone_literal": "12000",
+      "original_delitem_literals": [
+        "2468,2478"
+      ],
+      "event_ordinal": 3
+    },
+    {
+      "quantity_literal": 13,
+      "source_getstone_literal": "16000",
+      "original_delitem_literals": [
+        "2468,2478,2467"
+      ],
+      "event_ordinal": 2
+    },
+    {
+      "quantity_literal": 14,
+      "source_getstone_literal": "20000",
+      "original_delitem_literals": [
+        "2468,2478,2467"
+      ],
+      "event_ordinal": 1
+    }
+  ],
+  "source_map_qualification": {
+    "map09_public_git_blob": "137580e7c25aadf3d679b6ebfb5080b79912cc4f",
+    "source_qualified_floors": [
+      {
+        "floor": 20507,
+        "source_dat_sha256": "6a505b453c2ec229f9f15030971bb59e62a1eca1ba5334d84d531ce7f6fc85ec",
+        "geometry": [
+          60,
+          60
+        ],
+        "original_DAT_bytes_not_read_this_work_unit": true
+      },
+      {
+        "floor": 20508,
+        "source_dat_sha256": "8f31c2a188b47fa5f0470f2cb357c0edc3dffefc5ba7ed2f3a8dd9f539e56a2e",
+        "geometry": [
+          25,
+          25
+        ],
+        "original_DAT_bytes_not_read_this_work_unit": true
+      },
+      {
+        "floor": 3300,
+        "source_dat_sha256": "7f47b7ff641e2eb58d8d944741cd1fb6227f21bdd96a2d9fa7b8cc9d91a381e8",
+        "geometry": [
+          120,
+          120
+        ],
+        "original_DAT_bytes_not_read_this_work_unit": true
+      }
+    ],
+    "not_observed_floor": 3000,
+    "not_observed_floor_reason": "NOT_IN_THE_691_MAP09_SOURCE_READY_LEDGER_OR_60_MAP10_ADDITIONS",
+    "actual_three_plane_values_measured_this_work_unit": 0
+  },
+  "source_work_scope": {
+    "actual_source_scripts_read": 7,
+    "create_points": 5,
+    "event_blocks": 36,
+    "stage": "SOURCE_BOUNDED_STATIC_NOT_RUNTIME",
+    "quest_origin": "UNRESOLVED",
+    "merchant_amounts_are_script_literals_not_proven_runtime_prices": true,
+    "original_game_started": false,
+    "official_same_deployment_confirmed": false,
+    "original_DAT_bytes_newly_recovered": 0
+  },
+  "remaining_open": [
+    "original_3000_DAT_payload",
+    "actual_20507_20508_3300_DAT_cells_not_replayed_this_round",
+    "native_predicate_order_branch_selection",
+    "quantity_semantics_of_bare_DelItem",
+    "actual_wood_payment_tiers_and_currency",
+    "historical_early_official_origin"
+  ],
+  "stage_A": {
+    "PARTIAL": 7,
+    "OPEN": 2
+  },
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}
