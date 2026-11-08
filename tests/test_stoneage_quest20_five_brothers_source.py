@@ -79,7 +79,7 @@ class Quest20PublicSourceAudit(unittest.TestCase):
         for a in r["source_create_positions"]:
             w,h=floors[a["floor"]]["geometry"];x,y=a["xy"]
             self.assertTrue(0<=x<w and 0<=y<h)
-        self.assertFalse(r["uncertainties"]["original_NPC_route_entered"])
+        self.assertFalse(r["uncertainties"]["actual_game_dungeon_entered"])
     def test_05_old_world21_getpet_instance_template_alias_join(self):
         r=self.r
         w={x["getpet_integer"]:x for x in self.world["original_enemy_instance_to_template_lookups"]}
