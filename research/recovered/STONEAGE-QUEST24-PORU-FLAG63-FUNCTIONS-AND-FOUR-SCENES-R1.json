@@ -1,0 +1,3117 @@
+{
+  "schema": "stoneage.quest24.poru_flag63_function_bindings_four_scenes.r1",
+  "date": "2026-11-08",
+  "initial_remote": {
+    "head": "f26565d75231eb0d90cc7258b2496ec7eb22ea05",
+    "tree": "bce8b799ff8f2b3eec208720f0e3d7ad940b2e58",
+    "preserved_CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "source_scope": "MIXED25_COMMUNITY_PRESERVED_NOT_AUTHENTICATED_OFFICIAL_EARLY_BUILD",
+  "old_evidence_inputs": [
+    {
+      "path": "research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json",
+      "bytes": 1321481,
+      "sha256": "2995e5825ffd204d5fd31ccffc95f009d8abbcebad829c5824e490b7f20c2b2c",
+      "git_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json",
+      "bytes": 1798170,
+      "sha256": "f6beb17b76b23211d36113bcf462c16ac38435233b3891bb21765179b84e4566",
+      "git_blob": "a088b61a3212f7049e7793f587123ffb29bebad7"
+    },
+    {
+      "path": "research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-21-GETPET-QUEST-BRANCHES-R1.json",
+      "bytes": 56429,
+      "sha256": "17b4d403fe82d332cdd32f0252e46106a5a7444cd70ab40dfaf688344713400d",
+      "git_blob": "f8614b9e90e548efb6d61e269d725d17ea173a74"
+    },
+    {
+      "path": "research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json",
+      "bytes": 398220,
+      "sha256": "bff796baed613c0308162602038b4f3a23db55f689ac97b9d8f62547550ea193",
+      "git_blob": "137580e7c25aadf3d679b6ebfb5080b79912cc4f"
+    },
+    {
+      "path": "research/recovered/STONEAGE-QUEST23-PORU-FOUR-STONES-SOURCE-AND-NINE-SCENES-R1.json",
+      "bytes": 115360,
+      "sha256": "5323158c7d5d147e7272d2b85c53f8c91f21e8dbe003320421e336ced0e8ce6b",
+      "git_blob": "303bafb317e5d5911c4a9bc23ac4ab90066b9b80"
+    }
+  ],
+  "verified_private_carriers": {
+    "NPC_ZIP_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "NPC_members_SHA_CRC": 2205,
+    "item_ZIP_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "item_members_CRC": 838,
+    "MAP09_ZIP_sha256": "d84d0800dd600798769dfb7251a1d7816588ac061ccc27812ac64a37922d4a8a",
+    "MAP09_members_CRC": 4195,
+    "parent_RAR_reread": false
+  },
+  "source_manifest": [
+    {
+      "path": "genout/npcgen.template",
+      "bytes": 4950,
+      "sha256": "0c5a58d5e31cafd3b58ccc1fa88fee7d1f95d12c0b87b04db9f06fea3b2a4df3",
+      "crc32": "56547578"
+    },
+    {
+      "path": "jaruga/event/event.template",
+      "bytes": 122,
+      "sha256": "9c11ac0cbbd9b110e8ff7d0115730044673bf29c5df6d23034e56530c181d0b2",
+      "crc32": "a70fc73f"
+    },
+    {
+      "path": "poru/boss.create",
+      "bytes": 3771,
+      "sha256": "be204fb18123356bd6c3cd0a1e70e0552c77138ccbbbb0b03a91d351de4edbb5",
+      "crc32": "65e77e29"
+    },
+    {
+      "path": "poru/boy",
+      "bytes": 524,
+      "sha256": "79d4670d283d37c5295286651890bc0eb5eebaccbbbcc0179b1ab058e79b9940",
+      "crc32": "f89976bc"
+    },
+    {
+      "path": "poru/boy01",
+      "bytes": 1071,
+      "sha256": "52d60ee60e1a8b6fa32db59b6232738fc9bc43ba911c58b4b615b46a8f9111f1",
+      "crc32": "be3299b3"
+    },
+    {
+      "path": "poru/boy02",
+      "bytes": 963,
+      "sha256": "d525e36a7a5f526cae9830fe5a91481ea54ed48cdf49eea9b4fe1529d4cbab87",
+      "crc32": "2a7ccd36"
+    },
+    {
+      "path": "poru/boy03",
+      "bytes": 663,
+      "sha256": "31e094da251d7dc387a450b583a4e2f9c5db6cf98cb03bf987ece57960a2d281",
+      "crc32": "87cc6805"
+    },
+    {
+      "path": "poru/boy04",
+      "bytes": 866,
+      "sha256": "a945359e2375c513f056178d752b9777ec62214eaade9130f3661f40c0ca4e24",
+      "crc32": "f9fae9e7"
+    },
+    {
+      "path": "poru/boy05",
+      "bytes": 617,
+      "sha256": "00ffca4dc6f57db94fa5799f8e17986cff7b3929aedccafc43d301f8223c0d9a",
+      "crc32": "08bc5258"
+    },
+    {
+      "path": "poru/boy06",
+      "bytes": 355,
+      "sha256": "d83b52da31778965d1ec04ca85a94395bceb724251bb4349cd39fe556080f0a8",
+      "crc32": "750387b3"
+    },
+    {
+      "path": "poru/boy07",
+      "bytes": 1585,
+      "sha256": "e5db835bbdddc50fe936a4691ceb8e27614eb18c97a3bcf5682cc8192904e875",
+      "crc32": "6422efb5"
+    },
+    {
+      "path": "poru/girl01",
+      "bytes": 346,
+      "sha256": "d3d96d610468003675b229ec5685971dbd95ae83062c2b8ea308a1c11a2d00ac",
+      "crc32": "7f362e8d"
+    },
+    {
+      "path": "poru/poru01.create",
+      "bytes": 5146,
+      "sha256": "c689b3d67fe6e05b7af94409472ff08910327c6dad2fdef280952c367ffc1e6e",
+      "crc32": "1be7b39d"
+    },
+    {
+      "path": "poru/poru5500_18_20",
+      "bytes": 145,
+      "sha256": "91ca9efc7860939893c1fb35a531d9f2128b184e37125a9d978bd3119138ea72",
+      "crc32": "1772a42c"
+    },
+    {
+      "path": "poru/poru5500_19_9",
+      "bytes": 143,
+      "sha256": "84e884f5f5dd9da7a1a3c0af34d1a06c4dc8dd4a83eff77d744c3889838229d3",
+      "crc32": "8bf1d974"
+    },
+    {
+      "path": "poru/poru5500_20_10",
+      "bytes": 146,
+      "sha256": "52bfc711ed1d598ef473da59a7e6ebb0d310817f8c976851e9c3f309af0758cc",
+      "crc32": "df9c7a81"
+    },
+    {
+      "path": "poru/poru5500_20_8",
+      "bytes": 180,
+      "sha256": "7ca2e4bfa378677ade610d08197ef5715021eb6ef92b58e789e7c816fe780144",
+      "crc32": "3991be84"
+    },
+    {
+      "path": "poru/poru5500_22_13",
+      "bytes": 66,
+      "sha256": "fd2b3e89a0bcb170dbc1e714702872e9b99e5bb5d366b3037edee6a7050d9881",
+      "crc32": "a9734aad"
+    },
+    {
+      "path": "poru/poru5500_23_13",
+      "bytes": 152,
+      "sha256": "ab83b01cc36eb20b68200a394eaaf7eedfeffcc8de59111584e11356b0e97af4",
+      "crc32": "6f7f9d1b"
+    },
+    {
+      "path": "poru/poru5500_24_14",
+      "bytes": 155,
+      "sha256": "882d59d03b61204b030f7371f1e7ab2b3ea41abf62daf432547a534558e9087c",
+      "crc32": "9009d41c"
+    },
+    {
+      "path": "poru/poru5500_24_20",
+      "bytes": 75,
+      "sha256": "48f3bc6ac1051c84bb9bc66ebefe4c240e1712923466692d4dde87de26dad5df",
+      "crc32": "840b1fb8"
+    },
+    {
+      "path": "poru/poru5500_24_4",
+      "bytes": 210,
+      "sha256": "261c842ebefe7aeb4360b627ac43381780ebf95cb49ea27003c7dc73061f25c3",
+      "crc32": "8962bb21"
+    },
+    {
+      "path": "poru/poru5500_27_12",
+      "bytes": 47,
+      "sha256": "c233889dab9953b4e2309c558327df9ca44047ad7e52fda2778e2aba6d2b9ddc",
+      "crc32": "95881191"
+    },
+    {
+      "path": "poru/poru5500_28_13",
+      "bytes": 102,
+      "sha256": "3ebaed729cc5cf9fbd82868ff5197a99ed3c7df08dd91f094f9c93c3445b8d78",
+      "crc32": "27b47913"
+    },
+    {
+      "path": "poru/poru5500_31_7",
+      "bytes": 198,
+      "sha256": "1bcd6f57e6698dee18eabb0412257f7249ad60d756a4c38859ff9b87b30db1a9",
+      "crc32": "71f3c0af"
+    },
+    {
+      "path": "poru/poru5500_32_22",
+      "bytes": 314,
+      "sha256": "2df9ef8b2ae33c65c216b40372bbe5ce1c1286e43272e7a5dc051f5c9852c095",
+      "crc32": "63a05dff"
+    },
+    {
+      "path": "poru/poru5500_34_5",
+      "bytes": 250,
+      "sha256": "165040748773256adde19d51887311f34df59152891f513b4129d4e4c29fb168",
+      "crc32": "809d097b"
+    },
+    {
+      "path": "poru/poru_5500_1_18",
+      "bytes": 42,
+      "sha256": "82292408bd2d8e8d0064b84df3a9c67c1cd1884eb799e8d073bec9d42d682c4f",
+      "crc32": "ea17eeef"
+    },
+    {
+      "path": "poru/poruman",
+      "bytes": 290,
+      "sha256": "93c98948425a502e47edc79c3d246c84ee559733bb1e70c9dce21c27b30a728e",
+      "crc32": "1b2d8243"
+    },
+    {
+      "path": "poru/samugiru01",
+      "bytes": 748,
+      "sha256": "1f8e1c4552cc745a2777d3e24e62f8e5edd2cff7ea1f8566bbb6924c9c6086cd",
+      "crc32": "e0dae37e"
+    },
+    {
+      "path": "poru/ss_5500_35_14",
+      "bytes": 450,
+      "sha256": "40db0604fc1076c19e2dc19af3545e10e351ec26f41810b12d4856a3d173ef4d",
+      "crc32": "b843c7fa"
+    },
+    {
+      "path": "poru/ss_5500_35_15",
+      "bytes": 474,
+      "sha256": "8b9a6a6a3ae9724dd1e4611f6a6683ccdd2ae3dbe053fe3e2f02a8fe40191921",
+      "crc32": "c1f5b909"
+    },
+    {
+      "path": "poru/ss_5500_35_8",
+      "bytes": 471,
+      "sha256": "2f095ef051e0d889d9362cf01e535ac8d70345e5e1b7ec6e2549f8c96e248fa3",
+      "crc32": "754df1c7"
+    },
+    {
+      "path": "poru/wpm_1000_71_49",
+      "bytes": 237,
+      "sha256": "0d16fec7a530a0abdd0bbbd4cf847de95c559b46a1707a87573901e3d699047c",
+      "crc32": "0f3aac37"
+    },
+    {
+      "path": "poru/wpm_5509_35_35",
+      "bytes": 185,
+      "sha256": "51d73ce6e287eac1f0c879ec65707fae7ef918f8927c76eacc899e75368ddc53",
+      "crc32": "17611be6"
+    },
+    {
+      "path": "poru/wpm_5510_16_50",
+      "bytes": 161,
+      "sha256": "89fa59b93ecd6d4037caeec166b84baac3ded62deb1c98f9a5bbe36996a1143b",
+      "crc32": "778c591e"
+    }
+  ],
+  "source_creates": [
+    {
+      "marker_id": 0,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 0,
+      "original_block_sha256": "9a19675837bbe8c04180b79a3056b28f24e9ea154441fc8fe062b410862bb31f",
+      "floor": 5500,
+      "graphic_alias": 16056,
+      "borncorner": null,
+      "borncenter": [
+        3,
+        18,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "npcgen_man",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 19,
+          "source_template_name": "npcgen_man",
+          "source_functionset": "TownPeople"
+        }
+      ],
+      "argument_paths": [
+        "poru/poru_5500_1_18"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 1,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 1,
+      "original_block_sha256": "9a40ac014719dfef010e9a51a89e809cbf4502916be0d78cfce33efe448ae753",
+      "floor": 5500,
+      "graphic_alias": 16025,
+      "borncorner": null,
+      "borncenter": [
+        12,
+        18,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "changeevent",
+      "source_bindings": [
+        {
+          "template_path": "jaruga/event/event.template",
+          "template_ordinal": 0,
+          "source_template_name": "changeevent",
+          "source_functionset": "ExChangeMan"
+        }
+      ],
+      "argument_paths": [
+        "poru/boy02"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 2,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 2,
+      "original_block_sha256": "a5f7cf1b2b662c7b210ab4c8820895d4306d53d0e6528dd6b3b4972bb0506b32",
+      "floor": 5500,
+      "graphic_alias": 16048,
+      "borncorner": null,
+      "borncenter": [
+        18,
+        8,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "npcgen_man",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 19,
+          "source_template_name": "npcgen_man",
+          "source_functionset": "TownPeople"
+        }
+      ],
+      "argument_paths": [
+        "poru/poru5500_19_9"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 3,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 3,
+      "original_block_sha256": "8c5a666e9b4de600160c407d3d131c864f53f4e808585d209505b7acf3a91a28",
+      "floor": 5500,
+      "graphic_alias": 16046,
+      "borncorner": null,
+      "borncenter": [
+        20,
+        10,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "npcgen_man",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 19,
+          "source_template_name": "npcgen_man",
+          "source_functionset": "TownPeople"
+        }
+      ],
+      "argument_paths": [
+        "poru/poru5500_20_10"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 4,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 4,
+      "original_block_sha256": "76820ee033413893881e5f7fed70375ff0600dec5604a13fdaf60ba972a89d48",
+      "floor": 5500,
+      "graphic_alias": 16044,
+      "borncorner": null,
+      "borncenter": [
+        20,
+        8,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "npcgen_man",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 19,
+          "source_template_name": "npcgen_man",
+          "source_functionset": "TownPeople"
+        }
+      ],
+      "argument_paths": [
+        "poru/poru5500_20_8"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 5,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 5,
+      "original_block_sha256": "1c4b041041039ac0a43640556e4c1999b6d2fd53d1eaaf11d6930dd4a018eb2e",
+      "floor": 5500,
+      "graphic_alias": 16064,
+      "borncorner": null,
+      "borncenter": [
+        29,
+        17,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "changeevent",
+      "source_bindings": [
+        {
+          "template_path": "jaruga/event/event.template",
+          "template_ordinal": 0,
+          "source_template_name": "changeevent",
+          "source_functionset": "ExChangeMan"
+        }
+      ],
+      "argument_paths": [
+        "poru/boy07"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 6,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 6,
+      "original_block_sha256": "2a90e44afb689d2aeb90699f66f1f46e536edf1275b418acc374ab3e5bc58b10",
+      "floor": 5500,
+      "graphic_alias": 16000,
+      "borncorner": null,
+      "borncenter": [
+        32,
+        22,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "npcgen_man",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 19,
+          "source_template_name": "npcgen_man",
+          "source_functionset": "TownPeople"
+        }
+      ],
+      "argument_paths": [
+        "poru/poru5500_32_22"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 7,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 7,
+      "original_block_sha256": "dd2ed7dab02a75816de3a17bd3a5fd8e241fe585ff2de261a7a7f97bb00fb46c",
+      "floor": 5500,
+      "graphic_alias": 16009,
+      "borncorner": null,
+      "borncenter": [
+        28,
+        13,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "npcgen_man",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 19,
+          "source_template_name": "npcgen_man",
+          "source_functionset": "TownPeople"
+        }
+      ],
+      "argument_paths": [
+        "poru/poru5500_28_13"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 8,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 8,
+      "original_block_sha256": "50cbaa0beb881129134261f47c6339fe03b271388caf089f08b90f4415a7162f",
+      "floor": 5500,
+      "graphic_alias": 16035,
+      "borncorner": null,
+      "borncenter": [
+        27,
+        11,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "npcgen_man",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 19,
+          "source_template_name": "npcgen_man",
+          "source_functionset": "TownPeople"
+        }
+      ],
+      "argument_paths": [
+        "poru/poru5500_27_12"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 9,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 9,
+      "original_block_sha256": "1cc429493073b3d73be61c53ff177eb417f381b28ea6eb1e92ca883e6550fb19",
+      "floor": 5500,
+      "graphic_alias": 16011,
+      "borncorner": null,
+      "borncenter": [
+        21,
+        13,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "npcgen_man",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 19,
+          "source_template_name": "npcgen_man",
+          "source_functionset": "TownPeople"
+        }
+      ],
+      "argument_paths": [
+        "poru/poru5500_22_13"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 10,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 10,
+      "original_block_sha256": "8c95c118092876fa9c718f9824f446add8437719b9c93da80dda8a2229d7685f",
+      "floor": 5500,
+      "graphic_alias": 16010,
+      "borncorner": null,
+      "borncenter": [
+        23,
+        15,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "npcgen_man",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 19,
+          "source_template_name": "npcgen_man",
+          "source_functionset": "TownPeople"
+        }
+      ],
+      "argument_paths": [
+        "poru/poru5500_24_14"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 11,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 11,
+      "original_block_sha256": "c48495db82e3a70aa031d7306dafae5d9d823689ada2f4b343860f82b3e607d3",
+      "floor": 5500,
+      "graphic_alias": 16007,
+      "borncorner": null,
+      "borncenter": [
+        24,
+        12,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "npcgen_man",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 19,
+          "source_template_name": "npcgen_man",
+          "source_functionset": "TownPeople"
+        }
+      ],
+      "argument_paths": [
+        "poru/poru5500_23_13"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 12,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 12,
+      "original_block_sha256": "d31638c565e50dd3c1da003e6f04e2305806f1b44d93a6e3bb73e88449192b42",
+      "floor": 5500,
+      "graphic_alias": 16017,
+      "borncorner": null,
+      "borncenter": [
+        24,
+        20,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "npcgen_man",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 19,
+          "source_template_name": "npcgen_man",
+          "source_functionset": "TownPeople"
+        }
+      ],
+      "argument_paths": [
+        "poru/poru5500_24_20"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 13,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 13,
+      "original_block_sha256": "c964eaf924038907c7f43243f934854ca6ad1bd113e9b383b7b126827031df75",
+      "floor": 5500,
+      "graphic_alias": 16300,
+      "borncorner": null,
+      "borncenter": [
+        35,
+        5,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "npcgen_man",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 19,
+          "source_template_name": "npcgen_man",
+          "source_functionset": "TownPeople"
+        }
+      ],
+      "argument_paths": [
+        "poru/poru5500_34_5"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 14,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 14,
+      "original_block_sha256": "439175c5a01aa4722b86da70486539bbd1af25c69742c705741bb2be2fc701a9",
+      "floor": 5500,
+      "graphic_alias": 16039,
+      "borncorner": null,
+      "borncenter": [
+        31,
+        7,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "npcgen_man",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 19,
+          "source_template_name": "npcgen_man",
+          "source_functionset": "TownPeople"
+        }
+      ],
+      "argument_paths": [
+        "poru/poru5500_31_7"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 15,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 15,
+      "original_block_sha256": "83649b9c951c37732e075a1fd8105e09a7a1a7e8bf06aff329b69f878d2c33c2",
+      "floor": 500,
+      "graphic_alias": 100388,
+      "borncorner": null,
+      "borncenter": [
+        275,
+        369,
+        1,
+        1
+      ],
+      "original_direction": 6,
+      "source_template_token": "npcgen_warpman",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 11,
+          "source_template_name": "npcgen_warpman",
+          "source_functionset": "WarpMan"
+        }
+      ],
+      "argument_paths": [
+        "poru/wpm_1000_71_49"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 16,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 16,
+      "original_block_sha256": "a0afa6186f53127da871a6e39e5891f2b02302f37a2202e5ec53663ae2a5a9d7",
+      "floor": 5500,
+      "graphic_alias": 16065,
+      "borncorner": null,
+      "borncenter": [
+        18,
+        20,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "npcgen_man",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 19,
+          "source_template_name": "npcgen_man",
+          "source_functionset": "TownPeople"
+        }
+      ],
+      "argument_paths": [
+        "poru/poru5500_18_20"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 17,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 17,
+      "original_block_sha256": "ec762e551747fc96ddb436144cc324f3cfa744f1baed5593214fcdf1a5d8e7f3",
+      "floor": 5500,
+      "graphic_alias": 16018,
+      "borncorner": [
+        35,
+        12,
+        35,
+        12
+      ],
+      "borncenter": [
+        35,
+        12,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "npcgen_shop",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 8,
+          "source_template_name": "npcgen_shop",
+          "source_functionset": "ItemShop"
+        }
+      ],
+      "argument_paths": [
+        "poru/ss_5500_35_14"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 18,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 18,
+      "original_block_sha256": "c4b128885873d77a99b8666f4bfc8eeb8c5889a1f59b8d44721e128283d09b06",
+      "floor": 5500,
+      "graphic_alias": 16034,
+      "borncorner": [
+        35,
+        8,
+        35,
+        8
+      ],
+      "borncenter": [
+        35,
+        8,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "npcgen_shop",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 8,
+          "source_template_name": "npcgen_shop",
+          "source_functionset": "ItemShop"
+        }
+      ],
+      "argument_paths": [
+        "poru/ss_5500_35_8"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 19,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 19,
+      "original_block_sha256": "5b745c8f23b232b19d940165db9386fe695c711a1777f762369e4ba91c5f23a9",
+      "floor": 500,
+      "graphic_alias": 16008,
+      "borncorner": null,
+      "borncenter": [
+        278,
+        363,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "changeevent",
+      "source_bindings": [
+        {
+          "template_path": "jaruga/event/event.template",
+          "template_ordinal": 0,
+          "source_template_name": "changeevent",
+          "source_functionset": "ExChangeMan"
+        }
+      ],
+      "argument_paths": [
+        "poru/boy"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 20,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 20,
+      "original_block_sha256": "052cb6d6469f148d0162e39aaa6f50f6d76a115ef24f899c56c505e437be5f29",
+      "floor": 500,
+      "graphic_alias": 100036,
+      "borncorner": null,
+      "borncenter": [
+        277,
+        361,
+        1,
+        1
+      ],
+      "original_direction": 4,
+      "source_template_token": "changeevent",
+      "source_bindings": [
+        {
+          "template_path": "jaruga/event/event.template",
+          "template_ordinal": 0,
+          "source_template_name": "changeevent",
+          "source_functionset": "ExChangeMan"
+        }
+      ],
+      "argument_paths": [
+        "poru/boy01"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 21,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 21,
+      "original_block_sha256": "8b54c19e66a621d09519c8fa450d58414fad14eeda46ff43b6ba381900cf3435",
+      "floor": 5509,
+      "graphic_alias": 100388,
+      "borncorner": [
+        37,
+        35,
+        37,
+        35
+      ],
+      "borncenter": [
+        37,
+        35,
+        1,
+        1
+      ],
+      "original_direction": 6,
+      "source_template_token": "npcgen_warpman",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 11,
+          "source_template_name": "npcgen_warpman",
+          "source_functionset": "WarpMan"
+        }
+      ],
+      "argument_paths": [
+        "poru/wpm_5509_35_35"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 22,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 22,
+      "original_block_sha256": "b81d2c2457aecf50c956ee24d2788d5e45ad98070593c4c1b0d877f4f96ee37d",
+      "floor": 500,
+      "graphic_alias": 16056,
+      "borncorner": null,
+      "borncenter": [
+        296,
+        380,
+        1,
+        1
+      ],
+      "original_direction": 6,
+      "source_template_token": "changeevent",
+      "source_bindings": [
+        {
+          "template_path": "jaruga/event/event.template",
+          "template_ordinal": 0,
+          "source_template_name": "changeevent",
+          "source_functionset": "ExChangeMan"
+        }
+      ],
+      "argument_paths": [
+        "poru/poruman"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 23,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 23,
+      "original_block_sha256": "57d94414621076688c5b943fafd1e1c6beb90017a706d84df8ed43c92c7d900a",
+      "floor": 500,
+      "graphic_alias": 100388,
+      "borncorner": null,
+      "borncenter": [
+        597,
+        471,
+        1,
+        1
+      ],
+      "original_direction": 0,
+      "source_template_token": "changeevent",
+      "source_bindings": [
+        {
+          "template_path": "jaruga/event/event.template",
+          "template_ordinal": 0,
+          "source_template_name": "changeevent",
+          "source_functionset": "ExChangeMan"
+        }
+      ],
+      "argument_paths": [
+        "poru/boy03"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 24,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 24,
+      "original_block_sha256": "b6d6100864bfb0e0eeee74879a7dd4c35e692d66d17b1186ff4fc3f7dd276cf1",
+      "floor": 500,
+      "graphic_alias": 16041,
+      "borncorner": null,
+      "borncenter": [
+        172,
+        358,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "changeevent",
+      "source_bindings": [
+        {
+          "template_path": "jaruga/event/event.template",
+          "template_ordinal": 0,
+          "source_template_name": "changeevent",
+          "source_functionset": "ExChangeMan"
+        }
+      ],
+      "argument_paths": [
+        "poru/boy05"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 25,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 25,
+      "original_block_sha256": "507bcd95fc64adcda8d34dcef9c15ad6e805af0b3550993b52d6dd7f9e28ed93",
+      "floor": 5500,
+      "graphic_alias": 16022,
+      "borncorner": null,
+      "borncenter": [
+        17,
+        13,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "changeevent",
+      "source_bindings": [
+        {
+          "template_path": "jaruga/event/event.template",
+          "template_ordinal": 0,
+          "source_template_name": "changeevent",
+          "source_functionset": "ExChangeMan"
+        }
+      ],
+      "argument_paths": [
+        "poru/boy06"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 26,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 26,
+      "original_block_sha256": "6a8de497afeb601189c1a503e06b94c24715603a122cea5dabffee289314354c",
+      "floor": 5500,
+      "graphic_alias": 16053,
+      "borncorner": null,
+      "borncenter": [
+        24,
+        4,
+        1,
+        1
+      ],
+      "original_direction": 6,
+      "source_template_token": "npcgen_man",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 19,
+          "source_template_name": "npcgen_man",
+          "source_functionset": "TownPeople"
+        }
+      ],
+      "argument_paths": [
+        "poru/poru5500_24_4"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 27,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 27,
+      "original_block_sha256": "b61d2970f03a6abd93cb9a7a096b2494c524070fbf64e1690503a9c5bb0a65ea",
+      "floor": 5510,
+      "graphic_alias": 100388,
+      "borncorner": null,
+      "borncenter": [
+        16,
+        50,
+        1,
+        1
+      ],
+      "original_direction": 0,
+      "source_template_token": "changeevent",
+      "source_bindings": [
+        {
+          "template_path": "jaruga/event/event.template",
+          "template_ordinal": 0,
+          "source_template_name": "changeevent",
+          "source_functionset": "ExChangeMan"
+        }
+      ],
+      "argument_paths": [
+        "poru/wpm_5510_16_50"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 28,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 28,
+      "original_block_sha256": "dbf8c9dffb59dd2d7ae672dc960724c89c34e97e76755c1840d4f50663a4906b",
+      "floor": 5511,
+      "graphic_alias": 16009,
+      "borncorner": null,
+      "borncenter": [
+        12,
+        21,
+        1,
+        1
+      ],
+      "original_direction": 6,
+      "source_template_token": "changeevent",
+      "source_bindings": [
+        {
+          "template_path": "jaruga/event/event.template",
+          "template_ordinal": 0,
+          "source_template_name": "changeevent",
+          "source_functionset": "ExChangeMan"
+        }
+      ],
+      "argument_paths": [
+        "poru/girl01"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 29,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 29,
+      "original_block_sha256": "0b93d373c75b085da2832c589441da9b1fd9e5770bc39d21b6c8a9ccfc214837",
+      "floor": 5511,
+      "graphic_alias": 100036,
+      "borncorner": null,
+      "borncenter": [
+        12,
+        20,
+        1,
+        1
+      ],
+      "original_direction": 6,
+      "source_template_token": "changeevent",
+      "source_bindings": [
+        {
+          "template_path": "jaruga/event/event.template",
+          "template_ordinal": 0,
+          "source_template_name": "changeevent",
+          "source_functionset": "ExChangeMan"
+        }
+      ],
+      "argument_paths": [
+        "poru/samugiru01"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 30,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 30,
+      "original_block_sha256": "f7a5900a5b10cc29b816d49b681a160df7f06c6387501fab8788c3605ca8e101",
+      "floor": 5500,
+      "graphic_alias": 16058,
+      "borncorner": [
+        35,
+        16,
+        35,
+        16
+      ],
+      "borncenter": [
+        35,
+        16,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "npcgen_winhealer",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 4,
+          "source_template_name": "npcgen_winhealer",
+          "source_functionset": "WindowHealer"
+        }
+      ],
+      "argument_paths": [],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 31,
+      "source_create_path": "poru/poru01.create",
+      "source_create_ordinal": 31,
+      "original_block_sha256": "a800cc67ec593b599bf7d256053e823fcd1d6f55340c4ee8674b731319d14555",
+      "floor": 5500,
+      "graphic_alias": 16059,
+      "borncorner": [
+        35,
+        14,
+        35,
+        14
+      ],
+      "borncenter": [
+        35,
+        14,
+        1,
+        1
+      ],
+      "original_direction": 6,
+      "source_template_token": "npcgen_shop",
+      "source_bindings": [
+        {
+          "template_path": "genout/npcgen.template",
+          "template_ordinal": 8,
+          "source_template_name": "npcgen_shop",
+          "source_functionset": "ItemShop"
+        }
+      ],
+      "argument_paths": [
+        "poru/ss_5500_35_15"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    },
+    {
+      "marker_id": 32,
+      "source_create_path": "poru/boss.create",
+      "source_create_ordinal": 0,
+      "original_block_sha256": "c27f167dfcdc0f9966b1c6e892526955c6cace8caf61d4ce0eb84d3ef69525f2",
+      "floor": 5511,
+      "graphic_alias": 100373,
+      "borncorner": null,
+      "borncenter": [
+        17,
+        12,
+        1,
+        1
+      ],
+      "original_direction": 5,
+      "source_template_token": "changeevent",
+      "source_bindings": [
+        {
+          "template_path": "jaruga/event/event.template",
+          "template_ordinal": 0,
+          "source_template_name": "changeevent",
+          "source_functionset": "ExChangeMan"
+        }
+      ],
+      "argument_paths": [
+        "poru/boy04"
+      ],
+      "original_borncenter_borncorner_precedence_verified": false,
+      "native_NPC_executed": false
+    }
+  ],
+  "source_scripts": [
+    {
+      "path": "poru/boy",
+      "bytes": 524,
+      "sha256": "79d4670d283d37c5295286651890bc0eb5eebaccbbbcc0179b1ab058e79b9940",
+      "crc32": "f89976bc",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 5,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ENDEV=64",
+          "condition_sha256": "47b8396eb16fcbdfd622e11e2289bc9b8d400872063c3ff9ad203a7c362e6fd5",
+          "section_sha256": "39db05d180372062bda0453f21b647e39fa5024ee470984fa54ca55b568f2098",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 1,
+          "type_line": 12,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ENDEV=63",
+          "condition_sha256": "23bcc282457162505c0215fbedf43f4371a5cdb87d46ef621f4496a4596fc3ea",
+          "section_sha256": "d4e2cdee828c17729fd9ad6b7a7ace150a8862f1eea6974d6adb5ad4416e3a7d",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 2,
+          "type_line": 20,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "NOWEV=63",
+          "condition_sha256": "a5c1bec5bd45150f78fa26ed2ae04cdb40036d0dab528a462d6b50555831deda",
+          "section_sha256": "5a9199efcdff0a52a9d804ab0786e8b08d77ece7692052c6b03654e342632d7d",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 3,
+          "type_line": 28,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>0",
+          "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+          "section_sha256": "c19cc4939ababf2f07f63717501c4429c77e106b056685784d5b4a6e3935d7db",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    },
+    {
+      "path": "poru/boy01",
+      "bytes": 1071,
+      "sha256": "52d60ee60e1a8b6fa32db59b6232738fc9bc43ba911c58b4b615b46a8f9111f1",
+      "crc32": "be3299b3",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 6,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ENDEV=64",
+          "condition_sha256": "47b8396eb16fcbdfd622e11e2289bc9b8d400872063c3ff9ad203a7c362e6fd5",
+          "section_sha256": "95799ae6719685ea7ab9ec42496ecbe3dd3a1f43f5514f444c2962c98e9080ca",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 1,
+          "type_line": 13,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "NOWEV=64&ITEM=18556&ITEM=18557&ITEM=18558&ITEM=18559",
+          "condition_sha256": "ee62ca533fe685453ecf7c735264e94e9d8e51c72d8b25054a2b16a2c429316f",
+          "section_sha256": "72f780635ac2b22e62478bf6670795ca25fa8f96bc2ba6b266f1f6caa080fd17",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 2,
+          "type_line": 27,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ENDEV=63",
+          "condition_sha256": "23bcc282457162505c0215fbedf43f4371a5cdb87d46ef621f4496a4596fc3ea",
+          "section_sha256": "8cfa8e0ac526985950b50aa703dfc64ed2ef0e614151b7ed320d037bed305a8f",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 3,
+          "type_line": 35,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "NOWEV=63",
+          "condition_sha256": "a5c1bec5bd45150f78fa26ed2ae04cdb40036d0dab528a462d6b50555831deda",
+          "section_sha256": "90b77ac4594e7d467fe79982b2feb61b3179a065ea2609eb1cdc37c81c3ab60c",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 4,
+          "type_line": 43,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>0",
+          "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+          "section_sha256": "b4b1381924fc4f1db8313da5049f2d8efbae30266fb02adf64f876406952087a",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    },
+    {
+      "path": "poru/boy02",
+      "bytes": 963,
+      "sha256": "d525e36a7a5f526cae9830fe5a91481ea54ed48cdf49eea9b4fe1529d4cbab87",
+      "crc32": "2a7ccd36",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 5,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ENDEV=64",
+          "condition_sha256": "47b8396eb16fcbdfd622e11e2289bc9b8d400872063c3ff9ad203a7c362e6fd5",
+          "section_sha256": "a2ef2d3dae0852d6fe6e55bef1ee4be4fe32a4f3c07ca31c267ef1c128185a6f",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 1,
+          "type_line": 13,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ENDEV=63",
+          "condition_sha256": "23bcc282457162505c0215fbedf43f4371a5cdb87d46ef621f4496a4596fc3ea",
+          "section_sha256": "f75acd541fd3f342642b6c81576c5d29f0b95403423ab76a92bb982f6f7d72f1",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 2,
+          "type_line": 21,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "NOWEV=63",
+          "condition_sha256": "a5c1bec5bd45150f78fa26ed2ae04cdb40036d0dab528a462d6b50555831deda",
+          "section_sha256": "d51772b4717efe644a6c1c4c31ac4dc07a5fe44d8f6a63f944fb9d99a5bea633",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 3,
+          "type_line": 29,
+          "event_no": 63,
+          "type": "REQUEST",
+          "condition_literal": "LV>0",
+          "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+          "section_sha256": "1dafb0c2be4a448d4e6b263e2b8b9c3bcd2b6e531056cf987fab9b946c75d325",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    },
+    {
+      "path": "poru/boy03",
+      "bytes": 663,
+      "sha256": "31e094da251d7dc387a450b583a4e2f9c5db6cf98cb03bf987ece57960a2d281",
+      "crc32": "87cc6805",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 5,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ITEM=2414&ENDEV=64",
+          "condition_sha256": "897e72590bca64cd471ce1b7062b797387d4be35cab541218b014725c8d34191",
+          "section_sha256": "e754f2f4b43ee8b400f120e1c54fc0297ff0d95298ced0871e465644aa2a1c71",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 1,
+          "type_line": 13,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ITEM=2414&NOWEV=64",
+          "condition_sha256": "ed1b4a69139b24389f1f7051a7c1f57609e629e40594b7b59289afe792169933",
+          "section_sha256": "c9920e68ea831bf1ebd8dea76fb58f0bdea911b049cf6712d75b3e97cb1e4969",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 2,
+          "type_line": 21,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ITEM=2414&ENDEV=63",
+          "condition_sha256": "184bf4414d35577f22b52b65b209fe1e7b0e8d93b916e7defcd3f21cabf2708c",
+          "section_sha256": "c2bf8ed63e33030291c24a91ee8297270024dcf49e43ed791ccdf213bad05192",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 3,
+          "type_line": 30,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ITEM=2414",
+          "condition_sha256": "adf993729f74f4a214ec36ef411ea4da6c6b4396d929307703518a16fece84fb",
+          "section_sha256": "2a568e8894f9fbbd2be8bf78e8154e3cf151cb94afc46a2fb6e7d824e507c3cb",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 4,
+          "type_line": 39,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>0",
+          "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+          "section_sha256": "a82f35749aceeb52335b0d6e2657e1d4b8f4e5460eafc0edd54b36f892028909",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    },
+    {
+      "path": "poru/boy04",
+      "bytes": 866,
+      "sha256": "a945359e2375c513f056178d752b9777ec62214eaade9130f3661f40c0ca4e24",
+      "crc32": "f9fae9e7",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 5,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ENDEV=63&ITEM!=18544",
+          "condition_sha256": "a4288f91001234c684373024918bf0afe510c75ad1adb80c061b3760597e84fc",
+          "section_sha256": "ace0196244a23a4302678f579fc96caa3210a4a10f57c8206276712168df4e5f",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "GetItem": [
+              "18544*2"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 1,
+          "type_line": 14,
+          "event_no": 63,
+          "type": "ACCEPT",
+          "condition_literal": "NOWEV=63",
+          "condition_sha256": "a5c1bec5bd45150f78fa26ed2ae04cdb40036d0dab528a462d6b50555831deda",
+          "section_sha256": "d0a1c87766deb1e0f996beebf292c1d41f1efcf551b5699d51aee55ce3134291",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "GetPet": [
+              "352"
+            ],
+            "EndSetFlg": [
+              "63"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    },
+    {
+      "path": "poru/boy05",
+      "bytes": 617,
+      "sha256": "00ffca4dc6f57db94fa5799f8e17986cff7b3929aedccafc43d301f8223c0d9a",
+      "crc32": "08bc5258",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 4,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ITEM=2248,ITEM=2249,ITEM=2250,ITEM=2251,ITEM=2252,ITEM=2253",
+          "condition_sha256": "99a5a41dc70b8aef5bbb51f1eab6495d3b7aec96bbb2bcba54450e9e3e1ccbcd",
+          "section_sha256": "9b81bcb5ddb68283af89e102d7085f839d69ea021cffff5020855e38813a0672",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "GetItem": [
+              "2414"
+            ],
+            "DelItem": [
+              "2248,2249,2250,2251,2252,2253"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    },
+    {
+      "path": "poru/boy06",
+      "bytes": 355,
+      "sha256": "d83b52da31778965d1ec04ca85a94395bceb724251bb4349cd39fe556080f0a8",
+      "crc32": "750387b3",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 4,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ENDEV=63",
+          "condition_sha256": "23bcc282457162505c0215fbedf43f4371a5cdb87d46ef621f4496a4596fc3ea",
+          "section_sha256": "02b1a7bea99057a0fb095dae8d8c1aa39499956e5009a45f58d035c96a4cd1d2",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 1,
+          "type_line": 12,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "NOWEV=63",
+          "condition_sha256": "a5c1bec5bd45150f78fa26ed2ae04cdb40036d0dab528a462d6b50555831deda",
+          "section_sha256": "745d39642f20b055184fe4a3c7550eef655c905c1b8da30fbbd08693d7d9aa74",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    },
+    {
+      "path": "poru/boy07",
+      "bytes": 1585,
+      "sha256": "e5db835bbdddc50fe936a4691ceb8e27614eb18c97a3bcf5682cc8192904e875",
+      "crc32": "6422efb5",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 6,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ENDEV=64",
+          "condition_sha256": "47b8396eb16fcbdfd622e11e2289bc9b8d400872063c3ff9ad203a7c362e6fd5",
+          "section_sha256": "021b3efeadd8dddad5f14304d8f1ef5ddb3df3ad6ba0183000133183f7e48640",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 1,
+          "type_line": 14,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "NOWEV=64",
+          "condition_sha256": "dd5f822fae5d3a490b1446f30fff0f413025a15e31f1e38113754ce367b292e0",
+          "section_sha256": "5ccb10657f12b64d6ef949ea23ca31be3ca5b92268b3adb8a67239b49f0a92b6",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 2,
+          "type_line": 22,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "condition_literal": "ENDEV=63",
+          "condition_sha256": "23bcc282457162505c0215fbedf43f4371a5cdb87d46ef621f4496a4596fc3ea",
+          "section_sha256": "7dce36b66d83b86bee8f58291c8cbceb1c08cd734780322d1aba9fa3954146dd",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 3,
+          "type_line": 37,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "NOWEV=63",
+          "condition_sha256": "a5c1bec5bd45150f78fa26ed2ae04cdb40036d0dab528a462d6b50555831deda",
+          "section_sha256": "b79936d39c51475b13ab37ef1f2b54bd2ce8a48dbaaa778d4673a4bff21c8881",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 4,
+          "type_line": 45,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>0",
+          "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+          "section_sha256": "bb3183fceb518cc44dce36f5f70e6e4bd5530602ea9c9a7035267fe229c38027",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    },
+    {
+      "path": "poru/girl01",
+      "bytes": 346,
+      "sha256": "d3d96d610468003675b229ec5685971dbd95ae83062c2b8ea308a1c11a2d00ac",
+      "crc32": "7f362e8d",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 6,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ENDEV=64",
+          "condition_sha256": "47b8396eb16fcbdfd622e11e2289bc9b8d400872063c3ff9ad203a7c362e6fd5",
+          "section_sha256": "e0cc4b2bfa2ee7d09718f08d82e43afbf65c47871d391dae8ad6bb3af36eb3d4",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 1,
+          "type_line": 13,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "NOWEV=64",
+          "condition_sha256": "dd5f822fae5d3a490b1446f30fff0f413025a15e31f1e38113754ce367b292e0",
+          "section_sha256": "8575be9a65f5e73fc167308e65c8f853ee8df52cb8dbb6f847378b8bd72e3ba0",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 2,
+          "type_line": 22,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>0",
+          "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+          "section_sha256": "d800a6154c5f937e8d49abb27c475b0205765d7c0c3b47f199569bca13f9f91a",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    },
+    {
+      "path": "poru/poruman",
+      "bytes": 290,
+      "sha256": "93c98948425a502e47edc79c3d246c84ee559733bb1e70c9dce21c27b30a728e",
+      "crc32": "1b2d8243",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 7,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ENDEV=63",
+          "condition_sha256": "23bcc282457162505c0215fbedf43f4371a5cdb87d46ef621f4496a4596fc3ea",
+          "section_sha256": "e06e024b36a845527e95f36403ccee5d36fbe8277b3341db82fce3b158931a46",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 1,
+          "type_line": 16,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>0",
+          "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+          "section_sha256": "5a81dd3cd9ddd7b05a45a604dfbef67fa897389652f736ed08e5c62fe98605d4",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    },
+    {
+      "path": "poru/samugiru01",
+      "bytes": 748,
+      "sha256": "1f8e1c4552cc745a2777d3e24e62f8e5edd2cff7ea1f8566bbb6924c9c6086cd",
+      "crc32": "e0dae37e",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 5,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ENDEV=64",
+          "condition_sha256": "47b8396eb16fcbdfd622e11e2289bc9b8d400872063c3ff9ad203a7c362e6fd5",
+          "section_sha256": "fc9f858c76043035d2371544a6220610b13c50153d7b88d12f019230cc67a509",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 1,
+          "type_line": 13,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ITEM=18556&ITEM=18557&ITEM=18559&ITEM=18544",
+          "condition_sha256": "f0fa83e46bf6ad36692c2b8a466515ddf9e43032f6d172bc11dd6fa29555e46f",
+          "section_sha256": "75eb935e6edeafead17c6ee659c833226608bd53d43bbfa0c975152bf6b37f4b",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 2,
+          "type_line": 20,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "NOWEV=64",
+          "condition_sha256": "dd5f822fae5d3a490b1446f30fff0f413025a15e31f1e38113754ce367b292e0",
+          "section_sha256": "3de9117142e1ce7b4552a2d85d265d6ef20d57091ab83fcbb2bce36dcbc3aea7",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 3,
+          "type_line": 27,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "NOWEV=64",
+          "condition_sha256": "dd5f822fae5d3a490b1446f30fff0f413025a15e31f1e38113754ce367b292e0",
+          "section_sha256": "3de9117142e1ce7b4552a2d85d265d6ef20d57091ab83fcbb2bce36dcbc3aea7",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 4,
+          "type_line": 34,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "LV>0",
+          "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+          "section_sha256": "f22ea155c71bd75530eec7d0e232445b5874d66d5745f51b3f5f3b397c1afb3f",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    },
+    {
+      "path": "poru/wpm_5510_16_50",
+      "bytes": 161,
+      "sha256": "89fa59b93ecd6d4037caeec166b84baac3ded62deb1c98f9a5bbe36996a1143b",
+      "crc32": "778c591e",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 4,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ITEM=2414",
+          "condition_sha256": "adf993729f74f4a214ec36ef411ea4da6c6b4396d929307703518a16fece84fb",
+          "section_sha256": "466bb66e2b23f3a8e80c89db02aea4b0b794fb703216de582e422b50b0756102",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    }
+  ],
+  "old_QUEST01_event_count": 39,
+  "new_original_script_discoveries": 0,
+  "flag63_bridge": {
+    "provider_script": "poru/boy04",
+    "event_ordinal": 1,
+    "provider_CREATE": "poru/boss.create",
+    "provider_CREATE_ordinal": 0,
+    "original_provider_condition": "NOWEV=63",
+    "original_provider_commands": {
+      "GetPet": [
+        "352"
+      ],
+      "EndSetFlg": [
+        "63"
+      ]
+    },
+    "next_source_QUEST23_request_conditions": [
+      "ENDEV=63"
+    ],
+    "original_GetPet_352_existing_WORLD21_lookup": {
+      "getpet_integer": 352,
+      "enemy_master_line": 199,
+      "enemy_master_line_sha256": "09c86e1c193d8e3b3293d6593a1a0f6de4c7aac506b1f0247c69a6fa05f5b7bf",
+      "template_id_via_enemy_field4": 303,
+      "template_master_line": 235,
+      "template_master_line_sha256": "64083c55e87a31b4f4cc737db725663fc560e8b9b23c002f52b8b6297332ffb2",
+      "original_template_graphic_id": 100373,
+      "original_template_petflag_raw": 1,
+      "found_in_WORLD20_selected_wild_group_enemy_subgraph": false
+    },
+    "existing_pet_not_new_discovery": true,
+    "original_flag_saved_or_reward_delivered": false
+  },
+  "wpm_named_dialogue": {
+    "path": "poru/wpm_5510_16_50",
+    "source_template_token": "changeevent",
+    "source_functionset": "ExChangeMan",
+    "actual_type": "MESSAGE",
+    "has_original_WARP_field": false,
+    "classified_as_warp_from_filename": false
+  },
+  "actual_source_warpman_parameters": [
+    {
+      "marker_id": 15,
+      "path": "poru/wpm_1000_71_49",
+      "source_values": {
+        "WARP": "1000,71,49",
+        "FREE": "ITEM=2414",
+        "MONEY": "-1"
+      },
+      "actual_warp_or_fee_executed": false
+    },
+    {
+      "marker_id": 21,
+      "path": "poru/wpm_5509_35_35",
+      "source_values": {
+        "WARP": "5510,16,49",
+        "FREE": "ITEM=2414",
+        "MONEY": "-1"
+      },
+      "actual_warp_or_fee_executed": false
+    }
+  ],
+  "meat_shell_source": {
+    "script": "poru/boy05",
+    "condition": "ITEM=2248,ITEM=2249,ITEM=2250,ITEM=2251,ITEM=2252,ITEM=2253",
+    "commands": {
+      "GetItem": [
+        "2414"
+      ],
+      "DelItem": [
+        "2248,2249,2250,2251,2252,2253"
+      ]
+    },
+    "original_boolean_or_deletion_semantics_verified": false
+  },
+  "source_four_object_message_difference": {
+    "script": "poru/samugiru01",
+    "event_ordinal": 1,
+    "original_message_condition": "ITEM=18556&ITEM=18557&ITEM=18559&ITEM=18544",
+    "later_QUEST23_finale_condition": "NOWEV=64&ITEM=18556&ITEM=18557&ITEM=18558&ITEM=18559",
+    "original_18544_replaced_with_18558": false
+  },
+  "core_items": [
+    {
+      "item_ID": 2248,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 1919,
+          "sha256": "b5df93e59e04e55bf73706866d0d45b3cc8d042652ce4be71b5b594edbd69c9d",
+          "image_alias": 24006
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2234,
+          "sha256": "b5df93e59e04e55bf73706866d0d45b3cc8d042652ce4be71b5b594edbd69c9d",
+          "image_alias": 24006
+        }
+      ],
+      "cross_carrier_candidate_alias": 24006,
+      "candidate_PNG_sha256": "1b43b0ad8b9ce3f39a7023d707ae4360db551c848362b4d95504aa57fe665e13",
+      "original_RD_sha256": "2f280cf58ba04780a72c079b1708533baab4722d6a013d9cd66ea70479cbd1c7"
+    },
+    {
+      "item_ID": 2249,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 1920,
+          "sha256": "490b0a6f4388c22915183936e63c129a45760902e7b50e2795adcc80331f88b3",
+          "image_alias": 24033
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2235,
+          "sha256": "490b0a6f4388c22915183936e63c129a45760902e7b50e2795adcc80331f88b3",
+          "image_alias": 24033
+        }
+      ],
+      "cross_carrier_candidate_alias": 24033,
+      "candidate_PNG_sha256": "7f7d0d8c00f950e98fcc4899390cbfade42754de5f9bbac72ef5d32b8bbb8956",
+      "original_RD_sha256": "944927d0f82b59559dd7c5f47103d19cb186ab4fdc82b1a676730d01f5267568"
+    },
+    {
+      "item_ID": 2250,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 1921,
+          "sha256": "094218aa3fe5252b2e9499d6cfb9a0cb6df72d4828a8dd35f699e198fdd59da6",
+          "image_alias": 24015
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2236,
+          "sha256": "094218aa3fe5252b2e9499d6cfb9a0cb6df72d4828a8dd35f699e198fdd59da6",
+          "image_alias": 24015
+        }
+      ],
+      "cross_carrier_candidate_alias": 24015,
+      "candidate_PNG_sha256": "f8b4d52dab26f7dfa70fed3d703d5f142b320e584e28b0d48ab0c8a5fb1f9e01",
+      "original_RD_sha256": "85deaea0e2c901ed9d20d53f067bd2cd2ecc2d58eedd237f5c4e3eec6ee37ae5"
+    },
+    {
+      "item_ID": 2251,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 1922,
+          "sha256": "823ee102c9ca4087424b50c65dd4aea43cbde5decd2acbd2e92baecf6dc636e8",
+          "image_alias": 24024
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2237,
+          "sha256": "823ee102c9ca4087424b50c65dd4aea43cbde5decd2acbd2e92baecf6dc636e8",
+          "image_alias": 24024
+        }
+      ],
+      "cross_carrier_candidate_alias": 24024,
+      "candidate_PNG_sha256": "1349898e324e326d4739d43235a2f0a450263d10eba7ffa7467bc35794832603",
+      "original_RD_sha256": "58f5e8f78290d0bf8a3deb1c2728b80e10c7d52b0f3dcade2f74a8a64bab3c83"
+    },
+    {
+      "item_ID": 2252,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 1923,
+          "sha256": "806b063ba1136bdd335e1c19dda8a398bd55058b5d56eb4ed1f2b42a4a5f5e35",
+          "image_alias": 24042
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2238,
+          "sha256": "806b063ba1136bdd335e1c19dda8a398bd55058b5d56eb4ed1f2b42a4a5f5e35",
+          "image_alias": 24042
+        }
+      ],
+      "cross_carrier_candidate_alias": 24042,
+      "candidate_PNG_sha256": "031348c1483f24d34fa679655571059ae67f8c7ee22e372efdd8a7f894fd1963",
+      "original_RD_sha256": "6823293f629ce4713efafa14f7e6719c28d9f4bba4c4c1f3e721bcea61942cff"
+    },
+    {
+      "item_ID": 2253,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 1924,
+          "sha256": "b6d2ecc6b00ab0f0e0427e42b61dd3aabc4479303c083ee938c989134c123102",
+          "image_alias": 24042
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2239,
+          "sha256": "b6d2ecc6b00ab0f0e0427e42b61dd3aabc4479303c083ee938c989134c123102",
+          "image_alias": 24042
+        }
+      ],
+      "cross_carrier_candidate_alias": 24042,
+      "candidate_PNG_sha256": "031348c1483f24d34fa679655571059ae67f8c7ee22e372efdd8a7f894fd1963",
+      "original_RD_sha256": "6823293f629ce4713efafa14f7e6719c28d9f4bba4c4c1f3e721bcea61942cff"
+    },
+    {
+      "item_ID": 2414,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 1997,
+          "sha256": "4618977dbec344a77f7a307dc996d2f1774bef4967b0c345910d5f0fd498eb96",
+          "image_alias": 24130
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2392,
+          "sha256": "4618977dbec344a77f7a307dc996d2f1774bef4967b0c345910d5f0fd498eb96",
+          "image_alias": 24130
+        }
+      ],
+      "cross_carrier_candidate_alias": 24130,
+      "candidate_PNG_sha256": "6ede96a25a984f568b2f52092f3af32c1d599beebfd02f021261f9843eaee1b4",
+      "original_RD_sha256": "4eda88ba0873d1e9f408f4c255d841c43dbdf4756893be099726f81c9dfdb6c6"
+    },
+    {
+      "item_ID": 18544,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 12289,
+          "sha256": "4d8eeefcf0e296db7bb6e294f0d046080f1b4a14063d461fa9153e663883f20e",
+          "image_alias": 24054
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 12740,
+          "sha256": "4d8eeefcf0e296db7bb6e294f0d046080f1b4a14063d461fa9153e663883f20e",
+          "image_alias": 24054
+        }
+      ],
+      "cross_carrier_candidate_alias": 24054,
+      "candidate_PNG_sha256": "9a770180094ac8c66d48e80e4644895790c39328f12fc1e276beb07e074003b6",
+      "original_RD_sha256": "05d04e9562037c071802c21287058c893104f9bba94fd51acaacbb66bd54a458"
+    },
+    {
+      "item_ID": 18556,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 12301,
+          "sha256": "ab3cfc345b674b319deb9103d7c4b0982efa26090564ab34123812b56e5b9449",
+          "image_alias": 24057
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 12752,
+          "sha256": "ab3cfc345b674b319deb9103d7c4b0982efa26090564ab34123812b56e5b9449",
+          "image_alias": 24057
+        }
+      ],
+      "cross_carrier_candidate_alias": 24057,
+      "candidate_PNG_sha256": "a387e59e3b8b9ae731867e465d102c746cf149d7d206dc999be1bf3f86987b19",
+      "original_RD_sha256": "3a38371b635ac1cd14fa24dcd1318681cc0865cde99e9c581c23e45166063294"
+    },
+    {
+      "item_ID": 18557,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 12302,
+          "sha256": "f5840a5f2bb9460dd36e0094c271adec51e535c69bd593c92c5e204e278ec817",
+          "image_alias": 24055
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 12753,
+          "sha256": "f5840a5f2bb9460dd36e0094c271adec51e535c69bd593c92c5e204e278ec817",
+          "image_alias": 24055
+        }
+      ],
+      "cross_carrier_candidate_alias": 24055,
+      "candidate_PNG_sha256": "553b13f9fa536202c49fbc87ed51e0166b9df1ea4e1b42373495b16b7720dd02",
+      "original_RD_sha256": "53e1ae321cf6a8c5ee62a76376ee6b9c8d3035c11d9f1bee938e3bafccecaf29"
+    },
+    {
+      "item_ID": 18558,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 12303,
+          "sha256": "0c3d11e19c65ed4c1333cb6cdf0c549b4267b25e11e0320dc1285fed0176a124",
+          "image_alias": 24053
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 12754,
+          "sha256": "0c3d11e19c65ed4c1333cb6cdf0c549b4267b25e11e0320dc1285fed0176a124",
+          "image_alias": 24053
+        }
+      ],
+      "cross_carrier_candidate_alias": 24053,
+      "candidate_PNG_sha256": "1064a7ff214caaae0c95d1e76b403fee6f6eec5eb4118154676d874002aff606",
+      "original_RD_sha256": "fdb6dc791e98a0b93642775d7a4447c6466f0b422aa05dffdd9149dd8512e7b7"
+    },
+    {
+      "item_ID": 18559,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 12304,
+          "sha256": "8fa7ce4988876c6635217187b99f95a59a1ee75573c6924628937dc2b386f10d",
+          "image_alias": 24059
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 12755,
+          "sha256": "8fa7ce4988876c6635217187b99f95a59a1ee75573c6924628937dc2b386f10d",
+          "image_alias": 24059
+        }
+      ],
+      "cross_carrier_candidate_alias": 24059,
+      "candidate_PNG_sha256": "1b9f51d9a90fd8327c094559135755d314189383a81f3f6e085d436a864f3651",
+      "original_RD_sha256": "1bdc1eb23e50ff9136155b82896a29fa12998bae3d907c0ffabf1dca352e47d8"
+    }
+  ],
+  "original_scene_observations": [
+    {
+      "floor": 5500,
+      "original_DAT_bytes": 9008,
+      "original_DAT_sha256": "177f6b21777e04295b00e63a626ffaa5ab8b7333e16a4d211ccd4ad2cd12c89f",
+      "geometry": [
+        50,
+        30
+      ],
+      "source_draw_positions": 862,
+      "unique_source_images": 105,
+      "canvas_size": [
+        2529,
+        1905
+      ],
+      "origin": [
+        16,
+        1192
+      ],
+      "three_candidate_RGBA_sha256": {
+        "plane0": "d1159df3f9a3680e3f474e8113135accddb639299bac70fc1b5b0065386c06f6",
+        "plane1": "eda57c4baee66c26af304f482d3a03489f8ed26671230ed911007f4a8a554dc5",
+        "combined": "6d5a809ffb0befd6a5b4bce5f9211304cfd675f774a69e48f841ed3d30553c9d"
+      },
+      "independent_Pillow_and_NumPy_all_three_equal": true,
+      "marked_candidate_RGBA_sha256": "f55cb4d3c583b66e0f555b1bcaf6ae4b89e8594dc24fdc27c89bd16804f578e6",
+      "marked_candidate_PNG_sha256": "5bf00b967e8f3c51b3aeb51d7b238fe0cb4bd1143368bec0d78209300b2045f6",
+      "source_points": [
+        {
+          "xy": [
+            3,
+            18
+          ],
+          "raw_three_u16": [
+            4506,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            688,
+            1552
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            3,
+            18,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 0,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 0
+        },
+        {
+          "xy": [
+            12,
+            18
+          ],
+          "raw_three_u16": [
+            4586,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            976,
+            1336
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            12,
+            18,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 1,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 1
+        },
+        {
+          "xy": [
+            18,
+            8
+          ],
+          "raw_three_u16": [
+            4527,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            848,
+            952
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            18,
+            8,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 2,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 2
+        },
+        {
+          "xy": [
+            20,
+            10
+          ],
+          "raw_three_u16": [
+            4524,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            976,
+            952
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            20,
+            10,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 3,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 3
+        },
+        {
+          "xy": [
+            20,
+            8
+          ],
+          "raw_three_u16": [
+            4531,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            912,
+            904
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            20,
+            8,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 4,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 4
+        },
+        {
+          "xy": [
+            29,
+            17
+          ],
+          "raw_three_u16": [
+            4598,
+            12802,
+            49152
+          ],
+          "modern_projected_center": [
+            1488,
+            904
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            29,
+            17,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 5,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 5
+        },
+        {
+          "xy": [
+            32,
+            22
+          ],
+          "raw_three_u16": [
+            4521,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            1744,
+            952
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            32,
+            22,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 6,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 6
+        },
+        {
+          "xy": [
+            28,
+            13
+          ],
+          "raw_three_u16": [
+            4514,
+            12802,
+            49152
+          ],
+          "modern_projected_center": [
+            1328,
+            832
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            28,
+            13,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 7,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 7
+        },
+        {
+          "xy": [
+            27,
+            11
+          ],
+          "raw_three_u16": [
+            4509,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            1232,
+            808
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            27,
+            11,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 8,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 8
+        },
+        {
+          "xy": [
+            21,
+            13
+          ],
+          "raw_three_u16": [
+            4513,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            1104,
+            1000
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            21,
+            13,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 9,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 9
+        },
+        {
+          "xy": [
+            23,
+            15
+          ],
+          "raw_three_u16": [
+            4501,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            1232,
+            1000
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            23,
+            15,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 10,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 10
+        },
+        {
+          "xy": [
+            24,
+            12
+          ],
+          "raw_three_u16": [
+            4582,
+            12802,
+            49152
+          ],
+          "modern_projected_center": [
+            1168,
+            904
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            24,
+            12,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 11,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 11
+        },
+        {
+          "xy": [
+            24,
+            20
+          ],
+          "raw_three_u16": [
+            4509,
+            12802,
+            49152
+          ],
+          "modern_projected_center": [
+            1424,
+            1096
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            24,
+            20,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 12,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 12
+        },
+        {
+          "xy": [
+            35,
+            5
+          ],
+          "raw_three_u16": [
+            4518,
+            12827,
+            49152
+          ],
+          "modern_projected_center": [
+            1296,
+            472
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            35,
+            5,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 13,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 13
+        },
+        {
+          "xy": [
+            31,
+            7
+          ],
+          "raw_three_u16": [
+            4515,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            1232,
+            616
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            31,
+            7,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 14,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 14
+        },
+        {
+          "xy": [
+            18,
+            20
+          ],
+          "raw_three_u16": [
+            4519,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            1232,
+            1240
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            18,
+            20,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 16,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 16
+        },
+        {
+          "xy": [
+            35,
+            12
+          ],
+          "raw_three_u16": [
+            4500,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            1520,
+            640
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            35,
+            12,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 17,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 17
+        },
+        {
+          "xy": [
+            35,
+            8
+          ],
+          "raw_three_u16": [
+            4500,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            1392,
+            544
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            35,
+            8,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 18,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 18
+        },
+        {
+          "xy": [
+            17,
+            13
+          ],
+          "raw_three_u16": [
+            4530,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            976,
+            1096
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            17,
+            13,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 25,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 25
+        },
+        {
+          "xy": [
+            24,
+            4
+          ],
+          "raw_three_u16": [
+            4519,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            912,
+            712
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            24,
+            4,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 26,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 26
+        },
+        {
+          "xy": [
+            35,
+            16
+          ],
+          "raw_three_u16": [
+            4578,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            1648,
+            736
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            35,
+            16,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 30,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 30
+        },
+        {
+          "xy": [
+            35,
+            14
+          ],
+          "raw_three_u16": [
+            4510,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            1584,
+            688
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            35,
+            14,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 31,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 31
+        }
+      ]
+    },
+    {
+      "floor": 5509,
+      "original_DAT_bytes": 21008,
+      "original_DAT_sha256": "7aa549d155cc1540194a1ef48b170e6cd4160a79e74630bdcd405ce5dd146260",
+      "geometry": [
+        50,
+        70
+      ],
+      "source_draw_positions": 2276,
+      "unique_source_images": 319,
+      "canvas_size": [
+        3809,
+        2865
+      ],
+      "origin": [
+        16,
+        1192
+      ],
+      "three_candidate_RGBA_sha256": {
+        "plane0": "13f3cb0cd7aab8a8fdbc5993e5b73c928c82e6d5d20a2c62ae0274b3d8ce78bc",
+        "plane1": "4d971229feba1b7e4c778099dec0df8eb93d6b27bc71091349aa443e602d15a3",
+        "combined": "03cab6ea21211a72a2d2b52c1ac7b46f89a7f277dd356ae6f9639d6f633e8537"
+      },
+      "independent_Pillow_and_NumPy_all_three_equal": true,
+      "marked_candidate_RGBA_sha256": "1e2732bb4488751b23d8366584ff2307f6d183b2c26f4d57ab1409cf0ef9fea1",
+      "marked_candidate_PNG_sha256": "26c7d190b2b6cc4764b1242518fe33f778207e4ddb954c1925a9c6e9d1288e8f",
+      "source_points": [
+        {
+          "xy": [
+            37,
+            35
+          ],
+          "raw_three_u16": [
+            407,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            2320,
+            1144
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            37,
+            35,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 21,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 21
+        }
+      ]
+    },
+    {
+      "floor": 5510,
+      "original_DAT_bytes": 21608,
+      "original_DAT_sha256": "a7be854d0767203b547984269e34e72c2c443c011c35027d727d7fd192c00cfc",
+      "geometry": [
+        60,
+        60
+      ],
+      "source_draw_positions": 1280,
+      "unique_source_images": 64,
+      "canvas_size": [
+        3809,
+        2865
+      ],
+      "origin": [
+        16,
+        1432
+      ],
+      "three_candidate_RGBA_sha256": {
+        "plane0": "bafbba46116d0dbc2f269d12fa3b7f2319314b89616727f03bd9435264377cdb",
+        "plane1": "8d0ce4bdadfb38c50eb3920c7d707c97efa111f61937e6812e4982b3578d339a",
+        "combined": "57f89cf4809035ec98058b0296c03086ddf470e40be744413237a50f18fa5a87"
+      },
+      "independent_Pillow_and_NumPy_all_three_equal": true,
+      "marked_candidate_RGBA_sha256": "758a7c58ce988bd49883132857be17e7f557892c4ab0d70a78f3ca8b90376ec0",
+      "marked_candidate_PNG_sha256": "880a4cf8036f5e5d3ce4b85d84d4e89d9851dc09ee654f235754b65d4539a0eb",
+      "source_points": [
+        {
+          "xy": [
+            16,
+            50
+          ],
+          "raw_three_u16": [
+            4206,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            2128,
+            2248
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            16,
+            50,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 27,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 27
+        }
+      ]
+    },
+    {
+      "floor": 5511,
+      "original_DAT_bytes": 5408,
+      "original_DAT_sha256": "5d44ea8c70c2537447926714fc0f84f5900c63e4008917fabcd3885d73dc0884",
+      "geometry": [
+        30,
+        30
+      ],
+      "source_draw_positions": 574,
+      "unique_source_images": 54,
+      "canvas_size": [
+        1889,
+        1447
+      ],
+      "origin": [
+        16,
+        712
+      ],
+      "three_candidate_RGBA_sha256": {
+        "plane0": "0d52a74911c876807e62b04b68fec228fa21fbf0d53d1d8a3931d739a9125321",
+        "plane1": "500fc1011eebf69962e7f9ae77549501b26ebc0ca458336725d21f41b6c84904",
+        "combined": "ed0f4c9e154dcb14b11f1673200ae67ba247fd8e3f1068096fa0439d9360a2be"
+      },
+      "independent_Pillow_and_NumPy_all_three_equal": true,
+      "marked_candidate_RGBA_sha256": "d5628634e734e64e161fef70fbd076fff6c7fc480863050d7968a9e97d77e61a",
+      "marked_candidate_PNG_sha256": "072aed23e799b9423742586a736298fe06cf3e9a6fd45d76f6923655a7453487",
+      "source_points": [
+        {
+          "xy": [
+            12,
+            21
+          ],
+          "raw_three_u16": [
+            4201,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            1072,
+            928
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            12,
+            21,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 28,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 28
+        },
+        {
+          "xy": [
+            12,
+            20
+          ],
+          "raw_three_u16": [
+            4208,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            1040,
+            904
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            12,
+            20,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 29,
+          "source_create_path": "poru/poru01.create",
+          "source_create_ordinal": 29
+        },
+        {
+          "xy": [
+            17,
+            12
+          ],
+          "raw_three_u16": [
+            4204,
+            0,
+            49152
+          ],
+          "modern_projected_center": [
+            944,
+            592
+          ],
+          "original_NPC_sprite_drawn": false,
+          "source_coordinate_field": "borncenter",
+          "source_coordinate_literal": [
+            17,
+            12,
+            1,
+            1
+          ],
+          "actual_spawn_cell_verified": false,
+          "modern_marker_id": 32,
+          "source_create_path": "poru/boss.create",
+          "source_create_ordinal": 0
+        }
+      ]
+    }
+  ],
+  "distinct_candidate_tile_PNGs": 490,
+  "source_center_observation": {
+    "original_DAT_files": 4,
+    "complete_independent_candidate_frames": 12,
+    "measured_centers": 27,
+    "new_original_RD_decodes": 0,
+    "borncenter_last_two_integers_and_field_precedence_unresolved": true,
+    "original_NPC_sprites_drawn": false
+  },
+  "source_floor500": {
+    "modern_marker_ids": [
+      15,
+      19,
+      20,
+      22,
+      23,
+      24
+    ],
+    "matching_original_DAT_in_955": false
+  },
+  "boundaries": {
+    "original_client_or_server_executed": false,
+    "official_early_deployment_authenticated": false,
+    "source_conditions_interpreted_as_original_runtime": false,
+    "source_WPM_filename_assumed_function": false,
+    "native_palette_layer_order_or_collision_verified": false,
+    "original_assets_or_dialogue_published": false,
+    "task_origin": "UNRESOLVED"
+  },
+  "stage_A": {
+    "PARTIAL": 7,
+    "OPEN": 2
+  },
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "QUEST25_MODULE_CONTENT_REVIEW_AFTER_PORU_FLAG63_AND64_SOURCE_LINKS"
+}

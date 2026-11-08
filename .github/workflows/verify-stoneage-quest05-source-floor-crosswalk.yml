@@ -76,6 +76,10 @@ on:
       - 'tools/stoneage_quest23_poru_source.py'
       - 'tests/test_stoneage_quest23_poru_source.py'
       - 'docs/continuity/STONEAGE-QUEST23-PORU-FOUR-STONES-SOURCE-AND-NINE-SCENES-20261108.md'
+      - 'research/recovered/STONEAGE-QUEST24-PORU-FLAG63-FUNCTIONS-AND-FOUR-SCENES-R1.json'
+      - 'tools/stoneage_quest24_poru_flag63_source.py'
+      - 'tests/test_stoneage_quest24_poru_flag63_source.py'
+      - 'docs/continuity/STONEAGE-QUEST24-PORU-FLAG63-FUNCTIONS-AND-FOUR-SCENES-20261108.md'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   pull_request:
     paths:
@@ -145,6 +149,10 @@ on:
       - 'tools/stoneage_quest23_poru_source.py'
       - 'tests/test_stoneage_quest23_poru_source.py'
       - 'docs/continuity/STONEAGE-QUEST23-PORU-FOUR-STONES-SOURCE-AND-NINE-SCENES-20261108.md'
+      - 'research/recovered/STONEAGE-QUEST24-PORU-FLAG63-FUNCTIONS-AND-FOUR-SCENES-R1.json'
+      - 'tools/stoneage_quest24_poru_flag63_source.py'
+      - 'tests/test_stoneage_quest24_poru_flag63_source.py'
+      - 'docs/continuity/STONEAGE-QUEST24-PORU-FLAG63-FUNCTIONS-AND-FOUR-SCENES-20261108.md'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   workflow_dispatch:
 
@@ -193,3 +201,5 @@ jobs:
         run: python -m unittest tests.test_stoneage_quest22_hekisei_source -v
       - name: Validate QUEST23 original Poru story, commented fields, borncenter and nine source scenes
         run: python -m unittest tests.test_stoneage_quest23_poru_source -v
+      - name: Validate QUEST24 original flag63 story, source functions and four DAT scene observations
+        run: python -m unittest tests.test_stoneage_quest24_poru_flag63_source -v
