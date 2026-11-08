@@ -2197,3 +2197,8 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-08 — QUEST30｜恐龙收集任务与道具2607来源冲突
 
 [QUEST30 原来源、旗标35、两轮交宠与跨源矛盾](docs/continuity/STONEAGE-QUEST30-DINOSAUR-COLLECTOR-EVENT35-SOURCE-20261108.md)：严格去重排除已由QUEST16覆盖的20501ev1..5和QUEST09已覆盖的seimu/event/event01_1/2，本轮专项复读seimu/event/event02_1、对应原CREATE及功能模板，共8个QUEST01已有TYPE，0新增原脚本。保留两轮原PET/DelPet/EVDEL语法、GetPet93/341与WORLD21既有模板171/274的来源联接；最重要是同载体脚本将道具2607视为收集证明，但两原94栏itemset的2607均名为“火難的戒指”，未确定具体版本/加载原因，不能擅自统一。floor100四整数为CREATE范围、现955 DAT目录无匹配，未假造地图。私人商业正文和跨源原图仅入个人Library并复取验SHA/CRC；公开仅[数字与散列证据](research/recovered/STONEAGE-QUEST30-DINOSAUR-COLLECTOR-EVENT35-SOURCE-R1.json)、可选原件再读工具及11项派生回归。原客户端/宠物领奖未运行，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null；**最高NEXT QUEST31** 先全任务缺口审查，若缺来源就绪新增批次则转跨模块内容整合，不继续累加任务编号。
+
+
+## 2026-11-08 — QUEST31｜四地NPC事件9—12与保护石／风琴关系来源
+
+[QUEST31 四地点原NPC与旧脚本交叉整合](docs/continuity/STONEAGE-QUEST31-FOUR-VILLAGE-EVENT09-12-SOURCE-20261108.md)：从本次新核的主线继续，对原QUEST01全295脚本／1349旧段／14目录查重；本批4份脚本、18个TYPE、4 CREATE和6源道具ID／12原物品行与6个TW1跨来源候选PNG核验。事件12保护石2419/2420、事件10/11的独立逗号旗标10,12／11,12、事件9凭10/11/12结束条件奖励1357、事件12的41／42与2736风琴条件保持原字面。三处floor已有MAP09旧DAT证据，floor1300在955就绪目录缺件，不伪造世界地图或原运行次序。原NPC/原行/原图只入私人Library且已独立SHA/CRC回读；公开只有[来源数字与SHA](research/recovered/STONEAGE-QUEST31-FOUR-VILLAGE-EVENT09-12-SOURCE-R1.json)、原件再读工具、13派生回归、专题工作流。没有新增原脚本或原生执行证明。CURRENT历史blob c89e0e33537990aa2132b47c40fef49a985a935c不改；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体百分比未知。最高NEXT QUEST32先检任务模块是否已达来源止点，必要时转跨模块关系整合，不继续为数量增加任务编号。

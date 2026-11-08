@@ -1,0 +1,678 @@
+{
+  "schema": "stoneage.quest31.four_village_event09_12_original_source.r1",
+  "date": "2026-11-08",
+  "initial_remote": {
+    "head": "4751ebe021110e96867d8c4d802669791bfd1ba4",
+    "tree": "06dcb561a86de9187b106a4528d8256c96f1cc4a",
+    "preserved_CURRENT_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "source_scope": "COMMUNITY_MIXED25_PRESERVED_NOT_AUTHENTICATED_EARLY_OFFICIAL",
+  "source_archive_evidence": {
+    "NPC_private_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "NPC_members_full_SHA_CRC_verified": 2205,
+    "ITEM_private_zip_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "ITEM_members_CRC_verified": 838,
+    "parent_RAR_reread": false,
+    "prior_QUEST01": {
+      "path": "STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json",
+      "bytes": 1321481,
+      "sha256": "2995e5825ffd204d5fd31ccffc95f009d8abbcebad829c5824e490b7f20c2b2c",
+      "git_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2"
+    },
+    "prior_CHAR01": {
+      "path": "STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json",
+      "bytes": 1798170,
+      "sha256": "f6beb17b76b23211d36113bcf462c16ac38435233b3891bb21765179b84e4566",
+      "git_blob": "a088b61a3212f7049e7793f587123ffb29bebad7"
+    }
+  },
+  "source_module_census": {
+    "prior_QUEST01_script_count": 295,
+    "prior_QUEST01_TYPE_count": 1349,
+    "prior_QUEST01_directories": {
+      "chatroom": 10,
+      "extra/event": 17,
+      "genout": 3,
+      "giiru/event": 55,
+      "giiru/event/sink": 11,
+      "jaruga/event": 79,
+      "king": 13,
+      "my/chengren": 1,
+      "my/zhuansheng": 4,
+      "poru": 35,
+      "quiz": 6,
+      "sa60/newbie": 2,
+      "sainasu/event": 56,
+      "seimu/event": 3
+    },
+    "selected_original_scripts_already_in_QUEST01": 4,
+    "selected_original_TYPE_already_in_QUEST01": 18,
+    "newly_discovered_original_scripts": 0,
+    "newly_discovered_original_TYPE": 0,
+    "legacy_QUEST01_integer_EndSetFlg_flag12_matches": 0,
+    "source_compound_EndSetFlg_with_flag12": [
+      {
+        "script": "sainasu/event/event10",
+        "event_ordinal": 0,
+        "exact_line": "10,12"
+      },
+      {
+        "script": "sainasu/event/event11",
+        "event_ordinal": 0,
+        "exact_line": "11,12"
+      }
+    ],
+    "legacy_flag12_absence_not_source_absence": true
+  },
+  "original_files": [
+    {
+      "path": "sainasu/event/event09-12.create",
+      "bytes": 692,
+      "sha256": "1f55bbd59aa01c3aeaf1a70d5eb7b29f6c77f0dfd3549f082419c6e465a107e5",
+      "crc32": "f66ffb84"
+    },
+    {
+      "path": "sainasu/event/event09",
+      "bytes": 954,
+      "sha256": "f2a369bb9c9536d2c2fd83fd7d7b6a2a88fe5949250ba93eccd87f73f8ba747e",
+      "crc32": "b5d259d8"
+    },
+    {
+      "path": "sainasu/event/event10",
+      "bytes": 1790,
+      "sha256": "99456b8431026d4c83f3d121b5d454209b8fb3ad1e0d45a4f288ba9ffc838e64",
+      "crc32": "4be8f5da"
+    },
+    {
+      "path": "sainasu/event/event11",
+      "bytes": 1749,
+      "sha256": "bc1746ea9313faa2e6de2505ca028c4e08013f674710dbd196aba94d564eaa0c",
+      "crc32": "18c1a980"
+    },
+    {
+      "path": "sainasu/event/event12",
+      "bytes": 1372,
+      "sha256": "8559b1221d67a247586f2c9c37132425ecd8492ab47c373923361857f427a4e3",
+      "crc32": "9e1f6135"
+    },
+    {
+      "path": "jaruga/event/event.template",
+      "bytes": 122,
+      "sha256": "9c11ac0cbbd9b110e8ff7d0115730044673bf29c5df6d23034e56530c181d0b2",
+      "crc32": "a70fc73f"
+    }
+  ],
+  "source_create_records": [
+    {
+      "ordinal": 0,
+      "create_path": "sainasu/event/event09-12.create",
+      "source_block_sha256": "e10e599362027c73275f75f8b5fddfd531adfa5d997f6d6c68ba0e6e2bab83d3",
+      "floor": 1200,
+      "borncorner_original_four_numbers": [
+        97,
+        75,
+        97,
+        75
+      ],
+      "direction": 6,
+      "graphic_alias": 16205,
+      "original_template_token": "changeevent",
+      "resolved_function": "ExChangeMan",
+      "script_path": "sainasu/event/event09",
+      "map_source_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "prior_original_DAT_sha256": "41cae3e9e07ecee4e51c0a8417afef008afedc6e494cd7ba31241662015c5f07",
+      "actual_original_map_or_NPC_runtime_entered": false
+    },
+    {
+      "ordinal": 1,
+      "create_path": "sainasu/event/event09-12.create",
+      "source_block_sha256": "4b1bee0f2b73709317d38007c3cba284958a61b73d154b93ca96e3d8bcd71306",
+      "floor": 1300,
+      "borncorner_original_four_numbers": [
+        65,
+        65,
+        65,
+        65
+      ],
+      "direction": 6,
+      "graphic_alias": 16206,
+      "original_template_token": "changeevent",
+      "resolved_function": "ExChangeMan",
+      "script_path": "sainasu/event/event10",
+      "map_source_status": "NO_MATCHING_DAT_IN_955",
+      "prior_original_DAT_sha256": null,
+      "actual_original_map_or_NPC_runtime_entered": false
+    },
+    {
+      "ordinal": 2,
+      "create_path": "sainasu/event/event09-12.create",
+      "source_block_sha256": "27d39dbaba40f38a5cce2269b64422271c19503f1a7ae0789237b4b3ffe8781c",
+      "floor": 1400,
+      "borncorner_original_four_numbers": [
+        71,
+        76,
+        71,
+        76
+      ],
+      "direction": 4,
+      "graphic_alias": 16203,
+      "original_template_token": "changeevent",
+      "resolved_function": "ExChangeMan",
+      "script_path": "sainasu/event/event11",
+      "map_source_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "prior_original_DAT_sha256": "a706890eaa46f89e41ca171ce052d34fb1c18e8cc4602ac686fc1d19af54c73f",
+      "actual_original_map_or_NPC_runtime_entered": false
+    },
+    {
+      "ordinal": 3,
+      "create_path": "sainasu/event/event09-12.create",
+      "source_block_sha256": "8dd3ff886be23ce2abfecf27600057e2514bf57b355ac89404b68dc652698b58",
+      "floor": 11107,
+      "borncorner_original_four_numbers": [
+        24,
+        6,
+        24,
+        6
+      ],
+      "direction": 4,
+      "graphic_alias": 16057,
+      "original_template_token": "changeevent",
+      "resolved_function": "ExChangeMan",
+      "script_path": "sainasu/event/event12",
+      "map_source_status": "MAP09_GT99_RD_SOURCE_READY_CANDIDATE",
+      "prior_original_DAT_sha256": "1adbf43476b9e1745f7b38b7f48a1c0632fb2d2a47952774cae3d025ed9ef3cc",
+      "actual_original_map_or_NPC_runtime_entered": false
+    }
+  ],
+  "source_scripts": [
+    {
+      "path": "sainasu/event/event09",
+      "bytes": 954,
+      "sha256": "f2a369bb9c9536d2c2fd83fd7d7b6a2a88fe5949250ba93eccd87f73f8ba747e",
+      "crc32": "b5d259d8",
+      "events": [
+        {
+          "ordinal": 0,
+          "type": "ACCEPT",
+          "event_no": 9,
+          "condition_literal": "ENDEV=12&ENDEV=10&ENDEV=11",
+          "condition_sha256": "4e8da34e6fb7cadded6d95bf767bc0d9981e1e2418c2db3ad90f1fedcb665a8d",
+          "section_sha256": "9daff70b0c2f16c3a4a47cd59a36ee6cc50c45cc41005c41261acb7885ccce97",
+          "source_type_line": 4,
+          "commands": {
+            "GetItem": [
+              "1357"
+            ],
+            "EndSetFlg": [
+              "9"
+            ]
+          },
+          "exact_EventEnd_found": true
+        },
+        {
+          "ordinal": 1,
+          "type": "REQUEST",
+          "event_no": 9,
+          "condition_literal": "LV>29&ENDEV=4",
+          "condition_sha256": "f1f4e41a40a8ab64ef741119286313e5c0678f4dd8cd74cb95499c0ecc7ac7d0",
+          "section_sha256": "fd99794b936dc9a55513e30669ddfe23cdffb9439212949244506ab7e7e776a3",
+          "source_type_line": 15,
+          "commands": {},
+          "exact_EventEnd_found": true
+        },
+        {
+          "ordinal": 2,
+          "type": "MESSAGE",
+          "event_no": -1,
+          "condition_literal": "ENDEV=9",
+          "condition_sha256": "0ed7111a7d36d3ed8c3054594cd3f718a4503a57852ae249c72228d2acddf7ac",
+          "section_sha256": "2302aa8c01cb33e7c4a1ef32923685c7501ddf31ff20a5226708de9a93e3a5f0",
+          "source_type_line": 28,
+          "commands": {},
+          "exact_EventEnd_found": true
+        }
+      ],
+      "already_in_QUEST01": true
+    },
+    {
+      "path": "sainasu/event/event10",
+      "bytes": 1790,
+      "sha256": "99456b8431026d4c83f3d121b5d454209b8fb3ad1e0d45a4f288ba9ffc838e64",
+      "crc32": "4be8f5da",
+      "events": [
+        {
+          "ordinal": 0,
+          "type": "ACCEPT",
+          "event_no": 10,
+          "condition_literal": "ENDEV=11&NOWEV=10&ITEM=2419",
+          "condition_sha256": "ab0cbd9d069140f7a6ea821118830d8a2c61680c6e53e6ae86c33dba526627e4",
+          "section_sha256": "0717d66d01a3262012fa7428b9d929c44859a34782aeca325a138954766f94e8",
+          "source_type_line": 5,
+          "commands": {
+            "GetItem": [
+              "2421"
+            ],
+            "DelItem": [
+              "2419"
+            ],
+            "EndSetFlg": [
+              "10,12"
+            ]
+          },
+          "exact_EventEnd_found": true
+        },
+        {
+          "ordinal": 1,
+          "type": "ACCEPT",
+          "event_no": 10,
+          "condition_literal": "ENDEV=12&ITEM=2419",
+          "condition_sha256": "f16ef58660885e1dd391638b7f8454c7205654c38708c7dd9d94a3726fc8b7bf",
+          "section_sha256": "3308f31b552cb9b00282fff3210a1d56bae89fa3d33fd6aa7a56059a915d01d3",
+          "source_type_line": 17,
+          "commands": {
+            "GetItem": [
+              "2421"
+            ],
+            "DelItem": [
+              "2419"
+            ],
+            "EndSetFlg": [
+              "10"
+            ]
+          },
+          "exact_EventEnd_found": true
+        },
+        {
+          "ordinal": 2,
+          "type": "REQUEST",
+          "event_no": 10,
+          "condition_literal": "LV>29&ENDEV=4&NOWEV=9&NOWEV=11",
+          "condition_sha256": "b76397111b79c0a7f978fff94f8fe457b4e5ce8c183893e060a5e9a0d608315c",
+          "section_sha256": "3b7088f13521fce7e2739e3c5b27392aa16d455f46210946021ed595274d64e3",
+          "source_type_line": 29,
+          "commands": {},
+          "exact_EventEnd_found": true
+        },
+        {
+          "ordinal": 3,
+          "type": "REQUEST",
+          "event_no": 10,
+          "condition_literal": "LV>29&ENDEV=4&NOWEV=9",
+          "condition_sha256": "d443a2a58f36c907a2d8a31d604d03157f3bac03ed5a642ebb2674b9229d14e7",
+          "section_sha256": "33fb9512997c99c48f56a9dab8b8797c077e258ada56c921f2fb310115b62711",
+          "source_type_line": 42,
+          "commands": {},
+          "exact_EventEnd_found": true
+        },
+        {
+          "ordinal": 4,
+          "type": "MESSAGE",
+          "event_no": -1,
+          "condition_literal": "ENDEV=10",
+          "condition_sha256": "9d5023495d0febe16bb07d6620bdacd3170206a7784dad5092d475980f01cdf8",
+          "section_sha256": "6aa2279313d978ee21f4d218c3672a098950b9f6cd740db10c56cde818cfaf66",
+          "source_type_line": 55,
+          "commands": {},
+          "exact_EventEnd_found": true
+        }
+      ],
+      "already_in_QUEST01": true
+    },
+    {
+      "path": "sainasu/event/event11",
+      "bytes": 1749,
+      "sha256": "bc1746ea9313faa2e6de2505ca028c4e08013f674710dbd196aba94d564eaa0c",
+      "crc32": "18c1a980",
+      "events": [
+        {
+          "ordinal": 0,
+          "type": "ACCEPT",
+          "event_no": 11,
+          "condition_literal": "ENDEV=10&NOWEV=11&ITEM=2420",
+          "condition_sha256": "6b08f94c16ee3e9683458df383d390f99beb3998eb48a8a78ff569ac0bd5c29a",
+          "section_sha256": "5b982d62a21715f7bc9b902d90e495e3f0fc9098083c38fed9c89d4ad8e816f8",
+          "source_type_line": 5,
+          "commands": {
+            "GetItem": [
+              "1052"
+            ],
+            "DelItem": [
+              "2420"
+            ],
+            "EndSetFlg": [
+              "11,12"
+            ],
+            "Charm": [
+              "1"
+            ]
+          },
+          "exact_EventEnd_found": true
+        },
+        {
+          "ordinal": 1,
+          "type": "ACCEPT",
+          "event_no": 11,
+          "condition_literal": "NOWEV=11&ITEM=2420",
+          "condition_sha256": "614b0aecf935a2f03003f4944cee1484a437034d2990fb7543decff833db5a0e",
+          "section_sha256": "059a45cfa0ff201a41c71d13ba490fb760fec1384d8cd041dd4683253d62de7d",
+          "source_type_line": 17,
+          "commands": {
+            "GetItem": [
+              "1052"
+            ],
+            "DelItem": [
+              "2420"
+            ],
+            "EndSetFlg": [
+              "11"
+            ],
+            "Charm": [
+              "1"
+            ]
+          },
+          "exact_EventEnd_found": true
+        },
+        {
+          "ordinal": 2,
+          "type": "REQUEST",
+          "event_no": 11,
+          "condition_literal": "LV>29&ENDEV=4&NOWEV=9&NOWEV=10",
+          "condition_sha256": "b59ade5180411b1f3dae20ad8cff95c97e8cc9068371c42c188e7b2fff8765b5",
+          "section_sha256": "97d190d9f18e1a8c75c289c79fa643cd6c0324dfe9bc625ec6b42fdc39c5980d",
+          "source_type_line": 30,
+          "commands": {},
+          "exact_EventEnd_found": true
+        },
+        {
+          "ordinal": 3,
+          "type": "REQUEST",
+          "event_no": 11,
+          "condition_literal": "LV>29&ENDEV=4&NOWEV=9",
+          "condition_sha256": "d443a2a58f36c907a2d8a31d604d03157f3bac03ed5a642ebb2674b9229d14e7",
+          "section_sha256": "649935c7ccb1cf0970aec6229345f2c93a93cf10476086e95d3ad06315131842",
+          "source_type_line": 42,
+          "commands": {},
+          "exact_EventEnd_found": true
+        },
+        {
+          "ordinal": 4,
+          "type": "MESSAGE",
+          "event_no": -1,
+          "condition_literal": "ENDEV=11",
+          "condition_sha256": "36b3761334459a98f61d01a6855e732d89ec65fb0b3851bbf00f6e5734e89e65",
+          "section_sha256": "ea2c15a4a743f78598894ae74895f3b8d87eb554b3445f019c978f89a3c41df6",
+          "source_type_line": 55,
+          "commands": {},
+          "exact_EventEnd_found": true
+        }
+      ],
+      "already_in_QUEST01": true
+    },
+    {
+      "path": "sainasu/event/event12",
+      "bytes": 1372,
+      "sha256": "8559b1221d67a247586f2c9c37132425ecd8492ab47c373923361857f427a4e3",
+      "crc32": "9e1f6135",
+      "events": [
+        {
+          "ordinal": 0,
+          "type": "ACCEPT",
+          "event_no": 12,
+          "condition_literal": "NOWEV=9&NOWEV=10&NOWEV=11&ITEM!=2419&ITEM!=2420",
+          "condition_sha256": "b910a6d00c90996e5dac5c78ec50318ffcd8c3f3d196437039130d05f57342d0",
+          "section_sha256": "19f3f42483157620c3c04dcee00e320d9005eb2f39f49fb49a52c17b8a5cb26a",
+          "source_type_line": 5,
+          "commands": {
+            "GetItem": [
+              "2419,2420"
+            ]
+          },
+          "exact_EventEnd_found": true
+        },
+        {
+          "ordinal": 1,
+          "type": "MESSAGE",
+          "event_no": -1,
+          "condition_literal": "ENDEV=12&ITEM=2736,ENDEV=42&ITEM=2736,ENDEV=41&ITEM=2736",
+          "condition_sha256": "18465c584cbf4d9b6c379a52e6f3226cc72ef255f255a8b05304cc7bba8d2a95",
+          "section_sha256": "92cea6cbfeb7e90609fefc1844348a0375d23b74a478da7f84399da39c6c413b",
+          "source_type_line": 14,
+          "commands": {},
+          "exact_EventEnd_found": true
+        },
+        {
+          "ordinal": 2,
+          "type": "ACCEPT",
+          "event_no": -1,
+          "condition_literal": "ENDEV=41&ITEM!=2736&ENDEV=4&NOWEV=42",
+          "condition_sha256": "c80a0183dd8f19e117f4c6752bb1d1fcd99b699067bb6a1d42be6027379f00bb",
+          "section_sha256": "8721ca7cd118aeed839dfaabaf51786df55a4e09015b26023e789f97102f41ea",
+          "source_type_line": 20,
+          "commands": {
+            "GetItem": [
+              "2736"
+            ]
+          },
+          "exact_EventEnd_found": true
+        },
+        {
+          "ordinal": 3,
+          "type": "ACCEPT",
+          "event_no": 41,
+          "condition_literal": "LV>0&NOWEV=41&ENDEV=4&NOWEV=42",
+          "condition_sha256": "d91ed12057fcf8a65b4cc9a50f0aa13da87bbee7e9ae40f3cca062da61447111",
+          "section_sha256": "4dd488f9645bcb8e9edb5ae86bb4bbd9490ceff729da3d6378248a43fdb1adaa",
+          "source_type_line": 29,
+          "commands": {
+            "GetItem": [
+              "2736"
+            ],
+            "EndSetFlg": [
+              "41"
+            ],
+            "Charm": [
+              "1"
+            ]
+          },
+          "exact_EventEnd_found": true
+        },
+        {
+          "ordinal": 4,
+          "type": "MESSAGE",
+          "event_no": -1,
+          "condition_literal": "ENDEV=12,ENDEV=41",
+          "condition_sha256": "70e7e6684d89fd92831ab7b99be150212e8aa7f11ad378ccf97a1409e369b303",
+          "section_sha256": "86e75af787fe4b1f73bab4dcf20263cc51b24a3aafd25dbc7963343517ffc1f1",
+          "source_type_line": 41,
+          "commands": {},
+          "exact_EventEnd_found": true
+        }
+      ],
+      "already_in_QUEST01": true
+    }
+  ],
+  "source_event_type_totals": {
+    "ACCEPT": 8,
+    "REQUEST": 5,
+    "MESSAGE": 5
+  },
+  "source_story_control_literals": {
+    "event12_issue_tokens": "2419,2420",
+    "event10_alternative_flag_literals": [
+      "10,12",
+      "10"
+    ],
+    "event11_alternative_flag_literals": [
+      "11,12",
+      "11"
+    ],
+    "event09_final_requirement": "ENDEV=12&ENDEV=10&ENDEV=11",
+    "event09_reward": "1357",
+    "event41_42_coupled_conditions": [
+      "ENDEV=12&ITEM=2736,ENDEV=42&ITEM=2736,ENDEV=41&ITEM=2736",
+      "ENDEV=41&ITEM!=2736&ENDEV=4&NOWEV=42",
+      "LV>0&NOWEV=41&ENDEV=4&NOWEV=42"
+    ],
+    "event12_41_reward_item": "2736",
+    "actual_order_or_multiple_flags_execution_proven": false
+  },
+  "source_items": [
+    {
+      "item_ID": 1052,
+      "short_original_name": "芙雷雅Lv1鎧6",
+      "source_two_rows": [
+        {
+          "table": "itemset.txt",
+          "source_row_1based": 1053,
+          "source_row_sha256": "37ffd6f24e98d6b6c02919cd0e934bc1facff77d6acfe940fea58ab7dd85921e",
+          "source_alias": 21025
+        },
+        {
+          "table": "itemset0710.txt",
+          "source_row_1based": 1053,
+          "source_row_sha256": "37ffd6f24e98d6b6c02919cd0e934bc1facff77d6acfe940fea58ab7dd85921e",
+          "source_alias": 21025
+        }
+      ],
+      "original_source_itemset_image_alias": 21025,
+      "cross_carrier_TW1_candidate_PNG_sha256": "98d07fb3532a252014edd38f925af177f1848aea4bb1e4fca7f787857f8d04b6",
+      "same_official_build_or_original_quest_display_proven": false
+    },
+    {
+      "item_ID": 1357,
+      "short_original_name": "黃色大首飾",
+      "source_two_rows": [
+        {
+          "table": "itemset.txt",
+          "source_row_1based": 1348,
+          "source_row_sha256": "30630055276cb860c66b510b6658200dec738b563c7d50846f622cb51c1786fa",
+          "source_alias": 22024
+        },
+        {
+          "table": "itemset0710.txt",
+          "source_row_1based": 1358,
+          "source_row_sha256": "30630055276cb860c66b510b6658200dec738b563c7d50846f622cb51c1786fa",
+          "source_alias": 22024
+        }
+      ],
+      "original_source_itemset_image_alias": 22024,
+      "cross_carrier_TW1_candidate_PNG_sha256": "905115cce8565aacb9e0b31fbf2f3e16c362e4dfc7a19cbfe7d0d215ea2cf5b1",
+      "same_official_build_or_original_quest_display_proven": false
+    },
+    {
+      "item_ID": 2419,
+      "short_original_name": "霍特爾的保護石",
+      "source_two_rows": [
+        {
+          "table": "itemset.txt",
+          "source_row_1based": 2002,
+          "source_row_sha256": "a8075afe779bc92f5eb73cafed9c8cc5f50cb4ff8df8c340c7cd7f5d7d899834",
+          "source_alias": 24057
+        },
+        {
+          "table": "itemset0710.txt",
+          "source_row_1based": 2397,
+          "source_row_sha256": "a8075afe779bc92f5eb73cafed9c8cc5f50cb4ff8df8c340c7cd7f5d7d899834",
+          "source_alias": 24057
+        }
+      ],
+      "original_source_itemset_image_alias": 24057,
+      "cross_carrier_TW1_candidate_PNG_sha256": "a387e59e3b8b9ae731867e465d102c746cf149d7d206dc999be1bf3f86987b19",
+      "same_official_build_or_original_quest_display_proven": false
+    },
+    {
+      "item_ID": 2420,
+      "short_original_name": "卡坦的保護石",
+      "source_two_rows": [
+        {
+          "table": "itemset.txt",
+          "source_row_1based": 2003,
+          "source_row_sha256": "62a25113db3a46b07daa639f6b286fff87658796c24593d1aca7edc6c7111964",
+          "source_alias": 24058
+        },
+        {
+          "table": "itemset0710.txt",
+          "source_row_1based": 2398,
+          "source_row_sha256": "62a25113db3a46b07daa639f6b286fff87658796c24593d1aca7edc6c7111964",
+          "source_alias": 24058
+        }
+      ],
+      "original_source_itemset_image_alias": 24058,
+      "cross_carrier_TW1_candidate_PNG_sha256": "e030b16e5da252cd4252304f56ec87446943f83338d7bae965922e9157e982d5",
+      "same_official_build_or_original_quest_display_proven": false
+    },
+    {
+      "item_ID": 2421,
+      "short_original_name": "勾玉",
+      "source_two_rows": [
+        {
+          "table": "itemset.txt",
+          "source_row_1based": 2004,
+          "source_row_sha256": "4de61929a1a45a7449f8f96f26f96c57b60bfd47a983c96a447726d6a0d6207d",
+          "source_alias": 24071
+        },
+        {
+          "table": "itemset0710.txt",
+          "source_row_1based": 2399,
+          "source_row_sha256": "4de61929a1a45a7449f8f96f26f96c57b60bfd47a983c96a447726d6a0d6207d",
+          "source_alias": 24071
+        }
+      ],
+      "original_source_itemset_image_alias": 24071,
+      "cross_carrier_TW1_candidate_PNG_sha256": "6b3579d33222ad4616794f4a0af4f322ca19bb3aed20bb6d758da81e2d14e756",
+      "same_official_build_or_original_quest_display_proven": false
+    },
+    {
+      "item_ID": 2736,
+      "short_original_name": "風的豎琴 [風]",
+      "source_two_rows": [
+        {
+          "table": "itemset.txt",
+          "source_row_1based": 2257,
+          "source_row_sha256": "8924ab0d3d9a988f6f8c0b14bca402cc71e2f4abed7517e0440f280f830ce4a1",
+          "source_alias": 24213
+        },
+        {
+          "table": "itemset0710.txt",
+          "source_row_1based": 2652,
+          "source_row_sha256": "8924ab0d3d9a988f6f8c0b14bca402cc71e2f4abed7517e0440f280f830ce4a1",
+          "source_alias": 24213
+        }
+      ],
+      "original_source_itemset_image_alias": 24213,
+      "cross_carrier_TW1_candidate_PNG_sha256": "1e618ff53657aa159183d9a9ba4ff4df9e5474f789f9ed566274d86eab443379",
+      "same_official_build_or_original_quest_display_proven": false
+    }
+  ],
+  "source_item_count": 6,
+  "source_item_rows": 12,
+  "distinct_cross_carrier_image_aliases": 6,
+  "prior_QUEST05_map_source_git_blob": "b004e488e1d0a93ca7c14eb90abb584b23f341fe",
+  "unresolved_map_1300": {
+    "no_matching_DAT_in_955": true,
+    "original_map_proven_absent": false
+  },
+  "source_constraints": {
+    "original_script_text_or_dialogue_in_public_repo": false,
+    "original_source_item_rows_or_image_bytes_in_public_repo": false,
+    "original_client_or_server_running": false,
+    "early_official_same_deployment_proven": false,
+    "cross_carrier_TW1_art_is_original_mixed25_quest_UI": false,
+    "native_EVENT_conditional_priority_or_comma_semantics_proven": false,
+    "native_EndSetFlg_multi_value_execution_proven": false,
+    "source_Charm_1_effect_proven": false,
+    "same_quest_as_early_version_proven": false,
+    "geographic_island_or_village_hierarchy_authenticated": false,
+    "native_NPC_or_scene_rendered": false,
+    "task_origin": "UNRESOLVED"
+  },
+  "stage_A": {
+    "PARTIAL": 7,
+    "OPEN": 2
+  },
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "QUEST32_MODULE_STOP_OR_ADDITIONAL_CROSS_MODULE_INTEGRATION_REVIEW_AFTER_FOUR_VILLAGE_CHAIN"
+}
