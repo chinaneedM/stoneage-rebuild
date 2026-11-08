@@ -49,3 +49,7 @@ QUEST05 旧地图覆盖证明：floor100 在当时 955 DAT 条件下为 `NO_MATC
 公开 `research/recovered/STONEAGE-QUEST30-DINOSAUR-COLLECTOR-EVENT35-SOURCE-R1.json` 仅保留可核数字、有限源路径、来源 SHA/CRC 和否定边界。`tools/stoneage_quest30_dino_collector_source.py` 独立读指定私人存档再生成派生摘要与私人包，复用旧 QUEST29 解析器，不复制另一套项目基础设施。`tests/test_stoneage_quest30_dino_collector_source.py` 逐段对旧 QUEST01/CHAR01/ITEM01 验证 11 项原证据／反例并在仓库 CI 可检查 WORLD21、QUEST09、QUEST05 原派生证据。本地 11/11 PASS；远端 Actions 需真实验收后才可称通过。
 
 **止点和最高 NEXT：`QUEST31_MODULE_GAP_REVIEW_THEN_CROSS_MODULE_INTEGRATION_IF_NO_DISTINCT_SOURCE_READY_TASK`**。剩余任务来源先全面查重并按游戏可见内容价值决定是否继续；若没有来源完整且产生实质新关联的任务族，则将 QUEST 模块标记 `SOURCE_BOUNDED_PARTIAL`、转已有地图/宠物/物品/NPC/任务的有据跨模块整合，不靠重复任务编号凑进度。现有 Stage A **7 PARTIAL + 2 OPEN**，Stage B／wiki **GATED**，R79 **PAUSED_NON_BLOCKING**，总体完成率仍 `null`，原游戏可玩性 OPEN。
+
+## 实际远端合并与主线验收
+
+[PR #270](https://github.com/chinaneedM/stoneage-rebuild/pull/270) 已合并到 main `f5a901593dde671b7b207bf684bff5d2e4665922`／tree `123dd8517f4d64afda9bef85a08117dea34c9904`。候选 push 专项 run42486252128/job128748650143、PR 专项 run42486311514/job128748837943 及 O11/O12 PR 两项均已真实 `completed/success`。合并后主线 **11/11 Actions `completed/success`**，含 QUEST30 专项 run42486379571/job128749053443；完整运行ID及派生源/私有保存资格见 [验收收据](../../research/recovered/STONEAGE-QUEST30-PUBLICATION-ACCEPTANCE-R1.json)。公开源、测试、报告、初始续接报告、工作流的 Git blob 已逐件与本地原提交对齐，原 `CURRENT-STATE.md` 的 blob `c89e0e33537990aa2132b47c40fef49a985a935c` 再次确认为完整未修改。候选首次经文本传输丢失五份文件末尾LF，随后由第二候选提交补齐，所有历史保留，不追认首次提交字节与本地完全相同。此后验本身的CI按其后续真实状态另验，不预支；NEXT仍为QUEST31。

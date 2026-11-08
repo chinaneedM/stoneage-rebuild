@@ -1,0 +1,117 @@
+{
+  "schema": "stoneage.quest30.dinosaur_collector_source_publication_acceptance.r1",
+  "date": "2026-11-08",
+  "baseline": {
+    "initial_head": "95fc5875143c7635ee1773f4e2204c3116d2675f",
+    "initial_tree": "8d4dfc86d6bd7f3b920a344073e0905b5de60068",
+    "CURRENT_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "candidate": {
+    "branch": "agent/quest30-seimu-dinosaur-collector-20261108",
+    "head": "72f2183d32363294ae6bdcb95ab94fc0e8c5f898",
+    "tree": "123dd8517f4d64afda9bef85a08117dea34c9904",
+    "pr": 270
+  },
+  "main": {
+    "accepted_head": "f5a901593dde671b7b207bf684bff5d2e4665922",
+    "accepted_tree": "123dd8517f4d64afda9bef85a08117dea34c9904"
+  },
+  "actions": {
+    "candidate": [
+      {
+        "id": 42486252128,
+        "event": "push",
+        "conclusion": "success",
+        "job": 128748650143
+      },
+      {
+        "id": 42486311514,
+        "event": "pull_request",
+        "conclusion": "success",
+        "job": 128748837943
+      },
+      {
+        "id": 42486311061,
+        "event": "pull_request",
+        "conclusion": "success"
+      },
+      {
+        "id": 42486311036,
+        "event": "pull_request",
+        "conclusion": "success"
+      }
+    ],
+    "main_completed_success_ids": [
+      42486379656,
+      42486379630,
+      42486379613,
+      42486379594,
+      42486379579,
+      42486379578,
+      42486379572,
+      42486379571,
+      42486379556,
+      42486379538,
+      42486379524
+    ],
+    "main_total": 11,
+    "main_derived_source_job": 128749053443,
+    "main_derived_source_result": "completed/success"
+  },
+  "published_exact_git_blobs": {
+    "tools/stoneage_quest30_dino_collector_source.py": "aaaa58a9198040e3bbb9722efea001e12a21979e",
+    "tests/test_stoneage_quest30_dino_collector_source.py": "f60487e3bf58649afa41bbb8190d63a13db403c1",
+    "research/recovered/STONEAGE-QUEST30-DINOSAUR-COLLECTOR-EVENT35-SOURCE-R1.json": "22315fb6b4363aaafc98375a4fcda9498b608246",
+    ".github/workflows/verify-stoneage-quest30-dino-collector-source.yml": "41ec782e90e28eaf7a07e3e1e98487531527c4c7",
+    "original_dossier_before_acceptance_addendum": "c9f899d0e6d20bb20bf72498415ddde798cda9b2"
+  },
+  "source_original_preservation": {
+    "npc_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "npc_member_SHA_CRC_checked": 2205,
+    "item_zip_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "item_zip_CRC_checked": 838,
+    "parent_361MB_RAR_rehashed_now": false,
+    "independent_original_event_section_replay": "8/8 exact SHA",
+    "public_derived_local_tests": "11/11 pass"
+  },
+  "private_package": {
+    "name": "StoneAge-QUEST30-dinosaur-collector-event35-private.zip",
+    "saved_to": "USER_LIBRARY_ONLY",
+    "bytes": 10479,
+    "SHA256": "cb6f27c43559049bd05976293c3fd260c9d0ba87cc50b5a93f7ea884b7f4225a",
+    "members": 8,
+    "all_CRC_pass": true,
+    "library_download_recheck_full_SHA_and_bytes_equal": true,
+    "commercial_assets_in_public_repo": false
+  },
+  "factual_boundaries": {
+    "new_original_script_discovered": 0,
+    "new_original_TYPE_discovered": 0,
+    "source_item_2607_role_mismatch_resolved": false,
+    "EVDEL_native_effect_proven": false,
+    "GetPet_93_or_341_transaction_executed": false,
+    "original_floor100_DAT_acquired": false,
+    "early_official_same_deployment_confirmed": false,
+    "original_game_running": false,
+    "quest_origin": "UNRESOLVED"
+  },
+  "continued": {
+    "stage_A": {
+      "PARTIAL": 7,
+      "OPEN": 2
+    },
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null,
+    "next": "QUEST31_MODULE_GAP_REVIEW_THEN_CROSS_MODULE_INTEGRATION_IF_NO_DISTINCT_SOURCE_READY_TASK"
+  },
+  "correction": {
+    "initial_candidate_commit": "2b450a4ad67fe5660246996106a2a74964d944c7",
+    "issue": "original trailing newline omitted by text transfer",
+    "corrected_candidate_commit": "72f2183d32363294ae6bdcb95ab94fc0e8c5f898",
+    "all_five_published_source_file_git_blobs_match_local_exact_files": true,
+    "original_candidate_history_retained": true,
+    "prior_CI_failures_rewritten": false
+  }
+}
