@@ -24,3 +24,8 @@
 **止点：** 原可操作世界、走路/遮挡、NPC真正选图/对话、领宠交易、原版同服身份均未验证。后续只有取得真实运行交互、合格同构建对应资料才能晋级。Stage A仍7PARTIAL+2OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，完成率未知。NEXT `STAGE-A-REPRESENTATIVE-PLAYER-PATH-GAP-REVIEW`，谨慎从已核游戏内容节点梳理可证/缺件，不假画可玩路线。
 
 > 合并与Actions后验必须另外取得再写，不预支成功。
+
+
+## 正式GitHub合并与主线后验
+
+[PR #275](https://github.com/chinaneedM/stoneage-rebuild/pull/275) 已squash合并main `445ca5d6710cc620b04866b2617320eddef5abfd`／tree `b822c5a73ff92b1eaa0ba97a80f8638edfcabdb1`，候选最终提交`2298a60cc93f8e183c2c45bdd77cec49268ee926`；同候选 **14/14** Actions实际completed/success（本包push专项run42494918960，PR专项run42494937138）。内容主线合并后 **11/11** completed/success，含[INTEGRATION08专项run42495166316](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42495166316)/job128775844992，9项派生公开来源测试通过。所有运行ID、源证与5个公开Git blob摘要见[正式验收收据](../../research/recovered/STONEAGE-INTEGRATION08-PUBLICATION-ACCEPTANCE-R1.json)。原巨型 `CURRENT-STATE.md`完整Git blob`c89e0e33537990aa2132b47c40fef49a985a935c`不改，历史测试错误和来源边界未抹；本收据自身提交CI不预支。NEXT Stage A代表性有据玩家路径/缺口审查，不将19份CREATE配置等同原生可用NPC。
