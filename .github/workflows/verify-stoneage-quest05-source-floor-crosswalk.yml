@@ -81,6 +81,10 @@ on:
       - 'tests/test_stoneage_quest24_poru_flag63_source.py'
       - 'tools/stoneage_quest25_island_tour_source.py'
       - 'tests/test_stoneage_quest25_island_tour_source.py'
+      - 'tools/stoneage_quest26_shell_flower_source.py'
+      - 'tests/test_stoneage_quest26_shell_flower_source.py'
+      - 'research/recovered/STONEAGE-QUEST26-SHELL-FLOWER-FLAG2-SOURCE-R1.json'
+      - 'docs/continuity/STONEAGE-QUEST26-SHELL-FLOWER-FLAG2-20261108.md'
       - 'research/recovered/STONEAGE-QUEST25-FOUR-ISLAND-TOUR-ROUTES-SOURCE-R1.json'
       - 'docs/continuity/STONEAGE-QUEST25-FOUR-ISLAND-TOUR-ROUTES-20261108.md'
       - 'docs/continuity/STONEAGE-QUEST24-PORU-FLAG63-FUNCTIONS-AND-FOUR-SCENES-20261108.md'
@@ -158,6 +162,10 @@ on:
       - 'tests/test_stoneage_quest24_poru_flag63_source.py'
       - 'tools/stoneage_quest25_island_tour_source.py'
       - 'tests/test_stoneage_quest25_island_tour_source.py'
+      - 'tools/stoneage_quest26_shell_flower_source.py'
+      - 'tests/test_stoneage_quest26_shell_flower_source.py'
+      - 'research/recovered/STONEAGE-QUEST26-SHELL-FLOWER-FLAG2-SOURCE-R1.json'
+      - 'docs/continuity/STONEAGE-QUEST26-SHELL-FLOWER-FLAG2-20261108.md'
       - 'research/recovered/STONEAGE-QUEST25-FOUR-ISLAND-TOUR-ROUTES-SOURCE-R1.json'
       - 'docs/continuity/STONEAGE-QUEST25-FOUR-ISLAND-TOUR-ROUTES-20261108.md'
       - 'docs/continuity/STONEAGE-QUEST24-PORU-FLAG63-FUNCTIONS-AND-FOUR-SCENES-20261108.md'
@@ -213,3 +221,5 @@ jobs:
         run: python -m unittest tests.test_stoneage_quest24_poru_flag63_source -v
       - name: Validate QUEST25 four source tour routes, proof stones and preserved branch order
         run: python -m unittest tests.test_stoneage_quest25_island_tour_source -v
+      - name: Validate QUEST26 source shell-flower exchange, CLEAN controls and flag2 cross-links
+        run: python -m unittest tests.test_stoneage_quest26_shell_flower_source -v
