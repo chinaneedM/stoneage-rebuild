@@ -1,0 +1,80 @@
+{
+  "schema": "stoneage.quest29.spirit_king_publication_acceptance.r1",
+  "date": "2026-11-08",
+  "base": {
+    "HEAD": "1d92ff6a2b183020e4582c6206ab74b137188be7",
+    "tree": "2ea181f8efcd5f8150d6fb421e3d09936fa65da3",
+    "CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "candidate": {
+    "HEAD": "2172f2d491758ed6f4abe2d5a4a67292c66bfdaf",
+    "tree": "8aa2ebbb474798c71ecf1689cbeb10a2d8e1e204",
+    "pr": 269
+  },
+  "main": {
+    "HEAD": "11b426b2bda3ebbf1626bb98c0c974e9e379fc70",
+    "tree": "8aa2ebbb474798c71ecf1689cbeb10a2d8e1e204"
+  },
+  "actions": {
+    "candidate": [
+      42483880296,
+      42483918679,
+      42483918618,
+      42483918686
+    ],
+    "main": [
+      42483966669
+    ],
+    "all_status": "completed",
+    "all_conclusion": "success",
+    "main_derived_source_job": "success",
+    "local_unittest_count": 10,
+    "local_unittest_result": "passed"
+  },
+  "published_git_blobs": {
+    "tool": "16e60a31f8614c767ad7f3299bf3751622e4a1af",
+    "test": "314b7a8718170202203cf153c7261d4cc28d1e39",
+    "report": "97edf42813e4457efcae3f28b58d15dead8aff03",
+    "initial_dossier": "27536718df1042d162bcd19f6e2fa9966cf647d0",
+    "workflow": "55931d10a41f3c6985e7ae51d67eed024528fbed"
+  },
+  "source": {
+    "NPC_original_member_SHA_CRC_verified": 2205,
+    "ITEM_original_zip_member_CRC_verified": 838,
+    "files": 36,
+    "creates": 25,
+    "old_QUEST01_scripts": 13,
+    "old_QUEST01_TYPE": 71,
+    "new_original_scripts": 0,
+    "item_IDs": 48,
+    "itemset_source_rows": 96
+  },
+  "private_archive": {
+    "place": "USER_LIBRARY_NOT_PUBLIC_GIT",
+    "filename": "StoneAge-QUEST29-spirit-king-event69-private.zip",
+    "bytes": 91171,
+    "sha256": "e710f97dfc165e06680f3b016b19313c6a5569558cfc700759da1cc2f0f28407",
+    "members": 138,
+    "crc_pass": true,
+    "library_reread_full_zip_sha_match": true,
+    "parent_RAR_reread": false
+  },
+  "correction": {
+    "earlier_dossier_byte_count": 90890,
+    "final_library_byte_count": 91171,
+    "reason": "fourteen-directory global review augmented source-report after the first package",
+    "original_commit_preserved": true
+  },
+  "boundaries": {
+    "original_program_executed": false,
+    "source_private_in_public_git": false,
+    "random_probabilities_proven": false,
+    "official_early_same_deployment_proven": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "QUEST30_NEXT_SOURCE_READY_UNSPECIALIZED_QUEST_FAMILY_OR_BOUNDED_MODULE_STOP_AFTER_KING_EVENT69"
+}

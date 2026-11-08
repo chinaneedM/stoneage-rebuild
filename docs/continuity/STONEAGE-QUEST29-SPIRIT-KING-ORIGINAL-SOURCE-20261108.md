@@ -30,10 +30,15 @@
 
 ## 私人观察、公开交付与继续条件
 
-私人包 `StoneAge-QUEST29-spirit-king-event69-private.zip` 已写入用户个人 Library，含 138 成员、原 CP950 文件和道具行、少量有证候选图、自包含现代原文查阅 HTML，**90,890 B / SHA256 `e710f97dfc165e06680f3b016b19313c6a5569558cfc700759da1cc2f0f28407`**。全包 CRC 与公开派生 JSON 哈希核对，不能视作原客户端运行或私人 HTML 浏览器已测试。原商业对白/脚本/物品行/图像均不进入公开 Git。
+私人包 `StoneAge-QUEST29-spirit-king-event69-private.zip` 已写入用户个人 Library，含 138 成员、原 CP950 文件和道具行、少量有证候选图、自包含现代原文查阅 HTML，**91,171 B / SHA256 `e710f97dfc165e06680f3b016b19313c6a5569558cfc700759da1cc2f0f28407`**。全包 CRC 与公开派生 JSON 哈希核对，不能视作原客户端运行或私人 HTML 浏览器已测试。原商业对白/脚本/物品行/图像均不进入公开 Git。
 
 公开 `research/recovered/STONEAGE-QUEST29-SPIRIT-KING-EVENT69-SOURCE-R1.json` 是可复核的来源数值、完整 SHA 与异常字面；独立回放工具只读取显式私人输入生成报告和私人包。回归测试以仓库旧 QUEST01、CHAR01、ITEM01 数值及完整 SHA 为准；CI 不接触原商业字节。原任务可玩、奖励领用、真实随机概率、原生模板处理、同部署正统身份和早期版本归属仍 OPEN。
 
 **最高 NEXT `QUEST30_NEXT_SOURCE_READY_UNSPECIALIZED_QUEST_FAMILY_OR_BOUNDED_MODULE_STOP_AFTER_KING_EVENT69`**：回旧 295 脚本/22域已验来源继续模块去重。优先另一组实物齐备而此前未专项整合的可见原任务族；若剩余只重复旧脚本或者依赖不可取原件，应明确来源止点转跨模块整合审查，而不是无限写 QUEST 编号。禁止先行新作引擎、在线账户/服务、玩家体验优化。Stage A **7 PARTIAL+2 OPEN**，Stage B/wiki **GATED**、R79 **PAUSED_NON_BLOCKING**、总体百分比未知。
 
 本篇作为大型 CURRENT 历史未改时的加法续接，最终 PR、Actions 与主线 HEAD 应在验收后补后验，不预支 CI 成功。
+
+## 合并后验收、私人包实际大小订正
+
+PR #269 已在真实远端合并至 main 11b426b2bda3ebbf1626bb98c0c974e9e379fc70 / tree 8aa2ebbb474798c71ecf1689cbeb10a2d8e1e204；候选 42483880296、42483918679、42483918618、42483918686 全部 completed/success，主线专项 42483966669 completed/success，10项来源衍生测试步骤通过。原CURRENT blob c89e0e33537990aa2132b47c40fef49a985a935c 未改。
+最初私人包为90,890B，后续增加14目录全索引后最终包为 **91,171B / SHA256 e710f97dfc165e06680f3b016b19313c6a5569558cfc700759da1cc2f0f28407**。Library写入后重新取回整包，138成员CRC与本地SHA逐字节一致。旧PR原提交可溯，不将旧字节数误称最终状态；说明文档上述尺寸已改。详细来源与后验在 research/recovered/STONEAGE-QUEST29-PUBLICATION-ACCEPTANCE-R1.json。原生任务执行、早期正式版本归属、随机概率继续OPEN；最高NEXT QUEST30。
