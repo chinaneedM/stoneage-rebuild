@@ -2210,3 +2210,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-08 — QUEST32 任务源脚本覆盖审计与有界收口
 
 [QUEST32 24份专项源脚本查重与保留缺口](docs/continuity/STONEAGE-QUEST32-MODULE-DEDUPE-AUDIT-20261108.md)使用同一后期社区混合源的QUEST01原295份CREATE引用脚本/1349 TYPE段及QUEST08–31全部24份公开派生报告，逐原脚本路径+完整源SHA核对：236次所选原脚本记录，235不同路径，233份与旧QUEST01目录同路径同SHA；QUEST10有2份未被旧CREATE引用目录收录的原保存变体，QUEST10/29共享king/event69_1同SHA，不能增加新发现计数。原295目录仍有62份未进入这24专项选集（不等于原件缺失或没有任务价值）。公开[重算工具](tools/stoneage_quest32_module_audit.py)、[守恒快照](research/recovered/STONEAGE-QUEST32-MODULE-DEDUPE-AUDIT-R1.json)及专项测试；私人原版权源不上传，原CURRENT巨型历史blob c89e0e33537990aa2132b47c40fef49a985a935c原样。任务模块SOURCE_BOUNDED_PARTIAL，不称早期官方同版或原生可玩，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体percent=null；最高NEXT INTEGRATION06跨NPC/地图/物品/宠物真实关系复核。CI/合并后验另据GitHub事实补证。
+
+
+## 2026-11-08 — INTEGRATION06｜地图1300来源读取缺口与六原NPC创建点
+
+[INTEGRATION06原1300.MAP/DAT资格及跨任务关系](docs/continuity/STONEAGE-INTEGRATION06-MAP1300-QUALIFICATION-20261108.md)：新联合复核已公开 MAP01/QUEST05/QUEST19/25/27/31 六份SHA固定派生证据。同一保存RAR中1300.MAP组0/1各20008B、整SHA一致、100×100头信息候选；1300.DAT原RAR目录记60008B，但旧 libarchive 原“File CRC error”、实际读取0B，不能把“本955已验DAT无匹配”认作“原游戏没有地图”，也不能从MAP补造DAT。QUEST05六条创建：QUEST19寄信、QUEST25环岛检查站、QUEST27斧头感谢函、QUEST31事件9–12四条ExChangeMan源关联以及两条QUEST03 Timeman共享参数；六是配置，不是游戏实际NPC人口。公开[来源索引](research/recovered/STONEAGE-INTEGRATION06-MAP1300-MAP-DAT-SIX-CREATE-SOURCE-R1.json)及5项重算测试，不增原像素、原脚本、原程序运行或早期官方身份证。CURRENT历史blob c89e0e33537990aa2132b47c40fef49a985a935c完整不变；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、完成率未知。**NEXT Stage A跨模块材料缺口审阅**；正式验收以CI后验为准。

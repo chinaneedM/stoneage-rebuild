@@ -1,0 +1,241 @@
+{
+  "schema": "stoneage.integration06.map1300_source_qualification.r1",
+  "date": "2026-11-08",
+  "initial_remote": {
+    "head": "fbb4b2e4a1a50769ee6020c757d43c59e798076c",
+    "tree": "3673a41780a2809f4efa1d5f1cf3018552ddf82f",
+    "preserved_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "source_files": {
+    "map": {
+      "path": "research/recovered/STONEAGE-MAP-SCENE-MODULE-01-ORIGINAL-SOURCE-MANIFEST-R1.json",
+      "blob_sha": "03675ee98d391f9ef0246315b2426f2a8b721fd3"
+    },
+    "q05": {
+      "path": "research/recovered/STONEAGE-QUEST05-598-ORIGINAL-CREATE-FLOOR-MAP-AND-WARP-CROSSWALK-R1.json",
+      "blob_sha": "b004e488e1d0a93ca7c14eb90abb584b23f341fe"
+    },
+    "q19": {
+      "path": "research/recovered/STONEAGE-QUEST19-MARJU-POST-TREASUREBAG-SOURCE-R1.json",
+      "blob_sha": "ea0dc007016e4857550b76a1073cdbbd7975f00c"
+    },
+    "q25": {
+      "path": "research/recovered/STONEAGE-QUEST25-FOUR-ISLAND-TOUR-ROUTES-SOURCE-R1.json",
+      "blob_sha": "a52b4e5519912ac7e46e1f892cc01515861cf2e8"
+    },
+    "q27": {
+      "path": "research/recovered/STONEAGE-QUEST27-AXE-LETTER-EVENT3-5-SOURCE-R1.json",
+      "blob_sha": "0054d4d716f99f56d58fc1a1729d70275b823e44"
+    },
+    "q31": {
+      "path": "research/recovered/STONEAGE-QUEST31-FOUR-VILLAGE-EVENT09-12-SOURCE-R1.json",
+      "blob_sha": "0a17857fc55fd5884963d1c00ffeb292ebc9f59b"
+    }
+  },
+  "source_archive_class": "PRESERVED_LATER_COMMUNITY_MIXED25_NOT_ORIGINAL_OFFICIAL_DEPLOYMENT",
+  "source_parent_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "original_MAP_rows": [
+    {
+      "source_group": 0,
+      "name": "1300.MAP",
+      "bytes": 20008,
+      "original_sha256": "a3b25cf753056886f7cd0b8293bade2db0ab917ac4474df9278333e11a882235",
+      "crc32": "fc9288d2",
+      "floor": 1300,
+      "candidate_width": 100,
+      "candidate_height": 100,
+      "source_size_formula_matches": true
+    },
+    {
+      "source_group": 1,
+      "name": "1300.MAP",
+      "bytes": 20008,
+      "original_sha256": "a3b25cf753056886f7cd0b8293bade2db0ab917ac4474df9278333e11a882235",
+      "crc32": "fc9288d2",
+      "floor": 1300,
+      "candidate_width": 100,
+      "candidate_height": 100,
+      "source_size_formula_matches": true
+    }
+  ],
+  "original_DAT_extraction_errors": [
+    {
+      "source_group": 0,
+      "name": "1300.DAT",
+      "expected_original_member_bytes": 60008,
+      "emitted_bytes": 0,
+      "error_tag": "File CRC error"
+    }
+  ],
+  "floor1300_original_map_dimensions_candidate": [
+    100,
+    100
+  ],
+  "floor1300_source_create_records": [
+    {
+      "source_cohort": "QUEST01",
+      "create_path": "extra/event/marju.create",
+      "create_block_ordinal": 0,
+      "create_sha_scope": "WHOLE_CREATE_FILE",
+      "create_sha256": "a93b179d1c5b4ac637d381d49f7aea9c5cdd161929ab128cf6d3e0eb6cd5a878",
+      "parameter_path": "extra/event/marju",
+      "parameter_sha256": "aa8ae38d76daf189b075befc55557f6f3e49fec81ee624c3a8e517d741fea904",
+      "graphic_alias": 16046,
+      "source_function": "npcgen_changeevent",
+      "map_dat_qualification": "NO_MATCHING_DAT_IN_955",
+      "q05_source_row_index": 11,
+      "specialty_report": "QUEST19"
+    },
+    {
+      "source_cohort": "QUEST01",
+      "create_path": "sainasu/event/event03.create",
+      "create_block_ordinal": 1,
+      "create_sha_scope": "WHOLE_CREATE_FILE",
+      "create_sha256": "f2769e89f6f0e82830bc64529996918b54c360a596a9257b69802fd18f16aa91",
+      "parameter_path": "sainasu/event/event03_1",
+      "parameter_sha256": "693adb44f269b1499e3bb4cc70af3d6143c38bc388584b9c4464ffdac4dc384e",
+      "graphic_alias": 16048,
+      "source_function": "npcgen_changeevent",
+      "map_dat_qualification": "NO_MATCHING_DAT_IN_955",
+      "q05_source_row_index": 255,
+      "specialty_report": "QUEST27"
+    },
+    {
+      "source_cohort": "QUEST01",
+      "create_path": "sainasu/event/event09-12.create",
+      "create_block_ordinal": 1,
+      "create_sha_scope": "WHOLE_CREATE_FILE",
+      "create_sha256": "1f55bbd59aa01c3aeaf1a70d5eb7b29f6c77f0dfd3549f082419c6e465a107e5",
+      "parameter_path": "sainasu/event/event10",
+      "parameter_sha256": "99456b8431026d4c83f3d121b5d454209b8fb3ad1e0d45a4f288ba9ffc838e64",
+      "graphic_alias": 16206,
+      "source_function": "npcgen_changeevent",
+      "map_dat_qualification": "NO_MATCHING_DAT_IN_955",
+      "q05_source_row_index": 257,
+      "specialty_report": "QUEST31"
+    },
+    {
+      "source_cohort": "QUEST01",
+      "create_path": "sainasu/event/oev2.create",
+      "create_block_ordinal": 9,
+      "create_sha_scope": "WHOLE_CREATE_FILE",
+      "create_sha256": "aa970655e6123d050b2b3007f8b24135a5ec9380466db3f55e458e67bdb456b4",
+      "parameter_path": "sainasu/event/oev_9c",
+      "parameter_sha256": "6aa23fb3c3aa906ea68a3e3a0fe3c371bec8656f3f8bb99ee5c5b64d54dd41b9",
+      "graphic_alias": 16068,
+      "source_function": "npcgen_changeevent",
+      "map_dat_qualification": "NO_MATCHING_DAT_IN_955",
+      "q05_source_row_index": 293,
+      "specialty_report": "QUEST25"
+    },
+    {
+      "source_cohort": "QUEST03",
+      "create_path": "genout/1300npc_m.create",
+      "create_block_ordinal": 4,
+      "create_sha_scope": "ORIGINAL_CREATE_BLOCK",
+      "create_sha256": "e333947987e92ca00654fab9bea7e7504d1c6667ad377c85dabaabd71bcdfea2",
+      "parameter_path": "genout/tman_1300_37_26",
+      "parameter_sha256": "cc815c7810dcc123df29a163a4c2365c7218a6086712dd46a26e11275d49b5a1",
+      "graphic_alias": 16033,
+      "source_function": "npcgen_timeman",
+      "map_dat_qualification": "NO_MATCHING_DAT_IN_955",
+      "q05_source_row_index": 528,
+      "specialty_report": "QUEST03_PRIOR"
+    },
+    {
+      "source_cohort": "QUEST03",
+      "create_path": "genout/1300npc_m.create",
+      "create_block_ordinal": 6,
+      "create_sha_scope": "ORIGINAL_CREATE_BLOCK",
+      "create_sha256": "6ee5d77706a0cb5eff01f6431a7fca238ec9bf9a057a124e30990f34fd89f090",
+      "parameter_path": "genout/tman_1300_37_26",
+      "parameter_sha256": "cc815c7810dcc123df29a163a4c2365c7218a6086712dd46a26e11275d49b5a1",
+      "graphic_alias": 16033,
+      "source_function": "npcgen_timeman",
+      "map_dat_qualification": "NO_MATCHING_DAT_IN_955",
+      "q05_source_row_index": 529,
+      "specialty_report": "QUEST03_PRIOR"
+    }
+  ],
+  "source_counts": {
+    "original_MAP_rows": 2,
+    "distinct_MAP_sha": 1,
+    "DAT_extraction_error_rows": 1,
+    "qualified_DAT_sha_in_955": false,
+    "CREATE_rows": 6,
+    "QUEST01_ExChangeMan_create_rows": 4,
+    "QUEST03_Timeman_create_rows": 2,
+    "distinct_parameter_paths": 5,
+    "distinct_CREATE_paths": 5,
+    "distinct_specialty_reports": 4
+  },
+  "source_bound_relationships": {
+    "QUEST19": {
+      "parameter_path": "extra/event/marju",
+      "floor": 1300,
+      "graphic_alias": 16046,
+      "spawn_xy": [
+        70,
+        51
+      ],
+      "source_type": "NPC quest script at source CREATE"
+    },
+    "QUEST25": {
+      "parameter_path": "sainasu/event/oev_9c",
+      "floor": 1300,
+      "graphic_alias": 16068,
+      "spawn_xy": [
+        65,
+        26
+      ],
+      "source_type": "Island-tour checkpoint source CREATE"
+    },
+    "QUEST27": {
+      "parameter_path": "sainasu/event/event03_1",
+      "floor": 1300,
+      "graphic_alias": 16048,
+      "spawn_xy": [
+        18,
+        42
+      ],
+      "source_type": "Axe and letter quest source CREATE"
+    },
+    "QUEST31": {
+      "parameter_path": "sainasu/event/event10",
+      "floor": 1300,
+      "graphic_alias": 16206,
+      "spawn_xy": [
+        65,
+        65
+      ],
+      "source_type": "Four-village event source CREATE"
+    },
+    "QUEST03": {
+      "parameter_path": "genout/tman_1300_37_26",
+      "floor": 1300,
+      "graphic_alias": 16033,
+      "source_type": "Two CREATE references to the same saved Timeman argument; explicit position not revalidated by this audit"
+    }
+  },
+  "conclusions": {
+    "verified_MAP_bytes_recovered_in_source": true,
+    "fully_qualified_1300_DAT_currently": false,
+    "DAT_absent_from_parent_RAR": false,
+    "DAT_header_exists_but_extraction_failed": true,
+    "source_DAT_corruption_proven": false,
+    "original_GAME_map_1300_absent": false,
+    "native_NPC_spawn_seen": false,
+    "original_1300_world_rendered": false,
+    "original_1300_collision_or_warp_verified": false,
+    "early_official_same_deployment": false,
+    "source_coordinate_relations_not_native_spawns": true,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "stop_and_reopen": "A new provenance-qualified complete original 1300.DAT with full CRC/SHA or independent matching readable original copy is necessary to qualify DAT/scene. Do not expand RAR extractors, invent MAP->DAT content, or infer late mixed25 deployment from these aliases.",
+  "status": "SOURCE_BOUNDED_PARTIAL",
+  "next": "STAGE_A_CROSS_MODULE_GAP_REVIEW_OR_NEXT_MATERIAL_SOURCE_READY_DOMAIN"
+}
