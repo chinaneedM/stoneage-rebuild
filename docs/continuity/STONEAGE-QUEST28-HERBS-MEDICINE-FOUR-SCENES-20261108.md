@@ -34,3 +34,7 @@
 本组达成了 6 条可复查的静态任务材料关系、7 个原 NPC 创建配置点、9 个道具候选及 4 张有原 DAT 依据的地图观察的来源止点；**仍没有**认证后期社区保存包是初代官方原服、原版原生任务执行、掉落、药效、NPC 实际显示或全局任务总完成率。
 
 **最高 NEXT：`QUEST29_MODULE_SOURCE_REVIEW_AFTER_MEDICINE_BATCH_STOP`**。先按 QUEST01 的 295 原脚本索引、已经专门覆盖的 QUEST08–28 批次及 22 模块材料全面查重，再选另一组有实物、能产生新玩家可见内容整合的任务批次。若无同版新原件，记录精确受限缺口并换模块；不要继续扩散这几份药草脚本、发明条件执行器或恢复网服。Stage A **7 PARTIAL + 2 OPEN**、Stage B/wiki **GATED**、R79 **PAUSED_NON_BLOCKING**、整体百分比 **未知**不变。
+
+## 合并后验收回执
+
+[PR #268](https://github.com/chinaneedM/stoneage-rebuild/pull/268) 已在真实远端合并至 main `f15f31e5f0053f486da39481db1ce20190d93d86`，完整 tree `26e63c613c74b4f560861c9ae44dd7dbea248e3c`。候选 14 项、合并后主线 11 项 Actions 均实测 `completed/success`，含 QUEST28 专项；旧巨型 `CURRENT-STATE.md` 的 blob `c89e0e33537990aa2132b47c40fef49a985a935c` 再次确认未变。逐项运行ID、候选与主线边界及原 ZIP 散列已保留于[验收收据](../../research/recovered/STONEAGE-QUEST28-PUBLICATION-ACCEPTANCE-R1.json)。本后验提交自身 Actions 应另据真实结果判断，不预支。最高 NEXT 仍为 QUEST29 全模块查重及实物内容增量选择。
