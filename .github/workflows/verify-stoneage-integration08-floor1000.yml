@@ -1,0 +1,23 @@
+name: Verify StoneAge INTEGRATION08 original map1000 NPC source joins
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION08-FLOOR1000-19-CREATE-ORIGINAL-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_08.py'
+      - '.github/workflows/verify-stoneage-integration08-floor1000.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION08-FLOOR1000-19-CREATE-ORIGINAL-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_08.py'
+      - '.github/workflows/verify-stoneage-integration08-floor1000.yml'
+jobs:
+  public-qualified-joins:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_08.py' -v

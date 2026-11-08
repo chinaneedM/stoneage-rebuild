@@ -1,0 +1,643 @@
+{
+  "schema": "stoneage.integration08.floor1000.original_DAT_19_CREATE_static_content.r1",
+  "date": "2026-11-08",
+  "remote_start": {
+    "head": "c7a8fd9fc1406b0e4d3cc80ff7b2c485e2d3841f",
+    "tree": "c2751a7b55bafd26a5a0efb2373290ca93408cc4",
+    "preserved_CURRENT_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "source_pins": {
+    "q": {
+      "path": "research/recovered/STONEAGE-QUEST05-598-ORIGINAL-CREATE-FLOOR-MAP-AND-WARP-CROSSWALK-R1.json",
+      "git_blob_sha": "b004e488e1d0a93ca7c14eb90abb584b23f341fe"
+    },
+    "ch": {
+      "path": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json",
+      "git_blob_sha": "a088b61a3212f7049e7793f587123ffb29bebad7"
+    },
+    "map": {
+      "path": "research/recovered/STONEAGE-MAP-SCENE-MODULE-02-THREE-ORIGINAL-DAT-FLOOR-IMAGE-JOIN-R1.json",
+      "git_blob_sha": "445b6f846ae3d541bcd3ff46bd916934a19171ec"
+    },
+    "vis": {
+      "path": "research/recovered/STONEAGE-INTEGRATION02-ORIGINAL-SCENE-DAT-RD-CROSSMODULE-R1.json",
+      "git_blob_sha": "2303f1df3749ca28a4f9539869359666021b8783"
+    },
+    "q25": {
+      "path": "research/recovered/STONEAGE-QUEST25-FOUR-ISLAND-TOUR-ROUTES-SOURCE-R1.json",
+      "git_blob_sha": "a52b4e5519912ac7e46e1f892cc01515861cf2e8"
+    },
+    "q26": {
+      "path": "research/recovered/STONEAGE-QUEST26-SHELL-FLOWER-FLAG2-SOURCE-R1.json",
+      "git_blob_sha": "c106547ab9228c9505d84f69d8198743a6c2c17c"
+    },
+    "i05": {
+      "path": "research/recovered/STONEAGE-INTEGRATION05-GETPET-QUEST-MAP-ORIGINAL-SOURCE-GRAPH-R1.json",
+      "git_blob_sha": "bc8486e1c0ff0a85f63264decd78b646b638c305"
+    }
+  },
+  "source_kind": "LATER_COMMUNITY_MIXED25_SAME_PRESERVED_ARCHIVE_NUMERIC_AND_SHA_JOIN; TW1_CROSS_CARRIER_RD_ONLY; NO_ORIGINAL_GAME_EXECUTION",
+  "source_parent_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "floor_1000_original_DAT": {
+    "sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+    "bytes": 153608,
+    "width": 160,
+    "height": 160,
+    "cells": 25600,
+    "original_source": "O31-original-mixed25-RAR-verified-replay"
+  },
+  "summary": {
+    "CREATE_count": 19,
+    "by_cohort": {
+      "QUEST01": 7,
+      "QUEST02": 2,
+      "QUEST03": 10
+    },
+    "by_source_function": {
+      "npcgen_changeevent": 7,
+      "npcgen_warp": 2,
+      "npcgen_timeman": 10
+    },
+    "with_original_borncorner_int4": 17,
+    "with_original_borncenter_int4": 2,
+    "without_borncorner_but_with_borncenter": 1,
+    "without_either_original_location_field": 1,
+    "all_borncorner_xy_inside_original_DIM": true,
+    "distinct_borncorner_xy": 17,
+    "distinct_original_graphic_aliases": 18,
+    "quest25_original_CREATE_join_count": 3,
+    "quest26_original_CREATE_join_count": 1,
+    "integration05_original_GetPet_CREATE_join_count": 1,
+    "prior_map1000_numeric_nonzero_image_references": 26324,
+    "prior_TW1_cross_carrier_RD_numeric_candidate_matches": 26310,
+    "prior_TW1_cross_carrier_unmatched_image_references": 14
+  },
+  "source_creates": [
+    {
+      "q05_ref_index": 5,
+      "cohort": "QUEST01",
+      "create_file": "chatroom/chatroom.create",
+      "create_ordinal": 9,
+      "sha_scope": "WHOLE_CREATE_FILE",
+      "source_scope_sha256": "068c36b326759fde126bc6cc72796645468c0823c46deb3a328e6a98814345cd",
+      "original_block_sha256": "d3870832df0d13e90dc074555b7473a2bcdf462eb0f06d2ad6777c5b6c353490",
+      "original_param_file": "chatroom/ticket1000",
+      "original_param_sha256": "2391d7d2151da1599c2dfca53a34fc2a2f8e8fdf81f5d11df58aecb3479d34fd",
+      "function_class": "npcgen_changeevent",
+      "graphic_alias": 16014,
+      "borncorner_int4": [
+        50,
+        62,
+        50,
+        62
+      ],
+      "borncenter_int4": null,
+      "createnum_int": 1,
+      "direction_original_int": 4,
+      "name_sha256": "bf1361f35ef063f11ce776608d0bfc7bbbadc121a3a3cf6b34c91a6b52a68bf8",
+      "source_origin_class": "ORIGIN_UNRESOLVED",
+      "old_q05_DAT_status": "NO_MATCHING_DAT_IN_955"
+    },
+    {
+      "q05_ref_index": 229,
+      "cohort": "QUEST01",
+      "create_file": "poru/samugiru_grandfather.create",
+      "create_ordinal": 0,
+      "sha_scope": "WHOLE_CREATE_FILE",
+      "source_scope_sha256": "a94aae32b84f120655fb1bbb806886aad51583206c259dd531ff29ef690aaf91",
+      "original_block_sha256": "2dc4b23ce9d163c98e8316f17aa8d0ccd7f23ca01ad154725ddb642c409179d7",
+      "original_param_file": "poru/samugiru04",
+      "original_param_sha256": "23c647c7613284fa5e6a717a08a16eaa70fa754e8d418bbd1acd950aebd52593",
+      "function_class": "npcgen_changeevent",
+      "graphic_alias": 16001,
+      "borncorner_int4": null,
+      "borncenter_int4": [
+        72,
+        48,
+        1,
+        1
+      ],
+      "createnum_int": 1,
+      "direction_original_int": 4,
+      "name_sha256": "31ce27889822184f94f9476077a4e9511c5179d2ce462cf83188926644a27f8e",
+      "source_origin_class": "ORIGIN_UNRESOLVED",
+      "old_q05_DAT_status": "NO_MATCHING_DAT_IN_955"
+    },
+    {
+      "q05_ref_index": 241,
+      "cohort": "QUEST01",
+      "create_file": "sa60/newbie/newbie.create",
+      "create_ordinal": 0,
+      "sha_scope": "WHOLE_CREATE_FILE",
+      "source_scope_sha256": "761dc3d1ed885fb76b22af446331e5a0db6cf3e59a27cf2ab136a62a88d81d0b",
+      "original_block_sha256": "3445cfae9816025c24ce9ffbb609bb83f3dff5fabd6b7e60b5ce7e6f1a63a32a",
+      "original_param_file": "sa60/newbie/fighter",
+      "original_param_sha256": "5cba22d6c22387b1b28576ab09d59989c3068d44c82e964da753caf4f9252289",
+      "function_class": "npcgen_changeevent",
+      "graphic_alias": 16496,
+      "borncorner_int4": null,
+      "borncenter_int4": null,
+      "createnum_int": 1,
+      "direction_original_int": 6,
+      "name_sha256": "0c37c7f1d42c1ea8116e6853ad4a12e70e8b06b7c946531332cf16c44bdc7648",
+      "source_origin_class": "ORIGIN_UNRESOLVED",
+      "old_q05_DAT_status": "NO_MATCHING_DAT_IN_955"
+    },
+    {
+      "q05_ref_index": 253,
+      "cohort": "QUEST01",
+      "create_file": "sainasu/event/event02.create",
+      "create_ordinal": 1,
+      "sha_scope": "WHOLE_CREATE_FILE",
+      "source_scope_sha256": "2b15884736a19d06caffa32e335c3604e5f8593c8ea051d2040f0c5d3b52e1e4",
+      "original_block_sha256": "7fc4ff24630eb7793095dac6f04dbcd1766906afc57b315ca819cf5709f77f9b",
+      "original_param_file": "sainasu/event/event02_2",
+      "original_param_sha256": "eb3f9a9c9bbf1776de7533f57c529c1948c2cc8c1fb22945c49d61950f153e9b",
+      "function_class": "npcgen_changeevent",
+      "graphic_alias": 16030,
+      "borncorner_int4": [
+        57,
+        124,
+        57,
+        124
+      ],
+      "borncenter_int4": null,
+      "createnum_int": 1,
+      "direction_original_int": 6,
+      "name_sha256": "0866acfac6dcff22cb820ee9b901b773ec4ac6eff9b1d0079cbe3fe63c92dfe6",
+      "source_origin_class": "ORIGIN_UNRESOLVED",
+      "old_q05_DAT_status": "NO_MATCHING_DAT_IN_955"
+    },
+    {
+      "q05_ref_index": 284,
+      "cohort": "QUEST01",
+      "create_file": "sainasu/event/oev2.create",
+      "create_ordinal": 0,
+      "sha_scope": "WHOLE_CREATE_FILE",
+      "source_scope_sha256": "aa970655e6123d050b2b3007f8b24135a5ec9380466db3f55e458e67bdb456b4",
+      "original_block_sha256": "14c1b45715b6187cbc99154bdebf7a838a4282cf7fd743972e2eb636885e4f6a",
+      "original_param_file": "sainasu/event/oev_0cd",
+      "original_param_sha256": "dcac8cfba36107d278716c1da4835d4fdac580516a8fc3883528f0639231bc69",
+      "function_class": "npcgen_changeevent",
+      "graphic_alias": 16027,
+      "borncorner_int4": [
+        33,
+        56,
+        33,
+        56
+      ],
+      "borncenter_int4": null,
+      "createnum_int": 1,
+      "direction_original_int": 4,
+      "name_sha256": "4c7480ff3ff002b3a3e5572c6f56bcd685926b7846f2c04caf77aa7a39d10039",
+      "source_origin_class": "ORIGIN_UNRESOLVED",
+      "old_q05_DAT_status": "NO_MATCHING_DAT_IN_955"
+    },
+    {
+      "q05_ref_index": 285,
+      "cohort": "QUEST01",
+      "create_file": "sainasu/event/oev2.create",
+      "create_ordinal": 1,
+      "sha_scope": "WHOLE_CREATE_FILE",
+      "source_scope_sha256": "aa970655e6123d050b2b3007f8b24135a5ec9380466db3f55e458e67bdb456b4",
+      "original_block_sha256": "03c64e096f4090d9b819a368a6b1dbad7fbf1ed7ad12376b5f2ba4fe837e5159",
+      "original_param_file": "sainasu/event/oev_1c",
+      "original_param_sha256": "8530af2810ead0878e527c3005fee622e228ef6c5bb730e3c4955c5ee1d8b0c1",
+      "function_class": "npcgen_changeevent",
+      "graphic_alias": 16067,
+      "borncorner_int4": [
+        126,
+        99,
+        126,
+        99
+      ],
+      "borncenter_int4": null,
+      "createnum_int": 1,
+      "direction_original_int": 4,
+      "name_sha256": "88a9e2f10a0139a333f102892b7d6898dae8865dd423fd0e4d17e2401da11fb1",
+      "source_origin_class": "ORIGIN_UNRESOLVED",
+      "old_q05_DAT_status": "NO_MATCHING_DAT_IN_955"
+    },
+    {
+      "q05_ref_index": 309,
+      "cohort": "QUEST01",
+      "create_file": "sainasu/event/oev2.create",
+      "create_ordinal": 25,
+      "sha_scope": "WHOLE_CREATE_FILE",
+      "source_scope_sha256": "aa970655e6123d050b2b3007f8b24135a5ec9380466db3f55e458e67bdb456b4",
+      "original_block_sha256": "4fc0f0d92c099b87f60d235b4a31db9725258fdf032b5dae8939730313fd997d",
+      "original_param_file": "sainasu/event/oev_edc",
+      "original_param_sha256": "a1891aef372be0012df9f830560f513c41e8334a62ff31f26b2da0124632f037",
+      "function_class": "npcgen_changeevent",
+      "graphic_alias": 16027,
+      "borncorner_int4": [
+        108,
+        28,
+        108,
+        28
+      ],
+      "borncenter_int4": null,
+      "createnum_int": 1,
+      "direction_original_int": 4,
+      "name_sha256": "996442f92d8f75e49f344ceee6d91fb94495fae63ed309a55d59de643bd952af",
+      "source_origin_class": "ORIGIN_UNRESOLVED",
+      "old_q05_DAT_status": "NO_MATCHING_DAT_IN_955"
+    },
+    {
+      "q05_ref_index": 373,
+      "cohort": "QUEST02",
+      "create_file": "genout/duelroom.create",
+      "create_ordinal": 0,
+      "sha_scope": "WHOLE_CREATE_FILE",
+      "source_scope_sha256": "4c47e9c320f9d3fe6616e6860d14d2681df1994bb8c4a849e5b6d93a38998a91",
+      "original_block_sha256": "64f8c5950960055f317ac18db041b2c56da63eca29c201dc54e11f3b0daa4fb9",
+      "original_param_file": "genout/wpm_1000_56_59",
+      "original_param_sha256": "9ebd7a48c3ab5e9b83f1e2d4b88b07ca623a42235f5b2e1867982119011f0cc9",
+      "function_class": "npcgen_warp",
+      "graphic_alias": 16055,
+      "borncorner_int4": [
+        56,
+        59,
+        56,
+        59
+      ],
+      "borncenter_int4": null,
+      "createnum_int": 1,
+      "direction_original_int": 4,
+      "name_sha256": "a09d147941a83217d55f561c50bf9a0e44a76743aa0b9a4aba78c2c37568b1c7",
+      "source_origin_class": "ORIGIN_UNRESOLVED",
+      "old_q05_DAT_status": "NO_MATCHING_DAT_IN_955"
+    },
+    {
+      "q05_ref_index": 503,
+      "cohort": "QUEST02",
+      "create_file": "poru/samugiru_grandfather.create",
+      "create_ordinal": 1,
+      "sha_scope": "WHOLE_CREATE_FILE",
+      "source_scope_sha256": "a94aae32b84f120655fb1bbb806886aad51583206c259dd531ff29ef690aaf91",
+      "original_block_sha256": "025acceff32151ce3391de5330058bc2a6c70b6180f16be6f584f49afb090aba",
+      "original_param_file": "poru/wpm_500_470_470",
+      "original_param_sha256": "0d68d8be4666a80073eadc9385e429c0e7a1e3aeaa29a1e71dd7f7be53acfa28",
+      "function_class": "npcgen_warp",
+      "graphic_alias": 100388,
+      "borncorner_int4": [
+        71,
+        48,
+        71,
+        48
+      ],
+      "borncenter_int4": [
+        71,
+        48,
+        1,
+        1
+      ],
+      "createnum_int": 1,
+      "direction_original_int": 4,
+      "name_sha256": "83ccb6a0789d318bea296061ac8f5d8b74aa15dbcd87d2d0acf2c9e52b649bd2",
+      "source_origin_class": "ORIGIN_UNRESOLVED",
+      "old_q05_DAT_status": "NO_MATCHING_DAT_IN_955"
+    },
+    {
+      "q05_ref_index": 517,
+      "cohort": "QUEST03",
+      "create_file": "genout/1000npc_m.create",
+      "create_ordinal": 5,
+      "sha_scope": "ORIGINAL_CREATE_BLOCK",
+      "source_scope_sha256": "14515e6dc458b52e4d35e5e5cb57cfa4b5937e73f04ca01f7b61acd74da2cc21",
+      "original_block_sha256": "14515e6dc458b52e4d35e5e5cb57cfa4b5937e73f04ca01f7b61acd74da2cc21",
+      "original_param_file": "genout/tman_1000_42_72",
+      "original_param_sha256": "115134eedc681d9a1526ebd4bc2754c5c7c397a4500b08e7c597c467bfe2a190",
+      "function_class": "npcgen_timeman",
+      "graphic_alias": 16002,
+      "borncorner_int4": [
+        42,
+        72,
+        42,
+        72
+      ],
+      "borncenter_int4": null,
+      "createnum_int": 1,
+      "direction_original_int": 4,
+      "name_sha256": "18acf260157ce0d04e4052f98efe9471f146449fd26ef281c84d505fdf109551",
+      "source_origin_class": "ORIGIN_UNRESOLVED",
+      "old_q05_DAT_status": "NO_MATCHING_DAT_IN_955"
+    },
+    {
+      "q05_ref_index": 518,
+      "cohort": "QUEST03",
+      "create_file": "genout/1000npc_m.create",
+      "create_ordinal": 6,
+      "sha_scope": "ORIGINAL_CREATE_BLOCK",
+      "source_scope_sha256": "b5a73f34a3b256db82d080568b18ce182f573349061189c97bf58776edfc4973",
+      "original_block_sha256": "b5a73f34a3b256db82d080568b18ce182f573349061189c97bf58776edfc4973",
+      "original_param_file": "genout/tman_1000_42_79",
+      "original_param_sha256": "f7d07e81040d0caec0b7c74fa185a9593cab15d9943b822586299e83b5ba9095",
+      "function_class": "npcgen_timeman",
+      "graphic_alias": 16011,
+      "borncorner_int4": [
+        42,
+        79,
+        42,
+        79
+      ],
+      "borncenter_int4": null,
+      "createnum_int": 1,
+      "direction_original_int": 4,
+      "name_sha256": "efa3dd07cc171c995724a137a5c400dc7f9415935fb81fe0c68445a7f9419067",
+      "source_origin_class": "ORIGIN_UNRESOLVED",
+      "old_q05_DAT_status": "NO_MATCHING_DAT_IN_955"
+    },
+    {
+      "q05_ref_index": 519,
+      "cohort": "QUEST03",
+      "create_file": "genout/1000npc_m.create",
+      "create_ordinal": 7,
+      "sha_scope": "ORIGINAL_CREATE_BLOCK",
+      "source_scope_sha256": "7a9520f1072371397a97a14dc298a1759be82266fe543bad34206e9fe36ff8bb",
+      "original_block_sha256": "7a9520f1072371397a97a14dc298a1759be82266fe543bad34206e9fe36ff8bb",
+      "original_param_file": "genout/tman_1000_42_81",
+      "original_param_sha256": "4575ca48d80546d332e2b7b33024f8d8a0b95bec2d633129cf2a712030f7f48e",
+      "function_class": "npcgen_timeman",
+      "graphic_alias": 16003,
+      "borncorner_int4": [
+        42,
+        81,
+        42,
+        81
+      ],
+      "borncenter_int4": null,
+      "createnum_int": 1,
+      "direction_original_int": 0,
+      "name_sha256": "efa3dd07cc171c995724a137a5c400dc7f9415935fb81fe0c68445a7f9419067",
+      "source_origin_class": "ORIGIN_UNRESOLVED",
+      "old_q05_DAT_status": "NO_MATCHING_DAT_IN_955"
+    },
+    {
+      "q05_ref_index": 520,
+      "cohort": "QUEST03",
+      "create_file": "genout/1000npc_m.create",
+      "create_ordinal": 8,
+      "sha_scope": "ORIGINAL_CREATE_BLOCK",
+      "source_scope_sha256": "8d98f947170d84bdf4035b303723c86d4db1fda3bbeef6aa44781d34d2b28f35",
+      "original_block_sha256": "8d98f947170d84bdf4035b303723c86d4db1fda3bbeef6aa44781d34d2b28f35",
+      "original_param_file": "genout/tman_1000_39_75",
+      "original_param_sha256": "4f02df593dbe4b51676e1cb6c7d8ac21b8980c16df3f8d701061d1ee801d15bc",
+      "function_class": "npcgen_timeman",
+      "graphic_alias": 16004,
+      "borncorner_int4": [
+        39,
+        75,
+        39,
+        75
+      ],
+      "borncenter_int4": null,
+      "createnum_int": 1,
+      "direction_original_int": 0,
+      "name_sha256": "efa3dd07cc171c995724a137a5c400dc7f9415935fb81fe0c68445a7f9419067",
+      "source_origin_class": "ORIGIN_UNRESOLVED",
+      "old_q05_DAT_status": "NO_MATCHING_DAT_IN_955"
+    },
+    {
+      "q05_ref_index": 521,
+      "cohort": "QUEST03",
+      "create_file": "genout/1000npc_m.create",
+      "create_ordinal": 9,
+      "sha_scope": "ORIGINAL_CREATE_BLOCK",
+      "source_scope_sha256": "c93dc4e25ed323d876fd3ec645737a5b91280727a19fe62188aa91f645962c23",
+      "original_block_sha256": "c93dc4e25ed323d876fd3ec645737a5b91280727a19fe62188aa91f645962c23",
+      "original_param_file": "genout/tman_1000_36_78",
+      "original_param_sha256": "b10fcd765caf501eff6642c05a24c59a82ad1efe265fdbeb481cf017f7aaf4b9",
+      "function_class": "npcgen_timeman",
+      "graphic_alias": 16005,
+      "borncorner_int4": [
+        36,
+        78,
+        36,
+        78
+      ],
+      "borncenter_int4": null,
+      "createnum_int": 1,
+      "direction_original_int": 0,
+      "name_sha256": "efa3dd07cc171c995724a137a5c400dc7f9415935fb81fe0c68445a7f9419067",
+      "source_origin_class": "ORIGIN_UNRESOLVED",
+      "old_q05_DAT_status": "NO_MATCHING_DAT_IN_955"
+    },
+    {
+      "q05_ref_index": 522,
+      "cohort": "QUEST03",
+      "create_file": "genout/1000npc_m.create",
+      "create_ordinal": 10,
+      "sha_scope": "ORIGINAL_CREATE_BLOCK",
+      "source_scope_sha256": "c8778078f976a3e655a96526dd7dd06b8677bb1598ee7350059ac4e8a5aa8b4d",
+      "original_block_sha256": "c8778078f976a3e655a96526dd7dd06b8677bb1598ee7350059ac4e8a5aa8b4d",
+      "original_param_file": "genout/tman_1000_42_75",
+      "original_param_sha256": "138ac51e303e245001da12f746e1c4dcfde8aabace87f9613fc1d631dbaaecc7",
+      "function_class": "npcgen_timeman",
+      "graphic_alias": 16006,
+      "borncorner_int4": [
+        42,
+        75,
+        42,
+        75
+      ],
+      "borncenter_int4": null,
+      "createnum_int": 1,
+      "direction_original_int": 0,
+      "name_sha256": "efa3dd07cc171c995724a137a5c400dc7f9415935fb81fe0c68445a7f9419067",
+      "source_origin_class": "ORIGIN_UNRESOLVED",
+      "old_q05_DAT_status": "NO_MATCHING_DAT_IN_955"
+    },
+    {
+      "q05_ref_index": 523,
+      "cohort": "QUEST03",
+      "create_file": "genout/1000npc_m.create",
+      "create_ordinal": 11,
+      "sha_scope": "ORIGINAL_CREATE_BLOCK",
+      "source_scope_sha256": "d9ad3d93467debeca059207db1861e84f7a217a55c5cc98aa504b298b627beb3",
+      "original_block_sha256": "d9ad3d93467debeca059207db1861e84f7a217a55c5cc98aa504b298b627beb3",
+      "original_param_file": "genout/tman_1000_119_65",
+      "original_param_sha256": "97bd288385d1d7b06fdc5676ca924db9226422d108e03fe69348cb6ea09aabf6",
+      "function_class": "npcgen_timeman",
+      "graphic_alias": 16025,
+      "borncorner_int4": [
+        119,
+        65,
+        119,
+        65
+      ],
+      "borncenter_int4": null,
+      "createnum_int": 1,
+      "direction_original_int": 6,
+      "name_sha256": "b829748c427f11102939ed4cd8b7b995e62d7fae173441ed3c110a7b32ba4036",
+      "source_origin_class": "ORIGIN_UNRESOLVED",
+      "old_q05_DAT_status": "NO_MATCHING_DAT_IN_955"
+    },
+    {
+      "q05_ref_index": 524,
+      "cohort": "QUEST03",
+      "create_file": "genout/1000npc_m.create",
+      "create_ordinal": 12,
+      "sha_scope": "ORIGINAL_CREATE_BLOCK",
+      "source_scope_sha256": "800708b3e160e773e7e5c81276766ea8072597fc41b1b28676fc8bdc5a6b58ab",
+      "original_block_sha256": "800708b3e160e773e7e5c81276766ea8072597fc41b1b28676fc8bdc5a6b58ab",
+      "original_param_file": "genout/tman_1000_116_69",
+      "original_param_sha256": "a23f3859dee65e5a2bf829a90e390eed03ea51189bbc6d8d6f1802d05a073a6c",
+      "function_class": "npcgen_timeman",
+      "graphic_alias": 16015,
+      "borncorner_int4": [
+        116,
+        69,
+        116,
+        69
+      ],
+      "borncenter_int4": null,
+      "createnum_int": 1,
+      "direction_original_int": 6,
+      "name_sha256": "b752df0a77626635d79789e29f6d73543c59c645278356996d514becadca07b6",
+      "source_origin_class": "ORIGIN_UNRESOLVED",
+      "old_q05_DAT_status": "NO_MATCHING_DAT_IN_955"
+    },
+    {
+      "q05_ref_index": 525,
+      "cohort": "QUEST03",
+      "create_file": "genout/1000npc_m.create",
+      "create_ordinal": 13,
+      "sha_scope": "ORIGINAL_CREATE_BLOCK",
+      "source_scope_sha256": "57d0c839c3c0bae4c4e97d642df5191cbc682bc9c619646891e9fa8c5e0d8e03",
+      "original_block_sha256": "57d0c839c3c0bae4c4e97d642df5191cbc682bc9c619646891e9fa8c5e0d8e03",
+      "original_param_file": "genout/tman_1000_109_63",
+      "original_param_sha256": "f2abb469faf28d6d7cc5d9562753a573d96ba1c64721fac2a3834fd03faf9b25",
+      "function_class": "npcgen_timeman",
+      "graphic_alias": 16013,
+      "borncorner_int4": [
+        109,
+        63,
+        109,
+        63
+      ],
+      "borncenter_int4": null,
+      "createnum_int": 1,
+      "direction_original_int": 6,
+      "name_sha256": "ca9e9d7de85c51ef0abf32c022802881f45992ffb0c1585c5a22cf86ec47bf56",
+      "source_origin_class": "ORIGIN_UNRESOLVED",
+      "old_q05_DAT_status": "NO_MATCHING_DAT_IN_955"
+    },
+    {
+      "q05_ref_index": 526,
+      "cohort": "QUEST03",
+      "create_file": "genout/1000npc_m.create",
+      "create_ordinal": 14,
+      "sha_scope": "ORIGINAL_CREATE_BLOCK",
+      "source_scope_sha256": "d5fa8dbb95499cacf0e8d1773302761bd546ee33363b5fb1b91c3233033a7800",
+      "original_block_sha256": "d5fa8dbb95499cacf0e8d1773302761bd546ee33363b5fb1b91c3233033a7800",
+      "original_param_file": "genout/tman_1000_116_66",
+      "original_param_sha256": "29d7908aa202439e54830b1c742e93f41facfcbf04c15f7343775da4a62c7a44",
+      "function_class": "npcgen_timeman",
+      "graphic_alias": 16016,
+      "borncorner_int4": [
+        116,
+        66,
+        116,
+        66
+      ],
+      "borncenter_int4": null,
+      "createnum_int": 1,
+      "direction_original_int": 6,
+      "name_sha256": "4781f6b2a1586eeeda92722c09b2c9885d0f2c09e0a4de30b72f74c04b84286b",
+      "source_origin_class": "ORIGIN_UNRESOLVED",
+      "old_q05_DAT_status": "NO_MATCHING_DAT_IN_955"
+    }
+  ],
+  "already_verified_crossmodule_spot_checks": {
+    "QUEST25": [
+      {
+        "create_file": "sainasu/event/oev2.create",
+        "ordinal": 0,
+        "block_sha256": "14c1b45715b6187cbc99154bdebf7a838a4282cf7fd743972e2eb636885e4f6a",
+        "script_path": "sainasu/event/oev_0cd",
+        "borncorner": [
+          33,
+          56,
+          33,
+          56
+        ]
+      },
+      {
+        "create_file": "sainasu/event/oev2.create",
+        "ordinal": 1,
+        "block_sha256": "03c64e096f4090d9b819a368a6b1dbad7fbf1ed7ad12376b5f2ba4fe837e5159",
+        "script_path": "sainasu/event/oev_1c",
+        "borncorner": [
+          126,
+          99,
+          126,
+          99
+        ]
+      },
+      {
+        "create_file": "sainasu/event/oev2.create",
+        "ordinal": 25,
+        "block_sha256": "4fc0f0d92c099b87f60d235b4a31db9725258fdf032b5dae8939730313fd997d",
+        "script_path": "sainasu/event/oev_edc",
+        "borncorner": [
+          108,
+          28,
+          108,
+          28
+        ]
+      }
+    ],
+    "QUEST26": [
+      {
+        "ordinal": 1,
+        "block_sha256": "7fc4ff24630eb7793095dac6f04dbcd1766906afc57b315ca819cf5709f77f9b",
+        "script_path": "sainasu/event/event02_2",
+        "borncorner": [
+          57,
+          124,
+          57,
+          124
+        ]
+      }
+    ],
+    "INTEGRATION05": [
+      {
+        "create_file": "sainasu/event/oev2.create",
+        "ordinal": 25,
+        "script_path": "sainasu/event/oev_edc",
+        "source_sha256": "a1891aef372be0012df9f830560f513c41e8334a62ff31f26b2da0124632f037",
+        "original_GetPet_literals": [
+          48,
+          94,
+          350,
+          482
+        ],
+        "actually_rewarded": false
+      }
+    ]
+  },
+  "source_rendering_qualification": {
+    "from_INTEGRATION02_original_DAT_first_two_planes": true,
+    "TW1_RD_is_only_cross_carrier_numeric_candidate": true,
+    "original_native_sprite_selection_known": false,
+    "original_NPC_visible_on_native_client": false,
+    "original_collision_or_walkable_route_proven": false
+  },
+  "limits": {
+    "read_original_game_binary_this_unit": false,
+    "new_original_NPC_graphics_this_unit": false,
+    "original_source_dialogue_published": false,
+    "original_client_running": false,
+    "original_quest_or_warp_executed": false,
+    "original_GetPet_reward_executed": false,
+    "actual_early_official_same_deployment_proven": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "status": "SOURCE_BOUNDED_PARTIAL",
+  "next": "STAGE_A_REPRESENTATIVE_PLAY_PATH_GAP_REVIEW; FIRST_MAP1000_SOURCE_NODES_DO_NOT_IMPLY_NATIVE_TRAVERSABLE_ROUTE"
+}
