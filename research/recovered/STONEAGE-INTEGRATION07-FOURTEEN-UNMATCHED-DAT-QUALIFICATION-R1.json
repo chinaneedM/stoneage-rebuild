@@ -1,0 +1,772 @@
+{
+  "schema": "stoneage.integration07.fourteen_unmatched_quest_create_floor_original_DAT_qualification.r1",
+  "date": "2026-11-08",
+  "source_main": {
+    "head": "32cf3b86521eeec609e88274998a71ec153ef02d",
+    "tree": "2af6dc45eac5703ea5360f6250909b8c747148a7",
+    "current_historical_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "source_files": {
+    "research/recovered/STONEAGE-QUEST05-598-ORIGINAL-CREATE-FLOOR-MAP-AND-WARP-CROSSWALK-R1.json": {
+      "git_blob_sha": "b004e488e1d0a93ca7c14eb90abb584b23f341fe"
+    },
+    "research/recovered/STONEAGE-MAP-SCENE-MODULE-01-ORIGINAL-SOURCE-MANIFEST-R1.json": {
+      "git_blob_sha": "03675ee98d391f9ef0246315b2426f2a8b721fd3"
+    },
+    "research/recovered/STONEAGE-MAP-SCENE-MODULE-02-THREE-ORIGINAL-DAT-FLOOR-IMAGE-JOIN-R1.json": {
+      "git_blob_sha": "445b6f846ae3d541bcd3ff46bd916934a19171ec"
+    },
+    "research/recovered/STONEAGE-INTEGRATION06-MAP1300-MAP-DAT-SIX-CREATE-SOURCE-R1.json": {
+      "git_blob_sha": "5e1f49922731e55070cc6e43fbadf29a3609adeb"
+    }
+  },
+  "carrier_provenance": {
+    "classification": "LATER_SAVED_MIXED25_COMMUNITY_ARCHIVE_NOT_SAME_OFFICIAL_EARLY_DEPLOYMENT",
+    "parent_original_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+  },
+  "qualification_scope": "SELECTED_MAP01_original_member_manifest_PLUS_independently_verified_MAP02_1000_DAT; NOT all releases/all archived file trees; QUEST05_955_NOT_MATCHING_DAT is only that prior catalog",
+  "summary": {
+    "source_QUEST05_total_CREATE_references": 598,
+    "source_QUEST05_total_distinct_floors": 236,
+    "source_QUEST05_unmatched_DAT_floor_count": 14,
+    "source_QUEST05_unmatched_DAT_CREATE_count": 88,
+    "selected_DAT_status": {
+      "VERIFIED_INDEPENDENT_DAT": {
+        "floor_count": 1,
+        "source_CREATE_count": 19
+      },
+      "INDEXED_DAT_READ_ERROR": {
+        "floor_count": 12,
+        "source_CREATE_count": 67
+      },
+      "NO_SELECTED_DAT_MEMBER": {
+        "floor_count": 1,
+        "source_CREATE_count": 2
+      }
+    },
+    "selected_MAP_status": {
+      "TWO_MAP_COPIES_SAME_SHA": {
+        "floor_count": 7,
+        "source_CREATE_count": 35
+      },
+      "TWO_MAP_COPIES_DIFFERENT_SHA": {
+        "floor_count": 1,
+        "source_CREATE_count": 4
+      },
+      "MAP_EXTRACTION_ERROR_ONLY": {
+        "floor_count": 5,
+        "source_CREATE_count": 47
+      },
+      "NO_SELECTED_MAP_MEMBER": {
+        "floor_count": 1,
+        "source_CREATE_count": 2
+      }
+    },
+    "original_DAT_error_record_floor_count": 13,
+    "lowercase_DAT_filename_error_floors": [
+      200,
+      3000
+    ],
+    "source_MAP_different_SHA_floors": [
+      400
+    ],
+    "source_DAT_independently_qualified_floors": [
+      1000
+    ],
+    "source_no_selected_DAT_record_floors": [
+      830
+    ],
+    "original_DAT_error_size_coherent_floors": 13
+  },
+  "floors": [
+    {
+      "floor_id": 100,
+      "quest05_source_CREATE_count": 10,
+      "quest05_source_cohorts": {
+        "QUEST01": 7,
+        "QUEST02": 3
+      },
+      "quest05_CREATE_ref_indices": [
+        267,
+        297,
+        298,
+        301,
+        303,
+        308,
+        314,
+        333,
+        399,
+        429
+      ],
+      "source_MAP_status": "MAP_EXTRACTION_ERROR_ONLY",
+      "source_MAP_full_original_rows": [],
+      "source_MAP_original_read_errors": [
+        {
+          "group": 0,
+          "original_filename": "100.MAP",
+          "expected_member_bytes": 1280008,
+          "emitted_before_error": 1245184,
+          "error_tag": "File CRC error"
+        },
+        {
+          "group": 1,
+          "original_filename": "100.MAP",
+          "expected_member_bytes": 1280008,
+          "emitted_before_error": 1245184,
+          "error_tag": "File CRC error"
+        }
+      ],
+      "source_DAT_status": "INDEXED_DAT_READ_ERROR",
+      "source_DAT_full_MAP01_rows": [],
+      "source_DAT_original_read_errors": [
+        {
+          "group": 0,
+          "original_filename": "100.DAT",
+          "expected_member_bytes": 3840008,
+          "emitted_before_error": 131072,
+          "error_tag": "Parsing filters is unsupported."
+        }
+      ],
+      "source_DAT_member_size_formula_consistent": true,
+      "other_independently_qualified_DAT": null
+    },
+    {
+      "floor_id": 119,
+      "quest05_source_CREATE_count": 1,
+      "quest05_source_cohorts": {
+        "QUEST01": 1
+      },
+      "quest05_CREATE_ref_indices": [
+        12
+      ],
+      "source_MAP_status": "TWO_MAP_COPIES_SAME_SHA",
+      "source_MAP_full_original_rows": [
+        {
+          "group": 0,
+          "original_filename": "119.MAP",
+          "original_bytes": 80008,
+          "source_sha256": "de34983eb303d6c769e5dcc5c44408aa52c4194e154f423d9a7a7e3a8d1758d8",
+          "original_crc32": "b07b26ca",
+          "candidate_width": 200,
+          "candidate_height": 200
+        },
+        {
+          "group": 1,
+          "original_filename": "119.MAP",
+          "original_bytes": 80008,
+          "source_sha256": "de34983eb303d6c769e5dcc5c44408aa52c4194e154f423d9a7a7e3a8d1758d8",
+          "original_crc32": "b07b26ca",
+          "candidate_width": 200,
+          "candidate_height": 200
+        }
+      ],
+      "source_MAP_original_read_errors": [],
+      "source_DAT_status": "INDEXED_DAT_READ_ERROR",
+      "source_DAT_full_MAP01_rows": [],
+      "source_DAT_original_read_errors": [
+        {
+          "group": 0,
+          "original_filename": "119.DAT",
+          "expected_member_bytes": 240008,
+          "emitted_before_error": 196608,
+          "error_tag": "File CRC error"
+        }
+      ],
+      "source_DAT_member_size_formula_consistent": true,
+      "other_independently_qualified_DAT": null
+    },
+    {
+      "floor_id": 200,
+      "quest05_source_CREATE_count": 12,
+      "quest05_source_cohorts": {
+        "QUEST01": 7,
+        "QUEST02": 5
+      },
+      "quest05_CREATE_ref_indices": [
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        174,
+        361,
+        384,
+        386,
+        400,
+        401
+      ],
+      "source_MAP_status": "MAP_EXTRACTION_ERROR_ONLY",
+      "source_MAP_full_original_rows": [],
+      "source_MAP_original_read_errors": [
+        {
+          "group": 0,
+          "original_filename": "200.MAP",
+          "expected_member_bytes": 1920008,
+          "emitted_before_error": 1900544,
+          "error_tag": "File CRC error"
+        },
+        {
+          "group": 1,
+          "original_filename": "200.MAP",
+          "expected_member_bytes": 1920008,
+          "emitted_before_error": 1900544,
+          "error_tag": "File CRC error"
+        }
+      ],
+      "source_DAT_status": "INDEXED_DAT_READ_ERROR",
+      "source_DAT_full_MAP01_rows": [],
+      "source_DAT_original_read_errors": [
+        {
+          "group": 0,
+          "original_filename": "200.dat",
+          "expected_member_bytes": 5760008,
+          "emitted_before_error": 2424832,
+          "error_tag": "Prefix found"
+        }
+      ],
+      "source_DAT_member_size_formula_consistent": true,
+      "other_independently_qualified_DAT": null
+    },
+    {
+      "floor_id": 300,
+      "quest05_source_CREATE_count": 6,
+      "quest05_source_cohorts": {
+        "QUEST01": 1,
+        "QUEST02": 5
+      },
+      "quest05_CREATE_ref_indices": [
+        91,
+        387,
+        388,
+        482,
+        483,
+        484
+      ],
+      "source_MAP_status": "MAP_EXTRACTION_ERROR_ONLY",
+      "source_MAP_full_original_rows": [],
+      "source_MAP_original_read_errors": [
+        {
+          "group": 0,
+          "original_filename": "300.MAP",
+          "expected_member_bytes": 720008,
+          "emitted_before_error": 655360,
+          "error_tag": "File CRC error"
+        },
+        {
+          "group": 1,
+          "original_filename": "300.MAP",
+          "expected_member_bytes": 720008,
+          "emitted_before_error": 655360,
+          "error_tag": "File CRC error"
+        }
+      ],
+      "source_DAT_status": "INDEXED_DAT_READ_ERROR",
+      "source_DAT_full_MAP01_rows": [],
+      "source_DAT_original_read_errors": [
+        {
+          "group": 0,
+          "original_filename": "300.DAT",
+          "expected_member_bytes": 2160008,
+          "emitted_before_error": 262144,
+          "error_tag": "Parsing filters is unsupported."
+        }
+      ],
+      "source_DAT_member_size_formula_consistent": true,
+      "other_independently_qualified_DAT": null
+    },
+    {
+      "floor_id": 400,
+      "quest05_source_CREATE_count": 4,
+      "quest05_source_cohorts": {
+        "QUEST03": 4
+      },
+      "quest05_CREATE_ref_indices": [
+        547,
+        548,
+        549,
+        550
+      ],
+      "source_MAP_status": "TWO_MAP_COPIES_DIFFERENT_SHA",
+      "source_MAP_full_original_rows": [
+        {
+          "group": 0,
+          "original_filename": "400.MAP",
+          "original_bytes": 44708,
+          "source_sha256": "071b9e3c014a6ca4c888cbe8d7c7f109f75f1d981d4ad03f4e0ef29312cd5b45",
+          "original_crc32": "6c68b62b",
+          "candidate_width": 150,
+          "candidate_height": 149
+        },
+        {
+          "group": 1,
+          "original_filename": "400.MAP",
+          "original_bytes": 44708,
+          "source_sha256": "04d0d8308359bd9e087352eaad2982e8258d54163b167387e1fe8b5bdec0b8ee",
+          "original_crc32": "eb4ca6cf",
+          "candidate_width": 150,
+          "candidate_height": 149
+        }
+      ],
+      "source_MAP_original_read_errors": [],
+      "source_DAT_status": "INDEXED_DAT_READ_ERROR",
+      "source_DAT_full_MAP01_rows": [],
+      "source_DAT_original_read_errors": [
+        {
+          "group": 0,
+          "original_filename": "400.DAT",
+          "expected_member_bytes": 134108,
+          "emitted_before_error": 131072,
+          "error_tag": "File CRC error"
+        }
+      ],
+      "source_DAT_member_size_formula_consistent": true,
+      "other_independently_qualified_DAT": null
+    },
+    {
+      "floor_id": 500,
+      "quest05_source_CREATE_count": 12,
+      "quest05_source_cohorts": {
+        "QUEST01": 8,
+        "QUEST02": 4
+      },
+      "quest05_CREATE_ref_indices": [
+        199,
+        200,
+        201,
+        202,
+        203,
+        208,
+        214,
+        215,
+        358,
+        359,
+        360,
+        501
+      ],
+      "source_MAP_status": "MAP_EXTRACTION_ERROR_ONLY",
+      "source_MAP_full_original_rows": [],
+      "source_MAP_original_read_errors": [
+        {
+          "group": 0,
+          "original_filename": "500.MAP",
+          "expected_member_bytes": 1280008,
+          "emitted_before_error": 1245184,
+          "error_tag": "File CRC error"
+        },
+        {
+          "group": 1,
+          "original_filename": "500.MAP",
+          "expected_member_bytes": 1280008,
+          "emitted_before_error": 1245184,
+          "error_tag": "File CRC error"
+        }
+      ],
+      "source_DAT_status": "INDEXED_DAT_READ_ERROR",
+      "source_DAT_full_MAP01_rows": [],
+      "source_DAT_original_read_errors": [
+        {
+          "group": 0,
+          "original_filename": "500.DAT",
+          "expected_member_bytes": 3840008,
+          "emitted_before_error": 720896,
+          "error_tag": "Internal error extracting RAR file"
+        }
+      ],
+      "source_DAT_member_size_formula_consistent": true,
+      "other_independently_qualified_DAT": null
+    },
+    {
+      "floor_id": 830,
+      "quest05_source_CREATE_count": 2,
+      "quest05_source_cohorts": {
+        "QUEST02": 2
+      },
+      "quest05_CREATE_ref_indices": [
+        453,
+        454
+      ],
+      "source_MAP_status": "NO_SELECTED_MAP_MEMBER",
+      "source_MAP_full_original_rows": [],
+      "source_MAP_original_read_errors": [],
+      "source_DAT_status": "NO_SELECTED_DAT_MEMBER",
+      "source_DAT_full_MAP01_rows": [],
+      "source_DAT_original_read_errors": [],
+      "source_DAT_member_size_formula_consistent": null,
+      "other_independently_qualified_DAT": null
+    },
+    {
+      "floor_id": 1000,
+      "quest05_source_CREATE_count": 19,
+      "quest05_source_cohorts": {
+        "QUEST01": 7,
+        "QUEST02": 2,
+        "QUEST03": 10
+      },
+      "quest05_CREATE_ref_indices": [
+        5,
+        229,
+        241,
+        253,
+        284,
+        285,
+        309,
+        373,
+        503,
+        517,
+        518,
+        519,
+        520,
+        521,
+        522,
+        523,
+        524,
+        525,
+        526
+      ],
+      "source_MAP_status": "TWO_MAP_COPIES_SAME_SHA",
+      "source_MAP_full_original_rows": [
+        {
+          "group": 0,
+          "original_filename": "1000.MAP",
+          "original_bytes": 51208,
+          "source_sha256": "6cda7b50c94aa2ea77bbef48a364c39ad96e8fd154cc1858418dac64e26539b4",
+          "original_crc32": "a0ac4dad",
+          "candidate_width": 160,
+          "candidate_height": 160
+        },
+        {
+          "group": 1,
+          "original_filename": "1000.MAP",
+          "original_bytes": 51208,
+          "source_sha256": "6cda7b50c94aa2ea77bbef48a364c39ad96e8fd154cc1858418dac64e26539b4",
+          "original_crc32": "a0ac4dad",
+          "candidate_width": 160,
+          "candidate_height": 160
+        }
+      ],
+      "source_MAP_original_read_errors": [],
+      "source_DAT_status": "VERIFIED_INDEPENDENT_DAT",
+      "source_DAT_full_MAP01_rows": [],
+      "source_DAT_original_read_errors": [
+        {
+          "group": 0,
+          "original_filename": "1000.DAT",
+          "expected_member_bytes": 153608,
+          "emitted_before_error": 131072,
+          "error_tag": "File CRC error"
+        }
+      ],
+      "source_DAT_member_size_formula_consistent": true,
+      "other_independently_qualified_DAT": {
+        "source_origin": "O31-original-mixed25-RAR-verified-replay",
+        "bytes": 153608,
+        "sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+        "width": 160,
+        "height": 160
+      }
+    },
+    {
+      "floor_id": 1100,
+      "quest05_source_CREATE_count": 2,
+      "quest05_source_cohorts": {
+        "QUEST01": 2
+      },
+      "quest05_CREATE_ref_indices": [
+        261,
+        286
+      ],
+      "source_MAP_status": "TWO_MAP_COPIES_SAME_SHA",
+      "source_MAP_full_original_rows": [
+        {
+          "group": 0,
+          "original_filename": "1100.MAP",
+          "original_bytes": 39008,
+          "source_sha256": "d77dc9da28c2032bc102031b017e78f8299b78c65f9b8bcf121d883a8856716d",
+          "original_crc32": "f57b8ca9",
+          "candidate_width": 130,
+          "candidate_height": 150
+        },
+        {
+          "group": 1,
+          "original_filename": "1100.MAP",
+          "original_bytes": 39008,
+          "source_sha256": "d77dc9da28c2032bc102031b017e78f8299b78c65f9b8bcf121d883a8856716d",
+          "original_crc32": "f57b8ca9",
+          "candidate_width": 130,
+          "candidate_height": 150
+        }
+      ],
+      "source_MAP_original_read_errors": [],
+      "source_DAT_status": "INDEXED_DAT_READ_ERROR",
+      "source_DAT_full_MAP01_rows": [],
+      "source_DAT_original_read_errors": [
+        {
+          "group": 0,
+          "original_filename": "1100.DAT",
+          "expected_member_bytes": 117008,
+          "emitted_before_error": 65536,
+          "error_tag": "File CRC error"
+        }
+      ],
+      "source_DAT_member_size_formula_consistent": true,
+      "other_independently_qualified_DAT": null
+    },
+    {
+      "floor_id": 1300,
+      "quest05_source_CREATE_count": 6,
+      "quest05_source_cohorts": {
+        "QUEST01": 4,
+        "QUEST03": 2
+      },
+      "quest05_CREATE_ref_indices": [
+        11,
+        255,
+        257,
+        293,
+        528,
+        529
+      ],
+      "source_MAP_status": "TWO_MAP_COPIES_SAME_SHA",
+      "source_MAP_full_original_rows": [
+        {
+          "group": 0,
+          "original_filename": "1300.MAP",
+          "original_bytes": 20008,
+          "source_sha256": "a3b25cf753056886f7cd0b8293bade2db0ab917ac4474df9278333e11a882235",
+          "original_crc32": "fc9288d2",
+          "candidate_width": 100,
+          "candidate_height": 100
+        },
+        {
+          "group": 1,
+          "original_filename": "1300.MAP",
+          "original_bytes": 20008,
+          "source_sha256": "a3b25cf753056886f7cd0b8293bade2db0ab917ac4474df9278333e11a882235",
+          "original_crc32": "fc9288d2",
+          "candidate_width": 100,
+          "candidate_height": 100
+        }
+      ],
+      "source_MAP_original_read_errors": [],
+      "source_DAT_status": "INDEXED_DAT_READ_ERROR",
+      "source_DAT_full_MAP01_rows": [],
+      "source_DAT_original_read_errors": [
+        {
+          "group": 0,
+          "original_filename": "1300.DAT",
+          "expected_member_bytes": 60008,
+          "emitted_before_error": 0,
+          "error_tag": "File CRC error"
+        }
+      ],
+      "source_DAT_member_size_formula_consistent": true,
+      "other_independently_qualified_DAT": null
+    },
+    {
+      "floor_id": 3000,
+      "quest05_source_CREATE_count": 7,
+      "quest05_source_cohorts": {
+        "QUEST01": 6,
+        "QUEST02": 1
+      },
+      "quest05_CREATE_ref_indices": [
+        7,
+        103,
+        145,
+        146,
+        171,
+        243,
+        375
+      ],
+      "source_MAP_status": "MAP_EXTRACTION_ERROR_ONLY",
+      "source_MAP_full_original_rows": [],
+      "source_MAP_original_read_errors": [
+        {
+          "group": 0,
+          "original_filename": "3000.MAP",
+          "expected_member_bytes": 45008,
+          "emitted_before_error": 0,
+          "error_tag": "File CRC error"
+        },
+        {
+          "group": 1,
+          "original_filename": "3000.MAP",
+          "expected_member_bytes": 45008,
+          "emitted_before_error": 0,
+          "error_tag": "File CRC error"
+        }
+      ],
+      "source_DAT_status": "INDEXED_DAT_READ_ERROR",
+      "source_DAT_full_MAP01_rows": [],
+      "source_DAT_original_read_errors": [
+        {
+          "group": 0,
+          "original_filename": "3000.dat",
+          "expected_member_bytes": 135008,
+          "emitted_before_error": 131072,
+          "error_tag": "File CRC error"
+        }
+      ],
+      "source_DAT_member_size_formula_consistent": true,
+      "other_independently_qualified_DAT": null
+    },
+    {
+      "floor_id": 3400,
+      "quest05_source_CREATE_count": 3,
+      "quest05_source_cohorts": {
+        "QUEST01": 3
+      },
+      "quest05_CREATE_ref_indices": [
+        131,
+        138,
+        157
+      ],
+      "source_MAP_status": "TWO_MAP_COPIES_SAME_SHA",
+      "source_MAP_full_original_rows": [
+        {
+          "group": 0,
+          "original_filename": "3400.MAP",
+          "original_bytes": 28808,
+          "source_sha256": "5145335b11bf8b0ae03c7634b6dacc471220c42946da76a17016fb7a95d46bbd",
+          "original_crc32": "8b6c3b59",
+          "candidate_width": 120,
+          "candidate_height": 120
+        },
+        {
+          "group": 1,
+          "original_filename": "3400.MAP",
+          "original_bytes": 28808,
+          "source_sha256": "5145335b11bf8b0ae03c7634b6dacc471220c42946da76a17016fb7a95d46bbd",
+          "original_crc32": "8b6c3b59",
+          "candidate_width": 120,
+          "candidate_height": 120
+        }
+      ],
+      "source_MAP_original_read_errors": [],
+      "source_DAT_status": "INDEXED_DAT_READ_ERROR",
+      "source_DAT_full_MAP01_rows": [],
+      "source_DAT_original_read_errors": [
+        {
+          "group": 0,
+          "original_filename": "3400.DAT",
+          "expected_member_bytes": 86408,
+          "emitted_before_error": 65536,
+          "error_tag": "File CRC error"
+        }
+      ],
+      "source_DAT_member_size_formula_consistent": true,
+      "other_independently_qualified_DAT": null
+    },
+    {
+      "floor_id": 6000,
+      "quest05_source_CREATE_count": 2,
+      "quest05_source_cohorts": {
+        "QUEST01": 2
+      },
+      "quest05_CREATE_ref_indices": [
+        10,
+        313
+      ],
+      "source_MAP_status": "TWO_MAP_COPIES_SAME_SHA",
+      "source_MAP_full_original_rows": [
+        {
+          "group": 0,
+          "original_filename": "6000.MAP",
+          "original_bytes": 21536,
+          "source_sha256": "37361c4bc739bb7595e176262358bae43ed04710d5bbe039b7bde5baa4b6530f",
+          "original_crc32": "313d2bf4",
+          "candidate_width": 92,
+          "candidate_height": 117
+        },
+        {
+          "group": 1,
+          "original_filename": "6000.MAP",
+          "original_bytes": 21536,
+          "source_sha256": "37361c4bc739bb7595e176262358bae43ed04710d5bbe039b7bde5baa4b6530f",
+          "original_crc32": "313d2bf4",
+          "candidate_width": 92,
+          "candidate_height": 117
+        }
+      ],
+      "source_MAP_original_read_errors": [],
+      "source_DAT_status": "INDEXED_DAT_READ_ERROR",
+      "source_DAT_full_MAP01_rows": [],
+      "source_DAT_original_read_errors": [
+        {
+          "group": 0,
+          "original_filename": "6000.DAT",
+          "expected_member_bytes": 64592,
+          "emitted_before_error": 0,
+          "error_tag": "File CRC error"
+        }
+      ],
+      "source_DAT_member_size_formula_consistent": true,
+      "other_independently_qualified_DAT": null
+    },
+    {
+      "floor_id": 10920,
+      "quest05_source_CREATE_count": 2,
+      "quest05_source_cohorts": {
+        "QUEST01": 2
+      },
+      "quest05_CREATE_ref_indices": [
+        249,
+        250
+      ],
+      "source_MAP_status": "TWO_MAP_COPIES_SAME_SHA",
+      "source_MAP_full_original_rows": [
+        {
+          "group": 0,
+          "original_filename": "10920.MAP",
+          "original_bytes": 20008,
+          "source_sha256": "1d2817b49dae6299742345f125163a0088aa7b3a5fba29c8124fd0398f671da9",
+          "original_crc32": "952cd6a6",
+          "candidate_width": 100,
+          "candidate_height": 100
+        },
+        {
+          "group": 1,
+          "original_filename": "10920.MAP",
+          "original_bytes": 20008,
+          "source_sha256": "1d2817b49dae6299742345f125163a0088aa7b3a5fba29c8124fd0398f671da9",
+          "original_crc32": "952cd6a6",
+          "candidate_width": 100,
+          "candidate_height": 100
+        }
+      ],
+      "source_MAP_original_read_errors": [],
+      "source_DAT_status": "INDEXED_DAT_READ_ERROR",
+      "source_DAT_full_MAP01_rows": [],
+      "source_DAT_original_read_errors": [
+        {
+          "group": 0,
+          "original_filename": "10920.DAT",
+          "expected_member_bytes": 60008,
+          "emitted_before_error": 0,
+          "error_tag": "File CRC error"
+        }
+      ],
+      "source_DAT_member_size_formula_consistent": true,
+      "other_independently_qualified_DAT": null
+    }
+  ],
+  "evidence_limits": {
+    "published_original_commercial_bytes": false,
+    "new_original_DAT_bytes_read_this_round": 0,
+    "new_original_MAP_bytes_read_this_round": 0,
+    "original_830_DAT_proven_nonexistent": false,
+    "original_DAT_archive_corruption_proven": false,
+    "failed_member_partial_bytes_claimed_qualified": false,
+    "original_native_world_playable": false,
+    "original_npc_created_at_runtime": false,
+    "early_official_same_deployment": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "status": "SOURCE_BOUNDED_PARTIAL",
+  "next": "STAGE_A_REPRESENTATIVE_PLAY_PATH_GAP_REVIEW_OR_SOURCE_QUALIFIED_WORLD_CONTENT_WITH_NEW_BYTES; reopen failed DAT only with a matching complete CRC/SHA-qualified original source, no invented bytes"
+}

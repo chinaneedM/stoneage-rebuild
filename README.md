@@ -2215,3 +2215,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-08 — INTEGRATION06｜地图1300来源读取缺口与六原NPC创建点
 
 [INTEGRATION06原1300.MAP/DAT资格及跨任务关系](docs/continuity/STONEAGE-INTEGRATION06-MAP1300-QUALIFICATION-20261108.md)：新联合复核已公开 MAP01/QUEST05/QUEST19/25/27/31 六份SHA固定派生证据。同一保存RAR中1300.MAP组0/1各20008B、整SHA一致、100×100头信息候选；1300.DAT原RAR目录记60008B，但旧 libarchive 原“File CRC error”、实际读取0B，不能把“本955已验DAT无匹配”认作“原游戏没有地图”，也不能从MAP补造DAT。QUEST05六条创建：QUEST19寄信、QUEST25环岛检查站、QUEST27斧头感谢函、QUEST31事件9–12四条ExChangeMan源关联以及两条QUEST03 Timeman共享参数；六是配置，不是游戏实际NPC人口。公开[来源索引](research/recovered/STONEAGE-INTEGRATION06-MAP1300-MAP-DAT-SIX-CREATE-SOURCE-R1.json)及5项重算测试，不增原像素、原脚本、原程序运行或早期官方身份证。CURRENT历史blob c89e0e33537990aa2132b47c40fef49a985a935c完整不变；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、完成率未知。**NEXT Stage A跨模块材料缺口审阅**；正式验收以CI后验为准。
+
+
+## 2026-11-08 — INTEGRATION07｜14份未匹配DAT楼层的真实来源分类与大小写漏项
+
+[INTEGRATION07全部14楼层、88原CREATE源数与MAP/DAT资格](docs/continuity/STONEAGE-INTEGRATION07-14-MISSING-DAT-QUALIFICATION-20261108.md)：复用QUEST05、MAP01、MAP02及INTEGRATION06已发表源SHA目录，实际查得QUEST05对955原DAT缺匹配的14层/88配置可细分为：1000独立已验完整DAT（19创建）、12层有原DAT目录及原解包失败（67创建）、830本选定来源无MAP/DAT成员（2创建）。**200.dat／3000.dat原错误名小写**，遗漏大小写会错判无记录；400.MAP两组完整原字节SHA不同，不可合并同图；13个原DAT错误长度与MAP成员尺寸公式相合不是成功解码。公开[来源守恒索引](research/recovered/STONEAGE-INTEGRATION07-FOURTEEN-UNMATCHED-DAT-QUALIFICATION-R1.json)、10项回归，不新取原DAT或启动原程序，不补造地图。原CURRENT全文保留，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体完成率未知。最高NEXT Stage A代表性玩家路径跨模块联合审查；CI合并后验另记。

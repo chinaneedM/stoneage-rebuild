@@ -1,0 +1,26 @@
+name: Verify StoneAge INTEGRATION07 original DAT fourteen-floor source crosswalk
+on:
+  push:
+    paths:
+      - 'tools/stoneage_integration07_missing_dat_audit.py'
+      - 'tests/test_stoneage_integration_module_07.py'
+      - 'research/recovered/STONEAGE-INTEGRATION07-FOURTEEN-UNMATCHED-DAT-QUALIFICATION-R1.json'
+      - '.github/workflows/verify-stoneage-integration07-floor-dat.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_integration07_missing_dat_audit.py'
+      - 'tests/test_stoneage_integration_module_07.py'
+      - 'research/recovered/STONEAGE-INTEGRATION07-FOURTEEN-UNMATCHED-DAT-QUALIFICATION-R1.json'
+      - '.github/workflows/verify-stoneage-integration07-floor-dat.yml'
+jobs:
+  public-derived-dat-provenance:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_07.py' -v
+      - run: python -m tools.stoneage_integration07_missing_dat_audit
