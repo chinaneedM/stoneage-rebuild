@@ -51,6 +51,10 @@ on:
       - 'tools/stoneage_quest16_axe_wood_source.py'
       - 'tests/test_stoneage_quest16_axe_wood_source.py'
       - 'docs/continuity/STONEAGE-QUEST16-AXE-WOOD-SOURCE-20261108.md'
+      - 'research/recovered/STONEAGE-QUEST17-DINO-RANCH-SOURCE-R1.json'
+      - 'tools/stoneage_quest17_dino_ranch_source.py'
+      - 'tests/test_stoneage_quest17_dino_ranch_source.py'
+      - 'docs/continuity/STONEAGE-QUEST17-DINO-RANCH-ORIGINAL-SOURCE-20261108.md'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   pull_request:
     paths:
@@ -95,6 +99,10 @@ on:
       - 'tools/stoneage_quest16_axe_wood_source.py'
       - 'tests/test_stoneage_quest16_axe_wood_source.py'
       - 'docs/continuity/STONEAGE-QUEST16-AXE-WOOD-SOURCE-20261108.md'
+      - 'research/recovered/STONEAGE-QUEST17-DINO-RANCH-SOURCE-R1.json'
+      - 'tools/stoneage_quest17_dino_ranch_source.py'
+      - 'tests/test_stoneage_quest17_dino_ranch_source.py'
+      - 'docs/continuity/STONEAGE-QUEST17-DINO-RANCH-ORIGINAL-SOURCE-20261108.md'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   workflow_dispatch:
 
@@ -129,3 +137,5 @@ jobs:
         run: python -m unittest tests.test_stoneage_quest15_bandit_source -v
       - name: Validate QUEST16 original axe, water and wood trade source limits
         run: python -m unittest tests.test_stoneage_quest16_axe_wood_source -v
+      - name: Validate QUEST17 original dinosaur-ranch pet, voucher and payout source bounds
+        run: python -m unittest tests.test_stoneage_quest17_dino_ranch_source -v
