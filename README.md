@@ -2125,3 +2125,7 @@ Rechecked the preserved mixed25 RAR and verified the 23 previously pinned origin
 ## 2026-11-08 — QUEST12｜矿山比赛、采矿权与原许可证入口
 
 [QUEST12 真实来源与有界止点](docs/continuity/STONEAGE-QUEST12-MINING-COMPETITION-ORIGINAL-SOURCE-20261108.md)：重新回读后期社区 mixed25 私人原档 2,205 成员全 SHA/CRC，恢复 2 名原角色的 13 段任务脚本、1 矿工参数、21 个同名外围 CREATE（其中仅 1 个许可证入口），以及 31805/31806 两份原 DAT 的五处源格。8 件有关物品原 15 行来自既存 ITEM01 源表，原图源身份分离。静态数据表明原入口要求 2527 并指向 31806/(34,6)；全 2,205 文件的 GetItem 字面扫描没有 2533/2534 的发放行，不得据此补造取得路径或宣称所有官方版本不存在。人物与地图真正运行、胜负掉物、原版/活动属性均未认证。公开只存[派生数字/原来源 SHA](research/recovered/STONEAGE-QUEST12-MINING-COMPETITION-ORIGINAL-SOURCE-R1.json)与可复核测试，原游戏素材留私人，完整旧 CURRENT 不变；Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、总体百分比未知。NEXT 按 QUEST 模块对未复原的来源就绪任务族查重择一，不重复 QUEST12。
+
+## 2026-11-08 — QUEST13｜哥亚山洞窟乌力送信、花朵与回信
+
+[QUEST13 原配置、道具、六张真实 DAT 与来源界限](docs/continuity/STONEAGE-QUEST13-GOA-ULI-LETTERS-ORIGINAL-SOURCE-20261108.md)：从已验证的后期社区 mixed25 私人 2,205 个 NPC 原文件中读取 11 份本族原创建／参数，10 个 CREATE 点分布于 20401–20406 的六份真实原 DAT；16 个事件段的源 TYPE/条件散列逐项与既有 QUEST01 目录相同，不重复当新发现。原字面连接 2414/2425/2424/2426/1206 五道具（两份原物品表共 10 原行）；2425/2426 同用原图候选别名 24222 但不是同道具，全部五 ID 仅有跨保存来源的 TW1 候选 RD 图，非原版同部署。私人原文／6 场景标记与原图候选 40 成员包 219161B／SHA256 c6f86d050b22ab6fe3f6e56b8062fc21cbb576ace521a1d7752a12d0845773cd 已上传并回读同 SHA/CRC。公开仅[原来源限定 JSON](research/recovered/STONEAGE-QUEST13-GOA-ULI-LETTERS-ORIGINAL-SOURCE-R1.json)、工具及 9 项回归；原脚本、DAT、图像不入 Git。原生任务选择、数量执行、NPC 行为、历史官方身份均未认证；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79 暂停、总体百分比未知。最高 NEXT QUEST14 三龙／龙之巢穴族，先按新远端及来源查重。

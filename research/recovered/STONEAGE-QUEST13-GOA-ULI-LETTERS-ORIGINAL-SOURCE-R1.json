@@ -1,0 +1,1142 @@
+{
+  "schema": "stoneage.quest13.goa_uli_letters_source.r1",
+  "date": "2026-11-08",
+  "origin_class": "ORIGIN_UNRESOLVED",
+  "carrier": "LATER_COMMUNITY_MIXED25_NOT_OFFICIAL_DEPLOYMENT",
+  "verified_original_NPC_members": 2205,
+  "source_archive_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+  "original_parent_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "private_item_archive_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+  "private_map_archive_sha256": "d84d0800dd600798769dfb7251a1d7816588ac061ccc27812ac64a37922d4a8a",
+  "source_manifest_git_blob_sha1": "a088b61a3212f7049e7793f587123ffb29bebad7",
+  "prior_quest01_catalog_git_blob_sha1": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2",
+  "source_files": [
+    {
+      "path": "jaruga/event/event07_1",
+      "original_bytes": 1331,
+      "sha256": "240b89e05ff0c40f36cae0200525560924b1693e1a08dc9bcc0aa1811df3c121",
+      "crc32": "8c78fde3"
+    },
+    {
+      "path": "jaruga/event/event07_10",
+      "original_bytes": 299,
+      "sha256": "0a4cd66b630376a82e76742eea78e7755ed16fefe97171f628da9fe398058eda",
+      "crc32": "7b538b81"
+    },
+    {
+      "path": "jaruga/event/event07_2",
+      "original_bytes": 982,
+      "sha256": "4725b09a3b84c17861da734593115efe95c57c0339627d430efa178c8c0a1c26",
+      "crc32": "db73bf74"
+    },
+    {
+      "path": "jaruga/event/event07_3",
+      "original_bytes": 590,
+      "sha256": "02f5c1889c3077a6ccf44144ce089a5b530278f8908c6cc2216c0dba93828fcf",
+      "crc32": "0177f9a7"
+    },
+    {
+      "path": "jaruga/event/event07_4",
+      "original_bytes": 285,
+      "sha256": "f8c3d049267d3f4216ba6cad1ab70eb291751437d76024a9e5e25c15adcfb458",
+      "crc32": "fa349470"
+    },
+    {
+      "path": "jaruga/event/event07_5",
+      "original_bytes": 292,
+      "sha256": "71c7ec5aa519fae65229c10ae425a9e1e3052fc2bfe72bb624517b0e42cfb0e1",
+      "crc32": "2d8440ff"
+    },
+    {
+      "path": "jaruga/event/event07_6",
+      "original_bytes": 298,
+      "sha256": "b0aa453d7a1a49b6946b0153510781735c88b4110321ca28971105dbd09d93d3",
+      "crc32": "42bb0305"
+    },
+    {
+      "path": "jaruga/event/event07_7",
+      "original_bytes": 280,
+      "sha256": "26a009dc38044c8489bdc017a92d3104e6c9dcba49dec54fea2d31070b7be395",
+      "crc32": "d7d8628a"
+    },
+    {
+      "path": "jaruga/event/event07_8",
+      "original_bytes": 289,
+      "sha256": "a190d6402f39dba403e2d5844d84eb520e8907a2c43232e426d600b632f92f92",
+      "crc32": "440f7e23"
+    },
+    {
+      "path": "jaruga/event/event07_9",
+      "original_bytes": 311,
+      "sha256": "62931dbbaa393095c4d6693df4704d1367bf27849ff3617ed785edd16f27b274",
+      "crc32": "e162419d"
+    },
+    {
+      "path": "jaruga/event/event07n.create",
+      "original_bytes": 1827,
+      "sha256": "c531b957a791269575fc6cc71ae854702b2d86ea54d7bf8a6e8ca25d12a41320",
+      "crc32": "7f5d2561"
+    }
+  ],
+  "original_create_rows": [
+    {
+      "path": "jaruga/event/event07n.create",
+      "ordinal": 0,
+      "start_byte": 180,
+      "end_byte": 344,
+      "original_block_sha256": "c8f39826167b46ed9b9fcf8043cb641f3f42ddb0a1ad5090f5391fa5d97b4705",
+      "floor": 20401,
+      "xy": [
+        14,
+        10
+      ],
+      "original_borncorner": [
+        14,
+        10,
+        14,
+        10
+      ],
+      "graphic_alias": 100252,
+      "original_direction": 4,
+      "template_token": "changeevent",
+      "original_template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "source_script": "jaruga/event/event07_1",
+      "source_script_sha256": "240b89e05ff0c40f36cae0200525560924b1693e1a08dc9bcc0aa1811df3c121"
+    },
+    {
+      "path": "jaruga/event/event07n.create",
+      "ordinal": 1,
+      "start_byte": 345,
+      "end_byte": 509,
+      "original_block_sha256": "d1ae0e4ec01c22a72b3ea601b1278038264e77fd7e7b92cb5f33912fd48a5fbc",
+      "floor": 20404,
+      "xy": [
+        44,
+        13
+      ],
+      "original_borncorner": [
+        44,
+        13,
+        44,
+        13
+      ],
+      "graphic_alias": 100252,
+      "original_direction": 0,
+      "template_token": "changeevent",
+      "original_template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "source_script": "jaruga/event/event07_3",
+      "source_script_sha256": "02f5c1889c3077a6ccf44144ce089a5b530278f8908c6cc2216c0dba93828fcf"
+    },
+    {
+      "path": "jaruga/event/event07n.create",
+      "ordinal": 2,
+      "start_byte": 511,
+      "end_byte": 673,
+      "original_block_sha256": "36810158566329dda265cf8fd9f0287afd33283554e5467d5032a0091edc3df4",
+      "floor": 20406,
+      "xy": [
+        36,
+        34
+      ],
+      "original_borncorner": [
+        36,
+        34,
+        36,
+        34
+      ],
+      "graphic_alias": 100250,
+      "original_direction": 6,
+      "template_token": "changeevent",
+      "original_template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "source_script": "jaruga/event/event07_2",
+      "source_script_sha256": "4725b09a3b84c17861da734593115efe95c57c0339627d430efa178c8c0a1c26"
+    },
+    {
+      "path": "jaruga/event/event07n.create",
+      "ordinal": 3,
+      "start_byte": 675,
+      "end_byte": 837,
+      "original_block_sha256": "4cf0f5ca2a5a2446f797e0508358d806e98bece16b04da06aaba47b7b5dd2ed6",
+      "floor": 20401,
+      "xy": [
+        30,
+        26
+      ],
+      "original_borncorner": [
+        30,
+        26,
+        30,
+        26
+      ],
+      "graphic_alias": 100250,
+      "original_direction": 6,
+      "template_token": "changeevent",
+      "original_template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "source_script": "jaruga/event/event07_4",
+      "source_script_sha256": "f8c3d049267d3f4216ba6cad1ab70eb291751437d76024a9e5e25c15adcfb458"
+    },
+    {
+      "path": "jaruga/event/event07n.create",
+      "ordinal": 4,
+      "start_byte": 839,
+      "end_byte": 1001,
+      "original_block_sha256": "27b3cfd4329f5e2a308cd3219b04beec0343bd3d5215a87e3829085e4cdf455f",
+      "floor": 20402,
+      "xy": [
+        25,
+        18
+      ],
+      "original_borncorner": [
+        25,
+        18,
+        25,
+        18
+      ],
+      "graphic_alias": 100250,
+      "original_direction": 4,
+      "template_token": "changeevent",
+      "original_template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "source_script": "jaruga/event/event07_5",
+      "source_script_sha256": "71c7ec5aa519fae65229c10ae425a9e1e3052fc2bfe72bb624517b0e42cfb0e1"
+    },
+    {
+      "path": "jaruga/event/event07n.create",
+      "ordinal": 5,
+      "start_byte": 1003,
+      "end_byte": 1165,
+      "original_block_sha256": "a0aa472a8b14be101b9e2c53e4b17c533e5863d0f506a648b578675013067073",
+      "floor": 20403,
+      "xy": [
+        19,
+        19
+      ],
+      "original_borncorner": [
+        19,
+        19,
+        19,
+        19
+      ],
+      "graphic_alias": 100252,
+      "original_direction": 6,
+      "template_token": "changeevent",
+      "original_template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "source_script": "jaruga/event/event07_6",
+      "source_script_sha256": "b0aa453d7a1a49b6946b0153510781735c88b4110321ca28971105dbd09d93d3"
+    },
+    {
+      "path": "jaruga/event/event07n.create",
+      "ordinal": 6,
+      "start_byte": 1167,
+      "end_byte": 1329,
+      "original_block_sha256": "df551e710cc0b3f6918294f4f2fe28dd59e5c099f3c0c4fb7bc745b555eb5aef",
+      "floor": 20404,
+      "xy": [
+        24,
+        36
+      ],
+      "original_borncorner": [
+        24,
+        36,
+        24,
+        36
+      ],
+      "graphic_alias": 100250,
+      "original_direction": 4,
+      "template_token": "changeevent",
+      "original_template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "source_script": "jaruga/event/event07_7",
+      "source_script_sha256": "26a009dc38044c8489bdc017a92d3104e6c9dcba49dec54fea2d31070b7be395"
+    },
+    {
+      "path": "jaruga/event/event07n.create",
+      "ordinal": 7,
+      "start_byte": 1331,
+      "end_byte": 1493,
+      "original_block_sha256": "1c6756734e5ad8d30e21550095e93081f062a8533bd5d5342da3b6d183a97320",
+      "floor": 20405,
+      "xy": [
+        40,
+        32
+      ],
+      "original_borncorner": [
+        40,
+        32,
+        40,
+        32
+      ],
+      "graphic_alias": 100252,
+      "original_direction": 4,
+      "template_token": "changeevent",
+      "original_template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "source_script": "jaruga/event/event07_9",
+      "source_script_sha256": "62931dbbaa393095c4d6693df4704d1367bf27849ff3617ed785edd16f27b274"
+    },
+    {
+      "path": "jaruga/event/event07n.create",
+      "ordinal": 8,
+      "start_byte": 1496,
+      "end_byte": 1658,
+      "original_block_sha256": "8f1ac437bdf069c6bfd454774b1814b527c76f49e5dce6c5d9e99b702e2938a5",
+      "floor": 20406,
+      "xy": [
+        20,
+        25
+      ],
+      "original_borncorner": [
+        20,
+        25,
+        20,
+        25
+      ],
+      "graphic_alias": 100252,
+      "original_direction": 5,
+      "template_token": "changeevent",
+      "original_template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "source_script": "jaruga/event/event07_8",
+      "source_script_sha256": "a190d6402f39dba403e2d5844d84eb520e8907a2c43232e426d600b632f92f92"
+    },
+    {
+      "path": "jaruga/event/event07n.create",
+      "ordinal": 9,
+      "start_byte": 1660,
+      "end_byte": 1823,
+      "original_block_sha256": "4c9180e41a7fb06c94ef575e7f536da7f91d1efc3cefc8bb6ed90cdf65f19768",
+      "floor": 20406,
+      "xy": [
+        17,
+        38
+      ],
+      "original_borncorner": [
+        17,
+        38,
+        17,
+        38
+      ],
+      "graphic_alias": 100250,
+      "original_direction": 4,
+      "template_token": "changeevent",
+      "original_template_bindings": [
+        [
+          "jaruga/event/event.template",
+          0
+        ]
+      ],
+      "source_script": "jaruga/event/event07_10",
+      "source_script_sha256": "0a4cd66b630376a82e76742eea78e7755ed16fefe97171f628da9fe398058eda"
+    }
+  ],
+  "scripts": [
+    {
+      "path": "jaruga/event/event07_1",
+      "bytes": 1331,
+      "sha256": "240b89e05ff0c40f36cae0200525560924b1693e1a08dc9bcc0aa1811df3c121",
+      "crc32": "8c78fde3",
+      "events": [
+        {
+          "ordinal": 0,
+          "source_start_line": 8,
+          "source_start_byte": 193,
+          "event_number": 8,
+          "commands": [
+            {
+              "key": "GetItem",
+              "raw_operand": "1206",
+              "operands": [
+                {
+                  "item_id": 1206,
+                  "explicit_quantity": null
+                }
+              ]
+            },
+            {
+              "key": "DelItem",
+              "raw_operand": "2426",
+              "operands": [
+                {
+                  "item_id": 2426,
+                  "explicit_quantity": null
+                }
+              ]
+            },
+            {
+              "key": "EndSetFlg",
+              "raw_operand": "8",
+              "value": 8
+            }
+          ],
+          "messages_seen": [
+            "AcceptMsg",
+            "ThanksMsg",
+            "ItemFullMsg"
+          ],
+          "type": "ACCEPT",
+          "raw_condition": "NOWEV=8&ITEM=2414&ITEM=2426",
+          "source_end_line": 17,
+          "source_end_byte": 527,
+          "source_block_sha256": "b52d54695c2ffb18d19e6f2d2c4248d08bd0dae3d8c8010228b2fe58d6c13fb8"
+        },
+        {
+          "ordinal": 1,
+          "source_start_line": 20,
+          "source_start_byte": 529,
+          "event_number": 7,
+          "commands": [
+            {
+              "key": "GetItem",
+              "raw_operand": "2425",
+              "operands": [
+                {
+                  "item_id": 2425,
+                  "explicit_quantity": null
+                }
+              ]
+            }
+          ],
+          "messages_seen": [
+            "RequestMsg",
+            "ThanksMsg",
+            "ItemFullMsg",
+            "StopMsg",
+            "EndStopMsg",
+            "NoStopMsg"
+          ],
+          "type": "REQUEST",
+          "raw_condition": "LV>0&ITEM=2414",
+          "source_end_line": 30,
+          "source_end_byte": 1153,
+          "source_block_sha256": "bed3ea75c6bad3068e57ce55baa46e03e6865fd84a8424b17ba3e803b2e20045"
+        },
+        {
+          "ordinal": 2,
+          "source_start_line": 33,
+          "source_start_byte": 1155,
+          "event_number": -1,
+          "commands": [],
+          "messages_seen": [
+            "NomalMsg"
+          ],
+          "type": "MESSAGE",
+          "raw_condition": "ENDEV=7&ENDEV=8&ITEM=2414",
+          "source_end_line": 37,
+          "source_end_byte": 1256,
+          "source_block_sha256": "9ad1df864fae47b3bfd82f16f5f85dd6620046faac6cbe1de6a9616c86508914"
+        },
+        {
+          "ordinal": 3,
+          "source_start_line": 39,
+          "source_start_byte": 1257,
+          "event_number": -1,
+          "commands": [],
+          "messages_seen": [
+            "NomalMsg"
+          ],
+          "type": "MESSAGE",
+          "raw_condition": "ITEM=2414",
+          "source_end_line": 43,
+          "source_end_byte": 1328,
+          "source_block_sha256": "079b44ad116b20bbd58434d58de00089b1e3b2fe7a404397a943cb5d9cb33d64"
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/event07_2",
+      "bytes": 982,
+      "sha256": "4725b09a3b84c17861da734593115efe95c57c0339627d430efa178c8c0a1c26",
+      "crc32": "db73bf74",
+      "events": [
+        {
+          "ordinal": 0,
+          "source_start_line": 8,
+          "source_start_byte": 195,
+          "event_number": 7,
+          "commands": [
+            {
+              "key": "DelItem",
+              "raw_operand": "2425,2424",
+              "operands": [
+                {
+                  "item_id": 2425,
+                  "explicit_quantity": null
+                },
+                {
+                  "item_id": 2424,
+                  "explicit_quantity": null
+                }
+              ]
+            },
+            {
+              "key": "EndSetFlg",
+              "raw_operand": "7",
+              "value": 7
+            }
+          ],
+          "messages_seen": [
+            "AcceptMsg",
+            "ThanksMsg"
+          ],
+          "type": "ACCEPT",
+          "raw_condition": "NOWEV=7&ITEM=2414&ITEM=2424&ITEM=2425",
+          "source_end_line": 15,
+          "source_end_byte": 493,
+          "source_block_sha256": "9989fa493170d96bc3c3f322d95768a9ed85420a8aff31ff49090d39374634ef"
+        },
+        {
+          "ordinal": 1,
+          "source_start_line": 19,
+          "source_start_byte": 496,
+          "event_number": 8,
+          "commands": [
+            {
+              "key": "GetItem",
+              "raw_operand": "2426",
+              "operands": [
+                {
+                  "item_id": 2426,
+                  "explicit_quantity": null
+                }
+              ]
+            }
+          ],
+          "messages_seen": [
+            "RequestMsg",
+            "ThanksMsg",
+            "StopMsg",
+            "EndStopMsg",
+            "NoStopMsg",
+            "ItemFullMsg"
+          ],
+          "type": "REQUEST",
+          "raw_condition": "LV>0&ENDEV=7&ITEM=2414",
+          "source_end_line": 29,
+          "source_end_byte": 852,
+          "source_block_sha256": "b693953763b1d50e2a0526e2afed845dd8cea950d914c5112fdf9d05990af260"
+        },
+        {
+          "ordinal": 2,
+          "source_start_line": 32,
+          "source_start_byte": 854,
+          "event_number": -1,
+          "commands": [],
+          "messages_seen": [
+            "NomalMsg"
+          ],
+          "type": "MESSAGE",
+          "raw_condition": "ITEM=2414",
+          "source_end_line": 36,
+          "source_end_byte": 981,
+          "source_block_sha256": "a9dba10e98bad43332fba5d4a7f7c7dd0f4f0666c55cbb7394c915eae18acd61"
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/event07_3",
+      "bytes": 590,
+      "sha256": "02f5c1889c3077a6ccf44144ce089a5b530278f8908c6cc2216c0dba93828fcf",
+      "crc32": "0177f9a7",
+      "events": [
+        {
+          "ordinal": 0,
+          "source_start_line": 7,
+          "source_start_byte": 190,
+          "event_number": 7,
+          "commands": [
+            {
+              "key": "GetItem",
+              "raw_operand": "2424",
+              "operands": [
+                {
+                  "item_id": 2424,
+                  "explicit_quantity": null
+                }
+              ]
+            }
+          ],
+          "messages_seen": [
+            "AcceptMsg",
+            "ThanksMsg",
+            "ItemFullMsg"
+          ],
+          "type": "ACCEPT",
+          "raw_condition": "NOWEV=7&ITEM=2414&ITEM=2425&ITEM!=2424",
+          "source_end_line": 14,
+          "source_end_byte": 484,
+          "source_block_sha256": "cc13ee5bb208bab85df8f7317bf1da64a4a8dae6516bba855230103bdd44f9d7"
+        },
+        {
+          "ordinal": 1,
+          "source_start_line": 16,
+          "source_start_byte": 485,
+          "event_number": -1,
+          "commands": [],
+          "messages_seen": [
+            "NomalMsg"
+          ],
+          "type": "MESSAGE",
+          "raw_condition": "ENDEV=7,ENDEV=8&ITEM=2414",
+          "source_end_line": 20,
+          "source_end_byte": 588,
+          "source_block_sha256": "ba331f7cb60402d18238ad169e96f774a5971ccf03754c2a98df5d520e4c63e2"
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/event07_4",
+      "bytes": 285,
+      "sha256": "f8c3d049267d3f4216ba6cad1ab70eb291751437d76024a9e5e25c15adcfb458",
+      "crc32": "fa349470",
+      "events": [
+        {
+          "ordinal": 0,
+          "source_start_line": 8,
+          "source_start_byte": 193,
+          "event_number": -1,
+          "commands": [],
+          "messages_seen": [
+            "NomalMsg"
+          ],
+          "type": "MESSAGE",
+          "raw_condition": "ITEM=2414",
+          "source_end_line": 12,
+          "source_end_byte": 274,
+          "source_block_sha256": "cd20a0898b53f02d4d47c3fa5a1c21d601b5995a5ccc487f0e687157b2e6e681"
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/event07_5",
+      "bytes": 292,
+      "sha256": "71c7ec5aa519fae65229c10ae425a9e1e3052fc2bfe72bb624517b0e42cfb0e1",
+      "crc32": "2d8440ff",
+      "events": [
+        {
+          "ordinal": 0,
+          "source_start_line": 8,
+          "source_start_byte": 193,
+          "event_number": -1,
+          "commands": [],
+          "messages_seen": [
+            "NomalMsg"
+          ],
+          "type": "MESSAGE",
+          "raw_condition": "ITEM=2414",
+          "source_end_line": 12,
+          "source_end_byte": 288,
+          "source_block_sha256": "db32ce1a4e3f7f2056f048b5b16dea20a6df436bc4401b56d523f8b4a686e231"
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/event07_6",
+      "bytes": 298,
+      "sha256": "b0aa453d7a1a49b6946b0153510781735c88b4110321ca28971105dbd09d93d3",
+      "crc32": "42bb0305",
+      "events": [
+        {
+          "ordinal": 0,
+          "source_start_line": 8,
+          "source_start_byte": 197,
+          "event_number": -1,
+          "commands": [],
+          "messages_seen": [
+            "NomalMsg"
+          ],
+          "type": "MESSAGE",
+          "raw_condition": "ITEM=2414",
+          "source_end_line": 12,
+          "source_end_byte": 294,
+          "source_block_sha256": "11831fba4c942ed8f205bab59c75ac119db1a51a4671e945235efca24e596f58"
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/event07_7",
+      "bytes": 280,
+      "sha256": "26a009dc38044c8489bdc017a92d3104e6c9dcba49dec54fea2d31070b7be395",
+      "crc32": "d7d8628a",
+      "events": [
+        {
+          "ordinal": 0,
+          "source_start_line": 8,
+          "source_start_byte": 191,
+          "event_number": -1,
+          "commands": [],
+          "messages_seen": [
+            "NomalMsg"
+          ],
+          "type": "MESSAGE",
+          "raw_condition": "ITEM=2414",
+          "source_end_line": 12,
+          "source_end_byte": 277,
+          "source_block_sha256": "34eb5ffceba29333d88699776359af1f07e5949cb62015574dc3f86cdb0c32b5"
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/event07_8",
+      "bytes": 289,
+      "sha256": "a190d6402f39dba403e2d5844d84eb520e8907a2c43232e426d600b632f92f92",
+      "crc32": "440f7e23",
+      "events": [
+        {
+          "ordinal": 0,
+          "source_start_line": 9,
+          "source_start_byte": 194,
+          "event_number": -1,
+          "commands": [],
+          "messages_seen": [
+            "NomalMsg"
+          ],
+          "type": "MESSAGE",
+          "raw_condition": "ITEM=2414",
+          "source_end_line": 13,
+          "source_end_byte": 287,
+          "source_block_sha256": "857d9251f3979097fb82197f0d76f4a3a49434c1ea79b9e3c7b96497b0b3ef02"
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/event07_9",
+      "bytes": 311,
+      "sha256": "62931dbbaa393095c4d6693df4704d1367bf27849ff3617ed785edd16f27b274",
+      "crc32": "e162419d",
+      "events": [
+        {
+          "ordinal": 0,
+          "source_start_line": 8,
+          "source_start_byte": 195,
+          "event_number": -1,
+          "commands": [],
+          "messages_seen": [
+            "NomalMsg"
+          ],
+          "type": "MESSAGE",
+          "raw_condition": "ITEM=2414",
+          "source_end_line": 12,
+          "source_end_byte": 308,
+          "source_block_sha256": "46d7647db78630b4b4562e4bed0c24dabf4fc6b6830a449397ab8fb0d4f62c89"
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/event07_10",
+      "bytes": 299,
+      "sha256": "0a4cd66b630376a82e76742eea78e7755ed16fefe97171f628da9fe398058eda",
+      "crc32": "7b538b81",
+      "events": [
+        {
+          "ordinal": 0,
+          "source_start_line": 8,
+          "source_start_byte": 193,
+          "event_number": 7,
+          "commands": [],
+          "messages_seen": [
+            "NomalMsg"
+          ],
+          "type": "MESSAGE",
+          "raw_condition": "ITEM=2414",
+          "source_end_line": 12,
+          "source_end_byte": 299,
+          "source_block_sha256": "fc767553d442fd21d943d1737642a235764494edd4f7b99867cccf6008f8eb88"
+        }
+      ]
+    }
+  ],
+  "prior_QUEST01_TYPE_blocks_verified": 16,
+  "item_source_evidence": [
+    {
+      "item_id": 1206,
+      "original_rows": [
+        {
+          "source_table": "itemset.txt",
+          "source_row_1based": 1207,
+          "original_line_without_newline_sha256": "3a9adcb491bc2b801dd005bee688f9bbe46cafcf3df14ff317bff0168912d595",
+          "bytes": 270,
+          "name_cp950_sha256": "47f5a9a7cb7a88a7097d2532b6987441adcac88ffbb3ba21ead758ed0c3fe0bc"
+        },
+        {
+          "source_table": "itemset0710.txt",
+          "source_row_1based": 1207,
+          "original_line_without_newline_sha256": "3a9adcb491bc2b801dd005bee688f9bbe46cafcf3df14ff317bff0168912d595",
+          "bytes": 270,
+          "name_cp950_sha256": "47f5a9a7cb7a88a7097d2532b6987441adcac88ffbb3ba21ead758ed0c3fe0bc"
+        }
+      ],
+      "original_image_alias": 22068,
+      "tw1_original_RD_candidate_available": true,
+      "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "candidate_PNG_sha256": "9487b66e4bbcd4b9b9048f5a0d5702aff51a99cab800668dd5ce59751607f32c"
+    },
+    {
+      "item_id": 2414,
+      "original_rows": [
+        {
+          "source_table": "itemset.txt",
+          "source_row_1based": 1997,
+          "original_line_without_newline_sha256": "4618977dbec344a77f7a307dc996d2f1774bef4967b0c345910d5f0fd498eb96",
+          "bytes": 213,
+          "name_cp950_sha256": "c22ddd3b9371403093bc93ddb9d5efb07e83695fbff2c89ad70c2e57227439a0"
+        },
+        {
+          "source_table": "itemset0710.txt",
+          "source_row_1based": 2392,
+          "original_line_without_newline_sha256": "4618977dbec344a77f7a307dc996d2f1774bef4967b0c345910d5f0fd498eb96",
+          "bytes": 213,
+          "name_cp950_sha256": "c22ddd3b9371403093bc93ddb9d5efb07e83695fbff2c89ad70c2e57227439a0"
+        }
+      ],
+      "original_image_alias": 24130,
+      "tw1_original_RD_candidate_available": true,
+      "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "candidate_PNG_sha256": "6ede96a25a984f568b2f52092f3af32c1d599beebfd02f021261f9843eaee1b4"
+    },
+    {
+      "item_id": 2424,
+      "original_rows": [
+        {
+          "source_table": "itemset.txt",
+          "source_row_1based": 2007,
+          "original_line_without_newline_sha256": "ab095d6e4f3835c3e91a7e5988b01f90aaa31bd76c56dfbc7e297da54830d1f9",
+          "bytes": 193,
+          "name_cp950_sha256": "2c5dab3920828907797ce70978c41aa6c64761ec9ef27f1a83c53adda329b2a4"
+        },
+        {
+          "source_table": "itemset0710.txt",
+          "source_row_1based": 2402,
+          "original_line_without_newline_sha256": "ab095d6e4f3835c3e91a7e5988b01f90aaa31bd76c56dfbc7e297da54830d1f9",
+          "bytes": 193,
+          "name_cp950_sha256": "2c5dab3920828907797ce70978c41aa6c64761ec9ef27f1a83c53adda329b2a4"
+        }
+      ],
+      "original_image_alias": 24173,
+      "tw1_original_RD_candidate_available": true,
+      "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "candidate_PNG_sha256": "462b899bccfeeb2f25c1bc3b7165789c57a9c0bcdb0dfaa6850f06e3ae62dac7"
+    },
+    {
+      "item_id": 2425,
+      "original_rows": [
+        {
+          "source_table": "itemset.txt",
+          "source_row_1based": 2008,
+          "original_line_without_newline_sha256": "614fbcc5c9013232acc91e0dc5bd355be281021a5b15d5adc41c19c7f96c3461",
+          "bytes": 206,
+          "name_cp950_sha256": "b9927978bf59d97030975d83af1a0574c756a416fe9023d5d8a95df559877c57"
+        },
+        {
+          "source_table": "itemset0710.txt",
+          "source_row_1based": 2403,
+          "original_line_without_newline_sha256": "614fbcc5c9013232acc91e0dc5bd355be281021a5b15d5adc41c19c7f96c3461",
+          "bytes": 206,
+          "name_cp950_sha256": "b9927978bf59d97030975d83af1a0574c756a416fe9023d5d8a95df559877c57"
+        }
+      ],
+      "original_image_alias": 24222,
+      "tw1_original_RD_candidate_available": true,
+      "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "candidate_PNG_sha256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1"
+    },
+    {
+      "item_id": 2426,
+      "original_rows": [
+        {
+          "source_table": "itemset.txt",
+          "source_row_1based": 2009,
+          "original_line_without_newline_sha256": "9d3c27556101f20777f3f91c33a0a71d64c470855f91a8d9d2206aa4ac9a41e1",
+          "bytes": 202,
+          "name_cp950_sha256": "376d90eeabec91b6b1370c1e0dba8244ba6afb4f686ba5ca7168139a169a8e22"
+        },
+        {
+          "source_table": "itemset0710.txt",
+          "source_row_1based": 2404,
+          "original_line_without_newline_sha256": "9d3c27556101f20777f3f91c33a0a71d64c470855f91a8d9d2206aa4ac9a41e1",
+          "bytes": 202,
+          "name_cp950_sha256": "376d90eeabec91b6b1370c1e0dba8244ba6afb4f686ba5ca7168139a169a8e22"
+        }
+      ],
+      "original_image_alias": 24222,
+      "tw1_original_RD_candidate_available": true,
+      "tw1_original_RD_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "candidate_PNG_sha256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1"
+    }
+  ],
+  "original_map_source_observations": [
+    {
+      "floor": 20401,
+      "source_DAT_SHA256": "05d6ea5cfc82cff744aca78e733b50bd17633146443d2ac85749c5d742d963b7",
+      "original_DAT_bytes": 15008,
+      "geometry": [
+        50,
+        50
+      ],
+      "prior_source_thumbnail_SHA256": "8887c5cc41755e50eb0172d769e301e6e32ba7fa4766f70de01ceb95843ab080",
+      "source_points": [
+        {
+          "create_ordinal": 0,
+          "xy": [
+            14,
+            10
+          ],
+          "source_three_u16_values": [
+            4004,
+            0,
+            49152
+          ]
+        },
+        {
+          "create_ordinal": 3,
+          "xy": [
+            30,
+            26
+          ],
+          "source_three_u16_values": [
+            4001,
+            0,
+            49152
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 20402,
+      "source_DAT_SHA256": "d5056db9fbecd937d04df0bc993f81006eba9f690aa955dc4e652b6d274d40eb",
+      "original_DAT_bytes": 15008,
+      "geometry": [
+        50,
+        50
+      ],
+      "prior_source_thumbnail_SHA256": "d792ac9d85d71c8ebf902de524346b4dc26edcdde03897db319eefe25e2c55b5",
+      "source_points": [
+        {
+          "create_ordinal": 4,
+          "xy": [
+            25,
+            18
+          ],
+          "source_three_u16_values": [
+            4003,
+            0,
+            49152
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 20403,
+      "source_DAT_SHA256": "0c32e6564424e81d06bd32dce8ef0c1d7c01db77606713dd7652879081c2d4a3",
+      "original_DAT_bytes": 15008,
+      "geometry": [
+        50,
+        50
+      ],
+      "prior_source_thumbnail_SHA256": "d4e46285764e46694a04948f96d87fbecded6be8d6cb5143d613cb6f257f7eb9",
+      "source_points": [
+        {
+          "create_ordinal": 5,
+          "xy": [
+            19,
+            19
+          ],
+          "source_three_u16_values": [
+            4006,
+            0,
+            49152
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 20404,
+      "source_DAT_SHA256": "7430bddf2eebecec9194001a1c31c4e56ae2d3fe94cee53016c7bd9297fd1b0f",
+      "original_DAT_bytes": 15008,
+      "geometry": [
+        50,
+        50
+      ],
+      "prior_source_thumbnail_SHA256": "43c0a205abd2dd8e404a3a154c38736f836c497d7dc788b1007aede22bb45886",
+      "source_points": [
+        {
+          "create_ordinal": 1,
+          "xy": [
+            44,
+            13
+          ],
+          "source_three_u16_values": [
+            4006,
+            0,
+            49152
+          ]
+        },
+        {
+          "create_ordinal": 6,
+          "xy": [
+            24,
+            36
+          ],
+          "source_three_u16_values": [
+            4005,
+            0,
+            49152
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 20405,
+      "source_DAT_SHA256": "eaddb3113e86533b8a72b529110bebc872484565183e59131e495f4b930236f6",
+      "original_DAT_bytes": 15008,
+      "geometry": [
+        50,
+        50
+      ],
+      "prior_source_thumbnail_SHA256": "78826b293d530e8e8cfe3df1930bed54b555cadf8a6968a87d391678265bb967",
+      "source_points": [
+        {
+          "create_ordinal": 7,
+          "xy": [
+            40,
+            32
+          ],
+          "source_three_u16_values": [
+            4003,
+            0,
+            49152
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 20406,
+      "source_DAT_SHA256": "1de6589845cd781584207798f8458f89dde92df29bfebba0122d5274dd0274f6",
+      "original_DAT_bytes": 21008,
+      "geometry": [
+        50,
+        70
+      ],
+      "prior_source_thumbnail_SHA256": "e6388d15841921eb062debd2d6575a4a28297496515d9bcde04ae01ea0a5f4f3",
+      "source_points": [
+        {
+          "create_ordinal": 2,
+          "xy": [
+            36,
+            34
+          ],
+          "source_three_u16_values": [
+            405,
+            0,
+            49152
+          ]
+        },
+        {
+          "create_ordinal": 8,
+          "xy": [
+            20,
+            25
+          ],
+          "source_three_u16_values": [
+            2020,
+            0,
+            49152
+          ]
+        },
+        {
+          "create_ordinal": 9,
+          "xy": [
+            17,
+            38
+          ],
+          "source_three_u16_values": [
+            2018,
+            0,
+            49152
+          ]
+        }
+      ]
+    }
+  ],
+  "source_literal_crossfamily_item_2414": {
+    "item_id": 2414,
+    "also_referenced_by_quest11": true,
+    "official_same_deployment_identity_verified": false
+  },
+  "source_stage": {
+    "original_event_numbers": [
+      7,
+      8
+    ],
+    "source_item_ids": [
+      1206,
+      2414,
+      2424,
+      2425,
+      2426
+    ],
+    "source_only_not_a_verified_runtime_walkthrough": true
+  },
+  "provenance_negative_guards": {
+    "native_game_execution": false,
+    "quest_branch_priority_or_condition_parser_verified": false,
+    "original_script_text_repaired": false,
+    "implicit_item_quantity_assumed": false,
+    "official_initial_or_permanent_quest_origin_verified": false,
+    "same_official_client_server_deployment_verified": false,
+    "tw1_item_pixels_claimed_mixed25_same_release": false,
+    "native_sprite_pixels_observed_this_task": false,
+    "NPC_original_animation_verified": false,
+    "source_map_collider_or_teleporter_verified": false,
+    "historical_official_world_map_rebuilt": false,
+    "early_1_82_content_confirmed": false,
+    "new_original_RD_decode": false,
+    "modern_new_game_feature_implemented": false
+  },
+  "status": {
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  }
+}
