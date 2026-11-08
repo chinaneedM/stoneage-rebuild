@@ -1,0 +1,2093 @@
+{
+  "schema": "stoneage.integration11.floor1300.source_scene.r1",
+  "source_blobs": {
+    "i06": "5e1f49922731e55070cc6e43fbadf29a3609adeb",
+    "i10": "4b91fd0f0115bc58fed182b2f36468d5e3b117b2",
+    "char": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "map": "03675ee98d391f9ef0246315b2426f2a8b721fd3"
+  },
+  "original_DAT": {
+    "bytes": 60008,
+    "sha256": "97448b7e2478fdb8469b09b5f05a2b0b908174d0eb4bec066f7d526fa052af20",
+    "crc32": "940ba652"
+  },
+  "original_MAP": {
+    "bytes": 20008,
+    "sha256": "a3b25cf753056886f7cd0b8293bade2db0ab917ac4474df9278333e11a882235",
+    "equal_u16_cells_by_DAT_plane": [
+      0,
+      0,
+      0
+    ]
+  },
+  "dimensions": [
+    100,
+    100
+  ],
+  "village": {
+    "editorial_category": "VILLAGE",
+    "source_name": "霍特爾",
+    "name_witness_path": "genout/1300npc_m.create",
+    "name_witness_xy": [
+      39,
+      51
+    ],
+    "name_witness_text_sha256": "652987c4ff1dfcabcd2d236b1dde4d1c0f5f3a36d21fa1d9761ae01884b65f5c",
+    "geographic_region": null
+  },
+  "creates": [
+    {
+      "path": "extra/event/marju.create",
+      "ordinal": 0,
+      "block_sha256": "28774fc9ca0299330f994f3b3688255ed38804b1c5fdb8624bf739d0c9f513e7",
+      "parameter": "extra/event/marju",
+      "parameter_sha256": "aa8ae38d76daf189b075befc55557f6f3e49fec81ee624c3a8e517d741fea904",
+      "function": "npcgen_changeevent",
+      "enemy_token": "changeevent",
+      "graphic_alias": 16046,
+      "xy": [
+        70,
+        51
+      ],
+      "source_tile_u16": [
+        391,
+        0,
+        49152
+      ]
+    },
+    {
+      "path": "sainasu/event/event03.create",
+      "ordinal": 1,
+      "block_sha256": "ec1ed0d9a73f748834a2e1494b2afa34e9821f54a52153d4dbf7d9592535442a",
+      "parameter": "sainasu/event/event03_1",
+      "parameter_sha256": "693adb44f269b1499e3bb4cc70af3d6143c38bc388584b9c4464ffdac4dc384e",
+      "function": "npcgen_changeevent",
+      "enemy_token": "changeevent",
+      "graphic_alias": 16048,
+      "xy": [
+        18,
+        42
+      ],
+      "source_tile_u16": [
+        145,
+        0,
+        49152
+      ]
+    },
+    {
+      "path": "sainasu/event/event09-12.create",
+      "ordinal": 1,
+      "block_sha256": "4b1bee0f2b73709317d38007c3cba284958a61b73d154b93ca96e3d8bcd71306",
+      "parameter": "sainasu/event/event10",
+      "parameter_sha256": "99456b8431026d4c83f3d121b5d454209b8fb3ad1e0d45a4f288ba9ffc838e64",
+      "function": "npcgen_changeevent",
+      "enemy_token": "changeevent",
+      "graphic_alias": 16206,
+      "xy": [
+        65,
+        65
+      ],
+      "source_tile_u16": [
+        111,
+        0,
+        49152
+      ]
+    },
+    {
+      "path": "sainasu/event/oev2.create",
+      "ordinal": 9,
+      "block_sha256": "06d3890e457873c2268cec370e705965750f6bd9e7775d55d8a457ada88d06cb",
+      "parameter": "sainasu/event/oev_9c",
+      "parameter_sha256": "6aa23fb3c3aa906ea68a3e3a0fe3c371bec8656f3f8bb99ee5c5b64d54dd41b9",
+      "function": "npcgen_changeevent",
+      "enemy_token": "changeevent",
+      "graphic_alias": 16068,
+      "xy": [
+        65,
+        26
+      ],
+      "source_tile_u16": [
+        360,
+        0,
+        49152
+      ]
+    },
+    {
+      "path": "genout/1300npc_m.create",
+      "ordinal": 4,
+      "block_sha256": "e333947987e92ca00654fab9bea7e7504d1c6667ad377c85dabaabd71bcdfea2",
+      "parameter": "genout/tman_1300_37_26",
+      "parameter_sha256": "cc815c7810dcc123df29a163a4c2365c7218a6086712dd46a26e11275d49b5a1",
+      "function": "npcgen_timeman",
+      "enemy_token": "npcgen_timeman",
+      "graphic_alias": 16033,
+      "xy": [
+        37,
+        26
+      ],
+      "source_tile_u16": [
+        406,
+        0,
+        49152
+      ]
+    },
+    {
+      "path": "genout/1300npc_m.create",
+      "ordinal": 6,
+      "block_sha256": "6ee5d77706a0cb5eff01f6431a7fca238ec9bf9a057a124e30990f34fd89f090",
+      "parameter": "genout/tman_1300_37_26",
+      "parameter_sha256": "cc815c7810dcc123df29a163a4c2365c7218a6086712dd46a26e11275d49b5a1",
+      "function": "npcgen_timeman",
+      "enemy_token": "npcgen_timeman",
+      "graphic_alias": 16033,
+      "xy": [
+        37,
+        26
+      ],
+      "source_tile_u16": [
+        406,
+        0,
+        49152
+      ]
+    }
+  ],
+  "colocated_create_blocks": [
+    {
+      "xy": [
+        37,
+        26
+      ],
+      "separate_create_blocks": [
+        {
+          "path": "genout/1300npc_m.create",
+          "ordinal": 4,
+          "block_sha256": "e333947987e92ca00654fab9bea7e7504d1c6667ad377c85dabaabd71bcdfea2",
+          "enemy_token": "npcgen_timeman"
+        },
+        {
+          "path": "genout/1300npc_m.create",
+          "ordinal": 6,
+          "block_sha256": "6ee5d77706a0cb5eff01f6431a7fca238ec9bf9a057a124e30990f34fd89f090",
+          "enemy_token": "npcgen_timeman"
+        }
+      ]
+    },
+    {
+      "xy": [
+        70,
+        51
+      ],
+      "separate_create_blocks": [
+        {
+          "path": "extra/event/marju.create",
+          "ordinal": 0,
+          "block_sha256": "28774fc9ca0299330f994f3b3688255ed38804b1c5fdb8624bf739d0c9f513e7",
+          "enemy_token": "changeevent"
+        },
+        {
+          "path": "genout/1300npc_m.create",
+          "ordinal": 1,
+          "block_sha256": "84256a31ab28d7a95c61db11cb6385167244dd3c2d98daa03c061b9949cf6b37",
+          "enemy_token": "npcgen_man"
+        }
+      ]
+    }
+  ],
+  "mapwarp_rows": [
+    {
+      "line": 1360,
+      "row_sha256": "08d37202eddabe26ef48433666c1794c83d9d8aeeccdf83008522d7a208881f6",
+      "source": [
+        100,
+        622,
+        190
+      ],
+      "target": [
+        1300,
+        24,
+        59
+      ],
+      "floor1300_tile_u16": [
+        146,
+        0,
+        49152
+      ],
+      "exact_reverse": false,
+      "same_tuple_create": [
+        {
+          "path": "genout/100warp.create",
+          "ordinal": 44,
+          "block_sha256": "84fc54aef04bc67a4fb0b76684ffc2159a647bcffe504dc5cb72f0d03b40d1cf"
+        }
+      ],
+      "other_floor_tile_u16": [
+        149,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1361,
+      "row_sha256": "9a2aa0ca6ca01c1c01705fb8269c7668278335214380aa62bd3e6d07d32c68d6",
+      "source": [
+        100,
+        622,
+        191
+      ],
+      "target": [
+        1300,
+        24,
+        60
+      ],
+      "floor1300_tile_u16": [
+        145,
+        0,
+        49152
+      ],
+      "exact_reverse": false,
+      "same_tuple_create": [
+        {
+          "path": "genout/100warp.create",
+          "ordinal": 45,
+          "block_sha256": "4fcefc1d6e7db973b6e8d7251d4f72732acec31296d941f2c25c5568d9f7da56"
+        }
+      ],
+      "other_floor_tile_u16": [
+        145,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1362,
+      "row_sha256": "b3951a8d22af462fba1f235e2fe6227f711fe83086c0a9fb4cb21f9536730039",
+      "source": [
+        100,
+        622,
+        192
+      ],
+      "target": [
+        1300,
+        24,
+        61
+      ],
+      "floor1300_tile_u16": [
+        158,
+        0,
+        49152
+      ],
+      "exact_reverse": false,
+      "same_tuple_create": [
+        {
+          "path": "genout/100warp.create",
+          "ordinal": 46,
+          "block_sha256": "ad49ce333a867a1b21f55d9932c03f6934dfeeea47e1cefcad2ee4ec024ce665"
+        }
+      ],
+      "other_floor_tile_u16": [
+        155,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1363,
+      "row_sha256": "efb4118b7824099b9ab2dbd3e37c765510d044eadd39b3c16056c778e8d5bc29",
+      "source": [
+        100,
+        622,
+        193
+      ],
+      "target": [
+        1300,
+        24,
+        62
+      ],
+      "floor1300_tile_u16": [
+        149,
+        0,
+        49152
+      ],
+      "exact_reverse": false,
+      "same_tuple_create": [
+        {
+          "path": "genout/100warp.create",
+          "ordinal": 47,
+          "block_sha256": "e48437adc4a4686acdb90eab09c4ef6abfc4598ec5a57aa93405a0b58088fe97"
+        }
+      ],
+      "other_floor_tile_u16": [
+        148,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1364,
+      "row_sha256": "e1542ff2e7ddd45dacebbbc91045f716293f9c10e2d74f8b605ae6cfe7e41641",
+      "source": [
+        100,
+        622,
+        194
+      ],
+      "target": [
+        1300,
+        24,
+        63
+      ],
+      "floor1300_tile_u16": [
+        162,
+        0,
+        49152
+      ],
+      "exact_reverse": false,
+      "same_tuple_create": [
+        {
+          "path": "genout/100warp.create",
+          "ordinal": 48,
+          "block_sha256": "2c6397aed8e5a46880c46e93fdd54fe7d8b93749fb03a9a9c585f6515e5a056c"
+        }
+      ],
+      "other_floor_tile_u16": [
+        155,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1365,
+      "row_sha256": "51f9aea13d8b39bdff5bef2aa9563a606ef588397902a0a9887264075ed3f2a4",
+      "source": [
+        100,
+        622,
+        195
+      ],
+      "target": [
+        1300,
+        24,
+        64
+      ],
+      "floor1300_tile_u16": [
+        150,
+        0,
+        49152
+      ],
+      "exact_reverse": false,
+      "same_tuple_create": [
+        {
+          "path": "genout/100warp.create",
+          "ordinal": 49,
+          "block_sha256": "a26563493e873a29a2d13ab7c5f1f7fb5706dede704480de22ef57730c7058e7"
+        }
+      ],
+      "other_floor_tile_u16": [
+        159,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1366,
+      "row_sha256": "d495788be62510a360d954d8a1fe418d5be104aa6e5beaf550acef38ed0ec081",
+      "source": [
+        100,
+        622,
+        196
+      ],
+      "target": [
+        1300,
+        24,
+        65
+      ],
+      "floor1300_tile_u16": [
+        161,
+        0,
+        49152
+      ],
+      "exact_reverse": false,
+      "same_tuple_create": [
+        {
+          "path": "genout/100warp.create",
+          "ordinal": 50,
+          "block_sha256": "a520a462cf8c55f844ae1e4c1c71c48e4d0408b86de3c47eb04575dc22af009d"
+        }
+      ],
+      "other_floor_tile_u16": [
+        156,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1367,
+      "row_sha256": "626c2e92ab96771540b84faf8b7aa1fd51964a7e3e3f36e2a032549a0e9ace58",
+      "source": [
+        100,
+        622,
+        197
+      ],
+      "target": [
+        1300,
+        24,
+        66
+      ],
+      "floor1300_tile_u16": [
+        158,
+        0,
+        49152
+      ],
+      "exact_reverse": false,
+      "same_tuple_create": [
+        {
+          "path": "genout/100warp.create",
+          "ordinal": 51,
+          "block_sha256": "518cf07c795992707196d7b296fe20e299dfaa5012e8b92f5aecb3e3142334cd"
+        }
+      ],
+      "other_floor_tile_u16": [
+        153,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1368,
+      "row_sha256": "29678628a537b2c45e6c2b1f5ff4c087eb60d0c26cee98c2c7ffca46acf15cc4",
+      "source": [
+        1300,
+        23,
+        59
+      ],
+      "target": [
+        100,
+        621,
+        190
+      ],
+      "floor1300_tile_u16": [
+        158,
+        0,
+        49155
+      ],
+      "exact_reverse": false,
+      "same_tuple_create": [
+        {
+          "path": "genout/100warp.create",
+          "ordinal": 52,
+          "block_sha256": "3595cf164d18b051055ad402a83c9829c8b9ae27f731a345087391e066153b90"
+        }
+      ],
+      "other_floor_tile_u16": [
+        151,
+        0,
+        49152
+      ]
+    },
+    {
+      "line": 1369,
+      "row_sha256": "a7665cc22c9f4be96669cfcc10894e3a576cdc11f102d63cd5ed3a2476dd6eef",
+      "source": [
+        1300,
+        23,
+        60
+      ],
+      "target": [
+        100,
+        621,
+        191
+      ],
+      "floor1300_tile_u16": [
+        155,
+        0,
+        49155
+      ],
+      "exact_reverse": false,
+      "same_tuple_create": [
+        {
+          "path": "genout/100warp.create",
+          "ordinal": 53,
+          "block_sha256": "897ac0c14e575d936acde0b8245896c04d029534decc87852cb88730ffb1a24c"
+        }
+      ],
+      "other_floor_tile_u16": [
+        146,
+        0,
+        49152
+      ]
+    },
+    {
+      "line": 1370,
+      "row_sha256": "fa6aa231597c060bcf4619e23a663d795cbbbd361c4b4d956d0134665db16565",
+      "source": [
+        1300,
+        23,
+        61
+      ],
+      "target": [
+        100,
+        621,
+        192
+      ],
+      "floor1300_tile_u16": [
+        155,
+        0,
+        49155
+      ],
+      "exact_reverse": false,
+      "same_tuple_create": [
+        {
+          "path": "genout/100warp.create",
+          "ordinal": 54,
+          "block_sha256": "39e24ecbd891bba792976458eeb08f5e1f55827a482277f8676b110158dfa7a6"
+        }
+      ],
+      "other_floor_tile_u16": [
+        147,
+        0,
+        49152
+      ]
+    },
+    {
+      "line": 1371,
+      "row_sha256": "bb8966055b0fdd84d40923c05c2d4434342e21bae96fdc77b36fe48a8cb37b3a",
+      "source": [
+        1300,
+        23,
+        62
+      ],
+      "target": [
+        100,
+        621,
+        193
+      ],
+      "floor1300_tile_u16": [
+        153,
+        0,
+        49155
+      ],
+      "exact_reverse": false,
+      "same_tuple_create": [
+        {
+          "path": "genout/100warp.create",
+          "ordinal": 55,
+          "block_sha256": "dbd5d8c12309b38d725def1a28192c0b4ee7202364b0a297ee8407f77be323e8"
+        }
+      ],
+      "other_floor_tile_u16": [
+        148,
+        0,
+        49152
+      ]
+    },
+    {
+      "line": 1372,
+      "row_sha256": "e13218faa71afd5490e6150ee52bea45f6028701cbd0cc2550282e7640856d1d",
+      "source": [
+        1300,
+        23,
+        63
+      ],
+      "target": [
+        100,
+        621,
+        194
+      ],
+      "floor1300_tile_u16": [
+        155,
+        0,
+        49155
+      ],
+      "exact_reverse": false,
+      "same_tuple_create": [
+        {
+          "path": "genout/100warp.create",
+          "ordinal": 56,
+          "block_sha256": "4e87950f6a0a78b73abf622be627329387e28c3e3f4d3f8e7c3b84c2b9a49d47"
+        }
+      ],
+      "other_floor_tile_u16": [
+        155,
+        0,
+        49152
+      ]
+    },
+    {
+      "line": 1373,
+      "row_sha256": "4f4cad3571f04fd4a9ec6037b106bed64aafc072e322aa43b90ccc86b7d6df1b",
+      "source": [
+        1300,
+        23,
+        64
+      ],
+      "target": [
+        100,
+        621,
+        195
+      ],
+      "floor1300_tile_u16": [
+        153,
+        0,
+        49155
+      ],
+      "exact_reverse": false,
+      "same_tuple_create": [
+        {
+          "path": "genout/100warp.create",
+          "ordinal": 57,
+          "block_sha256": "23f949e5f35506d0dd19924614390683e43a968a5c3960c06fb5dcec0c20ef88"
+        }
+      ],
+      "other_floor_tile_u16": [
+        145,
+        0,
+        49152
+      ]
+    },
+    {
+      "line": 1374,
+      "row_sha256": "9ba598591006bee978b10d2b3174dadb2d8df93380c7c90ba823ebcc9c8c03ca",
+      "source": [
+        1300,
+        23,
+        65
+      ],
+      "target": [
+        100,
+        621,
+        196
+      ],
+      "floor1300_tile_u16": [
+        149,
+        0,
+        49155
+      ],
+      "exact_reverse": false,
+      "same_tuple_create": [
+        {
+          "path": "genout/100warp.create",
+          "ordinal": 58,
+          "block_sha256": "11f0f923c850ee8d8526e285b7ef21f8f8dd989c95ae68001f1284ad64b58622"
+        }
+      ],
+      "other_floor_tile_u16": [
+        151,
+        0,
+        49152
+      ]
+    },
+    {
+      "line": 1375,
+      "row_sha256": "3327ab15d47a2b0cd4ed80945ffd9b3bdfdcc9dd7259d1d0455c6c50629546d1",
+      "source": [
+        1300,
+        23,
+        66
+      ],
+      "target": [
+        100,
+        621,
+        197
+      ],
+      "floor1300_tile_u16": [
+        151,
+        0,
+        49155
+      ],
+      "exact_reverse": false,
+      "same_tuple_create": [
+        {
+          "path": "genout/100warp.create",
+          "ordinal": 59,
+          "block_sha256": "677efc5e986f08abbd9e8ffc1033b52d3eb7719753ed37f21c3b40f3f1dcd1e5"
+        }
+      ],
+      "other_floor_tile_u16": [
+        147,
+        11001,
+        49152
+      ]
+    },
+    {
+      "line": 1459,
+      "row_sha256": "8238d3df1102f26ec41d532a4a2f51958071ff9fc9a63ff4e5499011056dbe29",
+      "source": [
+        1300,
+        43,
+        43
+      ],
+      "target": [
+        1301,
+        15,
+        21
+      ],
+      "floor1300_tile_u16": [
+        201,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 77,
+          "block_sha256": "e83ded042940bafaddf0c6c21c4964bd79b939d7a103478eb62f86e1a5190550"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5025,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1460,
+      "row_sha256": "b20674ced362fad88fbbbccab6bc860bdd22a5db2bf4b7f5867f4b5ac0cf5b7a",
+      "source": [
+        1301,
+        15,
+        21
+      ],
+      "target": [
+        1300,
+        43,
+        43
+      ],
+      "floor1300_tile_u16": [
+        201,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 78,
+          "block_sha256": "3aee40f164b6d04f070c3558e1e7612eb23f558bb97a4c686235ee4f53e8bde9"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5025,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1461,
+      "row_sha256": "2c25923f7a6d70572246f17f4663adb725ce455ded57fd18cdc1af653253f1b7",
+      "source": [
+        1300,
+        44,
+        43
+      ],
+      "target": [
+        1301,
+        16,
+        21
+      ],
+      "floor1300_tile_u16": [
+        220,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 79,
+          "block_sha256": "750bc9e2ad8404004e68a127f7bf1a902d39b84ae82bec4475a9a87be22ee50e"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5026,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1462,
+      "row_sha256": "d0c192ee546dff527e476c657caa95d7ceef1c3aed073499c736b76acfb7ccb1",
+      "source": [
+        1301,
+        16,
+        21
+      ],
+      "target": [
+        1300,
+        44,
+        43
+      ],
+      "floor1300_tile_u16": [
+        220,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 80,
+          "block_sha256": "c7a42a49143ad75d4eceec2c814fb0698c5d7596a975b851baa14e58dfcba04c"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5026,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1463,
+      "row_sha256": "c2d1ee6598a2d36660f892bfa21702a206a2d7f1192d70e93415a2c9b16c530f",
+      "source": [
+        1300,
+        34,
+        42
+      ],
+      "target": [
+        1302,
+        16,
+        21
+      ],
+      "floor1300_tile_u16": [
+        425,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 81,
+          "block_sha256": "6fcaccebae1a9ee97956beb28e7e07368b7e5e34c3bc9d691845f0c00106c8cd"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5026,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1464,
+      "row_sha256": "215765c275c848a87060b3b8a43ed4ab8f85c8a55ee041778617611b5f4f1a72",
+      "source": [
+        1302,
+        16,
+        21
+      ],
+      "target": [
+        1300,
+        34,
+        42
+      ],
+      "floor1300_tile_u16": [
+        425,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 82,
+          "block_sha256": "e2bacb36e9e000635ce6260e54c1ecf3227a389e4efe46aa1c3a6c2a9819357c"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5026,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1465,
+      "row_sha256": "a32e354fad4d2b14cd178543567335f1c28d864c9a9da0844b1e9b1b23207043",
+      "source": [
+        1300,
+        33,
+        42
+      ],
+      "target": [
+        1302,
+        15,
+        21
+      ],
+      "floor1300_tile_u16": [
+        804,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 83,
+          "block_sha256": "935c6c5e31bd976b386f16823234ca2f7a225e263191f38d54e536799db9e222"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5025,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1466,
+      "row_sha256": "cd9b296c72e26973f1ccfdfca6df8a7dc5ad0679b51437a897b604331beead5e",
+      "source": [
+        1302,
+        15,
+        21
+      ],
+      "target": [
+        1300,
+        33,
+        42
+      ],
+      "floor1300_tile_u16": [
+        804,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 84,
+          "block_sha256": "f6e8c338c618e91093ad4d6f61d219320ed52e39a3727ee8dfdd59552cba2127"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5025,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1467,
+      "row_sha256": "f87c6871ee4757af6587b40dda8084472fbf91e9ee6a9c91b3c54d15dfb37fcd",
+      "source": [
+        1300,
+        23,
+        43
+      ],
+      "target": [
+        1303,
+        15,
+        21
+      ],
+      "floor1300_tile_u16": [
+        816,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 85,
+          "block_sha256": "a6204fd42afa136a1f61d68f72821df89f61aac2c5e45786207f6e5a2178ef42"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5025,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1468,
+      "row_sha256": "eccc8cd9783bac4fc1e5469daeec5a15235bf29667f473d7bc867f21b98cb0c6",
+      "source": [
+        1303,
+        15,
+        21
+      ],
+      "target": [
+        1300,
+        23,
+        43
+      ],
+      "floor1300_tile_u16": [
+        816,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 86,
+          "block_sha256": "3a4ae361f697bed2b50b5c43871a294db719c35f1629d75d7b695c8c19016fb6"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5025,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1469,
+      "row_sha256": "53a3fb50da52f506f7a25c28eb1d3551df9311c8680b9e09bfa1917d69d8ca41",
+      "source": [
+        1300,
+        24,
+        43
+      ],
+      "target": [
+        1303,
+        16,
+        21
+      ],
+      "floor1300_tile_u16": [
+        413,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 87,
+          "block_sha256": "d3cbef71fc8e8ccd027bd673c9a374f9c7526a20abdd22e97c49a3f9f10da282"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5026,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1470,
+      "row_sha256": "8a8d375f9a2b3ef778fe21b02835b855e7da903a26792df88593c5bba2afb7cc",
+      "source": [
+        1303,
+        16,
+        21
+      ],
+      "target": [
+        1300,
+        24,
+        43
+      ],
+      "floor1300_tile_u16": [
+        413,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 88,
+          "block_sha256": "869e750ce403eb3c8da4fa8969def1fdd99adff59a4078c49e267ab275f8489e"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5026,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1471,
+      "row_sha256": "dc485dcd391ee62d9c8cf4381b90bc813b9470423eada2c54845e290fc4c06b5",
+      "source": [
+        1300,
+        66,
+        42
+      ],
+      "target": [
+        1304,
+        15,
+        21
+      ],
+      "floor1300_tile_u16": [
+        803,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 89,
+          "block_sha256": "7e5b8c6b0900ca0bf3dc19570050b87bb1eaaf295509b8c9448f2a133db3e31d"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5013,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1472,
+      "row_sha256": "fbe206de0c54197af15e98d31f410b63cb607fb7792bdf18f74c80586844bbb7",
+      "source": [
+        1304,
+        15,
+        21
+      ],
+      "target": [
+        1300,
+        66,
+        42
+      ],
+      "floor1300_tile_u16": [
+        803,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 90,
+          "block_sha256": "059bf922b6f95ad79734cbc6e9627fdfec3429b8b3273ff71462d8936d92f132"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5013,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1473,
+      "row_sha256": "431e666bb49ec3239261b239f80c246d8657cbaa2a201a67521e538ffe00b13c",
+      "source": [
+        1300,
+        67,
+        42
+      ],
+      "target": [
+        1304,
+        16,
+        21
+      ],
+      "floor1300_tile_u16": [
+        813,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 91,
+          "block_sha256": "aa066ad73bc2c457d07bfc3f7c45f2bc0edc4727a82bcdc4063e9e76cc98b735"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5014,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1474,
+      "row_sha256": "4485ccb76bd8596a42d309db4be2b77d1cf2d43e7a462a5391985fed496dc2f4",
+      "source": [
+        1304,
+        16,
+        21
+      ],
+      "target": [
+        1300,
+        67,
+        42
+      ],
+      "floor1300_tile_u16": [
+        813,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 92,
+          "block_sha256": "3530112571b9159480f3b9127cdfb0163871b82d41696d65eb85e8edf4b6943f"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5014,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1475,
+      "row_sha256": "149cd60770e8cf242ce73db1ebee017c2f5e20aca6fff2ccbf26018cced0120c",
+      "source": [
+        1300,
+        54,
+        50
+      ],
+      "target": [
+        1305,
+        10,
+        16
+      ],
+      "floor1300_tile_u16": [
+        430,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 93,
+          "block_sha256": "1f42c6a9e24989ec9d0f669bf7faedf620837d5e0796929c4c5608cd297243a9"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5013,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1476,
+      "row_sha256": "70e9aeb05f442db2a86517ed7fadcf6d2e0379b97828d4736ad6f023fabfa63a",
+      "source": [
+        1305,
+        10,
+        16
+      ],
+      "target": [
+        1300,
+        54,
+        50
+      ],
+      "floor1300_tile_u16": [
+        430,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 94,
+          "block_sha256": "a29f3ecfbb81627b2b7100e2169e858b3d6586233dac9b86fb2e60d7965ca69f"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5013,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1477,
+      "row_sha256": "4d88266efdd7abfb87a7e8b6481c93b8e5420428d1dca7f6212dee0e2c4b269c",
+      "source": [
+        1300,
+        54,
+        49
+      ],
+      "target": [
+        1305,
+        10,
+        15
+      ],
+      "floor1300_tile_u16": [
+        832,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 95,
+          "block_sha256": "f9e2e18c50909c49d7c75841a84ebb177d231fd252cff983126a493b6dc3a70b"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5024,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1478,
+      "row_sha256": "3dc77cd1e94c256d5f9c3596a56c1331d08df031ffe3bcb9c569cc7b0da708d4",
+      "source": [
+        1305,
+        10,
+        15
+      ],
+      "target": [
+        1300,
+        54,
+        49
+      ],
+      "floor1300_tile_u16": [
+        832,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 96,
+          "block_sha256": "9e0fc9b925b5b336a067d7402ec39938bd9529ca682722c217b01b9bd947f1b8"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5024,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1479,
+      "row_sha256": "f8878d33fb946045e71cac3278196a479b5a5145a18713a727eacb9d1db0ffa9",
+      "source": [
+        1300,
+        53,
+        26
+      ],
+      "target": [
+        1306,
+        21,
+        21
+      ],
+      "floor1300_tile_u16": [
+        534,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 97,
+          "block_sha256": "5588efe2ef2f6b2a3ed9e1dc8b56da1624d4014f3b7faeaa3714145b96feefef"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5026,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1480,
+      "row_sha256": "4c832c0124a9f8c104ebab443b1a8b1eb27c2542deec3fc6123dfea0649455b8",
+      "source": [
+        1306,
+        21,
+        21
+      ],
+      "target": [
+        1300,
+        53,
+        26
+      ],
+      "floor1300_tile_u16": [
+        534,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 98,
+          "block_sha256": "45032d3a9226955a083d5204a6b8eb5084c22db1a45a5c395839d689dfa42963"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5026,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1481,
+      "row_sha256": "adbcd4218219d2ba40f5974cf393cd09a43c88d2308465ae6f3d321c68bbee78",
+      "source": [
+        1300,
+        52,
+        26
+      ],
+      "target": [
+        1306,
+        20,
+        21
+      ],
+      "floor1300_tile_u16": [
+        541,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 99,
+          "block_sha256": "156355457d41e6175bee65a7a8dc13868c04bdeb18e4c90853090d51a275acd4"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5025,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1482,
+      "row_sha256": "62a23812b642afaab6353adee73ea0cc9ad6b11acb2eb21d4cdd30c90278ced0",
+      "source": [
+        1306,
+        20,
+        21
+      ],
+      "target": [
+        1300,
+        52,
+        26
+      ],
+      "floor1300_tile_u16": [
+        541,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 100,
+          "block_sha256": "ebaff729e7566df7c3fe5fa81c6d35422d02a870e42c7a81311a4414ed27a534"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5025,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1483,
+      "row_sha256": "b6c922ecc2b49e44e4da38e803508fc21e822521711a4fb14fefeb28445b73df",
+      "source": [
+        1300,
+        54,
+        26
+      ],
+      "target": [
+        1306,
+        21,
+        21
+      ],
+      "floor1300_tile_u16": [
+        545,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 101,
+          "block_sha256": "71cd9893755c4b0d63c6c63549428802a18baba80a40a869b71423bb40e8e1d4"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5026,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1484,
+      "row_sha256": "1c38ff4441c47e70622b726e81d8731e4ed563dd9b667ea9190c7cfedb701b0d",
+      "source": [
+        1306,
+        21,
+        21
+      ],
+      "target": [
+        1300,
+        54,
+        26
+      ],
+      "floor1300_tile_u16": [
+        545,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 102,
+          "block_sha256": "8f97dff44aeda6411b96f327a77f1c7489c072964f365c8dcc976820077fb521"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5026,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1485,
+      "row_sha256": "fd2a1c11cd790042643d836c840ae3a1c3e762e22a0498fdd9d90951f7154dcf",
+      "source": [
+        1300,
+        68,
+        44
+      ],
+      "target": [
+        1310,
+        10,
+        15
+      ],
+      "floor1300_tile_u16": [
+        824,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 103,
+          "block_sha256": "f519a23e655aa6ef186dd6826e564b890cc1f55ed793bade0b7e029323c970c5"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5039,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1486,
+      "row_sha256": "9c2642fa628d0b2c69656abe45bdfc5bc0e0bcc0390bbadaa6beba827a96f485",
+      "source": [
+        1310,
+        10,
+        15
+      ],
+      "target": [
+        1300,
+        68,
+        44
+      ],
+      "floor1300_tile_u16": [
+        824,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 104,
+          "block_sha256": "19f125877fe95dfe66835f78671c05c91806306843de97ffd7f90c7d7bb220df"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5039,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1487,
+      "row_sha256": "4bffe3083bea746fa76852fd1a4dc95f9297c766fdd21ad260cb094401c615d1",
+      "source": [
+        1300,
+        68,
+        45
+      ],
+      "target": [
+        1310,
+        10,
+        16
+      ],
+      "floor1300_tile_u16": [
+        811,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 105,
+          "block_sha256": "b0fcc1dc894ee7f6fe838d26ef95346eda4907c77fd2b98fbb57b84cf5138957"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5041,
+        0,
+        49155
+      ]
+    },
+    {
+      "line": 1488,
+      "row_sha256": "fac3087e8fbd39be364f704022f07e319f707d956690823929db0062c2007762",
+      "source": [
+        1310,
+        10,
+        16
+      ],
+      "target": [
+        1300,
+        68,
+        45
+      ],
+      "floor1300_tile_u16": [
+        811,
+        0,
+        49155
+      ],
+      "exact_reverse": true,
+      "same_tuple_create": [
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 106,
+          "block_sha256": "c96b0722f56e323f20c19dda3cc4f970ddfc0f0304f32a88a8e7a7e195cc7c8f"
+        }
+      ],
+      "other_floor_tile_u16": [
+        5041,
+        0,
+        49155
+      ]
+    }
+  ],
+  "direct_CREATE_only": [],
+  "linked_DAT": {
+    "100": {
+      "bytes": 3840008,
+      "sha256": "2456297e09861360f0fcfe48cf6ea18ef613b6b9d69d165c1b1844977bb6bfbf",
+      "crc32": "aa7a58ad",
+      "width": 800,
+      "height": 800
+    },
+    "1301": {
+      "bytes": 5408,
+      "sha256": "e503b46e112470820f57c16b28092ea6dbc8250e6ec3ff522b37f92e161d4bad",
+      "crc32": "fbedd7b1",
+      "width": 30,
+      "height": 30
+    },
+    "1302": {
+      "bytes": 5408,
+      "sha256": "49a45e26db5fd34a9753d9c663a60c4713e7703aeb7aab0a9869d207fc36832f",
+      "crc32": "d4d84466",
+      "width": 30,
+      "height": 30
+    },
+    "1303": {
+      "bytes": 5408,
+      "sha256": "d6f85cccec0eec22eaccfbef84eafcfaecea97995bbb6af3062ab84625221ec4",
+      "crc32": "da3ca9ef",
+      "width": 30,
+      "height": 30
+    },
+    "1304": {
+      "bytes": 5408,
+      "sha256": "ce2b8267dc95daae900f6434cc4354153c0d9890a5e52701bf73f68510270892",
+      "crc32": "f88ebe4d",
+      "width": 30,
+      "height": 30
+    },
+    "1305": {
+      "bytes": 5408,
+      "sha256": "9539021ae79e0e03a299b77d32cbdfc5a03b34186a04812752197a105da5e9a9",
+      "crc32": "348707fe",
+      "width": 30,
+      "height": 30
+    },
+    "1306": {
+      "bytes": 7208,
+      "sha256": "5dea261ca1c223189cedebdf579642ba134470a27e4f5e1d12505cf2317c18ae",
+      "crc32": "189097d3",
+      "width": 40,
+      "height": 30
+    },
+    "1310": {
+      "bytes": 5408,
+      "sha256": "88744b050150a2275c5775e4eb7d4aa4c36a1db78713f38b0a553d450bf061be",
+      "crc32": "c6128870",
+      "width": 30,
+      "height": 30
+    }
+  },
+  "source_members": {
+    "1300.MAP": {
+      "bytes": 20008,
+      "sha256": "a3b25cf753056886f7cd0b8293bade2db0ab917ac4474df9278333e11a882235"
+    },
+    "map/mapwarp.txt": {
+      "bytes": 110674,
+      "sha256": "b7b50f42efa8e5a3f740d49a8d0c01cbf994d1bb66151b16ff5b5e7c14e7595c"
+    },
+    "npc/extra/event/marju": {
+      "bytes": 1439,
+      "sha256": "aa8ae38d76daf189b075befc55557f6f3e49fec81ee624c3a8e517d741fea904"
+    },
+    "npc/extra/event/marju.create": {
+      "bytes": 1896,
+      "sha256": "a93b179d1c5b4ac637d381d49f7aea9c5cdd161929ab128cf6d3e0eb6cd5a878"
+    },
+    "npc/genout/100warp.create": {
+      "bytes": 7950,
+      "sha256": "d61d5ada11e28a2cd22603d071fe69396f6f02cf04769226e6826184cd59af60"
+    },
+    "npc/genout/1300npc_m.create": {
+      "bytes": 2309,
+      "sha256": "fae8c811b05ef77848dd87234bf2e7edb934ad01fdf0add5acecc16c0a4910fb"
+    },
+    "npc/genout/tman_1300_37_26": {
+      "bytes": 90,
+      "sha256": "cc815c7810dcc123df29a163a4c2365c7218a6086712dd46a26e11275d49b5a1"
+    },
+    "npc/genout/warp_y.create": {
+      "bytes": 24588,
+      "sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1"
+    },
+    "npc/sainasu/event/event03.create": {
+      "bytes": 477,
+      "sha256": "f2769e89f6f0e82830bc64529996918b54c360a596a9257b69802fd18f16aa91"
+    },
+    "npc/sainasu/event/event03_1": {
+      "bytes": 891,
+      "sha256": "693adb44f269b1499e3bb4cc70af3d6143c38bc388584b9c4464ffdac4dc384e"
+    },
+    "npc/sainasu/event/event09-12.create": {
+      "bytes": 692,
+      "sha256": "1f55bbd59aa01c3aeaf1a70d5eb7b29f6c77f0dfd3549f082419c6e465a107e5"
+    },
+    "npc/sainasu/event/event10": {
+      "bytes": 1790,
+      "sha256": "99456b8431026d4c83f3d121b5d454209b8fb3ad1e0d45a4f288ba9ffc838e64"
+    },
+    "npc/sainasu/event/oev2.create": {
+      "bytes": 4719,
+      "sha256": "aa970655e6123d050b2b3007f8b24135a5ec9380466db3f55e458e67bdb456b4"
+    },
+    "npc/sainasu/event/oev_9c": {
+      "bytes": 1845,
+      "sha256": "6aa23fb3c3aa906ea68a3e3a0fe3c371bec8656f3f8bb99ee5c5b64d54dd41b9"
+    },
+    "linked-dat/100.dat": {
+      "bytes": 3840008,
+      "sha256": "2456297e09861360f0fcfe48cf6ea18ef613b6b9d69d165c1b1844977bb6bfbf"
+    },
+    "linked-dat/1301.dat": {
+      "bytes": 5408,
+      "sha256": "e503b46e112470820f57c16b28092ea6dbc8250e6ec3ff522b37f92e161d4bad"
+    },
+    "linked-dat/1302.dat": {
+      "bytes": 5408,
+      "sha256": "49a45e26db5fd34a9753d9c663a60c4713e7703aeb7aab0a9869d207fc36832f"
+    },
+    "linked-dat/1303.dat": {
+      "bytes": 5408,
+      "sha256": "d6f85cccec0eec22eaccfbef84eafcfaecea97995bbb6af3062ab84625221ec4"
+    },
+    "linked-dat/1304.dat": {
+      "bytes": 5408,
+      "sha256": "ce2b8267dc95daae900f6434cc4354153c0d9890a5e52701bf73f68510270892"
+    },
+    "linked-dat/1305.dat": {
+      "bytes": 5408,
+      "sha256": "9539021ae79e0e03a299b77d32cbdfc5a03b34186a04812752197a105da5e9a9"
+    },
+    "linked-dat/1306.dat": {
+      "bytes": 7208,
+      "sha256": "5dea261ca1c223189cedebdf579642ba134470a27e4f5e1d12505cf2317c18ae"
+    },
+    "linked-dat/1310.dat": {
+      "bytes": 5408,
+      "sha256": "88744b050150a2275c5775e4eb7d4aa4c36a1db78713f38b0a553d450bf061be"
+    }
+  },
+  "candidate": {
+    "draw_references": 6192,
+    "distinct_aliases": 404,
+    "reused_MAP04_aliases": 384,
+    "recovered_aliases": 20,
+    "recovered_references": 43,
+    "uncovered_references": 0,
+    "dimensions": [
+      6401,
+      4807
+    ],
+    "origin": [
+      48,
+      2392
+    ],
+    "png_sha256": "2be7aabf1c2810445fee32ad4957580a70180554cbeccbd1704acf6155fb319d",
+    "rgba_sha256": "f2827bcf895ba71d5d2b87ec4cf361044a8d4fae26932a893f48bb23fb01cb92",
+    "independent_canvas_match": true
+  },
+  "new_aliases": {
+    "6793": {
+      "references": 5,
+      "adrn_index": 2631,
+      "adr_sha256": "000627d9213aed624d51659ed182ab81b65e3918b476763cc004a76d921db394",
+      "rd_sha256": "d0200d14b00918fa8382bba1bd98d32d8abf0b06ac779d9fcce93be945288fed",
+      "index_sha256": "6d9ef488c28c2dd93d8a72be5485ca6febb3533f313f019e22731a898602f1fc",
+      "rgba_sha256": "67ed7bd38b906269db36c88e6ff26605210b3cb0b26255b3a63eee6cb6eb1fd8",
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47
+    },
+    "6796": {
+      "references": 1,
+      "adrn_index": 2634,
+      "adr_sha256": "897935c4c73f748889ba049b49154418ce2741bca7bb25029b6a20ad3f46c40c",
+      "rd_sha256": "2f33acdb10805198ee5854b48d1392f6c9d797daf05ad4fb4d8591f0ac7f6c93",
+      "index_sha256": "62b5b11d47727805f31702218673728b3dc62d86d627655e99e5feab7fcba7ec",
+      "rgba_sha256": "7afe1a68e523ef54fdf9369f3e5dbee027c8a49635821f035484c9e0e566dd43",
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47
+    },
+    "6797": {
+      "references": 5,
+      "adrn_index": 2635,
+      "adr_sha256": "eeed51150342ac12d3937e0b037cdd30860cb1a4c7df1145282884ac874f9380",
+      "rd_sha256": "b99650f717603eae0b45c85ad1d687b937d28659d26595467f784eea08ae82af",
+      "index_sha256": "63d97a7a767ddb539bcbb9fc5e1964c66ee151ca2ade23dc3ab492914df8f7b9",
+      "rgba_sha256": "9a880b41f0b74f8d7a960409f8cbcafdd6830c2b9953e35f5b8095bbdab25826",
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47
+    },
+    "6799": {
+      "references": 4,
+      "adrn_index": 2637,
+      "adr_sha256": "34d9f7dda2df94a129680b6cf16ed55f8ab4ba01df13b6ef7ef837d4d2662c5f",
+      "rd_sha256": "49af01ed7158bf7814aa8fc26fe5c11af8a9f5a1c8c3bd1b16d9a294178acc11",
+      "index_sha256": "147408e76b48bbeacf35138d180a4807776a269e7d47d5362ca49826a97089c1",
+      "rgba_sha256": "e8d3eed77ad3f29e03c42d703c59cefff6af6703eb46d36ac2c12f6be01f5aa5",
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47
+    },
+    "6801": {
+      "references": 1,
+      "adrn_index": 2639,
+      "adr_sha256": "039cac57ddc3d94a6c7f80040a6fc1b6abd2fe07886428c568d917e399eaf47c",
+      "rd_sha256": "c5a01d379fd628deef4cf18b3a15dc23d61b2a1d1c4fa65cf44c19ef698baeb4",
+      "index_sha256": "f53a37ba8a25c0e0a76f3e6293baa8ad1f05f56c5b10081421d335fd9d6041d1",
+      "rgba_sha256": "cc89395a7c16383273350605a56698d01d844dd4764424acdc81bcdbbf02759b",
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47
+    },
+    "6803": {
+      "references": 1,
+      "adrn_index": 2641,
+      "adr_sha256": "0b80ac47beeb60574faf37375bff87a3e4210bd91e82f39a9a6dca8a47f8db00",
+      "rd_sha256": "e0c7d3d480000eb583067cc832f2e8dff70643d71d6b0e77c6f22c93da5e2110",
+      "index_sha256": "9ed1b47b36ce65425b08ebadb95e2f324f6b9cb8fb74101d872adfc388d9de30",
+      "rgba_sha256": "ebc7678e45e786330c1a64f000c46ad23a3263f4a8e30ee648eeb5ca50fa13c2",
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47
+    },
+    "6805": {
+      "references": 3,
+      "adrn_index": 2643,
+      "adr_sha256": "8d54289cf6c2e968d3ca7bfe13f014fea2c1a13a4885a6a1c7c62e0d74fb23e3",
+      "rd_sha256": "2549c5cb1f42104a0181324b27ce211b262a5c15b4e539b7c44eefdfd3fa4fcc",
+      "index_sha256": "0ae8134828f2ac02d9d1ca874f133b1abcd8050fde19d32ffe014afa7b2f2e4a",
+      "rgba_sha256": "26cf84062c9e4170643c2feb8bf1a47b2dfcc7ab5c28d3e74d983a4b200302e5",
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47
+    },
+    "6809": {
+      "references": 3,
+      "adrn_index": 2647,
+      "adr_sha256": "35615fb604efb49a50e89e2503a17e221c68d4166780a8e9d6d419c186227799",
+      "rd_sha256": "9a85c44f035bcde6889ae80cf79c4847cf3bbdb1a08b40923673532c1de37e67",
+      "index_sha256": "03ce47df6bb35272ba13786dfd1fab54daa70685be87e3308561cd9688dfc13c",
+      "rgba_sha256": "e45f8a50bda7d8334ab9b3253319e3348fb6a2aea86ceacde81f1843f3fe9643",
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47
+    },
+    "6810": {
+      "references": 2,
+      "adrn_index": 2648,
+      "adr_sha256": "c40797a182452bb20fa461eefec85fd2264833c222be4d6850c61f38b4432320",
+      "rd_sha256": "cd69459d6b14431cfd3bbed34833c4d8df1a572d2f63aaed213821d2c1a94266",
+      "index_sha256": "8dafc774d85d6b2850b44069e271c791b4d04f1a3e98e2673c284ecd365d45ad",
+      "rgba_sha256": "40d5d1db0f8b7de76ac9edf1bc96f9cc573f780d87309729cb91944742b32ed9",
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47
+    },
+    "6811": {
+      "references": 2,
+      "adrn_index": 2649,
+      "adr_sha256": "2f408198b65274c087f34cc77d08c727a5770b2cd4a32322f640c478eaa20946",
+      "rd_sha256": "a5d4d280e06159099c21eeb038ee35069908b4b39edda6934ae1a376c91c28f2",
+      "index_sha256": "def235c07b2e214c76ea5093134114fc045cdbb9de372e2515d9cc41d7ac3b48",
+      "rgba_sha256": "f4440b5f7c85e75a0318b1f7f65c316ce1dee90f3cba9cdc050a68ac2a0857f6",
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47
+    },
+    "6812": {
+      "references": 1,
+      "adrn_index": 2650,
+      "adr_sha256": "f24a92162d28ddb04bc7dc95c60fc0657cb50f2236cc0d717c64116282879987",
+      "rd_sha256": "5001899f26eb29af3535ea562752ad3e9ac56b8b394baae0f3cf8f3f2e208119",
+      "index_sha256": "84ca55d634cd09bb85116ac3d35d58772163ded94cd64b34bdb844a5185c645d",
+      "rgba_sha256": "3dc317197d48113c02fd48bb3ceb6016d32a9d302066386808e1feaa1b803e25",
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47
+    },
+    "6814": {
+      "references": 1,
+      "adrn_index": 2652,
+      "adr_sha256": "b56de0f80715fe366feb443d9580e846a434e5206da153ed0d5b01cf53a7cf6a",
+      "rd_sha256": "97cc40e59f3c6e72507472fce3f307662afc31d8ce4adfcf551211dbb7e8d665",
+      "index_sha256": "97fa531af80535ae7a02a23676d297bfdd05e556fd3b127e60f5120e281d557b",
+      "rgba_sha256": "2e7abfbc62d3c2c2fa90d9b8e8ab0464d7959959ff179f6efa442635e598e343",
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47
+    },
+    "6815": {
+      "references": 1,
+      "adrn_index": 2653,
+      "adr_sha256": "f35115674ce370b1934777b25db027c369703234895656c40b8235b60aa3b66e",
+      "rd_sha256": "354b446eb841f6a176ff609a600cf01a252eab218e14a76a6e65c6c6244fb293",
+      "index_sha256": "df69018d9dcb23f8ff37aca6046b02b54cdd0d48d119c25a991a0dc3bb2ed1e4",
+      "rgba_sha256": "2b4618aae4981478f2d88cba42704439177f198c4b54186b07e5951992c7b073",
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47
+    },
+    "6817": {
+      "references": 5,
+      "adrn_index": 2655,
+      "adr_sha256": "72facc7475c723d9e2a11fa734ab9ca8dad759f6ed3c16b25104675263914e0e",
+      "rd_sha256": "54e1e787b70a1c091880710bdf8245ca0a6bf82a748a024ffc71cb4820c2a4bd",
+      "index_sha256": "e3951ab7ff7d5d8a5ed2412e7aa56a0d37e6ddda6d914df57f540b8e369d9c67",
+      "rgba_sha256": "06a64febf6e948553841182c7309cee8251d2f509887ec060325ceb27bae5e14",
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47
+    },
+    "6820": {
+      "references": 1,
+      "adrn_index": 2658,
+      "adr_sha256": "b1bc6a205c653834e1ab4f7d067d9e9406405a015e9cd4345053d3e3c23ce64b",
+      "rd_sha256": "aed40d46dfb99e4de9812750a1f5daea4ba8f60b0dfa68ce8b24d417af2d26a0",
+      "index_sha256": "112a79d428ce7410727c4ed8314fae0dcf335d80de36b0b7ca4daa47bc7b0e49",
+      "rgba_sha256": "237b019225ee745ae8006bfde6db7cf8c1f48f77b483990980dc5c9bb67da7c6",
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47
+    },
+    "6821": {
+      "references": 2,
+      "adrn_index": 2659,
+      "adr_sha256": "4239a85917f61ce9d9e5153ac886b0c58540a55f9e39aab258d066431cd51c22",
+      "rd_sha256": "b4bb8be8e96c46fd213701f8eea3df27c9eaa9dfb7fb1b6983cc88379886a4d0",
+      "index_sha256": "b2ca602c7a57eba0e7094fdd99d29c8928cfc5003b1a23d89328bb8d9ff5cecf",
+      "rgba_sha256": "9d6f57fce9e94335ec0f0b29ce3b5597a14d304e8314d3a5f315eb383b2d1d78",
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47
+    },
+    "6823": {
+      "references": 1,
+      "adrn_index": 2661,
+      "adr_sha256": "f211ec0a9abfd51de3fbadb639c1103299d3cba46fb37b99ac1ec2c93c1e3a0a",
+      "rd_sha256": "e301cae18a1e05494c4f14d58c0260c7c673859694b24f3d8417648e28af55fd",
+      "index_sha256": "cb743c11a7ee6d0b0d6c06e03876a389a00041aededc12fd2dd60d7bfaa99758",
+      "rgba_sha256": "9f3ef0e91d615f1bb9ce7d3d6c4544277beda7fe4f94a62a6685adc8f28d28b2",
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47
+    },
+    "6826": {
+      "references": 2,
+      "adrn_index": 2664,
+      "adr_sha256": "7621ef0bbd08d410861574519e2e6a41f2889fc2e3c8103374df54cf93b791e3",
+      "rd_sha256": "6532dfedaeb5c3a987e54f691be3d8e1a58d5bdd3ba85b06405499208185bf3f",
+      "index_sha256": "23666bb00f6d2164e2aab068d718f9875d717a18ac9b018b283a40b979de7734",
+      "rgba_sha256": "0d8df708c8d24b3761a94cf2f319d1c9f360a9105c6cc93bde14d7ebebf31eb9",
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47
+    },
+    "6827": {
+      "references": 1,
+      "adrn_index": 2665,
+      "adr_sha256": "6f3fb70527bf0dcd42dd89a66bb740d0f86adfa556e79b6aa37eb50b26075e43",
+      "rd_sha256": "a5d6b5f269747d0923d973d49cc7ee1f5ca94a845f234802f666d2b677296f30",
+      "index_sha256": "96f0b244edae0a02cc5a92ce06fb2c0db155f459d8b42d0b97e8da9f584e4236",
+      "rgba_sha256": "09262bb5cb875b0f8fa0ceafdabe83d9ff48905747073109440cf1a455072a5c",
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47
+    },
+    "10211": {
+      "references": 1,
+      "adrn_index": 4601,
+      "adr_sha256": "34a4e6a3dfffe6909089e8f692e36bedcf2f92dd7ffa9d910d777a584cde5bae",
+      "rd_sha256": "675e1434059fb6bbf988e6791ee629b0283eb090eae95a9d9dfed6a0ea134881",
+      "index_sha256": "56d43bbdb4d4ec34c22aba9f5c5b09b46ebccaa36c19974589d8e7a140966323",
+      "rgba_sha256": "30c785d674134094b40009d79b3a6083517109fbf24e5eec79127cec2e2d35cc",
+      "xoff": -156,
+      "yoff": -229,
+      "width": 316,
+      "height": 291
+    }
+  },
+  "limits": {
+    "native_collision_verified": false,
+    "native_NPC_spawn_verified": false,
+    "native_warp_execution_verified": false,
+    "native_renderer_verified": false,
+    "official_same_deployment_verified": false,
+    "original_assets_published": false
+  },
+  "private_archive": {
+    "bytes": 12504029,
+    "sha256": "6453a52bf3290851321fb51781b1cd5c188e69d82cc4138e8e58981f824ddc56",
+    "members": 47
+  }
+}

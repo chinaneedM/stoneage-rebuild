@@ -2235,3 +2235,7 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-09 — INTEGRATION10｜十二份失读原DAT实际补回与七检查站场景
 
 [INTEGRATION10原件恢复、七窗与接力](docs/continuity/STONEAGE-INTEGRATION10-TWELVE-DAT-SEVEN-SCENES-20261109.md)：实际重验已保存361255180B mixed25原RAR，从12条旧失读成员完整提取16,497,180B、2,749,514原格，逐原头CRC/成员CRC/新SHA通过。1300与1100等地图现在有真DAT；QUEST05既有67条CREATE可联接原图，原830两配置仍缺本选源DAT。保留MAP01旧63次失败，不称全部解决；旧捕获报告已有7层同SHA，不当新发现12地图。实际用279旧原图候选构成C2/C9/D1/D2/D5/D7/D12七处11×11来源场景，819引用无缺图，NumPy独立复算21完整画布全部同。314成员私人源/图包和联系图已保存，原商业素材不入Git。公开仅[来源数值/散列](research/recovered/STONEAGE-INTEGRATION10-TWELVE-RECOVERED-DAT-SEVEN-CHECKPOINT-SCENES-R1.json)、工具与9项专项，75项相关本地测试成功；出版CI须真实后验。CURRENT原blob c89e0e33537990aa2132b47c40fef49a985a935c完整不改，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体百分比未知。最高NEXT复用新DAT对1300六CREATE及出入口做有据内容联接，先核图像覆盖，不冒充原生可玩路线。
+
+## 2026-11-09 — INTEGRATION11｜霍特爾 1300 原图、创建配置与双侧传送端点
+
+完成 1300 全图候选。补齐 20 个台湾 1.0 原 RD 别名对应的 43 次引用，全图 6,192 次候选绘制有原图。六条原 CREATE 落在五个坐标，两个时钟块同格，另保留寄信与普通对话配置的同格关系。46 条传送表记录与直接 CREATE 一一吻合，双方格值已核八张相连原 DAT。原生触发、碰撞及历史同部署仍待证。下一包优先核 1306、1310 房间来源与门点。见[本轮接续](docs/continuity/STONEAGE-INTEGRATION11-FLOOR1300-SOURCE-SCENE-20261109.md)。

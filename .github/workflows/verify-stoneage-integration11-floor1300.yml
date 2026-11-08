@@ -1,0 +1,25 @@
+name: Verify StoneAge INTEGRATION11 floor 1300 source joins
+on:
+  push:
+    paths:
+      - 'tools/stoneage_integration11_floor1300.py'
+      - 'tests/test_stoneage_integration_module_11.py'
+      - 'research/recovered/STONEAGE-INTEGRATION11-*.json'
+      - '.github/workflows/verify-stoneage-integration11-floor1300.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_integration11_floor1300.py'
+      - 'tests/test_stoneage_integration_module_11.py'
+      - 'research/recovered/STONEAGE-INTEGRATION11-*.json'
+      - '.github/workflows/verify-stoneage-integration11-floor1300.yml'
+jobs:
+  public-source-metadata:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_11.py' -v
