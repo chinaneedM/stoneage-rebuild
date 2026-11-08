@@ -1,0 +1,25 @@
+name: Verify StoneAge QUEST29 original spirit-king derived source
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-QUEST29-SPIRIT-KING-EVENT69-SOURCE-R1.json'
+      - 'tools/stoneage_quest29_spirit_king_source.py'
+      - 'tests/test_stoneage_quest29_spirit_king_source.py'
+      - '.github/workflows/verify-stoneage-quest29-spirit-king-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-QUEST29-SPIRIT-KING-EVENT69-SOURCE-R1.json'
+      - 'tools/stoneage_quest29_spirit_king_source.py'
+      - 'tests/test_stoneage_quest29_spirit_king_source.py'
+      - '.github/workflows/verify-stoneage-quest29-spirit-king-source.yml'
+jobs:
+  derived-source:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_quest29_spirit_king_source.py' -v
