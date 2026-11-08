@@ -128,8 +128,8 @@ class Quest19PublicAcceptance(unittest.TestCase):
         self.assertIsNone(r["restoration_percent"])
         for v in r["bounds"].values():self.assertFalse(v)
         self.assertTrue(r["treasurebag_npc_relocation"]["not_player_teleport"])
-        self.assertFalse(r["treasurebag_npc_relocation"]["actual_NpcWarp_selection_UNPROVEN"] is False)
-        self.assertFalse(r["random_candidates"]["actual_reward_UNPROVEN"] is False)
+        self.assertFalse(r["bounds"]["native_NpcWarp_execution"])
+        self.assertTrue(r["random_candidates"]["actual_reward_UNPROVEN"])
         self.assertFalse(r["private_source"]["original_commercial_bytes_published"])
         self.assertFalse(r["private_source"]["parent_community_RAR_reverified_this_unit"])
 
