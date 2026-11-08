@@ -2230,3 +2230,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-08 — INTEGRATION09｜有据玩家内容链与原生可玩缺口
 
 [INTEGRATION09 1001⇄1000双向传送原块、邻近NPC及任务/宠物关系的来源审查](docs/continuity/STONEAGE-INTEGRATION09-REPRESENTATIVE-PLAYER-CONTENT-CHAIN-20261108.md)：复用同一受限mixed25存档和此前已出版SCENE15/22、INTEGRATION08、QUEST25/26、INTEGRATION06/07派生原证，1001(10,15)↔1000(63,99)源传送关系、1000(63,103)村民原提示输入（仅坐标差0,+4）及1000上C/D环岛/2414-2415交换/原GetPet字面组成**静态原始内容网络**；不能称实际可走、触发、通关或宠物领取。特别核出SCENE22村民不属于INTEGRATION08的19条QUEST05特殊CREATE样本，不以19算总人口。1300有原MAP和6条CREATE但DAT仍为原CRC读错。公开[逐来源SHA索引](research/recovered/STONEAGE-INTEGRATION09-REPRESENTATIVE-PLAYER-CONTENT-CHAIN-R1.json)与8项静态反例测试；其中原C线第2/9站floor1100/1300、D线5站floor100共7个检查站DAT源成员读取失败，不能据此断言原路线可行或文件不存在；CURRENT `c89e0e33537990aa2132b47c40fef49a985a935c` 全历史不动、原资产不入Git。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null。NEXT选择有**新合格原实物及真实玩家内容增量**的跨域缺口，不延伸虚构步行路线或网服。
+
+
+## 2026-11-09 — INTEGRATION10｜十二份失读原DAT实际补回与七检查站场景
+
+[INTEGRATION10原件恢复、七窗与接力](docs/continuity/STONEAGE-INTEGRATION10-TWELVE-DAT-SEVEN-SCENES-20261109.md)：实际重验已保存361255180B mixed25原RAR，从12条旧失读成员完整提取16,497,180B、2,749,514原格，逐原头CRC/成员CRC/新SHA通过。1300与1100等地图现在有真DAT；QUEST05既有67条CREATE可联接原图，原830两配置仍缺本选源DAT。保留MAP01旧63次失败，不称全部解决；旧捕获报告已有7层同SHA，不当新发现12地图。实际用279旧原图候选构成C2/C9/D1/D2/D5/D7/D12七处11×11来源场景，819引用无缺图，NumPy独立复算21完整画布全部同。314成员私人源/图包和联系图已保存，原商业素材不入Git。公开仅[来源数值/散列](research/recovered/STONEAGE-INTEGRATION10-TWELVE-RECOVERED-DAT-SEVEN-CHECKPOINT-SCENES-R1.json)、工具与9项专项，75项相关本地测试成功；出版CI须真实后验。CURRENT原blob c89e0e33537990aa2132b47c40fef49a985a935c完整不改，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体百分比未知。最高NEXT复用新DAT对1300六CREATE及出入口做有据内容联接，先核图像覆盖，不冒充原生可玩路线。
