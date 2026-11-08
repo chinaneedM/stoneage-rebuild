@@ -48,3 +48,13 @@
 资料说明里记录的尚未认证版本与运行均不补造。Stage A **7 PARTIAL+2 OPEN**，Stage B 和 wiki **GATED**，R79 **PAUSED_NON_BLOCKING**，整体完成率 `null`；依照用户指令始终单机离线内容优先，未来新游戏、引擎和体验修改仍延期。
 
 **最高 NEXT `QUEST15-DEDUP-AND-SOURCE-READY-UNRESTORED-ORIGINAL-FAMILY`**：先重取新远端，再查重 QUEST01/04/05–14 已复原族，择一真有原脚本、物品及场景可证的下一任务；三龙本族原战斗/龙玉来源需新同部署原材料才增量重开。其他组合 portfolio 若后来更新则以后验更高优先级为准。
+
+ 
+## 6. 私人存档、正式合并与 GitHub Actions 后验（2026-11-08）
+
+- 私人原件已保存个人 Library 的 `StoneAge-QUEST14-dragon-nest-three-dragons-original-private.zip`，**81,015 B／SHA256 `5f004435b501c7e2bded801ec8e847482cfca5fffb409ad7c2160e5247074232`／34 成员**。上传后确实以新文件 ID 重新独立取回，完整 ZIP 的 SHA256 与本地打包相同、`testzip()` 全部 CRC 正常；其中 33 个收据内成员各自原始内容 SHA256/字节数也全部逐项重新核对。这是私有原文/原 DAT/跨载体候选图的保管验收，非公众 Git 仓库内容。
+- 候选源提交 **`272c0d65a987d1e493c579ba5797b76425b9eddb`**、tree **`b43cad35b44ed1f801ffbef9eee926df1320e5c7`**，来自 fresh main `6c6a193fd937133f94a7901f78744ac53984bf55`。远端逐文件核验六处公开变动：4 新增公开派生材料 + README 索引 + 旧来源工作流步骤；无原商业 NPC 对白、原 DAT、原 PNG、私人 HTML。完整旧 `CURRENT-STATE.md` 仍为 **blob `c89e0e33537990aa2132b47c40fef49a985a935c`（2,709,173 B）**，未覆盖、修短或改写。
+- [PR #254](https://github.com/chinaneedM/stoneage-rebuild/pull/254) **已实际合并**，合并主线提交 **`f45ea47302c746b9464a44a3f71854c288f109bd`**，远端 main tree 与候选 tree **完全一致**；原 main 与候选保留为两个父提交。
+- 候选 **14/14 GitHub Actions completed/success**。专用 [QUEST05—QUEST14 来源验证运行 #42452743681](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42452743681)／job **`128645244868`** 真实完成，新增步骤 **“Validate QUEST14 dragon nest literal original source and unknown-runtime guards”** 为 success，既有 QUEST12/QUEST13 回归步骤也 success。测试只在公开派生证据和公开旧目录上重放，并未在 GitHub 读取原商业 ZIP。
+- 合并后的 `main` **11/11 GitHub Actions completed/success**，含专用运行 [#42452799851](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42452799851)，其余十项 `42452799852`、`42452799855`、`42452799817`、`42452799857`、`42452799889`、`42452799853`、`42452799839`、`42452799863`、`42452799789`、`42452799864` 全部实证成功。**本段文档后续追加提交自己的 Action 运行必须另验，不能提前归入这 11 次结果。**
+- 本次任务族状态 **`ACCEPTED_SOURCE_BOUNDED`**；仅源字面规则、实际原物品行、地图格值、旧 QUEST01 索引对照与有界空白已验，不断言官方早期部署、龙玉实际掉落、遇敌战斗、三奖励真实选择／重复性、原版客户端可玩。Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、整体百分比 null，均不因 10 项测试通过而改变。下一最高 NEXT 是 **`QUEST15-DEDUP-AND-SOURCE-READY-UNRESTORED-ORIGINAL-FAMILY`**，从全新远端与源文件先查重、再选真实可得的独立任务族，不重复 event17。
