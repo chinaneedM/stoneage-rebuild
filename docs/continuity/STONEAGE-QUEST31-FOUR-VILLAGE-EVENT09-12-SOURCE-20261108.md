@@ -52,3 +52,8 @@
 `QUEST31=SOURCE_BOUNDED_STATIC`，四处配置与三地图旧SHA候选只是可检索关联、非已有可玩的四村任务。现有 Stage A仍 **7 PARTIAL + 2 OPEN**，Stage B/wiki **GATED**、R79 **PAUSED_NON_BLOCKING**，整体完成率未知。**NEXT QUEST32：** 先复核QUEST任务模块剩余**确有独立材料价值**的缺口；若可得只剩旧索引或无合格同源DAT／对应官方版本文件，明确记录任务模块 `SOURCE_BOUNDED_PARTIAL` 的阶段止点，转为跨地图／NPC／物品／宠物的整体关系和来源缺口复核。不为积累QUEST编号反复做小型原字段辅助工具，更不开发网游基础设施或过早选择新单机引擎。
 
 本段属于大CURRENT未改时的加法接力；候选、PR、Actions、主线合并和最终验收 **须在实际远端完成后再追加**，不可提前宣称完成。
+
+
+## 7. 远端合并与正式验收回执
+
+[PR #271](https://github.com/chinaneedM/stoneage-rebuild/pull/271) 已经 squash 合并到 main `a4d2855698edb0578a696566569ce317d49084e2`／tree `93472ca96dbce4830d1dfdee28d6f83cad375d3b`。候选最终提交 `e63364c752df83bfaa94c8a2c79cea8ce3b4f526` 的 **14/14** GitHub Actions 已实际 `completed/success`，包含QUEST31 PR专项run42488670285/job128756017935与push专项run42488666891/job128756007836；合并后主线 **11/11** Actions 亦全部 `completed/success`，QUEST31主线run42488758749/job128756290065真实成功。公开源、测试、派生JSON、文档、工作流Git blob已由主线完整树独立核定，主线与最后候选全树相同；旧 `docs/CURRENT-STATE.md` blob c89e0e33537990aa2132b47c40fef49a985a935c 未改。`EndSetFlg`复合12漏收已用新报告/13项回归补证；最初候选与补证候选均有远端历史、没有改写旧来源。私人最终包27,565B／SHA796682fd…已上传Library后完整回取并CRC验26成员；初版/中间本地测试包非最终保管版本，不能误称最终。详细运行ID与出版证据见[验收收据](../../research/recovered/STONEAGE-QUEST31-PUBLICATION-ACCEPTANCE-R1.json)。最高NEXT仍QUEST32审查任务模块止点与跨模块源关系；这份后验提交自身的Actions仍需之后另据真实远端状态判断。
