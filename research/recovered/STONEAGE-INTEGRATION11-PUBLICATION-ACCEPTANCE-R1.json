@@ -1,0 +1,185 @@
+{
+  "schema": "stoneage.integration11.publication_acceptance.r1",
+  "date": "2026-11-09",
+  "initial_head": "c49a64da2fa308e98422208396764f7268539468",
+  "initial_tree": "b7707fae9d63afa5c1ca10c3d1b8c5b8c189916b",
+  "preserved_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "pull_request": 278,
+  "first_candidate": "29a45dae3b9bd4a7ee6ba2db0044907d32d92f29",
+  "first_failures": [
+    {
+      "id": 42535636373,
+      "name": "Verify StoneAge INTEGRATION11 floor 1300 source joins",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "failure",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42535636373"
+    },
+    {
+      "id": 42535634359,
+      "name": "Verify StoneAge INTEGRATION11 floor 1300 source joins",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "failure",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42535634359"
+    }
+  ],
+  "failure_cause": "ModuleNotFoundError: No module named 'PIL' during public test import",
+  "fix": "Lazy imports isolate private Pillow use. Five metadata tests pass with Python -S. The fixed private exporter reproduces the derived evidence and all 47 saved member payloads.",
+  "candidate": "2764652f10687a2be499a104f5d643ab59847a89",
+  "merged_head": "bf22ae6d51045fd379c93a4378f37077b1dd1bb5",
+  "verified_tree": "e6291f881ba209331e579c3249a3022b65811a82",
+  "candidate_actions": [
+    {
+      "id": 42535746078,
+      "name": "Verify StoneAge INTEGRATION11 floor 1300 source joins",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42535746078"
+    },
+    {
+      "id": 42535746099,
+      "name": "Verify StoneAge O11 native source animation and bounded sound-word candidates",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42535746099"
+    },
+    {
+      "id": 42535746141,
+      "name": "Verify StoneAge O12 original compiled sound-number namespace (derived only)",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42535746141"
+    },
+    {
+      "id": 42535743345,
+      "name": "Verify StoneAge INTEGRATION11 floor 1300 source joins",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42535743345"
+    }
+  ],
+  "content_main_actions": [
+    {
+      "id": 42535793501,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42535793501"
+    },
+    {
+      "id": 42535793602,
+      "name": "Verify StoneAge INTEGRATION11 floor 1300 source joins",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42535793602"
+    },
+    {
+      "id": 42535793523,
+      "name": "Verify original local album name material and no master promotion R35",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42535793523"
+    },
+    {
+      "id": 42535793634,
+      "name": "Verify original native album table and saved-name joins R36",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42535793634"
+    },
+    {
+      "id": 42535793517,
+      "name": "Verify original four village interior materials R34",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42535793517"
+    },
+    {
+      "id": 42535793598,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42535793598"
+    },
+    {
+      "id": 42535793498,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42535793498"
+    },
+    {
+      "id": 42535793590,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42535793590"
+    },
+    {
+      "id": 42535793565,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42535793565"
+    },
+    {
+      "id": 42535793504,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42535793504"
+    },
+    {
+      "id": 42535793528,
+      "name": "Verify original same-build named-entity source gate R31",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42535793528"
+    }
+  ],
+  "content_main_special_job": 128899679898,
+  "executed_special_tests": 5,
+  "local_integration_tests": 80,
+  "private_readback": {
+    "zip_file": "StoneAge-INTEGRATION11-floor1300-private.zip",
+    "zip_library_id": "libfile_1131a3d70a0c8191bef84dad677b1316",
+    "preview_library_id": "libfile_90082cf4ba888191bad0f85039b5cbf5",
+    "zip_sha256": "6453a52bf3290851321fb51781b1cd5c188e69d82cc4138e8e58981f824ddc56",
+    "zip_members_crc_verified": 47,
+    "both_saved_copies_match": true
+  },
+  "next": {
+    "priority": "Source-qualified adjacent room observations for 1306 and 1310",
+    "preflight_MAP04": [
+      {
+        "floor": 1306,
+        "draw_refs": 265,
+        "distinct_aliases": 58,
+        "uncovered": 0
+      },
+      {
+        "floor": 1310,
+        "draw_refs": 128,
+        "distinct_aliases": 66,
+        "uncovered": 0
+      }
+    ],
+    "room_names_pending": true
+  }
+}

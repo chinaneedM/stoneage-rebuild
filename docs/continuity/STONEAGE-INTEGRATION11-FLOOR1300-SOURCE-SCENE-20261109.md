@@ -27,3 +27,11 @@
 首轮校验发现两种来源习惯需要分别处理。CHAR01 块哈希包含闭括号行的换行符，另四个任务配置的原 token 为 `changeevent`。按原作用域和原字段校验后重跑通过。Stage A 维持 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79 暂停，整体百分比未知。
 
 **最高 NEXT**：沿已核的 1300 传送表查 1306、1310 室内是否缺少有据观察，优先取得同一载体的房间名称、门点和原图覆盖。其余已观察房间只引用原证据。归档阶段按明确原证据细化房间类别。
+
+## 出版与复核
+
+[PR #278](https://github.com/chinaneedM/stoneage-rebuild/pull/278) 首候选的两个专项检查因公开测试导入 Pillow 而失败。把私有图像依赖移入实际绘图入口后，无第三方包的五项专项及本地 80 项相关测试通过。复跑修正后的私有导出，派生报告与已存 ZIP 的 47 项成员载荷全同。已重新取回保存的 ZIP 和预览，两者摘要匹配，ZIP 的 47 项 CRC、原件 SHA、全画布 RGBA 和 20 个原 RD 再次核验成功。
+
+修正候选四项 Actions 全通过，squash 后内容主线 `bf22ae6d51045fd379c93a4378f37077b1dd1bb5` 的十一项 Actions 全通过。主线 [专项 run 42535793602](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42535793602) 日志实际执行五项公开测试。内容合并树与本地验收树同为 `e6291f881ba209331e579c3249a3022b65811a82`。保留[正式验收收据](../../research/recovered/STONEAGE-INTEGRATION11-PUBLICATION-ACCEPTANCE-R1.json)。
+
+下一包预查显示，1306 的 265 次引用／58 图别名、1310 的 128 次引用／66 图别名均可在 MAP04 图包找到。待核原房间名称和配置后再产出观察。
