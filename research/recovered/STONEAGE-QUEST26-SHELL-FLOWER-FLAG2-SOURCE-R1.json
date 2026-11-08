@@ -1,0 +1,719 @@
+{
+  "schema": "stoneage.quest26.shell_flower_courier_flag2.r1",
+  "date": "2026-11-08",
+  "initial_remote": {
+    "head": "697cc471c3643e78e1036b53f8fbb69fe108f627",
+    "tree": "1d36517b5256d526f0d1f65c3f75322ff54aba99",
+    "preserved_CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "source_scope": "MIXED25_COMMUNITY_PRESERVED_NOT_AUTHENTICATED_OFFICIAL_EARLY_BUILD",
+  "verified_private_carriers": {
+    "NPC_ZIP_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "NPC_members_SHA_CRC": 2205,
+    "ITEM_ZIP_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "ITEM_members_CRC": 838,
+    "parent_RAR_reread": false
+  },
+  "old_evidence_inputs": [
+    {
+      "path": "research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json",
+      "bytes": 1321481,
+      "sha256": "2995e5825ffd204d5fd31ccffc95f009d8abbcebad829c5824e490b7f20c2b2c",
+      "git_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json",
+      "bytes": 1798170,
+      "sha256": "f6beb17b76b23211d36113bcf462c16ac38435233b3891bb21765179b84e4566",
+      "git_blob": "a088b61a3212f7049e7793f587123ffb29bebad7"
+    },
+    {
+      "path": "research/recovered/STONEAGE-QUEST05-598-ORIGINAL-CREATE-FLOOR-MAP-AND-WARP-CROSSWALK-R1.json",
+      "bytes": 772585,
+      "sha256": "a12fae6fc316b6bd533f635bab0918d891d86f613c7d63089284e058e0e5947f",
+      "git_blob": "b004e488e1d0a93ca7c14eb90abb584b23f341fe"
+    },
+    {
+      "path": "research/recovered/STONEAGE-QUEST24-PORU-FLAG63-FUNCTIONS-AND-FOUR-SCENES-R1.json",
+      "bytes": 93572,
+      "sha256": "5a22fdd30fbfd01f22bef442bd8d5f2a6d0e215f30abef4b84a2826420299849",
+      "git_blob": "c7150d08cace8da3d6b5411036818e1baacb46dc"
+    },
+    {
+      "path": "research/recovered/STONEAGE-QUEST25-FOUR-ISLAND-TOUR-ROUTES-SOURCE-R1.json",
+      "bytes": 372769,
+      "sha256": "3936feddab0d25eefacc175e5e4559782ea11489857f1b1909a788d7ad4c7ce9",
+      "git_blob": "a52b4e5519912ac7e46e1f892cc01515861cf2e8"
+    }
+  ],
+  "source_manifest": [
+    {
+      "path": "jaruga/event/event.template",
+      "bytes": 122,
+      "sha256": "9c11ac0cbbd9b110e8ff7d0115730044673bf29c5df6d23034e56530c181d0b2",
+      "crc32": "a70fc73f"
+    },
+    {
+      "path": "sainasu/event/event02.create",
+      "bytes": 534,
+      "sha256": "2b15884736a19d06caffa32e335c3604e5f8593c8ea051d2040f0c5d3b52e1e4",
+      "crc32": "7d30152c"
+    },
+    {
+      "path": "sainasu/event/event02_1",
+      "bytes": 1185,
+      "sha256": "6f4d04e6be5c34ce989bb4cba8adb1e87ef7d852835583adeaf569cc8ec6c49c",
+      "crc32": "1f8535ba"
+    },
+    {
+      "path": "sainasu/event/event02_2",
+      "bytes": 1131,
+      "sha256": "eb3f9a9c9bbf1776de7533f57c529c1948c2cc8c1fb22945c49d61950f153e9b",
+      "crc32": "745d963a"
+    }
+  ],
+  "source_creates": [
+    {
+      "create_ordinal": 0,
+      "block_sha256": "8209ad41ca56f33d01416c5fb32cab5159f89e12646fa3a32b92164bd1c32b24",
+      "floor": 2000,
+      "graphic_alias": 16027,
+      "borncorner": [
+        55,
+        92,
+        55,
+        92
+      ],
+      "borncenter": null,
+      "direction": 4,
+      "template_token": "changeevent",
+      "template_path": "jaruga/event/event.template",
+      "template_ordinal": 0,
+      "functionset": "ExChangeMan",
+      "script_path": "sainasu/event/event02_1"
+    },
+    {
+      "create_ordinal": 1,
+      "block_sha256": "7fc4ff24630eb7793095dac6f04dbcd1766906afc57b315ca819cf5709f77f9b",
+      "floor": 1000,
+      "graphic_alias": 16030,
+      "borncorner": [
+        57,
+        124,
+        57,
+        124
+      ],
+      "borncenter": null,
+      "direction": 6,
+      "template_token": "changeevent",
+      "template_path": "jaruga/event/event.template",
+      "template_ordinal": 0,
+      "functionset": "ExChangeMan",
+      "script_path": "sainasu/event/event02_2"
+    }
+  ],
+  "source_scripts": [
+    {
+      "path": "sainasu/event/event02_1",
+      "bytes": 1185,
+      "sha256": "6f4d04e6be5c34ce989bb4cba8adb1e87ef7d852835583adeaf569cc8ec6c49c",
+      "crc32": "1f8535ba",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 9,
+          "event_no": -1,
+          "type": "CLEAN",
+          "condition_literal": "ENDEV=2&ITEM!=2414&SP=0,ENDEV=2&ITEM!=2414&SP=3",
+          "condition_sha256": "b5bfae9d541f59681b27ef8191b61ae575e44826ba31c4d384c631336008c581",
+          "section_sha256": "33c326b930c2198be3e89c232e8875b8a76fb24efa0ef1a9dadccff6210a39b1",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "CleanFlg": [
+              "2"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": [],
+          "source_SP_literals_in_order": [
+            0,
+            3
+          ]
+        },
+        {
+          "ordinal": 1,
+          "type_line": 18,
+          "event_no": 2,
+          "type": "ACCEPT",
+          "condition_literal": "NOWEV=2&ITEM=2415",
+          "condition_sha256": "76e427c15920e5aa71da041c644a94e3dda3b9aaf84e5844bef6db4009094dce",
+          "section_sha256": "b2e5be3adf5a33d57e4366e8b710c012d5f272b0572f37e67f92fd54d7aad3de",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "GetItem": [
+              "2414"
+            ],
+            "DelItem": [
+              "2415"
+            ],
+            "EndSetFlg": [
+              "2"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": [],
+          "source_SP_literals_in_order": []
+        },
+        {
+          "ordinal": 2,
+          "type_line": 30,
+          "event_no": 2,
+          "type": "REQUEST",
+          "condition_literal": "LV>0&SP=1,LV>0&SP=2",
+          "condition_sha256": "72561048cf6b450236a74ff35d7622911c87efd4bb5f9e163de5ea2e8e3f8e49",
+          "section_sha256": "4d9baa75a0f0c93edee840a884b7ff7f30cc2b01136a58a03175268fbdc474a5",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "GetItem": [
+              "2414"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": [],
+          "source_SP_literals_in_order": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "path": "sainasu/event/event02_2",
+      "bytes": 1131,
+      "sha256": "eb3f9a9c9bbf1776de7533f57c529c1948c2cc8c1fb22945c49d61950f153e9b",
+      "crc32": "745d963a",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 9,
+          "event_no": -1,
+          "type": "CLEAN",
+          "condition_literal": "ENDEV=2&ITEM!=2415&SP=1,ENDEV=2&ITEM!=2415&SP=2",
+          "condition_sha256": "5396fdb9f15be5de3e0cf3326b25127cbc907c475eba90e22dc6c7438c31bb24",
+          "section_sha256": "1a58e047154f3418b725768b2c2a1a71c6ce9fb5abe3d54aca5f95507bc8a0f1",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "CleanFlg": [
+              "2"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": [],
+          "source_SP_literals_in_order": [
+            1,
+            2
+          ]
+        },
+        {
+          "ordinal": 1,
+          "type_line": 18,
+          "event_no": 2,
+          "type": "ACCEPT",
+          "condition_literal": "NOWEV=2&ITEM=2414",
+          "condition_sha256": "90a2ded95131c9dc50691a80958121a9c4ba8b3ee443644554fb66fa48669629",
+          "section_sha256": "571b5716a660e04aa04974838bac873498ef7ebdd9df8fa08f5a4395942f9a3f",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "GetItem": [
+              "2415"
+            ],
+            "DelItem": [
+              "2414"
+            ],
+            "EndSetFlg": [
+              "2"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": [],
+          "source_SP_literals_in_order": []
+        },
+        {
+          "ordinal": 2,
+          "type_line": 30,
+          "event_no": 2,
+          "type": "REQUEST",
+          "condition_literal": "LV>0&SP=0,LV>0&SP=3",
+          "condition_sha256": "85ff79cfe07d04816cae63e061d1dba7454c45776a0162706aba8fb5aab903ec",
+          "section_sha256": "1de5f16a735eebde691694c23fac6aba193cdb895cc3e3bdd374543537bce735",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "GetItem": [
+              "2415"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": [],
+          "source_SP_literals_in_order": [
+            0,
+            3
+          ]
+        }
+      ]
+    }
+  ],
+  "existing_QUEST01_TYPE_sections": 6,
+  "new_original_script_discoveries": 0,
+  "source_flag2_controls": [
+    {
+      "script_path": "sainasu/event/event02_1",
+      "event_ordinal": 0,
+      "type": "CLEAN",
+      "field": "CleanFlg",
+      "value": 2,
+      "condition_literal": "ENDEV=2&ITEM!=2414&SP=0,ENDEV=2&ITEM!=2414&SP=3",
+      "section_sha256": "33c326b930c2198be3e89c232e8875b8a76fb24efa0ef1a9dadccff6210a39b1"
+    },
+    {
+      "script_path": "sainasu/event/event02_1",
+      "event_ordinal": 1,
+      "type": "ACCEPT",
+      "field": "EndSetFlg",
+      "value": 2,
+      "condition_literal": "NOWEV=2&ITEM=2415",
+      "section_sha256": "b2e5be3adf5a33d57e4366e8b710c012d5f272b0572f37e67f92fd54d7aad3de"
+    },
+    {
+      "script_path": "sainasu/event/event02_2",
+      "event_ordinal": 0,
+      "type": "CLEAN",
+      "field": "CleanFlg",
+      "value": 2,
+      "condition_literal": "ENDEV=2&ITEM!=2415&SP=1,ENDEV=2&ITEM!=2415&SP=2",
+      "section_sha256": "1a58e047154f3418b725768b2c2a1a71c6ce9fb5abe3d54aca5f95507bc8a0f1"
+    },
+    {
+      "script_path": "sainasu/event/event02_2",
+      "event_ordinal": 1,
+      "type": "ACCEPT",
+      "field": "EndSetFlg",
+      "value": 2,
+      "condition_literal": "NOWEV=2&ITEM=2414",
+      "section_sha256": "571b5716a660e04aa04974838bac873498ef7ebdd9df8fa08f5a4395942f9a3f"
+    }
+  ],
+  "old_QUEST01_flag2_setters": [
+    {
+      "script_path": "sainasu/event/event02_1",
+      "event_ordinal": 1,
+      "section_sha256": "b2e5be3adf5a33d57e4366e8b710c012d5f272b0572f37e67f92fd54d7aad3de"
+    },
+    {
+      "script_path": "sainasu/event/event02_2",
+      "event_ordinal": 1,
+      "section_sha256": "571b5716a660e04aa04974838bac873498ef7ebdd9df8fa08f5a4395942f9a3f"
+    }
+  ],
+  "existing_QUEST25_ENDEV2_consumers": [
+    {
+      "script_path": "jaruga/event/oev_0",
+      "event_ordinal": 0,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "9bd5370dc37b108ad928d02980606e7eb9ee073d0d64942786e78c58ff406309"
+    },
+    {
+      "script_path": "jaruga/event/oev_0",
+      "event_ordinal": 5,
+      "type": "REQUEST",
+      "condition_literal": "LV>0&ENDEV=2",
+      "section_sha256": "997e37a9772a1a9d65e0e6223548bf59576d9eeb4468ae9c72a8c670b93ed5e6"
+    },
+    {
+      "script_path": "jaruga/event/oev_1",
+      "event_ordinal": 3,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "fd4078866383688908b6fdc110bf625ce07266520c880fb7ed4a5d15815883c1"
+    },
+    {
+      "script_path": "jaruga/event/oev_10",
+      "event_ordinal": 1,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "12c8d82d9d7696e5e777e4ddf8fb153d3a0fa065473ba864c40fd1f1f3b6af4e"
+    },
+    {
+      "script_path": "jaruga/event/oev_10",
+      "event_ordinal": 2,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2",
+      "section_sha256": "bb70eecd7b0c21f561df11f4ad6ca6f3db16c4839f98a3d094bbb88bb6c33aac"
+    },
+    {
+      "script_path": "jaruga/event/oev_10",
+      "event_ordinal": 4,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "fd4078866383688908b6fdc110bf625ce07266520c880fb7ed4a5d15815883c1"
+    },
+    {
+      "script_path": "jaruga/event/oev_11",
+      "event_ordinal": 1,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "ef856155195227410cd73ccf20ea27d49e1f9e6c469328a9edde97719a60dc2d"
+    },
+    {
+      "script_path": "jaruga/event/oev_11",
+      "event_ordinal": 2,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2",
+      "section_sha256": "2225130bb6152d7479661e5c5fae8a91853fffa924199b3f115fe513bfecd677"
+    },
+    {
+      "script_path": "jaruga/event/oev_11",
+      "event_ordinal": 4,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "36e8044b8dbc27e7b3f36a1fbcbabe695b916461e2a77a1b33e00879038b769c"
+    },
+    {
+      "script_path": "jaruga/event/oev_12",
+      "event_ordinal": 1,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "d44c33d55ed77a06046ad23a23244681d54a41cfda28f0d226b823ad635dcb73"
+    },
+    {
+      "script_path": "jaruga/event/oev_12",
+      "event_ordinal": 2,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2",
+      "section_sha256": "c17536ceabda3879478c5bfee7f73b6f0c0a15b3a884b227b46698f051b476dd"
+    },
+    {
+      "script_path": "jaruga/event/oev_12",
+      "event_ordinal": 4,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "fd4078866383688908b6fdc110bf625ce07266520c880fb7ed4a5d15815883c1"
+    },
+    {
+      "script_path": "jaruga/event/oev_1b",
+      "event_ordinal": 0,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2",
+      "section_sha256": "090b653319c0005fcfd37ccb56e20c482f2a301b9c251361ad06c49d5a36b5f4"
+    },
+    {
+      "script_path": "jaruga/event/oev_1b",
+      "event_ordinal": 2,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2",
+      "section_sha256": "08f027c99aa2462773212dbd8e06f5941b04c363eb449c265d6381266e787860"
+    },
+    {
+      "script_path": "jaruga/event/oev_2",
+      "event_ordinal": 1,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "707784b005454382143065522aed75ee031369943b484eddb0afe34b5cf01344"
+    },
+    {
+      "script_path": "jaruga/event/oev_2",
+      "event_ordinal": 2,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2",
+      "section_sha256": "c458dfb1b0bb165b1e78bb6e073c0bd6f825b8e8a9e74996b1d737208df2f54d"
+    },
+    {
+      "script_path": "jaruga/event/oev_2",
+      "event_ordinal": 4,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "fd4078866383688908b6fdc110bf625ce07266520c880fb7ed4a5d15815883c1"
+    },
+    {
+      "script_path": "jaruga/event/oev_3",
+      "event_ordinal": 2,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2",
+      "section_sha256": "2adbb71b49831a8bc88ef814bdcde59f3924699a639a2e45b3542c0708113d87"
+    },
+    {
+      "script_path": "jaruga/event/oev_3",
+      "event_ordinal": 3,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "fd4078866383688908b6fdc110bf625ce07266520c880fb7ed4a5d15815883c1"
+    },
+    {
+      "script_path": "jaruga/event/oev_4",
+      "event_ordinal": 1,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "09914765206f2d61de28ada3335dc556d4ad757c3bd0664a775da9793c681ed8"
+    },
+    {
+      "script_path": "jaruga/event/oev_4",
+      "event_ordinal": 2,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2",
+      "section_sha256": "b01b6cba71e3847e03cbbc4fb9a6bb6c922d809a8db2e03e9152dc451ffcba63"
+    },
+    {
+      "script_path": "jaruga/event/oev_4",
+      "event_ordinal": 4,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "fd4078866383688908b6fdc110bf625ce07266520c880fb7ed4a5d15815883c1"
+    },
+    {
+      "script_path": "jaruga/event/oev_5",
+      "event_ordinal": 1,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "9a853a10cc7f360864d656ddffa33131df2a466145bf1a7bb9d1e6c65ea34953"
+    },
+    {
+      "script_path": "jaruga/event/oev_5",
+      "event_ordinal": 2,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2",
+      "section_sha256": "12cd22301b074d9c009847e247e429359fb80981f76520979bc9d269135e8633"
+    },
+    {
+      "script_path": "jaruga/event/oev_5",
+      "event_ordinal": 4,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "fd4078866383688908b6fdc110bf625ce07266520c880fb7ed4a5d15815883c1"
+    },
+    {
+      "script_path": "jaruga/event/oev_6",
+      "event_ordinal": 1,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "59607f9cf551e0592c9f4842bc115d441f29e77b694f43a5300ea819adcd6e29"
+    },
+    {
+      "script_path": "jaruga/event/oev_6",
+      "event_ordinal": 2,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2",
+      "section_sha256": "d9fefb86e5869e37328534ca4d34331f410dd565ea223fdf02f9b59cc470a4e4"
+    },
+    {
+      "script_path": "jaruga/event/oev_6",
+      "event_ordinal": 4,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "fd4078866383688908b6fdc110bf625ce07266520c880fb7ed4a5d15815883c1"
+    },
+    {
+      "script_path": "jaruga/event/oev_7",
+      "event_ordinal": 1,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "f8e5c53488f32522fabaf139a6238335332d3e22cfda5fd14f43fe3f48809e7e"
+    },
+    {
+      "script_path": "jaruga/event/oev_7",
+      "event_ordinal": 2,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2",
+      "section_sha256": "19ff38e64a5bc3e4232692fe573e1202585e6d6df0a91d6bd94ad25411d213cd"
+    },
+    {
+      "script_path": "jaruga/event/oev_7",
+      "event_ordinal": 4,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "fd4078866383688908b6fdc110bf625ce07266520c880fb7ed4a5d15815883c1"
+    },
+    {
+      "script_path": "jaruga/event/oev_8",
+      "event_ordinal": 1,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "aa4187855b79119a5be46715e99b02b459a46a22ee4f21868e5b1b71f47d7660"
+    },
+    {
+      "script_path": "jaruga/event/oev_8",
+      "event_ordinal": 2,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2",
+      "section_sha256": "9fd0a35589b7746efd71c72d6bce38dfd098e5993823a0815a06cfda19b848ac"
+    },
+    {
+      "script_path": "jaruga/event/oev_8",
+      "event_ordinal": 4,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563,LV>0&ITEM=2564",
+      "section_sha256": "0072d42c018504d1645fda0ba894034e8e500ecaa2f583b3f84f859739f27ae3"
+    },
+    {
+      "script_path": "jaruga/event/oev_9",
+      "event_ordinal": 1,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "90c8ca4cc29ac1f6430a36676f9fa9d2729f6b94484d04291c108a397d899185"
+    },
+    {
+      "script_path": "jaruga/event/oev_9",
+      "event_ordinal": 2,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2",
+      "section_sha256": "2079be57ae3620a6c20ecc4bf05ddc1558bc1d25e953035e96272749d0714fdf"
+    },
+    {
+      "script_path": "jaruga/event/oev_9",
+      "event_ordinal": 4,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "fd4078866383688908b6fdc110bf625ce07266520c880fb7ed4a5d15815883c1"
+    },
+    {
+      "script_path": "jaruga/event/oev_ed1",
+      "event_ordinal": 1,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "7b0d4d797bd1c24eaa2455a83a38a0050ac25aa13a90c08dd4ba9d852759943a"
+    },
+    {
+      "script_path": "jaruga/event/oev_edb",
+      "event_ordinal": 0,
+      "type": "MESSAGE",
+      "condition_literal": "LV>0&ITEM=2564&ENDEV=2",
+      "section_sha256": "9a59feed916e2f3315c0ca395fb7419a4f1ae2509ebfdbbb5a1316d4d785a28a"
+    }
+  ],
+  "existing_QUEST24_same_item2414_gates": [
+    {
+      "marker_id": 15,
+      "path": "poru/wpm_1000_71_49",
+      "source_values": {
+        "WARP": "1000,71,49",
+        "FREE": "ITEM=2414",
+        "MONEY": "-1"
+      },
+      "actual_warp_or_fee_executed": false
+    },
+    {
+      "marker_id": 21,
+      "path": "poru/wpm_5509_35_35",
+      "source_values": {
+        "WARP": "5510,16,49",
+        "FREE": "ITEM=2414",
+        "MONEY": "-1"
+      },
+      "actual_warp_or_fee_executed": false
+    }
+  ],
+  "existing_QUEST24_alternative_item2414_grant": {
+    "script": "poru/boy05",
+    "condition": "ITEM=2248,ITEM=2249,ITEM=2250,ITEM=2251,ITEM=2252,ITEM=2253",
+    "commands": {
+      "GetItem": [
+        "2414"
+      ],
+      "DelItem": [
+        "2248,2249,2250,2251,2252,2253"
+      ]
+    },
+    "original_boolean_or_deletion_semantics_verified": false
+  },
+  "source_items": [
+    {
+      "item_ID": 2414,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 1997,
+          "sha256": "4618977dbec344a77f7a307dc996d2f1774bef4967b0c345910d5f0fd498eb96",
+          "image_alias": 24130
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2392,
+          "sha256": "4618977dbec344a77f7a307dc996d2f1774bef4967b0c345910d5f0fd498eb96",
+          "image_alias": 24130
+        }
+      ],
+      "cross_carrier_candidate_alias": 24130,
+      "original_RD_sha256": "4eda88ba0873d1e9f408f4c255d841c43dbdf4756893be099726f81c9dfdb6c6",
+      "candidate_PNG_sha256": "6ede96a25a984f568b2f52092f3af32c1d599beebfd02f021261f9843eaee1b4"
+    },
+    {
+      "item_ID": 2415,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 1998,
+          "sha256": "c5107532ef6b6708ce59319b5246eb9d25e8af925cf0de38522b20cf45502e11",
+          "image_alias": 24173
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2393,
+          "sha256": "c5107532ef6b6708ce59319b5246eb9d25e8af925cf0de38522b20cf45502e11",
+          "image_alias": 24173
+        }
+      ],
+      "cross_carrier_candidate_alias": 24173,
+      "original_RD_sha256": "51ed503a487ae2c18c8556a72799a00d5698d35b65a2a538addb819eb326a56d",
+      "candidate_PNG_sha256": "462b899bccfeeb2f25c1bc3b7165789c57a9c0bcdb0dfaa6850f06e3ae62dac7"
+    }
+  ],
+  "source_map_metadata_reused": [
+    {
+      "source_floor_id": 1000,
+      "map_status": "NO_MATCHING_DAT_IN_955",
+      "source_DAT_file": null,
+      "source_DAT_sha256": null,
+      "source_CREATE_ref_count": 19,
+      "source_cohorts": {
+        "QUEST01": 7,
+        "QUEST02": 2,
+        "QUEST03": 10
+      }
+    },
+    {
+      "source_floor_id": 2000,
+      "map_status": "DAT_PRESENT_GT99_QUALIFIED_RD_MISSING",
+      "source_DAT_file": "2000.dat",
+      "source_DAT_sha256": "d75231434c69118a518a8d5dd34f266264b8551fe4f2d55a20cdfa11b46584b3",
+      "source_CREATE_ref_count": 19,
+      "source_cohorts": {
+        "QUEST01": 15,
+        "QUEST02": 1,
+        "QUEST03": 3
+      }
+    }
+  ],
+  "boundaries": {
+    "SP_interpreted_as_sex_birthplace_or_location": false,
+    "comma_conditions_interpreted": false,
+    "omitted_quantity_replaced_with_one": false,
+    "CLEAN_resets_runtime_or_persistence_verified": false,
+    "flag2_called_tour_completion": false,
+    "sole_shell_source_assumed": false,
+    "same_item_ID_merges_quest_identities": false,
+    "original_DAT_or_NPC_sprite_replayed": false,
+    "original_client_or_server_executed": false,
+    "public_CI_reads_private_assets": false,
+    "original_assets_or_dialogue_published": false,
+    "official_same_deployment_authenticated": false,
+    "quest_origin": "UNRESOLVED"
+  },
+  "stage_A": {
+    "PARTIAL": 7,
+    "OPEN": 2
+  },
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "QUEST27_SOURCE_READY_QUEST_BATCH_AFTER_SHELL_FLOWER_FLAG2_STOP"
+}
