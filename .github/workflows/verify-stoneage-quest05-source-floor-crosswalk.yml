@@ -31,6 +31,10 @@ on:
       - 'research/recovered/STONEAGE-QUEST11-TWO-TRIBES-ORIGINAL-SOURCE-R1.json'
       - 'tools/stoneage_quest11_two_tribes_source.py'
       - 'tests/test_stoneage_quest11_two_tribes_source.py'
+      - 'research/recovered/STONEAGE-QUEST12-MINING-COMPETITION-ORIGINAL-SOURCE-R1.json'
+      - 'tools/stoneage_quest12_mining_competition_source.py'
+      - 'tests/test_stoneage_quest12_mining_competition_source.py'
+      - 'docs/continuity/STONEAGE-QUEST12-MINING-COMPETITION-ORIGINAL-SOURCE-20261108.md'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   pull_request:
     paths:
@@ -55,6 +59,10 @@ on:
       - 'research/recovered/STONEAGE-QUEST11-TWO-TRIBES-ORIGINAL-SOURCE-R1.json'
       - 'tools/stoneage_quest11_two_tribes_source.py'
       - 'tests/test_stoneage_quest11_two_tribes_source.py'
+      - 'research/recovered/STONEAGE-QUEST12-MINING-COMPETITION-ORIGINAL-SOURCE-R1.json'
+      - 'tools/stoneage_quest12_mining_competition_source.py'
+      - 'tests/test_stoneage_quest12_mining_competition_source.py'
+      - 'docs/continuity/STONEAGE-QUEST12-MINING-COMPETITION-ORIGINAL-SOURCE-20261108.md'
       - '.github/workflows/verify-stoneage-quest05-source-floor-crosswalk.yml'
   workflow_dispatch:
 
@@ -79,3 +87,5 @@ jobs:
         run: python -m unittest tests.test_stoneage_quest10_quarry_spirits_source -v
       - name: Validate QUEST11 two-tribe original branches and preserved malformed headers
         run: python -m unittest tests.test_stoneage_quest11_two_tribes_source -v
+      - name: Validate QUEST12 mining competition original source and negative provenance guards
+        run: python -m unittest tests.test_stoneage_quest12_mining_competition_source -v
