@@ -44,3 +44,9 @@ A终点ordinal0先列 `LV>0&ITEM=2564` 与奖品，ordinal1再列带ENDEV2的另
 **最高NEXT `QUEST26_SOURCE_READY_TASK_FAMILY_AFTER_FOUR_ROUTE_SOURCE_STOP`**：环岛四路线来源关系达到止点，不扩48块未知看板、缺图/遍历全岛或分支解释器。优先有限复核 `sainasu/event/event02_1`、`event02_2` 两份现成贝壳/花互送原件：实际SP字面、CLEAN/CleanFlg2、2414/2415与ENDEV2来源关系，连接本轮环岛外部条件和已有波拉岛2414记录但不合并不同任务身份；精确原参数/物品和源CREATE定位可得即批量整合，不能把外部标记意义猜成环岛通关。旧event17牧场来源已有QUEST17，不重复包装成新任务。
 
 Stage A仍 **7 PARTIAL+2 OPEN**、Stage B/wiki **GATED**、R79 **PAUSED_NON_BLOCKING**，总体完成率未知；当前仍是历史复原。
+
+## 实际远端验收
+
+[PR #265](https://github.com/chinaneedM/stoneage-rebuild/pull/265)已合并。候选 `8c0d97bc905b9bc272a33469da1b9d42e608a4f9` 四项Actions（42477782591、42477783050、42477783062、42477783221）全部completed/success；内容主线 `984db31eea9776fe349518270fde731ae72195e9` / tree `37f9a5ece213f2f8222ad8629ae71db77c97a23c` 的[run 42477819054](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42477819054)、job128722981335实际成功，日志含10项FourIslandTourEvidence验证成功。原生Git核同远端五份完整文件和tree，四历史文档原样保留。
+
+首次发布把新分支误用了update_ref，收到422；随后无有效head的PR创建亦422，未改任何既有ref/未创建PR。改为create_branch后以同一候选SHA成功创建PR265。不是测试失败，两个接口错误与修正保存在[验收收据](../../research/recovered/STONEAGE-QUEST25-PUBLICATION-ACCEPTANCE-R1.json)，不抹除原始尝试。收据自身提交的CI在发布后另行观察，不预支成功；最高NEXT仍为上述QUEST26原贝壳/花双向互送与旗标2来源批次。
