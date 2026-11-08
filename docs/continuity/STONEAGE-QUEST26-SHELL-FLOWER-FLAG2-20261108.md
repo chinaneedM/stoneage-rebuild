@@ -36,3 +36,7 @@ QUEST01已有两条EndSetFlg2来源正是这两份ACCEPT段；本轮原字节再
 **最高NEXT `QUEST27_SOURCE_READY_QUEST_BATCH_AFTER_SHELL_FLOWER_FLAG2_STOP`**：本批静态衔接达到止点，不继续扩CLEAN解释器、SP业务映射或原世界缺图。按模块继续批量复核已有 `sainasu/event/event03.create`、`event03_1/2`：其中同时出现事件3与5，集中恢复原斧头2416→交付/旗标3→感谢函2423→后续奖励的完整双端来源关系、道具两表差异和确有原CREATE的定位，不因任务号5而寻找不存在的event05文件；先查旧QUEST16/WORLD18/23已覆盖内容，不重复当新原件。若材料没有实际内容增量，再回任务模块材料队列。
 
 Stage A仍 **7 PARTIAL+2 OPEN**、Stage B/wiki **GATED**、R79 **PAUSED_NON_BLOCKING**、任务起源 **UNRESOLVED**、总体百分比未知。原历史全文保持，本篇为追加接力。
+
+## 实际远端验收
+
+[PR #266](https://github.com/chinaneedM/stoneage-rebuild/pull/266)已合并；候选 `9d4034adf78ee00d2903f398547464b3d8f204b8` 四项Actions（42478733373、42478736587、42478736598、42478736603）均completed/success。内容主线 `07d2403b9a7ba6f6d926ad049154c9925b561162` / tree `4135bc54da12ce922f05197ea0b90dd0f3ab28fd` 的[run42478793083](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42478793083)、job128725972108实际成功，日志包含10项ShellFlowerFlag2Evidence验证成功。五份完整内容文件/tree原生Git核同。[验收收据](../../research/recovered/STONEAGE-QUEST26-PUBLICATION-ACCEPTANCE-R1.json)保存实际结果；收据自身提交CI发布后另验，不预支成功。NEXT仍为上述QUEST27双端斧头/感谢函批次。
