@@ -32,3 +32,8 @@ QUEST25/26与GetPet给该1000场景带来更多可按脚本/格坐标检索的�
 止点：本轮不建设旧账号服务器、不扩脚本解释器、不做现代角色步行仿真。只有合格完整1300.DAT原字节及全CRC/SHA可重新定级地图；原生动作/任务效果需精确版本原生执行或同等直接实证。未拥有资料的缺口保留OPEN，下一包回到**仍有合格原内容输入、且能产生新玩家可见材料的优先事项**，不要围绕本链重复加helper。
 
 本次[JSON证据及8项新来源回归](../../tests/test_stoneage_integration_module_09.py)仅运行公开派生文件，不包含商业原稿、地图原字节、人物图或对话正文。原历史CURRENT完整保留；Stage A 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79暂停，整体完成率未知。候选、主线Actions和正式合并结果必须见GitHub实际后验，不提前宣称通过。
+
+
+## 实际GitHub出版与主线验收后验
+
+[PR #276](https://github.com/chinaneedM/stoneage-rebuild/pull/276)最终候选`a8177b3712f06d2a99284366509a2d7810d874aa`／tree `58d0be99a639ba47e247db6704dcd7cb6f9b2180` 按squash正式合并，主线合并HEAD `8acd13400999b79b2eedf381e7790746a567d156`／tree同一，原`CURRENT-STATE.md`仍为2,709,173B、blob `c89e0e33537990aa2132b47c40fef49a985a935c`。最终候选 **14/14** Actions completed/success，含push专项[run42496223627](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42496223627)和PR专项[run42496227613](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42496227613)/job128779058473，日志实际为8项公开派生单测通过。合并后内容main **11/11** Actions completed/success，含[INTEGRATION09专项run42496406428](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42496406428)/job128779593630，执行Python unittest成功。原先中间候选与早期排队历史不抹除、不当最终成功记录。完整运行ID、Git文件SHA及来源否定边界见[正式出版验收收据](../../research/recovered/STONEAGE-INTEGRATION09-PUBLICATION-ACCEPTANCE-R1.json)。本收据自身提交的Actions不能预先宣称通过。最高NEXT仍是另一个有真正原素材增量的玩家可见Stage A内容缺口，当前无原生可玩地图/任务或早期官方同部署证明。
