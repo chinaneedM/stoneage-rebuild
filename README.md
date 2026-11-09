@@ -2265,3 +2265,7 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-09 — INTEGRATION17｜卡坦、塔姆塔姆與多多三間寵物店
 
 [INTEGRATION17 來源與續接](docs/continuity/STONEAGE-INTEGRATION17-THREE-PET-ROOMS-20261109.md)接上 1403／3103／3203 的六處服務、六個原靜態造型與十一條原傳送方向。塔姆塔姆的額外出店方向由 mapwarp 與原 Warp CREATE 互證。另從原混合 2.5 REAL 實讀、解碼 16122／16127 兩個解說員 RD，四間候選底圖已復驗。下一優先 INTEGRATION18／SCENE26-R4 接入四間解說員房。
+
+## 2026-11-09 — INTEGRATION18 / SCENE26-R4｜四間寵物常識解說員房與原造型來源界限
+
+[INTEGRATION18 四房來源限定續接](docs/continuity/STONEAGE-INTEGRATION18-SCENE26-R4-SOURCE-BOUNDED-20261109.md)重新核四筆原 CREATE、`petmaster` 原 CP950 教學內容、四份 MAP09 原 DAT 與 16122／16127 兩個已驗 RD 像素指紋；私人候選觀察頁實際有四處原圖尺寸的**空心佔位框**和十項原文，**尚未放入這兩張原人物圖**。最新可取私人包沒有其真 PNG/RD 字節；在兩件均經原 SHA/尺寸/像素核驗前不冒稱原人物已顯示。私人有限包在本會話生成（14 件、完整 CRC 與本地重演）、沒有成功持久上傳 Library；Chromium 僅內存載入測試，直接 file URL 被環境攔截。公開原數據接點與反例測試另存 [來源限定收據](research/recovered/STONEAGE-INTEGRATION18-SCENE26-R4-BOUNDED-TUTOR-LAYOUT-R1.json)。歷史 CURRENT 原 blob 保持不變，Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暫停、全體百分比未知。下一輪有來源的 3303／3403／4003 寵物服務可先整合；R4 原像素只在兩份真圖源齊全時重開，不進新引擎或網服。
