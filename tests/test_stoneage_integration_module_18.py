@@ -119,7 +119,9 @@ class Integration18TutorLayoutEvidence(unittest.TestCase):
         self.assertFalse(report["private_replay"]["original_RD_PNG_16122_16127_available_to_this_replay"])
         self.assertEqual(report["private_replay"]["rendered_original_tutor_PNG_count"], 0)
         self.assertEqual(report["private_replay"]["visible_source_bounded_outline_count"], 4)
-        self.assertFalse(report["private_replay"]["uploaded_to_persistent_library"])
+        self.assertTrue(report["private_replay"]["uploaded_to_persistent_library"])
+        self.assertTrue(report["private_replay"]["library_roundtrip_whole_zip_SHA256_and_CRC_verified"])
+        self.assertEqual(report["private_replay"]["library_roundtrip_sha256"], report["private_replay"]["new_private_zip_sha256"])
         for key in ("original_sprite_character_pixels_placed", "original_game_client_executed",
                     "original_game_server_NPC_event_executed", "official_same_deployment_proven",
                     "native_render_order_collision_palette_verified", "raw_proprietary_assets_published_in_Git"):

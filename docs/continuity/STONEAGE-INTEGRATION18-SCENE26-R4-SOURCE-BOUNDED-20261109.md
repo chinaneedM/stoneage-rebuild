@@ -26,7 +26,7 @@
 - **原像素解說員本輪實際放置數 = 0**；候選原圖 bounding box 四處，皆標註尚缺真 PNG。
 - 可選來源檢查要求 **兩份**原 PNG 同時取得，逐 PNG SHA-256、完整解碼尺寸、RGBA SHA-256 對 INTEGRATION17，單件/錯件拒絕後才容許真圖私有疊加。
 - 生成了私人 `StoneAge-INTEGRATION18-SCENE26-R4-PRIVATE-PARTIAL.zip`：3,753,771 B，SHA-256 `64eeff437d245a2bf7f40ac781c4a6279fc065de9bbd8acbe8a5ff904e645d56`，14 成員 CRC 全過，兩次生成逐字節一致。
-- 已在 Chromium 用 `page.set_content` 加載同一 HTML 與四張原場景 PNG 的內存副本，四張 1889×1425 圖載入、十個文本項可查，0 JS 錯誤、0 外部 HTTP 請求。此環境直接導航 `file://` 被 `ERR_BLOCKED_BY_ADMINISTRATOR` 禁止，**不能聲稱本輪成功直接打開本地 file URL**。本輪私人 ZIP 已在會話容器保存，**未能成功上傳個人 Library，沒有雲端回讀身份保證**。
+- 已在 Chromium 用 `page.set_content` 加載同一 HTML 與四張原場景 PNG 的內存副本，四張 1889×1425 圖載入、十個文本項可查，0 JS 錯誤、0 外部 HTTP 請求。此環境直接導航 `file://` 被 `ERR_BLOCKED_BY_ADMINISTRATOR` 禁止，**不能聲稱本輪成功直接打開本地 file URL**。本輪私人 ZIP 已在會話容器保存，**已成功上傳個人 Library，並重新下載整 ZIP 驗 SHA-256 與全部 14 個 CRC**。
 
 公開 JSON `research/recovered/STONEAGE-INTEGRATION18-SCENE26-R4-BOUNDED-TUTOR-LAYOUT-R1.json` 將上述四行和五個前置 Git blob 實際串起；`tests/test_stoneage_integration_module_18.py` 除來源 SHA/原座標/原圖幾何/原 DAT 外，會拒絕偷換圖號、位移、替換 RD 和場景指紋，也否定在缺圖時的原像素放置宣稱。公開 Action 驗證是**派生數據、非原圖私人重演**。原商業素材、完整對話、原 RD 和原 PNG 均不入 Git。
 
