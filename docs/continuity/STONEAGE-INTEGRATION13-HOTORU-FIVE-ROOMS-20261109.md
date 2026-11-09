@@ -25,3 +25,9 @@
 私人 ZIP 2,867,302 B，SHA256 `c4cb208810a8ae0ad1ad76f59f3569f2f19b8bfd0389fe71aa6d3ffa91ff44eb`。保存後另行取回，獨立驗整檔 SHA、34 成員 CRC、27 原成員大小/CRC/SHA、五張 MAP07 PNG/RGBA 和 29 條配置源格。私人 HTML 結構與標記數已獨立驗證，未以原客戶端或瀏覽器重放。公開只收[派生源資料](../../research/recovered/STONEAGE-INTEGRATION13-HOTORU-FIVE-ROOMS-SOURCE-R1.json)、生成工具與六項資料測試。原商業字節與私人觀察包分開保管。
 
 **NEXT INTEGRATION14**：霍特爾本組七間室內已具來源限定資料。沿 1301/1302/1304/1305/1310 原 ItemShop 參數，優先核主表、備用表和既存 ITEM05 所見的同一項實際物品差異。只接可證配置、物品表和已驗候選圖，對既有資料查重，保留哪份表實際生效與交易未證的界限。Stage A 為 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79 暫停，總體百分比未知。
+
+## 主線驗收與下一包原件預查
+
+[PR #280](https://github.com/chinaneedM/stoneage-rebuild/pull/280) 的 14 項候選 Actions 全部成功。合併內容提交 `769b1ab513491bc9164b2056289cf178b0ec37ad` 與候選的 tree 同為 `613d0452d11021f69edb75aee428d7624794ebbb`，內容主線 11 項 Actions 全部成功，包含 [INTEGRATION13 主線專項](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42562244050)。本地 92 項整合測試成功。重跑私人導出逐一重現 34 個成員載荷；改動同格商人原 CREATE 一字節時，來源驗證拒絕並未產出私人包。完整 [驗收收據](../../research/recovered/STONEAGE-INTEGRATION13-PUBLICATION-ACCEPTANCE-R1.json) 固定六個內容文件、兩批實際 Actions 和私人包指紋。
+
+另取原主表、備用表及 setup 重核。1302 同格的兩個商人原塊，按原配置欄位比較只有 `name` 不同。1305 醫院商人的普通 `ItemList` 12 個編號在兩表均有完全同字節的行。其 `LimitItemNo:1500-1550` 是另一原欄位，51 個展開編號中有 44 個兩表同原行，1508、1509、1546–1550 共 7 個只在備用表。後五個與 1310 的 `LimitItemNo` 重疊，在 mixed25 圖像目錄缺別名，但 ITEM07 各有一個分源補丁 RD 索引候選。本次預查未做新解碼。INTEGRATION14 優先沿這七個編號核對原欄位與來源候選，保留實際載入和交易語義的未知。
