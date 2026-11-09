@@ -1,0 +1,217 @@
+{
+  "schema": "stoneage.integration15.r2.hotoru_pet_original_static_visual_observer.r1",
+  "date": "2026-11-09",
+  "starting_remote": {
+    "head": "b5079bff54fcaf90b77a3210d3e2793317008685",
+    "tree": "bf49ad1c0c74923b97792bc8daaf85c9d93a2f19",
+    "history_current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "history_current_state_bytes": 2709173
+  },
+  "scope": "STAGE_A_MIXED25_SAME_PRESERVED_ARCHIVE_CREATE_AND_RD_VERIFIED_PNG_OVER_TW10_CANDIDATE_ROOM_IMAGE",
+  "upstream_public_records": {
+    "integration13": "research/recovered/STONEAGE-INTEGRATION13-HOTORU-FIVE-ROOMS-SOURCE-R1.json",
+    "integration15_r1": "research/recovered/STONEAGE-INTEGRATION15-HOTORU-PET-SERVICE-BRIDGE-R1.json",
+    "world11": "research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-11-NPC-STATIC-APPEARANCE-R1.json"
+  },
+  "private_source_carriers": {
+    "integration13_zip": {
+      "sha256": "c4cb208810a8ae0ad1ad76f59f3569f2f19b8bfd0389fe71aa6d3ffa91ff44eb",
+      "bytes": 2867302,
+      "zip_members": 34,
+      "all_member_CRC_rechecked": true,
+      "original_source_members": 27
+    },
+    "world11_zip": {
+      "sha256": "ef7f658864bcfbbbf7948c110a0a040a075e8127d78a1fba8ecc2a6079619e00",
+      "bytes": 10711617,
+      "zip_members": 34,
+      "all_member_CRC_rechecked": true
+    },
+    "mixed25_parent_archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+  },
+  "original_room": {
+    "floor": 1303,
+    "source_dat_sha256": "d6f85cccec0eec22eaccfbef84eafcfaecea97995bbb6af3062ab84625221ec4",
+    "source_ls2map_sha256": "a5c9e022839a9a9ae0a9f993246f27cbc1911767aa3a157d4f0e6248daac21a2",
+    "retained_base_scene_png_sha256": "f69fffd8171a729e10d7a2f7ad1414e993d74f82d414f502506d4de313d1c209",
+    "retained_canvas_rgba_sha256": "980287e99bfd61387afd08340e8bde958dfbca37f65aed7926c7dae87f4d86bf",
+    "pixel_canvas_file_changed": false
+  },
+  "reused_original_static_pngs": [
+    {
+      "graphic": 16048,
+      "adrn_ordinal": 5894,
+      "adrn_record_sha256": "2273a098fa5e5f701c44ead12757cbb159570c43ceb5cf0120d32b1a71e5f524",
+      "original_rd_sha256": "ce21e49856dde81b79afa5854f400df31393b1d87a08e6357b0eb8fd2e5ad252",
+      "indexed_sha256": "d5d2cc7806f814d64bf5c27f0b557c7846c71c08e2dd87af1f2078af3548c119",
+      "source_png_sha256": "d0466d7130634725ca5e1b7b8be4f59131ec806a048c6b127b22d696593040c1",
+      "source_rgba_sha256": "86b225a3d6b260072e49ecd3894007e4511ead50d4e833851c43e8a84b7af2c5",
+      "dimensions": [
+        36,
+        79
+      ],
+      "original_signed_adrn_offset": [
+        -18,
+        -70
+      ],
+      "source_scope": "WORLD11_MIXED25_RLE_STATIC_PNG_SOURCE_CHECKED"
+    },
+    {
+      "graphic": 16049,
+      "adrn_ordinal": 5895,
+      "adrn_record_sha256": "cbf96983334045a7b80d95cca7f5953cdfad02e746b59a98eada377c60d0ca6a",
+      "original_rd_sha256": "a1a6bcd5fc243742d926e00189bf08abf0c0e09669679a18f59a300750a32471",
+      "indexed_sha256": "d94f862180edca5345b1187ed43e96bcc4ba476406e142a5925d090637b0b48e",
+      "source_png_sha256": "a2ca4e1e5a8a3932c87c561d94933e7e78ddfe7058527d39100d29546ca7ecfc",
+      "source_rgba_sha256": "b47add689267bc4a6a80d838e5bc8113477e6458e44b2f806edefc5584731c5c",
+      "dimensions": [
+        32,
+        79
+      ],
+      "original_signed_adrn_offset": [
+        -15,
+        -70
+      ],
+      "source_scope": "WORLD11_MIXED25_RLE_STATIC_PNG_SOURCE_CHECKED"
+    }
+  ],
+  "configured_overlay_instances": [
+    {
+      "role": "petshop",
+      "graphic": 16048,
+      "coordinate": [
+        16,
+        13
+      ],
+      "marker": [
+        944,
+        640
+      ],
+      "ordinal": 53,
+      "create_sha": "478b8668a020ba8b0a76e50e4893b6e33d5e6712a0f6bf4658e02a9929498d57",
+      "parameter_sha": "8beaa8a89b834d90be34e9213abf40d5bdb9ff832a6b6c5bb674db738577f022",
+      "source": "genout/ps_1303_16_13",
+      "svg_png_xy": [
+        926,
+        570
+      ]
+    },
+    {
+      "role": "skillshop",
+      "graphic": 16049,
+      "coordinate": [
+        13,
+        13
+      ],
+      "marker": [
+        848,
+        712
+      ],
+      "ordinal": 54,
+      "create_sha": "f799a403d749cae89ad3e3a5a1983818d764e2ff48517acff62fe737440ab1ca",
+      "parameter_sha": "310106449c8b0ee0e4e5f0a474dfcf47f126d413d57a047207bfe80a8d14f3db",
+      "source": "genout/psks_1303_13_13",
+      "svg_png_xy": [
+        833,
+        642
+      ]
+    },
+    {
+      "role": "townpeople",
+      "graphic": 16049,
+      "coordinate": [
+        11,
+        6
+      ],
+      "marker": [
+        560,
+        592
+      ],
+      "ordinal": 61,
+      "create_sha": "bca5b75d96712fb06c089be209cd0e95457d9a60cd6f84d7ce85162fe8cb2ede",
+      "parameter_sha": "7a304082f72f0ecdb161ddb1365ab48f740fe34695aae11d01883470cc76ab3b",
+      "source": "genout/msg_1303_11_6",
+      "svg_png_xy": [
+        545,
+        522
+      ]
+    }
+  ],
+  "saved_private_observer": {
+    "name": "StoneAge-INTEGRATION15-R2-hotoru-pet-services-private.zip",
+    "library_path": "/石器时代/StoneAge-INTEGRATION15-R2-hotoru-pet-services-private.zip",
+    "zip_bytes": 2878571,
+    "zip_members": 37,
+    "full_sha256": "5e7e127f87e41c58f3ef193ecf0286899dce74112b00b3f164fd3e2280bdb36a",
+    "zip_CRC_all_members_pass": true,
+    "all_original_34_members_preserved_except_index_html": true,
+    "base_original_index_html_sha256": "48d60504cdeca14b576e77834ab5b10ca0cd16cc1e956ff4d68b2cb1b063e968",
+    "updated_index_html_sha256": "e12a243dd3482e888ca9523cc1fc30dcac62d6b735887b1b10bc8ef9552d56be",
+    "two_new_image_files": "npc/16048.png; npc/16049.png",
+    "private_receipt_sha256": "760e2ea316418cb825254cad5b52e704e316dca6a0cab4a2aea63ca4ab432a5c",
+    "library_upload_succeeded": true,
+    "library_roundtrip_download_sha256_verified": true,
+    "library_roundtrip_zip_crc_passed": true,
+    "original_parameter_source_hashes": [
+      {
+        "file": "ps_1303_16_13",
+        "sha256": "8beaa8a89b834d90be34e9213abf40d5bdb9ff832a6b6c5bb674db738577f022"
+      },
+      {
+        "file": "psks_1303_13_13",
+        "sha256": "310106449c8b0ee0e4e5f0a474dfcf47f126d413d57a047207bfe80a8d14f3db"
+      },
+      {
+        "file": "msg_1303_11_6",
+        "sha256": "7a304082f72f0ecdb161ddb1365ab48f740fe34695aae11d01883470cc76ab3b"
+      }
+    ]
+  },
+  "private_browser_test": {
+    "chromium_version": "144.0.7559.96",
+    "file_url_navigation": "BLOCKED_BY_ADMINISTRATOR",
+    "localhost_url_navigation": "BLOCKED_BY_ADMINISTRATOR",
+    "tested_using": "PLAYWRIGHT_SET_CONTENT_IN_MEMORY_HTML_WITH_EXACT_VERIFIED_PNG_BYTES_AS_DATA_URIS_AND_TEST_ONLY_CSP_IMAGE_SRC_DATA",
+    "source_pngs_loaded_with_correct_dimensions": true,
+    "three_overlay_instances_rendered": true,
+    "source_details_card_count": 3,
+    "source_marker_link_count": 3,
+    "default_art_visibility_off": true,
+    "overlay_checkbox_show_hide_verified": true,
+    "overlay_enabled_changed_scene_pixel_bbox": [
+      317,
+      303,
+      558,
+      413
+    ],
+    "overlay_disabled_returned_exact_baseline_screenshot": true,
+    "source_parameters_interactively_expandable": true,
+    "browser_JS_errors": 0,
+    "external_HTTP_requests": 0,
+    "direct_extracted_file_url_verified": false
+  },
+  "qualification": {
+    "new_original_RD_decodes_this_unit": 0,
+    "reused_prior_source_verified_original_static_pngs": 2,
+    "new_private_candidate_observer_scene_overlays": 3,
+    "original_client_executed": false,
+    "same_official_historical_build_proven": false,
+    "native_original_graphic_layer_selection_proven": false,
+    "native_NPC_dialogue_trigger_proven": false,
+    "native_pet_storage_purchase_or_skill_training_verified": false,
+    "scene_background_origin": "DISTINCT_TW10_CANDIDATE_IMAGE_PROJECTION",
+    "verified_original_same_carrier_CREATE_RD_link": "ONLY_FOR_MIXED25_PRESERVED_FILES_WITH_CORRESPONDING_ADRN_NAMESPACE",
+    "three_people_distinct_source_CREATE_records": true,
+    "townpeople_image_same_as_skillshop_without_shared_identity_claim": true,
+    "scene_marker_11_6_visually_outside_room_art_footprint": true,
+    "read_original_game_from_no_account_offline_legacy_client": false
+  },
+  "stage": {
+    "stage_A": "7 PARTIAL + 2 OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "INTEGRATION16: bounded source-ready room or pet content that adds actual original image/function connection; no repeated 16048/16049 recovery or generic viewer. Do not claim official same deployment or original interactive play."
+}
