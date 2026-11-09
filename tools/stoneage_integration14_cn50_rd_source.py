@@ -72,12 +72,12 @@ def acquire(output, certificate):
                 record = adrn.read(80)
                 real.seek(offset)
                 rd = real.read(size)
-                if (sha(record), sha(rd)) != (row['attr_sha256'], row['rd_block_sha256']):
+                if (sha(record[28:]), sha(rd)) != (row['attr_sha256'], row['rd_block_sha256']):
                     raise ValueError('original ADRN or RD source window mismatch')
                 archive.writestr(f'{alias}.adrn', record)
                 archive.writestr(f'{alias}.rd', rd)
                 receipts[alias] = dict(index=index, offset=offset, bytes=size,
-                                       adrn_sha256=sha(record), rd_sha256=sha(rd))
+                                       adrn_sha256=sha(record), attr_sha256=sha(record[28:]), rd_sha256=sha(rd))
         subprocess.run(['openssl','cms','-encrypt','-binary','-aes256','-outform','DER',
                         '-in',str(private),'-out',str(output/'five-source-blocks.cms'),str(certificate)], check=True)
         (output/'source-receipt.json').write_text(json.dumps(
