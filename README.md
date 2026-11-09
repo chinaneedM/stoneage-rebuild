@@ -2243,3 +2243,7 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-09 — INTEGRATION12｜霍特爾两间室内有据场景
 
 用已保管的原源资料复核 1306「霍特爾的長老家」与 1310「營養劑名人的家」两间地图、9 条原 CREATE 与 10 条双端传送记录；私人图像候选合计 393 绘制引用无缺源。公开保留原服务器两层与客户端 DAT 差值，以及 1310 商店主物品表缺 21 ID、备用表有 21 ID 的冲突。原生门点行为、商店实际买卖及初版归属仍未证明。见[INTEGRATION12 证据与 NEXT](docs/continuity/STONEAGE-INTEGRATION12-HOTORU-TWO-ROOMS-20261109.md)。
+
+## 2026-11-09 — INTEGRATION13｜霍特爾五間室內原房名、門點與 NPC 配置
+
+[INTEGRATION13 原資料與下一步](docs/continuity/STONEAGE-INTEGRATION13-HOTORU-FIVE-ROOMS-20261109.md)核對 1301–1305 五張原 DAT/LS2MAP、29 條原 CREATE 和 20 條雙端傳送記錄。沿用 MAP07 已驗的五張候選底圖，私人頁加入 28 個配置座標標記。1302 同格的兩份配置分列，1304 保留物件層 60 格差值，1305 醫療參數保留原數字串。原生載入、互動與官方同部署仍待證。下一項查霍特爾商店參數與物品表的實際差異。

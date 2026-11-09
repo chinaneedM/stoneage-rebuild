@@ -1,0 +1,25 @@
+name: Verify StoneAge INTEGRATION13 five Hotoru rooms
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION13-*.json'
+      - 'tests/test_stoneage_integration_module_13.py'
+      - 'tools/stoneage_integration13_hotoru_rooms.py'
+      - '.github/workflows/verify-stoneage-integration13-rooms.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION13-*.json'
+      - 'tests/test_stoneage_integration_module_13.py'
+      - 'tools/stoneage_integration13_hotoru_rooms.py'
+      - '.github/workflows/verify-stoneage-integration13-rooms.yml'
+jobs:
+  public-evidence-guard:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_13.py' -v
