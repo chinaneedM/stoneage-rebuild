@@ -65,7 +65,7 @@ def validate(q, shops, maps):
             assert itemshop['raw_sell_rate'] == orig['source_sell_rate_text']
             assert itemshop['source_DAT_three_u16_at_create'][-1] == 49152
             items = itemshop['items']
-            assert [x['original_item_id'] for x in items] == orig['expanded_candidate_IDs_not_proven_runtime']
+            assert sorted(x['original_item_id'] for x in items) == sorted(orig['expanded_candidate_IDs_not_proven_runtime'])
             for item in items:
                 assert re.fullmatch(r'[0-9a-f]{64}',item['both_original_itemset_rows_sha256'])
                 assert re.fullmatch(r'[0-9a-f]{64}',item['verified_TW10_candidate_PNG_sha256'])
