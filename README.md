@@ -2257,3 +2257,7 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-09 — INTEGRATION15-R2｜霍特爾宠物店 1303 原图候选与服务资料合并观察
 
 [INTEGRATION15-R2 私人实物交付与来源边界](docs/continuity/STONEAGE-INTEGRATION15-R2-HOTORU-PET-SOURCE-VISUAL-20261109.md)：实际回读 INTEGRATION13 与 WORLD11 私人 ZIP，按已验 PNG/RGBA/RD 哈希将 16048、16049 两张静态原图候选关联到 1303 的三条独立 CREATE 与原参数，保留五间房原底图、人物共享图号但不同 NPC 的关系。私人离线页新增显式可关叠图、三个可点资料卡及原 CP950 参数；现代叠图不代表原客户端实际呈现。浏览器只能用内存测试副本（文件/localhost 导航被禁），原生交易/技能/人物层序/官方同部署均未证；私人包已存档并回读 SHA 验收。
+
+## 2026-11-09 — INTEGRATION16｜柯奧、柯爾克與瑪麗娜絲三間寵物店
+
+[INTEGRATION16 來源、離線觀察與續接](docs/continuity/STONEAGE-INTEGRATION16-THREE-PET-ROOMS-20261109.md)把 1103／1203／2003 的原房名、六筆寵物店／技能教學配置、五個有原 RD 證據的靜態造型和十二筆傳送原行接到三張已驗底圖。造型 16046 在兩房分屬不同服務，兩筆 CREATE 獨立。下一優先 INTEGRATION17 核 1403／3103／3203 的同類關係，以取得原 DAT、底圖和確切 RD 字節為條件。

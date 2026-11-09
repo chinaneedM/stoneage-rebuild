@@ -1,0 +1,774 @@
+{
+  "schema": "stoneage.integration16.three_pet_rooms.r1",
+  "parent_rar": {
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+  },
+  "upstream_git_blobs": {
+    "char": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "skills": "5735ddc1117a8a6fb2f9417327ec242e4fd06192",
+    "shops": "878be2f05a4dc17f51d21ed2401fd7a7f3d73563",
+    "map01": "03675ee98d391f9ef0246315b2426f2a8b721fd3",
+    "map07": "f2cba278f4b5a15e50e905a1e6591958fd09dba5",
+    "map09": "137580e7c25aadf3d679b6ebfb5080b79912cc4f",
+    "world11": "f79d7355a4e82c2bd8c0a771b898690cc4a3e680"
+  },
+  "rooms": {
+    "1103": {
+      "original_name": "柯奧的寵物店|0",
+      "dat": {
+        "bytes": 5408,
+        "sha256": "92887f06068b228d705fe660bd16700acde2e5e6482622769b2135298c77e448",
+        "crc32": "6ba913af"
+      },
+      "ls2map": {
+        "bytes": 3644,
+        "sha256": "c5d4f98a2c561a43caab166a26edf7096a7b86813aa969485fffa574ae740d23",
+        "crc32": "46434bcd"
+      },
+      "canvas": {
+        "dimensions": [
+          1889,
+          1425
+        ],
+        "png_sha256": "e2a446ced242c59f64f19e4a693296667d910e04e696429fd534c5573eeba969",
+        "rgba_sha256": "1c47a7f5efd953b2e50f581683d78e7068fb3b714d073882683c6f025532c1a2"
+      },
+      "canvas_size": [
+        1889,
+        1425
+      ],
+      "origin": [
+        16,
+        712
+      ],
+      "warps": [
+        {
+          "line": 1439,
+          "source": [
+            1100,
+            61,
+            109
+          ],
+          "target": [
+            1103,
+            15,
+            21
+          ],
+          "sha256": "69b5c002b3a8b619c8a6f605bbfe991a1cdebbbcd149c613a861bf4d78db72b4",
+          "room_dat_u16": [
+            5025,
+            0,
+            49155
+          ]
+        },
+        {
+          "line": 1440,
+          "source": [
+            1103,
+            15,
+            21
+          ],
+          "target": [
+            1100,
+            61,
+            109
+          ],
+          "sha256": "1efaae6db3d2b1caf24ad3504aa30341b94878c5130fdc7926ba731199534a44",
+          "room_dat_u16": [
+            5025,
+            0,
+            49155
+          ]
+        },
+        {
+          "line": 1441,
+          "source": [
+            1100,
+            62,
+            109
+          ],
+          "target": [
+            1103,
+            16,
+            21
+          ],
+          "sha256": "73deaefd25e1b3833ec97980cbea54e1f99b62464bfeb40061aaaa41b747ceba",
+          "room_dat_u16": [
+            5026,
+            0,
+            49155
+          ]
+        },
+        {
+          "line": 1442,
+          "source": [
+            1103,
+            16,
+            21
+          ],
+          "target": [
+            1100,
+            62,
+            109
+          ],
+          "sha256": "fad027125b9242ef289994cc08c88005ee3ef3b8a7d50acdde63748fb2274009",
+          "room_dat_u16": [
+            5026,
+            0,
+            49155
+          ]
+        }
+      ],
+      "services": [
+        {
+          "floor": 1103,
+          "xy": [
+            19,
+            17
+          ],
+          "graphic": 16046,
+          "role": "PetShop",
+          "create": [
+            "genout/shop_m.create",
+            26,
+            "5cd18b23e98c61c1fd3107f51cbdf230ac44f15403cd4a1834b5ecfad49243c9"
+          ],
+          "template": [
+            "genout/npcgen.template",
+            18,
+            "99a04d1efa787d8851dc4b194e5e55cf789778c919a5f9063b3e957319f58fd7"
+          ],
+          "parameter": [
+            "genout/ps_1103_19_17",
+            "101f7d3affde660b494492023a5c017ce92c1872b13705c08764d816bd6fb5b0"
+          ],
+          "dat_u16": [
+            5001,
+            0,
+            49152
+          ],
+          "marker_px": [
+            1168,
+            664
+          ],
+          "graphic_px": [
+            1152,
+            593
+          ],
+          "graphic_dimensions": [
+            32,
+            80
+          ]
+        },
+        {
+          "floor": 1103,
+          "xy": [
+            14,
+            13
+          ],
+          "graphic": 16047,
+          "role": "PetSkillShop",
+          "create": [
+            "genout/shop_m.create",
+            27,
+            "95250c830e74ea1f1913764c7abeb54a3be26bbedab78e8e18f6b93106cf7723"
+          ],
+          "template": [
+            "genout/npcgen.template",
+            17,
+            "85b053eccbb8e2b85eeb5cce0d3a8db727dcb78598bc163ae7c14b41066e0a90"
+          ],
+          "parameter": [
+            "genout/psks_1103_14_13",
+            "7f9c56f15febe500640bb4b86a128e53aa496fde7c66f6fa82e238ea9179bbf8"
+          ],
+          "dat_u16": [
+            5002,
+            0,
+            49152
+          ],
+          "marker_px": [
+            880,
+            688
+          ],
+          "graphic_px": [
+            865,
+            617
+          ],
+          "graphic_dimensions": [
+            32,
+            80
+          ]
+        }
+      ],
+      "server_client_changed_cells": [
+        0,
+        60
+      ],
+      "observer_view_box": [
+        643,
+        301,
+        726,
+        686
+      ]
+    },
+    "1203": {
+      "original_name": "柯爾克的寵物店|0",
+      "dat": {
+        "bytes": 5408,
+        "sha256": "45c5cce88c2d1b574262e0ee3852d7d4948a1bc441bfac5fc5c3cf98e60f56d5",
+        "crc32": "6370e92a"
+      },
+      "ls2map": {
+        "bytes": 3644,
+        "sha256": "5c51b7d907db4556c331167d996c11c90890a2807dff44e689efc076fdf6b17f",
+        "crc32": "f23b1268"
+      },
+      "canvas": {
+        "dimensions": [
+          1889,
+          1425
+        ],
+        "png_sha256": "f45f6764d0edb2e637678734f6d11ac8862c65a8ffd2fd42c20fa017983a35a9",
+        "rgba_sha256": "6a10fd0e4764791cda04b67026fd677758f8544e1ea9dc6f153ccf0ab39dcc23"
+      },
+      "canvas_size": [
+        1889,
+        1425
+      ],
+      "origin": [
+        16,
+        712
+      ],
+      "warps": [
+        {
+          "line": 1562,
+          "source": [
+            1200,
+            39,
+            34
+          ],
+          "target": [
+            1203,
+            15,
+            21
+          ],
+          "sha256": "81371829363abb45093a695806eb17fdb7e9780eb12a0010a41baa57689fd61a",
+          "room_dat_u16": [
+            4095,
+            0,
+            49155
+          ]
+        },
+        {
+          "line": 1563,
+          "source": [
+            1203,
+            15,
+            21
+          ],
+          "target": [
+            1200,
+            39,
+            34
+          ],
+          "sha256": "cc09319bb04cdf889698c4f9cab43485449081d5d2c7ba8d26398a65b9f2a39a",
+          "room_dat_u16": [
+            4095,
+            0,
+            49155
+          ]
+        },
+        {
+          "line": 1564,
+          "source": [
+            1200,
+            40,
+            34
+          ],
+          "target": [
+            1203,
+            16,
+            21
+          ],
+          "sha256": "3f8fd3fca39e152bdaad15da9d2d3de7f54c988add1a1c8113eb968c3807dc4c",
+          "room_dat_u16": [
+            4075,
+            0,
+            49155
+          ]
+        },
+        {
+          "line": 1565,
+          "source": [
+            1203,
+            16,
+            21
+          ],
+          "target": [
+            1200,
+            40,
+            34
+          ],
+          "sha256": "63dc9574f905e3781a721980afba89f685268ca52d2e4f91014ec327ab09e2c1",
+          "room_dat_u16": [
+            4075,
+            0,
+            49155
+          ]
+        }
+      ],
+      "services": [
+        {
+          "floor": 1203,
+          "xy": [
+            14,
+            13
+          ],
+          "graphic": 16035,
+          "role": "PetShop",
+          "create": [
+            "genout/shop_m.create",
+            41,
+            "d8e48d46fbb56a850c365eeb56eac82abb343203d7b03b58c02e666f0bf222e8"
+          ],
+          "template": [
+            "genout/npcgen.template",
+            18,
+            "99a04d1efa787d8851dc4b194e5e55cf789778c919a5f9063b3e957319f58fd7"
+          ],
+          "parameter": [
+            "genout/ps_1203_14_13",
+            "db60d5e31f2478d8f59a9144c49b61c17448a0a978a63be98d81b6398c469463"
+          ],
+          "dat_u16": [
+            4003,
+            0,
+            49152
+          ],
+          "marker_px": [
+            880,
+            688
+          ],
+          "graphic_px": [
+            856,
+            618
+          ],
+          "graphic_dimensions": [
+            40,
+            80
+          ]
+        },
+        {
+          "floor": 1203,
+          "xy": [
+            18,
+            13
+          ],
+          "graphic": 16027,
+          "role": "PetSkillShop",
+          "create": [
+            "genout/shop_m.create",
+            42,
+            "e9be4c71cd46bcc640c27d1e772886328906b641f97dbe4b6ea48ed6b94cb3e2"
+          ],
+          "template": [
+            "genout/npcgen.template",
+            17,
+            "85b053eccbb8e2b85eeb5cce0d3a8db727dcb78598bc163ae7c14b41066e0a90"
+          ],
+          "parameter": [
+            "genout/psks_1203_18_13",
+            "1df1d53f6617cd497139828f3335668a7b9ecd1e636b650a90c8d9b2aa249c4f"
+          ],
+          "dat_u16": [
+            4117,
+            0,
+            49152
+          ],
+          "marker_px": [
+            1008,
+            592
+          ],
+          "graphic_px": [
+            984,
+            520
+          ],
+          "graphic_dimensions": [
+            40,
+            81
+          ]
+        }
+      ],
+      "server_client_changed_cells": [
+        0,
+        88
+      ],
+      "observer_view_box": [
+        643,
+        301,
+        738,
+        686
+      ]
+    },
+    "2003": {
+      "original_name": "瑪麗娜絲的寵物店|0",
+      "dat": {
+        "bytes": 5408,
+        "sha256": "054da66fc1f28133c3b1327b995cb704b3f95473b080bcbe2b14ddba6b851920",
+        "crc32": "2d7969c2"
+      },
+      "ls2map": {
+        "bytes": 3644,
+        "sha256": "82d83df0e32cbc24b212d080d72a7feb6633271b64030bc8122beaf6ffd2cb62",
+        "crc32": "7dba86c8"
+      },
+      "canvas": {
+        "dimensions": [
+          1889,
+          1425
+        ],
+        "png_sha256": "1ed7d88a26a96d22fb77d2fa2f33e7e923f20be95ab2b941191fbf59162ea989",
+        "rgba_sha256": "b2a5eda6c32fddd3f83f9da5b93c25b22c828136d8cb77e8d1d482f9626e89d2"
+      },
+      "canvas_size": [
+        1889,
+        1425
+      ],
+      "origin": [
+        16,
+        712
+      ],
+      "warps": [
+        {
+          "line": 1523,
+          "source": [
+            2000,
+            75,
+            57
+          ],
+          "target": [
+            2003,
+            10,
+            15
+          ],
+          "sha256": "0a034d467506dcbf4011a00e2b15c9e81e4293e0ad46e35f32a1da1b82942171",
+          "room_dat_u16": [
+            5024,
+            0,
+            49155
+          ]
+        },
+        {
+          "line": 1524,
+          "source": [
+            2003,
+            10,
+            15
+          ],
+          "target": [
+            2000,
+            75,
+            57
+          ],
+          "sha256": "35297ce0867f2c901f61732becb7bb38344dd4b8e155f036a4ebda99c5988a06",
+          "room_dat_u16": [
+            5024,
+            0,
+            49155
+          ]
+        },
+        {
+          "line": 1525,
+          "source": [
+            2000,
+            75,
+            58
+          ],
+          "target": [
+            2003,
+            10,
+            16
+          ],
+          "sha256": "f80102e1bbf660a014223325b82517ba71c343c3e827d630fda2cc812bcf6f94",
+          "room_dat_u16": [
+            5013,
+            0,
+            49155
+          ]
+        },
+        {
+          "line": 1526,
+          "source": [
+            2003,
+            10,
+            16
+          ],
+          "target": [
+            2000,
+            75,
+            58
+          ],
+          "sha256": "bd64122eea34afbcb9b95eb0bbaf99077c2838800bce2a5a9744de833a2c3ff6",
+          "room_dat_u16": [
+            5013,
+            0,
+            49155
+          ]
+        }
+      ],
+      "services": [
+        {
+          "floor": 2003,
+          "xy": [
+            18,
+            17
+          ],
+          "graphic": 16036,
+          "role": "PetShop",
+          "create": [
+            "genout/shop_m.create",
+            82,
+            "82fe064bf19f3284efe23d49d9209a51c8a235550f187a700361d18014ccc685"
+          ],
+          "template": [
+            "genout/npcgen.template",
+            18,
+            "99a04d1efa787d8851dc4b194e5e55cf789778c919a5f9063b3e957319f58fd7"
+          ],
+          "parameter": [
+            "genout/ps_2003_18_17",
+            "51c9bc03950cdd84a8a2661586010f737460212ce3a17992089401bb65046f36"
+          ],
+          "dat_u16": [
+            5001,
+            0,
+            49152
+          ],
+          "marker_px": [
+            1136,
+            688
+          ],
+          "graphic_px": [
+            1122,
+            617
+          ],
+          "graphic_dimensions": [
+            32,
+            80
+          ]
+        },
+        {
+          "floor": 2003,
+          "xy": [
+            18,
+            14
+          ],
+          "graphic": 16046,
+          "role": "PetSkillShop",
+          "create": [
+            "genout/shop_m.create",
+            83,
+            "d29da8c0843d464ead125f15bf650c98391540322de6606642e2555e2e5175e2"
+          ],
+          "template": [
+            "genout/npcgen.template",
+            17,
+            "85b053eccbb8e2b85eeb5cce0d3a8db727dcb78598bc163ae7c14b41066e0a90"
+          ],
+          "parameter": [
+            "genout/psks_2003_18_14",
+            "bd2d582757b07a35fb74a9580c4701441cec1b95715cd70a7ef602a802428a43"
+          ],
+          "dat_u16": [
+            5001,
+            0,
+            49152
+          ],
+          "marker_px": [
+            1040,
+            616
+          ],
+          "graphic_px": [
+            1024,
+            545
+          ],
+          "graphic_dimensions": [
+            32,
+            80
+          ]
+        }
+      ],
+      "server_client_changed_cells": [
+        0,
+        0
+      ],
+      "observer_view_box": [
+        649,
+        286,
+        732,
+        701
+      ]
+    }
+  },
+  "graphics": [
+    {
+      "bitmap": 5873,
+      "adrn_ordinal": 5873,
+      "adrn_sha256": "ca040cc6bd9eb7cfa0b843c54c2ccff1b059af962f12bab7205a60e3e3dc9371",
+      "rd_offset": 24981183,
+      "rd_bytes": 1771,
+      "rd_sha256": "e0959846a4ee9ab183da4da9bd53e18f487b17e8e77d0fdeaba263215ef1ffc0",
+      "signed_adrn_offset": [
+        -24,
+        -72
+      ],
+      "dimensions": [
+        40,
+        81
+      ],
+      "png_sha256": "6e6251a312d38df40f8ce1b2cdf5b36eb85465c8d0402681c554495f89f30435",
+      "rgba_sha256": "8e13ae03f41790b3527a2038c9c09c82d306f5e4e545002be2adccdd5dc59c0d",
+      "graphic": 16027,
+      "mode": "TWO_DECODERS_ORIGINAL_RD",
+      "indexed_sha256": "0ba6a59f821827497e44497831adb52092173b81935e53c7b5fe8fe42a55eba4"
+    },
+    {
+      "bitmap": 5881,
+      "adrn_ordinal": 5881,
+      "adrn_sha256": "0c3d7547e7a3cd07377bc3faffd5b3203bd9281f9845b7d6f3199f194e52ef17",
+      "rd_offset": 24994505,
+      "rd_bytes": 1705,
+      "rd_sha256": "588acf0d2d879a9b7e7e905d23e73595594328254e9f15cb97940d38c3fd61ef",
+      "signed_adrn_offset": [
+        -24,
+        -70
+      ],
+      "dimensions": [
+        40,
+        80
+      ],
+      "png_sha256": "2b75f30916053c5cfc65d5cf00ed667f870f832793948e0e4d061a8804a4a892",
+      "rgba_sha256": "325425e2ce871f3fd83db0ebfa70663faf571054d7e6a7f7cc3a34d71d3e1cfb",
+      "graphic": 16035,
+      "mode": "WORLD11_REUSED_ORIGINAL_PNG",
+      "indexed_sha256": "29882e020e6e0c86d20e8d7875e05a1d3b36cdecfd1387cc0d3ef3faef0de086"
+    },
+    {
+      "bitmap": 5882,
+      "adrn_ordinal": 5882,
+      "adrn_sha256": "e792f318033ba1e2b4e8b4139007b98f1b67310cd7b164d0275b015f030a2c81",
+      "rd_offset": 24996210,
+      "rd_bytes": 1777,
+      "rd_sha256": "b79cc8fbf9b01fbeab173ee3752cdfb0468bde3e379e03a9169896a408e8679c",
+      "signed_adrn_offset": [
+        -14,
+        -71
+      ],
+      "dimensions": [
+        32,
+        80
+      ],
+      "png_sha256": "d83c2e30b3e4617681cc6241e120f20d68eb667d6c45a604dd7421f690069a3c",
+      "rgba_sha256": "0b2e00caa12f5d52469bb57be61666707c6c6ea3b116be9ee850bca2a5990ef5",
+      "graphic": 16036,
+      "mode": "WORLD11_REUSED_ORIGINAL_PNG",
+      "indexed_sha256": "2c61411479d888d3d6cdb1a4f148cb8ec1d1de4abe5d047b99e0df8bc4adb1ca"
+    },
+    {
+      "bitmap": 5892,
+      "adrn_ordinal": 5892,
+      "adrn_sha256": "6bb27a00ed73a87a44579b840d760f929de46d40bfeeb32a8770b1edaba494d6",
+      "rd_offset": 25015378,
+      "rd_bytes": 1584,
+      "rd_sha256": "249b08112ffa5b9065a62f8b828c8ce05326f8e5dd3364ae195b23d477f1c92c",
+      "signed_adrn_offset": [
+        -16,
+        -71
+      ],
+      "dimensions": [
+        32,
+        80
+      ],
+      "png_sha256": "953dfdeb357df808441c409d4710a205aa6ceeb5483673a9b3cfa2e1a9695eda",
+      "rgba_sha256": "c4188ad7653f576da55c49cd029613f700a729552f63d77739cc948857f21cbf",
+      "graphic": 16046,
+      "mode": "WORLD11_REUSED_ORIGINAL_PNG",
+      "indexed_sha256": "42deafbf2897de6fb011f1a7513cb729d6e4db11609c45b54c7c636c748f42e7"
+    },
+    {
+      "bitmap": 5893,
+      "adrn_ordinal": 5893,
+      "adrn_sha256": "771b29332f1c52d27d2345278e272794fbdb72c7938d04a1364e57bb0c4cb54c",
+      "rd_offset": 25016962,
+      "rd_bytes": 1575,
+      "rd_sha256": "34052b7d65c6901646427f0eab3440f92f80ca9de7ddefe859ac29adf259a96d",
+      "signed_adrn_offset": [
+        -15,
+        -71
+      ],
+      "dimensions": [
+        32,
+        80
+      ],
+      "png_sha256": "078eeb4f788ddc65fc3bc2e9bab3896536f642ed2e0dac4ff9a420696a90bce8",
+      "rgba_sha256": "b5f45e194f929a0eda2a8aa07f834a9834776c9be449000247539739e7a7cab2",
+      "graphic": 16047,
+      "mode": "TWO_DECODERS_ORIGINAL_RD",
+      "indexed_sha256": "5f6af66bb262f0b21e9a6805e2733062429b0be677a204987a9e2f57a66fcb76"
+    }
+  ],
+  "original_mapwarp_sha256": "b7b50f42efa8e5a3f740d49a8d0c01cbf994d1bb66151b16ff5b5e7c14e7595c",
+  "bounds": {
+    "official_same_deployment": false,
+    "original_client_or_server_executed": false,
+    "native_renderer_or_collision_verified": false,
+    "native_storage_or_training_verified": false,
+    "proprietary_sources_published": false,
+    "overall_percent": null
+  },
+  "private_package": {
+    "filename": "StoneAge-INTEGRATION16-three-pet-rooms-private.zip",
+    "bytes": 2935927,
+    "sha256": "1ed800d0b1efe4ea78dc208b220917b9da69f9f864c7f17c787fb8c18b58fc7a",
+    "members": 36,
+    "library_roundtrip_sha256_and_crc_verified": true
+  },
+  "browser": {
+    "chromium": "153.0.8010.0",
+    "exact_zip_index_file_url": true,
+    "external_requests": 0,
+    "browser_errors": 0,
+    "rooms": [
+      {
+        "floor": 1103,
+        "image_payloads_verified": 3,
+        "details_verified": 2,
+        "warp_rows_visible": 4,
+        "overlay_changes_pixels_and_hides_again": true
+      },
+      {
+        "floor": 1203,
+        "image_payloads_verified": 3,
+        "details_verified": 2,
+        "warp_rows_visible": 4,
+        "overlay_changes_pixels_and_hides_again": true
+      },
+      {
+        "floor": 2003,
+        "image_payloads_verified": 3,
+        "details_verified": 2,
+        "warp_rows_visible": 4,
+        "overlay_changes_pixels_and_hides_again": true
+      }
+    ]
+  },
+  "private_generation_byte_for_byte_replay": true,
+  "altered_source_parameter_rejected": true,
+  "starting_main": {
+    "head": "0bfc01c78396ea4a031272f794234e7b79a21b24",
+    "tree": "c554750a7109b9908adb02e65476cb434f2f023e",
+    "current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  }
+}
