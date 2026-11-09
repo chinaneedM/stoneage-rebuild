@@ -1,0 +1,527 @@
+{
+  "schema": "stoneage.integration27.mixed25_tutor_overlays_and_3400_DAT.r1",
+  "date": "2026-11-09",
+  "baseline_main": "22f42cf60462f8aea2fcdc80502ed1ddc21e96fe",
+  "baseline_tree": "2125453d9316208b2c709146b8dd15de0ccdeb8b",
+  "historical_CURRENT": {
+    "bytes": 2709173,
+    "git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "source_scope": "PRESERVED_COMMUNITY_MIXED25_CONFIG_MAP_AND_NPC_RD_WITH_INDEPENDENT_TW10_MAP_TILE_CANDIDATES",
+  "upstream": {
+    "i17": {
+      "path": "research/recovered/STONEAGE-INTEGRATION17-THREE-PET-ROOMS-SOURCE-R1.json",
+      "git_blob": "e716f01bbf7d08be2e13654909282a198f5334dd"
+    },
+    "r4": {
+      "path": "research/recovered/STONEAGE-INTEGRATION18-SCENE26-R4-BOUNDED-TUTOR-LAYOUT-R1.json",
+      "git_blob": "0f1ac43bd3abb11b360a040e842dcac11d159e9a"
+    },
+    "i20": {
+      "path": "research/recovered/STONEAGE-INTEGRATION20-TWO-PET-ROOMS-ORIGINAL-SOURCE-R1.json",
+      "git_blob": "53497d591604794b74180c3162e07204cdd0c9f8"
+    },
+    "i21": {
+      "path": "research/recovered/STONEAGE-INTEGRATION21-TEN-PET-ROOMS-SOURCE-ATLAS-R1.json",
+      "git_blob": "56fd04d1bc47b20ed6c5ca26c91e7bbb6f892ad7"
+    },
+    "map09": {
+      "path": "research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json",
+      "git_blob": "137580e7c25aadf3d679b6ebfb5080b79912cc4f"
+    },
+    "map09_custody": {
+      "path": "research/recovered/STONEAGE-MAP09-PRIVATE-CUSTODY-R1.json",
+      "git_blob": "5d6b591c659563aef24d93a30d314dd1d13b8d2c"
+    },
+    "world11": {
+      "path": "research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-11-NPC-STATIC-APPEARANCE-R1.json",
+      "git_blob": "f79d7355a4e82c2bd8c0a771b898690cc4a3e680"
+    }
+  },
+  "parent_rar": {
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+  },
+  "extraction": {
+    "initial_libarchive": {
+      "adrn_15.bin": "PARSING_FILTERS_UNSUPPORTED",
+      "real_15.bin": "INVALID_SYMBOL",
+      "successful_members": [
+        "Palet_1.sap",
+        "spradrn_5.bin"
+      ]
+    },
+    "successful_decoder": "UnRAR 7.30 beta 1",
+    "unrar_source_git_tree": "160dcb5c9c1babbbdd3f0f1fc78cf48a7f8150cf",
+    "complete_graphic_source_members": {
+      "adrn_15.bin": {
+        "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/data/adrn_15.bin",
+        "bytes": 18765120,
+        "sha256": "92d0137590d35a7a1f4fb11af3ad13bbc585813a4b0e1e3f933c397007fbff74",
+        "crc32": "3113c408"
+      },
+      "real_15.bin": {
+        "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/data/real_15.bin",
+        "bytes": 763908374,
+        "sha256": "c7640643804d550bc07e33661103fb7b5f557ee01e68a5a5d92382c5305c2b0d",
+        "crc32": "bd8bab8d"
+      },
+      "Palet_1.sap": {
+        "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/data/pal/Palet_1.sap",
+        "bytes": 708,
+        "sha256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0",
+        "crc32": "dacb3fc9"
+      },
+      "spradrn_5.bin": {
+        "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/data/spradrn_5.bin",
+        "bytes": 10164,
+        "sha256": "5f13c956cf013e073298ab91667d3aaa17767b26ba94d696514726950ce94de6",
+        "crc32": "6d939a7a"
+      }
+    },
+    "verified_adrn_records": 234564,
+    "verified_spradrn_records": 847,
+    "selected_spr_matches": 0
+  },
+  "graphics": [
+    {
+      "bitmap": 232699,
+      "adrn_ordinal": 232699,
+      "adrn_sha256": "bcb5002755d00dba0061123a01195fc2eedbcec6fd4a390273dd3f1d1db01110",
+      "rd_offset": 748989960,
+      "rd_bytes": 1930,
+      "rd_sha256": "70e97c406b2ac784a5b0e0cac7906ab8b044f6f4b9ebe14a92b4e727eb250022",
+      "signed_adrn_offset": [
+        -16,
+        -75
+      ],
+      "dimensions": [
+        32,
+        87
+      ],
+      "png_sha256": "02bfd430c3a6903e4cef860404d7e05b37e80d3bc7cbb3c55ca79d302f39d0ce",
+      "rgba_sha256": "74757afab0de3292c1f689cc44c6be65fdedeb941e698bf12f390ff76867df05",
+      "graphic": 16122,
+      "mode": "TWO_DECODERS_ORIGINAL_RD",
+      "indexed_sha256": "329c71daec1adb21c1b63333ce4578bec2edc1a895ba837c1a0c7b978f2a3a3e"
+    },
+    {
+      "bitmap": 232704,
+      "adrn_ordinal": 232704,
+      "adrn_sha256": "da21079cba95e34eb79cd477aecf02fcc3cbcb37633ecbc142a4b2e580e6df98",
+      "rd_offset": 749001779,
+      "rd_bytes": 2089,
+      "rd_sha256": "c461402ebd18a9e87277c083f4b62218f99133380b74c26278ef916836aaaeb1",
+      "signed_adrn_offset": [
+        -19,
+        -85
+      ],
+      "dimensions": [
+        36,
+        96
+      ],
+      "png_sha256": "d832c8636b40c45304558ebe8ab222a35f8f5833b0cbaf80f42836bb9563c820",
+      "rgba_sha256": "5efbc6aa406201415e46a224f32db5a97f3468d55363d99b5659d66d18a3047f",
+      "graphic": 16127,
+      "mode": "TWO_DECODERS_ORIGINAL_RD",
+      "indexed_sha256": "f0170a4fb5002555545366ea1e52a957b07068b2c4f892dff9d7b5d9efa8d6dc"
+    }
+  ],
+  "rooms": [
+    {
+      "floor": 1003,
+      "create_ordinal": 4,
+      "create_sha256": "bb7b3af1435f5747d867916fbafb12a94ce76470cbc64dd76688dfd9f4692ea9",
+      "xy": [
+        19,
+        15
+      ],
+      "alias": 16122,
+      "source_DAT_sha256": "fc3037a1850c8baf06ad5874a4cb49ca5e13e9315c020f64c019417c33b694e6",
+      "base_RGBA_sha256": "e65f72c5f7d23631fe7b0b4b396d57c9be66fe6c684f9950fa461d341bc5e886",
+      "base_PNG_sha256": "03a5a9ee542f8d5a4be5a94f0e060cb3ddd9402d756dfb9559e77f252fb820f3",
+      "placement_xy": [
+        1088,
+        541
+      ],
+      "canvas_size": [
+        1889,
+        1425
+      ],
+      "sprite_dimensions": [
+        32,
+        87
+      ],
+      "overlay_RGBA_sha256": "aee467b7c45a758c8ace13192f72414786ee612375e5e11f9bf353386bd1e14d",
+      "overlay_PNG_sha256": "f9571e2dc3b4b69c1b68020ccc2c2f571a576bd2ec6febde5217cb37fcfa6778",
+      "opaque_sprite_pixels": 1784,
+      "changed_canvas_pixels": 1784,
+      "verified_base_states": {
+        "plane0": "5ec16feab8788ee0cb8e9d863656d96ffe6351322d01adee6697e6aee6fc84d0",
+        "plane1": "b141d172382cf498b7a806a58e5655729b98715108f92fdbf51f6a8c41b7c300",
+        "combined": "e65f72c5f7d23631fe7b0b4b396d57c9be66fe6c684f9950fa461d341bc5e886"
+      },
+      "tile_placements": 134
+    },
+    {
+      "floor": 2003,
+      "create_ordinal": 5,
+      "create_sha256": "92733c3bc3a2296045777f8c7a0af0b810754f0cd867d10f1ce70580613d459b",
+      "xy": [
+        11,
+        12
+      ],
+      "alias": 16127,
+      "source_DAT_sha256": "054da66fc1f28133c3b1327b995cb704b3f95473b080bcbe2b14ddba6b851920",
+      "base_RGBA_sha256": "b2a5eda6c32fddd3f83f9da5b93c25b22c828136d8cb77e8d1d482f9626e89d2",
+      "base_PNG_sha256": "1ed7d88a26a96d22fb77d2fa2f33e7e923f20be95ab2b941191fbf59162ea989",
+      "placement_xy": [
+        733,
+        651
+      ],
+      "canvas_size": [
+        1889,
+        1425
+      ],
+      "sprite_dimensions": [
+        36,
+        96
+      ],
+      "overlay_RGBA_sha256": "90f92b6d92c37fb2b7c3dfcabc3ea90becf7c2e45d690e591791e201cd602bc4",
+      "overlay_PNG_sha256": "2151c604a1a2b4c1b5dafabc7267822d62761ef3c9227e77196230576c6006f3",
+      "opaque_sprite_pixels": 1873,
+      "changed_canvas_pixels": 1868,
+      "verified_base_states": {
+        "plane0": "3bba2a62ab333e9a18fef511842f127625e20ce0571fd2cd29f9fe75bc64d0e9",
+        "plane1": "8701aa40c4b0872db857c716b509592dc9122a0346b3c58a152034acd7fd5aac",
+        "combined": "b2a5eda6c32fddd3f83f9da5b93c25b22c828136d8cb77e8d1d482f9626e89d2"
+      },
+      "tile_placements": 138
+    },
+    {
+      "floor": 3003,
+      "create_ordinal": 6,
+      "create_sha256": "3e0249444221f2507cee170f7190db3ed6a00717159ca7b3ddc419d3995ad32b",
+      "xy": [
+        16,
+        19
+      ],
+      "alias": 16122,
+      "source_DAT_sha256": "f6ad234ac023a105ee0e44804df6d61a9125c05f9e063c57a6178351d962d827",
+      "base_RGBA_sha256": "9644ebc9c7f6ffa6cc2dd24eea248d6e2de1632f0a2b786345149d35a0e9a2b0",
+      "base_PNG_sha256": "cdf9c40c36affa020d24eb20ddf1c38acf1eeab87f98e37f3fc49c5d9480ad6d",
+      "placement_xy": [
+        1120,
+        709
+      ],
+      "canvas_size": [
+        1889,
+        1425
+      ],
+      "sprite_dimensions": [
+        32,
+        87
+      ],
+      "overlay_RGBA_sha256": "95874375ffa2a8d1bcbacf28b993615d71842c33808df18e9b55e7404819c675",
+      "overlay_PNG_sha256": "290bc59926a959b176c73483ee8715b9436dc82578ce97b884bdbec274324cd2",
+      "opaque_sprite_pixels": 1784,
+      "changed_canvas_pixels": 1779,
+      "verified_base_states": {
+        "plane0": "dcaa0d6bcbb7af81c12685594411ba6eaad662c7b7b748f7a2ebfeab33a42e43",
+        "plane1": "db040118bc41d3d5767bf7f7d11af53cf920d30b0096544dc4c49bf50de05e2b",
+        "combined": "9644ebc9c7f6ffa6cc2dd24eea248d6e2de1632f0a2b786345149d35a0e9a2b0"
+      },
+      "tile_placements": 154
+    },
+    {
+      "floor": 4003,
+      "create_ordinal": 7,
+      "create_sha256": "f3c9b1363c66ceea08ec1a5332db826d6e1b4d96603f811da134be5c89c4a341",
+      "xy": [
+        14,
+        17
+      ],
+      "alias": 16122,
+      "source_DAT_sha256": "0a9fa2a089b6936e86eea458bca464038b8d5cb7fee057b9d2b393ffc6c6d6d4",
+      "base_RGBA_sha256": "4512cdc85c6973d775efcd1d53ada6732bf023ef559f1baa6182a7b146d3722e",
+      "base_PNG_sha256": "b458eb9891d5d25ef7704298755482a96e525eb34e047c3f420860ecb403f31d",
+      "placement_xy": [
+        992,
+        709
+      ],
+      "canvas_size": [
+        1889,
+        1425
+      ],
+      "sprite_dimensions": [
+        32,
+        87
+      ],
+      "overlay_RGBA_sha256": "3dae91f82544bbe39249030c79509867c8fc6809cbea8481833af4c739af57b9",
+      "overlay_PNG_sha256": "10025a3c02bc59bff220458ba2bbe5e96b1d9bc6af711b12c99ca40b17f3dee1",
+      "opaque_sprite_pixels": 1784,
+      "changed_canvas_pixels": 1772,
+      "verified_base_states": {
+        "plane0": "69cba81f70cf760ec9d4eb07e87713295fd5ff70e02e19dab1867349ed0fd763",
+        "plane1": "1de5d1ac5195e426f1a8c35d71d79f71ea14050248a8a7d6e4705bb9639e958a",
+        "combined": "4512cdc85c6973d775efcd1d53ada6732bf023ef559f1baa6182a7b146d3722e"
+      },
+      "tile_placements": 143
+    }
+  ],
+  "tile_aliases": 100,
+  "dialogue_entries": 10,
+  "original_create_file_sha256": "761dc3d1ed885fb76b22af446331e5a0db6cf3e59a27cf2ab136a62a88d81d0b",
+  "original_script_sha256": "04ba49ba514eb469b4c12085c6733cd73c281c6ca682c813c2e35748ab6ac1db",
+  "exterior_3400": {
+    "bytes": 86408,
+    "sha256": "a3c6918ba21c909e6312329c936615aa6b6d8800d7967ed85a2146d55ca263c4",
+    "crc32": "7e5f34db",
+    "geometry": [
+      120,
+      120
+    ],
+    "edges": [
+      {
+        "mapwarp_line": 752,
+        "start": [
+          3400,
+          53,
+          49
+        ],
+        "target": [
+          3403,
+          15,
+          21
+        ],
+        "warp_CREATE_ordinal": 139,
+        "warp_CREATE_sha256": "fe0ec66bac575bf155b576ba5970f652daa635e1aa48238e39d88a1e63775514",
+        "source_original_DAT_u16_at_room_endpoint": [
+          5025,
+          0,
+          49155
+        ],
+        "local_xy": [
+          15,
+          21
+        ],
+        "reverse_explicit": true,
+        "exterior_xy": [
+          53,
+          49
+        ],
+        "exterior_DAT_u16_offsets": [
+          11874,
+          40674,
+          69474
+        ],
+        "exterior_DAT_u16": [
+          375,
+          0,
+          49155
+        ]
+      },
+      {
+        "mapwarp_line": 753,
+        "start": [
+          3403,
+          15,
+          21
+        ],
+        "target": [
+          3400,
+          53,
+          49
+        ],
+        "warp_CREATE_ordinal": 140,
+        "warp_CREATE_sha256": "f9f0e7e894ba0f88a0aca6951b57ca78069878103ce714236fa25f02ae60d469",
+        "source_original_DAT_u16_at_room_endpoint": [
+          5025,
+          0,
+          49155
+        ],
+        "local_xy": [
+          15,
+          21
+        ],
+        "reverse_explicit": true,
+        "exterior_xy": [
+          53,
+          49
+        ],
+        "exterior_DAT_u16_offsets": [
+          11874,
+          40674,
+          69474
+        ],
+        "exterior_DAT_u16": [
+          375,
+          0,
+          49155
+        ]
+      },
+      {
+        "mapwarp_line": 754,
+        "start": [
+          3400,
+          54,
+          49
+        ],
+        "target": [
+          3403,
+          16,
+          21
+        ],
+        "warp_CREATE_ordinal": 141,
+        "warp_CREATE_sha256": "8efd87d0935f50bc5f60cbd54e84e6533b64042e62f88b01a7112f434f07eff1",
+        "source_original_DAT_u16_at_room_endpoint": [
+          5026,
+          0,
+          49155
+        ],
+        "local_xy": [
+          16,
+          21
+        ],
+        "reverse_explicit": true,
+        "exterior_xy": [
+          54,
+          49
+        ],
+        "exterior_DAT_u16_offsets": [
+          11876,
+          40676,
+          69476
+        ],
+        "exterior_DAT_u16": [
+          391,
+          0,
+          49155
+        ]
+      },
+      {
+        "mapwarp_line": 755,
+        "start": [
+          3403,
+          16,
+          21
+        ],
+        "target": [
+          3400,
+          54,
+          49
+        ],
+        "warp_CREATE_ordinal": 142,
+        "warp_CREATE_sha256": "c194d29c04d111ea1d64055ec5dd2f6fed70b42a8c956d430c543524ffe65571",
+        "source_original_DAT_u16_at_room_endpoint": [
+          5026,
+          0,
+          49155
+        ],
+        "local_xy": [
+          16,
+          21
+        ],
+        "reverse_explicit": true,
+        "exterior_xy": [
+          54,
+          49
+        ],
+        "exterior_DAT_u16_offsets": [
+          11876,
+          40676,
+          69476
+        ],
+        "exterior_DAT_u16": [
+          391,
+          0,
+          49155
+        ]
+      }
+    ],
+    "original_3403_DAT_sha256": "0f6ecf597a7bf969d6e4e769081467ac1228e01ed6583c8d5ae50d031f8dad95"
+  },
+  "private_HTML_static_references_verified": true,
+  "browser_render_verified": false,
+  "private_zip": {
+    "filename": "StoneAge-INTEGRATION27-four-pet-tutors-and-3400-DAT-private.zip",
+    "bytes": 3772731,
+    "sha256": "602d8b900bfca5863abfa765d4f581072d0530dcc443a7ea00748370ce9727e9",
+    "members": 26,
+    "whole_zip_and_member_crc_verified": true
+  },
+  "verified_original_configuration": {
+    "members": {
+      "mapwarp.txt": {
+        "bytes": 110674,
+        "crc32": "6b4da534",
+        "sha256": "b7b50f42efa8e5a3f740d49a8d0c01cbf994d1bb66151b16ff5b5e7c14e7595c"
+      },
+      "warp_y2.create": {
+        "bytes": 19522,
+        "crc32": "856443c5",
+        "sha256": "a2e60d39af1d008b1f1d3c8d084cfdf36ad275c896a83895b4c295531a361352"
+      },
+      "newbie.create": {
+        "bytes": 1548,
+        "crc32": "3f411954",
+        "sha256": "761dc3d1ed885fb76b22af446331e5a0db6cf3e59a27cf2ab136a62a88d81d0b"
+      },
+      "petmaster": {
+        "bytes": 1365,
+        "crc32": "e63fc8d8",
+        "sha256": "04ba49ba514eb469b4c12085c6733cd73c281c6ca682c813c2e35748ab6ac1db"
+      }
+    },
+    "lines": [
+      {
+        "mapwarp_line": 752,
+        "mapwarp_line_sha256": "8404c7d95d2219f14e289d57ce9288902fd81f5ad0bc80bb4196db1abd6817ad",
+        "warp_CREATE_file": "genout/warp_y2.create",
+        "warp_CREATE_ordinal": 139,
+        "warp_CREATE_sha256": "fe0ec66bac575bf155b576ba5970f652daa635e1aa48238e39d88a1e63775514"
+      },
+      {
+        "mapwarp_line": 753,
+        "mapwarp_line_sha256": "731aad249a37e4aba0186c50d315e70dbd1f09ab698d1c02c89cbfb2705ab8cf",
+        "warp_CREATE_file": "genout/warp_y2.create",
+        "warp_CREATE_ordinal": 140,
+        "warp_CREATE_sha256": "f9f0e7e894ba0f88a0aca6951b57ca78069878103ce714236fa25f02ae60d469"
+      },
+      {
+        "mapwarp_line": 754,
+        "mapwarp_line_sha256": "4b2f48d4104d7002fa0f031a986d97b29d81fac8a40e04507b1c4570fd1b7206",
+        "warp_CREATE_file": "genout/warp_y2.create",
+        "warp_CREATE_ordinal": 141,
+        "warp_CREATE_sha256": "8efd87d0935f50bc5f60cbd54e84e6533b64042e62f88b01a7112f434f07eff1"
+      },
+      {
+        "mapwarp_line": 755,
+        "mapwarp_line_sha256": "720a57f60e4944b61c68cc213ae38841464a01c06303b70653d7273b58098043",
+        "warp_CREATE_file": "genout/warp_y2.create",
+        "warp_CREATE_ordinal": 142,
+        "warp_CREATE_sha256": "c194d29c04d111ea1d64055ec5dd2f6fed70b42a8c956d430c543524ffe65571"
+      }
+    ]
+  },
+  "verification": {
+    "separate_rd_decoders": 2,
+    "exact_indexed_pngs_match_i17": 2,
+    "complete_base_rgba_replays": 12,
+    "independent_composite_rgba_replays": 4,
+    "repeat_private_zip_byte_identical": true,
+    "private_zip_roundtrip_whole_sha256_and_crc_verified": true
+  },
+  "bounds": {
+    "native_client_or_server_executed": false,
+    "native_palette_layer_order_or_collision_verified": false,
+    "native_dialogue_or_warp_executed": false,
+    "official_same_deployment_verified": false,
+    "proprietary_originals_in_public_git": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Choose a source-ready Stage A content join outside the completed tutor overlays and 3400 door cells. Reopen 3400 only for a separately evidenced visual or runtime gap."
+}
