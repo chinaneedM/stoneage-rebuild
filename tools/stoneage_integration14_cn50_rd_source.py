@@ -7,8 +7,11 @@ import json
 from pathlib import Path
 import subprocess
 import tempfile
+import time
+from urllib.error import HTTPError, URLError
 import zipfile
 
+from tools.stoneage_sa_arena_ia_probe import logical_sector_read
 from tools.stoneage_stoneage5_cab_probe import iso_file_slice
 from tools.stoneage_stoneage5_full_cab_acquisition import checked_layout, download_cab, hash_file
 from tools.stoneage_stoneage5_msi_probe import find_entry, load_root
@@ -39,6 +42,20 @@ def targets():
     return dict(matches)
 
 
+def retry_range(*args):
+    for delay in (1, 3, 7):
+        try:
+            return logical_sector_read(*args)
+        except HTTPError as exc:
+            if not 500 <= exc.code <= 599:
+                raise
+        except (URLError, TimeoutError):
+            pass
+        print(f'RETRY_SOURCE_RANGE|lba={args[1]}|after={delay}s', flush=True)
+        time.sleep(delay)
+    return logical_sector_read(*args)
+
+
 def acquire(output, certificate):
     selected = targets()
     prior = json.loads((REC/'STONEAGE-STONEAGE5-REAL-CAB-PAYLOAD-R1.json').read_bytes())
@@ -54,7 +71,7 @@ def acquire(output, certificate):
     with tempfile.TemporaryDirectory(prefix='stoneage-i14-') as tmp:
         work = Path(tmp)
         cabfile = work/'DATA1.CAB'
-        digest = download_cab(url, cab, track, int(bin_row['size']), cabfile)
+        digest = download_cab(url, cab, track, int(bin_row['size']), cabfile, read_sectors=retry_range)
         if digest != prior['source']['cab_sha256']:
             raise ValueError('complete original CAB SHA mismatch')
         subprocess.run(['cabextract', '-q', '-F', '*_31.bin', '-d', str(work), str(cabfile)], check=True)

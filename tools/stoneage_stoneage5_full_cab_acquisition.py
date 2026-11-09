@@ -55,7 +55,7 @@ def checked_layout(prefix):
     return h, files
 
 
-def download_cab(url, cab, track, carrier_size, destination):
+def download_cab(url, cab, track, carrier_size, destination, *, read_sectors=logical_sector_read):
     stride, _, _ = mode_layout(track["mode"])
     nsectors = math.ceil(int(cab["size"])/SECTOR)
     digest = hashlib.sha256()
@@ -67,7 +67,7 @@ def download_cab(url, cab, track, carrier_size, destination):
             last = first+count*stride-1
             if last >= carrier_size:
                 raise ValueError("carrier-length-exceeded")
-            status, header, block, honored = logical_sector_read(
+            status, header, block, honored = read_sectors(
                 url, lba, count, track["index_frames"], track["mode"])
             if not honored or status != 206:
                 raise ValueError("archive-ignored-range")
