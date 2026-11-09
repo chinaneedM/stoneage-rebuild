@@ -1,0 +1,109 @@
+{
+  "schema": "stoneage.integration24.material_source_publication_acceptance.r1",
+  "record_date": "2026-11-09",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "accepted_PR": {
+    "number": 292,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/pull/292",
+    "head_sha": "8b9075a0413cb8fe9dc023afb69afcc8c904ce34",
+    "base_main_before_merge": "b4bf4337471b37c1d2e500cbb79bf1ff575d8c8d",
+    "merged": true,
+    "merge_commit_sha": "0021d51beb78329a71d3fcf1b0ff2ed4a1732455",
+    "merged_at_UTC": "2026-11-09T13:58:29Z"
+  },
+  "source_bound_accepted_Git_blobs": {
+    "evidence_JSON_sha": "6fa8a4567be376e0de5131108d9d9e6c2ecd3660",
+    "independent_positive_and_negative_tests_py_sha": "4eabe39c9635b7a1bbba84ccad99d9c19f10e4b1",
+    "workflow_yml_sha": "5b94ed59094852df9b8c7383a368ed5bc2f8c500",
+    "dated_continuity_markdown_sha": "1312a66d547602812b87e13532cfb91f8cd69e5c",
+    "preserved_prior_CURRENT_state_blob_sha": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "verified_original_private_custody": {
+    "reverified_CHAR01_ZIP_whole_SHA256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "reverified_CHAR01_members_CRC_passed": 2205,
+    "reverified_ITEM01_ZIP_whole_SHA256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "reverified_ITEM01_members_CRC_passed": 838,
+    "private_original_RAR_re_read_this_unit": false,
+    "private_original_DAT_re_rendered_this_unit": false,
+    "no_new_private_archive_upload_required": true,
+    "original_proprietary_bytes_published": false
+  },
+  "source_provenance_exact_parent_Git_blobs": {
+    "SHOP": "3bde3b7df43725f28cdac355823667a0ba87e9b1",
+    "MAP09": "137580e7c25aadf3d679b6ebfb5080b79912cc4f",
+    "ITEM01_first_shard": "d39ef58c88f1326d227b2844ca06ed5e23e2965a"
+  },
+  "validated_PR_workflow_runs": [
+    {
+      "id": 42630013795,
+      "name": "INTEGRATION24 dedicated source contract",
+      "job_id": 129203579047,
+      "conclusion": "completed_success",
+      "ran_new_12_unittests": true
+    },
+    {
+      "id": 42630013775,
+      "name": "INTEGRATION21 pet service atlas",
+      "conclusion": "completed_success"
+    },
+    {
+      "id": 42630013872,
+      "name": "O12 compiled sound-number namespace",
+      "conclusion": "completed_success"
+    },
+    {
+      "id": 42630013820,
+      "name": "INTEGRATION22 village shops",
+      "conclusion": "completed_success"
+    },
+    {
+      "id": 42630013871,
+      "name": "O11 native source animation candidates",
+      "conclusion": "completed_success"
+    },
+    {
+      "id": 42630013839,
+      "name": "INTEGRATION20 source-bound rooms",
+      "conclusion": "completed_success"
+    },
+    {
+      "id": 42630013777,
+      "name": "INTEGRATION23 village shop scenes",
+      "conclusion": "completed_success"
+    }
+  ],
+  "validation_summary": {
+    "applicable_PR_triggered_runs": 7,
+    "completed_success": 7,
+    "failed": 0,
+    "new_focused_unittest_count": 12,
+    "dedicated_job_step_completed_success": true,
+    "main_merge_commit_actions_not_independently_observable_from_PR_only_connector": true,
+    "original_game_shop_runtime_executed": false
+  },
+  "next_source_selection_only_not_newly_integrated": {
+    "candidate": "ORIGINAL_FOOD_PRODUCE_MARKET_SOURCE_GROUP",
+    "floor_2009_prior_MAP09_DAT_sha256": "04b1bc0a1c6d25cedb6b22bb7fdc55771e7098172e03d2f336f3ea0d69cd0768",
+    "prior_MAP09_geometry": [
+      40,
+      60
+    ],
+    "available_same_original_shop_m_CREATE_paths": [
+      "genout/ss_2009_27_15",
+      "genout/ss_2009_27_17",
+      "genout/ss_2009_27_23",
+      "genout/ss_2009_27_26",
+      "genout/ss_2009_27_29",
+      "genout/ss_2009_27_34",
+      "genout/ss_2009_27_37"
+    ],
+    "source_only_candidate_shop_NPC_count": 7,
+    "other_floor_2009_mission_create_sources_must_remain_distinct": true,
+    "ItemList_contains_literal_ranges_to_guard_against_native_inventory_promotion": true,
+    "next_package_source_identity_and_duplicate_check_required": true
+  },
+  "Stage_A": "7_PARTIAL_2_OPEN",
+  "Stage_B_wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}
