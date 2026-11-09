@@ -2251,3 +2251,6 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-09 — INTEGRATION14｜霍特爾医院与营养剂商人的物品来源
 
 [INTEGRATION14 原配置、备表与图像证据](docs/continuity/STONEAGE-INTEGRATION14-HOTORU-SHOP-ITEM-SOURCE-20261109.md)串起两处原创建块、三种原参数字段和七条备表原行。医院七个编号只出现在其 `LimitItemNo`，其中五个也在营养剂名人家的 `ItemList` 中。图像记录按载体和原压缩块来源分列，原生加载与实际交易仍待证。
+## 2026-11-09 — INTEGRATION15-R1｜霍特爾寵物店 1303 原服務資料現場關聯（PARTIAL）
+
+[INTEGRATION15 來源與續接界限](docs/continuity/STONEAGE-INTEGRATION15-HOTORU-PET-SERVICE-BRIDGE-20261109.md)以 INTEGRATION13 原場景座標與 GAMEPLAY03／05 原參數全 SHA 核對 1303 寵物寄放和七項技能候選，明確分開與技能導師同圖號的 TownPeople。新原 RD 解碼和私人現場 HTML 實際修改均為零；下一步只在能取回私人觀察與合格原像素時才做 R2，原生互動與官方同部署維持未證。

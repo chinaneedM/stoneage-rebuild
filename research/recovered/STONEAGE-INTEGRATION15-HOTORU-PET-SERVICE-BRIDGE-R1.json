@@ -1,0 +1,109 @@
+{
+  "schema": "stoneage.integration15.hotoru_pet_service_source_bridge.r1",
+  "date": "2026-11-09",
+  "source_scope": "MIXED25_COMMUNITY_PRESERVED_ORIGINAL_CREATE_PARAMETERS_PLUS_DISTINCT_TW10_CANDIDATE_SCENE",
+  "starting_main": {
+    "commit": "9ca6cf09962538f115d05cb0389e0ecd468e2a40",
+    "tree": "53ad7612ec5e5b3c40c9df8e28d52261abacd6b9"
+  },
+  "upstream_git_blobs": {
+    "integration13": "728d5e2ecc9bf8944d326850bf604da42eb90309",
+    "gameplay03": "5735ddc1117a8a6fb2f9417327ec242e4fd06192",
+    "gameplay05": "878be2f05a4dc17f51d21ed2401fd7a7f3d73563"
+  },
+  "room": {
+    "floor": 1303,
+    "original_name": "霍特爾的寵物店|0",
+    "original_dat_sha256": "d6f85cccec0eec22eaccfbef84eafcfaecea97995bbb6af3062ab84625221ec4",
+    "original_ls2map_sha256": "a5c9e022839a9a9ae0a9f993246f27cbc1911767aa3a157d4f0e6248daac21a2",
+    "map07_private_canvas_png_sha256": "f69fffd8171a729e10d7a2f7ad1414e993d74f82d414f502506d4de313d1c209",
+    "map07_private_canvas_rgba_sha256": "980287e99bfd61387afd08340e8bde958dfbca37f65aed7926c7dae87f4d86bf",
+    "source_create_count": 11
+  },
+  "service_joins": [
+    {
+      "catalog_role": "pet_storage_configuration",
+      "function_token": "PetShop",
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 53,
+      "create_block_sha256": "478b8668a020ba8b0a76e50e4893b6e33d5e6712a0f6bf4658e02a9929498d57",
+      "xy": [
+        16,
+        13
+      ],
+      "graphic_alias": 16048,
+      "original_parameter_path": "genout/ps_1303_16_13",
+      "original_parameter_sha256": "8beaa8a89b834d90be34e9213abf40d5bdb9ff832a6b6c5bb674db738577f022",
+      "upstream": "GAMEPLAY05",
+      "parameter_literals": {
+        "original_key_is_nomal_rate_not_normal_rate": "1.0",
+        "pool_flg_raw": null,
+        "pool_cost_raw": null,
+        "special_rate_raw": "1.5",
+        "special_pet_field_exists": true,
+        "special_pet_source_is_empty": true
+      }
+    },
+    {
+      "catalog_role": "pet_skill_course_configuration",
+      "function_token": "PetSkillShop",
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 54,
+      "create_block_sha256": "f799a403d749cae89ad3e3a5a1983818d764e2ff48517acff62fe737440ab1ca",
+      "xy": [
+        13,
+        13
+      ],
+      "graphic_alias": 16049,
+      "original_parameter_path": "genout/psks_1303_13_13",
+      "original_parameter_sha256": "310106449c8b0ee0e4e5f0a474dfcf47f126d413d57a047207bfe80a8d14f3db",
+      "upstream": "GAMEPLAY03",
+      "skill_rate_literal": "1.1",
+      "skill_ids_ordered": [
+        0,
+        1,
+        2,
+        3,
+        50,
+        61,
+        130
+      ],
+      "skill_trailing_empty_token": false,
+      "all_skill_ids_have_rows_in_both_candidate_masters": true
+    }
+  ],
+  "co_room_constraints": {
+    "townpeople": {
+      "create_ordinal": 61,
+      "create_block_sha256": "bca5b75d96712fb06c089be209cd0e95457d9a60cd6f84d7ce85162fe8cb2ede",
+      "xy": [
+        11,
+        6
+      ],
+      "graphic_alias": 16049,
+      "original_parameter_path": "genout/msg_1303_11_6",
+      "original_parameter_sha256": "7a304082f72f0ecdb161ddb1365ab48f740fe34695aae11d01883470cc76ab3b"
+    },
+    "pet_skill_and_townpeople_share_graphic_alias_only": true,
+    "distinct_create_blocks_and_positions": true,
+    "unnamed_mugon_configurations": 6,
+    "warp_source_create_ordinals": [
+      86,
+      88
+    ],
+    "warp_target_floor": 1300
+  },
+  "boundaries": {
+    "new_original_source_file_rereads": 0,
+    "new_original_pixel_decodes": 0,
+    "private_observer_html_modified": false,
+    "private_observer_scene_render_verified_this_unit": false,
+    "original_game_interaction_verified": false,
+    "active_master_skill_table_verified": false,
+    "pet_storage_transaction_verified": false,
+    "skill_purchase_or_learning_verified": false,
+    "official_same_deployment_verified": false,
+    "graphic_alias_proves_same_npc_identity": false
+  },
+  "next": "INTEGRATION15-R2: Locate/read back qualified private INTEGRATION13 observer and true original 16048/16049 pixel candidates; only then add 1303 clickable source-detail overlay and independently verify rendered bytes. Otherwise stop at this source-join boundary and rotate to other original content."
+}
