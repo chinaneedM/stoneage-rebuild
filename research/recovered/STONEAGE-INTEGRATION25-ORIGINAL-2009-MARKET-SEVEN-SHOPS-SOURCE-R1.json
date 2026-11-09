@@ -1,0 +1,4206 @@
+{
+  "schema": "stoneage.integration25.seven_market_food_shop_original_source_join_r1",
+  "date": "2026-11-09",
+  "starting_remote_main_HEAD": "675e70b942df3b8f695e837d6bf5c47b292bdc01",
+  "starting_remote_main_tree": "e055bf1b55eb2a632611df6336810a6cfc34c6c3",
+  "preserved_historical_CURRENT_Git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "source_scope": "LATER_COMMUNITY_MIXED25_PRESERVED_ORIGINAL_2009_NPC_CREATE_AND_ITEMSETS__TW1_RETAIL_RD_CROSS_VERSION_CANDIDATES",
+  "upstream_exact_Git_blob_pins": {
+    "ITEM01_shop_224_create_191": "3bde3b7df43725f28cdac355823667a0ba87e9b1",
+    "MAP09_691_source_qualified_floors": "137580e7c25aadf3d679b6ebfb5080b79912cc4f",
+    "ITEM01_derived_item_shard_02": "b91bc8335db508998f4595144ce371979ea8c849",
+    "ITEM01_derived_item_shard_04": "14c7816054375863c91e474b58d2202f76e821c5"
+  },
+  "private_original_source_custody": {
+    "CHAR01_ZIP_bytes": 995176,
+    "CHAR01_ZIP_SHA256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "CHAR01_original_zip_CRC_verified_member_count": 2205,
+    "original_CREATE_shop_m_bytes": 20491,
+    "original_CREATE_shop_m_sha256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+    "original_7_CP950_shop_parameter_files_re_read_and_SHA_matched": true,
+    "ITEM01_private_original_two_tables_and_832_RD_ZIP_bytes": 5868386,
+    "ITEM01_private_zip_SHA256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "ITEM01_private_ZIP_CRC_verified_member_count": 838,
+    "parent_original_mixed25_RAR_sha256_from_prior_ledger_only": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "full_parent_RAR_re_read_this_unit": false,
+    "original_DAT_and_TW1_RD_raw_bytes_re_read_this_unit": false
+  },
+  "seven_original_market_shop_CREATEs_and_source_arguments": [
+    {
+      "original_floor": 2009,
+      "source_line_marker": 468,
+      "original_NPC_short_name": "超商的肉店",
+      "original_graphicname_number": 16053,
+      "original_dir_number": 6,
+      "original_borncorner_numeric": [
+        27,
+        15,
+        27,
+        15
+      ],
+      "original_CREATE_file_sha256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+      "original_argument_path": "genout/ss_2009_27_15",
+      "original_argument_file_SHA256": "0328e59728a23572d04b9650b8fb8b0a4af40768232488c2d79648d87771a895",
+      "original_argument_bytes": 501,
+      "original_argument_ItemList_expression_SHA256_from_prior_ITEM01": "5985bc0774b9bc61ab0c7bc6beb57de523b072134d302b615b3d8e7c8be11d10",
+      "original_argument_ItemList_literal_tokens": [
+        {
+          "ordinal": 0,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 2344,
+          "end": 2347,
+          "source_literal": "2344-2347"
+        },
+        {
+          "ordinal": 1,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12050,
+          "end": 12061,
+          "source_literal": "12050-12061"
+        }
+      ],
+      "original_argument_ItemList_explicit_IDs_count": 0,
+      "original_argument_ItemList_range_tokens_count": 2,
+      "candidate_expansion_count_from_literal_intervals_not_native_verified": 16,
+      "source_buy_rate_literal": "1.0",
+      "source_sell_rate_literal": "0.5",
+      "source_special_rate_literal": "1.5",
+      "source_LimitItemType_key_present": false,
+      "source_LimitItemType_literal_if_present": null,
+      "source_LimitItemNo_literal_tokens_not_verified_as_shop_inventory": [
+        "1234-1249"
+      ],
+      "qualified_original_map_floor_lookup": 2009,
+      "source_native_shop_transaction_verified": false
+    },
+    {
+      "original_floor": 2009,
+      "source_line_marker": 471,
+      "original_NPC_short_name": "超商的魚店",
+      "original_graphicname_number": 16207,
+      "original_dir_number": 6,
+      "original_borncorner_numeric": [
+        27,
+        17,
+        27,
+        17
+      ],
+      "original_CREATE_file_sha256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+      "original_argument_path": "genout/ss_2009_27_17",
+      "original_argument_file_SHA256": "7041e514ec81e4ece7fc8a0cca80f22800f8659f06fb06b94273462b1e5b9119",
+      "original_argument_bytes": 524,
+      "original_argument_ItemList_expression_SHA256_from_prior_ITEM01": "4a0cb8fee1de10d84c3db1a33f92e0cdad29990fc2cd232e460305a87adacc27",
+      "original_argument_ItemList_literal_tokens": [
+        {
+          "ordinal": 0,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12062,
+          "end": 12081,
+          "source_literal": "12062-12081"
+        },
+        {
+          "ordinal": 1,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12082,
+          "end": 12085,
+          "source_literal": "12082-12085"
+        },
+        {
+          "ordinal": 2,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12086,
+          "end": 12088,
+          "source_literal": "12086-12088"
+        },
+        {
+          "ordinal": 3,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12194,
+          "end": 12196,
+          "source_literal": "12194-12196"
+        }
+      ],
+      "original_argument_ItemList_explicit_IDs_count": 0,
+      "original_argument_ItemList_range_tokens_count": 4,
+      "candidate_expansion_count_from_literal_intervals_not_native_verified": 30,
+      "source_buy_rate_literal": "1.0",
+      "source_sell_rate_literal": "0.5",
+      "source_special_rate_literal": "1.5",
+      "source_LimitItemType_key_present": true,
+      "source_LimitItemType_literal_if_present": "",
+      "source_LimitItemNo_literal_tokens_not_verified_as_shop_inventory": [
+        "12050-12213",
+        "2344-2347"
+      ],
+      "qualified_original_map_floor_lookup": 2009,
+      "source_native_shop_transaction_verified": false
+    },
+    {
+      "original_floor": 2009,
+      "source_line_marker": 474,
+      "original_NPC_short_name": "蔬果店（之１）",
+      "original_graphicname_number": 16017,
+      "original_dir_number": 6,
+      "original_borncorner_numeric": [
+        27,
+        23,
+        27,
+        23
+      ],
+      "original_CREATE_file_sha256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+      "original_argument_path": "genout/ss_2009_27_23",
+      "original_argument_file_SHA256": "5257854a8e101ea42ad9eb375c0b43a705c652183f97fed8448523e687a565e9",
+      "original_argument_bytes": 588,
+      "original_argument_ItemList_expression_SHA256_from_prior_ITEM01": "bec3bb8078072442939cc912a02f9c69cca7ff5ede74842bbb56bfc10a4591d1",
+      "original_argument_ItemList_literal_tokens": [
+        {
+          "ordinal": 0,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12090,
+          "end": 12092,
+          "source_literal": "12090-12092"
+        },
+        {
+          "ordinal": 1,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12094,
+          "end": 12096,
+          "source_literal": "12094-12096"
+        },
+        {
+          "ordinal": 2,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12098,
+          "end": 12100,
+          "source_literal": "12098-12100"
+        },
+        {
+          "ordinal": 3,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12102,
+          "end": 12104,
+          "source_literal": "12102-12104"
+        },
+        {
+          "ordinal": 4,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12106,
+          "end": 12108,
+          "source_literal": "12106-12108"
+        },
+        {
+          "ordinal": 5,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12126,
+          "end": 12128,
+          "source_literal": "12126-12128"
+        },
+        {
+          "ordinal": 6,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12138,
+          "end": 12140,
+          "source_literal": "12138-12140"
+        }
+      ],
+      "original_argument_ItemList_explicit_IDs_count": 0,
+      "original_argument_ItemList_range_tokens_count": 7,
+      "candidate_expansion_count_from_literal_intervals_not_native_verified": 21,
+      "source_buy_rate_literal": "1.0",
+      "source_sell_rate_literal": "0.5",
+      "source_special_rate_literal": "1.5",
+      "source_LimitItemType_key_present": true,
+      "source_LimitItemType_literal_if_present": "",
+      "source_LimitItemNo_literal_tokens_not_verified_as_shop_inventory": [
+        "12050-12213",
+        "2344-2347"
+      ],
+      "qualified_original_map_floor_lookup": 2009,
+      "source_native_shop_transaction_verified": false
+    },
+    {
+      "original_floor": 2009,
+      "source_line_marker": 477,
+      "original_NPC_short_name": "蔬菜店（之２）",
+      "original_graphicname_number": 16018,
+      "original_dir_number": 6,
+      "original_borncorner_numeric": [
+        27,
+        26,
+        27,
+        26
+      ],
+      "original_CREATE_file_sha256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+      "original_argument_path": "genout/ss_2009_27_26",
+      "original_argument_file_SHA256": "61481e003c909bb951e225c2d1d67c285ca8faadd039f25f569e4b875f8d3fca",
+      "original_argument_bytes": 646,
+      "original_argument_ItemList_expression_SHA256_from_prior_ITEM01": "8f8fab68345af391dddfb24b8b597c5312174012229b148b4c2cacb46813c351",
+      "original_argument_ItemList_literal_tokens": [
+        {
+          "ordinal": 0,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12110,
+          "end": 12112,
+          "source_literal": "12110-12112"
+        },
+        {
+          "ordinal": 1,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12114,
+          "end": 12116,
+          "source_literal": "12114-12116"
+        },
+        {
+          "ordinal": 2,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12118,
+          "end": 12120,
+          "source_literal": "12118-12120"
+        },
+        {
+          "ordinal": 3,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12122,
+          "end": 12124,
+          "source_literal": "12122-12124"
+        },
+        {
+          "ordinal": 4,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12130,
+          "end": 12132,
+          "source_literal": "12130-12132"
+        },
+        {
+          "ordinal": 5,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12134,
+          "end": 12136,
+          "source_literal": "12134-12136"
+        },
+        {
+          "ordinal": 6,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12146,
+          "end": 12149,
+          "source_literal": "12146-12149"
+        },
+        {
+          "ordinal": 7,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12221,
+          "end": 12224,
+          "source_literal": "12221-12224"
+        },
+        {
+          "ordinal": 8,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12226,
+          "end": 12228,
+          "source_literal": "12226-12228"
+        }
+      ],
+      "original_argument_ItemList_explicit_IDs_count": 0,
+      "original_argument_ItemList_range_tokens_count": 9,
+      "candidate_expansion_count_from_literal_intervals_not_native_verified": 29,
+      "source_buy_rate_literal": "1.0",
+      "source_sell_rate_literal": "0.5",
+      "source_special_rate_literal": "1.5",
+      "source_LimitItemType_key_present": true,
+      "source_LimitItemType_literal_if_present": "",
+      "source_LimitItemNo_literal_tokens_not_verified_as_shop_inventory": [
+        "12050-12213",
+        "2344-2347",
+        "12221-12228"
+      ],
+      "qualified_original_map_floor_lookup": 2009,
+      "source_native_shop_transaction_verified": false
+    },
+    {
+      "original_floor": 2009,
+      "source_line_marker": 480,
+      "original_NPC_short_name": "水果店",
+      "original_graphicname_number": 16015,
+      "original_dir_number": 6,
+      "original_borncorner_numeric": [
+        27,
+        29,
+        27,
+        29
+      ],
+      "original_CREATE_file_sha256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+      "original_argument_path": "genout/ss_2009_27_29",
+      "original_argument_file_SHA256": "a9c7c534e274c8aa3bade37f60438c2b762c5e9bb09ea9b3369317508e322732",
+      "original_argument_bytes": 654,
+      "original_argument_ItemList_expression_SHA256_from_prior_ITEM01": "a2093cce3ef54ae7ffec6d6f534eddb9bbfc54b54749678210e0613ae2ee9a9d",
+      "original_argument_ItemList_literal_tokens": [
+        {
+          "ordinal": 0,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12150,
+          "end": 12152,
+          "source_literal": "12150-12152"
+        },
+        {
+          "ordinal": 1,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12154,
+          "end": 12156,
+          "source_literal": "12154-12156"
+        },
+        {
+          "ordinal": 2,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12158,
+          "end": 12160,
+          "source_literal": "12158-12160"
+        },
+        {
+          "ordinal": 3,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12162,
+          "end": 12164,
+          "source_literal": "12162-12164"
+        },
+        {
+          "ordinal": 4,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12166,
+          "end": 12168,
+          "source_literal": "12166-12168"
+        },
+        {
+          "ordinal": 5,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12170,
+          "end": 12172,
+          "source_literal": "12170-12172"
+        },
+        {
+          "ordinal": 6,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12214,
+          "end": 12216,
+          "source_literal": "12214-12216"
+        },
+        {
+          "ordinal": 7,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12218,
+          "end": 12220,
+          "source_literal": "12218-12220"
+        }
+      ],
+      "original_argument_ItemList_explicit_IDs_count": 0,
+      "original_argument_ItemList_range_tokens_count": 8,
+      "candidate_expansion_count_from_literal_intervals_not_native_verified": 24,
+      "source_buy_rate_literal": "1.0",
+      "source_sell_rate_literal": "0.5",
+      "source_special_rate_literal": "1.5",
+      "source_LimitItemType_key_present": true,
+      "source_LimitItemType_literal_if_present": "",
+      "source_LimitItemNo_literal_tokens_not_verified_as_shop_inventory": [
+        "12050-12213",
+        "2344-2347",
+        "12214-12220"
+      ],
+      "qualified_original_map_floor_lookup": 2009,
+      "source_native_shop_transaction_verified": false
+    },
+    {
+      "original_floor": 2009,
+      "source_line_marker": 483,
+      "original_NPC_short_name": "瑪麗娜絲的米店",
+      "original_graphicname_number": 16210,
+      "original_dir_number": 6,
+      "original_borncorner_numeric": [
+        27,
+        34,
+        27,
+        34
+      ],
+      "original_CREATE_file_sha256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+      "original_argument_path": "genout/ss_2009_27_34",
+      "original_argument_file_SHA256": "f53bb5d22e9329dce8d224f7411d3c6d0baaa2f904421bb3ea379c480728be91",
+      "original_argument_bytes": 580,
+      "original_argument_ItemList_expression_SHA256_from_prior_ITEM01": "a907cdf5d24dd12144bb693826ff6fed991d359eed4bfb18fa8fd760f60864ba",
+      "original_argument_ItemList_literal_tokens": [
+        {
+          "ordinal": 0,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12142,
+          "end": 12144,
+          "source_literal": "12142-12144"
+        },
+        {
+          "ordinal": 1,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12178,
+          "end": 12180,
+          "source_literal": "12178-12180"
+        },
+        {
+          "ordinal": 2,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12182,
+          "end": 12184,
+          "source_literal": "12182-12184"
+        },
+        {
+          "ordinal": 3,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12186,
+          "end": 12188,
+          "source_literal": "12186-12188"
+        },
+        {
+          "ordinal": 4,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12190,
+          "end": 12192,
+          "source_literal": "12190-12192"
+        },
+        {
+          "ordinal": 5,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12198,
+          "end": 12208,
+          "source_literal": "12198-12208"
+        },
+        {
+          "ordinal": 6,
+          "kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "start": 12210,
+          "end": 12212,
+          "source_literal": "12210-12212"
+        }
+      ],
+      "original_argument_ItemList_explicit_IDs_count": 0,
+      "original_argument_ItemList_range_tokens_count": 7,
+      "candidate_expansion_count_from_literal_intervals_not_native_verified": 29,
+      "source_buy_rate_literal": "1.0",
+      "source_sell_rate_literal": "0.5",
+      "source_special_rate_literal": "1.5",
+      "source_LimitItemType_key_present": true,
+      "source_LimitItemType_literal_if_present": "",
+      "source_LimitItemNo_literal_tokens_not_verified_as_shop_inventory": [
+        "12050-12213",
+        "2344-2347"
+      ],
+      "qualified_original_map_floor_lookup": 2009,
+      "source_native_shop_transaction_verified": false
+    },
+    {
+      "original_floor": 2009,
+      "source_line_marker": 486,
+      "original_NPC_short_name": "地方特產品販賣員",
+      "original_graphicname_number": 16065,
+      "original_dir_number": 6,
+      "original_borncorner_numeric": [
+        27,
+        37,
+        27,
+        37
+      ],
+      "original_CREATE_file_sha256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+      "original_argument_path": "genout/ss_2009_27_37",
+      "original_argument_file_SHA256": "73b484a1af4fde6e3d71c2bffe1c26f9d49ef3d701196caaf3b04e8d652a00d2",
+      "original_argument_bytes": 744,
+      "original_argument_ItemList_expression_SHA256_from_prior_ITEM01": "d1ecb52aac001abf29634f5e886dbcbb5ab055d01c3cc9758139e0ec2e4754c1",
+      "original_argument_ItemList_literal_tokens": [
+        {
+          "ordinal": 0,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12089
+        },
+        {
+          "ordinal": 1,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12093
+        },
+        {
+          "ordinal": 2,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12097
+        },
+        {
+          "ordinal": 3,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12101
+        },
+        {
+          "ordinal": 4,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12105
+        },
+        {
+          "ordinal": 5,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12109
+        },
+        {
+          "ordinal": 6,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12113
+        },
+        {
+          "ordinal": 7,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12117
+        },
+        {
+          "ordinal": 8,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12121
+        },
+        {
+          "ordinal": 9,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12125
+        },
+        {
+          "ordinal": 10,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12129
+        },
+        {
+          "ordinal": 11,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12133
+        },
+        {
+          "ordinal": 12,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12137
+        },
+        {
+          "ordinal": 13,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12141
+        },
+        {
+          "ordinal": 14,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12145
+        },
+        {
+          "ordinal": 15,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12153
+        },
+        {
+          "ordinal": 16,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12157
+        },
+        {
+          "ordinal": 17,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12161
+        },
+        {
+          "ordinal": 18,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12165
+        },
+        {
+          "ordinal": 19,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12169
+        },
+        {
+          "ordinal": 20,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12173
+        },
+        {
+          "ordinal": 21,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12177
+        },
+        {
+          "ordinal": 22,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12181
+        },
+        {
+          "ordinal": 23,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12185
+        },
+        {
+          "ordinal": 24,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12189
+        },
+        {
+          "ordinal": 25,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12193
+        },
+        {
+          "ordinal": 26,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12197
+        },
+        {
+          "ordinal": 27,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12209
+        },
+        {
+          "ordinal": 28,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12213
+        },
+        {
+          "ordinal": 29,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12217
+        },
+        {
+          "ordinal": 30,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12221
+        },
+        {
+          "ordinal": 31,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12225
+        },
+        {
+          "ordinal": 32,
+          "kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "id": 12229
+        }
+      ],
+      "original_argument_ItemList_explicit_IDs_count": 33,
+      "original_argument_ItemList_range_tokens_count": 0,
+      "candidate_expansion_count_from_literal_intervals_not_native_verified": 33,
+      "source_buy_rate_literal": "4.0",
+      "source_sell_rate_literal": "0.5",
+      "source_special_rate_literal": "1.5",
+      "source_LimitItemType_key_present": true,
+      "source_LimitItemType_literal_if_present": "",
+      "source_LimitItemNo_literal_tokens_not_verified_as_shop_inventory": [
+        "12050-12213",
+        "2344-2347",
+        "12214-12229"
+      ],
+      "qualified_original_map_floor_lookup": 2009,
+      "source_native_shop_transaction_verified": false
+    }
+  ],
+  "prior_MAP09_floor_2009_source_only": {
+    "floor": 2009,
+    "original_DAT_bytes": 14408,
+    "original_DAT_sha256": "04b1bc0a1c6d25cedb6b22bb7fdc55771e7098172e03d2f336f3ea0d69cd0768",
+    "original_map_geometry": [
+      40,
+      60
+    ],
+    "candidate_combined_RGBA_pixel_sha256_from_prior_MAP09": "c2a4bd47e48d8ae22d2d8a8dfd952c431529bc5b6f5f3b499d6c9caeb769a6c5",
+    "original_DAT_3plane_source_verified_in_MAP09": true,
+    "original_DAT_independently_replayed_in_this_work_unit": false,
+    "original_game_native_scene_not_executed": true
+  },
+  "exact_source_derived_item_union_candidate_or_literal": [
+    {
+      "original_item_id": 2344,
+      "original_mixed25_two_tables_full_row_SHA256": "05467b7127eecdd616ecfec0717c1030772fed6c524e6febf528a5e93db789cb",
+      "original_mixed25_source_price_literal": "12",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24008,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 15,
+          "ordinal_within_shop": 0,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 2345,
+      "original_mixed25_two_tables_full_row_SHA256": "6664a7161cf7c9eca363501ccdfeec8420f51cd9ae38411a7fa45d610a4e676c",
+      "original_mixed25_source_price_literal": "18",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24035,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 15,
+          "ordinal_within_shop": 1,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 2346,
+      "original_mixed25_two_tables_full_row_SHA256": "ef14a3756c9f6f19026807842eaf125ed6975ce0ffbe46d2a357b66e0db1a258",
+      "original_mixed25_source_price_literal": "30",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24017,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 15,
+          "ordinal_within_shop": 2,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 2347,
+      "original_mixed25_two_tables_full_row_SHA256": "7b5964630777bcccab6544faedd42eb25221f62dc9b803c69c0d7826b26d02f0",
+      "original_mixed25_source_price_literal": "48",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24026,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 15,
+          "ordinal_within_shop": 3,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12050,
+      "original_mixed25_two_tables_full_row_SHA256": "c1a27878a14eb9648e12835ac6f1cc4a9d0d52b22128448523498bc7926a29f1",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24081,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 15,
+          "ordinal_within_shop": 4,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12051,
+      "original_mixed25_two_tables_full_row_SHA256": "765d638e51fd0118e4f1516d3a6e14247eba4a07d6a9ff4f5218162aa912249f",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24083,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 15,
+          "ordinal_within_shop": 5,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12052,
+      "original_mixed25_two_tables_full_row_SHA256": "d0eb92ea478b2b667b4c169668a81321da573282599cc68fa6d8353137dc680e",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24082,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 15,
+          "ordinal_within_shop": 6,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12053,
+      "original_mixed25_two_tables_full_row_SHA256": "ca6aabfb7476444b8f805d024be7d187a5a0a88e298f80b854698dbcb3bb3774",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24081,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 15,
+          "ordinal_within_shop": 7,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12054,
+      "original_mixed25_two_tables_full_row_SHA256": "fdfdfa99e4a39ffc62101889930d8e8fc5be120798bba11717542437e50e8f24",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24273,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 15,
+          "ordinal_within_shop": 8,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12055,
+      "original_mixed25_two_tables_full_row_SHA256": "3130d39df88a51e58e10e1646be754e1b1235d3328eef9844358667fa73aab00",
+      "original_mixed25_source_price_literal": "20",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24246,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 15,
+          "ordinal_within_shop": 9,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12056,
+      "original_mixed25_two_tables_full_row_SHA256": "b924505cf7bde80139010ba31aafa4e6036a3fa3bec506dc14b4a0fd0d208f32",
+      "original_mixed25_source_price_literal": "30",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24265,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 15,
+          "ordinal_within_shop": 10,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12057,
+      "original_mixed25_two_tables_full_row_SHA256": "81d246a2a9fee4a4130396b66fc421c7f0913b65a8510eec6622df5c81f36d1c",
+      "original_mixed25_source_price_literal": "40",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24282,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 15,
+          "ordinal_within_shop": 11,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12058,
+      "original_mixed25_two_tables_full_row_SHA256": "2f24e339c400db08fb69c75576b4aa1f56d58d140f727603e3c447cb490dff9b",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24269,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 15,
+          "ordinal_within_shop": 12,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12059,
+      "original_mixed25_two_tables_full_row_SHA256": "744f7f13d1147a7f0191d89f649bc42396dd48448415763c61f41ab6f264158f",
+      "original_mixed25_source_price_literal": "20",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24242,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 15,
+          "ordinal_within_shop": 13,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12060,
+      "original_mixed25_two_tables_full_row_SHA256": "ca75d59d88f2659fedd6f15054e8defab5b4a900b334f367701b5074ac07f086",
+      "original_mixed25_source_price_literal": "30",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24261,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 15,
+          "ordinal_within_shop": 14,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12061,
+      "original_mixed25_two_tables_full_row_SHA256": "0029377d6676795ab2d9aa7d11273381d073dcf209a442145b69326873b27b8c",
+      "original_mixed25_source_price_literal": "40",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24279,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 15,
+          "ordinal_within_shop": 15,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12062,
+      "original_mixed25_two_tables_full_row_SHA256": "a2dbb316d4453e2ddda200c849eb2dc874b6608e1a32fc2c6e8d39155a5256be",
+      "original_mixed25_source_price_literal": "30",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24244,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 0,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12063,
+      "original_mixed25_two_tables_full_row_SHA256": "08ef5998cc4ec2ad262e05772aa543c33d4c3e8b2e4996b94f56d941c75a19a7",
+      "original_mixed25_source_price_literal": "60",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24091,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 1,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12064,
+      "original_mixed25_two_tables_full_row_SHA256": "16a67232437d15c7f2f8fbf912597c10c68c75a010b00dea82ae089aa88f9532",
+      "original_mixed25_source_price_literal": "100",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24263,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 2,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12065,
+      "original_mixed25_two_tables_full_row_SHA256": "ed716420355aec378a6d93a15286dd5de99961c9928ab89f05de035534a719cd",
+      "original_mixed25_source_price_literal": "150",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24088,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 3,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12066,
+      "original_mixed25_two_tables_full_row_SHA256": "e86aecdefa2395639464aa0dd60304319f9417c00fe3ae6c18e21c2bb3877f4f",
+      "original_mixed25_source_price_literal": "30",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24243,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 4,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12067,
+      "original_mixed25_two_tables_full_row_SHA256": "eba34471ad25b3d6803faebf736a9d4ac38cd60d3845a3674171f71b598ef1e3",
+      "original_mixed25_source_price_literal": "60",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24262,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 5,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12068,
+      "original_mixed25_two_tables_full_row_SHA256": "001b92c6690368399a753c91909d2d63b7dd25b7a1789a0fb646e2b8d1ea9c07",
+      "original_mixed25_source_price_literal": "100",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24253,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 6,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12069,
+      "original_mixed25_two_tables_full_row_SHA256": "9ed69520e47fb2c3710123d4ecd1d4b63edb9e35e214038ee52d685ddbecdd57",
+      "original_mixed25_source_price_literal": "150",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24270,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 7,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12070,
+      "original_mixed25_two_tables_full_row_SHA256": "5ab61a58b0f11eca5badb7b6f854d6ea6a3361d63d449c2ff1722b0573af3453",
+      "original_mixed25_source_price_literal": "20",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24259,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 8,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12071,
+      "original_mixed25_two_tables_full_row_SHA256": "37f91f6f1fdf846482b6313689e422ecff290beaaf5920fc1bb2bbc27d5a5966",
+      "original_mixed25_source_price_literal": "40",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24240,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 9,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12072,
+      "original_mixed25_two_tables_full_row_SHA256": "8ec632c0a9f308185de1e20dea291d6f8680ab2d01bdad93d83cfe80513ca451",
+      "original_mixed25_source_price_literal": "80",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24277,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 10,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12073,
+      "original_mixed25_two_tables_full_row_SHA256": "cf4d47ba124601e030e69390777603dfb5c5cb5531ecfcff40c4463a54e10190",
+      "original_mixed25_source_price_literal": "120",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24250,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 11,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12074,
+      "original_mixed25_two_tables_full_row_SHA256": "97b79a2141be3221cb21ae556e499dd98624529c4290c71c775c37d496b0b4a8",
+      "original_mixed25_source_price_literal": "20",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24245,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 12,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12075,
+      "original_mixed25_two_tables_full_row_SHA256": "552fb75a51c920e712302d075230a1a6a06cc724c189b2ea1d1dcf4205b2f9f4",
+      "original_mixed25_source_price_literal": "40",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24256,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 13,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12076,
+      "original_mixed25_two_tables_full_row_SHA256": "4ac2867f53c4c5fc27a513b27e6018746dd2b97ae2e66e234a0b7ca5d84cf2f3",
+      "original_mixed25_source_price_literal": "80",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24281,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 14,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12077,
+      "original_mixed25_two_tables_full_row_SHA256": "bf2b0002d922ed7a0d9fc615d4e963b7baf8f532e5ad23d3a828d8aede140391",
+      "original_mixed25_source_price_literal": "120",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24272,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 15,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12078,
+      "original_mixed25_two_tables_full_row_SHA256": "1d8b2a387af851c27b481ab54f0b2f7548b2e115eb84ded60ebe8ebcc850b22a",
+      "original_mixed25_source_price_literal": "30",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24241,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 16,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12079,
+      "original_mixed25_two_tables_full_row_SHA256": "16e44832c746442dbc7c2b5daf2f7e5bb302e5a589e0a5473c08af48a5864ddf",
+      "original_mixed25_source_price_literal": "60",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24278,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 17,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12080,
+      "original_mixed25_two_tables_full_row_SHA256": "935b5a9eb015a5f428167e4d14b679ad98c02e51a8def105b66da36a98fa4e2e",
+      "original_mixed25_source_price_literal": "100",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24251,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 18,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12081,
+      "original_mixed25_two_tables_full_row_SHA256": "68f1a5ce446457f91dafce2012567129c621bd6184dfadb13e283cbc405cf587",
+      "original_mixed25_source_price_literal": "150",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24268,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 19,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12082,
+      "original_mixed25_two_tables_full_row_SHA256": "e0357852b407a02544bd7e57b074ca77f80e268bb392f5926e7ee96564e32508",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24247,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 20,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12083,
+      "original_mixed25_two_tables_full_row_SHA256": "0b5d11b1ed3b6a962250f52976b95026f448ee377f43964e1734df86d5ed049e",
+      "original_mixed25_source_price_literal": "20",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24255,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 21,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12084,
+      "original_mixed25_two_tables_full_row_SHA256": "9be579be7d94a14cb2675470b7eb2933eb7fc49d89d04ebae3067f719d307d3f",
+      "original_mixed25_source_price_literal": "40",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24283,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 22,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12085,
+      "original_mixed25_two_tables_full_row_SHA256": "7e34625238d93062a97ab6926ab5adc3c1010d4ce9a762de97240c8c5885864e",
+      "original_mixed25_source_price_literal": "80",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24274,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 23,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12086,
+      "original_mixed25_two_tables_full_row_SHA256": "c01009f58a5c866621c3d1f712100f527121533bdffe446505d535862a179125",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24284,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 24,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 2
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12087,
+      "original_mixed25_two_tables_full_row_SHA256": "227f44999e689ae241d6a39c00379ce709f974c2bb78c004c1220d781ea3c9c7",
+      "original_mixed25_source_price_literal": "20",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24248,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 25,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 2
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12088,
+      "original_mixed25_two_tables_full_row_SHA256": "cf356a1ba9187dd8ec5a89babb2a2fa78b75c5d32c1d8349a6ee09ef5d8bad27",
+      "original_mixed25_source_price_literal": "30",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24266,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 26,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 2
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12089,
+      "original_mixed25_two_tables_full_row_SHA256": "89c22bc1f9242ce6c4a2d85397d7092ecb01d6c0a92625bc07f4239986e4b1d9",
+      "original_mixed25_source_price_literal": "40",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24258,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 0,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12090,
+      "original_mixed25_two_tables_full_row_SHA256": "64965e14e64573a1d738634e3727b73323046fdec658a1be43ac4c6c32f69689",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24238,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 0,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12091,
+      "original_mixed25_two_tables_full_row_SHA256": "60f08006560302355933652d2c7527aa2339a5619cbc33a71f0ee3eb9bedd4bf",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24238,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 1,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12092,
+      "original_mixed25_two_tables_full_row_SHA256": "0aaf649cfb454d3a42c433535c5508022d84c5591ba0028638a090e3a98ebce0",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24238,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 2,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12093,
+      "original_mixed25_two_tables_full_row_SHA256": "73cfa47ed2061cc31ce385c5e9db5567a64370f6d893bee41220780094ade916",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24238,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 1,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12094,
+      "original_mixed25_two_tables_full_row_SHA256": "e89b2e925611fe5dfa14b47258cb1c8a6df31684ea4630bc745475d2c68d4bea",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24093,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 3,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12095,
+      "original_mixed25_two_tables_full_row_SHA256": "7c74ea9b8ca3d8b6128f69edd5e45b87b8627bf0950b69239b04189a1d5522a3",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24195,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 4,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12096,
+      "original_mixed25_two_tables_full_row_SHA256": "3026a76bfa4842e230878ceb83b859db0926934e00b929839e3ffecd6506b646",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24194,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 5,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12097,
+      "original_mixed25_two_tables_full_row_SHA256": "c44e9b089b5aaf289a752280889889101709dcdd9d081c8e27710bada2bde711",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24093,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 2,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 2
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12098,
+      "original_mixed25_two_tables_full_row_SHA256": "850128d9b06f6d904feb48c6f3f1a72a790792ece8d4f158ef60c9a18f5796d6",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24097,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 6,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 2
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12099,
+      "original_mixed25_two_tables_full_row_SHA256": "2ed3811337ce55d337c25d10ccb905234375e5b3fea64e97f13c80993544d668",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24097,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 7,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 2
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12100,
+      "original_mixed25_two_tables_full_row_SHA256": "8a83200e95c7eb2f58c9ff6152ffbd55305b05eb693420ace82826cfc2b00adb",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24097,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 8,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 2
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12101,
+      "original_mixed25_two_tables_full_row_SHA256": "49fc223f32cfe83ae9fd9b406e841c86592f7782261d8bc8d2379a4363c9dabe",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24097,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 3,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 3
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12102,
+      "original_mixed25_two_tables_full_row_SHA256": "8df2a9f8acadcb465438fcbf0b9c8cd34ec3fe012e20ac603d64439d22658cbd",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24237,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 9,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 3
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12103,
+      "original_mixed25_two_tables_full_row_SHA256": "72a6ff88910c31e0b4e500e0e3908dc2d94bc0521e86b1f1646a6c524354f42a",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24237,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 10,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 3
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12104,
+      "original_mixed25_two_tables_full_row_SHA256": "7aca1aaeb66fe6e0f26c50f29aa765c6e6bc48a36a3a40d382e942f2d6873a54",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24237,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 11,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 3
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12105,
+      "original_mixed25_two_tables_full_row_SHA256": "5398048390611a0f10fb9618004ff0dd1321aa322b4b8a1c93bc20e1d4cd6230",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24237,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 4,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 4
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12106,
+      "original_mixed25_two_tables_full_row_SHA256": "2ed2141900126d4f29cabac195ebd4dbb645bc2de7ef78572150a9b7e629c9fa",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24235,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 12,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 4
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12107,
+      "original_mixed25_two_tables_full_row_SHA256": "9b7b8a29d40c6b1ea00afb129e2a45bb8efe8b365cbae5fdbaf747082daf4dbd",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24235,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 13,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 4
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12108,
+      "original_mixed25_two_tables_full_row_SHA256": "4b651d1e5e2797481f8434cd39746f53ab655a10a6115a659c743232f120f2bf",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24235,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 14,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 4
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12109,
+      "original_mixed25_two_tables_full_row_SHA256": "96d6da5c01513a7b8af344201c5c67f1ddcf68a658b818809b72d9a5290f3423",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24235,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 5,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12110,
+      "original_mixed25_two_tables_full_row_SHA256": "e3e084f686929e4e6cbe5d9fc947e6541e2316ba46c6acc5ca46d3b362ce6077",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24239,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 0,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12111,
+      "original_mixed25_two_tables_full_row_SHA256": "2ae8dc2ff0fcf6e9392be8b7b0a9703c5e36ceb0d76271e9f951e33eeea8f922",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24239,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 1,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12112,
+      "original_mixed25_two_tables_full_row_SHA256": "eff2bf590a3d679c4b1263a51312425e35c37848edff32ed2e4563ff74b60aa4",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24239,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 2,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12113,
+      "original_mixed25_two_tables_full_row_SHA256": "98b8a65b87d0a2f6176c2b791bb4af66fcf7a53e3d41f194c2d803c456c26303",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24239,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 6,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 6
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12114,
+      "original_mixed25_two_tables_full_row_SHA256": "cbb64ef13528afc0c54a405af6bcc5ab548b205a750b05b8277610a7c9294a74",
+      "original_mixed25_source_price_literal": "20",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24096,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 3,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12115,
+      "original_mixed25_two_tables_full_row_SHA256": "9b90610babeb883f16009c683effae3cb7e6c8c5359c4094a54b079a27397b37",
+      "original_mixed25_source_price_literal": "40",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24096,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 4,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12116,
+      "original_mixed25_two_tables_full_row_SHA256": "31356cc435172e65bcf149512b15c8ff3bc9860bb26110aa7c33131bb8ecd12d",
+      "original_mixed25_source_price_literal": "60",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24096,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 5,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12117,
+      "original_mixed25_two_tables_full_row_SHA256": "6f441c13c2d8bfc9dba74055bbdc945e2ca7084112059305edcf700d2c5e8c30",
+      "original_mixed25_source_price_literal": "80",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24096,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 7,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 7
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12118,
+      "original_mixed25_two_tables_full_row_SHA256": "56c1e1d75936ef938157eb1af67d5afcbbe1990b85f829f7b132cd095dbe8591",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24095,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 6,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 2
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12119,
+      "original_mixed25_two_tables_full_row_SHA256": "3e28fe5d923aca13e371a96f9326fb521ae9c1f8945fb3a2e26ceca974b55cfc",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24095,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 7,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 2
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12120,
+      "original_mixed25_two_tables_full_row_SHA256": "ddeae419b7c99406331a01319e31dfb70485a01b1445c86a8fac16491ccb1c36",
+      "original_mixed25_source_price_literal": "20",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24095,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 8,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 2
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12121,
+      "original_mixed25_two_tables_full_row_SHA256": "d56905280f17e4431ac15e326886bdeb05728e6f8d9a0906421818849c1d588a",
+      "original_mixed25_source_price_literal": "30",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24095,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 8,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 8
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12122,
+      "original_mixed25_two_tables_full_row_SHA256": "c90ef398d6cd363b2c1c3ff59fae8f70550d57e1465cad1e46de6cb596d9c31f",
+      "original_mixed25_source_price_literal": "20",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24094,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 9,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 3
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12123,
+      "original_mixed25_two_tables_full_row_SHA256": "9dfc0e1d0c73a1b205ad30e3811b10d0f1f97ec446785e3c8f15cac9d9106914",
+      "original_mixed25_source_price_literal": "40",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24196,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 10,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 3
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12124,
+      "original_mixed25_two_tables_full_row_SHA256": "19269d703f80211ecdc67ab990aaa53eaa485885c0d65aec4bb0069c424a81d1",
+      "original_mixed25_source_price_literal": "80",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24197,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 11,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 3
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12125,
+      "original_mixed25_two_tables_full_row_SHA256": "f44a75242123503fd3043f8fd6200f41b871e2c837099bdaa3b3bcb0a88029e2",
+      "original_mixed25_source_price_literal": "120",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24094,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 9,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 9
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12126,
+      "original_mixed25_two_tables_full_row_SHA256": "1682818704ea05f0d4f4da4241db25b2ee65745a1fbd0b0cd53c21e84ff2be5a",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24234,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 15,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12127,
+      "original_mixed25_two_tables_full_row_SHA256": "6aedf1bf28e7d69b08bea8e6813c4fc3df8ca3167939cac8c29f44d71928085e",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24234,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 16,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12128,
+      "original_mixed25_two_tables_full_row_SHA256": "fd5cd9b13257f3b36c2ac794baea8b45130e0d183338a320f05bf67f6b751c65",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24234,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 17,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12129,
+      "original_mixed25_two_tables_full_row_SHA256": "e3df4da410a119a72c91f1a853dcc3bc67b0967ab459aa7cc4dce7f26079e168",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24234,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 10,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 10
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12130,
+      "original_mixed25_two_tables_full_row_SHA256": "9dc040a2ac85b9a8fdbd0b10b6d60203de3650e0461c3e8b5ed9d3412597e72e",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24192,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 12,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 4
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12131,
+      "original_mixed25_two_tables_full_row_SHA256": "987b64e3f5a5833e0537627c559cdc7d41837e3b14bc4e5bc714bf46d8526d45",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24192,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 13,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 4
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12132,
+      "original_mixed25_two_tables_full_row_SHA256": "9ceb127bff5f2b1e9fb6bd9753a84a81e7f273f1651cb14e0d2cb53be135638b",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24192,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 14,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 4
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12133,
+      "original_mixed25_two_tables_full_row_SHA256": "1d5282de1fb447e4abda6d87080be571d9fd0c7375259d132cbd7b2efbe98d8a",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24192,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 11,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 11
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12134,
+      "original_mixed25_two_tables_full_row_SHA256": "19839eda4ee48f64c85e5ab507c33631003e1e25e80351a1ce6e5701f06ed441",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24286,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 15,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12135,
+      "original_mixed25_two_tables_full_row_SHA256": "5997547dae36aff51aaf15f91dab27ba281fea96f9cd440272a2803d0ccc2d23",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24286,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 16,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12136,
+      "original_mixed25_two_tables_full_row_SHA256": "4564d929c47fbb6e7c7d47dee01650ed01a4eac3b1ba076a659c74b0646e5097",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24286,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 17,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12137,
+      "original_mixed25_two_tables_full_row_SHA256": "00b249e076d5323e068a6ba631ff48c099fd7a2d3decf04a468e851c0dcf5a97",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24286,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 12,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 12
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12138,
+      "original_mixed25_two_tables_full_row_SHA256": "ad80de470e5da3c2766aff040fc624fbc3981eee68c65c9200f8bccfa5ba35e4",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24193,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 18,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 6
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12139,
+      "original_mixed25_two_tables_full_row_SHA256": "875781d6f054a5b6a16a231fe8c43c2cb193c52550a6408d9b76c5905926dade",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24193,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 19,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 6
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12140,
+      "original_mixed25_two_tables_full_row_SHA256": "2329631a74a236107489667faab140e13c0b74370074d79be1125b28151bf715",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24193,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 23,
+          "ordinal_within_shop": 20,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 6
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12141,
+      "original_mixed25_two_tables_full_row_SHA256": "445e2f53811ee70bfbec22fd1df81e39cc59504e8e513496a1ae635eeffbcf95",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24193,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 13,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 13
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12142,
+      "original_mixed25_two_tables_full_row_SHA256": "b1b6391455cfb32249b003773a7fea4a3b6730d8d9cc3b018e5e13c54169dfd4",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24276,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 0,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12143,
+      "original_mixed25_two_tables_full_row_SHA256": "cad76cebebad5bb5ebdbcb2fe73de19e0bb5ca072cfe53f391cfa4befd460c18",
+      "original_mixed25_source_price_literal": "20",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24276,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 1,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12144,
+      "original_mixed25_two_tables_full_row_SHA256": "33ab43c536d6c026a7b6954b1a55da6b5d6ee95670b755c3f0e03ff0a29719a5",
+      "original_mixed25_source_price_literal": "30",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24276,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 2,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12145,
+      "original_mixed25_two_tables_full_row_SHA256": "af7ef64f2de2eec96677786607b79590da28c971bf9de920e350bd75ea2965ff",
+      "original_mixed25_source_price_literal": "40",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24276,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 14,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 14
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12146,
+      "original_mixed25_two_tables_full_row_SHA256": "522caf1cd199e1a1c84756d93d41ca682675c10ee81344fb2e5ef23f1f9c2a71",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24236,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 18,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 6
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12147,
+      "original_mixed25_two_tables_full_row_SHA256": "ea861ae68a7bb38be4d7776e2e01b8cc30a327a65d53a7e9da358467b1f968af",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24236,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 19,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 6
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12148,
+      "original_mixed25_two_tables_full_row_SHA256": "b9ed5f6e5b657252a0ed86b46fd1d221b56512d6d641d4994744c4a7b79a48a5",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24236,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 20,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 6
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12149,
+      "original_mixed25_two_tables_full_row_SHA256": "80a05fa2b1a6dbb925eb94d57423296779f7a7b4978e460e28d7ae0aea1502ee",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24236,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 21,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 6
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12150,
+      "original_mixed25_two_tables_full_row_SHA256": "30a0cc897443e8f856f1075fd46bd769cd11798ce2ce4ecc85f0878e893e66b6",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24092,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 0,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12151,
+      "original_mixed25_two_tables_full_row_SHA256": "622061fa643d80d494dbf6f8eed77456c5566bc8991e85f832f16caa3d5b8262",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24092,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 1,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12152,
+      "original_mixed25_two_tables_full_row_SHA256": "918a637e704d0c5f70f34aa775c83cce074be4d8e9db9ba3cf03144431a70897",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24092,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 2,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 0
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12153,
+      "original_mixed25_two_tables_full_row_SHA256": "3d4d72914a138d38a112153af84af5cd52186925e214b9df6755b72b9dedbc8e",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24092,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 15,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 15
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12154,
+      "original_mixed25_two_tables_full_row_SHA256": "49f233cd887a766ebfe31a8135b401d0239395777655bfa8e5ce838f5275d0c4",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24086,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 3,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12155,
+      "original_mixed25_two_tables_full_row_SHA256": "8b0fd18d2a27afb6eace08b482c4febf3df9ca157f091f442d85eda3d87d6b6b",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24085,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 4,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12156,
+      "original_mixed25_two_tables_full_row_SHA256": "b724ec06d38d5385d1b0a70ad4c88067412d7383b0ed62b309fa8512c7a93dbf",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24085,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 5,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12157,
+      "original_mixed25_two_tables_full_row_SHA256": "263ee500e069b661175242463c84564b49576ce4056dfe611801e66dc3388b32",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24085,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 16,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 16
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12158,
+      "original_mixed25_two_tables_full_row_SHA256": "226f135f46855759aa736855a77fa9a799a6b8405d6ba2e615f6d6ba7abdbfff",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24099,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 6,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 2
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12159,
+      "original_mixed25_two_tables_full_row_SHA256": "79a23ac8805cb738da846b6bf6867ffaaf69fb10e3406b017244e2839860a87d",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24099,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 7,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 2
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12160,
+      "original_mixed25_two_tables_full_row_SHA256": "0f23d87560e0eb0ea8328b6db1c8ea14370973a8a0f9a1ec216523c7b5993fab",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24099,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 8,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 2
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12161,
+      "original_mixed25_two_tables_full_row_SHA256": "34a7160597d0a94587e4fa29ab92e72a73e74c5f57dc5d09ae754975c8ef9860",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24099,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 17,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 17
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12162,
+      "original_mixed25_two_tables_full_row_SHA256": "e5fd3625988fbb052ed60aa726a65ff9c8232c006793f88dcb5abafc78233a39",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24087,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 9,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 3
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12163,
+      "original_mixed25_two_tables_full_row_SHA256": "644cca54be492111576bf8e89d165e62291bd7f1808601a8c90b452ba2764a82",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24084,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 10,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 3
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12164,
+      "original_mixed25_two_tables_full_row_SHA256": "910e86be69aa14bda1b482d8624fee9eb29b4febf9938a395ed1662ad15375f7",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24084,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 11,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 3
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12165,
+      "original_mixed25_two_tables_full_row_SHA256": "a25fd4703a163f3165794b38566131ca0833af95957469f3ac56bb1ccea32733",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24084,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 18,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 18
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12166,
+      "original_mixed25_two_tables_full_row_SHA256": "6a2e82fe18bdb6d9a644ad77e608a455c12de9fdc7211058a93a5f7af6405049",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24102,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 12,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 4
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12167,
+      "original_mixed25_two_tables_full_row_SHA256": "663fcad4d14dc690bbe2e37ca2e7648cb574b4e55fa389ca076101d3e3a51ee4",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24101,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 13,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 4
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12168,
+      "original_mixed25_two_tables_full_row_SHA256": "3f84ad69edeaffe34b9d989d20ec8ddacc9304ebd5032b745a3c5ea4f161c790",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24103,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 14,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 4
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12169,
+      "original_mixed25_two_tables_full_row_SHA256": "01e21ac24ff04a6f4d963fb16be7d5587d711c351ddfa5834123b6fd9cf837de",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24101,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 19,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 19
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12170,
+      "original_mixed25_two_tables_full_row_SHA256": "5ffb49c40f3bdf42eb7aa13382df61440f17db23f44dcd2fbd79ca7ddd932e21",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24098,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 15,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12171,
+      "original_mixed25_two_tables_full_row_SHA256": "b65d5b92dfc02cd467433481a9d2d46e3fff18e6b57f02b50364b51885a0ffa7",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24098,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 16,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12172,
+      "original_mixed25_two_tables_full_row_SHA256": "89bb212234de9eb8cab7f6893f226aaa8c9b31638e2e85c8cecf5ecb8fce5a84",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24098,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 17,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12173,
+      "original_mixed25_two_tables_full_row_SHA256": "7c6a8455c54c44d485602cd5fba2397e9c7d890696c6b30e7eb3e9077346d541",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24098,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 20,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 20
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12177,
+      "original_mixed25_two_tables_full_row_SHA256": "25e6eef61ea2e7babaf4a7b89007da2aa6071bca30507082c5aa0c48ddc68cb5",
+      "original_mixed25_source_price_literal": "40",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24249,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 21,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 21
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12178,
+      "original_mixed25_two_tables_full_row_SHA256": "57f57bfbcbaba76dd05e789a72619f1a2dd47484bfb9cf835640e3298229f555",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24158,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 3,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12179,
+      "original_mixed25_two_tables_full_row_SHA256": "ed30f2b1a8a51023b8638b8538735f2b30732fb1960e6bef51026c84c00f6663",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24158,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 4,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12180,
+      "original_mixed25_two_tables_full_row_SHA256": "4a1f03629864f72f8925b16b85e779dfc3cd40224421b9972c811d371c3e2030",
+      "original_mixed25_source_price_literal": "20",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24158,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 5,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 1
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12181,
+      "original_mixed25_two_tables_full_row_SHA256": "482c6e6ab1dcb56ff6488fa7042c3c83b8d198388ef3848ab2648cb8380fda72",
+      "original_mixed25_source_price_literal": "30",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24158,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 22,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 22
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12182,
+      "original_mixed25_two_tables_full_row_SHA256": "6f1b3ad7280657d3270532eae5227f5d19ad3986979c4b79bdf37fc5b5809a21",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24190,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 6,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 2
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12183,
+      "original_mixed25_two_tables_full_row_SHA256": "351f749407aca7cda09e7fb91ff63775679b66f2bf25a306c170f7d53f965469",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24153,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 7,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 2
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12184,
+      "original_mixed25_two_tables_full_row_SHA256": "a636a2a0e6de253695cfe507d581b68ae60084ee15b2d459ea613549f4069396",
+      "original_mixed25_source_price_literal": "20",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24153,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 8,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 2
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12185,
+      "original_mixed25_two_tables_full_row_SHA256": "bc0f6799796fd7af9b1df8a58312e5086ce7424dc4329d1b9474b6c9a76c1412",
+      "original_mixed25_source_price_literal": "30",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24153,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 23,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 23
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12186,
+      "original_mixed25_two_tables_full_row_SHA256": "e0e3ee32d1431d86a0a571d74e7b0b817d1f64586bad36ebf6de1c9b23530e44",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24078,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 9,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 3
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12187,
+      "original_mixed25_two_tables_full_row_SHA256": "a356e821eba1803dfd9060a7f7c96409c054e7b7e9a99abc571d8c2d5eff0ce0",
+      "original_mixed25_source_price_literal": "20",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24079,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 10,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 3
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12188,
+      "original_mixed25_two_tables_full_row_SHA256": "e44ab052b24faf85572a84ab5da8f31b7ea6a0a993d687aae59125fe775e7dbc",
+      "original_mixed25_source_price_literal": "30",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24079,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 11,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 3
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12189,
+      "original_mixed25_two_tables_full_row_SHA256": "b01d47aa40398b7dbf453dc9af5b44087b7cfd8680f329d19b8cfc8f3c01b3de",
+      "original_mixed25_source_price_literal": "40",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24080,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 24,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 24
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12190,
+      "original_mixed25_two_tables_full_row_SHA256": "a55694e3a7cb69b90b1393bd827b177ce68b79ec8a735280b2fa543c8ddb15e0",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24161,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 12,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 4
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12191,
+      "original_mixed25_two_tables_full_row_SHA256": "5890e49181effd32ea1883f482e533523687606858e0d9f46be1556f70a10e53",
+      "original_mixed25_source_price_literal": "20",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24161,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 13,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 4
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12192,
+      "original_mixed25_two_tables_full_row_SHA256": "7479bda7475c7b4c43f3de387b38e8fe58e730692139d29b6fbf60aac5cc05d3",
+      "original_mixed25_source_price_literal": "30",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24161,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 14,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 4
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12193,
+      "original_mixed25_two_tables_full_row_SHA256": "9159e92e79a37f28b47b937eb82503ded774b9c8f97ce87487b82aae587e6000",
+      "original_mixed25_source_price_literal": "40",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24161,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 25,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 25
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12194,
+      "original_mixed25_two_tables_full_row_SHA256": "220f7c45f5a8044abaa972e3cdd9cc08239015c925bb86248e5425c7e57a13b6",
+      "original_mixed25_source_price_literal": "30",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24132,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 27,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 3
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12195,
+      "original_mixed25_two_tables_full_row_SHA256": "ed9e3ceffc3ed9049201e0a7dcb629b1733363c2236bfeab039b17890a6d54b5",
+      "original_mixed25_source_price_literal": "60",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24132,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 28,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 3
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12196,
+      "original_mixed25_two_tables_full_row_SHA256": "22645c9d7fe7a1a2ab2bd5d177e926dd003e153fe3ff36b3c6d9f68df2f1d073",
+      "original_mixed25_source_price_literal": "100",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24131,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 17,
+          "ordinal_within_shop": 29,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 3
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12197,
+      "original_mixed25_two_tables_full_row_SHA256": "77c7dcdcd3373b1f12093abbcd507b7929cc4c9229d8f16a958f89db48cd1371",
+      "original_mixed25_source_price_literal": "150",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24133,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 26,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 26
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12198,
+      "original_mixed25_two_tables_full_row_SHA256": "6b81c91f3c0269708645faf3a30e94c927f473711d612ec6ccf6efa2b3cbc6b8",
+      "original_mixed25_source_price_literal": "30",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24174,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 15,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12199,
+      "original_mixed25_two_tables_full_row_SHA256": "43fdaeca032ac89627e27b906a3bbaa2c664c8de9fa437593aba582c43d0e7d7",
+      "original_mixed25_source_price_literal": "50",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24174,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 16,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12200,
+      "original_mixed25_two_tables_full_row_SHA256": "b9ac2135f60bbca281418f78a18c0e40380ef629777a8549b80bd9cecadf0871",
+      "original_mixed25_source_price_literal": "75",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24174,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 17,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12201,
+      "original_mixed25_two_tables_full_row_SHA256": "2e11e8f512fb83120416b9804b88fd381d4a6cdc4f255f317eea09fe0aba4796",
+      "original_mixed25_source_price_literal": "100",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24174,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 18,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12202,
+      "original_mixed25_two_tables_full_row_SHA256": "9bdad29569b11e27c7a8eb831d635bf0943ac480fa260f3ed1c071585ed0de8f",
+      "original_mixed25_source_price_literal": "2",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24287,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 19,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12203,
+      "original_mixed25_two_tables_full_row_SHA256": "f1333e9ac018783bf8d9d3f3ad80c2836d2386dcdf7211f2616f3f922c2c9a2c",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24287,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 20,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12204,
+      "original_mixed25_two_tables_full_row_SHA256": "173c229d14da305a627a54b4bf15276b14378c01062750d9e64d7d2174df13ce",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24287,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 21,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12205,
+      "original_mixed25_two_tables_full_row_SHA256": "a04e8d8404a19801408e03fe809a8716ade84ce31db68a31bf62c08f0783de83",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24287,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 22,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12206,
+      "original_mixed25_two_tables_full_row_SHA256": "4ea8e64943d2336faa1acd8589c6bfdfd175711cc3256dde40fbb48707580291",
+      "original_mixed25_source_price_literal": "2",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24144,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 23,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12207,
+      "original_mixed25_two_tables_full_row_SHA256": "17e43488d49954b7dabf6138c422199b471cf7a6b8c042b2c2566f96430fa8f7",
+      "original_mixed25_source_price_literal": "8",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24144,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 24,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12208,
+      "original_mixed25_two_tables_full_row_SHA256": "2ec9bb540b0440d445abcc6c851e7262e9708aa54273da855c5986a721389ab1",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24144,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 25,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 5
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12209,
+      "original_mixed25_two_tables_full_row_SHA256": "42da78a46099662661d761fb39f1118d5e639586eda6f85281026895b4d4e639",
+      "original_mixed25_source_price_literal": "30",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24144,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 27,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 27
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12210,
+      "original_mixed25_two_tables_full_row_SHA256": "1f59c07eaaa92c5943166168128492e324469b27404b030fb28a55977d75597e",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24182,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 26,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 6
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12211,
+      "original_mixed25_two_tables_full_row_SHA256": "461899fa7e4d13dd0b23e6176f5d449b0b2aaca43a3531ae94c3e80d4070999a",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24182,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 27,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 6
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12212,
+      "original_mixed25_two_tables_full_row_SHA256": "a8f9e27dd902f02429bd89463145973b6fb1422119090bf41fc3db2a0c1ed1ba",
+      "original_mixed25_source_price_literal": "20",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24182,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 34,
+          "ordinal_within_shop": 28,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 6
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12213,
+      "original_mixed25_two_tables_full_row_SHA256": "d92cfe9002623c2557221abb7e7de06a0f93bb36d31f010e2b00544531690cf0",
+      "original_mixed25_source_price_literal": "50",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24182,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 28,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 28
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12214,
+      "original_mixed25_two_tables_full_row_SHA256": "15de269557a846f75973a1d3740099550643a1d09a14ee521c1430b8ba0bb3a3",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 23003,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 18,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 6
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12215,
+      "original_mixed25_two_tables_full_row_SHA256": "25181bdc7cc360576dc63c755cae6dfc1d899124d011789c597c8183e5873497",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 23003,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 19,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 6
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12216,
+      "original_mixed25_two_tables_full_row_SHA256": "3668c7bd1723358eacb8c4085bd2ede2dadf3f1983dc320ce533775620adec0b",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 23003,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 20,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 6
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12217,
+      "original_mixed25_two_tables_full_row_SHA256": "2491787fd2842de61966d2ed870d85f7fd2f6bebe7da43d118aa8e26298150db",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 23003,
+      "TW1_original_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 29,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 29
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12218,
+      "original_mixed25_two_tables_full_row_SHA256": "7dca4fb6d944c46f9aaa46fbdbe0b4999fdbb18ca2965fca25000476e2876054",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24553,
+      "TW1_original_RD_qualification": "TW1_INDEX_NOT_FOUND",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 21,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 7
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12219,
+      "original_mixed25_two_tables_full_row_SHA256": "7178d96c7e1f444d39f3b0938bbbc45a77737979f73902ca2b72cc4adbdb975d",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24553,
+      "TW1_original_RD_qualification": "TW1_INDEX_NOT_FOUND",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 22,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 7
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12220,
+      "original_mixed25_two_tables_full_row_SHA256": "b340671016633e781a9f6453c14bb76f667078d2e9c9f3fc5bb5c4efd76c00e7",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24553,
+      "TW1_original_RD_qualification": "TW1_INDEX_NOT_FOUND",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 29,
+          "ordinal_within_shop": 23,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 7
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12221,
+      "original_mixed25_two_tables_full_row_SHA256": "a74ca4b70c887971ceba1047a07e27c1d6371ded4d99584c87fb49aaf49a565b",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24553,
+      "TW1_original_RD_qualification": "TW1_INDEX_NOT_FOUND",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 22,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 7
+        },
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 30,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 30
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12222,
+      "original_mixed25_two_tables_full_row_SHA256": "a36524409be415712e94fe85e6265c1c3696203a40d05edda93da9c5114942da",
+      "original_mixed25_source_price_literal": "5",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24560,
+      "TW1_original_RD_qualification": "TW1_INDEX_NOT_FOUND",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 23,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 7
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12223,
+      "original_mixed25_two_tables_full_row_SHA256": "7038870eaf3d60e5216c7ebaac52eff573c1e2c78819f1e836206bdd528e3e02",
+      "original_mixed25_source_price_literal": "10",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24560,
+      "TW1_original_RD_qualification": "TW1_INDEX_NOT_FOUND",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 24,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 7
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12224,
+      "original_mixed25_two_tables_full_row_SHA256": "86048744727483a9ad786f9c2f214941f19c7db00494291aea27773494051de5",
+      "original_mixed25_source_price_literal": "15",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24560,
+      "TW1_original_RD_qualification": "TW1_INDEX_NOT_FOUND",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 25,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 7
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12225,
+      "original_mixed25_two_tables_full_row_SHA256": "3ac9faf7f21483367cecfcf3e9a5b2ee2b29964ea0336e25db75d9f52024593c",
+      "original_mixed25_source_price_literal": "25",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24560,
+      "TW1_original_RD_qualification": "TW1_INDEX_NOT_FOUND",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 31,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 31
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12226,
+      "original_mixed25_two_tables_full_row_SHA256": "b5e11d093c56fb22a565bf10cca65a8cc68d2bf8acc5f4edc8ec881112d8fa42",
+      "original_mixed25_source_price_literal": "20",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24552,
+      "TW1_original_RD_qualification": "TW1_INDEX_NOT_FOUND",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 26,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 8
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12227,
+      "original_mixed25_two_tables_full_row_SHA256": "4dabf7e54556ac2e5102009e714aa8291a9f413d665e95e2febee75f69fbb783",
+      "original_mixed25_source_price_literal": "40",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24552,
+      "TW1_original_RD_qualification": "TW1_INDEX_NOT_FOUND",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 27,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 8
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12228,
+      "original_mixed25_two_tables_full_row_SHA256": "c8e5b8fa07518a78249cca1f019e131533969a85c0fff4979067fa7ee028e8d6",
+      "original_mixed25_source_price_literal": "80",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24552,
+      "TW1_original_RD_qualification": "TW1_INDEX_NOT_FOUND",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 26,
+          "ordinal_within_shop": 28,
+          "source_kind": "INCLUSIVE_INTERVAL_CANDIDATE_ONLY",
+          "source_token_ordinal": 8
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    },
+    {
+      "original_item_id": 12229,
+      "original_mixed25_two_tables_full_row_SHA256": "771689227f422a6984136dc9eac50bd25ab4862a13991bf35629f23b55005f97",
+      "original_mixed25_source_price_literal": "120",
+      "original_mixed25_source_type_literal": "20",
+      "original_mixed25_source_level_literal": "0",
+      "TW1_different_carrier_candidate_image_alias": 24552,
+      "TW1_original_RD_qualification": "TW1_INDEX_NOT_FOUND",
+      "occurrences_from_source_ItemList": [
+        {
+          "shop_suffix": 37,
+          "ordinal_within_shop": 32,
+          "source_kind": "EXPLICIT_SINGLE_ID_LITERAL",
+          "source_token_ordinal": 32
+        }
+      ],
+      "source_native_item_use_verified": false,
+      "official_same_deployment_with_TW1_image_proven": false
+    }
+  ],
+  "mission_CREATEs_on_same_floor_excluded_from_market_count": [
+    {
+      "path": "genout/ss_2009_20_12",
+      "argument_sha256": "5ea5206f8c6a88acfc5c17e38434d6a8d00822c32a7772afc49fd8880293f1a3",
+      "create_source_sha256": "4acb4c7c68be8b0585ac2b5333cf78776abe5b022af072abc4f421a6ddd5784b",
+      "source_location": "20,12,20,12",
+      "not_one_of_seven_shop_m_CREATEs": true
+    },
+    {
+      "path": "genout/ss_2009_xx_1",
+      "argument_sha256": "9323a7b2269b0a996aa9ef1e5a9aeafad3740d0aa21a47bdf9789c72ed528d22",
+      "create_source_sha256": "4acb4c7c68be8b0585ac2b5333cf78776abe5b022af072abc4f421a6ddd5784b",
+      "source_location": "17,12,17,12",
+      "not_one_of_seven_shop_m_CREATEs": true
+    }
+  ],
+  "metrics": {
+    "seven_original_shop_m_CREATEs": 7,
+    "other_original_mission_CREATE_references_floor_2009_excluded": 2,
+    "source_qualified_2009_MAP09_floors": 1,
+    "original_literally_explicit_ItemList_ID_mentions": 33,
+    "original_interval_expression_tokens": 37,
+    "number_of_closed_interval_candidate_expansions_not_native_verified": 149,
+    "total_explicit_plus_interval_candidate_item_occurrences": 182,
+    "different_item_IDs_in_source_derived_union": 181,
+    "duplicate_occurrences_across_separate_stores_kept": 1,
+    "original_two_itemset_rows_with_matching_SHA": 181,
+    "distinct_numeric_TW1_image_aliases_all": 91,
+    "source_qualified_TW1_retail_RD_item_IDs": 169,
+    "source_qualified_TW1_retail_RD_aliases_distinct": 88,
+    "TW1_retail_index_not_found_item_IDs": 12,
+    "TW1_retail_index_not_found_aliases_distinct": 3,
+    "original_same_deployment_verified_item_IDs": 0,
+    "native_sale_or_item_use_executed": 0,
+    "new_actual_original_map_RD_pixel_decodes_in_this_unit": 0
+  },
+  "boundaries": {
+    "closed_interval_candidate_IDs_not_native_proven_as_shop_items": true,
+    "original_explicit_33_never_mixed_with_interval_149_as_equal_certainty": true,
+    "source_LimitItemNo_intervals_not_promoted_to_actual_native_stocks": true,
+    "original_NPC_buy_rate_4_0_only_literal_not_executed_price": true,
+    "TW1_source_art_not_same_official_deployment_with_mixed25_proven": true,
+    "original_native_item_use_and_shop_transaction_executed": false,
+    "full_original_MAP09_2009_pixel_replay_this_unit": false,
+    "original_game_client_executed": false,
+    "original_npc_scripts_or_art_published_to_Git": false
+  },
+  "Stage_A": "7_PARTIAL_2_OPEN",
+  "Stage_B_wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "source_bounded_next": "Original 2009 seven market NPC/source configs are now joined to 181 item definitions and prior MAP09; reopen native stock/rate/collision or missing TW1 RD 24552/24553/24560 only on newly qualified original same-build/actual runtime or additional source asset. Next work should audit another unintegrated original content family, not repeat these seven stores."
+}
