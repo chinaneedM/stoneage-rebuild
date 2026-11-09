@@ -2247,3 +2247,7 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-09 — INTEGRATION13｜霍特爾五間室內原房名、門點與 NPC 配置
 
 [INTEGRATION13 原資料與下一步](docs/continuity/STONEAGE-INTEGRATION13-HOTORU-FIVE-ROOMS-20261109.md)核對 1301–1305 五張原 DAT/LS2MAP、29 條原 CREATE 和 20 條雙端傳送記錄。沿用 MAP07 已驗的五張候選底圖，私人頁加入 28 個配置座標標記。1302 同格的兩份配置分列，1304 保留物件層 60 格差值，1305 醫療參數保留原數字串。原生載入、互動與官方同部署仍待證。下一項查霍特爾商店參數與物品表的實際差異。
+
+## 2026-11-09 — INTEGRATION14｜霍特爾医院与营养剂商人的物品来源
+
+[INTEGRATION14 原配置、备表与图像证据](docs/continuity/STONEAGE-INTEGRATION14-HOTORU-SHOP-ITEM-SOURCE-20261109.md)串起两处原创建块、三种原参数字段和七条备表原行。医院七个编号只出现在其 `LimitItemNo`，其中五个也在营养剂名人家的 `ItemList` 中。图像记录按载体和原压缩块来源分列，原生加载与实际交易仍待证。
