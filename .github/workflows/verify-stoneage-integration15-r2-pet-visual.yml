@@ -7,6 +7,9 @@ on:
       - 'research/recovered/STONEAGE-INTEGRATION16-THREE-PET-ROOMS-SOURCE-R1.json'
       - 'tools/stoneage_integration16_pet_rooms.py'
       - 'tests/test_stoneage_integration_module_16.py'
+      - 'research/recovered/STONEAGE-INTEGRATION17-THREE-PET-ROOMS-SOURCE-R1.json'
+      - 'tools/stoneage_integration17_map09.py'
+      - 'tests/test_stoneage_integration_module_17.py'
       - '.github/workflows/verify-stoneage-integration15-r2-pet-visual.yml'
   pull_request:
     paths:
@@ -15,6 +18,9 @@ on:
       - 'research/recovered/STONEAGE-INTEGRATION16-THREE-PET-ROOMS-SOURCE-R1.json'
       - 'tools/stoneage_integration16_pet_rooms.py'
       - 'tests/test_stoneage_integration_module_16.py'
+      - 'research/recovered/STONEAGE-INTEGRATION17-THREE-PET-ROOMS-SOURCE-R1.json'
+      - 'tools/stoneage_integration17_map09.py'
+      - 'tests/test_stoneage_integration_module_17.py'
       - '.github/workflows/verify-stoneage-integration15-r2-pet-visual.yml'
 jobs:
   public-evidence:
@@ -28,3 +34,4 @@ jobs:
           python-version: '3.11'
       - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_15_r2.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_16.py' -v
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_17.py' -v

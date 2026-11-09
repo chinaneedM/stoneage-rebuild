@@ -1,4 +1,4 @@
-"""Build a private three-room observer from verified StoneAge source files."""
+"""Build a private pet-shop observer from verified StoneAge source files."""
 import argparse
 import base64
 import hashlib
@@ -35,9 +35,9 @@ LIMITS = dict(official_same_deployment=False, original_client_or_server_executed
               proprietary_sources_published=False, overall_percent=None)
 
 
-def upstream():
+def upstream(pins=PINS):
     result = {}
-    for key, (name, pin) in PINS.items():
+    for key, (name, pin) in pins.items():
         raw = (ROOT / 'research/recovered' / name).read_bytes()
         need(hashlib.sha1(f'blob {len(raw)}\0'.encode() + raw).hexdigest() == pin, name)
         result[key] = json.loads(raw)
@@ -236,8 +236,15 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere}summary{cursor:pointer}code{over
 ''' + f'<nav>{nav}</nav>' + ''.join(sections) + '</html>\n')
 
 
-def build(parent, directory, real_path, npc_path, map_path, world_path, target):
-    source = upstream()
+def build(parent, directory, real_path, npc_path, map_path, world_path, target, *, use_map09=False):
+    pins, floors, batch = PINS, FLOORS, 16
+    if use_map09:
+        from tools.stoneage_integration17_map09 import FLOORS17, MAP09_PINS, catalog_rooms, corroborate_warps
+
+        pins = {k: v for k, v in PINS.items() if k != 'map07'} | MAP09_PINS
+        floors, batch = FLOORS17, 17
+    source = upstream(pins)
+    map_archive = source['map09_custody'] if use_map09 else source['map07']['private_deliverable']
     target = target.resolve()
     need(ROOT not in target.parents and not target.exists(), 'private ZIP must be new and outside Git')
     parent_identity = dict(bytes=parent.stat().st_size, sha256=file_sha(parent))
@@ -246,7 +253,7 @@ def build(parent, directory, real_path, npc_path, map_path, world_path, target):
     shop_source = source['shops']['source']
     archive_pins = (
         (npc_path, shop_source['original_NPC_ZIP_bytes'], shop_source['original_private_NPC_ZIP_sha256'], 2205),
-        (map_path, *(source['map07']['private_deliverable'][k] for k in ('bytes', 'sha256', 'members'))),
+        (map_path, *(map_archive[k] for k in ('bytes', 'sha256', 'members'))),
         (world_path, *(source['world11']['observer'][k] for k in ('bytes', 'sha256', 'members'))),
     )
     for path, size, digest, _ in archive_pins:
@@ -255,29 +262,35 @@ def build(parent, directory, real_path, npc_path, map_path, world_path, target):
     with zipfile.ZipFile(npc_path) as npc, zipfile.ZipFile(map_path) as maps, zipfile.ZipFile(world_path) as world:
         for z, (_, _, _, members) in zip((npc, maps, world), archive_pins):
             need(len(set(z.namelist())) == len(z.namelist()) == members and z.testzip() is None, 'original ZIP CRC')
-        map07 = {r['floor']: r for r in source['map07']['maps']}
-        private_maps = json.loads(maps.read('source-qualified-derived-report.json'))['maps']
         warp = (directory / 'mapwarp.txt').read_bytes()
         need(sha(warp) == source['map01']['mapwarp']['source_sha256'], 'original mapwarp whole SHA')
         warps = parse_warps(warp)
         need(len(warps) == source['map01']['mapwarp']['source_rows'], 'original mapwarp row count')
         retained['maps/mapwarp.txt'] = warp
-        for floor in FLOORS:
+        if use_map09:
+            related = [r for r in warps if r[1][0] in floors or r[2][0] in floors]
+            frames, endpoint_dats, replay = catalog_rooms(maps, source, related, retained)
+            door_evidence = corroborate_warps(npc, source, related, endpoint_dats, retained)
+        else:
+            map07 = {r['floor']: r for r in source['map07']['maps']}
+            private_maps = json.loads(maps.read('source-qualified-derived-report.json'))['maps']
+            frames = {f: (maps.read(f'sources/{f}.dat'), maps.read(f'scenes/{f}-combined.png')) for f in floors}
+            door_evidence = {}
+        for floor, (dat, base) in frames.items():
             key = str(floor)
-            dat = maps.read(f'sources/{floor}.dat')
-            base = maps.read(f'scenes/{floor}-combined.png')
             server = (directory / key).read_bytes()
             width, height, planes = geometry = geometries[floor] = dat_planes(dat)
             ls = parse_ls2map(server)
             dat_hash = sha(dat)
             public = source['map09']['maps'][key]
-            prior = private_maps[key]
             image = png_identity(base)
-            need(dat_hash == map07[floor]['source_dat_sha256'] == public['source_sha256']
-                 and image['png_sha256'] == prior['frames']['combined']['png_sha256']
-                 and image['rgba_sha256'] == public['frame_RGBA_sha256']['combined']
-                 and image['dimensions'] == public['canvas_size'] and prior['canvas_origin'] == public['origin'],
-                 'exact MAP07 and MAP09 DAT / canvas')
+            need(dat_hash == public['source_sha256'] and image['rgba_sha256'] == public['frame_RGBA_sha256']['combined']
+                 and image['dimensions'] == public['canvas_size'], 'exact MAP09 DAT / canvas')
+            if not use_map09:
+                prior = private_maps[key]
+                need(dat_hash == map07[floor]['source_dat_sha256']
+                     and image['png_sha256'] == prior['frames']['combined']['png_sha256']
+                     and prior['canvas_origin'] == public['origin'], 'exact MAP07 DAT / canvas')
             need((ls.floor_id, ls.width, ls.height) == (floor, width, height), 'LS2MAP room extent')
             name = server[8:40].split(b'\0', 1)[0].decode('cp950')
             need(name.endswith('的寵物店|0'), 'original LS2MAP pet shop name')
@@ -286,7 +299,8 @@ def build(parent, directory, real_path, npc_path, map_path, world_path, target):
                 if floor in (start[0], end[0]):
                     local = start if start[0] == floor else end
                     edges.append(dict(line=line, source=list(start), target=list(end), sha256=row_sha,
-                                      room_dat_u16=sample(geometry, local[1:])))
+                                      room_dat_u16=sample(geometry, local[1:]),
+                                      **door_evidence.get((start, end), {})))
             rooms[floor] = dict(original_name=name, dat=identity(dat), ls2map=identity(server), canvas=image,
                                 canvas_size=public['canvas_size'], origin=public['origin'], warps=edges, services=[],
                                 server_client_changed_cells=[sum(a != b for a, b in zip(p, q))
@@ -309,9 +323,13 @@ def build(parent, directory, real_path, npc_path, map_path, world_path, target):
         room['services'].append(dict(**row, marker_px=marker, graphic_px=graphic, graphic_dimensions=[w, h]))
     for floor, room in rooms.items():
         room['observer_view_box'] = view_box(retained[f'scenes/{floor}.png'], room['services'])
-    report = dict(schema='stoneage.integration16.three_pet_rooms.r1', parent_rar=parent_identity,
-                  upstream_git_blobs={k: v[1] for k, v in PINS.items()}, rooms=rooms, graphics=list(images.values()),
+    report = dict(schema=f'stoneage.integration{batch}.three_pet_rooms.r1', parent_rar=parent_identity,
+                  upstream_git_blobs={k: v[1] for k, v in pins.items()}, rooms=rooms, graphics=list(images.values()),
                   original_mapwarp_sha256=sha(warp), bounds=LIMITS)
+    if use_map09:
+        report['map09_archive'] = {k: map_archive[k] for k in ('bytes', 'sha256', 'members')}
+        report['room_replay'] = replay
+        report['village_endpoint_DAT'] = {f: identity(raw) for f, raw in endpoint_dats.items() if f not in floors}
     retained['index.html'] = observer(rooms, retained).encode()
     retained['source-joins.json'] = (json.dumps(report, ensure_ascii=False, indent=2) + '\n').encode()
     with zipfile.ZipFile(target, 'x') as output:
@@ -329,6 +347,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ('parent', 'directory', 'real', 'npc', 'map07', 'world11', 'private_zip', 'report'):
         parser.add_argument(name, type=Path)
+    parser.add_argument('--map09', action='store_true', help='run INTEGRATION17 with the MAP09 catalogue')
     args = parser.parse_args()
-    receipt = build(args.parent, args.directory, args.real, args.npc, args.map07, args.world11, args.private_zip)
+    receipt = build(args.parent, args.directory, args.real, args.npc, args.map07, args.world11, args.private_zip, use_map09=args.map09)
     args.report.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

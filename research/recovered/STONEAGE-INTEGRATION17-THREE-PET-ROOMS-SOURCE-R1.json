@@ -1,0 +1,1386 @@
+{
+  "schema": "stoneage.integration17.three_pet_rooms.r1",
+  "parent_rar": {
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+  },
+  "upstream_git_blobs": {
+    "char": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "skills": "5735ddc1117a8a6fb2f9417327ec242e4fd06192",
+    "shops": "878be2f05a4dc17f51d21ed2401fd7a7f3d73563",
+    "map01": "03675ee98d391f9ef0246315b2426f2a8b721fd3",
+    "map09": "137580e7c25aadf3d679b6ebfb5080b79912cc4f",
+    "world11": "f79d7355a4e82c2bd8c0a771b898690cc4a3e680",
+    "map09_custody": "5d6b591c659563aef24d93a30d314dd1d13b8d2c",
+    "map04": "1ef8c004179128ea44ffa4fb4259748bc8c83911"
+  },
+  "rooms": {
+    "1403": {
+      "original_name": "卡坦的寵物店|0",
+      "dat": {
+        "bytes": 5408,
+        "sha256": "9c6afbb868462cdc9b71e9f31fc6b3401e285d12e281e6fb7009ac6cb0d2759f",
+        "crc32": "4daefcac"
+      },
+      "ls2map": {
+        "bytes": 3644,
+        "sha256": "2cf200caa12c857e063b2f2837efcd5e54ad77288e392ea2ebd0d0b303531d9f",
+        "crc32": "8fbb144d"
+      },
+      "canvas": {
+        "dimensions": [
+          1889,
+          1425
+        ],
+        "png_sha256": "734e551c42b0c0add502d04b47f5474954d790294392e4d7d995c68aab755253",
+        "rgba_sha256": "aeaff9f52a67bc037c93077bed942dff7ff0a2fe42f346796744ed64a125619e"
+      },
+      "canvas_size": [
+        1889,
+        1425
+      ],
+      "origin": [
+        16,
+        712
+      ],
+      "warps": [
+        {
+          "line": 1497,
+          "source": [
+            1400,
+            84,
+            97
+          ],
+          "target": [
+            1403,
+            10,
+            15
+          ],
+          "sha256": "d6fb14a21268953bf826ac6f45589cc61ecc855c727c0a351cf3eb9fc093ab4d",
+          "room_dat_u16": [
+            536,
+            0,
+            49155
+          ],
+          "warp_template": [
+            "genout/npcgen.template",
+            21,
+            "fe5806afbbd1b89387c3e8067c3bafc5c7b4dab2533caa793782907450e221be"
+          ],
+          "warp_create": [
+            "genout/warp_y.create",
+            115,
+            "18c552a3394926ced6c603eb674a1847ec8c3d277d80463aa2a3594142f7d237"
+          ],
+          "reverse_listed": true,
+          "source_dat_u16": [
+            6008,
+            0,
+            49155
+          ],
+          "target_dat_u16": [
+            536,
+            0,
+            49155
+          ]
+        },
+        {
+          "line": 1498,
+          "source": [
+            1403,
+            10,
+            15
+          ],
+          "target": [
+            1400,
+            84,
+            97
+          ],
+          "sha256": "af5945d8c7bf1d508b430cca10782522bcdaf1e2e160cd2d1961821042eb76d2",
+          "room_dat_u16": [
+            536,
+            0,
+            49155
+          ],
+          "warp_template": [
+            "genout/npcgen.template",
+            21,
+            "fe5806afbbd1b89387c3e8067c3bafc5c7b4dab2533caa793782907450e221be"
+          ],
+          "warp_create": [
+            "genout/warp_y.create",
+            116,
+            "4e7384e23c32d0c8fe09e57b6b58568451ef5c05613c6f09efa1c6f5217ee87f"
+          ],
+          "reverse_listed": true,
+          "source_dat_u16": [
+            536,
+            0,
+            49155
+          ],
+          "target_dat_u16": [
+            6008,
+            0,
+            49155
+          ]
+        },
+        {
+          "line": 1499,
+          "source": [
+            1400,
+            84,
+            98
+          ],
+          "target": [
+            1403,
+            10,
+            16
+          ],
+          "sha256": "1adb8060cbfdcc5bb14f4776d458a0309704623243b4725fc8864f279dbdf8f7",
+          "room_dat_u16": [
+            536,
+            0,
+            49155
+          ],
+          "warp_template": [
+            "genout/npcgen.template",
+            21,
+            "fe5806afbbd1b89387c3e8067c3bafc5c7b4dab2533caa793782907450e221be"
+          ],
+          "warp_create": [
+            "genout/warp_y.create",
+            117,
+            "d393642ca73399b3489371d86049d3b6d5e08d69212372a924f2dc7a5d4ba9c1"
+          ],
+          "reverse_listed": true,
+          "source_dat_u16": [
+            6972,
+            0,
+            49155
+          ],
+          "target_dat_u16": [
+            536,
+            0,
+            49155
+          ]
+        },
+        {
+          "line": 1500,
+          "source": [
+            1403,
+            10,
+            16
+          ],
+          "target": [
+            1400,
+            84,
+            98
+          ],
+          "sha256": "d24f9754b7e0dbf8cba09e178714eadd085c97dc708c173c08b1fcb66e4b73d9",
+          "room_dat_u16": [
+            536,
+            0,
+            49155
+          ],
+          "warp_template": [
+            "genout/npcgen.template",
+            21,
+            "fe5806afbbd1b89387c3e8067c3bafc5c7b4dab2533caa793782907450e221be"
+          ],
+          "warp_create": [
+            "genout/warp_y.create",
+            118,
+            "c3238e45cc7e39d9e25092fa5bbbc3df352d18c02dad0758601a6dff38febf8c"
+          ],
+          "reverse_listed": true,
+          "source_dat_u16": [
+            536,
+            0,
+            49155
+          ],
+          "target_dat_u16": [
+            6972,
+            0,
+            49155
+          ]
+        }
+      ],
+      "services": [
+        {
+          "floor": 1403,
+          "xy": [
+            14,
+            13
+          ],
+          "graphic": 16016,
+          "role": "PetShop",
+          "create": [
+            "genout/shop_m.create",
+            70,
+            "9cc29403f761960c0c84d5fcfa2181ae87dabef4bb87279a33814c480657881c"
+          ],
+          "template": [
+            "genout/npcgen.template",
+            18,
+            "99a04d1efa787d8851dc4b194e5e55cf789778c919a5f9063b3e957319f58fd7"
+          ],
+          "parameter": [
+            "genout/ps_1403_14_13",
+            "26209a7b2b30c8cc9a8da3dd06bd3bc6bcd4b7284ffa689898b69035c59f50ca"
+          ],
+          "dat_u16": [
+            567,
+            12630,
+            49152
+          ],
+          "marker_px": [
+            880,
+            688
+          ],
+          "graphic_px": [
+            865,
+            621
+          ],
+          "graphic_dimensions": [
+            32,
+            77
+          ]
+        },
+        {
+          "floor": 1403,
+          "xy": [
+            19,
+            18
+          ],
+          "graphic": 16209,
+          "role": "PetSkillShop",
+          "create": [
+            "genout/shop_m.create",
+            71,
+            "0e2d412214111fc1ee2fc44bebcec607611bfa78cd6f032b094f834e7c692abf"
+          ],
+          "template": [
+            "genout/npcgen.template",
+            17,
+            "85b053eccbb8e2b85eeb5cce0d3a8db727dcb78598bc163ae7c14b41066e0a90"
+          ],
+          "parameter": [
+            "genout/psks_1403_19_18",
+            "e699cce100a491c3fb84e9b55f46a54bf3e67ee019a3e74a639bc5ded526b32b"
+          ],
+          "dat_u16": [
+            536,
+            0,
+            49152
+          ],
+          "marker_px": [
+            1200,
+            688
+          ],
+          "graphic_px": [
+            1183,
+            614
+          ],
+          "graphic_dimensions": [
+            36,
+            84
+          ]
+        }
+      ],
+      "server_client_changed_cells": [
+        0,
+        60
+      ],
+      "observer_view_box": [
+        652,
+        292,
+        712,
+        695
+      ]
+    },
+    "3103": {
+      "original_name": "塔姆塔姆的寵物店|0",
+      "dat": {
+        "bytes": 5408,
+        "sha256": "2c052f567b34d61f2a401d6f2ef59ecbdfb0d82e664c06964edbfdc5e72eb276",
+        "crc32": "93f25268"
+      },
+      "ls2map": {
+        "bytes": 3644,
+        "sha256": "6b160a690db060a625b2c2b7a959c43e02009012c24db9eb15f15499b69fb0f3",
+        "crc32": "2724cf65"
+      },
+      "canvas": {
+        "dimensions": [
+          1889,
+          1425
+        ],
+        "png_sha256": "25475fcf503a3e733b57d9584a9d8e908e7a13c75a79cf2285f5823ab0301d25",
+        "rgba_sha256": "dee382d442dc8f40ba279ced71288ba7f81d719fd374b56d709001bff446f829"
+      },
+      "canvas_size": [
+        1889,
+        1425
+      ],
+      "origin": [
+        16,
+        712
+      ],
+      "warps": [
+        {
+          "line": 695,
+          "source": [
+            3100,
+            44,
+            69
+          ],
+          "target": [
+            3103,
+            15,
+            21
+          ],
+          "sha256": "c1967a80293ff656df1dd9bf6f501d7f99f3094ee97385e8c4b7bbc7bcc5175b",
+          "room_dat_u16": [
+            5139,
+            0,
+            49155
+          ],
+          "warp_template": [
+            "genout/npcgen.template",
+            21,
+            "fe5806afbbd1b89387c3e8067c3bafc5c7b4dab2533caa793782907450e221be"
+          ],
+          "warp_create": [
+            "genout/warp_y2.create",
+            82,
+            "e9da23996e7012b463b020858f8c28209f42185cb769476b64044218a42c664b"
+          ],
+          "reverse_listed": true,
+          "source_dat_u16": [
+            408,
+            0,
+            49155
+          ],
+          "target_dat_u16": [
+            5139,
+            0,
+            49155
+          ]
+        },
+        {
+          "line": 696,
+          "source": [
+            3103,
+            15,
+            21
+          ],
+          "target": [
+            3100,
+            44,
+            69
+          ],
+          "sha256": "a655fb10bea39a73f5214d91590b4986acab292b3f20d9b42eada60155918c36",
+          "room_dat_u16": [
+            5139,
+            0,
+            49155
+          ],
+          "warp_template": [
+            "genout/npcgen.template",
+            21,
+            "fe5806afbbd1b89387c3e8067c3bafc5c7b4dab2533caa793782907450e221be"
+          ],
+          "warp_create": [
+            "genout/warp_y2.create",
+            83,
+            "0acf32715754b894dfe90fec98811cb907f267059785f4e78b8a6e94c99d1644"
+          ],
+          "reverse_listed": true,
+          "source_dat_u16": [
+            5139,
+            0,
+            49155
+          ],
+          "target_dat_u16": [
+            408,
+            0,
+            49155
+          ]
+        },
+        {
+          "line": 697,
+          "source": [
+            3103,
+            16,
+            21
+          ],
+          "target": [
+            3100,
+            44,
+            69
+          ],
+          "sha256": "475307d74a8be2d453b8a686491accb764dd1d4d9dfe003d01c8cbaeadef4cb3",
+          "room_dat_u16": [
+            5140,
+            0,
+            49155
+          ],
+          "warp_template": [
+            "genout/npcgen.template",
+            21,
+            "fe5806afbbd1b89387c3e8067c3bafc5c7b4dab2533caa793782907450e221be"
+          ],
+          "warp_create": [
+            "genout/warp_y2.create",
+            84,
+            "34c0f4a84d9d665d166c63535e9bd47ecfb565696f550934be28baf2d97e27d8"
+          ],
+          "reverse_listed": false,
+          "source_dat_u16": [
+            5140,
+            0,
+            49155
+          ],
+          "target_dat_u16": [
+            408,
+            0,
+            49155
+          ]
+        }
+      ],
+      "services": [
+        {
+          "floor": 3103,
+          "xy": [
+            16,
+            13
+          ],
+          "graphic": 16035,
+          "role": "PetShop",
+          "create": [
+            "genout/shop_m2.create",
+            30,
+            "3dc25437b3089ee9bad74ab76bdd6fa87d7303c5e9f97bd53a72191f9ba8cb5b"
+          ],
+          "template": [
+            "genout/npcgen.template",
+            18,
+            "99a04d1efa787d8851dc4b194e5e55cf789778c919a5f9063b3e957319f58fd7"
+          ],
+          "parameter": [
+            "genout/ps_3103_16_13",
+            "3c3f45e2d95e6c4e0c302f39269beb7a9aebffdd19b99d4a550dc80d0ce4f35c"
+          ],
+          "dat_u16": [
+            5001,
+            0,
+            49152
+          ],
+          "marker_px": [
+            944,
+            640
+          ],
+          "graphic_px": [
+            920,
+            570
+          ],
+          "graphic_dimensions": [
+            40,
+            80
+          ]
+        },
+        {
+          "floor": 3103,
+          "xy": [
+            18,
+            17
+          ],
+          "graphic": 16017,
+          "role": "PetSkillShop",
+          "create": [
+            "genout/shop_m2.create",
+            33,
+            "4ad8034c124b57bad3269d70f1212c6f2b96cba20da3b781fbf18fd8db72b683"
+          ],
+          "template": [
+            "genout/npcgen.template",
+            17,
+            "85b053eccbb8e2b85eeb5cce0d3a8db727dcb78598bc163ae7c14b41066e0a90"
+          ],
+          "parameter": [
+            "genout/psks_3103_18_17",
+            "0b3690631b7ea41af957332e68fa7250a8f41eada5626688c196210cf363b77a"
+          ],
+          "dat_u16": [
+            5001,
+            12635,
+            49152
+          ],
+          "marker_px": [
+            1136,
+            688
+          ],
+          "graphic_px": [
+            1121,
+            618
+          ],
+          "graphic_dimensions": [
+            36,
+            79
+          ]
+        }
+      ],
+      "server_client_changed_cells": [
+        0,
+        115
+      ],
+      "observer_view_box": [
+        652,
+        310,
+        712,
+        677
+      ]
+    },
+    "3203": {
+      "original_name": "多多的寵物店|0",
+      "dat": {
+        "bytes": 5408,
+        "sha256": "dba327b99258736f2431b7048ef0b0c2090d9670eafb9a11c99b6ba9f2c74e76",
+        "crc32": "6439b409"
+      },
+      "ls2map": {
+        "bytes": 3644,
+        "sha256": "2817658927fe80fd674acd00f224d87e52e9fef7c34c09a7486a4a2bcd68221a",
+        "crc32": "a3b83591"
+      },
+      "canvas": {
+        "dimensions": [
+          1889,
+          1425
+        ],
+        "png_sha256": "e5058ffc6c1017070bd9894589a6d1743c6cc5b2ddb962ef204bff157856b9ea",
+        "rgba_sha256": "1a9795e66aed0126e8ce03a8365477e5114c12f2d898dcfef0f943a1c606e966"
+      },
+      "canvas_size": [
+        1889,
+        1425
+      ],
+      "origin": [
+        16,
+        712
+      ],
+      "warps": [
+        {
+          "line": 716,
+          "source": [
+            3200,
+            48,
+            43
+          ],
+          "target": [
+            3203,
+            15,
+            21
+          ],
+          "sha256": "2cd736b8727daa4232a106808491f5eb1c47227ec2c9de5d858ad6c5fa8edcc3",
+          "room_dat_u16": [
+            5013,
+            0,
+            49155
+          ],
+          "warp_template": [
+            "genout/npcgen.template",
+            21,
+            "fe5806afbbd1b89387c3e8067c3bafc5c7b4dab2533caa793782907450e221be"
+          ],
+          "warp_create": [
+            "genout/warp_y2.create",
+            103,
+            "d21fe8f20d8ca478383851b81121cac9f79f69e70fbace18cdf0ea97059230bd"
+          ],
+          "reverse_listed": true,
+          "source_dat_u16": [
+            179,
+            0,
+            49155
+          ],
+          "target_dat_u16": [
+            5013,
+            0,
+            49155
+          ]
+        },
+        {
+          "line": 717,
+          "source": [
+            3203,
+            15,
+            21
+          ],
+          "target": [
+            3200,
+            48,
+            43
+          ],
+          "sha256": "2cd581afd8e3b63b96629eda90f4955f8f5962d3718c4682e5733c6b5d0ee73e",
+          "room_dat_u16": [
+            5013,
+            0,
+            49155
+          ],
+          "warp_template": [
+            "genout/npcgen.template",
+            21,
+            "fe5806afbbd1b89387c3e8067c3bafc5c7b4dab2533caa793782907450e221be"
+          ],
+          "warp_create": [
+            "genout/warp_y2.create",
+            104,
+            "53bf164769586895de6b6ad42e931d7fbb75169167aba5b103f811a8e2000f24"
+          ],
+          "reverse_listed": true,
+          "source_dat_u16": [
+            5013,
+            0,
+            49155
+          ],
+          "target_dat_u16": [
+            179,
+            0,
+            49155
+          ]
+        },
+        {
+          "line": 718,
+          "source": [
+            3200,
+            49,
+            43
+          ],
+          "target": [
+            3203,
+            16,
+            21
+          ],
+          "sha256": "bfc9ba06d10d58dd47ef7eef239ae4275ee2c34a827be270f0e7c167229bec20",
+          "room_dat_u16": [
+            5014,
+            0,
+            49155
+          ],
+          "warp_template": [
+            "genout/npcgen.template",
+            21,
+            "fe5806afbbd1b89387c3e8067c3bafc5c7b4dab2533caa793782907450e221be"
+          ],
+          "warp_create": [
+            "genout/warp_y2.create",
+            105,
+            "e37a8049f04cc13aa9a05575be5fa3a81192e5857c2c2f99cdd6bd1e420f68d1"
+          ],
+          "reverse_listed": true,
+          "source_dat_u16": [
+            379,
+            0,
+            49155
+          ],
+          "target_dat_u16": [
+            5014,
+            0,
+            49155
+          ]
+        },
+        {
+          "line": 719,
+          "source": [
+            3203,
+            16,
+            21
+          ],
+          "target": [
+            3200,
+            49,
+            43
+          ],
+          "sha256": "47f2faffc067302bbebd54a7b26272fac61d8a23b4c39808571f146cdaedd486",
+          "room_dat_u16": [
+            5014,
+            0,
+            49155
+          ],
+          "warp_template": [
+            "genout/npcgen.template",
+            21,
+            "fe5806afbbd1b89387c3e8067c3bafc5c7b4dab2533caa793782907450e221be"
+          ],
+          "warp_create": [
+            "genout/warp_y2.create",
+            106,
+            "408861147a36a10ae93eb3736f26f6039b9d62e24e72f71077b453c6c2c6b568"
+          ],
+          "reverse_listed": true,
+          "source_dat_u16": [
+            5014,
+            0,
+            49155
+          ],
+          "target_dat_u16": [
+            379,
+            0,
+            49155
+          ]
+        }
+      ],
+      "services": [
+        {
+          "floor": 3203,
+          "xy": [
+            18,
+            18
+          ],
+          "graphic": 16033,
+          "role": "PetShop",
+          "create": [
+            "genout/shop_m2.create",
+            43,
+            "c22681df1b1c22c49cf6ce884151edf8cfd3ff6e64a1ed2baeae38f23b6fd13e"
+          ],
+          "template": [
+            "genout/npcgen.template",
+            18,
+            "99a04d1efa787d8851dc4b194e5e55cf789778c919a5f9063b3e957319f58fd7"
+          ],
+          "parameter": [
+            "genout/ps_3203_18_18",
+            "2f028a964aee5838349fafed6862a2bc0aa54d44ec78fca6228afcd97243de72"
+          ],
+          "dat_u16": [
+            5019,
+            0,
+            49152
+          ],
+          "marker_px": [
+            1168,
+            712
+          ],
+          "graphic_px": [
+            1152,
+            639
+          ],
+          "graphic_dimensions": [
+            36,
+            81
+          ]
+        },
+        {
+          "floor": 3203,
+          "xy": [
+            13,
+            13
+          ],
+          "graphic": 16019,
+          "role": "PetSkillShop",
+          "create": [
+            "genout/shop_m2.create",
+            46,
+            "d5955b2e5a5cc6372def9c34b75eae4a479c32a6b53b82c131e9996859d9e4c3"
+          ],
+          "template": [
+            "genout/npcgen.template",
+            17,
+            "85b053eccbb8e2b85eeb5cce0d3a8db727dcb78598bc163ae7c14b41066e0a90"
+          ],
+          "parameter": [
+            "genout/psks_3203_13_13",
+            "7cdde0fc42ca79ad9132874775039506b526c8f58335c3bc1d4395a9b28345d1"
+          ],
+          "dat_u16": [
+            5002,
+            0,
+            49152
+          ],
+          "marker_px": [
+            848,
+            712
+          ],
+          "graphic_px": [
+            833,
+            645
+          ],
+          "graphic_dimensions": [
+            32,
+            77
+          ]
+        }
+      ],
+      "server_client_changed_cells": [
+        0,
+        61
+      ],
+      "observer_view_box": [
+        651,
+        286,
+        724,
+        701
+      ]
+    }
+  },
+  "graphics": [
+    {
+      "bitmap": 5862,
+      "adrn_ordinal": 5862,
+      "adrn_sha256": "e278412ea4e5484138e3773dde04786d3adefd995d06d67ae20f2e74b8b0a3ee",
+      "rd_offset": 24962342,
+      "rd_bytes": 1754,
+      "rd_sha256": "d71bc8e7f4763f485e6c17843a93567db7f4762049b27f752fa0e6355081da27",
+      "signed_adrn_offset": [
+        -15,
+        -67
+      ],
+      "dimensions": [
+        32,
+        77
+      ],
+      "png_sha256": "9c03293afb3206e5281eafd2d47feb162d03b7485a3ad9d8932ae5641e964c6a",
+      "rgba_sha256": "7e43334ac7178911a18064d8f378002d8f244c65cfd636060158a2a269973115",
+      "graphic": 16016,
+      "mode": "TWO_DECODERS_ORIGINAL_RD",
+      "indexed_sha256": "97f34498d09b8e0fba136f738faa78c8a0fba25319d16b9c9854c8e021d801a4"
+    },
+    {
+      "bitmap": 5863,
+      "adrn_ordinal": 5863,
+      "adrn_sha256": "1abe654adfcebc5e6fa7ceb81f9e2ec6f74a5b776371a2084acefa9b10b40f46",
+      "rd_offset": 24964096,
+      "rd_bytes": 1784,
+      "rd_sha256": "ebb0e6be3a4f266e943e8a4d3e6363e6004fb95a0f08d0ec0af0abc2ce806c18",
+      "signed_adrn_offset": [
+        -15,
+        -70
+      ],
+      "dimensions": [
+        36,
+        79
+      ],
+      "png_sha256": "c2a7b6c3c803098a1f2123a04e5d83ab4603304b5fd66530015207d9bf16f97c",
+      "rgba_sha256": "88eb5f8f2f639d6b5a99b3f5afb131268b800a86d7b39be28ac98eeafa18f3ca",
+      "graphic": 16017,
+      "mode": "WORLD11_REUSED_ORIGINAL_PNG",
+      "indexed_sha256": "c05f687b9898fa1c89b1cd9af3ff6b172ef6b2f1b7b853fce67b6b6b55b62ec7"
+    },
+    {
+      "bitmap": 5865,
+      "adrn_ordinal": 5865,
+      "adrn_sha256": "eeee8c38e2ce53c14b826499360a951fefbd14283235beab851e4fa44e1cb9e6",
+      "rd_offset": 24967661,
+      "rd_bytes": 1780,
+      "rd_sha256": "a59e65aaea9cd02b32159f75e9879cc2707abe90df2ee34f2738b0ac5aed27ee",
+      "signed_adrn_offset": [
+        -15,
+        -67
+      ],
+      "dimensions": [
+        32,
+        77
+      ],
+      "png_sha256": "8e204a8a9334f4f43be4cc28b987171b32a1a093a5a19c9155879bc14960b44e",
+      "rgba_sha256": "d1e230061e44cc56f1fd98c518a7781e2fe93b629486518d8159301490d6f19b",
+      "graphic": 16019,
+      "mode": "WORLD11_REUSED_ORIGINAL_PNG",
+      "indexed_sha256": "14b90d0bd32dec46a5c5810e52e6c04d32b45f74217ab6fd7d3d266fbbaf9e82"
+    },
+    {
+      "bitmap": 5879,
+      "adrn_ordinal": 5879,
+      "adrn_sha256": "566b5fe872527ed6aabf3310f658effa1c7e0729f1961afd456002d3606205e8",
+      "rd_offset": 24991270,
+      "rd_bytes": 1748,
+      "rd_sha256": "2d0c3d53891e8ceb48cf88a99e4e88b3f9dc33bab5902e2fa39770e7e8643541",
+      "signed_adrn_offset": [
+        -16,
+        -73
+      ],
+      "dimensions": [
+        36,
+        81
+      ],
+      "png_sha256": "db1398accb72f8423f0333f7111d78b99e936e1aa1ca3395e58bcbf809bb10a3",
+      "rgba_sha256": "17588f01cf524ed3eb5631884d6779c91685cce75c773563a80294167ce8b652",
+      "graphic": 16033,
+      "mode": "TWO_DECODERS_ORIGINAL_RD",
+      "indexed_sha256": "ffde41a74f65c379d9d1d7276477b1bf287765bdb30060a53f16a9283b2d3db2"
+    },
+    {
+      "bitmap": 5881,
+      "adrn_ordinal": 5881,
+      "adrn_sha256": "0c3d7547e7a3cd07377bc3faffd5b3203bd9281f9845b7d6f3199f194e52ef17",
+      "rd_offset": 24994505,
+      "rd_bytes": 1705,
+      "rd_sha256": "588acf0d2d879a9b7e7e905d23e73595594328254e9f15cb97940d38c3fd61ef",
+      "signed_adrn_offset": [
+        -24,
+        -70
+      ],
+      "dimensions": [
+        40,
+        80
+      ],
+      "png_sha256": "2b75f30916053c5cfc65d5cf00ed667f870f832793948e0e4d061a8804a4a892",
+      "rgba_sha256": "325425e2ce871f3fd83db0ebfa70663faf571054d7e6a7f7cc3a34d71d3e1cfb",
+      "graphic": 16035,
+      "mode": "WORLD11_REUSED_ORIGINAL_PNG",
+      "indexed_sha256": "29882e020e6e0c86d20e8d7875e05a1d3b36cdecfd1387cc0d3ef3faef0de086"
+    },
+    {
+      "bitmap": 5929,
+      "adrn_ordinal": 5929,
+      "adrn_sha256": "72c6b9bb151e01034ee53d4ee1662b1582dbf5260b3850791b9c6782ffd65f24",
+      "rd_offset": 25099083,
+      "rd_bytes": 1937,
+      "rd_sha256": "48f1f20adc4a55fd17c4c1a6038567cbab8d5df8583dab33cd54bd8e5ce2dc23",
+      "signed_adrn_offset": [
+        -17,
+        -74
+      ],
+      "dimensions": [
+        36,
+        84
+      ],
+      "png_sha256": "7e174c151d20f02bf74dcb031c371acac78539ef9ee1f7b86025c89dab0c7720",
+      "rgba_sha256": "d386340c67b98abe7f50d497cb3de07fd6814a083b7c58032305f8a25cc12226",
+      "graphic": 16209,
+      "mode": "WORLD11_REUSED_ORIGINAL_PNG",
+      "indexed_sha256": "b5f31818d3a04f34767db376ec0460569fb134ffff2862b7a8bfc08283773058"
+    }
+  ],
+  "original_mapwarp_sha256": "b7b50f42efa8e5a3f740d49a8d0c01cbf994d1bb66151b16ff5b5e7c14e7595c",
+  "bounds": {
+    "official_same_deployment": false,
+    "original_client_or_server_executed": false,
+    "native_renderer_or_collision_verified": false,
+    "native_storage_or_training_verified": false,
+    "proprietary_sources_published": false,
+    "overall_percent": null
+  },
+  "map09_archive": {
+    "bytes": 46844444,
+    "sha256": "d84d0800dd600798769dfb7251a1d7816588ac061ccc27812ac64a37922d4a8a",
+    "members": 4195
+  },
+  "room_replay": {
+    "1403": {
+      "draw_positions": 141,
+      "image_aliases": [
+        534,
+        535,
+        536,
+        537,
+        538,
+        540,
+        544,
+        545,
+        546,
+        550,
+        554,
+        555,
+        559,
+        564,
+        567,
+        568,
+        10023,
+        10136,
+        10215,
+        12028,
+        12029,
+        12030,
+        12031,
+        12034,
+        12035,
+        12036,
+        12037,
+        12038,
+        12617,
+        12618,
+        12619,
+        12620,
+        12621,
+        12624,
+        12625,
+        12626,
+        12630,
+        12802,
+        12804,
+        12833,
+        12834,
+        12836,
+        12926,
+        12927
+      ],
+      "frame_RGBA_sha256": {
+        "plane0": "955f3c5f1fa74a674334694e60998107fc4ca1b18a41462ae1db1c2c030a5143",
+        "plane1": "cb748b6506847bbca8ff407a76bff43f0e8efc93729fce4a63d8c2a0b3c6a298",
+        "combined": "aeaff9f52a67bc037c93077bed942dff7ff0a2fe42f346796744ed64a125619e"
+      }
+    },
+    "3103": {
+      "draw_positions": 147,
+      "image_aliases": [
+        5000,
+        5001,
+        5002,
+        5010,
+        5051,
+        5052,
+        5053,
+        5054,
+        5106,
+        5107,
+        5108,
+        5109,
+        5110,
+        5115,
+        5116,
+        5125,
+        5126,
+        5129,
+        5132,
+        5134,
+        5135,
+        5136,
+        5139,
+        5140,
+        10909,
+        10910,
+        12041,
+        12042,
+        12043,
+        12044,
+        12045,
+        12047,
+        12618,
+        12619,
+        12620,
+        12621,
+        12625,
+        12626,
+        12635,
+        12802,
+        12825,
+        12834,
+        12837,
+        12845
+      ],
+      "frame_RGBA_sha256": {
+        "plane0": "1ef57239e9f1a45baaa82f6459e50d4a736fcaf3dc9544547e03bfb427982272",
+        "plane1": "978a8fa555b6c59375d4e44a18fadb01a1a267548ce82328a2e1258509469b65",
+        "combined": "dee382d442dc8f40ba279ced71288ba7f81d719fd374b56d709001bff446f829"
+      }
+    },
+    "3203": {
+      "draw_positions": 152,
+      "image_aliases": [
+        401,
+        5000,
+        5001,
+        5002,
+        5005,
+        5006,
+        5007,
+        5008,
+        5009,
+        5010,
+        5011,
+        5012,
+        5013,
+        5014,
+        5015,
+        5016,
+        5017,
+        5018,
+        5019,
+        5020,
+        5021,
+        5026,
+        10027,
+        12000,
+        12001,
+        12003,
+        12004,
+        12006,
+        12010,
+        12011,
+        12012,
+        12618,
+        12619,
+        12620,
+        12621,
+        12623,
+        12625,
+        12626,
+        12631,
+        12641,
+        12802,
+        12833,
+        12834,
+        12836,
+        12924,
+        12925
+      ],
+      "frame_RGBA_sha256": {
+        "plane0": "6625055fb8778628dd114fcfea5a67c76200152a70457101a91439004b6946cb",
+        "plane1": "8d714093a6f0d500dd39fef40d6635bcc84d8a9b5831696320e1dff97220104d",
+        "combined": "1a9795e66aed0126e8ce03a8365477e5114c12f2d898dcfef0f943a1c606e966"
+      }
+    }
+  },
+  "village_endpoint_DAT": {
+    "1400": {
+      "bytes": 135008,
+      "sha256": "a706890eaa46f89e41ca171ce052d34fb1c18e8cc4602ac686fc1d19af54c73f",
+      "crc32": "f9e97574"
+    },
+    "3100": {
+      "bytes": 86408,
+      "sha256": "fb33c8ea25462af0200d0f04fd8121c3341a2d46a291106c7359bc8289b264b2",
+      "crc32": "0fd5ae5b"
+    },
+    "3200": {
+      "bytes": 86408,
+      "sha256": "9a2726f7fd0a8661394efa904ee535c113c42cbf84bd5045ab9a9894aa5ea697",
+      "crc32": "2639feef"
+    }
+  },
+  "private_package": {
+    "filename": "StoneAge-INTEGRATION17-three-pet-rooms-private.zip",
+    "bytes": 2546139,
+    "sha256": "c98770de851d0ba704e1a4c8f18d364c4f2a87c3746ec717953fd88c4930c93f",
+    "members": 45,
+    "library_roundtrip_sha256_and_crc_verified": true
+  },
+  "browser": {
+    "chromium": "153.0.8010.0",
+    "exact_zip_index_file_url": true,
+    "external_requests": 0,
+    "browser_errors": 0,
+    "rooms": [
+      {
+        "floor": 1403,
+        "image_payloads_verified": 3,
+        "details_verified": 2,
+        "warp_rows_visible": 4,
+        "overlay_changes_pixels_and_hides_again": true
+      },
+      {
+        "floor": 3103,
+        "image_payloads_verified": 3,
+        "details_verified": 2,
+        "warp_rows_visible": 3,
+        "overlay_changes_pixels_and_hides_again": true
+      },
+      {
+        "floor": 3203,
+        "image_payloads_verified": 3,
+        "details_verified": 2,
+        "warp_rows_visible": 4,
+        "overlay_changes_pixels_and_hides_again": true
+      }
+    ]
+  },
+  "tutor_source_preflight": {
+    "scene26_r3_blob": "77447d17678d8c18516a28da37a2b67c4f121f54",
+    "actual_mixed25_RD_and_RGBA_replayed": true,
+    "rd_hashes_match_pinned_CN50_and_PATCH129": true,
+    "mixed25_spr_matches": 0,
+    "placed_in_tutor_rooms": false,
+    "graphics": [
+      {
+        "bitmap": 232699,
+        "adrn_ordinal": 232699,
+        "adrn_sha256": "bcb5002755d00dba0061123a01195fc2eedbcec6fd4a390273dd3f1d1db01110",
+        "rd_offset": 748989960,
+        "rd_bytes": 1930,
+        "rd_sha256": "70e97c406b2ac784a5b0e0cac7906ab8b044f6f4b9ebe14a92b4e727eb250022",
+        "signed_adrn_offset": [
+          -16,
+          -75
+        ],
+        "dimensions": [
+          32,
+          87
+        ],
+        "png_sha256": "02bfd430c3a6903e4cef860404d7e05b37e80d3bc7cbb3c55ca79d302f39d0ce",
+        "rgba_sha256": "74757afab0de3292c1f689cc44c6be65fdedeb941e698bf12f390ff76867df05",
+        "graphic": 16122,
+        "mode": "TWO_DECODERS_ORIGINAL_RD",
+        "indexed_sha256": "329c71daec1adb21c1b63333ce4578bec2edc1a895ba837c1a0c7b978f2a3a3e"
+      },
+      {
+        "bitmap": 232704,
+        "adrn_ordinal": 232704,
+        "adrn_sha256": "da21079cba95e34eb79cd477aecf02fcc3cbcb37633ecbc142a4b2e580e6df98",
+        "rd_offset": 749001779,
+        "rd_bytes": 2089,
+        "rd_sha256": "c461402ebd18a9e87277c083f4b62218f99133380b74c26278ef916836aaaeb1",
+        "signed_adrn_offset": [
+          -19,
+          -85
+        ],
+        "dimensions": [
+          36,
+          96
+        ],
+        "png_sha256": "d832c8636b40c45304558ebe8ab222a35f8f5833b0cbaf80f42836bb9563c820",
+        "rgba_sha256": "5efbc6aa406201415e46a224f32db5a97f3468d55363d99b5659d66d18a3047f",
+        "graphic": 16127,
+        "mode": "TWO_DECODERS_ORIGINAL_RD",
+        "indexed_sha256": "f0170a4fb5002555545366ea1e52a957b07068b2c4f892dff9d7b5d9efa8d6dc"
+      }
+    ],
+    "scene26_r2_blob": "3446a7006478a748d2f273c85822df84ace893a0",
+    "candidate_rooms": [
+      {
+        "floor": 1003,
+        "create": [
+          "sa60/newbie/newbie.create",
+          4,
+          "bb7b3af1435f5747d867916fbafb12a94ce76470cbc64dd76688dfd9f4692ea9"
+        ],
+        "parameter": [
+          "sa60/newbie/petmaster",
+          "04ba49ba514eb469b4c12085c6733cd73c281c6ca682c813c2e35748ab6ac1db"
+        ],
+        "dat_sha256": "fc3037a1850c8baf06ad5874a4cb49ca5e13e9315c020f64c019417c33b694e6",
+        "frame_RGBA_sha256": {
+          "plane0": "5ec16feab8788ee0cb8e9d863656d96ffe6351322d01adee6697e6aee6fc84d0",
+          "plane1": "b141d172382cf498b7a806a58e5655729b98715108f92fdbf51f6a8c41b7c300",
+          "combined": "e65f72c5f7d23631fe7b0b4b396d57c9be66fe6c684f9950fa461d341bc5e886"
+        },
+        "xy": [
+          19,
+          15
+        ],
+        "graphic": 16122,
+        "graphic_px": [
+          1088,
+          541
+        ]
+      },
+      {
+        "floor": 2003,
+        "create": [
+          "sa60/newbie/newbie.create",
+          5,
+          "92733c3bc3a2296045777f8c7a0af0b810754f0cd867d10f1ce70580613d459b"
+        ],
+        "parameter": [
+          "sa60/newbie/petmaster",
+          "04ba49ba514eb469b4c12085c6733cd73c281c6ca682c813c2e35748ab6ac1db"
+        ],
+        "dat_sha256": "054da66fc1f28133c3b1327b995cb704b3f95473b080bcbe2b14ddba6b851920",
+        "frame_RGBA_sha256": {
+          "plane0": "3bba2a62ab333e9a18fef511842f127625e20ce0571fd2cd29f9fe75bc64d0e9",
+          "plane1": "8701aa40c4b0872db857c716b509592dc9122a0346b3c58a152034acd7fd5aac",
+          "combined": "b2a5eda6c32fddd3f83f9da5b93c25b22c828136d8cb77e8d1d482f9626e89d2"
+        },
+        "xy": [
+          11,
+          12
+        ],
+        "graphic": 16127,
+        "graphic_px": [
+          733,
+          651
+        ]
+      },
+      {
+        "floor": 3003,
+        "create": [
+          "sa60/newbie/newbie.create",
+          6,
+          "3e0249444221f2507cee170f7190db3ed6a00717159ca7b3ddc419d3995ad32b"
+        ],
+        "parameter": [
+          "sa60/newbie/petmaster",
+          "04ba49ba514eb469b4c12085c6733cd73c281c6ca682c813c2e35748ab6ac1db"
+        ],
+        "dat_sha256": "f6ad234ac023a105ee0e44804df6d61a9125c05f9e063c57a6178351d962d827",
+        "frame_RGBA_sha256": {
+          "plane0": "dcaa0d6bcbb7af81c12685594411ba6eaad662c7b7b748f7a2ebfeab33a42e43",
+          "plane1": "db040118bc41d3d5767bf7f7d11af53cf920d30b0096544dc4c49bf50de05e2b",
+          "combined": "9644ebc9c7f6ffa6cc2dd24eea248d6e2de1632f0a2b786345149d35a0e9a2b0"
+        },
+        "xy": [
+          16,
+          19
+        ],
+        "graphic": 16122,
+        "graphic_px": [
+          1120,
+          709
+        ]
+      },
+      {
+        "floor": 4003,
+        "create": [
+          "sa60/newbie/newbie.create",
+          7,
+          "f3c9b1363c66ceea08ec1a5332db826d6e1b4d96603f811da134be5c89c4a341"
+        ],
+        "parameter": [
+          "sa60/newbie/petmaster",
+          "04ba49ba514eb469b4c12085c6733cd73c281c6ca682c813c2e35748ab6ac1db"
+        ],
+        "dat_sha256": "0a9fa2a089b6936e86eea458bca464038b8d5cb7fee057b9d2b393ffc6c6d6d4",
+        "frame_RGBA_sha256": {
+          "plane0": "69cba81f70cf760ec9d4eb07e87713295fd5ff70e02e19dab1867349ed0fd763",
+          "plane1": "1de5d1ac5195e426f1a8c35d71d79f71ea14050248a8a7d6e4705bb9639e958a",
+          "combined": "4512cdc85c6973d775efcd1d53ada6732bf023ef559f1baa6182a7b146d3722e"
+        },
+        "xy": [
+          14,
+          17
+        ],
+        "graphic": 16122,
+        "graphic_px": [
+          992,
+          709
+        ]
+      }
+    ]
+  },
+  "private_generation_byte_for_byte_replay": true,
+  "integration16_legacy_zip_byte_identical": true,
+  "invented_reverse_rejected": true,
+  "substituted_map_tile_rejected": true,
+  "starting_main": {
+    "head": "b4d2478bcfc16e48b14977015190a364b0038374",
+    "tree": "a4d287974b3cbe8f147b072c7196105da4d5bbfe",
+    "current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "server_RAR_members_rechecked": {
+    "3103": {
+      "archive_path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/map/jyaruga/tamtam/3103",
+      "bytes": 3644,
+      "sha256": "6b160a690db060a625b2c2b7a959c43e02009012c24db9eb15f15499b69fb0f3",
+      "crc32": "2724cf65"
+    },
+    "3203": {
+      "archive_path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/map/jyaruga/toto/3203",
+      "bytes": 3644,
+      "sha256": "2817658927fe80fd674acd00f224d87e52e9fef7c34c09a7486a4a2bcd68221a",
+      "crc32": "a3b83591"
+    },
+    "mapwarp.txt": {
+      "archive_path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/map/mapwarp.txt",
+      "bytes": 110674,
+      "sha256": "b7b50f42efa8e5a3f740d49a8d0c01cbf994d1bb66151b16ff5b5e7c14e7595c",
+      "crc32": "6b4da534"
+    },
+    "1403": {
+      "archive_path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/map/sainasu/katan/1403",
+      "bytes": 3644,
+      "sha256": "2cf200caa12c857e063b2f2837efcd5e54ad77288e392ea2ebd0d0b303531d9f",
+      "crc32": "8fbb144d"
+    }
+  }
+}
