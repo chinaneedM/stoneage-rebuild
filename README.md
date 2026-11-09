@@ -2269,3 +2269,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-09 — INTEGRATION18 / SCENE26-R4｜四間寵物常識解說員房與原造型來源界限
 
 [INTEGRATION18 四房來源限定續接](docs/continuity/STONEAGE-INTEGRATION18-SCENE26-R4-SOURCE-BOUNDED-20261109.md)重新核四筆原 CREATE、`petmaster` 原 CP950 教學內容、四份 MAP09 原 DAT 與 16122／16127 兩個已驗 RD 像素指紋；私人候選觀察頁實際有四處原圖尺寸的**空心佔位框**和十項原文，**尚未放入這兩張原人物圖**。最新可取私人包沒有其真 PNG/RD 字節；在兩件均經原 SHA/尺寸/像素核驗前不冒稱原人物已顯示。私人有限包在本會話生成（14 件、完整 CRC 與本地重演）、已成功持久上傳個人 Library 並獨立回讀全 ZIP SHA / CRC；Chromium 僅內存載入測試，直接 file URL 被環境攔截。公開原數據接點與反例測試另存 [來源限定收據](research/recovered/STONEAGE-INTEGRATION18-SCENE26-R4-BOUNDED-TUTOR-LAYOUT-R1.json)。歷史 CURRENT 原 blob 保持不變，Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暫停、全體百分比未知。下一輪有來源的 3303／3403／4003 寵物服務可先整合；R4 原像素只在兩份真圖源齊全時重開，不進新引擎或網服。
+
+
+## 2026-11-09 — INTEGRATION19｜三間寵物店原服務、11 條有向門點與 4003 原圖候選
+
+[INTEGRATION19 來源限定復核、私人實物與 NEXT](docs/continuity/STONEAGE-INTEGRATION19-THREE-PET-SERVICES-20261109.md)：重新取原私人包並驗 SHA/CRC，核 3303／3403／4003 的六條原 CREATE、六份 CP950 參數、十一條原 mapwarp 與獨立 Warp CREATE。3303 (16,20) → 3300 (51,60) 有原單向出店記錄、未列該格反向；4003 原 PetShop 有 `pool_flg=1`／`pool_cost=200`，原運行費率未證。4003 真原 DAT 兩服務格、解說員格及兩門點三平面 u16 重核，1889×1425 來源限定候選圖重新驗 RGBA；原 16033 靜態像素只作 3403 單獨資料卡，不冒充其房內原造型。3303／3403 原 DAT／完整底圖本輪只有先前 MAP09 來源指紋，未取回私人原字節，故不造場景。新 16 成員私人 ZIP 兩次逐字節同、CRC 全通，已存個人 Library 再回讀全 SHA；本環境無可啟動 Chromium，沒有真瀏覽器驗收。公開只存[派生數值與原來源資格](research/recovered/STONEAGE-INTEGRATION19-THREE-PET-SERVICES-SOURCE-R1.json)及回歸測試，所有原商素材留私人。CURRENT 完整 2,709,173 B 原 Git blob 未改；Stage A 7PARTIAL+2OPEN、Stage B/wiki GATED、R79 暫停、overall_percent=null。下一次有來源的 3303／3403 DAT、室外 3400 及其餘人物原圖補件才重開本批；否則轉下一有新實物的原版內容。

@@ -1,0 +1,591 @@
+{
+  "schema": "stoneage.integration19.three_pet_service_original_source_join.r1",
+  "created_at": "2026-11-09",
+  "baseline": {
+    "head": "0df67b01fbba90d0792c8b75ffc09667e3776e27",
+    "tree": "a38cc8e78d39839e1f5b6ecc06c2a844acf519b1",
+    "CURRENT_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "CURRENT_bytes": 2709173
+  },
+  "source_scope": "LATER_COMMUNITY_MIXED25_NPC_CREATE_PARAMETERS_WARP_AND_DAT_WITH_DISTINCT_TW10_ORIGINAL_PICTURE_CANDIDATES",
+  "upstream_git_blobs": {
+    "skills": {
+      "path": "research/recovered/STONEAGE-GAMEPLAY03-ORIGINAL-21-PET-SKILL-SHOP-SOURCE-R1.json",
+      "git_blob": "5735ddc1117a8a6fb2f9417327ec242e4fd06192"
+    },
+    "shops": {
+      "path": "research/recovered/STONEAGE-GAMEPLAY05-ORIGINAL-PETSHOP-SAVEPOINT-HEAL-SOURCE-R1.json",
+      "git_blob": "878be2f05a4dc17f51d21ed2401fd7a7f3d73563"
+    },
+    "maps": {
+      "path": "research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json",
+      "git_blob": "137580e7c25aadf3d679b6ebfb5080b79912cc4f"
+    },
+    "integration17": {
+      "path": "research/recovered/STONEAGE-INTEGRATION17-THREE-PET-ROOMS-SOURCE-R1.json",
+      "git_blob": "e716f01bbf7d08be2e13654909282a198f5334dd"
+    },
+    "scene26r2": {
+      "path": "research/recovered/STONEAGE-SCENE26-R2-FOUR-ORIGINAL-PET-TUTOR-ROOMS-SOURCE-R1.json",
+      "git_blob": "3446a7006478a748d2f273c85822df84ace893a0"
+    },
+    "char01": {
+      "path": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json",
+      "git_blob": "a088b61a3212f7049e7793f587123ffb29bebad7"
+    }
+  },
+  "original_private_carrier_SHA256": {
+    "CHAR01_zip": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "INTEGRATION17_zip": "c98770de851d0ba704e1a4c8f18d364c4f2a87c3746ec717953fd88c4930c93f",
+    "SCENE26_R2_zip": "cf7d0d6dbb34fc77e64740f2d4990a0012a15a347bfb683e3cd1dc97eb02ca4c"
+  },
+  "exact_original_source_files": {
+    "shop_create": {
+      "path": "genout/shop_m2.create",
+      "bytes": 20544,
+      "sha256": "ef0447f668939f9257f62467d1a6194d34955e22ab7e334aa232865127905651"
+    },
+    "warp_create": {
+      "path": "genout/warp_y2.create",
+      "bytes": 19522,
+      "sha256": "a2e60d39af1d008b1f1d3c8d084cfdf36ad275c896a83895b4c295531a361352"
+    },
+    "mapwarp": {
+      "path": "mapwarp.txt",
+      "sha256": "b7b50f42efa8e5a3f740d49a8d0c01cbf994d1bb66151b16ff5b5e7c14e7595c"
+    }
+  },
+  "rooms": [
+    {
+      "floor": 3303,
+      "dat": {
+        "bytes": 5408,
+        "sha256": "785799faa3e1cf9de1b92809e8688e172e47b37ab72eb10924e00cddd98e473b",
+        "geometry": [
+          30,
+          30
+        ],
+        "canvas_size": [
+          1889,
+          1425
+        ],
+        "origin": [
+          16,
+          712
+        ],
+        "combined_RGBA_sha256": "bea3b37d97f9a4978952fce9d16618647db01812dce6a0dbf389829b85c8dbe1"
+      },
+      "actual_DAT_and_full_PNG_replayed_in_private_this_unit": false,
+      "services": [
+        {
+          "role": "PetShop",
+          "create_file": "genout/shop_m2.create",
+          "create_ordinal": 56,
+          "create_sha256": "965fcc2113f65c7fa7387ce00591f65701b81f29ba40b47021ebc1a20130ca91",
+          "source_name": "烏魯力的寵物店",
+          "xy": [
+            16,
+            14
+          ],
+          "dir": 4,
+          "graphic": 16218,
+          "parameter_path": "genout/ps_3303_16_14",
+          "parameter_sha256": "009623f1960ae3addbc5991dd435f49f8b11e3af10a1ff09f6a2e5c7b9c3b830",
+          "original_fields": {
+            "original_key_is_nomal_rate_not_normal_rate": "1.0",
+            "pool_flg_raw": null,
+            "pool_cost_raw": null,
+            "special_rate_raw": "1.5",
+            "special_pet_field_exists": true,
+            "special_pet_source_is_empty": true
+          }
+        },
+        {
+          "role": "PetSkillShop",
+          "create_file": "genout/shop_m2.create",
+          "create_ordinal": 59,
+          "create_sha256": "b4ef8ce0b33db08f64c48000bbe75e59399c67d7edbfaab5f7c3389b24f10602",
+          "source_name": "飼育員",
+          "xy": [
+            13,
+            14
+          ],
+          "dir": 4,
+          "graphic": 16212,
+          "parameter_path": "genout/psks_3303_13_14",
+          "parameter_sha256": "37269ddf06935621e10576b4c2fb9f9055c47f110bdcaaa28f51c2ade82bfc72",
+          "skill_rate": "1.1",
+          "skill_ids": [
+            0,
+            1,
+            2,
+            3,
+            50,
+            80,
+            100
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 3403,
+      "dat": {
+        "bytes": 5408,
+        "sha256": "0f6ecf597a7bf969d6e4e769081467ac1228e01ed6583c8d5ae50d031f8dad95",
+        "geometry": [
+          30,
+          30
+        ],
+        "canvas_size": [
+          1889,
+          1425
+        ],
+        "origin": [
+          16,
+          712
+        ],
+        "combined_RGBA_sha256": "34c63c3af687cddd9aa6ab16091da331e72a1c15127e2a0aa3bb4dba030eb280"
+      },
+      "actual_DAT_and_full_PNG_replayed_in_private_this_unit": false,
+      "services": [
+        {
+          "role": "PetShop",
+          "create_file": "genout/shop_m2.create",
+          "create_ordinal": 69,
+          "create_sha256": "d1ed73336a8181c5b162ff9051bd81cd47984937c434c8f76121048b18b67775",
+          "source_name": "奇喀喀的寵物店",
+          "xy": [
+            18,
+            18
+          ],
+          "dir": 6,
+          "graphic": 16033,
+          "parameter_path": "genout/ps_3403_18_18",
+          "parameter_sha256": "d78288914ddca095c83875b3e03ec9cfbf4d736b82a28ff9a6aa6e0a2f14c651",
+          "original_fields": {
+            "original_key_is_nomal_rate_not_normal_rate": "1.0",
+            "pool_flg_raw": null,
+            "pool_cost_raw": null,
+            "special_rate_raw": "1.5",
+            "special_pet_field_exists": true,
+            "special_pet_source_is_empty": true
+          }
+        },
+        {
+          "role": "PetSkillShop",
+          "create_file": "genout/shop_m2.create",
+          "create_ordinal": 72,
+          "create_sha256": "20b84813e0c799a45bbe4b13346ba794440b7996e05a007ea6e27b8f3b002c97",
+          "source_name": "飼育員",
+          "xy": [
+            18,
+            14
+          ],
+          "dir": 6,
+          "graphic": 16018,
+          "parameter_path": "genout/psks_3403_18_14",
+          "parameter_sha256": "ea1da946544969a1198985a328c3073c1b46af26a665c1b7f954edbf43831301",
+          "skill_rate": "1.2",
+          "skill_ids": [
+            0,
+            1,
+            2,
+            3,
+            50,
+            61,
+            130
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 4003,
+      "dat": {
+        "bytes": 5408,
+        "sha256": "0a9fa2a089b6936e86eea458bca464038b8d5cb7fee057b9d2b393ffc6c6d6d4",
+        "geometry": [
+          30,
+          30
+        ],
+        "canvas_size": [
+          1889,
+          1425
+        ],
+        "origin": [
+          16,
+          712
+        ],
+        "combined_RGBA_sha256": "4512cdc85c6973d775efcd1d53ada6732bf023ef559f1baa6182a7b146d3722e"
+      },
+      "actual_DAT_and_full_PNG_replayed_in_private_this_unit": true,
+      "services": [
+        {
+          "role": "PetShop",
+          "create_file": "genout/shop_m2.create",
+          "create_ordinal": 82,
+          "create_sha256": "faa0fddcd97819393bcaec3eba1c4173d5ef36cdde3758b79d23cffb094be1bd",
+          "source_name": "寵物店",
+          "xy": [
+            13,
+            13
+          ],
+          "dir": 4,
+          "graphic": 16038,
+          "parameter_path": "genout/ps_4003_13_13",
+          "parameter_sha256": "82cfd710b0b84066c66c141a90e46c899119ae0e1b15814b3a85f1d33601c85f",
+          "original_fields": {
+            "original_key_is_nomal_rate_not_normal_rate": "1.0",
+            "pool_flg_raw": "1",
+            "pool_cost_raw": "200",
+            "special_rate_raw": "1.5",
+            "special_pet_field_exists": true,
+            "special_pet_source_is_empty": true
+          }
+        },
+        {
+          "role": "PetSkillShop",
+          "create_file": "genout/shop_m2.create",
+          "create_ordinal": 85,
+          "create_sha256": "b53afaa1b067969f2a7cb9c38abf08d24bc719f0cb0d4baa758b7f8590e264e0",
+          "source_name": "飼育員",
+          "xy": [
+            18,
+            15
+          ],
+          "dir": 6,
+          "graphic": 16207,
+          "parameter_path": "genout/psks_4003_18_15",
+          "parameter_sha256": "226c6193fd66f2dd8c36b29f070c5edccdd0dcf623dcf89ee41d27e16ecf9857",
+          "skill_rate": "1.0",
+          "skill_ids": [
+            0,
+            1,
+            2,
+            3,
+            10,
+            50,
+            100,
+            200,
+            201
+          ]
+        }
+      ]
+    }
+  ],
+  "directed_warp_edges": [
+    {
+      "mapwarp_line": 664,
+      "start": [
+        4000,
+        99,
+        72
+      ],
+      "target": [
+        4003,
+        10,
+        15
+      ],
+      "create_file": "genout/warp_y2.create",
+      "create_ordinal": 51,
+      "create_sha256": "dda744673196ade26b2ecec98d33005106d63472da973b717769fd49772cb30f",
+      "reverse_present": true
+    },
+    {
+      "mapwarp_line": 665,
+      "start": [
+        4003,
+        10,
+        15
+      ],
+      "target": [
+        4000,
+        99,
+        72
+      ],
+      "create_file": "genout/warp_y2.create",
+      "create_ordinal": 52,
+      "create_sha256": "767e8dc9d8c382785af30d593a254c97bf9f62d50063f294c0e6ce60590bdda5",
+      "reverse_present": true
+    },
+    {
+      "mapwarp_line": 666,
+      "start": [
+        4000,
+        99,
+        73
+      ],
+      "target": [
+        4003,
+        10,
+        16
+      ],
+      "create_file": "genout/warp_y2.create",
+      "create_ordinal": 53,
+      "create_sha256": "34dfdef2b3591e50becfa152280767298ef63590069b1738de2ce733d316faeb",
+      "reverse_present": true
+    },
+    {
+      "mapwarp_line": 667,
+      "start": [
+        4003,
+        10,
+        16
+      ],
+      "target": [
+        4000,
+        99,
+        73
+      ],
+      "create_file": "genout/warp_y2.create",
+      "create_ordinal": 54,
+      "create_sha256": "c5883ac4b25be47467ab55839aaf68a8c41f942cf7966a394e7b53ff3747b444",
+      "reverse_present": true
+    },
+    {
+      "mapwarp_line": 735,
+      "start": [
+        3300,
+        51,
+        60
+      ],
+      "target": [
+        3303,
+        15,
+        20
+      ],
+      "create_file": "genout/warp_y2.create",
+      "create_ordinal": 122,
+      "create_sha256": "d99626f0e6fb90d030acc053308ef54dac2f4297f0faf6151e5bb1d195f6d541",
+      "reverse_present": true
+    },
+    {
+      "mapwarp_line": 736,
+      "start": [
+        3303,
+        15,
+        20
+      ],
+      "target": [
+        3300,
+        51,
+        60
+      ],
+      "create_file": "genout/warp_y2.create",
+      "create_ordinal": 123,
+      "create_sha256": "c145126a8218ecde439092c661aabd37f1743cea26c25a0abf6beaf47fa21beb",
+      "reverse_present": true
+    },
+    {
+      "mapwarp_line": 737,
+      "start": [
+        3303,
+        16,
+        20
+      ],
+      "target": [
+        3300,
+        51,
+        60
+      ],
+      "create_file": "genout/warp_y2.create",
+      "create_ordinal": 124,
+      "create_sha256": "3c2558d68eb0f3a4a046e228ab53bb29ce595ab88712d6289723a8da15a90618",
+      "reverse_present": false
+    },
+    {
+      "mapwarp_line": 752,
+      "start": [
+        3400,
+        53,
+        49
+      ],
+      "target": [
+        3403,
+        15,
+        21
+      ],
+      "create_file": "genout/warp_y2.create",
+      "create_ordinal": 139,
+      "create_sha256": "fe0ec66bac575bf155b576ba5970f652daa635e1aa48238e39d88a1e63775514",
+      "reverse_present": true
+    },
+    {
+      "mapwarp_line": 753,
+      "start": [
+        3403,
+        15,
+        21
+      ],
+      "target": [
+        3400,
+        53,
+        49
+      ],
+      "create_file": "genout/warp_y2.create",
+      "create_ordinal": 140,
+      "create_sha256": "f9f0e7e894ba0f88a0aca6951b57ca78069878103ce714236fa25f02ae60d469",
+      "reverse_present": true
+    },
+    {
+      "mapwarp_line": 754,
+      "start": [
+        3400,
+        54,
+        49
+      ],
+      "target": [
+        3403,
+        16,
+        21
+      ],
+      "create_file": "genout/warp_y2.create",
+      "create_ordinal": 141,
+      "create_sha256": "8efd87d0935f50bc5f60cbd54e84e6533b64042e62f88b01a7112f434f07eff1",
+      "reverse_present": true
+    },
+    {
+      "mapwarp_line": 755,
+      "start": [
+        3403,
+        16,
+        21
+      ],
+      "target": [
+        3400,
+        54,
+        49
+      ],
+      "create_file": "genout/warp_y2.create",
+      "create_ordinal": 142,
+      "create_sha256": "c194d29c04d111ea1d64055ec5dd2f6fed70b42a8c956d430c543524ffe65571",
+      "reverse_present": true
+    }
+  ],
+  "original_4003_dat_cells": [
+    {
+      "role": "petshop",
+      "xy": [
+        13,
+        13
+      ],
+      "u16": [
+        5002,
+        0,
+        49152
+      ],
+      "modern_marker": [
+        848,
+        712
+      ]
+    },
+    {
+      "role": "pet_skill",
+      "xy": [
+        18,
+        15
+      ],
+      "u16": [
+        5000,
+        0,
+        49152
+      ],
+      "modern_marker": [
+        1072,
+        640
+      ]
+    },
+    {
+      "role": "separate_tutor",
+      "xy": [
+        14,
+        17
+      ],
+      "u16": [
+        5002,
+        12802,
+        49152
+      ],
+      "modern_marker": [
+        1008,
+        784
+      ]
+    },
+    {
+      "role": "door_a",
+      "xy": [
+        10,
+        15
+      ],
+      "u16": [
+        5024,
+        0,
+        49155
+      ],
+      "modern_marker": [
+        816,
+        832
+      ]
+    },
+    {
+      "role": "door_b",
+      "xy": [
+        10,
+        16
+      ],
+      "u16": [
+        5013,
+        0,
+        49155
+      ],
+      "modern_marker": [
+        848,
+        856
+      ]
+    }
+  ],
+  "original_4003_tutor": {
+    "create_path": "sa60/newbie/newbie.create",
+    "ordinal": 7,
+    "create_sha256": "f3c9b1363c66ceea08ec1a5332db826d6e1b4d96603f811da134be5c89c4a341",
+    "graphic": 16122,
+    "script_sha256": "04ba49ba514eb469b4c12085c6733cd73c281c6ca682c813c2e35748ab6ac1db",
+    "independent_from_shop_and_skill": true
+  },
+  "qualified_3403_static_original_alias_16033": {
+    "original_alias": 16033,
+    "source_RD_sha256": "2d0c3d53891e8ceb48cf88a99e4e88b3f9dc33bab5902e2fa39770e7e8643541",
+    "source_PNG_sha256": "db1398accb72f8423f0333f7111d78b99e936e1aa1ca3395e58bcbf809bb10a3",
+    "source_RGBA_sha256": "17588f01cf524ed3eb5631884d6779c91685cce75c773563a80294167ce8b652",
+    "dimensions": [
+      36,
+      81
+    ],
+    "private_PNG_reused": true,
+    "original_3403_scene_composite_with_sprite_verified": false
+  },
+  "private_package": {
+    "name": "StoneAge-INTEGRATION19-THREE-PET-SERVICES-PRIVATE-PARTIAL.zip",
+    "bytes": 534764,
+    "sha256": "2ac6d2e3502f25c87a06520287f41b971212e4850636acec5e644102c4d1c91b",
+    "members": 16,
+    "all_CRC_passed": true,
+    "deterministic_replay": true,
+    "private_Library_uploaded_and_downloaded_SHA_CRC": true,
+    "full_4003_source_scene_only": true,
+    "browser_executed_this_work": false
+  },
+  "bounds": {
+    "original_shop_storage_purchase_or_skill_training_executed": false,
+    "original_warp_and_collision_executed": false,
+    "official_same_deployment_verified": false,
+    "original_3303_3403_private_DAT_bytes_replayed_this_work": false,
+    "original_3400_DAT_replayed_this_work": false,
+    "missing_original_NPC_sprites_invented": false,
+    "proprietary_original_source_published": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Source-bounded stop at private 3303/3403 full DAT and scene input gaps, 3400 outdoor DAT and five other original NPC images. Reopen on exact verified source material, otherwise select next substantive Stage A source batch."
+}

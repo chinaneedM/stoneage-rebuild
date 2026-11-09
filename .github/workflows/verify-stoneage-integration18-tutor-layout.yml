@@ -5,11 +5,15 @@ on:
     paths:
       - 'research/recovered/STONEAGE-INTEGRATION18-SCENE26-R4-BOUNDED-TUTOR-LAYOUT-R1.json'
       - 'tests/test_stoneage_integration_module_18.py'
+      - 'research/recovered/STONEAGE-INTEGRATION19-THREE-PET-SERVICES-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_19.py'
       - '.github/workflows/verify-stoneage-integration18-tutor-layout.yml'
   pull_request:
     paths:
       - 'research/recovered/STONEAGE-INTEGRATION18-SCENE26-R4-BOUNDED-TUTOR-LAYOUT-R1.json'
       - 'tests/test_stoneage_integration_module_18.py'
+      - 'research/recovered/STONEAGE-INTEGRATION19-THREE-PET-SERVICES-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_19.py'
       - '.github/workflows/verify-stoneage-integration18-tutor-layout.yml'
 
 jobs:
@@ -22,3 +26,6 @@ jobs:
           python-version: '3.11'
       - name: Verify four source-bound rooms and rejection of unsupported sprites
         run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_18.py' -v
+
+      - name: Verify source-bound three original pet service rooms and directed doors
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_19.py' -v
