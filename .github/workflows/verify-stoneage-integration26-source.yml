@@ -1,0 +1,27 @@
+name: Verify StoneAge INTEGRATION26 original mixed25 market pixel bridge
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION26-MARKET-12-MIXED25-ORIGINAL-PIXEL-BRIDGE-R1.json'
+      - 'tests/test_stoneage_integration_module_26.py'
+      - 'docs/continuity/STONEAGE-INTEGRATION26-2009-MARKET-ORIGINAL-MIXED25-PIXEL-BRIDGE-20261109.md'
+      - '.github/workflows/verify-stoneage-integration26-source.yml'
+      - 'README.md'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION26-MARKET-12-MIXED25-ORIGINAL-PIXEL-BRIDGE-R1.json'
+      - 'tests/test_stoneage_integration_module_26.py'
+      - 'docs/continuity/STONEAGE-INTEGRATION26-2009-MARKET-ORIGINAL-MIXED25-PIXEL-BRIDGE-20261109.md'
+      - '.github/workflows/verify-stoneage-integration26-source.yml'
+      - 'README.md'
+jobs:
+  source-contract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_26.py' -v
