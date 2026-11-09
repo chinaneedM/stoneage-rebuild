@@ -2261,3 +2261,7 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-09 — INTEGRATION16｜柯奧、柯爾克與瑪麗娜絲三間寵物店
 
 [INTEGRATION16 來源、離線觀察與續接](docs/continuity/STONEAGE-INTEGRATION16-THREE-PET-ROOMS-20261109.md)把 1103／1203／2003 的原房名、六筆寵物店／技能教學配置、五個有原 RD 證據的靜態造型和十二筆傳送原行接到三張已驗底圖。造型 16046 在兩房分屬不同服務，兩筆 CREATE 獨立。下一優先 INTEGRATION17 核 1403／3103／3203 的同類關係，以取得原 DAT、底圖和確切 RD 字節為條件。
+
+## 2026-11-09 — INTEGRATION17｜卡坦、塔姆塔姆與多多三間寵物店
+
+[INTEGRATION17 來源與續接](docs/continuity/STONEAGE-INTEGRATION17-THREE-PET-ROOMS-20261109.md)接上 1403／3103／3203 的六處服務、六個原靜態造型與十一條原傳送方向。塔姆塔姆的額外出店方向由 mapwarp 與原 Warp CREATE 互證。另從原混合 2.5 REAL 實讀、解碼 16122／16127 兩個解說員 RD，四間候選底圖已復驗。下一優先 INTEGRATION18／SCENE26-R4 接入四間解說員房。
