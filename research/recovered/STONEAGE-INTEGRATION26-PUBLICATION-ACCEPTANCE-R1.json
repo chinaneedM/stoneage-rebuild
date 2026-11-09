@@ -1,0 +1,243 @@
+{
+  "schema": "stoneage.integration26.market_original_image_publication_acceptance.r1",
+  "date": "2026-11-09",
+  "repo": "chinaneedM/stoneage-rebuild",
+  "pr_url": "https://github.com/chinaneedM/stoneage-rebuild/pull/294",
+  "pr_number": 294,
+  "initial_candidate_head": "e865f0b42bac0e270f4f90a4a9c5949339c8dd58",
+  "correction_candidate_head": "d6bc30d0b669b90f4e8b872d16152258b3b0fffe",
+  "accepted_candidate_head": "4f309d8dc89594fd8a1c1966f3da97de39133680",
+  "base_main_before_merge": "65444b93df5f92ddffb5915883848cc516d25dd7",
+  "merged_main_head": "be25515d14b408ef5a7190ff92c22f7ee3bcefda",
+  "merged_main_tree": "48f2552e14ec90a43f199b9a68a965689c4154af",
+  "original_historical_CURRENT_blob_preserved": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "published_public_derived_blobs": {
+    "research/recovered/STONEAGE-INTEGRATION26-MARKET-12-MIXED25-ORIGINAL-PIXEL-BRIDGE-R1.json": "92862d2a2b77a29aa66192e1660d8bc477cee881",
+    "tests/test_stoneage_integration_module_26.py": "21053218648c0dae38c27da06dec1e7bf68d8518",
+    "docs/continuity/STONEAGE-INTEGRATION26-2009-MARKET-ORIGINAL-MIXED25-PIXEL-BRIDGE-20261109.md": "18ffe41f80a95348a5d8a256c122d56802134406",
+    ".github/workflows/verify-stoneage-integration26-source.yml": "00ef525f2dfe4fd3389f047231474db36b93c2e2",
+    "README.md": "1f6fc6ce9783c073002138e2ce80837be7c3cd70"
+  },
+  "source_reports_exact_Git_blobs": {
+    "INTEGRATION25_market": "24fea2402176d80738267c286e94ae3298084db3",
+    "ITEM06_original_mixed25_pixels": "989361a944b874e49a19c33846c6d49c2f0ca5be"
+  },
+  "original_private_pixel_custody": {
+    "HTML_bytes": 1242805,
+    "HTML_whole_sha256": "ff901220af1484a3367ef52014fe561b25bd6ee9d270b4b6d3fb220ff1f8a700",
+    "private_original_PNG_24552_sha256": "ffcd24fbf6bafd4042b4983cb5ae650813dc9bea40ade242e9d4bac920d08acc",
+    "private_original_PNG_24553_sha256": "d063b00dc3cf088ec94fd7f741457cbe723889ca44aebded27d89c9d504a0223",
+    "private_original_PNG_24560_sha256": "783f5ed58b050fb278efa141a748b4107b68e27dcb180b3320c05fb0feade7ac",
+    "PNG_original_full_sha_and_PNG_dimensions_rechecked": true,
+    "original_REAL_RD_bytes_redecoded_this_unit": false,
+    "commercial_originals_committed_to_Git": false
+  },
+  "initial_failed_CI": {
+    "run_id": 42635393234,
+    "job_id": 129222071389,
+    "actual_conclusion": "failure",
+    "tests_run": 10,
+    "tests_passed": 6,
+    "tests_errors": 4,
+    "reason": "public test line79 looked for original_item_ID instead of established upstream key original_item_id",
+    "original_source_records_modified_to_fix": false
+  },
+  "corrected_first_dedicated_CI": {
+    "run_id": 42635680596,
+    "job_id": 129223073876,
+    "actual_conclusion": "completed_success",
+    "tests_run": 10,
+    "tests_success": 10
+  },
+  "accepted_final_candidate_CI": [
+    {
+      "run_id": 42635811937,
+      "name": "Verify StoneAge INTEGRATION24 five source-qualified original pharmacy shops",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635812005,
+      "name": "Verify StoneAge O12 original compiled sound-number namespace (derived only)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635812051,
+      "name": "Verify StoneAge INTEGRATION20 source-bound rooms",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635811925,
+      "name": "Verify StoneAge INTEGRATION23 six original village shop source scenes",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635811877,
+      "name": "Verify StoneAge INTEGRATION26 original mixed25 market pixel bridge",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635811868,
+      "name": "Verify StoneAge INTEGRATION25 seven original source market shops",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635812006,
+      "name": "Verify StoneAge O11 native source animation and bounded sound-word candidates",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635811886,
+      "name": "Verify StoneAge INTEGRATION21 source-bound pet service atlas",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635812007,
+      "name": "Verify StoneAge INTEGRATION22 ten original shop source rooms",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "accepted_main_merge_CI": [
+    {
+      "run_id": 42635944125,
+      "name": "Verify original native album table and saved-name joins R36",
+      "head_sha": "be25515d14b408ef5a7190ff92c22f7ee3bcefda",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635944214,
+      "name": "Verify StoneAge INTEGRATION25 seven original source market shops",
+      "head_sha": "be25515d14b408ef5a7190ff92c22f7ee3bcefda",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635944206,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "head_sha": "be25515d14b408ef5a7190ff92c22f7ee3bcefda",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635944111,
+      "name": "Verify StoneAge INTEGRATION20 source-bound rooms",
+      "head_sha": "be25515d14b408ef5a7190ff92c22f7ee3bcefda",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635943905,
+      "name": "Verify original local album name material and no master promotion R35",
+      "head_sha": "be25515d14b408ef5a7190ff92c22f7ee3bcefda",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635944436,
+      "name": "Verify StoneAge INTEGRATION23 six original village shop source scenes",
+      "head_sha": "be25515d14b408ef5a7190ff92c22f7ee3bcefda",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635943758,
+      "name": "Verify StoneAge INTEGRATION24 five source-qualified original pharmacy shops",
+      "head_sha": "be25515d14b408ef5a7190ff92c22f7ee3bcefda",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635943952,
+      "name": "Verify StoneAge INTEGRATION26 original mixed25 market pixel bridge",
+      "head_sha": "be25515d14b408ef5a7190ff92c22f7ee3bcefda",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635944372,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "head_sha": "be25515d14b408ef5a7190ff92c22f7ee3bcefda",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635943996,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "head_sha": "be25515d14b408ef5a7190ff92c22f7ee3bcefda",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635943889,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "head_sha": "be25515d14b408ef5a7190ff92c22f7ee3bcefda",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635943828,
+      "name": "Verify original four village interior materials R34",
+      "head_sha": "be25515d14b408ef5a7190ff92c22f7ee3bcefda",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635943756,
+      "name": "Verify StoneAge INTEGRATION21 source-bound pet service atlas",
+      "head_sha": "be25515d14b408ef5a7190ff92c22f7ee3bcefda",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635944237,
+      "name": "Verify original same-build named-entity source gate R31",
+      "head_sha": "be25515d14b408ef5a7190ff92c22f7ee3bcefda",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635943795,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "head_sha": "be25515d14b408ef5a7190ff92c22f7ee3bcefda",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635944272,
+      "name": "Verify StoneAge INTEGRATION22 ten original shop source rooms",
+      "head_sha": "be25515d14b408ef5a7190ff92c22f7ee3bcefda",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 42635944082,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "be25515d14b408ef5a7190ff92c22f7ee3bcefda",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "accepted_scope": {
+    "original_market_item_distinct_IDs": 181,
+    "original_earlier_TW10_retail_source_RD_candidates": 169,
+    "newly_qualified_original_later_mixed25_RD_candidates_for_prior_TW10_missing_IDs": 12,
+    "distinct_later_mixed25_original_RD_image_aliases": 3,
+    "original_market_ItemList_source_occurrences_for_these_12_IDs": 13,
+    "new_actual_RD_raw_decodes": 0,
+    "original_market_native_trades_observed": 0
+  },
+  "next_priority": "No new O70/O74 mission source duplication: those preexist. Return to source-qualified unintegrated material content across modules. Reopen current market only on newly acquired same-build original runtime/source confirming native shop selection, palette or original missing pixel.",
+  "Stage_A": "7_PARTIAL_2_OPEN",
+  "Stage_B_wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}
