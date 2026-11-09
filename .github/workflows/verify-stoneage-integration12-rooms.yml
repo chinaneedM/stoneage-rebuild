@@ -1,0 +1,23 @@
+name: Verify StoneAge INTEGRATION12 two source rooms
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION12-*.json'
+      - 'tests/test_stoneage_integration_module_12.py'
+      - '.github/workflows/verify-stoneage-integration12-rooms.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION12-*.json'
+      - 'tests/test_stoneage_integration_module_12.py'
+      - '.github/workflows/verify-stoneage-integration12-rooms.yml'
+jobs:
+  public-evidence-guard:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_12.py' -v

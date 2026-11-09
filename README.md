@@ -2239,3 +2239,7 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-09 — INTEGRATION11｜霍特爾 1300 原图、创建配置与双侧传送端点
 
 完成 1300 全图候选。补齐 20 个台湾 1.0 原 RD 别名对应的 43 次引用，全图 6,192 次候选绘制有原图。六条原 CREATE 落在五个坐标，两个时钟块同格，另保留寄信与普通对话配置的同格关系。46 条传送表记录与直接 CREATE 一一吻合，双方格值已核八张相连原 DAT。原生触发、碰撞及历史同部署仍待证。下一包优先核 1306、1310 房间来源与门点。见[本轮接续](docs/continuity/STONEAGE-INTEGRATION11-FLOOR1300-SOURCE-SCENE-20261109.md)。
+
+## 2026-11-09 — INTEGRATION12｜霍特爾两间室内有据场景
+
+用已保管的原源资料复核 1306「霍特爾的長老家」与 1310「營養劑名人的家」两间地图、9 条原 CREATE 与 10 条双端传送记录；私人图像候选合计 393 绘制引用无缺源。公开保留原服务器两层与客户端 DAT 差值，以及 1310 商店主物品表缺 21 ID、备用表有 21 ID 的冲突。原生门点行为、商店实际买卖及初版归属仍未证明。见[INTEGRATION12 证据与 NEXT](docs/continuity/STONEAGE-INTEGRATION12-HOTORU-TWO-ROOMS-20261109.md)。

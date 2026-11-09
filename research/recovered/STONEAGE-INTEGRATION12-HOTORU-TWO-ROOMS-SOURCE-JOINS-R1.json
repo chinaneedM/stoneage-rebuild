@@ -1,0 +1,536 @@
+{
+  "schema": "stoneage.integration12.hotoru_two_rooms.source_bounded.r1",
+  "basis": {
+    "main_head": "2ad03fd85b8cd8b78fe26ea25789dfd9b2ac3118",
+    "main_tree": "d31528ac826fe13fb0965d22587fdd067b03d132",
+    "retained_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "prior_integration11_blob": "3a3d601d9c40a322871ae4996893012d2f2dd3ef"
+  },
+  "provenance": {
+    "source_class": "2016-era community preserved mixed25 source carrier; not a certified early official same-deployment build",
+    "original_mixed25_parent_rar_sha256": "d71e2e6766e8ac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "private_evidence_zip": {
+      "bytes": 3811628,
+      "sha256": "92f8f16985cad5b841424593526ad7801b520d7d4abd7fcc7e13db7c3f8d70d4",
+      "members": 31,
+      "all_members_crc_checked": true
+    },
+    "private_source_derived_json": {
+      "bytes": 33379,
+      "sha256": "babf44a883c41b7c3ec1962cd46ecc805217e0aacd455983f85463745d31f29c"
+    },
+    "independent_private_local_checks": 208,
+    "private_source_member_count": 20,
+    "parent_rar_fully_reread_this_work_unit": false,
+    "art_reuse": "Source-qualified existing MAP04/TW1 candidate images; not proof of original renderer, scene composition or official co-deployment"
+  },
+  "rooms": {
+    "1306": {
+      "role": "elder_house",
+      "original_name": "霍特爾的長老家|0",
+      "display_name": "霍特爾的長老家",
+      "name_raw_sha256": "cc14d2f3883d26ac4fdd8ac2b0d5ae422c9b058cbeb3019ef7ac1db4600ba2eb",
+      "parent_floor": 1300,
+      "dimensions": [
+        40,
+        30
+      ],
+      "client_DAT": {
+        "bytes": 7208,
+        "sha256": "5dea261ca1c223189cedebdf579642ba134470a27e4f5e1d12505cf2317c18ae"
+      },
+      "server_LS2MAP": {
+        "bytes": 4844,
+        "sha256": "7a0314ec16a0d6191dadb8360fd8c7cdeb251c6d824ca70abb1c0ea1d4f140e8",
+        "dimension_endian": "big",
+        "layer_u16_endian": "big",
+        "header_bytes": 44
+      },
+      "source_create": [
+        {
+          "path": "family/familyman.create",
+          "ordinal": 4,
+          "sha256": "76ab4a04eaef9806c0013918d8ec6cf2a408b97453f26dc038ce000c009fd9c4",
+          "xy": [
+            23,
+            17
+          ],
+          "graphic_alias": 16067,
+          "functionset": "Familyman"
+        },
+        {
+          "path": "family/fmdengon.create",
+          "ordinal": 8,
+          "sha256": "a86ec728f28aa46ef349eaa6f1e23a62ea0dcb7d5f6bba7413ba8e238ae31ac4",
+          "xy": [
+            22,
+            14
+          ],
+          "graphic_alias": 10063,
+          "functionset": "FmDengon"
+        },
+        {
+          "path": "genout/shop_m.create",
+          "ordinal": 66,
+          "sha256": "61701a08587db6eaf14fff318507a41b2b44a725ed8a59ee8c2a3a6e5791930c",
+          "xy": [
+            20,
+            14
+          ],
+          "graphic_alias": 16001,
+          "functionset": "TownPeople",
+          "parameter_sha256": "ec45d2d676c97beb8c31d88d4fe66c6b81648ce9886a3c8c8416f461d8792436"
+        },
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 98,
+          "sha256": "45032d3a9226955a083d5204a6b8eb5084c22db1a45a5c395839d689dfa42963",
+          "xy": [
+            21,
+            21
+          ],
+          "target": [
+            1300,
+            53,
+            26
+          ],
+          "functionset": "Warp"
+        },
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 100,
+          "sha256": "ebaff729e7566df7c3fe5fa81c6d35422d02a870e42c7a81311a4414ed27a534",
+          "xy": [
+            20,
+            21
+          ],
+          "target": [
+            1300,
+            52,
+            26
+          ],
+          "functionset": "Warp"
+        },
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 102,
+          "sha256": "8f97dff44aeda6411b96f327a77f1c7489c072964f365c8dcc976820077fb521",
+          "xy": [
+            21,
+            21
+          ],
+          "target": [
+            1300,
+            54,
+            26
+          ],
+          "functionset": "Warp"
+        }
+      ],
+      "layer_comparison": [
+        {
+          "equal": 1200,
+          "changed": 0,
+          "server_to_client_differences": []
+        },
+        {
+          "equal": 1129,
+          "changed": 71,
+          "server_to_client_differences": [
+            [
+              2,
+              0,
+              71
+            ]
+          ]
+        }
+      ],
+      "observed_image_candidates": {
+        "draw_references": 265,
+        "distinct_aliases": 58,
+        "uncovered_references": 0,
+        "canvas": [
+          2209,
+          1665
+        ],
+        "private_png_sha256": "39a0baac9752a1aede9deeebeec02e193a5b5995c6e61e3fe5ba91e68542f975",
+        "private_rgba_sha256": "abedd1638014b3c351d8f52d9e428fc98cf14223cc139395b5bffb85d0c4f1ea"
+      }
+    },
+    "1310": {
+      "role": "specialty_item_shop_house",
+      "original_name": "營養劑名人的家",
+      "display_name": "營養劑名人的家",
+      "name_raw_sha256": "293f3addeae0effd353ebf0d8271bc3960a27fe98e0ccfbeee2d4a557d408817",
+      "parent_floor": 1300,
+      "dimensions": [
+        30,
+        30
+      ],
+      "client_DAT": {
+        "bytes": 5408,
+        "sha256": "88744b050150a2275c5775e4eb7d4aa4c36a1db78713f38b0a553d450bf061be"
+      },
+      "server_LS2MAP": {
+        "bytes": 3644,
+        "sha256": "3597e27cb76cae22f0f20d1f49ed9824071c6d65894ddac844088c059e09a21c",
+        "dimension_endian": "big",
+        "layer_u16_endian": "big",
+        "header_bytes": 44
+      },
+      "source_create": [
+        {
+          "path": "genout/shop_m2.create",
+          "ordinal": 119,
+          "sha256": "398e2abe0ec41f8af9fd8abae87bf258b3eddec341aea339581533067715ea0e",
+          "xy": [
+            16,
+            16
+          ],
+          "graphic_alias": 16064,
+          "functionset": "ItemShop",
+          "parameter_sha256": "46b3e75524c5a67430e6dc1036e030b10440adc033a3ba978cded57cae68e3be"
+        },
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 104,
+          "sha256": "19f125877fe95dfe66835f78671c05c91806306843de97ffd7f90c7d7bb220df",
+          "xy": [
+            10,
+            15
+          ],
+          "target": [
+            1300,
+            68,
+            44
+          ],
+          "functionset": "Warp"
+        },
+        {
+          "path": "genout/warp_y.create",
+          "ordinal": 106,
+          "sha256": "c96b0722f56e323f20c19dda3cc4f970ddfc0f0304f32a88a8e7a7e195cc7c8f",
+          "xy": [
+            10,
+            16
+          ],
+          "target": [
+            1300,
+            68,
+            45
+          ],
+          "functionset": "Warp"
+        }
+      ],
+      "layer_comparison": [
+        {
+          "equal": 900,
+          "changed": 0,
+          "server_to_client_differences": []
+        },
+        {
+          "equal": 895,
+          "changed": 5,
+          "server_to_client_differences": [
+            [
+              2,
+              0,
+              4
+            ],
+            [
+              16073,
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "server_only_object_cell": {
+        "xy": [
+          16,
+          15
+        ],
+        "value": 16073,
+        "client_value": 0
+      },
+      "observed_image_candidates": {
+        "draw_references": 128,
+        "distinct_aliases": 66,
+        "uncovered_references": 0,
+        "canvas": [
+          1889,
+          1425
+        ],
+        "private_png_sha256": "fbf2b043432b848719324ce262c78eb400fc1ac21fe52d609c371ac2f458028c",
+        "private_rgba_sha256": "5e36b8d88aceb92a1e1ddea28f6800a839a1eb98947a092d4aba40022ada1b66"
+      }
+    }
+  },
+  "original_warp_rows": [
+    {
+      "line": 1479,
+      "row_sha256": "f8878d33fb946045e71cac3278196a479b5a5145a18713a727eacb9d1db0ffa9",
+      "source": [
+        1300,
+        53,
+        26
+      ],
+      "target": [
+        1306,
+        21,
+        21
+      ],
+      "exact_reverse": true,
+      "create_path": "genout/warp_y.create",
+      "create_ordinal": 97,
+      "create_sha256": "5588efe2ef2f6b2a3ed9e1dc8b56da1624d4014f3b7faeaa3714145b96feefef"
+    },
+    {
+      "line": 1480,
+      "row_sha256": "4c832c0124a9f8c104ebab443b1a8b1eb27c2542deec3fc6123dfea0649455b8",
+      "source": [
+        1306,
+        21,
+        21
+      ],
+      "target": [
+        1300,
+        53,
+        26
+      ],
+      "exact_reverse": true,
+      "create_path": "genout/warp_y.create",
+      "create_ordinal": 98,
+      "create_sha256": "45032d3a9226955a083d5204a6b8eb5084c22db1a45a5c395839d689dfa42963"
+    },
+    {
+      "line": 1481,
+      "row_sha256": "adbcd4218219d2ba40f5974cf393cd09a43c88d2308465ae6f3d321c68bbee78",
+      "source": [
+        1300,
+        52,
+        26
+      ],
+      "target": [
+        1306,
+        20,
+        21
+      ],
+      "exact_reverse": true,
+      "create_path": "genout/warp_y.create",
+      "create_ordinal": 99,
+      "create_sha256": "156355457d41e6175bee65a7a8dc13868c04bdeb18e4c90853090d51a275acd4"
+    },
+    {
+      "line": 1482,
+      "row_sha256": "62a23812b642afaab6353adee73ea0cc9ad6b11acb2eb21d4cdd30c90278ced0",
+      "source": [
+        1306,
+        20,
+        21
+      ],
+      "target": [
+        1300,
+        52,
+        26
+      ],
+      "exact_reverse": true,
+      "create_path": "genout/warp_y.create",
+      "create_ordinal": 100,
+      "create_sha256": "ebaff729e7566df7c3fe5fa81c6d35422d02a870e42c7a81311a4414ed27a534"
+    },
+    {
+      "line": 1483,
+      "row_sha256": "b6c922ecc2b49e44e4da38e803508fc21e822521711a4fb14fefeb28445b73df",
+      "source": [
+        1300,
+        54,
+        26
+      ],
+      "target": [
+        1306,
+        21,
+        21
+      ],
+      "exact_reverse": true,
+      "create_path": "genout/warp_y.create",
+      "create_ordinal": 101,
+      "create_sha256": "71cd9893755c4b0d63c6c63549428802a18baba80a40a869b71423bb40e8e1d4"
+    },
+    {
+      "line": 1484,
+      "row_sha256": "1c38ff4441c47e70622b726e81d8731e4ed563dd9b667ea9190c7cfedb701b0d",
+      "source": [
+        1306,
+        21,
+        21
+      ],
+      "target": [
+        1300,
+        54,
+        26
+      ],
+      "exact_reverse": true,
+      "create_path": "genout/warp_y.create",
+      "create_ordinal": 102,
+      "create_sha256": "8f97dff44aeda6411b96f327a77f1c7489c072964f365c8dcc976820077fb521"
+    },
+    {
+      "line": 1485,
+      "row_sha256": "fd2a1c11cd790042643d836c840ae3a1c3e762e22a0498fdd9d90951f7154dcf",
+      "source": [
+        1300,
+        68,
+        44
+      ],
+      "target": [
+        1310,
+        10,
+        15
+      ],
+      "exact_reverse": true,
+      "create_path": "genout/warp_y.create",
+      "create_ordinal": 103,
+      "create_sha256": "f519a23e655aa6ef186dd6826e564b890cc1f55ed793bade0b7e029323c970c5"
+    },
+    {
+      "line": 1486,
+      "row_sha256": "9c2642fa628d0b2c69656abe45bdfc5bc0e0bcc0390bbadaa6beba827a96f485",
+      "source": [
+        1310,
+        10,
+        15
+      ],
+      "target": [
+        1300,
+        68,
+        44
+      ],
+      "exact_reverse": true,
+      "create_path": "genout/warp_y.create",
+      "create_ordinal": 104,
+      "create_sha256": "19f125877fe95dfe66835f78671c05c91806306843de97ffd7f90c7d7bb220df"
+    },
+    {
+      "line": 1487,
+      "row_sha256": "4bffe3083bea746fa76852fd1a4dc95f9297c766fdd21ad260cb094401c615d1",
+      "source": [
+        1300,
+        68,
+        45
+      ],
+      "target": [
+        1310,
+        10,
+        16
+      ],
+      "exact_reverse": true,
+      "create_path": "genout/warp_y.create",
+      "create_ordinal": 105,
+      "create_sha256": "b0fcc1dc894ee7f6fe838d26ef95346eda4907c77fd2b98fbb57b84cf5138957"
+    },
+    {
+      "line": 1488,
+      "row_sha256": "fac3087e8fbd39be364f704022f07e319f707d956690823929db0062c2007762",
+      "source": [
+        1310,
+        10,
+        16
+      ],
+      "target": [
+        1300,
+        68,
+        45
+      ],
+      "exact_reverse": true,
+      "create_path": "genout/warp_y.create",
+      "create_ordinal": 106,
+      "create_sha256": "c96b0722f56e323f20c19dda3cc4f970ddfc0f0304f32a88a8e7a7e195cc7c8f"
+    }
+  ],
+  "shop_itemset_conflict": {
+    "floor": 1310,
+    "original_parameter_path": "genout/ss_1310_18_15",
+    "parameter_sha256": "46b3e75524c5a67430e6dc1036e030b10440adc033a3ba978cded57cae68e3be",
+    "actual_create_xy": [
+      16,
+      16
+    ],
+    "filename_suffix_xy": [
+      18,
+      15
+    ],
+    "primary_itemset": "data/itemset.txt",
+    "primary_sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+    "alternate_itemset": "itemset0710.txt",
+    "alternate_sha256": "6d6d63fda59c6bda2f239fe18c9361b5c9da18c84f678b7cc95bde24544292fb",
+    "primary_unique_ids": 13254,
+    "alternate_unique_ids": 13915,
+    "item_list": [
+      1546,
+      1547,
+      1548,
+      1549,
+      1550,
+      1551,
+      1552,
+      1553,
+      1554,
+      1555,
+      1556,
+      1557,
+      1578,
+      1579,
+      1580,
+      1581
+    ],
+    "limit_item_ids": [
+      1546,
+      1547,
+      1548,
+      1549,
+      1550,
+      1551,
+      1552,
+      1553,
+      1554,
+      1555,
+      1556,
+      1557,
+      1578,
+      1579,
+      1580,
+      1581,
+      1582,
+      1583,
+      1584,
+      1585,
+      1586
+    ],
+    "special_item_ids": [
+      1582,
+      1583,
+      1584,
+      1585,
+      1586
+    ],
+    "primary_missing_count": 21,
+    "alternate_missing_count": 0,
+    "source_rate_strings": {
+      "buy_rate": "200.0",
+      "sell_rate": "1.0",
+      "special_rate": "1.0"
+    },
+    "note": "Setup has conditional itemset[3-6]file path entries, not proof of the compiled runtime selecting a particular table. Static item rows/rate fields do not prove transactions."
+  },
+  "limits": {
+    "native_gameplay_observed": false,
+    "native_door_choice_verified": false,
+    "native_shop_transaction_verified": false,
+    "native_NPC_spawn_verified": false,
+    "native_collision_verified": false,
+    "original_official_same_deployment_verified": false,
+    "candidate_2d_render_is_original_native_renderer": false,
+    "proprietary_assets_published": false
+  }
+}
