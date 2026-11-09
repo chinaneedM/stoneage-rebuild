@@ -2254,3 +2254,6 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-09 — INTEGRATION15-R1｜霍特爾寵物店 1303 原服務資料現場關聯（PARTIAL）
 
 [INTEGRATION15 來源與續接界限](docs/continuity/STONEAGE-INTEGRATION15-HOTORU-PET-SERVICE-BRIDGE-20261109.md)以 INTEGRATION13 原場景座標與 GAMEPLAY03／05 原參數全 SHA 核對 1303 寵物寄放和七項技能候選，明確分開與技能導師同圖號的 TownPeople。新原 RD 解碼和私人現場 HTML 實際修改均為零；下一步只在能取回私人觀察與合格原像素時才做 R2，原生互動與官方同部署維持未證。
+## 2026-11-09 — INTEGRATION15-R2｜霍特爾宠物店 1303 原图候选与服务资料合并观察
+
+[INTEGRATION15-R2 私人实物交付与来源边界](docs/continuity/STONEAGE-INTEGRATION15-R2-HOTORU-PET-SOURCE-VISUAL-20261109.md)：实际回读 INTEGRATION13 与 WORLD11 私人 ZIP，按已验 PNG/RGBA/RD 哈希将 16048、16049 两张静态原图候选关联到 1303 的三条独立 CREATE 与原参数，保留五间房原底图、人物共享图号但不同 NPC 的关系。私人离线页新增显式可关叠图、三个可点资料卡及原 CP950 参数；现代叠图不代表原客户端实际呈现。浏览器只能用内存测试副本（文件/localhost 导航被禁），原生交易/技能/人物层序/官方同部署均未证；私人包已存档并回读 SHA 验收。
