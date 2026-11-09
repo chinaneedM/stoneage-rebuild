@@ -2311,3 +2311,7 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-09 — INTEGRATION28｜奇喀喀全村与宠物店门内外
 
 [全村来源及门点验收](docs/continuity/STONEAGE-INTEGRATION28-QIKAKA-VILLAGE-SCENES-20261109.md)：3400 的 12×11 门外窗口接 3403 室内，两组原门点可点选对照。全村 120×120 原 DAT 的 6,461 次候选放置所需 329 个图号均有源，321 个复用 TW1 图块逐块与 mixed25 原 RD 同哈希，另 8 个重新从原 RD 双解码。33 条涉及 3400 的有向原配置与 Warp CREATE 完全相合，核齐八个楼层的两端 DAT 三平面值。历史 CURRENT 原 blob 完整保留。下一步接 3406 村长家与 QUEST15 的两条 event20 原 CREATE。
+
+## 2026-11-10 — INTEGRATION29｜奇喀喀村长家、吉德与 event20
+
+[门内外及原脚本来源](docs/continuity/STONEAGE-INTEGRATION29-QIKAKA-CHIEF-HOUSE-EVENT20-20261110.md)：3406 村长家底图和 3400 门外候选接上三条原门点、吉德三处人物位置与三份 event20 脚本的 14 段原文。村外 16030 从同保存载体原 RD 双解码。保留 3406 (10,16) 的额外单向出口及原运行边界。下一项接 20607／20608 的三处地下城配置，已预检原 DAT、脚本和图号命名空间。
