@@ -76,7 +76,7 @@ def verify(r, market, item06):
                 "original itemset->pixel alias ID mapping")
         require(x["original_RD_raw_bytes_redecoded_this_turn"] is False and
                 x["native_runtime_image_selector_proven"] is False, "cannot promote static image")
-    expected = {x["original_item_ID"]: x for x in missing}
+    expected = {x["original_item_id"]: x for x in missing}
     linked = r["source_bound_twelve_item_IDs"]
     require([x["id"] for x in linked] == [x["original_item_id"] for x in missing], "ordered missing item group")
     for x in linked:
