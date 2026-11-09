@@ -7,6 +7,8 @@ on:
       - 'tests/test_stoneage_integration_module_20.py'
       - 'docs/continuity/STONEAGE-INTEGRATION20-TWO-PET-ROOMS-20261109.md'
       - '.github/workflows/verify-stoneage-integration20-source.yml'
+      - 'research/recovered/STONEAGE-INTEGRATION28-QIKAKA-VILLAGE-SCENE-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_28.py'
       - 'README.md'
   pull_request:
     paths:
@@ -14,6 +16,8 @@ on:
       - 'tests/test_stoneage_integration_module_20.py'
       - 'docs/continuity/STONEAGE-INTEGRATION20-TWO-PET-ROOMS-20261109.md'
       - '.github/workflows/verify-stoneage-integration20-source.yml'
+      - 'research/recovered/STONEAGE-INTEGRATION28-QIKAKA-VILLAGE-SCENE-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_28.py'
       - 'README.md'
 jobs:
   public-source-evidence:
@@ -26,3 +30,4 @@ jobs:
         with:
           python-version: '3.11'
       - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_20.py' -v
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_28.py' -v

@@ -2307,3 +2307,7 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-09 — INTEGRATION27｜四间宠物解说员原图与奇喀喀室外门点
 
 [四房原图及 3400.DAT 来源续接](docs/continuity/STONEAGE-INTEGRATION27-PET-TUTORS-AND-3400-DAT-20261109.md)：同保存混合 2.5 原 RAR 取回 16122／16127 两份原 RD，ADRN、RD、索引、RGBA 与 PNG 全 SHA 对上 INTEGRATION17。四条独立 CREATE 接入 1003／2003／3003／4003 的已验底图，原图候选和十条原文可离线查阅。另成功取得 86,408 B、120×120 的 3400 三平面原 DAT，核对两组门格和四条明列往返配置。公开[来源收据](research/recovered/STONEAGE-INTEGRATION27-PET-TUTORS-AND-3400-DAT-SOURCE-R1.json)保留原件散列与执行边界。历史 CURRENT 原 blob 完整保留。下一步转尚未整合且有原件的 Stage A 内容，原生绘制、教学和传送运行待证。
+
+## 2026-11-09 — INTEGRATION28｜奇喀喀全村与宠物店门内外
+
+[全村来源及门点验收](docs/continuity/STONEAGE-INTEGRATION28-QIKAKA-VILLAGE-SCENES-20261109.md)：3400 的 12×11 门外窗口接 3403 室内，两组原门点可点选对照。全村 120×120 原 DAT 的 6,461 次候选放置所需 329 个图号均有源，321 个复用 TW1 图块逐块与 mixed25 原 RD 同哈希，另 8 个重新从原 RD 双解码。33 条涉及 3400 的有向原配置与 Warp CREATE 完全相合，核齐八个楼层的两端 DAT 三平面值。历史 CURRENT 原 blob 完整保留。下一步接 3406 村长家与 QUEST15 的两条 event20 原 CREATE。
