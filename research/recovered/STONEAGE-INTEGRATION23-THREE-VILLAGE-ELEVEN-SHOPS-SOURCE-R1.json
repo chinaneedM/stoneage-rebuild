@@ -1,0 +1,2656 @@
+{
+  "schema": "stoneage.integration23.three_village_eleven_original_shop_CONFIGs_source.r1",
+  "date": "2026-11-09",
+  "source_scope": "LATER_COMMUNITY_MIXED25_ORIGINAL_SHOP_CREATE_PARAMETERS_DAT_AND_LS2MAP_WITH_SEPARATE_TW10_RETAIL_CANDIDATE_BITMAPS",
+  "parent_source_sha256": {
+    "MAP09": "d84d0800dd600798769dfb7251a1d7816588ac061ccc27812ac64a37922d4a8a",
+    "ITEM01": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "I17": "c98770de851d0ba704e1a4c8f18d364c4f2a87c3746ec717953fd88c4930c93f",
+    "RAR": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+  },
+  "original_shop_create_file_sha256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+  "original_mapwarp_sha256": "b7b50f42efa8e5a3f740d49a8d0c01cbf994d1bb66151b16ff5b5e7c14e7595c",
+  "six_rooms": [
+    {
+      "floor": 1001,
+      "original_DAT_sha256": "62dbef1614ede0ba032ca9c69cbfdc3d43938e45baba78701885790937b86b90",
+      "original_LS2MAP_sha256": "9271eeb71b6d894e47cc5e67e62fcbad648d7fec73ecb50d6fc271cc299cfbdc",
+      "source_RAR_member_crc32": "8b098f1c",
+      "server_vs_client_layers_changed_cells": [
+        0,
+        4
+      ],
+      "same_source_changed_pairs_only": [
+        "client_u16_0__server_u16_2"
+      ],
+      "original_DAT_map_geometry": [
+        30,
+        30
+      ],
+      "verified_TW1_tile_candidate_placements": 133,
+      "distinct_TW1_tile_candidate_aliases": 38,
+      "verified_full_combined_RGBA_sha256": "a3a4873fc765b5c67bdd9e80fe80de9f3befe57b6291ede8f402208100f39c60",
+      "candidate_private_PNG_sha256": "ccb67f956866b269668e19949c32d1080b92d891bd8f31647bfd2260e427e44a",
+      "shop_configs": [
+        {
+          "shop_role_original": "OFFENCE",
+          "graphic_alias": 16017,
+          "borncorner_xy": [
+            17,
+            13
+          ],
+          "source_DAT_three_u16_at_create": [
+            5001,
+            0,
+            49152
+          ],
+          "original_CREATE_block_sha256": "d7110d91749ba08917f3e76b7c9772e67dcc99d32bffe2384d438931cb0959c6",
+          "original_CREATE_ordinal_within_shop_m": 1,
+          "original_parameter_path": "genout/ss_1001_17_13",
+          "original_parameter_sha256": "f907e77774bc66151465f47e000852a598b935890f2b3334b6a8552f189b279a",
+          "original_ItemList_count": 17,
+          "original_range_expression_tokens": [],
+          "range_expansion_candidate_count": 0,
+          "original_LimitItemType_literal": "OFFENCE",
+          "original_LimitItemNo_literal": "",
+          "raw_buy_rate": "1.0",
+          "raw_sell_rate": "0.2",
+          "raw_special_rate": "1.5",
+          "original_fields_missing_or_empty": [
+            "LimitItemNo",
+            "special_item"
+          ],
+          "separate_original_LimitItemNo_original_itemset_source_join": null,
+          "items": [
+            {
+              "original_item_id": 0,
+              "both_original_itemset_rows_sha256": "c366ec66b8dd03656d7ddbe538cd0cd9cb38116d1d72ed60cb1ed8f958a851e3",
+              "source_original_price_numeric_literal": "65",
+              "source_original_type_numeric_literal": "1",
+              "source_image_alias_numeric": 20033,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "525dedcf9f27b1571a06505dc5244c22df745eb1c1c9ad19a3cfc31315fc8567",
+              "verified_TW10_candidate_RGBA_sha256": "ae20edab9014255da52820dbbd8ffce6b5aed986192e8d06ccc194a4292323ab"
+            },
+            {
+              "original_item_id": 4,
+              "both_original_itemset_rows_sha256": "745fec01f05263a6421a3281a2e36a2abbdb371e32f6ae1c59bdbb3c13a04215",
+              "source_original_price_numeric_literal": "105",
+              "source_original_type_numeric_literal": "1",
+              "source_image_alias_numeric": 20032,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "d17fcf15a93fee8768b63a4845914f0f6d079a63974cfbd9b024e3c8282b404f",
+              "verified_TW10_candidate_RGBA_sha256": "815aaeb2391150f8ca60662d698ae674bbc5ef71b16464aaf56b594b199252b3"
+            },
+            {
+              "original_item_id": 10,
+              "both_original_itemset_rows_sha256": "7d68cfad604124b38d4c280bbad368eddfa7aa1adf53c1bb4dd3e8dd56e55831",
+              "source_original_price_numeric_literal": "260",
+              "source_original_type_numeric_literal": "1",
+              "source_image_alias_numeric": 20013,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "7db6abe5dc1b3cc1b1f48299a1ef3a1aa748bb181e762527f1b878ff2cea8468",
+              "verified_TW10_candidate_RGBA_sha256": "3ecf4964704ee66ea50052980a66ee6fb833b5aedac2bbf0d1ef744a4a401fcd"
+            },
+            {
+              "original_item_id": 20,
+              "both_original_itemset_rows_sha256": "0bd656da9eaf8fcc131353aa09752022c7b4f1bf7b3e41970c25855f950d5ec9",
+              "source_original_price_numeric_literal": "1040",
+              "source_original_type_numeric_literal": "1",
+              "source_image_alias_numeric": 20000,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "12beb65dd689e7750636a46962d3cd17e2b9e4b5212120f010cfd80332eeaa59",
+              "verified_TW10_candidate_RGBA_sha256": "d4c71621326a8914bae22eaab2754d699a27acf34cbaa8740f63c4ca42a6b5b2"
+            },
+            {
+              "original_item_id": 40,
+              "both_original_itemset_rows_sha256": "9bb079c8832bdf97393054373109003ea8f06a10ef76e0985a62cb3825cec720",
+              "source_original_price_numeric_literal": "6500",
+              "source_original_type_numeric_literal": "1",
+              "source_image_alias_numeric": 20015,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "2659b3981dbe2e1482b19999064b931071504ad26d865e2b757234937874cc58",
+              "verified_TW10_candidate_RGBA_sha256": "7473e0f48578c8175ff70b68cd1a4e7e84cae33c801b6126a71853c2d24a0d3f"
+            },
+            {
+              "original_item_id": 100,
+              "both_original_itemset_rows_sha256": "004be9ae45759826be1345758a59820d44e8a9eae866836d3aaabfee18f2254e",
+              "source_original_price_numeric_literal": "50",
+              "source_original_type_numeric_literal": "2",
+              "source_image_alias_numeric": 20103,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "08d46fdae5bd4e5b437151b4cbd2d348039557af62d6249a81182595094d5244",
+              "verified_TW10_candidate_RGBA_sha256": "a77dddc7f55d9be85a20a8f431910b24686f5e91f68c4d59b8b99f6aa6004429"
+            },
+            {
+              "original_item_id": 110,
+              "both_original_itemset_rows_sha256": "55213e62281413f5ad464ebf7c71c671eb1ccb8e2ecca37fd3fb8c4e86187500",
+              "source_original_price_numeric_literal": "200",
+              "source_original_type_numeric_literal": "2",
+              "source_image_alias_numeric": 20102,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "df9cc91a91e1584cd4015c2767fcda6cd984a3b928685c8e5d4ac28e8165b6ec",
+              "verified_TW10_candidate_RGBA_sha256": "cf800e5832cd356485c408f07c6d2140e52ed4ab283428c10aada0d74712d930"
+            },
+            {
+              "original_item_id": 130,
+              "both_original_itemset_rows_sha256": "376e7cbc6aa047915780f9e0b0eb5ad9d95d413e43da2a6e81ecbc6873299943",
+              "source_original_price_numeric_literal": "2300",
+              "source_original_type_numeric_literal": "2",
+              "source_image_alias_numeric": 20104,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "c614db4fbce1a5c14f216c52175b4bd4bd9cd6c528a8e67f243d581116c45db7",
+              "verified_TW10_candidate_RGBA_sha256": "6da35afaba879d400c28833129262e30d87b0a3d79e8de6f75687d8002ecb41b"
+            },
+            {
+              "original_item_id": 200,
+              "both_original_itemset_rows_sha256": "0a17517babfb24317689fcb9ad8cf81a5132d6849731fa5b8374e996f6379e18",
+              "source_original_price_numeric_literal": "60",
+              "source_original_type_numeric_literal": "3",
+              "source_image_alias_numeric": 20402,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "83350655cd96cfc5ad478f7579c466b37dc1c59c9c06f518ddb54783e4e6af0d",
+              "verified_TW10_candidate_RGBA_sha256": "e9e624d080a2b5de32bed05098af6e21a6528a5eacc313f5c8238de34e272fb4"
+            },
+            {
+              "original_item_id": 210,
+              "both_original_itemset_rows_sha256": "8df9f0619d67e4cd5bee011653063454c5a51561919a6828628baf92b0decaa2",
+              "source_original_price_numeric_literal": "240",
+              "source_original_type_numeric_literal": "3",
+              "source_image_alias_numeric": 20422,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "2416c386dd3e91e6bb3c3a54d32660adc87a5630a659b27931fb468489ac8e5b",
+              "verified_TW10_candidate_RGBA_sha256": "215f0b9d21cef3be1f82629c78991f480aeb2be87ff77e514228ef00ed0daa51"
+            },
+            {
+              "original_item_id": 220,
+              "both_original_itemset_rows_sha256": "80b3f34d4a482f48e0478ebca048b09e62d5244f60fdcc5eb46a9988f26e4512",
+              "source_original_price_numeric_literal": "960",
+              "source_original_type_numeric_literal": "3",
+              "source_image_alias_numeric": 20411,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "abff92f1b91bd238ebee03117c1a701a8d036583e0ade9c9613d3caa7700b225",
+              "verified_TW10_candidate_RGBA_sha256": "fcc30920f8b6f75a82a8e6635010c2f9bf0fb8cb41aab25c013e5850f1a59f72"
+            },
+            {
+              "original_item_id": 240,
+              "both_original_itemset_rows_sha256": "3187ba7bb6bccb92d4483f1386eaa9c228e8e365aee9f347236be53d2eaec663",
+              "source_original_price_numeric_literal": "6000",
+              "source_original_type_numeric_literal": "3",
+              "source_image_alias_numeric": 20401,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "9e8bb58a781a5c275825558d7320939475fb48a7a5052c6102a7fe564adb9d5c",
+              "verified_TW10_candidate_RGBA_sha256": "4736cd9303b0e028712245038f06631f5632fd58f3c9c15c6afc081ef262378f"
+            },
+            {
+              "original_item_id": 300,
+              "both_original_itemset_rows_sha256": "5c8566ff13422c70b003014f60208d76e6131674f8b883a24414321633586340",
+              "source_original_price_numeric_literal": "55",
+              "source_original_type_numeric_literal": "0",
+              "source_image_alias_numeric": 20203,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "2d5ad36ebcf450fda60827ab0ed24ea702e93e75d67ba2db820b12c5573bccf5",
+              "verified_TW10_candidate_RGBA_sha256": "68db5e9e05c6350400d6212746fc2abdb7852b6d76ef5450b2dac86f3f0aa306"
+            },
+            {
+              "original_item_id": 310,
+              "both_original_itemset_rows_sha256": "a657656a1ececcdabafddd8d2d51a2a72f64b60a223f691cc7545d2ffcb1164f",
+              "source_original_price_numeric_literal": "220",
+              "source_original_type_numeric_literal": "0",
+              "source_image_alias_numeric": 20200,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "9eae0fa62f22190e79b5a34ff9fe90f91edbbadb6b9e7b8c4b4172560afbe263",
+              "verified_TW10_candidate_RGBA_sha256": "58d56d13a083b49817b198c1dc97c592f9578d3f6fd4280999c5c13297a2fcf9"
+            },
+            {
+              "original_item_id": 330,
+              "both_original_itemset_rows_sha256": "ee83d181cfa44ba6133d0cf14aea4dd453dde0e68de95e3c233327dd7b81125f",
+              "source_original_price_numeric_literal": "2530",
+              "source_original_type_numeric_literal": "0",
+              "source_image_alias_numeric": 20217,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "eb2c9e91a6a17393d2fecb4b10bf61fe3c7384f8c0397585f444979f8e07d74f",
+              "verified_TW10_candidate_RGBA_sha256": "1ab7fc3329706c20097dc680efa7168fe602b9858f2afe1270b82c0b1441bfe5"
+            },
+            {
+              "original_item_id": 600,
+              "both_original_itemset_rows_sha256": "d0e5d017a1eb71aba5e5ce49588632be54b95329df887155f82bfa39e82a9e6d",
+              "source_original_price_numeric_literal": "50",
+              "source_original_type_numeric_literal": "18",
+              "source_image_alias_numeric": 20508,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "bb4305e3efac5bddc18fc4945c0704124ec6872cc403a548d384739c6e01644e",
+              "verified_TW10_candidate_RGBA_sha256": "a7e97ff3172ccbc5eb5d948fc2817d11e7ff5bf90bf2de11ff428d23b51711ac"
+            },
+            {
+              "original_item_id": 620,
+              "both_original_itemset_rows_sha256": "55af87494115223da65a65742c18a2536d7e0ead13af02304b2038959a2b94a7",
+              "source_original_price_numeric_literal": "800",
+              "source_original_type_numeric_literal": "18",
+              "source_image_alias_numeric": 20504,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "5e33f610ab1b5d8c313f446f17cd4a48b9bacb0dd6df35f97af5bfb3ebfe4249",
+              "verified_TW10_candidate_RGBA_sha256": "1d3e1fa81bb1cb5c61189f3765490201750089c62913b4649ef29fa4cc378732"
+            }
+          ]
+        },
+        {
+          "shop_role_original": "DEFENCE",
+          "graphic_alias": 16018,
+          "borncorner_xy": [
+            17,
+            15
+          ],
+          "source_DAT_three_u16_at_create": [
+            5000,
+            0,
+            49152
+          ],
+          "original_CREATE_block_sha256": "a0b027a9e238cb8959960793a3e5f257aa4ff08ad758b2a32fb87f0dc6e4d982",
+          "original_CREATE_ordinal_within_shop_m": 2,
+          "original_parameter_path": "genout/ss_1001_17_15",
+          "original_parameter_sha256": "1858419ed002beb3ebd785286e20ef16326f127201725b40f7b214fd5c94b06b",
+          "original_ItemList_count": 13,
+          "original_range_expression_tokens": [],
+          "range_expansion_candidate_count": 0,
+          "original_LimitItemType_literal": "DEFENCE",
+          "original_LimitItemNo_literal": "",
+          "raw_buy_rate": "1.0",
+          "raw_sell_rate": "0.2",
+          "raw_special_rate": "1.5",
+          "original_fields_missing_or_empty": [
+            "LimitItemNo",
+            "special_item"
+          ],
+          "separate_original_LimitItemNo_original_itemset_source_join": null,
+          "items": [
+            {
+              "original_item_id": 800,
+              "both_original_itemset_rows_sha256": "d134295ce4bc256d82aed52afef1130ddaffb69932d77496c19a371021505c50",
+              "source_original_price_numeric_literal": "50",
+              "source_original_type_numeric_literal": "6",
+              "source_image_alias_numeric": 21541,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "d3515c9d6fd2d3b1ab8644ccafc1eb88dcc9637d63eb8cdd0c5b1c71274a5104",
+              "verified_TW10_candidate_RGBA_sha256": "8828384b7d6465c37ed735ade7abd52f3100cd9440a13154f3c999a1d73fbd27"
+            },
+            {
+              "original_item_id": 810,
+              "both_original_itemset_rows_sha256": "1f4465de867d88fab1ff06d3ddae99d0d25e58214f3b5fddb6ba17df82f130c0",
+              "source_original_price_numeric_literal": "200",
+              "source_original_type_numeric_literal": "6",
+              "source_image_alias_numeric": 21540,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "dee33dcd6e577babc7f8fabbd6224de7466b4525a4bb2134eaaaa8a550f8f053",
+              "verified_TW10_candidate_RGBA_sha256": "322bea24e3f26904a7f8e19c0e6c1f8b72490a7815bc54f3be9acc002922e1c0"
+            },
+            {
+              "original_item_id": 820,
+              "both_original_itemset_rows_sha256": "4103606268f5006fce28b9edd0b9e70cfd559e5171c8adc4ec9e958d5e23980f",
+              "source_original_price_numeric_literal": "800",
+              "source_original_type_numeric_literal": "6",
+              "source_image_alias_numeric": 21510,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "4f279c63c5074fc3c5b8300acd62694a3ec216a16d4dbde28d64fbe085359100",
+              "verified_TW10_candidate_RGBA_sha256": "1e6f4aa5c7d9bf8d79cd973afa9d3488b973607bce438347693832c74bd3bcdd"
+            },
+            {
+              "original_item_id": 841,
+              "both_original_itemset_rows_sha256": "5b7a34bf3c331971cabd7ff4b1d73a8e1810b3308dbe9432cc3f8f0695334276",
+              "source_original_price_numeric_literal": "5750",
+              "source_original_type_numeric_literal": "6",
+              "source_image_alias_numeric": 21518,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "f82a409a843f39682aa59446a0255452fd546c7c4fe73a3f95453a7c95840e00",
+              "verified_TW10_candidate_RGBA_sha256": "1a25c3371ee8019b625397277bc7d562e926c13b712bb37964578d02a3ed352e"
+            },
+            {
+              "original_item_id": 900,
+              "both_original_itemset_rows_sha256": "c67ac967c5e2c89c6c4e63fa69b39c7879b38a867cdc62e8e74534604891814e",
+              "source_original_price_numeric_literal": "40",
+              "source_original_type_numeric_literal": "6",
+              "source_image_alias_numeric": 21508,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "2b50bbfb17919e0306b34edd3d8d229c1d59ae0c3dff76031f8012f6691898e2",
+              "verified_TW10_candidate_RGBA_sha256": "414ac48ac503c0ebc76267504957f3d009e52706010dc45b7a047185d9ae3bae"
+            },
+            {
+              "original_item_id": 912,
+              "both_original_itemset_rows_sha256": "b2fbcd1f9cd09e51d4c7de5bbb27c5dd5b67be00584a294a665e8a0a66167a8a",
+              "source_original_price_numeric_literal": "280",
+              "source_original_type_numeric_literal": "6",
+              "source_image_alias_numeric": 21503,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "218da410603c23e94a8cba31cd3cb3a5695fcec77b0215a4871f00e299d5b131",
+              "verified_TW10_candidate_RGBA_sha256": "94ef84b34c4b7879ead06233fdf94206b259d957a252bfe19fd88dbe8b49f4ed"
+            },
+            {
+              "original_item_id": 920,
+              "both_original_itemset_rows_sha256": "5f8122c951b79a7590a588e67dfacb01ee8621ca652b146d79f73bb592ec28c3",
+              "source_original_price_numeric_literal": "640",
+              "source_original_type_numeric_literal": "6",
+              "source_image_alias_numeric": 21530,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "ed7fd757164620a1f774fc7a097cec0a9603b4547f5bf6e84b5fb89618c8f1b4",
+              "verified_TW10_candidate_RGBA_sha256": "ffbfbbc08df64db2f7e80f292380e035beaddfbd3f42568ff3663d120615f3ae"
+            },
+            {
+              "original_item_id": 1000,
+              "both_original_itemset_rows_sha256": "deb9621c2a7e18d7d09eeb5843610d86461f26ccced40d2410ef791bbe3c984c",
+              "source_original_price_numeric_literal": "75",
+              "source_original_type_numeric_literal": "7",
+              "source_image_alias_numeric": 21014,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "63ac2ceb1c847e668e23a122054d14d7e4686087f7ddf90b4008253c98a577c6",
+              "verified_TW10_candidate_RGBA_sha256": "7eedf5548d701c89bc6241e1e30fbf923b6004e90f4288bc6bf45f05c373d6bb"
+            },
+            {
+              "original_item_id": 1011,
+              "both_original_itemset_rows_sha256": "c24f16fc0d9de06aa3355006f8374bac5742b17005becf9bbf74fd027c628ee4",
+              "source_original_price_numeric_literal": "400",
+              "source_original_type_numeric_literal": "7",
+              "source_image_alias_numeric": 21027,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "d7b821adac4d190004ec4ebae4a69a4f4bed4e632ce5416748d3b5daf9012ed9",
+              "verified_TW10_candidate_RGBA_sha256": "72c3debbaea9c94c2417ebf9eb52b8e522dedd099625e1d714acc25fb331a5e1"
+            },
+            {
+              "original_item_id": 1020,
+              "both_original_itemset_rows_sha256": "e7812a8e39d65fcbe2791bd51cc305eb28128c7cca3a185d12c1d3050ad8e8fb",
+              "source_original_price_numeric_literal": "1200",
+              "source_original_type_numeric_literal": "7",
+              "source_image_alias_numeric": 21046,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "a47b426bb65b78672b3fda4384ddb8d15e161eef52210cc7cc4064caa99ed1d0",
+              "verified_TW10_candidate_RGBA_sha256": "bb3cbe914638bf698fbe629babdf1acbeda65992889a05f843d3ebaa1fe74e2b"
+            },
+            {
+              "original_item_id": 1100,
+              "both_original_itemset_rows_sha256": "de5f7a68278bd874d3fc08ac7c94a066f818c7c44e5dfd6fbb61fcd161c07886",
+              "source_original_price_numeric_literal": "60",
+              "source_original_type_numeric_literal": "7",
+              "source_image_alias_numeric": 21041,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "ac28e11930e14e01875b95a553890aa78c5be9fb21fcb4b66053dcb7f759a1b3",
+              "verified_TW10_candidate_RGBA_sha256": "b0d2e84b98a3277875709f28ceca353fec9b2e534ecc637a07083cbc5df3450b"
+            },
+            {
+              "original_item_id": 1113,
+              "both_original_itemset_rows_sha256": "b4cd9a285642e19f8a9bfd8ce77f2778b19f77f64836df7457b6aa81d711fb56",
+              "source_original_price_numeric_literal": "528",
+              "source_original_type_numeric_literal": "7",
+              "source_image_alias_numeric": 21009,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "f906f8fdaa49bf41b2818fd3fa07e2b2cc3a7f3e62e2965fb212c93cd8461509",
+              "verified_TW10_candidate_RGBA_sha256": "df1a6a18cdc4d39ae508bf6b645d25def2ebe444af5cac4e5771ed15445e9897"
+            },
+            {
+              "original_item_id": 1120,
+              "both_original_itemset_rows_sha256": "9d235a119a28f054863853cd34bb698cfa9d7d9de5fc462d523e2c3aeba28f5a",
+              "source_original_price_numeric_literal": "960",
+              "source_original_type_numeric_literal": "7",
+              "source_image_alias_numeric": 21033,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "8de8946f1b5f683f356ef05f49c4570588e6935ba48f06b7631c97e80035bb03",
+              "verified_TW10_candidate_RGBA_sha256": "7072df50e3cbf2d4a0d17c8351262d5d9171d8adcbaf80f0ac00dc1260b097c6"
+            }
+          ]
+        }
+      ],
+      "directed_mapwarp_original_rows_referencing_floor": [
+        1382,
+        1383,
+        1384,
+        1385,
+        1386
+      ]
+    },
+    {
+      "floor": 1002,
+      "original_DAT_sha256": "e82ff047f6dcd58c72cac2cbbb755c24938ea432c8a075574dd2f95efe9c2de9",
+      "original_LS2MAP_sha256": "5fe2ffa114a182e2e3503fc853aca1318d9941751ce815044bdfe7d5e6847a2b",
+      "source_RAR_member_crc32": "58f76140",
+      "server_vs_client_layers_changed_cells": [
+        0,
+        30
+      ],
+      "same_source_changed_pairs_only": [
+        "client_u16_0__server_u16_2"
+      ],
+      "original_DAT_map_geometry": [
+        30,
+        30
+      ],
+      "verified_TW1_tile_candidate_placements": 138,
+      "distinct_TW1_tile_candidate_aliases": 45,
+      "verified_full_combined_RGBA_sha256": "df9403519937d90254748c3042410446a1602a7c86fa64a33a74a36ad9babdbe",
+      "candidate_private_PNG_sha256": "2e8b871e8f6f228634cbfab31733532eb6d135d51b9ed40e5a56bf12f4108bc9",
+      "shop_configs": [
+        {
+          "shop_role_original": "ACCESSORY",
+          "graphic_alias": 16033,
+          "borncorner_xy": [
+            18,
+            15
+          ],
+          "source_DAT_three_u16_at_create": [
+            5000,
+            12641,
+            49152
+          ],
+          "original_CREATE_block_sha256": "d6c14c237c0f5ad235d08c802156686900905dc81082dd62a1fab552a1578345",
+          "original_CREATE_ordinal_within_shop_m": 3,
+          "original_parameter_path": "genout/ss_1002_18_15",
+          "original_parameter_sha256": "455df5226d4d2dc6d7ec3029d7f0d69fa2737036890890e689ac39164ae67793",
+          "original_ItemList_count": 11,
+          "original_range_expression_tokens": [],
+          "range_expansion_candidate_count": 0,
+          "original_LimitItemType_literal": "ACCESSORY",
+          "original_LimitItemNo_literal": "",
+          "raw_buy_rate": "1.0",
+          "raw_sell_rate": "0.2",
+          "raw_special_rate": "1.5",
+          "original_fields_missing_or_empty": [
+            "LimitItemNo",
+            "special_item"
+          ],
+          "separate_original_LimitItemNo_original_itemset_source_join": null,
+          "items": [
+            {
+              "original_item_id": 1202,
+              "both_original_itemset_rows_sha256": "a6029791738bd4a3715a87282df6cdc5e742c0cfbd423e0e92efaf9902f9a8f0",
+              "source_original_price_numeric_literal": "1000",
+              "source_original_type_numeric_literal": "8",
+              "source_image_alias_numeric": 22058,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "0405f195ba615aee56fa1142cf80cff9202ca12e395bb0a6e2933a727b0fe267",
+              "verified_TW10_candidate_RGBA_sha256": "f97a4d9dc2b48ec575d0a4b12b18e62e350e9c3f804008d5dd64bb89aecf7ea4"
+            },
+            {
+              "original_item_id": 1250,
+              "both_original_itemset_rows_sha256": "a92496fb2bbd2be546c28835f977bee4b3c920496d2f61511e7f68af0404e2f3",
+              "source_original_price_numeric_literal": "300",
+              "source_original_type_numeric_literal": "9",
+              "source_image_alias_numeric": 24199,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "a150709d381df75a3365b89a64fd36cbdbce13f3dce80a62b6f208f5fbfd9162",
+              "verified_TW10_candidate_RGBA_sha256": "028acda874e277ee57961976abc4c64b1f0e44fd94e1a28b2c618f1fd97564bb"
+            },
+            {
+              "original_item_id": 1257,
+              "both_original_itemset_rows_sha256": "4c9c3a424355e1e19c7cdf0fe40041e7c7e79138f37c03f04996e79198724bca",
+              "source_original_price_numeric_literal": "700",
+              "source_original_type_numeric_literal": "9",
+              "source_image_alias_numeric": 24204,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "aaa315180410913d2d68502db14a05ff33081dc1f10a2b8e81b78d1b9d03ab88",
+              "verified_TW10_candidate_RGBA_sha256": "b86d6759d59a135717f4c2dae3326e57e4947c008f83cca315f8f7249397fd98"
+            },
+            {
+              "original_item_id": 1264,
+              "both_original_itemset_rows_sha256": "a040de887b0451a22130c291ac15a5a9685c004c7811520b0aca56f7db67d0a2",
+              "source_original_price_numeric_literal": "1200",
+              "source_original_type_numeric_literal": "9",
+              "source_image_alias_numeric": 24208,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "d157fa7ccd1e84cc1ab3c8fd2a63025a880618e5df3d574c5c30cd72ce7284aa",
+              "verified_TW10_candidate_RGBA_sha256": "397664a0de1d25f5ecc50a763bb408fbfef50dc8ab3c75b60584e673327e7678"
+            },
+            {
+              "original_item_id": 1305,
+              "both_original_itemset_rows_sha256": "8b927fcc3ab19fe250d86e5442166fb30139e0f3256b2d47473a56f980ce13c0",
+              "source_original_price_numeric_literal": "1600",
+              "source_original_type_numeric_literal": "11",
+              "source_image_alias_numeric": 22052,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "4024899a68b7244f6a3a6a9f20f3d0037f4a8d3a3eddd256ba2f7e68b1ae3a0d",
+              "verified_TW10_candidate_RGBA_sha256": "a9eb7350e5f53143c656fa8c1fe1ae713cabcc0d28030d6089950bee1df34799"
+            },
+            {
+              "original_item_id": 1350,
+              "both_original_itemset_rows_sha256": "3030e3fe19a2638dab6c10ba8bac2caee76b6b46ed22db6b467aed7f0fabbec5",
+              "source_original_price_numeric_literal": "3400",
+              "source_original_type_numeric_literal": "10",
+              "source_image_alias_numeric": 22010,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "dc09b82a648afe37ae4744ea6f5b81a13672c9a624a0660729f84077ea981b79",
+              "verified_TW10_candidate_RGBA_sha256": "b6837a3963f990f167e7692e4fcd82c94e82a8d216ef4bc6aca1e0ee8ffab556"
+            },
+            {
+              "original_item_id": 1351,
+              "both_original_itemset_rows_sha256": "7d19316ce9e1a9f5a257ae99e41dbb6ed354966ace279e894e6e354a35a197f8",
+              "source_original_price_numeric_literal": "3000",
+              "source_original_type_numeric_literal": "10",
+              "source_image_alias_numeric": 22008,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "13e78000da1c658578002ac060f7270fd883d647d6edf879d1c392e9f840fca4",
+              "verified_TW10_candidate_RGBA_sha256": "e0d7d6a171a93af6da5cc988a2763f5e521178bfe2a0a898c375fe926c7d8bec"
+            },
+            {
+              "original_item_id": 1352,
+              "both_original_itemset_rows_sha256": "5055de39a879314ac3325d6230c3105820d6b7100e356567c24bec6b7dfcf012",
+              "source_original_price_numeric_literal": "2600",
+              "source_original_type_numeric_literal": "10",
+              "source_image_alias_numeric": 22016,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "4d151a2d8ff800850e575680fc3800b4d6fed65f842f33c201a96963bd0259c2",
+              "verified_TW10_candidate_RGBA_sha256": "cea7dd7eb0c3ca2359f02c36b5a876eb64485380ac8dc3f7a09e23df9bb72f88"
+            },
+            {
+              "original_item_id": 1353,
+              "both_original_itemset_rows_sha256": "3b7adaebe9944c6b3f15da5c76993acbd450a1e715177e81ebfae69397b5730a",
+              "source_original_price_numeric_literal": "4000",
+              "source_original_type_numeric_literal": "10",
+              "source_image_alias_numeric": 22009,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "ab873b458fbf94bffadd2349f5187a9ecad2d0111a5c50d84298f3437e0907d5",
+              "verified_TW10_candidate_RGBA_sha256": "e69e1aaf0a185b9c6e01fd4be09774d95ddd4ab0f6bdb2f7afcab64185ec0dc1"
+            },
+            {
+              "original_item_id": 1354,
+              "both_original_itemset_rows_sha256": "5c91de02bd8888f5d48a23798b6fcbf314082ea779b19ca758b7342644841590",
+              "source_original_price_numeric_literal": "2000",
+              "source_original_type_numeric_literal": "10",
+              "source_image_alias_numeric": 22001,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "fdd46da43c96fe8e52457279bc533a5d6a4efb31ac2f54c7778ebf2e1802302c",
+              "verified_TW10_candidate_RGBA_sha256": "41f01f964c60071b199f71ff1846d03869ad9ac8d4135ebc8a7d88222decdaa3"
+            },
+            {
+              "original_item_id": 1402,
+              "both_original_itemset_rows_sha256": "b28bfe405689aed445c41a9f80af527dee81ac3e7a80b1af1a55e11501785770",
+              "source_original_price_numeric_literal": "500",
+              "source_original_type_numeric_literal": "13",
+              "source_image_alias_numeric": 22103,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "18d1d37cefa9f87292fd50cb82d6cbe3372a603076b7c55af654f46fc822a2c1",
+              "verified_TW10_candidate_RGBA_sha256": "68f3025318056f7e2be32309dce8a3189822cbcbedcda95bcb92111fe6942c00"
+            }
+          ]
+        }
+      ],
+      "directed_mapwarp_original_rows_referencing_floor": [
+        1387,
+        1388,
+        1389,
+        1390,
+        1391
+      ]
+    },
+    {
+      "floor": 1301,
+      "original_DAT_sha256": "e503b46e112470820f57c16b28092ea6dbc8250e6ec3ff522b37f92e161d4bad",
+      "original_LS2MAP_sha256": "6e9fda66f6e729824cff722820689ed12242d7866a28af89fb348ca781ff6b90",
+      "source_RAR_member_crc32": "ed0de929",
+      "server_vs_client_layers_changed_cells": [
+        0,
+        0
+      ],
+      "same_source_changed_pairs_only": [],
+      "original_DAT_map_geometry": [
+        30,
+        30
+      ],
+      "verified_TW1_tile_candidate_placements": 156,
+      "distinct_TW1_tile_candidate_aliases": 42,
+      "verified_full_combined_RGBA_sha256": "368e4e4c977a53845d752acd2a67c0f4eb07c1ca29ec75d875ac6e6d66b7238c",
+      "candidate_private_PNG_sha256": "c9e1137b925546560cabdcd1d854a989621756cb3c25f99d3777fe91aa323747",
+      "shop_configs": [
+        {
+          "shop_role_original": "OFFENCE",
+          "graphic_alias": 16036,
+          "borncorner_xy": [
+            19,
+            17
+          ],
+          "source_DAT_three_u16_at_create": [
+            5001,
+            0,
+            49152
+          ],
+          "original_CREATE_block_sha256": "8c5b9d3931b3c4340f5b10dd062d5f482da6752aaa9a5d30ffc4b0123afab13a",
+          "original_CREATE_ordinal_within_shop_m": 51,
+          "original_parameter_path": "genout/ss_1301_19_17",
+          "original_parameter_sha256": "8f44958425e94b5a85a6bd89184b43f46f78d2243cb393bf3305216cfc4e4d3c",
+          "original_ItemList_count": 16,
+          "original_range_expression_tokens": [],
+          "range_expansion_candidate_count": 0,
+          "original_LimitItemType_literal": "OFFENCE",
+          "original_LimitItemNo_literal": "",
+          "raw_buy_rate": "1.0",
+          "raw_sell_rate": "0.18",
+          "raw_special_rate": "1.5",
+          "original_fields_missing_or_empty": [
+            "LimitItemNo",
+            "special_item"
+          ],
+          "separate_original_LimitItemNo_original_itemset_source_join": null,
+          "items": [
+            {
+              "original_item_id": 115,
+              "both_original_itemset_rows_sha256": "3c12915a20453ab24786255ef4a4b1aee1ad6322ac6e193aeaabcfdc590fc4e3",
+              "source_original_price_numeric_literal": "500",
+              "source_original_type_numeric_literal": "2",
+              "source_image_alias_numeric": 20114,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "be8ccb411995fda1c0670de99f114af3219268d2b80024678d76671062e43e78",
+              "verified_TW10_candidate_RGBA_sha256": "f0db7168543ac401cee8fdc845aa09db53add8b1f92c63d264dc4db1a03b4d74"
+            },
+            {
+              "original_item_id": 125,
+              "both_original_itemset_rows_sha256": "0fc3f032f853abcc3aa556e1fd16d69f3abde87d8fbd399eb4c94bcd50a9a190",
+              "source_original_price_numeric_literal": "1160",
+              "source_original_type_numeric_literal": "2",
+              "source_image_alias_numeric": 20113,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "2dcd7d7d5158a4488b2020255469fa44ddd843531c0b032a65e4a684d8fa23bd",
+              "verified_TW10_candidate_RGBA_sha256": "e7ed3b3140451a86bc1665d579b7f4be433d78f32465f242a4c3aa5ab132bc8a"
+            },
+            {
+              "original_item_id": 135,
+              "both_original_itemset_rows_sha256": "36933db79ad8e4e26845a740a7c0df8521d05dfc465b88343ceba8ea5fcbba71",
+              "source_original_price_numeric_literal": "3500",
+              "source_original_type_numeric_literal": "2",
+              "source_image_alias_numeric": 20100,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "46bec893bc6e344a39dda127986bf012c2ecd049ea5997c6899407e3a1da5ed5",
+              "verified_TW10_candidate_RGBA_sha256": "7a3b6f53b991f647200b3b06e7c97244c5d66a66a4da29b1d8ea59536f5f28e9"
+            },
+            {
+              "original_item_id": 145,
+              "both_original_itemset_rows_sha256": "814d29e6676468ae6f5143236426f3b15431a7a52e2016c341fdd56f9b25d9de",
+              "source_original_price_numeric_literal": "6200",
+              "source_original_type_numeric_literal": "2",
+              "source_image_alias_numeric": 20111,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "3d13c4ffb95f5187ffba511ccab5cedbe491ed32ff6869f4af80505b339f8c34",
+              "verified_TW10_candidate_RGBA_sha256": "ea6a8e65957548ac207bbfa816861e190d828657ebd6564c4be58f4004991064"
+            },
+            {
+              "original_item_id": 215,
+              "both_original_itemset_rows_sha256": "37be4d00e9eae6d9f60f3f3ee53f1773264b20cea34e16d34e2b12f51ba98f04",
+              "source_original_price_numeric_literal": "540",
+              "source_original_type_numeric_literal": "3",
+              "source_image_alias_numeric": 20423,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "9190f36bb2aacaffb901ffb86cab5598b874072651064487ba3151600f96a624",
+              "verified_TW10_candidate_RGBA_sha256": "3cdd6d44b336756b472ab08c68c22b6856e2546d9769829a51297e32df249c60"
+            },
+            {
+              "original_item_id": 225,
+              "both_original_itemset_rows_sha256": "007c645b7ca6b216444a31eec58138b07a5692da24fe3ba5a66fea94ffc70d6c",
+              "source_original_price_numeric_literal": "1320",
+              "source_original_type_numeric_literal": "3",
+              "source_image_alias_numeric": 20424,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "7ae0020bf99719fe61bc01a6777bbeb03fefbdbf1acdb8542c5ae061ab59fe2c",
+              "verified_TW10_candidate_RGBA_sha256": "6a55dcd7f0ff965b4f3b07197caaa3844d121a95ef92300ea142d5bd7b3552f3"
+            },
+            {
+              "original_item_id": 235,
+              "both_original_itemset_rows_sha256": "93850897b7cd9aae9039b507c76d4bfd469eb4366607785334d40d1e5e5673fa",
+              "source_original_price_numeric_literal": "3960",
+              "source_original_type_numeric_literal": "3",
+              "source_image_alias_numeric": 20427,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "bf2500ef34d2322e00bbd45090f637bb8819a4f37f522ff820904981dde8e73f",
+              "verified_TW10_candidate_RGBA_sha256": "94d3d1be512e699077d65f8a018a5b96f990bb00c44785472311fe7ed117c12b"
+            },
+            {
+              "original_item_id": 245,
+              "both_original_itemset_rows_sha256": "76607cf5fd3518da447e96c85bf8af6e0913be675e36774cd729e9045b7063ed",
+              "source_original_price_numeric_literal": "7200",
+              "source_original_type_numeric_literal": "3",
+              "source_image_alias_numeric": 20510,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "e32c40165dc1fa3f014d01f48c0e098d9db6d246515c715a0c82eda11894fa1b",
+              "verified_TW10_candidate_RGBA_sha256": "cb4ef437158c24a36dae7e6abc7332e2beee749f404693c917b50d6eba0c647b"
+            },
+            {
+              "original_item_id": 615,
+              "both_original_itemset_rows_sha256": "8706cd7c9b0f60e00220bf61e24d5a2d2a247f5040e9e9a50fea3949c35cab7d",
+              "source_original_price_numeric_literal": "500",
+              "source_original_type_numeric_literal": "18",
+              "source_image_alias_numeric": 20508,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "bb4305e3efac5bddc18fc4945c0704124ec6872cc403a548d384739c6e01644e",
+              "verified_TW10_candidate_RGBA_sha256": "a7e97ff3172ccbc5eb5d948fc2817d11e7ff5bf90bf2de11ff428d23b51711ac"
+            },
+            {
+              "original_item_id": 625,
+              "both_original_itemset_rows_sha256": "b0a34ab7360f34eb2c4d15b151e029718a7df6e0e405f2c3e0314b530ba39f24",
+              "source_original_price_numeric_literal": "1160",
+              "source_original_type_numeric_literal": "18",
+              "source_image_alias_numeric": 20505,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "80b72e68579038dedb41748d249694923a26eed2b60754a104a6498c2f579e92",
+              "verified_TW10_candidate_RGBA_sha256": "ae1684c0f180fa7de6c57acd63d93c03c71144dfb6287ab7b564cfbc0490f4af"
+            },
+            {
+              "original_item_id": 634,
+              "both_original_itemset_rows_sha256": "bf5607dd8a5032f97185ecc275ffd1ed37735721cac7d7b3c08e3ab74bb888c8",
+              "source_original_price_numeric_literal": "3100",
+              "source_original_type_numeric_literal": "18",
+              "source_image_alias_numeric": 20533,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "88c1bd881e0183002d9bb1e7464638cdcb3d933ab8fa5709706076a2c20b96a1",
+              "verified_TW10_candidate_RGBA_sha256": "288771fc800127f42712c28f2dd7360649aab7c2c80c87a54357fdaea79a3308"
+            },
+            {
+              "original_item_id": 635,
+              "both_original_itemset_rows_sha256": "c62e04458e54c96a18f9843ab7aec67e43350bd304330ca02b9198313cbe73dd",
+              "source_original_price_numeric_literal": "3500",
+              "source_original_type_numeric_literal": "18",
+              "source_image_alias_numeric": 20533,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "88c1bd881e0183002d9bb1e7464638cdcb3d933ab8fa5709706076a2c20b96a1",
+              "verified_TW10_candidate_RGBA_sha256": "288771fc800127f42712c28f2dd7360649aab7c2c80c87a54357fdaea79a3308"
+            },
+            {
+              "original_item_id": 500,
+              "both_original_itemset_rows_sha256": "c175a43fa356582bb89c5342b9978f5a4ddbdebc010f26be9da6df7eef6bd9bd",
+              "source_original_price_numeric_literal": "60",
+              "source_original_type_numeric_literal": "17",
+              "source_image_alias_numeric": 20514,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "eb99268cfea469429fe01afa265d15355fe3b637715e12396d179cffac162312",
+              "verified_TW10_candidate_RGBA_sha256": "60379605419b2d5f996ce5de83247ce90d8860dc770f78caf26caee06f0357cd"
+            },
+            {
+              "original_item_id": 510,
+              "both_original_itemset_rows_sha256": "34579f74ebb1021f1e9d606fd0a58c403c595e87161c3bbe295ca0634a98ac5d",
+              "source_original_price_numeric_literal": "240",
+              "source_original_type_numeric_literal": "17",
+              "source_image_alias_numeric": 20515,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "c515e6d5f9977969b478f22cb4cc6b5073b6d5128c9a85d84792257ac73d2a37",
+              "verified_TW10_candidate_RGBA_sha256": "8859a2c5799a45c10c2b8ea5d770b4a3401fffe03d6d332885c14c0e944a74b8"
+            },
+            {
+              "original_item_id": 525,
+              "both_original_itemset_rows_sha256": "4c765138ca6dc8724c36b2800d18aad1ada2e3248246483833f9afacece7c843",
+              "source_original_price_numeric_literal": "1320",
+              "source_original_type_numeric_literal": "17",
+              "source_image_alias_numeric": 20517,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "86b9f3974b8a150f56ddf29d8a007c3695740c77fc235b1089ca937a52985c66",
+              "verified_TW10_candidate_RGBA_sha256": "6499b4855ad5048a755f5f94bcf1ff7ae72aa351f20738fe816c0f88f58e8cfc"
+            },
+            {
+              "original_item_id": 530,
+              "both_original_itemset_rows_sha256": "f6fd276035edb21fc01bc16ce84c3616b33a1675b809dd88506f7a3b1274f21e",
+              "source_original_price_numeric_literal": "2760",
+              "source_original_type_numeric_literal": "17",
+              "source_image_alias_numeric": 20520,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "48cf1c7deebc65a3749cc02d024109bafe16908fd8164cb89e980c6352974ca3",
+              "verified_TW10_candidate_RGBA_sha256": "6a31db77ea573272716dfbae1792608250433204a1fb90dfe9da4a77517c40c0"
+            }
+          ]
+        },
+        {
+          "shop_role_original": "DEFENCE",
+          "graphic_alias": 16030,
+          "borncorner_xy": [
+            18,
+            13
+          ],
+          "source_DAT_three_u16_at_create": [
+            5002,
+            0,
+            49152
+          ],
+          "original_CREATE_block_sha256": "ca36088477ad92df6e90b0b17756856fae4a91302049e77a259d44c2928b7583",
+          "original_CREATE_ordinal_within_shop_m": 52,
+          "original_parameter_path": "genout/ss_1301_18_13",
+          "original_parameter_sha256": "8f9c6f213e17e3e6c7f9dd252ca77c8aa4440f0bd151038a317ad68672e407eb",
+          "original_ItemList_count": 12,
+          "original_range_expression_tokens": [],
+          "range_expansion_candidate_count": 0,
+          "original_LimitItemType_literal": "DEFENCE",
+          "original_LimitItemNo_literal": "",
+          "raw_buy_rate": "1.0",
+          "raw_sell_rate": "0.18",
+          "raw_special_rate": "1.5",
+          "original_fields_missing_or_empty": [
+            "LimitItemNo",
+            "special_item"
+          ],
+          "separate_original_LimitItemNo_original_itemset_source_join": null,
+          "items": [
+            {
+              "original_item_id": 813,
+              "both_original_itemset_rows_sha256": "13f68666bcb93c5178b62b55c71495915ef3ffc9dc2b1b9a3c97475101ffb3d5",
+              "source_original_price_numeric_literal": "280",
+              "source_original_type_numeric_literal": "6",
+              "source_image_alias_numeric": 21507,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "414046798aaaa70ac9b24394b2a6e62ec8ee7dc9e596eb07f80ec37b92c5a619",
+              "verified_TW10_candidate_RGBA_sha256": "38c79963fe6c74f6c4c289fa4b08d06fc086ae4a11e09cb61d30b5015d84fb0c"
+            },
+            {
+              "original_item_id": 823,
+              "both_original_itemset_rows_sha256": "96852c43e99d19851fa29091d921ecec8d4c5c7eed78ef251f0d749013ea7316",
+              "source_original_price_numeric_literal": "980",
+              "source_original_type_numeric_literal": "6",
+              "source_image_alias_numeric": 21509,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "c6fc3856e8c5a9ab31fc4e9f9848c3444b3b3a8daf99737d565f63de1dd3e3ef",
+              "verified_TW10_candidate_RGBA_sha256": "ace27936c9210468abb81d88da0d3b16777342da975e2034ef0fcf0d09bb4541"
+            },
+            {
+              "original_item_id": 833,
+              "both_original_itemset_rows_sha256": "5f4974c2e414038dd536a76882c0e375dad236f19146d971db0b9d4db763fba5",
+              "source_original_price_numeric_literal": "2620",
+              "source_original_type_numeric_literal": "6",
+              "source_image_alias_numeric": 21520,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "e3fee5cffdeac7a8eb2f3d550806c4b2a587808b166975d90b44e69ed8ce8ec5",
+              "verified_TW10_candidate_RGBA_sha256": "b8f703543651bf961eb4cff8bd4e34bb9fe8dc33cc857afd4d170e20a6a795f4"
+            },
+            {
+              "original_item_id": 913,
+              "both_original_itemset_rows_sha256": "85e965d3dd1060f31b6b3259aad3b7e34d1ea61a5ec8538b86cd1fb24b27fcdc",
+              "source_original_price_numeric_literal": "256",
+              "source_original_type_numeric_literal": "6",
+              "source_image_alias_numeric": 21503,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "218da410603c23e94a8cba31cd3cb3a5695fcec77b0215a4871f00e299d5b131",
+              "verified_TW10_candidate_RGBA_sha256": "94ef84b34c4b7879ead06233fdf94206b259d957a252bfe19fd88dbe8b49f4ed"
+            },
+            {
+              "original_item_id": 923,
+              "both_original_itemset_rows_sha256": "9f8e356cfcd628ac4dda4fae9e80c52ab9f45cc58fe3a3b22796fd4e1ea800ce",
+              "source_original_price_numeric_literal": "856",
+              "source_original_type_numeric_literal": "6",
+              "source_image_alias_numeric": 21537,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "380abd26b1a27500006789e6851f313f5fea4b978affe7329d2e0c2832df7c72",
+              "verified_TW10_candidate_RGBA_sha256": "200520d0fdcc922109754e1f4052ea456d6eea43c3f7922ac198a156f6a2f5c4"
+            },
+            {
+              "original_item_id": 933,
+              "both_original_itemset_rows_sha256": "e68ab621b3876a041686c387fee97ef5aaf76917a563c14f3fc56f72e2b8c219",
+              "source_original_price_numeric_literal": "2224",
+              "source_original_type_numeric_literal": "6",
+              "source_image_alias_numeric": 21538,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "3ff3161de75434113b432f5ef02c1f9085b876cf607a8d674821e4c09f8f03ec",
+              "verified_TW10_candidate_RGBA_sha256": "1244d47c0a5397d9f1a63a69e37c740c349bf1fad7a4af71d1dfc4624580859e"
+            },
+            {
+              "original_item_id": 1013,
+              "both_original_itemset_rows_sha256": "f7eac2c7420fc2c03d3c2a9194d06495747321cf401f68ed9db1623596fef160",
+              "source_original_price_numeric_literal": "594",
+              "source_original_type_numeric_literal": "7",
+              "source_image_alias_numeric": 21027,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "d7b821adac4d190004ec4ebae4a69a4f4bed4e632ce5416748d3b5daf9012ed9",
+              "verified_TW10_candidate_RGBA_sha256": "72c3debbaea9c94c2417ebf9eb52b8e522dedd099625e1d714acc25fb331a5e1"
+            },
+            {
+              "original_item_id": 1023,
+              "both_original_itemset_rows_sha256": "1269032170ae33611dcebd5dc68cbb72c7ed8fcd87b7b916e372436c6e8d69f0",
+              "source_original_price_numeric_literal": "1716",
+              "source_original_type_numeric_literal": "7",
+              "source_image_alias_numeric": 21048,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "e70bdc90956e47b63210cff5ee6c2b3c621b25bdbea6f0ea76f07b580320ecda",
+              "verified_TW10_candidate_RGBA_sha256": "5c573bafcf968dea2afcdf6ab4d392fce65f322d93c45f4a47089d2f8d125b7b"
+            },
+            {
+              "original_item_id": 1033,
+              "both_original_itemset_rows_sha256": "fb1b25819b20b2ed0f7f6498099583af052642c27a2fa230aa76e8e5d22938c8",
+              "source_original_price_numeric_literal": "4323",
+              "source_original_type_numeric_literal": "7",
+              "source_image_alias_numeric": 21048,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "e70bdc90956e47b63210cff5ee6c2b3c621b25bdbea6f0ea76f07b580320ecda",
+              "verified_TW10_candidate_RGBA_sha256": "5c573bafcf968dea2afcdf6ab4d392fce65f322d93c45f4a47089d2f8d125b7b"
+            },
+            {
+              "original_item_id": 1113,
+              "both_original_itemset_rows_sha256": "b4cd9a285642e19f8a9bfd8ce77f2778b19f77f64836df7457b6aa81d711fb56",
+              "source_original_price_numeric_literal": "528",
+              "source_original_type_numeric_literal": "7",
+              "source_image_alias_numeric": 21009,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "f906f8fdaa49bf41b2818fd3fa07e2b2cc3a7f3e62e2965fb212c93cd8461509",
+              "verified_TW10_candidate_RGBA_sha256": "df1a6a18cdc4d39ae508bf6b645d25def2ebe444af5cac4e5771ed15445e9897"
+            },
+            {
+              "original_item_id": 1123,
+              "both_original_itemset_rows_sha256": "3d46397014fec97885cdb1e631add1fdbe95751ee5008700bbcc58c694924897",
+              "source_original_price_numeric_literal": "1452",
+              "source_original_type_numeric_literal": "7",
+              "source_image_alias_numeric": 21034,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "fb8be0ef48c5a886515f47b308cf6b9526d700b866c67a3b302d28eeb3279e6e",
+              "verified_TW10_candidate_RGBA_sha256": "2f6b7d075fbbd46409752e9ba0984aca9ba1c8aad4b8a51ade313942b18108e2"
+            },
+            {
+              "original_item_id": 1133,
+              "both_original_itemset_rows_sha256": "5082de44604b7abde3ed570f87fa3cefd8e0491f1b11a464016dbc6e80be9a17",
+              "source_original_price_numeric_literal": "3564",
+              "source_original_type_numeric_literal": "7",
+              "source_image_alias_numeric": 21034,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "fb8be0ef48c5a886515f47b308cf6b9526d700b866c67a3b302d28eeb3279e6e",
+              "verified_TW10_candidate_RGBA_sha256": "2f6b7d075fbbd46409752e9ba0984aca9ba1c8aad4b8a51ade313942b18108e2"
+            }
+          ]
+        }
+      ],
+      "directed_mapwarp_original_rows_referencing_floor": [
+        1459,
+        1460,
+        1461,
+        1462
+      ]
+    },
+    {
+      "floor": 1302,
+      "original_DAT_sha256": "49a45e26db5fd34a9753d9c663a60c4713e7703aeb7aab0a9869d207fc36832f",
+      "original_LS2MAP_sha256": "ed92bc47e61f96796a7f885c69394dc61f585f1ada33fd37eccd72c0f7c9a8c1",
+      "source_RAR_member_crc32": "cbb090b3",
+      "server_vs_client_layers_changed_cells": [
+        0,
+        0
+      ],
+      "same_source_changed_pairs_only": [],
+      "original_DAT_map_geometry": [
+        30,
+        30
+      ],
+      "verified_TW1_tile_candidate_placements": 157,
+      "distinct_TW1_tile_candidate_aliases": 42,
+      "verified_full_combined_RGBA_sha256": "31e9ff818826085e067e45f23a66c1a9ff1002fb721dec5b6f33940f9b0453db",
+      "candidate_private_PNG_sha256": "6a2568ff3be416726f2ff1390f4ac1d388ba66d33ec4a0f364bf19c0251fb102",
+      "shop_configs": [
+        {
+          "shop_role_original": "ACCESSORY",
+          "graphic_alias": 16031,
+          "borncorner_xy": [
+            18,
+            13
+          ],
+          "source_DAT_three_u16_at_create": [
+            5002,
+            0,
+            49152
+          ],
+          "original_CREATE_block_sha256": "9f871450caca682fd1a2473c26fd7aed24cb3b596516e180e28dca5da2e60576",
+          "original_CREATE_ordinal_within_shop_m": 53,
+          "original_parameter_path": "genout/ss_1302_18_13",
+          "original_parameter_sha256": "13d6c5045c842d7e068eb18589c687089279938a44f845d880f31e11323fac49",
+          "original_ItemList_count": 6,
+          "original_range_expression_tokens": [],
+          "range_expansion_candidate_count": 0,
+          "original_LimitItemType_literal": "ACCESSORY",
+          "original_LimitItemNo_literal": "2421",
+          "raw_buy_rate": "1.0",
+          "raw_sell_rate": "0.18",
+          "raw_special_rate": "1.5",
+          "original_fields_missing_or_empty": [
+            "special_item"
+          ],
+          "separate_original_LimitItemNo_original_itemset_source_join": {
+            "literal_original_limit_item_ID": 2421,
+            "source_two_original_itemset_rows_sha256": "4de61929a1a45a7449f8f96f26f96c57b60bfd47a983c96a447726d6a0d6207d",
+            "absent_from_original_explicit_ItemList": true,
+            "field_native_purchase_or_limit_semantics_verified": false
+          },
+          "items": [
+            {
+              "original_item_id": 1205,
+              "both_original_itemset_rows_sha256": "393d3acf503fa62a65572ac54b97b3987aacb46f621ad4aa1f43da9e9bee2de5",
+              "source_original_price_numeric_literal": "5000",
+              "source_original_type_numeric_literal": "8",
+              "source_image_alias_numeric": 22063,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "b49751c3e746a681515fd621f82b56924d52065a35137f6995f8e838edde22ff",
+              "verified_TW10_candidate_RGBA_sha256": "97882335438b405b90a189bbaaa281512221c374e847da0f91096e54490ce3ff"
+            },
+            {
+              "original_item_id": 1261,
+              "both_original_itemset_rows_sha256": "17df5abd06fdf942548ee18f8ac8538f669f03f2cdbd0e7a5ac582695cfef477",
+              "source_original_price_numeric_literal": "700",
+              "source_original_type_numeric_literal": "9",
+              "source_image_alias_numeric": 24200,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "de2dd5ee9b62eceffbf2dfa68d5fa990e351f9590be2ff300a906ebfce667512",
+              "verified_TW10_candidate_RGBA_sha256": "455b8164ff1ff9d48fb36f2cbecfa63d4988e338f2e6323d3bc16caee5b3f468"
+            },
+            {
+              "original_item_id": 1302,
+              "both_original_itemset_rows_sha256": "742afa9ab3bc75e1d40236b61dbf98e1330312519487817707e03a4a4433344e",
+              "source_original_price_numeric_literal": "500",
+              "source_original_type_numeric_literal": "11",
+              "source_image_alias_numeric": 22110,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "2d46146ffd1c096b142cfba2f300daaddae5442bff8a61ab899aed07898f2438",
+              "verified_TW10_candidate_RGBA_sha256": "68155a0083ea52af9f8d7353cbf6d3c15e58b76bab8e41543ccb0645a2adab49"
+            },
+            {
+              "original_item_id": 1357,
+              "both_original_itemset_rows_sha256": "30630055276cb860c66b510b6658200dec738b563c7d50846f622cb51c1786fa",
+              "source_original_price_numeric_literal": "5200",
+              "source_original_type_numeric_literal": "10",
+              "source_image_alias_numeric": 22024,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "905115cce8565aacb9e0b31fbf2f3e16c362e4dfc7a19cbfe7d0d215ea2cf5b1",
+              "verified_TW10_candidate_RGBA_sha256": "16d0d6b28004e9561a5d56f468da955457788dcc6687a67e7a548fb9d814ae09"
+            },
+            {
+              "original_item_id": 1359,
+              "both_original_itemset_rows_sha256": "e33e7935444bc78e0f2803cb69ee640b162c7f0c388ea6dd814fbc37eca82841",
+              "source_original_price_numeric_literal": "4000",
+              "source_original_type_numeric_literal": "10",
+              "source_image_alias_numeric": 22028,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "11a21b30deabb12ed982fdba855e4ef896dad79d554b5f0a4e220de94b670cf8",
+              "verified_TW10_candidate_RGBA_sha256": "e9b9fe14de75ea735f1f4a0d81ae67430892fb3ffcf191bb77fdff7cfb61b3de"
+            },
+            {
+              "original_item_id": 1405,
+              "both_original_itemset_rows_sha256": "1132c2d0f618195c294044547c5b2e56832151cf71f095260d460d8b3a2ff0ef",
+              "source_original_price_numeric_literal": "1600",
+              "source_original_type_numeric_literal": "13",
+              "source_image_alias_numeric": 22054,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "cc08b719e74b163ba1cbdc5182de80661f06cffa835b64bea03429be18530559",
+              "verified_TW10_candidate_RGBA_sha256": "f28216a53d0be58fc891d2b102a017455749aa69c408f0170a81363bfef14047"
+            }
+          ]
+        },
+        {
+          "shop_role_original": "MATERIAL_SHOP_NAME_ONLY_LIMIT_TYPE_EMPTY",
+          "graphic_alias": 16201,
+          "borncorner_xy": [
+            12,
+            15
+          ],
+          "source_DAT_three_u16_at_create": [
+            5000,
+            12802,
+            49152
+          ],
+          "original_CREATE_block_sha256": "1de19c9a4cf676d79aa094da2ca737868b50d57f230facec6ca7a5467774b044",
+          "original_CREATE_ordinal_within_shop_m": 107,
+          "original_parameter_path": "genout/ss_1302_12_15",
+          "original_parameter_sha256": "3a724dc2ac1c5af67f1226fab88b6959e58a5f81016a76b36f4e3263f0616f44",
+          "original_ItemList_count": 0,
+          "original_range_expression_tokens": [
+            "11930-11937",
+            "11940-11947"
+          ],
+          "range_expansion_candidate_count": 16,
+          "original_LimitItemType_literal": "",
+          "original_LimitItemNo_literal": "11930-11937,11940-11947",
+          "raw_buy_rate": "1.0",
+          "raw_sell_rate": "0.5",
+          "raw_special_rate": "1.5",
+          "original_fields_missing_or_empty": [
+            "special_item"
+          ],
+          "separate_original_LimitItemNo_original_itemset_source_join": null,
+          "items": [
+            {
+              "original_item_id": 11930,
+              "both_original_itemset_rows_sha256": "5bfaced567b21f7f6d23fd3d1614164a8c7ed9ed20c46f392b62b24fed520e13",
+              "source_original_price_numeric_literal": "23",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 23028,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "92696cc38f43248836b0fe83960753c0e442a9126c4349cb1d3818b89f996387",
+              "verified_TW10_candidate_RGBA_sha256": "35bf02dd929e66f725d00685ca111468976467e0781b7553a1ff3b3776ce5483"
+            },
+            {
+              "original_item_id": 11931,
+              "both_original_itemset_rows_sha256": "ffbab72a33ce715564b2d3ecae704fe93c87813ee9868257abe0dbfa734cd5be",
+              "source_original_price_numeric_literal": "90",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 23028,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "92696cc38f43248836b0fe83960753c0e442a9126c4349cb1d3818b89f996387",
+              "verified_TW10_candidate_RGBA_sha256": "35bf02dd929e66f725d00685ca111468976467e0781b7553a1ff3b3776ce5483"
+            },
+            {
+              "original_item_id": 11932,
+              "both_original_itemset_rows_sha256": "1b2b293e74caa0374370f864b5b9965209508bf6ffa13007632e082a72c4d659",
+              "source_original_price_numeric_literal": "203",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 23028,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "92696cc38f43248836b0fe83960753c0e442a9126c4349cb1d3818b89f996387",
+              "verified_TW10_candidate_RGBA_sha256": "35bf02dd929e66f725d00685ca111468976467e0781b7553a1ff3b3776ce5483"
+            },
+            {
+              "original_item_id": 11933,
+              "both_original_itemset_rows_sha256": "70bb4904ed00723ed3e2a820fa988854a64e270ee6194deb0031e007589785f7",
+              "source_original_price_numeric_literal": "360",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 23028,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "92696cc38f43248836b0fe83960753c0e442a9126c4349cb1d3818b89f996387",
+              "verified_TW10_candidate_RGBA_sha256": "35bf02dd929e66f725d00685ca111468976467e0781b7553a1ff3b3776ce5483"
+            },
+            {
+              "original_item_id": 11934,
+              "both_original_itemset_rows_sha256": "b9df00192806b19646b39c757973c56d802000fe8c61c2096dd649fb462f069a",
+              "source_original_price_numeric_literal": "675",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 23028,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "92696cc38f43248836b0fe83960753c0e442a9126c4349cb1d3818b89f996387",
+              "verified_TW10_candidate_RGBA_sha256": "35bf02dd929e66f725d00685ca111468976467e0781b7553a1ff3b3776ce5483"
+            },
+            {
+              "original_item_id": 11935,
+              "both_original_itemset_rows_sha256": "e01be1746af231a0e26ecb75d6b693d17b7038b268e3416a84891c92f2057a87",
+              "source_original_price_numeric_literal": "1080",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 23028,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "92696cc38f43248836b0fe83960753c0e442a9126c4349cb1d3818b89f996387",
+              "verified_TW10_candidate_RGBA_sha256": "35bf02dd929e66f725d00685ca111468976467e0781b7553a1ff3b3776ce5483"
+            },
+            {
+              "original_item_id": 11936,
+              "both_original_itemset_rows_sha256": "a6af2f5136e2b228539d5b862c4d5f7bb28121038d9fb43673dcb7ba52285e08",
+              "source_original_price_numeric_literal": "1575",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 23028,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "92696cc38f43248836b0fe83960753c0e442a9126c4349cb1d3818b89f996387",
+              "verified_TW10_candidate_RGBA_sha256": "35bf02dd929e66f725d00685ca111468976467e0781b7553a1ff3b3776ce5483"
+            },
+            {
+              "original_item_id": 11937,
+              "both_original_itemset_rows_sha256": "98946478d6f0b67922f34a8f75077afeb5bd984d730f0f05b3f405ac1eb34533",
+              "source_original_price_numeric_literal": "2160",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 23028,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "92696cc38f43248836b0fe83960753c0e442a9126c4349cb1d3818b89f996387",
+              "verified_TW10_candidate_RGBA_sha256": "35bf02dd929e66f725d00685ca111468976467e0781b7553a1ff3b3776ce5483"
+            },
+            {
+              "original_item_id": 11940,
+              "both_original_itemset_rows_sha256": "67662ae35b48eb187c79ee6bd39943ee90e450c20178f83d34118c45a0cc23fe",
+              "source_original_price_numeric_literal": "19",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 23027,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "f88fa0d72fa51e813bce2d8476e5813d5fc782f3ccf02bc380ef1c1e0201b240",
+              "verified_TW10_candidate_RGBA_sha256": "6dcb97390fabe3a0839089f1f5c99465ba328f8b10dc55cc1389cc1e4d2c6397"
+            },
+            {
+              "original_item_id": 11941,
+              "both_original_itemset_rows_sha256": "5e79000cc49ea2d96c0f165f9751877dba3bf95fa167f8cdfff16a73c3dfd1a9",
+              "source_original_price_numeric_literal": "75",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 23027,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "f88fa0d72fa51e813bce2d8476e5813d5fc782f3ccf02bc380ef1c1e0201b240",
+              "verified_TW10_candidate_RGBA_sha256": "6dcb97390fabe3a0839089f1f5c99465ba328f8b10dc55cc1389cc1e4d2c6397"
+            },
+            {
+              "original_item_id": 11942,
+              "both_original_itemset_rows_sha256": "ff12b2b14a43f3d330062992ac4da003b7eddfd4b869d00496fae005e4d00a40",
+              "source_original_price_numeric_literal": "169",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 23027,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "f88fa0d72fa51e813bce2d8476e5813d5fc782f3ccf02bc380ef1c1e0201b240",
+              "verified_TW10_candidate_RGBA_sha256": "6dcb97390fabe3a0839089f1f5c99465ba328f8b10dc55cc1389cc1e4d2c6397"
+            },
+            {
+              "original_item_id": 11943,
+              "both_original_itemset_rows_sha256": "2e542514c207cc4e8fb325de3be66de75848c85493ef823c39a59d80492cd779",
+              "source_original_price_numeric_literal": "300",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 23027,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "f88fa0d72fa51e813bce2d8476e5813d5fc782f3ccf02bc380ef1c1e0201b240",
+              "verified_TW10_candidate_RGBA_sha256": "6dcb97390fabe3a0839089f1f5c99465ba328f8b10dc55cc1389cc1e4d2c6397"
+            },
+            {
+              "original_item_id": 11944,
+              "both_original_itemset_rows_sha256": "d6abf1b4182f98ab53a83242e52e3062e2f074ea563b6ee01da400ca5b5fd9e0",
+              "source_original_price_numeric_literal": "563",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 23027,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "f88fa0d72fa51e813bce2d8476e5813d5fc782f3ccf02bc380ef1c1e0201b240",
+              "verified_TW10_candidate_RGBA_sha256": "6dcb97390fabe3a0839089f1f5c99465ba328f8b10dc55cc1389cc1e4d2c6397"
+            },
+            {
+              "original_item_id": 11945,
+              "both_original_itemset_rows_sha256": "bfbbca0ec2abe9e316cedfb3c0bbd869b305aff8a0f0e72109c8f2f1198da4f2",
+              "source_original_price_numeric_literal": "900",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 23027,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "f88fa0d72fa51e813bce2d8476e5813d5fc782f3ccf02bc380ef1c1e0201b240",
+              "verified_TW10_candidate_RGBA_sha256": "6dcb97390fabe3a0839089f1f5c99465ba328f8b10dc55cc1389cc1e4d2c6397"
+            },
+            {
+              "original_item_id": 11946,
+              "both_original_itemset_rows_sha256": "40d099ac461cb0aa964ed2bf84707b542c26dfacc6b9cea884916c1742cf74bc",
+              "source_original_price_numeric_literal": "1313",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 23027,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "f88fa0d72fa51e813bce2d8476e5813d5fc782f3ccf02bc380ef1c1e0201b240",
+              "verified_TW10_candidate_RGBA_sha256": "6dcb97390fabe3a0839089f1f5c99465ba328f8b10dc55cc1389cc1e4d2c6397"
+            },
+            {
+              "original_item_id": 11947,
+              "both_original_itemset_rows_sha256": "891dc50cb65d6cdd2a44ee9dff8d7d8faf9acbd9592af9f3fb9993516547143c",
+              "source_original_price_numeric_literal": "1800",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 23027,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "f88fa0d72fa51e813bce2d8476e5813d5fc782f3ccf02bc380ef1c1e0201b240",
+              "verified_TW10_candidate_RGBA_sha256": "6dcb97390fabe3a0839089f1f5c99465ba328f8b10dc55cc1389cc1e4d2c6397"
+            }
+          ]
+        }
+      ],
+      "directed_mapwarp_original_rows_referencing_floor": [
+        1463,
+        1464,
+        1465,
+        1466
+      ]
+    },
+    {
+      "floor": 1401,
+      "original_DAT_sha256": "b0f18a7b063c43f1e6b9e51b5c4dabf60bebf10ddbdcd8e487e5736ae7a1da15",
+      "original_LS2MAP_sha256": "c493132235a8f294424a0999b5c3a3cfc333f7c5afae78955cd647247b029832",
+      "source_RAR_member_crc32": "4ef9002c",
+      "server_vs_client_layers_changed_cells": [
+        0,
+        34
+      ],
+      "same_source_changed_pairs_only": [
+        "client_u16_0__server_u16_2"
+      ],
+      "original_DAT_map_geometry": [
+        30,
+        30
+      ],
+      "verified_TW1_tile_candidate_placements": 132,
+      "distinct_TW1_tile_candidate_aliases": 38,
+      "verified_full_combined_RGBA_sha256": "40b53ea82d40a501edcfa00f7b4f0504b596c457dc5558165a0c31f04cf1f933",
+      "candidate_private_PNG_sha256": "e747ca0fd20002e7d847eae3bde9626026c6831c7cd0780aef05a34f80342a61",
+      "shop_configs": [
+        {
+          "shop_role_original": "OFFENCE",
+          "graphic_alias": 16209,
+          "borncorner_xy": [
+            19,
+            17
+          ],
+          "source_DAT_three_u16_at_create": [
+            537,
+            0,
+            49152
+          ],
+          "original_CREATE_block_sha256": "f6b464dbff5a05a24cc59e42e84c62acd16c1d424e446679dce830cdf3fddc92",
+          "original_CREATE_ordinal_within_shop_m": 68,
+          "original_parameter_path": "genout/ss_1401_19_17",
+          "original_parameter_sha256": "daf4c825b759da59631473abc38f98124ee213abc5885b2c726d415887a13172",
+          "original_ItemList_count": 16,
+          "original_range_expression_tokens": [],
+          "range_expansion_candidate_count": 0,
+          "original_LimitItemType_literal": "OFFENCE",
+          "original_LimitItemNo_literal": "",
+          "raw_buy_rate": "1.0",
+          "raw_sell_rate": "0.17",
+          "raw_special_rate": "1.5",
+          "original_fields_missing_or_empty": [
+            "LimitItemNo",
+            "special_item"
+          ],
+          "separate_original_LimitItemNo_original_itemset_source_join": null,
+          "items": [
+            {
+              "original_item_id": 24,
+              "both_original_itemset_rows_sha256": "71dc6cb7661025a9b996ad5a474f7466fcbfcea74c7c218393154490c58beb2c",
+              "source_original_price_numeric_literal": "1280",
+              "source_original_type_numeric_literal": "1",
+              "source_image_alias_numeric": 20002,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "d1c0d8df2fc89191f3b03127be7a083a47a7c8b9c186107a5b0b3058c6b6dbe2",
+              "verified_TW10_candidate_RGBA_sha256": "e5d4b83eb4d8ecc5131b9738b89430ae47dcde8d7b0e68b99542d8d98a87bd12"
+            },
+            {
+              "original_item_id": 34,
+              "both_original_itemset_rows_sha256": "fce8d75b6a868e8a9cd43a7a42306b7d18064c05795153bfe70e0dc071312cb0",
+              "source_original_price_numeric_literal": "3790",
+              "source_original_type_numeric_literal": "1",
+              "source_image_alias_numeric": 20007,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "5c2e1b249d50794a923ffe2c3a2e4c3a3cb7df82783e1fe9557fd95a1f92f9f0",
+              "verified_TW10_candidate_RGBA_sha256": "78dceaa309057a238128ee7457dee73f0643e77310e7dae3ff814cdd0f08c949"
+            },
+            {
+              "original_item_id": 44,
+              "both_original_itemset_rows_sha256": "744a202e456cb5b69e559e17aba9786e0417dbbbb56ae3b88bdde91287150820",
+              "source_original_price_numeric_literal": "7300",
+              "source_original_type_numeric_literal": "1",
+              "source_image_alias_numeric": 20017,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "7c9f5cc811413241aee92ed200ae3c67fce9733ac4361d62c130722e77a009d8",
+              "verified_TW10_candidate_RGBA_sha256": "5bd47e91245c3c7fb30dbfba3bf5991fac5b3b3f26f0707afadab120a115f0eb"
+            },
+            {
+              "original_item_id": 54,
+              "both_original_itemset_rows_sha256": "3d4e5534ba0fb3aa08b5e52e3d75a99fcb43601aa3baf9bfbbaf5f13feea9801",
+              "source_original_price_numeric_literal": "13450",
+              "source_original_type_numeric_literal": "1",
+              "source_image_alias_numeric": 20014,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "37c1ac08a22076dedbd01774471f528c3b0dcfdddfbab6578f3b3c759141971a",
+              "verified_TW10_candidate_RGBA_sha256": "91b44c18269b89be90bd01af1d13f41e613a19f8e1bf32b01673036fb18f3068"
+            },
+            {
+              "original_item_id": 121,
+              "both_original_itemset_rows_sha256": "e4aadb61be2f1fc2ffb1a1973449d49e7124704566629576d38c765ac3bf4175",
+              "source_original_price_numeric_literal": "1160",
+              "source_original_type_numeric_literal": "2",
+              "source_image_alias_numeric": 20113,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "2dcd7d7d5158a4488b2020255469fa44ddd843531c0b032a65e4a684d8fa23bd",
+              "verified_TW10_candidate_RGBA_sha256": "e7ed3b3140451a86bc1665d579b7f4be433d78f32465f242a4c3aa5ab132bc8a"
+            },
+            {
+              "original_item_id": 124,
+              "both_original_itemset_rows_sha256": "4783984a0629bf4b2e9b6ab48e1f976001c14abed0490b7c2d9e0f66c66cf976",
+              "source_original_price_numeric_literal": "1040",
+              "source_original_type_numeric_literal": "2",
+              "source_image_alias_numeric": 20113,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "2dcd7d7d5158a4488b2020255469fa44ddd843531c0b032a65e4a684d8fa23bd",
+              "verified_TW10_candidate_RGBA_sha256": "e7ed3b3140451a86bc1665d579b7f4be433d78f32465f242a4c3aa5ab132bc8a"
+            },
+            {
+              "original_item_id": 144,
+              "both_original_itemset_rows_sha256": "597a7b28452493518619f831630941096c2a13098da53bc2c97761f1f9b57fe3",
+              "source_original_price_numeric_literal": "5800",
+              "source_original_type_numeric_literal": "2",
+              "source_image_alias_numeric": 20111,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "3d13c4ffb95f5187ffba511ccab5cedbe491ed32ff6869f4af80505b339f8c34",
+              "verified_TW10_candidate_RGBA_sha256": "ea6a8e65957548ac207bbfa816861e190d828657ebd6564c4be58f4004991064"
+            },
+            {
+              "original_item_id": 155,
+              "both_original_itemset_rows_sha256": "66da17ddf2566617246627d7d72bc45570f985b5f137bb9c534eb790450761bd",
+              "source_original_price_numeric_literal": "12100",
+              "source_original_type_numeric_literal": "2",
+              "source_image_alias_numeric": 20109,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "e7bb2c63062745e784762074e7ca9832848042e546b76c0569d2eb16b9e6dd0c",
+              "verified_TW10_candidate_RGBA_sha256": "afdb769b4df6adfa014ce059269bf3c9522ea7222317ecfe86019619545396f8"
+            },
+            {
+              "original_item_id": 222,
+              "both_original_itemset_rows_sha256": "c9f90d3168335d5179b236490e451a861c7b262d198fd596e3b393fc50544fa7",
+              "source_original_price_numeric_literal": "1260",
+              "source_original_type_numeric_literal": "3",
+              "source_image_alias_numeric": 20424,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "7ae0020bf99719fe61bc01a6777bbeb03fefbdbf1acdb8542c5ae061ab59fe2c",
+              "verified_TW10_candidate_RGBA_sha256": "6a55dcd7f0ff965b4f3b07197caaa3844d121a95ef92300ea142d5bd7b3552f3"
+            },
+            {
+              "original_item_id": 235,
+              "both_original_itemset_rows_sha256": "93850897b7cd9aae9039b507c76d4bfd469eb4366607785334d40d1e5e5673fa",
+              "source_original_price_numeric_literal": "3960",
+              "source_original_type_numeric_literal": "3",
+              "source_image_alias_numeric": 20427,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "bf2500ef34d2322e00bbd45090f637bb8819a4f37f522ff820904981dde8e73f",
+              "verified_TW10_candidate_RGBA_sha256": "94d3d1be512e699077d65f8a018a5b96f990bb00c44785472311fe7ed117c12b"
+            },
+            {
+              "original_item_id": 241,
+              "both_original_itemset_rows_sha256": "f431a82099a4291252c2163c2b3114b9f578927172016912f267a3790be00415",
+              "source_original_price_numeric_literal": "7200",
+              "source_original_type_numeric_literal": "3",
+              "source_image_alias_numeric": 20510,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "e32c40165dc1fa3f014d01f48c0e098d9db6d246515c715a0c82eda11894fa1b",
+              "verified_TW10_candidate_RGBA_sha256": "cb4ef437158c24a36dae7e6abc7332e2beee749f404693c917b50d6eba0c647b"
+            },
+            {
+              "original_item_id": 254,
+              "both_original_itemset_rows_sha256": "93992abe43ac41d06af922daffd0f02fc37ccd9398a6172b1460a002d6c1378b",
+              "source_original_price_numeric_literal": "12600",
+              "source_original_type_numeric_literal": "3",
+              "source_image_alias_numeric": 20415,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "12c1f5ded0c8e56c1d61316f208c43d8b77caf4720153787e4872f6f5a471a2f",
+              "verified_TW10_candidate_RGBA_sha256": "3f58d8b76befc8002236c7b2191027f29a579cded38ccd7e4b1f6acef15dfc02"
+            },
+            {
+              "original_item_id": 722,
+              "both_original_itemset_rows_sha256": "fef1c46f9dd2e01226a5ba2d1e81d2deb632a6641d44c56c2d88cb2a975274d2",
+              "source_original_price_numeric_literal": "1180",
+              "source_original_type_numeric_literal": "19",
+              "source_image_alias_numeric": 20526,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "998da321dda2d9bf65a729c4156db793dbcf22d4c7b931456781868bf7cdb1e7",
+              "verified_TW10_candidate_RGBA_sha256": "4cea85f0178ea2f76cbc679ddca8f9eb7b4e6a2d938815f517d555474fa9b908"
+            },
+            {
+              "original_item_id": 731,
+              "both_original_itemset_rows_sha256": "fbd80f135b1d1fc2d7faa2239db8ae9350b60a0874e8b7ece0eae90ac4be9aee",
+              "source_original_price_numeric_literal": "3730",
+              "source_original_type_numeric_literal": "19",
+              "source_image_alias_numeric": 20528,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "0b1a2fc4f2b19772e21af293ff97136e9549153fea9e80c512bf6a3736562f4e",
+              "verified_TW10_candidate_RGBA_sha256": "32a8190cdb49e1cc60c4393a2adb8b688bf5582854b53e292475d8612ee0bd88"
+            },
+            {
+              "original_item_id": 743,
+              "both_original_itemset_rows_sha256": "ed1ef2cb493dd9ad3903c06fb198ea50df05ef73a97be3280c5c13715f713ea6",
+              "source_original_price_numeric_literal": "6300",
+              "source_original_type_numeric_literal": "19",
+              "source_image_alias_numeric": 20502,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "9f0a7ad92ff4d684b7f6932dab8382a370c29a91a4ba954c873da475e089267e",
+              "verified_TW10_candidate_RGBA_sha256": "319f0020f85cfa3ac9898a592e4c8a7a1229d5c93bb47380bf8edb00e253bd13"
+            },
+            {
+              "original_item_id": 780,
+              "both_original_itemset_rows_sha256": "1b26aaae155df78af508871c451957fd4e37bf055a7217a31b09156378c644a2",
+              "source_original_price_numeric_literal": "35200",
+              "source_original_type_numeric_literal": "19",
+              "source_image_alias_numeric": 20547,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "6385781476f022abbf1f00ca5f2abe48e553c79bd0483d5f58e969b641e4f263",
+              "verified_TW10_candidate_RGBA_sha256": "54ee1481ff44baa1c32496b661a573b3acd951e0f31fe49cceb26eec66dcf2d6"
+            }
+          ]
+        },
+        {
+          "shop_role_original": "DEFENCE",
+          "graphic_alias": 16043,
+          "borncorner_xy": [
+            18,
+            13
+          ],
+          "source_DAT_three_u16_at_create": [
+            536,
+            0,
+            49152
+          ],
+          "original_CREATE_block_sha256": "1fdf4c1a6b3cb958b6f16b3b8d6b2d1e27919ee07091af654758ae34f26d70ac",
+          "original_CREATE_ordinal_within_shop_m": 69,
+          "original_parameter_path": "genout/ss_1401_18_13",
+          "original_parameter_sha256": "c42f7336a24787ac050b239a3ac2d9a48f48caf9e495ff5cacf80769638383de",
+          "original_ItemList_count": 12,
+          "original_range_expression_tokens": [],
+          "range_expansion_candidate_count": 0,
+          "original_LimitItemType_literal": "DEFENCE",
+          "original_LimitItemNo_literal": "",
+          "raw_buy_rate": "1.0",
+          "raw_sell_rate": "0.17",
+          "raw_special_rate": "1.5",
+          "original_fields_missing_or_empty": [
+            "LimitItemNo",
+            "special_item"
+          ],
+          "separate_original_LimitItemNo_original_itemset_source_join": null,
+          "items": [
+            {
+              "original_item_id": 804,
+              "both_original_itemset_rows_sha256": "4ac5e1b918763bba1a086d3b68404d44bb12c25aa9f75d50c9e0c0e00f72ed12",
+              "source_original_price_numeric_literal": "70",
+              "source_original_type_numeric_literal": "6",
+              "source_image_alias_numeric": 21514,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "fc31dcff345bc5643e04acebee968ed1a9985c975268ccfcb04545e319575625",
+              "verified_TW10_candidate_RGBA_sha256": "8e55d30fc45a356a63d188f1fc397313c7c77f745b724b53fba0c57ae94651a9"
+            },
+            {
+              "original_item_id": 824,
+              "both_original_itemset_rows_sha256": "aa7f7c783a2229da4652ecd1957585c604c904dacadbfac607dc976881d41489",
+              "source_original_price_numeric_literal": "980",
+              "source_original_type_numeric_literal": "6",
+              "source_image_alias_numeric": 21509,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "c6fc3856e8c5a9ab31fc4e9f9848c3444b3b3a8daf99737d565f63de1dd3e3ef",
+              "verified_TW10_candidate_RGBA_sha256": "ace27936c9210468abb81d88da0d3b16777342da975e2034ef0fcf0d09bb4541"
+            },
+            {
+              "original_item_id": 834,
+              "both_original_itemset_rows_sha256": "8102a3a90c1958995737d53d399b170f73e009938adf6a81a867f27f1ce3cd3e",
+              "source_original_price_numeric_literal": "2620",
+              "source_original_type_numeric_literal": "6",
+              "source_image_alias_numeric": 21520,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "e3fee5cffdeac7a8eb2f3d550806c4b2a587808b166975d90b44e69ed8ce8ec5",
+              "verified_TW10_candidate_RGBA_sha256": "b8f703543651bf961eb4cff8bd4e34bb9fe8dc33cc857afd4d170e20a6a795f4"
+            },
+            {
+              "original_item_id": 904,
+              "both_original_itemset_rows_sha256": "0ed4cc23349dd0b2f39b91c5aedcbf99d82b258a8b379af77ad5195b0472683c",
+              "source_original_price_numeric_literal": "64",
+              "source_original_type_numeric_literal": "6",
+              "source_image_alias_numeric": 21511,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "9e0276e5749c37a82fe17f05d061770cb4db0139396c00dc22d71f0de9aa8db8",
+              "verified_TW10_candidate_RGBA_sha256": "bdf0dc58815b7cb391274da5d28dcfde0c3e2f836a57ec475b19c60a43796298"
+            },
+            {
+              "original_item_id": 924,
+              "both_original_itemset_rows_sha256": "5e499e28da1cb021174e294f843b593b67dd8039f9d95dff87285fe3a2ca4a74",
+              "source_original_price_numeric_literal": "856",
+              "source_original_type_numeric_literal": "6",
+              "source_image_alias_numeric": 21537,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "380abd26b1a27500006789e6851f313f5fea4b978affe7329d2e0c2832df7c72",
+              "verified_TW10_candidate_RGBA_sha256": "200520d0fdcc922109754e1f4052ea456d6eea43c3f7922ac198a156f6a2f5c4"
+            },
+            {
+              "original_item_id": 934,
+              "both_original_itemset_rows_sha256": "a1524ee669d1db66942ecfdd9bc7ff3beb312d0e999340fe067b67fe942bbaf7",
+              "source_original_price_numeric_literal": "2224",
+              "source_original_type_numeric_literal": "6",
+              "source_image_alias_numeric": 21538,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "3ff3161de75434113b432f5ef02c1f9085b876cf607a8d674821e4c09f8f03ec",
+              "verified_TW10_candidate_RGBA_sha256": "1244d47c0a5397d9f1a63a69e37c740c349bf1fad7a4af71d1dfc4624580859e"
+            },
+            {
+              "original_item_id": 1004,
+              "both_original_itemset_rows_sha256": "9510ecd88f6ad5bfabd46b22f5ea089c0fb91b30aa8b6c80d10d8ae82f02e59b",
+              "source_original_price_numeric_literal": "215",
+              "source_original_type_numeric_literal": "7",
+              "source_image_alias_numeric": 21015,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "0c893d1f28343c87256e43e553fd6eb952504fbc3eb659f6065ee2312dd7274a",
+              "verified_TW10_candidate_RGBA_sha256": "b931a2a571db341381175cd002ac6204b24f5eccc95887c10821db0650c4aba2"
+            },
+            {
+              "original_item_id": 1024,
+              "both_original_itemset_rows_sha256": "e706023f3ec03a3977ce5ec745e47b7c1cd841a0350f1d15e24bb2a892758b08",
+              "source_original_price_numeric_literal": "1500",
+              "source_original_type_numeric_literal": "7",
+              "source_image_alias_numeric": 21047,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "6794f7eb83f05e7cb65e1900ad038ed4bc79b95a7151086d726765fb8766a0b7",
+              "verified_TW10_candidate_RGBA_sha256": "f361f42734760a0f36f1768a2a1ab3630c119ec00341fa7c508062b4ea154ca8"
+            },
+            {
+              "original_item_id": 1034,
+              "both_original_itemset_rows_sha256": "86202eca3bbc4bf684544ea4879c341f8d4906df715c6da1326c64969cb5837f",
+              "source_original_price_numeric_literal": "3850",
+              "source_original_type_numeric_literal": "7",
+              "source_image_alias_numeric": 21047,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "6794f7eb83f05e7cb65e1900ad038ed4bc79b95a7151086d726765fb8766a0b7",
+              "verified_TW10_candidate_RGBA_sha256": "f361f42734760a0f36f1768a2a1ab3630c119ec00341fa7c508062b4ea154ca8"
+            },
+            {
+              "original_item_id": 1104,
+              "both_original_itemset_rows_sha256": "a1a3f3d8b354c7970af3ae8fed7f1e2b8b2e67b992d6f8716e5691f3571fa1bd",
+              "source_original_price_numeric_literal": "198",
+              "source_original_type_numeric_literal": "7",
+              "source_image_alias_numeric": 21039,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "8a1ac8f95529211e4fda7a7c318126668c477e7bf7f3c9dc4b447edba35ad624",
+              "verified_TW10_candidate_RGBA_sha256": "8116a4a4b91bbc4bf04dda617ba2e16b5c7d3ad15549583228342599c8f0f507"
+            },
+            {
+              "original_item_id": 1124,
+              "both_original_itemset_rows_sha256": "e4bce12e58d2091579973280c69ddc99b23d4545146aea529650f86234218764",
+              "source_original_price_numeric_literal": "1260",
+              "source_original_type_numeric_literal": "7",
+              "source_image_alias_numeric": 21035,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "e3667022c27ab801e0daa146f853d15b6c7bb9cb43c3b65550a5091704106977",
+              "verified_TW10_candidate_RGBA_sha256": "858567c0d3f8a9eb412f7f8b3a12d0ac285e4c85d8f75b47e0a56858012f6ebc"
+            },
+            {
+              "original_item_id": 1134,
+              "both_original_itemset_rows_sha256": "baf6971bdd29d2005e7fe86e4f9f1402c599feffd63c2105b3af91957ae9b869",
+              "source_original_price_numeric_literal": "3160",
+              "source_original_type_numeric_literal": "7",
+              "source_image_alias_numeric": 21035,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "e3667022c27ab801e0daa146f853d15b6c7bb9cb43c3b65550a5091704106977",
+              "verified_TW10_candidate_RGBA_sha256": "858567c0d3f8a9eb412f7f8b3a12d0ac285e4c85d8f75b47e0a56858012f6ebc"
+            }
+          ]
+        }
+      ],
+      "directed_mapwarp_original_rows_referencing_floor": [
+        1489,
+        1490,
+        1491,
+        1492
+      ]
+    },
+    {
+      "floor": 1402,
+      "original_DAT_sha256": "2630241a07c1a86b5ddb4f2f1ccbdc6cc150cfde053c1738b135beff66622fa7",
+      "original_LS2MAP_sha256": "ed22f51b99eb48e7e8f5a45725330596907dd1964a61dfdc4a66ed595fd12aee",
+      "source_RAR_member_crc32": "d7193ba6",
+      "server_vs_client_layers_changed_cells": [
+        0,
+        1
+      ],
+      "same_source_changed_pairs_only": [
+        "client_u16_0__server_u16_2"
+      ],
+      "original_DAT_map_geometry": [
+        30,
+        30
+      ],
+      "verified_TW1_tile_candidate_placements": 128,
+      "distinct_TW1_tile_candidate_aliases": 36,
+      "verified_full_combined_RGBA_sha256": "75eae810294e97a89e59f574a7beff7d2ac769745ab4ca958f03904fdd258acd",
+      "candidate_private_PNG_sha256": "630552c699f4f5bff6d483e0f89c9b829b4a64b66040bc778cc0f1ecd702985b",
+      "shop_configs": [
+        {
+          "shop_role_original": "ACCESSORY",
+          "graphic_alias": 16010,
+          "borncorner_xy": [
+            19,
+            15
+          ],
+          "source_DAT_three_u16_at_create": [
+            536,
+            0,
+            49152
+          ],
+          "original_CREATE_block_sha256": "7fb141279efb6c439099971b21a3dbde08ecc0d680c6706d265f811a6f6b8cef",
+          "original_CREATE_ordinal_within_shop_m": 70,
+          "original_parameter_path": "genout/ss_1402_19_15",
+          "original_parameter_sha256": "a457983aa7e75b381ad83f3fe2241ad29c7d5a36525f072937e4ef7cdedbcb7e",
+          "original_ItemList_count": 6,
+          "original_range_expression_tokens": [],
+          "range_expansion_candidate_count": 0,
+          "original_LimitItemType_literal": "ACCESSORY",
+          "original_LimitItemNo_literal": "",
+          "raw_buy_rate": "1.0",
+          "raw_sell_rate": "0.17",
+          "raw_special_rate": "1.5",
+          "original_fields_missing_or_empty": [
+            "LimitItemNo",
+            "special_item"
+          ],
+          "separate_original_LimitItemNo_original_itemset_source_join": null,
+          "items": [
+            {
+              "original_item_id": 1210,
+              "both_original_itemset_rows_sha256": "37bddc6f2c4b5a90f601f7945a92764a5e10c329974583ed8bd72710f433bdd5",
+              "source_original_price_numeric_literal": "18000",
+              "source_original_type_numeric_literal": "8",
+              "source_image_alias_numeric": 22082,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "a1b35e52854441892b42fd43cd38efed1f5b6c5717c7488be9b06dba8d7fc53b",
+              "verified_TW10_candidate_RGBA_sha256": "16649c6bc5ccd2a8feb3ea8365d9837db63865b6aaeb820316814c89f4ca27f8"
+            },
+            {
+              "original_item_id": 1262,
+              "both_original_itemset_rows_sha256": "3096bb080978652805ef4b56da479ba8ac3463adda27ec6d34b1a25440aba498",
+              "source_original_price_numeric_literal": "4500",
+              "source_original_type_numeric_literal": "9",
+              "source_image_alias_numeric": 24200,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "de2dd5ee9b62eceffbf2dfa68d5fa990e351f9590be2ff300a906ebfce667512",
+              "verified_TW10_candidate_RGBA_sha256": "455b8164ff1ff9d48fb36f2cbecfa63d4988e338f2e6323d3bc16caee5b3f468"
+            },
+            {
+              "original_item_id": 1306,
+              "both_original_itemset_rows_sha256": "bda73861f4a1681483aa71d6499ca295c0f49a056a8fe6aeef736152235014bc",
+              "source_original_price_numeric_literal": "1800",
+              "source_original_type_numeric_literal": "11",
+              "source_image_alias_numeric": 22102,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "de5705244a0a6794b14a4e0336ce5a06f8d10f80df51d9a8cdb56756986ec34f",
+              "verified_TW10_candidate_RGBA_sha256": "421f69c882ff1a4b1e5d34ea0dac38511c00c7b7855af85b9c87b4e6f8462e7e"
+            },
+            {
+              "original_item_id": 1356,
+              "both_original_itemset_rows_sha256": "a5cfe778cdd9ee86e00a0a54c7919a34a451ba0c6aaff8d521adfdca00b466a5",
+              "source_original_price_numeric_literal": "6000",
+              "source_original_type_numeric_literal": "10",
+              "source_image_alias_numeric": 22027,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "eae5ba47446d6c540828b5ded8c22554f7b5d35d40554276ea4b03f5a6c24fe4",
+              "verified_TW10_candidate_RGBA_sha256": "4208cd3497c4e596a0b60191885a5557b9442a6bfb5f9f861937d00b1747cd02"
+            },
+            {
+              "original_item_id": 1355,
+              "both_original_itemset_rows_sha256": "ce71f17a5e5fcdbaa1056fba659e4692aa4659e9f16de11faf720c878ff4cdef",
+              "source_original_price_numeric_literal": "6800",
+              "source_original_type_numeric_literal": "10",
+              "source_image_alias_numeric": 22025,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "806f589fd197d0238bb697a676dd6b85c8368a494a81511815078cd43797fcb4",
+              "verified_TW10_candidate_RGBA_sha256": "79cc610f95fdef60535fd7ad78ad3ecd28fd69e1623678e4022c1b62b873e64e"
+            },
+            {
+              "original_item_id": 1400,
+              "both_original_itemset_rows_sha256": "62b8aa696b50d91dc39c1bb68927d6698d415d3bc30ca15887a77c951327634f",
+              "source_original_price_numeric_literal": "400",
+              "source_original_type_numeric_literal": "13",
+              "source_image_alias_numeric": 22051,
+              "item_id_membership_evidence": "EXPLICIT_ORIGINAL_ITEMLIST_ID",
+              "verified_TW10_candidate_PNG_sha256": "0b4102a9656c70a048c7cc6b6a5651a1d98d7bbcefc044707f998df50f78e2af",
+              "verified_TW10_candidate_RGBA_sha256": "87b9f20925a74d37bb28cc1ee93116be242ee357bcebeffaac80e8d15fc72826"
+            }
+          ]
+        },
+        {
+          "shop_role_original": "MATERIAL_SHOP_NAME_ONLY_LIMIT_TYPE_EMPTY",
+          "graphic_alias": 16201,
+          "borncorner_xy": [
+            14,
+            13
+          ],
+          "source_DAT_three_u16_at_create": [
+            567,
+            0,
+            49152
+          ],
+          "original_CREATE_block_sha256": "e5ed474ec65dacbdd4e7c530561730dca84e01c62684adad88a189877664f22b",
+          "original_CREATE_ordinal_within_shop_m": 108,
+          "original_parameter_path": "genout/ss_1402_14_13",
+          "original_parameter_sha256": "133b94d400f76b5422542569b1a7f8cc14497595a03d60fefaf1f4761c3bd99b",
+          "original_ItemList_count": 0,
+          "original_range_expression_tokens": [
+            "11890-11897",
+            "12000-12007"
+          ],
+          "range_expansion_candidate_count": 16,
+          "original_LimitItemType_literal": "",
+          "original_LimitItemNo_literal": "11890-11897,12000-12007",
+          "raw_buy_rate": "1.0",
+          "raw_sell_rate": "0.5",
+          "raw_special_rate": "1.5",
+          "original_fields_missing_or_empty": [
+            "special_item"
+          ],
+          "separate_original_LimitItemNo_original_itemset_source_join": null,
+          "items": [
+            {
+              "original_item_id": 11890,
+              "both_original_itemset_rows_sha256": "cc3a97059038541eb2351e1d1c8d8f10429672a1eda5c658fc01e9365ab2d1de",
+              "source_original_price_numeric_literal": "6",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 24173,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "462b899bccfeeb2f25c1bc3b7165789c57a9c0bcdb0dfaa6850f06e3ae62dac7",
+              "verified_TW10_candidate_RGBA_sha256": "3486209dd26e003cdab5f717ce2b94329ddfb75b53ad6c5afbea568e8dbd4422"
+            },
+            {
+              "original_item_id": 11891,
+              "both_original_itemset_rows_sha256": "48d50517d35040ad95032b722b1fe68588655eb0048da220dc0122a164c2dec6",
+              "source_original_price_numeric_literal": "25",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 24174,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "0c431fa5a348bb0c79cb1fcf6dfb76b218f6ba199212c3d30c70b7c40e7f408b",
+              "verified_TW10_candidate_RGBA_sha256": "61567ca01a8002e50aff4d8d255dd035f98a7c8fef8a8874f22f6c60d5d0ac8c"
+            },
+            {
+              "original_item_id": 11892,
+              "both_original_itemset_rows_sha256": "e37a9601b967ae4dd9d7dd5fcfb367c35fab058ad3449bcad57c0919167a0549",
+              "source_original_price_numeric_literal": "98",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 24173,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "462b899bccfeeb2f25c1bc3b7165789c57a9c0bcdb0dfaa6850f06e3ae62dac7",
+              "verified_TW10_candidate_RGBA_sha256": "3486209dd26e003cdab5f717ce2b94329ddfb75b53ad6c5afbea568e8dbd4422"
+            },
+            {
+              "original_item_id": 11893,
+              "both_original_itemset_rows_sha256": "4a752eadc6acdf8365b35ac20c9c345838edee528ef0cbf739fb5d3b8db6209a",
+              "source_original_price_numeric_literal": "285",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 24174,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "0c431fa5a348bb0c79cb1fcf6dfb76b218f6ba199212c3d30c70b7c40e7f408b",
+              "verified_TW10_candidate_RGBA_sha256": "61567ca01a8002e50aff4d8d255dd035f98a7c8fef8a8874f22f6c60d5d0ac8c"
+            },
+            {
+              "original_item_id": 11894,
+              "both_original_itemset_rows_sha256": "43eb85b48d9e08cf028b3f48aa58949b86e91a83bc96ce59a6410ce4f94a4b5d",
+              "source_original_price_numeric_literal": "563",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 24173,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "462b899bccfeeb2f25c1bc3b7165789c57a9c0bcdb0dfaa6850f06e3ae62dac7",
+              "verified_TW10_candidate_RGBA_sha256": "3486209dd26e003cdab5f717ce2b94329ddfb75b53ad6c5afbea568e8dbd4422"
+            },
+            {
+              "original_item_id": 11895,
+              "both_original_itemset_rows_sha256": "a1dc3a37b569fa18289ccbb1003811b1d30bc47214a273cd9bebee19c47f7a74",
+              "source_original_price_numeric_literal": "1050",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 24174,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "0c431fa5a348bb0c79cb1fcf6dfb76b218f6ba199212c3d30c70b7c40e7f408b",
+              "verified_TW10_candidate_RGBA_sha256": "61567ca01a8002e50aff4d8d255dd035f98a7c8fef8a8874f22f6c60d5d0ac8c"
+            },
+            {
+              "original_item_id": 11896,
+              "both_original_itemset_rows_sha256": "146945f05644164e0899f2d6b75c964de252e8d7a65398794bde547c9c045f34",
+              "source_original_price_numeric_literal": "1613",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 24173,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "462b899bccfeeb2f25c1bc3b7165789c57a9c0bcdb0dfaa6850f06e3ae62dac7",
+              "verified_TW10_candidate_RGBA_sha256": "3486209dd26e003cdab5f717ce2b94329ddfb75b53ad6c5afbea568e8dbd4422"
+            },
+            {
+              "original_item_id": 11897,
+              "both_original_itemset_rows_sha256": "9fea6d35f0c454e3cc4e71ebb812d48c692ea61c89d37ec0368d01ed9f1abea1",
+              "source_original_price_numeric_literal": "2475",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 24174,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "0c431fa5a348bb0c79cb1fcf6dfb76b218f6ba199212c3d30c70b7c40e7f408b",
+              "verified_TW10_candidate_RGBA_sha256": "61567ca01a8002e50aff4d8d255dd035f98a7c8fef8a8874f22f6c60d5d0ac8c"
+            },
+            {
+              "original_item_id": 12000,
+              "both_original_itemset_rows_sha256": "7992b228142cfe3f60231a2565b6e7ea0c23e34844c66498ee163e12e5c84e20",
+              "source_original_price_numeric_literal": "50",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 24170,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "3dbf013d168fe067a2c38e4951c58770d7c5652efc58ba12ba81997f878f84b6",
+              "verified_TW10_candidate_RGBA_sha256": "e6789afbb0aaacf598c53bf8df0c1bbeb6930e50ae649bc4b94e5343d848dc0c"
+            },
+            {
+              "original_item_id": 12001,
+              "both_original_itemset_rows_sha256": "1c646e9e03fff67c6fd6330e1b07440b755599acabab6a4f9dde8b126e299bb8",
+              "source_original_price_numeric_literal": "200",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 24170,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "3dbf013d168fe067a2c38e4951c58770d7c5652efc58ba12ba81997f878f84b6",
+              "verified_TW10_candidate_RGBA_sha256": "e6789afbb0aaacf598c53bf8df0c1bbeb6930e50ae649bc4b94e5343d848dc0c"
+            },
+            {
+              "original_item_id": 12002,
+              "both_original_itemset_rows_sha256": "cda549e150ea8c06a42cddea9fa81206df6bb4295686962bac764b17eee835a1",
+              "source_original_price_numeric_literal": "450",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 24170,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "3dbf013d168fe067a2c38e4951c58770d7c5652efc58ba12ba81997f878f84b6",
+              "verified_TW10_candidate_RGBA_sha256": "e6789afbb0aaacf598c53bf8df0c1bbeb6930e50ae649bc4b94e5343d848dc0c"
+            },
+            {
+              "original_item_id": 12003,
+              "both_original_itemset_rows_sha256": "8a1c2fb8874a5c176631b39716c431bc053a1d423233fd63ba3076a3b068a308",
+              "source_original_price_numeric_literal": "800",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 24170,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "3dbf013d168fe067a2c38e4951c58770d7c5652efc58ba12ba81997f878f84b6",
+              "verified_TW10_candidate_RGBA_sha256": "e6789afbb0aaacf598c53bf8df0c1bbeb6930e50ae649bc4b94e5343d848dc0c"
+            },
+            {
+              "original_item_id": 12004,
+              "both_original_itemset_rows_sha256": "ccb10aa6ed139ffe75254a3486f0515e6f0312af75d691e695d437f785210edf",
+              "source_original_price_numeric_literal": "1500",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 24170,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "3dbf013d168fe067a2c38e4951c58770d7c5652efc58ba12ba81997f878f84b6",
+              "verified_TW10_candidate_RGBA_sha256": "e6789afbb0aaacf598c53bf8df0c1bbeb6930e50ae649bc4b94e5343d848dc0c"
+            },
+            {
+              "original_item_id": 12005,
+              "both_original_itemset_rows_sha256": "5950ae1f840921dde7f3841b03220b57233fb5120a38abd4a32393e73c197650",
+              "source_original_price_numeric_literal": "2400",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 24170,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "3dbf013d168fe067a2c38e4951c58770d7c5652efc58ba12ba81997f878f84b6",
+              "verified_TW10_candidate_RGBA_sha256": "e6789afbb0aaacf598c53bf8df0c1bbeb6930e50ae649bc4b94e5343d848dc0c"
+            },
+            {
+              "original_item_id": 12006,
+              "both_original_itemset_rows_sha256": "b0a190b8bfb92a815959c8b1f2d376726cb71e0c43c31783f8e782bc93946268",
+              "source_original_price_numeric_literal": "3500",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 24170,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "3dbf013d168fe067a2c38e4951c58770d7c5652efc58ba12ba81997f878f84b6",
+              "verified_TW10_candidate_RGBA_sha256": "e6789afbb0aaacf598c53bf8df0c1bbeb6930e50ae649bc4b94e5343d848dc0c"
+            },
+            {
+              "original_item_id": 12007,
+              "both_original_itemset_rows_sha256": "09985170fbb1c99452f7a2ead40f9e557d6989ad89fd9114b2c138f4f35be8da",
+              "source_original_price_numeric_literal": "4800",
+              "source_original_type_numeric_literal": "16",
+              "source_image_alias_numeric": 24170,
+              "item_id_membership_evidence": "RANGE_INCLUSIVE_CANDIDATE_NOT_NATIVE_PROVEN",
+              "verified_TW10_candidate_PNG_sha256": "3dbf013d168fe067a2c38e4951c58770d7c5652efc58ba12ba81997f878f84b6",
+              "verified_TW10_candidate_RGBA_sha256": "e6789afbb0aaacf598c53bf8df0c1bbeb6930e50ae649bc4b94e5343d848dc0c"
+            }
+          ]
+        }
+      ],
+      "directed_mapwarp_original_rows_referencing_floor": [
+        1493,
+        1494,
+        1495,
+        1496
+      ]
+    }
+  ],
+  "source_only_shop_total": 11,
+  "cross_version_same_official_deployment_proven": false,
+  "native_shop_or_warp_transaction_executed": false,
+  "retail_TW1_candidate_bitmap_is_original_mixed25_runtime_selection_proven": false,
+  "Stage_A": "7_PARTIAL_2_OPEN",
+  "Stage_B_wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "exterior_original_DAT_qualifications": {
+    "1000": {
+      "status": "NAMED_IN_WARP_BUT_NO_READABLE_ORIGINAL_DAT_IN_THIS_MAP09_955_CARRIER",
+      "three_u16_values": null
+    },
+    "1300": {
+      "status": "NAMED_IN_WARP_BUT_NO_READABLE_ORIGINAL_DAT_IN_THIS_MAP09_955_CARRIER",
+      "three_u16_values": null
+    },
+    "1400": {
+      "status": "ORIGINAL_THREE_PLANE_DAT_READ_FROM_VERIFIED_955_ARCHIVE",
+      "source_sha256": "a706890eaa46f89e41ca171ce052d34fb1c18e8cc4602ac686fc1d19af54c73f"
+    }
+  },
+  "original_directed_warp_rows": [
+    {
+      "original_line": 1382,
+      "start": [
+        1000,
+        63,
+        99
+      ],
+      "target": [
+        1001,
+        10,
+        15
+      ],
+      "row_sha256_CP950_line": "4318bb07c5d0e70c4dcfb9fd1c896fc14f794b7148d1992ba9f3ad5b7c9c2b08",
+      "source_original_DAT_three_u16": null,
+      "target_original_DAT_three_u16": [
+        5024,
+        0,
+        49155
+      ],
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1383,
+      "start": [
+        1001,
+        10,
+        15
+      ],
+      "target": [
+        1000,
+        63,
+        99
+      ],
+      "row_sha256_CP950_line": "144381167622bda1ef88093cff6c3766f42f58fe398f275d5ddec04431133c51",
+      "source_original_DAT_three_u16": [
+        5024,
+        0,
+        49155
+      ],
+      "target_original_DAT_three_u16": null,
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1384,
+      "start": [
+        1000,
+        63,
+        100
+      ],
+      "target": [
+        1001,
+        10,
+        16
+      ],
+      "row_sha256_CP950_line": "f49683227c8e0f4001108c1be9cf3d7209aa8f657b9e4f48433951553b438a7d",
+      "source_original_DAT_three_u16": null,
+      "target_original_DAT_three_u16": [
+        5013,
+        0,
+        49155
+      ],
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1385,
+      "start": [
+        1001,
+        10,
+        16
+      ],
+      "target": [
+        1000,
+        63,
+        100
+      ],
+      "row_sha256_CP950_line": "d8d0a198c0e1a5fb31d5f8b01aaeef3b7e29b9f8611c35aaea83848514e9909d",
+      "source_original_DAT_three_u16": [
+        5013,
+        0,
+        49155
+      ],
+      "target_original_DAT_three_u16": null,
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1386,
+      "start": [
+        1000,
+        63,
+        98
+      ],
+      "target": [
+        1001,
+        10,
+        15
+      ],
+      "row_sha256_CP950_line": "d84c343987183223dcab8887dcbc5b6d88b4fc2f44be466b1f4f61bc6408908e",
+      "source_original_DAT_three_u16": null,
+      "target_original_DAT_three_u16": [
+        5024,
+        0,
+        49155
+      ],
+      "explicit_reverse_in_selected_mapwarp": false
+    },
+    {
+      "original_line": 1387,
+      "start": [
+        1000,
+        67,
+        108
+      ],
+      "target": [
+        1002,
+        10,
+        15
+      ],
+      "row_sha256_CP950_line": "f9c01854fc7b047c34ef8873097139bb4b08d34a270f7f56d6293d203b95fd4b",
+      "source_original_DAT_three_u16": null,
+      "target_original_DAT_three_u16": [
+        5024,
+        0,
+        49155
+      ],
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1388,
+      "start": [
+        1002,
+        10,
+        15
+      ],
+      "target": [
+        1000,
+        67,
+        108
+      ],
+      "row_sha256_CP950_line": "5069c860289c3a46f70135975533be2ad00313ec78d01e73248a41deb89daab8",
+      "source_original_DAT_three_u16": [
+        5024,
+        0,
+        49155
+      ],
+      "target_original_DAT_three_u16": null,
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1389,
+      "start": [
+        1000,
+        67,
+        109
+      ],
+      "target": [
+        1002,
+        10,
+        16
+      ],
+      "row_sha256_CP950_line": "038858d59772c0b68c597fdff50bb434a7e9f30ac95d7e75f8878015a77f4052",
+      "source_original_DAT_three_u16": null,
+      "target_original_DAT_three_u16": [
+        5013,
+        0,
+        49155
+      ],
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1390,
+      "start": [
+        1002,
+        10,
+        16
+      ],
+      "target": [
+        1000,
+        67,
+        109
+      ],
+      "row_sha256_CP950_line": "2a0a4026a3e233f06426bbcb627bd56fe6ef87a986a0cca9475ade956fd1e9fa",
+      "source_original_DAT_three_u16": [
+        5013,
+        0,
+        49155
+      ],
+      "target_original_DAT_three_u16": null,
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1391,
+      "start": [
+        1000,
+        67,
+        107
+      ],
+      "target": [
+        1002,
+        10,
+        15
+      ],
+      "row_sha256_CP950_line": "8c0b35f26604efcb871855f6321668b09644e4f00f35deb873532452b26277a6",
+      "source_original_DAT_three_u16": null,
+      "target_original_DAT_three_u16": [
+        5024,
+        0,
+        49155
+      ],
+      "explicit_reverse_in_selected_mapwarp": false
+    },
+    {
+      "original_line": 1459,
+      "start": [
+        1300,
+        43,
+        43
+      ],
+      "target": [
+        1301,
+        15,
+        21
+      ],
+      "row_sha256_CP950_line": "8238d3df1102f26ec41d532a4a2f51958071ff9fc9a63ff4e5499011056dbe29",
+      "source_original_DAT_three_u16": null,
+      "target_original_DAT_three_u16": [
+        5025,
+        0,
+        49155
+      ],
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1460,
+      "start": [
+        1301,
+        15,
+        21
+      ],
+      "target": [
+        1300,
+        43,
+        43
+      ],
+      "row_sha256_CP950_line": "b20674ced362fad88fbbbccab6bc860bdd22a5db2bf4b7f5867f4b5ac0cf5b7a",
+      "source_original_DAT_three_u16": [
+        5025,
+        0,
+        49155
+      ],
+      "target_original_DAT_three_u16": null,
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1461,
+      "start": [
+        1300,
+        44,
+        43
+      ],
+      "target": [
+        1301,
+        16,
+        21
+      ],
+      "row_sha256_CP950_line": "2c25923f7a6d70572246f17f4663adb725ce455ded57fd18cdc1af653253f1b7",
+      "source_original_DAT_three_u16": null,
+      "target_original_DAT_three_u16": [
+        5026,
+        0,
+        49155
+      ],
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1462,
+      "start": [
+        1301,
+        16,
+        21
+      ],
+      "target": [
+        1300,
+        44,
+        43
+      ],
+      "row_sha256_CP950_line": "d0c192ee546dff527e476c657caa95d7ceef1c3aed073499c736b76acfb7ccb1",
+      "source_original_DAT_three_u16": [
+        5026,
+        0,
+        49155
+      ],
+      "target_original_DAT_three_u16": null,
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1463,
+      "start": [
+        1300,
+        34,
+        42
+      ],
+      "target": [
+        1302,
+        16,
+        21
+      ],
+      "row_sha256_CP950_line": "c2d1ee6598a2d36660f892bfa21702a206a2d7f1192d70e93415a2c9b16c530f",
+      "source_original_DAT_three_u16": null,
+      "target_original_DAT_three_u16": [
+        5026,
+        0,
+        49155
+      ],
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1464,
+      "start": [
+        1302,
+        16,
+        21
+      ],
+      "target": [
+        1300,
+        34,
+        42
+      ],
+      "row_sha256_CP950_line": "215765c275c848a87060b3b8a43ed4ab8f85c8a55ee041778617611b5f4f1a72",
+      "source_original_DAT_three_u16": [
+        5026,
+        0,
+        49155
+      ],
+      "target_original_DAT_three_u16": null,
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1465,
+      "start": [
+        1300,
+        33,
+        42
+      ],
+      "target": [
+        1302,
+        15,
+        21
+      ],
+      "row_sha256_CP950_line": "a32e354fad4d2b14cd178543567335f1c28d864c9a9da0844b1e9b1b23207043",
+      "source_original_DAT_three_u16": null,
+      "target_original_DAT_three_u16": [
+        5025,
+        0,
+        49155
+      ],
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1466,
+      "start": [
+        1302,
+        15,
+        21
+      ],
+      "target": [
+        1300,
+        33,
+        42
+      ],
+      "row_sha256_CP950_line": "cd9b296c72e26973f1ccfdfca6df8a7dc5ad0679b51437a897b604331beead5e",
+      "source_original_DAT_three_u16": [
+        5025,
+        0,
+        49155
+      ],
+      "target_original_DAT_three_u16": null,
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1489,
+      "start": [
+        1400,
+        81,
+        83
+      ],
+      "target": [
+        1401,
+        15,
+        21
+      ],
+      "row_sha256_CP950_line": "4ad17c5345a571b9dca71e80a42e83ce7a6f17088771aa842048ff3b57e2f5a2",
+      "source_original_DAT_three_u16": [
+        6975,
+        0,
+        49155
+      ],
+      "target_original_DAT_three_u16": [
+        536,
+        12827,
+        49155
+      ],
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1490,
+      "start": [
+        1401,
+        15,
+        21
+      ],
+      "target": [
+        1400,
+        81,
+        83
+      ],
+      "row_sha256_CP950_line": "c909d8e8eb62f486fc4dec98a4214e1afa7bc9675bbfdf0c24bc6c30f84d2c51",
+      "source_original_DAT_three_u16": [
+        536,
+        12827,
+        49155
+      ],
+      "target_original_DAT_three_u16": [
+        6975,
+        0,
+        49155
+      ],
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1491,
+      "start": [
+        1400,
+        82,
+        83
+      ],
+      "target": [
+        1401,
+        16,
+        21
+      ],
+      "row_sha256_CP950_line": "ae623190041ca81419dea198a4656b8dec1ad4860235c3159c3803af63345bbb",
+      "source_original_DAT_three_u16": [
+        6000,
+        0,
+        49155
+      ],
+      "target_original_DAT_three_u16": [
+        534,
+        0,
+        49155
+      ],
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1492,
+      "start": [
+        1401,
+        16,
+        21
+      ],
+      "target": [
+        1400,
+        82,
+        83
+      ],
+      "row_sha256_CP950_line": "026bc324c41f3a156f0270215a14c83e62369bff1954d6fa4bbf079ac941967f",
+      "source_original_DAT_three_u16": [
+        534,
+        0,
+        49155
+      ],
+      "target_original_DAT_three_u16": [
+        6000,
+        0,
+        49155
+      ],
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1493,
+      "start": [
+        1400,
+        90,
+        90
+      ],
+      "target": [
+        1402,
+        10,
+        15
+      ],
+      "row_sha256_CP950_line": "89dcddfa4334fef9f29efae61a19d5703695c1acebaa4cd41152d3da8e3e8fb4",
+      "source_original_DAT_three_u16": [
+        6000,
+        0,
+        49155
+      ],
+      "target_original_DAT_three_u16": [
+        536,
+        0,
+        49155
+      ],
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1494,
+      "start": [
+        1402,
+        10,
+        15
+      ],
+      "target": [
+        1400,
+        90,
+        90
+      ],
+      "row_sha256_CP950_line": "f84f6f3e903204ab8af66a6ce739cc1c5609b6f82f3e88e6dfba18696a04d56d",
+      "source_original_DAT_three_u16": [
+        536,
+        0,
+        49155
+      ],
+      "target_original_DAT_three_u16": [
+        6000,
+        0,
+        49155
+      ],
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1495,
+      "start": [
+        1400,
+        90,
+        91
+      ],
+      "target": [
+        1402,
+        10,
+        16
+      ],
+      "row_sha256_CP950_line": "082887002d16687790875dc2f891b3a1d6529e0aae7ab9f4ac62ad36be601c31",
+      "source_original_DAT_three_u16": [
+        6002,
+        0,
+        49155
+      ],
+      "target_original_DAT_three_u16": [
+        536,
+        0,
+        49155
+      ],
+      "explicit_reverse_in_selected_mapwarp": true
+    },
+    {
+      "original_line": 1496,
+      "start": [
+        1402,
+        10,
+        16
+      ],
+      "target": [
+        1400,
+        90,
+        91
+      ],
+      "row_sha256_CP950_line": "3053778b4ee55e497893c3060b027cfabf72c1dbbc1e52300b66f70d97c8a0a1",
+      "source_original_DAT_three_u16": [
+        536,
+        0,
+        49155
+      ],
+      "target_original_DAT_three_u16": [
+        6002,
+        0,
+        49155
+      ],
+      "explicit_reverse_in_selected_mapwarp": true
+    }
+  ],
+  "unpaired_source_directions": [
+    {
+      "start": [
+        1000,
+        63,
+        98
+      ],
+      "target": [
+        1001,
+        10,
+        15
+      ],
+      "source_line": 1386
+    },
+    {
+      "start": [
+        1000,
+        67,
+        107
+      ],
+      "target": [
+        1002,
+        10,
+        15
+      ],
+      "source_line": 1391
+    }
+  ],
+  "metrics": {
+    "rooms": 6,
+    "original_ItemShop_CREATEs": 11,
+    "literal_original_ItemList_explicit_ID_mentions": 109,
+    "original_ItemList_range_expression_tokens": 4,
+    "candidate_expanded_IDs_from_four_ranges_not_native_verified": 32,
+    "explicit_original_ItemList_mentions": 109,
+    "different_original_item_IDs": 139,
+    "verified_original_itemset_both_table_rows": 141,
+    "selected_item_rows_with_same_sha_in_both_tables": 141,
+    "source_ready_candidate_item_RD_aliases_distinct": 94,
+    "source_ready_candidate_original_map_tile_aliases_distinct": 104,
+    "original_directed_mapwarp_rows": 26,
+    "original_warp_rows_with_explicit_reverse": 24,
+    "original_warp_rows_without_explicit_reverse": 2,
+    "original_sprite_NPC_images_newly_decoded": 0,
+    "native_transaction_executed": false
+  },
+  "source_original_proprietary_bytes_published_to_Git": false,
+  "private_OBSERVER": {
+    "has_original_scene_source_candidates": true,
+    "all_6_full_RGBA_double_independently_replayed": true,
+    "all_141_exact_literal_or_range_candidate_item_icon_mentions_source_SHA_verified": true,
+    "contains_11_private_original_parameter_files": true,
+    "contains_full_original_three_plane_DAT_for_all_six_rooms": true,
+    "contains_full_original_two_layer_LS2MAP_for_all_six_rooms": true,
+    "browser_execution_claimed": false
+  },
+  "private_delivery": {
+    "filename": "StoneAge-INTEGRATION23-three-villages-eleven-original-shops-private.zip",
+    "zip_bytes": 5219008,
+    "zip_sha256": "7cab6cf75184331c4f09a7525c0081956b21c641a1ec487b0ec93b4e4d49c4b0",
+    "zip_member_count": 136,
+    "crc_all_passed": true,
+    "persistent_Library_upload_verified": true,
+    "persistent_Library_path": "/石器时代/StoneAge-INTEGRATION23-three-villages-eleven-original-shops-private.zip",
+    "library_roundtrip_whole_zip_SHA256_and_all_136_CRC_verified": true
+  },
+  "initial_main_head": "06351789fe21e875f25d293c0ae592c43ff028f8",
+  "initial_main_tree": "3fed55a1994804eb406e4b9fedad025bfff6f3de",
+  "preserved_historical_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "upstream_derived_Git_blobs": {
+    "ITEM01_shop_224": {
+      "path": "research/recovered/STONEAGE-ITEM-EQUIPMENT-SHOP-MODULE-01-224-SOURCE-ITEMLISTS-191-CREATE-REFERENCES-R1.json",
+      "blob": "3bde3b7df43725f28cdac355823667a0ba87e9b1"
+    },
+    "MAP09_original_691_scenes": {
+      "path": "research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json",
+      "blob": "137580e7c25aadf3d679b6ebfb5080b79912cc4f"
+    },
+    "INTEGRATION17_original_create_mapwarp": {
+      "path": "research/recovered/STONEAGE-INTEGRATION17-THREE-PET-ROOMS-SOURCE-R1.json",
+      "blob": "e716f01bbf7d08be2e13654909282a198f5334dd"
+    }
+  },
+  "source_bound_unreferenced_argument_path": {
+    "path": "genout/ss_1302_14_15",
+    "reason": "ITEM01_CATALOG_CONTAINS_A_PARAMETER_FILE_BUT_THE_SELECTED_ORIGINAL_SHOP_M_CREATE_HAS_NO_REFERENCE_TO_IT",
+    "counted_as_one_of_selected_eleven_original_CREATEs": false,
+    "absence_of_any_possible_NPC_in_other_sources_proven": false
+  },
+  "source_only_limit_item_1302": {
+    "floor": 1302,
+    "CREATE_ordinal": 53,
+    "original_LimitItemNo_literal": "2421",
+    "original_itemset_both_table_sha256": "4de61929a1a45a7449f8f96f26f96c57b60bfd47a983c96a447726d6a0d6207d",
+    "explicit_1302_accessory_ItemList_contains_2421": false,
+    "runtime_semantics_including_buy_sell_exclusion_unknown": true
+  }
+}
