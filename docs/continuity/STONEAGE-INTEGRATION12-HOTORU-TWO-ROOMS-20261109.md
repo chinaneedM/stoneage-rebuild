@@ -27,3 +27,9 @@
 **NEXT：INTEGRATION13** 在同一已验 1300↔1301–1305 房间群里批量查明尚无可观察内容的实际原房间名称/门点和已存图块是否足够；只新增有源 NPC/场景关联，其他已闭合窗口直接引用。遇到无新增实物或缺同版材料就标明 SOURCE_BOUNDED_PARTIAL，转物品/装备/任务模块交叉整合，不扩抽象查看器。Stage A 仍 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体完成百分比仍 UNKNOWN。
 
 [公开派生源记录](../../research/recovered/STONEAGE-INTEGRATION12-HOTORU-TWO-ROOMS-SOURCE-JOINS-R1.json)；专项公开测试 `tests/test_stoneage_integration_module_12.py`。
+
+## 内容主线与 CI 实际终验（2026-11-09）
+
+候选 PR #279 内容 HEAD `f0efe97aabc1535af66aebb94c30251e8427ea99` / tree `486ac0187917033b44eb8fdc4036019b24f88ee4`。**候选 14 项 Actions completed/success**。squash 到 `main` 的提交为 `9943b8cbd70dc0d6639f2ed0130f0243844da17d`，tree 与候选 tree 完全相同；**合并内容主线 11 项 Actions completed/success**，其中专项 [run 42560357573](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42560357573) / job 128975202117 的日志实际运行 **6 项公开元数据测试 OK**。
+
+已从合并树逐核五文件 SHA，且 `docs/CURRENT-STATE.md` 原 2,709,173B Git blob `c89e0e33537990aa2132b47c40fef49a985a935c` 原样保留。完整源受限事实/私人 ZIP 摘要和公开 JSON 的 Git blob 见[永久验收收据](../../research/recovered/STONEAGE-INTEGRATION12-PUBLICATION-ACCEPTANCE-R1.json)。原生角色、门格与商店执行依然未证；记录本后验提交自身 Actions 之前**不预认其执行结果**。NEXT 保持 INTEGRATION13 源合格房间群批量核查。

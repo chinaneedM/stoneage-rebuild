@@ -1,0 +1,187 @@
+{
+  "schema": "stoneage.integration12.publication_acceptance.r1",
+  "recorded_date": "2026-11-09",
+  "starting_main": {
+    "head": "2ad03fd85b8cd8b78fe26ea25789dfd9b2ac3118",
+    "tree": "d31528ac826fe13fb0965d22587fdd067b03d132",
+    "current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "private_evidence": {
+    "source_carrier": {
+      "carrier": "mixed25 original preserved source files extracted to privately held ZIP; original parent RAR was not reread in this work unit",
+      "sha256": "d71e2e6766e8ac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+    },
+    "zip_bytes": 3811628,
+    "zip_sha256": "92f8f16985cad5b841424593526ad7801b520d7d4abd7fcc7e13db7c3f8d70d4",
+    "zip_member_count": 31,
+    "all_zip_crc_pass": true,
+    "source_member_sha_crc_verified_count": 20,
+    "raw_private_json_bytes": 33379,
+    "raw_private_json_sha256": "babf44a883c41b7c3ec1962cd46ecc805217e0aacd455983f85463745d31f29c",
+    "independent_private_local_checks": 208,
+    "private_original_binaries_published": false
+  },
+  "publication": {
+    "pr": 279,
+    "pr_url": "https://github.com/chinaneedM/stoneage-rebuild/pull/279",
+    "candidate_head": "f0efe97aabc1535af66aebb94c30251e8427ea99",
+    "candidate_tree": "486ac0187917033b44eb8fdc4036019b24f88ee4",
+    "squash_main_head": "9943b8cbd70dc0d6639f2ed0130f0243844da17d",
+    "main_tree": "486ac0187917033b44eb8fdc4036019b24f88ee4",
+    "retained_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "files": {
+      ".github/workflows/verify-stoneage-integration12-rooms.yml": "762102352a9618cc4a5098714ffbe912fecb625f",
+      "README.md": "41d968ed5702af8aa92143d400ed808dc238a939",
+      "docs/continuity/STONEAGE-INTEGRATION12-HOTORU-TWO-ROOMS-20261109.md": "d81dc24a7475ab6f110c6c3ee8a9c3a66bb273a9",
+      "research/recovered/STONEAGE-INTEGRATION12-HOTORU-TWO-ROOMS-SOURCE-JOINS-R1.json": "23d39187c75c5bbff8e598743410b278ab73aaf9",
+      "tests/test_stoneage_integration_module_12.py": "0e892bfc01cfa5273925b4cd36457467aebd0ab9"
+    }
+  },
+  "acceptance": {
+    "candidate_workflows": [
+      {
+        "id": 42560245477,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560245495,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560245498,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560245510,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560245529,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560245539,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560245581,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560245614,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560245630,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560245662,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560245665,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560249492,
+        "event": "pull_request",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560249507,
+        "event": "pull_request",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560249517,
+        "event": "pull_request",
+        "conclusion": "success"
+      }
+    ],
+    "main_workflows": [
+      {
+        "id": 42560357557,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560357573,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560357582,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560357583,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560357584,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560357607,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560357612,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560357621,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560357660,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560357664,
+        "event": "push",
+        "conclusion": "success"
+      },
+      {
+        "id": 42560357673,
+        "event": "push",
+        "conclusion": "success"
+      }
+    ],
+    "main_integration12_workflow_run": 42560357573,
+    "main_integration12_job": 128975202117,
+    "main_integration12_public_unittest_count": 6,
+    "main_integration12_log_result": "OK",
+    "candidate_passed": 14,
+    "merged_content_main_passed": 11,
+    "receipt_commit_itself_not_yet_assessed": true
+  },
+  "historical_limits": {
+    "original_game_executed": false,
+    "original_NPC_spawn_verified": false,
+    "official_same_deployment_verified": false,
+    "native_shop_purchase_verified": false,
+    "native_door_choice_verified": false,
+    "full_parent_rar_rechecked_this_work_unit": false
+  },
+  "next": "INTEGRATION13 source-qualified 1301-1305 room role/CREATE join and visible-scope check, then bounded stop or advance item/quest integrative batch"
+}
