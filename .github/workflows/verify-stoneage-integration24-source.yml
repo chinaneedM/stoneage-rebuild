@@ -1,0 +1,27 @@
+name: Verify StoneAge INTEGRATION24 five source-qualified original pharmacy shops
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION24-FIVE-VILLAGE-MEDICINE-SHOPS-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_24.py'
+      - 'docs/continuity/STONEAGE-INTEGRATION24-FIVE-MEDICINE-SHOPS-20261109.md'
+      - '.github/workflows/verify-stoneage-integration24-source.yml'
+      - 'README.md'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION24-FIVE-VILLAGE-MEDICINE-SHOPS-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_24.py'
+      - 'docs/continuity/STONEAGE-INTEGRATION24-FIVE-MEDICINE-SHOPS-20261109.md'
+      - '.github/workflows/verify-stoneage-integration24-source.yml'
+      - 'README.md'
+jobs:
+  source-contract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_24.py' -v
