@@ -1,14 +1,20 @@
-name: Verify StoneAge INTEGRATION15-R2 original pet static pixels
+name: Verify StoneAge original pet shop room evidence
 on:
   push:
     paths:
       - 'research/recovered/STONEAGE-INTEGRATION15-R2-HOTORU-PET-VISUAL-RECEIPT-R1.json'
       - 'tests/test_stoneage_integration_module_15_r2.py'
+      - 'research/recovered/STONEAGE-INTEGRATION16-THREE-PET-ROOMS-SOURCE-R1.json'
+      - 'tools/stoneage_integration16_pet_rooms.py'
+      - 'tests/test_stoneage_integration_module_16.py'
       - '.github/workflows/verify-stoneage-integration15-r2-pet-visual.yml'
   pull_request:
     paths:
       - 'research/recovered/STONEAGE-INTEGRATION15-R2-HOTORU-PET-VISUAL-RECEIPT-R1.json'
       - 'tests/test_stoneage_integration_module_15_r2.py'
+      - 'research/recovered/STONEAGE-INTEGRATION16-THREE-PET-ROOMS-SOURCE-R1.json'
+      - 'tools/stoneage_integration16_pet_rooms.py'
+      - 'tests/test_stoneage_integration_module_16.py'
       - '.github/workflows/verify-stoneage-integration15-r2-pet-visual.yml'
 jobs:
   public-evidence:
@@ -21,3 +27,4 @@ jobs:
         with:
           python-version: '3.11'
       - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_15_r2.py' -v
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_16.py' -v
