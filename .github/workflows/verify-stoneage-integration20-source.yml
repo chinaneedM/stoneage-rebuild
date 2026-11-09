@@ -1,0 +1,28 @@
+name: Verify StoneAge INTEGRATION20 source-bound rooms
+
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION20-TWO-PET-ROOMS-ORIGINAL-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_20.py'
+      - 'docs/continuity/STONEAGE-INTEGRATION20-TWO-PET-ROOMS-20261109.md'
+      - '.github/workflows/verify-stoneage-integration20-source.yml'
+      - 'README.md'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION20-TWO-PET-ROOMS-ORIGINAL-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_20.py'
+      - 'docs/continuity/STONEAGE-INTEGRATION20-TWO-PET-ROOMS-20261109.md'
+      - '.github/workflows/verify-stoneage-integration20-source.yml'
+      - 'README.md'
+jobs:
+  public-source-evidence:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_20.py' -v

@@ -1,0 +1,448 @@
+{
+  "schema": "stoneage.integration20.two_pet_room_original_pixels_and_3400_boundary.r1",
+  "date": "2026-11-09",
+  "starting_remote_main": "59a8b2a837c38a7077790aba62bd84bdd346c70b",
+  "starting_remote_tree": "d1fa75e34fa13a1e11b16587379ede12a0213cc4",
+  "historical_CURRENT_blob_preserved": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "source_scope": "LATER_COMMUNITY_MIXED25_ORIGINAL_DAT_LS2MAP_NPC_WARPS_WITH_SEPARATE_AUTHENTIC_TW10_TILE_PIXEL_CANDIDATES",
+  "upstream_git_blobs": {
+    "map09": "137580e7c25aadf3d679b6ebfb5080b79912cc4f",
+    "integration19": "8a3eccfb28c266c36c4ba764807e6b3ef64de620",
+    "integration17": "e716f01bbf7d08be2e13654909282a198f5334dd",
+    "map04": "1ef8c004179128ea44ffa4fb4259748bc8c83911"
+  },
+  "verified_parent_RAR": {
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+  },
+  "verified_private_MAP09": {
+    "bytes": 46844444,
+    "sha256": "d84d0800dd600798769dfb7251a1d7816588ac061ccc27812ac64a37922d4a8a",
+    "outer_members": 4195,
+    "original_DAT_archive_members": 955,
+    "original_DAT_inner_zip_sha256": "c079a1c25bfa11902b69c1f2839058d4fb20f025ef15c93f649f636c7e5f833a"
+  },
+  "rooms": {
+    "3303": {
+      "original_room_name": "烏魯力的寵物店|0",
+      "original_DAT": {
+        "bytes": 5408,
+        "sha256": "785799faa3e1cf9de1b92809e8688e172e47b37ab72eb10924e00cddd98e473b",
+        "geometry": [
+          30,
+          30
+        ]
+      },
+      "original_server_LS2MAP": {
+        "bytes": 3644,
+        "sha256": "df8405a9f2552c1a21983256e65054eb368994a9dfe7419ad9878ea9e13f9b3e",
+        "original_floor": 3303,
+        "changed_cells_server_vs_client": [
+          0,
+          256
+        ],
+        "changed_server_u16": 2,
+        "changed_client_u16": 0
+      },
+      "candidate_canvas": {
+        "size_px": [
+          1889,
+          1425
+        ],
+        "origin_xy": [
+          16,
+          712
+        ],
+        "original_bitmap_candidate_placements": 101,
+        "distinct_source_tile_aliases": 44,
+        "full_RGBA_sha256": {
+          "plane0": "6a966df1503fa0f1fd093c51bbf616b33159e39b6d9b02f8b0a0d578c209945c",
+          "plane1": "4adefc5b54973c5ef03cde3dbeeb305a1355c3086a46e3cfe35660b0eeb7b487",
+          "combined": "bea3b37d97f9a4978952fce9d16618647db01812dce6a0dbf389829b85c8dbe1"
+        },
+        "numpy_and_Pillow_pixel_identical": true
+      },
+      "services": [
+        {
+          "role": "PetShop",
+          "create_file": "genout/shop_m2.create",
+          "create_ordinal": 56,
+          "create_sha256": "965fcc2113f65c7fa7387ce00591f65701b81f29ba40b47021ebc1a20130ca91",
+          "graphic_alias": 16218,
+          "spawn_xy": [
+            16,
+            14
+          ],
+          "original_DAT_u16_at_spawn": [
+            5002,
+            0,
+            49152
+          ],
+          "parameter_source_sha256": "009623f1960ae3addbc5991dd435f49f8b11e3af10a1ff09f6a2e5c7b9c3b830"
+        },
+        {
+          "role": "PetSkillShop",
+          "create_file": "genout/shop_m2.create",
+          "create_ordinal": 59,
+          "create_sha256": "b4ef8ce0b33db08f64c48000bbe75e59399c67d7edbfaab5f7c3389b24f10602",
+          "graphic_alias": 16212,
+          "spawn_xy": [
+            13,
+            14
+          ],
+          "original_DAT_u16_at_spawn": [
+            5000,
+            12631,
+            49152
+          ],
+          "parameter_source_sha256": "37269ddf06935621e10576b4c2fb9f9055c47f110bdcaaa28f51c2ade82bfc72"
+        }
+      ],
+      "original_directed_edges": [
+        {
+          "mapwarp_line": 735,
+          "start": [
+            3300,
+            51,
+            60
+          ],
+          "target": [
+            3303,
+            15,
+            20
+          ],
+          "warp_CREATE_ordinal": 122,
+          "warp_CREATE_sha256": "d99626f0e6fb90d030acc053308ef54dac2f4297f0faf6151e5bb1d195f6d541",
+          "source_original_DAT_u16_at_room_endpoint": [
+            5115,
+            0,
+            49155
+          ],
+          "local_xy": [
+            15,
+            20
+          ],
+          "reverse_explicit": true
+        },
+        {
+          "mapwarp_line": 736,
+          "start": [
+            3303,
+            15,
+            20
+          ],
+          "target": [
+            3300,
+            51,
+            60
+          ],
+          "warp_CREATE_ordinal": 123,
+          "warp_CREATE_sha256": "c145126a8218ecde439092c661aabd37f1743cea26c25a0abf6beaf47fa21beb",
+          "source_original_DAT_u16_at_room_endpoint": [
+            5115,
+            0,
+            49155
+          ],
+          "local_xy": [
+            15,
+            20
+          ],
+          "reverse_explicit": true
+        },
+        {
+          "mapwarp_line": 737,
+          "start": [
+            3303,
+            16,
+            20
+          ],
+          "target": [
+            3300,
+            51,
+            60
+          ],
+          "warp_CREATE_ordinal": 124,
+          "warp_CREATE_sha256": "3c2558d68eb0f3a4a046e228ab53bb29ce595ab88712d6289723a8da15a90618",
+          "source_original_DAT_u16_at_room_endpoint": [
+            5116,
+            0,
+            49155
+          ],
+          "local_xy": [
+            16,
+            20
+          ],
+          "reverse_explicit": false
+        }
+      ],
+      "original_native_client_or_warp_event_executed": false
+    },
+    "3403": {
+      "original_room_name": "奇喀喀的寵物店|0",
+      "original_DAT": {
+        "bytes": 5408,
+        "sha256": "0f6ecf597a7bf969d6e4e769081467ac1228e01ed6583c8d5ae50d031f8dad95",
+        "geometry": [
+          30,
+          30
+        ]
+      },
+      "original_server_LS2MAP": {
+        "bytes": 3644,
+        "sha256": "0a09df92ca18eee6f88020e8f93e72182a449d8621ca9a31c728ed8dd0c65618",
+        "original_floor": 3403,
+        "changed_cells_server_vs_client": [
+          0,
+          32
+        ],
+        "changed_server_u16": 2,
+        "changed_client_u16": 0
+      },
+      "candidate_canvas": {
+        "size_px": [
+          1889,
+          1425
+        ],
+        "origin_xy": [
+          16,
+          712
+        ],
+        "original_bitmap_candidate_placements": 162,
+        "distinct_source_tile_aliases": 45,
+        "full_RGBA_sha256": {
+          "plane0": "3ef3965ab08409d2c242d4a12bda6c3cfbb78814cdf94693ff568917fe2bb817",
+          "plane1": "59d08a192abbfef1ebef14b82ef898b3539d219febcb677d2e3e5aac2078e880",
+          "combined": "34c63c3af687cddd9aa6ab16091da331e72a1c15127e2a0aa3bb4dba030eb280"
+        },
+        "numpy_and_Pillow_pixel_identical": true
+      },
+      "services": [
+        {
+          "role": "PetShop",
+          "create_file": "genout/shop_m2.create",
+          "create_ordinal": 69,
+          "create_sha256": "d1ed73336a8181c5b162ff9051bd81cd47984937c434c8f76121048b18b67775",
+          "graphic_alias": 16033,
+          "spawn_xy": [
+            18,
+            18
+          ],
+          "original_DAT_u16_at_spawn": [
+            5019,
+            0,
+            49152
+          ],
+          "parameter_source_sha256": "d78288914ddca095c83875b3e03ec9cfbf4d736b82a28ff9a6aa6e0a2f14c651"
+        },
+        {
+          "role": "PetSkillShop",
+          "create_file": "genout/shop_m2.create",
+          "create_ordinal": 72,
+          "create_sha256": "20b84813e0c799a45bbe4b13346ba794440b7996e05a007ea6e27b8f3b002c97",
+          "graphic_alias": 16018,
+          "spawn_xy": [
+            18,
+            14
+          ],
+          "original_DAT_u16_at_spawn": [
+            5001,
+            0,
+            49152
+          ],
+          "parameter_source_sha256": "ea1da946544969a1198985a328c3073c1b46af26a665c1b7f954edbf43831301"
+        }
+      ],
+      "original_directed_edges": [
+        {
+          "mapwarp_line": 752,
+          "start": [
+            3400,
+            53,
+            49
+          ],
+          "target": [
+            3403,
+            15,
+            21
+          ],
+          "warp_CREATE_ordinal": 139,
+          "warp_CREATE_sha256": "fe0ec66bac575bf155b576ba5970f652daa635e1aa48238e39d88a1e63775514",
+          "source_original_DAT_u16_at_room_endpoint": [
+            5025,
+            0,
+            49155
+          ],
+          "local_xy": [
+            15,
+            21
+          ],
+          "reverse_explicit": true
+        },
+        {
+          "mapwarp_line": 753,
+          "start": [
+            3403,
+            15,
+            21
+          ],
+          "target": [
+            3400,
+            53,
+            49
+          ],
+          "warp_CREATE_ordinal": 140,
+          "warp_CREATE_sha256": "f9f0e7e894ba0f88a0aca6951b57ca78069878103ce714236fa25f02ae60d469",
+          "source_original_DAT_u16_at_room_endpoint": [
+            5025,
+            0,
+            49155
+          ],
+          "local_xy": [
+            15,
+            21
+          ],
+          "reverse_explicit": true
+        },
+        {
+          "mapwarp_line": 754,
+          "start": [
+            3400,
+            54,
+            49
+          ],
+          "target": [
+            3403,
+            16,
+            21
+          ],
+          "warp_CREATE_ordinal": 141,
+          "warp_CREATE_sha256": "8efd87d0935f50bc5f60cbd54e84e6533b64042e62f88b01a7112f434f07eff1",
+          "source_original_DAT_u16_at_room_endpoint": [
+            5026,
+            0,
+            49155
+          ],
+          "local_xy": [
+            16,
+            21
+          ],
+          "reverse_explicit": true
+        },
+        {
+          "mapwarp_line": 755,
+          "start": [
+            3403,
+            16,
+            21
+          ],
+          "target": [
+            3400,
+            54,
+            49
+          ],
+          "warp_CREATE_ordinal": 142,
+          "warp_CREATE_sha256": "c194d29c04d111ea1d64055ec5dd2f6fed70b42a8c956d430c543524ffe65571",
+          "source_original_DAT_u16_at_room_endpoint": [
+            5026,
+            0,
+            49155
+          ],
+          "local_xy": [
+            16,
+            21
+          ],
+          "reverse_explicit": true
+        }
+      ],
+      "original_native_client_or_warp_event_executed": false
+    }
+  },
+  "original_3300_source_endpoint": {
+    "original_DAT_sha256": "7f47b7ff641e2eb58d8d944741cd1fb6227f21bdd96a2d9fa7b8cc9d91a381e8",
+    "original_floor": 3300,
+    "xy": [
+      51,
+      60
+    ],
+    "original_three_u16": [
+      2023,
+      0,
+      49155
+    ],
+    "associated_directed_edges": 3
+  },
+  "original_3400_source_boundary": {
+    "full_original_3400_DAT_qualified_from_MAP09": false,
+    "full_3400_DAT_named_RAR_member_present": true,
+    "named_RAR_member_size": 86408,
+    "named_RAR_member_header_crc32": "7e5f34db",
+    "successful_full_3400_DAT_extraction_this_work": false,
+    "full_DAT_extraction_issue": "LIBARCHIVE_CRC_ERROR_OR_UNSUPPORTED_DECODE_UNRESOLVED",
+    "independently_extracted_3400_MAP": {
+      "member_source": "SACH-MX0.30/MAP/3400.MAP",
+      "bytes": 28808,
+      "sha256": "5145335b11bf8b0ae03c7634b6dacc471220c42946da76a17016fb7a95d46bbd",
+      "crc32": "8b6c3b59",
+      "geometry": [
+        120,
+        120
+      ],
+      "observed_u16_payload_cells": 14400
+    },
+    "auxiliary_MAP_as_complete_three_plane_DAT": false,
+    "original_3400_warp_endpoint_DAT_u16_known": false
+  },
+  "original_3403_static_character_candidate": {
+    "alias": 16033,
+    "rd_sha256": "2d0c3d53891e8ceb48cf88a99e4e88b3f9dc33bab5902e2fa39770e7e8643541",
+    "png_sha256": "db1398accb72f8423f0333f7111d78b99e936e1aa1ca3395e58bcbf809bb10a3",
+    "rgba_sha256": "17588f01cf524ed3eb5631884d6779c91685cce75c773563a80294167ce8b652",
+    "dimensions": [
+      36,
+      81
+    ],
+    "signed_adrn_offset": [
+      -16,
+      -73
+    ],
+    "original_source_static_pixels_in_private_observer": true,
+    "original_game_NPC_draw_verified": false
+  },
+  "verification": {
+    "two_original_DAT_exact_whole_SHA_and_955_inner_ZIP_CRC": true,
+    "three_canvas_modes_per_room": true,
+    "original_full_source_RGBA_matches_independent_numpy_and_Pillow": true,
+    "original_LS2MAP_CP950_and_layer_differences_read": true,
+    "original_parameter_and_CREATE_SHA_replayed_in_private": true,
+    "private_browser_mode": "CHROMIUM_IN_MEMORY_EXACT_PNG_BYTES",
+    "direct_file_navigation_succeeded": false,
+    "direct_file_navigation_error": "ERR_BLOCKED_BY_ADMINISTRATOR",
+    "browser_six_source_frame_modes_loaded": true,
+    "browser_static_sprite_toggle_passed": true,
+    "browser_marker_toggle_passed": true,
+    "browser_JS_errors": 0,
+    "browser_external_HTTP_requests": 0,
+    "source_mutation_required_to_fail_qualifying_checks": true
+  },
+  "private_delivery": {
+    "library_path": "/石器时代/StoneAge-INTEGRATION20-3303-3403-ORIGINAL-SCENES-PRIVATE.zip",
+    "bytes": 2585668,
+    "sha256": "2403ea2ee5928fba93de8b8913859b403d20e449049cfbba19a28ca237f31abb",
+    "members": 101,
+    "crc_all_pass": true,
+    "Library_upload_success": true,
+    "Library_retrieval_whole_SHA_and_CRC_verified": true
+  },
+  "bounds": {
+    "native_original_client_executed": false,
+    "native_warp_collision_or_shop_action_executed": false,
+    "official_TW10_and_mixed25_same_deployment": false,
+    "server_MAP_object_2_as_collision_rule_proven": false,
+    "source_original_proprietary_images_published_in_Git": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Original 3400.DAT remains unqualified: reopen only on independently decompressible CRC/whole SHA validated same source, or on a separate provenance-qualified original 3400 client carrier. For missing 16218/16212/16018 NPC static images require source RD+ADRN+palette verified; otherwise rotate to next material Stage A content unit."
+}
