@@ -142,7 +142,7 @@ def verify_graph_and_bounds(q):
     rows = q["rooms"]
     edges = [edge for r in rows for edge in r["warps"]]
     services = [s for r in rows for s in r["services"]]
-    sig = lambda e: tuple(e["start"]), tuple(e["target"])
+    sig = lambda e: (tuple(e["start"]), tuple(e["target"]))
     index = {sig(e) for e in edges}
     assert len(index) == len(edges) == 38
     unmatched = []
