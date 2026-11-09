@@ -7,6 +7,8 @@ on:
       - 'tests/test_stoneage_integration_module_18.py'
       - 'research/recovered/STONEAGE-INTEGRATION19-THREE-PET-SERVICES-SOURCE-R1.json'
       - 'tests/test_stoneage_integration_module_19.py'
+      - 'research/recovered/STONEAGE-INTEGRATION27-PET-TUTORS-AND-3400-DAT-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_27.py'
       - '.github/workflows/verify-stoneage-integration18-tutor-layout.yml'
   pull_request:
     paths:
@@ -14,6 +16,8 @@ on:
       - 'tests/test_stoneage_integration_module_18.py'
       - 'research/recovered/STONEAGE-INTEGRATION19-THREE-PET-SERVICES-SOURCE-R1.json'
       - 'tests/test_stoneage_integration_module_19.py'
+      - 'research/recovered/STONEAGE-INTEGRATION27-PET-TUTORS-AND-3400-DAT-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_27.py'
       - '.github/workflows/verify-stoneage-integration18-tutor-layout.yml'
 
 jobs:
@@ -29,3 +33,6 @@ jobs:
 
       - name: Verify source-bound three original pet service rooms and directed doors
         run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_19.py' -v
+
+      - name: Verify restored tutor overlays and 3400 original DAT evidence
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_27.py' -v
