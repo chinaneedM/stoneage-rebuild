@@ -1,0 +1,766 @@
+{
+  "schema": "stoneage.integration29.qikaka_chief_house_event20_source.r1",
+  "date": "2026-11-10",
+  "starting_main": "2ba6a33186cfd799f4ef1a6b8670f6a5e4461a2e",
+  "starting_tree": "1dc5c70eb78f3d1266b3a83c5ccd9a3b38b4648d",
+  "historical_CURRENT": {
+    "bytes": 2709173,
+    "git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "upstream": {
+    "i27": {
+      "path": "research/recovered/STONEAGE-INTEGRATION27-PET-TUTORS-AND-3400-DAT-SOURCE-R1.json",
+      "git_blob": "8b23611accca4f26b9322da55261a768b52d701e"
+    },
+    "i28": {
+      "path": "research/recovered/STONEAGE-INTEGRATION28-QIKAKA-VILLAGE-SCENE-SOURCE-R1.json",
+      "git_blob": "4b5b44c7be55b5b68b8b3ded57b73ceb2c014891"
+    },
+    "accept28": {
+      "path": "research/recovered/STONEAGE-INTEGRATION28-PUBLICATION-ACCEPTANCE-R1.json",
+      "git_blob": "4e1642b9401c40e75520c287e0665058592b6c66"
+    },
+    "map09": {
+      "path": "research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json",
+      "git_blob": "137580e7c25aadf3d679b6ebfb5080b79912cc4f"
+    },
+    "quest15": {
+      "path": "research/recovered/STONEAGE-QUEST15-BANDIT-EVENT20-ORIGINAL-SOURCE-R1.json",
+      "git_blob": "e18743c702ee979cc96f009bed4d4f62a27f5bbc"
+    },
+    "world11": {
+      "path": "research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-11-NPC-STATIC-APPEARANCE-R1.json",
+      "git_blob": "f79d7355a4e82c2bd8c0a771b898690cc4a3e680"
+    },
+    "r40": {
+      "path": "research/recovered/STONEAGE-PRESERVED-PET-SPR-SOURCE-R40.json",
+      "git_blob": "5b49d54d7cff2d79d3610db7ca4a37108f1f9e03"
+    }
+  },
+  "original_RAR": {
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+  },
+  "checked_original_graphics": {
+    "adrn_15.bin": {
+      "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/data/adrn_15.bin",
+      "bytes": 18765120,
+      "sha256": "92d0137590d35a7a1f4fb11af3ad13bbc585813a4b0e1e3f933c397007fbff74",
+      "crc32": "3113c408"
+    },
+    "real_15.bin": {
+      "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/data/real_15.bin",
+      "bytes": 763908374,
+      "sha256": "c7640643804d550bc07e33661103fb7b5f557ee01e68a5a5d92382c5305c2b0d",
+      "crc32": "bd8bab8d"
+    },
+    "Palet_1.sap": {
+      "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/data/pal/Palet_1.sap",
+      "bytes": 708,
+      "sha256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0",
+      "crc32": "dacb3fc9"
+    },
+    "spradrn_5.bin": {
+      "archive_member": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/data/spradrn_5.bin",
+      "bytes": 10164,
+      "sha256": "5f13c956cf013e073298ab91667d3aaa17767b26ba94d696514726950ce94de6",
+      "crc32": "6d939a7a"
+    }
+  },
+  "source_scope": "SAME_PRESERVED_COMMUNITY_MIXED25_CONFIG_DAT_NPC_RESOURCES_AND_QUALIFIED_MAP09_CANDIDATES",
+  "archived_DAT_sha256": {
+    "3400": "a3c6918ba21c909e6312329c936615aa6b6d8800d7967ed85a2146d55ca263c4",
+    "3406": "8e643f9c8c37040af1e753dc8ec4a52d72a3994af215b24ef53236188c35e802"
+  },
+  "original_mapwarp_sha256": "b7b50f42efa8e5a3f740d49a8d0c01cbf994d1bb66151b16ff5b5e7c14e7595c",
+  "original_warp_create_sha256": "a2e60d39af1d008b1f1d3c8d084cfdf36ad275c896a83895b4c295531a361352",
+  "original_ls2map_sha256": "fdc575420c5d53bef3f3621813c9273796be5254b65c2d0417e6e04a8f0b46da",
+  "room": {
+    "canvas_size": [
+      2209,
+      1665
+    ],
+    "origin": [
+      16,
+      952
+    ],
+    "base_RGBA_by_mode": {
+      "plane0": "3cc0bd5b563815b10701d2836f4bc1119065afc309c9e52d07700ba0c12e3b2a",
+      "plane1": "73b653639267d6ab40e47054a3a336785c12c1b18946d87e091a7dec9c280588",
+      "combined": "6327aae32f33ec1b3c34f658913e329abebc995fb7dd5f8fc3486e6cc93cabe1"
+    },
+    "combined_RGBA_sha256": "eee51449eb9d5c3b65d66562fd0520ca52c2cfbe68ea73d0afa274f877515534",
+    "alias_counts": {
+      "400": 3,
+      "401": 2,
+      "402": 1,
+      "403": 3,
+      "405": 4,
+      "406": 2,
+      "407": 3,
+      "408": 2,
+      "5000": 50,
+      "5001": 47,
+      "5002": 41,
+      "5003": 1,
+      "5004": 4,
+      "5005": 2,
+      "5006": 2,
+      "5008": 6,
+      "5009": 1,
+      "5010": 6,
+      "5011": 1,
+      "5012": 1,
+      "5013": 2,
+      "5014": 1,
+      "5016": 7,
+      "5018": 1,
+      "5019": 2,
+      "5020": 4,
+      "5022": 3,
+      "5024": 1,
+      "5028": 7,
+      "5030": 4,
+      "5032": 8,
+      "10214": 2,
+      "12000": 2,
+      "12001": 1,
+      "12002": 2,
+      "12003": 1,
+      "12004": 1,
+      "12006": 1,
+      "12007": 1,
+      "12008": 1,
+      "12009": 1,
+      "12011": 1,
+      "12012": 1,
+      "12013": 1,
+      "12014": 1,
+      "12015": 2,
+      "12800": 1,
+      "12802": 8,
+      "12819": 1,
+      "12825": 1,
+      "12830": 2,
+      "12833": 1,
+      "12834": 1,
+      "12837": 1,
+      "12839": 1,
+      "12840": 1,
+      "12841": 1,
+      "12842": 1,
+      "12845": 1,
+      "12846": 1,
+      "12924": 2,
+      "12925": 1
+    },
+    "inspection_xyxy": [
+      657,
+      309,
+      1684,
+      1219
+    ],
+    "inspection_RGBA_sha256": "42c6a4ae00b255f1fb4bea27e2586a836d1af55900ac90219ba7e44c11e0bb1b"
+  },
+  "outdoor": {
+    "source_full_RGBA_sha256": "f241187652d1bc9720893906671b719d14a7819484d0268c4525c5857ac1f518",
+    "origin": [
+      16,
+      2872
+    ],
+    "inspection_xyxy": [
+      3468,
+      2780,
+      4226,
+      3224
+    ],
+    "base_inspection_RGBA_sha256": "d6c93cff696180d81e8ee4b46b316467425d1001a3385c5a82e69acf71140303",
+    "inspection_RGBA_sha256": "8db2e3b5dde6640da7edc91b78f49cc23498661b795b4b0136b8e92ca52e37fb"
+  },
+  "routes": [
+    {
+      "mapwarp_line": 768,
+      "mapwarp_line_sha256": "3fb6efd2bc1ebe5a1b9ff4e8e8ddd6dd68ce777c124a53d4ad53994873ea30c4",
+      "start": [
+        3400,
+        54,
+        62
+      ],
+      "target": [
+        3406,
+        10,
+        15
+      ],
+      "exact_reverse": true,
+      "start_u16": [
+        389,
+        0,
+        49155
+      ],
+      "target_u16": [
+        5012,
+        0,
+        49155
+      ],
+      "create_file": "warp_y2.create",
+      "create_ordinal": 155,
+      "create_sha256": "3484b814b89a5ae8c72f9e1046c548c157f424ecd6f201e15f48d66a73573be2"
+    },
+    {
+      "mapwarp_line": 769,
+      "mapwarp_line_sha256": "574f0cf4eb139fe3c92eaac9ff2bab2e130e7412431a07b3b2426340ec69dd0b",
+      "start": [
+        3406,
+        10,
+        15
+      ],
+      "target": [
+        3400,
+        54,
+        62
+      ],
+      "exact_reverse": true,
+      "start_u16": [
+        5012,
+        0,
+        49155
+      ],
+      "target_u16": [
+        389,
+        0,
+        49155
+      ],
+      "create_file": "warp_y2.create",
+      "create_ordinal": 156,
+      "create_sha256": "6e5e665a1e3c5fc9b95dee8cf756fb99f3d69e7b3861ca8be8adff5946c5fa5f"
+    },
+    {
+      "mapwarp_line": 770,
+      "mapwarp_line_sha256": "665d3c73b297265a5eb7dbfb59358702364092759e6c2a7a39b4950643d3f078",
+      "start": [
+        3406,
+        10,
+        16
+      ],
+      "target": [
+        3400,
+        54,
+        62
+      ],
+      "exact_reverse": false,
+      "start_u16": [
+        5013,
+        0,
+        49155
+      ],
+      "target_u16": [
+        389,
+        0,
+        49155
+      ],
+      "create_file": "warp_y2.create",
+      "create_ordinal": 157,
+      "create_sha256": "cf9611c47479ff94691e0fe9d8302a8f49a452a7e0591507db4a331a2dcb3117"
+    }
+  ],
+  "npcs": [
+    {
+      "ordinal": 0,
+      "floor": 3400,
+      "xy": [
+        59,
+        66
+      ],
+      "name": "吉德的朋友",
+      "alias": 16030,
+      "direction": 6,
+      "create_block_sha256": "0737e475b0c93c205b9d00a2b957ad1e8b7bba48f4126a73948ec05c79b6cc17",
+      "script_ref": "jaruga/event/event20_1",
+      "script_sha256": "c806042c53a95e23902131680b4e55a207de4597f529e6ddd0074252c287dfe9",
+      "event_count": 5,
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": 21,
+          "type": "ACCEPT",
+          "predicate": "ENDEV=20&ENDEV=22&NOWEV=21&ITEM=2488",
+          "predicate_sha256": "f091aa343f2356b53c3ca2c5a23fa0038309353e5b618abf56612cfefb507670",
+          "section_sha256": "1b02124742c52d16e465f65181bb2015367e81df33d9474d23705e77d522e39a",
+          "actions": {},
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 1,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "ENDEV=20&ENDEV=22&ENDEV=21",
+          "predicate_sha256": "30a54887532032a8253625e2e449b68dc65cc31625c4db4e9bef2d34fe37e60f",
+          "section_sha256": "35ac51a41c108b4ee72beb866889d6a5aed65b3c7f65d798c8afd0b39474ad1e",
+          "actions": {},
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 2,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "ITEM!=2486",
+          "predicate_sha256": "925bec3d5924ca5fffcd998a69bb722ef9c975c98acbe3bb7fce26138214622e",
+          "section_sha256": "219392cf39bd7370da116b513a4800918a553ba57512baf7a2aa996ec5d4f563",
+          "actions": {
+            "GetItem": [
+              "2486"
+            ]
+          },
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 3,
+          "event_no": 21,
+          "type": "ACCEPT",
+          "predicate": "ITEM=2486",
+          "predicate_sha256": "00f1653f0412e7da08521386f4856bb2af004e7ed0e4bb09a192dec5ac8ac25d",
+          "section_sha256": "1c8ec13fd59f3c76ca49ff0277a16dcb68a66318343f289b1d8b431bea7bd0a2",
+          "actions": {
+            "DelItem": [
+              "2486"
+            ]
+          },
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 4,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "ENDEV=20&ENDEV=21",
+          "predicate_sha256": "c2f5ce829f3f310edfdc91420e3da698a0dd6b9c38f970781f43d32654f6b9ea",
+          "section_sha256": "2ef2c93336045cbc2328379577c54e5c25ea77fe306540aae42738c61246dc5d",
+          "actions": {},
+          "explicit_end_present": true
+        }
+      ],
+      "source_u16": [
+        167,
+        0,
+        49152
+      ],
+      "static_candidate": {
+        "adrn_ordinal": 5876,
+        "bitmap": 5876,
+        "adrn_sha256": "f5c515614a224df5aaa1c59fb462ffdeda152621afbcd832a96bda7b9fb60a21",
+        "rd_offset": 24985914,
+        "rd_bytes": 2113,
+        "rd_sha256": "ae3ceca2f3e0d8412588e9cb900dcac1e31f80014651a900deae1f21d2374de4",
+        "indexed_sha256": "873f3344eacefcb5fad7dd57121b54fe2b747298595c94ca84239d6c1410d09f",
+        "rgba_sha256": "60e1d27b9f27175782e36242df4702642c192b2a0dcf88eab826c28985667c10",
+        "png_sha256": "f9f3f7e4a3f900310790fb9db64624fb89faa23e4336ba12c87652159d2ce0c1",
+        "size": [
+          40,
+          83
+        ],
+        "signed_offset": [
+          -19,
+          -75
+        ],
+        "top_left": [
+          3997,
+          2965
+        ]
+      }
+    },
+    {
+      "ordinal": 1,
+      "floor": 3406,
+      "xy": [
+        27,
+        14
+      ],
+      "name": "吉德",
+      "alias": 16017,
+      "direction": 6,
+      "create_block_sha256": "341de3b4495971ddd134052ee801ca33b09e21dab2cafbe18474161ac92f4590",
+      "script_ref": "jaruga/event/event20_2",
+      "script_sha256": "3362f77b47e9c7c3a33babf8b2a15e60722c412a558a320790c19fbef7e83715",
+      "event_count": 6,
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": 21,
+          "type": "ACCEPT",
+          "predicate": "ENDEV=20&NOWEV=21&ITEM=2488",
+          "predicate_sha256": "b84ee8c863ba4b52cb00775fa88d90f91e535d9d68a46cb04ae826007b7f22c1",
+          "section_sha256": "7d919b4f628dd40a9bb700650f4c839d2134ad4cd88901cd27953787309f89d6",
+          "actions": {
+            "GetItem": [
+              "2489"
+            ],
+            "DelItem": [
+              "2488"
+            ],
+            "EndSetFlg": [
+              "21"
+            ]
+          },
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 1,
+          "event_no": 20,
+          "type": "REQUEST",
+          "predicate": "ITEM=2486",
+          "predicate_sha256": "00f1653f0412e7da08521386f4856bb2af004e7ed0e4bb09a192dec5ac8ac25d",
+          "section_sha256": "111c2a30f7d610e6fabef95a36e0255377fdc56845463c8c0dabed4bcc5d6c50",
+          "actions": {
+            "DelItem": [
+              "2486"
+            ]
+          },
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 2,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "ENDEV=20&ENDEV=21&ENDEV!=160",
+          "predicate_sha256": "698bdb33080de967297b150e2e293e2e5547628bcca6d501ac478334067ab43a",
+          "section_sha256": "30dbf9f65d1a0e58fe7e5ffb4d295a79aa0e4cb704cfaf2649193254e55fdaa0",
+          "actions": {},
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 3,
+          "event_no": 20,
+          "type": "MESSAGE",
+          "predicate": "NOWEV=20&ITEM=2487",
+          "predicate_sha256": "9d52104ac54cc0d68d0f0ca2d80d8597775dedf1b6bc4fca521565367bc39669",
+          "section_sha256": "53727049b23bac4d9fed24039929bc0c9b7c8bb973b03111c73251daf43c7fcb",
+          "actions": {},
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 4,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "LV>79&ENDEV=20&ENDEV=21&NOWEV=161&ITEM=2744",
+          "predicate_sha256": "010f44d3ca933bd908543e46eafeef293a61c4fe17a730de85fc51c3cf0b8ad6",
+          "section_sha256": "7bd9ce53de82f72de4cab13bae8cbd4f76820d56fa6bb564792d520283399537",
+          "actions": {
+            "GetItem": [
+              "2745*1"
+            ],
+            "DelItem": [
+              "2744"
+            ]
+          },
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 5,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "LV>79&ENDEV=20&ENDEV=21&NOWEV=161&ITEM=2745",
+          "predicate_sha256": "ba7a876e3cf733d746c01c926a6044c15ec133b38e155ea8b9cfd4286332bd5f",
+          "section_sha256": "f6b764f4cfcde75c0d0a5db3065f3d845f25e700eafbbca6794a9eeb3962a09a",
+          "actions": {},
+          "explicit_end_present": true
+        }
+      ],
+      "source_u16": [
+        5000,
+        12802,
+        49152
+      ],
+      "static_candidate": {
+        "png_sha256": "c2a7b6c3c803098a1f2123a04e5d83ab4603304b5fd66530015207d9bf16f97c",
+        "rd_sha256": "ebb0e6be3a4f266e943e8a4d3e6363e6004fb95a0f08d0ec0af0abc2ce806c18",
+        "rgba_sha256": "88eb5f8f2f639d6b5a99b3f5afb131268b800a86d7b39be28ac98eeafa18f3ca",
+        "size": [
+          36,
+          79
+        ],
+        "signed_offset": [
+          -15,
+          -70
+        ],
+        "top_left": [
+          1313,
+          570
+        ]
+      }
+    },
+    {
+      "ordinal": 2,
+      "floor": 3406,
+      "xy": [
+        28,
+        17
+      ],
+      "name": "吉德的兒子",
+      "alias": 16046,
+      "direction": 6,
+      "create_block_sha256": "114e2329e33415db3c653f09ada5b7c6c18abcfc8880ffe162e375f3889d37d7",
+      "script_ref": "jaruga/event/event20_3",
+      "script_sha256": "4a99f303a00d14d87f1e6cbefd7619fc99af418f3eb9c973d0b47f8d0e2d0600",
+      "event_count": 3,
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": 20,
+          "type": "ACCEPT",
+          "predicate": "NOWEV=20&ITEM!=2487",
+          "predicate_sha256": "8071ee30657a0de72bcd21ce0bf9c40b1040a2d70f7bc5ff0ff92d55b2377fae",
+          "section_sha256": "ca8dee7a76c5161ef500a1200bd514eea67d9879a94f5ae0c6377101ba76dc1e",
+          "actions": {
+            "GetItem": [
+              "2487"
+            ]
+          },
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 1,
+          "event_no": 20,
+          "type": "MESSAGE",
+          "predicate": "NOWEV=20&ITEM=2487",
+          "predicate_sha256": "9d52104ac54cc0d68d0f0ca2d80d8597775dedf1b6bc4fca521565367bc39669",
+          "section_sha256": "f9b8e01a4fcb99bd2e45fafe4fdf1437fe337a0e3054d01017664de930aca1e1",
+          "actions": {},
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 2,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "ENDEV=20&ENDEV=21",
+          "predicate_sha256": "c2f5ce829f3f310edfdc91420e3da698a0dd6b9c38f970781f43d32654f6b9ea",
+          "section_sha256": "130ceb336300dc4ff394a8af934192da93c8fb822f29ddd9c2c31c2d23cf9418",
+          "actions": {},
+          "explicit_end_present": true
+        }
+      ],
+      "source_u16": [
+        5001,
+        0,
+        49152
+      ],
+      "static_candidate": {
+        "png_sha256": "953dfdeb357df808441c409d4710a205aa6ceeb5483673a9b3cfa2e1a9695eda",
+        "rd_sha256": "249b08112ffa5b9065a62f8b828c8ce05326f8e5dd3364ae195b23d477f1c92c",
+        "rgba_sha256": "c4188ad7653f576da55c49cd029613f700a729552f63d77739cc948857f21cbf",
+        "size": [
+          32,
+          80
+        ],
+        "signed_offset": [
+          -16,
+          -71
+        ],
+        "top_left": [
+          1440,
+          617
+        ]
+      }
+    }
+  ],
+  "event20_original_graphic_namespaces": {
+    "16029": {
+      "adrn_match_count": 1,
+      "spradrn_match_count": 0,
+      "static_candidate": {
+        "adrn_ordinal": 5875,
+        "bitmap": 5875,
+        "adrn_sha256": "0c762b868de10c5aab1a9a9ff4aecd4735729ae2c718c849e92c28bc4c4f2e9c",
+        "rd_offset": 24984458,
+        "rd_bytes": 1456,
+        "rd_sha256": "a3040f7a5a08b12e4f04ddf3e61b46ed9af1ab2bba806dff4b9aa25c95696d20",
+        "indexed_sha256": "8379294f9fa075a2e68e48c71a957531535fb41982125f6516eac9e001121177",
+        "rgba_sha256": "7ed60d8466ee47302be9a3dc85c28af169ac8bfc3f3b421d431f2b2f627a9ffb",
+        "png_sha256": "ed1f592005f35f93d85dd9b9aa8cb905fe9aba6dabe10a9cfdbff4f854bf3f08",
+        "size": [
+          28,
+          78
+        ],
+        "signed_offset": [
+          -14,
+          -70
+        ]
+      }
+    },
+    "16030": {
+      "adrn_match_count": 1,
+      "spradrn_match_count": 0,
+      "static_candidate": {
+        "adrn_ordinal": 5876,
+        "bitmap": 5876,
+        "adrn_sha256": "f5c515614a224df5aaa1c59fb462ffdeda152621afbcd832a96bda7b9fb60a21",
+        "rd_offset": 24985914,
+        "rd_bytes": 2113,
+        "rd_sha256": "ae3ceca2f3e0d8412588e9cb900dcac1e31f80014651a900deae1f21d2374de4",
+        "indexed_sha256": "873f3344eacefcb5fad7dd57121b54fe2b747298595c94ca84239d6c1410d09f",
+        "rgba_sha256": "60e1d27b9f27175782e36242df4702642c192b2a0dcf88eab826c28985667c10",
+        "png_sha256": "f9f3f7e4a3f900310790fb9db64624fb89faa23e4336ba12c87652159d2ce0c1",
+        "size": [
+          40,
+          83
+        ],
+        "signed_offset": [
+          -19,
+          -75
+        ]
+      }
+    },
+    "16032": {
+      "adrn_match_count": 1,
+      "spradrn_match_count": 0,
+      "static_candidate": {
+        "adrn_ordinal": 5878,
+        "bitmap": 5878,
+        "adrn_sha256": "4217aea0580914554e68b078c835ce0fdd21961a7c31120dd579ac060aad3b83",
+        "rd_offset": 24989636,
+        "rd_bytes": 1634,
+        "rd_sha256": "680b7b2b55204a9cfbda9676f831c2f620a3a874d5e56530072f412e5f3e5d77",
+        "indexed_sha256": "09c01125e42d6aad7913840c71421f29291938b5af39a8c8c78dcb4375c9780f",
+        "rgba_sha256": "c48346335f6e50647fcc8647f8b951c6a403efcad63f533da48231eeba209723",
+        "png_sha256": "8406a59490a24c99b4cd55d9163d81caf793e8877ed412562f054083925b4c53",
+        "size": [
+          28,
+          82
+        ],
+        "signed_offset": [
+          -14,
+          -73
+        ]
+      }
+    },
+    "100431": {
+      "adrn_match_count": 0,
+      "spradrn_match_count": 1,
+      "static_candidate": null
+    }
+  },
+  "html": {
+    "script_sections": 14,
+    "svg_door_links": 3,
+    "svg_npc_links": 3,
+    "source_text_hashes_match": true
+  },
+  "private_zip": {
+    "filename": "StoneAge-INTEGRATION29-Qikaka-chief-house-event20-private.zip",
+    "bytes": 3749110,
+    "sha256": "7f09915790c7c3bddc8b86d20cae59ea5f82de60e94a19380e5216b421b8e650",
+    "members": 30,
+    "roundtrip_SHA256_and_CRC_verified": true
+  },
+  "verification": {
+    "replayed_room_mode_count": 3,
+    "independent_Pillow_NumPy_match": true,
+    "original_script_files": 3,
+    "original_SPR_namespace_checked": true,
+    "new_static_RD_independent_decoders": 2,
+    "desktop_chromium_file_policy_blocked": true,
+    "actual_browser_interaction_verified": false
+  },
+  "next_source_ready_work": {
+    "task": "20607/20608 original dungeon event20 scenes",
+    "source_rows": [
+      {
+        "floor": 20607,
+        "xy": [
+          68,
+          5
+        ],
+        "alias": 100431,
+        "source_DAT_sha256": "61030ae7ad974ec396074f3bb7a44c3741694be093fb91abec145392a8a67845",
+        "source_DAT_u16": [
+          4085,
+          0,
+          49152
+        ],
+        "script_ref": "jaruga/event/event20_4",
+        "script_sha256": "53211cfd5a7009b65bd7e2bc54ae77c99a03dec56912f0ba4a302d47d657f013",
+        "event_count": 6
+      },
+      {
+        "floor": 20607,
+        "xy": [
+          71,
+          7
+        ],
+        "alias": 16032,
+        "source_DAT_sha256": "61030ae7ad974ec396074f3bb7a44c3741694be093fb91abec145392a8a67845",
+        "source_DAT_u16": [
+          4089,
+          0,
+          49152
+        ],
+        "script_ref": "jaruga/event/event20_5",
+        "script_sha256": "79130f82ce0a2f2882d5a9cdc456a3169104e156b9520dc60613841b16500478",
+        "event_count": 3
+      },
+      {
+        "floor": 20608,
+        "xy": [
+          9,
+          3
+        ],
+        "alias": 16029,
+        "source_DAT_sha256": "c557d48683e1b2ee361a6d35bf2f67ff28f2b016e1e90062567ead1514653612",
+        "source_DAT_u16": [
+          4085,
+          0,
+          49152
+        ],
+        "script_ref": "jaruga/event/event20_6",
+        "script_sha256": "edddcf7c7325fd142f3250f08d9f50aac2209fa9e22d4a316c1bf1fc95d68658",
+        "event_count": 5
+      }
+    ],
+    "spr_100431": {
+      "group_index": 394,
+      "spr_no": 100431,
+      "offset": 2623688,
+      "anim_count": 104,
+      "reserved": 16,
+      "index_record_sha256": "c6f45cc150227f26b6cb0c976353ff419141865cc6286a29cdc112ade010e565",
+      "end_offset": 2630856,
+      "segment_sha256": "3adc4cbb86bd45145ae0fa15004d5e7183bd208fb3bfc686c84ce13b711a4c9e",
+      "frame_count": 592,
+      "sentinel_frames": 0,
+      "distinct_non_sentinel_bitmap_keys": 344
+    },
+    "explicit_frame_candidate_only": {
+      "direction": 4,
+      "action": 0,
+      "frame_index": 0,
+      "bitmap": 87803,
+      "spr_frame_signed_xy": [
+        0,
+        0
+      ],
+      "sound_id": 0,
+      "adrn_signed_xy": [
+        -32,
+        -102
+      ],
+      "adrn_sha256": "620d2536d49c84986ff4b59c988c69159ee26a085c4a1bbcdf97606855ecfc5f",
+      "rd_offset": 205953942,
+      "rd_bytes": 3716,
+      "rd_sha256": "7fd084c6f624583e6262fc38315897fcf7d62b3227594a4fd282a18d21fa351c",
+      "indexed_sha256": "8604c8490f61d524f5ac89d75c8b64647cdaa5abacdfb7e4f1c0be622decc1f9",
+      "dimensions": [
+        72,
+        113
+      ]
+    },
+    "native_frame_selection_verified": false
+  },
+  "bounds": {
+    "native_client_or_server_executed": false,
+    "original_event_or_warp_trigger_verified": false,
+    "official_same_deployment_verified": false,
+    "raw_proprietary_assets_published_in_Git": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  }
+}
