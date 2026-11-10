@@ -2335,3 +2335,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-10 — INTEGRATION33｜薩伊那斯两组原任务的跨模块来源联接
 
 [老人萨顿三家宝与恐龙博士哈鲁双阶段源证](docs/continuity/STONEAGE-INTEGRATION33-SAINASU-TWO-QUEST-CHAINS-20261110.md)：私人CHAR01、ITEM01、INTEGRATION10三包共3,357个ZIP成员全部CRC与整SHA重新核验，实际重读四份未在QUEST08–31专项覆盖的原script与两份CREATE，共4源NPC／13个TYPE段／3个原DAT地图范围。1100 DAT私有源原样重读并核(86,99)三平面值；1112／11006引用已验MAP09。任务13关联5个有来源道具（家宝／盗贼脚印／秘药）；任务15/16分别保留`PET>14-74`、`PET>29-191`、`GetRandItem`八候选与`GetPet:95`，13个不同物品ID双表SHA精确相同，PET10同载体备选模板95均对应SPR图号100394，但两个原行SHA不同，原生奖励未证。旧INTEGRATION05已知GetPet95，不重复认作新发现。公共[来源哈希/数值索引](research/recovered/STONEAGE-INTEGRATION33-SAINASU-TWO-QUEST-CHAINS-SOURCE-R1.json)与逐字段回归；原商业原文/图/DAT仍只私人，当前Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停，总进度未知。下一项继续未整合源或新原像素，不凭脚本改写初代玩法。
+
+
+## 2026-11-10 — INTEGRATION34｜GetPet95 的跨版本原像素候选100394
+
+[同号宠物原动画图像重新实物核验及止点](docs/continuity/STONEAGE-INTEGRATION34-GETPET95-CROSSCARRIER-VISUAL-20261110.md)：从已保存的私人 PET07 原像素 HTML 15,123,277B 和原 RD 全收据 JSON 1,617,404B 实际回读两整SHA，限定到 TW1.0原SPR图号100394；三条动作方向0源序列合23个原帧位置／16个不同 bitmap，逐张真正解出16份嵌入PNG共71,187B，16/16 PNG整SHA及Pillow解码原尺寸均与先前真实原RD收据一致。依据本轮I33已连接的晚期同RAR任务脚本 `GetPet:95`→两备选模板ID95/图号100394，和**不同载体**台湾1.0源原图号100394同号，提供来源明确的跨版本视觉候选，而非原任务实际奖励图或官方同版物种。原图/HTML/RD仍私人，公开[派生数值哈希](research/recovered/STONEAGE-INTEGRATION34-GETPET95-CROSSCARRIER-ORIGINAL-PIXEL-R1.json)和新反例测试；不冒充新发现原RD、完整56动画原生绘制或原客户端运行。CURRENT原blob不动、Stage A 7PARTIAL+2OPEN，B/wiki GATED，R79暂停，整体完成率未知。后续移向不同真实来源内容，停止重复该图号。
