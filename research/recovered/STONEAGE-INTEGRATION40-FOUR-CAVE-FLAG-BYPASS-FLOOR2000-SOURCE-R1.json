@@ -1,0 +1,561 @@
+{
+  "schema": "stoneage.integration40.direct_original_script_and_floor2000_source_bound_pairwise_comparison.r1",
+  "date": "2026-11-10",
+  "remote_start": {
+    "main_head": "8485c542850aedbee1e8a7c1ba7a41fad03bcf64",
+    "main_tree": "d83d3a2fc556c323cec071540316aa4aeea80248",
+    "original_CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_CURRENT_bytes": 2709173
+  },
+  "actual_private_source_read": {
+    "npc_zip": {
+      "bytes": 995176,
+      "sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+      "members": 2205,
+      "full_sha256_verified": true,
+      "every_ZIP_crc_verified": true
+    },
+    "map09_zip": {
+      "bytes": 46844444,
+      "sha256": "d84d0800dd600798769dfb7251a1d7816588ac061ccc27812ac64a37922d4a8a",
+      "members": 4195,
+      "full_sha256_verified": true,
+      "every_ZIP_crc_verified": true
+    },
+    "map09_embedded_original_DAT_zip": {
+      "sha256": "c079a1c25bfa11902b69c1f2839058d4fb20f025ef15c93f649f636c7e5f833a",
+      "members": 955,
+      "every_ZIP_crc_verified": true
+    },
+    "map04_TW1_original_RD_pixel_candidates_zip": {
+      "bytes": 35673334,
+      "sha256": "e9c43222797c7ebcddfcb1ccab6dbeba205b972bbbff4e1f29c14b3ece320d37",
+      "members": 4169,
+      "every_ZIP_crc_verified": true,
+      "original_RD_candidate_PNGs": 4166
+    },
+    "candidate_private_delivery": {
+      "bytes": 48395,
+      "sha256": "36e75793b0a48702b7f47a60f21a9003dbe8f5209d80fefa56606c0ea54de253",
+      "ZIP_members": 8,
+      "original_source_png_tiles_preserved_private": 5,
+      "uploaded_to_personal_library": true,
+      "downloaded_again_and_full_SHA256_and_all_CRC_verified": true
+    }
+  },
+  "upstream_indexes": {
+    "quest01": {
+      "path": "research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json",
+      "git_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2"
+    },
+    "char01": {
+      "path": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json",
+      "git_blob": "a088b61a3212f7049e7793f587123ffb29bebad7"
+    },
+    "i39": {
+      "path": "research/recovered/STONEAGE-INTEGRATION39-ADULT-REBIRTH-EVENT-CREATE-SOURCE-R1.json",
+      "git_blob": "5bfdb4d9734b73e769924d0dc0229dc9bf3ab510"
+    },
+    "map04": {
+      "path": "research/recovered/STONEAGE-MAP-SCENE-MODULE-04-955-ORIGINAL-DAT-4166-RD-PIXEL-INDEX-R1.json",
+      "git_blob": "1ef8c004179128ea44ffa4fb4259748bc8c83911"
+    },
+    "map09_gap": {
+      "path": "research/recovered/STONEAGE-MAP09-264-EXCLUDED-SOURCE-GAPS-R1.json",
+      "git_blob": "bbfe6bfa894dc8ca234ea47992d699c619731135"
+    }
+  },
+  "original_same_archive_exact_flag_setter_pairs": [
+    {
+      "flag": 4,
+      "source_name_scope": "成年仪式",
+      "shortcut": {
+        "original_arg_path": "my/chengren/chengren.arg",
+        "original_bytes": 429,
+        "original_sha256": "4b92d0d20cca364a455ad6d2b89fb43fc5f2327fb04fdab6fd0558d84a3a890f",
+        "original_crc32": "0a5c4045",
+        "source_CREATE_path": "my/chengren/chengren.create",
+        "source_CREATE_ordinal": 0,
+        "floor": 2000,
+        "xy": [
+          54,
+          50
+        ],
+        "graphic": 16001,
+        "direct_raw_EVENT_predicate_verified": "LV>29",
+        "source_CONTROL_TYPE": "ACCEPT",
+        "EndSetFlg": 4,
+        "from_QUEST01_section_sha256": "bac20ba6e2deac49d68f8739f43703208fd580deb55984904ce332b31425ed91",
+        "direct_raw_Charm_literal": null,
+        "direct_raw_Has_GetItem_or_DelItem": false
+      },
+      "different_source_flag_setter": {
+        "path": "jaruga/event/event04_1",
+        "original_bytes": 869,
+        "original_sha256": "9785f553c3b47f85d131f3907bd005ceb32db38ab23df1241aded602071a9e66",
+        "original_crc32": "7d24081c",
+        "original_CREATE_path": "jaruga/event/event.create",
+        "original_CREATE_ordinal": 2,
+        "original_CREATE_floor": 10204,
+        "original_CREATE_graphic": 16001,
+        "direct_raw_first_ACCEPT_EVENT_predicate_verified": "ITEM=2417*15",
+        "source_ENDSET_block_ordinal": 0,
+        "source_ENDSET_block_sha256": "38130e66068ea536c717661dbd9ac748a41ee2686573afe140fd298f20505142",
+        "source_ENDSET_block_type": "ACCEPT",
+        "literal_DelItem_IDs": [
+          2417
+        ],
+        "literal_GetItem_IDs": [
+          2418
+        ],
+        "EndSetFlg": 4
+      },
+      "full_preserved_NPC_subtree_exact_EndSetFlg_producer_paths": [
+        "jaruga/event/event04_1",
+        "my/chengren/chengren.arg"
+      ]
+    },
+    {
+      "flag": 39,
+      "source_name_scope": "硫離使者",
+      "shortcut": {
+        "original_arg_path": "my/zhuansheng/zhuans1.arg",
+        "original_bytes": 316,
+        "original_sha256": "b423f1f2376ecd42357fafc9e3c1d025b1f7836278ba8bc21b820e0a50d5c489",
+        "original_crc32": "7bff2210",
+        "source_CREATE_path": "my/zhuansheng/zhuans.create",
+        "source_CREATE_ordinal": 0,
+        "floor": 2000,
+        "xy": [
+          47,
+          58
+        ],
+        "graphic": 100287,
+        "direct_raw_EVENT_predicate_verified": "LV>139",
+        "source_CONTROL_TYPE": "ACCEPT",
+        "EndSetFlg": 39,
+        "from_QUEST01_section_sha256": "adf8802d94aac29ee74e27a5f28055572a0956609849a595762a663fad0d3494",
+        "direct_raw_Charm_literal": "1",
+        "direct_raw_Has_GetItem_or_DelItem": false
+      },
+      "different_source_flag_setter": {
+        "path": "jaruga/event/ruri01",
+        "original_bytes": 2285,
+        "original_sha256": "c843bf8f2a57c3542ec922188f3ba0e380c298af87cc824b224fc62ccc58fa70",
+        "original_crc32": "1016c6e0",
+        "original_CREATE_path": "jaruga/event/ruri.create",
+        "original_CREATE_ordinal": 0,
+        "original_CREATE_floor": 21015,
+        "original_CREATE_graphic": 100456,
+        "direct_raw_first_ACCEPT_EVENT_predicate_verified": "LV>0&NOWEV=39&ITEM=2698&ITEM=2699",
+        "source_ENDSET_block_ordinal": 0,
+        "source_ENDSET_block_sha256": "eefa8d7d6eca58c2562bc6002dc6afb642d97127e564e113ee885403fdaa5a5a",
+        "source_ENDSET_block_type": "ACCEPT",
+        "literal_DelItem_IDs": [
+          2698,
+          2699
+        ],
+        "literal_GetItem_IDs": [
+          2701
+        ],
+        "EndSetFlg": 39
+      },
+      "full_preserved_NPC_subtree_exact_EndSetFlg_producer_paths": [
+        "jaruga/event/ruri01",
+        "my/zhuansheng/zhuans1.arg"
+      ]
+    },
+    {
+      "flag": 40,
+      "source_name_scope": "碧青使者",
+      "shortcut": {
+        "original_arg_path": "my/zhuansheng/zhuans2.arg",
+        "original_bytes": 316,
+        "original_sha256": "415d770fdffe94242129b088f26687eed29c1faf651488d84ada23bea3cbb096",
+        "original_crc32": "a82a207c",
+        "source_CREATE_path": "my/zhuansheng/zhuans.create",
+        "source_CREATE_ordinal": 1,
+        "floor": 2000,
+        "xy": [
+          48,
+          58
+        ],
+        "graphic": 100288,
+        "direct_raw_EVENT_predicate_verified": "LV>139",
+        "source_CONTROL_TYPE": "ACCEPT",
+        "EndSetFlg": 40,
+        "from_QUEST01_section_sha256": "8b1b26ffe5e767a418848fd0647b551f2067d6ac9e7ed4ba7c59820fbb9f1405",
+        "direct_raw_Charm_literal": "1",
+        "direct_raw_Has_GetItem_or_DelItem": false
+      },
+      "different_source_flag_setter": {
+        "path": "giiru/event/sink/sink02",
+        "original_bytes": 3568,
+        "original_sha256": "c11dc7eae560f0b44d2fe673078a7132fdc9dba20a73382eb6a416308ac1d8ae",
+        "original_crc32": "a36f311a",
+        "original_CREATE_path": "giiru/event/sink/sink.create",
+        "original_CREATE_ordinal": 2,
+        "original_CREATE_floor": 30016,
+        "original_CREATE_graphic": 100230,
+        "direct_raw_first_ACCEPT_EVENT_predicate_verified": "LV>0&NOWEV=40&ENDEV=4&ITEM=2706",
+        "source_ENDSET_block_ordinal": 0,
+        "source_ENDSET_block_sha256": "f2bc06113fecb7698b4177efbec82e2068409e0cb6eebce51111cb52acc9a6ee",
+        "source_ENDSET_block_type": "ACCEPT",
+        "literal_DelItem_IDs": [
+          2706
+        ],
+        "literal_GetItem_IDs": [
+          2707
+        ],
+        "EndSetFlg": 40
+      },
+      "full_preserved_NPC_subtree_exact_EndSetFlg_producer_paths": [
+        "giiru/event/sink/sink02",
+        "my/zhuansheng/zhuans2.arg"
+      ]
+    },
+    {
+      "flag": 42,
+      "source_name_scope": "深紅使者",
+      "shortcut": {
+        "original_arg_path": "my/zhuansheng/zhuans3.arg",
+        "original_bytes": 316,
+        "original_sha256": "ca9e1abc4ddd197af51963e601547e4934ff893ef548718627aa7a127b948d4b",
+        "original_crc32": "f6414466",
+        "source_CREATE_path": "my/zhuansheng/zhuans.create",
+        "source_CREATE_ordinal": 2,
+        "floor": 2000,
+        "xy": [
+          49,
+          58
+        ],
+        "graphic": 100290,
+        "direct_raw_EVENT_predicate_verified": "LV>139",
+        "source_CONTROL_TYPE": "ACCEPT",
+        "EndSetFlg": 42,
+        "from_QUEST01_section_sha256": "0a1e824acd1355018a0648270ea0910a7a9b6b0a8cb0fbf98510e0289dc55abc",
+        "direct_raw_Charm_literal": "1",
+        "direct_raw_Has_GetItem_or_DelItem": false
+      },
+      "different_source_flag_setter": {
+        "path": "sainasu/event/genou_1",
+        "original_bytes": 1874,
+        "original_sha256": "9b7c56bae69b7c4a4d6d000e838fa91e314ae00e0ce256acd37717b1cccb40d0",
+        "original_crc32": "ae431633",
+        "original_CREATE_path": "sainasu/event/genou/genou.create",
+        "original_CREATE_ordinal": 0,
+        "original_CREATE_floor": 11215,
+        "original_CREATE_graphic": 100461,
+        "direct_raw_first_ACCEPT_EVENT_predicate_verified": "LV>0&ENDEV=41&ENDEV=4&ITEM=2736&NOWEV=42",
+        "source_ENDSET_block_ordinal": 0,
+        "source_ENDSET_block_sha256": "6bc02a4e14f524ddcb3fcb68891bb6ee9e93cd73d300b74c3e247595068c21f4",
+        "source_ENDSET_block_type": "ACCEPT",
+        "literal_DelItem_IDs": [
+          2736
+        ],
+        "literal_GetItem_IDs": [
+          2735
+        ],
+        "EndSetFlg": 42
+      },
+      "full_preserved_NPC_subtree_exact_EndSetFlg_producer_paths": [
+        "my/zhuansheng/zhuans3.arg",
+        "sainasu/event/genou_1"
+      ]
+    },
+    {
+      "flag": 46,
+      "source_name_scope": "玄黃使者",
+      "shortcut": {
+        "original_arg_path": "my/zhuansheng/zhuans4.arg",
+        "original_bytes": 339,
+        "original_sha256": "7d189830ce2464cc413afe3eec293314bbc51f5fe1f294f4fc469230f14dd982",
+        "original_crc32": "3034efb0",
+        "source_CREATE_path": "my/zhuansheng/zhuans.create",
+        "source_CREATE_ordinal": 3,
+        "floor": 2000,
+        "xy": [
+          50,
+          58
+        ],
+        "graphic": 100394,
+        "direct_raw_EVENT_predicate_verified": "LV>139",
+        "source_CONTROL_TYPE": "ACCEPT",
+        "EndSetFlg": 46,
+        "from_QUEST01_section_sha256": "1411e6661d9be06ab1324ae3e57c81dea863f2d9b6243622531d1bc9123df933",
+        "direct_raw_Charm_literal": "1",
+        "direct_raw_Has_GetItem_or_DelItem": false
+      },
+      "different_source_flag_setter": {
+        "path": "jaruga/event/hekisei01",
+        "original_bytes": 1942,
+        "original_sha256": "f627b4bc1bee995caaf76127fac4335e7b08cb5db8b64f0702ab3c1b7f279449",
+        "original_crc32": "a49266bb",
+        "original_CREATE_path": "jaruga/event/hekisei.create",
+        "original_CREATE_ordinal": 0,
+        "original_CREATE_floor": 21215,
+        "original_CREATE_graphic": 100210,
+        "direct_raw_first_ACCEPT_EVENT_predicate_verified": "LV>64&NOWEV=46&ITEM=2769",
+        "source_ENDSET_block_ordinal": 0,
+        "source_ENDSET_block_sha256": "8d508dc707cbf2322e2d0d7b98a810248012da6baefdadd01a62bff8ec4a8b32",
+        "source_ENDSET_block_type": "ACCEPT",
+        "literal_DelItem_IDs": [
+          2769
+        ],
+        "literal_GetItem_IDs": [
+          2770
+        ],
+        "EndSetFlg": 46
+      },
+      "full_preserved_NPC_subtree_exact_EndSetFlg_producer_paths": [
+        "jaruga/event/hekisei01",
+        "my/zhuansheng/zhuans4.arg"
+      ]
+    }
+  ],
+  "original_preserved_map2000_DAT": {
+    "basename": "2000.dat",
+    "source_bytes": 135008,
+    "source_sha256": "d75231434c69118a518a8d5dd34f266264b8551fe4f2d55a20cdfa11b46584b3",
+    "source_crc32": "35bf728a",
+    "geometry": [
+      150,
+      150
+    ],
+    "fixed_2d_u16_planes": 3,
+    "prior_map04_exact_row": [
+      "2000.dat",
+      135008,
+      "d75231434c69118a518a8d5dd34f266264b8551fe4f2d55a20cdfa11b46584b3",
+      150,
+      150,
+      22500,
+      16307,
+      1154,
+      634,
+      11,
+      17447,
+      14
+    ],
+    "existing_map09_full_atlas_qualifying": false,
+    "private_newly_queried_original_ground_at_six_NPC_cells": [
+      {
+        "role": "ADULT",
+        "original_DAT_xy": [
+          54,
+          50
+        ],
+        "original_DAT_three_planes_u16": [
+          6002,
+          0,
+          49152
+        ],
+        "original_floor_ground_alias": 6002,
+        "crosscarrier_original_TW1_RD_sha256": "35a023813690d699745868659367b44c8a09294338f192b388a989e9343c6375",
+        "crosscarrier_TW1_indexed_pixels_sha256": "d9e754ccab888238a6262d5a1d509f48500d7e5c730d7380031ee0ee9d104081",
+        "crosscarrier_source_Palet1_candidate_PNG_sha256": "13808845b0091a02fbf3faccbf9d17b26d28b05d46219886099a6024b987844e",
+        "png_candidate_size": [
+          64,
+          47
+        ]
+      },
+      {
+        "role": "MESSENGER39",
+        "original_DAT_xy": [
+          47,
+          58
+        ],
+        "original_DAT_three_planes_u16": [
+          6022,
+          0,
+          49152
+        ],
+        "original_floor_ground_alias": 6022,
+        "crosscarrier_original_TW1_RD_sha256": "0be87cb01db10fee6fc7595f9453d835138befe7661bb7d2ec21c0da60468f7e",
+        "crosscarrier_TW1_indexed_pixels_sha256": "c10a75b991ff91073a61ca2e267217a744902a410e8344a260f96d5f47616d9e",
+        "crosscarrier_source_Palet1_candidate_PNG_sha256": "f45f0418b87562c33a01a8930c50a92ff4ce20734974658040bea0b2f1f3e478",
+        "png_candidate_size": [
+          64,
+          47
+        ]
+      },
+      {
+        "role": "MESSENGER40",
+        "original_DAT_xy": [
+          48,
+          58
+        ],
+        "original_DAT_three_planes_u16": [
+          6001,
+          0,
+          49152
+        ],
+        "original_floor_ground_alias": 6001,
+        "crosscarrier_original_TW1_RD_sha256": "e7321ed8505c1bb149fb6b364191fe27a8badba334a112e124175e4591acb110",
+        "crosscarrier_TW1_indexed_pixels_sha256": "ff8b6ba90db439db68297b8b1db99826039ac0705b69d39b0a38542952af7ea8",
+        "crosscarrier_source_Palet1_candidate_PNG_sha256": "804caf3c41d5abbde36161258d6b0c883b53418e6d8e1dd4f477ade428e9d58a",
+        "png_candidate_size": [
+          64,
+          47
+        ]
+      },
+      {
+        "role": "MESSENGER42",
+        "original_DAT_xy": [
+          49,
+          58
+        ],
+        "original_DAT_three_planes_u16": [
+          6006,
+          0,
+          49152
+        ],
+        "original_floor_ground_alias": 6006,
+        "crosscarrier_original_TW1_RD_sha256": "a9523a36888e7ce43c2e295fbd1987a2aeacdad5d2bc69d02c798efd0df8e389",
+        "crosscarrier_TW1_indexed_pixels_sha256": "680a0e0adbce2a02821814cedf302d7d796bfcb6054d612fe7a0c3d97ad70141",
+        "crosscarrier_source_Palet1_candidate_PNG_sha256": "cdbf6e7240fa00863092eb549702f28249580659451489a1c997443a4387f4eb",
+        "png_candidate_size": [
+          64,
+          47
+        ]
+      },
+      {
+        "role": "MESSENGER46",
+        "original_DAT_xy": [
+          50,
+          58
+        ],
+        "original_DAT_three_planes_u16": [
+          6005,
+          0,
+          49152
+        ],
+        "original_floor_ground_alias": 6005,
+        "crosscarrier_original_TW1_RD_sha256": "6ffeac91efd0bc067e4d5d3eff84cb9c926459c4fd8ebb7b75e69e8ccac639c4",
+        "crosscarrier_TW1_indexed_pixels_sha256": "1ed8fd97257ec350250d1ed1a6e451dc9f248f36adeff50e84b6fbbc94a9af96",
+        "crosscarrier_source_Palet1_candidate_PNG_sha256": "0b644506a718b288ec4986550d61c7d2328ed49ca301eef08a680dcceffc9901",
+        "png_candidate_size": [
+          64,
+          47
+        ]
+      },
+      {
+        "role": "ADJACENT_GUARD",
+        "original_DAT_xy": [
+          51,
+          58
+        ],
+        "original_DAT_three_planes_u16": [
+          6006,
+          0,
+          49152
+        ],
+        "original_floor_ground_alias": 6006,
+        "crosscarrier_original_TW1_RD_sha256": "a9523a36888e7ce43c2e295fbd1987a2aeacdad5d2bc69d02c798efd0df8e389",
+        "crosscarrier_TW1_indexed_pixels_sha256": "680a0e0adbce2a02821814cedf302d7d796bfcb6054d612fe7a0c3d97ad70141",
+        "crosscarrier_source_Palet1_candidate_PNG_sha256": "cdbf6e7240fa00863092eb549702f28249580659451489a1c997443a4387f4eb",
+        "png_candidate_size": [
+          64,
+          47
+        ]
+      }
+    ],
+    "local_window_TW1_crosscarrier_original_RD_pixel_source_qualification": {
+      "adult11": {
+        "rect": [
+          49,
+          45,
+          59,
+          55
+        ],
+        "cells": 121,
+        "gt99_total": 129,
+        "gt99_qualified_TW1_pixel_occurrences": 129,
+        "gt99_distinct": 77,
+        "positive_1_to_99_not_render_qualified_occurrences": 29
+      },
+      "four_messengers8x5": {
+        "rect": [
+          45,
+          56,
+          52,
+          60
+        ],
+        "cells": 40,
+        "gt99_total": 41,
+        "gt99_qualified_TW1_pixel_occurrences": 41,
+        "gt99_distinct": 32,
+        "positive_1_to_99_not_render_qualified_occurrences": 2
+      },
+      "six_point_region18x19": {
+        "rect": [
+          42,
+          44,
+          59,
+          62
+        ],
+        "cells": 342,
+        "gt99_total": 353,
+        "gt99_qualified_TW1_pixel_occurrences": 353,
+        "gt99_distinct": 152,
+        "positive_1_to_99_not_render_qualified_occurrences": 60
+      },
+      "whole_floor": {
+        "rect": [
+          0,
+          0,
+          149,
+          149
+        ],
+        "cells": 22500,
+        "gt99_total": 16578,
+        "gt99_qualified_TW1_pixel_occurrences": 16564,
+        "gt99_distinct": 640,
+        "gt99_missing_occurrences": 14,
+        "gt99_missing_distinct": 11,
+        "positive_1_to_99_occurrences": 883
+      }
+    },
+    "whole_floor_existing_unmatched_gt99_aliases": {
+      "11208": 1,
+      "22310": 1,
+      "22356": 1,
+      "22413": 2,
+      "24306": 2,
+      "24308": 1,
+      "24309": 1,
+      "24310": 1,
+      "24312": 2,
+      "24317": 1,
+      "24321": 1
+    }
+  },
+  "source_bound_interpretation": {
+    "four_direct_shortcut_message_mentions_skipping_four_caves": true,
+    "each_shortcut_zhuans_arg_has_LV_greater_139": true,
+    "source_level_adult_condition_LV_greater_29": true,
+    "four_other_previously_indexed_source_scripts_retain_distinct_ITEM_AND_OR_FLAG_gate": true,
+    "four_shortcut_scripts_have_no_GetItem_or_DelItem_directives": true,
+    "four_shortcut_scripts_each_have_Charm_literal_one": true,
+    "original_event_flag_values_are_literal_not_runtime_execution": true,
+    "local_original_DAT_and_TW1_RD_have_separate_source_carriers": true,
+    "local_qualified_alias_data_is_not_full_original_map_or_native_render": true
+  },
+  "negative_limits": {
+    "proven_official_original_early_release_task_or_mechanic": false,
+    "actual_original_player_adulthood_or_rebirth_executed": false,
+    "native_EndSetFlg_state_effect_verified": false,
+    "native_battle_pet_or_player_reset_verified": false,
+    "original_TW1_with_mixed25_DAT_same_server_deployment": false,
+    "local_low_1_to_99_numeric_semantics_proven": false,
+    "full_floor2000_original_pixel_qualified": false,
+    "full_map2000_native_renderer_collision_or_game_world_entered": false,
+    "full_original_NPC_dialogues_or_original_MAP_DAT_or_sprites_published": false,
+    "new_original_static_script_files_discovered": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Stop the four-cave shortcut flag pair once exact preserved source and local floor are documented; move to another content source, return only with native runtime witness or newly authenticated same-build original."
+}

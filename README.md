@@ -2363,3 +2363,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-10 — INTEGRATION39｜成年／转生原目录的五组配置与事件标志来源联接
 
 [有界原来源关系与验收边界](docs/continuity/STONEAGE-INTEGRATION39-ADULT-REBIRTH-SOURCE-20261110.md)：从完整远端原生 Git blob 重放既有 CHAR01 与 QUEST01，确切联接同一保存社区 mixed25 归档的1个`my/chengren`、4个`my/zhuansheng`原 CHANGE EVENT CREATE，地图原编号2000的(54,50)与(47–50,58)五个数值位置、各自的原图形编号与五原脚本六个TYPE；原字面 EndSetFlg 4/39/40/42/46。原`zhuans.create`第4/5块却分别是道场模板与宠物店模板，不得因路径共现并为转生事件。QUEST32标记的此前未专题集成五份脚本，现在建立可回放跨表关系，**不是新获原脚本或原生转生执行证明**；公开[派生索引](research/recovered/STONEAGE-INTEGRATION39-ADULT-REBIRTH-EVENT-CREATE-SOURCE-R1.json)只含旧原源SHA、数字与原事件段哈希。MAP09没有合格2000场景，不等于原DAT/游戏世界不存在。SOURCE_BOUNDED_PARTIAL，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总完成率未知。NEXT移向其它确有增量的原始内容，不补造成年／转生玩法阈值或状态。
+
+
+## 2026-11-10 — INTEGRATION40｜原成人与四大洞事件标志，地图2000原数值与局部候选原像素
+
+[实际原字节与边界](docs/continuity/STONEAGE-INTEGRATION40-FOUR-CAVE-SOURCE-AND-FLOOR2000-20261110.md)：重新完整 SHA／CRC 验私人 995,176B/2,205 原NPC源ZIP、46,844,444B/4,195 MAP09 ZIP及内嵌955 DAT、35,673,334B/4,169 台湾1.0原像素候选包；不是仅复用索引。直接 CP950 读成年LV>29/flag4、四个后期社区转生捷径LV>139/flag39、40、42、46；同一NPC来源另四个不同原脚本对同号flag另设任务物品、前置条件及原DelItem/GetItem，绝不能把省四洞的晚期社区提示当作早期官方原始规则或已见证运行。原DAT floor2000真读150×150与六个NPC点位三平面；342格目标小范围353次>99图号都有已验TW1零售原RD候选，另60次低值未认定；整图仍14次/11图号缺源资格。私有48,395B/8成员原图候选与位置联系包已存个人Library、回下载全SHA/CRC一致，无商业原脚本/图/DAT上传Git。公开 [来源数值/哈希对照](research/recovered/STONEAGE-INTEGRATION40-FOUR-CAVE-FLAG-BYPASS-FLOOR2000-SOURCE-R1.json)、专用反例测试；不认证原程序执行、原生转生、官方同服或整世界。旧CURRENT完整原2,709,173B保持；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总进度未知。NEXT转其它有真正实物的新内容。
