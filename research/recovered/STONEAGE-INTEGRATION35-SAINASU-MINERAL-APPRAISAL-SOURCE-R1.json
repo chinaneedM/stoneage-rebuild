@@ -1,0 +1,1060 @@
+{
+  "schema": "stoneage.integration35.sainasu_original_mining_appraisal_source_bridge.r1",
+  "date": "2026-11-10",
+  "remote_baseline": {
+    "head": "ea7d3a32667c25b66cf583dc83368fc1079f0bba",
+    "tree": "d0f1bd17303e80b8f0a3c3473114de210f2491c6",
+    "CURRENT_original_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "CURRENT_original_bytes": 2709173
+  },
+  "upstream": {
+    "quest01": {
+      "path": "research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json",
+      "git_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2"
+    },
+    "map09": {
+      "path": "research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json",
+      "git_blob": "137580e7c25aadf3d679b6ebfb5080b79912cc4f"
+    }
+  },
+  "source_scope": "SIX_ORIGINAL_NPC_SCRIPTS_AND_CREATE_FROM_PRIVATE_LATER_COMMUNITY_MIXED25;SEPARATE_TW1_RETAIL_ART_CANDIDATES",
+  "original_private_archives": {
+    "char01": {
+      "file": "StoneAge-CHAR01-mixed25-all-npc-original-private.zip",
+      "bytes": 995176,
+      "member_count": 2205,
+      "sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+      "whole_sha_and_all_CRC_verified_this_unit": true
+    },
+    "item01": {
+      "file": "StoneAge-ITEM01-private-two-itemsets-832-original-RD-icon-observer.zip",
+      "bytes": 5868386,
+      "member_count": 838,
+      "sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+      "whole_sha_and_all_CRC_verified_this_unit": true
+    }
+  },
+  "source_CREATE_file": {
+    "path": "sainasu/event/nevent03.create",
+    "source_bytes": 1033,
+    "sha256": "faa81a58c913121c4df9901383188f23aa189870761b8ce38e6319108e93c717",
+    "crc32": "7f382f36"
+  },
+  "source_scripts": [
+    {
+      "path": "sainasu/event/nevent03_1",
+      "original_size": 2420,
+      "original_sha256": "0a513b89e868413f6f808ea0a789c4caaa50c43c3a89cd6d7f5839eb09ac490a",
+      "original_crc32": "bd7c4de3",
+      "actual_block_type_counts": {
+        "ACCEPT": 4,
+        "MESSAGE": 1
+      },
+      "quest_origin": "UNRESOLVED"
+    },
+    {
+      "path": "sainasu/event/nevent03_2",
+      "original_size": 2402,
+      "original_sha256": "88da1dfacc0b4560abf6b43ba3a2196a60148036bcf50a1f1388a6b45f2e6397",
+      "original_crc32": "dd394e59",
+      "actual_block_type_counts": {
+        "ACCEPT": 4,
+        "MESSAGE": 1
+      },
+      "quest_origin": "UNRESOLVED"
+    },
+    {
+      "path": "sainasu/event/nevent03_3",
+      "original_size": 2380,
+      "original_sha256": "d1ed5ace3fd2a150070244d44ce94cf1f51c94f94ccceb411783c83814fa0d3d",
+      "original_crc32": "2b09f80b",
+      "actual_block_type_counts": {
+        "ACCEPT": 4,
+        "MESSAGE": 1
+      },
+      "quest_origin": "UNRESOLVED"
+    },
+    {
+      "path": "sainasu/event/nevent03_4",
+      "original_size": 768,
+      "original_sha256": "a121650203fffb7464c953da76ef4391343054c8009bf3a4c0b949e9af48ad61",
+      "original_crc32": "b6023a57",
+      "actual_block_type_counts": {
+        "MESSAGE": 2
+      },
+      "quest_origin": "UNRESOLVED"
+    },
+    {
+      "path": "sainasu/event/nevent03_5",
+      "original_size": 956,
+      "original_sha256": "98e3ba7b2c6037a5fdded135da93ff6f4cac60f38594ddbfb7528fcbd9ce531d",
+      "original_crc32": "e802b949",
+      "actual_block_type_counts": {
+        "MESSAGE": 3
+      },
+      "quest_origin": "UNRESOLVED"
+    },
+    {
+      "path": "sainasu/event/nevent03_6",
+      "original_size": 462,
+      "original_sha256": "be163c91fa054008cf584da0771d488f1f07b04301e965635534b49624f24044",
+      "original_crc32": "b1169059",
+      "actual_block_type_counts": {
+        "MESSAGE": 1
+      },
+      "quest_origin": "UNRESOLVED"
+    }
+  ],
+  "source_npcs": [
+    {
+      "create_source_path": "sainasu/event/nevent03.create",
+      "create_source_sha": "faa81a58c913121c4df9901383188f23aa189870761b8ce38e6319108e93c717",
+      "create_brace_ordinal": 0,
+      "original_script_path": "sainasu/event/nevent03_1",
+      "original_script_sha": "0a513b89e868413f6f808ea0a789c4caaa50c43c3a89cd6d7f5839eb09ac490a",
+      "floorid": 10605,
+      "borncenter_numeric": null,
+      "graphic_alias_numeric": 16017,
+      "origin_class": "UNRESOLVED",
+      "xy": [
+        42,
+        32
+      ],
+      "source_npc_name": "一級礦石鑒定家",
+      "source_direction": 6,
+      "source_createnum": 1,
+      "source_function": "changeevent"
+    },
+    {
+      "create_source_path": "sainasu/event/nevent03.create",
+      "create_source_sha": "faa81a58c913121c4df9901383188f23aa189870761b8ce38e6319108e93c717",
+      "create_brace_ordinal": 1,
+      "original_script_path": "sainasu/event/nevent03_2",
+      "original_script_sha": "88da1dfacc0b4560abf6b43ba3a2196a60148036bcf50a1f1388a6b45f2e6397",
+      "floorid": 10605,
+      "borncenter_numeric": null,
+      "graphic_alias_numeric": 16018,
+      "origin_class": "UNRESOLVED",
+      "xy": [
+        42,
+        34
+      ],
+      "source_npc_name": "特級礦石鑒定家",
+      "source_direction": 6,
+      "source_createnum": 1,
+      "source_function": "changeevent"
+    },
+    {
+      "create_source_path": "sainasu/event/nevent03.create",
+      "create_source_sha": "faa81a58c913121c4df9901383188f23aa189870761b8ce38e6319108e93c717",
+      "create_brace_ordinal": 2,
+      "original_script_path": "sainasu/event/nevent03_3",
+      "original_script_sha": "d1ed5ace3fd2a150070244d44ce94cf1f51c94f94ccceb411783c83814fa0d3d",
+      "floorid": 10605,
+      "borncenter_numeric": null,
+      "graphic_alias_numeric": 16025,
+      "origin_class": "UNRESOLVED",
+      "xy": [
+        42,
+        36
+      ],
+      "source_npc_name": "最高級礦石鑒定家",
+      "source_direction": 6,
+      "source_createnum": 1,
+      "source_function": "changeevent"
+    },
+    {
+      "create_source_path": "sainasu/event/nevent03.create",
+      "create_source_sha": "faa81a58c913121c4df9901383188f23aa189870761b8ce38e6319108e93c717",
+      "create_brace_ordinal": 3,
+      "original_script_path": "sainasu/event/nevent03_4",
+      "original_script_sha": "a121650203fffb7464c953da76ef4391343054c8009bf3a4c0b949e9af48ad61",
+      "floorid": 10603,
+      "borncenter_numeric": null,
+      "graphic_alias_numeric": 16018,
+      "origin_class": "UNRESOLVED",
+      "xy": [
+        45,
+        23
+      ],
+      "source_npc_name": "礦工",
+      "source_direction": 6,
+      "source_createnum": 1,
+      "source_function": "changeevent"
+    },
+    {
+      "create_source_path": "sainasu/event/nevent03.create",
+      "create_source_sha": "faa81a58c913121c4df9901383188f23aa189870761b8ce38e6319108e93c717",
+      "create_brace_ordinal": 4,
+      "original_script_path": "sainasu/event/nevent03_5",
+      "original_script_sha": "98e3ba7b2c6037a5fdded135da93ff6f4cac60f38594ddbfb7528fcbd9ce531d",
+      "floorid": 1212,
+      "borncenter_numeric": null,
+      "graphic_alias_numeric": 16025,
+      "origin_class": "UNRESOLVED",
+      "xy": [
+        17,
+        15
+      ],
+      "source_npc_name": "辦事處的負責人",
+      "source_direction": 6,
+      "source_createnum": 1,
+      "source_function": "changeevent"
+    },
+    {
+      "create_source_path": "sainasu/event/nevent03.create",
+      "create_source_sha": "faa81a58c913121c4df9901383188f23aa189870761b8ce38e6319108e93c717",
+      "create_brace_ordinal": 5,
+      "original_script_path": "sainasu/event/nevent03_6",
+      "original_script_sha": "be163c91fa054008cf584da0771d488f1f07b04301e965635534b49624f24044",
+      "floorid": 1212,
+      "borncenter_numeric": null,
+      "graphic_alias_numeric": 16066,
+      "origin_class": "UNRESOLVED",
+      "xy": [
+        11,
+        4
+      ],
+      "source_npc_name": "職員",
+      "source_direction": 6,
+      "source_createnum": 1,
+      "source_function": "changeevent"
+    }
+  ],
+  "source_event_blocks": [
+    {
+      "script_path": "sainasu/event/nevent03_1",
+      "script_block_ordinal": 0,
+      "source_type_line": 9,
+      "raw_type": "ACCEPT",
+      "event_number": -1,
+      "condition_sha256": "e9692f032ea967d83e37c51e4c64701ccdb3f0f45561b9241c2a9904102ad80c",
+      "source_section_utf8_sha256": "db5307a4cb254ede627169b889b94e449d0806dbb9fc157374bc91169694d6ac",
+      "item_numeric_refs": {
+        "DelItem": [
+          2469
+        ],
+        "GetItem": [
+          2472
+        ],
+        "predicate_ITEM": [
+          2469
+        ]
+      },
+      "source_operations": {
+        "DelItem": 1,
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetItem": 1,
+        "TYPE": 1
+      }
+    },
+    {
+      "script_path": "sainasu/event/nevent03_1",
+      "script_block_ordinal": 1,
+      "source_type_line": 20,
+      "raw_type": "ACCEPT",
+      "event_number": -1,
+      "condition_sha256": "0445fa7d6d724079cfd263e6894d552929243e906d00ccbf2975b4c444015eec",
+      "source_section_utf8_sha256": "44d84e3df985a729b2dbc7f34d004d2f54c3eb82c8bf46619b9cbc7750b41be9",
+      "item_numeric_refs": {
+        "DelItem": [
+          2469
+        ],
+        "GetItem": [
+          2472
+        ],
+        "predicate_ITEM": [
+          2469
+        ]
+      },
+      "source_operations": {
+        "DelItem": 1,
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetItem": 1,
+        "TYPE": 1
+      }
+    },
+    {
+      "script_path": "sainasu/event/nevent03_1",
+      "script_block_ordinal": 2,
+      "source_type_line": 32,
+      "raw_type": "ACCEPT",
+      "event_number": -1,
+      "condition_sha256": "aa0d2b9faea9f6875d99b44b2655c8d38f01a3c996ec0ce2d972126420d76063",
+      "source_section_utf8_sha256": "87e0b2f53da243544fbead9abde6041a5cb27248992f0305187bebfdcae087fc",
+      "item_numeric_refs": {
+        "DelItem": [
+          2469
+        ],
+        "GetItem": [
+          2472
+        ],
+        "predicate_ITEM": [
+          2469
+        ]
+      },
+      "source_operations": {
+        "DelItem": 1,
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetItem": 1,
+        "TYPE": 1
+      }
+    },
+    {
+      "script_path": "sainasu/event/nevent03_1",
+      "script_block_ordinal": 3,
+      "source_type_line": 45,
+      "raw_type": "ACCEPT",
+      "event_number": -1,
+      "condition_sha256": "83eb9962444adc26bd15ec344c8310caa00afe6816ea2f657c443e1d88fc20e5",
+      "source_section_utf8_sha256": "21901a70577a4d99350069e32021fcebd6bb20ce3a7c47e78248f3dd7eeba257",
+      "item_numeric_refs": {
+        "DelItem": [
+          2469
+        ],
+        "GetItem": [
+          2472
+        ],
+        "predicate_ITEM": [
+          2469
+        ]
+      },
+      "source_operations": {
+        "DelItem": 1,
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetItem": 1,
+        "TYPE": 1
+      }
+    },
+    {
+      "script_path": "sainasu/event/nevent03_1",
+      "script_block_ordinal": 4,
+      "source_type_line": 56,
+      "raw_type": "MESSAGE",
+      "event_number": -1,
+      "condition_sha256": "8866f1a7a17be616370941dd6c3b463ec0247343362b7ae0ee5872e0de392214",
+      "source_section_utf8_sha256": "ecc4a5b4e72b08633ad236405c90be7c0e3fa7216cbd8c3c502e4364f60e3fec",
+      "item_numeric_refs": {
+        "predicate_ITEM": [
+          2469
+        ]
+      },
+      "source_operations": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      }
+    },
+    {
+      "script_path": "sainasu/event/nevent03_2",
+      "script_block_ordinal": 0,
+      "source_type_line": 10,
+      "raw_type": "ACCEPT",
+      "event_number": -1,
+      "condition_sha256": "ba72cfd0b7cff4a95cf41ef5b7c77f2232c05da1c07184399ac30f9777bc325c",
+      "source_section_utf8_sha256": "b93825c6f998f2c2932ed9366a03b68e8de4a551db59af497fc820f018c2e19e",
+      "item_numeric_refs": {
+        "DelItem": [
+          2470
+        ],
+        "GetItem": [
+          2473
+        ],
+        "predicate_ITEM": [
+          2470
+        ]
+      },
+      "source_operations": {
+        "DelItem": 1,
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetItem": 1,
+        "TYPE": 1
+      }
+    },
+    {
+      "script_path": "sainasu/event/nevent03_2",
+      "script_block_ordinal": 1,
+      "source_type_line": 22,
+      "raw_type": "ACCEPT",
+      "event_number": -1,
+      "condition_sha256": "de55e48123ab30fc15e2a2aafe6436dca8057e31b3fcbefa36bcbca67f7a474b",
+      "source_section_utf8_sha256": "e3b1a0cf213f15136256c5f6caf5afe781a424994ec832ccc4dc908a61247e96",
+      "item_numeric_refs": {
+        "DelItem": [
+          2470
+        ],
+        "GetItem": [
+          2473
+        ],
+        "predicate_ITEM": [
+          2470
+        ]
+      },
+      "source_operations": {
+        "DelItem": 1,
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetItem": 1,
+        "TYPE": 1
+      }
+    },
+    {
+      "script_path": "sainasu/event/nevent03_2",
+      "script_block_ordinal": 2,
+      "source_type_line": 34,
+      "raw_type": "ACCEPT",
+      "event_number": -1,
+      "condition_sha256": "1fb6b17a463228d30693704e001c7764b4fc95c51335a5f78f36da455becbd9a",
+      "source_section_utf8_sha256": "514d56985ff1842285bb34da21b8e0af773cc69953a17f15694052defb9b8005",
+      "item_numeric_refs": {
+        "DelItem": [
+          2470
+        ],
+        "GetItem": [
+          2473
+        ],
+        "predicate_ITEM": [
+          2470
+        ]
+      },
+      "source_operations": {
+        "DelItem": 1,
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetItem": 1,
+        "TYPE": 1
+      }
+    },
+    {
+      "script_path": "sainasu/event/nevent03_2",
+      "script_block_ordinal": 3,
+      "source_type_line": 47,
+      "raw_type": "ACCEPT",
+      "event_number": -1,
+      "condition_sha256": "f59e6722032e269f2005df7281c1ace87aec1004a0c29833c36f32bd7ccd67ba",
+      "source_section_utf8_sha256": "92f2c2ab0b8cae66071d2184cce4b2cd7390343f7164966a751599e6ecaeecf6",
+      "item_numeric_refs": {
+        "DelItem": [
+          2470
+        ],
+        "GetItem": [
+          2473
+        ],
+        "predicate_ITEM": [
+          2470
+        ]
+      },
+      "source_operations": {
+        "DelItem": 1,
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetItem": 1,
+        "TYPE": 1
+      }
+    },
+    {
+      "script_path": "sainasu/event/nevent03_2",
+      "script_block_ordinal": 4,
+      "source_type_line": 58,
+      "raw_type": "MESSAGE",
+      "event_number": -1,
+      "condition_sha256": "806f30b13af76e741aefee19b616ed814b33188727bd0c6cb8e518e57b25d405",
+      "source_section_utf8_sha256": "fc2f6a8ce5b5f73c0f8c02b72f0d73469dfc2522bf784dabf7b5b366866cac74",
+      "item_numeric_refs": {
+        "predicate_ITEM": [
+          2470
+        ]
+      },
+      "source_operations": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      }
+    },
+    {
+      "script_path": "sainasu/event/nevent03_3",
+      "script_block_ordinal": 0,
+      "source_type_line": 9,
+      "raw_type": "ACCEPT",
+      "event_number": -1,
+      "condition_sha256": "e2b45fb9fd803261ba56e6991640647fd4ca887efaa33434529ffe01ba68c1e5",
+      "source_section_utf8_sha256": "07b315c33c2bc6400eefdf29b68fdf0f54e20cf7820c3ce72e08ec3e3b4537fd",
+      "item_numeric_refs": {
+        "DelItem": [
+          2471
+        ],
+        "GetItem": [
+          2474
+        ],
+        "predicate_ITEM": [
+          2471
+        ]
+      },
+      "source_operations": {
+        "DelItem": 1,
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetItem": 1,
+        "TYPE": 1
+      }
+    },
+    {
+      "script_path": "sainasu/event/nevent03_3",
+      "script_block_ordinal": 1,
+      "source_type_line": 19,
+      "raw_type": "ACCEPT",
+      "event_number": -1,
+      "condition_sha256": "20c6084bbfc810015cd76215666b528d18c3bac7747c459a4f6d6e38ba15082a",
+      "source_section_utf8_sha256": "d781e1f4d76cca433a11ca6b84c282ae53baa3cdef2e622da85ab4414c77412a",
+      "item_numeric_refs": {
+        "DelItem": [
+          2471
+        ],
+        "GetItem": [
+          2474
+        ],
+        "predicate_ITEM": [
+          2471
+        ]
+      },
+      "source_operations": {
+        "DelItem": 1,
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetItem": 1,
+        "TYPE": 1
+      }
+    },
+    {
+      "script_path": "sainasu/event/nevent03_3",
+      "script_block_ordinal": 2,
+      "source_type_line": 29,
+      "raw_type": "ACCEPT",
+      "event_number": -1,
+      "condition_sha256": "0fbc46539b5449e8592916aaa0214583adcdba4e979fc6892e4bc5eb1ba98583",
+      "source_section_utf8_sha256": "232c1d8f8bbed98fce4e0f01118afe1596bfac5fccb79645df2241fd4c75fdca",
+      "item_numeric_refs": {
+        "DelItem": [
+          2471
+        ],
+        "GetItem": [
+          2474
+        ],
+        "predicate_ITEM": [
+          2471
+        ]
+      },
+      "source_operations": {
+        "DelItem": 1,
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetItem": 1,
+        "TYPE": 1
+      }
+    },
+    {
+      "script_path": "sainasu/event/nevent03_3",
+      "script_block_ordinal": 3,
+      "source_type_line": 40,
+      "raw_type": "ACCEPT",
+      "event_number": -1,
+      "condition_sha256": "1163ca4b8dd7753317516cc5715a4081b0d67aabe272ed4b5d934923f3f77fb0",
+      "source_section_utf8_sha256": "a2db198f19896ab5e89390b596b80d9d0bc3403ceffeed2489a8ab6d1285c756",
+      "item_numeric_refs": {
+        "DelItem": [
+          2471
+        ],
+        "GetItem": [
+          2474
+        ],
+        "predicate_ITEM": [
+          2471
+        ]
+      },
+      "source_operations": {
+        "DelItem": 1,
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetItem": 1,
+        "TYPE": 1
+      }
+    },
+    {
+      "script_path": "sainasu/event/nevent03_3",
+      "script_block_ordinal": 4,
+      "source_type_line": 52,
+      "raw_type": "MESSAGE",
+      "event_number": -1,
+      "condition_sha256": "b0c54269cbf44859ff23d9831aa4b4d01e0a1e3c5319c03b059fea857b44c476",
+      "source_section_utf8_sha256": "0a90e664319bed3a2498e21d62425132f31057fbe5ae43c59482f889109abd57",
+      "item_numeric_refs": {
+        "predicate_ITEM": [
+          2471
+        ]
+      },
+      "source_operations": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      }
+    },
+    {
+      "script_path": "sainasu/event/nevent03_4",
+      "script_block_ordinal": 0,
+      "source_type_line": 8,
+      "raw_type": "MESSAGE",
+      "event_number": -1,
+      "condition_sha256": "6ad7e54145d998239aa07486c9d0757c27618bdb8aafc4b66e18c3dcbc7436d2",
+      "source_section_utf8_sha256": "df49cbc6ef07dcd3f014fbca371f8751ead0e74f4e88accdcd9fad9d61e20ac3",
+      "item_numeric_refs": {
+        "GetItem": [
+          2471
+        ],
+        "predicate_ITEM": [
+          2471
+        ]
+      },
+      "source_operations": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetItem": 1,
+        "TYPE": 1
+      }
+    },
+    {
+      "script_path": "sainasu/event/nevent03_4",
+      "script_block_ordinal": 1,
+      "source_type_line": 17,
+      "raw_type": "MESSAGE",
+      "event_number": -1,
+      "condition_sha256": "4d0beef643617fd92003632acc3266396dfad33ce1eba36fadfd514a052f9739",
+      "source_section_utf8_sha256": "05da9a5b1422b2122a57ba45ba6b90bfaf59c03339ceb825c03c08b5148113ec",
+      "item_numeric_refs": {
+        "predicate_ITEM": [
+          2471
+        ]
+      },
+      "source_operations": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      }
+    },
+    {
+      "script_path": "sainasu/event/nevent03_5",
+      "script_block_ordinal": 0,
+      "source_type_line": 9,
+      "raw_type": "MESSAGE",
+      "event_number": -1,
+      "condition_sha256": "ab296e2b13f2a75c63edabafbd8f90764660f39b51ce153e410c076e11ea4c48",
+      "source_section_utf8_sha256": "6d412cc8d6ae5c85821d1f4d144c48c0746fd5faef3856872deb395c95e04445",
+      "item_numeric_refs": {
+        "predicate_ITEM": [
+          2472,
+          2473,
+          2474
+        ]
+      },
+      "source_operations": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      }
+    },
+    {
+      "script_path": "sainasu/event/nevent03_5",
+      "script_block_ordinal": 1,
+      "source_type_line": 15,
+      "raw_type": "MESSAGE",
+      "event_number": -1,
+      "condition_sha256": "451a885a6df0aa5156fa820077cece1e2658b0f54eeb386b95d8e5852ebc3446",
+      "source_section_utf8_sha256": "b1289ba06f4aaa03f4f2ddc814676bc7ff95901220da4ed9ea27b5f091379716",
+      "item_numeric_refs": {
+        "predicate_ITEM": [
+          2469,
+          2470,
+          2471
+        ]
+      },
+      "source_operations": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      }
+    },
+    {
+      "script_path": "sainasu/event/nevent03_5",
+      "script_block_ordinal": 2,
+      "source_type_line": 21,
+      "raw_type": "MESSAGE",
+      "event_number": -1,
+      "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+      "source_section_utf8_sha256": "3778f44b7f64a442925891f7cb155bb15e565eba8abcee15863d88d8934542b6",
+      "item_numeric_refs": {
+        "predicate_ITEM": []
+      },
+      "source_operations": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      }
+    },
+    {
+      "script_path": "sainasu/event/nevent03_6",
+      "script_block_ordinal": 0,
+      "source_type_line": 9,
+      "raw_type": "MESSAGE",
+      "event_number": -1,
+      "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+      "source_section_utf8_sha256": "0f1d3de2c434a23da8c4193ad33e99ed7a73e3cc218b0552393800076f3a2ddf",
+      "item_numeric_refs": {
+        "predicate_ITEM": []
+      },
+      "source_operations": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      }
+    }
+  ],
+  "source_12_ACCEPT_literal_commands": [
+    {
+      "script_path": "sainasu/event/nevent03_1",
+      "ordinal": 0,
+      "TYPE": "ACCEPT",
+      "EVENT": "ITEM=2469*14",
+      "DelItem": "2469*14",
+      "GetItem": "2472*4",
+      "EventNo": "-1"
+    },
+    {
+      "script_path": "sainasu/event/nevent03_1",
+      "ordinal": 1,
+      "TYPE": "ACCEPT",
+      "EVENT": "ITEM=2469*11,ITEM=2469*12,ITEM=2469*13",
+      "DelItem": "2469*11",
+      "GetItem": "2472*3",
+      "EventNo": "-1"
+    },
+    {
+      "script_path": "sainasu/event/nevent03_1",
+      "ordinal": 2,
+      "TYPE": "ACCEPT",
+      "EVENT": "ITEM=2469*9,ITEM=2469*8,ITEM=2469*10",
+      "DelItem": "2469",
+      "GetItem": "2472*2",
+      "EventNo": "-1"
+    },
+    {
+      "script_path": "sainasu/event/nevent03_1",
+      "ordinal": 3,
+      "TYPE": "ACCEPT",
+      "EVENT": "ITEM=2469*7,ITEM=2469*6,ITEM=2469*5",
+      "DelItem": "2469",
+      "GetItem": "2472*1",
+      "EventNo": "-1"
+    },
+    {
+      "script_path": "sainasu/event/nevent03_2",
+      "ordinal": 0,
+      "TYPE": "ACCEPT",
+      "EVENT": "ITEM=2470*14",
+      "DelItem": "2470*14",
+      "GetItem": "2473*4",
+      "EventNo": "-1"
+    },
+    {
+      "script_path": "sainasu/event/nevent03_2",
+      "ordinal": 1,
+      "TYPE": "ACCEPT",
+      "EVENT": "ITEM=2470*11,ITEM=2470*12,ITEM=2470*13",
+      "DelItem": "2470*11",
+      "GetItem": "2473*3",
+      "EventNo": "-1"
+    },
+    {
+      "script_path": "sainasu/event/nevent03_2",
+      "ordinal": 2,
+      "TYPE": "ACCEPT",
+      "EVENT": "ITEM=2470*9,ITEM=2470*8,ITEM=2470*10",
+      "DelItem": "2470",
+      "GetItem": "2473*2",
+      "EventNo": "-1"
+    },
+    {
+      "script_path": "sainasu/event/nevent03_2",
+      "ordinal": 3,
+      "TYPE": "ACCEPT",
+      "EVENT": "ITEM=2470*7,ITEM=2470*6,ITEM=2470*5",
+      "DelItem": "2470",
+      "GetItem": "2473*1",
+      "EventNo": "-1"
+    },
+    {
+      "script_path": "sainasu/event/nevent03_3",
+      "ordinal": 0,
+      "TYPE": "ACCEPT",
+      "EVENT": "ITEM=2471*14",
+      "DelItem": "2471*14",
+      "GetItem": "2474*4",
+      "EventNo": "-1"
+    },
+    {
+      "script_path": "sainasu/event/nevent03_3",
+      "ordinal": 1,
+      "TYPE": "ACCEPT",
+      "EVENT": "ITEM=2471*11,ITEM=2471*12,ITEM=2471*13",
+      "DelItem": "2471*11",
+      "GetItem": "2474*3",
+      "EventNo": "-1"
+    },
+    {
+      "script_path": "sainasu/event/nevent03_3",
+      "ordinal": 2,
+      "TYPE": "ACCEPT",
+      "EVENT": "ITEM=2471*9,ITEM=2471*8,ITEM=2471*10",
+      "DelItem": "2471*8",
+      "GetItem": "2474*2",
+      "EventNo": "-1"
+    },
+    {
+      "script_path": "sainasu/event/nevent03_3",
+      "ordinal": 3,
+      "TYPE": "ACCEPT",
+      "EVENT": "ITEM=2471*7,ITEM=2471*6,ITEM=2471*5",
+      "DelItem": "2471*5",
+      "GetItem": "2474*1",
+      "EventNo": "-1"
+    }
+  ],
+  "source_9_MESSAGE_literal_conditions": [
+    {
+      "script_path": "sainasu/event/nevent03_1",
+      "ordinal": 4,
+      "TYPE": "MESSAGE",
+      "EVENT": "ITEM=2469*4,ITEM=2469*3,ITEM=2469*2,ITEM=2469*1",
+      "GetItem": null,
+      "EventNo": "-1"
+    },
+    {
+      "script_path": "sainasu/event/nevent03_2",
+      "ordinal": 4,
+      "TYPE": "MESSAGE",
+      "EVENT": "ITEM=2470*4,ITEM=2470*3,ITEM=2470*2,ITEM=2470*1",
+      "GetItem": null,
+      "EventNo": "-1"
+    },
+    {
+      "script_path": "sainasu/event/nevent03_3",
+      "ordinal": 4,
+      "TYPE": "MESSAGE",
+      "EVENT": "ITEM=2471*4,ITEM=2471*3,ITEM=2471*2,ITEM=2471*1",
+      "GetItem": null,
+      "EventNo": "-1"
+    },
+    {
+      "script_path": "sainasu/event/nevent03_4",
+      "ordinal": 0,
+      "TYPE": "MESSAGE",
+      "EVENT": "LV>0&ITEM!=2471",
+      "GetItem": "2471*1",
+      "EventNo": "-1"
+    },
+    {
+      "script_path": "sainasu/event/nevent03_4",
+      "ordinal": 1,
+      "TYPE": "MESSAGE",
+      "EVENT": "LV>0&ITEM=2471",
+      "GetItem": null,
+      "EventNo": "-1"
+    },
+    {
+      "script_path": "sainasu/event/nevent03_5",
+      "ordinal": 0,
+      "TYPE": "MESSAGE",
+      "EVENT": "LV>0&ITEM=2472,LV>0&ITEM=2473,LV>0&ITEM=2474",
+      "GetItem": null,
+      "EventNo": "-1"
+    },
+    {
+      "script_path": "sainasu/event/nevent03_5",
+      "ordinal": 1,
+      "TYPE": "MESSAGE",
+      "EVENT": "LV>0&ITEM=2469,LV>0&ITEM=2470,LV>0&ITEM=2471",
+      "GetItem": null,
+      "EventNo": "-1"
+    },
+    {
+      "script_path": "sainasu/event/nevent03_5",
+      "ordinal": 2,
+      "TYPE": "MESSAGE",
+      "EVENT": "LV>0",
+      "GetItem": null,
+      "EventNo": "-1"
+    },
+    {
+      "script_path": "sainasu/event/nevent03_6",
+      "ordinal": 0,
+      "TYPE": "MESSAGE",
+      "EVENT": "LV>0",
+      "GetItem": null,
+      "EventNo": "-1"
+    }
+  ],
+  "source_map_candidates": {
+    "1212": {
+      "floor": 1212,
+      "source_sha256": "783821fd2ad52da3c4daed94f6fcbb8c2996b1c72ddcf189071d01710c573503",
+      "source_bytes": 5408,
+      "geometry": [
+        30,
+        30
+      ],
+      "prior_MAP09_source_ready": true,
+      "original_DAT_reread_this_unit": false
+    },
+    "10603": {
+      "floor": 10603,
+      "source_sha256": "d64a87ebf4cc461c1a56ead3f268ef880a896aee1f0d85bd55096fcc5d5331f3",
+      "source_bytes": 15008,
+      "geometry": [
+        50,
+        50
+      ],
+      "prior_MAP09_source_ready": true,
+      "original_DAT_reread_this_unit": false
+    },
+    "10605": {
+      "floor": 10605,
+      "source_sha256": "741f997623686ce19954f59f3e4b20d15b050f70ceb54ac3559d65814ba4f5bd",
+      "source_bytes": 15008,
+      "geometry": [
+        50,
+        50
+      ],
+      "prior_MAP09_source_ready": true,
+      "original_DAT_reread_this_unit": false
+    }
+  },
+  "item_rows": {
+    "ore_to_certificate": [
+      {
+        "ore": 2469,
+        "certificate": 2472,
+        "ore_name": "一級礦石",
+        "ore_original_row_sha256": "b3cb2c957ecfdf9ac716d219c9e12f0c32cba47d53caa51289efb0c2879a9dc1",
+        "certificate_original_row_sha256": "338353aab364c7c7c8ca973c25dd7340be40a21baa9e80ad1bed87cd36b8530e",
+        "ore_alias": 14659,
+        "certificate_alias": 24222,
+        "appraiser_create_name": "一級礦石鑒定家"
+      },
+      {
+        "ore": 2470,
+        "certificate": 2473,
+        "ore_name": "特級礦石",
+        "ore_original_row_sha256": "c36ccd547b3f6e66992270ee1b12bce25b64276d46bfb2b1ba0653b807a2b3bd",
+        "certificate_original_row_sha256": "c0a385d826f6f8d088149444c7bb09d9801813a77cc7e446bcee4b3d306263cf",
+        "ore_alias": 14607,
+        "certificate_alias": 24222,
+        "appraiser_create_name": "特級礦石鑒定家"
+      },
+      {
+        "ore": 2471,
+        "certificate": 2474,
+        "ore_name": "超特級礦石",
+        "ore_original_row_sha256": "2f4a8624ccd9b198067cc9e84627e93109d3371988585421ca1e5fa5ab8f070d",
+        "certificate_original_row_sha256": "0391d8655a2662bb0976b469cb072aff10dbf795c78f7871a809a493da6e80d7",
+        "ore_alias": 13443,
+        "certificate_alias": 24222,
+        "appraiser_create_name": "最高級礦石鑒定家"
+      }
+    ],
+    "same_carrier_two_original_itemsets_full_row_sha256_agree": true,
+    "distinct_item_ids": [
+      2469,
+      2470,
+      2471,
+      2472,
+      2473,
+      2474
+    ],
+    "tw1_retail_original_image_candidates": [
+      {
+        "alias": 14659,
+        "bytes": 1112,
+        "png_sha256": "a98bc47db893ecddfdf88fd9196d92b7effe62b5116fac698eae90fe5d4cf2e3",
+        "dimensions": [
+          24,
+          23
+        ]
+      },
+      {
+        "alias": 14607,
+        "bytes": 1055,
+        "png_sha256": "41ae367a2d3225b8c32adf4b5ca70431851100d740b3839553b6e4e14e37c0b2",
+        "dimensions": [
+          24,
+          23
+        ]
+      },
+      {
+        "alias": 13443,
+        "bytes": 1255,
+        "png_sha256": "47cff350efc55a3ef3ab6da903267d15796ecbe0e54fc5c68375e29ead9b8689",
+        "dimensions": [
+          28,
+          29
+        ]
+      },
+      {
+        "alias": 24222,
+        "bytes": 1438,
+        "png_sha256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1",
+        "dimensions": [
+          28,
+          39
+        ]
+      }
+    ],
+    "three_certificates_share_one_TW1_alias": 24222,
+    "original_art_bytes_or_dialogues_in_public_git": false
+  },
+  "original_literal_discrepancies": {
+    "grade1_2_bare_DelItem_at_ordinals": [
+      2,
+      3
+    ],
+    "highest_grade_explicit_DelItem_at_ordinals": [
+      2,
+      3
+    ],
+    "nonuniform_predicate_quantities_in_same_EVENT": true,
+    "highest_grade_first_source_name_and_some_script_dialogue_not_same_string": true,
+    "mining_office_script_exchanges_money": false,
+    "office_explains_neighbouring_redemption_but_no_bounded_native_exchange_observed": true,
+    "miner_GetItem_under_TYPE_MESSAGE": true
+  },
+  "category": "SOURCE_BOUNDED_ORIGINAL_QUEST_NPC_ITEM_MAP_RELATION_NOT_NEW_SCRIPT_DISCOVERY",
+  "evidence_limits": {
+    "native_original_game_running": false,
+    "original_server_branch_priority_observed": false,
+    "original_mining_quest_execution_observed": false,
+    "original_DelItem_quantity_semantics_verified": false,
+    "actual_original_item_award_or_redemption_verified": false,
+    "original_same_build_TW1_and_mixed25_proven": false,
+    "official_early_first_release_origin_proven": false,
+    "source_original_DIALOGUE_or_pixels_public": false,
+    "original_game_completion_proven": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Rotate to a different untouched original source-backed map/NPC/item/quest integration; reopen mining only for original native quantity/condition/runtime or same-build evidence."
+}
