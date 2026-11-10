@@ -1,0 +1,636 @@
+{
+  "schema": "stoneage.integration45.jaruga_A3_A7_A11_original_source_scenes.r1",
+  "input_main": {
+    "head": "182ccf89632cf9f800bc70dd6c2c6e151e91dce4",
+    "tree": "f66f7fb28e996b2d3c549f2edf32d68804bba3f8"
+  },
+  "preserved_historical_CURRENT": {
+    "blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "bytes": 2709173,
+    "changed": false
+  },
+  "original_source_scopes": {
+    "npc_and_maps": "PRESERVED_MIXED25_COMMUNITY_2_5",
+    "source_images": "RETAIL_TAIWAN_1_0_TW1",
+    "official_same_deployment_proven": false
+  },
+  "upstream_derived_git_blobs": {
+    "QUEST25": "a52b4e5519912ac7e46e1f892cc01515861cf2e8",
+    "I41": "785465c422e2af4e7a1778dde332f43bfb5e57c7",
+    "MAP04": "1ef8c004179128ea44ffa4fb4259748bc8c83911",
+    "I44": "1d2e60acf4613e2b1d44041f3a97697bff0d3fdf"
+  },
+  "actual_private_archive_verifications": [
+    {
+      "name": "I41",
+      "size": 15965774,
+      "sha256": "17c731bc35eff196ece90709772bda8409d038ce6ac95fa5a06553ad4a846e3c",
+      "members": 413,
+      "CRC_valid": true
+    },
+    {
+      "name": "MAP04",
+      "size": 35673334,
+      "sha256": "e9c43222797c7ebcddfcb1ccab6dbeba205b972bbbff4e1f29c14b3ece320d37",
+      "members": 4169,
+      "CRC_valid": true
+    },
+    {
+      "name": "QUEST25",
+      "size": 172328,
+      "sha256": "543cf62ec2b1f5a36a929c7714e86510f1382430039ebf6e7a487d165acffbb2",
+      "members": 173,
+      "CRC_valid": true
+    },
+    {
+      "name": "TW1_P3H",
+      "size": 372626292,
+      "sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+      "members": 379,
+      "CRC_valid": true
+    },
+    {
+      "name": "I44",
+      "size": 2035837,
+      "sha256": "330e3568d9cba88ed8f42ffa410a29b7f40021aa3860e003fbc6ddc400114df1",
+      "members": 85,
+      "CRC_valid": true
+    }
+  ],
+  "actual_tw1_members_rehashed": {
+    "ADRN": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+    "REAL": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13",
+    "Palet1": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0"
+  },
+  "sites": [
+    {
+      "name": "A3",
+      "checkpoint": 3,
+      "original_DAT": {
+        "floor": 20105,
+        "bytes": 21008,
+        "sha256": "0f1f9728486cfe3ef15877153a864e5e82fb7b6274791253ae0c7e978e20de1e",
+        "geometry": [
+          50,
+          70
+        ]
+      },
+      "original_CREATE": {
+        "path": "jaruga/event/oev.create",
+        "ordinal": 3,
+        "block_sha256": "31c0701b2d068e39a85cde384f20a4fe751a95e6a5604a87f37083c1aa273f68",
+        "borncorner": [
+          25,
+          49,
+          25,
+          49
+        ],
+        "graphic_alias": 16067,
+        "direction": 6,
+        "functionset": "ExChangeMan",
+        "template": "jaruga/event/event.template"
+      },
+      "original_script": {
+        "path": "jaruga/event/oev_3",
+        "bytes": 1829,
+        "sha256": "bbc723ba18d2e4b544ff2f58ff3dc8a6d8f084c9b5fc1ea3df54fa71d29f886d",
+        "event_count": 6,
+        "event_sections": [
+          {
+            "ordinal": 0,
+            "condition": "LV>0&ITEM=2554",
+            "section_sha256": "30cefd4821fbe0e03e563e56e5274511f43482684fc03c9b23bf6f71111578bd",
+            "commands": {
+              "GetItem": [
+                "2555"
+              ],
+              "DelItem": [
+                "2554"
+              ]
+            }
+          },
+          {
+            "ordinal": 1,
+            "condition": "LV>0&ITEM=2555,LV>0&ITEM=2556,LV>0&ITEM=2557,LV>0&ITEM=2558,LV>0&ITEM=2559,LV>0&ITEM=2560,LV>0&ITEM=2561,LV>0&ITEM=2562,LV>0&ITEM=2563,LV>0&ITEM=2564",
+            "section_sha256": "0e32297e8bf7ef558027e5ea07e50d38db99894759bdbb21496250336d3fe83e",
+            "commands": {}
+          },
+          {
+            "ordinal": 2,
+            "condition": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2",
+            "section_sha256": "2adbb71b49831a8bc88ef814bdcde59f3924699a639a2e45b3542c0708113d87",
+            "commands": {}
+          },
+          {
+            "ordinal": 3,
+            "condition": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+            "section_sha256": "fd4078866383688908b6fdc110bf625ce07266520c880fb7ed4a5d15815883c1",
+            "commands": {}
+          },
+          {
+            "ordinal": 4,
+            "condition": "LV>0&ITEM=2554",
+            "section_sha256": "384e4be29c1635467992278361f0f15bace4b2adae1f9aa00ae3b0719cef38f8",
+            "commands": {}
+          },
+          {
+            "ordinal": 5,
+            "condition": "LV>0",
+            "section_sha256": "ff3c81cd28ffe623be0557a30f84c17795b2bdd41c4c776df2f66f1fc772c8f3",
+            "commands": {}
+          }
+        ]
+      },
+      "original_proof": {
+        "required": 2554,
+        "reward_literal": 2555,
+        "condition": "LV>0&ITEM=2554"
+      },
+      "source_window": {
+        "bounds_inclusive": [
+          20,
+          44,
+          30,
+          54
+        ],
+        "center": [
+          25,
+          49
+        ],
+        "original_three_u16_at_center": [
+          403,
+          0,
+          49152
+        ],
+        "original_cells": 121,
+        "gt99_placements": 68,
+        "distinct_qualified_aliases": 27,
+        "low_1_to_99_not_drawn": 67,
+        "qualified_aliases_from_I41": 21,
+        "qualified_aliases_from_MAP04": 6,
+        "unknown_gt99": 0
+      },
+      "modern_observation": {
+        "candidate_size": [
+          747,
+          803
+        ],
+        "candidate_origin": [
+          -1989,
+          -200
+        ],
+        "independent_full_RGBA_matches": {
+          "plane0": "9837277155ddd5a3fcb96e70e5510e5a5a8640a389da15386b879c5ef8e3f412",
+          "plane1": "3fdb8b77f98d3155d1e2280fbb4fcfcbaa1ef0dd9d1d7f5b0e49b6f175756052",
+          "combined": "d7377f1c6a2d7cdb994b2c2866dc4bca10a85894efc59353d42821e93bfc7ef3"
+        },
+        "original_native_layer_or_palette_verified": false
+      }
+    },
+    {
+      "name": "A7",
+      "checkpoint": 7,
+      "original_DAT": {
+        "floor": 20301,
+        "bytes": 270008,
+        "sha256": "3bd01a2edb71e3cb3f668991ed3ad5968d47a98746bee6434b14ee8367e83cbd",
+        "geometry": [
+          300,
+          150
+        ]
+      },
+      "original_CREATE": {
+        "path": "jaruga/event/oev.create",
+        "ordinal": 7,
+        "block_sha256": "4f1d69b0948ef2598340148ff8b5058ff31e7601d18914851158147624e6917b",
+        "borncorner": [
+          238,
+          118,
+          238,
+          118
+        ],
+        "graphic_alias": 16067,
+        "direction": 6,
+        "functionset": "ExChangeMan",
+        "template": "jaruga/event/event.template"
+      },
+      "original_script": {
+        "path": "jaruga/event/oev_7",
+        "bytes": 1900,
+        "sha256": "a93506b1320faddd54db216d8aaa3119236aa8d2775689da5bd0c3119d724e1f",
+        "event_count": 6,
+        "event_sections": [
+          {
+            "ordinal": 0,
+            "condition": "LV>0&ITEM=2558",
+            "section_sha256": "ac99f00204792735a2bb1bbac1a8ed0151b72dea16afccd401c271b524bdd5ad",
+            "commands": {
+              "GetItem": [
+                "2559"
+              ],
+              "DelItem": [
+                "2558"
+              ]
+            }
+          },
+          {
+            "ordinal": 1,
+            "condition": "LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+            "section_sha256": "f8e5c53488f32522fabaf139a6238335332d3e22cfda5fd14f43fe3f48809e7e",
+            "commands": {}
+          },
+          {
+            "ordinal": 2,
+            "condition": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2",
+            "section_sha256": "19ff38e64a5bc3e4232692fe573e1202585e6d6df0a91d6bd94ad25411d213cd",
+            "commands": {}
+          },
+          {
+            "ordinal": 3,
+            "condition": "LV>0&ITEM=2558",
+            "section_sha256": "97f4a1e467616b35963b709e49c7afbf560da148bcb65dfe5ed0ece3b158856d",
+            "commands": {}
+          },
+          {
+            "ordinal": 4,
+            "condition": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+            "section_sha256": "fd4078866383688908b6fdc110bf625ce07266520c880fb7ed4a5d15815883c1",
+            "commands": {}
+          },
+          {
+            "ordinal": 5,
+            "condition": "LV>0",
+            "section_sha256": "ff3c81cd28ffe623be0557a30f84c17795b2bdd41c4c776df2f66f1fc772c8f3",
+            "commands": {}
+          }
+        ]
+      },
+      "original_proof": {
+        "required": 2558,
+        "reward_literal": 2559,
+        "condition": "LV>0&ITEM=2558"
+      },
+      "source_window": {
+        "bounds_inclusive": [
+          233,
+          113,
+          243,
+          123
+        ],
+        "center": [
+          238,
+          118
+        ],
+        "original_three_u16_at_center": [
+          4304,
+          0,
+          49152
+        ],
+        "original_cells": 121,
+        "gt99_placements": 126,
+        "distinct_qualified_aliases": 49,
+        "low_1_to_99_not_drawn": 25,
+        "qualified_aliases_from_I41": 15,
+        "qualified_aliases_from_MAP04": 34,
+        "unknown_gt99": 0
+      },
+      "modern_observation": {
+        "candidate_size": [
+          736,
+          697
+        ],
+        "candidate_origin": [
+          -11024,
+          3320
+        ],
+        "independent_full_RGBA_matches": {
+          "plane0": "e88221a8ec1d15539d6d1b526bc7c15e2545676b6416b13f35ee2bbff6404410",
+          "plane1": "5aaecbcd51f3da4473b6050259e0e0fbcb1be374d77d244a4d7653e5efe6fa38",
+          "combined": "b798e45409339b54794bc5e735e76ba797d0cabab2e17657bf3ca88778d0fe14"
+        },
+        "original_native_layer_or_palette_verified": false
+      }
+    },
+    {
+      "name": "A11",
+      "checkpoint": 11,
+      "original_DAT": {
+        "floor": 20601,
+        "bytes": 21608,
+        "sha256": "3fc9a2b66621eab9dde491d47806b6b8653bc07081352d0501c96a4ad3176513",
+        "geometry": [
+          60,
+          60
+        ]
+      },
+      "original_CREATE": {
+        "path": "jaruga/event/oev.create",
+        "ordinal": 11,
+        "block_sha256": "e96ca645a8f9b49e3679484300ce1f7c287109aa54b7dbdc3c08ad7f5b8d4284",
+        "borncorner": [
+          5,
+          11,
+          5,
+          11
+        ],
+        "graphic_alias": 16068,
+        "direction": 4,
+        "functionset": "ExChangeMan",
+        "template": "jaruga/event/event.template"
+      },
+      "original_script": {
+        "path": "jaruga/event/oev_11",
+        "bytes": 1911,
+        "sha256": "f9e245c239b12e9c84174aecfcf39c221a2d6d6db4c873926fb5939791bfa6f4",
+        "event_count": 6,
+        "event_sections": [
+          {
+            "ordinal": 0,
+            "condition": "LV>0&ITEM=2562",
+            "section_sha256": "30d093a2db0b2a6927e91ecb9b02591309d49fef8a18c6c27d194155c767f39d",
+            "commands": {
+              "GetItem": [
+                "2563"
+              ],
+              "DelItem": [
+                "2562"
+              ]
+            }
+          },
+          {
+            "ordinal": 1,
+            "condition": "LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+            "section_sha256": "ef856155195227410cd73ccf20ea27d49e1f9e6c469328a9edde97719a60dc2d",
+            "commands": {}
+          },
+          {
+            "ordinal": 2,
+            "condition": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2",
+            "section_sha256": "2225130bb6152d7479661e5c5fae8a91853fffa924199b3f115fe513bfecd677",
+            "commands": {}
+          },
+          {
+            "ordinal": 3,
+            "condition": "LV>0&ITEM=2562",
+            "section_sha256": "a56e11c84f9945e6ccea6f204b1fd41177fedbf49ab85a9febdae12ca5ae5796",
+            "commands": {}
+          },
+          {
+            "ordinal": 4,
+            "condition": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+            "section_sha256": "36e8044b8dbc27e7b3f36a1fbcbabe695b916461e2a77a1b33e00879038b769c",
+            "commands": {}
+          },
+          {
+            "ordinal": 5,
+            "condition": "LV>0",
+            "section_sha256": "ff3c81cd28ffe623be0557a30f84c17795b2bdd41c4c776df2f66f1fc772c8f3",
+            "commands": {}
+          }
+        ]
+      },
+      "original_proof": {
+        "required": 2562,
+        "reward_literal": 2563,
+        "condition": "LV>0&ITEM=2562"
+      },
+      "source_window": {
+        "bounds_inclusive": [
+          0,
+          6,
+          10,
+          16
+        ],
+        "center": [
+          5,
+          11
+        ],
+        "original_three_u16_at_center": [
+          4003,
+          0,
+          49152
+        ],
+        "original_cells": 121,
+        "gt99_placements": 70,
+        "distinct_qualified_aliases": 34,
+        "low_1_to_99_not_drawn": 123,
+        "qualified_aliases_from_I41": 17,
+        "qualified_aliases_from_MAP04": 17,
+        "unknown_gt99": 0
+      },
+      "modern_observation": {
+        "candidate_size": [
+          673,
+          625
+        ],
+        "candidate_origin": [
+          -176,
+          224
+        ],
+        "independent_full_RGBA_matches": {
+          "plane0": "983dd5f66ce0a43039b1396586363329c845400bd589d3ddd2c469c6fdb6b945",
+          "plane1": "d2f1f55c9bc4b742f65869f1ad349c914eaa6b11d85b1162277162386ef05115",
+          "combined": "04ac3548b0d64e19d73057e7b956fef630a16329ca323af54f6eb89c04ea4563"
+        },
+        "original_native_layer_or_palette_verified": false
+      }
+    }
+  ],
+  "original_pixel_aliases_union": [
+    400,
+    402,
+    403,
+    404,
+    406,
+    407,
+    408,
+    2019,
+    2023,
+    2024,
+    2025,
+    2039,
+    2047,
+    2051,
+    2053,
+    2054,
+    2058,
+    2066,
+    4000,
+    4001,
+    4002,
+    4003,
+    4004,
+    4005,
+    4006,
+    4007,
+    4008,
+    4074,
+    4077,
+    4081,
+    4082,
+    4085,
+    4086,
+    4087,
+    4089,
+    4091,
+    4095,
+    4103,
+    4112,
+    4113,
+    4114,
+    4115,
+    4300,
+    4301,
+    4302,
+    4303,
+    4304,
+    4305,
+    4306,
+    4307,
+    4308,
+    4320,
+    4321,
+    4325,
+    4326,
+    4328,
+    4331,
+    4332,
+    4333,
+    4334,
+    4337,
+    4338,
+    4340,
+    4342,
+    4344,
+    4345,
+    4346,
+    4348,
+    4351,
+    4352,
+    4353,
+    4354,
+    4356,
+    4359,
+    4360,
+    4361,
+    4362,
+    4363,
+    4364,
+    4367,
+    4371,
+    10084,
+    11000,
+    11001,
+    11005,
+    11006,
+    11092,
+    11094,
+    11095,
+    11096,
+    11097,
+    11098,
+    11109,
+    11111,
+    11916,
+    13550,
+    13551,
+    13552,
+    13557,
+    13559,
+    13561,
+    15000,
+    15001,
+    15003,
+    15007,
+    15009,
+    15010,
+    15011
+  ],
+  "original_pixel_aliases_union_count": 108,
+  "per_site_alias_count_sum": 110,
+  "private_source_only_immutable_receipt": {
+    "archive_name": "StoneAge-INTEGRATION45-Jaruga-A3-A7-A11-three-original-scenes-private.zip",
+    "archive_bytes": 5098689,
+    "archive_sha256": "a705e963612ce24177940feebe9f7d4225a4bbc83af2197624af31bb5350d018",
+    "archive_members": 132,
+    "whole_archive_Library_readback_verified": true,
+    "all_archive_CRC_verified": true,
+    "full_private_source_derived_JSON_sha256": "f054f24869c107566c33eda3487bf5b56e586a4adb9535ede84a35741cf90312"
+  },
+  "actually_recovered_TW1_16067": {
+    "logical_alias": 16067,
+    "ordinal": 5913,
+    "physical_bitmap": 5913,
+    "offset": 25054495,
+    "bytes": 1694,
+    "xoff": -19,
+    "yoff": -70,
+    "dimensions": [
+      32,
+      78
+    ],
+    "original_ADRN_record_sha256": "81a43cea4666c6b23af6bd6b5a0a3769ec2a685111dbdec0914a7236e806523d",
+    "RD_sha256": "8dc805589a31d6627aae8df214f587ae08dd9b6d277bfb0d494e7d44292cddd0",
+    "indexed_sha256": "f91ca2fbf56a7ac9d443c78809988d268cc7c03f653195d923bfeeda6216b71c",
+    "RGBA_sha256": "8b145e29b42a9bc1f6cb4d2b56366862b5a0d53f98117b33c584cf8ebfd55667",
+    "RD_two_independent_decoders_match": true,
+    "source_build": "TW1_NOT_MIXED25_ORIGINAL_CLIENT"
+  },
+  "TW1_16068_rechecked": {
+    "RD_sha256": "83067bae520437e378c73e394961e15be2bd53bcffa6163ddccc02e0971f3c9e",
+    "RGBA_sha256": "5aa433962d27ed020fb9590a4bee8ee9eb4e819dd4309f1e61b7d616acbeaba6",
+    "matching_prior_I44": true
+  },
+  "counts": {
+    "original_DAT_windows": 3,
+    "original_source_map_cells": 363,
+    "high_gt99_image_placements": 264,
+    "source_site_distinct_aliases_sum": 110,
+    "deduplicated_source_aliases": 108,
+    "original_low_value_refs_not_drawn": 215,
+    "independent_pixel_canvases_replayed": 9,
+    "new_scene_windows_from_original_bytes": 3,
+    "new_actor_RD_decodes_current_unit": 2,
+    "new_original_scripts_discovered": 0,
+    "original_gameplay_executed": 0
+  },
+  "negative_evidence_gates": {
+    "native_StoneAge_client_executed": false,
+    "same_official_deployment_proven": false,
+    "original_draw_layer_order_proven": false,
+    "native_sprite_motion_or_direction_selection_proven": false,
+    "native_palette_selection_proven": false,
+    "third_DAT_plane_claimed_collision": false,
+    "native_quest_reward_execution_proven": false,
+    "original_MAP4000_DAT_recovered": false,
+    "commercial_DAT_RD_sprites_or_script_original_published": false
+  },
+  "status": {
+    "Stage_A": {
+      "PARTIAL": 7,
+      "OPEN": 2
+    },
+    "Stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Next candidate A12: previously saved INTEGRATION10 private source/3400.dat (120x120, 86408 bytes, SHA256 a3c6918ba21c909e6312329c936615aa6b6d8800d7967ed85a2146d55ca263c4) at original CREATE (69,61) has preliminary 11x11 source scan of 135 >99 refs / 69 aliases, all presently with earlier TW1 qualified image candidates; confirm original source and produce scene next. Keep MAP4000 unavailable and other unmatched A-route DATs OPEN.",
+  "next_source_preflight_not_rendered": {
+    "name": "A12",
+    "floor": 3400,
+    "xy": [
+      69,
+      61
+    ],
+    "source": "INTEGRATION10 private source/3400.dat",
+    "private_source_archive_sha256": "7a4b74af4ca4b0cca3108dcdec55bb9f1892a2edf17b73d400aab4c041fa6b96",
+    "original_DAT_bytes": 86408,
+    "original_DAT_sha256": "a3c6918ba21c909e6312329c936615aa6b6d8800d7967ed85a2146d55ca263c4",
+    "preflight_high_alias_occurrences": 135,
+    "preflight_distinct_aliases": 69,
+    "preflight_low_1_to_99": 21,
+    "preflight_missing_aliases": 0,
+    "current_work_unit_full_RGBA_scenes_rendered": 0
+  }
+}

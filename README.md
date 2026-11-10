@@ -2388,3 +2388,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-10 — INTEGRATION44｜环岛A1原地图与原人物图像实际观察
 
 [原源画面与止点](docs/continuity/STONEAGE-INTEGRATION44-JARUGA-A1-ACTUAL-ORIGINAL-SOURCE-PIXELS-20261110.md)：上轮A6/终点的地图4000原DAT仍未取得，按来源止点改用可真实读到的原地图3000。地图A1原(99,64)周边121格、132高值图块引用全部对应73份有资格原图；I41现成52、MAP04现成20、**TW1原REAL新重取图号8335一幅**。又从TW1完整REAL实解人物候选16068。原 DAT、ADRN、REAL、SAP五份私人源包整SHA/CRC和双RD解码/独立三种736×745 RGBA画布完全吻合，场景已目视；A1原配置与`oev_1`的`ITEM=2552→2553`联接，现代额外人物、标记不是原生画面。私人2,035,837B/85成员ZIP SHA`330e3568…114df1`已存个人Library并回读同SHA；原DAT、RD、PNG、原脚本不公开。只发布[派生数字、来源及证据边界](research/recovered/STONEAGE-INTEGRATION44-JARUGA-A1-ORIGINAL-SOURCE-PIXELS-R1.json)及CI。仍未取得4000原 DAT、未证明原版运行/同服/原NPC动作，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体百分比未知。NEXT优先有真实原 DAT 的其它 A 路场景，否则按模块轮换，不扩无源地图/新引擎。
+
+
+## 2026-11-10 — INTEGRATION45｜环岛A3、A7、A11原地图实像与任务来源
+
+[原DAT及独立实像重放](docs/continuity/STONEAGE-INTEGRATION45-JARUGA-A3-A7-A11-ORIGINAL-SOURCE-SCENES-20261110.md)：从已验原 I41 MAP/DAT＋台湾1.0 MAP04 原 RD 图＋QUEST25 原脚本实物恢复 A3地图20105/(25,49)、A7地图20301/(238,118)、A11地图20601/(5,11)，共**363个源格／264次大于99图像引用全部有源／108个跨场景不同原图号**，另215次低值仅保留数字。三处真实原DAT整SHA、原 NPC CREATE/脚本逐成员 SHA核验；重新从纯净TW1原REAL实际双解 `16067` 人物RD，旧16068原RD同源复核。九幅分层RGBA均Pillow/NumPy及另一独立归档重放逐像素相同，现代独立画面不是原生客户端。私有 **5,098,689B／132成员／SHA `a705e963…350d018`** 已存个人Library并整包回读完全相同；原DAT、RD、PNG和商业脚本正文均不入Git。公开[源格与图像哈希／历史界限索引](research/recovered/STONEAGE-INTEGRATION45-JARUGA-A3-A7-A11-ORIGINAL-SOURCE-SCENES-R1.json)只供回归；Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、整体百分比未知。最高 NEXT：已有保留 I10 原`3400.dat`的 A12 检查站画面实源复核、拼合与原任务关系；`4000.dat`仍缺原件，不推断原生运行或官方同服。
