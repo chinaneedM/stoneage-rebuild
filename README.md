@@ -2353,3 +2353,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-10 — INTEGRATION37｜加奥利／乌力书信的原地图、NPC图像、脚本和物品统一来源视图
 
 [有界来源组合与下项](docs/continuity/STONEAGE-INTEGRATION37-GOA-ULI-LETTERS-20261110.md)：复用已验QUEST13与CHAR05确切Git blob，按同保存混合2.5原RAR/NPC ZIP的原CREATE路径和序号唯一联接10条配置、6张已有原DAT/10个真实格三平面值、2个同RAR已验动作0八方向原SPR组、10份原任务脚本/16旧事件段及5个同源物品表记录。该轮新增**可独立核对的跨模块整合视图**，无新原商业脚本／图像下载、原RD解码和原生任务执行；历史任务是否正式/常驻、实际选帧/对话/发奖励及官方同服均待证。公开[数字/哈希原源联接](research/recovered/STONEAGE-INTEGRATION37-GOA-ULI-LETTERS-MAP-SPR-SCRIPT-SOURCE-R1.json)与源固定回归验证；完整旧CURRENT 2,709,173B Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`不改。Stage A 7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79暂停，总进度未知。NEXT转真正未集成且有可靠原材料的玩法内容。
+
+
+## 2026-11-10 — INTEGRATION38｜SBC／JBA两饲育员协会的原证书及双门点
+
+[完整证据及欠源边界](docs/continuity/STONEAGE-INTEGRATION38-SBC-JBA-CERTIFICATE-20261110.md)：从已保私有CHAR01/ITEM01/MAP09三个原ZIP再次完整核SHA/CRC，真实重读SBC/JBA管理员3创建、2脚本旧4TYPE、2入门配置及原2参数共8份原NPC文件，源字面分别包含2479与2480双证互换的DelItem/GetItem和10913→10920、20704→20712的对应FREE证书门槛。物品双表两证逐原行SHA同，TW1零售跨版原RD两私有PNG实际核SHA/尺寸；原955 DAT真读20712/10913/20704及格值，10920缺当前档案DAT且20712不在MAP09资格像素集，不能凭缺件宣布历史无图。新的是一条可查双组织来源关系，不是新增旧脚本或实际运行互斥/发证/传送。公开仅[派生数字/证据SHA](research/recovered/STONEAGE-INTEGRATION38-SBC-JBA-CERTIFICATE-ACCESS-ORIGINAL-SOURCE-R1.json)、CI反例与这份加法连续性；旧CURRENT原2,709,173B/固定blob不变。Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、整体未知；NEXT转不同有材料内容。
