@@ -1,0 +1,348 @@
+{
+  "schema": "stoneage.integration39.adult_rebirth_named_paths_original_create_to_event_flag_source_relation.r1",
+  "date": "2026-11-10",
+  "baseline": {
+    "head": "d527443507ab66234199e5ab70584af11bafdba9",
+    "tree": "0c71823ae26be018fb46e51b3db2f0511d3f5acd",
+    "current_state_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_state_bytes": 2709173
+  },
+  "research_scope": "DERIVED_CROSSWALK_OF_PREVIOUSLY_VERIFIED_PRESERVED_MIXED25_COMMUNITY_SOURCE_INDEXES_NOT_A_NEW_RAW_SOURCE_READ",
+  "upstream": {
+    "quest01": {
+      "path": "research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json",
+      "git_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2"
+    },
+    "char01": {
+      "path": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json",
+      "git_blob": "a088b61a3212f7049e7793f587123ffb29bebad7"
+    },
+    "quest32": {
+      "path": "research/recovered/STONEAGE-QUEST32-MODULE-DEDUPE-AUDIT-R1.json",
+      "git_blob": "a2f907b7d8c1293c9e15f1bfc2afbc4b1fa3f35e"
+    },
+    "map09": {
+      "path": "research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json",
+      "git_blob": "137580e7c25aadf3d679b6ebfb5080b79912cc4f"
+    }
+  },
+  "source_scope": "SAME_PRESERVED_LATER_COMMUNITY_MIXED25_SOURCE_ARCHIVE_ONLY; NO_OFFICIAL_EARLY_RUNTIME_OR_DEPLOYMENT_PROOF",
+  "selected_five_original_CREATE_to_script_refs": [
+    {
+      "create_path": "my/chengren/chengren.create",
+      "create_source_file_sha256": "325b6eedec9c9a6430c851adb6e2c1c0b62c58ab3928e931151c812099a75a08",
+      "create_ordinal": 0,
+      "original_create_block_sha256": "3a170971c490edf126d3e91c3ec6656fc0f286aa51bb5d878aafa636dca31434",
+      "floor": 2000,
+      "original_borncenter_xy": [
+        54,
+        50
+      ],
+      "original_graphic_alias": 16001,
+      "original_direction": 6,
+      "function_literal": "changeevent",
+      "resolved_template_path": "jaruga/event/event.template",
+      "name_text_original_sha256": "ad40967a0e52380b721ff549b2109f35e2bf851f6ebe54fb7a2298dc5323b0ba",
+      "arg_path": "my/chengren/chengren.arg",
+      "arg_original_bytes": 429,
+      "arg_original_sha256": "4b92d0d20cca364a455ad6d2b89fb43fc5f2327fb04fdab6fd0558d84a3a890f",
+      "arg_original_crc32": "0a5c4045",
+      "origin_class": "UNRESOLVED",
+      "old_QUEST01_sections": [
+        {
+          "ordinal": 0,
+          "type": "ACCEPT",
+          "event_number": 4,
+          "original_type_line": 4,
+          "condition_keywords": {
+            "LV": 1
+          },
+          "condition_cp950_utf8_sha256": "dfe4c71868a5844f3e08b9d0f404a3256658a0acfed7ffa110b79bc55b456733",
+          "source_section_cp950_utf8_sha256": "bac20ba6e2deac49d68f8739f43703208fd580deb55984904ce332b31425ed91",
+          "operation_counts": {
+            "EVENT": 1,
+            "EndSetFlg": 1,
+            "EventNo": 1,
+            "TYPE": 1
+          },
+          "EndSetFlg_numbers": [
+            4
+          ],
+          "original_item_ID_refs": {
+            "predicate_ITEM": []
+          }
+        },
+        {
+          "ordinal": 1,
+          "type": "MESSAGE",
+          "event_number": -1,
+          "original_type_line": 13,
+          "condition_keywords": {
+            "ENDEV": 1
+          },
+          "condition_cp950_utf8_sha256": "1a118fac30e350b88f2d50028ae20f1359608a05eadef43ffaf5c5a777c14b05",
+          "source_section_cp950_utf8_sha256": "3b1673722c5eac496a342dfb72d9f5b5b1ce7dddfb89c8361a77833362793fc7",
+          "operation_counts": {
+            "EVENT": 1,
+            "EventNo": 1,
+            "TYPE": 1
+          },
+          "EndSetFlg_numbers": [],
+          "original_item_ID_refs": {
+            "predicate_ITEM": []
+          }
+        }
+      ]
+    },
+    {
+      "create_path": "my/zhuansheng/zhuans.create",
+      "create_source_file_sha256": "12e600938fb8f56633806c1858cc3bad6addb6b491732f1f3816159a73012f3f",
+      "create_ordinal": 0,
+      "original_create_block_sha256": "354720aba45b6e4e893ae090d11777e599b3506ec635ebdc3967a2be701f732c",
+      "floor": 2000,
+      "original_borncenter_xy": [
+        47,
+        58
+      ],
+      "original_graphic_alias": 100287,
+      "original_direction": 4,
+      "function_literal": "changeevent",
+      "resolved_template_path": "jaruga/event/event.template",
+      "name_text_original_sha256": "6573d3ca2da80f3223dba2e04906b8cc8ffba8d1fdaf627215571b323198e879",
+      "arg_path": "my/zhuansheng/zhuans1.arg",
+      "arg_original_bytes": 316,
+      "arg_original_sha256": "b423f1f2376ecd42357fafc9e3c1d025b1f7836278ba8bc21b820e0a50d5c489",
+      "arg_original_crc32": "7bff2210",
+      "origin_class": "UNRESOLVED",
+      "old_QUEST01_sections": [
+        {
+          "ordinal": 0,
+          "type": "ACCEPT",
+          "event_number": -1,
+          "original_type_line": 4,
+          "condition_keywords": {
+            "LV": 1
+          },
+          "condition_cp950_utf8_sha256": "65213c4670b842f8405ee2527d9c5f4237e91e735462b4335fb98e4f85350110",
+          "source_section_cp950_utf8_sha256": "adf8802d94aac29ee74e27a5f28055572a0956609849a595762a663fad0d3494",
+          "operation_counts": {
+            "EVENT": 1,
+            "EndSetFlg": 1,
+            "EventNo": 1,
+            "TYPE": 1
+          },
+          "EndSetFlg_numbers": [
+            39
+          ],
+          "original_item_ID_refs": {
+            "predicate_ITEM": []
+          }
+        }
+      ]
+    },
+    {
+      "create_path": "my/zhuansheng/zhuans.create",
+      "create_source_file_sha256": "12e600938fb8f56633806c1858cc3bad6addb6b491732f1f3816159a73012f3f",
+      "create_ordinal": 1,
+      "original_create_block_sha256": "a5c30fb640bbe5f5337e079d3e8a26bae7ca12913edb9950b07e1dfa7e5bf585",
+      "floor": 2000,
+      "original_borncenter_xy": [
+        48,
+        58
+      ],
+      "original_graphic_alias": 100288,
+      "original_direction": 4,
+      "function_literal": "changeevent",
+      "resolved_template_path": "jaruga/event/event.template",
+      "name_text_original_sha256": "df95a80373393fbcd5addc1718e46ecc6aee23d17c0027f4d901856672cdbb0c",
+      "arg_path": "my/zhuansheng/zhuans2.arg",
+      "arg_original_bytes": 316,
+      "arg_original_sha256": "415d770fdffe94242129b088f26687eed29c1faf651488d84ada23bea3cbb096",
+      "arg_original_crc32": "a82a207c",
+      "origin_class": "UNRESOLVED",
+      "old_QUEST01_sections": [
+        {
+          "ordinal": 0,
+          "type": "ACCEPT",
+          "event_number": -1,
+          "original_type_line": 4,
+          "condition_keywords": {
+            "LV": 1
+          },
+          "condition_cp950_utf8_sha256": "65213c4670b842f8405ee2527d9c5f4237e91e735462b4335fb98e4f85350110",
+          "source_section_cp950_utf8_sha256": "8b1b26ffe5e767a418848fd0647b551f2067d6ac9e7ed4ba7c59820fbb9f1405",
+          "operation_counts": {
+            "EVENT": 1,
+            "EndSetFlg": 1,
+            "EventNo": 1,
+            "TYPE": 1
+          },
+          "EndSetFlg_numbers": [
+            40
+          ],
+          "original_item_ID_refs": {
+            "predicate_ITEM": []
+          }
+        }
+      ]
+    },
+    {
+      "create_path": "my/zhuansheng/zhuans.create",
+      "create_source_file_sha256": "12e600938fb8f56633806c1858cc3bad6addb6b491732f1f3816159a73012f3f",
+      "create_ordinal": 2,
+      "original_create_block_sha256": "24443a122cc6112d09b69ec76d9665a486685b38cd508231a7b13c8b451ebd6f",
+      "floor": 2000,
+      "original_borncenter_xy": [
+        49,
+        58
+      ],
+      "original_graphic_alias": 100290,
+      "original_direction": 4,
+      "function_literal": "changeevent",
+      "resolved_template_path": "jaruga/event/event.template",
+      "name_text_original_sha256": "16d33ad017056de2632b85942216428375aa4e84511b683709ce011e1db674bb",
+      "arg_path": "my/zhuansheng/zhuans3.arg",
+      "arg_original_bytes": 316,
+      "arg_original_sha256": "ca9e1abc4ddd197af51963e601547e4934ff893ef548718627aa7a127b948d4b",
+      "arg_original_crc32": "f6414466",
+      "origin_class": "UNRESOLVED",
+      "old_QUEST01_sections": [
+        {
+          "ordinal": 0,
+          "type": "ACCEPT",
+          "event_number": -1,
+          "original_type_line": 4,
+          "condition_keywords": {
+            "LV": 1
+          },
+          "condition_cp950_utf8_sha256": "65213c4670b842f8405ee2527d9c5f4237e91e735462b4335fb98e4f85350110",
+          "source_section_cp950_utf8_sha256": "0a1e824acd1355018a0648270ea0910a7a9b6b0a8cb0fbf98510e0289dc55abc",
+          "operation_counts": {
+            "EVENT": 1,
+            "EndSetFlg": 1,
+            "EventNo": 1,
+            "TYPE": 1
+          },
+          "EndSetFlg_numbers": [
+            42
+          ],
+          "original_item_ID_refs": {
+            "predicate_ITEM": []
+          }
+        }
+      ]
+    },
+    {
+      "create_path": "my/zhuansheng/zhuans.create",
+      "create_source_file_sha256": "12e600938fb8f56633806c1858cc3bad6addb6b491732f1f3816159a73012f3f",
+      "create_ordinal": 3,
+      "original_create_block_sha256": "8b04bb803e941daaaa36b68f3101831cd7a0fa9bf92aff7ee4c86ef9b01c29d3",
+      "floor": 2000,
+      "original_borncenter_xy": [
+        50,
+        58
+      ],
+      "original_graphic_alias": 100394,
+      "original_direction": 4,
+      "function_literal": "changeevent",
+      "resolved_template_path": "jaruga/event/event.template",
+      "name_text_original_sha256": "e48b1fd04e4dd59adb85e6b9da06ae2e8723899e5dacdce8ecbeb9c2e8aaaa77",
+      "arg_path": "my/zhuansheng/zhuans4.arg",
+      "arg_original_bytes": 339,
+      "arg_original_sha256": "7d189830ce2464cc413afe3eec293314bbc51f5fe1f294f4fc469230f14dd982",
+      "arg_original_crc32": "3034efb0",
+      "origin_class": "UNRESOLVED",
+      "old_QUEST01_sections": [
+        {
+          "ordinal": 0,
+          "type": "ACCEPT",
+          "event_number": -1,
+          "original_type_line": 4,
+          "condition_keywords": {
+            "LV": 1
+          },
+          "condition_cp950_utf8_sha256": "65213c4670b842f8405ee2527d9c5f4237e91e735462b4335fb98e4f85350110",
+          "source_section_cp950_utf8_sha256": "1411e6661d9be06ab1324ae3e57c81dea863f2d9b6243622531d1bc9123df933",
+          "operation_counts": {
+            "EVENT": 1,
+            "EndSetFlg": 1,
+            "EventNo": 1,
+            "TYPE": 1
+          },
+          "EndSetFlg_numbers": [
+            46
+          ],
+          "original_item_ID_refs": {
+            "predicate_ITEM": []
+          }
+        }
+      ]
+    }
+  ],
+  "two_other_original_CREATE_in_same_zhuans_create_excluded_from_changeevent": [
+    {
+      "ordinal": 4,
+      "original_create_block_sha256": "cb0261ec3ad65531b699314b5da7e4bd4691e7057b3e33a5c2914d131ef326fe",
+      "floor": 2000,
+      "graphic": 100289,
+      "function_literal": "sb_dou",
+      "exact_arg_path": "my/zhuansheng/zhuans5.arg",
+      "original_arg_sha256": "c0fa785796dde98643dad733e9602378ccb5cb906362551dc682d7939f89eef0"
+    },
+    {
+      "ordinal": 5,
+      "original_create_block_sha256": "ddb57dfa755e8eef2c68ae422205946dc3aa47dd013ff00c0b226967036c60ca",
+      "floor": 32021,
+      "graphic": 16139,
+      "function_literal": "npcgen_petshop",
+      "exact_arg_path": "my/zhuansheng/jifang.arg",
+      "original_arg_sha256": "e811594a2ed9215d3e68ec5f246ef573ddbfd3cff13c98eac23884fb24653908"
+    }
+  ],
+  "map_reachability_boundary": {
+    "floor": 2000,
+    "original_CREATE_floor_reference_present": true,
+    "map09_source_qualified_pixel_atlas_for_this_floor": false,
+    "no_claim_DAT_absent_from_preserved_archives_or_historical_game": true
+  },
+  "quest32_prior_selected_script_boundary": {
+    "directory_counts_before_this_crosswalk": {
+      "my/chengren": 1,
+      "my/zhuansheng": 4
+    },
+    "these_five_paths_not_in_QUEST08_through_QUEST31_selected_source_bundles": true,
+    "not_five_new_original_files": true
+  },
+  "summary": {
+    "source_CREATE_linked": 5,
+    "distinct_original_script_paths": 5,
+    "old_indexed_TYPE_sections": 6,
+    "literal_EndSetFlg_numbers": [
+      4,
+      39,
+      40,
+      42,
+      46
+    ],
+    "same_file_non_changeevent_siblings": 2,
+    "new_original_source_files_read": 0,
+    "new_native_execution_witnesses": 0
+  },
+  "limits": {
+    "file_paths_do_not_prove_original_historical_quest_name_or_purpose": true,
+    "original_lv_thresholds_not_recovered_from_public_index": true,
+    "original_conditions_not_evaluated": true,
+    "EndSetFlg_not_proven_to_update_runtime_state": true,
+    "original_adulthood_or_rebirth_mechanic_not_proven": true,
+    "original_same_build_early_official_deployment_proven": false,
+    "map2000_original_pixel_scene_proven": false,
+    "original_asset_pixels_newly_rendered": false,
+    "original_original_commercial_client_or_server_run": false,
+    "original_proprietary_dialogue_or_raw_code_published": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Review another materially distinct original source group; reopen adult/rebirth semantics only with complete qualified original arg bytes and/or native execution, and floor2000 scene only with qualified DAT/pixel source"
+}
