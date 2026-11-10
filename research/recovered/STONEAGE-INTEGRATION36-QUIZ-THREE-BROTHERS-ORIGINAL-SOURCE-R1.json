@@ -1,0 +1,1218 @@
+{
+  "schema": "stoneage.integration36.original_quiz_source_and_inactive_backup.r1",
+  "date": "2026-11-10",
+  "base": {
+    "main": "113a7b4123ef76deb72f7fa85f9fce105926287b",
+    "tree": "85b38e0c1d2a5d0a045a7ea194a8d193bfb6194d",
+    "old_CURRENT_sha256_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "old_CURRENT_bytes": 2709173
+  },
+  "upstream": {
+    "catalog": {
+      "path": "research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json",
+      "git_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2"
+    },
+    "map09": {
+      "path": "research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json",
+      "git_blob": "137580e7c25aadf3d679b6ebfb5080b79912cc4f"
+    },
+    "pet10": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-10-ORIGINAL-MIXED25-SERVER-TABLES-R1.json",
+      "git_blob": "25a37aeb134fb180e322e7dc335029b7374452d8"
+    },
+    "pet07": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-07-TW10-BATCH-PUBLIC-R1.json",
+      "git_blob": "0b5f81b41a642025ab53a12884638fdee887470e"
+    },
+    "i05": {
+      "path": "research/recovered/STONEAGE-INTEGRATION05-GETPET-QUEST-MAP-ORIGINAL-SOURCE-GRAPH-R1.json",
+      "git_blob": "bc8486e1c0ff0a85f63264decd78b646b638c305"
+    },
+    "q32": {
+      "path": "research/recovered/STONEAGE-QUEST32-MODULE-DEDUPE-AUDIT-R1.json",
+      "git_blob": "a2f907b7d8c1293c9e15f1bfc2afbc4b1fa3f35e"
+    }
+  },
+  "private_verified": {
+    "npc_zip": {
+      "bytes": 995176,
+      "members": 2205,
+      "sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+      "all_crc": true
+    },
+    "item_zip": {
+      "bytes": 5868386,
+      "members": 838,
+      "sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+      "all_crc": true
+    },
+    "item_catalog_sha256": "0438c4fc9bf945223d46c24e9d374de436f2ac981c23fa282776281c2e772e60"
+  },
+  "active_source_CREATE": {
+    "path": "quiz/quiz.create",
+    "bytes": 1705,
+    "sha256": "364951c326a4d4dac81e2d1162ddc06af91ced0b01992a3234d052fabb355eb6",
+    "crc32": "2a75e524"
+  },
+  "six_active_scripts": [
+    {
+      "path": "quiz/equiz_01",
+      "bytes": 1211,
+      "sha256": "248157ddc2b3d061d8acaa6b084c7ec5a69fa69a14ea5c01d95c2fcb165fcdb9",
+      "crc32": "d4749f59",
+      "source_type_counts": {
+        "MESSAGE": 3,
+        "REQUEST": 1
+      },
+      "origin_class": "UNRESOLVED"
+    },
+    {
+      "path": "quiz/equiz_02",
+      "bytes": 1716,
+      "sha256": "c5b9ff6e85d8f392cc2a668c70de7f3c0a3adcbb0d1e5688006d7a153e999818",
+      "crc32": "df7c459a",
+      "source_type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 5
+      },
+      "origin_class": "UNRESOLVED"
+    },
+    {
+      "path": "quiz/equiz_03",
+      "bytes": 1760,
+      "sha256": "0145c8ecf3fab4136fbd1814991291b2586b0b2c5c1a1be585033394b4d623b9",
+      "crc32": "0d3d183d",
+      "source_type_counts": {
+        "ACCEPT": 3,
+        "MESSAGE": 1
+      },
+      "origin_class": "UNRESOLVED"
+    },
+    {
+      "path": "quiz/equiz_04",
+      "bytes": 755,
+      "sha256": "786a787c285ecd3821aa72cbb7262defe7d9156556dec2d8d9f9eea73b011bea",
+      "crc32": "2b1c636b",
+      "source_type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 1
+      },
+      "origin_class": "UNRESOLVED"
+    },
+    {
+      "path": "quiz/uketuke",
+      "bytes": 1482,
+      "sha256": "54ea4f0ec5650514b25e7ff7bc3143f64867b0465a0244ea37deda5659321e35",
+      "crc32": "9ea09d58",
+      "source_type_counts": {
+        "ACCEPT": 2,
+        "MESSAGE": 2
+      },
+      "origin_class": "UNRESOLVED"
+    },
+    {
+      "path": "quiz/uketuke2",
+      "bytes": 1065,
+      "sha256": "6411691500837aaf6f13d6915836ac58942243788a558de3774cf13c20dcab05",
+      "crc32": "d8bf64b4",
+      "source_type_counts": {
+        "ACCEPT": 1,
+        "MESSAGE": 2
+      },
+      "origin_class": "UNRESOLVED"
+    }
+  ],
+  "eleven_CREATE_refs": [
+    {
+      "create_source_path": "quiz/quiz.create",
+      "create_source_sha": "364951c326a4d4dac81e2d1162ddc06af91ced0b01992a3234d052fabb355eb6",
+      "create_brace_ordinal": 0,
+      "original_script_path": "quiz/equiz_04",
+      "original_script_sha": "786a787c285ecd3821aa72cbb7262defe7d9156556dec2d8d9f9eea73b011bea",
+      "floorid": 812,
+      "borncenter_numeric": null,
+      "graphic_alias_numeric": 100000,
+      "origin_class": "UNRESOLVED",
+      "source_name": "大師的弟子",
+      "source_xy": [
+        32,
+        24
+      ],
+      "source_direction": 6
+    },
+    {
+      "create_source_path": "quiz/quiz.create",
+      "create_source_sha": "364951c326a4d4dac81e2d1162ddc06af91ced0b01992a3234d052fabb355eb6",
+      "create_brace_ordinal": 1,
+      "original_script_path": "quiz/equiz_01",
+      "original_script_sha": "248157ddc2b3d061d8acaa6b084c7ec5a69fa69a14ea5c01d95c2fcb165fcdb9",
+      "floorid": 810,
+      "borncenter_numeric": null,
+      "graphic_alias_numeric": 100000,
+      "origin_class": "UNRESOLVED",
+      "source_name": "魁司",
+      "source_xy": [
+        29,
+        16
+      ],
+      "source_direction": 4
+    },
+    {
+      "create_source_path": "quiz/quiz.create",
+      "create_source_sha": "364951c326a4d4dac81e2d1162ddc06af91ced0b01992a3234d052fabb355eb6",
+      "create_brace_ordinal": 2,
+      "original_script_path": "quiz/equiz_02",
+      "original_script_sha": "c5b9ff6e85d8f392cc2a668c70de7f3c0a3adcbb0d1e5688006d7a153e999818",
+      "floorid": 810,
+      "borncenter_numeric": null,
+      "graphic_alias_numeric": 100015,
+      "origin_class": "UNRESOLVED",
+      "source_name": "伊那多",
+      "source_xy": [
+        28,
+        16
+      ],
+      "source_direction": 4
+    },
+    {
+      "create_source_path": "quiz/quiz.create",
+      "create_source_sha": "364951c326a4d4dac81e2d1162ddc06af91ced0b01992a3234d052fabb355eb6",
+      "create_brace_ordinal": 3,
+      "original_script_path": "quiz/equiz_03",
+      "original_script_sha": "0145c8ecf3fab4136fbd1814991291b2586b0b2c5c1a1be585033394b4d623b9",
+      "floorid": 810,
+      "borncenter_numeric": null,
+      "graphic_alias_numeric": 100010,
+      "origin_class": "UNRESOLVED",
+      "source_name": "茲奇",
+      "source_xy": [
+        27,
+        16
+      ],
+      "source_direction": 4
+    },
+    {
+      "create_source_path": "quiz/quiz.create",
+      "create_source_sha": "364951c326a4d4dac81e2d1162ddc06af91ced0b01992a3234d052fabb355eb6",
+      "create_brace_ordinal": 4,
+      "original_script_path": "quiz/equiz_01",
+      "original_script_sha": "248157ddc2b3d061d8acaa6b084c7ec5a69fa69a14ea5c01d95c2fcb165fcdb9",
+      "floorid": 850,
+      "borncenter_numeric": null,
+      "graphic_alias_numeric": 100000,
+      "origin_class": "UNRESOLVED",
+      "source_name": "魁司",
+      "source_xy": [
+        29,
+        16
+      ],
+      "source_direction": 4
+    },
+    {
+      "create_source_path": "quiz/quiz.create",
+      "create_source_sha": "364951c326a4d4dac81e2d1162ddc06af91ced0b01992a3234d052fabb355eb6",
+      "create_brace_ordinal": 5,
+      "original_script_path": "quiz/equiz_02",
+      "original_script_sha": "c5b9ff6e85d8f392cc2a668c70de7f3c0a3adcbb0d1e5688006d7a153e999818",
+      "floorid": 850,
+      "borncenter_numeric": null,
+      "graphic_alias_numeric": 100015,
+      "origin_class": "UNRESOLVED",
+      "source_name": "伊那多",
+      "source_xy": [
+        28,
+        16
+      ],
+      "source_direction": 4
+    },
+    {
+      "create_source_path": "quiz/quiz.create",
+      "create_source_sha": "364951c326a4d4dac81e2d1162ddc06af91ced0b01992a3234d052fabb355eb6",
+      "create_brace_ordinal": 6,
+      "original_script_path": "quiz/equiz_03",
+      "original_script_sha": "0145c8ecf3fab4136fbd1814991291b2586b0b2c5c1a1be585033394b4d623b9",
+      "floorid": 850,
+      "borncenter_numeric": null,
+      "graphic_alias_numeric": 100010,
+      "origin_class": "UNRESOLVED",
+      "source_name": "茲奇",
+      "source_xy": [
+        27,
+        16
+      ],
+      "source_direction": 4
+    },
+    {
+      "create_source_path": "quiz/quiz.create",
+      "create_source_sha": "364951c326a4d4dac81e2d1162ddc06af91ced0b01992a3234d052fabb355eb6",
+      "create_brace_ordinal": 7,
+      "original_script_path": "quiz/uketuke",
+      "original_script_sha": "54ea4f0ec5650514b25e7ff7bc3143f64867b0465a0244ea37deda5659321e35",
+      "floorid": 2020,
+      "borncenter_numeric": null,
+      "graphic_alias_numeric": 16065,
+      "origin_class": "UNRESOLVED",
+      "source_name": "入場卷販售人",
+      "source_xy": [
+        18,
+        13
+      ],
+      "source_direction": 6
+    },
+    {
+      "create_source_path": "quiz/quiz.create",
+      "create_source_sha": "364951c326a4d4dac81e2d1162ddc06af91ced0b01992a3234d052fabb355eb6",
+      "create_brace_ordinal": 8,
+      "original_script_path": "quiz/uketuke",
+      "original_script_sha": "54ea4f0ec5650514b25e7ff7bc3143f64867b0465a0244ea37deda5659321e35",
+      "floorid": 2020,
+      "borncenter_numeric": null,
+      "graphic_alias_numeric": 16065,
+      "origin_class": "UNRESOLVED",
+      "source_name": "入場卷販售人",
+      "source_xy": [
+        18,
+        11
+      ],
+      "source_direction": 6
+    },
+    {
+      "create_source_path": "quiz/quiz.create",
+      "create_source_sha": "364951c326a4d4dac81e2d1162ddc06af91ced0b01992a3234d052fabb355eb6",
+      "create_brace_ordinal": 9,
+      "original_script_path": "quiz/uketuke2",
+      "original_script_sha": "6411691500837aaf6f13d6915836ac58942243788a558de3774cf13c20dcab05",
+      "floorid": 4020,
+      "borncenter_numeric": null,
+      "graphic_alias_numeric": 16065,
+      "origin_class": "UNRESOLVED",
+      "source_name": "入場卷販售人",
+      "source_xy": [
+        18,
+        13
+      ],
+      "source_direction": 6
+    },
+    {
+      "create_source_path": "quiz/quiz.create",
+      "create_source_sha": "364951c326a4d4dac81e2d1162ddc06af91ced0b01992a3234d052fabb355eb6",
+      "create_brace_ordinal": 10,
+      "original_script_path": "quiz/uketuke2",
+      "original_script_sha": "6411691500837aaf6f13d6915836ac58942243788a558de3774cf13c20dcab05",
+      "floorid": 4020,
+      "borncenter_numeric": null,
+      "graphic_alias_numeric": 16065,
+      "origin_class": "UNRESOLVED",
+      "source_name": "入場卷販售人",
+      "source_xy": [
+        18,
+        11
+      ],
+      "source_direction": 6
+    }
+  ],
+  "twenty_three_source_blocks": [
+    {
+      "script_path": "quiz/equiz_01",
+      "ordinal": 0,
+      "event_number": -1,
+      "type": "MESSAGE",
+      "source_section_sha256": "7c1749549bdfd5e11f84391a10c4e1f74a5570985d059b914cf275a5229242dc",
+      "condition_sha256": "b08e1bfc5b82191f415c6e2c887aea58b8fe05427e4cef364a7c8c960fb30ab8",
+      "operation_counts": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "predicate_ITEM": []
+      }
+    },
+    {
+      "script_path": "quiz/equiz_01",
+      "ordinal": 1,
+      "event_number": -1,
+      "type": "MESSAGE",
+      "source_section_sha256": "c947be1f1fd2c66a1fcfba180c4419d68019ff2f740bccaac353a69450d97ad6",
+      "condition_sha256": "4f29937edb364cf27669ef8c36c82f981645f691b394a020bd3a19889989d2bb",
+      "operation_counts": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "predicate_ITEM": [
+          2759
+        ]
+      }
+    },
+    {
+      "script_path": "quiz/equiz_01",
+      "ordinal": 2,
+      "event_number": -1,
+      "type": "MESSAGE",
+      "source_section_sha256": "d239afb064999e364ae27b5352a6a2b1ddb1afcafcffcb96064369539ea402ce",
+      "condition_sha256": "9d0c59f1e5dc24a36e597e6fe7055ae9e2dd8641682959e3d6fed4da8b639d19",
+      "operation_counts": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "predicate_ITEM": []
+      }
+    },
+    {
+      "script_path": "quiz/equiz_01",
+      "ordinal": 3,
+      "event_number": 44,
+      "type": "REQUEST",
+      "source_section_sha256": "33e6035597926ed55e54a51593086d91b806a3fdbc9fd8bb8b07f895a25b0f7b",
+      "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+      "operation_counts": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetItem": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "GetItem": [
+          2753
+        ],
+        "predicate_ITEM": []
+      }
+    },
+    {
+      "script_path": "quiz/equiz_02",
+      "ordinal": 0,
+      "event_number": -1,
+      "type": "MESSAGE",
+      "source_section_sha256": "7c1749549bdfd5e11f84391a10c4e1f74a5570985d059b914cf275a5229242dc",
+      "condition_sha256": "b08e1bfc5b82191f415c6e2c887aea58b8fe05427e4cef364a7c8c960fb30ab8",
+      "operation_counts": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "predicate_ITEM": []
+      }
+    },
+    {
+      "script_path": "quiz/equiz_02",
+      "ordinal": 1,
+      "event_number": -1,
+      "type": "MESSAGE",
+      "source_section_sha256": "4ec866ef97e8223c1a8e6da0c72439f886a010dce4ed6765a7782f87bb139cf9",
+      "condition_sha256": "4f29937edb364cf27669ef8c36c82f981645f691b394a020bd3a19889989d2bb",
+      "operation_counts": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "predicate_ITEM": [
+          2759
+        ]
+      }
+    },
+    {
+      "script_path": "quiz/equiz_02",
+      "ordinal": 2,
+      "event_number": 47,
+      "type": "MESSAGE",
+      "source_section_sha256": "0666830ced4ac7ca6642524950592106a521f7d040b83c8ad9f6e8f7727a964e",
+      "condition_sha256": "98765dda7ba569a25c74e910394cfd2e349a95f2522315436bf5e5e9f60e1edf",
+      "operation_counts": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetItem": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "GetItem": [
+          2753
+        ],
+        "predicate_ITEM": [
+          2753,
+          2759
+        ]
+      }
+    },
+    {
+      "script_path": "quiz/equiz_02",
+      "ordinal": 3,
+      "event_number": -1,
+      "type": "MESSAGE",
+      "source_section_sha256": "d239afb064999e364ae27b5352a6a2b1ddb1afcafcffcb96064369539ea402ce",
+      "condition_sha256": "9d0c59f1e5dc24a36e597e6fe7055ae9e2dd8641682959e3d6fed4da8b639d19",
+      "operation_counts": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "predicate_ITEM": []
+      }
+    },
+    {
+      "script_path": "quiz/equiz_02",
+      "ordinal": 4,
+      "event_number": 44,
+      "type": "ACCEPT",
+      "source_section_sha256": "da03ced56574be0ceac17281b1b109efff31692df3ff933d23c64d0f0cb7e1d6",
+      "condition_sha256": "da91e840a62c0f9fac7f10da57ea76d57163223b7986e536590cc07d8d0eab94",
+      "operation_counts": {
+        "DelItem": 1,
+        "EVENT": 1,
+        "EndSetFlg": 1,
+        "EventNo": 1,
+        "GetPet": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "DelItem": [
+          2753
+        ],
+        "predicate_ITEM": [
+          2753
+        ]
+      }
+    },
+    {
+      "script_path": "quiz/equiz_02",
+      "ordinal": 5,
+      "event_number": -1,
+      "type": "MESSAGE",
+      "source_section_sha256": "875cdeef3aebfe1feeab0a253b06ff2c986fc57745bf645bfa76a79eff10247b",
+      "condition_sha256": "9d0c59f1e5dc24a36e597e6fe7055ae9e2dd8641682959e3d6fed4da8b639d19",
+      "operation_counts": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "predicate_ITEM": []
+      }
+    },
+    {
+      "script_path": "quiz/equiz_03",
+      "ordinal": 0,
+      "event_number": -1,
+      "type": "ACCEPT",
+      "source_section_sha256": "aa4bf447e7991440376a871b34487a884696f529fd560abd3fc808da4529aff6",
+      "condition_sha256": "fc6b6ec3908577f9cbfda7b6201ed8a262afe5e149ce80b19f88bd901373e937",
+      "operation_counts": {
+        "DelItem": 1,
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetRandItem": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "DelItem": [
+          2754
+        ],
+        "GetRandItem": [
+          2692,
+          2695,
+          11807,
+          11817,
+          11818,
+          11827,
+          11828,
+          11837,
+          11838,
+          11847,
+          11848,
+          11857
+        ],
+        "predicate_ITEM": [
+          2754
+        ]
+      }
+    },
+    {
+      "script_path": "quiz/equiz_03",
+      "ordinal": 1,
+      "event_number": -1,
+      "type": "ACCEPT",
+      "source_section_sha256": "8cf3485ee7e44c7e33aad006ad6f5754802321435022c207ff2644e9fc128779",
+      "condition_sha256": "45b9941437098796e4f753f989ff643c3ed62cd99202d7c28281dcbdb632809e",
+      "operation_counts": {
+        "DelItem": 1,
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetRandItem": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "DelItem": [
+          2754
+        ],
+        "GetRandItem": [
+          449,
+          450,
+          451,
+          543,
+          549,
+          552,
+          646,
+          653,
+          11803,
+          11814,
+          11824,
+          11833,
+          11843,
+          11853,
+          11895,
+          11926,
+          11936,
+          12052,
+          12623,
+          12648
+        ],
+        "predicate_ITEM": [
+          2754
+        ]
+      }
+    },
+    {
+      "script_path": "quiz/equiz_03",
+      "ordinal": 2,
+      "event_number": -1,
+      "type": "ACCEPT",
+      "source_section_sha256": "2cabe481b1eb4c6106593e5231e1fbdf82cdd127f35ed5122a47319e20ddb99d",
+      "condition_sha256": "fdfe4e076edf2cc2f13974375df6b89ef8be502017e71b2615a3fbf5af56a8f0",
+      "operation_counts": {
+        "DelItem": 1,
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetRandItem": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "DelItem": [
+          2754
+        ],
+        "GetRandItem": [
+          21,
+          22,
+          29,
+          131,
+          221,
+          227,
+          329,
+          421,
+          521,
+          630,
+          729,
+          831,
+          931,
+          1031,
+          1131,
+          1255,
+          1268
+        ],
+        "predicate_ITEM": [
+          2754
+        ]
+      }
+    },
+    {
+      "script_path": "quiz/equiz_03",
+      "ordinal": 3,
+      "event_number": -1,
+      "type": "MESSAGE",
+      "source_section_sha256": "603feae2cee7cd47fde3e0ef254947decc36dcc79ca110d55b7efe41697f4dc5",
+      "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+      "operation_counts": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "predicate_ITEM": []
+      }
+    },
+    {
+      "script_path": "quiz/equiz_04",
+      "ordinal": 0,
+      "event_number": -1,
+      "type": "MESSAGE",
+      "source_section_sha256": "7a202506c571b44f85451a70649aae44eec31337666d9b4956afe0d3cd06ce16",
+      "condition_sha256": "b08e1bfc5b82191f415c6e2c887aea58b8fe05427e4cef364a7c8c960fb30ab8",
+      "operation_counts": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "predicate_ITEM": []
+      }
+    },
+    {
+      "script_path": "quiz/equiz_04",
+      "ordinal": 1,
+      "event_number": 47,
+      "type": "ACCEPT",
+      "source_section_sha256": "dffa942d34990af01a99f53a4bc3bb16ec0cda09535a4cec7f845e20182010e3",
+      "condition_sha256": "4f29937edb364cf27669ef8c36c82f981645f691b394a020bd3a19889989d2bb",
+      "operation_counts": {
+        "DelItem": 1,
+        "EVENT": 1,
+        "EndSetFlg": 1,
+        "EventNo": 1,
+        "GetPet": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "DelItem": [
+          2759
+        ],
+        "predicate_ITEM": [
+          2759
+        ]
+      }
+    },
+    {
+      "script_path": "quiz/uketuke",
+      "ordinal": 0,
+      "event_number": -1,
+      "type": "MESSAGE",
+      "source_section_sha256": "37d184d575e117fead457b4d56287460f91e4c6736e1022d09116f612d78751c",
+      "condition_sha256": "451cd0e111a856b32922c0c5eca525b50832b2da5744bb90dc952838355f201c",
+      "operation_counts": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "predicate_ITEM": []
+      }
+    },
+    {
+      "script_path": "quiz/uketuke",
+      "ordinal": 1,
+      "event_number": -1,
+      "type": "ACCEPT",
+      "source_section_sha256": "f3abe173985e278066825226e0be48b7814edfa14df0bff8d0afbd8e3dbcc80d",
+      "condition_sha256": "d3ffba49f3722e5f70cd76737b6e48227f166981d5cf11602de2959decbdf41e",
+      "operation_counts": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetItem": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "GetItem": [
+          2756
+        ],
+        "predicate_ITEM": []
+      }
+    },
+    {
+      "script_path": "quiz/uketuke",
+      "ordinal": 2,
+      "event_number": -1,
+      "type": "ACCEPT",
+      "source_section_sha256": "f197f76291bb3e890022cd62111c29056706097a60b3d04bfe75e56c25174c66",
+      "condition_sha256": "dfe4c71868a5844f3e08b9d0f404a3256658a0acfed7ffa110b79bc55b456733",
+      "operation_counts": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetItem": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "GetItem": [
+          2755
+        ],
+        "predicate_ITEM": []
+      }
+    },
+    {
+      "script_path": "quiz/uketuke",
+      "ordinal": 3,
+      "event_number": -1,
+      "type": "MESSAGE",
+      "source_section_sha256": "36574274c1f5d872b30087174eb034c9f1f08782b078a661f6a9a096c4d51894",
+      "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+      "operation_counts": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "predicate_ITEM": []
+      }
+    },
+    {
+      "script_path": "quiz/uketuke2",
+      "ordinal": 0,
+      "event_number": -1,
+      "type": "ACCEPT",
+      "source_section_sha256": "4d79705d2d1278e765b59ee2c30e2cd0ba3e907ed757e176a149f77c190412b9",
+      "condition_sha256": "451cd0e111a856b32922c0c5eca525b50832b2da5744bb90dc952838355f201c",
+      "operation_counts": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "GetItem": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "GetItem": [
+          2757
+        ],
+        "predicate_ITEM": []
+      }
+    },
+    {
+      "script_path": "quiz/uketuke2",
+      "ordinal": 1,
+      "event_number": -1,
+      "type": "MESSAGE",
+      "source_section_sha256": "8832868e3fb1c2b5b3ce8314f3f6520649273ff26efa1936a3138e34b9e9fffc",
+      "condition_sha256": "53c8a8878258ffa8b153ca01af75ecb701473d51f13f527e4d876186b5b3faf2",
+      "operation_counts": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "predicate_ITEM": []
+      }
+    },
+    {
+      "script_path": "quiz/uketuke2",
+      "ordinal": 2,
+      "event_number": -1,
+      "type": "MESSAGE",
+      "source_section_sha256": "c4fc9d79af0a092f6be508e4b048bf9cb868efb12787705e8e0d1407cfc3dd06",
+      "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+      "operation_counts": {
+        "EVENT": 1,
+        "EventNo": 1,
+        "TYPE": 1
+      },
+      "item_refs": {
+        "predicate_ITEM": []
+      }
+    }
+  ],
+  "exact_original_ascii_control_fragments": [
+    {
+      "path": "quiz/equiz_01",
+      "ordinal": 3,
+      "type": "REQUEST",
+      "event": "LV>0",
+      "GetItem": "2753"
+    },
+    {
+      "path": "quiz/equiz_02",
+      "ordinal": 2,
+      "type": "MESSAGE",
+      "event": "LV>0&ENDEV=44&PET=77-12&ITEM!=2759&ITEM!=2753",
+      "GetItem": "2753"
+    },
+    {
+      "path": "quiz/equiz_02",
+      "ordinal": 4,
+      "type": "ACCEPT",
+      "event": "NOWEV=44&ITEM=2753",
+      "GetPet": "14",
+      "DelItem": "2753",
+      "EndSetFlg": "44"
+    },
+    {
+      "path": "quiz/equiz_04",
+      "ordinal": 1,
+      "type": "ACCEPT",
+      "event": "ENDEV=44&NOWEV=47&ITEM=2759",
+      "GetPet": "351",
+      "DelItem": "2759",
+      "EndSetFlg": "47"
+    },
+    {
+      "path": "quiz/uketuke",
+      "ordinal": 1,
+      "type": "ACCEPT",
+      "event": "LV>49",
+      "GetItem": "2756"
+    },
+    {
+      "path": "quiz/uketuke",
+      "ordinal": 2,
+      "type": "ACCEPT",
+      "event": "LV>29",
+      "GetItem": "2755"
+    },
+    {
+      "path": "quiz/uketuke2",
+      "ordinal": 0,
+      "type": "ACCEPT",
+      "event": "LV>69",
+      "GetItem": "2757"
+    },
+    {
+      "path": "quiz/uketuke2",
+      "ordinal": 1,
+      "type": "MESSAGE",
+      "event": "LV>29&LV<70"
+    }
+  ],
+  "unreferenced_BAK": {
+    "path": "quiz/equiz_04.BAK",
+    "bytes": 801,
+    "sha256": "1ef7a1510af954773106b948a795ec352d6a55b4c5672afe32d737931be54946",
+    "crc32": "22c0fd4a",
+    "original_whole_CP950_decode_success": false,
+    "direct_reference_from_active_CREATE": false,
+    "ascii_control_rows": [
+      {
+        "EventNo": "-1",
+        "TYPE": "MESSAGE",
+        "EVENT": "ENDEV=45"
+      },
+      {
+        "EventNo": "45",
+        "TYPE": "ACCEPT",
+        "EVENT": "ENDEV=44&NOWEV=45&ITEM=2759",
+        "GetPet": "352",
+        "DelItem": "2759",
+        "EndSetFlg": "45"
+      }
+    ]
+  },
+  "floor_source_status": [
+    {
+      "floor": 810,
+      "in_MAP09": false,
+      "source_DAT_SHA256": null,
+      "source_DAT_bytes": null,
+      "source_geometry": null,
+      "prior_candidate_canvas_SHA256": null
+    },
+    {
+      "floor": 812,
+      "in_MAP09": true,
+      "source_DAT_SHA256": "500841e03f43f3e171266b47e09658eee32917fd363790370033b82b8320056a",
+      "source_DAT_bytes": 15008,
+      "source_geometry": [
+        50,
+        50
+      ],
+      "prior_candidate_canvas_SHA256": "9490479fbf25cf393b2d70c6a0705f1941b37343bbae99da4553e79544769ea2"
+    },
+    {
+      "floor": 850,
+      "in_MAP09": false,
+      "source_DAT_SHA256": null,
+      "source_DAT_bytes": null,
+      "source_geometry": null,
+      "prior_candidate_canvas_SHA256": null
+    },
+    {
+      "floor": 2020,
+      "in_MAP09": true,
+      "source_DAT_SHA256": "87ceadb90622c602f320b4fe26ab2587ef9baf7e9b7540b8003555a86a0f472b",
+      "source_DAT_bytes": 3758,
+      "source_geometry": [
+        25,
+        25
+      ],
+      "prior_candidate_canvas_SHA256": "6c1e53eec80fafba9353064ef3c6121c11a92fd3ac93281212cf104b193bb1e6"
+    },
+    {
+      "floor": 4020,
+      "in_MAP09": true,
+      "source_DAT_SHA256": "4b887e534ef9d9647a91bcd7ee38b29d39e16d22c835ac6c36ebe0dd6eff0def",
+      "source_DAT_bytes": 3758,
+      "source_geometry": [
+        25,
+        25
+      ],
+      "prior_candidate_canvas_SHA256": "6c1e53eec80fafba9353064ef3c6121c11a92fd3ac93281212cf104b193bb1e6"
+    }
+  ],
+  "original_six_item_rows": [
+    {
+      "id": 2753,
+      "name": "猜謎專家的會員證",
+      "alias": 24222,
+      "raw_two_itemset_full_line_SHA256": "fc6855f012115531ac5548be502cebcecf3fd5658429ec6ea9227af04b8d8c47",
+      "independent_TW1_retail_actual_pixel_candidate": true
+    },
+    {
+      "id": 2754,
+      "name": "道具交換卷",
+      "alias": 24222,
+      "raw_two_itemset_full_line_SHA256": "641b541b22b977105eecc7748e4ee893712cca7109be0ccbec41ff008372b979",
+      "independent_TW1_retail_actual_pixel_candidate": true
+    },
+    {
+      "id": 2755,
+      "name": "入場卷 A",
+      "alias": 24314,
+      "raw_two_itemset_full_line_SHA256": "3348b5bad4774e55ae6e6729e292dda6babd514444d2fd632a2408b8fb17e9f9",
+      "independent_TW1_retail_actual_pixel_candidate": false
+    },
+    {
+      "id": 2756,
+      "name": "入場卷 B",
+      "alias": 24314,
+      "raw_two_itemset_full_line_SHA256": "7d7c449f379f05fc858a294cdd0b3350897c2f8bb9d14a0efa1ea680f4bef2e3",
+      "independent_TW1_retail_actual_pixel_candidate": false
+    },
+    {
+      "id": 2757,
+      "name": "入場卷 C",
+      "alias": 24314,
+      "raw_two_itemset_full_line_SHA256": "526bc1b27927d5cc9ebc9b85f3d25c6dbf3f2058f28515b1fd73180976f138e4",
+      "independent_TW1_retail_actual_pixel_candidate": false
+    },
+    {
+      "id": 2759,
+      "name": "謎之箱子",
+      "alias": 24309,
+      "raw_two_itemset_full_line_SHA256": "ef741aa99cb8af73be31362e07ec85cef2ee78459ae0de593cff421d79ffccf3",
+      "independent_TW1_retail_actual_pixel_candidate": false
+    }
+  ],
+  "item_private_row_source_qualification": {
+    "all_55_distinct_ids_present_in_both_original_mixed25_itemsets_and_full_line_SHA256_equal": true,
+    "source_49_random_item_ids": [
+      21,
+      22,
+      29,
+      131,
+      221,
+      227,
+      329,
+      421,
+      449,
+      450,
+      451,
+      521,
+      543,
+      549,
+      552,
+      630,
+      646,
+      653,
+      729,
+      831,
+      931,
+      1031,
+      1131,
+      1255,
+      1268,
+      2692,
+      2695,
+      11803,
+      11807,
+      11814,
+      11817,
+      11818,
+      11824,
+      11827,
+      11828,
+      11833,
+      11837,
+      11838,
+      11843,
+      11847,
+      11848,
+      11853,
+      11857,
+      11895,
+      11926,
+      11936,
+      12052,
+      12623,
+      12648
+    ],
+    "original_49_random_row_sha_manifest_digest": "642b85fcc88d383afaa0877261e77d6fa194a1aadc25c628d9a103013e95f7d7",
+    "manifest_rule": "sorted numeric id:lowercase original row SHA256 followed by LF",
+    "random_pools": [
+      {
+        "ordinal": 0,
+        "condition": "LV>69&ITEM=2754",
+        "source_original_literal": "11807,,11817,11818,11827,11828,11837,11838,11847,11848,11857,2692,2695",
+        "raw_token_count": 13,
+        "blank_positions": [
+          1
+        ],
+        "numeric_ids": [
+          11807,
+          11817,
+          11818,
+          11827,
+          11828,
+          11837,
+          11838,
+          11847,
+          11848,
+          11857,
+          2692,
+          2695
+        ]
+      },
+      {
+        "ordinal": 1,
+        "condition": "LV>49&ITEM=2754",
+        "source_original_literal": "450,451,449,549,552,543,653,646,12623,12648,11895,11926,11936,12052,11803,11814,11824,11833,11843,11853",
+        "raw_token_count": 20,
+        "blank_positions": [],
+        "numeric_ids": [
+          450,
+          451,
+          449,
+          549,
+          552,
+          543,
+          653,
+          646,
+          12623,
+          12648,
+          11895,
+          11926,
+          11936,
+          12052,
+          11803,
+          11814,
+          11824,
+          11833,
+          11843,
+          11853
+        ]
+      },
+      {
+        "ordinal": 2,
+        "condition": "LV>29&ITEM=2754",
+        "source_original_literal": "21,22,29,131,221,227,329,421,521,630,729,831,931,1031,1131,1255,1268",
+        "raw_token_count": 17,
+        "blank_positions": [],
+        "numeric_ids": [
+          21,
+          22,
+          29,
+          131,
+          221,
+          227,
+          329,
+          421,
+          521,
+          630,
+          729,
+          831,
+          931,
+          1031,
+          1131,
+          1255,
+          1268
+        ]
+      }
+    ],
+    "one_blank_in_first_pool_preserved": true
+  },
+  "original_tw1_candidate_recheck": {
+    "alias_24222_private_png_bytes": 1438,
+    "alias_24222_private_png_sha256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1",
+    "alias_24222_dimensions": [
+      28,
+      39
+    ],
+    "alias_24222_original_RD_sha256": "d519e1dbfcf21cb23c7850eb741381698dc0ebd7437d69d68d877b0ad7cf8052",
+    "alias_24314_and_24309_selected_retail_not_in_index": true
+  },
+  "GetPet_past_and_same_carrier": {
+    "previous_I05_numeric_occurrences": [
+      14,
+      14,
+      351
+    ],
+    "active_script_literals": [
+      14,
+      351
+    ],
+    "BAK_literal": 352,
+    "pet10_same_community_original_template_rows": [
+      {
+        "id": 14,
+        "graphic": 100257,
+        "PETFLG_literal": 1,
+        "primary_original_row_SHA256": "2aef55a0adc47b00d14bbd3003565b6c349f0a445ac5e91a052f796eb531b0fa",
+        "alternative_original_row_SHA256": [
+          "407181b568ff2b3a7d9b426a0fd2696425350e0ad065ce48b957f297b8bfdb80"
+        ]
+      },
+      {
+        "id": 351,
+        "graphic": 100040,
+        "PETFLG_literal": 0,
+        "primary_original_row_SHA256": "7f8e605d0245f1f4bd3b7c6f0442e54f8a447d3d082eada61ecce1733a003f46",
+        "alternative_original_row_SHA256": []
+      },
+      {
+        "id": 352,
+        "graphic": 100040,
+        "PETFLG_literal": 0,
+        "primary_original_row_SHA256": "1d2cf5d1e75b2de68d721e6802bef700943adb91fa518cfd5a871e9274ac458f",
+        "alternative_original_row_SHA256": []
+      }
+    ],
+    "TW1_PET07_previous_original_pixel_source_group100257": [
+      100257,
+      247,
+      "931bb3a1e1455c403f25b8b836028d2787613fc35f237edad0adab93946e06cc",
+      56,
+      19,
+      [
+        [
+          0,
+          0,
+          9,
+          "4aabc1d77754768dfb97e58095d09e43f4930cc77cde46d80738ad9dc2db98c3",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "6606ec35727d164478680ebced2e40081296f4847465068622f5e28fa8490806",
+          1000
+        ],
+        [
+          1,
+          0,
+          4,
+          "483e3dd0c5508f6f36fd429f76ed235d5fa08c14e4714cdb2828a30e74e06e28",
+          100
+        ]
+      ],
+      16
+    ],
+    "pet07_private_pixels_not_reread_this_unit": true
+  },
+  "bounded_status": {
+    "source_era": "LATER_COMMUNITY_PRESERVED_MIXED25_NOT_EARLY_OFFICIAL_TW1_SAME_DEPLOYMENT",
+    "original_quest_origin": "UNRESOLVED",
+    "Stage_A": "7_PARTIAL_2_OPEN",
+    "Stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null,
+    "native_runtime_quest_branch_execution_proven": false,
+    "BAK_original_server_active_proven": false,
+    "BAK_chronological_order_proven": false,
+    "GetPet_reward_native_execution_proven": false,
+    "original_pet_species_by_matching_graphic_proven": false,
+    "original_random_weight_or_blank_token_semantics_proven": false,
+    "original_money_paid_for_tickets_proven": false,
+    "original_DAT_absent_for_810_850_proven": false,
+    "early_official_same_build_proven": false,
+    "original_proprietary_bytes_committed": false
+  },
+  "next": "Rotate to a different not-yet-integrated source-backed original content. Reopen on authentic 810/850 DAT, native quest behavior or original backup deployment evidence."
+}
