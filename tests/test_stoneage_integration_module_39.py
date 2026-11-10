@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "research/recovered/STONEAGE-INTEGRATION39-ADULT-REBIRTH-EVENT-CREATE-SOURCE-R1.json"
 
 def gitblob(raw: bytes) -> str:
-    return hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\\0" + raw).hexdigest()
+    return hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest()
 
 class Integration39(unittest.TestCase):
     @classmethod
