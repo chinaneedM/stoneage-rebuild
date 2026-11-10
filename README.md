@@ -2418,3 +2418,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-10 — INTEGRATION50｜28间原房的商店、宠物和技能菜单来源关系
 
 [逐原文件哈希、参数关系及边界](docs/continuity/STONEAGE-INTEGRATION50-28-ROOM-SHOP-PET-MENUS-20261110.md)：从私人CHAR01完整来源ZIP重核2,205成员CRC、44条CREATE对应43份唯一原参数文件整SHA；对INTEGRATION49既有28室建立32条ItemShop（攻击7、防御5、饰品6、原字面空类别8、类别字段缺失6；29条同旧物品索引按路径+SHA精确连，3条缺ItemList）、6条PetShop（1003/2003/3003有原pool两个字面字段）、6条PetSkillShop（六个原技能数字列表50出现位置/15不同ID/共同0、1、2、3）的来源联接。新增的是静态跨表对应，不是原DAT/NPC新增、已执行交易/教学、台湾1.0同服或原版可玩世界；不补造缺失字段。公开[纯派生JSON](research/recovered/STONEAGE-INTEGRATION50-28-ROOM-SHOP-PET-ARGUMENT-BRIDGE-R1.json)及回归，原件和原文私人保管。原CURRENT 2,709,173B/blob `c89e0e33537990aa2132b47c40fef49a985a935c`保留；本轮大文件接口未能回传完整正文，不虚称全文成功读取。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、总进度未知。NEXT优先28室外有新原物证的原内容；本批CI和主线验收另据后验记录。
+
+
+## 2026-11-10 — INTEGRATION51｜两座百人道场的原NPC与地图来源对照
+
+[1021／3021原百人道场的逐关原源关系](docs/continuity/STONEAGE-INTEGRATION51-TWO-DOJOS-ORIGINAL-SOURCE-20261110.md)：从私人社区mixed25原NPC ZIP本轮整SHA及2,205个CRC真实核对，两原CREATE合计600原块；对1021未专题的100个原对战参数、200个独立Warp配置，与旧3021百人图谱100/100逐关验证坐标与目标的对应。两馆同源敌人候选字面564—580，但宠物候选分别655—690与687—720；两馆第100关参数分别转1008(20,20)与3008(20,20)，原100对玩家字面并非已执行100场战斗。1021旧MAP01 DAT(407×144)有源合格记录，但此轮没重读DAT/生成原像素；旧3021.DAT读取失败仍保留负证，1021／3021原MAP SHA不同，不共用原画面。公开[100条源SHA/坐标/门点数值索引](research/recovered/STONEAGE-INTEGRATION51-TWO-ORIGINAL-100-DOJOS-SOURCE-BRIDGE-R1.json)、12项跨旧图谱与MAP01回归；私人原NPC、地图、图像不进Git。完整CURRENT原blob `c89e0e33537990aa2132b47c40fef49a985a935c`不动，本轮Git原blob接口成功返回全文文本。Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停，总进度未知。NEXT转不同的真实原内容；CI/正式主线验收另据后验。
