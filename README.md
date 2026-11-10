@@ -2320,3 +2320,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-10 — INTEGRATION30｜原 event20 地下城 20607／20608
 
 [有界来源与续接](docs/continuity/STONEAGE-INTEGRATION30-EVENT20-DUNGEON-20261110.md)：两张原三平面 DAT 地下城场景、三处 NPC CREATE、三份 CP950 原脚本共14段、16029／16032 原静态图、100431 原 SPR 明确候选图和 11 条原有向门点已联接；同一原格 20607(75,13) 明列两种不同出口，不能混合。私人原件 ZIP 6,980,092 B／28 CRC／SHA 811139ca9f78ccf20a90d05c5e0535ace34a4be7600f8e0efd9335f3e774441b 已独立读取核验；公共仓库仅[派生数字/来源收据](research/recovered/STONEAGE-INTEGRATION30-EVENT20-DUNGEON-SOURCE-R1.json)与回归，历史 CURRENT 原 blob 完整保留。不宣称原版游戏原生执行、触发和同早期官方部署。Stage A 7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null。下一优先复核 20606 入口源是否尚有真材料增量。
+
+
+## 2026-11-10 — INTEGRATION31｜20606 条件 NPC 实际配置与 20607 地下城入口
+
+[入口有界来源及纠错](docs/continuity/STONEAGE-INTEGRATION31-DUNGEON-WARPMAN-ENTRY-20261110.md)：私人 CHAR01 同源 `20600npc.create` 第25块 20606 (9,23)「山賊守衛」引用96字节原 `wpm_20606_9_23`，字面 `WARP:20607,7,5`、`FREE:LV>0`；原普通 mapwarp 2307 则独立为20607(7,5)→20606(8,23)，2,981行普通 mapwarp 不存在20606→20607对应方向。两个机制不能混写成双向普通传送。两原 DAT 三平面实读、CHAR01私人ZIP 995,176B／2205 CRC和 SHA均核；原素材原对白不进Git。公共[数值哈希证据](research/recovered/STONEAGE-INTEGRATION31-DUNGEON-WARPMAN-ENTRY-SOURCE-R1.json)及反例测试重用 I30 CI。未执行原游戏，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总进度未知。此局部止点后转下一项新的已获原内容，不为缺失原生触发制造推论。
