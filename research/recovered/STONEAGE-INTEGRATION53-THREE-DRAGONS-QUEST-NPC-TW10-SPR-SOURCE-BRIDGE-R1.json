@@ -1,0 +1,469 @@
+{
+  "schema": "stoneage.integration53.dragon_nest_quest14_to_tw10_original_spr_crosscarrier.r1",
+  "date": "2026-11-10",
+  "remote_rechecked_main_before_publication": {
+    "head": "8962808b3a62ab89fa631c051a90db1d212f0ccd",
+    "tree": "933387fca611d69df8d63d237bb483838744dcae"
+  },
+  "evidence_class": "NEW_RELATION_BETWEEN_PREVIOUSLY_SOURCE_VERIFIED_QUEST_NPC_AND_TW10_ORIGINAL_SPR_PIXEL_CATALOGS_NO_NEW_ORIGINAL_ASSET",
+  "upstream_public_git_blobs": {
+    "quest14": {
+      "path": "research/recovered/STONEAGE-QUEST14-DRAGON-NEST-ORIGINAL-SOURCE-R1.json",
+      "git_blob": "7df2db9dd475ece5497bcd58e7486347532799bf"
+    },
+    "pet07": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-07-TW10-BATCH-PUBLIC-R1.json",
+      "git_blob": "0b5f81b41a642025ab53a12884638fdee887470e"
+    },
+    "pet15": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-15-TW10-ALL-SELECTED-MOTION-SOURCE-R1.json",
+      "git_blob": "e1cac6980353d09353de43fec0948bfcd84d49e6"
+    },
+    "pet10": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-10-ORIGINAL-MIXED25-SERVER-TABLES-R1.json",
+      "git_blob": "25a37aeb134fb180e322e7dc335029b7374452d8"
+    }
+  },
+  "preserved_current_original_git_blob": {
+    "path": "docs/CURRENT-STATE.md",
+    "sha": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "bytes": 2709173,
+    "read_from_original_git_blob_in_this_turn": true,
+    "modified": false
+  },
+  "source_lineage": {
+    "quest_NPC_and_MAP_DAT": "MIXED25_LATER_COMMUNITY_PRESERVATION_NOT_AUTHENTICATED_OFFICIAL_SAME_DEPLOYMENT",
+    "tw10_SPR_RD_PNG": "SEPARATE_TAIWAN_1_0_RETAIL_ORIGINAL_ARTWORK_PREVIOUSLY_PIXEL_DECODED",
+    "two_pet_template_tables": "MIXED25_LATER_COMMUNITY_PRESERVATION_ALTERNATIVE_TABLES_NOT_PROVEN_ACTIVE_TOGETHER"
+  },
+  "summary": {
+    "quest_NPC_source_rows_joined_to_TW10_SPR_groups": 3,
+    "original_quest_DAT_NPC_source_cells_reused": 3,
+    "original_TW10_SPR_groups_reused": 3,
+    "previously_observed_original_TW10_full_animation_sequences": 168,
+    "previously_observed_original_TW10_full_frame_positions": 2136,
+    "previously_observed_original_TW10_distinct_bitmaps_by_group_sum_not_global_dedup": 696,
+    "prior_selected_three_sequences_per_group": 3,
+    "source_current_getitem_directives_already_known_in_QUEST14": 3,
+    "new_original_DAT_bytes_recovered_this_unit": 0,
+    "new_original_SPR_RD_pixel_bytes_decoded_this_unit": 0,
+    "original_proprietary_assets_in_public_git": false
+  },
+  "rows": [
+    {
+      "quest14_source_create": {
+        "ordinal": 0,
+        "original_block_sha256": "43568139a44bd2b21191fb4fb7ec20b50d1eef7d078d21546dd300e3b8c59d84",
+        "floor": 20807,
+        "xy": [
+          7,
+          8
+        ],
+        "original_direction_literal": 4,
+        "graphic_alias": 100384,
+        "script_path": "jaruga/event/event17_1"
+      },
+      "original_map_DAT_source": {
+        "floor": 20807,
+        "source_sha256": "5094abf78b0101d94cbbe47f475c9354a73da1f5d5fc2b1f15156a7c31516e94",
+        "source_dimensions": [
+          50,
+          50
+        ],
+        "source_cell_three_u16": [
+          4004,
+          0,
+          49152
+        ]
+      },
+      "original_script_source": {
+        "path": "jaruga/event/event17_1",
+        "source_sha256": "6ba6be824fec8346e07d6e79d9fbbb062591fd4b392395573cf6751502fdef3e",
+        "source_event_first_predicate_sha256": "d41e68c6c6b3bbd6e0ff4a2f79102e650dfccb234cdc18af3bef3785adc03d13",
+        "source_getitem_literal": [
+          "2462"
+        ],
+        "source_endsetflag_literal": [
+          "17"
+        ],
+        "derived_quest_reward_item_id": 2462
+      },
+      "original_TW10_retained_SPR": {
+        "graphic_alias": 100384,
+        "index": 350,
+        "segment_sha256": "38c47a6f86e858b3af0d608e751299d28ca5e30ad1a0cb884ed71f46f92a70b3",
+        "full_original_sequence_count": 56,
+        "full_original_frame_positions": 712,
+        "full_original_distinct_bitmaps": 232,
+        "fully_observable_sequences_as_previously_verified": 56,
+        "observed_source_directions": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "observed_source_actions": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          9,
+          10
+        ],
+        "prior_PET07_selected_frame_positions": 16,
+        "prior_PET07_selected_sequences": [
+          {
+            "action": 0,
+            "direction": 0,
+            "original_source_positions": 8,
+            "source_animation_SHA256": "3dd74dd8e3c50f79052c979f0826abb009d9105da9521927b71aa36187e9b263",
+            "original_duration_literal": 1000
+          },
+          {
+            "action": 2,
+            "direction": 0,
+            "original_source_positions": 6,
+            "source_animation_SHA256": "a2570a55c5361d1ec0f4d6344a396b8cea4029ecefb3f6381301596a926e3bb8",
+            "original_duration_literal": 1000
+          },
+          {
+            "action": 1,
+            "direction": 0,
+            "original_source_positions": 2,
+            "source_animation_SHA256": "8dd658eebf01297dc78eccafa3300ae031c9ab19802f63f01055afea930331ff",
+            "original_duration_literal": 100
+          }
+        ]
+      },
+      "preserved_mixed25_pet_template_same_numeric_graphic_candidates": {
+        "enemybase.txt": [
+          {
+            "physical_row_1based": 247,
+            "template_id": 331,
+            "graphic_alias": 100384,
+            "petflg_literal": 1,
+            "source_row_sha256": "37d7e5854e85f8a200ae37c31f48e5628ba660e577ab26f984aa66c58472462f"
+          },
+          {
+            "physical_row_1based": 347,
+            "template_id": 525,
+            "graphic_alias": 100384,
+            "petflg_literal": 0,
+            "source_row_sha256": "c6c00f997bc95aacde34de8e1b5b3d6a192072e5e86523ebf194fb7817f034b8"
+          }
+        ],
+        "enemybase2.txt": [
+          {
+            "physical_row_1based": 122,
+            "template_id": 331,
+            "graphic_alias": 100384,
+            "petflg_literal": 1,
+            "source_row_sha256": "4ce4b0eea5b8c1c727d94e13b31dcc8b37dbf03b93d989a8c2e6b6439f080cf1"
+          },
+          {
+            "physical_row_1based": 151,
+            "template_id": 525,
+            "graphic_alias": 100384,
+            "petflg_literal": 0,
+            "source_row_sha256": "c6c00f997bc95aacde34de8e1b5b3d6a192072e5e86523ebf194fb7817f034b8"
+          }
+        ]
+      }
+    },
+    {
+      "quest14_source_create": {
+        "ordinal": 1,
+        "original_block_sha256": "9a83258005a23c41abc17fad048e263547a59d42505add325c115fa269edfb0a",
+        "floor": 20807,
+        "xy": [
+          23,
+          6
+        ],
+        "original_direction_literal": 4,
+        "graphic_alias": 100385,
+        "script_path": "jaruga/event/event17_2"
+      },
+      "original_map_DAT_source": {
+        "floor": 20807,
+        "source_sha256": "5094abf78b0101d94cbbe47f475c9354a73da1f5d5fc2b1f15156a7c31516e94",
+        "source_dimensions": [
+          50,
+          50
+        ],
+        "source_cell_three_u16": [
+          4001,
+          0,
+          49152
+        ]
+      },
+      "original_script_source": {
+        "path": "jaruga/event/event17_2",
+        "source_sha256": "60bee32094031e4322262eac080f34d322cf2f0181e0e57f007480dd032d6794",
+        "source_event_first_predicate_sha256": "d41e68c6c6b3bbd6e0ff4a2f79102e650dfccb234cdc18af3bef3785adc03d13",
+        "source_getitem_literal": [
+          "2460"
+        ],
+        "source_endsetflag_literal": [
+          "17"
+        ],
+        "derived_quest_reward_item_id": 2460
+      },
+      "original_TW10_retained_SPR": {
+        "graphic_alias": 100385,
+        "index": 351,
+        "segment_sha256": "167e0502ed8151e0b1ea237a94327e7df913e8c9f0e0a33726c81ab17a7bedff",
+        "full_original_sequence_count": 56,
+        "full_original_frame_positions": 712,
+        "full_original_distinct_bitmaps": 232,
+        "fully_observable_sequences_as_previously_verified": 56,
+        "observed_source_directions": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "observed_source_actions": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          9,
+          10
+        ],
+        "prior_PET07_selected_frame_positions": 16,
+        "prior_PET07_selected_sequences": [
+          {
+            "action": 0,
+            "direction": 0,
+            "original_source_positions": 8,
+            "source_animation_SHA256": "813c8e39b739ae0cdf8145528126624b9ce1f26c3d50edc2d93183fb29cd7688",
+            "original_duration_literal": 1000
+          },
+          {
+            "action": 2,
+            "direction": 0,
+            "original_source_positions": 6,
+            "source_animation_SHA256": "53c11e15cf1ec6e092e4e868e21735e772904f6d6cb158f40b3ee02907238515",
+            "original_duration_literal": 1000
+          },
+          {
+            "action": 1,
+            "direction": 0,
+            "original_source_positions": 2,
+            "source_animation_SHA256": "08b28d555b548020908b8adcfb32dcbd68a2467d67a778a92e173ffe512d334e",
+            "original_duration_literal": 100
+          }
+        ]
+      },
+      "preserved_mixed25_pet_template_same_numeric_graphic_candidates": {
+        "enemybase.txt": [
+          {
+            "physical_row_1based": 248,
+            "template_id": 332,
+            "graphic_alias": 100385,
+            "petflg_literal": 1,
+            "source_row_sha256": "0ee92bddf20ae43d2cc46884bb6b45ed20f0af275a57f651ca8c8146aa3f6090"
+          },
+          {
+            "physical_row_1based": 348,
+            "template_id": 526,
+            "graphic_alias": 100385,
+            "petflg_literal": 0,
+            "source_row_sha256": "1653354ff939a8fe3ae550cb515205217f177540a0100c72cb0d14a6c23d403a"
+          },
+          {
+            "physical_row_1based": 490,
+            "template_id": 689,
+            "graphic_alias": 100385,
+            "petflg_literal": 0,
+            "source_row_sha256": "a5c768c1e256b40941485c24aa8def98567f5a749072f8ad33ae493d255ff549"
+          }
+        ],
+        "enemybase2.txt": [
+          {
+            "physical_row_1based": 123,
+            "template_id": 332,
+            "graphic_alias": 100385,
+            "petflg_literal": 1,
+            "source_row_sha256": "cd98ebca7bb80914777ff33cd3777d19d0df2cf7a687ada9616a6f4402361c23"
+          },
+          {
+            "physical_row_1based": 152,
+            "template_id": 526,
+            "graphic_alias": 100385,
+            "petflg_literal": 0,
+            "source_row_sha256": "1653354ff939a8fe3ae550cb515205217f177540a0100c72cb0d14a6c23d403a"
+          },
+          {
+            "physical_row_1based": 282,
+            "template_id": 689,
+            "graphic_alias": 100385,
+            "petflg_literal": 0,
+            "source_row_sha256": "a5c768c1e256b40941485c24aa8def98567f5a749072f8ad33ae493d255ff549"
+          }
+        ]
+      }
+    },
+    {
+      "quest14_source_create": {
+        "ordinal": 2,
+        "original_block_sha256": "32068527336fe9659aa88b9e04ed4fbb429966efaa009c74bddda54525c64ccf",
+        "floor": 20807,
+        "xy": [
+          41,
+          14
+        ],
+        "original_direction_literal": 4,
+        "graphic_alias": 100386,
+        "script_path": "jaruga/event/event17_3"
+      },
+      "original_map_DAT_source": {
+        "floor": 20807,
+        "source_sha256": "5094abf78b0101d94cbbe47f475c9354a73da1f5d5fc2b1f15156a7c31516e94",
+        "source_dimensions": [
+          50,
+          50
+        ],
+        "source_cell_three_u16": [
+          4008,
+          0,
+          49152
+        ]
+      },
+      "original_script_source": {
+        "path": "jaruga/event/event17_3",
+        "source_sha256": "5b9c6dc4d35b781b61e8c4466ff9aefca867d84bbe6611052a77aa699f3a4a13",
+        "source_event_first_predicate_sha256": "d41e68c6c6b3bbd6e0ff4a2f79102e650dfccb234cdc18af3bef3785adc03d13",
+        "source_getitem_literal": [
+          "2461"
+        ],
+        "source_endsetflag_literal": [
+          "17"
+        ],
+        "derived_quest_reward_item_id": 2461
+      },
+      "original_TW10_retained_SPR": {
+        "graphic_alias": 100386,
+        "index": 352,
+        "segment_sha256": "be2f65666905ab33531feb55fde56e716c889f839f8eb8b5580c11a2159e9aa0",
+        "full_original_sequence_count": 56,
+        "full_original_frame_positions": 712,
+        "full_original_distinct_bitmaps": 232,
+        "fully_observable_sequences_as_previously_verified": 56,
+        "observed_source_directions": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "observed_source_actions": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          9,
+          10
+        ],
+        "prior_PET07_selected_frame_positions": 16,
+        "prior_PET07_selected_sequences": [
+          {
+            "action": 0,
+            "direction": 0,
+            "original_source_positions": 8,
+            "source_animation_SHA256": "db7ef6eb809457c57bec909b40628ca31a1f4862853b86efcf358dba7732d524",
+            "original_duration_literal": 1000
+          },
+          {
+            "action": 2,
+            "direction": 0,
+            "original_source_positions": 6,
+            "source_animation_SHA256": "7aa83a15e8f657065745454598a292d490b37c9057dd454d8fcacd8ff4116009",
+            "original_duration_literal": 1000
+          },
+          {
+            "action": 1,
+            "direction": 0,
+            "original_source_positions": 2,
+            "source_animation_SHA256": "d29f45316b3f7a5a5aab53ef496ffad7ed8bdeeaa0f46c2c40b529730c8417f3",
+            "original_duration_literal": 100
+          }
+        ]
+      },
+      "preserved_mixed25_pet_template_same_numeric_graphic_candidates": {
+        "enemybase.txt": [
+          {
+            "physical_row_1based": 249,
+            "template_id": 333,
+            "graphic_alias": 100386,
+            "petflg_literal": 1,
+            "source_row_sha256": "16ef0a7e7cd3c78b48d7d05f5ce61c6891fb5531b16e0eebf48c790ad14bf6e0"
+          },
+          {
+            "physical_row_1based": 349,
+            "template_id": 527,
+            "graphic_alias": 100386,
+            "petflg_literal": 0,
+            "source_row_sha256": "ec48c2065f1d93f58246305cc0c1e0308e7e3c04155810b2f808440041c90616"
+          }
+        ],
+        "enemybase2.txt": [
+          {
+            "physical_row_1based": 124,
+            "template_id": 333,
+            "graphic_alias": 100386,
+            "petflg_literal": 1,
+            "source_row_sha256": "dc0d2fbd4ac58f29fb36d7e24d3c77dc221406e96a8bf13614cb849656e37300"
+          },
+          {
+            "physical_row_1based": 153,
+            "template_id": 527,
+            "graphic_alias": 100386,
+            "petflg_literal": 0,
+            "source_row_sha256": "ec48c2065f1d93f58246305cc0c1e0308e7e3c04155810b2f808440041c90616"
+          }
+        ]
+      }
+    }
+  ],
+  "excluded_same_source_guardian": {
+    "quest14_create_ordinal": 3,
+    "graphic_alias": 16208,
+    "floor": 20801,
+    "xy": [
+      13,
+      63
+    ],
+    "qualification": "NOT_A_MATCH_FOR_THE_THREE_100384_100386_TW10_PET_SPR_GROUPS"
+  },
+  "exact_stop_condition": "Three preexisting original animation groups linked to three original late-source quest NPC create entries; no new original pixels or native gameplay; rotate on next source-qualified new scene or independent same-build input.",
+  "no_native_or_identity_claims": {
+    "historical_JSS1999_CN182_or_TW10_quest_identity_authenticated": false,
+    "matching_graphic_alias_proves_same_official_deployment": false,
+    "mixed25_pet_template_rows_prove_quest_NPC_species_or_reward": false,
+    "PET15_source_frames_redecoded_this_unit": false,
+    "original_game_or_server_executed": false,
+    "original_NPC_3D_or_2D_sprite_rendered_in_QUEST14_map_this_unit": false,
+    "original_task_reward_or_battle_executed": false,
+    "source_original_opaque_DAT_third_plane_semantics_known": false
+  },
+  "stage_A": "7 PARTIAL + 2 OPEN",
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}
