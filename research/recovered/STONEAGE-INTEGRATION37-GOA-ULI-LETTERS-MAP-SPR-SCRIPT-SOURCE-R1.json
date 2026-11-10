@@ -1,0 +1,589 @@
+{
+  "schema": "stoneage.integration37.original_goa_uli_letter_npc_map_spr_script_item_crosswalk.r1",
+  "date": "2026-11-10",
+  "source_scope": "DERIVED_REJOIN_ONLY_OF_PREVIOUSLY_VERIFIED_MIXED25_PRESERVED_SOURCE_NOT_OFFICIAL_ORIGINAL_DEPLOYMENT",
+  "baseline_remote_main_head": "454a02a0d0c986ec480760589cf353b7a7920a4b",
+  "preserved_full_CURRENT_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "preserved_full_CURRENT_bytes": 2709173,
+  "upstream": {
+    "quest13": {
+      "path": "research/recovered/STONEAGE-QUEST13-GOA-ULI-LETTERS-ORIGINAL-SOURCE-R1.json",
+      "git_blob": "660a9fb36e0ee5bb83d57e191c797c689b77314b"
+    },
+    "char05": {
+      "path": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-05-30-ORIGINAL-MOTION-SOURCE-BRIDGE-R1.json",
+      "git_blob": "9afacb49d11dd7cc546fabe594170053d49b1f9b"
+    }
+  },
+  "same_preserved_parent_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "same_preserved_original_NPC_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+  "count": {
+    "source_npc_create_placements": 10,
+    "source_floors": 6,
+    "source_scripts": 10,
+    "already_indexed_original_event_blocks": 16,
+    "reused_original_full_SPR_groups": 2,
+    "source_original_item_ids": 5,
+    "new_original_script_bytes_or_images_acquired_this_work": 0,
+    "new_original_runtime_observations": 0
+  },
+  "original_npc_map_motion_script_crosswalk": [
+    {
+      "original_create_path": "jaruga/event/event07n.create",
+      "create_ordinal": 0,
+      "source_create_block_sha256": "c8f39826167b46ed9b9fcf8043cb641f3f42ddb0a1ad5090f5391fa5d97b4705",
+      "source_floor_id": 20401,
+      "source_xy": [
+        14,
+        10
+      ],
+      "source_map_DAT_sha256": "05d6ea5cfc82cff744aca78e733b50bd17633146443d2ac85749c5d742d963b7",
+      "source_map_original_three_u16": [
+        4004,
+        0,
+        49152
+      ],
+      "source_graphic_alias": 100252,
+      "qualified_same_parent_SPR_index": 242,
+      "qualified_same_parent_SPR_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "qualified_earlier_action0_eight_directions": true,
+      "source_script_path": "jaruga/event/event07_1",
+      "source_script_sha256": "240b89e05ff0c40f36cae0200525560924b1693e1a08dc9bcc0aa1811df3c121",
+      "source_event_block_count": 4,
+      "original_native_render_or_interaction_verified": false
+    },
+    {
+      "original_create_path": "jaruga/event/event07n.create",
+      "create_ordinal": 1,
+      "source_create_block_sha256": "d1ae0e4ec01c22a72b3ea601b1278038264e77fd7e7b92cb5f33912fd48a5fbc",
+      "source_floor_id": 20404,
+      "source_xy": [
+        44,
+        13
+      ],
+      "source_map_DAT_sha256": "7430bddf2eebecec9194001a1c31c4e56ae2d3fe94cee53016c7bd9297fd1b0f",
+      "source_map_original_three_u16": [
+        4006,
+        0,
+        49152
+      ],
+      "source_graphic_alias": 100252,
+      "qualified_same_parent_SPR_index": 242,
+      "qualified_same_parent_SPR_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "qualified_earlier_action0_eight_directions": true,
+      "source_script_path": "jaruga/event/event07_3",
+      "source_script_sha256": "02f5c1889c3077a6ccf44144ce089a5b530278f8908c6cc2216c0dba93828fcf",
+      "source_event_block_count": 2,
+      "original_native_render_or_interaction_verified": false
+    },
+    {
+      "original_create_path": "jaruga/event/event07n.create",
+      "create_ordinal": 2,
+      "source_create_block_sha256": "36810158566329dda265cf8fd9f0287afd33283554e5467d5032a0091edc3df4",
+      "source_floor_id": 20406,
+      "source_xy": [
+        36,
+        34
+      ],
+      "source_map_DAT_sha256": "1de6589845cd781584207798f8458f89dde92df29bfebba0122d5274dd0274f6",
+      "source_map_original_three_u16": [
+        405,
+        0,
+        49152
+      ],
+      "source_graphic_alias": 100250,
+      "qualified_same_parent_SPR_index": 240,
+      "qualified_same_parent_SPR_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "qualified_earlier_action0_eight_directions": true,
+      "source_script_path": "jaruga/event/event07_2",
+      "source_script_sha256": "4725b09a3b84c17861da734593115efe95c57c0339627d430efa178c8c0a1c26",
+      "source_event_block_count": 3,
+      "original_native_render_or_interaction_verified": false
+    },
+    {
+      "original_create_path": "jaruga/event/event07n.create",
+      "create_ordinal": 3,
+      "source_create_block_sha256": "4cf0f5ca2a5a2446f797e0508358d806e98bece16b04da06aaba47b7b5dd2ed6",
+      "source_floor_id": 20401,
+      "source_xy": [
+        30,
+        26
+      ],
+      "source_map_DAT_sha256": "05d6ea5cfc82cff744aca78e733b50bd17633146443d2ac85749c5d742d963b7",
+      "source_map_original_three_u16": [
+        4001,
+        0,
+        49152
+      ],
+      "source_graphic_alias": 100250,
+      "qualified_same_parent_SPR_index": 240,
+      "qualified_same_parent_SPR_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "qualified_earlier_action0_eight_directions": true,
+      "source_script_path": "jaruga/event/event07_4",
+      "source_script_sha256": "f8c3d049267d3f4216ba6cad1ab70eb291751437d76024a9e5e25c15adcfb458",
+      "source_event_block_count": 1,
+      "original_native_render_or_interaction_verified": false
+    },
+    {
+      "original_create_path": "jaruga/event/event07n.create",
+      "create_ordinal": 4,
+      "source_create_block_sha256": "27b3cfd4329f5e2a308cd3219b04beec0343bd3d5215a87e3829085e4cdf455f",
+      "source_floor_id": 20402,
+      "source_xy": [
+        25,
+        18
+      ],
+      "source_map_DAT_sha256": "d5056db9fbecd937d04df0bc993f81006eba9f690aa955dc4e652b6d274d40eb",
+      "source_map_original_three_u16": [
+        4003,
+        0,
+        49152
+      ],
+      "source_graphic_alias": 100250,
+      "qualified_same_parent_SPR_index": 240,
+      "qualified_same_parent_SPR_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "qualified_earlier_action0_eight_directions": true,
+      "source_script_path": "jaruga/event/event07_5",
+      "source_script_sha256": "71c7ec5aa519fae65229c10ae425a9e1e3052fc2bfe72bb624517b0e42cfb0e1",
+      "source_event_block_count": 1,
+      "original_native_render_or_interaction_verified": false
+    },
+    {
+      "original_create_path": "jaruga/event/event07n.create",
+      "create_ordinal": 5,
+      "source_create_block_sha256": "a0aa472a8b14be101b9e2c53e4b17c533e5863d0f506a648b578675013067073",
+      "source_floor_id": 20403,
+      "source_xy": [
+        19,
+        19
+      ],
+      "source_map_DAT_sha256": "0c32e6564424e81d06bd32dce8ef0c1d7c01db77606713dd7652879081c2d4a3",
+      "source_map_original_three_u16": [
+        4006,
+        0,
+        49152
+      ],
+      "source_graphic_alias": 100252,
+      "qualified_same_parent_SPR_index": 242,
+      "qualified_same_parent_SPR_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "qualified_earlier_action0_eight_directions": true,
+      "source_script_path": "jaruga/event/event07_6",
+      "source_script_sha256": "b0aa453d7a1a49b6946b0153510781735c88b4110321ca28971105dbd09d93d3",
+      "source_event_block_count": 1,
+      "original_native_render_or_interaction_verified": false
+    },
+    {
+      "original_create_path": "jaruga/event/event07n.create",
+      "create_ordinal": 6,
+      "source_create_block_sha256": "df551e710cc0b3f6918294f4f2fe28dd59e5c099f3c0c4fb7bc745b555eb5aef",
+      "source_floor_id": 20404,
+      "source_xy": [
+        24,
+        36
+      ],
+      "source_map_DAT_sha256": "7430bddf2eebecec9194001a1c31c4e56ae2d3fe94cee53016c7bd9297fd1b0f",
+      "source_map_original_three_u16": [
+        4005,
+        0,
+        49152
+      ],
+      "source_graphic_alias": 100250,
+      "qualified_same_parent_SPR_index": 240,
+      "qualified_same_parent_SPR_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "qualified_earlier_action0_eight_directions": true,
+      "source_script_path": "jaruga/event/event07_7",
+      "source_script_sha256": "26a009dc38044c8489bdc017a92d3104e6c9dcba49dec54fea2d31070b7be395",
+      "source_event_block_count": 1,
+      "original_native_render_or_interaction_verified": false
+    },
+    {
+      "original_create_path": "jaruga/event/event07n.create",
+      "create_ordinal": 7,
+      "source_create_block_sha256": "1c6756734e5ad8d30e21550095e93081f062a8533bd5d5342da3b6d183a97320",
+      "source_floor_id": 20405,
+      "source_xy": [
+        40,
+        32
+      ],
+      "source_map_DAT_sha256": "eaddb3113e86533b8a72b529110bebc872484565183e59131e495f4b930236f6",
+      "source_map_original_three_u16": [
+        4003,
+        0,
+        49152
+      ],
+      "source_graphic_alias": 100252,
+      "qualified_same_parent_SPR_index": 242,
+      "qualified_same_parent_SPR_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "qualified_earlier_action0_eight_directions": true,
+      "source_script_path": "jaruga/event/event07_9",
+      "source_script_sha256": "62931dbbaa393095c4d6693df4704d1367bf27849ff3617ed785edd16f27b274",
+      "source_event_block_count": 1,
+      "original_native_render_or_interaction_verified": false
+    },
+    {
+      "original_create_path": "jaruga/event/event07n.create",
+      "create_ordinal": 8,
+      "source_create_block_sha256": "8f1ac437bdf069c6bfd454774b1814b527c76f49e5dce6c5d9e99b702e2938a5",
+      "source_floor_id": 20406,
+      "source_xy": [
+        20,
+        25
+      ],
+      "source_map_DAT_sha256": "1de6589845cd781584207798f8458f89dde92df29bfebba0122d5274dd0274f6",
+      "source_map_original_three_u16": [
+        2020,
+        0,
+        49152
+      ],
+      "source_graphic_alias": 100252,
+      "qualified_same_parent_SPR_index": 242,
+      "qualified_same_parent_SPR_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "qualified_earlier_action0_eight_directions": true,
+      "source_script_path": "jaruga/event/event07_8",
+      "source_script_sha256": "a190d6402f39dba403e2d5844d84eb520e8907a2c43232e426d600b632f92f92",
+      "source_event_block_count": 1,
+      "original_native_render_or_interaction_verified": false
+    },
+    {
+      "original_create_path": "jaruga/event/event07n.create",
+      "create_ordinal": 9,
+      "source_create_block_sha256": "4c9180e41a7fb06c94ef575e7f536da7f91d1efc3cefc8bb6ed90cdf65f19768",
+      "source_floor_id": 20406,
+      "source_xy": [
+        17,
+        38
+      ],
+      "source_map_DAT_sha256": "1de6589845cd781584207798f8458f89dde92df29bfebba0122d5274dd0274f6",
+      "source_map_original_three_u16": [
+        2018,
+        0,
+        49152
+      ],
+      "source_graphic_alias": 100250,
+      "qualified_same_parent_SPR_index": 240,
+      "qualified_same_parent_SPR_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "qualified_earlier_action0_eight_directions": true,
+      "source_script_path": "jaruga/event/event07_10",
+      "source_script_sha256": "0a4cd66b630376a82e76742eea78e7755ed16fefe97171f628da9fe398058eda",
+      "source_event_block_count": 1,
+      "original_native_render_or_interaction_verified": false
+    }
+  ],
+  "source_maps": [
+    {
+      "floor": 20401,
+      "source_DAT_sha256": "05d6ea5cfc82cff744aca78e733b50bd17633146443d2ac85749c5d742d963b7",
+      "source_DAT_bytes": 15008,
+      "source_geometry": [
+        50,
+        50
+      ],
+      "prior_thumbnail_sha256": "8887c5cc41755e50eb0172d769e301e6e32ba7fa4766f70de01ceb95843ab080",
+      "source_CREATE_count": 2
+    },
+    {
+      "floor": 20402,
+      "source_DAT_sha256": "d5056db9fbecd937d04df0bc993f81006eba9f690aa955dc4e652b6d274d40eb",
+      "source_DAT_bytes": 15008,
+      "source_geometry": [
+        50,
+        50
+      ],
+      "prior_thumbnail_sha256": "d792ac9d85d71c8ebf902de524346b4dc26edcdde03897db319eefe25e2c55b5",
+      "source_CREATE_count": 1
+    },
+    {
+      "floor": 20403,
+      "source_DAT_sha256": "0c32e6564424e81d06bd32dce8ef0c1d7c01db77606713dd7652879081c2d4a3",
+      "source_DAT_bytes": 15008,
+      "source_geometry": [
+        50,
+        50
+      ],
+      "prior_thumbnail_sha256": "d4e46285764e46694a04948f96d87fbecded6be8d6cb5143d613cb6f257f7eb9",
+      "source_CREATE_count": 1
+    },
+    {
+      "floor": 20404,
+      "source_DAT_sha256": "7430bddf2eebecec9194001a1c31c4e56ae2d3fe94cee53016c7bd9297fd1b0f",
+      "source_DAT_bytes": 15008,
+      "source_geometry": [
+        50,
+        50
+      ],
+      "prior_thumbnail_sha256": "43c0a205abd2dd8e404a3a154c38736f836c497d7dc788b1007aede22bb45886",
+      "source_CREATE_count": 2
+    },
+    {
+      "floor": 20405,
+      "source_DAT_sha256": "eaddb3113e86533b8a72b529110bebc872484565183e59131e495f4b930236f6",
+      "source_DAT_bytes": 15008,
+      "source_geometry": [
+        50,
+        50
+      ],
+      "prior_thumbnail_sha256": "78826b293d530e8e8cfe3df1930bed54b555cadf8a6968a87d391678265bb967",
+      "source_CREATE_count": 1
+    },
+    {
+      "floor": 20406,
+      "source_DAT_sha256": "1de6589845cd781584207798f8458f89dde92df29bfebba0122d5274dd0274f6",
+      "source_DAT_bytes": 21008,
+      "source_geometry": [
+        50,
+        70
+      ],
+      "prior_thumbnail_sha256": "e6388d15841921eb062debd2d6575a4a28297496515d9bcde04ae01ea0a5f4f3",
+      "source_CREATE_count": 3
+    }
+  ],
+  "source_scripts": [
+    {
+      "script_path": "jaruga/event/event07_1",
+      "source_script_sha256": "240b89e05ff0c40f36cae0200525560924b1693e1a08dc9bcc0aa1811df3c121",
+      "source_event_blocks": [
+        {
+          "ordinal": 0,
+          "event_no": 8,
+          "type": "ACCEPT",
+          "source_block_sha256": "b52d54695c2ffb18d19e6f2d2c4248d08bd0dae3d8c8010228b2fe58d6c13fb8",
+          "source_condition_not_interpreted": true,
+          "source_command_names": [
+            "GetItem",
+            "DelItem",
+            "EndSetFlg"
+          ]
+        },
+        {
+          "ordinal": 1,
+          "event_no": 7,
+          "type": "REQUEST",
+          "source_block_sha256": "bed3ea75c6bad3068e57ce55baa46e03e6865fd84a8424b17ba3e803b2e20045",
+          "source_condition_not_interpreted": true,
+          "source_command_names": [
+            "GetItem"
+          ]
+        },
+        {
+          "ordinal": 2,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "source_block_sha256": "9ad1df864fae47b3bfd82f16f5f85dd6620046faac6cbe1de6a9616c86508914",
+          "source_condition_not_interpreted": true,
+          "source_command_names": []
+        },
+        {
+          "ordinal": 3,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "source_block_sha256": "079b44ad116b20bbd58434d58de00089b1e3b2fe7a404397a943cb5d9cb33d64",
+          "source_condition_not_interpreted": true,
+          "source_command_names": []
+        }
+      ]
+    },
+    {
+      "script_path": "jaruga/event/event07_2",
+      "source_script_sha256": "4725b09a3b84c17861da734593115efe95c57c0339627d430efa178c8c0a1c26",
+      "source_event_blocks": [
+        {
+          "ordinal": 0,
+          "event_no": 7,
+          "type": "ACCEPT",
+          "source_block_sha256": "9989fa493170d96bc3c3f322d95768a9ed85420a8aff31ff49090d39374634ef",
+          "source_condition_not_interpreted": true,
+          "source_command_names": [
+            "DelItem",
+            "EndSetFlg"
+          ]
+        },
+        {
+          "ordinal": 1,
+          "event_no": 8,
+          "type": "REQUEST",
+          "source_block_sha256": "b693953763b1d50e2a0526e2afed845dd8cea950d914c5112fdf9d05990af260",
+          "source_condition_not_interpreted": true,
+          "source_command_names": [
+            "GetItem"
+          ]
+        },
+        {
+          "ordinal": 2,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "source_block_sha256": "a9dba10e98bad43332fba5d4a7f7c7dd0f4f0666c55cbb7394c915eae18acd61",
+          "source_condition_not_interpreted": true,
+          "source_command_names": []
+        }
+      ]
+    },
+    {
+      "script_path": "jaruga/event/event07_3",
+      "source_script_sha256": "02f5c1889c3077a6ccf44144ce089a5b530278f8908c6cc2216c0dba93828fcf",
+      "source_event_blocks": [
+        {
+          "ordinal": 0,
+          "event_no": 7,
+          "type": "ACCEPT",
+          "source_block_sha256": "cc13ee5bb208bab85df8f7317bf1da64a4a8dae6516bba855230103bdd44f9d7",
+          "source_condition_not_interpreted": true,
+          "source_command_names": [
+            "GetItem"
+          ]
+        },
+        {
+          "ordinal": 1,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "source_block_sha256": "ba331f7cb60402d18238ad169e96f774a5971ccf03754c2a98df5d520e4c63e2",
+          "source_condition_not_interpreted": true,
+          "source_command_names": []
+        }
+      ]
+    },
+    {
+      "script_path": "jaruga/event/event07_4",
+      "source_script_sha256": "f8c3d049267d3f4216ba6cad1ab70eb291751437d76024a9e5e25c15adcfb458",
+      "source_event_blocks": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "source_block_sha256": "cd20a0898b53f02d4d47c3fa5a1c21d601b5995a5ccc487f0e687157b2e6e681",
+          "source_condition_not_interpreted": true,
+          "source_command_names": []
+        }
+      ]
+    },
+    {
+      "script_path": "jaruga/event/event07_5",
+      "source_script_sha256": "71c7ec5aa519fae65229c10ae425a9e1e3052fc2bfe72bb624517b0e42cfb0e1",
+      "source_event_blocks": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "source_block_sha256": "db32ce1a4e3f7f2056f048b5b16dea20a6df436bc4401b56d523f8b4a686e231",
+          "source_condition_not_interpreted": true,
+          "source_command_names": []
+        }
+      ]
+    },
+    {
+      "script_path": "jaruga/event/event07_6",
+      "source_script_sha256": "b0aa453d7a1a49b6946b0153510781735c88b4110321ca28971105dbd09d93d3",
+      "source_event_blocks": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "source_block_sha256": "11831fba4c942ed8f205bab59c75ac119db1a51a4671e945235efca24e596f58",
+          "source_condition_not_interpreted": true,
+          "source_command_names": []
+        }
+      ]
+    },
+    {
+      "script_path": "jaruga/event/event07_7",
+      "source_script_sha256": "26a009dc38044c8489bdc017a92d3104e6c9dcba49dec54fea2d31070b7be395",
+      "source_event_blocks": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "source_block_sha256": "34eb5ffceba29333d88699776359af1f07e5949cb62015574dc3f86cdb0c32b5",
+          "source_condition_not_interpreted": true,
+          "source_command_names": []
+        }
+      ]
+    },
+    {
+      "script_path": "jaruga/event/event07_8",
+      "source_script_sha256": "a190d6402f39dba403e2d5844d84eb520e8907a2c43232e426d600b632f92f92",
+      "source_event_blocks": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "source_block_sha256": "857d9251f3979097fb82197f0d76f4a3a49434c1ea79b9e3c7b96497b0b3ef02",
+          "source_condition_not_interpreted": true,
+          "source_command_names": []
+        }
+      ]
+    },
+    {
+      "script_path": "jaruga/event/event07_9",
+      "source_script_sha256": "62931dbbaa393095c4d6693df4704d1367bf27849ff3617ed785edd16f27b274",
+      "source_event_blocks": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "source_block_sha256": "46d7647db78630b4b4562e4bed0c24dabf4fc6b6830a449397ab8fb0d4f62c89",
+          "source_condition_not_interpreted": true,
+          "source_command_names": []
+        }
+      ]
+    },
+    {
+      "script_path": "jaruga/event/event07_10",
+      "source_script_sha256": "0a4cd66b630376a82e76742eea78e7755ed16fefe97171f628da9fe398058eda",
+      "source_event_blocks": [
+        {
+          "ordinal": 0,
+          "event_no": 7,
+          "type": "MESSAGE",
+          "source_block_sha256": "fc767553d442fd21d943d1737642a235764494edd4f7b99867cccf6008f8eb88",
+          "source_condition_not_interpreted": true,
+          "source_command_names": []
+        }
+      ]
+    }
+  ],
+  "source_items": [
+    {
+      "item_id": 1206,
+      "source_original_itemset_line_sha256": "3a9adcb491bc2b801dd005bee688f9bbe46cafcf3df14ff317bff0168912d595",
+      "original_image_alias": 22068,
+      "cross_carrier_TW1_candidate_only": true
+    },
+    {
+      "item_id": 2414,
+      "source_original_itemset_line_sha256": "4618977dbec344a77f7a307dc996d2f1774bef4967b0c345910d5f0fd498eb96",
+      "original_image_alias": 24130,
+      "cross_carrier_TW1_candidate_only": true
+    },
+    {
+      "item_id": 2424,
+      "source_original_itemset_line_sha256": "ab095d6e4f3835c3e91a7e5988b01f90aaa31bd76c56dfbc7e297da54830d1f9",
+      "original_image_alias": 24173,
+      "cross_carrier_TW1_candidate_only": true
+    },
+    {
+      "item_id": 2425,
+      "source_original_itemset_line_sha256": "614fbcc5c9013232acc91e0dc5bd355be281021a5b15d5adc41c19c7f96c3461",
+      "original_image_alias": 24222,
+      "cross_carrier_TW1_candidate_only": true
+    },
+    {
+      "item_id": 2426,
+      "source_original_itemset_line_sha256": "9d3c27556101f20777f3f91c33a0a71d64c470855f91a8d9d2206aa4ac9a41e1",
+      "original_image_alias": 24222,
+      "cross_carrier_TW1_candidate_only": true
+    }
+  ],
+  "boundaries": {
+    "historic_quest_origin_resolved": false,
+    "original_npc_person_identity_resolved": false,
+    "native_spr_selection_or_frame_timing_observed": false,
+    "actual_npc_dialogue_execution_observed": false,
+    "original_game_script_branch_execution_observed": false,
+    "original_world_walkthrough_observed": false,
+    "same_official_client_server_deployment_verified": false,
+    "official_mainland_182_qualification_verified": false,
+    "original_asset_or_script_body_published": false,
+    "stage_B_started": false,
+    "overall_percent": null
+  },
+  "next": "Another source-qualified, previously unintegrated original gameplay content family; reopen this crosswalk only on matched native rendering/logic or genuinely new same-version source"
+}
