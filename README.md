@@ -2378,3 +2378,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-10 — INTEGRATION42｜环岛报名点原图补证及地图 3000 全图
 
 [来源与下一项](docs/continuity/STONEAGE-INTEGRATION42-JARUGA-REGISTRATION-ORIGINAL-TILES-20261110.md)。从完整混合 2.5 原 ADRN/REAL 恢复 24307、24309、24310，补齐报名窗口 4 处原图引用至 126/126。同包图块重放地图 3000 全图，覆盖 10,851/10,853 处高值引用，保留 22413 两处无匹配原格。最高 NEXT 为地图 4000 与环岛 A6、A 终点的同源整合。
+
+
+## 2026-11-10 — INTEGRATION43｜A6／A终点与地图4000原资料有限整合
+
+[来源限定与下一步](docs/continuity/STONEAGE-INTEGRATION43-JARUGA-A6-FINISH-SOURCE-BOUNDARY-20261110.md)：从本轮真实重新核 SHA/CRC 的 QUEST25、INTEGRATION41、INTEGRATION42 三份私人包与 Q25/I41/I42 Git 派生证据，确定 mixed25 原 CREATE 的 A6 地图4000 (63,66)、终点 (54,47)，分别联接原 oev_6 的2557→2558与 oev_ed1 的2564要求、原奖品数字列表。12 原 TYPE 段可逐 SHA 追溯；不解释重叠条件的分支执行，台湾1.0图仅跨载体候选。地图4000 全图8603高值引用中4缺号、两处窗口131/139引用是旧来源预检；本轮**未取得4000原DAT字节，未重新解码RD或绘制地图像素**，故仅完成两条来源限定跨模块关系，不虚报原版客户端/服务器运行。原商业资料不公开，完整 CURRENT 2,709,173B 原blob c89e0e33537990aa2132b47c40fef49a985a935c 保留；Stage A 7PARTIAL+2OPEN，Stage B/wiki GATED，R79暂停，总进度未知。NEXT需有同 SHA 原4000.dat才重开像素，否则轮换其它有源原内容。
