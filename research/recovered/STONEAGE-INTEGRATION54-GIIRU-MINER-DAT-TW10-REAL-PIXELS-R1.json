@@ -1,0 +1,496 @@
+{
+  "schema": "stoneage.integration54.giiru_original_mining_miner_tw10_pixels.r1",
+  "date": "2026-11-11",
+  "fresh_remote_main": {
+    "head": "9a14e766380e17703eb4556f7c2e28e4934ae908",
+    "tree": "9d30d0727a8bf1bafd292f5d5d27083b4e34dea6",
+    "open_pr": 0
+  },
+  "source_git_blobs": {
+    "q12": {
+      "path": "research/recovered/STONEAGE-QUEST12-MINING-COMPETITION-ORIGINAL-SOURCE-R1.json",
+      "sha": "95631cbaeea40260bfc14f7c37039950b495e000"
+    },
+    "p07": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-07-TW10-BATCH-PUBLIC-R1.json",
+      "sha": "0b5f81b41a642025ab53a12884638fdee887470e"
+    },
+    "p15": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-15-TW10-ALL-SELECTED-MOTION-SOURCE-R1.json",
+      "sha": "e1cac6980353d09353de43fec0948bfcd84d49e6"
+    },
+    "p10": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-10-ORIGINAL-MIXED25-SERVER-TABLES-R1.json",
+      "sha": "25a37aeb134fb180e322e7dc335029b7374452d8"
+    }
+  },
+  "historical_current": {
+    "blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "bytes": 2709173,
+    "full_blob_read": true,
+    "modified": false
+  },
+  "source_scope": {
+    "npc_DAT": "LATER_MIXED25_COMMUNITY_SOURCE",
+    "art": "INDEPENDENT_TAIWAN_1_0_RETAIL_PET07_SOURCE_ART",
+    "official_same_deployment": false
+  },
+  "actual_private_replay": {
+    "quest12_zip": {
+      "bytes": 113328,
+      "sha256": "d93aea416ea40a336e9c05a7cd851dbfc557916322f00152d91224f717c54cd9",
+      "member_crc_pass": 32
+    },
+    "pet07_html": {
+      "bytes": 15123277,
+      "sha256": "58e8ee4ff5165ed2f61663d67ae1cd0a8183622fa3375c480232784bfce9dc76",
+      "reopened_original_PNG_bitmap_ids": [
+        82737,
+        82738,
+        82739,
+        82740,
+        82741,
+        82742,
+        82743,
+        82744
+      ],
+      "all_PNG_byte_sha256_dimensions_checked": true
+    },
+    "research_atlas": {
+      "modern_side_by_side_only": true,
+      "sha256": "1516e83cda96ca3a3622fad7f96f89b36f17f30a4d3de50325216459c2973a2a"
+    },
+    "private_package": {
+      "name": "StoneAge-INTEGRATION54-Giiru-miner-map-TW1-sprite-private.zip",
+      "bytes": 593529,
+      "sha256": "3d296aea5359ecfa13f1e17857f42923208272374c070bd475c0c1bca07805fe",
+      "members_crc_pass": 10,
+      "Library_uploaded_then_retrieved_full_SHA_and_CRC_match": true
+    }
+  },
+  "original_miner_create": {
+    "path": "300/sb_bac.create",
+    "ordinal": 0,
+    "block_sha256": "a9131ce63efe1ddd3d71010f27588dbba0c471ad3c623aae42d6925706a04fe7",
+    "start_byte": 40,
+    "end_byte": 190,
+    "floor": 31805,
+    "graphic_alias": 100401,
+    "borncorner": null,
+    "borncenter": [
+      26,
+      23,
+      1,
+      1
+    ],
+    "direction": 6,
+    "template_token": "sb_bac",
+    "template_bindings": [
+      [
+        "300/sb_bac.template",
+        0
+      ]
+    ],
+    "parameter_references": [
+      [
+        "300/sb_bac.arg",
+        "EXACT_SAME_NPC_SUBTREE_PATH",
+        "93b2893ee9cf5b0229072a9283f8fbb703004cbc2ec3829fb35af71ebdf1bc30"
+      ]
+    ]
+  },
+  "original_miner_and_gate_arg_literals": {
+    "300/sb_bac.arg": [
+      {
+        "line": 1,
+        "key": "entype",
+        "raw_value": "2"
+      },
+      {
+        "line": 6,
+        "key": "item",
+        "raw_value": "2535"
+      },
+      {
+        "line": 7,
+        "key": "steal",
+        "raw_value": "1"
+      },
+      {
+        "line": 9,
+        "key": "enemyno",
+        "raw_value": "1004"
+      },
+      {
+        "line": 11,
+        "key": "time",
+        "raw_value": "300"
+      }
+    ],
+    "genout/wpm_31805_22_4": [
+      {
+        "line": 1,
+        "key": "WARP",
+        "raw_value": "31806,34,6"
+      },
+      {
+        "line": 2,
+        "key": "FREE",
+        "raw_value": "ITEM=2527"
+      },
+      {
+        "line": 3,
+        "key": "DelItem",
+        "raw_value": "2527*1"
+      },
+      {
+        "line": 4,
+        "key": "MONEY",
+        "raw_value": "-1"
+      }
+    ]
+  },
+  "original_two_DATs_five_source_cells_replayed": [
+    {
+      "floor": 31805,
+      "original_DAT_sha256": "1766c7d378fdde4bcc2eb45a827cd33e2b2f967b32eae752cbe76372c49c0261",
+      "original_DAT_bytes": 15008,
+      "geometry": [
+        50,
+        50
+      ],
+      "original_thumbnail_sha256": "fe32e10503fafddb83c476b6645e16ed059e72f8346bbd6eae82ead0a2a89b42",
+      "source_points": [
+        {
+          "label": "tenim",
+          "xy": [
+            19,
+            21
+          ],
+          "source_three_u16_values": [
+            4200,
+            0,
+            49152
+          ]
+        },
+        {
+          "label": "babaro",
+          "xy": [
+            33,
+            23
+          ],
+          "source_three_u16_values": [
+            4301,
+            0,
+            49152
+          ]
+        },
+        {
+          "label": "miner_center",
+          "xy": [
+            26,
+            23
+          ],
+          "source_three_u16_values": [
+            5068,
+            0,
+            49157
+          ]
+        },
+        {
+          "label": "permit_gate",
+          "xy": [
+            22,
+            4
+          ],
+          "source_three_u16_values": [
+            4302,
+            0,
+            49152
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 31806,
+      "original_DAT_sha256": "a4c0899bd89f66b3fe918af1702f72fc9c997789706db936811096e74819571c",
+      "original_DAT_bytes": 15008,
+      "geometry": [
+        50,
+        50
+      ],
+      "original_thumbnail_sha256": "f265df005dbb96a508128155fe2476f6f84d7b326df9e0f666d502310c5f4c23",
+      "source_points": [
+        {
+          "label": "permit_dest",
+          "xy": [
+            34,
+            6
+          ],
+          "source_three_u16_values": [
+            4305,
+            0,
+            49152
+          ]
+        }
+      ]
+    }
+  ],
+  "original_QUEST12_source_files_reopened": [
+    {
+      "path": "300/sb_bac.arg",
+      "bytes": 229,
+      "sha256": "93b2893ee9cf5b0229072a9283f8fbb703004cbc2ec3829fb35af71ebdf1bc30",
+      "crc32": "785db130"
+    },
+    {
+      "path": "300/sb_bac.create",
+      "bytes": 190,
+      "sha256": "3bd43fdb15482cbde4896ded79c5382b777f8e74fe0c0637b97bfa0034613388",
+      "crc32": "a067777a"
+    },
+    {
+      "path": "genout/wpm_31805_22_4",
+      "bytes": 171,
+      "sha256": "0a753a92c176602d3d93ba8042d5b0c59a97dbdc93785cd8de3d6326be15044d",
+      "crc32": "b5efa901"
+    }
+  ],
+  "TW10_original_100401_SPR_source_group": [
+    100401,
+    364,
+    "0284af96efdff07da2b5b73ccc3f8a84a2a4158e9c653e3a4f3977293f3ec2a4",
+    104,
+    34,
+    [
+      [
+        0,
+        0,
+        26,
+        "da12a9359d2599d613644695b6da0cc1998aa3371b12c64a3fdf28f545ef7f88",
+        1600
+      ],
+      [
+        2,
+        0,
+        6,
+        "418113a9767251bb6e2bfeabc03175c1c2945817bdc5c61a6fd190d035649ac6",
+        800
+      ],
+      [
+        1,
+        0,
+        2,
+        "b745511cb80958e4659ae3f29f98d10e5c78ce9a6737b5031c29af1ec876af5e",
+        100
+      ]
+    ],
+    16
+  ],
+  "TW10_PET07_actual_reopened_eight_original_bitmap_PNG_receipts": [
+    [
+      82737,
+      82737,
+      "95eadb8b78c107474d742d33f43969b2328853fb0d7b6e22d155c3a63de2f373",
+      "3f89c902a26a880fba95279572f7217f678b7abbd112453a3173ac933e4c7c70",
+      1,
+      56,
+      98,
+      1,
+      "64a0b6ed505b8069d7d247b8b3969b429499eb73ca6df29321c25a481516d3ea"
+    ],
+    [
+      82738,
+      82738,
+      "7c4926a581ddcea524c7cba35a4e084894b2f2bd8f68acbd659f9f1d434dda68",
+      "2c044aa326a936b7a1e43eab55981e77d4d583c0d30e1e466ab80370411fa5aa",
+      1,
+      56,
+      110,
+      1,
+      "f3ecf6cb8c68a82b8a5c22de7cf6270460e80482cdf46241d45e314a496cfad2"
+    ],
+    [
+      82739,
+      82739,
+      "f2d50202ca41b54ba49b59525fc939a5ceb6dda1166af4f497ccfe1f60032e53",
+      "64cffebb7813b8363db1d7624bb93b2ac2ab8088040a58fc33e753c9d44e0d33",
+      1,
+      68,
+      108,
+      1,
+      "acabfe046fec8781112fbc73cf9781125b4ac8124747a04958af154081017336"
+    ],
+    [
+      82740,
+      82740,
+      "1bddd3ff5852aec20f82e6e668db5a9059e225004708f4d8ff9e8152483e820e",
+      "d2af1f86c401acc4b70283fcfa9a1dc2eb432546183a79b8c87d15b82f4061f7",
+      1,
+      68,
+      94,
+      1,
+      "04fa2a48c6ac03a2878cd9239290679311cd2605e7395bea05f94200b0cbf5b1"
+    ],
+    [
+      82741,
+      82741,
+      "795ddb30a4de16008ea346020cf2c8aef2703472c2e96b086992a8aa7e1f18a6",
+      "0a0262baedc58e2aa1c38910666b4397839d076521b508277b26b7e3f7010026",
+      1,
+      92,
+      95,
+      1,
+      "8e24b9d82bf4ebd2ee4022f866d3a7ec672f91a175ded8495475e72860ce451d"
+    ],
+    [
+      82742,
+      82742,
+      "bc3c77ca3435ca1404299932678ea4846b7ad87e7b41d54f7ff0ef1ffd58ed12",
+      "a9f12b660d55607507c8af1b8aeadf875641711a9a0ef8d427cb954916b28795",
+      1,
+      96,
+      72,
+      1,
+      "c504d6ca3a102d59938cd0cb5d8b0b33481fe00ba8c37b5b456b54afe367007c"
+    ],
+    [
+      82743,
+      82743,
+      "838e9a023ed0235a8dce1c168bb6ceeda12ac552fa37e5ef6815ae99347be7ee",
+      "18ccb0bbfce901d304abdefecf877d8b2555cfcacef7229602cc72b2b8e135d1",
+      1,
+      80,
+      106,
+      1,
+      "a4f51a32365ad1184bf3ca18752b9f57bd4d1560eff0e76a90a6cf9b35355c59"
+    ],
+    [
+      82744,
+      82744,
+      "e689a0a99e1ace633a64829dc2c1d0fd9d370ff7e605d9e20ca0df079603b918",
+      "373f21af9b40fcc2ad320f9f5fa54c12a1405dd2b742c1231c18f012d9a8b259",
+      1,
+      72,
+      108,
+      1,
+      "5cfd3eb982599810b2583829eb7baf2219e577c97c2a885428570bc4f3b4ff0b"
+    ]
+  ],
+  "TW10_PET07_actual_strict_unrenderable_source_sequence": {
+    "graphic": 100401,
+    "sequence_id": "100401-0-0",
+    "original_frame_positions": 26,
+    "invalid_source_bitmap_ids": [
+      82729
+    ]
+  },
+  "TW10_PET07_unrenderable_original_RD": {
+    "bitmap": 82729,
+    "source_ADRN_index": 82729,
+    "original_RD_sha256": "f8f7e0b754e3b454a31546eb181adc9fcd9cf2f946e6b02af82bcbc7eddf687a",
+    "failure": "STRICT_RD_RLE_DECODE_OVERRUN_NO_PIXEL_FABRICATION"
+  },
+  "TW10_PET15_later_bounded_interpretation": {
+    "graphic": 100401,
+    "group_index": 364,
+    "source_sequences": 104,
+    "source_frame_positions": 496,
+    "distinct_bitmaps": 344,
+    "fully_observable_sequences_under_bounded_decoding": 104,
+    "bitmap_82729_bounded": true,
+    "status": "NOT_RETROACTIVE_PET07_STRICT_LOSSLESS_RD_DECODE"
+  },
+  "mixed25_alternative_original_template_rows_for_same_number": {
+    "enemybase.txt": [
+      [
+        322,
+        500,
+        100401,
+        0,
+        "8c0296054a484a8a478ae4e7645f16849873726daacb78d0732a72e18bc36418"
+      ],
+      [
+        365,
+        544,
+        100401,
+        0,
+        "c6325fe51ff7d8d1d85e9287a8f38924a6502c3d8b52358efbd01cef2a38b27d"
+      ],
+      [
+        514,
+        713,
+        100401,
+        0,
+        "2844ce2e3e1f794033d11c5d5bef71c3feec584822a4bb9a328991746805956f"
+      ],
+      [
+        520,
+        719,
+        100401,
+        1,
+        "280c5ef8741e08e4a37ea710bbb7e482eed494d94d22b2985a3ceb1527ac4e81"
+      ]
+    ],
+    "enemybase2.txt": [
+      [
+        126,
+        500,
+        100401,
+        0,
+        "8c0296054a484a8a478ae4e7645f16849873726daacb78d0732a72e18bc36418"
+      ],
+      [
+        169,
+        544,
+        100401,
+        0,
+        "c6325fe51ff7d8d1d85e9287a8f38924a6502c3d8b52358efbd01cef2a38b27d"
+      ],
+      [
+        306,
+        713,
+        100401,
+        0,
+        "2844ce2e3e1f794033d11c5d5bef71c3feec584822a4bb9a328991746805956f"
+      ],
+      [
+        312,
+        719,
+        100401,
+        0,
+        "71103e9f3e43e05d9823ddd773092af6564406e769bbb27970d4e7de04849aef"
+      ]
+    ]
+  },
+  "exact_template_719_PETFLG_conflict": {
+    "primary": 1,
+    "alternative": 0,
+    "meaning": "TWO_SOURCE_TABLE_VARIANTS_NOT_PROVEN_ACTIVE_CHOICE_OR_PET_IDENTITY"
+  },
+  "summary": {
+    "original_DATs_actually_reopened": 2,
+    "original_source_cells_actually_replayed": 5,
+    "real_previously_verified_sprite_PNG_bytes_reopened_and_sha_checked": 8,
+    "original_sprite_RD_blocks_newly_decoded": 0,
+    "new_source_SPR_groups_acquired": 0,
+    "new_private_modern_observer": 1
+  },
+  "not_claims": {
+    "original_native_client_executed": false,
+    "original_server_or_warp_executed": false,
+    "original_sprite_was_really_displayed_at_later_NPC": false,
+    "source_borncenter_proves_unique_spawn": false,
+    "DAT_third_plane_means_collision": false,
+    "original_reward_item2535_observed_dropped": false,
+    "PET15_bounded_source_means_PET07_lossless_success": false,
+    "template_719_or_graphic_proves_one_pet_species": false,
+    "commercial_private_images_published_to_public_Git": false
+  },
+  "stage_A": "7 PARTIAL + 2 OPEN",
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "stop_condition": "Full 31805/31806 DAT plus five cells and eight actual TW1 strict-qualified preserved images observed; 82729 strict RLE remains OPEN. Rotate to a distinct scene or content family unless new original bytes address this gap."
+}

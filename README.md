@@ -2433,3 +2433,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-10 — INTEGRATION53｜三龙任务原NPC位置与台湾1.0原SPR动画像素证据的跨来源接缝
 
 [有界来源工作报告](docs/continuity/STONEAGE-INTEGRATION53-DRAGON-NEST-TW10-SPR-VISUAL-20261110.md)／[三个原NPC—不同样本原动画与模板证据](research/recovered/STONEAGE-INTEGRATION53-THREE-DRAGONS-QUEST-NPC-TW10-SPR-SOURCE-BRIDGE-R1.json)：从最新main独立重读QUEST14、PET07、PET15、PET10四份**完整公开派生原来源索引的Git blob**，把后期mixed25保存的三龙创建图号100384/385/386、原20807 DAT格(7,8)/(23,6)/(41,14)、三条不同原GetItem(2462/2460/2461)，逐原CREATE/脚本/DAT SHA对到**另一个台湾1.0零售保存样本**原SPR索引350/351/352及PET15早已实绘的各56段、712帧位置/232组内不同bitmap。各图号同时有多种后期服务器宠物模板原行/原SHA，绝不当成已证物种或同服NPC动画。**本包新增原RD解码0、原DAT获取0、原生任务和原NPC渲染0**：只新增此前缺失的原NPC→已验TW1图像候选跨模块证据关系。专用11项静态来源／否证回归必须据真实Actions后验记录，不以私人原资产为公开CI输入。历史CURRENT原2,709,173B Git blob c89e0e33537990aa2132b47c40fef49a985a935c完全不动；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null。**NEXT** 转非本三龙、非百人道场的确有原字节/可见新内容关联的场景；无更强证据则保留原生身份/行为OPEN，不重跑相同图号或启动新引擎。
+
+
+## 2026-11-11 — INTEGRATION54｜吉鲁矿山矿工原地图与100401台湾1.0真正原像素观察
+
+[有界报告](docs/continuity/STONEAGE-INTEGRATION54-GIIRU-MINER-ORIGINAL-DAT-TW10-PIXELS-20261111.md)／[原来源数字和SHA](research/recovered/STONEAGE-INTEGRATION54-GIIRU-MINER-DAT-TW10-REAL-PIXELS-R1.json)：私人QUEST12原包113,328字节、32CRC完整重读两张50×50原DAT(31805/31806)及5个目标格；原NPC矿工巴卡斯的社区2.5 `borncenter=26,23,1,1`、图号100401及静态`item=2535`源实物复核。另一台湾1.0零售PET07原HTML15,123,277B中实际取出8幅真实原RD已解码PNG候选(82737—82744)，逐PNG SHA/尺寸与旧源收据一致；现代私人研究拼版已上传Library、独立取回验证593,529字节/10成员/全部CRC。**严格负证：** PET07动画动作0/方向0的原RD bitmap82729严格RLE失败，PET15后来bounded处理不可追认无损恢复；社区两原表同图号模板719主/备PETFLG为1/0，不推唯一宠物或真原服身份。本轮原RD新解码0、原客户端/服运行0、私人图或原DAT公开0。历史CURRENT原blob c89e0e33537990aa2132b47c40fef49a985a935c/2,709,173B保全，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总进度未知。NEXT转其它未专项的真实可见游戏内容，非再次反复矿工同号。

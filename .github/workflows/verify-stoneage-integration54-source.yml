@@ -1,0 +1,23 @@
+name: Verify StoneAge INTEGRATION54 Giiru original DAT and TW1 pixels
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION54-GIIRU-MINER-DAT-TW10-REAL-PIXELS-R1.json'
+      - 'tests/test_stoneage_integration_module_54.py'
+      - '.github/workflows/verify-stoneage-integration54-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION54-GIIRU-MINER-DAT-TW10-REAL-PIXELS-R1.json'
+      - 'tests/test_stoneage_integration_module_54.py'
+      - '.github/workflows/verify-stoneage-integration54-source.yml'
+permissions:
+  contents: read
+jobs:
+  source-bound:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_54.py' -v
