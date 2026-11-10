@@ -1,0 +1,747 @@
+{
+  "schema": "stoneage.integration33_34.publication_acceptance.r1",
+  "date": "2026-11-10",
+  "source_of_truth": "NEWLY_FETCHED_GITHUB_MAIN_HEAD_CHECK_RUNS_GIT_TREE_AND_PRIVATE_SOURCE_RECEIPTS",
+  "original_start_main": "e20714848185362578eb048fb46e1f072e05a259",
+  "preserved_original_CURRENT": {
+    "path": "docs/CURRENT-STATE.md",
+    "bytes": 2709173,
+    "git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "unchanged_in_both_merged_git_trees": true
+  },
+  "integration33": {
+    "pull_request": 301,
+    "pull_url": "https://github.com/chinaneedM/stoneage-rebuild/pull/301",
+    "source_report": "research/recovered/STONEAGE-INTEGRATION33-SAINASU-TWO-QUEST-CHAINS-SOURCE-R1.json",
+    "source_report_git_blob": "dcd478de08020acfcd4230f8a03a0f5dd55c0ee5",
+    "candidate": {
+      "sha": "2c19d6cdbdddd3f771214e0ee5733f343d35b707",
+      "tree": "55b1d01dd463a002d7dcb35eae04135dba8c4a1b",
+      "acceptance": {
+        "head_sha": "2c19d6cdbdddd3f771214e0ee5733f343d35b707",
+        "total": 30,
+        "all_succeeded": true,
+        "checks": [
+          {
+            "check_id": 129622601781,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753570304/job/129622601781"
+          },
+          {
+            "check_id": 129622601462,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753570238/job/129622601462"
+          },
+          {
+            "check_id": 129622597186,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753570074/job/129622597186"
+          },
+          {
+            "check_id": 129622597031,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753570014/job/129622597031"
+          },
+          {
+            "check_id": 129622596932,
+            "name": "public-source-evidence",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753569951/job/129622596932"
+          },
+          {
+            "check_id": 129622596784,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753570078/job/129622596784"
+          },
+          {
+            "check_id": 129622596768,
+            "name": "verify-o12-native-compiled-audio-numbers",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753569955/job/129622596768"
+          },
+          {
+            "check_id": 129622596704,
+            "name": "public-source-atlas",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753570007/job/129622596704"
+          },
+          {
+            "check_id": 129622596540,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753569947/job/129622596540"
+          },
+          {
+            "check_id": 129622596534,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753569988/job/129622596534"
+          },
+          {
+            "check_id": 129622596532,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753569943/job/129622596532"
+          },
+          {
+            "check_id": 129622463848,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753526154/job/129622463848"
+          },
+          {
+            "check_id": 129622463833,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753526155/job/129622463833"
+          },
+          {
+            "check_id": 129622463800,
+            "name": "exact-original-source-negative-gate",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753526202/job/129622463800"
+          },
+          {
+            "check_id": 129622463793,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753526289/job/129622463793"
+          },
+          {
+            "check_id": 129622463635,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753526214/job/129622463635"
+          },
+          {
+            "check_id": 129622463374,
+            "name": "independent-original-derived",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753526219/job/129622463374"
+          },
+          {
+            "check_id": 129622463293,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753526097/job/129622463293"
+          },
+          {
+            "check_id": 129622460134,
+            "name": "public-source-atlas",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753526151/job/129622460134"
+          },
+          {
+            "check_id": 129622460036,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753526230/job/129622460036"
+          },
+          {
+            "check_id": 129622459696,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753526118/job/129622459696"
+          },
+          {
+            "check_id": 129622459668,
+            "name": "immutable-source-and-name-boundaries",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753526104/job/129622459668"
+          },
+          {
+            "check_id": 129622459627,
+            "name": "acceptance",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753526056/job/129622459627"
+          },
+          {
+            "check_id": 129622459507,
+            "name": "original-native-table-boundaries",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753526034/job/129622459507"
+          },
+          {
+            "check_id": 129622459486,
+            "name": "public-source-evidence",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753525865/job/129622459486"
+          },
+          {
+            "check_id": 129622459470,
+            "name": "bounded-original-map-delta",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753526022/job/129622459470"
+          },
+          {
+            "check_id": 129622459346,
+            "name": "bounded-research-review",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753525945/job/129622459346"
+          },
+          {
+            "check_id": 129622459162,
+            "name": "original-source-and-boundaries",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753525841/job/129622459162"
+          },
+          {
+            "check_id": 129622459136,
+            "name": "exact-source-report",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753525926/job/129622459136"
+          },
+          {
+            "check_id": 129622459091,
+            "name": "full-source-conservation",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753526035/job/129622459091"
+          }
+        ]
+      }
+    },
+    "merged_main": {
+      "sha": "3013519551953c787c98b9fe3265528bc9e293a9",
+      "tree": "55b1d01dd463a002d7dcb35eae04135dba8c4a1b",
+      "acceptance": {
+        "head_sha": "3013519551953c787c98b9fe3265528bc9e293a9",
+        "total": 19,
+        "all_succeeded": true,
+        "checks": [
+          {
+            "check_id": 129622813906,
+            "name": "bounded-original-map-delta",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753636189/job/129622813906"
+          },
+          {
+            "check_id": 129622813091,
+            "name": "acceptance",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753636005/job/129622813091"
+          },
+          {
+            "check_id": 129622813044,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753636131/job/129622813044"
+          },
+          {
+            "check_id": 129622812944,
+            "name": "independent-original-derived",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753635964/job/129622812944"
+          },
+          {
+            "check_id": 129622812408,
+            "name": "immutable-source-and-name-boundaries",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753635839/job/129622812408"
+          },
+          {
+            "check_id": 129622808975,
+            "name": "bounded-research-review",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753635977/job/129622808975"
+          },
+          {
+            "check_id": 129622808889,
+            "name": "exact-original-source-negative-gate",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753635916/job/129622808889"
+          },
+          {
+            "check_id": 129622808876,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753635944/job/129622808876"
+          },
+          {
+            "check_id": 129622808806,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753635891/job/129622808806"
+          },
+          {
+            "check_id": 129622808699,
+            "name": "original-source-and-boundaries",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753635911/job/129622808699"
+          },
+          {
+            "check_id": 129622808497,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753635737/job/129622808497"
+          },
+          {
+            "check_id": 129622808466,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753635666/job/129622808466"
+          },
+          {
+            "check_id": 129622808462,
+            "name": "exact-source-report",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753635647/job/129622808462"
+          },
+          {
+            "check_id": 129622808451,
+            "name": "public-source-evidence",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753635846/job/129622808451"
+          },
+          {
+            "check_id": 129622808446,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753635800/job/129622808446"
+          },
+          {
+            "check_id": 129622808416,
+            "name": "original-native-table-boundaries",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753635741/job/129622808416"
+          },
+          {
+            "check_id": 129622808042,
+            "name": "public-source-atlas",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753635606/job/129622808042"
+          },
+          {
+            "check_id": 129622808035,
+            "name": "full-source-conservation",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753635626/job/129622808035"
+          },
+          {
+            "check_id": 129622807905,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42753635597/job/129622807905"
+          }
+        ]
+      }
+    },
+    "private_original_archive_checks": {
+      "npc": {
+        "filename": "StoneAge-CHAR01-mixed25-all-npc-original-private.zip",
+        "bytes": 995176,
+        "members": 2205,
+        "sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+        "member_CRC_all_pass": true
+      },
+      "item": {
+        "filename": "StoneAge-ITEM01-private-two-itemsets-832-original-RD-icon-observer.zip",
+        "bytes": 5868386,
+        "members": 838,
+        "sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+        "member_CRC_all_pass": true
+      },
+      "dat1100": {
+        "filename": "StoneAge-INTEGRATION10-twelve-DAT-seven-checkpoint-scenes-private.zip",
+        "bytes": 5759006,
+        "members": 314,
+        "sha256": "7a4b74af4ca4b0cca3108dcdec55bb9f1892a2edf17b73d400aab4c041fa6b96",
+        "member_CRC_all_pass": true
+      }
+    },
+    "source_derived_content": {
+      "original_NPC_creates": 4,
+      "original_script_members": 4,
+      "source_TYPE_sections": 13,
+      "original_npc_CREATE_source_members": 2,
+      "original_source_item_ids": 13,
+      "qualified_DAT_floors": [
+        1112,
+        1100,
+        11006
+      ],
+      "source_text_full_bytes_in_Git": false
+    },
+    "prior_known_GetPet95_deduped": true
+  },
+  "integration34": {
+    "pull_request": 302,
+    "pull_url": "https://github.com/chinaneedM/stoneage-rebuild/pull/302",
+    "source_report": "research/recovered/STONEAGE-INTEGRATION34-GETPET95-CROSSCARRIER-ORIGINAL-PIXEL-R1.json",
+    "source_report_git_blob": "9e2da2e1aff3864bd60afa5002a4b854ef586f2a",
+    "candidate": {
+      "sha": "6ac97675ae624d48285558e434df401c883e63e9",
+      "tree": "17654ea5284c816e9f400efc7d117a4b641ce552",
+      "acceptance": {
+        "head_sha": "6ac97675ae624d48285558e434df401c883e63e9",
+        "total": 32,
+        "all_succeeded": true,
+        "checks": [
+          {
+            "check_id": 129625473267,
+            "name": "public-source-evidence",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754453847/job/129625473267"
+          },
+          {
+            "check_id": 129625473045,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754453694/job/129625473045"
+          },
+          {
+            "check_id": 129625472826,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754453664/job/129625472826"
+          },
+          {
+            "check_id": 129625470140,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754453649/job/129625470140"
+          },
+          {
+            "check_id": 129625469762,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754453661/job/129625469762"
+          },
+          {
+            "check_id": 129625469625,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754453506/job/129625469625"
+          },
+          {
+            "check_id": 129625469551,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754453484/job/129625469551"
+          },
+          {
+            "check_id": 129625469317,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754453381/job/129625469317"
+          },
+          {
+            "check_id": 129625469308,
+            "name": "verify-o12-native-compiled-audio-numbers",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754453428/job/129625469308"
+          },
+          {
+            "check_id": 129625469162,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754453493/job/129625469162"
+          },
+          {
+            "check_id": 129625469160,
+            "name": "public-source-atlas",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754453492/job/129625469160"
+          },
+          {
+            "check_id": 129625468944,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754453387/job/129625468944"
+          },
+          {
+            "check_id": 129624900874,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754277103/job/129624900874"
+          },
+          {
+            "check_id": 129624900742,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754277067/job/129624900742"
+          },
+          {
+            "check_id": 129624899943,
+            "name": "immutable-source-and-name-boundaries",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754278028/job/129624899943"
+          },
+          {
+            "check_id": 129624897749,
+            "name": "full-source-conservation",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754277164/job/129624897749"
+          },
+          {
+            "check_id": 129624897471,
+            "name": "bounded-original-map-delta",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754276717/job/129624897471"
+          },
+          {
+            "check_id": 129624897266,
+            "name": "original-source-and-boundaries",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754277039/job/129624897266"
+          },
+          {
+            "check_id": 129624897163,
+            "name": "original-native-table-boundaries",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754276980/job/129624897163"
+          },
+          {
+            "check_id": 129624897146,
+            "name": "acceptance",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754276907/job/129624897146"
+          },
+          {
+            "check_id": 129624897127,
+            "name": "exact-original-source-negative-gate",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754276950/job/129624897127"
+          },
+          {
+            "check_id": 129624897108,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754277003/job/129624897108"
+          },
+          {
+            "check_id": 129624897086,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754276877/job/129624897086"
+          },
+          {
+            "check_id": 129624897084,
+            "name": "bounded-research-review",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754276987/job/129624897084"
+          },
+          {
+            "check_id": 129624897075,
+            "name": "exact-source-report",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754276861/job/129624897075"
+          },
+          {
+            "check_id": 129624896656,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754276946/job/129624896656"
+          },
+          {
+            "check_id": 129624896621,
+            "name": "public-source-atlas",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754276856/job/129624896621"
+          },
+          {
+            "check_id": 129624896480,
+            "name": "independent-original-derived",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754276620/job/129624896480"
+          },
+          {
+            "check_id": 129624896434,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754276637/job/129624896434"
+          },
+          {
+            "check_id": 129624896315,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754276695/job/129624896315"
+          },
+          {
+            "check_id": 129624896209,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754276615/job/129624896209"
+          },
+          {
+            "check_id": 129624896164,
+            "name": "public-source-evidence",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754276607/job/129624896164"
+          }
+        ]
+      }
+    },
+    "merged_main": {
+      "sha": "3658247d382985a4007b12637515c632822a60dd",
+      "tree": "17654ea5284c816e9f400efc7d117a4b641ce552",
+      "acceptance": {
+        "head_sha": "3658247d382985a4007b12637515c632822a60dd",
+        "total": 20,
+        "all_succeeded": true,
+        "checks": [
+          {
+            "check_id": 129625710159,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754528433/job/129625710159"
+          },
+          {
+            "check_id": 129625709514,
+            "name": "immutable-source-and-name-boundaries",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754528875/job/129625709514"
+          },
+          {
+            "check_id": 129625709194,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754528792/job/129625709194"
+          },
+          {
+            "check_id": 129625709013,
+            "name": "acceptance",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754528745/job/129625709013"
+          },
+          {
+            "check_id": 129625708962,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754528822/job/129625708962"
+          },
+          {
+            "check_id": 129625708457,
+            "name": "full-source-conservation",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754528839/job/129625708457"
+          },
+          {
+            "check_id": 129625708325,
+            "name": "exact-source-report",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754528749/job/129625708325"
+          },
+          {
+            "check_id": 129625708186,
+            "name": "public-source-evidence",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754528730/job/129625708186"
+          },
+          {
+            "check_id": 129625707766,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754528586/job/129625707766"
+          },
+          {
+            "check_id": 129625704930,
+            "name": "bounded-research-review",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754528583/job/129625704930"
+          },
+          {
+            "check_id": 129625704829,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754528608/job/129625704829"
+          },
+          {
+            "check_id": 129625704823,
+            "name": "independent-original-derived",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754528657/job/129625704823"
+          },
+          {
+            "check_id": 129625704759,
+            "name": "bounded-original-map-delta",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754528502/job/129625704759"
+          },
+          {
+            "check_id": 129625704735,
+            "name": "original-native-table-boundaries",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754528514/job/129625704735"
+          },
+          {
+            "check_id": 129625704585,
+            "name": "exact-original-source-negative-gate",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754528579/job/129625704585"
+          },
+          {
+            "check_id": 129625704569,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754528682/job/129625704569"
+          },
+          {
+            "check_id": 129625704567,
+            "name": "public-source-atlas",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754528607/job/129625704567"
+          },
+          {
+            "check_id": 129625704134,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754528440/job/129625704134"
+          },
+          {
+            "check_id": 129625704115,
+            "name": "source-contract",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754528491/job/129625704115"
+          },
+          {
+            "check_id": 129625703868,
+            "name": "original-source-and-boundaries",
+            "conclusion": "success",
+            "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/42754528457/job/129625703868"
+          }
+        ]
+      }
+    },
+    "private_PET07_verified_artifacts": {
+      "PET07_private_HTML": {
+        "path_in_private_library": "StoneAge-PET07-original-sprite-private-catalog.html",
+        "bytes": 15123277,
+        "sha256": "58e8ee4ff5165ed2f61663d67ae1cd0a8183622fa3375c480232784bfce9dc76",
+        "actual_embedded_PNGs_redecoded_and_sha_verified": 16
+      },
+      "PET07_private_original_RD_receipts": {
+        "path_in_private_library": "StoneAge-PET07-private-original-RD-verified-source-report.json",
+        "bytes": 1617404,
+        "sha256": "b5ad2e58930afbe90604a1d72e3c17ab0adea446e7c118be775e3973315e6cb4"
+      },
+      "graphic_private_png_bytes_recovered_from_existing_gallery": 71187
+    },
+    "source_derived_content": {
+      "original_TW1_graphic_number": 100394,
+      "verified_prior_PET07_selected_action_direction_sequences": 3,
+      "source_frame_positions": 23,
+      "distinct_original_bitmap_sha_verified": 16,
+      "original_PNGs_redecoded_against_private_prior_RD_receipts": 16,
+      "new_original_pixels_discovered_this_round": 0
+    },
+    "different_source_deployment_not_native_pet_award": true
+  },
+  "bounds": {
+    "native_original_client_or_server_executed": false,
+    "original_quest_stage_transitions_or_rewards_verified": false,
+    "later_mixed25_GetPet95_community_template_same_as_TW10_official_pet_species_proven": false,
+    "TW10_original_SPR_pixel_replay_proves_only_source_qualified_visual_candidate": true,
+    "early_official_JSS1999_or_TW1_same_deployment_proven": false,
+    "copyrighted_original_bitmaps_full_dialogues_or_DAT_uploaded_to_public_git": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_and_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next_source_ready_work": "Both Sainasu quest chain and prior TW1 visual candidate are source-bounded. Do not redo exact same GetPet95/100394 numeric joins. Rotate to unintegrated actual original content with qualified private source; keep pet species/native reward OPEN unless new same-deployment or native execution source."
+}
