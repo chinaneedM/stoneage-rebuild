@@ -1,0 +1,1077 @@
+{
+  "schema": "stoneage.integration32.qikaka_four_unintegrated_rooms_original_source.r1",
+  "date": "2026-11-10",
+  "fresh_starting_remote": {
+    "main": "47732f7eed74b5581941c8ced712005dbea78248",
+    "tree": "e4728fee3fa66051b2f7bc8e822cd8a2e4feee4b",
+    "current_bytes": 2709173,
+    "current_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "stage": "A_HISTORICAL_RESTORATION_SOURCE_BOUND",
+  "source_scope": "LATER_COMMUNITY_MIXED25_PRESERVED_CARRIER_AND_SEPARATE_TW1_RETAIL_ICON_CANDIDATES",
+  "upstream": {
+    "i28": {
+      "path": "research/recovered/STONEAGE-INTEGRATION28-QIKAKA-VILLAGE-SCENE-SOURCE-R1.json",
+      "git_blob": "4b5b44c7be55b5b68b8b3ded57b73ceb2c014891"
+    },
+    "map09": {
+      "path": "research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json",
+      "git_blob": "137580e7c25aadf3d679b6ebfb5080b79912cc4f"
+    }
+  },
+  "private_source_zip_verified": [
+    {
+      "name": "StoneAge-INTEGRATION28-3400-3403-Qikaka-village-pet-shop-private.zip",
+      "bytes": 13292099,
+      "members": 373,
+      "sha256": "da1d0a15a1e5b03a7234f5ba52bbd81fafae380b5ef8ee50759676f44ccec2f8",
+      "all_member_CRC_pass": true
+    },
+    {
+      "name": "StoneAge-CHAR01-mixed25-all-npc-original-private.zip",
+      "bytes": 995176,
+      "members": 2205,
+      "sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+      "all_member_CRC_pass": true
+    },
+    {
+      "name": "StoneAge-ITEM01-private-two-itemsets-832-original-RD-icon-observer.zip",
+      "bytes": 5868386,
+      "members": 838,
+      "sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+      "all_member_CRC_pass": true
+    }
+  ],
+  "original_mapwarp": {
+    "sha256": "b7b50f42efa8e5a3f740d49a8d0c01cbf994d1bb66151b16ff5b5e7c14e7595c",
+    "original_line_count": 2981,
+    "original_directions": [
+      {
+        "mapwarp_line": 756,
+        "mapwarp_line_sha256": "0d2fffed80d6e94b9ce8c89146c7696d082e088c8c75a7133e99af2616c4fe77",
+        "start": [
+          3400,
+          47,
+          57
+        ],
+        "target": [
+          3404,
+          15,
+          21
+        ],
+        "exact_reverse": true,
+        "start_u16": [
+          393,
+          0,
+          49155
+        ],
+        "target_u16": [
+          5025,
+          0,
+          49155
+        ],
+        "create_file": "warp_y2.create",
+        "create_ordinal": 143,
+        "create_sha256": "e80590b7ad19cee82cf70e5cbc87ca6051da7b3aa4672800bf2f6560634f9c95"
+      },
+      {
+        "mapwarp_line": 757,
+        "mapwarp_line_sha256": "a37d17e3d48c64b04085bc6e3037e254e13378fc9c86b61de054912729b79ce6",
+        "start": [
+          3404,
+          15,
+          21
+        ],
+        "target": [
+          3400,
+          47,
+          57
+        ],
+        "exact_reverse": true,
+        "start_u16": [
+          5025,
+          0,
+          49155
+        ],
+        "target_u16": [
+          393,
+          0,
+          49155
+        ],
+        "create_file": "warp_y2.create",
+        "create_ordinal": 144,
+        "create_sha256": "10ecd11b77864167050b2283046adea6c17dd6e4840b8087a8013bb1b69fe66c"
+      },
+      {
+        "mapwarp_line": 758,
+        "mapwarp_line_sha256": "d00703c1426e51737e12c6f1372cb24b666041d784ab4f9fd88e83d5f9cd6eb9",
+        "start": [
+          3400,
+          48,
+          57
+        ],
+        "target": [
+          3404,
+          16,
+          21
+        ],
+        "exact_reverse": true,
+        "start_u16": [
+          392,
+          0,
+          49155
+        ],
+        "target_u16": [
+          5026,
+          0,
+          49155
+        ],
+        "create_file": "warp_y2.create",
+        "create_ordinal": 145,
+        "create_sha256": "d3580db893f6b1d7011cb47226defcafae70c5e8342a3a772712218a9267b1b2"
+      },
+      {
+        "mapwarp_line": 759,
+        "mapwarp_line_sha256": "cc4ed36bc08f6503f9e663512b7b19c1a360a964465d65d405e48e7a7faacf8d",
+        "start": [
+          3404,
+          16,
+          21
+        ],
+        "target": [
+          3400,
+          48,
+          57
+        ],
+        "exact_reverse": true,
+        "start_u16": [
+          5026,
+          0,
+          49155
+        ],
+        "target_u16": [
+          392,
+          0,
+          49155
+        ],
+        "create_file": "warp_y2.create",
+        "create_ordinal": 146,
+        "create_sha256": "14147493e26e7550cf48be597cda9e78e01795034c0aaa2b2a7b0b5713e50748"
+      },
+      {
+        "mapwarp_line": 760,
+        "mapwarp_line_sha256": "40679679ae6dcfe0e45803d62b04e96a6bbccc1b7ebcfa3c0af541c61b9d1bec",
+        "start": [
+          3400,
+          59,
+          54
+        ],
+        "target": [
+          3405,
+          10,
+          11
+        ],
+        "exact_reverse": true,
+        "start_u16": [
+          403,
+          0,
+          49155
+        ],
+        "target_u16": [
+          5024,
+          0,
+          49155
+        ],
+        "create_file": "warp_y2.create",
+        "create_ordinal": 147,
+        "create_sha256": "624fcf7aefe51c97f070078fb4104dfbd69a19bddf34af00a6a94ade0aa63b31"
+      },
+      {
+        "mapwarp_line": 761,
+        "mapwarp_line_sha256": "f88e8e57254405f7d70c794f62bfa23455e55f96b0e2b5533668e5739aa4917e",
+        "start": [
+          3405,
+          10,
+          11
+        ],
+        "target": [
+          3400,
+          59,
+          54
+        ],
+        "exact_reverse": true,
+        "start_u16": [
+          5024,
+          0,
+          49155
+        ],
+        "target_u16": [
+          403,
+          0,
+          49155
+        ],
+        "create_file": "warp_y2.create",
+        "create_ordinal": 148,
+        "create_sha256": "8049d3d6ee2fea04b28e8622bb3f1a8e1b9b6cc58adccaa985d952f16566be63"
+      },
+      {
+        "mapwarp_line": 762,
+        "mapwarp_line_sha256": "ca12a19f7c1e585c81fb95d3e04d2df5e5238291359eb80b6dfaf5136895f828",
+        "start": [
+          3400,
+          59,
+          55
+        ],
+        "target": [
+          3405,
+          10,
+          12
+        ],
+        "exact_reverse": true,
+        "start_u16": [
+          403,
+          0,
+          49155
+        ],
+        "target_u16": [
+          5013,
+          0,
+          49155
+        ],
+        "create_file": "warp_y2.create",
+        "create_ordinal": 149,
+        "create_sha256": "60dc045331f80f3082a246a8b9e5c4562c8faec0e989cfad2f0cc3aff25f0512"
+      },
+      {
+        "mapwarp_line": 763,
+        "mapwarp_line_sha256": "b008a402af6b6cf24bff4e6d65feefbdec5d044f18c7ac202364f6a937ceb4d8",
+        "start": [
+          3405,
+          10,
+          12
+        ],
+        "target": [
+          3400,
+          59,
+          55
+        ],
+        "exact_reverse": true,
+        "start_u16": [
+          5013,
+          0,
+          49155
+        ],
+        "target_u16": [
+          403,
+          0,
+          49155
+        ],
+        "create_file": "warp_y2.create",
+        "create_ordinal": 150,
+        "create_sha256": "d1cf18d7a82001ee7c2d93b4083a96d7122936c670e5c125dd492b5879acf9e8"
+      },
+      {
+        "mapwarp_line": 764,
+        "mapwarp_line_sha256": "ecbc9f6204ab21f965391987970ad55d14a638561d0feab764ff8281611cc37c",
+        "start": [
+          3400,
+          51,
+          73
+        ],
+        "target": [
+          3409,
+          10,
+          25
+        ],
+        "exact_reverse": true,
+        "start_u16": [
+          362,
+          0,
+          49155
+        ],
+        "target_u16": [
+          5024,
+          0,
+          49155
+        ],
+        "create_file": "warp_y2.create",
+        "create_ordinal": 151,
+        "create_sha256": "2d871ff8251fb36208064044b001d1353718d314bf59a7ca71b3e869254ca82a"
+      },
+      {
+        "mapwarp_line": 765,
+        "mapwarp_line_sha256": "2e48540a82b25ee72d4f3e2de1d031a8dfb6068eb52feb31a5935084d1cf6a6a",
+        "start": [
+          3409,
+          10,
+          25
+        ],
+        "target": [
+          3400,
+          51,
+          73
+        ],
+        "exact_reverse": true,
+        "start_u16": [
+          5024,
+          0,
+          49155
+        ],
+        "target_u16": [
+          362,
+          0,
+          49155
+        ],
+        "create_file": "warp_y2.create",
+        "create_ordinal": 152,
+        "create_sha256": "588c17fda5306e804b9499e825553a5113e8f4bc066207f3a74f5a8b70cb9806"
+      },
+      {
+        "mapwarp_line": 766,
+        "mapwarp_line_sha256": "491943212d311d5fe4b28d1b9b43003e5d50e804ad630ce4f2964322d83b306d",
+        "start": [
+          3400,
+          51,
+          74
+        ],
+        "target": [
+          3409,
+          10,
+          26
+        ],
+        "exact_reverse": true,
+        "start_u16": [
+          164,
+          0,
+          49155
+        ],
+        "target_u16": [
+          5025,
+          0,
+          49155
+        ],
+        "create_file": "warp_y2.create",
+        "create_ordinal": 153,
+        "create_sha256": "ade225dc8b1225de8b03db82cfbc87a0fd62df0b3064a421e27b1b4291c01059"
+      },
+      {
+        "mapwarp_line": 767,
+        "mapwarp_line_sha256": "a486f131dc9ca2b86a233e92bc6c03aa397191b1e73d00620871a3559f745831",
+        "start": [
+          3409,
+          10,
+          26
+        ],
+        "target": [
+          3400,
+          51,
+          74
+        ],
+        "exact_reverse": true,
+        "start_u16": [
+          5025,
+          0,
+          49155
+        ],
+        "target_u16": [
+          164,
+          0,
+          49155
+        ],
+        "create_file": "warp_y2.create",
+        "create_ordinal": 154,
+        "create_sha256": "81ac81511d5272ce41ad94f5a45ab8bae2c2a0d6afe1d12f490176069fe7b621"
+      },
+      {
+        "mapwarp_line": 771,
+        "mapwarp_line_sha256": "2922b2195383667d0efdd1e4f6c0771c5324520ea03ab9cfc7d6a91f01a6eb4d",
+        "start": [
+          3400,
+          59,
+          75
+        ],
+        "target": [
+          3412,
+          10,
+          15
+        ],
+        "exact_reverse": true,
+        "start_u16": [
+          153,
+          0,
+          49155
+        ],
+        "target_u16": [
+          5012,
+          0,
+          49155
+        ],
+        "create_file": "warp_y2.create",
+        "create_ordinal": 158,
+        "create_sha256": "866bf903b2c6257039076ac14e6526ebaa313b05c70ee81b511db36d4457e606"
+      },
+      {
+        "mapwarp_line": 772,
+        "mapwarp_line_sha256": "fb46cf85fa50fffd19c3a391afc358bf47302d3d8d1785df0fd6c381a7c3525f",
+        "start": [
+          3412,
+          10,
+          15
+        ],
+        "target": [
+          3400,
+          59,
+          75
+        ],
+        "exact_reverse": true,
+        "start_u16": [
+          5012,
+          0,
+          49155
+        ],
+        "target_u16": [
+          153,
+          0,
+          49155
+        ],
+        "create_file": "warp_y2.create",
+        "create_ordinal": 159,
+        "create_sha256": "131635488b7c266b719f2c3ec02a6e04e930e4fcff4e9a5d13633a2337738915"
+      },
+      {
+        "mapwarp_line": 773,
+        "mapwarp_line_sha256": "14efc27a731dc1f2c1f4bf3cda612dc8245495e33cc419465271cf2ec7927e7a",
+        "start": [
+          3400,
+          59,
+          76
+        ],
+        "target": [
+          3412,
+          10,
+          16
+        ],
+        "exact_reverse": true,
+        "start_u16": [
+          145,
+          0,
+          49155
+        ],
+        "target_u16": [
+          5025,
+          0,
+          49155
+        ],
+        "create_file": "warp_y2.create",
+        "create_ordinal": 160,
+        "create_sha256": "e3cf0c2b15af07f1496fa2edb5f2ef2711a415c98bd027ba8c613240be303c24"
+      },
+      {
+        "mapwarp_line": 774,
+        "mapwarp_line_sha256": "c566a10f38af1183beaf7a81dd9b4e60e66db67ea3ab7b35fabfcebb48efdaea",
+        "start": [
+          3412,
+          10,
+          16
+        ],
+        "target": [
+          3400,
+          59,
+          76
+        ],
+        "exact_reverse": true,
+        "start_u16": [
+          5025,
+          0,
+          49155
+        ],
+        "target_u16": [
+          145,
+          0,
+          49155
+        ],
+        "create_file": "warp_y2.create",
+        "create_ordinal": 161,
+        "create_sha256": "b7b660f65b9024b1eb0271aa79411f4d5b3dd22f5ebd049f1e4c89dfb7b0b26a"
+      }
+    ],
+    "original_16_line_bytes_sha_against_private_true": true,
+    "source_qualified_original_warp_CREATE": true,
+    "native_teleport_execution_verified": false
+  },
+  "four_rooms": [
+    {
+      "floor": 3404,
+      "original_name": "奇喀喀的肉店",
+      "parent_floor": 3400,
+      "DAT_sha256": "f3f57e2edcf0b4f1faa9485ed9a54ae8024d604aa257095c82695f13e8e23323",
+      "DAT_bytes": 5408,
+      "geometry": [
+        30,
+        30
+      ],
+      "LS2MAP_sha256": "5ef96975ef7f4efb7f7a1b680a9f939096bbb6edfa2bb32ec7e8f2525212e7c7",
+      "LS2MAP_bytes": 3644,
+      "original_MAP09_candidate_canvas": [
+        1889,
+        1425
+      ],
+      "original_MAP09_candidate_RGBA_by_mode": {
+        "plane0": "3ef3965ab08409d2c242d4a12bda6c3cfbb78814cdf94693ff568917fe2bb817",
+        "plane1": "a322390a09db2d6fa287f04db4dcbc2d0af9929191723b2f59b10f874874926e",
+        "combined": "02ab81c775e8feb1774418fc174b66d43325a932c0ba222b6f57e01324cdc9c3"
+      },
+      "draw_positions": 163,
+      "distinct_source_tiles": 44,
+      "replayed_original_map_render_in_this_work_unit": false
+    },
+    {
+      "floor": 3405,
+      "original_name": "奇喀喀的醫院",
+      "parent_floor": 3400,
+      "DAT_sha256": "0d20243b1b3f96200d4ac3e8e8a224ab19bee5957e1a6834387ac758a454025f",
+      "DAT_bytes": 5408,
+      "geometry": [
+        30,
+        30
+      ],
+      "LS2MAP_sha256": "48a7306b062dcbca4b990fbb36acb5cf565f82407a38345427396b274c0cfac5",
+      "LS2MAP_bytes": 3644,
+      "original_MAP09_candidate_canvas": [
+        1889,
+        1425
+      ],
+      "original_MAP09_candidate_RGBA_by_mode": {
+        "plane0": "7f3ca9929fc6a41962e28b80673284f65743a571ac66010147438d85b6030677",
+        "plane1": "8aa780b7285475fa901871aa2558a0981bf8ce35b078a8b42e91636ae3e02a67",
+        "combined": "c6eb848b8576a883f438fa7208778f5c790acd831b194251846537684105f3f3"
+      },
+      "draw_positions": 217,
+      "distinct_source_tiles": 53,
+      "replayed_original_map_render_in_this_work_unit": false
+    },
+    {
+      "floor": 3409,
+      "original_name": "奇喀喀的便利商店",
+      "parent_floor": 3400,
+      "DAT_sha256": "99de96a6703f2d51645b28f358168807a6912ff262f417617474eebb6b254a4f",
+      "DAT_bytes": 14408,
+      "geometry": [
+        40,
+        60
+      ],
+      "LS2MAP_sha256": "6ebaf06e9b74928640d68dc2e55608ec38e06cdb3aa0067f4541fd10edcf4565",
+      "LS2MAP_bytes": 9644,
+      "original_MAP09_candidate_canvas": [
+        3169,
+        2385
+      ],
+      "original_MAP09_candidate_RGBA_by_mode": {
+        "plane0": "fe8b090bc232302abbcbd86f91219becd9b2fb0c33bde82c025fd7e701548306",
+        "plane1": "465da552ba589cfdd02b380f3a120389d4d336d14da854b958a39a4788e1f1c3",
+        "combined": "bdbcc6d9abfb3c15b62483d4000fd8ff17cdd631c4b5c789b573ebccfaa45c00"
+      },
+      "draw_positions": 730,
+      "distinct_source_tiles": 86,
+      "replayed_original_map_render_in_this_work_unit": false
+    },
+    {
+      "floor": 3412,
+      "original_name": "奇喀喀的民家",
+      "parent_floor": 3400,
+      "DAT_sha256": "1c2c1a15c839ea1cd907d752cb9f565f091a8b6ff7b19b92502cb1195caa1145",
+      "DAT_bytes": 5408,
+      "geometry": [
+        30,
+        30
+      ],
+      "LS2MAP_sha256": "1b7967eafbbf384ec67905afd53a3bc1857721824ac4b9c87de5fcf594c609d3",
+      "LS2MAP_bytes": 3644,
+      "original_MAP09_candidate_canvas": [
+        1889,
+        1425
+      ],
+      "original_MAP09_candidate_RGBA_by_mode": {
+        "plane0": "7aca9e8c820c741cb1070abb756c124a14d1bae253dc9cf1025cd0c269bf07b7",
+        "plane1": "6c1492f331ebfd4366ee305f67c7d672ddf0316d79479eb54747928571e135fe",
+        "combined": "f664153f8a43178f1b128720a293717ca6e0f52067967d5dda614597530ed4ea"
+      },
+      "draw_positions": 153,
+      "distinct_source_tiles": 49,
+      "replayed_original_map_render_in_this_work_unit": false
+    }
+  ],
+  "shop_m2_create": {
+    "path": "npc/genout/shop_m2.create",
+    "bytes_source_blocks_total": 121,
+    "sha256": "ef0447f668939f9257f62467d1a6194d34955e22ab7e334aa232865127905651",
+    "matching_source_blocks": [
+      {
+        "ordinal": 66,
+        "floor": 3409,
+        "xy": [
+          27,
+          26
+        ],
+        "name": "奇喀喀的武器店",
+        "alias": 16056,
+        "dir": 6,
+        "function": "npcgen_shop",
+        "param": "genout/ss_3409_27_26",
+        "create_sha256": "43ff8c9f6d9e1904c8e647ce81bd0d4dd3d0afc3852abacbac2122374fa75c6a",
+        "cell": [
+          5000,
+          0,
+          49152
+        ]
+      },
+      {
+        "ordinal": 67,
+        "floor": 3409,
+        "xy": [
+          27,
+          36
+        ],
+        "name": "奇喀喀的防具店",
+        "alias": 16017,
+        "dir": 6,
+        "function": "npcgen_shop",
+        "param": "genout/ss_3409_27_36",
+        "create_sha256": "7b75b73902cc94a3ab6656127fb08f98313664d71aefe587368d7cd023a7dbf3",
+        "cell": [
+          5002,
+          0,
+          49152
+        ]
+      },
+      {
+        "ordinal": 68,
+        "floor": 3409,
+        "xy": [
+          27,
+          16
+        ],
+        "name": "奇喀喀的道具店",
+        "alias": 16030,
+        "dir": 6,
+        "function": "npcgen_shop",
+        "param": "genout/ss_3409_27_16",
+        "create_sha256": "968457d10a08b37bade7b8c5ae1c426f4bab3372530a361409f7032bff407174",
+        "cell": [
+          5001,
+          0,
+          49152
+        ]
+      },
+      {
+        "ordinal": 73,
+        "floor": 3404,
+        "xy": [
+          15,
+          13
+        ],
+        "name": "奇喀喀的肉店",
+        "alias": 16054,
+        "dir": 4,
+        "function": "npcgen_limitshop",
+        "param": "genout/lbis_3404_15_13",
+        "create_sha256": "78edd6fcb8f1f1108290e4976211f72676d49a0e7c3594eb3360716f1829aab7",
+        "cell": [
+          5001,
+          0,
+          49152
+        ]
+      },
+      {
+        "ordinal": 74,
+        "floor": 3405,
+        "xy": [
+          18,
+          12
+        ],
+        "name": "奇喀喀的護士",
+        "alias": 16058,
+        "dir": 6,
+        "function": "npcgen_winhealer",
+        "source_args": [
+          "10",
+          "1.4",
+          "2.8",
+          "2"
+        ],
+        "create_sha256": "34a52ba22b621ae83140e8fae8f176b9e106b6deb5a1d596125b762147c4a1d8",
+        "cell": [
+          5000,
+          0,
+          49152
+        ]
+      },
+      {
+        "ordinal": 75,
+        "floor": 3405,
+        "xy": [
+          18,
+          9
+        ],
+        "name": "奇喀喀的藥師",
+        "alias": 16059,
+        "dir": 6,
+        "function": "npcgen_shop",
+        "param": "genout/ss_3405_18_9",
+        "create_sha256": "f09792d348a81b76da10f1706a55bfa2a58b7ae9212cf1f32825bc921486a20a",
+        "cell": [
+          5000,
+          0,
+          49152
+        ]
+      },
+      {
+        "ordinal": 76,
+        "floor": 3405,
+        "xy": [
+          13,
+          8
+        ],
+        "name": "奇喀喀的醫生",
+        "alias": 16024,
+        "dir": 4,
+        "function": "npcgen_man",
+        "param": "genout/msg_3405_13_8",
+        "create_sha256": "69d92cf82f534c5758123696ef18eb9b275e5360d5e64b40c3ed3d63a1ce5fed",
+        "cell": [
+          5000,
+          12802,
+          49152
+        ]
+      }
+    ]
+  },
+  "source_shop_arguments": [
+    {
+      "floor": 3409,
+      "xy": [
+        27,
+        26
+      ],
+      "category": "OFFENCE",
+      "source": "genout/ss_3409_27_26",
+      "bytes": 569,
+      "sha256": "3de470023e7065f8848f2ad682a4fb0e57d139fd97b2c02eb0fad978b908cfb7",
+      "buy_rate": "1.0",
+      "sell_rate": "0.17",
+      "special_rate": "1.5",
+      "ItemList": [
+        34,
+        44,
+        54,
+        64,
+        134,
+        144,
+        154,
+        164,
+        734,
+        744,
+        754,
+        764,
+        514,
+        524,
+        534,
+        540
+      ]
+    },
+    {
+      "floor": 3409,
+      "xy": [
+        27,
+        36
+      ],
+      "category": "DEFENCE",
+      "source": "genout/ss_3409_27_36",
+      "bytes": 541,
+      "sha256": "a05705e1c5d6d3f8a2520364126f7d0f41ad4a32dd8beaa7a6ea809decad3307",
+      "buy_rate": "1.0",
+      "sell_rate": "0.17",
+      "special_rate": "1.5",
+      "ItemList": [
+        815,
+        825,
+        845,
+        915,
+        925,
+        945,
+        1015,
+        1025,
+        1045,
+        1115,
+        1125,
+        1145
+      ]
+    },
+    {
+      "floor": 3409,
+      "xy": [
+        27,
+        16
+      ],
+      "category": "ACCESSORY",
+      "source": "genout/ss_3409_27_16",
+      "bytes": 547,
+      "sha256": "0ecfb2d5fc5e11c589675528b66d51ecd076bfeb672ca8fdfadefc6fbab95a7d",
+      "buy_rate": "1.0",
+      "sell_rate": "0.17",
+      "special_rate": "1.5",
+      "ItemList": [
+        1211,
+        1269,
+        1307,
+        1355,
+        1356,
+        1401
+      ]
+    },
+    {
+      "floor": 3405,
+      "xy": [
+        18,
+        9
+      ],
+      "category": "UNSPECIFIED_EMPTY",
+      "source": "genout/ss_3405_18_9",
+      "bytes": 513,
+      "sha256": "1c4ed24886d608ed77cc0a584ae00cc4ae45ef8ce0c260eacf9ace858bb79d4e",
+      "buy_rate": "1.4",
+      "sell_rate": "0.2",
+      "special_rate": "1.5",
+      "LimitItemNo": "1500-1550",
+      "ItemList": [
+        1500,
+        1501,
+        1510,
+        1511,
+        1512,
+        1530,
+        1531,
+        1540,
+        1541,
+        1542,
+        1543,
+        1545
+      ]
+    }
+  ],
+  "source_meat_limitshop": {
+    "floor": 3404,
+    "xy": [
+      15,
+      13
+    ],
+    "kind": "LIMITSHOP_NOT_ITEMSHOP",
+    "source": "genout/lbis_3404_15_13",
+    "bytes": 348,
+    "sha256": "f5bd607ad2d8536f02874edca60ae587c0823c655b155f38a84d8af13194c97f",
+    "sell_rate": "1.0",
+    "special_rate": "1.0",
+    "LimitItemNo_literal": "1234-1249",
+    "closed_interval_definition_candidates": 16,
+    "original_literal_ItemList_IDs": [],
+    "native_buyback_or_stock_verified": false
+  },
+  "hospital_other_parameters": {
+    "nurse": {
+      "floor": 3405,
+      "xy": [
+        18,
+        12
+      ],
+      "literal_function": "npcgen_winhealer",
+      "literal_args": [
+        "10",
+        "1.4",
+        "2.8",
+        "2"
+      ],
+      "actual_heal_price_or_execution_verified": false
+    },
+    "doctor": {
+      "floor": 3405,
+      "xy": [
+        13,
+        8
+      ],
+      "source": "genout/msg_3405_13_8",
+      "bytes": 113,
+      "sha256": "3a37150f7f62f232c90d0dd3ef52bb6610497d965f56f5c7bdb85a41f010a9f7",
+      "full_original_dialogue_public": false,
+      "native_dialogue_runtime_verified": false
+    }
+  },
+  "original_kikukuev": {
+    "location": {
+      "floor": 3412,
+      "xy": [
+        15,
+        15
+      ],
+      "cell_u16": [
+        5002,
+        0,
+        49152
+      ]
+    },
+    "create": {
+      "source": "jaruga/event/kikukuev.create",
+      "bytes": 341,
+      "sha256": "e7ab64bf2609b921a87cc941aa6a39e76748d93a2f484ec0f8a324689e5152e2",
+      "source_block_sha256": "a1cc99399dcb03c316117b6831aad7a206b270e779d9cf860ba88135e334f618",
+      "original_name": "大哭特哭的馬倫",
+      "alias": 16009,
+      "direction": 6,
+      "function": "changeevent"
+    },
+    "script": {
+      "source": "jaruga/event/kikukuev",
+      "bytes": 1575,
+      "sha256": "8547728bd6828cd9ec4cc4222d265dd4ef43272a186623feebb85922cba6d498",
+      "parts": [
+        {
+          "ordinal": 0,
+          "EventNo": -1,
+          "TYPE": "ACCEPT",
+          "EVENT": "PET>14-524",
+          "literal_fields": {
+            "GetRandItem": "2451,2452,2453,2454",
+            "DelItem": "2456",
+            "DelPet": "PET>14-524",
+            "Pet_Name": "加特力奴"
+          },
+          "sha256": "f5e68dbfd5db4ed072120823b07fa1d8e6d7a8831e411b1ff09e45d1dfa057b1",
+          "bytes": 337
+        },
+        {
+          "ordinal": 1,
+          "EventNo": -1,
+          "TYPE": "ACCEPT",
+          "EVENT": "PET>14-524",
+          "literal_fields": {
+            "GetItem": "2455",
+            "DelItem": "2456",
+            "DelPet": "PET>14-524"
+          },
+          "sha256": "9403eee97ab4d86467943e72470f437e87252db4308fcd78cf3e94548cd8eb39",
+          "bytes": 364
+        },
+        {
+          "ordinal": 2,
+          "EventNo": -1,
+          "TYPE": "MESSAGE",
+          "EVENT": "ITEM=2456",
+          "literal_fields": {},
+          "sha256": "0d5368e53574918e47a57429a78595052c7f434728ea377b46b62c4131d61739",
+          "bytes": 77
+        },
+        {
+          "ordinal": 3,
+          "EventNo": -1,
+          "TYPE": "REQUEST",
+          "EVENT": "LV>0",
+          "literal_fields": {
+            "GetItem": "2456*1"
+          },
+          "sha256": "383d7be9209e17fd32a45639c749e38d7aa6bd040eb3c2fbc3832934bc924b0b",
+          "bytes": 592
+        }
+      ]
+    },
+    "pet_identity": "SOURCE_PREDICATE_PET>14-524_UNRESOLVED_AS_ORIGINAL_PET_SPECIES_ID",
+    "duplicate_accept_condition_nonexclusive_in_literal_source": true,
+    "branch_precedence_or_native_event_selection_verified": false,
+    "exact_naming_variant": {
+      "script_Pet_Name": "加特力奴",
+      "item2456_original_name": "加特利奴喜愛的食物",
+      "do_not_normalize_without_new_source": true
+    }
+  },
+  "item_join": {
+    "direct_shop_ItemList_occurrences": 46,
+    "direct_shop_distinct_item_IDs": 46,
+    "meat_limit_range": "1234-1249",
+    "meat_range_derived_candidate_count": 16,
+    "meat_items_not_literal_shop_stock": true,
+    "original_quest_item_IDs": [
+      2451,
+      2452,
+      2453,
+      2454,
+      2455,
+      2456
+    ],
+    "union_distinct_IDs": 68,
+    "all_68_exact_original_item_IDs_in_two_same_carrier_tables": true,
+    "all_68_two_original_item_row_SHA256_identical": true,
+    "sorted_ID_full_original_itemset_row_sha256_manifest_digest": "14e7d057898d5a77da9b78b1d74590b2e8db082cb8b7dd821932b0b8a2aedede",
+    "digest_method": "SHA256 of LF-joined sorted ascending ID:original itemset.txt row SHA256, no final LF; original 94-column rows remain private",
+    "private_ITEM01_full_catalog_bytes": 32057594,
+    "private_ITEM01_full_catalog_SHA256": "0438c4fc9bf945223d46c24e9d374de436f2ac981c23fa282776281c2e772e60",
+    "independent_TW1_retail_original_RD_cross_carrier_candidate_IDs": 68,
+    "independent_TW1_retail_original_RD_cross_carrier_distinct_image_aliases": 63,
+    "icon_candidacy_not_native_same_deployment": true,
+    "quest_item_names_and_image_aliases": [
+      {
+        "id": 2451,
+        "name": "馬倫的葡萄",
+        "alias": 24101
+      },
+      {
+        "id": 2452,
+        "name": "馬倫的葡萄",
+        "alias": 24103
+      },
+      {
+        "id": 2453,
+        "name": "馬倫的葡萄",
+        "alias": 24102
+      },
+      {
+        "id": 2454,
+        "name": "馬倫的葡萄",
+        "alias": 24100
+      },
+      {
+        "id": 2455,
+        "name": "馬倫的毒蘑菇",
+        "alias": 24094
+      },
+      {
+        "id": 2456,
+        "name": "加特利奴喜愛的食物",
+        "alias": 24044
+      }
+    ]
+  },
+  "classification": {
+    "village": "奇喀喀",
+    "parent_floor": 3400,
+    "region_or_island": "OPEN_NOT_INFERRED",
+    "room_categories": {
+      "3404": "MEAT_LIMIT_SHOP",
+      "3405": "HOSPITAL_HEALER_PHARMACY_NPC",
+      "3409": "CONVENIENCE_OFFENCE_DEFENCE_ACCESSORY",
+      "3412": "RESIDENCE_PET_RETURN_QUEST"
+    }
+  },
+  "bounds": {
+    "native_original_client_or_server_executed": false,
+    "actual_item_shop_selection_or_transaction_verified": false,
+    "actual_healer_effect_verified": false,
+    "actual_pet_deduction_or_reward_verified": false,
+    "actual_branch_priority_verified": false,
+    "early_official_JSS1999_or_TW1_same_deployment_verified": false,
+    "original_npc_graphic_native_render_verified": false,
+    "private_binary_or_full_proprietary_dialogue_in_public_git": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "This four-room village source linkage is bounded. Rotate to genuinely uncovered original-content module, or a qualifying pet-identity/data source for PET>14-524; do not invent native quest branch priority or claim early official identity."
+}

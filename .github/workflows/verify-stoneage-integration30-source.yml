@@ -1,4 +1,4 @@
-name: Verify StoneAge INTEGRATION30-31 original dungeon sources
+name: Verify StoneAge INTEGRATION30-32 original source links
 on:
   push:
     paths:
@@ -9,6 +9,9 @@ on:
       - 'research/recovered/STONEAGE-INTEGRATION31-DUNGEON-WARPMAN-ENTRY-SOURCE-R1.json'
       - 'tests/test_stoneage_integration_module_31.py'
       - 'docs/continuity/STONEAGE-INTEGRATION31-DUNGEON-WARPMAN-ENTRY-20261110.md'
+      - 'research/recovered/STONEAGE-INTEGRATION32-QIKAKA-FOUR-ROOMS-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_32.py'
+      - 'docs/continuity/STONEAGE-INTEGRATION32-QIKAKA-FOUR-ROOMS-20261110.md'
       - 'README.md'
   pull_request:
     paths:
@@ -16,6 +19,9 @@ on:
       - 'tests/test_stoneage_integration_module_30.py'
       - 'docs/continuity/STONEAGE-INTEGRATION30-EVENT20-DUNGEON-20261110.md'
       - '.github/workflows/verify-stoneage-integration30-source.yml'
+      - 'research/recovered/STONEAGE-INTEGRATION32-QIKAKA-FOUR-ROOMS-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_32.py'
+      - 'docs/continuity/STONEAGE-INTEGRATION32-QIKAKA-FOUR-ROOMS-20261110.md'
       - 'README.md'
 jobs:
   source-contract:
@@ -29,3 +35,4 @@ jobs:
           python-version: '3.11'
       - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_30.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_31.py' -v
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_32.py' -v
