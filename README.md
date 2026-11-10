@@ -2368,3 +2368,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-10 — INTEGRATION40｜原成人与四大洞事件标志，地图2000原数值与局部候选原像素
 
 [实际原字节与边界](docs/continuity/STONEAGE-INTEGRATION40-FOUR-CAVE-SOURCE-AND-FLOOR2000-20261110.md)：重新完整 SHA／CRC 验私人 995,176B/2,205 原NPC源ZIP、46,844,444B/4,195 MAP09 ZIP及内嵌955 DAT、35,673,334B/4,169 台湾1.0原像素候选包；不是仅复用索引。直接 CP950 读成年LV>29/flag4、四个后期社区转生捷径LV>139/flag39、40、42、46；同一NPC来源另四个不同原脚本对同号flag另设任务物品、前置条件及原DelItem/GetItem，绝不能把省四洞的晚期社区提示当作早期官方原始规则或已见证运行。原DAT floor2000真读150×150与六个NPC点位三平面；342格目标小范围353次>99图号都有已验TW1零售原RD候选，另60次低值未认定；整图仍14次/11图号缺源资格。私有48,395B/8成员原图候选与位置联系包已存个人Library、回下载全SHA/CRC一致，无商业原脚本/图/DAT上传Git。公开 [来源数值/哈希对照](research/recovered/STONEAGE-INTEGRATION40-FOUR-CAVE-FLAG-BYPASS-FLOOR2000-SOURCE-R1.json)、专用反例测试；不认证原程序执行、原生转生、官方同服或整世界。旧CURRENT完整原2,709,173B保持；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总进度未知。NEXT转其它有真正实物的新内容。
+
+
+## 2026-11-10 — INTEGRATION41｜加鲁卡环岛 B 路线原地图与检查站
+
+[来源与当前续接](docs/continuity/STONEAGE-INTEGRATION41-JARUGA-ROUTE-B-20261110.md)：实际重读八张保存社区混合 2.5 原 DAT、14 个 CREATE 块和对应原脚本，联接报名、12 站与终点。1,712 次大于 99 的局部图号引用中 1,708 次有台湾 1.0 原像素候选，报名点仍缺三个后期图号。另双解码四份人物候选原 RD，独立复核 42 个画布。原生可达性与官方同部署仍待证。最高 NEXT 是核三个报名图号的后期原 REAL，然后按来源资格补图或停止。
