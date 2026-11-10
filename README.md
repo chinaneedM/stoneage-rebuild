@@ -2358,3 +2358,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-10 — INTEGRATION38｜SBC／JBA两饲育员协会的原证书及双门点
 
 [完整证据及欠源边界](docs/continuity/STONEAGE-INTEGRATION38-SBC-JBA-CERTIFICATE-20261110.md)：从已保私有CHAR01/ITEM01/MAP09三个原ZIP再次完整核SHA/CRC，真实重读SBC/JBA管理员3创建、2脚本旧4TYPE、2入门配置及原2参数共8份原NPC文件，源字面分别包含2479与2480双证互换的DelItem/GetItem和10913→10920、20704→20712的对应FREE证书门槛。物品双表两证逐原行SHA同，TW1零售跨版原RD两私有PNG实际核SHA/尺寸；原955 DAT真读20712/10913/20704及格值，10920缺当前档案DAT且20712不在MAP09资格像素集，不能凭缺件宣布历史无图。新的是一条可查双组织来源关系，不是新增旧脚本或实际运行互斥/发证/传送。公开仅[派生数字/证据SHA](research/recovered/STONEAGE-INTEGRATION38-SBC-JBA-CERTIFICATE-ACCESS-ORIGINAL-SOURCE-R1.json)、CI反例与这份加法连续性；旧CURRENT原2,709,173B/固定blob不变。Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、整体未知；NEXT转不同有材料内容。
+
+
+## 2026-11-10 — INTEGRATION39｜成年／转生原目录的五组配置与事件标志来源联接
+
+[有界原来源关系与验收边界](docs/continuity/STONEAGE-INTEGRATION39-ADULT-REBIRTH-SOURCE-20261110.md)：从完整远端原生 Git blob 重放既有 CHAR01 与 QUEST01，确切联接同一保存社区 mixed25 归档的1个`my/chengren`、4个`my/zhuansheng`原 CHANGE EVENT CREATE，地图原编号2000的(54,50)与(47–50,58)五个数值位置、各自的原图形编号与五原脚本六个TYPE；原字面 EndSetFlg 4/39/40/42/46。原`zhuans.create`第4/5块却分别是道场模板与宠物店模板，不得因路径共现并为转生事件。QUEST32标记的此前未专题集成五份脚本，现在建立可回放跨表关系，**不是新获原脚本或原生转生执行证明**；公开[派生索引](research/recovered/STONEAGE-INTEGRATION39-ADULT-REBIRTH-EVENT-CREATE-SOURCE-R1.json)只含旧原源SHA、数字与原事件段哈希。MAP09没有合格2000场景，不等于原DAT/游戏世界不存在。SOURCE_BOUNDED_PARTIAL，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总完成率未知。NEXT移向其它确有增量的原始内容，不补造成年／转生玩法阈值或状态。
