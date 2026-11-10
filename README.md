@@ -2315,3 +2315,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-10 — INTEGRATION29｜奇喀喀村长家、吉德与 event20
 
 [门内外及原脚本来源](docs/continuity/STONEAGE-INTEGRATION29-QIKAKA-CHIEF-HOUSE-EVENT20-20261110.md)：3406 村长家底图和 3400 门外候选接上三条原门点、吉德三处人物位置与三份 event20 脚本的 14 段原文。村外 16030 从同保存载体原 RD 双解码。保留 3406 (10,16) 的额外单向出口及原运行边界。下一项接 20607／20608 的三处地下城配置，已预检原 DAT、脚本和图号命名空间。
+
+
+## 2026-11-10 — INTEGRATION30｜原 event20 地下城 20607／20608
+
+[有界来源与续接](docs/continuity/STONEAGE-INTEGRATION30-EVENT20-DUNGEON-20261110.md)：两张原三平面 DAT 地下城场景、三处 NPC CREATE、三份 CP950 原脚本共14段、16029／16032 原静态图、100431 原 SPR 明确候选图和 11 条原有向门点已联接；同一原格 20607(75,13) 明列两种不同出口，不能混合。私人原件 ZIP 6,980,092 B／28 CRC／SHA 811139ca9f78ccf20a90d05c5e0535ace34a4be7600f8e0efd9335f3e774441b 已独立读取核验；公共仓库仅[派生数字/来源收据](research/recovered/STONEAGE-INTEGRATION30-EVENT20-DUNGEON-SOURCE-R1.json)与回归，历史 CURRENT 原 blob 完整保留。不宣称原版游戏原生执行、触发和同早期官方部署。Stage A 7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null。下一优先复核 20606 入口源是否尚有真材料增量。

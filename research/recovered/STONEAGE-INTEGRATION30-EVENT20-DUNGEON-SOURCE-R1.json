@@ -1,0 +1,847 @@
+{
+  "schema": "stoneage.integration30.event20_dungeon_source.r1",
+  "date": "2026-11-10",
+  "starting_main": "1a839fbbcdb664c68236b52bef15f8e017e22c46",
+  "starting_tree": "f0eef1d408e40278eb08b12f10964f6b0317550b",
+  "preserved_CURRENT": {
+    "bytes": 2709173,
+    "git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "upstream": {
+    "prior": {
+      "path": "research/recovered/STONEAGE-INTEGRATION29-QIKAKA-CHIEF-HOUSE-EVENT20-SOURCE-R1.json",
+      "git_blob": "1a873d16452ebefa58adf92cf648773f57f5f33e"
+    },
+    "q": {
+      "path": "research/recovered/STONEAGE-QUEST15-BANDIT-EVENT20-ORIGINAL-SOURCE-R1.json",
+      "git_blob": "e18743c702ee979cc96f009bed4d4f62a27f5bbc"
+    },
+    "receipt": {
+      "path": "research/recovered/STONEAGE-INTEGRATION29-PUBLICATION-ACCEPTANCE-R1.json",
+      "git_blob": "5406d3aa0d37ee140f6dc6584a8e405fbe3f0322"
+    },
+    "map": {
+      "path": "research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json",
+      "git_blob": "137580e7c25aadf3d679b6ebfb5080b79912cc4f"
+    },
+    "r40": {
+      "path": "research/recovered/STONEAGE-PRESERVED-PET-SPR-SOURCE-R40.json",
+      "git_blob": "5b49d54d7cff2d79d3610db7ca4a37108f1f9e03"
+    }
+  },
+  "private_archive": {
+    "name": "StoneAge-INTEGRATION30-event20-dungeon-20607-20608-private.zip",
+    "size": 6980092,
+    "sha256": "811139ca9f78ccf20a90d05c5e0535ace34a4be7600f8e0efd9335f3e774441b",
+    "members": 28,
+    "crc_all_pass": true,
+    "read_back_from_private_library": true
+  },
+  "original_files": {
+    "DAT_sha256": {
+      "20606": "09600b79c79ff36e2e3716f7e857b5cbb7d2cdd253d8067ca4b0c81417ebdd35",
+      "20607": "61030ae7ad974ec396074f3bb7a44c3741694be093fb91abec145392a8a67845",
+      "20608": "c557d48683e1b2ee361a6d35bf2f67ff28f2b016e1e90062567ead1514653612"
+    },
+    "mapwarp_sha256": "b7b50f42efa8e5a3f740d49a8d0c01cbf994d1bb66151b16ff5b5e7c14e7595c",
+    "dungeon01_create_sha256": "541ce646794e6c0c3e2414657567cbf6cb662d18b28049f4e3cd691071304169",
+    "npc20600_create_sha256": "245ab7ab71d299710b7828edfe6ee10219e6350f598b9cf9d579426e495e20b7"
+  },
+  "maps": {
+    "20607": {
+      "DAT_sha256": "61030ae7ad974ec396074f3bb7a44c3741694be093fb91abec145392a8a67845",
+      "DAT_bytes": 28808,
+      "geometry": [
+        80,
+        60
+      ],
+      "canvas": [
+        4449,
+        3433
+      ],
+      "origin": [
+        16,
+        2000
+      ],
+      "draw_positions": 2329,
+      "distinct_tiles": 148,
+      "base_RGBA_by_mode": {
+        "plane0": "7f5236e9d37ca8dea03e5e7d69c1cd8cd14452dba5be42030b5948a6912a18a2",
+        "plane1": "b59049b7d2675c5b91f73ae2d3e164dd512191b7c55952fb6f288794c2a9cd18",
+        "combined": "b7d60df92660b5042ee7e3f5d138ede5f33bd16f27c8ab6ba1c08a286edcbd37"
+      },
+      "candidate_RGBA_sha256": "cb76824202c470c1fa5cb32f5b58f87873ab522023cf775c5dd440670324250f",
+      "candidate_PNG_sha256": "366328f7539a00eaf939c333837b3f052f0a239dda6a54b128e00d651517ca86",
+      "original_native_compositing_verified": false
+    },
+    "20608": {
+      "DAT_sha256": "c557d48683e1b2ee361a6d35bf2f67ff28f2b016e1e90062567ead1514653612",
+      "DAT_bytes": 1358,
+      "geometry": [
+        15,
+        15
+      ],
+      "canvas": [
+        1090,
+        911
+      ],
+      "origin": [
+        112,
+        536
+      ],
+      "draw_positions": 187,
+      "distinct_tiles": 40,
+      "base_RGBA_by_mode": {
+        "plane0": "540b22a27fa63bb17ffa3bb72406e8c390a48c3b88a113fa33acdf1cdd34bc30",
+        "plane1": "1a328a747a880af0ee6464161ace2b0ee08ff3a744349fef5373829dcc2aabd3",
+        "combined": "5330078c8778b053c0ccc3fb448db212fca427d2caa90a1854ea14c825e379d2"
+      },
+      "candidate_RGBA_sha256": "b64eb02d29f16c28b18bfc8c50b05e04c680e08df52655c26574b1db64f92a7a",
+      "candidate_PNG_sha256": "eb089110cae4ba3c1403e693b4b56ca626509f9eb8cffd8aee4c046413ebe4fa",
+      "original_native_compositing_verified": false
+    }
+  },
+  "original_cells": [
+    [
+      20606,
+      8,
+      23,
+      4119,
+      0,
+      49152
+    ],
+    [
+      20607,
+      7,
+      5,
+      4084,
+      0,
+      49155
+    ],
+    [
+      20607,
+      27,
+      31,
+      4074,
+      0,
+      49152
+    ],
+    [
+      20607,
+      29,
+      30,
+      4074,
+      0,
+      49154
+    ],
+    [
+      20607,
+      29,
+      31,
+      4080,
+      0,
+      49154
+    ],
+    [
+      20607,
+      29,
+      32,
+      4108,
+      0,
+      49154
+    ],
+    [
+      20607,
+      31,
+      30,
+      4082,
+      0,
+      49155
+    ],
+    [
+      20607,
+      31,
+      31,
+      4079,
+      0,
+      49155
+    ],
+    [
+      20607,
+      31,
+      32,
+      4080,
+      0,
+      49155
+    ],
+    [
+      20607,
+      32,
+      30,
+      4073,
+      0,
+      49152
+    ],
+    [
+      20607,
+      32,
+      31,
+      4087,
+      0,
+      49152
+    ],
+    [
+      20607,
+      32,
+      32,
+      4075,
+      0,
+      49152
+    ],
+    [
+      20607,
+      68,
+      5,
+      4085,
+      0,
+      49152
+    ],
+    [
+      20607,
+      71,
+      7,
+      4089,
+      0,
+      49152
+    ],
+    [
+      20607,
+      75,
+      13,
+      4002,
+      0,
+      49155
+    ],
+    [
+      20608,
+      0,
+      7,
+      4074,
+      0,
+      49155
+    ],
+    [
+      20608,
+      0,
+      8,
+      4074,
+      12827,
+      49155
+    ],
+    [
+      20608,
+      9,
+      3,
+      4085,
+      0,
+      49152
+    ]
+  ],
+  "npcs": [
+    {
+      "ordinal": 3,
+      "floor": 20607,
+      "xy": [
+        68,
+        5
+      ],
+      "alias": 100431,
+      "direction": 4,
+      "create_sha256": "770e178826919ebd9b8da000a12de1dc8d0b6244b7cbedbeb36ae8774150c783",
+      "script": "jaruga/event/event20_4",
+      "script_sha256": "53211cfd5a7009b65bd7e2bc54ae77c99a03dec56912f0ba4a302d47d657f013",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": 20,
+          "type": "ACCEPT",
+          "predicate": "NOWEV=20&ITEM=2487",
+          "predicate_sha256": "9d52104ac54cc0d68d0f0ca2d80d8597775dedf1b6bc4fca521565367bc39669",
+          "section_sha256": "d57bf481acc07f8eec4b0493e45fc0a7d4ecb02c3fe0de2a2632315ace3c2b74",
+          "actions": {
+            "EndSetFlg": [
+              "20"
+            ]
+          },
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 1,
+          "event_no": 22,
+          "type": "ACCEPT",
+          "predicate": "ENDEV=20&NOWEV=21",
+          "predicate_sha256": "e89c3ef564886ee1da32b823937ab2b3769f4a4cc0acfd05fe0d91f186c13ed9",
+          "section_sha256": "a4f65e2f87d69d2aae44ecd4f1b1087f3437fc95969a1d8903a1a22cba388ff7",
+          "actions": {
+            "GetRandItem": [
+              "2490,2491,2492,2493,2494"
+            ],
+            "EndSetFlg": [
+              "22"
+            ]
+          },
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 2,
+          "event_no": 21,
+          "type": "MESSAGE",
+          "predicate": "ENDEV=22&NOWEV=21&ITEM!=2488",
+          "predicate_sha256": "959c0548afd569fa9d68dd6ff8a01264378b25860a770951afc4347789681992",
+          "section_sha256": "7e6cd30290ddbecd967ef8d83563ea90d32d741cfb1e103138d48891d32d7c4f",
+          "actions": {},
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 3,
+          "event_no": 21,
+          "type": "MESSAGE",
+          "predicate": "ENDEV=20&NOWEV=21&ITEM=2488",
+          "predicate_sha256": "b84ee8c863ba4b52cb00775fa88d90f91e535d9d68a46cb04ae826007b7f22c1",
+          "section_sha256": "8b3e040adf963d154a0f5b326ae9e1a376f3e5dd7c1762026247fd2a44eed7ab",
+          "actions": {},
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 4,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "ENDEV=20&ENDEV=21&ENDEV=22",
+          "predicate_sha256": "b3706dcbe2423ccdcb7b408d3297005a2ac28d03eaf44724248439ba958fe089",
+          "section_sha256": "ad3f611a43baa5e14b0738fdfdaec43f0bb94dc4ac392a45b0c7dd5d100249d0",
+          "actions": {},
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 5,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "ENDEV=20",
+          "predicate_sha256": "d19573a63029b671de7545e0f5b74bf24d6de4375162cc94657e40785bc150ac",
+          "section_sha256": "5a38ad22a0b33839219966bb6ceb1603ac3cdc816450adec372eb6c6d4a90be3",
+          "actions": {},
+          "explicit_end_present": true
+        }
+      ],
+      "source_u16": [
+        4085,
+        0,
+        49152
+      ]
+    },
+    {
+      "ordinal": 4,
+      "floor": 20607,
+      "xy": [
+        71,
+        7
+      ],
+      "alias": 16032,
+      "direction": 5,
+      "create_sha256": "61a8bf4a9871f93d67fdabc8fbc41604c5de76aba2d2a524f35deaf15e7dc9e4",
+      "script": "jaruga/event/event20_5",
+      "script_sha256": "79130f82ce0a2f2882d5a9cdc456a3169104e156b9520dc60613841b16500478",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": -1,
+          "type": "ACCEPT",
+          "predicate": "ENDEV=20&ITEM=2487",
+          "predicate_sha256": "a6fdc8f123b55f0ce0a71cce388dadcc29d3d96baf1aeef588bb010471390c6e",
+          "section_sha256": "000010b28620c7a9eeaa9644e68108d7514147211fe837ad6bc0df77e35357da",
+          "actions": {},
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 1,
+          "event_no": 21,
+          "type": "ACCEPT",
+          "predicate": "ENDEV=20&NOWEV=21",
+          "predicate_sha256": "e89c3ef564886ee1da32b823937ab2b3769f4a4cc0acfd05fe0d91f186c13ed9",
+          "section_sha256": "8e59d334d7465512d969ee2eede86d348be48f298490b542e8f8334493453a5e",
+          "actions": {},
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 2,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "ENDEV=20&ENDEV=21",
+          "predicate_sha256": "c2f5ce829f3f310edfdc91420e3da698a0dd6b9c38f970781f43d32654f6b9ea",
+          "section_sha256": "0b0590ab466acaf24d0bab82f4fbbf40e941e6ae0fe8f5bf173dd78c44d41ba9",
+          "actions": {},
+          "explicit_end_present": true
+        }
+      ],
+      "source_u16": [
+        4089,
+        0,
+        49152
+      ]
+    },
+    {
+      "ordinal": 5,
+      "floor": 20608,
+      "xy": [
+        9,
+        3
+      ],
+      "alias": 16029,
+      "direction": 5,
+      "create_sha256": "c5edbde139be334111450d22b79a872872233e23cc6def8c1e6021d7b69cb857",
+      "script": "jaruga/event/event20_6",
+      "script_sha256": "edddcf7c7325fd142f3250f08d9f50aac2209fa9e22d4a316c1bf1fc95d68658",
+      "events": [
+        {
+          "ordinal": 0,
+          "event_no": 21,
+          "type": "ACCEPT",
+          "predicate": "NOWEV=21&ENDEV=22&ITEM!=2488",
+          "predicate_sha256": "b1cd67c2f9291a6aa4ab0bf5fd1ad387f5f53d213d0cd61fe6849e0cc576620e",
+          "section_sha256": "18d58fd7527c413645204a908fb9d6cd7125d42791ba22835d764645fc27b857",
+          "actions": {
+            "GetItem": [
+              "2488"
+            ]
+          },
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 1,
+          "event_no": 21,
+          "type": "ACCEPT",
+          "predicate": "NOWEV=21&ENDEV=22&ITEM=2488",
+          "predicate_sha256": "738a0938a33fedc876ebcac14515621f3926b70b53087b3726ea763d6b907acc",
+          "section_sha256": "bac9dddf2c1c3fd4e9d07e54605d65773ce2e18b032345c52be9a36653892e7e",
+          "actions": {},
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 2,
+          "event_no": 21,
+          "type": "REQUEST",
+          "predicate": "ENDEV=20&ITEM=2487",
+          "predicate_sha256": "a6fdc8f123b55f0ce0a71cce388dadcc29d3d96baf1aeef588bb010471390c6e",
+          "section_sha256": "b4847651779dd8c2f8f35bfe81ce6264f769f7e6ae1e36de13158bdbaf20cc10",
+          "actions": {
+            "DelItem": [
+              "2487"
+            ]
+          },
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 3,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "ENDEV=20&NOWEV=21",
+          "predicate_sha256": "e89c3ef564886ee1da32b823937ab2b3769f4a4cc0acfd05fe0d91f186c13ed9",
+          "section_sha256": "4a542126c88bb7224807774ff6b38ae4340d1af2e7390103f9145b1a33eb7ab7",
+          "actions": {},
+          "explicit_end_present": true
+        },
+        {
+          "ordinal": 4,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "predicate": "ENDEV=20&ENDEV=21",
+          "predicate_sha256": "c2f5ce829f3f310edfdc91420e3da698a0dd6b9c38f970781f43d32654f6b9ea",
+          "section_sha256": "e9a12ccecd5503d93f89e3a24318ea805adb5e50213a109953ca8ae1709e4c2c",
+          "actions": {},
+          "explicit_end_present": true
+        }
+      ],
+      "source_u16": [
+        4085,
+        0,
+        49152
+      ]
+    }
+  ],
+  "graphics": {
+    "16029": {
+      "namespace": "ADRN_STATIC_CANDIDATE",
+      "bitmap": 5875,
+      "size": [
+        28,
+        78
+      ],
+      "rd_sha256": "a3040f7a5a08b12e4f04ddf3e61b46ed9af1ab2bba806dff4b9aa25c95696d20",
+      "rgba_sha256": "7ed60d8466ee47302be9a3dc85c28af169ac8bfc3f3b421d431f2b2f627a9ffb",
+      "png_sha256": "ed1f592005f35f93d85dd9b9aa8cb905fe9aba6dabe10a9cfdbff4f854bf3f08"
+    },
+    "16032": {
+      "namespace": "ADRN_STATIC_CANDIDATE",
+      "bitmap": 5878,
+      "size": [
+        28,
+        82
+      ],
+      "rd_sha256": "680b7b2b55204a9cfbda9676f831c2f620a3a874d5e56530072f412e5f3e5d77",
+      "rgba_sha256": "c48346335f6e50647fcc8647f8b951c6a403efcad63f533da48231eeba209723",
+      "png_sha256": "8406a59490a24c99b4cd55d9163d81caf793e8877ed412562f054083925b4c53"
+    },
+    "100431": {
+      "namespace": "SPR_FRAME_EXPLICIT_CANDIDATE",
+      "direction": 4,
+      "action": 0,
+      "frame": 0,
+      "bitmap": 87803,
+      "size": [
+        72,
+        113
+      ],
+      "rd_sha256": "7fd084c6f624583e6262fc38315897fcf7d62b3227594a4fd282a18d21fa351c",
+      "rgba_sha256": "b1fbd8e20c30ba3d0ab103e19947feada880641474f82ecf901c2e6c9030cefd",
+      "png_sha256": "c56e6813102d22c88899846fa1ab52254abeb30abfb74985ab611d31628d805a"
+    }
+  },
+  "spr_100431": {
+    "group_index": 394,
+    "spr_no": 100431,
+    "offset": 2623688,
+    "anim_count": 104,
+    "reserved": 16,
+    "index_record_sha256": "c6f45cc150227f26b6cb0c976353ff419141865cc6286a29cdc112ade010e565",
+    "end_offset": 2630856,
+    "segment_sha256": "3adc4cbb86bd45145ae0fa15004d5e7183bd208fb3bfc686c84ce13b711a4c9e",
+    "frame_count": 592,
+    "sentinel_frames": 0,
+    "distinct_non_sentinel_bitmap_keys": 344,
+    "native_frame_selection_verified": false
+  },
+  "main_exits": [
+    {
+      "line": 2308,
+      "sha256": "021476c9058df5419d9f4cfa28f4b7c756fb217a4374035670f33caee2ee7fbd",
+      "start": [
+        20607,
+        75,
+        13
+      ],
+      "target": [
+        20608,
+        0,
+        7
+      ],
+      "start_u16": [
+        4002,
+        0,
+        49155
+      ],
+      "target_u16": [
+        4074,
+        0,
+        49155
+      ],
+      "warp_create_matches": [
+        {
+          "file": "genout/dungeon01.create",
+          "ordinal": 156,
+          "block_sha256": "4c98df16767b84c3255fcddf15483a8efa4d4e72bb8de899e5590654931634a4",
+          "file_sha256": "541ce646794e6c0c3e2414657567cbf6cb662d18b28049f4e3cd691071304169"
+        }
+      ]
+    },
+    {
+      "line": 2309,
+      "sha256": "af0b0d24ef7940a52d2202fd819fff7413525810eab575caef794cfd9b4d32ba",
+      "start": [
+        20608,
+        0,
+        7
+      ],
+      "target": [
+        20607,
+        75,
+        13
+      ],
+      "start_u16": [
+        4074,
+        0,
+        49155
+      ],
+      "target_u16": [
+        4002,
+        0,
+        49155
+      ],
+      "warp_create_matches": [
+        {
+          "file": "genout/dungeon01.create",
+          "ordinal": 157,
+          "block_sha256": "c96ecbdc7126bcf649a2d393623356d1290abd3f89d4310b62f94096d1f7cb5d",
+          "file_sha256": "541ce646794e6c0c3e2414657567cbf6cb662d18b28049f4e3cd691071304169"
+        }
+      ]
+    },
+    {
+      "line": 2310,
+      "sha256": "b7f4e43208d96b9e961c1c99aa8557d5de6bb349fa303a71a1f042c84de03ce5",
+      "start": [
+        20607,
+        75,
+        13
+      ],
+      "target": [
+        20608,
+        0,
+        8
+      ],
+      "start_u16": [
+        4002,
+        0,
+        49155
+      ],
+      "target_u16": [
+        4074,
+        12827,
+        49155
+      ],
+      "warp_create_matches": [
+        {
+          "file": "genout/dungeon01.create",
+          "ordinal": 158,
+          "block_sha256": "32a455ccc7623ad3c0a9cd569063cf5dd7cec713c4850796aebed12665fc2547",
+          "file_sha256": "541ce646794e6c0c3e2414657567cbf6cb662d18b28049f4e3cd691071304169"
+        }
+      ]
+    },
+    {
+      "line": 2311,
+      "sha256": "692e9d1f07bf68d17380f48c29265e0d046c7fec02349c6678b844a2bb09548c",
+      "start": [
+        20608,
+        0,
+        8
+      ],
+      "target": [
+        20607,
+        75,
+        13
+      ],
+      "start_u16": [
+        4074,
+        12827,
+        49155
+      ],
+      "target_u16": [
+        4002,
+        0,
+        49155
+      ],
+      "warp_create_matches": [
+        {
+          "file": "genout/dungeon01.create",
+          "ordinal": 159,
+          "block_sha256": "77546f6d569377d6dccdde4427f4ab2ba7148bd4bce76c4bd0cb2ba81926f308",
+          "file_sha256": "541ce646794e6c0c3e2414657567cbf6cb662d18b28049f4e3cd691071304169"
+        }
+      ]
+    }
+  ],
+  "other_directed_warps": [
+    {
+      "line": 2307,
+      "sha256": "dc57563b86e13e12c56995240236ddfd1bf644f47c69a4b775ae29b37ef0cba2",
+      "start": [
+        20607,
+        7,
+        5
+      ],
+      "target": [
+        20606,
+        8,
+        23
+      ],
+      "start_u16": [
+        4084,
+        0,
+        49155
+      ],
+      "target_u16": [
+        4119,
+        0,
+        49152
+      ]
+    },
+    {
+      "line": 2460,
+      "sha256": "b004fa8c08ed6a44942c8517f83140f0a651c2dbb3ca5dadbcedc7e766cb1883",
+      "start": [
+        20607,
+        31,
+        30
+      ],
+      "target": [
+        20607,
+        27,
+        31
+      ],
+      "start_u16": [
+        4082,
+        0,
+        49155
+      ],
+      "target_u16": [
+        4074,
+        0,
+        49152
+      ]
+    },
+    {
+      "line": 2461,
+      "sha256": "5f1c3aec63c241f5d2df67fe8c4e040adb187c926323252f519521d8c4776937",
+      "start": [
+        20607,
+        31,
+        31
+      ],
+      "target": [
+        20607,
+        27,
+        31
+      ],
+      "start_u16": [
+        4079,
+        0,
+        49155
+      ],
+      "target_u16": [
+        4074,
+        0,
+        49152
+      ]
+    },
+    {
+      "line": 2462,
+      "sha256": "9c6ea4178f22245087d6ea0bbb61d49ea02ec78036062e5c6bc930fabf0cea9e",
+      "start": [
+        20607,
+        31,
+        32
+      ],
+      "target": [
+        20607,
+        27,
+        31
+      ],
+      "start_u16": [
+        4080,
+        0,
+        49155
+      ],
+      "target_u16": [
+        4074,
+        0,
+        49152
+      ]
+    },
+    {
+      "line": 2463,
+      "sha256": "d4670ad638d5a1e4f7c12c3bb2e85be1b0d3539aa64149e96b34e303f44e8a90",
+      "start": [
+        20607,
+        29,
+        30
+      ],
+      "target": [
+        20607,
+        32,
+        30
+      ],
+      "start_u16": [
+        4074,
+        0,
+        49154
+      ],
+      "target_u16": [
+        4073,
+        0,
+        49152
+      ]
+    },
+    {
+      "line": 2464,
+      "sha256": "e2cab39cc97aefbc633b9097e3fbdfc5f61667590a912377d3b8804ea52d7ef9",
+      "start": [
+        20607,
+        29,
+        31
+      ],
+      "target": [
+        20607,
+        32,
+        31
+      ],
+      "start_u16": [
+        4080,
+        0,
+        49154
+      ],
+      "target_u16": [
+        4087,
+        0,
+        49152
+      ]
+    },
+    {
+      "line": 2465,
+      "sha256": "f99b5ac1319ce2a05aa3700a1f72e0a8d26ae2534a02e31a9bc2ce01d71df75a",
+      "start": [
+        20607,
+        29,
+        32
+      ],
+      "target": [
+        20607,
+        32,
+        32
+      ],
+      "start_u16": [
+        4108,
+        0,
+        49154
+      ],
+      "target_u16": [
+        4075,
+        0,
+        49152
+      ]
+    }
+  ],
+  "offline_observation": {
+    "HTML_script_sections": 14,
+    "svg_warp_links": 4,
+    "svg_npc_markers": 3,
+    "two_targets_from_identical_original_cell": true,
+    "browser_interaction_verified": false
+  },
+  "checks": {
+    "private_raw_dat_sha": true,
+    "private_raw_script_sha": true,
+    "all_11_mapwarp_line_hashes": true,
+    "all_three_graphic_png_sha": true,
+    "both_scene_png_and_decoded_RGBA_sha": true,
+    "original_client_running": false,
+    "original_warp_event_execution": false,
+    "original_animation_frame_selection": false,
+    "early_official_same_deployment": false,
+    "private_assets_published": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Check original 20606 to 20607 entry source coverage without duplicating MAP09; rotate to another source-ready missing content family if already covered."
+}
