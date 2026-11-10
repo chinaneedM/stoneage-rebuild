@@ -2373,3 +2373,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-10 — INTEGRATION41｜加鲁卡环岛 B 路线原地图与检查站
 
 [来源与当前续接](docs/continuity/STONEAGE-INTEGRATION41-JARUGA-ROUTE-B-20261110.md)：实际重读八张保存社区混合 2.5 原 DAT、14 个 CREATE 块和对应原脚本，联接报名、12 站与终点。1,712 次大于 99 的局部图号引用中 1,708 次有台湾 1.0 原像素候选，报名点仍缺三个后期图号。另双解码四份人物候选原 RD，独立复核 42 个画布。原生可达性与官方同部署仍待证。最高 NEXT 是核三个报名图号的后期原 REAL，然后按来源资格补图或停止。
+
+
+## 2026-11-10 — INTEGRATION42｜环岛报名点原图补证及地图 3000 全图
+
+[来源与下一项](docs/continuity/STONEAGE-INTEGRATION42-JARUGA-REGISTRATION-ORIGINAL-TILES-20261110.md)。从完整混合 2.5 原 ADRN/REAL 恢复 24307、24309、24310，补齐报名窗口 4 处原图引用至 126/126。同包图块重放地图 3000 全图，覆盖 10,851/10,853 处高值引用，保留 22413 两处无匹配原格。最高 NEXT 为地图 4000 与环岛 A6、A 终点的同源整合。
