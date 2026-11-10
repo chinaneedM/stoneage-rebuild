@@ -98,6 +98,7 @@ class QikakaFourRooms(unittest.TestCase):
     def test_original_pet_quest_identical_predicate_not_collapsed(self):
         q=self.r["original_kikukuev"]
         self.assertEqual(q["location"],{"floor":3412,"xy":[15,15],"cell_u16":[5002,0,49152]})
+        self.assertEqual(q["create"]["bytes"],341)
         parts=q["script"]["parts"]
         self.assertEqual(len(parts),4)
         self.assertEqual([x["TYPE"] for x in parts],["ACCEPT","ACCEPT","MESSAGE","REQUEST"])
