@@ -1,0 +1,384 @@
+{
+  "schema": "stoneage.integration43.jaruga_a6_finish_source_boundary.r1",
+  "input_remote": {
+    "head": "cbf85f91753d7bac449305e506ef9fb12c74a588",
+    "tree": "776505d9455522da7ec530efcb89542341a76c6a"
+  },
+  "preserved_CURRENT": {
+    "bytes": 2709173,
+    "git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "modified": false
+  },
+  "source_scope": "MIXED25_COMMUNITY_ORIGINAL_NPC_AND_DAT; TW1_RETAIL_DISTINCT_IMAGE_CARRIER; NOT_AUTHENTICATED_OFFICIAL_EARLY_DEPLOYMENT",
+  "source_git_blobs": {
+    "quest25": "a52b4e5519912ac7e46e1f892cc01515861cf2e8",
+    "integration41": "785465c422e2af4e7a1778dde332f43bfb5e57c7",
+    "integration42": "f87b5187dee37facaacd35f63132346986f9e1f9"
+  },
+  "private_archive_recheck": [
+    {
+      "name": "QUEST25",
+      "bytes": 172328,
+      "sha256": "543cf62ec2b1f5a36a929c7714e86510f1382430039ebf6e7a487d165acffbb2",
+      "members": 173,
+      "member_CRC_all_valid": true
+    },
+    {
+      "name": "INTEGRATION41",
+      "bytes": 15965774,
+      "sha256": "17c731bc35eff196ece90709772bda8409d038ce6ac95fa5a06553ad4a846e3c",
+      "members": 413,
+      "member_CRC_all_valid": true
+    },
+    {
+      "name": "INTEGRATION42",
+      "bytes": 23537054,
+      "sha256": "df4b41a084483024fda035b05a31cd6940e1c28c883d53039ee6abc2f148dcff",
+      "members": 23,
+      "member_CRC_all_valid": true
+    }
+  ],
+  "private_four_source_members": [
+    {
+      "path": "jaruga/event/event.template",
+      "bytes": 122,
+      "sha256": "9c11ac0cbbd9b110e8ff7d0115730044673bf29c5df6d23034e56530c181d0b2",
+      "crc32": "a70fc73f"
+    },
+    {
+      "path": "jaruga/event/oev.create",
+      "bytes": 4730,
+      "sha256": "9139bb23527de0e819d6969e5b6cb5fe857b3b937aaa6fe1490879da99471da8",
+      "crc32": "8b3488fc"
+    },
+    {
+      "path": "jaruga/event/oev_6",
+      "bytes": 1907,
+      "sha256": "f57c3063df8f921f7abee71546880b20802138d94db2d4cfec3ca5b6ff48ddf8",
+      "crc32": "49315ddd"
+    },
+    {
+      "path": "jaruga/event/oev_ed1",
+      "bytes": 2082,
+      "sha256": "169693318607445365974327825fbd4c491b6161a68b7e1e552ca04a69bf2cc5",
+      "crc32": "d4beae64"
+    }
+  ],
+  "map4000": {
+    "file": "4000.dat",
+    "historical_source_sha256": "9d327505c74ccb27b62bcce7259be246c9c4a0477c6ee0fceb78f921e7a0dfa5",
+    "prior_QUEST25_status": "DAT_PRESENT_GT99_QUALIFIED_RD_MISSING",
+    "prior_QUEST25_CREATE_ref_count": 14,
+    "prior_QUEST25_source_cohorts": {
+      "QUEST01": 7,
+      "QUEST02": 1,
+      "QUEST03": 6
+    },
+    "prior_I42_reused_alias_occurrences": {
+      "24307": 0,
+      "24309": 1,
+      "24310": 0
+    },
+    "prior_I42_full_map_preflight": {
+      "high_value_references": 8603,
+      "unqualified_occurrences": 4,
+      "unqualified_aliases": [
+        22356,
+        22413,
+        22434
+      ],
+      "no_missing_coordinates_claimed": true
+    },
+    "current_original_DAT_bytes_read": false,
+    "current_original_RD_bytes_decoded": false,
+    "current_original_4000_canvas_rendered": false
+  },
+  "sites": [
+    {
+      "name": "A6",
+      "floor": 4000,
+      "source_create": {
+        "path": "jaruga/event/oev.create",
+        "ordinal": 6,
+        "sha256": "5b6e8162d74e837bb67e9435433b7335588bf96765e9e877eba72fabf81b5b74"
+      },
+      "source_borncorner": [
+        63,
+        66,
+        63,
+        66
+      ],
+      "source_direction": 4,
+      "source_graphic_alias": 16068,
+      "source_template": "jaruga/event/event.template",
+      "source_functionset": "ExChangeMan",
+      "script": {
+        "path": "jaruga/event/oev_6",
+        "sha256": "f57c3063df8f921f7abee71546880b20802138d94db2d4cfec3ca5b6ff48ddf8",
+        "bytes": 1907,
+        "crc32": "49315ddd",
+        "events": [
+          {
+            "ordinal": 0,
+            "type": "MESSAGE",
+            "condition_literal": "LV>0&ITEM=2557",
+            "condition_sha256": "c66219a579c26b2370f6f458f0f9d7ee0a917f470f30443a7ade097b3fba973a",
+            "section_sha256": "abd79cb1b2959745d5f80c022479cd6e817723fc699934ec7a76dbfa3bbbd0fe",
+            "commands": {
+              "GetItem": [
+                "2558"
+              ],
+              "DelItem": [
+                "2557"
+              ]
+            }
+          },
+          {
+            "ordinal": 1,
+            "type": "MESSAGE",
+            "condition_literal": "LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+            "condition_sha256": "81685634b7764857f184e3b6125adb1342b87ecf2d636af997105ef4a8d53339",
+            "section_sha256": "59607f9cf551e0592c9f4842bc115d441f29e77b694f43a5300ea819adcd6e29",
+            "commands": {}
+          },
+          {
+            "ordinal": 2,
+            "type": "MESSAGE",
+            "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2",
+            "condition_sha256": "f7ae5a4757eccf02cf7c7903baac9176bdabf09fced527c1021fbae276029a28",
+            "section_sha256": "d9fefb86e5869e37328534ca4d34331f410dd565ea223fdf02f9b59cc470a4e4",
+            "commands": {}
+          },
+          {
+            "ordinal": 3,
+            "type": "MESSAGE",
+            "condition_literal": "LV>0&ITEM=2557",
+            "condition_sha256": "c66219a579c26b2370f6f458f0f9d7ee0a917f470f30443a7ade097b3fba973a",
+            "section_sha256": "581962bf748794621ec7458db3f59403dd7fae650af3628397d5e4a871e34f8d",
+            "commands": {}
+          },
+          {
+            "ordinal": 4,
+            "type": "MESSAGE",
+            "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+            "condition_sha256": "032010432e01329c691abcc1c6d954b9e4393b20160d5e8dd60b685ce0becc6b",
+            "section_sha256": "fd4078866383688908b6fdc110bf625ce07266520c880fb7ed4a5d15815883c1",
+            "commands": {}
+          },
+          {
+            "ordinal": 5,
+            "type": "MESSAGE",
+            "condition_literal": "LV>0",
+            "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+            "section_sha256": "ff3c81cd28ffe623be0557a30f84c17795b2bdd41c4c776df2f66f1fc772c8f3",
+            "commands": {}
+          }
+        ]
+      },
+      "original_xy": [
+        63,
+        66
+      ],
+      "original_exchange": {
+        "required_item": 2557,
+        "received_item": 2558,
+        "condition": "LV>0&ITEM=2557"
+      },
+      "prior_11x11_window": [
+        58,
+        61,
+        68,
+        71
+      ],
+      "prior_window_high_refs": 131
+    },
+    {
+      "name": "A_finish",
+      "floor": 4000,
+      "source_create": {
+        "path": "jaruga/event/oev.create",
+        "ordinal": 25,
+        "sha256": "25721759ac9e41a0575aef3a7c59592b388ad554a5cc6d62b772d58836fa39a3"
+      },
+      "source_borncorner": [
+        54,
+        47,
+        54,
+        47
+      ],
+      "source_direction": 4,
+      "source_graphic_alias": 16027,
+      "source_template": "jaruga/event/event.template",
+      "source_functionset": "ExChangeMan",
+      "script": {
+        "path": "jaruga/event/oev_ed1",
+        "sha256": "169693318607445365974327825fbd4c491b6161a68b7e1e552ca04a69bf2cc5",
+        "bytes": 2082,
+        "crc32": "d4beae64",
+        "events": [
+          {
+            "ordinal": 0,
+            "type": "MESSAGE",
+            "condition_literal": "LV>0&ITEM=2564",
+            "condition_sha256": "3d437e04aa54a8fbb45b35b7f2f3ccf5ca29f308dd35a4283d67b47fd7111c9a",
+            "section_sha256": "a9443841b91b4b20d46a70c8dbd625723b9a78529a7eb9936593d2c4a189f300",
+            "commands": {
+              "DelItem": [
+                "2564"
+              ],
+              "GetPet": [
+                "358,96,328,309,365"
+              ],
+              "GetRandItem": [
+                "254,351,770,1061,1062,69,59,269,2565,2566"
+              ]
+            }
+          },
+          {
+            "ordinal": 1,
+            "type": "MESSAGE",
+            "condition_literal": "LV>0&ITEM=2564&ENDEV=2",
+            "condition_sha256": "f7502209b61ea1e633463a05349a2897ea83fd00819e7282d41031c1060eabaa",
+            "section_sha256": "7b0d4d797bd1c24eaa2455a83a38a0050ac25aa13a90c08dd4ba9d852759943a",
+            "commands": {}
+          },
+          {
+            "ordinal": 2,
+            "type": "ACCEPT",
+            "condition_literal": "LV>0&ITEM=2557,LV>0&ITEM=2558,LV>0&ITEM=2559,LV>0&ITEM=2560,LV>0&ITEM=2561,LV>0&ITEM=2562,LV>0&ITEM=2563",
+            "condition_sha256": "bcd44ceef46cc4b166971443ef4532ab834440907d66cd452cddb09b7851b196",
+            "section_sha256": "09c71c7e8ae0b13af04856a9af714551268499df5e4992cb7b6daec166a346c6",
+            "commands": {
+              "DelItem": [
+                "2557,2558,2559,2560,2561,2562,2563"
+              ],
+              "GetRandItem": [
+                "12644,12635,12635,12641,12641"
+              ]
+            }
+          },
+          {
+            "ordinal": 3,
+            "type": "ACCEPT",
+            "condition_literal": "LV>0&ITEM=2553,LV>0&ITEM=2554,LV>0&ITEM=2555,LV>0&ITEM=2556",
+            "condition_sha256": "b85374647cfe0146251db0f9b6062de13128c22d980666780432c8786418f6de",
+            "section_sha256": "ed08e87b5ead11ea3c14d0f5e5b366799bdecf4e4cc36a9604d61441818c5aca",
+            "commands": {
+              "DelItem": [
+                "2553,2554,2555,2556"
+              ]
+            }
+          },
+          {
+            "ordinal": 4,
+            "type": "ACCEPT",
+            "condition_literal": "LV>0&ITEM=2552",
+            "condition_sha256": "78bdfe939c6bb1d09700ccdaef62fdcab3e8e2d94a07b560e3a191ab6ddc9602",
+            "section_sha256": "b829909158f0c093623b6c41012c7b49ab5785267c5cf45dd45131161a1d8882",
+            "commands": {
+              "DelItem": [
+                "2552"
+              ]
+            }
+          },
+          {
+            "ordinal": 5,
+            "type": "MESSAGE",
+            "condition_literal": "LV>0",
+            "condition_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+            "section_sha256": "94d2d6900f8db2e7d671e74bea44ad1ec5859925a6a132c6572c9c7e41bcfed6",
+            "commands": {}
+          }
+        ]
+      },
+      "original_xy": [
+        54,
+        47
+      ],
+      "original_finish_proof_item": 2564,
+      "prior_11x11_window": [
+        49,
+        42,
+        59,
+        52
+      ],
+      "prior_window_high_refs": 139
+    }
+  ],
+  "cross_source_TW1_image_for_16027": {
+    "physical_bitmap": 5873,
+    "offset": 24981183,
+    "bytes": 1771,
+    "xoff": -24,
+    "yoff": -72,
+    "width": 40,
+    "height": 81,
+    "index": 5873,
+    "record_sha256": "ca040cc6bd9eb7cfa0b843c54c2ccff1b059af962f12bab7205a60e3e3dc9371",
+    "RD_sha256": "e0959846a4ee9ab183da4da9bd53e18f487b17e8e77d0fdeaba263215ef1ffc0",
+    "index_sha256": "0ba6a59f821827497e44497831adb52092173b81935e53c7b5fe8fe42a55eba4",
+    "RGBA_sha256": "8e13ae03f41790b3527a2038c9c09c82d306f5e4e545002be2adccdd5dc59c0d",
+    "PNG_sha256": "e34de42727fc74dc9267b175fdbf5404820b1fbcbee4f212707b81f8bfe6d5cc",
+    "alias": 16027,
+    "same_official_deployment": false,
+    "private_PNG_SHA_rechecked": true
+  },
+  "cross_source_TW1_image_for_16068": {
+    "alias": 16068,
+    "source_status": "PRIOR_PREFLIGHT_NOT_THIS_WORK_UNIT_REDECODE",
+    "same_official_deployment": false
+  },
+  "relations": [
+    {
+      "type": "NPC_CREATE_ON_MAP",
+      "source": "jaruga/event/oev.create#6",
+      "target": "mixed25:4000.dat:(63,66)",
+      "source_qualification": "STATIC_ORIGINAL_CREATE_WITH_PRIOR_DAT_SHA"
+    },
+    {
+      "type": "NPC_CREATE_ON_MAP",
+      "source": "jaruga/event/oev.create#25",
+      "target": "mixed25:4000.dat:(54,47)",
+      "source_qualification": "STATIC_ORIGINAL_CREATE_WITH_PRIOR_DAT_SHA"
+    },
+    {
+      "type": "ITEM_EXCHANGE_SOURCE",
+      "source": "jaruga/event/oev_6#event0",
+      "target": "2557->2558",
+      "source_qualification": "ORIGINAL_LITERAL_NOT_EXECUTED"
+    },
+    {
+      "type": "REWARD_LIST_SOURCE",
+      "source": "jaruga/event/oev_ed1#event0",
+      "target": "proof2564",
+      "source_qualification": "ORIGINAL_LITERAL_NOT_EXECUTED"
+    }
+  ],
+  "negative_gates": {
+    "A6_duplicate_LV_item_condition": "UNKNOWN_NATIVE_BRANCH_PRIORITY",
+    "finish_overlap_ENDEV2": "UNKNOWN_NATIVE_BRANCH_PRIORITY",
+    "ENDEV2_meaning": "OPEN",
+    "GetRandItem_probability": "UNKNOWN",
+    "same_number_physical_bitmap_substitutes_logical_22413": false,
+    "missing_archived_DAT_proves_original_game_missing_map": false,
+    "original_layer_palette_collision_dialogue_or_reward_execution": false,
+    "early_official_same_deployment": false,
+    "original_binary_or_private_art_uploaded": false
+  },
+  "status": {
+    "scope": "SOURCE_BOUNDED_PARTIAL",
+    "new_original_script_discoveries": 0,
+    "new_original_RD_decodes": 0,
+    "new_4000_scene_pixels": 0,
+    "new_cross_module_node_links": 2,
+    "stage_A": {
+      "PARTIAL": 7,
+      "OPEN": 2
+    },
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Get exact SHA-qualified original 4000.dat and matching original RD before redrawing two windows; otherwise rotate to a separate source-ready original-content family."
+}
