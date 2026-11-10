@@ -1,0 +1,27 @@
+name: Verify StoneAge INTEGRATION38 original certificate source
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION38-SBC-JBA-CERTIFICATE-ACCESS-ORIGINAL-SOURCE-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION38-SBC-JBA-CERTIFICATE-20261110.md'
+      - 'tests/test_stoneage_integration_module_38.py'
+      - '.github/workflows/verify-stoneage-integration38-source.yml'
+      - 'README.md'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION38-SBC-JBA-CERTIFICATE-ACCESS-ORIGINAL-SOURCE-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION38-SBC-JBA-CERTIFICATE-20261110.md'
+      - 'tests/test_stoneage_integration_module_38.py'
+      - '.github/workflows/verify-stoneage-integration38-source.yml'
+      - 'README.md'
+jobs:
+  source-contract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_38.py' -v
