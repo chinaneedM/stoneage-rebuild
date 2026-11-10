@@ -1,0 +1,475 @@
+{
+  "schema": "stoneage.integration38.sbc_jba_original_certificate_exchange_and_gate_source_contract.r1",
+  "date": "2026-11-10",
+  "remote_start": {
+    "main": "1165a1fca7584e78d23360cd31c8169ca529482e",
+    "original_CURRENT_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_CURRENT_bytes": 2709173
+  },
+  "source_scope": "PRESERVED_LATER_COMMUNITY_MIXED25_NO_EARLY_OFFICIAL_DEPLOYMENT_INFERENCE",
+  "upstream": {
+    "char01": {
+      "path": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json",
+      "git_blob": "a088b61a3212f7049e7793f587123ffb29bebad7"
+    },
+    "quest01": {
+      "path": "research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json",
+      "git_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2"
+    },
+    "item02": {
+      "path": "research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-02-R1.json",
+      "git_blob": "b91bc8335db508998f4595144ce371979ea8c849"
+    },
+    "map09": {
+      "path": "research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json",
+      "git_blob": "137580e7c25aadf3d679b6ebfb5080b79912cc4f"
+    }
+  },
+  "private_verified": {
+    "npc_zip": {
+      "bytes": 995176,
+      "sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+      "members": 2205,
+      "all_crc": true
+    },
+    "item_zip": {
+      "bytes": 5868386,
+      "sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+      "members": 838,
+      "all_crc": true
+    },
+    "map09_zip": {
+      "bytes": 46844444,
+      "sha256": "d84d0800dd600798769dfb7251a1d7816588ac061ccc27812ac64a37922d4a8a",
+      "members": 4195,
+      "all_crc": true
+    },
+    "nested_original_DAT_zip": {
+      "sha256": "c079a1c25bfa11902b69c1f2839058d4fb20f025ef15c93f649f636c7e5f833a",
+      "members": 955
+    }
+  },
+  "eight_private_original_NPC_source_files": [
+    {
+      "path": "genout/10900npc.create",
+      "bytes": 3343,
+      "sha256": "9a1213a1eeed372fd4d9d913f219b0f0a172588341b85aab06da7cc6651dc87b",
+      "crc32": "cf90afe1"
+    },
+    {
+      "path": "genout/20700npc.create",
+      "bytes": 3256,
+      "sha256": "a7bfcfc57d866f887c512129f712f8382d113131d405da794fb5ed7ff73fd2ae",
+      "crc32": "1171d051"
+    },
+    {
+      "path": "genout/wpm_10913_37_11",
+      "bytes": 377,
+      "sha256": "f7a66fcad0bbe9ac92ff893012d2cd6f3db12bd8840bb6727ad3f28d6ad95e7b",
+      "crc32": "4ee26606"
+    },
+    {
+      "path": "genout/wpm_20704_14_14",
+      "bytes": 369,
+      "sha256": "055664766d150e53260d2c9e9d84b1422f4851beabd6409921345ad7bc921263",
+      "crc32": "725e2bd4"
+    },
+    {
+      "path": "jaruga/event/20700.create",
+      "bytes": 181,
+      "sha256": "fece0cc969644a662a42b02b8dc124376e2b54eea547c57b739d5fb3efb25092",
+      "crc32": "d0b94a5b"
+    },
+    {
+      "path": "jaruga/event/20700_1",
+      "bytes": 1037,
+      "sha256": "4bc14047b8730c6991811f4d3de3ebe7d0bc1261bc6c6a25f374a5b1d4002a02",
+      "crc32": "827c5a74"
+    },
+    {
+      "path": "sainasu/event/10900.create",
+      "bytes": 337,
+      "sha256": "b86f3f8ed9441f5495dcca6df81728e49fd63079ff7725cc3875fce0056a4d3b",
+      "crc32": "82a49ec0"
+    },
+    {
+      "path": "sainasu/event/10900_1",
+      "bytes": 1007,
+      "sha256": "4aefec08ad6009f5fc948f9352201eeab8715b42840ceb4036d8d3d34de99bd5",
+      "crc32": "4a467004"
+    }
+  ],
+  "five_original_CREATE_rows": [
+    {
+      "path": "sainasu/event/10900.create",
+      "ordinal": 0,
+      "full_original_block_sha256": "53fc4659f336c0c712b0426dca085a356ef8bba1abea25dbda6587082a966227",
+      "floor": 10920,
+      "graphic": 16035,
+      "original_borncorner": [
+        66,
+        57,
+        66,
+        57
+      ],
+      "template_function": "changeevent",
+      "exact_source_file_refs": [
+        [
+          "sainasu/event/10900_1",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "4aefec08ad6009f5fc948f9352201eeab8715b42840ceb4036d8d3d34de99bd5"
+        ]
+      ]
+    },
+    {
+      "path": "sainasu/event/10900.create",
+      "ordinal": 1,
+      "full_original_block_sha256": "6a264f716cf14553c4accec8eb1cab33c6826dc2e49faa729f46e3f3eaaae9b3",
+      "floor": 10920,
+      "graphic": 16068,
+      "original_borncorner": [
+        63,
+        57,
+        63,
+        57
+      ],
+      "template_function": "changeevent",
+      "exact_source_file_refs": [
+        [
+          "sainasu/event/10900_1",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "4aefec08ad6009f5fc948f9352201eeab8715b42840ceb4036d8d3d34de99bd5"
+        ]
+      ]
+    },
+    {
+      "path": "jaruga/event/20700.create",
+      "ordinal": 0,
+      "full_original_block_sha256": "1d427961d174d0148796d08f420cc919cc0110f63f614d0770e39c5e2fcd8b35",
+      "floor": 20712,
+      "graphic": 16035,
+      "original_borncorner": [
+        27,
+        24,
+        27,
+        24
+      ],
+      "template_function": "changeevent",
+      "exact_source_file_refs": [
+        [
+          "jaruga/event/20700_1",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "4bc14047b8730c6991811f4d3de3ebe7d0bc1261bc6c6a25f374a5b1d4002a02"
+        ]
+      ]
+    },
+    {
+      "path": "genout/10900npc.create",
+      "ordinal": 4,
+      "full_original_block_sha256": "0855d94094ec4cf5684f134e2c777b9423c5346235add83eec70572ce3bc4f2b",
+      "floor": 10913,
+      "graphic": 16206,
+      "original_borncorner": [
+        37,
+        11,
+        37,
+        11
+      ],
+      "template_function": "npcgen_warpman",
+      "exact_source_file_refs": [
+        [
+          "genout/wpm_10913_37_11",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "f7a66fcad0bbe9ac92ff893012d2cd6f3db12bd8840bb6727ad3f28d6ad95e7b"
+        ]
+      ]
+    },
+    {
+      "path": "genout/20700npc.create",
+      "ordinal": 6,
+      "full_original_block_sha256": "78add0bab5fd8220ed650dcf1686d63ab413cc5b955f04294027f36627e62bbf",
+      "floor": 20704,
+      "graphic": 16205,
+      "original_borncorner": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "template_function": "npcgen_warpman",
+      "exact_source_file_refs": [
+        [
+          "genout/wpm_20704_14_14",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "055664766d150e53260d2c9e9d84b1422f4851beabd6409921345ad7bc921263"
+        ]
+      ]
+    }
+  ],
+  "previously_QUEST01_indexed_two_original_scripts_and_four_ACCEPT": [
+    {
+      "path": "sainasu/event/10900_1",
+      "original_sha256": "4aefec08ad6009f5fc948f9352201eeab8715b42840ceb4036d8d3d34de99bd5",
+      "bytes": 1007,
+      "crc32": "4a467004",
+      "blocks": [
+        {
+          "ordinal": 0,
+          "event": -1,
+          "type": "ACCEPT",
+          "condition": "ITEM!=2479&ITEM!=2480",
+          "GetItem": 2479,
+          "DelItem": null,
+          "previous_indexed_section_sha256": "0bdc70e2441a5bed203981f01abe002f6adea20c714384ff54f5fe6373858618",
+          "previous_indexed_condition_sha256": "4f220a82a9b8d5c34ba88fcbf7251c43ecc387f0dd44227f4f7076cb6d10982f"
+        },
+        {
+          "ordinal": 1,
+          "event": -1,
+          "type": "ACCEPT",
+          "condition": "ITEM!=2479&ITEM=2480",
+          "GetItem": 2479,
+          "DelItem": 2480,
+          "previous_indexed_section_sha256": "4fb24c6899ff86efc30e24c2e31857cfea309557f14e2b243a6c92a6fe28e214",
+          "previous_indexed_condition_sha256": "0a33486a4af78418502d50f39d25ec96e68d9df98c9d43693cb5c9915b872d5a"
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/20700_1",
+      "original_sha256": "4bc14047b8730c6991811f4d3de3ebe7d0bc1261bc6c6a25f374a5b1d4002a02",
+      "bytes": 1037,
+      "crc32": "827c5a74",
+      "blocks": [
+        {
+          "ordinal": 0,
+          "event": -1,
+          "type": "ACCEPT",
+          "condition": "ITEM!=2479&ITEM!=2480",
+          "GetItem": 2480,
+          "DelItem": null,
+          "previous_indexed_section_sha256": "92a998f27e340ce102aaf4789d50523966ee5fe79a487262cbce8bc4bd3f17ec",
+          "previous_indexed_condition_sha256": "4f220a82a9b8d5c34ba88fcbf7251c43ecc387f0dd44227f4f7076cb6d10982f"
+        },
+        {
+          "ordinal": 1,
+          "event": -1,
+          "type": "ACCEPT",
+          "condition": "ITEM!=2480&ITEM=2479",
+          "GetItem": 2480,
+          "DelItem": 2479,
+          "previous_indexed_section_sha256": "7faab4594e2dd411acae4135b5d234e30950cd218185fcdc55a1f6861a40011d",
+          "previous_indexed_condition_sha256": "4b48502284093781b7dd2aef7aee9185e2a7c3e660d68fe3a0f4766be39b44ab"
+        }
+      ]
+    }
+  ],
+  "two_original_membership_gates": [
+    {
+      "floor": 10913,
+      "xy": [
+        37,
+        11
+      ],
+      "source_file": "genout/wpm_10913_37_11",
+      "FREE": "ITEM=2479",
+      "WARP": [
+        10920,
+        57,
+        79
+      ],
+      "MONEY": "-1",
+      "source_sha256": "f7a66fcad0bbe9ac92ff893012d2cd6f3db12bd8840bb6727ad3f28d6ad95e7b",
+      "source_create_block_sha256": "0855d94094ec4cf5684f134e2c777b9423c5346235add83eec70572ce3bc4f2b"
+    },
+    {
+      "floor": 20704,
+      "xy": [
+        14,
+        14
+      ],
+      "source_file": "genout/wpm_20704_14_14",
+      "FREE": "ITEM=2480",
+      "WARP": [
+        20712,
+        4,
+        5
+      ],
+      "MONEY": "-1",
+      "source_sha256": "055664766d150e53260d2c9e9d84b1422f4851beabd6409921345ad7bc921263",
+      "source_create_block_sha256": "78add0bab5fd8220ed650dcf1686d63ab413cc5b955f04294027f36627e62bbf"
+    }
+  ],
+  "two_certificate_item_original_rows_and_TW1_pixel_candidates": [
+    {
+      "id": 2479,
+      "original_name": "SBC認定證",
+      "original_both_itemset_sha256": "4ef9eac80883ec5253e512d60fe959daddc9baa621adceb5f12d11d0cc5e7a86",
+      "source_itemset_row_positions": [
+        2062,
+        2457
+      ],
+      "original_image_alias": 22014,
+      "source_raw_type": "10",
+      "source_raw_price": "10",
+      "source_raw_level": "0",
+      "cross_carrier_TW1": {
+        "original_RD_sha256": "53f3a943b5dab904a23ff45bea112403c20f6ef4517edb972dd4f32cad7de024",
+        "original_png_sha256": "0bc7f0254238cd98c6e08656dde5843bfbf98c28831e8ee9046946812b82c165",
+        "private_png_bytes": 2281,
+        "original_dimensions": [
+          52,
+          44
+        ],
+        "same_deployment_proven": false
+      }
+    },
+    {
+      "id": 2480,
+      "original_name": "JBA認定證",
+      "original_both_itemset_sha256": "0ccef8ebf42eae1642684467f09d2a4b4dac8dae3a10a2e9f48d577f1d7627b3",
+      "source_itemset_row_positions": [
+        2063,
+        2458
+      ],
+      "original_image_alias": 22013,
+      "source_raw_type": "10",
+      "source_raw_price": "10",
+      "source_raw_level": "0",
+      "cross_carrier_TW1": {
+        "original_RD_sha256": "e480f4db3951f00a1b24f3dd10550affccdfca8a8b016e129f2fa0a0cb67e05f",
+        "original_png_sha256": "86bb0d9da26413038f2efd2585382b837099e498c6b5ccd498160afce5de850f",
+        "private_png_bytes": 2118,
+        "original_dimensions": [
+          52,
+          42
+        ],
+        "same_deployment_proven": false
+      }
+    }
+  ],
+  "three_original_DAT_rechecked": [
+    {
+      "floor": 20712,
+      "bytes": 15008,
+      "sha256": "dbd7db212b9167af06cfed13a678eb4a9228cce4565b1adb39ea4473463bcd62",
+      "geometry": [
+        50,
+        50
+      ],
+      "map09_qualified": false,
+      "cells": [
+        [
+          [
+            27,
+            24
+          ],
+          [
+            400,
+            0,
+            49152
+          ]
+        ],
+        [
+          [
+            4,
+            5
+          ],
+          [
+            2019,
+            0,
+            49155
+          ]
+        ],
+        [
+          [
+            21,
+            27
+          ],
+          [
+            2056,
+            0,
+            49155
+          ]
+        ]
+      ]
+    },
+    {
+      "floor": 10913,
+      "bytes": 15008,
+      "sha256": "984700a25aabc873d05e8083300a28ac66d14471bf9049a91525c20b21407054",
+      "geometry": [
+        50,
+        50
+      ],
+      "map09_qualified": true,
+      "cells": [
+        [
+          [
+            37,
+            11
+          ],
+          [
+            4303,
+            0,
+            49152
+          ]
+        ]
+      ]
+    },
+    {
+      "floor": 20704,
+      "bytes": 2408,
+      "sha256": "72c8674c2f7e4b24d23fd02b0430f112084d1ec8f75bc393e7180d253c118470",
+      "geometry": [
+        20,
+        20
+      ],
+      "map09_qualified": true,
+      "cells": [
+        [
+          [
+            14,
+            14
+          ],
+          [
+            2024,
+            11920,
+            49152
+          ]
+        ]
+      ]
+    }
+  ],
+  "bounded_missing_original_floor": {
+    "floor": 10920,
+    "in_selected_955_DAT": false,
+    "not_absent_from_historical_game": true
+  },
+  "summary": {
+    "source_CREATE": 5,
+    "registrar_CREATE": 3,
+    "gate_CREATE": 2,
+    "original_scripts": 2,
+    "old_indexed_TYPE_sections": 4,
+    "original_item_ids": 2,
+    "original_DAT_read": 3,
+    "new_original_RD_decoded": 0,
+    "new_native_game_execution": 0
+  },
+  "limits": {
+    "active_server_deployment_proven": false,
+    "original_script_condition_semantics_executed": false,
+    "original_certificate_issue_or_exchange_executed": false,
+    "mutual_exclusion_in_native_player_inventory_proven": false,
+    "native_warp_execution_proven": false,
+    "mixed25_server_TW1_retail_pixel_same_deployment": false,
+    "original_20712_complete_pixel_scene_proven": false,
+    "original_10920_DAT_in_selected_955_archive": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Different already-acquired original-content source with materially new source-bound connection or actual pixel evidence; reopen only for exact native membership behavior or independently qualified source"
+}
