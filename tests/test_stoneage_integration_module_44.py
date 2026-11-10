@@ -106,7 +106,7 @@ class Integration44A1SourceTests(unittest.TestCase):
         self.assertEqual(self.r["pixel_sources"]["previous_I41_original_RGBA_aliases"]+
                          self.r["pixel_sources"]["previous_MAP04_original_RGBA_aliases"]+
                          self.r["pixel_sources"]["current_TW1_REAL_double_decoded_map_aliases"],73)
-        self.assertFalse(self.r["boundaries"]["original_NPC_actor_direction_verified"])
+        self.assertFalse(self.r["boundaries"]["native_NPC_actor_direction_verified"])
 
     def test_private_source_and_archived_replay_custody(self):
         archive=self.r["archive_SHA256"]
