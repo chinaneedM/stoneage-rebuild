@@ -2330,3 +2330,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-10 — INTEGRATION32｜奇喀喀四间原房的服务 NPC 与宠物事件
 
 [四房原资料和有界下项](docs/continuity/STONEAGE-INTEGRATION32-QIKAKA-FOUR-ROOMS-20261110.md)：从新核远端 `47732f7eed74b5581941c8ced712005dbea78248` 出发，私人 I28/CHAR01/ITEM01 三包分别 373/2,205/838 CRC 与整 SHA 重新核实。原楼层3404肉店、3405医院、3409便利商店、3412民家四份 DAT/LS2MAP 复核既有 MAP09 与 I28 原记录，16条普通有向门点来源哈希不变；**新增** 7 原 `shop_m2.create` NPC 服务配置、1民家 `kikukuev.create`／4段走失宠物事件、46个商店明确 ID、16个肉店范围定义候选与6个任务道具ID，合68不同原物品定义，独立TW1零售像素只作跨载体候选。两段相同 `PET>14-524` 的 ACCEPT 不擅合并，原名 `加特力奴/加特利奴` 差别保留；范围不冒充真实库存、原文不公开、原生任务／买卖／治疗执行未证。公共[来源索引](research/recovered/STONEAGE-INTEGRATION32-QIKAKA-FOUR-ROOMS-SOURCE-R1.json)与负例测试共用现成 CI。完整 CURRENT 原 blob 保留，Stage A7PARTIAL＋2OPEN，Stage B/wiki GATED，R79暂停，总体完成率未知。下轮转其他有新来源内容；缺同版宠物主数据或原生运行证据前不扩 PET 任务机制推论。
+
+
+## 2026-11-10 — INTEGRATION33｜薩伊那斯两组原任务的跨模块来源联接
+
+[老人萨顿三家宝与恐龙博士哈鲁双阶段源证](docs/continuity/STONEAGE-INTEGRATION33-SAINASU-TWO-QUEST-CHAINS-20261110.md)：私人CHAR01、ITEM01、INTEGRATION10三包共3,357个ZIP成员全部CRC与整SHA重新核验，实际重读四份未在QUEST08–31专项覆盖的原script与两份CREATE，共4源NPC／13个TYPE段／3个原DAT地图范围。1100 DAT私有源原样重读并核(86,99)三平面值；1112／11006引用已验MAP09。任务13关联5个有来源道具（家宝／盗贼脚印／秘药）；任务15/16分别保留`PET>14-74`、`PET>29-191`、`GetRandItem`八候选与`GetPet:95`，13个不同物品ID双表SHA精确相同，PET10同载体备选模板95均对应SPR图号100394，但两个原行SHA不同，原生奖励未证。旧INTEGRATION05已知GetPet95，不重复认作新发现。公共[来源哈希/数值索引](research/recovered/STONEAGE-INTEGRATION33-SAINASU-TWO-QUEST-CHAINS-SOURCE-R1.json)与逐字段回归；原商业原文/图/DAT仍只私人，当前Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停，总进度未知。下一项继续未整合源或新原像素，不凭脚本改写初代玩法。
