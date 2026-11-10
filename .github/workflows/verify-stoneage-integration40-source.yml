@@ -1,0 +1,27 @@
+name: Verify StoneAge INTEGRATION40 direct source and floor2000
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION40-FOUR-CAVE-FLAG-BYPASS-FLOOR2000-SOURCE-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION40-FOUR-CAVE-SOURCE-AND-FLOOR2000-20261110.md'
+      - 'tests/test_stoneage_integration_module_40.py'
+      - '.github/workflows/verify-stoneage-integration40-source.yml'
+      - 'README.md'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION40-FOUR-CAVE-FLAG-BYPASS-FLOOR2000-SOURCE-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION40-FOUR-CAVE-SOURCE-AND-FLOOR2000-20261110.md'
+      - 'tests/test_stoneage_integration_module_40.py'
+      - '.github/workflows/verify-stoneage-integration40-source.yml'
+      - 'README.md'
+jobs:
+  source-bound:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_40.py' -v
