@@ -1,0 +1,726 @@
+{
+  "schema": "stoneage.integration48.four_village_mammoth_courier_positive_cue_to_acceptance_source_r1",
+  "date": "2026-11-10",
+  "startup_remote": {
+    "HEAD": "94849761d3b858b4f76b312a5debe14e037f2b31",
+    "tree": "794bce40809fc3c6239e9ddf0817ea1121d66928"
+  },
+  "historical_CURRENT": {
+    "bytes": 2709173,
+    "blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "modified": false
+  },
+  "source_scopes": {
+    "original_create_and_quest": "LATER_PRESERVED_COMMUNITY_MIXED25_STATIC_SOURCE_NOT_OFFICIAL_EARLY_BUILD",
+    "itemset": "SAME_PRESERVED_COMMUNITY_MIXED25_FROM_PRIOR_QUEST06_NO_NEW_ITEMSET_READ",
+    "original_pixel_candidates": "SEPARATE_AUTHENTICATED_TW1_RETAIL_BITMAP_NUMBER_NOT_SAME_DEPLOYMENT"
+  },
+  "verified_original_private_custody": {
+    "archive_name": "StoneAge-QUEST06-mammoth-courier-original-private.zip",
+    "archive_sha256": "cd26689805ad0c40e23ef934aa7c9509fe461630dd0431f7a43740abd7c91254",
+    "archive_bytes": 40204,
+    "zip_members": 13,
+    "all_CRC_passed": true,
+    "source_reopened_original_files": 5,
+    "source_CREATE_SHA256": "31ef809c62f2cc208d0e5439796ee3a2e5466cda64e7561b7094248bf8a7455f",
+    "private_receipt_SHA256": "d7d5b5c28adcbb1208c5d0674a25ab864bf1dd9327c0f3379d14b3c2eff36b1a",
+    "crosscarrier_original_PNGs_SHA_verified": 6
+  },
+  "separately_verified_QUEST31_nonmerge": {
+    "private_zip_sha256": "796682fd3621a2bfecab03e7e199ca16936f95cad75f6a7842e6517f1e04dd42",
+    "private_zip_bytes": 27565,
+    "private_zip_members": 26,
+    "source_create_path": "sainasu/event/event09-12.create",
+    "original_source_CREATE_sha256": "1f55bbd59aa01c3aeaf1a70d5eb7b29f6c77f0dfd3549f082419c6e465a107e5",
+    "same_quest_id_or_CREATE_source_as_QUEST06": false
+  },
+  "prior_remote_records": {
+    "QUEST06_path": "research/recovered/STONEAGE-QUEST06-FOUR-VILLAGE-MAMMOTH-COURIER-SOURCE-R1.json",
+    "QUEST06_git_blob": "4590822c125c070a443fd710ce87a2c3a0854d72",
+    "QUEST31_path": "research/recovered/STONEAGE-QUEST31-FOUR-VILLAGE-EVENT09-12-SOURCE-R1.json",
+    "QUEST31_git_blob": "0a17857fc55fd5884963d1c00ffeb292ebc9f59b"
+  },
+  "source_CREATE_actors": [
+    {
+      "create_ordinal": 0,
+      "floor": 1014,
+      "xy": [
+        14,
+        20
+      ],
+      "original_direction_value": 7,
+      "original_graphic_alias": 16018,
+      "source_function_template": "npcgen_warpman",
+      "script_path": "sa60/newbie/worksell_1014.conf",
+      "source_create_block_sha256": "434e1aa9bb27aa6f2689e6df0b51f384f12221d3f551c00f43fbcef9d7f72af9"
+    },
+    {
+      "create_ordinal": 1,
+      "floor": 1011,
+      "xy": [
+        14,
+        20
+      ],
+      "original_direction_value": 7,
+      "original_graphic_alias": 16018,
+      "source_function_template": "npcgen_warpman",
+      "script_path": "sa60/newbie/worksell_1014.conf",
+      "source_create_block_sha256": "fb906ebd104d97375bef68d11f0bcbbaf50ae8dad9f5e3d54cf0e4daa3a4b715"
+    },
+    {
+      "create_ordinal": 2,
+      "floor": 2014,
+      "xy": [
+        16,
+        16
+      ],
+      "original_direction_value": 4,
+      "original_graphic_alias": 16092,
+      "source_function_template": "npcgen_warpman",
+      "script_path": "sa60/newbie/worksell_2014.conf",
+      "source_create_block_sha256": "16f3fba9601589f65ab65f1af73320f6b3effecd5014efeae1fb5fda4800dc92"
+    },
+    {
+      "create_ordinal": 3,
+      "floor": 2011,
+      "xy": [
+        16,
+        16
+      ],
+      "original_direction_value": 4,
+      "original_graphic_alias": 16092,
+      "source_function_template": "npcgen_warpman",
+      "script_path": "sa60/newbie/worksell_2014.conf",
+      "source_create_block_sha256": "7991107d5c06f4fb92c0c183c57f5f4233aeb3b99d87000f4e9212bbc72d0642"
+    },
+    {
+      "create_ordinal": 4,
+      "floor": 3014,
+      "xy": [
+        16,
+        16
+      ],
+      "original_direction_value": 4,
+      "original_graphic_alias": 16092,
+      "source_function_template": "npcgen_warpman",
+      "script_path": "sa60/newbie/worksell_3014.conf",
+      "source_create_block_sha256": "82dc7cd2e711a8a648bb1226161fb0180789444b0b205bd1c543293a33388f71"
+    },
+    {
+      "create_ordinal": 5,
+      "floor": 3011,
+      "xy": [
+        16,
+        16
+      ],
+      "original_direction_value": 4,
+      "original_graphic_alias": 16092,
+      "source_function_template": "npcgen_warpman",
+      "script_path": "sa60/newbie/worksell_3014.conf",
+      "source_create_block_sha256": "981a785ace73038912fdb609872dd5df447b0191e910775275e9e05e56bee31a"
+    },
+    {
+      "create_ordinal": 6,
+      "floor": 4014,
+      "xy": [
+        19,
+        16
+      ],
+      "original_direction_value": 7,
+      "original_graphic_alias": 16018,
+      "source_function_template": "npcgen_warpman",
+      "script_path": "sa60/newbie/worksell_4014.conf",
+      "source_create_block_sha256": "3e13e91b1718c958a64fbd8ab17fb5b8ebbdbc0b0c93bea6d4bb79fde5cb2dcf"
+    },
+    {
+      "create_ordinal": 7,
+      "floor": 4011,
+      "xy": [
+        19,
+        16
+      ],
+      "original_direction_value": 7,
+      "original_graphic_alias": 16018,
+      "source_function_template": "npcgen_warpman",
+      "script_path": "sa60/newbie/worksell_4014.conf",
+      "source_create_block_sha256": "6b03017d590b94993565187e90b5358d240818fd1b43f3af565255701e5d9019"
+    }
+  ],
+  "source_scripts": [
+    {
+      "original_path": "sa60/newbie/worksell_1014.conf",
+      "source_sha256": "d5139cb534128f4c4eb5551cd0bd3d4660a09b54a81a48911440b8d68fcea69b",
+      "source_bytes": 1923,
+      "source_line_count": 57,
+      "NOFREE_guard_literal": "LV>30",
+      "TALKEVENT_count": 6,
+      "source_hint_TALKEVENT2_item": 2622,
+      "source_hint_TALKEVENT3_item": 4224,
+      "stages": [
+        {
+          "talkevent": 4,
+          "level_range": [
+            1,
+            9
+          ],
+          "required_kind": "ITEM",
+          "required_literal": "2623",
+          "source_FRE_condition_SHA256": "34cde81288766336f9b11cb4325cba2321ea7a407647b75a355f1c8ce8bea786",
+          "commands": {
+            "AddGold": [
+              "1000"
+            ],
+            "AddExps": [
+              "1000"
+            ],
+            "DelItem": [
+              "2623"
+            ]
+          }
+        },
+        {
+          "talkevent": 5,
+          "level_range": [
+            10,
+            19
+          ],
+          "required_kind": "ITEM",
+          "required_literal": "12879",
+          "source_FRE_condition_SHA256": "be0b32eac78c5e961cea973d32a50286780cf7bb1d04aa3478f740fc7253419b",
+          "commands": {
+            "AddGold": [
+              "2000"
+            ],
+            "AddExps": [
+              "16000"
+            ],
+            "DelItem": [
+              "12879*1"
+            ]
+          }
+        },
+        {
+          "talkevent": 6,
+          "level_range": [
+            20,
+            29
+          ],
+          "required_kind": "PET",
+          "required_literal": "1-13",
+          "source_FRE_condition_SHA256": "c861fea0aa7404c0088aa193b12f2db53b618e3f0c5cf065be4355626e7cb5ca",
+          "commands": {
+            "AddGold": [
+              "5000"
+            ],
+            "AddExps": [
+              "81000"
+            ]
+          }
+        }
+      ],
+      "stage1_item": 2623,
+      "stage2_item": 12879,
+      "stage3_pet_literal": "1-13",
+      "lv30_any_explicit_conditional": false,
+      "source_has_GetItem": false,
+      "source_has_DelPet": false
+    },
+    {
+      "original_path": "sa60/newbie/worksell_2014.conf",
+      "source_sha256": "d9ad7e5f15a448238f9d7eec1339adee6cc8fbfb60525ab2f221d10d99d3f522",
+      "source_bytes": 1885,
+      "source_line_count": 57,
+      "NOFREE_guard_literal": "LV>30",
+      "TALKEVENT_count": 6,
+      "source_hint_TALKEVENT2_item": 2623,
+      "source_hint_TALKEVENT3_item": 12879,
+      "stages": [
+        {
+          "talkevent": 4,
+          "level_range": [
+            1,
+            9
+          ],
+          "required_kind": "ITEM",
+          "required_literal": "2622",
+          "source_FRE_condition_SHA256": "5e5c4dd57d8763456efebd60c9d675a9bc14094cf5f2c13ed36d7688da86a477",
+          "commands": {
+            "AddGold": [
+              "1000"
+            ],
+            "AddExps": [
+              "1000"
+            ],
+            "DelItem": [
+              "2622"
+            ]
+          }
+        },
+        {
+          "talkevent": 5,
+          "level_range": [
+            10,
+            19
+          ],
+          "required_kind": "ITEM",
+          "required_literal": "4224",
+          "source_FRE_condition_SHA256": "c12648619ce8feac05852cebbe82814293333464d5373ead0c021f7503c5dd74",
+          "commands": {
+            "AddGold": [
+              "2000"
+            ],
+            "AddExps": [
+              "16000"
+            ],
+            "DelItem": [
+              "4224*1"
+            ]
+          }
+        },
+        {
+          "talkevent": 6,
+          "level_range": [
+            20,
+            29
+          ],
+          "required_kind": "PET",
+          "required_literal": "1-13",
+          "source_FRE_condition_SHA256": "c861fea0aa7404c0088aa193b12f2db53b618e3f0c5cf065be4355626e7cb5ca",
+          "commands": {
+            "AddGold": [
+              "5000"
+            ],
+            "AddExps": [
+              "81000"
+            ]
+          }
+        }
+      ],
+      "stage1_item": 2622,
+      "stage2_item": 4224,
+      "stage3_pet_literal": "1-13",
+      "lv30_any_explicit_conditional": false,
+      "source_has_GetItem": false,
+      "source_has_DelPet": false
+    },
+    {
+      "original_path": "sa60/newbie/worksell_3014.conf",
+      "source_sha256": "eda96a3d8ce3d02e6235edf2425746aa8ddec3ce64ac72fde8351abab64410a0",
+      "source_bytes": 1899,
+      "source_line_count": 57,
+      "NOFREE_guard_literal": "LV>30",
+      "TALKEVENT_count": 6,
+      "source_hint_TALKEVENT2_item": 2624,
+      "source_hint_TALKEVENT3_item": 12874,
+      "stages": [
+        {
+          "talkevent": 4,
+          "level_range": [
+            1,
+            9
+          ],
+          "required_kind": "ITEM",
+          "required_literal": "2625",
+          "source_FRE_condition_SHA256": "8a954e89cafc97256c1cb18b5247078b7be6e2a0cd36be1f2f1a1f43ce9150d5",
+          "commands": {
+            "AddGold": [
+              "1000"
+            ],
+            "AddExps": [
+              "1000"
+            ],
+            "DelItem": [
+              "2625"
+            ]
+          }
+        },
+        {
+          "talkevent": 5,
+          "level_range": [
+            10,
+            19
+          ],
+          "required_kind": "ITEM",
+          "required_literal": "4212",
+          "source_FRE_condition_SHA256": "72eb113e02776b6e2cc0357726f6f668fd652bf7620d85a0e0e3528fbd1124d2",
+          "commands": {
+            "AddGold": [
+              "2000"
+            ],
+            "AddExps": [
+              "16000"
+            ],
+            "DelItem": [
+              "4212*1"
+            ]
+          }
+        },
+        {
+          "talkevent": 6,
+          "level_range": [
+            20,
+            29
+          ],
+          "required_kind": "PET",
+          "required_literal": "1-292",
+          "source_FRE_condition_SHA256": "1c5aff40e48af35a5b47f1a1e9262b4f6077506989a3a108222846a8e2aca740",
+          "commands": {
+            "AddGold": [
+              "5000"
+            ],
+            "AddExps": [
+              "81000"
+            ]
+          }
+        }
+      ],
+      "stage1_item": 2625,
+      "stage2_item": 4212,
+      "stage3_pet_literal": "1-292",
+      "lv30_any_explicit_conditional": false,
+      "source_has_GetItem": false,
+      "source_has_DelPet": false
+    },
+    {
+      "original_path": "sa60/newbie/worksell_4014.conf",
+      "source_sha256": "6ac7689410fa7af8ca75a1a25997217214fa32cb3861f00ccb90ec98c3c8298e",
+      "source_bytes": 1937,
+      "source_line_count": 57,
+      "NOFREE_guard_literal": "LV>30",
+      "TALKEVENT_count": 6,
+      "source_hint_TALKEVENT2_item": 2622,
+      "source_hint_TALKEVENT3_item": 4224,
+      "stages": [
+        {
+          "talkevent": 4,
+          "level_range": [
+            1,
+            9
+          ],
+          "required_kind": "ITEM",
+          "required_literal": "2624",
+          "source_FRE_condition_SHA256": "b3f4778488d499de89e73810091f84938a18771ab066f42b04bf23dd30d9645b",
+          "commands": {
+            "AddGold": [
+              "1000"
+            ],
+            "AddExps": [
+              "1000"
+            ],
+            "DelItem": [
+              "2624"
+            ]
+          }
+        },
+        {
+          "talkevent": 5,
+          "level_range": [
+            10,
+            19
+          ],
+          "required_kind": "ITEM",
+          "required_literal": "12874",
+          "source_FRE_condition_SHA256": "97e083ae4aca9b01babb9b1560e490fafa9fb62fd40858a7c9d734d9db616596",
+          "commands": {
+            "AddGold": [
+              "2000"
+            ],
+            "AddExps": [
+              "16000"
+            ],
+            "DelItem": [
+              "12874*1"
+            ]
+          }
+        },
+        {
+          "talkevent": 6,
+          "level_range": [
+            20,
+            29
+          ],
+          "required_kind": "PET",
+          "required_literal": "1-292",
+          "source_FRE_condition_SHA256": "1c5aff40e48af35a5b47f1a1e9262b4f6077506989a3a108222846a8e2aca740",
+          "commands": {
+            "AddGold": [
+              "5000"
+            ],
+            "AddExps": [
+              "81000"
+            ]
+          }
+        }
+      ],
+      "stage1_item": 2624,
+      "stage2_item": 12874,
+      "stage3_pet_literal": "1-292",
+      "lv30_any_explicit_conditional": false,
+      "source_has_GetItem": false,
+      "source_has_DelPet": false
+    }
+  ],
+  "source_stages_route_balance": [
+    {
+      "stage": 1,
+      "hint_events": 2,
+      "accept_event": 4,
+      "required_item_IDs": [
+        2622,
+        2623,
+        2624,
+        2625
+      ],
+      "hint_item_occurrences": [
+        2622,
+        2623,
+        2624,
+        2622
+      ],
+      "distinct_hint_IDs": [
+        2622,
+        2623,
+        2624
+      ],
+      "hint_duplicate_IDs": [
+        2622
+      ],
+      "acceptance_IDs_unmentioned_by_positive_hints": [
+        2625
+      ],
+      "matched_positive_hint_edges": 4,
+      "full_permutation_or_route_recovered": false
+    },
+    {
+      "stage": 2,
+      "hint_events": 3,
+      "accept_event": 5,
+      "required_item_IDs": [
+        4212,
+        4224,
+        12874,
+        12879
+      ],
+      "hint_item_occurrences": [
+        4224,
+        12879,
+        12874,
+        4224
+      ],
+      "distinct_hint_IDs": [
+        4224,
+        12874,
+        12879
+      ],
+      "hint_duplicate_IDs": [
+        4224
+      ],
+      "acceptance_IDs_unmentioned_by_positive_hints": [
+        4212
+      ],
+      "matched_positive_hint_edges": 4,
+      "full_permutation_or_route_recovered": false
+    }
+  ],
+  "candidate_positive_item_cue_to_acceptance_links": [
+    {
+      "stage": 1,
+      "source_floor": 1014,
+      "cue_positive_ITEM": 2622,
+      "acceptance_floor_candidate": 2014,
+      "cue_event": 2,
+      "acceptance_event": 4,
+      "source_type": "POSITIVELY_MATCHED_ITEM_CONDITION_ONLY",
+      "original_travel_or_item_award_proven": false
+    },
+    {
+      "stage": 1,
+      "source_floor": 2014,
+      "cue_positive_ITEM": 2623,
+      "acceptance_floor_candidate": 1014,
+      "cue_event": 2,
+      "acceptance_event": 4,
+      "source_type": "POSITIVELY_MATCHED_ITEM_CONDITION_ONLY",
+      "original_travel_or_item_award_proven": false
+    },
+    {
+      "stage": 1,
+      "source_floor": 3014,
+      "cue_positive_ITEM": 2624,
+      "acceptance_floor_candidate": 4014,
+      "cue_event": 2,
+      "acceptance_event": 4,
+      "source_type": "POSITIVELY_MATCHED_ITEM_CONDITION_ONLY",
+      "original_travel_or_item_award_proven": false
+    },
+    {
+      "stage": 1,
+      "source_floor": 4014,
+      "cue_positive_ITEM": 2622,
+      "acceptance_floor_candidate": 2014,
+      "cue_event": 2,
+      "acceptance_event": 4,
+      "source_type": "POSITIVELY_MATCHED_ITEM_CONDITION_ONLY",
+      "original_travel_or_item_award_proven": false
+    },
+    {
+      "stage": 2,
+      "source_floor": 1014,
+      "cue_positive_ITEM": 4224,
+      "acceptance_floor_candidate": 2014,
+      "cue_event": 3,
+      "acceptance_event": 5,
+      "source_type": "POSITIVELY_MATCHED_ITEM_CONDITION_ONLY",
+      "original_travel_or_item_award_proven": false
+    },
+    {
+      "stage": 2,
+      "source_floor": 2014,
+      "cue_positive_ITEM": 12879,
+      "acceptance_floor_candidate": 1014,
+      "cue_event": 3,
+      "acceptance_event": 5,
+      "source_type": "POSITIVELY_MATCHED_ITEM_CONDITION_ONLY",
+      "original_travel_or_item_award_proven": false
+    },
+    {
+      "stage": 2,
+      "source_floor": 3014,
+      "cue_positive_ITEM": 12874,
+      "acceptance_floor_candidate": 4014,
+      "cue_event": 3,
+      "acceptance_event": 5,
+      "source_type": "POSITIVELY_MATCHED_ITEM_CONDITION_ONLY",
+      "original_travel_or_item_award_proven": false
+    },
+    {
+      "stage": 2,
+      "source_floor": 4014,
+      "cue_positive_ITEM": 4224,
+      "acceptance_floor_candidate": 2014,
+      "cue_event": 3,
+      "acceptance_event": 5,
+      "source_type": "POSITIVELY_MATCHED_ITEM_CONDITION_ONLY",
+      "original_travel_or_item_award_proven": false
+    }
+  ],
+  "source_items_rechecked": [
+    {
+      "item_ID": 2622,
+      "source_itemset_row_sha256": "50d70cb29365a12b748ea0857132d21d934877d7e380ee6ac8293d3db2055b2c",
+      "source_itemset0710_row_sha256": "50d70cb29365a12b748ea0857132d21d934877d7e380ee6ac8293d3db2055b2c",
+      "source_graphic_alias": 22322,
+      "cross_carrier_TW1_PNG_SHA256": null,
+      "private_TW1_candidate_PNG_reverified": false,
+      "source_item_label": "頂級的紅寶石",
+      "source_itemsets_identical": true
+    },
+    {
+      "item_ID": 2623,
+      "source_itemset_row_sha256": "621f942d165625ad37825a7147acd6a74e4a3ba062c0ebf0a16fa3671ee8967e",
+      "source_itemset0710_row_sha256": "621f942d165625ad37825a7147acd6a74e4a3ba062c0ebf0a16fa3671ee8967e",
+      "source_graphic_alias": 24131,
+      "cross_carrier_TW1_PNG_SHA256": "7fe61cc9ef181cda8f3fccdf83d20ee1be15b4f0516e1e6d2064eff833c7eaf0",
+      "private_TW1_candidate_PNG_reverified": true,
+      "source_item_label": "頂級的貝殼",
+      "source_itemsets_identical": true
+    },
+    {
+      "item_ID": 2624,
+      "source_itemset_row_sha256": "d1e19b129db07deeff192600d5d9a6a187823fda3d70546bef1f9d43b423aaa8",
+      "source_itemset0710_row_sha256": "d1e19b129db07deeff192600d5d9a6a187823fda3d70546bef1f9d43b423aaa8",
+      "source_graphic_alias": 24182,
+      "cross_carrier_TW1_PNG_SHA256": "92ca7f40b3e7a797bc2b5ef49faaac70b184d6c4ad31b79dfc1a9fde7044254f",
+      "private_TW1_candidate_PNG_reverified": true,
+      "source_item_label": "特級的紅檜",
+      "source_itemsets_identical": true
+    },
+    {
+      "item_ID": 2625,
+      "source_itemset_row_sha256": "df067ce2e0905b4a4c5cad2db00ea444a4424f7ee21ba22b825575ebca98a87c",
+      "source_itemset0710_row_sha256": "df067ce2e0905b4a4c5cad2db00ea444a4424f7ee21ba22b825575ebca98a87c",
+      "source_graphic_alias": 24123,
+      "cross_carrier_TW1_PNG_SHA256": "cba249c744991fd9b685da2bfb38df7061509cd1cf470579e1322c025640a6f4",
+      "private_TW1_candidate_PNG_reverified": true,
+      "source_item_label": "特級的釣竿",
+      "source_itemsets_identical": true
+    },
+    {
+      "item_ID": 4212,
+      "source_itemset_row_sha256": "8716efcd363c0e690a2cb52dbea51dd4a60528d2dc87ba8a83224ebdba769e94",
+      "source_itemset0710_row_sha256": "37a0b271ab073608ef7958eb18ac77a80fab234adc051334c790e1389bb6f351",
+      "source_graphic_alias": 20407,
+      "cross_carrier_TW1_PNG_SHA256": "57d095bc15a4be24a1d9266c158e1aaa8b6599891c4a6eceda3f1bf867e83623",
+      "private_TW1_candidate_PNG_reverified": true,
+      "source_item_label": "合成槍 1 [水]",
+      "source_itemsets_identical": false
+    },
+    {
+      "item_ID": 4224,
+      "source_itemset_row_sha256": "5fcb927b35767ba944adf4134130ce047358c58cfea874b02cfef3b8e6d47775",
+      "source_itemset0710_row_sha256": "25a7488a0f0ba6c0c46f951a183d5a93d16c9b8f05f55407d02e0a6ac976222e",
+      "source_graphic_alias": 20407,
+      "cross_carrier_TW1_PNG_SHA256": "57d095bc15a4be24a1d9266c158e1aaa8b6599891c4a6eceda3f1bf867e83623",
+      "private_TW1_candidate_PNG_reverified": true,
+      "source_item_label": "合成槍 1 [風]",
+      "source_itemsets_identical": false
+    },
+    {
+      "item_ID": 12874,
+      "source_itemset_row_sha256": "cf20293661d54f02240d8695211bfef32b4ca6cfeeb104894ca5d97475f121d3",
+      "source_itemset0710_row_sha256": "cf20293661d54f02240d8695211bfef32b4ca6cfeeb104894ca5d97475f121d3",
+      "source_graphic_alias": 24450,
+      "cross_carrier_TW1_PNG_SHA256": "003af22005189c4d8128a742c6d23a3f82965a8a8b83dafe66b77b89ff63554a",
+      "private_TW1_candidate_PNG_reverified": true,
+      "source_item_label": "蘋果醬汁牛排",
+      "source_itemsets_identical": true
+    },
+    {
+      "item_ID": 12879,
+      "source_itemset_row_sha256": "458ee6eae7b3d813659d206203e86aaeacd61683a0f0df864e9995621587786f",
+      "source_itemset0710_row_sha256": "458ee6eae7b3d813659d206203e86aaeacd61683a0f0df864e9995621587786f",
+      "source_graphic_alias": 24451,
+      "cross_carrier_TW1_PNG_SHA256": "1cbb6f99ef47ffeb060b12bab2bfabcf1912df71e7b1cd86bc2db084925520b6",
+      "private_TW1_candidate_PNG_reverified": true,
+      "source_item_label": "櫻桃醬汁牛排",
+      "source_itemsets_identical": true
+    }
+  ],
+  "negative_evidence": {
+    "positive_hint_is_item_creation_or_delivery": false,
+    "NPC_dialogue_is_literal_original_runtime_proven": false,
+    "source_contains_new_item_reward_in_four_scripts": false,
+    "complete_four_village_task_cycle": false,
+    "literal_LV30_branch_present": false,
+    "LV30_in_game_runtime_inaccessible_proven": false,
+    "Pet_item_consumption_original_runtime_proven": false,
+    "early_official_deployment": false,
+    "all_original_DATs_reread_this_batch": false,
+    "original_client_or_server_executed": false,
+    "same_build_TW1_picture_and_mixed25_quest": false,
+    "QUEST31_event09_12_is_same_quest_as_courier": false,
+    "published_original_commercial_create_scripts_or_pixels": false
+  },
+  "material_counts": {
+    "original_NPC_CREATE_placements": 8,
+    "distinct_floor_IDs": 8,
+    "original_script_pointers": 4,
+    "original_TALKEVENT_branches": 24,
+    "original_item_IDs": 8,
+    "crosscarrier_original_PNG_aliases_present": 6,
+    "new_original_DAT_files": 0,
+    "new_original_RD_decodes": 0,
+    "new_original_script_discovery": 0,
+    "source_positive_HINT_ITEM_occurrences": 8,
+    "proven_native_delivery_completions": 0
+  },
+  "stage_A": {
+    "PARTIAL": 7,
+    "OPEN": 2
+  },
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "AFTER_COMPLETING_THIS_BOUNDED_COURIER_CONDITION_AUDIT_RETURN_TO_SOURCE_READY_NONCOURIER_ORIGINAL_MAP_NPC_ITEM_CONTENT"
+}
