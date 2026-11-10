@@ -1,0 +1,191 @@
+{
+  "schema": "stoneage.integration44.jaruga_a1_actual_original_scene.r1",
+  "source_scope": "MIXED25_COMMUNITY_ORIGINAL_MAP_AND_NPC_WITH_DISTINCT_AUTHENTICATED_TW1_IMAGE_CANDIDATES",
+  "input_head": "64eee7feb45e44b76c50d2cce16e0e7b40acf15b",
+  "input_tree": "2f5808dd5b643c3ea9fa5f8d2035bad217b60dca",
+  "current_preserved_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "source_git_blobs": {
+    "QUEST25": "a52b4e5519912ac7e46e1f892cc01515861cf2e8",
+    "INTEGRATION41": "785465c422e2af4e7a1778dde332f43bfb5e57c7",
+    "INTEGRATION42": "f87b5187dee37facaacd35f63132346986f9e1f9",
+    "INTEGRATION43": "e37aa8ea0a866d91dcd9dd0bd22e7369f86b3412"
+  },
+  "archive_SHA256": {
+    "QUEST25": "543cf62ec2b1f5a36a929c7714e86510f1382430039ebf6e7a487d165acffbb2",
+    "INTEGRATION41": "17c731bc35eff196ece90709772bda8409d038ce6ac95fa5a06553ad4a846e3c",
+    "INTEGRATION42": "df4b41a084483024fda035b05a31cd6940e1c28c883d53039ee6abc2f148dcff",
+    "MAP04": "e9c43222797c7ebcddfcb1ccab6dbeba205b972bbbff4e1f29c14b3ece320d37",
+    "TW1_P3H": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24"
+  },
+  "verified_original_members": {
+    "TW1_ADRN": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+    "TW1_REAL": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13",
+    "TW1_Palet1": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0",
+    "mixed25_map3000_DAT": "3337fb536f3e0938527ac3f6a650427424c20e3a824aae0eb17192fdd177013e",
+    "mixed25_A1_script": "e62c2aaa5fb2455f801b1cc804edbc8bd84de236d072a390088eb2ecc14d57e4"
+  },
+  "A1_source": {
+    "floor": 3000,
+    "borncorner": [
+      99,
+      64,
+      99,
+      64
+    ],
+    "create_path": "jaruga/event/oev.create",
+    "create_ordinal": 1,
+    "create_block_sha256": "8ce9acc388c5bc3d60460aed0be985cc692c52c4a58078ae8d3d2e00b5d227b6",
+    "graphic_alias": 16068,
+    "template_path": "jaruga/event/event.template",
+    "functionset": "ExChangeMan",
+    "script_path": "jaruga/event/oev_1",
+    "script_sha256": "e62c2aaa5fb2455f801b1cc804edbc8bd84de236d072a390088eb2ecc14d57e4",
+    "script_events": [
+      {
+        "ordinal": 0,
+        "condition": "LV>0&ITEM=2552",
+        "section_sha256": "ecd0dd2fc20f54ae6df5e9a3440ea76f82953c9372176c0a38291c33ec01665c",
+        "commands": {
+          "GetItem": [
+            "2553"
+          ],
+          "DelItem": [
+            "2552"
+          ]
+        }
+      },
+      {
+        "ordinal": 1,
+        "condition": "LV>0&ITEM=2553,LV>0&ITEM=2554,LV>0&ITEM=2555,LV>0&ITEM=2556,LV>0&ITEM=2557,LV>0&ITEM=2558,LV>0&ITEM=2559,LV>0&ITEM=2560,LV>0&ITEM=2561,LV>0&ITEM=2562,LV>0&ITEM=2563,LV>0&ITEM=2564",
+        "section_sha256": "bce2cae8852d81463af51081881ab4dec34b64772329ed0c07ce64fe4766c328",
+        "commands": {}
+      },
+      {
+        "ordinal": 2,
+        "condition": "LV>0&ITEM=2552",
+        "section_sha256": "7d086d81b66b2374a73ad5bd09416a9a61f229cf5f16d24789ad2cdf2f546c88",
+        "commands": {}
+      },
+      {
+        "ordinal": 3,
+        "condition": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+        "section_sha256": "fd4078866383688908b6fdc110bf625ce07266520c880fb7ed4a5d15815883c1",
+        "commands": {}
+      },
+      {
+        "ordinal": 4,
+        "condition": "LV>0",
+        "section_sha256": "ff3c81cd28ffe623be0557a30f84c17795b2bdd41c4c776df2f66f1fc772c8f3",
+        "commands": {}
+      }
+    ],
+    "proof_incoming": 2552,
+    "proof_outgoing": 2553
+  },
+  "actual_map_A1_window": {
+    "dimensions": [
+      150,
+      150
+    ],
+    "bounds": [
+      94,
+      59,
+      104,
+      69
+    ],
+    "grid_cells": 121,
+    "center": [
+      99,
+      64
+    ],
+    "center_three_u16": [
+      2022,
+      32,
+      49152
+    ],
+    "gt99_occurrences": 132,
+    "distinct_aliases": 73,
+    "low_1_to_99_values": 24,
+    "unmatched_gt99_occurrences": 0
+  },
+  "pixel_sources": {
+    "previous_I41_original_RGBA_aliases": 52,
+    "previous_MAP04_original_RGBA_aliases": 20,
+    "current_TW1_REAL_double_decoded_map_aliases": 1,
+    "new_RD": [
+      {
+        "alias": 8335,
+        "physical": 3583,
+        "record_sha256": "28f604983a67786ec944e508c770107f96b418118775a41ffeba3d15a3075e93",
+        "offset": 5411670,
+        "bytes": 1659,
+        "RD_sha256": "fa8c5402b421f3084cec8f8f56bcf4ec6b11b50835878926f0e275867c22c4a6",
+        "indexed_sha256": "fdebe0108dce5554ad9db045cb8334401363a7b6a28cde1eb6d642c357ab2401",
+        "RGBA_sha256": "3ad23908f6767cdfde706f1274c6e137c190a102ab356d958d7c98709f51d67a",
+        "dimensions": [
+          64,
+          47
+        ]
+      },
+      {
+        "alias": 16068,
+        "physical": 5914,
+        "record_sha256": "28807ccbd069f3dfd97c544d72ee9cb869158be06cb5cc519fb04fdfbd36960c",
+        "offset": 25056189,
+        "bytes": 1694,
+        "RD_sha256": "83067bae520437e378c73e394961e15be2bd53bcffa6163ddccc02e0971f3c9e",
+        "indexed_sha256": "d39722650a20d6dbacc82db524c569096333652d7a85891a862ed4b3ed297451",
+        "RGBA_sha256": "5aa433962d27ed020fb9590a4bee8ee9eb4e819dd4309f1e61b7d616acbeaba6",
+        "dimensions": [
+          32,
+          78
+        ]
+      }
+    ]
+  },
+  "candidate_scene": {
+    "size": [
+      736,
+      745
+    ],
+    "actual_source_ref_occurrences": 132,
+    "Pillow_vs_NumPy_full_RGBA_equal": true,
+    "frames_RGBA_SHA256": {
+      "plane0": "daab804cac0a9b394f06f279aa551f56758f01bbbf04fa0fdda7e1a6503786a8",
+      "plane1": "da7ca40418bdd0d5ba96fcbf3b9373cec4d3703961866105bcaf1e9c6e2129f3",
+      "combined": "fe4633e814dbc635455ddd845751cf9d8dca14ffc5793a17968929b921c7a6"
+    }
+  },
+  "private_custody": {
+    "bytes": 2035837,
+    "members": 85,
+    "zip_SHA256": "330e3568d9cba88ed8f42ffa410a29b7f40021aa3860e003fbc6ddc400114df1",
+    "private_full_derived_JSON_SHA256": "9d99db924be7a4bebda3a8133974527f2b84d50f5b7c727079e2dbf7053a62e2",
+    "Library_upload_and_readback_exact_SHA": true,
+    "private_independent_replay": {
+      "cells": 121,
+      "source_high_refs": 132,
+      "distinct_aliases": 73,
+      "low_unknown": 24,
+      "full_RGBA_modes": 3
+    }
+  },
+  "boundaries": {
+    "original_client_executed": false,
+    "same_official_deployment_verified": false,
+    "original_scene_palette_layer_collision_verified": false,
+    "native_NPC_actor_direction_verified": false,
+    "native_quest_reward_execution_verified": false,
+    "private_binary_or_pixel_published": false,
+    "original_map4000_recovered": false
+  },
+  "stage_A": {
+    "PARTIAL": 7,
+    "OPEN": 2
+  },
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "NEXT": "Continue only source-ready original A-route DAT and item/NPC scene observation with real bytes; 4000.DAT still missing in accessible private carriers."
+}
