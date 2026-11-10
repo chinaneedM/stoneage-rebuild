@@ -1,0 +1,1092 @@
+{
+  "schema": "stoneage.integration50.room_service_argument_source_bridge.r1",
+  "date": "2026-11-10",
+  "baseline_remote_main_head": "9657ca20cde60445de96f8e56ae7340963cb2414",
+  "baseline_remote_main_tree": "dcd185b8ce483fa75757d4209b0d3ee7743ea6aa",
+  "source_origins": {
+    "original_NPC_archive": "saved community mixed25, NOT authenticated TW1/JSS official deployment",
+    "original_NPC_ZIP_bytes": 995176,
+    "original_NPC_ZIP_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "original_NPC_ZIP_members_CRC_verified": 2205,
+    "original_arg_file_sha256_replayed_for_all_records": true,
+    "original_I49_public_atlas_blob": "673fd0ebd71a909a5678d919f706bab7a8e5e7cc",
+    "earlier_itemshop_224_index_blob": "3bde3b7df43725f28cdac355823667a0ba87e9b1"
+  },
+  "source_join_rule": "Each record is one original CREATE record in I49, matched to exactly one original arg file by path and original whole-file SHA256. Source fields decoded strictly using CP950; values below are literal source configuration, not native execution.",
+  "summary": {
+    "total_CREATE_config_records": 44,
+    "roles": {
+      "ItemShop": 32,
+      "PetShop": 6,
+      "PetSkillShop": 6
+    },
+    "unique_original_arg_paths": 43,
+    "itemshop_LimitItemType_status": {
+      "OFFENCE": 7,
+      "DEFENCE": 5,
+      "ACCESSORY": 6,
+      "EMPTY_LITERAL": 8,
+      "ABSENT": 6
+    },
+    "itemshop_earlier_ItemList_index_same_path_and_sha": 29,
+    "itemshop_no_ItemList_and_no_earlier_inventory_index": 3,
+    "petshop_pool_flg_and_pool_cost_explicit_records": 3,
+    "petshop_source_special_pet_empty_literal_records": 6,
+    "petskillshop_unique_IDs_in_six_lists": [
+      0,
+      1,
+      2,
+      3,
+      10,
+      40,
+      50,
+      51,
+      61,
+      80,
+      100,
+      120,
+      130,
+      200,
+      201
+    ],
+    "petskillshop_IDs_shared_by_all_six": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "petskillshop_total_source_ID_occurrences": 50
+  },
+  "source_records": [
+    {
+      "source_floor_id": 1002,
+      "role": "ItemShop",
+      "source_coordinate": [
+        18,
+        15
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 2,
+      "source_CREATE_block_sha256": "957b367303efae25d2cf142a17a0a5640e4fd6a2dad677218db4bedfb34b5003",
+      "source_arg_path": "genout/ss_1002_18_15",
+      "source_arg_sha256": "455df5226d4d2dc6d7ec3029d7f0d69fa2737036890890e689ac39164ae67793",
+      "source_LimitItemType_state": "LITERAL",
+      "source_LimitItemType_literal": "ACCESSORY",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "6d6bc1dfff9f7c1c5120b9a92c513607340143449bf542ebc7343459ce452150",
+        "explicit_numeric_ID_count": 11,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 11,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.2"
+      }
+    },
+    {
+      "source_floor_id": 1003,
+      "role": "PetShop",
+      "source_coordinate": [
+        12,
+        13
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 3,
+      "source_CREATE_block_sha256": "eac3ba16a251748c7e27cd8c42cbd5f0020516e6adf4278d029ede4b2c812536",
+      "source_arg_path": "genout/ps_1003_12_13",
+      "source_arg_sha256": "f4759c08d7391033b8fcee4d2580832c77e8210d637009b608be460b51285cbe",
+      "source_pet_rates_and_pool_literals": {
+        "nomal_rate": "1.0",
+        "special_rate": "1.5",
+        "pool_flg": "1",
+        "pool_cost": "200"
+      },
+      "source_special_pet_empty_literal": true
+    },
+    {
+      "source_floor_id": 1003,
+      "role": "PetSkillShop",
+      "source_coordinate": [
+        18,
+        13
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 6,
+      "source_CREATE_block_sha256": "36a9e93bc3b422356dbadbcb9d69aec76c1022b5fa20d31e61cffc7df28add58",
+      "source_arg_path": "genout/psks_1003_18_13",
+      "source_arg_sha256": "c4063d4fe350ff3b1ed4638e72f62f919b229e042112c0f6e7aec7af24e41558",
+      "source_skill_rate_literal": "1.0",
+      "source_pet_skill_IDs_literal": [
+        0,
+        1,
+        2,
+        3,
+        10,
+        50,
+        100,
+        200,
+        201
+      ]
+    },
+    {
+      "source_floor_id": 1004,
+      "role": "ItemShop",
+      "source_coordinate": [
+        17,
+        13
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 8,
+      "source_CREATE_block_sha256": "5a65b1d8537a0cee97a9162ecab5c01324b66d0b71443b0c8c923cc97c3a7306",
+      "source_arg_path": "genout/ss_1004_17_13",
+      "source_arg_sha256": "a497268ebafd461a0026b1d0b6801d32294371f37275ca4893a08b68c4a66349",
+      "source_LimitItemType_state": "ABSENT",
+      "source_LimitItemType_literal": null,
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "c369eefed18eebc56bb29415d354f88592a0de8615f48a4c6d654b02475905c9",
+        "explicit_numeric_ID_count": 0,
+        "range_expression_count": 1,
+        "candidate_expanded_ID_count": 4,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "1.0"
+      }
+    },
+    {
+      "source_floor_id": 1101,
+      "role": "ItemShop",
+      "source_coordinate": [
+        18,
+        13
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 23,
+      "source_CREATE_block_sha256": "23c4ad901344c9a346450c60928292ed9872ae366d828ac1aa1175094f277897",
+      "source_arg_path": "genout/ss_1101_18_13",
+      "source_arg_sha256": "a465140744a12688c8a252c5e71413ea719efa011afd38505d9858e1a6f599c7",
+      "source_LimitItemType_state": "LITERAL",
+      "source_LimitItemType_literal": "OFFENCE",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "c28ea44376456c9862ff1b1c00398e43fb2775a673915584ec55a65a02e7da8c",
+        "explicit_numeric_ID_count": 16,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 16,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.19"
+      }
+    },
+    {
+      "source_floor_id": 1101,
+      "role": "ItemShop",
+      "source_coordinate": [
+        12,
+        18
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 24,
+      "source_CREATE_block_sha256": "6fbae07fd2454c06d7b07c2992f114470d0aaa881268b5592fc2403a5a8c060c",
+      "source_arg_path": "genout/ss_1101_12_18",
+      "source_arg_sha256": "c85dcfe27f99df962280e34cbe0ff4ea7ba09acdb67a6f310915f5beb064b589",
+      "source_LimitItemType_state": "LITERAL",
+      "source_LimitItemType_literal": "DEFENCE",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "232a111b68ccc6be8de75b9533746073c118bf7c27346c73d14c436e861f60db",
+        "explicit_numeric_ID_count": 12,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 12,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.19"
+      }
+    },
+    {
+      "source_floor_id": 1102,
+      "role": "ItemShop",
+      "source_coordinate": [
+        18,
+        13
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 25,
+      "source_CREATE_block_sha256": "76a21137fc5de3a139d3650d2897e7d5f729f5e29f9c88d6389df69fb868c0e0",
+      "source_arg_path": "genout/ss_1102_18_13",
+      "source_arg_sha256": "72e10f20b2ab4d6a105fb69d9f1994ec66aaf391bb0b52101dfc5db3debba7c1",
+      "source_LimitItemType_state": "LITERAL",
+      "source_LimitItemType_literal": "ACCESSORY",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "f5bb9191b728fe1fdb8c120a88c931b7fcf799043b18965ebf57fcc962702961",
+        "explicit_numeric_ID_count": 6,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 6,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.19"
+      }
+    },
+    {
+      "source_floor_id": 1102,
+      "role": "ItemShop",
+      "source_coordinate": [
+        14,
+        14
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 105,
+      "source_CREATE_block_sha256": "88d74c809d296a1e7cd48e206fe04717d8631666e987bd3df7d97607ea3d2a4b",
+      "source_arg_path": "genout/ss_1102_14_14",
+      "source_arg_sha256": "243f728b0ca876cb0bd964bd2039923701fe6be89960685db3f9dcfabe6a7b3f",
+      "source_LimitItemType_state": "EMPTY_LITERAL",
+      "source_LimitItemType_literal": "",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "eb39dbcc1621b379cae7f972829ba71c6cad871392deecc863968181ec4c806d",
+        "explicit_numeric_ID_count": 0,
+        "range_expression_count": 2,
+        "candidate_expanded_ID_count": 16,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.5"
+      }
+    },
+    {
+      "source_floor_id": 1102,
+      "role": "ItemShop",
+      "source_coordinate": [
+        18,
+        16
+      ],
+      "source_CREATE_path": "genout/shop_nuke1.create",
+      "source_CREATE_block_ordinal": 7,
+      "source_CREATE_block_sha256": "f15f6fd4d11e1a2dfa354f02270b966294ddae0a124c233de01cf14ee2d14223",
+      "source_arg_path": "genout/ss_1102_18_16",
+      "source_arg_sha256": "9dd2c05a82535ff4b6d53c799936214fdef3f3739c22c30386c61f8d19807bcc",
+      "source_LimitItemType_state": "LITERAL",
+      "source_LimitItemType_literal": "OFFENCE",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "f1a0ccc13adbdd2765a43042685bb4b2bac8418fbd6dd4f33d01a2aae0d9552a",
+        "explicit_numeric_ID_count": 1,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 1,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.2"
+      }
+    },
+    {
+      "source_floor_id": 1103,
+      "role": "PetShop",
+      "source_coordinate": [
+        19,
+        17
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 26,
+      "source_CREATE_block_sha256": "5cd18b23e98c61c1fd3107f51cbdf230ac44f15403cd4a1834b5ecfad49243c9",
+      "source_arg_path": "genout/ps_1103_19_17",
+      "source_arg_sha256": "101f7d3affde660b494492023a5c017ce92c1872b13705c08764d816bd6fb5b0",
+      "source_pet_rates_and_pool_literals": {
+        "nomal_rate": "1.0",
+        "special_rate": "1.5"
+      },
+      "source_special_pet_empty_literal": true
+    },
+    {
+      "source_floor_id": 1103,
+      "role": "PetSkillShop",
+      "source_coordinate": [
+        14,
+        13
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 27,
+      "source_CREATE_block_sha256": "95250c830e74ea1f1913764c7abeb54a3be26bbedab78e8e18f6b93106cf7723",
+      "source_arg_path": "genout/psks_1103_14_13",
+      "source_arg_sha256": "7f9c56f15febe500640bb4b86a128e53aa496fde7c66f6fa82e238ea9179bbf8",
+      "source_skill_rate_literal": "1.0",
+      "source_pet_skill_IDs_literal": [
+        0,
+        1,
+        2,
+        3,
+        10,
+        40,
+        80,
+        130
+      ]
+    },
+    {
+      "source_floor_id": 1104,
+      "role": "ItemShop",
+      "source_coordinate": [
+        17,
+        13
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 30,
+      "source_CREATE_block_sha256": "2deeea1c011a1bc87c1f4a29c7d899c1f705c6110746ca6588f9c6e5023d650c",
+      "source_arg_path": "genout/lbis_1104_17_13",
+      "source_arg_sha256": "deb87cd473895aeffd571b4831deeda3cb9b128929da02a2054091803f8474e6",
+      "source_LimitItemType_state": "ABSENT",
+      "source_LimitItemType_literal": null,
+      "source_ItemList_present": false,
+      "previously_indexed_ItemList": null
+    },
+    {
+      "source_floor_id": 1105,
+      "role": "ItemShop",
+      "source_coordinate": [
+        18,
+        16
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 33,
+      "source_CREATE_block_sha256": "318478c809967592afbec74361b68df91ddb12909e3d277c58d32ad8618568bf",
+      "source_arg_path": "genout/ss_1105_18_16",
+      "source_arg_sha256": "02391d5f387234066ecb6c39005d2d1535b556acf63378210320f0e33090d7ee",
+      "source_LimitItemType_state": "EMPTY_LITERAL",
+      "source_LimitItemType_literal": "",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "cf24c4d42fcb288f758c7e2eb10502832a96656513f498c1302b4889d55f182b",
+        "explicit_numeric_ID_count": 12,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 12,
+        "source_buy_rate_literal": "1.1",
+        "source_sell_rate_literal": "0.2"
+      }
+    },
+    {
+      "source_floor_id": 1201,
+      "role": "ItemShop",
+      "source_coordinate": [
+        14,
+        13
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 36,
+      "source_CREATE_block_sha256": "e4468779c5756acbccbe219ee6206278159163f209df9601d7e0c6d4759fde30",
+      "source_arg_path": "genout/ss_1201_14_13",
+      "source_arg_sha256": "468095303fb9b4d9ed65724e7197e44e18bf44bb4b2607393fa15f2306e9b406",
+      "source_LimitItemType_state": "LITERAL",
+      "source_LimitItemType_literal": "OFFENCE",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "bbf34e142b972b0c766f9d08af162be694908d423927bb5006646474ed2c166d",
+        "explicit_numeric_ID_count": 16,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 16,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.16"
+      }
+    },
+    {
+      "source_floor_id": 1201,
+      "role": "ItemShop",
+      "source_coordinate": [
+        17,
+        13
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 37,
+      "source_CREATE_block_sha256": "2da99eac7e866379b423df1a7330dbf080c5b3e16d84f2e067b48d3dc9af2c92",
+      "source_arg_path": "genout/ss_1201_17_13",
+      "source_arg_sha256": "947b127fc19946be113dc4c91e75c45ac4868cc5c88e42ccadb98a64fc2786d1",
+      "source_LimitItemType_state": "LITERAL",
+      "source_LimitItemType_literal": "DEFENCE",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "4820e4ee0189ca081eb9e5e40bc7252e8019a0731687f5ef22fe1276559cbe1f",
+        "explicit_numeric_ID_count": 12,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 12,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.16"
+      }
+    },
+    {
+      "source_floor_id": 1202,
+      "role": "ItemShop",
+      "source_coordinate": [
+        15,
+        13
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 38,
+      "source_CREATE_block_sha256": "42ed5b2a16ac4c1fc4f8f69d5451722206a08de75ab7c3f2ce44d926a970c1b1",
+      "source_arg_path": "genout/ss_1202_15_13",
+      "source_arg_sha256": "db38fe4f5737850ea852b9e049bb34a3d370ac4dcc789ae38e63cce990af8ff3",
+      "source_LimitItemType_state": "LITERAL",
+      "source_LimitItemType_literal": "ACCESSORY",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "3867aabbdf390aa15cb11ec473170caff5d77ce7b2980034f151c51a4e3b63a5",
+        "explicit_numeric_ID_count": 6,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 6,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.16"
+      }
+    },
+    {
+      "source_floor_id": 1203,
+      "role": "PetShop",
+      "source_coordinate": [
+        14,
+        13
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 41,
+      "source_CREATE_block_sha256": "d8e48d46fbb56a850c365eeb56eac82abb343203d7b03b58c02e666f0bf222e8",
+      "source_arg_path": "genout/ps_1203_14_13",
+      "source_arg_sha256": "db60d5e31f2478d8f59a9144c49b61c17448a0a978a63be98d81b6398c469463",
+      "source_pet_rates_and_pool_literals": {
+        "nomal_rate": "0.7",
+        "special_rate": "1.5"
+      },
+      "source_special_pet_empty_literal": true
+    },
+    {
+      "source_floor_id": 1203,
+      "role": "PetSkillShop",
+      "source_coordinate": [
+        18,
+        13
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 42,
+      "source_CREATE_block_sha256": "e9be4c71cd46bcc640c27d1e772886328906b641f97dbe4b6ea48ed6b94cb3e2",
+      "source_arg_path": "genout/psks_1203_18_13",
+      "source_arg_sha256": "1df1d53f6617cd497139828f3335668a7b9ecd1e636b650a90c8d9b2aa249c4f",
+      "source_skill_rate_literal": "1.2",
+      "source_pet_skill_IDs_literal": [
+        0,
+        1,
+        2,
+        3,
+        10,
+        50,
+        80,
+        100,
+        120,
+        130
+      ]
+    },
+    {
+      "source_floor_id": 1204,
+      "role": "ItemShop",
+      "source_coordinate": [
+        18,
+        15
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 46,
+      "source_CREATE_block_sha256": "ef90facb4d0295fee0801c0aefb889866a07224cfe28cd364678caa8d1a28020",
+      "source_arg_path": "genout/lbis_1204_18_15",
+      "source_arg_sha256": "da5a0935a4b5f10e036bca290c35ace619a804d009343f572d03026a39ad6e60",
+      "source_LimitItemType_state": "ABSENT",
+      "source_LimitItemType_literal": null,
+      "source_ItemList_present": false,
+      "previously_indexed_ItemList": null
+    },
+    {
+      "source_floor_id": 1205,
+      "role": "ItemShop",
+      "source_coordinate": [
+        14,
+        14
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 48,
+      "source_CREATE_block_sha256": "1e6950453743ad9a5e4b902eafdc54b4ed3ab594fa648a37a88d3f0304a795e3",
+      "source_arg_path": "genout/ss_1205_14_14",
+      "source_arg_sha256": "5a88f873bcc50c7b5f4c77c2217b3fc3a554fe447564f582742dfadb184514d6",
+      "source_LimitItemType_state": "EMPTY_LITERAL",
+      "source_LimitItemType_literal": "",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "cf24c4d42fcb288f758c7e2eb10502832a96656513f498c1302b4889d55f182b",
+        "explicit_numeric_ID_count": 12,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 12,
+        "source_buy_rate_literal": "1.5",
+        "source_sell_rate_literal": "0.2"
+      }
+    },
+    {
+      "source_floor_id": 1301,
+      "role": "ItemShop",
+      "source_coordinate": [
+        19,
+        17
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 50,
+      "source_CREATE_block_sha256": "699953a61c4f35bc0404abc2e7dd35dc00c1e9898adbae1de864a52d85073589",
+      "source_arg_path": "genout/ss_1301_19_17",
+      "source_arg_sha256": "8f44958425e94b5a85a6bd89184b43f46f78d2243cb393bf3305216cfc4e4d3c",
+      "source_LimitItemType_state": "LITERAL",
+      "source_LimitItemType_literal": "OFFENCE",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "937e85b33a20ebdb4a4dbab164cbd0166489eb7ca045b48af5950eda22dcf7d3",
+        "explicit_numeric_ID_count": 16,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 16,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.18"
+      }
+    },
+    {
+      "source_floor_id": 1301,
+      "role": "ItemShop",
+      "source_coordinate": [
+        18,
+        13
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 51,
+      "source_CREATE_block_sha256": "34707366c416d56174d2cc16c55981f7858444ecc7878306dfe7df5f183fe52c",
+      "source_arg_path": "genout/ss_1301_18_13",
+      "source_arg_sha256": "8f9c6f213e17e3e6c7f9dd252ca77c8aa4440f0bd151038a317ad68672e407eb",
+      "source_LimitItemType_state": "LITERAL",
+      "source_LimitItemType_literal": "DEFENCE",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "489d25b6a9d5509cb2bb43283c30471533d5e7cf41f76f04f2e0c1228fe807f6",
+        "explicit_numeric_ID_count": 12,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 12,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.18"
+      }
+    },
+    {
+      "source_floor_id": 1302,
+      "role": "ItemShop",
+      "source_coordinate": [
+        18,
+        13
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 52,
+      "source_CREATE_block_sha256": "d4aa5900986cddefd69d44ae29411fc04e758e6986a32fb0f17497adb04ae65d",
+      "source_arg_path": "genout/ss_1302_18_13",
+      "source_arg_sha256": "13d6c5045c842d7e068eb18589c687089279938a44f845d880f31e11323fac49",
+      "source_LimitItemType_state": "LITERAL",
+      "source_LimitItemType_literal": "ACCESSORY",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "b3623c04ed1eeba10ac222d64ea5e1bb63455bb992a126c7dadb2214fd469a52",
+        "explicit_numeric_ID_count": 6,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 6,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.18"
+      }
+    },
+    {
+      "source_floor_id": 1302,
+      "role": "ItemShop",
+      "source_coordinate": [
+        12,
+        15
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 106,
+      "source_CREATE_block_sha256": "e94c952baae21e633532de0f8633d6ab9205d3466d0087cf5d69bcd8d3cf639b",
+      "source_arg_path": "genout/ss_1302_12_15",
+      "source_arg_sha256": "3a724dc2ac1c5af67f1226fab88b6959e58a5f81016a76b36f4e3263f0616f44",
+      "source_LimitItemType_state": "EMPTY_LITERAL",
+      "source_LimitItemType_literal": "",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "a77c03f5aaf23f624592824f88607680dbbaf8bc0cd2d9c1fb36e601bad54f62",
+        "explicit_numeric_ID_count": 0,
+        "range_expression_count": 2,
+        "candidate_expanded_ID_count": 16,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.5"
+      }
+    },
+    {
+      "source_floor_id": 1302,
+      "role": "ItemShop",
+      "source_coordinate": [
+        12,
+        15
+      ],
+      "source_CREATE_path": "genout/shop_m2.create",
+      "source_CREATE_block_ordinal": 118,
+      "source_CREATE_block_sha256": "7a7b2a45f91225d5d82c066469719bc4f7bc31f26be7f76592030cb5fa15537f",
+      "source_arg_path": "genout/ss_1302_12_15",
+      "source_arg_sha256": "3a724dc2ac1c5af67f1226fab88b6959e58a5f81016a76b36f4e3263f0616f44",
+      "source_LimitItemType_state": "EMPTY_LITERAL",
+      "source_LimitItemType_literal": "",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "a77c03f5aaf23f624592824f88607680dbbaf8bc0cd2d9c1fb36e601bad54f62",
+        "explicit_numeric_ID_count": 0,
+        "range_expression_count": 2,
+        "candidate_expanded_ID_count": 16,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.5"
+      }
+    },
+    {
+      "source_floor_id": 1302,
+      "role": "ItemShop",
+      "source_coordinate": [
+        14,
+        15
+      ],
+      "source_CREATE_path": "genout/shop_nuke1.create",
+      "source_CREATE_block_ordinal": 11,
+      "source_CREATE_block_sha256": "075296a4fb42ba80597dfcc06d11a91092df69bbf6bc47b3cb817ae2cb3199e2",
+      "source_arg_path": "genout/ss_1302_14_15",
+      "source_arg_sha256": "ab0040783e90fa620870e89d73a0225fe7ff35ec718ff352ebe4bd84beb69148",
+      "source_LimitItemType_state": "LITERAL",
+      "source_LimitItemType_literal": "OFFENCE",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "e1e2efcacb8e5c65fe2a8a14f3b535034bd28e7275abd111d6c37da19adee2cc",
+        "explicit_numeric_ID_count": 1,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 1,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.2"
+      }
+    },
+    {
+      "source_floor_id": 1303,
+      "role": "PetShop",
+      "source_coordinate": [
+        16,
+        13
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 53,
+      "source_CREATE_block_sha256": "478b8668a020ba8b0a76e50e4893b6e33d5e6712a0f6bf4658e02a9929498d57",
+      "source_arg_path": "genout/ps_1303_16_13",
+      "source_arg_sha256": "8beaa8a89b834d90be34e9213abf40d5bdb9ff832a6b6c5bb674db738577f022",
+      "source_pet_rates_and_pool_literals": {
+        "nomal_rate": "1.0",
+        "special_rate": "1.5"
+      },
+      "source_special_pet_empty_literal": true
+    },
+    {
+      "source_floor_id": 1303,
+      "role": "PetSkillShop",
+      "source_coordinate": [
+        13,
+        13
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 54,
+      "source_CREATE_block_sha256": "f799a403d749cae89ad3e3a5a1983818d764e2ff48517acff62fe737440ab1ca",
+      "source_arg_path": "genout/psks_1303_13_13",
+      "source_arg_sha256": "310106449c8b0ee0e4e5f0a474dfcf47f126d413d57a047207bfe80a8d14f3db",
+      "source_skill_rate_literal": "1.1",
+      "source_pet_skill_IDs_literal": [
+        0,
+        1,
+        2,
+        3,
+        50,
+        61,
+        130
+      ]
+    },
+    {
+      "source_floor_id": 1304,
+      "role": "ItemShop",
+      "source_coordinate": [
+        18,
+        16
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 62,
+      "source_CREATE_block_sha256": "cb13712ee1217b98c6ba273ddddd1a8616fd2d9d6762a518462e65332325e596",
+      "source_arg_path": "genout/lbis_1304_18_16",
+      "source_arg_sha256": "828c043f9abd3d3c3122ca91d1e5997269f273868e3565922d3d2de73126782c",
+      "source_LimitItemType_state": "ABSENT",
+      "source_LimitItemType_literal": null,
+      "source_ItemList_present": false,
+      "previously_indexed_ItemList": null
+    },
+    {
+      "source_floor_id": 1305,
+      "role": "ItemShop",
+      "source_coordinate": [
+        17,
+        18
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 64,
+      "source_CREATE_block_sha256": "9b955bab408b5ae184804ed1f4cf1a554d504c7cd26472acc0d2b9fb12971b3d",
+      "source_arg_path": "genout/ss_1305_17_18",
+      "source_arg_sha256": "6481e0ba2a65278a4fd4a81846e2ab6b5e33088e27339719ced08d064e004a97",
+      "source_LimitItemType_state": "EMPTY_LITERAL",
+      "source_LimitItemType_literal": "",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "cf24c4d42fcb288f758c7e2eb10502832a96656513f498c1302b4889d55f182b",
+        "explicit_numeric_ID_count": 12,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 12,
+        "source_buy_rate_literal": "1.3",
+        "source_sell_rate_literal": "0.2"
+      }
+    },
+    {
+      "source_floor_id": 2001,
+      "role": "ItemShop",
+      "source_coordinate": [
+        18,
+        15
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 79,
+      "source_CREATE_block_sha256": "687052614446dbd7717608a4b67fd819a5167a66c1ef959f8abade46aef0783c",
+      "source_arg_path": "genout/ss_2001_18_15",
+      "source_arg_sha256": "f4c8e1f897a7a60a0bd32bb727b419893d0d0c2b75c15456b0ff51390df77c1b",
+      "source_LimitItemType_state": "LITERAL",
+      "source_LimitItemType_literal": "OFFENCE",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "005b4cf04c4b899df7eeb2ae883dd751bb33a3616e5807d564b804d5b18a144e",
+        "explicit_numeric_ID_count": 16,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 16,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.2"
+      }
+    },
+    {
+      "source_floor_id": 2001,
+      "role": "ItemShop",
+      "source_coordinate": [
+        18,
+        18
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 80,
+      "source_CREATE_block_sha256": "31beb30d3d73b6b48ed023c0701b93baf0a195e1f71c52d9fe90b59194e7dae2",
+      "source_arg_path": "genout/ss_2001_18_18",
+      "source_arg_sha256": "30d2ef54e2960f76d90c708d1776b21563634e9408f88f9d865471f44f2af365",
+      "source_LimitItemType_state": "LITERAL",
+      "source_LimitItemType_literal": "DEFENCE",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "c2c9ba91b141b77af9946baf5b94a5884db9802a2221dc182193f28667946db0",
+        "explicit_numeric_ID_count": 14,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 14,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.2"
+      }
+    },
+    {
+      "source_floor_id": 2002,
+      "role": "ItemShop",
+      "source_coordinate": [
+        15,
+        13
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 81,
+      "source_CREATE_block_sha256": "07d4545afb75a0293fb3fd37a3238a6ead09b0588b8485613cfb8a312866c6ed",
+      "source_arg_path": "genout/ss_2002_15_13",
+      "source_arg_sha256": "88e8c41077990f4e87fa6b1d2edf7a60a3e98e1afccfb0174add15bcc52d2c1e",
+      "source_LimitItemType_state": "LITERAL",
+      "source_LimitItemType_literal": "ACCESSORY",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "8ed6889e3d75f35a6fd0df0b89c2dad20ed534aa700ce42a8793ee81362cd466",
+        "explicit_numeric_ID_count": 10,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 10,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.2"
+      }
+    },
+    {
+      "source_floor_id": 2003,
+      "role": "PetShop",
+      "source_coordinate": [
+        18,
+        17
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 82,
+      "source_CREATE_block_sha256": "82fe064bf19f3284efe23d49d9209a51c8a235550f187a700361d18014ccc685",
+      "source_arg_path": "genout/ps_2003_18_17",
+      "source_arg_sha256": "51c9bc03950cdd84a8a2661586010f737460212ce3a17992089401bb65046f36",
+      "source_pet_rates_and_pool_literals": {
+        "nomal_rate": "1.0",
+        "special_rate": "1.5",
+        "pool_flg": "1",
+        "pool_cost": "200"
+      },
+      "source_special_pet_empty_literal": true
+    },
+    {
+      "source_floor_id": 2003,
+      "role": "PetSkillShop",
+      "source_coordinate": [
+        18,
+        14
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 83,
+      "source_CREATE_block_sha256": "d29da8c0843d464ead125f15bf650c98391540322de6606642e2555e2e5175e2",
+      "source_arg_path": "genout/psks_2003_18_14",
+      "source_arg_sha256": "bd2d582757b07a35fb74a9580c4701441cec1b95715cd70a7ef602a802428a43",
+      "source_skill_rate_literal": "1.0",
+      "source_pet_skill_IDs_literal": [
+        0,
+        1,
+        2,
+        3,
+        10,
+        51,
+        200,
+        201
+      ]
+    },
+    {
+      "source_floor_id": 2004,
+      "role": "ItemShop",
+      "source_coordinate": [
+        17,
+        13
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 88,
+      "source_CREATE_block_sha256": "9d7350cd05135830b9c160b97bc9ce5be5ac2b94d42dcc04a822331940b90e04",
+      "source_arg_path": "genout/ss_2004_17_13",
+      "source_arg_sha256": "501b0be4c78f75b51c7a7bf4aaaed1b7e4ab1174c1919be1cbb51805fd38142e",
+      "source_LimitItemType_state": "ABSENT",
+      "source_LimitItemType_literal": null,
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "c369eefed18eebc56bb29415d354f88592a0de8615f48a4c6d654b02475905c9",
+        "explicit_numeric_ID_count": 0,
+        "range_expression_count": 1,
+        "candidate_expanded_ID_count": 4,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "1.0"
+      }
+    },
+    {
+      "source_floor_id": 2005,
+      "role": "ItemShop",
+      "source_coordinate": [
+        15,
+        7
+      ],
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_block_ordinal": 90,
+      "source_CREATE_block_sha256": "eda1488054de49dd477debdee29d4dbddf7e8304fd3f246ad851c01b928c1a8c",
+      "source_arg_path": "genout/ss_2005_15_7",
+      "source_arg_sha256": "0dd2a05ed5dbcc2711146366fd12ac8a08b5cf896d29b51a03b8db80ef7bcf84",
+      "source_LimitItemType_state": "EMPTY_LITERAL",
+      "source_LimitItemType_literal": "",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "cf24c4d42fcb288f758c7e2eb10502832a96656513f498c1302b4889d55f182b",
+        "explicit_numeric_ID_count": 12,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 12,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.2"
+      }
+    },
+    {
+      "source_floor_id": 3001,
+      "role": "ItemShop",
+      "source_coordinate": [
+        18,
+        14
+      ],
+      "source_CREATE_path": "genout/shop_m2.create",
+      "source_CREATE_block_ordinal": 0,
+      "source_CREATE_block_sha256": "ecb63488a72a73138cae81530d7a5828ed1665f093d45b2ebf2a90556eadc0c8",
+      "source_arg_path": "genout/ss_3001_18_14",
+      "source_arg_sha256": "09fa216beba2afd6b40015de207763302fbb6dc3060fbb6aa9a4ab3e9f8e2258",
+      "source_LimitItemType_state": "LITERAL",
+      "source_LimitItemType_literal": "OFFENCE",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "6aceceb25ed87717e0b579e405a65a66cbe6c110730473d79f78401c54637371",
+        "explicit_numeric_ID_count": 16,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 16,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.2"
+      }
+    },
+    {
+      "source_floor_id": 3001,
+      "role": "ItemShop",
+      "source_coordinate": [
+        18,
+        19
+      ],
+      "source_CREATE_path": "genout/shop_m2.create",
+      "source_CREATE_block_ordinal": 1,
+      "source_CREATE_block_sha256": "569a4c2cffe2188fe0301a96a8f4bb74d1298c6bd4c6eb5412f940e4c05776c5",
+      "source_arg_path": "genout/ss_3001_18_19",
+      "source_arg_sha256": "33e8361b63bab002d503381cc855aa4ac7f409567fdbb2dcf3be26769f9639de",
+      "source_LimitItemType_state": "LITERAL",
+      "source_LimitItemType_literal": "DEFENCE",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "1294dbf6c9b494f6af9e644aae1fd5c8808d61d92dede6b68bca5d10e0e09cac",
+        "explicit_numeric_ID_count": 13,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 13,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.2"
+      }
+    },
+    {
+      "source_floor_id": 3002,
+      "role": "ItemShop",
+      "source_coordinate": [
+        18,
+        16
+      ],
+      "source_CREATE_path": "genout/shop_m2.create",
+      "source_CREATE_block_ordinal": 2,
+      "source_CREATE_block_sha256": "0343aaaed64dd94dd0a395bc35e0167f9af4eedbe8fcdaa10495d7d06bcdb2ba",
+      "source_arg_path": "genout/ss_3002_18_16",
+      "source_arg_sha256": "aa7d60e42180bab19f95ed537589da99e530a3971cf5143bb84361b4bbbadc3a",
+      "source_LimitItemType_state": "LITERAL",
+      "source_LimitItemType_literal": "ACCESSORY",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "8eec9c936e89361e5b58785468558f7992d17b708cc1f6452416c7a05b79a871",
+        "explicit_numeric_ID_count": 13,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 13,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.2"
+      }
+    },
+    {
+      "source_floor_id": 3003,
+      "role": "PetShop",
+      "source_coordinate": [
+        12,
+        13
+      ],
+      "source_CREATE_path": "genout/shop_m2.create",
+      "source_CREATE_block_ordinal": 3,
+      "source_CREATE_block_sha256": "0eda1f01859b9027f1cbc10d27e0b5894846b950dbf011d9f5642cc38b21ca7d",
+      "source_arg_path": "genout/ps_3003_12_13",
+      "source_arg_sha256": "c499b5fd06ba53537552614e6ea59222b0450d9e2301bc844afc4890bdcdf16f",
+      "source_pet_rates_and_pool_literals": {
+        "nomal_rate": "1.0",
+        "special_rate": "1.5",
+        "pool_flg": "1",
+        "pool_cost": "200"
+      },
+      "source_special_pet_empty_literal": true
+    },
+    {
+      "source_floor_id": 3003,
+      "role": "PetSkillShop",
+      "source_coordinate": [
+        16,
+        13
+      ],
+      "source_CREATE_path": "genout/shop_m2.create",
+      "source_CREATE_block_ordinal": 6,
+      "source_CREATE_block_sha256": "6a43a5095676eac645cbbb2ae8f5560aac2d85f1aae50e0f0b355077030461d0",
+      "source_arg_path": "genout/psks_3003_16_13",
+      "source_arg_sha256": "e14c2dfd651cc9b958c64a27daf91d420a7135a275b956b1cdb0df588e382a8b",
+      "source_skill_rate_literal": "1.0",
+      "source_pet_skill_IDs_literal": [
+        0,
+        1,
+        2,
+        3,
+        10,
+        50,
+        200,
+        201
+      ]
+    },
+    {
+      "source_floor_id": 3004,
+      "role": "ItemShop",
+      "source_coordinate": [
+        18,
+        16
+      ],
+      "source_CREATE_path": "genout/shop_m2.create",
+      "source_CREATE_block_ordinal": 8,
+      "source_CREATE_block_sha256": "c06e782c63e8b53534fc2c5812d7359c688135c0e2bcc6d0a3b8bede1fa49c4f",
+      "source_arg_path": "genout/ss_3004_18_16",
+      "source_arg_sha256": "d65af850941a368f777fd1aa648e929b466db9cf7879f65841d52937c2c9104b",
+      "source_LimitItemType_state": "ABSENT",
+      "source_LimitItemType_literal": null,
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "c369eefed18eebc56bb29415d354f88592a0de8615f48a4c6d654b02475905c9",
+        "explicit_numeric_ID_count": 0,
+        "range_expression_count": 1,
+        "candidate_expanded_ID_count": 4,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "1.0"
+      }
+    },
+    {
+      "source_floor_id": 3005,
+      "role": "ItemShop",
+      "source_coordinate": [
+        18,
+        20
+      ],
+      "source_CREATE_path": "genout/shop_m2.create",
+      "source_CREATE_block_ordinal": 10,
+      "source_CREATE_block_sha256": "b946671e63af30814f0150540e49af94e8083b8e9cdfef1f7e896d6f32f42904",
+      "source_arg_path": "genout/ss_3005_18_20",
+      "source_arg_sha256": "53d26483a744329a6f170ce4fba962ec6664d5809c1a57a94c52882e6de5ccc2",
+      "source_LimitItemType_state": "EMPTY_LITERAL",
+      "source_LimitItemType_literal": "",
+      "source_ItemList_present": true,
+      "previously_indexed_ItemList": {
+        "source_raw_expression_sha256": "cf24c4d42fcb288f758c7e2eb10502832a96656513f498c1302b4889d55f182b",
+        "explicit_numeric_ID_count": 12,
+        "range_expression_count": 0,
+        "candidate_expanded_ID_count": 12,
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.2"
+      }
+    }
+  ],
+  "negative_evidence_bounds": {
+    "same_deployment_with_TW1_official_authenticated": false,
+    "original_server_or_client_executed": false,
+    "native_shop_sales_or_price_effect_confirmed": false,
+    "original_pet_sale_or_pool_operation_confirmed": false,
+    "pet_skill_training_or_skill_names_confirmed": false,
+    "missing_ItemList_implies_empty_shop": false,
+    "absent_rate_or_pool_field_implies_zero_or_disabled": false,
+    "duplicate_CREATE_configs_deduplicated": false,
+    "original_commercial_script_or_original_images_published": false
+  },
+  "historical_CURRENT_blob_preserved": {
+    "sha": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "size_bytes": 2709173,
+    "content_edited": false,
+    "retrieval_limitation": "Native Git path/tree prove same preserved 2,709,173-byte blob; full content response not delivered by connected file API in this work unit."
+  },
+  "stage_A": "7 PARTIAL + 2 OPEN",
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "Return to source-qualified original game content outside these same 28 rooms. Reopen any service conclusion only on relevant same-carrier original source or verified native behavior; do not repeat I49 map drawings."
+}
