@@ -1,0 +1,156 @@
+{
+  "schema": "stoneage.integration31.20606_condition_warpman_entry.r1",
+  "date": "2026-11-10",
+  "starting_main": "3c74c2e49682295b0f47911eab1c5658b033952b",
+  "starting_tree": "e283f8a82d3daeefaf5788fc2de2f3aa8387c619",
+  "historical_CURRENT": {
+    "bytes": 2709173,
+    "git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "upstream": {
+    "map09": {
+      "path": "research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json",
+      "git_blob": "137580e7c25aadf3d679b6ebfb5080b79912cc4f"
+    },
+    "i30": {
+      "path": "research/recovered/STONEAGE-INTEGRATION30-EVENT20-DUNGEON-SOURCE-R1.json",
+      "git_blob": "30e41eaf7e1ec974fe056f2b1a24a4ec924bd445"
+    }
+  },
+  "raw_private_original_sources": {
+    "CHAR01_zip": {
+      "path_in_private_library": "/石器时代/StoneAge-CHAR01-mixed25-all-npc-original-private.zip",
+      "bytes": 995176,
+      "sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+      "members": 2205,
+      "all_members_crc_ok": true
+    },
+    "I30_zip": {
+      "path_in_private_library": "/石器时代/StoneAge-INTEGRATION30-event20-dungeon-20607-20608-private.zip",
+      "bytes": 6980092,
+      "sha256": "811139ca9f78ccf20a90d05c5e0535ace34a4be7600f8e0efd9335f3e774441b",
+      "members": 28,
+      "all_members_crc_ok": true
+    },
+    "npc_create": {
+      "path": "genout/20600npc.create",
+      "bytes": 2015,
+      "sha256": "245ab7ab71d299710b7828edfe6ee10219e6350f598b9cf9d579426e495e20b7",
+      "record_start_offset": 974,
+      "record_end_offset_exclusive": 1137,
+      "record_sha256": "1be7b86f273442e1029a92ade8d2c4626493fe30c0e18418d51f2a84b7b260e8"
+    },
+    "wpm_parameter": {
+      "path": "genout/wpm_20606_9_23",
+      "bytes": 96,
+      "sha256": "6936519676f71b1478d4208241cd20b3437d61af7ac1c0d7ad4780e60b2e51de"
+    },
+    "mapwarp": {
+      "path": "mapwarp.txt",
+      "bytes": 110674,
+      "sha256": "b7b50f42efa8e5a3f740d49a8d0c01cbf994d1bb66151b16ff5b5e7c14e7595c",
+      "total_source_lines": 2981,
+      "exact_plain_mapwarp_rows_with_start_floor_20606_target_floor_20607": 0
+    }
+  },
+  "entry": {
+    "carrier": "COMMUNITY_MIXED25_SAME_ARCHIVED_SOURCE",
+    "mechanism_source": "NPCGEN_WARPMAN_PARAMETER_NOT_MAPWARP_DIRECTION",
+    "original_create": {
+      "floor": 20606,
+      "xy": [
+        9,
+        23
+      ],
+      "xy_range": [
+        9,
+        23,
+        9,
+        23
+      ],
+      "alias": 100439,
+      "direction": 6,
+      "function": "npcgen_warpman",
+      "parameter_file": "genout/wpm_20606_9_23"
+    },
+    "original_parameter_literals": {
+      "WARP": [
+        20607,
+        7,
+        5
+      ],
+      "FREE": "LV>0",
+      "has_warp_msg": true,
+      "has_nomal_msg": true,
+      "source_dialogue_kept_private": true
+    },
+    "original_DAT_before": {
+      "floor": 20606,
+      "xy": [
+        9,
+        23
+      ],
+      "u16": [
+        4074,
+        0,
+        49152
+      ],
+      "source_sha256": "09600b79c79ff36e2e3716f7e857b5cbb7d2cdd253d8067ca4b0c81417ebdd35"
+    },
+    "original_DAT_after": {
+      "floor": 20607,
+      "xy": [
+        7,
+        5
+      ],
+      "u16": [
+        4084,
+        0,
+        49155
+      ],
+      "source_sha256": "61030ae7ad974ec396074f3bb7a44c3741694be093fb91abec145392a8a67845"
+    },
+    "native_conditional_evaluation_or_transfer_verified": false
+  },
+  "outbound": {
+    "original_mapwarp_line": 2307,
+    "original_full_line_SHA256_including_LF": "dc57563b86e13e12c56995240236ddfd1bf644f47c69a4b775ae29b37ef0cba2",
+    "start": [
+      20607,
+      7,
+      5
+    ],
+    "target": [
+      20606,
+      8,
+      23
+    ],
+    "start_u16": [
+      4084,
+      0,
+      49155
+    ],
+    "target_u16": [
+      4119,
+      0,
+      49152
+    ],
+    "explicit_ordinary_reverse_row_in_entire_mapwarp": false,
+    "different_target_from_warpman_location": true
+  },
+  "scope_limits": {
+    "same_original_community_carrier_but_no_independent_early_official_deployment": true,
+    "return_path_literal_not_verified_native_gameplay": true,
+    "npc_dialogue_not_password_runtime_proof": true,
+    "flat_mapwarp_absence_does_not_rule_out_warpman": true,
+    "original_client_running": false,
+    "original_server_running": false,
+    "source_DAT_reread_without_re_rendering_existing_MAP09": true,
+    "private_originals_published": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Stop duplicating 20606/20607 source paths. Rotate to the next evidence-ready outstanding original content, only reopen if a new original source or native runtime resolves WarpMan trigger or dual-route semantics."
+}
