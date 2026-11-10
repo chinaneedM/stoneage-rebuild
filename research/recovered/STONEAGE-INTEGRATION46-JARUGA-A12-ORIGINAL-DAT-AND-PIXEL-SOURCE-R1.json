@@ -1,0 +1,310 @@
+{
+  "schema": "stoneage.integration46.jaruga_A12_original_DAT_pixel_source_r1",
+  "remote_start": {
+    "HEAD": "ba0b473adf3b0b782c70a29f180bd115bab0e05d",
+    "tree": "82d49bbff4bb553f56e026747b8748c5d9171996"
+  },
+  "historical_CURRENT_preserved": {
+    "bytes": 2709173,
+    "blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "modified": false
+  },
+  "source_git_blob_refs": {
+    "I10": "4b91fd0f0115bc58fed182b2f36468d5e3b117b2",
+    "QUEST25": "a52b4e5519912ac7e46e1f892cc01515861cf2e8",
+    "I45": "776810890b1f6f4941c827eedd37252344af40cd",
+    "MAP04": "1ef8c004179128ea44ffa4fb4259748bc8c83911"
+  },
+  "source_scopes": {
+    "original_DAT_and_NPC": "PRESERVED_COMMUNITY_MIXED25_NOT_EARLY_OFFICIAL_DEPLOYMENT",
+    "actual_original_pixel_bytes": "AUTHENTICATED_RETAIL_TAIWAN_1_0_TW1_SEPARATE_BUILD"
+  },
+  "actual_source_archives": [
+    {
+      "id": "INTEGRATION10",
+      "bytes": 5759006,
+      "sha256": "7a4b74af4ca4b0cca3108dcdec55bb9f1892a2edf17b73d400aab4c041fa6b96",
+      "members": 314,
+      "actual_CRC_complete": true
+    },
+    {
+      "id": "MAP04",
+      "bytes": 35673334,
+      "sha256": "e9c43222797c7ebcddfcb1ccab6dbeba205b972bbbff4e1f29c14b3ece320d37",
+      "members": 4169,
+      "actual_CRC_complete": true
+    },
+    {
+      "id": "QUEST25",
+      "bytes": 172328,
+      "sha256": "543cf62ec2b1f5a36a929c7714e86510f1382430039ebf6e7a487d165acffbb2",
+      "members": 173,
+      "actual_CRC_complete": true
+    },
+    {
+      "id": "TW1_P3H",
+      "bytes": 372626292,
+      "sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+      "members": 379,
+      "actual_CRC_complete": true
+    },
+    {
+      "id": "INTEGRATION45",
+      "bytes": 5098689,
+      "sha256": "a705e963612ce24177940feebe9f7d4225a4bbc83af2197624af31bb5350d018",
+      "members": 132,
+      "actual_CRC_complete": true
+    }
+  ],
+  "actual_tw1_members_sha256": {
+    "ADRN": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+    "REAL": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13",
+    "Palet1": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0"
+  },
+  "A12_DAT": {
+    "floor": 3400,
+    "source_in_private_archive": "INTEGRATION10/source/3400.dat",
+    "sha256": "a3c6918ba21c909e6312329c936615aa6b6d8800d7967ed85a2146d55ca263c4",
+    "bytes": 86408,
+    "width": 120,
+    "height": 120,
+    "original_RAR_partial_read_error_prior": {
+      "emitted_before_error": 65536,
+      "error_tag": "File CRC error",
+      "expected_member_bytes": 86408,
+      "group": 0,
+      "original_filename": "3400.DAT"
+    },
+    "error_not_erased": true
+  },
+  "A12_original_NPC": {
+    "create_path": "jaruga/event/oev.create",
+    "create_ordinal": 12,
+    "create_block_sha256": "b8951bcc963371d53c4c6f626c4a74eebf82e7f8ca77ebdab5d9854704c9104b",
+    "source_floor": 3400,
+    "borncorner": [
+      69,
+      61,
+      69,
+      61
+    ],
+    "direction": 6,
+    "source_graphic_alias": 16067,
+    "functionset": "ExChangeMan",
+    "template_path": "jaruga/event/event.template",
+    "script_path": "jaruga/event/oev_12",
+    "script_bytes": 1874,
+    "script_sha256": "f47ab5245c56771a92b53b942fb7305857e33cc2b8bda7d1db017000d1d9b70d",
+    "six_original_TYPE_sections": [
+      {
+        "ordinal": 0,
+        "condition_literal": "LV>0&ITEM=2563",
+        "section_sha256": "107a1e5b8246e99e1b015f343c6eca5dcdd8d2478b4ff9b10aa29768a821c8fb",
+        "commands": {
+          "GetItem": [
+            "2564"
+          ],
+          "DelItem": [
+            "2563"
+          ]
+        }
+      },
+      {
+        "ordinal": 1,
+        "condition_literal": "LV>0&ITEM=2564&ENDEV=2",
+        "section_sha256": "d44c33d55ed77a06046ad23a23244681d54a41cfda28f0d226b823ad635dcb73",
+        "commands": {}
+      },
+      {
+        "ordinal": 2,
+        "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2",
+        "section_sha256": "c17536ceabda3879478c5bfee7f73b6f0c0a15b3a884b227b46698f051b476dd",
+        "commands": {}
+      },
+      {
+        "ordinal": 3,
+        "condition_literal": "LV>0&ITEM=2563",
+        "section_sha256": "7e2156a3833e5f8b63431abb0cff7de572a19855217edec7b56d39638b6a66e0",
+        "commands": {}
+      },
+      {
+        "ordinal": 4,
+        "condition_literal": "LV>0&ITEM=2552&ENDEV=2,LV>0&ITEM=2553&ENDEV=2,LV>0&ITEM=2554&ENDEV=2,LV>0&ITEM=2555&ENDEV=2,LV>0&ITEM=2556&ENDEV=2,LV>0&ITEM=2557&ENDEV=2,LV>0&ITEM=2558&ENDEV=2,LV>0&ITEM=2559&ENDEV=2,LV>0&ITEM=2560&ENDEV=2,LV>0&ITEM=2561&ENDEV=2,LV>0&ITEM=2562&ENDEV=2,LV>0&ITEM=2563&ENDEV=2,LV>0&ITEM=2564&ENDEV=2",
+        "section_sha256": "fd4078866383688908b6fdc110bf625ce07266520c880fb7ed4a5d15815883c1",
+        "commands": {}
+      },
+      {
+        "ordinal": 5,
+        "condition_literal": "LV>0",
+        "section_sha256": "ff3c81cd28ffe623be0557a30f84c17795b2bdd41c4c776df2f66f1fc772c8f3",
+        "commands": {}
+      }
+    ],
+    "proof_required": 2563,
+    "proof_output_literal": 2564,
+    "source_first_condition": "LV>0&ITEM=2563"
+  },
+  "A12_window": {
+    "bounds_inclusive": [
+      64,
+      56,
+      74,
+      66
+    ],
+    "center": [
+      69,
+      61
+    ],
+    "original_cells": 121,
+    "raw_three_u16_at_center": [
+      260,
+      0,
+      49152
+    ],
+    "high_gt99_image_occurrences": 135,
+    "distinct_source_qualified_TW1_aliases": 69,
+    "low_1_to_99_occurrences": 21,
+    "low_numeric_histogram": {
+      "2": 14,
+      "27": 7
+    },
+    "unqualified_high_aliases": 0,
+    "qualified_aliases": [
+      147,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      193,
+      194,
+      195,
+      196,
+      260,
+      261,
+      268,
+      269,
+      272,
+      273,
+      274,
+      280,
+      285,
+      300,
+      301,
+      314,
+      325,
+      332,
+      337,
+      345,
+      348,
+      349,
+      356,
+      361,
+      362,
+      373,
+      374,
+      381,
+      384,
+      385,
+      10022,
+      11002,
+      11003,
+      11005,
+      11084,
+      11086,
+      11089,
+      11902,
+      11904
+    ]
+  },
+  "TW1_actor_source": {
+    "graphic_alias": 16067,
+    "physical_bitmap": 5913,
+    "ADRN_record_sha256": "81a43cea4666c6b23af6bd6b5a0a3769ec2a685111dbdec0914a7236e806523d",
+    "original_REAL_offset": 25054495,
+    "RD_bytes": 1694,
+    "RD_sha256": "8dc805589a31d6627aae8df214f587ae08dd9b6d277bfb0d494e7d44292cddd0",
+    "RGBA_sha256": "8b145e29b42a9bc1f6cb4d2b56366862b5a0d53f98117b33c584cf8ebfd55667",
+    "double_decoder_pass": true,
+    "prior_INTEGRATION45_RD_bytes_identical": true,
+    "new_original_actor_RD_discovery": false
+  },
+  "actual_modern_source_images": {
+    "canvas_size": [
+      736,
+      769
+    ],
+    "origin": [
+      -3792,
+      682
+    ],
+    "source_grid_center_canvas_xy": [
+      368,
+      490
+    ],
+    "Pillow_vs_NumPy_full_RGBA_identical": true,
+    "independent_second_ZIP_replay_full_RGBA_identical": true,
+    "source_compositor_RGBA_sha256": {
+      "plane0": "4ffd02f563950def8a3d9dd105db2c03b7706fd3b0a427d4fb5d9086f7ea60b9",
+      "plane1": "d58097ff14ef09f8c5d2565f516ccebb71c8809f1aaf90d13c90927370f9ed8d",
+      "combined": "1b8a642dc82a4c4e35d6c0bd0f52c764fba565a1f314ba80e154ff3fc459fe14"
+    },
+    "marker_and_actor_overlay_are_modern_only": true
+  },
+  "private_custody": {
+    "file": "StoneAge-INTEGRATION46-Jaruga-A12-source-scene-private.zip",
+    "bytes": 1314729,
+    "sha256": "d58852205cf9fae9117d7f0dd0f721818aca5c64b8cc833f2fe4034a48a6159e",
+    "members": 80,
+    "all_member_CRC_verified": true,
+    "private_derived_original_cells_and_image_receipts_JSON_sha256": "39def1596a27830fd3a8a67c80d1c7f1b52e7fc797497f6b18ebc4620a3f15d6",
+    "personal_Library_upload_and_full_byte_readback_equal": true
+  },
+  "negative_evidence": {
+    "native_StoneAge_original_client_executed": false,
+    "same_official_deployed_build_proven": false,
+    "native_palette_verified": false,
+    "native_layer_or_occlusion_verified": false,
+    "native_NPC_sprite_direction_verified": false,
+    "native_collision_and_third_plane_semantics_verified": false,
+    "original_NPC_dialogue_or_quest_execution_verified": false,
+    "official_earliest_1_82_original_behavior_proven": false,
+    "commercial_originals_uploaded_to_public_Git": false,
+    "original_4000_DAT_available": false
+  },
+  "status": {
+    "Stage_A": {
+      "PARTIAL": 7,
+      "OPEN": 2
+    },
+    "Stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "NEXT": "Source-ready A-route map nodes now stop at A1/A3/A7/A11/A12; local saved private ZIPs have no 3100/3200/3300/20406/20507/20702/4000 original DAT. New exact carrier material may reopen them; meanwhile rotate to the next independently available historical content module, not a new engine."
+}
