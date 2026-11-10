@@ -2423,3 +2423,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-10 — INTEGRATION51｜两座百人道场的原NPC与地图来源对照
 
 [1021／3021原百人道场的逐关原源关系](docs/continuity/STONEAGE-INTEGRATION51-TWO-DOJOS-ORIGINAL-SOURCE-20261110.md)：从私人社区mixed25原NPC ZIP本轮整SHA及2,205个CRC真实核对，两原CREATE合计600原块；对1021未专题的100个原对战参数、200个独立Warp配置，与旧3021百人图谱100/100逐关验证坐标与目标的对应。两馆同源敌人候选字面564—580，但宠物候选分别655—690与687—720；两馆第100关参数分别转1008(20,20)与3008(20,20)，原100对玩家字面并非已执行100场战斗。1021旧MAP01 DAT(407×144)有源合格记录，但此轮没重读DAT/生成原像素；旧3021.DAT读取失败仍保留负证，1021／3021原MAP SHA不同，不共用原画面。公开[100条源SHA/坐标/门点数值索引](research/recovered/STONEAGE-INTEGRATION51-TWO-ORIGINAL-100-DOJOS-SOURCE-BRIDGE-R1.json)、12项跨旧图谱与MAP01回归；私人原NPC、地图、图像不进Git。完整CURRENT原blob `c89e0e33537990aa2132b47c40fef49a985a935c`不动，本轮Git原blob接口成功返回全文文本。Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停，总进度未知。NEXT转不同的真实原内容；CI/正式主线验收另据后验。
+
+
+## 2026-11-10 — INTEGRATION52｜原1021百人道场DAT格、图像与100 NPC/200 Warp的可核对应
+
+[原图观察／来源详情](docs/continuity/STONEAGE-INTEGRATION52-DOJO-ORIGINAL-DAT-PIXEL-OBSERVATION-20261110.md)及[公开300个原格的来源索引](research/recovered/STONEAGE-INTEGRATION52-1021-DOJO-ORIGINAL-MAP09-300-CELL-PIXEL-SOURCE-R1.json)：复用已保存MAP09私人原件46,844,444B／4,195 ZIP CRC、其内955原DAT CRC，**真正重读**1021.DAT 351,656B、1022.DAT 1,358B及1008.DAT 9,608B逐完整SHA与先前MAP01/MAP09相同；逐一核查前次INTEGRATION51来源的100对战NPC＋200独立Warp共300个不同原地图坐标，全部平面0源字面>99、平面1原字面0，第三平面不作碰撞/事件解释；来源NPC底图号4008/5062/5087分别55/21/24。六个**私有**实际来源图候选局部是1021第1/10/51/100关、1022(1,7)入口、1008(20,20)终点；137个原保存图块源别名逐PNG/RGBA SHA核同，新增原RD解码0，原商业资产没有公开。私人13成员观察包/图已保管于Library并经保存后二次全SHA/CRC核实。原图是mix25后代DAT×TW1原图候选叠加现代十字，非原生渲染、原生NPC/胜利/传送实测。3021.DAT旧读取失败与原完整CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`均保留；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，整体百分比未知。NEXT离开同一百关素材，转另一个实际游戏内容增量。GitHub CI与正式主线验收另依后验。
