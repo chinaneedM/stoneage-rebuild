@@ -2348,3 +2348,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-10 — INTEGRATION36｜猜谜三兄弟原入场券与未引用任务备份
 
 [完整来源关联和原 BAK 差异](docs/continuity/STONEAGE-INTEGRATION36-QUIZ-THREE-BROTHERS-20261110.md)：私人CHAR01、ITEM01两ZIP整SHA与2,205＋838成员CRC实际复核。源 `quiz.create`11独立CREATE位于812/810/850/2020/4020，六原脚本23段在QUEST01已有编目；本轮连接六独立票据/会员证/箱子原物品行、49不同随机道具ID与三份原 `GetRandItem` 候选列表（首份13字段含一个空值），原`GetPet14/351`此前 I05 已证索引，不能虚构原奖品已发。**真正新变体**：同RAR `equiz_04.BAK` 801B不被现有CREATE引用，ASCII控制行`EventNo45/GetPet352/EndSetFlg45`对照引用脚本`47/351/47`；PET10同源两候选图号100040却原行SHA不同，不据此说历史运行/先后。同来源地图812/2020/4020先前MAP09合格；810/850仅未被此目录认证，非旧服无图。独立TW1零售原24222图候选真实PNG 1,438B/28×39全SHA重读；24314、24309缺零售索引。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体percent=null；完整原 CURRENT 2,709,173B Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`未动。版权原图/原任务文本/私人ZIP不进Git；[公开派生索引](research/recovered/STONEAGE-INTEGRATION36-QUIZ-THREE-BROTHERS-ORIGINAL-SOURCE-R1.json)和11项精确正反回归。
+
+
+## 2026-11-10 — INTEGRATION37｜加奥利／乌力书信的原地图、NPC图像、脚本和物品统一来源视图
+
+[有界来源组合与下项](docs/continuity/STONEAGE-INTEGRATION37-GOA-ULI-LETTERS-20261110.md)：复用已验QUEST13与CHAR05确切Git blob，按同保存混合2.5原RAR/NPC ZIP的原CREATE路径和序号唯一联接10条配置、6张已有原DAT/10个真实格三平面值、2个同RAR已验动作0八方向原SPR组、10份原任务脚本/16旧事件段及5个同源物品表记录。该轮新增**可独立核对的跨模块整合视图**，无新原商业脚本／图像下载、原RD解码和原生任务执行；历史任务是否正式/常驻、实际选帧/对话/发奖励及官方同服均待证。公开[数字/哈希原源联接](research/recovered/STONEAGE-INTEGRATION37-GOA-ULI-LETTERS-MAP-SPR-SCRIPT-SOURCE-R1.json)与源固定回归验证；完整旧CURRENT 2,709,173B Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`不改。Stage A 7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79暂停，总进度未知。NEXT转真正未集成且有可靠原材料的玩法内容。
