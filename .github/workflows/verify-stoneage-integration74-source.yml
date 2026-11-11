@@ -1,0 +1,27 @@
+name: Verify StoneAge INTEGRATION74 named enemy two original TW1 SPR groups
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION74-YUANZANG-TWO-TW1-FULL-MOTION-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_74.py'
+      - '.github/workflows/verify-stoneage-integration74-source.yml'
+      - 'research/recovered/STONEAGE-O85-YUANZANG-DIALOGUE-BATTLE-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-PET-MODULE-15-TW10-ALL-SELECTED-MOTION-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-PET-MODULE-07-TW10-BATCH-PUBLIC-R1.json'
+      - 'research/recovered/tw10-resource-metadata/SPR-GROUP-R1.tsv.gz'
+      - 'research/recovered/tw10-resource-metadata/SPR-ANIMATION-R1.tsv.gz'
+      - 'research/recovered/tw10-resource-metadata/SPR-FRAME-R1.tsv.gz'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION74-YUANZANG-TWO-TW1-FULL-MOTION-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_74.py'
+      - '.github/workflows/verify-stoneage-integration74-source.yml'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_74.py' -v
