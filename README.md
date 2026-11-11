@@ -2556,3 +2556,7 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-11 — INTEGRATION71｜查罕族祭司、五件原物品和「神秘的調和水」五幅原RD候选
 
 [新源限定合成关系](docs/continuity/STONEAGE-INTEGRATION71-CHAHAN-PRIEST-TIGER-WATER-20261111.md)／[公开数值、SHA与反证](research/recovered/STONEAGE-INTEGRATION71-CHAHAN-PRIEST-TIGER-WATER-ORIGINAL-SOURCE-R1.json)：真正核私人 mixed25 NPC2205成员与 ITEM01838成员全部CRC，原查罕族祭司在10007 的1份`tiger_water.arg`含3段原**MESSAGE**，其中一个消息块含5项`DelItem`与`GetItem:19563*1`；原ITEM01六ID的94栏双表源行SHA对应到不同认证TW1零售来源的**五幅此前已解原RD真像**，5/5 PNG和RGBA复验，2400/19563两物品共图23012。原floor10007和10408有MAP09已验DAT但同CREATE其它2位windowman并非同脚本。私人9成员45,710B证据ZIP已存Library且独立回读整SHA和CRC；公开无原图、台词及源原文。无原脚本新发现/新RD二进制解码或原生交易/合成/早期同服证明。历史CURRENT原blob `c89e0e33537990aa2132b47c40fef49a985a935c`保持，Stage A 7PARTIAL/2OPEN、B/wiki GATED、R79暂停、总体完成率null；候选和主线Actions按真正后验另记。
+
+### INTEGRATION71 正式远端内容验收（2026-11-11）
+
+[查罕族祭司真实Actions/私人源证正式回执](docs/continuity/STONEAGE-INTEGRATION71-PUBLICATION-ACCEPTANCE-20261111.md)：[PR #344](https://github.com/chinaneedM/stoneage-rebuild/pull/344)候选 `b5bfe1d9a76e2619c12cbb0e1f5780a508225cfc` **46/46** Actions (27 push＋19 PR)和内容主线 `d10e39f60c492151860523f67515ba88d5749eee`／tree `b3551a1c1402b987f5d28b7a17f17e96b70021cb` **27/27** Actions均已实测成功，包括INTEGRATION71专项。私人9成员45,710B源和既存TW1原像ZIP已自Library独立回读完整SHA/CRC；公开只保留源数值与SHA、未修改历史CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`。完整73条实际run ID见[机器验收](research/recovered/STONEAGE-INTEGRATION71-PUBLICATION-ACCEPTANCE-R1.json)。此验收记录自身新HEAD的Actions另待后验；不把来源条件当旧服实际合成。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体进度未知；NEXT 真新原实物内容。
