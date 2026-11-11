@@ -27,6 +27,6 @@ NPC任务脚本、宠物实例/模板来自后期社区**mixed25保存版**；SP
 
 私人 `StoneAge-INTEGRATION66-four-island-tour-pet-original-pixels-private.zip`：**1,182,803B/SHA256 `a4d84eea13ee9cc3d97a57359112612b1ed6ff06ed523d3fdf956840e79fd961`／242成员**（4份原终点脚本、236原PNG、1私人数字源报告、1离线路线/动作/逐帧观察HTML），已存用户个人Library `/石器时代/`，又独立下载到另一路径逐字节/全SHA/242CRC全部匹配。私人观察HTML未运行浏览器，不虚报观察器运行或原游戏运行。
 
-公开仅保存[完整源编号、原事件段SHA、15 SPR候选与236 PNG来源散列](/research/recovered/STONEAGE-INTEGRATION66-FOUR-ISLAND-TOUR-15-PET-TW1-ORIGINAL-PIXELS-R1.json)及公开派生数值回归测试；**无原版权脚本全文、原PNG、原HTML、原商用程序**进入Git。GitHub Actions只能验证公开数字/相互关系，私人原字节实读由以上单独核查负责。候选CI和主线CI仅能以后验实际结果记录，不预支成功。
+公开仅保存[完整源编号、原事件段SHA、15 SPR候选与236 PNG来源散列](../../research/recovered/STONEAGE-INTEGRATION66-FOUR-ISLAND-TOUR-15-PET-TW1-ORIGINAL-PIXELS-R1.json)及公开派生数值回归测试；**无原版权脚本全文、原PNG、原HTML、原商用程序**进入Git。GitHub Actions只能验证公开数字/相互关系，私人原字节实读由以上单独核查负责。候选CI和主线CI仅能以后验实际结果记录，不预支成功。
 
 止点已到；**NEXT**转其它尚未专项、可真正取到原文件的地图／NPC／宠物／道具／任务组合，重实体复原，不扩无内容框架、原网服/账号或新游戏引擎。Stage A **7 PARTIAL＋2 OPEN**、Stage B/wiki **GATED**、R79 **PAUSED_NON_BLOCKING**、`overall_percent=null`保持。
