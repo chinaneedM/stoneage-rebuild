@@ -82,7 +82,7 @@ class TestWaterVesselOriginalSource(unittest.TestCase):
         self.assertEqual(art["original_item_graphic_alias"],12924)
         self.assertEqual(art["original_TW1_ADRN_physical_index"],5178)
         self.assertEqual(art["original_RD_candidate_dimensions"],[52,68])
-        self.assertEqual(art["original_rd_sha256"],"e254384084f1c68c099968d129737963ccf73bf714ad08321dd5b22a6dc505c3")
+        self.assertEqual(art["original_RD_sha256"],"e254384084f1c68c099968d129737963ccf73bf714ad08321dd5b22a6dc505c3")
         self.assertEqual(art["actual_PNG_sha256_private_reread"],"75bd38c165a57b1aad955c01a36a6fcade56d1223e858e23c4a8079945c01af2")
         self.assertTrue(art["original_graphic_reused_by_all_11_source_item_rows"])
         self.assertEqual(self.q["item_result"]["water_vessel_item_graphic_alias"],12924)
