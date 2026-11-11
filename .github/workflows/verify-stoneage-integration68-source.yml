@@ -1,0 +1,24 @@
+name: Verify StoneAge INTEGRATION68 four village original NPC pixels
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION68-FOUR-VILLAGE-QUEST-NPC-FOUR-TW1-ORIGINAL-PIXELS-R1.json'
+      - 'research/recovered/STONEAGE-QUEST31-FOUR-VILLAGE-EVENT09-12-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_68.py'
+      - '.github/workflows/verify-stoneage-integration68-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION68-FOUR-VILLAGE-QUEST-NPC-FOUR-TW1-ORIGINAL-PIXELS-R1.json'
+      - 'research/recovered/STONEAGE-QUEST31-FOUR-VILLAGE-EVENT09-12-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_68.py'
+      - '.github/workflows/verify-stoneage-integration68-source.yml'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_68.py' -v
+      - run: python -m unittest discover -s tests -p 'test_stoneage_quest31_four_village_source.py' -v
