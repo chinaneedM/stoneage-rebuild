@@ -1,0 +1,25 @@
+name: Verify StoneAge INTEGRATION73 Samugiru original NPC item pixels
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION73-SAMUGIRU-SOURCE-12-ORIGINAL-ITEM-PIXELS-R1.json'
+      - 'tests/test_stoneage_integration_module_73.py'
+      - '.github/workflows/verify-stoneage-integration73-source.yml'
+      - 'research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-01-R1.json'
+      - 'research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-04-R1.json'
+      - 'research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-05-R1.json'
+      - 'research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-07-R1.json'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION73-SAMUGIRU-SOURCE-12-ORIGINAL-ITEM-PIXELS-R1.json'
+      - 'tests/test_stoneage_integration_module_73.py'
+      - '.github/workflows/verify-stoneage-integration73-source.yml'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_73.py' -v
