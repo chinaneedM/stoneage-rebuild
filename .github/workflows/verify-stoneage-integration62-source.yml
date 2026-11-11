@@ -1,0 +1,27 @@
+name: Verify StoneAge INTEGRATION62 original QUEST30 two-pet RD source
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION62-QUEST30-TWO-GETPET-TW1-29-RD-PIXELS-R1.json'
+      - 'tests/test_stoneage_integration_module_62.py'
+      - '.github/workflows/verify-stoneage-integration62-source.yml'
+      - 'research/recovered/STONEAGE-QUEST30-DINOSAUR-COLLECTOR-EVENT35-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-PET-MODULE-10-ORIGINAL-MIXED25-SERVER-TABLES-R1.json'
+      - 'research/recovered/STONEAGE-PET-MODULE-07-TW10-BATCH-PUBLIC-R1.json'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION62-QUEST30-TWO-GETPET-TW1-29-RD-PIXELS-R1.json'
+      - 'tests/test_stoneage_integration_module_62.py'
+      - '.github/workflows/verify-stoneage-integration62-source.yml'
+      - 'research/recovered/STONEAGE-QUEST30-DINOSAUR-COLLECTOR-EVENT35-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-PET-MODULE-10-ORIGINAL-MIXED25-SERVER-TABLES-R1.json'
+      - 'research/recovered/STONEAGE-PET-MODULE-07-TW10-BATCH-PUBLIC-R1.json'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_62.py' -v
