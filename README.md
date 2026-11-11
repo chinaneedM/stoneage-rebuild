@@ -2560,3 +2560,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ### INTEGRATION71 正式远端内容验收（2026-11-11）
 
 [查罕族祭司真实Actions/私人源证正式回执](docs/continuity/STONEAGE-INTEGRATION71-PUBLICATION-ACCEPTANCE-20261111.md)：[PR #344](https://github.com/chinaneedM/stoneage-rebuild/pull/344)候选 `b5bfe1d9a76e2619c12cbb0e1f5780a508225cfc` **46/46** Actions (27 push＋19 PR)和内容主线 `d10e39f60c492151860523f67515ba88d5749eee`／tree `b3551a1c1402b987f5d28b7a17f17e96b70021cb` **27/27** Actions均已实测成功，包括INTEGRATION71专项。私人9成员45,710B源和既存TW1原像ZIP已自Library独立回读完整SHA/CRC；公开只保留源数值与SHA、未修改历史CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`。完整73条实际run ID见[机器验收](research/recovered/STONEAGE-INTEGRATION71-PUBLICATION-ACCEPTANCE-R1.json)。此验收记录自身新HEAD的Actions另待后验；不把来源条件当旧服实际合成。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体进度未知；NEXT 真新原实物内容。
+
+
+## 2026-11-11 — INTEGRATION72｜梦幻洞窟四物品原图候选来源关联
+
+[有界原NPC/四物品/台湾1.0原RD候选源证](docs/continuity/STONEAGE-INTEGRATION72-DREAM-SAGE-FOUR-ITEM-PIXELS-20261111.md)／[公开SHA数值证据](research/recovered/STONEAGE-INTEGRATION72-DREAM-SAGE-FOUR-ITEM-TW1-ORIGINAL-PIXEL-SOURCE-R1.json)：依据本次fresh main `7dcfdb85526756551d54ae342e40196f6b675dc7`/tree `ec9771cc7acdb55167003bcf7aa422a8a0315c6e` 与26/26成功Actions，真正重读私人社区混合25 NPC ZIP 2205CRC和ITEM01 ZIP 838CRC，老人原REQUEST项2603对应仙人三段DelItem2603→GetItem2604/2605/2606来源静态合同；两份94列原物品表8行原SHA及4个不同TW1零售原RD保存图PNG/RGBA 4/4本轮重核，分别别名14648/21000/21531/24212、物理5600/6301/6396/6979。新原脚本0、新RD从原REAL解码0、原游戏执行0、同官方部署认证0。私人12成员18371B源证ZIP存个人Library并独立回读完整SHA/CRC；原图、台词、完整商品数据不入公开Git。完整旧CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c` 未改，Stage A 7PARTIAL＋2OPEN，Stage B/wiki GATED，R79暂停，整体percent=null。NEXT转其它未重复、真实来源就绪的原2D游戏内容；本次正式候选/main CI仅按远端实际完成结果后验。
