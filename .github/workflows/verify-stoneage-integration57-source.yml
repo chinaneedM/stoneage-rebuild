@@ -1,0 +1,23 @@
+name: Verify StoneAge INTEGRATION57 original Giiru two-tribes source-to-RD bridge
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION57-GIIRU-TWO-TRIBES-31205-ORIGINAL-RD-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_57.py'
+      - '.github/workflows/verify-stoneage-integration57-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION57-GIIRU-TWO-TRIBES-31205-ORIGINAL-RD-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_57.py'
+      - '.github/workflows/verify-stoneage-integration57-source.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_57.py' -v
