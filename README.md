@@ -2508,3 +2508,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-11 — INTEGRATION66｜四岛环岛原19个宠物奖励字面×15组台湾1.0真原SPR候选
 
 [来源边界与私人原像交付](docs/continuity/STONEAGE-INTEGRATION66-FOUR-ISLAND-PET-ORIGINAL-PIXELS-20261111.md)／[公开15组/236图源数值与SHA](research/recovered/STONEAGE-INTEGRATION66-FOUR-ISLAND-TOUR-15-PET-TW1-ORIGINAL-PIXELS-R1.json)：从私人QUEST25原ZIP重读4终点脚本、173/173 CRC和实际GetPet，保留19次数字出现/15不同社区mixed25实例（B路线482重复），经同保存本enemy实例/模板接到不同台湾1.0零售PET07的15个同号原SPR图形候选。PET07私人HTML15,123,277B／原RD来源报告1,617,404B复核45原动作/方向、347帧位、236原PNG；其中230张与PET07首选候选SHA同，另6张（113515—113520）保留旧PET06配色候选SHA并与先前报告吻合，不宣称236张同首选配色。私人242成员／1,182,803B ZIP已个人Library保存及独立回读整SHA/CRC，原像和原脚本不公开；本轮RD新解码0、原生领宠运行0、官方同部署认证0。完整旧CURRENT2,709,173B原blob不动；Stage A7 PARTIAL+2 OPEN/B/wiki GATED/R79暂停/总体完成率null。NEXT不同有真实原件且未专项的游戏内容，而非重复图号或新引擎；candidate/main CI依真实后验。
+
+
+### INTEGRATION66 已验收发布回执（2026-11-11）
+
+[正式PR、源范围及全CI后验](docs/continuity/STONEAGE-INTEGRATION66-PUBLICATION-ACCEPTANCE-20261111.md)： [PR #334](https://github.com/chinaneedM/stoneage-rebuild/pull/334)合并内容主线 `c4d6bb05569d5beda4ffffe10d4bad78f4f156d8`／tree `ca39fd9ab6da5ac461ffb3368b43adac04075761`；原候选46/46（27push＋19PR）、最终候选19/19PR、合并内容主线27/27push Actions均已真实成功，INTEGRATION66专项实测成功。个人Library原236张候选PNG私有242成员zip重新取回SHA/CRC全吻合；原历史CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`不变。机器回执见[运行清单](research/recovered/STONEAGE-INTEGRATION66-PUBLICATION-ACCEPTANCE-R1.json)。本验收记录自身新HEAD Actions需另查，不预支成功；Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、完成率未知；下一步新内容来源。
