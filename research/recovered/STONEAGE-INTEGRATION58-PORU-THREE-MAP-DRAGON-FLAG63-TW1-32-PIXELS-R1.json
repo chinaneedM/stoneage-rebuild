@@ -1,0 +1,935 @@
+{
+  "schema": "stoneage.integration58.poru_three_source_DATS_two_independent_TW1_graphics_32_verified_original_PNG_bridge.r1",
+  "date": "2026-11-11",
+  "initial_remote": {
+    "repository": "chinaneedM/stoneage-rebuild",
+    "main_head": "6e9b490db6022bc98256b8d3714fcea181d1708e",
+    "tree": "6814dc032293b038617d1d3af7138acbcff307ae"
+  },
+  "scope": "STAGE_A_ORIGINAL_GAME_CONTENT_RESEARCH_ONLY",
+  "historical_carrier_boundaries": {
+    "source_npc_and_dat": "COMMUNITY_PRESERVED_MIXED25_SCRIPT_AND_MAP_NOT_AUTHENTICATED_OFFICIAL_DEPLOYMENT",
+    "independent_original_tw1_art": "ACCEPTED_TAIWAN_WAEI_JSS_RETAIL_1_0_ORIGINAL_SPR_AND_RD_STILL_NO_SAME_DEPLOYMENT_JOIN",
+    "historical_first_release_identified": false
+  },
+  "qualified_public_source_git_blobs": {
+    "quest24": {
+      "path": "research/recovered/STONEAGE-QUEST24-PORU-FLAG63-FUNCTIONS-AND-FOUR-SCENES-R1.json",
+      "sha": "c7150d08cace8da3d6b5411036818e1baacb46dc"
+    },
+    "pet07": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-07-TW10-BATCH-PUBLIC-R1.json",
+      "sha": "0b5f81b41a642025ab53a12884638fdee887470e"
+    },
+    "pet15": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-15-TW10-ALL-SELECTED-MOTION-SOURCE-R1.json",
+      "sha": "e1cac6980353d09353de43fec0948bfcd84d49e6"
+    }
+  },
+  "private_original_bytes_custody": {
+    "original_quest24": {
+      "name": "StoneAge-QUEST24-poru-flag63-four-scenes-private.zip",
+      "bytes": 23451751,
+      "sha256": "75aad7150fe4ffd4db0da16bc5de92f8ed3c61073beb2fa709a9ad19c8ba83ac",
+      "members": 578,
+      "CRC_all_pass": true
+    },
+    "original_pet07_catalog": {
+      "name": "StoneAge-PET07-original-sprite-private-catalog.html",
+      "bytes": 15123277,
+      "sha256": "58e8ee4ff5165ed2f61663d67ae1cd0a8183622fa3375c480232784bfce9dc76"
+    },
+    "original_pet07_prior_RD_source_receipt": {
+      "name": "StoneAge-PET07-private-original-RD-verified-source-report.json",
+      "bytes": 1617404,
+      "sha256": "b5ad2e58930afbe90604a1d72e3c17ab0adea446e7c118be775e3973315e6cb4"
+    },
+    "integration58_selected_private_archive": {
+      "name": "StoneAge-INTEGRATION58-Poru-three-scenes-dragon-original-pixels-private.zip",
+      "library_path": "/石器时代/StoneAge-INTEGRATION58-Poru-three-scenes-dragon-original-pixels-private.zip",
+      "bytes": 8265963,
+      "sha256": "a6262443dabe1181e2ebbbab99fca3e31b98cd316d2d67f17e290a0d2a8892a2",
+      "members": 47,
+      "all_member_CRC_pass": true,
+      "independently_redownloaded_full_SHA_CRC_and_32_PNG_sha_checked": true,
+      "actual_private_tw1_original_PNGs_reopened": 32,
+      "modern_source_comparison_only_PNG_sha256": "5e27154dcdadb30965707b55d3b54a8534dce6841cd68eb8d8a3f51176b14a59",
+      "contains_proprietary_NPC_DAT_and_PNG": true,
+      "public_git": false
+    }
+  },
+  "original_mixed25_three_real_DAT_NPC_and_script_connections": [
+    {
+      "source_marker": 21,
+      "source_NPC_CREATE": {
+        "marker_id": 21,
+        "source_create_path": "poru/poru01.create",
+        "source_create_ordinal": 21,
+        "original_block_sha256": "8b54c19e66a621d09519c8fa450d58414fad14eeda46ff43b6ba381900cf3435",
+        "floor": 5509,
+        "graphic_alias": 100388,
+        "borncorner": [
+          37,
+          35,
+          37,
+          35
+        ],
+        "borncenter": [
+          37,
+          35,
+          1,
+          1
+        ],
+        "original_direction": 6,
+        "source_template_token": "npcgen_warpman",
+        "source_bindings": [
+          {
+            "template_path": "genout/npcgen.template",
+            "template_ordinal": 11,
+            "source_template_name": "npcgen_warpman",
+            "source_functionset": "WarpMan"
+          }
+        ],
+        "argument_paths": [
+          "poru/wpm_5509_35_35"
+        ],
+        "original_borncenter_borncorner_precedence_verified": false,
+        "native_NPC_executed": false
+      },
+      "source_argument_file": {
+        "path": "poru/wpm_5509_35_35",
+        "bytes": 185,
+        "sha256": "51d73ce6e287eac1f0c879ec65707fae7ef918f8927c76eacc899e75368ddc53",
+        "crc32": "17611be6"
+      },
+      "original_DAT": {
+        "floor": 5509,
+        "bytes": 21008,
+        "sha256": "7aa549d155cc1540194a1ef48b170e6cd4160a79e74630bdcd405ce5dd146260",
+        "geometry": [
+          50,
+          70
+        ],
+        "prior_candidate_full_canvas_RGBA_sha256": "03cab6ea21211a72a2d2b52c1ac7b46f89a7f277dd356ae6f9639d6f633e8537"
+      },
+      "source_center_point": {
+        "xy": [
+          37,
+          35
+        ],
+        "raw_three_u16": [
+          407,
+          0,
+          49152
+        ],
+        "modern_projected_center": [
+          2320,
+          1144
+        ],
+        "original_NPC_sprite_drawn": false,
+        "source_coordinate_field": "borncenter",
+        "source_coordinate_literal": [
+          37,
+          35,
+          1,
+          1
+        ],
+        "actual_spawn_cell_verified": false,
+        "modern_marker_id": 21,
+        "source_create_path": "poru/poru01.create",
+        "source_create_ordinal": 21
+      },
+      "actual_DAT_reopened_this_work": true
+    },
+    {
+      "source_marker": 27,
+      "source_NPC_CREATE": {
+        "marker_id": 27,
+        "source_create_path": "poru/poru01.create",
+        "source_create_ordinal": 27,
+        "original_block_sha256": "b61d2970f03a6abd93cb9a7a096b2494c524070fbf64e1690503a9c5bb0a65ea",
+        "floor": 5510,
+        "graphic_alias": 100388,
+        "borncorner": null,
+        "borncenter": [
+          16,
+          50,
+          1,
+          1
+        ],
+        "original_direction": 0,
+        "source_template_token": "changeevent",
+        "source_bindings": [
+          {
+            "template_path": "jaruga/event/event.template",
+            "template_ordinal": 0,
+            "source_template_name": "changeevent",
+            "source_functionset": "ExChangeMan"
+          }
+        ],
+        "argument_paths": [
+          "poru/wpm_5510_16_50"
+        ],
+        "original_borncenter_borncorner_precedence_verified": false,
+        "native_NPC_executed": false
+      },
+      "source_argument_file": {
+        "path": "poru/wpm_5510_16_50",
+        "bytes": 161,
+        "sha256": "89fa59b93ecd6d4037caeec166b84baac3ded62deb1c98f9a5bbe36996a1143b",
+        "crc32": "778c591e"
+      },
+      "original_DAT": {
+        "floor": 5510,
+        "bytes": 21608,
+        "sha256": "a7be854d0767203b547984269e34e72c2c443c011c35027d727d7fd192c00cfc",
+        "geometry": [
+          60,
+          60
+        ],
+        "prior_candidate_full_canvas_RGBA_sha256": "57f89cf4809035ec98058b0296c03086ddf470e40be744413237a50f18fa5a87"
+      },
+      "source_center_point": {
+        "xy": [
+          16,
+          50
+        ],
+        "raw_three_u16": [
+          4206,
+          0,
+          49152
+        ],
+        "modern_projected_center": [
+          2128,
+          2248
+        ],
+        "original_NPC_sprite_drawn": false,
+        "source_coordinate_field": "borncenter",
+        "source_coordinate_literal": [
+          16,
+          50,
+          1,
+          1
+        ],
+        "actual_spawn_cell_verified": false,
+        "modern_marker_id": 27,
+        "source_create_path": "poru/poru01.create",
+        "source_create_ordinal": 27
+      },
+      "actual_DAT_reopened_this_work": true
+    },
+    {
+      "source_marker": 32,
+      "source_NPC_CREATE": {
+        "marker_id": 32,
+        "source_create_path": "poru/boss.create",
+        "source_create_ordinal": 0,
+        "original_block_sha256": "c27f167dfcdc0f9966b1c6e892526955c6cace8caf61d4ce0eb84d3ef69525f2",
+        "floor": 5511,
+        "graphic_alias": 100373,
+        "borncorner": null,
+        "borncenter": [
+          17,
+          12,
+          1,
+          1
+        ],
+        "original_direction": 5,
+        "source_template_token": "changeevent",
+        "source_bindings": [
+          {
+            "template_path": "jaruga/event/event.template",
+            "template_ordinal": 0,
+            "source_template_name": "changeevent",
+            "source_functionset": "ExChangeMan"
+          }
+        ],
+        "argument_paths": [
+          "poru/boy04"
+        ],
+        "original_borncenter_borncorner_precedence_verified": false,
+        "native_NPC_executed": false
+      },
+      "source_argument_file": {
+        "path": "poru/boy04",
+        "bytes": 866,
+        "sha256": "a945359e2375c513f056178d752b9777ec62214eaade9130f3661f40c0ca4e24",
+        "crc32": "f9fae9e7"
+      },
+      "original_DAT": {
+        "floor": 5511,
+        "bytes": 5408,
+        "sha256": "5d44ea8c70c2537447926714fc0f84f5900c63e4008917fabcd3885d73dc0884",
+        "geometry": [
+          30,
+          30
+        ],
+        "prior_candidate_full_canvas_RGBA_sha256": "ed0f4c9e154dcb14b11f1673200ae67ba247fd8e3f1068096fa0439d9360a2be"
+      },
+      "source_center_point": {
+        "xy": [
+          17,
+          12
+        ],
+        "raw_three_u16": [
+          4204,
+          0,
+          49152
+        ],
+        "modern_projected_center": [
+          944,
+          592
+        ],
+        "original_NPC_sprite_drawn": false,
+        "source_coordinate_field": "borncenter",
+        "source_coordinate_literal": [
+          17,
+          12,
+          1,
+          1
+        ],
+        "actual_spawn_cell_verified": false,
+        "modern_marker_id": 32,
+        "source_create_path": "poru/boss.create",
+        "source_create_ordinal": 0
+      },
+      "actual_DAT_reopened_this_work": true
+    }
+  ],
+  "independent_tw1_SPR_two_graphic_groups_32_original_PNG_receipts": [
+    {
+      "graphic": 100388,
+      "original_tw1_retail_source_SPR_group": [
+        100388,
+        354,
+        "d8ee442c59eaa9a3eec71336bff5ffb280d6296416c887c23b961a4d3cb49ebb",
+        56,
+        52,
+        [
+          [
+            0,
+            0,
+            44,
+            "5accfff4b3a7db5fd2fa226bc70e17f9b8a36c583376478378090c6755576760",
+            2000
+          ],
+          [
+            2,
+            0,
+            6,
+            "db9d80f66595dbbd99304965acc2a5b3fe3d3c0bf5842826581b29050cbe9c39",
+            100
+          ],
+          [
+            1,
+            0,
+            2,
+            "fb7628e04bb7a18916987993fbf6642934a7ac840506c8db1e69b72029003057",
+            400
+          ]
+        ],
+        18
+      ],
+      "prior_pet15_full_SPR_confirmation": {
+        "graphic": 100388,
+        "group_index": 354,
+        "segment_sha256": "d8ee442c59eaa9a3eec71336bff5ffb280d6296416c887c23b961a4d3cb49ebb",
+        "fully_observable_sequences": 56,
+        "full_frame_positions": 880,
+        "full_distinct_bitmaps": 232
+      },
+      "actual_early_original_PNG_bitmap_ids_with_private_b64_source_sha_rechecked": [
+        96811,
+        96812,
+        96813,
+        96814,
+        96815,
+        96816,
+        96817,
+        96818,
+        96819,
+        96820,
+        96821,
+        96822,
+        96823,
+        96824,
+        96825,
+        96826,
+        96828,
+        96829
+      ],
+      "prior_public_original_RD_and_PNG_source_receipts": [
+        [
+          96811,
+          96811,
+          "e6a9426176e43c195f06e14fa6b64d0e36cb93b1910882ca4be467b424cd204e",
+          "bba2854a9ddc1299daa4733c2cf7cdcd0b8f790a24872ee84eae2e6ffff1cb22",
+          1,
+          28,
+          52,
+          3,
+          "5bb7084893461c6ad60a421bf7fa54c93afeb3f61216391dd11e63ba97363492"
+        ],
+        [
+          96812,
+          96812,
+          "23d22f61b289520dbc1d1c97af63a48cf8222f58add5bb4a235d9d89a29c5f44",
+          "6623c11cdd8f1e8c7f55bccba48e116d1a46f2b5bfb5db7d4d7aac3f1b653d24",
+          1,
+          28,
+          57,
+          3,
+          "23851f3052aa562c9201a40c3a0eeecca85dd4d0a296361ac5dfe71603f05137"
+        ],
+        [
+          96813,
+          96813,
+          "82eb784e04ae34bef0b4db0bf351c7fe6848d1217e92f3f975a796d7a9c522b6",
+          "8d35ed0ff372381b8f9f3be87ea3321c3eeecd0f878c7a4fbbbe45768c4e57b8",
+          1,
+          28,
+          70,
+          3,
+          "c4e10e1fa8d9287d3e2e5bbb373bdf6446c59d50e004d49c3a93ebfd34c189d3"
+        ],
+        [
+          96814,
+          96814,
+          "0266b18e6fcd4c67341960e8c1cfad62c1b491ddf09219f3021c3e0af04adffd",
+          "5105df124d82018c0a3ae671f185ccf1622194735a2f6e68e69ad41ead9f24a6",
+          1,
+          28,
+          63,
+          3,
+          "ce7ed49bea3318929925f01f315fbc4795520625db279e114f7f39b38a076abf"
+        ],
+        [
+          96815,
+          96815,
+          "2f2a1b6c7bc8a28974fe466fbef13762191a85e666fa5f6d4e914362b1ddaa9e",
+          "3ae87126278b0fc3b6d52f29e5643b452b6e608377ebc59939bc1fc417860261",
+          1,
+          28,
+          54,
+          3,
+          "a9d802b1e838cc0bbccc9cdf2f667d341df3a5bf3dfe8124e9a01b05d6153411"
+        ],
+        [
+          96816,
+          96816,
+          "6bacaaa75a6876f302f09bc24dd20456373eb709c72d85235900daf3d61f7f49",
+          "281cd14242bdaadc9a3ba786f75ae4f4536fe01c0dbb9a6ce72bff9345524d72",
+          1,
+          28,
+          51,
+          3,
+          "e1de260320f251e3d5f49db033f597f0a709ca423cfb1f0dc6ccb864e81fd1c2"
+        ],
+        [
+          96817,
+          96817,
+          "95680074f2d6602bb81e983a1ec872b6ecf48e7cb8b61f1b54b735fa69cc9b19",
+          "76977b3abe1fb5eaa2bfe6d0ea2d9e4f7ef6308186984843393ccc69ed87fc91",
+          1,
+          28,
+          54,
+          3,
+          "1d5eb21032bb14520e099a3a9c932f435dee3e8aa2738aac0ce421b330b562ef"
+        ],
+        [
+          96818,
+          96818,
+          "81448caa2efb78a422cd52dfb2e1b87d49ce8743b45eadd8c9285065da736d7a",
+          "ad9cf898c92ab64dd0bc1895c7c215e738085bb87e93a351eb27fbd85c711be7",
+          1,
+          28,
+          53,
+          3,
+          "b0e234b4db4efe206cfb6ff3e10aeb59b713e47cc16d7ec7ae31a3bb08047106"
+        ],
+        [
+          96819,
+          96819,
+          "968017ba0b2453d5b462aec998a765fe53afeb3d40e94e6bedd4a276c76d2d5e",
+          "8b52a08d579fd89fe973467305b435c503f6c32d348ad4858e8951843a19fb97",
+          1,
+          28,
+          52,
+          1,
+          "de0078f7f1b2a40f0499c2db3e40aeb6535bbfba7c457a405ec491f4215e318f"
+        ],
+        [
+          96820,
+          96820,
+          "9cad4ed11e7071116ef06475fccef1951ed40ba7c9b96fdec069fa31d88c625d",
+          "a1b65126c65406afc2f802e48ebae0dca679d0b4d3e2e1cb290add3dde641de9",
+          1,
+          28,
+          50,
+          1,
+          "8d7dc8db44d646b02de01768a535d1838fda42c3f82a95a67de1a1e18a8d49c8"
+        ],
+        [
+          96821,
+          96821,
+          "c80cfe52fbb178ea90815f735d40929fef3e64ea42550484e9cad360a2105605",
+          "ed7f4b1a5a6b9f01d84dea6a7900d5687ea8f7050f05e4050e7aab8a32bd9304",
+          1,
+          36,
+          55,
+          1,
+          "eff05d9182536b41102811636b6565f99f3fd0fc304a827b81de2beca4aee8a2"
+        ],
+        [
+          96822,
+          96822,
+          "d03824de227fd0f1882c97b4e7cfc7e9f87ce4976e769047d1bf568e436dd2cb",
+          "015bfd29cd82fbd19458c74f864b20dd3b754876d90f2b0d49a205a000225d3a",
+          1,
+          36,
+          53,
+          1,
+          "6d6a9fc19a21dc14372919e31e01cd2de81cc8035dc847d12874bb2758405636"
+        ],
+        [
+          96823,
+          96823,
+          "5ebfe0692f6a465519712fe95fef1f4429ce69bd5f5fc6dd7698fef6e8531c28",
+          "2ff7d3a215b700a6540392182ca34729897a54949cb0ed6bc5e11804bd196a9f",
+          1,
+          40,
+          45,
+          1,
+          "34ec65bf3e020aeafab26dfedc18b4ca9458c61c45db43752f50e46978bc97e2"
+        ],
+        [
+          96824,
+          96824,
+          "5ea1043acb13c2b36489df312209f3b956860f7865f6f0948261658eb23e5bb1",
+          "efe89c3e0f91f19dc18c2101de18174ccd367a34de9cd4acc8473da933425969",
+          1,
+          36,
+          41,
+          1,
+          "783f4da1dc415de37ad6d42eab46e2ae292be8abdc485b582c8e50b520c32620"
+        ],
+        [
+          96825,
+          96825,
+          "a6566490e8c6ede1dc708e721fab52694ec0353ed9a2cd58e4a9fa87c67936f4",
+          "a66544e8e7cca6aad25f993442b0a27ffc0dd140aec1d9a570c3159258c50d25",
+          1,
+          28,
+          38,
+          1,
+          "391d98ab4cf1bde6d915e03ae2a59bbc61698fe92f103db604893580e9290529"
+        ],
+        [
+          96826,
+          96826,
+          "9b903bfccf346c7f60903eb3196b39a8f95b04a12c8d67fd5719183ee6a9fa71",
+          "b72be2976a4bd4cd44c118aacf482123356750c1cb97fa798c687e604ee67836",
+          1,
+          56,
+          31,
+          1,
+          "b256cc9f2dedcbe2d9a5e7fba580686bbc11f35bb0becff36ef2744dd9715148"
+        ],
+        [
+          96828,
+          96828,
+          "ecfde0418f6b48f0dbf3d7c2068b6ad63c134ca4ac477066bc4d620b332d673c",
+          "e1fae64b18b5781c7b9e709360f6091c3c35b706b7130733d36ac26af8d1269c",
+          1,
+          28,
+          52,
+          10,
+          "02b0454ae6117bcadf29c13aba712851d0059b178b7c4fd75b6f972909423a2c"
+        ],
+        [
+          96829,
+          96829,
+          "23e683ddd1c2078527333aeeb243710c06e3475bb7065274d4a4869dc7506e57",
+          "eb1c6d834252c2097bb7940a3385c47f1f3d7c1b3f6cae76587c014591d64d2e",
+          1,
+          28,
+          51,
+          10,
+          "1cdf10d3104e85549a9a721fa4d8f0c875f0eda01acfb43b7e4d5f60ece3f618"
+        ]
+      ],
+      "private_PNG_actual_bytes_reopened_this_work": 41816
+    },
+    {
+      "graphic": 100373,
+      "original_tw1_retail_source_SPR_group": [
+        100373,
+        339,
+        "f3d76b5cc31542a372b4a207a2fb5b58c6eddeea45891182c53330e343563721",
+        56,
+        27,
+        [
+          [
+            0,
+            0,
+            17,
+            "c23d3b7c949a9e91c435621b93a9e511de2d1daee10a58bfbd94b1a7471f6295",
+            2000
+          ],
+          [
+            2,
+            0,
+            9,
+            "b44acb8d9f145114c6990c92cb9a4cbc26c54c4cf3db4eb1c4732059472215ed",
+            1000
+          ],
+          [
+            1,
+            0,
+            1,
+            "eba988cfe4290c19e51733a7e9dd4272256be653cdf8a02dce0e9740250fa216",
+            100
+          ]
+        ],
+        14
+      ],
+      "prior_pet15_full_SPR_confirmation": {
+        "graphic": 100373,
+        "group_index": 339,
+        "segment_sha256": "f3d76b5cc31542a372b4a207a2fb5b58c6eddeea45891182c53330e343563721",
+        "fully_observable_sequences": 56,
+        "full_frame_positions": 904,
+        "full_distinct_bitmaps": 208
+      },
+      "actual_early_original_PNG_bitmap_ids_with_private_b64_source_sha_rechecked": [
+        122284,
+        122285,
+        122286,
+        122287,
+        122288,
+        122289,
+        122291,
+        122292,
+        122293,
+        122294,
+        122295,
+        122296,
+        122297,
+        122305
+      ],
+      "prior_public_original_RD_and_PNG_source_receipts": [
+        [
+          122284,
+          122284,
+          "7b834bb0f10cc04d452bd41732c57b87003669e9460cb35349a516d22aa52f34",
+          "b7de9c36324e2ab1375672dfc476e9bdf17d97ac1845db799cdcd6e68f380c17",
+          1,
+          60,
+          115,
+          3,
+          "71717883807cd1986a0025fe0ac6b35ed555c94771c2765a8dd6f645ca062b64"
+        ],
+        [
+          122285,
+          122285,
+          "d1ad5d7b0f0add019c69c157eee8e1c6c37e0f9ca8abd105123cf9d9427f9089",
+          "b8c96a3672053c20963f5da6c3eacfd5c19e50055768ed68c41968eea4ff2f9b",
+          1,
+          56,
+          101,
+          2,
+          "c8480ee8e403bd13d963c11c52dd4d0359c923a2f3b22f2fbfa424c1e0835b5f"
+        ],
+        [
+          122286,
+          122286,
+          "c443534848b490cca41b0f01c11839fcab9ecaa6d962087a4c4d805a6cbe6b5d",
+          "ea2eb6cb181df6e8a6f0cbe5ff58a8f54e2aa3d21c64528d611f79bdf96fbf87",
+          1,
+          64,
+          100,
+          3,
+          "3198f81de08c8c3ed1c70a537700dd1c7c661852f2790efc579cd7bfab339b27"
+        ],
+        [
+          122287,
+          122287,
+          "f4a379cf0e66c398a0554eaa34e2bcb2e117d1e3f60578cc1b570d8cbe48b34e",
+          "376d7e7832691fb5182858330e512d1218a790f032c41a39dcff66ea4f49e857",
+          1,
+          76,
+          102,
+          6,
+          "51219f7aabc89d18fd876c23b05254c446c61bfe1ff363799bcbc23f9c099f3a"
+        ],
+        [
+          122288,
+          122288,
+          "caf49618f3525f478c0458e43c08218b98c48c855811e0d322f8f100f14c138e",
+          "d988d56433f4102e8b24e62b1af96cf7bd3c9b0b45c9ae42c449679a6d6a0c60",
+          1,
+          64,
+          108,
+          1,
+          "6d635ffc9194db94313048abca91998054a0f17bd9a9e02f14f789366557569f"
+        ],
+        [
+          122289,
+          122289,
+          "65cfa0cf35c19580b5b5b2551285c2ac0e8259134cb85f9fc42894e78aed5421",
+          "e49065ef0686210e055d059595b0ac3dc4baca38f377c295df83b544513b3978",
+          1,
+          84,
+          115,
+          1,
+          "8571f0d0e5c0e0cb0b1408749622fba795d472d54e6df5ad09c25cf722394944"
+        ],
+        [
+          122291,
+          122291,
+          "b49cff0b0e8793ba2e3932f6eb4f197a019d0f5a5647b42ce7cfc9323a086b00",
+          "f2eed9c9bb3aeb66494af319c5649915b13e014a5217a64a8e72d8c9f4e1abac",
+          1,
+          68,
+          103,
+          1,
+          "07b6d0a04d73961d07b9a85fe52d91bacff8cebe9ca7769f80cae675173754b7"
+        ],
+        [
+          122292,
+          122292,
+          "20aa03d9454bed01f91cb0080f089843d2ac02ef70680aaa20d1682e7b53bc4c",
+          "92139d348853303f25733cfc719642a400900acb552b941e0368f218dd2070e5",
+          1,
+          64,
+          101,
+          1,
+          "32373ef625c5232e962fe8d4e3c7ce3139eb6ad7d4e8fe6b2942066a23fa6a35"
+        ],
+        [
+          122293,
+          122293,
+          "c567b2202d1ff14ba9d91e8f6b7e8066ecfa4a1ca2031ef87dbbff4895ae6a62",
+          "546c3049a7ef1033dae470df0df1840ed0f5a1b75061f28c8f75c377afd43d52",
+          1,
+          72,
+          90,
+          1,
+          "535fc1e3bd7a44505478e5fe10531b7fce5996aa7882ead101d35f01c0389384"
+        ],
+        [
+          122294,
+          122294,
+          "bd57a7daa8b41096bde4f56b0e253e4f075397d2266d10693661e91a76a1840f",
+          "4495662584a46b1aab303233aa54c6bbfd2552c90f4821702e606c64c9c0fe42",
+          1,
+          80,
+          90,
+          3,
+          "4cf061a56a0ba09eb3c7a7305880f99cba1bbe032ca9288eeb8add54b3cc4ac6"
+        ],
+        [
+          122295,
+          122295,
+          "8d85fa8182258696167141b11d21abbb1dc7c070fe0447dbd5d87bc1795ae8cf",
+          "e37348bf85cc1451223f9420bf75d846d143bbad569ec9900013de6228fb8d44",
+          1,
+          84,
+          71,
+          2,
+          "7e77c964eec3acae8010c7a3ca9040162fe0a38ff6976148ce2f32121dc17ab8"
+        ],
+        [
+          122296,
+          122296,
+          "a3f261b0774015177f58c7eaaa304fc6b0111a67219488e7298c74a33d608cb0",
+          "a6ebfbb70ee6d850728d62333aa135670605e8428bd2aa09bf77047ba18953c1",
+          1,
+          76,
+          77,
+          1,
+          "0b6b0eae3233642fa134d4c7b6aba98d80b3c053f3822f1724c999bb3d55a307"
+        ],
+        [
+          122297,
+          122297,
+          "4de751307362dcb196fe159a4833074e3a5e4c385564ea008a98693f2b5ee73a",
+          "c960d614bbe6f3e47e243832458a21712627aabe6c3718bf561f922ce2ac273e",
+          1,
+          84,
+          115,
+          1,
+          "93de97ede583a7860ffb4f0c0a73012b67f28101f0b4c47ba2e88cd895aaf1e1"
+        ],
+        [
+          122305,
+          122305,
+          "f58f6ba41302a4065ceff6adc92c88a6b9ffb61b75611eb49f3f4914b73cab0c",
+          "52f53f43c5108bc502544433eb6f7ec5b7dee5060771584b1213f093004062e8",
+          1,
+          56,
+          107,
+          1,
+          "6ac654bec67e4cc2b48a064a3d6c3338135942189abf3e5543c4c2f1e21ba3da"
+        ]
+      ],
+      "private_PNG_actual_bytes_reopened_this_work": 66920
+    }
+  ],
+  "original_mixed25_event_and_reward_static_source": {
+    "original_flag63_existing_source": {
+      "provider_script": "poru/boy04",
+      "event_ordinal": 1,
+      "provider_CREATE": "poru/boss.create",
+      "provider_CREATE_ordinal": 0,
+      "original_provider_condition": "NOWEV=63",
+      "original_provider_commands": {
+        "GetPet": [
+          "352"
+        ],
+        "EndSetFlg": [
+          "63"
+        ]
+      },
+      "next_source_QUEST23_request_conditions": [
+        "ENDEV=63"
+      ],
+      "original_GetPet_352_existing_WORLD21_lookup": {
+        "getpet_integer": 352,
+        "enemy_master_line": 199,
+        "enemy_master_line_sha256": "09c86e1c193d8e3b3293d6593a1a0f6de4c7aac506b1f0247c69a6fa05f5b7bf",
+        "template_id_via_enemy_field4": 303,
+        "template_master_line": 235,
+        "template_master_line_sha256": "64083c55e87a31b4f4cc737db725663fc560e8b9b23c002f52b8b6297332ffb2",
+        "original_template_graphic_id": 100373,
+        "original_template_petflag_raw": 1,
+        "found_in_WORLD20_selected_wild_group_enemy_subgraph": false
+      },
+      "existing_pet_not_new_discovery": true,
+      "original_flag_saved_or_reward_delivered": false
+    },
+    "source_boss_script": {
+      "path": "poru/boy04",
+      "bytes": 866,
+      "sha256": "a945359e2375c513f056178d752b9777ec62214eaade9130f3661f40c0ca4e24",
+      "crc32": "f9fae9e7",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 5,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ENDEV=63&ITEM!=18544",
+          "condition_sha256": "a4288f91001234c684373024918bf0afe510c75ad1adb80c061b3760597e84fc",
+          "section_sha256": "ace0196244a23a4302678f579fc96caa3210a4a10f57c8206276712168df4e5f",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "GetItem": [
+              "18544*2"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        },
+        {
+          "ordinal": 1,
+          "type_line": 14,
+          "event_no": 63,
+          "type": "ACCEPT",
+          "condition_literal": "NOWEV=63",
+          "condition_sha256": "a5c1bec5bd45150f78fa26ed2ae04cdb40036d0dab528a462d6b50555831deda",
+          "section_sha256": "d0a1c87766deb1e0f996beebf292c1d41f1efcf551b5699d51aee55ce3134291",
+          "exact_EventEnd_found": true,
+          "commands": {
+            "GetPet": [
+              "352"
+            ],
+            "EndSetFlg": [
+              "63"
+            ]
+          },
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    },
+    "source_middle_event": {
+      "path": "poru/wpm_5510_16_50",
+      "bytes": 161,
+      "sha256": "89fa59b93ecd6d4037caeec166b84baac3ded62deb1c98f9a5bbe36996a1143b",
+      "crc32": "778c591e",
+      "events": [
+        {
+          "ordinal": 0,
+          "type_line": 4,
+          "event_no": -1,
+          "type": "MESSAGE",
+          "condition_literal": "ITEM=2414",
+          "condition_sha256": "adf993729f74f4a214ec36ef411ea4da6c6b4396d929307703518a16fece84fb",
+          "section_sha256": "466bb66e2b23f3a8e80c89db02aea4b0b794fb703216de582e422b50b0756102",
+          "exact_EventEnd_found": true,
+          "commands": {},
+          "bare_Break_lines": 0,
+          "malformed_EventEnd_prefix_lines": []
+        }
+      ]
+    },
+    "source_warpman_5509": {
+      "marker_id": 21,
+      "path": "poru/wpm_5509_35_35",
+      "source_values": {
+        "WARP": "5510,16,49",
+        "FREE": "ITEM=2414",
+        "MONEY": "-1"
+      },
+      "actual_warp_or_fee_executed": false
+    },
+    "source_flags_only_not_executed": true
+  },
+  "counts": {
+    "original_community_DAT_files_whole_byte_sha_replayed_this_work": 3,
+    "original_community_NPC_CREATE_blocks_reopened_and_joined": 3,
+    "original_community_DAT_cells_direct_u16_replayed": 3,
+    "original_community_static_parameter_scripts_reopened": 3,
+    "independently_preserved_TW1_original_SPR_graphics_qualified": 2,
+    "tw1_selected_source_frame_positions_in_order": 79,
+    "tw1_selected_original_distinct_bitmaps": 32,
+    "tw1_original_PNGs_read_and_image_decoded_this_work": 32,
+    "tw1_source_prior_RD_SHA_receipt_rows_compared": 32,
+    "tw1_original_PNG_total_actual_bytes": 108736,
+    "tw1_original_RD_raw_bytes_reopened_this_round": 0,
+    "newly_decoded_original_RD_blocks": 0,
+    "actual_native_original_client_execution": 0,
+    "actual_native_original_server_execution": 0,
+    "original_npc_warp_executed": 0,
+    "original_quest_63_reward_delivered": 0,
+    "historical_same_client_server_deployment_proven": 0,
+    "raw_proprietary_artifacts_published_in_git": 0
+  },
+  "negative_evidence_guardrails": [
+    "Three complete original DAT source files have authentic bytes and per-point u16 values for this community archive, but do not prove original collision, graphic draw, character placement, or native movement.",
+    "Source aliases 100388 and 100373 match numeric IDs in independent Taiwan 1.0 retail graphics; do not claim they were same official deployment or historically loaded by the cited community NPC.",
+    "Three NPC source CREATEs are defined but do not establish native actors actually spawning or selecting the independently stored TW1 sprite or palette.",
+    "The source WARP:5510,16,49 and FREE:ITEM=2414 is a static argument and not a tested original warp or item payment.",
+    "Source flag63, GetPet:352 and EndSetFlg:63 establish script and source table linkage, not verified completion, delivery, source pet identity or server behavior.",
+    "TW1 original pixels are recovered from previously decoded PNG in original private gallery, not freshly decoded from raw RD during this round; raw original RD bytes were not reopened.",
+    "79 frame references include repeats, 32 bitmaps are not 32 different species; a pet source alias is not a verified native NPC species.",
+    "Modern private comparison maps are research renderings, not native original StoneAge screenshots.",
+    "Private copyright binaries, images, scripts and maps remain private; only source-derived numeric fields and cryptographic digests go to public Git.",
+    "Do not initiate future offline game implementation, new engine, login system, balance modification or pretend Stage B approval."
+  ],
+  "original_history_retained": {
+    "path": "docs/CURRENT-STATE.md",
+    "bytes": 2709173,
+    "blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "edited": false
+  },
+  "stage": {
+    "stage_A": "7 PARTIAL + 2 OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "result": "SOURCE_BOUNDED_REPLAY_THREE_ORIGINAL_DAT_AND_NPC_ARGUMENTS_TO_TWO_INDEPENDENT_TW1_PNG_GROUPS_WITH_ORIGINAL_FLAG63_REWARD_STATIC_CROSSWALK"
+}
