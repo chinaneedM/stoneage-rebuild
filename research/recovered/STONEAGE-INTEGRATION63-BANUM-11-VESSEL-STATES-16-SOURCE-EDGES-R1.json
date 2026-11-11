@@ -1,0 +1,1228 @@
+{
+  "schema": "stoneage.integration63.giiru_banum_vessel_11_source_items_16_directed_edges.r1",
+  "date": "2026-11-11",
+  "remote_baseline": {
+    "main_head": "3b5e9be141225feea79e0cd94fb4d1ef2290f2c7",
+    "main_tree": "59186f788a3ac2a8630cf9608c5b73fe73044487",
+    "preserved_historical_CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "evidence_carriers": {
+    "source_class": "COMMUNITY_MIXED25_PRESERVED_NPC_AND_ITEM_TABLES_VS_SEPARATE_TW1_RETAIL_ORIGINAL_RD_SOURCE",
+    "private_NPC2205_ZIP_bytes": 995176,
+    "private_NPC2205_ZIP_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "private_NPC2205_member_CRC_pass": 2205,
+    "private_ITEM01_ZIP_bytes": 5868386,
+    "private_ITEM01_ZIP_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "private_ITEM01_member_CRC_pass": 838,
+    "previous_QUEST18_original_source_git_blob": "3924e900e265a957429aff2fbc7d51ac3dd5d937",
+    "previous_ITEM01_original_item_source_shard02_git_blob": "b91bc8335db508998f4595144ce371979ea8c849",
+    "original_sink_CREATE_bytes": 2501,
+    "original_sink_CREATE_sha256": "2a2506a766194a7e203b78f8057814e0152ef7be0c9394b546b20240c99c5ab0",
+    "original_shop_argument_file": "genout/ss_30504_10_11",
+    "original_shop_argument_full_sha256": "d1d0915335787a5f4a619b01aef8976232b2828bd0559785f040b21480a9d239",
+    "original_shop_ItemList_single_literal_ID": 2708
+  },
+  "source_original_17_sinks": [
+    {
+      "source_path": "giiru/event/sink/sink01",
+      "name": "sink01",
+      "original_bytes": 964,
+      "original_sha256": "0184495a1104946c9791e419b87be5104b7626d514c4155a5a64c2ef9de4a69b",
+      "original_anchored_EventNo_count": 4,
+      "referenced_by_Q18_original_CREATE": true
+    },
+    {
+      "source_path": "giiru/event/sink/sink02",
+      "name": "sink02",
+      "original_bytes": 3568,
+      "original_sha256": "c11dc7eae560f0b44d2fe673078a7132fdc9dba20a73382eb6a416308ac1d8ae",
+      "original_anchored_EventNo_count": 12,
+      "referenced_by_Q18_original_CREATE": true
+    },
+    {
+      "source_path": "giiru/event/sink/sink03",
+      "name": "sink03",
+      "original_bytes": 1849,
+      "original_sha256": "0584b51b9d49aca7ef053a4d16fc9524a093f0045288b91ad5bf86c0f44e4a78",
+      "original_anchored_EventNo_count": 6,
+      "referenced_by_Q18_original_CREATE": true
+    },
+    {
+      "source_path": "giiru/event/sink/sink04",
+      "name": "sink04",
+      "original_bytes": 1039,
+      "original_sha256": "186dfd6a5d5626af6cb5a4dce21c1c5a80e05b13a702e9cedb4b775c18ca8cc5",
+      "original_anchored_EventNo_count": 3,
+      "referenced_by_Q18_original_CREATE": false
+    },
+    {
+      "source_path": "giiru/event/sink/sink044",
+      "name": "sink044",
+      "original_bytes": 1724,
+      "original_sha256": "d15f34d7158ff2f9bfc452537c3c506521026c610bfd161db607c968f77abb55",
+      "original_anchored_EventNo_count": 5,
+      "referenced_by_Q18_original_CREATE": true
+    },
+    {
+      "source_path": "giiru/event/sink/sink044a",
+      "name": "sink044a",
+      "original_bytes": 1762,
+      "original_sha256": "201d0f6a1f744ea3f0d0c4c8fa94d7d29a3531bfbe8038ab6b0d07bd8117b38d",
+      "original_anchored_EventNo_count": 5,
+      "referenced_by_Q18_original_CREATE": true
+    },
+    {
+      "source_path": "giiru/event/sink/sink044b",
+      "name": "sink044b",
+      "original_bytes": 1836,
+      "original_sha256": "aba11da3f4bb967df3dd6121bb1422e5b6e48c2a9f8560399c942119a69c024f",
+      "original_anchored_EventNo_count": 5,
+      "referenced_by_Q18_original_CREATE": true
+    },
+    {
+      "source_path": "giiru/event/sink/sink044c",
+      "name": "sink044c",
+      "original_bytes": 1836,
+      "original_sha256": "5e099893943c11f49a8d5f22a9ff647c2057918875a84665c33c3101e2729cc6",
+      "original_anchored_EventNo_count": 5,
+      "referenced_by_Q18_original_CREATE": true
+    },
+    {
+      "source_path": "giiru/event/sink/sink04a",
+      "name": "sink04a",
+      "original_bytes": 1046,
+      "original_sha256": "51bd7763fdf6fd34e5ed005c9cc77981b4faa3b6b328a82d62b4fd62185747f5",
+      "original_anchored_EventNo_count": 3,
+      "referenced_by_Q18_original_CREATE": false
+    },
+    {
+      "source_path": "giiru/event/sink/sink04b",
+      "name": "sink04b",
+      "original_bytes": 1064,
+      "original_sha256": "3c98c6ca9bffe2810dd8a80636ba4642cd0493cd408a4e3ed875a535782a413a",
+      "original_anchored_EventNo_count": 3,
+      "referenced_by_Q18_original_CREATE": false
+    },
+    {
+      "source_path": "giiru/event/sink/sink04c",
+      "name": "sink04c",
+      "original_bytes": 1064,
+      "original_sha256": "8e477e58d07fa567800c4ad30b994d486befb1a8bb6fc5bc32feb0f9a6535f4c",
+      "original_anchored_EventNo_count": 3,
+      "referenced_by_Q18_original_CREATE": false
+    },
+    {
+      "source_path": "giiru/event/sink/sink05",
+      "name": "sink05",
+      "original_bytes": 2923,
+      "original_sha256": "11af1409c8c0d84c54e84d2fbc980791bc0fa5067700738811afa438bd20007a",
+      "original_anchored_EventNo_count": 11,
+      "referenced_by_Q18_original_CREATE": false
+    },
+    {
+      "source_path": "giiru/event/sink/sink055",
+      "name": "sink055",
+      "original_bytes": 3028,
+      "original_sha256": "6857a40895d8948b1e65d0bf3a3e289f9a2d680e83134fb2211d3399448d629b",
+      "original_anchored_EventNo_count": 11,
+      "referenced_by_Q18_original_CREATE": true
+    },
+    {
+      "source_path": "giiru/event/sink/sink055a",
+      "name": "sink055a",
+      "original_bytes": 3049,
+      "original_sha256": "b574f5f910dcec6590643188fe255e29f58634cde66969aeef80504159c6061d",
+      "original_anchored_EventNo_count": 11,
+      "referenced_by_Q18_original_CREATE": true
+    },
+    {
+      "source_path": "giiru/event/sink/sink05a",
+      "name": "sink05a",
+      "original_bytes": 3040,
+      "original_sha256": "8ce6fb24712b99c7223fdffdf11578f95b1c281cfd2f9d1bfc291362ec8db077",
+      "original_anchored_EventNo_count": 0,
+      "referenced_by_Q18_original_CREATE": false
+    },
+    {
+      "source_path": "giiru/event/sink/sink06",
+      "name": "sink06",
+      "original_bytes": 2741,
+      "original_sha256": "b22a619fb72ede666f1e13c060c0b99d5194f6acbd8d1a6d00333270b6c1d156",
+      "original_anchored_EventNo_count": 12,
+      "referenced_by_Q18_original_CREATE": true
+    },
+    {
+      "source_path": "giiru/event/sink/sink07",
+      "name": "sink07",
+      "original_bytes": 1237,
+      "original_sha256": "817301f656b07eaa32c626fb4439b45f163bc9854ff9ae37eb4f20c12d3c73c4",
+      "original_anchored_EventNo_count": 3,
+      "referenced_by_Q18_original_CREATE": true
+    }
+  ],
+  "source_active_CREATE_referenced_NPC_locations": [
+    {
+      "script": "giiru/event/sink/sink01",
+      "floor": 20309,
+      "xy": [
+        46,
+        45
+      ],
+      "source_graphic_alias": 100370
+    },
+    {
+      "script": "giiru/event/sink/sink02",
+      "floor": 30016,
+      "xy": [
+        26,
+        30
+      ],
+      "source_graphic_alias": 100230
+    },
+    {
+      "script": "giiru/event/sink/sink06",
+      "floor": 30016,
+      "xy": [
+        29,
+        36
+      ],
+      "source_graphic_alias": 100190
+    },
+    {
+      "script": "giiru/event/sink/sink06",
+      "floor": 30016,
+      "xy": [
+        23,
+        36
+      ],
+      "source_graphic_alias": 100190
+    },
+    {
+      "script": "giiru/event/sink/sink03",
+      "floor": 300,
+      "xy": [
+        407,
+        298
+      ],
+      "source_graphic_alias": 16024
+    },
+    {
+      "script": "giiru/event/sink/sink044",
+      "floor": 30008,
+      "xy": [
+        30,
+        69
+      ],
+      "source_graphic_alias": 100322
+    },
+    {
+      "script": "giiru/event/sink/sink044a",
+      "floor": 30008,
+      "xy": [
+        80,
+        14
+      ],
+      "source_graphic_alias": 100322
+    },
+    {
+      "script": "giiru/event/sink/sink044b",
+      "floor": 30008,
+      "xy": [
+        84,
+        19
+      ],
+      "source_graphic_alias": 100322
+    },
+    {
+      "script": "giiru/event/sink/sink044c",
+      "floor": 30011,
+      "xy": [
+        32,
+        34
+      ],
+      "source_graphic_alias": 100322
+    },
+    {
+      "script": "giiru/event/sink/sink055",
+      "floor": 30012,
+      "xy": [
+        7,
+        4
+      ],
+      "source_graphic_alias": 100322
+    },
+    {
+      "script": "giiru/event/sink/sink055a",
+      "floor": 30001,
+      "xy": [
+        38,
+        5
+      ],
+      "source_graphic_alias": 100322
+    },
+    {
+      "script": "giiru/event/sink/sink07",
+      "floor": 5106,
+      "xy": [
+        26,
+        15
+      ],
+      "source_graphic_alias": 16031
+    }
+  ],
+  "original_eleven_source_item_rows": [
+    {
+      "item_id": 2708,
+      "original_description_water_quantity_label": "EMPTY_CONTAINER",
+      "original_itemset_A_1based_line": 2230,
+      "original_itemset_B_1based_line": 2625,
+      "original_A_B_identical_row_sha256": "e43e03226ce8bf5840faa5460aa88e75652c63cf521bcb3759d605a817eb625e",
+      "original_94_field_count": 94,
+      "original_col16_item_ID_value": 2708,
+      "original_col17_image_alias": 12924,
+      "original_col18_price_literal": "500",
+      "original_col19_type_literal": "16",
+      "original_col10_usefunc_empty_literal": true,
+      "source_shop_arg_paths": [
+        "genout/ss_30504_10_11"
+      ]
+    },
+    {
+      "item_id": 2709,
+      "original_description_water_quantity_label": "7/7",
+      "original_itemset_A_1based_line": 2231,
+      "original_itemset_B_1based_line": 2626,
+      "original_A_B_identical_row_sha256": "9e74d1b4b73914dec4d90ba1dd0cb73a3efb5ee5030a38d21366c0d9d3e13e52",
+      "original_94_field_count": 94,
+      "original_col16_item_ID_value": 2709,
+      "original_col17_image_alias": 12924,
+      "original_col18_price_literal": "500",
+      "original_col19_type_literal": "16",
+      "original_col10_usefunc_empty_literal": true,
+      "source_shop_arg_paths": []
+    },
+    {
+      "item_id": 2710,
+      "original_description_water_quantity_label": "4/7",
+      "original_itemset_A_1based_line": 2232,
+      "original_itemset_B_1based_line": 2627,
+      "original_A_B_identical_row_sha256": "66365915bdfe4ad03c47d1b0f086d59ba00e228feecbca66c029c6211f818f15",
+      "original_94_field_count": 94,
+      "original_col16_item_ID_value": 2710,
+      "original_col17_image_alias": 12924,
+      "original_col18_price_literal": "500",
+      "original_col19_type_literal": "16",
+      "original_col10_usefunc_empty_literal": true,
+      "source_shop_arg_paths": []
+    },
+    {
+      "item_id": 2711,
+      "original_description_water_quantity_label": "3/7",
+      "original_itemset_A_1based_line": 2233,
+      "original_itemset_B_1based_line": 2628,
+      "original_A_B_identical_row_sha256": "62e79f84f1558d70e132980df3650e33090daf02b58612ffd92fcd08bb67c388",
+      "original_94_field_count": 94,
+      "original_col16_item_ID_value": 2711,
+      "original_col17_image_alias": 12924,
+      "original_col18_price_literal": "500",
+      "original_col19_type_literal": "16",
+      "original_col10_usefunc_empty_literal": true,
+      "source_shop_arg_paths": []
+    },
+    {
+      "item_id": 2712,
+      "original_description_water_quantity_label": "6/7",
+      "original_itemset_A_1based_line": 2234,
+      "original_itemset_B_1based_line": 2629,
+      "original_A_B_identical_row_sha256": "c80afa1fa990ef1c5ac91f7f00b1230c5a6029ce661ae02eeeb2890d9edbbfc9",
+      "original_94_field_count": 94,
+      "original_col16_item_ID_value": 2712,
+      "original_col17_image_alias": 12924,
+      "original_col18_price_literal": "500",
+      "original_col19_type_literal": "16",
+      "original_col10_usefunc_empty_literal": true,
+      "source_shop_arg_paths": []
+    },
+    {
+      "item_id": 2713,
+      "original_description_water_quantity_label": "5/7",
+      "original_itemset_A_1based_line": 2235,
+      "original_itemset_B_1based_line": 2630,
+      "original_A_B_identical_row_sha256": "de838ec73bd744468c8fb2ad66b8ea48a2bf90796e736bb85945bd092698f90e",
+      "original_94_field_count": 94,
+      "original_col16_item_ID_value": 2713,
+      "original_col17_image_alias": 12924,
+      "original_col18_price_literal": "500",
+      "original_col19_type_literal": "16",
+      "original_col10_usefunc_empty_literal": true,
+      "source_shop_arg_paths": []
+    },
+    {
+      "item_id": 2714,
+      "original_description_water_quantity_label": "4/7",
+      "original_itemset_A_1based_line": 2236,
+      "original_itemset_B_1based_line": 2631,
+      "original_A_B_identical_row_sha256": "70ce553ceb1b49c46ee8fd5b028f05d3a4d9f3de257a1ce746da16d4f6fda53a",
+      "original_94_field_count": 94,
+      "original_col16_item_ID_value": 2714,
+      "original_col17_image_alias": 12924,
+      "original_col18_price_literal": "500",
+      "original_col19_type_literal": "16",
+      "original_col10_usefunc_empty_literal": true,
+      "source_shop_arg_paths": []
+    },
+    {
+      "item_id": 2715,
+      "original_description_water_quantity_label": "3/7",
+      "original_itemset_A_1based_line": 2237,
+      "original_itemset_B_1based_line": 2632,
+      "original_A_B_identical_row_sha256": "8e9c36dc692c23e5c52b4c9062f491584d43be577659b449e903ea5846dd8a05",
+      "original_94_field_count": 94,
+      "original_col16_item_ID_value": 2715,
+      "original_col17_image_alias": 12924,
+      "original_col18_price_literal": "500",
+      "original_col19_type_literal": "16",
+      "original_col10_usefunc_empty_literal": true,
+      "source_shop_arg_paths": []
+    },
+    {
+      "item_id": 2716,
+      "original_description_water_quantity_label": "2/7",
+      "original_itemset_A_1based_line": 2238,
+      "original_itemset_B_1based_line": 2633,
+      "original_A_B_identical_row_sha256": "926b9583f7d40884852f6f9913c567220de876a6ca1880358cc0b44d3684fb5c",
+      "original_94_field_count": 94,
+      "original_col16_item_ID_value": 2716,
+      "original_col17_image_alias": 12924,
+      "original_col18_price_literal": "500",
+      "original_col19_type_literal": "16",
+      "original_col10_usefunc_empty_literal": true,
+      "source_shop_arg_paths": []
+    },
+    {
+      "item_id": 2717,
+      "original_description_water_quantity_label": "1/7",
+      "original_itemset_A_1based_line": 2239,
+      "original_itemset_B_1based_line": 2634,
+      "original_A_B_identical_row_sha256": "58bbaf4a3e2a715270bb93ebe4cff466c85cd3c2a3ab75903bfd6c9621501c5b",
+      "original_94_field_count": 94,
+      "original_col16_item_ID_value": 2717,
+      "original_col17_image_alias": 12924,
+      "original_col18_price_literal": "500",
+      "original_col19_type_literal": "16",
+      "original_col10_usefunc_empty_literal": true,
+      "source_shop_arg_paths": []
+    },
+    {
+      "item_id": 2718,
+      "original_description_water_quantity_label": "EMPTY_CONTENT",
+      "original_itemset_A_1based_line": 2240,
+      "original_itemset_B_1based_line": 2635,
+      "original_A_B_identical_row_sha256": "054c33d1fff6d287f021f1edc70731a7fbbd6d8c65c4aab1dd1ebd450e711240",
+      "original_94_field_count": 94,
+      "original_col16_item_ID_value": 2718,
+      "original_col17_image_alias": 12924,
+      "original_col18_price_literal": "500",
+      "original_col19_type_literal": "16",
+      "original_col10_usefunc_empty_literal": true,
+      "source_shop_arg_paths": []
+    }
+  ],
+  "original_separate_early_TW1_original_pixel_candidate": {
+    "original_item_graphic_alias": 12924,
+    "original_TW1_ADRN_physical_index": 5178,
+    "original_ADRN_full_record_sha256": "3a13d2b24d9bd4a452b2b4dbfc7221ff8e4dcba53938f0d66e3103e220befb85",
+    "original_RD_bytes": 2621,
+    "original_RD_sha256": "e254384084f1c68c099968d129737963ccf73bf714ad08321dd5b22a6dc505c3",
+    "original_indexed_pixel_sha256": "2671043aaef8a4970b0091001790583d2751021018521cacc260eadc156d115b",
+    "actual_PNG_sha256_private_reread": "75bd38c165a57b1aad955c01a36a6fcade56d1223e858e23c4a8079945c01af2",
+    "actual_RGBA_sha256_private_reread": "583b45f0e58176b13c0610b3f1137d04c83bec9468b74bdc93efc4ce6c37772b",
+    "original_RD_candidate_dimensions": [
+      52,
+      68
+    ],
+    "original_graphic_reused_by_all_11_source_item_rows": true
+  },
+  "different_IDs_despite_equal_original_description_and_all_other_93_field_values": [
+    {
+      "original_description_label": "4/7",
+      "distinct_original_IDs": [
+        2710,
+        2714
+      ],
+      "only_original_field_index_differing": 16
+    },
+    {
+      "original_description_label": "3/7",
+      "distinct_original_IDs": [
+        2711,
+        2715
+      ],
+      "only_original_field_index_differing": 16
+    }
+  ],
+  "same_type_literal": "16",
+  "source_original_code_col10_item_usefunc_empty": true,
+  "original_single_ITEM_replace_event_occurrences": [
+    {
+      "script": "sink03",
+      "source_event_ordinal": 1,
+      "physical_EventNo_line": 14,
+      "DelItem_single_literal_ID": 2708,
+      "GetItem_single_literal_ID": 2709
+    },
+    {
+      "script": "sink03",
+      "source_event_ordinal": 2,
+      "physical_EventNo_line": 26,
+      "DelItem_single_literal_ID": 2708,
+      "GetItem_single_literal_ID": 2710
+    },
+    {
+      "script": "sink03",
+      "source_event_ordinal": 3,
+      "physical_EventNo_line": 38,
+      "DelItem_single_literal_ID": 2708,
+      "GetItem_single_literal_ID": 2711
+    },
+    {
+      "script": "sink04",
+      "source_event_ordinal": 0,
+      "physical_EventNo_line": 8,
+      "DelItem_single_literal_ID": 2709,
+      "GetItem_single_literal_ID": 2716
+    },
+    {
+      "script": "sink044",
+      "source_event_ordinal": 0,
+      "physical_EventNo_line": 8,
+      "DelItem_single_literal_ID": 2709,
+      "GetItem_single_literal_ID": 2716
+    },
+    {
+      "script": "sink044",
+      "source_event_ordinal": 1,
+      "physical_EventNo_line": 19,
+      "DelItem_single_literal_ID": 2712,
+      "GetItem_single_literal_ID": 2717
+    },
+    {
+      "script": "sink044",
+      "source_event_ordinal": 2,
+      "physical_EventNo_line": 30,
+      "DelItem_single_literal_ID": 2713,
+      "GetItem_single_literal_ID": 2718
+    },
+    {
+      "script": "sink044a",
+      "source_event_ordinal": 0,
+      "physical_EventNo_line": 8,
+      "DelItem_single_literal_ID": 2709,
+      "GetItem_single_literal_ID": 2716
+    },
+    {
+      "script": "sink044a",
+      "source_event_ordinal": 1,
+      "physical_EventNo_line": 19,
+      "DelItem_single_literal_ID": 2712,
+      "GetItem_single_literal_ID": 2717
+    },
+    {
+      "script": "sink044a",
+      "source_event_ordinal": 2,
+      "physical_EventNo_line": 30,
+      "DelItem_single_literal_ID": 2713,
+      "GetItem_single_literal_ID": 2718
+    },
+    {
+      "script": "sink044b",
+      "source_event_ordinal": 0,
+      "physical_EventNo_line": 7,
+      "DelItem_single_literal_ID": 2709,
+      "GetItem_single_literal_ID": 2716
+    },
+    {
+      "script": "sink044b",
+      "source_event_ordinal": 1,
+      "physical_EventNo_line": 18,
+      "DelItem_single_literal_ID": 2712,
+      "GetItem_single_literal_ID": 2717
+    },
+    {
+      "script": "sink044b",
+      "source_event_ordinal": 2,
+      "physical_EventNo_line": 29,
+      "DelItem_single_literal_ID": 2713,
+      "GetItem_single_literal_ID": 2718
+    },
+    {
+      "script": "sink044c",
+      "source_event_ordinal": 0,
+      "physical_EventNo_line": 7,
+      "DelItem_single_literal_ID": 2709,
+      "GetItem_single_literal_ID": 2716
+    },
+    {
+      "script": "sink044c",
+      "source_event_ordinal": 1,
+      "physical_EventNo_line": 18,
+      "DelItem_single_literal_ID": 2712,
+      "GetItem_single_literal_ID": 2717
+    },
+    {
+      "script": "sink044c",
+      "source_event_ordinal": 2,
+      "physical_EventNo_line": 29,
+      "DelItem_single_literal_ID": 2713,
+      "GetItem_single_literal_ID": 2718
+    },
+    {
+      "script": "sink04a",
+      "source_event_ordinal": 0,
+      "physical_EventNo_line": 7,
+      "DelItem_single_literal_ID": 2709,
+      "GetItem_single_literal_ID": 2716
+    },
+    {
+      "script": "sink04b",
+      "source_event_ordinal": 0,
+      "physical_EventNo_line": 8,
+      "DelItem_single_literal_ID": 2709,
+      "GetItem_single_literal_ID": 2716
+    },
+    {
+      "script": "sink04c",
+      "source_event_ordinal": 0,
+      "physical_EventNo_line": 8,
+      "DelItem_single_literal_ID": 2709,
+      "GetItem_single_literal_ID": 2716
+    },
+    {
+      "script": "sink05",
+      "source_event_ordinal": 0,
+      "physical_EventNo_line": 8,
+      "DelItem_single_literal_ID": 2709,
+      "GetItem_single_literal_ID": 2712
+    },
+    {
+      "script": "sink05",
+      "source_event_ordinal": 1,
+      "physical_EventNo_line": 20,
+      "DelItem_single_literal_ID": 2710,
+      "GetItem_single_literal_ID": 2715
+    },
+    {
+      "script": "sink05",
+      "source_event_ordinal": 2,
+      "physical_EventNo_line": 32,
+      "DelItem_single_literal_ID": 2711,
+      "GetItem_single_literal_ID": 2716
+    },
+    {
+      "script": "sink05",
+      "source_event_ordinal": 3,
+      "physical_EventNo_line": 44,
+      "DelItem_single_literal_ID": 2712,
+      "GetItem_single_literal_ID": 2713
+    },
+    {
+      "script": "sink05",
+      "source_event_ordinal": 4,
+      "physical_EventNo_line": 56,
+      "DelItem_single_literal_ID": 2713,
+      "GetItem_single_literal_ID": 2714
+    },
+    {
+      "script": "sink05",
+      "source_event_ordinal": 5,
+      "physical_EventNo_line": 68,
+      "DelItem_single_literal_ID": 2714,
+      "GetItem_single_literal_ID": 2715
+    },
+    {
+      "script": "sink05",
+      "source_event_ordinal": 6,
+      "physical_EventNo_line": 79,
+      "DelItem_single_literal_ID": 2715,
+      "GetItem_single_literal_ID": 2716
+    },
+    {
+      "script": "sink05",
+      "source_event_ordinal": 7,
+      "physical_EventNo_line": 90,
+      "DelItem_single_literal_ID": 2716,
+      "GetItem_single_literal_ID": 2717
+    },
+    {
+      "script": "sink05",
+      "source_event_ordinal": 8,
+      "physical_EventNo_line": 102,
+      "DelItem_single_literal_ID": 2717,
+      "GetItem_single_literal_ID": 2718
+    },
+    {
+      "script": "sink05",
+      "source_event_ordinal": 9,
+      "physical_EventNo_line": 112,
+      "DelItem_single_literal_ID": 2718,
+      "GetItem_single_literal_ID": 2708
+    },
+    {
+      "script": "sink055",
+      "source_event_ordinal": 0,
+      "physical_EventNo_line": 7,
+      "DelItem_single_literal_ID": 2709,
+      "GetItem_single_literal_ID": 2712
+    },
+    {
+      "script": "sink055",
+      "source_event_ordinal": 1,
+      "physical_EventNo_line": 19,
+      "DelItem_single_literal_ID": 2710,
+      "GetItem_single_literal_ID": 2715
+    },
+    {
+      "script": "sink055",
+      "source_event_ordinal": 2,
+      "physical_EventNo_line": 31,
+      "DelItem_single_literal_ID": 2711,
+      "GetItem_single_literal_ID": 2716
+    },
+    {
+      "script": "sink055",
+      "source_event_ordinal": 3,
+      "physical_EventNo_line": 43,
+      "DelItem_single_literal_ID": 2712,
+      "GetItem_single_literal_ID": 2713
+    },
+    {
+      "script": "sink055",
+      "source_event_ordinal": 4,
+      "physical_EventNo_line": 55,
+      "DelItem_single_literal_ID": 2713,
+      "GetItem_single_literal_ID": 2714
+    },
+    {
+      "script": "sink055",
+      "source_event_ordinal": 5,
+      "physical_EventNo_line": 67,
+      "DelItem_single_literal_ID": 2714,
+      "GetItem_single_literal_ID": 2715
+    },
+    {
+      "script": "sink055",
+      "source_event_ordinal": 6,
+      "physical_EventNo_line": 78,
+      "DelItem_single_literal_ID": 2715,
+      "GetItem_single_literal_ID": 2716
+    },
+    {
+      "script": "sink055",
+      "source_event_ordinal": 7,
+      "physical_EventNo_line": 89,
+      "DelItem_single_literal_ID": 2716,
+      "GetItem_single_literal_ID": 2717
+    },
+    {
+      "script": "sink055",
+      "source_event_ordinal": 8,
+      "physical_EventNo_line": 101,
+      "DelItem_single_literal_ID": 2717,
+      "GetItem_single_literal_ID": 2718
+    },
+    {
+      "script": "sink055",
+      "source_event_ordinal": 9,
+      "physical_EventNo_line": 112,
+      "DelItem_single_literal_ID": 2718,
+      "GetItem_single_literal_ID": 2708
+    },
+    {
+      "script": "sink055a",
+      "source_event_ordinal": 0,
+      "physical_EventNo_line": 8,
+      "DelItem_single_literal_ID": 2709,
+      "GetItem_single_literal_ID": 2712
+    },
+    {
+      "script": "sink055a",
+      "source_event_ordinal": 1,
+      "physical_EventNo_line": 20,
+      "DelItem_single_literal_ID": 2710,
+      "GetItem_single_literal_ID": 2715
+    },
+    {
+      "script": "sink055a",
+      "source_event_ordinal": 2,
+      "physical_EventNo_line": 32,
+      "DelItem_single_literal_ID": 2711,
+      "GetItem_single_literal_ID": 2716
+    },
+    {
+      "script": "sink055a",
+      "source_event_ordinal": 3,
+      "physical_EventNo_line": 44,
+      "DelItem_single_literal_ID": 2712,
+      "GetItem_single_literal_ID": 2713
+    },
+    {
+      "script": "sink055a",
+      "source_event_ordinal": 4,
+      "physical_EventNo_line": 56,
+      "DelItem_single_literal_ID": 2713,
+      "GetItem_single_literal_ID": 2714
+    },
+    {
+      "script": "sink055a",
+      "source_event_ordinal": 5,
+      "physical_EventNo_line": 68,
+      "DelItem_single_literal_ID": 2714,
+      "GetItem_single_literal_ID": 2715
+    },
+    {
+      "script": "sink055a",
+      "source_event_ordinal": 6,
+      "physical_EventNo_line": 79,
+      "DelItem_single_literal_ID": 2715,
+      "GetItem_single_literal_ID": 2716
+    },
+    {
+      "script": "sink055a",
+      "source_event_ordinal": 7,
+      "physical_EventNo_line": 90,
+      "DelItem_single_literal_ID": 2716,
+      "GetItem_single_literal_ID": 2717
+    },
+    {
+      "script": "sink055a",
+      "source_event_ordinal": 8,
+      "physical_EventNo_line": 102,
+      "DelItem_single_literal_ID": 2717,
+      "GetItem_single_literal_ID": 2718
+    },
+    {
+      "script": "sink055a",
+      "source_event_ordinal": 9,
+      "physical_EventNo_line": 113,
+      "DelItem_single_literal_ID": 2718,
+      "GetItem_single_literal_ID": 2708
+    }
+  ],
+  "distinct_source_directed_replacements": [
+    {
+      "from": 2708,
+      "to": 2709,
+      "original_event_occurrences": 1,
+      "source_scripts": [
+        "sink03"
+      ]
+    },
+    {
+      "from": 2708,
+      "to": 2710,
+      "original_event_occurrences": 1,
+      "source_scripts": [
+        "sink03"
+      ]
+    },
+    {
+      "from": 2708,
+      "to": 2711,
+      "original_event_occurrences": 1,
+      "source_scripts": [
+        "sink03"
+      ]
+    },
+    {
+      "from": 2709,
+      "to": 2712,
+      "original_event_occurrences": 3,
+      "source_scripts": [
+        "sink05",
+        "sink055",
+        "sink055a"
+      ]
+    },
+    {
+      "from": 2709,
+      "to": 2716,
+      "original_event_occurrences": 8,
+      "source_scripts": [
+        "sink04",
+        "sink044",
+        "sink044a",
+        "sink044b",
+        "sink044c",
+        "sink04a",
+        "sink04b",
+        "sink04c"
+      ]
+    },
+    {
+      "from": 2710,
+      "to": 2715,
+      "original_event_occurrences": 3,
+      "source_scripts": [
+        "sink05",
+        "sink055",
+        "sink055a"
+      ]
+    },
+    {
+      "from": 2711,
+      "to": 2716,
+      "original_event_occurrences": 3,
+      "source_scripts": [
+        "sink05",
+        "sink055",
+        "sink055a"
+      ]
+    },
+    {
+      "from": 2712,
+      "to": 2713,
+      "original_event_occurrences": 3,
+      "source_scripts": [
+        "sink05",
+        "sink055",
+        "sink055a"
+      ]
+    },
+    {
+      "from": 2712,
+      "to": 2717,
+      "original_event_occurrences": 4,
+      "source_scripts": [
+        "sink044",
+        "sink044a",
+        "sink044b",
+        "sink044c"
+      ]
+    },
+    {
+      "from": 2713,
+      "to": 2714,
+      "original_event_occurrences": 3,
+      "source_scripts": [
+        "sink05",
+        "sink055",
+        "sink055a"
+      ]
+    },
+    {
+      "from": 2713,
+      "to": 2718,
+      "original_event_occurrences": 4,
+      "source_scripts": [
+        "sink044",
+        "sink044a",
+        "sink044b",
+        "sink044c"
+      ]
+    },
+    {
+      "from": 2714,
+      "to": 2715,
+      "original_event_occurrences": 3,
+      "source_scripts": [
+        "sink05",
+        "sink055",
+        "sink055a"
+      ]
+    },
+    {
+      "from": 2715,
+      "to": 2716,
+      "original_event_occurrences": 3,
+      "source_scripts": [
+        "sink05",
+        "sink055",
+        "sink055a"
+      ]
+    },
+    {
+      "from": 2716,
+      "to": 2717,
+      "original_event_occurrences": 3,
+      "source_scripts": [
+        "sink05",
+        "sink055",
+        "sink055a"
+      ]
+    },
+    {
+      "from": 2717,
+      "to": 2718,
+      "original_event_occurrences": 3,
+      "source_scripts": [
+        "sink05",
+        "sink055",
+        "sink055a"
+      ]
+    },
+    {
+      "from": 2718,
+      "to": 2708,
+      "original_event_occurrences": 3,
+      "source_scripts": [
+        "sink05",
+        "sink055",
+        "sink055a"
+      ]
+    }
+  ],
+  "other_original_command_classes": {
+    "bulk_multi_DelItem_and_GetItem_empty_vessel": [
+      {
+        "script": "sink04",
+        "source_event_ordinal": 1,
+        "physical_EventNo_line": 19,
+        "GetItem_literal_ID": 2708,
+        "DelItem_original_comma_list_numbers": [
+          2710,
+          2711,
+          2712,
+          2713,
+          2714,
+          2715,
+          2716,
+          2717,
+          2718
+        ],
+        "source_not_proven_to_delete_missing_items": true
+      },
+      {
+        "script": "sink044",
+        "source_event_ordinal": 3,
+        "physical_EventNo_line": 41,
+        "GetItem_literal_ID": 2708,
+        "DelItem_original_comma_list_numbers": [
+          2710,
+          2711,
+          2712,
+          2713,
+          2714,
+          2715,
+          2716,
+          2717,
+          2718
+        ],
+        "source_not_proven_to_delete_missing_items": true
+      },
+      {
+        "script": "sink044a",
+        "source_event_ordinal": 3,
+        "physical_EventNo_line": 41,
+        "GetItem_literal_ID": 2708,
+        "DelItem_original_comma_list_numbers": [
+          2710,
+          2711,
+          2712,
+          2713,
+          2714,
+          2715,
+          2716,
+          2717,
+          2718
+        ],
+        "source_not_proven_to_delete_missing_items": true
+      },
+      {
+        "script": "sink044b",
+        "source_event_ordinal": 3,
+        "physical_EventNo_line": 40,
+        "GetItem_literal_ID": 2708,
+        "DelItem_original_comma_list_numbers": [
+          2710,
+          2711,
+          2712,
+          2713,
+          2714,
+          2715,
+          2716,
+          2717,
+          2718
+        ],
+        "source_not_proven_to_delete_missing_items": true
+      },
+      {
+        "script": "sink044c",
+        "source_event_ordinal": 3,
+        "physical_EventNo_line": 40,
+        "GetItem_literal_ID": 2708,
+        "DelItem_original_comma_list_numbers": [
+          2710,
+          2711,
+          2712,
+          2713,
+          2714,
+          2715,
+          2716,
+          2717,
+          2718
+        ],
+        "source_not_proven_to_delete_missing_items": true
+      },
+      {
+        "script": "sink04a",
+        "source_event_ordinal": 1,
+        "physical_EventNo_line": 18,
+        "GetItem_literal_ID": 2708,
+        "DelItem_original_comma_list_numbers": [
+          2710,
+          2711,
+          2712,
+          2713,
+          2714,
+          2715,
+          2716,
+          2717,
+          2718
+        ],
+        "source_not_proven_to_delete_missing_items": true
+      },
+      {
+        "script": "sink04b",
+        "source_event_ordinal": 1,
+        "physical_EventNo_line": 19,
+        "GetItem_literal_ID": 2708,
+        "DelItem_original_comma_list_numbers": [
+          2710,
+          2711,
+          2712,
+          2713,
+          2714,
+          2715,
+          2716,
+          2717,
+          2718
+        ],
+        "source_not_proven_to_delete_missing_items": true
+      },
+      {
+        "script": "sink04c",
+        "source_event_ordinal": 1,
+        "physical_EventNo_line": 19,
+        "GetItem_literal_ID": 2708,
+        "DelItem_original_comma_list_numbers": [
+          2710,
+          2711,
+          2712,
+          2713,
+          2714,
+          2715,
+          2716,
+          2717,
+          2718
+        ],
+        "source_not_proven_to_delete_missing_items": true
+      }
+    ],
+    "DelItem_only_no_GetItem_in_same_sink06_event": [
+      {
+        "script": "sink06",
+        "source_event_ordinal": 3,
+        "physical_EventNo_line": 28,
+        "DelItem_literal_ID": 2712,
+        "source_same_event_no_GetItem_literal": true
+      },
+      {
+        "script": "sink06",
+        "source_event_ordinal": 4,
+        "physical_EventNo_line": 37,
+        "DelItem_literal_ID": 2713,
+        "source_same_event_no_GetItem_literal": true
+      },
+      {
+        "script": "sink06",
+        "source_event_ordinal": 5,
+        "physical_EventNo_line": 46,
+        "DelItem_literal_ID": 2714,
+        "source_same_event_no_GetItem_literal": true
+      },
+      {
+        "script": "sink06",
+        "source_event_ordinal": 6,
+        "physical_EventNo_line": 55,
+        "DelItem_literal_ID": 2715,
+        "source_same_event_no_GetItem_literal": true
+      },
+      {
+        "script": "sink06",
+        "source_event_ordinal": 7,
+        "physical_EventNo_line": 64,
+        "DelItem_literal_ID": 2716,
+        "source_same_event_no_GetItem_literal": true
+      },
+      {
+        "script": "sink06",
+        "source_event_ordinal": 8,
+        "physical_EventNo_line": 73,
+        "DelItem_literal_ID": 2717,
+        "source_same_event_no_GetItem_literal": true
+      },
+      {
+        "script": "sink06",
+        "source_event_ordinal": 9,
+        "physical_EventNo_line": 82,
+        "DelItem_literal_ID": 2718,
+        "source_same_event_no_GetItem_literal": true
+      }
+    ],
+    "related_other_item_19292_from_2717": {
+      "script": "sink02",
+      "source_event_ordinal": 5,
+      "physical_EventNo_line": 51,
+      "TYPE": "MESSAGE",
+      "condition_sha256_cp950": "c232d400d728e69b9d7cd719ad086b818b6b6e053551bd659caad73c67fd634e",
+      "original_DelItem_literal": "2717*1",
+      "original_GetItem_literal": "19292*1",
+      "native_execution_proven": false
+    }
+  },
+  "derived_counts": {
+    "original_sink_script_files": 17,
+    "Q18_original_CREATE_referenced_unique_script_files": 11,
+    "nonQ18_CREATE_anchored_script_files": 6,
+    "source_single_replacement_event_occurrences": 49,
+    "source_single_replacement_unique_directed_pairs": 16,
+    "source_single_replacement_active_script_occurrences": 35,
+    "source_single_replacement_other_preserved_script_occurrences": 14,
+    "source_bulk_reset_events": 8,
+    "source_del_only_events": 7,
+    "source_related_external_item_reward_events": 1,
+    "item_distinct_IDs": 11,
+    "shared_TW1_original_RD_graphic_candidates": 1
+  },
+  "private_replay": {
+    "original_NPC_ZIP_and_2205_CRC_reread": true,
+    "original_ITEM01_ZIP_and_838_CRC_reread": true,
+    "source_original_17_scripts_CP950_files_scanned": true,
+    "original_two_94_field_rows_all_11_reencoded_CP950_row_SHA_match": true,
+    "original_TW1_PNG_real_bytes_SHA_and_RGBA_dimensions_rechecked": true,
+    "original_RD_binary_newly_decoded": 0,
+    "private_observer_zip_filename": "StoneAge-INTEGRATION63-Banum-water-vessel-original-source-private.zip",
+    "private_observer_zip_bytes": 25951,
+    "private_observer_zip_sha256": "b935332ccae71ec59a863ceb0588f597696e764815cd2e6b8a83646e1c8e3a0c",
+    "private_observer_zip_original_members_CRC": 43,
+    "private_Library_upload_and_independent_full_byte_SHA_CRC_reread": true
+  },
+  "method_limits": {
+    "strict_anchor": "Only events with EventNo at start of a physical line; sink05a has inline EventNo and is excluded from anchored event edge counting, not proved absent",
+    "multiple_original_scripts_or_events_not_execution_order": true,
+    "source_original_NpcWarp_pools_not_native_travel": true,
+    "mixed25_community_npc_and_TW1_item_art_same_original_official_build": false,
+    "original_early_JSS1999_TW1_CN182_water_vessel_deployed_proven": false,
+    "original_getitem_delitem_callbacks_executed": false,
+    "original_script_conditions_comma_or_native_branch_priority_proven": false,
+    "source_original_2000s_server_active_alternative_scripts_selected": false,
+    "duplicate_4_7_and_3_7_states_merged": false,
+    "private_original_dialogue_item_rows_or_PNG_published": false,
+    "overall_percent": null
+  },
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "Different source-ready map/NPC/pet/quest item or original mechanics visible relationship; do not rescan the same 17 sink scripts without new native deployment evidence."
+}
