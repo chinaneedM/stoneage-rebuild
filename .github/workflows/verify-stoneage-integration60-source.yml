@@ -1,0 +1,29 @@
+name: Verify StoneAge INTEGRATION60 original clinic medicines source
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION60-FIVE-ORIGINAL-CLINICS-NURSE-MEDICINE-ITEM-HANDLER-PIXEL-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_60.py'
+      - '.github/workflows/verify-stoneage-integration60-source.yml'
+      - 'research/recovered/STONEAGE-INTEGRATION49-28-ORIGINAL-ROOM-NPC-WARP-SOURCE-ATLAS-R1.json'
+      - 'research/recovered/STONEAGE-INTEGRATION50-28-ROOM-SHOP-PET-ARGUMENT-BRIDGE-R1.json'
+      - 'research/recovered/STONEAGE-GAMEPLAY05-ORIGINAL-PETSHOP-SAVEPOINT-HEAL-SOURCE-R1.json'
+      - 'research/recovered/item-module-01/**'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION60-FIVE-ORIGINAL-CLINICS-NURSE-MEDICINE-ITEM-HANDLER-PIXEL-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_60.py'
+      - '.github/workflows/verify-stoneage-integration60-source.yml'
+      - 'research/recovered/STONEAGE-INTEGRATION49-28-ORIGINAL-ROOM-NPC-WARP-SOURCE-ATLAS-R1.json'
+      - 'research/recovered/STONEAGE-INTEGRATION50-28-ROOM-SHOP-PET-ARGUMENT-BRIDGE-R1.json'
+      - 'research/recovered/STONEAGE-GAMEPLAY05-ORIGINAL-PETSHOP-SAVEPOINT-HEAL-SOURCE-R1.json'
+      - 'research/recovered/item-module-01/**'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_60.py' -v
