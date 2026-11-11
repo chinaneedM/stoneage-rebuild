@@ -2523,3 +2523,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ### INTEGRATION67 实际远端内容验收（2026-11-11）
 
 [正式合并及完整运行回执](docs/continuity/STONEAGE-INTEGRATION67-PUBLICATION-ACCEPTANCE-20261111.md)：[PR #336](https://github.com/chinaneedM/stoneage-rebuild/pull/336)合并源内容 `74c06b7a8360424c4d6344cb3858c8b194afc13d`／tree `411d7c53d6b7d52e77827f76e30cdc904e79f353`，候选46/46（27push＋19PR）与内容合并后main **27/27 Actions** 实际completed/success，专项 run42999969506 success。私人56成员437505B/48原PNG已从Library独立复验SHA/CRC；完整CURRENT旧blob未变。后验收据自身新HEAD的Actions不得预支。Stage A7PARTIAL＋2OPEN、B/wiki GATED、R79暂停、完成率未知；NEXT新的原实物内容。
+
+
+## 2026-11-11 — INTEGRATION68｜四村保护石任务四NPC原图号与TW1.0原RD像素候选
+
+[来源有界原件、真正独立解码及PRIVATE源像保管](docs/continuity/STONEAGE-INTEGRATION68-FOUR-VILLAGE-QUEST-NPC-PIXELS-20261111.md)／[公开数字/80B源索引/RD像素散列与负证](research/recovered/STONEAGE-INTEGRATION68-FOUR-VILLAGE-QUEST-NPC-FOUR-TW1-ORIGINAL-PIXELS-R1.json)：从 `main=9af43766f...`／tree `3987b6a...`与其26/26成功Actions重新启动，完整读取旧CURRENT Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`（2,709,173B，**未改**），先对旧QUEST31 4个保存版创建记录查重。真正整SHA复验原QUEST31私人包27,565B与TW1 retail P3H私有源包372,626,292B；**新重解码4份原TW1 RD**：原mixed25四创建图号16205/16206/16203/16057分别经原ADRN+76唯一别名精确对应物理5925/5926/5923/5903，实际像素40×93/36×94/32×87/36×66，双解码逐原索引一致，4图已目视；同号物理块是另外图，不能以编号直接互代。私人11成员24,425B ZIP已保存个人Library并独立回取整SHA/CRC，原RD/PNG/CREATE/HTML没有进Git；10项公开源/否证专项本地通过，候选/main CI仅能据实际远端后验。此关联**不是**后期社区mixed25与官方TW1同服、原NPC形象/原任务执行、实际调色板或已完成完整世界；floor1300源DAT缺件仍OPEN。Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、总体完成率null。**NEXT** 继续另一非重复有真正原件可见的地图/宠物/物品/技能关系，不复查本四像素、不开网服/账号或新引擎。
