@@ -1,0 +1,284 @@
+{
+  "schema": "stoneage.integration71.chahan_priest_item_exchange_original_source_and_TW1_pixel_candidate.r1",
+  "date": "2026-11-11",
+  "remote_start": {
+    "branch": "main",
+    "head": "01a64778d2df9f8790489166ac2a72f66e21df6b",
+    "tree": "45d20b4159ab3d7366ce96060a2e529e70fdb73c",
+    "CURRENT_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "CURRENT_bytes": 2709173,
+    "old_history_modified": false,
+    "head_actions_success": 26
+  },
+  "source_scope": {
+    "npc_and_item_data": "LATER_COMMUNITY_MIXED25_ARCHIVE_STATIC_SOURCE_NOT_AUTHENTICATED_OFFICIAL_DEPLOYMENT",
+    "pixel_data": "DIFFERENT_CARRIER_AUTHENTIC_TW1_RETAIL_PREVIOUSLY_DECODED_RD_PIXEL_CANDIDATES",
+    "binding": "SAME_ARCHIVE_CREATE_TO_SCRIPT_AND_ITEMSET_WITH_SEPARATE_TW1_ADRN_ALIAS_CANDIDATES_NOT_NATIVE_GRAPHICS_SELECTOR"
+  },
+  "verified_original_inputs": {
+    "private_original_CHAR01_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "private_original_CHAR01_zip_bytes": 995176,
+    "original_NPC_members_CRC_verified": 2205,
+    "private_preserved_ITEM01_zip_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "private_preserved_ITEM01_zip_bytes": 5868386,
+    "original_ITEM_members_CRC_verified": 838,
+    "retail_TW1_P3H_parent_SHA256_from_previously_verified_receipt": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "retail_TW1_original_ADRN_SHA256_from_prior": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+    "retail_TW1_original_REAL_SHA256_from_prior": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13",
+    "source_CREATE_path": "sainasu/event/event.create",
+    "source_CREATE_bytes": 572,
+    "source_CREATE_sha256": "b0ee5e827c577fabf076594b597f8253096b8f1304a00d3eb03d9362c9e78500",
+    "source_argument_path": "sainasu/event/tiger_water.arg",
+    "source_argument_bytes": 799,
+    "source_argument_sha256": "37b27dc5ddcf07e31e85203733cae306a00c37df24541830eb223a517e8f5107",
+    "prior_QUEST01_two_file_script_preindexed": true,
+    "prior_QUEST01_MESSAGE_TYPE_blocks_preindexed": 3,
+    "prior_public_CHAR01_blob": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "prior_public_QUEST01_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2",
+    "original_two_itemset_rows_preserved_from_private_derived_catalog_not_raw_RAR_reread_this_turn": true,
+    "original_P3H_binary_reread_this_turn": false,
+    "new_TW1_RD_binary_decodes": 0
+  },
+  "original_NPC_creates": [
+    {
+      "ordinal": 0,
+      "floorid": 10007,
+      "graphicname": 16001,
+      "source_template_function": "windowman",
+      "original_CREATE_block_sha256": "2e0cad932824ae761aa4980a08bf55f691c0cfd02c50cdfa01f7cf4342075b3a",
+      "direct_argument_path": "NONE",
+      "source_short_name": "查罕族的族長",
+      "direct_argument_is_tiger_water": false
+    },
+    {
+      "ordinal": 1,
+      "floorid": 10007,
+      "graphicname": 16170,
+      "source_template_function": "changeevent",
+      "original_CREATE_block_sha256": "42b47730e9124b4a4df44c4c8a0202aec1589717de7939ef5ed5345d1a89d087",
+      "direct_argument_path": "sainasu/event/tiger_water.arg",
+      "source_short_name": "查罕族的祭司",
+      "direct_argument_is_tiger_water": true
+    },
+    {
+      "ordinal": 2,
+      "floorid": 10408,
+      "graphicname": 16044,
+      "source_template_function": "windowman",
+      "original_CREATE_block_sha256": "1a8468e69fb21fb171b6ab857983a2f2b2153bc3df5c65cfbe864c97940657ef",
+      "direct_argument_path": "NONE",
+      "source_short_name": "研究者",
+      "direct_argument_is_tiger_water": false
+    }
+  ],
+  "original_source_event_blocks": [
+    {
+      "ordinal": 0,
+      "TYPE": "MESSAGE",
+      "type_line_1based": 7,
+      "EVENT_literal": "LV>0&ITEM=19563",
+      "condition_UTF8_sha256": "1f230fc61790d1255ad25b289eb5ea92ce672366b9a370c97fe210d73bf74d33",
+      "source_section_CP950_normalized_UTF8_sha256": "95d235c1d3003f054f44922421b37822d5a07b2f5d26eee2699d02a83fe9107e",
+      "source_commands": []
+    },
+    {
+      "ordinal": 1,
+      "TYPE": "MESSAGE",
+      "type_line_1based": 14,
+      "EVENT_literal": "LV>0&ITEM=2452&ITEM=2440&ITEM=2441&ITEM=2442&ITEM=2400",
+      "condition_UTF8_sha256": "a4a8ff605575ab62aedea0b668650aa9aaa1cd701962228721399961e721a7da",
+      "source_section_CP950_normalized_UTF8_sha256": "2da90c6923b457abf74142b14da3a6f685e052a755812033192adbfac324b7b2",
+      "source_commands": [
+        {
+          "line_1based": 18,
+          "token": "DelItem",
+          "literal": "2452*1,2440*1,2400*1,2441*1,2442*1"
+        },
+        {
+          "line_1based": 19,
+          "token": "GetItem",
+          "literal": "19563*1"
+        }
+      ]
+    },
+    {
+      "ordinal": 2,
+      "TYPE": "MESSAGE",
+      "type_line_1based": 24,
+      "EVENT_literal": "LV>0",
+      "condition_UTF8_sha256": "560ee2df77296615f0e9d4bacf97fa85a3acc9f55ebd762bfc0743c7ec7d9275",
+      "source_section_CP950_normalized_UTF8_sha256": "afddd577306232029329fe067301d3fa259501778689dee4aef525abba2355ba",
+      "source_commands": []
+    }
+  ],
+  "original_ITEM_two_table_rows": [
+    {
+      "item_id": 2452,
+      "preserved_CP950_short_name": "馬倫的葡萄",
+      "original_itemset_image_alias": 24103,
+      "both_original_94_column_line_SHA256": "91a96ef0d4da022848c1ba9af658953cfe91a1c957ffd8899919e38efab6611d",
+      "two_original_itemset_rows_SHA_equal": true
+    },
+    {
+      "item_id": 2440,
+      "preserved_CP950_short_name": "烏魯夫的鎧",
+      "original_itemset_image_alias": 21022,
+      "both_original_94_column_line_SHA256": "d6320e595d49b497040b6c13b787219448b835c2b8ed8d99995d3476bdd22fd0",
+      "two_original_itemset_rows_SHA_equal": true
+    },
+    {
+      "item_id": 2400,
+      "preserved_CP950_short_name": "阿布的水",
+      "original_itemset_image_alias": 23012,
+      "both_original_94_column_line_SHA256": "cc1f447db8cfeafbe67686c0ca5c55bd35b8c8fd018fe0ba65a49df8f56a8738",
+      "two_original_itemset_rows_SHA_equal": true
+    },
+    {
+      "item_id": 2441,
+      "preserved_CP950_short_name": "吉爾的槍",
+      "original_itemset_image_alias": 20433,
+      "both_original_94_column_line_SHA256": "d62b39174da50fede396cd4e68def28d54fc9b685719160cf6fb2d12c5d70764",
+      "two_original_itemset_rows_SHA_equal": true
+    },
+    {
+      "item_id": 2442,
+      "preserved_CP950_short_name": "魯德的兜",
+      "original_itemset_image_alias": 21545,
+      "both_original_94_column_line_SHA256": "dba71022edcf288101fa9fb448de299276ce8b25b0c4eb6e185d053dc63e42dc",
+      "two_original_itemset_rows_SHA_equal": true
+    },
+    {
+      "item_id": 19563,
+      "preserved_CP950_short_name": "神秘的調和水",
+      "original_itemset_image_alias": 23012,
+      "both_original_94_column_line_SHA256": "3b3da523f0cdba3fbf18de9f5b8afb497fe1454d9a2921bd8f0f1cbaa4e4aac6",
+      "two_original_itemset_rows_SHA_equal": true
+    }
+  ],
+  "original_TW1_PREVIOUSLY_decoded_pixel_candidates": [
+    {
+      "source_image_alias": 20433,
+      "physical_bitmapno": 6215,
+      "source_width": 48,
+      "source_height": 41,
+      "previously_verified_original_RD_SHA256": "bf9c5d5c9c1ccb7eeb0abc872e0c68f1e1bbb96e95fdfe6d3ced4b91cc8ec734",
+      "rechecked_PNG_SHA256": "743ba73d3047b578c1149b61d7e540e952efd973f10452a52d020b496dde206d",
+      "rechecked_RGBA_SHA256": "131e9d696fb7380b89febb24c430eeb3097ddada357bd64c1980bb96de018b23",
+      "original_ADRN_alias_match_count": 1,
+      "actual_full_RD_decode_this_work_unit": false
+    },
+    {
+      "source_image_alias": 21022,
+      "physical_bitmapno": 6323,
+      "source_width": 32,
+      "source_height": 42,
+      "previously_verified_original_RD_SHA256": "779e4a259e9b3cb22df1502d8d28ad97889f1806180366a76e69d7ab1aa41bb6",
+      "rechecked_PNG_SHA256": "500a2f498f2a4209452b573e85f355f263398ad9b51c2474fef3a8bebf0eecf2",
+      "rechecked_RGBA_SHA256": "59e66933c1d375d5f7e2e909b9664282fe85137af1c3804a1e3970c659c529d2",
+      "original_ADRN_alias_match_count": 1,
+      "actual_full_RD_decode_this_work_unit": false
+    },
+    {
+      "source_image_alias": 21545,
+      "physical_bitmapno": 6410,
+      "source_width": 36,
+      "source_height": 34,
+      "previously_verified_original_RD_SHA256": "054423ee857e93db4a95e6f4c54a563bcfa15ccf28f3c674cb364d9440bf2f3d",
+      "rechecked_PNG_SHA256": "e31ad0bb37517941bdcac90e4ccf63fbdce364d538b857f4e3a4c1e720005574",
+      "rechecked_RGBA_SHA256": "8299179123a7f16fc85a57424e992f54d14891bbf938032ae43185dfaef9519e",
+      "original_ADRN_alias_match_count": 1,
+      "actual_full_RD_decode_this_work_unit": false
+    },
+    {
+      "source_image_alias": 23012,
+      "physical_bitmapno": 6548,
+      "source_width": 32,
+      "source_height": 36,
+      "previously_verified_original_RD_SHA256": "52bd6944dfc3a4f91e6de1514d94cdfca7d6d1b8095a96ce1e2461349f9b5f4f",
+      "rechecked_PNG_SHA256": "5015d5af4574d204475941857a6c2538817991ed3cb0bfe1c5e005a6decd6cf4",
+      "rechecked_RGBA_SHA256": "60ef1b77dee067af6e22618afe4e449d7fa001adb2a331a6e5c77a4a914ccdab",
+      "original_ADRN_alias_match_count": 1,
+      "actual_full_RD_decode_this_work_unit": false
+    },
+    {
+      "source_image_alias": 24103,
+      "physical_bitmapno": 6756,
+      "source_width": 36,
+      "source_height": 32,
+      "previously_verified_original_RD_SHA256": "1027843d54943c210ac6284341de2a50cb380b87bd0ece8998e70a41492c0cbd",
+      "rechecked_PNG_SHA256": "1fe91eccfd6d651362d52539daf353e01df0669f3f827effe549b56c5ec65900",
+      "rechecked_RGBA_SHA256": "3318e37dde07e1daddf6bffe8bcc9cab95c4b43f7f21d3caad84536aa476b2f9",
+      "original_ADRN_alias_match_count": 1,
+      "actual_full_RD_decode_this_work_unit": false
+    }
+  ],
+  "same_image_alias_for_distinct_items": {
+    "source_item_2400": 23012,
+    "output_item_19563": 23012,
+    "different_source_item_ids": 2,
+    "distinct_original_TW1_candidate_images_for_six_items": 5
+  },
+  "existing_MAP09_source_qualification": [
+    {
+      "floor": 10007,
+      "source_DAT_SHA256": "054d794006e73f3f3ee67e66fcc49744a101bb1b46e29ecef418bd573f201b4e",
+      "original_DAT_bytes": 21608,
+      "geometry": [
+        60,
+        60
+      ],
+      "NPC_script_direct_anchored_here": true
+    },
+    {
+      "floor": 10408,
+      "source_DAT_SHA256": "1d73fb64c702c2df1fbd30e0df5a4057a7d9e29084621458cc59b1056aa22f6d",
+      "original_DAT_bytes": 15008,
+      "geometry": [
+        50,
+        50
+      ],
+      "NPC_script_direct_anchored_here": false
+    }
+  ],
+  "private_custody": {
+    "library_path": "/石器时代/StoneAge-INTEGRATION71-Chahan-priest-original-source-private.zip",
+    "archive_bytes": 45710,
+    "archive_SHA256": "e118a834ae6d6259570214220e5af59b9cb28547a359ed1ae053cba15f07150a",
+    "archive_members": 9,
+    "all_original_members_CRC_verified": true,
+    "independently_retrieved_from_Library_and_verified_full_bytes_SHA_and_all_9_CRC": true,
+    "private_contact_sheet_SHA256": "ee3a0d7e86b1c0c82b476d328c0408d6670998bd2dfd4a4c4b1970369f38e15e",
+    "copyright_originals_in_public_git": false
+  },
+  "actual_increment": {
+    "new_original_script_discovery": 0,
+    "new_original_RD_binary_decodes": 0,
+    "newly_composed_static_SOURCE_NPC_item_map_candidate_relations": 1,
+    "source_CREATE_count": 3,
+    "only_ONE_create_references_exchange_script": true,
+    "source_item_ids": 6,
+    "physically_distinct_existing_original_TW1_pixel_candidates": 5
+  },
+  "not_proven": {
+    "native_game_ACTUAL_item_exchange_execution": false,
+    "original_MESSAGE_branch_priority_proven": false,
+    "original_conditions_and_consumption_runtime_semantics_proven": false,
+    "same_early_official_server_deployment_proven": false,
+    "retail_TW1_original_item_master_same_as_community_itemset_proven": false,
+    "actual_native_graphics_and_palette_selector_proven": false,
+    "priest_16170_original_TW1_RD_pixel_qualified": false,
+    "NPC_position_actually_rendered_in_native_game": false,
+    "official_early_quest_and_rewards_proven": false
+  },
+  "status": {
+    "stage_A": {
+      "PARTIAL": 7,
+      "OPEN": 2
+    },
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Move to another distinct original-source content family with verified original material, not repeat this synthesis or previous event13/15, no native server/account or new engine."
+}
