@@ -1,0 +1,29 @@
+name: Verify StoneAge INTEGRATION65 Genou original-source graph
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION65-GENOU-THREE-SCRIPTS-25-ITEMS-18-TW1-CANDIDATES-R1.json'
+      - 'tests/test_stoneage_integration_module_65.py'
+      - '.github/workflows/verify-stoneage-integration65-source.yml'
+      - 'research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json'
+      - 'research/recovered/STONEAGE-QUEST22-HEKISEI-ORIGINAL-SOURCE-AND-THREE-SCENES-R1.json'
+      - 'research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json'
+      - 'research/recovered/item-module-01/**'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION65-GENOU-THREE-SCRIPTS-25-ITEMS-18-TW1-CANDIDATES-R1.json'
+      - 'tests/test_stoneage_integration_module_65.py'
+      - '.github/workflows/verify-stoneage-integration65-source.yml'
+      - 'research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json'
+      - 'research/recovered/STONEAGE-QUEST22-HEKISEI-ORIGINAL-SOURCE-AND-THREE-SCENES-R1.json'
+      - 'research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json'
+      - 'research/recovered/item-module-01/**'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_65.py' -v
