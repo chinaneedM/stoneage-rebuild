@@ -1,0 +1,365 @@
+{
+  "schema": "stoneage.integration62.quest30_2_getpet_to_29_original_tw1_rd_candidate_source.r1",
+  "date": "2026-11-11",
+  "baseline_remote_head": "1e647c8628be5f15a1888fc32b86ff2f4542c986",
+  "baseline_remote_tree": "85e84361ff68c501ea655f50b52c9e917032c279",
+  "upstream_public_blobs": {
+    "QUEST30": "22315fb6b4363aaafc98375a4fcda9498b608246",
+    "PET10": "25a37aeb134fb180e322e7dc335029b7374452d8",
+    "PET07": "0b5f81b41a642025ab53a12884638fdee887470e",
+    "full_unchanged_CURRENT": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "sources": {
+    "parent_community_mixed25_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "original_quest30_private_zip_sha256": "cb6f27c43559049bd05976293c3fd260c9d0ba87cc50b5a93f7ea884b7f4225a",
+    "original_mixed25_NPC_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "original_early_TW1_PET07_source_zip_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "original_early_TW1_retained_PET07_HTML_sha256": "58e8ee4ff5165ed2f61663d67ae1cd0a8183622fa3375c480232784bfce9dc76",
+    "original_early_TW1_retained_PET07_RD_report_sha256": "b5ad2e58930afbe90604a1d72e3c17ab0adea446e7c118be775e3973315e6cb4"
+  },
+  "source_QUEST30_NPC_CREATE": {
+    "source_floor": 100,
+    "original_borncorner_four_integers": [
+      230,
+      180,
+      525,
+      200
+    ],
+    "original_create_block_sha256": "9b745670a7bd8fd849d0a84daace3ec50fd08b032cc3b62a54ba536338a27197",
+    "source_graphic_alias": 16033
+  },
+  "GetPet_instance_relations_previously_known_in_QUEST30_and_WORLD21": true,
+  "source_qualified_two_rewards": [
+    {
+      "source_GetPet_ID": 93,
+      "original_event_ordinal": 0,
+      "original_event_section_sha256": "f24b0d21595ad0bc1d4f58485abb712a8833ff57caeb74392aff91708f907aea",
+      "original_quest_script_sha256": "63712fde0c36778b6b65af560a4c396ce8a04877243a05da41f63dd0359b8c34",
+      "original_enemy_primary": [
+        58,
+        93,
+        171,
+        1,
+        "1314f0df08d21c5268a593288879aa8b624d6a7d8606ffbcf32578bc273f1618"
+      ],
+      "original_enemy_alternative": [
+        58,
+        93,
+        171,
+        1,
+        "76bf391f77001c39fb09821deb0b01bcd49f2bd2cec64c5aacd2572409dbf6f2"
+      ],
+      "original_template_primary": [
+        171,
+        171,
+        100319,
+        1,
+        "18",
+        "4.50",
+        "26",
+        "28",
+        "25",
+        "16",
+        "80",
+        "20",
+        "0",
+        "0",
+        6,
+        [
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "1d6f7eb269247b2d19e102fa3646a337dfe29946fbd677316c6ad8a69678a84e"
+      ],
+      "original_template_alternative": [
+        62,
+        171,
+        100319,
+        1,
+        "18",
+        "4.50",
+        "26",
+        "28",
+        "25",
+        "16",
+        "80",
+        "20",
+        "0",
+        "0",
+        6,
+        [
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "4e16658b80c3b99ded20d70fcfcf93015015d125ee55f459076d1233d0e30358"
+      ],
+      "same_source_instance_ID": 93,
+      "same_source_template_ID": 171,
+      "crosscarrier_early_TW1_graphic_number": 100319,
+      "original_TW1_SPR_group_index": 293,
+      "original_TW1_SPR_full_segment_sha256": "f776bacec9370a6f8f665ffd47fcdf84839f0f348e787e11b43af4f3d0909ef6",
+      "original_TW1_full_animation_count": 56,
+      "original_selected_three_action_direction0_sequences": [
+        {
+          "action": 0,
+          "direction": 0,
+          "frames": [
+            110938,
+            110937,
+            110936,
+            110935,
+            110934,
+            110935,
+            110936,
+            110935,
+            110934,
+            110935,
+            110936,
+            110937,
+            110938
+          ],
+          "original_sequence_sha256_uint32le": "4ecdc92c7a6ec547867b95dc2e7d3bba43d6730fc3b6bc2dad4be2d1c4b647d6",
+          "original_duration_word": 1000
+        },
+        {
+          "action": 2,
+          "direction": 0,
+          "frames": [
+            110939,
+            110940,
+            110941,
+            110942,
+            110943,
+            110944
+          ],
+          "original_sequence_sha256_uint32le": "2d0714ec724abdbe2a4db02257d6060bd7dcc694ada2cd228b9fc8003fd18c81",
+          "original_duration_word": 800
+        },
+        {
+          "action": 1,
+          "direction": 0,
+          "frames": [
+            110945,
+            110946
+          ],
+          "original_sequence_sha256_uint32le": "67c325023dbb8860fdda7cb5e4c19a63f51982a356aaac77e15cae918c082c67",
+          "original_duration_word": 100
+        }
+      ],
+      "original_frame_positions_count": 21,
+      "source_bitmap_numbers_first_appearance": [
+        110938,
+        110937,
+        110936,
+        110935,
+        110934,
+        110939,
+        110940,
+        110941,
+        110942,
+        110943,
+        110944,
+        110945,
+        110946
+      ],
+      "source_distinct_bitmap_count": 13,
+      "public_original_RD_PNG_aggregate_sha256": "296a6c9687f2ebdaafecef4f4c8cf74984e700c31fb38bb48b825d4a013c4942"
+    },
+    {
+      "source_GetPet_ID": 341,
+      "original_event_ordinal": 4,
+      "original_event_section_sha256": "1a3bfb1625858ec6fd22100d917a8ea293d81a16d8e3730fa5d32565b4bbd8bc",
+      "original_quest_script_sha256": "63712fde0c36778b6b65af560a4c396ce8a04877243a05da41f63dd0359b8c34",
+      "original_enemy_primary": [
+        192,
+        341,
+        274,
+        1,
+        "ddb1ccbc33ce06ff1b609173c6edf6d22c915d26ab576059a04b085bed86dce9"
+      ],
+      "original_enemy_alternative": [
+        192,
+        341,
+        274,
+        1,
+        "66745b940d7e70c79addb8d0d9dc817c3c0db62ee2024a7bf4f5a9ec956fc013"
+      ],
+      "original_template_primary": [
+        227,
+        274,
+        100362,
+        1,
+        "23",
+        "4.50",
+        "24",
+        "31",
+        "20",
+        "30",
+        "0",
+        "0",
+        "0",
+        "100",
+        4,
+        [
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "ac5e168832416529fc5e32d9694a518d5699cc43e5f2243f0af3d754f2e5f9f3"
+      ],
+      "original_template_alternative": [
+        103,
+        274,
+        100362,
+        1,
+        "23",
+        "4.50",
+        "24",
+        "31",
+        "20",
+        "30",
+        "0",
+        "0",
+        "0",
+        "100",
+        4,
+        [
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "8a6efad5f70596466819736ac88dabf8fa23ceaeee02a67970dd32cfe01a6ecd"
+      ],
+      "same_source_instance_ID": 341,
+      "same_source_template_ID": 274,
+      "crosscarrier_early_TW1_graphic_number": 100362,
+      "original_TW1_SPR_group_index": 332,
+      "original_TW1_SPR_full_segment_sha256": "42a308083c2f8ca1a69b0818b3f621586fe9c351098ed32e095fd8b8c3ac70db",
+      "original_TW1_full_animation_count": 56,
+      "original_selected_three_action_direction0_sequences": [
+        {
+          "action": 0,
+          "direction": 0,
+          "frames": [
+            120643,
+            120644,
+            120645,
+            120646,
+            120646,
+            120647,
+            120647,
+            120648,
+            120649,
+            120650,
+            120649,
+            120648,
+            120647,
+            120648,
+            120649,
+            120650,
+            120650
+          ],
+          "original_sequence_sha256_uint32le": "40d60925b6d2a02cc5bc4ba603e26b1b2458fb00e6c8218c540d714df0715198",
+          "original_duration_word": 1100
+        },
+        {
+          "action": 2,
+          "direction": 0,
+          "frames": [
+            120651,
+            120652,
+            120653,
+            120654,
+            120655,
+            120656
+          ],
+          "original_sequence_sha256_uint32le": "c7df3b6451a58bd1b3e1db6ea975b8fbd073f1c2551e172614f78ea5ab989fdf",
+          "original_duration_word": 1000
+        },
+        {
+          "action": 1,
+          "direction": 0,
+          "frames": [
+            120657,
+            120658
+          ],
+          "original_sequence_sha256_uint32le": "c0615a77ddf02c60bac2b4e75bcdc2dc5b43b8799edf2c7c0ba40f3fda0b0b0c",
+          "original_duration_word": 100
+        }
+      ],
+      "original_frame_positions_count": 25,
+      "source_bitmap_numbers_first_appearance": [
+        120643,
+        120644,
+        120645,
+        120646,
+        120647,
+        120648,
+        120649,
+        120650,
+        120651,
+        120652,
+        120653,
+        120654,
+        120655,
+        120656,
+        120657,
+        120658
+      ],
+      "source_distinct_bitmap_count": 16,
+      "public_original_RD_PNG_aggregate_sha256": "4bfc125246c532bd273b4ecd0cfc5aef712b2f2f2d190853dcdf7674d6fcc3e7"
+    }
+  ],
+  "source_item2607_conflict_still_open": "NPC_SOURCE_CALLS_CAPTURE_PROOF_ITEMSET_NAMES_RING",
+  "bitmap_aggregate_hash_contract": "For each reward, first-use bitmap numbers joined as LF lines bitmap:RD_sha256:PNG_sha256:widthxheight; PET07 public source receipt columns [bitmap,original_ADRN_index,RD_sha256,index_pixel_sha256,flag,width,height,frame_use_count,PNG_sha256].",
+  "private_source_replay": {
+    "original_QUEST30_ZIP_read_and_8_CRC_verified": true,
+    "original_NPC_2205_ZIP_read_and_CRC_verified": true,
+    "original_PET07_HTML_and_original_RD_receipts_read": true,
+    "original_TW1_PNG_full_SHA_dimension_verified": 29,
+    "original_selected_SPR_sequences_uint32le_SHA_verified": 6,
+    "new_original_RD_binary_decodes": 0,
+    "original_mixed25_parent_RAR_reread": false,
+    "original_native_client_or_server_ran": false,
+    "new_private_ZIP": "StoneAge-INTEGRATION62-QUEST30-two-original-pet-reward-pixels-private.zip",
+    "new_private_ZIP_bytes": 271047,
+    "new_private_ZIP_sha256": "e075d132aa5ad0a4da25ecb8aaf325785f676291c588b0702173b7216db61cc1",
+    "new_private_ZIP_member_count": 31,
+    "private_Library_uploaded_and_independent_full_SHA_CRC_reread": true
+  },
+  "negative_bounds": {
+    "original_runtime_two_rewards_observed": false,
+    "official_TW1_and_mixed25_same_deployment_proven": false,
+    "source_GetPet_instance_and_template_are_same_numeric_namespace": false,
+    "mixed25_two_table_variant_selected_at_runtime_proven": false,
+    "native_sprite_palette_action_timing_proven": false,
+    "early_original_pet_species_and_NPC_quest_identity_verified": false,
+    "source_condition_comma_or_EVDEL_semantics_proven": false,
+    "item2607_source_name_mismatch_resolved": false,
+    "original_floor100_DAT_and_NPC_render_executed": false,
+    "commercial_PNG_and_NPC_source_text_published_to_Git": false
+  },
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "NEXT": "Distinct source-ready original pet-skill, quest item, NPC-map or graphic integration; stop repeated QUEST30 extraction and refrain from native runtime claims or future offline-game design."
+}
