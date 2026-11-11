@@ -1,0 +1,641 @@
+{
+  "schema": "stoneage.integration73.samugiru_five_gems_and_hero_blessing_source_bound_original_pixel_crosswalk.r1",
+  "date": "2026-11-11",
+  "fresh_remote": {
+    "main_head": "924e3502f3af044079817737c5398700c4f970e8",
+    "main_tree": "860a095037a1da4330c72db9b405646ec90dc9a7",
+    "latest_head_actions_completed_success": 26,
+    "preserved_full_CURRENT_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "preserved_full_CURRENT_bytes": 2709173,
+    "full_CURRENT_unchanged": true
+  },
+  "source_scopes": {
+    "NPC_and_original_item_rows": "LATER_COMMUNITY_MIXED25_NOT_EARLY_OFFICIAL_DEPLOYMENT",
+    "real_RD_pixels": "AUTHENTIC_TAIWAN_1_0_RETAIL_SAVED_PREVIOUSLY_DECODED",
+    "item_and_pixel_same_official_deployment_proven": false,
+    "original_quest_native_execution": false,
+    "origin_classification": "ORIGIN_UNRESOLVED"
+  },
+  "independent_private_source_replay": {
+    "original_NPC_zip_bytes": 995176,
+    "original_NPC_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "original_NPC_zip_CRC_verified_members": 2205,
+    "original_ITEM_zip_bytes": 5868386,
+    "original_ITEM_zip_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "original_ITEM_zip_CRC_verified_members": 838,
+    "selected_original_item94_rows_verified": 24,
+    "existing_saved_real_PNG_sha_and_size_verified": 12,
+    "new_raw_retail_REAL_RD_decodes": 0,
+    "original_native_script_runs": 0,
+    "selected_original_CP950_NPC_files_verified": 5
+  },
+  "original_source_files": [
+    {
+      "path": "poru/hero.create",
+      "bytes": 161,
+      "sha256": "558db1770b7430f3a80997ec3d1b2cc0ee4db2353da4fb0551163b1dc4d0609f",
+      "crc32": "933bc4df",
+      "source_carrier": "LATER_COMMUNITY_MIXED25"
+    },
+    {
+      "path": "poru/samugiru01.create",
+      "bytes": 605,
+      "sha256": "27cc9a708f414cd0ead2f3a294124c66347114917ac72c456efb4c6370d2466f",
+      "crc32": "3005323b",
+      "source_carrier": "LATER_COMMUNITY_MIXED25"
+    },
+    {
+      "path": "poru/samugiru",
+      "bytes": 3913,
+      "sha256": "90437c0b1e165d441ab677f21d605681bc39ce8f0c417e1c0f2788450455fb7c",
+      "crc32": "9c2ddf42",
+      "source_carrier": "LATER_COMMUNITY_MIXED25"
+    },
+    {
+      "path": "poru/girl",
+      "bytes": 2589,
+      "sha256": "5d3d7a1338369cb30686574cb2fe6fefd4ea219653ed3d45b2ea02a19b893e8a",
+      "crc32": "cbbf76ec",
+      "source_carrier": "LATER_COMMUNITY_MIXED25"
+    },
+    {
+      "path": "poru/samugiru_test",
+      "bytes": 3724,
+      "sha256": "1d4ac21905efadf205193ea2d92283c6c4c219c0308e082149d16ea4b915a7a0",
+      "crc32": "6be8a552",
+      "source_carrier": "LATER_COMMUNITY_MIXED25"
+    }
+  ],
+  "original_create_to_script_links": [
+    {
+      "source_create_file": "poru/hero.create",
+      "source_brace_ordinal": 0,
+      "original_block_sha256": "c6b15837a51dd6a51854b2945465d32a155b58728eab6b3e4812093d8f3345eb",
+      "floor_id": 5501,
+      "borncenter_raw": [
+        43,
+        5,
+        1,
+        1
+      ],
+      "graphic_alias": 100036,
+      "source_enemy_literal": "changeevent|file:poru/samugiru",
+      "linked_original_script": "poru/samugiru"
+    },
+    {
+      "source_create_file": "poru/samugiru01.create",
+      "source_brace_ordinal": 3,
+      "original_block_sha256": "61aa7e10826723c159604db27206f8199eae91fdd6db967d9648fe555f34d2c0",
+      "floor_id": 1013,
+      "borncenter_raw": [
+        14,
+        16,
+        1,
+        1
+      ],
+      "graphic_alias": 16009,
+      "source_enemy_literal": "changeevent|file:poru/girl",
+      "linked_original_script": "poru/girl"
+    }
+  ],
+  "original_event_blocks_static_source": [
+    {
+      "source_script": "poru/samugiru",
+      "source_ordinal": 0,
+      "source_line_start_1based": 4,
+      "source_line_end_inclusive_1based": 8,
+      "original_block_sha256": "13c1dae80925a6efb309029bf778db32085ee570b7498453f94adb06548fbdc6",
+      "literal_eventno": -1,
+      "literal_type": "MESSAGE",
+      "literal_event_condition": "NOWEV=63&ITEM=18542",
+      "literal_GetItem": [],
+      "literal_DelItem": [],
+      "literal_NpcWarp": []
+    },
+    {
+      "source_script": "poru/samugiru",
+      "source_ordinal": 1,
+      "source_line_start_1based": 11,
+      "source_line_end_inclusive_1based": 23,
+      "original_block_sha256": "fd481ea5b400eb43efea1614e31c48679fc24160df42c4e2cb49f794a92a3b08",
+      "literal_eventno": -1,
+      "literal_type": "ACCEPT",
+      "literal_event_condition": "NOWEV=63&ITEM=1501&ITEM!=18538",
+      "literal_GetItem": [
+        "18538"
+      ],
+      "literal_DelItem": [
+        "1501*1"
+      ],
+      "literal_NpcWarp": [
+        "5501.43.5,5502.10.7,5503.18.13,5503.48.77,5505.16.27,5505.46.73,5506.54.5,5506.7.38,5507.89.12,5507.49.25,5508.29.5"
+      ]
+    },
+    {
+      "source_script": "poru/samugiru",
+      "source_ordinal": 2,
+      "source_line_start_1based": 25,
+      "source_line_end_inclusive_1based": 37,
+      "original_block_sha256": "9885ec21dd9a490d161f2964a0930c0319e98567d3a5ad6a22a1bce3762c9815",
+      "literal_eventno": -1,
+      "literal_type": "ACCEPT",
+      "literal_event_condition": "ITEM=1512&NOWEV=63&ITEM!=18539&ITEM=18538",
+      "literal_GetItem": [
+        "18539"
+      ],
+      "literal_DelItem": [
+        "1512*1"
+      ],
+      "literal_NpcWarp": [
+        "5501.43.5,5502.10.7,5503.18.13,5503.48.77,5505.16.27,5505.46.73,5506.54.5,5506.7.38,5507.89.12,5507.49.25,5508.29.5"
+      ]
+    },
+    {
+      "source_script": "poru/samugiru",
+      "source_ordinal": 3,
+      "source_line_start_1based": 39,
+      "source_line_end_inclusive_1based": 51,
+      "original_block_sha256": "2f171600a2fc976fd7bfc1432ea74063b20d296677e24901c72a46891000c63c",
+      "literal_eventno": -1,
+      "literal_type": "ACCEPT",
+      "literal_event_condition": "ITEM=18539*1&ITEM=12667&NOWEV=63&ITEM!=18540",
+      "literal_GetItem": [
+        "18540"
+      ],
+      "literal_DelItem": [
+        "12667*1"
+      ],
+      "literal_NpcWarp": [
+        "5501.43.5,5502.10.7,5503.18.13,5503.48.77,5505.16.27,5505.46.73,5506.54.5,5506.7.38,5507.89.12,5507.49.25,5508.29.5"
+      ]
+    },
+    {
+      "source_script": "poru/samugiru",
+      "source_ordinal": 4,
+      "source_line_start_1based": 53,
+      "source_line_end_inclusive_1based": 65,
+      "original_block_sha256": "6694ee4c8650f7c48d8b51c4f9adb161fb6ffebc7d87deb549d30c74141abfe2",
+      "literal_eventno": -1,
+      "literal_type": "ACCEPT",
+      "literal_event_condition": "ITEM=18540*1&ITEM=12507&NOWEV=63&ITEM!=18541",
+      "literal_GetItem": [
+        "18541"
+      ],
+      "literal_DelItem": [
+        "12507*1"
+      ],
+      "literal_NpcWarp": [
+        "5501.43.5,5502.10.7,5503.18.13,5503.48.77,5505.16.27,5505.46.73,5506.54.5,5506.7.38,5507.89.12,5507.49.25,5508.29.5"
+      ]
+    },
+    {
+      "source_script": "poru/samugiru",
+      "source_ordinal": 5,
+      "source_line_start_1based": 67,
+      "source_line_end_inclusive_1based": 79,
+      "original_block_sha256": "8419decdfba51980ed6ebd77775b87b0288c92377d598ff1e219cc9d0b301ccd",
+      "literal_eventno": -1,
+      "literal_type": "ACCEPT",
+      "literal_event_condition": "ITEM=18541*1&ITEM=12849&NOWEV=63&ITEM!=18542",
+      "literal_GetItem": [
+        "18542"
+      ],
+      "literal_DelItem": [
+        "12849*1"
+      ],
+      "literal_NpcWarp": [
+        "5501.43.5,5502.10.7,5503.18.13,5503.48.77,5505.16.27,5505.46.73,5506.54.5,5506.7.38,5507.89.12,5507.49.25,5508.29.5"
+      ]
+    },
+    {
+      "source_script": "poru/samugiru",
+      "source_ordinal": 6,
+      "source_line_start_1based": 81,
+      "source_line_end_inclusive_1based": 85,
+      "original_block_sha256": "6ade86992f33cb1beda774779056eee6069b48b9ab2d176d2093f98b3aa5ade2",
+      "literal_eventno": -1,
+      "literal_type": "MESSAGE",
+      "literal_event_condition": "NOWEV=63&ITEM=18541",
+      "literal_GetItem": [],
+      "literal_DelItem": [],
+      "literal_NpcWarp": []
+    },
+    {
+      "source_script": "poru/samugiru",
+      "source_ordinal": 7,
+      "source_line_start_1based": 87,
+      "source_line_end_inclusive_1based": 91,
+      "original_block_sha256": "0fc0390512f5741f8465214d79a3ba797dc0f1d4263542ff861becc82b0b9db7",
+      "literal_eventno": -1,
+      "literal_type": "MESSAGE",
+      "literal_event_condition": "NOWEV=63&ITEM=18540",
+      "literal_GetItem": [],
+      "literal_DelItem": [],
+      "literal_NpcWarp": []
+    },
+    {
+      "source_script": "poru/samugiru",
+      "source_ordinal": 8,
+      "source_line_start_1based": 93,
+      "source_line_end_inclusive_1based": 97,
+      "original_block_sha256": "087570f44e18a27a1cd6dfd5ff69726f2544e1654992f4ef6727e493217df195",
+      "literal_eventno": -1,
+      "literal_type": "MESSAGE",
+      "literal_event_condition": "ITEM=18539&ITEM=18538",
+      "literal_GetItem": [],
+      "literal_DelItem": [],
+      "literal_NpcWarp": []
+    },
+    {
+      "source_script": "poru/samugiru",
+      "source_ordinal": 9,
+      "source_line_start_1based": 101,
+      "source_line_end_inclusive_1based": 105,
+      "original_block_sha256": "43df4c7032f3dbaffcbb9fa9bf7dcba19953554693cf7fd2bab1778c325981be",
+      "literal_eventno": -1,
+      "literal_type": "MESSAGE",
+      "literal_event_condition": "NOWEV=63",
+      "literal_GetItem": [],
+      "literal_DelItem": [],
+      "literal_NpcWarp": []
+    },
+    {
+      "source_script": "poru/girl",
+      "source_ordinal": 0,
+      "source_line_start_1based": 3,
+      "source_line_end_inclusive_1based": 13,
+      "original_block_sha256": "9379a7dd2c74f19cbb204c49bd49e4752fc945d2a4446551294472a90c96bec5",
+      "literal_eventno": -1,
+      "literal_type": "ACCEPT",
+      "literal_event_condition": "ENDEV=63&ITEM=18538&ITEM=18539&ITEM=18540&ITEM=18541&ITEM=18542",
+      "literal_GetItem": [
+        "18537,18543*5"
+      ],
+      "literal_DelItem": [
+        "18538,18539,18540,18541,18542"
+      ],
+      "literal_NpcWarp": []
+    },
+    {
+      "source_script": "poru/girl",
+      "source_ordinal": 1,
+      "source_line_start_1based": 17,
+      "source_line_end_inclusive_1based": 26,
+      "original_block_sha256": "07900e88b183831f96d50a833fb3adf66ff939202214ad60b66b506c8bd29ea4",
+      "literal_eventno": -1,
+      "literal_type": "ACCEPT",
+      "literal_event_condition": "ENDEV=63&ITEM=18538",
+      "literal_GetItem": [
+        "18543"
+      ],
+      "literal_DelItem": [
+        "18538"
+      ],
+      "literal_NpcWarp": []
+    },
+    {
+      "source_script": "poru/girl",
+      "source_ordinal": 2,
+      "source_line_start_1based": 30,
+      "source_line_end_inclusive_1based": 39,
+      "original_block_sha256": "9a36257423ec3b0f913e1d1e12a4f4c4351df1e2e5f94261a93f689c9cb9d4fe",
+      "literal_eventno": -1,
+      "literal_type": "ACCEPT",
+      "literal_event_condition": "ENDEV=63&ITEM=18539",
+      "literal_GetItem": [
+        "18543"
+      ],
+      "literal_DelItem": [
+        "18539"
+      ],
+      "literal_NpcWarp": []
+    },
+    {
+      "source_script": "poru/girl",
+      "source_ordinal": 3,
+      "source_line_start_1based": 43,
+      "source_line_end_inclusive_1based": 52,
+      "original_block_sha256": "2ed3674d2c4a16e3af9e39a437841e8391c62e15d7431222f3d53d76da86a47c",
+      "literal_eventno": -1,
+      "literal_type": "ACCEPT",
+      "literal_event_condition": "ENDEV=63&ITEM=18540",
+      "literal_GetItem": [
+        "18543"
+      ],
+      "literal_DelItem": [
+        "18540"
+      ],
+      "literal_NpcWarp": []
+    },
+    {
+      "source_script": "poru/girl",
+      "source_ordinal": 4,
+      "source_line_start_1based": 56,
+      "source_line_end_inclusive_1based": 65,
+      "original_block_sha256": "8b3595b70c06d740d5accc93452ceb544522e9c05f3fb7c5a10e800365b85913",
+      "literal_eventno": -1,
+      "literal_type": "ACCEPT",
+      "literal_event_condition": "ENDEV=63&ITEM=18541",
+      "literal_GetItem": [
+        "18543"
+      ],
+      "literal_DelItem": [
+        "18541"
+      ],
+      "literal_NpcWarp": []
+    },
+    {
+      "source_script": "poru/girl",
+      "source_ordinal": 5,
+      "source_line_start_1based": 69,
+      "source_line_end_inclusive_1based": 78,
+      "original_block_sha256": "3b622f3937b9b0b3e39cc1718ca3dea18f6c992cc186d8a7b323991e175be006",
+      "literal_eventno": -1,
+      "literal_type": "ACCEPT",
+      "literal_event_condition": "ENDEV=63&ITEM=18542",
+      "literal_GetItem": [
+        "18543"
+      ],
+      "literal_DelItem": [
+        "18542"
+      ],
+      "literal_NpcWarp": []
+    },
+    {
+      "source_script": "poru/girl",
+      "source_ordinal": 6,
+      "source_line_start_1based": 82,
+      "source_line_end_inclusive_1based": 86,
+      "original_block_sha256": "7b81eb0d070c62bacb5c3d08e1e944b43b2413d951bd21f55fc9a4616661fd4f",
+      "literal_eventno": -1,
+      "literal_type": "MESSAGE",
+      "literal_event_condition": "ENDEV=63",
+      "literal_GetItem": [],
+      "literal_DelItem": [],
+      "literal_NpcWarp": []
+    }
+  ],
+  "cross_source_12_item_pixel_candidates": [
+    {
+      "item_id": 1501,
+      "original_mixed25_short_name": "耐久力回復藥",
+      "original_itemset_A_row_SHA256": "05e30220520216cb04c525e449ec8c5c2ecb1ecb17b38a5709d20535aca8fde4",
+      "original_itemset_B_row_SHA256": "05e30220520216cb04c525e449ec8c5c2ecb1ecb17b38a5709d20535aca8fde4",
+      "original_item_image_alias": 23014,
+      "tw1_physical_bitmap_number": 6550,
+      "tw1_actual_original_RD_SHA256": "7f61a1be76077da5934cf46d9bfdf37ba4ce4753c3adc460e55381742c8ab52c",
+      "tw1_original_indexed_pixel_SHA256": "3ffe75ab98b31f52b52d53652b4e5e6424bd4cdce8099209f66c931bc4ace761",
+      "tw1_saved_candidate_PNG_SHA256": "c9029f0ea015c70176ce30d7e49c7dfe594a1a68c52c9a941b1057ec5748b2d5",
+      "tw1_saved_candidate_RGBA_SHA256": "e3a6f828eb2fe07d391b3e132a035501f8241e5a14104165b4542b93d228e537",
+      "tw1_width": 24,
+      "tw1_height": 31,
+      "cross_carrier_same_official_deployment_proven": false
+    },
+    {
+      "item_id": 1512,
+      "original_mixed25_short_name": "氣力回復藥",
+      "original_itemset_A_row_SHA256": "b8fc05fa5a021731ea64d6f8b64506f303e3609b526e53920a7dfc28861ac1f7",
+      "original_itemset_B_row_SHA256": "b8fc05fa5a021731ea64d6f8b64506f303e3609b526e53920a7dfc28861ac1f7",
+      "original_item_image_alias": 23007,
+      "tw1_physical_bitmap_number": 6543,
+      "tw1_actual_original_RD_SHA256": "3c7ae4f27190f496525047173e59faa6e7db02989da1c0744f9fb179db446f64",
+      "tw1_original_indexed_pixel_SHA256": "781ff8e27052f7f6aa521811fd849bea6f2cb783db1d9abc25f2ebdfddf95a30",
+      "tw1_saved_candidate_PNG_SHA256": "dcf469c9ee1fe6ac1cc0449883864f6d2b4a701e0d2011c218d09e8fba716215",
+      "tw1_saved_candidate_RGBA_SHA256": "538587f101d849c6817880ec4e03ef586d2eeb9ac67760cd1c5f2a0f39be8292",
+      "tw1_width": 24,
+      "tw1_height": 28,
+      "cross_carrier_same_official_deployment_proven": false
+    },
+    {
+      "item_id": 12667,
+      "original_mixed25_short_name": "烤豬排",
+      "original_itemset_A_row_SHA256": "1d4917f6349daee22beedb78014b8b5435ea0261a69fb6ebcc5b509375ebe543",
+      "original_itemset_B_row_SHA256": "1d4917f6349daee22beedb78014b8b5435ea0261a69fb6ebcc5b509375ebe543",
+      "original_item_image_alias": 24451,
+      "tw1_physical_bitmap_number": 6618,
+      "tw1_actual_original_RD_SHA256": "5e445aff90a3fa25582cbe7426afb0725f90021a0120b3998063853249f2edab",
+      "tw1_original_indexed_pixel_SHA256": "be390f00d8e142ab63fcdde5dc9e7da15a33784818930364c67219303444061e",
+      "tw1_saved_candidate_PNG_SHA256": "1cbb6f99ef47ffeb060b12bab2bfabcf1912df71e7b1cd86bc2db084925520b6",
+      "tw1_saved_candidate_RGBA_SHA256": "41a3e4794e6157ae5f27dfb7cc896df7599e9b852ecad6d4f055e27e99810d7c",
+      "tw1_width": 60,
+      "tw1_height": 36,
+      "cross_carrier_same_official_deployment_proven": false
+    },
+    {
+      "item_id": 12507,
+      "original_mixed25_short_name": "味道爽口的肉湯",
+      "original_itemset_A_row_SHA256": "176e81bb725b4ffc99d327db61f4ab8124d851375891b1fd81dcc6d87f7e466f",
+      "original_itemset_B_row_SHA256": "176e81bb725b4ffc99d327db61f4ab8124d851375891b1fd81dcc6d87f7e466f",
+      "original_item_image_alias": 24422,
+      "tw1_physical_bitmap_number": 6589,
+      "tw1_actual_original_RD_SHA256": "3f96d6df308bd95092cb7096b1b69e37a5ccbb9459a521969a010a0b2593187c",
+      "tw1_original_indexed_pixel_SHA256": "367246286eee46daca71372faab43e279f1fa3aa37435ab2e871b10ff4b2e146",
+      "tw1_saved_candidate_PNG_SHA256": "ab234a0ff8eedfa74904c8529c475561ffa11c351bec493fbf8dc0e8acef89ba",
+      "tw1_saved_candidate_RGBA_SHA256": "b5f8c49611a85977fd512dad74541aea6565b603e2f90992f891f15bb1d7ed92",
+      "tw1_width": 52,
+      "tw1_height": 35,
+      "cross_carrier_same_official_deployment_proven": false
+    },
+    {
+      "item_id": 12849,
+      "original_mixed25_short_name": "威力上升蘑菇",
+      "original_itemset_A_row_SHA256": "ed90a270aabe622ca8767ccbd409340012f1f533d03b0e2a240197b1d3b98807",
+      "original_itemset_B_row_SHA256": "ed90a270aabe622ca8767ccbd409340012f1f533d03b0e2a240197b1d3b98807",
+      "original_item_image_alias": 24406,
+      "tw1_physical_bitmap_number": 6573,
+      "tw1_actual_original_RD_SHA256": "38b82f28e9745721b49693f236945adf5be780e7e7198259731305b6c46243d2",
+      "tw1_original_indexed_pixel_SHA256": "0051b369b08071c3e0eca613931af46ba932c4d72669e6b3ac9f281172476252",
+      "tw1_saved_candidate_PNG_SHA256": "d6690916d1b4587bebca431f5ec77f4d78c4e4ede4babab65948acab7228e50e",
+      "tw1_saved_candidate_RGBA_SHA256": "304caca74d7e2a974bd0224a6c819bdbd94b4e3f00e1f1c944cc46ac5655088f",
+      "tw1_width": 40,
+      "tw1_height": 41,
+      "cross_carrier_same_official_deployment_proven": false
+    },
+    {
+      "item_id": 18538,
+      "original_mixed25_short_name": "薩姆吉爾的勾玉",
+      "original_itemset_A_row_SHA256": "b9816fbcf5decc709b0f48ebda8703190b48980a8db3c51df24201fb24dc6301",
+      "original_itemset_B_row_SHA256": "b9816fbcf5decc709b0f48ebda8703190b48980a8db3c51df24201fb24dc6301",
+      "original_item_image_alias": 24067,
+      "tw1_physical_bitmap_number": 6777,
+      "tw1_actual_original_RD_SHA256": "2bcded9b8c11b44b9bea42e5963b73f0abaaa774fd359de01f2062cab2046873",
+      "tw1_original_indexed_pixel_SHA256": "f99a94edf1cb36a04cc62f8e18a4d451bde0e30c6805dc16e0a42c7420649dfe",
+      "tw1_saved_candidate_PNG_SHA256": "a64bd8c937348c631f35a9d5c0b10f15bf1e8d584deb58f42283d0a627576d91",
+      "tw1_saved_candidate_RGBA_SHA256": "5986812af0b853c45efa73910ea12b5022774aece2a8ea0172db71b2ac527603",
+      "tw1_width": 16,
+      "tw1_height": 18,
+      "cross_carrier_same_official_deployment_proven": false
+    },
+    {
+      "item_id": 18539,
+      "original_mixed25_short_name": "薩姆吉爾的勾玉",
+      "original_itemset_A_row_SHA256": "e8272c3b8a9dfa5131beebaffeb33a63fc686dac7a60c2a21f13891f0ffc5b8a",
+      "original_itemset_B_row_SHA256": "e8272c3b8a9dfa5131beebaffeb33a63fc686dac7a60c2a21f13891f0ffc5b8a",
+      "original_item_image_alias": 24066,
+      "tw1_physical_bitmap_number": 6776,
+      "tw1_actual_original_RD_SHA256": "67abaa1fcde210a9d116e74544ddd26c0d93e985614c21fc6b931f2044e9478f",
+      "tw1_original_indexed_pixel_SHA256": "d5cbcbd19aa4b3e4e7a0afa37a25b30e3c09d5f851aadfa2e043c8db0473c33b",
+      "tw1_saved_candidate_PNG_SHA256": "585eb6b6bf9114d4c0214888511143fd2e8f2ba813fa91d9428db309ed60711e",
+      "tw1_saved_candidate_RGBA_SHA256": "f4df16ccc7f9361b0faf196b9da774df45ee6d983d374b3041048501bca895d0",
+      "tw1_width": 20,
+      "tw1_height": 19,
+      "cross_carrier_same_official_deployment_proven": false
+    },
+    {
+      "item_id": 18540,
+      "original_mixed25_short_name": "薩姆吉爾的勾玉",
+      "original_itemset_A_row_SHA256": "f62df464195e2957f0fc470a78349f7f6ec465ca3f01c1e7aa79451b6ee3ac1c",
+      "original_itemset_B_row_SHA256": "f62df464195e2957f0fc470a78349f7f6ec465ca3f01c1e7aa79451b6ee3ac1c",
+      "original_item_image_alias": 24065,
+      "tw1_physical_bitmap_number": 6775,
+      "tw1_actual_original_RD_SHA256": "d6175184d5590da71d4a46e86e7af11a662926e36a805f2ecfdfe138fcad8762",
+      "tw1_original_indexed_pixel_SHA256": "283144712f4bf8cdfa6dc97fd2e37c8799faaa9cb8bed5280b93dad1a9c4799d",
+      "tw1_saved_candidate_PNG_SHA256": "64d99514f76266b0ffd0219225c66322b31f61b0bdc26257a62d53acfffee7bf",
+      "tw1_saved_candidate_RGBA_SHA256": "d93e378b41eacaee17460e3c908edfee183263261c2c5008ed0de3cd9a264184",
+      "tw1_width": 20,
+      "tw1_height": 17,
+      "cross_carrier_same_official_deployment_proven": false
+    },
+    {
+      "item_id": 18541,
+      "original_mixed25_short_name": "薩姆吉爾的勾玉",
+      "original_itemset_A_row_SHA256": "f9341d76c464382e4f051599593e7831df100b59fbb4c1255cf3bda82b1d784b",
+      "original_itemset_B_row_SHA256": "f9341d76c464382e4f051599593e7831df100b59fbb4c1255cf3bda82b1d784b",
+      "original_item_image_alias": 24064,
+      "tw1_physical_bitmap_number": 6774,
+      "tw1_actual_original_RD_SHA256": "bf461b460d6118b80c50ee2b2fe6d4b9034e12c41261c73a5c876e0701e3f7f6",
+      "tw1_original_indexed_pixel_SHA256": "b6c3897794c0f16286fea77b95d0effe92dcd2bfe28605957528f2b9a4bfb0e9",
+      "tw1_saved_candidate_PNG_SHA256": "6cb05d3cfb328bf62cfe161cc105792f00724a9c267486121c6075b1e04a2b7d",
+      "tw1_saved_candidate_RGBA_SHA256": "b294a39dfc5d9f4c3fa82badfe97ffcbc7729341609301631169117613f614d4",
+      "tw1_width": 16,
+      "tw1_height": 19,
+      "cross_carrier_same_official_deployment_proven": false
+    },
+    {
+      "item_id": 18542,
+      "original_mixed25_short_name": "薩姆吉爾的勾玉",
+      "original_itemset_A_row_SHA256": "a861cb388c9142226164f27e08956cbdc5f03669e606925e6e33b33b8373459b",
+      "original_itemset_B_row_SHA256": "a861cb388c9142226164f27e08956cbdc5f03669e606925e6e33b33b8373459b",
+      "original_item_image_alias": 24068,
+      "tw1_physical_bitmap_number": 6778,
+      "tw1_actual_original_RD_SHA256": "aa9f51a3d545aae4552c1cbf4300571a6ec1fb32660b1246fb39c054ebd21922",
+      "tw1_original_indexed_pixel_SHA256": "eb6b535b9716056af4533e004fb2395b6456c3398f2597e1754f428936d5d8ff",
+      "tw1_saved_candidate_PNG_SHA256": "faadf9e4c2f09eaeeac8f8a929351fb528eb382b224107d54acdf6c32f63c9f9",
+      "tw1_saved_candidate_RGBA_SHA256": "d8005944421c12d8a450681badbbf8a1bc5bab8d977b8bddabc8ca600e526b93",
+      "tw1_width": 20,
+      "tw1_height": 18,
+      "cross_carrier_same_official_deployment_proven": false
+    },
+    {
+      "item_id": 18537,
+      "original_mixed25_short_name": "薩姆吉爾的首飾",
+      "original_itemset_A_row_SHA256": "17ed61a9bc62206849058aeb06426cc1beb3eaabb924506b3eb1a2b13693285a",
+      "original_itemset_B_row_SHA256": "17ed61a9bc62206849058aeb06426cc1beb3eaabb924506b3eb1a2b13693285a",
+      "original_item_image_alias": 22038,
+      "tw1_physical_bitmap_number": 6505,
+      "tw1_actual_original_RD_SHA256": "dbd08b2007667bd823e57b135a94b80707eb614be1bc841639b22aedfd615abe",
+      "tw1_original_indexed_pixel_SHA256": "92bf234424b9e23f96452081bea0f41044d856d90b954587baab1c47354d5075",
+      "tw1_saved_candidate_PNG_SHA256": "582d3babd1e1d12a3b9c28035f127add53a330e763ac064c81db28acf189bace",
+      "tw1_saved_candidate_RGBA_SHA256": "812a343be3d5403aa393a2742a3043187fefaea357796146debac526fd46744c",
+      "tw1_width": 48,
+      "tw1_height": 38,
+      "cross_carrier_same_official_deployment_proven": false
+    },
+    {
+      "item_id": 18543,
+      "original_mixed25_short_name": "英雄的祝福",
+      "original_itemset_A_row_SHA256": "70f3cfaa361366dcd310ba28c246b170410f373c9fd2dcc124e58e8930bd991a",
+      "original_itemset_B_row_SHA256": "70f3cfaa361366dcd310ba28c246b170410f373c9fd2dcc124e58e8930bd991a",
+      "original_item_image_alias": 24053,
+      "tw1_physical_bitmap_number": 6763,
+      "tw1_actual_original_RD_SHA256": "fdb6dc791e98a0b93642775d7a4447c6466f0b422aa05dffdd9149dd8512e7b7",
+      "tw1_original_indexed_pixel_SHA256": "58c5e619b643eef68240cbadc83832177730b353183a72d7361133e0fec07e77",
+      "tw1_saved_candidate_PNG_SHA256": "1064a7ff214caaae0c95d1e76b403fee6f6eec5eb4118154676d874002aff606",
+      "tw1_saved_candidate_RGBA_SHA256": "1a6c67c2ee7876295653400e2abc529f84a8862feb052c8ab9412b9785efd3be",
+      "tw1_width": 28,
+      "tw1_height": 22,
+      "cross_carrier_same_official_deployment_proven": false
+    }
+  ],
+  "source_limited_derived_relationships": {
+    "samugiru_five_explicit_one_item_input_to_gem_outputs": [
+      [
+        1501,
+        18538
+      ],
+      [
+        1512,
+        18539
+      ],
+      [
+        12667,
+        18540
+      ],
+      [
+        12507,
+        18541
+      ],
+      [
+        12849,
+        18542
+      ]
+    ],
+    "girl_five_gems_all_required_in_first_ACCEPT": [
+      18538,
+      18539,
+      18540,
+      18541,
+      18542
+    ],
+    "girl_first_ACCEPT_getitem_literal": "18537,18543*5",
+    "girl_single_gem_ACCEPT_count": 5,
+    "girl_single_gem_getitem_literal": "18543",
+    "source_samugiru_test_is_present_but_direct_CREATE_links": 0,
+    "source_test_filename_does_not_prove_runtime_inactive": true,
+    "samugiru_event_predicate": "NOWEV=63",
+    "girl_event_predicate": "ENDEV=63",
+    "different_literal_event_predicates_must_not_be_collapsed": true,
+    "samugiru_NpcWarp_literal_candidate_positions_per_ACCEPT": 11,
+    "NpcWarp_randomness_or_execution_proven": false,
+    "native_event_priority_or_item_transaction_proven": false
+  },
+  "prior_specialized_work_dedup": {
+    "poru_quest23_24": "four_stones_and_event63_old_files_static_only",
+    "integration47": "13_mixed25_original_DAT_static_joins_no_girl_item_pixel_special",
+    "integration58": "three_poru_dragons_and_100388_100373_pet_pixel_candidates",
+    "integration72": "dream_sage_four_different_original_items",
+    "novel_this_unit": "two_source_scripts_12_source_original_item_rows_and_twelve_prior_RD_pixel_candidates_joined_as_one_new_statically_qualified_contents_relation",
+    "new_original_source_files_discovered": 0,
+    "new_real_RD_decodes": 0
+  },
+  "private_original_custody": {
+    "private_archive_file": "StoneAge-INTEGRATION73-Samugiru-original-source-12-pixel-private.zip",
+    "private_archive_bytes": 58292,
+    "private_archive_sha256": "a5addc832204c9b7a88a402874a5e0b5ec9a1bfa4e86e2a145c4f4575d78d64a",
+    "private_archive_members": 31,
+    "CRC_all_pass": true,
+    "independent_library_readback_verified": true,
+    "copyright_originals_published_on_GitHub": false
+  },
+  "status": {
+    "stage_A": {
+      "PARTIAL": 7,
+      "OPEN": 2
+    },
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "not_proven": {
+    "TW1_original_items_same_official_deployment": false,
+    "official_1999_event63": false,
+    "TW1_original_girl_actor_selected": false,
+    "original_npc_warp_destination_executed": false,
+    "original_choice_branch_priority": false,
+    "original_item_consumption_success": false,
+    "actual_quest_reward_granted": false,
+    "original_commercial_client_or_server_executed": false
+  },
+  "next": "OTHER_SOURCE_READY_UNCOVERED_ORIGINAL_2D_CONTENT_NOT_REPEAT_SAMUGIRU_12_PIXEL_CROSSWALK"
+}
