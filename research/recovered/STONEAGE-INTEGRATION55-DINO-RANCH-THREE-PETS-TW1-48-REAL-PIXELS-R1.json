@@ -1,0 +1,1584 @@
+{
+  "schema": "stoneage.integration55.dino_ranch_original_NPC_script_PET_template_TW1_48_original_pixel_custody.r1",
+  "date": "2026-11-11",
+  "starting_remote_main": {
+    "head": "ac262f06d8d32ecf75d0bfec773d4f0bc2123f85",
+    "tree": "954b0a6b8ae44cad8dd0a51fe294800de1dedfb1",
+    "source_of_truth": "REMOTE_GITHUB",
+    "open_PR": 0
+  },
+  "qualified_input_git_blobs": {
+    "quest17": {
+      "path": "research/recovered/STONEAGE-QUEST17-DINO-RANCH-SOURCE-R1.json",
+      "git_blob_sha": "20bae57956e9b3a25df94a71f47fff0641b81b4d"
+    },
+    "pet10": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-10-ORIGINAL-MIXED25-SERVER-TABLES-R1.json",
+      "git_blob_sha": "25a37aeb134fb180e322e7dc335029b7374452d8"
+    },
+    "pet07": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-07-TW10-BATCH-PUBLIC-R1.json",
+      "git_blob_sha": "0b5f81b41a642025ab53a12884638fdee887470e"
+    },
+    "pet15": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-15-TW10-ALL-SELECTED-MOTION-SOURCE-R1.json",
+      "git_blob_sha": "e1cac6980353d09353de43fec0948bfcd84d49e6"
+    }
+  },
+  "history_original_current_blob_preserved": {
+    "path": "docs/CURRENT-STATE.md",
+    "blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "bytes": 2709173,
+    "full_remote_blob_retrieved": true,
+    "edited": false
+  },
+  "source_version_scope": {
+    "NPC_scripts_and_enemybase": "COMMUNITY_PRESERVED_LATER_MIXED25_SERVER_NOT_EARLY_OFFICIAL_BUILD",
+    "original_2D_SPR_and_4_item_RD": "INDEPENDENT_AUTHENTICATED_TW1_RETAIL_PRIVATE_SOURCE",
+    "source_same_deployment_authenticated": false,
+    "pet_species_names_authenticated": false
+  },
+  "private_original_source_custody_replay": {
+    "quest17": {
+      "name": "StoneAge-QUEST17-dino-ranch-original-private.zip",
+      "bytes": 29802,
+      "sha256": "07fac6014b9eeef0a352d8c7b74f2fb1ac47cd97347ed796d16a0c7a52243081",
+      "member_count": 32,
+      "CRC_pass": true,
+      "embedded_source_git_blob_sha": "20bae57956e9b3a25df94a71f47fff0641b81b4d"
+    },
+    "pet07": {
+      "name": "StoneAge-PET07-original-sprite-private-catalog.html",
+      "bytes": 15123277,
+      "sha256": "58e8ee4ff5165ed2f61663d67ae1cd0a8183622fa3375c480232784bfce9dc76"
+    },
+    "pet07_original_source_receipt": {
+      "name": "StoneAge-PET07-private-original-RD-verified-source-report.json",
+      "bytes": 1617404,
+      "sha256": "b5ad2e58930afbe90604a1d72e3c17ab0adea446e7c118be775e3973315e6cb4"
+    }
+  },
+  "source_original_ranch_all_six_CREATEs": [
+    {
+      "ordinal": 0,
+      "source_block_sha256": "cd05cdd6b12feda9d645bab7c703972fa0eba3eaa9053a6cd91ba492551f94ad",
+      "floor": 201,
+      "borncorner": [
+        19,
+        24,
+        19,
+        24
+      ],
+      "original_name": "牧場主人",
+      "graphic_alias": 16017,
+      "script_ref": "jaruga/event/bait_01"
+    },
+    {
+      "ordinal": 1,
+      "source_block_sha256": "3003ab0cc974c678d106692730d93f112d7e0f757e4f4c415982bde14d02e58e",
+      "floor": 20901,
+      "borncorner": [
+        14,
+        8,
+        14,
+        8
+      ],
+      "original_name": "洞窟管理者",
+      "graphic_alias": 16018,
+      "script_ref": "jaruga/event/bait_02"
+    },
+    {
+      "ordinal": 2,
+      "source_block_sha256": "70424a930b3ef6ca7900d540b73c11eecd7981167f0d3042d5bda08be84a4c9e",
+      "floor": 201,
+      "borncorner": [
+        19,
+        13,
+        19,
+        13
+      ],
+      "original_name": "證明發行(綠)",
+      "graphic_alias": 16067,
+      "script_ref": "jaruga/event/bait_03a2"
+    },
+    {
+      "ordinal": 3,
+      "source_block_sha256": "09c9e86465e956ec4c13d2b1712586f2ea7b4c977a15678102cf2422da232b19",
+      "floor": 201,
+      "borncorner": [
+        19,
+        14,
+        19,
+        14
+      ],
+      "original_name": "證明發行(紅)",
+      "graphic_alias": 16036,
+      "script_ref": "jaruga/event/bait_03b2"
+    },
+    {
+      "ordinal": 4,
+      "source_block_sha256": "fb0fc5ea2ba731e7aca9fafe6cbccec005080cfb09b457f58f0d522e9c3f2885",
+      "floor": 201,
+      "borncorner": [
+        19,
+        15,
+        19,
+        15
+      ],
+      "original_name": "證明發行(藍)",
+      "graphic_alias": 16065,
+      "script_ref": "jaruga/event/bait_03c2"
+    },
+    {
+      "ordinal": 5,
+      "source_block_sha256": "2ae46c4ca03f34034d58348c9351a922f158b4f76b9716c36b4dffcd0f13928a",
+      "floor": 20901,
+      "borncorner": [
+        22,
+        16,
+        22,
+        16
+      ],
+      "original_name": "洞窟管理人的次男",
+      "graphic_alias": 16046,
+      "script_ref": "jaruga/event/bait_04"
+    }
+  ],
+  "source_prior_MAP09_two_DAT_metadata_ONLY": {
+    "previously_verified_map09_DAT": [
+      {
+        "floor": 201,
+        "sha256": "ddc811bd4483403ae49ea7882650e3047a9abb29e67cbb0bd6e43377873314d1",
+        "geometry": [
+          30,
+          40
+        ],
+        "source_DAT_bytes_replayed_this_round": false
+      },
+      {
+        "floor": 20901,
+        "sha256": "71dd85505dabe06de069741fbc38b89d634cdfb956b880d21d09f6d1558e738b",
+        "geometry": [
+          70,
+          70
+        ],
+        "source_DAT_bytes_replayed_this_round": false
+      }
+    ],
+    "original_DAT_cells_replayed_this_round": 0
+  },
+  "source_quest17_original_item_table_8_records": [
+    {
+      "item_id": 2589,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2172,
+          "sha256": "5b3d31ca26304c0926bd7b69c6fd959c3e19c0a90ad44783212eb1d7db4d2337",
+          "original_column_count": 94,
+          "graphic_alias": 24222
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2567,
+          "sha256": "5b3d31ca26304c0926bd7b69c6fd959c3e19c0a90ad44783212eb1d7db4d2337",
+          "original_column_count": 94,
+          "graphic_alias": 24222
+        }
+      ],
+      "source_image_alias": 24222,
+      "cross_carrier_TW1_candidate_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1"
+    },
+    {
+      "item_id": 2590,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2173,
+          "sha256": "162d34e65e40585fa5cca5c97d0e73180c55a5aac66100aec4d1d3202c771609",
+          "original_column_count": 94,
+          "graphic_alias": 24222
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2568,
+          "sha256": "162d34e65e40585fa5cca5c97d0e73180c55a5aac66100aec4d1d3202c771609",
+          "original_column_count": 94,
+          "graphic_alias": 24222
+        }
+      ],
+      "source_image_alias": 24222,
+      "cross_carrier_TW1_candidate_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1"
+    },
+    {
+      "item_id": 2591,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2174,
+          "sha256": "c559a9a169c458e68c1e4d2086cb7a4cdcb8572e5d9e80402ea40589ee4c9d3f",
+          "original_column_count": 94,
+          "graphic_alias": 24222
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2569,
+          "sha256": "c559a9a169c458e68c1e4d2086cb7a4cdcb8572e5d9e80402ea40589ee4c9d3f",
+          "original_column_count": 94,
+          "graphic_alias": 24222
+        }
+      ],
+      "source_image_alias": 24222,
+      "cross_carrier_TW1_candidate_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1"
+    },
+    {
+      "item_id": 2592,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2175,
+          "sha256": "6294537c8a8cf74349bbf579ceb784659af969ca317a40a94308a69a01122e48",
+          "original_column_count": 94,
+          "graphic_alias": 24222
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2570,
+          "sha256": "6294537c8a8cf74349bbf579ceb784659af969ca317a40a94308a69a01122e48",
+          "original_column_count": 94,
+          "graphic_alias": 24222
+        }
+      ],
+      "source_image_alias": 24222,
+      "cross_carrier_TW1_candidate_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1"
+    },
+    {
+      "item_id": 2593,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2176,
+          "sha256": "1cb9c06e6afa9cef44306cdcf3447f6bb2afea33b92fdffc7b0a18eaaf47514a",
+          "original_column_count": 94,
+          "graphic_alias": 24222
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2571,
+          "sha256": "1cb9c06e6afa9cef44306cdcf3447f6bb2afea33b92fdffc7b0a18eaaf47514a",
+          "original_column_count": 94,
+          "graphic_alias": 24222
+        }
+      ],
+      "source_image_alias": 24222,
+      "cross_carrier_TW1_candidate_PNG_SHA256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1"
+    },
+    {
+      "item_id": 2594,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2177,
+          "sha256": "cbf3dc5e77c2436d1fd7d4b2b2aedbe2fe40dcd2287270c877bcb996dfe84f3a",
+          "original_column_count": 94,
+          "graphic_alias": 22120
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2572,
+          "sha256": "cbf3dc5e77c2436d1fd7d4b2b2aedbe2fe40dcd2287270c877bcb996dfe84f3a",
+          "original_column_count": 94,
+          "graphic_alias": 22120
+        }
+      ],
+      "source_image_alias": 22120,
+      "cross_carrier_TW1_candidate_PNG_SHA256": "9f5ee9a16971c48b8358b42d878d6b864699c1da0b2afc478af9de329a4bef71"
+    },
+    {
+      "item_id": 2595,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2178,
+          "sha256": "66151dc50f21a28edb7adef6c36a5cef6fc082c78739cc1405a526d498f0bf85",
+          "original_column_count": 94,
+          "graphic_alias": 22114
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2573,
+          "sha256": "66151dc50f21a28edb7adef6c36a5cef6fc082c78739cc1405a526d498f0bf85",
+          "original_column_count": 94,
+          "graphic_alias": 22114
+        }
+      ],
+      "source_image_alias": 22114,
+      "cross_carrier_TW1_candidate_PNG_SHA256": "0f529bb53c38f37c5284a8b52231a9fe712ad1363be4c69d27035d14d7645d40"
+    },
+    {
+      "item_id": 2596,
+      "source_rows": [
+        {
+          "table": "itemset.txt",
+          "row": 2179,
+          "sha256": "3e4a6ec27c7c5829732a9b1b1314bdfeca4f7ac8fba570f977278d361c664c37",
+          "original_column_count": 94,
+          "graphic_alias": 22118
+        },
+        {
+          "table": "itemset0710.txt",
+          "row": 2574,
+          "sha256": "3e4a6ec27c7c5829732a9b1b1314bdfeca4f7ac8fba570f977278d361c664c37",
+          "original_column_count": 94,
+          "graphic_alias": 22118
+        }
+      ],
+      "source_image_alias": 22118,
+      "cross_carrier_TW1_candidate_PNG_SHA256": "05bd788c5ae1e0c807a5c9c930617ce92b70e73082cd37668ed0b0b8b1665b4a"
+    }
+  ],
+  "three_source_bounded_pets_with_48_actual_real_PNG_observations": [
+    {
+      "source_quest_PET_predicate_numeric": 560,
+      "source_active_script": {
+        "path": "jaruga/event/bait_03a2",
+        "full_original_file_sha256": "84808a5fc6b8fa4852696266fce5208df4c314a9877df19fcbbb039c3c477fe8",
+        "original_bytes": 4348,
+        "branch_metadata": {
+          "script": "jaruga/event/bait_03a2",
+          "wristband_id": 2594,
+          "pet_predicate_numeric": 560,
+          "original_events": 10,
+          "unreferenced_variant_source": "jaruga/event/bait_03a",
+          "unreferenced_variant_events": 18,
+          "first_two_sections_use_EVDEL": true,
+          "first_two_sections_use_NotDel_wristband": true,
+          "four_following_sections_use_explicit_DelPet": true
+        },
+        "source_DelPet_literal_patterns": [
+          "DelPet:PET>0-560*4",
+          "DelPet:PET>0-560*3",
+          "DelPet:PET>0-560*2",
+          "DelPet:PET>0-560*1"
+        ],
+        "initial_EVDEL_requires_source_semantics": "UNVERIFIED"
+      },
+      "source_CREATE_NPC": {
+        "ordinal": 2,
+        "source_block_sha256": "70424a930b3ef6ca7900d540b73c11eecd7981167f0d3042d5bda08be84a4c9e",
+        "floor": 201,
+        "borncorner": [
+          19,
+          13,
+          19,
+          13
+        ],
+        "original_name": "證明發行(綠)",
+        "graphic_alias": 16067,
+        "script_ref": "jaruga/event/bait_03a2"
+      },
+      "source_mixed25_template_main": {
+        "file": "enemybase.txt",
+        "physical_source_row": 381,
+        "template_id": 560,
+        "graphic": 100271,
+        "PETFLG": 1,
+        "original_source_line_sha256": "5db370b0f83c4c92ad8b03026dd4f51cd7012a36990497feedbe96fec84d9e60"
+      },
+      "source_mixed25_template_alternative": {
+        "file": "enemybase2.txt",
+        "physical_source_row": 185,
+        "template_id": 560,
+        "graphic": 100271,
+        "PETFLG": 1,
+        "original_source_line_sha256": "5db370b0f83c4c92ad8b03026dd4f51cd7012a36990497feedbe96fec84d9e60"
+      },
+      "source_graphic_other_candidate_template_rows": {
+        "enemybase.txt": [
+          {
+            "physical_source_row": 51,
+            "template": 51,
+            "graphic": 100271,
+            "pet_flag": 1,
+            "original_source_line_sha256": "5803d649bda7830b60e2b7cc188aa96f5980e96ff07358f80d5e7b39d4ef7522"
+          },
+          {
+            "physical_source_row": 327,
+            "template": 505,
+            "graphic": 100271,
+            "pet_flag": 0,
+            "original_source_line_sha256": "15c0843296412f9cedba8e8871f74fb4625d97ad19b161be87660dcca45b5418"
+          },
+          {
+            "physical_source_row": 381,
+            "template": 560,
+            "graphic": 100271,
+            "pet_flag": 1,
+            "original_source_line_sha256": "5db370b0f83c4c92ad8b03026dd4f51cd7012a36990497feedbe96fec84d9e60"
+          },
+          {
+            "physical_source_row": 467,
+            "template": 666,
+            "graphic": 100271,
+            "pet_flag": 0,
+            "original_source_line_sha256": "840e38a340e684b1f3a521656fb11326779b6bae742985e4cb8ee26d1d197884"
+          },
+          {
+            "physical_source_row": 986,
+            "template": 1238,
+            "graphic": 100271,
+            "pet_flag": 1,
+            "original_source_line_sha256": "96d8f8849b113ae80bdee5609ab8f346db4e7e256bea8fc9cbb812cc0fb3569a"
+          }
+        ],
+        "enemybase2.txt": [
+          {
+            "physical_source_row": 24,
+            "template": 51,
+            "graphic": 100271,
+            "pet_flag": 1,
+            "original_source_line_sha256": "1a86932914e0f1d4d2d76de15dc5ff015c794b928eb949e821d129e80ebebc0b"
+          },
+          {
+            "physical_source_row": 131,
+            "template": 505,
+            "graphic": 100271,
+            "pet_flag": 0,
+            "original_source_line_sha256": "15c0843296412f9cedba8e8871f74fb4625d97ad19b161be87660dcca45b5418"
+          },
+          {
+            "physical_source_row": 185,
+            "template": 560,
+            "graphic": 100271,
+            "pet_flag": 1,
+            "original_source_line_sha256": "5db370b0f83c4c92ad8b03026dd4f51cd7012a36990497feedbe96fec84d9e60"
+          },
+          {
+            "physical_source_row": 259,
+            "template": 666,
+            "graphic": 100271,
+            "pet_flag": 0,
+            "original_source_line_sha256": "840e38a340e684b1f3a521656fb11326779b6bae742985e4cb8ee26d1d197884"
+          }
+        ]
+      },
+      "source_qualified_TW1_SPR": {
+        "graphic_alias": 100271,
+        "source_group": [
+          100271,
+          261,
+          "9d82c6429e1d8c7cd9949d969c1728536942094e77ae1cfa78aee8b756b2eaa9",
+          56,
+          16,
+          [
+            [
+              0,
+              0,
+              8,
+              "1c55be5e2b272d3f7a6b115358495d3eff07e5bdfbf38cf365f313cff82a6c84",
+              800
+            ],
+            [
+              2,
+              0,
+              6,
+              "3fc7b8da726aa2e76dfe231c995387ec1060cc67eed5a6f171f136c5fff910e7",
+              600
+            ],
+            [
+              1,
+              0,
+              2,
+              "a44596501f6bf0cb552ec44da5228f835a793347765dca4797e0d42f25467d19",
+              100
+            ]
+          ],
+          16
+        ],
+        "complete_PET15_selected_motion": {
+          "source_sequences": 56,
+          "total_frame_positions": 1104,
+          "distinct_bitmap_numbers_within_group": 232,
+          "all_source_sequences_observable_with_PET15_source_rules": 56
+        }
+      },
+      "source_real_original_PNG_evidence": {
+        "source_bitmap_ids": [
+          101451,
+          101452,
+          101453,
+          101454,
+          101455,
+          101456,
+          101457,
+          101458,
+          101459,
+          101460,
+          101461,
+          101462,
+          101463,
+          101464,
+          101465,
+          101466
+        ],
+        "source_pet07_actual_original_RD_to_PNG_receipts": [
+          [
+            101451,
+            101451,
+            "dcb3feb30c3b718de5745a916e1c1964f6ceb91f622b8a655f1eda8ff71fc611",
+            "ce5f401ea1b0983e2c9fee33f85a18e6fff0179fc422f44dc3b0f4c604bc850d",
+            1,
+            60,
+            79,
+            1,
+            "3c54f6b62829529993c978d73303a40d25fa62292a93337a7c27d4ae7036d2e4"
+          ],
+          [
+            101452,
+            101452,
+            "5e90443a8489f48dc7a1000c317cc3e7af33cc461f0d78bf7e53de3c09475983",
+            "f21372c70dcb11d800d04e17a72497a112ea6e499f3c8ebbe62c1c9b5eb3d73e",
+            1,
+            88,
+            66,
+            1,
+            "a76fd4c42a2bc195aa4e9e5f3c892e3c0a6d7d4f3ec21612f2caa191b8b78a52"
+          ],
+          [
+            101453,
+            101453,
+            "8463dd39cfbd3d53fee0e4c3c5bf20b5c3db899147135eda104e51aec590e535",
+            "82794593aebe0bcb62745fdcbc96a64721857f637aeb765c3224eda0d2955a2e",
+            1,
+            68,
+            77,
+            1,
+            "03c6dce2491990cce4e27fa20004d2395ef76e777ace75cb36cecefa2693aa7f"
+          ],
+          [
+            101454,
+            101454,
+            "c976667c79e52b2514e9be897cda91b011cf057ac12cedd25a3a147a50240351",
+            "63d7ba7e03605366dc5112529849da55bf27c603a37f43e3d3ebcb22251cdf76",
+            1,
+            72,
+            88,
+            1,
+            "e43422fa0e0d172f8e804f65bf2958dccb143811afbad6887c5cae4866a1b15d"
+          ],
+          [
+            101455,
+            101455,
+            "8094a9b5663e8da8c3ea74274ef6b02c4007eff5036aa1bcc53cd4834419705d",
+            "d1dff3439e9627eddd7fdadc66c44e78db557374b15641b2e38b43bcaa9cfa79",
+            1,
+            88,
+            75,
+            1,
+            "df402651d0c6fc14fe9886c43888e772fbaaefb3196fb12ceeb8f616dcbc45dd"
+          ],
+          [
+            101456,
+            101456,
+            "1df96b1ff90d90864f91e22d83689acf652ed71329fb36868626a4c800f71afb",
+            "b4496a1e5b13929d86065edc3dca04ad6d71b632ae1001b3ed09b00915176030",
+            1,
+            72,
+            76,
+            1,
+            "40e1d70a7b8410c8ef183d91ebf84fefb65091050ca4c479bbf0a10f5ebd4af1"
+          ],
+          [
+            101457,
+            101457,
+            "732e1d6522d00a244d5cb61de2e261b425599413db53df61136027f49695856c",
+            "033c6d7bfc23ca68c8bcf79ba95afee22c1fbfb80e421651a72e96242be9f1fc",
+            1,
+            80,
+            72,
+            1,
+            "e64b6e58ccabf072ac4cadace54a7e525e778b744d2a941bfc74c667267d1ffa"
+          ],
+          [
+            101458,
+            101458,
+            "a2901d653e1bee8d08d3d60dea784752362bc781598a4f1b48a1992017fbba54",
+            "f83b7d5c1239e008af83fe51c4c962b8eea737becb39f39fc02113d5af8cc9c0",
+            1,
+            52,
+            83,
+            1,
+            "522ee50a03926403eb89a30b6e547b4f46ca4b5115856cd09d4fbb44696ac9d0"
+          ],
+          [
+            101459,
+            101459,
+            "e1a12ee628ff48a6ae52fe7c2934b0ba6168221c3ae53111db5bd13aefde8d0e",
+            "f9732c06c594b6b573205323a3073b4c7e059acbd3a7852cf59b2672afc4edf1",
+            1,
+            60,
+            78,
+            1,
+            "eb55e42ba7bf9590b77530550e5e1c0064361c124852acf9d0347c40d55eb67d"
+          ],
+          [
+            101460,
+            101460,
+            "9fa82db364d05ed4b5f92d34887e8e8d789f310d1beda4e70e48273bf8bb56f0",
+            "4d999ba25c5d40a269c0b386ec4e2e2f5b423375332317bdb48271d14ed7f3d0",
+            1,
+            68,
+            75,
+            1,
+            "d7f8ae984c76eb772c19bd153a4729afb95186b163956bbc1ea470f1ef0ce4c6"
+          ],
+          [
+            101461,
+            101461,
+            "2d6312ebc678ac592b275e0bbdbc764c0794f4da1ecdfe3ff5b09804f9fdf77b",
+            "9b206d6cebf26c7e0f19e955db0a767e805b734dc053faa381a1042430c3ae55",
+            1,
+            68,
+            66,
+            1,
+            "1b4b2c5cd8ebedc25c0b70d8057bd06cf794d37fc8bbcae948b29f4cc00e71ad"
+          ],
+          [
+            101462,
+            101462,
+            "ebc540184baefb95797fb5dff6aa2c6f97d53cb88169b0f73061c617adebb8c5",
+            "22f2454c77902d54e5f773845fba0ae00ed5381460215fcf08f7c34e1a1173ed",
+            1,
+            76,
+            60,
+            1,
+            "2f20696311860efe43c353e61d4bd9093597d85061a62fac37a4e6bf75785a09"
+          ],
+          [
+            101463,
+            101463,
+            "f4a8d2a810f98216e3b9bb4e4e4e69892f388bbbb9e17512e466d4819de8bbe8",
+            "212614f29727183c3a9d5c71844fb26b7f52b64a692cc81755ffe8f089014d98",
+            1,
+            76,
+            64,
+            1,
+            "10cde3ecc5b72448a9af1313486223d075da2a584991d1bb76320b65d7e89d62"
+          ],
+          [
+            101464,
+            101464,
+            "41168622069590efc4982696dd46a29d6462917a5bac08920e884cce794ba9c4",
+            "1793094dc891df46c650528a1ae6118fbf4853e1cb29b504cff708e8af41eeab",
+            1,
+            56,
+            65,
+            1,
+            "90fd426873682b3847734471886f66734e82eab60ed94e9051dc6088a92905e9"
+          ],
+          [
+            101465,
+            101465,
+            "f2b2a29215e26b9cdf87e532b5c21ee97c633211aaecbd95666ba74508f3b077",
+            "3709d1b4a5316c634118355dbc4f92da93e8d4900fd1f972d3c4ada15cf28287",
+            1,
+            68,
+            70,
+            1,
+            "e4ab9da1594d3017f8c6685b9bcb2e6f8fa0f1e84c95b81896deb8dc20a97497"
+          ],
+          [
+            101466,
+            101466,
+            "dbefb9570b784901aad0ad8467c6b9adbe7dbeaab6b5178e92a6817b8fb59153",
+            "81232c03ee08c6e3aa09589348beaac22867487ca6c0fbbf74e529d12357c18c",
+            1,
+            64,
+            82,
+            1,
+            "8c6530e833ad4874076f366ab22ae0670d28ee79a2a11d80e1c136194223e8d5"
+          ]
+        ],
+        "private_actual_byte_sha256_independently_verified": true,
+        "qualifier": "SOURCE_NATIVE_TW1_ORIGINAL_RD_ALREADY_DECODED_IN_PET07_NOT_NEW_RD_DECODE"
+      },
+      "source_item_wristband": {
+        "id": 2594,
+        "original_itemset_rows": [
+          {
+            "table": "itemset.txt",
+            "row": 2177,
+            "sha256": "cbf3dc5e77c2436d1fd7d4b2b2aedbe2fe40dcd2287270c877bcb996dfe84f3a",
+            "original_column_count": 94,
+            "graphic_alias": 22120
+          },
+          {
+            "table": "itemset0710.txt",
+            "row": 2572,
+            "sha256": "cbf3dc5e77c2436d1fd7d4b2b2aedbe2fe40dcd2287270c877bcb996dfe84f3a",
+            "original_column_count": 94,
+            "graphic_alias": 22120
+          }
+        ],
+        "source_image_alias": 22120,
+        "source_TW1_PNG_sha256": "9f5ee9a16971c48b8358b42d878d6b864699c1da0b2afc478af9de329a4bef71",
+        "exact_previous_ICON_source": {
+          "alias": 22120,
+          "private_png_sha256": "9f5ee9a16971c48b8358b42d878d6b864699c1da0b2afc478af9de329a4bef71",
+          "bytes": 1251,
+          "original_RD_sha256": "3d0405f4a0ee161085447194ab7a4ae45842dfbedb07c8ec0eb7d18152050cb0",
+          "candidate_only_other_TW1_original_source": true
+        }
+      }
+    },
+    {
+      "source_quest_PET_predicate_numeric": 559,
+      "source_active_script": {
+        "path": "jaruga/event/bait_03b2",
+        "full_original_file_sha256": "022182a33c2eeb11fe85a7b6e619e2d4ab62597090d25c0c942a94cc47264d1b",
+        "original_bytes": 4351,
+        "branch_metadata": {
+          "script": "jaruga/event/bait_03b2",
+          "wristband_id": 2595,
+          "pet_predicate_numeric": 559,
+          "original_events": 10,
+          "unreferenced_variant_source": "jaruga/event/bait_03b",
+          "unreferenced_variant_events": 18,
+          "first_two_sections_use_EVDEL": true,
+          "first_two_sections_use_NotDel_wristband": true,
+          "four_following_sections_use_explicit_DelPet": true
+        },
+        "source_DelPet_literal_patterns": [
+          "DelPet:PET>0-559*4",
+          "DelPet:PET>0-559*3",
+          "DelPet:PET>0-559*2",
+          "DelPet:PET>0-559*1"
+        ],
+        "initial_EVDEL_requires_source_semantics": "UNVERIFIED"
+      },
+      "source_CREATE_NPC": {
+        "ordinal": 3,
+        "source_block_sha256": "09c9e86465e956ec4c13d2b1712586f2ea7b4c977a15678102cf2422da232b19",
+        "floor": 201,
+        "borncorner": [
+          19,
+          14,
+          19,
+          14
+        ],
+        "original_name": "證明發行(紅)",
+        "graphic_alias": 16036,
+        "script_ref": "jaruga/event/bait_03b2"
+      },
+      "source_mixed25_template_main": {
+        "file": "enemybase.txt",
+        "physical_source_row": 380,
+        "template_id": 559,
+        "graphic": 100335,
+        "PETFLG": 1,
+        "original_source_line_sha256": "57822109558fc0ad5f6754fcf69b2ee607cca7e2b993707ce5dcab050ba7c8f4"
+      },
+      "source_mixed25_template_alternative": {
+        "file": "enemybase2.txt",
+        "physical_source_row": 184,
+        "template_id": 559,
+        "graphic": 100335,
+        "PETFLG": 1,
+        "original_source_line_sha256": "57822109558fc0ad5f6754fcf69b2ee607cca7e2b993707ce5dcab050ba7c8f4"
+      },
+      "source_graphic_other_candidate_template_rows": {
+        "enemybase.txt": [
+          {
+            "physical_source_row": 197,
+            "template": 211,
+            "graphic": 100335,
+            "pet_flag": 1,
+            "original_source_line_sha256": "821897d8b4a637f8800ec18c19559f29443f5cdd4096105a37835b89cb0b5a1f"
+          },
+          {
+            "physical_source_row": 380,
+            "template": 559,
+            "graphic": 100335,
+            "pet_flag": 1,
+            "original_source_line_sha256": "57822109558fc0ad5f6754fcf69b2ee607cca7e2b993707ce5dcab050ba7c8f4"
+          }
+        ],
+        "enemybase2.txt": [
+          {
+            "physical_source_row": 75,
+            "template": 211,
+            "graphic": 100335,
+            "pet_flag": 1,
+            "original_source_line_sha256": "fbd9756c95ce4f56c0251e814802839f63920e45dc4702393f89a11f03c26e40"
+          },
+          {
+            "physical_source_row": 184,
+            "template": 559,
+            "graphic": 100335,
+            "pet_flag": 1,
+            "original_source_line_sha256": "57822109558fc0ad5f6754fcf69b2ee607cca7e2b993707ce5dcab050ba7c8f4"
+          }
+        ]
+      },
+      "source_qualified_TW1_SPR": {
+        "graphic_alias": 100335,
+        "source_group": [
+          100335,
+          305,
+          "edfba5be50c121be29c7e864505a9706fe331bfb4747c4f675f707562ac1e965",
+          56,
+          17,
+          [
+            [
+              0,
+              0,
+              9,
+              "130b089fbf5abd1b2af9f9b764a7eb1fcfc48464715da78e74a5f1ebee1eacaa",
+              800
+            ],
+            [
+              2,
+              0,
+              6,
+              "71a07d8fceae9eecc690525185956bcc7ec5c06d52b68a368553d616841bd168",
+              1000
+            ],
+            [
+              1,
+              0,
+              2,
+              "07670db89011fe768e883bd94e75ffc3778b2cba3422e84ec027db102ae65bed",
+              100
+            ]
+          ],
+          16
+        ],
+        "complete_PET15_selected_motion": {
+          "source_sequences": 56,
+          "total_frame_positions": 288,
+          "distinct_bitmap_numbers_within_group": 232,
+          "all_source_sequences_observable_with_PET15_source_rules": 56
+        }
+      },
+      "source_real_original_PNG_evidence": {
+        "source_bitmap_ids": [
+          114011,
+          114012,
+          114013,
+          114014,
+          114015,
+          114016,
+          114017,
+          114018,
+          114019,
+          114020,
+          114021,
+          114022,
+          114023,
+          114024,
+          114025,
+          114026
+        ],
+        "source_pet07_actual_original_RD_to_PNG_receipts": [
+          [
+            114011,
+            114011,
+            "9fe055d174d9af45f2fcb38974cefd888ea03dcc05bab477ae253dfb6f66aa7f",
+            "c95f45bcbc476b74d73d80b88efe9053a85f74c65a2ff70b4199ec9ec2720f22",
+            1,
+            48,
+            73,
+            1,
+            "14fd90cbc9fd73dba97e622ef37546843e8bca0d5879f84602d60e51654aa8ee"
+          ],
+          [
+            114012,
+            114012,
+            "c398c9f13348d76b5fe86c32a4a785c68519fa6c6b69298e62533b322e6f6c8e",
+            "b0c2f4a3bcbc13c2710209d67bb2cc5c93c6c89ae6adff4172481a9a4e91ee00",
+            1,
+            52,
+            72,
+            2,
+            "5c1a1b781230362b6e519fdc6d5143032822f5f120ac928b8d3bc07240906f4b"
+          ],
+          [
+            114013,
+            114013,
+            "4bd519018e3faa8a6c1887204798d5581c7e5a30f890077eb9a76f7fbc43f376",
+            "c872fe0ae67c12b0d6fa2f733225a62235d0daa58ed1466fea0a2c6598fd8b3a",
+            1,
+            52,
+            81,
+            1,
+            "2beacb74ef220ccd77a106aec6de80af7cf2d07bfcc5d2a9db131b0f68ac8a89"
+          ],
+          [
+            114014,
+            114014,
+            "909f31fff5e1bab97937f70709ed3c086e8fcdbc1e812951184a6027be40c417",
+            "6f5f6ba421e8322fb83184fcff8134b5213a93195b088238fd2d70e21b9a4013",
+            1,
+            52,
+            82,
+            1,
+            "f6eac6bb917d3a3bb66d2da08ed908001e246027899041933aef9a9e74c10bdb"
+          ],
+          [
+            114015,
+            114015,
+            "1fe6376ca6e93d96e25822f398a16c087faf987a73fa310486b9faf9e88a4d2b",
+            "0bae93e43105c53e1a1b0603f5f9e215033d5a9c00c22a846f3b4cb4c7f9ce4a",
+            1,
+            52,
+            95,
+            1,
+            "a1c78ab6d4e5552e9764f710edb7f1f4b40de2ccb7e90a6508b6e1483965edef"
+          ],
+          [
+            114016,
+            114016,
+            "1255348015742a9fe152c0da71cb30780807368d087723420afce6fd179ecae8",
+            "bc2fc314dfad8a018116ebf1c27d6d44beffd5f46c4c0f8076c22db38b7210bc",
+            1,
+            52,
+            90,
+            1,
+            "695fefdcbe9dc0ad71eb6b75541d8cd793a4dd4f3a291c15fbd642bbcfe3ca2d"
+          ],
+          [
+            114017,
+            114017,
+            "bd101f9275e8bfc13a59635f746362e5f6b08e885aac10142f213a1857640b11",
+            "ce81d152c7b522677919f41f1eed5182bab994b0f684623226312e015aa481a4",
+            1,
+            52,
+            75,
+            1,
+            "89608e086c5d1cb63aeae9f3c42e1f4b35ebd1a054ab5184bc22e4d1eae31a12"
+          ],
+          [
+            114018,
+            114018,
+            "34a2ce20a9171ec79eb5c519585a1b7521d3866781252087ea282097c2751d8f",
+            "b7efb6a5735e9c66bd1b2a21f3daf60f7ea67e43d20f545be3a37e67585e1ccf",
+            1,
+            52,
+            77,
+            1,
+            "574f64f19f068036302c556bcc2af6b0bb5a65c599d10d78e96ebbf4d58f8f58"
+          ],
+          [
+            114019,
+            114019,
+            "537d6b156a7328310b448a8bc9f232f4f9fc1c02306b7d07d6f8eae1c4b10e9b",
+            "75cf810e3a80c5feabc051f111295c352e75508233b06db537c47add57c84c36",
+            1,
+            52,
+            70,
+            1,
+            "e00b2e93a78a423f64d3fcd6708ac78415a74483535de992ac01ad0863cb7222"
+          ],
+          [
+            114020,
+            114020,
+            "491f7a4cf8b95210b83d76096587bb1a8babdb13353be855fc74575c4a045897",
+            "fb735aedd74d31f7be3e514800ae8533fbb61a38a38964f198be94322cfce4ac",
+            1,
+            52,
+            71,
+            1,
+            "20e522b2fa9f326a1135a538902ab2659bd632fb93a4e5f06064a1bb3b28d3ab"
+          ],
+          [
+            114021,
+            114021,
+            "a7a7d36a7c15e5128a757e0c29220927d623ddb82c3f17d2449f91fafe913b3a",
+            "3281a1a19f5b1cc1f39fb5bba0fd90b1f7e35e4a6cc89ce2b9f17542e7913bf3",
+            1,
+            52,
+            69,
+            1,
+            "40ee033b6b3ba4347dbc2f8ec3863f539bb726b6d72355e5ee2ec6758a3556d8"
+          ],
+          [
+            114022,
+            114022,
+            "6df61ed7b5a325ef96682d885d47a4f187362124fe0423f7a0f74ad02d3c4d11",
+            "36acfc8faa0f8b59dffecb86af22093f27f01d0b125251721682910143b7b675",
+            1,
+            68,
+            91,
+            1,
+            "d7120fdd8ce27824581829760276ff807a42e1fd719dd40d93e6109fb5a5f92c"
+          ],
+          [
+            114023,
+            114023,
+            "b079dd7aaaeb20a86687210c27c9bc7593da6cb4d36360705cd8e84b7f27a1bc",
+            "2b959fea412d22ec7ee7e1a55bdae7b6df8be98af01d63123c7a58d19fac6b9e",
+            1,
+            56,
+            75,
+            1,
+            "bb9c501f53fde93cf5a29cdf70f13c41fcd50bfd083b40ae669abbd46898d266"
+          ],
+          [
+            114024,
+            114024,
+            "69a581013f438beec50697c5269e01dfdd4a6afb16449d46a5e310b2b136ad0e",
+            "6da346a83d32f0f49adf8a2db4844379a15208377e5d986a3f12b9736434a0a4",
+            1,
+            68,
+            71,
+            1,
+            "28766d137ecc319981a85b7af8d81061e11e3ea367e4cf22e9d442e60b66f76f"
+          ],
+          [
+            114025,
+            114025,
+            "bd4de4a99aee55cc629f529ddb3b8deb4db8378e6ac7f2098e71a2f816b54c75",
+            "2ae7d2a5678137eac4aef93d17f105246fcb8ed54c5702e28b48897d29463821",
+            1,
+            52,
+            73,
+            1,
+            "1b5bc6429ea345a1d78506e86288cae933b1706c65c0933667869f03dad8d61b"
+          ],
+          [
+            114026,
+            114026,
+            "dd809dc9aed15b6729ee25e8807d2c7a6ce6cad2c24a02ea9b3ede446feb4e98",
+            "256151070fc797aa97f9c1da3c0677a7933cbd663a6ac77a155f5b6311960412",
+            1,
+            60,
+            76,
+            1,
+            "2e4e8344af9c3e1e96cf8ff31285b9d6c56d85a04d3407bc37dbdee9743a28f9"
+          ]
+        ],
+        "private_actual_byte_sha256_independently_verified": true,
+        "qualifier": "SOURCE_NATIVE_TW1_ORIGINAL_RD_ALREADY_DECODED_IN_PET07_NOT_NEW_RD_DECODE"
+      },
+      "source_item_wristband": {
+        "id": 2595,
+        "original_itemset_rows": [
+          {
+            "table": "itemset.txt",
+            "row": 2178,
+            "sha256": "66151dc50f21a28edb7adef6c36a5cef6fc082c78739cc1405a526d498f0bf85",
+            "original_column_count": 94,
+            "graphic_alias": 22114
+          },
+          {
+            "table": "itemset0710.txt",
+            "row": 2573,
+            "sha256": "66151dc50f21a28edb7adef6c36a5cef6fc082c78739cc1405a526d498f0bf85",
+            "original_column_count": 94,
+            "graphic_alias": 22114
+          }
+        ],
+        "source_image_alias": 22114,
+        "source_TW1_PNG_sha256": "0f529bb53c38f37c5284a8b52231a9fe712ad1363be4c69d27035d14d7645d40",
+        "exact_previous_ICON_source": {
+          "alias": 22114,
+          "private_png_sha256": "0f529bb53c38f37c5284a8b52231a9fe712ad1363be4c69d27035d14d7645d40",
+          "bytes": 1247,
+          "original_RD_sha256": "1c446820a4e7fd9a7f606fd7e18e1891fdf420da407de4cc7a356823d9bafb84",
+          "candidate_only_other_TW1_original_source": true
+        }
+      }
+    },
+    {
+      "source_quest_PET_predicate_numeric": 558,
+      "source_active_script": {
+        "path": "jaruga/event/bait_03c2",
+        "full_original_file_sha256": "b21c6664c41d3ecad62021101c0f44f6183a5d57c68b908b8c8b851660546f10",
+        "original_bytes": 4344,
+        "branch_metadata": {
+          "script": "jaruga/event/bait_03c2",
+          "wristband_id": 2596,
+          "pet_predicate_numeric": 558,
+          "original_events": 10,
+          "unreferenced_variant_source": "jaruga/event/bait_03c",
+          "unreferenced_variant_events": 18,
+          "first_two_sections_use_EVDEL": true,
+          "first_two_sections_use_NotDel_wristband": true,
+          "four_following_sections_use_explicit_DelPet": true
+        },
+        "source_DelPet_literal_patterns": [
+          "DelPet:PET>0-558*4",
+          "DelPet:PET>0-558*3",
+          "DelPet:PET>0-558*2",
+          "DelPet:PET>0-558*1"
+        ],
+        "initial_EVDEL_requires_source_semantics": "UNVERIFIED"
+      },
+      "source_CREATE_NPC": {
+        "ordinal": 4,
+        "source_block_sha256": "fb0fc5ea2ba731e7aca9fafe6cbccec005080cfb09b457f58f0d522e9c3f2885",
+        "floor": 201,
+        "borncorner": [
+          19,
+          15,
+          19,
+          15
+        ],
+        "original_name": "證明發行(藍)",
+        "graphic_alias": 16065,
+        "script_ref": "jaruga/event/bait_03c2"
+      },
+      "source_mixed25_template_main": {
+        "file": "enemybase.txt",
+        "physical_source_row": 379,
+        "template_id": 558,
+        "graphic": 100368,
+        "PETFLG": 1,
+        "original_source_line_sha256": "2122b8f1556a4a259553d1ad3db1c2c5ca4bbdb5d84d4fb7e92c831f22d7961f"
+      },
+      "source_mixed25_template_alternative": {
+        "file": "enemybase2.txt",
+        "physical_source_row": 183,
+        "template_id": 558,
+        "graphic": 100368,
+        "PETFLG": 1,
+        "original_source_line_sha256": "2122b8f1556a4a259553d1ad3db1c2c5ca4bbdb5d84d4fb7e92c831f22d7961f"
+      },
+      "source_graphic_other_candidate_template_rows": {
+        "enemybase.txt": [
+          {
+            "physical_source_row": 230,
+            "template": 292,
+            "graphic": 100368,
+            "pet_flag": 1,
+            "original_source_line_sha256": "7422664f9e96afe4e6f780620ef4185f90bbb8f4447c922d543bf6475bbb92a4"
+          },
+          {
+            "physical_source_row": 379,
+            "template": 558,
+            "graphic": 100368,
+            "pet_flag": 1,
+            "original_source_line_sha256": "2122b8f1556a4a259553d1ad3db1c2c5ca4bbdb5d84d4fb7e92c831f22d7961f"
+          },
+          {
+            "physical_source_row": 411,
+            "template": 590,
+            "graphic": 100368,
+            "pet_flag": 1,
+            "original_source_line_sha256": "6984b681e350b47e8f6798e81d5587a658178dcd8513cab4c74b2bede3994872"
+          },
+          {
+            "physical_source_row": 413,
+            "template": 592,
+            "graphic": 100368,
+            "pet_flag": 0,
+            "original_source_line_sha256": "17e2557e3fd94ed2a960fc5bb2e3ec88796f8863355e4c3e5ea0de0550ca7bba"
+          },
+          {
+            "physical_source_row": 470,
+            "template": 669,
+            "graphic": 100368,
+            "pet_flag": 0,
+            "original_source_line_sha256": "d6fd4e4f09a3dee26f77eb7d92f5d2c0096fb888a79b98d3aebb93b212cc97a0"
+          },
+          {
+            "physical_source_row": 979,
+            "template": 1231,
+            "graphic": 100368,
+            "pet_flag": 1,
+            "original_source_line_sha256": "d6d2bf2cf00acbcb2e36af34b59bce126d74e64cba1110b144954bae4feb7527"
+          }
+        ],
+        "enemybase2.txt": [
+          {
+            "physical_source_row": 105,
+            "template": 292,
+            "graphic": 100368,
+            "pet_flag": 1,
+            "original_source_line_sha256": "9265d9aa747c3d7a525425299eab55499346b7cf5aa2a69af3fee4987b005a08"
+          },
+          {
+            "physical_source_row": 183,
+            "template": 558,
+            "graphic": 100368,
+            "pet_flag": 1,
+            "original_source_line_sha256": "2122b8f1556a4a259553d1ad3db1c2c5ca4bbdb5d84d4fb7e92c831f22d7961f"
+          },
+          {
+            "physical_source_row": 215,
+            "template": 590,
+            "graphic": 100368,
+            "pet_flag": 1,
+            "original_source_line_sha256": "6984b681e350b47e8f6798e81d5587a658178dcd8513cab4c74b2bede3994872"
+          },
+          {
+            "physical_source_row": 217,
+            "template": 592,
+            "graphic": 100368,
+            "pet_flag": 0,
+            "original_source_line_sha256": "17e2557e3fd94ed2a960fc5bb2e3ec88796f8863355e4c3e5ea0de0550ca7bba"
+          },
+          {
+            "physical_source_row": 262,
+            "template": 669,
+            "graphic": 100368,
+            "pet_flag": 0,
+            "original_source_line_sha256": "d6fd4e4f09a3dee26f77eb7d92f5d2c0096fb888a79b98d3aebb93b212cc97a0"
+          }
+        ]
+      },
+      "source_qualified_TW1_SPR": {
+        "graphic_alias": 100368,
+        "source_group": [
+          100368,
+          334,
+          "d7f7f9881cf685bcccfa73587f4c36f531fc57b6df0a6f0021fb58f414f07bea",
+          56,
+          54,
+          [
+            [
+              0,
+              0,
+              46,
+              "b5d03513bcb2cbe294f35b924856154c86c6630970b9b591f956a2ee6dd180ac",
+              1500
+            ],
+            [
+              2,
+              0,
+              6,
+              "0bd5fab270245d47f38e9e87738547fb31f85c8beb1d668180a2f34439e68dea",
+              800
+            ],
+            [
+              1,
+              0,
+              2,
+              "a8f6152923a3027278014d8f938ba05d81e2482fc041156d18b840f756e5bdbb",
+              100
+            ]
+          ],
+          16
+        ],
+        "complete_PET15_selected_motion": {
+          "source_sequences": 56,
+          "total_frame_positions": 912,
+          "distinct_bitmap_numbers_within_group": 232,
+          "all_source_sequences_observable_with_PET15_source_rules": 56
+        }
+      },
+      "source_real_original_PNG_evidence": {
+        "source_bitmap_ids": [
+          121107,
+          121108,
+          121109,
+          121110,
+          121111,
+          121112,
+          121113,
+          121114,
+          121115,
+          121116,
+          121117,
+          121118,
+          121119,
+          121120,
+          121121,
+          121122
+        ],
+        "source_pet07_actual_original_RD_to_PNG_receipts": [
+          [
+            121107,
+            121107,
+            "4dcc511caadd9f52d2e16df8a21bece25138daa4ac3fa91d036c92cbb5301fb0",
+            "a072e50ca137820a949d4c49eac3af2f62855cd0276183aa35923570608e2968",
+            1,
+            136,
+            117,
+            2,
+            "67c6a475cd31cab599bfc2f1998e58e138ea4ada3320f970d1fba6c051140447"
+          ],
+          [
+            121108,
+            121108,
+            "cac70b90177c1836e078c8b2e87566f878c9f9de76912202bdf697982d7fb196",
+            "1ba29c6df18fda12a65aad3c11b1715d1cdd1379a3b3613221c4460984174660",
+            1,
+            116,
+            122,
+            4,
+            "22b072af06d5cdbacfc1ecce876648b7dc07069dc398a52a435942d47bc58894"
+          ],
+          [
+            121109,
+            121109,
+            "81550edc79b3869d2f063510295d4762e456e381cbf08d48be1e4e2a4b72c9ad",
+            "a62dc9e6309c9b21cfcf8c9a37f0620c97d821212c016cc4e297595d311d09de",
+            1,
+            60,
+            133,
+            8,
+            "8244f5a881cc898fcf70ab97d5c20c76c04103cecb0f3bcf8de51c1ab1a9514f"
+          ],
+          [
+            121110,
+            121110,
+            "b508a97e2a1cbd60ba115894489edaabb727d42f39088ffc0eea09d3ac14bfe0",
+            "df82a98b53d6478cf2a6e1fd9f8833661d47cde129bb3fd412e58ce90ac4eef4",
+            1,
+            136,
+            135,
+            2,
+            "5d7df8a7224c2998e77f154a932d937d42478c25fce9d084ccf5adccabdccba5"
+          ],
+          [
+            121111,
+            121111,
+            "21278d8b9a39baf7a0d53148e04cf6d861e333ab542c463e43047bc1d90b776e",
+            "b01fa0ad789e4b1b704598184cf8e87818e1b046ce0eb9902fb1b04ad5b62b6a",
+            1,
+            60,
+            121,
+            2,
+            "62e888c91e519910aa6032e13e1e8b131f3136377eaed3f21d86850c666c0c1f"
+          ],
+          [
+            121112,
+            121112,
+            "5d874a4a39a88e301256ae3334de0f2811f6459acaca05f232cc9982dc6f6069",
+            "da95f5622c60b93c059f2ac7206074b654d37bb7fdb0b33a7f5f994f120d1168",
+            1,
+            56,
+            137,
+            2,
+            "5c946bfa3f5ca564f01b72d7745a78646c2e3db55a0c48b4b45a2f0a49a42945"
+          ],
+          [
+            121113,
+            121113,
+            "a8c66511dd38ecdaf98336bb2510fe002019311c2a344e322339a301199c28c6",
+            "5ab9f3080af3f653ef125c639ee7d605511fbc90e7b99e10d4b25b8b090d26e9",
+            1,
+            56,
+            121,
+            13,
+            "ae1d348d917a99b8a0fddadceaa7bf8be9c122d137be14e0bdd94f2f46d8bae1"
+          ],
+          [
+            121114,
+            121114,
+            "97a5f75f2e563b6aa45f5edabce0d3fc3fb446846308a00f7908484ba13fd2f9",
+            "da9851eacd373bf680000c6647017902db2393e02942825e2b96aa71c9d6305e",
+            1,
+            60,
+            113,
+            13,
+            "dfccbb0108013f804e06ed2b119937af03de3fd1929f570bf72ce7a7dc50bcd3"
+          ],
+          [
+            121115,
+            121115,
+            "2003af47ca43cb9ef95c7f0167835bdf8337cc940c6dfc0a4053bf13aacc4415",
+            "a50c794d77282d006d35c786b08ed7d82f93f1032d6a7aee7b4891a71c50d5b0",
+            1,
+            120,
+            122,
+            1,
+            "98ce4e102926053545dcf4046ee523c12338a67ed16f34e2b353d8a981b36924"
+          ],
+          [
+            121116,
+            121116,
+            "819899dcf7a19c82abe44faa431d1bcbfce8600664532e0438ed3d19510292ba",
+            "a2170d56775541d35a5b67b0cae9946c3a573695dbd3bf5025cc5f6dc74a6a63",
+            1,
+            116,
+            110,
+            1,
+            "e377637869d620215efc09c383ae92c947cbb1936e2298c180aae0a692f68848"
+          ],
+          [
+            121117,
+            121117,
+            "84484f102b9bf323e4c9fb344e2b52412db9512239813fc18b045c3eecc77da1",
+            "533e0aae157ac469c03367560fc9ef79236d8303c82ad921410e73529e449455",
+            1,
+            116,
+            90,
+            1,
+            "a1b801f8eae27961a2812bd7cc3a6a0fdf93082d19d45feb58cde074bb0351a3"
+          ],
+          [
+            121118,
+            121118,
+            "258c2207960921f5eb5e4a5e6eb4f0edbf2ed966eb7a80033d20845c7623e14d",
+            "6c0f34a9a0dde0fceac01f82652a9faffbf0772098a1b9cd7ccec771c5c9b576",
+            1,
+            104,
+            90,
+            1,
+            "c4c7f33495e29411469661f50e18c5b64d332e37726f96e9df0fe5f558c15531"
+          ],
+          [
+            121119,
+            121119,
+            "052bb85061fe5f231f4f840f8cf5d4c0d8c69e4a8d266d2d35f4b022145919f3",
+            "9f45aa8b2a58236acb4ceaa476d4512c11c49847afccef0a89f1748f4eca521d",
+            1,
+            120,
+            90,
+            1,
+            "4867c128e710ef368268ed4cf9e0a1aeaccfcf201e31e909ae5231ec84a1a71e"
+          ],
+          [
+            121120,
+            121120,
+            "638f05b58cc9ab194eb0d6e4fdcd7d35811c9be3d253ddffc9d243d61101eebc",
+            "52e1de80bd3fecfb5d758429f59acda5d697ade1fea4e51366172ccd77832fe3",
+            1,
+            116,
+            95,
+            1,
+            "2d92ae516d9c62c28c998463e8b0c933365ad528ea5ce15a184136db2daeeacc"
+          ],
+          [
+            121121,
+            121121,
+            "563d9f1bc44a6b44f95da4fc943a6b0035690e47f6025580e1b12efcc80dbb68",
+            "e498f80b40a7e8844ef851c5a57c83a06c67f38676a920e2b425ed8f10d0da07",
+            1,
+            120,
+            115,
+            1,
+            "ae03bbd532eb01fb6c3ffc0c2a5c85195ff96f40acaafb84b70c4d1695072269"
+          ],
+          [
+            121122,
+            121122,
+            "fc57f7e60f38b1f17c60b3fc487bc1f3f2bd3227918a39878d661855f047820a",
+            "172cd0d363c2e6bf8f7ecbe0104f463332d88b9c77b25a7a226621601fa5b574",
+            1,
+            116,
+            109,
+            1,
+            "d1024fa61ce9a9ef4303dc92a1977de1d469f89adbdcbb059f29423dcd64adfc"
+          ]
+        ],
+        "private_actual_byte_sha256_independently_verified": true,
+        "qualifier": "SOURCE_NATIVE_TW1_ORIGINAL_RD_ALREADY_DECODED_IN_PET07_NOT_NEW_RD_DECODE"
+      },
+      "source_item_wristband": {
+        "id": 2596,
+        "original_itemset_rows": [
+          {
+            "table": "itemset.txt",
+            "row": 2179,
+            "sha256": "3e4a6ec27c7c5829732a9b1b1314bdfeca4f7ac8fba570f977278d361c664c37",
+            "original_column_count": 94,
+            "graphic_alias": 22118
+          },
+          {
+            "table": "itemset0710.txt",
+            "row": 2574,
+            "sha256": "3e4a6ec27c7c5829732a9b1b1314bdfeca4f7ac8fba570f977278d361c664c37",
+            "original_column_count": 94,
+            "graphic_alias": 22118
+          }
+        ],
+        "source_image_alias": 22118,
+        "source_TW1_PNG_sha256": "05bd788c5ae1e0c807a5c9c930617ce92b70e73082cd37668ed0b0b8b1665b4a",
+        "exact_previous_ICON_source": {
+          "alias": 22118,
+          "private_png_sha256": "05bd788c5ae1e0c807a5c9c930617ce92b70e73082cd37668ed0b0b8b1665b4a",
+          "bytes": 1209,
+          "original_RD_sha256": "30b03b6640e90febf28fef3c9588760305e659649a620cc11941a92440429773",
+          "candidate_only_other_TW1_original_source": true
+        }
+      }
+    }
+  ],
+  "four_source_qualified_item_PNG_candidates": [
+    {
+      "alias": 22114,
+      "private_png_sha256": "0f529bb53c38f37c5284a8b52231a9fe712ad1363be4c69d27035d14d7645d40",
+      "bytes": 1247,
+      "original_RD_sha256": "1c446820a4e7fd9a7f606fd7e18e1891fdf420da407de4cc7a356823d9bafb84",
+      "candidate_only_other_TW1_original_source": true
+    },
+    {
+      "alias": 22118,
+      "private_png_sha256": "05bd788c5ae1e0c807a5c9c930617ce92b70e73082cd37668ed0b0b8b1665b4a",
+      "bytes": 1209,
+      "original_RD_sha256": "30b03b6640e90febf28fef3c9588760305e659649a620cc11941a92440429773",
+      "candidate_only_other_TW1_original_source": true
+    },
+    {
+      "alias": 22120,
+      "private_png_sha256": "9f5ee9a16971c48b8358b42d878d6b864699c1da0b2afc478af9de329a4bef71",
+      "bytes": 1251,
+      "original_RD_sha256": "3d0405f4a0ee161085447194ab7a4ae45842dfbedb07c8ec0eb7d18152050cb0",
+      "candidate_only_other_TW1_original_source": true
+    },
+    {
+      "alias": 24222,
+      "private_png_sha256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1",
+      "bytes": 1438,
+      "original_RD_sha256": "d519e1dbfcf21cb23c7850eb741381698dc0ebd7437d69d68d877b0ad7cf8052",
+      "candidate_only_other_TW1_original_source": true
+    }
+  ],
+  "private_gallery_archived_and_reread": {
+    "name": "StoneAge-INTEGRATION55-ranch-three-pet-original-pixels-private.zip",
+    "bytes": 582786,
+    "sha256": "970326a4169e5ffb6a9a70b8219162e6d59c319f1f151afb048781ebde9b23e8",
+    "member_count": 54,
+    "original_PNG_assets": 52,
+    "animation_PNG_assets": 48,
+    "item_icon_PNG_assets": 4,
+    "all_member_crc_pass": true,
+    "uploaded_personal_Library_and_independently_retrieved_matching_full_sha_and_54_CRC": true,
+    "original_PNG_48_individual_hashes_reverified_after_download": true,
+    "atlas": {
+      "name": "StoneAge-INTEGRATION55-ranch-three-pet-source-atlas-private.png",
+      "bytes": 327095,
+      "sha256": "a7c3799d4b883422a26eabe98d01c1f02541ed428451cdc654a784f3faa7cdcf",
+      "size_px": [
+        1690,
+        1260
+      ]
+    }
+  },
+  "new_qualified_work": {
+    "pet_quest_script_templates_crosslinked_to_TW1_SPR": 3,
+    "actual_real_prior_PET07_original_PNG_bytes_reopened_with_full_SHA": 48,
+    "actual_real_prior_ITEM01_original_PNG_bytes_reopened_with_full_SHA": 4,
+    "private_source_map_DAT_201_20901_reopened_this_work": 0,
+    "new_original_source_RD_blocks_decoded_this_work": 0,
+    "original_native_client_played_this_work": 0,
+    "original_native_server_executed_this_work": 0,
+    "original_NEW_pet_species_names_authenticated": 0
+  },
+  "important_negative_guards": {
+    "same_official_server_client_version_proven": false,
+    "original_pet_species_uniqueness_proven_from_numeric_template": false,
+    "one_graphic_one_pet_template": false,
+    "source_DelPet_and_EVDEL_executed_by_native_server": false,
+    "original_money_or_inventory_changed": false,
+    "source_4_icon_aliases_are_four_unique_original_item_types": false,
+    "previously_verified_map_DAT_201_20901_actually_replayed_this_work": false,
+    "original_sprite_ANIM_fps_render_and_original_palette_runtime_proven": false,
+    "original_commercial_assets_published_in_Git": false,
+    "retroactively_promoting_old_aliases_to_JSS1999_CN182": false
+  },
+  "stage_A": {
+    "PARTIAL": 7,
+    "OPEN": 2
+  },
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "status": "SOURCE_BOUNDED_TRIPLE_PET_AND_ITEM_PRIVATE_REAL_PNG_OBSERVATION",
+  "stop_condition": "Three original script branch predicates plus three unchanged candidate pet template pairs, Taiwan 1.0 original SPR and 48 original saved sprite PNG bytes plus four original item icon candidates have been reread; stop overinvestigating this source family without native same-build or recovered DAT direct byte dependencies.",
+  "next": "Choose a different source-ready original visible game scene or a clearly named content dependency, and preserve cross-deployment and old inactive script variants without asserting native state. Do not build login/server or new game engine."
+}
