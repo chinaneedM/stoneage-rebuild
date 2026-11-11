@@ -1,0 +1,180 @@
+{
+  "schema": "stoneage.integration61.two_chef_exact_dishes_to_TW1_original_RD_pixels.r1",
+  "date": "2026-11-11",
+  "remote_base_head": "4090ac47f4ce807d0ab0ed3740a3859f204bb585",
+  "remote_base_tree": "ba07222d9cfe5c8ec10c1b2913dde62a40e8df11",
+  "sources": {
+    "old_O75_public_blob": "71038e470b5334c080d4a910031b81442cbe2bc8",
+    "old_ITEM01_public_source_shard_blob": "14c7816054375863c91e474b58d2202f76e821c5",
+    "mixed25_original_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "old_original_chef_CREATE_sha256": "9e724522d2f2e3a5aaf66ab8ab09d97911ff86b2debad723e64cedd7497acb21",
+    "old_original_menu02_sha256": "0b0fce57eee873b2acc2ec990a0b544c10064e86ba75bf352ff70d8a14545bb5",
+    "old_original_itemset_A_sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+    "retained_private_ITEM01_ZIP_bytes": 5868386,
+    "retained_private_ITEM01_ZIP_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "retained_private_ITEM01_ZIP_member_CRC_verified": 838,
+    "original_TW1_ADRN_sha256": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+    "original_TW1_REAL_sha256": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13"
+  },
+  "source_two_chefs": [
+    {
+      "kind": "chef",
+      "floor": 2009,
+      "xy": [
+        25,
+        41
+      ],
+      "graphic_alias": 16053,
+      "original_conf": "npc/jaruga/menu01.conf"
+    },
+    {
+      "kind": "chef",
+      "floor": 3009,
+      "xy": [
+        25,
+        43
+      ],
+      "graphic_alias": 16053,
+      "original_conf": "npc/jaruga/menu02.conf"
+    }
+  ],
+  "source_2009_unmatched_menu_count": 3,
+  "source_2009_unmatched_item_IDs_status": "UNKNOWN_NONEXACT_NAMES",
+  "source_3009_three_exact_items": [
+    {
+      "source_menu_ordinal": 1,
+      "source_floor": 3009,
+      "source_chef_menu": "npc/jaruga/menu02.conf",
+      "item_id": 12607,
+      "source_A_B_full_row_sha256": "cb82cbe395f493fee2ad7e8bfbc0dc0f6a44d29c76b237452e48016caacfe458",
+      "original_A_zero_based_line": 7345,
+      "original_item_image_alias": 24484,
+      "original_source_price_text": "80",
+      "original_source_type_text": "20",
+      "source_callback": "ITEM_useStatusChange",
+      "source_material_names": [
+        "串",
+        "海星",
+        "鹽",
+        "碳火"
+      ],
+      "source_material_values_not_recipe_quantities": [
+        21,
+        21,
+        21,
+        21
+      ],
+      "TW1_saved_original_pixel": {
+        "adrn_ordinal": 6651,
+        "rd_bytes": 617,
+        "dimensions": [
+          28,
+          42
+        ],
+        "original_adrn_record_sha256": "f583e27fd0bc56a165d18f57d04492abc3b4929368e4e040a2204df0ea6f9638",
+        "original_rd_sha256": "b12ab4e41be5470afbba9ab93657bca26ee44f7c8c1717919876cd96fd8dcfee",
+        "original_indexed_pixel_sha256": "92e89ef314840c5cf8d81d818da2846d4f87022cfd383d39bc2fc14064717199",
+        "candidate_rgba_sha256": "10fb93b47db0ca5469e13b4cccd6ca3c02386cd0864a14b0255d7e08eddda9c7",
+        "candidate_png_sha256": "1948f8a7f8495f86e76ae86e05dbc14e03488e2ebbd08394447207d75746fe49"
+      },
+      "private_pixel_filename": "source-TW1-original-RD-candidates/alias-24484.png",
+      "status": "CROSS_CARRIER_ORIGINAL_PIXEL_CANDIDATE_NOT_NATIVE_SELECTOR"
+    },
+    {
+      "source_menu_ordinal": 2,
+      "source_floor": 3009,
+      "source_chef_menu": "npc/jaruga/menu02.conf",
+      "item_id": 12780,
+      "source_A_B_full_row_sha256": "66842fd402ae61ab6c7eaf2f4485fd33ce570f839dab452dcfabb4223104473a",
+      "original_A_zero_based_line": 7512,
+      "original_item_image_alias": 24443,
+      "original_source_price_text": "10",
+      "original_source_type_text": "20",
+      "source_callback": "ITEM_useRecovery",
+      "source_material_names": [
+        "生薑",
+        "砂糖",
+        "飲用水"
+      ],
+      "source_material_values_not_recipe_quantities": [
+        10,
+        10,
+        10
+      ],
+      "TW1_saved_original_pixel": {
+        "adrn_ordinal": 6610,
+        "rd_bytes": 1259,
+        "dimensions": [
+          44,
+          35
+        ],
+        "original_adrn_record_sha256": "34f5a752494ca7a3aa97516622512890a3f01dbb5d31a5374b7d17b46011ac61",
+        "original_rd_sha256": "cb99c1dd9637d89e0d2e98a95c9cab72c12c2a41fa1d7eb80b55cded5a6780ae",
+        "original_indexed_pixel_sha256": "36ee9a44759b45542db55873994b68c3d71b2225de1e01498c5537be732d0bf8",
+        "candidate_rgba_sha256": "fdb446273a9931405e50d68a165d988c33ac2bdd72d5a0197e62d69ccc7710b1",
+        "candidate_png_sha256": "1e172dca58e0287452c2c94bfd7a6f3128cf98a527d276bb6f0967364be1d0cc"
+      },
+      "private_pixel_filename": "source-TW1-original-RD-candidates/alias-24443.png",
+      "status": "CROSS_CARRIER_ORIGINAL_PIXEL_CANDIDATE_NOT_NATIVE_SELECTOR"
+    },
+    {
+      "source_menu_ordinal": 3,
+      "source_floor": 3009,
+      "source_chef_menu": "npc/jaruga/menu02.conf",
+      "item_id": 12754,
+      "source_A_B_full_row_sha256": "708be33d1b0cfd95c2c71e306df2e7887b437ab2dc484b51cfbf6823f81df6de",
+      "original_A_zero_based_line": 7491,
+      "original_item_image_alias": 24531,
+      "original_source_price_text": "10",
+      "original_source_type_text": "20",
+      "source_callback": "ITEM_useRecovery",
+      "source_material_names": [
+        "蘆筍",
+        "鹽"
+      ],
+      "source_material_values_not_recipe_quantities": [
+        8,
+        8
+      ],
+      "TW1_saved_original_pixel": {
+        "adrn_ordinal": 6698,
+        "rd_bytes": 778,
+        "dimensions": [
+          32,
+          34
+        ],
+        "original_adrn_record_sha256": "671b7aabdd4c94bdb45508b3e382ba8cc45424514f78efc99389c799bd4b0f89",
+        "original_rd_sha256": "ac5ace260cb02df6c45bcf07b0e93647ad2af78c7f3f2365fb17fb4e594fc467",
+        "original_indexed_pixel_sha256": "228c4d941b093dd5896bdfb03e234656f0970263346489d36a2bb9fd70a509c9",
+        "candidate_rgba_sha256": "2b333628821b573fe8c81151feb9e896832dd9a081c1b97accc2d83321b54a49",
+        "candidate_png_sha256": "24561f7406392522ac2ebead1f014c1449f768861843571e4cdd3b9735d8ae66"
+      },
+      "private_pixel_filename": "source-TW1-original-RD-candidates/alias-24531.png",
+      "status": "CROSS_CARRIER_ORIGINAL_PIXEL_CANDIDATE_NOT_NATIVE_SELECTOR"
+    }
+  ],
+  "private_replay": {
+    "source_item_A_B_94_column_rows_checked": 3,
+    "retained_png_file_sha256_dimension_rgba_sha256_checked": 3,
+    "zip_member_CRC_all_pass": true,
+    "old_original_RAR_reread": false,
+    "old_original_menu_raw_reopened": false,
+    "new_RD_binary_decodes": 0
+  },
+  "novelty": "Three original TW1 RD pixel SHA and original-sprite index links now joined to already-known O75 exact menu item IDs; no new historical dishes",
+  "negative": {
+    "same_official_version_or_deployment_proven": false,
+    "early_original_menu_NPC_identity_proven": false,
+    "original_client_or_server_executed": false,
+    "native_recipe_success_quantities_or_use_proven": false,
+    "source_2009_three_nonexact_names_forced_into_items": false,
+    "raw_original_copyright_material_published": false,
+    "original_game_sprite_selector_palette_proven": false
+  },
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "historical_CURRENT_git_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "next": "Other source-ready pet-skill or quest-item NPC original service relation; no cooking simulation or future engine."
+}
