@@ -8,7 +8,7 @@ ROOT=Path(__file__).resolve().parents[1]
 REPORT_PATH=ROOT/"research/recovered/STONEAGE-INTEGRATION57-GIIRU-TWO-TRIBES-31205-ORIGINAL-RD-SOURCE-R1.json"
 
 def git_blob_sha(raw):
-    return hashlib.sha1(b"blob "+str(len(raw)).encode()+b"\\0"+raw).hexdigest()
+    return hashlib.sha1(b"blob "+str(len(raw)).encode()+bytes([0])+raw).hexdigest()
 
 class TestIntegration57(unittest.TestCase):
     @classmethod
