@@ -2575,3 +2575,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-11 — INTEGRATION73｜萨姆吉尔五枚勾玉／英雄祝福原来源关系
 
 [原NPC与12幅早期原像候选的限定接缝](docs/continuity/STONEAGE-INTEGRATION73-SAMUGIRU-FIVE-GEMS-HERO-BLESSING-20261111.md)／[来源数值、逐段SHA与负证](research/recovered/STONEAGE-INTEGRATION73-SAMUGIRU-SOURCE-12-ORIGINAL-ITEM-PIXELS-R1.json)：基于全新main `924e3502`/tree `860a0950` 与26/26实际成功Actions，私人mixed25 NPC 2205/2205 CRC与ITEM01 838/838 CRC实回读；`poru/hero.create` floor5501连接`poru/samugiru`（10原段），`poru/samugiru01.create` floor1013连接`poru/girl`（7原段），5种原交付物→5枚不同勾玉→首饰18537与英雄祝福18543的原字面静态关系。12份原A/B物品行、12个不同TW1零售原RD PNG候选已保存并本轮整SHA/尺寸复核；本轮无新RD解码/原生脚本执行/官方同服认证。尤其首饰与五份祝福的源字面数量、NOWEV/ENDEV63差异及未直接创建引用的samugiru_test对照保留。31成员/58,292B私人原件ZIP已存个人Library并独立回读CRC/SHA，原图/商业台词/原94列不公开。完整CURRENT原blob不变，Stage A7PARTIAL＋2OPEN、Stage B/wiki GATED、R79暂停、整体进度null。下一项轮换不重复的实际原2D游戏内容；专项及主线Actions成功后再做正式验收。
+
+
+### INTEGRATION73 正式候选、主线与私人原件验收（2026-11-11）
+
+[萨姆吉尔五勾玉／12台湾1.0原像候选正式验收](docs/continuity/STONEAGE-INTEGRATION73-PUBLICATION-ACCEPTANCE-20261111.md)：[PR #348](https://github.com/chinaneedM/stoneage-rebuild/pull/348)已squash合并。候选 `768d2d1b2e8f492165eef14d931faf2ca5a04991`／tree `14c57050a8db35483490637ffae7340c618391ab` **46/46 Actions**（push27/27、PR19/19）与内容主线 `46553a6a8d98b62423cb12f5fce623035897c36b`／同tree **27/27 Actions**真实全部success，专项三个job各实录12项测试OK。全部73个运行ID见[机器回执](research/recovered/STONEAGE-INTEGRATION73-PUBLICATION-ACCEPTANCE-R1.json)。私人58,292B/31成员原NPC/物品94栏/12原RD候选图包已上传个人Library后独立回取全SHA/CRC通过；商业原文字/原图不入Git。原CURRENT `c89e0e33537990aa2132b47c40fef49a985a935c` 未改，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体完成率null；正式验收收据本身Actions不预支，NEXT另寻未重复且有实物的历史2D内容。
