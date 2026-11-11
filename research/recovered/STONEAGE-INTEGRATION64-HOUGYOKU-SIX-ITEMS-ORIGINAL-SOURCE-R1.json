@@ -1,0 +1,310 @@
+{
+  "date": "2026-11-11",
+  "derived": {
+    "floor_5105_in_MAP09_691_pixel_catalog": "SOURCE_QUALIFIED_BUT_NOT_VERIFIED_THIS_ROUND",
+    "floor_6000_original_DAT_in_MAP09_691_pixel_catalog": "NOT_LISTED_NOT_PROVEN_MISSING_ORIGINAL_MAP",
+    "npcwarp_literal_four_destinations": [
+      {
+        "floor": 4000,
+        "x": 53,
+        "y": 101
+      },
+      {
+        "floor": 2000,
+        "x": 44,
+        "y": 39
+      },
+      {
+        "floor": 5105,
+        "x": 14,
+        "y": 3
+      },
+      {
+        "floor": 6000,
+        "x": 58,
+        "y": 44
+      }
+    ],
+    "original_TYPE_order": [
+      "ACCEPT",
+      "REQUEST",
+      "MESSAGE",
+      "MESSAGE"
+    ],
+    "original_distinct_crosscarrier_visual_candidates": 6,
+    "original_item_ids_count": 6,
+    "reward_item_id": 2765,
+    "source_REQUEST_has_GetItem_2764": true,
+    "source_condition_LV": ">59",
+    "source_event_flag_literal": 45,
+    "unique_source_required_item_ids": [
+      2764,
+      2760,
+      2761,
+      2762,
+      2763
+    ]
+  },
+  "four_original_TYPE_blocks": [
+    {
+      "commands": [
+        {
+          "line": 10,
+          "numeric_literal": "LV>59&ITEM=2764&ITEM=2760&ITEM=2761&ITEM=2762&ITEM=2763",
+          "op": "EVENT",
+          "source_line_utf8_sha256": "7046bc99e3215951b875b04b713a3d59ed01049ffc519855d7c370f76905cc34"
+        },
+        {
+          "line": 14,
+          "numeric_literal": "4000.53.101,2000.44.39,5105.14.3,6000.58.44",
+          "op": "NpcWarp",
+          "source_line_utf8_sha256": "36deac718930bbdd9d1a82ada81999ff4ea5317906e134838af46d0cf400446f"
+        },
+        {
+          "line": 15,
+          "numeric_literal": "2765",
+          "op": "GetItem",
+          "source_line_utf8_sha256": "c2f7ca4adbc01a85b042e9d3893cb0b1000f13d9dcdfb1ae8a209c5d1eaf2672"
+        },
+        {
+          "line": 16,
+          "numeric_literal": "2764,2760,2761,2762,2763",
+          "op": "DelItem",
+          "source_line_utf8_sha256": "245baf41409cbe2c8b3bbebf6f77adcce0bbbe6885165f7c762292d2ff880733"
+        },
+        {
+          "line": 17,
+          "numeric_literal": "45",
+          "op": "EndSetFlg",
+          "source_line_utf8_sha256": "a6e9d85bc3266b5139dd4e0920f5423eb94c78d1156249a6d5d6b6576bcdb7d9"
+        }
+      ],
+      "event_number_literal": "45",
+      "normalized_source_section_utf8_sha256": "a27ae38a015e72716d891854d1cbbb43f2f22692b525fa74929e93c4904e4d3d",
+      "ordinal": 0,
+      "source_EventEnd_line": 18,
+      "source_TYPE_line": 9,
+      "type": "ACCEPT"
+    },
+    {
+      "commands": [
+        {
+          "line": 22,
+          "numeric_literal": "LV>59",
+          "op": "EVENT",
+          "source_line_utf8_sha256": "731cf800bdb6a0bcc4bbee138ada49af9b3e2fc96dc263eaca6298b597f81ab7"
+        },
+        {
+          "line": 29,
+          "numeric_literal": "2764*1",
+          "op": "GetItem",
+          "source_line_utf8_sha256": "4f69bda189dd86f27108e0890dcb77faab152d63f66b03c359ba426658bca750"
+        }
+      ],
+      "event_number_literal": "45",
+      "normalized_source_section_utf8_sha256": "0b1ddf10fe6c218534b0ab610dbe01a05c858afe8d8dfad21f42a8092b8d279b",
+      "ordinal": 1,
+      "source_EventEnd_line": 31,
+      "source_TYPE_line": 21,
+      "type": "REQUEST"
+    },
+    {
+      "commands": [
+        {
+          "line": 36,
+          "numeric_literal": "LV>59&ENDEV=45",
+          "op": "EVENT",
+          "source_line_utf8_sha256": "4bbfef42b288df17a99a9dca96c404d142c5f62f76ea32b3c06c57bde1b8f992"
+        }
+      ],
+      "event_number_literal": "-1",
+      "normalized_source_section_utf8_sha256": "5bd62821ca1266319b99bac13c99d100bacb9eec3ea15ada85b3ef7e5de453f1",
+      "ordinal": 2,
+      "source_EventEnd_line": 38,
+      "source_TYPE_line": 35,
+      "type": "MESSAGE"
+    },
+    {
+      "commands": [
+        {
+          "line": 42,
+          "numeric_literal": "LV>0",
+          "op": "EVENT",
+          "source_line_utf8_sha256": "b5a4b0bade0ca8bf7001485fd1f04219a6589c6162746a7c4358a228708a6ec8"
+        }
+      ],
+      "event_number_literal": "-1",
+      "normalized_source_section_utf8_sha256": "09007865b3c9897519c571791c659e42b1dcba8d833275a9eaa1f6ad344eb0f9",
+      "ordinal": 3,
+      "source_EventEnd_line": 44,
+      "source_TYPE_line": 41,
+      "type": "MESSAGE"
+    }
+  ],
+  "item_source_qualified_six_rows": [
+    {
+      "item_id": 2760,
+      "original_itemset0710_line_1based": 2666,
+      "original_itemset_line_1based": 2271,
+      "same_94_field_original_rows": true,
+      "source_image_alias": 24059,
+      "source_name": "地的寶珠",
+      "source_original_cp950_row_sha256": "b122c3ce1f247d720f84b927a0c48b9b8c5eef627388945ce694b94f40cf079f",
+      "source_price_literal": "5000",
+      "source_type_literal": "16",
+      "tw1_retail_original_RD_candidate": {
+        "physical_bitmap_number": 6769,
+        "png_sha256": "1b9f51d9a90fd8327c094559135755d314189383a81f3f6e085d436a864f3651",
+        "size": [
+          24,
+          21
+        ],
+        "source_original_RD_sha256": "1bdc1eb23e50ff9136155b82896a29fa12998bae3d907c0ffabf1dca352e47d8",
+        "source_qualification": "TW1_RETAIL_CROSS_CARRIER_VISUAL_CANDIDATE_NOT_SAME_OFFICIAL_DEPLOYMENT"
+      }
+    },
+    {
+      "item_id": 2761,
+      "original_itemset0710_line_1based": 2667,
+      "original_itemset_line_1based": 2272,
+      "same_94_field_original_rows": true,
+      "source_image_alias": 24055,
+      "source_name": "水的寶珠",
+      "source_original_cp950_row_sha256": "fc6b8d77ed68700d32dbe6240aacb245ad01e6a5d88f1cefd816ab13cbf70056",
+      "source_price_literal": "5000",
+      "source_type_literal": "16",
+      "tw1_retail_original_RD_candidate": {
+        "physical_bitmap_number": 6765,
+        "png_sha256": "553b13f9fa536202c49fbc87ed51e0166b9df1ea4e1b42373495b16b7720dd02",
+        "size": [
+          28,
+          21
+        ],
+        "source_original_RD_sha256": "53e1ae321cf6a8c5ee62a76376ee6b9c8d3035c11d9f1bee938e3bafccecaf29",
+        "source_qualification": "TW1_RETAIL_CROSS_CARRIER_VISUAL_CANDIDATE_NOT_SAME_OFFICIAL_DEPLOYMENT"
+      }
+    },
+    {
+      "item_id": 2762,
+      "original_itemset0710_line_1based": 2668,
+      "original_itemset_line_1based": 2273,
+      "same_94_field_original_rows": true,
+      "source_image_alias": 24061,
+      "source_name": "火的寶珠",
+      "source_original_cp950_row_sha256": "f5217fefa437c73c14824eaec49362338cb74878a99f1e7941671c8c01d871e1",
+      "source_price_literal": "5000",
+      "source_type_literal": "16",
+      "tw1_retail_original_RD_candidate": {
+        "physical_bitmap_number": 6771,
+        "png_sha256": "7a940887f5f60d0f2cbb4e98bd663c861614016d5609a73d7153aba478bf5f90",
+        "size": [
+          28,
+          21
+        ],
+        "source_original_RD_sha256": "c964b434d901d967e84c0181f68b75dd57be796b8f0df895bf9169f5e7f7b82c",
+        "source_qualification": "TW1_RETAIL_CROSS_CARRIER_VISUAL_CANDIDATE_NOT_SAME_OFFICIAL_DEPLOYMENT"
+      }
+    },
+    {
+      "item_id": 2763,
+      "original_itemset0710_line_1based": 2669,
+      "original_itemset_line_1based": 2274,
+      "same_94_field_original_rows": true,
+      "source_image_alias": 24057,
+      "source_name": "風的寶玉",
+      "source_original_cp950_row_sha256": "15661357c4f76bb2562d1a7922c497617b42297c7b41fc307ebe2ee23d87f611",
+      "source_price_literal": "5000",
+      "source_type_literal": "16",
+      "tw1_retail_original_RD_candidate": {
+        "physical_bitmap_number": 6767,
+        "png_sha256": "a387e59e3b8b9ae731867e465d102c746cf149d7d206dc999be1bf3f86987b19",
+        "size": [
+          24,
+          21
+        ],
+        "source_original_RD_sha256": "3a38371b635ac1cd14fa24dcd1318681cc0865cde99e9c581c23e45166063294",
+        "source_qualification": "TW1_RETAIL_CROSS_CARRIER_VISUAL_CANDIDATE_NOT_SAME_OFFICIAL_DEPLOYMENT"
+      }
+    },
+    {
+      "item_id": 2764,
+      "original_itemset0710_line_1based": 2670,
+      "original_itemset_line_1based": 2275,
+      "same_94_field_original_rows": true,
+      "source_image_alias": 24198,
+      "source_name": "結晶石",
+      "source_original_cp950_row_sha256": "c1da40315e5d63eb8cdb9adb61f834d386303b3501e4d53aa12947aa7e25b0e6",
+      "source_price_literal": "0",
+      "source_type_literal": "16",
+      "tw1_retail_original_RD_candidate": {
+        "physical_bitmap_number": 6852,
+        "png_sha256": "9a08a75f1fb6515bfa7634c861edf139f4237c94be73885d80445bbd393d72ad",
+        "size": [
+          24,
+          22
+        ],
+        "source_original_RD_sha256": "36365378b3cd8a528167c50f3f6af3c03531c9c8798f3ee1bdcb1ec600955e38",
+        "source_qualification": "TW1_RETAIL_CROSS_CARRIER_VISUAL_CANDIDATE_NOT_SAME_OFFICIAL_DEPLOYMENT"
+      }
+    },
+    {
+      "item_id": 2765,
+      "original_itemset0710_line_1based": 2671,
+      "original_itemset_line_1based": 2276,
+      "same_94_field_original_rows": true,
+      "source_image_alias": 22082,
+      "source_name": "月光的手鐲",
+      "source_original_cp950_row_sha256": "502e1373ded4856d5f7a572d45baf261a6c2da4ef3425e898d68f0e955ac4a1f",
+      "source_price_literal": "50000",
+      "source_type_literal": "8",
+      "tw1_retail_original_RD_candidate": {
+        "physical_bitmap_number": 6449,
+        "png_sha256": "a1b35e52854441892b42fd43cd38efed1f5b6c5717c7488be9b06dba8d7fc53b",
+        "size": [
+          44,
+          29
+        ],
+        "source_original_RD_sha256": "c6cd2ed7889a13a4e402d8336843dd69d713f326a454deced6dc719df8590d42",
+        "source_qualification": "TW1_RETAIL_CROSS_CARRIER_VISUAL_CANDIDATE_NOT_SAME_OFFICIAL_DEPLOYMENT"
+      }
+    }
+  ],
+  "limits": {
+    "EndSetFlg_actual_effect_OPEN": true,
+    "GetItem_and_DelItem_actual_inventory_changes_OPEN": true,
+    "NpcWarp_command_semantics_random_sequence_and_execution_OPEN": true,
+    "R79": "PAUSED_NON_BLOCKING",
+    "item_rows_are_preserved_original_CP950_bytes_private_and_public_contains_only_derived_hashes": true,
+    "original_NPC_visual_graphic_16047_pixels_not_qualified_in_this_packet": true,
+    "original_event_origin": "ORIGIN_UNRESOLVED",
+    "original_official_same_deployment_TW1_and_mixed25_OPEN": true,
+    "overall_percent": null,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "static_conditions_do_not_prove_runtime_order_or_success": true,
+    "wiki": "GATED"
+  },
+  "schema": "stoneage.integration64.hougyoku_five_items_one_reward_source_bridge.r1",
+  "scope": "post-original mixed25 COMMUNITY static NPC event + two original item tables; Taiwan 1.0 retail visual candidates are separate carrier",
+  "source": {
+    "ITEM_zip_members_verified": 838,
+    "NPC_zip_members_verified": 2205,
+    "create_ordinal_zero_based": 0,
+    "original_create_bytes": 342,
+    "original_create_path": "npc/extra/event/hougyoku.create",
+    "original_create_sha256": "ed001acc16e29c2efaeb146840a2b563bc0265b64b364bf91ff22900abf5e0d5",
+    "original_event_script_bytes": 1944,
+    "original_event_script_path": "npc/extra/event/hougyoku",
+    "original_event_script_sha256": "fbc23c845a63a4fd126f5f0b8aefd85802210950db5818d2f56ab4588aa22888",
+    "source_NPC_borncorner_4_literals": [
+      58,
+      44,
+      58,
+      44
+    ],
+    "source_NPC_floor": 6000,
+    "source_NPC_graphic_alias": 16047,
+    "source_NPC_private_archive_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "source_item_private_archive_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa"
+  }
+}
