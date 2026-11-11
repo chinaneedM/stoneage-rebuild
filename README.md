@@ -2565,3 +2565,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-11 — INTEGRATION72｜梦幻洞窟四物品原图候选来源关联
 
 [有界原NPC/四物品/台湾1.0原RD候选源证](docs/continuity/STONEAGE-INTEGRATION72-DREAM-SAGE-FOUR-ITEM-PIXELS-20261111.md)／[公开SHA数值证据](research/recovered/STONEAGE-INTEGRATION72-DREAM-SAGE-FOUR-ITEM-TW1-ORIGINAL-PIXEL-SOURCE-R1.json)：依据本次fresh main `7dcfdb85526756551d54ae342e40196f6b675dc7`/tree `ec9771cc7acdb55167003bcf7aa422a8a0315c6e` 与26/26成功Actions，真正重读私人社区混合25 NPC ZIP 2205CRC和ITEM01 ZIP 838CRC，老人原REQUEST项2603对应仙人三段DelItem2603→GetItem2604/2605/2606来源静态合同；两份94列原物品表8行原SHA及4个不同TW1零售原RD保存图PNG/RGBA 4/4本轮重核，分别别名14648/21000/21531/24212、物理5600/6301/6396/6979。新原脚本0、新RD从原REAL解码0、原游戏执行0、同官方部署认证0。私人12成员18371B源证ZIP存个人Library并独立回读完整SHA/CRC；原图、台词、完整商品数据不入公开Git。完整旧CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c` 未改，Stage A 7PARTIAL＋2OPEN，Stage B/wiki GATED，R79暂停，整体percent=null。NEXT转其它未重复、真实来源就绪的原2D游戏内容；本次正式候选/main CI仅按远端实际完成结果后验。
+
+
+### INTEGRATION72 正式候选、主线及私人保管验收（2026-11-11）
+
+[梦幻洞窟四物品来源关联的远端验收回执](docs/continuity/STONEAGE-INTEGRATION72-PUBLICATION-ACCEPTANCE-20261111.md)： [PR #346](https://github.com/chinaneedM/stoneage-rebuild/pull/346)已合并，候选 `92f84e5bcf326d58fd885f558abbc9edbdf24f25` **46/46**（27 push＋19PR）与内容主线 `2a1ae4c754a73393a30155961695829b3dc50c9b`／tree `11a2a80d7c14eb908752d7f391d2ca6f48896ed6` **27/27** Actions 均实测 completed/success，含三处 INTEGRATION72 专项。全部73个真实运行ID见[机器回执](research/recovered/STONEAGE-INTEGRATION72-PUBLICATION-ACCEPTANCE-R1.json)。私人原NPC/物品/4幅已解台湾1.0候选PNG组成的12成员18,371B ZIP已经个人Library独立回读整SHA/CRC；原版权资产未公开。原CURRENT `c89e0e33537990aa2132b47c40fef49a985a935c` 未变，Stage A 7PARTIAL＋2OPEN、B/wiki GATED、R79暂停、overall_percent=null。该回执自身新HEAD Actions不预支；NEXT另转未做过、真实材料合格的游戏内容。
