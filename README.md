@@ -2448,3 +2448,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 
 [源实物与边界](docs/continuity/STONEAGE-INTEGRATION56-DREAM-CAVE-TWO-GUARDS-20261111.md)及[公开可复核原CREATE／原DAT／原SPR／像素来源联接](research/recovered/STONEAGE-INTEGRATION56-DREAM-CAVE-GUARDS-41-42-TW1-32-PIXELS-R1.json)：私人QUEST09原包28,306,717B/25成员完整SHA/CRC重读，原`sb_mugen.create`四个原块及两张70×70原DAT(41/42)实际SHA核同，现场读两层守卫格(34,41)/(33,41)三原uint16层。另一私人台湾1.0零售PET07原图HTML和独立RD收据完整SHA重读，原SPR编号100343/100346各16个不同原位图、33帧位置，共32幅实际已解原PNG/66帧位置逐SHA和尺寸验一致。本轮**新RD解码0**；原地图社区mixed25与早期美术不是已认证同部署或原版NPC行为。私人41成员15,621,429B压缩包SHA `aca681e3eee04a67bab488dcbbab00dda3d479274482c87d37a170478541bcce` 已上传个人Library并独立下载全SHA/CRC核验；原PNG、DAT、NPC全文不公开。历史CURRENT全2,709,173B原blob c89e0e33537990aa2132b47c40fef49a985a935c不改，Stage A7 PARTIAL+2 OPEN/B/wiki GATED/R79暂停/总体未知。**NEXT** 改到其它真正有原地图/原NPC/原像素实物的场景或内容，勿重复本双守卫图号，缺原实物即精确止点；候选与主线CI另据实时状态验收。
 
+
+## 2026-11-11 — INTEGRATION57｜吉鲁两族任务两原配置与同载体144份原RD/PNG实物
+
+[本轮来源与私人实物审查](docs/continuity/STONEAGE-INTEGRATION57-GIIRU-TRIBES-SAME-CARRIER-PIXELS-20261111.md)及[可远端重放数字/散列/原帧序](research/recovered/STONEAGE-INTEGRATION57-GIIRU-TWO-TRIBES-31205-ORIGINAL-RD-SOURCE-R1.json)：从私人QUEST11实际重读原`garunaev1.create`序号2/5及两脚本`garunaev3/6`，恢复吉鲁`31205`原DAT25×25两格(12,11)/(12,12)的原三u16值，原NPC图号100250/100252。两组图的同混合2.5保存RAR SCENE13原RD子ZIP+原PNG内嵌实物、先前R40/CHAR05源SPR段散列重新核对：**8+8方向序列、72+208原有序帧位置、64+80不同bitmap，每一份144/144 RD/PNG/RGBA原SHA一致**，新原RD解码0、原客户端/服务器运行0。私人869340B／297成员ZIP已存个人Library并独立回取整SHA/CRC/144源像素核验，现代查看器16方向图像读取/0JS错误/0网络。源图、原脚本、DAT仍私人；公开不带版权资产。同保存载体非原官方同部署/原NPC动作证明，不把144图当宠物种数。旧CURRENT2,709,173B原blob c89e0e33537990aa2132b47c40fef49a985a935c完整保留；Stage A 7PARTIAL+2OPEN，Stage B/wiki GATED，R79暂停，overall_percent=null。**NEXT** 更换其它来源充足的原图+地图+NPC/任务关系，不重复双角色动画或引擎/账号开发。候选及正式主线验收另据实际Actions。
+
