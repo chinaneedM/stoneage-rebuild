@@ -1,0 +1,738 @@
+{
+  "schema": "stoneage.integration56.dream_cave_original_two_guard_creates_taiwan1_pets_original_png32_source_bridge.r1",
+  "date": "2026-11-11",
+  "research_scope": "Stage A historical source-bound original-content audit; never native source game execution",
+  "starting_remote": {
+    "repository": "chinaneedM/stoneage-rebuild",
+    "head": "5661035716f3355cfb6b91f24c85a00fb583d663",
+    "tree": "21beb282867277ca1ef12e579b2a84e22129f515"
+  },
+  "prior_current_history_preserved": {
+    "path": "docs/CURRENT-STATE.md",
+    "blob_sha": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "bytes": 2709173,
+    "edited": false
+  },
+  "source_qualified_public_inputs": {
+    "quest09": {
+      "path": "research/recovered/STONEAGE-QUEST09-DREAM-CAVE-ORIGINAL-CONTROLS-R1.json",
+      "blob_sha": "6e4606c26256f93875362326d2005cfa68a8d68e",
+      "origin": "later preserved community mixed25 QUEST09 source"
+    },
+    "quest09_map_observation": {
+      "path": "research/recovered/STONEAGE-QUEST09-TWO-ORIGINAL-CAVE-MAPS-OBSERVATION-R1.json",
+      "blob_sha": "a2a14f25f6969122aedf0f76a5e318f74c09e7dc",
+      "origin": "same later preserved map DAT / prior actual observation"
+    },
+    "pet07": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-07-TW10-BATCH-PUBLIC-R1.json",
+      "blob_sha": "0b5f81b41a642025ab53a12884638fdee887470e",
+      "origin": "separately preserved accepted Taiwan/Waei-JSS v1.0 retail original SPR/RD pixel source"
+    }
+  },
+  "private_custody": {
+    "quest09": {
+      "name": "StoneAge-QUEST09-dream-cave-original-private.zip",
+      "bytes": 28306717,
+      "sha256": "ae5e626a7c27922c9fa373be1d25ca6561b4f353cd9529cb66d7e49c827df070",
+      "members": 25,
+      "crc_all_pass": true
+    },
+    "pet07_catalog": {
+      "name": "StoneAge-PET07-original-sprite-private-catalog.html",
+      "bytes": 15123277,
+      "sha256": "58e8ee4ff5165ed2f61663d67ae1cd0a8183622fa3375c480232784bfce9dc76"
+    },
+    "pet07_original_RD_receipt": {
+      "name": "StoneAge-PET07-private-original-RD-verified-source-report.json",
+      "bytes": 1617404,
+      "sha256": "b5ad2e58930afbe90604a1d72e3c17ab0adea446e7c118be775e3973315e6cb4"
+    },
+    "this_work_private_custody": {
+      "name": "StoneAge-INTEGRATION56-dream-cave-two-guards-TW1-32-pixels-private.zip",
+      "library_path": "/石器时代/StoneAge-INTEGRATION56-dream-cave-two-guards-TW1-32-pixels-private.zip",
+      "bytes": 15621429,
+      "sha256": "aca681e3eee04a67bab488dcbbab00dda3d479274482c87d37a170478541bcce",
+      "members": 41,
+      "crc_all_pass": true,
+      "independently_downloaded_and_sha_crc_verified": true,
+      "contains_original_proprietary_DAT_NPC_PNG": true,
+      "public_git": false,
+      "modern_contact_png_sha256": "631b3b75b861160e3ebfc6602f1b686efc307830bb609dd395fec888a909fb8d"
+    }
+  },
+  "original_mixed25_create_file": {
+    "path": "400/sb_mugen.create",
+    "bytes": 793,
+    "sha256": "cb3a40849078065a563a8d93c4a7a838846c1354ad5c4bbfd8700cb3053a7e25",
+    "crc32": "979965ea"
+  },
+  "original_mixed25_guard_arg_metadata": [
+    {
+      "path": "400/sb_muge1.arg",
+      "sha256": "f5c2c25eb48eda2ac33f77bd054e39fa903c9a0f2a03193a24e56dc1c7ad9f17",
+      "entype_raw": 2,
+      "dieact_raw": 1,
+      "warp_floor_x_y": [
+        41,
+        34,
+        39
+      ],
+      "enemy_instance_ids_in_source_order": [
+        1095,
+        1095,
+        1095,
+        1087,
+        1086,
+        1096,
+        1096,
+        1096,
+        1096,
+        1096
+      ]
+    },
+    {
+      "path": "400/sb_muge2.arg",
+      "sha256": "d4294d9144e1d1b3997cd84282ca5b6961109c23c394ea96253b442699c0559a",
+      "entype_raw": 2,
+      "dieact_raw": 1,
+      "warp_floor_x_y": [
+        41,
+        33,
+        39
+      ],
+      "enemy_instance_ids_in_source_order": [
+        1095,
+        1095,
+        1095,
+        1087,
+        1086,
+        1096,
+        1096,
+        1096,
+        1096,
+        1096
+      ]
+    }
+  ],
+  "original_mixed25_original_DAT": [
+    {
+      "floor": 41,
+      "sha256": "49d6a1b24430027fac4aaa29a982ffb6844d4e0244e33ef868fb16c57d5dc01b",
+      "bytes": 29408,
+      "geometry": [
+        70,
+        70
+      ],
+      "three_plane_layout": "three non-interleaved little-endian uint16 planes after 8-byte width,height header",
+      "original_source_map_png_sha256": "6b769c1632f62aaac952c324f44044279b8cd4be68386e52973c6a82ac761f30"
+    },
+    {
+      "floor": 42,
+      "sha256": "4b622f7fc80b2498fde0a6ce8664962e49fae69dc4bde37e6e8214c69240b2f6",
+      "bytes": 29408,
+      "geometry": [
+        70,
+        70
+      ],
+      "three_plane_layout": "three non-interleaved little-endian uint16 planes after 8-byte width,height header",
+      "original_source_map_png_sha256": "ab7aece2959d07de592d7fd2035257c4ba1a0a175212e78fa93696f6e16fd3cd"
+    }
+  ],
+  "original_mixed25_npc_creates_and_actual_DAT_source_values": [
+    {
+      "source_create": {
+        "file": "400/sb_mugen.create",
+        "ordinal": 0,
+        "start_byte": 55,
+        "end_byte": 215,
+        "block_sha256": "37e8c760961c585db6f1a2f4dddcf094001ced8e62318d5d76703488214b6b9e",
+        "floor": 41,
+        "graphic_alias": 100343,
+        "borncorner_raw": null,
+        "borncenter_raw": [
+          34,
+          41,
+          1,
+          1
+        ],
+        "direction_raw": 4,
+        "template_token": "sb_muge1",
+        "parameter_references": [
+          [
+            "400/sb_muge1.arg",
+            "EXACT_SAME_NPC_SUBTREE_PATH",
+            "f5c2c25eb48eda2ac33f77bd054e39fa903c9a0f2a03193a24e56dc1c7ad9f17"
+          ]
+        ],
+        "time_raw": 60000
+      },
+      "source_original_DAT_u16_three_planes": [
+        4005,
+        0,
+        49154
+      ],
+      "source_point_label": "GUARD1"
+    },
+    {
+      "source_create": {
+        "file": "400/sb_mugen.create",
+        "ordinal": 1,
+        "start_byte": 241,
+        "end_byte": 401,
+        "block_sha256": "22f043f53e7d1a74b66d175be32dfd0c69c6ba6ddba68de4e7100a84f3922fe7",
+        "floor": 41,
+        "graphic_alias": 100346,
+        "borncorner_raw": null,
+        "borncenter_raw": [
+          33,
+          41,
+          1,
+          1
+        ],
+        "direction_raw": 4,
+        "template_token": "sb_muge2",
+        "parameter_references": [
+          [
+            "400/sb_muge2.arg",
+            "EXACT_SAME_NPC_SUBTREE_PATH",
+            "d4294d9144e1d1b3997cd84282ca5b6961109c23c394ea96253b442699c0559a"
+          ]
+        ],
+        "time_raw": 60000
+      },
+      "source_original_DAT_u16_three_planes": [
+        4003,
+        0,
+        49154
+      ],
+      "source_point_label": "GUARD2"
+    },
+    {
+      "source_create": {
+        "file": "400/sb_mugen.create",
+        "ordinal": 2,
+        "start_byte": 447,
+        "end_byte": 607,
+        "block_sha256": "c2de3b4a53b1b80dd9d5db8d74d7e5ff69c6b72c41a05b007fd215d087898e12",
+        "floor": 42,
+        "graphic_alias": 100343,
+        "borncorner_raw": null,
+        "borncenter_raw": [
+          34,
+          41,
+          1,
+          1
+        ],
+        "direction_raw": 4,
+        "template_token": "sb_muge1",
+        "parameter_references": [
+          [
+            "400/sb_muge1.arg",
+            "EXACT_SAME_NPC_SUBTREE_PATH",
+            "f5c2c25eb48eda2ac33f77bd054e39fa903c9a0f2a03193a24e56dc1c7ad9f17"
+          ]
+        ],
+        "time_raw": 60000
+      },
+      "source_original_DAT_u16_three_planes": [
+        4001,
+        0,
+        49154
+      ],
+      "source_point_label": "GUARD1"
+    },
+    {
+      "source_create": {
+        "file": "400/sb_mugen.create",
+        "ordinal": 3,
+        "start_byte": 633,
+        "end_byte": 793,
+        "block_sha256": "83845bdb113fb40aab5cbc216663864aa2c93d1f86394f6ddf50bcafed900cce",
+        "floor": 42,
+        "graphic_alias": 100346,
+        "borncorner_raw": null,
+        "borncenter_raw": [
+          33,
+          41,
+          1,
+          1
+        ],
+        "direction_raw": 4,
+        "template_token": "sb_muge2",
+        "parameter_references": [
+          [
+            "400/sb_muge2.arg",
+            "EXACT_SAME_NPC_SUBTREE_PATH",
+            "d4294d9144e1d1b3997cd84282ca5b6961109c23c394ea96253b442699c0559a"
+          ]
+        ],
+        "time_raw": 60000
+      },
+      "source_original_DAT_u16_three_planes": [
+        4003,
+        0,
+        49154
+      ],
+      "source_point_label": "GUARD2"
+    }
+  ],
+  "independent_TW1_retail_original_SPR_and_32_actual_prior_RD_PNG_receipts": [
+    {
+      "graphic": 100343,
+      "original_source_group": [
+        100343,
+        313,
+        "df891631ea3fd5004085716fb181ee88f2efe2d31ac894c47eec4cbdd2c2dab3",
+        56,
+        33,
+        [
+          [
+            0,
+            0,
+            17,
+            "8a9e2323b7bed41ecd645a27b35bb19edcaad58805f15fcecb9df1c59cd6943b",
+            1000
+          ],
+          [
+            2,
+            0,
+            14,
+            "5a10eaee0a12ff631fb6018a7760f62ae2e75c0b76b1400386fa29b7f7eba3f9",
+            2000
+          ],
+          [
+            1,
+            0,
+            2,
+            "d39690fa8b9e14f62aac43cc0b85ff228e7d6c16b066e9051cdc25f171adce2d",
+            100
+          ]
+        ],
+        16
+      ],
+      "original_source_16_bitmap_receipts": [
+        [
+          115899,
+          115899,
+          "63ecc2c34e819f4ab6a5a5e932309c65a68251740b6cf1b7992d543a4002e2c3",
+          "42e8b6339629293d144c405ec11eaa5431486d7da4993daaf10ab113d4887d89",
+          1,
+          120,
+          114,
+          2,
+          "376ed1411b706ed08a9794eb06e7f91622a24992272391d2df2de30576b50bd6"
+        ],
+        [
+          115900,
+          115900,
+          "cd2324f7f3f90106ab37e757336f0dc4f5f3cd269a5ef148414a4aa5bc942b44",
+          "538766f63dd032d717cf2d77bd46290059261d62d12060c3b0b1d8cf287c7d16",
+          1,
+          136,
+          103,
+          2,
+          "5e76a093e961bc6e1622c18217527e8b5e585879ddd81a23762c4fc39a4e191c"
+        ],
+        [
+          115901,
+          115901,
+          "fc1bdadc79fbe241a0fc58e322a31572ec32757be8e9d6305c0ba1dff5791c09",
+          "96abc8794098bfe441429c1e5d078dc7b0a9e92d5fdc0f91d5c3ae4a3a716dca",
+          1,
+          120,
+          93,
+          3,
+          "155618851c8c37a8b8791926289263ec2962260bec64de7e5b136dd53b2b74e2"
+        ],
+        [
+          115902,
+          115902,
+          "29be5ddf4676d9bc76c2f15997266c2b5700b12f986e0dea990670890f7c87b4",
+          "45fafd62c75049813d9d6d7617bdebce8ed2884b6e82c624b49c8437eafa8e14",
+          1,
+          120,
+          118,
+          2,
+          "dbba6fa5952c5b8daaa1cc393b1a1b7b254eaefca83379eec5b60bc12726947a"
+        ],
+        [
+          115903,
+          115903,
+          "3501a8c72e400f0df37ad2571e35708f88a453c3add597f75f2d7d2d4ac44fcd",
+          "0d6ba8111223e17648c9b70d68d9c0e415b87b68a05cab29d6e1e850f2e7274c",
+          1,
+          120,
+          109,
+          2,
+          "bfa697566b49e5e8656ecc12cac14d755fc36b6c92fd84856a5f6483c3f3d47b"
+        ],
+        [
+          115904,
+          115904,
+          "f7ab4fabcf72c32e8222108f0493b629c08e705b5b79cf04fc9c65eb40399c6a",
+          "df49fbc3317a2d1c92de00b33cc03e909fa7d7822547177485a5f78474284467",
+          1,
+          120,
+          93,
+          2,
+          "dd6ca5772adeee59fe3bf76e437e5780b434b91d91f9833362fcbd1e56db990b"
+        ],
+        [
+          115905,
+          115905,
+          "51631aa364f65382f1585828d02e7931f172000e8d79dbd31a1c374b5dd27c12",
+          "4ebc4b0c2ac71e651c97e3cb64b1feef9df6d80a2eb2f38da5d8f7051ed08fe3",
+          1,
+          120,
+          117,
+          2,
+          "8a61904b4531054287b8e500e732cc8fa699f0125a2725dedc0b990fe0f6fffb"
+        ],
+        [
+          115906,
+          115906,
+          "9d3a80a80d584f0d80d3d50dfd8ca7ebe5fc3a7bfda8dcf8120c6862f1a80c7d",
+          "911bc8e2a22cc797137b080b9bb4f35021df275b294f6a764a0386fb98f1d966",
+          1,
+          120,
+          115,
+          2,
+          "8a67f67034ba9c4b05699bea22f3894362c1cd326cb2174ece9bf54a9a1f15bb"
+        ],
+        [
+          115907,
+          115907,
+          "25d70dc178d9a5f0cd6d728c29f5e1a3c51d0130ca8701d36bf71989c2dcf7c2",
+          "9117315df4dc3de6ef9d98d305aea8f83e76a5ae865ab3d97587c38dabe6bd66",
+          1,
+          124,
+          101,
+          1,
+          "468e838202cdff1e151f2cbb8b28fc1c77b83e046b265bcf57dff24530ba594a"
+        ],
+        [
+          115908,
+          115908,
+          "1ebef51b66f3bdc47fe4bac1b9d35d230191095dbb6d09e3ad0be48ea331f18d",
+          "bb0fe6eccecdeae31ee24da9d0bd11aaa9d6346dc7dcf143cfaaf5f21db0a899",
+          1,
+          116,
+          111,
+          5,
+          "5f9a756b28de739863dcfd2bc8039407d508b9bcbac692abd70885aaa1494936"
+        ],
+        [
+          115909,
+          115909,
+          "b833c151b836d91b5b0b7db0729cf2401a0fef9fd5ea68fe39bca3bdc29c0346",
+          "abee9f893a3a4b4d66243fec1c8f2f591fffaae0c88e05ef5b741a7475cf3734",
+          1,
+          100,
+          129,
+          2,
+          "3a49151f0d2b78ef64c0ada9ea22e427e8690fc09bc8ddc6b9dc36b5cc620f15"
+        ],
+        [
+          115910,
+          115910,
+          "ffcff3c4a87643b124c011b85bd6caee832e7066a71c65ad4c07e6dcb2478976",
+          "832949506515b0fcf446d362b553900e8b22e986af81328033fdc4fca72c0365",
+          1,
+          140,
+          101,
+          2,
+          "850c64cb3e8fa821efb54920e28822a64634b9e7077beab3faa6a3d5a6f7472e"
+        ],
+        [
+          115911,
+          115911,
+          "9ad92ab42b9d9f719c458712b2de1c9974f37da559a3d373ea7c5b4caad27b21",
+          "99397d7d9975a440f60ac4df9c5c3311fb9bc011ef78212022f4589720c55c25",
+          1,
+          144,
+          88,
+          2,
+          "160b1cd1a2d18f1c9693d41458d4f0e088ce81c6bdff79cc093f427f4ee68d20"
+        ],
+        [
+          115912,
+          115912,
+          "90237e057b47837f7f3ed4224b0a3741254dcfc8049df76a9a98a26a53cf125b",
+          "610252e2c3e651b5307dd2db9e66ff00323ce74e36b77d72afb9495c3056d322",
+          1,
+          120,
+          89,
+          2,
+          "69cf3f98c5d6946686d9062dfcd76b4b3f106f27040f5111c6a2ce782a2bfb1f"
+        ],
+        [
+          115913,
+          115913,
+          "47e79c605cb4ee1535cd5c8f1ccbae86b468b58f3cf8f7848f9be24f209a4faf",
+          "529bf6e2131f5278a353f645016bafd6748689b0e492e586fd440e7869c142d8",
+          1,
+          124,
+          116,
+          1,
+          "78616f137588894ab77d36a8dd2bf6ca75515bb9c733863accf9d402a9271c85"
+        ],
+        [
+          115914,
+          115914,
+          "8ad26b323d9f24c3ca0b33d48a95ef49d542de273634fba396bf32a9e71b8d33",
+          "cae70ea662aab1b133d6dca12638227d206f567eb69df9a3f6cea1a09885f972",
+          1,
+          120,
+          99,
+          1,
+          "e758d4738a7ee60b7c8bacf2ade48fdac0ec36ed6172335227ff5333a1e0a20d"
+        ]
+      ]
+    },
+    {
+      "graphic": 100346,
+      "original_source_group": [
+        100346,
+        316,
+        "6d559775ca817d9e58c47370c2bdd1b54b71b2d4f16971e1958208e806e0edec",
+        56,
+        33,
+        [
+          [
+            0,
+            0,
+            17,
+            "985d7e662073dacce6605d745e505fd6c47c8ea82e8f928863d5b62c23140d6c",
+            1000
+          ],
+          [
+            2,
+            0,
+            14,
+            "04ab453b9138ba8030724c134b8be84385d30ad03621dc65b3bf8aa285510bbf",
+            2000
+          ],
+          [
+            1,
+            0,
+            2,
+            "76cb982f755379699e114661047e0d00e3c1d49a3c8e2224ea345b3a6eae8aa0",
+            100
+          ]
+        ],
+        16
+      ],
+      "original_source_16_bitmap_receipts": [
+        [
+          116595,
+          116595,
+          "01af05fd2f30292dfb656833fd6a2fd0548408bcf3f002a29fed4d0a049268d9",
+          "81a11fee24ff9a983237bba72cc13222b693b1c949dd455b0d9b124472241b42",
+          1,
+          120,
+          83,
+          2,
+          "46fec683ba54582f9a37a38c18aedb360a1c709192635592cbf9d7d187c41cdd"
+        ],
+        [
+          116596,
+          116596,
+          "0e225f0217c6d46491a14f235ac5a0dec9f96b9278df86567673d340cdd7d762",
+          "e0012a518476a5b9b013cdac7cf6951ed80d0997923eda33fdbbbecdddf05097",
+          1,
+          136,
+          79,
+          2,
+          "6a42ff56f5a9afbba131666660a3e93aff444a90a92fe22637576749804b74f6"
+        ],
+        [
+          116597,
+          116597,
+          "b3ce246fc9b9d854ccc222c5d9297d717051fc33862ffd6e9a0bc71d979abced",
+          "d160f4f9e8fb0170cc8af40e9287342f3bb72f35c872c7662066583a3ca33d95",
+          1,
+          120,
+          80,
+          3,
+          "192d14847d43bc9964f36e8d07f5eb263be80fece470356c89c84b58f765b67a"
+        ],
+        [
+          116598,
+          116598,
+          "3d30174762f790523924e7fe41ba78ae17577d55d3eb9a76734b165b7f793a9c",
+          "405861dee734cd023790a4439ca0a1ce323eb0aaf528dd2235bb59433bb24a3f",
+          1,
+          120,
+          95,
+          2,
+          "9d5149e3710d90f258911c85386f0fa006d9882b6fa89df11266408bc83e0c46"
+        ],
+        [
+          116599,
+          116599,
+          "c8dbdccbb5eb0aff81c473c29846ea30847dc94eb3f5f0d9b1fa667a866c6afe",
+          "7ca4e20feb1c402d5df5a0d500323de0a3b565c8f25b76c8e3ac98665f7a23af",
+          1,
+          120,
+          88,
+          2,
+          "e4bbf7288efaa05326dcfc0b37c8f5e8dfbd52ae7719fda7600ba550257672bc"
+        ],
+        [
+          116600,
+          116600,
+          "545c9d8951c6b25dd5476db9579558155e7030d735c51604b052ed65eb1a08b7",
+          "0e22101abbc2b6b90b67841894bd4046747dc216763a8143e0ce5ff8bc8408f1",
+          1,
+          120,
+          80,
+          2,
+          "5be3dd9fdaf20db50eb05f53459eec82f987e0540b6cdb846a6fdda2a4541876"
+        ],
+        [
+          116601,
+          116601,
+          "0f464201214414725dfded99ce60cf670d05ae258e7f0767f7c3ffa6fa780285",
+          "cbdf056066e0bf717b6abb95110ec60173b552b15dd382d056f514db2eb4c797",
+          1,
+          120,
+          94,
+          2,
+          "d323704ee1bf6c81efb0339d429876ff5a4cce12df7771cf2e3e6a34ea29f917"
+        ],
+        [
+          116602,
+          116602,
+          "0d9f542c3085f4bfbd48251eef2a3a8d144b652b643478004744d3ae2dfad8ee",
+          "b20bf6e37108b963f974a737faeed9e13776655283d177efcc539ee3ea6114d0",
+          1,
+          120,
+          94,
+          2,
+          "4d447edd545f7e0255283a3aadaf50d6177de6110daec7940dc188362ea79a3a"
+        ],
+        [
+          116603,
+          116603,
+          "77273ea59caef0f674c2cb496b5ab05bd25748fdefa511e957c33543d61a88c8",
+          "de0df8795a59131cb4967b65a12c1ca7b0462f721dafc211c9388a34298d4ced",
+          1,
+          116,
+          94,
+          1,
+          "34912719d1960e56a18c4821e3afc24e580a2d13133dd67eeb4ef99d2c43a301"
+        ],
+        [
+          116604,
+          116604,
+          "eec014de156bfd7089f2eaec3df0bc125adbd627419fabf02c835dc72bceec4e",
+          "43b330b7ab5bef96083b839eb47101821c961f2afe5f3157cee5e112cdd7b714",
+          1,
+          116,
+          104,
+          5,
+          "b5c480ddf7b8fc2c4df6f39694b4ab40998981b5f40f5cf1f93212dc2af006b5"
+        ],
+        [
+          116605,
+          116605,
+          "05fefb77e2eb61125433682300036dbb3bea68b3a88e0f5e256ce0bdda00b861",
+          "581957a3b93263d7d7e1d161184a11bfc75ab8ffe76bf3abff0b95980913ae41",
+          1,
+          100,
+          102,
+          2,
+          "489f892d12038bdda1da61a444ac2a9f47e666e1d180ba105a4b1b2195fe1564"
+        ],
+        [
+          116606,
+          116606,
+          "abc1c1401aed31aea96ec8e4c197bc5b5791ae3e947e9cd007412168d7ac89eb",
+          "bdf90dc999a112b0033783ae550bd16552d4af239d3469b40377c355647f1f0e",
+          1,
+          112,
+          87,
+          2,
+          "8d6931203877773d6ec94458e11ae87ac107c662ffe0437dcb7898fcd3e4f624"
+        ],
+        [
+          116607,
+          116607,
+          "55c4307feb0ca3d23ba5a633e3234aa619b2effb94acf9e412c50c95ec61b574",
+          "f4f094d907216a0255b5304b5414f3011eecc7154c956d853bbf206c28fcd6b5",
+          1,
+          96,
+          88,
+          2,
+          "594453b835c08dbb27963c0e6fd82e8b2cd6bcee22c667b5af07c3eff7de8c95"
+        ],
+        [
+          116608,
+          116608,
+          "773a17c6bdb467b8a6ec49fb7dd70aae455ae37e8c7acd0182707f7749d39468",
+          "9e1d37895e3afb96879e4fb3788c25136327bf29561e733c3c31f02bbbe0bec3",
+          1,
+          96,
+          89,
+          2,
+          "cf0b873bededcf015a46e944f3dd4c0ebc77dfc6bea0e2ad07ac0fc35494d4db"
+        ],
+        [
+          116609,
+          116609,
+          "50d1ee314270f399f2af14866f13f0e0e6f5756606232d6f2dea806107ccf421",
+          "a19480e9e5788aad35f79300e49bfa0303f3d89da3c862bd04c8acfa7dacaf07",
+          1,
+          120,
+          110,
+          1,
+          "5e8556cbf05a40654354b5779de9359da553afea4e07fe7271b0016ab228dc20"
+        ],
+        [
+          116610,
+          116610,
+          "c045e0f4c747bc771eb1dc35a51747631278d1fae62cffa9f1a51b41729b99bd",
+          "46698349a8e57f6b77360107ef30fe678eafcf049c8bb6d9aff69499b07ea3d3",
+          1,
+          120,
+          99,
+          1,
+          "a02379d7c69faed9b3cd59d2d238412c84cfbde51b8846d833c1cde5d7e2bb88"
+        ]
+      ]
+    }
+  ],
+  "private_32_png_manifest_sha256": "2eaa5618fc204a4638a8517f996f932f6622333668079a6b0137849faab0f83a",
+  "private_32_png_manifest_serialization": "sha256 utf8 json.dumps(rows sorted graphic/bitmap,sort_keys=True,separators=(',',':'),ensure_ascii=False); row {graphic,bitmap,png_sha256,width,height} using source_actual_pixel_receipts indices 0,8,5,6",
+  "counts": {
+    "source_mixed25_NPC_CREATE_blocks": 4,
+    "source_mixed25_map_DAT_files_original_bytes_reverified": 2,
+    "source_mixed25_DAT_cell_points_read_directly": 4,
+    "independent_TW1_SPR_graphic_ids": 2,
+    "independent_TW1_original_recovered_real_PNG_replayed": 32,
+    "independent_TW1_source_frame_positions_selected": 66,
+    "new_original_RD_decode_this_work": 0,
+    "native_original_client_executions": 0,
+    "native_original_server_executions": 0,
+    "verified_original_same_deployment_join": 0,
+    "verified_official_species_identification": 0
+  },
+  "negative_source_boundary": [
+    "Cross-carrier same numeric graphic aliases never establish same deployed or official source for these guards.",
+    "Original map three-plane tile values are source bytes, not native player collision or sprite draw evidence.",
+    "Original source script arguments are only static and do not prove guard combat, teleport or state transition.",
+    "Modern candidate contact sheet is not a native historical screenshot.",
+    "Source 16 distinct bitmap IDs per graphic are not 16 species or 16 NPCs; 66 frame positions are not 66 different images.",
+    "Original commercial images/DAT/NPC bytes retained privately; public artifact contains derived hashes/numeric provenance only.",
+    "No Stage B implementation, no verified original gameplay runtime; original actor identity and palette remain OPEN."
+  ],
+  "stage_status": {
+    "stage_a": "7 PARTIAL + 2 OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "result": "ACCEPTED_SOURCE_BOUNDED_TWO_GUARD_NPC_CREATE_ACTUAL_DAT_CELLS_AND_CROSS_CARRIER_TW1_32_PRIOR_ORIGINAL_PNG_OBSERVATION"
+}
