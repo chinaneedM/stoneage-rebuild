@@ -2473,3 +2473,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-11 — INTEGRATION61｜两地主厨三道物品与早期真实RD像素
 
 [原始来源、私人实物重读与未知边界](docs/continuity/STONEAGE-INTEGRATION61-CHEF-DISH-PIXEL-SOURCE-20261111.md)及[派生数值/散列索引](research/recovered/STONEAGE-INTEGRATION61-TWO-CHEFS-THREE-DISHES-TW1-PIXEL-SOURCE-R1.json)：从已认证O75原两地主厨菜单中严格保留2009的三条UNKNOWN、3009的三条同名物品ID12607/12780/12754；本轮私人ITEM01原ZIP完整SHA及838/838成员CRC实读通过，三原TW1保存PNG逐SHA/尺寸/RGBA复验成功，完成itemset别名24484/24443/24531→原ADRN物理位图6651/6610/6698的**跨来源候选**联接。不是新增三份原始菜名或新RD解码，也不是实际原生料理或官方同部署认证。历史CURRENT blob c89e0e33537990aa2132b47c40fef49a985a935c原样不动。Stage A7 PARTIAL+2 OPEN/B/wiki GATED/R79暂停、总体完成率null。NEXT不同来源就绪的宠物技能/任务物品/服务实物关系，禁止无证料理模拟与提前Stage B。
+
+
+## 2026-11-11 — INTEGRATION62｜恐龙收集原GetPet两组宠物29张真实原RD图像来源接合
+
+[来源限定说明与私人原图边界](docs/continuity/STONEAGE-INTEGRATION62-QUEST30-TWO-PET-REWARD-ORIGINAL-PIXELS-20261111.md)及[公开源数值／散列原动作帧序与像素身份](research/recovered/STONEAGE-INTEGRATION62-QUEST30-TWO-GETPET-TW1-29-RD-PIXELS-R1.json)：QUEST30/WORLD21旧已知`GetPet:93/341`和后期社区mixed25 `instance93/341→template171/274→graphic100319/100362`，本轮**实际重新读取并独立验收**已保存的台湾1.0原PET07真实PNG像素：原6段动作（0/2/1、方向0）共21+25源帧位置／13+16不重复原RD位图，29/29图逐文件SHA/尺寸与旧真实RD来源收据同，6源有序位图序列uint32le SHA同；新原RD二进制解码0。271047B/31成员的原图对照小包已私人Library存档并从独立新副本核完整SHA/CRC；原商美术和原脚本正文从未进公开Git。原任务道具2607同源名称矛盾、2.5双表运行选型、跨官方同部署、真实领宠/动画和floor100原DAT仍OPEN。历史CURRENT原Git blob `c89e0e33537990aa2132b47c40fef49a985a935c` 原样保留。Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、overall_percent=null。NEXT按材料去重再选**其它**真实任务道具/宠物技能/NPC地图原二维像素关系，避免重复本两图或提前运行网服/建设新引擎。
