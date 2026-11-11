@@ -1,0 +1,253 @@
+{
+  "schema": "stoneage.integration72.dream_sage_four_source_item_pixel_candidate_crosswalk.r1",
+  "date": "2026-11-11",
+  "fresh_remote": {
+    "main_head": "7dcfdb85526756551d54ae342e40196f6b675dc7",
+    "main_tree": "ec9771cc7acdb55167003bcf7aa422a8a0315c6e",
+    "current_full_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_bytes": 2709173,
+    "current_unchanged": true,
+    "main_actions_completed_success_on_start": 26
+  },
+  "source_scope": {
+    "NPC_and_itemset": "LATER_COMMUNITY_MIXED25_SOURCE_NOT_AUTHENTICATED_OFFICIAL_EARLY_DEPLOYMENT",
+    "pixels": "AUTHENTIC_TAIWAN_1_0_RETAIL_OTHER_CARRIER_ORIGINAL_RD_PREVIOUSLY_DECODED",
+    "cross_carrier_same_official_deployment_proven": false
+  },
+  "independently_reread_original_source": {
+    "npc_private_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "npc_zip_crc_members_verified": 2205,
+    "item_private_zip_sha256": "cb88d0a837686edae507910bd2c11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "item_zip_crc_members_verified": 838,
+    "private_item_94_column_full_rows_verified": 8,
+    "private_PNG_full_bytes_SHA_and_RGBA_verified": 4,
+    "retail_REAL_original_RD_new_binary_decodes": 0,
+    "original_NPC_scripts_newly_discovered": 0
+  },
+  "original_NPC_source_files": [
+    {
+      "path": "seimu/event/event01.create",
+      "bytes": 677,
+      "sha256": "df0d8f32422cc149ed1574a8b6f43a896aa690260c3d7cfd4aa83705efb980b2",
+      "crc32": "403ece23"
+    },
+    {
+      "path": "seimu/event/event01_1",
+      "bytes": 4750,
+      "sha256": "ac2c035d074904a575448ee424e1c5d0ff9939de60a73f149ddb47799ed9189d",
+      "crc32": "d55c4df9"
+    },
+    {
+      "path": "seimu/event/event01_2",
+      "bytes": 3079,
+      "sha256": "38479dec3f115343debb9d1ad74ee6383bf9847595fa514f0a720f7b77587d0b",
+      "crc32": "712a1e19"
+    }
+  ],
+  "original_creates": [
+    {
+      "source_create_ordinal": 0,
+      "original_create_block_sha256": "98ededac626cfacfe21d4ad6db20848eac77be96af1eac96b8d6e49142937342",
+      "floor_id": 41,
+      "graphic_alias": 16024,
+      "borncorner_raw": [
+        34,
+        25,
+        34,
+        25
+      ],
+      "linked_original_script": "seimu/event/event01_2"
+    },
+    {
+      "source_create_ordinal": 1,
+      "original_create_block_sha256": "52f748a591708e97bf3f0c81d2c3a580d156e121c1410fe4aa300a1fb9aa424d",
+      "floor_id": 42,
+      "graphic_alias": 16024,
+      "borncorner_raw": [
+        34,
+        25,
+        34,
+        25
+      ],
+      "linked_original_script": "seimu/event/event01_2"
+    },
+    {
+      "source_create_ordinal": 2,
+      "original_create_block_sha256": "260fd9cb36b026663aeabd8cd8d71622ba719dfd68b2145702c5271d5a3989f9",
+      "floor_id": 6000,
+      "graphic_alias": 16001,
+      "borncorner_raw": [
+        73,
+        54,
+        73,
+        54
+      ],
+      "linked_original_script": "seimu/event/event01_1"
+    }
+  ],
+  "original_source_quest_numeric_routes": [
+    {
+      "event_number": 34,
+      "source_elder_script": "seimu/event/event01_1",
+      "elder_source_type": "REQUEST",
+      "elder_literal_condition": "ENDEV=4&ENDEV=33&ENDEV=32",
+      "elder_section_SHA256": "3093d3f0d45d0e8dfbb816f252b348e27e875d7eed357140d276b8504c01247e",
+      "elder_GetItem": [
+        2603
+      ],
+      "source_sage_script": "seimu/event/event01_2",
+      "sage_source_type": "ACCEPT",
+      "sage_literal_condition": "ENDEV=4&ITEM=2603&ENDEV=33&ENDEV=32",
+      "sage_section_SHA256": "662e853b2dc902bffb3674947f3bdd43c1480b7407be8fcef460461ce36f2363",
+      "sage_DelItem": [
+        2603
+      ],
+      "sage_GetItem": [
+        2604
+      ],
+      "actual_original_server_execution": false,
+      "actual_branch_priority_proven": false
+    },
+    {
+      "event_number": 33,
+      "source_elder_script": "seimu/event/event01_1",
+      "elder_source_type": "REQUEST",
+      "elder_literal_condition": "ENDEV=4&ENDEV=32",
+      "elder_section_SHA256": "ed4a0f17bec98c670e14e165d3aa7e3659e020611bd2a1a68655714dbfa46e1b",
+      "elder_GetItem": [
+        2603
+      ],
+      "source_sage_script": "seimu/event/event01_2",
+      "sage_source_type": "ACCEPT",
+      "sage_literal_condition": "ENDEV=4&ITEM=2603&ENDEV=32",
+      "sage_section_SHA256": "d87a611bc40ffceaa0ad10e112fcb93fbc3c87e10dc6f6ea3f66e5e7ea1bf87c",
+      "sage_DelItem": [
+        2603
+      ],
+      "sage_GetItem": [
+        2605
+      ],
+      "actual_original_server_execution": false,
+      "actual_branch_priority_proven": false
+    },
+    {
+      "event_number": 32,
+      "source_elder_script": "seimu/event/event01_1",
+      "elder_source_type": "REQUEST",
+      "elder_literal_condition": "ENDEV=4",
+      "elder_section_SHA256": "421484c6a3d98725c501ce9be45fd6b11942563d8ec3c86694cb4fadc927ffb1",
+      "elder_GetItem": [
+        2603
+      ],
+      "source_sage_script": "seimu/event/event01_2",
+      "sage_source_type": "ACCEPT",
+      "sage_literal_condition": "ENDEV=4&ITEM=2603",
+      "sage_section_SHA256": "40c34863b78820a7cfedddb8ba35914687db6e72dee609b45307d0dd7846a090",
+      "sage_DelItem": [
+        2603
+      ],
+      "sage_GetItem": [
+        2606
+      ],
+      "actual_original_server_execution": false,
+      "actual_branch_priority_proven": false
+    }
+  ],
+  "original_source_item_and_cross_carrier_pixel_candidates": [
+    {
+      "item_id": 2603,
+      "source_item_short_name": "先見之光",
+      "source_a_full_94_field_row_sha256": "10faafea60aacc2a845c22de1be73924173effc45d82c654d6685579f98a26c4",
+      "source_b_full_94_field_row_sha256": "10faafea60aacc2a845c22de1be73924173effc45d82c654d6685579f98a26c4",
+      "source_item_image_alias": 14648,
+      "original_TW1_physical_bitmap_number": 5600,
+      "width": 44,
+      "height": 55,
+      "original_TW1_RD_SHA256": "8083cb881c02b15d38094c2c4cbfc5eecef1dce5cf27700eeca0698daf3d6bda",
+      "rechecked_retained_PNG_SHA256": "0c3c58f78d03556552337973d4813b4aa4655b4e286206c6c4ca4c7c32e47f53",
+      "rechecked_retained_RGBA_SHA256": "50287bc626946ea94a221059bba86e1442cc656f351453a72967ddf7bda3d8f9",
+      "pixel_source_existing_TW1_retail_decoded_candidate": true,
+      "source_item_and_TW1_graphics_authenticated_same_official_deployment": false
+    },
+    {
+      "item_id": 2604,
+      "source_item_short_name": "空想的衣服",
+      "source_a_full_94_field_row_sha256": "71535042770a5b599a30fc62c7e0af83d4e2107ea4e4252ab450fa4e1936367d",
+      "source_b_full_94_field_row_sha256": "71535042770a5b599a30fc62c7e0af83d4e2107ea4e4252ab450fa4e1936367d",
+      "source_item_image_alias": 21000,
+      "original_TW1_physical_bitmap_number": 6301,
+      "width": 32,
+      "height": 46,
+      "original_TW1_RD_SHA256": "208ce41a6e92daa662513f83fe66162facc71094f58d0f8be4603ededf29e181",
+      "rechecked_retained_PNG_SHA256": "813ea79a7afd7fa8ad0cb0369e75c12d004a8b1d5eb62051c270d6dec1f36e0a",
+      "rechecked_retained_RGBA_SHA256": "64166feccf8fd9c51f8c7cbb22d2d5f527823e29f9f8fc87f12e1f2454ab0037",
+      "pixel_source_existing_TW1_retail_decoded_candidate": true,
+      "source_item_and_TW1_graphics_authenticated_same_official_deployment": false
+    },
+    {
+      "item_id": 2605,
+      "source_item_short_name": "空想的帽子",
+      "source_a_full_94_field_row_sha256": "e1c02281f1f970b089af721a7a5b38e30f238dc14e40b1ede07ccadccd31be01",
+      "source_b_full_94_field_row_sha256": "e1c02281f1f970b089af721a7a5b38e30f238dc14e40b1ede07ccadccd31be01",
+      "source_item_image_alias": 21531,
+      "original_TW1_physical_bitmap_number": 6396,
+      "width": 44,
+      "height": 43,
+      "original_TW1_RD_SHA256": "5ac0191d5a0eb4817e6f94fa1962ae89b148fa9c380095268b5ced9bc9466f48",
+      "rechecked_retained_PNG_SHA256": "2c476c950c4d94f94d97642d336dec10c87f7dde4dec0c8da386e29ae07fca12",
+      "rechecked_retained_RGBA_SHA256": "0c7b13bdfda8e020f92bc6df0251d838e47b6b4b598760a3dc85e98d89ccd86d",
+      "pixel_source_existing_TW1_retail_decoded_candidate": true,
+      "source_item_and_TW1_graphics_authenticated_same_official_deployment": false
+    },
+    {
+      "item_id": 2606,
+      "source_item_short_name": "空想的豎琴",
+      "source_a_full_94_field_row_sha256": "60973204c881f073558d49e3227d283393e6ac30b69d5ab41369acac58a809c2",
+      "source_b_full_94_field_row_sha256": "60973204c881f073558d49e3227d283393e6ac30b69d5ab41369acac58a809c2",
+      "source_item_image_alias": 24212,
+      "original_TW1_physical_bitmap_number": 6979,
+      "width": 48,
+      "height": 42,
+      "original_TW1_RD_SHA256": "5f21f0206a6c9e21b81ac3d2ad273f618e4087b83787760e7025133a4749f9eb",
+      "rechecked_retained_PNG_SHA256": "ca0ee0b0f42e194a3485eeed7e3681d23284e5278a60b7081a26bd452e5faf96",
+      "rechecked_retained_RGBA_SHA256": "6b926e601902447feac2c4e73bc22f2152b22391004acbfad6f91a8f0e1363f7",
+      "pixel_source_existing_TW1_retail_decoded_candidate": true,
+      "source_item_and_TW1_graphics_authenticated_same_official_deployment": false
+    }
+  ],
+  "source_qualified_maps": {
+    "floor_41_DAT_SHA256": "49d6a1b24430027fac4aaa29a982ffb6844d4e0244e33ef868fb16c57d5dc01b",
+    "floor_42_DAT_SHA256": "4b622f7fc80b2498fde0a6ce8664962e49fae69dc4bde37e6e8214c69240b2f6",
+    "floor_6000_current_955_DAT_batch": "NO_MATCHING_DAT_IN_955"
+  },
+  "private_original_custody": {
+    "library_path": "/石器时代/StoneAge-INTEGRATION72-dream-sage-four-original-item-pixels-private.zip",
+    "zip_bytes": 18371,
+    "zip_SHA256": "1fc467e7068ef12e6de068aa710b785dcd47d297facaef5f60c72f8f7cab5dae",
+    "member_count": 12,
+    "all_12_crc_verified": true,
+    "independent_Library_download_entire_bytes_and_sha_matched": true,
+    "original_assets_or_dialogue_placed_in_public_git": false
+  },
+  "not_proven": {
+    "native_quest_execution": false,
+    "original_merchant_or_equip_function": false,
+    "random_pool_probability": false,
+    "original_event_branch_priority": false,
+    "official_same_deployment_between_NPC_item_and_retail_pixels": false,
+    "TW1_original_sage_16024_rendered_in_native_world": false,
+    "original_6000_world_scene_available_in_955_batch": false,
+    "original_client_or_server_operated": false
+  },
+  "status": {
+    "stage_A": {
+      "PARTIAL": 7,
+      "OPEN": 2
+    },
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "OTHER_SOURCE_READY_NOT_DUPLICATED_ORIGINAL_GAME_CONTENT_AFTER_DREAM_SAGE_FOUR_ITEM_PIXEL_CROSSWALK_STOP"
+}
