@@ -1,0 +1,1236 @@
+{
+  "schema": "stoneage.integration59.four_village_original_shop_item_numeric_pixel_source_crosswalk.r1",
+  "date": "2026-11-11",
+  "baseline_main_HEAD": "bf3c1ab27cfa71abb4a9ea32687aa9a178caf0e7",
+  "baseline_main_tree": "5df26356495a52894350084d2104d16b782fc800",
+  "source_boundaries": {
+    "preserved_original_archive": "community mixed25 RAR—not authenticated TW1/JSS original server deployment",
+    "underlying_source_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "preserved_ITEM01_private_replay_ZIP_bytes": 5868386,
+    "preserved_ITEM01_private_replay_ZIP_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "preserved_private_ZIP_member_CRC_pass": 838,
+    "original_RAR_binary_reopened_this_unit": false,
+    "original_itemset_RAR_members_reextracted_this_unit": false,
+    "original_RD_binary_redecoded_this_unit": false,
+    "preserved_private_complete_94column_item_rows_examined": 56,
+    "preserved_private_original_TW1_PNG_hash_replays": 45,
+    "public_itemsetA_raw_SHA256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+    "public_itemsetB_raw_SHA256": "6d6d63fda59c6bda2f239fe18c9361b5c9da18c84f678b7cc95bde24544292fb",
+    "original_shop_source_index_Git_blob": "3bde3b7df43725f28cdac355823667a0ba87e9b1",
+    "original_itemset_index_7_Git_blobs": [
+      "d39ef58c88f1326d227b2844ca06ed5e23e2965a",
+      "b91bc8335db508998f4595144ce371979ea8c849",
+      "c0a77b9f1266316a95c108cd1bbdd31f41289613",
+      "14c7816054375863c91e474b58d2202f76e821c5",
+      "361dfc5f626a5f2683dd7a5ca224f2854caf5d7c",
+      "314f85e9a1969b79f50c935aeb4216348b6744a3",
+      "dbb958e77aed796faf86570c7523d3f0dc5748fd"
+    ]
+  },
+  "summary": {
+    "distinct_original_floor_configurations": 4,
+    "source_shop_creates": 8,
+    "attack_profile_source_occurrences": 67,
+    "defense_profile_source_occurrences": 53,
+    "total_explicit_original_ItemList_ID_occurrences": 120,
+    "distinct_original_item_IDs": 56,
+    "distinct_TW1_candidate_original_RD_image_aliases": 45,
+    "source_raw_six_stat_fields_match_A_B_for_all_56": true,
+    "original_itemset_complete_row_SHA_match_A_B_for_all_56": true,
+    "all_120_references_have_prior_TW1_original_source_qualified_candidate": true
+  },
+  "original_shop_records": [
+    {
+      "floor_id": 1001,
+      "source_coordinate_raw": "17,13,17,13",
+      "research_bucket": "attack_profile",
+      "source_create_path": "genout/shop_m.create",
+      "source_create_full_sha256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+      "original_argument_path": "genout/ss_1001_17_13",
+      "original_argument_sha256": "f907e77774bc66151465f47e000852a598b935890f2b3334b6a8552f189b279a",
+      "original_itemlist_expression_sha256": "ec0a387bc15bc928b48049c73637dce7089b278997ef9fb82cdfbd2d05ea5d26",
+      "source_item_ids_in_order": [
+        0,
+        4,
+        10,
+        20,
+        40,
+        100,
+        110,
+        130,
+        200,
+        210,
+        220,
+        240,
+        300,
+        310,
+        330,
+        600,
+        620
+      ],
+      "source_numeric_item_count": 17
+    },
+    {
+      "floor_id": 1001,
+      "source_coordinate_raw": "17,15,17,15",
+      "research_bucket": "defense_profile",
+      "source_create_path": "genout/shop_m.create",
+      "source_create_full_sha256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+      "original_argument_path": "genout/ss_1001_17_15",
+      "original_argument_sha256": "1858419ed002beb3ebd785286e20ef16326f127201725b40f7b214fd5c94b06b",
+      "original_itemlist_expression_sha256": "5d4b82cefed78c0222147bed36cd3b6ca61d52a0fdd14877e0fc14853f75c553",
+      "source_item_ids_in_order": [
+        800,
+        810,
+        820,
+        841,
+        900,
+        912,
+        920,
+        1000,
+        1011,
+        1020,
+        1100,
+        1113,
+        1120
+      ],
+      "source_numeric_item_count": 13
+    },
+    {
+      "floor_id": 2001,
+      "source_coordinate_raw": "18,15,18,15",
+      "research_bucket": "attack_profile",
+      "source_create_path": "genout/shop_m.create",
+      "source_create_full_sha256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+      "original_argument_path": "genout/ss_2001_18_15",
+      "original_argument_sha256": "f4c8e1f897a7a60a0bd32bb727b419893d0d0c2b75c15456b0ff51390df77c1b",
+      "original_itemlist_expression_sha256": "005b4cf04c4b899df7eeb2ae883dd751bb33a3616e5807d564b804d5b18a144e",
+      "source_item_ids_in_order": [
+        10,
+        20,
+        30,
+        50,
+        100,
+        110,
+        120,
+        140,
+        200,
+        210,
+        230,
+        300,
+        310,
+        320,
+        600,
+        610
+      ],
+      "source_numeric_item_count": 16
+    },
+    {
+      "floor_id": 2001,
+      "source_coordinate_raw": "18,18,18,18",
+      "research_bucket": "defense_profile",
+      "source_create_path": "genout/shop_m.create",
+      "source_create_full_sha256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+      "original_argument_path": "genout/ss_2001_18_18",
+      "original_argument_sha256": "30d2ef54e2960f76d90c708d1776b21563634e9408f88f9d865471f44f2af365",
+      "original_itemlist_expression_sha256": "c2c9ba91b141b77af9946baf5b94a5884db9802a2221dc182193f28667946db0",
+      "source_item_ids_in_order": [
+        800,
+        810,
+        820,
+        842,
+        900,
+        914,
+        920,
+        1000,
+        1010,
+        1012,
+        1020,
+        1100,
+        1110,
+        1111
+      ],
+      "source_numeric_item_count": 14
+    },
+    {
+      "floor_id": 3001,
+      "source_coordinate_raw": "18,14,18,14",
+      "research_bucket": "attack_profile",
+      "source_create_path": "genout/shop_m2.create",
+      "source_create_full_sha256": "ef0447f668939f9257f62467d1a6194d34955e22ab7e334aa232865127905651",
+      "original_argument_path": "genout/ss_3001_18_14",
+      "original_argument_sha256": "09fa216beba2afd6b40015de207763302fbb6dc3060fbb6aa9a4ab3e9f8e2258",
+      "original_itemlist_expression_sha256": "6aceceb25ed87717e0b579e405a65a66cbe6c110730473d79f78401c54637371",
+      "source_item_ids_in_order": [
+        0,
+        10,
+        20,
+        40,
+        100,
+        110,
+        130,
+        200,
+        210,
+        220,
+        240,
+        300,
+        310,
+        330,
+        600,
+        610
+      ],
+      "source_numeric_item_count": 16
+    },
+    {
+      "floor_id": 3001,
+      "source_coordinate_raw": "18,19,18,19",
+      "research_bucket": "defense_profile",
+      "source_create_path": "genout/shop_m2.create",
+      "source_create_full_sha256": "ef0447f668939f9257f62467d1a6194d34955e22ab7e334aa232865127905651",
+      "original_argument_path": "genout/ss_3001_18_19",
+      "original_argument_sha256": "33e8361b63bab002d503381cc855aa4ac7f409567fdbb2dcf3be26769f9639de",
+      "original_itemlist_expression_sha256": "1294dbf6c9b494f6af9e644aae1fd5c8808d61d92dede6b68bca5d10e0e09cac",
+      "source_item_ids_in_order": [
+        800,
+        810,
+        823,
+        900,
+        910,
+        913,
+        1000,
+        1010,
+        1013,
+        1030,
+        1100,
+        1110,
+        1130
+      ],
+      "source_numeric_item_count": 13
+    },
+    {
+      "floor_id": 4001,
+      "source_coordinate_raw": "18,15,18,15",
+      "research_bucket": "attack_profile",
+      "source_create_path": "genout/shop_m2.create",
+      "source_create_full_sha256": "ef0447f668939f9257f62467d1a6194d34955e22ab7e334aa232865127905651",
+      "original_argument_path": "genout/ss_4001_18_15",
+      "original_argument_sha256": "d93d4420fa281cffa9f5761eeeaea986f384a201e7f8fa70038a327de940129b",
+      "original_itemlist_expression_sha256": "b33d10bef52ad5353dcb572c5b462d1115ff2b336b37002919e750ad63100d10",
+      "source_item_ids_in_order": [
+        10,
+        20,
+        30,
+        50,
+        100,
+        110,
+        120,
+        140,
+        200,
+        210,
+        230,
+        250,
+        300,
+        310,
+        320,
+        600,
+        610,
+        630
+      ],
+      "source_numeric_item_count": 18
+    },
+    {
+      "floor_id": 4001,
+      "source_coordinate_raw": "18,17,18,17",
+      "research_bucket": "defense_profile",
+      "source_create_path": "genout/shop_m2.create",
+      "source_create_full_sha256": "ef0447f668939f9257f62467d1a6194d34955e22ab7e334aa232865127905651",
+      "original_argument_path": "genout/ss_4001_18_17",
+      "original_argument_sha256": "02e9d63065e0d0bb3170260999557e9d1ad4eb0511086487309128ac7c619c5c",
+      "original_itemlist_expression_sha256": "eaf9e6680fc50239849c6a45d91daa42806737d1cccaa76f687b39f3dca41822",
+      "source_item_ids_in_order": [
+        800,
+        810,
+        830,
+        845,
+        900,
+        911,
+        1000,
+        1014,
+        1020,
+        1030,
+        1100,
+        1112,
+        1130
+      ],
+      "source_numeric_item_count": 13
+    }
+  ],
+  "original_item_numeric_row_records": [
+    {
+      "id": 0,
+      "original_itemset_A_and_B_row_sha256": "c366ec66b8dd03656d7ddbe538cd0cd9cb38116d1d72ed60cb1ed8f958a851e3",
+      "raw_type": "1",
+      "raw_cost": "65",
+      "raw_level": "0",
+      "original_image_alias": 20033,
+      "original_six_fields_col37_to42": [
+        9,
+        9,
+        -3,
+        -3,
+        -3,
+        -3
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 4,
+      "original_itemset_A_and_B_row_sha256": "745fec01f05263a6421a3281a2e36a2abbdb371e32f6ae1c59bdbb3c13a04215",
+      "raw_type": "1",
+      "raw_cost": "105",
+      "raw_level": "0",
+      "original_image_alias": 20032,
+      "original_six_fields_col37_to42": [
+        7,
+        7,
+        -2,
+        -2,
+        -2,
+        -2
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 10,
+      "original_itemset_A_and_B_row_sha256": "7d68cfad604124b38d4c280bbad368eddfa7aa1adf53c1bb4dd3e8dd56e55831",
+      "raw_type": "1",
+      "raw_cost": "260",
+      "raw_level": "10",
+      "original_image_alias": 20013,
+      "original_six_fields_col37_to42": [
+        14,
+        14,
+        -5,
+        -5,
+        -5,
+        -5
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 20,
+      "original_itemset_A_and_B_row_sha256": "0bd656da9eaf8fcc131353aa09752022c7b4f1bf7b3e41970c25855f950d5ec9",
+      "raw_type": "1",
+      "raw_cost": "1040",
+      "raw_level": "15",
+      "original_image_alias": 20000,
+      "original_six_fields_col37_to42": [
+        19,
+        19,
+        -7,
+        -7,
+        -6,
+        -6
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 30,
+      "original_itemset_A_and_B_row_sha256": "afa02e51b38dd6045c1eb036549584c534cf28219b5c4feb0e7be74e284e62fe",
+      "raw_type": "1",
+      "raw_cost": "2990",
+      "raw_level": "20",
+      "original_image_alias": 20016,
+      "original_six_fields_col37_to42": [
+        27,
+        27,
+        -9,
+        -9,
+        -10,
+        -10
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 40,
+      "original_itemset_A_and_B_row_sha256": "9bb079c8832bdf97393054373109003ea8f06a10ef76e0985a62cb3825cec720",
+      "raw_type": "1",
+      "raw_cost": "6500",
+      "raw_level": "25",
+      "original_image_alias": 20015,
+      "original_six_fields_col37_to42": [
+        32,
+        32,
+        -11,
+        -11,
+        -11,
+        -11
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 50,
+      "original_itemset_A_and_B_row_sha256": "073f5ed397340625710ddba4ac561682a67d23e6017200793ced0d45c7f10cf4",
+      "raw_type": "1",
+      "raw_cost": "11050",
+      "raw_level": "30",
+      "original_image_alias": 20018,
+      "original_six_fields_col37_to42": [
+        37,
+        37,
+        -12,
+        -12,
+        -12,
+        -12
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 100,
+      "original_itemset_A_and_B_row_sha256": "004be9ae45759826be1345758a59820d44e8a9eae866836d3aaabfee18f2254e",
+      "raw_type": "2",
+      "raw_cost": "50",
+      "raw_level": "0",
+      "original_image_alias": 20103,
+      "original_six_fields_col37_to42": [
+        4,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 110,
+      "original_itemset_A_and_B_row_sha256": "55213e62281413f5ad464ebf7c71c671eb1ccb8e2ecca37fd3fb8c4e86187500",
+      "raw_type": "2",
+      "raw_cost": "200",
+      "raw_level": "10",
+      "original_image_alias": 20102,
+      "original_six_fields_col37_to42": [
+        8,
+        8,
+        0,
+        0,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 120,
+      "original_itemset_A_and_B_row_sha256": "276f7bd765530ee0d839d995c714731875de6ea7e0ff11b40729dcb4093db781",
+      "raw_type": "2",
+      "raw_cost": "800",
+      "raw_level": "15",
+      "original_image_alias": 20101,
+      "original_six_fields_col37_to42": [
+        11,
+        11,
+        0,
+        0,
+        1,
+        1
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 130,
+      "original_itemset_A_and_B_row_sha256": "376e7cbc6aa047915780f9e0b0eb5ad9d95d413e43da2a6e81ecbc6873299943",
+      "raw_type": "2",
+      "raw_cost": "2300",
+      "raw_level": "20",
+      "original_image_alias": 20104,
+      "original_six_fields_col37_to42": [
+        17,
+        17,
+        0,
+        0,
+        -1,
+        -1
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 140,
+      "original_itemset_A_and_B_row_sha256": "416d9de4ea38d11009b0cd70803b3861aa713ce54592683cd5452169fd9d1456",
+      "raw_type": "2",
+      "raw_cost": "5000",
+      "raw_level": "25",
+      "original_image_alias": 20112,
+      "original_six_fields_col37_to42": [
+        20,
+        20,
+        0,
+        0,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 200,
+      "original_itemset_A_and_B_row_sha256": "0a17517babfb24317689fcb9ad8cf81a5132d6849731fa5b8374e996f6379e18",
+      "raw_type": "3",
+      "raw_cost": "60",
+      "raw_level": "0",
+      "original_image_alias": 20402,
+      "original_six_fields_col37_to42": [
+        5,
+        5,
+        0,
+        0,
+        -1,
+        -1
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 210,
+      "original_itemset_A_and_B_row_sha256": "8df9f0619d67e4cd5bee011653063454c5a51561919a6828628baf92b0decaa2",
+      "raw_type": "3",
+      "raw_cost": "240",
+      "raw_level": "10",
+      "original_image_alias": 20422,
+      "original_six_fields_col37_to42": [
+        10,
+        10,
+        0,
+        0,
+        -2,
+        -2
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 220,
+      "original_itemset_A_and_B_row_sha256": "80b3f34d4a482f48e0478ebca048b09e62d5244f60fdcc5eb46a9988f26e4512",
+      "raw_type": "3",
+      "raw_cost": "960",
+      "raw_level": "15",
+      "original_image_alias": 20411,
+      "original_six_fields_col37_to42": [
+        14,
+        14,
+        0,
+        0,
+        -2,
+        -2
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 230,
+      "original_itemset_A_and_B_row_sha256": "2ffe60b382e0e77d8f8ddaa8724cb207ff19191784912448ad7301aa8448aa77",
+      "raw_type": "3",
+      "raw_cost": "2760",
+      "raw_level": "20",
+      "original_image_alias": 20408,
+      "original_six_fields_col37_to42": [
+        21,
+        21,
+        0,
+        0,
+        -5,
+        -5
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 240,
+      "original_itemset_A_and_B_row_sha256": "3187ba7bb6bccb92d4483f1386eaa9c228e8e365aee9f347236be53d2eaec663",
+      "raw_type": "3",
+      "raw_cost": "6000",
+      "raw_level": "25",
+      "original_image_alias": 20401,
+      "original_six_fields_col37_to42": [
+        25,
+        25,
+        0,
+        0,
+        -5,
+        -5
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 250,
+      "original_itemset_A_and_B_row_sha256": "83262b5e542e3acfce2a9988f76d57bb0ad858b6f03deda5973b591353fe3159",
+      "raw_type": "3",
+      "raw_cost": "10200",
+      "raw_level": "30",
+      "original_image_alias": 20445,
+      "original_six_fields_col37_to42": [
+        30,
+        30,
+        0,
+        0,
+        -6,
+        -6
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 300,
+      "original_itemset_A_and_B_row_sha256": "5c8566ff13422c70b003014f60208d76e6131674f8b883a24414321633586340",
+      "raw_type": "0",
+      "raw_cost": "55",
+      "raw_level": "0",
+      "original_image_alias": 20203,
+      "original_six_fields_col37_to42": [
+        3,
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 310,
+      "original_itemset_A_and_B_row_sha256": "a657656a1ececcdabafddd8d2d51a2a72f64b60a223f691cc7545d2ffcb1164f",
+      "raw_type": "0",
+      "raw_cost": "220",
+      "raw_level": "10",
+      "original_image_alias": 20200,
+      "original_six_fields_col37_to42": [
+        6,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 320,
+      "original_itemset_A_and_B_row_sha256": "84329713192e29504465ed27d8c45f64461929b117c36cc758b713d97e58eb8b",
+      "raw_type": "0",
+      "raw_cost": "880",
+      "raw_level": "15",
+      "original_image_alias": 20207,
+      "original_six_fields_col37_to42": [
+        8,
+        8,
+        0,
+        0,
+        1,
+        1
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 330,
+      "original_itemset_A_and_B_row_sha256": "ee83d181cfa44ba6133d0cf14aea4dd453dde0e68de95e3c233327dd7b81125f",
+      "raw_type": "0",
+      "raw_cost": "2530",
+      "raw_level": "20",
+      "original_image_alias": 20217,
+      "original_six_fields_col37_to42": [
+        13,
+        13,
+        0,
+        0,
+        -1,
+        -1
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 600,
+      "original_itemset_A_and_B_row_sha256": "d0e5d017a1eb71aba5e5ce49588632be54b95329df887155f82bfa39e82a9e6d",
+      "raw_type": "18",
+      "raw_cost": "50",
+      "raw_level": "0",
+      "original_image_alias": 20508,
+      "original_six_fields_col37_to42": [
+        4,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 610,
+      "original_itemset_A_and_B_row_sha256": "d3efce85552146e36c7b0780879e98bc3d10fe2c9e4f5b110a671ca41e3e7103",
+      "raw_type": "18",
+      "raw_cost": "200",
+      "raw_level": "10",
+      "original_image_alias": 20507,
+      "original_six_fields_col37_to42": [
+        8,
+        8,
+        0,
+        0,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 620,
+      "original_itemset_A_and_B_row_sha256": "55af87494115223da65a65742c18a2536d7e0ead13af02304b2038959a2b94a7",
+      "raw_type": "18",
+      "raw_cost": "800",
+      "raw_level": "15",
+      "original_image_alias": 20504,
+      "original_six_fields_col37_to42": [
+        11,
+        11,
+        0,
+        0,
+        1,
+        1
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 630,
+      "original_itemset_A_and_B_row_sha256": "cd915e492d7f29b5236b9534da058ae76363f630bf374ab5f9b7ebe39b0451ad",
+      "raw_type": "18",
+      "raw_cost": "2300",
+      "raw_level": "20",
+      "original_image_alias": 20534,
+      "original_six_fields_col37_to42": [
+        17,
+        17,
+        0,
+        0,
+        -1,
+        -1
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 800,
+      "original_itemset_A_and_B_row_sha256": "d134295ce4bc256d82aed52afef1130ddaffb69932d77496c19a371021505c50",
+      "raw_type": "6",
+      "raw_cost": "50",
+      "raw_level": "0",
+      "original_image_alias": 21541,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        3,
+        3,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 810,
+      "original_itemset_A_and_B_row_sha256": "1f4465de867d88fab1ff06d3ddae99d0d25e58214f3b5fddb6ba17df82f130c0",
+      "raw_type": "6",
+      "raw_cost": "200",
+      "raw_level": "10",
+      "original_image_alias": 21540,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        4,
+        4,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 820,
+      "original_itemset_A_and_B_row_sha256": "4103606268f5006fce28b9edd0b9e70cfd559e5171c8adc4ec9e958d5e23980f",
+      "raw_type": "6",
+      "raw_cost": "800",
+      "raw_level": "15",
+      "original_image_alias": 21510,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        5,
+        5,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 823,
+      "original_itemset_A_and_B_row_sha256": "96852c43e99d19851fa29091d921ecec8d4c5c7eed78ef251f0d749013ea7316",
+      "raw_type": "6",
+      "raw_cost": "980",
+      "raw_level": "15",
+      "original_image_alias": 21509,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        4,
+        4,
+        -2,
+        -2
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 830,
+      "original_itemset_A_and_B_row_sha256": "783cb2e3fd5735aafa0ca083763938b082927112dd0c4ebf0f4893f0bf5e8e6f",
+      "raw_type": "6",
+      "raw_cost": "2300",
+      "raw_level": "20",
+      "original_image_alias": 21542,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        9,
+        9,
+        -2,
+        -2
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 841,
+      "original_itemset_A_and_B_row_sha256": "5b7a34bf3c331971cabd7ff4b1d73a8e1810b3308dbe9432cc3f8f0695334276",
+      "raw_type": "6",
+      "raw_cost": "5750",
+      "raw_level": "25",
+      "original_image_alias": 21518,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        8,
+        8,
+        -3,
+        -3
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 842,
+      "original_itemset_A_and_B_row_sha256": "a1cebfdcfe1af2cff6fd07f5ccf7bdf51a70476b81ffb6de600668194c91d949",
+      "raw_type": "6",
+      "raw_cost": "5625",
+      "raw_level": "25",
+      "original_image_alias": 21518,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        8,
+        8,
+        -3,
+        -3
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 845,
+      "original_itemset_A_and_B_row_sha256": "e901df1a8656611c77d125b3c0f38938601390a6d556117a174a5f7da300310d",
+      "raw_type": "6",
+      "raw_cost": "5750",
+      "raw_level": "25",
+      "original_image_alias": 21518,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        8,
+        8,
+        -3,
+        -3
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 900,
+      "original_itemset_A_and_B_row_sha256": "c67ac967c5e2c89c6c4e63fa69b39c7879b38a867cdc62e8e74534604891814e",
+      "raw_type": "6",
+      "raw_cost": "40",
+      "raw_level": "0",
+      "original_image_alias": 21508,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 910,
+      "original_itemset_A_and_B_row_sha256": "c094a881b9c782b95b018b7cbdfd92226e169578b70e0ea87eca41e53cfbb103",
+      "raw_type": "6",
+      "raw_cost": "160",
+      "raw_level": "10",
+      "original_image_alias": 21512,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        2,
+        2,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 911,
+      "original_itemset_A_and_B_row_sha256": "011bede3e99ffd7ded1fea2085994087c2d0b070b0f4bb534fe8c6332c59c96c",
+      "raw_type": "6",
+      "raw_cost": "304",
+      "raw_level": "10",
+      "original_image_alias": 21503,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 912,
+      "original_itemset_A_and_B_row_sha256": "b2fbcd1f9cd09e51d4c7de5bbb27c5dd5b67be00584a294a665e8a0a66167a8a",
+      "raw_type": "6",
+      "raw_cost": "280",
+      "raw_level": "10",
+      "original_image_alias": 21503,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 913,
+      "original_itemset_A_and_B_row_sha256": "85e965d3dd1060f31b6b3259aad3b7e34d1ea61a5ec8538b86cd1fb24b27fcdc",
+      "raw_type": "6",
+      "raw_cost": "256",
+      "raw_level": "10",
+      "original_image_alias": 21503,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 914,
+      "original_itemset_A_and_B_row_sha256": "e336fef3f866e264de2442c1455980a5f7743842f4ecc48a4a321423241642da",
+      "raw_type": "6",
+      "raw_cost": "256",
+      "raw_level": "10",
+      "original_image_alias": 21503,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 920,
+      "original_itemset_A_and_B_row_sha256": "5f8122c951b79a7590a588e67dfacb01ee8621ca652b146d79f73bb592ec28c3",
+      "raw_type": "6",
+      "raw_cost": "640",
+      "raw_level": "15",
+      "original_image_alias": 21530,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        3,
+        3,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 1000,
+      "original_itemset_A_and_B_row_sha256": "deb9621c2a7e18d7d09eeb5843610d86461f26ccced40d2410ef791bbe3c984c",
+      "raw_type": "7",
+      "raw_cost": "75",
+      "raw_level": "0",
+      "original_image_alias": 21014,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        4,
+        4,
+        -1,
+        -1
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 1010,
+      "original_itemset_A_and_B_row_sha256": "7eb75e21c5cce56929a7ae188c2582d48501edf43a8f9cdcdfcbe0f05250a616",
+      "raw_type": "7",
+      "raw_cost": "300",
+      "raw_level": "10",
+      "original_image_alias": 21026,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        8,
+        8,
+        -2,
+        -2
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 1011,
+      "original_itemset_A_and_B_row_sha256": "c24f16fc0d9de06aa3355006f8374bac5742b17005becf9bbf74fd027c628ee4",
+      "raw_type": "7",
+      "raw_cost": "400",
+      "raw_level": "10",
+      "original_image_alias": 21027,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        6,
+        6,
+        -2,
+        -2
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 1012,
+      "original_itemset_A_and_B_row_sha256": "17d0a2802ee00aaaf4337dd5b43d3b59b8c6802f45da89e6147020cc1271e19e",
+      "raw_type": "7",
+      "raw_cost": "550",
+      "raw_level": "10",
+      "original_image_alias": 21027,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        5,
+        5,
+        -2,
+        -2
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 1013,
+      "original_itemset_A_and_B_row_sha256": "f7eac2c7420fc2c03d3c2a9194d06495747321cf401f68ed9db1623596fef160",
+      "raw_type": "7",
+      "raw_cost": "594",
+      "raw_level": "10",
+      "original_image_alias": 21027,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        5,
+        5,
+        -2,
+        -2
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 1014,
+      "original_itemset_A_and_B_row_sha256": "c52be3ff73c189959f7c58300633ec7fcf5ca9f70c47a3802be5cf9097f1f025",
+      "raw_type": "7",
+      "raw_cost": "500",
+      "raw_level": "10",
+      "original_image_alias": 21057,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        7,
+        7,
+        -2,
+        -2
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 1020,
+      "original_itemset_A_and_B_row_sha256": "e7812a8e39d65fcbe2791bd51cc305eb28128c7cca3a185d12c1d3050ad8e8fb",
+      "raw_type": "7",
+      "raw_cost": "1200",
+      "raw_level": "15",
+      "original_image_alias": 21046,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        11,
+        11,
+        -2,
+        -2
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 1030,
+      "original_itemset_A_and_B_row_sha256": "b604d00010217214a4a7ed6a362b627859dbd24f1c1022e907b9f4c1d652b40c",
+      "raw_type": "7",
+      "raw_cost": "3450",
+      "raw_level": "20",
+      "original_image_alias": 21046,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        17,
+        17,
+        -5,
+        -5
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 1100,
+      "original_itemset_A_and_B_row_sha256": "de5f7a68278bd874d3fc08ac7c94a066f818c7c44e5dfd6fbb61fcd161c07886",
+      "raw_type": "7",
+      "raw_cost": "60",
+      "raw_level": "0",
+      "original_image_alias": 21041,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        2,
+        2,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 1110,
+      "original_itemset_A_and_B_row_sha256": "b8d6a845541de6f1f4a954ed62535223ca74840cda575b577fe75a5cd0df3e2f",
+      "raw_type": "7",
+      "raw_cost": "240",
+      "raw_level": "10",
+      "original_image_alias": 21008,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        5,
+        5,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 1111,
+      "original_itemset_A_and_B_row_sha256": "abe749e4ec9a4072837875e9b10ac4c9b05e39a10a3e219891810adec19c2241",
+      "raw_type": "7",
+      "raw_cost": "340",
+      "raw_level": "10",
+      "original_image_alias": 21009,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        3,
+        3,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 1112,
+      "original_itemset_A_and_B_row_sha256": "e28c45e544de5a0d4d311ffcc7152b8d6ee5ed04bb83b880015c9f272fb50895",
+      "raw_type": "7",
+      "raw_cost": "484",
+      "raw_level": "10",
+      "original_image_alias": 21009,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        3,
+        3,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 1113,
+      "original_itemset_A_and_B_row_sha256": "b4cd9a285642e19f8a9bfd8ce77f2778b19f77f64836df7457b6aa81d711fb56",
+      "raw_type": "7",
+      "raw_cost": "528",
+      "raw_level": "10",
+      "original_image_alias": 21009,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        3,
+        3,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 1120,
+      "original_itemset_A_and_B_row_sha256": "9d235a119a28f054863853cd34bb698cfa9d7d9de5fc462d523e2c3aeba28f5a",
+      "raw_type": "7",
+      "raw_cost": "960",
+      "raw_level": "15",
+      "original_image_alias": 21033,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        7,
+        7,
+        0,
+        0
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    },
+    {
+      "id": 1130,
+      "original_itemset_A_and_B_row_sha256": "a1ca7efb1401d59b7af1dc4eb1b804f9f4161aba87925d532abc861b36b4ea91",
+      "raw_type": "7",
+      "raw_cost": "2760",
+      "raw_level": "20",
+      "original_image_alias": 21033,
+      "original_six_fields_col37_to42": [
+        0,
+        0,
+        9,
+        9,
+        1,
+        1
+      ],
+      "tw1_original_RD_evidence": "VERIFIED_INDEXED_PIXEL_SOURCE_CROSS_CARRIER"
+    }
+  ],
+  "bounds": {
+    "source_shop_List_is_original_runtime_sale_proven": false,
+    "same_historical_official_deployment_proven": false,
+    "original_client_equipment_effect_execution_proven": false,
+    "category_attack_defense_is_official_first_build_proven": false,
+    "retail_TW1_PNG_is_later_mixed25_native_selector_proven": false,
+    "original_npc_shop_open_executed": false,
+    "original_proprietary_text_binary_art_published": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Rotate to another source-qualified unjoined material/skill/quest attribute with genuine source bytes; do not repeat these 8 shops or expand engine/runtime without an exact content gap."
+}
