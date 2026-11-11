@@ -1,0 +1,23 @@
+name: Verify StoneAge INTEGRATION75 source-bound mammoth shrine
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION75-MAMMOTH-SHRINE-SIX-FORTUNES-SOURCE-R1.json'
+      - 'research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-02-R1.json'
+      - 'tests/test_stoneage_integration_module_75.py'
+      - '.github/workflows/verify-stoneage-integration75-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION75-MAMMOTH-SHRINE-SIX-FORTUNES-SOURCE-R1.json'
+      - 'research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-02-R1.json'
+      - 'tests/test_stoneage_integration_module_75.py'
+      - '.github/workflows/verify-stoneage-integration75-source.yml'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_75.py' -v
