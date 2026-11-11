@@ -2605,3 +2605,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-11 — INTEGRATION76｜周年生日蛋糕停用NPC配置与原版二维蛋糕图候选
 
 [原脚本、四处注释的CREATE及原图源证](docs/continuity/STONEAGE-INTEGRATION76-ANNIVERSARY-CAKE-ORIGINAL-PIXEL-20261111.md)／[无版权SHA、数值和负证](research/recovered/STONEAGE-INTEGRATION76-ANNIVERSARY-CAKE-ORIGINAL-IMAGE-SOURCE-R1.json)：从fresh main `7356d728f4e3d4ad564c694e89059b9f6a39dab5` / tree `dc408d8740145d5efa7f33f87867ad4bf38a9e01` 与26/26成功Actions启动。真正重读私人mixed25 NPC 2205成员及 ITEM01 保存转录838成员ZIP CRC；原cake脚本两段对应 ITEM13030，四处floor1000/2000/3000/4000生日蛋糕 NPC CREATE **全部源行注释**，不得谎称原服部署。旧两物品表ID13030完整SHA相同，图别名24409在独立台湾1.0零售原REAL已有1,341B/56×36真实RD及旧2,837B候选PNG；本轮PNG/RGBA整SHA重核，新原RD解码0、新美术0。私人7成员7317B原脚本/原行/原图包已存Library并独立回读SHA/CRC；原图、脚本、94栏与观察页未公开。未认证官方周年年份、真实原游戏发放或当时NPC画面。原CURRENT 2709173B全历史blob不变；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体percent=null。本轮CI以远端后验记，NEXT转不重复且有真实原件的其它2D游戏内容。
+
+
+### INTEGRATION76 正式候选/main Actions及私人来源验收（2026-11-11）
+
+[周年生日蛋糕停用原NPC／台湾1.0原候选像素正式回执](docs/continuity/STONEAGE-INTEGRATION76-PUBLICATION-ACCEPTANCE-20261111.md)：[PR #351](https://github.com/chinaneedM/stoneage-rebuild/pull/351)已squash合并，候选 `6888d3e373315ecf518c71936bbbd59f8133bba0`／tree `ec413768b0dc1e61fd04542d57b51a727daa7d1f` **46/46 Actions**（27 push＋19PR），内容主线 `97388fd9c28ed4d77089db94a852f0f8f9c5a1c2`／同tree **27/27 Actions**均真正success，三次专项各9测试通过；全部73真实run ID见[机器收据](research/recovered/STONEAGE-INTEGRATION76-PUBLICATION-ACCEPTANCE-R1.json)。原社区mixed25 576B周年脚本→后期原物品13030，原633B四个floor CREATE整段被注释；台湾1.0老RD位图6576/56×36候选源原PNG重新核SHA，新增原像0、原服实际活动仍OPEN。7成员7317B私人原脚本/物品行/PNG已存个人Library且独立回读SHA与CRC全同。旧CURRENT blob保持，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停，整体percent=null。本正式回执自身CI另按后验；NEXT其它真实原二维内容。
