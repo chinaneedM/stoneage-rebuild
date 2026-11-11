@@ -1,0 +1,158 @@
+{
+  "schema": "stoneage.integration76.anniversary_cake_source_and_TW1_original_pixel_candidate.r1",
+  "date": "2026-11-11",
+  "restart": {
+    "main_head": "7356d728f4e3d4ad564c694e89059b9f6a39dab5",
+    "main_tree": "dc408d8740145d5efa7f33f87867ad4bf38a9e01",
+    "main_actions_completed_success": 26,
+    "open_PRs": 0,
+    "historical_CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "historical_CURRENT_bytes": 2709173
+  },
+  "scope": "ORIGINAL_SOURCE_MIXED25_LATER_COMMUNITY_VERSUS_SEPARATE_AUTHENTICATED_TW1_RETAIL_PIXEL",
+  "existing_original_NPC_carrier": {
+    "private_zip": "StoneAge-CHAR01-mixed25-all-npc-original-private.zip",
+    "size_bytes": 995176,
+    "SHA256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "total_member_count": 2205,
+    "all_ZIP_CRC_verified": true,
+    "original_event_script": {
+      "path": "npc/extra/event/cake",
+      "bytes": 576,
+      "SHA256": "a82020cdbf3fa2999b1f784025220aacc39910a012ba07c6f1aa5e00a18f9f35",
+      "original_event_blocks": 2,
+      "source_ordered_TYPES": [
+        "ACCEPT",
+        "MESSAGE"
+      ],
+      "source_ACCEPT_item_not_equal": 13030,
+      "source_ACCEPT_GetItem": 13030,
+      "source_MESSAGE_item_equals": 13030,
+      "source_anniversary_text_does_not_date_original_event": true
+    },
+    "original_NPC_CREATE_file": {
+      "path": "npc/extra/event/cake.create",
+      "bytes": 633,
+      "SHA256": "b9c6e9a8d3a8fb3f8848853f1460d365166b58fe2460537574a49a0110db49f3",
+      "all_nonblank_lines_begin_with_comment_marker": true,
+      "original_commented_NPC_CREATE_blocks": 4,
+      "active_uncommented_CREATE_blocks": 0,
+      "original_commented_graphicname": 41000,
+      "original_commented_enemy_pointer": "extra/event/cake",
+      "source_commented_create_positions": [
+        {
+          "floorid": 1000,
+          "corner": [
+            92,
+            87,
+            92,
+            87
+          ]
+        },
+        {
+          "floorid": 2000,
+          "corner": [
+            59,
+            74,
+            59,
+            74
+          ]
+        },
+        {
+          "floorid": 3000,
+          "corner": [
+            76,
+            104,
+            76,
+            104
+          ]
+        },
+        {
+          "floorid": 4000,
+          "corner": [
+            72,
+            76,
+            72,
+            76
+          ]
+        }
+      ]
+    },
+    "bounded_direct_reference_scan": {
+      "scanned_NPC_ZIP_members": 2205,
+      "case_insensitive_literal": "extra/event/cake",
+      "matching_paths": [
+        "npc/extra/event/cake.create"
+      ],
+      "direct_uncommented_matching_CREATE_references": 0,
+      "negative_scope": "This one retained NPC archive; no claim every possible historical loader is absent."
+    }
+  },
+  "old_ITEM01_original_source_verified_transcriptions": {
+    "private_catalog_name": "StoneAge-ITEM01-private-two-itemsets-832-original-RD-icon-observer.zip",
+    "zip_bytes": 5868386,
+    "SHA256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "ZIP_member_count": 838,
+    "all_ZIP_CRC_verified": true,
+    "original_parent_itemset_RAR_members_reread_this_unit": false,
+    "already_public_original_source_derived_shard": "research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-05-R1.json",
+    "original_item_ID": 13030,
+    "original_short_item_name": "石器時代生日蛋糕",
+    "original_itemset_txt_row_1based": 7680,
+    "original_itemset0710_txt_row_1based": 8131,
+    "original_itemset_txt_complete_row_SHA256": "56862b87ecc2873a4addf7cd4078d57edfb7f59fcfaed4b986365079d28627f8",
+    "original_itemset0710_txt_complete_row_SHA256": "56862b87ecc2873a4addf7cd4078d57edfb7f59fcfaed4b986365079d28627f8",
+    "raw_original_image_alias_A": 24409,
+    "raw_original_image_alias_B": 24409,
+    "retail_TW1_original_RD_evidence_class": "REAL_RD_DECODED_CROSS_CARRIER"
+  },
+  "old_separately_verified_TW1_retained_original_pixel": {
+    "physical_original_ADRN_ordinal": 6576,
+    "physical_original_bitmap_number": 6576,
+    "original_ADRN_record_SHA256": "69f9a25b68a98b762d374925956a2c70b67bf95fdffd7f142cdca8ff3b446645",
+    "original_RD_bytes": 1341,
+    "original_RD_SHA256": "6049d5fb44bec2e3af58401724bfc457648ac810ac31d959d6e28d025bf0d556",
+    "decoded_index_SHA256": "81e08b72d6316a777844d196c7375fb3668ed1490ad856cb5b775a35d7dc9b9c",
+    "original_width": 56,
+    "original_height": 36,
+    "original_offset_x": -31,
+    "original_offset_y": -21,
+    "retained_candidate_PNG_bytes": 2837,
+    "retained_candidate_PNG_SHA256": "9ac9c3fa1801e0345ea2f9c157900c2f8a25a5b587272ff01a35e3df04cd621b",
+    "retained_candidate_RGBA_SHA256": "0f040499540912f5dd394cf3fc884dd2fa69118b06f2aeac595f504979285f9b",
+    "private_source": "source-TW1-original-RD-candidates/alias-24409.png",
+    "new_original_RD_decodes_this_unit": 0,
+    "old_original_RD_SHA256_qualified_from_ITEM01_not_independently_redecoded_this_unit": true,
+    "non_identical_NPC_graphic_alias_41000_and_item_image_alias_24409": true
+  },
+  "private_independent_custody": {
+    "library_path": "/石器时代/StoneAge-INTEGRATION76-anniversary-cake-original-source-private.zip",
+    "bytes": 7317,
+    "ZIP_SHA256": "ae3299cd3af4502feced37052a9ae290a18875f10ecef86ceab5c49a027784fd",
+    "member_count": 7,
+    "all_member_CRC_verified_on_independent_library_readback": true,
+    "downloaded_Library_byte_for_byte_match": true,
+    "contains_original_commercial_script_and_original_item_table_full_rows": true,
+    "contains_one_already_retained_original_TW1_PNG_candidate": true,
+    "public_Git_original_bytes_added": 0
+  },
+  "not_proven": {
+    "source_comment_blocks_were_activated": false,
+    "anniversary_event_deployment": false,
+    "first_edition_or_1999_origin": false,
+    "TW1_original_game_used_later_mixed25_script": false,
+    "original_native_GetItem_execution": false,
+    "original_game_draw_selected_item_icon_24409": false,
+    "TW1_source_palette_used_for_historical_event": false,
+    "graphic_41000_same_as_item_image_24409": false,
+    "original_map_1000_2000_3000_4000_rendered_with_cake_NPC": false
+  },
+  "status": {
+    "stage_A_PARTIAL": 7,
+    "stage_A_OPEN": 2,
+    "stage_B_and_wiki_GATED": true,
+    "R79_PAUSED_NON_BLOCKING": true,
+    "overall_percent": null
+  },
+  "next": "Review next nonduplicative original 2D NPC/item/map/pet content with actual authenticated bytes. Reopen cake only with an uncommented source loader or original runtime/floor visual evidence."
+}
