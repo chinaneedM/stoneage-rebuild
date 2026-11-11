@@ -2547,3 +2547,7 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-11 — INTEGRATION70｜恐龙博士哈鲁的两阶段原始资料和八项真正原像候选
 
 [来源和边界](docs/continuity/STONEAGE-INTEGRATION70-HARU-EVENT15-SOURCE-20261111.md)／[数字与SHA证据](research/recovered/STONEAGE-INTEGRATION70-HARU-EVENT15-TWO-STAGE-NPC-EIGHT-ITEM-TW1-PIXEL-SOURCE-R1.json)：已独立读取私人混合后期载体源 event15.create（2原NPC在11006）和2原脚本，恢复事件15/16的DelPet、GetRandItem（8候选物品ID）、GetPet:95静态来源链；与两份已验原itemset及另一台湾1.0零售已解码8幅RD候选图源关联。私人12成员ZIP 15,265B已上传个人Library并独立重取SHA/CRC全同；新原RD二进制解码0、原脚本新发现0、无实际原服执行或官方同服认证。历史 CURRENT 完整旧blob不改，Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体率null。NEXT转另一不重复且有真实原件的游戏内容；PR/CI结果以后验为准。
+
+### INTEGRATION70 实际GitHub验收（2026-11-11）
+
+[正式验收与私人源证独立回读](docs/continuity/STONEAGE-INTEGRATION70-PUBLICATION-ACCEPTANCE-20261111.md)：[PR #342](https://github.com/chinaneedM/stoneage-rebuild/pull/342) 已合并，候选 `23a0cce9a7092896c8ec492d57e7356338e7962c` **46/46 Actions**（27 push＋19 PR）及内容主线 `1b10144a3a14dbec2753072a8f02e9f260d4afac`／tree `027b897f6b6b1bd268936dc91cb894a507bccc57` **27/27 Actions** 均真实 completed/success（含专项 run43020555960）。私人12成员15,265B原源／旧原图ZIP已自Library独立回读SHA/CRC全相同；公开Git仅源数字/散列，旧完整CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`原样保留。73个实际run身份存[机器回执](research/recovered/STONEAGE-INTEGRATION70-PUBLICATION-ACCEPTANCE-R1.json)，本验收回执自身的后续HEAD CI另按实际后验。Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、完成率未知；NEXT 非重复原二维内容来源。
