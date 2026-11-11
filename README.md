@@ -2513,3 +2513,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ### INTEGRATION66 已验收发布回执（2026-11-11）
 
 [正式PR、源范围及全CI后验](docs/continuity/STONEAGE-INTEGRATION66-PUBLICATION-ACCEPTANCE-20261111.md)： [PR #334](https://github.com/chinaneedM/stoneage-rebuild/pull/334)合并内容主线 `c4d6bb05569d5beda4ffffe10d4bad78f4f156d8`／tree `ca39fd9ab6da5ac461ffb3368b43adac04075761`；原候选46/46（27push＋19PR）、最终候选19/19PR、合并内容主线27/27push Actions均已真实成功，INTEGRATION66专项实测成功。个人Library原236张候选PNG私有242成员zip重新取回SHA/CRC全吻合；原历史CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`不变。机器回执见[运行清单](research/recovered/STONEAGE-INTEGRATION66-PUBLICATION-ACCEPTANCE-R1.json)。本验收记录自身新HEAD Actions需另查，不预支成功；Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、完成率未知；下一步新内容来源。
+
+
+## 2026-11-11 — INTEGRATION67｜精灵王事件3份原GetPet×台湾1.0真原宠物像素
+
+[原脚本—宠物—原SPR/RD来源边界](docs/continuity/STONEAGE-INTEGRATION67-SPIRIT-KING-THREE-PET-PIXELS-20261111.md)与[公开数字/散列/动作和原RD资格](research/recovered/STONEAGE-INTEGRATION67-SPIRIT-KING-THREE-GETPET-TW1-ORIGINAL-PIXELS-R1.json)：私人QUEST29原ZIP实读138/138 CRC，原 `king/event69_1`／`event69_24`／`event69_7` 的3条真实GetPet行分别为355/484/1479。对照已验同社区mixed25 enemy1→enemybase1主表的原SHA，模板图号分别100376/100430/100451；进一步用**另一台湾1.0零售** PET07原SPR/RD实物重新核9条动作/方向序列、74个原帧位置及48张已保存原PNG，每图原RD/PNG SHA和尺寸均通过，原帧顺序u32le SHA全同；原RD新解码0。私人56成员437505B ZIP已保存Library并独立回取全SHA/CRC，商业图像/脚本不入Git。该跨载体同图号不等于官方早期同服、物种身份或实际领奖；原CURRENT完整旧blob不改，Stage A7 PARTIAL＋2 OPEN，Stage B/wiki GATED，R79暂停，overall_percent=null。NEXT改查另一个未重复且真正有原实物的地图/NPC/道具/宠物连接，不做网服/引擎；候选与主线Actions另据后验验收。
