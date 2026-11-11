@@ -1,0 +1,559 @@
+{
+  "schema": "stoneage.integration60.original_five_clinics_nurse_pharmacist_items_handlers_pixel_source.r1",
+  "date": "2026-11-11",
+  "start_main_head": "b5aaf4cc964aa12a48bcb7be7dda9d3e3bc3daf2",
+  "start_main_tree": "485864f4e699d9abed8a2172964fe3c4ad7f274e",
+  "source_origin": {
+    "original_NPC_carrier": "private preserved later community mixed25 NPC source, not authenticated Taiwan/JSS original server",
+    "NPC_ZIP_bytes": 995176,
+    "NPC_ZIP_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "NPC_ZIP_original_members_CRC_verified": 2205,
+    "original_item_catalog_carrier": "private ITEM01 saved original 94-column A/B rows, plus independent TW1 retail-original bitmap PNGs",
+    "ITEM01_ZIP_bytes": 5868386,
+    "ITEM01_ZIP_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "ITEM01_ZIP_original_members_CRC_verified": 838,
+    "full_mixed25_RAR_reread_this_unit": false,
+    "original_binary_TW1_RD_redecoded_this_unit": false,
+    "original_itemset_A_B_94_column_rows_actually_reread": 12,
+    "tw1_original_pngs_reverified_SHA_and_dimensions": 11,
+    "new_private_custody_zip_bytes": 52450,
+    "new_private_custody_zip_sha256": "940617f696b2dc45f8b2e8009e0e4286a764fea24a0c979dd5843306be84e280",
+    "new_private_custody_zip_members_CRC_verified": 28,
+    "private_library_upload_independent_roundtrip_SHA_CRC_verified": true,
+    "original_private_pixel_contact_sha256": "6e8a9c4f13950f2913ddc94c0ab5ad3330a75800eea828163158f3fb121084ce",
+    "public_upstream_git_blobs": {
+      "I49_room_NPC_and_DAT": "673fd0ebd71a909a5678d919f706bab7a8e5e7cc",
+      "I50_room_service_arguments": "da792e33e97e3fd0c52f24adf7fbc22f9b5b2421",
+      "GAMEPLAY05_NPC_healer_inline": "878be2f05a4dc17f51d21ed2401fd7a7f3d73563",
+      "ITEM01_shops": "3bde3b7df43725f28cdac355823667a0ba87e9b1",
+      "ITEM01_7_identity_shards": [
+        "d39ef58c88f1326d227b2844ca06ed5e23e2965a",
+        "b91bc8335db508998f4595144ce371979ea8c849",
+        "c0a77b9f1266316a95c108cd1bbdd31f41289613",
+        "14c7816054375863c91e474b58d2202f76e821c5",
+        "361dfc5f626a5f2683dd7a5ca224f2854caf5d7c",
+        "314f85e9a1969b79f50c935aeb4216348b6744a3",
+        "dbb958e77aed796faf86570c7523d3f0dc5748fd"
+      ]
+    }
+  },
+  "summary": {
+    "source_original_room_floors": 5,
+    "paired_nurse_and_pharmacist_CREATEs": 10,
+    "original_ItemList_occurrences": 60,
+    "distinct_original_item_IDs": 12,
+    "distinct_TW1_retained_original_pngs": 11,
+    "handler_original_row_counts": {
+      "ITEM_useRecovery": 5,
+      "ITEM_useRessurect": 2,
+      "ITEM_useStatusRecovery": 5
+    },
+    "five_original_ItemList_strings_exactly_equal": true,
+    "source_shop_buy_rate_literals_have_differences": true,
+    "source_nurse_four_tokens_have_differences": true
+  },
+  "original_five_clinics": [
+    {
+      "source_floor_id": 1105,
+      "original_room_DAT_sha256_previous_verified": "7f050649e3459aaff76e4215df737a33a9b86773d6132312af4dfae78d5d4c29",
+      "parent_floor_from_room_source_Warp": 1100,
+      "nurse": {
+        "source_functionset": "WindowHealer",
+        "source_CREATE_path": "genout/shop_m.create",
+        "source_CREATE_block_sha256": "6ff450a82ef8877bb8b324f40a222730c10a75856c2eee68c6e641bd22b29133",
+        "source_coordinate": [
+          18,
+          13
+        ],
+        "source_graphic_alias": 16058,
+        "original_inline_four_tokens": [
+          "10",
+          "1.0",
+          "2.2",
+          "2"
+        ],
+        "source_CREATE_ordinal": 32
+      },
+      "pharmacist": {
+        "source_functionset": "ItemShop",
+        "source_CREATE_path": "genout/shop_m.create",
+        "source_CREATE_block_sha256": "318478c809967592afbec74361b68df91ddb12909e3d277c58d32ad8618568bf",
+        "source_CREATE_ordinal": 33,
+        "source_coordinate": [
+          18,
+          16
+        ],
+        "source_graphic_alias": 16059,
+        "original_argument_path": "genout/ss_1105_18_16",
+        "original_argument_full_sha256": "02391d5f387234066ecb6c39005d2d1535b556acf63378210320f0e33090d7ee",
+        "original_ItemList_text_sha256": "cf24c4d42fcb288f758c7e2eb10502832a96656513f498c1302b4889d55f182b",
+        "source_buy_rate_literal": "1.1",
+        "source_sell_rate_literal": "0.2",
+        "source_ItemList_original_ID_order": [
+          1500,
+          1501,
+          1510,
+          1511,
+          1512,
+          1530,
+          1531,
+          1540,
+          1541,
+          1542,
+          1543,
+          1545
+        ],
+        "source_LimitItemType_state": "EMPTY_LITERAL"
+      }
+    },
+    {
+      "source_floor_id": 1205,
+      "original_room_DAT_sha256_previous_verified": "650d483ab4cc947e223f7084a1f6b1c65c53ce078d764942bd4d426dccc403f3",
+      "parent_floor_from_room_source_Warp": 1200,
+      "nurse": {
+        "source_functionset": "WindowHealer",
+        "source_CREATE_path": "genout/shop_m.create",
+        "source_CREATE_block_sha256": "f2c90b300437e21d43ab0e35d294b7bada79e1d6b34f9d304868c29c0bc1fb5f",
+        "source_coordinate": [
+          13,
+          7
+        ],
+        "source_graphic_alias": 16012,
+        "original_inline_four_tokens": [
+          "10",
+          "1.5",
+          "3.0",
+          "2"
+        ],
+        "source_CREATE_ordinal": 47
+      },
+      "pharmacist": {
+        "source_functionset": "ItemShop",
+        "source_CREATE_path": "genout/shop_m.create",
+        "source_CREATE_block_sha256": "1e6950453743ad9a5e4b902eafdc54b4ed3ab594fa648a37a88d3f0304a795e3",
+        "source_CREATE_ordinal": 48,
+        "source_coordinate": [
+          14,
+          14
+        ],
+        "source_graphic_alias": 16059,
+        "original_argument_path": "genout/ss_1205_14_14",
+        "original_argument_full_sha256": "5a88f873bcc50c7b5f4c77c2217b3fc3a554fe447564f582742dfadb184514d6",
+        "original_ItemList_text_sha256": "cf24c4d42fcb288f758c7e2eb10502832a96656513f498c1302b4889d55f182b",
+        "source_buy_rate_literal": "1.5",
+        "source_sell_rate_literal": "0.2",
+        "source_ItemList_original_ID_order": [
+          1500,
+          1501,
+          1510,
+          1511,
+          1512,
+          1530,
+          1531,
+          1540,
+          1541,
+          1542,
+          1543,
+          1545
+        ],
+        "source_LimitItemType_state": "EMPTY_LITERAL"
+      }
+    },
+    {
+      "source_floor_id": 1305,
+      "original_room_DAT_sha256_previous_verified": "9539021ae79e0e03a299b77d32cbdfc5a03b34186a04812752197a105da5e9a9",
+      "parent_floor_from_room_source_Warp": 1300,
+      "nurse": {
+        "source_functionset": "WindowHealer",
+        "source_CREATE_path": "genout/shop_m.create",
+        "source_CREATE_block_sha256": "32de4c24bd6b697d164bf850794ca84b13fd4b1dd31c0eb801d6d905e50983e6",
+        "source_coordinate": [
+          18,
+          13
+        ],
+        "source_graphic_alias": 16058,
+        "original_inline_four_tokens": [
+          "10",
+          "1.3",
+          "2.6",
+          "2"
+        ],
+        "source_CREATE_ordinal": 63
+      },
+      "pharmacist": {
+        "source_functionset": "ItemShop",
+        "source_CREATE_path": "genout/shop_m.create",
+        "source_CREATE_block_sha256": "9b955bab408b5ae184804ed1f4cf1a554d504c7cd26472acc0d2b9fb12971b3d",
+        "source_CREATE_ordinal": 64,
+        "source_coordinate": [
+          17,
+          18
+        ],
+        "source_graphic_alias": 16059,
+        "original_argument_path": "genout/ss_1305_17_18",
+        "original_argument_full_sha256": "6481e0ba2a65278a4fd4a81846e2ab6b5e33088e27339719ced08d064e004a97",
+        "original_ItemList_text_sha256": "cf24c4d42fcb288f758c7e2eb10502832a96656513f498c1302b4889d55f182b",
+        "source_buy_rate_literal": "1.3",
+        "source_sell_rate_literal": "0.2",
+        "source_ItemList_original_ID_order": [
+          1500,
+          1501,
+          1510,
+          1511,
+          1512,
+          1530,
+          1531,
+          1540,
+          1541,
+          1542,
+          1543,
+          1545
+        ],
+        "source_LimitItemType_state": "EMPTY_LITERAL"
+      }
+    },
+    {
+      "source_floor_id": 2005,
+      "original_room_DAT_sha256_previous_verified": "d4d92842d39d78aafdc6e893fea10d052f96c3652ad66c230261e639a2597c2f",
+      "parent_floor_from_room_source_Warp": 2000,
+      "nurse": {
+        "source_functionset": "WindowHealer",
+        "source_CREATE_path": "genout/shop_m.create",
+        "source_CREATE_block_sha256": "0c4990ee063abfa6745f2e2d8720013b54c0488c6ded4621c7061cf5653076f2",
+        "source_coordinate": [
+          11,
+          8
+        ],
+        "source_graphic_alias": 16012,
+        "original_inline_four_tokens": [
+          "10",
+          "0.5",
+          "2.0",
+          "2"
+        ],
+        "source_CREATE_ordinal": 89
+      },
+      "pharmacist": {
+        "source_functionset": "ItemShop",
+        "source_CREATE_path": "genout/shop_m.create",
+        "source_CREATE_block_sha256": "eda1488054de49dd477debdee29d4dbddf7e8304fd3f246ad851c01b928c1a8c",
+        "source_CREATE_ordinal": 90,
+        "source_coordinate": [
+          15,
+          7
+        ],
+        "source_graphic_alias": 16023,
+        "original_argument_path": "genout/ss_2005_15_7",
+        "original_argument_full_sha256": "0dd2a05ed5dbcc2711146366fd12ac8a08b5cf896d29b51a03b8db80ef7bcf84",
+        "original_ItemList_text_sha256": "cf24c4d42fcb288f758c7e2eb10502832a96656513f498c1302b4889d55f182b",
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.2",
+        "source_ItemList_original_ID_order": [
+          1500,
+          1501,
+          1510,
+          1511,
+          1512,
+          1530,
+          1531,
+          1540,
+          1541,
+          1542,
+          1543,
+          1545
+        ],
+        "source_LimitItemType_state": "EMPTY_LITERAL"
+      }
+    },
+    {
+      "source_floor_id": 3005,
+      "original_room_DAT_sha256_previous_verified": "b49bebf9888f4c10383aa041d49eede8db4ea0bee3950789285efc084eec8e4e",
+      "parent_floor_from_room_source_Warp": 3000,
+      "nurse": {
+        "source_functionset": "WindowHealer",
+        "source_CREATE_path": "genout/shop_m2.create",
+        "source_CREATE_block_sha256": "d90bd72aaed0e1b140f567a706ed93374edf8127ad7c2af8fda44960324634b3",
+        "source_coordinate": [
+          18,
+          17
+        ],
+        "source_graphic_alias": 16058,
+        "original_inline_four_tokens": [
+          "10",
+          "0.5",
+          "2.0",
+          "2"
+        ],
+        "source_CREATE_ordinal": 9
+      },
+      "pharmacist": {
+        "source_functionset": "ItemShop",
+        "source_CREATE_path": "genout/shop_m2.create",
+        "source_CREATE_block_sha256": "b946671e63af30814f0150540e49af94e8083b8e9cdfef1f7e896d6f32f42904",
+        "source_CREATE_ordinal": 10,
+        "source_coordinate": [
+          18,
+          20
+        ],
+        "source_graphic_alias": 16059,
+        "original_argument_path": "genout/ss_3005_18_20",
+        "original_argument_full_sha256": "53d26483a744329a6f170ce4fba962ec6664d5809c1a57a94c52882e6de5ccc2",
+        "original_ItemList_text_sha256": "cf24c4d42fcb288f758c7e2eb10502832a96656513f498c1302b4889d55f182b",
+        "source_buy_rate_literal": "1.0",
+        "source_sell_rate_literal": "0.2",
+        "source_ItemList_original_ID_order": [
+          1500,
+          1501,
+          1510,
+          1511,
+          1512,
+          1530,
+          1531,
+          1540,
+          1541,
+          1542,
+          1543,
+          1545
+        ],
+        "source_LimitItemType_state": "EMPTY_LITERAL"
+      }
+    }
+  ],
+  "original_twelve_eligible_medicine_rows": [
+    {
+      "original_item_id": 1500,
+      "original_item_A_B_complete_row_sha256": "24ee803daccf79e1431111b51e9949ad96a38d1fa08ad349ec9cee90f033175b",
+      "original_item_type_zero_based_col19": "16",
+      "original_item_use_handler_zero_based_col10": "ITEM_useRecovery",
+      "original_item_effect_token_zero_based_col3": "體 100",
+      "original_item_raw_cost_zero_based_col18": "25",
+      "original_item_scene_zero_based_col20": "0",
+      "original_item_target_zero_based_col21": "1",
+      "original_item_image_alias_zero_based_col17": 23013,
+      "independently_retained_TW1_original_RD_sha256": "9cbec4e4c3e1374853e79fe6f5a40fb0ed9dbd51093cbd75b2020496d0c22220",
+      "independently_retained_TW1_candidate_PNG_sha256": "445c7b68000fbeaea7e625f312c420b93f32b88c65abd8588b4f9d8b7a6aa6e7",
+      "original_RD_bitmap_dimensions": [
+        24,
+        31
+      ],
+      "retail_TW1_RD_qualification": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS_CROSS_CARRIER_NOT_SELECTOR"
+    },
+    {
+      "original_item_id": 1501,
+      "original_item_A_B_complete_row_sha256": "05e30220520216cb04c525e449ec8c5c2ecb1ecb17b38a5709d20535aca8fde4",
+      "original_item_type_zero_based_col19": "16",
+      "original_item_use_handler_zero_based_col10": "ITEM_useRecovery",
+      "original_item_effect_token_zero_based_col3": "體 200",
+      "original_item_raw_cost_zero_based_col18": "50",
+      "original_item_scene_zero_based_col20": "0",
+      "original_item_target_zero_based_col21": "1",
+      "original_item_image_alias_zero_based_col17": 23014,
+      "independently_retained_TW1_original_RD_sha256": "7f61a1be76077da5934cf46d9bfdf37ba4ce4753c3adc460e55381742c8ab52c",
+      "independently_retained_TW1_candidate_PNG_sha256": "c9029f0ea015c70176ce30d7e49c7dfe594a1a68c52c9a941b1057ec5748b2d5",
+      "original_RD_bitmap_dimensions": [
+        24,
+        31
+      ],
+      "retail_TW1_RD_qualification": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS_CROSS_CARRIER_NOT_SELECTOR"
+    },
+    {
+      "original_item_id": 1510,
+      "original_item_A_B_complete_row_sha256": "5c32551302e381d20eac48f625c68d84867e6bb979b017c7b75f046f6460c1b2",
+      "original_item_type_zero_based_col19": "16",
+      "original_item_use_handler_zero_based_col10": "ITEM_useRecovery",
+      "original_item_effect_token_zero_based_col3": "氣20",
+      "original_item_raw_cost_zero_based_col18": "80",
+      "original_item_scene_zero_based_col20": "0",
+      "original_item_target_zero_based_col21": "1",
+      "original_item_image_alias_zero_based_col17": 23005,
+      "independently_retained_TW1_original_RD_sha256": "5c46931c5569a1637f850c47f09621453e57a1c6ca813c1d609dac9d5cffaf0c",
+      "independently_retained_TW1_candidate_PNG_sha256": "988084fdc11055765da33ae853f51cc48a26bcab71759c49617b2e7e95fd2356",
+      "original_RD_bitmap_dimensions": [
+        24,
+        28
+      ],
+      "retail_TW1_RD_qualification": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS_CROSS_CARRIER_NOT_SELECTOR"
+    },
+    {
+      "original_item_id": 1511,
+      "original_item_A_B_complete_row_sha256": "ff1f0bd8f1dac46daf74d039304ae2dea481579f37a91960adafa99a5e2077e7",
+      "original_item_type_zero_based_col19": "16",
+      "original_item_use_handler_zero_based_col10": "ITEM_useRecovery",
+      "original_item_effect_token_zero_based_col3": "氣40",
+      "original_item_raw_cost_zero_based_col18": "160",
+      "original_item_scene_zero_based_col20": "0",
+      "original_item_target_zero_based_col21": "1",
+      "original_item_image_alias_zero_based_col17": 23006,
+      "independently_retained_TW1_original_RD_sha256": "bb05e9f623f3e1ad0aa0b7281c9dbd4f1320c9071c90ade35d171388cd95e131",
+      "independently_retained_TW1_candidate_PNG_sha256": "81af4b3c0964d3cafe5a4098db836f78d50044aa7ba45bd2faddace2578846c7",
+      "original_RD_bitmap_dimensions": [
+        24,
+        28
+      ],
+      "retail_TW1_RD_qualification": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS_CROSS_CARRIER_NOT_SELECTOR"
+    },
+    {
+      "original_item_id": 1512,
+      "original_item_A_B_complete_row_sha256": "b8fc05fa5a021731ea64d6f8b64506f303e3609b526e53920a7dfc28861ac1f7",
+      "original_item_type_zero_based_col19": "16",
+      "original_item_use_handler_zero_based_col10": "ITEM_useRecovery",
+      "original_item_effect_token_zero_based_col3": "氣60",
+      "original_item_raw_cost_zero_based_col18": "250",
+      "original_item_scene_zero_based_col20": "0",
+      "original_item_target_zero_based_col21": "1",
+      "original_item_image_alias_zero_based_col17": 23007,
+      "independently_retained_TW1_original_RD_sha256": "3c7ae4f27190f496525047173e59faa6e7db02989da1c0744f9fb179db446f64",
+      "independently_retained_TW1_candidate_PNG_sha256": "dcf469c9ee1fe6ac1cc0449883864f6d2b4a701e0d2011c218d09e8fba716215",
+      "original_RD_bitmap_dimensions": [
+        24,
+        28
+      ],
+      "retail_TW1_RD_qualification": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS_CROSS_CARRIER_NOT_SELECTOR"
+    },
+    {
+      "original_item_id": 1530,
+      "original_item_A_B_complete_row_sha256": "b0f0732e5f136853f70594d90e82237b3cd4d898981ac908f0467337c3305fc9",
+      "original_item_type_zero_based_col19": "16",
+      "original_item_use_handler_zero_based_col10": "ITEM_useRessurect",
+      "original_item_effect_token_zero_based_col3": "100",
+      "original_item_raw_cost_zero_based_col18": "100",
+      "original_item_scene_zero_based_col20": "1",
+      "original_item_target_zero_based_col21": "101",
+      "original_item_image_alias_zero_based_col17": 23021,
+      "independently_retained_TW1_original_RD_sha256": "ad6db3666ca609d2ea4add83d08380e043e0ffc439862795543fb3159594d044",
+      "independently_retained_TW1_candidate_PNG_sha256": "6e54cf00f910c934a0b25e225706f88ae0e76591e49ac9452d4645fd35df0f7b",
+      "original_RD_bitmap_dimensions": [
+        20,
+        22
+      ],
+      "retail_TW1_RD_qualification": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS_CROSS_CARRIER_NOT_SELECTOR"
+    },
+    {
+      "original_item_id": 1531,
+      "original_item_A_B_complete_row_sha256": "e660eaede34083b78f4350f1367ab551894f07dfc0e3f166e5192f0fa3b4e49c",
+      "original_item_type_zero_based_col19": "16",
+      "original_item_use_handler_zero_based_col10": "ITEM_useRessurect",
+      "original_item_effect_token_zero_based_col3": "300",
+      "original_item_raw_cost_zero_based_col18": "300",
+      "original_item_scene_zero_based_col20": "1",
+      "original_item_target_zero_based_col21": "101",
+      "original_item_image_alias_zero_based_col17": 23021,
+      "independently_retained_TW1_original_RD_sha256": "ad6db3666ca609d2ea4add83d08380e043e0ffc439862795543fb3159594d044",
+      "independently_retained_TW1_candidate_PNG_sha256": "6e54cf00f910c934a0b25e225706f88ae0e76591e49ac9452d4645fd35df0f7b",
+      "original_RD_bitmap_dimensions": [
+        20,
+        22
+      ],
+      "retail_TW1_RD_qualification": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS_CROSS_CARRIER_NOT_SELECTOR"
+    },
+    {
+      "original_item_id": 1540,
+      "original_item_A_B_complete_row_sha256": "545f8a3762032053686fb9c6e58167b12e3aab8201108ab81b4eb2f3645b26db",
+      "original_item_type_zero_based_col19": "16",
+      "original_item_use_handler_zero_based_col10": "ITEM_useStatusRecovery",
+      "original_item_effect_token_zero_based_col3": "毒",
+      "original_item_raw_cost_zero_based_col18": "30",
+      "original_item_scene_zero_based_col20": "1",
+      "original_item_target_zero_based_col21": "1",
+      "original_item_image_alias_zero_based_col17": 23026,
+      "independently_retained_TW1_original_RD_sha256": "dd3fec264acbc86db345add42d2d30c075c587e78801e166965d00e6991cb02d",
+      "independently_retained_TW1_candidate_PNG_sha256": "ab1d515cab7842ba560e92cb16d6acedf9d960cf173d8c00ea8c9571e34d8c2f",
+      "original_RD_bitmap_dimensions": [
+        44,
+        40
+      ],
+      "retail_TW1_RD_qualification": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS_CROSS_CARRIER_NOT_SELECTOR"
+    },
+    {
+      "original_item_id": 1541,
+      "original_item_A_B_complete_row_sha256": "9e788b87aaf53561110d506c95bd20482b715fb657cf3cdb99887d246744f09a",
+      "original_item_type_zero_based_col19": "16",
+      "original_item_use_handler_zero_based_col10": "ITEM_useStatusRecovery",
+      "original_item_effect_token_zero_based_col3": "石",
+      "original_item_raw_cost_zero_based_col18": "25",
+      "original_item_scene_zero_based_col20": "1",
+      "original_item_target_zero_based_col21": "1",
+      "original_item_image_alias_zero_based_col17": 23027,
+      "independently_retained_TW1_original_RD_sha256": "4aa8006104e46616fe2786c1e740702ebba1c02d84e682181b4bc270a13bc34e",
+      "independently_retained_TW1_candidate_PNG_sha256": "f88fa0d72fa51e813bce2d8476e5813d5fc782f3ccf02bc380ef1c1e0201b240",
+      "original_RD_bitmap_dimensions": [
+        52,
+        44
+      ],
+      "retail_TW1_RD_qualification": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS_CROSS_CARRIER_NOT_SELECTOR"
+    },
+    {
+      "original_item_id": 1542,
+      "original_item_A_B_complete_row_sha256": "671944cd880cf62cefe445a395febebb60a81b464c008abd761005ff37b63f4f",
+      "original_item_type_zero_based_col19": "16",
+      "original_item_use_handler_zero_based_col10": "ITEM_useStatusRecovery",
+      "original_item_effect_token_zero_based_col3": "亂",
+      "original_item_raw_cost_zero_based_col18": "20",
+      "original_item_scene_zero_based_col20": "1",
+      "original_item_target_zero_based_col21": "1",
+      "original_item_image_alias_zero_based_col17": 23024,
+      "independently_retained_TW1_original_RD_sha256": "f9e575ca94aaf832102a0e234705563987419b85c45fa554f31de976f6be2cc8",
+      "independently_retained_TW1_candidate_PNG_sha256": "f627cf18712d4c70358040bf2352a2f7c579e6657d4953a0676662f4a68f0711",
+      "original_RD_bitmap_dimensions": [
+        44,
+        41
+      ],
+      "retail_TW1_RD_qualification": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS_CROSS_CARRIER_NOT_SELECTOR"
+    },
+    {
+      "original_item_id": 1543,
+      "original_item_A_B_complete_row_sha256": "857c5ad81ef0d62edc65e0e442fba3f554b2ca4f059f36a98004ed7c8dc19c45",
+      "original_item_type_zero_based_col19": "16",
+      "original_item_use_handler_zero_based_col10": "ITEM_useStatusRecovery",
+      "original_item_effect_token_zero_based_col3": "醉",
+      "original_item_raw_cost_zero_based_col18": "20",
+      "original_item_scene_zero_based_col20": "1",
+      "original_item_target_zero_based_col21": "1",
+      "original_item_image_alias_zero_based_col17": 23028,
+      "independently_retained_TW1_original_RD_sha256": "8c0f71dfec403acb4a569be877d3c08da77a3d928fb7a5ff22f5c3ebe66cd3e4",
+      "independently_retained_TW1_candidate_PNG_sha256": "92696cc38f43248836b0fe83960753c0e442a9126c4349cb1d3818b89f996387",
+      "original_RD_bitmap_dimensions": [
+        44,
+        35
+      ],
+      "retail_TW1_RD_qualification": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS_CROSS_CARRIER_NOT_SELECTOR"
+    },
+    {
+      "original_item_id": 1545,
+      "original_item_A_B_complete_row_sha256": "0a7c8c47cc8f53120ac15684d11103c956062c0a33d15c9a87ff55d44b383d3d",
+      "original_item_type_zero_based_col19": "16",
+      "original_item_use_handler_zero_based_col10": "ITEM_useStatusRecovery",
+      "original_item_effect_token_zero_based_col3": "眠",
+      "original_item_raw_cost_zero_based_col18": "30",
+      "original_item_scene_zero_based_col20": "1",
+      "original_item_target_zero_based_col21": "1",
+      "original_item_image_alias_zero_based_col17": 23025,
+      "independently_retained_TW1_original_RD_sha256": "c4227839fc7a5d9de4fe28b1ac36d12cbbc9d8de8d9839b9d608f0c7ae7c0bdd",
+      "independently_retained_TW1_candidate_PNG_sha256": "18320b67f8c38a36cdb875ff00f3c92724fbf015eac3d1dd6ce7c8f836ea35c6",
+      "original_RD_bitmap_dimensions": [
+        32,
+        47
+      ],
+      "retail_TW1_RD_qualification": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS_CROSS_CARRIER_NOT_SELECTOR"
+    }
+  ],
+  "negative_bounds": {
+    "only_static_config_joins": true,
+    "not_five_new_original_maps": true,
+    "original_DAT_reopened_this_unit": false,
+    "clinic_native_UI_or_healing_executed": false,
+    "client_shop_purchase_tested": false,
+    "actual_recovery_revive_status_effect_for_all_12_tested": false,
+    "shop_buy_rate_as_actual_price_formula_proven": false,
+    "nurse_inline_four_arg_interpretation_proven": false,
+    "TW1_retained_pixel_is_native_mixed25_selected_graphic_proven": false,
+    "tw1_early_or_JSS_official_same_deployment_proven": false,
+    "all_12_IDs_are_original_first_edition_items_proven": false,
+    "private_original_proprietary_content_published": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Rotate to a different source-ready original quest/skill/item encounter result rather than enumerating more clinics or replaying the same 12 medicines; Stage A only."
+}
