@@ -1,0 +1,22 @@
+name: Verify StoneAge INTEGRATION64 original-source bridge
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION64-HOUGYOKU-SIX-ITEMS-ORIGINAL-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_64.py'
+      - '.github/workflows/verify-stoneage-integration64-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION64-HOUGYOKU-SIX-ITEMS-ORIGINAL-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_64.py'
+      - '.github/workflows/verify-stoneage-integration64-source.yml'
+jobs:
+  original_source_derived_only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate INTEGRATION64 public source joins
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_64.py' -v
