@@ -2590,3 +2590,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ### INTEGRATION74 正式候选、主线与私人源保管验收（2026-11-11）
 
 [原愿藏两名敌人图号来源／160段台湾1.0原动画验收](docs/continuity/STONEAGE-INTEGRATION74-PUBLICATION-ACCEPTANCE-20261111.md)：[PR #349](https://github.com/chinaneedM/stoneage-rebuild/pull/349)已squash合并，候选 `bf2a42ef1b39f1f777b91a719560b7e2dad92fa9`／tree `a5efaf2ecc8bd185802ab7c2ce5e4542a8ab4d31` **46/46 Actions**（push27＋PR19）与内容主线 `cb42b8b076a9639c73a4f2463600e7c7d54e2b3c`／同tree **27/27 Actions**真实completed/success，三次专项实际job各12项测试OK。全73条真实运行收据见[机器回执](research/recovered/STONEAGE-INTEGRATION74-PUBLICATION-ACCEPTANCE-R1.json)。真实重读台湾1.0原SPR/REAL 576不同RD（575 strict、1限定尾零），但PET15已有全部这些原图，此轮新美术0；成果是O85具名后期NPC/敌人两模板→另一载体TW1两组全动作的有据资料接缝。私人1,826,064B/581成员包已Library独立回读SHA/CRC；版权原图/脚本不进Git。原CURRENT `c89e0e33537990aa2132b47c40fef49a985a935c` 保留，Stage A7PARTIAL＋2OPEN、B/wiki GATED、R79暂停、overall=null。正式验收回执自身Actions不预支，NEXT转未重复的真正原始游戏内容。
+
+
+## 2026-11-11 — INTEGRATION75｜长毛象神社抽签六原物品源关系
+
+[原脚本及六神签来源边界](docs/continuity/STONEAGE-INTEGRATION75-MAMMOTH-SHRINE-SIX-FORTUNES-20261111.md)／[源数字与SHA](research/recovered/STONEAGE-INTEGRATION75-MAMMOTH-SHRINE-SIX-FORTUNES-SOURCE-R1.json)：社区mixed25四原脚本已真实重读、2205 ZIP CRC成功；原抽签15列表位置→6种神签原ID，静态旗标36及捐献50；既存ITEM01两原表六物品整SHA相同、源图号24313在TW1零售原索引缺失，新增原图0、原服实际执行与每日重置/抽中概率未认证。保留原CURRENT完整Git blob和Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体完成率未知。专项及主线Actions只以后验记录；NEXT其它有真原件、未重复的二维游戏内容。

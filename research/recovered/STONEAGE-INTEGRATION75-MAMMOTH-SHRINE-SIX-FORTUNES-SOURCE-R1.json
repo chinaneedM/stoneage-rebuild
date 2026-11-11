@@ -1,0 +1,178 @@
+{
+  "schema": "stoneage.integration75.mammoth_shrine_omikuji_source_bound.r1",
+  "date": "2026-11-11",
+  "baseline": {
+    "main_head": "582fe47e28cd3b8fdc09e88c6cc098ee914e04fc",
+    "main_tree": "185ac4eca1c9f8858bb823aafd91489c7cc14dae",
+    "current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_bytes": 2709173
+  },
+  "source_scope": "LATER_COMMUNITY_MIXED25_ORIGINAL_NPC_AND_OLDER_ITEM01_SOURCE_VERIFIED_TRANSCRIPTIONS_NOT_TW1_SAME_DEPLOYMENT",
+  "private_npc": {
+    "archive_bytes": 995176,
+    "archive_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "verified_members": 2205,
+    "crc_ok": 2205,
+    "files": [
+      [
+        "npc/extra/event/omikuji",
+        1041,
+        "1606ee099c6ba94602fc8a3d5b1b8c40706052b8f98609c39b3903b49d687d59",
+        [
+          "MESSAGE",
+          "ACCEPT",
+          "MESSAGE"
+        ]
+      ],
+      [
+        "npc/extra/event/omikuji2",
+        1044,
+        "57978459f2076261fd1097b6ed8ee47770a2a9da1e0e9c0c68e8da75cf1d8d4b",
+        [
+          "MESSAGE",
+          "ACCEPT",
+          "MESSAGE"
+        ]
+      ],
+      [
+        "npc/extra/event/osaisen",
+        681,
+        "71059be6609e8d8917893e9aa713083e1b70cad99354807c55e3b4b79817a012",
+        [
+          "CLEAN",
+          "REQUEST"
+        ]
+      ],
+      [
+        "npc/extra/event/osaisen2",
+        681,
+        "71059be6609e8d8917893e9aa713083e1b70cad99354807c55e3b4b79817a012",
+        [
+          "CLEAN",
+          "REQUEST"
+        ]
+      ]
+    ],
+    "limited_create_template_arg_conf_gen_scan_files": 578,
+    "limited_scan_literal_hits": 0
+  },
+  "script_contract": {
+    "draw_list": [
+      2615,
+      2616,
+      2616,
+      2617,
+      2617,
+      2617,
+      2617,
+      2618,
+      2618,
+      2618,
+      2618,
+      2618,
+      2619,
+      2619,
+      2620
+    ],
+    "draw_occurrence_counts": [
+      [
+        2615,
+        1
+      ],
+      [
+        2616,
+        2
+      ],
+      [
+        2617,
+        4
+      ],
+      [
+        2618,
+        5
+      ],
+      [
+        2619,
+        2
+      ],
+      [
+        2620,
+        1
+      ]
+    ],
+    "flag_event_number": 36,
+    "draw_script_command": "EndSetFlg:36",
+    "donation_script_commands": [
+      "CleanFlg:36",
+      "DelStone:50"
+    ],
+    "donation_event_numbers": [
+      -1,
+      36
+    ],
+    "source_dialogue_mentions_once_per_day_but_runtime_reset_unproven": true,
+    "source_list_occurrences_not_runtime_probabilities": true
+  },
+  "item_source": {
+    "private_catalog_zip_bytes": 5868386,
+    "private_catalog_zip_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "crc_ok": 838,
+    "original_master_A_sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+    "original_master_B_sha256": "6d6d63fda59c6bda2f239fe18c9361b5c9da18c84f678b7cc95bde24544292fb",
+    "old_original_parent_master_files_not_re_read_this_turn": true,
+    "public_shard": "research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-02-R1.json",
+    "both_table_exact_row_sha256": [
+      "7d0a8de1d869fc3203154785fd4e137d1d9eb892b2b9f3771cd4518c9267eea4",
+      "9c764eeafe15979845e0485cab2150014bfdd60e4e0994eac6283395b40cc560",
+      "31e78abfdc5fb7d1dc4ab8d26b5f2dfaebe05c4b34dadff653772b085301d083",
+      "93d0a4b49a3eab5d57f928d97fc2ac4ce5f60a8c805d15789d00c6fbc2f7dde7",
+      "0021d8d58274f28eda9730a5c8a070b7a8799cbc2eb08a7b9564c70f2b9b51e4",
+      "59b83fa0efcb980c503dc17774c1690fa425fb1d638645d53e9ca4e17e64fe0b"
+    ],
+    "ids": [
+      2615,
+      2616,
+      2617,
+      2618,
+      2619,
+      2620
+    ],
+    "source_A_1based_rows": [
+      2198,
+      2199,
+      2200,
+      2201,
+      2202,
+      2203
+    ],
+    "source_B_1based_rows": [
+      2593,
+      2594,
+      2595,
+      2596,
+      2597,
+      2598
+    ],
+    "shared_source_image_alias": 24313,
+    "tw1_image_qualification": "TW1_INDEX_NOT_FOUND",
+    "new_original_RD_or_PNG_in_this_turn": 0
+  },
+  "evidence_limits": {
+    "same_official_early_deployment_proven": false,
+    "original_native_script_execution_proven": false,
+    "original_server_draw_distribution_proven": false,
+    "daily_flag_reset_proven": false,
+    "stone_deduction_executed": false,
+    "original_TW1_alias24313_pixel_found": false,
+    "original_CREATE_or_loader_reference_found_in_scanned_subset": false,
+    "original_full_scripts_or_full_itemrows_published": false
+  },
+  "stage": {
+    "A_PARTIAL": 7,
+    "A_OPEN": 2,
+    "B_and_wiki_GATED": true,
+    "R79_paused": true,
+    "overall_percent": null
+  },
+  "next": "Rotate to new authentic 2D game content; reopen this shrine only with direct original loader or runtime random/flag semantics or an authenticated original bitmap for alias 24313."
+}
