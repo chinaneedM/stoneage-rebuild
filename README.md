@@ -2533,3 +2533,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ### INTEGRATION68 正式验收回执（2026-11-11）
 
 [真实PR与内容主线/私人保管验收](docs/continuity/STONEAGE-INTEGRATION68-PUBLICATION-ACCEPTANCE-20261111.md)：[PR #338](https://github.com/chinaneedM/stoneage-rebuild/pull/338) 已squash合并，候选 `1183c2699af967ec37471614e0e53dc66bad4fe5` 的 **46/46 Actions**（27push＋19PR）以及正式内容main `9b4ace498f6083e963eb78b9dcb7fecb365b6641`／tree `473b7cbdef41f5a94bfced7380bbb79383a99426` 的 **27/27 Actions**均已实际成功，INTEGRATION68专项候选push、PR和main成功。私人11成员24,425B原像/RD ZIP从Library独立回读整SHA和CRC吻合，原历史CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c` 未变。全部73条运行ID和状态归档在[机器验收回执](research/recovered/STONEAGE-INTEGRATION68-PUBLICATION-ACCEPTANCE-R1.json)。这份回执提交自身的Actions以后续实际结果为准；Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null。NEXT非重复且具真实来源的其它二维内容。
+
+
+## 2026-11-11 — INTEGRATION69｜三件被盜家寶：event13兩NPC／五道具／七幅TW1原RD像
+
+[完整源材料、原腳本控制字面和私人原像重讀](docs/continuity/STONEAGE-INTEGRATION69-EVENT13-HEIRLOOM-ORIGINAL-NPC-ITEM-PIXELS-20261111.md)／[公開有限原證JSON](research/recovered/STONEAGE-INTEGRATION69-HEIRLOOM-EVENT13-NPC-ITEM-TW1-PIXEL-SOURCE-R1.json)：重新從 `main=899c69e573e349ed404b8a3d1362c499cfad73f2`／tree `083cf8dc657c8f83bbc360c8890da2132b172436` 的26/26成功Actions與完整原CURRENT Git blob啟動。舊QUEST01已索引兩腳本5段，故本輪新增腳本0；真正新增的是後期mixed25保存的 `event13n.create` 兩條有SHA原NPC與ACT／REQUEST／MESSAGE／CLEAN腳本、五件原物品兩套94欄的關係，並以不同TW1零售原ADRN/REAL真源重新解碼7幅候選(2NPC/5物品)、雙獨立RD解碼完全一致、5舊物品保存PNG逐RGBA一致。兩NPC源地圖1112有舊MAP09 DAT資格、1100在本955批次無匹配；不能稱官方同服、原生NPC／任務執行或失蹤的1100不存在。原 `CLEAN:13` 靜態條件未經實測，不用其發明原旗標/重複觸發語義。私人31成員75,935B原腳本/RD/PNG已存個人Library後完整回取SHA/CRC合格，原商原件不入Git。Stage A7 PARTIAL＋2 OPEN、B/wiki GATED、R79暫停、overall_percent=null。NEXT轉其他具合格原件的遊戲內容，不擴本事件或開發網服/引擎。候選/main Actions須按實際遠端後驗。

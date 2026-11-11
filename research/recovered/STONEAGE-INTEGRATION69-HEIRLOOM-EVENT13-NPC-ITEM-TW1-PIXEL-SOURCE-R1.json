@@ -1,0 +1,540 @@
+{
+  "schema": "stoneage.integration69.heirloom_event13_two_original_npcs_five_original_item_candidates.r1",
+  "date": "2026-11-11",
+  "fresh_remote": {
+    "branch": "main",
+    "HEAD": "899c69e573e349ed404b8a3d1362c499cfad73f2",
+    "tree": "083cf8dc657c8f83bbc360c8890da2132b172436",
+    "historical_CURRENT_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "historical_CURRENT_bytes": 2709173,
+    "historical_CURRENT_edited": false,
+    "all_26_actions_at_start_completed_success": true
+  },
+  "material_goal": "Restore static source graph of event13 stolen family heirlooms across two actual later-community NPC CREATE and quest scripts, five preserved itemset rows, and seven truly reread original TW1 retail RD images.",
+  "source_scopes": {
+    "NPC_create_quest_and_itemsets": "LATER_COMMUNITY_MIXED25_PRESERVED_NOT_AUTHENTICATED_EARLY_OFFICIAL_DEPLOYMENT",
+    "actual_RD_images": "AUTHENTIC_TW_WAEI_JSS_1_0_RETAIL_RESOURCE_BYTES_NOT_SAME_DEPLOYMENT",
+    "join_kind": "SOURCE_QUALIFIED_CROSS_CARRIER_ORIGINAL_NUMBER_ALIAS_CANDIDATE_NOT_NATIVE_RUNTIME_LOOKUP",
+    "legacy_QUEST01_scripts_already_catalogued": 2,
+    "legacy_QUEST01_TYPE_sections_already_catalogued": 5,
+    "newly_discovered_original_quest_scripts": 0,
+    "newly_discovered_TYPE_sections": 0,
+    "newly_executed_native_game_events": 0,
+    "replayed_original_TW1_RD_blocks": 7,
+    "original_NPC_RD_blocks_replayed": 2,
+    "previously_saved_ITEM01_RDs_replayed_and_pixel_matched": 5
+  },
+  "source_files": {
+    "original_CHAR01_ZIP": {
+      "bytes": 995176,
+      "sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+      "members_CRC_verified": 2205
+    },
+    "original_ITEM01_ZIP": {
+      "bytes": 5868386,
+      "sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+      "members_CRC_verified": 838
+    },
+    "original_TW1_P3H_ZIP": {
+      "bytes": 372626292,
+      "sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+      "ADRN_bytes": 10079680,
+      "ADRN_sha256": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+      "REAL_bytes": 315842228,
+      "REAL_sha256": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13",
+      "Palet1_sha256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0"
+    },
+    "original_CREATE_path": "sainasu/event/event13n.create",
+    "original_CREATE_sha256": "05a2d1f95cdba5c2fba2918d3a11afe7375109a4af07d01e77a5a572ffb10bdf",
+    "original_CREATE_bytes": 580,
+    "source_template_path": "jaruga/event/event.template",
+    "source_template_sha256": "9c11ac0cbbd9b110e8ff7d0115730044673bf29c5df6d23034e56530c181d0b2",
+    "source_scripts": [
+      {
+        "source_path": "sainasu/event/event13_1",
+        "raw_bytes": 1724,
+        "source_full_CP950_sha256": "b876eb2967a97eaf82e68570c36aee123161febe31a45d7e65c28be9d205dd6b",
+        "original_zip_crc32": "621fc922"
+      },
+      {
+        "source_path": "sainasu/event/event13_2",
+        "raw_bytes": 478,
+        "source_full_CP950_sha256": "c087370419fc438051944f39db0e3cc960bb2981b911165151f1d53f0f4c7187",
+        "original_zip_crc32": "84d2f5bd"
+      }
+    ],
+    "prior_QUEST01_public_source_blob": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2",
+    "prior_CHAR01_public_source_blob": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "prior_MAP09_source_ready_blob": "137580e7c25aadf3d679b6ebfb5080b79912cc4f",
+    "prior_ITEM01_original_94_column_shards_blobs": [
+      "d39ef58c88f1326d227b2844ca06ed5e23e2965a",
+      "b91bc8335db508998f4595144ce371979ea8c849",
+      "c0a77b9f1266316a95c108cd1bbdd31f41289613",
+      "14c7816054375863c91e474b58d2202f76e821c5",
+      "361dfc5f626a5f2683dd7a5ca224f2854caf5d7c",
+      "314f85e9a1969b79f50c935aeb4216348b6744a3",
+      "dbb958e77aed796faf86570c7523d3f0dc5748fd"
+    ]
+  },
+  "original_source_creates": [
+    {
+      "ordinal": 0,
+      "original_create_file": "sainasu/event/event13n.create",
+      "original_create_block_byte_range_halfopen": [
+        191,
+        354
+      ],
+      "original_create_block_sha256": "cd0d392d726239abb1be0355d6ccfc49d85e5e5bd29a6afc441e3b28d3838136",
+      "original_floor_id": 1112,
+      "borncorner_four_source_integers": [
+        16,
+        15,
+        16,
+        15
+      ],
+      "source_direction_literal": 6,
+      "source_npc_graphic_alias": 16000,
+      "source_name_short": "老人薩頓",
+      "enemy_file_source_token": "changeevent|file:sainasu/event/event13_1",
+      "linked_original_script": "sainasu/event/event13_1",
+      "source_template": "changeevent",
+      "source_qualified_template_function": "ExChangeMan",
+      "native_NPC_created_or_conversation_executed": false
+    },
+    {
+      "ordinal": 1,
+      "original_create_file": "sainasu/event/event13n.create",
+      "original_create_block_byte_range_halfopen": [
+        410,
+        580
+      ],
+      "original_create_block_sha256": "2ad0b6a1a5c29b384d041a05bdc3edf843f09f43f91ea06dc6d74d20a1d0dbc2",
+      "original_floor_id": 1100,
+      "borncorner_four_source_integers": [
+        86,
+        99,
+        86,
+        99
+      ],
+      "source_direction_literal": 4,
+      "source_npc_graphic_alias": 16048,
+      "source_name_short": "關懷老人的年輕人",
+      "enemy_file_source_token": "changeevent|file:sainasu/event/event13_2",
+      "linked_original_script": "sainasu/event/event13_2",
+      "source_template": "changeevent",
+      "source_qualified_template_function": "ExChangeMan",
+      "native_NPC_created_or_conversation_executed": false
+    }
+  ],
+  "original_source_event_sections": [
+    {
+      "script_path": "sainasu/event/event13_1",
+      "source_event_ordinal": 0,
+      "source_event_no_literal": "13",
+      "source_type": "ACCEPT",
+      "source_type_line_1based": 10,
+      "source_condition_literal": "NOWEV=13&ITEM=2428&ITEM=2429&ITEM=2430",
+      "source_condition_UTF8_sha256": "d8710885541845b8807c02d7a5bdf71f72362455aa03dd8eda1c9c217791ca0e",
+      "source_section_decoded_CP950_UTF8_sha256": "58ec5ac959085a32519e38ec19ab9f4b6f37e82e6f06a650cf80e2e948f613fc",
+      "commands_in_physical_order": [
+        {
+          "command": "GetItem",
+          "original_value_literal": "2450",
+          "physical_line_1based": 14,
+          "source_line_CP950_sha256": "dc5ce9ca8d8eddb6f4c0bfc9ee8b3ee168b4c2f6119e18c641b86584cfbf2d94"
+        },
+        {
+          "command": "DelItem",
+          "original_value_literal": "2428,2429,2430,2431",
+          "physical_line_1based": 15,
+          "source_line_CP950_sha256": "0e069b071960552b6ec25ea7469f23b3e2b53e60a0a19c9a5c1d47b0620b155c"
+        },
+        {
+          "command": "EndSetFlg",
+          "original_value_literal": "13",
+          "physical_line_1based": 17,
+          "source_line_CP950_sha256": "24d89de473e3ed7b58816ca140bec45f5eb01e0d5442138b529100ce219dacb7"
+        }
+      ],
+      "source_action_execution_observed": false
+    },
+    {
+      "script_path": "sainasu/event/event13_1",
+      "source_event_ordinal": 1,
+      "source_event_no_literal": "13",
+      "source_type": "MESSAGE",
+      "source_type_line_1based": 21,
+      "source_condition_literal": "NOWEV=13&ITEM!=2431",
+      "source_condition_UTF8_sha256": "ea2dafe6c91e03a4cd70b22bc266ad1231bb6748d698afaeac8288fb3eb797ae",
+      "source_section_decoded_CP950_UTF8_sha256": "0890ad08b3f6db3a083e3064d547d87b32025d444c7ce58db0f323bde398f136",
+      "commands_in_physical_order": [
+        {
+          "command": "GetItem",
+          "original_value_literal": "2431",
+          "physical_line_1based": 24,
+          "source_line_CP950_sha256": "189c35d4368b3826d9528414b539800a60ca3c2816bc98fdcca52a0f269717d0"
+        }
+      ],
+      "source_action_execution_observed": false
+    },
+    {
+      "script_path": "sainasu/event/event13_1",
+      "source_event_ordinal": 2,
+      "source_event_no_literal": "13",
+      "source_type": "REQUEST",
+      "source_type_line_1based": 29,
+      "source_condition_literal": "LV>15",
+      "source_condition_UTF8_sha256": "6b65db6c68e5ae5b443dcbae6918ae3ede09d9f6fec3e2b02edf057d57e39689",
+      "source_section_decoded_CP950_UTF8_sha256": "3fffa52215c7b3b7d9c87862d942c0d85e29f935ed750a21d89ede8f17bfb141",
+      "commands_in_physical_order": [
+        {
+          "command": "GetItem",
+          "original_value_literal": "2431*1",
+          "physical_line_1based": 36,
+          "source_line_CP950_sha256": "e0450251bda62e540d8cb2db7d527ed32e082026641e7bfccedf2fdaaac847d1"
+        }
+      ],
+      "source_action_execution_observed": false
+    },
+    {
+      "script_path": "sainasu/event/event13_1",
+      "source_event_ordinal": 3,
+      "source_event_no_literal": "-1",
+      "source_type": "MESSAGE",
+      "source_type_line_1based": 42,
+      "source_condition_literal": "ENDEV=13",
+      "source_condition_UTF8_sha256": "4cc9ec4a862ffc7b5c109a1fc60ce4ce416833975f50a6d6f2b9a53e337e4660",
+      "source_section_decoded_CP950_UTF8_sha256": "196b4b2620e85584122e59f8a77346ea8253459e315e839c5b107c37f0785327",
+      "commands_in_physical_order": [],
+      "source_action_execution_observed": false
+    },
+    {
+      "script_path": "sainasu/event/event13_2",
+      "source_event_ordinal": 0,
+      "source_event_no_literal": "-1",
+      "source_type": "CLEAN",
+      "source_type_line_1based": 10,
+      "source_condition_literal": "ENDEV=13",
+      "source_condition_UTF8_sha256": "4cc9ec4a862ffc7b5c109a1fc60ce4ce416833975f50a6d6f2b9a53e337e4660",
+      "source_section_decoded_CP950_UTF8_sha256": "b388ac9c6b50611fd7e244840786c471f20d5f28707261e190a466f9e287320a",
+      "commands_in_physical_order": [
+        {
+          "command": "CleanFlg",
+          "original_value_literal": "13",
+          "physical_line_1based": 12,
+          "source_line_CP950_sha256": "8051c762926dca837cc614db20a20077091f661f3ec9641022cccb93a970c623"
+        }
+      ],
+      "source_action_execution_observed": false
+    }
+  ],
+  "original_static_relations": {
+    "original_EVENT_ACCEPT_13_requires_exact_literal": "NOWEV=13&ITEM=2428&ITEM=2429&ITEM=2430",
+    "original_EVENT_ACCEPT_13_DelItem_literal": "2428,2429,2430,2431",
+    "original_EVENT_ACCEPT_13_GetItem_literal": "2450",
+    "original_EVENT_ACCEPT_13_EndSetFlg_literal": "13",
+    "original_EVENT_REQUEST_13_level_condition_literal": "LV>15",
+    "original_EVENT_REQUEST_13_GetItem_literal": "2431*1",
+    "original_EVENT_MESSAGE13_repeat_evidence_literal": "NOWEV=13&ITEM!=2431",
+    "original_EVENT_MESSAGE13_repeat_GetItem_literal": "2431",
+    "original_young_NPC_CLEAN_13_condition_literal": "ENDEV=13",
+    "original_young_NPC_CleanFlg_literal": "13",
+    "the_event13_clean_rule_runtime_priority_or_replay_not_observed": true,
+    "a_completed_flag_and_CleanFlg_same_ID_in_two_different_NPC_scripts": true,
+    "commands_are_static_source_tokens_not_actual_execution": true
+  },
+  "original_two_table_item_source_rows": [
+    {
+      "item_id": 2428,
+      "source_itemset_and_itemset0710_identical_original_line": true,
+      "original_itemset_source_name": "薩頓家的衣服",
+      "original_two_CP950_original_row_sha256": {
+        "itemset.txt": "353ab8f064d22c8f0e57c51fa2bcc8a0c8545779eaab12f93ddc864a6b3487f3",
+        "itemset0710.txt": "353ab8f064d22c8f0e57c51fa2bcc8a0c8545779eaab12f93ddc864a6b3487f3"
+      },
+      "source_itemset_two_row_positions_1based": {
+        "itemset.txt": 2011,
+        "itemset0710.txt": 2406
+      },
+      "source_image_alias": 21028,
+      "source_original_94_fields": 94,
+      "retail_TW1_same_quest_deployment_proven": false
+    },
+    {
+      "item_id": 2429,
+      "source_itemset_and_itemset0710_identical_original_line": true,
+      "original_itemset_source_name": "薩頓家的斧頭",
+      "original_two_CP950_original_row_sha256": {
+        "itemset.txt": "6ea25585f6fa0aca55105e0587d844b135cd627312bc514805386bd41b664d48",
+        "itemset0710.txt": "6ea25585f6fa0aca55105e0587d844b135cd627312bc514805386bd41b664d48"
+      },
+      "source_itemset_two_row_positions_1based": {
+        "itemset.txt": 2012,
+        "itemset0710.txt": 2407
+      },
+      "source_image_alias": 20018,
+      "source_original_94_fields": 94,
+      "retail_TW1_same_quest_deployment_proven": false
+    },
+    {
+      "item_id": 2430,
+      "source_itemset_and_itemset0710_identical_original_line": true,
+      "original_itemset_source_name": "薩頓家的頭盔",
+      "original_two_CP950_original_row_sha256": {
+        "itemset.txt": "edaa8b3dfdb1280bdead9f4ac57ca3871b0c01973dfc1b179cd17555370c25fc",
+        "itemset0710.txt": "edaa8b3dfdb1280bdead9f4ac57ca3871b0c01973dfc1b179cd17555370c25fc"
+      },
+      "source_itemset_two_row_positions_1based": {
+        "itemset.txt": 2013,
+        "itemset0710.txt": 2408
+      },
+      "source_image_alias": 21540,
+      "source_original_94_fields": 94,
+      "retail_TW1_same_quest_deployment_proven": false
+    },
+    {
+      "item_id": 2431,
+      "source_itemset_and_itemset0710_identical_original_line": true,
+      "original_itemset_source_name": "盜賊們的足跡",
+      "original_two_CP950_original_row_sha256": {
+        "itemset.txt": "e98e9a026ed64d978fa7d3f3cf5b9d15338ec419e70a644f9bba4ea09a8450bf",
+        "itemset0710.txt": "e98e9a026ed64d978fa7d3f3cf5b9d15338ec419e70a644f9bba4ea09a8450bf"
+      },
+      "source_itemset_two_row_positions_1based": {
+        "itemset.txt": 2014,
+        "itemset0710.txt": 2409
+      },
+      "source_image_alias": 24222,
+      "source_original_94_fields": 94,
+      "retail_TW1_same_quest_deployment_proven": false
+    },
+    {
+      "item_id": 2450,
+      "source_itemset_and_itemset0710_identical_original_line": true,
+      "original_itemset_source_name": "薩頓家的秘藥",
+      "original_two_CP950_original_row_sha256": {
+        "itemset.txt": "4805147d377caa2ffce6ea8f34eb03d577b5ce60cf9bfcef34393e0f56d89281",
+        "itemset0710.txt": "4805147d377caa2ffce6ea8f34eb03d577b5ce60cf9bfcef34393e0f56d89281"
+      },
+      "source_itemset_two_row_positions_1based": {
+        "itemset.txt": 2033,
+        "itemset0710.txt": 2428
+      },
+      "source_image_alias": 24169,
+      "source_original_94_fields": 94,
+      "retail_TW1_same_quest_deployment_proven": false
+    }
+  ],
+  "source_qualified_TW1_retail_original_pixel_candidates": [
+    {
+      "source_graphic_alias": 16000,
+      "entity_role": "NPC_GRAPHIC_ALIAS",
+      "unique_original_TW1_ADRN_alias_hits": 1,
+      "original_TW1_ADRN_record_index": 5846,
+      "actual_original_physical_bitmapno": 5846,
+      "original_ADRN_record_80_byte_sha256": "23f8e9fc9af0bf5cf54ca460d682c41ff295156f473ccb23247ce61428db3e34",
+      "original_REAL_byte_offset": 24936233,
+      "original_RD_byte_size": 2241,
+      "original_RD_sha256": "f4880a27d5aa6fb617a308703ea81bd6db3b67fa7a77436183e0b24667ce1911",
+      "original_RD_flag": 1,
+      "source_pixel_width": 52,
+      "source_pixel_height": 72,
+      "original_decoded_index_pixel_sha256": "701a3bb13ec61eadc2531e770d90b1b8744abb682327396eb98e6b351ac0769e",
+      "source_pixel_decode_A_equals_independent_B": true,
+      "candidate_Palet1_RGBA_sha256": "cb8cf64bd7ea3f834106b1750b24a1e539bae4e7bc3d83eaf5c2094d55c6ba53",
+      "private_original_png_sha256": "8a4321430b30861567421b89a3f37f977c7877bc618240d14a0071643b50e6c8",
+      "original_source_retail_graphic_selector_executed": false,
+      "previous_item01_original_RD_receipt_sha_match": null,
+      "previous_item01_PNG_RGBA_exact_match": null,
+      "naive_physical_bitmapno_equal_alias_is_wrong": true,
+      "naive_physical_bitmapno_RD_sha256": "471279277b543f7ce40e362b96d86d3b9199aa4d40d8d46dfad2f2e2f0bba813",
+      "naive_physical_bitmapno_ADRN_record_last_alias": 0
+    },
+    {
+      "source_graphic_alias": 16048,
+      "entity_role": "NPC_GRAPHIC_ALIAS",
+      "unique_original_TW1_ADRN_alias_hits": 1,
+      "original_TW1_ADRN_record_index": 5894,
+      "actual_original_physical_bitmapno": 5894,
+      "original_ADRN_record_80_byte_sha256": "2273a098fa5e5f701c44ead12757cbb159570c43ceb5cf0120d32b1a71e5f524",
+      "original_REAL_byte_offset": 25018537,
+      "original_RD_byte_size": 1668,
+      "original_RD_sha256": "ce21e49856dde81b79afa5854f400df31393b1d87a08e6357b0eb8fd2e5ad252",
+      "original_RD_flag": 1,
+      "source_pixel_width": 36,
+      "source_pixel_height": 79,
+      "original_decoded_index_pixel_sha256": "d5d2cc7806f814d64bf5c27f0b557c7846c71c08e2dd87af1f2078af3548c119",
+      "source_pixel_decode_A_equals_independent_B": true,
+      "candidate_Palet1_RGBA_sha256": "7c665d779311325f4857918053338d316a405535b7411891bd63b787bfcc9a5a",
+      "private_original_png_sha256": "21f5ca3223f979f6189a4842d76029e75bdd7ed678786f73f847482361e40437",
+      "original_source_retail_graphic_selector_executed": false,
+      "previous_item01_original_RD_receipt_sha_match": null,
+      "previous_item01_PNG_RGBA_exact_match": null,
+      "naive_physical_bitmapno_equal_alias_is_wrong": true,
+      "naive_physical_bitmapno_RD_sha256": "7c6db64036577bc42d20a6268ed4aaf757ca23a4c7aead20752074110f1b3c67",
+      "naive_physical_bitmapno_ADRN_record_last_alias": 0
+    },
+    {
+      "source_graphic_alias": 21028,
+      "entity_role": "ITEM_MASTER_IMAGENUMBER",
+      "unique_original_TW1_ADRN_alias_hits": 1,
+      "original_TW1_ADRN_record_index": 6329,
+      "actual_original_physical_bitmapno": 6329,
+      "original_ADRN_record_80_byte_sha256": "cdad49b4e8a42ab6b6105a655a5f334409cc4e42e938cd4b32cd2afdf8726f52",
+      "original_REAL_byte_offset": 25388458,
+      "original_RD_byte_size": 1193,
+      "original_RD_sha256": "058ebc6f76f9fef0c91c4768ff147419b2cb7cae7c99a5aaa403f1c7de33ceb4",
+      "original_RD_flag": 1,
+      "source_pixel_width": 32,
+      "source_pixel_height": 47,
+      "original_decoded_index_pixel_sha256": "a8a096dcf6e329112f149e62f9a73ca4b9e62aa0f246c11e24976116290d28a3",
+      "source_pixel_decode_A_equals_independent_B": true,
+      "candidate_Palet1_RGBA_sha256": "6ede10b2190331dececca121272e1e070e72e847d7f41e0cf58d4debe91769e7",
+      "private_original_png_sha256": "b8a233ec4247940f1555854fc95cf5ce787a4bd9767eb848597f7fe3283c5056",
+      "original_source_retail_graphic_selector_executed": false,
+      "previous_item01_original_RD_receipt_sha_match": true,
+      "previous_item01_PNG_RGBA_exact_match": true,
+      "newly_discovered_bitmap_from_old_ITEM01": false
+    },
+    {
+      "source_graphic_alias": 20018,
+      "entity_role": "ITEM_MASTER_IMAGENUMBER",
+      "unique_original_TW1_ADRN_alias_hits": 1,
+      "original_TW1_ADRN_record_index": 5991,
+      "actual_original_physical_bitmapno": 5991,
+      "original_ADRN_record_80_byte_sha256": "9f23609ade228d9f4a5b2f18c5552be2064052400954a0f61f85c69f9ff453e9",
+      "original_REAL_byte_offset": 25149392,
+      "original_RD_byte_size": 757,
+      "original_RD_sha256": "d6280f0f1a9ac4cb8c50e5a1522b3855307776c3e2dfe774205a0212493d4da5",
+      "original_RD_flag": 1,
+      "source_pixel_width": 36,
+      "source_pixel_height": 38,
+      "original_decoded_index_pixel_sha256": "1af3e5903ee56485e6ddae92a57a00097b1c134f252a5a5628350c6c6c1b15ce",
+      "source_pixel_decode_A_equals_independent_B": true,
+      "candidate_Palet1_RGBA_sha256": "0951ae6f80844c713a4e461926fcfd094e122a9b7dc5d3b8a0b2e4e8330fcf8a",
+      "private_original_png_sha256": "ee84ca0577da7c82aa77b6bffd4123b9c3343c7587246745e1471867fdb66acf",
+      "original_source_retail_graphic_selector_executed": false,
+      "previous_item01_original_RD_receipt_sha_match": true,
+      "previous_item01_PNG_RGBA_exact_match": true,
+      "newly_discovered_bitmap_from_old_ITEM01": false
+    },
+    {
+      "source_graphic_alias": 21540,
+      "entity_role": "ITEM_MASTER_IMAGENUMBER",
+      "unique_original_TW1_ADRN_alias_hits": 1,
+      "original_TW1_ADRN_record_index": 6405,
+      "actual_original_physical_bitmapno": 6405,
+      "original_ADRN_record_80_byte_sha256": "11eebf57e1d44c56903c19181ccf021c42eeb68b4981508584586b891689b6df",
+      "original_REAL_byte_offset": 25460803,
+      "original_RD_byte_size": 655,
+      "original_RD_sha256": "b427054cc84bd2c2ad844cf6bfb19d391b6bf50a954275387df1556438fa9569",
+      "original_RD_flag": 1,
+      "source_pixel_width": 28,
+      "source_pixel_height": 29,
+      "original_decoded_index_pixel_sha256": "e72c187c4590be6586b22762082dfdca5300335ee5ba011d0831727b020fbce6",
+      "source_pixel_decode_A_equals_independent_B": true,
+      "candidate_Palet1_RGBA_sha256": "322bea24e3f26904a7f8e19c0e6c1f8b72490a7815bc54f3be9acc002922e1c0",
+      "private_original_png_sha256": "dee33dcd6e577babc7f8fabbd6224de7466b4525a4bb2134eaaaa8a550f8f053",
+      "original_source_retail_graphic_selector_executed": false,
+      "previous_item01_original_RD_receipt_sha_match": true,
+      "previous_item01_PNG_RGBA_exact_match": true,
+      "newly_discovered_bitmap_from_old_ITEM01": false
+    },
+    {
+      "source_graphic_alias": 24222,
+      "entity_role": "ITEM_MASTER_IMAGENUMBER",
+      "unique_original_TW1_ADRN_alias_hits": 1,
+      "original_TW1_ADRN_record_index": 6716,
+      "actual_original_physical_bitmapno": 6716,
+      "original_ADRN_record_80_byte_sha256": "25bf791b5810a7462c63b8c0b696d2f5a1676f2f983030f9b8009ad5813205a5",
+      "original_REAL_byte_offset": 25747664,
+      "original_RD_byte_size": 646,
+      "original_RD_sha256": "d519e1dbfcf21cb23c7850eb741381698dc0ebd7437d69d68d877b0ad7cf8052",
+      "original_RD_flag": 1,
+      "source_pixel_width": 28,
+      "source_pixel_height": 39,
+      "original_decoded_index_pixel_sha256": "1effa165ba143f54cd79bd43bf780879f5016a7eb51c2bd5529e2913e97e91c2",
+      "source_pixel_decode_A_equals_independent_B": true,
+      "candidate_Palet1_RGBA_sha256": "776d1549e59cdbb726a0a8bda2656251b917fe02375617cf39be574af6a683bf",
+      "private_original_png_sha256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1",
+      "original_source_retail_graphic_selector_executed": false,
+      "previous_item01_original_RD_receipt_sha_match": true,
+      "previous_item01_PNG_RGBA_exact_match": true,
+      "newly_discovered_bitmap_from_old_ITEM01": false
+    },
+    {
+      "source_graphic_alias": 24169,
+      "entity_role": "ITEM_MASTER_IMAGENUMBER",
+      "unique_original_TW1_ADRN_alias_hits": 1,
+      "original_TW1_ADRN_record_index": 6995,
+      "actual_original_physical_bitmapno": 6995,
+      "original_ADRN_record_80_byte_sha256": "49aabf7c009c6c17f09a58715fc8271d405f31ed3b1c2fbaf9a12f27148378af",
+      "original_REAL_byte_offset": 25952945,
+      "original_RD_byte_size": 217,
+      "original_RD_sha256": "c6581292bc3df115594e241a3a6e58729d1f3136ee41cc5558bbef4d37767f37",
+      "original_RD_flag": 1,
+      "source_pixel_width": 16,
+      "source_pixel_height": 19,
+      "original_decoded_index_pixel_sha256": "80d3f06bd74a7144585149fd6f996ebfe8dab8783eedce043423a11b75439e5b",
+      "source_pixel_decode_A_equals_independent_B": true,
+      "candidate_Palet1_RGBA_sha256": "f0ea00e6cf508944b67bffb93157109f64b6740d1139be11d0c5030b823fcf94",
+      "private_original_png_sha256": "95dd86e057ef5a49dfab1451584ba6202b45ad183beb7c6629303d17fb341ded",
+      "original_source_retail_graphic_selector_executed": false,
+      "previous_item01_original_RD_receipt_sha_match": true,
+      "previous_item01_PNG_RGBA_exact_match": true,
+      "newly_discovered_bitmap_from_old_ITEM01": false
+    }
+  ],
+  "source_map_qualifications": [
+    {
+      "floor": 1112,
+      "original_955_DAT_source_sha256": "e48585b8b02d646e53c3fa181175ba4b5b8954e1a341c9f72f66f50bececa840",
+      "actual_MAP09_source_ready_geometry": [
+        30,
+        30
+      ],
+      "original_MAP09_source_ready_status": "HAS_PRESERVED_SOURCE_READY_1112_DAT",
+      "native_NPC_visual_or_map_executed": false
+    },
+    {
+      "floor": 1100,
+      "original_955_DAT_source_sha256": null,
+      "original_MAP09_source_ready_status": "NO_MATCHING_DAT_IN_955",
+      "does_NOT_prove_original_game_map_absent": true,
+      "native_NPC_visual_or_map_executed": false
+    }
+  ],
+  "copyright_and_historical_negative_bounds": {
+    "raw_original_NPC_text_or_94_col_item_rows_in_public_Git": false,
+    "raw_original_TW1_RD_or_PNG_in_public_Git": false,
+    "actual_native_original_game_NPC_or_quest_execution": false,
+    "original_native_item_display_selector_or_palette_proven": false,
+    "event13_comma_or_CleanFlg_native_semantics_proven": false,
+    "same_early_official_server_deployment_across_sources_proven": false,
+    "historical_1999_TW1_or_CN182_exact_quest_deployment_proven": false,
+    "official_original_game_species_or_NPC_population_complete": false,
+    "floor1100_missing_DAT_proves_original_floor_did_not_exist": false
+  },
+  "project_status": {
+    "stage_A": {
+      "PARTIAL": 7,
+      "OPEN": 2
+    },
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "INTEGRATION70: select a distinct source-ready quest map/NPC/pet/skill or item content with genuine original materials; do not replay event13 images/commands or make a native quest emulator without evidence.",
+  "private_custody": {
+    "basename": "StoneAge-INTEGRATION69-event13-two-NPC-five-items-original-source-private.zip",
+    "library_path": "/石器时代/StoneAge-INTEGRATION69-event13-two-NPC-five-items-original-source-private.zip",
+    "zip_bytes": 75935,
+    "zip_sha256": "054f01290d92f70fa36783c0273e99064d6e699a67fa098e7f141c70b893df47",
+    "private_zip_members": 31,
+    "local_member_CRC_all_verified": true,
+    "personal_Library_uploaded_and_independently_reread": true,
+    "includes_original_scripts_original_retail_RD_real_saved_PNG_modern_HTML_contact": true,
+    "private_original_item_94_fields_are_derived_from_retained_verified_CATALOG_not_raw_original_RAR_reextraction": true
+  }
+}
