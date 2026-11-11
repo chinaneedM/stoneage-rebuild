@@ -1,0 +1,259 @@
+{
+  "schema": "stoneage.integration70.haru_event15_two_stage_npc_item_pixel_static_bridge.r1",
+  "date": "2026-11-11",
+  "original_remote_baseline": {
+    "head": "443cbaae4f287fc609523784231b568e84ec1660",
+    "tree": "12a71e7809bd20ef42a7eb70b1e1db78c37bab7f",
+    "current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_bytes": 2709173,
+    "current_modified": false,
+    "all_26_head_actions_success": true
+  },
+  "provenance": {
+    "mixed25_original_npc_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "mixed25_original_npc_zip_bytes": 995176,
+    "mixed25_original_npc_zip_members_crc_verified": 2205,
+    "item01_original_source_derived_zip_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "item01_original_source_derived_zip_bytes": 5868386,
+    "item01_original_zip_members_crc_verified": 838,
+    "authenticated_different_carrier_TW1_P3H_source_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "original_TW1_retail_ADRN_sha256": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+    "original_TW1_retail_REAL_sha256": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13",
+    "original_TW1_retail_source_full_parent_reread_this_cycle": false,
+    "archived_TW1_original_RD_receipts_prior_replayed": true,
+    "archived_TW1_PNG_RGBA_sha256_reverified_count": 8,
+    "private_custody_library_path": "/石器时代/StoneAge-INTEGRATION70-Haru-event15-original-source-private.zip",
+    "private_zip_size": 15265,
+    "private_zip_sha256": "d20d40ad6bdf3aab60fb96b222a059c018dbf2d042a6baa761465986f89922fd",
+    "private_zip_members": 12,
+    "private_zip_members_crc_verified": 12,
+    "private_zip_independently_retrieved_full_sha256_match": true
+  },
+  "source_files": [
+    {
+      "path": "sainasu/event/event15.create",
+      "bytes": 341,
+      "sha256": "3fdf94b92a55cfc9a8f3a57d33b5a051f52a2bdcf375ad90dab4228afa0ddc31"
+    },
+    {
+      "path": "sainasu/event/event15_1",
+      "bytes": 2234,
+      "sha256": "cb90d02b6e9ad4ba9b4e8d21c01d0077ab2b82f8de1e5f018a4ccb1a80fae129",
+      "prior_QUEST01_blocks": 7
+    },
+    {
+      "path": "sainasu/event/event15_2",
+      "bytes": 299,
+      "sha256": "6defe74c245a7f9f171309eacece0035d7d2e49e88062847497a1d1d0be9c34a",
+      "prior_QUEST01_blocks": 1
+    }
+  ],
+  "create_rows": [
+    {
+      "ordinal": 0,
+      "source_sha256": "91ef3b6a3860a52a255edbd1696663f3782a02dcb885e548687dd979824fc53d",
+      "floor": 11006,
+      "borncorner": [
+        11,
+        11,
+        11,
+        11
+      ],
+      "graphic_alias": 16024,
+      "linked_script": "sainasu/event/event15_1"
+    },
+    {
+      "ordinal": 1,
+      "source_sha256": "b3c5e51b72df0c3f21a094a114554bffce0b68ff7b96b012059c897d8fc8c942",
+      "floor": 11006,
+      "borncorner": [
+        11,
+        7,
+        11,
+        7
+      ],
+      "graphic_alias": 16046,
+      "linked_script": "sainasu/event/event15_2"
+    }
+  ],
+  "script_blocks_prior_index": [
+    "ACCEPT",
+    "ACCEPT",
+    "REQUEST",
+    "REQUEST",
+    "MESSAGE",
+    "MESSAGE",
+    "MESSAGE",
+    "MESSAGE"
+  ],
+  "original_stage_15": {
+    "event_no": 15,
+    "source_TYPE": "ACCEPT",
+    "exact_condition": "NOWEV=15&PET>14-74",
+    "exact_DelPet": "PET>14-74*1",
+    "exact_GetRandItem": "1350,1351,1352,1354,700,1455,1102,1122",
+    "exact_EndSetFlg": "15"
+  },
+  "original_stage_16": {
+    "event_no": 16,
+    "source_TYPE": "ACCEPT",
+    "exact_condition": "ENDEV=15&NOWEV=16&PET>29-191",
+    "exact_DelPet": "PET>29-191*1",
+    "exact_GetPet": "95",
+    "exact_EndSetFlg": "16"
+  },
+  "assistant_source": {
+    "source_TYPE": "MESSAGE",
+    "exact_condition": "NOWEV=15",
+    "historical_dialogue_text_private": true
+  },
+  "actual_preserved_MAP09_DAT_11006": {
+    "source_sha256": "fbf61337a1b397db8a2abcf6b2d804f926e384f240000d2301636ee4a17ce403",
+    "source_bytes": 15008,
+    "geometry": [
+      50,
+      50
+    ],
+    "source_qualified_MAP09_only": true,
+    "native_world_execution_verified": false
+  },
+  "source_item_candidates": [
+    {
+      "item_id": 1350,
+      "mixed25_itemset_image_alias": 22010,
+      "retail_TW1_ADRN_physical_bitmapno": 6477,
+      "width": 36,
+      "height": 28,
+      "both_original_itemset_94_field_row_sha256": "3030e3fe19a2638dab6c10ba8bac2caee76b6b46ed22db6b467aed7f0fabbec5",
+      "previously_qualified_original_TW1_RD_sha256": "8394cb9e3adbfd99c2f27822df03fc535eefd5536b6511dc4cc490082c8063ce",
+      "preserved_candidate_png_sha256": "dc09b82a648afe37ae4744ea6f5b81a13672c9a624a0660729f84077ea981b79",
+      "rechecked_candidate_RGBA_sha256": "b6837a3963f990f167e7692e4fcd82c94e82a8d216ef4bc6aca1e0ee8ffab556",
+      "original_two_itemset_rows_identical": true,
+      "real_PNG_bytes_and_RGBA_rechecked": true
+    },
+    {
+      "item_id": 1351,
+      "mixed25_itemset_image_alias": 22008,
+      "retail_TW1_ADRN_physical_bitmapno": 6475,
+      "width": 36,
+      "height": 27,
+      "both_original_itemset_94_field_row_sha256": "7d19316ce9e1a9f5a257ae99e41dbb6ed354966ace279e894e6e354a35a197f8",
+      "previously_qualified_original_TW1_RD_sha256": "d83d8e3b3bce36e8c70f55fd0fdcdcd18af562111bf43774daf6f9cc832cb8a7",
+      "preserved_candidate_png_sha256": "13e78000da1c658578002ac060f7270fd883d647d6edf879d1c392e9f840fca4",
+      "rechecked_candidate_RGBA_sha256": "e0d7d6a171a93af6da5cc988a2763f5e521178bfe2a0a898c375fe926c7d8bec",
+      "original_two_itemset_rows_identical": true,
+      "real_PNG_bytes_and_RGBA_rechecked": true
+    },
+    {
+      "item_id": 1352,
+      "mixed25_itemset_image_alias": 22016,
+      "retail_TW1_ADRN_physical_bitmapno": 6483,
+      "width": 36,
+      "height": 31,
+      "both_original_itemset_94_field_row_sha256": "5055de39a879314ac3325d6230c3105820d6b7100e356567c24bec6b7dfcf012",
+      "previously_qualified_original_TW1_RD_sha256": "c4565574dd7aee1fccffd9b7caf429cb8d704a14b5ed111cd88b09897514d0d2",
+      "preserved_candidate_png_sha256": "4d151a2d8ff800850e575680fc3800b4d6fed65f842f33c201a96963bd0259c2",
+      "rechecked_candidate_RGBA_sha256": "cea7dd7eb0c3ca2359f02c36b5a876eb64485380ac8dc3f7a09e23df9bb72f88",
+      "original_two_itemset_rows_identical": true,
+      "real_PNG_bytes_and_RGBA_rechecked": true
+    },
+    {
+      "item_id": 1354,
+      "mixed25_itemset_image_alias": 22001,
+      "retail_TW1_ADRN_physical_bitmapno": 6468,
+      "width": 36,
+      "height": 28,
+      "both_original_itemset_94_field_row_sha256": "5c91de02bd8888f5d48a23798b6fcbf314082ea779b19ca758b7342644841590",
+      "previously_qualified_original_TW1_RD_sha256": "d6598b344a197a903cf95b7826fde962be5560c1ec38714b46492c7fe5e19323",
+      "preserved_candidate_png_sha256": "fdd46da43c96fe8e52457279bc533a5d6a4efb31ac2f54c7778ebf2e1802302c",
+      "rechecked_candidate_RGBA_sha256": "41f01f964c60071b199f71ff1846d03869ad9ac8d4135ebc8a7d88222decdaa3",
+      "original_two_itemset_rows_identical": true,
+      "real_PNG_bytes_and_RGBA_rechecked": true
+    },
+    {
+      "item_id": 700,
+      "mixed25_itemset_image_alias": 20503,
+      "retail_TW1_ADRN_physical_bitmapno": 6235,
+      "width": 28,
+      "height": 18,
+      "both_original_itemset_94_field_row_sha256": "331c63a46fd35738945e1e852e1e26a00d97293b2c431f8d028de190ac9e4be1",
+      "previously_qualified_original_TW1_RD_sha256": "02c60c394e3a41ddc3765cde9b289b5d79d545cb41a99dc6aff240eb1ebba006",
+      "preserved_candidate_png_sha256": "8ee935361bbe93f1165ba254a30c32a982bc2145320fa21fba4152be2e43a1fb",
+      "rechecked_candidate_RGBA_sha256": "4734779d80af1640f723f0aaf210db79e7c802ffe42b496b9a47b7fc5f8e5855",
+      "original_two_itemset_rows_identical": true,
+      "real_PNG_bytes_and_RGBA_rechecked": true
+    },
+    {
+      "item_id": 1455,
+      "mixed25_itemset_image_alias": 22013,
+      "retail_TW1_ADRN_physical_bitmapno": 6480,
+      "width": 52,
+      "height": 42,
+      "both_original_itemset_94_field_row_sha256": "edf3c666c1cf4a4965bd24ef98654563a52d452b95107ba9ef7f6eba98fff72b",
+      "previously_qualified_original_TW1_RD_sha256": "e480f4db3951f00a1b24f3dd10550affccdfca8a8b016e129f2fa0a0cb67e05f",
+      "preserved_candidate_png_sha256": "86bb0d9da26413038f2efd2585382b837099e498c6b5ccd498160afce5de850f",
+      "rechecked_candidate_RGBA_sha256": "2ee6e1db60608c185b76cd70de9340bd298e24e7955b08e77b17504716792b7e",
+      "original_two_itemset_rows_identical": true,
+      "real_PNG_bytes_and_RGBA_rechecked": true
+    },
+    {
+      "item_id": 1102,
+      "mixed25_itemset_image_alias": 21039,
+      "retail_TW1_ADRN_physical_bitmapno": 6340,
+      "width": 32,
+      "height": 37,
+      "both_original_itemset_94_field_row_sha256": "b9982036e5532d01a2ff224bf73d5dd924495992b295a52b7790bab7f0f9805e",
+      "previously_qualified_original_TW1_RD_sha256": "655909fe6355b2a1e6e887737540b10a39d95d4c2c308ac8599ab5adb48819aa",
+      "preserved_candidate_png_sha256": "8a1ac8f95529211e4fda7a7c318126668c477e7bf7f3c9dc4b447edba35ad624",
+      "rechecked_candidate_RGBA_sha256": "8116a4a4b91bbc4bf04dda617ba2e16b5c7d3ad15549583228342599c8f0f507",
+      "original_two_itemset_rows_identical": true,
+      "real_PNG_bytes_and_RGBA_rechecked": true
+    },
+    {
+      "item_id": 1122,
+      "mixed25_itemset_image_alias": 21034,
+      "retail_TW1_ADRN_physical_bitmapno": 6335,
+      "width": 32,
+      "height": 42,
+      "both_original_itemset_94_field_row_sha256": "6652ebf7f7768d1fb618d273cda4bad2a54872d86c97b1458c25318abddd8c5a",
+      "previously_qualified_original_TW1_RD_sha256": "bc436b14b089773f569d7d44fa3c556f5627faad0e1855c4ed89172b3e6650f8",
+      "preserved_candidate_png_sha256": "fb8be0ef48c5a886515f47b308cf6b9526d700b866c67a3b302d28eeb3279e6e",
+      "rechecked_candidate_RGBA_sha256": "2f6b7d075fbbd46409752e9ba0984aca9ba1c8aad4b8a51ade313942b18108e2",
+      "original_two_itemset_rows_identical": true,
+      "real_PNG_bytes_and_RGBA_rechecked": true
+    }
+  ],
+  "new_evidence_count": {
+    "new_original_scripts_discovered": 0,
+    "new_original_TW1_RD_binary_decoded": 0,
+    "new_native_quest_events_executed": 0,
+    "source_linked_NPC_CREATE": 2,
+    "source_quest_stages": 2,
+    "source_quest_script_TYPE_blocks_previously_indexed": 8,
+    "source_item_choice_literals": 8,
+    "preserved_TW1_original_candidate_pixels_rechecked": 8
+  },
+  "negative_proofs": {
+    "same_official_early_deployment_verified": false,
+    "native_quest_or_pet_exchange_executed": false,
+    "native_RANDITEM_distribution_verified": false,
+    "native_GETPET_95_species_or_animation_verified": false,
+    "native_client_graphic_alias_selector_verified": false,
+    "original_runtime_palette_verified": false,
+    "full_game_world_restored": false,
+    "new_early_client_found": false,
+    "raw_original_sprites_or_original_dialogue_committed": false,
+    "source_itemsets_are_early_TW1_original_master": false
+  },
+  "status": {
+    "stage_A": {
+      "PARTIAL": 7,
+      "OPEN": 2
+    },
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Move to a different unrepeated original-source content relation; retain all original runtime and version unknowns."
+}

@@ -1,0 +1,25 @@
+name: Verify StoneAge INTEGRATION70 Haru event15 static source and 8 original pixel candidates
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION70-HARU-EVENT15-TWO-STAGE-NPC-EIGHT-ITEM-TW1-PIXEL-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_70.py'
+      - '.github/workflows/verify-stoneage-integration70-source.yml'
+      - 'research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json'
+      - 'research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json'
+      - 'research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-01-R1.json'
+      - 'research/recovered/STONEAGE-MAP09-691-SOURCE-READY-SCENES-R1.json'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION70-HARU-EVENT15-TWO-STAGE-NPC-EIGHT-ITEM-TW1-PIXEL-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration_module_70.py'
+      - '.github/workflows/verify-stoneage-integration70-source.yml'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_70.py' -v
