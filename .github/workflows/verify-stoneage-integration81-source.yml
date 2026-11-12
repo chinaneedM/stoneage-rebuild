@@ -1,0 +1,25 @@
+name: Verify StoneAge INTEGRATION81 nine original Janken NPC rooms partial 2D source
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION81-JANKEN-NINE-ORIGINAL-PARTIAL-2D-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration81_janken_original_partial2d_source.py'
+      - '.github/workflows/verify-stoneage-integration81-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION81-JANKEN-NINE-ORIGINAL-PARTIAL-2D-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration81_janken_original_partial2d_source.py'
+      - '.github/workflows/verify-stoneage-integration81-source.yml'
+  workflow_dispatch:
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify exact source-derived NPC/DAT/pixel-gap contracts
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration81_janken_original_partial2d_source.py' -v
