@@ -1,0 +1,25 @@
+name: Verify StoneAge INTEGRATION80 dungeon03 original static warp and DAT source
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION80-DUNGEON03-NPC-WARP-DAT-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration80_dungeon03_source.py'
+      - '.github/workflows/verify-stoneage-integration80-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION80-DUNGEON03-NPC-WARP-DAT-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration80_dungeon03_source.py'
+      - '.github/workflows/verify-stoneage-integration80-source.yml'
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify original static source numeric contracts and negative evidence
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration80_dungeon03_source.py' -v
