@@ -1,0 +1,25 @@
+name: Verify StoneAge INTEGRATION85 four guardians original source boundaries
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION85-FOUR-GUARDIAN-SHRINE-ORIGINAL-2D-R1.json'
+      - 'tests/test_stoneage_integration85_guardian_source.py'
+      - '.github/workflows/verify-stoneage-integration85-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION85-FOUR-GUARDIAN-SHRINE-ORIGINAL-2D-R1.json'
+      - 'tests/test_stoneage_integration85_guardian_source.py'
+      - '.github/workflows/verify-stoneage-integration85-source.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Replay exactly bounded static original source and negative contracts
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration85_guardian_source.py' -v
