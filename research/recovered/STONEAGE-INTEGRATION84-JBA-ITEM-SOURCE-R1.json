@@ -1,0 +1,2011 @@
+{
+  "schema": "stoneage.integration84.jba_original_npc_item_2d_source_r1",
+  "date": "2026-11-12",
+  "scope": "mixed25 JBA floor 20712 nine source NPC CREATE records, four shop arguments including malformed embedded-only ItemList, two skill-shop arguments and source-bound original item rows, compared separately to previously extracted TW1 retail original RD PNG",
+  "provenance": {
+    "npc_archive_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "npc_archive_member_count": 2205,
+    "item_archive_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "item_archive_member_count": 838,
+    "create_path": "npc/genout/shop_event2.create",
+    "create_sha256": "ac3eb1246f29158d6851f78d2a01320aaa9272d34457aee8a4b694982168775c",
+    "create_bytes": 2883,
+    "source_original_cp950_decode": "strict roundtrip identity verified"
+  },
+  "static_create_records": [
+    {
+      "index_zero_based": 2,
+      "raw_byte_start_inclusive": 494,
+      "raw_byte_end_exclusive": 661,
+      "source_block_sha256": "f19003ecc44734c8b2c34d2b390ce394f810a7a42d2094cc056e028469f47639",
+      "floorid": 20712,
+      "borncorner": [
+        45,
+        32,
+        45,
+        32
+      ],
+      "original_dir": 6,
+      "original_graphicname": 16033,
+      "original_name": "ＪＢＡ的武器店",
+      "enemy_function_name": "npcgen_shop",
+      "argument_file_path": "npc/genout/ss_20712_45_32",
+      "original_createnum": 1
+    },
+    {
+      "index_zero_based": 3,
+      "raw_byte_start_inclusive": 671,
+      "raw_byte_end_exclusive": 838,
+      "source_block_sha256": "d38ff2d156002f448100284f449fda64d096025cf0de3885074b9088052c3279",
+      "floorid": 20712,
+      "borncorner": [
+        45,
+        36,
+        45,
+        36
+      ],
+      "original_dir": 6,
+      "original_graphicname": 16017,
+      "original_name": "ＪＢＡ的防具店",
+      "enemy_function_name": "npcgen_shop",
+      "argument_file_path": "npc/genout/ss_20712_45_36",
+      "original_createnum": 1
+    },
+    {
+      "index_zero_based": 4,
+      "raw_byte_start_inclusive": 848,
+      "raw_byte_end_exclusive": 1012,
+      "source_block_sha256": "43d5e2ad30833d554117b8c67c259b4b69bdcba792adf0830bb067ab768722c6",
+      "floorid": 20712,
+      "borncorner": [
+        25,
+        4,
+        25,
+        4
+      ],
+      "original_dir": 4,
+      "original_graphicname": 16069,
+      "original_name": "ＪＢＡ的道具屋",
+      "enemy_function_name": "npcgen_shop",
+      "argument_file_path": "npc/genout/ss_20712_25_4",
+      "original_createnum": 1
+    },
+    {
+      "index_zero_based": 5,
+      "raw_byte_start_inclusive": 1022,
+      "raw_byte_end_exclusive": 1192,
+      "source_block_sha256": "bd3318dbcc8d0f76498d9e4934119706c1f89250bf0135944a73b9bdad4e8337",
+      "floorid": 20712,
+      "borncorner": [
+        22,
+        4,
+        22,
+        4
+      ],
+      "original_dir": 4,
+      "original_graphicname": 16202,
+      "original_name": "高級飼育員",
+      "enemy_function_name": "npcgen_petskillshop",
+      "argument_file_path": "npc/genout/psks_20712_22_4",
+      "original_createnum": 1
+    },
+    {
+      "index_zero_based": 6,
+      "raw_byte_start_inclusive": 1202,
+      "raw_byte_end_exclusive": 1372,
+      "source_block_sha256": "ad2529d59ceb290ad6cf39c49f8fac51bace03f89c646d8b65752c26b0cb4c80",
+      "floorid": 20712,
+      "borncorner": [
+        20,
+        4,
+        20,
+        4
+      ],
+      "original_dir": 4,
+      "original_graphicname": 16203,
+      "original_name": "高級飼育員",
+      "enemy_function_name": "npcgen_petskillshop",
+      "argument_file_path": "npc/genout/psks_20712_20_4",
+      "original_createnum": 1
+    },
+    {
+      "index_zero_based": 7,
+      "raw_byte_start_inclusive": 1382,
+      "raw_byte_end_exclusive": 1514,
+      "source_block_sha256": "0fd1620a1302a75df1bd2220c5ef807f05c4002aaf356e6c75e088c3b1a448de",
+      "floorid": 20712,
+      "borncorner": [
+        18,
+        4,
+        18,
+        4
+      ],
+      "original_dir": 4,
+      "original_graphicname": 100291,
+      "original_name": "克雷爾",
+      "enemy_function_name": "npcgen_mugon",
+      "argument_file_path": null,
+      "original_createnum": 1
+    },
+    {
+      "index_zero_based": 8,
+      "raw_byte_start_inclusive": 1524,
+      "raw_byte_end_exclusive": 1654,
+      "source_block_sha256": "339f25b759ec6579308128fa7ae22e8d2ef65b19eaa93e5b5846497650475b0e",
+      "floorid": 20712,
+      "borncorner": [
+        17,
+        4,
+        17,
+        4
+      ],
+      "original_dir": 4,
+      "original_graphicname": 100297,
+      "original_name": "昆伊",
+      "enemy_function_name": "npcgen_mugon",
+      "argument_file_path": null,
+      "original_createnum": 1
+    },
+    {
+      "index_zero_based": 9,
+      "raw_byte_start_inclusive": 1664,
+      "raw_byte_end_exclusive": 1817,
+      "source_block_sha256": "954fb010c878c143cf0ec5323eb21529f54d4a2dc11120691199980bfa138ee4",
+      "floorid": 20712,
+      "borncorner": [
+        45,
+        15,
+        45,
+        15
+      ],
+      "original_dir": 6,
+      "original_graphicname": 16058,
+      "original_name": "JBA的護士",
+      "enemy_function_name": "npcgen_winhealer",
+      "argument_file_path": null,
+      "original_createnum": 1
+    },
+    {
+      "index_zero_based": 10,
+      "raw_byte_start_inclusive": 1827,
+      "raw_byte_end_exclusive": 1994,
+      "source_block_sha256": "e630c05c26049c293c91d15b30848c138a97605c1772937aaec07b985ea10d02",
+      "floorid": 20712,
+      "borncorner": [
+        45,
+        19,
+        45,
+        19
+      ],
+      "original_dir": 6,
+      "original_graphicname": 16059,
+      "original_name": "ＪＢＡ的藥劑師",
+      "enemy_function_name": "npcgen_shop",
+      "argument_file_path": "npc/genout/ss_20712_45_19",
+      "original_createnum": 1
+    }
+  ],
+  "argument_files": [
+    {
+      "path": "npc/genout/psks_20712_20_4",
+      "sha256": "b302b4fa3d8655970f1923e3bcef5cc1b878986f241c2165a7206d3ce8aba2f3",
+      "bytes": 118,
+      "argument_kind": "petskillshop",
+      "line_key_ItemList_exists": false,
+      "literal_line_key_item_ids": [],
+      "embedded_ItemList_substring_in_other_field": false,
+      "embedded_only_candidate_ids_NOT_shop_offer_evidence": [],
+      "pet_skill_line_key_ids": [
+        10,
+        20,
+        30,
+        40,
+        50,
+        51,
+        120,
+        130,
+        150
+      ],
+      "literal_skill_rate": "1.0"
+    },
+    {
+      "path": "npc/genout/psks_20712_22_4",
+      "sha256": "a1302cfb143bf08c40862ac00c7e18c9089b39dba364c62159b7527d7bdb2c71",
+      "bytes": 124,
+      "argument_kind": "petskillshop",
+      "line_key_ItemList_exists": false,
+      "literal_line_key_item_ids": [],
+      "embedded_ItemList_substring_in_other_field": false,
+      "embedded_only_candidate_ids_NOT_shop_offer_evidence": [],
+      "pet_skill_line_key_ids": [
+        0,
+        1,
+        2,
+        3,
+        60,
+        61,
+        80,
+        90,
+        100,
+        110,
+        200,
+        201
+      ],
+      "literal_skill_rate": "1.0"
+    },
+    {
+      "path": "npc/genout/ss_20712_25_4",
+      "sha256": "3dbd254f7ab7d36ac4af121a44f5da886c70ac1ec4fd4a74e78e5c9bed1731e7",
+      "bytes": 594,
+      "argument_kind": "shop",
+      "line_key_ItemList_exists": false,
+      "literal_line_key_item_ids": [],
+      "embedded_ItemList_substring_in_other_field": true,
+      "embedded_only_candidate_ids_NOT_shop_offer_evidence": [
+        1212,
+        1213,
+        1214,
+        1264,
+        1265,
+        1266,
+        1267,
+        1268,
+        1269,
+        1270,
+        1307,
+        1311,
+        1451,
+        1454,
+        1456,
+        1468
+      ],
+      "pet_skill_line_key_ids": [],
+      "literal_buy_rate": "1.0",
+      "literal_sell_rate": "0.15",
+      "literal_LimitItemType": "ACCESSORY",
+      "literal_LimitItemNo": "",
+      "literal_special_rate": "1.5"
+    },
+    {
+      "path": "npc/genout/ss_20712_45_19",
+      "sha256": "b4a8f419ca86d752a12c4cf84f9558a7de06955042e54c39a8b5a18750f09ab0",
+      "bytes": 597,
+      "argument_kind": "shop",
+      "line_key_ItemList_exists": true,
+      "literal_line_key_item_ids": [
+        1500,
+        1501,
+        1510,
+        1511,
+        1512,
+        1530,
+        1531,
+        1540,
+        1541,
+        1542,
+        1543,
+        1545,
+        2568
+      ],
+      "embedded_ItemList_substring_in_other_field": false,
+      "embedded_only_candidate_ids_NOT_shop_offer_evidence": [],
+      "pet_skill_line_key_ids": [],
+      "literal_buy_rate": "2.0",
+      "literal_sell_rate": "0.2",
+      "literal_LimitItemType": "",
+      "literal_LimitItemNo": "1500-1550,2568",
+      "literal_special_rate": "1.5"
+    },
+    {
+      "path": "npc/genout/ss_20712_45_32",
+      "sha256": "820e66506d9d54188bb19f1dbf4e9c4caba6739f79a7dfca6ea30f06428ce02e",
+      "bytes": 614,
+      "argument_kind": "shop",
+      "line_key_ItemList_exists": true,
+      "literal_line_key_item_ids": [
+        61,
+        72,
+        155,
+        162,
+        174,
+        251,
+        264,
+        355,
+        362,
+        451,
+        462,
+        475,
+        562,
+        571,
+        654,
+        662
+      ],
+      "embedded_ItemList_substring_in_other_field": false,
+      "embedded_only_candidate_ids_NOT_shop_offer_evidence": [],
+      "pet_skill_line_key_ids": [],
+      "literal_buy_rate": "1.0",
+      "literal_sell_rate": "0.15",
+      "literal_LimitItemType": "OFFENCE",
+      "literal_LimitItemNo": "",
+      "literal_special_rate": "1.5"
+    },
+    {
+      "path": "npc/genout/ss_20712_45_36",
+      "sha256": "afe17121d45871ecf1903bad3610ac3bfb04b96ecc2b0678230dd3feb73dbbc9",
+      "bytes": 584,
+      "argument_kind": "shop",
+      "line_key_ItemList_exists": true,
+      "literal_line_key_item_ids": [
+        852,
+        863,
+        861,
+        872,
+        954,
+        965,
+        974,
+        1056,
+        1055,
+        1067,
+        1068,
+        1156,
+        1157,
+        1165,
+        1167
+      ],
+      "embedded_ItemList_substring_in_other_field": false,
+      "embedded_only_candidate_ids_NOT_shop_offer_evidence": [],
+      "pet_skill_line_key_ids": [],
+      "literal_buy_rate": "1.0",
+      "literal_sell_rate": "0.15",
+      "literal_LimitItemType": "DEFENCE",
+      "literal_LimitItemNo": "",
+      "literal_special_rate": "1.5"
+    }
+  ],
+  "item_rows": [
+    {
+      "id": 61,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "貝諾美斯Lv4斧頭",
+        "itemset0710.txt": "貝諾美斯Lv4斧頭"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 20019,
+        "itemset0710.txt": 20019
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "ce1ce69c53c19a0405454cfe6d3025ce0574569e4105d970a4616b48d76a3664",
+        "itemset0710.txt": "ce1ce69c53c19a0405454cfe6d3025ce0574569e4105d970a4616b48d76a3664"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "20019": {
+          "original_RD_SHA256": "cf6836da930404f344959820677d1ef4a3f1f741bc2d288ed5f5ee5b4cc0d8d9",
+          "candidate_PNG_SHA256": "9c96c8895881087520af9ed82533297d7767369c607a0204a9391e03f985b5af",
+          "source_width": 32,
+          "source_height": 36,
+          "retail_ADRN_ordinal": 5992
+        }
+      }
+    },
+    {
+      "id": 72,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "威金娜斯Lv4斧頭",
+        "itemset0710.txt": "威金娜斯Lv4斧頭"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 20004,
+        "itemset0710.txt": 20004
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "739d5c2a685705b81d414c46f1480f464bb3eb9a1c1fbd725136521752bdf1b5",
+        "itemset0710.txt": "739d5c2a685705b81d414c46f1480f464bb3eb9a1c1fbd725136521752bdf1b5"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "20004": {
+          "original_RD_SHA256": "04a823d146b3c3760e8e1d9062d91ac5c403cf4fb1c9c8126fd08cdd5f1f2207",
+          "candidate_PNG_SHA256": "95da5ac3dfe14a5dbb627cceb02f5aadb587abaf23614b3d32bb662b6d19a68e",
+          "source_width": 40,
+          "source_height": 34,
+          "retail_ADRN_ordinal": 5977
+        }
+      }
+    },
+    {
+      "id": 155,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "特洛金Lv3棍棒",
+        "itemset0710.txt": "特洛金Lv3棍棒"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 20109,
+        "itemset0710.txt": 20109
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "66da17ddf2566617246627d7d72bc45570f985b5f137bb9c534eb790450761bd",
+        "itemset0710.txt": "66da17ddf2566617246627d7d72bc45570f985b5f137bb9c534eb790450761bd"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "20109": {
+          "original_RD_SHA256": "0c1bd1c6551da417e46f954c255bfe8045b65b11e3c241b2f121b81f82301236",
+          "candidate_PNG_SHA256": "e7bb2c63062745e784762074e7ca9832848042e546b76c0569d2eb16b9e6dd0c",
+          "source_width": 36,
+          "source_height": 35,
+          "retail_ADRN_ordinal": 6130
+        }
+      }
+    },
+    {
+      "id": 162,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "威金娜斯Lv4棍棒",
+        "itemset0710.txt": "威金娜斯Lv4棍棒"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 20105,
+        "itemset0710.txt": 20105
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "b78740a7bf887fe87051e9534065fd3f2e35cd83a5fb35e786377b76694d6561",
+        "itemset0710.txt": "b78740a7bf887fe87051e9534065fd3f2e35cd83a5fb35e786377b76694d6561"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "20105": {
+          "original_RD_SHA256": "461a4e0fe756cdf9418655583fd015cf2a1a85fcd17b65c158809ac2241c20eb",
+          "candidate_PNG_SHA256": "8fa49b82a16b8f21e94ae742e6800e8c61277ffbb9d7353c5ce9f0b9ab5f56ce",
+          "source_width": 36,
+          "source_height": 35,
+          "retail_ADRN_ordinal": 6126
+        }
+      }
+    },
+    {
+      "id": 174,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "萊伊薩Lv4棍棒",
+        "itemset0710.txt": "萊伊薩Lv4棍棒"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 20117,
+        "itemset0710.txt": 20117
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "acf43ae13425fb96925dbdb52994675edcc32769fe182b942e77f30c7bdc241d",
+        "itemset0710.txt": "acf43ae13425fb96925dbdb52994675edcc32769fe182b942e77f30c7bdc241d"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "20117": {
+          "original_RD_SHA256": "12c3895c8519f44e1e069f66b879617dbe122db39642997fc870eeb80c1ff16d",
+          "candidate_PNG_SHA256": "25a7f68bb7097990d7d778fa1c99c9a8332d1fcefe6116c0ecf054348ba951cb",
+          "source_width": 36,
+          "source_height": 35,
+          "retail_ADRN_ordinal": 6138
+        }
+      }
+    },
+    {
+      "id": 251,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "貝洛薩Lv3槍",
+        "itemset0710.txt": "貝洛薩Lv3槍"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 20415,
+        "itemset0710.txt": 20415
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "37fbb02d90b5b547936fb8bfc8cdf96eeaef1febc6ad06b9a8419cc36a944395",
+        "itemset0710.txt": "37fbb02d90b5b547936fb8bfc8cdf96eeaef1febc6ad06b9a8419cc36a944395"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "20415": {
+          "original_RD_SHA256": "471261c257eef753a1dfb4ad7d117e1c82023a7adfd7eb5099f8bf3710120b25",
+          "candidate_PNG_SHA256": "12c1f5ded0c8e56c1d61316f208c43d8b77caf4720153787e4872f6f5a471a2f",
+          "source_width": 44,
+          "source_height": 41,
+          "retail_ADRN_ordinal": 6197
+        }
+      }
+    },
+    {
+      "id": 264,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "萊伊卡Lv4槍",
+        "itemset0710.txt": "萊伊卡Lv4槍"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 20431,
+        "itemset0710.txt": 20431
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "91758b125b14f931a14505e36bac7d555802c35e3e4aee862df834ca3ddaf126",
+        "itemset0710.txt": "91758b125b14f931a14505e36bac7d555802c35e3e4aee862df834ca3ddaf126"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "20431": {
+          "original_RD_SHA256": "ed844cc2addc5cdd1c739fa5fde84ae19a7e1f844292b2f0d92eec3ef66fa1e8",
+          "candidate_PNG_SHA256": "e01fd305c7a1219b31b45215a2dfda7ee3e33d61bc026dd31b2ad6339c6dbacd",
+          "source_width": 52,
+          "source_height": 45,
+          "retail_ADRN_ordinal": 6213
+        }
+      }
+    },
+    {
+      "id": 355,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "特洛金Lv3爪",
+        "itemset0710.txt": "特洛金Lv3爪"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 20214,
+        "itemset0710.txt": 20214
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "c3c22bbff395e6a3db10e38f3fec78d6ce2b1a3fa151440d0084758eef1fa43f",
+        "itemset0710.txt": "c3c22bbff395e6a3db10e38f3fec78d6ce2b1a3fa151440d0084758eef1fa43f"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "20214": {
+          "original_RD_SHA256": "11f0a0a7e967ee61ccf368e2100753686a7f73aad732c393bb884d66ae163390",
+          "candidate_PNG_SHA256": "8d4d9b920aa7eb7c611286ae9251ce324449ddf0c7eb60a92b28e284e8d4745c",
+          "source_width": 44,
+          "source_height": 35,
+          "retail_ADRN_ordinal": 6096
+        }
+      }
+    },
+    {
+      "id": 362,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "威金尼爾Lv4爪",
+        "itemset0710.txt": "威金尼爾Lv4爪"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 20215,
+        "itemset0710.txt": 20215
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "27258b078d62e4880bf7578859be9705e7bee1fc34282c75c34b1683c2779705",
+        "itemset0710.txt": "27258b078d62e4880bf7578859be9705e7bee1fc34282c75c34b1683c2779705"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "20215": {
+          "original_RD_SHA256": "3becc9363073b432cdd1542dd54593bd774e7029bb60b66a64c8561c6ec6af86",
+          "candidate_PNG_SHA256": "894f407a2172ea8d6f23af2c605ddf32c5d9a1653505b9895b084dca7fc0f6f2",
+          "source_width": 44,
+          "source_height": 35,
+          "retail_ADRN_ordinal": 6097
+        }
+      }
+    },
+    {
+      "id": 451,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "貝洛薩Lv3弓箭",
+        "itemset0710.txt": "貝洛薩Lv3弓箭"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 20328,
+        "itemset0710.txt": 20328
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "77a36985281c7d0434e6caf0a3d55b5366a2e6224d9910232636efbe76301ef5",
+        "itemset0710.txt": "77a36985281c7d0434e6caf0a3d55b5366a2e6224d9910232636efbe76301ef5"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "20328": {
+          "original_RD_SHA256": "316712658603392fe0992fc878b4dcb6ab328b5337c1fe86c9cf835c0a8e4224",
+          "candidate_PNG_SHA256": "ed55f3293a7349cb5935f1f8faed123d9059f64e6c8e934265403542d9a562a9",
+          "source_width": 44,
+          "source_height": 36,
+          "retail_ADRN_ordinal": 6056
+        }
+      }
+    },
+    {
+      "id": 462,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "威金尼爾Lv4弓箭",
+        "itemset0710.txt": "威金尼爾Lv4弓箭"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 20334,
+        "itemset0710.txt": 20334
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "3ffbce300af13c1df38a96eaf7da3a791c46d12fc5bbe6ef6d7cca02c3ac192f",
+        "itemset0710.txt": "3ffbce300af13c1df38a96eaf7da3a791c46d12fc5bbe6ef6d7cca02c3ac192f"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "20334": {
+          "original_RD_SHA256": "c8fd342563380d037b6b9ca018188aa1b4e4848137ad6f0f136056aa899d5912",
+          "candidate_PNG_SHA256": "bb4716897643f7c5b4e90124126b86b8a80fd4f3dbaacad80a130e723cdecd60",
+          "source_width": 44,
+          "source_height": 36,
+          "retail_ADRN_ordinal": 6062
+        }
+      }
+    },
+    {
+      "id": 475,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "特洛金Lv4弓箭",
+        "itemset0710.txt": "特洛金Lv4弓箭"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 20335,
+        "itemset0710.txt": 20335
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "0d62d7f712f114803d258b3b4eb7778529118d4cb28f141094607f12a08751c6",
+        "itemset0710.txt": "0d62d7f712f114803d258b3b4eb7778529118d4cb28f141094607f12a08751c6"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "20335": {
+          "original_RD_SHA256": "3d544a4014976c7becfa7bcf34cd3103cdfeb5060e4594a018249a58001cc813",
+          "candidate_PNG_SHA256": "558a82a9dc393641eb2374292f8bd2c9cb21d1ad81bb01be26bb5df6009d55eb",
+          "source_width": 44,
+          "source_height": 37,
+          "retail_ADRN_ordinal": 6063
+        }
+      }
+    },
+    {
+      "id": 562,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "威金尼爾Lv4迴旋標",
+        "itemset0710.txt": "威金尼爾Lv4迴旋標"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 20540,
+        "itemset0710.txt": 20540
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "73321877e954e72bc8d4c84e7fe25bde912a90af9998a754306651394dd2edf6",
+        "itemset0710.txt": "73321877e954e72bc8d4c84e7fe25bde912a90af9998a754306651394dd2edf6"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "20540": {
+          "original_RD_SHA256": "89bf8dd71100de654e6e3d7e4de3a0c2a0e2a4fecf8112f2386dad0d7bec9a2c",
+          "candidate_PNG_SHA256": "ca56f6b0e06ee101561e183fb1d52f025da263713e33afe0c57fa37179f8c182",
+          "source_width": 36,
+          "source_height": 44,
+          "retail_ADRN_ordinal": 6272
+        }
+      }
+    },
+    {
+      "id": 571,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "貝洛薩Lv4迴旋標",
+        "itemset0710.txt": "貝洛薩Lv4迴旋標"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 20542,
+        "itemset0710.txt": 20542
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "4f2f37561ab1e63c78921c67ac0f5273a0551d5481f43255c9323138a3d060c4",
+        "itemset0710.txt": "4f2f37561ab1e63c78921c67ac0f5273a0551d5481f43255c9323138a3d060c4"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "20542": {
+          "original_RD_SHA256": "ef56084ca12078d2e676c7169f17d3ccabcbd318a00c36348c3e8e0fabae45a1",
+          "candidate_PNG_SHA256": "8114ec78a3cf1c6762a460f22315269f23ce1ae077083f947f8be6dd0421d126",
+          "source_width": 36,
+          "source_height": 44,
+          "retail_ADRN_ordinal": 6274
+        }
+      }
+    },
+    {
+      "id": 654,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "萊伊薩Lv3投擲斧頭",
+        "itemset0710.txt": "萊伊薩Lv3投擲斧頭"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 20531,
+        "itemset0710.txt": 20531
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "967dce33c7a61f7a474599488eb6cf4048227f0b09e8c572610c1186d625b755",
+        "itemset0710.txt": "967dce33c7a61f7a474599488eb6cf4048227f0b09e8c572610c1186d625b755"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "20531": {
+          "original_RD_SHA256": "89cbb9050df3fb1c7b2bb1c0e6d3ebc7e9c986c0a2846ff00fa86e746408329d",
+          "candidate_PNG_SHA256": "d92f316c277497d11c591512618b4100946e95235e20ae84213f32202278af5f",
+          "source_width": 40,
+          "source_height": 26,
+          "retail_ADRN_ordinal": 6263
+        }
+      }
+    },
+    {
+      "id": 662,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "威金尼爾Lv4投擲斧頭",
+        "itemset0710.txt": "威金尼爾Lv4投擲斧頭"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 20508,
+        "itemset0710.txt": 20508
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "c21a75c80889454972c2a7f875e78d8e1c7d34eb9001b5c5ab15534fa1e31a3c",
+        "itemset0710.txt": "c21a75c80889454972c2a7f875e78d8e1c7d34eb9001b5c5ab15534fa1e31a3c"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "20508": {
+          "original_RD_SHA256": "9791f1eccebc907b71b67c374ec359eed80d765dd316aa42973e2fe7e2a97cd4",
+          "candidate_PNG_SHA256": "bb4305e3efac5bddc18fc4945c0704124ec6872cc403a548d384739c6e01644e",
+          "source_width": 32,
+          "source_height": 28,
+          "retail_ADRN_ordinal": 6240
+        }
+      }
+    },
+    {
+      "id": 852,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "愛魯菲Lv1兜6",
+        "itemset0710.txt": "愛魯菲Lv1兜6"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 21519,
+        "itemset0710.txt": 21519
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "71561756e809abee543f5c28e19b81eaabbab06693bad363081c0d867d4c886f",
+        "itemset0710.txt": "71561756e809abee543f5c28e19b81eaabbab06693bad363081c0d867d4c886f"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "21519": {
+          "original_RD_SHA256": "162a6e157405e16c21719d2800431c6377c5453876c80ba33c7411d0d903586d",
+          "candidate_PNG_SHA256": "af7914ce4107f31e193d06cca907aa23c6e2626d9904a92e8868235fa7dd4786",
+          "source_width": 44,
+          "source_height": 36,
+          "retail_ADRN_ordinal": 6384
+        }
+      }
+    },
+    {
+      "id": 861,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "美魯菲Lv1兜7",
+        "itemset0710.txt": "美魯菲Lv1兜7"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 21521,
+        "itemset0710.txt": 21521
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "43452863556639f1cfaee599bf10c8f852e1425ec6a23783080ab7d179e54835",
+        "itemset0710.txt": "43452863556639f1cfaee599bf10c8f852e1425ec6a23783080ab7d179e54835"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "21521": {
+          "original_RD_SHA256": "b72d0f29020ac4ab77943780ea927f7a4d45a9f9ce0a710f7935e950ba6bfa0b",
+          "candidate_PNG_SHA256": "3e54114b99fef3acc0d2e4639d877163ed5e14e90cfc496b0734762225cd75cd",
+          "source_width": 36,
+          "source_height": 38,
+          "retail_ADRN_ordinal": 6386
+        }
+      }
+    },
+    {
+      "id": 863,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "所魯菲Lv1兜7",
+        "itemset0710.txt": "所魯菲Lv1兜7"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 21521,
+        "itemset0710.txt": 21521
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "f5120c3f4d3bccc49479304adc7e966e4cf21c6ec473d3495b7453eb008b3c04",
+        "itemset0710.txt": "f5120c3f4d3bccc49479304adc7e966e4cf21c6ec473d3495b7453eb008b3c04"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "21521": {
+          "original_RD_SHA256": "b72d0f29020ac4ab77943780ea927f7a4d45a9f9ce0a710f7935e950ba6bfa0b",
+          "candidate_PNG_SHA256": "3e54114b99fef3acc0d2e4639d877163ed5e14e90cfc496b0734762225cd75cd",
+          "source_width": 36,
+          "source_height": 38,
+          "retail_ADRN_ordinal": 6386
+        }
+      }
+    },
+    {
+      "id": 872,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "愛魯菲Lv1兜8",
+        "itemset0710.txt": "愛魯菲Lv1兜8"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 21515,
+        "itemset0710.txt": 21515
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "22d7b4d4363c50808c9c37c04dd715e84e971b90d801c4cc5e25b96e50553882",
+        "itemset0710.txt": "22d7b4d4363c50808c9c37c04dd715e84e971b90d801c4cc5e25b96e50553882"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "21515": {
+          "original_RD_SHA256": "41ba09190cc0a1bb79156286b0cdb9401be741d7627b2274516b386fb6a8b751",
+          "candidate_PNG_SHA256": "c321495b715d48fa5cb09cdc2a52d45d7a67a156a31d614dc852e24784df93d4",
+          "source_width": 44,
+          "source_height": 40,
+          "retail_ADRN_ordinal": 6380
+        }
+      }
+    },
+    {
+      "id": 954,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "渥魯菲Lv2帽子6",
+        "itemset0710.txt": "渥魯菲Lv2帽子6"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 21505,
+        "itemset0710.txt": 21505
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "82d12187d83d443dba87fcfa11a8e524d9cdf2d422dfe2869eaf06a371fed09b",
+        "itemset0710.txt": "82d12187d83d443dba87fcfa11a8e524d9cdf2d422dfe2869eaf06a371fed09b"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "21505": {
+          "original_RD_SHA256": "8e854f7c6dfabc459be435c64b23dc3dc86082a685eac2e714b01c652cea4404",
+          "candidate_PNG_SHA256": "b8b3b896d2d1bcfbdcc1806c4026ee9af2f52cec04aca8e73de5dee0a4cde115",
+          "source_width": 44,
+          "source_height": 39,
+          "retail_ADRN_ordinal": 6370
+        }
+      }
+    },
+    {
+      "id": 965,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "米魯菲Lv2帽子7",
+        "itemset0710.txt": "米魯菲Lv2帽子7"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 21536,
+        "itemset0710.txt": 21536
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "69d16dfcb2066ef78d840a090cacf5c8c908011cd96f63c4fee4a32708535e38",
+        "itemset0710.txt": "69d16dfcb2066ef78d840a090cacf5c8c908011cd96f63c4fee4a32708535e38"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "21536": {
+          "original_RD_SHA256": "00053abf8214e18aa85859ab65fe1d3341a73fff9e06cab7a0414ef4797c99fe",
+          "candidate_PNG_SHA256": "1baf0af6a3e8adef5bb24fe6f46102627666840454d47128c2021ea0a81238f9",
+          "source_width": 40,
+          "source_height": 40,
+          "retail_ADRN_ordinal": 6401
+        }
+      }
+    },
+    {
+      "id": 974,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "渥魯菲Lv2帽子8",
+        "itemset0710.txt": "渥魯菲Lv2帽子8"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 21506,
+        "itemset0710.txt": 21506
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "5db1802d53efd1e63fecb323c9bbaf978daae819563d1d0c566d9dc592955e0c",
+        "itemset0710.txt": "5db1802d53efd1e63fecb323c9bbaf978daae819563d1d0c566d9dc592955e0c"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "21506": {
+          "original_RD_SHA256": "835935cbcb77fe21a8ce37a5c33a53308d0737b2267a58fb3886afbb8b508861",
+          "candidate_PNG_SHA256": "26d9008716d0157e6885a713d79fb07ba2ae5b5d4e139055e7e7bb13cbefd499",
+          "source_width": 40,
+          "source_height": 39,
+          "retail_ADRN_ordinal": 6371
+        }
+      }
+    },
+    {
+      "id": 1055,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "芙雷雅Lv2鎧6",
+        "itemset0710.txt": "芙雷雅Lv2鎧6"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 21024,
+        "itemset0710.txt": 21024
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "f891b8b1168c935587f26771af7d36451bf0fc66a6538fe88d67c19798913f31",
+        "itemset0710.txt": "f891b8b1168c935587f26771af7d36451bf0fc66a6538fe88d67c19798913f31"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "21024": {
+          "original_RD_SHA256": "f514172ee29c1e1d335f19f06166200b87b0615a4a5741accf3391b76a44b3f0",
+          "candidate_PNG_SHA256": "7410d90eda9669ad123abe0e5b4988071ca53509cebc613ce41fc5277d5f69e8",
+          "source_width": 32,
+          "source_height": 43,
+          "retail_ADRN_ordinal": 6325
+        }
+      }
+    },
+    {
+      "id": 1056,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "提歐Lv2鎧6",
+        "itemset0710.txt": "提歐Lv2鎧6"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 21024,
+        "itemset0710.txt": 21024
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "5c8991c50b94395df05cef9ec566dfe36f16b8bd1b9efa086c97a72de74b9ae9",
+        "itemset0710.txt": "5c8991c50b94395df05cef9ec566dfe36f16b8bd1b9efa086c97a72de74b9ae9"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "21024": {
+          "original_RD_SHA256": "f514172ee29c1e1d335f19f06166200b87b0615a4a5741accf3391b76a44b3f0",
+          "candidate_PNG_SHA256": "7410d90eda9669ad123abe0e5b4988071ca53509cebc613ce41fc5277d5f69e8",
+          "source_width": 32,
+          "source_height": 43,
+          "retail_ADRN_ordinal": 6325
+        }
+      }
+    },
+    {
+      "id": 1067,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "哈魯Lv3鎧7",
+        "itemset0710.txt": "哈魯Lv3鎧7"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 21020,
+        "itemset0710.txt": 21020
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "7614837af15457de4a93ca4e2ced6bcee5d2c34670745a74e346b2824a9b2f70",
+        "itemset0710.txt": "7614837af15457de4a93ca4e2ced6bcee5d2c34670745a74e346b2824a9b2f70"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "21020": {
+          "original_RD_SHA256": "650a9d9a6a3123635dc6d0832bcd4d0652b1b772a476bf0f92d794e15e3c017f",
+          "candidate_PNG_SHA256": "b50976be10520e5da2a0f340b17ccd761370b4a6088d681cd1f6d73b7504bdba",
+          "source_width": 36,
+          "source_height": 46,
+          "retail_ADRN_ordinal": 6321
+        }
+      }
+    },
+    {
+      "id": 1068,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "芙雷雅Lv3鎧7",
+        "itemset0710.txt": "芙雷雅Lv3鎧7"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 21020,
+        "itemset0710.txt": 21020
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "2ab1fdb6ed94b1c57891372d3a1d367295101347fc8bce78214c8957d862e97b",
+        "itemset0710.txt": "2ab1fdb6ed94b1c57891372d3a1d367295101347fc8bce78214c8957d862e97b"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "21020": {
+          "original_RD_SHA256": "650a9d9a6a3123635dc6d0832bcd4d0652b1b772a476bf0f92d794e15e3c017f",
+          "candidate_PNG_SHA256": "b50976be10520e5da2a0f340b17ccd761370b4a6088d681cd1f6d73b7504bdba",
+          "source_width": 36,
+          "source_height": 46,
+          "retail_ADRN_ordinal": 6321
+        }
+      }
+    },
+    {
+      "id": 1156,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "提歐Lv2服6",
+        "itemset0710.txt": "提歐Lv2服6"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 21005,
+        "itemset0710.txt": 21005
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "d85798c7247e01a18e4af030cf753302be483cadabf2bad825cb87f506312ca0",
+        "itemset0710.txt": "d85798c7247e01a18e4af030cf753302be483cadabf2bad825cb87f506312ca0"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "21005": {
+          "original_RD_SHA256": "bf7d0173db3241dc4955dad12416f7e267e3b96e9abf499634e0ad3568088907",
+          "candidate_PNG_SHA256": "c614ab78ab590ec92c79e6d5f85bc86dfcd6db02e509c8eb3ea9bde215decdea",
+          "source_width": 32,
+          "source_height": 42,
+          "retail_ADRN_ordinal": 6306
+        }
+      }
+    },
+    {
+      "id": 1157,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "哈魯Lv3服6",
+        "itemset0710.txt": "哈魯Lv3服6"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 21007,
+        "itemset0710.txt": 21007
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "f3943681ad1fe4db5a9c7ed41a8dad9859ebd8390d82d77263eafb9b9be9432e",
+        "itemset0710.txt": "f3943681ad1fe4db5a9c7ed41a8dad9859ebd8390d82d77263eafb9b9be9432e"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "21007": {
+          "original_RD_SHA256": "e6416bdf923f9ed1e27d660f9fdcebae9d24d8a7b823291396399dad41fc5ee3",
+          "candidate_PNG_SHA256": "5a7d3c617ca92a0f03a132bab9ddb2c5f7dc1c8b9a5531dece9d7ea538bfcfcf",
+          "source_width": 32,
+          "source_height": 42,
+          "retail_ADRN_ordinal": 6308
+        }
+      }
+    },
+    {
+      "id": 1165,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "芙雷雅Lv2服7",
+        "itemset0710.txt": "芙雷雅Lv2服7"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 21011,
+        "itemset0710.txt": 21011
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "94d0137f7b6536d53ae389fe57afda505dee3a64bde1955210ca5d7791f57e86",
+        "itemset0710.txt": "94d0137f7b6536d53ae389fe57afda505dee3a64bde1955210ca5d7791f57e86"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "21011": {
+          "original_RD_SHA256": "ae17cb6d51f5477b23fa7398840b48d66f4d582e0d983b7bcd6c8bd459487a45",
+          "candidate_PNG_SHA256": "38c064e8aee95ee5f69dd3504cd1f692b486e58560c9debb5d64ef9373da4ccd",
+          "source_width": 32,
+          "source_height": 37,
+          "retail_ADRN_ordinal": 6312
+        }
+      }
+    },
+    {
+      "id": 1167,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "哈魯Lv3服7",
+        "itemset0710.txt": "哈魯Lv3服7"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 21012,
+        "itemset0710.txt": 21012
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "96fe4bba57884d0bb245373025aeac49db83926fda1a16fe550ac3304e19d083",
+        "itemset0710.txt": "96fe4bba57884d0bb245373025aeac49db83926fda1a16fe550ac3304e19d083"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "21012": {
+          "original_RD_SHA256": "34344e015eb3d82bf07f7521da8f9f8ec13f908599386fbcb0e0122239178687",
+          "candidate_PNG_SHA256": "3873e1b272c07c0a88484669134d9f56691a836e3dcb8659179655082c7a5218",
+          "source_width": 32,
+          "source_height": 37,
+          "retail_ADRN_ordinal": 6313
+        }
+      }
+    },
+    {
+      "id": 1212,
+      "original_line_itemlist": false,
+      "original_embedded_only_NOT_confirmed_itemlist": true,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "牙的手環(紅)",
+        "itemset0710.txt": "牙的手環(紅)"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 22074,
+        "itemset0710.txt": 22074
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "98aff65d0b90e62bae311053db8c2ba691563d7f3c42a8944d416e3c95e925f5",
+        "itemset0710.txt": "98aff65d0b90e62bae311053db8c2ba691563d7f3c42a8944d416e3c95e925f5"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "22074": {
+          "original_RD_SHA256": "c2ea18274d3925051885a94d8e89dac1cad8e0af95fee1cf8c17a8ca97638509",
+          "candidate_PNG_SHA256": "caa5ad333a2488780d4e067bddeddaad52d3d9b98c5ada352f4117788b16daca",
+          "source_width": 52,
+          "source_height": 30,
+          "retail_ADRN_ordinal": 6441
+        }
+      }
+    },
+    {
+      "id": 1213,
+      "original_line_itemlist": false,
+      "original_embedded_only_NOT_confirmed_itemlist": true,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "牙的手環(綠)",
+        "itemset0710.txt": "牙的手環(綠)"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 22073,
+        "itemset0710.txt": 22073
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "6267a83dae6661d797cd96fb1a440f85c1a6d34f22a2646bf058af7e3b2aa4a3",
+        "itemset0710.txt": "6267a83dae6661d797cd96fb1a440f85c1a6d34f22a2646bf058af7e3b2aa4a3"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "22073": {
+          "original_RD_SHA256": "90e9b0c2e627603aca8845f2e5303c6bde3956443f65d5427782bb1dff753266",
+          "candidate_PNG_SHA256": "8802ce8b6cfdbdc8811226304b662e1ef0fabefc449c3000062d83762125f387",
+          "source_width": 52,
+          "source_height": 30,
+          "retail_ADRN_ordinal": 6440
+        }
+      }
+    },
+    {
+      "id": 1214,
+      "original_line_itemlist": false,
+      "original_embedded_only_NOT_confirmed_itemlist": true,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "牙的手環(青)",
+        "itemset0710.txt": "牙的手環(青)"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 22072,
+        "itemset0710.txt": 22072
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "190d7d2b75ab5d21b6819adc16958e03e0f7c65ed895d0e3d3bfb5529b2adcf5",
+        "itemset0710.txt": "190d7d2b75ab5d21b6819adc16958e03e0f7c65ed895d0e3d3bfb5529b2adcf5"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "22072": {
+          "original_RD_SHA256": "43e36147720e42c0354f69c5419440e01fe8a7848867cf2ca5fdab7097f35eab",
+          "candidate_PNG_SHA256": "5ea5d992609b940917b83604e70c3d43c7ddaaf6162fa37e63a61f349582f7e5",
+          "source_width": 52,
+          "source_height": 30,
+          "retail_ADRN_ordinal": 6439
+        }
+      }
+    },
+    {
+      "id": 1264,
+      "original_line_itemlist": false,
+      "original_embedded_only_NOT_confirmed_itemlist": true,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "阿薩Lv3鳴子",
+        "itemset0710.txt": "阿薩Lv3鳴子"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 24208,
+        "itemset0710.txt": 24208
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "a040de887b0451a22130c291ac15a5a9685c004c7811520b0aca56f7db67d0a2",
+        "itemset0710.txt": "a040de887b0451a22130c291ac15a5a9685c004c7811520b0aca56f7db67d0a2"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "24208": {
+          "original_RD_SHA256": "ca0c8b91e3d599fdd649561c70f28118d3e2fa703d89cf5bd0a2b4292a0983c1",
+          "candidate_PNG_SHA256": "d157fa7ccd1e84cc1ab3c8fd2a63025a880618e5df3d574c5c30cd72ce7284aa",
+          "source_width": 32,
+          "source_height": 32,
+          "retail_ADRN_ordinal": 6975
+        }
+      }
+    },
+    {
+      "id": 1265,
+      "original_line_itemlist": false,
+      "original_embedded_only_NOT_confirmed_itemlist": true,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "阿昆尼斯Lv3鳴子",
+        "itemset0710.txt": "阿昆尼斯Lv3鳴子"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 24206,
+        "itemset0710.txt": 24206
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "f92877a4c5aec0f14ac7893f71f0ef5ff6f60358acdd49a635d42fe09f778f7c",
+        "itemset0710.txt": "f92877a4c5aec0f14ac7893f71f0ef5ff6f60358acdd49a635d42fe09f778f7c"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "24206": {
+          "original_RD_SHA256": "d39fcca71b876260eb5c05529c3103e86b5bb9592479a37d8f0beda199b7d1a3",
+          "candidate_PNG_SHA256": "ae05082c2d3ccf83f5b1ad2546440245062e74c828f509fe4eb054a23e166d17",
+          "source_width": 32,
+          "source_height": 32,
+          "retail_ADRN_ordinal": 6973
+        }
+      }
+    },
+    {
+      "id": 1266,
+      "original_line_itemlist": false,
+      "original_embedded_only_NOT_confirmed_itemlist": true,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "芙雷美雅Lv3鳴子",
+        "itemset0710.txt": "芙雷美雅Lv3鳴子"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 24207,
+        "itemset0710.txt": 24207
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "c1227993f9d7e8cdc7960988dc70aae99173a3b53aa661f55f68b1de60010d90",
+        "itemset0710.txt": "c1227993f9d7e8cdc7960988dc70aae99173a3b53aa661f55f68b1de60010d90"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "24207": {
+          "original_RD_SHA256": "cfddd7ced836af3fed5e21ca076678457820933a585ea8e829416d30c29c8a71",
+          "candidate_PNG_SHA256": "be51b6f08d099ecc3b0b5e031f359842eb10684c05e2c1d5d9d4612d68d128ab",
+          "source_width": 32,
+          "source_height": 32,
+          "retail_ADRN_ordinal": 6974
+        }
+      }
+    },
+    {
+      "id": 1267,
+      "original_line_itemlist": false,
+      "original_embedded_only_NOT_confirmed_itemlist": true,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "溫蒂妮Lv3鳴子",
+        "itemset0710.txt": "溫蒂妮Lv3鳴子"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 24209,
+        "itemset0710.txt": 24209
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "da544ac5bc6e58ee336dfe6dca01b6fe422475c45e678a7acca14c35357d0f5a",
+        "itemset0710.txt": "da544ac5bc6e58ee336dfe6dca01b6fe422475c45e678a7acca14c35357d0f5a"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "24209": {
+          "original_RD_SHA256": "3c3ead19d48d9dec4c5805efc025ed89f576c05a2b1b01bdbea96c206f71d989",
+          "candidate_PNG_SHA256": "792a86314bc4b83fce0a8aa8db19bcc362d8a4a25335ed72664cac148e975f64",
+          "source_width": 32,
+          "source_height": 32,
+          "retail_ADRN_ordinal": 6976
+        }
+      }
+    },
+    {
+      "id": 1268,
+      "original_line_itemlist": false,
+      "original_embedded_only_NOT_confirmed_itemlist": true,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "哈梅拉斯鳴子",
+        "itemset0710.txt": "哈梅拉斯鳴子"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 24210,
+        "itemset0710.txt": 24210
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "6ada30cfc28d69e04c7b6a4610021935c2f80287d4b8868d92a670040852ee60",
+        "itemset0710.txt": "6ada30cfc28d69e04c7b6a4610021935c2f80287d4b8868d92a670040852ee60"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "24210": {
+          "original_RD_SHA256": "e7e45c967c3abff9b88038195ff67516c5aab092489ab29d638bf10f0932282c",
+          "candidate_PNG_SHA256": "3dbfbfcbf543570a59674456500230a944acf1a73b5a61aa702f020aa710397a",
+          "source_width": 32,
+          "source_height": 32,
+          "retail_ADRN_ordinal": 6977
+        }
+      }
+    },
+    {
+      "id": 1269,
+      "original_line_itemlist": false,
+      "original_embedded_only_NOT_confirmed_itemlist": true,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "阿魯帖拉鳴子",
+        "itemset0710.txt": "阿魯帖拉鳴子"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 24210,
+        "itemset0710.txt": 24210
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "89c6572ecc5663e9077cbce2b763675089522951658103d21b8f52f0fa2bdd77",
+        "itemset0710.txt": "89c6572ecc5663e9077cbce2b763675089522951658103d21b8f52f0fa2bdd77"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "24210": {
+          "original_RD_SHA256": "e7e45c967c3abff9b88038195ff67516c5aab092489ab29d638bf10f0932282c",
+          "candidate_PNG_SHA256": "3dbfbfcbf543570a59674456500230a944acf1a73b5a61aa702f020aa710397a",
+          "source_width": 32,
+          "source_height": 32,
+          "retail_ADRN_ordinal": 6977
+        }
+      }
+    },
+    {
+      "id": 1270,
+      "original_line_itemlist": false,
+      "original_embedded_only_NOT_confirmed_itemlist": true,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "繆雷鳴子",
+        "itemset0710.txt": "繆雷鳴子"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 24210,
+        "itemset0710.txt": 24210
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "2d3b0b958c603c95cad4b3cbaf1f62986209e07ea9d84043b1df802eb74304fb",
+        "itemset0710.txt": "2d3b0b958c603c95cad4b3cbaf1f62986209e07ea9d84043b1df802eb74304fb"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "24210": {
+          "original_RD_SHA256": "e7e45c967c3abff9b88038195ff67516c5aab092489ab29d638bf10f0932282c",
+          "candidate_PNG_SHA256": "3dbfbfcbf543570a59674456500230a944acf1a73b5a61aa702f020aa710397a",
+          "source_width": 32,
+          "source_height": 32,
+          "retail_ADRN_ordinal": 6977
+        }
+      }
+    },
+    {
+      "id": 1307,
+      "original_line_itemlist": false,
+      "original_embedded_only_NOT_confirmed_itemlist": true,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "綠玉的戒指",
+        "itemset0710.txt": "綠玉的戒指"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 22108,
+        "itemset0710.txt": 22108
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "f9d97a20096a60c0f44f2baa51d703198228dfe0e03be4ca770d5f3bcbb035c6",
+        "itemset0710.txt": "f9d97a20096a60c0f44f2baa51d703198228dfe0e03be4ca770d5f3bcbb035c6"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "22108": {
+          "original_RD_SHA256": "a3a66ec9f901cfa4953cb8508c0133383aef148d2e5575a84dda49b20e68ca28",
+          "candidate_PNG_SHA256": "de56cc87b9bd693fffa55c6d16d1584dda9a7b5da57655e0117e2f18ed2b5b83",
+          "source_width": 28,
+          "source_height": 26,
+          "retail_ADRN_ordinal": 6518
+        }
+      }
+    },
+    {
+      "id": 1311,
+      "original_line_itemlist": false,
+      "original_embedded_only_NOT_confirmed_itemlist": true,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "小石細工戒指",
+        "itemset0710.txt": "小石細工戒指"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 22102,
+        "itemset0710.txt": 22102
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "1e70ae24a32409058088edacb4c27a36ed1e79113f4e0c59edfdaae9c22f29f1",
+        "itemset0710.txt": "1e70ae24a32409058088edacb4c27a36ed1e79113f4e0c59edfdaae9c22f29f1"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "22102": {
+          "original_RD_SHA256": "fdb5d9a44ffc2a90034718723bbb1d4cf128702c795aa55641c11abc3f1e8536",
+          "candidate_PNG_SHA256": "de5705244a0a6794b14a4e0336ce5a06f8d10f80df51d9a8cdb56756986ec34f",
+          "source_width": 16,
+          "source_height": 14,
+          "retail_ADRN_ordinal": 6512
+        }
+      }
+    },
+    {
+      "id": 1451,
+      "original_line_itemlist": false,
+      "original_embedded_only_NOT_confirmed_itemlist": true,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "柯雅拉Lv2護身符",
+        "itemset0710.txt": "柯雅拉Lv2護身符"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 22022,
+        "itemset0710.txt": 22022
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "124ac6c0e1c98c5de2d43adc6c82883aaca915d2a858977d9e0ce0dafc781628",
+        "itemset0710.txt": "124ac6c0e1c98c5de2d43adc6c82883aaca915d2a858977d9e0ce0dafc781628"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "22022": {
+          "original_RD_SHA256": "c6580b817dc6e79387edd9ecfd4fdb77bcc3c73220a1f26997d75254ccdcf15d",
+          "candidate_PNG_SHA256": "a6275b59204714a438bd16a10a73c5736462e52ef0ec8d631f972a813f511df1",
+          "source_width": 44,
+          "source_height": 39,
+          "retail_ADRN_ordinal": 6489
+        }
+      }
+    },
+    {
+      "id": 1454,
+      "original_line_itemlist": false,
+      "original_embedded_only_NOT_confirmed_itemlist": true,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "西魯菲雅Lv2護身符",
+        "itemset0710.txt": "西魯菲雅Lv2護身符"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 22019,
+        "itemset0710.txt": 22019
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "31c061f22d081fbb955c73dd8f22d3b76b6641478f45070182c0d16ac9de90f4",
+        "itemset0710.txt": "31c061f22d081fbb955c73dd8f22d3b76b6641478f45070182c0d16ac9de90f4"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "22019": {
+          "original_RD_SHA256": "21ca489c63e4700d31ac1090400a68ec2c2eb15eecc315f927fa7af6c8413640",
+          "candidate_PNG_SHA256": "1a2cc3f0bb7d65b1d005e709f3933a10ab0d7e52194b09337b6ac783f4517d78",
+          "source_width": 40,
+          "source_height": 39,
+          "retail_ADRN_ordinal": 6486
+        }
+      }
+    },
+    {
+      "id": 1456,
+      "original_line_itemlist": false,
+      "original_embedded_only_NOT_confirmed_itemlist": true,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "阿西美拉護身符2",
+        "itemset0710.txt": "阿西美拉護身符2"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 22013,
+        "itemset0710.txt": 22013
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "da6b0b3ed18ec6a19d27b9560c713e32d54ba2f4347f6e1900fa3ca3e1a06a52",
+        "itemset0710.txt": "da6b0b3ed18ec6a19d27b9560c713e32d54ba2f4347f6e1900fa3ca3e1a06a52"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "22013": {
+          "original_RD_SHA256": "e480f4db3951f00a1b24f3dd10550affccdfca8a8b016e129f2fa0a0cb67e05f",
+          "candidate_PNG_SHA256": "86bb0d9da26413038f2efd2585382b837099e498c6b5ccd498160afce5de850f",
+          "source_width": 52,
+          "source_height": 42,
+          "retail_ADRN_ordinal": 6480
+        }
+      }
+    },
+    {
+      "id": 1468,
+      "original_line_itemlist": false,
+      "original_embedded_only_NOT_confirmed_itemlist": true,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "威魯護身符4",
+        "itemset0710.txt": "威魯護身符4"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 22028,
+        "itemset0710.txt": 22028
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "abcfc9817ec28074e2e941951b01da475de9aaaa264c304a2213e190dacede5e",
+        "itemset0710.txt": "abcfc9817ec28074e2e941951b01da475de9aaaa264c304a2213e190dacede5e"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "22028": {
+          "original_RD_SHA256": "58c28b2d60cbb8c60ef54f9ab011d6e660afce116338545c3b0f7ace994aa916",
+          "candidate_PNG_SHA256": "11a21b30deabb12ed982fdba855e4ef896dad79d554b5f0a4e220de94b670cf8",
+          "source_width": 48,
+          "source_height": 42,
+          "retail_ADRN_ordinal": 6495
+        }
+      }
+    },
+    {
+      "id": 1500,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "耐久力回復藥",
+        "itemset0710.txt": "耐久力回復藥"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 23013,
+        "itemset0710.txt": 23013
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "24ee803daccf79e1431111b51e9949ad96a38d1fa08ad349ec9cee90f033175b",
+        "itemset0710.txt": "24ee803daccf79e1431111b51e9949ad96a38d1fa08ad349ec9cee90f033175b"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "23013": {
+          "original_RD_SHA256": "9cbec4e4c3e1374853e79fe6f5a40fb0ed9dbd51093cbd75b2020496d0c22220",
+          "candidate_PNG_SHA256": "445c7b68000fbeaea7e625f312c420b93f32b88c65abd8588b4f9d8b7a6aa6e7",
+          "source_width": 24,
+          "source_height": 31,
+          "retail_ADRN_ordinal": 6549
+        }
+      }
+    },
+    {
+      "id": 1501,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "耐久力回復藥",
+        "itemset0710.txt": "耐久力回復藥"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 23014,
+        "itemset0710.txt": 23014
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "05e30220520216cb04c525e449ec8c5c2ecb1ecb17b38a5709d20535aca8fde4",
+        "itemset0710.txt": "05e30220520216cb04c525e449ec8c5c2ecb1ecb17b38a5709d20535aca8fde4"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "23014": {
+          "original_RD_SHA256": "7f61a1be76077da5934cf46d9bfdf37ba4ce4753c3adc460e55381742c8ab52c",
+          "candidate_PNG_SHA256": "c9029f0ea015c70176ce30d7e49c7dfe594a1a68c52c9a941b1057ec5748b2d5",
+          "source_width": 24,
+          "source_height": 31,
+          "retail_ADRN_ordinal": 6550
+        }
+      }
+    },
+    {
+      "id": 1510,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "氣力回復藥",
+        "itemset0710.txt": "氣力回復藥"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 23005,
+        "itemset0710.txt": 23005
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "5c32551302e381d20eac48f625c68d84867e6bb979b017c7b75f046f6460c1b2",
+        "itemset0710.txt": "5c32551302e381d20eac48f625c68d84867e6bb979b017c7b75f046f6460c1b2"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "23005": {
+          "original_RD_SHA256": "5c46931c5569a1637f850c47f09621453e57a1c6ca813c1d609dac9d5cffaf0c",
+          "candidate_PNG_SHA256": "988084fdc11055765da33ae853f51cc48a26bcab71759c49617b2e7e95fd2356",
+          "source_width": 24,
+          "source_height": 28,
+          "retail_ADRN_ordinal": 6541
+        }
+      }
+    },
+    {
+      "id": 1511,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "氣力回復藥",
+        "itemset0710.txt": "氣力回復藥"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 23006,
+        "itemset0710.txt": 23006
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "ff1f0bd8f1dac46daf74d039304ae2dea481579f37a91960adafa99a5e2077e7",
+        "itemset0710.txt": "ff1f0bd8f1dac46daf74d039304ae2dea481579f37a91960adafa99a5e2077e7"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "23006": {
+          "original_RD_SHA256": "bb05e9f623f3e1ad0aa0b7281c9dbd4f1320c9071c90ade35d171388cd95e131",
+          "candidate_PNG_SHA256": "81af4b3c0964d3cafe5a4098db836f78d50044aa7ba45bd2faddace2578846c7",
+          "source_width": 24,
+          "source_height": 28,
+          "retail_ADRN_ordinal": 6542
+        }
+      }
+    },
+    {
+      "id": 1512,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "氣力回復藥",
+        "itemset0710.txt": "氣力回復藥"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 23007,
+        "itemset0710.txt": 23007
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "b8fc05fa5a021731ea64d6f8b64506f303e3609b526e53920a7dfc28861ac1f7",
+        "itemset0710.txt": "b8fc05fa5a021731ea64d6f8b64506f303e3609b526e53920a7dfc28861ac1f7"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "23007": {
+          "original_RD_SHA256": "3c7ae4f27190f496525047173e59faa6e7db02989da1c0744f9fb179db446f64",
+          "candidate_PNG_SHA256": "dcf469c9ee1fe6ac1cc0449883864f6d2b4a701e0d2011c218d09e8fba716215",
+          "source_width": 24,
+          "source_height": 28,
+          "retail_ADRN_ordinal": 6543
+        }
+      }
+    },
+    {
+      "id": 1530,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "復活藥(100)",
+        "itemset0710.txt": "復活藥(100)"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 23021,
+        "itemset0710.txt": 23021
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "b0f0732e5f136853f70594d90e82237b3cd4d898981ac908f0467337c3305fc9",
+        "itemset0710.txt": "b0f0732e5f136853f70594d90e82237b3cd4d898981ac908f0467337c3305fc9"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "23021": {
+          "original_RD_SHA256": "ad6db3666ca609d2ea4add83d08380e043e0ffc439862795543fb3159594d044",
+          "candidate_PNG_SHA256": "6e54cf00f910c934a0b25e225706f88ae0e76591e49ac9452d4645fd35df0f7b",
+          "source_width": 20,
+          "source_height": 22,
+          "retail_ADRN_ordinal": 6557
+        }
+      }
+    },
+    {
+      "id": 1531,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "復活藥(300)",
+        "itemset0710.txt": "復活藥(300)"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 23021,
+        "itemset0710.txt": 23021
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "e660eaede34083b78f4350f1367ab551894f07dfc0e3f166e5192f0fa3b4e49c",
+        "itemset0710.txt": "e660eaede34083b78f4350f1367ab551894f07dfc0e3f166e5192f0fa3b4e49c"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "23021": {
+          "original_RD_SHA256": "ad6db3666ca609d2ea4add83d08380e043e0ffc439862795543fb3159594d044",
+          "candidate_PNG_SHA256": "6e54cf00f910c934a0b25e225706f88ae0e76591e49ac9452d4645fd35df0f7b",
+          "source_width": 20,
+          "source_height": 22,
+          "retail_ADRN_ordinal": 6557
+        }
+      }
+    },
+    {
+      "id": 1540,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "烏西摩尼葉",
+        "itemset0710.txt": "烏西摩尼葉"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 23026,
+        "itemset0710.txt": 23026
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "545f8a3762032053686fb9c6e58167b12e3aab8201108ab81b4eb2f3645b26db",
+        "itemset0710.txt": "545f8a3762032053686fb9c6e58167b12e3aab8201108ab81b4eb2f3645b26db"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "23026": {
+          "original_RD_SHA256": "dd3fec264acbc86db345add42d2d30c075c587e78801e166965d00e6991cb02d",
+          "candidate_PNG_SHA256": "ab1d515cab7842ba560e92cb16d6acedf9d960cf173d8c00ea8c9571e34d8c2f",
+          "source_width": 44,
+          "source_height": 40,
+          "retail_ADRN_ordinal": 6562
+        }
+      }
+    },
+    {
+      "id": 1541,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "伊西娃麗索葉",
+        "itemset0710.txt": "伊西娃麗索葉"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 23027,
+        "itemset0710.txt": 23027
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "9e788b87aaf53561110d506c95bd20482b715fb657cf3cdb99887d246744f09a",
+        "itemset0710.txt": "9e788b87aaf53561110d506c95bd20482b715fb657cf3cdb99887d246744f09a"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "23027": {
+          "original_RD_SHA256": "4aa8006104e46616fe2786c1e740702ebba1c02d84e682181b4bc270a13bc34e",
+          "candidate_PNG_SHA256": "f88fa0d72fa51e813bce2d8476e5813d5fc782f3ccf02bc380ef1c1e0201b240",
+          "source_width": 52,
+          "source_height": 44,
+          "retail_ADRN_ordinal": 6563
+        }
+      }
+    },
+    {
+      "id": 1542,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "摩浦葉",
+        "itemset0710.txt": "摩浦葉"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 23024,
+        "itemset0710.txt": 23024
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "671944cd880cf62cefe445a395febebb60a81b464c008abd761005ff37b63f4f",
+        "itemset0710.txt": "671944cd880cf62cefe445a395febebb60a81b464c008abd761005ff37b63f4f"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "23024": {
+          "original_RD_SHA256": "f9e575ca94aaf832102a0e234705563987419b85c45fa554f31de976f6be2cc8",
+          "candidate_PNG_SHA256": "f627cf18712d4c70358040bf2352a2f7c579e6657d4953a0676662f4a68f0711",
+          "source_width": 44,
+          "source_height": 41,
+          "retail_ADRN_ordinal": 6560
+        }
+      }
+    },
+    {
+      "id": 1543,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "西倫恩根",
+        "itemset0710.txt": "西倫恩根"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 23028,
+        "itemset0710.txt": 23028
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "857c5ad81ef0d62edc65e0e442fba3f554b2ca4f059f36a98004ed7c8dc19c45",
+        "itemset0710.txt": "857c5ad81ef0d62edc65e0e442fba3f554b2ca4f059f36a98004ed7c8dc19c45"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "23028": {
+          "original_RD_SHA256": "8c0f71dfec403acb4a569be877d3c08da77a3d928fb7a5ff22f5c3ebe66cd3e4",
+          "candidate_PNG_SHA256": "92696cc38f43248836b0fe83960753c0e442a9126c4349cb1d3818b89f996387",
+          "source_width": 44,
+          "source_height": 35,
+          "retail_ADRN_ordinal": 6564
+        }
+      }
+    },
+    {
+      "id": 1545,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "菲恩葉",
+        "itemset0710.txt": "菲恩葉"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 23025,
+        "itemset0710.txt": 23025
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "0a7c8c47cc8f53120ac15684d11103c956062c0a33d15c9a87ff55d44b383d3d",
+        "itemset0710.txt": "0a7c8c47cc8f53120ac15684d11103c956062c0a33d15c9a87ff55d44b383d3d"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "23025": {
+          "original_RD_SHA256": "c4227839fc7a5d9de4fe28b1ac36d12cbbc9d8de8d9839b9d608f0c7ae7c0bdd",
+          "candidate_PNG_SHA256": "18320b67f8c38a36cdb875ff00f3c92724fbf015eac3d1dd6ce7c8f836ea35c6",
+          "source_width": 32,
+          "source_height": 47,
+          "retail_ADRN_ordinal": 6561
+        }
+      }
+    },
+    {
+      "id": 2568,
+      "original_line_itemlist": true,
+      "original_embedded_only_NOT_confirmed_itemlist": false,
+      "catalog_class": "IDENTICAL_RAW_LINE",
+      "candidate_names_by_source": {
+        "itemset.txt": "忠誠心之素(B)",
+        "itemset0710.txt": "忠誠心之素(B)"
+      },
+      "candidate_item_image_alias_by_source": {
+        "itemset.txt": 24155,
+        "itemset0710.txt": 24155
+      },
+      "source_94_column_original_line_sha256": {
+        "itemset.txt": "ba27cbbfafdd327d8a61326f481f1c26ca5bccd9df723f4340fe067f8dfbeb34",
+        "itemset0710.txt": "ba27cbbfafdd327d8a61326f481f1c26ca5bccd9df723f4340fe067f8dfbeb34"
+      },
+      "original_TW1_2d_candidate_by_alias": {
+        "24155": {
+          "original_RD_SHA256": "8acb6611dbff319af3a4658df45cd2e1b4b56b7be2ae6e27387b5820749b155c",
+          "candidate_PNG_SHA256": "e8961804c60b91f712d33ca1a1cad5463a9517ad626a2593b2687e6e907c93af",
+          "source_width": 48,
+          "source_height": 39,
+          "retail_ADRN_ordinal": 6826
+        }
+      }
+    }
+  ],
+  "original_item_pixel_aliases": [],
+  "boundaries": [
+    "Original community mixed25 NPC/ITEM static files are different source/version role from TW1 retail client RD bitmaps.",
+    "No historical JSS/TW1 official same-deployment shop, pet-skill or native runtime execution is proven.",
+    "One shop argument contains ItemList characters inside itemfull_msg, not a line-key ItemList. Do not promote 16 embedded IDs to original confirmed ItemList offers.",
+    "Candidate images are previously verified source pixels; zero newly decoded original RD, zero newly discovered artwork.",
+    "No original shop argument text or commercial PNG is to be committed to public Git."
+  ],
+  "counts": {
+    "floor_20712_original_create_records": 9,
+    "actual_argument_files": 6,
+    "source_shop_argument_files": 4,
+    "pet_skill_shop_argument_files": 2,
+    "literal_linekey_shop_ItemList_files": 3,
+    "shop_itemlist_literal_occurrences": 44,
+    "malformed_embedded_itemlist_file_count": 1,
+    "embedded_not_linekey_item_ids": 16,
+    "distinct_original_item_candidate_ids": 60,
+    "literal_pet_skill_ID_occurrences": 21,
+    "tw1_retained_distinct_candidate_bitmap_aliases": 54,
+    "TW1_original_RD_newly_decoded": 0,
+    "item_candidates_with_at_least_one_tw1_png": 60,
+    "item_candidates_without_tw1_png": 0
+  }
+}

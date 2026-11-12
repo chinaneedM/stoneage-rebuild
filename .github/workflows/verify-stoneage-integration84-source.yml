@@ -1,0 +1,25 @@
+name: Verify StoneAge INTEGRATION84 JBA original shop source and 2D candidate boundary
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION84-JBA-ITEM-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration84_jba_source.py'
+      - '.github/workflows/verify-stoneage-integration84-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION84-JBA-ITEM-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration84_jba_source.py'
+      - '.github/workflows/verify-stoneage-integration84-source.yml'
+  workflow_dispatch:
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Replay source-bound JBA static contracts and malformed ItemList negative case
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration84_jba_source.py' -v
