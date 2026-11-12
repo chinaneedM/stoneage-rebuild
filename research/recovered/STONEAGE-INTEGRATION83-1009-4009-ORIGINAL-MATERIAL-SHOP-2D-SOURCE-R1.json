@@ -1,0 +1,3458 @@
+{
+  "schema": "stoneage.integration83.original_1009_4009_five_material_stalls_cross_carrier_icon_source.r1",
+  "date": "2026-11-12",
+  "scope": "community mixed25 original NPC CREATE / argument / two itemset original lines; separate TW1 retail actual saved original RD candidate PNGs",
+  "startup_main_head": "d74f56f400296ede5c5a4892ea1eabaf929405d9",
+  "startup_main_tree": "6d7642bd6365154456c1f1dbffb598b18ee6ba8f",
+  "source_archives": {
+    "original_mixed25_parent_RAR_historical_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "NPC_saved_subset": {
+      "name": "StoneAge-CHAR01-mixed25-all-npc-original-private.zip",
+      "bytes": 995176,
+      "sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+      "members": 2205,
+      "all_crc_verified": true
+    },
+    "ITEM_saved_subset": {
+      "name": "StoneAge-ITEM01-private-two-itemsets-832-original-RD-icon-observer.zip",
+      "bytes": 5868386,
+      "sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+      "members": 838,
+      "all_crc_verified": true
+    },
+    "item_master_source_scope": "source data from community mixed25 saved RAR, both itemset.txt and itemset0710.txt; source row hashes independently rebuilt via CP950 comma fields",
+    "original_TW1_client_scope": "separate source-qualified original retail TW1 ADRN/REAL/SAP per ITEM01 original source receipts; image alias relation is a cross-carrier candidate, not proof of same build",
+    "CREATE_original_files": {
+      "genout/shop_m.create": {
+        "bytes": 20491,
+        "sha256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b"
+      },
+      "genout/shop_m2.create": {
+        "bytes": 20544,
+        "sha256": "ef0447f668939f9257f62467d1a6194d34955e22ab7e334aa232865127905651"
+      }
+    }
+  },
+  "creates": [
+    {
+      "floor_id": 1009,
+      "create_source_path": "genout/shop_m.create",
+      "original_CREATE_block_byte_start_inclusive": 17022,
+      "original_CREATE_block_byte_end_exclusive": 17187,
+      "original_CREATE_block_SHA256": "d630916fec0f5c26147ad27d40c1726c94f1ff8c4835208d81077b12cffadf7b",
+      "original_arg_path": "genout/ss_1009_27_17"
+    },
+    {
+      "floor_id": 1009,
+      "create_source_path": "genout/shop_m.create",
+      "original_CREATE_block_byte_start_inclusive": 17198,
+      "original_CREATE_block_byte_end_exclusive": 17363,
+      "original_CREATE_block_SHA256": "de090be75b72292184a57a4783c58d3b71f816eeb522e7d82023176ded1a2645",
+      "original_arg_path": "genout/ss_1009_27_24"
+    },
+    {
+      "floor_id": 1009,
+      "create_source_path": "genout/shop_m.create",
+      "original_CREATE_block_byte_start_inclusive": 17374,
+      "original_CREATE_block_byte_end_exclusive": 17539,
+      "original_CREATE_block_SHA256": "6538ab430505d0c5872a0af3d082e883de40dfbd79fa578fecf30d2f780f3bfc",
+      "original_arg_path": "genout/ss_1009_27_28"
+    },
+    {
+      "floor_id": 1009,
+      "create_source_path": "genout/shop_m.create",
+      "original_CREATE_block_byte_start_inclusive": 17550,
+      "original_CREATE_block_byte_end_exclusive": 17713,
+      "original_CREATE_block_SHA256": "0559aaab49ce404de531e63caddb94da1de9485de33b5acac4fdc74552422311",
+      "original_arg_path": "genout/ss_1009_27_37"
+    },
+    {
+      "floor_id": 1009,
+      "create_source_path": "genout/shop_m.create",
+      "original_CREATE_block_byte_start_inclusive": 17901,
+      "original_CREATE_block_byte_end_exclusive": 18066,
+      "original_CREATE_block_SHA256": "ebe00907fa1a10c85d3230f9cdf93ef753b06e9da637ffa801081b791f44d1c1",
+      "original_arg_path": "genout/ss_1009_27_15"
+    },
+    {
+      "floor_id": 4009,
+      "create_source_path": "genout/shop_m2.create",
+      "original_CREATE_block_byte_start_inclusive": 18800,
+      "original_CREATE_block_byte_end_exclusive": 18971,
+      "original_CREATE_block_SHA256": "9418e9bd2a11e21d710d153cbceaee5ee3480cd77336ab1d25a06cd7e31f2563",
+      "original_arg_path": "genout/ss_4009_27_17"
+    },
+    {
+      "floor_id": 4009,
+      "create_source_path": "genout/shop_m2.create",
+      "original_CREATE_block_byte_start_inclusive": 18982,
+      "original_CREATE_block_byte_end_exclusive": 19149,
+      "original_CREATE_block_SHA256": "91828b6d47e41236743b9ca2b35d7f8681caa3064ebecef196b9b901c84b456a",
+      "original_arg_path": "genout/ss_4009_27_24"
+    },
+    {
+      "floor_id": 4009,
+      "create_source_path": "genout/shop_m2.create",
+      "original_CREATE_block_byte_start_inclusive": 19160,
+      "original_CREATE_block_byte_end_exclusive": 19331,
+      "original_CREATE_block_SHA256": "058599d8fa46f860c8caf224cd76ebeab48973987b22239c54f56cbd1ef156b7",
+      "original_arg_path": "genout/ss_4009_27_28"
+    },
+    {
+      "floor_id": 4009,
+      "create_source_path": "genout/shop_m2.create",
+      "original_CREATE_block_byte_start_inclusive": 19342,
+      "original_CREATE_block_byte_end_exclusive": 19507,
+      "original_CREATE_block_SHA256": "e7f716b6d7dbdfbb543b6a19a58a628a43b124f44cfe42ea38b77225c9da72ef",
+      "original_arg_path": "genout/ss_4009_27_37"
+    },
+    {
+      "floor_id": 4009,
+      "create_source_path": "genout/shop_m2.create",
+      "original_CREATE_block_byte_start_inclusive": 19695,
+      "original_CREATE_block_byte_end_exclusive": 19860,
+      "original_CREATE_block_SHA256": "020e792b9612c2379ac7a318f0a68218464953802825d155fe74627dbb68d317",
+      "original_arg_path": "genout/ss_4009_27_15"
+    }
+  ],
+  "shops": [
+    {
+      "floor_id": 1009,
+      "create_source_path": "genout/shop_m.create",
+      "original_CREATE_file_SHA256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+      "original_CREATE_block_byte_start_inclusive": 17022,
+      "original_CREATE_block_byte_end_exclusive": 17187,
+      "original_CREATE_block_SHA256": "d630916fec0f5c26147ad27d40c1726c94f1ff8c4835208d81077b12cffadf7b",
+      "npc_original_name": "素材屋(石、木)",
+      "borncorner_original_raw": "27,17,27,17",
+      "graphicname_original_raw": 16017,
+      "dir_original_raw": 6,
+      "enemy_original_source_shape": "npcgen_shop|file:",
+      "original_arg_path": "genout/ss_1009_27_17",
+      "original_arg_bytes": 574,
+      "original_arg_SHA256": "b9481c1df0d5126e800a8b1effa623d375b64e4b9e2eef788f0e6080074e3a50",
+      "source_ItemList_token_count": 4,
+      "source_ItemList_token_SHA256": "10930fcb8d6effb736d4b0bc8d9b17ffb3b88c6f57029bbe6ed3ca8ebff84d41",
+      "original_ItemList_raw_text": "11800-11807,11810-11817,11820-11827,11830-11837",
+      "original_token_evidence": [
+        {
+          "source_token": "11800-11807",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11800,
+          "high": 11807,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "11810-11817",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11810,
+          "high": 11817,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "11820-11827",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11820,
+          "high": 11827,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "11830-11837",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11830,
+          "high": 11837,
+          "hypothetical_occurrence_count": 8
+        }
+      ],
+      "original_buy_rate_literal": "1.0",
+      "original_sell_rate_literal": "0.5",
+      "source_direct_single_ID_count": 0,
+      "source_range_token_count": 4,
+      "source_range_assumption_candidate_occurrences": 32,
+      "candidate_item_IDs_in_source_order": [
+        11800,
+        11801,
+        11802,
+        11803,
+        11804,
+        11805,
+        11806,
+        11807,
+        11810,
+        11811,
+        11812,
+        11813,
+        11814,
+        11815,
+        11816,
+        11817,
+        11820,
+        11821,
+        11822,
+        11823,
+        11824,
+        11825,
+        11826,
+        11827,
+        11830,
+        11831,
+        11832,
+        11833,
+        11834,
+        11835,
+        11836,
+        11837
+      ],
+      "source_original_short_message_SHAs": {
+        "main_msg": "af8236f3211d31a106efa8b64645c64b9ea0bf7b6d3256fee689fd909bdee0d2",
+        "buy_main": "cf3770021b94ddd03f67b3e156aa54febc969870fb6cec21362c326b70083880",
+        "sell_main": "5f00e05f4ef183c0ef3770ca59f36532758463a568e4d36dce493072fbac677b"
+      },
+      "original_itemlist_is_native_runtime_inventory_proven": false
+    },
+    {
+      "floor_id": 1009,
+      "create_source_path": "genout/shop_m.create",
+      "original_CREATE_file_SHA256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+      "original_CREATE_block_byte_start_inclusive": 17198,
+      "original_CREATE_block_byte_end_exclusive": 17363,
+      "original_CREATE_block_SHA256": "de090be75b72292184a57a4783c58d3b71f816eeb522e7d82023176ded1a2645",
+      "npc_original_name": "素材屋(牙、皮)",
+      "borncorner_original_raw": "27,24,27,24",
+      "graphicname_original_raw": 16033,
+      "dir_original_raw": 6,
+      "enemy_original_source_shape": "npcgen_shop|file:",
+      "original_arg_path": "genout/ss_1009_27_24",
+      "original_arg_bytes": 536,
+      "original_arg_SHA256": "6427dc51276438595b44a570aa8d63bc1617bd35ef030eb4ed74c271765ccfe0",
+      "source_ItemList_token_count": 4,
+      "source_ItemList_token_SHA256": "491bd275bae4320dfd5af1c9937cfa490c2313b6e49c41aa0456734b6d8f86c4",
+      "original_ItemList_raw_text": "11830-11837,11840-11847,11880-11887,11900-11907",
+      "original_token_evidence": [
+        {
+          "source_token": "11830-11837",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11830,
+          "high": 11837,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "11840-11847",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11840,
+          "high": 11847,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "11880-11887",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11880,
+          "high": 11887,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "11900-11907",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11900,
+          "high": 11907,
+          "hypothetical_occurrence_count": 8
+        }
+      ],
+      "original_buy_rate_literal": "1.0",
+      "original_sell_rate_literal": "0.5",
+      "source_direct_single_ID_count": 0,
+      "source_range_token_count": 4,
+      "source_range_assumption_candidate_occurrences": 32,
+      "candidate_item_IDs_in_source_order": [
+        11830,
+        11831,
+        11832,
+        11833,
+        11834,
+        11835,
+        11836,
+        11837,
+        11840,
+        11841,
+        11842,
+        11843,
+        11844,
+        11845,
+        11846,
+        11847,
+        11880,
+        11881,
+        11882,
+        11883,
+        11884,
+        11885,
+        11886,
+        11887,
+        11900,
+        11901,
+        11902,
+        11903,
+        11904,
+        11905,
+        11906,
+        11907
+      ],
+      "source_original_short_message_SHAs": {
+        "main_msg": "73cb9cb2bf044686b2d6f0ff931cd423cbc12181761ab5f3bea3723560e3c5ae",
+        "buy_main": "cad2ac175af9af4b597d5a79d8f711bc7e592cce3c1d5e7eb7df0aa1c258ff41",
+        "sell_main": "c8719d0d22f90680bbdfba4db843a16d331736b22e713d99880ec45391ba2a17"
+      },
+      "original_itemlist_is_native_runtime_inventory_proven": false
+    },
+    {
+      "floor_id": 1009,
+      "create_source_path": "genout/shop_m.create",
+      "original_CREATE_file_SHA256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+      "original_CREATE_block_byte_start_inclusive": 17374,
+      "original_CREATE_block_byte_end_exclusive": 17539,
+      "original_CREATE_block_SHA256": "6538ab430505d0c5872a0af3d082e883de40dfbd79fa578fecf30d2f780f3bfc",
+      "npc_original_name": "素材屋(貝、鱗)",
+      "borncorner_original_raw": "27,28,27,28",
+      "graphicname_original_raw": 16206,
+      "dir_original_raw": 6,
+      "enemy_original_source_shape": "npcgen_shop|file:",
+      "original_arg_path": "genout/ss_1009_27_28",
+      "original_arg_bytes": 558,
+      "original_arg_SHA256": "3fcf4b686208afd8e1f3bfc24cff4761f5ad617d7e0a514664426a0e2379e562",
+      "source_ItemList_token_count": 4,
+      "source_ItemList_token_SHA256": "6e26764f0d31ea4c6c30dc8d8a44be5bc7604d7ddda63dc9f9c3cadb541f1236",
+      "original_ItemList_raw_text": "11860-11867,11870-11877,11910-11917,11920-11927",
+      "original_token_evidence": [
+        {
+          "source_token": "11860-11867",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11860,
+          "high": 11867,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "11870-11877",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11870,
+          "high": 11877,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "11910-11917",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11910,
+          "high": 11917,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "11920-11927",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11920,
+          "high": 11927,
+          "hypothetical_occurrence_count": 8
+        }
+      ],
+      "original_buy_rate_literal": "1.0",
+      "original_sell_rate_literal": "0.5",
+      "source_direct_single_ID_count": 0,
+      "source_range_token_count": 4,
+      "source_range_assumption_candidate_occurrences": 32,
+      "candidate_item_IDs_in_source_order": [
+        11860,
+        11861,
+        11862,
+        11863,
+        11864,
+        11865,
+        11866,
+        11867,
+        11870,
+        11871,
+        11872,
+        11873,
+        11874,
+        11875,
+        11876,
+        11877,
+        11910,
+        11911,
+        11912,
+        11913,
+        11914,
+        11915,
+        11916,
+        11917,
+        11920,
+        11921,
+        11922,
+        11923,
+        11924,
+        11925,
+        11926,
+        11927
+      ],
+      "source_original_short_message_SHAs": {
+        "main_msg": "73cb9cb2bf044686b2d6f0ff931cd423cbc12181761ab5f3bea3723560e3c5ae",
+        "buy_main": "a85f780b1cffc728f368e3a5d78902f511ad1ef0eab90a44aed8b4fffcc6eb6c",
+        "sell_main": "c8719d0d22f90680bbdfba4db843a16d331736b22e713d99880ec45391ba2a17"
+      },
+      "original_itemlist_is_native_runtime_inventory_proven": false
+    },
+    {
+      "floor_id": 1009,
+      "create_source_path": "genout/shop_m.create",
+      "original_CREATE_file_SHA256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+      "original_CREATE_block_byte_start_inclusive": 17550,
+      "original_CREATE_block_byte_end_exclusive": 17713,
+      "original_CREATE_block_SHA256": "0559aaab49ce404de531e63caddb94da1de9485de33b5acac4fdc74552422311",
+      "npc_original_name": "素材屋(屬性)",
+      "borncorner_original_raw": "27,37,27,37",
+      "graphicname_original_raw": 16067,
+      "dir_original_raw": 6,
+      "enemy_original_source_shape": "npcgen_shop|file:",
+      "original_arg_path": "genout/ss_1009_27_37",
+      "original_arg_bytes": 530,
+      "original_arg_SHA256": "66829a064ac857558fe2f98dab8eb776f9acd568a90a451f089f24a5c52b0e32",
+      "source_ItemList_token_count": 4,
+      "source_ItemList_token_SHA256": "42c2bfdd8139a39922fbaa4a05588322f3f67d452aa0d5fa7fa521835d5c1fb7",
+      "original_ItemList_raw_text": "12010-12017,12020-12027,12030-12037,12040-12047",
+      "original_token_evidence": [
+        {
+          "source_token": "12010-12017",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 12010,
+          "high": 12017,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "12020-12027",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 12020,
+          "high": 12027,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "12030-12037",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 12030,
+          "high": 12037,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "12040-12047",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 12040,
+          "high": 12047,
+          "hypothetical_occurrence_count": 8
+        }
+      ],
+      "original_buy_rate_literal": "1.0",
+      "original_sell_rate_literal": "0.5",
+      "source_direct_single_ID_count": 0,
+      "source_range_token_count": 4,
+      "source_range_assumption_candidate_occurrences": 32,
+      "candidate_item_IDs_in_source_order": [
+        12010,
+        12011,
+        12012,
+        12013,
+        12014,
+        12015,
+        12016,
+        12017,
+        12020,
+        12021,
+        12022,
+        12023,
+        12024,
+        12025,
+        12026,
+        12027,
+        12030,
+        12031,
+        12032,
+        12033,
+        12034,
+        12035,
+        12036,
+        12037,
+        12040,
+        12041,
+        12042,
+        12043,
+        12044,
+        12045,
+        12046,
+        12047
+      ],
+      "source_original_short_message_SHAs": {
+        "main_msg": "73cb9cb2bf044686b2d6f0ff931cd423cbc12181761ab5f3bea3723560e3c5ae",
+        "buy_main": "178e0b7fd2561c9b9fd9465ad26bf518df9f83a9651722213013dd8216e9b6ef",
+        "sell_main": "236f9e3ce796ebf10cd2a605944a5e53e719b285c5d4b3048ef3426fda724153"
+      },
+      "original_itemlist_is_native_runtime_inventory_proven": false
+    },
+    {
+      "floor_id": 1009,
+      "create_source_path": "genout/shop_m.create",
+      "original_CREATE_file_SHA256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+      "original_CREATE_block_byte_start_inclusive": 17901,
+      "original_CREATE_block_byte_end_exclusive": 18066,
+      "original_CREATE_block_SHA256": "ebe00907fa1a10c85d3230f9cdf93ef753b06e9da637ffa801081b791f44d1c1",
+      "npc_original_name": "收集破爛的商店",
+      "borncorner_original_raw": "27,15,27,15",
+      "graphicname_original_raw": 16208,
+      "dir_original_raw": 6,
+      "enemy_original_source_shape": "npcgen_shop|file:",
+      "original_arg_path": "genout/ss_1009_27_15",
+      "original_arg_bytes": 498,
+      "original_arg_SHA256": "866f90f9e39ef2b72792b1cc523010c0f707b6d3bc1d641a80b68ddf666766ae",
+      "source_ItemList_token_count": 3,
+      "source_ItemList_token_SHA256": "4186e3edc2330f13df1f80ebdcb17ea672395b35c61bb2b182eabf62c2ef298c",
+      "original_ItemList_raw_text": "2705,2612,2613",
+      "original_token_evidence": [
+        {
+          "source_token": "2705",
+          "evidence": "EXPLICIT_SINGLE_ID_IN_ORIGINAL_TEXT",
+          "id": 2705,
+          "actual_explicit_occurrence_count": 1
+        },
+        {
+          "source_token": "2612",
+          "evidence": "EXPLICIT_SINGLE_ID_IN_ORIGINAL_TEXT",
+          "id": 2612,
+          "actual_explicit_occurrence_count": 1
+        },
+        {
+          "source_token": "2613",
+          "evidence": "EXPLICIT_SINGLE_ID_IN_ORIGINAL_TEXT",
+          "id": 2613,
+          "actual_explicit_occurrence_count": 1
+        }
+      ],
+      "original_buy_rate_literal": "1.0",
+      "original_sell_rate_literal": "0.5",
+      "source_direct_single_ID_count": 3,
+      "source_range_token_count": 0,
+      "source_range_assumption_candidate_occurrences": 0,
+      "candidate_item_IDs_in_source_order": [
+        2705,
+        2612,
+        2613
+      ],
+      "source_original_short_message_SHAs": {
+        "main_msg": "af8236f3211d31a106efa8b64645c64b9ea0bf7b6d3256fee689fd909bdee0d2",
+        "buy_main": "646e4947e110d1cd16a49a9ebd7b8a48575cd77ef4f56e8bda24ba1431494c90",
+        "sell_main": "6f3f782128f1923a4f22e456ebab49c2ded470b90ea22d5d9bd7719a5835bde2"
+      },
+      "original_itemlist_is_native_runtime_inventory_proven": false
+    },
+    {
+      "floor_id": 4009,
+      "create_source_path": "genout/shop_m2.create",
+      "original_CREATE_file_SHA256": "ef0447f668939f9257f62467d1a6194d34955e22ab7e334aa232865127905651",
+      "original_CREATE_block_byte_start_inclusive": 18800,
+      "original_CREATE_block_byte_end_exclusive": 18971,
+      "original_CREATE_block_SHA256": "9418e9bd2a11e21d710d153cbceaee5ee3480cd77336ab1d25a06cd7e31f2563",
+      "npc_original_name": "素材店（石頭，木頭）",
+      "borncorner_original_raw": "27,17,27,17",
+      "graphicname_original_raw": 16017,
+      "dir_original_raw": 6,
+      "enemy_original_source_shape": "npcgen_shop|file:",
+      "original_arg_path": "genout/ss_4009_27_17",
+      "original_arg_bytes": 573,
+      "original_arg_SHA256": "1c2767cf3ed3d9ac2aebec61b80ec7052605c41d0f6f52670f6f902eae2bad26",
+      "source_ItemList_token_count": 4,
+      "source_ItemList_token_SHA256": "10930fcb8d6effb736d4b0bc8d9b17ffb3b88c6f57029bbe6ed3ca8ebff84d41",
+      "original_ItemList_raw_text": "11800-11807,11810-11817,11820-11827,11830-11837",
+      "original_token_evidence": [
+        {
+          "source_token": "11800-11807",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11800,
+          "high": 11807,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "11810-11817",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11810,
+          "high": 11817,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "11820-11827",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11820,
+          "high": 11827,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "11830-11837",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11830,
+          "high": 11837,
+          "hypothetical_occurrence_count": 8
+        }
+      ],
+      "original_buy_rate_literal": "1.0",
+      "original_sell_rate_literal": "0.5",
+      "source_direct_single_ID_count": 0,
+      "source_range_token_count": 4,
+      "source_range_assumption_candidate_occurrences": 32,
+      "candidate_item_IDs_in_source_order": [
+        11800,
+        11801,
+        11802,
+        11803,
+        11804,
+        11805,
+        11806,
+        11807,
+        11810,
+        11811,
+        11812,
+        11813,
+        11814,
+        11815,
+        11816,
+        11817,
+        11820,
+        11821,
+        11822,
+        11823,
+        11824,
+        11825,
+        11826,
+        11827,
+        11830,
+        11831,
+        11832,
+        11833,
+        11834,
+        11835,
+        11836,
+        11837
+      ],
+      "source_original_short_message_SHAs": {
+        "main_msg": "af8236f3211d31a106efa8b64645c64b9ea0bf7b6d3256fee689fd909bdee0d2",
+        "buy_main": "093c451dfdb29d520f817cfc8aa5dc725f6f942cda93d20bc82d11bb29a99e30",
+        "sell_main": "d369b742a8956dc72d153a0548c25511693426cda9cc8fcabba79c5dcce67fc0"
+      },
+      "original_itemlist_is_native_runtime_inventory_proven": false
+    },
+    {
+      "floor_id": 4009,
+      "create_source_path": "genout/shop_m2.create",
+      "original_CREATE_file_SHA256": "ef0447f668939f9257f62467d1a6194d34955e22ab7e334aa232865127905651",
+      "original_CREATE_block_byte_start_inclusive": 18982,
+      "original_CREATE_block_byte_end_exclusive": 19149,
+      "original_CREATE_block_SHA256": "91828b6d47e41236743b9ca2b35d7f8681caa3064ebecef196b9b901c84b456a",
+      "npc_original_name": "素材店（牙，皮）",
+      "borncorner_original_raw": "27,24,27,24",
+      "graphicname_original_raw": 16033,
+      "dir_original_raw": 6,
+      "enemy_original_source_shape": "npcgen_shop|file:",
+      "original_arg_path": "genout/ss_4009_27_24",
+      "original_arg_bytes": 550,
+      "original_arg_SHA256": "54964273db965658ffb08a4581e5cb206cc530fd0b659fc1ee203589c67fd5f8",
+      "source_ItemList_token_count": 4,
+      "source_ItemList_token_SHA256": "491bd275bae4320dfd5af1c9937cfa490c2313b6e49c41aa0456734b6d8f86c4",
+      "original_ItemList_raw_text": "11830-11837,11840-11847,11880-11887,11900-11907",
+      "original_token_evidence": [
+        {
+          "source_token": "11830-11837",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11830,
+          "high": 11837,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "11840-11847",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11840,
+          "high": 11847,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "11880-11887",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11880,
+          "high": 11887,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "11900-11907",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11900,
+          "high": 11907,
+          "hypothetical_occurrence_count": 8
+        }
+      ],
+      "original_buy_rate_literal": "1.0",
+      "original_sell_rate_literal": "0.5",
+      "source_direct_single_ID_count": 0,
+      "source_range_token_count": 4,
+      "source_range_assumption_candidate_occurrences": 32,
+      "candidate_item_IDs_in_source_order": [
+        11830,
+        11831,
+        11832,
+        11833,
+        11834,
+        11835,
+        11836,
+        11837,
+        11840,
+        11841,
+        11842,
+        11843,
+        11844,
+        11845,
+        11846,
+        11847,
+        11880,
+        11881,
+        11882,
+        11883,
+        11884,
+        11885,
+        11886,
+        11887,
+        11900,
+        11901,
+        11902,
+        11903,
+        11904,
+        11905,
+        11906,
+        11907
+      ],
+      "source_original_short_message_SHAs": {
+        "main_msg": "af8236f3211d31a106efa8b64645c64b9ea0bf7b6d3256fee689fd909bdee0d2",
+        "buy_main": "61bd6fa1061a573b5a6c755dc430a0617700bdea497c7008374a27e1582e8f67",
+        "sell_main": "c5780666a8a34899b65f16ae68e1c8575d9bfe824358705564d32a42f89564df"
+      },
+      "original_itemlist_is_native_runtime_inventory_proven": false
+    },
+    {
+      "floor_id": 4009,
+      "create_source_path": "genout/shop_m2.create",
+      "original_CREATE_file_SHA256": "ef0447f668939f9257f62467d1a6194d34955e22ab7e334aa232865127905651",
+      "original_CREATE_block_byte_start_inclusive": 19160,
+      "original_CREATE_block_byte_end_exclusive": 19331,
+      "original_CREATE_block_SHA256": "058599d8fa46f860c8caf224cd76ebeab48973987b22239c54f56cbd1ef156b7",
+      "npc_original_name": "素材店（貝類，鱗片）",
+      "borncorner_original_raw": "27,28,27,28",
+      "graphicname_original_raw": 16206,
+      "dir_original_raw": 6,
+      "enemy_original_source_shape": "npcgen_shop|file:",
+      "original_arg_path": "genout/ss_4009_27_28",
+      "original_arg_bytes": 556,
+      "original_arg_SHA256": "763b36c98778a66490fe5f87727b320345069a0b5b5b2e86ce0b07c98980ad4b",
+      "source_ItemList_token_count": 4,
+      "source_ItemList_token_SHA256": "6e26764f0d31ea4c6c30dc8d8a44be5bc7604d7ddda63dc9f9c3cadb541f1236",
+      "original_ItemList_raw_text": "11860-11867,11870-11877,11910-11917,11920-11927",
+      "original_token_evidence": [
+        {
+          "source_token": "11860-11867",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11860,
+          "high": 11867,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "11870-11877",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11870,
+          "high": 11877,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "11910-11917",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11910,
+          "high": 11917,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "11920-11927",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 11920,
+          "high": 11927,
+          "hypothetical_occurrence_count": 8
+        }
+      ],
+      "original_buy_rate_literal": "1.0",
+      "original_sell_rate_literal": "0.5",
+      "source_direct_single_ID_count": 0,
+      "source_range_token_count": 4,
+      "source_range_assumption_candidate_occurrences": 32,
+      "candidate_item_IDs_in_source_order": [
+        11860,
+        11861,
+        11862,
+        11863,
+        11864,
+        11865,
+        11866,
+        11867,
+        11870,
+        11871,
+        11872,
+        11873,
+        11874,
+        11875,
+        11876,
+        11877,
+        11910,
+        11911,
+        11912,
+        11913,
+        11914,
+        11915,
+        11916,
+        11917,
+        11920,
+        11921,
+        11922,
+        11923,
+        11924,
+        11925,
+        11926,
+        11927
+      ],
+      "source_original_short_message_SHAs": {
+        "main_msg": "af8236f3211d31a106efa8b64645c64b9ea0bf7b6d3256fee689fd909bdee0d2",
+        "buy_main": "8f75f13840540c999b9b317f6ef109fecf8cb603e0fdc92f24db84483597501d",
+        "sell_main": "c5780666a8a34899b65f16ae68e1c8575d9bfe824358705564d32a42f89564df"
+      },
+      "original_itemlist_is_native_runtime_inventory_proven": false
+    },
+    {
+      "floor_id": 4009,
+      "create_source_path": "genout/shop_m2.create",
+      "original_CREATE_file_SHA256": "ef0447f668939f9257f62467d1a6194d34955e22ab7e334aa232865127905651",
+      "original_CREATE_block_byte_start_inclusive": 19342,
+      "original_CREATE_block_byte_end_exclusive": 19507,
+      "original_CREATE_block_SHA256": "e7f716b6d7dbdfbb543b6a19a58a628a43b124f44cfe42ea38b77225c9da72ef",
+      "npc_original_name": "素材店（屬性）",
+      "borncorner_original_raw": "27,37,27,37",
+      "graphicname_original_raw": 16067,
+      "dir_original_raw": 6,
+      "enemy_original_source_shape": "npcgen_shop|file:",
+      "original_arg_path": "genout/ss_4009_27_37",
+      "original_arg_bytes": 552,
+      "original_arg_SHA256": "dc8f8a21d715567d38af701bf6a00d200d312d8ddfab51a27c8f8db35fbd0769",
+      "source_ItemList_token_count": 4,
+      "source_ItemList_token_SHA256": "42c2bfdd8139a39922fbaa4a05588322f3f67d452aa0d5fa7fa521835d5c1fb7",
+      "original_ItemList_raw_text": "12010-12017,12020-12027,12030-12037,12040-12047",
+      "original_token_evidence": [
+        {
+          "source_token": "12010-12017",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 12010,
+          "high": 12017,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "12020-12027",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 12020,
+          "high": 12027,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "12030-12037",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 12030,
+          "high": 12037,
+          "hypothetical_occurrence_count": 8
+        },
+        {
+          "source_token": "12040-12047",
+          "evidence": "RANGE_INCLUSIVE_INTERPRETATION_ONLY",
+          "low": 12040,
+          "high": 12047,
+          "hypothetical_occurrence_count": 8
+        }
+      ],
+      "original_buy_rate_literal": "1.0",
+      "original_sell_rate_literal": "0.5",
+      "source_direct_single_ID_count": 0,
+      "source_range_token_count": 4,
+      "source_range_assumption_candidate_occurrences": 32,
+      "candidate_item_IDs_in_source_order": [
+        12010,
+        12011,
+        12012,
+        12013,
+        12014,
+        12015,
+        12016,
+        12017,
+        12020,
+        12021,
+        12022,
+        12023,
+        12024,
+        12025,
+        12026,
+        12027,
+        12030,
+        12031,
+        12032,
+        12033,
+        12034,
+        12035,
+        12036,
+        12037,
+        12040,
+        12041,
+        12042,
+        12043,
+        12044,
+        12045,
+        12046,
+        12047
+      ],
+      "source_original_short_message_SHAs": {
+        "main_msg": "af8236f3211d31a106efa8b64645c64b9ea0bf7b6d3256fee689fd909bdee0d2",
+        "buy_main": "77681942d9797e1763b3bb0a2fbad69226b76b925887a50a4c3d8414f371c8cf",
+        "sell_main": "c5780666a8a34899b65f16ae68e1c8575d9bfe824358705564d32a42f89564df"
+      },
+      "original_itemlist_is_native_runtime_inventory_proven": false
+    },
+    {
+      "floor_id": 4009,
+      "create_source_path": "genout/shop_m2.create",
+      "original_CREATE_file_SHA256": "ef0447f668939f9257f62467d1a6194d34955e22ab7e334aa232865127905651",
+      "original_CREATE_block_byte_start_inclusive": 19695,
+      "original_CREATE_block_byte_end_exclusive": 19860,
+      "original_CREATE_block_SHA256": "020e792b9612c2379ac7a318f0a68218464953802825d155fe74627dbb68d317",
+      "npc_original_name": "收集破爛的商店",
+      "borncorner_original_raw": "27,15,27,15",
+      "graphicname_original_raw": 16208,
+      "dir_original_raw": 6,
+      "enemy_original_source_shape": "npcgen_shop|file:",
+      "original_arg_path": "genout/ss_4009_27_15",
+      "original_arg_bytes": 504,
+      "original_arg_SHA256": "4d0cdb95a4aea6783c9026efac3dd7db32fde0c4bd7c18a383a587b40247a757",
+      "source_ItemList_token_count": 3,
+      "source_ItemList_token_SHA256": "4186e3edc2330f13df1f80ebdcb17ea672395b35c61bb2b182eabf62c2ef298c",
+      "original_ItemList_raw_text": "2705,2612,2613",
+      "original_token_evidence": [
+        {
+          "source_token": "2705",
+          "evidence": "EXPLICIT_SINGLE_ID_IN_ORIGINAL_TEXT",
+          "id": 2705,
+          "actual_explicit_occurrence_count": 1
+        },
+        {
+          "source_token": "2612",
+          "evidence": "EXPLICIT_SINGLE_ID_IN_ORIGINAL_TEXT",
+          "id": 2612,
+          "actual_explicit_occurrence_count": 1
+        },
+        {
+          "source_token": "2613",
+          "evidence": "EXPLICIT_SINGLE_ID_IN_ORIGINAL_TEXT",
+          "id": 2613,
+          "actual_explicit_occurrence_count": 1
+        }
+      ],
+      "original_buy_rate_literal": "1.0",
+      "original_sell_rate_literal": "0.5",
+      "source_direct_single_ID_count": 3,
+      "source_range_token_count": 0,
+      "source_range_assumption_candidate_occurrences": 0,
+      "candidate_item_IDs_in_source_order": [
+        2705,
+        2612,
+        2613
+      ],
+      "source_original_short_message_SHAs": {
+        "main_msg": "af8236f3211d31a106efa8b64645c64b9ea0bf7b6d3256fee689fd909bdee0d2",
+        "buy_main": "f188b1fd660d14ce068683828b71c1c26afacc9cf1fc0c51049262c143b010b0",
+        "sell_main": "1372076b6f2e11788db87913e9865ce6aa2cf8046fc4e360eae7e5522e0bf331"
+      },
+      "original_itemlist_is_native_runtime_inventory_proven": false
+    }
+  ],
+  "items": [
+    {
+      "original_item_id": 2612,
+      "source_name_short": "骰子",
+      "source_itemset_original_row_1based": 2195,
+      "source_itemset0710_original_row_1based": 2590,
+      "both_original_94field_rows_identical_SHA256": "6e8220c7d78e777840a4c9ff476315f80c75478653bc4600385c620f4e6da71b",
+      "original_itemset_graphic_alias": 24298,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "NOT_IN_RETAIL_INDEX",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "EXPLICIT_SINGLE_ID_IN_ORIGINAL_TEXT"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 2613,
+      "source_name_short": "願藏娃娃",
+      "source_itemset_original_row_1based": 2196,
+      "source_itemset0710_original_row_1based": 2591,
+      "both_original_94field_rows_identical_SHA256": "9a9a16d067b7268decf5ca151704a12724282ee6056f792998de3acf4bf0610b",
+      "original_itemset_graphic_alias": 24316,
+      "original_itemset_type_column19_literal": "15",
+      "source_image_status_in_TW1_separate_retail_carrier": "NOT_IN_RETAIL_INDEX",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "EXPLICIT_SINGLE_ID_IN_ORIGINAL_TEXT"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 2705,
+      "source_name_short": "魔術筆 (油性)",
+      "source_itemset_original_row_1based": 2227,
+      "source_itemset0710_original_row_1based": 2622,
+      "both_original_94field_rows_identical_SHA256": "88a189b0d42de2094e18783d2bbf7237c2c825de0f4c357caf657c9fb8f32d6a",
+      "original_itemset_graphic_alias": 10904,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "EXPLICIT_SINGLE_ID_IN_ORIGINAL_TEXT"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11800,
+      "source_name_short": "長青苔的石",
+      "source_itemset_original_row_1based": 6809,
+      "source_itemset0710_original_row_1based": 7260,
+      "both_original_94field_rows_identical_SHA256": "02d0aa88b4cd59951ec96357e423038be369ef7548ff91f89f12f3f8b250c94f",
+      "original_itemset_graphic_alias": 24056,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11801,
+      "source_name_short": "光滑的石",
+      "source_itemset_original_row_1based": 6810,
+      "source_itemset0710_original_row_1based": 7261,
+      "both_original_94field_rows_identical_SHA256": "789bc464bf07f29ac505dc1c5d7a84625dcbd293c0252bd78a0b2ec987848696",
+      "original_itemset_graphic_alias": 24062,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11802,
+      "source_name_short": "球石",
+      "source_itemset_original_row_1based": 6811,
+      "source_itemset0710_original_row_1based": 7262,
+      "both_original_94field_rows_identical_SHA256": "81fb894044faf8cec25c7c7d82f430e4e59aba5dccabe2f40b3ee0769d647059",
+      "original_itemset_graphic_alias": 24058,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11803,
+      "source_name_short": "凹凸不平的石",
+      "source_itemset_original_row_1based": 6812,
+      "source_itemset0710_original_row_1based": 7263,
+      "both_original_94field_rows_identical_SHA256": "0a94633f8268a927cdede7308c74f9f06b96056478f69478efcdb61ecd1f17f2",
+      "original_itemset_graphic_alias": 24062,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11804,
+      "source_name_short": "洗滌石",
+      "source_itemset_original_row_1based": 6813,
+      "source_itemset0710_original_row_1based": 7264,
+      "both_original_94field_rows_identical_SHA256": "d19a94b39cffb5263079dafb7240bb2c303e1304eaf560b464ca049285ab67f3",
+      "original_itemset_graphic_alias": 24063,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11805,
+      "source_name_short": "壞石",
+      "source_itemset_original_row_1based": 6814,
+      "source_itemset0710_original_row_1based": 7265,
+      "both_original_94field_rows_identical_SHA256": "55fb9ca3aef362982e92163e8b72e6246ef4dd218d5f9db0e25a2a3ad696e3f9",
+      "original_itemset_graphic_alias": 24054,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11806,
+      "source_name_short": "酸石",
+      "source_itemset_original_row_1based": 6815,
+      "source_itemset0710_original_row_1based": 7266,
+      "both_original_94field_rows_identical_SHA256": "2b4a0ba49d71bdff899a210416468f0a29350abace7939bab7bdd244a2ec2826",
+      "original_itemset_graphic_alias": 24057,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11807,
+      "source_name_short": "好石",
+      "source_itemset_original_row_1based": 6816,
+      "source_itemset0710_original_row_1based": 7267,
+      "both_original_94field_rows_identical_SHA256": "97a186ff5b12ab0ba6e24fdd7d8b14f27d2c6828737dca337b9e68c3d36d7819",
+      "original_itemset_graphic_alias": 24059,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11810,
+      "source_name_short": "腐爛的木",
+      "source_itemset_original_row_1based": 6819,
+      "source_itemset0710_original_row_1based": 7270,
+      "both_original_94field_rows_identical_SHA256": "9a062167ad6ec132eb791d0fa128d4a30ae7e019830512ec7df5dfa50b87f1bf",
+      "original_itemset_graphic_alias": 24117,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11811,
+      "source_name_short": "小枝",
+      "source_itemset_original_row_1based": 6820,
+      "source_itemset0710_original_row_1based": 7271,
+      "both_original_94field_rows_identical_SHA256": "67e2bfcecc564f94a09e06ba0723de4c6df14166b2ec7a9917396c857df98fb1",
+      "original_itemset_graphic_alias": 24117,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11812,
+      "source_name_short": "枝幹",
+      "source_itemset_original_row_1based": 6821,
+      "source_itemset0710_original_row_1based": 7272,
+      "both_original_94field_rows_identical_SHA256": "b543e04bfa213119e9596fa0e32631362bc9c386de592117fd13449a881b957d",
+      "original_itemset_graphic_alias": 24115,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11813,
+      "source_name_short": "潮濕的木",
+      "source_itemset_original_row_1based": 6822,
+      "source_itemset0710_original_row_1based": 7273,
+      "both_original_94field_rows_identical_SHA256": "aa8ba13f9842bb4be718c0de89b2ea87ce0c3af053d068f57265ce7bd90c346c",
+      "original_itemset_graphic_alias": 24115,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11814,
+      "source_name_short": "新木",
+      "source_itemset_original_row_1based": 6823,
+      "source_itemset0710_original_row_1based": 7274,
+      "both_original_94field_rows_identical_SHA256": "fad2f0dc00f9e99db4f5415234de002c3505b499202fbaaa4b28cdd8d6a62df4",
+      "original_itemset_graphic_alias": 24115,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11815,
+      "source_name_short": "曬乾的木",
+      "source_itemset_original_row_1based": 6824,
+      "source_itemset0710_original_row_1based": 7275,
+      "both_original_94field_rows_identical_SHA256": "78836089680d6a4ed201ee8945080b56951d7f4e885305d539e7070157f20a18",
+      "original_itemset_graphic_alias": 24116,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11816,
+      "source_name_short": "光滑的木",
+      "source_itemset_original_row_1based": 6825,
+      "source_itemset0710_original_row_1based": 7276,
+      "both_original_94field_rows_identical_SHA256": "26f6086ed621b423e164cdda0e947d414efa59ee7fd356a662331744a858f826",
+      "original_itemset_graphic_alias": 24116,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11817,
+      "source_name_short": "古代木",
+      "source_itemset_original_row_1based": 6826,
+      "source_itemset0710_original_row_1based": 7277,
+      "both_original_94field_rows_identical_SHA256": "9b4ed9cb13a89bca045557e18db5e3d548b2e9d7f12bc3d0972e90fab1eff5ef",
+      "original_itemset_graphic_alias": 24114,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11820,
+      "source_name_short": "骨的碎片",
+      "source_itemset_original_row_1based": 6829,
+      "source_itemset0710_original_row_1based": 7280,
+      "both_original_94field_rows_identical_SHA256": "e40ee3efafa0396e1c3ec00b24da56b4c7d7b82d8410d10facc4d30516c78282",
+      "original_itemset_graphic_alias": 24108,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11821,
+      "source_name_short": "有裂痕的骨",
+      "source_itemset_original_row_1based": 6830,
+      "source_itemset0710_original_row_1based": 7281,
+      "both_original_94field_rows_identical_SHA256": "e382445460a7b975b66f6ef06d53f83a6a2177d8378439dfc9bbb4a4431c6af0",
+      "original_itemset_graphic_alias": 24108,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11822,
+      "source_name_short": "弱的骨",
+      "source_itemset_original_row_1based": 6831,
+      "source_itemset0710_original_row_1based": 7282,
+      "both_original_94field_rows_identical_SHA256": "683b213d033f84987e00eff96173c1382ef96fe89fb1d651ac17d26e7eb37093",
+      "original_itemset_graphic_alias": 24108,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11823,
+      "source_name_short": "變色的骨",
+      "source_itemset_original_row_1based": 6832,
+      "source_itemset0710_original_row_1based": 7283,
+      "both_original_94field_rows_identical_SHA256": "15ce3735be9913bde29e0c2e9e3a4f709cfbfd3b5d8e8bf9434aa42596477453",
+      "original_itemset_graphic_alias": 24111,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11824,
+      "source_name_short": "珍貴的骨",
+      "source_itemset_original_row_1based": 6833,
+      "source_itemset0710_original_row_1based": 7284,
+      "both_original_94field_rows_identical_SHA256": "b8aa36893a56cc3853e731dc8cdfa4121975402f3eb5442f6f7fbaed7536162e",
+      "original_itemset_graphic_alias": 24111,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11825,
+      "source_name_short": "硬的骨",
+      "source_itemset_original_row_1based": 6834,
+      "source_itemset0710_original_row_1based": 7285,
+      "both_original_94field_rows_identical_SHA256": "2ed42b9c9e85e89711e8d700ae09790ded19271d7cdaee297dcfd755307721e3",
+      "original_itemset_graphic_alias": 24112,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11826,
+      "source_name_short": "獸之骨",
+      "source_itemset_original_row_1based": 6835,
+      "source_itemset0710_original_row_1based": 7286,
+      "both_original_94field_rows_identical_SHA256": "5b3fe05c5abe33fcee0f4b71072d1372fc1c70406d85a0d29426e4ddefef757a",
+      "original_itemset_graphic_alias": 24112,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11827,
+      "source_name_short": "古老的骨",
+      "source_itemset_original_row_1based": 6836,
+      "source_itemset0710_original_row_1based": 7287,
+      "both_original_94field_rows_identical_SHA256": "6b781d7f30728ccc7de225f79ced6a99f15bb5e2ccd00eb6dcb5c38dcd52b0bf",
+      "original_itemset_graphic_alias": 20036,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11830,
+      "source_name_short": "牙的碎片",
+      "source_itemset_original_row_1based": 6839,
+      "source_itemset0710_original_row_1based": 7290,
+      "both_original_94field_rows_identical_SHA256": "9d6235b218cafde9adfa4175024ef8c199a018f5427142dff11b4fe8ab4608f3",
+      "original_itemset_graphic_alias": 24109,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11831,
+      "source_name_short": "小牙",
+      "source_itemset_original_row_1based": 6840,
+      "source_itemset0710_original_row_1based": 7291,
+      "both_original_94field_rows_identical_SHA256": "960b0d57dc7edab1f45b050619185455d11c19a063d0320324cdcd466d565116",
+      "original_itemset_graphic_alias": 24109,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11832,
+      "source_name_short": "折斷的牙",
+      "source_itemset_original_row_1based": 6841,
+      "source_itemset0710_original_row_1based": 7292,
+      "both_original_94field_rows_identical_SHA256": "47b46f62a0f2dddde6fbe7d615f1a47cf15bbbaa9389f1e085d491c08c849b53",
+      "original_itemset_graphic_alias": 24109,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11833,
+      "source_name_short": "硬的牙",
+      "source_itemset_original_row_1based": 6842,
+      "source_itemset0710_original_row_1based": 7293,
+      "both_original_94field_rows_identical_SHA256": "dc8064891a3403be071c4da1967be8741724fb6ae4a6ad3f8b4b469fb3dfb42d",
+      "original_itemset_graphic_alias": 24109,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11834,
+      "source_name_short": "大牙",
+      "source_itemset_original_row_1based": 6843,
+      "source_itemset0710_original_row_1based": 7294,
+      "both_original_94field_rows_identical_SHA256": "9d0962ce30be3e34936e6f2906b7566dc7490445cc7a5861350468da91f74298",
+      "original_itemset_graphic_alias": 24109,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11835,
+      "source_name_short": "銳利的牙",
+      "source_itemset_original_row_1based": 6844,
+      "source_itemset0710_original_row_1based": 7295,
+      "both_original_94field_rows_identical_SHA256": "2061ad3f4c7f78769bd2f5e3811e8c256b737d5cd7eb6e5ded8e5515282383ca",
+      "original_itemset_graphic_alias": 24110,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11836,
+      "source_name_short": "猛獸的牙",
+      "source_itemset_original_row_1based": 6845,
+      "source_itemset0710_original_row_1based": 7296,
+      "both_original_94field_rows_identical_SHA256": "f8854da5eb39868d27b01e45a62af0303091d7c261c5583a578c7553b73a040e",
+      "original_itemset_graphic_alias": 24110,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11837,
+      "source_name_short": "龍之牙",
+      "source_itemset_original_row_1based": 6846,
+      "source_itemset0710_original_row_1based": 7297,
+      "both_original_94field_rows_identical_SHA256": "104904e4916a923e1fd4d626f63adb9898463c8f344a1b7df3c9b087fa615bbf",
+      "original_itemset_graphic_alias": 24110,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11840,
+      "source_name_short": "破爛的皮",
+      "source_itemset_original_row_1based": 6849,
+      "source_itemset0710_original_row_1based": 7300,
+      "both_original_94field_rows_identical_SHA256": "7ad6730d23c8225b3a2d18b24a8dcc295971e7d0619ef3bb1ccd792a5e0ab364",
+      "original_itemset_graphic_alias": 24124,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11841,
+      "source_name_short": "易破的皮",
+      "source_itemset_original_row_1based": 6850,
+      "source_itemset0710_original_row_1based": 7301,
+      "both_original_94field_rows_identical_SHA256": "bc47a3f62de3049991ea6625be3d917f5bfcbbe11b858592bd4d7e35f5ff0ee6",
+      "original_itemset_graphic_alias": 24124,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11842,
+      "source_name_short": "薄的皮",
+      "source_itemset_original_row_1based": 6851,
+      "source_itemset0710_original_row_1based": 7302,
+      "both_original_94field_rows_identical_SHA256": "4bd72f17523edb7e05db11e79102a6797e08085c35d7afa865a275336aa20a34",
+      "original_itemset_graphic_alias": 24125,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11843,
+      "source_name_short": "光滑的皮",
+      "source_itemset_original_row_1based": 6852,
+      "source_itemset0710_original_row_1based": 7303,
+      "both_original_94field_rows_identical_SHA256": "74a0432c4fc1d30fb8269c7311aeeffd0d3f151251559c922deb1e74ad2644b0",
+      "original_itemset_graphic_alias": 24125,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11844,
+      "source_name_short": "厚的皮",
+      "source_itemset_original_row_1based": 6853,
+      "source_itemset0710_original_row_1based": 7304,
+      "both_original_94field_rows_identical_SHA256": "c1ae1e4e6aaa426865822b7c5ad5289febf5268294f5a7db9e27ff7de7521dbf",
+      "original_itemset_graphic_alias": 24126,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11845,
+      "source_name_short": "熟皮",
+      "source_itemset_original_row_1based": 6854,
+      "source_itemset0710_original_row_1based": 7305,
+      "both_original_94field_rows_identical_SHA256": "ee9e89b5ebe197adf05ec3c990487a332dcc313ddc9247e7395a91b9f33d80c9",
+      "original_itemset_graphic_alias": 24126,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11846,
+      "source_name_short": "有光澤的皮",
+      "source_itemset_original_row_1based": 6855,
+      "source_itemset0710_original_row_1based": 7306,
+      "both_original_94field_rows_identical_SHA256": "61f51186224470ef8ec451488fb7ad23df0d34563bbcb59616c2c8498827143a",
+      "original_itemset_graphic_alias": 24127,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11847,
+      "source_name_short": "硬的皮",
+      "source_itemset_original_row_1based": 6856,
+      "source_itemset0710_original_row_1based": 7307,
+      "both_original_94field_rows_identical_SHA256": "14338002acccf15f3fd92d907d13b92cb7a3613607ed0911273dd07770217e33",
+      "original_itemset_graphic_alias": 24127,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11860,
+      "source_name_short": "砂色的貝殼",
+      "source_itemset_original_row_1based": 6869,
+      "source_itemset0710_original_row_1based": 7320,
+      "both_original_94field_rows_identical_SHA256": "60c38327763c5e05b20339fe42992e857ae9ab7a77f3b635bac8266bcc4b4cdc",
+      "original_itemset_graphic_alias": 24130,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11861,
+      "source_name_short": "土色的貝殼",
+      "source_itemset_original_row_1based": 6870,
+      "source_itemset0710_original_row_1based": 7321,
+      "both_original_94field_rows_identical_SHA256": "d5beb7341087324585e3bc91567cc77394621f2fddcab18faf50893488b3d96f",
+      "original_itemset_graphic_alias": 24130,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11862,
+      "source_name_short": "櫻色的貝殼",
+      "source_itemset_original_row_1based": 6871,
+      "source_itemset0710_original_row_1based": 7322,
+      "both_original_94field_rows_identical_SHA256": "e8387a4c494a05a72941bf09c2947f3517912ccf878d148fd4a2406df586f4e8",
+      "original_itemset_graphic_alias": 24131,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11863,
+      "source_name_short": "紅色的貝殼",
+      "source_itemset_original_row_1based": 6872,
+      "source_itemset0710_original_row_1based": 7323,
+      "both_original_94field_rows_identical_SHA256": "b108577ab25d5e33b9f30c90d005b2c0c0a4f63bec00468ee44a023a622f938f",
+      "original_itemset_graphic_alias": 24131,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11864,
+      "source_name_short": "蒼色的貝殼",
+      "source_itemset_original_row_1based": 6873,
+      "source_itemset0710_original_row_1based": 7324,
+      "both_original_94field_rows_identical_SHA256": "520cdc5d82cddbd35f4e51ee544bc729edc6c61d9e6545bb1ec95d3340bc4461",
+      "original_itemset_graphic_alias": 24132,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11865,
+      "source_name_short": "海色的貝殼",
+      "source_itemset_original_row_1based": 6874,
+      "source_itemset0710_original_row_1based": 7325,
+      "both_original_94field_rows_identical_SHA256": "db53bb50ebb891f85443513a0b5dfaec2f704d0979248750a02457f845728543",
+      "original_itemset_graphic_alias": 24132,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11866,
+      "source_name_short": "水色的貝殼",
+      "source_itemset_original_row_1based": 6875,
+      "source_itemset0710_original_row_1based": 7326,
+      "both_original_94field_rows_identical_SHA256": "1c918a9cf98038d5e78ad66852a9ecce6f5c93a6384f72fc7fa81102b173df3b",
+      "original_itemset_graphic_alias": 24133,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11867,
+      "source_name_short": "天空色的貝殼",
+      "source_itemset_original_row_1based": 6876,
+      "source_itemset0710_original_row_1based": 7327,
+      "both_original_94field_rows_identical_SHA256": "3f4466ce761f5708e7696a01b1b6922d53e138b3d0fc14189444f46b293c1b45",
+      "original_itemset_graphic_alias": 24133,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11870,
+      "source_name_short": "裂開的殼",
+      "source_itemset_original_row_1based": 6879,
+      "source_itemset0710_original_row_1based": 7330,
+      "both_original_94field_rows_identical_SHA256": "c13188271d8af7cec96e16b19a6d5d483ccc2f6ad3b33737e17239bf0a97abd4",
+      "original_itemset_graphic_alias": 24150,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11871,
+      "source_name_short": "小的殼",
+      "source_itemset_original_row_1based": 6880,
+      "source_itemset0710_original_row_1based": 7331,
+      "both_original_94field_rows_identical_SHA256": "71add0f0248d3a7baa2a2168a4bb5074c4326189fd24ded377d7214d498f116c",
+      "original_itemset_graphic_alias": 24150,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11872,
+      "source_name_short": "有裂痕的殼",
+      "source_itemset_original_row_1based": 6881,
+      "source_itemset0710_original_row_1based": 7332,
+      "both_original_94field_rows_identical_SHA256": "eb2abeca9b782821aa773e1aa7500a8605a053ff3e4817d6562de2ac4cea857f",
+      "original_itemset_graphic_alias": 24150,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11873,
+      "source_name_short": "薄的殼",
+      "source_itemset_original_row_1based": 6882,
+      "source_itemset0710_original_row_1based": 7333,
+      "both_original_94field_rows_identical_SHA256": "586aa9e93452bab67962a37d3b11dd6b265aa23ca362861129b617568908dd2d",
+      "original_itemset_graphic_alias": 24149,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11874,
+      "source_name_short": "褪色的殼",
+      "source_itemset_original_row_1based": 6883,
+      "source_itemset0710_original_row_1based": 7334,
+      "both_original_94field_rows_identical_SHA256": "b0ec6f7fd2fdd2d3555870d94a5e73cebd300b4fc765414d8e5942b81fdbeab9",
+      "original_itemset_graphic_alias": 24149,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11875,
+      "source_name_short": "大的殼",
+      "source_itemset_original_row_1based": 6884,
+      "source_itemset0710_original_row_1based": 7335,
+      "both_original_94field_rows_identical_SHA256": "63be9c02bd711775ebc1958e03752b18167d5c1630916c9017df2865fdb04024",
+      "original_itemset_graphic_alias": 24149,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11876,
+      "source_name_short": "硬的殼",
+      "source_itemset_original_row_1based": 6885,
+      "source_itemset0710_original_row_1based": 7336,
+      "both_original_94field_rows_identical_SHA256": "bf2ded0e964af76730563e041ed29c93868f34c5d1df109dc5c0136b7ed643ee",
+      "original_itemset_graphic_alias": 24148,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11877,
+      "source_name_short": "珍貴的殼",
+      "source_itemset_original_row_1based": 6886,
+      "source_itemset0710_original_row_1based": 7337,
+      "both_original_94field_rows_identical_SHA256": "33366b70dcde7d1bbcd04886e3be4c87cb86eaa0df2da6cb5043a2753a4f55e8",
+      "original_itemset_graphic_alias": 24148,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11880,
+      "source_name_short": "蜘蛛的絲",
+      "source_itemset_original_row_1based": 6889,
+      "source_itemset0710_original_row_1based": 7340,
+      "both_original_94field_rows_identical_SHA256": "08ed9a6de6f73ea05e79ff6ee639fa1f5e0ea400098795c5031caea8221698ac",
+      "original_itemset_graphic_alias": 24105,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11881,
+      "source_name_short": "草的蔓",
+      "source_itemset_original_row_1based": 6890,
+      "source_itemset0710_original_row_1based": 7341,
+      "both_original_94field_rows_identical_SHA256": "454b5ac94fd4349414e0ab45fadb1b2f4f1ca73f482e1400aee7fa062dc2932e",
+      "original_itemset_graphic_alias": 24107,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11882,
+      "source_name_short": "木的蔓",
+      "source_itemset_original_row_1based": 6891,
+      "source_itemset0710_original_row_1based": 7342,
+      "both_original_94field_rows_identical_SHA256": "d86629594fcc5e6882c4e222a88127a3ab453cd92e33a7cc4636c27a5dcd31c5",
+      "original_itemset_graphic_alias": 24107,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11883,
+      "source_name_short": "毛編的繩",
+      "source_itemset_original_row_1based": 6892,
+      "source_itemset0710_original_row_1based": 7343,
+      "both_original_94field_rows_identical_SHA256": "ecf9bd71f5d7548bf4157e0c3e92d55adec23524a92e79bc75f4f74336a4fbf3",
+      "original_itemset_graphic_alias": 24104,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11884,
+      "source_name_short": "皮的繩",
+      "source_itemset_original_row_1based": 6893,
+      "source_itemset0710_original_row_1based": 7344,
+      "both_original_94field_rows_identical_SHA256": "febce79a473a558fb7f252cc71e1c13de35b2837f78f9376d607eb5bc240f3c6",
+      "original_itemset_graphic_alias": 24104,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11885,
+      "source_name_short": "耐用的蔓",
+      "source_itemset_original_row_1based": 6894,
+      "source_itemset0710_original_row_1based": 7345,
+      "both_original_94field_rows_identical_SHA256": "bd5d0d440fcdd0de97e39e34c39882a6fc27dd042a27cffc31aa0558ce7edda8",
+      "original_itemset_graphic_alias": 24106,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11886,
+      "source_name_short": "粗糙的繩",
+      "source_itemset_original_row_1based": 6895,
+      "source_itemset0710_original_row_1based": 7346,
+      "both_original_94field_rows_identical_SHA256": "ed1d09495eaa28fc1ecd63349c2e8e79b8957688991c4659696ee8a5643670c9",
+      "original_itemset_graphic_alias": 24104,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11887,
+      "source_name_short": "強的繩",
+      "source_itemset_original_row_1based": 6896,
+      "source_itemset0710_original_row_1based": 7347,
+      "both_original_94field_rows_identical_SHA256": "f2f35ec21d9da40798d9234d88823c0887301d224eba740ef4d9a405ac26b402",
+      "original_itemset_graphic_alias": 24104,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11900,
+      "source_name_short": "乾涸的黏土",
+      "source_itemset_original_row_1based": 6909,
+      "source_itemset0710_original_row_1based": 7360,
+      "both_original_94field_rows_identical_SHA256": "c0bdc451787ab2b3417c17ffd763f5a5fe8f0eed8e73b58cf2dfe95ace520fdd",
+      "original_itemset_graphic_alias": 24062,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11901,
+      "source_name_short": "黏黏的黏土",
+      "source_itemset_original_row_1based": 6910,
+      "source_itemset0710_original_row_1based": 7361,
+      "both_original_94field_rows_identical_SHA256": "101eda13f031950b10a6d19ed37a0f4b05dbf321e59913a7cfac3430cfbe4d1d",
+      "original_itemset_graphic_alias": 24062,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11902,
+      "source_name_short": "水分多的黏土",
+      "source_itemset_original_row_1based": 6911,
+      "source_itemset0710_original_row_1based": 7362,
+      "both_original_94field_rows_identical_SHA256": "f7019dec270cccdb9977bd74dc2fbff00d910812ab9ee298fb6fba1d179dde5e",
+      "original_itemset_graphic_alias": 24062,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11903,
+      "source_name_short": "柔軟的黏土",
+      "source_itemset_original_row_1based": 6912,
+      "source_itemset0710_original_row_1based": 7363,
+      "both_original_94field_rows_identical_SHA256": "f2d6d25bf6fe1d552fc6571cf9bf2513ab6f12da5d2347c0371f719e62a3611a",
+      "original_itemset_graphic_alias": 24062,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11904,
+      "source_name_short": "硬的黏土",
+      "source_itemset_original_row_1based": 6913,
+      "source_itemset0710_original_row_1based": 7364,
+      "both_original_94field_rows_identical_SHA256": "29cb72e769aa90569dfac4070f3bd7e5a35ee2787324c9c42da2297a4d1fdddf",
+      "original_itemset_graphic_alias": 24062,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11905,
+      "source_name_short": "不可思議的黏土",
+      "source_itemset_original_row_1based": 6914,
+      "source_itemset0710_original_row_1based": 7365,
+      "both_original_94field_rows_identical_SHA256": "0b1fe99a6b5fc533ce78a47fdb26fa6b733d08e7b6bab48039e8ea90f06e5f65",
+      "original_itemset_graphic_alias": 24062,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11906,
+      "source_name_short": "化石的黏土",
+      "source_itemset_original_row_1based": 6915,
+      "source_itemset0710_original_row_1based": 7366,
+      "both_original_94field_rows_identical_SHA256": "346649c37add936013c98cd4d449982d52db67bf2ee50d3d48b17d95c621a19b",
+      "original_itemset_graphic_alias": 24062,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11907,
+      "source_name_short": "上等的黏土",
+      "source_itemset_original_row_1based": 6916,
+      "source_itemset0710_original_row_1based": 7367,
+      "both_original_94field_rows_identical_SHA256": "0975d7c53fdce3e2e10a7485ec3ffeb6e96807be8471ba23175f0c9235234790",
+      "original_itemset_graphic_alias": 24062,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11910,
+      "source_name_short": "鱗的碎片",
+      "source_itemset_original_row_1based": 6919,
+      "source_itemset0710_original_row_1based": 7370,
+      "both_original_94field_rows_identical_SHA256": "f213babfbc5d0fcfeeb1a2c64d4449899b7f9909c94820fc7e970a67b77b0af7",
+      "original_itemset_graphic_alias": 22034,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11911,
+      "source_name_short": "小魚的鱗",
+      "source_itemset_original_row_1based": 6920,
+      "source_itemset0710_original_row_1based": 7371,
+      "both_original_94field_rows_identical_SHA256": "54954a83dd626a8638741cca05164959c270a1072b1f80398f93ccb08b1cab45",
+      "original_itemset_graphic_alias": 22034,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11912,
+      "source_name_short": "小的鱗",
+      "source_itemset_original_row_1based": 6921,
+      "source_itemset0710_original_row_1based": 7372,
+      "both_original_94field_rows_identical_SHA256": "50337fd7b084981ff820cdf81ae3def77f42ad3c11d2f0ce4ce07b884d93da77",
+      "original_itemset_graphic_alias": 22035,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11913,
+      "source_name_short": "清澈的鱗",
+      "source_itemset_original_row_1based": 6922,
+      "source_itemset0710_original_row_1based": 7373,
+      "both_original_94field_rows_identical_SHA256": "a539f6316707a666a10072d7940320bc3321a03007a3e4cdd4a57bed0c3ba085",
+      "original_itemset_graphic_alias": 22035,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11914,
+      "source_name_short": "輕的鱗",
+      "source_itemset_original_row_1based": 6923,
+      "source_itemset0710_original_row_1based": 7374,
+      "both_original_94field_rows_identical_SHA256": "d8f4d7f7cd5b97fce373c87e168f435360860670a803e20102163a7264befd95",
+      "original_itemset_graphic_alias": 22033,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11915,
+      "source_name_short": "大的鱗",
+      "source_itemset_original_row_1based": 6924,
+      "source_itemset0710_original_row_1based": 7375,
+      "both_original_94field_rows_identical_SHA256": "f6256eea2abcbc75a8ec6b28f37255a37dccd586bcf8fec1c43257a126e124a6",
+      "original_itemset_graphic_alias": 22033,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11916,
+      "source_name_short": "重的鱗",
+      "source_itemset_original_row_1based": 6925,
+      "source_itemset0710_original_row_1based": 7376,
+      "both_original_94field_rows_identical_SHA256": "65130cb6cc352334aad2201b4008be5ca5432155b9b24d5db865ffa8fa664ea4",
+      "original_itemset_graphic_alias": 22037,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11917,
+      "source_name_short": "硬的鱗",
+      "source_itemset_original_row_1based": 6926,
+      "source_itemset0710_original_row_1based": 7377,
+      "both_original_94field_rows_identical_SHA256": "b3ea14a4464eb73280b6d138765b62279fbbea6f066d2cc58009ca59c990d9b5",
+      "original_itemset_graphic_alias": 22037,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11920,
+      "source_name_short": "腐爛的葉",
+      "source_itemset_original_row_1based": 6929,
+      "source_itemset0710_original_row_1based": 7380,
+      "both_original_94field_rows_identical_SHA256": "9ff14be26a2592c4f5650063aa3b86be57bb322d8d9655af69e933d041620481",
+      "original_itemset_graphic_alias": 24180,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11921,
+      "source_name_short": "枯萎的葉",
+      "source_itemset_original_row_1based": 6930,
+      "source_itemset0710_original_row_1based": 7381,
+      "both_original_94field_rows_identical_SHA256": "d6e280d58c1c0b18ce4f31a1c625e8d16dac14cd3f6c566bb738d63cdddd3194",
+      "original_itemset_graphic_alias": 24180,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11922,
+      "source_name_short": "小的葉",
+      "source_itemset_original_row_1based": 6931,
+      "source_itemset0710_original_row_1based": 7382,
+      "both_original_94field_rows_identical_SHA256": "2cfd8bae352f50032e50db5e3d4580a07125b2b116f3e5d7de7ca6d0f24a12c3",
+      "original_itemset_graphic_alias": 24179,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11923,
+      "source_name_short": "新葉",
+      "source_itemset_original_row_1based": 6932,
+      "source_itemset0710_original_row_1based": 7383,
+      "both_original_94field_rows_identical_SHA256": "f597129f1a3972385847670066ab6051083fbc22b0fe67d7b6c7e01b4d618114",
+      "original_itemset_graphic_alias": 24179,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11924,
+      "source_name_short": "珍貴的葉",
+      "source_itemset_original_row_1based": 6933,
+      "source_itemset0710_original_row_1based": 7384,
+      "both_original_94field_rows_identical_SHA256": "7165b6e5c247cd1f582a6b9a05527576f631f04e3067d3916fba249710956d71",
+      "original_itemset_graphic_alias": 24179,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11925,
+      "source_name_short": "大的葉",
+      "source_itemset_original_row_1based": 6934,
+      "source_itemset0710_original_row_1based": 7385,
+      "both_original_94field_rows_identical_SHA256": "0b4ac5824e85de571612e7b8a6cc625902559ca0195992851276841ca0ad9fa0",
+      "original_itemset_graphic_alias": 24178,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11926,
+      "source_name_short": "不可思議的葉",
+      "source_itemset_original_row_1based": 6935,
+      "source_itemset0710_original_row_1based": 7386,
+      "both_original_94field_rows_identical_SHA256": "334539ef1d463b8c0a13609c4651cc5e8c3a9776404abb38f727712bd88d470a",
+      "original_itemset_graphic_alias": 24179,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 11927,
+      "source_name_short": "靈木的葉",
+      "source_itemset_original_row_1based": 6936,
+      "source_itemset0710_original_row_1based": 7387,
+      "both_original_94field_rows_identical_SHA256": "47b00eb245abafced228f42cee1fce1752ab712e515263798118714c0a091f4c",
+      "original_itemset_graphic_alias": 24178,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12010,
+      "source_name_short": "粗糙的砂",
+      "source_itemset_original_row_1based": 7019,
+      "source_itemset0710_original_row_1based": 7470,
+      "both_original_94field_rows_identical_SHA256": "e240f1a12e1dff930108d4d5aeaebc023923ef5a22807878075ad473402db0bd",
+      "original_itemset_graphic_alias": 24161,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12011,
+      "source_name_short": "潮濕的砂",
+      "source_itemset_original_row_1based": 7020,
+      "source_itemset0710_original_row_1based": 7471,
+      "both_original_94field_rows_identical_SHA256": "581d5c9e33738edbc602fba474d16b7a29e2e6716bc6c62a48fea1c5db62fdaf",
+      "original_itemset_graphic_alias": 24161,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12012,
+      "source_name_short": "細的砂",
+      "source_itemset_original_row_1based": 7021,
+      "source_itemset0710_original_row_1based": 7472,
+      "both_original_94field_rows_identical_SHA256": "57325e4bdf5fb97ee34416b476036aa1cd83a573ab559630dffd56fea7fe40a0",
+      "original_itemset_graphic_alias": 24161,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12013,
+      "source_name_short": "乾燥的砂",
+      "source_itemset_original_row_1based": 7022,
+      "source_itemset0710_original_row_1based": 7473,
+      "both_original_94field_rows_identical_SHA256": "8e6c6597a70d10eeb51f16cedc4c740c41ccc8bb7fe286cbe5ad0a81c960ab7f",
+      "original_itemset_graphic_alias": 24161,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12014,
+      "source_name_short": "美麗的砂",
+      "source_itemset_original_row_1based": 7023,
+      "source_itemset0710_original_row_1based": 7474,
+      "both_original_94field_rows_identical_SHA256": "650f166bcd58109547429e8dc39547d9e539365425d2ef41636431f64420fef5",
+      "original_itemset_graphic_alias": 24161,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12015,
+      "source_name_short": "閃耀的砂",
+      "source_itemset_original_row_1based": 7024,
+      "source_itemset0710_original_row_1based": 7475,
+      "both_original_94field_rows_identical_SHA256": "84d9d143b4c921177aa2e595d40688285a9e9a94da1a5a3f171e776c6e9241de",
+      "original_itemset_graphic_alias": 24161,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12016,
+      "source_name_short": "光輝的砂",
+      "source_itemset_original_row_1based": 7025,
+      "source_itemset0710_original_row_1based": 7476,
+      "both_original_94field_rows_identical_SHA256": "78fb9d146ec708889e6982ab31e67374cbd799a60424f1a21cfecb72139e97c0",
+      "original_itemset_graphic_alias": 24161,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12017,
+      "source_name_short": "海之砂",
+      "source_itemset_original_row_1based": 7026,
+      "source_itemset0710_original_row_1based": 7477,
+      "both_original_94field_rows_identical_SHA256": "ac02b8f3cd5a1b037704e93d50bb400be1c69be83cd1c5c4efe7571d93247c74",
+      "original_itemset_graphic_alias": 24161,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12020,
+      "source_name_short": "朝露的水滴",
+      "source_itemset_original_row_1based": 7029,
+      "source_itemset0710_original_row_1based": 7480,
+      "both_original_94field_rows_identical_SHA256": "76f9f5b7b192c646dab42ef3fe791048cbfb46b5dc46451d1414684f2a7acd04",
+      "original_itemset_graphic_alias": 24144,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12021,
+      "source_name_short": "雨水的水滴",
+      "source_itemset_original_row_1based": 7030,
+      "source_itemset0710_original_row_1based": 7481,
+      "both_original_94field_rows_identical_SHA256": "8b3a3b1c015fb30a47728d22868515671e24ab0842aa52f3cf4a7602403f730e",
+      "original_itemset_graphic_alias": 24144,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12022,
+      "source_name_short": "湧泉的水滴",
+      "source_itemset_original_row_1based": 7031,
+      "source_itemset0710_original_row_1based": 7482,
+      "both_original_94field_rows_identical_SHA256": "e470e99e7da0c7ff41739f80835a022ab85c52aab6e13022756fa20829bb824f",
+      "original_itemset_graphic_alias": 24144,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12023,
+      "source_name_short": "融雪的水滴",
+      "source_itemset_original_row_1based": 7032,
+      "source_itemset0710_original_row_1based": 7483,
+      "both_original_94field_rows_identical_SHA256": "aedc72d16f253c882b3b184bf08c8c8d6f46317ab77c0440ba1fc11e23d6ad42",
+      "original_itemset_graphic_alias": 24144,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12024,
+      "source_name_short": "清水的水滴",
+      "source_itemset_original_row_1based": 7033,
+      "source_itemset0710_original_row_1based": 7484,
+      "both_original_94field_rows_identical_SHA256": "db0df6275cd70bb8e757b371bf765526f17f7113151a28f4fcda00e38db98ba7",
+      "original_itemset_graphic_alias": 24144,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12025,
+      "source_name_short": "蒸餾水的水滴",
+      "source_itemset_original_row_1based": 7034,
+      "source_itemset0710_original_row_1based": 7485,
+      "both_original_94field_rows_identical_SHA256": "395335c82144f6599f5c285eeea82dd143f1469610bc2e76e1f3033f7135416b",
+      "original_itemset_graphic_alias": 24144,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12026,
+      "source_name_short": "地下水的水滴",
+      "source_itemset_original_row_1based": 7035,
+      "source_itemset0710_original_row_1based": 7486,
+      "both_original_94field_rows_identical_SHA256": "305003177b39f713ecec01dad387eea21049b3fe75ce8cdd0f53dbe129c8a775",
+      "original_itemset_graphic_alias": 24144,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12027,
+      "source_name_short": "聖水的水滴",
+      "source_itemset_original_row_1based": 7036,
+      "source_itemset0710_original_row_1based": 7487,
+      "both_original_94field_rows_identical_SHA256": "bfde7798c2eb1352805519188971f8c874801e67a28385adc66242fada6b3fa2",
+      "original_itemset_graphic_alias": 24144,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12030,
+      "source_name_short": "火藥草",
+      "source_itemset_original_row_1based": 7039,
+      "source_itemset0710_original_row_1based": 7490,
+      "both_original_94field_rows_identical_SHA256": "8eaa1345d8c8c380b91047a207d34c8791547db63675d861ae9062c163cde182",
+      "original_itemset_graphic_alias": 23029,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12031,
+      "source_name_short": "火之粉草",
+      "source_itemset_original_row_1based": 7040,
+      "source_itemset0710_original_row_1based": 7491,
+      "both_original_94field_rows_identical_SHA256": "70f38ed5ed5605e46fdb77c4add1caf7c6c7005e6a04f9af36f5c1c950e6a2d8",
+      "original_itemset_graphic_alias": 23029,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12032,
+      "source_name_short": "火花草",
+      "source_itemset_original_row_1based": 7041,
+      "source_itemset0710_original_row_1based": 7492,
+      "both_original_94field_rows_identical_SHA256": "4f9d6e4b075fbc5ab5fde964f73cc4c21e4cf09932568843603d9152add11b66",
+      "original_itemset_graphic_alias": 23029,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12033,
+      "source_name_short": "燈火草",
+      "source_itemset_original_row_1based": 7042,
+      "source_itemset0710_original_row_1based": 7493,
+      "both_original_94field_rows_identical_SHA256": "1defe807f33b960971c4ddb67f1678776cd8313b59ce959845ec6fb1f124b9a7",
+      "original_itemset_graphic_alias": 23029,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12034,
+      "source_name_short": "火炎草",
+      "source_itemset_original_row_1based": 7043,
+      "source_itemset0710_original_row_1based": 7494,
+      "both_original_94field_rows_identical_SHA256": "e1f563c4369ee3c58ec5bb348db53226bde9bc0d69bf4ebc2061967c8ee34fa3",
+      "original_itemset_graphic_alias": 23029,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12035,
+      "source_name_short": "燃火草",
+      "source_itemset_original_row_1based": 7044,
+      "source_itemset0710_original_row_1based": 7495,
+      "both_original_94field_rows_identical_SHA256": "4c84aba14292dc15cb32a0b84358e1eda3aef7022262c58960ac20341c177611",
+      "original_itemset_graphic_alias": 23029,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12036,
+      "source_name_short": "紅蓮草",
+      "source_itemset_original_row_1based": 7045,
+      "source_itemset0710_original_row_1based": 7496,
+      "both_original_94field_rows_identical_SHA256": "5947424b8fb75d2fec0ef453509baacdc10e3dac23b52424a9b58db3f2902115",
+      "original_itemset_graphic_alias": 23029,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12037,
+      "source_name_short": "烈火草",
+      "source_itemset_original_row_1based": 7046,
+      "source_itemset0710_original_row_1based": 7497,
+      "both_original_94field_rows_identical_SHA256": "c222a235ce0cdae2b79729872a71aba2f382be1be1397fbc773a70f118c0749f",
+      "original_itemset_graphic_alias": 23029,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12040,
+      "source_name_short": "凱比的羽毛",
+      "source_itemset_original_row_1based": 7049,
+      "source_itemset0710_original_row_1based": 7500,
+      "both_original_94field_rows_identical_SHA256": "ccd922f8befda2ac40e2c51f95d7e193a62e1f41ea88ce4171f5283f74ee6fc1",
+      "original_itemset_graphic_alias": 24136,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12041,
+      "source_name_short": "凱比特的羽毛",
+      "source_itemset_original_row_1based": 7050,
+      "source_itemset0710_original_row_1based": 7501,
+      "both_original_94field_rows_identical_SHA256": "311fa93cad8c0f8f47ff69c1cd33e642c87af653d07347d8dcaf7b4d02a4bf4e",
+      "original_itemset_graphic_alias": 24136,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12042,
+      "source_name_short": "烏寶寶的羽毛",
+      "source_itemset_original_row_1based": 7051,
+      "source_itemset0710_original_row_1based": 7502,
+      "both_original_94field_rows_identical_SHA256": "76d39bfdbd87a90d23f42e0bd540da2bfd45c252f776d12e3d4b63068529776c",
+      "original_itemset_graphic_alias": 24137,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "DECODING_FAILED",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12043,
+      "source_name_short": "火雞的羽毛",
+      "source_itemset_original_row_1based": 7052,
+      "source_itemset0710_original_row_1based": 7503,
+      "both_original_94field_rows_identical_SHA256": "797b7bccd1a4825269ee002d8adcd3d2b6bae378e1d426bd9dec4c84e93d16fb",
+      "original_itemset_graphic_alias": 24137,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "DECODING_FAILED",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12044,
+      "source_name_short": "霍爾克的羽毛",
+      "source_itemset_original_row_1based": 7053,
+      "source_itemset0710_original_row_1based": 7504,
+      "both_original_94field_rows_identical_SHA256": "3dfa1e158fd7d94df817e8c9107468c5611d440ce25224a4a13b37653e4abbe3",
+      "original_itemset_graphic_alias": 24138,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "DECODING_FAILED",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12045,
+      "source_name_short": "加美的羽毛",
+      "source_itemset_original_row_1based": 7054,
+      "source_itemset0710_original_row_1based": 7505,
+      "both_original_94field_rows_identical_SHA256": "de97739734c244cf3ca89285b06f28bb1e483fc649f1c9ceb99a34f022e10cb0",
+      "original_itemset_graphic_alias": 24138,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "DECODING_FAILED",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12046,
+      "source_name_short": "加斯的羽毛",
+      "source_itemset_original_row_1based": 7055,
+      "source_itemset0710_original_row_1based": 7506,
+      "both_original_94field_rows_identical_SHA256": "d99ad887d02a481810ee256ccb0691de492856757003827bb9bbd03658a97ff5",
+      "original_itemset_graphic_alias": 24141,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    },
+    {
+      "original_item_id": 12047,
+      "source_name_short": "剋剋洛斯的羽毛",
+      "source_itemset_original_row_1based": 7056,
+      "source_itemset0710_original_row_1based": 7507,
+      "both_original_94field_rows_identical_SHA256": "d1ec0aff35fb69510cc360026b19a3b797c0e06961fe5cb09ddb342500c439f2",
+      "original_itemset_graphic_alias": 24141,
+      "original_itemset_type_column19_literal": "16",
+      "source_image_status_in_TW1_separate_retail_carrier": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "itemlist_evidence_in_at_least_one_shop": [
+        "RANGE_INCLUSIVE_INTERPRETATION_ONLY"
+      ],
+      "original_native_item_effect_and_availability_proven": false
+    }
+  ],
+  "images": [
+    {
+      "image_number_alias_from_itemset": 10904,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "9096358b083bd60450a088d24744cfeb0fb66fa00916bc9e25467320330d4ada",
+      "original_RD_SHA256": "150c657c766a4ae61a9c9b7c127aad96dfb78c12ae18f8c9156c9465ed85dfaf",
+      "original_indexed_pixel_SHA256": "d4f6c8fba44357543645cf38e59640d68113347f8aaa6ae4638ce6bed0aca1a6",
+      "physical_bitmap_number": 4806,
+      "candidate_RGBA_SHA256": "6c4cb8a5117f4a8ef917bf4e8d8e4fba400e620eca7d8746015f69ced006fa04",
+      "private_original_PNG_SHA256": "b653dc24123af74e82c416013b8f567e4eb7cba34095c1804a0726c69d3a5f6d",
+      "PNG_width": 40,
+      "PNG_height": 55,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 20036,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "0e38586ffd9680463224ccb14fab236cf876a65e9d7c77bd7079400da7493389",
+      "original_RD_SHA256": "8f6f5584d90e1d73dbe27d7aedc5b10fb3cf2cbe2e9d597a04414ac7c7475d03",
+      "original_indexed_pixel_SHA256": "37842beb9f986eef4c38d5d4ec7440bfd6a4017eafe400e63fa50a6b4f1b06a9",
+      "physical_bitmap_number": 6009,
+      "candidate_RGBA_SHA256": "70c454ff946f2ff0aeff66fc7905292bfbe368772fe5b7824bba670928277369",
+      "private_original_PNG_SHA256": "4d9465db0a7266e5675aae498b94d00702add053b0a36b0c3aab53c3d785d01f",
+      "PNG_width": 48,
+      "PNG_height": 41,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 22033,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "57fab5ef79af588bbd23d832a904170e20e16003ad41dd6782aa3d6f504aefd5",
+      "original_RD_SHA256": "a8d230c7dafcb8039202a7a4f58ccff1b0679207306c128d602263d88372db1c",
+      "original_indexed_pixel_SHA256": "f5c936faa51deb1ff9da364a7bdfeb54809a109229ae49d5061cee2f66b21b74",
+      "physical_bitmap_number": 6500,
+      "candidate_RGBA_SHA256": "4a73a7d57e766972e6f68ab397718521353944bc1b18f697e761d652c1d397d0",
+      "private_original_PNG_SHA256": "736bf316c2da5691b999630cd85225d81dd42f937191f36e7afc148f5c4f4f71",
+      "PNG_width": 32,
+      "PNG_height": 30,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 22034,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "bab2d43282073a3d32e92bf8c304c0e838c476d858928ae5d2fdafb7d856d515",
+      "original_RD_SHA256": "bfffc7f01b4403020ba8ef1b6b129742eda90bb6e05b8d31ac3b05f6423eba44",
+      "original_indexed_pixel_SHA256": "581f44478f3c25a2efb70dc642a63b4a41b2d2964caa320a7145e0a8774e9e36",
+      "physical_bitmap_number": 6501,
+      "candidate_RGBA_SHA256": "89f88580932f4dc7108f9a4838d11cb80167092a05c8f11ea35516d5cd4c1279",
+      "private_original_PNG_SHA256": "a7f352e3519cc3fa34e2c62570b375d9640d23a1dd3e7e6697fec5e64953e167",
+      "PNG_width": 32,
+      "PNG_height": 30,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 22035,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "c1d55f3246156982c2b2c7bf546ec9ed7542e06af3d37d0c850408cd531a0c0d",
+      "original_RD_SHA256": "9a877c6af2ec8fafceb1046776edecaabf2ae5d4b0ec4d9c5ee0333c2316eef8",
+      "original_indexed_pixel_SHA256": "1d8446cd2ab1daba0d2d0db01901c10093e32a05eaeb769a3209e22d58b74f83",
+      "physical_bitmap_number": 6502,
+      "candidate_RGBA_SHA256": "0ec810f313ab6e89a37b0a0084febd8915fa7efcfa2245097a7fc2d03e7a5a01",
+      "private_original_PNG_SHA256": "68292134a3fb6ad402e66591048849e4c6f39cf0b7d9de192e11f7b77061d52a",
+      "PNG_width": 32,
+      "PNG_height": 30,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 22037,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "f118c57c6d74b118d038c29526f6930d933905c691bd91ef8934b2b7be4d7fb2",
+      "original_RD_SHA256": "4ee895c70f3b7a09069cae13d1063941eb4a82ef7192d4b35e8874e1af836c59",
+      "original_indexed_pixel_SHA256": "0e97baa8689c21b9c3496bd4f6466168262f81d4de315d3023cb0ffadb422630",
+      "physical_bitmap_number": 6504,
+      "candidate_RGBA_SHA256": "ed619bcaf89dc2968633ecbceb930e7483b8e18b1496c495b28f85b87be39a64",
+      "private_original_PNG_SHA256": "47f422e3747a59e404330edad8ace91a11e8f2a2864b271a7324a7b64b74a520",
+      "PNG_width": 32,
+      "PNG_height": 30,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 23029,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "193f1bde330e6fa6ec3a6ace50d5d36daf74383a668f3ee03cea720d061642f9",
+      "original_RD_SHA256": "71a73059c202b674cc27ab5f0ad8b1b9d45e76102c996b929f663da09abe7995",
+      "original_indexed_pixel_SHA256": "ff19fbcb998289c5e616c8955dfaa047b639eeb41f4552e9eebfb7949e81d154",
+      "physical_bitmap_number": 6565,
+      "candidate_RGBA_SHA256": "773eb3a500c55a1c629c5660385e643620b7493f0e010f334b46e9f94bbeaf88",
+      "private_original_PNG_SHA256": "719b0fe968397e871289150f4ec2ef890437305f65620e1e36b4a4de60765ed8",
+      "PNG_width": 48,
+      "PNG_height": 39,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24054,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "7d2599c6b705e2552bcfc5df1de1ea1fe8feabbe9a9964ace0540ba24141218a",
+      "original_RD_SHA256": "05d04e9562037c071802c21287058c893104f9bba94fd51acaacbb66bd54a458",
+      "original_indexed_pixel_SHA256": "be1d986ec14443e3e1d32a74cfcf5c2cb6ccf8a22337d5f3a71b8d195d10ba9d",
+      "physical_bitmap_number": 6764,
+      "candidate_RGBA_SHA256": "83397f78294f2327c961efe71284569583bcb2d055ca9e02ff4973680ab95fab",
+      "private_original_PNG_SHA256": "9a770180094ac8c66d48e80e4644895790c39328f12fc1e276beb07e074003b6",
+      "PNG_width": 24,
+      "PNG_height": 21,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24056,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "3783aba2e3ca64a4a42ee2af0a8c94bdf16524ed9259019d049550805eee5bac",
+      "original_RD_SHA256": "7ae507560bf3a29bc23dce99717759eaa7eabc8a1ca4964a32c71cbf3db989d1",
+      "original_indexed_pixel_SHA256": "b85018ec5003b214dc9a91368da45dbeb947f430b0e89f57cbc13fefc8021f82",
+      "physical_bitmap_number": 6766,
+      "candidate_RGBA_SHA256": "6834730d0665436d7cc4a40f4663e24e6ca6431cea8c929a268dbdb574eec39f",
+      "private_original_PNG_SHA256": "85d6fd7622d3df43faf22f46a664c820c827af3076c11e15cc82a473d460fdf6",
+      "PNG_width": 20,
+      "PNG_height": 19,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24057,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "1add8808e3428b56507966a4e6cac1463e5f1019aeb6aae05f9ab97b65b96e89",
+      "original_RD_SHA256": "3a38371b635ac1cd14fa24dcd1318681cc0865cde99e9c581c23e45166063294",
+      "original_indexed_pixel_SHA256": "b86162e9230f4bf7b44c2dfb9b75b37598622c5ba374d2fb0713f0467f54d89b",
+      "physical_bitmap_number": 6767,
+      "candidate_RGBA_SHA256": "027acec102252051194afbf9f34f940fbd2934b0f5f3480b72b253543a2f6596",
+      "private_original_PNG_SHA256": "a387e59e3b8b9ae731867e465d102c746cf149d7d206dc999be1bf3f86987b19",
+      "PNG_width": 24,
+      "PNG_height": 21,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24058,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "549cb89f7a161facc3f36e1451f97a18339d0f2fee36fa46bc0a4f67d31de26c",
+      "original_RD_SHA256": "d1e68b865722eb1caac31a35f3bc29c8f968edeb8d393b4b1dce3282b69d1a20",
+      "original_indexed_pixel_SHA256": "6a1ea6b33443d029d272a08e835060dfbdb7b79d0e74ba2be448b14df0865aa8",
+      "physical_bitmap_number": 6768,
+      "candidate_RGBA_SHA256": "2dbc34a8a36e0d5c478c8fa1f98e242f4ce38a7652fc011a04bc761040ada429",
+      "private_original_PNG_SHA256": "e030b16e5da252cd4252304f56ec87446943f83338d7bae965922e9157e982d5",
+      "PNG_width": 20,
+      "PNG_height": 22,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24059,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "4c3292848beb5d50348baa69d583cdad3e10365dd558816128684335c9eeef9f",
+      "original_RD_SHA256": "1bdc1eb23e50ff9136155b82896a29fa12998bae3d907c0ffabf1dca352e47d8",
+      "original_indexed_pixel_SHA256": "a6e7c34a43bc24b2379836771642ff1fe1a7797c4857fe4d96cb7f6b5ffc8c21",
+      "physical_bitmap_number": 6769,
+      "candidate_RGBA_SHA256": "3421eabc85e3169961e9c87b4f6e4c7fc98ac45b157d66da56472a9b927d3358",
+      "private_original_PNG_SHA256": "1b9f51d9a90fd8327c094559135755d314189383a81f3f6e085d436a864f3651",
+      "PNG_width": 24,
+      "PNG_height": 21,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24062,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "853106d0e15fe49ca84a75e53564d18e86c7fe6e21579e49dd6d6ce08d39779f",
+      "original_RD_SHA256": "ee7590441ed2eacb51536be81c222f496c944e442f10b01aa4406ef4044bc68b",
+      "original_indexed_pixel_SHA256": "30b25dd064828a28572b1b3b863d5555e1679f508bb0eec03dddd455d739adfd",
+      "physical_bitmap_number": 6772,
+      "candidate_RGBA_SHA256": "3c2a53824401b4c4a7cf08326b725eab6aef16ffd8918ffa5983fc8c60132866",
+      "private_original_PNG_SHA256": "b9f9f51f6709edcdeef689e580259342edb6c938058d6dfb31dfefd80388b0e4",
+      "PNG_width": 28,
+      "PNG_height": 18,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24063,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "130933e862d970ad9a670f91cf06eec55fa9a718e3708cfac8d58cc73893b526",
+      "original_RD_SHA256": "d4b64c6bc0db7ef648654877b9767b328460e97ca1b52f0bae17092de87e6299",
+      "original_indexed_pixel_SHA256": "cb0a20983ae8e89c80a179b327a031899d5cccdb24e11e5c7214d7781071ccc3",
+      "physical_bitmap_number": 6773,
+      "candidate_RGBA_SHA256": "3a93ee066a11dd2b1f6b929cc9a79ae8619ecb2efdcab784d9142ef424db5a82",
+      "private_original_PNG_SHA256": "a0fc3af0a5d74c99d55c2a102a4194a00330698e7dc560cd7e935916c7c44e9d",
+      "PNG_width": 28,
+      "PNG_height": 18,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24104,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "183851f9aeae3f78a9c146169b1328dde104f940735cf6811603888ba5e44e3e",
+      "original_RD_SHA256": "23ac78d7425e99f7b2d75ba0a5a5f38a36f0760c7d544e9498582909cf8a11b7",
+      "original_indexed_pixel_SHA256": "3a4f005ca1be5196477983b60c31cc8ca6894b1a8963db522f57de51f1ad18f5",
+      "physical_bitmap_number": 6784,
+      "candidate_RGBA_SHA256": "ce6a326f82a3e1b1697c8be6dc0631b8a72e330b6d6a2e0ddd1e4ccfa54d8685",
+      "private_original_PNG_SHA256": "6862470ec0aa76ffc405965048e6635c76c70c37b501c0f61c9954e76328e8a8",
+      "PNG_width": 32,
+      "PNG_height": 26,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24105,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "61ac0fa2321b13fa1e787eeb1f3523c77cf79feb194f964374ad96f2e8b55e5a",
+      "original_RD_SHA256": "4a31f50c273e2e6387758c466ac87bce5596a142ec7a4bdc8671538386c3c88d",
+      "original_indexed_pixel_SHA256": "503e1afe013e0f4115076eecd8c83768dc9ea91b2d23ed5510a4123415e3f383",
+      "physical_bitmap_number": 6785,
+      "candidate_RGBA_SHA256": "ab200bb2c81f1158f3707536514130928ff3423ea8016a54bdfdc659e4038030",
+      "private_original_PNG_SHA256": "562fbc8163eeb264179b0f7a8a0f5e0b10122f1cf73742d0bd660e29548f8ddb",
+      "PNG_width": 24,
+      "PNG_height": 20,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24106,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "1d86c8d2333267c728302ad350b19bd10001b061327780a4ae84e117f70ab3bb",
+      "original_RD_SHA256": "3b00cc19f3b5a3cc49c790c79554df972c6c15bcaec29b34dca714314527bcf5",
+      "original_indexed_pixel_SHA256": "e0d7a3e3ebbb657fc780115d4bff456ad4e1ed31807e86d38fa76db53bee665b",
+      "physical_bitmap_number": 6786,
+      "candidate_RGBA_SHA256": "e10839440f16f492ceaf72c3ea5fa3c048d419f19157fbfe93ce7aec9e35cb78",
+      "private_original_PNG_SHA256": "8908e1739e0de33ccf089d72c7a649e2d0da886425861268dbfe8c749e66bb3d",
+      "PNG_width": 32,
+      "PNG_height": 26,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24107,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "4a603e4fbff7199249ddca747b65ae698bfd131026f37bbd2377c73f79fa4186",
+      "original_RD_SHA256": "5684653ade11b9783f85fccbcdcd44a840d696a5a8cfac17ac06f949d38b0c40",
+      "original_indexed_pixel_SHA256": "250265c91851c2cf0a74954617f3ea3add7a48d6399b38049230e023ce6c9324",
+      "physical_bitmap_number": 6787,
+      "candidate_RGBA_SHA256": "5d5e772078bfb9db2173790feedbbcae569dd9a93a8c6fc79be301623af50755",
+      "private_original_PNG_SHA256": "9e2f60d50d9b97e95038df609e1a9e928e650f274170a836e82dfae3a1902eb9",
+      "PNG_width": 28,
+      "PNG_height": 20,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24108,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "65f136e6b525418f0600a08f600b99e54f66776072323c0b3ab87695e8845248",
+      "original_RD_SHA256": "016ab87f83281ea1d94a0b810a7f36652ea82295d312de9dfb3dfccad5f21019",
+      "original_indexed_pixel_SHA256": "59b60de21983e235d074590411db213e9ea53929fc58e00c1df5bcaea0511bec",
+      "physical_bitmap_number": 6788,
+      "candidate_RGBA_SHA256": "e1d05a6f55fcdbe163e713dc94ea5a23d2bfce565e91e5a108be0873158a542b",
+      "private_original_PNG_SHA256": "a5254330c76faf9542144a4fee2fb49eaaa23e951421528947dfb1ff9944d0f8",
+      "PNG_width": 28,
+      "PNG_height": 24,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24109,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "6f5e72e87dbad316bf7a49c756b0aad50a73b5e0358fafb9c68404d98b711a50",
+      "original_RD_SHA256": "5e3f2fd48b7f34e34375017f6bf492fdc95327e001a78d4cce6c1e24b954beee",
+      "original_indexed_pixel_SHA256": "61b4572edb48ac816df44a0e57b58bc89574ae0a6aa0dc9628cae391923d6ed6",
+      "physical_bitmap_number": 6789,
+      "candidate_RGBA_SHA256": "a87a7a855b04c7c25a5994af09915eddcbf169505b60e71c4efb0b791b6b2f79",
+      "private_original_PNG_SHA256": "c0a8decde5d77ca1e1f18872145c14210387a3fb9a54b3c63de0f60e42d9ee42",
+      "PNG_width": 20,
+      "PNG_height": 24,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24110,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "1669cab3541f5b09bb50a8cc6860c6e1085e92d24cdbabc0283a8f038c049f2c",
+      "original_RD_SHA256": "c001163e2193e626fc35fb555f949eeed5213c229d6f2d35a1e92f65699dbe89",
+      "original_indexed_pixel_SHA256": "6f0578b8ce6c3fc53f51e4bbc6b16669e828e29a72bf1f009ff8e6871db549ea",
+      "physical_bitmap_number": 6790,
+      "candidate_RGBA_SHA256": "822c0a2546ca0f5e2302998eeedc91e7b8ae6421ffec1fd6ad0d6bb2b9e8ed08",
+      "private_original_PNG_SHA256": "0e42e65cc7b12f5e658bee5b57fbccb7821b01ace41985628fa4c493a71101df",
+      "PNG_width": 36,
+      "PNG_height": 24,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24111,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "0bfc4f3431c0762047db3f6f3221f8f102536de992500efd8f447871f4eb49eb",
+      "original_RD_SHA256": "44131ab7dccb387181d73f7cf4a28fe539082522496787b02352482538752b4f",
+      "original_indexed_pixel_SHA256": "cbd9c4126a9d10b7c7e3582a56f1bb5f4beb60f469e4df5f0c0043b308ffb442",
+      "physical_bitmap_number": 6791,
+      "candidate_RGBA_SHA256": "3919c6b568c15734ea6349c0fe87a18f7c233a29a4125f701366179c45c11e46",
+      "private_original_PNG_SHA256": "1b0742a4a8f0e488236c4289aef4cedcee0f6548585c26f0f34c14f0ebae31de",
+      "PNG_width": 36,
+      "PNG_height": 26,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24112,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "3ac6a2f907ca649c05bf77db90a3499fcba367226f0c51b4d33f34d8f97685ff",
+      "original_RD_SHA256": "46f27ff42cd6160dae4330f97bc29305cbe463dc63af77f6929a62f9577fd39d",
+      "original_indexed_pixel_SHA256": "604c467f4d5de04dc8ecdf31d36293bd5af970cb2dbbed15f55396c198280649",
+      "physical_bitmap_number": 6792,
+      "candidate_RGBA_SHA256": "4c9d7a45f1bfc2ecfc97c3e081cdc8f6fe0c4851bd445868bdcf7f207bdabffb",
+      "private_original_PNG_SHA256": "e1a626cfe7841b39b9df82768753f679a7d64fd3bca1eefc3dea87dca0e9c49f",
+      "PNG_width": 36,
+      "PNG_height": 27,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24114,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "0d000c2f9c3c44d1ef2ad1ba55d664fa21b2cd3f95009725543edc70a3282043",
+      "original_RD_SHA256": "9f805570b09c1fef0566e0ba711366412f9d2b61ea20249be9af281736f0ef25",
+      "original_indexed_pixel_SHA256": "9c5badd516624aabf0540ce3c84a9729ed1e3cd288b7133a0f2b9166f12f3049",
+      "physical_bitmap_number": 6794,
+      "candidate_RGBA_SHA256": "3e7dff587f600d199ac20699c00d52a90fbd2ee89602b8f98b2ac09101a344b6",
+      "private_original_PNG_SHA256": "caadffa336a6eba4efa5b9c7a49d6680aeb1cd58b400a350d5fb4486b7b7d26c",
+      "PNG_width": 32,
+      "PNG_height": 30,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24115,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "49386e5d523567843f7a3a660b8f5b2b2d58c0eeb341e392d053744377a9c1d9",
+      "original_RD_SHA256": "6fa2331a36e7e5562e75d34da53cc0ea8c461e4933d91fbffd9d75defefca63d",
+      "original_indexed_pixel_SHA256": "b7f0f6233af66023ddf2b66920eb6de802c61317b95437465fee929f8f6b482b",
+      "physical_bitmap_number": 6795,
+      "candidate_RGBA_SHA256": "d58bd7a15e6a17fe1706d09e75e20d96d3ae760a5877fd3547ee5079736227ca",
+      "private_original_PNG_SHA256": "dac386323f8f07796acf786d75c67273498d83ea0b94d67c71e6a8e452deefde",
+      "PNG_width": 28,
+      "PNG_height": 35,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24116,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "f4672016c663042b8f5cfb4327baaca8725836b325b54efe3b87025a5fea6972",
+      "original_RD_SHA256": "46ff367800bb43af42d64f5f397a34069f2734b8c24a289ee9bdbc7805e0b402",
+      "original_indexed_pixel_SHA256": "8f57893ca04e8d60bfdc5f67be74ec9e40f97ed0a76470febcc8ce5e1c3979a9",
+      "physical_bitmap_number": 6796,
+      "candidate_RGBA_SHA256": "991df5da32e64eeab3fc36e39f9373f054d3ea5b4604d5e47bf05b4315dc22b7",
+      "private_original_PNG_SHA256": "4e241a8784ba64a962e44399ea58420424e9dc3168e681375481a74f59d37382",
+      "PNG_width": 36,
+      "PNG_height": 32,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24117,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "6a02b96bd1e26daad36dc4cc519f3f86790ed98ce08901199ebbde5eb47db32a",
+      "original_RD_SHA256": "c0a8e68527125bdc25f5232e83a1a2e5f0a0a9b602399fa9f031c04911ad693d",
+      "original_indexed_pixel_SHA256": "be25f46a44c7003d75f6aff8dd6bfb91c0d2c3f51e352903ea67f687a924c0b9",
+      "physical_bitmap_number": 6797,
+      "candidate_RGBA_SHA256": "f38abaf6616e32d14fe9d71befea2dacfb58d2d09773473e6d59ba7df83f3c91",
+      "private_original_PNG_SHA256": "3a3dcc966e399091a8e13e3ca483f9ebe5bd8d85f31e8dadd3c45485fab5f08f",
+      "PNG_width": 36,
+      "PNG_height": 31,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24124,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "279143c6267b581b645badc4c5c676d354959f435cc55f7ef8a9d0b228f3cade",
+      "original_RD_SHA256": "2458876d3d2e13c21bb7ea112328625f3cbbf6b543e235e70d62df7098bc0ed1",
+      "original_indexed_pixel_SHA256": "c709180b550fa9069c7c76182c3bafb6c8b8b4e13c436fa20a630cfccd3be9fe",
+      "physical_bitmap_number": 6804,
+      "candidate_RGBA_SHA256": "5f61f062ce7cad50b058923effcf492d9d0847abc479e0cc713a177c38e556a9",
+      "private_original_PNG_SHA256": "88527f81f7d39a2c9768aa5014ecbf1bdc28cfbb1e94fb70c1294594f73e6743",
+      "PNG_width": 48,
+      "PNG_height": 43,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24125,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "f31edd961352d28eeea61b9b7e153a5bdd5c5b20198728d18b37c8d739e2c9da",
+      "original_RD_SHA256": "e3b4b337ee9d5bdc5df81e730ca1635f83fce3540dbe28a8f533e09d6ee08b8d",
+      "original_indexed_pixel_SHA256": "608d99c9d7fdbbeb25c05ab8146bb26ffa9b4497db7cc9c51b0e9d7eaf969950",
+      "physical_bitmap_number": 6805,
+      "candidate_RGBA_SHA256": "56dec7639dfca655cf3aa7a7224e842b543b8f3ae402efc15fbbd5491f73adfc",
+      "private_original_PNG_SHA256": "abc05f848a2f5f7202664d4a02a2d7cac0d8e9b4099bda7eea67edf78f6abbe4",
+      "PNG_width": 48,
+      "PNG_height": 43,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24126,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "13edff2147c6d8c18f27235f4463d576a078e4204abaa486db1f668a0ba3dd20",
+      "original_RD_SHA256": "b16374179ac0e58f0df326aad11462715957047121073ab885f41318c1585f17",
+      "original_indexed_pixel_SHA256": "ccaae29f01259e99c574be64796d6eaa8c42b1e0296cfef4de320244153812b5",
+      "physical_bitmap_number": 6806,
+      "candidate_RGBA_SHA256": "41a0bbf61e4ad87aad0394c383d1720cdacbbe1cff57a9510a7d061f62b0723f",
+      "private_original_PNG_SHA256": "dd915f6367d5e5270fbac797cffbac30319c6eaf40e42d426152585e45052bd0",
+      "PNG_width": 48,
+      "PNG_height": 43,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24127,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "9c4032bd4365d2997961544ff50ffa12c8bbdc3d6a0fd45eb205be993f20779b",
+      "original_RD_SHA256": "f3a9bafc6390eea36922edb0ca3066faec1f5c510abebe63238ecd01d28a9d10",
+      "original_indexed_pixel_SHA256": "45cebf03129efb3005028feb22c54a2ec01932680f9fbca01eeadf66b51d4645",
+      "physical_bitmap_number": 6807,
+      "candidate_RGBA_SHA256": "29f8c0e1394225833b3f04daa3c7fbe58c96cef755232c6e8b155eb02ba45aa7",
+      "private_original_PNG_SHA256": "7c46a57c0a51fe2551bc6e3840f28c08b18368a3d9061e5b3bd91498adaf5afe",
+      "PNG_width": 48,
+      "PNG_height": 43,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24130,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "9f85d7ca3e451ce8389ba83d702a11e1beed1343fd091c683ab5e6f7f751905d",
+      "original_RD_SHA256": "4eda88ba0873d1e9f408f4c255d841c43dbdf4756893be099726f81c9dfdb6c6",
+      "original_indexed_pixel_SHA256": "1b51693b2c67c70b34b40454e67c4d52292895455d3755e36d49bf1b7646b85b",
+      "physical_bitmap_number": 6810,
+      "candidate_RGBA_SHA256": "b4231af0f202f4c5ead2fceea5e254a9ebae3870402d2a3797177273a2f9e20b",
+      "private_original_PNG_SHA256": "6ede96a25a984f568b2f52092f3af32c1d599beebfd02f021261f9843eaee1b4",
+      "PNG_width": 16,
+      "PNG_height": 17,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24131,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "e0627568fc22826d50492aaafaf824ad316c0ad707cfd2c1cfd3768584d58624",
+      "original_RD_SHA256": "517aa84995acea485762c0ceba3aa4c648f4aaad59ce6e0f430c0973cb16e737",
+      "original_indexed_pixel_SHA256": "95f0ec69ea2e64367e367017f0ac9371c4c142c245a2eef37f1a863d11367517",
+      "physical_bitmap_number": 6811,
+      "candidate_RGBA_SHA256": "bbe9bb681e055ce1bc3d66a050ab11fb3d7e719d2fa3ad2831632a38f727181c",
+      "private_original_PNG_SHA256": "7fe61cc9ef181cda8f3fccdf83d20ee1be15b4f0516e1e6d2064eff833c7eaf0",
+      "PNG_width": 24,
+      "PNG_height": 24,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24132,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "ff8b866e6da9a34cd7fb3644649158331bd65cea6378f6650e4411a439c87d30",
+      "original_RD_SHA256": "0a19035f16dd617e36149dfd98160f403a9db54d897e4de9febb7cfc5d456ba7",
+      "original_indexed_pixel_SHA256": "a9cbdd5be635a51c0294c272faaa2b0dfca3aaa6a423d9d24a2eecce45e36859",
+      "physical_bitmap_number": 6812,
+      "candidate_RGBA_SHA256": "c44f6e07cba7ddb32d90a15b49cd7f8ae0c2eb76da5bb2b4d993ae908fb52a31",
+      "private_original_PNG_SHA256": "82889fa67548e50488b2ae1ad5a974a87b52c59ef0c8f2d8b2acf5be0fd5da97",
+      "PNG_width": 16,
+      "PNG_height": 17,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24133,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "5146194f332422ef2ad61558d3c1b5b5fef83fff837774405088daa08ff75a9b",
+      "original_RD_SHA256": "844045d48575fbf4bad52de4552df7ffd9c576b4340e077c7d0a51d42697fc16",
+      "original_indexed_pixel_SHA256": "6a50d70e7231cebc6b691f52050c757b684cc3c72b54639a72f2a690fd18a2fb",
+      "physical_bitmap_number": 6813,
+      "candidate_RGBA_SHA256": "239bfe6e991026b405f5f6233feb2588ab092cb004ccede6f9fdd220e283c4a7",
+      "private_original_PNG_SHA256": "3dfa95e103679568ff3005bfc61c8c94f7d9b13cef6f86414d8a6ff6f1b1f6c3",
+      "PNG_width": 24,
+      "PNG_height": 24,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24136,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "c8f1999f8ac06efbc9481143ec15d88ea38f3b74eb0c22de053756f8fec64d56",
+      "original_RD_SHA256": "99246881fe52ea156707befe13afc236420a37ff117390b9698595c9bf5c4bf8",
+      "original_indexed_pixel_SHA256": "9079654093a295e4f3d576acc14a3233bb64b4ea82b9eb1edaef5ab3987f10b8",
+      "physical_bitmap_number": 6725,
+      "candidate_RGBA_SHA256": "a692090f5a7ce71fef6d6a51f3d1fa7ba0702031840383ba2e17f153f8d2f4aa",
+      "private_original_PNG_SHA256": "7fe611c483a06531be034a3aaa4117b4f131db6456f83f99b08e9baf7d6ce246",
+      "PNG_width": 32,
+      "PNG_height": 26,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24137,
+      "TW1_retail_source_status": "DECODING_FAILED",
+      "original_TW1_ADRN_record_matches": 1,
+      "missing_reason_exact": "source record exists but original RD decoder raised AssertionError",
+      "original_ADRN_record_SHA256": "bf47f5547bab9144fee78d273dacfe43f80b58aa8202b8acfbe2f69f79fe5a81"
+    },
+    {
+      "image_number_alias_from_itemset": 24138,
+      "TW1_retail_source_status": "DECODING_FAILED",
+      "original_TW1_ADRN_record_matches": 1,
+      "missing_reason_exact": "source record exists but original RD decoder raised AssertionError",
+      "original_ADRN_record_SHA256": "0a3eed3d98ddcb6a9587af8c836862d33a170488ac5425a3bbfb2fb842410f28"
+    },
+    {
+      "image_number_alias_from_itemset": 24141,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "dfe4c46f3aa6dd0312c7f091a7626f63d1df8470ecea996a4c92ee157ec0d913",
+      "original_RD_SHA256": "4717ffb8ba9947f4bd4b02a9a2821265348c261783cdc2b48385c271f4e0fc81",
+      "original_indexed_pixel_SHA256": "8981f4943dae958802b72ea2f775e9d8dcfe4ee455f5ae1f85bdacf8643bc4a5",
+      "physical_bitmap_number": 6730,
+      "candidate_RGBA_SHA256": "2337bd48eab7a78132c4044ed202333957739311fc9f2a3e14139dcdfed2785a",
+      "private_original_PNG_SHA256": "e6b83fe9770cd6b2df83d7276f35497a83e984a8f03c252eee787e7056b05591",
+      "PNG_width": 28,
+      "PNG_height": 25,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24144,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "d6173386bebc65ed8709f3dac57744e9955061977fa03c625b8f77e8ae4af2f0",
+      "original_RD_SHA256": "920da5c22b31bf1be86e8251af735e1a63718d4c47369cfb37e7fa8a0ba2b514",
+      "original_indexed_pixel_SHA256": "a169107276501ac2c5f5d4b879bf0efaf27dc2e1e06ba88e30566331a4b77200",
+      "physical_bitmap_number": 6816,
+      "candidate_RGBA_SHA256": "1143f292c95b96a22213889e0e211539bd57bc72c23dddafcd4fab150f72a5a5",
+      "private_original_PNG_SHA256": "ef2a7414e1058077a6f77ddda8ea38eefdbae8c712d795d78c9dea2f3349eb5d",
+      "PNG_width": 32,
+      "PNG_height": 35,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24148,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "23818f9aec3a7dc7334bbf74b78cdb47e0e7ceb85f72188ced0b21bce3b9d738",
+      "original_RD_SHA256": "43e7a8bc100a63a0c0ab36dc1f325bd623f6638a197a3d7a5eb422bf03c4928c",
+      "original_indexed_pixel_SHA256": "585b47b85f52964d6dd249bc2ddaee5098a5160cc9019292c5662f7ac71b00b4",
+      "physical_bitmap_number": 6820,
+      "candidate_RGBA_SHA256": "65168deef2d2dc54d11eec7a131309ad8426b206e920e91e31bd30659911b3c8",
+      "private_original_PNG_SHA256": "e4cd922098a60007a11c444c6bfc13b95d5f929c3495d01bf2ced2eda67ca59f",
+      "PNG_width": 36,
+      "PNG_height": 28,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24149,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "43d883178c09b409c38117d016f06ec3a66f988ab354f8551e907ffc38bdb813",
+      "original_RD_SHA256": "affdaca03fd4cf470b39d0223fccc591b12fd4493846f0ede56028671116fb0c",
+      "original_indexed_pixel_SHA256": "bb09fc22bb9c70a950406d612276e935df6be13845160ac1da917a8d4ce96174",
+      "physical_bitmap_number": 6821,
+      "candidate_RGBA_SHA256": "93be1a5b593968e616dc56af6097680c8f46f095eb83e8bedb220ab93133152a",
+      "private_original_PNG_SHA256": "8f0bcc7bc73c4385fa61202e0568f13f0b22267ceee2047dce6de3f79ea6a984",
+      "PNG_width": 36,
+      "PNG_height": 28,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24150,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "03a32e09167de828f55e02f122401d8f3a71b8b4b6aec83e8fc3d9b54fe216eb",
+      "original_RD_SHA256": "f7f1a50b57f7ce8777db23c3de15d5a2529e3cc9fe407a0ea4d07ba2b024e9ea",
+      "original_indexed_pixel_SHA256": "ec1309b13f967acc328afc969c0f052eb6a7d706318ff2766ddcd83a0e0e7b06",
+      "physical_bitmap_number": 6822,
+      "candidate_RGBA_SHA256": "e72cc86134b579f8afd722096e273c73ffdff0b5bcd8bc1fef7b88670d44bdb9",
+      "private_original_PNG_SHA256": "d1da49261f2bd89b168ef8de4c55e6ce69d874495ad2b9f0221a304a3a55dc52",
+      "PNG_width": 36,
+      "PNG_height": 27,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24161,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "5c184b08c516bf16195cd04b2e4e8b441854d1fe1f8dd0e30dd1bcc97d1a5418",
+      "original_RD_SHA256": "0df7dbaaf9d6a0fe85a61f14d38e8ce3435d58c8d3f22c989866fc5ec5ac5663",
+      "original_indexed_pixel_SHA256": "2ea69c95fde6aa34e7230e8a2489ef0103e93ccf8b4ff3cddb21dab366bfecc1",
+      "physical_bitmap_number": 6832,
+      "candidate_RGBA_SHA256": "b2c90affb94f5902b4e3e531a28ad735a97f7287abdb4a03ad386d1b2f0af06b",
+      "private_original_PNG_SHA256": "55f7f1db41453bf63bbd12ae9c8bfa114c7ab3e5f899ead9394460ab386be836",
+      "PNG_width": 36,
+      "PNG_height": 22,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24178,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "7ef31f9f7b5e2fabb6f47ceb67bce68afedfd99eace090f8395c2dd81acb4132",
+      "original_RD_SHA256": "46badfc973dabe762074548541c52f37df1dfaa56ebab2d056a8a737c1ac229d",
+      "original_indexed_pixel_SHA256": "c253cc04c40bbf3879152b6f1fbf7d1fb2631cc3af00d8d495e80367fe472439",
+      "physical_bitmap_number": 6842,
+      "candidate_RGBA_SHA256": "c77c344e4727d13b626fbc9dc60797e1f9212245fc22f63083ec6545618b76d5",
+      "private_original_PNG_SHA256": "70eb2ddde66578e26531698ec04d973e824c64a971201d2be945be25fe4a9b37",
+      "PNG_width": 36,
+      "PNG_height": 29,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24179,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "d8f36e7173352a7a9ba27090b3f5d5b9d801f7aeae2238c7a6a3e3eded8ff949",
+      "original_RD_SHA256": "05fc0cbe552627613295bc8bfe89909251636d5c44074365dd51133a215caedc",
+      "original_indexed_pixel_SHA256": "6d179a1c308218d8fb2e48114a126f71fbc23d86956f19e797f8031094f7f25c",
+      "physical_bitmap_number": 6843,
+      "candidate_RGBA_SHA256": "b529a890ae5f4b1508217b688af9e88bedee45ea77bba98997188c0f8cc3a552",
+      "private_original_PNG_SHA256": "6a5d7ab3d858e2afd0ee9baea3b0989971f647e883ba854c4733924fd488af32",
+      "PNG_width": 24,
+      "PNG_height": 22,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24180,
+      "TW1_retail_source_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_TW1_ADRN_record_matches": 1,
+      "original_ADRN_record_SHA256": "f5badb4f72b3a7c55f420898a6b72442b315c5d9b2abc1075b0cd4ef56cd3022",
+      "original_RD_SHA256": "f4ea82aa35865b962a711e4a33f56e5919836c885da500f8963be688db65fd9d",
+      "original_indexed_pixel_SHA256": "71e39efb272f1fded36f37c3520113d07b165acb751f05591d231cf59ef8e284",
+      "physical_bitmap_number": 6844,
+      "candidate_RGBA_SHA256": "a538d67bbfd9c2ba18cf9aa1aee9085c221c8862ee6928b25884fd99da1b3d32",
+      "private_original_PNG_SHA256": "af4dd6cc6f580133daf657dcb0e1efa887dd8f887366b3b09966ed752185fb52",
+      "PNG_width": 24,
+      "PNG_height": 23,
+      "new_original_RD_decode_this_batch": false
+    },
+    {
+      "image_number_alias_from_itemset": 24298,
+      "TW1_retail_source_status": "NOT_IN_RETAIL_INDEX",
+      "original_TW1_ADRN_record_matches": 0,
+      "missing_reason_exact": "no matching original retail ADRN record in qualified TW1 resource"
+    },
+    {
+      "image_number_alias_from_itemset": 24316,
+      "TW1_retail_source_status": "NOT_IN_RETAIL_INDEX",
+      "original_TW1_ADRN_record_matches": 0,
+      "missing_reason_exact": "no matching original retail ADRN record in qualified TW1 resource"
+    }
+  ],
+  "paired_stalls": [
+    {
+      "location_y": 15,
+      "floor1009_argpath": "genout/ss_1009_27_15",
+      "floor4009_argpath": "genout/ss_4009_27_15",
+      "different_original_arg_SHA256": true,
+      "same_original_ItemList_raw_text": true,
+      "same_original_graphicname_numeric": true,
+      "same_original_NPC_identity_or_visual_proven": false,
+      "same_original_native_runtime_stock_proven": false
+    },
+    {
+      "location_y": 17,
+      "floor1009_argpath": "genout/ss_1009_27_17",
+      "floor4009_argpath": "genout/ss_4009_27_17",
+      "different_original_arg_SHA256": true,
+      "same_original_ItemList_raw_text": true,
+      "same_original_graphicname_numeric": true,
+      "same_original_NPC_identity_or_visual_proven": false,
+      "same_original_native_runtime_stock_proven": false
+    },
+    {
+      "location_y": 24,
+      "floor1009_argpath": "genout/ss_1009_27_24",
+      "floor4009_argpath": "genout/ss_4009_27_24",
+      "different_original_arg_SHA256": true,
+      "same_original_ItemList_raw_text": true,
+      "same_original_graphicname_numeric": true,
+      "same_original_NPC_identity_or_visual_proven": false,
+      "same_original_native_runtime_stock_proven": false
+    },
+    {
+      "location_y": 28,
+      "floor1009_argpath": "genout/ss_1009_27_28",
+      "floor4009_argpath": "genout/ss_4009_27_28",
+      "different_original_arg_SHA256": true,
+      "same_original_ItemList_raw_text": true,
+      "same_original_graphicname_numeric": true,
+      "same_original_NPC_identity_or_visual_proven": false,
+      "same_original_native_runtime_stock_proven": false
+    },
+    {
+      "location_y": 37,
+      "floor1009_argpath": "genout/ss_1009_27_37",
+      "floor4009_argpath": "genout/ss_4009_27_37",
+      "different_original_arg_SHA256": true,
+      "same_original_ItemList_raw_text": true,
+      "same_original_graphicname_numeric": true,
+      "same_original_NPC_identity_or_visual_proven": false,
+      "same_original_native_runtime_stock_proven": false
+    }
+  ],
+  "totals": {
+    "original_static_npc_shop_CREATE_blocks": 10,
+    "distinct_source_original_arg_files": 10,
+    "store_count_per_floor": 5,
+    "source_ItemList_direct_explicit_ID_occurrences": 6,
+    "source_ItemList_range_token_count": 32,
+    "source_ItemList_range_inclusive_interpretation_occurrences_not_proven_to_be_runtime_stock": 256,
+    "sum_source_direct_plus_hypothesized_occurrences_not_native_sale_count": 262,
+    "unique_original_item_IDs_across_both_floors": 123,
+    "unique_original_item_IDs_original_rows_identical_across_two_source_tables": 123,
+    "unique_original_item_IDs_TW1_retail_verified_existing_RD_PNG_candidate": 117,
+    "unique_original_item_IDs_TW1_decode_failed": 4,
+    "unique_original_item_IDs_TW1_index_missing": 2,
+    "unique_source_itemset_aliases_across_both_floors": 49,
+    "unique_aliases_with_existing_source_verified_TW1_original_RD_pixels": 45,
+    "unique_aliases_TW1_RD_decoder_failed": 2,
+    "unique_aliases_TW1_not_in_index": 2,
+    "source_shop_other_service_poolitemshop_create_blocks_EXCLUDED": 2
+  },
+  "negative_evidence": {
+    "original_native_market_execution": false,
+    "original_runtime_itemlist_range_semantics": null,
+    "original_shop_purchase_and_selling_executed": false,
+    "same_official_deployment_of_itemset_and_TW1_retail": false,
+    "TW1_retail_source_original_RD_decode_new_this_batch": 0,
+    "verified_original_image_aliases_only_from_prior_item01": true,
+    "original_1009_or_4009_MAP_DAT_in_this_package": false,
+    "shop_NPC_graphicname_not_verified_native_on_map": true,
+    "original_player_action_or_price_formula_not_inferred": true,
+    "private_original_licensed_assets_in_public_git": false
+  },
+  "historical_CURRENT_STATE_original_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "private_delivery_receipt": {
+    "name": "StoneAge-INTEGRATION83-1009-4009-original-material-market-private.zip",
+    "bytes": 156739,
+    "sha256": "cb101b40000e631e028ea50eb0aaa1689c58b35524594fa24efc1a4991566eda",
+    "members": 69,
+    "crc_checked_all": true,
+    "new_original_RD_pixel_decoded_from_REAL_this_batch": 0,
+    "original_TW1_PNG_bytes_reverified": 45,
+    "unique_saved_original_pngs_in_private_package": 45
+  }
+}

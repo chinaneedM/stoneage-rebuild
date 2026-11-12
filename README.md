@@ -2665,3 +2665,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-12 — INTEGRATION82｜九张猜拳原DAT三平面差异完整来源保管
 
 [九份原DAT的第一平面13处数值差异](docs/continuity/STONEAGE-INTEGRATION82-JANKEN-DAT-PLANE-DELTAS-20261112.md)／[完整九图三平面SHA公开派生记录](research/recovered/STONEAGE-INTEGRATION82-JANKEN-DAT-PLANE-CUSTODY-R1.json)／[私人原件独立CRC/SHA与GitHub发布后验](docs/continuity/STONEAGE-INTEGRATION82-PUBLICATION-ACCEPTANCE-20261112.md)：个人Library私有源包16,080,715B/76成员已实际复取且全CRC、全SHA相符，九原DAT各15008B，逐原5000B平面复核第一平面2种/其余各9种；802→807有13/2500格精确差异，原静态事实不提升为原生渲染/碰撞/猜拳触发。PR #357经候选2/2真实PR Actions成功并合入main `4fe800a444`/tree `d1a6be09`；该合并HEAD最初无新增Actions，旧SHA成功不能冒称其验收。新原RD解码0，缺后期五图与官方同服均OPEN，原商业资产未上Git。旧CURRENT完整保留、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体进度未知；NEXT另一非重复原二维宠物/物品/任务内容。
+
+
+## 2026-11-12 — INTEGRATION83｜1009／4009兩處素材市場十原商店與45幅既存TW1原RD候選
+
+[十處原CREATE、十份真原參數／123原物品／6個明確缺圖](docs/continuity/STONEAGE-INTEGRATION83-1009-4009-MATERIAL-MARKET-20261112.md)／[逐原CREATE字節區間與完整SHA、商店原ItemList、物品行及45原RD候選圖的公開來源索引](research/recovered/STONEAGE-INTEGRATION83-1009-4009-ORIGINAL-MATERIAL-SHOP-2D-SOURCE-R1.json)：fresh遠端`main=d74f56f4`／tree`6d7642bd`起，舊CURRENT完整原blob`c89e0e33`未改。私人NPC原件ZIP995176B/2205CRC及ITEM01原件ZIP5868386B/838CRC本批實讀，兩原CREATE全SHA與十處原塊字節界限逐源核實；CP950中文字節誤中原位元組`}`的初始8/10分塊法已訂正，最終10/10原商店成立，另外兩寄放店不併入。兩floor各5原店、五組對應ItemList逐字同而完整十參數SHA全異；6明列ID出現＋32段原區間（含端點假設256候選），262候選出現／去重123物品；兩原物品表123×2完整原行各SHA同，117個物品ID連已取得TW1零售45原RD候選PNG實核像素SHA，餘4個ID=2個原RD解碼失敗別名與2個ID=2個TW1索引缺失別名，不能捏造原圖。私人現代原像源觀察ZIP156739B/69CRC/68非清單SHA已Library獨立回讀，同包45舊候選原圖／十原參數／123原行選摘，原版源私有不公開，新原RD解碼0、原商城/官方同部署OPEN。本地13項契約反例測試OK，正式CI後驗分SHA記，不預報成功。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暫停、總percent未知；NEXT輪換不重複合格原2D寵物／物品／任務資料。
