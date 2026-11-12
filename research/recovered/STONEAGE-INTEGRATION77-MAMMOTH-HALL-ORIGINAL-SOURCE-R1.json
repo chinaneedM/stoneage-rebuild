@@ -1,0 +1,584 @@
+{
+  "all_member_literal_id_occurrences": {
+    "2608": [
+      {
+        "occurrences": 3,
+        "path": "npc/extra/event/syutuen"
+      },
+      {
+        "occurrences": 1,
+        "path": "npc/genout/wpm_116_11_16"
+      },
+      {
+        "occurrences": 1,
+        "path": "npc/genout/wpm_116_12_16"
+      }
+    ],
+    "2609": [
+      {
+        "occurrences": 1,
+        "path": "npc/genout/wpm_110_37_20"
+      },
+      {
+        "occurrences": 1,
+        "path": "npc/genout/wpm_110_37_24"
+      },
+      {
+        "occurrences": 1,
+        "path": "npc/genout/wpm_110_37_28"
+      },
+      {
+        "occurrences": 1,
+        "path": "npc/genout/wpm_110_37_32"
+      },
+      {
+        "occurrences": 1,
+        "path": "npc/genout/wpm_116_11_13"
+      },
+      {
+        "occurrences": 1,
+        "path": "npc/genout/wpm_116_12_13"
+      },
+      {
+        "occurrences": 1,
+        "path": "npc/genout/wpm_130_57_48"
+      }
+    ],
+    "2703": [
+      {
+        "occurrences": 3,
+        "path": "npc/extra/event/karikari"
+      },
+      {
+        "occurrences": 3,
+        "path": "npc/genout/wpm_125_2_13"
+      },
+      {
+        "occurrences": 1,
+        "path": "npc/giiru/event/sikkoku05"
+      }
+    ]
+  },
+  "creation_block_counts": {
+    "all": 19,
+    "floor_116": 16,
+    "floor_117": 3,
+    "unqualified_original_visuals": 19
+  },
+  "creation_blocks": [
+    {
+      "byte_span": [
+        122,
+        222
+      ],
+      "floor": 116,
+      "function": "npcgen_warp",
+      "graphic": null,
+      "n": 1,
+      "name": null,
+      "raw_block_sha256": "a9d890f5590f338e14682e33f229756ecb415a76af09cc2a7808b70c80b1874d",
+      "source_argument": null,
+      "x": 2,
+      "y": 6
+    },
+    {
+      "byte_span": [
+        232,
+        332
+      ],
+      "floor": 116,
+      "function": "npcgen_warp",
+      "graphic": null,
+      "n": 2,
+      "name": null,
+      "raw_block_sha256": "4408f1c76e9df6807274481a03787099507ea4a99753e65586239b9ef0e203c9",
+      "source_argument": null,
+      "x": 4,
+      "y": 6
+    },
+    {
+      "byte_span": [
+        342,
+        442
+      ],
+      "floor": 116,
+      "function": "npcgen_warp",
+      "graphic": null,
+      "n": 3,
+      "name": null,
+      "raw_block_sha256": "39be4fb4faa0eec7f751206b85752f2e74a5a49dcd8fa17075f7fb2971cf0e70",
+      "source_argument": null,
+      "x": 6,
+      "y": 6
+    },
+    {
+      "byte_span": [
+        452,
+        606
+      ],
+      "floor": 116,
+      "function": "npcgen_man",
+      "graphic": 16025,
+      "n": 4,
+      "name": "酒保",
+      "raw_block_sha256": "8f80e1f56c21627438e7bddd2a4cef1539dc13de72c7032a1eef17a346ad0467",
+      "source_argument": "npc/genout/msg_116_36_33",
+      "x": 36,
+      "y": 33
+    },
+    {
+      "byte_span": [
+        616,
+        772
+      ],
+      "floor": 116,
+      "function": "npcgen_man",
+      "graphic": 16013,
+      "n": 5,
+      "name": "兔女郎",
+      "raw_block_sha256": "be8020d821d36fda504d2552548b758da5556babcc19af5d62437c02eff2e001",
+      "source_argument": "npc/genout/msg_116_26_32",
+      "x": 26,
+      "y": 32
+    },
+    {
+      "byte_span": [
+        782,
+        938
+      ],
+      "floor": 116,
+      "function": "npcgen_man",
+      "graphic": 16015,
+      "n": 6,
+      "name": "兔女郎",
+      "raw_block_sha256": "daf7b9fb23486c4d7e0e4cf8c89bc79c9f8ab3df8233e84c4ca4bca757dd265f",
+      "source_argument": "npc/genout/msg_116_32_37",
+      "x": 32,
+      "y": 37
+    },
+    {
+      "byte_span": [
+        948,
+        1104
+      ],
+      "floor": 116,
+      "function": "npcgen_man",
+      "graphic": 16014,
+      "n": 7,
+      "name": "兔女郎",
+      "raw_block_sha256": "a09a1eb9a2146203dca0e08286cdb3432562391a9044b49cd827555196b1c5ac",
+      "source_argument": "npc/genout/msg_116_13_32",
+      "x": 13,
+      "y": 32
+    },
+    {
+      "byte_span": [
+        1114,
+        1267
+      ],
+      "floor": 116,
+      "function": "npcgen_man",
+      "graphic": 16011,
+      "n": 8,
+      "name": "男孩子",
+      "raw_block_sha256": "9b12c5ac204f53acb05866d42e22168d10d433995ff49c756b85168535e93de7",
+      "source_argument": "npc/genout/msg_116_4_35",
+      "x": 4,
+      "y": 35
+    },
+    {
+      "byte_span": [
+        1277,
+        1430
+      ],
+      "floor": 116,
+      "function": "npcgen_man",
+      "graphic": 16009,
+      "n": 9,
+      "name": "女孩子",
+      "raw_block_sha256": "19d70571cdb31724fc2ba62f67634c8b119a38b84a584375e3eb7004ec8914db",
+      "source_argument": "npc/genout/msg_116_8_36",
+      "x": 8,
+      "y": 36
+    },
+    {
+      "byte_span": [
+        1440,
+        1596
+      ],
+      "floor": 116,
+      "function": "npcgen_man",
+      "graphic": 16031,
+      "n": 10,
+      "name": "女孩子",
+      "raw_block_sha256": "40b19a5f56e65aaeeb5fa80677b8110a881f6cf4f4d04020823413e405b5b300",
+      "source_argument": "npc/genout/msg_116_15_21",
+      "x": 15,
+      "y": 21
+    },
+    {
+      "byte_span": [
+        1606,
+        1760
+      ],
+      "floor": 116,
+      "function": "npcgen_man",
+      "graphic": 16018,
+      "n": 11,
+      "name": "村民",
+      "raw_block_sha256": "c8a27f49fccb9b8efdd7d8984008ec7a57ca2e613c32406a612e3162d7e9597e",
+      "source_argument": "npc/genout/msg_116_37_20",
+      "x": 37,
+      "y": 20
+    },
+    {
+      "byte_span": [
+        1770,
+        1925
+      ],
+      "floor": 116,
+      "function": "npcgen_signboard",
+      "graphic": 10063,
+      "n": 12,
+      "name": "看板",
+      "raw_block_sha256": "4fa1e69e673c6ca12b6daa91b81955ce55a37cae0ef24739f91279a0b9981af3",
+      "source_argument": "npc/genout/signb_116_4_2",
+      "x": 4,
+      "y": 2
+    },
+    {
+      "byte_span": [
+        1935,
+        2096
+      ],
+      "floor": 116,
+      "function": "npcgen_warpman",
+      "graphic": 16038,
+      "n": 13,
+      "name": "工作人員",
+      "raw_block_sha256": "a5c1c69e287a104c7ff59304ed8f295ea4aa710df3507bb3f86f9d48d3ac07b9",
+      "source_argument": "npc/genout/wpm_116_11_16",
+      "x": 11,
+      "y": 16
+    },
+    {
+      "byte_span": [
+        2106,
+        2267
+      ],
+      "floor": 116,
+      "function": "npcgen_warpman",
+      "graphic": 16048,
+      "n": 14,
+      "name": "工作人員",
+      "raw_block_sha256": "c939ba91a3e6ea466a917650a49834992b1a9dbda61984023333bd2415991b0c",
+      "source_argument": "npc/genout/wpm_116_12_16",
+      "x": 12,
+      "y": 16
+    },
+    {
+      "byte_span": [
+        2277,
+        2438
+      ],
+      "floor": 116,
+      "function": "npcgen_warpman",
+      "graphic": 16306,
+      "n": 15,
+      "name": "工作人員",
+      "raw_block_sha256": "065c3c549662bbe19137984cf0653db932682d74bfa7a680c4804b1d6a522b10",
+      "source_argument": "npc/genout/wpm_116_11_13",
+      "x": 11,
+      "y": 13
+    },
+    {
+      "byte_span": [
+        2448,
+        2609
+      ],
+      "floor": 116,
+      "function": "npcgen_warpman",
+      "graphic": 16303,
+      "n": 16,
+      "name": "工作人員",
+      "raw_block_sha256": "5e533379916ade750091f7e72fd58b8a5dffba80e254eb8ca497d7d6301a9493",
+      "source_argument": "npc/genout/wpm_116_12_13",
+      "x": 12,
+      "y": 13
+    },
+    {
+      "byte_span": [
+        2619,
+        2768
+      ],
+      "floor": 117,
+      "function": "npcgen_winhealer",
+      "graphic": 16024,
+      "n": 17,
+      "name": "監獄醫生",
+      "raw_block_sha256": "a6c53ab2972e664d5d2487c85c6e25423c1c8ccb546fe1919191ff6bce88466f",
+      "source_argument": null,
+      "x": 234,
+      "y": 12
+    },
+    {
+      "byte_span": [
+        2778,
+        2936
+      ],
+      "floor": 117,
+      "function": "npcgen_shop",
+      "graphic": 16020,
+      "n": 18,
+      "name": "護士長",
+      "raw_block_sha256": "469ecff56eaf94687f814983b8e26917534a979e66e6204b20bc7f5b7d720294",
+      "source_argument": "npc/genout/ss_117_234_14",
+      "x": 234,
+      "y": 14
+    },
+    {
+      "byte_span": [
+        2946,
+        3105
+      ],
+      "floor": 117,
+      "function": "npcgen_warpman",
+      "graphic": 16204,
+      "n": 19,
+      "name": "監獄的通關處",
+      "raw_block_sha256": "d82b2dd5cf7e4ce55fd32de11605533986521447fe6000b4b2ff12df69076d4f",
+      "source_argument": "npc/genout/wpm_117_6_5",
+      "x": 6,
+      "y": 5
+    }
+  ],
+  "date": "2026-11-12",
+  "file_arguments": [
+    {
+      "path": "npc/genout/manmoshall.create",
+      "sha256": "d09462b9627049b9efb6cb1c05a640c841bd1a15f4e62aceda79efaec41cd40b",
+      "size": 3106,
+      "zip_crc32": "5cc3a678"
+    },
+    {
+      "path": "npc/genout/msg_116_13_32",
+      "sha256": "e97f52c2d20118d63f2ec5314877e9349ebf7531e1ecf3038b3ab03e38c2c39f",
+      "size": 80,
+      "zip_crc32": "9fd2c02f"
+    },
+    {
+      "path": "npc/genout/msg_116_15_21",
+      "sha256": "1e0dae3ec3b54ebd87b14a6f0882b3f558c6bebfad680b829da9abf5a63b5b1b",
+      "size": 53,
+      "zip_crc32": "4728d38e"
+    },
+    {
+      "path": "npc/genout/msg_116_26_32",
+      "sha256": "113c61d887171a81fc7a49bb8b800836e2771b3cdd370851b182b74b64ee8fbb",
+      "size": 82,
+      "zip_crc32": "422f4539"
+    },
+    {
+      "path": "npc/genout/msg_116_32_37",
+      "sha256": "b208e1fb5e19c3f836186a1d2539c39e691bae6acec5b4793737aa09132ae5e6",
+      "size": 78,
+      "zip_crc32": "e11ae940"
+    },
+    {
+      "path": "npc/genout/msg_116_36_33",
+      "sha256": "1cffcd8346d92c8b47794c27c1eb8b69cacfcc04992b53f81198149c94aba376",
+      "size": 184,
+      "zip_crc32": "3c9ef311"
+    },
+    {
+      "path": "npc/genout/msg_116_37_20",
+      "sha256": "cb457d251c70a497bd6205b21ac8178ee510109ed3f3e4f0b6dd06d4fa030576",
+      "size": 76,
+      "zip_crc32": "c5774d75"
+    },
+    {
+      "path": "npc/genout/msg_116_4_35",
+      "sha256": "e2246c2729aa819fc6ce7b840da974ae9954c21375d9761b0195ea7bdb31048f",
+      "size": 50,
+      "zip_crc32": "d1ba666f"
+    },
+    {
+      "path": "npc/genout/msg_116_8_36",
+      "sha256": "9213a17a55c93e7ffede13ef1c188a5da8463a03230567dc3f7db78e2942a240",
+      "size": 43,
+      "zip_crc32": "97c48bfe"
+    },
+    {
+      "path": "npc/genout/signb_116_4_2",
+      "sha256": "e73015f0222e4bb2a05730f901a033ec18a7d2485cfb2f371f28c933897c5589",
+      "size": 153,
+      "zip_crc32": "1b3ece48"
+    },
+    {
+      "path": "npc/genout/ss_117_234_14",
+      "sha256": "bb1521134f2470568fc5257582d7e77aada85f26dce218fab76ae1df54146e26",
+      "size": 531,
+      "zip_crc32": "7603e21c"
+    },
+    {
+      "path": "npc/genout/wpm_116_11_13",
+      "sha256": "4041e339e7156c6638caad929bce158f3cb67b6b6d135dd1512ad7396e58eb49",
+      "size": 403,
+      "zip_crc32": "6590e817"
+    },
+    {
+      "path": "npc/genout/wpm_116_11_16",
+      "sha256": "8e818370d7e9163d82843615dc5f724938a81399edfe372c8216727218ff4761",
+      "size": 438,
+      "zip_crc32": "4d66e32c"
+    },
+    {
+      "path": "npc/genout/wpm_116_12_13",
+      "sha256": "2e671d85f20501a04fd527f6393c17e33ad1ad5717b28badc824ca5f4795c5ff",
+      "size": 284,
+      "zip_crc32": "f805a557"
+    },
+    {
+      "path": "npc/genout/wpm_116_12_16",
+      "sha256": "e9cd5bba45bcd02f06e9f403c408b7e26351b0a8baee6fcc19033e5859102f84",
+      "size": 400,
+      "zip_crc32": "72cdd499"
+    },
+    {
+      "path": "npc/genout/wpm_117_6_5",
+      "sha256": "1e53e423f6de50cb5065b84b01cba1f589712c2a3cced224b7368df0a1626458",
+      "size": 365,
+      "zip_crc32": "8f63d8d3"
+    },
+    {
+      "path": "npc/extra/event/syutuen",
+      "sha256": "c23b4e89cf8300d4306afaed403a54ed9ba7859ea1f2e436b5e5bb0e57ab9c47",
+      "size": 888,
+      "zip_crc32": "4f7dad51"
+    },
+    {
+      "path": "npc/extra/event/karikari",
+      "sha256": "03c749fcaed0c7b8a6ca23d67b917f6abf935a1daf62214421a5a2655f32f09f",
+      "size": 887,
+      "zip_crc32": "02ba0294"
+    },
+    {
+      "path": "npc/genout/wpm_125_2_13",
+      "sha256": "81521662b093d512a4f70381d0a928256565312222ac77c0c96afdf062b7e795",
+      "size": 503,
+      "zip_crc32": "1ea220bc"
+    },
+    {
+      "path": "npc/giiru/event/sikkoku05",
+      "sha256": "bd1cda60b889430d1c2fc87591aac009588c3005943a853957388390395c3f05",
+      "size": 2156,
+      "zip_crc32": "3960bd64"
+    }
+  ],
+  "floor116_staff_warp_guards": [
+    {
+      "argument": "npc/genout/wpm_116_11_16",
+      "del_item": null,
+      "floor": 116,
+      "free": "LV>0&ITEM=2608",
+      "money": "-1",
+      "warp": "116,11,11",
+      "xy": [
+        11,
+        16
+      ]
+    },
+    {
+      "argument": "npc/genout/wpm_116_12_16",
+      "del_item": null,
+      "floor": 116,
+      "free": "LV>0&ITEM=2608",
+      "money": "-1",
+      "warp": "116,12,11",
+      "xy": [
+        12,
+        16
+      ]
+    },
+    {
+      "argument": "npc/genout/wpm_116_11_13",
+      "del_item": null,
+      "floor": 116,
+      "free": "LV>0&ITEM!=2609",
+      "money": "-1",
+      "warp": "116,11,17",
+      "xy": [
+        11,
+        13
+      ]
+    },
+    {
+      "argument": "npc/genout/wpm_116_12_13",
+      "del_item": null,
+      "floor": 116,
+      "free": "LV>0&ITEM!=2609",
+      "money": "-1",
+      "warp": "116,12,17",
+      "xy": [
+        12,
+        13
+      ]
+    }
+  ],
+  "historical_stage": {
+    "overall_percent": null,
+    "savedata_R79": "PAUSED_NON_BLOCKING",
+    "stage_a_open": 2,
+    "stage_a_partial": 7,
+    "stage_b": "GATED",
+    "wiki": "GATED"
+  },
+  "main_creation_path": "npc/genout/manmoshall.create",
+  "main_creation_sha256": "d09462b9627049b9efb6cb1c05a640c841bd1a15f4e62aceda79efaec41cd40b",
+  "main_creation_size_bytes": 3106,
+  "negative_evidence_limit": "literal file: string hits within these 2205 archived NPC members, not evidence of absent runtime loading, separate master sources or original commercial availability",
+  "qualification": {
+    "early_official_same_deployment": "OPEN",
+    "floor125_stage_return_reachability": "OPEN; parameter has zero direct file: references",
+    "graphics_drawn_in_original_game": "OPEN; graphics are only numeric IDs, not decoded source pixels",
+    "map_116_117_geometry": "OPEN, no DAT/PAL/RD recovered in this work unit",
+    "static_create_and_argument_source": "FACT within mixed25 archive",
+    "ticket_2608_issuance_runtime": "OPEN; archived syutuen file has zero direct file: references",
+    "ticket_2703_issuance_runtime": "OPEN; archived karikari file has zero direct file: references"
+  },
+  "schema": "stoneage.integration77.mammoth_hall_static_original_source.r1",
+  "source_argument_links": {
+    "missing": 0,
+    "resolved_in_same_zip": 15,
+    "unique": 15
+  },
+  "source_carrier": {
+    "library_file": "/石器时代/StoneAge-CHAR01-mixed25-all-npc-original-private.zip",
+    "source_scope": "preserved community mixed25 NPC bundle; not certified original Taiwan 1.0 or commercial deployment",
+    "zip_crc_verified": 2205,
+    "zip_members": 2205,
+    "zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "zip_size_bytes": 995176
+  },
+  "unlinked_performance_permit_script_candidates": [
+    {
+      "conditional_token": "ITEM!=2608",
+      "direct_file_reference_occurrences_in_2205": 0,
+      "item_grant_token": "GetItem:2608*1",
+      "path": "npc/extra/event/syutuen"
+    },
+    {
+      "conditional_token": "ITEM!=2703",
+      "direct_file_reference_occurrences_in_2205": 0,
+      "item_grant_token": "GetItem:2703*1",
+      "path": "npc/extra/event/karikari"
+    }
+  ],
+  "unlinked_stage_return_parameter": {
+    "del_item": "2702,2703",
+    "direct_file_reference_occurrences_in_2205": 0,
+    "free": "ITEM=2703,ITEM=2702&ITEM=2703",
+    "path": "npc/genout/wpm_125_2_13",
+    "warp": "116,38,7"
+  }
+}

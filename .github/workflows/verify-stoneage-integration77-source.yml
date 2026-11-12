@@ -1,0 +1,22 @@
+name: Verify StoneAge INTEGRATION77 Mammoth Hall original source contract
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION77-MAMMOTH-HALL-ORIGINAL-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration77_mammoth_hall_source.py'
+      - '.github/workflows/verify-stoneage-integration77-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION77-MAMMOTH-HALL-ORIGINAL-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration77_mammoth_hall_source.py'
+      - '.github/workflows/verify-stoneage-integration77-source.yml'
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_integration77_mammoth_hall_source.py' -v
