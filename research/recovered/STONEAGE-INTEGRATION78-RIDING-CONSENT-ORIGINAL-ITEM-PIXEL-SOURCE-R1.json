@@ -1,0 +1,635 @@
+{
+  "schema": "stoneage.integration78.riding_consent_original_item_pixel_static_join.r1",
+  "date": "2026-11-12",
+  "source_baseline": {
+    "repository": "chinaneedM/stoneage-rebuild",
+    "main_head": "74aaaccdb59fc4fce94e6bb8b300821c83b21170",
+    "main_tree": "0ba0c825470170a5204ff39afc8c995e24ebbc22",
+    "main_ci_completed_success": 26,
+    "historical_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "historical_current_size_bytes": 2709173
+  },
+  "private_carriers": {
+    "original_NPC_community_mixed25_archive": {
+      "filename": "StoneAge-CHAR01-mixed25-all-npc-original-private.zip",
+      "bytes": 995176,
+      "sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+      "members": 2205,
+      "crc_pass": 2205,
+      "archive_scope": "later preserved mixed25 community source, not proven official TW1 game server"
+    },
+    "previous_item01_private_catalog_archive": {
+      "filename": "StoneAge-ITEM01-private-two-itemsets-832-original-RD-icon-observer.zip",
+      "bytes": 5868386,
+      "sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+      "members": 838,
+      "crc_pass": 838,
+      "catalog_json_bytes": 32057594,
+      "catalog_json_sha256": "0438c4fc9bf945223d46c24e9d374de436f2ac981c23fa282776281c2e772e60",
+      "source_itemset_a_size": 3392473,
+      "source_itemset_a_sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+      "source_itemset_b_size": 3668487,
+      "source_itemset_b_sha256": "6d6d63fda59c6bda2f239fe18c9361b5c9da18c84f678b7cc95bde24544292fb"
+    },
+    "prior_TW1_retail_RD_source_record": {
+      "source_P3H_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+      "source_ADRN_sha256": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+      "source_REAL_sha256": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13",
+      "source_Palet1_sha256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0",
+      "this_round_original_REAL_bytes_decoded": 0,
+      "this_round_saved_original_PNG_reverified": true
+    }
+  },
+  "NPC_source_files": {
+    "npc/family/fmletter.conf": {
+      "size_bytes": 716,
+      "sha256": "9f64ed649cad5bf0594aa01cc2ae0ec4294f68cf7ff182b7d35d17f4f4521f75",
+      "crc32": "c2e60a34"
+    },
+    "npc/family/fmletter.create": {
+      "size_bytes": 697,
+      "sha256": "8d85baa9cf167f0fc581b84daa18cc8bcd827256a997ddc463c9fd63a294d36e",
+      "crc32": "5b27b98f"
+    },
+    "npc/family/riderman.conf": {
+      "size_bytes": 3237,
+      "sha256": "1316fed9ee6af4dfe04ee519b3c98f399fe78ec880ecd7ad2af65bd7d99e6029",
+      "crc32": "cf9c8f21"
+    },
+    "npc/family/riderman.create": {
+      "size_bytes": 991,
+      "sha256": "e37d03b13bd0fef1d9cf6e47223787047ffd36c00db234a37efc06f58880e510",
+      "crc32": "752ff282"
+    },
+    "npc/family/rider.arg": {
+      "size_bytes": 554,
+      "sha256": "59386ccc0231c2e9ac837d092cbe5c407cf982284160beb2ed14335cdcde6831",
+      "crc32": "068eef8b"
+    },
+    "npc/family/rider.create": {
+      "size_bytes": 188,
+      "sha256": "283dc39ecd58c8ba94b38e1ff911f44aeb6b5112825f464f9f020d1d16798933",
+      "crc32": "50b72f20"
+    },
+    "npc/sa60/rider.arg": {
+      "size_bytes": 464,
+      "sha256": "78992a712e11d29d6f366f9be59f4c27c8e85842dec0322adf26afddcd56d4e4",
+      "crc32": "c9b7d365"
+    },
+    "npc/sa60/rider.create": {
+      "size_bytes": 186,
+      "sha256": "8f6a8e110aee852455a15e86e21c542872d1663a387d8941c8b5a5f4e5956846",
+      "crc32": "23a648ee"
+    },
+    "npc/sa60/rider.arg.bak": {
+      "size_bytes": 554,
+      "sha256": "59386ccc0231c2e9ac837d092cbe5c407cf982284160beb2ed14335cdcde6831",
+      "crc32": "068eef8b"
+    }
+  },
+  "NPC_static_create": {
+    "riding_trainer": [
+      {
+        "index": 1,
+        "source_span": [
+          33,
+          203
+        ],
+        "source_block_sha256": "e3ddaa498022aa89ecea04a8933cc2333ea53ad57449f676181db688b3133cda",
+        "floor": 1040,
+        "born": "61,45,1,1",
+        "graphic": 16017,
+        "family": 1,
+        "role": "騎乘訓練師",
+        "enemy": "riderman|conff:family/riderman.conf",
+        "direction": 6
+      },
+      {
+        "index": 2,
+        "source_span": [
+          228,
+          398
+        ],
+        "source_block_sha256": "1191294362a4ed44d3d30bd16c1076222c812a09e6a4a55152ff81434ce334fa",
+        "floor": 2030,
+        "born": "55,16,1,1",
+        "graphic": 16002,
+        "family": 2,
+        "role": "騎乘訓練師",
+        "enemy": "riderman|conff:family/riderman.conf",
+        "direction": 4
+      },
+      {
+        "index": 3,
+        "source_span": [
+          419,
+          589
+        ],
+        "source_block_sha256": "e390019dc24d640747ac39d726187dc43db3fd941189488be187981c9fe923ad",
+        "floor": 3030,
+        "born": "50,21,1,1",
+        "graphic": 16002,
+        "family": 3,
+        "role": "騎乘訓練師",
+        "enemy": "riderman|conff:family/riderman.conf",
+        "direction": 4
+      },
+      {
+        "index": 4,
+        "source_span": [
+          614,
+          784
+        ],
+        "source_block_sha256": "daf9746c299b3ad637a7a93bd12fa284ff611ad7c9ce18715f9f125fd274ed88",
+        "floor": 4030,
+        "born": "16,35,1,1",
+        "graphic": 16002,
+        "family": 4,
+        "role": "騎乘訓練師",
+        "enemy": "riderman|conff:family/riderman.conf",
+        "direction": 4
+      }
+    ],
+    "letter_secretary": [
+      {
+        "index": 1,
+        "source_span": [
+          44,
+          206
+        ],
+        "source_block_sha256": "d92ed8ff999bbb0ea9ff7065b8db2d2f8650b8e1bfd87739cff9134793ec9e0c",
+        "floor": 1041,
+        "born": "15,15,15,15",
+        "graphic": 16065,
+        "family": 1,
+        "role": "秘書",
+        "enemy": "fmletter|conff:family/fmletter.conf",
+        "direction": 6
+      },
+      {
+        "index": 2,
+        "source_span": [
+          208,
+          370
+        ],
+        "source_block_sha256": "5ae81b81eadc83657b63626d1df54096eaac04dbc7719ee3f9df28b89248e754",
+        "floor": 2031,
+        "born": "17,17,17,17",
+        "graphic": 16065,
+        "family": 2,
+        "role": "秘書",
+        "enemy": "fmletter|conff:family/fmletter.conf",
+        "direction": 6
+      },
+      {
+        "index": 3,
+        "source_span": [
+          372,
+          532
+        ],
+        "source_block_sha256": "3b6a639cf56e221ab730a6c96436744dd024c92c7fe52169af8e557d9ef12e26",
+        "floor": 3031,
+        "born": "14,9,14,9",
+        "graphic": 16027,
+        "family": 3,
+        "role": "秘書",
+        "enemy": "fmletter|conff:family/fmletter.conf",
+        "direction": 4
+      },
+      {
+        "index": 4,
+        "source_span": [
+          534,
+          696
+        ],
+        "source_block_sha256": "574559f7ee4fed5c75cf2a7db30436299132115267c26474f2ecb297d0feae27",
+        "floor": 4031,
+        "born": "17,12,17,12",
+        "graphic": 16030,
+        "family": 4,
+        "role": "秘書",
+        "enemy": "fmletter|conff:family/fmletter.conf",
+        "direction": 6
+      }
+    ],
+    "special_mount_family": [
+      {
+        "index": 1,
+        "source_span": [
+          33,
+          186
+        ],
+        "source_block_sha256": "0f3a97766f55d91a7504897e2a05693986f2ef6434b7e7fdf972a7c2da38c1d8",
+        "floor": 1040,
+        "born": "23,20",
+        "graphic": 100374,
+        "family": 0,
+        "role": "馴獸機暴",
+        "enemy": "npcgen_warpman|file:family/rider.arg",
+        "direction": 4
+      }
+    ],
+    "special_mount_sa60": [
+      {
+        "index": 1,
+        "source_span": [
+          33,
+          184
+        ],
+        "source_block_sha256": "d4029ef0e54a5e84d453125a3ea1ea07ea9bc4e5a03fea575aa17a6a1d96ede2",
+        "floor": 1040,
+        "born": "23,20",
+        "graphic": 100374,
+        "family": 0,
+        "role": "馴獸機暴",
+        "enemy": "npcgen_warpman|file:sa60/rider.arg",
+        "direction": 4
+      }
+    ]
+  },
+  "NPC_original_config": {
+    "riding_trainer_windows": [
+      {
+        "winno": 110,
+        "takegold": 5000,
+        "letter_items": [
+          19005,
+          19006,
+          19007,
+          19008
+        ],
+        "gotowin": [
+          6
+        ]
+      },
+      {
+        "winno": 120,
+        "takegold": 10000,
+        "letter_items": [
+          19005,
+          19006,
+          19007,
+          19008
+        ],
+        "gotowin": [
+          7
+        ]
+      },
+      {
+        "winno": 130,
+        "takegold": 15000,
+        "letter_items": [
+          19005,
+          19006,
+          19007,
+          19008
+        ],
+        "gotowin": [
+          8
+        ]
+      },
+      {
+        "winno": 140,
+        "takegold": 20000,
+        "letter_items": [
+          19005,
+          19006,
+          19007,
+          19008
+        ],
+        "gotowin": [
+          9
+        ]
+      }
+    ],
+    "fmletter_producer_window": {
+      "winno": 20,
+      "takegold": null,
+      "letter_items": [
+        19005,
+        19006,
+        19007,
+        19008,
+        20224,
+        20225,
+        20226,
+        20227,
+        20228
+      ],
+      "gotowin": [
+        6
+      ]
+    },
+    "trainer_letter_item_ids": [
+      19005,
+      19006,
+      19007,
+      19008
+    ],
+    "secretary_letter_item_ids": [
+      19005,
+      19006,
+      19007,
+      19008,
+      20224,
+      20225,
+      20226,
+      20227,
+      20228
+    ],
+    "rider_arg_variants": {
+      "npc/family/rider.arg": {
+        "size": 554,
+        "sha256": "59386ccc0231c2e9ac837d092cbe5c407cf982284160beb2ed14335cdcde6831",
+        "contains_conditional_item_id": 20296,
+        "contains_literal_trans_values": [
+          5,
+          6
+        ],
+        "npcpoint_count": 17
+      },
+      "npc/sa60/rider.arg": {
+        "size": 464,
+        "sha256": "78992a712e11d29d6f366f9be59f4c27c8e85842dec0322adf26afddcd56d4e4",
+        "contains_conditional_item_id": 20296,
+        "contains_literal_trans_values": [
+          5,
+          6
+        ],
+        "npcpoint_count": 9
+      },
+      "npc/sa60/rider.arg.bak": {
+        "size": 554,
+        "sha256": "59386ccc0231c2e9ac837d092cbe5c407cf982284160beb2ed14335cdcde6831",
+        "contains_conditional_item_id": 20296,
+        "contains_literal_trans_values": [
+          5,
+          6
+        ],
+        "npcpoint_count": 17
+      }
+    },
+    "trainer_course_level_labels_from_previous_source_report": [
+      40,
+      80,
+      120,
+      "all (source text)"
+    ],
+    "source_training_runtime_replayed_this_round": false,
+    "fixed_descendant_reference_prior_result": "research/mechanics/STONEAGE-RIDERMAN-CORE-R1.md (letter prerequisite code disabled in fixed descendants; not proven earlier history)"
+  },
+  "consent_item_rows": [
+    {
+      "id": 19005,
+      "original_itemset_file": "gmsv/data/itemset0710.txt",
+      "original_source_line": 12767,
+      "source_line_sha256": "b1d45632cd12db3022120bb9709d65ccee6efe4d0f7fabdbcc42fd678dd3c66b",
+      "source_name": "騎乘學習同意書",
+      "graphic_alias": 24176,
+      "source_itemset_txt_present": false,
+      "source_itemset0710_present": true,
+      "relation": "TRAINER_AND_LETTER_MENU"
+    },
+    {
+      "id": 19006,
+      "original_itemset_file": "gmsv/data/itemset0710.txt",
+      "original_source_line": 12768,
+      "source_line_sha256": "9f91ab955067217c52d88511a1cdc79fb7f6f7da8f8dd657bb2c2806ef6d40ab",
+      "source_name": "騎乘學習同意書",
+      "graphic_alias": 24176,
+      "source_itemset_txt_present": false,
+      "source_itemset0710_present": true,
+      "relation": "TRAINER_AND_LETTER_MENU"
+    },
+    {
+      "id": 19007,
+      "original_itemset_file": "gmsv/data/itemset0710.txt",
+      "original_source_line": 12769,
+      "source_line_sha256": "7d9783a06856b90300b659483efab3c9a968ee9b2a7b7f527a5eb560de8da384",
+      "source_name": "騎乘學習同意書",
+      "graphic_alias": 24176,
+      "source_itemset_txt_present": false,
+      "source_itemset0710_present": true,
+      "relation": "TRAINER_AND_LETTER_MENU"
+    },
+    {
+      "id": 19008,
+      "original_itemset_file": "gmsv/data/itemset0710.txt",
+      "original_source_line": 12770,
+      "source_line_sha256": "f6d830320942c082947ce7115ef917b94130a38562ef785296448cba00639e75",
+      "source_name": "騎乘學習同意書",
+      "graphic_alias": 24176,
+      "source_itemset_txt_present": false,
+      "source_itemset0710_present": true,
+      "relation": "TRAINER_AND_LETTER_MENU"
+    },
+    {
+      "id": 20224,
+      "original_itemset_file": "gmsv/data/itemset0710.txt",
+      "original_source_line": 13274,
+      "source_line_sha256": "4728900860f447b2bb000fff88260983d6d3eedb068f632c1ba158626d580433",
+      "source_name": "騎乘學習同意書",
+      "graphic_alias": 24176,
+      "source_itemset_txt_present": false,
+      "source_itemset0710_present": true,
+      "relation": "LETTER_MENU_ONLY"
+    },
+    {
+      "id": 20225,
+      "original_itemset_file": "gmsv/data/itemset0710.txt",
+      "original_source_line": 13275,
+      "source_line_sha256": "8c3379cbb957c732f170af3f183242f14c18f73db00874bc0f4a1d82a6741527",
+      "source_name": "騎乘學習同意書",
+      "graphic_alias": 24176,
+      "source_itemset_txt_present": false,
+      "source_itemset0710_present": true,
+      "relation": "LETTER_MENU_ONLY"
+    },
+    {
+      "id": 20226,
+      "original_itemset_file": "gmsv/data/itemset0710.txt",
+      "original_source_line": 13276,
+      "source_line_sha256": "faaa533bab8bf864ee3eea10e28cc7ea96cd4df77b73f37065dcea33558c6927",
+      "source_name": "騎乘學習同意書",
+      "graphic_alias": 24176,
+      "source_itemset_txt_present": false,
+      "source_itemset0710_present": true,
+      "relation": "LETTER_MENU_ONLY"
+    },
+    {
+      "id": 20227,
+      "original_itemset_file": "gmsv/data/itemset0710.txt",
+      "original_source_line": 13277,
+      "source_line_sha256": "70adbb8b5c347e473edff0812b6140dcfdea90b09c06b4f8bd82cf5ee0bdb11c",
+      "source_name": "騎乘學習同意書",
+      "graphic_alias": 24176,
+      "source_itemset_txt_present": false,
+      "source_itemset0710_present": true,
+      "relation": "LETTER_MENU_ONLY"
+    },
+    {
+      "id": 20228,
+      "original_itemset_file": "gmsv/data/itemset0710.txt",
+      "original_source_line": 13278,
+      "source_line_sha256": "0ec135eca97f20cd22e7900404ec9c499b6c99ca261d6f91b4b95ccf440d68a5",
+      "source_name": "騎乘學習同意書",
+      "graphic_alias": 24176,
+      "source_itemset_txt_present": false,
+      "source_itemset0710_present": true,
+      "relation": "LETTER_MENU_ONLY"
+    },
+    {
+      "id": 20296,
+      "original_itemset_file": "gmsv/data/itemset0710.txt",
+      "original_source_line": 13342,
+      "source_line_sha256": "64e9041412e213a50da6291182eace8d67c434f4ecb3f3a04bf3da44c0f4dc26",
+      "source_name": "機暴騎乘學習同意書",
+      "graphic_alias": 24176,
+      "source_itemset_txt_present": false,
+      "source_itemset0710_present": true,
+      "relation": "SPECIAL_MOUNT_ARG"
+    },
+    {
+      "id": 20766,
+      "original_itemset_file": "gmsv/data/itemset0710.txt",
+      "original_source_line": 13805,
+      "source_line_sha256": "f95c3542670067fa5e3a39f9403b0f8beefbf4b78f30109d9a3734079c7d92be",
+      "source_name": "騎乘學習同意書",
+      "graphic_alias": 24176,
+      "source_itemset_txt_present": false,
+      "source_itemset0710_present": true,
+      "relation": "SOURCE_ROW_ONLY"
+    },
+    {
+      "id": 20767,
+      "original_itemset_file": "gmsv/data/itemset0710.txt",
+      "original_source_line": 13806,
+      "source_line_sha256": "d7e0313998396a6dd49a6b308b7d99d11b72d701d21511567fb7660a518c6799",
+      "source_name": "騎乘學習同意書",
+      "graphic_alias": 24176,
+      "source_itemset_txt_present": false,
+      "source_itemset0710_present": true,
+      "relation": "SOURCE_ROW_ONLY"
+    },
+    {
+      "id": 20813,
+      "original_itemset_file": "gmsv/data/itemset0710.txt",
+      "original_source_line": 13852,
+      "source_line_sha256": "0ec64c9878dfd42c3625ab8c2fe0d8b9fac88b86b073848834c42a2cb094f634",
+      "source_name": "騎乘學習同意書",
+      "graphic_alias": 24176,
+      "source_itemset_txt_present": false,
+      "source_itemset0710_present": true,
+      "relation": "SOURCE_ROW_ONLY"
+    },
+    {
+      "id": 20814,
+      "original_itemset_file": "gmsv/data/itemset0710.txt",
+      "original_source_line": 13853,
+      "source_line_sha256": "6dedcfe416f725493cc3cf5491b9e6b0ad0823d7e4d37e0dd487f1aabfefa437",
+      "source_name": "騎乘學習同意書",
+      "graphic_alias": 24176,
+      "source_itemset_txt_present": false,
+      "source_itemset0710_present": true,
+      "relation": "SOURCE_ROW_ONLY"
+    },
+    {
+      "id": 20815,
+      "original_itemset_file": "gmsv/data/itemset0710.txt",
+      "original_source_line": 13854,
+      "source_line_sha256": "27cbdf3db984ba5f555f13499e511de8f2e7c1bd5d543e03a774e36c342e06cb",
+      "source_name": "騎乘學習同意書",
+      "graphic_alias": 24176,
+      "source_itemset_txt_present": false,
+      "source_itemset0710_present": true,
+      "relation": "SOURCE_ROW_ONLY"
+    },
+    {
+      "id": 20816,
+      "original_itemset_file": "gmsv/data/itemset0710.txt",
+      "original_source_line": 13855,
+      "source_line_sha256": "6e50807de0f779e6cd0bd8a048e4cd44d3aa48d60937e469106a0633de2e867b",
+      "source_name": "騎乘學習同意書",
+      "graphic_alias": 24176,
+      "source_itemset_txt_present": false,
+      "source_itemset0710_present": true,
+      "relation": "SOURCE_ROW_ONLY"
+    }
+  ],
+  "item_row_count_16_later_table_only": 16,
+  "consent_role_counts": {
+    "TRAINER_AND_LETTER_MENU": 4,
+    "LETTER_MENU_ONLY": 5,
+    "SPECIAL_MOUNT_ARG": 1,
+    "SOURCE_ROW_ONLY": 6
+  },
+  "source_itemset_A_consent_ids": [],
+  "source_itemset0710_consent_ids": [
+    19005,
+    19006,
+    19007,
+    19008,
+    20224,
+    20225,
+    20226,
+    20227,
+    20228,
+    20296,
+    20766,
+    20767,
+    20813,
+    20814,
+    20815,
+    20816
+  ],
+  "source_shop_argument_direct_memberships_total": 0,
+  "single_shared_tw1_pixel_candidate": {
+    "image_number_alias": 24176,
+    "tw1_adnr_record_matches": 1,
+    "original_ADRN_record_sha256": "f13c5fe8ea0a87ae9f56a0658959b169c66f50b3436cb12fdd0455060b572c00",
+    "tw1_real_physical_bitmap_number": 6840,
+    "original_RD_bytes": 1524,
+    "original_RD_sha256": "cddd1a18dec031cec9d9d128da11f41500d8d101663ab1100eb17f066b9d0146",
+    "original_indexed_pixel_sha256": "7ce15d463e70ca1177d37ec5260ae3bbbb5de265b60a04c77bbf027e65727f7d",
+    "source_width": 52,
+    "source_height": 44,
+    "candidate_png_bytes": 2786,
+    "candidate_png_sha256": "82334c031191fb20b31f6a469a9a9985dac36592ba362defc8ed0b9a15a06572",
+    "pixel_link_scope": "numeric image alias cross-carrier candidate, NOT same official deployment",
+    "unique_original_RD_new_this_round": 0
+  },
+  "voucher_contrast_20833": {
+    "id": 20833,
+    "name": "騎證換兌卷",
+    "graphic_alias": 24371,
+    "source_A_line": 13227,
+    "source_B_line": 13871,
+    "original_whole_line_sha256": "30da9412367807109f430826f656301494f18b404461121ead22e1e28936517f",
+    "present_in_both_tables": true,
+    "retail_original_alias_matches": 0,
+    "qualified_retail_RD": false,
+    "not_equivalent_to_consent_without_evidence": true
+  },
+  "evidence_limits": {
+    "mixed25_original_static_text_and_membership": "FACT qualified by original private ZIP",
+    "saved_item01_catalog_transcribed_rows_sha_match": "FACT qualified by previously verified full 94-field row hash",
+    "retail_TW1_alias24176_has_actual_preserved_png": "FACT for old private source PNG and prior receipt",
+    "TW1_retail_icon_was_riding_consent_in_original_TW1_server": "OPEN",
+    "original_fmletter_creation_or_training_execution": "OPEN",
+    "historical_same_deployment_of_community_NPC_itemset_and_TW1_retail_client": "OPEN",
+    "source_file_itemset0710_date_and_build": "OPEN",
+    "original_riding_mount_timing_or_trainer_fee_deduction_this_turn": "NOT_TESTED",
+    "original_same_build_person_character_NPC_sprite": "NOT_TESTED",
+    "private_original_source_PNG_and_scripts_published_to_public_git": false,
+    "new_unique_original_image_discovery_this_round": 0
+  },
+  "stage": {
+    "stage_a_partial": 7,
+    "stage_a_open": 2,
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Leave riding consent now: prioritize a separate nonduplicate source-qualified visible map/pet/NPC/other gameplay-content relation; reopen only with same-build active loader or original native runtime evidence."
+}

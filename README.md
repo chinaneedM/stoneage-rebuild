@@ -2620,3 +2620,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ### INTEGRATION77 正式远端验收与来源保管（2026-11-12）
 
 [真实PR/main CI、73条运行和原始文件保管边界](docs/continuity/STONEAGE-INTEGRATION77-PUBLICATION-ACCEPTANCE-20261112.md)：[PR #352](https://github.com/chinaneedM/stoneage-rebuild/pull/352)候选 `3bd58436` 经46/46 Actions（27 push＋19PR），正式内容主线 `413411ad`／tree `d2be756d` 经27/27 Actions，均为实际completed/success。专用push/PR/main三次均实录8项测试OK。完整源ZIP 2205/2205 CRC本轮私有核实，原商业内容不入Git；旧CURRENT完整历史blob原封不动。该验收收据自身CI仍须另行后验。Stage A7 PARTIAL＋2 OPEN、Stage B/wiki GATED、R79暂停、总体完成率未知；NEXT新非重复原二维内容，不重复无直引演出证脚本。
+
+
+## 2026-11-12 — INTEGRATION78｜骑乘同意书16原物品、四村秘书/训练师与旧TW1真像候选
+
+[来源有界16件文书、九字段制证窗口、四训练师和台湾1.0已存真实原像关系](docs/continuity/STONEAGE-INTEGRATION78-RIDING-CONSENT-ORIGINAL-PIXEL-20261112.md)／[逐ID原行SHA/原CREATE区间与负证](research/recovered/STONEAGE-INTEGRATION78-RIDING-CONSENT-ORIGINAL-ITEM-PIXEL-SOURCE-R1.json)：从远端`main=74aaaccd`/tree`0ba0c825`及26/26成功Actions启动，重新读取完整旧CURRENT Git blob保持不变。真正重读私人社区mixed25原NPC 2205/2205 CRC和先前ITEM01保存目录838/838 CRC；16份骑乘同意书原94字段行分别整SHA验证，**全部仅存itemset0710、原itemset.txt均无**，16件均别名24176。四旧骑师创建/4课程`19005–19008`与四秘书创建/制证窗口9 ID、有源特殊`20296`及另6项仅源行严格分层；旧固定后代源码早已证明骑师letter检查被`#if 0`停用，不复述为新发现或推测初代。台湾1.0零售原RD图号24176→物理6840的旧52×44 PNG实读SHA、尺寸和目视复核，**新原RD解码0、新美术0、原服执行0**。ID20833另为两表共有的兑换券，图号24371在当前TW1索引无匹配，不与24176无证合并。14成员17,977B私人原图/脚本/物品行离线资料包已存个人Library且独立回读整SHA/CRC，原版权没有入公开Git；公开12项来源反例本地通过，远端CI按完成后验。Stage A7 PARTIAL＋2 OPEN、B/wiki GATED、R79暂停、overall_percent=null。NEXT轮换另一非重复真实二维内容，不将文书当成原版必需技能或官方同部署。
