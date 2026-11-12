@@ -2660,3 +2660,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ### INTEGRATION81 正式GitHub和私人原件验收（2026-11-12）
 
 [猜拳九场景518/523原像素候选、5缺图与真实Actions验收](docs/continuity/STONEAGE-INTEGRATION81-PUBLICATION-ACCEPTANCE-20261112.md)：[PR #356](https://github.com/chinaneedM/stoneage-rebuild/pull/356)候选 `18206b8a2e999cccc5f4e34adcb5256a4442c0cf`／tree `a8cee304c1e7f43b18241d793146f41480932c2b` **46/46 Actions**（push27、PR19）success；正式内容主线 `8381be0c5da7a1bd452f3fbb3cc9d31b13f93e7b`／同tree **27/27 Actions** success，新增专项 push/PR/main 三次真实日志均为 **17 tests OK**，73个run收据见 [机器验收](research/recovered/STONEAGE-INTEGRATION81-PUBLICATION-ACCEPTANCE-R1.json)。私人16,080,715B/76成员九原DAT+NPC参数+35张旧RD候选+18现代二维画面包已存个人Library并独立重取整SHA、76CRC/75成员SHA全同；不上传原商图/脚本。九原DAT各不同但已验证9个现代画布仅3种可见像素；五张后期缺RD仍OPEN、原REAL读0字节报`Invalid symbol`不称原包坏。完整CURRENT blob保持、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体percent=null。本验收回执自身新HEAD Actions另按实际后验；NEXT轮换非重复原2D宠物/物品/任务内容。
+
+
+## 2026-11-12 — INTEGRATION82｜九张猜拳原DAT三平面差异完整来源保管
+
+[九份原DAT的第一平面13处数值差异](docs/continuity/STONEAGE-INTEGRATION82-JANKEN-DAT-PLANE-DELTAS-20261112.md)／[完整九图三平面SHA公开派生记录](research/recovered/STONEAGE-INTEGRATION82-JANKEN-DAT-PLANE-CUSTODY-R1.json)／[私人原件独立CRC/SHA与GitHub发布后验](docs/continuity/STONEAGE-INTEGRATION82-PUBLICATION-ACCEPTANCE-20261112.md)：个人Library私有源包16,080,715B/76成员已实际复取且全CRC、全SHA相符，九原DAT各15008B，逐原5000B平面复核第一平面2种/其余各9种；802→807有13/2500格精确差异，原静态事实不提升为原生渲染/碰撞/猜拳触发。PR #357经候选2/2真实PR Actions成功并合入main `4fe800a444`/tree `d1a6be09`；该合并HEAD最初无新增Actions，旧SHA成功不能冒称其验收。新原RD解码0，缺后期五图与官方同服均OPEN，原商业资产未上Git。旧CURRENT完整保留、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体进度未知；NEXT另一非重复原二维宠物/物品/任务内容。

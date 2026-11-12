@@ -1,0 +1,248 @@
+{
+  "schema": "stoneage.integration82.janken_nine_original_dat_three_plane_custody.r1",
+  "date": "2026-11-12",
+  "status": "FACT_STATIC_SOURCE_ONLY",
+  "private_zip": {
+    "name": "StoneAge-INTEGRATION81-janken-nine-partial-original-2D-private.zip",
+    "bytes": 16080715,
+    "sha256": "3a53d45971e23699be58d4f3b52812e0027aa2f8353dad6f66e44d5ecc162fa3",
+    "member_count": 76,
+    "crc_all_checked": true
+  },
+  "parse": {
+    "header": "little-endian uint32 width and height = 50,50",
+    "header_bytes": 8,
+    "original_dat_bytes_each": 15008,
+    "planes": 3,
+    "cells_per_plane": 2500,
+    "plane_cell_encoding": "little-endian uint16",
+    "plane_byte_length": 5000,
+    "offsets": [
+      8,
+      5008,
+      10008
+    ],
+    "cell_coordinates": "x=index%50; y=Math.floor(index/50)"
+  },
+  "original_DAT": [
+    {
+      "map_id": 802,
+      "source_path": "private-original-DAT/802.dat",
+      "file_sha256": "0e330c5d28a5039c3b952484c61771905707c0eaed112cb41d3278a5c1067ca2",
+      "plane_sha256": [
+        "f5fa8fc50e0fbccaca634648cf599800878c455d1739c4e072ec29ffa291b4ef",
+        "696039e9e15baa87266117b611d03e85fb12a09c32684179393841bcc794b633",
+        "05d5c731f7d7d2ee335749683305773b3451e60d3a425096c2f385fe3b92bd1a"
+      ]
+    },
+    {
+      "map_id": 804,
+      "source_path": "private-original-DAT/804.dat",
+      "file_sha256": "b3fcb1f121904f86e4f5d0bf9aba31c8ab815ccb419e3d636c11d2cd9fa692a8",
+      "plane_sha256": [
+        "f5fa8fc50e0fbccaca634648cf599800878c455d1739c4e072ec29ffa291b4ef",
+        "d76cb459c41f8cae4516c5e604ca8ba6f1755ec9c902d9f7170e6573be9a8fe8",
+        "0dddf1b29abf2760fdc4085065f0d81ea2103b6e4f3ceef484a10905a14b1d4e"
+      ]
+    },
+    {
+      "map_id": 807,
+      "source_path": "private-original-DAT/807.dat",
+      "file_sha256": "6e3b43f10facad0c3f78fd3de24a7c074a0060f42ebab1472989526df0e23c58",
+      "plane_sha256": [
+        "3c8889e919a5c902d5c4efbfb002b2033a58ca2e375dff976cd0ab881bb1f1a4",
+        "9e365fc1abe7ae7b361e18bce32688fd0b4bb31ddf4cdd4d824b41d16787431c",
+        "92f8c3536df6ac397be9796953d39f510cd3d848707bedef237a60ca7c240cdb"
+      ]
+    },
+    {
+      "map_id": 822,
+      "source_path": "private-original-DAT/822.dat",
+      "file_sha256": "bcb12efa1d42ff6b72bb561cc8981ed207a90f14c94e594ba0be4fd0f104f4ca",
+      "plane_sha256": [
+        "f5fa8fc50e0fbccaca634648cf599800878c455d1739c4e072ec29ffa291b4ef",
+        "940f83220aa923d8db2d81461cfa38e6d0d4c2e1923fff3a32e68cbe0f8de8cc",
+        "ed930d4f1fa212dbbd4cae0259fd977e4dd14781d6cb389061938d1dd318e290"
+      ]
+    },
+    {
+      "map_id": 824,
+      "source_path": "private-original-DAT/824.dat",
+      "file_sha256": "d626cda9f5e5a40487a76f02018ed5aba6cf5dd7bfdd95f6bf344980a2c15243",
+      "plane_sha256": [
+        "f5fa8fc50e0fbccaca634648cf599800878c455d1739c4e072ec29ffa291b4ef",
+        "253c5e145cc41b2acbb2be5a56fa8fcfca148f9162bc6c98b50afec58853b25e",
+        "417231ac1702f5e25046ca61ef223af0b53e6462f1ddedc6c973224c9a23b68b"
+      ]
+    },
+    {
+      "map_id": 827,
+      "source_path": "private-original-DAT/827.dat",
+      "file_sha256": "5d5876ceb51b45a32d6eb498b50a72bdf9a19e084301d4c54fba49cfcf50d2a7",
+      "plane_sha256": [
+        "3c8889e919a5c902d5c4efbfb002b2033a58ca2e375dff976cd0ab881bb1f1a4",
+        "cdeb601bc60f5dff11c5f57aa830f3dc5821d8c8bb134019082887f85d0445be",
+        "6f32feb29751eed5e78df3682b0f670224107af2576516dbb0e47c7228ec1c93"
+      ]
+    },
+    {
+      "map_id": 842,
+      "source_path": "private-original-DAT/842.dat",
+      "file_sha256": "af4029adabb3133d2b359f54dfd090cb565f56fa4232f5e7fcb22cd0eff283af",
+      "plane_sha256": [
+        "f5fa8fc50e0fbccaca634648cf599800878c455d1739c4e072ec29ffa291b4ef",
+        "d4e02c3368bf5c9748c85e3aae14935398eec18a0a714b508b96509d4b03dea0",
+        "9f767d705edc29decc1a78819ffb4f9c3fb3ee3a829ffce5545a60ea25389f59"
+      ]
+    },
+    {
+      "map_id": 844,
+      "source_path": "private-original-DAT/844.dat",
+      "file_sha256": "075026b7097f76c034705f1a7a701c79ed4505969851ce1937dc86152e4d2c95",
+      "plane_sha256": [
+        "f5fa8fc50e0fbccaca634648cf599800878c455d1739c4e072ec29ffa291b4ef",
+        "941237ea08a6759b13a891cc4930cd7595208a359df60546dabe70a29b746408",
+        "c0fb50c37a325d9050745e16e739d243801e20bcbda98e1e23779ca7395d1a7d"
+      ]
+    },
+    {
+      "map_id": 847,
+      "source_path": "private-original-DAT/847.dat",
+      "file_sha256": "700c21e3a2f0b0ee797eac0e1b44d1385eff093b2939ef247235eea35c22fea7",
+      "plane_sha256": [
+        "3c8889e919a5c902d5c4efbfb002b2033a58ca2e375dff976cd0ab881bb1f1a4",
+        "dd87a157298684cd6fd859522a59e836330f7299a206438c5a294c270b4c532f",
+        "2c06a7c1ee7c6e5d55b2cea137bfe0b539f8ba1c2150b74780fb16b71980365a"
+      ]
+    }
+  ],
+  "distinct_sha256_count_per_plane": [
+    2,
+    9,
+    9
+  ],
+  "first_plane_same_bytes_groups": [
+    {
+      "map_ids": [
+        802,
+        804,
+        822,
+        824,
+        842,
+        844
+      ],
+      "plane_sha256": "f5fa8fc50e0fbccaca634648cf599800878c455d1739c4e072ec29ffa291b4ef"
+    },
+    {
+      "map_ids": [
+        807,
+        827,
+        847
+      ],
+      "plane_sha256": "3c8889e919a5c902d5c4efbfb002b2033a58ca2e375dff976cd0ab881bb1f1a4"
+    }
+  ],
+  "first_plane_cell_differences": {
+    "from_map_id": 802,
+    "to_map_id": 807,
+    "differing_cells": 13,
+    "cells": [
+      {
+        "x": 14,
+        "y": 14,
+        "from_value": 5117,
+        "to_value": 5002
+      },
+      {
+        "x": 30,
+        "y": 21,
+        "from_value": 5111,
+        "to_value": 5002
+      },
+      {
+        "x": 31,
+        "y": 21,
+        "from_value": 5109,
+        "to_value": 5002
+      },
+      {
+        "x": 30,
+        "y": 22,
+        "from_value": 5117,
+        "to_value": 5002
+      },
+      {
+        "x": 31,
+        "y": 22,
+        "from_value": 5119,
+        "to_value": 5002
+      },
+      {
+        "x": 14,
+        "y": 25,
+        "from_value": 9423,
+        "to_value": 5002
+      },
+      {
+        "x": 15,
+        "y": 25,
+        "from_value": 9420,
+        "to_value": 5002
+      },
+      {
+        "x": 32,
+        "y": 25,
+        "from_value": 5002,
+        "to_value": 9423
+      },
+      {
+        "x": 33,
+        "y": 25,
+        "from_value": 5002,
+        "to_value": 9420
+      },
+      {
+        "x": 14,
+        "y": 26,
+        "from_value": 9422,
+        "to_value": 5002
+      },
+      {
+        "x": 15,
+        "y": 26,
+        "from_value": 9421,
+        "to_value": 5002
+      },
+      {
+        "x": 32,
+        "y": 26,
+        "from_value": 5002,
+        "to_value": 9422
+      },
+      {
+        "x": 33,
+        "y": 26,
+        "from_value": 5002,
+        "to_value": 9421
+      }
+    ]
+  },
+  "boundaries": {
+    "original_DAT_published": false,
+    "proprietary_images_published": false,
+    "actual_native_client_rendering_proven": false,
+    "original_collision_semantics_proven": false,
+    "original_janken_rule_execution_proven": false,
+    "missing_original_RD_tiles_remain": [
+      "9420",
+      "9421",
+      "9422",
+      "9423",
+      "10940"
+    ],
+    "new_original_RD_decodes": 0,
+    "source_scope": "community mixed25 private original DAT; TW1 source-qualified old RD bitmap candidates are a separate carrier; official same-build deployment OPEN"
+  },
+  "prior_derivation": "research/recovered/STONEAGE-INTEGRATION81-JANKEN-NINE-ORIGINAL-PARTIAL-2D-SOURCE-R1.json",
+  "text_report": "docs/continuity/STONEAGE-INTEGRATION82-JANKEN-DAT-PLANE-DELTAS-20261112.md"
+}
