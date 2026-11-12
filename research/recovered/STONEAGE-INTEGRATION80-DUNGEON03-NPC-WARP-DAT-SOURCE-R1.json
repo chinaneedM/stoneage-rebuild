@@ -1,0 +1,656 @@
+{
+  "schema": "stoneage.integration80.dungeon03_original_warp_five_dat_map_relation.r1",
+  "date": "2026-11-12",
+  "scope": "SOURCE_BOUNDED_STATIC_NPC_WARP_AND_ORIGINAL_DAT_NO_NATIVE_EXECUTION",
+  "startup_remote_main_head": "9d058513e2b8f85018d4ffa5d82a7ed5f33fcef6",
+  "startup_remote_main_tree": "f0935bdde1cb26d3d3109bcfd8c652de353de0f3",
+  "original_parent_archive": {
+    "name": "stoneage-preserved-mixed25-original.rar",
+    "size_bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "source_qualification": "preserved community mixed 2.5, not official clean deployment"
+  },
+  "original_create_source": {
+    "source_path": "SA2.5服務端/gmsv/data/npc/genout/dungeon03.create",
+    "name": "dungeon03.create",
+    "bytes": 1621,
+    "sha256": "baf71a27eb74958c37e85ea362e16e0cf515bf31f1a3c5c08ee3ed0c55e267e8",
+    "original_RAR_header_CRC32_recorded_int": 4284489019,
+    "static_active_blocks": 13,
+    "source_contains_original_commercial_text_in_public": false
+  },
+  "private_MAP09_previous_verified_source_receipt": {
+    "private_zip_sha256": "d84d0800dd600798769dfb7251a1d7816588ac061ccc27812ac64a37922d4a8a",
+    "private_zip_size_bytes": 46844444,
+    "original_DAT_archive_sha256": "c079a1c25bfa11902b69c1f2839058d4fb20f025ef15c93f649f636c7e5f833a",
+    "prior_MAP09_source_scope": "MIXED25_ORIGINAL_DAT_AND_TW10_ORIGINAL_RD_SEPARATE_SOURCES",
+    "map09_original_data_produced_during_this_work": false
+  },
+  "original_DATs": {
+    "40": {
+      "source_path": "SA2.5主程式/stoneage2.5/map/40.DAT",
+      "original_DAT_sha256": "3c62e11cba026ab27b212d7450ebdc9b73859bb7f3037657b2a6b70a8d3ec874",
+      "original_DAT_bytes": 2408,
+      "geometry_width_height": [
+        20,
+        20
+      ],
+      "source_map09_DAT_bytes_verified": true,
+      "source_is_community_mixed25_archive": true,
+      "source_qualified_TW10_original_RD_scene_candidate": false,
+      "MAP09_prior_scene_combined_RGBA_sha256": null,
+      "MAP09_prior_scene_draw_positions": null,
+      "new_original_pixel_RLE_decodes_this_turn": 0
+    },
+    "31301": {
+      "source_path": "SA2.5主程式/stoneage2.5/map/31301.DAT",
+      "original_DAT_sha256": "e8cd18b7abb1e8c11ef2790acf802a3362842bb3ae1387f8070b834740694731",
+      "original_DAT_bytes": 28808,
+      "geometry_width_height": [
+        40,
+        120
+      ],
+      "source_map09_DAT_bytes_verified": true,
+      "source_is_community_mixed25_archive": true,
+      "source_qualified_TW10_original_RD_scene_candidate": true,
+      "MAP09_prior_scene_combined_RGBA_sha256": "0c628cf6dece1281f614e7a1ca3df5862af46368960dd9828568e4053b059403",
+      "MAP09_prior_scene_draw_positions": 2047,
+      "new_original_pixel_RLE_decodes_this_turn": 0
+    },
+    "31302": {
+      "source_path": "SA2.5主程式/stoneage2.5/map/31302.DAT",
+      "original_DAT_sha256": "2d553684d1af4054330ab881d19559c5a8e323b8984f0f023f165fa2dde76dec",
+      "original_DAT_bytes": 21608,
+      "geometry_width_height": [
+        60,
+        60
+      ],
+      "source_map09_DAT_bytes_verified": true,
+      "source_is_community_mixed25_archive": true,
+      "source_qualified_TW10_original_RD_scene_candidate": true,
+      "MAP09_prior_scene_combined_RGBA_sha256": "33155c391b37fd8b446aca27c1264959f0223277aec6098a03d425a042d1cec5",
+      "MAP09_prior_scene_draw_positions": 2283,
+      "new_original_pixel_RLE_decodes_this_turn": 0
+    },
+    "31401": {
+      "source_path": "SA2.5主程式/stoneage2.5/map/31401.DAT",
+      "original_DAT_sha256": "01dac6cbef282ac90635361eeacf3a2745e1500294c4b15fcb728b0f03bcc6c8",
+      "original_DAT_bytes": 28808,
+      "geometry_width_height": [
+        120,
+        40
+      ],
+      "source_map09_DAT_bytes_verified": true,
+      "source_is_community_mixed25_archive": true,
+      "source_qualified_TW10_original_RD_scene_candidate": true,
+      "MAP09_prior_scene_combined_RGBA_sha256": "81aef839805fb6c98b0b300c02ad9f5158cfda47cc9e320beae4bb81ff599fb1",
+      "MAP09_prior_scene_draw_positions": 3070,
+      "new_original_pixel_RLE_decodes_this_turn": 0
+    },
+    "31501": {
+      "source_path": "SA2.5主程式/stoneage2.5/map/31501.DAT",
+      "original_DAT_sha256": "226e709f03a80b940a660a73e33ef8177e0561fc6cf3550fb114311c54d9ba41",
+      "original_DAT_bytes": 28808,
+      "geometry_width_height": [
+        40,
+        120
+      ],
+      "source_map09_DAT_bytes_verified": true,
+      "source_is_community_mixed25_archive": true,
+      "source_qualified_TW10_original_RD_scene_candidate": true,
+      "MAP09_prior_scene_combined_RGBA_sha256": "8521cd6575cda1f0630baa80c27128ad2582c476c016b1c54be0a3f39983fdd4",
+      "MAP09_prior_scene_draw_positions": 2556,
+      "new_original_pixel_RLE_decodes_this_turn": 0
+    }
+  },
+  "static_warp_creates": [
+    {
+      "create_order": 1,
+      "original_create_block_byte_interval_halfopen": [
+        121,
+        230
+      ],
+      "original_create_block_sha256": "3e88b3f0f5c807abfcda35b50c58b53d0ad20052714fedcd2b4f8b49208c8c33",
+      "source_floorid": 100,
+      "source_xy": [
+        666,
+        235
+      ],
+      "original_enemy_kind": "npcgen_warp",
+      "target_floorid": 31401,
+      "target_xy": [
+        12,
+        2
+      ],
+      "source_anchor": {
+        "map_source_in_verified_five_DAT": false,
+        "in_bounds": null,
+        "original_DAT_three_plane_values_at_xy": null
+      },
+      "target_anchor": {
+        "map_source_in_verified_five_DAT": true,
+        "in_bounds": true,
+        "original_DAT_three_plane_values_at_xy": [
+          4096,
+          0,
+          49155
+        ]
+      },
+      "reverse_create_orders": [
+        2
+      ]
+    },
+    {
+      "create_order": 2,
+      "original_create_block_byte_interval_halfopen": [
+        241,
+        347
+      ],
+      "original_create_block_sha256": "70ca63eb23b1fe7d4cc876f892397a8e39e18d1d19dd07600c7aef289145b037",
+      "source_floorid": 31401,
+      "source_xy": [
+        12,
+        2
+      ],
+      "original_enemy_kind": "npcgen_warp",
+      "target_floorid": 100,
+      "target_xy": [
+        666,
+        235
+      ],
+      "source_anchor": {
+        "map_source_in_verified_five_DAT": true,
+        "in_bounds": true,
+        "original_DAT_three_plane_values_at_xy": [
+          4096,
+          0,
+          49155
+        ]
+      },
+      "target_anchor": {
+        "map_source_in_verified_five_DAT": false,
+        "in_bounds": null,
+        "original_DAT_three_plane_values_at_xy": null
+      },
+      "reverse_create_orders": [
+        1
+      ]
+    },
+    {
+      "create_order": 3,
+      "original_create_block_byte_interval_halfopen": [
+        357,
+        460
+      ],
+      "original_create_block_sha256": "5d77d96e608260b9b93eece36848a5a3340beca4d2e10a2bf125396415879296",
+      "source_floorid": 31401,
+      "source_xy": [
+        94,
+        27
+      ],
+      "original_enemy_kind": "npcgen_warp",
+      "target_floorid": 40,
+      "target_xy": [
+        1,
+        9
+      ],
+      "source_anchor": {
+        "map_source_in_verified_five_DAT": true,
+        "in_bounds": true,
+        "original_DAT_three_plane_values_at_xy": [
+          4095,
+          0,
+          49155
+        ]
+      },
+      "target_anchor": {
+        "map_source_in_verified_five_DAT": true,
+        "in_bounds": true,
+        "original_DAT_three_plane_values_at_xy": [
+          4075,
+          0,
+          49152
+        ]
+      },
+      "reverse_create_orders": []
+    },
+    {
+      "create_order": 4,
+      "original_create_block_byte_interval_halfopen": [
+        470,
+        580
+      ],
+      "original_create_block_sha256": "dfc0d5d3c61f549f938d621af2d97b7c69c41d2398c702ec4bdbff0eaddada29",
+      "source_floorid": 200,
+      "source_xy": [
+        470,
+        127
+      ],
+      "original_enemy_kind": "npcgen_warp",
+      "target_floorid": 31501,
+      "target_xy": [
+        6,
+        112
+      ],
+      "source_anchor": {
+        "map_source_in_verified_five_DAT": false,
+        "in_bounds": null,
+        "original_DAT_three_plane_values_at_xy": null
+      },
+      "target_anchor": {
+        "map_source_in_verified_five_DAT": true,
+        "in_bounds": true,
+        "original_DAT_three_plane_values_at_xy": [
+          4085,
+          0,
+          49155
+        ]
+      },
+      "reverse_create_orders": [
+        5
+      ]
+    },
+    {
+      "create_order": 5,
+      "original_create_block_byte_interval_halfopen": [
+        591,
+        699
+      ],
+      "original_create_block_sha256": "fab44e127700ef8e47d56c90e4a171013cac2b59d9c797eb85bd228e3802bc01",
+      "source_floorid": 31501,
+      "source_xy": [
+        6,
+        112
+      ],
+      "original_enemy_kind": "npcgen_warp",
+      "target_floorid": 200,
+      "target_xy": [
+        470,
+        127
+      ],
+      "source_anchor": {
+        "map_source_in_verified_five_DAT": true,
+        "in_bounds": true,
+        "original_DAT_three_plane_values_at_xy": [
+          4085,
+          0,
+          49155
+        ]
+      },
+      "target_anchor": {
+        "map_source_in_verified_five_DAT": false,
+        "in_bounds": null,
+        "original_DAT_three_plane_values_at_xy": null
+      },
+      "reverse_create_orders": [
+        4
+      ]
+    },
+    {
+      "create_order": 6,
+      "original_create_block_byte_interval_halfopen": [
+        709,
+        812
+      ],
+      "original_create_block_sha256": "ad45f0efa629a30d7037d25ff326034ba78a8d05fe1558e047156ef94055e446",
+      "source_floorid": 31501,
+      "source_xy": [
+        34,
+        2
+      ],
+      "original_enemy_kind": "npcgen_warp",
+      "target_floorid": 40,
+      "target_xy": [
+        11,
+        18
+      ],
+      "source_anchor": {
+        "map_source_in_verified_five_DAT": true,
+        "in_bounds": true,
+        "original_DAT_three_plane_values_at_xy": [
+          4089,
+          0,
+          49155
+        ]
+      },
+      "target_anchor": {
+        "map_source_in_verified_five_DAT": true,
+        "in_bounds": true,
+        "original_DAT_three_plane_values_at_xy": [
+          4084,
+          0,
+          49152
+        ]
+      },
+      "reverse_create_orders": []
+    },
+    {
+      "create_order": 7,
+      "original_create_block_byte_interval_halfopen": [
+        822,
+        929
+      ],
+      "original_create_block_sha256": "4c0544395ffa09f4f2134c7258a9281441d42621ba11c4cee7bc69343e793c2e",
+      "source_floorid": 5000,
+      "source_xy": [
+        46,
+        18
+      ],
+      "original_enemy_kind": "npcgen_warp",
+      "target_floorid": 31301,
+      "target_xy": [
+        10,
+        10
+      ],
+      "source_anchor": {
+        "map_source_in_verified_five_DAT": false,
+        "in_bounds": null,
+        "original_DAT_three_plane_values_at_xy": null
+      },
+      "target_anchor": {
+        "map_source_in_verified_five_DAT": true,
+        "in_bounds": true,
+        "original_DAT_three_plane_values_at_xy": [
+          4082,
+          0,
+          49155
+        ]
+      },
+      "reverse_create_orders": [
+        8
+      ]
+    },
+    {
+      "create_order": 8,
+      "original_create_block_byte_interval_halfopen": [
+        940,
+        1047
+      ],
+      "original_create_block_sha256": "28fa6e779ade2e9480d3bfd65d162fb09e01ac07355e9c742d1d68546676311d",
+      "source_floorid": 31301,
+      "source_xy": [
+        10,
+        10
+      ],
+      "original_enemy_kind": "npcgen_warp",
+      "target_floorid": 5000,
+      "target_xy": [
+        46,
+        18
+      ],
+      "source_anchor": {
+        "map_source_in_verified_five_DAT": true,
+        "in_bounds": true,
+        "original_DAT_three_plane_values_at_xy": [
+          4082,
+          0,
+          49155
+        ]
+      },
+      "target_anchor": {
+        "map_source_in_verified_five_DAT": false,
+        "in_bounds": null,
+        "original_DAT_three_plane_values_at_xy": null
+      },
+      "reverse_create_orders": [
+        7
+      ]
+    },
+    {
+      "create_order": 9,
+      "original_create_block_byte_interval_halfopen": [
+        1057,
+        1163
+      ],
+      "original_create_block_sha256": "672bb6d862c435ebfc68bfad0fcf50b3b394bf7c8b382acb52c34bc3b9fb2a12",
+      "source_floorid": 31301,
+      "source_xy": [
+        10,
+        103
+      ],
+      "original_enemy_kind": "npcgen_warp",
+      "target_floorid": 40,
+      "target_xy": [
+        12,
+        1
+      ],
+      "source_anchor": {
+        "map_source_in_verified_five_DAT": true,
+        "in_bounds": true,
+        "original_DAT_three_plane_values_at_xy": [
+          4089,
+          0,
+          49155
+        ]
+      },
+      "target_anchor": {
+        "map_source_in_verified_five_DAT": true,
+        "in_bounds": true,
+        "original_DAT_three_plane_values_at_xy": [
+          4084,
+          0,
+          49152
+        ]
+      },
+      "reverse_create_orders": []
+    },
+    {
+      "create_order": 10,
+      "original_create_block_byte_interval_halfopen": [
+        1173,
+        1279
+      ],
+      "original_create_block_sha256": "4846dd383bda394e43eacc3ab8a31ce2b3eb73836ebd6b722f5b7971028bbdc3",
+      "source_floorid": 31301,
+      "source_xy": [
+        9,
+        51
+      ],
+      "original_enemy_kind": "npcgen_warp",
+      "target_floorid": 31302,
+      "target_xy": [
+        52,
+        11
+      ],
+      "source_anchor": {
+        "map_source_in_verified_five_DAT": true,
+        "in_bounds": true,
+        "original_DAT_three_plane_values_at_xy": [
+          4007,
+          0,
+          49155
+        ]
+      },
+      "target_anchor": {
+        "map_source_in_verified_five_DAT": true,
+        "in_bounds": true,
+        "original_DAT_three_plane_values_at_xy": [
+          4005,
+          0,
+          49155
+        ]
+      },
+      "reverse_create_orders": [
+        11
+      ]
+    },
+    {
+      "create_order": 11,
+      "original_create_block_byte_interval_halfopen": [
+        1290,
+        1397
+      ],
+      "original_create_block_sha256": "5d6dcd8b0160ed6506ab9afbabe47e925be679db3c7d2c6b2eb5ad66a62ef4cc",
+      "source_floorid": 31302,
+      "source_xy": [
+        52,
+        11
+      ],
+      "original_enemy_kind": "npcgen_warp",
+      "target_floorid": 31301,
+      "target_xy": [
+        9,
+        51
+      ],
+      "source_anchor": {
+        "map_source_in_verified_five_DAT": true,
+        "in_bounds": true,
+        "original_DAT_three_plane_values_at_xy": [
+          4005,
+          0,
+          49155
+        ]
+      },
+      "target_anchor": {
+        "map_source_in_verified_five_DAT": true,
+        "in_bounds": true,
+        "original_DAT_three_plane_values_at_xy": [
+          4007,
+          0,
+          49155
+        ]
+      },
+      "reverse_create_orders": [
+        10
+      ]
+    },
+    {
+      "create_order": 12,
+      "original_create_block_byte_interval_halfopen": [
+        1407,
+        1507
+      ],
+      "original_create_block_sha256": "c0ac3723eb6dad5422c73fb4ff6686bb4efcb302da4ebc29e1df9f5f41e08538",
+      "source_floorid": 40,
+      "source_xy": [
+        6,
+        3
+      ],
+      "original_enemy_kind": "npcgen_warp",
+      "target_floorid": 6000,
+      "target_xy": [
+        32,
+        68
+      ],
+      "source_anchor": {
+        "map_source_in_verified_five_DAT": true,
+        "in_bounds": true,
+        "original_DAT_three_plane_values_at_xy": [
+          4000,
+          0,
+          49155
+        ]
+      },
+      "target_anchor": {
+        "map_source_in_verified_five_DAT": false,
+        "in_bounds": null,
+        "original_DAT_three_plane_values_at_xy": null
+      },
+      "reverse_create_orders": [
+        13
+      ]
+    },
+    {
+      "create_order": 13,
+      "original_create_block_byte_interval_halfopen": [
+        1518,
+        1620
+      ],
+      "original_create_block_sha256": "fa56347ec4751c1323690cb562a4b977d61c18b61831691b9b7bd614c8db584a",
+      "source_floorid": 6000,
+      "source_xy": [
+        32,
+        68
+      ],
+      "original_enemy_kind": "npcgen_warp",
+      "target_floorid": 40,
+      "target_xy": [
+        6,
+        3
+      ],
+      "source_anchor": {
+        "map_source_in_verified_five_DAT": false,
+        "in_bounds": null,
+        "original_DAT_three_plane_values_at_xy": null
+      },
+      "target_anchor": {
+        "map_source_in_verified_five_DAT": true,
+        "in_bounds": true,
+        "original_DAT_three_plane_values_at_xy": [
+          4000,
+          0,
+          49155
+        ]
+      },
+      "reverse_create_orders": [
+        12
+      ]
+    }
+  ],
+  "bounded_counts": {
+    "create_count": 13,
+    "distinct_source_floorids": 9,
+    "qualified_verified_original_DAT_floor_count": 5,
+    "prior_source_qualified_TW1_RD_scene_canvas_count": 4,
+    "source_end_in_qualified_DAT_count": 9,
+    "target_end_in_qualified_DAT_count": 9,
+    "both_ends_in_qualified_DAT_count": 5,
+    "source_end_not_in_these_five_DAT_count": 4,
+    "source_floor_counts": {
+      "40": 1,
+      "100": 1,
+      "200": 1,
+      "5000": 1,
+      "6000": 1,
+      "31301": 3,
+      "31302": 1,
+      "31401": 2,
+      "31501": 2
+    },
+    "literal_reverse_create_pairs": [
+      [
+        1,
+        2
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        12,
+        13
+      ]
+    ],
+    "new_original_RD_pixel_decode_count": 0
+  },
+  "negative_evidence_boundary": {
+    "original_NPC_runtime_spawn_observed": false,
+    "original_warp_execution_observed": false,
+    "actual_map_traversal_reachability_proven": false,
+    "original_collision_semantics_of_third_DAT_plane_proven": false,
+    "TW10_official_client_same_deployment_as_mixed25_server_proven": false,
+    "original_official_version_attribution_proven": false,
+    "original_game_user_interface_recreated": false,
+    "source_missing_from_current_five_DAT_does_not_imply_historic_absence": true,
+    "public_original_raw_DAT_or_NPC_bytes": false,
+    "stage_A_partial": 7,
+    "stage_A_open": 2,
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "historical_CURRENT_unchanged": {
+    "path": "docs/CURRENT-STATE.md",
+    "size_bytes": 2709173,
+    "git_blob_sha": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  }
+}
