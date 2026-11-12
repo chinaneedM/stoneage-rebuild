@@ -2610,3 +2610,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ### INTEGRATION76 正式候选/main Actions及私人来源验收（2026-11-11）
 
 [周年生日蛋糕停用原NPC／台湾1.0原候选像素正式回执](docs/continuity/STONEAGE-INTEGRATION76-PUBLICATION-ACCEPTANCE-20261111.md)：[PR #351](https://github.com/chinaneedM/stoneage-rebuild/pull/351)已squash合并，候选 `6888d3e373315ecf518c71936bbbd59f8133bba0`／tree `ec413768b0dc1e61fd04542d57b51a727daa7d1f` **46/46 Actions**（27 push＋19PR），内容主线 `97388fd9c28ed4d77089db94a852f0f8f9c5a1c2`／同tree **27/27 Actions**均真正success，三次专项各9测试通过；全部73真实run ID见[机器收据](research/recovered/STONEAGE-INTEGRATION76-PUBLICATION-ACCEPTANCE-R1.json)。原社区mixed25 576B周年脚本→后期原物品13030，原633B四个floor CREATE整段被注释；台湾1.0老RD位图6576/56×36候选源原PNG重新核SHA，新增原像0、原服实际活动仍OPEN。7成员7317B私人原脚本/物品行/PNG已存个人Library且独立回读SHA与CRC全同。旧CURRENT blob保持，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停，整体percent=null。本正式回执自身CI另按后验；NEXT其它真实原二维内容。
+
+
+## 2026-11-12 — INTEGRATION77｜长毛象大厅19份原NPC创建与演出证件证据边界
+
+[19处NPC创建、15份同原件参数、四工作人员通行条件及无直接引用的两份演出证据](docs/continuity/STONEAGE-INTEGRATION77-MAMMOTH-HALL-SOURCE-20261112.md)／[公开派生源证](research/recovered/STONEAGE-INTEGRATION77-MAMMOTH-HALL-ORIGINAL-SOURCE-R1.json)：重新私人核对保存的社区mixed25原NPC ZIP 2205/2205 CRC，原 floor116 16个＋floor117 3个配置，15/15 `file:` 指向同ZIP实物。原四人员 `ITEM=2608`／`ITEM!=2609` 仅为静态条件；`syutuen` 的2608发证与`karikari` 的2703发证都未在该ZIP找到直接创建引用，不能认定生效或同物异号；真实游戏触发与同官方版本仍OPEN。本次新原2D像素0、原服务器执行0；私有原NPC不公开，旧CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`未改。Stage A7 PARTIAL＋2 OPEN，B/wiki GATED、R79暂停、总体percent未知。下一优先转另外有原实物的非重复可视内容；正式CI按远端后验另记。
