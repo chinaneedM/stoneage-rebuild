@@ -1,0 +1,1330 @@
+{
+  "schema": "stoneage.integration85.four_guardians_two_function_families_2d_original_source_r1",
+  "date": "2026-11-13",
+  "provenance": {
+    "startup_remote_main": "cb0626c866186b2906e33315bc860f2e993230bf",
+    "startup_remote_tree": "18dab1d064022f3da91e9096ac8bb75d32580b91",
+    "historical_CURRENT_STATE_unchanged_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "community_mixed25_NPC_original_private_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "community_NPC_zip_members_verified_crc": 2205,
+    "community_itemset_original_private_zip_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "community_itemset_zip_members_verified_crc": 838,
+    "separate_TW1_retail_private_PET07_html_sha256": "58e8ee4ff5165ed2f61663d67ae1cd0a8183622fa3375c480232784bfce9dc76",
+    "separate_TW1_retail_PET07_public_derived_blob": "0b5f81b41a642025ab53a12884638fdee887470e",
+    "original_commodity_or_client_binary_published": false
+  },
+  "source_files": {
+    "battle_create": {
+      "path": "npc/300/sb_4sin.create",
+      "sha256": "36f81d50f2811be6ef1a312552a1cef941f4bbc0f4f368426f8c8651a00eaff8",
+      "bytes": 2449
+    },
+    "battle_template": {
+      "path": "npc/300/sb_4sin.template",
+      "sha256": "d96a5daede52d9817c71b314332952aff9d36d6328d752baec6db2719c77b6ab",
+      "bytes": 588
+    },
+    "shrine_create": {
+      "path": "npc/giiru/event/nev1_1.create",
+      "sha256": "bde421eff8f67ebba9b917398cd0c8d9cff44a842fab730f316d80f4ec161fa3",
+      "bytes": 1194
+    },
+    "statue_event": {
+      "path": "npc/giiru/event/nev1_5",
+      "sha256": "d4ff5e9c80dfa140d09b81c32da92602448eb10570c4b49af09a84ce360af4e0",
+      "bytes": 641
+    }
+  },
+  "battle_NPCEnemy_records": [
+    {
+      "create_block_index": 0,
+      "create_byte_span": [
+        40,
+        205
+      ],
+      "create_block_sha256": "2716a6ee9488ef5577752be3c413fcd20bf44755e98b94cc49566467f4c1a57c",
+      "floor_id": 31603,
+      "source_name": "水的守護者",
+      "element": "水",
+      "graphic_number": 100379,
+      "source_position_borncenter": [
+        31,
+        68,
+        1,
+        1
+      ],
+      "source_direction": 2,
+      "source_time_word": 60000,
+      "template_ref": "sb_4sinm",
+      "template_block_sha256": "c58bad374dcfaa8fe3ab4ed16ad1ed75cf3f0f44d0269b24d1bb142c83b426ca",
+      "template_functionset": "NPCEnemy",
+      "arg_source_path": "npc/300/sb_4sinm3.arg",
+      "arg_sha256": "dc58213030f62d6f79a89a24d44c93798da8e140f5ee7506cf5b22383f0e5b9d",
+      "arg_entype_word": 2,
+      "arg_dieact_word": 1,
+      "arg_warp_literal": [
+        31603,
+        27,
+        71
+      ],
+      "arg_enemy_id_sequence_literal": [
+        1031,
+        1044,
+        1044,
+        1044,
+        1044
+      ]
+    },
+    {
+      "create_block_index": 1,
+      "create_byte_span": [
+        236,
+        401
+      ],
+      "create_block_sha256": "b8074e3e2be807a0a2faa9b9f5248264c6d151ed3b16992c2b0f7105d9657f30",
+      "floor_id": 31603,
+      "source_name": "火的守護者",
+      "element": "火",
+      "graphic_number": 100370,
+      "source_position_borncenter": [
+        62,
+        37,
+        1,
+        1
+      ],
+      "source_direction": 6,
+      "source_time_word": 60000,
+      "template_ref": "sb_4sinh",
+      "template_block_sha256": "81f952df4358850aefc5e50bbb3c29346e0d7064cca091139fb4eb9dc2b1a852",
+      "template_functionset": "NPCEnemy",
+      "arg_source_path": "npc/300/sb_4sinh3.arg",
+      "arg_sha256": "e8df4625776f88e955c1b587b963cbcc0559f6ef44238f34b60555b366300510",
+      "arg_entype_word": 2,
+      "arg_dieact_word": 1,
+      "arg_warp_literal": [
+        31603,
+        73,
+        28
+      ],
+      "arg_enemy_id_sequence_literal": [
+        1032,
+        1045,
+        1045,
+        1045,
+        1045
+      ]
+    },
+    {
+      "create_block_index": 2,
+      "create_byte_span": [
+        432,
+        597
+      ],
+      "create_block_sha256": "f2ac337386ebe1e100d7c0fc53192df971ded7b335124a22485ef6940864560c",
+      "floor_id": 31603,
+      "source_name": "風的守護者",
+      "element": "風",
+      "graphic_number": 100328,
+      "source_position_borncenter": [
+        64,
+        66,
+        1,
+        1
+      ],
+      "source_direction": 6,
+      "source_time_word": 60000,
+      "template_ref": "sb_4sink",
+      "template_block_sha256": "b06e68b2d74b0cb614b2d93c12125bf823c8acd7c9807e381546270447302d40",
+      "template_functionset": "NPCEnemy",
+      "arg_source_path": "npc/300/sb_4sink3.arg",
+      "arg_sha256": "a4036e0a4479f025c489f176fa6ee0154346432e09fd6db8c3ae9c6b0f16399f",
+      "arg_entype_word": 2,
+      "arg_dieact_word": 1,
+      "arg_warp_literal": [
+        31603,
+        73,
+        73
+      ],
+      "arg_enemy_id_sequence_literal": [
+        1033,
+        1046,
+        1046,
+        1046,
+        1046
+      ]
+    },
+    {
+      "create_block_index": 3,
+      "create_byte_span": [
+        628,
+        793
+      ],
+      "create_block_sha256": "32c457df867b774724cc1307ea57a8a1fdf7ac9383b0593bcf810be44d2bb7de",
+      "floor_id": 31603,
+      "source_name": "地的守護者",
+      "element": "地",
+      "graphic_number": 100274,
+      "source_position_borncenter": [
+        30,
+        31,
+        1,
+        1
+      ],
+      "source_direction": 2,
+      "source_time_word": 60000,
+      "template_ref": "sb_4sint",
+      "template_block_sha256": "dd5c5896ddbfa1ef6cc60829aad8ca3a4e77d3d809af4b7a1b13342a4d741437",
+      "template_functionset": "NPCEnemy",
+      "arg_source_path": "npc/300/sb_4sint3.arg",
+      "arg_sha256": "47e9c526e306f8b8cb08286122172b31951ee4049ce15346ffbb25ff68e17402",
+      "arg_entype_word": 2,
+      "arg_dieact_word": 1,
+      "arg_warp_literal": [
+        31603,
+        20,
+        29
+      ],
+      "arg_enemy_id_sequence_literal": [
+        1034,
+        1047,
+        1047,
+        1047,
+        1047
+      ]
+    },
+    {
+      "create_block_index": 4,
+      "create_byte_span": [
+        864,
+        1029
+      ],
+      "create_block_sha256": "7a36c443283a7a46195a4f2bd6d667de551a6dc3966c70b2a3d75e4a72132f84",
+      "floor_id": 31606,
+      "source_name": "水的守護者",
+      "element": "水",
+      "graphic_number": 100379,
+      "source_position_borncenter": [
+        64,
+        66,
+        1,
+        1
+      ],
+      "source_direction": 6,
+      "source_time_word": 60000,
+      "template_ref": "sb_4sinm",
+      "template_block_sha256": "c58bad374dcfaa8fe3ab4ed16ad1ed75cf3f0f44d0269b24d1bb142c83b426ca",
+      "template_functionset": "NPCEnemy",
+      "arg_source_path": "npc/300/sb_4sinm6.arg",
+      "arg_sha256": "ce71f58acbf4317fd3e838f3903732ddfcd37c660c8e51c81405cc2d38a6ae86",
+      "arg_entype_word": 2,
+      "arg_dieact_word": 1,
+      "arg_warp_literal": [
+        31606,
+        73,
+        73
+      ],
+      "arg_enemy_id_sequence_literal": [
+        1031,
+        1044,
+        1044,
+        1044,
+        1044
+      ]
+    },
+    {
+      "create_block_index": 5,
+      "create_byte_span": [
+        1060,
+        1225
+      ],
+      "create_block_sha256": "2e66f7291c803283632c958e584bcc13b3c271f657d04e08e9b03b5bcba5af84",
+      "floor_id": 31606,
+      "source_name": "火的守護者",
+      "element": "火",
+      "graphic_number": 100370,
+      "source_position_borncenter": [
+        30,
+        31,
+        1,
+        1
+      ],
+      "source_direction": 2,
+      "source_time_word": 60000,
+      "template_ref": "sb_4sinh",
+      "template_block_sha256": "81f952df4358850aefc5e50bbb3c29346e0d7064cca091139fb4eb9dc2b1a852",
+      "template_functionset": "NPCEnemy",
+      "arg_source_path": "npc/300/sb_4sinh6.arg",
+      "arg_sha256": "4118412df95d637ebbb4afab0e2a46d7d5e6b4eba42f1f44541c4ee1b94aaac6",
+      "arg_entype_word": 2,
+      "arg_dieact_word": 1,
+      "arg_warp_literal": [
+        31606,
+        20,
+        29
+      ],
+      "arg_enemy_id_sequence_literal": [
+        1032,
+        1045,
+        1045,
+        1045,
+        1045
+      ]
+    },
+    {
+      "create_block_index": 6,
+      "create_byte_span": [
+        1256,
+        1421
+      ],
+      "create_block_sha256": "f441452216652d0108f4ede5107ce2a932b8c28ae56cc7756e2159fdc4804d59",
+      "floor_id": 31606,
+      "source_name": "風的守護者",
+      "element": "風",
+      "graphic_number": 100328,
+      "source_position_borncenter": [
+        62,
+        37,
+        1,
+        1
+      ],
+      "source_direction": 6,
+      "source_time_word": 60000,
+      "template_ref": "sb_4sink",
+      "template_block_sha256": "b06e68b2d74b0cb614b2d93c12125bf823c8acd7c9807e381546270447302d40",
+      "template_functionset": "NPCEnemy",
+      "arg_source_path": "npc/300/sb_4sink6.arg",
+      "arg_sha256": "137620070b854e478638e6acb808eeb641dc554409e87aa70d1375b2ed5b9eb2",
+      "arg_entype_word": 2,
+      "arg_dieact_word": 1,
+      "arg_warp_literal": [
+        31606,
+        73,
+        28
+      ],
+      "arg_enemy_id_sequence_literal": [
+        1033,
+        1046,
+        1046,
+        1046,
+        1046
+      ]
+    },
+    {
+      "create_block_index": 7,
+      "create_byte_span": [
+        1452,
+        1617
+      ],
+      "create_block_sha256": "d4fa600572bac646974f6207caa7574c6e5342e558dd342e81db51a13332b9ad",
+      "floor_id": 31606,
+      "source_name": "地的守護者",
+      "element": "地",
+      "graphic_number": 100274,
+      "source_position_borncenter": [
+        31,
+        68,
+        1,
+        1
+      ],
+      "source_direction": 2,
+      "source_time_word": 60000,
+      "template_ref": "sb_4sint",
+      "template_block_sha256": "dd5c5896ddbfa1ef6cc60829aad8ca3a4e77d3d809af4b7a1b13342a4d741437",
+      "template_functionset": "NPCEnemy",
+      "arg_source_path": "npc/300/sb_4sint6.arg",
+      "arg_sha256": "1e200566d824221492fa9f304ec5d53b3633a7aa7c9bacc219d27c5e714257d0",
+      "arg_entype_word": 2,
+      "arg_dieact_word": 1,
+      "arg_warp_literal": [
+        31606,
+        27,
+        71
+      ],
+      "arg_enemy_id_sequence_literal": [
+        1034,
+        1047,
+        1047,
+        1047,
+        1047
+      ]
+    },
+    {
+      "create_block_index": 8,
+      "create_byte_span": [
+        1693,
+        1858
+      ],
+      "create_block_sha256": "f5e8f2df3c8b73003a42c4923dd8e7574fb1742fbef0148f6bfb8639db79d6d8",
+      "floor_id": 31609,
+      "source_name": "水的守護者",
+      "element": "水",
+      "graphic_number": 100379,
+      "source_position_borncenter": [
+        31,
+        68,
+        1,
+        1
+      ],
+      "source_direction": 2,
+      "source_time_word": 60000,
+      "template_ref": "sb_4sinm",
+      "template_block_sha256": "c58bad374dcfaa8fe3ab4ed16ad1ed75cf3f0f44d0269b24d1bb142c83b426ca",
+      "template_functionset": "NPCEnemy",
+      "arg_source_path": "npc/300/sb_4sinm9.arg",
+      "arg_sha256": "bb079605a055c1638e7b2e945b4f50f96d1fde68157a8a68b8a46eb6af0ab589",
+      "arg_entype_word": 2,
+      "arg_dieact_word": 1,
+      "arg_warp_literal": [
+        31609,
+        27,
+        71
+      ],
+      "arg_enemy_id_sequence_literal": [
+        1048,
+        1044,
+        1044,
+        1044,
+        1044
+      ]
+    },
+    {
+      "create_block_index": 9,
+      "create_byte_span": [
+        1889,
+        2054
+      ],
+      "create_block_sha256": "947f7ad6258438fb76829830042a38f065ef9893e5021d2901e1a9990c4f4400",
+      "floor_id": 31609,
+      "source_name": "火的守護者",
+      "element": "火",
+      "graphic_number": 100370,
+      "source_position_borncenter": [
+        62,
+        37,
+        1,
+        1
+      ],
+      "source_direction": 6,
+      "source_time_word": 60000,
+      "template_ref": "sb_4sinh",
+      "template_block_sha256": "81f952df4358850aefc5e50bbb3c29346e0d7064cca091139fb4eb9dc2b1a852",
+      "template_functionset": "NPCEnemy",
+      "arg_source_path": "npc/300/sb_4sinh9.arg",
+      "arg_sha256": "792b064d0964bd96821803e65cee2de17c69cbefd7948f90912ca58222b9f18c",
+      "arg_entype_word": 2,
+      "arg_dieact_word": 1,
+      "arg_warp_literal": [
+        31609,
+        73,
+        28
+      ],
+      "arg_enemy_id_sequence_literal": [
+        1049,
+        1045,
+        1045,
+        1045,
+        1045
+      ]
+    },
+    {
+      "create_block_index": 10,
+      "create_byte_span": [
+        2085,
+        2250
+      ],
+      "create_block_sha256": "ad3b61e6d08df3a5756c07f10170a3a3fcc6bd6d565a74aaf3b57c4f02b5887d",
+      "floor_id": 31609,
+      "source_name": "風的守護者",
+      "element": "風",
+      "graphic_number": 100328,
+      "source_position_borncenter": [
+        64,
+        66,
+        1,
+        1
+      ],
+      "source_direction": 6,
+      "source_time_word": 60000,
+      "template_ref": "sb_4sink",
+      "template_block_sha256": "b06e68b2d74b0cb614b2d93c12125bf823c8acd7c9807e381546270447302d40",
+      "template_functionset": "NPCEnemy",
+      "arg_source_path": "npc/300/sb_4sink9.arg",
+      "arg_sha256": "ce9d7e6776f369d6785190f5eb20cb2db31cbcf59f4176c9f1667fe54c62bee6",
+      "arg_entype_word": 2,
+      "arg_dieact_word": 1,
+      "arg_warp_literal": [
+        31609,
+        73,
+        73
+      ],
+      "arg_enemy_id_sequence_literal": [
+        1050,
+        1046,
+        1046,
+        1046,
+        1046
+      ]
+    },
+    {
+      "create_block_index": 11,
+      "create_byte_span": [
+        2281,
+        2446
+      ],
+      "create_block_sha256": "cea80abdab1d5d858808fb5e3f601dc03704ad0db8daa6efa5d3f6440e09f425",
+      "floor_id": 31609,
+      "source_name": "地的守護者",
+      "element": "地",
+      "graphic_number": 100274,
+      "source_position_borncenter": [
+        30,
+        31,
+        1,
+        1
+      ],
+      "source_direction": 2,
+      "source_time_word": 60000,
+      "template_ref": "sb_4sint",
+      "template_block_sha256": "dd5c5896ddbfa1ef6cc60829aad8ca3a4e77d3d809af4b7a1b13342a4d741437",
+      "template_functionset": "NPCEnemy",
+      "arg_source_path": "npc/300/sb_4sint9.arg",
+      "arg_sha256": "1a97b2cf6b02e3173faf10c69c28b3cb77bb0c327473c64fec5444ea62a90550",
+      "arg_entype_word": 2,
+      "arg_dieact_word": 1,
+      "arg_warp_literal": [
+        31609,
+        20,
+        29
+      ],
+      "arg_enemy_id_sequence_literal": [
+        1051,
+        1047,
+        1047,
+        1047,
+        1047
+      ]
+    }
+  ],
+  "shrine_changeevent_guardian_records": [
+    {
+      "create_block_index": 0,
+      "create_byte_span": [
+        225,
+        386
+      ],
+      "create_block_sha256": "a59f1adb36ac69b0850f8bcb557ca2e584d11001719068199479d05a0f25d5d6",
+      "floor_id": 31609,
+      "source_position_borncorner": [
+        79,
+        79,
+        79,
+        79
+      ],
+      "source_name": "風的守護者",
+      "graphic_number": 100328,
+      "function_literal": "changeevent",
+      "event_source_path": "npc/giiru/event/nev1_4",
+      "event_sha256": "7a393da7ba860fb605c740e3d5dc0d1c604c24a377919cddc5e295f92d942dc2",
+      "element": "風",
+      "source_get_item_literal": 2531,
+      "existing_item_condition_literal": "LV>0&ITEM=2531",
+      "source_message_branch_count": 2
+    },
+    {
+      "create_block_index": 1,
+      "create_byte_span": [
+        388,
+        549
+      ],
+      "create_block_sha256": "6e9fb819c0564fccdfffca8814c60fdb32a98399f8a6620330b60cdb7e3763be",
+      "floor_id": 31609,
+      "source_position_borncorner": [
+        79,
+        22,
+        79,
+        22
+      ],
+      "source_name": "火的守護者",
+      "graphic_number": 100370,
+      "function_literal": "changeevent",
+      "event_source_path": "npc/giiru/event/nev1_3",
+      "event_sha256": "42c46eb34e364fca6439fd38ba5ced4281e4b45958c90ddad1b952f4a76b9692",
+      "element": "火",
+      "source_get_item_literal": 2530,
+      "existing_item_condition_literal": "LV>0&ITEM=2530",
+      "source_message_branch_count": 2
+    },
+    {
+      "create_block_index": 2,
+      "create_byte_span": [
+        551,
+        712
+      ],
+      "create_block_sha256": "6b0bfc787152cc62c8b5b8b8adb4fe6256c67e9a171bb60fdd10facb6f169b9c",
+      "floor_id": 31609,
+      "source_position_borncorner": [
+        20,
+        22,
+        20,
+        22
+      ],
+      "source_name": "地的守護者",
+      "graphic_number": 100274,
+      "function_literal": "changeevent",
+      "event_source_path": "npc/giiru/event/nev1_1",
+      "event_sha256": "6e2be83ac2050475af0b4c12c63d891ac8cab54a9edf7aad18f9fe209718d6ca",
+      "element": "地",
+      "source_get_item_literal": 2528,
+      "existing_item_condition_literal": "LV>0&ITEM=2528",
+      "source_message_branch_count": 2
+    },
+    {
+      "create_block_index": 3,
+      "create_byte_span": [
+        714,
+        875
+      ],
+      "create_block_sha256": "eb56da32b91f50b81a4b1bbf0f7c341eefd6b0cfd117095a20e1af1f6afec51a",
+      "floor_id": 31609,
+      "source_position_borncorner": [
+        20,
+        78,
+        20,
+        78
+      ],
+      "source_name": "水的守護者",
+      "graphic_number": 100379,
+      "function_literal": "changeevent",
+      "event_source_path": "npc/giiru/event/nev1_2",
+      "event_sha256": "d518cd74c0a05bb8fe776d828bc1a31366856dc69f94ec201e01da56d7ca7ad7",
+      "element": "水",
+      "source_get_item_literal": 2529,
+      "existing_item_condition_literal": "LV>0&ITEM=2529",
+      "source_message_branch_count": 2
+    }
+  ],
+  "shrine_two_statue_creates": [
+    {
+      "create_block_index": 4,
+      "create_byte_span": [
+        878,
+        1033
+      ],
+      "create_block_sha256": "67af9bf04ed63802ca9f2257bb7d3b58ff1ad85ecafbbe8d02f915b733df6d85",
+      "floor_id": 31610,
+      "source_position_borncorner": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "source_name": "石像",
+      "graphic_number": 10939,
+      "function_literal": "changeevent",
+      "event_source_path": "npc/giiru/event/nev1_5",
+      "event_sha256": "d4ff5e9c80dfa140d09b81c32da92602448eb10570c4b49af09a84ce360af4e0"
+    },
+    {
+      "create_block_index": 5,
+      "create_byte_span": [
+        1036,
+        1190
+      ],
+      "create_block_sha256": "23701fdcf004921977d5d36da764f2fb02c8a4f4bd2d320785e274b22cf22c6e",
+      "floor_id": 31610,
+      "source_position_borncorner": [
+        25,
+        24,
+        25,
+        24
+      ],
+      "source_name": "石像",
+      "graphic_number": 5075,
+      "function_literal": "changeevent",
+      "event_source_path": "npc/giiru/event/nev1_5",
+      "event_sha256": "d4ff5e9c80dfa140d09b81c32da92602448eb10570c4b49af09a84ce360af4e0"
+    }
+  ],
+  "statue_event_literal": {
+    "source_file": "npc/giiru/event/nev1_5",
+    "source_file_sha256": "d4ff5e9c80dfa140d09b81c32da92602448eb10570c4b49af09a84ce360af4e0",
+    "source_condition": "LV>0&ITEM=2528*1&ITEM=2529*1&ITEM=2530*1&ITEM=2531*1",
+    "source_DelItem_tokens": [
+      "2528*1",
+      "2529*1",
+      "2530*1",
+      "2531*1"
+    ],
+    "source_GetRandItem_candidate_ids_in_order": [
+      51,
+      52,
+      71,
+      148,
+      171,
+      241,
+      271,
+      375,
+      11424,
+      1125,
+      684,
+      11433,
+      11443,
+      11454,
+      11463,
+      11475
+    ],
+    "source_EventNo_values": [
+      "-1",
+      "-1"
+    ],
+    "observed_source_TYPE_sequence": [
+      "ACCEPT",
+      "MESSAGE"
+    ],
+    "native_condition_evaluation_proven": false,
+    "native_reward_selection_or_probability_proven": false
+  },
+  "four_source_graphic_spr_frame_pixel_receipts": [
+    {
+      "element": "地",
+      "source_numeric_graphic": 100274,
+      "PET07_original_SPR_segment_SHA256": "12ec2cffab263c6b14f9f35e3a4f6dcf731d4c7aebeda2440f0b5bc207618bd2",
+      "source_bitmap_no": 102147,
+      "original_action_code": 0,
+      "original_direction_code": 0,
+      "source_PNG_sha256": "871971603c4d43e303449b70a261472825fea18d42a3dd454b6d701187284a9b",
+      "source_PNG_dimensions": [
+        56,
+        72
+      ],
+      "private_PET07_gallery_provenance": "TW1 accepted retail P3H, candidate palette, not original game rendering; not mixed25 same-deployment"
+    },
+    {
+      "element": "水",
+      "source_numeric_graphic": 100379,
+      "PET07_original_SPR_segment_SHA256": "355f06e73d0e277beed5abf221f80babbac98c123047a732ca4f1181dd80b65d",
+      "source_bitmap_no": 123907,
+      "original_action_code": 0,
+      "original_direction_code": 0,
+      "source_PNG_sha256": "18b3b91b59164f13e57fd4e2d7a101db6ab92453c6a410e6984c5bf638ec9bdf",
+      "source_PNG_dimensions": [
+        76,
+        87
+      ],
+      "private_PET07_gallery_provenance": "TW1 accepted retail P3H, candidate palette, not original game rendering; not mixed25 same-deployment"
+    },
+    {
+      "element": "火",
+      "source_numeric_graphic": 100370,
+      "PET07_original_SPR_segment_SHA256": "63ba530888f46c6ccd0905ae978bf95d4adc52d4386c043cc417e80a0f1efc79",
+      "source_bitmap_no": 121571,
+      "original_action_code": 0,
+      "original_direction_code": 0,
+      "source_PNG_sha256": "cfe4a1b4f80106e0c72e457702443b54010796d388d01423d182d0d38781b9e9",
+      "source_PNG_dimensions": [
+        136,
+        117
+      ],
+      "private_PET07_gallery_provenance": "TW1 accepted retail P3H, candidate palette, not original game rendering; not mixed25 same-deployment"
+    },
+    {
+      "element": "風",
+      "source_numeric_graphic": 100328,
+      "PET07_original_SPR_segment_SHA256": "aba72fe1706a7fd5f4d016e4e82ee957b8e4efd38030b1a6fbbc930076347fad",
+      "source_bitmap_no": 113273,
+      "original_action_code": 2,
+      "original_direction_code": 0,
+      "source_PNG_sha256": "3c5b34c6c4562e786269e48310a2c000d37ddcb7681b38b48257c00a477a4f29",
+      "source_PNG_dimensions": [
+        72,
+        114
+      ],
+      "private_PET07_gallery_provenance": "TW1 accepted retail P3H, candidate palette, not original game rendering; not mixed25 same-deployment"
+    }
+  ],
+  "four_magatama_and_sixteen_statue_candidate_item_source_rows": [
+    {
+      "item_id": 2528,
+      "source_role": "four_magatama",
+      "source_name": "地的勾玉",
+      "source_image_alias": 24065,
+      "itemset_sources": [
+        {
+          "table": "itemset.txt",
+          "line_1based": 2111,
+          "original_row_sha256": "731bdebd9264080e31393bec8f488eaef9191d3cf0d13b1855761d0ee3f27530"
+        },
+        {
+          "table": "itemset0710.txt",
+          "line_1based": 2506,
+          "original_row_sha256": "731bdebd9264080e31393bec8f488eaef9191d3cf0d13b1855761d0ee3f27530"
+        }
+      ],
+      "two_itemset_different_column_indices_zero_based": [],
+      "TW1_cross_source_PNG_sha256": "64d99514f76266b0ffd0219225c66322b31f61b0bdc26257a62d53acfffee7bf",
+      "TW1_cross_source_PNG_dimensions": [
+        20,
+        17
+      ],
+      "TW1_source_RD_SHA256": "d6175184d5590da71d4a46e86e7af11a662926e36a805f2ecfdfe138fcad8762",
+      "TW1_source_palette_candidate_RGBA_SHA256": "d93e378b41eacaee17460e3c908edfee183263261c2c5008ed0de3cd9a264184"
+    },
+    {
+      "item_id": 2529,
+      "source_role": "four_magatama",
+      "source_name": "水的勾玉",
+      "source_image_alias": 24066,
+      "itemset_sources": [
+        {
+          "table": "itemset.txt",
+          "line_1based": 2112,
+          "original_row_sha256": "6f9864353a88d74256922943a196d46ba3d26dc5d119bccbd8c2b57e7af6de02"
+        },
+        {
+          "table": "itemset0710.txt",
+          "line_1based": 2507,
+          "original_row_sha256": "6f9864353a88d74256922943a196d46ba3d26dc5d119bccbd8c2b57e7af6de02"
+        }
+      ],
+      "two_itemset_different_column_indices_zero_based": [],
+      "TW1_cross_source_PNG_sha256": "585eb6b6bf9114d4c0214888511143fd2e8f2ba813fa91d9428db309ed60711e",
+      "TW1_cross_source_PNG_dimensions": [
+        20,
+        19
+      ],
+      "TW1_source_RD_SHA256": "67abaa1fcde210a9d116e74544ddd26c0d93e985614c21fc6b931f2044e9478f",
+      "TW1_source_palette_candidate_RGBA_SHA256": "f4df16ccc7f9361b0faf196b9da774df45ee6d983d374b3041048501bca895d0"
+    },
+    {
+      "item_id": 2530,
+      "source_role": "four_magatama",
+      "source_name": "火的勾玉",
+      "source_image_alias": 24064,
+      "itemset_sources": [
+        {
+          "table": "itemset.txt",
+          "line_1based": 2113,
+          "original_row_sha256": "54ee1d887f47f84e4e9c8cb3857ae60a58e4e6203a5becef05bb5602f6917e8f"
+        },
+        {
+          "table": "itemset0710.txt",
+          "line_1based": 2508,
+          "original_row_sha256": "54ee1d887f47f84e4e9c8cb3857ae60a58e4e6203a5becef05bb5602f6917e8f"
+        }
+      ],
+      "two_itemset_different_column_indices_zero_based": [],
+      "TW1_cross_source_PNG_sha256": "6cb05d3cfb328bf62cfe161cc105792f00724a9c267486121c6075b1e04a2b7d",
+      "TW1_cross_source_PNG_dimensions": [
+        16,
+        19
+      ],
+      "TW1_source_RD_SHA256": "bf461b460d6118b80c50ee2b2fe6d4b9034e12c41261c73a5c876e0701e3f7f6",
+      "TW1_source_palette_candidate_RGBA_SHA256": "b294a39dfc5d9f4c3fa82badfe97ffcbc7729341609301631169117613f614d4"
+    },
+    {
+      "item_id": 2531,
+      "source_role": "four_magatama",
+      "source_name": "風的勾玉",
+      "source_image_alias": 24067,
+      "itemset_sources": [
+        {
+          "table": "itemset.txt",
+          "line_1based": 2114,
+          "original_row_sha256": "712106a49e0bfd24b7a572ebf510a71456a6c7d1edfc645523b5f0e25b3cc33c"
+        },
+        {
+          "table": "itemset0710.txt",
+          "line_1based": 2509,
+          "original_row_sha256": "712106a49e0bfd24b7a572ebf510a71456a6c7d1edfc645523b5f0e25b3cc33c"
+        }
+      ],
+      "two_itemset_different_column_indices_zero_based": [],
+      "TW1_cross_source_PNG_sha256": "a64bd8c937348c631f35a9d5c0b10f15bf1e8d584deb58f42283d0a627576d91",
+      "TW1_cross_source_PNG_dimensions": [
+        16,
+        18
+      ],
+      "TW1_source_RD_SHA256": "2bcded9b8c11b44b9bea42e5963b73f0abaaa774fd359de01f2062cab2046873",
+      "TW1_source_palette_candidate_RGBA_SHA256": "5986812af0b853c45efa73910ea12b5022774aece2a8ea0172db71b2ac527603"
+    },
+    {
+      "item_id": 51,
+      "source_role": "statue_GetRandItem_literal_candidate",
+      "source_name": "貝洛薩Lv3斧頭",
+      "source_image_alias": 20014,
+      "itemset_sources": [
+        {
+          "table": "itemset.txt",
+          "line_1based": 52,
+          "original_row_sha256": "70cb34ec480d68b77420376775627eb668331e32e4df177ee58e99482d5902a6"
+        },
+        {
+          "table": "itemset0710.txt",
+          "line_1based": 52,
+          "original_row_sha256": "70cb34ec480d68b77420376775627eb668331e32e4df177ee58e99482d5902a6"
+        }
+      ],
+      "two_itemset_different_column_indices_zero_based": [],
+      "TW1_cross_source_PNG_sha256": "37c1ac08a22076dedbd01774471f528c3b0dcfdddfbab6578f3b3c759141971a",
+      "TW1_cross_source_PNG_dimensions": [
+        44,
+        38
+      ],
+      "TW1_source_RD_SHA256": "4c34862e202e734c434c42a609f4c6b326f62d4d51ff4e19a1e8ca75ed782ab0",
+      "TW1_source_palette_candidate_RGBA_SHA256": "91b44c18269b89be90bd01af1d13f41e613a19f8e1bf32b01673036fb18f3068"
+    },
+    {
+      "item_id": 52,
+      "source_role": "statue_GetRandItem_literal_candidate",
+      "source_name": "威金娜斯Lv3斧頭",
+      "source_image_alias": 20014,
+      "itemset_sources": [
+        {
+          "table": "itemset.txt",
+          "line_1based": 53,
+          "original_row_sha256": "97605660e122992cf11925878b9ac8a1466ea1ee99477657f979e47a47a02354"
+        },
+        {
+          "table": "itemset0710.txt",
+          "line_1based": 53,
+          "original_row_sha256": "97605660e122992cf11925878b9ac8a1466ea1ee99477657f979e47a47a02354"
+        }
+      ],
+      "two_itemset_different_column_indices_zero_based": [],
+      "TW1_cross_source_PNG_sha256": "37c1ac08a22076dedbd01774471f528c3b0dcfdddfbab6578f3b3c759141971a",
+      "TW1_cross_source_PNG_dimensions": [
+        44,
+        38
+      ],
+      "TW1_source_RD_SHA256": "4c34862e202e734c434c42a609f4c6b326f62d4d51ff4e19a1e8ca75ed782ab0",
+      "TW1_source_palette_candidate_RGBA_SHA256": "91b44c18269b89be90bd01af1d13f41e613a19f8e1bf32b01673036fb18f3068"
+    },
+    {
+      "item_id": 71,
+      "source_role": "statue_GetRandItem_literal_candidate",
+      "source_name": "貝洛薩Lv4斧頭",
+      "source_image_alias": 20004,
+      "itemset_sources": [
+        {
+          "table": "itemset.txt",
+          "line_1based": 72,
+          "original_row_sha256": "486c1d309b757080f68e02755b8efe38df8dc63763832626eb3486afedab6276"
+        },
+        {
+          "table": "itemset0710.txt",
+          "line_1based": 72,
+          "original_row_sha256": "486c1d309b757080f68e02755b8efe38df8dc63763832626eb3486afedab6276"
+        }
+      ],
+      "two_itemset_different_column_indices_zero_based": [],
+      "TW1_cross_source_PNG_sha256": "95da5ac3dfe14a5dbb627cceb02f5aadb587abaf23614b3d32bb662b6d19a68e",
+      "TW1_cross_source_PNG_dimensions": [
+        40,
+        34
+      ],
+      "TW1_source_RD_SHA256": "04a823d146b3c3760e8e1d9062d91ac5c403cf4fb1c9c8126fd08cdd5f1f2207",
+      "TW1_source_palette_candidate_RGBA_SHA256": "77ae0ce7e5fc766b0a3846b971507ccf2ff66d25556a1cd76d5c45db94cc8ad6"
+    },
+    {
+      "item_id": 148,
+      "source_role": "statue_GetRandItem_literal_candidate",
+      "source_name": "特洛西Lv3棍棒",
+      "source_image_alias": 20111,
+      "itemset_sources": [
+        {
+          "table": "itemset.txt",
+          "line_1based": 149,
+          "original_row_sha256": "5d150a601f4434e1e225ffa9ff916376e3d767a5aa733df3b5e39cdb07d65d97"
+        },
+        {
+          "table": "itemset0710.txt",
+          "line_1based": 149,
+          "original_row_sha256": "5d150a601f4434e1e225ffa9ff916376e3d767a5aa733df3b5e39cdb07d65d97"
+        }
+      ],
+      "two_itemset_different_column_indices_zero_based": [],
+      "TW1_cross_source_PNG_sha256": "3d13c4ffb95f5187ffba511ccab5cedbe491ed32ff6869f4af80505b339f8c34",
+      "TW1_cross_source_PNG_dimensions": [
+        28,
+        22
+      ],
+      "TW1_source_RD_SHA256": "ece66dae80a623863d0dd542a764b68a84c38773de0da6e1f95d5a2e3fbd5709",
+      "TW1_source_palette_candidate_RGBA_SHA256": "ea6a8e65957548ac207bbfa816861e190d828657ebd6564c4be58f4004991064"
+    },
+    {
+      "item_id": 171,
+      "source_role": "statue_GetRandItem_literal_candidate",
+      "source_name": "貝洛薩Lv4棍棒",
+      "source_image_alias": 20117,
+      "itemset_sources": [
+        {
+          "table": "itemset.txt",
+          "line_1based": 172,
+          "original_row_sha256": "fc408bb8bb45841a64e86683d418ac1489a5ca43752eccd5df15c344d903e758"
+        },
+        {
+          "table": "itemset0710.txt",
+          "line_1based": 172,
+          "original_row_sha256": "fc408bb8bb45841a64e86683d418ac1489a5ca43752eccd5df15c344d903e758"
+        }
+      ],
+      "two_itemset_different_column_indices_zero_based": [],
+      "TW1_cross_source_PNG_sha256": "25a7f68bb7097990d7d778fa1c99c9a8332d1fcefe6116c0ecf054348ba951cb",
+      "TW1_cross_source_PNG_dimensions": [
+        36,
+        35
+      ],
+      "TW1_source_RD_SHA256": "12c3895c8519f44e1e069f66b879617dbe122db39642997fc870eeb80c1ff16d",
+      "TW1_source_palette_candidate_RGBA_SHA256": "79a2215747e0332d3aea83ada81d40082323d3031b9a72eb4c3c57eb1d13e75e"
+    },
+    {
+      "item_id": 241,
+      "source_role": "statue_GetRandItem_literal_candidate",
+      "source_name": "貝諾美斯Lv3槍",
+      "source_image_alias": 20510,
+      "itemset_sources": [
+        {
+          "table": "itemset.txt",
+          "line_1based": 242,
+          "original_row_sha256": "f431a82099a4291252c2163c2b3114b9f578927172016912f267a3790be00415"
+        },
+        {
+          "table": "itemset0710.txt",
+          "line_1based": 242,
+          "original_row_sha256": "f431a82099a4291252c2163c2b3114b9f578927172016912f267a3790be00415"
+        }
+      ],
+      "two_itemset_different_column_indices_zero_based": [],
+      "TW1_cross_source_PNG_sha256": "e32c40165dc1fa3f014d01f48c0e098d9db6d246515c715a0c82eda11894fa1b",
+      "TW1_cross_source_PNG_dimensions": [
+        48,
+        39
+      ],
+      "TW1_source_RD_SHA256": "92b03a798f209a4c3cbbee9740188fe022a6c0cd97da7c6dfa2314589def1902",
+      "TW1_source_palette_candidate_RGBA_SHA256": "cb4ef437158c24a36dae7e6abc7332e2beee749f404693c917b50d6eba0c647b"
+    },
+    {
+      "item_id": 271,
+      "source_role": "statue_GetRandItem_literal_candidate",
+      "source_name": "貝洛薩Lv4槍",
+      "source_image_alias": 20448,
+      "itemset_sources": [
+        {
+          "table": "itemset.txt",
+          "line_1based": 272,
+          "original_row_sha256": "4f83fc759dc5523ab0dba785a47a450e333c0d5dedb6f0345898f8b74005abe4"
+        },
+        {
+          "table": "itemset0710.txt",
+          "line_1based": 272,
+          "original_row_sha256": "4f83fc759dc5523ab0dba785a47a450e333c0d5dedb6f0345898f8b74005abe4"
+        }
+      ],
+      "two_itemset_different_column_indices_zero_based": [],
+      "TW1_cross_source_PNG_sha256": "cc59809e772748d9b04855e23da7c9a81caee9ecab3128db09b0fb28f5ae1772",
+      "TW1_cross_source_PNG_dimensions": [
+        44,
+        41
+      ],
+      "TW1_source_RD_SHA256": "eeff72487bdfd2f64abddabb6f6e94b9b81df189918d6720a8016eca45cbf18c",
+      "TW1_source_palette_candidate_RGBA_SHA256": "4031bc9501894dc97697ac9ce763ca9e0ff4b8532c7b7bc8a0bfd0ff7132ddfc"
+    },
+    {
+      "item_id": 375,
+      "source_role": "statue_GetRandItem_literal_candidate",
+      "source_name": "特洛金Lv4爪",
+      "source_image_alias": 20223,
+      "itemset_sources": [
+        {
+          "table": "itemset.txt",
+          "line_1based": 376,
+          "original_row_sha256": "c43671f996ba1d1ad2573da53ef4a68f43cd790394b673f4db1a6c9a5090c2dc"
+        },
+        {
+          "table": "itemset0710.txt",
+          "line_1based": 376,
+          "original_row_sha256": "c43671f996ba1d1ad2573da53ef4a68f43cd790394b673f4db1a6c9a5090c2dc"
+        }
+      ],
+      "two_itemset_different_column_indices_zero_based": [],
+      "TW1_cross_source_PNG_sha256": "c11ec447106afbc73ab0cd981a4e217ddfcded174dd77ea219fb57e1d861b134",
+      "TW1_cross_source_PNG_dimensions": [
+        40,
+        31
+      ],
+      "TW1_source_RD_SHA256": "f2c6955460b539f926c3862838b7be664bcde74b6c3dd9761efe843049e02b2f",
+      "TW1_source_palette_candidate_RGBA_SHA256": "b168dd1175dbd7c277c25d6a45dc0aca8f00f62868333258c775971978163044"
+    },
+    {
+      "item_id": 11424,
+      "source_role": "statue_GetRandItem_literal_candidate",
+      "source_name": "合成耳飾 1 [風]",
+      "source_image_alias": 22033,
+      "itemset_sources": [
+        {
+          "table": "itemset.txt",
+          "line_1based": 6688,
+          "original_row_sha256": "d40c31675ae8cc4006de4c4a7d36798d5a5253c400b01d52ba50f6dfa43d8f60"
+        },
+        {
+          "table": "itemset0710.txt",
+          "line_1based": 7139,
+          "original_row_sha256": "a2c1683c51cf99e1558f1d4036b84b81df3d312b37760e7bcb84d0ec68a48ee7"
+        }
+      ],
+      "two_itemset_different_column_indices_zero_based": [
+        30,
+        31
+      ],
+      "TW1_cross_source_PNG_sha256": "736bf316c2da5691b999630cd85225d81dd42f937191f36e7afc148f5c4f4f71",
+      "TW1_cross_source_PNG_dimensions": [
+        32,
+        30
+      ],
+      "TW1_source_RD_SHA256": "a8d230c7dafcb8039202a7a4f58ccff1b0679207306c128d602263d88372db1c",
+      "TW1_source_palette_candidate_RGBA_SHA256": "4a73a7d57e766972e6f68ab397718521353944bc1b18f697e761d652c1d397d0"
+    },
+    {
+      "item_id": 1125,
+      "source_role": "statue_GetRandItem_literal_candidate",
+      "source_name": "芙雷雅Lv2服3",
+      "source_image_alias": 21035,
+      "itemset_sources": [
+        {
+          "table": "itemset.txt",
+          "line_1based": 1126,
+          "original_row_sha256": "d8ae850bfe1fcc9d629649c287dd974d246b6545b8e298cceaf563f42209b56b"
+        },
+        {
+          "table": "itemset0710.txt",
+          "line_1based": 1126,
+          "original_row_sha256": "d8ae850bfe1fcc9d629649c287dd974d246b6545b8e298cceaf563f42209b56b"
+        }
+      ],
+      "two_itemset_different_column_indices_zero_based": [],
+      "TW1_cross_source_PNG_sha256": "e3667022c27ab801e0daa146f853d15b6c7bb9cb43c3b65550a5091704106977",
+      "TW1_cross_source_PNG_dimensions": [
+        32,
+        43
+      ],
+      "TW1_source_RD_SHA256": "b8089bb076a8e8072b7dd5fbd3035fc9ecd954a884fb1e2be526c75910d2935c",
+      "TW1_source_palette_candidate_RGBA_SHA256": "858567c0d3f8a9eb412f7f8b3a12d0ac285e4c85d8f75b47e0a56858012f6ebc"
+    },
+    {
+      "item_id": 684,
+      "source_role": "statue_GetRandItem_literal_candidate",
+      "source_name": "萊伊卡Lv5投擲斧頭",
+      "source_image_alias": 20506,
+      "itemset_sources": [
+        {
+          "table": "itemset.txt",
+          "line_1based": 685,
+          "original_row_sha256": "10e2bd0ff20c08149a1bb56091680d14af7a32d518d04e5859d8b9bed39976d4"
+        },
+        {
+          "table": "itemset0710.txt",
+          "line_1based": 685,
+          "original_row_sha256": "10e2bd0ff20c08149a1bb56091680d14af7a32d518d04e5859d8b9bed39976d4"
+        }
+      ],
+      "two_itemset_different_column_indices_zero_based": [],
+      "TW1_cross_source_PNG_sha256": "5df15e5f551e5b7366f166f156377caf003de9df39730e3f9adba08c8d5c7314",
+      "TW1_cross_source_PNG_dimensions": [
+        32,
+        27
+      ],
+      "TW1_source_RD_SHA256": "3dd374283bf69eb46d6ffedd4cd0d45d829dcbe0dc85914e8f3b72f64eaa2ded",
+      "TW1_source_palette_candidate_RGBA_SHA256": "e6efa857427ad90fe418a256c84c31677e6efd7c424bfdcef8d28f128441e9ce"
+    },
+    {
+      "item_id": 11433,
+      "source_role": "statue_GetRandItem_literal_candidate",
+      "source_name": "合成耳飾 2 [地]",
+      "source_image_alias": 22124,
+      "itemset_sources": [
+        {
+          "table": "itemset.txt",
+          "line_1based": 6697,
+          "original_row_sha256": "2d11e1686a6b9ff2468bf799a2f05845451225d8e31a6c8c4f8db49fa12c552b"
+        },
+        {
+          "table": "itemset0710.txt",
+          "line_1based": 7148,
+          "original_row_sha256": "072afcfccb7b570c9b5a328315284a8ba1fb19d39628daaf2aad50961160c1fa"
+        }
+      ],
+      "two_itemset_different_column_indices_zero_based": [
+        30,
+        31
+      ],
+      "TW1_cross_source_PNG_sha256": "690aa9b997079a662e3f17e782014e68a4354acf04bc513e504335b7b986eb70",
+      "TW1_cross_source_PNG_dimensions": [
+        24,
+        25
+      ],
+      "TW1_source_RD_SHA256": "1741b977b9772d8560d3d89ebec7c7aaa1d3ae85e5d2879a18f33ae9dfcef520",
+      "TW1_source_palette_candidate_RGBA_SHA256": "625b4f3ff39315ac36be7df0bcaf9c5264212b469be5b952340ed7866ddd7c5b"
+    },
+    {
+      "item_id": 11443,
+      "source_role": "statue_GetRandItem_literal_candidate",
+      "source_name": "合成耳飾 2 [火]",
+      "source_image_alias": 22124,
+      "itemset_sources": [
+        {
+          "table": "itemset.txt",
+          "line_1based": 6707,
+          "original_row_sha256": "3c7955ead281cf20138983a4fcc76a9ced14fc83d691607305e7e35f5fcf8b90"
+        },
+        {
+          "table": "itemset0710.txt",
+          "line_1based": 7158,
+          "original_row_sha256": "a59d981ac28ae48f28cfd80d080056d4fccf3864b20d96069e69d198d8832e57"
+        }
+      ],
+      "two_itemset_different_column_indices_zero_based": [
+        30,
+        31
+      ],
+      "TW1_cross_source_PNG_sha256": "690aa9b997079a662e3f17e782014e68a4354acf04bc513e504335b7b986eb70",
+      "TW1_cross_source_PNG_dimensions": [
+        24,
+        25
+      ],
+      "TW1_source_RD_SHA256": "1741b977b9772d8560d3d89ebec7c7aaa1d3ae85e5d2879a18f33ae9dfcef520",
+      "TW1_source_palette_candidate_RGBA_SHA256": "625b4f3ff39315ac36be7df0bcaf9c5264212b469be5b952340ed7866ddd7c5b"
+    },
+    {
+      "item_id": 11454,
+      "source_role": "statue_GetRandItem_literal_candidate",
+      "source_name": "合成耳飾 3",
+      "source_image_alias": 22035,
+      "itemset_sources": [
+        {
+          "table": "itemset.txt",
+          "line_1based": 6718,
+          "original_row_sha256": "8b428a2ddc1a3fee8683333b9e2b2056141e7690659cf8ad72070898de67f7a8"
+        },
+        {
+          "table": "itemset0710.txt",
+          "line_1based": 7169,
+          "original_row_sha256": "097e87b25e30f21ef8c10a8ad44273d5a422030c62d45934b2e0f586202d1a5c"
+        }
+      ],
+      "two_itemset_different_column_indices_zero_based": [
+        30,
+        31
+      ],
+      "TW1_cross_source_PNG_sha256": "68292134a3fb6ad402e66591048849e4c6f39cf0b7d9de192e11f7b77061d52a",
+      "TW1_cross_source_PNG_dimensions": [
+        32,
+        30
+      ],
+      "TW1_source_RD_SHA256": "9a877c6af2ec8fafceb1046776edecaabf2ae5d4b0ec4d9c5ee0333c2316eef8",
+      "TW1_source_palette_candidate_RGBA_SHA256": "0ec810f313ab6e89a37b0a0084febd8915fa7efcfa2245097a7fc2d03e7a5a01"
+    },
+    {
+      "item_id": 11463,
+      "source_role": "statue_GetRandItem_literal_candidate",
+      "source_name": "合成耳飾 3 [水]",
+      "source_image_alias": 22123,
+      "itemset_sources": [
+        {
+          "table": "itemset.txt",
+          "line_1based": 6727,
+          "original_row_sha256": "e9007d93e4d5fd822a92801bb1923ba8e531517c2c701d8ae9d0590338098d05"
+        },
+        {
+          "table": "itemset0710.txt",
+          "line_1based": 7178,
+          "original_row_sha256": "68efe83bc2011abf3f6ad1a3bdf6cd5ff46983a261b72b3f197513bcdef7f295"
+        }
+      ],
+      "two_itemset_different_column_indices_zero_based": [
+        30,
+        31
+      ],
+      "TW1_cross_source_PNG_sha256": "61af0249924d03502e1cf3c68c435ea1ce75e45057d8defc6eeb4d75ac912340",
+      "TW1_cross_source_PNG_dimensions": [
+        24,
+        25
+      ],
+      "TW1_source_RD_SHA256": "720a463a8471d6d5df80ba45c5d21062b8573b720236393b3046f2bd9702e382",
+      "TW1_source_palette_candidate_RGBA_SHA256": "cbd6670e28c4f8300d0220cb4123d789612720a0bcd0b002240b185ab229dd19"
+    },
+    {
+      "item_id": 11475,
+      "source_role": "statue_GetRandItem_literal_candidate",
+      "source_name": "合成耳環4",
+      "source_image_alias": 22058,
+      "itemset_sources": [
+        {
+          "table": "itemset.txt",
+          "line_1based": 6739,
+          "original_row_sha256": "d6f8989daa57de8d89cafa634a5c7b693d2c7fc929e30b2928e2ed440f79e518"
+        },
+        {
+          "table": "itemset0710.txt",
+          "line_1based": 7190,
+          "original_row_sha256": "01ae8e3906155c1b132bae888c7877f42189b29916b1f1248d7d4cc19739ce1c"
+        }
+      ],
+      "two_itemset_different_column_indices_zero_based": [
+        30,
+        31
+      ],
+      "TW1_cross_source_PNG_sha256": "0405f195ba615aee56fa1142cf80cff9202ca12e395bb0a6e2933a727b0fe267",
+      "TW1_cross_source_PNG_dimensions": [
+        24,
+        19
+      ],
+      "TW1_source_RD_SHA256": "c9d2d0000f96eb285ab0d0dfae61daeedbd973cf0a311863d4fd584f332a95d0",
+      "TW1_source_palette_candidate_RGBA_SHA256": "f97a4d9dc2b48ec575d0a4b12b18e62e350e9c3f804008d5dd64bb89aecf7ea4"
+    }
+  ],
+  "counts": {
+    "NPCEnemy_source_creates": 12,
+    "NPCEnemy_source_templates": 4,
+    "NPCEnemy_source_arg_files": 12,
+    "shrine_changeevent_guardian_source_creates": 4,
+    "shrine_statue_source_creates": 2,
+    "shrine_source_event_files": 5,
+    "literal_GetItem_guardian_item_ids": 4,
+    "statue_GetRandItem_candidate_id_count": 16,
+    "total_distinct_item_ids": 20,
+    "original_itemset_A_and_B_full_94_field_rows_checked": 40,
+    "item_ids_with_two_original_itemset_column_30_31_differences": 6,
+    "source_qualifying_separate_TW1_item_PNG_aliases": 18,
+    "source_qualifying_separate_TW1_guardian_SPR_PNG": 4,
+    "distinct_TW1_original_candidate_PNG_bytes_verifed": 22,
+    "new_RD_decoding_in_this_work_unit": 0
+  },
+  "limitations": {
+    "same_floor_same_graphic_implies_same_NPC": false,
+    "two_builds_same_official_deployment_confirmed": false,
+    "NPCEnemy_original_battle_executed": false,
+    "original_quest_script_interaction_executed": false,
+    "statue_original_random_reward_selected": false,
+    "original_world_entered": false,
+    "TW1_identity_of_mixed25_named_guardians_confirmed": false,
+    "original_collision_and_path_reachability_proven": false,
+    "original_palette_selection_and_animation_timing_proven": false,
+    "older_QUEST20_five_brothers_reward_already_counted_again": false
+  },
+  "next": "Source-bounded closure for these guardian NPC, four magatama and statue static relations. Switch to a different nonduplicate original pet/item/quest 2D family; reopen original battle, interpreter, randomness, native gameplay only on new primary evidence.",
+  "private_custody": {
+    "private_zip_name": "StoneAge-INTEGRATION85-four-guardian-shrine-original-2D-private.zip",
+    "size_bytes": 137532,
+    "sha256": "7edac69d609363cde14aaa9a2b8cfb7c1d633fb5f41a34d79399fdf8b497c60f",
+    "zip_members_crc_verified": 46,
+    "non_manifest_member_sha_verified": 45,
+    "source_original_CP950_files_in_private_zip": 20,
+    "source_distinct_TW1_private_PNG_members": 22,
+    "original_workbook_private_HTML_sha256": "d90cbf849109a6e6984e85a717b47007e01b7bbede883849c49262c24f63140c",
+    "modern_contact_sheet_sha256": "162fdde375dbf9aa62783662997e18969faf764f898abfa6ddde8f53bb815a0b",
+    "retained_library": "/石器时代/StoneAge-INTEGRATION85-four-guardian-shrine-original-2D-private.zip",
+    "local_real_original_gameplay_run": false,
+    "independent_library_roundtrip_exact_zip_sha256_and_46_crc": true,
+    "independent_library_roundtrip_45_individual_SHA256_verified": true
+  }
+}
