@@ -1,0 +1,1149 @@
+{
+  "schema": "stoneage.integration81.original_janken_npc_nine_partial_2d_map_source.r1",
+  "date": "2026-11-12",
+  "scope": "community_mixed25_original_NPC_create_and_9_arguments_original_DAT_vs_separate_TW10_candidate_RD",
+  "provenance": {
+    "parent_RAR_bytes": 361255180,
+    "parent_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "original_NPC_create_path": "npc/genout/janken.create",
+    "original_NPC_create_bytes": 1619,
+    "original_NPC_create_sha256": "1514521d52ebb2db139bf51e32e835b24db9b05187b54817497257afea6dce24",
+    "original_NPC_create_parse_CP950_roundtrip": true,
+    "private_MAP09_ZIP_bytes": 46844444,
+    "private_MAP09_ZIP_sha256": "d84d0800dd600798769dfb7251a1d7816588ac061ccc27812ac64a37922d4a8a",
+    "private_MAP09_original_955_DAT_ZIP_sha256": "c079a1c25bfa11902b69c1f2839058d4fb20f025ef15c93f649f636c7e5f833a",
+    "private_MAP09_original_955_DAT_ZIP_member_count": 955,
+    "private_MAP09_original_TW10_candidate_image_record_SHA256": "275ad0670316d4a49f3e3c8df7ff0c922385f306848226d030524998032af5bf",
+    "private_SCENE03_source_ADRN_bytes": 18765120,
+    "private_SCENE03_source_ADRN_sha256": "92d0137590d35a7a1f4fb11af3ad13bbc585813a4b0e1e3f933c397007fbff74",
+    "TW10_verified_original_ADRN_prefix_record_count": 125996,
+    "source_separation": "TW10 original RD candidates / community mixed25 original DAT and NPC create, not confirmed official same deployment",
+    "private_package_preflight_produced_before_later_REAL_probe": true,
+    "public_derived_record_supersedes_preflight_probe_cause_only": true
+  },
+  "original_image_gap": {
+    "aliases": {
+      "9420": {
+        "index": 125996,
+        "record_sha256": "3608518e25075eb557f0f81cf63181e8570f04473c412f4ce5ed810a75f39f50",
+        "original_RD_byte_offset": 315842228,
+        "original_RD_record_length": 1716
+      },
+      "9421": {
+        "index": 125997,
+        "record_sha256": "815025292ada863fb99f508c1dd973cfef4e56ec176dd946358fe2e779be3edd",
+        "original_RD_byte_offset": 315843944,
+        "original_RD_record_length": 1705
+      },
+      "9422": {
+        "index": 125998,
+        "record_sha256": "34c355bcaceb1b5a48a0cc4c3760b44d14a06fac5d22532c485ae1e507b8d1f4",
+        "original_RD_byte_offset": 315845649,
+        "original_RD_record_length": 1704
+      },
+      "9423": {
+        "index": 125999,
+        "record_sha256": "33e0ba18372e1740dd25a3754acc5ae017bc73e9ec7881add0c92b319df38704",
+        "original_RD_byte_offset": 315847353,
+        "original_RD_record_length": 1717
+      },
+      "10940": {
+        "index": 126008,
+        "record_sha256": "47c461e774e5f905303dfc614c22f136e7ed2203db18810902b098240dcaeeeb",
+        "original_RD_byte_offset": 316009215,
+        "original_RD_record_length": 7039
+      }
+    },
+    "all_five_have_unique_community_index_records": true,
+    "all_five_are_after_TW10_verified_index_prefix": true,
+    "all_five_original_REAL_pixel_bytes_retrieved_this_round": false,
+    "no_fabricated_missing_tiles": true,
+    "community_REAL_read_probe": {
+      "original_member_path_suffix": "stoneage2.5/data/real_15.bin",
+      "declared_uncompressed_bytes": 763908374,
+      "observed_member_present": true,
+      "attempted_stream_read_to_byte": 316016254,
+      "actual_bytes_read": 0,
+      "libarchive_reported_error": "Invalid symbol",
+      "RD_payloads_newly_recovered": 0,
+      "failure_does_not_establish_archive_corruption": true
+    }
+  },
+  "janken_original_source_records": [
+    {
+      "source_index": 1,
+      "source_offset_start": 108,
+      "source_offset_end_exclusive": 268,
+      "source_block_sha256": "64818df07b895275780b6aec6e8cb9fb40199c20e4c20114ad2b220ffeeed0a3",
+      "floor": 802,
+      "borncorner": [
+        29,
+        19,
+        29,
+        19
+      ],
+      "graphicname": 100120,
+      "npc_name": "拉伊奇",
+      "npc_direction": 4,
+      "npc_parameter_path": "npc/genout/jan_802_29_19",
+      "parameter_bytes": 287,
+      "parameter_sha256": "462dfee571fb03d7e2da5585684614a5a4983793f986502d61ceafe5944ae4e4",
+      "entry_item_literal": "2751*1",
+      "winwarp": [
+        802,
+        29,
+        15
+      ],
+      "losewarp": [
+        801,
+        27,
+        21
+      ],
+      "has_win_item": false,
+      "has_lose_item": false,
+      "NPC_source_three_plane_u16": [
+        5002,
+        0,
+        49152
+      ],
+      "NPC_original_DAT_byte_offsets": [
+        1966,
+        6966,
+        11966
+      ],
+      "map_original_DAT": {
+        "path": "802.dat",
+        "bytes": 15008,
+        "sha256": "0e330c5d28a5039c3b952484c61771905707c0eaed112cb41d3278a5c1067ca2",
+        "geometry": [
+          50,
+          50
+        ]
+      },
+      "tile_image_placement_count": 518,
+      "tile_missing_placement_count": 5,
+      "tile_distinct_qualified_alias_count": 35,
+      "missing_aliases_in_source_DAT": [
+        {
+          "plane": 0,
+          "x": 14,
+          "y": 26,
+          "image_alias": 9422,
+          "dat_offset": 2636
+        },
+        {
+          "plane": 0,
+          "x": 15,
+          "y": 26,
+          "image_alias": 9421,
+          "dat_offset": 2638
+        },
+        {
+          "plane": 0,
+          "x": 14,
+          "y": 25,
+          "image_alias": 9423,
+          "dat_offset": 2536
+        },
+        {
+          "plane": 0,
+          "x": 15,
+          "y": 25,
+          "image_alias": 9420,
+          "dat_offset": 2538
+        },
+        {
+          "plane": 1,
+          "x": 29,
+          "y": 13,
+          "image_alias": 10940,
+          "dat_offset": 6366
+        }
+      ],
+      "candidate_canvas": {
+        "dimensions": [
+          1466,
+          1247
+        ],
+        "clean_png_bytes": 891580,
+        "clean_png_sha256": "795a97e9df488bec70d8e66edd60adc63a008c736f97285fb31bbfd2175c658c",
+        "annotated_png_bytes": 895356,
+        "annotated_png_sha256": "50d0efb4d7ae8b140349b668d683348110e2b239cecec38979eccf977b6f6a5e",
+        "native_original_client_rendered": false,
+        "modern_overlay_explicit": true,
+        "clean_RGBA_sha256_independent_numpy": "9d8d1841077dc67af0569e8c22bfe32b1c1a26131f347a38d9fac62aa72a447d",
+        "independent_full_canvas_pixel_identical": true
+      }
+    },
+    {
+      "source_index": 2,
+      "source_offset_start": 276,
+      "source_offset_end_exclusive": 436,
+      "source_block_sha256": "523472e5de88371b352f9a04e56c37d5b93eca8d94395a9d626dc67885616343",
+      "floor": 804,
+      "borncorner": [
+        29,
+        19,
+        29,
+        19
+      ],
+      "graphicname": 100125,
+      "npc_name": "布拉姆",
+      "npc_direction": 4,
+      "npc_parameter_path": "npc/genout/jan_804_29_19",
+      "parameter_bytes": 287,
+      "parameter_sha256": "83eadc8466bfb3b06bd852531406e6c1f7c60ebef5fa0e14d7531090abd7f28c",
+      "entry_item_literal": "2751*1",
+      "winwarp": [
+        804,
+        29,
+        15
+      ],
+      "losewarp": [
+        803,
+        27,
+        21
+      ],
+      "has_win_item": false,
+      "has_lose_item": false,
+      "NPC_source_three_plane_u16": [
+        5002,
+        0,
+        49152
+      ],
+      "NPC_original_DAT_byte_offsets": [
+        1966,
+        6966,
+        11966
+      ],
+      "map_original_DAT": {
+        "path": "804.dat",
+        "bytes": 15008,
+        "sha256": "b3fcb1f121904f86e4f5d0bf9aba31c8ab815ccb419e3d636c11d2cd9fa692a8",
+        "geometry": [
+          50,
+          50
+        ]
+      },
+      "tile_image_placement_count": 518,
+      "tile_missing_placement_count": 5,
+      "tile_distinct_qualified_alias_count": 35,
+      "missing_aliases_in_source_DAT": [
+        {
+          "plane": 0,
+          "x": 14,
+          "y": 26,
+          "image_alias": 9422,
+          "dat_offset": 2636
+        },
+        {
+          "plane": 0,
+          "x": 15,
+          "y": 26,
+          "image_alias": 9421,
+          "dat_offset": 2638
+        },
+        {
+          "plane": 0,
+          "x": 14,
+          "y": 25,
+          "image_alias": 9423,
+          "dat_offset": 2536
+        },
+        {
+          "plane": 0,
+          "x": 15,
+          "y": 25,
+          "image_alias": 9420,
+          "dat_offset": 2538
+        },
+        {
+          "plane": 1,
+          "x": 29,
+          "y": 13,
+          "image_alias": 10940,
+          "dat_offset": 6366
+        }
+      ],
+      "candidate_canvas": {
+        "dimensions": [
+          1466,
+          1247
+        ],
+        "clean_png_bytes": 891580,
+        "clean_png_sha256": "795a97e9df488bec70d8e66edd60adc63a008c736f97285fb31bbfd2175c658c",
+        "annotated_png_bytes": 895356,
+        "annotated_png_sha256": "50d0efb4d7ae8b140349b668d683348110e2b239cecec38979eccf977b6f6a5e",
+        "native_original_client_rendered": false,
+        "modern_overlay_explicit": true,
+        "clean_RGBA_sha256_independent_numpy": "9d8d1841077dc67af0569e8c22bfe32b1c1a26131f347a38d9fac62aa72a447d",
+        "independent_full_canvas_pixel_identical": true
+      }
+    },
+    {
+      "source_index": 3,
+      "source_offset_start": 445,
+      "source_offset_end_exclusive": 605,
+      "source_block_sha256": "5cd4dd3c6356b39707f908e9263d8299215b12bf0a5b12933031cd24a4ba9e41",
+      "floor": 807,
+      "borncorner": [
+        18,
+        19,
+        18,
+        19
+      ],
+      "graphicname": 100130,
+      "npc_name": "札克羅",
+      "npc_direction": 4,
+      "npc_parameter_path": "npc/genout/jan_807_18_19",
+      "parameter_bytes": 287,
+      "parameter_sha256": "0d0a177d60cb9f5ebd8e373cd564939bda0c0428ca210eac8639cf2d9397fb4d",
+      "entry_item_literal": "2751*1",
+      "winwarp": [
+        807,
+        18,
+        15
+      ],
+      "losewarp": [
+        806,
+        20,
+        22
+      ],
+      "has_win_item": false,
+      "has_lose_item": false,
+      "NPC_source_three_plane_u16": [
+        5002,
+        0,
+        49152
+      ],
+      "NPC_original_DAT_byte_offsets": [
+        1944,
+        6944,
+        11944
+      ],
+      "map_original_DAT": {
+        "path": "807.dat",
+        "bytes": 15008,
+        "sha256": "6e3b43f10facad0c3f78fd3de24a7c074a0060f42ebab1472989526df0e23c58",
+        "geometry": [
+          50,
+          50
+        ]
+      },
+      "tile_image_placement_count": 518,
+      "tile_missing_placement_count": 5,
+      "tile_distinct_qualified_alias_count": 35,
+      "missing_aliases_in_source_DAT": [
+        {
+          "plane": 0,
+          "x": 32,
+          "y": 26,
+          "image_alias": 9422,
+          "dat_offset": 2672
+        },
+        {
+          "plane": 0,
+          "x": 33,
+          "y": 26,
+          "image_alias": 9421,
+          "dat_offset": 2674
+        },
+        {
+          "plane": 0,
+          "x": 32,
+          "y": 25,
+          "image_alias": 9423,
+          "dat_offset": 2572
+        },
+        {
+          "plane": 0,
+          "x": 33,
+          "y": 25,
+          "image_alias": 9420,
+          "dat_offset": 2574
+        },
+        {
+          "plane": 1,
+          "x": 18,
+          "y": 13,
+          "image_alias": 10940,
+          "dat_offset": 6344
+        }
+      ],
+      "candidate_canvas": {
+        "dimensions": [
+          1466,
+          1247
+        ],
+        "clean_png_bytes": 890995,
+        "clean_png_sha256": "fafe6689c4a7fca4e03c20e2621485f851471af75647eae3b8df2a355323372c",
+        "annotated_png_bytes": 896783,
+        "annotated_png_sha256": "116bb6bfb4c885364a65dda3a1eb8db3f81a301e734c298b8f59bd0ecb839445",
+        "native_original_client_rendered": false,
+        "modern_overlay_explicit": true,
+        "clean_RGBA_sha256_independent_numpy": "ab4832dc2bb3523d503e97ae4461b0f6019ce748373d745882edd3026f72af6d",
+        "independent_full_canvas_pixel_identical": true
+      }
+    },
+    {
+      "source_index": 4,
+      "source_offset_start": 614,
+      "source_offset_end_exclusive": 774,
+      "source_block_sha256": "ad97220ebef7fb6046d2f3d7101574c234479eab8511b558bb7ba0d2bea15c81",
+      "floor": 822,
+      "borncorner": [
+        29,
+        19,
+        29,
+        19
+      ],
+      "graphicname": 100120,
+      "npc_name": "拉伊奇",
+      "npc_direction": 4,
+      "npc_parameter_path": "npc/genout/jan_822_29_19",
+      "parameter_bytes": 287,
+      "parameter_sha256": "af7cf7cca8e397f3378750fe54f09fe469071f29ab6251cedc6c8abb33f2260e",
+      "entry_item_literal": "2751*1",
+      "winwarp": [
+        822,
+        29,
+        15
+      ],
+      "losewarp": [
+        821,
+        27,
+        21
+      ],
+      "has_win_item": false,
+      "has_lose_item": false,
+      "NPC_source_three_plane_u16": [
+        5002,
+        0,
+        49152
+      ],
+      "NPC_original_DAT_byte_offsets": [
+        1966,
+        6966,
+        11966
+      ],
+      "map_original_DAT": {
+        "path": "822.dat",
+        "bytes": 15008,
+        "sha256": "bcb12efa1d42ff6b72bb561cc8981ed207a90f14c94e594ba0be4fd0f104f4ca",
+        "geometry": [
+          50,
+          50
+        ]
+      },
+      "tile_image_placement_count": 518,
+      "tile_missing_placement_count": 5,
+      "tile_distinct_qualified_alias_count": 35,
+      "missing_aliases_in_source_DAT": [
+        {
+          "plane": 0,
+          "x": 14,
+          "y": 26,
+          "image_alias": 9422,
+          "dat_offset": 2636
+        },
+        {
+          "plane": 0,
+          "x": 15,
+          "y": 26,
+          "image_alias": 9421,
+          "dat_offset": 2638
+        },
+        {
+          "plane": 0,
+          "x": 14,
+          "y": 25,
+          "image_alias": 9423,
+          "dat_offset": 2536
+        },
+        {
+          "plane": 0,
+          "x": 15,
+          "y": 25,
+          "image_alias": 9420,
+          "dat_offset": 2538
+        },
+        {
+          "plane": 1,
+          "x": 29,
+          "y": 13,
+          "image_alias": 10940,
+          "dat_offset": 6366
+        }
+      ],
+      "candidate_canvas": {
+        "dimensions": [
+          1466,
+          1247
+        ],
+        "clean_png_bytes": 891580,
+        "clean_png_sha256": "795a97e9df488bec70d8e66edd60adc63a008c736f97285fb31bbfd2175c658c",
+        "annotated_png_bytes": 895356,
+        "annotated_png_sha256": "50d0efb4d7ae8b140349b668d683348110e2b239cecec38979eccf977b6f6a5e",
+        "native_original_client_rendered": false,
+        "modern_overlay_explicit": true,
+        "clean_RGBA_sha256_independent_numpy": "9d8d1841077dc67af0569e8c22bfe32b1c1a26131f347a38d9fac62aa72a447d",
+        "independent_full_canvas_pixel_identical": true
+      }
+    },
+    {
+      "source_index": 5,
+      "source_offset_start": 783,
+      "source_offset_end_exclusive": 943,
+      "source_block_sha256": "7a51a3b053f192199645c4c04326c92029b26c9f2cca2c564ed73c662ebcb3af",
+      "floor": 824,
+      "borncorner": [
+        29,
+        19,
+        29,
+        19
+      ],
+      "graphicname": 100125,
+      "npc_name": "布拉姆",
+      "npc_direction": 4,
+      "npc_parameter_path": "npc/genout/jan_824_29_19",
+      "parameter_bytes": 287,
+      "parameter_sha256": "8f2a38e784216344357fa3df9d063df56266fb196c219f783e9a4cfd80b2d2b6",
+      "entry_item_literal": "2751*1",
+      "winwarp": [
+        824,
+        29,
+        15
+      ],
+      "losewarp": [
+        823,
+        27,
+        21
+      ],
+      "has_win_item": false,
+      "has_lose_item": false,
+      "NPC_source_three_plane_u16": [
+        5002,
+        0,
+        49152
+      ],
+      "NPC_original_DAT_byte_offsets": [
+        1966,
+        6966,
+        11966
+      ],
+      "map_original_DAT": {
+        "path": "824.dat",
+        "bytes": 15008,
+        "sha256": "d626cda9f5e5a40487a76f02018ed5aba6cf5dd7bfdd95f6bf344980a2c15243",
+        "geometry": [
+          50,
+          50
+        ]
+      },
+      "tile_image_placement_count": 518,
+      "tile_missing_placement_count": 5,
+      "tile_distinct_qualified_alias_count": 35,
+      "missing_aliases_in_source_DAT": [
+        {
+          "plane": 0,
+          "x": 14,
+          "y": 26,
+          "image_alias": 9422,
+          "dat_offset": 2636
+        },
+        {
+          "plane": 0,
+          "x": 15,
+          "y": 26,
+          "image_alias": 9421,
+          "dat_offset": 2638
+        },
+        {
+          "plane": 0,
+          "x": 14,
+          "y": 25,
+          "image_alias": 9423,
+          "dat_offset": 2536
+        },
+        {
+          "plane": 0,
+          "x": 15,
+          "y": 25,
+          "image_alias": 9420,
+          "dat_offset": 2538
+        },
+        {
+          "plane": 1,
+          "x": 29,
+          "y": 13,
+          "image_alias": 10940,
+          "dat_offset": 6366
+        }
+      ],
+      "candidate_canvas": {
+        "dimensions": [
+          1466,
+          1247
+        ],
+        "clean_png_bytes": 891580,
+        "clean_png_sha256": "795a97e9df488bec70d8e66edd60adc63a008c736f97285fb31bbfd2175c658c",
+        "annotated_png_bytes": 895356,
+        "annotated_png_sha256": "50d0efb4d7ae8b140349b668d683348110e2b239cecec38979eccf977b6f6a5e",
+        "native_original_client_rendered": false,
+        "modern_overlay_explicit": true,
+        "clean_RGBA_sha256_independent_numpy": "9d8d1841077dc67af0569e8c22bfe32b1c1a26131f347a38d9fac62aa72a447d",
+        "independent_full_canvas_pixel_identical": true
+      }
+    },
+    {
+      "source_index": 6,
+      "source_offset_start": 952,
+      "source_offset_end_exclusive": 1112,
+      "source_block_sha256": "bbd3233772c5f375959afc8c507c881e07c6ffd7d7ae1f08983e8668295f69d8",
+      "floor": 827,
+      "borncorner": [
+        18,
+        19,
+        18,
+        19
+      ],
+      "graphicname": 100130,
+      "npc_name": "札克羅",
+      "npc_direction": 4,
+      "npc_parameter_path": "npc/genout/jan_827_18_19",
+      "parameter_bytes": 287,
+      "parameter_sha256": "319e4dfa39c30a1670f6b9b410d022ffee07c8c1422fd25516c0933a1fa80689",
+      "entry_item_literal": "2751*1",
+      "winwarp": [
+        827,
+        18,
+        15
+      ],
+      "losewarp": [
+        826,
+        20,
+        22
+      ],
+      "has_win_item": false,
+      "has_lose_item": false,
+      "NPC_source_three_plane_u16": [
+        5002,
+        0,
+        49152
+      ],
+      "NPC_original_DAT_byte_offsets": [
+        1944,
+        6944,
+        11944
+      ],
+      "map_original_DAT": {
+        "path": "827.dat",
+        "bytes": 15008,
+        "sha256": "5d5876ceb51b45a32d6eb498b50a72bdf9a19e084301d4c54fba49cfcf50d2a7",
+        "geometry": [
+          50,
+          50
+        ]
+      },
+      "tile_image_placement_count": 518,
+      "tile_missing_placement_count": 5,
+      "tile_distinct_qualified_alias_count": 35,
+      "missing_aliases_in_source_DAT": [
+        {
+          "plane": 0,
+          "x": 32,
+          "y": 26,
+          "image_alias": 9422,
+          "dat_offset": 2672
+        },
+        {
+          "plane": 0,
+          "x": 33,
+          "y": 26,
+          "image_alias": 9421,
+          "dat_offset": 2674
+        },
+        {
+          "plane": 0,
+          "x": 32,
+          "y": 25,
+          "image_alias": 9423,
+          "dat_offset": 2572
+        },
+        {
+          "plane": 0,
+          "x": 33,
+          "y": 25,
+          "image_alias": 9420,
+          "dat_offset": 2574
+        },
+        {
+          "plane": 1,
+          "x": 18,
+          "y": 13,
+          "image_alias": 10940,
+          "dat_offset": 6344
+        }
+      ],
+      "candidate_canvas": {
+        "dimensions": [
+          1466,
+          1247
+        ],
+        "clean_png_bytes": 890995,
+        "clean_png_sha256": "fafe6689c4a7fca4e03c20e2621485f851471af75647eae3b8df2a355323372c",
+        "annotated_png_bytes": 896783,
+        "annotated_png_sha256": "116bb6bfb4c885364a65dda3a1eb8db3f81a301e734c298b8f59bd0ecb839445",
+        "native_original_client_rendered": false,
+        "modern_overlay_explicit": true,
+        "clean_RGBA_sha256_independent_numpy": "ab4832dc2bb3523d503e97ae4461b0f6019ce748373d745882edd3026f72af6d",
+        "independent_full_canvas_pixel_identical": true
+      }
+    },
+    {
+      "source_index": 7,
+      "source_offset_start": 1121,
+      "source_offset_end_exclusive": 1281,
+      "source_block_sha256": "1787c3cb8ffc61dcabfb169c8424a0a45a411403e7ab9ae84644bac6470b9c7c",
+      "floor": 842,
+      "borncorner": [
+        29,
+        19,
+        29,
+        19
+      ],
+      "graphicname": 100120,
+      "npc_name": "拉伊奇",
+      "npc_direction": 4,
+      "npc_parameter_path": "npc/genout/jan_842_29_19",
+      "parameter_bytes": 287,
+      "parameter_sha256": "554cd53518cd864451900f0a67a0b6c127324f677b79f814c930ae0ca7b06b1a",
+      "entry_item_literal": "2751*1",
+      "winwarp": [
+        842,
+        29,
+        15
+      ],
+      "losewarp": [
+        841,
+        27,
+        21
+      ],
+      "has_win_item": false,
+      "has_lose_item": false,
+      "NPC_source_three_plane_u16": [
+        5002,
+        0,
+        49152
+      ],
+      "NPC_original_DAT_byte_offsets": [
+        1966,
+        6966,
+        11966
+      ],
+      "map_original_DAT": {
+        "path": "842.dat",
+        "bytes": 15008,
+        "sha256": "af4029adabb3133d2b359f54dfd090cb565f56fa4232f5e7fcb22cd0eff283af",
+        "geometry": [
+          50,
+          50
+        ]
+      },
+      "tile_image_placement_count": 518,
+      "tile_missing_placement_count": 5,
+      "tile_distinct_qualified_alias_count": 35,
+      "missing_aliases_in_source_DAT": [
+        {
+          "plane": 0,
+          "x": 14,
+          "y": 26,
+          "image_alias": 9422,
+          "dat_offset": 2636
+        },
+        {
+          "plane": 0,
+          "x": 15,
+          "y": 26,
+          "image_alias": 9421,
+          "dat_offset": 2638
+        },
+        {
+          "plane": 0,
+          "x": 14,
+          "y": 25,
+          "image_alias": 9423,
+          "dat_offset": 2536
+        },
+        {
+          "plane": 0,
+          "x": 15,
+          "y": 25,
+          "image_alias": 9420,
+          "dat_offset": 2538
+        },
+        {
+          "plane": 1,
+          "x": 29,
+          "y": 13,
+          "image_alias": 10940,
+          "dat_offset": 6366
+        }
+      ],
+      "candidate_canvas": {
+        "dimensions": [
+          1466,
+          1247
+        ],
+        "clean_png_bytes": 891580,
+        "clean_png_sha256": "795a97e9df488bec70d8e66edd60adc63a008c736f97285fb31bbfd2175c658c",
+        "annotated_png_bytes": 895356,
+        "annotated_png_sha256": "50d0efb4d7ae8b140349b668d683348110e2b239cecec38979eccf977b6f6a5e",
+        "native_original_client_rendered": false,
+        "modern_overlay_explicit": true,
+        "clean_RGBA_sha256_independent_numpy": "9d8d1841077dc67af0569e8c22bfe32b1c1a26131f347a38d9fac62aa72a447d",
+        "independent_full_canvas_pixel_identical": true
+      }
+    },
+    {
+      "source_index": 8,
+      "source_offset_start": 1290,
+      "source_offset_end_exclusive": 1450,
+      "source_block_sha256": "6dabca9efc7e134cf71b8025d642ac52e2f447e0fb74aab4fad205c5c198e7f2",
+      "floor": 844,
+      "borncorner": [
+        29,
+        19,
+        29,
+        19
+      ],
+      "graphicname": 100125,
+      "npc_name": "布拉姆",
+      "npc_direction": 4,
+      "npc_parameter_path": "npc/genout/jan_844_29_19",
+      "parameter_bytes": 287,
+      "parameter_sha256": "531c245b264eb507dc6a913cee493d28a0fcccd0ea34aeaabc55d59aaeeea0fe",
+      "entry_item_literal": "2751*1",
+      "winwarp": [
+        844,
+        29,
+        15
+      ],
+      "losewarp": [
+        843,
+        27,
+        21
+      ],
+      "has_win_item": false,
+      "has_lose_item": false,
+      "NPC_source_three_plane_u16": [
+        5002,
+        0,
+        49152
+      ],
+      "NPC_original_DAT_byte_offsets": [
+        1966,
+        6966,
+        11966
+      ],
+      "map_original_DAT": {
+        "path": "844.dat",
+        "bytes": 15008,
+        "sha256": "075026b7097f76c034705f1a7a701c79ed4505969851ce1937dc86152e4d2c95",
+        "geometry": [
+          50,
+          50
+        ]
+      },
+      "tile_image_placement_count": 518,
+      "tile_missing_placement_count": 5,
+      "tile_distinct_qualified_alias_count": 35,
+      "missing_aliases_in_source_DAT": [
+        {
+          "plane": 0,
+          "x": 14,
+          "y": 26,
+          "image_alias": 9422,
+          "dat_offset": 2636
+        },
+        {
+          "plane": 0,
+          "x": 15,
+          "y": 26,
+          "image_alias": 9421,
+          "dat_offset": 2638
+        },
+        {
+          "plane": 0,
+          "x": 14,
+          "y": 25,
+          "image_alias": 9423,
+          "dat_offset": 2536
+        },
+        {
+          "plane": 0,
+          "x": 15,
+          "y": 25,
+          "image_alias": 9420,
+          "dat_offset": 2538
+        },
+        {
+          "plane": 1,
+          "x": 29,
+          "y": 13,
+          "image_alias": 10940,
+          "dat_offset": 6366
+        }
+      ],
+      "candidate_canvas": {
+        "dimensions": [
+          1466,
+          1247
+        ],
+        "clean_png_bytes": 891580,
+        "clean_png_sha256": "795a97e9df488bec70d8e66edd60adc63a008c736f97285fb31bbfd2175c658c",
+        "annotated_png_bytes": 895356,
+        "annotated_png_sha256": "50d0efb4d7ae8b140349b668d683348110e2b239cecec38979eccf977b6f6a5e",
+        "native_original_client_rendered": false,
+        "modern_overlay_explicit": true,
+        "clean_RGBA_sha256_independent_numpy": "9d8d1841077dc67af0569e8c22bfe32b1c1a26131f347a38d9fac62aa72a447d",
+        "independent_full_canvas_pixel_identical": true
+      }
+    },
+    {
+      "source_index": 9,
+      "source_offset_start": 1459,
+      "source_offset_end_exclusive": 1619,
+      "source_block_sha256": "8b1ac2951d6cdf2368413484d1c470957f3e41e2ee22b8ba3af13e9bb56e8fb2",
+      "floor": 847,
+      "borncorner": [
+        18,
+        19,
+        18,
+        19
+      ],
+      "graphicname": 100130,
+      "npc_name": "札克羅",
+      "npc_direction": 4,
+      "npc_parameter_path": "npc/genout/jan_847_18_19",
+      "parameter_bytes": 287,
+      "parameter_sha256": "6584416f5a06d5ac90c333515e8965d8915d3218bf6a1ba3f499520c9ba0fb03",
+      "entry_item_literal": "2751*1",
+      "winwarp": [
+        847,
+        18,
+        15
+      ],
+      "losewarp": [
+        846,
+        20,
+        22
+      ],
+      "has_win_item": false,
+      "has_lose_item": false,
+      "NPC_source_three_plane_u16": [
+        5002,
+        0,
+        49152
+      ],
+      "NPC_original_DAT_byte_offsets": [
+        1944,
+        6944,
+        11944
+      ],
+      "map_original_DAT": {
+        "path": "847.dat",
+        "bytes": 15008,
+        "sha256": "700c21e3a2f0b0ee797eac0e1b44d1385eff093b2939ef247235eea35c22fea7",
+        "geometry": [
+          50,
+          50
+        ]
+      },
+      "tile_image_placement_count": 518,
+      "tile_missing_placement_count": 5,
+      "tile_distinct_qualified_alias_count": 35,
+      "missing_aliases_in_source_DAT": [
+        {
+          "plane": 0,
+          "x": 32,
+          "y": 26,
+          "image_alias": 9422,
+          "dat_offset": 2672
+        },
+        {
+          "plane": 0,
+          "x": 33,
+          "y": 26,
+          "image_alias": 9421,
+          "dat_offset": 2674
+        },
+        {
+          "plane": 0,
+          "x": 32,
+          "y": 25,
+          "image_alias": 9423,
+          "dat_offset": 2572
+        },
+        {
+          "plane": 0,
+          "x": 33,
+          "y": 25,
+          "image_alias": 9420,
+          "dat_offset": 2574
+        },
+        {
+          "plane": 1,
+          "x": 18,
+          "y": 13,
+          "image_alias": 10940,
+          "dat_offset": 6344
+        }
+      ],
+      "candidate_canvas": {
+        "dimensions": [
+          1466,
+          1247
+        ],
+        "clean_png_bytes": 891571,
+        "clean_png_sha256": "f8ec7a48ef83b8ed2b61d4a5a0767749e35dea69508ba3d24cd16610d33eaa18",
+        "annotated_png_bytes": 897057,
+        "annotated_png_sha256": "9e4a361469ff9144af95ba645ed496f944e114a1d2c0a192ebec066509a116ab",
+        "native_original_client_rendered": false,
+        "modern_overlay_explicit": true,
+        "clean_RGBA_sha256_independent_numpy": "cb483b29ba628c8f6708fd82daeb793f6f4f66cf0719483b77a8d25155ef4296",
+        "independent_full_canvas_pixel_identical": true
+      }
+    }
+  ],
+  "original_DAT_differences": [
+    {
+      "floor_pair": [
+        802,
+        822
+      ],
+      "different_original_u16_cells_by_plane": [
+        0,
+        115,
+        190
+      ]
+    },
+    {
+      "floor_pair": [
+        802,
+        842
+      ],
+      "different_original_u16_cells_by_plane": [
+        0,
+        125,
+        173
+      ]
+    },
+    {
+      "floor_pair": [
+        804,
+        824
+      ],
+      "different_original_u16_cells_by_plane": [
+        0,
+        165,
+        207
+      ]
+    },
+    {
+      "floor_pair": [
+        804,
+        844
+      ],
+      "different_original_u16_cells_by_plane": [
+        0,
+        63,
+        134
+      ]
+    },
+    {
+      "floor_pair": [
+        807,
+        827
+      ],
+      "different_original_u16_cells_by_plane": [
+        0,
+        263,
+        345
+      ]
+    },
+    {
+      "floor_pair": [
+        807,
+        847
+      ],
+      "different_original_u16_cells_by_plane": [
+        0,
+        202,
+        270
+      ]
+    },
+    {
+      "floor_pair": [
+        802,
+        804
+      ],
+      "different_original_u16_cells_by_plane": [
+        0,
+        147,
+        204
+      ]
+    },
+    {
+      "floor_pair": [
+        804,
+        807
+      ],
+      "different_original_u16_cells_by_plane": [
+        13,
+        431,
+        486
+      ]
+    }
+  ],
+  "aggregates": {
+    "original_NPC_create_count": 9,
+    "original_argument_file_count": 9,
+    "original_DAT_count": 9,
+    "distinct_qualified_original_TW10_tile_image_aliases": 35,
+    "qualified_tile_placements_per_map": 518,
+    "unqualified_tile_placements_per_map": 5,
+    "total_qualified_tile_placements": 4662,
+    "total_missing_tile_placements": 45,
+    "new_original_RD_decode_this_round": 0,
+    "new_origin_artwork_this_round": 0,
+    "new_original_native_client_execution_this_round": 0,
+    "private_modern_candidate_clean_images": 9,
+    "private_modern_candidate_annotated_images": 9
+  },
+  "evidence_boundaries": {
+    "JSS1999_or_TW10_official_Janken_source_claim": false,
+    "same_build_NPC_and_TW10_RD_source_claim": false,
+    "original_warp_execution_claim": false,
+    "original_native_janken_player_battle_claim": false,
+    "original_entry_item_consumption_in_this_source_executed": false,
+    "original_map_visual_complete_claim": false,
+    "unavailable_later_REAL_block_claim": true,
+    "original_png_published_to_Git": false,
+    "stage_A_partial": 7,
+    "stage_A_open": 2,
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "historical_CURRENT_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "next": "Recover the five original later REAL RD blocks with verifiable source bytes; otherwise rotate to independent original 2D content rather than inventing image pixels",
+  "independent_visual_replay": {
+    "source": "same original map/qualified tile bytes, separate NumPy array compositor",
+    "independent_full_map_RGBA_comparisons_passed": 9,
+    "replay_crosschecked_original_tile_PNG_and_RGBA_sha": true,
+    "historical_native_game_execution": false,
+    "unique_candidate_clean_pixel_canvases": 3
+  }
+}
