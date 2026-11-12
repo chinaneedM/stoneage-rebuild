@@ -1,0 +1,1507 @@
+{
+  "schema": "stoneage.integration79.feather_shops_original_source_bound.v1",
+  "record_date": "2026-11-12",
+  "starting_main_sha": "b15bae4cc71f45db4a09c0cf01ae21ed711be45f",
+  "starting_main_tree": "a003c48ae7f6ad3ecca99ce255b7cabedaae5208",
+  "starting_main_actions_completed_success": 26,
+  "source_scope": "community_preserved_mixed25_NPC_and_two_itemset_tables_plus_independent_TW1_original_retained_pixel_candidates",
+  "raw_archive_custody": {
+    "npc_mixed25": {
+      "file": "StoneAge-CHAR01-mixed25-all-npc-original-private.zip",
+      "size_bytes": 995176,
+      "sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+      "zip_members": 2205,
+      "all_crc_pass": true
+    },
+    "item01_prior_catalog": {
+      "file": "StoneAge-ITEM01-private-two-itemsets-832-original-RD-icon-observer.zip",
+      "size_bytes": 5868386,
+      "sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+      "zip_members": 838,
+      "all_crc_pass": true
+    },
+    "TW1_prior_motions": {
+      "file": "StoneAge-CHAR10-TW10-twelve-body-all-motion-private.zip",
+      "size_bytes": 11182099,
+      "sha256": "1efa133d5eb62ffe0ec1ce24cb9883791b57e712e751319bda51fff1bf52abec",
+      "zip_members": 4154,
+      "all_crc_pass": true
+    }
+  },
+  "npc_creation_file": {
+    "path": "npc/genout/shop_nuke1.create",
+    "size_bytes": 2253,
+    "sha256": "699aeb07c7f06741a528022c2597c523fccca3159094482a371dc77c968f347f",
+    "total_active_brace_blocks": 13,
+    "raw_commercial_content_published": false
+  },
+  "shops": [
+    {
+      "source_file": "npc/genout/shop_nuke1.create",
+      "source_index": 1,
+      "byte_offset_start": 112,
+      "byte_offset_end_exclusive": 270,
+      "source_block_sha256": "f0daa3a1d9c5777112700b3069c9884e726090d55541602ccefe74ab5e11f489",
+      "floorid": 1000,
+      "borncorner": [
+        94,
+        101,
+        94,
+        101
+      ],
+      "graphicname": 16067,
+      "npc_name": "少女",
+      "enemy_kind": "npcgen_shop",
+      "linked_parameter_file": "npc/genout/ss_1000_94_101",
+      "linked_parameter_size": 557,
+      "linked_parameter_sha256": "2f235c4a51a17b4ca6539604573cf05a08d7f3bbcfb598a99499a772c8b936e5",
+      "source_stock_literal": "13041-13053,13088-13092",
+      "stock_ids_expanded_candidate": [
+        13041,
+        13042,
+        13043,
+        13044,
+        13045,
+        13046,
+        13047,
+        13048,
+        13049,
+        13050,
+        13051,
+        13052,
+        13053,
+        13088,
+        13089,
+        13090,
+        13091,
+        13092
+      ],
+      "buy_rate_literal": "1.0",
+      "sell_rate_literal": "0.2"
+    },
+    {
+      "source_file": "npc/genout/shop_nuke1.create",
+      "source_index": 2,
+      "byte_offset_start": 279,
+      "byte_offset_end_exclusive": 434,
+      "source_block_sha256": "440f08b8a0d3e5eeb9c13318ad377c27d63f9c800546a0e8807951004b0ee2eb",
+      "floorid": 2000,
+      "borncorner": [
+        67,
+        62,
+        67,
+        62
+      ],
+      "graphicname": 16300,
+      "npc_name": "巫女",
+      "enemy_kind": "npcgen_shop",
+      "linked_parameter_file": "npc/genout/ss_2000_67_62",
+      "linked_parameter_size": 557,
+      "linked_parameter_sha256": "2f235c4a51a17b4ca6539604573cf05a08d7f3bbcfb598a99499a772c8b936e5",
+      "source_stock_literal": "13041-13053,13088-13092",
+      "stock_ids_expanded_candidate": [
+        13041,
+        13042,
+        13043,
+        13044,
+        13045,
+        13046,
+        13047,
+        13048,
+        13049,
+        13050,
+        13051,
+        13052,
+        13053,
+        13088,
+        13089,
+        13090,
+        13091,
+        13092
+      ],
+      "buy_rate_literal": "1.0",
+      "sell_rate_literal": "0.2"
+    },
+    {
+      "source_file": "npc/genout/shop_nuke1.create",
+      "source_index": 3,
+      "byte_offset_start": 444,
+      "byte_offset_end_exclusive": 599,
+      "source_block_sha256": "33e88b2c469977540c76c24c8de05ed6cb9a94395fe81fa529a15b9a7588808c",
+      "floorid": 3000,
+      "borncorner": [
+        94,
+        94,
+        94,
+        94
+      ],
+      "graphicname": 16300,
+      "npc_name": "巫女",
+      "enemy_kind": "npcgen_shop",
+      "linked_parameter_file": "npc/genout/ss_3000_94_94",
+      "linked_parameter_size": 557,
+      "linked_parameter_sha256": "2f235c4a51a17b4ca6539604573cf05a08d7f3bbcfb598a99499a772c8b936e5",
+      "source_stock_literal": "13041-13053,13088-13092",
+      "stock_ids_expanded_candidate": [
+        13041,
+        13042,
+        13043,
+        13044,
+        13045,
+        13046,
+        13047,
+        13048,
+        13049,
+        13050,
+        13051,
+        13052,
+        13053,
+        13088,
+        13089,
+        13090,
+        13091,
+        13092
+      ],
+      "buy_rate_literal": "1.0",
+      "sell_rate_literal": "0.2"
+    },
+    {
+      "source_file": "npc/genout/shop_nuke1.create",
+      "source_index": 4,
+      "byte_offset_start": 609,
+      "byte_offset_end_exclusive": 764,
+      "source_block_sha256": "aab5b87d9f50e4c37928d2faf7025bbadba0579dfe9cbca4c48bcdf52647d5ef",
+      "floorid": 4000,
+      "borncorner": [
+        68,
+        57,
+        68,
+        57
+      ],
+      "graphicname": 16300,
+      "npc_name": "巫女",
+      "enemy_kind": "npcgen_shop",
+      "linked_parameter_file": "npc/genout/ss_4000_68_57",
+      "linked_parameter_size": 557,
+      "linked_parameter_sha256": "2f235c4a51a17b4ca6539604573cf05a08d7f3bbcfb598a99499a772c8b936e5",
+      "source_stock_literal": "13041-13053,13088-13092",
+      "stock_ids_expanded_candidate": [
+        13041,
+        13042,
+        13043,
+        13044,
+        13045,
+        13046,
+        13047,
+        13048,
+        13049,
+        13050,
+        13051,
+        13052,
+        13053,
+        13088,
+        13089,
+        13090,
+        13091,
+        13092
+      ],
+      "buy_rate_literal": "1.0",
+      "sell_rate_literal": "0.2"
+    },
+    {
+      "source_file": "npc/genout/shop_nuke1.create",
+      "source_index": 5,
+      "byte_offset_start": 774,
+      "byte_offset_end_exclusive": 929,
+      "source_block_sha256": "486c8a3bae19b6fe9981cc70bd9aa6600e1d604126d5ce3bb03bcb95ea0c3043",
+      "floorid": 5001,
+      "borncorner": [
+        25,
+        12,
+        25,
+        12
+      ],
+      "graphicname": 16300,
+      "npc_name": "巫女",
+      "enemy_kind": "npcgen_shop",
+      "linked_parameter_file": "npc/genout/ss_5001_25_12",
+      "linked_parameter_size": 524,
+      "linked_parameter_sha256": "06793e2fe719a34ed7e97e104748f11450ff707d847025755677dc98b0090a70",
+      "source_stock_literal": "13065,18546",
+      "stock_ids_expanded_candidate": [
+        13065,
+        18546
+      ],
+      "buy_rate_literal": "1.0",
+      "sell_rate_literal": "0.2"
+    },
+    {
+      "source_file": "npc/genout/shop_nuke1.create",
+      "source_index": 6,
+      "byte_offset_start": 939,
+      "byte_offset_end_exclusive": 1094,
+      "source_block_sha256": "7095fe577dbdbc78fccb764af1f011ac4f69d737bd66ebc801c29a6704ae4738",
+      "floorid": 3400,
+      "borncorner": [
+        63,
+        46,
+        63,
+        46
+      ],
+      "graphicname": 16067,
+      "npc_name": "少女",
+      "enemy_kind": "npcgen_shop",
+      "linked_parameter_file": "npc/genout/ss_3400_63_46",
+      "linked_parameter_size": 516,
+      "linked_parameter_sha256": "83e4dd32e507ca9ff62fb7f22bd4460c81fe5e29c7a00b82423ec65bb372317c",
+      "source_stock_literal": "13066",
+      "stock_ids_expanded_candidate": [
+        13066
+      ],
+      "buy_rate_literal": "1.0",
+      "sell_rate_literal": "0.2"
+    },
+    {
+      "source_file": "npc/genout/shop_nuke1.create",
+      "source_index": 7,
+      "byte_offset_start": 1104,
+      "byte_offset_end_exclusive": 1259,
+      "source_block_sha256": "a35e53f6790c7ba154ef02af09d188dbca276d3cee2f6acc4fdf33285bef9566",
+      "floorid": 5106,
+      "borncorner": [
+        16,
+        12,
+        16,
+        12
+      ],
+      "graphicname": 16300,
+      "npc_name": "巫女",
+      "enemy_kind": "npcgen_shop",
+      "linked_parameter_file": "npc/genout/ss_5106_16_12",
+      "linked_parameter_size": 516,
+      "linked_parameter_sha256": "ce38fb6698bfd789634573a66ec28a38719d114f58d91f591488eac6e726abc8",
+      "source_stock_literal": "13067",
+      "stock_ids_expanded_candidate": [
+        13067
+      ],
+      "buy_rate_literal": "1.0",
+      "sell_rate_literal": "0.2"
+    },
+    {
+      "source_file": "npc/genout/shop_nuke1.create",
+      "source_index": 8,
+      "byte_offset_start": 1269,
+      "byte_offset_end_exclusive": 1424,
+      "source_block_sha256": "b21b92075332fba7eedce7113a239c4d8263e90e2ae9b011a6d4c08dc082a68a",
+      "floorid": 1102,
+      "borncorner": [
+        18,
+        16,
+        18,
+        16
+      ],
+      "graphicname": 16067,
+      "npc_name": "少女",
+      "enemy_kind": "npcgen_shop",
+      "linked_parameter_file": "npc/genout/ss_1102_18_16",
+      "linked_parameter_size": 516,
+      "linked_parameter_sha256": "9dd2c05a82535ff4b6d53c799936214fdef3f3739c22c30386c61f8d19807bcc",
+      "source_stock_literal": "13068",
+      "stock_ids_expanded_candidate": [
+        13068
+      ],
+      "buy_rate_literal": "1.0",
+      "sell_rate_literal": "0.2"
+    },
+    {
+      "source_file": "npc/genout/shop_nuke1.create",
+      "source_index": 9,
+      "byte_offset_start": 1434,
+      "byte_offset_end_exclusive": 1589,
+      "source_block_sha256": "3b0a5357983277080bb5e14b6e4c3cf55aaac2496172224971f39f0091e03066",
+      "floorid": 3100,
+      "borncorner": [
+        83,
+        72,
+        83,
+        72
+      ],
+      "graphicname": 16067,
+      "npc_name": "少女",
+      "enemy_kind": "npcgen_shop",
+      "linked_parameter_file": "npc/genout/ss_3100_83_72",
+      "linked_parameter_size": 516,
+      "linked_parameter_sha256": "dd868f2b42945aed2901df1554fccd52b1b62b3220fb4c0358cf40908262edd4",
+      "source_stock_literal": "13069",
+      "stock_ids_expanded_candidate": [
+        13069
+      ],
+      "buy_rate_literal": "1.0",
+      "sell_rate_literal": "0.2"
+    },
+    {
+      "source_file": "npc/genout/shop_nuke1.create",
+      "source_index": 10,
+      "byte_offset_start": 1599,
+      "byte_offset_end_exclusive": 1757,
+      "source_block_sha256": "62b5b4cff943375991b26166e2202b3b6c2a14ae23d85b18d304e69b22082714",
+      "floorid": 1400,
+      "borncorner": [
+        75,
+        102,
+        75,
+        102
+      ],
+      "graphicname": 16067,
+      "npc_name": "少女",
+      "enemy_kind": "npcgen_shop",
+      "linked_parameter_file": "npc/genout/ss_1400_75_102",
+      "linked_parameter_size": 516,
+      "linked_parameter_sha256": "64df5fb8ddbc81fcaa26ffe381c2787052eefebe64926106d35ee700c596dea1",
+      "source_stock_literal": "13070",
+      "stock_ids_expanded_candidate": [
+        13070
+      ],
+      "buy_rate_literal": "1.0",
+      "sell_rate_literal": "0.2"
+    },
+    {
+      "source_file": "npc/genout/shop_nuke1.create",
+      "source_index": 11,
+      "byte_offset_start": 1767,
+      "byte_offset_end_exclusive": 1922,
+      "source_block_sha256": "9c66cd2af2b7b289870d709adb8d7bfd86cfde6ed319c874634f0b449d1bf3ed",
+      "floorid": 3300,
+      "borncorner": [
+        69,
+        44,
+        69,
+        44
+      ],
+      "graphicname": 16218,
+      "npc_name": "少女",
+      "enemy_kind": "npcgen_shop",
+      "linked_parameter_file": "npc/genout/ss_3300_69_44",
+      "linked_parameter_size": 516,
+      "linked_parameter_sha256": "edb94d314c12ce804502a168d5b4de33490c74078f0278615d8ec36cb3f42c17",
+      "source_stock_literal": "13071",
+      "stock_ids_expanded_candidate": [
+        13071
+      ],
+      "buy_rate_literal": "1.0",
+      "sell_rate_literal": "0.2"
+    },
+    {
+      "source_file": "npc/genout/shop_nuke1.create",
+      "source_index": 12,
+      "byte_offset_start": 1932,
+      "byte_offset_end_exclusive": 2087,
+      "source_block_sha256": "44394708f07136c7c1d8249c3b42f18eb3dca0964e6ac35edeef1a5a07428ee2",
+      "floorid": 1302,
+      "borncorner": [
+        14,
+        15,
+        14,
+        15
+      ],
+      "graphicname": 16300,
+      "npc_name": "巫女",
+      "enemy_kind": "npcgen_shop",
+      "linked_parameter_file": "npc/genout/ss_1302_14_15",
+      "linked_parameter_size": 516,
+      "linked_parameter_sha256": "ab0040783e90fa620870e89d73a0225fe7ff35ec718ff352ebe4bd84beb69148",
+      "source_stock_literal": "13072",
+      "stock_ids_expanded_candidate": [
+        13072
+      ],
+      "buy_rate_literal": "1.0",
+      "sell_rate_literal": "0.2"
+    },
+    {
+      "source_file": "npc/genout/shop_nuke1.create",
+      "source_index": 13,
+      "byte_offset_start": 2097,
+      "byte_offset_end_exclusive": 2252,
+      "source_block_sha256": "00dbf6587cabaf9853a0a7f3c923c60805a96d8e8a620fe88a8ea05ce478fe7c",
+      "floorid": 3209,
+      "borncorner": [
+        16,
+        14,
+        16,
+        14
+      ],
+      "graphicname": 16300,
+      "npc_name": "巫女",
+      "enemy_kind": "npcgen_shop",
+      "linked_parameter_file": "npc/genout/ss_3209_16_14",
+      "linked_parameter_size": 516,
+      "linked_parameter_sha256": "9482d157b25f67f8b8fafb9580b54ea6ef88049bb8732722d84bf1466460e1dd",
+      "source_stock_literal": "13073",
+      "stock_ids_expanded_candidate": [
+        13073
+      ],
+      "buy_rate_literal": "1.0",
+      "sell_rate_literal": "0.2"
+    }
+  ],
+  "unique_stock_count": 28,
+  "item_rows": [
+    {
+      "item_id": 13041,
+      "source_type": "GROUP_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "薩姆吉爾村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7691,
+          "row_sha256": "2fcd4da59cbd3e9e1b8f63256dfb49053a4f42016241ea5f4a761184b64b6435",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 1000,
+            "x": 92,
+            "y": 99
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8142,
+          "row_sha256": "2fcd4da59cbd3e9e1b8f63256dfb49053a4f42016241ea5f4a761184b64b6435",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 1000,
+            "x": 92,
+            "y": 99
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13042,
+      "source_type": "GROUP_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "瑪麗娜絲漁村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7692,
+          "row_sha256": "09b91b7d2018c406910c0e7221cd9f4de007a3e3c7b2345cefc665a8e38fca48",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 2000,
+            "x": 65,
+            "y": 58
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8143,
+          "row_sha256": "09b91b7d2018c406910c0e7221cd9f4de007a3e3c7b2345cefc665a8e38fca48",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 2000,
+            "x": 65,
+            "y": 58
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13043,
+      "source_type": "GROUP_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "加加村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7693,
+          "row_sha256": "8803313e485cfcf8504e9e5645e1a99df7343588066eb2cfeff4271e78ed2a0e",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 3000,
+            "x": 94,
+            "y": 97
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8144,
+          "row_sha256": "8803313e485cfcf8504e9e5645e1a99df7343588066eb2cfeff4271e78ed2a0e",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 3000,
+            "x": 94,
+            "y": 97
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13044,
+      "source_type": "GROUP_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "卡魯它那村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7694,
+          "row_sha256": "3090ad9cba1c650ae63567e6db49315d549ee9896ae87d849d5ed95d53d2be13",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 4000,
+            "x": 66,
+            "y": 55
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8145,
+          "row_sha256": "3090ad9cba1c650ae63567e6db49315d549ee9896ae87d849d5ed95d53d2be13",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 4000,
+            "x": 66,
+            "y": 55
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13045,
+      "source_type": "GROUP_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "福爾德村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7695,
+          "row_sha256": "e63dd0ad25c46131125b2d362895a1b1992cd2dbc2b39085e31197a70cb837fa",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 5000,
+            "x": 45,
+            "y": 53
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8146,
+          "row_sha256": "e63dd0ad25c46131125b2d362895a1b1992cd2dbc2b39085e31197a70cb837fa",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 5000,
+            "x": 45,
+            "y": 53
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13046,
+      "source_type": "GROUP_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "奇喀喀村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7696,
+          "row_sha256": "eab8f4e19f84222cce9dfaafec9692a6b27dd4a56debea1335b391838cfddc79",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 3400,
+            "x": 63,
+            "y": 48
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8147,
+          "row_sha256": "eab8f4e19f84222cce9dfaafec9692a6b27dd4a56debea1335b391838cfddc79",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 3400,
+            "x": 63,
+            "y": 48
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13047,
+      "source_type": "GROUP_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "達那村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7697,
+          "row_sha256": "376cd243431b00a6a1c2f0ab5a51113831e312374166cc2b5688830385e718e2",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 5106,
+            "x": 20,
+            "y": 36
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8148,
+          "row_sha256": "376cd243431b00a6a1c2f0ab5a51113831e312374166cc2b5688830385e718e2",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 5106,
+            "x": 20,
+            "y": 36
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13048,
+      "source_type": "GROUP_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "柯奧村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7698,
+          "row_sha256": "8d6615cb7d5dc41b55235407a036d2e51e5cb4e1b925e715667cd4c9ae2bd732",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 1100,
+            "x": 48,
+            "y": 91
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8149,
+          "row_sha256": "8d6615cb7d5dc41b55235407a036d2e51e5cb4e1b925e715667cd4c9ae2bd732",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 1100,
+            "x": 48,
+            "y": 91
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13049,
+      "source_type": "GROUP_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "塔姆塔姆村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7699,
+          "row_sha256": "ebfaf97592726f42164f4993f073ad956cf11ac7ccb5fa8a959e80782e258c64",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 3100,
+            "x": 81,
+            "y": 70
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8150,
+          "row_sha256": "ebfaf97592726f42164f4993f073ad956cf11ac7ccb5fa8a959e80782e258c64",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 3100,
+            "x": 81,
+            "y": 70
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13050,
+      "source_type": "GROUP_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "卡坦村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7700,
+          "row_sha256": "e59449593fc607d6d271111927f8730c34ab395ab210ebc19a2460a401fef193",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 1400,
+            "x": 74,
+            "y": 104
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8151,
+          "row_sha256": "e59449593fc607d6d271111927f8730c34ab395ab210ebc19a2460a401fef193",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 1400,
+            "x": 74,
+            "y": 104
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13051,
+      "source_type": "GROUP_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "烏魯力村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7701,
+          "row_sha256": "bf80283a1078f5084c0da0574b4ea2e7f826b1e53b66419a9b8c5d39afa1625b",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 3300,
+            "x": 69,
+            "y": 51
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8152,
+          "row_sha256": "bf80283a1078f5084c0da0574b4ea2e7f826b1e53b66419a9b8c5d39afa1625b",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 3300,
+            "x": 69,
+            "y": 51
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13052,
+      "source_type": "GROUP_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "霍特爾村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7702,
+          "row_sha256": "8a6b1086a32871afd08cdd40da9f513b3f9baf78d8393aac687533f12b0dc249",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 1300,
+            "x": 27,
+            "y": 23
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8153,
+          "row_sha256": "8a6b1086a32871afd08cdd40da9f513b3f9baf78d8393aac687533f12b0dc249",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 1300,
+            "x": 27,
+            "y": 23
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13053,
+      "source_type": "GROUP_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "多多村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7703,
+          "row_sha256": "1e833c4b874b59570324c0dbab99c17c8bdaeed4c2c75e8784fb29f1b7af3865",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 3200,
+            "x": 47,
+            "y": 60
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8154,
+          "row_sha256": "1e833c4b874b59570324c0dbab99c17c8bdaeed4c2c75e8784fb29f1b7af3865",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 7500,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 1,
+            "floorid": 3200,
+            "x": 47,
+            "y": 60
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13065,
+      "source_type": "SOLO_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "福爾德村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7708,
+          "row_sha256": "b4ae922cd2d445a55299ed46354954ba58b849df9f840e5fdb7a533eb739b27f",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 5000,
+            "x": 45,
+            "y": 53
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8159,
+          "row_sha256": "b4ae922cd2d445a55299ed46354954ba58b849df9f840e5fdb7a533eb739b27f",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 5000,
+            "x": 45,
+            "y": 53
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13066,
+      "source_type": "SOLO_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "奇喀喀村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7709,
+          "row_sha256": "1b4a386d587c07a999d5b53cd5cbfd44bbb560a2e5b10350f20060a58fead797",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 3400,
+            "x": 63,
+            "y": 48
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8160,
+          "row_sha256": "1b4a386d587c07a999d5b53cd5cbfd44bbb560a2e5b10350f20060a58fead797",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 3400,
+            "x": 63,
+            "y": 48
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13067,
+      "source_type": "SOLO_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "達那村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7710,
+          "row_sha256": "9daa6ad804f8cc4a005debb83fce99ba64429c32625455e1ec38448f83ad6d48",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 5106,
+            "x": 20,
+            "y": 36
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8161,
+          "row_sha256": "9daa6ad804f8cc4a005debb83fce99ba64429c32625455e1ec38448f83ad6d48",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 5106,
+            "x": 20,
+            "y": 36
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13068,
+      "source_type": "SOLO_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "柯奧村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7711,
+          "row_sha256": "d43a62aaf8dbddf52a5ef89864404f8119fc3a5eadd3a70fe921be3a696054b6",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 1100,
+            "x": 48,
+            "y": 91
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8162,
+          "row_sha256": "d43a62aaf8dbddf52a5ef89864404f8119fc3a5eadd3a70fe921be3a696054b6",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 1100,
+            "x": 48,
+            "y": 91
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13069,
+      "source_type": "SOLO_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "塔姆塔姆村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7712,
+          "row_sha256": "b0daaac2475ce1001875749727e18892728d5d45b805e674f487f18adff90ebc",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 3100,
+            "x": 81,
+            "y": 70
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8163,
+          "row_sha256": "b0daaac2475ce1001875749727e18892728d5d45b805e674f487f18adff90ebc",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 3100,
+            "x": 81,
+            "y": 70
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13070,
+      "source_type": "SOLO_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "卡坦村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7713,
+          "row_sha256": "cd545732e80ee021045a1dedaabac04254f985b7d50ac39d47020f7bc9480f04",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 1400,
+            "x": 74,
+            "y": 104
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8164,
+          "row_sha256": "cd545732e80ee021045a1dedaabac04254f985b7d50ac39d47020f7bc9480f04",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 1400,
+            "x": 74,
+            "y": 104
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13071,
+      "source_type": "SOLO_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "烏魯力村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7714,
+          "row_sha256": "b4806dd516c574d2952c8d1f898e1038b1b8cb4ebb6b2cb497285e319ee62a30",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 3300,
+            "x": 69,
+            "y": 51
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8165,
+          "row_sha256": "b4806dd516c574d2952c8d1f898e1038b1b8cb4ebb6b2cb497285e319ee62a30",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 3300,
+            "x": 69,
+            "y": 51
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13072,
+      "source_type": "SOLO_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "霍特爾村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7715,
+          "row_sha256": "4fac548b0d73d905391b35afdc86861e4d17cdbe1a26f57ee8018ed9f381fa2a",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 1300,
+            "x": 27,
+            "y": 23
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8166,
+          "row_sha256": "4fac548b0d73d905391b35afdc86861e4d17cdbe1a26f57ee8018ed9f381fa2a",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 1300,
+            "x": 27,
+            "y": 23
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13073,
+      "source_type": "SOLO_VILLAGE_FLYING_FEATHER",
+      "source_destination_label": "多多村",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7716,
+          "row_sha256": "49e06009316a4c61d70e987fbba380dc7ab00c4180f9e270e616d467c9e1579b",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 3200,
+            "x": 47,
+            "y": 60
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8167,
+          "row_sha256": "49e06009316a4c61d70e987fbba380dc7ab00c4180f9e270e616d467c9e1579b",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 3200,
+            "x": 47,
+            "y": 60
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13088,
+      "source_type": "SOLO_CAVE_ENTRANCE_FLYING_FEATHER",
+      "source_destination_label": "玄黃洞窟洞口",
+      "row_difference_columns_zero_based": [
+        17
+      ],
+      "original_two_table_row_class": "SOURCE_LINE_DIFFERENT",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7731,
+          "row_sha256": "7f52d677928b4fabe79592cd9dd4fb599d9810f33ea648d26bd61773ec250527",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 100,
+            "x": 278,
+            "y": 326
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8182,
+          "row_sha256": "33549449d34d5a96115071e2dbd38d59b5416ffee948bd636700889ee5d1d55a",
+          "alias_or_source_imagenumber": 24381,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 100,
+            "x": 278,
+            "y": 326
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13089,
+      "source_type": "SOLO_CAVE_ENTRANCE_FLYING_FEATHER",
+      "source_destination_label": "琉璃洞窟洞口",
+      "row_difference_columns_zero_based": [
+        17
+      ],
+      "original_two_table_row_class": "SOURCE_LINE_DIFFERENT",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7732,
+          "row_sha256": "ec041472477aef1e4ef62b9243b1a6611cf271d9b28a52c35b4280dd37e40e41",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 200,
+            "x": 358,
+            "y": 672
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8183,
+          "row_sha256": "49626cfd1553600fe1f99f3133e4a6188575655dd3b6b4ca00eab24252e9e068",
+          "alias_or_source_imagenumber": 24378,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 200,
+            "x": 358,
+            "y": 672
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13090,
+      "source_type": "SOLO_CAVE_ENTRANCE_FLYING_FEATHER",
+      "source_destination_label": "碧青洞窟洞口",
+      "row_difference_columns_zero_based": [
+        17
+      ],
+      "original_two_table_row_class": "SOURCE_LINE_DIFFERENT",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7733,
+          "row_sha256": "ab7413eba18c3939aa85c86e3209d9c534f378d544d701852859d10b703a7d28",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 200,
+            "x": 73,
+            "y": 697
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8184,
+          "row_sha256": "1ef35e63fc77960dfe2e19e6359c13b3083728ed28d48dad4ca1654591334bdc",
+          "alias_or_source_imagenumber": 24379,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 200,
+            "x": 73,
+            "y": 697
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13091,
+      "source_type": "SOLO_CAVE_ENTRANCE_FLYING_FEATHER",
+      "source_destination_label": "漆黑洞窟洞口",
+      "row_difference_columns_zero_based": [
+        17
+      ],
+      "original_two_table_row_class": "SOURCE_LINE_DIFFERENT",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7734,
+          "row_sha256": "f217f122d2c6c8bd18101303289b93cd697e835d2d10d1a63922579e15562c43",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 300,
+            "x": 102,
+            "y": 228
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8185,
+          "row_sha256": "00763bd028e172e597bc76dbbf3121be05e80b9ca3ba900c861deb05b4aef093",
+          "alias_or_source_imagenumber": 24377,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 300,
+            "x": 102,
+            "y": 228
+          }
+        }
+      }
+    },
+    {
+      "item_id": 13092,
+      "source_type": "SOLO_CAVE_ENTRANCE_FLYING_FEATHER",
+      "source_destination_label": "深紅洞窟洞口",
+      "row_difference_columns_zero_based": [
+        17
+      ],
+      "original_two_table_row_class": "SOURCE_LINE_DIFFERENT",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 7735,
+          "row_sha256": "8b8a05f43d1523f4069983665999948ebe255e6ba758db5e4a5f9d98ec67fc81",
+          "alias_or_source_imagenumber": 24076,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 30502,
+            "x": 44,
+            "y": 41
+          }
+        },
+        "itemset0710.txt": {
+          "row_1based": 8186,
+          "row_sha256": "8267667f13a6152ce932c70f900d7a44460c65a7f0623c9dc13939c7678e9de7",
+          "alias_or_source_imagenumber": 24380,
+          "price_integer_literal": 2000,
+          "item_use_handler_literal": "ITEM_useWarp",
+          "warp_numeric_4tuple": {
+            "flag_0_or_1_literal": 0,
+            "floorid": 30502,
+            "x": 44,
+            "y": 41
+          }
+        }
+      }
+    },
+    {
+      "item_id": 18546,
+      "source_type": "SILENCE_ACCESSORY_SOURCE_TEXT",
+      "source_destination_label": "特定区域（未定位）",
+      "row_difference_columns_zero_based": [],
+      "original_two_table_row_class": "IDENTICAL_RAW_LINE",
+      "sources": {
+        "itemset.txt": {
+          "row_1based": 12291,
+          "row_sha256": "cbf416f1fb6705803b02c09989635202cb7544855c4711817f934dc788317394",
+          "alias_or_source_imagenumber": 22030,
+          "price_integer_literal": 12000,
+          "item_use_handler_literal": "",
+          "warp_numeric_4tuple": null
+        },
+        "itemset0710.txt": {
+          "row_1based": 12742,
+          "row_sha256": "cbf416f1fb6705803b02c09989635202cb7544855c4711817f934dc788317394",
+          "alias_or_source_imagenumber": 22030,
+          "price_integer_literal": 12000,
+          "item_use_handler_literal": "",
+          "warp_numeric_4tuple": null
+        }
+      }
+    }
+  ],
+  "previously_retained_original_TW1_png_candidates": [
+    {
+      "alias_numeric_candidate": 24076,
+      "private_zip_member_path": "source-TW1-original-RD-candidates/alias-24076.png",
+      "retained_png_bytes": 972,
+      "retained_png_sha256": "21fda847c12dce11dd638304ca269ea5bc9527fa38de1127763457eb8004d85a",
+      "width": 32,
+      "height": 26,
+      "mode": "RGBA",
+      "original_RD_decode_this_turn": false,
+      "qualification": "prior_source_qualified_TW1_retail_RD_candidate"
+    },
+    {
+      "alias_numeric_candidate": 22030,
+      "private_zip_member_path": "source-TW1-original-RD-candidates/alias-22030.png",
+      "retained_png_bytes": 1172,
+      "retained_png_sha256": "3f840b74b76c1a3b68d9c2c5b297c4a2d99aaad69e69e207765f2e421074b2ab",
+      "width": 32,
+      "height": 27,
+      "mode": "RGBA",
+      "original_RD_decode_this_turn": false,
+      "qualification": "prior_source_qualified_TW1_retail_RD_candidate"
+    },
+    {
+      "alias_numeric_candidate": 16300,
+      "private_zip_member_path": "images/16300.png",
+      "retained_png_bytes": 2285,
+      "retained_png_sha256": "633f3a68b243e154d1662b18753400d1b9548e6daf62756f1743121e9d73c4f3",
+      "width": 52,
+      "height": 70,
+      "mode": "P",
+      "original_RD_decode_this_turn": false,
+      "qualification": "prior_source_qualified_TW1_motion_candidate"
+    }
+  ],
+  "source_qualifications": {
+    "shop_config_create_count": 13,
+    "shop_parameter_direct_reference_count": 13,
+    "distinct_stock_item_id_count": 28,
+    "itemset_original_row_SHA_verified_count": 56,
+    "itemset_identical_full_original_row_count": 23,
+    "itemset_distinct_image_only_diff_count": 5,
+    "warp_handler_4tuple_items": 27,
+    "nonwarp_necklace_items": 1,
+    "cross_version_alias_24076_candidates": 22,
+    "distinct_cave_image_aliases_in_later_itemset_not_in_retail_TW1_index": [
+      24381,
+      24378,
+      24379,
+      24377,
+      24380
+    ],
+    "TW1_motion_zip_has_npc_image_16300": true,
+    "TW1_motion_zip_has_npc_image_16067": false,
+    "TW1_motion_zip_has_npc_image_16218": false
+  },
+  "negative_evidence_boundary": {
+    "official_same_runtime_deployment_proven": false,
+    "historical_shop_purchases_or_item_use_native_playback_proven": false,
+    "static_warp_targets_are_actual_reached_locations_proven": false,
+    "original_native_client_image_appearance_proven": false,
+    "new_RD_decoded_this_round": 0,
+    "new_unique_original_artwork_this_round": 0,
+    "public_original_image_or_script_bytes": false,
+    "archive_prefix_test_negative_does_not_establish_other_archive_absence": true,
+    "stage_a_partial": 7,
+    "stage_a_open": 2,
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "historical_current_unchanged": {
+    "file": "docs/CURRENT-STATE.md",
+    "size_bytes": 2709173,
+    "git_blob_sha": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  }
+}
