@@ -15,3 +15,8 @@
 这属于**社区mixed25载体九份原DAT的静态图层原字节事实**，不等于TW1/JSS1999官方同版、原生图层显示/遮挡/碰撞/行走/猜拳执行或客户端游戏场景已完整复原。独立台湾1.0旧RD候选仍缺后期9420–9423、10940真实原像素，本次新原RD解码0。私人DAT、商业图块、原NPC脚本/对白及观察图未写入公开Git，公开只留哈希、原格整数、负证与来源链。Stage A 7 PARTIAL＋2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体完成率未知。
 
 **NEXT：** 本次DAT静态差异及三平面哈希归档已经止点；轮换另一个确有已保存合格原物的、尚未重复的宠物／物品／任务原二维内容关联。若没有新增真实原件/像素/语义，只做有界缺源记录；不扩Janken、原服联网、原版规则猜测或新游戏引擎。
+
+
+## 正式主线后验补记（2026-11-12，归档时真实观察）
+
+在上述带三平面原SHA清单的 [PR #358](https://github.com/chinaneedM/stoneage-rebuild/pull/358) 中，候选HEAD `4ced6a4d1148492604ef61b20fb150aaf5f078f4`／tree `3cc01cb32be9562c316d78d8c38ed9ee39952c0b` 的GitHub **26/26 push＋18/18 pull_request Actions，全44/44 completed/success**。此后squash合并至 `main=465d7fa7cc847ee80eef5ea47ef6f43598bf84ba`／**同tree**，正式内容主线 **26/26 push Actions completed/success**。再合计PR #357当时实际2/2 PR Actions，共**72条**当轮观察到的、分别绑定各自准确提交的成功run（2＋44＋26），真实run ID、事件、workflow名称、SHA与时间见 [机器验收回执](../../research/recovered/STONEAGE-INTEGRATION82-PUBLICATION-ACTIONS-R1.json)。此后验追加本身的新提交可能另起CI，不包含在上述72条中；不得把元数据CI称作原商业DAT再次执行或原客户端运行。
