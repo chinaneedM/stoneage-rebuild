@@ -1,0 +1,26 @@
+name: Verify StoneAge INTEGRATION97 four original manor shop and guard source
+on:
+  push:
+    branches: [main, 'agent/stoneage-integration97-*']
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION97-FOUR-MANOR-SOURCE-GATES-SHOPS-R1.json'
+      - 'tests/test_stoneage_integration97_manor_source_bridge.py'
+      - '.github/workflows/verify-stoneage-integration97-manor-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION97-FOUR-MANOR-SOURCE-GATES-SHOPS-R1.json'
+      - 'tests/test_stoneage_integration97_manor_source_bridge.py'
+      - '.github/workflows/verify-stoneage-integration97-manor-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-source-boundary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test private-source SHA metadata, literal gates, old ITEM01 join and prior DAT bounds
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration97_manor_source_bridge.py' -v
