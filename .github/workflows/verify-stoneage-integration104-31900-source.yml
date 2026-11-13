@@ -1,0 +1,21 @@
+name: Verify StoneAge INTEGRATION104 31900 original item gates and DAT source
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-stoneage-integration104-31900-source.yml'
+      - 'research/recovered/STONEAGE-INTEGRATION104-31900-ITEM-GATE-DAT-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration104_31900_original.py'
+  pull_request:
+    paths:
+      - '.github/workflows/verify-stoneage-integration104-31900-source.yml'
+      - 'research/recovered/STONEAGE-INTEGRATION104-31900-ITEM-GATE-DAT-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration104_31900_original.py'
+jobs:
+  source-replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest tests.test_stoneage_integration104_31900_original -v
