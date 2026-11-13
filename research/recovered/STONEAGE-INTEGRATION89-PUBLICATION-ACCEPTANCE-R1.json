@@ -1,0 +1,132 @@
+{
+  "schema": "stoneage.integration89_dino_cave_source_2d_publication_acceptance.r1",
+  "date": "2026-11-13",
+  "remote_source_start": {
+    "main_head": "324c303afa6209fb4da8e665720b7697a6897798",
+    "main_tree": "fcbf782adf1270ce9b52536eed306c2c65b67a0c",
+    "successful_actions": 26,
+    "open_PR": 0
+  },
+  "full_historical_state_unchanged": {
+    "path": "docs/CURRENT-STATE.md",
+    "bytes": 2709173,
+    "git_blob_SHA1": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "verified_same_in_main_tree": true
+  },
+  "candidate": {
+    "branch": "agent/stoneage-integration89-dino-cave-2d-20261113",
+    "first_data_commit": "8f76044fd793ede93610322ba3ac688796626682",
+    "last_commit": "57094774abc5c658d1ea2a7424a1549c761d6fa7",
+    "tree": "16981ddba998ca59954c8ccce8575cbfcea4c747"
+  },
+  "pull_request": {
+    "number": 365,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/pull/365",
+    "merged": true,
+    "method": "squash"
+  },
+  "candidate_actions": [
+    {
+      "id": 43393655769,
+      "event": "push",
+      "workflow": "INTEGRATION89",
+      "conclusion": "success",
+      "source_specific_tests": 11,
+      "actual_log": "Ran 11 tests / OK",
+      "job_id": 131779306060
+    },
+    {
+      "id": 43393709123,
+      "event": "pull_request",
+      "workflow": "INTEGRATION89",
+      "conclusion": "success",
+      "source_specific_tests": 11,
+      "actual_log": "Ran 11 tests / OK",
+      "job_id": 131779476957
+    },
+    {
+      "id": 43393709181,
+      "event": "pull_request",
+      "workflow": "O11",
+      "conclusion": "success",
+      "not_an_INTEGRATION89_specialist_run": true
+    },
+    {
+      "id": 43393709365,
+      "event": "pull_request",
+      "workflow": "O12",
+      "conclusion": "success",
+      "not_an_INTEGRATION89_specialist_run": true
+    }
+  ],
+  "main_content_commit": "9562fa1d017b343204059e23fbfaa0caef50bc89",
+  "main_content_tree": "16981ddba998ca59954c8ccce8575cbfcea4c747",
+  "main_content_actions": [
+    {
+      "id": 43393854866,
+      "event": "push",
+      "workflow": "INTEGRATION89",
+      "conclusion": "success",
+      "job_id": 131779944693,
+      "actual_log": "Ran 11 tests / OK"
+    }
+  ],
+  "other_main_content_workflows_for_this_SHA": 0,
+  "source_content_git_blob_SHA1": {
+    "research/recovered/STONEAGE-INTEGRATION89-DINO-CAVE-GATES-SHOPS-ORIGINAL-2D-R1.json": "e2116cc7bc1c4843dd8ff03a4b90ee81f516b0fb",
+    "docs/continuity/STONEAGE-INTEGRATION89-DINO-CAVE-ORIGINAL-GATES-SHOPS-2D-20261113.md": "c050d0c1ce479143d3a5d80cd4323359b9ec8696",
+    "tests/test_stoneage_integration89_dino_cave.py": "43b362f66b3f6e81bc8e5248ab17fd91d916f3ee",
+    ".github/workflows/verify-stoneage-integration89-dino-cave-2d.yml": "313acf78aac617d00d5afca4d1b23013d02fbdfe"
+  },
+  "original_private_source_material": {
+    "original_NPC_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "original_NPC_zip_member_count_and_CRC_verified": 2205,
+    "original_create_file_path": "npc/genout/bait_01.create",
+    "original_create_file_bytes": 5743,
+    "original_create_file_sha256": "d98e0863def90f5c99240308312c8475aba05ceb329e7efae93f42ca7e49d570",
+    "original_35_CREATE_byte_spans_sha256_verified": true,
+    "original_16_direct_NPC_parameter_sha256_verified": true,
+    "original_TW1_PET07_gallery_sha256": "58e8ee4ff5165ed2f61663d67ae1cd0a8183622fa3375c480232784bfce9dc76",
+    "original_TW1_PET07_separate_RD_source_sha256": "b5ad2e58930afbe90604a1d72e3c17ab0adea446e7c118be775e3973315e6cb4",
+    "private_observer_zip_sha256": "a43da4967959afbf593bf3e9319421d13b752c1082fd4d103ab94ace8d4e9090",
+    "private_observer_zip_bytes": 1482192,
+    "private_zip_CRC_verified_2_members": true,
+    "private_Library_path": "/石器时代/StoneAge-INTEGRATION89-DINO-RANCH-CAVE-original-2D-private.zip",
+    "private_Library_retrieved_and_SHA256_verified": true,
+    "private_JavaScript_syntax_check_succeeded": true,
+    "private_Chromium_run_success": false
+  },
+  "counts_and_negatives": {
+    "original_CREATE": 35,
+    "original_direct_ref": 16,
+    "guard_WARP_literal_count": 3,
+    "cave_shop_contract_count": 4,
+    "original_itemset_IDs": [
+      2595,
+      2596,
+      12856
+    ],
+    "original_TW1_cross_carrier_numeric_graphic_NPC_source_rows": 18,
+    "TW1_source_graphics": 10,
+    "TW1_source_selected_action_direction0_records": 30,
+    "TW1_source_selected_frame_occurrences": 250,
+    "TW1_source_selected_different_bitmaps": 168,
+    "private_old_gallery_PNG_shown": 532,
+    "private_gallery_source_exact_sha_bitmap": 116,
+    "private_gallery_different_palette_source_png_sha": 52,
+    "private_gallery_not_in_newer_selected_report_png": 364,
+    "actual_new_RD_decoded": 0,
+    "original_native_gameplay_executed": 0,
+    "original_commercial_art_or_script_bytes_published": 0,
+    "same_historical_official_build_proven": false
+  },
+  "status": {
+    "stage_A": "7 PARTIAL + 2 OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Different source-qualified original game-content family, not repeat cave/pet rewards or sprite-only relabels",
+  "acceptance_record_commit_own_Actions": "VERIFY_NEW_HEAD_AFTER_PUBLICATION; do not preclaim success"
+}
