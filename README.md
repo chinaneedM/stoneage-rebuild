@@ -2705,3 +2705,12 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ### INTEGRATION86 正式Github來源與73條Actions／私人原像保管終驗（2026-11-13）
 
 [漆黑洞窟10原NPC、16來源事件段、原EVENT/DelItem負證、19既存真原二維候選與GitHub正式驗收](docs/continuity/STONEAGE-INTEGRATION86-PUBLICATION-ACCEPTANCE-20261113.md)：[PR #362](https://github.com/chinaneedM/stoneage-rebuild/pull/362) 候選 `16911a67`／tree `f24ceaf2` 真實經27/27 push＋19/19 PR Actions成功，正式內容 main `3fc574ef`／同tree經27/27 Actions成功，合計73條按SHA的確切執行收據見[機器JSON](research/recovered/STONEAGE-INTEGRATION86-PUBLICATION-ACCEPTANCE-R1.json)。專用來源契約21項於候選push/PR/main三次真job log均顯示 `Ran 21 tests / OK`。私人原NPC 2205CRC／ITEM838CRC、35原94欄行 SHA／19張TW1既存真原PNG均重驗，另三TW1別名缺圖。私人113454B/35成員原源離線包已Library獨立取回整ZIP SHA／35CRC／34成員SHA通過，原商業原文／原像未入公開Git；新原RD解碼0、原生世界未進入。CURRENT原2,709,173B blob `c89e0e33`完整不變，Stage A7 PARTIAL＋2OPEN、B/wiki GATED、R79暫停、總percent未知。**本驗收收據提交自身CI另按該HEAD後驗**；NEXT轉另一有真原2D與原配置且非重複的遊戲內容家族。
+
+
+## 2026-11-13 — INTEGRATION87｜36個GetPet原靜態數值→台灣1.0真正原SPR二維候選完整來源索引
+
+[原來源及負證報告](docs/continuity/STONEAGE-INTEGRATION87-36-GETPET-TW10-2D-CENSUS-20261113.md)／[完整36組逐原行及動畫SHA](research/recovered/STONEAGE-INTEGRATION87-36-GETPET-TW10-SPR-2D-BRIDGE-R1.json)：以遠端main `40e857168`／tree`f47fcb0a`啟動，原CURRENT全2,709,173B／Git blob `c89e0e33`真讀不改。原社群mixed25 WORLD21資料27原腳本、44條GetPet字面、36不同原獎勵實例按其原enemy→enemybase的字段數值連到36不同原圖形號，**另一來源台灣1.0 PET07**的130組原SPR中恰36組同數值、原段SHA/動作0、2、1方向0共108條序列可定位。三份現存私人原資料全SHA重驗，混合2.5原CP950 36/36原欄位數值直接吻合；沒重拉父RAR、新原像素解碼=0、新寵物物種確認=0。`GetPet1481`／graphic100401動作0含原位圖82729嚴格RLE解碼越界，不能冒稱所有原動畫可看。INTEGRATION62／66／67已個別核過20源實例，原數值關係不當官方同服或實際發獎。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暫停、overall_percent=null不變。**NEXT** 轉另一非重複有真實原件的原二維內容家族，不做引擎／新遊戲或無據物種推測。
+
+### INTEGRATION87 正式主線／修正後Actions與兩條原失敗永久保留（2026-11-13）
+
+[PR #363](https://github.com/chinaneedM/stoneage-rebuild/pull/363) 初候選 `b84ebcae` push+PR **兩次真failure**，原因為一條「不是原生執行」負證測試正反極性錯誤；修正候選 `a5780b7b`後，專項push `43362998905`及PR `43363002385`均6/6測試PASS，兩條共存O11/O12 PR工作流亦success（候選合計4/4），內容正式main `aebb5405fbedff10a5705ff32bf2f658af728f0f`／同tree `c0f5481eab88bb3ae245e3862cbc180cddd10ee1` 的專項 `43363096290`亦6/6 PASS。原失敗不追認，**此驗收接收提交自身CI另據後驗**。全部精確RUN、SHA、4新檔blob、私人實物哈希與OPEN界限見[永久接受收據](research/recovered/STONEAGE-INTEGRATION87-PUBLICATION-ACCEPTANCE-R1.json)和[文字報告](docs/continuity/STONEAGE-INTEGRATION87-PUBLICATION-ACCEPTANCE-20261113.md)。完整原CURRENT不改，商業原源和2D私有像素不公開，最高NEXT保持更換真原2D內容族。

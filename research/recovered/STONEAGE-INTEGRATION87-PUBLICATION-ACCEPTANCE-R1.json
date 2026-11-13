@@ -1,0 +1,121 @@
+{
+  "schema": "stoneage.integration87.publication_acceptance_r1",
+  "date": "2026-11-13",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "scope": "DERIVED_NUMERIC_SOURCE_PUBLICATION_NOT_PRIVATE_BINARY_OR_ORIGINAL_GAME_EXECUTION",
+  "start_head": "40e857168d5a8650b6f6f803dba0aad63f90933c",
+  "start_tree": "f47fcb0a92e99e6cbbe73a0fe94785a3861610ee",
+  "candidate_initial_commit": "b84ebcae45d5ff4c7b2e488ba8736cdb790b0b26",
+  "candidate_fixed_commit": "a5780b7bf1fdb3c78a236ea141a1eb9c4cf70970",
+  "candidate_fixed_tree": "c0f5481eab88bb3ae245e3862cbc180cddd10ee1",
+  "PR_number": 363,
+  "PR_url": "https://github.com/chinaneedM/stoneage-rebuild/pull/363",
+  "PR_merged": true,
+  "PR_merge_method": "squash",
+  "main_content_commit": "aebb5405fbedff10a5705ff32bf2f658af728f0f",
+  "main_content_tree": "c0f5481eab88bb3ae245e3862cbc180cddd10ee1",
+  "exact_source_report_and_tests_blobs": {
+    "README.md": "26ecf1c12e2c04972de219be7befb047e8408717",
+    "research/recovered/STONEAGE-INTEGRATION87-36-GETPET-TW10-SPR-2D-BRIDGE-R1.json": "4c834aa705af313da3961ffcd44a2b9fb6ef6beb",
+    "tests/test_stoneage_integration87_getpet_tw10_2d.py": "de26a05bfbee7125cab54df48d8c7c547030f4ad",
+    ".github/workflows/verify-stoneage-integration87-getpet-tw10-2d.yml": "b108a68791ee37febef0378ea790a97941e30cd2",
+    "docs/continuity/STONEAGE-INTEGRATION87-36-GETPET-TW10-2D-CENSUS-20261113.md": "e01b50bf8ecd7fc1fdcccf03a6eefc348e9e73b1"
+  },
+  "failed_prior_actions_stay_failed": [
+    {
+      "head": "b84ebcae45d5ff4c7b2e488ba8736cdb790b0b26",
+      "run_id": 43362856070,
+      "event": "push",
+      "conclusion": "failure",
+      "reason": "test mistakenly asserted source_script_status_is_not_live_NPC_execution was false"
+    },
+    {
+      "head": "b84ebcae45d5ff4c7b2e488ba8736cdb790b0b26",
+      "run_id": 43362886913,
+      "event": "pull_request",
+      "conclusion": "failure",
+      "reason": "same test polarity, not a new original-source mismatch"
+    }
+  ],
+  "candidate_corrected_actions": [
+    {
+      "head": "a5780b7bf1fdb3c78a236ea141a1eb9c4cf70970",
+      "run_id": 43362998905,
+      "event": "push",
+      "workflow": "INTEGRATION87",
+      "conclusion": "success",
+      "specialized_unittests": 6
+    },
+    {
+      "head": "a5780b7bf1fdb3c78a236ea141a1eb9c4cf70970",
+      "run_id": 43363002385,
+      "event": "pull_request",
+      "workflow": "INTEGRATION87",
+      "conclusion": "success",
+      "specialized_unittests": 6
+    },
+    {
+      "head": "a5780b7bf1fdb3c78a236ea141a1eb9c4cf70970",
+      "run_id": 43363002372,
+      "event": "pull_request",
+      "workflow": "O11",
+      "conclusion": "success"
+    },
+    {
+      "head": "a5780b7bf1fdb3c78a236ea141a1eb9c4cf70970",
+      "run_id": 43363002437,
+      "event": "pull_request",
+      "workflow": "O12",
+      "conclusion": "success"
+    }
+  ],
+  "main_content_action": {
+    "head": "aebb5405fbedff10a5705ff32bf2f658af728f0f",
+    "run_id": 43363096290,
+    "job_id": 131680981107,
+    "event": "push",
+    "conclusion": "success",
+    "specialized_unittests": 6,
+    "log_assertion": "Ran 6 tests / OK"
+  },
+  "assertions": {
+    "candidate_and_main_content_git_tree_equal": true,
+    "source_getpet_command_occurrences": 44,
+    "unique_source_instance_ids": 36,
+    "numeric_tw10_spr_candidates": 36,
+    "private_original_CP950_numeric_link_checks": 36,
+    "strict_original_sprite_exception": {
+      "graphic": 100401,
+      "source_bitmap": 82729,
+      "source_GetPet": 1481
+    },
+    "new_original_picture_decode_count": 0,
+    "new_original_commercial_assets_uploaded_to_public_git": 0
+  },
+  "private_source_sha256_verified": {
+    "PET10_CP950_original_source_catalog": "640506addf01417390a7078f70aece167c99feecf4beeca8cb769f32972ff5d3",
+    "PET07_original_RD_verified_report": "b5ad2e58930afbe90604a1d72e3c17ab0adea446e7c118be775e3973315e6cb4",
+    "PET07_original_sprite_gallery_html": "58e8ee4ff5165ed2f61663d67ae1cd0a8183622fa3375c480232784bfce9dc76"
+  },
+  "source_limitations": {
+    "original_community_mixed25_and_tw1_same_deployment": false,
+    "native_pet_reward_witness": false,
+    "original_server_pet_main_for_tw1": false,
+    "physical_original_RAR_reextracted_this_round": false,
+    "private_assets_newly_downloaded_from_original_media": false,
+    "source_original_artwork_in_public_git": false
+  },
+  "preserved_current_state": {
+    "bytes": 2709173,
+    "blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "project_status": {
+    "stage_A": "7 PARTIAL + 2 OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Different source-bound new original 2D content family, new eligible actual source/file material and non-repeated relations; no engine, no fabricated historical facts.",
+  "receipt_self_ci": "NOT_PRECLAIMED; verify new HEAD actions after metadata publication"
+}
