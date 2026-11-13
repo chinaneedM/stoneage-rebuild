@@ -1,0 +1,137 @@
+{
+  "schema": "stoneage.integration100_airway_publication_acceptance.r1",
+  "date": "2026-11-13",
+  "repo": "chinaneedM/stoneage-rebuild",
+  "content_PR": {
+    "number": 383,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/pull/383",
+    "state": "merged",
+    "candidate_head": "ea0b3d43cbef07ffe85b1443e2cac50e6b026049",
+    "candidate_tree": "ab1d88d5eaec9f58c174a1208548490bbceddd1c",
+    "base_main_before_merge": "68b35428e842048673b894f333d092efef83a7a4",
+    "merged_main_head": "b695c4f1f86d3ea20da740c5937a03ef6a3cc6b6",
+    "merged_main_tree": "ab1d88d5eaec9f58c174a1208548490bbceddd1c"
+  },
+  "candidate_actions": {
+    "exact_head": "ea0b3d43cbef07ffe85b1443e2cac50e6b026049",
+    "total": 4,
+    "completed_success": 4,
+    "runs": [
+      {
+        "id": 43459765089,
+        "event": "push",
+        "name": "Verify StoneAge INTEGRATION100 original airway NPC and signboards",
+        "status": "completed",
+        "conclusion": "success",
+        "dedicated_job_id": 132003240440,
+        "real_log": "Ran 6 tests / OK"
+      },
+      {
+        "id": 43459774139,
+        "event": "pull_request",
+        "name": "Verify StoneAge INTEGRATION100 original airway NPC and signboards",
+        "status": "completed",
+        "conclusion": "success",
+        "dedicated_job_id": 132003272077,
+        "real_log": "Ran 6 tests / OK"
+      },
+      {
+        "id": 43459774245,
+        "event": "pull_request",
+        "name": "Verify StoneAge O11 native source animation and bounded sound-word candidates",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 43459774143,
+        "event": "pull_request",
+        "name": "Verify StoneAge O12 original compiled sound-number namespace (derived only)",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "merged_main_actions": {
+    "exact_head": "b695c4f1f86d3ea20da740c5937a03ef6a3cc6b6",
+    "total": 1,
+    "completed_success": 1,
+    "runs": [
+      {
+        "id": 43459964465,
+        "event": "push",
+        "name": "Verify StoneAge INTEGRATION100 original airway NPC and signboards",
+        "status": "completed",
+        "conclusion": "success",
+        "dedicated_job_id": 132003929180,
+        "real_log": "Ran 6 tests / OK"
+      }
+    ]
+  },
+  "public_content_git_blobs": {
+    ".github/workflows/verify-stoneage-integration100-airway.yml": "6bba0529e35edd8b38b4918ee57a98cb462eabea",
+    "docs/continuity/STONEAGE-INTEGRATION100-AIRWAY-ORIGINAL-NPC-20261113.md": "ff835615f64dcbd5945eb18e383570d5f63133b8",
+    "research/recovered/STONEAGE-INTEGRATION100-AIRWAY-15-ORIGINAL-NPC-SOURCE-R1.json": "f89a1aded94398f5c3b23611d1d9f3b5bcf813f2",
+    "tests/test_stoneage_integration100_airway.py": "a13a42028cf7447ac7c101a72057df4041e81bbd"
+  },
+  "previous_public_index_git_blobs": {
+    "CHAR01": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "MAP04": "1ef8c004179128ea44ffa4fb4259748bc8c83911"
+  },
+  "verified_private_original_source": {
+    "ZIP_path_in_private_library": "/石器时代/StoneAge-CHAR01-mixed25-all-npc-original-private.zip",
+    "ZIP_bytes": 995176,
+    "ZIP_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "all_member_CRC_pass": 2205,
+    "original_airway_CREATE_bytes": 2747,
+    "original_CREATE_sha256": "faaf7850d8cc400764b6f4b700dafced16664a988069e15b3ba18315d52ded9e",
+    "original_CREATE_window_SHA_matched": 15,
+    "handler_original_full_SHA_matched": 15,
+    "handler_CP950_roundtrip_matched": 15,
+    "reextracted_from_361MB_original_parent_RAR_this_unit": false
+  },
+  "scope": {
+    "source_CREATE_rows": 15,
+    "guides": 5,
+    "destination_signboards": 8,
+    "airdrop_signboards": 2,
+    "unique_handler_SHA": 12,
+    "floor_IDs": [
+      2000,
+      4000,
+      5000,
+      5100,
+      5543,
+      6000
+    ],
+    "prior_original_DAT_qualified_floor_IDs": [
+      2000,
+      4000,
+      5100,
+      5543
+    ],
+    "original_DAT_missing_catalog_floor_IDs": [
+      5000,
+      6000
+    ],
+    "in_bounds_on_old_DAT_dimensions": 8,
+    "not_DAT_qualified_spawns": 7,
+    "eight_1000s_signboard_literals_not_real_charges": true,
+    "proprietary_original_material_in_public_git": false
+  },
+  "historical_limit": {
+    "original_native_gameplay_observed": false,
+    "flight_or_fare_execution_verified": false,
+    "sign_text_as_transport_behaviour_verified": false,
+    "TW1_JSS1999_CN182_official_same_deployment_proven": false,
+    "new_original_RD_decode_this_unit": 0,
+    "stage_A": "7 PARTIAL + 2 OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null,
+    "historic_CURRENT_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "historic_CURRENT_bytes": 2709173
+  },
+  "this_acceptance_commit_own_CI": "not yet observed; verify its own exact HEAD later",
+  "NEXT": "Choose new genuinely available original source content/2D work family, not repeatedly expand sign-only transport graph or build network/flight mechanics without actual source."
+}
