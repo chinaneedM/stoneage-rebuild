@@ -1,0 +1,30 @@
+name: Verify StoneAge INTEGRATION99 three dungeon source hubs
+on:
+  push:
+    branches:
+      - main
+      - agent/stoneage-integration99-three-dungeon-hubs-20261113
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION99-THREE-DUNGEON-SOURCE-HUBS-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION99-THREE-DUNGEON-SOURCE-HUBS-20261113.md'
+      - 'tests/test_stoneage_integration99_three_dungeon_hubs.py'
+      - '.github/workflows/verify-stoneage-integration99-dungeon-hubs.yml'
+      - 'research/recovered/STONEAGE-INTEGRATION95-DUNGEON00-147-ORIGINAL-WARP-AND-PRIOR-DAT-R1.json'
+      - 'research/recovered/STONEAGE-INTEGRATION96-DUNGEON01-SEVEN-WARPMAN-ORIGINAL-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-INTEGRATION80-DUNGEON03-NPC-WARP-DAT-SOURCE-R1.json'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION99-THREE-DUNGEON-SOURCE-HUBS-R1.json'
+      - 'tests/test_stoneage_integration99_three_dungeon_hubs.py'
+      - '.github/workflows/verify-stoneage-integration99-dungeon-hubs.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify source-hub relations (derived-only)
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration99_three_dungeon_hubs.py' -v
