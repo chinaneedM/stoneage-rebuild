@@ -1,0 +1,22 @@
+name: Verify StoneAge INTEGRATION102 original meiro source
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION102-MEIRO-17-ORIGINAL-SOURCE-MAP-R1.json'
+      - 'tests/test_stoneage_integration102_meiro_original.py'
+      - '.github/workflows/verify-stoneage-integration102-meiro.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION102-MEIRO-17-ORIGINAL-SOURCE-MAP-R1.json'
+      - 'tests/test_stoneage_integration102_meiro_original.py'
+      - '.github/workflows/verify-stoneage-integration102-meiro.yml'
+  workflow_dispatch:
+jobs:
+  source-replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest tests.test_stoneage_integration102_meiro_original -v
