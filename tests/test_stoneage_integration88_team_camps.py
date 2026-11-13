@@ -73,6 +73,19 @@ class TestSourceBoundTeamCamps(unittest.TestCase):
     old=lookup[pix[0]]
     self.assertEqual([old[0],old[2],old[5],old[6],old[8]],pix)
   self.assertEqual(57,len(seen))
+ def test_three_original_gate_items_both_94_field_masters_and_icon_candidate(self):
+  shard=read("item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-07-R1.json")
+  source={r[0]:r for r in shard["rows"]}
+  out=self.d["original_three_guard_pass_item_same_carrier_two_original_itemsets_source_rows"]
+  self.assertEqual([18553,18554,18555],[x["item_id"] for x in out])
+  self.assertEqual([24124,24126,24127],[x["original_itemset_B_image_alias"] for x in out])
+  for r in out:
+   prior=source[r["item_id"]]
+   self.assertEqual([r["item_id"],r["original_itemset_A_94_fields_full_row_sha256"],r["original_itemset_B_94_fields_full_row_sha256"],r["original_itemset_A_image_alias"],r["original_itemset_B_image_alias"],r["source_B_original_cost_raw"],r["source_B_original_type_raw"],r["source_B_original_level_raw"],r["source_A_prior_TW1_RD_qualification"],r["source_B_prior_TW1_RD_qualification"],r["original_changed_columns_between_same_archived_itemset_rows"]],prior)
+   self.assertEqual(r["original_itemset_A_94_fields_full_row_sha256"],r["original_itemset_B_94_fields_full_row_sha256"])
+   self.assertEqual("REAL_RD_DECODED_CROSS_CARRIER",r["source_A_prior_TW1_RD_qualification"])
+  self.assertEqual([x["literal_FREE_ITEM"] for x in self.d["three_original_source_warpman_gate_parameter_literals"]],[x["item_id"] for x in out])
+  self.assertFalse(self.d["evidence_limits"]["cross_carrier_TW1_item_icon_is_verified_same_deployment_of_mixed25_gate"])
  def test_unrenderable_82729_and_uncaptured_100406_not_promoted(self):
   g=next(x for x in self.d["source_numeric_TW1_original_2D_graphic_candidates"] if x["graphic"]==100401)
   self.assertEqual([82729],g["prior_strict_RD_RLE_error_action0"]["original_bitmap"] if isinstance(g["prior_strict_RD_RLE_error_action0"]["original_bitmap"],list) else [g["prior_strict_RD_RLE_error_action0"]["original_bitmap"]])
