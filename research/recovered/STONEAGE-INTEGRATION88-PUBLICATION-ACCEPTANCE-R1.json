@@ -1,0 +1,190 @@
+{
+  "schema": "stoneage.integration88.team_camp_2d_main_publication_acceptance.r1",
+  "date": "2026-11-13",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "source_class": "DERIVED_RIGHTS_SAFE_EVIDENCE_ONLY",
+  "original_remote_base": {
+    "head": "a1a0ac451d61fd23ee70b4cd3c5d0c3d3e763c95",
+    "tree": "e9e7ba46782002c071138aa0c4d28b8fd54afabd",
+    "actions": "26/26 success",
+    "open_pr": 0
+  },
+  "full_history_current_preserved": {
+    "path": "docs/CURRENT-STATE.md",
+    "original_size_bytes": 2709173,
+    "original_blob_sha": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "exact_same_blob_in_main_content_tree": true
+  },
+  "candidate_branch": "agent/stoneage-integration88-team-camps-20261113",
+  "candidate_earliest_data_commit": "a2669fd53ae629daab5dcb25fccdcf50b25a1641",
+  "candidate_final_head": "9b2aca107bed8493b8cebaf6eed8c8bc67544e85",
+  "candidate_head_tree": null,
+  "pull_request": {
+    "number": 364,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/pull/364",
+    "merged": true,
+    "merge_method": "squash"
+  },
+  "candidate_actual_successful_workflow_runs": [
+    {
+      "head": "23157bf124641e5b8c7269e19a3bf19bc50627ea",
+      "push": 43388693832,
+      "pr": 43388735172,
+      "otherPr": [
+        43388735052,
+        43388735155
+      ],
+      "push_source_workflow_conclusion": "completed/success",
+      "pull_request_source_workflow_conclusion": "completed/success",
+      "other_runs_conclusions": "completed/success"
+    },
+    {
+      "head": "6f37d043e07d53f3f75aefab75fc9f37eb0712bf",
+      "push": 43389008564,
+      "pr": 43389012745,
+      "otherPr": [
+        43389012805,
+        43389012820
+      ],
+      "push_source_workflow_conclusion": "completed/success",
+      "pull_request_source_workflow_conclusion": "completed/success",
+      "other_runs_conclusions": "completed/success"
+    },
+    {
+      "head": "82d36347f68f01de68531c47edfa568944990567",
+      "push": 43389047262,
+      "pr": 43389053528,
+      "otherPr": [
+        43389053478,
+        43389053590
+      ],
+      "push_source_workflow_conclusion": "completed/success",
+      "pull_request_source_workflow_conclusion": "completed/success",
+      "other_runs_conclusions": "completed/success"
+    },
+    {
+      "head": "9b2aca107bed8493b8cebaf6eed8c8bc67544e85",
+      "push": null,
+      "pr": 43389093999,
+      "otherPr": [
+        43389093944,
+        43389093797
+      ],
+      "push_source_workflow_conclusion": null,
+      "pull_request_source_workflow_conclusion": "completed/success",
+      "other_runs_conclusions": "completed/success"
+    }
+  ],
+  "candidate_actual_failed_workflow_runs": [],
+  "main_content_commit": "0966aee017e54cbb23ea37a270ff2c7449395ee1",
+  "main_content_git_tree": "94e1e942f29130930a6aa258bf3a7142fe3076e2",
+  "main_actual_source_workflow": {
+    "run_id": 43389211693,
+    "job_id": 131764836061,
+    "event": "push",
+    "status": "completed",
+    "conclusion": "success",
+    "real_log_statement": "Ran 11 tests / OK",
+    "main_other_workflows_triggered_for_content_commit": 0
+  },
+  "content_git_blob_sha256": {
+    "README.md": "e4b2e52591cb0a8799bc44d1ad5641bd891dfcb8",
+    "research/recovered/STONEAGE-INTEGRATION88-TEAM-CAMP-GATE-WARP-ORIGINAL-2D-R1.json": "0ce8c0940dadd4140138bc8218947d7da3337ce2",
+    "tests/test_stoneage_integration88_team_camps.py": "6a50543993168e0b5d73fe1e984bb7685be2bc92",
+    ".github/workflows/verify-stoneage-integration88-team-camps.yml": "a32988bef485b65f098a881177b3b15f96dd2236",
+    "docs/continuity/STONEAGE-INTEGRATION88-TEAM-CAMP-ORIGINAL-2D-20261113.md": "21db96483adc67eaafd3dde26a4259c68bf5c7cc"
+  },
+  "original_private_source_custody": {
+    "same_carrier_NPC_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "source_member_ZIP_CRC_passed": 2205,
+    "original_npc_CREATE_sha256": "587e264d484fa74f4c615b2c63e2b7cb522061bf60602b30ac6456c98752cb46",
+    "source_NPC_CREATE_members_count": 99,
+    "source_NPC_DIRECT_refs_SHA256_verified": 46,
+    "original_independent_PET07_gallery_sha256": "58e8ee4ff5165ed2f61663d67ae1cd0a8183622fa3375c480232784bfce9dc76",
+    "original_independent_PET07_RD_report_sha256": "b5ad2e58930afbe90604a1d72e3c17ab0adea446e7c118be775e3973315e6cb4",
+    "original_pixel_existing_PNG_verified_count": 57,
+    "original_2d_private_observer_ZIP_sha256": "e2c6b6f051835d668a3d1646a021300819bd5dc1043076d3d14b5f9e551c9fa7",
+    "original_2d_private_observer_bytes": 349552,
+    "private_observer_zip_member_count": 2,
+    "private_Library_path": "/石器时代/StoneAge-INTEGRATION88-500-team-camps-original-2D-private.zip",
+    "private_Library_independently_downloaded_SHA_verified": true,
+    "Chromium_real_test_static_99_42_44": true,
+    "Chromium_external_requests": 0,
+    "Chromium_JS_errors": 0
+  },
+  "source_conservation": {
+    "original_create_blocks": 99,
+    "graphic_records": 55,
+    "warp_no_graphic": 44,
+    "original_guard_item_conditions": [
+      18553,
+      18554,
+      18555
+    ],
+    "original_guard_target_tuples": [
+      [
+        5532,
+        0,
+        22
+      ],
+      [
+        5536,
+        30,
+        13
+      ],
+      [
+        5533,
+        30,
+        11
+      ]
+    ],
+    "original_pass_item_master_rows_in_both_itemsets": 3,
+    "original_pass_item_ID_to_existing_TW1_icon_aliases": [
+      [
+        18553,
+        24124
+      ],
+      [
+        18554,
+        24126
+      ],
+      [
+        18555,
+        24127
+      ]
+    ],
+    "original_cross_carrier_TW1_SPR_graphic_groups": [
+      100259,
+      100379,
+      100401,
+      100432
+    ],
+    "original_cross_carrier_config_rows": 29,
+    "prior_130_group_PET07_missing_graphic_100406_original_config_records": 10,
+    "prior_unrenderable_100401_action0_original_bitmap": 82729,
+    "original_source_selected_frame_occurrences": 101,
+    "private_observer_viewable_source_frame_occurrences": 75,
+    "private_observer_unique_original_PNG": 57,
+    "new_original_RD_decoded": 0,
+    "new_original_commercial_art_found": 0,
+    "original_native_gameplay_executed": 0
+  },
+  "no_original_commercial_scripts_or_image_bytes_in_public_git": true,
+  "negative_claims": {
+    "same_original_official_deployment_proven": false,
+    "original_gate_condition_native_execution_proven": false,
+    "actual_move_or_dialogue_or_warp_executed": false,
+    "old_original_RAR_parent_reread_during_this_unit": false,
+    "original_ITEM01_94_column_master_reextracted_from_private_in_this_unit": false,
+    "original_TW1_100406_globally_absent_proven": false
+  },
+  "project_status": {
+    "stageA": "7 PARTIAL + 2 OPEN",
+    "stageB": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "highest_next": "Select a distinct source-qualified previously not specifically integrated original 2D content family. Stop repeated code/sprite candidate microtasks without new original files or content relation.",
+  "this_acceptance_receipt_commit_own_CI": "NOT_PRECLAIMED; verify after writing it"
+}
