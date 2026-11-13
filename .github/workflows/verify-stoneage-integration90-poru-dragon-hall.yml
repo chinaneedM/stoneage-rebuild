@@ -1,0 +1,26 @@
+name: Verify StoneAge INTEGRATION90 Poru original NPC/DAT/TW1 2D
+on:
+  push:
+    branches: [main, 'agent/stoneage-integration90-*']
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION90-PORU-DRAGON-HALL-SOURCE-2D-R1.json'
+      - 'tests/test_stoneage_integration90_poru_dragon_hall.py'
+      - '.github/workflows/verify-stoneage-integration90-poru-dragon-hall.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION90-PORU-DRAGON-HALL-SOURCE-2D-R1.json'
+      - 'tests/test_stoneage_integration90_poru_dragon_hall.py'
+      - '.github/workflows/verify-stoneage-integration90-poru-dragon-hall.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-2d-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Replay original 24 static rows and separate TW1 2D contracts
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration90_poru_dragon_hall.py' -v
