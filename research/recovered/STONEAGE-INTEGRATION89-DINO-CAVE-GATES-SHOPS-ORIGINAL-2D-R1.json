@@ -1,0 +1,1729 @@
+{
+  "schema": "stoneage.integration89.original_dino_ranch_material_cave_gate_shops_tw10_2d.r1",
+  "date": "2026-11-13",
+  "remote_source": {
+    "repository": "chinaneedM/stoneage-rebuild",
+    "base_main_HEAD": "324c303afa6209fb4da8e665720b7697a6897798",
+    "base_tree": "fcbf782adf1270ce9b52536eed306c2c65b67a0c",
+    "actions_at_revalidation": "26/26 success",
+    "open_PR_at_start": 0,
+    "original_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_original_bytes": 2709173
+  },
+  "preservation_source": {
+    "original_class": "LATER_COMMUNITY_MIXED25_CP950_PRIVATE_NPC_ARCHIVE_NOT_EARLY_OFFICIAL",
+    "original_private_NPC_2205_ZIP_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "original_private_NPC_zip_all_2205_members_crc_verified": true,
+    "original_relative_npc_source_path": "npc/genout/bait_01.create",
+    "original_source_file_bytes": 5743,
+    "original_source_file_sha256": "d98e0863def90f5c99240308312c8475aba05ceb329e7efae93f42ca7e49d570",
+    "original_source_file_crc32": "9cb24282",
+    "prior_source_public_CHAR01_index_Git_blob_SHA1": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "source_16_original_same_archive_direct_arg_file_bytes_and_sha_verified": true,
+    "private_original_TW1_PET07_gallery_sha256": "58e8ee4ff5165ed2f61663d67ae1cd0a8183622fa3375c480232784bfce9dc76",
+    "private_original_TW1_PET07_RD_source_report_sha256": "b5ad2e58930afbe90604a1d72e3c17ab0adea446e7c118be775e3973315e6cb4",
+    "prior_original_TW1_source_public_PET07_index_Git_blob_SHA1": "0b5f81b41a642025ab53a12884638fdee887470e",
+    "prior_mixed25_ITEM01_shard_02_Git_blob_SHA1": "b91bc8335db508998f4595144ce371979ea8c849",
+    "prior_mixed25_ITEM01_shard_05_Git_blob_SHA1": "361dfc5f626a5f2683dd7a5ca224f2854caf5d7c",
+    "private_observer_ZIP_sha256": "a43da4967959afbf593bf3e9319421d13b752c1082fd4d103ab94ace8d4e9090",
+    "private_observer_zip_bytes": 1482192,
+    "private_observer_Library_path": "/石器时代/StoneAge-INTEGRATION89-DINO-RANCH-CAVE-original-2D-private.zip",
+    "private_Library_independent_downloaded_SHA_verified": true,
+    "private_observer_ZIP_two_members_crc_verified": true
+  },
+  "source_counts": {
+    "original_CREATE_blocks": 35,
+    "original_floors": [
+      200,
+      201,
+      20901,
+      20902,
+      20903
+    ],
+    "original_function_counts": {
+      "npcgen_warpman": 3,
+      "npcgen_signboard": 7,
+      "npcgen_man": 20,
+      "npcgen_dengon": 1,
+      "npcgen_shop": 1,
+      "npcgen_limitshop": 3
+    },
+    "original_source_arg_file_refs": 16,
+    "original_unique_referenced_arg_files": 16,
+    "original_guard_warpman_files": 3,
+    "original_shop_arg_files": 4,
+    "original_noninteractive_NPC_function_records": 20,
+    "original_same_archive_itemsets_verified_IDs": [
+      2595,
+      2596,
+      12856
+    ],
+    "original_other_source_TW1_numeric_sprite_graphic_matches": 18,
+    "original_TW1_graphic_groups": 10,
+    "source_TW1_public_selected_action_direction0_animation_records": 30,
+    "source_TW1_public_selected_action_direction0_frame_occurrences": 250,
+    "source_TW1_public_selected_unique_bitmaps": 168,
+    "private_OLD_PET07_gallery_all_directions_sequences": 93,
+    "private_OLD_PET07_gallery_all_directions_frames": 852,
+    "private_OLD_PET07_gallery_distinct_embedded_PNG_candidates": 532,
+    "private_gallery_selected_bitmaps_exact_PNG_digest_matches_latest_source_report": 116,
+    "private_gallery_selected_bitmaps_old_palette_candidate_png_digest_differs": 52,
+    "private_gallery_other_bitmap_PNG_not_in_newer_selected_source_report": 364,
+    "new_original_RD_byte_blocks_decoded": 0,
+    "new_original_artworks_discovered": 0,
+    "original_game_client_runtime_executed": 0
+  },
+  "original_35_source_CREATE_rows": [
+    {
+      "ordinal": 0,
+      "original_byte_range": [
+        117,
+        293
+      ],
+      "original_CREATE_block_sha256": "4c8fed3d5f87f9b58fee8d2374997d5f89483a909262f34640cb1863b31dbb7d",
+      "source_floor": 200,
+      "source_graphic_numeric": 16207,
+      "source_borncorner": [
+        337,
+        653,
+        337,
+        653
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 5,
+      "source_npc_function": "npcgen_warpman",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          11
+        ]
+      ],
+      "original_name_utf8_sha256": "88a48b5c2e5c9663d9728813111ee61d387701171a6682b15076bc0fe5a3d8ef",
+      "exact_same_archive_reference_paths_and_sha256": [
+        [
+          "genout/wpm_200_337_653",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "48b353b0559c4dccfd6d555f112498b3c900447ca6b8d9b9fbb2862e292b15c6"
+        ]
+      ]
+    },
+    {
+      "ordinal": 1,
+      "original_byte_range": [
+        302,
+        468
+      ],
+      "original_CREATE_block_sha256": "4bd4af47316748a1a769d8de055666e1347a11141ff3433f482a83a9e075fd35",
+      "source_floor": 20903,
+      "source_graphic_numeric": 10062,
+      "source_borncorner": [
+        27,
+        24,
+        27,
+        24
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 6,
+      "source_npc_function": "npcgen_signboard",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          29
+        ]
+      ],
+      "original_name_utf8_sha256": "0072da457a093523a80caf31d81cd12098c58b2c5cbe940135d5337b5fdc7af8",
+      "exact_same_archive_reference_paths_and_sha256": [
+        [
+          "genout/signb_20903_27_24",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "f9b7d29d9d05592c87950a8a0b466037c2da329452e209865f652dc9cfe8500a"
+        ]
+      ]
+    },
+    {
+      "ordinal": 2,
+      "original_byte_range": [
+        477,
+        643
+      ],
+      "original_CREATE_block_sha256": "c988577c4cc726e3cc087ba1f055506ef56f61ad45da4e04e5c9cbe73480ddbc",
+      "source_floor": 20902,
+      "source_graphic_numeric": 10062,
+      "source_borncorner": [
+        40,
+        12,
+        40,
+        12
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 6,
+      "source_npc_function": "npcgen_signboard",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          29
+        ]
+      ],
+      "original_name_utf8_sha256": "0072da457a093523a80caf31d81cd12098c58b2c5cbe940135d5337b5fdc7af8",
+      "exact_same_archive_reference_paths_and_sha256": [
+        [
+          "genout/signb_20902_40_12",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "f9b7d29d9d05592c87950a8a0b466037c2da329452e209865f652dc9cfe8500a"
+        ]
+      ]
+    },
+    {
+      "ordinal": 3,
+      "original_byte_range": [
+        652,
+        826
+      ],
+      "original_CREATE_block_sha256": "68e6b9cc2a7ee99b3841fbab61565c19858be282664d9ca03e829c539aec7560",
+      "source_floor": 20901,
+      "source_graphic_numeric": 16037,
+      "source_borncorner": [
+        21,
+        13,
+        21,
+        13
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 5,
+      "source_npc_function": "npcgen_warpman",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          11
+        ]
+      ],
+      "original_name_utf8_sha256": "a38dc761ef95a94426c0472348d0c5a76c4b3d3f7ffb3cad96cb14ce46a98cb3",
+      "exact_same_archive_reference_paths_and_sha256": [
+        [
+          "genout/wpm_20901_21_13",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "3c801f29d6227bca866f330d0b76c4d182709bfb2c11e4703f25ad003e5bbd98"
+        ]
+      ]
+    },
+    {
+      "ordinal": 4,
+      "original_byte_range": [
+        835,
+        1006
+      ],
+      "original_CREATE_block_sha256": "77ff05f77b251b928c3aefd04c4814003a94857e2a683afb95799be3eb1eff0b",
+      "source_floor": 20902,
+      "source_graphic_numeric": 16037,
+      "source_borncorner": [
+        54,
+        50,
+        54,
+        50
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 5,
+      "source_npc_function": "npcgen_man",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_utf8_sha256": "a38dc761ef95a94426c0472348d0c5a76c4b3d3f7ffb3cad96cb14ce46a98cb3",
+      "exact_same_archive_reference_paths_and_sha256": [
+        [
+          "genout/msg_20902_54_50",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "99115db8d78108f449cf23181a0b4dc61abc21959715dabeba02ed684f66a6a2"
+        ]
+      ]
+    },
+    {
+      "ordinal": 5,
+      "original_byte_range": [
+        1015,
+        1189
+      ],
+      "original_CREATE_block_sha256": "d5a5f8c313068d8e570720477b597b9280ad80630d919febaf71731e2f352f0f",
+      "source_floor": 20901,
+      "source_graphic_numeric": 16048,
+      "source_borncorner": [
+        16,
+        17,
+        16,
+        17
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 4,
+      "source_npc_function": "npcgen_warpman",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          11
+        ]
+      ],
+      "original_name_utf8_sha256": "1369f5ce566472ae173fe6df294e83c8eb109e6469e051e2db94531f15175f20",
+      "exact_same_archive_reference_paths_and_sha256": [
+        [
+          "genout/wpm_20901_16_17",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "dfbd420817c4e661cab767d1019bf0854430c6a17132ffbdec718e09c8fc4514"
+        ]
+      ]
+    },
+    {
+      "ordinal": 6,
+      "original_byte_range": [
+        1198,
+        1363
+      ],
+      "original_CREATE_block_sha256": "355db46f2a79e6bef75d6086e3eb8870adefd3f0863bcb6aa758e8ea0339e50b",
+      "source_floor": 20903,
+      "source_graphic_numeric": 16048,
+      "source_borncorner": [
+        5,
+        4,
+        5,
+        4
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 4,
+      "source_npc_function": "npcgen_man",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_utf8_sha256": "1369f5ce566472ae173fe6df294e83c8eb109e6469e051e2db94531f15175f20",
+      "exact_same_archive_reference_paths_and_sha256": [
+        [
+          "genout/msg_20903_5_4",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "1330735cac1b0c184d521b7649e35dfd59dfa49bce5585e02ad9461f2aded12a"
+        ]
+      ]
+    },
+    {
+      "ordinal": 7,
+      "original_byte_range": [
+        1372,
+        1534
+      ],
+      "original_CREATE_block_sha256": "4f2db5caf72cf57bfef25b9b5968495c7053909d8f17585e5d48fdf79e6b46ad",
+      "source_floor": 201,
+      "source_graphic_numeric": 10062,
+      "source_borncorner": [
+        12,
+        20,
+        12,
+        20
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 6,
+      "source_npc_function": "npcgen_signboard",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          29
+        ]
+      ],
+      "original_name_utf8_sha256": "0072da457a093523a80caf31d81cd12098c58b2c5cbe940135d5337b5fdc7af8",
+      "exact_same_archive_reference_paths_and_sha256": [
+        [
+          "genout/signb_201_12_20",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "117a140afd72ce776f92499991cf1f76c46bad86dc4c13dfdbc487184f271f6e"
+        ]
+      ]
+    },
+    {
+      "ordinal": 8,
+      "original_byte_range": [
+        1543,
+        1705
+      ],
+      "original_CREATE_block_sha256": "4bc8ac23d8278eca4f5c4e170d6571f3c2ccfacb693c51cd932f011caa17bc2e",
+      "source_floor": 201,
+      "source_graphic_numeric": 10062,
+      "source_borncorner": [
+        16,
+        17,
+        16,
+        17
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 6,
+      "source_npc_function": "npcgen_signboard",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          29
+        ]
+      ],
+      "original_name_utf8_sha256": "0072da457a093523a80caf31d81cd12098c58b2c5cbe940135d5337b5fdc7af8",
+      "exact_same_archive_reference_paths_and_sha256": [
+        [
+          "genout/signb_201_16_17",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "65dd5bacaa8512f3339c32d85b6da7c14e5227d26cba0a0afb146657a1198602"
+        ]
+      ]
+    },
+    {
+      "ordinal": 9,
+      "original_byte_range": [
+        1714,
+        1853
+      ],
+      "original_CREATE_block_sha256": "0cbc5664b4c229c9a9390ef4e6901f5eefdcbde5d57f672a5fb1e29b272d5adf",
+      "source_floor": 201,
+      "source_graphic_numeric": 10062,
+      "source_borncorner": [
+        17,
+        27,
+        17,
+        27
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 6,
+      "source_npc_function": "npcgen_dengon",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          5
+        ]
+      ],
+      "original_name_utf8_sha256": "c256f7f0d04d7ea1835ffbf325402931ba9f76558a17134eb4492777a014e284",
+      "exact_same_archive_reference_paths_and_sha256": []
+    },
+    {
+      "ordinal": 10,
+      "original_byte_range": [
+        1862,
+        2021
+      ],
+      "original_CREATE_block_sha256": "2c001dd576a030ecea2bc4473e5aeedf319558f3eba7c9604120732bb71e6e99",
+      "source_floor": 201,
+      "source_graphic_numeric": 10063,
+      "source_borncorner": [
+        9,
+        10,
+        9,
+        10
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 4,
+      "source_npc_function": "npcgen_signboard",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          29
+        ]
+      ],
+      "original_name_utf8_sha256": "0072da457a093523a80caf31d81cd12098c58b2c5cbe940135d5337b5fdc7af8",
+      "exact_same_archive_reference_paths_and_sha256": [
+        [
+          "genout/signb_201_9_10",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "69c3d687c12610c7c1ee3182030289fe1499770918101d99cd2bd29370cc4801"
+        ]
+      ]
+    },
+    {
+      "ordinal": 11,
+      "original_byte_range": [
+        2030,
+        2192
+      ],
+      "original_CREATE_block_sha256": "a204bcc075387a986426aad8db6ff4756b63ed5855fbcfda31bc16957e98c5ec",
+      "source_floor": 201,
+      "source_graphic_numeric": 10063,
+      "source_borncorner": [
+        11,
+        10,
+        11,
+        10
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 4,
+      "source_npc_function": "npcgen_signboard",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          29
+        ]
+      ],
+      "original_name_utf8_sha256": "0072da457a093523a80caf31d81cd12098c58b2c5cbe940135d5337b5fdc7af8",
+      "exact_same_archive_reference_paths_and_sha256": [
+        [
+          "genout/signb_201_11_10",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "55ddfa071f545cf82057e535f92c8bf9bffe126d4a8528b4aea2c97845b8c836"
+        ]
+      ]
+    },
+    {
+      "ordinal": 12,
+      "original_byte_range": [
+        2201,
+        2369
+      ],
+      "original_CREATE_block_sha256": "62d8071248f46928a6e6109b1918384b288657863dabcc70da273ac6e9442676",
+      "source_floor": 200,
+      "source_graphic_numeric": 10062,
+      "source_borncorner": [
+        330,
+        643,
+        330,
+        643
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 6,
+      "source_npc_function": "npcgen_signboard",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          29
+        ]
+      ],
+      "original_name_utf8_sha256": "0072da457a093523a80caf31d81cd12098c58b2c5cbe940135d5337b5fdc7af8",
+      "exact_same_archive_reference_paths_and_sha256": [
+        [
+          "genout/signb_200_330_643",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "a14e44d8e181baadb2ad94ad53cf0594e1c76e9fc77c7768c4abfe0b28c18cc6"
+        ]
+      ]
+    },
+    {
+      "ordinal": 13,
+      "original_byte_range": [
+        2378,
+        2516
+      ],
+      "original_CREATE_block_sha256": "1659d853b707b8be129b93890cd57ef3ed1ba63916973e20c8131a3a5d03c09d",
+      "source_floor": 200,
+      "source_graphic_numeric": 100271,
+      "source_borncorner": [
+        321,
+        647,
+        321,
+        647
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 4,
+      "source_npc_function": "npcgen_man",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_utf8_sha256": "c56e0f652a0965c9488b2f08649f19aa35436c334b0db1a868531cf291b44912",
+      "exact_same_archive_reference_paths_and_sha256": []
+    },
+    {
+      "ordinal": 14,
+      "original_byte_range": [
+        2525,
+        2663
+      ],
+      "original_CREATE_block_sha256": "260aa553baf3dba047aba0d3e7861d98318bbe908794d3cf99f714780911a2e8",
+      "source_floor": 200,
+      "source_graphic_numeric": 100271,
+      "source_borncorner": [
+        323,
+        649,
+        323,
+        649
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 6,
+      "source_npc_function": "npcgen_man",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_utf8_sha256": "c56e0f652a0965c9488b2f08649f19aa35436c334b0db1a868531cf291b44912",
+      "exact_same_archive_reference_paths_and_sha256": []
+    },
+    {
+      "ordinal": 15,
+      "original_byte_range": [
+        2672,
+        2816
+      ],
+      "original_CREATE_block_sha256": "32f2287f43332f64357c243261a3a9b18b27db3696335b5beff905f6c8c9b722",
+      "source_floor": 200,
+      "source_graphic_numeric": 100335,
+      "source_borncorner": [
+        323,
+        653,
+        323,
+        653
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 5,
+      "source_npc_function": "npcgen_man",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_utf8_sha256": "767298e0984f8211115e8d9c82b9b6855ff54beedadd7151c0ec80cc8ca0fe0a",
+      "exact_same_archive_reference_paths_and_sha256": []
+    },
+    {
+      "ordinal": 16,
+      "original_byte_range": [
+        2825,
+        2969
+      ],
+      "original_CREATE_block_sha256": "ed54d0c87be9e23f25eccd2316236922c4ebfc7ac3a6c585c6cbd0514fadc3a2",
+      "source_floor": 200,
+      "source_graphic_numeric": 100335,
+      "source_borncorner": [
+        321,
+        655,
+        321,
+        655
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 2,
+      "source_npc_function": "npcgen_man",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_utf8_sha256": "767298e0984f8211115e8d9c82b9b6855ff54beedadd7151c0ec80cc8ca0fe0a",
+      "exact_same_archive_reference_paths_and_sha256": []
+    },
+    {
+      "ordinal": 17,
+      "original_byte_range": [
+        2978,
+        3122
+      ],
+      "original_CREATE_block_sha256": "b174d6d9dea0efb7ec9e0746f85ff052b9bd35f645ebcd7e68a8c12a867a8046",
+      "source_floor": 200,
+      "source_graphic_numeric": 100335,
+      "source_borncorner": [
+        325,
+        656,
+        325,
+        656
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 0,
+      "source_npc_function": "npcgen_man",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_utf8_sha256": "767298e0984f8211115e8d9c82b9b6855ff54beedadd7151c0ec80cc8ca0fe0a",
+      "exact_same_archive_reference_paths_and_sha256": []
+    },
+    {
+      "ordinal": 18,
+      "original_byte_range": [
+        3131,
+        3275
+      ],
+      "original_CREATE_block_sha256": "a954cbbcdd4c468ab3503224a35a577f8794beb0f1309f363799446c3a92cd2f",
+      "source_floor": 200,
+      "source_graphic_numeric": 100368,
+      "source_borncorner": [
+        325,
+        660,
+        325,
+        660
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 4,
+      "source_npc_function": "npcgen_man",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_utf8_sha256": "a12498bb9ccee4fb75af80a99b99bdc534f6ee4583527b225bc28f538bf0e19e",
+      "exact_same_archive_reference_paths_and_sha256": []
+    },
+    {
+      "ordinal": 19,
+      "original_byte_range": [
+        3284,
+        3428
+      ],
+      "original_CREATE_block_sha256": "82a72d3875905a518bff7a77d23997754ea3c91d7825e682d41a55f53673c4eb",
+      "source_floor": 200,
+      "source_graphic_numeric": 100368,
+      "source_borncorner": [
+        322,
+        659,
+        322,
+        659
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 7,
+      "source_npc_function": "npcgen_man",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_utf8_sha256": "a12498bb9ccee4fb75af80a99b99bdc534f6ee4583527b225bc28f538bf0e19e",
+      "exact_same_archive_reference_paths_and_sha256": []
+    },
+    {
+      "ordinal": 20,
+      "original_byte_range": [
+        3437,
+        3581
+      ],
+      "original_CREATE_block_sha256": "1e87532af3ff9d006fc14a1b6cbfc2072a7bc1a2c9290f5166f1980e3a899d76",
+      "source_floor": 200,
+      "source_graphic_numeric": 100368,
+      "source_borncorner": [
+        320,
+        662,
+        320,
+        662
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 1,
+      "source_npc_function": "npcgen_man",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_utf8_sha256": "a12498bb9ccee4fb75af80a99b99bdc534f6ee4583527b225bc28f538bf0e19e",
+      "exact_same_archive_reference_paths_and_sha256": []
+    },
+    {
+      "ordinal": 21,
+      "original_byte_range": [
+        3590,
+        3724
+      ],
+      "original_CREATE_block_sha256": "618e8b8b322b19029d9a1cb4358e29f3f42309617239418f7b1d09d88e374550",
+      "source_floor": 201,
+      "source_graphic_numeric": 100250,
+      "source_borncorner": [
+        15,
+        31,
+        15,
+        31
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 5,
+      "source_npc_function": "npcgen_man",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_utf8_sha256": "4a4a823d5620234f122b98c22286d2bec299f03fc2726ca414edb94ea506577a",
+      "exact_same_archive_reference_paths_and_sha256": []
+    },
+    {
+      "ordinal": 22,
+      "original_byte_range": [
+        3733,
+        3875
+      ],
+      "original_CREATE_block_sha256": "40cab9a1bf09274b2ec7564e6c75145b2c07e19fe963d19ec9622869053783f4",
+      "source_floor": 201,
+      "source_graphic_numeric": 100251,
+      "source_borncorner": [
+        17,
+        32,
+        17,
+        32
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 3,
+      "source_npc_function": "npcgen_man",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_utf8_sha256": "2fed6b8c95e90cab6d45c7bbf2f454986d2d7d60a158245bf59740273bc7d553",
+      "exact_same_archive_reference_paths_and_sha256": []
+    },
+    {
+      "ordinal": 23,
+      "original_byte_range": [
+        3884,
+        4022
+      ],
+      "original_CREATE_block_sha256": "f0917e1fcf47b5be96919f1cf55e896b3e4ac1380890b75983486fd76d772f5e",
+      "source_floor": 201,
+      "source_graphic_numeric": 100252,
+      "source_borncorner": [
+        19,
+        31,
+        19,
+        31
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 5,
+      "source_npc_function": "npcgen_man",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_utf8_sha256": "5420c50f3ec8a6e68de02286b4842733eed0b438de0d6de9b4c8600f36aae046",
+      "exact_same_archive_reference_paths_and_sha256": []
+    },
+    {
+      "ordinal": 24,
+      "original_byte_range": [
+        4031,
+        4169
+      ],
+      "original_CREATE_block_sha256": "ba0b3458b0b57de8a5f12ec69b62513a11bb968daeb05196d784fa2682f065b0",
+      "source_floor": 201,
+      "source_graphic_numeric": 100252,
+      "source_borncorner": [
+        17,
+        30,
+        17,
+        30
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 7,
+      "source_npc_function": "npcgen_man",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_utf8_sha256": "5420c50f3ec8a6e68de02286b4842733eed0b438de0d6de9b4c8600f36aae046",
+      "exact_same_archive_reference_paths_and_sha256": []
+    },
+    {
+      "ordinal": 25,
+      "original_byte_range": [
+        4178,
+        4312
+      ],
+      "original_CREATE_block_sha256": "c8467368304afb0ba9e1e3ea05fa4ff99a9998211d5f970034c2097d938318c4",
+      "source_floor": 201,
+      "source_graphic_numeric": 100250,
+      "source_borncorner": [
+        21,
+        32,
+        21,
+        32
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 4,
+      "source_npc_function": "npcgen_man",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_utf8_sha256": "4a4a823d5620234f122b98c22286d2bec299f03fc2726ca414edb94ea506577a",
+      "exact_same_archive_reference_paths_and_sha256": []
+    },
+    {
+      "ordinal": 26,
+      "original_byte_range": [
+        4321,
+        4453
+      ],
+      "original_CREATE_block_sha256": "ac2080b80de3c84135996c1ef2749a45c1106174290c33d776091d1343f00551",
+      "source_floor": 201,
+      "source_graphic_numeric": 100275,
+      "source_borncorner": [
+        15,
+        9,
+        15,
+        9
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 5,
+      "source_npc_function": "npcgen_man",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_utf8_sha256": "fffcc87d9dd0f8a95297211f478a898ca5e2056629dc48e89696865fe50bf639",
+      "exact_same_archive_reference_paths_and_sha256": []
+    },
+    {
+      "ordinal": 27,
+      "original_byte_range": [
+        4462,
+        4598
+      ],
+      "original_CREATE_block_sha256": "8916a0b0d1df0e51741a75307e5ea5bd0182d1e1677a2d2cb2d379ac35974c31",
+      "source_floor": 201,
+      "source_graphic_numeric": 100276,
+      "source_borncorner": [
+        17,
+        10,
+        17,
+        10
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 4,
+      "source_npc_function": "npcgen_man",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_utf8_sha256": "c7e86ca9365a25b9a979a018ee6f08446cac8dd479b2a1be166226d96a0de612",
+      "exact_same_archive_reference_paths_and_sha256": []
+    },
+    {
+      "ordinal": 28,
+      "original_byte_range": [
+        4607,
+        4745
+      ],
+      "original_CREATE_block_sha256": "2db759ecfa15cf4a003708d18be4f43a45f71534340dfb3797de996996b1998c",
+      "source_floor": 201,
+      "source_graphic_numeric": 100278,
+      "source_borncorner": [
+        20,
+        8,
+        20,
+        8
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 2,
+      "source_npc_function": "npcgen_man",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_utf8_sha256": "3db7ff3da5c89f3ad019e6c77a0581341f8e4d76cd95dd77897bfc685292d969",
+      "exact_same_archive_reference_paths_and_sha256": []
+    },
+    {
+      "ordinal": 29,
+      "original_byte_range": [
+        4754,
+        4892
+      ],
+      "original_CREATE_block_sha256": "3d303e7011fb3feb27ba013a4ff9b6cc45ffd9c288cbe85ebb23369085bf8ec7",
+      "source_floor": 201,
+      "source_graphic_numeric": 100278,
+      "source_borncorner": [
+        17,
+        7,
+        17,
+        7
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 6,
+      "source_npc_function": "npcgen_man",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_utf8_sha256": "3db7ff3da5c89f3ad019e6c77a0581341f8e4d76cd95dd77897bfc685292d969",
+      "exact_same_archive_reference_paths_and_sha256": []
+    },
+    {
+      "ordinal": 30,
+      "original_byte_range": [
+        4901,
+        5037
+      ],
+      "original_CREATE_block_sha256": "3d3773d4de5d21655a7a7a188286b29a8bb4163aa50b6f16d08839ff14fc0d7f",
+      "source_floor": 201,
+      "source_graphic_numeric": 100393,
+      "source_borncorner": [
+        21,
+        10,
+        21,
+        10
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 6,
+      "source_npc_function": "npcgen_man",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_utf8_sha256": "f47afe737df9bd76caa1c6f46c88f48fb9a2315388c528fe8baf911cee8f1d43",
+      "exact_same_archive_reference_paths_and_sha256": []
+    },
+    {
+      "ordinal": 31,
+      "original_byte_range": [
+        5046,
+        5209
+      ],
+      "original_CREATE_block_sha256": "05c13dfd1195c49ffe45fd36586bb65ad9ec579023cd09ccc740df007a21839a",
+      "source_floor": 20901,
+      "source_graphic_numeric": 16021,
+      "source_borncorner": [
+        8,
+        19,
+        8,
+        19
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 0,
+      "source_npc_function": "npcgen_shop",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          8
+        ]
+      ],
+      "original_name_utf8_sha256": "7d4eb7f2be4ea5ed8e358cd74d18628c44dcd739809c57ced7064f26c1e4bd0f",
+      "exact_same_archive_reference_paths_and_sha256": [
+        [
+          "genout/ss_20901_8_19",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "4b79755678dd6a0bc70c11c5123b56105cbf9c6e2c9e8943c6678e2725fcc089"
+        ]
+      ]
+    },
+    {
+      "ordinal": 32,
+      "original_byte_range": [
+        5219,
+        5388
+      ],
+      "original_CREATE_block_sha256": "02ee24b3265987d5983f7e3d182af33883a100987f0cd11fc68d9edc4a955f70",
+      "source_floor": 20901,
+      "source_graphic_numeric": 16017,
+      "source_borncorner": [
+        44,
+        22,
+        44,
+        22
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 6,
+      "source_npc_function": "npcgen_limitshop",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          9
+        ]
+      ],
+      "original_name_utf8_sha256": "d7b383d6274ed49f92a7a189d821b2aa75b1b5f3445abee229e2442df86a51d9",
+      "exact_same_archive_reference_paths_and_sha256": [
+        [
+          "genout/lbis_20901_44_22",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "9cd008c822e42a1ca8a26db64569c1cbb295da04f8728bb20b36355af314f63d"
+        ]
+      ]
+    },
+    {
+      "ordinal": 33,
+      "original_byte_range": [
+        5398,
+        5564
+      ],
+      "original_CREATE_block_sha256": "e2dc6f3d09784bd7ea9fee23d89388f35a326d15ba8c736c548da479b6f77500",
+      "source_floor": 20902,
+      "source_graphic_numeric": 16019,
+      "source_borncorner": [
+        11,
+        4,
+        11,
+        4
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 4,
+      "source_npc_function": "npcgen_limitshop",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          9
+        ]
+      ],
+      "original_name_utf8_sha256": "d7b383d6274ed49f92a7a189d821b2aa75b1b5f3445abee229e2442df86a51d9",
+      "exact_same_archive_reference_paths_and_sha256": [
+        [
+          "genout/lbis_20902_11_4",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "081bb31a4692549b1ae21874b4ef1d7defefdba0d7d5945c4748e1df4eb67fbc"
+        ]
+      ]
+    },
+    {
+      "ordinal": 34,
+      "original_byte_range": [
+        5574,
+        5743
+      ],
+      "original_CREATE_block_sha256": "7ed8e72704bc52c9b9ae556ae5ba4a27b1e8735f433c90a1dbf62d3aefb43569",
+      "source_floor": 20903,
+      "source_graphic_numeric": 16019,
+      "source_borncorner": [
+        18,
+        19,
+        18,
+        19
+      ],
+      "source_borncenter": null,
+      "source_createnum": 1,
+      "source_dir": 4,
+      "source_npc_function": "npcgen_limitshop",
+      "same_source_template_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "same_source_template_candidates": [
+        [
+          "genout/npcgen.template",
+          9
+        ]
+      ],
+      "original_name_utf8_sha256": "d7b383d6274ed49f92a7a189d821b2aa75b1b5f3445abee229e2442df86a51d9",
+      "exact_same_archive_reference_paths_and_sha256": [
+        [
+          "genout/lbis_20903_18_19",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "f75cb67025dd2016362e8a9a4d9f62d42ffeaf364311d4faa9514c7829fbdaeb"
+        ]
+      ]
+    }
+  ],
+  "three_original_warpman_NPC_source_arguments": [
+    {
+      "ordinal": 0,
+      "source_floor": 200,
+      "source_xy": [
+        337,
+        653
+      ],
+      "original_arg": "genout/wpm_200_337_653",
+      "original_arg_SHA256": "48b353b0559c4dccfd6d555f112498b3c900447ca6b8d9b9fbb2862e292b15c6",
+      "literal_FREE": "LV>4",
+      "literal_WARP": [
+        20901,
+        0,
+        8
+      ],
+      "literal_MONEY": "-1"
+    },
+    {
+      "ordinal": 3,
+      "source_floor": 20901,
+      "source_xy": [
+        21,
+        13
+      ],
+      "original_arg": "genout/wpm_20901_21_13",
+      "original_arg_SHA256": "3c801f29d6227bca866f330d0b76c4d182709bfb2c11e4703f25ad003e5bbd98",
+      "literal_FREE": "ITEM=2595",
+      "literal_WARP": [
+        20902,
+        53,
+        51
+      ],
+      "literal_MONEY": "-1"
+    },
+    {
+      "ordinal": 5,
+      "source_floor": 20901,
+      "source_xy": [
+        16,
+        17
+      ],
+      "original_arg": "genout/wpm_20901_16_17",
+      "original_arg_SHA256": "dfbd420817c4e661cab767d1019bf0854430c6a17132ffbdec718e09c8fc4514",
+      "literal_FREE": "ITEM=2596",
+      "literal_WARP": [
+        20903,
+        5,
+        5
+      ],
+      "literal_MONEY": "-1"
+    }
+  ],
+  "four_original_shop_and_meat_purchase_arg_literals": [
+    {
+      "ordinal": 31,
+      "source_floor": 20901,
+      "source_xy": [
+        8,
+        19
+      ],
+      "original_arg": "genout/ss_20901_8_19",
+      "original_arg_SHA256": "4b79755678dd6a0bc70c11c5123b56105cbf9c6e2c9e8943c6678e2725fcc089",
+      "literal_ItemList": "12856",
+      "literal_LimitItemNo": "12856",
+      "literal_special_rate": "0.6",
+      "literal_sell_rate": "0.6"
+    },
+    {
+      "ordinal": 32,
+      "source_floor": 20901,
+      "source_xy": [
+        44,
+        22
+      ],
+      "original_arg": "genout/lbis_20901_44_22",
+      "original_arg_SHA256": "9cd008c822e42a1ca8a26db64569c1cbb295da04f8728bb20b36355af314f63d",
+      "literal_ItemList": null,
+      "literal_LimitItemNo": "1234-1249",
+      "literal_special_rate": "1.0",
+      "literal_sell_rate": "0.8"
+    },
+    {
+      "ordinal": 33,
+      "source_floor": 20902,
+      "source_xy": [
+        11,
+        4
+      ],
+      "original_arg": "genout/lbis_20902_11_4",
+      "original_arg_SHA256": "081bb31a4692549b1ae21874b4ef1d7defefdba0d7d5945c4748e1df4eb67fbc",
+      "literal_ItemList": null,
+      "literal_LimitItemNo": "1234-1249",
+      "literal_special_rate": "1.0",
+      "literal_sell_rate": "0.7"
+    },
+    {
+      "ordinal": 34,
+      "source_floor": 20903,
+      "source_xy": [
+        18,
+        19
+      ],
+      "original_arg": "genout/lbis_20903_18_19",
+      "original_arg_SHA256": "f75cb67025dd2016362e8a9a4d9f62d42ffeaf364311d4faa9514c7829fbdaeb",
+      "literal_ItemList": null,
+      "literal_LimitItemNo": "1234-1249",
+      "literal_special_rate": "1.0",
+      "literal_sell_rate": "0.6"
+    }
+  ],
+  "three_existing_original_itemset_full_row_SHA_and_different_carrier_icon_candidates": [
+    {
+      "original_ID": 2595,
+      "prior_source_shard": "research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-02-R1.json",
+      "source_a_original_94_field_row_sha256": "66151dc50f21a28edb7adef6c36a5cef6fc082c78739cc1405a526d498f0bf85",
+      "source_b_original_94_field_row_sha256": "66151dc50f21a28edb7adef6c36a5cef6fc082c78739cc1405a526d498f0bf85",
+      "same_archive_mixed25_original_image_alias": 22114,
+      "original_B_cost_literal": "10",
+      "original_B_type_literal": "8",
+      "original_B_level_literal": "0",
+      "different_carrier_TW1_original_pixel_qualification_from_prior_ITEM01": "REAL_RD_DECODED_CROSS_CARRIER",
+      "original_changed_field_numbers_between_two_mixed25_itemsets": []
+    },
+    {
+      "original_ID": 2596,
+      "prior_source_shard": "research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-02-R1.json",
+      "source_a_original_94_field_row_sha256": "3e4a6ec27c7c5829732a9b1b1314bdfeca4f7ac8fba570f977278d361c664c37",
+      "source_b_original_94_field_row_sha256": "3e4a6ec27c7c5829732a9b1b1314bdfeca4f7ac8fba570f977278d361c664c37",
+      "same_archive_mixed25_original_image_alias": 22118,
+      "original_B_cost_literal": "10",
+      "original_B_type_literal": "8",
+      "original_B_level_literal": "0",
+      "different_carrier_TW1_original_pixel_qualification_from_prior_ITEM01": "REAL_RD_DECODED_CROSS_CARRIER",
+      "original_changed_field_numbers_between_two_mixed25_itemsets": []
+    },
+    {
+      "original_ID": 12856,
+      "prior_source_shard": "research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-05-R1.json",
+      "source_a_original_94_field_row_sha256": "b9626bf6ad49c89ffc67b004ded89df812282518c6a8e96cb478038fa90563fa",
+      "source_b_original_94_field_row_sha256": "b9626bf6ad49c89ffc67b004ded89df812282518c6a8e96cb478038fa90563fa",
+      "same_archive_mixed25_original_image_alias": 24045,
+      "original_B_cost_literal": "10",
+      "original_B_type_literal": "20",
+      "original_B_level_literal": "0",
+      "different_carrier_TW1_original_pixel_qualification_from_prior_ITEM01": "REAL_RD_DECODED_CROSS_CARRIER",
+      "original_changed_field_numbers_between_two_mixed25_itemsets": []
+    }
+  ],
+  "ten_graphic_number_cross_carrier_2D_source_groups": [
+    {
+      "same_number_cross_carrier_source_graphic": 100250,
+      "mixed25_original_CONFIG_block_ordinals": [
+        21,
+        25
+      ],
+      "separate_TW1_original_SPR_source_index": 240,
+      "separate_TW1_full_SPR_group_SHA256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "TW1_source_total_animation_records": 56,
+      "selected_source_action_direction0_frame_occurrences": 19,
+      "selected_source_action_direction0_digest_records": [
+        [
+          0,
+          0,
+          9,
+          "d987dfc4df73cd6c66a40d97a5b307583b80cbe86bba8971746061fb12cbdde3",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "683541bd6f79171be4bcea1b2d70d36aa6e5f4b77376704ff9e80028e1d48725",
+          500
+        ],
+        [
+          1,
+          0,
+          4,
+          "39cf8d726c7d9e4a6d758f9bfe9e82acd0e059ce65aac1c0601d623b2cd83a64",
+          100
+        ]
+      ],
+      "selected_source_distinct_original_bitmap_count": 16,
+      "actual_private_previous_gallery_png_SHA_qualification": "OLDER_PRIVATE_GALLERY_PALETTE_PNG_SHA_DIFFERS_FROM_NEWER_TW1_SOURCE_RECEIPT"
+    },
+    {
+      "same_number_cross_carrier_source_graphic": 100251,
+      "mixed25_original_CONFIG_block_ordinals": [
+        22
+      ],
+      "separate_TW1_original_SPR_source_index": 241,
+      "separate_TW1_full_SPR_group_SHA256": "073278ba6ae1e623eea969deef11f99fd9be8b995af332506e830bd046c86764",
+      "TW1_source_total_animation_records": 56,
+      "selected_source_action_direction0_frame_occurrences": 19,
+      "selected_source_action_direction0_digest_records": [
+        [
+          0,
+          0,
+          9,
+          "9cb09f9cddf45f8da6fdf8f2fb51167b157d73ca8bc446f9b2a5bab9a06ae23c",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "2b7728dda6a4be74fbc21a2d3a73fb2eb9ef0a200a878d2df378caa652cdd5d9",
+          500
+        ],
+        [
+          1,
+          0,
+          4,
+          "0c09afc38255d85b07e241ffc09de931eb42989b3d43fe84a88daa4868a9c248",
+          100
+        ]
+      ],
+      "selected_source_distinct_original_bitmap_count": 16,
+      "actual_private_previous_gallery_png_SHA_qualification": "OLDER_PRIVATE_GALLERY_PALETTE_PNG_SHA_DIFFERS_FROM_NEWER_TW1_SOURCE_RECEIPT"
+    },
+    {
+      "same_number_cross_carrier_source_graphic": 100252,
+      "mixed25_original_CONFIG_block_ordinals": [
+        23,
+        24
+      ],
+      "separate_TW1_original_SPR_source_index": 242,
+      "separate_TW1_full_SPR_group_SHA256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "TW1_source_total_animation_records": 56,
+      "selected_source_action_direction0_frame_occurrences": 48,
+      "selected_source_action_direction0_digest_records": [
+        [
+          0,
+          0,
+          26,
+          "977a9aecf6369d2be2a9ba3836188561eb1bda28745745491d2aa41316c2e06d",
+          1400
+        ],
+        [
+          2,
+          0,
+          20,
+          "3575fbc312dc9581127232dfeb721aa59107203b815231367e6a67af5208dfeb",
+          1200
+        ],
+        [
+          1,
+          0,
+          2,
+          "931275ffd9e155a7e58e6373d8e8315709f527af2a1eedd08e07d05c4e345b44",
+          100
+        ]
+      ],
+      "selected_source_distinct_original_bitmap_count": 20,
+      "actual_private_previous_gallery_png_SHA_qualification": "OLDER_PRIVATE_GALLERY_PALETTE_PNG_SHA_DIFFERS_FROM_NEWER_TW1_SOURCE_RECEIPT"
+    },
+    {
+      "same_number_cross_carrier_source_graphic": 100271,
+      "mixed25_original_CONFIG_block_ordinals": [
+        13,
+        14
+      ],
+      "separate_TW1_original_SPR_source_index": 261,
+      "separate_TW1_full_SPR_group_SHA256": "9d82c6429e1d8c7cd9949d969c1728536942094e77ae1cfa78aee8b756b2eaa9",
+      "TW1_source_total_animation_records": 56,
+      "selected_source_action_direction0_frame_occurrences": 16,
+      "selected_source_action_direction0_digest_records": [
+        [
+          0,
+          0,
+          8,
+          "1c55be5e2b272d3f7a6b115358495d3eff07e5bdfbf38cf365f313cff82a6c84",
+          800
+        ],
+        [
+          2,
+          0,
+          6,
+          "3fc7b8da726aa2e76dfe231c995387ec1060cc67eed5a6f171f136c5fff910e7",
+          600
+        ],
+        [
+          1,
+          0,
+          2,
+          "a44596501f6bf0cb552ec44da5228f835a793347765dca4797e0d42f25467d19",
+          100
+        ]
+      ],
+      "selected_source_distinct_original_bitmap_count": 16,
+      "actual_private_previous_gallery_png_SHA_qualification": "OLDER_PRIVATE_GALLERY_PNG_SHA_MATCHES_NEWER_TW1_SOURCE_RECEIPT"
+    },
+    {
+      "same_number_cross_carrier_source_graphic": 100275,
+      "mixed25_original_CONFIG_block_ordinals": [
+        26
+      ],
+      "separate_TW1_original_SPR_source_index": 265,
+      "separate_TW1_full_SPR_group_SHA256": "5174e6e37c46fae81c7a3f29f9ebff0390886d661f61eb666aadf0a4eecab6c5",
+      "TW1_source_total_animation_records": 56,
+      "selected_source_action_direction0_frame_occurrences": 17,
+      "selected_source_action_direction0_digest_records": [
+        [
+          0,
+          0,
+          8,
+          "e7430ffa3ae9fc820762fbc1caf2c4cd08ddeec7c3642107ecbe4524fe6465cc",
+          750
+        ],
+        [
+          2,
+          0,
+          6,
+          "488af2cfd22d6aaa30952ac41d56c70972812d84a05adabd26efb3326b4fd952",
+          1000
+        ],
+        [
+          1,
+          0,
+          3,
+          "0ea8250046235f312f9cc979524277bb6921880c8c224b79a93dc767e8f43970",
+          300
+        ]
+      ],
+      "selected_source_distinct_original_bitmap_count": 17,
+      "actual_private_previous_gallery_png_SHA_qualification": "OLDER_PRIVATE_GALLERY_PNG_SHA_MATCHES_NEWER_TW1_SOURCE_RECEIPT"
+    },
+    {
+      "same_number_cross_carrier_source_graphic": 100276,
+      "mixed25_original_CONFIG_block_ordinals": [
+        27
+      ],
+      "separate_TW1_original_SPR_source_index": 266,
+      "separate_TW1_full_SPR_group_SHA256": "f323a47f5dba7c57cdaf05c1f3521514446a59a61827c670ee8bdf752732709d",
+      "TW1_source_total_animation_records": 56,
+      "selected_source_action_direction0_frame_occurrences": 17,
+      "selected_source_action_direction0_digest_records": [
+        [
+          0,
+          0,
+          8,
+          "5517b43671ac86c2bc4b442dbd0cfb7bd483315a064d42f34ebab1faa37fe5f5",
+          750
+        ],
+        [
+          2,
+          0,
+          6,
+          "b1561656db140dd91ae69e71b77d0e620e5551188df79a00cd441494ad26610e",
+          1000
+        ],
+        [
+          1,
+          0,
+          3,
+          "86b8a9738b9e8e8151cd87845b74d1972835aa00d028d64d197810d85eb45317",
+          300
+        ]
+      ],
+      "selected_source_distinct_original_bitmap_count": 17,
+      "actual_private_previous_gallery_png_SHA_qualification": "OLDER_PRIVATE_GALLERY_PNG_SHA_MATCHES_NEWER_TW1_SOURCE_RECEIPT"
+    },
+    {
+      "same_number_cross_carrier_source_graphic": 100278,
+      "mixed25_original_CONFIG_block_ordinals": [
+        28,
+        29
+      ],
+      "separate_TW1_original_SPR_source_index": 268,
+      "separate_TW1_full_SPR_group_SHA256": "c4d19f9248cb21fa8123eb7a997e3dd16314d46b9a8b63389092396f0ab233ce",
+      "TW1_source_total_animation_records": 56,
+      "selected_source_action_direction0_frame_occurrences": 26,
+      "selected_source_action_direction0_digest_records": [
+        [
+          0,
+          0,
+          16,
+          "69a234f03a15f31fbdf71987c5758941d5af611920c6c39c1e6cd25dc8301741",
+          1000
+        ],
+        [
+          2,
+          0,
+          7,
+          "9d897ea18ed956ee927ff62cb4abc80374559dd6de73fada9ad3221635ded49c",
+          1000
+        ],
+        [
+          1,
+          0,
+          3,
+          "5ef9679a72ece08a28c465aac7568ab0e67104d884e6d62d8126e00cd19f2aa6",
+          300
+        ]
+      ],
+      "selected_source_distinct_original_bitmap_count": 17,
+      "actual_private_previous_gallery_png_SHA_qualification": "OLDER_PRIVATE_GALLERY_PNG_SHA_MATCHES_NEWER_TW1_SOURCE_RECEIPT"
+    },
+    {
+      "same_number_cross_carrier_source_graphic": 100335,
+      "mixed25_original_CONFIG_block_ordinals": [
+        15,
+        16,
+        17
+      ],
+      "separate_TW1_original_SPR_source_index": 305,
+      "separate_TW1_full_SPR_group_SHA256": "edfba5be50c121be29c7e864505a9706fe331bfb4747c4f675f707562ac1e965",
+      "TW1_source_total_animation_records": 56,
+      "selected_source_action_direction0_frame_occurrences": 17,
+      "selected_source_action_direction0_digest_records": [
+        [
+          0,
+          0,
+          9,
+          "130b089fbf5abd1b2af9f9b764a7eb1fcfc48464715da78e74a5f1ebee1eacaa",
+          800
+        ],
+        [
+          2,
+          0,
+          6,
+          "71a07d8fceae9eecc690525185956bcc7ec5c06d52b68a368553d616841bd168",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "07670db89011fe768e883bd94e75ffc3778b2cba3422e84ec027db102ae65bed",
+          100
+        ]
+      ],
+      "selected_source_distinct_original_bitmap_count": 16,
+      "actual_private_previous_gallery_png_SHA_qualification": "OLDER_PRIVATE_GALLERY_PNG_SHA_MATCHES_NEWER_TW1_SOURCE_RECEIPT"
+    },
+    {
+      "same_number_cross_carrier_source_graphic": 100368,
+      "mixed25_original_CONFIG_block_ordinals": [
+        18,
+        19,
+        20
+      ],
+      "separate_TW1_original_SPR_source_index": 334,
+      "separate_TW1_full_SPR_group_SHA256": "d7f7f9881cf685bcccfa73587f4c36f531fc57b6df0a6f0021fb58f414f07bea",
+      "TW1_source_total_animation_records": 56,
+      "selected_source_action_direction0_frame_occurrences": 54,
+      "selected_source_action_direction0_digest_records": [
+        [
+          0,
+          0,
+          46,
+          "b5d03513bcb2cbe294f35b924856154c86c6630970b9b591f956a2ee6dd180ac",
+          1500
+        ],
+        [
+          2,
+          0,
+          6,
+          "0bd5fab270245d47f38e9e87738547fb31f85c8beb1d668180a2f34439e68dea",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "a8f6152923a3027278014d8f938ba05d81e2482fc041156d18b840f756e5bdbb",
+          100
+        ]
+      ],
+      "selected_source_distinct_original_bitmap_count": 16,
+      "actual_private_previous_gallery_png_SHA_qualification": "OLDER_PRIVATE_GALLERY_PNG_SHA_MATCHES_NEWER_TW1_SOURCE_RECEIPT"
+    },
+    {
+      "same_number_cross_carrier_source_graphic": 100393,
+      "mixed25_original_CONFIG_block_ordinals": [
+        30
+      ],
+      "separate_TW1_original_SPR_source_index": 359,
+      "separate_TW1_full_SPR_group_SHA256": "8616fba53e6a8b995577119cf22fd40199d14903b7dd7a0fc5050dcd546e914c",
+      "TW1_source_total_animation_records": 56,
+      "selected_source_action_direction0_frame_occurrences": 17,
+      "selected_source_action_direction0_digest_records": [
+        [
+          0,
+          0,
+          8,
+          "92def21cb1d9bea1268ef14588458f16644c439f98fa4f7436f2908ef7d39512",
+          750
+        ],
+        [
+          2,
+          0,
+          6,
+          "109266dfc4edda9aca89740a4b76189b4797e85facbdd786b4ef7ebdfa1ee9da",
+          1000
+        ],
+        [
+          1,
+          0,
+          3,
+          "fa29f7f9882e01630be5a740a9851841b35c28612ff2f6f314a816f48274c5d4",
+          300
+        ]
+      ],
+      "selected_source_distinct_original_bitmap_count": 17,
+      "actual_private_previous_gallery_png_SHA_qualification": "OLDER_PRIVATE_GALLERY_PNG_SHA_MATCHES_NEWER_TW1_SOURCE_RECEIPT"
+    }
+  ],
+  "private_visual_test_actual": {
+    "source_NPC_file_35_original_byte_window_SHA256_all_verified": true,
+    "source_NPC_16_direct_arg_SHA256_all_verified": true,
+    "old_gallery_532_embedded_candidate_PNG_digest_calculated": true,
+    "old_gallery_532_images_decode_dimensions_read": true,
+    "old_gallery_116_exact_source_PNG_matches": true,
+    "old_gallery_52_digest_differences_preserved": true,
+    "all_532_pixels_exact_original_palette_NOT_claimed": true,
+    "private_HTML_inline_javascript_Node_syntax_check_passed": true,
+    "private_Browser_Chromium_UI_execution_test_passed": false,
+    "private_Browser_Chromium_launch_blocked_or_timed_out": true,
+    "private_ZIP_saved_library_and_reloaded": true
+  },
+  "historical_limit": {
+    "late_mixed25_quest_and_original_TW1_art_same_official_build_proven": false,
+    "source_WARP_FREE_gate_executed_by_native_game": false,
+    "source_MONEY_minus_one_native_payment_semantics_proven": false,
+    "source_LimitItemNo_1234_1249_actual_transaction_executed": false,
+    "source_shop_sell_rate_effect_in_running_economy_proven": false,
+    "source_bait_01_35_block_total_equals_35_unique_commercial_entities": false,
+    "source_100250_100251_100252_older_gallery_PNG_matches_TW1_R1_pixel_SHA": false,
+    "source_532_prior_gallery_PNG_all_independently_qualified_original_RD_in_this_unit": false,
+    "source_any_first_party_JSS1999_build_proven": false,
+    "source_which_mixed25_itemset_master_was_executed_proven": false,
+    "original_commercial_images_and_script_text_uploaded_public": false,
+    "stageA": "7 PARTIAL + 2 OPEN",
+    "stageB_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Rotate to another source-qualified nonduplicate original game content family; material 20901-20903 native map walking requires valid same-build DAT/native run or source-level route before escalating."
+}

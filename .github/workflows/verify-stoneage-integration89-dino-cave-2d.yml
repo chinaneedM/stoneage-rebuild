@@ -1,0 +1,26 @@
+name: Verify StoneAge INTEGRATION89 original dino cave source 2D
+on:
+  push:
+    branches: [main, 'agent/stoneage-integration89-*']
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION89-DINO-CAVE-GATES-SHOPS-ORIGINAL-2D-R1.json'
+      - 'tests/test_stoneage_integration89_dino_cave.py'
+      - '.github/workflows/verify-stoneage-integration89-dino-cave-2d.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION89-DINO-CAVE-GATES-SHOPS-ORIGINAL-2D-R1.json'
+      - 'tests/test_stoneage_integration89_dino_cave.py'
+      - '.github/workflows/verify-stoneage-integration89-dino-cave-2d.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cave-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Replay 35 original source spans and gated dungeon/shop/pixel source contracts
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration89_dino_cave.py' -v
