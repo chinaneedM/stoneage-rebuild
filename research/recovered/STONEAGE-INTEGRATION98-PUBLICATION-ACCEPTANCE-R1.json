@@ -1,0 +1,147 @@
+{
+  "schema": "stoneage.integration98_four_manor_eight_item_original_2d_publication_acceptance.r1",
+  "date": "2026-11-13",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "content_PR": {
+    "number": 379,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/pull/379",
+    "state": "merged",
+    "candidate_head": "525e6b17e3d9aff0d7170201de014f5aa580468b",
+    "candidate_tree": "9b9ee1d533595d48857d68c4fddfa8362a5cbff6",
+    "base_main": "d79693fdae3088e67bfb6139986c30af3d754d67",
+    "main_content_head": "fa215cbfcfe4f8b75d29bea8289ac3164efcc8e5",
+    "main_content_tree": "9b9ee1d533595d48857d68c4fddfa8362a5cbff6"
+  },
+  "candidate_actions": {
+    "total": 4,
+    "completed_success": 4,
+    "actual_runs": [
+      {
+        "run_id": 43450318497,
+        "name": "Verify StoneAge INTEGRATION98 eight original source items and one TW1 2D candidate",
+        "event": "push",
+        "head_sha": "525e6b17e3d9aff0d7170201de014f5aa580468b",
+        "status": "completed",
+        "conclusion": "success",
+        "dedicated_job_id": 131970454218,
+        "real_log": "Ran 10 tests / OK"
+      },
+      {
+        "run_id": 43450393542,
+        "name": "Verify StoneAge INTEGRATION98 eight original source items and one TW1 2D candidate",
+        "event": "pull_request",
+        "head_sha": "525e6b17e3d9aff0d7170201de014f5aa580468b",
+        "status": "completed",
+        "conclusion": "success",
+        "dedicated_job_id": 131970711896,
+        "real_log": "Ran 10 tests / OK"
+      },
+      {
+        "run_id": 43450393569,
+        "name": "Verify StoneAge O12 original compiled sound-number namespace (derived only)",
+        "event": "pull_request",
+        "head_sha": "525e6b17e3d9aff0d7170201de014f5aa580468b",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 43450393678,
+        "name": "Verify StoneAge O11 native source animation and bounded sound-word candidates",
+        "event": "pull_request",
+        "head_sha": "525e6b17e3d9aff0d7170201de014f5aa580468b",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "main_content_actions": {
+    "total": 1,
+    "completed_success": 1,
+    "actual_runs": [
+      {
+        "run_id": 43450578113,
+        "name": "Verify StoneAge INTEGRATION98 eight original source items and one TW1 2D candidate",
+        "event": "push",
+        "head_sha": "fa215cbfcfe4f8b75d29bea8289ac3164efcc8e5",
+        "status": "completed",
+        "conclusion": "success",
+        "dedicated_job_id": 131971352405,
+        "real_log": "Ran 10 tests / OK"
+      }
+    ]
+  },
+  "actual_private_source_custody": {
+    "prior_ITEM01_private_archive_bytes": 5868386,
+    "prior_ITEM01_private_archive_SHA256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "prior_ITEM01_archive_entries_CRC": "838/838",
+    "prior_original_mixed25_itemset_A_SHA256_from_previous_receipt": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+    "prior_original_mixed25_itemset_B_SHA256_from_previous_receipt": "6d6d63fda59c6bda2f239fe18c9361b5c9da18c84f678b7cc95bde24544292fb",
+    "actual_private_original_PNG_bytes": 2786,
+    "actual_private_original_PNG_SHA256": "82334c031191fb20b31f6a469a9a9985dac36592ba362defc8ed0b9a15a06572",
+    "actual_private_original_PNG_RGBA_SHA256": "f2b53a2c2e35c3e24c308a7d390400dbd3c8045544f18cff5c5010a510075b5a",
+    "new_private_observer_archive_library_path": "/石器时代/StoneAge-INTEGRATION98-four-manor-eight-item-24176-original-2D-private.zip",
+    "new_private_observer_archive_bytes": 8561,
+    "new_private_observer_archive_SHA256": "70d65042e832e7dca417a2cd816f86f3800db2b41bebb5ac3c1e10e38f11ee05",
+    "new_private_observer_member_CRC": "3/3",
+    "new_private_archive_saved_then_independent_retrieval_exact_bytes": true,
+    "raw_itemset_files_or_original_parent_RAR_reread_this_unit": false
+  },
+  "recovered_content_scope": {
+    "item_IDs": [
+      19001,
+      19002,
+      19003,
+      19004,
+      19330,
+      19331,
+      19332,
+      19333
+    ],
+    "two_older_itemset_row_sha_per_ID_equal": true,
+    "old_source_cost_values_invite_vs_pass": [
+      "0",
+      "1000"
+    ],
+    "distinct_bitmap_alias_count": 1,
+    "original_bitmap_alias": 24176,
+    "actual_TW1_Retail_RD_dimensions": [
+      52,
+      44
+    ],
+    "prior_private_catalog_and_public_field_crosschecks": 120,
+    "new_RD_decodes_this_unit": 0,
+    "new_native_gameplay_execution": 0
+  },
+  "source_public_git_blobs": {
+    ".github/workflows/verify-stoneage-integration98-original-item-2d.yml": "d7f2743014e6b30be1a7536708b0dd2d6cf1317d",
+    "docs/continuity/STONEAGE-INTEGRATION98-EIGHT-ORIGINAL-ITEM-2D-20261113.md": "3004ef548938b7a10aa2756940685c83d3da43a8",
+    "research/recovered/STONEAGE-INTEGRATION98-FOUR-MANOR-EIGHT-ORIGINAL-ITEM-2D-CANDIDATE-R1.json": "a5f8b95c03af6f19410a760501266a6c9e1bf763",
+    "tests/test_stoneage_integration98_manor_item_original_2d.py": "4e14f65b1c33d98e73e6dff1bbdc27728ebb520b"
+  },
+  "old_public_anchors": {
+    "ITEM01_shard07": "dbb958e77aed796faf86570c7523d3f0dc5748fd",
+    "INTEGRATION97_original_gate": "ce35bd97fc1432dad67ed603327733ee71bb2893"
+  },
+  "source_failures_recorded": {
+    "first_local_test": "previous Git source fixture copied from staging differs from published Git blob by one newline at line-1000 reader boundary, public candidate was not published until exact old remote blob restored and all 10 tests passed",
+    "corrected_old_fixture_git_blob": "ce35bd97fc1432dad67ed603327733ee71bb2893"
+  },
+  "preserved_original_current": {
+    "path": "docs/CURRENT-STATE.md",
+    "git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "bytes": 2709173
+  },
+  "historical_limits": {
+    "stage_A": "7 PARTIAL + 2 OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null,
+    "original_native_gameplay_validated": false,
+    "same_historical_deployment_mixed25_and_TW1_2D_proven": false,
+    "proprietary_original_pixels_in_public_git": false,
+    "early_CN182_or_JSS1999_proven": false
+  },
+  "receipt_commit_own_actions": "not yet verified; verify exact receipt main SHA in future continuation",
+  "next": "Different source-ready historical pet/NPC/map/quest family with genuine source-byte or visual content gain; do not re-enumerate this eight-item-one-image group."
+}
