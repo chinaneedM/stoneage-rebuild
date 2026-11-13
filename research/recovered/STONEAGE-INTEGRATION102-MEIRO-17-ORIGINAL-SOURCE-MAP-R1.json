@@ -1,0 +1,697 @@
+{
+  "NEXT": "New source-qualified and nonduplicated game-content family, not another analysis of 17 same meiro rows or unsupported native maze movement.",
+  "baseline": {
+    "main_head_at_start": "0c9bc5da57edfec64deced0af299bb03cbc11387",
+    "main_tree_at_start": "1b9dacb5167297b4cfc661151b2af5832ea2ed04",
+    "original_CURRENT_bytes": 2709173,
+    "original_CURRENT_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "repo": "chinaneedM/stoneage-rebuild"
+  },
+  "date": "2026-11-14",
+  "limits": {
+    "R79": "PAUSED_NON_BLOCKING",
+    "Stage_A": "7 PARTIAL + 2 OPEN",
+    "Stage_B": "GATED",
+    "native_game_warp_effect_or_collision_observed": false,
+    "native_original_server_Create_spawn_executed": false,
+    "native_return_path_for_unpaired_config_inferred": false,
+    "original_early_TW1_JSS1999_CN182_official_identity_proven": false,
+    "original_handler_dialogue_published": false,
+    "original_png_DAT_RAR_zip_published": false,
+    "overall_completion_percent": null,
+    "prior_MAP04_TW1_candidate_pixels_prove_same_deployment": false,
+    "wiki": "GATED"
+  },
+  "missing_prior_DAT_source_floor_ids": [
+    100,
+    119
+  ],
+  "original_3_handler_full_SHA_without_commercial_text": [
+    {
+      "kind": "signboard_text",
+      "original_file_SHA256": "0d91ada7a6dd6c1f7a529d46d99b00f0727ccee793e3620472f4d28961e6be66",
+      "original_file_bytes": 65,
+      "path": "npc/genout/signb_119_99_92"
+    },
+    {
+      "kind": "resident_text",
+      "original_file_SHA256": "67d9ff83e167fe5edf378223ac9db2b50163a8d8a07fbf80143f77b6adbcac54",
+      "original_file_bytes": 51,
+      "path": "npc/genout/msg_121_23_15"
+    },
+    {
+      "kind": "warpman_control",
+      "original_file_SHA256": "03f96263b3cbc36d3cbe54f7002d5634c4dfcb52c1e57ddb33e7dec8a9c166e1",
+      "original_file_bytes": 309,
+      "path": "npc/genout/wpm_120_19_15"
+    }
+  ],
+  "original_numeric_rows_without_commercial_text": [
+    {
+      "floor": 100,
+      "graphic_numeric_alias": null,
+      "literal_target_floor_xy": [
+        120,
+        10,
+        17
+      ],
+      "name_original_utf8_SHA256_or_null": null,
+      "ordinal": 0,
+      "original_window_SHA256": "aa04638fe0882a19a6772297859001f0ff61a1c5ad129cc8aece86aca8e5c0ae",
+      "position": [
+        549,
+        638
+      ],
+      "source_window": [
+        116,
+        225
+      ],
+      "type": "npcgen_warp"
+    },
+    {
+      "floor": 120,
+      "graphic_numeric_alias": null,
+      "literal_target_floor_xy": [
+        100,
+        549,
+        638
+      ],
+      "name_original_utf8_SHA256_or_null": null,
+      "ordinal": 1,
+      "original_window_SHA256": "2b9f6cfbd87671d8bea347c9cb07a7341aebd24be5bfc078749f3f1ad2068c2c",
+      "position": [
+        10,
+        17
+      ],
+      "source_window": [
+        235,
+        342
+      ],
+      "type": "npcgen_warp"
+    },
+    {
+      "floor": 100,
+      "graphic_numeric_alias": null,
+      "literal_target_floor_xy": [
+        120,
+        10,
+        16
+      ],
+      "name_original_utf8_SHA256_or_null": null,
+      "ordinal": 2,
+      "original_window_SHA256": "c935e418d7834d63e23c7c3dc1b7fa29d8430e2269e93044b543c4b3064f56e4",
+      "position": [
+        549,
+        637
+      ],
+      "source_window": [
+        351,
+        460
+      ],
+      "type": "npcgen_warp"
+    },
+    {
+      "floor": 120,
+      "graphic_numeric_alias": null,
+      "literal_target_floor_xy": [
+        100,
+        549,
+        637
+      ],
+      "name_original_utf8_SHA256_or_null": null,
+      "ordinal": 3,
+      "original_window_SHA256": "b6181bfefea7a453be0fb5b2aac5636b2e5952e37e9fae4077a1753b050fda7d",
+      "position": [
+        10,
+        16
+      ],
+      "source_window": [
+        470,
+        577
+      ],
+      "type": "npcgen_warp"
+    },
+    {
+      "floor": 122,
+      "graphic_numeric_alias": null,
+      "literal_target_floor_xy": [
+        120,
+        17,
+        12
+      ],
+      "name_original_utf8_SHA256_or_null": null,
+      "ordinal": 4,
+      "original_window_SHA256": "8a36d0f094782807e2f185478a922c2b102d47848acfcf0e7bf9781676932a76",
+      "position": [
+        6,
+        5
+      ],
+      "source_window": [
+        586,
+        687
+      ],
+      "type": "npcgen_warp"
+    },
+    {
+      "floor": 122,
+      "graphic_numeric_alias": null,
+      "literal_target_floor_xy": [
+        118,
+        232,
+        12
+      ],
+      "name_original_utf8_SHA256_or_null": null,
+      "ordinal": 5,
+      "original_window_SHA256": "47e9e0100141acfd799f09948c9ce15ec7397e150c2c655ea03f56d8118aafc6",
+      "position": [
+        289,
+        168
+      ],
+      "source_window": [
+        696,
+        806
+      ],
+      "type": "npcgen_warp"
+    },
+    {
+      "floor": 118,
+      "graphic_numeric_alias": null,
+      "literal_target_floor_xy": [
+        122,
+        289,
+        168
+      ],
+      "name_original_utf8_SHA256_or_null": null,
+      "ordinal": 6,
+      "original_window_SHA256": "2a1b5faa19e0c3b52c4fb3661b62797b5a19eb45bf7c1f81a591a8f73e2d340b",
+      "position": [
+        232,
+        12
+      ],
+      "source_window": [
+        816,
+        925
+      ],
+      "type": "npcgen_warp"
+    },
+    {
+      "floor": 118,
+      "graphic_numeric_alias": null,
+      "literal_target_floor_xy": [
+        119,
+        96,
+        4
+      ],
+      "name_original_utf8_SHA256_or_null": null,
+      "ordinal": 7,
+      "original_window_SHA256": "3962c8a8bc4fdaa6c1b3cbca0ef35bd8d7dba24b7857d2d57d880ee31e959305",
+      "position": [
+        13,
+        8
+      ],
+      "source_window": [
+        934,
+        1036
+      ],
+      "type": "npcgen_warp"
+    },
+    {
+      "floor": 119,
+      "graphic_numeric_alias": null,
+      "literal_target_floor_xy": [
+        118,
+        13,
+        8
+      ],
+      "name_original_utf8_SHA256_or_null": null,
+      "ordinal": 8,
+      "original_window_SHA256": "ae2e672a407ad4b4cbd05ef74125a0668758f1d1f7bb50cc99cb2f1e0db389fe",
+      "position": [
+        96,
+        4
+      ],
+      "source_window": [
+        1046,
+        1148
+      ],
+      "type": "npcgen_warp"
+    },
+    {
+      "floor": 119,
+      "graphic_numeric_alias": null,
+      "literal_target_floor_xy": [
+        121,
+        17,
+        15
+      ],
+      "name_original_utf8_SHA256_or_null": null,
+      "ordinal": 9,
+      "original_window_SHA256": "3ff8450e8152eb81776db5a5299e777e7c39588d5cdeb7991a61fce435f9cf0d",
+      "position": [
+        103,
+        93
+      ],
+      "source_window": [
+        1157,
+        1264
+      ],
+      "type": "npcgen_warp"
+    },
+    {
+      "floor": 121,
+      "graphic_numeric_alias": null,
+      "literal_target_floor_xy": [
+        100,
+        643,
+        676
+      ],
+      "name_original_utf8_SHA256_or_null": null,
+      "ordinal": 10,
+      "original_window_SHA256": "fcb4b3e877c52044871c6412a9b39fc0a6592a6fea50e17f9aa19360a8dae438",
+      "position": [
+        10,
+        16
+      ],
+      "source_window": [
+        1273,
+        1380
+      ],
+      "type": "npcgen_warp"
+    },
+    {
+      "floor": 100,
+      "graphic_numeric_alias": null,
+      "literal_target_floor_xy": [
+        121,
+        10,
+        16
+      ],
+      "name_original_utf8_SHA256_or_null": null,
+      "ordinal": 11,
+      "original_window_SHA256": "dca5dc4d4b23113f4c1d35c9f015a7d4ba68192c409536c0ebb77a776c2d3abe",
+      "position": [
+        643,
+        676
+      ],
+      "source_window": [
+        1390,
+        1499
+      ],
+      "type": "npcgen_warp"
+    },
+    {
+      "floor": 121,
+      "graphic_numeric_alias": null,
+      "literal_target_floor_xy": [
+        100,
+        643,
+        677
+      ],
+      "name_original_utf8_SHA256_or_null": null,
+      "ordinal": 12,
+      "original_window_SHA256": "4e2552a6a3afb9e100b8efd433ea13d91a24d6d5410e75fe500dfdefd42b7d7d",
+      "position": [
+        10,
+        17
+      ],
+      "source_window": [
+        1508,
+        1615
+      ],
+      "type": "npcgen_warp"
+    },
+    {
+      "floor": 100,
+      "graphic_numeric_alias": null,
+      "literal_target_floor_xy": [
+        121,
+        10,
+        17
+      ],
+      "name_original_utf8_SHA256_or_null": null,
+      "ordinal": 13,
+      "original_window_SHA256": "80c1710dac127aaf34726fc230537263ef170e27b9292e3b8c748781252ba4e0",
+      "position": [
+        643,
+        677
+      ],
+      "source_window": [
+        1625,
+        1734
+      ],
+      "type": "npcgen_warp"
+    },
+    {
+      "floor": 119,
+      "graphic_numeric_alias": 10062,
+      "name_original_utf8_SHA256_or_null": "0072da457a093523a80caf31d81cd12098c58b2c5cbe940135d5337b5fdc7af8",
+      "ordinal": 14,
+      "original_window_SHA256": "20d5d34a92e3210cbabd0d72d7116a2913a305f7f97fcc9edaa9b47af7d9b477",
+      "position": [
+        99,
+        92
+      ],
+      "referenced_handler_path": "npc/genout/signb_119_99_92",
+      "source_window": [
+        1743,
+        1905
+      ],
+      "type": "npcgen_signboard"
+    },
+    {
+      "floor": 121,
+      "graphic_numeric_alias": 16064,
+      "name_original_utf8_SHA256_or_null": "3a1124b22f56ba8be042625655d3830d46262dd769ba391be26ee5e7db591b64",
+      "ordinal": 15,
+      "original_window_SHA256": "b18de032d5b61119847a4676626c7a06fcf9978066112822f1c4eb5155a42b00",
+      "position": [
+        23,
+        15
+      ],
+      "referenced_handler_path": "npc/genout/msg_121_23_15",
+      "source_window": [
+        1914,
+        2075
+      ],
+      "type": "npcgen_man"
+    },
+    {
+      "floor": 120,
+      "graphic_numeric_alias": 16017,
+      "name_original_utf8_SHA256_or_null": "21ebc50fd5c0fb7649b80e57595059e44eae2871e63bce5902514585f832b27f",
+      "ordinal": 16,
+      "original_window_SHA256": "ad6c8d9c20776a1cd6ea415d53aee77f316322b7a17d72b522e033eb46d5f374",
+      "position": [
+        19,
+        15
+      ],
+      "referenced_handler_path": "npc/genout/wpm_120_19_15",
+      "source_window": [
+        2084,
+        2246
+      ],
+      "type": "npcgen_warpman"
+    }
+  ],
+  "original_warpman_control_literals_only": {
+    "FREE_condition_literal": "LV>49",
+    "MONEY_literal": -1,
+    "WARP_target_floor_xy": [
+      122,
+      6,
+      5
+    ],
+    "gameplay_gate_verified": false,
+    "original_handler_path": "npc/genout/wpm_120_19_15",
+    "verified_by_real_original_CP950_bytes": true
+  },
+  "prior_DAT_floor_qualifications": [
+    {
+      "floor": 118,
+      "prior_header_height": 180,
+      "prior_header_width": 250,
+      "prior_original_DAT_SHA256": "f4116dbcd8625bc81270a6215748c2ef46d67f0098161365669eb385f5798f9e",
+      "prior_original_DAT_file": "118.dat",
+      "prior_qualified_TW1_pixel_reference_occurrences": 46260,
+      "source_CREATE_positions_in_bounds": 2
+    },
+    {
+      "floor": 120,
+      "prior_header_height": 30,
+      "prior_header_width": 30,
+      "prior_original_DAT_SHA256": "55e364bf9aeaacd48be07dfe21db1b371aa78eacf1a2adc5810099bd7003c5df",
+      "prior_original_DAT_file": "120.dat",
+      "prior_qualified_TW1_pixel_reference_occurrences": 940,
+      "source_CREATE_positions_in_bounds": 3
+    },
+    {
+      "floor": 121,
+      "prior_header_height": 30,
+      "prior_header_width": 30,
+      "prior_original_DAT_SHA256": "af318cb9698727bb3d2ff781a87925f53bf3c2708318fd57cb726d634a71568e",
+      "prior_original_DAT_file": "121.dat",
+      "prior_qualified_TW1_pixel_reference_occurrences": 965,
+      "source_CREATE_positions_in_bounds": 3
+    },
+    {
+      "floor": 122,
+      "prior_header_height": 200,
+      "prior_header_width": 300,
+      "prior_original_DAT_SHA256": "64217be4a7e96959099e8872e332cfdabcbdfd71ed9420c4fe1086ba3ee35438",
+      "prior_original_DAT_file": "122.dat",
+      "prior_qualified_TW1_pixel_reference_occurrences": 57496,
+      "source_CREATE_positions_in_bounds": 2
+    }
+  ],
+  "provenance": {
+    "actual_private_NPC_ZIP_SHA256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "actual_private_NPC_ZIP_bytes": 995176,
+    "actual_private_ZIP_CRC_verified_members": 2205,
+    "all_17_windows_reverified_against_prior_public_CHAR01": true,
+    "classification": "LATER_COMMUNITY_PRESERVED_MIXED25_NOT_AUTHENTICATED_EARLY_OFFICIAL_OR_SAME_DEPLOYMENT",
+    "original_CREATE_CRC32": "5f5fe0c3",
+    "original_CREATE_SHA256": "4aac9ba239351b9bdb932fb1f47d58854023afd17d371119718684103c241574",
+    "original_CREATE_bytes": 2246,
+    "original_CREATE_path": "npc/genout/meiro.create",
+    "original_DAT_bytes_reread_this_unit": 0,
+    "original_RAR_361MB_reread_this_unit": false,
+    "original_RD_pixel_decoded_this_unit": 0,
+    "original_parent_RAR_sha256_FROM_PRIOR_INDEX": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "prior_PUBLIC_CHAR01_git_blob": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "prior_PUBLIC_MAP04_git_blob": "1ef8c004179128ea44ffa4fb4259748bc8c83911",
+    "three_original_handler_bytes_and_SHA_reverified_against_prior_public_CHAR01": true
+  },
+  "schema": "stoneage.integration102_meiro_original_source_static_join.r1",
+  "source_COUNTS": {
+    "floor_DAT_not_in_prior_MAP04": [
+      100,
+      119
+    ],
+    "floor_DAT_qualified": 4,
+    "floors": {
+      "100": 4,
+      "118": 2,
+      "119": 3,
+      "120": 3,
+      "121": 3,
+      "122": 2
+    },
+    "handler_original_total_bytes": 425,
+    "original_CREATE_blocks": 17,
+    "original_handler_files": 3,
+    "original_npcgen_man": 1,
+    "original_npcgen_signboard": 1,
+    "original_npcgen_warpman": 1,
+    "original_numeric_npcgen_warp": 14,
+    "source_config_positions_missing_prior_qualified_DAT": 7,
+    "source_config_positions_with_prior_qualified_DAT_header": 10,
+    "strict_literal_recipient_warp_reciprocal_rows": 12,
+    "strict_literal_reciprocal_pairs": 6,
+    "warp_rows_without_strict_config_reverse": 2
+  },
+  "warp_only_static_reverse_analysis": {
+    "all_original_warp_rows": [
+      {
+        "from": [
+          100,
+          549,
+          638
+        ],
+        "ordinal": 0,
+        "to": [
+          120,
+          10,
+          17
+        ]
+      },
+      {
+        "from": [
+          120,
+          10,
+          17
+        ],
+        "ordinal": 1,
+        "to": [
+          100,
+          549,
+          638
+        ]
+      },
+      {
+        "from": [
+          100,
+          549,
+          637
+        ],
+        "ordinal": 2,
+        "to": [
+          120,
+          10,
+          16
+        ]
+      },
+      {
+        "from": [
+          120,
+          10,
+          16
+        ],
+        "ordinal": 3,
+        "to": [
+          100,
+          549,
+          637
+        ]
+      },
+      {
+        "from": [
+          122,
+          6,
+          5
+        ],
+        "ordinal": 4,
+        "to": [
+          120,
+          17,
+          12
+        ]
+      },
+      {
+        "from": [
+          122,
+          289,
+          168
+        ],
+        "ordinal": 5,
+        "to": [
+          118,
+          232,
+          12
+        ]
+      },
+      {
+        "from": [
+          118,
+          232,
+          12
+        ],
+        "ordinal": 6,
+        "to": [
+          122,
+          289,
+          168
+        ]
+      },
+      {
+        "from": [
+          118,
+          13,
+          8
+        ],
+        "ordinal": 7,
+        "to": [
+          119,
+          96,
+          4
+        ]
+      },
+      {
+        "from": [
+          119,
+          96,
+          4
+        ],
+        "ordinal": 8,
+        "to": [
+          118,
+          13,
+          8
+        ]
+      },
+      {
+        "from": [
+          119,
+          103,
+          93
+        ],
+        "ordinal": 9,
+        "to": [
+          121,
+          17,
+          15
+        ]
+      },
+      {
+        "from": [
+          121,
+          10,
+          16
+        ],
+        "ordinal": 10,
+        "to": [
+          100,
+          643,
+          676
+        ]
+      },
+      {
+        "from": [
+          100,
+          643,
+          676
+        ],
+        "ordinal": 11,
+        "to": [
+          121,
+          10,
+          16
+        ]
+      },
+      {
+        "from": [
+          121,
+          10,
+          17
+        ],
+        "ordinal": 12,
+        "to": [
+          100,
+          643,
+          677
+        ]
+      },
+      {
+        "from": [
+          100,
+          643,
+          677
+        ],
+        "ordinal": 13,
+        "to": [
+          121,
+          10,
+          17
+        ]
+      }
+    ],
+    "caution": "missing_reverse_npcgen_warp entry is not proof of gameplay one-way, e.g. npcgen_warpman handler is separate",
+    "strict_reciprocal_ordinals": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      10,
+      11,
+      12,
+      13
+    ],
+    "without_strict_reciprocal_ordinals": [
+      4,
+      9
+    ]
+  }
+}
