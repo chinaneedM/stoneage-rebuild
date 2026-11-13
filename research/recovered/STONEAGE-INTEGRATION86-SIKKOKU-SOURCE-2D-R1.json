@@ -1,0 +1,1437 @@
+{
+  "schema": "stoneage.integration86.sikkoku_cave_archaeology_spirit_guard_2d_source_bounds.r1",
+  "date": "2026-11-13",
+  "provenance": {
+    "remote_main_head_at_start": "58e182f27a3404c99c32d9c3aaa18e1ecf386a16",
+    "remote_main_tree_at_start": "8709843f7297781f01348de0a2a14b9182b708e1",
+    "preserved_current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_private_mixed25_npc_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "original_private_mixed25_npc_members_crc_verified": 2205,
+    "original_private_itemset_zip_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "original_private_itemset_members_crc_verified": 838,
+    "original_private_tw1_pet07_html_sha256": "58e8ee4ff5165ed2f61663d67ae1cd0a8183622fa3375c480232784bfce9dc76",
+    "TW1_and_community_mixed25_same_official_deployment_proven": false,
+    "native_game_client_or_server_executed": false
+  },
+  "source_files": [
+    {
+      "path": "npc/giiru/event/sikkoku/sikkoku.create",
+      "original_bytes": 1594,
+      "original_sha256": "dbd64c77c64332e1ceb178a7beb6b7feca620ad70b63a9076a2a9c5aba5c6792",
+      "cp950_strict_roundtrip": true
+    },
+    {
+      "path": "npc/300/sb_sikkoku.create",
+      "original_bytes": 401,
+      "original_sha256": "ba1ddc6d19d841d48fd2390d0a18d5f641588e6b5d8eec0d24db5e97acffeb45",
+      "cp950_strict_roundtrip": true
+    },
+    {
+      "path": "npc/300/sb_sikkoku.template",
+      "original_bytes": 315,
+      "original_sha256": "eaa3b5703ce9d294659ae797137af3b38a5130460c26b72d43a5b3a40bb8918b",
+      "cp950_strict_roundtrip": true
+    },
+    {
+      "path": "npc/giiru/event/sikkoku01",
+      "original_bytes": 851,
+      "original_sha256": "7637ac50678796afaf8dedd2fb95952fdd489d00bec17a8a7a1c264cf4454c57",
+      "cp950_strict_roundtrip": true
+    },
+    {
+      "path": "npc/giiru/event/sikkoku02",
+      "original_bytes": 639,
+      "original_sha256": "d196763ef609872e6a8135f7a73f988a5ed1cd3a75dd2b255328c2ca5335ee75",
+      "cp950_strict_roundtrip": true
+    },
+    {
+      "path": "npc/giiru/event/sikkoku03",
+      "original_bytes": 771,
+      "original_sha256": "5dbc288f996bf86351ba83b9a245f6b94ed91f4b7f0fa82f05466c8e33cdcab4",
+      "cp950_strict_roundtrip": true
+    },
+    {
+      "path": "npc/giiru/event/sikkoku04",
+      "original_bytes": 865,
+      "original_sha256": "8ec2d67e12e544b0e0677a0670bc7bb1dcbefba49285c69bf259671946026c65",
+      "cp950_strict_roundtrip": true
+    },
+    {
+      "path": "npc/giiru/event/sikkoku05",
+      "original_bytes": 2156,
+      "original_sha256": "bd1cda60b889430d1c2fc87591aac009588c3005943a853957388390395c3f05",
+      "cp950_strict_roundtrip": true
+    },
+    {
+      "path": "npc/300/sb_skr.arg",
+      "original_bytes": 298,
+      "original_sha256": "7e2d0a6b6a7825a667b8e25be1b8ca26dd0453c8a3c69cdbb8be94f43e38eb87",
+      "cp950_strict_roundtrip": true
+    },
+    {
+      "path": "npc/300/sb_skt.arg",
+      "original_bytes": 357,
+      "original_sha256": "ce2958d71c3a4898829df1afa667b808d4e94520434597ae738015bf9e8e53b5",
+      "cp950_strict_roundtrip": true
+    },
+    {
+      "path": "npc/777/ten.arg",
+      "original_bytes": 4863,
+      "original_sha256": "fab493a933cccb840c57612dfd7f21c72a7d702c18ff407a640085f98bc6b4a5",
+      "cp950_strict_roundtrip": true
+    },
+    {
+      "path": "npc/giiru/event/sikkoku/ten.arg",
+      "original_bytes": 4293,
+      "original_sha256": "82f79a4d30ab8e2dafe9c96d01da5b8bfb83e2cdb22b1e1884d713a1d371f56f",
+      "cp950_strict_roundtrip": true
+    }
+  ],
+  "npc_create_records": [
+    {
+      "original_create_file": "npc/giiru/event/sikkoku/sikkoku.create",
+      "original_create_ordinal_zero_based": 0,
+      "original_byte_offset_start": 238,
+      "original_byte_offset_end_exclusive": 396,
+      "original_create_block_sha256": "61afd3d04fda3bf12bdcb5ad8a09c6f4ef820a551130574ce2cff124ce969b8a",
+      "floorid": 32002,
+      "borncorner_original": "4,23,4,23",
+      "borncenter_original": null,
+      "graphicname_original": 100451,
+      "name_original": "考古家",
+      "enemy_literal": "changeevent|file:giiru/event/sikkoku01",
+      "config_status": "STATIC_CREATE_NOT_PROVEN_SPAWN",
+      "direct_file_target": "npc/giiru/event/sikkoku01",
+      "referenced_file_exists_in_private_NPC_zip": true
+    },
+    {
+      "original_create_file": "npc/giiru/event/sikkoku/sikkoku.create",
+      "original_create_ordinal_zero_based": 1,
+      "original_byte_offset_start": 399,
+      "original_byte_offset_end_exclusive": 559,
+      "original_create_block_sha256": "71e7ff316f4594e2c1b2a7bb6cf1adc776dc73a05e96791851be7daf3ea0f9a4",
+      "floorid": 32006,
+      "borncorner_original": "46,46,46,46",
+      "borncenter_original": null,
+      "graphicname_original": 100195,
+      "name_original": "考古家",
+      "enemy_literal": "changeevent|file:giiru/event/sikkoku02",
+      "config_status": "STATIC_CREATE_NOT_PROVEN_SPAWN",
+      "direct_file_target": "npc/giiru/event/sikkoku02",
+      "referenced_file_exists_in_private_NPC_zip": true
+    },
+    {
+      "original_create_file": "npc/giiru/event/sikkoku/sikkoku.create",
+      "original_create_ordinal_zero_based": 2,
+      "original_byte_offset_start": 561,
+      "original_byte_offset_end_exclusive": 721,
+      "original_create_block_sha256": "4c606cde9ad98ee134b7d997a6e41de1182caa4a41725914a8bceac41dae85c4",
+      "floorid": 32009,
+      "borncorner_original": "49,20,49,20",
+      "borncenter_original": null,
+      "graphicname_original": 100190,
+      "name_original": "考古家",
+      "enemy_literal": "changeevent|file:giiru/event/sikkoku03",
+      "config_status": "STATIC_CREATE_NOT_PROVEN_SPAWN",
+      "direct_file_target": "npc/giiru/event/sikkoku03",
+      "referenced_file_exists_in_private_NPC_zip": true
+    },
+    {
+      "original_create_file": "npc/giiru/event/sikkoku/sikkoku.create",
+      "original_create_ordinal_zero_based": 3,
+      "original_byte_offset_start": 723,
+      "original_byte_offset_end_exclusive": 883,
+      "original_create_block_sha256": "fc88463b424f8ccdadcd68deb37ea7cf7d0a4a99c77c87122a82e750cf93757a",
+      "floorid": 32014,
+      "borncorner_original": "14,48,14,48",
+      "borncenter_original": null,
+      "graphicname_original": 100446,
+      "name_original": "考古家",
+      "enemy_literal": "changeevent|file:giiru/event/sikkoku04",
+      "config_status": "STATIC_CREATE_NOT_PROVEN_SPAWN",
+      "direct_file_target": "npc/giiru/event/sikkoku04",
+      "referenced_file_exists_in_private_NPC_zip": true
+    },
+    {
+      "original_create_file": "npc/giiru/event/sikkoku/sikkoku.create",
+      "original_create_ordinal_zero_based": 4,
+      "original_byte_offset_start": 885,
+      "original_byte_offset_end_exclusive": 1045,
+      "original_create_block_sha256": "5c9d5ef764a505e95ffd669f43bc6a6d682547a03fae501f69afd7722d9e9c95",
+      "floorid": 32016,
+      "borncorner_original": "31,43,31,43",
+      "borncenter_original": null,
+      "graphicname_original": 100436,
+      "name_original": "考古家",
+      "enemy_literal": "changeevent|file:giiru/event/sikkoku05",
+      "config_status": "STATIC_CREATE_NOT_PROVEN_SPAWN",
+      "direct_file_target": "npc/giiru/event/sikkoku05",
+      "referenced_file_exists_in_private_NPC_zip": true
+    },
+    {
+      "original_create_file": "npc/giiru/event/sikkoku/sikkoku.create",
+      "original_create_ordinal_zero_based": 5,
+      "original_byte_offset_start": 1069,
+      "original_byte_offset_end_exclusive": 1226,
+      "original_create_block_sha256": "245c0caaf53e140918cc2cb7d3fa9edb9659edc2f3cec7c710f63a0f31074c18",
+      "floorid": 32021,
+      "borncorner_original": "31,28,31,28",
+      "borncenter_original": null,
+      "graphicname_original": 100444,
+      "name_original": "精靈王",
+      "enemy_literal": "npc_transmigration|file:777/ten.arg",
+      "config_status": "STATIC_CREATE_NOT_PROVEN_SPAWN",
+      "direct_file_target": "npc/777/ten.arg",
+      "referenced_file_exists_in_private_NPC_zip": true
+    },
+    {
+      "original_create_file": "npc/giiru/event/sikkoku/sikkoku.create",
+      "original_create_ordinal_zero_based": 6,
+      "original_byte_offset_start": 1248,
+      "original_byte_offset_end_exclusive": 1409,
+      "original_create_block_sha256": "18484044ef5b5bba1eb77115223266cc73aac9d1917aba7b70ac66211fda2462",
+      "floorid": 32014,
+      "borncorner_original": "51,11,51,11",
+      "borncenter_original": "51,11,1,1",
+      "graphicname_original": 16059,
+      "name_original": "護士",
+      "enemy_literal": "npcgen_winhealer|1|4.0|6.0|1",
+      "config_status": "STATIC_CREATE_NOT_PROVEN_SPAWN"
+    },
+    {
+      "original_create_file": "npc/giiru/event/sikkoku/sikkoku.create",
+      "original_create_ordinal_zero_based": 7,
+      "original_byte_offset_start": 1432,
+      "original_byte_offset_end_exclusive": 1593,
+      "original_create_block_sha256": "e804ad5f5ec9c38dea188c9bf10fafb9eb89203d124e57807c3c5e6b90fb71f7",
+      "floorid": 32007,
+      "borncorner_original": "27,54,27,54",
+      "borncenter_original": "27,54,1,1",
+      "graphicname_original": 16059,
+      "name_original": "護士",
+      "enemy_literal": "npcgen_winhealer|1|4.0|6.0|1",
+      "config_status": "STATIC_CREATE_NOT_PROVEN_SPAWN"
+    },
+    {
+      "original_create_file": "npc/300/sb_sikkoku.create",
+      "original_create_ordinal_zero_based": 0,
+      "original_byte_offset_start": 48,
+      "original_byte_offset_end_exclusive": 210,
+      "original_create_block_sha256": "fca9caa4e8224fa94e823ba43f0123242fd99209fdf9343f04ba757e1795b749",
+      "floorid": 32010,
+      "borncorner_original": null,
+      "borncenter_original": "54,30,1,1",
+      "graphicname_original": 100389,
+      "name_original": "漆黑的守護獸",
+      "enemy_literal": "sb_skr|file:300/sb_skr.arg",
+      "config_status": "STATIC_CREATE_NOT_PROVEN_SPAWN",
+      "direct_file_target": "npc/300/sb_skr.arg",
+      "referenced_file_exists_in_private_NPC_zip": true
+    },
+    {
+      "original_create_file": "npc/300/sb_sikkoku.create",
+      "original_create_ordinal_zero_based": 1,
+      "original_byte_offset_start": 241,
+      "original_byte_offset_end_exclusive": 400,
+      "original_create_block_sha256": "1727dd7169658de642c656cbc435f88464bff2efe14b651b66fb816fda433dca",
+      "floorid": 32020,
+      "borncorner_original": null,
+      "borncenter_original": "20,9,1,1",
+      "graphicname_original": 100374,
+      "name_original": "帖拉所伊朵",
+      "enemy_literal": "sb_skt|file:300/sb_skt.arg",
+      "config_status": "STATIC_CREATE_NOT_PROVEN_SPAWN",
+      "direct_file_target": "npc/300/sb_skt.arg",
+      "referenced_file_exists_in_private_NPC_zip": true
+    }
+  ],
+  "source_events": [
+    {
+      "source_file": "npc/giiru/event/sikkoku01",
+      "ordinal_zero_based": 0,
+      "event_no": "-1",
+      "type": "MESSAGE",
+      "conditions": [
+        "LV>0&ITEM=2771"
+      ],
+      "GetItem_literal_values": [],
+      "DelItem_literal_values": [],
+      "EndSetFlg_literal_values": [],
+      "Charm_literal_values": [],
+      "original_event_block_sha256": "2492f675b0c1b9f046f0d2bca7d053b30ca6447eeb7b73f3c091318a64542dd9",
+      "original_byte_start": 244,
+      "original_byte_end_exclusive": 493
+    },
+    {
+      "source_file": "npc/giiru/event/sikkoku01",
+      "ordinal_zero_based": 1,
+      "event_no": "-1",
+      "type": "MESSAGE",
+      "conditions": [
+        "LV>0&ITEM!=2771"
+      ],
+      "GetItem_literal_values": [
+        "2771"
+      ],
+      "DelItem_literal_values": [],
+      "EndSetFlg_literal_values": [],
+      "Charm_literal_values": [],
+      "original_event_block_sha256": "216e9e8702f3502500bb06d2ec45ef925291d48d62c6b61a51934e742895ab91",
+      "original_byte_start": 499,
+      "original_byte_end_exclusive": 845
+    },
+    {
+      "source_file": "npc/giiru/event/sikkoku02",
+      "ordinal_zero_based": 0,
+      "event_no": "-1",
+      "type": "MESSAGE",
+      "conditions": [
+        "LV>0&ITEM=2772"
+      ],
+      "GetItem_literal_values": [],
+      "DelItem_literal_values": [],
+      "EndSetFlg_literal_values": [],
+      "Charm_literal_values": [],
+      "original_event_block_sha256": "469ce6eb4bcbb3a6ee1097f522983c604a2e2effd342c1bda8310beddf5cdfa0",
+      "original_byte_start": 240,
+      "original_byte_end_exclusive": 387
+    },
+    {
+      "source_file": "npc/giiru/event/sikkoku02",
+      "ordinal_zero_based": 1,
+      "event_no": "-1",
+      "type": "MESSAGE",
+      "conditions": [
+        "LV>0&ITEM!=2772"
+      ],
+      "GetItem_literal_values": [
+        "2772"
+      ],
+      "DelItem_literal_values": [],
+      "EndSetFlg_literal_values": [],
+      "Charm_literal_values": [],
+      "original_event_block_sha256": "49a9066e7e9c1a349ab5f7e2d4b036b3ff57518156d13239743d1a01bcaed40f",
+      "original_byte_start": 391,
+      "original_byte_end_exclusive": 635
+    },
+    {
+      "source_file": "npc/giiru/event/sikkoku03",
+      "ordinal_zero_based": 0,
+      "event_no": "-1",
+      "type": "MESSAGE",
+      "conditions": [
+        "LV>0&ITEM=2773"
+      ],
+      "GetItem_literal_values": [],
+      "DelItem_literal_values": [],
+      "EndSetFlg_literal_values": [],
+      "Charm_literal_values": [],
+      "original_event_block_sha256": "d788d91a9e1361a55bfbb3ea18f42b65fb3e367bdedd8b3707f2365df868f07b",
+      "original_byte_start": 240,
+      "original_byte_end_exclusive": 453
+    },
+    {
+      "source_file": "npc/giiru/event/sikkoku03",
+      "ordinal_zero_based": 1,
+      "event_no": "-1",
+      "type": "MESSAGE",
+      "conditions": [
+        "LV>0&ITEM!=2773"
+      ],
+      "GetItem_literal_values": [
+        "2773"
+      ],
+      "DelItem_literal_values": [],
+      "EndSetFlg_literal_values": [],
+      "Charm_literal_values": [],
+      "original_event_block_sha256": "8dceed70472988159bbbadcb2126a7d1a34e0142888d7f68b5c296dd7aae23ee",
+      "original_byte_start": 459,
+      "original_byte_end_exclusive": 767
+    },
+    {
+      "source_file": "npc/giiru/event/sikkoku04",
+      "ordinal_zero_based": 0,
+      "event_no": "-1",
+      "type": "MESSAGE",
+      "conditions": [
+        "LV>0&ITEM=2774"
+      ],
+      "GetItem_literal_values": [],
+      "DelItem_literal_values": [],
+      "EndSetFlg_literal_values": [],
+      "Charm_literal_values": [],
+      "original_event_block_sha256": "cda50c2fbfa79cdbc23cf8673e58771d131c2b1311bd4eaca8ac340bcc7b650a",
+      "original_byte_start": 247,
+      "original_byte_end_exclusive": 506
+    },
+    {
+      "source_file": "npc/giiru/event/sikkoku04",
+      "ordinal_zero_based": 1,
+      "event_no": "-1",
+      "type": "MESSAGE",
+      "conditions": [
+        "LV>0&ITEM!=2774"
+      ],
+      "GetItem_literal_values": [
+        "2774"
+      ],
+      "DelItem_literal_values": [],
+      "EndSetFlg_literal_values": [],
+      "Charm_literal_values": [],
+      "original_event_block_sha256": "eece79dfd9600fda74967cf6bb4b0bcc52a71700f420f0e97814e1be929a1b1d",
+      "original_byte_start": 510,
+      "original_byte_end_exclusive": 863
+    },
+    {
+      "source_file": "npc/giiru/event/sikkoku05",
+      "ordinal_zero_based": 0,
+      "event_no": "53",
+      "type": "ACCEPT",
+      "conditions": [
+        "LV>0&ITEM=2701&ITEM=2707&ITEM=2735&ITEM=2770"
+      ],
+      "GetItem_literal_values": [
+        "20570,20571,20572"
+      ],
+      "DelItem_literal_values": [
+        "2701*1,2702*1,2703*1,2704*1"
+      ],
+      "EndSetFlg_literal_values": [
+        "53"
+      ],
+      "Charm_literal_values": [
+        "1"
+      ],
+      "original_event_block_sha256": "689e7b5ed8a53d9b7844f79d8a24f25a2ed74da936b7fbbdc49dfe57aa06af46",
+      "original_byte_start": 245,
+      "original_byte_end_exclusive": 605
+    },
+    {
+      "source_file": "npc/giiru/event/sikkoku05",
+      "ordinal_zero_based": 1,
+      "event_no": "-1",
+      "type": "MESSAGE",
+      "conditions": [
+        "LV>0&ENDEV=52"
+      ],
+      "GetItem_literal_values": [],
+      "DelItem_literal_values": [],
+      "EndSetFlg_literal_values": [],
+      "Charm_literal_values": [],
+      "original_event_block_sha256": "a7a540c9f78496e945c998b71d491701aae1c17e0760b44fffede629b6e2bc57",
+      "original_byte_start": 609,
+      "original_byte_end_exclusive": 747
+    },
+    {
+      "source_file": "npc/giiru/event/sikkoku05",
+      "ordinal_zero_based": 2,
+      "event_no": "-1",
+      "type": "MESSAGE",
+      "conditions": [
+        "LV>0&ENDEV=51&ITEM=2771&ITEM=2772&ITEM=2773&ITEM=2774"
+      ],
+      "GetItem_literal_values": [],
+      "DelItem_literal_values": [],
+      "EndSetFlg_literal_values": [],
+      "Charm_literal_values": [],
+      "original_event_block_sha256": "68e3b0f2a3c87c91156177c857bca710a8fd0335524684fa95824e90ab46af36",
+      "original_byte_start": 751,
+      "original_byte_end_exclusive": 1015
+    },
+    {
+      "source_file": "npc/giiru/event/sikkoku05",
+      "ordinal_zero_based": 3,
+      "event_no": "-1",
+      "type": "MESSAGE",
+      "conditions": [
+        "LV>0&ENDEV=50&ITEM=2771&ITEM=2772&ITEM=2773&ITEM=2774"
+      ],
+      "GetItem_literal_values": [],
+      "DelItem_literal_values": [],
+      "EndSetFlg_literal_values": [],
+      "Charm_literal_values": [],
+      "original_event_block_sha256": "970792e984783c0c514d3ff0d987fc4a3c6204cce1c9c5fbe9ec046d75c67046",
+      "original_byte_start": 1021,
+      "original_byte_end_exclusive": 1247
+    },
+    {
+      "source_file": "npc/giiru/event/sikkoku05",
+      "ordinal_zero_based": 4,
+      "event_no": "-1",
+      "type": "MESSAGE",
+      "conditions": [
+        "LV>0&ENDEV=49&ITEM=2771&ITEM=2772&ITEM=2773&ITEM=2774"
+      ],
+      "GetItem_literal_values": [],
+      "DelItem_literal_values": [],
+      "EndSetFlg_literal_values": [],
+      "Charm_literal_values": [],
+      "original_event_block_sha256": "c07a05b47c47c7b9aa4cd9867f61772dce83e3c2f26a4d91ef8144a128a97af3",
+      "original_byte_start": 1253,
+      "original_byte_end_exclusive": 1479
+    },
+    {
+      "source_file": "npc/giiru/event/sikkoku05",
+      "ordinal_zero_based": 5,
+      "event_no": "-1",
+      "type": "MESSAGE",
+      "conditions": [
+        "LV>0&ENDEV=48&ITEM=2771&ITEM=2772&ITEM=2773&ITEM=2774"
+      ],
+      "GetItem_literal_values": [],
+      "DelItem_literal_values": [],
+      "EndSetFlg_literal_values": [],
+      "Charm_literal_values": [],
+      "original_event_block_sha256": "154c9bf3fff83fd3743e4c7c1c6207253a37e77f0910870128bbdcdc21b379b7",
+      "original_byte_start": 1485,
+      "original_byte_end_exclusive": 1711
+    },
+    {
+      "source_file": "npc/giiru/event/sikkoku05",
+      "ordinal_zero_based": 6,
+      "event_no": "-1",
+      "type": "MESSAGE",
+      "conditions": [
+        "LV>0&ITEM=2771&ITEM=2772&ITEM=2773&ITEM=2774"
+      ],
+      "GetItem_literal_values": [],
+      "DelItem_literal_values": [],
+      "EndSetFlg_literal_values": [],
+      "Charm_literal_values": [],
+      "original_event_block_sha256": "691c1708561485d4b4a5ecf9a248dc30a8bd61f88c673ff28b972544709dbace",
+      "original_byte_start": 1717,
+      "original_byte_end_exclusive": 1938
+    },
+    {
+      "source_file": "npc/giiru/event/sikkoku05",
+      "ordinal_zero_based": 7,
+      "event_no": "-1",
+      "type": "MESSAGE",
+      "conditions": [
+        "LV>0"
+      ],
+      "GetItem_literal_values": [],
+      "DelItem_literal_values": [],
+      "EndSetFlg_literal_values": [],
+      "Charm_literal_values": [],
+      "original_event_block_sha256": "7ad46720c2a49c425be97a8359f1383cfab05735d71b188041df38fe9caf83e9",
+      "original_byte_start": 1944,
+      "original_byte_end_exclusive": 2154
+    }
+  ],
+  "battle_NPCEnemy_argument_records": [
+    {
+      "source_path": "npc/300/sb_skr.arg",
+      "sha256": "7e2d0a6b6a7825a667b8e25be1b8ca26dd0453c8a3c69cdbb8be94f43e38eb87",
+      "entype_source": "2",
+      "dieact_source": "1",
+      "warpfl_source": 32011,
+      "warpx_source": 56,
+      "warpy_source": 36,
+      "enemyno_literals": [
+        1399,
+        1401,
+        1402,
+        1400,
+        1403
+      ],
+      "source_onebattle": "0",
+      "native_win_warp_trigger_proven": false
+    },
+    {
+      "source_path": "npc/300/sb_skt.arg",
+      "sha256": "ce2958d71c3a4898829df1afa667b808d4e94520434597ae738015bf9e8e53b5",
+      "entype_source": "2",
+      "dieact_source": "1",
+      "warpfl_source": 32021,
+      "warpx_source": 29,
+      "warpy_source": 57,
+      "enemyno_literals": [
+        1404,
+        1406,
+        1407,
+        1405,
+        1408,
+        1410,
+        1409,
+        1411,
+        1412,
+        1413
+      ],
+      "source_onebattle": "0",
+      "native_win_warp_trigger_proven": false
+    }
+  ],
+  "ten_arg_distinct_source_paths": {
+    "actual_create_referenced": "npc/777/ten.arg",
+    "actual_sha256": "fab493a933cccb840c57612dfd7f21c72a7d702c18ff407a640085f98bc6b4a5",
+    "actual_bytes": 4863,
+    "nonreferenced_nearby_sibling": "npc/giiru/event/sikkoku/ten.arg",
+    "nonreferenced_sha256": "82f79a4d30ab8e2dafe9c96d01da5b8bfb83e2cdb22b1e1884d713a1d371f56f",
+    "nonreferenced_bytes": 4293,
+    "files_identical": false,
+    "same_official_runtime_or_actual_rebirth_effect_proven": false,
+    "actual_source_text_pet_second_rebirth_mountability_warning_present": true
+  },
+  "item_id_source_rows": [
+    {
+      "original_item_id": 1377,
+      "itemset_variant": "IDENTICAL_RAW_LINE",
+      "source_name_in_b_preserved": "青玉首飾",
+      "original_row_instances": {
+        "itemset.txt": {
+          "original_line_sha256": "49aa509cef1603fc124958292168b3ae8ef2ae8993aa9d4cf0756f4713ab6334",
+          "source_row_one_based": 1368,
+          "source_name": "青玉首飾",
+          "image_number": 22032,
+          "source_field_count": 94
+        },
+        "itemset0710.txt": {
+          "original_line_sha256": "49aa509cef1603fc124958292168b3ae8ef2ae8993aa9d4cf0756f4713ab6334",
+          "source_row_one_based": 1378,
+          "source_name": "青玉首飾",
+          "image_number": 22032,
+          "source_field_count": 94
+        }
+      },
+      "source_image_aliases": [
+        22032
+      ],
+      "original_changed_94col_indices_zero_based": []
+    },
+    {
+      "original_item_id": 1378,
+      "itemset_variant": "IDENTICAL_RAW_LINE",
+      "source_name_in_b_preserved": "青貝首飾",
+      "original_row_instances": {
+        "itemset.txt": {
+          "original_line_sha256": "5594418486ff785e9c1a0333184301ec6a185099fff028940d146d74c4e98328",
+          "source_row_one_based": 1369,
+          "source_name": "青貝首飾",
+          "image_number": 22013,
+          "source_field_count": 94
+        },
+        "itemset0710.txt": {
+          "original_line_sha256": "5594418486ff785e9c1a0333184301ec6a185099fff028940d146d74c4e98328",
+          "source_row_one_based": 1379,
+          "source_name": "青貝首飾",
+          "image_number": 22013,
+          "source_field_count": 94
+        }
+      },
+      "source_image_aliases": [
+        22013
+      ],
+      "original_changed_94col_indices_zero_based": []
+    },
+    {
+      "original_item_id": 1379,
+      "itemset_variant": "IDENTICAL_RAW_LINE",
+      "source_name_in_b_preserved": "牙十字首飾",
+      "original_row_instances": {
+        "itemset.txt": {
+          "original_line_sha256": "4b7df0c07ce74ba3943369896daad9974ad76626360a3e5056cc5582fa6b6de1",
+          "source_row_one_based": 1370,
+          "source_name": "牙十字首飾",
+          "image_number": 22022,
+          "source_field_count": 94
+        },
+        "itemset0710.txt": {
+          "original_line_sha256": "4b7df0c07ce74ba3943369896daad9974ad76626360a3e5056cc5582fa6b6de1",
+          "source_row_one_based": 1380,
+          "source_name": "牙十字首飾",
+          "image_number": 22022,
+          "source_field_count": 94
+        }
+      },
+      "source_image_aliases": [
+        22022
+      ],
+      "original_changed_94col_indices_zero_based": []
+    },
+    {
+      "original_item_id": 1380,
+      "itemset_variant": "IDENTICAL_RAW_LINE",
+      "source_name_in_b_preserved": "四顆牙首飾",
+      "original_row_instances": {
+        "itemset.txt": {
+          "original_line_sha256": "d7306a8127db17b0cc8fdd2271769454a44cb4f279408d0fdc5819505ddd4c54",
+          "source_row_one_based": 1371,
+          "source_name": "四顆牙首飾",
+          "image_number": 22015,
+          "source_field_count": 94
+        },
+        "itemset0710.txt": {
+          "original_line_sha256": "d7306a8127db17b0cc8fdd2271769454a44cb4f279408d0fdc5819505ddd4c54",
+          "source_row_one_based": 1381,
+          "source_name": "四顆牙首飾",
+          "image_number": 22015,
+          "source_field_count": 94
+        }
+      },
+      "source_image_aliases": [
+        22015
+      ],
+      "original_changed_94col_indices_zero_based": []
+    },
+    {
+      "original_item_id": 1381,
+      "itemset_variant": "IDENTICAL_RAW_LINE",
+      "source_name_in_b_preserved": "骨頭首飾",
+      "original_row_instances": {
+        "itemset.txt": {
+          "original_line_sha256": "0256163eedb36ca1a5144dd66159517fd0ec7a9cb3cd506f229fa0bf4014b356",
+          "source_row_one_based": 1372,
+          "source_name": "骨頭首飾",
+          "image_number": 22031,
+          "source_field_count": 94
+        },
+        "itemset0710.txt": {
+          "original_line_sha256": "0256163eedb36ca1a5144dd66159517fd0ec7a9cb3cd506f229fa0bf4014b356",
+          "source_row_one_based": 1382,
+          "source_name": "骨頭首飾",
+          "image_number": 22031,
+          "source_field_count": 94
+        }
+      },
+      "source_image_aliases": [
+        22031
+      ],
+      "original_changed_94col_indices_zero_based": []
+    },
+    {
+      "original_item_id": 2701,
+      "itemset_variant": "IDENTICAL_RAW_LINE",
+      "source_name_in_b_preserved": "大地的羈絆[地]",
+      "original_row_instances": {
+        "itemset.txt": {
+          "original_line_sha256": "67cac4a92e586a4e73576334c8d1feafd57cf9331095550c7fa4acc7ca7bff06",
+          "source_row_one_based": 2223,
+          "source_name": "大地的羈絆[地]",
+          "image_number": 22026,
+          "source_field_count": 94
+        },
+        "itemset0710.txt": {
+          "original_line_sha256": "67cac4a92e586a4e73576334c8d1feafd57cf9331095550c7fa4acc7ca7bff06",
+          "source_row_one_based": 2618,
+          "source_name": "大地的羈絆[地]",
+          "image_number": 22026,
+          "source_field_count": 94
+        }
+      },
+      "source_image_aliases": [
+        22026
+      ],
+      "original_changed_94col_indices_zero_based": []
+    },
+    {
+      "original_item_id": 2702,
+      "itemset_variant": "IDENTICAL_RAW_LINE",
+      "source_name_in_b_preserved": "蜂蜜",
+      "original_row_instances": {
+        "itemset.txt": {
+          "original_line_sha256": "82e676b97ffa9892d8a9f43f0c25037ddc73b3c241c67c983ef408b22c8815c8",
+          "source_row_one_based": 2224,
+          "source_name": "蜂蜜",
+          "image_number": 23010,
+          "source_field_count": 94
+        },
+        "itemset0710.txt": {
+          "original_line_sha256": "82e676b97ffa9892d8a9f43f0c25037ddc73b3c241c67c983ef408b22c8815c8",
+          "source_row_one_based": 2619,
+          "source_name": "蜂蜜",
+          "image_number": 23010,
+          "source_field_count": 94
+        }
+      },
+      "source_image_aliases": [
+        23010
+      ],
+      "original_changed_94col_indices_zero_based": []
+    },
+    {
+      "original_item_id": 2703,
+      "itemset_variant": "IDENTICAL_RAW_LINE",
+      "source_name_in_b_preserved": "獵場入場卷",
+      "original_row_instances": {
+        "itemset.txt": {
+          "original_line_sha256": "26396ec9e12e944c5ffb489298afcc8ca6816e00677277a8894aaa9347c07052",
+          "source_row_one_based": 2225,
+          "source_name": "獵場入場卷",
+          "image_number": 24314,
+          "source_field_count": 94
+        },
+        "itemset0710.txt": {
+          "original_line_sha256": "26396ec9e12e944c5ffb489298afcc8ca6816e00677277a8894aaa9347c07052",
+          "source_row_one_based": 2620,
+          "source_name": "獵場入場卷",
+          "image_number": 24314,
+          "source_field_count": 94
+        }
+      },
+      "source_image_aliases": [
+        24314
+      ],
+      "original_changed_94col_indices_zero_based": []
+    },
+    {
+      "original_item_id": 2704,
+      "itemset_variant": "IDENTICAL_RAW_LINE",
+      "source_name_in_b_preserved": "麥克風",
+      "original_row_instances": {
+        "itemset.txt": {
+          "original_line_sha256": "17dc3806c80a0ae9d4e08dd0d7d5cd6ef8f89a74863fca0b02f66ec446cb6430",
+          "source_row_one_based": 2226,
+          "source_name": "麥克風",
+          "image_number": 24315,
+          "source_field_count": 94
+        },
+        "itemset0710.txt": {
+          "original_line_sha256": "17dc3806c80a0ae9d4e08dd0d7d5cd6ef8f89a74863fca0b02f66ec446cb6430",
+          "source_row_one_based": 2621,
+          "source_name": "麥克風",
+          "image_number": 24315,
+          "source_field_count": 94
+        }
+      },
+      "source_image_aliases": [
+        24315
+      ],
+      "original_changed_94col_indices_zero_based": []
+    },
+    {
+      "original_item_id": 2707,
+      "itemset_variant": "IDENTICAL_RAW_LINE",
+      "source_name_in_b_preserved": "火的羽毛飾品[火]",
+      "original_row_instances": {
+        "itemset.txt": {
+          "original_line_sha256": "f93edaa8ed53d3aaaecb6d5dabfc920aa8b7421138c5680e4e56b00713510024",
+          "source_row_one_based": 2229,
+          "source_name": "火的羽毛飾品[火]",
+          "image_number": 22011,
+          "source_field_count": 94
+        },
+        "itemset0710.txt": {
+          "original_line_sha256": "f93edaa8ed53d3aaaecb6d5dabfc920aa8b7421138c5680e4e56b00713510024",
+          "source_row_one_based": 2624,
+          "source_name": "火的羽毛飾品[火]",
+          "image_number": 22011,
+          "source_field_count": 94
+        }
+      },
+      "source_image_aliases": [
+        22011
+      ],
+      "original_changed_94col_indices_zero_based": []
+    },
+    {
+      "original_item_id": 2735,
+      "itemset_variant": "IDENTICAL_RAW_LINE",
+      "source_name_in_b_preserved": "風的鎖 [風]",
+      "original_row_instances": {
+        "itemset.txt": {
+          "original_line_sha256": "6303bb12d8a054ecac3bd47468eec8fe0a5fb2df1985aec3658ca39e91fb5a5b",
+          "source_row_one_based": 2256,
+          "source_name": "風的鎖 [風]",
+          "image_number": 22016,
+          "source_field_count": 94
+        },
+        "itemset0710.txt": {
+          "original_line_sha256": "6303bb12d8a054ecac3bd47468eec8fe0a5fb2df1985aec3658ca39e91fb5a5b",
+          "source_row_one_based": 2651,
+          "source_name": "風的鎖 [風]",
+          "image_number": 22016,
+          "source_field_count": 94
+        }
+      },
+      "source_image_aliases": [
+        22016
+      ],
+      "original_changed_94col_indices_zero_based": []
+    },
+    {
+      "original_item_id": 2770,
+      "itemset_variant": "IDENTICAL_RAW_LINE",
+      "source_name_in_b_preserved": "水的戒指[水]",
+      "original_row_instances": {
+        "itemset.txt": {
+          "original_line_sha256": "25c636121743f2eee5b368d70aa17361c0d900f020047926814cb5bd9b86cc15",
+          "source_row_one_based": 2281,
+          "source_name": "水的戒指[水]",
+          "image_number": 22124,
+          "source_field_count": 94
+        },
+        "itemset0710.txt": {
+          "original_line_sha256": "25c636121743f2eee5b368d70aa17361c0d900f020047926814cb5bd9b86cc15",
+          "source_row_one_based": 2676,
+          "source_name": "水的戒指[水]",
+          "image_number": 22124,
+          "source_field_count": 94
+        }
+      },
+      "source_image_aliases": [
+        22124
+      ],
+      "original_changed_94col_indices_zero_based": []
+    },
+    {
+      "original_item_id": 2771,
+      "itemset_variant": "IDENTICAL_RAW_LINE",
+      "source_name_in_b_preserved": "地的寶珠",
+      "original_row_instances": {
+        "itemset.txt": {
+          "original_line_sha256": "dca9b5d2599c215a3bbc6af9f6372fef0d5cd6bad8d8b7001fe491c72b9eba50",
+          "source_row_one_based": 2282,
+          "source_name": "地的寶珠",
+          "image_number": 24059,
+          "source_field_count": 94
+        },
+        "itemset0710.txt": {
+          "original_line_sha256": "dca9b5d2599c215a3bbc6af9f6372fef0d5cd6bad8d8b7001fe491c72b9eba50",
+          "source_row_one_based": 2677,
+          "source_name": "地的寶珠",
+          "image_number": 24059,
+          "source_field_count": 94
+        }
+      },
+      "source_image_aliases": [
+        24059
+      ],
+      "original_changed_94col_indices_zero_based": []
+    },
+    {
+      "original_item_id": 2772,
+      "itemset_variant": "IDENTICAL_RAW_LINE",
+      "source_name_in_b_preserved": "水的寶珠",
+      "original_row_instances": {
+        "itemset.txt": {
+          "original_line_sha256": "1b752e0b931cd37044887e8faf232530c84c402c7ce7b90f630785cec0dc0617",
+          "source_row_one_based": 2283,
+          "source_name": "水的寶珠",
+          "image_number": 24055,
+          "source_field_count": 94
+        },
+        "itemset0710.txt": {
+          "original_line_sha256": "1b752e0b931cd37044887e8faf232530c84c402c7ce7b90f630785cec0dc0617",
+          "source_row_one_based": 2678,
+          "source_name": "水的寶珠",
+          "image_number": 24055,
+          "source_field_count": 94
+        }
+      },
+      "source_image_aliases": [
+        24055
+      ],
+      "original_changed_94col_indices_zero_based": []
+    },
+    {
+      "original_item_id": 2773,
+      "itemset_variant": "IDENTICAL_RAW_LINE",
+      "source_name_in_b_preserved": "火的寶珠",
+      "original_row_instances": {
+        "itemset.txt": {
+          "original_line_sha256": "459da775784cfeeb4b9419e1e16343ba5b15d4dfe9d89d796499f96b3e1f6424",
+          "source_row_one_based": 2284,
+          "source_name": "火的寶珠",
+          "image_number": 24061,
+          "source_field_count": 94
+        },
+        "itemset0710.txt": {
+          "original_line_sha256": "459da775784cfeeb4b9419e1e16343ba5b15d4dfe9d89d796499f96b3e1f6424",
+          "source_row_one_based": 2679,
+          "source_name": "火的寶珠",
+          "image_number": 24061,
+          "source_field_count": 94
+        }
+      },
+      "source_image_aliases": [
+        24061
+      ],
+      "original_changed_94col_indices_zero_based": []
+    },
+    {
+      "original_item_id": 2774,
+      "itemset_variant": "IDENTICAL_RAW_LINE",
+      "source_name_in_b_preserved": "風的寶珠",
+      "original_row_instances": {
+        "itemset.txt": {
+          "original_line_sha256": "6c29e29f20f56ca6c4c5a5c7698096c5e3f34231f84dac3bdf86f747062f62b3",
+          "source_row_one_based": 2285,
+          "source_name": "風的寶珠",
+          "image_number": 24057,
+          "source_field_count": 94
+        },
+        "itemset0710.txt": {
+          "original_line_sha256": "6c29e29f20f56ca6c4c5a5c7698096c5e3f34231f84dac3bdf86f747062f62b3",
+          "source_row_one_based": 2680,
+          "source_name": "風的寶珠",
+          "image_number": 24057,
+          "source_field_count": 94
+        }
+      },
+      "source_image_aliases": [
+        24057
+      ],
+      "original_changed_94col_indices_zero_based": []
+    },
+    {
+      "original_item_id": 20570,
+      "itemset_variant": "EXTRA_IN_ITEMSET0710",
+      "source_name_in_b_preserved": "星光服",
+      "original_row_instances": {
+        "itemset0710.txt": {
+          "original_line_sha256": "2a8b0806e126b71f26c5645442b5464233306b7f1665c3a9c80c3de804e304d5",
+          "source_row_one_based": 13616,
+          "source_name": "星光服",
+          "image_number": 21032,
+          "source_field_count": 94
+        }
+      },
+      "source_image_aliases": [
+        21032
+      ],
+      "original_changed_94col_indices_zero_based": null
+    },
+    {
+      "original_item_id": 20571,
+      "itemset_variant": "EXTRA_IN_ITEMSET0710",
+      "source_name_in_b_preserved": "星光帽",
+      "original_row_instances": {
+        "itemset0710.txt": {
+          "original_line_sha256": "87ba686ff3c60f8de9ee65cb0f8d9be52de66acc84bc657e8ab4107e46e0181c",
+          "source_row_one_based": 13617,
+          "source_name": "星光帽",
+          "image_number": 21532,
+          "source_field_count": 94
+        }
+      },
+      "source_image_aliases": [
+        21532
+      ],
+      "original_changed_94col_indices_zero_based": null
+    },
+    {
+      "original_item_id": 20572,
+      "itemset_variant": "EXTRA_IN_ITEMSET0710",
+      "source_name_in_b_preserved": "星光爪",
+      "original_row_instances": {
+        "itemset0710.txt": {
+          "original_line_sha256": "30bed20692a94873d72ce7c8ad65b20d18e05e8ff597446d0f791b61079997aa",
+          "source_row_one_based": 13618,
+          "source_name": "星光爪",
+          "image_number": 20241,
+          "source_field_count": 94
+        }
+      },
+      "source_image_aliases": [
+        20241
+      ],
+      "original_changed_94col_indices_zero_based": null
+    }
+  ],
+  "original_TW1_source_item_RD_PNG_candidates": [
+    {
+      "original_image_alias": 22032,
+      "source_item_ids": [
+        1377
+      ],
+      "image_source_receipt": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_private_item01_member": "source-TW1-original-RD-candidates/alias-22032.png",
+      "original_png_sha256": "f1fada6852601aa13b59e6d608ae17c620c0b799844e3d9185e5765749f65dd2",
+      "rgba_sha256": "ed33dd35f15a094e5e8756f6b09129f6520eb2a7342b3b1c5f404a9a6186c0b4",
+      "dimensions": [
+        32,
+        26
+      ],
+      "original_RD_sha256": null,
+      "source_qualifying_pixel": true
+    },
+    {
+      "original_image_alias": 22013,
+      "source_item_ids": [
+        1378
+      ],
+      "image_source_receipt": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_private_item01_member": "source-TW1-original-RD-candidates/alias-22013.png",
+      "original_png_sha256": "86bb0d9da26413038f2efd2585382b837099e498c6b5ccd498160afce5de850f",
+      "rgba_sha256": "2ee6e1db60608c185b76cd70de9340bd298e24e7955b08e77b17504716792b7e",
+      "dimensions": [
+        52,
+        42
+      ],
+      "original_RD_sha256": null,
+      "source_qualifying_pixel": true
+    },
+    {
+      "original_image_alias": 22022,
+      "source_item_ids": [
+        1379
+      ],
+      "image_source_receipt": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_private_item01_member": "source-TW1-original-RD-candidates/alias-22022.png",
+      "original_png_sha256": "a6275b59204714a438bd16a10a73c5736462e52ef0ec8d631f972a813f511df1",
+      "rgba_sha256": "5c70574a3d817272ac4faf781ba956812d830049d78282343573c6c0c2a83741",
+      "dimensions": [
+        44,
+        39
+      ],
+      "original_RD_sha256": null,
+      "source_qualifying_pixel": true
+    },
+    {
+      "original_image_alias": 22015,
+      "source_item_ids": [
+        1380
+      ],
+      "image_source_receipt": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_private_item01_member": "source-TW1-original-RD-candidates/alias-22015.png",
+      "original_png_sha256": "fb953373f025b70f7a18abbec34c2204757b8c910880748b2b6337d2a61bca1e",
+      "rgba_sha256": "692be280a3f7b342985c1dac271079084ad7dd3218ac80df23845c8fcc8f3622",
+      "dimensions": [
+        52,
+        38
+      ],
+      "original_RD_sha256": null,
+      "source_qualifying_pixel": true
+    },
+    {
+      "original_image_alias": 22031,
+      "source_item_ids": [
+        1381
+      ],
+      "image_source_receipt": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_private_item01_member": "source-TW1-original-RD-candidates/alias-22031.png",
+      "original_png_sha256": "cf6830de274324feccbc1daec631591f6d52a7a3b1153b14e938297ab2548f44",
+      "rgba_sha256": "22d059532809279395864d9a4c05cc51a161305f59eebcde64cd7a080ee94269",
+      "dimensions": [
+        36,
+        33
+      ],
+      "original_RD_sha256": null,
+      "source_qualifying_pixel": true
+    },
+    {
+      "original_image_alias": 22026,
+      "source_item_ids": [
+        2701
+      ],
+      "image_source_receipt": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_private_item01_member": "source-TW1-original-RD-candidates/alias-22026.png",
+      "original_png_sha256": "806619636a9da09c7dbfb8cf573005ed7e6dcc2b484b2f374238ea8ad04b0faa",
+      "rgba_sha256": "c5c4a5cc1b7275ca506b1ab1e23aca504c98d91fd3b4f468185b60b2ae4eb410",
+      "dimensions": [
+        48,
+        39
+      ],
+      "original_RD_sha256": null,
+      "source_qualifying_pixel": true
+    },
+    {
+      "original_image_alias": 23010,
+      "source_item_ids": [
+        2702
+      ],
+      "image_source_receipt": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_private_item01_member": "source-TW1-original-RD-candidates/alias-23010.png",
+      "original_png_sha256": "85a1f265ce4702ed7dfd6ce58981f3a4fbc9f4dcf33669640c5e10b562b6313a",
+      "rgba_sha256": "4ec41a8128d9760d42dfa2536e043ccde0a157e52faf084be9e7251f7ecb3df9",
+      "dimensions": [
+        32,
+        37
+      ],
+      "original_RD_sha256": null,
+      "source_qualifying_pixel": true
+    },
+    {
+      "original_image_alias": 24314,
+      "source_item_ids": [
+        2703
+      ],
+      "image_source_receipt": "NOT_IN_RETAIL_INDEX",
+      "source_qualifying_pixel": false,
+      "missing_status_explicit": "NOT_IN_RETAIL_INDEX"
+    },
+    {
+      "original_image_alias": 24315,
+      "source_item_ids": [
+        2704
+      ],
+      "image_source_receipt": "NOT_IN_RETAIL_INDEX",
+      "source_qualifying_pixel": false,
+      "missing_status_explicit": "NOT_IN_RETAIL_INDEX"
+    },
+    {
+      "original_image_alias": 22011,
+      "source_item_ids": [
+        2707
+      ],
+      "image_source_receipt": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_private_item01_member": "source-TW1-original-RD-candidates/alias-22011.png",
+      "original_png_sha256": "dd7d2f41d05bf8eabea43e346f42e38a103f6cb7d49fcf148c1745697803e6dd",
+      "rgba_sha256": "783a7b53d6a3a5279db3ea3e8f668f654fb46d9d23462a250e949ddb49f67ea4",
+      "dimensions": [
+        40,
+        30
+      ],
+      "original_RD_sha256": null,
+      "source_qualifying_pixel": true
+    },
+    {
+      "original_image_alias": 22016,
+      "source_item_ids": [
+        2735
+      ],
+      "image_source_receipt": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_private_item01_member": "source-TW1-original-RD-candidates/alias-22016.png",
+      "original_png_sha256": "4d151a2d8ff800850e575680fc3800b4d6fed65f842f33c201a96963bd0259c2",
+      "rgba_sha256": "cea7dd7eb0c3ca2359f02c36b5a876eb64485380ac8dc3f7a09e23df9bb72f88",
+      "dimensions": [
+        36,
+        31
+      ],
+      "original_RD_sha256": null,
+      "source_qualifying_pixel": true
+    },
+    {
+      "original_image_alias": 22124,
+      "source_item_ids": [
+        2770
+      ],
+      "image_source_receipt": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_private_item01_member": "source-TW1-original-RD-candidates/alias-22124.png",
+      "original_png_sha256": "690aa9b997079a662e3f17e782014e68a4354acf04bc513e504335b7b986eb70",
+      "rgba_sha256": "625b4f3ff39315ac36be7df0bcaf9c5264212b469be5b952340ed7866ddd7c5b",
+      "dimensions": [
+        24,
+        25
+      ],
+      "original_RD_sha256": null,
+      "source_qualifying_pixel": true
+    },
+    {
+      "original_image_alias": 24059,
+      "source_item_ids": [
+        2771
+      ],
+      "image_source_receipt": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_private_item01_member": "source-TW1-original-RD-candidates/alias-24059.png",
+      "original_png_sha256": "1b9f51d9a90fd8327c094559135755d314189383a81f3f6e085d436a864f3651",
+      "rgba_sha256": "3421eabc85e3169961e9c87b4f6e4c7fc98ac45b157d66da56472a9b927d3358",
+      "dimensions": [
+        24,
+        21
+      ],
+      "original_RD_sha256": null,
+      "source_qualifying_pixel": true
+    },
+    {
+      "original_image_alias": 24055,
+      "source_item_ids": [
+        2772
+      ],
+      "image_source_receipt": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_private_item01_member": "source-TW1-original-RD-candidates/alias-24055.png",
+      "original_png_sha256": "553b13f9fa536202c49fbc87ed51e0166b9df1ea4e1b42373495b16b7720dd02",
+      "rgba_sha256": "fd08fb80b50721a371dc705e561e1b14366bf1018e663a25fa364b7c6ea27553",
+      "dimensions": [
+        28,
+        21
+      ],
+      "original_RD_sha256": null,
+      "source_qualifying_pixel": true
+    },
+    {
+      "original_image_alias": 24061,
+      "source_item_ids": [
+        2773
+      ],
+      "image_source_receipt": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_private_item01_member": "source-TW1-original-RD-candidates/alias-24061.png",
+      "original_png_sha256": "7a940887f5f60d0f2cbb4e98bd663c861614016d5609a73d7153aba478bf5f90",
+      "rgba_sha256": "943498f7479a8dff870d4bd8ef8b1405017de800f7a259da2c8c80faebec7806",
+      "dimensions": [
+        28,
+        21
+      ],
+      "original_RD_sha256": null,
+      "source_qualifying_pixel": true
+    },
+    {
+      "original_image_alias": 24057,
+      "source_item_ids": [
+        2774
+      ],
+      "image_source_receipt": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_private_item01_member": "source-TW1-original-RD-candidates/alias-24057.png",
+      "original_png_sha256": "a387e59e3b8b9ae731867e465d102c746cf149d7d206dc999be1bf3f86987b19",
+      "rgba_sha256": "027acec102252051194afbf9f34f940fbd2934b0f5f3480b72b253543a2f6596",
+      "dimensions": [
+        24,
+        21
+      ],
+      "original_RD_sha256": null,
+      "source_qualifying_pixel": true
+    },
+    {
+      "original_image_alias": 21032,
+      "source_item_ids": [
+        20570
+      ],
+      "image_source_receipt": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_private_item01_member": "source-TW1-original-RD-candidates/alias-21032.png",
+      "original_png_sha256": "070796e17c22510e4b19db1f39d9824d49621d3658ab4e201a12c55cc54bdd37",
+      "rgba_sha256": "0341966a0cca95d468d0feb0eb9dc9619b962090b70818bc01d562a8f1fa50a3",
+      "dimensions": [
+        32,
+        36
+      ],
+      "original_RD_sha256": null,
+      "source_qualifying_pixel": true
+    },
+    {
+      "original_image_alias": 21532,
+      "source_item_ids": [
+        20571
+      ],
+      "image_source_receipt": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS",
+      "original_private_item01_member": "source-TW1-original-RD-candidates/alias-21532.png",
+      "original_png_sha256": "91360239233f44bbc95b1d6678f59b600d6e94be78f5e397750b5bdc03acbafb",
+      "rgba_sha256": "f3e17cb093c5686efed452093d2fe447a6a1c23c7a30aa2d561ab2fd96af8c94",
+      "dimensions": [
+        44,
+        40
+      ],
+      "original_RD_sha256": null,
+      "source_qualifying_pixel": true
+    },
+    {
+      "original_image_alias": 20241,
+      "source_item_ids": [
+        20572
+      ],
+      "image_source_receipt": "NOT_IN_RETAIL_INDEX",
+      "source_qualifying_pixel": false,
+      "missing_status_explicit": "NOT_IN_RETAIL_INDEX"
+    }
+  ],
+  "original_TW1_source_native_SPR_PNG_candidates": [
+    {
+      "numeric_graphic_key": 100451,
+      "source_spr_action": 0,
+      "source_spr_direction": 0,
+      "source_bitmap": 92185,
+      "original_ordered_source_sequence_id": "100451-0-0",
+      "original_full_png_sha256": "0751b42bbd7f0785ef211474b44bdb0c0e7450f996a7dc18dd4fdc94c8d74b85",
+      "width": 48,
+      "height": 92,
+      "source_TW1_private_PET07_sha256": "58e8ee4ff5165ed2f61663d67ae1cd0a8183622fa3375c480232784bfce9dc76",
+      "source_presentation": "TW1_PET07_ORIGINAL_RD_CANDIDATE_PALET_1_NOT_ORIGINAL_GAMEPLAY",
+      "same_deployment_mixed25": false
+    },
+    {
+      "numeric_graphic_key": 100389,
+      "source_spr_action": 0,
+      "source_spr_direction": 0,
+      "source_bitmap": 105739,
+      "original_ordered_source_sequence_id": "100389-0-0",
+      "original_full_png_sha256": "6171e502fbe51a7de8773ca06a49409e1d72ad30f4e75a38ff6cea7d07b00e19",
+      "width": 68,
+      "height": 93,
+      "source_TW1_private_PET07_sha256": "58e8ee4ff5165ed2f61663d67ae1cd0a8183622fa3375c480232784bfce9dc76",
+      "source_presentation": "TW1_PET07_ORIGINAL_RD_CANDIDATE_PALET_1_NOT_ORIGINAL_GAMEPLAY",
+      "same_deployment_mixed25": false
+    },
+    {
+      "numeric_graphic_key": 100374,
+      "source_spr_action": 0,
+      "source_spr_direction": 0,
+      "source_bitmap": 122515,
+      "original_ordered_source_sequence_id": "100374-0-0",
+      "original_full_png_sha256": "5665c8575aa756b6d9f03f7012ea8da59272a0c93b3b1f9bfcca2be00b92735a",
+      "width": 64,
+      "height": 115,
+      "source_TW1_private_PET07_sha256": "58e8ee4ff5165ed2f61663d67ae1cd0a8183622fa3375c480232784bfce9dc76",
+      "source_presentation": "TW1_PET07_ORIGINAL_RD_CANDIDATE_PALET_1_NOT_ORIGINAL_GAMEPLAY",
+      "same_deployment_mixed25": false
+    }
+  ],
+  "negative_evidence": {
+    "event_53_accept_item_IDs": [
+      2701,
+      2707,
+      2735,
+      2770
+    ],
+    "event_53_DelItem_item_IDs": [
+      2701,
+      2702,
+      2703,
+      2704
+    ],
+    "sets_exactly_equal": false,
+    "set_intersection_count": 1,
+    "event_53_GetItem_literal_candidates": [
+      20570,
+      20571,
+      20572
+    ],
+    "reward_IDs_missing_in_original_itemset_A_but_present_B": [
+      20570,
+      20571,
+      20572
+    ],
+    "archeologists_actually_created_on_floors": [
+      32002,
+      32006,
+      32009,
+      32014,
+      32016
+    ],
+    "five_sikkoku01_to_05_original_headers_all_contain_16th_floor_text": true,
+    "original_16th_floor_header_matches_all_CREATE_floors": false,
+    "original_TW1_index_missing_candidate_item_aliases": [
+      20241,
+      24314,
+      24315
+    ],
+    "local_sikkoku_ten_arg_identical_to_npc_777_ten_arg": false,
+    "actual_spirit_king_source_ten_arg_confirmed": "npc/777/ten.arg",
+    "original_gameplay_awarded_or_warps_tested": false,
+    "source_event_template_compatibility_proven": false
+  },
+  "private_original_asset_bytes_published": false,
+  "counts": {
+    "mixed25_NPC_original_source_CREATE": 10,
+    "cave_npc_source_CREATE": 8,
+    "distinct_battle_NPCEnemy_source_CREATE": 2,
+    "archaeologist_source_CREATE": 5,
+    "archaeologist_event_files": 5,
+    "event_TYPE_blocks": 16,
+    "directly_referenced_spirit_king_ten_arg_files": 1,
+    "nonreferenced_sibling_ten_arg_files_separately_preserved": 1,
+    "distinct_selected_item_IDs": 19,
+    "source_itemrow_instances_verified": 35,
+    "source_TW1_item_image_aliases": 19,
+    "source_TW1_item_png_verified": 16,
+    "source_TW1_index_missing_aliases": 3,
+    "source_TW1_original_SPR_selected_pixels": 3,
+    "total_source_TW1_distinct_2D_candidate_png": 19,
+    "new_original_RD_decodes": 0
+  },
+  "private_custody": {
+    "filename": "StoneAge-INTEGRATION86-Sikkoku-original-source-2D-private.zip",
+    "bytes": 113454,
+    "sha256": "1433a5638f2e7358b39a5d2955cb706a8bd48082467e5d781ba37238f1b43b70",
+    "members": 35,
+    "individual_manifest_member_sha_verified": 34,
+    "private_original_source_file_members": 12,
+    "TW1_original_source_candidate_PNG_members": 19,
+    "private_modern_HTML": "index.html",
+    "private_copy_not_public_git": true,
+    "library_upload_status": "UPLOADED_AND_INDEPENDENTLY_MATERIALIZED_EXACT_SHA_CRC_AND_34_MEMBER_SHA",
+    "library_path": "/石器时代/StoneAge-INTEGRATION86-Sikkoku-original-source-2D-private.zip",
+    "independent_library_roundtrip_original_zip_bytes_equal": true,
+    "independent_library_roundtrip_all_35_CRC": true,
+    "independent_library_roundtrip_all_34_manifest_entries_SHA": true
+  }
+}
