@@ -1,0 +1,784 @@
+{
+  "schema": "stoneage.integration104_31900_original_game_content_publication_acceptance.r1",
+  "date": "2026-11-14",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "contents": {
+    "PR": 391,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/pull/391",
+    "merged": true,
+    "candidate_head": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+    "candidate_tree": "ecdbd7f9162329672c9d433c6ca987d5c8b3d6e3",
+    "content_main_merged_head": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+    "content_main_merged_tree": "ecdbd7f9162329672c9d433c6ca987d5c8b3d6e3",
+    "tree_byte_identity": true
+  },
+  "candidate_actions": {
+    "head": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+    "actual_runs": 46,
+    "all_completed_success": 46,
+    "push": 27,
+    "pull_request": 19,
+    "dedicated_push_run": 43529583721,
+    "dedicated_push_job": 132243654762,
+    "dedicated_push_real_log": "Ran 12 tests / OK",
+    "dedicated_pr_run": 43529626128,
+    "dedicated_pr_job": 132243802327,
+    "dedicated_pr_real_log": "Ran 12 tests / OK",
+    "run_rows": [
+      {
+        "id": 43529583182,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION35 original Kelke mining source relation",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583182"
+      },
+      {
+        "id": 43529583192,
+        "event": "push",
+        "workflow": "Verify original native album table and saved-name joins R36",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583192"
+      },
+      {
+        "id": 43529583194,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION20 source-bound rooms",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583194"
+      },
+      {
+        "id": 43529583197,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION40 direct source and floor2000",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583197"
+      },
+      {
+        "id": 43529583209,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION25 seven original source market shops",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583209"
+      },
+      {
+        "id": 43529583212,
+        "event": "push",
+        "workflow": "Verify preserved mixed25 full server source conservation R18",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583212"
+      },
+      {
+        "id": 43529583214,
+        "event": "push",
+        "workflow": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583214"
+      },
+      {
+        "id": 43529583228,
+        "event": "push",
+        "workflow": "Accept preserved original TW85 SPR137 full animation material R28",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583228"
+      },
+      {
+        "id": 43529583277,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION37 original letter source crosswalk",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583277"
+      },
+      {
+        "id": 43529583307,
+        "event": "push",
+        "workflow": "Verify original same-build named-entity source gate R31",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583307"
+      },
+      {
+        "id": 43529583329,
+        "event": "push",
+        "workflow": "Verify original local album name material and no master promotion R35",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583329"
+      },
+      {
+        "id": 43529583331,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION34 source-qualified pet visual bridge",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583331"
+      },
+      {
+        "id": 43529583356,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION22 ten original shop source rooms",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583356"
+      },
+      {
+        "id": 43529583359,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION23 six original village shop source scenes",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583359"
+      },
+      {
+        "id": 43529583366,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION21 source-bound pet service atlas",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583366"
+      },
+      {
+        "id": 43529583391,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION33 original Sainasu quests",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583391"
+      },
+      {
+        "id": 43529583404,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION24 five source-qualified original pharmacy shops",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583404"
+      },
+      {
+        "id": 43529583409,
+        "event": "push",
+        "workflow": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583409"
+      },
+      {
+        "id": 43529583430,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION30-32 original source links",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583430"
+      },
+      {
+        "id": 43529583439,
+        "event": "push",
+        "workflow": "Verify original dated map110 three actual cell values R32",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583439"
+      },
+      {
+        "id": 43529583447,
+        "event": "push",
+        "workflow": "Accept primary-source TW1.0 character creation numeric join R16",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583447"
+      },
+      {
+        "id": 43529583455,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION38 original certificate source",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583455"
+      },
+      {
+        "id": 43529583480,
+        "event": "push",
+        "workflow": "Verify original four village interior materials R34",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583480"
+      },
+      {
+        "id": 43529583524,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION39 adult rebirth source",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583524"
+      },
+      {
+        "id": 43529583529,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION26 original mixed25 market pixel bridge",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583529"
+      },
+      {
+        "id": 43529583677,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION36 original quiz source and inactive backup",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583677"
+      },
+      {
+        "id": 43529583721,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION104 31900 original item gates and DAT source",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529583721"
+      },
+      {
+        "id": 43529625916,
+        "event": "pull_request",
+        "workflow": "Verify StoneAge INTEGRATION30-32 original source links",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529625916"
+      },
+      {
+        "id": 43529625928,
+        "event": "pull_request",
+        "workflow": "Verify StoneAge INTEGRATION24 five source-qualified original pharmacy shops",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529625928"
+      },
+      {
+        "id": 43529625930,
+        "event": "pull_request",
+        "workflow": "Verify StoneAge INTEGRATION40 direct source and floor2000",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529625930"
+      },
+      {
+        "id": 43529625965,
+        "event": "pull_request",
+        "workflow": "Verify StoneAge INTEGRATION23 six original village shop source scenes",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529625965"
+      },
+      {
+        "id": 43529625981,
+        "event": "pull_request",
+        "workflow": "Verify StoneAge INTEGRATION38 original certificate source",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529625981"
+      },
+      {
+        "id": 43529625982,
+        "event": "pull_request",
+        "workflow": "Verify StoneAge INTEGRATION33 original Sainasu quests",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529625982"
+      },
+      {
+        "id": 43529626015,
+        "event": "pull_request",
+        "workflow": "Verify StoneAge O11 native source animation and bounded sound-word candidates",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529626015"
+      },
+      {
+        "id": 43529626037,
+        "event": "pull_request",
+        "workflow": "Verify StoneAge INTEGRATION25 seven original source market shops",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529626037"
+      },
+      {
+        "id": 43529626048,
+        "event": "pull_request",
+        "workflow": "Verify StoneAge INTEGRATION34 source-qualified pet visual bridge",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529626048"
+      },
+      {
+        "id": 43529626049,
+        "event": "pull_request",
+        "workflow": "Verify StoneAge INTEGRATION20 source-bound rooms",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529626049"
+      },
+      {
+        "id": 43529626068,
+        "event": "pull_request",
+        "workflow": "Verify StoneAge INTEGRATION26 original mixed25 market pixel bridge",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529626068"
+      },
+      {
+        "id": 43529626069,
+        "event": "pull_request",
+        "workflow": "Verify StoneAge INTEGRATION35 original Kelke mining source relation",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529626069"
+      },
+      {
+        "id": 43529626077,
+        "event": "pull_request",
+        "workflow": "Verify StoneAge INTEGRATION22 ten original shop source rooms",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529626077"
+      },
+      {
+        "id": 43529626078,
+        "event": "pull_request",
+        "workflow": "Verify StoneAge INTEGRATION21 source-bound pet service atlas",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529626078"
+      },
+      {
+        "id": 43529626089,
+        "event": "pull_request",
+        "workflow": "Verify StoneAge INTEGRATION37 original letter source crosswalk",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529626089"
+      },
+      {
+        "id": 43529626128,
+        "event": "pull_request",
+        "workflow": "Verify StoneAge INTEGRATION104 31900 original item gates and DAT source",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529626128"
+      },
+      {
+        "id": 43529626142,
+        "event": "pull_request",
+        "workflow": "Verify StoneAge INTEGRATION39 adult rebirth source",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529626142"
+      },
+      {
+        "id": 43529626168,
+        "event": "pull_request",
+        "workflow": "Verify StoneAge O12 original compiled sound-number namespace (derived only)",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529626168"
+      },
+      {
+        "id": 43529626262,
+        "event": "pull_request",
+        "workflow": "Verify StoneAge INTEGRATION36 original quiz source and inactive backup",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "f6b81d44aea0134cbb75000e52d7962ab08348da",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529626262"
+      }
+    ]
+  },
+  "merged_main_actions": {
+    "head": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+    "actual_runs": 27,
+    "all_completed_success": 27,
+    "dedicated_main_run": 43529739602,
+    "dedicated_main_job": 132244179881,
+    "dedicated_main_real_log": "Ran 12 tests / OK",
+    "run_rows": [
+      {
+        "id": 43529739203,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION33 original Sainasu quests",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739203"
+      },
+      {
+        "id": 43529739222,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION35 original Kelke mining source relation",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739222"
+      },
+      {
+        "id": 43529739274,
+        "event": "push",
+        "workflow": "Verify preserved mixed25 full server source conservation R18",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739274"
+      },
+      {
+        "id": 43529739287,
+        "event": "push",
+        "workflow": "Verify original dated map110 three actual cell values R32",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739287"
+      },
+      {
+        "id": 43529739295,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION26 original mixed25 market pixel bridge",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739295"
+      },
+      {
+        "id": 43529739298,
+        "event": "push",
+        "workflow": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739298"
+      },
+      {
+        "id": 43529739323,
+        "event": "push",
+        "workflow": "Verify original native album table and saved-name joins R36",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739323"
+      },
+      {
+        "id": 43529739387,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION20 source-bound rooms",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739387"
+      },
+      {
+        "id": 43529739403,
+        "event": "push",
+        "workflow": "Accept preserved original TW85 SPR137 full animation material R28",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739403"
+      },
+      {
+        "id": 43529739424,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION34 source-qualified pet visual bridge",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739424"
+      },
+      {
+        "id": 43529739436,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION25 seven original source market shops",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739436"
+      },
+      {
+        "id": 43529739456,
+        "event": "push",
+        "workflow": "Verify original same-build named-entity source gate R31",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739456"
+      },
+      {
+        "id": 43529739462,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION40 direct source and floor2000",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739462"
+      },
+      {
+        "id": 43529739473,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION38 original certificate source",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739473"
+      },
+      {
+        "id": 43529739474,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION23 six original village shop source scenes",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739474"
+      },
+      {
+        "id": 43529739504,
+        "event": "push",
+        "workflow": "Verify original four village interior materials R34",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739504"
+      },
+      {
+        "id": 43529739512,
+        "event": "push",
+        "workflow": "Verify original local album name material and no master promotion R35",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739512"
+      },
+      {
+        "id": 43529739513,
+        "event": "push",
+        "workflow": "Accept primary-source TW1.0 character creation numeric join R16",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739513"
+      },
+      {
+        "id": 43529739527,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION39 adult rebirth source",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739527"
+      },
+      {
+        "id": 43529739541,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION36 original quiz source and inactive backup",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739541"
+      },
+      {
+        "id": 43529739546,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION21 source-bound pet service atlas",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739546"
+      },
+      {
+        "id": 43529739548,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION24 five source-qualified original pharmacy shops",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739548"
+      },
+      {
+        "id": 43529739550,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION22 ten original shop source rooms",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739550"
+      },
+      {
+        "id": 43529739602,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION104 31900 original item gates and DAT source",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739602"
+      },
+      {
+        "id": 43529739623,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION37 original letter source crosswalk",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739623"
+      },
+      {
+        "id": 43529739644,
+        "event": "push",
+        "workflow": "Verify StoneAge INTEGRATION30-32 original source links",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739644"
+      },
+      {
+        "id": 43529739679,
+        "event": "push",
+        "workflow": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "fccd89872eb82f3c749baa45dce4876366a8bdc0",
+        "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43529739679"
+      }
+    ]
+  },
+  "public_content_blob_identity": {
+    "research/recovered/STONEAGE-INTEGRATION104-31900-ITEM-GATE-DAT-SOURCE-R1.json": "660c5848ef8f07eafd6cffb341ec6a81f7f2f12a",
+    "docs/continuity/STONEAGE-INTEGRATION104-31900-ITEM-GATES-DAT-SOURCE-20261114.md": "8a61a04091ba4392f88a9f1a0eec3ae2c36891a8",
+    "tests/test_stoneage_integration104_31900_original.py": "32311da3d8a6825c7f013986414c34ea9dbcf267",
+    ".github/workflows/verify-stoneage-integration104-31900-source.yml": "53bd139cc13ed48ef3cbe1f9b203313c0d38a73e",
+    "README.md": "dea651c195dab2af36b12c192b0f9853bd9020fb"
+  },
+  "prequalified_index_blobs": {
+    "CHAR01": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "MAP04": "1ef8c004179128ea44ffa4fb4259748bc8c83911",
+    "ITEM01_shard02": "b91bc8335db508998f4595144ce371979ea8c849"
+  },
+  "actual_private_source_custody": {
+    "mixed25_original_NPC_ZIP_bytes": 995176,
+    "mixed25_original_NPC_ZIP_SHA256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "mixed25_original_NPC_ZIP_member_CRC_all_2205": true,
+    "original_CREATE_path": "npc/genout/31900npc.create",
+    "original_CREATE_7121B_SHA256": "6efe8306e0fc4fae6cf4d76af438c98e624d8637e1429d970efe77692ff6aa9f",
+    "original_CREATE_47_byte_window_SHA_match": true,
+    "referenced_original_handlers_18_true_bytes_sha_cp950": 4249,
+    "original_ITEM01_older_private_ZIP_bytes": 5868386,
+    "original_ITEM01_older_private_ZIP_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "original_ITEM01_older_private_838_CRC": true,
+    "private_archive_path": "/石器时代/StoneAge-INTEGRATION104-31900-source-map-items-2D-private.zip",
+    "private_archive_bytes": 18408,
+    "private_archive_sha256": "92b3721f0882f37d87698de0c729adb7fcf066ed55c1193b3d787352b6e0f626",
+    "private_archive_CRC_24_24": true,
+    "private_archive_23_original_member_sha256_exact": true,
+    "private_archive_independent_retrieval_bytes_SHA_verified": true,
+    "original_proprietary_full_texts_or_2D_PNG_in_public_git": false
+  },
+  "actual_source_bounded_results": {
+    "source_CREATES": 47,
+    "source_original_handler_files": 18,
+    "source_mugon_graphic_24051_CREATES": 27,
+    "source_warpman": 14,
+    "source_source_inline_warp": 2,
+    "source_monitored_DAT_header_floors": 9,
+    "source_CREATE_floors": 6,
+    "source_coordinates_within_DATHdr": 46,
+    "source_coordinates_OUTSIDE_DATHdr": 1,
+    "exact_out_of_bounds": {
+      "CREATE_ordinal_zero_based": 3,
+      "floor": 31902,
+      "source_xy": [
+        9,
+        67
+      ],
+      "prior_DAT_width_height": [
+        15,
+        10
+      ],
+      "prior_DAT_original_sha256": "27bc3d9573207552813469ba197ed4da5b8ad3de8e3f3a94219fc09ff389ad49"
+    },
+    "source_transfers_total": 16,
+    "source_13_warpman_ITEM2548_DelItem2548x1": 13,
+    "source_1_warpman_ITEM2549_no_DelItem": 1,
+    "source_2_inline_warps": 2,
+    "original_item_rows_2548_2549_same_full_bytes_two_prequalified_itemsets": 2,
+    "prior_separate_TW1_retail_RD_PNG_verified_aliases": [
+      24051,
+      24058,
+      24112
+    ],
+    "new_DAT_original_raw_replayed": 0,
+    "new_RD_original_pixel_decoded": 0
+  },
+  "explicit_negative_claims": {
+    "original_native_client_and_server_replayed": false,
+    "source_spawn_OUT_OF_BOUNDS_fixed_by_model": false,
+    "source_delitem_2548_execution_verified": false,
+    "source_item2549_consumption_inferred": false,
+    "source_native_warp_reachable": false,
+    "same_TW1_official_and_mixed25_server_deployment_verified": false,
+    "full_original_script_OR_bitmap_published": false,
+    "overall_percent": null
+  },
+  "historical_current_state": {
+    "blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "full_original_bytes": 2709173,
+    "StageA": "7 PARTIAL + 2 OPEN",
+    "StageB": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING"
+  },
+  "receipt_new_HEAD_Actions": "NOT_YET_OBSERVED_AND_NOT_PRECLAIMED",
+  "NEXT": "Rotate to a new source-qualified original map/pet/NPC/quest and visible 2D content; do not infer unverified executable behavior or auto-correct source row 31902."
+}
