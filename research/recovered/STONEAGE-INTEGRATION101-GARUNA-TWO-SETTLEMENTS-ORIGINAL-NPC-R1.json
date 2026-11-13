@@ -1,0 +1,935 @@
+{
+  "schema": "stoneage.integration101_garuna_two_settlements_original_28_create_27_dialogue_source_r1",
+  "date": "2026-11-14",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "source_status": "REAL_PRIVATE_ORIGINAL_SOURCE_BYTES_VERIFIED_NO_NATIVE_GAMEPLAY",
+  "fresh_baseline_main_head": "990dbb33545bcf28a9fff3baa92a92b51cb6fb42",
+  "fresh_baseline_main_tree": "399c8dcc3248c9359a8fe72f2f562679bdaefc6a",
+  "original_private_source": {
+    "provenance": "later community-preserved mixed25 archive, not authenticated Taiwan1.0 / JSS1999 / Mainland1.82 official same deployment",
+    "parent_RAR_sha256_from_prior_receipt": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "parent_RAR_re_download_this_work": false,
+    "private_NPC_ZIP_name": "StoneAge-CHAR01-mixed25-all-npc-original-private.zip",
+    "private_NPC_ZIP_bytes": 995176,
+    "private_NPC_ZIP_SHA256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "private_NPC_ZIP_total_members_CRC_verified": 2205,
+    "original_CREATE_member": "npc/genout/garunaev1.create",
+    "original_CREATE_bytes": 4992,
+    "original_CREATE_SHA256": "7c742b85fafda010df235b09660265668210ca0f6e57030c98801394f4d895da",
+    "original_CREATE_cp950_roundtrip": true,
+    "different_same_basename_old_source": "npc/giiru/event/garunaev1.create",
+    "different_original_file_bytes": 1983,
+    "different_original_full_SHA256": "014b99bdb836d775f56fc7e84a3f8ff400cdb3d58eb1792d49877a440929be35",
+    "original_CREATE_byte_windows_sha_verified": 28,
+    "original_HANDLER_full_sha_verified": 27,
+    "original_HANDLER_cp950_roundtrip_verified": 27,
+    "inline_original_CREATE_literal_SHA_verified": 1
+  },
+  "prior_read_only_public_git_sources": {
+    "CHAR01_path": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json",
+    "CHAR01_git_blob": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "MAP04_path": "research/recovered/STONEAGE-MAP-SCENE-MODULE-04-955-ORIGINAL-DAT-4166-RD-PIXEL-INDEX-R1.json",
+    "MAP04_git_blob": "1ef8c004179128ea44ffa4fb4259748bc8c83911",
+    "raw_original_DAT_bytes_re_read_this_work": 0,
+    "actual_MAP04_old_DAT_floor_header_count": 4
+  },
+  "counts": {
+    "original_NPC_CREATE_rows": 28,
+    "original_npcgen_man": 28,
+    "CREATE_by_floor": {
+      "31001": 4,
+      "31002": 10,
+      "31101": 4,
+      "31102": 10
+    },
+    "actual_handler_member_files": 27,
+    "different_handler_sha256": 27,
+    "total_original_handler_file_bytes": 1941,
+    "one_original_inline_dialogue_in_CREATE": 1,
+    "different_original_name_field_SHA256": 2,
+    "different_graphic_numeric_aliases_not_certified_actual_TW1_sprites": 26,
+    "verified_original_DAT_floors_with_header": [
+      31001,
+      31002,
+      31101,
+      31102
+    ],
+    "original_CREATE_positions_in_50_by_50_header": 28,
+    "actually_redecoded_DAT_original_bytes_this_unit": 0,
+    "literal_original_text_message_positions_containing_ore_word": 9
+  },
+  "original_CREATE_source_bounded_rows": [
+    {
+      "ordinal": 0,
+      "original_CREATE_byte_halfopen": [
+        118,
+        285
+      ],
+      "original_CREATE_block_sha256": "63d4af2fd6b773e3fc15d9c580563566ad97fdcc226919dcc8d9418254f961f0",
+      "source_floorid": 31101,
+      "original_borncorner_xy": [
+        17,
+        27
+      ],
+      "original_graphicname_alias": 16033,
+      "original_direction": 6,
+      "original_name_field_utf8_sha256": "56f3c9880c83955590327ea6e0e74c14d4e5243efd1d2766337dcb41bb83d1cc",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31101_17_27",
+        "full_sha256": "472ed927b0be8a24708e737c9baaf4ef31ed7c63a6dfc3db72fd8ab626e8057b",
+        "byte_size": 48,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31101.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "3df8c52606adfcb2bf8f50e4e2ba657cb773a4e524bd0768bf7ad024019dfee5",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 1,
+      "original_CREATE_byte_halfopen": [
+        293,
+        457
+      ],
+      "original_CREATE_block_sha256": "ae827468e19bff8a79c6edf0603f49ee93c5bcda9eb071abc08c3c5be383d6b8",
+      "source_floorid": 31101,
+      "original_borncorner_xy": [
+        46,
+        7
+      ],
+      "original_graphicname_alias": 16205,
+      "original_direction": 6,
+      "original_name_field_utf8_sha256": "56f3c9880c83955590327ea6e0e74c14d4e5243efd1d2766337dcb41bb83d1cc",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31101_46_7",
+        "full_sha256": "44c678af106e27e8da9b6e28cd668d905cdf28177ca09abe20e5b1d0bc466378",
+        "byte_size": 74,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31101.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "3df8c52606adfcb2bf8f50e4e2ba657cb773a4e524bd0768bf7ad024019dfee5",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 2,
+      "original_CREATE_byte_halfopen": [
+        466,
+        633
+      ],
+      "original_CREATE_block_sha256": "8f74121857ba9810b1115da3ce0cba1681f43543b94322fe1f99b8461f21cee0",
+      "source_floorid": 31101,
+      "original_borncorner_xy": [
+        43,
+        35
+      ],
+      "original_graphicname_alias": 16206,
+      "original_direction": 6,
+      "original_name_field_utf8_sha256": "56f3c9880c83955590327ea6e0e74c14d4e5243efd1d2766337dcb41bb83d1cc",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31101_43_35",
+        "full_sha256": "088270643e19c35bfd63fa194974932abf62e2223052751e3b0873572e903ed3",
+        "byte_size": 72,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31101.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "3df8c52606adfcb2bf8f50e4e2ba657cb773a4e524bd0768bf7ad024019dfee5",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 3,
+      "original_CREATE_byte_halfopen": [
+        642,
+        809
+      ],
+      "original_CREATE_block_sha256": "25c04f17bbf17ed04aee559006b86609edfc1c29fdf001c34d1a87295a6eaa21",
+      "source_floorid": 31101,
+      "original_borncorner_xy": [
+        15,
+        39
+      ],
+      "original_graphicname_alias": 16033,
+      "original_direction": 6,
+      "original_name_field_utf8_sha256": "56f3c9880c83955590327ea6e0e74c14d4e5243efd1d2766337dcb41bb83d1cc",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31101_15_39",
+        "full_sha256": "193c8605a048b8cc7e9f0873e850e000c8919ea6edbf29c367301b4e5e38a4d5",
+        "byte_size": 66,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31101.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "3df8c52606adfcb2bf8f50e4e2ba657cb773a4e524bd0768bf7ad024019dfee5",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 4,
+      "original_CREATE_byte_halfopen": [
+        818,
+        982
+      ],
+      "original_CREATE_block_sha256": "814f6f7021ea50477f0a3bbf2bb0bca974b2c633afeaa05b820dd0141d6f2276",
+      "source_floorid": 31102,
+      "original_borncorner_xy": [
+        10,
+        4
+      ],
+      "original_graphicname_alias": 16038,
+      "original_direction": 4,
+      "original_name_field_utf8_sha256": "56f3c9880c83955590327ea6e0e74c14d4e5243efd1d2766337dcb41bb83d1cc",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31102_10_4",
+        "full_sha256": "1338efe1fa27b26e2e53e17a8351aadc4494c141e42e89e8187cc6349487062f",
+        "byte_size": 38,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31102.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "82c9cc79666a3348f7e3f9590dd5b6a2e569e67df13ea3081d87fc2eb5926f61",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 5,
+      "original_CREATE_byte_halfopen": [
+        991,
+        1155
+      ],
+      "original_CREATE_block_sha256": "7bb35c63fdbe67420f95557d9d0cf3510af9b1e9b522d083d54ee217ceff5b06",
+      "source_floorid": 31102,
+      "original_borncorner_xy": [
+        40,
+        3
+      ],
+      "original_graphicname_alias": 16032,
+      "original_direction": 5,
+      "original_name_field_utf8_sha256": "56f3c9880c83955590327ea6e0e74c14d4e5243efd1d2766337dcb41bb83d1cc",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31102_40_3",
+        "full_sha256": "aa24b97606d1e1ff3f627f255b95c43f00f32a124f8cc14c505b0cdceb14d9f9",
+        "byte_size": 76,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31102.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "82c9cc79666a3348f7e3f9590dd5b6a2e569e67df13ea3081d87fc2eb5926f61",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 6,
+      "original_CREATE_byte_halfopen": [
+        1164,
+        1328
+      ],
+      "original_CREATE_block_sha256": "3b5b5ecf644408a4fa171a5622e82079df51372c91e1f3b99e08c1987e7f5a20",
+      "source_floorid": 31102,
+      "original_borncorner_xy": [
+        46,
+        6
+      ],
+      "original_graphicname_alias": 16028,
+      "original_direction": 5,
+      "original_name_field_utf8_sha256": "56f3c9880c83955590327ea6e0e74c14d4e5243efd1d2766337dcb41bb83d1cc",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31102_46_6",
+        "full_sha256": "802773f63d9b12035a327e4182d4e0547faa000e16836adaf2e8e01b78487511",
+        "byte_size": 58,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31102.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "82c9cc79666a3348f7e3f9590dd5b6a2e569e67df13ea3081d87fc2eb5926f61",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 7,
+      "original_CREATE_byte_halfopen": [
+        1337,
+        1504
+      ],
+      "original_CREATE_block_sha256": "adad180554671da13846824b7d75df34f138f33bd5ab5b240284af6633da6941",
+      "source_floorid": 31102,
+      "original_borncorner_xy": [
+        44,
+        12
+      ],
+      "original_graphicname_alias": 16036,
+      "original_direction": 6,
+      "original_name_field_utf8_sha256": "56f3c9880c83955590327ea6e0e74c14d4e5243efd1d2766337dcb41bb83d1cc",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31102_44_12",
+        "full_sha256": "9430cd47f3defadd6f169ffe2b81bd7cc9d3230fd93a30c5f9ceccf4e97a6f75",
+        "byte_size": 87,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31102.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "82c9cc79666a3348f7e3f9590dd5b6a2e569e67df13ea3081d87fc2eb5926f61",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 8,
+      "original_CREATE_byte_halfopen": [
+        1513,
+        1680
+      ],
+      "original_CREATE_block_sha256": "ad39ed8ce59ceac3b1d4f59be78287ef4c901e44b743b280753ff60a11835d2f",
+      "source_floorid": 31102,
+      "original_borncorner_xy": [
+        43,
+        33
+      ],
+      "original_graphicname_alias": 16035,
+      "original_direction": 4,
+      "original_name_field_utf8_sha256": "56f3c9880c83955590327ea6e0e74c14d4e5243efd1d2766337dcb41bb83d1cc",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31102_43_33",
+        "full_sha256": "84a242d779c4cd0616ca8e00abbb05c9d24e510c228d847e95eb353470cf8a09",
+        "byte_size": 96,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31102.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "82c9cc79666a3348f7e3f9590dd5b6a2e569e67df13ea3081d87fc2eb5926f61",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 9,
+      "original_CREATE_byte_halfopen": [
+        1689,
+        1856
+      ],
+      "original_CREATE_block_sha256": "2a049fd6ab7cc0e9479fc87d6038afd9d98a18aa466449afec3dff4f1b77d96e",
+      "source_floorid": 31102,
+      "original_borncorner_xy": [
+        44,
+        37
+      ],
+      "original_graphicname_alias": 16030,
+      "original_direction": 6,
+      "original_name_field_utf8_sha256": "56f3c9880c83955590327ea6e0e74c14d4e5243efd1d2766337dcb41bb83d1cc",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31102_44_37",
+        "full_sha256": "5d4ea1030112a41d6cd430116fdfbbae534a61b63bce6e7364a5432a381a23c5",
+        "byte_size": 100,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31102.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "82c9cc79666a3348f7e3f9590dd5b6a2e569e67df13ea3081d87fc2eb5926f61",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 10,
+      "original_CREATE_byte_halfopen": [
+        1865,
+        2032
+      ],
+      "original_CREATE_block_sha256": "5ffebf805eae2e5ff4d43d5ef29cd9078823cb83eb525fcf5e454de5f015cb27",
+      "source_floorid": 31102,
+      "original_borncorner_xy": [
+        11,
+        34
+      ],
+      "original_graphicname_alias": 16200,
+      "original_direction": 4,
+      "original_name_field_utf8_sha256": "56f3c9880c83955590327ea6e0e74c14d4e5243efd1d2766337dcb41bb83d1cc",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31102_11_34",
+        "full_sha256": "18016e6f5e783111833c09f5eb835608b35b16959e9fcc4d4178aab5e7506fb4",
+        "byte_size": 74,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31102.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "82c9cc79666a3348f7e3f9590dd5b6a2e569e67df13ea3081d87fc2eb5926f61",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 11,
+      "original_CREATE_byte_halfopen": [
+        2041,
+        2208
+      ],
+      "original_CREATE_block_sha256": "dd14db6e447ef352953565b56249ec57122bc973e6068ec9a3a5345cacbbe61a",
+      "source_floorid": 31102,
+      "original_borncorner_xy": [
+        15,
+        36
+      ],
+      "original_graphicname_alias": 16201,
+      "original_direction": 4,
+      "original_name_field_utf8_sha256": "56f3c9880c83955590327ea6e0e74c14d4e5243efd1d2766337dcb41bb83d1cc",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31102_15_36",
+        "full_sha256": "2c040bc35232d70d49803fd6299da62e7ed5b6c7578699eb93a5e971feb83fa8",
+        "byte_size": 74,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31102.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "82c9cc79666a3348f7e3f9590dd5b6a2e569e67df13ea3081d87fc2eb5926f61",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 12,
+      "original_CREATE_byte_halfopen": [
+        2217,
+        2384
+      ],
+      "original_CREATE_block_sha256": "fdc6c34393cd18cf438b88a0eaafbd1590817423fa64b80c1773562c90440d7c",
+      "source_floorid": 31102,
+      "original_borncorner_xy": [
+        24,
+        20
+      ],
+      "original_graphicname_alias": 16034,
+      "original_direction": 5,
+      "original_name_field_utf8_sha256": "56f3c9880c83955590327ea6e0e74c14d4e5243efd1d2766337dcb41bb83d1cc",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31102_24_20",
+        "full_sha256": "1e69df472bf1bc4d0c7ec062f80327d924c99cd53d58f3d7043dd82c839c6aac",
+        "byte_size": 84,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31102.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "82c9cc79666a3348f7e3f9590dd5b6a2e569e67df13ea3081d87fc2eb5926f61",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 13,
+      "original_CREATE_byte_halfopen": [
+        2393,
+        2552
+      ],
+      "original_CREATE_block_sha256": "b38b7037724f827858e3d3c3ab57061fb69e4036aafbbc3e648f9a2a26ead42d",
+      "source_floorid": 31102,
+      "original_borncorner_xy": [
+        33,
+        24
+      ],
+      "original_graphicname_alias": 16205,
+      "original_direction": 6,
+      "original_name_field_utf8_sha256": "56f3c9880c83955590327ea6e0e74c14d4e5243efd1d2766337dcb41bb83d1cc",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": null,
+        "full_sha256": null,
+        "byte_size": 20,
+        "source_class": "inline_literal_in_verified_original_CREATE_block",
+        "inline_literal_sha256": "817fe26ebd39194bfa62d409faff8086c0334ff63fea9eed46da53f0040b2962"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31102.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "82c9cc79666a3348f7e3f9590dd5b6a2e569e67df13ea3081d87fc2eb5926f61",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 14,
+      "original_CREATE_byte_halfopen": [
+        2561,
+        2728
+      ],
+      "original_CREATE_block_sha256": "27413016bdf3ccbe91dd3c658e4ffd9016a1482b64e9d6801de7a9982cd60e6a",
+      "source_floorid": 31001,
+      "original_borncorner_xy": [
+        26,
+        34
+      ],
+      "original_graphicname_alias": 16047,
+      "original_direction": 4,
+      "original_name_field_utf8_sha256": "00db03adaa0bcf05631ac2f7dc0c350ec73504072f368c905a1a351fe5761697",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31001_26_34",
+        "full_sha256": "56a3162153cffda3e58d855acdf2c5ba6bf44fd72629ddd23bbd33c03fa20ff5",
+        "byte_size": 52,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31001.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "eed2e63e26deac3bcf0a36ea2975311f43f5ff13c132f7d4a2f6cbdbafc193f7",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 15,
+      "original_CREATE_byte_halfopen": [
+        2737,
+        2904
+      ],
+      "original_CREATE_block_sha256": "0f2cb84c9d9d39143b19d06d797a0c013b6588c5e7e4ffb0cef8ff45d278f968",
+      "source_floorid": 31001,
+      "original_borncorner_xy": [
+        26,
+        13
+      ],
+      "original_graphicname_alias": 16048,
+      "original_direction": 4,
+      "original_name_field_utf8_sha256": "00db03adaa0bcf05631ac2f7dc0c350ec73504072f368c905a1a351fe5761697",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31001_26_13",
+        "full_sha256": "51f126300b7b91c50c4ee4bdfc602cfa1ec366088716247cbf5e3acd07d180e2",
+        "byte_size": 48,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31001.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "eed2e63e26deac3bcf0a36ea2975311f43f5ff13c132f7d4a2f6cbdbafc193f7",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 16,
+      "original_CREATE_byte_halfopen": [
+        2913,
+        3077
+      ],
+      "original_CREATE_block_sha256": "130b26dbb51d7c802e2878e63d47da16dead9449f46842105ee60d89b3d18ed6",
+      "source_floorid": 31001,
+      "original_borncorner_xy": [
+        37,
+        5
+      ],
+      "original_graphicname_alias": 16049,
+      "original_direction": 4,
+      "original_name_field_utf8_sha256": "00db03adaa0bcf05631ac2f7dc0c350ec73504072f368c905a1a351fe5761697",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31001_37_5",
+        "full_sha256": "86083dfa2be074fb66bdaa4fd96a0daa8d8237cd5461a94805bd8f57251bec4b",
+        "byte_size": 52,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31001.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "eed2e63e26deac3bcf0a36ea2975311f43f5ff13c132f7d4a2f6cbdbafc193f7",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 17,
+      "original_CREATE_byte_halfopen": [
+        3086,
+        3253
+      ],
+      "original_CREATE_block_sha256": "8ea3b9b37284d5b08bf7d67598bc413a29749fdad97aa6a1670ee8fca4e07683",
+      "source_floorid": 31001,
+      "original_borncorner_xy": [
+        11,
+        25
+      ],
+      "original_graphicname_alias": 16046,
+      "original_direction": 6,
+      "original_name_field_utf8_sha256": "00db03adaa0bcf05631ac2f7dc0c350ec73504072f368c905a1a351fe5761697",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31001_11_25",
+        "full_sha256": "c6369b7b3d0e17e8166909d35bdaadced0c9d5034513ca7dcde830b7d4694926",
+        "byte_size": 64,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31001.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "eed2e63e26deac3bcf0a36ea2975311f43f5ff13c132f7d4a2f6cbdbafc193f7",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 18,
+      "original_CREATE_byte_halfopen": [
+        3262,
+        3423
+      ],
+      "original_CREATE_block_sha256": "a9a33c22c197f96f02b9e7a398bed3707008e8ba5fe3a1af04d5ffb513bb8463",
+      "source_floorid": 31002,
+      "original_borncorner_xy": [
+        8,
+        7
+      ],
+      "original_graphicname_alias": 16017,
+      "original_direction": 6,
+      "original_name_field_utf8_sha256": "00db03adaa0bcf05631ac2f7dc0c350ec73504072f368c905a1a351fe5761697",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31002_8_7",
+        "full_sha256": "0e9dc302d907156efbb4f7aa67db9ab6e5940cfc9f7d2a18cee86abad9157eb6",
+        "byte_size": 50,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31002.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "1c09c2d9aa40066c805a6aaf2767bfd1e8e212bc16b4c9185860b909cce85209",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 19,
+      "original_CREATE_byte_halfopen": [
+        3432,
+        3596
+      ],
+      "original_CREATE_block_sha256": "3afd94f86eeedf5dbfbbac0e6060ef62bdee4a71fddc3912bd1028db9ccb38fd",
+      "source_floorid": 31002,
+      "original_borncorner_xy": [
+        27,
+        3
+      ],
+      "original_graphicname_alias": 16018,
+      "original_direction": 6,
+      "original_name_field_utf8_sha256": "00db03adaa0bcf05631ac2f7dc0c350ec73504072f368c905a1a351fe5761697",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31002_27_3",
+        "full_sha256": "ac0a2043e9ad7f8c3ec040c25caa905e8f3144de5626413ea419ce4961bf1415",
+        "byte_size": 56,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31002.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "1c09c2d9aa40066c805a6aaf2767bfd1e8e212bc16b4c9185860b909cce85209",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 20,
+      "original_CREATE_byte_halfopen": [
+        3605,
+        3769
+      ],
+      "original_CREATE_block_sha256": "87734502263962a6bdf54adb43fb8fd1ff4088ed98dcfd2205dff7c3e5cacc72",
+      "source_floorid": 31002,
+      "original_borncorner_xy": [
+        40,
+        3
+      ],
+      "original_graphicname_alias": 16016,
+      "original_direction": 4,
+      "original_name_field_utf8_sha256": "00db03adaa0bcf05631ac2f7dc0c350ec73504072f368c905a1a351fe5761697",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31002_40_3",
+        "full_sha256": "8ef5fe36e607c04c061ddd509d7cdd19f16d8e8c003747c420a1e1efd84d288e",
+        "byte_size": 60,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31002.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "1c09c2d9aa40066c805a6aaf2767bfd1e8e212bc16b4c9185860b909cce85209",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 21,
+      "original_CREATE_byte_halfopen": [
+        3778,
+        3942
+      ],
+      "original_CREATE_block_sha256": "c36d43a182c1a7960c04a07af54937ed4acae4c7af89dd81d97bc7c5cfbd98ab",
+      "source_floorid": 31002,
+      "original_borncorner_xy": [
+        46,
+        8
+      ],
+      "original_graphicname_alias": 16209,
+      "original_direction": 6,
+      "original_name_field_utf8_sha256": "00db03adaa0bcf05631ac2f7dc0c350ec73504072f368c905a1a351fe5761697",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31002_46_8",
+        "full_sha256": "7150b974a2126775a652031d01bfbffc4fa2aba21b697f52546238ad8acb5ee3",
+        "byte_size": 62,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31002.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "1c09c2d9aa40066c805a6aaf2767bfd1e8e212bc16b4c9185860b909cce85209",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 22,
+      "original_CREATE_byte_halfopen": [
+        3951,
+        4118
+      ],
+      "original_CREATE_block_sha256": "a8f0304a523a98229bfb2f6ab747b82b38ecaa737c4ed015aa2e4bc2d8f04023",
+      "source_floorid": 31002,
+      "original_borncorner_xy": [
+        43,
+        36
+      ],
+      "original_graphicname_alias": 16208,
+      "original_direction": 6,
+      "original_name_field_utf8_sha256": "00db03adaa0bcf05631ac2f7dc0c350ec73504072f368c905a1a351fe5761697",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31002_43_36",
+        "full_sha256": "6d2ae4b807ff96b57971834a2ada3247d8afd884546201c14f3dec07a8ae27bc",
+        "byte_size": 110,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31002.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "1c09c2d9aa40066c805a6aaf2767bfd1e8e212bc16b4c9185860b909cce85209",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 23,
+      "original_CREATE_byte_halfopen": [
+        4127,
+        4294
+      ],
+      "original_CREATE_block_sha256": "e8e5e4c86db8c2f53a89ec68c87822c6df7f79f178088f932f8605540333901c",
+      "source_floorid": 31002,
+      "original_borncorner_xy": [
+        43,
+        39
+      ],
+      "original_graphicname_alias": 16207,
+      "original_direction": 6,
+      "original_name_field_utf8_sha256": "00db03adaa0bcf05631ac2f7dc0c350ec73504072f368c905a1a351fe5761697",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31002_43_39",
+        "full_sha256": "c86980320811480cfead8a6057e1833284148540106af85384cc837688583ef2",
+        "byte_size": 86,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31002.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "1c09c2d9aa40066c805a6aaf2767bfd1e8e212bc16b4c9185860b909cce85209",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 24,
+      "original_CREATE_byte_halfopen": [
+        4303,
+        4470
+      ],
+      "original_CREATE_block_sha256": "a8a9c57237b1a476c31536d6b93278698cb8a1e7c959748a0e8c351cff7ceab5",
+      "source_floorid": 31002,
+      "original_borncorner_xy": [
+        11,
+        40
+      ],
+      "original_graphicname_alias": 16056,
+      "original_direction": 6,
+      "original_name_field_utf8_sha256": "00db03adaa0bcf05631ac2f7dc0c350ec73504072f368c905a1a351fe5761697",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31002_11_40",
+        "full_sha256": "7ec00304ae422ba68b1e04d53a33008436cca8d72947023b04adca4af5cc41ab",
+        "byte_size": 88,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31002.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "1c09c2d9aa40066c805a6aaf2767bfd1e8e212bc16b4c9185860b909cce85209",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 25,
+      "original_CREATE_byte_halfopen": [
+        4479,
+        4643
+      ],
+      "original_CREATE_block_sha256": "0e1cd57533f1994702f1300b4f6bfc65486ba7ac23b510efc86b7559ebaafc93",
+      "source_floorid": 31002,
+      "original_borncorner_xy": [
+        6,
+        20
+      ],
+      "original_graphicname_alias": 16019,
+      "original_direction": 4,
+      "original_name_field_utf8_sha256": "00db03adaa0bcf05631ac2f7dc0c350ec73504072f368c905a1a351fe5761697",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31002_6_20",
+        "full_sha256": "e3dd7b8918f08a722fc30d4f2e60ebddfed59308d44a6f9dcbb45a32a59c975f",
+        "byte_size": 118,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31002.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "1c09c2d9aa40066c805a6aaf2767bfd1e8e212bc16b4c9185860b909cce85209",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 26,
+      "original_CREATE_byte_halfopen": [
+        4652,
+        4816
+      ],
+      "original_CREATE_block_sha256": "ab89b8fe17fd6efae3315a1db69bb31ca556f5b2eb6d362c425cbf02b7c0c3f1",
+      "source_floorid": 31002,
+      "original_borncorner_xy": [
+        7,
+        29
+      ],
+      "original_graphicname_alias": 16025,
+      "original_direction": 6,
+      "original_name_field_utf8_sha256": "00db03adaa0bcf05631ac2f7dc0c350ec73504072f368c905a1a351fe5761697",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31002_7_29",
+        "full_sha256": "345cce2f14b6d60175700fc776f99ed0edf8f856c13338cf66e8730fa83d1d54",
+        "byte_size": 76,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31002.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "1c09c2d9aa40066c805a6aaf2767bfd1e8e212bc16b4c9185860b909cce85209",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    },
+    {
+      "ordinal": 27,
+      "original_CREATE_byte_halfopen": [
+        4825,
+        4992
+      ],
+      "original_CREATE_block_sha256": "2ac532750152f49ba4291b964987b5257d157fda4459d8d68bf5c16024d5cca8",
+      "source_floorid": 31002,
+      "original_borncorner_xy": [
+        22,
+        21
+      ],
+      "original_graphicname_alias": 16044,
+      "original_direction": 5,
+      "original_name_field_utf8_sha256": "00db03adaa0bcf05631ac2f7dc0c350ec73504072f368c905a1a351fe5761697",
+      "original_enemy_template": "npcgen_man",
+      "original_handler": {
+        "member": "npc/genout/msg_31002_22_21",
+        "full_sha256": "fff93d3a11c8172fea02074b2f64161036318b0f158afa2d977bd9fa7dbbe4d5",
+        "byte_size": 72,
+        "source_class": "same_archive_original_handler"
+      },
+      "prior_original_MAP04_DAT": {
+        "basename": "31002.dat",
+        "full_DAT_original_SHA256_from_prior_catalog": "1c09c2d9aa40066c805a6aaf2767bfd1e8e212bc16b4c9185860b909cce85209",
+        "width": 50,
+        "height": 50,
+        "spawn_header_in_bounds": true
+      }
+    }
+  ],
+  "private_original_dialogue_catalog": {
+    "saved_as_original_proprietary_private_only": "/石器时代/StoneAge-INTEGRATION101-Garuna-two-mining-settlements-original-text-private.zip",
+    "actual_saved_archive_bytes": 11102,
+    "actual_saved_archive_sha256": "cb2cc53c4d7a42ea386e6f69761460f953cb3066b9584b81e181db9b5d74b45e",
+    "member_CRC_count": 30,
+    "HTML_page_is_modern_read_only_catalog_not_original_game_UI": true,
+    "privacy_boundary": "never publish original text or files in Git",
+    "uploaded_and_independently_retrieved_bytes_verified": true,
+    "actual_HTML_section_count_verified_via_static_parser": 28,
+    "native_browser_render_verified_in_this_host": false
+  },
+  "limits": {
+    "original_client_or_server_gameplay_observed": false,
+    "original_dialogue_currently_loaded_npc_runtime_proven": false,
+    "numeric_graphicname_equals_qualified_TW1_original_pixels": false,
+    "original_collision_or_movement_observed": false,
+    "four_50x50_DAT_source_qualification_proves_original_game_scene_running": false,
+    "Garuna_event_same_basename_other_path_is_the_same_original_file": false,
+    "historical_official_same_deployment_proven": false,
+    "copyrighted_original_text_or_2D_art_republished_in_Git": false
+  },
+  "historical_preservation": {
+    "CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "CURRENT_bytes": 2709173,
+    "Stage_A": "7 PARTIAL + 2 OPEN",
+    "Stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Other unprocessed source-ready NPC/pet/quest/map original materials with real source bytes or original 2D, not expanding the same Garuna residents into imagined quest or official runtime."
+}

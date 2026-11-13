@@ -1,0 +1,29 @@
+name: Verify StoneAge INTEGRATION101 Garuna original NPC source
+on:
+  push:
+    branches:
+      - main
+      - agent/stoneage-integration101-garuna-original-npc-20261114
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION101-GARUNA-TWO-SETTLEMENTS-ORIGINAL-NPC-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION101-GARUNA-ORIGINAL-NPC-20261114.md'
+      - 'tests/test_stoneage_integration101_garuna_original_npc.py'
+      - '.github/workflows/verify-stoneage-integration101-garuna.yml'
+      - 'research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json'
+      - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-04-955-ORIGINAL-DAT-4166-RD-PIXEL-INDEX-R1.json'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION101-GARUNA-TWO-SETTLEMENTS-ORIGINAL-NPC-R1.json'
+      - 'tests/test_stoneage_integration101_garuna_original_npc.py'
+      - '.github/workflows/verify-stoneage-integration101-garuna.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Cross-check archived original source and derived evidence
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration101_garuna_original_npc.py' -v
