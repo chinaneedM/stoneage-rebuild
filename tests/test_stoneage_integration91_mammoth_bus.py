@@ -73,7 +73,7 @@ class OriginalBusSpriteSourceBridge(unittest.TestCase):
     def test_tw1_source_group_is_pet11_exact_and_cross_version(self):
         g=next(x for x in self.p['actual_original_sprite_source']['groups'] if x['spr_no']==100355)
         n=self.d['original_TW1_retail_SPR_candidate']
-        self.assertEqual((n['source_original_SPR_segment_SHA256'],n['original_spr_segment_bytes'],n['source_original_SPR_index_12byte_SHA256']),(g['original_source_segment_sha256'],g['original_source_segment_bytes'],g['source_index_record_sha256']))
+        self.assertEqual((n['source_original_SPR_segment_SHA256'],n['original_spr_segment_bytes'],n['original_source_SPR_index_12byte_SHA256']),(g['original_source_segment_sha256'],g['original_source_segment_bytes'],g['source_index_record_sha256']))
         self.assertEqual((n['source_group_original_animations'],n['source_original_frame_occurrences'],n['source_unique_RD_bitmaps']),(56,640,248))
         self.assertEqual((n['source_private_prior_strict_RD_decoded'],n['source_private_prior_bounded_RD']),(248,0))
 
