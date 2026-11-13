@@ -1,0 +1,137 @@
+{
+  "schema": "stoneage.integration99_publication_acceptance.r1",
+  "date": "2026-11-13",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "content_PR": {
+    "number": 381,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/pull/381",
+    "state": "merged",
+    "candidate_head": "696ac86e4880474c3bfd2a5862514953ede9ba55",
+    "candidate_tree": "584667971b08977e6955d8aac59b17306d9859f3",
+    "base_main_before_merge": "9d0cb1c468cc939606adaac2790ac87853a00b66",
+    "main_content_head": "25092e51fd508592800f647749f7df8ff0ec7c64",
+    "main_content_tree": "584667971b08977e6955d8aac59b17306d9859f3"
+  },
+  "candidate_actions": {
+    "total": 4,
+    "completed_success": 4,
+    "actual_runs": [
+      {
+        "run_id": 43454561747,
+        "event": "push",
+        "head_sha": "696ac86e4880474c3bfd2a5862514953ede9ba55",
+        "name": "Verify StoneAge INTEGRATION99 three dungeon source hubs",
+        "status": "completed",
+        "conclusion": "success",
+        "verified_job_id": 131985156918,
+        "actual_log": "Ran 7 tests / OK"
+      },
+      {
+        "run_id": 43454569315,
+        "event": "pull_request",
+        "head_sha": "696ac86e4880474c3bfd2a5862514953ede9ba55",
+        "name": "Verify StoneAge INTEGRATION99 three dungeon source hubs",
+        "status": "completed",
+        "conclusion": "success",
+        "verified_job_id": 131985182458,
+        "actual_log": "Ran 7 tests / OK"
+      },
+      {
+        "run_id": 43454568337,
+        "event": "pull_request",
+        "head_sha": "696ac86e4880474c3bfd2a5862514953ede9ba55",
+        "name": "Verify StoneAge O11 native source animation and bounded sound-word candidates",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 43454568392,
+        "event": "pull_request",
+        "head_sha": "696ac86e4880474c3bfd2a5862514953ede9ba55",
+        "name": "Verify StoneAge O12 original compiled sound-number namespace (derived only)",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "main_content_actions": {
+    "total": 1,
+    "completed_success": 1,
+    "actual_runs": [
+      {
+        "run_id": 43454903602,
+        "event": "push",
+        "head_sha": "25092e51fd508592800f647749f7df8ff0ec7c64",
+        "name": "Verify StoneAge INTEGRATION99 three dungeon source hubs",
+        "status": "completed",
+        "conclusion": "success",
+        "verified_job_id": 131986351353,
+        "actual_log": "Ran 7 tests / OK"
+      }
+    ]
+  },
+  "public_content_git_blobs": [
+    {
+      "path": ".github/workflows/verify-stoneage-integration99-dungeon-hubs.yml",
+      "sha": "5efa998dfcf65a7f23263aa4e5a7f9dc135068af"
+    },
+    {
+      "path": "docs/continuity/STONEAGE-INTEGRATION99-THREE-DUNGEON-SOURCE-HUBS-20261113.md",
+      "sha": "d5a30c10010745542062c8150f8aaba8e537f528"
+    },
+    {
+      "path": "research/recovered/STONEAGE-INTEGRATION99-THREE-DUNGEON-SOURCE-HUBS-R1.json",
+      "sha": "4450eb0c7db78ac4b2bfeddf90c899eb87ae6573"
+    },
+    {
+      "path": "tests/test_stoneage_integration99_three_dungeon_hubs.py",
+      "sha": "d4ed34dbf925d0c2ac15e8e5dccd834d655fbc02"
+    }
+  ],
+  "source_git_blobs_reused_not_rewritten": {
+    "dungeon00_INTEGRATION95": "285857ec36ffe7cdadec5f6093a861ed0e5be05a",
+    "dungeon01_INTEGRATION96": "f98ebaad7c730df91737f293f109dc4eda7a3bc3",
+    "dungeon03_INTEGRATION80": "af8bfb07a1446cde2cdd727a57e032c6b77cc13b"
+  },
+  "source_derived_counts": {
+    "original_record_rows_147_7_13": [
+      147,
+      7,
+      13
+    ],
+    "total": 167,
+    "distinct_floor_numbers": 78,
+    "cross_file_shared_floors": [
+      100,
+      200
+    ],
+    "source_only_weak_component_sizes": [
+      46,
+      10,
+      9,
+      8,
+      3,
+      1,
+      1
+    ],
+    "old_private_original_source_bytes_reread_this_unit": 0
+  },
+  "old_current": {
+    "blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "bytes": 2709173
+  },
+  "historical_boundary": {
+    "qualified_DAT_for_100_or_200_from_these_fixtures": false,
+    "native_gameplay_execution": false,
+    "same_official_client_server_deployment_proven": false,
+    "source_read_is_old_git_derived_not_new_private_original": true,
+    "copyright_original_source_in_public": false,
+    "stage_A": "7 PARTIAL + 2 OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "this_receipt_own_CI": "NOT_YET_OBSERVED_AND_MUST_NOT_BE_PRECLAIMED",
+  "next": "Different, actual source-ready pet/NPC/map/quest family with new original bytes or a genuinely new private 2D visual observation; don't expand already source-bounded dungeon hub numbers."
+}
