@@ -1,0 +1,5323 @@
+{
+  "schema": "stoneage.integration95_dungeon00_real_source_warp_and_existing_dat_r1",
+  "date": "2026-11-13",
+  "baseline": {
+    "repo": "chinaneedM/stoneage-rebuild",
+    "head": "d22ddcd3bb8890e3607c5c00d0c6c580d9e75d0b",
+    "tree": "daace0cccdff27292c100ad44f57ddb64c7699f7",
+    "starting_head_exact_actions_completed_success": 26,
+    "open_PRs": 0,
+    "CURRENT_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "CURRENT_bytes": 2709173
+  },
+  "original_private_source": {
+    "source_class": "LATER_COMMUNITY_PRESERVED_MIXED25_NPC_CREATE_NOT_EARLY_OFFICIAL_OR_CURRENT_GAMEPLAY",
+    "original_parent_RAR_sha256_FROM_PRIOR_CHAR01": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "RAR_parent_reread_this_unit": false,
+    "private_CHILD_CHAR01_NPC_ZIP": "StoneAge-CHAR01-mixed25-all-npc-original-private.zip",
+    "private_ZIP_bytes": 995176,
+    "private_ZIP_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "private_ZIP_npc_member_CRC_all_2205": true,
+    "member": "npc/genout/dungeon00.create",
+    "original_file_bytes": 17289,
+    "original_file_SHA256": "1b3d189ea8ae5e42de4321efce19d3fb9517f0b25b6130ff0cb73761cd62514b",
+    "original_file_crc32_hex": "c36d56ad",
+    "original_file_template_name": "npcgen_warp",
+    "original_generator_comment_claims_infile_only": "data/npc/sainasu/dungeon/dungeon00.gen",
+    "original_unacquired_generator_input_GEN_verified": false,
+    "prior_PUBLIC_CHAR01_file": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json",
+    "all_147_original_byte_spans_sha256_against_PUBLIC_CHAR01": true,
+    "all_147_original_byte_spans_ordered_SHA256_text_chain": "16f2c35bc5edfd701e16197d8b774226cfb7199126f4ebb2939648bc09b90bbf",
+    "actual_original_numeric_warp_rows_SHA256_encoding": "fc2bb0752f742d58e2959ad8c41e1a650cfdb12a4e1eeca7b07f67708d7260c1"
+  },
+  "linked_prior_MAP04_source": {
+    "file": "research/recovered/STONEAGE-MAP-SCENE-MODULE-04-955-ORIGINAL-DAT-4166-RD-PIXEL-INDEX-R1.json",
+    "public_original_955_DAT_catalog_git_blob": "1ef8c004179128ea44ffa4fb4259748bc8c83911",
+    "source_class": "SAME_PRESERVED_MIXED25_RAR_PRIOR_DERIVED_MAP_CATALOG_NO_RAW_DAT_REREAD_THIS_UNIT",
+    "original_MAP04_955_sources_previously_verified": 955,
+    "original_TW1_retail_RD_pixel_candidate_sources_DISTINCT_FROM_mixed25_warp_FILE": true
+  },
+  "counts": {
+    "original_source_CREATE_rows_reparsed_from_real_private_bytes": 147,
+    "original_source_CREATE_rows_SHA256_from_old_public_inventory_verified": 147,
+    "distinct_source_floors": 64,
+    "distinct_target_floors": 63,
+    "distinct_floors_source_and_target_union": 64,
+    "original_exact_strict_reciprocal_row_occurrences": 140,
+    "original_non_strictly_reciprocal_row_occurrences": 7,
+    "exact_paired_source_row_pairs": 70,
+    "distinct_directed_floor_to_floor_pairs": 117,
+    "repeated_source_rows_same_floor_to_floor_relation": 30,
+    "floor_graph_weak_components": 5,
+    "weak_component_floor_sizes_desc": [
+      31,
+      10,
+      9,
+      8,
+      6
+    ],
+    "floor_graph_strong_components": 7,
+    "strong_component_floor_sizes_desc": [
+      26,
+      10,
+      9,
+      8,
+      5,
+      5,
+      1
+    ],
+    "distinct_weak_components_have_no_SOURCE_edges_between_each_other": true,
+    "distinct_source_floor_IDs_matched_prior_real_DAT_catalog": 53,
+    "distinct_source_floor_IDs_missing_in_prior_955_DAT_catalog": 11,
+    "source_CREATE_rows_with_prior_DAT_at_both_ends": 92,
+    "source_CREATE_rows_with_prior_DAT_at_source": 105,
+    "source_CREATE_rows_with_prior_DAT_at_target": 100,
+    "source_known_DAT_endpoints_within_prior_header_dimensions": 105,
+    "target_known_DAT_endpoints_within_prior_header_dimensions": 100,
+    "known_DAT_endpoints_outside_prior_header_dimensions": 0,
+    "original_new_DAT_source_raw_bytes_reread": 0,
+    "official_original_client_warp_runtime_proved": 0
+  },
+  "original_warp_raw_source_rows_numeric_only": [
+    {
+      "ordinal": 0,
+      "source_byte_window": [
+        122,
+        232
+      ],
+      "original_block_SHA256": "875e0bd35521654dc3fa8b36b27c5b31f13a232dfe5334a2fb194abfb7ccc5f1",
+      "source_floor": 100,
+      "source_xy": [
+        191,
+        365
+      ],
+      "target_floor": 10001,
+      "target_xy": [
+        40,
+        3
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 1,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 1,
+      "source_byte_window": [
+        242,
+        349
+      ],
+      "original_block_SHA256": "57d4e684932525fe6eba49278d2a16c6fbe6068becf2b3e146adf07a29efeffd",
+      "source_floor": 10001,
+      "source_xy": [
+        40,
+        3
+      ],
+      "target_floor": 100,
+      "target_xy": [
+        191,
+        365
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 0,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 0
+    },
+    {
+      "ordinal": 2,
+      "source_byte_window": [
+        357,
+        466
+      ],
+      "original_block_SHA256": "1a1d3501501d5c1bf0ccab1ba1dfb20864f9dc1a70aab8b4b5d9f67c5af89951",
+      "source_floor": 10001,
+      "source_xy": [
+        25,
+        42
+      ],
+      "target_floor": 10002,
+      "target_xy": [
+        16,
+        41
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 3,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 3,
+      "source_byte_window": [
+        476,
+        585
+      ],
+      "original_block_SHA256": "ce343ede9bbafa7905f56d2841ad662ce051fc22b68d12b4c741d031ec62d564",
+      "source_floor": 10002,
+      "source_xy": [
+        16,
+        41
+      ],
+      "target_floor": 10001,
+      "target_xy": [
+        25,
+        42
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 2,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 4,
+      "source_byte_window": [
+        594,
+        701
+      ],
+      "original_block_SHA256": "932f90b294e1ca66491a89f72c3602f860adb0616aa276815f4aa88071e9fc0d",
+      "source_floor": 10002,
+      "source_xy": [
+        8,
+        18
+      ],
+      "target_floor": 10003,
+      "target_xy": [
+        26,
+        25
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 5,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 5,
+      "source_byte_window": [
+        711,
+        819
+      ],
+      "original_block_SHA256": "a848e02843907bf84e8cc08c793f36818366b07a414c6f3871a6e29c71ed45a2",
+      "source_floor": 10003,
+      "source_xy": [
+        26,
+        25
+      ],
+      "target_floor": 10002,
+      "target_xy": [
+        8,
+        18
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 4,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 6,
+      "source_byte_window": [
+        828,
+        935
+      ],
+      "original_block_SHA256": "f78eab90648ef7bc6ed17014fff162d9464e60a0a9e61ce7e8d5243d36a5a47b",
+      "source_floor": 10003,
+      "source_xy": [
+        36,
+        3
+      ],
+      "target_floor": 10004,
+      "target_xy": [
+        26,
+        25
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 7,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 7,
+      "source_byte_window": [
+        945,
+        1053
+      ],
+      "original_block_SHA256": "6fd91133569886f1c831b2bb92f683bea1b394bac52236fe13c538dbd94933ed",
+      "source_floor": 10004,
+      "source_xy": [
+        26,
+        25
+      ],
+      "target_floor": 10003,
+      "target_xy": [
+        36,
+        3
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 6,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 8,
+      "source_byte_window": [
+        1062,
+        1171
+      ],
+      "original_block_SHA256": "2a44853acf579b9a704d72aa1e69973b5b444ff7f6ea357be27c2cf0af0685dd",
+      "source_floor": 10004,
+      "source_xy": [
+        24,
+        33
+      ],
+      "target_floor": 10005,
+      "target_xy": [
+        47,
+        23
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 9,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 9,
+      "source_byte_window": [
+        1181,
+        1290
+      ],
+      "original_block_SHA256": "2ed8619e895221b4f916de0963f8a642d93ca0ab4b1989dccd9ec59e6abd36f9",
+      "source_floor": 10005,
+      "source_xy": [
+        47,
+        23
+      ],
+      "target_floor": 10004,
+      "target_xy": [
+        24,
+        33
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 8,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 10,
+      "source_byte_window": [
+        1299,
+        1407
+      ],
+      "original_block_SHA256": "85dd1e2eeddd68921a42c03b5eb663fa768c3e27f839748a9e39c5996ba2a5db",
+      "source_floor": 10005,
+      "source_xy": [
+        19,
+        26
+      ],
+      "target_floor": 10006,
+      "target_xy": [
+        17,
+        3
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 11,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 11,
+      "source_byte_window": [
+        1417,
+        1524
+      ],
+      "original_block_SHA256": "3c580a06f0e41c98981280d6eeb91071ec53e86b17abb70e30b1df7e60d5eeb6",
+      "source_floor": 10006,
+      "source_xy": [
+        17,
+        3
+      ],
+      "target_floor": 10005,
+      "target_xy": [
+        19,
+        26
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 10,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 12,
+      "source_byte_window": [
+        1533,
+        1642
+      ],
+      "original_block_SHA256": "2846d9457ade0932973c974b8e5759c556f16cc3115f2bb13b5a7057326a9032",
+      "source_floor": 10006,
+      "source_xy": [
+        14,
+        91
+      ],
+      "target_floor": 10007,
+      "target_xy": [
+        41,
+        48
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 13,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 13,
+      "source_byte_window": [
+        1652,
+        1761
+      ],
+      "original_block_SHA256": "17f98dfe7be9ba649e9a62db79c69ec92ea085da64b76ce67ae03ffb44c76523",
+      "source_floor": 10007,
+      "source_xy": [
+        41,
+        48
+      ],
+      "target_floor": 10006,
+      "target_xy": [
+        14,
+        91
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 12,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 14,
+      "source_byte_window": [
+        1770,
+        1877
+      ],
+      "original_block_SHA256": "efc5b8083533e437500d459f86a816f6f28d2e2f182897a907f12c07920d6a9f",
+      "source_floor": 10007,
+      "source_xy": [
+        34,
+        8
+      ],
+      "target_floor": 100,
+      "target_xy": [
+        191,
+        425
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": null,
+      "strict_reciprocal_candidate": false,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 0
+    },
+    {
+      "ordinal": 15,
+      "source_byte_window": [
+        1886,
+        1997
+      ],
+      "original_block_SHA256": "83ef6733e69fa8d634431d9bab49f2add62a1ab691d153a9f7787f4a996e02da",
+      "source_floor": 100,
+      "source_xy": [
+        318,
+        428
+      ],
+      "target_floor": 10101,
+      "target_xy": [
+        14,
+        49
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 16,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 16,
+      "source_byte_window": [
+        2007,
+        2116
+      ],
+      "original_block_SHA256": "24ea96f986124a6e363ac3dba93acadfe73d53f4405a906381c05185cbd1b73b",
+      "source_floor": 10101,
+      "source_xy": [
+        14,
+        49
+      ],
+      "target_floor": 100,
+      "target_xy": [
+        318,
+        428
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 15,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 0
+    },
+    {
+      "ordinal": 17,
+      "source_byte_window": [
+        2125,
+        2234
+      ],
+      "original_block_SHA256": "c5de498e51af01e57c9c25c93345f106459e3d8dca9eae9dfbab639e679a9475",
+      "source_floor": 10101,
+      "source_xy": [
+        41,
+        40
+      ],
+      "target_floor": 10102,
+      "target_xy": [
+        46,
+        44
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 18,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 18,
+      "source_byte_window": [
+        2244,
+        2353
+      ],
+      "original_block_SHA256": "0859bf0248b2101fdbe4c964f73669b7eefae8faceacca26455f405300bba332",
+      "source_floor": 10102,
+      "source_xy": [
+        46,
+        44
+      ],
+      "target_floor": 10101,
+      "target_xy": [
+        41,
+        40
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 17,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 19,
+      "source_byte_window": [
+        2362,
+        2468
+      ],
+      "original_block_SHA256": "31b6fc79c083c3a904c7521ea47b99e163c85924f51777b4ba001a9fbb40b8f6",
+      "source_floor": 10102,
+      "source_xy": [
+        13,
+        1
+      ],
+      "target_floor": 10103,
+      "target_xy": [
+        13,
+        8
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 20,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 20,
+      "source_byte_window": [
+        2478,
+        2584
+      ],
+      "original_block_SHA256": "85406257f222259bfc45bc109709e9b1a70f2af489d6813063e8bbf53bf8d308",
+      "source_floor": 10103,
+      "source_xy": [
+        13,
+        8
+      ],
+      "target_floor": 10102,
+      "target_xy": [
+        13,
+        1
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 19,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 21,
+      "source_byte_window": [
+        2593,
+        2701
+      ],
+      "original_block_SHA256": "a1abd7bdac753b85f8a6b22367cd9140dff35b6f51b853df4b4cb7bd31b6ad29",
+      "source_floor": 10103,
+      "source_xy": [
+        43,
+        49
+      ],
+      "target_floor": 1200,
+      "target_xy": [
+        49,
+        26
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 22,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 22,
+      "source_byte_window": [
+        2711,
+        2819
+      ],
+      "original_block_SHA256": "efa3616c2c183658a43a9afe3ca1f52a8a2472163643b517deb7b71a83a74320",
+      "source_floor": 1200,
+      "source_xy": [
+        49,
+        26
+      ],
+      "target_floor": 10103,
+      "target_xy": [
+        43,
+        49
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 21,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 23,
+      "source_byte_window": [
+        2828,
+        2934
+      ],
+      "original_block_SHA256": "50cef287d18c3215821257251b71d3f1c6189a7586a5a2bb1a8c737be5a08a5c",
+      "source_floor": 1100,
+      "source_xy": [
+        96,
+        62
+      ],
+      "target_floor": 10201,
+      "target_xy": [
+        6,
+        4
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 24,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 4
+    },
+    {
+      "ordinal": 24,
+      "source_byte_window": [
+        2944,
+        3048
+      ],
+      "original_block_SHA256": "cb708b25cda2556e699fd7c95c4a642e6e5dce5ae666e855a48eaeab9cfe9380",
+      "source_floor": 10201,
+      "source_xy": [
+        6,
+        4
+      ],
+      "target_floor": 1100,
+      "target_xy": [
+        96,
+        62
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 23,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 4
+    },
+    {
+      "ordinal": 25,
+      "source_byte_window": [
+        3057,
+        3164
+      ],
+      "original_block_SHA256": "a79a4795f86137e404e587888a119dd01884e3a69abc76abc70ec5853fb22c2f",
+      "source_floor": 10201,
+      "source_xy": [
+        18,
+        48
+      ],
+      "target_floor": 10202,
+      "target_xy": [
+        9,
+        7
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 26,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 4
+    },
+    {
+      "ordinal": 26,
+      "source_byte_window": [
+        3174,
+        3279
+      ],
+      "original_block_SHA256": "78247e3c33a395fd810d1318362cab96662515bcdfaad5b78f18ef3d6e48a3be",
+      "source_floor": 10202,
+      "source_xy": [
+        9,
+        7
+      ],
+      "target_floor": 10201,
+      "target_xy": [
+        18,
+        48
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 25,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 4
+    },
+    {
+      "ordinal": 27,
+      "source_byte_window": [
+        3288,
+        3395
+      ],
+      "original_block_SHA256": "c92776ba0ab4029368db52c645b41d1244cd00f4af37cb3ebcc7ec2f13f37c2b",
+      "source_floor": 10202,
+      "source_xy": [
+        33,
+        49
+      ],
+      "target_floor": 10203,
+      "target_xy": [
+        8,
+        6
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 28,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 4
+    },
+    {
+      "ordinal": 28,
+      "source_byte_window": [
+        3405,
+        3510
+      ],
+      "original_block_SHA256": "71447c8fa225eb3e39567f5c3f794fbf6620128a1efc1137ca7c78c15b36466f",
+      "source_floor": 10203,
+      "source_xy": [
+        8,
+        6
+      ],
+      "target_floor": 10202,
+      "target_xy": [
+        33,
+        49
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 27,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 4
+    },
+    {
+      "ordinal": 29,
+      "source_byte_window": [
+        3519,
+        3624
+      ],
+      "original_block_SHA256": "a2abf1e1055d01486873e8602451848cdfb65b50e126f28e77cfe051f6edc249",
+      "source_floor": 10204,
+      "source_xy": [
+        0,
+        6
+      ],
+      "target_floor": 10202,
+      "target_xy": [
+        31,
+        15
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": null,
+      "strict_reciprocal_candidate": false,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 4
+    },
+    {
+      "ordinal": 30,
+      "source_byte_window": [
+        3633,
+        3738
+      ],
+      "original_block_SHA256": "29bde7f6ddb2660b475626bbd9b821e3cc880efe66ecca0625f9b57f5a6698af",
+      "source_floor": 10204,
+      "source_xy": [
+        0,
+        7
+      ],
+      "target_floor": 10202,
+      "target_xy": [
+        31,
+        15
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": null,
+      "strict_reciprocal_candidate": false,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 4
+    },
+    {
+      "ordinal": 31,
+      "source_byte_window": [
+        3747,
+        3858
+      ],
+      "original_block_SHA256": "15248903ccb329466c29d90f7d93b995afe41903092a4b94bdd288b88ff8a39c",
+      "source_floor": 200,
+      "source_xy": [
+        174,
+        402
+      ],
+      "target_floor": 10203,
+      "target_xy": [
+        31,
+        46
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 32,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 4
+    },
+    {
+      "ordinal": 32,
+      "source_byte_window": [
+        3868,
+        3977
+      ],
+      "original_block_SHA256": "9b9e4936c674cded20c1476f8db8dbba8770e546f7178e45450017ef9b8c922b",
+      "source_floor": 10203,
+      "source_xy": [
+        31,
+        46
+      ],
+      "target_floor": 200,
+      "target_xy": [
+        174,
+        402
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 31,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 4
+    },
+    {
+      "ordinal": 33,
+      "source_byte_window": [
+        3986,
+        4092
+      ],
+      "original_block_SHA256": "dce61032178f1ef58a0e6418c490e29fc9d55b30ba7319d667168095b4169b88",
+      "source_floor": 10301,
+      "source_xy": [
+        6,
+        43
+      ],
+      "target_floor": 10302,
+      "target_xy": [
+        27,
+        6
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 34,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 34,
+      "source_byte_window": [
+        4102,
+        4208
+      ],
+      "original_block_SHA256": "0152ad38fbe9831abf36ef7b006d415dbe90bf5b47239b6341419be4e6df47e5",
+      "source_floor": 10302,
+      "source_xy": [
+        27,
+        6
+      ],
+      "target_floor": 10301,
+      "target_xy": [
+        6,
+        43
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 33,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 35,
+      "source_byte_window": [
+        4217,
+        4323
+      ],
+      "original_block_SHA256": "2fea2966107f5c0d2240fb80e736abe44ec1afcc82dac0f9c75101346b0a7b5c",
+      "source_floor": 10302,
+      "source_xy": [
+        6,
+        29
+      ],
+      "target_floor": 10303,
+      "target_xy": [
+        7,
+        24
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 36,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 36,
+      "source_byte_window": [
+        4333,
+        4439
+      ],
+      "original_block_SHA256": "e8c3e2c8ba5a9a9d3080d83c991c0619131f3abb1e0437743913f69234e22248",
+      "source_floor": 10303,
+      "source_xy": [
+        7,
+        24
+      ],
+      "target_floor": 10302,
+      "target_xy": [
+        6,
+        29
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 35,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 37,
+      "source_byte_window": [
+        4448,
+        4557
+      ],
+      "original_block_SHA256": "7a096e34f7a547d5bf28d7b36bb3fbf259db15c756103c9be6fce4e2b1ca3c42",
+      "source_floor": 10302,
+      "source_xy": [
+        29,
+        36
+      ],
+      "target_floor": 10303,
+      "target_xy": [
+        25,
+        33
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 38,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 38,
+      "source_byte_window": [
+        4567,
+        4676
+      ],
+      "original_block_SHA256": "e1aa34b3fed724a74b29b5421a7468d55e745cf2f9a002af01c2e8d93d48863e",
+      "source_floor": 10303,
+      "source_xy": [
+        25,
+        33
+      ],
+      "target_floor": 10302,
+      "target_xy": [
+        29,
+        36
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 37,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 39,
+      "source_byte_window": [
+        4685,
+        4793
+      ],
+      "original_block_SHA256": "b752fbde16ca796cb0b7c4a5fb905b68448099c8ab1ed9188fc2f40393a942e5",
+      "source_floor": 10302,
+      "source_xy": [
+        15,
+        37
+      ],
+      "target_floor": 10303,
+      "target_xy": [
+        7,
+        41
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 40,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 40,
+      "source_byte_window": [
+        4803,
+        4910
+      ],
+      "original_block_SHA256": "32475c912bc1036aaef210c603f562efd495737ecc816f8f6d3d6ea056fa73d9",
+      "source_floor": 10303,
+      "source_xy": [
+        7,
+        41
+      ],
+      "target_floor": 10302,
+      "target_xy": [
+        15,
+        37
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 39,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 41,
+      "source_byte_window": [
+        4919,
+        5025
+      ],
+      "original_block_SHA256": "dd308b4d7601c602cf7cc65ae767ac3faf020727061fb5c1e104514f8441ef51",
+      "source_floor": 10303,
+      "source_xy": [
+        14,
+        7
+      ],
+      "target_floor": 10304,
+      "target_xy": [
+        14,
+        7
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 42,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 42,
+      "source_byte_window": [
+        5035,
+        5141
+      ],
+      "original_block_SHA256": "953ba1bcaebf10add0be74639d62e5ecc33125bcfdafa5c8217d02194da54abb",
+      "source_floor": 10304,
+      "source_xy": [
+        14,
+        7
+      ],
+      "target_floor": 10303,
+      "target_xy": [
+        14,
+        7
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 41,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 43,
+      "source_byte_window": [
+        5150,
+        5257
+      ],
+      "original_block_SHA256": "b0992028a6c26459ae9e482516a3a5012762b57f9e89e9a43f86cace29c03902",
+      "source_floor": 10303,
+      "source_xy": [
+        45,
+        4
+      ],
+      "target_floor": 10304,
+      "target_xy": [
+        44,
+        4
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 44,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 44,
+      "source_byte_window": [
+        5267,
+        5375
+      ],
+      "original_block_SHA256": "4e079127220d167c615dd6a1386e344066360154cfd5e048af6e5730996a0ee1",
+      "source_floor": 10304,
+      "source_xy": [
+        44,
+        4
+      ],
+      "target_floor": 10303,
+      "target_xy": [
+        45,
+        4
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 43,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 45,
+      "source_byte_window": [
+        5384,
+        5492
+      ],
+      "original_block_SHA256": "969a1c9cac0a962ec38aa252515521a11b8bf553de68028a82a6dcc3602aea41",
+      "source_floor": 10304,
+      "source_xy": [
+        21,
+        37
+      ],
+      "target_floor": 10305,
+      "target_xy": [
+        37,
+        6
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 46,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 46,
+      "source_byte_window": [
+        5502,
+        5609
+      ],
+      "original_block_SHA256": "ce78e7be4b285afa9bd0bfc7dd9654338deb82c43726201a9a4df28870bee9d4",
+      "source_floor": 10305,
+      "source_xy": [
+        37,
+        6
+      ],
+      "target_floor": 10304,
+      "target_xy": [
+        21,
+        37
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 45,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 47,
+      "source_byte_window": [
+        5618,
+        5727
+      ],
+      "original_block_SHA256": "780bd75ab4b60e0de25b774a88672f99ef703219cde9ae6ef6c453600675a2cb",
+      "source_floor": 10305,
+      "source_xy": [
+        18,
+        38
+      ],
+      "target_floor": 10306,
+      "target_xy": [
+        19,
+        39
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 48,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 48,
+      "source_byte_window": [
+        5737,
+        5846
+      ],
+      "original_block_SHA256": "c3495116acfe96e2467afa2b9be0ed6be23476d0afbb0eded27c540e09aee65c",
+      "source_floor": 10306,
+      "source_xy": [
+        19,
+        39
+      ],
+      "target_floor": 10305,
+      "target_xy": [
+        18,
+        38
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 47,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 49,
+      "source_byte_window": [
+        5855,
+        5958
+      ],
+      "original_block_SHA256": "72fcf53d597f72468e3e6c5a960271607b960d996e66a780eacd743cd0d850c4",
+      "source_floor": 10305,
+      "source_xy": [
+        9,
+        5
+      ],
+      "target_floor": 10306,
+      "target_xy": [
+        9,
+        6
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 50,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 50,
+      "source_byte_window": [
+        5968,
+        6071
+      ],
+      "original_block_SHA256": "8a87b7423fdc1cab834df9456094453978948f872f12ed17725c16d95e3efd0c",
+      "source_floor": 10306,
+      "source_xy": [
+        9,
+        6
+      ],
+      "target_floor": 10305,
+      "target_xy": [
+        9,
+        5
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 49,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 51,
+      "source_byte_window": [
+        6080,
+        6189
+      ],
+      "original_block_SHA256": "be03a51fd016eb743bd288be5698c3ef4b4ee92617eda3d08472a70e848a8b07",
+      "source_floor": 10305,
+      "source_xy": [
+        24,
+        11
+      ],
+      "target_floor": 10306,
+      "target_xy": [
+        23,
+        11
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 52,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 52,
+      "source_byte_window": [
+        6199,
+        6308
+      ],
+      "original_block_SHA256": "6d15383eee288fdc759b47adf7334a964b659e95141ff881463f1316c26921e1",
+      "source_floor": 10306,
+      "source_xy": [
+        23,
+        11
+      ],
+      "target_floor": 10305,
+      "target_xy": [
+        24,
+        11
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 51,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 53,
+      "source_byte_window": [
+        6317,
+        6423
+      ],
+      "original_block_SHA256": "3b11f5a48c6d37b469db387574e9a0859fa81d51293c411bddfa6da0d72a526e",
+      "source_floor": 10305,
+      "source_xy": [
+        5,
+        24
+      ],
+      "target_floor": 10306,
+      "target_xy": [
+        5,
+        26
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 54,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 54,
+      "source_byte_window": [
+        6433,
+        6539
+      ],
+      "original_block_SHA256": "c25210010a9a6fd967c3524aaeae51bf7efde3dca36fc7fce2b12e11dd469962",
+      "source_floor": 10306,
+      "source_xy": [
+        5,
+        26
+      ],
+      "target_floor": 10305,
+      "target_xy": [
+        5,
+        24
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 53,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 55,
+      "source_byte_window": [
+        6548,
+        6654
+      ],
+      "original_block_SHA256": "ec6f4e4370ef95e9c5f043ed3feba33ac4e74850e669111e61db16534b638547",
+      "source_floor": 10306,
+      "source_xy": [
+        38,
+        6
+      ],
+      "target_floor": 10307,
+      "target_xy": [
+        37,
+        6
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 56,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 56,
+      "source_byte_window": [
+        6664,
+        6770
+      ],
+      "original_block_SHA256": "e07c251f4ecdf0614139d0844f15c5efd67c27ad1654ac81c600aa4df6100027",
+      "source_floor": 10307,
+      "source_xy": [
+        37,
+        6
+      ],
+      "target_floor": 10306,
+      "target_xy": [
+        38,
+        6
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 55,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 57,
+      "source_byte_window": [
+        6779,
+        6888
+      ],
+      "original_block_SHA256": "da3db417024f6922310d19bf0706d8a144b6fda13c028b32a00ae917b84e9c11",
+      "source_floor": 10306,
+      "source_xy": [
+        42,
+        41
+      ],
+      "target_floor": 10307,
+      "target_xy": [
+        39,
+        41
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 58,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 58,
+      "source_byte_window": [
+        6898,
+        7007
+      ],
+      "original_block_SHA256": "74c45f0a6cb7094cbea2fccba89fdec4031568af5595333a2d22844f2f4e9280",
+      "source_floor": 10307,
+      "source_xy": [
+        39,
+        41
+      ],
+      "target_floor": 10306,
+      "target_xy": [
+        42,
+        41
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 57,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 59,
+      "source_byte_window": [
+        7016,
+        7124
+      ],
+      "original_block_SHA256": "d8d54ffab2bde6c20a1b55e6862ca018c2b527aaaceaf9549548c99b8762749a",
+      "source_floor": 10307,
+      "source_xy": [
+        13,
+        19
+      ],
+      "target_floor": 10308,
+      "target_xy": [
+        12,
+        5
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 60,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 60,
+      "source_byte_window": [
+        7134,
+        7241
+      ],
+      "original_block_SHA256": "8977cb3ebf4c7161ab4f5e818d58546a805c1ab32dc05a291358e3d5a8b86943",
+      "source_floor": 10308,
+      "source_xy": [
+        12,
+        5
+      ],
+      "target_floor": 10307,
+      "target_xy": [
+        13,
+        19
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 59,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 61,
+      "source_byte_window": [
+        7250,
+        7358
+      ],
+      "original_block_SHA256": "a80b4bf12a4e0139bd570d720b15b231fd53937d0ac00a55735bad3ed3378a82",
+      "source_floor": 10307,
+      "source_xy": [
+        18,
+        17
+      ],
+      "target_floor": 10308,
+      "target_xy": [
+        20,
+        5
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 62,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 62,
+      "source_byte_window": [
+        7368,
+        7475
+      ],
+      "original_block_SHA256": "08008f17fa27aaae602e2ad08dcf8c9ba1d2f3f5f41366ac3b2edd5c6b274a4c",
+      "source_floor": 10308,
+      "source_xy": [
+        20,
+        5
+      ],
+      "target_floor": 10307,
+      "target_xy": [
+        18,
+        17
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 61,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 63,
+      "source_byte_window": [
+        7484,
+        7592
+      ],
+      "original_block_SHA256": "7399ca9e2a0f52de6f9018fb573c85debf5727f7fda1102893689c658aabf31c",
+      "source_floor": 10307,
+      "source_xy": [
+        22,
+        17
+      ],
+      "target_floor": 10308,
+      "target_xy": [
+        28,
+        4
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 64,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 64,
+      "source_byte_window": [
+        7602,
+        7709
+      ],
+      "original_block_SHA256": "63182fae53e226c1a69879a0dca4c7c000cb0b201c3078b4558cfb8f47eba4f3",
+      "source_floor": 10308,
+      "source_xy": [
+        28,
+        4
+      ],
+      "target_floor": 10307,
+      "target_xy": [
+        22,
+        17
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 63,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 65,
+      "source_byte_window": [
+        7718,
+        7826
+      ],
+      "original_block_SHA256": "6e8529b718c29ad851acf1337e7a481746a6d297bee728ac02ba68cac1239456",
+      "source_floor": 10307,
+      "source_xy": [
+        27,
+        18
+      ],
+      "target_floor": 10308,
+      "target_xy": [
+        40,
+        5
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 66,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 66,
+      "source_byte_window": [
+        7836,
+        7943
+      ],
+      "original_block_SHA256": "29480ad434315430c3339943bb2fd878bc2dc3e3c242261a337bd8debfee122f",
+      "source_floor": 10308,
+      "source_xy": [
+        40,
+        5
+      ],
+      "target_floor": 10307,
+      "target_xy": [
+        27,
+        18
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 65,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 3
+    },
+    {
+      "ordinal": 67,
+      "source_byte_window": [
+        7952,
+        8061
+      ],
+      "original_block_SHA256": "a7ad5549bb0cbfa28d4904d069b0b3ebcbc8f1a884d917f599e8968553242772",
+      "source_floor": 10601,
+      "source_xy": [
+        27,
+        49
+      ],
+      "target_floor": 100,
+      "target_xy": [
+        411,
+        339
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": null,
+      "strict_reciprocal_candidate": false,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 0
+    },
+    {
+      "ordinal": 68,
+      "source_byte_window": [
+        8070,
+        8179
+      ],
+      "original_block_SHA256": "4c52f6a917e707d24f30a8bb0695807bd3c6b292c0dd6094cb401f1e93a9f1d8",
+      "source_floor": 10601,
+      "source_xy": [
+        28,
+        49
+      ],
+      "target_floor": 100,
+      "target_xy": [
+        411,
+        339
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": null,
+      "strict_reciprocal_candidate": false,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 0
+    },
+    {
+      "ordinal": 69,
+      "source_byte_window": [
+        8188,
+        8297
+      ],
+      "original_block_SHA256": "324dff8a33a4c782fb6a0fc76c3fbcee8a95adc8d6c37ffcb945f929dacde5c1",
+      "source_floor": 10601,
+      "source_xy": [
+        29,
+        49
+      ],
+      "target_floor": 100,
+      "target_xy": [
+        411,
+        339
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": null,
+      "strict_reciprocal_candidate": false,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 0
+    },
+    {
+      "ordinal": 70,
+      "source_byte_window": [
+        8306,
+        8415
+      ],
+      "original_block_SHA256": "9192a75f5acadbc8e7a2d11a2677a3f9710baa89b770163c4bd8de1fa2a475c1",
+      "source_floor": 10601,
+      "source_xy": [
+        30,
+        49
+      ],
+      "target_floor": 100,
+      "target_xy": [
+        411,
+        339
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": null,
+      "strict_reciprocal_candidate": false,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 0
+    },
+    {
+      "ordinal": 71,
+      "source_byte_window": [
+        8424,
+        8532
+      ],
+      "original_block_SHA256": "a087f98314445bb3e7912429d1ccabbd6c2a0088aff6660e15b3f1a3fe8c2b5a",
+      "source_floor": 10601,
+      "source_xy": [
+        45,
+        43
+      ],
+      "target_floor": 10602,
+      "target_xy": [
+        7,
+        41
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 72,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 72,
+      "source_byte_window": [
+        8542,
+        8649
+      ],
+      "original_block_SHA256": "4fb021d33632b40380c0beba1c2fdf32e518a228b1ee2ab095a3584f397f5347",
+      "source_floor": 10602,
+      "source_xy": [
+        7,
+        41
+      ],
+      "target_floor": 10601,
+      "target_xy": [
+        45,
+        43
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 71,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 73,
+      "source_byte_window": [
+        8658,
+        8761
+      ],
+      "original_block_SHA256": "46e527bd5275b709a219f05827b448a1ee91b571e77ec4a9637ccd4586b8b30a",
+      "source_floor": 10602,
+      "source_xy": [
+        5,
+        4
+      ],
+      "target_floor": 10603,
+      "target_xy": [
+        7,
+        3
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 74,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 74,
+      "source_byte_window": [
+        8771,
+        8874
+      ],
+      "original_block_SHA256": "d7818d9c103b76777b18f10927d463592a45ea002dba3178f511f1767542d557",
+      "source_floor": 10603,
+      "source_xy": [
+        7,
+        3
+      ],
+      "target_floor": 10602,
+      "target_xy": [
+        5,
+        4
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 73,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 75,
+      "source_byte_window": [
+        8883,
+        8988
+      ],
+      "original_block_SHA256": "17fb5bb2db88fec198aca3d6618d7b49b8a8e1f878b91af537d9a00a12cf696a",
+      "source_floor": 10603,
+      "source_xy": [
+        7,
+        45
+      ],
+      "target_floor": 10604,
+      "target_xy": [
+        4,
+        3
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 76,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 76,
+      "source_byte_window": [
+        8998,
+        9102
+      ],
+      "original_block_SHA256": "e5c6a347f06bb87dac174fc69cfe0daeda4f86eee017242691a1433bfaf98143",
+      "source_floor": 10604,
+      "source_xy": [
+        4,
+        3
+      ],
+      "target_floor": 10603,
+      "target_xy": [
+        7,
+        45
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 75,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 77,
+      "source_byte_window": [
+        9111,
+        9217
+      ],
+      "original_block_SHA256": "8f2ceb75e4a4ac2169d278195b18eee7059eeb7b6996ddf860412a00e607abe9",
+      "source_floor": 10604,
+      "source_xy": [
+        4,
+        34
+      ],
+      "target_floor": 10605,
+      "target_xy": [
+        11,
+        4
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 78,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 78,
+      "source_byte_window": [
+        9227,
+        9333
+      ],
+      "original_block_SHA256": "f5c58477cff4648cb23689756c52e0d7358f83eb130f3da4fda85a802c4e2454",
+      "source_floor": 10605,
+      "source_xy": [
+        11,
+        4
+      ],
+      "target_floor": 10604,
+      "target_xy": [
+        4,
+        34
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 77,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 79,
+      "source_byte_window": [
+        9342,
+        9447
+      ],
+      "original_block_SHA256": "ab18e4a2d55033df1bb800c3a1a3f9c778d601a67c368a4f43aa773ae83ca471",
+      "source_floor": 10801,
+      "source_xy": [
+        7,
+        5
+      ],
+      "target_floor": 10802,
+      "target_xy": [
+        16,
+        15
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 80,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 2
+    },
+    {
+      "ordinal": 80,
+      "source_byte_window": [
+        9457,
+        9564
+      ],
+      "original_block_SHA256": "913b0b7d2f7978c879357948e0a39f2672176ff65120cdfb4ae1eb9699e4f88d",
+      "source_floor": 10802,
+      "source_xy": [
+        16,
+        15
+      ],
+      "target_floor": 10801,
+      "target_xy": [
+        7,
+        5
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 79,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 2
+    },
+    {
+      "ordinal": 81,
+      "source_byte_window": [
+        9573,
+        9678
+      ],
+      "original_block_SHA256": "cd27bbe1db0a972d4600c9d7bc0759ce1391b10f8f13e95a25380d442b12e9ad",
+      "source_floor": 10801,
+      "source_xy": [
+        40,
+        5
+      ],
+      "target_floor": 10803,
+      "target_xy": [
+        8,
+        2
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 82,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 2
+    },
+    {
+      "ordinal": 82,
+      "source_byte_window": [
+        9688,
+        9792
+      ],
+      "original_block_SHA256": "024a339bdd3476fda924462347b162edfc58d46f2c477d45834e17ed2b3cbbb8",
+      "source_floor": 10803,
+      "source_xy": [
+        8,
+        2
+      ],
+      "target_floor": 10801,
+      "target_xy": [
+        40,
+        5
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 81,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 2
+    },
+    {
+      "ordinal": 83,
+      "source_byte_window": [
+        9801,
+        9908
+      ],
+      "original_block_SHA256": "c70772fdc2cda374c06c536f21295f6c37e44d7269b9c449e8e55f2ce452fe9a",
+      "source_floor": 10803,
+      "source_xy": [
+        7,
+        37
+      ],
+      "target_floor": 10804,
+      "target_xy": [
+        43,
+        44
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 84,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 2
+    },
+    {
+      "ordinal": 84,
+      "source_byte_window": [
+        9918,
+        10026
+      ],
+      "original_block_SHA256": "afc9b9d1311346a927a71b77ba670bcb61faaf8fb2cdb090a4a277086631a74f",
+      "source_floor": 10804,
+      "source_xy": [
+        43,
+        44
+      ],
+      "target_floor": 10803,
+      "target_xy": [
+        7,
+        37
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 83,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 2
+    },
+    {
+      "ordinal": 85,
+      "source_byte_window": [
+        10036,
+        10142
+      ],
+      "original_block_SHA256": "2a2be91e9a22bc27b27d743c680b52c3cdcb3dae7792e196d16f701380f988ae",
+      "source_floor": 10804,
+      "source_xy": [
+        46,
+        7
+      ],
+      "target_floor": 10805,
+      "target_xy": [
+        42,
+        6
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 86,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 2
+    },
+    {
+      "ordinal": 86,
+      "source_byte_window": [
+        10152,
+        10258
+      ],
+      "original_block_SHA256": "377edc1d27ac966b1926cf9a0a32e06773df10f090bc0a599aca4b9a93931649",
+      "source_floor": 10805,
+      "source_xy": [
+        42,
+        6
+      ],
+      "target_floor": 10804,
+      "target_xy": [
+        46,
+        7
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 85,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 2
+    },
+    {
+      "ordinal": 87,
+      "source_byte_window": [
+        10268,
+        10376
+      ],
+      "original_block_SHA256": "00bcd68a818978f0ef3f9056815fc606b4280b867547005ccab5586975da72c6",
+      "source_floor": 10805,
+      "source_xy": [
+        12,
+        35
+      ],
+      "target_floor": 10806,
+      "target_xy": [
+        6,
+        28
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 88,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 2
+    },
+    {
+      "ordinal": 88,
+      "source_byte_window": [
+        10386,
+        10493
+      ],
+      "original_block_SHA256": "4802d94d19293cfadce2bf921d818b364a67befd2f581e05fe7851cb6927e0e5",
+      "source_floor": 10806,
+      "source_xy": [
+        6,
+        28
+      ],
+      "target_floor": 10805,
+      "target_xy": [
+        12,
+        35
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 87,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 2
+    },
+    {
+      "ordinal": 89,
+      "source_byte_window": [
+        10503,
+        10610
+      ],
+      "original_block_SHA256": "47f6d0cfe264208359add9c22e5e94fda56dd2b56ca5936cf50a3988186f1626",
+      "source_floor": 10806,
+      "source_xy": [
+        57,
+        5
+      ],
+      "target_floor": 10807,
+      "target_xy": [
+        47,
+        10
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 90,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 2
+    },
+    {
+      "ordinal": 90,
+      "source_byte_window": [
+        10620,
+        10728
+      ],
+      "original_block_SHA256": "2d979c2eded688f7d0e666fcdc1c11b030ea7064fe5c56a305146a14e3067d22",
+      "source_floor": 10807,
+      "source_xy": [
+        47,
+        10
+      ],
+      "target_floor": 10806,
+      "target_xy": [
+        57,
+        5
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 89,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 2
+    },
+    {
+      "ordinal": 91,
+      "source_byte_window": [
+        10738,
+        10847
+      ],
+      "original_block_SHA256": "f024f412ebd8822d9cd299be78f7c2073a8d84df4b739ef6a1f3e6a82b8320a4",
+      "source_floor": 10807,
+      "source_xy": [
+        18,
+        45
+      ],
+      "target_floor": 10808,
+      "target_xy": [
+        36,
+        54
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 92,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 2
+    },
+    {
+      "ordinal": 92,
+      "source_byte_window": [
+        10857,
+        10966
+      ],
+      "original_block_SHA256": "5d4cae2a6dbd5119df4d79ad9973758be81b93c04c72a2454d4b00fba42f09bc",
+      "source_floor": 10808,
+      "source_xy": [
+        36,
+        54
+      ],
+      "target_floor": 10807,
+      "target_xy": [
+        18,
+        45
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 91,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 2
+    },
+    {
+      "ordinal": 93,
+      "source_byte_window": [
+        10976,
+        11079
+      ],
+      "original_block_SHA256": "20ccfd2fad0db5425ca164e2fb3c496c4208e721f727debb815afff7abe97026",
+      "source_floor": 10808,
+      "source_xy": [
+        4,
+        4
+      ],
+      "target_floor": 10809,
+      "target_xy": [
+        7,
+        3
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 94,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 2
+    },
+    {
+      "ordinal": 94,
+      "source_byte_window": [
+        11089,
+        11192
+      ],
+      "original_block_SHA256": "abf35185a604d38f231504629628a418ac51fb2836a01aaf933ae825eb566072",
+      "source_floor": 10809,
+      "source_xy": [
+        7,
+        3
+      ],
+      "target_floor": 10808,
+      "target_xy": [
+        4,
+        4
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 93,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 2
+    },
+    {
+      "ordinal": 95,
+      "source_byte_window": [
+        11202,
+        11313
+      ],
+      "original_block_SHA256": "06781bd5593cc67ae3c238dffbeff97ac20f12438cd8cd8539c6e28b089e52ef",
+      "source_floor": 100,
+      "source_xy": [
+        237,
+        445
+      ],
+      "target_floor": 10901,
+      "target_xy": [
+        25,
+        49
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 96,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 96,
+      "source_byte_window": [
+        11323,
+        11432
+      ],
+      "original_block_SHA256": "b52639c89f993ad55195fd61afcfff9a3841494f5b7949605fe86e802b4aa8e0",
+      "source_floor": 10901,
+      "source_xy": [
+        25,
+        49
+      ],
+      "target_floor": 100,
+      "target_xy": [
+        237,
+        445
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 95,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 0
+    },
+    {
+      "ordinal": 97,
+      "source_byte_window": [
+        11442,
+        11553
+      ],
+      "original_block_SHA256": "0c9a9ecb5fc9876265447c22c18fbe6103e4562507ce4936c0a77c5d16547319",
+      "source_floor": 100,
+      "source_xy": [
+        237,
+        445
+      ],
+      "target_floor": 10901,
+      "target_xy": [
+        26,
+        49
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 98,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 98,
+      "source_byte_window": [
+        11563,
+        11672
+      ],
+      "original_block_SHA256": "c8cb990f485d849d586d384eac67e466ea5d67f97a03a9dd56649b2f5b1f5c5b",
+      "source_floor": 10901,
+      "source_xy": [
+        26,
+        49
+      ],
+      "target_floor": 100,
+      "target_xy": [
+        237,
+        445
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 97,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 0
+    },
+    {
+      "ordinal": 99,
+      "source_byte_window": [
+        11682,
+        11791
+      ],
+      "original_block_SHA256": "dcf2570ea6e15563f2a86d0fe8c33653787c859a0d00773b8c1d615a6d53d9d8",
+      "source_floor": 10902,
+      "source_xy": [
+        46,
+        25
+      ],
+      "target_floor": 10903,
+      "target_xy": [
+        27,
+        43
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 100,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 1
+    },
+    {
+      "ordinal": 100,
+      "source_byte_window": [
+        11801,
+        11910
+      ],
+      "original_block_SHA256": "7f79dc2baecae80d4e053f0706435cb6faa272e0e716386013be6471161fc18c",
+      "source_floor": 10903,
+      "source_xy": [
+        27,
+        43
+      ],
+      "target_floor": 10902,
+      "target_xy": [
+        46,
+        25
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 99,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 1
+    },
+    {
+      "ordinal": 101,
+      "source_byte_window": [
+        11920,
+        12029
+      ],
+      "original_block_SHA256": "0eb0121867152a45e85b5f676caab4a02a0c93638ac6d47a793e7489467690e0",
+      "source_floor": 10903,
+      "source_xy": [
+        17,
+        24
+      ],
+      "target_floor": 10904,
+      "target_xy": [
+        26,
+        48
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 102,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 1
+    },
+    {
+      "ordinal": 102,
+      "source_byte_window": [
+        12039,
+        12148
+      ],
+      "original_block_SHA256": "c36a603456d7ed40117f875232855dddbcbcffd484ee2355aa4370b5853c64d6",
+      "source_floor": 10904,
+      "source_xy": [
+        26,
+        48
+      ],
+      "target_floor": 10903,
+      "target_xy": [
+        17,
+        24
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 101,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 1
+    },
+    {
+      "ordinal": 103,
+      "source_byte_window": [
+        12158,
+        12266
+      ],
+      "original_block_SHA256": "89b528d890fa3405fd1ff44d6b7f6b568fac94e987d1f45bad89b706e669cc4b",
+      "source_floor": 10904,
+      "source_xy": [
+        36,
+        20
+      ],
+      "target_floor": 10905,
+      "target_xy": [
+        46,
+        4
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 104,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 1
+    },
+    {
+      "ordinal": 104,
+      "source_byte_window": [
+        12276,
+        12383
+      ],
+      "original_block_SHA256": "9ee130fa1c86740e0db3afebad3d59e238c931d394e8ed75780b2d254939ffa9",
+      "source_floor": 10905,
+      "source_xy": [
+        46,
+        4
+      ],
+      "target_floor": 10904,
+      "target_xy": [
+        36,
+        20
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 103,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 1
+    },
+    {
+      "ordinal": 105,
+      "source_byte_window": [
+        12393,
+        12499
+      ],
+      "original_block_SHA256": "7c8a3eacb529328e89df7235bf778e736fcee0d2b256c4e0d783a1b9f0d83b05",
+      "source_floor": 10905,
+      "source_xy": [
+        4,
+        47
+      ],
+      "target_floor": 10906,
+      "target_xy": [
+        11,
+        4
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 106,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 1
+    },
+    {
+      "ordinal": 106,
+      "source_byte_window": [
+        12509,
+        12615
+      ],
+      "original_block_SHA256": "bce43bce45a07b504c056dfec484e667edcca7cbe565a1d3e70d34ce8f51bb7c",
+      "source_floor": 10906,
+      "source_xy": [
+        11,
+        4
+      ],
+      "target_floor": 10905,
+      "target_xy": [
+        4,
+        47
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 105,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 1
+    },
+    {
+      "ordinal": 107,
+      "source_byte_window": [
+        12625,
+        12734
+      ],
+      "original_block_SHA256": "2a90b3ab4c888b583bbd7ccab8ffec00ca9602d9e3e4b50a6b946aedd137de2a",
+      "source_floor": 10906,
+      "source_xy": [
+        16,
+        57
+      ],
+      "target_floor": 10907,
+      "target_xy": [
+        12,
+        58
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 108,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 1
+    },
+    {
+      "ordinal": 108,
+      "source_byte_window": [
+        12744,
+        12853
+      ],
+      "original_block_SHA256": "acdcf87d52fa73dbe8ad46770ac82ba85d9b8f14eb01e7fc8382ca4e65f88412",
+      "source_floor": 10907,
+      "source_xy": [
+        12,
+        58
+      ],
+      "target_floor": 10906,
+      "target_xy": [
+        16,
+        57
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 107,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 1
+    },
+    {
+      "ordinal": 109,
+      "source_byte_window": [
+        12863,
+        12970
+      ],
+      "original_block_SHA256": "24eb4a1adac916540e0bf49c2d57890d759b74211fe3ce8def7dda6bb8b67172",
+      "source_floor": 10907,
+      "source_xy": [
+        13,
+        1
+      ],
+      "target_floor": 10908,
+      "target_xy": [
+        46,
+        16
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 110,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 1
+    },
+    {
+      "ordinal": 110,
+      "source_byte_window": [
+        12980,
+        13088
+      ],
+      "original_block_SHA256": "c060fd6e8882268a71f427ff334280668750c7dfe3c60163e9c50ec6a7a3c4a7",
+      "source_floor": 10908,
+      "source_xy": [
+        46,
+        16
+      ],
+      "target_floor": 10907,
+      "target_xy": [
+        13,
+        1
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 109,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 1
+    },
+    {
+      "ordinal": 111,
+      "source_byte_window": [
+        13098,
+        13205
+      ],
+      "original_block_SHA256": "247af08dde42467a172e28386418276db337778ef9fe7204897a70ba213010c1",
+      "source_floor": 10908,
+      "source_xy": [
+        8,
+        26
+      ],
+      "target_floor": 10909,
+      "target_xy": [
+        15,
+        70
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 112,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 1
+    },
+    {
+      "ordinal": 112,
+      "source_byte_window": [
+        13215,
+        13323
+      ],
+      "original_block_SHA256": "39f746e1ec38c5d21b1c5e997558ee9e1cc5e84515de6985e67313bfdab685dd",
+      "source_floor": 10909,
+      "source_xy": [
+        15,
+        70
+      ],
+      "target_floor": 10908,
+      "target_xy": [
+        8,
+        26
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 111,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 1
+    },
+    {
+      "ordinal": 113,
+      "source_byte_window": [
+        13333,
+        13436
+      ],
+      "original_block_SHA256": "2840d37a567fc293f3deeee3d872cab6a140f0d7d62b0488cc363436f08d937a",
+      "source_floor": 10909,
+      "source_xy": [
+        8,
+        4
+      ],
+      "target_floor": 10910,
+      "target_xy": [
+        4,
+        3
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 114,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 1
+    },
+    {
+      "ordinal": 114,
+      "source_byte_window": [
+        13446,
+        13549
+      ],
+      "original_block_SHA256": "537350e72418d0c6f91fdefbc245d354d679dbeed2ee5420e3d5b53a0776c7b4",
+      "source_floor": 10910,
+      "source_xy": [
+        4,
+        3
+      ],
+      "target_floor": 10909,
+      "target_xy": [
+        8,
+        4
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 113,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 1
+    },
+    {
+      "ordinal": 115,
+      "source_byte_window": [
+        13559,
+        13668
+      ],
+      "original_block_SHA256": "b7da7b01918fd3fbf2741cc94edf411e5a16175c1c9714add3779eeb02bad601",
+      "source_floor": 10909,
+      "source_xy": [
+        66,
+        49
+      ],
+      "target_floor": 10910,
+      "target_xy": [
+        66,
+        30
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 116,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 1
+    },
+    {
+      "ordinal": 116,
+      "source_byte_window": [
+        13678,
+        13787
+      ],
+      "original_block_SHA256": "98a7daafa8040e30e380eef6f50ec377df2035b6f7af0ff450d389e230bb877e",
+      "source_floor": 10910,
+      "source_xy": [
+        66,
+        30
+      ],
+      "target_floor": 10909,
+      "target_xy": [
+        66,
+        49
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 115,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 1
+    },
+    {
+      "ordinal": 117,
+      "source_byte_window": [
+        13797,
+        13904
+      ],
+      "original_block_SHA256": "e1f92496e67dafd2520ebf3ac889b1c42dad1c9432a3791005cc04938de786d4",
+      "source_floor": 10910,
+      "source_xy": [
+        7,
+        67
+      ],
+      "target_floor": 10911,
+      "target_xy": [
+        39,
+        45
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 118,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 1
+    },
+    {
+      "ordinal": 118,
+      "source_byte_window": [
+        13914,
+        14022
+      ],
+      "original_block_SHA256": "b3aad09c2f3b2ff40048f5b310c8defc6e99e61911e9b45f40012e05ab1ac484",
+      "source_floor": 10911,
+      "source_xy": [
+        39,
+        45
+      ],
+      "target_floor": 10910,
+      "target_xy": [
+        7,
+        67
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 117,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 1
+    },
+    {
+      "ordinal": 119,
+      "source_byte_window": [
+        14032,
+        14137
+      ],
+      "original_block_SHA256": "2af23df2c587379a4d32078d9e305811f79c60eedf6d9d278d7a6aa66c81e2c9",
+      "source_floor": 10901,
+      "source_xy": [
+        46,
+        4
+      ],
+      "target_floor": 10912,
+      "target_xy": [
+        6,
+        3
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 120,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 120,
+      "source_byte_window": [
+        14147,
+        14251
+      ],
+      "original_block_SHA256": "8364f0693660bea7328aa8b7125fda71074054e9c35e5b6d997a38ffdb2cb834",
+      "source_floor": 10912,
+      "source_xy": [
+        6,
+        3
+      ],
+      "target_floor": 10901,
+      "target_xy": [
+        46,
+        4
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 119,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 121,
+      "source_byte_window": [
+        14261,
+        14369
+      ],
+      "original_block_SHA256": "af41fec654097755e3fd802dbad2f24b17c3a366feb97e1e6cd379db103ab0d4",
+      "source_floor": 10912,
+      "source_xy": [
+        23,
+        34
+      ],
+      "target_floor": 10913,
+      "target_xy": [
+        7,
+        21
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 122,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 122,
+      "source_byte_window": [
+        14379,
+        14486
+      ],
+      "original_block_SHA256": "f33181fa056e5d47c192bcc4161cf8d86b8d5c15655f9b199f12784073c76492",
+      "source_floor": 10913,
+      "source_xy": [
+        7,
+        21
+      ],
+      "target_floor": 10912,
+      "target_xy": [
+        23,
+        34
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 121,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 123,
+      "source_byte_window": [
+        14496,
+        14605
+      ],
+      "original_block_SHA256": "97c3823db7519670fb7bfaa3d990ed6b9b1cc37578a13e9a678bd9e5fe317fdb",
+      "source_floor": 10913,
+      "source_xy": [
+        35,
+        31
+      ],
+      "target_floor": 10914,
+      "target_xy": [
+        17,
+        53
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 124,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 124,
+      "source_byte_window": [
+        14615,
+        14724
+      ],
+      "original_block_SHA256": "08a35265875c1bcfc294153424c75bb8b87dfc52c47033cb60ddff413d0eb2d6",
+      "source_floor": 10914,
+      "source_xy": [
+        17,
+        53
+      ],
+      "target_floor": 10913,
+      "target_xy": [
+        35,
+        31
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 123,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 125,
+      "source_byte_window": [
+        14734,
+        14837
+      ],
+      "original_block_SHA256": "65ce829d0d4229f4a69926fd17aeebd9010561a6003550f8dd1d2ac22cbaa798",
+      "source_floor": 10914,
+      "source_xy": [
+        7,
+        4
+      ],
+      "target_floor": 10915,
+      "target_xy": [
+        6,
+        7
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 126,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 126,
+      "source_byte_window": [
+        14847,
+        14950
+      ],
+      "original_block_SHA256": "670de9e7db78a6872c6b60c35f5a43c1a989107006dee3ef6646cdb971decae2",
+      "source_floor": 10915,
+      "source_xy": [
+        6,
+        7
+      ],
+      "target_floor": 10914,
+      "target_xy": [
+        7,
+        4
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 125,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 127,
+      "source_byte_window": [
+        14960,
+        15068
+      ],
+      "original_block_SHA256": "96ce407c0ca50e8030e7c65f2467f2e419420289f2acdfa8c6ae1a6f588adc83",
+      "source_floor": 10915,
+      "source_xy": [
+        51,
+        31
+      ],
+      "target_floor": 10916,
+      "target_xy": [
+        16,
+        4
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 128,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 128,
+      "source_byte_window": [
+        15078,
+        15185
+      ],
+      "original_block_SHA256": "e6d5db5affa6fe0a7b09454f8758cfa80bcabdf62ec6d52162bbee2ad87cbef2",
+      "source_floor": 10916,
+      "source_xy": [
+        16,
+        4
+      ],
+      "target_floor": 10915,
+      "target_xy": [
+        51,
+        31
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 127,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 129,
+      "source_byte_window": [
+        15195,
+        15303
+      ],
+      "original_block_SHA256": "d0a6d4d309e443ba7c0b715081ee1a5481c6fea12f4c373a2f186c2b65f3e616",
+      "source_floor": 10916,
+      "source_xy": [
+        16,
+        72
+      ],
+      "target_floor": 10917,
+      "target_xy": [
+        19,
+        4
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 130,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 130,
+      "source_byte_window": [
+        15313,
+        15420
+      ],
+      "original_block_SHA256": "ab17a187f95ddd35141790cd9b0f862a9b43173529a93703ef676f771b9a07db",
+      "source_floor": 10917,
+      "source_xy": [
+        19,
+        4
+      ],
+      "target_floor": 10916,
+      "target_xy": [
+        16,
+        72
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 129,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 131,
+      "source_byte_window": [
+        15430,
+        15539
+      ],
+      "original_block_SHA256": "852f5b12fb59668966217d11c37d85270bbb2481048172e10d2019ef1d903efb",
+      "source_floor": 10917,
+      "source_xy": [
+        84,
+        25
+      ],
+      "target_floor": 10918,
+      "target_xy": [
+        25,
+        22
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 132,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 132,
+      "source_byte_window": [
+        15549,
+        15658
+      ],
+      "original_block_SHA256": "c36b560220a0acfaa3f89f971d5973c19c802f877101aed49ab00f122be0a37d",
+      "source_floor": 10918,
+      "source_xy": [
+        25,
+        22
+      ],
+      "target_floor": 10917,
+      "target_xy": [
+        84,
+        25
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 131,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 133,
+      "source_byte_window": [
+        15668,
+        15778
+      ],
+      "original_block_SHA256": "348f539916bbbe1731c89039460c795412995d2c59dd9ebac991cba02eeb6af4",
+      "source_floor": 100,
+      "source_xy": [
+        328,
+        633
+      ],
+      "target_floor": 11001,
+      "target_xy": [
+        0,
+        43
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 134,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 134,
+      "source_byte_window": [
+        15788,
+        15895
+      ],
+      "original_block_SHA256": "cc5850b2babf1529649ec5b7c9153ec4a2ff570478f88a014c0732ff70e18519",
+      "source_floor": 11001,
+      "source_xy": [
+        0,
+        43
+      ],
+      "target_floor": 100,
+      "target_xy": [
+        328,
+        633
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 133,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 0
+    },
+    {
+      "ordinal": 135,
+      "source_byte_window": [
+        15905,
+        16015
+      ],
+      "original_block_SHA256": "06eb2e4b0d2de5f2ebb608bd1132862721786760ab51767c924978501605f333",
+      "source_floor": 100,
+      "source_xy": [
+        328,
+        633
+      ],
+      "target_floor": 11001,
+      "target_xy": [
+        0,
+        44
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 136,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": false,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": null,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 136,
+      "source_byte_window": [
+        16025,
+        16132
+      ],
+      "original_block_SHA256": "cef2f6ce6f9d13c746d4c4e01f3b2fbed84318ea9f04a2fe11bd339371791360",
+      "source_floor": 11001,
+      "source_xy": [
+        0,
+        44
+      ],
+      "target_floor": 100,
+      "target_xy": [
+        328,
+        633
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 135,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": false,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": null,
+      "component_index": 0
+    },
+    {
+      "ordinal": 137,
+      "source_byte_window": [
+        16142,
+        16249
+      ],
+      "original_block_SHA256": "e4f3ecd1f9aa8e7da271663092a1c4b890e21e8052481082c82f40c608d302c9",
+      "source_floor": 11001,
+      "source_xy": [
+        44,
+        5
+      ],
+      "target_floor": 11002,
+      "target_xy": [
+        46,
+        42
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 138,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 138,
+      "source_byte_window": [
+        16259,
+        16367
+      ],
+      "original_block_SHA256": "0366efad9509145f3c6d72ba30330d7a7750cc064fb9cb26b53cc1f49965bd9c",
+      "source_floor": 11002,
+      "source_xy": [
+        46,
+        42
+      ],
+      "target_floor": 11001,
+      "target_xy": [
+        44,
+        5
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 137,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 139,
+      "source_byte_window": [
+        16377,
+        16481
+      ],
+      "original_block_SHA256": "d1706e1980b1ab81f5f630e7bae65f806280defb7fc4ed789cbaf5b4e43db3cc",
+      "source_floor": 11002,
+      "source_xy": [
+        7,
+        6
+      ],
+      "target_floor": 11003,
+      "target_xy": [
+        42,
+        3
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 140,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 140,
+      "source_byte_window": [
+        16491,
+        16596
+      ],
+      "original_block_SHA256": "c68b438a8f50407ae1a7a0f9eeff414a523e5229cb301bb70e45933d86d7d40b",
+      "source_floor": 11003,
+      "source_xy": [
+        42,
+        3
+      ],
+      "target_floor": 11002,
+      "target_xy": [
+        7,
+        6
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 139,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 141,
+      "source_byte_window": [
+        16606,
+        16709
+      ],
+      "original_block_SHA256": "a1e491a197dccd0862b0fb6a71320315b49621a3458f3fdcaafcf1b88a13ff5f",
+      "source_floor": 11003,
+      "source_xy": [
+        6,
+        5
+      ],
+      "target_floor": 11004,
+      "target_xy": [
+        7,
+        5
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 142,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 142,
+      "source_byte_window": [
+        16719,
+        16822
+      ],
+      "original_block_SHA256": "7915b978a4f13ae9bda694fb0e67f2c2f0e275a3c64737245a4efb30a20aed60",
+      "source_floor": 11004,
+      "source_xy": [
+        7,
+        5
+      ],
+      "target_floor": 11003,
+      "target_xy": [
+        6,
+        5
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 141,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 143,
+      "source_byte_window": [
+        16832,
+        16939
+      ],
+      "original_block_SHA256": "eff5b15e716642adf8df0c959366b7be11ce31f0b2b7b2cc820c6e029e50efa7",
+      "source_floor": 11004,
+      "source_xy": [
+        45,
+        3
+      ],
+      "target_floor": 11005,
+      "target_xy": [
+        45,
+        30
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 144,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 144,
+      "source_byte_window": [
+        16949,
+        17057
+      ],
+      "original_block_SHA256": "9e4bfb458101ca7a5734189bc360a87deefb6da1717e60cb01741f2d39d3c5a0",
+      "source_floor": 11005,
+      "source_xy": [
+        45,
+        30
+      ],
+      "target_floor": 11004,
+      "target_xy": [
+        45,
+        3
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 143,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 145,
+      "source_byte_window": [
+        17067,
+        17173
+      ],
+      "original_block_SHA256": "eedee6c991eff60c5f2161f10381013619d4a50616fa3c9fc8382be62714656f",
+      "source_floor": 11005,
+      "source_xy": [
+        7,
+        27
+      ],
+      "target_floor": 11006,
+      "target_xy": [
+        43,
+        3
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 146,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    },
+    {
+      "ordinal": 146,
+      "source_byte_window": [
+        17183,
+        17289
+      ],
+      "original_block_SHA256": "d1c1bd6f3aeb3a0fdf786d4d56ccbe7c3e5b949946dbd3032cf2942de1f2cde7",
+      "source_floor": 11006,
+      "source_xy": [
+        43,
+        3
+      ],
+      "target_floor": 11005,
+      "target_xy": [
+        7,
+        27
+      ],
+      "source_template_type": "npcgen_warp",
+      "strict_reciprocal_source_ordinal": 145,
+      "strict_reciprocal_candidate": true,
+      "source_DAT_known_prior": true,
+      "target_DAT_known_prior": true,
+      "source_xy_within_prior_DAT_dimensions": true,
+      "target_xy_within_prior_DAT_dimensions": true,
+      "component_index": 0
+    }
+  ],
+  "all_64_floors_prior_original_DAT_catalog_qualification": [
+    {
+      "floor_id": 100,
+      "same_saved_mixed25_original_DAT_name": null,
+      "prior_source_DAT_SHA256": null,
+      "prior_source_DAT_bytes": null,
+      "original_dimensions": null,
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": null,
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": null,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": null,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 200,
+      "same_saved_mixed25_original_DAT_name": null,
+      "prior_source_DAT_SHA256": null,
+      "prior_source_DAT_bytes": null,
+      "original_dimensions": null,
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": null,
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": null,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": null,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 4
+    },
+    {
+      "floor_id": 1100,
+      "same_saved_mixed25_original_DAT_name": null,
+      "prior_source_DAT_SHA256": null,
+      "prior_source_DAT_bytes": null,
+      "original_dimensions": null,
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": null,
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": null,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": null,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 4
+    },
+    {
+      "floor_id": 1200,
+      "same_saved_mixed25_original_DAT_name": "1200.dat",
+      "prior_source_DAT_SHA256": "41cae3e9e07ecee4e51c0a8417afef008afedc6e494cd7ba31241662015c5f07",
+      "prior_source_DAT_bytes": 117008,
+      "original_dimensions": [
+        130,
+        150
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        8065,
+        3051
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 11116,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10001,
+      "same_saved_mixed25_original_DAT_name": "10001.dat",
+      "prior_source_DAT_SHA256": "ad56b9b652ec54721496c87b07ddd78aa62b797c36fe2de3be4507c357f1d33a",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2495,
+        794
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3289,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10002,
+      "same_saved_mixed25_original_DAT_name": "10002.dat",
+      "prior_source_DAT_SHA256": "fea5971b8fe17370c589a41bed8cefab3b8b6a9e58227d1b6fdb1958a566d7b7",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2500,
+        1034
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3534,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10003,
+      "same_saved_mixed25_original_DAT_name": "10003.dat",
+      "prior_source_DAT_SHA256": "6328f5713360f5f505f47b8770118031ddf6a4ba2d408abe80d2ab7488c40084",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2311,
+        821
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3132,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10004,
+      "same_saved_mixed25_original_DAT_name": "10004.dat",
+      "prior_source_DAT_SHA256": "162ee506c59d34654a54209942bf4ca26515b5c3f6b23db982e0c07a1734dc8a",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2414,
+        25
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 2439,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10005,
+      "same_saved_mixed25_original_DAT_name": "10005.dat",
+      "prior_source_DAT_SHA256": "0393a761dc96cf6d5a0b520baf0f3d559f1a30a0e0a4bd78f65593dbe021c708",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2499,
+        73
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 2572,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10006,
+      "same_saved_mixed25_original_DAT_name": "10006.dat",
+      "prior_source_DAT_SHA256": "a5bef75ec8e2b2781b6ca4e33d2257a110ff7d26ac9646616371be9620729378",
+      "prior_source_DAT_bytes": 30008,
+      "original_dimensions": [
+        50,
+        100
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        5000,
+        1487
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 6487,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10007,
+      "same_saved_mixed25_original_DAT_name": "10007.dat",
+      "prior_source_DAT_SHA256": "054d794006e73f3f3ee67e66fcc49744a101bb1b46e29ecef418bd573f201b4e",
+      "prior_source_DAT_bytes": 21608,
+      "original_dimensions": [
+        60,
+        60
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2752,
+        590
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3342,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10101,
+      "same_saved_mixed25_original_DAT_name": "10101.dat",
+      "prior_source_DAT_SHA256": "e32d2e5049f964c3b162ee1c8cddc4826bfd851d6b3b6f23dcbffdeabc2b57ed",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2500,
+        977
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3477,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10102,
+      "same_saved_mixed25_original_DAT_name": "10102.dat",
+      "prior_source_DAT_SHA256": "c93ba2517922fbef1263d9dc7ee4ea53597c531f95261e9f67a9214cf28ec461",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2080,
+        717
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 2797,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10103,
+      "same_saved_mixed25_original_DAT_name": "10103.dat",
+      "prior_source_DAT_SHA256": "98c4a04c27e4f9977a151ea403411df0fd5575003ccd9e86875ef121badbd5c7",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2173,
+        853
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3026,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10201,
+      "same_saved_mixed25_original_DAT_name": "10201.dat",
+      "prior_source_DAT_SHA256": "9b407896d13c56e2ad6bcdcaa76c45457c60ce0576b554d1436ea8a00534e7e1",
+      "prior_source_DAT_bytes": 14408,
+      "original_dimensions": [
+        40,
+        60
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2380,
+        638
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3018,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 4
+    },
+    {
+      "floor_id": 10202,
+      "same_saved_mixed25_original_DAT_name": "10202.dat",
+      "prior_source_DAT_SHA256": "bfa96a23011e038f5cb416cc894440c768bf5bc0da791c87e7698492c8502833",
+      "prior_source_DAT_bytes": 14408,
+      "original_dimensions": [
+        40,
+        60
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2234,
+        579
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 2813,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 4
+    },
+    {
+      "floor_id": 10203,
+      "same_saved_mixed25_original_DAT_name": "10203.dat",
+      "prior_source_DAT_SHA256": "f4d2ab6b2d8956900399626db3fb970a9d099d69344794af2f01174a4bf541cb",
+      "prior_source_DAT_bytes": 14408,
+      "original_dimensions": [
+        40,
+        60
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2320,
+        534
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 2854,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 4
+    },
+    {
+      "floor_id": 10204,
+      "same_saved_mixed25_original_DAT_name": "10204.dat",
+      "prior_source_DAT_SHA256": "e3db860494c2fbbd3c8aa404426b5ce25567153b78a4fbebfc64e7411789d236",
+      "prior_source_DAT_bytes": 60008,
+      "original_dimensions": [
+        200,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        9865,
+        2331
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 12196,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 4
+    },
+    {
+      "floor_id": 10301,
+      "same_saved_mixed25_original_DAT_name": null,
+      "prior_source_DAT_SHA256": null,
+      "prior_source_DAT_bytes": null,
+      "original_dimensions": null,
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": null,
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": null,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": null,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 3
+    },
+    {
+      "floor_id": 10302,
+      "same_saved_mixed25_original_DAT_name": null,
+      "prior_source_DAT_SHA256": null,
+      "prior_source_DAT_bytes": null,
+      "original_dimensions": null,
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": null,
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": null,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": null,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 3
+    },
+    {
+      "floor_id": 10303,
+      "same_saved_mixed25_original_DAT_name": null,
+      "prior_source_DAT_SHA256": null,
+      "prior_source_DAT_bytes": null,
+      "original_dimensions": null,
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": null,
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": null,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": null,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 3
+    },
+    {
+      "floor_id": 10304,
+      "same_saved_mixed25_original_DAT_name": null,
+      "prior_source_DAT_SHA256": null,
+      "prior_source_DAT_bytes": null,
+      "original_dimensions": null,
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": null,
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": null,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": null,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 3
+    },
+    {
+      "floor_id": 10305,
+      "same_saved_mixed25_original_DAT_name": null,
+      "prior_source_DAT_SHA256": null,
+      "prior_source_DAT_bytes": null,
+      "original_dimensions": null,
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": null,
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": null,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": null,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 3
+    },
+    {
+      "floor_id": 10306,
+      "same_saved_mixed25_original_DAT_name": null,
+      "prior_source_DAT_SHA256": null,
+      "prior_source_DAT_bytes": null,
+      "original_dimensions": null,
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": null,
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": null,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": null,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 3
+    },
+    {
+      "floor_id": 10307,
+      "same_saved_mixed25_original_DAT_name": null,
+      "prior_source_DAT_SHA256": null,
+      "prior_source_DAT_bytes": null,
+      "original_dimensions": null,
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": null,
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": null,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": null,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 3
+    },
+    {
+      "floor_id": 10308,
+      "same_saved_mixed25_original_DAT_name": null,
+      "prior_source_DAT_SHA256": null,
+      "prior_source_DAT_bytes": null,
+      "original_dimensions": null,
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": null,
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": null,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": null,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 3
+    },
+    {
+      "floor_id": 10601,
+      "same_saved_mixed25_original_DAT_name": "10601.dat",
+      "prior_source_DAT_SHA256": "78ea31e608596357de439c0a3948f4374908a735913f45292bf3b5660239f2b5",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2500,
+        1216
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3716,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10602,
+      "same_saved_mixed25_original_DAT_name": "10602.dat",
+      "prior_source_DAT_SHA256": "a61ec298419d51e3bfe68be4e2aa9cf1f6fc6e0db5cfdd3c4cf8b29f94d07a7f",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2500,
+        1291
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3791,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10603,
+      "same_saved_mixed25_original_DAT_name": "10603.dat",
+      "prior_source_DAT_SHA256": "d64a87ebf4cc461c1a56ead3f268ef880a896aee1f0d85bd55096fcc5d5331f3",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2500,
+        1221
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3721,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10604,
+      "same_saved_mixed25_original_DAT_name": "10604.dat",
+      "prior_source_DAT_SHA256": "7b3e317a83629edf8097ef436b9f1ecb573457fee3e7221a067df5fb8ace88eb",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2500,
+        1329
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3829,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10605,
+      "same_saved_mixed25_original_DAT_name": "10605.dat",
+      "prior_source_DAT_SHA256": "741f997623686ce19954f59f3e4b20d15b050f70ceb54ac3559d65814ba4f5bd",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2500,
+        1179
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3679,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10801,
+      "same_saved_mixed25_original_DAT_name": "10801.dat",
+      "prior_source_DAT_SHA256": "34e10ab8775b70feda4fcac94f7433d0fea8957c4045061161c9664ab924ebb2",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2470,
+        967
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3437,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 2
+    },
+    {
+      "floor_id": 10802,
+      "same_saved_mixed25_original_DAT_name": "10802.dat",
+      "prior_source_DAT_SHA256": "1ee4eddc308f3dcb03a4e525076c34d619a24add7979384f82ff05004781a7f2",
+      "prior_source_DAT_bytes": 2408,
+      "original_dimensions": [
+        20,
+        20
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        400,
+        240
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 640,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 2
+    },
+    {
+      "floor_id": 10803,
+      "same_saved_mixed25_original_DAT_name": "10803.dat",
+      "prior_source_DAT_SHA256": "fe53c8c4f6b0408c2074dfb339f802efdfd23195bd845f705c5af54f2bb79420",
+      "prior_source_DAT_bytes": 12008,
+      "original_dimensions": [
+        40,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2000,
+        725
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 2725,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 2
+    },
+    {
+      "floor_id": 10804,
+      "same_saved_mixed25_original_DAT_name": "10804.dat",
+      "prior_source_DAT_SHA256": "51aa603ce6f08a88394866b2caa88cb27287145905b40bbc49d364a6752e5549",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2500,
+        1073
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3573,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 2
+    },
+    {
+      "floor_id": 10805,
+      "same_saved_mixed25_original_DAT_name": "10805.dat",
+      "prior_source_DAT_SHA256": "be1e9ff92e6e2c078f69e075e830a682407a56f203c64e62138f54fb60c61416",
+      "prior_source_DAT_bytes": 12008,
+      "original_dimensions": [
+        50,
+        40
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2000,
+        852
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 2852,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 2
+    },
+    {
+      "floor_id": 10806,
+      "same_saved_mixed25_original_DAT_name": "10806.dat",
+      "prior_source_DAT_SHA256": "368b2cbe7376c68b5209d6d54cd91089aaa7f7f2ff38d3fa1d7adfebc96142cd",
+      "prior_source_DAT_bytes": 14408,
+      "original_dimensions": [
+        60,
+        40
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2400,
+        1142
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3542,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 2
+    },
+    {
+      "floor_id": 10807,
+      "same_saved_mixed25_original_DAT_name": "10807.dat",
+      "prior_source_DAT_SHA256": "da4f596cafe88c6a89da6ba4d600e5000c0e5cd462c52123b0d5d149919e453f",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2500,
+        812
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3312,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 2
+    },
+    {
+      "floor_id": 10808,
+      "same_saved_mixed25_original_DAT_name": "10808.dat",
+      "prior_source_DAT_SHA256": "2d0626a39a0bd9aa0bd0f773faa807fc48bba39ac66980785eb5a428c383a0c5",
+      "prior_source_DAT_bytes": 14408,
+      "original_dimensions": [
+        40,
+        60
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2177,
+        874
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3051,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 2
+    },
+    {
+      "floor_id": 10809,
+      "same_saved_mixed25_original_DAT_name": "10809.dat",
+      "prior_source_DAT_SHA256": "e687ddd60a80180515fc905886da37e838b5ef204adfd899d76018b5d5bda781",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2500,
+        1084
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3584,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 2
+    },
+    {
+      "floor_id": 10901,
+      "same_saved_mixed25_original_DAT_name": "10901.dat",
+      "prior_source_DAT_SHA256": "e8fc3a6162eb3d85bc7f042d21a98b8002c4de797ae3351bc10c15a51a82f591",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2500,
+        1349
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3849,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10902,
+      "same_saved_mixed25_original_DAT_name": "10902.dat",
+      "prior_source_DAT_SHA256": "d5042d38a829e61fb0b1a53855355d9cd836625ef04d32fa6dddcbc4c2fa4842",
+      "prior_source_DAT_bytes": 9008,
+      "original_dimensions": [
+        50,
+        30
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        1500,
+        725
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 2225,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 1
+    },
+    {
+      "floor_id": 10903,
+      "same_saved_mixed25_original_DAT_name": "10903.dat",
+      "prior_source_DAT_SHA256": "41bef36babdafd051a16061968e2fc90c39e17bc86b1c07605b102a3c5d92a45",
+      "prior_source_DAT_bytes": 9008,
+      "original_dimensions": [
+        30,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        1500,
+        784
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 2284,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 1
+    },
+    {
+      "floor_id": 10904,
+      "same_saved_mixed25_original_DAT_name": "10904.dat",
+      "prior_source_DAT_SHA256": "d0733ac27157f67ea1e08e3acbfbc35b4fd16bc68beb14185ac911a0feae694f",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2500,
+        1027
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3504,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 23,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 1
+    },
+    {
+      "floor_id": 10905,
+      "same_saved_mixed25_original_DAT_name": "10905.dat",
+      "prior_source_DAT_SHA256": "650fbae08b6d706413fb2a033d1c9cb8938d28f44f11cf31cdd6926e0080c315",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2500,
+        1096
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3596,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 1
+    },
+    {
+      "floor_id": 10906,
+      "same_saved_mixed25_original_DAT_name": "10906.dat",
+      "prior_source_DAT_SHA256": "fc996151a92cde75b0f73df62465271dbb174ab7e4223004a39697cb73ba8898",
+      "prior_source_DAT_bytes": 7208,
+      "original_dimensions": [
+        20,
+        60
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        1200,
+        157
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 1317,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 40,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 1
+    },
+    {
+      "floor_id": 10907,
+      "same_saved_mixed25_original_DAT_name": "10907.dat",
+      "prior_source_DAT_SHA256": "487086aa83ba7d2fa81aa6d605e163f6b8e03a5ff94a9d167d2e86aa45f57cb0",
+      "prior_source_DAT_bytes": 7208,
+      "original_dimensions": [
+        20,
+        60
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        1200,
+        308
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 1499,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 9,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 1
+    },
+    {
+      "floor_id": 10908,
+      "same_saved_mixed25_original_DAT_name": "10908.dat",
+      "prior_source_DAT_SHA256": "ec2271081de1d3fb82f1f0acf31f6817b0c6c91ce670b59545e7b9cd1a9d3be7",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2485,
+        1055
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3540,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 1
+    },
+    {
+      "floor_id": 10909,
+      "same_saved_mixed25_original_DAT_name": "10909.dat",
+      "prior_source_DAT_SHA256": "ee99a087dcf40570f55097342bb28adc3d63c98662fae0eb5d0f8418b05d1f8f",
+      "prior_source_DAT_bytes": 38408,
+      "original_dimensions": [
+        80,
+        80
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        6388,
+        3188
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 9576,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 1
+    },
+    {
+      "floor_id": 10910,
+      "same_saved_mixed25_original_DAT_name": "10910.dat",
+      "prior_source_DAT_SHA256": "6e6e165636d8fa330b3f8b0c3f5cab72884ae2469cabee4e93d2cd2408b355c4",
+      "prior_source_DAT_bytes": 38408,
+      "original_dimensions": [
+        80,
+        80
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        6396,
+        2828
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 9224,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 1
+    },
+    {
+      "floor_id": 10911,
+      "same_saved_mixed25_original_DAT_name": "10911.dat",
+      "prior_source_DAT_SHA256": "7a8256cc1ad358c2042aaf89ccfba7f56d8f88e51d0587720e399da3a59b66a9",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2500,
+        325
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 2825,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 1
+    },
+    {
+      "floor_id": 10912,
+      "same_saved_mixed25_original_DAT_name": "10912.dat",
+      "prior_source_DAT_SHA256": "cbf2f9b75efe3db4aa96ae3b59d28c0103a5dc026226beb83306f23388524fe5",
+      "prior_source_DAT_bytes": 9608,
+      "original_dimensions": [
+        40,
+        40
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        1600,
+        759
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 2359,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10913,
+      "same_saved_mixed25_original_DAT_name": "10913.dat",
+      "prior_source_DAT_SHA256": "984700a25aabc873d05e8083300a28ac66d14471bf9049a91525c20b21407054",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2500,
+        1181
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3681,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10914,
+      "same_saved_mixed25_original_DAT_name": "10914.dat",
+      "prior_source_DAT_SHA256": "11d6d3d64abeff5ac4aab42fd2510df572e5324e823d2f4fa91f16a4fcbca269",
+      "prior_source_DAT_bytes": 14408,
+      "original_dimensions": [
+        40,
+        60
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2400,
+        1225
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3625,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10915,
+      "same_saved_mixed25_original_DAT_name": "10915.dat",
+      "prior_source_DAT_SHA256": "789fd9f678e47a4672587eec366608258c582c5f49fb2e05e2e54bff8bbc0340",
+      "prior_source_DAT_bytes": 14408,
+      "original_dimensions": [
+        60,
+        40
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2400,
+        748
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3148,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10916,
+      "same_saved_mixed25_original_DAT_name": "10916.dat",
+      "prior_source_DAT_SHA256": "e7080ef7e7c18886833ad49e26175d992b7e106781dbb1a809f924c99e6aba31",
+      "prior_source_DAT_bytes": 9608,
+      "original_dimensions": [
+        20,
+        80
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        1600,
+        841
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 2441,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10917,
+      "same_saved_mixed25_original_DAT_name": "10917.dat",
+      "prior_source_DAT_SHA256": "4e227fd61f1f5228887252aaf250a6037267332283c80e52ef4e06d386d2df3a",
+      "prior_source_DAT_bytes": 18008,
+      "original_dimensions": [
+        100,
+        30
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        3000,
+        1514
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 4514,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 10918,
+      "same_saved_mixed25_original_DAT_name": "10918.dat",
+      "prior_source_DAT_SHA256": "d8a40f2f9e2d19e7988ee4997daa40660d47811b90bbd4efc23dc2fc6322f93f",
+      "prior_source_DAT_bytes": 5408,
+      "original_dimensions": [
+        30,
+        30
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        900,
+        383
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 1283,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 11001,
+      "same_saved_mixed25_original_DAT_name": "11001.dat",
+      "prior_source_DAT_SHA256": "8ec7c9a72245bafea04cabf20124660a7340d79e81408cb2502358307744e232",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2310,
+        689
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 2999,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 11002,
+      "same_saved_mixed25_original_DAT_name": "11002.dat",
+      "prior_source_DAT_SHA256": "e776c1eff5ad0f18fe2aca3acbb35a9b91cef9d958893f9bd92fae88baadb4fb",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2445,
+        775
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3220,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 11003,
+      "same_saved_mixed25_original_DAT_name": "11003.dat",
+      "prior_source_DAT_SHA256": "3bf5423736754d3b648801c6b4938f0783db3d4cac977913a7e74c6b517d3176",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2500,
+        846
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3346,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 11004,
+      "same_saved_mixed25_original_DAT_name": "11004.dat",
+      "prior_source_DAT_SHA256": "14048f88958f25a3b55b9be3862457416c0e8a45ee55e322d78f2e14e7acec75",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2500,
+        916
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3416,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 11005,
+      "same_saved_mixed25_original_DAT_name": "11005.dat",
+      "prior_source_DAT_SHA256": "80a28e079c3321d1477466e83e4e6b017d9cfe382dd2112aa75e0652a4633c0f",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2394,
+        628
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3022,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    },
+    {
+      "floor_id": 11006,
+      "same_saved_mixed25_original_DAT_name": "11006.dat",
+      "prior_source_DAT_SHA256": "fbf61337a1b397db8a2abcf6b2d804f926e384f240000d2301636ee4a17ce403",
+      "prior_source_DAT_bytes": 15008,
+      "original_dimensions": [
+        50,
+        50
+      ],
+      "prior_MAP04_first_two_plane_original_numeric_nonzero_positions": [
+        2500,
+        1076
+      ],
+      "prior_MAP04_source_qualified_original_TW1_RD_occurrences": 3576,
+      "prior_MAP04_not_matched_original_TW1_RD_occurrences": 0,
+      "actual_DAT_raw_bytes_reread_this_unit": false,
+      "component_index": 0
+    }
+  ],
+  "derived_weak_COMPONENT_floor_lists_SOURCE_CONSTRAINT_ONLY": [
+    [
+      100,
+      1200,
+      10001,
+      10002,
+      10003,
+      10004,
+      10005,
+      10006,
+      10007,
+      10101,
+      10102,
+      10103,
+      10601,
+      10602,
+      10603,
+      10604,
+      10605,
+      10901,
+      10912,
+      10913,
+      10914,
+      10915,
+      10916,
+      10917,
+      10918,
+      11001,
+      11002,
+      11003,
+      11004,
+      11005,
+      11006
+    ],
+    [
+      10902,
+      10903,
+      10904,
+      10905,
+      10906,
+      10907,
+      10908,
+      10909,
+      10910,
+      10911
+    ],
+    [
+      10801,
+      10802,
+      10803,
+      10804,
+      10805,
+      10806,
+      10807,
+      10808,
+      10809
+    ],
+    [
+      10301,
+      10302,
+      10303,
+      10304,
+      10305,
+      10306,
+      10307,
+      10308
+    ],
+    [
+      200,
+      1100,
+      10201,
+      10202,
+      10203,
+      10204
+    ]
+  ],
+  "derived_strong_COMPONENT_floor_lists_SOURCE_CONSTRAINT_ONLY": [
+    [
+      100,
+      1200,
+      10001,
+      10002,
+      10003,
+      10004,
+      10005,
+      10006,
+      10007,
+      10101,
+      10102,
+      10103,
+      10901,
+      10912,
+      10913,
+      10914,
+      10915,
+      10916,
+      10917,
+      10918,
+      11001,
+      11002,
+      11003,
+      11004,
+      11005,
+      11006
+    ],
+    [
+      10902,
+      10903,
+      10904,
+      10905,
+      10906,
+      10907,
+      10908,
+      10909,
+      10910,
+      10911
+    ],
+    [
+      10801,
+      10802,
+      10803,
+      10804,
+      10805,
+      10806,
+      10807,
+      10808,
+      10809
+    ],
+    [
+      10301,
+      10302,
+      10303,
+      10304,
+      10305,
+      10306,
+      10307,
+      10308
+    ],
+    [
+      200,
+      1100,
+      10201,
+      10202,
+      10203
+    ],
+    [
+      10601,
+      10602,
+      10603,
+      10604,
+      10605
+    ],
+    [
+      10204
+    ]
+  ],
+  "seven_rows_without_strict_reverse_CONFIG_not_gameplay_one_way": [
+    {
+      "original_CREATE_row_ordinal": 14,
+      "source_floor": 10007,
+      "source_xy": [
+        34,
+        8
+      ],
+      "target_floor": 100,
+      "target_xy": [
+        191,
+        425
+      ],
+      "why": "No opposite row swapping exact source and destination floor AND coordinates within this exact CREATE only"
+    },
+    {
+      "original_CREATE_row_ordinal": 29,
+      "source_floor": 10204,
+      "source_xy": [
+        0,
+        6
+      ],
+      "target_floor": 10202,
+      "target_xy": [
+        31,
+        15
+      ],
+      "why": "No opposite row swapping exact source and destination floor AND coordinates within this exact CREATE only"
+    },
+    {
+      "original_CREATE_row_ordinal": 30,
+      "source_floor": 10204,
+      "source_xy": [
+        0,
+        7
+      ],
+      "target_floor": 10202,
+      "target_xy": [
+        31,
+        15
+      ],
+      "why": "No opposite row swapping exact source and destination floor AND coordinates within this exact CREATE only"
+    },
+    {
+      "original_CREATE_row_ordinal": 67,
+      "source_floor": 10601,
+      "source_xy": [
+        27,
+        49
+      ],
+      "target_floor": 100,
+      "target_xy": [
+        411,
+        339
+      ],
+      "why": "No opposite row swapping exact source and destination floor AND coordinates within this exact CREATE only"
+    },
+    {
+      "original_CREATE_row_ordinal": 68,
+      "source_floor": 10601,
+      "source_xy": [
+        28,
+        49
+      ],
+      "target_floor": 100,
+      "target_xy": [
+        411,
+        339
+      ],
+      "why": "No opposite row swapping exact source and destination floor AND coordinates within this exact CREATE only"
+    },
+    {
+      "original_CREATE_row_ordinal": 69,
+      "source_floor": 10601,
+      "source_xy": [
+        29,
+        49
+      ],
+      "target_floor": 100,
+      "target_xy": [
+        411,
+        339
+      ],
+      "why": "No opposite row swapping exact source and destination floor AND coordinates within this exact CREATE only"
+    },
+    {
+      "original_CREATE_row_ordinal": 70,
+      "source_floor": 10601,
+      "source_xy": [
+        30,
+        49
+      ],
+      "target_floor": 100,
+      "target_xy": [
+        411,
+        339
+      ],
+      "why": "No opposite row swapping exact source and destination floor AND coordinates within this exact CREATE only"
+    }
+  ],
+  "negative_evidence": [
+    "Original source is a later community mixed25 preserved source; not authenticated TW1 official same deployment or original dungeon behavior.",
+    "147 NPCCREATE source entries are literal source configurations, not evidence that 147 live warps activated, players traversed any, or native original maps exist on the same deployment.",
+    "140 strict reciprocal entries are static exact tuple inversion only; 7 lacking strict opposite do not establish one-way playable gates or impossibility of return by other means.",
+    "64 floor values and 5 weak source graph components are within this one CREATE only; not the full world map, island count or game loading order.",
+    "53 DAT source files were matched to previously verified MAP04 SHA/header catalog. No original DAT raw bytes or actual three u16 planes reread in this work; in-range endpoints prove only plausibility against prior dimensions.",
+    "11 floor IDs unmatched to current 955 saved original DAT catalog are missing in that preservation, not evidence of a missing original-game map; 89 endpoint coordinates lack a matched DAT to bound-check.",
+    "TW1 retail pixels, if later drawn as candidates, cannot independently prove the contemporaneous layout or collision of the later mixed25 map.",
+    "Private original CREATE full text is never published in Git; modern network diagram is derived numeric research visualization, not original 2D map display, native gameplay, or new game engine."
+  ],
+  "stage": {
+    "Stage_A": "7_PARTIAL_2_OPEN",
+    "Stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "SOURCE_READY_OTHER_SAME_CARRIER_DUNGEON_OR_QUEST_WITH_REAL_NEW_ORIGINAL_BYTES; NO_LIVE_NETWORK_OR_ENGINE; return to source archive only for exact missing source and not repeat 147 relation.",
+  "private_original_source_custody": {
+    "zip_name": "StoneAge-INTEGRATION95-dungeon00-147-original-warp-source-private.zip",
+    "zip_bytes": 10610,
+    "zip_SHA256": "0e13f780dbd4263e74284329072c0bbb5c8f845647da2bf7916962b9de1a07d5",
+    "zip_members_all_CRC_success": 3,
+    "source_bytes_original_PRIVATE": true,
+    "private_offline_modern_synthetic_2D_graph_HTML_bytes": 25660,
+    "private_offline_modern_synthetic_2D_graph_HTML_SHA256": "1a447d095480a5b559741d58b430ead677771ad13c4d3dd3be826aca1f082c1e",
+    "modern_browser_actual_execution": {
+      "method": "real Chromium loaded exact private standalone HTML with page.set_content; not file URL navigation",
+      "private_HTML_sha256": "1a447d095480a5b559741d58b430ead677771ad13c4d3dd3be826aca1f082c1e",
+      "all_source_numeric_edges": 147,
+      "all_source_numeric_floor_nodes": 64,
+      "component_filter_runs": [
+        {
+          "component": 0,
+          "floor_nodes": 31,
+          "source_edges": 67
+        },
+        {
+          "component": 1,
+          "floor_nodes": 10,
+          "source_edges": 20
+        },
+        {
+          "component": 2,
+          "floor_nodes": 9,
+          "source_edges": 16
+        },
+        {
+          "component": 3,
+          "floor_nodes": 8,
+          "source_edges": 34
+        },
+        {
+          "component": 4,
+          "floor_nodes": 6,
+          "source_edges": 10
+        }
+      ],
+      "actual_source_floor_search_and_graph_clicks": "10007 selected, 10001 clicked, reset, 10305 auto component selected, missing floor negative case",
+      "zero_JS_errors": 0,
+      "zero_external_HTTP_requests": 0,
+      "zero_console_errors": 0,
+      "original_client_executed": false,
+      "file_URL_navigation_success_claimed": false
+    },
+    "independent_library_upload_redownload": {
+      "library_path": "/石器时代/StoneAge-INTEGRATION95-dungeon00-147-original-warp-source-private.zip",
+      "upload_completed": true,
+      "exact_private_ZIP_SHA_and_all_bytes_match_after_3rd_party_retrieval": true,
+      "source_3_members_all_CRC_success": true,
+      "same_original_CREATE_17289_bytes_and_SHA256_confirmed_from_retrieved_Library_zip": true
+    },
+    "original_commercial_CREATE_bytes_published_to_public_git": false
+  }
+}
