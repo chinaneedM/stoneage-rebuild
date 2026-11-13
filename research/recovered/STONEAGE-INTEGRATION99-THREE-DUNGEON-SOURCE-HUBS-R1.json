@@ -1,0 +1,606 @@
+{
+  "schema": "stoneage.integration99_three_dungeon_static_source_floor_hubs.r1",
+  "date": "2026-11-13",
+  "qualification": "SOURCE_DERIVED_CROSS_FILE_NUMERIC_FLOOR_REFERENCE_ONLY",
+  "baseline": {
+    "repo": "chinaneedM/stoneage-rebuild",
+    "head": "9d0cb1c468cc939606adaac2790ac87853a00b66",
+    "tree": "27154c2f1f71b0bf00b6f5b4e864e25747bb4eee",
+    "CURRENT_preserved_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "CURRENT_original_bytes": 2709173
+  },
+  "original_source_class": "SAME_PRESERVED_COMMUNITY_MIXED25_PARENT_ARCHIVE_NOT_VERIFIED_OFFICIAL_1_0_OR_SAME_LIVE_DEPLOYMENT",
+  "parent_RAR_sha256_from_previous_receipts": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "source_derived_fixtures": [
+    {
+      "family": "dungeon00",
+      "public_path": "research/recovered/STONEAGE-INTEGRATION95-DUNGEON00-147-ORIGINAL-WARP-AND-PRIOR-DAT-R1.json",
+      "public_git_blob_sha": "285857ec36ffe7cdadec5f6093a861ed0e5be05a",
+      "original_source_named_in_prior_receipt": "npc/genout/dungeon00.create",
+      "original_byte_reread_this_unit": false
+    },
+    {
+      "family": "dungeon01",
+      "public_path": "research/recovered/STONEAGE-INTEGRATION96-DUNGEON01-SEVEN-WARPMAN-ORIGINAL-SOURCE-R1.json",
+      "public_git_blob_sha": "f98ebaad7c730df91737f293f109dc4eda7a3bc3",
+      "original_source_named_in_prior_receipt": "npc/genout/dungeon01.create + seven wpm handlers",
+      "original_byte_reread_this_unit": false
+    },
+    {
+      "family": "dungeon03",
+      "public_path": "research/recovered/STONEAGE-INTEGRATION80-DUNGEON03-NPC-WARP-DAT-SOURCE-R1.json",
+      "public_git_blob_sha": "af8bfb07a1446cde2cdd727a57e032c6b77cc13b",
+      "original_source_named_in_prior_receipt": "npc/genout/dungeon03.create",
+      "original_byte_reread_this_unit": false
+    }
+  ],
+  "counts": {
+    "source_records_by_family": {
+      "dungeon00": 147,
+      "dungeon01": 7,
+      "dungeon03": 13
+    },
+    "source_records_total": 167,
+    "distinct_floor_ids": 78,
+    "weak_components": 7,
+    "weak_component_sizes": [
+      46,
+      10,
+      9,
+      8,
+      3,
+      1,
+      1
+    ],
+    "shared_floor_ids": [
+      100,
+      200
+    ],
+    "incident_record_count_by_shared_floor": {
+      "100": 19,
+      "200": 7
+    }
+  },
+  "shared_floor_groups": {
+    "100": [
+      "dungeon00",
+      "dungeon03"
+    ],
+    "200": [
+      "dungeon00",
+      "dungeon01",
+      "dungeon03"
+    ]
+  },
+  "hub_incident_source_records": {
+    "100": [
+      {
+        "family": "dungeon00",
+        "record_ordinal": 0,
+        "source_floor": 100,
+        "source_xy": [
+          191,
+          365
+        ],
+        "target_floor": 10001,
+        "target_xy": [
+          40,
+          3
+        ],
+        "create_block_sha256": "875e0bd35521654dc3fa8b36b27c5b31f13a232dfe5334a2fb194abfb7ccc5f1"
+      },
+      {
+        "family": "dungeon00",
+        "record_ordinal": 1,
+        "source_floor": 10001,
+        "source_xy": [
+          40,
+          3
+        ],
+        "target_floor": 100,
+        "target_xy": [
+          191,
+          365
+        ],
+        "create_block_sha256": "57d4e684932525fe6eba49278d2a16c6fbe6068becf2b3e146adf07a29efeffd"
+      },
+      {
+        "family": "dungeon00",
+        "record_ordinal": 14,
+        "source_floor": 10007,
+        "source_xy": [
+          34,
+          8
+        ],
+        "target_floor": 100,
+        "target_xy": [
+          191,
+          425
+        ],
+        "create_block_sha256": "efc5b8083533e437500d459f86a816f6f28d2e2f182897a907f12c07920d6a9f"
+      },
+      {
+        "family": "dungeon00",
+        "record_ordinal": 15,
+        "source_floor": 100,
+        "source_xy": [
+          318,
+          428
+        ],
+        "target_floor": 10101,
+        "target_xy": [
+          14,
+          49
+        ],
+        "create_block_sha256": "83ef6733e69fa8d634431d9bab49f2add62a1ab691d153a9f7787f4a996e02da"
+      },
+      {
+        "family": "dungeon00",
+        "record_ordinal": 16,
+        "source_floor": 10101,
+        "source_xy": [
+          14,
+          49
+        ],
+        "target_floor": 100,
+        "target_xy": [
+          318,
+          428
+        ],
+        "create_block_sha256": "24ea96f986124a6e363ac3dba93acadfe73d53f4405a906381c05185cbd1b73b"
+      },
+      {
+        "family": "dungeon00",
+        "record_ordinal": 67,
+        "source_floor": 10601,
+        "source_xy": [
+          27,
+          49
+        ],
+        "target_floor": 100,
+        "target_xy": [
+          411,
+          339
+        ],
+        "create_block_sha256": "a7ad5549bb0cbfa28d4904d069b0b3ebcbc8f1a884d917f599e8968553242772"
+      },
+      {
+        "family": "dungeon00",
+        "record_ordinal": 68,
+        "source_floor": 10601,
+        "source_xy": [
+          28,
+          49
+        ],
+        "target_floor": 100,
+        "target_xy": [
+          411,
+          339
+        ],
+        "create_block_sha256": "4c52f6a917e707d24f30a8bb0695807bd3c6b292c0dd6094cb401f1e93a9f1d8"
+      },
+      {
+        "family": "dungeon00",
+        "record_ordinal": 69,
+        "source_floor": 10601,
+        "source_xy": [
+          29,
+          49
+        ],
+        "target_floor": 100,
+        "target_xy": [
+          411,
+          339
+        ],
+        "create_block_sha256": "324dff8a33a4c782fb6a0fc76c3fbcee8a95adc8d6c37ffcb945f929dacde5c1"
+      },
+      {
+        "family": "dungeon00",
+        "record_ordinal": 70,
+        "source_floor": 10601,
+        "source_xy": [
+          30,
+          49
+        ],
+        "target_floor": 100,
+        "target_xy": [
+          411,
+          339
+        ],
+        "create_block_sha256": "9192a75f5acadbc8e7a2d11a2677a3f9710baa89b770163c4bd8de1fa2a475c1"
+      },
+      {
+        "family": "dungeon00",
+        "record_ordinal": 95,
+        "source_floor": 100,
+        "source_xy": [
+          237,
+          445
+        ],
+        "target_floor": 10901,
+        "target_xy": [
+          25,
+          49
+        ],
+        "create_block_sha256": "06781bd5593cc67ae3c238dffbeff97ac20f12438cd8cd8539c6e28b089e52ef"
+      },
+      {
+        "family": "dungeon00",
+        "record_ordinal": 96,
+        "source_floor": 10901,
+        "source_xy": [
+          25,
+          49
+        ],
+        "target_floor": 100,
+        "target_xy": [
+          237,
+          445
+        ],
+        "create_block_sha256": "b52639c89f993ad55195fd61afcfff9a3841494f5b7949605fe86e802b4aa8e0"
+      },
+      {
+        "family": "dungeon00",
+        "record_ordinal": 97,
+        "source_floor": 100,
+        "source_xy": [
+          237,
+          445
+        ],
+        "target_floor": 10901,
+        "target_xy": [
+          26,
+          49
+        ],
+        "create_block_sha256": "0c9a9ecb5fc9876265447c22c18fbe6103e4562507ce4936c0a77c5d16547319"
+      },
+      {
+        "family": "dungeon00",
+        "record_ordinal": 98,
+        "source_floor": 10901,
+        "source_xy": [
+          26,
+          49
+        ],
+        "target_floor": 100,
+        "target_xy": [
+          237,
+          445
+        ],
+        "create_block_sha256": "c8cb990f485d849d586d384eac67e466ea5d67f97a03a9dd56649b2f5b1f5c5b"
+      },
+      {
+        "family": "dungeon00",
+        "record_ordinal": 133,
+        "source_floor": 100,
+        "source_xy": [
+          328,
+          633
+        ],
+        "target_floor": 11001,
+        "target_xy": [
+          0,
+          43
+        ],
+        "create_block_sha256": "348f539916bbbe1731c89039460c795412995d2c59dd9ebac991cba02eeb6af4"
+      },
+      {
+        "family": "dungeon00",
+        "record_ordinal": 134,
+        "source_floor": 11001,
+        "source_xy": [
+          0,
+          43
+        ],
+        "target_floor": 100,
+        "target_xy": [
+          328,
+          633
+        ],
+        "create_block_sha256": "cc5850b2babf1529649ec5b7c9153ec4a2ff570478f88a014c0732ff70e18519"
+      },
+      {
+        "family": "dungeon00",
+        "record_ordinal": 135,
+        "source_floor": 100,
+        "source_xy": [
+          328,
+          633
+        ],
+        "target_floor": 11001,
+        "target_xy": [
+          0,
+          44
+        ],
+        "create_block_sha256": "06eb2e4b0d2de5f2ebb608bd1132862721786760ab51767c924978501605f333"
+      },
+      {
+        "family": "dungeon00",
+        "record_ordinal": 136,
+        "source_floor": 11001,
+        "source_xy": [
+          0,
+          44
+        ],
+        "target_floor": 100,
+        "target_xy": [
+          328,
+          633
+        ],
+        "create_block_sha256": "cef2f6ce6f9d13c746d4c4e01f3b2fbed84318ea9f04a2fe11bd339371791360"
+      },
+      {
+        "family": "dungeon03",
+        "record_ordinal": 1,
+        "source_floor": 100,
+        "source_xy": [
+          666,
+          235
+        ],
+        "target_floor": 31401,
+        "target_xy": [
+          12,
+          2
+        ],
+        "create_block_sha256": "3e88b3f0f5c807abfcda35b50c58b53d0ad20052714fedcd2b4f8b49208c8c33"
+      },
+      {
+        "family": "dungeon03",
+        "record_ordinal": 2,
+        "source_floor": 31401,
+        "source_xy": [
+          12,
+          2
+        ],
+        "target_floor": 100,
+        "target_xy": [
+          666,
+          235
+        ],
+        "create_block_sha256": "70ca63eb23b1fe7d4cc876f892397a8e39e18d1d19dd07600c7aef289145b037"
+      }
+    ],
+    "200": [
+      {
+        "family": "dungeon00",
+        "record_ordinal": 31,
+        "source_floor": 200,
+        "source_xy": [
+          174,
+          402
+        ],
+        "target_floor": 10203,
+        "target_xy": [
+          31,
+          46
+        ],
+        "create_block_sha256": "15248903ccb329466c29d90f7d93b995afe41903092a4b94bdd288b88ff8a39c"
+      },
+      {
+        "family": "dungeon00",
+        "record_ordinal": 32,
+        "source_floor": 10203,
+        "source_xy": [
+          31,
+          46
+        ],
+        "target_floor": 200,
+        "target_xy": [
+          174,
+          402
+        ],
+        "create_block_sha256": "9b9e4936c674cded20c1476f8db8dbba8770e546f7178e45450017ef9b8c922b"
+      },
+      {
+        "family": "dungeon01",
+        "record_ordinal": 250,
+        "source_floor": 21301,
+        "source_xy": [
+          8,
+          3
+        ],
+        "target_floor": 200,
+        "target_xy": [
+          316,
+          712
+        ],
+        "create_block_sha256": "8042dff6923ac9cd07e8fd6451e38223339dd603f6402b6459b63bd0cce8356e",
+        "handler_full_sha256": "162742bade48e07ca04fa175bd6226e8621d9d95c281d86d0483311d9b007395"
+      },
+      {
+        "family": "dungeon01",
+        "record_ordinal": 251,
+        "source_floor": 200,
+        "source_xy": [
+          73,
+          696
+        ],
+        "target_floor": 21201,
+        "target_xy": [
+          61,
+          46
+        ],
+        "create_block_sha256": "472191000482a15bd2b73747ca20954ad7eb5873d028d8b278366b8255eaa176",
+        "handler_full_sha256": "486ef5eb5e5e5bc39cf78d51ee42a6371841db1a2c5e8cff903a6e947792af4c"
+      },
+      {
+        "family": "dungeon01",
+        "record_ordinal": 254,
+        "source_floor": 200,
+        "source_xy": [
+          316,
+          711
+        ],
+        "target_floor": 21301,
+        "target_xy": [
+          7,
+          3
+        ],
+        "create_block_sha256": "c1e248156405256ee93742e8c374463456f2161a1c4fcb07e5552d8036d1379e",
+        "handler_full_sha256": "785c39d5b535eb1c5c076059f42c4739fea63fbc8487ff3768898ef82b941c5e"
+      },
+      {
+        "family": "dungeon03",
+        "record_ordinal": 4,
+        "source_floor": 200,
+        "source_xy": [
+          470,
+          127
+        ],
+        "target_floor": 31501,
+        "target_xy": [
+          6,
+          112
+        ],
+        "create_block_sha256": "dfc0d5d3c61f549f938d621af2d97b7c69c41d2398c702ec4bdbff0eaddada29"
+      },
+      {
+        "family": "dungeon03",
+        "record_ordinal": 5,
+        "source_floor": 31501,
+        "source_xy": [
+          6,
+          112
+        ],
+        "target_floor": 200,
+        "target_xy": [
+          470,
+          127
+        ],
+        "create_block_sha256": "fab44e127700ef8e47d56c90e4a171013cac2b59d9c797eb85bd228e3802bc01"
+      }
+    ]
+  },
+  "source_only_weak_components": [
+    {
+      "floor_id_count": 46,
+      "floor_ids": [
+        40,
+        100,
+        200,
+        1100,
+        1200,
+        5000,
+        6000,
+        10001,
+        10002,
+        10003,
+        10004,
+        10005,
+        10006,
+        10007,
+        10101,
+        10102,
+        10103,
+        10201,
+        10202,
+        10203,
+        10204,
+        10601,
+        10602,
+        10603,
+        10604,
+        10605,
+        10901,
+        10912,
+        10913,
+        10914,
+        10915,
+        10916,
+        10917,
+        10918,
+        11001,
+        11002,
+        11003,
+        11004,
+        11005,
+        11006,
+        21201,
+        21301,
+        31301,
+        31302,
+        31401,
+        31501
+      ]
+    },
+    {
+      "floor_id_count": 10,
+      "floor_ids": [
+        10902,
+        10903,
+        10904,
+        10905,
+        10906,
+        10907,
+        10908,
+        10909,
+        10910,
+        10911
+      ]
+    },
+    {
+      "floor_id_count": 9,
+      "floor_ids": [
+        10801,
+        10802,
+        10803,
+        10804,
+        10805,
+        10806,
+        10807,
+        10808,
+        10809
+      ]
+    },
+    {
+      "floor_id_count": 8,
+      "floor_ids": [
+        10301,
+        10302,
+        10303,
+        10304,
+        10305,
+        10306,
+        10307,
+        10308
+      ]
+    },
+    {
+      "floor_id_count": 3,
+      "floor_ids": [
+        300,
+        30301,
+        30307
+      ]
+    },
+    {
+      "floor_id_count": 1,
+      "floor_ids": [
+        20301
+      ]
+    },
+    {
+      "floor_id_count": 1,
+      "floor_ids": [
+        21308
+      ]
+    }
+  ],
+  "bounds": {
+    "floor_100_prior_DAT_qualified_in_three_fixtures": false,
+    "floor_200_prior_DAT_qualified_in_three_fixtures": false,
+    "source_records_are_effective_warp_execution": false,
+    "native_client_or_server_executed_this_unit": false,
+    "full_original_DAT_reread_this_unit": false,
+    "raw_proprietary_source_republished": false,
+    "not_proof_of_passability_collision_gate_trigger_or_original_same_deployment": true
+  },
+  "historical_stage": {
+    "stage_A": "7 PARTIAL + 2 OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Move to a different, nonduplicate pet/NPC/quest/map family with actually available new source bytes or real visible source 2D. Reopen hub 100/200 physical walkability only upon original same-version DAT/native execution evidence."
+}
