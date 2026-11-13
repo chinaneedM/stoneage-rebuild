@@ -1,0 +1,602 @@
+{
+  "schema": "stoneage.integration91.mammoth_bus_six_routes_cross_source_tw1_original_2D.r1",
+  "date": "2026-11-13",
+  "startup": {
+    "repo": "chinaneedM/stoneage-rebuild",
+    "main_head": "6a6a4ffc196afffd37ee25fa45361d6dc6f86bb1",
+    "main_tree": "ed3cd0869b2da88536fb48972cf85714a0803685",
+    "head_actions_success": 26,
+    "open_prs": 0,
+    "original_current_blob_sha1": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_current_full_bytes": 2709173
+  },
+  "task_scope": {
+    "content": "SOURCE_BOUND_MAMMOTH_BUS_ROUTE_NPC_TO_ORIGINAL_SPR_VISUAL_EVIDENCE",
+    "older_community_mixed25_original_bus_NPC_config": true,
+    "independently_sourced_TW_WAEI_JSS_1_0_original_sprite_and_RD": true,
+    "no_native_runtime_claim": true,
+    "no_official_same_build_deployment_claim": true
+  },
+  "inherited_originals": {
+    "O86_bus_original_source_git_blob": "67b3dbbb8b78eff0bb945d89d6d9d1d752926379",
+    "O86_35_original_members_originally_recovered": 35,
+    "source_npc_private_ZIP_bytecount": 995176,
+    "source_npc_private_ZIP_SHA256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "source_npc_private_ZIP_original_members_reverified_CRC": 2205,
+    "original_35_mixed25_target_source_file_bytes_reverified": 14116,
+    "source_file_manifest_compare_to_prior_O86": "35/35 bytes SHA256 CRC matched in private source reread",
+    "original_create_whole_file_path": "npc/chatroom/bus.create",
+    "original_create_file_bytes": 1228,
+    "original_create_file_SHA256": "18c31c8ae40b9c5250bddbb0455ab524c52c1491d505574ec2e288286f5c97a6",
+    "original_create_file_CRC32": "44934b51",
+    "original_CHAR01_full_source_rows_Git_blob": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "original_function_template_path": "npc/chatroom/bus.template",
+    "original_functionset_literal": "Bus",
+    "original_type_literal": 100401,
+    "O86_original_6_route_waypoint_total": 300,
+    "prior_PET11_public_source_blob": "dd52d2a4f050c577e627b6560e335db73382cb8e",
+    "previously_saved_private_PET11_original_TW1_two_group_ZIP_SHA256": "d6f7c1e832833bf7bc00c5c870ba76debddbd447c52ca546cb4fcc72a45dbd5f",
+    "previously_saved_PRIVATE_PET11_source_manifest_full_SHA256": "9273ba06616fecc3f0474afa9fcbbbba06dc8eb5c52195e54d99446e29202208",
+    "original_pet11_same_source_SPRADRN_record_exists_in_both_separate_carriers": true
+  },
+  "original_mixed25_six_BUS_CREATE_route_numeric_source_rows": [
+    {
+      "index": 0,
+      "exact_original_CREATE_byte_span": [
+        62,
+        212
+      ],
+      "exact_CREATE_byte_SHA256": "bd19ab44ab4ddb47b05dead644f68e49822ae3dacf4ba9738ccc9ae947f5b207",
+      "original_floor": 100,
+      "original_xy": [
+        627,
+        485
+      ],
+      "borncenter": [
+        627,
+        485,
+        1,
+        1
+      ],
+      "original_direction_literal": 4,
+      "original_graphic_literal": 100355,
+      "original_template_token": "bus",
+      "original_ARG_path": "npc/chatroom/bus.arg",
+      "original_ARG_full_file_sha256": "13ec83e0c95168f45f4590866cb3e0ee520dc1b54c9fe9fbd15d6168ea0c86d0",
+      "original_route_line_raw_SHA256": "28221c566b110efe4729889f6215692d355e94d24701b01d3acc62c8f8c87840",
+      "original_route_bbox_xyxy": [
+        117,
+        454,
+        628,
+        654
+      ],
+      "route_name_raw_line_roundtrip_CP950": true,
+      "source_waypoints": 66,
+      "source_first": [
+        628,
+        485
+      ],
+      "source_last": [
+        117,
+        654
+      ],
+      "needstone_original_literal": 50,
+      "waittime_original_literal": 180,
+      "source_denied_item_second_id": 403
+    },
+    {
+      "index": 1,
+      "exact_original_CREATE_byte_span": [
+        260,
+        411
+      ],
+      "exact_CREATE_byte_SHA256": "8cd8b45fa7f2fde48eb05bd8e4412161d8a062c879a8dbc28780017319c32caf",
+      "original_floor": 100,
+      "original_xy": [
+        631,
+        485
+      ],
+      "borncenter": [
+        631,
+        485,
+        1,
+        1
+      ],
+      "original_direction_literal": 4,
+      "original_graphic_literal": 100355,
+      "original_template_token": "bus",
+      "original_ARG_path": "npc/chatroom/bus3.arg",
+      "original_ARG_full_file_sha256": "ba31fef92a4d16a9631fc68fd7563b82b4b829555f3c06ecb1d3e135cff959bf",
+      "original_route_line_raw_SHA256": "863465d40c650e8df70c21d922afc3f616efa2c83609efe0366ef09e0a80dcaa",
+      "original_route_bbox_xyxy": [
+        464,
+        485,
+        631,
+        628
+      ],
+      "route_name_raw_line_roundtrip_CP950": true,
+      "source_waypoints": 10,
+      "source_first": [
+        631,
+        485
+      ],
+      "source_last": [
+        464,
+        628
+      ],
+      "needstone_original_literal": 25,
+      "waittime_original_literal": 180,
+      "source_denied_item_second_id": 2403
+    },
+    {
+      "index": 2,
+      "exact_original_CREATE_byte_span": [
+        460,
+        611
+      ],
+      "exact_CREATE_byte_SHA256": "2f6f79fafc632a5977c46dea9d23fd032beed73678fa426bc5ecf4d55aa46e27",
+      "original_floor": 100,
+      "original_xy": [
+        120,
+        654
+      ],
+      "borncenter": [
+        120,
+        654,
+        1,
+        1
+      ],
+      "original_direction_literal": 4,
+      "original_graphic_literal": 100355,
+      "original_template_token": "bus",
+      "original_ARG_path": "npc/chatroom/bus4.arg",
+      "original_ARG_full_file_sha256": "917a36992d9c45d6b70547dc23396bbf5f65448c558853ea10f64f17c159bf56",
+      "original_route_line_raw_SHA256": "cf85e20b5a3adcc4c6dee54b7a8b3bf6bdc69d18f372ae64c77d3f2e13b78d16",
+      "original_route_bbox_xyxy": [
+        120,
+        586,
+        462,
+        655
+      ],
+      "route_name_raw_line_roundtrip_CP950": true,
+      "source_waypoints": 15,
+      "source_first": [
+        120,
+        655
+      ],
+      "source_last": [
+        461,
+        628
+      ],
+      "needstone_original_literal": 30,
+      "waittime_original_literal": 180,
+      "source_denied_item_second_id": 2403
+    },
+    {
+      "index": 3,
+      "exact_original_CREATE_byte_span": [
+        666,
+        817
+      ],
+      "exact_CREATE_byte_SHA256": "c4a582d7f7b0dfb4a68be24e92035af891ce6f62cfa0ee037a1013eea01e5eed",
+      "original_floor": 200,
+      "original_xy": [
+        566,
+        386
+      ],
+      "borncenter": [
+        566,
+        386,
+        1,
+        1
+      ],
+      "original_direction_literal": 6,
+      "original_graphic_literal": 100355,
+      "original_template_token": "bus",
+      "original_ARG_path": "npc/chatroom/bus2.arg",
+      "original_ARG_full_file_sha256": "febf184fb8674de6ee8a677b7815a0e10442c207a6e8604c80049a9cd9b22481",
+      "original_route_line_raw_SHA256": "5593736799eff476364d84815c37664008ae3d9e8df1d5155ae351d2e5a8817d",
+      "original_route_bbox_xyxy": [
+        277,
+        373,
+        566,
+        602
+      ],
+      "route_name_raw_line_roundtrip_CP950": false,
+      "source_waypoints": 45,
+      "source_first": [
+        566,
+        386
+      ],
+      "source_last": [
+        308,
+        602
+      ],
+      "needstone_original_literal": 50,
+      "waittime_original_literal": 180,
+      "source_denied_item_second_id": 2403
+    },
+    {
+      "index": 4,
+      "exact_original_CREATE_byte_span": [
+        870,
+        1021
+      ],
+      "exact_CREATE_byte_SHA256": "588839939cbf61d74c4afaa0717a911efa7f8e3ebb89d4030876afc897ff6c15",
+      "original_floor": 200,
+      "original_xy": [
+        566,
+        389
+      ],
+      "borncenter": [
+        566,
+        389,
+        1,
+        1
+      ],
+      "original_direction_literal": 6,
+      "original_graphic_literal": 100355,
+      "original_template_token": "bus",
+      "original_ARG_path": "npc/chatroom/bus5.arg",
+      "original_ARG_full_file_sha256": "59d0973ca5801b0ba4bbafe6d10ab5479e536db8cdd44f7b3fa59e2c67740500",
+      "original_route_line_raw_SHA256": "9dac11c04bff7fcd6d664a7fe4ef1fb1fc11bd2288d268f1653baf8ba370cac1",
+      "original_route_bbox_xyxy": [
+        424,
+        101,
+        566,
+        390
+      ],
+      "route_name_raw_line_roundtrip_CP950": true,
+      "source_waypoints": 55,
+      "source_first": [
+        566,
+        389
+      ],
+      "source_last": [
+        424,
+        101
+      ],
+      "needstone_original_literal": 20,
+      "waittime_original_literal": 180,
+      "source_denied_item_second_id": 2403
+    },
+    {
+      "index": 5,
+      "exact_original_CREATE_byte_span": [
+        1076,
+        1227
+      ],
+      "exact_CREATE_byte_SHA256": "60981f3db2f740afb91b347ae2f7b10ceabce92d628f8ea9c7638f63108dd6fb",
+      "original_floor": 200,
+      "original_xy": [
+        311,
+        602
+      ],
+      "borncenter": [
+        311,
+        602,
+        1,
+        1
+      ],
+      "original_direction_literal": 4,
+      "original_graphic_literal": 100355,
+      "original_template_token": "bus",
+      "original_ARG_path": "npc/chatroom/bus6.arg",
+      "original_ARG_full_file_sha256": "1acc8bf412bcc3df565cf2a1015804c96a46eac344130eeb5da52c53ef180308",
+      "original_route_line_raw_SHA256": "39f0657148667c347f032867790f43f44758c4cfe5f3295baf27fea7b8967d8c",
+      "original_route_bbox_xyxy": [
+        278,
+        84,
+        473,
+        602
+      ],
+      "route_name_raw_line_roundtrip_CP950": true,
+      "source_waypoints": 109,
+      "source_first": [
+        311,
+        602
+      ],
+      "source_last": [
+        421,
+        101
+      ],
+      "needstone_original_literal": 40,
+      "waittime_original_literal": 180,
+      "source_denied_item_second_id": 2403
+    }
+  ],
+  "original_bus_route_original_file_manifest_all_35": [
+    {
+      "path": "data/npc/chatroom/bus.arg",
+      "bytes": 988,
+      "sha256": "13ec83e0c95168f45f4590866cb3e0ee520dc1b54c9fe9fbd15d6168ea0c86d0",
+      "crc32": "43554400"
+    },
+    {
+      "path": "data/npc/chatroom/bus.create",
+      "bytes": 1228,
+      "sha256": "18c31c8ae40b9c5250bddbb0455ab524c52c1491d505574ec2e288286f5c97a6",
+      "crc32": "44934b51"
+    },
+    {
+      "path": "data/npc/chatroom/bus.template",
+      "bytes": 161,
+      "sha256": "09ed36c25938eafc078b1feebbc92a17244bba5052e57c9329c1481d5f0a5cf1",
+      "crc32": "65be7b9c"
+    },
+    {
+      "path": "data/npc/chatroom/bus2.arg",
+      "bytes": 824,
+      "sha256": "febf184fb8674de6ee8a677b7815a0e10442c207a6e8604c80049a9cd9b22481",
+      "crc32": "6c71e43b"
+    },
+    {
+      "path": "data/npc/chatroom/bus3.arg",
+      "bytes": 525,
+      "sha256": "ba31fef92a4d16a9631fc68fd7563b82b4b829555f3c06ecb1d3e135cff959bf",
+      "crc32": "6d10978b"
+    },
+    {
+      "path": "data/npc/chatroom/bus4.arg",
+      "bytes": 565,
+      "sha256": "917a36992d9c45d6b70547dc23396bbf5f65448c558853ea10f64f17c159bf56",
+      "crc32": "9e715b33"
+    },
+    {
+      "path": "data/npc/chatroom/bus5.arg",
+      "bytes": 900,
+      "sha256": "59d0973ca5801b0ba4bbafe6d10ab5479e536db8cdd44f7b3fa59e2c67740500",
+      "crc32": "6aa7c808"
+    },
+    {
+      "path": "data/npc/chatroom/bus6.arg",
+      "bytes": 1328,
+      "sha256": "1acc8bf412bcc3df565cf2a1015804c96a46eac344130eeb5da52c53ef180308",
+      "crc32": "8485248a"
+    },
+    {
+      "path": "data/npc/genout/bus.create",
+      "bytes": 4765,
+      "sha256": "309c2477e19ff24793896fd074117bb89439e3855e0dc5af35dd71aef2933bd3",
+      "crc32": "85e6c024"
+    },
+    {
+      "path": "data/npc/genout/msg_100_115_654",
+      "bytes": 194,
+      "sha256": "891d79c72e8099db94ddcf78fc84bee6914f878eb50f66ac406a9a81504aa4cd",
+      "crc32": "1c08501a"
+    },
+    {
+      "path": "data/npc/genout/msg_100_467_627",
+      "bytes": 197,
+      "sha256": "618fe994ed0052f0256bc7c9ac60c3633cd3a3b522575c15778cb57870f09010",
+      "crc32": "65f2ee3c"
+    },
+    {
+      "path": "data/npc/genout/msg_100_633_486",
+      "bytes": 201,
+      "sha256": "d5ee6d0dd932b91f2bcedee7f8a48de989506c702e37df315a192bc10d7cd5d9",
+      "crc32": "f631b55a"
+    },
+    {
+      "path": "data/npc/genout/msg_200_306_602",
+      "bytes": 187,
+      "sha256": "adbd8c4ac9c594a6e1a05cd267fdebee670196a43b9fc3659594fd7068fbf2de",
+      "crc32": "21e730b0"
+    },
+    {
+      "path": "data/npc/genout/msg_200_426_100",
+      "bytes": 191,
+      "sha256": "3fa27f78273c2c7b2abe827f6a2e3687d59f9363285ff3bef3e75752733d65cb",
+      "crc32": "6e8562f6"
+    },
+    {
+      "path": "data/npc/genout/msg_200_566_384",
+      "bytes": 203,
+      "sha256": "0cbb1c17bc8b339ba42c33881456b0dbd2e67a2c607e5c5c09f746778e09cc95",
+      "crc32": "7c8cffd0"
+    },
+    {
+      "path": "data/npc/genout/msg_3000_51_125",
+      "bytes": 44,
+      "sha256": "5690429b132b0dbc93712dea15d5a047f4f978fd4ecb82c15d890f6a5afac3ff",
+      "crc32": "d08621c0"
+    },
+    {
+      "path": "data/npc/genout/signb_100_114_658",
+      "bytes": 120,
+      "sha256": "95bf89f9084da26f487dc6bb2406fad4251bf63b4249da8fa3b98811b61af918",
+      "crc32": "ddcc7ef4"
+    },
+    {
+      "path": "data/npc/genout/signb_100_119_656",
+      "bytes": 74,
+      "sha256": "b6f0bf53b5fdd78b7ac2a68418558bceeefdb9a0976e54ae67cd554d3490176c",
+      "crc32": "7b642032"
+    },
+    {
+      "path": "data/npc/genout/signb_100_122_656",
+      "bytes": 70,
+      "sha256": "dbf0c553845556b62e4144c510ef52ad89348d690ac515b54655ba5a9c13c6b3",
+      "crc32": "88b690eb"
+    },
+    {
+      "path": "data/npc/genout/signb_100_460_625",
+      "bytes": 74,
+      "sha256": "52c08835344f00520877d1f11e774ac38643e49def04e56284b514d884229de3",
+      "crc32": "e1181ad3"
+    },
+    {
+      "path": "data/npc/genout/signb_100_463_625",
+      "bytes": 74,
+      "sha256": "15425371fc7f9738776f8311b3b66d9359c3fd1024f534ebf4b57ffda7e91e31",
+      "crc32": "54816c9d"
+    },
+    {
+      "path": "data/npc/genout/signb_100_469_629",
+      "bytes": 120,
+      "sha256": "95bf89f9084da26f487dc6bb2406fad4251bf63b4249da8fa3b98811b61af918",
+      "crc32": "ddcc7ef4"
+    },
+    {
+      "path": "data/npc/genout/signb_100_626_488",
+      "bytes": 74,
+      "sha256": "217dd9cc0ee4312006d0f566cf5891658e3c8fabaf37ff2f3c5173188df649c4",
+      "crc32": "916f0c35"
+    },
+    {
+      "path": "data/npc/genout/signb_100_629_488",
+      "bytes": 70,
+      "sha256": "e1728ad997766f32013f833ba6b76f6161143f589b85f5f71591e6cf8e8f50da",
+      "crc32": "d724caa2"
+    },
+    {
+      "path": "data/npc/genout/signb_100_635_487",
+      "bytes": 120,
+      "sha256": "95bf89f9084da26f487dc6bb2406fad4251bf63b4249da8fa3b98811b61af918",
+      "crc32": "ddcc7ef4"
+    },
+    {
+      "path": "data/npc/genout/signb_200_307_600",
+      "bytes": 120,
+      "sha256": "95bf89f9084da26f487dc6bb2406fad4251bf63b4249da8fa3b98811b61af918",
+      "crc32": "ddcc7ef4"
+    },
+    {
+      "path": "data/npc/genout/signb_200_310_600",
+      "bytes": 70,
+      "sha256": "d0771b2bb8c75760e52d53e300e6b13ac61ad4273af420876ea9c36e9f1f9aa5",
+      "crc32": "d87c8c8d"
+    },
+    {
+      "path": "data/npc/genout/signb_200_313_600",
+      "bytes": 74,
+      "sha256": "69843e50e78b1312452cd8ae0c3d8558c4bc52e9d2500965ecb63f3fe7749ca3",
+      "crc32": "2920cecf"
+    },
+    {
+      "path": "data/npc/genout/signb_200_419_98",
+      "bytes": 74,
+      "sha256": "77b4bd97c0aec8c08d8a9699539d952df855b8d11b793d5228266e8055ab1c8b",
+      "crc32": "beabac90"
+    },
+    {
+      "path": "data/npc/genout/signb_200_422_98",
+      "bytes": 70,
+      "sha256": "6f2831872766fa38ebd7331c89eacabe93d78937fbe9711e6dd8aceb98419077",
+      "crc32": "23f30b9a"
+    },
+    {
+      "path": "data/npc/genout/signb_200_426_98",
+      "bytes": 120,
+      "sha256": "95bf89f9084da26f487dc6bb2406fad4251bf63b4249da8fa3b98811b61af918",
+      "crc32": "ddcc7ef4"
+    },
+    {
+      "path": "data/npc/genout/signb_200_564_388",
+      "bytes": 74,
+      "sha256": "dad65b25651a8cbdc1cb8e910d92514eadeffd4af3526b20d9b3256c2744d87b",
+      "crc32": "1f92287e"
+    },
+    {
+      "path": "data/npc/genout/signb_200_564_391",
+      "bytes": 74,
+      "sha256": "c4a4a7b576d4c04c098bee8148b29b85c29ca2f408e71590eb4c902b1821393f",
+      "crc32": "7396cd36"
+    },
+    {
+      "path": "data/npc/genout/signb_200_568_382",
+      "bytes": 120,
+      "sha256": "95bf89f9084da26f487dc6bb2406fad4251bf63b4249da8fa3b98811b61af918",
+      "crc32": "ddcc7ef4"
+    },
+    {
+      "path": "data/npc/genout/signb_3000_53_123",
+      "bytes": 23,
+      "sha256": "9e52ffc6a829d97f57bc42bb0d9271711a338e0bb748ce8b6229bb83078908a6",
+      "crc32": "d9450820"
+    }
+  ],
+  "important_prior_O86_anomalies_preserved": {
+    "bus_arg_literal_second_denieditem_403_others_2403": true,
+    "invalid_original_CP950_whole_files": [
+      "npc/chatroom/bus.create",
+      "npc/chatroom/bus2.arg"
+    ],
+    "guide_station_text_disagreement_200_426_100": true,
+    "floor3000_two_static_board_guide_without_bus_vehicle": true,
+    "O86_manual_cross_version_not_same_deployed_runtime": true
+  },
+  "original_TW1_retail_SPR_candidate": {
+    "graphic_no": 100355,
+    "original_source_SPR_index_12byte_SHA256": "1d0e4ad2475824acd9b0443c68270b1458536dde8d62292856d7a64c463b6f60",
+    "source_original_SPR_segment_SHA256": "409081b2ead88925b44eeccca02005ff3de59906b8736ae6d2cdc3bcdcf070a3",
+    "original_spr_segment_bytes": 7072,
+    "source_group_original_animations": 56,
+    "source_original_directions": 8,
+    "source_original_actions": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      9,
+      10
+    ],
+    "source_original_frame_occurrences": 640,
+    "source_unique_RD_bitmaps": 248,
+    "source_private_prior_strict_RD_decoded": 248,
+    "source_private_prior_bounded_RD": 0,
+    "prior_source_248_ADRN_record_SHA256_concatenation_SHA256": "30e1c19b1c7ae3d0654e675be351c06af9e09d80eee7161605094ae73c7cfb10",
+    "prior_source_248_RD_SHA256_concatenation_SHA256": "1470cfdfb3e18ad043973d0c40cfb2c8be668e92a513d584cdbe4f98b8cb1394",
+    "prior_source_248_canvas_indices_SHA256_concatenation_SHA256": "f00de2e24d4ecc032f6074c4487356d875c2444ea1672fd9c340654f98f26ade",
+    "private_this_unit_248_earlier_PNG_color_SHA256_verified_vs_original_PET11_manifest": 248,
+    "private_this_unit_248_earlier_PNG_gray_SHA256_verified_vs_original_PET11_manifest": 248,
+    "private_this_unit_actual_NEW_RD_source_decoded": 0,
+    "same_graphic_in_mixed25_later_template_source_PETFLG": 0,
+    "prior_compiled_capture_candidate_key53": 8,
+    "JSS1999_or_TW1_bus_runtime_identity_proven": false,
+    "original_native_sprite_palette_orientation_timing_sound_selection_proven": false
+  },
+  "private_source_2d_observer": {
+    "private_Library_path": "/石器时代/StoneAge-INTEGRATION91-Mammoth-Bus-six-routes-TW1-original-2D-private.zip",
+    "archive_bytes": 2530925,
+    "archive_sha256": "a0bf3d9875a9aee50e35a21c7154c45f2c39fd0d9bf5eed8d4ce3af1b692d878",
+    "archive_members": 37,
+    "all_ZIP_CRC_pass": true,
+    "uploaded_to_private_Library": true,
+    "independent_Library_re_download_SHA256_exact_match": true,
+    "private_HTML_bytes": 3539016,
+    "private_HTML_SHA256": "cc2a1d84441f4956ef31dbe8b3b85b1dfcb483b0bb5e4cd6747736db3979ca7c",
+    "chromium_actual_version": "144.0.7559.96",
+    "chromium_real_six_route_selectors_passed": 6,
+    "chromium_direction_action_original_sequences_both_palette_modes_images_loaded": 112,
+    "chromium_actual_next_frame_transitions": 56,
+    "chromium_actual_prev_frame_transitions": 1,
+    "chromium_JS_errors": 0,
+    "chromium_external_HTTP_requests": 0,
+    "chromium_method": "page.set_content(original_private_HTML_BYTES)",
+    "file_URL_navigation_success_claimed": false,
+    "modern_route_polyline_not_real_original_game_map_or_movement": true
+  },
+  "rights_and_historical_boundaries": {
+    "no_original_binaries_images_scripts_or_raw_300_waypoint_table_in_public_Git": true,
+    "source_fact_original_6_bus_configs_in_later_community": true,
+    "original_NPC_bus_handler_executed": false,
+    "official_same_deployment_proven": false,
+    "actual_original_boarding_movement_capacity_fee_deduction_encounter_override_proven": false,
+    "original_real_map_path_collision_proven": false,
+    "source_403_2403_anomaly_not_fixed": true,
+    "original_palette_native_action_FPS_sound_unverified": true,
+    "no_new_original_art_or_RD_decode_claim": true,
+    "original_100355_same_numeric_graphic_does_NOT_confirm_early_pet_species_or_capture": true
+  },
+  "stage": {
+    "A": "7 PARTIAL + 2 OPEN",
+    "B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Rotate to a different source-qualified historical visible 2D content family. Native Bus boarding and runtime remains OPEN until same-build original execution evidence."
+}

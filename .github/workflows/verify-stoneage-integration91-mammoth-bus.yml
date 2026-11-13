@@ -1,0 +1,26 @@
+name: Verify StoneAge INTEGRATION91 original Mammoth Bus 2D cross-source
+on:
+  push:
+    branches: [main, 'agent/stoneage-integration91-*']
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION91-MAMMOTH-BUS-ORIGINAL-2D-R1.json'
+      - 'tests/test_stoneage_integration91_mammoth_bus.py'
+      - '.github/workflows/verify-stoneage-integration91-mammoth-bus.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION91-MAMMOTH-BUS-ORIGINAL-2D-R1.json'
+      - 'tests/test_stoneage_integration91_mammoth_bus.py'
+      - '.github/workflows/verify-stoneage-integration91-mammoth-bus.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bus-original-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check 6 original bus CREATE/route source and 100355 SPR original 2D witness
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration91_mammoth_bus.py' -v
