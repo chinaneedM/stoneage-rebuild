@@ -1,0 +1,105 @@
+{
+  "schema": "stoneage.integration96_publication_acceptance.r1",
+  "date": "2026-11-13",
+  "repo": "chinaneedM/stoneage-rebuild",
+  "content_pull_request": {
+    "number": 375,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/pull/375",
+    "state": "merged",
+    "candidate_head": "9894ee59414e6341bea8edf6b5e1e7474c8377b5",
+    "candidate_tree": "bfc1c536875dc4278c7e4b00ae53b47244c01c4e",
+    "content_main_head": "a8b8d38483005a4bc08b0fb89fae34ed9227f2c0",
+    "content_main_tree": "bfc1c536875dc4278c7e4b00ae53b47244c01c4e",
+    "parent_main_head": "3d78f646b11d9e4109cfa0d4cb1be4091c04d495"
+  },
+  "acceptance": {
+    "candidate_total": 4,
+    "candidate_completed_success": 4,
+    "candidate_run_receipts": [
+      {
+        "run_id": 43438794412,
+        "run_name": "Verify StoneAge INTEGRATION96 original dungeon01 guardian handlers",
+        "event": "push",
+        "head_sha": "9894ee59414e6341bea8edf6b5e1e7474c8377b5",
+        "status": "completed",
+        "conclusion": "success",
+        "job_id": 131930684055,
+        "actual_log": "Ran 8 tests / OK"
+      },
+      {
+        "run_id": 43438878289,
+        "run_name": "Verify StoneAge O12 original compiled sound-number namespace (derived only)",
+        "event": "pull_request",
+        "head_sha": "9894ee59414e6341bea8edf6b5e1e7474c8377b5",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 43438878362,
+        "run_name": "Verify StoneAge INTEGRATION96 original dungeon01 guardian handlers",
+        "event": "pull_request",
+        "head_sha": "9894ee59414e6341bea8edf6b5e1e7474c8377b5",
+        "status": "completed",
+        "conclusion": "success",
+        "job_id": 131930968558,
+        "actual_log": "Ran 8 tests / OK"
+      },
+      {
+        "run_id": 43438878477,
+        "run_name": "Verify StoneAge O11 native source animation and bounded sound-word candidates",
+        "event": "pull_request",
+        "head_sha": "9894ee59414e6341bea8edf6b5e1e7474c8377b5",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "content_main_total": 1,
+    "content_main_completed_success": 1,
+    "main_run_receipts": [
+      {
+        "run_id": 43439165136,
+        "run_name": "Verify StoneAge INTEGRATION96 original dungeon01 guardian handlers",
+        "event": "push",
+        "head_sha": "a8b8d38483005a4bc08b0fb89fae34ed9227f2c0",
+        "status": "completed",
+        "conclusion": "success",
+        "job_id": 131931953680,
+        "actual_log": "Ran 8 tests / OK"
+      }
+    ],
+    "source_relationship_independent_replay_checks": 70,
+    "source_relationship_independent_mismatches": 0,
+    "content_replay_tests": 8
+  },
+  "source_custody": {
+    "private_zip_bytes": 995176,
+    "private_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "private_zip_CRC_success": "2205/2205",
+    "dungeon01_original_create_bytes": 30712,
+    "dungeon01_original_create_sha256": "541ce646794e6c0c3e2414657567cbf6cb662d18b28049f4e3cd691071304169",
+    "source_create_entries": 257,
+    "static_warps": 250,
+    "source_warpman_guardians": 7,
+    "handler_original_file_full_SHA_matches": 7
+  },
+  "public_content_git_blobs": {
+    "docs/continuity/STONEAGE-INTEGRATION96-DUNGEON01-SEVEN-ORIGINAL-GUARDIANS-20261113.md": "ca01479a452d004cf6a8ff0eccdaf777b08c77bd",
+    "research/recovered/STONEAGE-INTEGRATION96-DUNGEON01-SEVEN-WARPMAN-ORIGINAL-SOURCE-R1.json": "f98ebaad7c730df91737f293f109dc4eda7a3bc3",
+    "tests/test_stoneage_integration96_dungeon01_guardian_source.py": "cd5040208332734b0d04e65d0d37e68bdfc7133f",
+    ".github/workflows/verify-stoneage-integration96-dungeon01-guardians.yml": "6e6980cfa1f183064238542e1b685d61bd9a1ad5"
+  },
+  "historical_guards": {
+    "original_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_current_bytes": 2709173,
+    "stage_A": "7 PARTIAL + 2 OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percent": null,
+    "privately_held_commercial_bytes_in_public_git": false,
+    "native_gameplay_warp_gate_execution_verified": false,
+    "same_historical_deployment_TW1_or_mainland182_verified": false
+  },
+  "receipt_own_actions": "No CI outcome for the receipt commit is assumed until subsequently verified on its exact SHA.",
+  "next": "Another non-duplicate source-backed dungeon/quest/NPC dialog or item condition relation supported by actual private original file bytes; no repetitive static numeric maps, native MMO or game-engine development."
+}
