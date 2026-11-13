@@ -1,0 +1,134 @@
+{
+  "schema": "stoneage.integration101_garuna_original_NPC_publication_acceptance.r1",
+  "date": "2026-11-14",
+  "repo": "chinaneedM/stoneage-rebuild",
+  "content_PR": {
+    "number": 385,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/pull/385",
+    "state": "merged",
+    "candidate_head": "fc2ebede449831cfdaa02fbd21c83b0e3a59cd85",
+    "candidate_tree": "e4bd005c9cec4e0737e43ce7093033ca2c980785",
+    "base_main_before_merge": "990dbb33545bcf28a9fff3baa92a92b51cb6fb42",
+    "merged_main_head": "1012c30050855341554e1722e017b452c4f76541",
+    "merged_main_tree": "e4bd005c9cec4e0737e43ce7093033ca2c980785"
+  },
+  "candidate_actions": {
+    "exact_head": "fc2ebede449831cfdaa02fbd21c83b0e3a59cd85",
+    "total": 3,
+    "completed_success": 3,
+    "runs": [
+      {
+        "run_id": 43462904898,
+        "event": "pull_request",
+        "name": "Verify StoneAge INTEGRATION101 Garuna original NPC source",
+        "status": "completed",
+        "conclusion": "success",
+        "dedicated_job_id": 132014230588,
+        "real_log": "Ran 7 tests / OK"
+      },
+      {
+        "run_id": 43462904559,
+        "event": "pull_request",
+        "name": "Verify StoneAge O11 native source animation and bounded sound-word candidates",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 43462904512,
+        "event": "pull_request",
+        "name": "Verify StoneAge O12 original compiled sound-number namespace (derived only)",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "merged_main_actions": {
+    "exact_head": "1012c30050855341554e1722e017b452c4f76541",
+    "total": 1,
+    "completed_success": 1,
+    "runs": [
+      {
+        "run_id": 43463111176,
+        "event": "push",
+        "name": "Verify StoneAge INTEGRATION101 Garuna original NPC source",
+        "status": "completed",
+        "conclusion": "success",
+        "dedicated_job_id": 132014980609,
+        "real_log": "Ran 7 tests / OK"
+      }
+    ]
+  },
+  "public_content_git_blobs": {
+    ".github/workflows/verify-stoneage-integration101-garuna.yml": "ecd5eeeb9887d533113f7efa8aa083e59eb6915e",
+    "docs/continuity/STONEAGE-INTEGRATION101-GARUNA-ORIGINAL-NPC-20261114.md": "29d0e2c56cd34b0fb524a3ff05e363b8d77a8e80",
+    "research/recovered/STONEAGE-INTEGRATION101-GARUNA-TWO-SETTLEMENTS-ORIGINAL-NPC-R1.json": "da26bf1fce8121c77d50e09805e2d1306b6bc524",
+    "tests/test_stoneage_integration101_garuna_original_npc.py": "16a1b3c8e51f6a71f19ebd771e4d42ebaa149ce8"
+  },
+  "prior_public_index_git_blobs": {
+    "CHAR01": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "MAP04": "1ef8c004179128ea44ffa4fb4259748bc8c83911"
+  },
+  "private_original_source_custody": {
+    "mixed25_NPC_ZIP_bytes": 995176,
+    "mixed25_NPC_ZIP_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "all_CRC_verified": 2205,
+    "actual_original_CREATE_path": "npc/genout/garunaev1.create",
+    "actual_original_CREATE_bytes": 4992,
+    "actual_original_CREATE_sha256": "7c742b85fafda010df235b09660265668210ca0f6e57030c98801394f4d895da",
+    "source_window_SHA_verified": 28,
+    "original_handler_full_SHA_CP950_verified": 27,
+    "original_handler_total_original_bytes": 1941,
+    "inline_text_source_segments": 1,
+    "same_basename_different_path": "npc/giiru/event/garunaev1.create",
+    "different_path_actual_bytes": 1983,
+    "private_archive_library_path": "/石器时代/StoneAge-INTEGRATION101-Garuna-two-mining-settlements-original-text-private.zip",
+    "private_archive_bytes": 11102,
+    "private_archive_sha256": "cb2cc53c4d7a42ea386e6f69761460f953cb3066b9584b81e181db9b5d74b45e",
+    "private_archive_CRC_verified_members": 30,
+    "private_archive_independently_downloaded_byte_exact": true,
+    "read_only_private_HTML_sections_verified_structurally": 28,
+    "actual_Chromium_render_verified": false,
+    "original_parent_361MB_RAR_new_download_this_unit": false,
+    "original_DAT_raw_re_read_this_unit": 0
+  },
+  "source_bounded_recovery": {
+    "source_CREATE_rows": 28,
+    "same_source_original_dialogue_files": 27,
+    "direct_inline_source_literal_rows": 1,
+    "floor_IDs": [
+      31001,
+      31002,
+      31101,
+      31102
+    ],
+    "per_floor_CREATE_counts": [
+      4,
+      10,
+      4,
+      10
+    ],
+    "original_50x50_DAT_source_catalog_matches": 4,
+    "create_coordinates_prior_DAT_header_in_bounds": 28,
+    "source_graphic_numeric_aliases_not_original_2D_bitmap_count": 26,
+    "source_name_field_SHA_variants": 2,
+    "source_records_containing_ore_word": 9
+  },
+  "negative_scope": {
+    "native_original_NPC_dialogue_execution_observed": false,
+    "same_early_official_deployment_TW1_JSS1999_CN182_proven": false,
+    "original_2D_RGBA_redecoded_this_unit": 0,
+    "original_DAT_collision_passability_observed": false,
+    "commercial_original_dialogue_or_CREATE_or_original_art_in_public_git": false,
+    "current_restoration_overall_percent": null
+  },
+  "historical_state": {
+    "CURRENT_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "CURRENT_bytes": 2709173,
+    "Stage_A": "7 PARTIAL + 2 OPEN",
+    "Stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING"
+  },
+  "acceptance_commit_own_Actions": "NOT_YET_OBSERVED; verify exact new acceptance SHA separately",
+  "NEXT": "Rotate to different already acquired and still-unrestored original content family; prioritize new source byte/2D actual game content over repeated Garuna source rows, synthetic gameplay or MMO network."
+}
