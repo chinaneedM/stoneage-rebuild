@@ -1,0 +1,26 @@
+name: Verify StoneAge INTEGRATION96 original dungeon01 guardian handlers
+on:
+  push:
+    branches: [main, 'agent/stoneage-integration96-*']
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION96-DUNGEON01-SEVEN-WARPMAN-ORIGINAL-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration96_dungeon01_guardian_source.py'
+      - '.github/workflows/verify-stoneage-integration96-dungeon01-guardians.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION96-DUNGEON01-SEVEN-WARPMAN-ORIGINAL-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration96_dungeon01_guardian_source.py'
+      - '.github/workflows/verify-stoneage-integration96-dungeon01-guardians.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-limits:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check seven source-linked guardians, literal conditions, prior DAT bounds and negative evidence
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration96_dungeon01_guardian_source.py' -v

@@ -1,0 +1,315 @@
+{
+  "schema": "stoneage.integration96.original_dungeon01_seven_guardian_handlers.r1",
+  "source_scope": "MIXED25_COMMUNITY_PRESERVED_NOT_AUTHENTICATED_OFFICIAL_DEPLOYMENT",
+  "source_custody": {
+    "private_zip_bytes": 995176,
+    "private_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "private_zip_members_crc_validated": 2205,
+    "original_CREATE_relpath": "genout/dungeon01.create",
+    "original_CREATE_bytes": 30712,
+    "original_CREATE_sha256": "541ce646794e6c0c3e2414657567cbf6cb662d18b28049f4e3cd691071304169",
+    "parent_361MB_RAR_re_read_this_work_unit": false,
+    "prior_CHAR01_index": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json",
+    "prior_MAP04_index": "research/recovered/STONEAGE-MAP-SCENE-MODULE-04-955-ORIGINAL-DAT-4166-RD-PIXEL-INDEX-R1.json"
+  },
+  "counts": {
+    "CREATE_blocks": 257,
+    "npcgen_warp_static": 250,
+    "npcgen_warpman": 7,
+    "exact_handler_files_re_read": 7,
+    "handler_WARP_targets": 7,
+    "handler_FREE_predicates": 7,
+    "source_endpoints_with_prior_DAT": 3,
+    "target_endpoints_with_prior_DAT": 5,
+    "endpoints_missing_prior_DAT": 6,
+    "prior_DAT_endpoint_coordinate_out_of_bounds": 0
+  },
+  "seven_guardians": [
+    {
+      "create_index_0based": 91,
+      "create_byte_halfopen": [
+        10835,
+        11010
+      ],
+      "create_block_sha256": "45f29f15a32cb219ebc34b5683d14893028b2e1a3af8376ef9abe80bf12a2edb",
+      "source": {
+        "floor": 20301,
+        "x": 200,
+        "y": 39,
+        "prior_MAP04_DAT": {
+          "known": true,
+          "sha256": "3bd01a2edb71e3cb3f668991ed3ad5968d47a98746bee6434b14ee8367e83cbd",
+          "width": 300,
+          "height": 150,
+          "coordinate_in_bounds": true
+        }
+      },
+      "graphicname": 16306,
+      "source_name_CP950": "拉特拉的守門人",
+      "source_dir": 0,
+      "source_enemy_type": "npcgen_warpman",
+      "handler_relpath": "genout/wpm_20301_200_39",
+      "handler_bytes": 312,
+      "handler_sha256": "189fa235f104a7e00a87a46dc2ef39908e398a1dadfef105a8c934cf3aa43d5e",
+      "handler_warp_literal": "20301,200,41",
+      "handler_free_literal": "LV>0&ENDEV=4&ENDEV=40,LV>0&ENDEV=4&NOWEV=40",
+      "handler_money_literal": "-1",
+      "handler_target": {
+        "floor": 20301,
+        "x": 200,
+        "y": 41,
+        "prior_MAP04_DAT": {
+          "known": true,
+          "sha256": "3bd01a2edb71e3cb3f668991ed3ad5968d47a98746bee6434b14ee8367e83cbd",
+          "width": 300,
+          "height": 150,
+          "coordinate_in_bounds": true
+        }
+      }
+    },
+    {
+      "create_index_0based": 250,
+      "create_byte_halfopen": [
+        29544,
+        29702
+      ],
+      "create_block_sha256": "8042dff6923ac9cd07e8fd6451e38223339dd603f6402b6459b63bd0cce8356e",
+      "source": {
+        "floor": 21301,
+        "x": 8,
+        "y": 3,
+        "prior_MAP04_DAT": {
+          "known": true,
+          "sha256": "c905b0167b8bfd762dc14bbd7dce18515debd9d7a92c3fe2930ed62e2dcb668d",
+          "width": 40,
+          "height": 40,
+          "coordinate_in_bounds": true
+        }
+      },
+      "graphicname": 16207,
+      "source_name_CP950": "看門人",
+      "source_dir": 4,
+      "source_enemy_type": "npcgen_warpman",
+      "handler_relpath": "genout/wpm_21301_8_3",
+      "handler_bytes": 248,
+      "handler_sha256": "162742bade48e07ca04fa175bd6226e8621d9d95c281d86d0483311d9b007395",
+      "handler_warp_literal": "200,316,712",
+      "handler_free_literal": "LV>0",
+      "handler_money_literal": "-1",
+      "handler_target": {
+        "floor": 200,
+        "x": 316,
+        "y": 712,
+        "prior_MAP04_DAT": {
+          "known": false
+        }
+      }
+    },
+    {
+      "create_index_0based": 251,
+      "create_byte_halfopen": [
+        29712,
+        29875
+      ],
+      "create_block_sha256": "472191000482a15bd2b73747ca20954ad7eb5873d028d8b278366b8255eaa176",
+      "source": {
+        "floor": 200,
+        "x": 73,
+        "y": 696,
+        "prior_MAP04_DAT": {
+          "known": false
+        }
+      },
+      "graphicname": 16203,
+      "source_name_CP950": "看門人",
+      "source_dir": 4,
+      "source_enemy_type": "npcgen_warpman",
+      "handler_relpath": "genout/wpm_200_73_696",
+      "handler_bytes": 331,
+      "handler_sha256": "486ef5eb5e5e5bc39cf78d51ee42a6371841db1a2c5e8cff903a6e947792af4c",
+      "handler_warp_literal": "21201,61,46",
+      "handler_free_literal": "LV>64&ENDEV=4",
+      "handler_money_literal": "-1",
+      "handler_target": {
+        "floor": 21201,
+        "x": 61,
+        "y": 46,
+        "prior_MAP04_DAT": {
+          "known": false
+        }
+      }
+    },
+    {
+      "create_index_0based": 252,
+      "create_byte_halfopen": [
+        29885,
+        30055
+      ],
+      "create_block_sha256": "5740cf29abefca53123c2e9d85a93453d07811f1ffb0c810756b86f886f42905",
+      "source": {
+        "floor": 21308,
+        "x": 20,
+        "y": 10,
+        "prior_MAP04_DAT": {
+          "known": true,
+          "sha256": "936a31717792e11cfa37b274cfe317f44e0e323affc439b1a34f7c78eb20a4c5",
+          "width": 40,
+          "height": 40,
+          "coordinate_in_bounds": true
+        }
+      },
+      "graphicname": 16202,
+      "source_name_CP950": "賢者的看門人",
+      "source_dir": 4,
+      "source_enemy_type": "npcgen_warpman",
+      "handler_relpath": "genout/wpm_21308_20_10",
+      "handler_bytes": 281,
+      "handler_sha256": "97b9c44e4bae373f93be599138c95e922c746281f6330c9d95167dc5e06e5f2a",
+      "handler_warp_literal": "21308,20,7",
+      "handler_free_literal": "LV>64&ENDEV=4&NOWEV=46&ITEM=2767&ITEM=2768",
+      "handler_money_literal": "-1",
+      "handler_target": {
+        "floor": 21308,
+        "x": 20,
+        "y": 7,
+        "prior_MAP04_DAT": {
+          "known": true,
+          "sha256": "936a31717792e11cfa37b274cfe317f44e0e323affc439b1a34f7c78eb20a4c5",
+          "width": 40,
+          "height": 40,
+          "coordinate_in_bounds": true
+        }
+      }
+    },
+    {
+      "create_index_0based": 254,
+      "create_byte_halfopen": [
+        30182,
+        30348
+      ],
+      "create_block_sha256": "c1e248156405256ee93742e8c374463456f2161a1c4fcb07e5552d8036d1379e",
+      "source": {
+        "floor": 200,
+        "x": 316,
+        "y": 711,
+        "prior_MAP04_DAT": {
+          "known": false
+        }
+      },
+      "graphicname": 16200,
+      "source_name_CP950": "看門人",
+      "source_dir": 4,
+      "source_enemy_type": "npcgen_warpman",
+      "handler_relpath": "genout/wpm_200_316_711",
+      "handler_bytes": 268,
+      "handler_sha256": "785c39d5b535eb1c5c076059f42c4739fea63fbc8487ff3768898ef82b941c5e",
+      "handler_warp_literal": "21301,7,3",
+      "handler_free_literal": "LV>64&ENDEV=46&ITEM=2766",
+      "handler_money_literal": "-1",
+      "handler_target": {
+        "floor": 21301,
+        "x": 7,
+        "y": 3,
+        "prior_MAP04_DAT": {
+          "known": true,
+          "sha256": "c905b0167b8bfd762dc14bbd7dce18515debd9d7a92c3fe2930ed62e2dcb668d",
+          "width": 40,
+          "height": 40,
+          "coordinate_in_bounds": true
+        }
+      }
+    },
+    {
+      "create_index_0based": 255,
+      "create_byte_halfopen": [
+        30358,
+        30530
+      ],
+      "create_block_sha256": "5cf6f2071ad23939f46672d15178f3b09d428a66245cf44bcf2d6d86a89a86f4",
+      "source": {
+        "floor": 300,
+        "x": 247,
+        "y": 222,
+        "prior_MAP04_DAT": {
+          "known": false
+        }
+      },
+      "graphicname": 16201,
+      "source_name_CP950": "洞窟的守門人",
+      "source_dir": 4,
+      "source_enemy_type": "npcgen_warpman",
+      "handler_relpath": "genout/wpm_300_247_222",
+      "handler_bytes": 331,
+      "handler_sha256": "a8883588080acec72edec3749f5612ad5657e4e152c1977e1973772824f6a5ff",
+      "handler_warp_literal": "30301,23,37",
+      "handler_free_literal": "LV>64&ENDEV=4",
+      "handler_money_literal": "-1",
+      "handler_target": {
+        "floor": 30301,
+        "x": 23,
+        "y": 37,
+        "prior_MAP04_DAT": {
+          "known": true,
+          "sha256": "603332e92ac3a3a2ecc2f0e3accae71efad07f12546eafa6c22f5f2b5349451d",
+          "width": 50,
+          "height": 50,
+          "coordinate_in_bounds": true
+        }
+      }
+    },
+    {
+      "create_index_0based": 256,
+      "create_byte_halfopen": [
+        30540,
+        30712
+      ],
+      "create_block_sha256": "def454c9db97c5f04e990802bb9fe58ad4883f6aeac8d0e98234408ded9751bb",
+      "source": {
+        "floor": 300,
+        "x": 182,
+        "y": 162,
+        "prior_MAP04_DAT": {
+          "known": false
+        }
+      },
+      "graphicname": 16208,
+      "source_name_CP950": "洞窟的守門人",
+      "source_dir": 6,
+      "source_enemy_type": "npcgen_warpman",
+      "handler_relpath": "genout/wpm_300_182_162",
+      "handler_bytes": 330,
+      "handler_sha256": "90832665af769cb93b235004aa52ffe471e79dde87623106b67891d457305777",
+      "handler_warp_literal": "30307,10,6",
+      "handler_free_literal": "LV>64&ENDEV=4",
+      "handler_money_literal": "-1",
+      "handler_target": {
+        "floor": 30307,
+        "x": 10,
+        "y": 6,
+        "prior_MAP04_DAT": {
+          "known": true,
+          "sha256": "b58fd7c11a110b515c862a009820933fcbda4d84287832fca1c181b93a0a52f4",
+          "width": 50,
+          "height": 50,
+          "coordinate_in_bounds": true
+        }
+      }
+    }
+  ],
+  "bounds": {
+    "source_literal_fields_only": true,
+    "FREE_expression_evaluated_in_native_server": false,
+    "native_warp_or_party_gate_execution_verified": false,
+    "all_DUNGEON01_original_content_exhausted": false,
+    "prior_MAP04_DAT_files_re_read_in_this_work_unit": false,
+    "same_historical_deployment_as_TW1_client_proven": false,
+    "same_historical_deployment_as_mainland_1_82_proven": false,
+    "commercial_dialogue_text_published": false,
+    "Stage_A": "7 PARTIAL + 2 OPEN",
+    "Stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percentage": null
+  },
+  "next": "Another original source-backed content relation with actual source bytes; separately acquire native same-deployment execution before any gameplay claim"
+}
