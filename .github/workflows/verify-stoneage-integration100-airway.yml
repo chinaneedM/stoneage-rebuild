@@ -1,0 +1,27 @@
+name: Verify StoneAge INTEGRATION100 original airway NPC and signboards
+on:
+  push:
+    branches:
+      - main
+      - agent/stoneage-integration100-airway-source-20261113
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION100-AIRWAY-15-ORIGINAL-NPC-SOURCE-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION100-AIRWAY-ORIGINAL-NPC-20261113.md'
+      - 'tests/test_stoneage_integration100_airway.py'
+      - '.github/workflows/verify-stoneage-integration100-airway.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION100-AIRWAY-15-ORIGINAL-NPC-SOURCE-R1.json'
+      - 'tests/test_stoneage_integration100_airway.py'
+      - '.github/workflows/verify-stoneage-integration100-airway.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify original source-derived airway relations without proprietary files
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration100_airway.py' -v

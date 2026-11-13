@@ -1,0 +1,508 @@
+{
+  "schema": "stoneage.integration100_original_airway_npc_signboard_source_qualified_r1",
+  "date": "2026-11-13",
+  "source_status": "ORIGINAL_PRIVATE_BYTES_REVERIFIED_SOURCE_BOUNDED_NOT_GAMEPLAY",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "startup_main_head": "68b35428e842048673b894f333d092efef83a7a4",
+  "startup_main_tree": "bd7645ec1acc20d3cbddee1c4c1729987fd90c1a",
+  "private_source_custody": {
+    "parent_class": "preserved later community mixed25 NPC files; official early production deployment unverified",
+    "original_parent_RAR_prior_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "actual_private_npc_ZIP_name": "StoneAge-CHAR01-mixed25-all-npc-original-private.zip",
+    "actual_private_npc_ZIP_bytes": 995176,
+    "actual_private_npc_ZIP_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "actual_private_npc_ZIP_crc_validated": 2205,
+    "original_CREATE_member": "npc/genout/airway.create",
+    "original_CREATE_bytes": 2747,
+    "original_CREATE_sha256": "faaf7850d8cc400764b6f4b700dafced16664a988069e15b3ba18315d52ded9e",
+    "original_CREATE_cp950_roundtrip_byte_exact": true,
+    "original_CREATE_block_byte_window_SHA_verifications": 15,
+    "original_HANDLER_full_byte_SHA_verifications": 15,
+    "original_HANDLER_cp950_roundtrip_verifications": 15,
+    "original_source_reextraction_from_361MB_parent_RAR_this_unit": false
+  },
+  "public_previous_index_custody": {
+    "CHAR01_path": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json",
+    "CHAR01_git_blob_sha": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "MAP04_path": "research/recovered/STONEAGE-MAP-SCENE-MODULE-04-955-ORIGINAL-DAT-4166-RD-PIXEL-INDEX-R1.json",
+    "MAP04_git_blob_sha": "1ef8c004179128ea44ffa4fb4259748bc8c83911",
+    "original_MAP_DAT_bytes_re_read_this_unit": 0
+  },
+  "counts": {
+    "CREATE_rows": 15,
+    "guide_rows": 5,
+    "destination_sign_rows": 8,
+    "airdrop_sign_rows": 2,
+    "signboard_rows": 10,
+    "unique_handler_file_paths": 15,
+    "different_handler_full_sha256": 12,
+    "source_floor_numeric_IDs": [
+      2000,
+      4000,
+      5000,
+      5100,
+      5543,
+      6000
+    ],
+    "prior_MAP04_original_DAT_floor_ids": [
+      2000,
+      4000,
+      5100,
+      5543
+    ],
+    "prior_MAP04_DAT_missing_floor_ids_in_this_catalog": [
+      5000,
+      6000
+    ],
+    "source_spawn_coords_with_prior_MAP04_verified_header_bounds": 8,
+    "source_spawn_coords_without_prior_MAP04_DAT": 7,
+    "literal_1000s_signboards": 8,
+    "airdrop_signboards_without_1000s_literal": 2,
+    "verified_native_ride_or_fare_collection": 0
+  },
+  "original_CREATE_source_rows_sha_anchored": [
+    {
+      "ordinal": 0,
+      "create_source_byte_halfopen": [
+        112,
+        276
+      ],
+      "create_block_sha256": "f2fbddf24cc73606f86426a7346845c2ec68a9ef768d5b29a966e9e33ce3261d",
+      "floorid": 2000,
+      "spawn_xy": [
+        101,
+        86
+      ],
+      "original_graphic_numeric_alias": 16026,
+      "original_direction": 2,
+      "original_enemy_template": "npcgen_man",
+      "original_name_field_sha256": "637adb208b7595f44e31d474872cfb0842c8b99163c5f29848c0a668bb26cc3b",
+      "original_handler_file": "npc/genout/msg_2000_101_86",
+      "handler_original_bytes": 127,
+      "handler_full_sha256": "bad71dc0c9bfc970e68fe786f282222cd925ef140ee356682aaf7ce4cd85a5a8",
+      "text_source_class": "guide",
+      "source_advertised_origin": "玛丽娜丝",
+      "source_advertised_destination": "奇努伊",
+      "sign_source_literal_amount_string": null,
+      "prior_original_DAT": {
+        "file": "2000.dat",
+        "git_prior_full_DAT_sha256": "d75231434c69118a518a8d5dd34f266264b8551fe4f2d55a20cdfa11b46584b3",
+        "width": 150,
+        "height": 150,
+        "in_header_bounds": true
+      }
+    },
+    {
+      "ordinal": 1,
+      "create_source_byte_halfopen": [
+        284,
+        455
+      ],
+      "create_block_sha256": "cbfda89f2b0225b0dc7135affb38e17924878bbc3043eca51996194e9f0bdcd2",
+      "floorid": 2000,
+      "spawn_xy": [
+        106,
+        87
+      ],
+      "original_graphic_numeric_alias": 10400,
+      "original_direction": 2,
+      "original_enemy_template": "npcgen_signboard",
+      "original_name_field_sha256": "88d144ad0fa0cc117a5022c8de1f48e744a8aee9b2d9622cd0a65a5abceb9544",
+      "original_handler_file": "npc/genout/signb_2000_106_87",
+      "handler_original_bytes": 76,
+      "handler_full_sha256": "977a530e4cddb7f5974fa3473cbb5cc0d4c10640cd29e2d71bea68ce60cd447c",
+      "text_source_class": "destination_sign",
+      "source_advertised_origin": "玛丽娜丝",
+      "source_advertised_destination": "奇努伊",
+      "sign_source_literal_amount_string": "1000s",
+      "prior_original_DAT": {
+        "file": "2000.dat",
+        "git_prior_full_DAT_sha256": "d75231434c69118a518a8d5dd34f266264b8551fe4f2d55a20cdfa11b46584b3",
+        "width": 150,
+        "height": 150,
+        "in_header_bounds": true
+      }
+    },
+    {
+      "ordinal": 2,
+      "create_source_byte_halfopen": [
+        464,
+        625
+      ],
+      "create_block_sha256": "b0f5cf55482de8e02aef9e0580ccb19fa9a655ca7bd9c040e2c89c933322faa5",
+      "floorid": 5543,
+      "spawn_xy": [
+        22,
+        20
+      ],
+      "original_graphic_numeric_alias": 16027,
+      "original_direction": 4,
+      "original_enemy_template": "npcgen_man",
+      "original_name_field_sha256": "637adb208b7595f44e31d474872cfb0842c8b99163c5f29848c0a668bb26cc3b",
+      "original_handler_file": "npc/genout/msg_5543_22_20",
+      "handler_original_bytes": 123,
+      "handler_full_sha256": "3ed640f7222f23ab8ef7c30fa88996a7eb4dda4d3d8620b1793a177e148cfea9",
+      "text_source_class": "guide",
+      "source_advertised_origin": "米兰达",
+      "source_advertised_destination": "奇努伊",
+      "sign_source_literal_amount_string": null,
+      "prior_original_DAT": {
+        "file": "5543.dat",
+        "git_prior_full_DAT_sha256": "1faea63a7ea4149ba21b1ec5b0e0811504d210683a491416a6b3253379d6e669",
+        "width": 60,
+        "height": 60,
+        "in_header_bounds": true
+      }
+    },
+    {
+      "ordinal": 3,
+      "create_source_byte_halfopen": [
+        634,
+        802
+      ],
+      "create_block_sha256": "41787d723699efa3453e4c4e45abc2befe6ec007c022b138da23c6e402ca288b",
+      "floorid": 5543,
+      "spawn_xy": [
+        25,
+        21
+      ],
+      "original_graphic_numeric_alias": 10401,
+      "original_direction": 4,
+      "original_enemy_template": "npcgen_signboard",
+      "original_name_field_sha256": "88d144ad0fa0cc117a5022c8de1f48e744a8aee9b2d9622cd0a65a5abceb9544",
+      "original_handler_file": "npc/genout/signb_5543_25_21",
+      "handler_original_bytes": 76,
+      "handler_full_sha256": "977a530e4cddb7f5974fa3473cbb5cc0d4c10640cd29e2d71bea68ce60cd447c",
+      "text_source_class": "destination_sign",
+      "source_advertised_origin": "米兰达",
+      "source_advertised_destination": "奇努伊",
+      "sign_source_literal_amount_string": "1000s",
+      "prior_original_DAT": {
+        "file": "5543.dat",
+        "git_prior_full_DAT_sha256": "1faea63a7ea4149ba21b1ec5b0e0811504d210683a491416a6b3253379d6e669",
+        "width": 60,
+        "height": 60,
+        "in_header_bounds": true
+      }
+    },
+    {
+      "ordinal": 4,
+      "create_source_byte_halfopen": [
+        811,
+        972
+      ],
+      "create_block_sha256": "56838389e53bd19e257b5e966d3366aa4921bcc7ebe52f378b268a40c4aac823",
+      "floorid": 6000,
+      "spawn_xy": [
+        48,
+        83
+      ],
+      "original_graphic_numeric_alias": 16065,
+      "original_direction": 6,
+      "original_enemy_template": "npcgen_man",
+      "original_name_field_sha256": "637adb208b7595f44e31d474872cfb0842c8b99163c5f29848c0a668bb26cc3b",
+      "original_handler_file": "npc/genout/msg_6000_48_83",
+      "handler_original_bytes": 181,
+      "handler_full_sha256": "67aed85e68602d4f7fcda3131cdfea58470cfa86b335de8f879adbacf21505c3",
+      "text_source_class": "guide",
+      "source_advertised_origin": "奇努伊",
+      "source_advertised_destination": "四处机场",
+      "sign_source_literal_amount_string": null,
+      "prior_original_DAT": null
+    },
+    {
+      "ordinal": 5,
+      "create_source_byte_halfopen": [
+        981,
+        1151
+      ],
+      "create_block_sha256": "927ee4be0d0f7ed6cecfe9e33a51bf2c06e814261a6b31bca067399a6f87fd2b",
+      "floorid": 6000,
+      "spawn_xy": [
+        45,
+        84
+      ],
+      "original_graphic_numeric_alias": 10400,
+      "original_direction": 6,
+      "original_enemy_template": "npcgen_signboard",
+      "original_name_field_sha256": "c26d6b87509a0705f81305a29604c85c178decb7bdbb9b74ea4ef46759008d30",
+      "original_handler_file": "npc/genout/signb_6000_45_84",
+      "handler_original_bytes": 78,
+      "handler_full_sha256": "5f94e1d228ec7a1a6b67db982a79814a353568b33c184056e1b991a05462abdf",
+      "text_source_class": "destination_sign",
+      "source_advertised_origin": "奇努伊",
+      "source_advertised_destination": "玛丽娜丝",
+      "sign_source_literal_amount_string": "1000s",
+      "prior_original_DAT": null
+    },
+    {
+      "ordinal": 6,
+      "create_source_byte_halfopen": [
+        1160,
+        1330
+      ],
+      "create_block_sha256": "2c7f52cda2054c5465ba6bc82a6d40d64958012fa8634f66dcc49da0c30b4d5c",
+      "floorid": 6000,
+      "spawn_xy": [
+        43,
+        84
+      ],
+      "original_graphic_numeric_alias": 10400,
+      "original_direction": 6,
+      "original_enemy_template": "npcgen_signboard",
+      "original_name_field_sha256": "786f1ec947180e71d26eebc78f2fbb09ff0b1caeef4eeaf5dc14bba8d33a563d",
+      "original_handler_file": "npc/genout/signb_6000_43_84",
+      "handler_original_bytes": 78,
+      "handler_full_sha256": "119f2f62c2b4e87207c3b761bcf7b8bc55e0bb437a8b87340d638f6c4e5f93e7",
+      "text_source_class": "destination_sign",
+      "source_advertised_origin": "奇努伊",
+      "source_advertised_destination": "卡鲁它那",
+      "sign_source_literal_amount_string": "1000s",
+      "prior_original_DAT": null
+    },
+    {
+      "ordinal": 7,
+      "create_source_byte_halfopen": [
+        1339,
+        1505
+      ],
+      "create_block_sha256": "a3534f67ffaee340d9e5625c85a6753128c5c361d7f70e0f790a5de68e819bdd",
+      "floorid": 6000,
+      "spawn_xy": [
+        41,
+        84
+      ],
+      "original_graphic_numeric_alias": 10400,
+      "original_direction": 6,
+      "original_enemy_template": "npcgen_signboard",
+      "original_name_field_sha256": "2d35e1d880d580ad4a7c7e6f9f3d8a82b81284f898d29b96843887cf768bfabb",
+      "original_handler_file": "npc/genout/signb_6000_41_84",
+      "handler_original_bytes": 74,
+      "handler_full_sha256": "13ce6f279232bea40ead26590c7c42091b4f42f88196996cdfd9de2e7c3b39f1",
+      "text_source_class": "destination_sign",
+      "source_advertised_origin": "奇努伊",
+      "source_advertised_destination": "达那",
+      "sign_source_literal_amount_string": "1000s",
+      "prior_original_DAT": null
+    },
+    {
+      "ordinal": 8,
+      "create_source_byte_halfopen": [
+        1514,
+        1682
+      ],
+      "create_block_sha256": "09e07493e32d59da1acca6a80b9a83d252431e603f992a46f617482e6064041b",
+      "floorid": 6000,
+      "spawn_xy": [
+        39,
+        78
+      ],
+      "original_graphic_numeric_alias": 10400,
+      "original_direction": 6,
+      "original_enemy_template": "npcgen_signboard",
+      "original_name_field_sha256": "6eee8d1be47e7f5eb2bc956f76c73c25a15b176ed6b590c15d578d42e0213920",
+      "original_handler_file": "npc/genout/signb_6000_39_78",
+      "handler_original_bytes": 76,
+      "handler_full_sha256": "69b25e79cc786671287e9f16bbb1f184ce073d4cc20799c4273884c4e3c68221",
+      "text_source_class": "destination_sign",
+      "source_advertised_origin": "奇努伊",
+      "source_advertised_destination": "米兰达",
+      "sign_source_literal_amount_string": "1000s",
+      "prior_original_DAT": null
+    },
+    {
+      "ordinal": 9,
+      "create_source_byte_halfopen": [
+        1692,
+        1866
+      ],
+      "create_block_sha256": "51f5d3d0f40054169a414f653f2376f5b28bc2d95df2dfc72ea99a83002b0380",
+      "floorid": 5000,
+      "spawn_xy": [
+        42,
+        59
+      ],
+      "original_graphic_numeric_alias": 10400,
+      "original_direction": 6,
+      "original_enemy_template": "npcgen_signboard",
+      "original_name_field_sha256": "0444a74285747bfffb5863c1ac91eaacb61e8dc4d74d297901642000e71097ae",
+      "original_handler_file": "npc/genout/signb_5000_42_59",
+      "handler_original_bytes": 58,
+      "handler_full_sha256": "fd738be0323500572cc5079d69943c5cec9664bce576a69eb3ca3000293bd92b",
+      "text_source_class": "airdrop_sign",
+      "source_advertised_origin": "北吉鲁空投区",
+      "source_advertised_destination": "原文仅标空投区",
+      "sign_source_literal_amount_string": null,
+      "prior_original_DAT": null
+    },
+    {
+      "ordinal": 10,
+      "create_source_byte_halfopen": [
+        1877,
+        2051
+      ],
+      "create_block_sha256": "ca841405917796812aaa5826721904b7de81b75ff22d4efdc77d82a4dec4a261",
+      "floorid": 5000,
+      "spawn_xy": [
+        46,
+        60
+      ],
+      "original_graphic_numeric_alias": 10400,
+      "original_direction": 6,
+      "original_enemy_template": "npcgen_signboard",
+      "original_name_field_sha256": "7ffd87e80bed7d720c9b921a860d4328bae55e666e9f250495695a6d5f1b666b",
+      "original_handler_file": "npc/genout/signb_5000_46_60",
+      "handler_original_bytes": 58,
+      "handler_full_sha256": "8dffebc0aecbe6639c3691ba96450545a2abe0ab4c45163f4a058386398fb3bc",
+      "text_source_class": "airdrop_sign",
+      "source_advertised_origin": "西吉鲁空投区",
+      "source_advertised_destination": "原文仅标空投区",
+      "sign_source_literal_amount_string": null,
+      "prior_original_DAT": null
+    },
+    {
+      "ordinal": 11,
+      "create_source_byte_halfopen": [
+        2062,
+        2223
+      ],
+      "create_block_sha256": "4ab0109ea02bccb2ac91f2fe738835c8e47916c698c624b3d31eb972a38207b2",
+      "floorid": 5100,
+      "spawn_xy": [
+        40,
+        35
+      ],
+      "original_graphic_numeric_alias": 16027,
+      "original_direction": 4,
+      "original_enemy_template": "npcgen_man",
+      "original_name_field_sha256": "637adb208b7595f44e31d474872cfb0842c8b99163c5f29848c0a668bb26cc3b",
+      "original_handler_file": "npc/genout/msg_5100_40_35",
+      "handler_original_bytes": 121,
+      "handler_full_sha256": "56eb7e46da08a12aff1ac15a3b3714bb47ca58fdb09839e02e0837900f97efaa",
+      "text_source_class": "guide",
+      "source_advertised_origin": "达那",
+      "source_advertised_destination": "奇努伊",
+      "sign_source_literal_amount_string": null,
+      "prior_original_DAT": {
+        "file": "5100.dat",
+        "git_prior_full_DAT_sha256": "11bb5018f3dca8a84e775510ba07fcb3180f9ba7046d4d9f47fa07990323b0ac",
+        "width": 90,
+        "height": 90,
+        "in_header_bounds": true
+      }
+    },
+    {
+      "ordinal": 12,
+      "create_source_byte_halfopen": [
+        2232,
+        2400
+      ],
+      "create_block_sha256": "c14021866475bcafa536d9ed74017a1154ada756d1f10bbde75eda0d37050a67",
+      "floorid": 5100,
+      "spawn_xy": [
+        43,
+        36
+      ],
+      "original_graphic_numeric_alias": 10401,
+      "original_direction": 4,
+      "original_enemy_template": "npcgen_signboard",
+      "original_name_field_sha256": "88d144ad0fa0cc117a5022c8de1f48e744a8aee9b2d9622cd0a65a5abceb9544",
+      "original_handler_file": "npc/genout/signb_5100_43_36",
+      "handler_original_bytes": 76,
+      "handler_full_sha256": "977a530e4cddb7f5974fa3473cbb5cc0d4c10640cd29e2d71bea68ce60cd447c",
+      "text_source_class": "destination_sign",
+      "source_advertised_origin": "达那",
+      "source_advertised_destination": "奇努伊",
+      "sign_source_literal_amount_string": "1000s",
+      "prior_original_DAT": {
+        "file": "5100.dat",
+        "git_prior_full_DAT_sha256": "11bb5018f3dca8a84e775510ba07fcb3180f9ba7046d4d9f47fa07990323b0ac",
+        "width": 90,
+        "height": 90,
+        "in_header_bounds": true
+      }
+    },
+    {
+      "ordinal": 13,
+      "create_source_byte_halfopen": [
+        2409,
+        2570
+      ],
+      "create_block_sha256": "5545f53f52d0c3a79dd153aaea538b858da26a6ba8636aaa49e32e580b29798f",
+      "floorid": 4000,
+      "spawn_xy": [
+        90,
+        69
+      ],
+      "original_graphic_numeric_alias": 16026,
+      "original_direction": 2,
+      "original_enemy_template": "npcgen_man",
+      "original_name_field_sha256": "637adb208b7595f44e31d474872cfb0842c8b99163c5f29848c0a668bb26cc3b",
+      "original_handler_file": "npc/genout/msg_4000_90_69",
+      "handler_original_bytes": 127,
+      "handler_full_sha256": "c5a6ecc58b96f98071c87e586637967a1050ba778accd0bcda498ea4b079ba80",
+      "text_source_class": "guide",
+      "source_advertised_origin": "卡鲁它那",
+      "source_advertised_destination": "奇努伊",
+      "sign_source_literal_amount_string": null,
+      "prior_original_DAT": {
+        "file": "4000.dat",
+        "git_prior_full_DAT_sha256": "9d327505c74ccb27b62bcce7259be246c9c4a0477c6ee0fceb78f921e7a0dfa5",
+        "width": 150,
+        "height": 150,
+        "in_header_bounds": true
+      }
+    },
+    {
+      "ordinal": 14,
+      "create_source_byte_halfopen": [
+        2579,
+        2747
+      ],
+      "create_block_sha256": "d087ad78cf98875be0232483fc1f1db1b092cae1021c7c4125931ab0cdfbcb0d",
+      "floorid": 4000,
+      "spawn_xy": [
+        91,
+        72
+      ],
+      "original_graphic_numeric_alias": 10400,
+      "original_direction": 2,
+      "original_enemy_template": "npcgen_signboard",
+      "original_name_field_sha256": "88d144ad0fa0cc117a5022c8de1f48e744a8aee9b2d9622cd0a65a5abceb9544",
+      "original_handler_file": "npc/genout/signb_4000_91_72",
+      "handler_original_bytes": 76,
+      "handler_full_sha256": "977a530e4cddb7f5974fa3473cbb5cc0d4c10640cd29e2d71bea68ce60cd447c",
+      "text_source_class": "destination_sign",
+      "source_advertised_origin": "卡鲁它那",
+      "source_advertised_destination": "奇努伊",
+      "sign_source_literal_amount_string": "1000s",
+      "prior_original_DAT": {
+        "file": "4000.dat",
+        "git_prior_full_DAT_sha256": "9d327505c74ccb27b62bcce7259be246c9c4a0477c6ee0fceb78f921e7a0dfa5",
+        "width": 150,
+        "height": 150,
+        "in_header_bounds": true
+      }
+    }
+  ],
+  "limits": {
+    "name_and_sign_text_may_describe_route_not_actual_flight_or_teleport": true,
+    "signboard_literal_1000s_is_actual_charged_fee": false,
+    "prior_DAT_header_in_bounds_is_native_passability": false,
+    "original_TW1_JSS1999_or_CN182_same_deployment_proven": false,
+    "original_raw_private_dialogue_or_original_proprietary_art_in_public_Git": false,
+    "original_client_or_server_execution_this_unit": false,
+    "new_Retail_TW1_RD_decoding_or_observer_this_unit": false,
+    "source_only_active_live_NPC_spawns_proven": false
+  },
+  "historical_preservation": {
+    "CURRENT_blob_sha": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "CURRENT_bytes": 2709173,
+    "Stage_A": "7 PARTIAL + 2 OPEN",
+    "Stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Only reopen airline route/passenger pricing upon original same-version transport handlers or true native flight traces; otherwise rotate to another source-ready nonduplicate pet/map/NPC/quest family."
+}
