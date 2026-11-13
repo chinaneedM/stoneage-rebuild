@@ -1,0 +1,26 @@
+name: Verify StoneAge INTEGRATION98 eight original source items and one TW1 2D candidate
+on:
+  push:
+    branches: [main, 'agent/stoneage-integration98-*']
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION98-FOUR-MANOR-EIGHT-ORIGINAL-ITEM-2D-CANDIDATE-R1.json'
+      - 'tests/test_stoneage_integration98_manor_item_original_2d.py'
+      - '.github/workflows/verify-stoneage-integration98-original-item-2d.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION98-FOUR-MANOR-EIGHT-ORIGINAL-ITEM-2D-CANDIDATE-R1.json'
+      - 'tests/test_stoneage_integration98_manor_item_original_2d.py'
+      - '.github/workflows/verify-stoneage-integration98-original-item-2d.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-candidate-bounds:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check eight source row identities, prior gate/ITEM01 joins, one RD identity and no native claims
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration98_manor_item_original_2d.py' -v
