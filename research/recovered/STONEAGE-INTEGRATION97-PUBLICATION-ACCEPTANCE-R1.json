@@ -1,0 +1,133 @@
+{
+  "schema": "stoneage.integration97_four_manor_publication_acceptance.r1",
+  "date": "2026-11-13",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "source_version_scope": "MIXED25_COMMUNITY_PRESERVED_NOT_CERTIFIED_OFFICIAL_SAME_DEPLOYMENT",
+  "content_PR": {
+    "number": 377,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/pull/377",
+    "state": "merged",
+    "candidate_head": "0184b1d28edeab3cee8f56f4c5631f04158d24cf",
+    "candidate_tree": "aa8fc5582dafb41ff926acc7437c7ebbcdff4f78",
+    "base_main": "ad282efef9643b0080be1f7e846934bc11dbb637",
+    "content_main": "6dab36c60051b4c8f53aba1d551301e9dd5ef16b",
+    "content_main_tree": "aa8fc5582dafb41ff926acc7437c7ebbcdff4f78"
+  },
+  "candidate_actions": {
+    "total": 4,
+    "completed_success": 4,
+    "runs": [
+      {
+        "run_id": 43444704278,
+        "name": "Verify StoneAge INTEGRATION97 four original manor shop and guard source",
+        "event": "push",
+        "head_sha": "0184b1d28edeab3cee8f56f4c5631f04158d24cf",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 43444780628,
+        "name": "Verify StoneAge O12 original compiled sound-number namespace (derived only)",
+        "event": "pull_request",
+        "head_sha": "0184b1d28edeab3cee8f56f4c5631f04158d24cf",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 43444780663,
+        "name": "Verify StoneAge INTEGRATION97 four original manor shop and guard source",
+        "event": "pull_request",
+        "head_sha": "0184b1d28edeab3cee8f56f4c5631f04158d24cf",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 43444780862,
+        "name": "Verify StoneAge O11 native source animation and bounded sound-word candidates",
+        "event": "pull_request",
+        "head_sha": "0184b1d28edeab3cee8f56f4c5631f04158d24cf",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "dedicated_push": {
+      "run_id": 43444704278,
+      "job_id": 131951000531,
+      "actual_log": "Ran 10 tests / OK"
+    },
+    "dedicated_pull_request": {
+      "run_id": 43444780663,
+      "job_id": 131951270317,
+      "actual_log": "Ran 10 tests / OK"
+    }
+  },
+  "main_content_actions": {
+    "total": 1,
+    "completed_success": 1,
+    "runs": [
+      {
+        "run_id": 43444984808,
+        "name": "Verify StoneAge INTEGRATION97 four original manor shop and guard source",
+        "event": "push",
+        "head_sha": "6dab36c60051b4c8f53aba1d551301e9dd5ef16b",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "dedicated_main": {
+      "run_id": 43444984808,
+      "job_id": 131951968763,
+      "actual_log": "Ran 10 tests / OK"
+    }
+  },
+  "source_custody": {
+    "private_zip_bytes": 995176,
+    "private_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "private_zip_all_entries_CRC": "2205/2205",
+    "source_original_parent_RAR_reread_now": false,
+    "original_config_file_count": 9,
+    "handler_original_full_byte_SHA_count": 33,
+    "source_CREATE_records": 33
+  },
+  "independent_verification": {
+    "accepted_CHAR01_original_window_SHA_and_fields_checks": 231,
+    "accepted_CHAR01_full_original_file_bytes_SHA_checks": 42,
+    "prior_ITEM01_shop_and_create_link_checks": 40,
+    "prior_MAP04_original_DAT_metadata_join_checks": 21,
+    "all_checks": 334,
+    "failures": 0,
+    "first_prepublication_mismatch": "Initial per-CREATE byte window excluded final newline after close brace (33 span and 33 SHA mismatches); rejected, corrected, full independent reread all pass."
+  },
+  "source_facts": {
+    "named_source_creates": 4,
+    "backup_only_named_files": 5,
+    "source_shop_refs_previously_indexed_by_ITEM01": 20,
+    "source_warpman_handlers": 13,
+    "guard_event_sections_literal": 43,
+    "nonzero_warp_candidates": 30,
+    "default_zero_literal": 13,
+    "item_predicate_DelItem_occurrences": 17,
+    "qualified_prior_DAT_floor_metadata": 21,
+    "prior_DAT_actual_raw_rereads_this_unit": 0
+  },
+  "public_content_git_blobs": {
+    ".github/workflows/verify-stoneage-integration97-manor-source.yml": "a5f87c295dce566f88d92db1f39d6a6ae6ed0ba3",
+    "docs/continuity/STONEAGE-INTEGRATION97-FOUR-MANOR-SHOPS-ORIGINAL-ITEM-GATES-20261113.md": "af24259f79ffc36c1ffc2696bbc0372cae9e003c",
+    "research/recovered/STONEAGE-INTEGRATION97-FOUR-MANOR-SOURCE-GATES-SHOPS-R1.json": "ce35bd97fc1432dad67ed603327733ee71bb2893",
+    "tests/test_stoneage_integration97_manor_source_bridge.py": "61dd83f43fc5b9f83adb1f952370153b10c88d94"
+  },
+  "historical_protection": {
+    "original_CURRENT_state_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_CURRENT_state_bytes": 2709173,
+    "stage_A": "7 PARTIAL + 2 OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null,
+    "original_private_script_dialogue_published": false,
+    "native_shops_warps_item_consumption_executed": false,
+    "official_tw1_or_cn182_same_deployment_proven": false
+  },
+  "receipt_own_actions": "Not known until receipt commit exact SHA accepted; no result claimed in this document.",
+  "next": "A nonduplicate original NPC/quest/item source-byte relation and version-scoped content; do not expand static manor map or build original MMO."
+}
