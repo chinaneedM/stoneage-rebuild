@@ -1,0 +1,26 @@
+name: Verify StoneAge INTEGRATION87 source-qualified 36 GetPet 2D census
+on:
+  push:
+    branches: [main, 'agent/stoneage-integration87-*']
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION87-36-GETPET-TW10-SPR-2D-BRIDGE-R1.json'
+      - 'tests/test_stoneage_integration87_getpet_tw10_2d.py'
+      - '.github/workflows/verify-stoneage-integration87-getpet-tw10-2d.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION87-36-GETPET-TW10-SPR-2D-BRIDGE-R1.json'
+      - 'tests/test_stoneage_integration87_getpet_tw10_2d.py'
+      - '.github/workflows/verify-stoneage-integration87-getpet-tw10-2d.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-census:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Recompute original numeric joins and preserve negative evidence
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration87_getpet_tw10_2d.py' -v
