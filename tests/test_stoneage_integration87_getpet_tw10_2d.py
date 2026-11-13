@@ -86,7 +86,10 @@ class GetPet2DOriginalSourceTest(unittest.TestCase):
     def test_cross_version_claims_remain_false(self):
         n = self.out["negative_evidence"]
         self.assertTrue(n["known_graphic_100401_action0_has_unrenderable_bitmap_82729"])
-        self.assertTrue(all(v is False for k,v in n.items() if k != "known_graphic_100401_action0_has_unrenderable_bitmap_82729"))
+        self.assertTrue(n["source_script_status_is_not_live_NPC_execution"])
+        self.assertTrue(all(v is False for k,v in n.items() if k not in (
+            "known_graphic_100401_action0_has_unrenderable_bitmap_82729",
+            "source_script_status_is_not_live_NPC_execution")))
         self.assertEqual(0, self.out["summary"]["new_native_original_pet_reward_execution"])
         self.assertEqual(0, self.out["summary"]["new_original_sprite_bytes_acquired"])
         self.assertEqual(0, self.out["private_source_independent_numeric_audit"]["new_original_pixel_decode_count"])
