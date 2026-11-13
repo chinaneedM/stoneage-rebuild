@@ -1,0 +1,21 @@
+name: Verify StoneAge INTEGRATION103 original express cargo source
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION103-FOUR-VILLAGE-EXPRESS-CARGO-ORIGINAL-2D-R1.json'
+      - 'tests/test_stoneage_integration103_express_cargo_original.py'
+      - '.github/workflows/verify-stoneage-integration103-express-cargo.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION103-FOUR-VILLAGE-EXPRESS-CARGO-ORIGINAL-2D-R1.json'
+      - 'tests/test_stoneage_integration103_express_cargo_original.py'
+      - '.github/workflows/verify-stoneage-integration103-express-cargo.yml'
+jobs:
+  source-replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest tests.test_stoneage_integration103_express_cargo_original -v
