@@ -1,0 +1,26 @@
+name: Verify StoneAge INTEGRATION92 source-qualified Five Brothers 2D
+on:
+  push:
+    branches: [main, 'agent/stoneage-integration92-*']
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION92-FIVE-BROTHERS-ORIGINAL-2D-R1.json'
+      - 'tests/test_stoneage_integration92_five_brothers_2d.py'
+      - '.github/workflows/verify-stoneage-integration92-five-brothers.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION92-FIVE-BROTHERS-ORIGINAL-2D-R1.json'
+      - 'tests/test_stoneage_integration92_five_brothers_2d.py'
+      - '.github/workflows/verify-stoneage-integration92-five-brothers.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-qualified:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run original Five Brothers NPC and TW1 bitmap lineage regression
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration92_five_brothers_2d.py' -v

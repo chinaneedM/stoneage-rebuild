@@ -1,0 +1,824 @@
+{
+  "schema": "stoneage.integration92.original_quest_five_brothers_tw1_original_2d_source_bridge.r1",
+  "date": "2026-11-13",
+  "startup": {
+    "repo": "chinaneedM/stoneage-rebuild",
+    "head": "072604a3620bb2da2f7666d7895059baa86ed349",
+    "tree": "fe8ded71b96bb0386bb78a17350920608195b48e",
+    "start_actions": "26/26_success",
+    "open_prs": 0,
+    "original_current_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_current_bytes": 2709173
+  },
+  "private_original_source": {
+    "NPC_zip_bytes": 995176,
+    "NPC_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "NPC_zip_members_CRC_pass": 2205,
+    "NPC_CREATE_path": "npc/giiru/event/ev28.create",
+    "NPC_CREATE_bytes": 5199,
+    "NPC_CREATE_sha256": "35616eedb62b5fe5fa8c04a9d978bee7c0808ed092ce3fb6040f78e076ad74ce",
+    "original_NPC_CREATE_count": 30,
+    "original_NPC_CREATE_exact_span_sha_text_chain_PRIVATE_ONLY": "631de481048dc198297defb8f4648c9f13144e7bdb3c02281dacefc8a87535d9",
+    "original_distinct_SCRIPT_count": 30,
+    "original_SCRIPT_total_bytes": 30333,
+    "original_SCRIPT_sha_text_chain_sorted_by_path": "25fc014b4b4aca9e5688325aca27a0233a866370e01004471413b74e32520134",
+    "original_PRIVATE_PET07_HTML_bytes": 15123277,
+    "original_PRIVATE_PET07_HTML_SHA256": "58e8ee4ff5165ed2f61663d67ae1cd0a8183622fa3375c480232784bfce9dc76",
+    "original_PRIVATE_PET07_RD_receipt_bytes": 1617404,
+    "original_PRIVATE_PET07_RD_receipt_SHA256": "b5ad2e58930afbe90604a1d72e3c17ab0adea446e7c118be775e3973315e6cb4",
+    "older_QUEST20_public_source_git_blob": "b7f4c7309bf4ae173994ee3ef8b7bd8301081d34",
+    "older_PET07_public_source_git_blob": "0b5f81b41a642025ab53a12884638fdee887470e"
+  },
+  "quest_static": {
+    "six_DAT_geometries_prior_QUEST20_no_new_DAT_byte_read": [
+      {
+        "floor": 31701,
+        "geometry": [
+          50,
+          50
+        ],
+        "DAT_sha256": "a3c89bb5cf4c389ae07a4b1e4deeaee3de59f173554587e1a1b3784b5b729602",
+        "original_NPC_count": 6
+      },
+      {
+        "floor": 31702,
+        "geometry": [
+          50,
+          50
+        ],
+        "DAT_sha256": "01e5d181825e07900b47417d4c67d3718b7a248448551274823355f7f8c49292",
+        "original_NPC_count": 3
+      },
+      {
+        "floor": 31703,
+        "geometry": [
+          50,
+          50
+        ],
+        "DAT_sha256": "78e5fddd418943f8683a493b72c02cb9d9e5a2d6cdca4f0a8b98d445b91a75ba",
+        "original_NPC_count": 5
+      },
+      {
+        "floor": 31704,
+        "geometry": [
+          50,
+          50
+        ],
+        "DAT_sha256": "b68edbb60270a375af367abbd94e3a2a1c3255e2bf57b9dc848f3685ed7f04ea",
+        "original_NPC_count": 5
+      },
+      {
+        "floor": 31705,
+        "geometry": [
+          50,
+          70
+        ],
+        "DAT_sha256": "161fc06a7308316dacf0f39ab1c9abfa28364f82e5e92cff1dadc6242acfabd4",
+        "original_NPC_count": 6
+      },
+      {
+        "floor": 31706,
+        "geometry": [
+          50,
+          80
+        ],
+        "DAT_sha256": "f32c2a55afda8c30c8805e6699f530aba8a9dfccf92c88a5f5d6df8ccfafb1cc",
+        "original_NPC_count": 5
+      }
+    ],
+    "source_30_CREATE_positions_prior_QUEST20": [
+      {
+        "ordinal": 0,
+        "script": "giiru/event/ev28_0",
+        "floor": 31701,
+        "xy": [
+          29,
+          44
+        ],
+        "npc_graphic_alias": 100290
+      },
+      {
+        "ordinal": 1,
+        "script": "giiru/event/ev28_1",
+        "floor": 31701,
+        "xy": [
+          6,
+          8
+        ],
+        "npc_graphic_alias": 24701
+      },
+      {
+        "ordinal": 2,
+        "script": "giiru/event/ev28_2",
+        "floor": 31701,
+        "xy": [
+          15,
+          5
+        ],
+        "npc_graphic_alias": 24701
+      },
+      {
+        "ordinal": 3,
+        "script": "giiru/event/ev28_3",
+        "floor": 31701,
+        "xy": [
+          14,
+          8
+        ],
+        "npc_graphic_alias": 24701
+      },
+      {
+        "ordinal": 4,
+        "script": "giiru/event/ev28_4",
+        "floor": 31701,
+        "xy": [
+          8,
+          12
+        ],
+        "npc_graphic_alias": 24701
+      },
+      {
+        "ordinal": 5,
+        "script": "giiru/event/ev28_5",
+        "floor": 31701,
+        "xy": [
+          8,
+          5
+        ],
+        "npc_graphic_alias": 24701
+      },
+      {
+        "ordinal": 6,
+        "script": "giiru/event/ev28_6",
+        "floor": 31702,
+        "xy": [
+          44,
+          37
+        ],
+        "npc_graphic_alias": 24700
+      },
+      {
+        "ordinal": 7,
+        "script": "giiru/event/ev28_7",
+        "floor": 31702,
+        "xy": [
+          44,
+          40
+        ],
+        "npc_graphic_alias": 24700
+      },
+      {
+        "ordinal": 8,
+        "script": "giiru/event/ev28_8",
+        "floor": 31702,
+        "xy": [
+          43,
+          43
+        ],
+        "npc_graphic_alias": 24700
+      },
+      {
+        "ordinal": 9,
+        "script": "giiru/event/ev28_9",
+        "floor": 31703,
+        "xy": [
+          31,
+          33
+        ],
+        "npc_graphic_alias": 24701
+      },
+      {
+        "ordinal": 10,
+        "script": "giiru/event/ev28_10",
+        "floor": 31703,
+        "xy": [
+          36,
+          37
+        ],
+        "npc_graphic_alias": 24701
+      },
+      {
+        "ordinal": 11,
+        "script": "giiru/event/ev28_11",
+        "floor": 31703,
+        "xy": [
+          33,
+          42
+        ],
+        "npc_graphic_alias": 24701
+      },
+      {
+        "ordinal": 12,
+        "script": "giiru/event/ev28_12",
+        "floor": 31703,
+        "xy": [
+          27,
+          43
+        ],
+        "npc_graphic_alias": 24701
+      },
+      {
+        "ordinal": 13,
+        "script": "giiru/event/ev28_13",
+        "floor": 31703,
+        "xy": [
+          26,
+          37
+        ],
+        "npc_graphic_alias": 24701
+      },
+      {
+        "ordinal": 14,
+        "script": "giiru/event/ev28_14",
+        "floor": 31704,
+        "xy": [
+          37,
+          18
+        ],
+        "npc_graphic_alias": 24700
+      },
+      {
+        "ordinal": 15,
+        "script": "giiru/event/ev28_15",
+        "floor": 31704,
+        "xy": [
+          40,
+          22
+        ],
+        "npc_graphic_alias": 24700
+      },
+      {
+        "ordinal": 16,
+        "script": "giiru/event/ev28_16",
+        "floor": 31704,
+        "xy": [
+          33,
+          23
+        ],
+        "npc_graphic_alias": 24700
+      },
+      {
+        "ordinal": 17,
+        "script": "giiru/event/ev28_17",
+        "floor": 31704,
+        "xy": [
+          35,
+          28
+        ],
+        "npc_graphic_alias": 24700
+      },
+      {
+        "ordinal": 18,
+        "script": "giiru/event/ev28_18",
+        "floor": 31704,
+        "xy": [
+          41,
+          27
+        ],
+        "npc_graphic_alias": 24700
+      },
+      {
+        "ordinal": 19,
+        "script": "giiru/event/ev28_19",
+        "floor": 31705,
+        "xy": [
+          17,
+          40
+        ],
+        "npc_graphic_alias": 24701
+      },
+      {
+        "ordinal": 20,
+        "script": "giiru/event/ev28_20",
+        "floor": 31705,
+        "xy": [
+          31,
+          55
+        ],
+        "npc_graphic_alias": 24700
+      },
+      {
+        "ordinal": 21,
+        "script": "giiru/event/ev28_21",
+        "floor": 31705,
+        "xy": [
+          36,
+          41
+        ],
+        "npc_graphic_alias": 24701
+      },
+      {
+        "ordinal": 22,
+        "script": "giiru/event/ev28_22",
+        "floor": 31705,
+        "xy": [
+          43,
+          64
+        ],
+        "npc_graphic_alias": 24700
+      },
+      {
+        "ordinal": 23,
+        "script": "giiru/event/ev28_23",
+        "floor": 31705,
+        "xy": [
+          6,
+          41
+        ],
+        "npc_graphic_alias": 24701
+      },
+      {
+        "ordinal": 24,
+        "script": "giiru/event/ev28_end",
+        "floor": 31705,
+        "xy": [
+          25,
+          21
+        ],
+        "npc_graphic_alias": 100288
+      },
+      {
+        "ordinal": 25,
+        "script": "giiru/event/ev28_ed1",
+        "floor": 31706,
+        "xy": [
+          23,
+          4
+        ],
+        "npc_graphic_alias": 100287
+      },
+      {
+        "ordinal": 26,
+        "script": "giiru/event/ev28_ed2",
+        "floor": 31706,
+        "xy": [
+          29,
+          4
+        ],
+        "npc_graphic_alias": 100290
+      },
+      {
+        "ordinal": 27,
+        "script": "giiru/event/ev28_ed3",
+        "floor": 31706,
+        "xy": [
+          20,
+          4
+        ],
+        "npc_graphic_alias": 100288
+      },
+      {
+        "ordinal": 28,
+        "script": "giiru/event/ev28_ed4",
+        "floor": 31706,
+        "xy": [
+          26,
+          4
+        ],
+        "npc_graphic_alias": 100289
+      },
+      {
+        "ordinal": 29,
+        "script": "giiru/event/ev28_ed5",
+        "floor": 31706,
+        "xy": [
+          32,
+          4
+        ],
+        "npc_graphic_alias": 100394
+      }
+    ],
+    "original_23_choices_source_prior_QUEST20": true,
+    "five_choices_source_prior_QUEST20": [
+      {
+        "floor": 31701,
+        "start": 1,
+        "end": 5,
+        "correct": 5,
+        "needed": 2507,
+        "other": 2508
+      },
+      {
+        "floor": 31702,
+        "start": 6,
+        "end": 8,
+        "correct": 8,
+        "needed": 2509,
+        "other": 2510
+      },
+      {
+        "floor": 31703,
+        "start": 9,
+        "end": 13,
+        "correct": 12,
+        "needed": 2511,
+        "other": 2512
+      },
+      {
+        "floor": 31704,
+        "start": 14,
+        "end": 18,
+        "correct": 15,
+        "needed": 2513,
+        "other": 2514
+      },
+      {
+        "floor": 31705,
+        "start": 19,
+        "end": 23,
+        "correct": 19,
+        "needed": 2515,
+        "other": 2516
+      }
+    ],
+    "five_reward_NPCs_prior_QUEST20": [
+      {
+        "script": "giiru/event/ev28_ed1",
+        "final_exchange_item": 2517,
+        "GetItem_ID": 2518,
+        "GetPet_enemy_instance": 54,
+        "linked_enemy_template": 91,
+        "source_npc_graphic_alias": 100287,
+        "source_enemy_template_graphic_alias": 100287,
+        "enemy_master_row_sha256": "a9be060431ba00f46131322bf681f9b9cab4ed97361434ac667779216b280687",
+        "template_master_row_sha256": "8e7d40b7a7ec1acc150743a7abe6a1b329d5f6a6257174e9905bc10e90404e6f",
+        "prior_WORLD21_already_has_getpet": true
+      },
+      {
+        "script": "giiru/event/ev28_ed2",
+        "final_exchange_item": 2517,
+        "GetItem_ID": 2519,
+        "GetPet_enemy_instance": 57,
+        "linked_enemy_template": 94,
+        "source_npc_graphic_alias": 100290,
+        "source_enemy_template_graphic_alias": 100290,
+        "enemy_master_row_sha256": "0e5091cff2114a2e3cb500a2876a3aeb442665f6189766c3e426267ec003c2b7",
+        "template_master_row_sha256": "0f55136e1294c84455ba5c90005e8f4909ad3feb25f7cb7f38c4b3f8d0c830bb",
+        "prior_WORLD21_already_has_getpet": true
+      },
+      {
+        "script": "giiru/event/ev28_ed3",
+        "final_exchange_item": 2517,
+        "GetItem_ID": 2520,
+        "GetPet_enemy_instance": 55,
+        "linked_enemy_template": 92,
+        "source_npc_graphic_alias": 100288,
+        "source_enemy_template_graphic_alias": 100288,
+        "enemy_master_row_sha256": "d3c4dbd610bd246b68de524e0d697eae8b554690647214018b1550d411e16a04",
+        "template_master_row_sha256": "96635373356600b533e8c1fd5a7e76fcaaaf56d103835397f237e031dcb5aa4c",
+        "prior_WORLD21_already_has_getpet": true
+      },
+      {
+        "script": "giiru/event/ev28_ed4",
+        "final_exchange_item": 2517,
+        "GetItem_ID": 2526,
+        "GetPet_enemy_instance": 56,
+        "linked_enemy_template": 93,
+        "source_npc_graphic_alias": 100289,
+        "source_enemy_template_graphic_alias": 100289,
+        "enemy_master_row_sha256": "ba01d0870b5a5801dc39fd826fde39e00c9133937942e8eda3a54f5e8950a6b8",
+        "template_master_row_sha256": "0dca8c9084af6a60a8bea2fbc1eb16e8d9b80c58487857d92a3a77a8b34155d8",
+        "prior_WORLD21_already_has_getpet": true
+      },
+      {
+        "script": "giiru/event/ev28_ed5",
+        "final_exchange_item": 2517,
+        "GetItem_ID": 2525,
+        "GetPet_enemy_instance": 481,
+        "linked_enemy_template": 95,
+        "source_npc_graphic_alias": 100394,
+        "source_enemy_template_graphic_alias": 100394,
+        "enemy_master_row_sha256": "1c37cfdcd4b4f00b2f213385ff8279e8eb99bbd30993b161e539e3d20abd315a",
+        "template_master_row_sha256": "c1ff0b19a0556cd8a142f804ad802a9c35f955cf6851fb3139f54e9a76c364c9",
+        "prior_WORLD21_already_has_getpet": true
+      }
+    ],
+    "five_reward_original_NAMES_from_private_CREATE": [
+      "利諾恩",
+      "吉諾",
+      "奇洛斯",
+      "浦洛斯",
+      "浦魯德"
+    ],
+    "actual_quest_85_EVENT_blocks_already_QUEST01": true,
+    "actual_5_GetPet_directives_already_WORLD21": true
+  },
+  "TW1_cross_version_candidate": {
+    "graphic_order": [
+      100287,
+      100290,
+      100288,
+      100289,
+      100394
+    ],
+    "source_five_exact_PET07_original_SPR_group_rows": [
+      [
+        100287,
+        277,
+        "ef9b8508b2df8eae3865d279831ef78ff75ae3e8f5465b88211c7a8f7acfcc8a",
+        56,
+        23,
+        [
+          [
+            0,
+            0,
+            8,
+            "596c8d766721d47333cc4a24b9ccc670c1441580876cec76cccd1777b43629fb",
+            1200
+          ],
+          [
+            2,
+            0,
+            13,
+            "e043c9ceb91e898025bb6bafacc028a512ba40023ce9c9871c5e683cdcd4a053",
+            1500
+          ],
+          [
+            1,
+            0,
+            2,
+            "97520db7d3a16f603c3c1e95db5357402f0a8b25b944a08946af84e2c77f36f9",
+            100
+          ]
+        ],
+        16
+      ],
+      [
+        100290,
+        280,
+        "b8a07e6aaad3f273008477ee0563499115f11ac7ec1714f0fa09855cfc84e978",
+        56,
+        23,
+        [
+          [
+            0,
+            0,
+            8,
+            "7ce60f6e1fc82b54dbcd6f853510fa33f52f4632b63ae90ae176c2227420f3a5",
+            1200
+          ],
+          [
+            2,
+            0,
+            13,
+            "df8ff048d884cfbfa583fe11151f928e3fa59568b3bed5688cd35cce94128e9a",
+            1500
+          ],
+          [
+            1,
+            0,
+            2,
+            "318f209f325472abade9d465e53fb0219ea3b3f7783d4c715a91e3ebfdb53fd1",
+            100
+          ]
+        ],
+        16
+      ],
+      [
+        100288,
+        278,
+        "9668ac38f750d8a0d7d6022d46df8593e107fb6a37d465202466258cd53bf64d",
+        56,
+        27,
+        [
+          [
+            0,
+            0,
+            12,
+            "19b61e58e907052d55bf7064359e59b6da99cbfd1fd6eb4718871d67e0048230",
+            1200
+          ],
+          [
+            2,
+            0,
+            13,
+            "5af1854a39aba5eb7cdad79c5a5199108d856963c4b38780ef7b6c7afc70d46a",
+            1500
+          ],
+          [
+            1,
+            0,
+            2,
+            "28ea534483b57f9405d68b07faab8e229e3e055aaa677f270e1ebbde78c6f74f",
+            100
+          ]
+        ],
+        19
+      ],
+      [
+        100289,
+        279,
+        "a7ca74c4d9b9cdf8992ff5dbe2692dfc3a006bd73d797c7b05799cbccbe451ec",
+        56,
+        27,
+        [
+          [
+            0,
+            0,
+            12,
+            "67ef01efb7c509ac19d1b6b837a8db864d0a9498d0ed2de9dc21c5967cdf4384",
+            1200
+          ],
+          [
+            2,
+            0,
+            13,
+            "46c0f2a5ed81de857d7ff36513b9b416787e58894671f14df232e8cb1d2341b3",
+            1500
+          ],
+          [
+            1,
+            0,
+            2,
+            "494166e7db2a5501813e1ac16090c6fee1fa8210a59eb74f552497fdc5f2e8ce",
+            100
+          ]
+        ],
+        19
+      ],
+      [
+        100394,
+        360,
+        "3df3893d1528273fdd935d46c729713ec5ff4efd73df4eb64fc47b9e5ab7225e",
+        56,
+        23,
+        [
+          [
+            0,
+            0,
+            8,
+            "d27bbe5f38a3494ebc41f76c58ab0feb14afd7894817dcee3663f5f0119d28f8",
+            1200
+          ],
+          [
+            2,
+            0,
+            13,
+            "8ead80d073d22305c29806cbcace1b1fca9414c821aa851579ed65e78f2dee0a",
+            1500
+          ],
+          [
+            1,
+            0,
+            2,
+            "63660208684fed1e5e9d0d0d1310ab781db78a1ece1eb6c070fc73cf2a45daff",
+            1000
+          ]
+        ],
+        16
+      ]
+    ],
+    "source_full_original_SPR_animations_per_graphic": 56,
+    "source_full_original_SPR_animations_metadata_not_rendered_total": 280,
+    "source_selected_action_direction": [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "original_selected_source_sequences": 15,
+    "original_selected_source_ordered_frame_positions": 123,
+    "original_selected_distinct_RD_PNGs": 86,
+    "original_86_bitmap_numbers_sorted": [
+      106923,
+      106924,
+      106925,
+      106926,
+      106927,
+      106928,
+      106929,
+      106930,
+      106931,
+      106932,
+      106933,
+      106934,
+      106935,
+      106936,
+      106937,
+      106938,
+      107155,
+      107156,
+      107157,
+      107158,
+      107159,
+      107160,
+      107161,
+      107162,
+      107163,
+      107164,
+      107165,
+      107166,
+      107167,
+      107168,
+      107169,
+      107170,
+      107171,
+      107172,
+      107174,
+      107403,
+      107404,
+      107405,
+      107406,
+      107407,
+      107408,
+      107409,
+      107410,
+      107411,
+      107412,
+      107413,
+      107414,
+      107415,
+      107416,
+      107417,
+      107418,
+      107419,
+      107420,
+      107422,
+      107651,
+      107652,
+      107653,
+      107654,
+      107655,
+      107656,
+      107657,
+      107658,
+      107659,
+      107660,
+      107661,
+      107662,
+      107663,
+      107664,
+      107665,
+      107666,
+      107883,
+      107884,
+      107885,
+      107886,
+      107887,
+      107888,
+      107889,
+      107890,
+      107891,
+      107892,
+      107893,
+      107894,
+      107895,
+      107896,
+      107897,
+      107898
+    ],
+    "original_86_PNG_SHA256_concatenation_chain": "507f4209bfb226566970887ac397eb6554467d40b807d17510954b11e7fac0cb",
+    "original_86_RD_block_SHA256_concatenation_chain": "b22b2f65bf582abe0617797437a40c68be5531e1773ac4dae3deaf7485ee2a6c",
+    "existing_original_RD_derived_PNG_verification_86_of_86": true,
+    "new_original_RD_decoded_in_current_unit": 0,
+    "original_tw1_official_reward_pet_or_later_server_deployment_PROVEN": false
+  },
+  "private_delivery": {
+    "library_path": "/石器时代/StoneAge-INTEGRATION92-Five-Brothers-six-floors-five-original-2D-private.zip",
+    "zip_bytes": 660522,
+    "zip_sha256": "b734904c42a8228e6b3127997d33440a39a5446dfa4a1360f5eee4c55e880d50",
+    "zip_members": 36,
+    "ZIP_all_CRC_pass": true,
+    "library_uploaded_and_independently_downloaded_exact_SHA": true,
+    "selfcontained_original_picture_HTML_bytes": 553221,
+    "selfcontained_original_picture_HTML_sha256": "a97967788e73cdbad598a9ba132112e2b7a306aa3cfac1032e2754682e9b4b73",
+    "Chromium_version": "144.0.7559.96",
+    "six_floor_static_original_coordinate_marker_counts": [
+      6,
+      3,
+      5,
+      5,
+      6,
+      5
+    ],
+    "source_five_original_graphic_15_sequences_real_image_loaded": true,
+    "source_15_next_frame_interactions_pass": 15,
+    "JS_errors": 0,
+    "external_HTTP_requests": 0,
+    "HTML_loaded_with_page_set_content": true,
+    "original_file_URL_navigation_verified": false,
+    "original_copyrighted_NPC_scripts_and_2d_bitmaps_publicly_uploaded": false
+  },
+  "negative_evidence": {
+    "late_mixed25_NPC_names_vs_TW1_same_graphic_no_official_species_or_runtime_identity": false,
+    "native_original_quest_branch_and_GetPet_reward_execution_verified": false,
+    "native_original_map_movement_DAT_collision_verified": false,
+    "original_palettes_and_audio_FPS_verified": false,
+    "new_original_2d_assets_created": false,
+    "do_not_double_count_QUEST20_and_WORLD21_existing_source_facts": true,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "Rotate to a different source-qualified historical 2D content family, not a reconstructed official 5-pet source claim."
+}
