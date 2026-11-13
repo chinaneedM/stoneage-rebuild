@@ -1,0 +1,26 @@
+name: Verify StoneAge INTEGRATION93 floor1212 original 2D
+on:
+  push:
+    branches: [main, 'agent/stoneage-integration93-*']
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION93-FLOOR1212-ORIGINAL-2D-R1.json'
+      - 'tests/test_stoneage_integration93_floor1212_2d.py'
+      - '.github/workflows/verify-stoneage-integration93-floor1212-2d.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION93-FLOOR1212-ORIGINAL-2D-R1.json'
+      - 'tests/test_stoneage_integration93_floor1212_2d.py'
+      - '.github/workflows/verify-stoneage-integration93-floor1212-2d.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-bounded:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify four original NPC numeric source rows and 70 original Taiwan1.0 2D source image receipts
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration93_floor1212_2d.py' -v
