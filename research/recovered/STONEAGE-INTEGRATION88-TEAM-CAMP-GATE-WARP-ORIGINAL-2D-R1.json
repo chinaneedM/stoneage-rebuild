@@ -1,0 +1,5004 @@
+{
+  "schema": "stoneage.integration88.original_mixed25_team_camp_guards_2d_candidates_r1",
+  "date": "2026-11-13",
+  "starting_remote": {
+    "repository": "chinaneedM/stoneage-rebuild",
+    "head": "a1a0ac451d61fd23ee70b4cd3c5d0c3d3e763c95",
+    "tree": "e9e7ba46782002c071138aa0c4d28b8fd54afabd",
+    "current_blob_sha": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_bytes": 2709173,
+    "actions_verified_before_work": "26/26 success",
+    "open_pr_before_work": 0
+  },
+  "provenance": {
+    "original_archive_class": "LATER_COMMUNITY_MIXED25_SOURCE_NOT_AUTHENTICATED_EARLY_OFFICIAL",
+    "source_original_npc_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "source_original_npc_zip_members_crc_verified": 2205,
+    "original_parent_RAR_sha256_historical_not_reread": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "source_create_relative_original_path": "genout/500npc_m.create",
+    "source_create_original_bytes": 14674,
+    "source_create_original_sha256": "587e264d484fa74f4c615b2c63e2b7cb522061bf60602b30ac6456c98752cb46",
+    "source_create_original_crc32": "a60c591e",
+    "source_generated_from_comment_only": "data/npc/poru/500npc_m.gen",
+    "generated_from_original_gen_file_present_in_this_private_zip": false,
+    "prior_full_original_source_index_git_blob": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "prior_TW1_PET07_original_SPR_pixel_public_git_blob": "0b5f81b41a642025ab53a12884638fdee887470e",
+    "private_TW1_original_PET07_HTML_sha256": "58e8ee4ff5165ed2f61663d67ae1cd0a8183622fa3375c480232784bfce9dc76",
+    "private_TW1_original_RD_report_sha256": "b5ad2e58930afbe90604a1d72e3c17ab0adea446e7c118be775e3973315e6cb4",
+    "private_current_observer_zip_sha256": "e2c6b6f051835d668a3d1646a021300819bd5dc1043076d3d14b5f9e551c9fa7",
+    "private_current_observer_zip_bytes": 349552,
+    "private_observer_Library_path": "/石器时代/StoneAge-INTEGRATION88-500-team-camps-original-2D-private.zip",
+    "original_same_archive_itemset_derived_index_07_git_blob": "dbb958e77aed796faf86570c7523d3f0dc5748fd",
+    "same_archive_pass_itemset_shard_scope": "ITEM01_TWO_COMPLETE_MIXED25_94_COLUMN_ITEMSET_SOURCE_ROWS_NOT_PROVEN_ACTIVE_RUNTIME_SELECTION"
+  },
+  "summary": {
+    "original_CREATE_blocks": 99,
+    "source_function_counts": {
+      "npcgen_man": 50,
+      "npcgen_warpman": 3,
+      "npcgen_shop": 1,
+      "npcgen_signboard": 1,
+      "npcgen_warp": 44
+    },
+    "with_graphic": 55,
+    "without_graphic": 44,
+    "file_reference_occurrences": 46,
+    "source_distinct_floor_values": 11,
+    "original_direct_npcgen_warp_create_blocks": 44,
+    "source_npcgen_warp_floor500": 42,
+    "source_npcgen_warp_floor5530": 2,
+    "source_guard_parameter_files": 3,
+    "source_TW1_different_version_numeric_graphic_config_rows": 29,
+    "TW1_original_pixel_graphic_groups": 4,
+    "existing_original_PNG_images_sha256_validated": 57,
+    "original_animation_segment_direction0_records_from_PET07_index": 12,
+    "private_observer_visible_source_frame_positions": 75,
+    "TW1_PET07_original_index_action_source_frame_positions": 101,
+    "source_graphic_100406_not_in_PET07_subset": 10,
+    "new_original_RD_decode": 0,
+    "new_original_graphic_discovery": 0,
+    "native_gameplay_executed": 0,
+    "original_guard_pass_item_id_rows_in_both_archived_itemsets": 3,
+    "original_guard_pass_item_source_a_b_complete_rows_identical": 3,
+    "prior_TW1_original_RD_icon_candidates_for_three_pass_items": 3
+  },
+  "full_99_original_source_create_numeric_sha_rows": [
+    {
+      "ordinal": 0,
+      "bytes": [
+        110,
+        268
+      ],
+      "sha256": "563d28309124d81c2cc8c53114fb0fe02c68dfbb7bad5ed077b1f35d4a7389ee",
+      "floor": 5532,
+      "graphic": 100432,
+      "borncorner": [
+        5,
+        7,
+        5,
+        7
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 5,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "63a03c406f36554eb5ed9c189117f2c45ea000c4eee99173e41b504f947d1307",
+      "original_file_targets": [
+        [
+          "genout/msg_5532_5_7",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "791b6b4ced45367c78e5370459961d562d418ef5b0d63f9ff8947274c5eef5df"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 1,
+      "bytes": [
+        276,
+        440
+      ],
+      "sha256": "791f9da231a862f51ec6120eb07240204e9ffb8d4cf3c96d74544cd48b9a4727",
+      "floor": 5532,
+      "graphic": 100432,
+      "borncorner": [
+        22,
+        17,
+        22,
+        17
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "63a03c406f36554eb5ed9c189117f2c45ea000c4eee99173e41b504f947d1307",
+      "original_file_targets": [
+        [
+          "genout/msg_5532_22_17",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "234dd61436654db04fd2801f1ee49eef245f794cf59d5b162473631c121028d3"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 2,
+      "bytes": [
+        449,
+        613
+      ],
+      "sha256": "ac3b2304774bacd9c4accb7152a42c6edd2054fe9e2b1ea364fdc2f494883829",
+      "floor": 5532,
+      "graphic": 100432,
+      "borncorner": [
+        23,
+        21,
+        23,
+        21
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 6,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "63a03c406f36554eb5ed9c189117f2c45ea000c4eee99173e41b504f947d1307",
+      "original_file_targets": [
+        [
+          "genout/msg_5532_23_21",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "32cba411224824e8524059e6948b1965b013f2c2303d9f2fa3fc42cb96800696"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 3,
+      "bytes": [
+        622,
+        786
+      ],
+      "sha256": "6d7a2bccb228f0fdbfe30a039c31677e746bbd7e860ada20c966df0cca903621",
+      "floor": 5532,
+      "graphic": 100432,
+      "borncorner": [
+        34,
+        30,
+        34,
+        30
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 7,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "63a03c406f36554eb5ed9c189117f2c45ea000c4eee99173e41b504f947d1307",
+      "original_file_targets": [
+        [
+          "genout/msg_5532_34_30",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "07446a78f52a4c8b5b80c781c9474103b734c0b9f7bcfdd502478a72a4c6cdb1"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 4,
+      "bytes": [
+        795,
+        959
+      ],
+      "sha256": "4757b936e859d91f904f2a288620e5ee27c0df9bf9093e0ded7e10d0f2e97957",
+      "floor": 5532,
+      "graphic": 100432,
+      "borncorner": [
+        35,
+        33,
+        35,
+        33
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 3,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "63a03c406f36554eb5ed9c189117f2c45ea000c4eee99173e41b504f947d1307",
+      "original_file_targets": [
+        [
+          "genout/msg_5532_35_33",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "a0e9b3d80a653dd915f3bcd8d025df5201af8b304ed4389126e06b9cc6a4518d"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 5,
+      "bytes": [
+        968,
+        1129
+      ],
+      "sha256": "d17877ef6a4f53d4851524fd86a4da6f4b4a6f5c873bb9ff6daeff5e007b086b",
+      "floor": 5532,
+      "graphic": 100432,
+      "borncorner": [
+        1,
+        21,
+        1,
+        21
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 5,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "63a03c406f36554eb5ed9c189117f2c45ea000c4eee99173e41b504f947d1307",
+      "original_file_targets": [
+        [
+          "genout/msg_5532_1_21",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "f09f4ad23ac93305aa07fee5ace02171f66d7fbdd98366c1888ffac5ca133f33"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 6,
+      "bytes": [
+        1138,
+        1299
+      ],
+      "sha256": "4b35fe66a8f56fb07290393f0bafe8ffa2e9eb9b252056672a2fe1c394845c16",
+      "floor": 5532,
+      "graphic": 100432,
+      "borncorner": [
+        1,
+        23,
+        1,
+        23
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 7,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "63a03c406f36554eb5ed9c189117f2c45ea000c4eee99173e41b504f947d1307",
+      "original_file_targets": [
+        [
+          "genout/msg_5532_1_23",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "8c0db4672648378d4a59c13037475ca0a48734c32858bfd62b25002be4319754"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 7,
+      "bytes": [
+        1308,
+        1481
+      ],
+      "sha256": "b4d9632c5a3395f0661090cec62bf2c1d63f13f2e8074ed5eec19a1566a669b8",
+      "floor": 500,
+      "graphic": 100432,
+      "borncorner": [
+        450,
+        391,
+        450,
+        391
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 6,
+      "function_token": "npcgen_warpman",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          11
+        ]
+      ],
+      "original_name_sha256": "93a3876b5ff4234c2950e1d0d3277f45689a59be3e35d291f905d6e86969dabc",
+      "original_file_targets": [
+        [
+          "genout/wpm_500_450_391",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "6a07078ac3523de6053a64d8cb4e8df4f5e5bbbf4321e09d9155d07cf5030359"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 8,
+      "bytes": [
+        1490,
+        1656
+      ],
+      "sha256": "44ff122827cb77dc589bbee7eb8ee418acee5fdacee521d4dc5cf414a4b65874",
+      "floor": 5536,
+      "graphic": 100401,
+      "borncorner": [
+        35,
+        31,
+        35,
+        31
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "b0edab4958488e3a19066cb54cfdd4e061948079644a2435f5784ea0157c882f",
+      "original_file_targets": [
+        [
+          "genout/msg_5536_35_31",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "1388433ad4210ec39df7e646fbe4aae386de6fbb60159935e5bd850c48007256"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 9,
+      "bytes": [
+        1665,
+        1831
+      ],
+      "sha256": "7bebc8d4ca45ef75caec32cd5d19d2a400e8c948bbfe55f098745aa31f8acd04",
+      "floor": 5536,
+      "graphic": 100401,
+      "borncorner": [
+        32,
+        18,
+        32,
+        18
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 6,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "b0edab4958488e3a19066cb54cfdd4e061948079644a2435f5784ea0157c882f",
+      "original_file_targets": [
+        [
+          "genout/msg_5536_32_18",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "a6bf8a43367266163903cb3dfed96c51b34d631b4aac6a763bb3fb6ab369fc33"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 10,
+      "bytes": [
+        1840,
+        2006
+      ],
+      "sha256": "92b2c273afa8d521f9117f0b4e54b10728f709b3a976b6d627fdd66d930d3b6a",
+      "floor": 5536,
+      "graphic": 100401,
+      "borncorner": [
+        24,
+        16,
+        24,
+        16
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "b0edab4958488e3a19066cb54cfdd4e061948079644a2435f5784ea0157c882f",
+      "original_file_targets": [
+        [
+          "genout/msg_5536_24_16",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "42727b8ae123be1a1052d2dff80566a0e20d68c38c7920165037abe39f2e609d"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 11,
+      "bytes": [
+        2015,
+        2181
+      ],
+      "sha256": "c79243d4652601b5f2deedd23f4d042b015952379ef1680b70b0b935173e3623",
+      "floor": 5536,
+      "graphic": 100401,
+      "borncorner": [
+        20,
+        37,
+        20,
+        37
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 7,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "b0edab4958488e3a19066cb54cfdd4e061948079644a2435f5784ea0157c882f",
+      "original_file_targets": [
+        [
+          "genout/msg_5536_20_37",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "db4258cd30ffe630f9ab52e1403298997e350c4a75235d00dc21c4e46975573e"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 12,
+      "bytes": [
+        2190,
+        2356
+      ],
+      "sha256": "3e01ccb023abd5ef10acb0d0e27dc07f783c4645b3d94dfe6f7d205652246f16",
+      "floor": 5536,
+      "graphic": 100401,
+      "borncorner": [
+        38,
+        35,
+        38,
+        35
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "b0edab4958488e3a19066cb54cfdd4e061948079644a2435f5784ea0157c882f",
+      "original_file_targets": [
+        [
+          "genout/msg_5536_38_35",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "1a12d876f79c5c643eb7c8cc5c608279149f53791b51ee887d53c08ad4f5dd17"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 13,
+      "bytes": [
+        2365,
+        2531
+      ],
+      "sha256": "188ea67f6898eba91f1cd44e699e3385db17ebe806f0e551bc09301e2d8a5732",
+      "floor": 5536,
+      "graphic": 100401,
+      "borncorner": [
+        41,
+        39,
+        41,
+        39
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 6,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "b0edab4958488e3a19066cb54cfdd4e061948079644a2435f5784ea0157c882f",
+      "original_file_targets": [
+        [
+          "genout/msg_5536_41_39",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "ea899fa3a360898f3938f849f89bce79bacf3a30642f04bc19146a0413b1c4c9"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 14,
+      "bytes": [
+        2540,
+        2706
+      ],
+      "sha256": "80a35562b8f982a65cbc786ef2d2749ca495bcd2de600ad5300b21ab87d68477",
+      "floor": 5536,
+      "graphic": 100401,
+      "borncorner": [
+        33,
+        40,
+        33,
+        40
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "b0edab4958488e3a19066cb54cfdd4e061948079644a2435f5784ea0157c882f",
+      "original_file_targets": [
+        [
+          "genout/msg_5536_33_40",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "6fca31df6db36c15efe5dfc6be0c8778722377b4d1e9ecf34192bcf310300a1b"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 15,
+      "bytes": [
+        2715,
+        2881
+      ],
+      "sha256": "eaa52bb3960406d0afab6336996198875b02864cb24abdfb3e994d56cce6ce0c",
+      "floor": 5536,
+      "graphic": 100401,
+      "borncorner": [
+        28,
+        34,
+        28,
+        34
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "b0edab4958488e3a19066cb54cfdd4e061948079644a2435f5784ea0157c882f",
+      "original_file_targets": [
+        [
+          "genout/msg_5536_28_34",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "65098b304cdc630d12879573a9dc6781125190d1a3c64c2a2b36f433c0fe53bd"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 16,
+      "bytes": [
+        2890,
+        3056
+      ],
+      "sha256": "bc078612d057c8c4933c882744a3827b99084fdb0c0d83cab12757cd49faa7f6",
+      "floor": 5536,
+      "graphic": 100401,
+      "borncorner": [
+        19,
+        30,
+        19,
+        30
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 6,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "b0edab4958488e3a19066cb54cfdd4e061948079644a2435f5784ea0157c882f",
+      "original_file_targets": [
+        [
+          "genout/msg_5536_19_30",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "bfea2f1a193262b840827d54afee4fcea36f71fdf0b54cee753bab9c3bcc387e"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 17,
+      "bytes": [
+        3065,
+        3228
+      ],
+      "sha256": "5f1d242c2567c81135ddac1e7a9a44e66a71bc1d5e4519d37cd5d0f73be50dfd",
+      "floor": 5538,
+      "graphic": 100401,
+      "borncorner": [
+        14,
+        5,
+        14,
+        5
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "b0edab4958488e3a19066cb54cfdd4e061948079644a2435f5784ea0157c882f",
+      "original_file_targets": [
+        [
+          "genout/msg_5538_14_5",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "22c24eaa04e13a9486629fa922a6561bdf0ff55c51ab383972f614a8a91932fd"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 18,
+      "bytes": [
+        3237,
+        3397
+      ],
+      "sha256": "fbf4e8ef3daac1011e82cc660c3b7d310bbe6ad7f6d542873ca3791f58c2879d",
+      "floor": 5538,
+      "graphic": 100401,
+      "borncorner": [
+        3,
+        6,
+        3,
+        6
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 6,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "b0edab4958488e3a19066cb54cfdd4e061948079644a2435f5784ea0157c882f",
+      "original_file_targets": [
+        [
+          "genout/msg_5538_3_6",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "faf558c76dfa2d5d06f2d53e37a3aafc5ffc1e89203de55ea36e14116db28746"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 19,
+      "bytes": [
+        3406,
+        3581
+      ],
+      "sha256": "ef5ea3e8446ce0fd7f2a624c71af127a3f98659ad4b2b43b7aa56dc441be7b98",
+      "floor": 500,
+      "graphic": 100401,
+      "borncorner": [
+        410,
+        622,
+        410,
+        622
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 8,
+      "function_token": "npcgen_warpman",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          11
+        ]
+      ],
+      "original_name_sha256": "bf8cd010870cf236a3221d064bc2ad2023cd135471f5f58ffa0d8eba9276f4e9",
+      "original_file_targets": [
+        [
+          "genout/wpm_500_410_622",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "c3bbd14de86ddcc3813760b88dd5001949bb054bbc2a9a543724b98fc51371b6"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 20,
+      "bytes": [
+        3590,
+        3756
+      ],
+      "sha256": "9d7cafd61a5bf5f93dd0a56ed734a62786863f93a302ae7e49e99b5bac4c83e4",
+      "floor": 5533,
+      "graphic": 100406,
+      "borncorner": [
+        39,
+        18,
+        39,
+        18
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "381da72c405991c1f2eba3a190bd1de1c26bb6969a144e0e616182c45c64a6c1",
+      "original_file_targets": [
+        [
+          "genout/msg_5533_39_18",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "9b4ca612cc68130354caa08e54e29e3d4d63b3eab8ca0f83a37a03babc55ae47"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 21,
+      "bytes": [
+        3765,
+        3931
+      ],
+      "sha256": "ee7ae50fc77886a223501f371c9df540ea6788210c0749ef7be33a5272092216",
+      "floor": 5533,
+      "graphic": 100406,
+      "borncorner": [
+        29,
+        18,
+        29,
+        18
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 2,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "381da72c405991c1f2eba3a190bd1de1c26bb6969a144e0e616182c45c64a6c1",
+      "original_file_targets": [
+        [
+          "genout/msg_5533_29_18",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "18be80eca20be41169355e66c38d2a62c5476fc926c8945968e9c86620983753"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 22,
+      "bytes": [
+        3940,
+        4106
+      ],
+      "sha256": "032632c19854981b08d8b5177874d072109cc751be5f7fa77e7c1bc658dd786e",
+      "floor": 5533,
+      "graphic": 100406,
+      "borncorner": [
+        27,
+        12,
+        27,
+        12
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "381da72c405991c1f2eba3a190bd1de1c26bb6969a144e0e616182c45c64a6c1",
+      "original_file_targets": [
+        [
+          "genout/msg_5533_27_12",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "2f7f1e0d0ab7c30212bba859e114a94dfbe38775b12ccfad409ecf7da16f5f9a"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 23,
+      "bytes": [
+        4115,
+        4281
+      ],
+      "sha256": "7d2cc4aafdcbdaf43d676423ab0fa0e5729f91ccacfe6e146920387f1af91dee",
+      "floor": 5533,
+      "graphic": 100406,
+      "borncorner": [
+        38,
+        35,
+        38,
+        35
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 6,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "381da72c405991c1f2eba3a190bd1de1c26bb6969a144e0e616182c45c64a6c1",
+      "original_file_targets": [
+        [
+          "genout/msg_5533_38_35",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "7f8031db82382902d3b0a689a0886914e0400b6a1c4e643242e825caef5f268e"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 24,
+      "bytes": [
+        4290,
+        4456
+      ],
+      "sha256": "3f38fad70bdbb2b9220b87859674d8e6997c090b3aa9d205cbda9cb7ae85cc8f",
+      "floor": 5533,
+      "graphic": 100406,
+      "borncorner": [
+        33,
+        17,
+        33,
+        17
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 6,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "381da72c405991c1f2eba3a190bd1de1c26bb6969a144e0e616182c45c64a6c1",
+      "original_file_targets": [
+        [
+          "genout/msg_5533_33_17",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "c64a7815810c87d94a8fbdf6451ccbe69bda474b9705ae0b4f254e49acf8c53d"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 25,
+      "bytes": [
+        4465,
+        4631
+      ],
+      "sha256": "ce3bc454f73ce91ebd3dcd11a4e1de385dae2df79e7ec3b6c7b78633da2f78a1",
+      "floor": 5533,
+      "graphic": 100406,
+      "borncorner": [
+        31,
+        31,
+        31,
+        31
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "381da72c405991c1f2eba3a190bd1de1c26bb6969a144e0e616182c45c64a6c1",
+      "original_file_targets": [
+        [
+          "genout/msg_5533_31_31",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "6257610a3e4c05f2ca9935f62695e74a3b7ccbb9811398eb82bb6560bb24b960"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 26,
+      "bytes": [
+        4640,
+        4806
+      ],
+      "sha256": "3fce4dd5a7662137b1f378e4f441438336485f91fe7568aee5a29e933a7ed7b6",
+      "floor": 5533,
+      "graphic": 100406,
+      "borncorner": [
+        13,
+        36,
+        13,
+        36
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 6,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "381da72c405991c1f2eba3a190bd1de1c26bb6969a144e0e616182c45c64a6c1",
+      "original_file_targets": [
+        [
+          "genout/msg_5533_13_36",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "598259af4bf67e851e4274b444cf72ab3cb3010abe50afe70d0b966b0398e541"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 27,
+      "bytes": [
+        4815,
+        4978
+      ],
+      "sha256": "93daa1c7b4695cae8886e43a5a09544b412c31d4f9bf93bef7fa73422aba0c5f",
+      "floor": 5534,
+      "graphic": 100406,
+      "borncorner": [
+        7,
+        16,
+        7,
+        16
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 6,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "381da72c405991c1f2eba3a190bd1de1c26bb6969a144e0e616182c45c64a6c1",
+      "original_file_targets": [
+        [
+          "genout/msg_5534_7_16",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "983e8b9e8386e11d5c62eea2ad3a186378404b3fde0d908bf152f39720c2ef42"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 28,
+      "bytes": [
+        4987,
+        5147
+      ],
+      "sha256": "79757c5c864251f545e204f6fd85e7fcc315f9aac273b19344044e47bebc6271",
+      "floor": 5534,
+      "graphic": 100406,
+      "borncorner": [
+        9,
+        5,
+        9,
+        5
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 6,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "381da72c405991c1f2eba3a190bd1de1c26bb6969a144e0e616182c45c64a6c1",
+      "original_file_targets": [
+        [
+          "genout/msg_5534_9_5",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "0ecdc240a68c82c3d0fb6bd4b7924eda8e7da0b9cccb777be29e943652a82786"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 29,
+      "bytes": [
+        5156,
+        5287
+      ],
+      "sha256": "6d648a812a51ca5af5ef0d1247d674b78ae8ab5c2d3efea3ff4857668299eb39",
+      "floor": 5533,
+      "graphic": 100259,
+      "borncorner": [
+        38,
+        45,
+        38,
+        45
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 2,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "71ece409a77165d9ffa654d3281dd72dcc87b0e101c7b787b068a4d59e6cc8bb",
+      "original_file_targets": [],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 30,
+      "bytes": [
+        5296,
+        5427
+      ],
+      "sha256": "a747bb0667159a158637da34677ad5b2a08a73ae7f029707f64d3b6071e3f1ca",
+      "floor": 5533,
+      "graphic": 100259,
+      "borncorner": [
+        35,
+        44,
+        35,
+        44
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 7,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "71ece409a77165d9ffa654d3281dd72dcc87b0e101c7b787b068a4d59e6cc8bb",
+      "original_file_targets": [],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 31,
+      "bytes": [
+        5436,
+        5567
+      ],
+      "sha256": "a121ab9059c3ec4d825680f29fabbaaa008d2eb86ba1d584edc427cf1b04d5b8",
+      "floor": 5533,
+      "graphic": 100259,
+      "borncorner": [
+        30,
+        47,
+        30,
+        47
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 6,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "71ece409a77165d9ffa654d3281dd72dcc87b0e101c7b787b068a4d59e6cc8bb",
+      "original_file_targets": [],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 32,
+      "bytes": [
+        5576,
+        5707
+      ],
+      "sha256": "78465f799f90cfb0ddba198dc534d60d245e1e72acef4d5282098b118837ef44",
+      "floor": 5533,
+      "graphic": 100259,
+      "borncorner": [
+        34,
+        47,
+        34,
+        47
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "71ece409a77165d9ffa654d3281dd72dcc87b0e101c7b787b068a4d59e6cc8bb",
+      "original_file_targets": [],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 33,
+      "bytes": [
+        5716,
+        5847
+      ],
+      "sha256": "78465f799f90cfb0ddba198dc534d60d245e1e72acef4d5282098b118837ef44",
+      "floor": 5533,
+      "graphic": 100259,
+      "borncorner": [
+        34,
+        47,
+        34,
+        47
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "71ece409a77165d9ffa654d3281dd72dcc87b0e101c7b787b068a4d59e6cc8bb",
+      "original_file_targets": [],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 34,
+      "bytes": [
+        5856,
+        5987
+      ],
+      "sha256": "8fa1d66dc313f2bbfb34caf1318c671a15fb9947284b8c1fd09c1f9db59fa863",
+      "floor": 5533,
+      "graphic": 100259,
+      "borncorner": [
+        38,
+        47,
+        38,
+        47
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 2,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "71ece409a77165d9ffa654d3281dd72dcc87b0e101c7b787b068a4d59e6cc8bb",
+      "original_file_targets": [],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 35,
+      "bytes": [
+        5996,
+        6127
+      ],
+      "sha256": "b1c4a4005ed68d10f7ce3f6b2b607bcd6c7fa8e72a327482eb6211c83c140a4d",
+      "floor": 5533,
+      "graphic": 100259,
+      "borncorner": [
+        32,
+        44,
+        32,
+        44
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 2,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "71ece409a77165d9ffa654d3281dd72dcc87b0e101c7b787b068a4d59e6cc8bb",
+      "original_file_targets": [],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 36,
+      "bytes": [
+        6136,
+        6311
+      ],
+      "sha256": "285a16acf4f2c8c84c2621cb7ae1d41a3fae8addcecf80d853738be4fc05dcf8",
+      "floor": 500,
+      "graphic": 100406,
+      "borncorner": [
+        225,
+        430,
+        225,
+        430
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 8,
+      "function_token": "npcgen_warpman",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          11
+        ]
+      ],
+      "original_name_sha256": "fe68c5b25a4b13c19e7b434380f16257962a352771c73eced0fb986079233f15",
+      "original_file_targets": [
+        [
+          "genout/wpm_500_225_430",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "a214c38b1a94c1eea0b3464e2c95982e8864f78bb2ebf3209afb9bdba2d1893b"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 37,
+      "bytes": [
+        6320,
+        6469
+      ],
+      "sha256": "9a140264a0a832706310ac55a6dd03c2fd062ed4fc9edcf8fafa0df027bba956",
+      "floor": 5530,
+      "graphic": 100379,
+      "borncorner": [
+        29,
+        6,
+        29,
+        6
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "b0b1a9b4609a4ee2a70aa64c60da31bed9dd501c449a8966c0cef0510aa23e07",
+      "original_file_targets": [],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 38,
+      "bytes": [
+        6478,
+        6627
+      ],
+      "sha256": "3569b3901bdf8ded377fbb64d8e2de0d169ded6080be1bf63609ec4f2034f1ed",
+      "floor": 5530,
+      "graphic": 100379,
+      "borncorner": [
+        33,
+        6,
+        33,
+        6
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "b0b1a9b4609a4ee2a70aa64c60da31bed9dd501c449a8966c0cef0510aa23e07",
+      "original_file_targets": [],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 39,
+      "bytes": [
+        6636,
+        6795
+      ],
+      "sha256": "ea166f1b666bc6801a97ac3ee978e09950188f17bea148a9dcb80961dcedc5fa",
+      "floor": 5543,
+      "graphic": 16054,
+      "borncorner": [
+        23,
+        33,
+        23,
+        33
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "aeb84e06542f788fe08c75169a4c3f52021e340018a5dd9adf8066b4b0c9d424",
+      "original_file_targets": [
+        [
+          "genout/msg_5543_23_33",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "8db568931c5228670b6e86120b4e429d2d8ec633ee9f719de31639d925517a80"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 40,
+      "bytes": [
+        6804,
+        6965
+      ],
+      "sha256": "209d9aec88d26e8f5a10c138b21ec024b8c6cb00644c9d17e8f89ce0464970f8",
+      "floor": 5543,
+      "graphic": 16046,
+      "borncorner": [
+        27,
+        18,
+        27,
+        18
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 6,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "49ff9378242ba725e60eae1b2007c0db2973c8a69bdcba0cebf3477dd83f1ad6",
+      "original_file_targets": [
+        [
+          "genout/msg_5543_27_18",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "661d63419e67eaadbaef7b59fffb388744bdb3c51a73bc12204217ebe078f969"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 41,
+      "bytes": [
+        6974,
+        7135
+      ],
+      "sha256": "d1196b9f0b5ff7fa890d933214e9ee7430e7e8885d3c523e9d8377dde2bf53ec",
+      "floor": 5543,
+      "graphic": 16049,
+      "borncorner": [
+        23,
+        27,
+        23,
+        27
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 6,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "49ff9378242ba725e60eae1b2007c0db2973c8a69bdcba0cebf3477dd83f1ad6",
+      "original_file_targets": [
+        [
+          "genout/msg_5543_23_27",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "0f8293cbf32257fc9defec5625410add940ae1ca0def16860306f6e17185ad34"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 42,
+      "bytes": [
+        7144,
+        7305
+      ],
+      "sha256": "9c5ac55352a7ada9c58373135a868a1ce4a3bfd6b5078d6e41bc109c8c77d093",
+      "floor": 5543,
+      "graphic": 16017,
+      "borncorner": [
+        14,
+        17,
+        14,
+        17
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 6,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "46607d67900999d23b0e969b0663af560a0c35e8534a92a5dfd775296ab80a1c",
+      "original_file_targets": [
+        [
+          "genout/msg_5543_14_17",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "64859ca884e53563ab6d1654a18b9bf59107f77ce4d2a401d0b381405605dec5"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 43,
+      "bytes": [
+        7315,
+        7478
+      ],
+      "sha256": "dfbb624aed32f65cdf83e0e321aa6c81b292345bcc683e992a89e929e55b5ee7",
+      "floor": 5542,
+      "graphic": 16016,
+      "borncorner": [
+        23,
+        34,
+        23,
+        34
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "76f89691720ff5d00e079db32dbc68a13f6abc66640eaf69a64fc48104a48be4",
+      "original_file_targets": [
+        [
+          "genout/msg_5542_23_34",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "d9cf5c0da3ac6d49dd83251886eb7b0bf875f21baaeae0252fa6ee0a706fe09f"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 44,
+      "bytes": [
+        7488,
+        7651
+      ],
+      "sha256": "cb851ab82428a30d4f86826c74be7918ff27e670a5fe8f7a3a09468410ee1bf8",
+      "floor": 5542,
+      "graphic": 16041,
+      "borncorner": [
+        27,
+        15,
+        27,
+        15
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "76f89691720ff5d00e079db32dbc68a13f6abc66640eaf69a64fc48104a48be4",
+      "original_file_targets": [
+        [
+          "genout/msg_5542_27_15",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "33443e8c50ce50a100e6ad907f4189e2ed074132123bd6a2e0594555d61b29fc"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 45,
+      "bytes": [
+        7661,
+        7824
+      ],
+      "sha256": "80b71283047e52ab3a67e87f08eb32f3898e39f90fe682b287ffde9638c16296",
+      "floor": 5542,
+      "graphic": 16039,
+      "borncorner": [
+        38,
+        44,
+        38,
+        44
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "76f89691720ff5d00e079db32dbc68a13f6abc66640eaf69a64fc48104a48be4",
+      "original_file_targets": [
+        [
+          "genout/msg_5542_38_44",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "b99bd5e678f278a67a016168b651957274a7a98c3001866a7fc3db49c8fca05a"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 46,
+      "bytes": [
+        7834,
+        7997
+      ],
+      "sha256": "38fdf2e3485ce5a90249f8ab413ce3568cf17386650352807bd84b90bdf6678c",
+      "floor": 5542,
+      "graphic": 16054,
+      "borncorner": [
+        19,
+        28,
+        19,
+        28
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "76f89691720ff5d00e079db32dbc68a13f6abc66640eaf69a64fc48104a48be4",
+      "original_file_targets": [
+        [
+          "genout/msg_5542_19_28",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "e6fd1ae11da7b599394bc670f96d74e09b7f69f6ad1a7d237a0a90223c65b8c5"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 47,
+      "bytes": [
+        8007,
+        8167
+      ],
+      "sha256": "788b99102953f368d09735b9a5d16b5c585d371a69e3cf9d43dbb0c32e270b91",
+      "floor": 5542,
+      "graphic": 16034,
+      "borncorner": [
+        23,
+        32,
+        23,
+        32
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 5,
+      "function_token": "npcgen_shop",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          8
+        ]
+      ],
+      "original_name_sha256": "b70f0466578d74d9ad74badd8ea2a2bdad5abbd56bb114edd40cc2b8f572e059",
+      "original_file_targets": [
+        [
+          "genout/ss_5542_23_32",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "60f93d472fbcca58264d6186195fa3a83bfc26675a7473aea56e663f7cbbcb35"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 48,
+      "bytes": [
+        8177,
+        8331
+      ],
+      "sha256": "5f2d91311a2a4015d2c8aa297468035f659076899919ef3f17767dd1d14c823e",
+      "floor": 5541,
+      "graphic": 16016,
+      "borncorner": [
+        2,
+        21,
+        2,
+        21
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "e5ce5f6da7bd985eae57a2903d5ce7fff2cf64155ff389c34daeccf64fb70b5d",
+      "original_file_targets": [
+        [
+          "genout/msg_5541_2_21",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "63ae5e43e872c95f3659044ffc34341a0d789f0ca5bdee08ca128a1fc62a5998"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 49,
+      "bytes": [
+        8341,
+        8498
+      ],
+      "sha256": "78eca116e756482412bb16f64a66c3b85c8c37890ec50dc4f2179919bd8e35e2",
+      "floor": 5541,
+      "graphic": 16203,
+      "borncorner": [
+        16,
+        11,
+        16,
+        11
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "e5ce5f6da7bd985eae57a2903d5ce7fff2cf64155ff389c34daeccf64fb70b5d",
+      "original_file_targets": [
+        [
+          "genout/msg_5541_16_11",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "b76caa1d954588972a7b3260319c86a67df5c718321e39a3a9c998802fde193a"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 50,
+      "bytes": [
+        8508,
+        8659
+      ],
+      "sha256": "42fb861ec225a6bbda606389096041aa92aa818610ecb46918434ad49c2880a4",
+      "floor": 5541,
+      "graphic": 16054,
+      "borncorner": [
+        5,
+        6,
+        5,
+        6
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "e5ce5f6da7bd985eae57a2903d5ce7fff2cf64155ff389c34daeccf64fb70b5d",
+      "original_file_targets": [
+        [
+          "genout/msg_5541_5_6",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "4846a1eabe4a2e8a4c12c65078b8ad7ed3c0a1ddea6d3f5a78c73090b074e363"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 51,
+      "bytes": [
+        8669,
+        8826
+      ],
+      "sha256": "e30217085af8acc062ad9d4df9db8e9267d38e1a73affee6315d3b158a58640c",
+      "floor": 5541,
+      "graphic": 16039,
+      "borncorner": [
+        31,
+        12,
+        31,
+        12
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 5,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "e5ce5f6da7bd985eae57a2903d5ce7fff2cf64155ff389c34daeccf64fb70b5d",
+      "original_file_targets": [
+        [
+          "genout/msg_5541_31_12",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "1a076392e5cf5282341c459c07676f031c3e47b8b9a9200f9b441059efcd95bd"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 52,
+      "bytes": [
+        8836,
+        9001
+      ],
+      "sha256": "ae3561b8313a2f81842ec4dff666d797669d0bbaa3d39cefb1fae5d1e3512eb4",
+      "floor": 5540,
+      "graphic": 16016,
+      "borncorner": [
+        260,
+        366,
+        260,
+        366
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "11b11f5e0dc8f2458b1d7aaaecd4e911e9abb217cf5fae2b4e677719adf8f4e1",
+      "original_file_targets": [
+        [
+          "genout/msg_5540_260_366",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "ca8480f58d5ea4a4f9d3328863b9871cadc8c96756d1c9729fb44343e2988855"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 53,
+      "bytes": [
+        9011,
+        9176
+      ],
+      "sha256": "a530e0f1609194cf5205e63934cf6eab75f13c2310c31043f28b7c48120dc316",
+      "floor": 5540,
+      "graphic": 16039,
+      "borncorner": [
+        309,
+        341,
+        309,
+        341
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_man",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          19
+        ]
+      ],
+      "original_name_sha256": "11b11f5e0dc8f2458b1d7aaaecd4e911e9abb217cf5fae2b4e677719adf8f4e1",
+      "original_file_targets": [
+        [
+          "genout/msg_5540_309_341",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "5da2e1c7bc9f192c51b89f3369a4c794fd01095cf269026d63c6fb069f5145b1"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 54,
+      "bytes": [
+        9186,
+        9356
+      ],
+      "sha256": "ab7f96117b3180afdece75db7b0c4a53d3f6f038bd33f6c8b308ecb5dc8187ef",
+      "floor": 500,
+      "graphic": 10062,
+      "borncorner": [
+        212,
+        347,
+        212,
+        347
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": 4,
+      "function_token": "npcgen_signboard",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          29
+        ]
+      ],
+      "original_name_sha256": "9d5d30d9bd5353a7de819d70f3b9801f4317cc3958e417fe793ac6955078dea0",
+      "original_file_targets": [
+        [
+          "genout/signb_500_212_347",
+          "EXACT_SAME_NPC_SUBTREE_PATH",
+          "264fa28dec609eea9161b12c0cc488ef4af3d39a9112b5470ae0c000e79ba9b7"
+        ]
+      ],
+      "original_direct_warp_args": null
+    },
+    {
+      "ordinal": 55,
+      "bytes": [
+        9366,
+        9478
+      ],
+      "sha256": "210d422ae9451d49c180bbcc2bd03096bde8daaa381ba9082c90c0d6731bfe2d",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        147,
+        304,
+        147,
+        304
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        5530,
+        23,
+        59,
+        "N"
+      ]
+    },
+    {
+      "ordinal": 56,
+      "bytes": [
+        9488,
+        9596
+      ],
+      "sha256": "4cecce96cc6c2021f71ddf292f85f4095a342ce9da29e0d018c0480fd35866d5",
+      "floor": 5530,
+      "graphic": null,
+      "borncorner": [
+        23,
+        59,
+        23,
+        59
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        147,
+        304,
+        null
+      ]
+    },
+    {
+      "ordinal": 57,
+      "bytes": [
+        9606,
+        9716
+      ],
+      "sha256": "fdca2bc9e4c264fe73c6ecac4a7b592f350d6e1774df75b8f05959a26e014625",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        207,
+        309,
+        207,
+        309
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        5530,
+        23,
+        59,
+        null
+      ]
+    },
+    {
+      "ordinal": 58,
+      "bytes": [
+        9726,
+        9837
+      ],
+      "sha256": "d30d056182cfacc8d68e6c58e26d091c711a62efcc92e8d360337aff1ee08add",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        186,
+        322,
+        186,
+        322
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        193,
+        346,
+        null
+      ]
+    },
+    {
+      "ordinal": 59,
+      "bytes": [
+        9847,
+        9958
+      ],
+      "sha256": "374563bab061937e7da3108f47195609f6d0e7d13a4d66286748ceb204ccd2a3",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        193,
+        346,
+        193,
+        346
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        186,
+        322,
+        null
+      ]
+    },
+    {
+      "ordinal": 60,
+      "bytes": [
+        9968,
+        10079
+      ],
+      "sha256": "91e1bb3ffe6b8e6e87c582a22dae62ff14c6481679b96ef36ee5c2d87621043b",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        209,
+        326,
+        209,
+        326
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        186,
+        333,
+        null
+      ]
+    },
+    {
+      "ordinal": 61,
+      "bytes": [
+        10089,
+        10200
+      ],
+      "sha256": "cd965d3ced168736e086db8f9107293b25ee1c319168fa2fb8f31598df1a9b08",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        186,
+        333,
+        186,
+        333
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        209,
+        326,
+        null
+      ]
+    },
+    {
+      "ordinal": 62,
+      "bytes": [
+        10210,
+        10321
+      ],
+      "sha256": "b0baa6b3440a74ae2ee645217c785b8e9d67be2e215bec731e7b235412cc3032",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        152,
+        313,
+        152,
+        313
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        162,
+        314,
+        null
+      ]
+    },
+    {
+      "ordinal": 63,
+      "bytes": [
+        10331,
+        10442
+      ],
+      "sha256": "b07ca24a67dd6da9d7280fac990aed16c7bba2d9135fbf28a0a5570a5cc2cf24",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        162,
+        314,
+        162,
+        314
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        152,
+        313,
+        null
+      ]
+    },
+    {
+      "ordinal": 64,
+      "bytes": [
+        10452,
+        10563
+      ],
+      "sha256": "3b504014197aacc5528f0533454054c2e3fa0499442a25dd42975e446f5fd036",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        161,
+        316,
+        161,
+        316
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        182,
+        317,
+        null
+      ]
+    },
+    {
+      "ordinal": 65,
+      "bytes": [
+        10573,
+        10684
+      ],
+      "sha256": "7eac74d299959be746f8d6f769b16a06eae516f749ce540fbe3885f93c0d2d0f",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        182,
+        317,
+        182,
+        317
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        161,
+        316,
+        null
+      ]
+    },
+    {
+      "ordinal": 66,
+      "bytes": [
+        10694,
+        10805
+      ],
+      "sha256": "9d1326f9329b41d60761920f4a3d2b0bd0f181b8238c6d837f90d8f79f8c7409",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        172,
+        316,
+        172,
+        316
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        189,
+        327,
+        null
+      ]
+    },
+    {
+      "ordinal": 67,
+      "bytes": [
+        10815,
+        10926
+      ],
+      "sha256": "ae79dd3c046abeb78cf9e72966a2616343c0081b682729d4e4a5cf06f031af5d",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        189,
+        327,
+        189,
+        327
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        172,
+        316,
+        null
+      ]
+    },
+    {
+      "ordinal": 68,
+      "bytes": [
+        10936,
+        11047
+      ],
+      "sha256": "3241c97f36dc98ebbaaf70530bca1cb4cbed8142c8d623e26c9f8b60b12d249f",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        166,
+        311,
+        166,
+        311
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        199,
+        320,
+        null
+      ]
+    },
+    {
+      "ordinal": 69,
+      "bytes": [
+        11057,
+        11168
+      ],
+      "sha256": "f75e08ede2672b307b33397ba0b1edbc45e6dd890c5084e7ac3d8f8e908dbc35",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        199,
+        320,
+        199,
+        320
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        166,
+        311,
+        null
+      ]
+    },
+    {
+      "ordinal": 70,
+      "bytes": [
+        11178,
+        11289
+      ],
+      "sha256": "cf7a27df27329332afb08823a992c042793559ae8f0d1aba493c55a57ef02c8b",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        226,
+        323,
+        226,
+        323
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        213,
+        333,
+        null
+      ]
+    },
+    {
+      "ordinal": 71,
+      "bytes": [
+        11299,
+        11410
+      ],
+      "sha256": "a8927a4d85ed1d5d6d69f55825a30da226d0a2807cf3c746166a077a8a7daabe",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        213,
+        333,
+        213,
+        333
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        226,
+        323,
+        null
+      ]
+    },
+    {
+      "ordinal": 72,
+      "bytes": [
+        11420,
+        11531
+      ],
+      "sha256": "ac7ab2523be7ff12d59b95602e4245cdc7e845a0c49dd09aab40291f93742341",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        212,
+        306,
+        212,
+        306
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        164,
+        310,
+        null
+      ]
+    },
+    {
+      "ordinal": 73,
+      "bytes": [
+        11541,
+        11652
+      ],
+      "sha256": "a87c1b1480a8ad2f5a905df74c47f8cc486e6bcc8da40f4c34522f2573b93f67",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        164,
+        310,
+        164,
+        310
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        212,
+        306,
+        null
+      ]
+    },
+    {
+      "ordinal": 74,
+      "bytes": [
+        11662,
+        11773
+      ],
+      "sha256": "b11e0193bb30760f7cda8041d93f21f8910406969d7308d6e06dda945f7c5d07",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        144,
+        311,
+        144,
+        311
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        147,
+        309,
+        null
+      ]
+    },
+    {
+      "ordinal": 75,
+      "bytes": [
+        11783,
+        11894
+      ],
+      "sha256": "6fffad3bc011ef1a8cf206bcdcdd0c71de81eafc3dd6f84b04b2fa509c73c91c",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        147,
+        309,
+        147,
+        309
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        144,
+        311,
+        null
+      ]
+    },
+    {
+      "ordinal": 76,
+      "bytes": [
+        11904,
+        12015
+      ],
+      "sha256": "bb18be9be27c035b1ca33219c63ca57da7565cbd335b42e7f57b952e6396393f",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        175,
+        318,
+        175,
+        318
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        195,
+        324,
+        null
+      ]
+    },
+    {
+      "ordinal": 77,
+      "bytes": [
+        12025,
+        12136
+      ],
+      "sha256": "912c8b020c37f97993bb5a72279a60148f5422580501549d06f9a5510ec75659",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        151,
+        313,
+        151,
+        313
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        190,
+        345,
+        null
+      ]
+    },
+    {
+      "ordinal": 78,
+      "bytes": [
+        12146,
+        12257
+      ],
+      "sha256": "7a9d4923786cb494f07d2e0b041dbcc8dbabd1fdd0edb308c93480f39da3fae7",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        194,
+        314,
+        194,
+        314
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        219,
+        320,
+        null
+      ]
+    },
+    {
+      "ordinal": 79,
+      "bytes": [
+        12267,
+        12378
+      ],
+      "sha256": "9fba80a350c4b088244adb547fc60135f644890912afcbe307405189bde10cfd",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        159,
+        310,
+        159,
+        310
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        219,
+        310,
+        null
+      ]
+    },
+    {
+      "ordinal": 80,
+      "bytes": [
+        12388,
+        12499
+      ],
+      "sha256": "02756fefba64874adb0eb6766dab799fd1d3faceb991123b74b380844b2177f7",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        168,
+        315,
+        168,
+        315
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        182,
+        317,
+        null
+      ]
+    },
+    {
+      "ordinal": 81,
+      "bytes": [
+        12509,
+        12620
+      ],
+      "sha256": "be77449a9904789dffb798ca89427fbd32a06579fdec9f41802c72ca5bc17be0",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        226,
+        328,
+        226,
+        328
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        218,
+        340,
+        null
+      ]
+    },
+    {
+      "ordinal": 82,
+      "bytes": [
+        12630,
+        12741
+      ],
+      "sha256": "531c3a150aa6438c2ce5993c85f66500f3684f16d247029210bae5339f8d06fb",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        168,
+        316,
+        168,
+        316
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        202,
+        320,
+        null
+      ]
+    },
+    {
+      "ordinal": 83,
+      "bytes": [
+        12751,
+        12862
+      ],
+      "sha256": "6e30c7f3961dc59f9069949f1336e3cd5f215c17a5987c68f8179885e98859ff",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        175,
+        317,
+        175,
+        317
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        179,
+        324,
+        null
+      ]
+    },
+    {
+      "ordinal": 84,
+      "bytes": [
+        12872,
+        12983
+      ],
+      "sha256": "baf061d7567ce3a0b35ba692042a0e485e4b957100255f97ca43ba7780b8a910",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        174,
+        314,
+        174,
+        314
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        210,
+        329,
+        null
+      ]
+    },
+    {
+      "ordinal": 85,
+      "bytes": [
+        12993,
+        13104
+      ],
+      "sha256": "12f3fb2dfd8e3132ec1468b16d224712b90dc96ea1e963c3d0a1a4a8e75abcf8",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        188,
+        328,
+        188,
+        328
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        197,
+        323,
+        null
+      ]
+    },
+    {
+      "ordinal": 86,
+      "bytes": [
+        13114,
+        13225
+      ],
+      "sha256": "e54dc067e5f614516105a1f76efe75e450a32109af4dcba50ccac7e23a88eb5e",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        195,
+        320,
+        195,
+        320
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        189,
+        328,
+        null
+      ]
+    },
+    {
+      "ordinal": 87,
+      "bytes": [
+        13235,
+        13346
+      ],
+      "sha256": "be77449a9904789dffb798ca89427fbd32a06579fdec9f41802c72ca5bc17be0",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        226,
+        328,
+        226,
+        328
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        218,
+        340,
+        null
+      ]
+    },
+    {
+      "ordinal": 88,
+      "bytes": [
+        13356,
+        13467
+      ],
+      "sha256": "f56c7a33a8453c78b775d49f54fbe1888cf4879bf70af780b3c0cdb534499c38",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        188,
+        332,
+        188,
+        332
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        182,
+        317,
+        null
+      ]
+    },
+    {
+      "ordinal": 89,
+      "bytes": [
+        13477,
+        13588
+      ],
+      "sha256": "efcbb7b76ebb2316593080f076a129349d1c1a7ec7c30dc54e446f275a656f9f",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        183,
+        320,
+        183,
+        320
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        218,
+        340,
+        null
+      ]
+    },
+    {
+      "ordinal": 90,
+      "bytes": [
+        13598,
+        13709
+      ],
+      "sha256": "50e7c323f312df1dd98b0c88ebc6dde2de0bf24f240376e43465baf257e48c0e",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        146,
+        307,
+        146,
+        307
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        191,
+        315,
+        null
+      ]
+    },
+    {
+      "ordinal": 91,
+      "bytes": [
+        13719,
+        13830
+      ],
+      "sha256": "642edc28d9d2a85281597b9e350750300f88715ac5e6c65a4694c4d6669d9c86",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        164,
+        313,
+        164,
+        313
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        195,
+        324,
+        null
+      ]
+    },
+    {
+      "ordinal": 92,
+      "bytes": [
+        13840,
+        13951
+      ],
+      "sha256": "97a7f44ee6cbbdcc2510f5e2f1085682383ff7165b9d9f8ce6a135546597ecd1",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        143,
+        307,
+        143,
+        307
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        190,
+        326,
+        null
+      ]
+    },
+    {
+      "ordinal": 93,
+      "bytes": [
+        13961,
+        14072
+      ],
+      "sha256": "aace8867c071faa804a46b7d72a0b896f7582c3e5a8c59ab7a256eaca24922da",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        190,
+        326,
+        190,
+        326
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        202,
+        320,
+        null
+      ]
+    },
+    {
+      "ordinal": 94,
+      "bytes": [
+        14082,
+        14193
+      ],
+      "sha256": "8aafefe2202c2a213f3c948dfd2cc11190d12aeb056e00ad8cbf1a1531146409",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        226,
+        325,
+        226,
+        325
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        202,
+        320,
+        null
+      ]
+    },
+    {
+      "ordinal": 95,
+      "bytes": [
+        14203,
+        14314
+      ],
+      "sha256": "281046610f49ab013a3130cea1ef59e88f212151d7fb41c890db83c197651b4d",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        158,
+        313,
+        158,
+        313
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        202,
+        320,
+        null
+      ]
+    },
+    {
+      "ordinal": 96,
+      "bytes": [
+        14324,
+        14435
+      ],
+      "sha256": "a658dc02a793759530fcf2ca265befadade87119dbf909f01ef3f40eebc37ee3",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        148,
+        309,
+        148,
+        309
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        210,
+        329,
+        null
+      ]
+    },
+    {
+      "ordinal": 97,
+      "bytes": [
+        14445,
+        14556
+      ],
+      "sha256": "e537184fff6d76d761a08f4e6b925829b6c539a6b3badc7c6cef0c012b02ac96",
+      "floor": 500,
+      "graphic": null,
+      "borncorner": [
+        148,
+        312,
+        148,
+        312
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        182,
+        317,
+        null
+      ]
+    },
+    {
+      "ordinal": 98,
+      "bytes": [
+        14566,
+        14674
+      ],
+      "sha256": "ac24fd26613c9785a0781fc3f08a14a316d049dea79e7470003b087a6aa5a163",
+      "floor": 5530,
+      "graphic": null,
+      "borncorner": [
+        40,
+        20,
+        40,
+        20
+      ],
+      "borncenter": null,
+      "createnum": 1,
+      "direction": null,
+      "function_token": "npcgen_warp",
+      "template_link_class": "SAME_DIRECTORY_EXACT_TOKEN",
+      "template_ref": [
+        [
+          "genout/npcgen.template",
+          21
+        ]
+      ],
+      "original_name_sha256": null,
+      "original_file_targets": [],
+      "original_direct_warp_args": [
+        500,
+        189,
+        318,
+        null
+      ]
+    }
+  ],
+  "three_original_source_warpman_gate_parameter_literals": [
+    {
+      "ordinal": 7,
+      "origin": [
+        500,
+        450,
+        391
+      ],
+      "literal_WARP": [
+        5532,
+        0,
+        22
+      ],
+      "literal_FREE_ITEM": 18553,
+      "literal_MONEY": -1,
+      "target_file": "genout/wpm_500_450_391",
+      "original_target_sha256": "6a07078ac3523de6053a64d8cb4e8df4f5e5bbbf4321e09d9155d07cf5030359"
+    },
+    {
+      "ordinal": 19,
+      "origin": [
+        500,
+        410,
+        622
+      ],
+      "literal_WARP": [
+        5536,
+        30,
+        13
+      ],
+      "literal_FREE_ITEM": 18554,
+      "literal_MONEY": -1,
+      "target_file": "genout/wpm_500_410_622",
+      "original_target_sha256": "c3bbd14de86ddcc3813760b88dd5001949bb054bbc2a9a543724b98fc51371b6"
+    },
+    {
+      "ordinal": 36,
+      "origin": [
+        500,
+        225,
+        430
+      ],
+      "literal_WARP": [
+        5533,
+        30,
+        11
+      ],
+      "literal_FREE_ITEM": 18555,
+      "literal_MONEY": -1,
+      "target_file": "genout/wpm_500_225_430",
+      "original_target_sha256": "a214c38b1a94c1eea0b3464e2c95982e8864f78bb2ebf3209afb9bdba2d1893b"
+    }
+  ],
+  "source_44_npcgen_warp_destination_literals": [
+    {
+      "ordinal": 55,
+      "source_floor": 500,
+      "source_corner": [
+        147,
+        304,
+        147,
+        304
+      ],
+      "original_target_arg_tuple": [
+        5530,
+        23,
+        59,
+        "N"
+      ],
+      "original_block_sha256": "210d422ae9451d49c180bbcc2bd03096bde8daaa381ba9082c90c0d6731bfe2d"
+    },
+    {
+      "ordinal": 56,
+      "source_floor": 5530,
+      "source_corner": [
+        23,
+        59,
+        23,
+        59
+      ],
+      "original_target_arg_tuple": [
+        500,
+        147,
+        304,
+        null
+      ],
+      "original_block_sha256": "4cecce96cc6c2021f71ddf292f85f4095a342ce9da29e0d018c0480fd35866d5"
+    },
+    {
+      "ordinal": 57,
+      "source_floor": 500,
+      "source_corner": [
+        207,
+        309,
+        207,
+        309
+      ],
+      "original_target_arg_tuple": [
+        5530,
+        23,
+        59,
+        null
+      ],
+      "original_block_sha256": "fdca2bc9e4c264fe73c6ecac4a7b592f350d6e1774df75b8f05959a26e014625"
+    },
+    {
+      "ordinal": 58,
+      "source_floor": 500,
+      "source_corner": [
+        186,
+        322,
+        186,
+        322
+      ],
+      "original_target_arg_tuple": [
+        500,
+        193,
+        346,
+        null
+      ],
+      "original_block_sha256": "d30d056182cfacc8d68e6c58e26d091c711a62efcc92e8d360337aff1ee08add"
+    },
+    {
+      "ordinal": 59,
+      "source_floor": 500,
+      "source_corner": [
+        193,
+        346,
+        193,
+        346
+      ],
+      "original_target_arg_tuple": [
+        500,
+        186,
+        322,
+        null
+      ],
+      "original_block_sha256": "374563bab061937e7da3108f47195609f6d0e7d13a4d66286748ceb204ccd2a3"
+    },
+    {
+      "ordinal": 60,
+      "source_floor": 500,
+      "source_corner": [
+        209,
+        326,
+        209,
+        326
+      ],
+      "original_target_arg_tuple": [
+        500,
+        186,
+        333,
+        null
+      ],
+      "original_block_sha256": "91e1bb3ffe6b8e6e87c582a22dae62ff14c6481679b96ef36ee5c2d87621043b"
+    },
+    {
+      "ordinal": 61,
+      "source_floor": 500,
+      "source_corner": [
+        186,
+        333,
+        186,
+        333
+      ],
+      "original_target_arg_tuple": [
+        500,
+        209,
+        326,
+        null
+      ],
+      "original_block_sha256": "cd965d3ced168736e086db8f9107293b25ee1c319168fa2fb8f31598df1a9b08"
+    },
+    {
+      "ordinal": 62,
+      "source_floor": 500,
+      "source_corner": [
+        152,
+        313,
+        152,
+        313
+      ],
+      "original_target_arg_tuple": [
+        500,
+        162,
+        314,
+        null
+      ],
+      "original_block_sha256": "b0baa6b3440a74ae2ee645217c785b8e9d67be2e215bec731e7b235412cc3032"
+    },
+    {
+      "ordinal": 63,
+      "source_floor": 500,
+      "source_corner": [
+        162,
+        314,
+        162,
+        314
+      ],
+      "original_target_arg_tuple": [
+        500,
+        152,
+        313,
+        null
+      ],
+      "original_block_sha256": "b07ca24a67dd6da9d7280fac990aed16c7bba2d9135fbf28a0a5570a5cc2cf24"
+    },
+    {
+      "ordinal": 64,
+      "source_floor": 500,
+      "source_corner": [
+        161,
+        316,
+        161,
+        316
+      ],
+      "original_target_arg_tuple": [
+        500,
+        182,
+        317,
+        null
+      ],
+      "original_block_sha256": "3b504014197aacc5528f0533454054c2e3fa0499442a25dd42975e446f5fd036"
+    },
+    {
+      "ordinal": 65,
+      "source_floor": 500,
+      "source_corner": [
+        182,
+        317,
+        182,
+        317
+      ],
+      "original_target_arg_tuple": [
+        500,
+        161,
+        316,
+        null
+      ],
+      "original_block_sha256": "7eac74d299959be746f8d6f769b16a06eae516f749ce540fbe3885f93c0d2d0f"
+    },
+    {
+      "ordinal": 66,
+      "source_floor": 500,
+      "source_corner": [
+        172,
+        316,
+        172,
+        316
+      ],
+      "original_target_arg_tuple": [
+        500,
+        189,
+        327,
+        null
+      ],
+      "original_block_sha256": "9d1326f9329b41d60761920f4a3d2b0bd0f181b8238c6d837f90d8f79f8c7409"
+    },
+    {
+      "ordinal": 67,
+      "source_floor": 500,
+      "source_corner": [
+        189,
+        327,
+        189,
+        327
+      ],
+      "original_target_arg_tuple": [
+        500,
+        172,
+        316,
+        null
+      ],
+      "original_block_sha256": "ae79dd3c046abeb78cf9e72966a2616343c0081b682729d4e4a5cf06f031af5d"
+    },
+    {
+      "ordinal": 68,
+      "source_floor": 500,
+      "source_corner": [
+        166,
+        311,
+        166,
+        311
+      ],
+      "original_target_arg_tuple": [
+        500,
+        199,
+        320,
+        null
+      ],
+      "original_block_sha256": "3241c97f36dc98ebbaaf70530bca1cb4cbed8142c8d623e26c9f8b60b12d249f"
+    },
+    {
+      "ordinal": 69,
+      "source_floor": 500,
+      "source_corner": [
+        199,
+        320,
+        199,
+        320
+      ],
+      "original_target_arg_tuple": [
+        500,
+        166,
+        311,
+        null
+      ],
+      "original_block_sha256": "f75e08ede2672b307b33397ba0b1edbc45e6dd890c5084e7ac3d8f8e908dbc35"
+    },
+    {
+      "ordinal": 70,
+      "source_floor": 500,
+      "source_corner": [
+        226,
+        323,
+        226,
+        323
+      ],
+      "original_target_arg_tuple": [
+        500,
+        213,
+        333,
+        null
+      ],
+      "original_block_sha256": "cf7a27df27329332afb08823a992c042793559ae8f0d1aba493c55a57ef02c8b"
+    },
+    {
+      "ordinal": 71,
+      "source_floor": 500,
+      "source_corner": [
+        213,
+        333,
+        213,
+        333
+      ],
+      "original_target_arg_tuple": [
+        500,
+        226,
+        323,
+        null
+      ],
+      "original_block_sha256": "a8927a4d85ed1d5d6d69f55825a30da226d0a2807cf3c746166a077a8a7daabe"
+    },
+    {
+      "ordinal": 72,
+      "source_floor": 500,
+      "source_corner": [
+        212,
+        306,
+        212,
+        306
+      ],
+      "original_target_arg_tuple": [
+        500,
+        164,
+        310,
+        null
+      ],
+      "original_block_sha256": "ac7ab2523be7ff12d59b95602e4245cdc7e845a0c49dd09aab40291f93742341"
+    },
+    {
+      "ordinal": 73,
+      "source_floor": 500,
+      "source_corner": [
+        164,
+        310,
+        164,
+        310
+      ],
+      "original_target_arg_tuple": [
+        500,
+        212,
+        306,
+        null
+      ],
+      "original_block_sha256": "a87c1b1480a8ad2f5a905df74c47f8cc486e6bcc8da40f4c34522f2573b93f67"
+    },
+    {
+      "ordinal": 74,
+      "source_floor": 500,
+      "source_corner": [
+        144,
+        311,
+        144,
+        311
+      ],
+      "original_target_arg_tuple": [
+        500,
+        147,
+        309,
+        null
+      ],
+      "original_block_sha256": "b11e0193bb30760f7cda8041d93f21f8910406969d7308d6e06dda945f7c5d07"
+    },
+    {
+      "ordinal": 75,
+      "source_floor": 500,
+      "source_corner": [
+        147,
+        309,
+        147,
+        309
+      ],
+      "original_target_arg_tuple": [
+        500,
+        144,
+        311,
+        null
+      ],
+      "original_block_sha256": "6fffad3bc011ef1a8cf206bcdcdd0c71de81eafc3dd6f84b04b2fa509c73c91c"
+    },
+    {
+      "ordinal": 76,
+      "source_floor": 500,
+      "source_corner": [
+        175,
+        318,
+        175,
+        318
+      ],
+      "original_target_arg_tuple": [
+        500,
+        195,
+        324,
+        null
+      ],
+      "original_block_sha256": "bb18be9be27c035b1ca33219c63ca57da7565cbd335b42e7f57b952e6396393f"
+    },
+    {
+      "ordinal": 77,
+      "source_floor": 500,
+      "source_corner": [
+        151,
+        313,
+        151,
+        313
+      ],
+      "original_target_arg_tuple": [
+        500,
+        190,
+        345,
+        null
+      ],
+      "original_block_sha256": "912c8b020c37f97993bb5a72279a60148f5422580501549d06f9a5510ec75659"
+    },
+    {
+      "ordinal": 78,
+      "source_floor": 500,
+      "source_corner": [
+        194,
+        314,
+        194,
+        314
+      ],
+      "original_target_arg_tuple": [
+        500,
+        219,
+        320,
+        null
+      ],
+      "original_block_sha256": "7a9d4923786cb494f07d2e0b041dbcc8dbabd1fdd0edb308c93480f39da3fae7"
+    },
+    {
+      "ordinal": 79,
+      "source_floor": 500,
+      "source_corner": [
+        159,
+        310,
+        159,
+        310
+      ],
+      "original_target_arg_tuple": [
+        500,
+        219,
+        310,
+        null
+      ],
+      "original_block_sha256": "9fba80a350c4b088244adb547fc60135f644890912afcbe307405189bde10cfd"
+    },
+    {
+      "ordinal": 80,
+      "source_floor": 500,
+      "source_corner": [
+        168,
+        315,
+        168,
+        315
+      ],
+      "original_target_arg_tuple": [
+        500,
+        182,
+        317,
+        null
+      ],
+      "original_block_sha256": "02756fefba64874adb0eb6766dab799fd1d3faceb991123b74b380844b2177f7"
+    },
+    {
+      "ordinal": 81,
+      "source_floor": 500,
+      "source_corner": [
+        226,
+        328,
+        226,
+        328
+      ],
+      "original_target_arg_tuple": [
+        500,
+        218,
+        340,
+        null
+      ],
+      "original_block_sha256": "be77449a9904789dffb798ca89427fbd32a06579fdec9f41802c72ca5bc17be0"
+    },
+    {
+      "ordinal": 82,
+      "source_floor": 500,
+      "source_corner": [
+        168,
+        316,
+        168,
+        316
+      ],
+      "original_target_arg_tuple": [
+        500,
+        202,
+        320,
+        null
+      ],
+      "original_block_sha256": "531c3a150aa6438c2ce5993c85f66500f3684f16d247029210bae5339f8d06fb"
+    },
+    {
+      "ordinal": 83,
+      "source_floor": 500,
+      "source_corner": [
+        175,
+        317,
+        175,
+        317
+      ],
+      "original_target_arg_tuple": [
+        500,
+        179,
+        324,
+        null
+      ],
+      "original_block_sha256": "6e30c7f3961dc59f9069949f1336e3cd5f215c17a5987c68f8179885e98859ff"
+    },
+    {
+      "ordinal": 84,
+      "source_floor": 500,
+      "source_corner": [
+        174,
+        314,
+        174,
+        314
+      ],
+      "original_target_arg_tuple": [
+        500,
+        210,
+        329,
+        null
+      ],
+      "original_block_sha256": "baf061d7567ce3a0b35ba692042a0e485e4b957100255f97ca43ba7780b8a910"
+    },
+    {
+      "ordinal": 85,
+      "source_floor": 500,
+      "source_corner": [
+        188,
+        328,
+        188,
+        328
+      ],
+      "original_target_arg_tuple": [
+        500,
+        197,
+        323,
+        null
+      ],
+      "original_block_sha256": "12f3fb2dfd8e3132ec1468b16d224712b90dc96ea1e963c3d0a1a4a8e75abcf8"
+    },
+    {
+      "ordinal": 86,
+      "source_floor": 500,
+      "source_corner": [
+        195,
+        320,
+        195,
+        320
+      ],
+      "original_target_arg_tuple": [
+        500,
+        189,
+        328,
+        null
+      ],
+      "original_block_sha256": "e54dc067e5f614516105a1f76efe75e450a32109af4dcba50ccac7e23a88eb5e"
+    },
+    {
+      "ordinal": 87,
+      "source_floor": 500,
+      "source_corner": [
+        226,
+        328,
+        226,
+        328
+      ],
+      "original_target_arg_tuple": [
+        500,
+        218,
+        340,
+        null
+      ],
+      "original_block_sha256": "be77449a9904789dffb798ca89427fbd32a06579fdec9f41802c72ca5bc17be0"
+    },
+    {
+      "ordinal": 88,
+      "source_floor": 500,
+      "source_corner": [
+        188,
+        332,
+        188,
+        332
+      ],
+      "original_target_arg_tuple": [
+        500,
+        182,
+        317,
+        null
+      ],
+      "original_block_sha256": "f56c7a33a8453c78b775d49f54fbe1888cf4879bf70af780b3c0cdb534499c38"
+    },
+    {
+      "ordinal": 89,
+      "source_floor": 500,
+      "source_corner": [
+        183,
+        320,
+        183,
+        320
+      ],
+      "original_target_arg_tuple": [
+        500,
+        218,
+        340,
+        null
+      ],
+      "original_block_sha256": "efcbb7b76ebb2316593080f076a129349d1c1a7ec7c30dc54e446f275a656f9f"
+    },
+    {
+      "ordinal": 90,
+      "source_floor": 500,
+      "source_corner": [
+        146,
+        307,
+        146,
+        307
+      ],
+      "original_target_arg_tuple": [
+        500,
+        191,
+        315,
+        null
+      ],
+      "original_block_sha256": "50e7c323f312df1dd98b0c88ebc6dde2de0bf24f240376e43465baf257e48c0e"
+    },
+    {
+      "ordinal": 91,
+      "source_floor": 500,
+      "source_corner": [
+        164,
+        313,
+        164,
+        313
+      ],
+      "original_target_arg_tuple": [
+        500,
+        195,
+        324,
+        null
+      ],
+      "original_block_sha256": "642edc28d9d2a85281597b9e350750300f88715ac5e6c65a4694c4d6669d9c86"
+    },
+    {
+      "ordinal": 92,
+      "source_floor": 500,
+      "source_corner": [
+        143,
+        307,
+        143,
+        307
+      ],
+      "original_target_arg_tuple": [
+        500,
+        190,
+        326,
+        null
+      ],
+      "original_block_sha256": "97a7f44ee6cbbdcc2510f5e2f1085682383ff7165b9d9f8ce6a135546597ecd1"
+    },
+    {
+      "ordinal": 93,
+      "source_floor": 500,
+      "source_corner": [
+        190,
+        326,
+        190,
+        326
+      ],
+      "original_target_arg_tuple": [
+        500,
+        202,
+        320,
+        null
+      ],
+      "original_block_sha256": "aace8867c071faa804a46b7d72a0b896f7582c3e5a8c59ab7a256eaca24922da"
+    },
+    {
+      "ordinal": 94,
+      "source_floor": 500,
+      "source_corner": [
+        226,
+        325,
+        226,
+        325
+      ],
+      "original_target_arg_tuple": [
+        500,
+        202,
+        320,
+        null
+      ],
+      "original_block_sha256": "8aafefe2202c2a213f3c948dfd2cc11190d12aeb056e00ad8cbf1a1531146409"
+    },
+    {
+      "ordinal": 95,
+      "source_floor": 500,
+      "source_corner": [
+        158,
+        313,
+        158,
+        313
+      ],
+      "original_target_arg_tuple": [
+        500,
+        202,
+        320,
+        null
+      ],
+      "original_block_sha256": "281046610f49ab013a3130cea1ef59e88f212151d7fb41c890db83c197651b4d"
+    },
+    {
+      "ordinal": 96,
+      "source_floor": 500,
+      "source_corner": [
+        148,
+        309,
+        148,
+        309
+      ],
+      "original_target_arg_tuple": [
+        500,
+        210,
+        329,
+        null
+      ],
+      "original_block_sha256": "a658dc02a793759530fcf2ca265befadade87119dbf909f01ef3f40eebc37ee3"
+    },
+    {
+      "ordinal": 97,
+      "source_floor": 500,
+      "source_corner": [
+        148,
+        312,
+        148,
+        312
+      ],
+      "original_target_arg_tuple": [
+        500,
+        182,
+        317,
+        null
+      ],
+      "original_block_sha256": "e537184fff6d76d761a08f4e6b925829b6c539a6b3badc7c6cef0c012b02ac96"
+    },
+    {
+      "ordinal": 98,
+      "source_floor": 5530,
+      "source_corner": [
+        40,
+        20,
+        40,
+        20
+      ],
+      "original_target_arg_tuple": [
+        500,
+        189,
+        318,
+        null
+      ],
+      "original_block_sha256": "ac24fd26613c9785a0781fc3f08a14a316d049dea79e7470003b087a6aa5a163"
+    }
+  ],
+  "source_numeric_TW1_original_2D_graphic_candidates": [
+    {
+      "graphic": 100259,
+      "matching_source_create_ordinals": [
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "tw1_source_group_index": 249,
+      "original_spr_group_sha256": "eb1be1d64b6e23a5302c5298d7a5d55a6466e0974bc2b4568c988349bb66c4e1",
+      "source_full_animation_count": 56,
+      "all_selected_original_source_frame_positions": 19,
+      "source_original_action_direction0_segments": [
+        [
+          0,
+          0,
+          10,
+          "d4ca0e6596f60e877dd5a62efaf0edaba806d189d5d6159671d4b0afa882050f",
+          600
+        ],
+        [
+          2,
+          0,
+          7,
+          "5e01844425a7c1f1a78a65ccf752c01bff5277d8121fd157b56c2cfc12e19ac5",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "08d27c36b189513e066608f0e14fd591d4c3b9d97aac581780f7975dd32f7e7a",
+          100
+        ]
+      ],
+      "private_observer_shown_sequence_count": 3,
+      "private_observer_shown_frame_positions": 19,
+      "prior_strict_RD_RLE_error_action0": null,
+      "original_existing_pixels": [
+        [
+          98283,
+          "66c2341594713a7b6e12a14bde3f2faf66a981839d31cf19c21f065876a4b8d6",
+          60,
+          77,
+          "5abf074251878791e1c09d3af2dab17dd1eb3991374e1ffd4c2aba0b8afe2159"
+        ],
+        [
+          98284,
+          "d58eee59e5d8647ced31d416a88eae7fa45f3072f25168c0db31d87868f09566",
+          72,
+          52,
+          "91fa98a82cca673a1f2b8e49433d7e3edbc0308a724d0a27f192319dbcd8ebe2"
+        ],
+        [
+          98285,
+          "852af03c2b9c3ba3132016725569796a22dcbdb7b250ba9cb2c586501bcc89db",
+          72,
+          49,
+          "805f9f55021486ba17b5280957e8366e1a2794291f2fdcdf219020958be7c853"
+        ],
+        [
+          98286,
+          "32381162b05695fbdc0a46585d81727ef5476e3038cab252f7e25da1e50107bf",
+          88,
+          92,
+          "641302598c63452536421a964364db40136703678adb161e2306ddbd5ac7cd3d"
+        ],
+        [
+          98287,
+          "e0172c98209d28e841b40d38203f8c134ddaef2f8c126f106512630c229923da",
+          72,
+          127,
+          "ed90b17c6dce237b5e7811562e2b14d6a3f58fb9b16c38404c5ae0ce480fe7ef"
+        ],
+        [
+          98288,
+          "dec0918596bf265ee5990ebf0a5851ee51778944da17ff7fa43b14ce1d77b28e",
+          84,
+          106,
+          "15137acbecceff05b8a8483416490231fb2091dfc0c9f40ca8893c8b832435ef"
+        ],
+        [
+          98289,
+          "73a5f94f326eb4d61f361b0c55e78f7337592d55895ad91601cdb433e5b4fe6b",
+          68,
+          84,
+          "8c6de527b9eb20de7bd80ce3b7b9aa7b25e8a6e618e12fe75a3af47ef04f1726"
+        ],
+        [
+          98290,
+          "7ba1c05c0e6b772237bbe4326206a36a7592f36fa26884a4ab14c708acfe400f",
+          64,
+          90,
+          "d10bb853f0e3655c0ae68ae9d459b125c62313f4b8c9d6a719846f650770b2b3"
+        ],
+        [
+          98291,
+          "55ffada8d59584c8d3ecbd1a9e23e14fd1dc0983749a6d23269e4c766e7b4654",
+          76,
+          70,
+          "18316ee1689e5a632b9d0072959bcd7c851063eba66349b8971502222aad2349"
+        ],
+        [
+          98292,
+          "31db7aba416129a9632a38e52f9a866c7c563d28174615d3072f7e29372de5cf",
+          76,
+          66,
+          "bed0bf0b39ecdeb0222031270fe7890da850b738279dc542d4a2d2f3f2635dfd"
+        ],
+        [
+          98293,
+          "a17875c9444abde62274e5f417fa37ea165cca77118bc4c6076b740c486befbc",
+          76,
+          55,
+          "61f631104ba5bc2b46239805bb11b80e8b3a4e82683f0a447643e542c329654e"
+        ],
+        [
+          98294,
+          "1561d035e348ffb3441e9bfb0c96cf7e3107ed010d5c1c2fdbb98069684d1e3f",
+          76,
+          60,
+          "9192c7825d433b1b54948c65d9fa6c43259323615e0101092fc072d9601a0452"
+        ],
+        [
+          98295,
+          "c7b94d565ea1f42de0ba4d156e471f3fdc911afa40094690e6c6f45eacf644e5",
+          72,
+          63,
+          "ab55e2acc9149f2d2ebe4538da251f3eb9dc7a6f77630a3b1f016dccdc8e2367"
+        ],
+        [
+          98296,
+          "f7d90b70b55ecc2a9b174ff09984dda145d6d90d51c3ca929c35aa109ccf2abd",
+          76,
+          56,
+          "777b1fc15c1144ec4e1eb9f5bbd27a95571e6f0619e74d36e216e420369dca52"
+        ],
+        [
+          98297,
+          "b7fc10ba8b11837b0e1d0e17ec98e7328c1611ad541c2946ff5439050b0ff1c2",
+          80,
+          50,
+          "67ce09aee5f5e3fbde74e625803e2d3b28b080b0aab188207b6c5135bbabfd04"
+        ],
+        [
+          98298,
+          "e148c42a48a71a9423957e9ab49bca8db28c5b1198eec57978495fb3be930d4e",
+          64,
+          67,
+          "cb99ccef8837eedf6ae82a2c4f677ec674da4136c862b4bc4a68502f53f675e4"
+        ],
+        [
+          98299,
+          "08ca19dc8988f9e24d7f53d69b495a63e2e830dd19d7ac60eea2549d731cecab",
+          76,
+          62,
+          "6d6a6730f89296e3a7d42eb0746c375ccd1e5435e71b63a4b8500f0e723d990c"
+        ]
+      ]
+    },
+    {
+      "graphic": 100379,
+      "matching_source_create_ordinals": [
+        37,
+        38
+      ],
+      "tw1_source_group_index": 345,
+      "original_spr_group_sha256": "355f06e73d0e277beed5abf221f80babbac98c123047a732ca4f1181dd80b65d",
+      "source_full_animation_count": 56,
+      "all_selected_original_source_frame_positions": 22,
+      "source_original_action_direction0_segments": [
+        [
+          0,
+          0,
+          14,
+          "4fb76b1573099ced545e81b888c1bbc97678ff6952a4b610f889d1fe4aa4b230",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "8f22350e06d2304e80e535ce86aadd44a971316334c5477ad212990a7c9eec75",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "1a78cc03d9a8c32da67dbbe43dbb5f40d6f2844f375b95008fdbf835674573ef",
+          100
+        ]
+      ],
+      "private_observer_shown_sequence_count": 3,
+      "private_observer_shown_frame_positions": 22,
+      "prior_strict_RD_RLE_error_action0": null,
+      "original_existing_pixels": [
+        [
+          123907,
+          "7153152151e28623c9507789e30fc2957944e6ca7b0a8627bf49b7ecb6e1f567",
+          76,
+          87,
+          "18b3b91b59164f13e57fd4e2d7a101db6ab92453c6a410e6984c5bf638ec9bdf"
+        ],
+        [
+          123908,
+          "6030341187c1409429aa3899d40046d165b409c2dd5cbc0ba8281a0ecae3ae9d",
+          64,
+          89,
+          "6d22ce00acc518b01881349b426b8c6ca02ce5f40d3b5cdf1672d844c4465b5a"
+        ],
+        [
+          123909,
+          "10d3f7e52e3c7aa82eaec241889b740a3d831d78638e8641f5a55003c84b3385",
+          68,
+          89,
+          "702110543557ed75450b11f6521e52b64f3445fc9bc70b598ddb548bd68e412a"
+        ],
+        [
+          123910,
+          "660973de2f6211dd8ab4a8aa1b1075fd2e0e6e4d6627b72823b37e1b6316d078",
+          80,
+          99,
+          "f643c700d72a34d711c71a23fd9b4718237f9a28f4a651b8dfd314200fac50a4"
+        ],
+        [
+          123911,
+          "c3433e44d1ec77fde69b49a9c616094c81bad75024d3cfe78fb41919c3ed6ef0",
+          72,
+          87,
+          "90c7b34298dff2f42fcae155c7deaf6e85bcde6107055a9c4797c0f9f66619a3"
+        ],
+        [
+          123912,
+          "0380995198393176f15fba7ca56c45e8f0c38ca73d409a82b01f1bca980d2aa0",
+          68,
+          99,
+          "5cfa4fab5626e572f7503ec17e6448c7b0e224a5b8d9be4d71256427db48350d"
+        ],
+        [
+          123913,
+          "bd3deb11a1953db6ead22dc386f16f22cfb80fec3031688fa85ac24b4d35df76",
+          64,
+          107,
+          "f5aebc9b9c70017f5a99ace2124170fc834649c59afa0be65e142a5eaf8b847a"
+        ],
+        [
+          123914,
+          "72c8a19b5cd20cb1197a5206861013a170b1923a3b19140dc7ef929a327c9c67",
+          72,
+          91,
+          "fc10597926074928fe0e5e1279564e4543056351c73de6e9859591ca91fc9be7"
+        ],
+        [
+          123915,
+          "9aecf10077ce9960f13380ed5c3fe04b7cca0047f6bc6bca441ec288977c2a1c",
+          68,
+          103,
+          "b968dd63813280d34c7886d3efca0811719e85c45fea88d593091a7e3b0d3632"
+        ],
+        [
+          123916,
+          "183afe6d3a7a7f753887cd345136377a454ad43ba02584f5a09a34c8626ddcac",
+          72,
+          110,
+          "9730d8c61f86848e46a3e6641e0385be322a33795c5e3741ad0cc1ae344aefb2"
+        ],
+        [
+          123917,
+          "30ed5e7d40ebff1795a84652640f31416d0ce6cabe4aceed596eab81041fabfe",
+          76,
+          113,
+          "ef0c62e9436beddab0e1d45ea7047c756bfe0721912c8568bfb13f61c088f67f"
+        ],
+        [
+          123918,
+          "020396754c6201c467b38da80dfabdac5d7c09a24c55f077532c9ded047e84f9",
+          76,
+          89,
+          "830bd1790edded23b58963c6ff8a4ff8620e985a129e73de776dddfeb4123558"
+        ],
+        [
+          123919,
+          "2aac30572334a374f2ae305ca703f883fbb630f7b9eae439c247b9f1d3ca7451",
+          88,
+          83,
+          "cade76e5c9dc6167ee89758a52579e2da0823e4b88cf8d1e5d8152c4e2442a7d"
+        ],
+        [
+          123920,
+          "d7a1520b6b5f28de068a1ee101ed4217c828a35bef0054759a2789ad8e2b99a0",
+          92,
+          79,
+          "20ac00c33e299e7437375a07d67c1b1bc7b1d2563323b71176167e367da79d9e"
+        ],
+        [
+          123921,
+          "6be28d0373c7f78dd9e8a2d0e6e1f7459c73004fc889651737737d7a469b9d7f",
+          76,
+          89,
+          "9d99b81948b8e750f444b385568a4839ecbf77a6e8fa5c5fd575bfbb330f25e3"
+        ],
+        [
+          123922,
+          "f44cb34090d3e0aa33a7ce57c05b962fe6b4d6ec25d29b6e36a4b803fa0f2e98",
+          76,
+          92,
+          "048221809be374acbf97b6168fe8d1091e14278df261ab60992d1f0a757c9c5a"
+        ]
+      ]
+    },
+    {
+      "graphic": 100401,
+      "matching_source_create_ordinals": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "tw1_source_group_index": 364,
+      "original_spr_group_sha256": "0284af96efdff07da2b5b73ccc3f8a84a2a4158e9c653e3a4f3977293f3ec2a4",
+      "source_full_animation_count": 104,
+      "all_selected_original_source_frame_positions": 34,
+      "source_original_action_direction0_segments": [
+        [
+          0,
+          0,
+          26,
+          "da12a9359d2599d613644695b6da0cc1998aa3371b12c64a3fdf28f545ef7f88",
+          1600
+        ],
+        [
+          2,
+          0,
+          6,
+          "418113a9767251bb6e2bfeabc03175c1c2945817bdc5c61a6fd190d035649ac6",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "b745511cb80958e4659ae3f29f98d10e5c78ce9a6737b5031c29af1ec876af5e",
+          100
+        ]
+      ],
+      "private_observer_shown_sequence_count": 2,
+      "private_observer_shown_frame_positions": 8,
+      "prior_strict_RD_RLE_error_action0": {
+        "original_bitmap": 82729,
+        "exception_class": "STRICT_RD_RLE_DECODE_OVERRUN",
+        "not_rendered_original_frame_positions": 26
+      },
+      "original_existing_pixels": [
+        [
+          82737,
+          "95eadb8b78c107474d742d33f43969b2328853fb0d7b6e22d155c3a63de2f373",
+          56,
+          98,
+          "64a0b6ed505b8069d7d247b8b3969b429499eb73ca6df29321c25a481516d3ea"
+        ],
+        [
+          82738,
+          "7c4926a581ddcea524c7cba35a4e084894b2f2bd8f68acbd659f9f1d434dda68",
+          56,
+          110,
+          "f3ecf6cb8c68a82b8a5c22de7cf6270460e80482cdf46241d45e314a496cfad2"
+        ],
+        [
+          82739,
+          "f2d50202ca41b54ba49b59525fc939a5ceb6dda1166af4f497ccfe1f60032e53",
+          68,
+          108,
+          "acabfe046fec8781112fbc73cf9781125b4ac8124747a04958af154081017336"
+        ],
+        [
+          82740,
+          "1bddd3ff5852aec20f82e6e668db5a9059e225004708f4d8ff9e8152483e820e",
+          68,
+          94,
+          "04fa2a48c6ac03a2878cd9239290679311cd2605e7395bea05f94200b0cbf5b1"
+        ],
+        [
+          82741,
+          "795ddb30a4de16008ea346020cf2c8aef2703472c2e96b086992a8aa7e1f18a6",
+          92,
+          95,
+          "8e24b9d82bf4ebd2ee4022f866d3a7ec672f91a175ded8495475e72860ce451d"
+        ],
+        [
+          82742,
+          "bc3c77ca3435ca1404299932678ea4846b7ad87e7b41d54f7ff0ef1ffd58ed12",
+          96,
+          72,
+          "c504d6ca3a102d59938cd0cb5d8b0b33481fe00ba8c37b5b456b54afe367007c"
+        ],
+        [
+          82743,
+          "838e9a023ed0235a8dce1c168bb6ceeda12ac552fa37e5ef6815ae99347be7ee",
+          80,
+          106,
+          "a4f51a32365ad1184bf3ca18752b9f57bd4d1560eff0e76a90a6cf9b35355c59"
+        ],
+        [
+          82744,
+          "e689a0a99e1ace633a64829dc2c1d0fd9d370ff7e605d9e20ca0df079603b918",
+          72,
+          108,
+          "5cfd3eb982599810b2583829eb7baf2219e577c97c2a885428570bc4f3b4ff0b"
+        ]
+      ]
+    },
+    {
+      "graphic": 100432,
+      "matching_source_create_ordinals": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "tw1_source_group_index": 395,
+      "original_spr_group_sha256": "d5e4f229a3f71457d000c8d07e7406423d97b321be00d587c671836d656690d1",
+      "source_full_animation_count": 104,
+      "all_selected_original_source_frame_positions": 26,
+      "source_original_action_direction0_segments": [
+        [
+          0,
+          0,
+          13,
+          "c6535d5f807df21594acd12d7754c38cda29f755e7e679d41976cd69e849152d",
+          800
+        ],
+        [
+          2,
+          0,
+          11,
+          "7822c2199fc4bf117235bd625e99255ab25b17a0b5c57c720c15e668be656d10",
+          1500
+        ],
+        [
+          1,
+          0,
+          2,
+          "a9d69156a23798055388a772c30b12f9f08e1ddd1dc631f00a7a29ac5dea21f5",
+          100
+        ]
+      ],
+      "private_observer_shown_sequence_count": 3,
+      "private_observer_shown_frame_positions": 26,
+      "prior_strict_RD_RLE_error_action0": null,
+      "original_existing_pixels": [
+        [
+          86743,
+          "263c805f5b466d72cb9bdd976ccae5200d9abd2495060abe176441c5cd38d063",
+          80,
+          97,
+          "e5969c2857ddc1ef7a3bb9c53094faef4f85350587262d1b75464ea695829117"
+        ],
+        [
+          86744,
+          "0b0096474ae969599ff5cbf959e8fc468a19713368fcdb2d2324fb6fe2c595a7",
+          76,
+          99,
+          "d06589d8c4776cced19327b64254a923f6dbf36c8c651418dbf83d45c8ea9ef3"
+        ],
+        [
+          86745,
+          "d20c92e71d96426b8f2efba6cbcca22f9a04ee53598124865088e512fd80a464",
+          68,
+          135,
+          "184776f850bd894dcf77bd811c304c0d7cabbcc1cca50060c32c62abb6bc11d6"
+        ],
+        [
+          86746,
+          "3e9a3101fdbea2325b0ad609b20f49a90f16e914f8749c9d67c8e3beddf0771d",
+          64,
+          129,
+          "eb86de64038c974a03af114278c76fb05b99723f73aec54f54225f29a39ce385"
+        ],
+        [
+          86747,
+          "c017c56e5480242182f980d8897863d067ed5a992f5a5f2b578bda9ce29c376f",
+          84,
+          105,
+          "a170b6b4db15df1a27eeb62900a36ea29d73780d1b9e186521f44f5ecbb7182d"
+        ],
+        [
+          86748,
+          "8ede8e1e2e7ee136ca8d1f2e6bd27fc24fac795759f5b47689e6443406c7c733",
+          84,
+          99,
+          "001503d90621bb134f399059d5bf0db18f41f629b19e38ce6c0632371d5a5e5a"
+        ],
+        [
+          86749,
+          "5ed7b208ff1b6e69be31098a49679f9ba159ba607d7f9082dce8c422fd10aca5",
+          80,
+          101,
+          "b7717141b14aeecb21ff6bee4af4394ca53238c9d8bac908ec316c1289bf3881"
+        ],
+        [
+          86750,
+          "1b0971776eedd4ffab2c9c8b4a49ceb9e73026cedafccd663027b3d571625810",
+          80,
+          95,
+          "52592c7da514cd6f48aa6ea9b426aea336a763b0d9d504998b86799a5758fbf4"
+        ],
+        [
+          86753,
+          "9053b6788a474d68e9667c5d605b1d585b5790dd50d6438d2b76cac6595f7f43",
+          68,
+          90,
+          "311d2644f5a4e6d8e3d619d7eb69bfc94aaf470975bcea96aba6db67db506f06"
+        ],
+        [
+          86754,
+          "8229784f15510749c1d57a385743b1cc13bf5edc585fc817d4411c2ebbf89692",
+          72,
+          91,
+          "a1867dc5292b59e11bf7c9ab48f191739f56e5d779f6bf96323fc24cd03c437e"
+        ],
+        [
+          86755,
+          "6af368632af2eb87f440a1f5aa191c29c872dbf65f45a18ca9664eba96322bd7",
+          64,
+          91,
+          "a9085071b3a1d0647df85e86b89929b2ef8bdb23d4137429a575d7e861b52816"
+        ],
+        [
+          86756,
+          "eccb75d6703684ae9edd47de4f463b1e15c44b56ad38102895bfc703cc5354cc",
+          64,
+          97,
+          "1d7695953ab0b36f887c57adafa9ebe4a49f68271ea8e6d0cd77e0bdd3f21341"
+        ],
+        [
+          86757,
+          "d2e9ce0d797f160197e15d5062022eee6ccc4654401a6718e56a33a597449fac",
+          68,
+          88,
+          "263d7740348a977e4165e99532145b724ab66552890715b36e85738fadc71518"
+        ],
+        [
+          86758,
+          "6740c55aa3e5257cd1c5fbcbdaca5ef711ee121cd8d438c99fc3234b88bea383",
+          76,
+          83,
+          "95f9acdd5cdbb7ce22302053e6592dea7c530e89d680e60e653093df7c3d5be7"
+        ],
+        [
+          86759,
+          "e8b4395afaf81d93316c9235aede600c4c60ec85bc19508a3fc4d32103b8ec0f",
+          72,
+          90,
+          "c792ba3433ed70acb2cd202c985197ea2a71f305b8c825216cdbfd66ba322050"
+        ],
+        [
+          86760,
+          "0b223c71e9e95a66814b910690992970df20d417d6ae0091e2f09ece0d50e15c",
+          88,
+          115,
+          "4bffd04ce51d6e771c947d760a997a69c50a61d03f50f2d0bb2f49fa5f5fe042"
+        ]
+      ]
+    }
+  ],
+  "original_duplicate_spawn_source_positions_not_collapsed": [
+    {
+      "where": "5533/34,47",
+      "ordinals": [
+        32,
+        33
+      ]
+    },
+    {
+      "where": "500/226,328",
+      "ordinals": [
+        81,
+        87
+      ]
+    }
+  ],
+  "private_independent_validation": {
+    "all_99_original_create_byte_span_sha256_matches_original_private": true,
+    "all_46_direct_references_original_private_contents_sha256_matches": true,
+    "all_57_PNG_sha256_and_dimensions_match_private_RD_report": true,
+    "private_zip_crc_members": 2,
+    "private_Library_zip_independent_readback_sha_equal": true,
+    "Chromium_original_PNG_natural_dimensions_checked": true,
+    "Chromium_source_config_filter_99_and_44_tested": true,
+    "Chromium_JS_errors": 0,
+    "Chromium_external_network_requests": 0
+  },
+  "evidence_limits": {
+    "same_numeric_graphic_proves_same_early_official_deployment": false,
+    "TW1_130_candidate_subset_missing_graphic_proves_absence_of_original_art": false,
+    "source_99_configs_prove_NPCs_spawned_in_native_world": false,
+    "source_44_warp_literals_prove_native_warp_triggers": false,
+    "original_WARP_FREE_ITEM_and_MONEY_minus_one_runtime_effect_verified": false,
+    "original_private_modern_viewer_is_native_original_game": false,
+    "original_100401_action0_82729_strict_RD_unrenderable_is_preserved": true,
+    "source_generated_file_path_comment_proves_actual_gen_bytes_present": false,
+    "original_binary_scripts_dialogue_artwork_publicly_committed": false,
+    "stageA": "7 PARTIAL + 2 OPEN",
+    "stageB_and_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null,
+    "cross_carrier_TW1_item_icon_is_verified_same_deployment_of_mixed25_gate": false,
+    "original_item_type_code_16_and_cost_zero_imply_gate_operated": false
+  },
+  "next": "New eligible nonrepeated original game-content family; preserve evidence boundaries, no original MMO service or Stage B.",
+  "original_three_guard_pass_item_same_carrier_two_original_itemsets_source_rows": [
+    {
+      "item_id": 18553,
+      "original_itemset_A_94_fields_full_row_sha256": "beaf5348f62dc9e6652bfbabd6a858689c6d774f22d3eb8e263d511fc25010b3",
+      "original_itemset_B_94_fields_full_row_sha256": "beaf5348f62dc9e6652bfbabd6a858689c6d774f22d3eb8e263d511fc25010b3",
+      "original_itemset_A_image_alias": 24124,
+      "original_itemset_B_image_alias": 24124,
+      "source_B_original_cost_raw": "0",
+      "source_B_original_type_raw": "16",
+      "source_B_original_level_raw": "0",
+      "source_A_prior_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "source_B_prior_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "original_changed_columns_between_same_archived_itemset_rows": []
+    },
+    {
+      "item_id": 18554,
+      "original_itemset_A_94_fields_full_row_sha256": "c5006347fb8069045a058056d0c868b6c12818858db759b30de8bc6406f6c930",
+      "original_itemset_B_94_fields_full_row_sha256": "c5006347fb8069045a058056d0c868b6c12818858db759b30de8bc6406f6c930",
+      "original_itemset_A_image_alias": 24126,
+      "original_itemset_B_image_alias": 24126,
+      "source_B_original_cost_raw": "0",
+      "source_B_original_type_raw": "16",
+      "source_B_original_level_raw": "0",
+      "source_A_prior_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "source_B_prior_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "original_changed_columns_between_same_archived_itemset_rows": []
+    },
+    {
+      "item_id": 18555,
+      "original_itemset_A_94_fields_full_row_sha256": "a5d390a5e52c3d575f85478b55dab3ab058127c916698c26f136b73d8e954226",
+      "original_itemset_B_94_fields_full_row_sha256": "a5d390a5e52c3d575f85478b55dab3ab058127c916698c26f136b73d8e954226",
+      "original_itemset_A_image_alias": 24127,
+      "original_itemset_B_image_alias": 24127,
+      "source_B_original_cost_raw": "0",
+      "source_B_original_type_raw": "16",
+      "source_B_original_level_raw": "0",
+      "source_A_prior_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "source_B_prior_TW1_RD_qualification": "REAL_RD_DECODED_CROSS_CARRIER",
+      "original_changed_columns_between_same_archived_itemset_rows": []
+    }
+  ]
+}
