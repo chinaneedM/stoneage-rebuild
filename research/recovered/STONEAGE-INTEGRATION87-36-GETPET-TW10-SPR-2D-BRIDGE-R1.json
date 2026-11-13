@@ -1,0 +1,2280 @@
+{
+  "schema": "stoneage.integration87.mixed25_getpet_36_to_tw10_existing_spr_2d_candidate_census.r1",
+  "date": "2026-11-13",
+  "starting_remote": {
+    "repository": "chinaneedM/stoneage-rebuild",
+    "branch": "main",
+    "head": "40e857168d5a8650b6f6f803dba0aad63f90933c",
+    "tree": "f47fcb0a92e99e6cbbe73a0fe94785a3861610ee",
+    "original_current_blob_preserved": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "source_scope": "MIXED25_COMMUNITY_ORIGINAL_SCRIPT_ENEMY_INSTANCE_TEMPLATE_STATIC_NUMERIC_JOIN_TO_SEPARATE_TW_WAEI_JSS_1_0_RETAIL_ORIGINAL_SPR_HASH_CANDIDATE; NOT_SAME_DEPLOYMENT_OR_AUTHENTICATED_PET_IDENTITY",
+  "source_derived_git_blobs": {
+    "STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-21-GETPET-QUEST-BRANCHES-R1.json": "f8614b9e90e548efb6d61e269d725d17ea173a74",
+    "STONEAGE-PET-MODULE-07-TW10-BATCH-PUBLIC-R1.json": "0b5f81b41a642025ab53a12884638fdee887470e",
+    "STONEAGE-INTEGRATION66-FOUR-ISLAND-TOUR-15-PET-TW1-ORIGINAL-PIXELS-R1.json": "5a3596a82946280aca12f60948aa01012c29c74c",
+    "STONEAGE-INTEGRATION67-SPIRIT-KING-THREE-GETPET-TW1-ORIGINAL-PIXELS-R1.json": "211565fe184141b6b55506c4642446edd5744fdd",
+    "STONEAGE-INTEGRATION62-QUEST30-TWO-GETPET-TW1-29-RD-PIXELS-R1.json": "1e439f0b01902d8a6b2c8dd2fe851e17de08f321"
+  },
+  "private_source_independent_numeric_audit": {
+    "scope": "RETAINED_PRIVATE_EXTRACTED_ORIGINAL_MIXED25_PET10_CP950_TABLE_FIELD_VALUES_AND_SEPARATE_TW10_PET07_RENDERED_ORIGINAL_GALLERY; NO_RAR_REEXTRACTION_THIS_UNIT",
+    "original_mixed25_RAR_sha256_recorded_not_reread": "d71e2e6766e8ac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "private_mixed25_PET10_catalog_sha256_verified": "640506addf01417390a7078f70aece167c99feecf4beeca8cb769f32972ff5d3",
+    "private_tw10_PET07_pixel_source_report_sha256_verified": "b5ad2e58930afbe90604a1d72e3c17ab0adea446e7c118be775e3973315e6cb4",
+    "private_tw10_PET07_gallery_sha256_verified": "58e8ee4ff5165ed2f61663d67ae1cd0a8183622fa3375c480232784bfce9dc76",
+    "original_enemy_txt_SHA256_from_recovered_archive": "cc7418d3b6726f1c458fef9e44a24696d05f076b67c62a56ed2293e26ae63bb6",
+    "original_enemybase_txt_SHA256_from_recovered_archive": "1be7d5226798f7abaabe1f1e74aa1533fcd10e3eaf43f6497d63afa91df3e8b7",
+    "independent_original_columns_36_of_36_match": true,
+    "new_original_pixel_decode_count": 0
+  },
+  "summary": {
+    "mixed25_original_getpet_script_files_indexed": 27,
+    "source_getpet_command_numeric_occurrences": 44,
+    "source_getpet_unique_enemy_instance_ids": 36,
+    "source_enemy_template_graphic_joins": 36,
+    "tw10_numeric_original_spr_candidate_groups": 36,
+    "tw10_original_spr_candidate_group_unique_ids": 36,
+    "selected_action_direction0_records": 108,
+    "prior_specialized_group_sizes": {
+      "INTEGRATION62": 2,
+      "INTEGRATION66": 15,
+      "INTEGRATION67": 3
+    },
+    "prior_specialized_overlap_union": 20,
+    "strictly_unrenderable_selected_action0_graphics": [
+      100401
+    ],
+    "already_existing_original_pixel_data": true,
+    "new_original_picture_discovery": 0,
+    "new_original_sprite_bytes_acquired": 0,
+    "new_native_original_pet_reward_execution": 0
+  },
+  "prior_source_specialized_instance_ids": {
+    "INTEGRATION62": [
+      93,
+      341
+    ],
+    "INTEGRATION66": [
+      48,
+      76,
+      78,
+      94,
+      96,
+      309,
+      328,
+      338,
+      350,
+      358,
+      360,
+      361,
+      365,
+      366,
+      482
+    ],
+    "INTEGRATION67": [
+      355,
+      484,
+      1479
+    ]
+  },
+  "rows": [
+    {
+      "source_getpet_integer": 14,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "quiz/equiz_02",
+          "source_script_sha256": "c5b9ff6e85d8f392cc2a668c70de7f3c0a3adcbb0d1e5688006d7a153e999818",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 44,
+          "source_command_line_sha256": "2fa3a66f2bbe5121bd8b038218adf85d40b7443d88dc5ecc51de5826055528e6",
+          "source_event_block_lines": [
+            36,
+            47
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 10,
+      "mixed25_enemy_instance_line_sha256": "2f1d4652f100c4f3e5bbb96ba78984698513e411becdd06e31f31dbaad384837",
+      "mixed25_template_numeric_id": 12,
+      "mixed25_template_source_line": 12,
+      "mixed25_template_source_line_sha256": "3517b3aa00d3b8d995e862abce2a66d5f1c19ac48eb9924d4a4f71f27554dd64",
+      "mixed25_template_graphic_numeric": 100255,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100255,
+      "tw10_source_spr_group_index": 245,
+      "tw10_source_full_spr_segment_sha256": "afdb53a9f70aa8b0cf3ef51ee201d47fa8acedacc1616fb3b12c0ccc71adc044",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 19,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 9,
+          "original_bitmap_sequence_u32le_sha256": "e942d18ef037a55c1dc07f3ac57c943d75ebfbe30d5f7b45eeade6d783ee6aeb",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "74ec3ef6596eaeba9084468b95c2a60c527fe77493cf806d326f76f0f3466183",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 4,
+          "original_bitmap_sequence_u32le_sha256": "89630cf4b8e7eeabaf2f202a4b6ea9d3f08cafe15cd62214ee4659d51a703fa8",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": []
+    },
+    {
+      "source_getpet_integer": 44,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "jaruga/event/event06_1",
+          "source_script_sha256": "3ac3d3388f7914e497eb884de310633e5386f9aaaa784c66cc54b9ad1bbf4aae",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 14,
+          "source_command_line_sha256": "abe50c79c67f4b0982bfb6dd69a391ca0e419467ed840b3223af646590499716",
+          "source_event_block_lines": [
+            1,
+            17
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 32,
+      "mixed25_enemy_instance_line_sha256": "38946a1d55d37b5b8c7dce55a91d6c42d6f413b6a3715a16f4d57f235e096036",
+      "mixed25_template_numeric_id": 63,
+      "mixed25_template_source_line": 63,
+      "mixed25_template_source_line_sha256": "b4b3e8e8019ae8fa02e3dc0a3ccd2e36833dc1bbd65a6f0918d9e1ee50f7df5f",
+      "mixed25_template_graphic_numeric": 100277,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100277,
+      "tw10_source_spr_group_index": 267,
+      "tw10_source_full_spr_segment_sha256": "61e7aa1eb5029e6e87f37be5e0ec3b2d680fb2b7ad2760d5828bf81785b905b7",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 18,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 8,
+          "original_bitmap_sequence_u32le_sha256": "92f4041cb64df5eaebc31e4f2e71ab84b32d37c13fa202f3b25f2bbeae987cf4",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 7,
+          "original_bitmap_sequence_u32le_sha256": "7b57e31cd00094e3302ac737f1f19c1aa61eca75ba40fef18dc9689a2ec84b7c",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 3,
+          "original_bitmap_sequence_u32le_sha256": "a7e729f9035678a2ca4976abd1d7b8352416ecd2665c71048f7150071a518698",
+          "original_duration_word": 300,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 17,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": []
+    },
+    {
+      "source_getpet_integer": 47,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "jaruga/event/event06_1",
+          "source_script_sha256": "3ac3d3388f7914e497eb884de310633e5386f9aaaa784c66cc54b9ad1bbf4aae",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 25,
+          "source_command_line_sha256": "ec4a70f67de004e28099cce268eacf10d9d6532807eeebfa9147f8d9d15ac2ad",
+          "source_event_block_lines": [
+            18,
+            29
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 35,
+      "mixed25_enemy_instance_line_sha256": "bce97d8dbf3a4d8b607fa71a663e5eb20c5cc28a9786f60d64ca0d4a966e384c",
+      "mixed25_template_numeric_id": 72,
+      "mixed25_template_source_line": 72,
+      "mixed25_template_source_line_sha256": "6ce772774b33db7c18fb48a1a3249cf50681b183ad5d6ef63c5d3a6d56e03a90",
+      "mixed25_template_graphic_numeric": 100280,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100280,
+      "tw10_source_spr_group_index": 270,
+      "tw10_source_full_spr_segment_sha256": "d2e12702aacf131e513a56a752be544b69256e17928c4ba041e816f0dc162198",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 17,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 9,
+          "original_bitmap_sequence_u32le_sha256": "fa746cc23e60b98769086ce9209d7d88a57cd96e0d005ef1e41f95364138ad87",
+          "original_duration_word": 800,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "aae92e7c47ecf8fe373401f5548d0d207e47ebe93e592608ce8e73552969569c",
+          "original_duration_word": 800,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "2c9a9ca464ddb981c21d748441b3f8bf982de1d81bfa1154272ab4f8616bb1bd",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": []
+    },
+    {
+      "source_getpet_integer": 48,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "sainasu/event/oev_edc",
+          "source_script_sha256": "a1891aef372be0012df9f830560f513c41e8334a62ff31f26b2da0124632f037",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 19,
+          "source_command_line_sha256": "adeb48f9ace371838994c4fba1e319467e1d6716c365bf878a5c0b601a986d33",
+          "source_event_block_lines": [
+            1,
+            20
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 36,
+      "mixed25_enemy_instance_line_sha256": "df9ba74e54c05fe8ad90a99a3c7e67f1a968779926968b048864d30faa1ec46f",
+      "mixed25_template_numeric_id": 73,
+      "mixed25_template_source_line": 73,
+      "mixed25_template_source_line_sha256": "d62c7b2568fb3399e170415677ed5824ff2697f4cae7694a931fdba6fa353985",
+      "mixed25_template_graphic_numeric": 100281,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100281,
+      "tw10_source_spr_group_index": 271,
+      "tw10_source_full_spr_segment_sha256": "329088eddcbe6718dc519d4cbce3027131af1549ee63d2aaaf1c3a77482b69e0",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 17,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 9,
+          "original_bitmap_sequence_u32le_sha256": "932a5aac7777f23d7a6bbb62d568129180fba6ea6ad5d8b9599d6934e31832ce",
+          "original_duration_word": 800,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "c5448834416ce0f75aef768e533b2d1fe5e7ca0d3a90cd5209f01850a3042dff",
+          "original_duration_word": 800,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "3df0a03fffe9290c7ca2f480818d32491ea95e0b628c64d938efa23a6190b1d8",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": [
+        "INTEGRATION66"
+      ]
+    },
+    {
+      "source_getpet_integer": 54,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "giiru/event/ev28_ed1",
+          "source_script_sha256": "76248f064cbc443ab1452c0cd18a3b12067bc51d0ca98a2bbf4ae91a891b9c4c",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 18,
+          "source_command_line_sha256": "eb5b9b42ef863e24f37d5ae881b19263bfae67c1944da706f71624b21b760048",
+          "source_event_block_lines": [
+            1,
+            20
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 42,
+      "mixed25_enemy_instance_line_sha256": "a9be060431ba00f46131322bf681f9b9cab4ed97361434ac667779216b280687",
+      "mixed25_template_numeric_id": 91,
+      "mixed25_template_source_line": 91,
+      "mixed25_template_source_line_sha256": "8e7d40b7a7ec1acc150743a7abe6a1b329d5f6a6257174e9905bc10e90404e6f",
+      "mixed25_template_graphic_numeric": 100287,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100287,
+      "tw10_source_spr_group_index": 277,
+      "tw10_source_full_spr_segment_sha256": "ef9b8508b2df8eae3865d279831ef78ff75ae3e8f5465b88211c7a8f7acfcc8a",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 23,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 8,
+          "original_bitmap_sequence_u32le_sha256": "596c8d766721d47333cc4a24b9ccc670c1441580876cec76cccd1777b43629fb",
+          "original_duration_word": 1200,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 13,
+          "original_bitmap_sequence_u32le_sha256": "e043c9ceb91e898025bb6bafacc028a512ba40023ce9c9871c5e683cdcd4a053",
+          "original_duration_word": 1500,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "97520db7d3a16f603c3c1e95db5357402f0a8b25b944a08946af84e2c77f36f9",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": []
+    },
+    {
+      "source_getpet_integer": 55,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "giiru/event/ev28_ed3",
+          "source_script_sha256": "aa9ca5b780ed6bff478fc59865bc2239a37c392698259b17abe3b863635f4f46",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 18,
+          "source_command_line_sha256": "1d324150045f9cf4030e30ad61508063744c35f8994fa424781667f229b3ee7c",
+          "source_event_block_lines": [
+            1,
+            20
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 43,
+      "mixed25_enemy_instance_line_sha256": "d3c4dbd610bd246b68de524e0d697eae8b554690647214018b1550d411e16a04",
+      "mixed25_template_numeric_id": 92,
+      "mixed25_template_source_line": 92,
+      "mixed25_template_source_line_sha256": "96635373356600b533e8c1fd5a7e76fcaaaf56d103835397f237e031dcb5aa4c",
+      "mixed25_template_graphic_numeric": 100288,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100288,
+      "tw10_source_spr_group_index": 278,
+      "tw10_source_full_spr_segment_sha256": "9668ac38f750d8a0d7d6022d46df8593e107fb6a37d465202466258cd53bf64d",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 27,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 12,
+          "original_bitmap_sequence_u32le_sha256": "19b61e58e907052d55bf7064359e59b6da99cbfd1fd6eb4718871d67e0048230",
+          "original_duration_word": 1200,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 13,
+          "original_bitmap_sequence_u32le_sha256": "5af1854a39aba5eb7cdad79c5a5199108d856963c4b38780ef7b6c7afc70d46a",
+          "original_duration_word": 1500,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "28ea534483b57f9405d68b07faab8e229e3e055aaa677f270e1ebbde78c6f74f",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 19,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": []
+    },
+    {
+      "source_getpet_integer": 56,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "giiru/event/ev28_ed4",
+          "source_script_sha256": "660784e8ad1b2a3d1ca9592caf2ab6d1eed5d9ea77fd1f6ea8156d9544e6d2a0",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 18,
+          "source_command_line_sha256": "f33d9525e09b493a7820bd34c9cfc879f6a3c46b7fde08f5a0e5ee6496f698fb",
+          "source_event_block_lines": [
+            1,
+            20
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 44,
+      "mixed25_enemy_instance_line_sha256": "ba01d0870b5a5801dc39fd826fde39e00c9133937942e8eda3a54f5e8950a6b8",
+      "mixed25_template_numeric_id": 93,
+      "mixed25_template_source_line": 93,
+      "mixed25_template_source_line_sha256": "0dca8c9084af6a60a8bea2fbc1eb16e8d9b80c58487857d92a3a77a8b34155d8",
+      "mixed25_template_graphic_numeric": 100289,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100289,
+      "tw10_source_spr_group_index": 279,
+      "tw10_source_full_spr_segment_sha256": "a7ca74c4d9b9cdf8992ff5dbe2692dfc3a006bd73d797c7b05799cbccbe451ec",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 27,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 12,
+          "original_bitmap_sequence_u32le_sha256": "67ef01efb7c509ac19d1b6b837a8db864d0a9498d0ed2de9dc21c5967cdf4384",
+          "original_duration_word": 1200,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 13,
+          "original_bitmap_sequence_u32le_sha256": "46c0f2a5ed81de857d7ff36513b9b416787e58894671f14df232e8cb1d2341b3",
+          "original_duration_word": 1500,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "494166e7db2a5501813e1ac16090c6fee1fa8210a59eb74f552497fdc5f2e8ce",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 19,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": []
+    },
+    {
+      "source_getpet_integer": 57,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "giiru/event/ev28_ed2",
+          "source_script_sha256": "5cd64953d462ac401a2a6f59ffae8fe5ee16086d68c9f682a292cf3daad80e4c",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 18,
+          "source_command_line_sha256": "d4d3b3a9da2ec3246d47e4175577d2bbcb8f261db3ba796e6f7942b4e46fcc6a",
+          "source_event_block_lines": [
+            1,
+            20
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 45,
+      "mixed25_enemy_instance_line_sha256": "0e5091cff2114a2e3cb500a2876a3aeb442665f6189766c3e426267ec003c2b7",
+      "mixed25_template_numeric_id": 94,
+      "mixed25_template_source_line": 94,
+      "mixed25_template_source_line_sha256": "0f55136e1294c84455ba5c90005e8f4909ad3feb25f7cb7f38c4b3f8d0c830bb",
+      "mixed25_template_graphic_numeric": 100290,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100290,
+      "tw10_source_spr_group_index": 280,
+      "tw10_source_full_spr_segment_sha256": "b8a07e6aaad3f273008477ee0563499115f11ac7ec1714f0fa09855cfc84e978",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 23,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 8,
+          "original_bitmap_sequence_u32le_sha256": "7ce60f6e1fc82b54dbcd6f853510fa33f52f4632b63ae90ae176c2227420f3a5",
+          "original_duration_word": 1200,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 13,
+          "original_bitmap_sequence_u32le_sha256": "df8ff048d884cfbfa583fe11151f928e3fa59568b3bed5688cd35cce94128e9a",
+          "original_duration_word": 1500,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "318f209f325472abade9d465e53fb0219ea3b3f7783d4c715a91e3ebfdb53fd1",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": []
+    },
+    {
+      "source_getpet_integer": 76,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "sainasu/event/oev_edd",
+          "source_script_sha256": "e36d22aa365dae29b57eded4bb3b8dd3ed3edab0f069186ae6041e4eb45a4537",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 27,
+          "source_command_line_sha256": "9c0f9ee1ae0c7a661f532f23b568f88a9fd9ad224909f38c98cc3898ed3a2c69",
+          "source_event_block_lines": [
+            18,
+            28
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 55,
+      "mixed25_enemy_instance_line_sha256": "6c1efb4c021fddfc3d3d9b32cc7b49be4e3fa03b905457a4e517e8c36a804ff3",
+      "mixed25_template_numeric_id": 142,
+      "mixed25_template_source_line": 142,
+      "mixed25_template_source_line_sha256": "eefcade2cdaced32fc7e4ec39f3e0b78acd17bb204504eb15c1fe7b6638ff1bb",
+      "mixed25_template_graphic_numeric": 100308,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100308,
+      "tw10_source_spr_group_index": 290,
+      "tw10_source_full_spr_segment_sha256": "b1da67c329bfb9f96769921e8a39374d9ae2236fbcdb01c258b7cc98fa447b26",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 16,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 8,
+          "original_bitmap_sequence_u32le_sha256": "f11368e11a36dbf1d2cbb53c575cead2b6099affaf28d501be27176f86f2e4ce",
+          "original_duration_word": 600,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "d61cf48e186adb280e1dddcbf0347fb6e5c59e799d378bc33b72fe3f0c508ceb",
+          "original_duration_word": 800,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "a30cd233da0748765364572aa93fb9408e51407c3e383cadf998aa705784bbb9",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": [
+        "INTEGRATION66"
+      ]
+    },
+    {
+      "source_getpet_integer": 78,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "jaruga/event/oev_edb",
+          "source_script_sha256": "0fd527bd0817d0362b1cab22828b8f2c963e4ca88b088af6f736a6a4a254b423",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 21,
+          "source_command_line_sha256": "e43e97851847f40ecf3df1d7e9ca8211c7811821a99c43e19d6c786ece12e6b4",
+          "source_event_block_lines": [
+            1,
+            22
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 57,
+      "mixed25_enemy_instance_line_sha256": "13a37df582dd26f6269e2051a7766469cae3879781f198b297a3f2fda420e47b",
+      "mixed25_template_numeric_id": 144,
+      "mixed25_template_source_line": 144,
+      "mixed25_template_source_line_sha256": "3d5642e244a1e03bf1772ff8820ee75348d8510263352cf7421351299d932027",
+      "mixed25_template_graphic_numeric": 100310,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100310,
+      "tw10_source_spr_group_index": 292,
+      "tw10_source_full_spr_segment_sha256": "b6d2a586eb82a456d2e91ee37c25d25694475233074a6b57bedfbc05e0850505",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 16,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 8,
+          "original_bitmap_sequence_u32le_sha256": "a9e21bbf3975dbc9249a1fbc13828d128500de40fcd03a5f29109d6e9b49d029",
+          "original_duration_word": 600,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "e4db86252e79f87c88da1055c5d1b8418150465c8410c2b345a36b5fe24489e8",
+          "original_duration_word": 800,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "f17d4d31c51d1e6aa4be31aa0311e101a463301ee4eb81f0faaebb2a136ab764",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": [
+        "INTEGRATION66"
+      ]
+    },
+    {
+      "source_getpet_integer": 93,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "seimu/event/event02_1",
+          "source_script_sha256": "63712fde0c36778b6b65af560a4c396ce8a04877243a05da41f63dd0359b8c34",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 11,
+          "source_command_line_sha256": "fd2a203b049daaf9fc8321583664eefc6db7e67294f6e6c7b6a6d44b44d20aba",
+          "source_event_block_lines": [
+            1,
+            13
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 58,
+      "mixed25_enemy_instance_line_sha256": "a0d4face2e73e2a4bc82f9d7fda3b6ba068e685b12389baefaea991a19b4cafc",
+      "mixed25_template_numeric_id": 171,
+      "mixed25_template_source_line": 171,
+      "mixed25_template_source_line_sha256": "25edc42c91edae5d6625f3714dbcc53eba3cd2064c9dd53ea58bb887a765cde7",
+      "mixed25_template_graphic_numeric": 100319,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100319,
+      "tw10_source_spr_group_index": 293,
+      "tw10_source_full_spr_segment_sha256": "f776bacec9370a6f8f665ffd47fcdf84839f0f348e787e11b43af4f3d0909ef6",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 21,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 13,
+          "original_bitmap_sequence_u32le_sha256": "4ecdc92c7a6ec547867b95dc2e7d3bba43d6730fc3b6bc2dad4be2d1c4b647d6",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "2d0714ec724abdbe2a4db02257d6060bd7dcc694ada2cd228b9fc8003fd18c81",
+          "original_duration_word": 800,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "67c325023dbb8860fdda7cb5e4c19a63f51982a356aaac77e15cae918c082c67",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 13,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": [
+        "INTEGRATION62"
+      ]
+    },
+    {
+      "source_getpet_integer": 94,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "sainasu/event/oev_edc",
+          "source_script_sha256": "a1891aef372be0012df9f830560f513c41e8334a62ff31f26b2da0124632f037",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 19,
+          "source_command_line_sha256": "adeb48f9ace371838994c4fba1e319467e1d6716c365bf878a5c0b601a986d33",
+          "source_event_block_lines": [
+            1,
+            20
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 59,
+      "mixed25_enemy_instance_line_sha256": "308028a7e7f7d2bc5790fef74fdc9dca37a52b84b541e3a4ddd034da5ccf3c88",
+      "mixed25_template_numeric_id": 172,
+      "mixed25_template_source_line": 172,
+      "mixed25_template_source_line_sha256": "e46387d7f48cedbe1a49f0560727311e9ec5df4433ea20433c0eafc661fa78e6",
+      "mixed25_template_graphic_numeric": 100320,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100320,
+      "tw10_source_spr_group_index": 294,
+      "tw10_source_full_spr_segment_sha256": "9928bf4b0ead837cf7d82265059ab4e77b71ee86f26929a516d9c78c33b1a806",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 16,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 8,
+          "original_bitmap_sequence_u32le_sha256": "88f354f55b83c98b2f14b5f7d69fe28d76d77b02315630a56340982bbe4b5910",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "a0ab14d5ae0429613aae6a9b78ef88c1fe58c5d5bf8cde948b3b4df1bd9010c0",
+          "original_duration_word": 800,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "dceb5c510c39bce4130e27cae52d634cfd455c20c1e1c1e71ab66762d3314271",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": [
+        "INTEGRATION66"
+      ]
+    },
+    {
+      "source_getpet_integer": 95,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "sainasu/event/event15_1",
+          "source_script_sha256": "cb90d02b6e9ad4ba9b4e8d21c01d0077ab2b82f8de1e5f018a4ccb1a80fae129",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 22,
+          "source_command_line_sha256": "334a2a2f1491f3a3f52f64ccfde561228c2901f3425b6b03ab7a57eda1b6ee47",
+          "source_event_block_lines": [
+            14,
+            24
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 60,
+      "mixed25_enemy_instance_line_sha256": "4351973062beaad59d77c1713f3d9db8ed0a4a1a86d729d67202009dd3ead3ff",
+      "mixed25_template_numeric_id": 173,
+      "mixed25_template_source_line": 173,
+      "mixed25_template_source_line_sha256": "796cb8d82babf0811691d4af9909cbb33f915108bbc64ffbd11d931685467f7f",
+      "mixed25_template_graphic_numeric": 100321,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100321,
+      "tw10_source_spr_group_index": 295,
+      "tw10_source_full_spr_segment_sha256": "a949b99c53f5863a85feb041504679d179f05ad42ed6569fc71e07a0200c5c03",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 21,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 13,
+          "original_bitmap_sequence_u32le_sha256": "88ccf1399f821f39f1ba7958ad1440a068764ba5b0820db23ef0fb534cbb8c80",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "4efbf8e57fa797a4a851b69ab2776d51c4c9b85f1abf0893cc3b7a3c8e97baed",
+          "original_duration_word": 800,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "401659ab49be00c56775580d8aa48b5f750ff580f9d3e8f7897fcb2e7b0f0744",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 13,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": []
+    },
+    {
+      "source_getpet_integer": 96,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "jaruga/event/oev_ed1",
+          "source_script_sha256": "169693318607445365974327825fbd4c491b6161a68b7e1e552ca04a69bf2cc5",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 19,
+          "source_command_line_sha256": "44bb8da15c24d61b649594aa78cfb9f8c0530728671d1be90fa6261b307a2ed5",
+          "source_event_block_lines": [
+            1,
+            20
+          ]
+        },
+        {
+          "source_script_path": "sainasu/event/oev_edd",
+          "source_script_sha256": "e36d22aa365dae29b57eded4bb3b8dd3ed3edab0f069186ae6041e4eb45a4537",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 27,
+          "source_command_line_sha256": "9c0f9ee1ae0c7a661f532f23b568f88a9fd9ad224909f38c98cc3898ed3a2c69",
+          "source_event_block_lines": [
+            18,
+            28
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 61,
+      "mixed25_enemy_instance_line_sha256": "e97205f027c69e172905878ddd953ccd4d400c9718920825518b3cb84d332f14",
+      "mixed25_template_numeric_id": 174,
+      "mixed25_template_source_line": 174,
+      "mixed25_template_source_line_sha256": "e399ce89ae74d93bfbd83e137d9b8094afba5660f2844790bef8b1634939071f",
+      "mixed25_template_graphic_numeric": 100322,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100322,
+      "tw10_source_spr_group_index": 296,
+      "tw10_source_full_spr_segment_sha256": "14af768381457de178568e8c65bc8a87becd0488c73d9c3a0cbd30ce0ff70b00",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 16,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 8,
+          "original_bitmap_sequence_u32le_sha256": "294458c2ba6e5f2db20a38addf87c374c3b5c83a7ebcd2a5f1d9f4d92c51cd28",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "01c46f3bf0d1183953fd8ef39331c3981c9abff0c645262f9d11adf6207d60e7",
+          "original_duration_word": 800,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "b08df5cf1334b951def5d7ed5ed70a59107c3c44697d1bc0f9d7600dc44aebe7",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": [
+        "INTEGRATION66"
+      ]
+    },
+    {
+      "source_getpet_integer": 309,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "jaruga/event/oev_ed1",
+          "source_script_sha256": "169693318607445365974327825fbd4c491b6161a68b7e1e552ca04a69bf2cc5",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 19,
+          "source_command_line_sha256": "44bb8da15c24d61b649594aa78cfb9f8c0530728671d1be90fa6261b307a2ed5",
+          "source_event_block_lines": [
+            1,
+            20
+          ]
+        },
+        {
+          "source_script_path": "sainasu/event/oev_edd",
+          "source_script_sha256": "e36d22aa365dae29b57eded4bb3b8dd3ed3edab0f069186ae6041e4eb45a4537",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 27,
+          "source_command_line_sha256": "9c0f9ee1ae0c7a661f532f23b568f88a9fd9ad224909f38c98cc3898ed3a2c69",
+          "source_event_block_lines": [
+            18,
+            28
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 164,
+      "mixed25_enemy_instance_line_sha256": "ca968fc22393b0a91899bf0892db146ab0c8d8ed56e086f59b7e513f44b43d4f",
+      "mixed25_template_numeric_id": 193,
+      "mixed25_template_source_line": 186,
+      "mixed25_template_source_line_sha256": "ad29a51aa888777421b6c34501a6557539976973b2f2c05e15c03bc5de12f423",
+      "mixed25_template_graphic_numeric": 100329,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100329,
+      "tw10_source_spr_group_index": 303,
+      "tw10_source_full_spr_segment_sha256": "7e50e9e34385f29e64de256ad053bfe1c2540d17444b74d5218c37ee5b7d57ce",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 16,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "bd34f08a9c05a27504c7617dabf8531371ea5577a60da16843190c2e04d8e9e7",
+          "original_duration_word": 750,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 8,
+          "original_bitmap_sequence_u32le_sha256": "1f58b764f6e7a52e7ba6e3e014160a679649a5b8888d56b602eb56cbfd12a0fb",
+          "original_duration_word": 1200,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "bf73fb9579518c3ab114b0769e139911ce697cfe720f8b8881612d611920b81b",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 14,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": [
+        "INTEGRATION66"
+      ]
+    },
+    {
+      "source_getpet_integer": 310,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "poru/mary01",
+          "source_script_sha256": "0c5c5fdd64ec72831cb473baf5aa39b05322dd80848aa024e0c6e9494e9b36cb",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 13,
+          "source_command_line_sha256": "196102c8286556aaa7a5b7cb46fcdd056f84f8aced94a93069372f2a444e377d",
+          "source_event_block_lines": [
+            1,
+            15
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 165,
+      "mixed25_enemy_instance_line_sha256": "e7931408a56836006a9ca29056e0bd97f58708f6e850ede6493b9446b1acb262",
+      "mixed25_template_numeric_id": 194,
+      "mixed25_template_source_line": 187,
+      "mixed25_template_source_line_sha256": "f78ed6da273c04d45210b17a02b8a7778fe4ea8599584bbf7c391122424cafcc",
+      "mixed25_template_graphic_numeric": 100330,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100330,
+      "tw10_source_spr_group_index": 304,
+      "tw10_source_full_spr_segment_sha256": "25e98217d01253afe10088eccc1a8738d2b5b0f347fb2be2135b9611829cef39",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 19,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 9,
+          "original_bitmap_sequence_u32le_sha256": "73b615d341e9c6407c1a4ddbad7547c57b2eebfccd8848f33802aee93622f9e3",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 8,
+          "original_bitmap_sequence_u32le_sha256": "0f940eb2d41c6895700ea981deec7632ece2a9e6bb5ae7c0be0278d6e7a86626",
+          "original_duration_word": 1200,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "dbd9855b9cefa75cb018548182e3769ac88fb08210c76648ee245b1b9a0e61e5",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 14,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": []
+    },
+    {
+      "source_getpet_integer": 328,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "jaruga/event/oev_ed1",
+          "source_script_sha256": "169693318607445365974327825fbd4c491b6161a68b7e1e552ca04a69bf2cc5",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 19,
+          "source_command_line_sha256": "44bb8da15c24d61b649594aa78cfb9f8c0530728671d1be90fa6261b307a2ed5",
+          "source_event_block_lines": [
+            1,
+            20
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 179,
+      "mixed25_enemy_instance_line_sha256": "c66e92f3ccbd4715d748069b200d244e68ebcf561ae7edb1d63b10a0b8bff50f",
+      "mixed25_template_numeric_id": 243,
+      "mixed25_template_source_line": 211,
+      "mixed25_template_source_line_sha256": "02bf2bd02ae592dd8dc6a8ca4a6456fe5bee909581906f0cd0f84aad3b1411d6",
+      "mixed25_template_graphic_numeric": 100349,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100349,
+      "tw10_source_spr_group_index": 319,
+      "tw10_source_full_spr_segment_sha256": "02b1d5918e6a780ff6aaf65edb4efc08ffd324acb762654a0a52a5672ad3fc3e",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 16,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 8,
+          "original_bitmap_sequence_u32le_sha256": "1919de8e79f3c4169fafce8b6638bca20f535ae28817faaf2b09ad3f851939bd",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "6b0d9d777f835a431e4b9817b030b686ed46b6805a6003dd4909f268122363c5",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "8fb8dc64a38d635425fcd2f0be0ae9f8596d1a406bf560889c7b932a83820a87",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": [
+        "INTEGRATION66"
+      ]
+    },
+    {
+      "source_getpet_integer": 333,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "poru/team03",
+          "source_script_sha256": "9d9d8714cf8c9b86f22df3e626398bf0912e05dbcc6849ef46f4913d36af25c7",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 39,
+          "source_command_line_sha256": "c38b207d6b6407437242b0dfb061d2dec3d7ebadb4952699f5a57340fa5aba7e",
+          "source_event_block_lines": [
+            28,
+            43
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 184,
+      "mixed25_enemy_instance_line_sha256": "ba942b11e451c228f2d21a708609cc7d77147cdca54a5b15b9554c8d500006cf",
+      "mixed25_template_numeric_id": 254,
+      "mixed25_template_source_line": 216,
+      "mixed25_template_source_line_sha256": "6bb5da1ef167dc3451e6c2636b31ffbaa935d71ebf83f82c0c2ff96a576ece7b",
+      "mixed25_template_graphic_numeric": 100354,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100354,
+      "tw10_source_spr_group_index": 324,
+      "tw10_source_full_spr_segment_sha256": "2d2f5076afd20caa4b1f0a819ec628198f78d3ca0cb07d858e6d9fa65e8bee20",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 35,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 26,
+          "original_bitmap_sequence_u32le_sha256": "3296515ce95287d1c9efe48d88d9e3d4f0a087f0173bee1cb702ebde0f7c5dcb",
+          "original_duration_word": 1300,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 7,
+          "original_bitmap_sequence_u32le_sha256": "1f28ad9a61e99897b61623adff80bac0db85c41412a623e9f1e322b1cded101e",
+          "original_duration_word": 800,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "3812a7ccb12dc06fc442734b8f5d6addf8c8eb627a09318fb93f098f8e7261b1",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": []
+    },
+    {
+      "source_getpet_integer": 338,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "jaruga/event/oev_edb",
+          "source_script_sha256": "0fd527bd0817d0362b1cab22828b8f2c963e4ca88b088af6f736a6a4a254b423",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 21,
+          "source_command_line_sha256": "e43e97851847f40ecf3df1d7e9ca8211c7811821a99c43e19d6c786ece12e6b4",
+          "source_event_block_lines": [
+            1,
+            22
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 189,
+      "mixed25_enemy_instance_line_sha256": "952b5783444216a2fc4d0fda39c369c753fbd6fe460ac3e9704cb3e3f42e6dae",
+      "mixed25_template_numeric_id": 271,
+      "mixed25_template_source_line": 224,
+      "mixed25_template_source_line_sha256": "b9fb9b97c1f02745830d54250a13e5e8e1508127e78b03af6843786e9e55298a",
+      "mixed25_template_graphic_numeric": 100359,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100359,
+      "tw10_source_spr_group_index": 329,
+      "tw10_source_full_spr_segment_sha256": "99c09a003670dd66480fb43876f5e1a0a3e4523c27c668b33b7bc463c8513828",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 26,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 18,
+          "original_bitmap_sequence_u32le_sha256": "f1c6e24164a38eea32f40ace7f45865eeca5a7d34033f8a1eded851afbf1abba",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "74fd9f4f5e04b13d5d39b9e610f955485792af8542d64c6b069a94edb98fd819",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "ca24a777824f9d5981603f4daed68e73b026610cb96abe3774f66c2186f9720e",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": [
+        "INTEGRATION66"
+      ]
+    },
+    {
+      "source_getpet_integer": 341,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "seimu/event/event02_1",
+          "source_script_sha256": "63712fde0c36778b6b65af560a4c396ce8a04877243a05da41f63dd0359b8c34",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 52,
+          "source_command_line_sha256": "cb39a5aff36c99f04f747e892198ffba68f1d566fdc92e2b92fbe319a6ab91ec",
+          "source_event_block_lines": [
+            42,
+            53
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 192,
+      "mixed25_enemy_instance_line_sha256": "75f1f8f939c7c69518dced37f5009a2f394ad58c98a6e319fc3b7ea263109b8e",
+      "mixed25_template_numeric_id": 274,
+      "mixed25_template_source_line": 227,
+      "mixed25_template_source_line_sha256": "2ad20a29a912a780788c9634a88787b17946b2a9152310c97867047d3caf272f",
+      "mixed25_template_graphic_numeric": 100362,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100362,
+      "tw10_source_spr_group_index": 332,
+      "tw10_source_full_spr_segment_sha256": "42a308083c2f8ca1a69b0818b3f621586fe9c351098ed32e095fd8b8c3ac70db",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 25,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 17,
+          "original_bitmap_sequence_u32le_sha256": "40d60925b6d2a02cc5bc4ba603e26b1b2458fb00e6c8218c540d714df0715198",
+          "original_duration_word": 1100,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "c7df3b6451a58bd1b3e1db6ea975b8fbd073f1c2551e172614f78ea5ab989fdf",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "c0615a77ddf02c60bac2b4e75bcdc2dc5b43b8799edf2c7c0ba40f3fda0b0b0c",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": [
+        "INTEGRATION62"
+      ]
+    },
+    {
+      "source_getpet_integer": 350,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "sainasu/event/oev_edc",
+          "source_script_sha256": "a1891aef372be0012df9f830560f513c41e8334a62ff31f26b2da0124632f037",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 19,
+          "source_command_line_sha256": "adeb48f9ace371838994c4fba1e319467e1d6716c365bf878a5c0b601a986d33",
+          "source_event_block_lines": [
+            1,
+            20
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 197,
+      "mixed25_enemy_instance_line_sha256": "5a9fcfe948fb045815e11ac96994dfa89ae2b2bd473da716be044050826eaca1",
+      "mixed25_template_numeric_id": 301,
+      "mixed25_template_source_line": 233,
+      "mixed25_template_source_line_sha256": "590a282e58f868b9eb5fb35de32d4e4680937d953b8c7b89d2d4b86757734940",
+      "mixed25_template_graphic_numeric": 100371,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100371,
+      "tw10_source_spr_group_index": 337,
+      "tw10_source_full_spr_segment_sha256": "fff075bbef9214c1220742f8714934564e232dbb59e1a5125714275c3e82cff4",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 20,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 10,
+          "original_bitmap_sequence_u32le_sha256": "270e9326e1f703a8619330f45668a3c796f9241c62e6096ec2c4aec31dd68a61",
+          "original_duration_word": 1200,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 9,
+          "original_bitmap_sequence_u32le_sha256": "ffece0692c127bbe4b7285b16d3a029653e5c1e8ae1119ae0e791a0a4e673a2f",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 1,
+          "original_bitmap_sequence_u32le_sha256": "352aab2430598e61e79c7d7bfd2d15cbd9609c9fc6111999eea1ab31a219456b",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 14,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": [
+        "INTEGRATION66"
+      ]
+    },
+    {
+      "source_getpet_integer": 351,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "quiz/equiz_04",
+          "source_script_sha256": "786a787c285ecd3821aa72cbb7262defe7d9156556dec2d8d9f9eea73b011bea",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 23,
+          "source_command_line_sha256": "63913f45b718945eb2541857d00788c45676d19a386900e068afed8055eb8e34",
+          "source_event_block_lines": [
+            14,
+            26
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 198,
+      "mixed25_enemy_instance_line_sha256": "b10ddd869a3b34d33a4a13f8d6b049226027a2881586f38ec5be8c5fd9e054bf",
+      "mixed25_template_numeric_id": 302,
+      "mixed25_template_source_line": 234,
+      "mixed25_template_source_line_sha256": "7425916dbf0ddc1903042c3e38f2ac87d66808a76debf9cf0ebbe020c18bc1cb",
+      "mixed25_template_graphic_numeric": 100372,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100372,
+      "tw10_source_spr_group_index": 338,
+      "tw10_source_full_spr_segment_sha256": "770cab7bb2ba84daa827692a3b5ce47f83ce36595a164d19cde8e54ebfdc3627",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 27,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 17,
+          "original_bitmap_sequence_u32le_sha256": "d9445dcd829131869a00514760ee7d739c1d32ef9b90de93efc4e0d11ac4315a",
+          "original_duration_word": 1750,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 9,
+          "original_bitmap_sequence_u32le_sha256": "4580e7856196e88b420320723f59ae487bb33380da230a686fe8a036fc54dc7c",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 1,
+          "original_bitmap_sequence_u32le_sha256": "e3b5e2b41308392cf58d4b4046aa33aa44a417e9ffad2dc8535db914686a0fdf",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 15,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": []
+    },
+    {
+      "source_getpet_integer": 352,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "giiru/event/sink/equiz_04",
+          "source_script_sha256": "ae5a4a1c98a7378fdec4d8c3568446b444220e261313480f8386525c2ea1538d",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 17,
+          "source_command_line_sha256": "940a08fadf7c01d52d9cc5653cec7e07c0204f91e2d171ebc607ba30416f9001",
+          "source_event_block_lines": [
+            11,
+            20
+          ]
+        },
+        {
+          "source_script_path": "poru/boy04",
+          "source_script_sha256": "a945359e2375c513f056178d752b9777ec62214eaade9130f3661f40c0ca4e24",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 22,
+          "source_command_line_sha256": "940a08fadf7c01d52d9cc5653cec7e07c0204f91e2d171ebc607ba30416f9001",
+          "source_event_block_lines": [
+            11,
+            24
+          ]
+        },
+        {
+          "source_script_path": "quiz/equiz_04.BAK",
+          "source_script_sha256": "1ef7a1510af954773106b948a795ec352d6a55b4c5672afe32d737931be54946",
+          "source_is_named_backup": true,
+          "original_getpet_source_line": 23,
+          "source_command_line_sha256": "940a08fadf7c01d52d9cc5653cec7e07c0204f91e2d171ebc607ba30416f9001",
+          "source_event_block_lines": [
+            14,
+            26
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 199,
+      "mixed25_enemy_instance_line_sha256": "09c86e1c193d8e3b3293d6593a1a0f6de4c7aac506b1f0247c69a6fa05f5b7bf",
+      "mixed25_template_numeric_id": 303,
+      "mixed25_template_source_line": 235,
+      "mixed25_template_source_line_sha256": "64083c55e87a31b4f4cc737db725663fc560e8b9b23c002f52b8b6297332ffb2",
+      "mixed25_template_graphic_numeric": 100373,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100373,
+      "tw10_source_spr_group_index": 339,
+      "tw10_source_full_spr_segment_sha256": "f3d76b5cc31542a372b4a207a2fb5b58c6eddeea45891182c53330e343563721",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 27,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 17,
+          "original_bitmap_sequence_u32le_sha256": "c23d3b7c949a9e91c435621b93a9e511de2d1daee10a58bfbd94b1a7471f6295",
+          "original_duration_word": 2000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 9,
+          "original_bitmap_sequence_u32le_sha256": "b44acb8d9f145114c6990c92cb9a4cbc26c54c4cf3db4eb1c4732059472215ed",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 1,
+          "original_bitmap_sequence_u32le_sha256": "eba988cfe4290c19e51733a7e9dd4272256be653cdf8a02dce0e9740250fa216",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 14,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": []
+    },
+    {
+      "source_getpet_integer": 355,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "giiru/event/event30_5",
+          "source_script_sha256": "9c1983e4b21b307cffd8f3f2e46e95a1d68e1e0769862f9c32bf5fbd1c72c8b3",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 14,
+          "source_command_line_sha256": "9c228804fe2d49aab96611d8efee05282ee0bb2ae6b233eff003bd39821ababc",
+          "source_event_block_lines": [
+            1,
+            16
+          ]
+        },
+        {
+          "source_script_path": "giiru/event/event30_5.old",
+          "source_script_sha256": "2034e1564d1cb464bf79df0fb02c7453c920515d60de2d76404ea1af27fb0e4f",
+          "source_is_named_backup": true,
+          "original_getpet_source_line": 14,
+          "source_command_line_sha256": "9c228804fe2d49aab96611d8efee05282ee0bb2ae6b233eff003bd39821ababc",
+          "source_event_block_lines": [
+            1,
+            16
+          ]
+        },
+        {
+          "source_script_path": "king/event69_1",
+          "source_script_sha256": "634ff3e405b3829da55b9291cad2f98b3fbef3567a46cc048ae52a045df324e9",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 34,
+          "source_command_line_sha256": "9c228804fe2d49aab96611d8efee05282ee0bb2ae6b233eff003bd39821ababc",
+          "source_event_block_lines": [
+            24,
+            36
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 202,
+      "mixed25_enemy_instance_line_sha256": "c9a5ef4aabd5efdcc5519a2348050751013d9edf9dea75a619f570050deedafd",
+      "mixed25_template_numeric_id": 312,
+      "mixed25_template_source_line": 238,
+      "mixed25_template_source_line_sha256": "ffb53093a3911f38709e12becdc6be05098cc188cf803300ab11ae5cf6147347",
+      "mixed25_template_graphic_numeric": 100376,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100376,
+      "tw10_source_spr_group_index": 342,
+      "tw10_source_full_spr_segment_sha256": "617db52b14409fdbdb24ca96fae3456a03183a327abb49aa9630914944d9d4d0",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 16,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 8,
+          "original_bitmap_sequence_u32le_sha256": "86fd09115adf50d5962c9b8f6e21c01440ca853f07ea80135e873e37b0dadf42",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "1b2424b9bf487e067a4bd0c4b7050c6ed153751c3ec909ce812a3e5897038ddb",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "89799c1f0aef15a8ecdf4de7993f5bba5eb00146ef17528d4ff91f077a8d8c05",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": [
+        "INTEGRATION67"
+      ]
+    },
+    {
+      "source_getpet_integer": 358,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "jaruga/event/oev_ed1",
+          "source_script_sha256": "169693318607445365974327825fbd4c491b6161a68b7e1e552ca04a69bf2cc5",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 19,
+          "source_command_line_sha256": "44bb8da15c24d61b649594aa78cfb9f8c0530728671d1be90fa6261b307a2ed5",
+          "source_event_block_lines": [
+            1,
+            20
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 205,
+      "mixed25_enemy_instance_line_sha256": "2679a8aec04b23b15445b7a30e6e3136e8e5ccb0f935c1616e34bb5f020b614e",
+      "mixed25_template_numeric_id": 321,
+      "mixed25_template_source_line": 242,
+      "mixed25_template_source_line_sha256": "0ef8acaac87da3b1ab90e6f559c958ce200cceedac1ea03f9c7b241572e70bf5",
+      "mixed25_template_graphic_numeric": 100379,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100379,
+      "tw10_source_spr_group_index": 345,
+      "tw10_source_full_spr_segment_sha256": "355f06e73d0e277beed5abf221f80babbac98c123047a732ca4f1181dd80b65d",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 22,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 14,
+          "original_bitmap_sequence_u32le_sha256": "4fb76b1573099ced545e81b888c1bbc97678ff6952a4b610f889d1fe4aa4b230",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "8f22350e06d2304e80e535ce86aadd44a971316334c5477ad212990a7c9eec75",
+          "original_duration_word": 800,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "1a78cc03d9a8c32da67dbbe43dbb5f40d6f2844f375b95008fdbf835674573ef",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": [
+        "INTEGRATION66"
+      ]
+    },
+    {
+      "source_getpet_integer": 360,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "jaruga/event/oev_edb",
+          "source_script_sha256": "0fd527bd0817d0362b1cab22828b8f2c963e4ca88b088af6f736a6a4a254b423",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 21,
+          "source_command_line_sha256": "e43e97851847f40ecf3df1d7e9ca8211c7811821a99c43e19d6c786ece12e6b4",
+          "source_event_block_lines": [
+            1,
+            22
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 207,
+      "mixed25_enemy_instance_line_sha256": "f17d916f19cdef9354ca8ceb870cf63af6d4a5490725224e1d3ee54629f88977",
+      "mixed25_template_numeric_id": 323,
+      "mixed25_template_source_line": 244,
+      "mixed25_template_source_line_sha256": "c59dcdc665ce18de134695a6c0faff1f37832f5c80a24f367c26a49419f769e2",
+      "mixed25_template_graphic_numeric": 100381,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100381,
+      "tw10_source_spr_group_index": 347,
+      "tw10_source_full_spr_segment_sha256": "41e0bcee88f18249bbe418311cac48c278d7412a1e4029ce920933124cadef82",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 22,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 14,
+          "original_bitmap_sequence_u32le_sha256": "6c2009b9514f05caffb05ba99353a4d924e1194a7a101c491ca888b3cc4a88a4",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "4b7da0bc4aa18bb709a84644346abe71e4a3401c999f83a2116dc012f1921e54",
+          "original_duration_word": 800,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "c160e8e13500c03b2df620072fba3386d1386ff180fa5bb1bfd08d49dd155679",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": [
+        "INTEGRATION66"
+      ]
+    },
+    {
+      "source_getpet_integer": 361,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "sainasu/event/oev_edd",
+          "source_script_sha256": "e36d22aa365dae29b57eded4bb3b8dd3ed3edab0f069186ae6041e4eb45a4537",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 27,
+          "source_command_line_sha256": "9c0f9ee1ae0c7a661f532f23b568f88a9fd9ad224909f38c98cc3898ed3a2c69",
+          "source_event_block_lines": [
+            18,
+            28
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 208,
+      "mixed25_enemy_instance_line_sha256": "61fb607f7ffbb5d59f9763212b504230f96563199dc47eed29d000ad247a50d0",
+      "mixed25_template_numeric_id": 324,
+      "mixed25_template_source_line": 245,
+      "mixed25_template_source_line_sha256": "9b27aed9ce806d923bdd9f82901032a6aa57be318456b2c7dd0fbe1da12b54dd",
+      "mixed25_template_graphic_numeric": 100382,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100382,
+      "tw10_source_spr_group_index": 348,
+      "tw10_source_full_spr_segment_sha256": "4a48eb56e7b161213305cdb3535e22830fc78e69d2f541da48a2d00502f35eed",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 96,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 88,
+          "original_bitmap_sequence_u32le_sha256": "6bb77d8ca242df764a1873e96a1dc6d29909fe944db21195007c46bdc28d632a",
+          "original_duration_word": 1200,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "a39fac9ca8ad1596217932a6ae9679fff5f95685253fd1f8492ee5576d3023ca",
+          "original_duration_word": 800,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "e3a73832fbb4fef3678b02e84ff97b4f7d0d9375768a85dc0056a45cfe5f8e36",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": [
+        "INTEGRATION66"
+      ]
+    },
+    {
+      "source_getpet_integer": 365,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "jaruga/event/oev_ed1",
+          "source_script_sha256": "169693318607445365974327825fbd4c491b6161a68b7e1e552ca04a69bf2cc5",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 19,
+          "source_command_line_sha256": "44bb8da15c24d61b649594aa78cfb9f8c0530728671d1be90fa6261b307a2ed5",
+          "source_event_block_lines": [
+            1,
+            20
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 212,
+      "mixed25_enemy_instance_line_sha256": "05d6bf06ecbd50b10eda6f62846c694d6fe5068981884f8dc369bce2720dff6f",
+      "mixed25_template_numeric_id": 333,
+      "mixed25_template_source_line": 249,
+      "mixed25_template_source_line_sha256": "d080a4c2d77e110d177a48a1630d37bbc827dea9ca8193f462c007b447e9506c",
+      "mixed25_template_graphic_numeric": 100386,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100386,
+      "tw10_source_spr_group_index": 352,
+      "tw10_source_full_spr_segment_sha256": "be2f65666905ab33531feb55fde56e716c889f839f8eb8b5580c11a2159e9aa0",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 16,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 8,
+          "original_bitmap_sequence_u32le_sha256": "db7ef6eb809457c57bec909b40628ca31a1f4862853b86efcf358dba7732d524",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "7aa83a15e8f657065745454598a292d490b37c9057dd454d8fcacd8ff4116009",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "d29f45316b3f7a5a5aab53ef496ffad7ed8bdeeaa0f46c2c40b529730c8417f3",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": [
+        "INTEGRATION66"
+      ]
+    },
+    {
+      "source_getpet_integer": 366,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "jaruga/event/oev_edb",
+          "source_script_sha256": "0fd527bd0817d0362b1cab22828b8f2c963e4ca88b088af6f736a6a4a254b423",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 21,
+          "source_command_line_sha256": "e43e97851847f40ecf3df1d7e9ca8211c7811821a99c43e19d6c786ece12e6b4",
+          "source_event_block_lines": [
+            1,
+            22
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 213,
+      "mixed25_enemy_instance_line_sha256": "f65862cf659c2bf2fd27bdc97fdbbaddfa0f03e64d014fb48d604cc6576cab05",
+      "mixed25_template_numeric_id": 334,
+      "mixed25_template_source_line": 250,
+      "mixed25_template_source_line_sha256": "c4d52e808c3c572325f8293c706a2216f4367e0442ed31094152deec4f80dd8f",
+      "mixed25_template_graphic_numeric": 100387,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100387,
+      "tw10_source_spr_group_index": 353,
+      "tw10_source_full_spr_segment_sha256": "c10cddd22c44e433cd7fbc2e3bc750c345c936b3217f0f9a71782fe5378361d1",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 16,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 8,
+          "original_bitmap_sequence_u32le_sha256": "4345f64947e9807465232e732ab35b1ba808e70eb0959c1efabda5a4d2369bad",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "bf581396616688f3538569c913dce77e44511fd00c7703752932de0176ee2638",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "6b99aa9817c1b89448ee3473eee93ea4b40c20f6798962a2aa49dec125dabc8c",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": [
+        "INTEGRATION66"
+      ]
+    },
+    {
+      "source_getpet_integer": 481,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "giiru/event/ev28_ed5",
+          "source_script_sha256": "612086ef08cd18aece794cb58b2a9e274676527ad144146f3e3ca4da7f9a517e",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 18,
+          "source_command_line_sha256": "9a611f4a543fcd4ffcc6959d6dedfc7a25cc90bebd83e3626c35a30c4cf11baf",
+          "source_event_block_lines": [
+            1,
+            20
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 320,
+      "mixed25_enemy_instance_line_sha256": "1c37cfdcd4b4f00b2f213385ff8279e8eb99bbd30993b161e539e3d20abd315a",
+      "mixed25_template_numeric_id": 95,
+      "mixed25_template_source_line": 95,
+      "mixed25_template_source_line_sha256": "c1ff0b19a0556cd8a142f804ad802a9c35f955cf6851fb3139f54e9a76c364c9",
+      "mixed25_template_graphic_numeric": 100394,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100394,
+      "tw10_source_spr_group_index": 360,
+      "tw10_source_full_spr_segment_sha256": "3df3893d1528273fdd935d46c729713ec5ff4efd73df4eb64fc47b9e5ab7225e",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 23,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 8,
+          "original_bitmap_sequence_u32le_sha256": "d27bbe5f38a3494ebc41f76c58ab0feb14afd7894817dcee3663f5f0119d28f8",
+          "original_duration_word": 1200,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 13,
+          "original_bitmap_sequence_u32le_sha256": "8ead80d073d22305c29806cbcace1b1fca9414c821aa851579ed65e78f2dee0a",
+          "original_duration_word": 1500,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "63660208684fed1e5e9d0d0d1310ab781db78a1ece1eb6c070fc73cf2a45daff",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": []
+    },
+    {
+      "source_getpet_integer": 482,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "jaruga/event/oev_edb",
+          "source_script_sha256": "0fd527bd0817d0362b1cab22828b8f2c963e4ca88b088af6f736a6a4a254b423",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 21,
+          "source_command_line_sha256": "e43e97851847f40ecf3df1d7e9ca8211c7811821a99c43e19d6c786ece12e6b4",
+          "source_event_block_lines": [
+            1,
+            22
+          ]
+        },
+        {
+          "source_script_path": "jaruga/event/oev_edb",
+          "source_script_sha256": "0fd527bd0817d0362b1cab22828b8f2c963e4ca88b088af6f736a6a4a254b423",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 21,
+          "source_command_line_sha256": "e43e97851847f40ecf3df1d7e9ca8211c7811821a99c43e19d6c786ece12e6b4",
+          "source_event_block_lines": [
+            1,
+            22
+          ]
+        },
+        {
+          "source_script_path": "sainasu/event/oev_edc",
+          "source_script_sha256": "a1891aef372be0012df9f830560f513c41e8334a62ff31f26b2da0124632f037",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 19,
+          "source_command_line_sha256": "adeb48f9ace371838994c4fba1e319467e1d6716c365bf878a5c0b601a986d33",
+          "source_event_block_lines": [
+            1,
+            20
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 321,
+      "mixed25_enemy_instance_line_sha256": "8e5c0cc9bb0e1958cd1f43981a5689092448eb067440b45956f06c540817bc74",
+      "mixed25_template_numeric_id": 175,
+      "mixed25_template_source_line": 175,
+      "mixed25_template_source_line_sha256": "397298070da19c898b6917649f9abe3890566b446e1e1f23828ee8a73a37bc1c",
+      "mixed25_template_graphic_numeric": 100395,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100395,
+      "tw10_source_spr_group_index": 361,
+      "tw10_source_full_spr_segment_sha256": "4a835ba8927bb19912541ed3ac9a45ce5a713d32796e099c9e0c43a54a9fa4ce",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 16,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 8,
+          "original_bitmap_sequence_u32le_sha256": "5cb344bb950a00b393e29b9ff634acacd69c3fa381b4231ce564a8ce59f09dbd",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "068123e0c3af92b5f968814dadecb081d55061a6fa041638f6755b3816850747",
+          "original_duration_word": 800,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "4c9c91f9a6bc1324227a6cb76c6591a6b2db19a2009939479a36f9ae5858a951",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": [
+        "INTEGRATION66"
+      ]
+    },
+    {
+      "source_getpet_integer": 484,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "king/event69_24",
+          "source_script_sha256": "90196083dc0be26e3d61787a1e3af1cd2b3d78e5d26566c6edcaaa67ee6862e8",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 18,
+          "source_command_line_sha256": "4e8fa2b14f872fa7f0312a9e85550d0baf701a38e4cff2f11ee112d3570c1b70",
+          "source_event_block_lines": [
+            9,
+            20
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 323,
+      "mixed25_enemy_instance_line_sha256": "cecccdeb14a974d2507b12a29579aa5c93b742e360cef3f1a76eeef1b1c18607",
+      "mixed25_template_numeric_id": 315,
+      "mixed25_template_source_line": 241,
+      "mixed25_template_source_line_sha256": "c24e36dbe831b2bc6715cfad2dd3276f6e804d93701fac9c25c765a4912aba6c",
+      "mixed25_template_graphic_numeric": 100430,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100430,
+      "tw10_source_spr_group_index": 393,
+      "tw10_source_full_spr_segment_sha256": "7da183de051160b99c95791e326e75343d77955a4f79f3eba3c74ba6c5d1fb13",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 20,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 12,
+          "original_bitmap_sequence_u32le_sha256": "720af740a1dcaa9de8ab6de4b99b56e6a1b614229250432f591a9527d6a8db07",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "5ba093fcfdf72d4108e2e090c68cd55b6416f710883e91ffdec4e3ea356c2df5",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "133aca71d43a3f11e5f80f4a707b30afd5f470401606e9fe5cbc20f5f6f4dd8e",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": [
+        "INTEGRATION67"
+      ]
+    },
+    {
+      "source_getpet_integer": 1479,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "king/event69_7",
+          "source_script_sha256": "022aaa645db2074216bfb9f87b04d8a87626ea7f9fd2b5a25b175f7eb0111634",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 120,
+          "source_command_line_sha256": "8c51942e12e8d63f9275cc7f476fe5956781d8a941d5941f4b87adda5c9a6146",
+          "source_event_block_lines": [
+            109,
+            123
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 1103,
+      "mixed25_enemy_instance_line_sha256": "bb0ef95e26ccb79d63a74c07d3f21687887bba1b2c7570d827f63a132cf207cd",
+      "mixed25_template_numeric_id": 718,
+      "mixed25_template_source_line": 519,
+      "mixed25_template_source_line_sha256": "64a7cf155a7530d2d7f38b4a4e15c937a7824a3494c54b1431a7caaf1fa2f597",
+      "mixed25_template_graphic_numeric": 100451,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100451,
+      "tw10_source_spr_group_index": 414,
+      "tw10_source_full_spr_segment_sha256": "01b99009142ed6ddecdc467a324ee89b4ea5b28dfe7a8b488b8dee8a3c0d6df6",
+      "tw10_original_animation_record_count": 104,
+      "tw10_source_selected_frame_positions": 38,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 27,
+          "original_bitmap_sequence_u32le_sha256": "5b93e796465facfe305384bf82b6b4e26cbe2df39364a3cf4f98b1975c063954",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 9,
+          "original_bitmap_sequence_u32le_sha256": "523842cb91f32ddcf0c035c81ba03c7cb38e7d8cb716cfc2b0d8ba1e126a180b",
+          "original_duration_word": 800,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "f32bf0d7aa56cdb163c0d71168ee8ee33142ae3a01fd06b355da19efc629ef44",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": [
+        "INTEGRATION67"
+      ]
+    },
+    {
+      "source_getpet_integer": 1481,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "poru/mary06",
+          "source_script_sha256": "1fb426d776a18595cb539c28a496d97b77ed08ec19a8993d3d2ed31bbcd5923c",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 37,
+          "source_command_line_sha256": "f9bbcf55915632722778cfd012a1833b40023a61b5e998cc15544bf014e9f726",
+          "source_event_block_lines": [
+            29,
+            39
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 1104,
+      "mixed25_enemy_instance_line_sha256": "62c85686469bac3b47f0ac798547327312ab916ce7e17ee514f93af1c2244e9f",
+      "mixed25_template_numeric_id": 719,
+      "mixed25_template_source_line": 520,
+      "mixed25_template_source_line_sha256": "73621f9e006dbdade6a0d050a6f9654e215fe303fdf485bf29929ac8398735b2",
+      "mixed25_template_graphic_numeric": 100401,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100401,
+      "tw10_source_spr_group_index": 364,
+      "tw10_source_full_spr_segment_sha256": "0284af96efdff07da2b5b73ccc3f8a84a2a4158e9c653e3a4f3977293f3ec2a4",
+      "tw10_original_animation_record_count": 104,
+      "tw10_source_selected_frame_positions": 34,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 26,
+          "original_bitmap_sequence_u32le_sha256": "da12a9359d2599d613644695b6da0cc1998aa3371b12c64a3fdf28f545ef7f88",
+          "original_duration_word": 1600,
+          "original_pixels_all_strictly_decodable": false
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 6,
+          "original_bitmap_sequence_u32le_sha256": "418113a9767251bb6e2bfeabc03175c1c2945817bdc5c61a6fd190d035649ac6",
+          "original_duration_word": 800,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "b745511cb80958e4659ae3f29f98d10e5c78ce9a6737b5031c29af1ec876af5e",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": {
+        "graphic": 100401,
+        "sequence_id": "100401-0-0",
+        "source_bitmap_numeric_ids": [
+          82729
+        ],
+        "reason": "EXISTING_PET07_STRICT_RD_RLE_DECODE_OVERRUN"
+      },
+      "prior_specialized_integration_numbers": []
+    },
+    {
+      "source_getpet_integer": 1482,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "poru/mary05",
+          "source_script_sha256": "4350eda28fb3f5c10aea4cabfca0c286a291bb23b8f25298cc5273d9b32229a9",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 42,
+          "source_command_line_sha256": "417857f51ca3651bbcbe5cf2ec3eea19c4322c59d32e78a24270a334116f6e27",
+          "source_event_block_lines": [
+            34,
+            44
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 1105,
+      "mixed25_enemy_instance_line_sha256": "a9d21cb07805be1665eac0f593021aa84755e3044e78b0a490c658a3d9a94e3e",
+      "mixed25_template_numeric_id": 721,
+      "mixed25_template_source_line": 522,
+      "mixed25_template_source_line_sha256": "ee817079e2bf3571c62ad5daff21d69d036d37e05312de8eb546d756f71b35dc",
+      "mixed25_template_graphic_numeric": 100259,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100259,
+      "tw10_source_spr_group_index": 249,
+      "tw10_source_full_spr_segment_sha256": "eb1be1d64b6e23a5302c5298d7a5d55a6466e0974bc2b4568c988349bb66c4e1",
+      "tw10_original_animation_record_count": 56,
+      "tw10_source_selected_frame_positions": 19,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 10,
+          "original_bitmap_sequence_u32le_sha256": "d4ca0e6596f60e877dd5a62efaf0edaba806d189d5d6159671d4b0afa882050f",
+          "original_duration_word": 600,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 7,
+          "original_bitmap_sequence_u32le_sha256": "5e01844425a7c1f1a78a65ccf752c01bff5277d8121fd157b56c2cfc12e19ac5",
+          "original_duration_word": 1000,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "08d27c36b189513e066608f0e14fd591d4c3b9d97aac581780f7975dd32f7e7a",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 17,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": []
+    },
+    {
+      "source_getpet_integer": 1483,
+      "original_script_occurrences": [
+        {
+          "source_script_path": "poru/mary04",
+          "source_script_sha256": "7d92e123a9983f8f043b1619be60238948ffc9185dee7b52403fa807f137c156",
+          "source_is_named_backup": false,
+          "original_getpet_source_line": 39,
+          "source_command_line_sha256": "08caa711ed4afa010e71424b8ddae455b4df6ca8183ff3de717315e7fcc64231",
+          "source_event_block_lines": [
+            30,
+            41
+          ]
+        }
+      ],
+      "mixed25_enemy_instance_line": 1106,
+      "mixed25_enemy_instance_line_sha256": "2bed297da84c4dbd714de51c5c0c2c0f60ed618c6d6663732023b52a4b826fe6",
+      "mixed25_template_numeric_id": 720,
+      "mixed25_template_source_line": 521,
+      "mixed25_template_source_line_sha256": "16336526b146849e868c72b670e5dbca9acb1090263c2cf03f9da29353b5ce94",
+      "mixed25_template_graphic_numeric": 100432,
+      "mixed25_template_petflag_raw": 1,
+      "tw10_matching_spr_numeric_graphic": 100432,
+      "tw10_source_spr_group_index": 395,
+      "tw10_source_full_spr_segment_sha256": "d5e4f229a3f71457d000c8d07e7406423d97b321be00d587c671836d656690d1",
+      "tw10_original_animation_record_count": 104,
+      "tw10_source_selected_frame_positions": 26,
+      "tw10_selected_original_action_direction0": [
+        {
+          "original_action_code": 0,
+          "original_direction_code": 0,
+          "original_frame_positions": 13,
+          "original_bitmap_sequence_u32le_sha256": "c6535d5f807df21594acd12d7754c38cda29f755e7e679d41976cd69e849152d",
+          "original_duration_word": 800,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 2,
+          "original_direction_code": 0,
+          "original_frame_positions": 11,
+          "original_bitmap_sequence_u32le_sha256": "7822c2199fc4bf117235bd625e99255ab25b17a0b5c57c720c15e668be656d10",
+          "original_duration_word": 1500,
+          "original_pixels_all_strictly_decodable": true
+        },
+        {
+          "original_action_code": 1,
+          "original_direction_code": 0,
+          "original_frame_positions": 2,
+          "original_bitmap_sequence_u32le_sha256": "a9d69156a23798055388a772c30b12f9f08e1ddd1dc631f00a7a29ac5dea21f5",
+          "original_duration_word": 100,
+          "original_pixels_all_strictly_decodable": true
+        }
+      ],
+      "tw10_selected_unique_bitmap_numeric_count": 16,
+      "tw10_selected_known_strict_decode_exception": null,
+      "prior_specialized_integration_numbers": []
+    }
+  ],
+  "negative_evidence": {
+    "cross_carrier_number_equivalence_establishes_official_species_identity": false,
+    "tw10_official_server_template_stats_or_reward_paths_recovered": false,
+    "native_getpet_award_or_original_sprite_render_observed": false,
+    "mixed25_server_original_official_tw10_deployment_proven": false,
+    "raw_pixel_count_is_pet_species_count": false,
+    "all_three_selected_sequences_strictly_renderable": false,
+    "known_graphic_100401_action0_has_unrenderable_bitmap_82729": true,
+    "source_script_status_is_not_live_NPC_execution": true
+  },
+  "next": "Rotate to different original source-qualified 2D content family. Reopen one of these 36 only with same-deployment original master/native runtime or genuinely new original pixel bytes, not numeric coincidence."
+}
