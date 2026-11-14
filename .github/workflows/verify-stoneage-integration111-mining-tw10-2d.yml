@@ -1,0 +1,29 @@
+name: Verify StoneAge INTEGRATION111 original two-team mining TW1 pixel source
+
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION111-MINING-TWO-TEAMS-TW10-22-ORIGINAL-BITMAP-CANDIDATES-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION111-MINING-TWO-TEAMS-TW10-ORIGINAL-2D-20261114.md'
+      - 'tests/test_stoneage_integration111_mining_tw10_2d.py'
+      - '.github/workflows/verify-stoneage-integration111-mining-tw10-2d.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION111-MINING-TWO-TEAMS-TW10-22-ORIGINAL-BITMAP-CANDIDATES-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION111-MINING-TWO-TEAMS-TW10-ORIGINAL-2D-20261114.md'
+      - 'tests/test_stoneage_integration111_mining_tw10_2d.py'
+      - '.github/workflows/verify-stoneage-integration111-mining-tw10-2d.yml'
+  workflow_dispatch:
+
+jobs:
+  source-and-counterexample-contract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify source identity, actual pixel receipts, and negative limitations
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration111_mining_tw10_2d.py' -v
