@@ -1,0 +1,205 @@
+{
+  "schema": "stoneage.integration112.original_footprint_npc_to_event13_source_bridge.r1",
+  "date": "2026-11-14",
+  "baseline": {
+    "main": "c64a8a4ca7e70aaf61d0aa02a75a5c436c016e47",
+    "tree": "fd50c067cc71785832df4ac1126d4efcdc3827db",
+    "original_CURRENT_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_CURRENT_bytes": 2709173,
+    "initial_main_actions_completed_success": 26
+  },
+  "carrier": {
+    "identity": "LATER_PRESERVED_COMMUNITY_MIXED25_NPC_FILES",
+    "original_NPC_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "original_NPC_zip_bytes": 995176,
+    "original_NPC_zip_members_crc_pass": 2205,
+    "source_recovery_this_unit": "REAL_PRIVATE_SOURCE_BYTES_REPLAYED",
+    "source_publication": "SHA_AND_NUMERIC_DERIVATIVES_ONLY"
+  },
+  "original_NPC_files": {
+    "100/sb_nusu.create": {
+      "bytes": 557,
+      "sha256": "d936d1c52b04ec143982b386dacf1bb47fd4610a13db64bdd2ff4eed9cfc4865",
+      "crc32": "6bbd1bca"
+    },
+    "100/sb_nusu.template": {
+      "bytes": 438,
+      "sha256": "63d4a2cd2089ea6f3d0ebc1be0f0b87ee588841cb16381f0fee60fcb8ed4c13c",
+      "crc32": "c6d391a0"
+    },
+    "100/sb_nusu1.arg": {
+      "bytes": 277,
+      "sha256": "83cca29b9d9c9d29c64e6f50409acf9da372f8a8d336e5c62e400352bfdb3bdc",
+      "crc32": "857eb00f"
+    },
+    "100/sb_nusu2.arg": {
+      "bytes": 288,
+      "sha256": "106ad384c3146d4dffb0e8ad45b1ecd9abb4eae8476d9cfd86589e296268b7fe",
+      "crc32": "d85b6e94"
+    },
+    "100/sb_nusu3.arg": {
+      "bytes": 324,
+      "sha256": "dd40e5765adf71a298112e4bd3e39ab7fab58178f67ddd9b29c4511c9e542501",
+      "crc32": "102b8416"
+    }
+  },
+  "original_NPC_rows": [
+    {
+      "floor": 10701,
+      "xy": [
+        23,
+        51
+      ],
+      "source_bitmap_alias": 100405,
+      "create_file": "100/sb_nusu.create",
+      "create_block_ordinal": 0,
+      "create_byte_window": [
+        42,
+        193
+      ],
+      "create_block_sha256": "de7aaaf4514bf4616e5bb13912a4794a4b2742b66f3bd790b894bf0f2aadd6aa",
+      "template_file": "100/sb_nusu.template",
+      "template_key": "sb_n1",
+      "template_block_sha256": "14e445b68c6e50e316512d91b1a53d904791bd93177e6fbd694cac4d3f49225b",
+      "handler_file": "100/sb_nusu1.arg",
+      "handler_sha256": "83cca29b9d9c9d29c64e6f50409acf9da372f8a8d336e5c62e400352bfdb3bdc",
+      "handler_literal_fields": {
+        "entype": 2,
+        "item": 2431,
+        "enemyno": [
+          513,
+          516
+        ],
+        "time": 300,
+        "dieact": 0,
+        "askbattlemsg_count": 3
+      }
+    },
+    {
+      "floor": 10703,
+      "xy": [
+        6,
+        63
+      ],
+      "source_bitmap_alias": 100436,
+      "create_file": "100/sb_nusu.create",
+      "create_block_ordinal": 1,
+      "create_byte_window": [
+        225,
+        375
+      ],
+      "create_block_sha256": "812f4bcb76546b3f37da36839ebe3e77f386bf8ac2ef5e825deef5f1f074db93",
+      "template_file": "100/sb_nusu.template",
+      "template_key": "sb_n2",
+      "template_block_sha256": "ed7b62b18e455c275d243e432e13727567184d355e4520900603a72d19a7549a",
+      "handler_file": "100/sb_nusu2.arg",
+      "handler_sha256": "106ad384c3146d4dffb0e8ad45b1ecd9abb4eae8476d9cfd86589e296268b7fe",
+      "handler_literal_fields": {
+        "entype": 2,
+        "item": 2431,
+        "enemyno": [
+          514,
+          518
+        ],
+        "time": 300,
+        "dieact": 0,
+        "askbattlemsg_count": 2
+      }
+    },
+    {
+      "floor": 10705,
+      "xy": [
+        44,
+        41
+      ],
+      "source_bitmap_alias": 100230,
+      "create_file": "100/sb_nusu.create",
+      "create_block_ordinal": 2,
+      "create_byte_window": [
+        405,
+        556
+      ],
+      "create_block_sha256": "ac99be209cc60da7b2339a063eac580cfe693394fa3058f86614b5cb580b128c",
+      "template_file": "100/sb_nusu.template",
+      "template_key": "sb_n3",
+      "template_block_sha256": "5a9cebde5c5f2dc4d99d04713fe9bed47855d4220b5751edf9bb49a67f67be62",
+      "handler_file": "100/sb_nusu3.arg",
+      "handler_sha256": "dd40e5765adf71a298112e4bd3e39ab7fab58178f67ddd9b29c4511c9e542501",
+      "handler_literal_fields": {
+        "entype": 2,
+        "item": 2431,
+        "enemyno": [
+          515,
+          519
+        ],
+        "time": 300,
+        "dieact": 0,
+        "askbattlemsg_count": 3
+      }
+    }
+  ],
+  "same_preserved_source_event13": {
+    "existing_public_quest_bridge": "research/recovered/STONEAGE-INTEGRATION33-SAINASU-TWO-QUEST-CHAINS-SOURCE-R1.json",
+    "existing_public_item_bridge": "research/recovered/STONEAGE-INTEGRATION69-HEIRLOOM-EVENT13-NPC-ITEM-TW1-PIXEL-SOURCE-R1.json",
+    "original_event13_script": "sainasu/event/event13_1",
+    "original_event13_source_sha256": "b876eb2967a97eaf82e68570c36aee123161febe31a45d7e65c28be9d205dd6b",
+    "evidence_item_id": 2431,
+    "preserved_itemset_name": "盜賊們的足跡",
+    "original_two_itemset_row_sha256": "e98e9a026ed64d978fa7d3f3cf5b9d15338ec419e70a644f9bba4ea09a8450bf",
+    "original_REQUEST_condition": "LV>15",
+    "original_REQUEST_GetItem": "2431*1",
+    "original_repeat_MESSAGE_condition": "NOWEV=13&ITEM!=2431",
+    "original_repeat_MESSAGE_GetItem": "2431",
+    "original_ACCEPT_condition": "NOWEV=13&ITEM=2428&ITEM=2429&ITEM=2430",
+    "original_ACCEPT_DelItem": "2428,2429,2430,2431",
+    "original_ACCEPT_GetItem": "2450"
+  },
+  "existing_qualified_map_data": [
+    {
+      "floor": 10701,
+      "name": "盜賊的洞窟地下１樓",
+      "width": 80,
+      "height": 80,
+      "original_DAT_bytes": 38408,
+      "original_DAT_sha256": "dd2f0d0b7e94390dc38aa52a15943a427b6e6d65c8b480221b254c953079801e",
+      "qualification": "PREVIOUSLY_VERIFIED_LATER_FIELD_SOURCE_NO_NEW_DAT_READ"
+    },
+    {
+      "floor": 10703,
+      "name": "盜賊的洞窟地下３樓",
+      "width": 80,
+      "height": 80,
+      "original_DAT_bytes": 38408,
+      "original_DAT_sha256": "fa27b7f773ba42e59b246594b08f13757bad028e579412f8bdca2e11ed1f3949",
+      "qualification": "PREVIOUSLY_VERIFIED_LATER_FIELD_SOURCE_NO_NEW_DAT_READ"
+    },
+    {
+      "floor": 10705,
+      "name": "盜賊的洞窟地下５樓",
+      "width": 80,
+      "height": 80,
+      "original_DAT_bytes": 38408,
+      "original_DAT_sha256": "6e46020c9534e6ec2a5f72ad1c0a79b4f3836c543e5c8b7c45f568be3dbe9695",
+      "qualification": "PREVIOUSLY_VERIFIED_LATER_FIELD_SOURCE_NO_NEW_DAT_READ"
+    }
+  ],
+  "counts": {
+    "new_original_files_discovered": 0,
+    "original_NPC_source_files_reread": 5,
+    "original_creates_reread": 3,
+    "original_handlers_reread": 3,
+    "original_TEMPLATE_blocks_reread": 3,
+    "new_source_qualified_NPC_item_quest13_numeric_edges": 3,
+    "new_original_DAT_bytes_read": 0,
+    "new_original_RD_bytes_read": 0,
+    "native_game_or_server_execution": 0
+  },
+  "negative_evidence": [
+    "NPCEnemy handler item:2431 is a literal parameter, not verified item drop, reward, trigger, or consumption.",
+    "enemyno pairs and time:300 are original literal values; original combat or spawn semantics unverified.",
+    "Later community source quest13/NPC/ITEM rows do not establish official early Taiwan1.0, JSS1999, or Mainland1.82 deployment.",
+    "Existing DAT hashes and 80x80 geometries are prior provenance; no native pathfinding, collisions, world entry, exact original sprite or color palette established.",
+    "Original NPC prose and proprietary file bytes remain private; numeric values and source SHA alone are public."
+  ],
+  "next": "Other independently qualified unobserved original visual or substantive pet/quest content; do not expand this bounded NPCEnemy source into a speculative drop engine."
+}
