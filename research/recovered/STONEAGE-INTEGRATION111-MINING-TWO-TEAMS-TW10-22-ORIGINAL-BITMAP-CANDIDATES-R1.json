@@ -1,0 +1,1239 @@
+{
+  "schema": "stoneage.integration111_original_mining_tribes_TW10_real_RD_cross_carrier_source_observation.r1",
+  "date": "2026-11-14",
+  "baseline": {
+    "main": "a64e9f5c4079fe891b34e4c79c43d7b44a081d43",
+    "tree": "412781cab452df38539176c45059369211bd0b4c",
+    "original_CURRENT_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_CURRENT_bytes": 2709173
+  },
+  "source_qualifications": {
+    "TW1": "ACCEPTED_RETAIL_P3H_ORIGINAL_ADRN_REAL_SAP_SOURCE_ACTUALLY_READ",
+    "mixed25": "LATER_COMMUNITY_PRESERVED_NPC_CREATE_FILES_NOT_OFFICIAL_TW1_SAME_SERVER",
+    "private_TW1_zip_bytes": 372626292,
+    "private_TW1_zip_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "original_TW1_member_crc": 379,
+    "private_mixed25_NPC_zip_bytes": 995176,
+    "private_mixed25_NPC_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "original_NPC_member_crc": 2205,
+    "tw1_adrn_whole_SHA256": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+    "tw1_real_whole_SHA256": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13",
+    "tw1_palet1_whole_SHA256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0",
+    "tw1_private_preview_palette_index_SHA256": "653d6fbb16ac7c48a25c8200fdb766ab7c65881182b76811a225ca928c6dc530",
+    "prior_QUEST12_source_report": "research/recovered/STONEAGE-QUEST12-MINING-COMPETITION-ORIGINAL-SOURCE-R1.json",
+    "prior_QUEST12_git_blob": "95631cbaeea40260bfc14f7c37039950b495e000",
+    "prior_CHAR01_git_blob": "a088b61a3212f7049e7793f587123ffb29bebad7"
+  },
+  "original_source_files": {
+    "genout/giruev2.create": {
+      "bytes": 3800,
+      "sha256": "81fc814f717e59e6e7ed055a44ed0a4a35c3cb05699bccdcd9834abcc5114bf1",
+      "crc32": "f33e02e3"
+    },
+    "genout/msg_31805_18_20": {
+      "bytes": 80,
+      "sha256": "fc188688ee1d0bf169e83c1b4430d561f480fe04db4ff92fc8bb2e1a91956aaf",
+      "crc32": "7a2890be"
+    },
+    "genout/msg_31805_16_19": {
+      "bytes": 68,
+      "sha256": "b54cf02a9dafe44a3786fad1c4af1588ce229ea32a138b8f9daa68266977d75b",
+      "crc32": "feb7a668"
+    },
+    "genout/msg_31805_17_16": {
+      "bytes": 100,
+      "sha256": "e3bee102851ffc9437cecc9364272b0a3cdcc46f05cdcd2d370022cd1ea7d258",
+      "crc32": "439cde33"
+    },
+    "genout/msg_31805_14_17": {
+      "bytes": 74,
+      "sha256": "46c8c8bad42cfdea7af7276bf1d329e4abfdf3553380762351254500b50999fc",
+      "crc32": "cb9b1c5c"
+    },
+    "genout/msg_31805_14_20": {
+      "bytes": 62,
+      "sha256": "21594c7d1acfe065137318e71c70c3c2b23e0247885c3f512e4055c52e78f370",
+      "crc32": "8d1b9849"
+    },
+    "genout/msg_31805_21_34": {
+      "bytes": 54,
+      "sha256": "30f4accced9abdbf2262ff9a4ff3891c194b9805e3c0fed8a0005a739e5c4b24",
+      "crc32": "a6195ffd"
+    },
+    "genout/msg_31805_17_35": {
+      "bytes": 52,
+      "sha256": "f8dde6796aaa3507940714284c052b75f0b70449f1655bf12aa0b65e4fb32640",
+      "crc32": "d68e5675"
+    },
+    "genout/msg_31805_19_28": {
+      "bytes": 90,
+      "sha256": "b2d6cd57a6dcd80bc4d706fa87ab5a6d348d007f370728709c568019c651f0e8",
+      "crc32": "7b23eecc"
+    },
+    "genout/msg_31805_22_29": {
+      "bytes": 62,
+      "sha256": "fab86f3956d63ae162f8bcf81f9e336cb99b9379606dad820217e3d1b9434201",
+      "crc32": "0ab4e3f2"
+    },
+    "genout/msg_31805_23_13": {
+      "bytes": 58,
+      "sha256": "9b1c6afaf8e02e73504bdcbed785a504a7bc06a162086c68208a2ed013cd5d44",
+      "crc32": "cf053da5"
+    },
+    "genout/msg_31805_31_14": {
+      "bytes": 76,
+      "sha256": "e6a26adcfad22cc71449560a03647b66f3ecff735a70644499515249f9c2f76c",
+      "crc32": "89986675"
+    },
+    "genout/msg_31805_35_16": {
+      "bytes": 86,
+      "sha256": "fe4a4b1f3b103229d9c0765c47a2d0019ab0b8e27a5cd89e1b4a23dd39d63f0c",
+      "crc32": "72ced21c"
+    },
+    "genout/msg_31805_30_10": {
+      "bytes": 70,
+      "sha256": "7beb760c834a1982d7c9772787f19f7f1abf16c252b1649a588064fb8f3ad02b",
+      "crc32": "a1334d7c"
+    },
+    "genout/msg_31805_40_18": {
+      "bytes": 80,
+      "sha256": "3acc7dbf5041d9820707657a5246e236a535908f6e7a4bc4cdbd176eb819ae71",
+      "crc32": "fd28a56e"
+    },
+    "genout/msg_31805_40_24": {
+      "bytes": 60,
+      "sha256": "ea22661a413b6966f408f959f98405fbc47ed574be2817ff7f3058f129e06851",
+      "crc32": "8df98d17"
+    },
+    "genout/msg_31805_35_28": {
+      "bytes": 66,
+      "sha256": "d6b8d7a0bf2f072318ad02081edc3e3408508a0142f9ffd4954abf5097166d1d",
+      "crc32": "1681c6bd"
+    },
+    "genout/msg_31805_31_34": {
+      "bytes": 48,
+      "sha256": "e0fff9031398b34ba737a5e3a5248321cd20168c93bc31e22f83faf9346d0746",
+      "crc32": "73eddec3"
+    },
+    "genout/msg_31805_41_27": {
+      "bytes": 82,
+      "sha256": "08041e2207103add067e74232c2e3f9290a80ed04cfdb9d5287b56b2933d1444",
+      "crc32": "99b10cc3"
+    },
+    "genout/msg_31805_40_32": {
+      "bytes": 56,
+      "sha256": "abe76fa14d2fb86573a4e5fdfadb14e1d4761364d9d81ec999b02e7708736691",
+      "crc32": "38c003e0"
+    },
+    "genout/msg_31805_27_29": {
+      "bytes": 62,
+      "sha256": "928f6020f2c4d0d3484716c523dec60ec52dd0042a01bf03c7958ee5c5684d54",
+      "crc32": "685f82c0"
+    },
+    "genout/wpm_31805_22_4": {
+      "bytes": 171,
+      "sha256": "0a753a92c176602d3d93ba8042d5b0c59a97dbdc93785cd8de3d6326be15044d",
+      "crc32": "b5efa901"
+    },
+    "giiru/event/giruev2.create": {
+      "bytes": 593,
+      "sha256": "c04975eb9d46cb328df5d4bee99a235547fae10010d28de95ae1557b21037ace",
+      "crc32": "d59fbdd2"
+    },
+    "giiru/event/giruev2_1": {
+      "bytes": 2420,
+      "sha256": "e18cbf24d2f067bdcf6d797756e14c4b24d11f19b9698b5fc75e0f9405a86557",
+      "crc32": "33d488f8"
+    },
+    "giiru/event/giruev2_2": {
+      "bytes": 1626,
+      "sha256": "1e476a4d62e216fd891c527e1564dd70ad4e846f11c54a308f6f04381daf746f",
+      "crc32": "67f285f9"
+    },
+    "300/sb_bac.create": {
+      "bytes": 190,
+      "sha256": "3bd43fdb15482cbde4896ded79c5382b777f8e74fe0c0637b97bfa0034613388",
+      "crc32": "a067777a"
+    },
+    "300/sb_bac.arg": {
+      "bytes": 229,
+      "sha256": "93b2893ee9cf5b0229072a9283f8fbb703004cbc2ec3829fb35af71ebdf1bc30",
+      "crc32": "785db130"
+    }
+  },
+  "original_create_rows": [
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 0,
+      "original_create_byte_window": [
+        116,
+        283
+      ],
+      "original_create_block_sha256": "c286eed867627b7a5ed8b89c0f6cb2e4a8ed7bd66bcf8e275cfee30690a5d09c",
+      "floor": 31805,
+      "xy": [
+        18,
+        20
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        18,
+        20,
+        18,
+        20
+      ],
+      "source_graphicname": 16016,
+      "source_short_name": "帖尼姆團團員",
+      "source_function": "npcgen_man",
+      "source_handler_ref": "genout/msg_31805_18_20",
+      "handler_sha256": "fc188688ee1d0bf169e83c1b4430d561f480fe04db4ff92fc8bb2e1a91956aaf"
+    },
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 1,
+      "original_create_byte_window": [
+        291,
+        458
+      ],
+      "original_create_block_sha256": "4e41d63f538424dfb775e01f90539cf3583c67030a0f100c4ae493589b8be16c",
+      "floor": 31805,
+      "xy": [
+        16,
+        19
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        16,
+        19,
+        16,
+        19
+      ],
+      "source_graphicname": 16019,
+      "source_short_name": "帖尼姆團團員",
+      "source_function": "npcgen_man",
+      "source_handler_ref": "genout/msg_31805_16_19",
+      "handler_sha256": "b54cf02a9dafe44a3786fad1c4af1588ce229ea32a138b8f9daa68266977d75b"
+    },
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 2,
+      "original_create_byte_window": [
+        467,
+        634
+      ],
+      "original_create_block_sha256": "10ccc2b4dafe741753e1cde55d743f24d944b1f294b8628b1ce7c29916b74133",
+      "floor": 31805,
+      "xy": [
+        17,
+        16
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        17,
+        16,
+        17,
+        16
+      ],
+      "source_graphicname": 16047,
+      "source_short_name": "帖尼姆團團員",
+      "source_function": "npcgen_man",
+      "source_handler_ref": "genout/msg_31805_17_16",
+      "handler_sha256": "e3bee102851ffc9437cecc9364272b0a3cdcc46f05cdcd2d370022cd1ea7d258"
+    },
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 3,
+      "original_create_byte_window": [
+        643,
+        810
+      ],
+      "original_create_block_sha256": "f1524c897af46e8e406f276315cc1adb9824d317eca94e2bb60c1eec08fbdd1a",
+      "floor": 31805,
+      "xy": [
+        14,
+        17
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        14,
+        17,
+        14,
+        17
+      ],
+      "source_graphicname": 16207,
+      "source_short_name": "帖尼姆團團員",
+      "source_function": "npcgen_man",
+      "source_handler_ref": "genout/msg_31805_14_17",
+      "handler_sha256": "46c8c8bad42cfdea7af7276bf1d329e4abfdf3553380762351254500b50999fc"
+    },
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 4,
+      "original_create_byte_window": [
+        819,
+        986
+      ],
+      "original_create_block_sha256": "88a979ee175b2bcbf58cc151be70f01d5b4f4e3765d0101eca1568c41f5f0c61",
+      "floor": 31805,
+      "xy": [
+        14,
+        20
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        14,
+        20,
+        14,
+        20
+      ],
+      "source_graphicname": 16208,
+      "source_short_name": "帖尼姆團團員",
+      "source_function": "npcgen_man",
+      "source_handler_ref": "genout/msg_31805_14_20",
+      "handler_sha256": "21594c7d1acfe065137318e71c70c3c2b23e0247885c3f512e4055c52e78f370"
+    },
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 5,
+      "original_create_byte_window": [
+        995,
+        1162
+      ],
+      "original_create_block_sha256": "45787bd02fc9f0b3246263ea379f48a2cfd0778f1a1d1509066b992a4f9e1593",
+      "floor": 31805,
+      "xy": [
+        21,
+        34
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        21,
+        34,
+        21,
+        34
+      ],
+      "source_graphicname": 16048,
+      "source_short_name": "帖尼姆團團員",
+      "source_function": "npcgen_man",
+      "source_handler_ref": "genout/msg_31805_21_34",
+      "handler_sha256": "30f4accced9abdbf2262ff9a4ff3891c194b9805e3c0fed8a0005a739e5c4b24"
+    },
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 6,
+      "original_create_byte_window": [
+        1171,
+        1338
+      ],
+      "original_create_block_sha256": "7056b702bda54d6c5455ba659df8c743648b8ee62368cdfd0d59b4574212b024",
+      "floor": 31805,
+      "xy": [
+        17,
+        35
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        17,
+        35,
+        17,
+        35
+      ],
+      "source_graphicname": 16049,
+      "source_short_name": "帖尼姆團團員",
+      "source_function": "npcgen_man",
+      "source_handler_ref": "genout/msg_31805_17_35",
+      "handler_sha256": "f8dde6796aaa3507940714284c052b75f0b70449f1655bf12aa0b65e4fb32640"
+    },
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 7,
+      "original_create_byte_window": [
+        1347,
+        1514
+      ],
+      "original_create_block_sha256": "19271dc450a629e12fd2ca672cd7e01ce066faa62c3417479408919fc2219a26",
+      "floor": 31805,
+      "xy": [
+        19,
+        28
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        19,
+        28,
+        19,
+        28
+      ],
+      "source_graphicname": 16055,
+      "source_short_name": "帖尼姆團團員",
+      "source_function": "npcgen_man",
+      "source_handler_ref": "genout/msg_31805_19_28",
+      "handler_sha256": "b2d6cd57a6dcd80bc4d706fa87ab5a6d348d007f370728709c568019c651f0e8"
+    },
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 8,
+      "original_create_byte_window": [
+        1523,
+        1690
+      ],
+      "original_create_block_sha256": "f14938c5963cfe19b9300927ef3e1c47f3e1df4529e9513217c35f1dad0a73c6",
+      "floor": 31805,
+      "xy": [
+        22,
+        29
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        22,
+        29,
+        22,
+        29
+      ],
+      "source_graphicname": 16202,
+      "source_short_name": "帖尼姆團團員",
+      "source_function": "npcgen_man",
+      "source_handler_ref": "genout/msg_31805_22_29",
+      "handler_sha256": "fab86f3956d63ae162f8bcf81f9e336cb99b9379606dad820217e3d1b9434201"
+    },
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 9,
+      "original_create_byte_window": [
+        1699,
+        1866
+      ],
+      "original_create_block_sha256": "67d9fce36b74c128b30ea6a60a8a8e0cb7a07ddfa9c3b21820ae58b77ced4239",
+      "floor": 31805,
+      "xy": [
+        23,
+        13
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        23,
+        13,
+        23,
+        13
+      ],
+      "source_graphicname": 16203,
+      "source_short_name": "帖尼姆團團員",
+      "source_function": "npcgen_man",
+      "source_handler_ref": "genout/msg_31805_23_13",
+      "handler_sha256": "9b1c6afaf8e02e73504bdcbed785a504a7bc06a162086c68208a2ed013cd5d44"
+    },
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 10,
+      "original_create_byte_window": [
+        1875,
+        2042
+      ],
+      "original_create_block_sha256": "2d67bc84c410bfb32b71d6cc6fdded47d9282a676455e1809a6ab637d659f6e4",
+      "floor": 31805,
+      "xy": [
+        31,
+        14
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        31,
+        14,
+        31,
+        14
+      ],
+      "source_graphicname": 16018,
+      "source_short_name": "巴巴洛組組員",
+      "source_function": "npcgen_man",
+      "source_handler_ref": "genout/msg_31805_31_14",
+      "handler_sha256": "e6a26adcfad22cc71449560a03647b66f3ecff735a70644499515249f9c2f76c"
+    },
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 11,
+      "original_create_byte_window": [
+        2051,
+        2218
+      ],
+      "original_create_block_sha256": "ec1f017f341b7fc0ce26b00067c46bd56abac74aa3619473e9c02c2f49476ddf",
+      "floor": 31805,
+      "xy": [
+        35,
+        16
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        35,
+        16,
+        35,
+        16
+      ],
+      "source_graphicname": 16041,
+      "source_short_name": "巴巴洛組組員",
+      "source_function": "npcgen_man",
+      "source_handler_ref": "genout/msg_31805_35_16",
+      "handler_sha256": "fe4a4b1f3b103229d9c0765c47a2d0019ab0b8e27a5cd89e1b4a23dd39d63f0c"
+    },
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 12,
+      "original_create_byte_window": [
+        2227,
+        2394
+      ],
+      "original_create_block_sha256": "02bb82794b068d85fabe2608fb851d64cd17b1d619937a3f7593ed162df56b40",
+      "floor": 31805,
+      "xy": [
+        30,
+        10
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        30,
+        10,
+        30,
+        10
+      ],
+      "source_graphicname": 16042,
+      "source_short_name": "巴巴洛組組員",
+      "source_function": "npcgen_man",
+      "source_handler_ref": "genout/msg_31805_30_10",
+      "handler_sha256": "7beb760c834a1982d7c9772787f19f7f1abf16c252b1649a588064fb8f3ad02b"
+    },
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 13,
+      "original_create_byte_window": [
+        2403,
+        2570
+      ],
+      "original_create_block_sha256": "2f26a3036edbdbe37f381fcc22f84150bfc77d67b2798b61ff19c58f8bcc0aa4",
+      "floor": 31805,
+      "xy": [
+        40,
+        18
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        40,
+        18,
+        40,
+        18
+      ],
+      "source_graphicname": 16043,
+      "source_short_name": "巴巴洛組組員",
+      "source_function": "npcgen_man",
+      "source_handler_ref": "genout/msg_31805_40_18",
+      "handler_sha256": "3acc7dbf5041d9820707657a5246e236a535908f6e7a4bc4cdbd176eb819ae71"
+    },
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 14,
+      "original_create_byte_window": [
+        2579,
+        2746
+      ],
+      "original_create_block_sha256": "80138a72abce27efcab194b1788ba5b0d51d2d87ac7ebf772bb9eb9a731e834d",
+      "floor": 31805,
+      "xy": [
+        40,
+        24
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        40,
+        24,
+        40,
+        24
+      ],
+      "source_graphicname": 16046,
+      "source_short_name": "巴巴洛組組員",
+      "source_function": "npcgen_man",
+      "source_handler_ref": "genout/msg_31805_40_24",
+      "handler_sha256": "ea22661a413b6966f408f959f98405fbc47ed574be2817ff7f3058f129e06851"
+    },
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 15,
+      "original_create_byte_window": [
+        2755,
+        2922
+      ],
+      "original_create_block_sha256": "1444aa62a2465ec769f16726c95c16c2cc718f67b3cc24e64afa1fe16f9e3476",
+      "floor": 31805,
+      "xy": [
+        35,
+        28
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        35,
+        28,
+        35,
+        28
+      ],
+      "source_graphicname": 16044,
+      "source_short_name": "巴巴洛組組員",
+      "source_function": "npcgen_man",
+      "source_handler_ref": "genout/msg_31805_35_28",
+      "handler_sha256": "d6b8d7a0bf2f072318ad02081edc3e3408508a0142f9ffd4954abf5097166d1d"
+    },
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 16,
+      "original_create_byte_window": [
+        2931,
+        3098
+      ],
+      "original_create_block_sha256": "6878490531e2a51923e50c14c32cd21c455d87776370fe87a5032c2ee5e419e2",
+      "floor": 31805,
+      "xy": [
+        31,
+        34
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        31,
+        34,
+        31,
+        34
+      ],
+      "source_graphicname": 16045,
+      "source_short_name": "巴巴洛組組員",
+      "source_function": "npcgen_man",
+      "source_handler_ref": "genout/msg_31805_31_34",
+      "handler_sha256": "e0fff9031398b34ba737a5e3a5248321cd20168c93bc31e22f83faf9346d0746"
+    },
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 17,
+      "original_create_byte_window": [
+        3107,
+        3274
+      ],
+      "original_create_block_sha256": "d2ba90a580b1cf213ce86cd6c5d43781663e444c23439d9a19b9acedb2308573",
+      "floor": 31805,
+      "xy": [
+        41,
+        27
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        41,
+        27,
+        41,
+        27
+      ],
+      "source_graphicname": 13052,
+      "source_short_name": "巴巴洛組組員",
+      "source_function": "npcgen_man",
+      "source_handler_ref": "genout/msg_31805_41_27",
+      "handler_sha256": "08041e2207103add067e74232c2e3f9290a80ed04cfdb9d5287b56b2933d1444"
+    },
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 18,
+      "original_create_byte_window": [
+        3283,
+        3450
+      ],
+      "original_create_block_sha256": "57f942292f095713e48cd4a24bfffc5c2fa35e0ba1e9eed15aebea2c82dd3b4d",
+      "floor": 31805,
+      "xy": [
+        40,
+        32
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        40,
+        32,
+        40,
+        32
+      ],
+      "source_graphicname": 16056,
+      "source_short_name": "巴巴洛組組員",
+      "source_function": "npcgen_man",
+      "source_handler_ref": "genout/msg_31805_40_32",
+      "handler_sha256": "abe76fa14d2fb86573a4e5fdfadb14e1d4761364d9d81ec999b02e7708736691"
+    },
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 19,
+      "original_create_byte_window": [
+        3459,
+        3626
+      ],
+      "original_create_block_sha256": "e8a33b62ec147a535479a9ba04514c7dc4312a54a4ce828c9436c640254c84a0",
+      "floor": 31805,
+      "xy": [
+        27,
+        29
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        27,
+        29,
+        27,
+        29
+      ],
+      "source_graphicname": 16039,
+      "source_short_name": "巴巴洛組組員",
+      "source_function": "npcgen_man",
+      "source_handler_ref": "genout/msg_31805_27_29",
+      "handler_sha256": "928f6020f2c4d0d3484716c523dec60ec52dd0042a01bf03c7958ee5c5684d54"
+    },
+    {
+      "source_file": "genout/giruev2.create",
+      "source_block_ordinal": 20,
+      "original_create_byte_window": [
+        3635,
+        3800
+      ],
+      "original_create_block_sha256": "f93f295fedb76ae8ac8a92265a5462b2b7a8a8a6bba9d41b9fef31bc984e1118",
+      "floor": 31805,
+      "xy": [
+        22,
+        4
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        22,
+        4,
+        22,
+        4
+      ],
+      "source_graphicname": 16202,
+      "source_short_name": "入場管理人",
+      "source_function": "npcgen_warpman",
+      "source_handler_ref": "genout/wpm_31805_22_4",
+      "handler_sha256": "0a753a92c176602d3d93ba8042d5b0c59a97dbdc93785cd8de3d6326be15044d"
+    },
+    {
+      "source_file": "giiru/event/giruev2.create",
+      "source_block_ordinal": 0,
+      "original_create_byte_window": [
+        127,
+        287
+      ],
+      "original_create_block_sha256": "7c0baea30371e316a9470396771c398ddd95850c63a13a540d6cba71b8d2f59e",
+      "floor": 31805,
+      "xy": [
+        19,
+        21
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        19,
+        21,
+        19,
+        21
+      ],
+      "source_graphicname": 16062,
+      "source_short_name": "帖尼姆",
+      "source_function": "changeevent",
+      "source_handler_ref": "giiru/event/giruev2_1",
+      "handler_sha256": "e18cbf24d2f067bdcf6d797756e14c4b24d11f19b9698b5fc75e0f9405a86557"
+    },
+    {
+      "source_file": "giiru/event/giruev2.create",
+      "source_block_ordinal": 1,
+      "original_create_byte_window": [
+        359,
+        519
+      ],
+      "original_create_block_sha256": "de3b2f7b026b3422757391b96657c24123f3d71f5d03023ff8ffb47c67030a4b",
+      "floor": 31805,
+      "xy": [
+        33,
+        23
+      ],
+      "spawn_kind": "borncorner",
+      "original_spawn_parameters": [
+        33,
+        23,
+        33,
+        23
+      ],
+      "source_graphicname": 16017,
+      "source_short_name": "巴巴洛",
+      "source_function": "changeevent",
+      "source_handler_ref": "giiru/event/giruev2_2",
+      "handler_sha256": "1e476a4d62e216fd891c527e1564dd70ad4e846f11c54a308f6f04381daf746f"
+    },
+    {
+      "source_file": "300/sb_bac.create",
+      "source_block_ordinal": 0,
+      "original_create_byte_window": [
+        40,
+        190
+      ],
+      "original_create_block_sha256": "a9131ce63efe1ddd3d71010f27588dbba0c471ad3c623aae42d6925706a04fe7",
+      "floor": 31805,
+      "xy": [
+        26,
+        23
+      ],
+      "spawn_kind": "borncenter",
+      "original_spawn_parameters": [
+        26,
+        23,
+        1,
+        1
+      ],
+      "source_graphicname": 100401,
+      "source_short_name": "礦工巴卡斯",
+      "source_function": "sb_bac",
+      "source_handler_ref": "300/sb_bac.arg",
+      "handler_sha256": "93b2893ee9cf5b0229072a9283f8fbb703004cbc2ec3829fb35af71ebdf1bc30"
+    }
+  ],
+  "original_TW1_actual_RD_pixel_candidates": [
+    {
+      "source_bitmap_number": 13052,
+      "original_adrn_index": 13052,
+      "original_adrn_record_sha256": "19fc0ee2abbf36cc16ca52e60b9f959120e5e5814d01e2c280bead04f0448a20",
+      "original_real_offset": 43217720,
+      "original_RD_block_bytes": 1546,
+      "original_RD_sha256": "4ee9e3ab92db3c8a61c3aab69827080c8c6c6c1d5fe2383a7c6056cc88c177e8",
+      "original_source_index_pixels_sha256": "c148d359a33ecdca1f7b6741603bea628fb43730c043a19e4f7f3ad6e339cbec",
+      "original_RD_flag": 1,
+      "width": 48,
+      "height": 67,
+      "original_offsets": [
+        -39,
+        -65
+      ],
+      "private_Palet_1_candidate_png_sha256": "e7ed32a65ebe995b632d36cc07144583de6fd5ca5aeee740a4b36f6ced1b183f",
+      "private_Palet_1_candidate_png_bytes": 3628
+    },
+    {
+      "source_bitmap_number": 16016,
+      "original_adrn_index": 16016,
+      "original_adrn_record_sha256": "8d35ac13b0bcc54569e63a112ff41c303e677e7486ee2e8a4606fbcc253f5c66",
+      "original_real_offset": 48053014,
+      "original_RD_block_bytes": 1655,
+      "original_RD_sha256": "f658f8abfaa04dd7a0b64e32c6ef09eea88c1f11c73f61072b741379416dc514",
+      "original_source_index_pixels_sha256": "145e00d41af0c43bce189956f2be01bedc2dab8dee7cb165c3e2348dc8545c4b",
+      "original_RD_flag": 1,
+      "width": 52,
+      "height": 60,
+      "original_offsets": [
+        -31,
+        -51
+      ],
+      "private_Palet_1_candidate_png_sha256": "79b7ba6619e1baa4fc08948154dbd23ad9cb90e0c7a55e007452757c729be96a",
+      "private_Palet_1_candidate_png_bytes": 3878
+    },
+    {
+      "source_bitmap_number": 16017,
+      "original_adrn_index": 16017,
+      "original_adrn_record_sha256": "93a2e0481c9c6fb30a874515501c0909948ee9127650fc05b42110aa7e0b3115",
+      "original_real_offset": 48054669,
+      "original_RD_block_bytes": 1803,
+      "original_RD_sha256": "9aa23c28942efedcb895cc7698e834d93200dfe643c755089db4a4a7dbbabae0",
+      "original_source_index_pixels_sha256": "994e1d42f91a0c767cf39a698920b31def96697df6115981ea1544a49cf42c33",
+      "original_RD_flag": 1,
+      "width": 44,
+      "height": 78,
+      "original_offsets": [
+        -29,
+        -65
+      ],
+      "private_Palet_1_candidate_png_sha256": "cfd11bb9688989e0f3e619d0d473cc31d829029837e2c61541b6e864492085b5",
+      "private_Palet_1_candidate_png_bytes": 4100
+    },
+    {
+      "source_bitmap_number": 16018,
+      "original_adrn_index": 16018,
+      "original_adrn_record_sha256": "711c16ad77ebd0bd482094c4d18774693565c085d8e255c50cafcc0ad9094300",
+      "original_real_offset": 48056472,
+      "original_RD_block_bytes": 1856,
+      "original_RD_sha256": "acfd2283959d3f9c6df17782a45d81061c8ac52524df56c974349be47bb12bed",
+      "original_source_index_pixels_sha256": "311a94e5a07cb2b0828f8a61b501e64bb9c253d1cd9c504a089515e61710c75a",
+      "original_RD_flag": 1,
+      "width": 48,
+      "height": 77,
+      "original_offsets": [
+        -32,
+        -64
+      ],
+      "private_Palet_1_candidate_png_sha256": "7cc472e7879b7aff4180cd3a3be631377c8254947f6319f6d195185e480ee75a",
+      "private_Palet_1_candidate_png_bytes": 4268
+    },
+    {
+      "source_bitmap_number": 16019,
+      "original_adrn_index": 16019,
+      "original_adrn_record_sha256": "7c08458a3800c6f9366246c3fbd07d46c88abe29fc624ceeb39414763fa10bee",
+      "original_real_offset": 48058328,
+      "original_RD_block_bytes": 1879,
+      "original_RD_sha256": "f1fa2c7e1dfcff21afbdf317c2babbfeecbb224adc3e9bb0092c16c1c25e5ece",
+      "original_source_index_pixels_sha256": "4f4941097ab33085e38720deafde414cbe62da9ef3732d55e90572ff3edbda31",
+      "original_RD_flag": 1,
+      "width": 52,
+      "height": 78,
+      "original_offsets": [
+        -35,
+        -65
+      ],
+      "private_Palet_1_candidate_png_sha256": "c9e60f0975bf1d1f52c40c88889578f3d35c2bc8cfc0befee45a716eb862a5b1",
+      "private_Palet_1_candidate_png_bytes": 4437
+    },
+    {
+      "source_bitmap_number": 16039,
+      "original_adrn_index": 16039,
+      "original_adrn_record_sha256": "45ea366b3c3ae46e4b0ce1939e107f2939d02d211555dc7875f1c5f8e13158e4",
+      "original_real_offset": 48095103,
+      "original_RD_block_bytes": 1695,
+      "original_RD_sha256": "1331375d7875c727d41f3c5b4260db84b51bba4f8a79987293f2d07845840725",
+      "original_source_index_pixels_sha256": "24e1e3a95a3a88cb79f89f0921e6ecb9d3173b5d9c8aa827991162f7cbbcaff5",
+      "original_RD_flag": 1,
+      "width": 40,
+      "height": 86,
+      "original_offsets": [
+        -24,
+        -70
+      ],
+      "private_Palet_1_candidate_png_sha256": "c1166e753e834af84699b414e743e9a36a4005976b10da4f1ce002dfd7f336dc",
+      "private_Palet_1_candidate_png_bytes": 3736
+    },
+    {
+      "source_bitmap_number": 16041,
+      "original_adrn_index": 16041,
+      "original_adrn_record_sha256": "de311e7582fd1dc4f725c84da04c9135d52d92628a5e20c7e7d17643ccc8c33d",
+      "original_real_offset": 48098645,
+      "original_RD_block_bytes": 2064,
+      "original_RD_sha256": "c38b1cef13d5c10d2230ed7c982286afe72add8d273d37a1057b106963cec89e",
+      "original_source_index_pixels_sha256": "c6607ae823b5a6cb414ba7ca29f35ec9692578870d30b2922dca55004e35076f",
+      "original_RD_flag": 1,
+      "width": 56,
+      "height": 81,
+      "original_offsets": [
+        -33,
+        -69
+      ],
+      "private_Palet_1_candidate_png_sha256": "5e430d05ac1fdec6429f15cad0ef6509665b4bf5978ddaa531bc4c9541832a24",
+      "private_Palet_1_candidate_png_bytes": 4506
+    },
+    {
+      "source_bitmap_number": 16042,
+      "original_adrn_index": 16042,
+      "original_adrn_record_sha256": "c3e29f68b05bf80304b8805bdeeb0d0fd7bbbe381b05cf1fa259e105fba373b3",
+      "original_real_offset": 48100709,
+      "original_RD_block_bytes": 2132,
+      "original_RD_sha256": "72e4d42419a0006a102bdff759bb45e89eefd38ab2bb4dcb5d8a79be28cb6f25",
+      "original_source_index_pixels_sha256": "6ac31aa6a46dbbf438e109ec2bcf637e6083d358c445c0d1018182d4ce601159",
+      "original_RD_flag": 1,
+      "width": 56,
+      "height": 82,
+      "original_offsets": [
+        -28,
+        -65
+      ],
+      "private_Palet_1_candidate_png_sha256": "4b039ec537c888ad673212a04171cf8e8483a67e031ba91aa7c8eaa58ea38a40",
+      "private_Palet_1_candidate_png_bytes": 4608
+    },
+    {
+      "source_bitmap_number": 16043,
+      "original_adrn_index": 16043,
+      "original_adrn_record_sha256": "0120ef9fdebc9c3248ea6ef20bdbd6b24e62492a313d20fffe16bca3e261cc62",
+      "original_real_offset": 48102841,
+      "original_RD_block_bytes": 2149,
+      "original_RD_sha256": "22bb78b6d62396e18b56fbdd39d0717c106a529d9c57360e51473d5cec66437e",
+      "original_source_index_pixels_sha256": "7607e817975681158cf22349098912df936f50831d34d869afc60486f6d5882a",
+      "original_RD_flag": 1,
+      "width": 60,
+      "height": 82,
+      "original_offsets": [
+        -34,
+        -60
+      ],
+      "private_Palet_1_candidate_png_sha256": "df5beca68dd5b9f0d56d07f7adc8829a88ae2b11ac2f07913684306d126b2f95",
+      "private_Palet_1_candidate_png_bytes": 4747
+    },
+    {
+      "source_bitmap_number": 16044,
+      "original_adrn_index": 16044,
+      "original_adrn_record_sha256": "0f63bdc8b94515a3b9052454792bbabfca34ee58053530ccd7e929f50ff2270f",
+      "original_real_offset": 48104990,
+      "original_RD_block_bytes": 1820,
+      "original_RD_sha256": "f1b434000ee7dcf202eea6a58b6afeb5267dc262cbc5a49131228172ee18b392",
+      "original_source_index_pixels_sha256": "6d4c00ce1000e31b316e4c15f2219c0b74e22de09f8d3a96f29f8680369ecde9",
+      "original_RD_flag": 1,
+      "width": 76,
+      "height": 66,
+      "original_offsets": [
+        -51,
+        -38
+      ],
+      "private_Palet_1_candidate_png_sha256": "c96817f8a0c7194a56222341236b9a30c94e5dd84119c148ed684a665a077643",
+      "private_Palet_1_candidate_png_bytes": 4336
+    },
+    {
+      "source_bitmap_number": 16045,
+      "original_adrn_index": 16045,
+      "original_adrn_record_sha256": "fcefc8b272c16674fcc5995eff821bc5f4c4d5ca80284b3508cf33f639fe016f",
+      "original_real_offset": 48106810,
+      "original_RD_block_bytes": 1794,
+      "original_RD_sha256": "b08856e698a26ece6ecea90061d221bf58a4063c28eea0292f238083f0f2be3e",
+      "original_source_index_pixels_sha256": "4bd01132de1fd91fa8b16104b5444a98a44bf57ec64d3fa6ff513be07ea1b3bd",
+      "original_RD_flag": 1,
+      "width": 84,
+      "height": 53,
+      "original_offsets": [
+        -59,
+        -18
+      ],
+      "private_Palet_1_candidate_png_sha256": "32abae4d2b46cdc85e9e65e4cf47bc11153122ba9e23a96a58a72f73806c308b",
+      "private_Palet_1_candidate_png_bytes": 4215
+    },
+    {
+      "source_bitmap_number": 16046,
+      "original_adrn_index": 16046,
+      "original_adrn_record_sha256": "5668b592955b7d3db003c2814d6afc135a21886c7faa8d0d714c8c65150b7cf7",
+      "original_real_offset": 48108604,
+      "original_RD_block_bytes": 1747,
+      "original_RD_sha256": "c4bd9f54c7759ee841975b47da0c601ac34cde1e33d5cedd50cccaa71d62f90c",
+      "original_source_index_pixels_sha256": "8b8abc10e50a59d036e989a0c9780c9691a9d49567d74aa6254d592a09e03cd2",
+      "original_RD_flag": 1,
+      "width": 48,
+      "height": 82,
+      "original_offsets": [
+        -25,
+        -73
+      ],
+      "private_Palet_1_candidate_png_sha256": "43b33576cf4df66a7c8633338bb6c4342134de3969653264b81c6637e588d270",
+      "private_Palet_1_candidate_png_bytes": 3731
+    },
+    {
+      "source_bitmap_number": 16047,
+      "original_adrn_index": 16047,
+      "original_adrn_record_sha256": "7454c3c5686ed4c34548e4ddfc0d7ae2493e2b07b167e3be9d13a31d22306e44",
+      "original_real_offset": 48110351,
+      "original_RD_block_bytes": 1810,
+      "original_RD_sha256": "e0d2d6813580795d301b9d06eadf0caf97356336ba1d277a583055f6cd479388",
+      "original_source_index_pixels_sha256": "08d22e2feb48727ebe86675bfb1ce2853ab3f05cbd20efe57c3ad61c8390f2dc",
+      "original_RD_flag": 1,
+      "width": 56,
+      "height": 81,
+      "original_offsets": [
+        -25,
+        -75
+      ],
+      "private_Palet_1_candidate_png_sha256": "8ef146034d90e289891fc730e29be61819cb682fba9cbf57ee712f091c2b1d9f",
+      "private_Palet_1_candidate_png_bytes": 3992
+    },
+    {
+      "source_bitmap_number": 16048,
+      "original_adrn_index": 16048,
+      "original_adrn_record_sha256": "a23769c6431f40785092ed8309a7352e51001d8adf33ce1ad4c39b061621218b",
+      "original_real_offset": 48112161,
+      "original_RD_block_bytes": 1728,
+      "original_RD_sha256": "7c6db64036577bc42d20a6268ed4aaf757ca23a4c7aead20752074110f1b3c67",
+      "original_source_index_pixels_sha256": "afd870ae22c193cd478f0baef82e71112aee88d76508d03bfaa0689ec8692c0a",
+      "original_RD_flag": 1,
+      "width": 60,
+      "height": 71,
+      "original_offsets": [
+        -30,
+        -57
+      ],
+      "private_Palet_1_candidate_png_sha256": "2c3ee155bf35ac1592c582031e1032bfc62e1f031c7a390dd4facd73dcc08e79",
+      "private_Palet_1_candidate_png_bytes": 4102
+    },
+    {
+      "source_bitmap_number": 16049,
+      "original_adrn_index": 16049,
+      "original_adrn_record_sha256": "ece1c414c2e3e43f7299c50ee356c0aba2e7cc29c72eae637af927f9fb59a394",
+      "original_real_offset": 48113889,
+      "original_RD_block_bytes": 1602,
+      "original_RD_sha256": "4c2bff3b3b07a9e3e2930ca8d60ccb82c1aa7407d8eb265925ad36cc6f979c47",
+      "original_source_index_pixels_sha256": "311601cd927c75838ab780fd82c48cc77dcac2541e0b3d03be74baed2708b443",
+      "original_RD_flag": 1,
+      "width": 60,
+      "height": 55,
+      "original_offsets": [
+        -35,
+        -48
+      ],
+      "private_Palet_1_candidate_png_sha256": "3565f43b1d7cc65eaeb5e3b414a5fdec90c4e35ee5fdb6880d91d522fc0471e0",
+      "private_Palet_1_candidate_png_bytes": 3672
+    },
+    {
+      "source_bitmap_number": 16055,
+      "original_adrn_index": 16055,
+      "original_adrn_record_sha256": "b656dc16c582679e49596bea4a68f6d71dfcf1c5008931b6757001f1f241fd8b",
+      "original_real_offset": 48124542,
+      "original_RD_block_bytes": 1684,
+      "original_RD_sha256": "5dc7899311f357bb33dacaf4846cb59ac6130a28466d03224f7b42ec33f337d4",
+      "original_source_index_pixels_sha256": "c804b39773734fd895da42a32b99ac898fb8253b634aa45de5ab0d3040d2dbf4",
+      "original_RD_flag": 1,
+      "width": 40,
+      "height": 79,
+      "original_offsets": [
+        -24,
+        -69
+      ],
+      "private_Palet_1_candidate_png_sha256": "cb97a0b7075edf9ac9f0faf9c74b35a6a0ea3ce106782a7ebfd272a89b92915d",
+      "private_Palet_1_candidate_png_bytes": 3799
+    },
+    {
+      "source_bitmap_number": 16056,
+      "original_adrn_index": 16056,
+      "original_adrn_record_sha256": "aead15eae2cf922089b3e9e3afbb816e82090dfdb85d176e1bd8196571efef29",
+      "original_real_offset": 48126226,
+      "original_RD_block_bytes": 1695,
+      "original_RD_sha256": "e062dbcce9db5e9aa445929f466e56292c6f98eaf85a556f3838f0803429eb28",
+      "original_source_index_pixels_sha256": "135b0c44e4bb98e6bca24fe2656c85d6f878333b103cbee0e0df45759e44702b",
+      "original_RD_flag": 1,
+      "width": 40,
+      "height": 78,
+      "original_offsets": [
+        -23,
+        -68
+      ],
+      "private_Palet_1_candidate_png_sha256": "0e3aeaaf26cc4c01ff7bc99d9de49b31d2457565181629327b3b51e72af8e0f1",
+      "private_Palet_1_candidate_png_bytes": 3744
+    },
+    {
+      "source_bitmap_number": 16062,
+      "original_adrn_index": 16062,
+      "original_adrn_record_sha256": "c3fba961aeabf25b8a2f4e2e8865ea2b2a8dabb10832852650c5b3ccb7c5f7c5",
+      "original_real_offset": 48136687,
+      "original_RD_block_bytes": 1705,
+      "original_RD_sha256": "5f638d8f9a35a5814c23053c816a92c658fc348c2976c8ce41e92addbbe518ab",
+      "original_source_index_pixels_sha256": "71e1e7b242d4c0906d21c00170680221b650510807fb2c7e91c4a4d99f7efaff",
+      "original_RD_flag": 1,
+      "width": 40,
+      "height": 80,
+      "original_offsets": [
+        -23,
+        -70
+      ],
+      "private_Palet_1_candidate_png_sha256": "e9e682481c152824d5d6012817361659beaa9aada98b46c4f2b44e5d4bc437ec",
+      "private_Palet_1_candidate_png_bytes": 3689
+    },
+    {
+      "source_bitmap_number": 16202,
+      "original_adrn_index": 16202,
+      "original_adrn_record_sha256": "4c4fc371725f2194744d959f5de1778367ce61529ea6e8994caa955061aec0a0",
+      "original_real_offset": 48391345,
+      "original_RD_block_bytes": 1866,
+      "original_RD_sha256": "91cb933231eb15f2da0671fc5dd0157790d1ba9720dfc4cbe39e0dd836e6ac6d",
+      "original_source_index_pixels_sha256": "bf5bba7c5d175ed618b61c3144d742dd377c5b84716499373b5740f33d627007",
+      "original_RD_flag": 1,
+      "width": 40,
+      "height": 89,
+      "original_offsets": [
+        -15,
+        -68
+      ],
+      "private_Palet_1_candidate_png_sha256": "e1c55a5eafad3b12ab8128d84acb294be8b04e1aee195bcd31a4ee76421379ba",
+      "private_Palet_1_candidate_png_bytes": 4154
+    },
+    {
+      "source_bitmap_number": 16203,
+      "original_adrn_index": 16203,
+      "original_adrn_record_sha256": "e2553c34a7ca803e89e9c133e13368dbab1af0907ecd226c9f8967c7dc949f9d",
+      "original_real_offset": 48393211,
+      "original_RD_block_bytes": 1920,
+      "original_RD_sha256": "5cfac52a6bb274e326424e0ca2ee7e02f2503ab5bf934c71a9f345f00772e106",
+      "original_source_index_pixels_sha256": "aac8d4a38e28497faa2823afd74b6218cb81336e7e5865480bc59888505d9507",
+      "original_RD_flag": 1,
+      "width": 40,
+      "height": 90,
+      "original_offsets": [
+        -15,
+        -69
+      ],
+      "private_Palet_1_candidate_png_sha256": "857d71e9571fbfd28d65c26a1e839afb318a7728e46360658545bbf8f6290daa",
+      "private_Palet_1_candidate_png_bytes": 4253
+    },
+    {
+      "source_bitmap_number": 16207,
+      "original_adrn_index": 16207,
+      "original_adrn_record_sha256": "f4f4ee024a2cb5252e4bc1cd541babcd0ba98924f3b3bba8c4253c15b7364f06",
+      "original_real_offset": 48400597,
+      "original_RD_block_bytes": 1904,
+      "original_RD_sha256": "f428611645e0f29ce1e01cfda5547b8f678bd0386248248163d4ec5fc4fd8ebc",
+      "original_source_index_pixels_sha256": "1bc4d35a82cf1c0334f9eb32f416d7c1212c30746c9be2ae9754b9002005df4e",
+      "original_RD_flag": 1,
+      "width": 40,
+      "height": 90,
+      "original_offsets": [
+        -16,
+        -73
+      ],
+      "private_Palet_1_candidate_png_sha256": "66bffd4290e3e61390fd37abf993497c60f0700a12f86bfb80601fba2fafaed2",
+      "private_Palet_1_candidate_png_bytes": 4150
+    },
+    {
+      "source_bitmap_number": 16208,
+      "original_adrn_index": 16208,
+      "original_adrn_record_sha256": "65050ebc7c4d49b6c816f89529ca5b7d91f8969d0f272c1bf67b389482a6e100",
+      "original_real_offset": 48402501,
+      "original_RD_block_bytes": 1887,
+      "original_RD_sha256": "b3db68eb2d6a00ac23bc4d4b0789a55c7cb79df459f32274fb135a750453774f",
+      "original_source_index_pixels_sha256": "4616c26b7767926761a9196a13da1f6a8f72f752e00d2f88dda19ad61fd7057e",
+      "original_RD_flag": 1,
+      "width": 40,
+      "height": 91,
+      "original_offsets": [
+        -16,
+        -74
+      ],
+      "private_Palet_1_candidate_png_sha256": "62e8a92f68162842edab3f4812de1583e46e3a01978f4574f7709585b9e93378",
+      "private_Palet_1_candidate_png_bytes": 4044
+    }
+  ],
+  "prior_pet15_existing_miner": {
+    "source_graphicname": 100401,
+    "newly_decoded_in_this_unit": false,
+    "original_TW1_SPR_already_covered_by_PET15": true,
+    "source_floor": 31805,
+    "source_xy": [
+      26,
+      23
+    ]
+  },
+  "counts": {
+    "original_CREATE_files_rechecked": 3,
+    "original_create_blocks": 24,
+    "mining_tribes_and_entry_CREATE": 23,
+    "prior_miner_CREATE": 1,
+    "mixed25_original_handler_files_read": 24,
+    "original_2D_numeric_graphics_in_this_context": 22,
+    "TW1_distinct_RD_original_bitmap_blocks_actually_read": 22,
+    "TW1_independent_decoders_matching_blocks": 22,
+    "private_Palet1_png_files_generated": 22,
+    "source_point_centers_in_prior_QUEST12_floor_50x50": 24,
+    "original_TW1_client_gameplay_executions": 0,
+    "original_server_gameplay_executions": 0,
+    "new_2D_original_source_bytes_read": 39941
+  },
+  "private_observation": {
+    "private_zip_name": "StoneAge-INTEGRATION111-mining-two-teams-original-2D-private.zip",
+    "contact_preview_png_sha256": "4c80b955119b432190f01f77df6f7071da9026daddf3d8f2e32cdd877fe0224e",
+    "contact_preview_png_bytes": 110391,
+    "private_read_only_HTML_source_SHA256": "8864a9fa04d6406dd27c0131cd290da119ad73705621f5b96b0abdf1fd39f28c",
+    "zip_sha256": "efda438c7a57c83bbcc800d0ea0b1ca145d64ea6e7c87d5e0f697aebc330804a",
+    "zip_bytes": 212169,
+    "zip_members": 25
+  },
+  "limitations": {
+    "original_TW1_NPC_identity_heralded_by_cross_carrier_number": false,
+    "same_historical_deployment_TW1_later_mixed25_proven": false,
+    "original_palette_selected_at_runtime_proven": false,
+    "original_scene_screenshot_rendered": false,
+    "original_native_movement_collision_or_dialogue_executed": false,
+    "new_original_server_material_discovered": false,
+    "commercial_script_text_or_RD_pixels_in_public_git": false,
+    "complete_task_loop_or_drop_execution_proven": false,
+    "overall_percent": null
+  },
+  "stage": {
+    "A": "7 PARTIAL + 2 OPEN",
+    "B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING"
+  }
+}
