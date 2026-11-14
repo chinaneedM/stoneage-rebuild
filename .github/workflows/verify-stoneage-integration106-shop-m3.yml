@@ -1,0 +1,29 @@
+name: Verify StoneAge INTEGRATION106 source-bound original 40 NPC and TW1 2D
+
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION106-SHOP-M3-40-SOURCE-TW1-ORIGINAL-2D-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION106-SHOP-M3-40-NPC-ORIGINAL-2D-20261114.md'
+      - 'tests/test_stoneage_integration106_shop_m3_original_2d.py'
+      - '.github/workflows/verify-stoneage-integration106-shop-m3.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION106-SHOP-M3-40-SOURCE-TW1-ORIGINAL-2D-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION106-SHOP-M3-40-NPC-ORIGINAL-2D-20261114.md'
+      - 'tests/test_stoneage_integration106_shop_m3_original_2d.py'
+      - '.github/workflows/verify-stoneage-integration106-shop-m3.yml'
+  workflow_dispatch:
+
+jobs:
+  source-limited-original-npc-2d:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Replay original-derived source/hash/geometry/negative evidence
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration106_shop_m3_original_2d.py' -v
