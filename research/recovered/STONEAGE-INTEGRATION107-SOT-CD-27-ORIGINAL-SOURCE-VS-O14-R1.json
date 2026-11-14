@@ -1,0 +1,1976 @@
+{
+  "schema": "stoneage.integration107.SOT_CD_27_original_create_script_vs_2003_guide.r1",
+  "date": "2026-11-14",
+  "baseline": {
+    "main_head": "89635e38a2f901eada662061de8b32879eeed2be",
+    "main_tree": "20671f295a01cbe2a34ae3116a4a2c67d5a1ada7",
+    "O14_public_guide_blob": "eed187b68b5f14a6bb67e9fcac983b4ceab45f27",
+    "prior_MAP01_original_index_blob": "03675ee98d391f9ef0246315b2426f2a8b721fd3",
+    "immutable_CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "immutable_CURRENT_bytes": 2709173
+  },
+  "source_scope": "LATER_COMMUNITY_MIXED25_NPC_SOURCE_NOT_TW1_OR_2003_OFFICIAL_SERVER",
+  "custody": {
+    "private_original_NPC_zip_bytes": 995176,
+    "private_original_NPC_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "private_original_NPC_zip_crc_members": 2205,
+    "original_create_path": "npc/sainasu/event/oev2.create",
+    "original_create_bytes": 4719,
+    "original_create_sha256": "aa970655e6123d050b2b3007f8b24135a5ec9380466db3f55e458e67bdb456b4",
+    "original_handler_files_unique_verified": 27,
+    "original_handler_bytes_total": 51055,
+    "prior_MAP01_manifest_git_blob": "03675ee98d391f9ef0246315b2426f2a8b721fd3"
+  },
+  "counts": {
+    "original_create_blocks": 27,
+    "source_type_changeevent": 27,
+    "source_floor_count": 19,
+    "source_floor_codes": [
+      100,
+      1000,
+      1100,
+      1200,
+      1300,
+      1400,
+      2000,
+      10006,
+      10007,
+      10402,
+      10404,
+      10602,
+      10703,
+      10912,
+      10915,
+      11002,
+      11004,
+      11103,
+      11104
+    ],
+    "C_checkpoint_count": 12,
+    "D_checkpoint_count": 12,
+    "original_script_handler_count": 27,
+    "2003_guide_exact_24_checkpoint_xy": 19,
+    "2003_guide_nonexact_24_checkpoint_xy": 5,
+    "all_27_created_prior_DAT_geometry": {
+      "WITHIN_PRIOR_DAT_DIMENSIONS": 17,
+      "OUTSIDE_PRIOR_DAT_DIMENSIONS": 0,
+      "NO_QUALIFIED_DAT": 10
+    },
+    "source_checkout_npc_count": 1,
+    "source_completion_npc_count": 2,
+    "source_script_sequential_both_sides_get_item_prior_delete_matches": 24
+  },
+  "rows": [
+    {
+      "ordinal": 0,
+      "source_byte_span": [
+        235,
+        397
+      ],
+      "original_block_sha256": "142c242d72bb604a960f2f1830c329a198b696f87db6aa84c5817eae33e55385",
+      "floor": 1000,
+      "source_xy": [
+        33,
+        56
+      ],
+      "graphicname": 16027,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_0cd",
+      "original_handler_bytes": 2722,
+      "original_handler_sha256": "dcac8cfba36107d278716c1da4835d4fdac580516a8fc3883528f0639231bc69",
+      "prior_DAT_geometry": "NO_QUALIFIED_DAT",
+      "prior_DAT_dimensions": null,
+      "original_GetItem_IDs": [
+        2575
+      ],
+      "original_DelItem_IDs": [
+        2575,
+        2576,
+        2580
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [
+        12644
+      ],
+      "route": null,
+      "sequence": null,
+      "O14_2003_guide_xy": [
+        33,
+        56
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    },
+    {
+      "ordinal": 1,
+      "source_byte_span": [
+        399,
+        563
+      ],
+      "original_block_sha256": "7262d921b5607474cab1e5b662458cb752bc4d9ea70e413a53570dd1b2a84c56",
+      "floor": 1000,
+      "source_xy": [
+        126,
+        99
+      ],
+      "graphicname": 16067,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_1c",
+      "original_handler_bytes": 1688,
+      "original_handler_sha256": "8530af2810ead0878e527c3005fee622e228ef6c5bb730e3c4955c5ee1d8b0c1",
+      "prior_DAT_geometry": "NO_QUALIFIED_DAT",
+      "prior_DAT_dimensions": null,
+      "original_GetItem_IDs": [
+        2576
+      ],
+      "original_DelItem_IDs": [
+        2575
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "C",
+      "sequence": 1,
+      "O14_2003_guide_xy": [
+        126,
+        99
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    },
+    {
+      "ordinal": 2,
+      "source_byte_span": [
+        565,
+        727
+      ],
+      "original_block_sha256": "306b7796b7f5701d397cb14c068a0ac9b408bf8830d2e61999d0a7959c6ce7c1",
+      "floor": 1100,
+      "source_xy": [
+        98,
+        76
+      ],
+      "graphicname": 16067,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_2c",
+      "original_handler_bytes": 1834,
+      "original_handler_sha256": "0b873836074551e2360964a57fbc33cc279373a83f7a6bc460418e7bc575ff15",
+      "prior_DAT_geometry": "NO_QUALIFIED_DAT",
+      "prior_DAT_dimensions": null,
+      "original_GetItem_IDs": [
+        2577
+      ],
+      "original_DelItem_IDs": [
+        2576
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "C",
+      "sequence": 2,
+      "O14_2003_guide_xy": [
+        98,
+        76
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    },
+    {
+      "ordinal": 3,
+      "source_byte_span": [
+        729,
+        890
+      ],
+      "original_block_sha256": "0da0caa60ab1f26124a4031d72ba88f51b0154007ebae6b46c7288b8406889b7",
+      "floor": 11004,
+      "source_xy": [
+        21,
+        8
+      ],
+      "graphicname": 16068,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_3c",
+      "original_handler_bytes": 1834,
+      "original_handler_sha256": "d4a80bc5503be4ab661a2ef3887baaee94611349e2f4ce7a5291e30d136ab3e5",
+      "prior_DAT_geometry": "WITHIN_PRIOR_DAT_DIMENSIONS",
+      "prior_DAT_dimensions": [
+        50,
+        50
+      ],
+      "original_GetItem_IDs": [
+        2578
+      ],
+      "original_DelItem_IDs": [
+        2577
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "C",
+      "sequence": 3,
+      "O14_2003_guide_xy": [
+        27,
+        42
+      ],
+      "source_minus_guide_xy": [
+        -6,
+        -34
+      ],
+      "exact_same_xy_as_2003_guide": false
+    },
+    {
+      "ordinal": 4,
+      "source_byte_span": [
+        893,
+        1057
+      ],
+      "original_block_sha256": "ca5b71aeab067eb89ee248c4b5d283b9e577781542c78623eb2bfac02d0a963f",
+      "floor": 2000,
+      "source_xy": [
+        80,
+        115
+      ],
+      "graphicname": 16067,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_4c",
+      "original_handler_bytes": 1836,
+      "original_handler_sha256": "631f0bce0e0c191d97a375740b90616ec437171b4e23c2c8a43e40de0bdb6e2b",
+      "prior_DAT_geometry": "WITHIN_PRIOR_DAT_DIMENSIONS",
+      "prior_DAT_dimensions": [
+        150,
+        150
+      ],
+      "original_GetItem_IDs": [
+        2579
+      ],
+      "original_DelItem_IDs": [
+        2578
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "C",
+      "sequence": 4,
+      "O14_2003_guide_xy": [
+        80,
+        115
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    },
+    {
+      "ordinal": 5,
+      "source_byte_span": [
+        1059,
+        1222
+      ],
+      "original_block_sha256": "4d22367eed60486d2841529ef22c0400dd7154ea7371f8554264651d53dfc1a4",
+      "floor": 10703,
+      "source_xy": [
+        41,
+        45
+      ],
+      "graphicname": 16068,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_5c",
+      "original_handler_bytes": 1844,
+      "original_handler_sha256": "5323f47f258daf6d420ade90f2b67a388ba4d4fb78eb08f0afe6138dc65e1330",
+      "prior_DAT_geometry": "WITHIN_PRIOR_DAT_DIMENSIONS",
+      "prior_DAT_dimensions": [
+        80,
+        80
+      ],
+      "original_GetItem_IDs": [
+        2580
+      ],
+      "original_DelItem_IDs": [
+        2579
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "C",
+      "sequence": 5,
+      "O14_2003_guide_xy": [
+        41,
+        45
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    },
+    {
+      "ordinal": 6,
+      "source_byte_span": [
+        1225,
+        1386
+      ],
+      "original_block_sha256": "cebc140ce07886c4274f5e5faf59fdaeab865714325911bf7a62f308545c27bd",
+      "floor": 10007,
+      "source_xy": [
+        23,
+        9
+      ],
+      "graphicname": 16068,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_6c",
+      "original_handler_bytes": 1840,
+      "original_handler_sha256": "badf2644defbe1fd722df5a220295e8d6e47b0e2902b98027c534bfe54ee2373",
+      "prior_DAT_geometry": "WITHIN_PRIOR_DAT_DIMENSIONS",
+      "prior_DAT_dimensions": [
+        60,
+        60
+      ],
+      "original_GetItem_IDs": [
+        2581
+      ],
+      "original_DelItem_IDs": [
+        2580
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "C",
+      "sequence": 6,
+      "O14_2003_guide_xy": [
+        23,
+        9
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    },
+    {
+      "ordinal": 7,
+      "source_byte_span": [
+        1389,
+        1552
+      ],
+      "original_block_sha256": "77cd4cb44535111783808757e0a688d2debdda6e633c7a526186b0cf699872e6",
+      "floor": 10915,
+      "source_xy": [
+        54,
+        10
+      ],
+      "graphicname": 16067,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_7c",
+      "original_handler_bytes": 1855,
+      "original_handler_sha256": "6529ffeda3b319c7d63968c566dc876bfd44a09c7db901c9b0b7a6c460c0b411",
+      "prior_DAT_geometry": "WITHIN_PRIOR_DAT_DIMENSIONS",
+      "prior_DAT_dimensions": [
+        60,
+        40
+      ],
+      "original_GetItem_IDs": [
+        2582
+      ],
+      "original_DelItem_IDs": [
+        2581
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "C",
+      "sequence": 7,
+      "O14_2003_guide_xy": [
+        54,
+        10
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    },
+    {
+      "ordinal": 8,
+      "source_byte_span": [
+        1555,
+        1717
+      ],
+      "original_block_sha256": "a89b1087057617513566fb7553e849f5e38d3d68bbbf8c4b5cbf8328d9d513ea",
+      "floor": 1200,
+      "source_xy": [
+        86,
+        96
+      ],
+      "graphicname": 16067,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_8c",
+      "original_handler_bytes": 1824,
+      "original_handler_sha256": "622fdbb6f14d8511dfa32e48aa74afdf359be71d850baf961dd5f0bbf1cd7a14",
+      "prior_DAT_geometry": "WITHIN_PRIOR_DAT_DIMENSIONS",
+      "prior_DAT_dimensions": [
+        130,
+        150
+      ],
+      "original_GetItem_IDs": [
+        2583
+      ],
+      "original_DelItem_IDs": [
+        2582
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "C",
+      "sequence": 8,
+      "O14_2003_guide_xy": [
+        86,
+        96
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    },
+    {
+      "ordinal": 9,
+      "source_byte_span": [
+        1720,
+        1882
+      ],
+      "original_block_sha256": "4b2c592b7bdd0e865871f466d627ff611de868aed47774b1bf06d05eb7a48702",
+      "floor": 1300,
+      "source_xy": [
+        65,
+        26
+      ],
+      "graphicname": 16068,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_9c",
+      "original_handler_bytes": 1845,
+      "original_handler_sha256": "6aa23fb3c3aa906ea68a3e3a0fe3c371bec8656f3f8bb99ee5c5b64d54dd41b9",
+      "prior_DAT_geometry": "NO_QUALIFIED_DAT",
+      "prior_DAT_dimensions": null,
+      "original_GetItem_IDs": [
+        2584
+      ],
+      "original_DelItem_IDs": [
+        2583
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "C",
+      "sequence": 9,
+      "O14_2003_guide_xy": [
+        65,
+        26
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    },
+    {
+      "ordinal": 10,
+      "source_byte_span": [
+        1885,
+        2050
+      ],
+      "original_block_sha256": "d007e3fee1573cce5f34434785efe14df5fd551c22262319542c379f7f271fc3",
+      "floor": 11104,
+      "source_xy": [
+        11,
+        41
+      ],
+      "graphicname": 16067,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_10c",
+      "original_handler_bytes": 1832,
+      "original_handler_sha256": "4dc7d486dbb2e7982dea179a7eed5a6a077f12a8d16bbe0c149c3a024553d0e2",
+      "prior_DAT_geometry": "WITHIN_PRIOR_DAT_DIMENSIONS",
+      "prior_DAT_dimensions": [
+        50,
+        50
+      ],
+      "original_GetItem_IDs": [
+        2585
+      ],
+      "original_DelItem_IDs": [
+        2584
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "C",
+      "sequence": 10,
+      "O14_2003_guide_xy": [
+        11,
+        41
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    },
+    {
+      "ordinal": 11,
+      "source_byte_span": [
+        2053,
+        2216
+      ],
+      "original_block_sha256": "85fc0cf2193758a53fed444ed0463cfb0148ff5c7ce1acd5c402514c8fb2d2a5",
+      "floor": 10402,
+      "source_xy": [
+        37,
+        6
+      ],
+      "graphicname": 16067,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_11c",
+      "original_handler_bytes": 1870,
+      "original_handler_sha256": "c0d35c11631738f83a91b577684bc9c7639ab0b05536f5e0048bc7b194cb33f1",
+      "prior_DAT_geometry": "WITHIN_PRIOR_DAT_DIMENSIONS",
+      "prior_DAT_dimensions": [
+        50,
+        50
+      ],
+      "original_GetItem_IDs": [
+        2586
+      ],
+      "original_DelItem_IDs": [
+        2585
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "C",
+      "sequence": 11,
+      "O14_2003_guide_xy": [
+        37,
+        6
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    },
+    {
+      "ordinal": 12,
+      "source_byte_span": [
+        2218,
+        2384
+      ],
+      "original_block_sha256": "eeabf086de84fbffe299cd76bc1271a4884c38935bc04d38624483558352ca42",
+      "floor": 1400,
+      "source_xy": [
+        110,
+        81
+      ],
+      "graphicname": 16067,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_12c",
+      "original_handler_bytes": 1810,
+      "original_handler_sha256": "2dbe5c3bea52b90bdf7de43a262f7efdffca2e21d3564f5f867133ff42d82954",
+      "prior_DAT_geometry": "WITHIN_PRIOR_DAT_DIMENSIONS",
+      "prior_DAT_dimensions": [
+        150,
+        150
+      ],
+      "original_GetItem_IDs": [
+        2587
+      ],
+      "original_DelItem_IDs": [
+        2586
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "C",
+      "sequence": 12,
+      "O14_2003_guide_xy": [
+        110,
+        81
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    },
+    {
+      "ordinal": 13,
+      "source_byte_span": [
+        2387,
+        2552
+      ],
+      "original_block_sha256": "1cd0691d0962dd32dc83b3eb301a7047fc7c45abf4f337f5df1a5b41ab4b18f9",
+      "floor": 100,
+      "source_xy": [
+        727,
+        500
+      ],
+      "graphicname": 16065,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_1d",
+      "original_handler_bytes": 1699,
+      "original_handler_sha256": "0a06834d1310657d0c1c226642c7bdc0d60ed1c99d5d517d1798d36a7cf12c79",
+      "prior_DAT_geometry": "NO_QUALIFIED_DAT",
+      "prior_DAT_dimensions": null,
+      "original_GetItem_IDs": [
+        2576
+      ],
+      "original_DelItem_IDs": [
+        2575
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "D",
+      "sequence": 1,
+      "O14_2003_guide_xy": [
+        727,
+        500
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    },
+    {
+      "ordinal": 14,
+      "source_byte_span": [
+        2555,
+        2720
+      ],
+      "original_block_sha256": "6e8e16b41fb82d67c25a8fdc1c0837696de7ac3da2ba0b1d4788353ba1a8d4a4",
+      "floor": 100,
+      "source_xy": [
+        670,
+        245
+      ],
+      "graphicname": 16065,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_2d",
+      "original_handler_bytes": 1857,
+      "original_handler_sha256": "dac1ca517d71ce79ce1f8e477b40d1f3d9cb31f8f43d0be18b2efbbf264b99ca",
+      "prior_DAT_geometry": "NO_QUALIFIED_DAT",
+      "prior_DAT_dimensions": null,
+      "original_GetItem_IDs": [
+        2577
+      ],
+      "original_DelItem_IDs": [
+        2576
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "D",
+      "sequence": 2,
+      "O14_2003_guide_xy": [
+        669,
+        244
+      ],
+      "source_minus_guide_xy": [
+        1,
+        1
+      ],
+      "exact_same_xy_as_2003_guide": false
+    },
+    {
+      "ordinal": 15,
+      "source_byte_span": [
+        2722,
+        2885
+      ],
+      "original_block_sha256": "cc072651f6cf606f84c8e1ee48873e57b5a5cabcebc53adbf64f8d3de43d1092",
+      "floor": 11103,
+      "source_xy": [
+        45,
+        16
+      ],
+      "graphicname": 16065,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_3d",
+      "original_handler_bytes": 1837,
+      "original_handler_sha256": "c2aea071674fc65948a9f4c3a71a12d51b6d1f26366b4a7ed57ae4ce4d5e82a4",
+      "prior_DAT_geometry": "WITHIN_PRIOR_DAT_DIMENSIONS",
+      "prior_DAT_dimensions": [
+        50,
+        50
+      ],
+      "original_GetItem_IDs": [
+        2578
+      ],
+      "original_DelItem_IDs": [
+        2577
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "D",
+      "sequence": 3,
+      "O14_2003_guide_xy": [
+        44,
+        16
+      ],
+      "source_minus_guide_xy": [
+        1,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": false
+    },
+    {
+      "ordinal": 16,
+      "source_byte_span": [
+        2888,
+        3049
+      ],
+      "original_block_sha256": "1270431c42cefdbe85778180fd3c70e79f2f99167bc78c8561275b5e4e053d57",
+      "floor": 10404,
+      "source_xy": [
+        37,
+        7
+      ],
+      "graphicname": 16065,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_4d",
+      "original_handler_bytes": 1894,
+      "original_handler_sha256": "dcf68393905d31d7dca8d4a839469f2da0ee2e6ae0f60c0675a691695196db1b",
+      "prior_DAT_geometry": "WITHIN_PRIOR_DAT_DIMENSIONS",
+      "prior_DAT_dimensions": [
+        50,
+        50
+      ],
+      "original_GetItem_IDs": [
+        2579
+      ],
+      "original_DelItem_IDs": [
+        2578
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "D",
+      "sequence": 4,
+      "O14_2003_guide_xy": [
+        36,
+        7
+      ],
+      "source_minus_guide_xy": [
+        1,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": false
+    },
+    {
+      "ordinal": 17,
+      "source_byte_span": [
+        3052,
+        3215
+      ],
+      "original_block_sha256": "d5686c6f0e193caaf0135b6c8e8a737f75eee36d992bf32c69a223e9276fd5e1",
+      "floor": 100,
+      "source_xy": [
+        290,
+        96
+      ],
+      "graphicname": 16066,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_5d",
+      "original_handler_bytes": 1839,
+      "original_handler_sha256": "6bbe96fc8db12d912b642ffbb64ac6ea2a9599ec1c58ae1b9154b2b9d4ffb32b",
+      "prior_DAT_geometry": "NO_QUALIFIED_DAT",
+      "prior_DAT_dimensions": null,
+      "original_GetItem_IDs": [
+        2580
+      ],
+      "original_DelItem_IDs": [
+        2579
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "D",
+      "sequence": 5,
+      "O14_2003_guide_xy": [
+        290,
+        97
+      ],
+      "source_minus_guide_xy": [
+        0,
+        -1
+      ],
+      "exact_same_xy_as_2003_guide": false
+    },
+    {
+      "ordinal": 18,
+      "source_byte_span": [
+        3218,
+        3379
+      ],
+      "original_block_sha256": "aeb455b83aad0be2cc39cb9aba310ef0953bb5a8a3579643bac3abd839c7d519",
+      "floor": 10602,
+      "source_xy": [
+        39,
+        3
+      ],
+      "graphicname": 16066,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_6d",
+      "original_handler_bytes": 1863,
+      "original_handler_sha256": "25a80c9bb1eeb6df60e7f1de231f8190934bc9b6d3fff7646b8a5be3f60e9b88",
+      "prior_DAT_geometry": "WITHIN_PRIOR_DAT_DIMENSIONS",
+      "prior_DAT_dimensions": [
+        50,
+        50
+      ],
+      "original_GetItem_IDs": [
+        2581
+      ],
+      "original_DelItem_IDs": [
+        2580
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "D",
+      "sequence": 6,
+      "O14_2003_guide_xy": [
+        39,
+        3
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    },
+    {
+      "ordinal": 19,
+      "source_byte_span": [
+        3382,
+        3547
+      ],
+      "original_block_sha256": "2805a44beafe18d3ec99592201fea972fbec82a3fede12340587b818d86938d4",
+      "floor": 100,
+      "source_xy": [
+        428,
+        543
+      ],
+      "graphicname": 16065,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_7d",
+      "original_handler_bytes": 1845,
+      "original_handler_sha256": "b871c5d5b8720f8ee9c134939210fda57ae289c8b94991e3ec7f1818cdaa70eb",
+      "prior_DAT_geometry": "NO_QUALIFIED_DAT",
+      "prior_DAT_dimensions": null,
+      "original_GetItem_IDs": [
+        2582
+      ],
+      "original_DelItem_IDs": [
+        2581
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "D",
+      "sequence": 7,
+      "O14_2003_guide_xy": [
+        428,
+        543
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    },
+    {
+      "ordinal": 20,
+      "source_byte_span": [
+        3550,
+        3713
+      ],
+      "original_block_sha256": "4bdde2bf7e311b3646159b5916b0d02228cce3a7fb3e2b1e246adbfb0b140d63",
+      "floor": 11002,
+      "source_xy": [
+        27,
+        42
+      ],
+      "graphicname": 16066,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_8d",
+      "original_handler_bytes": 1844,
+      "original_handler_sha256": "255ee920496e035fac8098e1d329017d00a5e84af91db666789f308d3ea523b4",
+      "prior_DAT_geometry": "WITHIN_PRIOR_DAT_DIMENSIONS",
+      "prior_DAT_dimensions": [
+        50,
+        50
+      ],
+      "original_GetItem_IDs": [
+        2583
+      ],
+      "original_DelItem_IDs": [
+        2582
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "D",
+      "sequence": 8,
+      "O14_2003_guide_xy": [
+        27,
+        42
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    },
+    {
+      "ordinal": 21,
+      "source_byte_span": [
+        3716,
+        3877
+      ],
+      "original_block_sha256": "2f0482cb49900c60b466c31e7b289bd4b56f36b35c8cca011404282c954fe4e1",
+      "floor": 10912,
+      "source_xy": [
+        35,
+        4
+      ],
+      "graphicname": 16066,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_9d",
+      "original_handler_bytes": 1837,
+      "original_handler_sha256": "175a79735c7dcfb0bc94652c7ba139ffcfacbbb386a6fe6a7c9c24766a261a0b",
+      "prior_DAT_geometry": "WITHIN_PRIOR_DAT_DIMENSIONS",
+      "prior_DAT_dimensions": [
+        40,
+        40
+      ],
+      "original_GetItem_IDs": [
+        2584
+      ],
+      "original_DelItem_IDs": [
+        2583
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "D",
+      "sequence": 9,
+      "O14_2003_guide_xy": [
+        35,
+        4
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    },
+    {
+      "ordinal": 22,
+      "source_byte_span": [
+        3880,
+        4043
+      ],
+      "original_block_sha256": "964ecef806baaa193fbb6b4d2ed5355f978e9f35ce31f6dc0d5a0f2dec307a0e",
+      "floor": 10006,
+      "source_xy": [
+        8,
+        86
+      ],
+      "graphicname": 16066,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_10d",
+      "original_handler_bytes": 1842,
+      "original_handler_sha256": "ae203656d145c90dda21d25db5018e1f2721bcb286c7fa1e1e69862bf48d3329",
+      "prior_DAT_geometry": "WITHIN_PRIOR_DAT_DIMENSIONS",
+      "prior_DAT_dimensions": [
+        50,
+        100
+      ],
+      "original_GetItem_IDs": [
+        2585
+      ],
+      "original_DelItem_IDs": [
+        2584
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "D",
+      "sequence": 10,
+      "O14_2003_guide_xy": [
+        8,
+        86
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    },
+    {
+      "ordinal": 23,
+      "source_byte_span": [
+        4046,
+        4211
+      ],
+      "original_block_sha256": "0823beeba00a8681ce835a112948a0757ed5a0e116c3bed8418f00b772f1121f",
+      "floor": 10703,
+      "source_xy": [
+        58,
+        26
+      ],
+      "graphicname": 16065,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_11d",
+      "original_handler_bytes": 1914,
+      "original_handler_sha256": "5208d877159c5349f1d0acd319a2a627bcc553f558d8aa72514c265e4e9e9222",
+      "prior_DAT_geometry": "WITHIN_PRIOR_DAT_DIMENSIONS",
+      "prior_DAT_dimensions": [
+        80,
+        80
+      ],
+      "original_GetItem_IDs": [
+        2586
+      ],
+      "original_DelItem_IDs": [
+        2585
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "D",
+      "sequence": 11,
+      "O14_2003_guide_xy": [
+        58,
+        26
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    },
+    {
+      "ordinal": 24,
+      "source_byte_span": [
+        4214,
+        4379
+      ],
+      "original_block_sha256": "d179788dedbdbc75c82235832c4cb6e8fe2230f449cca9e817298d9de393e8d6",
+      "floor": 100,
+      "source_xy": [
+        74,
+        489
+      ],
+      "graphicname": 16066,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_12d",
+      "original_handler_bytes": 1813,
+      "original_handler_sha256": "b59f2950dd30a33b774a96a2d74c71399fba201277bcb50a1d5bd844cf46cae0",
+      "prior_DAT_geometry": "NO_QUALIFIED_DAT",
+      "prior_DAT_dimensions": null,
+      "original_GetItem_IDs": [
+        2587
+      ],
+      "original_DelItem_IDs": [
+        2586
+      ],
+      "original_ITEM_gate_IDs": [
+        2547,
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [],
+      "original_GetRandItem_numeric_IDs": [],
+      "route": "D",
+      "sequence": 12,
+      "O14_2003_guide_xy": [
+        74,
+        489
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    },
+    {
+      "ordinal": 25,
+      "source_byte_span": [
+        4383,
+        4546
+      ],
+      "original_block_sha256": "4f796c59ab16d5c65734514f6d6013bb4b10b23f431a00db9f3b67b10f78e818",
+      "floor": 1000,
+      "source_xy": [
+        108,
+        28
+      ],
+      "graphicname": 16027,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_edc",
+      "original_handler_bytes": 2166,
+      "original_handler_sha256": "a1891aef372be0012df9f830560f513c41e8334a62ff31f26b2da0124632f037",
+      "prior_DAT_geometry": "NO_QUALIFIED_DAT",
+      "prior_DAT_dimensions": null,
+      "original_GetItem_IDs": [],
+      "original_DelItem_IDs": [
+        2575,
+        2576,
+        2580,
+        2587
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [
+        48
+      ],
+      "original_GetRandItem_numeric_IDs": [
+        254,
+        12644
+      ],
+      "route": null,
+      "sequence": null,
+      "O14_2003_guide_xy": [
+        108,
+        29
+      ],
+      "source_minus_guide_xy": [
+        0,
+        -1
+      ],
+      "exact_same_xy_as_2003_guide": false
+    },
+    {
+      "ordinal": 26,
+      "source_byte_span": [
+        4549,
+        4712
+      ],
+      "original_block_sha256": "a381ec0d008e188c0c80acaaafa4a7fb1320131f87369f94037d7790ec371d3d",
+      "floor": 2000,
+      "source_xy": [
+        88,
+        116
+      ],
+      "graphicname": 16033,
+      "source_type": "changeevent",
+      "original_handler_path": "npc/sainasu/event/oev_edd",
+      "original_handler_bytes": 2171,
+      "original_handler_sha256": "e36d22aa365dae29b57eded4bb3b8dd3ed3edab0f069186ae6041e4eb45a4537",
+      "prior_DAT_geometry": "WITHIN_PRIOR_DAT_DIMENSIONS",
+      "prior_DAT_dimensions": [
+        150,
+        150
+      ],
+      "original_GetItem_IDs": [],
+      "original_DelItem_IDs": [
+        2575,
+        2576,
+        2580,
+        2587
+      ],
+      "original_ITEM_gate_IDs": [
+        2575,
+        2576,
+        2577,
+        2578,
+        2579,
+        2580,
+        2581,
+        2582,
+        2583,
+        2584,
+        2585,
+        2586,
+        2587
+      ],
+      "original_ENDEV_gate_IDs": [
+        17
+      ],
+      "original_GetPet_numeric_IDs": [
+        76
+      ],
+      "original_GetRandItem_numeric_IDs": [
+        255,
+        12644
+      ],
+      "route": null,
+      "sequence": null,
+      "O14_2003_guide_xy": [
+        88,
+        116
+      ],
+      "source_minus_guide_xy": [
+        0,
+        0
+      ],
+      "exact_same_xy_as_2003_guide": true
+    }
+  ],
+  "checkpoint_handoff_numeric_probes": [
+    {
+      "route": "C",
+      "sequence": 1,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2576,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2575
+    },
+    {
+      "route": "C",
+      "sequence": 2,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2577,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2576
+    },
+    {
+      "route": "C",
+      "sequence": 3,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2578,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2577
+    },
+    {
+      "route": "C",
+      "sequence": 4,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2579,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2578
+    },
+    {
+      "route": "C",
+      "sequence": 5,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2580,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2579
+    },
+    {
+      "route": "C",
+      "sequence": 6,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2581,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2580
+    },
+    {
+      "route": "C",
+      "sequence": 7,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2582,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2581
+    },
+    {
+      "route": "C",
+      "sequence": 8,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2583,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2582
+    },
+    {
+      "route": "C",
+      "sequence": 9,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2584,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2583
+    },
+    {
+      "route": "C",
+      "sequence": 10,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2585,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2584
+    },
+    {
+      "route": "C",
+      "sequence": 11,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2586,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2585
+    },
+    {
+      "route": "C",
+      "sequence": 12,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2587,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2586
+    },
+    {
+      "route": "D",
+      "sequence": 1,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2576,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2575
+    },
+    {
+      "route": "D",
+      "sequence": 2,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2577,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2576
+    },
+    {
+      "route": "D",
+      "sequence": 3,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2578,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2577
+    },
+    {
+      "route": "D",
+      "sequence": 4,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2579,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2578
+    },
+    {
+      "route": "D",
+      "sequence": 5,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2580,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2579
+    },
+    {
+      "route": "D",
+      "sequence": 6,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2581,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2580
+    },
+    {
+      "route": "D",
+      "sequence": 7,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2582,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2581
+    },
+    {
+      "route": "D",
+      "sequence": 8,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2583,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2582
+    },
+    {
+      "route": "D",
+      "sequence": 9,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2584,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2583
+    },
+    {
+      "route": "D",
+      "sequence": 10,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2585,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2584
+    },
+    {
+      "route": "D",
+      "sequence": 11,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2586,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2585
+    },
+    {
+      "route": "D",
+      "sequence": 12,
+      "source_script_gets_expected_next_ID": true,
+      "expected_next_get_ID": 2587,
+      "source_script_deletes_prior_ID": true,
+      "expected_deleted_ID": 2586
+    }
+  ],
+  "source_vs_2003_guide_inequalities": [
+    {
+      "ordinal": 3,
+      "role": "C-3",
+      "guide_xy": [
+        27,
+        42
+      ],
+      "later_source_xy": [
+        21,
+        8
+      ],
+      "source_minus_guide": [
+        -6,
+        -34
+      ]
+    },
+    {
+      "ordinal": 14,
+      "role": "D-2",
+      "guide_xy": [
+        669,
+        244
+      ],
+      "later_source_xy": [
+        670,
+        245
+      ],
+      "source_minus_guide": [
+        1,
+        1
+      ]
+    },
+    {
+      "ordinal": 15,
+      "role": "D-3",
+      "guide_xy": [
+        44,
+        16
+      ],
+      "later_source_xy": [
+        45,
+        16
+      ],
+      "source_minus_guide": [
+        1,
+        0
+      ]
+    },
+    {
+      "ordinal": 16,
+      "role": "D-4",
+      "guide_xy": [
+        36,
+        7
+      ],
+      "later_source_xy": [
+        37,
+        7
+      ],
+      "source_minus_guide": [
+        1,
+        0
+      ]
+    },
+    {
+      "ordinal": 17,
+      "role": "D-5",
+      "guide_xy": [
+        290,
+        97
+      ],
+      "later_source_xy": [
+        290,
+        96
+      ],
+      "source_minus_guide": [
+        0,
+        -1
+      ]
+    },
+    {
+      "ordinal": 25,
+      "role": "completion_C",
+      "guide_xy": [
+        108,
+        29
+      ],
+      "later_source_xy": [
+        108,
+        28
+      ],
+      "source_minus_guide": [
+        0,
+        -1
+      ]
+    }
+  ],
+  "historic_boundary": {
+    "source_one_same_archive_original_NPC_script_complete_SHA_CRC_verified": true,
+    "source_original_handlers_all_CP950_decoded": true,
+    "map_DIMENSIONS_only_prior_manifest_no_new_DAT_bytes_read": true,
+    "source_original_2003_player_guide_not_same_archive": true,
+    "source_2003_guide_are_player_submission_not_native": true,
+    "TW1_or_original_official_same_server_deployment_proven": false,
+    "native_reward_probability_or_reset_executed": false,
+    "original_client_world_executed": false,
+    "proprietary_original_script_or_text_committed_publicly": false
+  },
+  "NEXT": "Rotate to a distinct source-qualified pet/visible quest/scene family; SOT early native and same-deployment status remain open."
+}
