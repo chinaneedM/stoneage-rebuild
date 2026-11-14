@@ -1,0 +1,691 @@
+{
+  "schema": "stoneage.integration110_munde_tribe_original_source_bound_npc_warp.r1",
+  "evidence_scope": "LATER_COMMUNITY_MIXED25_STATIC_ORIGINAL_SOURCE_ONLY_NOT_TW1_OR_NATIVE_RUNTIME",
+  "baseline": {
+    "source_main": "422a5d067b61997c92d534c0687eca4262a5dbba",
+    "source_tree": "879780e89bf45122256283a78629803688927e0b",
+    "current_original_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_original_bytes": 2709173
+  },
+  "private_original_source": {
+    "npc_zip_bytes": 995176,
+    "npc_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "zip_members_crc_pass": 2205,
+    "individual_files": {
+      "genout/11100npc.create": {
+        "bytes": 1481,
+        "sha256": "bf0b094b588a60be6f87fc79536fc795f5f589e5dd50beb85a35ee5426ad2f85",
+        "crc32": "352d158b"
+      },
+      "genout/11101d.create": {
+        "bytes": 1737,
+        "sha256": "4a57c2ece8d7476ee10660d0713caab7d211dc64b7bb972c223335baef869a21",
+        "crc32": "ad5a24df"
+      },
+      "genout/msg_11107_22_7": {
+        "bytes": 110,
+        "sha256": "6c3e8c44ce342297e58d393c6e1296433f27510dfa266a60b8969afa0251b7db",
+        "crc32": "f6833981"
+      },
+      "genout/msg_11107_25_7": {
+        "bytes": 74,
+        "sha256": "6b21bc2ac8c0eb42d6ece16d44b6a34ce2e079ca891d9c5153375e55edb1f9b7",
+        "crc32": "a39bb52c"
+      },
+      "genout/msg_11107_43_14": {
+        "bytes": 74,
+        "sha256": "da084ff5b0b4a72c23453446524b13a2eba8f43e221a12a32b77d18e60f017de",
+        "crc32": "9af876c3"
+      },
+      "genout/msg_11107_43_41": {
+        "bytes": 123,
+        "sha256": "ca9685e150c1854c9b009ce0e96a76bc8b03782744297666a014a2c569cdbb9f",
+        "crc32": "9215f1af"
+      },
+      "genout/msg_11107_45_21": {
+        "bytes": 70,
+        "sha256": "ba37e261748bb6daf2227722bd4e31cf1c2056163297e56df559e25aad7b8eb7",
+        "crc32": "378975eb"
+      },
+      "genout/signb_100_465_128": {
+        "bytes": 29,
+        "sha256": "470d2f58082f68a2b13a839e341a91033a92be8becab674a907f8e0420f4afd8",
+        "crc32": "e9e88fd3"
+      },
+      "genout/wpm_100_443_127": {
+        "bytes": 101,
+        "sha256": "36f1e52fada28a08b84df5fe4d50fab58179495a425754042b9d9bfa2ae96d62",
+        "crc32": "537a4245"
+      }
+    },
+    "published_parent_char01_index_git_blob": "a088b61a3212f7049e7793f587123ffb29bebad7"
+  },
+  "source_qualified_prior_DAT_metadata": {
+    "reference_file": "research/recovered/STONEAGE-25-STABLE-WORLD-CONTENT-COVERAGE-R1.txt",
+    "git_blob": "455fa7abef06ffefec6b7e46f87ac12c9ee83972",
+    "floors": [
+      {
+        "floor": 11101,
+        "width": 70,
+        "height": 70,
+        "sha256": "01823fcd18a7b2001c2d3512b4299871b29e79492fa83ebccbc51d30db88637a"
+      },
+      {
+        "floor": 11102,
+        "width": 50,
+        "height": 50,
+        "sha256": "4fbedbbc3614c8cc1271bdfe1c49e1d1f5d0ec7e6d689e2ec4143a07c8c8cd31"
+      },
+      {
+        "floor": 11103,
+        "width": 50,
+        "height": 50,
+        "sha256": "f4316e9583abf21dc83acb6812e21eee79b32973d032fc9d846c837f13f350a5"
+      },
+      {
+        "floor": 11104,
+        "width": 50,
+        "height": 50,
+        "sha256": "45b7d42ca0f1b3caa61f7723193cbfacf625a2b4a6fbf3ade1b47e2de0c3f018"
+      },
+      {
+        "floor": 11105,
+        "width": 50,
+        "height": 50,
+        "sha256": "2210389f409a57b803cde79d664368d4e573a25bf2ba1c9215a7054fd9f0de1a"
+      },
+      {
+        "floor": 11106,
+        "width": 50,
+        "height": 50,
+        "sha256": "9786850ec17d282b01f6e5685fe1cfb3b9a0aa7b4769fccb23cbecdf033954e3"
+      },
+      {
+        "floor": 11107,
+        "width": 50,
+        "height": 50,
+        "sha256": "1adbf43476b9e1745f7b38b7f48a1c0632fb2d2a47952774cae3d025ed9ef3cc"
+      }
+    ]
+  },
+  "derived_counts": {
+    "two_create_files": 2,
+    "source_create_blocks": 22,
+    "source_npc_and_sign_configuration_blocks": 8,
+    "source_static_warps": 14,
+    "original_handler_files": 7,
+    "short_dialogue_files": 5,
+    "source_functions": {
+      "npcgen_dengon": 1,
+      "npcgen_man": 5,
+      "npcgen_signboard": 1,
+      "npcgen_warp": 14,
+      "npcgen_warpman": 1
+    },
+    "static_warps_with_exact_original_inverse_in_same_11101d_file": 12,
+    "static_warps_without_exact_original_inverse_in_same_file": 2,
+    "qualified_11101_through_11107_DAT_floor_dimensions": 7,
+    "create_source_points_qualified": 20,
+    "create_source_points_unqualified_in_selected_index": 2,
+    "warp_targets_qualified": 12,
+    "warp_targets_unqualified_in_selected_index": 2
+  },
+  "source_rows": [
+    {
+      "source_file": "genout/11100npc.create",
+      "ordinal_zero_based": 0,
+      "byte_span_inclusive_exclusive": [
+        119,
+        258
+      ],
+      "original_block_sha256": "3b48800f26acbcbfb2c7afc761025efde716917f8fe3e09ceac0c1f91ee27233",
+      "source_floor": 11107,
+      "source_xy": [
+        20,
+        6
+      ],
+      "source_graphicname": 10063,
+      "original_short_name": "秘密的留言版",
+      "source_function": "npcgen_dengon",
+      "original_handler_ref": null,
+      "literal_target_floor_xy": null,
+      "source_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA",
+      "target_DAT_qualification": null
+    },
+    {
+      "source_file": "genout/11100npc.create",
+      "ordinal_zero_based": 1,
+      "byte_span_inclusive_exclusive": [
+        267,
+        432
+      ],
+      "original_block_sha256": "f30cb4e3f6aca10892b8433ac097375566114dfe3f27931cc3616dea86659f51",
+      "source_floor": 11107,
+      "source_xy": [
+        25,
+        7
+      ],
+      "source_graphicname": 100432,
+      "original_short_name": "夢德族的人民",
+      "source_function": "npcgen_man",
+      "original_handler_ref": "genout/msg_11107_25_7",
+      "original_handler_sha256": "6b21bc2ac8c0eb42d6ece16d44b6a34ce2e079ca891d9c5153375e55edb1f9b7",
+      "literal_target_floor_xy": null,
+      "source_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA",
+      "target_DAT_qualification": null
+    },
+    {
+      "source_file": "genout/11100npc.create",
+      "ordinal_zero_based": 2,
+      "byte_span_inclusive_exclusive": [
+        441,
+        606
+      ],
+      "original_block_sha256": "20eabe0d1b3fc2bc9add369ac97f660b508b1c4f64661a42e5c3b8615d696121",
+      "source_floor": 11107,
+      "source_xy": [
+        22,
+        7
+      ],
+      "source_graphicname": 100439,
+      "original_short_name": "夢德族的人民",
+      "source_function": "npcgen_man",
+      "original_handler_ref": "genout/msg_11107_22_7",
+      "original_handler_sha256": "6c3e8c44ce342297e58d393c6e1296433f27510dfa266a60b8969afa0251b7db",
+      "literal_target_floor_xy": null,
+      "source_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA",
+      "target_DAT_qualification": null
+    },
+    {
+      "source_file": "genout/11100npc.create",
+      "ordinal_zero_based": 3,
+      "byte_span_inclusive_exclusive": [
+        615,
+        783
+      ],
+      "original_block_sha256": "7b2a43299083816796d16e8a73cf55bcdc431649798a277c19978ec7a27ea12b",
+      "source_floor": 11107,
+      "source_xy": [
+        45,
+        21
+      ],
+      "source_graphicname": 100431,
+      "original_short_name": "夢德族的人民",
+      "source_function": "npcgen_man",
+      "original_handler_ref": "genout/msg_11107_45_21",
+      "original_handler_sha256": "ba37e261748bb6daf2227722bd4e31cf1c2056163297e56df559e25aad7b8eb7",
+      "literal_target_floor_xy": null,
+      "source_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA",
+      "target_DAT_qualification": null
+    },
+    {
+      "source_file": "genout/11100npc.create",
+      "ordinal_zero_based": 4,
+      "byte_span_inclusive_exclusive": [
+        792,
+        960
+      ],
+      "original_block_sha256": "75d71e0723e7c5eece59fb3dfeaf7b3b55f1e67a7a564218a77494dec4a95ef2",
+      "source_floor": 11107,
+      "source_xy": [
+        43,
+        14
+      ],
+      "source_graphicname": 100436,
+      "original_short_name": "夢德族的人民",
+      "source_function": "npcgen_man",
+      "original_handler_ref": "genout/msg_11107_43_14",
+      "original_handler_sha256": "da084ff5b0b4a72c23453446524b13a2eba8f43e221a12a32b77d18e60f017de",
+      "literal_target_floor_xy": null,
+      "source_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA",
+      "target_DAT_qualification": null
+    },
+    {
+      "source_file": "genout/11100npc.create",
+      "ordinal_zero_based": 5,
+      "byte_span_inclusive_exclusive": [
+        969,
+        1130
+      ],
+      "original_block_sha256": "91efbae76405dd86322ab5a8f257870eaa430bb04c56583f612a8c3d14183863",
+      "source_floor": 11107,
+      "source_xy": [
+        43,
+        41
+      ],
+      "source_graphicname": 16015,
+      "original_short_name": "女盜賊",
+      "source_function": "npcgen_man",
+      "original_handler_ref": "genout/msg_11107_43_41",
+      "original_handler_sha256": "ca9685e150c1854c9b009ce0e96a76bc8b03782744297666a014a2c569cdbb9f",
+      "literal_target_floor_xy": null,
+      "source_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA",
+      "target_DAT_qualification": null
+    },
+    {
+      "source_file": "genout/11100npc.create",
+      "ordinal_zero_based": 6,
+      "byte_span_inclusive_exclusive": [
+        1139,
+        1304
+      ],
+      "original_block_sha256": "cc7cb29cc5219e1a64a67143042111445a444844a224139b1a191965a5ed7c92",
+      "source_floor": 100,
+      "source_xy": [
+        443,
+        127
+      ],
+      "source_graphicname": 100433,
+      "original_short_name": "盜賊",
+      "source_function": "npcgen_warpman",
+      "original_handler_ref": "genout/wpm_100_443_127",
+      "original_handler_sha256": "36f1e52fada28a08b84df5fe4d50fab58179495a425754042b9d9bfa2ae96d62",
+      "literal_target_floor_xy": null,
+      "source_DAT_qualification": "NO_QUALIFIED_DAT_IN_SELECTED_PRIOR_COVERAGE",
+      "target_DAT_qualification": null
+    },
+    {
+      "source_file": "genout/11100npc.create",
+      "ordinal_zero_based": 7,
+      "byte_span_inclusive_exclusive": [
+        1313,
+        1481
+      ],
+      "original_block_sha256": "6a53b2cdbbc0404e23ff0003d7f716f2cb448ef45739c010f6b4e85cbb269043",
+      "source_floor": 100,
+      "source_xy": [
+        465,
+        128
+      ],
+      "source_graphicname": 10096,
+      "original_short_name": "看板",
+      "source_function": "npcgen_signboard",
+      "original_handler_ref": "genout/signb_100_465_128",
+      "original_handler_sha256": "470d2f58082f68a2b13a839e341a91033a92be8becab674a907f8e0420f4afd8",
+      "literal_target_floor_xy": null,
+      "source_DAT_qualification": "NO_QUALIFIED_DAT_IN_SELECTED_PRIOR_COVERAGE",
+      "target_DAT_qualification": null
+    },
+    {
+      "source_file": "genout/11101d.create",
+      "ordinal_zero_based": 0,
+      "byte_span_inclusive_exclusive": [
+        119,
+        228
+      ],
+      "original_block_sha256": "e1642520aa511ec98db9e632cb0a16f9a0437fcfe2d32adcf7453cf6fee04109",
+      "source_floor": 11101,
+      "source_xy": [
+        33,
+        28
+      ],
+      "source_graphicname": null,
+      "original_short_name": null,
+      "source_function": "npcgen_warp",
+      "original_handler_ref": null,
+      "literal_target_floor_xy": [
+        100,
+        442,
+        127
+      ],
+      "source_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA",
+      "target_DAT_qualification": "NO_QUALIFIED_DAT_IN_SELECTED_PRIOR_COVERAGE"
+    },
+    {
+      "source_file": "genout/11101d.create",
+      "ordinal_zero_based": 1,
+      "byte_span_inclusive_exclusive": [
+        236,
+        342
+      ],
+      "original_block_sha256": "08008b959b333e31040c013a8322323b6d7814f4ca3bf225e23b15513e5f3953",
+      "source_floor": 11101,
+      "source_xy": [
+        64,
+        5
+      ],
+      "source_graphicname": null,
+      "original_short_name": null,
+      "source_function": "npcgen_warp",
+      "original_handler_ref": null,
+      "literal_target_floor_xy": [
+        11102,
+        46,
+        7
+      ],
+      "source_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA",
+      "target_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA"
+    },
+    {
+      "source_file": "genout/11101d.create",
+      "ordinal_zero_based": 2,
+      "byte_span_inclusive_exclusive": [
+        352,
+        458
+      ],
+      "original_block_sha256": "dc6ff043a170fa5dd11abc1ccfc20dfc80b8e43976b66465d38096615909ee9c",
+      "source_floor": 11102,
+      "source_xy": [
+        46,
+        7
+      ],
+      "source_graphicname": null,
+      "original_short_name": null,
+      "source_function": "npcgen_warp",
+      "original_handler_ref": null,
+      "literal_target_floor_xy": [
+        11101,
+        64,
+        5
+      ],
+      "source_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA",
+      "target_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA"
+    },
+    {
+      "source_file": "genout/11101d.create",
+      "ordinal_zero_based": 3,
+      "byte_span_inclusive_exclusive": [
+        466,
+        573
+      ],
+      "original_block_sha256": "2ec72f4b2a0495d3e54dc608cb7e5e5f40d2c85d83b766ed310e55af225bae41",
+      "source_floor": 11102,
+      "source_xy": [
+        9,
+        44
+      ],
+      "source_graphicname": null,
+      "original_short_name": null,
+      "source_function": "npcgen_warp",
+      "original_handler_ref": null,
+      "literal_target_floor_xy": [
+        11103,
+        11,
+        37
+      ],
+      "source_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA",
+      "target_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA"
+    },
+    {
+      "source_file": "genout/11101d.create",
+      "ordinal_zero_based": 4,
+      "byte_span_inclusive_exclusive": [
+        583,
+        691
+      ],
+      "original_block_sha256": "b49e46f5bd316f63c98b7fad783ad6b07db9b6ef1201380a49a2a6deda340ee9",
+      "source_floor": 11103,
+      "source_xy": [
+        11,
+        37
+      ],
+      "source_graphicname": null,
+      "original_short_name": null,
+      "source_function": "npcgen_warp",
+      "original_handler_ref": null,
+      "literal_target_floor_xy": [
+        11102,
+        9,
+        44
+      ],
+      "source_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA",
+      "target_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA"
+    },
+    {
+      "source_file": "genout/11101d.create",
+      "ordinal_zero_based": 5,
+      "byte_span_inclusive_exclusive": [
+        700,
+        803
+      ],
+      "original_block_sha256": "dbbb5967f3451c5740a97baad27ced4a5e08006abacae16038a2a486a2ee8bd3",
+      "source_floor": 11103,
+      "source_xy": [
+        7,
+        3
+      ],
+      "source_graphicname": null,
+      "original_short_name": null,
+      "source_function": "npcgen_warp",
+      "original_handler_ref": null,
+      "literal_target_floor_xy": [
+        11104,
+        7,
+        3
+      ],
+      "source_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA",
+      "target_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA"
+    },
+    {
+      "source_file": "genout/11101d.create",
+      "ordinal_zero_based": 6,
+      "byte_span_inclusive_exclusive": [
+        813,
+        916
+      ],
+      "original_block_sha256": "b9a8711756334c15d0b0c8810ba0e56748f658f6455d21a272be15d00f8fa840",
+      "source_floor": 11104,
+      "source_xy": [
+        7,
+        3
+      ],
+      "source_graphicname": null,
+      "original_short_name": null,
+      "source_function": "npcgen_warp",
+      "original_handler_ref": null,
+      "literal_target_floor_xy": [
+        11103,
+        7,
+        3
+      ],
+      "source_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA",
+      "target_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA"
+    },
+    {
+      "source_file": "genout/11101d.create",
+      "ordinal_zero_based": 7,
+      "byte_span_inclusive_exclusive": [
+        925,
+        1034
+      ],
+      "original_block_sha256": "2609d6e6f2b501fbc823014c13aaf62cae48e0a89f19e6dac1f97042272b2957",
+      "source_floor": 11104,
+      "source_xy": [
+        45,
+        43
+      ],
+      "source_graphicname": null,
+      "original_short_name": null,
+      "source_function": "npcgen_warp",
+      "original_handler_ref": null,
+      "literal_target_floor_xy": [
+        11105,
+        46,
+        44
+      ],
+      "source_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA",
+      "target_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA"
+    },
+    {
+      "source_file": "genout/11101d.create",
+      "ordinal_zero_based": 8,
+      "byte_span_inclusive_exclusive": [
+        1044,
+        1153
+      ],
+      "original_block_sha256": "76447d196c3b365991cd649bae859812c47930fbd50ec8e7ab3e5ac9a6f9fd30",
+      "source_floor": 11105,
+      "source_xy": [
+        46,
+        44
+      ],
+      "source_graphicname": null,
+      "original_short_name": null,
+      "source_function": "npcgen_warp",
+      "original_handler_ref": null,
+      "literal_target_floor_xy": [
+        11104,
+        45,
+        43
+      ],
+      "source_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA",
+      "target_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA"
+    },
+    {
+      "source_file": "genout/11101d.create",
+      "ordinal_zero_based": 9,
+      "byte_span_inclusive_exclusive": [
+        1162,
+        1268
+      ],
+      "original_block_sha256": "505789330a9115f5e47135894076834cab806b446a04b5dc1482f289f45e70e0",
+      "source_floor": 11105,
+      "source_xy": [
+        24,
+        3
+      ],
+      "source_graphicname": null,
+      "original_short_name": null,
+      "source_function": "npcgen_warp",
+      "original_handler_ref": null,
+      "literal_target_floor_xy": [
+        11106,
+        24,
+        3
+      ],
+      "source_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA",
+      "target_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA"
+    },
+    {
+      "source_file": "genout/11101d.create",
+      "ordinal_zero_based": 10,
+      "byte_span_inclusive_exclusive": [
+        1278,
+        1384
+      ],
+      "original_block_sha256": "2b610ef5d917756d03bad8ae9399210eb0bfcdf4705a916644c7f048bd434d5a",
+      "source_floor": 11106,
+      "source_xy": [
+        24,
+        3
+      ],
+      "source_graphicname": null,
+      "original_short_name": null,
+      "source_function": "npcgen_warp",
+      "original_handler_ref": null,
+      "literal_target_floor_xy": [
+        11105,
+        24,
+        3
+      ],
+      "source_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA",
+      "target_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA"
+    },
+    {
+      "source_file": "genout/11101d.create",
+      "ordinal_zero_based": 11,
+      "byte_span_inclusive_exclusive": [
+        1393,
+        1502
+      ],
+      "original_block_sha256": "5f6e43213f5f394ea06ca219db53ab68ac103e2590b612db95a52dd09da665a2",
+      "source_floor": 11106,
+      "source_xy": [
+        18,
+        39
+      ],
+      "source_graphicname": null,
+      "original_short_name": null,
+      "source_function": "npcgen_warp",
+      "original_handler_ref": null,
+      "literal_target_floor_xy": [
+        11107,
+        18,
+        41
+      ],
+      "source_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA",
+      "target_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA"
+    },
+    {
+      "source_file": "genout/11101d.create",
+      "ordinal_zero_based": 12,
+      "byte_span_inclusive_exclusive": [
+        1512,
+        1621
+      ],
+      "original_block_sha256": "be7a5197bed019b45044e3f55d90a7c9bfea0e67df9a04d2a4d1268275c047a7",
+      "source_floor": 11107,
+      "source_xy": [
+        18,
+        41
+      ],
+      "source_graphicname": null,
+      "original_short_name": null,
+      "source_function": "npcgen_warp",
+      "original_handler_ref": null,
+      "literal_target_floor_xy": [
+        11106,
+        18,
+        39
+      ],
+      "source_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA",
+      "target_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA"
+    },
+    {
+      "source_file": "genout/11101d.create",
+      "ordinal_zero_based": 13,
+      "byte_span_inclusive_exclusive": [
+        1630,
+        1737
+      ],
+      "original_block_sha256": "c13397b391f84c32089202843b5cf6a1d35fd186b98679f32edb590341c1697b",
+      "source_floor": 11107,
+      "source_xy": [
+        32,
+        7
+      ],
+      "source_graphicname": null,
+      "original_short_name": null,
+      "source_function": "npcgen_warp",
+      "original_handler_ref": null,
+      "literal_target_floor_xy": [
+        100,
+        466,
+        128
+      ],
+      "source_DAT_qualification": "IN_BOUNDS_PRIOR_COVERAGE_METADATA",
+      "target_DAT_qualification": "NO_QUALIFIED_DAT_IN_SELECTED_PRIOR_COVERAGE"
+    }
+  ],
+  "source_warpman_100_443_127": {
+    "source_floor_xy": [
+      100,
+      443,
+      127
+    ],
+    "literal_WARP_target": [
+      11101,
+      33,
+      29
+    ],
+    "literal_FREE_key_present": true,
+    "source_handler_sha256": "36f1e52fada28a08b84df5fe4d50fab58179495a425754042b9d9bfa2ae96d62",
+    "static_return_at_11101_33_28": [
+      100,
+      442,
+      127
+    ],
+    "exact_reverse_coordinate_match": false
+  },
+  "copyright_and_execution_limits": {
+    "raw_original_dialogues_in_public_repo": false,
+    "raw_original_CREATE_in_public_repo": false,
+    "actual_original_DAT_read_this_unit": false,
+    "actual_original_RD_pixels_newly_decoded": false,
+    "original_client_or_server_executed": false,
+    "native_warp_or_dialogue_fired": false,
+    "official_same_deployment_TW1_qualification": false,
+    "collision_or_passability_verified": false,
+    "same_number_means_same_entity_across_versions": false
+  }
+}
