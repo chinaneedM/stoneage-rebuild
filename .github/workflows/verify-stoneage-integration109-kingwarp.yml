@@ -1,0 +1,29 @@
+name: Verify StoneAge INTEGRATION109 source-bound kingwarp routes
+
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION109-KINGWARP-ORIGINAL-STATIC-ROUTES-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION109-KINGWARP-STATIC-ROUTES-20261114.md'
+      - 'tests/test_stoneage_integration109_kingwarp.py'
+      - '.github/workflows/verify-stoneage-integration109-kingwarp.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION109-KINGWARP-ORIGINAL-STATIC-ROUTES-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION109-KINGWARP-STATIC-ROUTES-20261114.md'
+      - 'tests/test_stoneage_integration109_kingwarp.py'
+      - '.github/workflows/verify-stoneage-integration109-kingwarp.yml'
+  workflow_dispatch:
+
+jobs:
+  source-byte-window-and-prior-map-negative-evidence:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Replay 309 source spans against public CHAR01 and historical DAT geometry
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration109_kingwarp.py' -v
