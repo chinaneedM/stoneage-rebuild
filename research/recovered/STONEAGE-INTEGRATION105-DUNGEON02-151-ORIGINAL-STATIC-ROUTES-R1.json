@@ -1,0 +1,3372 @@
+{
+  "schema": "stoneage.integration105.dungeon02_static_source_routes.r1",
+  "date": "2026-11-14",
+  "baseline_main_head": "86d83465745283bf42ebc4384a455eb3025ddc1f",
+  "baseline_main_tree": "dd6f8a5306489340b75e8f3c23017a10bbf97050",
+  "source_scope": "MIXED25_COMMUNITY_PRESERVED_NOT_OFFICIAL_TW1_OR_VERIFIED_RUNNING_SERVER",
+  "provenance": {
+    "private_zip_name": "StoneAge-CHAR01-mixed25-all-npc-original-private.zip",
+    "private_zip_bytes": 995176,
+    "private_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "private_zip_crc_members_checked": 2205,
+    "original_source_path": "npc/genout/dungeon02.create",
+    "original_source_bytes": 18174,
+    "original_source_sha256": "bf047be69b5b1d3f6fda836cac4174e69868031b4e3e57f71c2f7da2b02636b6",
+    "original_public_all_npc_index_blob": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "old_955_DAT_index_blob": "1ef8c004179128ea44ffa4fb4259748bc8c83911",
+    "current_state_preserved_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "counts": {
+    "original_create_rows": 151,
+    "original_warp_rows": 144,
+    "original_man_rows": 7,
+    "source_floors": 65,
+    "target_floors": 59,
+    "union_floors": 65,
+    "exact_reverse_warp_rows": 132,
+    "non_reverse_warp_rows": 12,
+    "source_geometry": {
+      "WITHIN_DAT_DIMENSIONS": 135,
+      "NO_QUALIFIED_DAT": 16,
+      "OUTSIDE_DAT_DIMENSIONS": 0
+    },
+    "target_geometry": {
+      "WITHIN_DAT_DIMENSIONS": 128,
+      "NO_QUALIFIED_DAT": 16,
+      "OUTSIDE_DAT_DIMENSIONS": 0
+    },
+    "original_handler_total_bytes": 720
+  },
+  "nonreciprocal_ordinals": [
+    0,
+    1,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    136,
+    149,
+    150
+  ],
+  "floor_300": {
+    "original_DAT_qualification": "NO_QUALIFIED_DAT_IN_MAP04_955",
+    "source_rows": 16,
+    "target_rows": 16
+  },
+  "rows": [
+    {
+      "ordinal": 0,
+      "original_byte_span": [
+        120,
+        229
+      ],
+      "original_block_sha256": "399a12a3edc39f8d429d8ddf6d485adaca62efb837d3118f78031a4582bec220",
+      "source_floor": 30001,
+      "source_xy": [
+        29,
+        14
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30502,
+      "target_xy": [
+        45,
+        41
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": false
+    },
+    {
+      "ordinal": 1,
+      "original_byte_span": [
+        237,
+        345
+      ],
+      "original_block_sha256": "30f123bb116e0cae54bead0ff65af13d313de3b7f72afae5fe03bc68b11455e3",
+      "source_floor": 30015,
+      "source_xy": [
+        70,
+        95
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30503,
+      "target_xy": [
+        26,
+        5
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": false
+    },
+    {
+      "ordinal": 2,
+      "original_byte_span": [
+        354,
+        462
+      ],
+      "original_block_sha256": "cdc38b66c7348bfcad641499d13de5496dd5e130dcaf651821355dc44f4bbd15",
+      "source_floor": 30001,
+      "source_xy": [
+        19,
+        43
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30002,
+      "target_xy": [
+        23,
+        4
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 3,
+      "original_byte_span": [
+        472,
+        579
+      ],
+      "original_block_sha256": "72a40cb00eb651407b544b93f2ef68d2283f0f8a62afe2f793e005af09b90b2b",
+      "source_floor": 30002,
+      "source_xy": [
+        23,
+        4
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30001,
+      "target_xy": [
+        19,
+        43
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 4,
+      "original_byte_span": [
+        588,
+        694
+      ],
+      "original_block_sha256": "a49808b9d1b7ac1b707508efc24d88fbdd1a13edb3efaec642820e67e41589dc",
+      "source_floor": 30002,
+      "source_xy": [
+        9,
+        42
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30003,
+      "target_xy": [
+        7,
+        37
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 5,
+      "original_byte_span": [
+        704,
+        810
+      ],
+      "original_block_sha256": "989c59b7819cad11ea11f0cffeff53770ca94819f9dff7d79f84596bf1764865",
+      "source_floor": 30003,
+      "source_xy": [
+        7,
+        37
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30002,
+      "target_xy": [
+        9,
+        42
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 6,
+      "original_byte_span": [
+        819,
+        927
+      ],
+      "original_block_sha256": "6e0eef000ee7620c15c2a9a19e5b3f606c128addf83485c984776d04790c3469",
+      "source_floor": 30003,
+      "source_xy": [
+        22,
+        40
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30004,
+      "target_xy": [
+        54,
+        4
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 7,
+      "original_byte_span": [
+        937,
+        1044
+      ],
+      "original_block_sha256": "41715dc2a0575e0eb05c4afd69aec86a5ec245db7d5250f166e245beb4e1b912",
+      "source_floor": 30004,
+      "source_xy": [
+        54,
+        4
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30003,
+      "target_xy": [
+        22,
+        40
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 8,
+      "original_byte_span": [
+        1053,
+        1157
+      ],
+      "original_block_sha256": "efed38a4c52b8a242234ec6827ba50eb3ccb905458c2be7c7c5344508fd4ed7c",
+      "source_floor": 30004,
+      "source_xy": [
+        9,
+        3
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30005,
+      "target_xy": [
+        52,
+        6
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 9,
+      "original_byte_span": [
+        1167,
+        1272
+      ],
+      "original_block_sha256": "9ce8ee13c72e32153aa7e82189b8b43497dcbaeec8c5ac08e04a3cdae2a97248",
+      "source_floor": 30005,
+      "source_xy": [
+        52,
+        6
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30004,
+      "target_xy": [
+        9,
+        3
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 10,
+      "original_byte_span": [
+        1281,
+        1390
+      ],
+      "original_block_sha256": "000fdaa8a2428a0545bb268e11a2e1632688d4dbe735a3349b0d488282cd5f85",
+      "source_floor": 30005,
+      "source_xy": [
+        55,
+        52
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30006,
+      "target_xy": [
+        33,
+        34
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 11,
+      "original_byte_span": [
+        1400,
+        1509
+      ],
+      "original_block_sha256": "4dc13aca2530c8c21b8dbb4335aff3902297bec1b9de2bfc591d582b5b5595a0",
+      "source_floor": 30006,
+      "source_xy": [
+        33,
+        34
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30005,
+      "target_xy": [
+        55,
+        52
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 12,
+      "original_byte_span": [
+        1518,
+        1626
+      ],
+      "original_block_sha256": "f5ffc1ad69752f0500536844f396746e17521278c9d983edcb0bfd56f25d405a",
+      "source_floor": 30006,
+      "source_xy": [
+        15,
+        19
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30007,
+      "target_xy": [
+        10,
+        3
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 13,
+      "original_byte_span": [
+        1636,
+        1743
+      ],
+      "original_block_sha256": "02d83b0e4c0f1f378651034692ee5e94b2d8d202b0dcfd388e847e1aa0960977",
+      "source_floor": 30007,
+      "source_xy": [
+        10,
+        3
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30006,
+      "target_xy": [
+        15,
+        19
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 14,
+      "original_byte_span": [
+        1752,
+        1861
+      ],
+      "original_block_sha256": "68c4ee2703936da9b94b391bfc81c60707b9fc31c699b5246e8a47c82a14813a",
+      "source_floor": 30007,
+      "source_xy": [
+        17,
+        14
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30008,
+      "target_xy": [
+        79,
+        77
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 15,
+      "original_byte_span": [
+        1871,
+        1980
+      ],
+      "original_block_sha256": "3e3f70f94507ece1f6d695f71d405b9e102f2a19e6e0bc5064600e2a66a41fa5",
+      "source_floor": 30008,
+      "source_xy": [
+        79,
+        77
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30007,
+      "target_xy": [
+        17,
+        14
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 16,
+      "original_byte_span": [
+        1989,
+        2098
+      ],
+      "original_block_sha256": "f055d61b1dd2b4ac11434f926aea27687924143381e20aee171c99982b465246",
+      "source_floor": 30008,
+      "source_xy": [
+        79,
+        45
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30009,
+      "target_xy": [
+        43,
+        22
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 17,
+      "original_byte_span": [
+        2108,
+        2217
+      ],
+      "original_block_sha256": "3a5aadc071fbba7261188cc74ac3ac70ed29b5c25ca1df68756cece14d414e39",
+      "source_floor": 30009,
+      "source_xy": [
+        43,
+        22
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30008,
+      "target_xy": [
+        79,
+        45
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 18,
+      "original_byte_span": [
+        2226,
+        2333
+      ],
+      "original_block_sha256": "5329fb96d23e798c10e08eb410964715c4dbb847bb7df87fe9a421185ef5e647",
+      "source_floor": 30009,
+      "source_xy": [
+        7,
+        23
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30010,
+      "target_xy": [
+        12,
+        34
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 19,
+      "original_byte_span": [
+        2343,
+        2451
+      ],
+      "original_block_sha256": "56e43eb8ed324999ace578920d70164efcb5ea0e1c08b9ee301a2d2574a84673",
+      "source_floor": 30010,
+      "source_xy": [
+        12,
+        34
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30009,
+      "target_xy": [
+        7,
+        23
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 20,
+      "original_byte_span": [
+        2460,
+        2565
+      ],
+      "original_block_sha256": "5fe80b98b8333df563a24cf7bdc2d1e359a6e53457b26ac82b668dca149e6ba3",
+      "source_floor": 30010,
+      "source_xy": [
+        26,
+        8
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30011,
+      "target_xy": [
+        8,
+        3
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 21,
+      "original_byte_span": [
+        2575,
+        2679
+      ],
+      "original_block_sha256": "4757a341b89c35eecfb782a571c422ab9e1a35bb4a74585bc8cbe3aed3d0810a",
+      "source_floor": 30011,
+      "source_xy": [
+        8,
+        3
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30010,
+      "target_xy": [
+        26,
+        8
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 22,
+      "original_byte_span": [
+        2688,
+        2794
+      ],
+      "original_block_sha256": "b6dc624ecebead8d6d3f852e70c0dae11706ec15ba0753b3cdf82405c7c14426",
+      "source_floor": 30011,
+      "source_xy": [
+        55,
+        4
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30012,
+      "target_xy": [
+        30,
+        2
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 23,
+      "original_byte_span": [
+        2804,
+        2910
+      ],
+      "original_block_sha256": "465a5c9c447945dafe9213877128ef655837795d5f0b0e839e3bec8c8eff260d",
+      "source_floor": 30012,
+      "source_xy": [
+        30,
+        2
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30011,
+      "target_xy": [
+        55,
+        4
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 24,
+      "original_byte_span": [
+        2919,
+        3027
+      ],
+      "original_block_sha256": "1fd615fe85c84b95254c90df618d61a6a1f0318ee868668bdbebd82449c1d9b2",
+      "source_floor": 30012,
+      "source_xy": [
+        36,
+        51
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30013,
+      "target_xy": [
+        8,
+        60
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 25,
+      "original_byte_span": [
+        3037,
+        3144
+      ],
+      "original_block_sha256": "81aa448663ae2bb839819dadfbdd5033fb5ae754271c0c70ecb3092836d55572",
+      "source_floor": 30013,
+      "source_xy": [
+        8,
+        60
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30012,
+      "target_xy": [
+        36,
+        51
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 26,
+      "original_byte_span": [
+        3153,
+        3259
+      ],
+      "original_block_sha256": "0c799cf2ab3c34986129847ad5a62f1037735982d58f8b31310af16ee8f3c207",
+      "source_floor": 30013,
+      "source_xy": [
+        15,
+        4
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30014,
+      "target_xy": [
+        8,
+        13
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 27,
+      "original_byte_span": [
+        3269,
+        3375
+      ],
+      "original_block_sha256": "aea1a15952742a1621f5c7c395c690ee34b4b4e7267d8d9c53fc47f0a9fad115",
+      "source_floor": 30014,
+      "source_xy": [
+        8,
+        13
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30013,
+      "target_xy": [
+        15,
+        4
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 28,
+      "original_byte_span": [
+        3384,
+        3489
+      ],
+      "original_block_sha256": "7fbab24132515ff0d02542ef02b6a926817ae5481d9b3abdc72aa8f95acf2c16",
+      "source_floor": 30014,
+      "source_xy": [
+        10,
+        2
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30015,
+      "target_xy": [
+        8,
+        5
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 29,
+      "original_byte_span": [
+        3499,
+        3603
+      ],
+      "original_block_sha256": "6ec98a647d68e728a70067fb3b26fad19d644f7d581a77f3382f556cf3c478e3",
+      "source_floor": 30015,
+      "source_xy": [
+        8,
+        5
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30014,
+      "target_xy": [
+        10,
+        2
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 30,
+      "original_byte_span": [
+        3612,
+        3721
+      ],
+      "original_block_sha256": "2e11a1a25998296ae7b4ac76807a74b5a1cd645b4d0153685cfcd3046468c6ac",
+      "source_floor": 30008,
+      "source_xy": [
+        50,
+        54
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30016,
+      "target_xy": [
+        28,
+        99
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 31,
+      "original_byte_span": [
+        3731,
+        3840
+      ],
+      "original_block_sha256": "049615cbc27c866a80d7d2f99696ca647806e2e5c65c33b06eb1cb52c1d4bf4c",
+      "source_floor": 30016,
+      "source_xy": [
+        28,
+        99
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30008,
+      "target_xy": [
+        50,
+        54
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 32,
+      "original_byte_span": [
+        3849,
+        3958
+      ],
+      "original_block_sha256": "fc4fb75ef58dd97844f5d2b43542230ee668d839909d40f92d372d0fcca3609f",
+      "source_floor": 30008,
+      "source_xy": [
+        50,
+        54
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30016,
+      "target_xy": [
+        29,
+        99
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 33,
+      "original_byte_span": [
+        3968,
+        4077
+      ],
+      "original_block_sha256": "7ec5546494efe0c7247bebf45f1ec7fd17405493c084bda32d8257cb7890bc1c",
+      "source_floor": 30016,
+      "source_xy": [
+        29,
+        99
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30008,
+      "target_xy": [
+        50,
+        54
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 34,
+      "original_byte_span": [
+        4086,
+        4195
+      ],
+      "original_block_sha256": "fd61ec10cb04bb97e83e0c621b7ed0c356f79bf715828069c269563d64fdb303",
+      "source_floor": 30009,
+      "source_xy": [
+        40,
+        20
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30009,
+      "target_xy": [
+        38,
+        17
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": false
+    },
+    {
+      "ordinal": 35,
+      "original_byte_span": [
+        4204,
+        4313
+      ],
+      "original_block_sha256": "56e45ca374431050bafd38cb7d4ad151e96e9fb0c6ae62ae70df2749004d6625",
+      "source_floor": 30009,
+      "source_xy": [
+        40,
+        21
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30009,
+      "target_xy": [
+        38,
+        17
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": false
+    },
+    {
+      "ordinal": 36,
+      "original_byte_span": [
+        4322,
+        4431
+      ],
+      "original_block_sha256": "d46cc28519718a3edc96b1e91dfccd8e9706aa75286ba4726d6b2e18f55b126e",
+      "source_floor": 30009,
+      "source_xy": [
+        39,
+        21
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30009,
+      "target_xy": [
+        38,
+        17
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": false
+    },
+    {
+      "ordinal": 37,
+      "original_byte_span": [
+        4440,
+        4548
+      ],
+      "original_block_sha256": "2c85979211361a4c9d0ec3cc194a99b956c028da2f12c9ad5f87d81c124630d6",
+      "source_floor": 30007,
+      "source_xy": [
+        16,
+        12
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30007,
+      "target_xy": [
+        16,
+        8
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": false
+    },
+    {
+      "ordinal": 38,
+      "original_byte_span": [
+        4557,
+        4665
+      ],
+      "original_block_sha256": "b7e835ecc6493bf122a24dc7700f138cf9c98b1a75e7926ca0010c6ee01a86fe",
+      "source_floor": 30007,
+      "source_xy": [
+        15,
+        12
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30007,
+      "target_xy": [
+        16,
+        8
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": false
+    },
+    {
+      "ordinal": 39,
+      "original_byte_span": [
+        4674,
+        4783
+      ],
+      "original_block_sha256": "b020052db31035179c8522216e7bf7ee9a7ff2d6d0e86ba13dd897c9ad84a1b7",
+      "source_floor": 30016,
+      "source_xy": [
+        27,
+        65
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30016,
+      "target_xy": [
+        26,
+        70
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": false
+    },
+    {
+      "ordinal": 40,
+      "original_byte_span": [
+        4792,
+        4901
+      ],
+      "original_block_sha256": "6286dfc266e44d0bbf00ac28e2d46d8d4b1140658805603f1e9534460f4d39bb",
+      "source_floor": 30016,
+      "source_xy": [
+        26,
+        65
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 30016,
+      "target_xy": [
+        26,
+        70
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": false
+    },
+    {
+      "ordinal": 41,
+      "original_byte_span": [
+        4910,
+        5084
+      ],
+      "original_block_sha256": "4113aac27d822bfff24b4e828b08b01530557f7b61dca0d61f41e601e3804598",
+      "source_floor": 300,
+      "source_xy": [
+        394,
+        341
+      ],
+      "source_geometry": "NO_QUALIFIED_DAT",
+      "type": "npcgen_man",
+      "graphicname_candidate": 100451,
+      "handler_path": "genout/msg_300_394_341",
+      "handler_bytes": 101,
+      "handler_sha256": "2b541deb62f3e4bedc158b9da2c7add02f48462735748ca27800977000cf8336"
+    },
+    {
+      "ordinal": 42,
+      "original_byte_span": [
+        5093,
+        5249
+      ],
+      "original_block_sha256": "094ddf3b4da1c207749f4f11f877d74f2dfa4373032b30c55e7f9a5d85f84d07",
+      "source_floor": 30502,
+      "source_xy": [
+        44,
+        9
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_man",
+      "graphicname_candidate": 16046,
+      "handler_path": "genout/msg_30502_44_9",
+      "handler_bytes": 88,
+      "handler_sha256": "62e78acb1574a776575b4a0cc2dad187a423dddb9b0182bff0ef54274b9e1967"
+    },
+    {
+      "ordinal": 43,
+      "original_byte_span": [
+        5258,
+        5417
+      ],
+      "original_block_sha256": "4e10318e534e987476b00689630cb20fbeb66c569d0adcb8d8ce58b037d91aff",
+      "source_floor": 30503,
+      "source_xy": [
+        10,
+        12
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_man",
+      "graphicname_candidate": 16027,
+      "handler_path": "genout/msg_30503_10_12",
+      "handler_bytes": 127,
+      "handler_sha256": "db5d09f6973fd98b91cb960cef487e0c94e2e404c02dbfe78d10bee2faebd45a"
+    },
+    {
+      "ordinal": 44,
+      "original_byte_span": [
+        5426,
+        5582
+      ],
+      "original_block_sha256": "38337b0080a5ea922c42cca6e004a7223497a16e9dc8d678a74c5a56b2b77ea6",
+      "source_floor": 30506,
+      "source_xy": [
+        6,
+        15
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_man",
+      "graphicname_candidate": 16303,
+      "handler_path": "genout/msg_30506_6_15",
+      "handler_bytes": 105,
+      "handler_sha256": "3995d17ed687086f3227d5fdf47c3b1cf7e18543b903befcf2eefcec15aab6ae"
+    },
+    {
+      "ordinal": 45,
+      "original_byte_span": [
+        5591,
+        5747
+      ],
+      "original_block_sha256": "58bb5b8c8f1f782161b79b401c254579bf99653616cc34bae52f32ae34c7a7cc",
+      "source_floor": 30507,
+      "source_xy": [
+        38,
+        5
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_man",
+      "graphicname_candidate": 16024,
+      "handler_path": "genout/msg_30507_38_5",
+      "handler_bytes": 93,
+      "handler_sha256": "ab6612deff10bf5e02b7c9c387b3e33a7081d18928e30d944fb9c5d0a14acbb0"
+    },
+    {
+      "ordinal": 46,
+      "original_byte_span": [
+        5756,
+        5915
+      ],
+      "original_block_sha256": "c0af3fbb8804d0eef8ec5385f856bf382b5ca6d3545a9956b090fc6bf5b3fcb6",
+      "source_floor": 30508,
+      "source_xy": [
+        17,
+        44
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_man",
+      "graphicname_candidate": 16305,
+      "handler_path": "genout/msg_30508_17_44",
+      "handler_bytes": 111,
+      "handler_sha256": "6893e564eb6f70503af4c4072b25b5dc46fe7af38627469836b2bde3fd8f3c24"
+    },
+    {
+      "ordinal": 47,
+      "original_byte_span": [
+        5924,
+        6083
+      ],
+      "original_block_sha256": "bb1628d851e9cf45a6b44f1d2a68e4e2f18b932f1209a3ed353db319bac87ee8",
+      "source_floor": 30509,
+      "source_xy": [
+        96,
+        30
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_man",
+      "graphicname_candidate": 16017,
+      "handler_path": "genout/msg_30509_96_30",
+      "handler_bytes": 95,
+      "handler_sha256": "3288426f3f7040a29b14d9ae0c5c18e54e00a98334d71c3d01c8c2cef0f6d139"
+    },
+    {
+      "ordinal": 48,
+      "original_byte_span": [
+        6092,
+        6203
+      ],
+      "original_block_sha256": "a17444b62b6014e6c0d7b9590a23cbaee34c10381eef8b40f4c56cb659d23743",
+      "source_floor": 300,
+      "source_xy": [
+        383,
+        432
+      ],
+      "source_geometry": "NO_QUALIFIED_DAT",
+      "type": "npcgen_warp",
+      "target_floor": 31001,
+      "target_xy": [
+        24,
+        49
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 49,
+      "original_byte_span": [
+        6213,
+        6322
+      ],
+      "original_block_sha256": "29182592fd971780b7cda64f7cfc07d47617ed8cbc5701cd49df681b9511061a",
+      "source_floor": 31001,
+      "source_xy": [
+        24,
+        49
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 300,
+      "target_xy": [
+        383,
+        432
+      ],
+      "target_geometry": "NO_QUALIFIED_DAT",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 50,
+      "original_byte_span": [
+        6331,
+        6442
+      ],
+      "original_block_sha256": "f3d0d23f712bb6ade25860f309ecb330a281c8359127690dd4f251e15b009a60",
+      "source_floor": 300,
+      "source_xy": [
+        383,
+        432
+      ],
+      "source_geometry": "NO_QUALIFIED_DAT",
+      "type": "npcgen_warp",
+      "target_floor": 31001,
+      "target_xy": [
+        25,
+        49
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 51,
+      "original_byte_span": [
+        6452,
+        6561
+      ],
+      "original_block_sha256": "e6de8647cc802f3ef459cf01a4f92199f80b4dc48f41aa60de5b407978418922",
+      "source_floor": 31001,
+      "source_xy": [
+        25,
+        49
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 300,
+      "target_xy": [
+        383,
+        432
+      ],
+      "target_geometry": "NO_QUALIFIED_DAT",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 52,
+      "original_byte_span": [
+        6570,
+        6673
+      ],
+      "original_block_sha256": "8cf691a0a23891ed1e5bf33886cfa510ee37be5f6e7a73906f17b61f6a7ba49f",
+      "source_floor": 31001,
+      "source_xy": [
+        7,
+        4
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31002,
+      "target_xy": [
+        8,
+        5
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 53,
+      "original_byte_span": [
+        6683,
+        6786
+      ],
+      "original_block_sha256": "9a0d155be57ff2a2c227e3e1870947316d8329a180bf02846722025251510bc4",
+      "source_floor": 31002,
+      "source_xy": [
+        8,
+        5
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31001,
+      "target_xy": [
+        7,
+        4
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 54,
+      "original_byte_span": [
+        6795,
+        6902
+      ],
+      "original_block_sha256": "f619d0035cf4116362aca1de12a740c86b700a4828b93e60f0d9becbfa664329",
+      "source_floor": 31002,
+      "source_xy": [
+        26,
+        3
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31003,
+      "target_xy": [
+        13,
+        24
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 55,
+      "original_byte_span": [
+        6912,
+        7020
+      ],
+      "original_block_sha256": "84a85d5d290dfe3ac2cdb75d9858c17bffef4063ae0c4cab1bd68a7484e24ad9",
+      "source_floor": 31003,
+      "source_xy": [
+        13,
+        24
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31002,
+      "target_xy": [
+        26,
+        3
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 56,
+      "original_byte_span": [
+        7029,
+        7136
+      ],
+      "original_block_sha256": "afc26254ce4bb5fe61ed10560711dd132746c15ba591fb87ab2921f45434706b",
+      "source_floor": 31002,
+      "source_xy": [
+        26,
+        3
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31003,
+      "target_xy": [
+        14,
+        24
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 57,
+      "original_byte_span": [
+        7146,
+        7254
+      ],
+      "original_block_sha256": "009164cae5f5c3e5cdd3326153147814c372b7150b00993d1719d092d4618a6c",
+      "source_floor": 31003,
+      "source_xy": [
+        14,
+        24
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31002,
+      "target_xy": [
+        26,
+        3
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 58,
+      "original_byte_span": [
+        7263,
+        7373
+      ],
+      "original_block_sha256": "57473eaebbef9f078b3815e4f01ed5b918a59c06c6c62dcc69a7cafa59e08244",
+      "source_floor": 300,
+      "source_xy": [
+        448,
+        405
+      ],
+      "source_geometry": "NO_QUALIFIED_DAT",
+      "type": "npcgen_warp",
+      "target_floor": 31101,
+      "target_xy": [
+        0,
+        27
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 59,
+      "original_byte_span": [
+        7383,
+        7490
+      ],
+      "original_block_sha256": "7f51f6a3b4a2291a8f037c5f31ae8a5919526d7ab7e8c0aa8baac2cb9e0f4fe6",
+      "source_floor": 31101,
+      "source_xy": [
+        0,
+        27
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 300,
+      "target_xy": [
+        448,
+        405
+      ],
+      "target_geometry": "NO_QUALIFIED_DAT",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 60,
+      "original_byte_span": [
+        7499,
+        7609
+      ],
+      "original_block_sha256": "c64f75d15960adc0845b3ab22aef30284008b8c930bf84a161d3608afc4439f7",
+      "source_floor": 300,
+      "source_xy": [
+        448,
+        405
+      ],
+      "source_geometry": "NO_QUALIFIED_DAT",
+      "type": "npcgen_warp",
+      "target_floor": 31101,
+      "target_xy": [
+        0,
+        28
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 61,
+      "original_byte_span": [
+        7619,
+        7726
+      ],
+      "original_block_sha256": "d2c53e5729fa628752f6e0288740dd3e0b374d1c97cd6bf9d250676e85c86be9",
+      "source_floor": 31101,
+      "source_xy": [
+        0,
+        28
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 300,
+      "target_xy": [
+        448,
+        405
+      ],
+      "target_geometry": "NO_QUALIFIED_DAT",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 62,
+      "original_byte_span": [
+        7735,
+        7838
+      ],
+      "original_block_sha256": "857da15ded4cb4052118b1e9d01c7c23ed5b97343e9642b13fa46dd6c5faa0bb",
+      "source_floor": 31101,
+      "source_xy": [
+        5,
+        3
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31102,
+      "target_xy": [
+        8,
+        4
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 63,
+      "original_byte_span": [
+        7848,
+        7951
+      ],
+      "original_block_sha256": "e0fbf8d23a7db65e57c84bd0c3ff5f76cbbd0945881bb36621319c7fc5fac1e6",
+      "source_floor": 31102,
+      "source_xy": [
+        8,
+        4
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31101,
+      "target_xy": [
+        5,
+        3
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 64,
+      "original_byte_span": [
+        7960,
+        8068
+      ],
+      "original_block_sha256": "a84429203932e2abea1dd7a1eeef57b2ec697f9723288d282215b5370742acd5",
+      "source_floor": 31102,
+      "source_xy": [
+        33,
+        25
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31103,
+      "target_xy": [
+        0,
+        12
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 65,
+      "original_byte_span": [
+        8078,
+        8185
+      ],
+      "original_block_sha256": "440891ab6e956982de8637ade8fa3d16de44c2513cea0cf850d5e4ff1e96c0b9",
+      "source_floor": 31103,
+      "source_xy": [
+        0,
+        12
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31102,
+      "target_xy": [
+        33,
+        25
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 66,
+      "original_byte_span": [
+        8194,
+        8302
+      ],
+      "original_block_sha256": "af985608ed12c15005bf9f3b08e3839c6aea24038f976d06ad0d9fca55f1a96f",
+      "source_floor": 31102,
+      "source_xy": [
+        33,
+        25
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31103,
+      "target_xy": [
+        0,
+        13
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 67,
+      "original_byte_span": [
+        8312,
+        8419
+      ],
+      "original_block_sha256": "791fb0961ec55abe2fbc447d0d88bb8d284068eb4a02a0b5a4cd288aad17f31f",
+      "source_floor": 31103,
+      "source_xy": [
+        0,
+        13
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31102,
+      "target_xy": [
+        33,
+        25
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 68,
+      "original_byte_span": [
+        8428,
+        8539
+      ],
+      "original_block_sha256": "4cb1ee09edd9d3433ece7c2c80e3fd079c58a6bc2bd0da32b007da764fea2700",
+      "source_floor": 300,
+      "source_xy": [
+        444,
+        494
+      ],
+      "source_geometry": "NO_QUALIFIED_DAT",
+      "type": "npcgen_warp",
+      "target_floor": 31201,
+      "target_xy": [
+        23,
+        49
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 69,
+      "original_byte_span": [
+        8549,
+        8658
+      ],
+      "original_block_sha256": "56940982563c3a3f55a03df340a606b3d41d12cd272fd96fe52d2018a915166a",
+      "source_floor": 31201,
+      "source_xy": [
+        23,
+        49
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 300,
+      "target_xy": [
+        444,
+        494
+      ],
+      "target_geometry": "NO_QUALIFIED_DAT",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 70,
+      "original_byte_span": [
+        8667,
+        8778
+      ],
+      "original_block_sha256": "34d1a16319095308cea424d05ea0d29c1cf19fd1c67a39277b1cae3e5adda097",
+      "source_floor": 300,
+      "source_xy": [
+        444,
+        494
+      ],
+      "source_geometry": "NO_QUALIFIED_DAT",
+      "type": "npcgen_warp",
+      "target_floor": 31201,
+      "target_xy": [
+        24,
+        49
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 71,
+      "original_byte_span": [
+        8788,
+        8897
+      ],
+      "original_block_sha256": "c9ea0b2054a364bf190d8dc78d02f732488000f122ad63bab82dd5414cbf94d7",
+      "source_floor": 31201,
+      "source_xy": [
+        24,
+        49
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 300,
+      "target_xy": [
+        444,
+        494
+      ],
+      "target_geometry": "NO_QUALIFIED_DAT",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 72,
+      "original_byte_span": [
+        8906,
+        9014
+      ],
+      "original_block_sha256": "320d0cd10f13c431154435aaa911c2853894ff42c3694d255945e0d9723d30a1",
+      "source_floor": 31201,
+      "source_xy": [
+        45,
+        17
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31202,
+      "target_xy": [
+        36,
+        5
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 73,
+      "original_byte_span": [
+        9024,
+        9131
+      ],
+      "original_block_sha256": "854b8aa77a7d2af5f8190034aebd95f1b44b9bc6a09f6fbf8edfd0f6e0e1b192",
+      "source_floor": 31202,
+      "source_xy": [
+        36,
+        5
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31201,
+      "target_xy": [
+        45,
+        17
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 74,
+      "original_byte_span": [
+        9140,
+        9249
+      ],
+      "original_block_sha256": "c986c08ed2d86e0615d47824f4096d1c4792cb50dfccac2286c17446a5e83201",
+      "source_floor": 31202,
+      "source_xy": [
+        35,
+        43
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31203,
+      "target_xy": [
+        44,
+        43
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 75,
+      "original_byte_span": [
+        9259,
+        9368
+      ],
+      "original_block_sha256": "a55228724d85c902ef9aea795e453d784b2af9dd2631b852b59f9ba5be8e818e",
+      "source_floor": 31203,
+      "source_xy": [
+        44,
+        43
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31202,
+      "target_xy": [
+        35,
+        43
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 76,
+      "original_byte_span": [
+        9377,
+        9483
+      ],
+      "original_block_sha256": "7630726ad0b9b2ca0923e922f70a2175e719a087c80042da715f63faf0908da7",
+      "source_floor": 31203,
+      "source_xy": [
+        23,
+        3
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31204,
+      "target_xy": [
+        10,
+        3
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 77,
+      "original_byte_span": [
+        9493,
+        9599
+      ],
+      "original_block_sha256": "36b44ec6497bcb8c2258b3b65024c0821bff5eea23c6380f4335e676caed5169",
+      "source_floor": 31204,
+      "source_xy": [
+        10,
+        3
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31203,
+      "target_xy": [
+        23,
+        3
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 78,
+      "original_byte_span": [
+        9608,
+        9716
+      ],
+      "original_block_sha256": "3878ef0356d8d68d070ff0b6a75e77c5d519d1a119c0b8bfbbc074b8cf0678f1",
+      "source_floor": 31204,
+      "source_xy": [
+        55,
+        29
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31205,
+      "target_xy": [
+        0,
+        13
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 79,
+      "original_byte_span": [
+        9726,
+        9833
+      ],
+      "original_block_sha256": "6397e211135159232ac5279d64aeb4884bb80bf691b8eeb541314ec899fd797c",
+      "source_floor": 31205,
+      "source_xy": [
+        0,
+        13
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31204,
+      "target_xy": [
+        55,
+        29
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 80,
+      "original_byte_span": [
+        9842,
+        9950
+      ],
+      "original_block_sha256": "96be70dffa7149a449c27d509f2116a2b55b4d10fa0dc23ec613b3e50420fa6b",
+      "source_floor": 31204,
+      "source_xy": [
+        55,
+        29
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31205,
+      "target_xy": [
+        0,
+        14
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 81,
+      "original_byte_span": [
+        9960,
+        10067
+      ],
+      "original_block_sha256": "cf96bd8122a1a568b7c66cdfd7ed2952b0b58b2704258f7c32e2ffc46a8825ae",
+      "source_floor": 31205,
+      "source_xy": [
+        0,
+        14
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31204,
+      "target_xy": [
+        55,
+        29
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 82,
+      "original_byte_span": [
+        10076,
+        10185
+      ],
+      "original_block_sha256": "5d5f962ed3ea7e79a745273124d864ae1fe444653c347214b2daa4c2f99b2707",
+      "source_floor": 31205,
+      "source_xy": [
+        20,
+        11
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 300,
+      "target_xy": [
+        444,
+        494
+      ],
+      "target_geometry": "NO_QUALIFIED_DAT",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 83,
+      "original_byte_span": [
+        10195,
+        10306
+      ],
+      "original_block_sha256": "44916c5c8d1e268ea6cab68938faa55187641d7603909cdf9b2e02a8c0c789f8",
+      "source_floor": 300,
+      "source_xy": [
+        444,
+        494
+      ],
+      "source_geometry": "NO_QUALIFIED_DAT",
+      "type": "npcgen_warp",
+      "target_floor": 31205,
+      "target_xy": [
+        20,
+        11
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 84,
+      "original_byte_span": [
+        10316,
+        10427
+      ],
+      "original_block_sha256": "59677a14a1851ea1cd147510f2ce96c2788c0cb8c119ec3b7dcf36fddb6aeb4b",
+      "source_floor": 300,
+      "source_xy": [
+        343,
+        191
+      ],
+      "source_geometry": "NO_QUALIFIED_DAT",
+      "type": "npcgen_warp",
+      "target_floor": 31701,
+      "target_xy": [
+        29,
+        49
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 85,
+      "original_byte_span": [
+        10437,
+        10546
+      ],
+      "original_block_sha256": "98290808ff6e1a906c3ff32f630917c4ac3c1532e6b16818d3a2064cd65c7492",
+      "source_floor": 31701,
+      "source_xy": [
+        29,
+        49
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 300,
+      "target_xy": [
+        343,
+        191
+      ],
+      "target_geometry": "NO_QUALIFIED_DAT",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 86,
+      "original_byte_span": [
+        10556,
+        10667
+      ],
+      "original_block_sha256": "677872220896e3e500d77c5b10338361577bec8190530fed1a953893c2c09eb0",
+      "source_floor": 300,
+      "source_xy": [
+        343,
+        191
+      ],
+      "source_geometry": "NO_QUALIFIED_DAT",
+      "type": "npcgen_warp",
+      "target_floor": 31701,
+      "target_xy": [
+        28,
+        49
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 87,
+      "original_byte_span": [
+        10677,
+        10786
+      ],
+      "original_block_sha256": "4b2fe4ba453a8fd152f9d00c55d69fb8edfe47eba9b582855896df10327e0afb",
+      "source_floor": 31701,
+      "source_xy": [
+        28,
+        49
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 300,
+      "target_xy": [
+        343,
+        191
+      ],
+      "target_geometry": "NO_QUALIFIED_DAT",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 88,
+      "original_byte_span": [
+        10796,
+        10902
+      ],
+      "original_block_sha256": "17306557265b7cf52b18f0a651425da456378751e43f103867d7184e5eef05b8",
+      "source_floor": 31701,
+      "source_xy": [
+        11,
+        4
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31702,
+      "target_xy": [
+        20,
+        2
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 89,
+      "original_byte_span": [
+        10912,
+        11018
+      ],
+      "original_block_sha256": "61f870ab6bef721b7f9585d75e77bf5396e098c4a5672116c77838fc571e3044",
+      "source_floor": 31702,
+      "source_xy": [
+        20,
+        2
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31701,
+      "target_xy": [
+        11,
+        4
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 90,
+      "original_byte_span": [
+        11028,
+        11137
+      ],
+      "original_block_sha256": "c6e40d5959507f8fc93686aff5146d5cc434de7d7f8cb513f1a6bff7359bf899",
+      "source_floor": 31702,
+      "source_xy": [
+        37,
+        41
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31703,
+      "target_xy": [
+        45,
+        41
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 91,
+      "original_byte_span": [
+        11147,
+        11256
+      ],
+      "original_block_sha256": "8720584d87bcbc50be7906375a7f7409d05a9206d2dc1f23cc06c6fb7e03ab78",
+      "source_floor": 31703,
+      "source_xy": [
+        45,
+        41
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31702,
+      "target_xy": [
+        37,
+        41
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 92,
+      "original_byte_span": [
+        11266,
+        11371
+      ],
+      "original_block_sha256": "6e5ef7186fd59763a370ba56445fb4f78a6e447b38099dd76b198fa057303bf8",
+      "source_floor": 31703,
+      "source_xy": [
+        10,
+        4
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31704,
+      "target_xy": [
+        5,
+        5
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 93,
+      "original_byte_span": [
+        11381,
+        11485
+      ],
+      "original_block_sha256": "d395fd9d4882558b077775b700102b6eb02fca3aee1c19574f09999c0430e5aa",
+      "source_floor": 31704,
+      "source_xy": [
+        5,
+        5
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31703,
+      "target_xy": [
+        10,
+        4
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 94,
+      "original_byte_span": [
+        11495,
+        11603
+      ],
+      "original_block_sha256": "50d967cfab3b41f969aa867a8277a84baf4df8aa2c9f8a03ee33876a33b3c710",
+      "source_floor": 31704,
+      "source_xy": [
+        37,
+        45
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31705,
+      "target_xy": [
+        7,
+        65
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 95,
+      "original_byte_span": [
+        11613,
+        11720
+      ],
+      "original_block_sha256": "cbf95daa764441cb62bd84a90049d7a4705d9409abadbaf49bb1dda4c57a9c8f",
+      "source_floor": 31705,
+      "source_xy": [
+        7,
+        65
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31704,
+      "target_xy": [
+        37,
+        45
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 96,
+      "original_byte_span": [
+        11730,
+        11837
+      ],
+      "original_block_sha256": "2cb59f21d9ded4444155f643ed8b4b8ef73edd2a5c51d5290d92404e962d7dbb",
+      "source_floor": 31705,
+      "source_xy": [
+        25,
+        3
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31706,
+      "target_xy": [
+        44,
+        74
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 97,
+      "original_byte_span": [
+        11847,
+        11955
+      ],
+      "original_block_sha256": "c0ac883a65a1de177f666c35f3ce119a36124c49001a0112bc757344310e7e3d",
+      "source_floor": 31706,
+      "source_xy": [
+        44,
+        74
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31705,
+      "target_xy": [
+        25,
+        3
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 98,
+      "original_byte_span": [
+        11965,
+        12076
+      ],
+      "original_block_sha256": "ea8002fad02cf8421f98f67289f0e2b0caedcd8105b7e21f001f18c2d336ac3e",
+      "source_floor": 300,
+      "source_xy": [
+        232,
+        271
+      ],
+      "source_geometry": "NO_QUALIFIED_DAT",
+      "type": "npcgen_warp",
+      "target_floor": 31601,
+      "target_xy": [
+        17,
+        69
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 99,
+      "original_byte_span": [
+        12086,
+        12195
+      ],
+      "original_block_sha256": "da0b08c14cb9a9ec07c667f77c5e081745bccd3c1f974264f4a09e85e06fa7e8",
+      "source_floor": 31601,
+      "source_xy": [
+        17,
+        69
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 300,
+      "target_xy": [
+        232,
+        271
+      ],
+      "target_geometry": "NO_QUALIFIED_DAT",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 100,
+      "original_byte_span": [
+        12205,
+        12316
+      ],
+      "original_block_sha256": "365d8594125102237c8194202059c32c7ee4d5247789d584032e2dea1ff1b17c",
+      "source_floor": 300,
+      "source_xy": [
+        232,
+        271
+      ],
+      "source_geometry": "NO_QUALIFIED_DAT",
+      "type": "npcgen_warp",
+      "target_floor": 31601,
+      "target_xy": [
+        16,
+        69
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 101,
+      "original_byte_span": [
+        12326,
+        12435
+      ],
+      "original_block_sha256": "66c02ee8eb0a68509d39b841acab6204316320167b099227bdc386bbd3486ca4",
+      "source_floor": 31601,
+      "source_xy": [
+        16,
+        69
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 300,
+      "target_xy": [
+        232,
+        271
+      ],
+      "target_geometry": "NO_QUALIFIED_DAT",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 102,
+      "original_byte_span": [
+        12445,
+        12551
+      ],
+      "original_block_sha256": "736c6ccea0603676eff8e98f788f543e04781bdded3f8a823660a57af5f87994",
+      "source_floor": 31601,
+      "source_xy": [
+        36,
+        5
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31602,
+      "target_xy": [
+        6,
+        51
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 103,
+      "original_byte_span": [
+        12561,
+        12667
+      ],
+      "original_block_sha256": "8002571f234e347920b7e83e848c643f477c8d883d62c202c0e5312ddacd02b6",
+      "source_floor": 31602,
+      "source_xy": [
+        6,
+        51
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31601,
+      "target_xy": [
+        36,
+        5
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 104,
+      "original_byte_span": [
+        12677,
+        12786
+      ],
+      "original_block_sha256": "bc9e7a617a1e3cdead684a7cf2c915d89fe86ce21512301f2f231091548e597a",
+      "source_floor": 31601,
+      "source_xy": [
+        65,
+        27
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31602,
+      "target_xy": [
+        65,
+        62
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 105,
+      "original_byte_span": [
+        12796,
+        12905
+      ],
+      "original_block_sha256": "e9eccc8cc58fae1157a48a975b9c997a8c9569a9eff35a6c2c230dff4d0bc1e2",
+      "source_floor": 31602,
+      "source_xy": [
+        65,
+        62
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31601,
+      "target_xy": [
+        65,
+        27
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 106,
+      "original_byte_span": [
+        12915,
+        13021
+      ],
+      "original_block_sha256": "660661ea65893102f00e49b06c2f950437b8e1550a2851ca190404b88bd90d9a",
+      "source_floor": 31602,
+      "source_xy": [
+        61,
+        3
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31603,
+      "target_xy": [
+        49,
+        4
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 107,
+      "original_byte_span": [
+        13031,
+        13137
+      ],
+      "original_block_sha256": "54a2fc4767e64485325c9fcd493d05fe23270a53ebe3d45c1372cb9c48eab1ba",
+      "source_floor": 31603,
+      "source_xy": [
+        49,
+        4
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31602,
+      "target_xy": [
+        61,
+        3
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 108,
+      "original_byte_span": [
+        13147,
+        13253
+      ],
+      "original_block_sha256": "0f124ec4bc9b9213dd895f12adf32adbaa1723f1470a0e46e5f5785346bd6c65",
+      "source_floor": 31604,
+      "source_xy": [
+        41,
+        4
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31605,
+      "target_xy": [
+        6,
+        51
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 109,
+      "original_byte_span": [
+        13263,
+        13369
+      ],
+      "original_block_sha256": "277e81bd4cc3f4026c2f333ce40ed9b6d8f7184a2a2f6a7029f08d5fef2396aa",
+      "source_floor": 31605,
+      "source_xy": [
+        6,
+        51
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31604,
+      "target_xy": [
+        41,
+        4
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 110,
+      "original_byte_span": [
+        13379,
+        13485
+      ],
+      "original_block_sha256": "f86bc0e2a38ef3f81f3333a45455a20a38b28029bcc52c926c5e21bf5892131e",
+      "source_floor": 31605,
+      "source_xy": [
+        61,
+        3
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31606,
+      "target_xy": [
+        49,
+        4
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 111,
+      "original_byte_span": [
+        13495,
+        13601
+      ],
+      "original_block_sha256": "9e98c83dd8a578f562af7a25e061eb40a034fbd1e748d6ebe4d618463cac5d05",
+      "source_floor": 31606,
+      "source_xy": [
+        49,
+        4
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31605,
+      "target_xy": [
+        61,
+        3
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 112,
+      "original_byte_span": [
+        13611,
+        13717
+      ],
+      "original_block_sha256": "b688efadad0fa22f20d54ccf7c27fae760ef8de98d2cc8b14a24c652db3c753f",
+      "source_floor": 31607,
+      "source_xy": [
+        41,
+        4
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31608,
+      "target_xy": [
+        6,
+        51
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 113,
+      "original_byte_span": [
+        13727,
+        13833
+      ],
+      "original_block_sha256": "f64a8ce2d0c912a5d1b485ae3d591cbe3ae70d32e8996207ccc7fef803426071",
+      "source_floor": 31608,
+      "source_xy": [
+        6,
+        51
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31607,
+      "target_xy": [
+        41,
+        4
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 114,
+      "original_byte_span": [
+        13843,
+        13949
+      ],
+      "original_block_sha256": "5bafd0e4eecc5d18ec5c6eeef1bd9165673b051890dbd9a6a9ec9c105b7556e4",
+      "source_floor": 31608,
+      "source_xy": [
+        61,
+        3
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31609,
+      "target_xy": [
+        49,
+        4
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 115,
+      "original_byte_span": [
+        13959,
+        14065
+      ],
+      "original_block_sha256": "4f54208d79f834edf6ad1cc4252bac296d476bb94de80fc0168a788eb87fdeb6",
+      "source_floor": 31609,
+      "source_xy": [
+        49,
+        4
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31608,
+      "target_xy": [
+        61,
+        3
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 116,
+      "original_byte_span": [
+        14075,
+        14183
+      ],
+      "original_block_sha256": "d0810a22dfb8ad88e6818d72194d5a5c518f151cb9f7db24ceb8f772330def11",
+      "source_floor": 300,
+      "source_xy": [
+        239,
+        98
+      ],
+      "source_geometry": "NO_QUALIFIED_DAT",
+      "type": "npcgen_warp",
+      "target_floor": 31901,
+      "target_xy": [
+        0,
+        43
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 117,
+      "original_byte_span": [
+        14193,
+        14299
+      ],
+      "original_block_sha256": "f70d528b5bcaa2f7435ee57d442e70a03ad89a079cb3d5eb61c49dd6c2ef9092",
+      "source_floor": 31901,
+      "source_xy": [
+        0,
+        43
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 300,
+      "target_xy": [
+        239,
+        98
+      ],
+      "target_geometry": "NO_QUALIFIED_DAT",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 118,
+      "original_byte_span": [
+        14309,
+        14417
+      ],
+      "original_block_sha256": "795c429c36e31fe46c1e7f894e3ec6246bac85bec72c7d090613a74ade840b12",
+      "source_floor": 300,
+      "source_xy": [
+        239,
+        98
+      ],
+      "source_geometry": "NO_QUALIFIED_DAT",
+      "type": "npcgen_warp",
+      "target_floor": 31901,
+      "target_xy": [
+        0,
+        44
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 119,
+      "original_byte_span": [
+        14427,
+        14533
+      ],
+      "original_block_sha256": "cfed36737ad1880bac180f581be4a6930a78d9277a1716d8ad915b36d1956357",
+      "source_floor": 31901,
+      "source_xy": [
+        0,
+        44
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 300,
+      "target_xy": [
+        239,
+        98
+      ],
+      "target_geometry": "NO_QUALIFIED_DAT",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 120,
+      "original_byte_span": [
+        14543,
+        14648
+      ],
+      "original_block_sha256": "13ddde2e7e4d013c650e700b3eb2ce487e072f548c45a79c13870a1b7f706b43",
+      "source_floor": 31901,
+      "source_xy": [
+        71,
+        6
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31902,
+      "target_xy": [
+        0,
+        4
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 121,
+      "original_byte_span": [
+        14658,
+        14762
+      ],
+      "original_block_sha256": "65a5dc01b9925d10cb9f0b95119e17bea727b84cd576d0d95e6f54ba3b3e1854",
+      "source_floor": 31902,
+      "source_xy": [
+        0,
+        4
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31901,
+      "target_xy": [
+        71,
+        6
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 122,
+      "original_byte_span": [
+        14772,
+        14877
+      ],
+      "original_block_sha256": "2f86510a2674072d5e4a72554d32c5cd497932768061a465a4547add227a7a5f",
+      "source_floor": 31901,
+      "source_xy": [
+        71,
+        6
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31902,
+      "target_xy": [
+        0,
+        5
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 123,
+      "original_byte_span": [
+        14887,
+        14991
+      ],
+      "original_block_sha256": "2ac5207d76a23e0b291a8d753400b8ca6fb82da79abeaa36d19bd6917c4cd659",
+      "source_floor": 31902,
+      "source_xy": [
+        0,
+        5
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31901,
+      "target_xy": [
+        71,
+        6
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 124,
+      "original_byte_span": [
+        15001,
+        15110
+      ],
+      "original_block_sha256": "87f6c162839e17b95e605c2ccaccb9c640312039b2860b22fb504a161d3ddd6d",
+      "source_floor": 31901,
+      "source_xy": [
+        29,
+        59
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31903,
+      "target_xy": [
+        15,
+        66
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 125,
+      "original_byte_span": [
+        15120,
+        15229
+      ],
+      "original_block_sha256": "4328e7884ae3d7a5a2a27b2a3c8f80148ca0f59813c5c6b44441feba4a9cd502",
+      "source_floor": 31903,
+      "source_xy": [
+        15,
+        66
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31901,
+      "target_xy": [
+        29,
+        59
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 126,
+      "original_byte_span": [
+        15239,
+        15346
+      ],
+      "original_block_sha256": "7e0c293dbfa05fc20f2a4fe62910b1fe2f60c9f71907653b2f1675107b37f867",
+      "source_floor": 31904,
+      "source_xy": [
+        5,
+        47
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31905,
+      "target_xy": [
+        18,
+        55
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 127,
+      "original_byte_span": [
+        15356,
+        15464
+      ],
+      "original_block_sha256": "22a4488edf6b3cef2c13d1401a1591ef19b3c0a0055cb0aead268d6c4f485e85",
+      "source_floor": 31905,
+      "source_xy": [
+        18,
+        55
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31904,
+      "target_xy": [
+        5,
+        47
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 128,
+      "original_byte_span": [
+        15474,
+        15581
+      ],
+      "original_block_sha256": "622ba44b4ccea4808657b42fc00e10e35f175418ba803a4c3600cca74dda4bf1",
+      "source_floor": 31905,
+      "source_xy": [
+        56,
+        30
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31906,
+      "target_xy": [
+        8,
+        6
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 129,
+      "original_byte_span": [
+        15591,
+        15696
+      ],
+      "original_block_sha256": "cf887c7921f8d464bf76e81359f6f0646a4d8b2de2b7e47b41f6192252e73c61",
+      "source_floor": 31906,
+      "source_xy": [
+        8,
+        6
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31905,
+      "target_xy": [
+        56,
+        30
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 130,
+      "original_byte_span": [
+        15706,
+        15815
+      ],
+      "original_block_sha256": "ce321397b8ea29f15c40eff7da206a62cec8f593c148e3a70472cf7340d04d8b",
+      "source_floor": 31906,
+      "source_xy": [
+        43,
+        51
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31907,
+      "target_xy": [
+        14,
+        43
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 131,
+      "original_byte_span": [
+        15825,
+        15934
+      ],
+      "original_block_sha256": "902968f68b8a6e7f2202b3c40ac91cd4559dcf0545a9bf94958da60a0e7fae6c",
+      "source_floor": 31907,
+      "source_xy": [
+        14,
+        43
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31906,
+      "target_xy": [
+        43,
+        51
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 132,
+      "original_byte_span": [
+        15944,
+        16052
+      ],
+      "original_block_sha256": "f660a2863cecd73ecfd2027dc000c85337b0fe2333d06a31ac205727e39f2104",
+      "source_floor": 31907,
+      "source_xy": [
+        54,
+        44
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31908,
+      "target_xy": [
+        6,
+        47
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 133,
+      "original_byte_span": [
+        16062,
+        16169
+      ],
+      "original_block_sha256": "f13e9497a0aeeffcd86968b8fbe9a61729d6da60d248f83c763ca9d4588ecbd0",
+      "source_floor": 31908,
+      "source_xy": [
+        6,
+        47
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31907,
+      "target_xy": [
+        54,
+        44
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 134,
+      "original_byte_span": [
+        16179,
+        16286
+      ],
+      "original_block_sha256": "60ba95ce3ce2bd4b2faedd502c40b5e5b3b5d7dc3b969f95e9f6d43d0973b523",
+      "source_floor": 31908,
+      "source_xy": [
+        52,
+        4
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31909,
+      "target_xy": [
+        16,
+        25
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 135,
+      "original_byte_span": [
+        16296,
+        16404
+      ],
+      "original_block_sha256": "25eae83a6a9201af9bb4c0fa20a6613dba53af5e16c8db3537c4e129ca8192f1",
+      "source_floor": 31909,
+      "source_xy": [
+        16,
+        25
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31908,
+      "target_xy": [
+        52,
+        4
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 136,
+      "original_byte_span": [
+        16414,
+        16522
+      ],
+      "original_block_sha256": "81330bb874ee85a4e199a46a2a1e3cb0638d34ec57e4ea8a6db94de2d8df997c",
+      "source_floor": 31910,
+      "source_xy": [
+        16,
+        12
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31909,
+      "target_xy": [
+        10,
+        3
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": false
+    },
+    {
+      "ordinal": 137,
+      "original_byte_span": [
+        16532,
+        16643
+      ],
+      "original_block_sha256": "b7bf1aa6c90206c57a6a507125b21309a04925caf55f22e3ef6e3c0d28a22dab",
+      "source_floor": 300,
+      "source_xy": [
+        483,
+        196
+      ],
+      "source_geometry": "NO_QUALIFIED_DAT",
+      "type": "npcgen_warp",
+      "target_floor": 31801,
+      "target_xy": [
+        37,
+        49
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 138,
+      "original_byte_span": [
+        16653,
+        16762
+      ],
+      "original_block_sha256": "c25ede3915de6396918e7e046852dc83e5e3cfbf28c02e844ae573741c5fd7ec",
+      "source_floor": 31801,
+      "source_xy": [
+        37,
+        49
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 300,
+      "target_xy": [
+        483,
+        196
+      ],
+      "target_geometry": "NO_QUALIFIED_DAT",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 139,
+      "original_byte_span": [
+        16772,
+        16883
+      ],
+      "original_block_sha256": "1182c2c021a6ac3756740219c6ac74a72b5700030e849a1e2cdb91c74da885f4",
+      "source_floor": 300,
+      "source_xy": [
+        483,
+        196
+      ],
+      "source_geometry": "NO_QUALIFIED_DAT",
+      "type": "npcgen_warp",
+      "target_floor": 31801,
+      "target_xy": [
+        38,
+        49
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 140,
+      "original_byte_span": [
+        16893,
+        17002
+      ],
+      "original_block_sha256": "aa443c7b495cece10d3b4f6ad7234b9ce914b372ef82090df1e727f3a0352815",
+      "source_floor": 31801,
+      "source_xy": [
+        38,
+        49
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 300,
+      "target_xy": [
+        483,
+        196
+      ],
+      "target_geometry": "NO_QUALIFIED_DAT",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 141,
+      "original_byte_span": [
+        17012,
+        17117
+      ],
+      "original_block_sha256": "3fd5416f8986968bdf372617ec59815366d5e63a230eb920b34ebe694adcf7bf",
+      "source_floor": 31801,
+      "source_xy": [
+        6,
+        25
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31802,
+      "target_xy": [
+        7,
+        6
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 142,
+      "original_byte_span": [
+        17127,
+        17231
+      ],
+      "original_block_sha256": "540b325b40bdc94ddb46f74c536d6aec01f1eddd714a3e7527410021e41b2e45",
+      "source_floor": 31802,
+      "source_xy": [
+        7,
+        6
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31801,
+      "target_xy": [
+        6,
+        25
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 143,
+      "original_byte_span": [
+        17241,
+        17350
+      ],
+      "original_block_sha256": "0de2b68858c0f90a4f14bf10d89fdcb408436a92766fd604c9170cfeaee6e06f",
+      "source_floor": 31802,
+      "source_xy": [
+        30,
+        39
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31803,
+      "target_xy": [
+        28,
+        45
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 144,
+      "original_byte_span": [
+        17360,
+        17469
+      ],
+      "original_block_sha256": "333f3d49dce77b883df2d1f2bd2b289cb47c292e234c2f992dde6ff1bc36774b",
+      "source_floor": 31803,
+      "source_xy": [
+        28,
+        45
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31802,
+      "target_xy": [
+        30,
+        39
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 145,
+      "original_byte_span": [
+        17479,
+        17586
+      ],
+      "original_block_sha256": "c0aa834c9576c78be2e9f53ce6b1aa82b2fd5f1e75eecb835b158432d57c2d46",
+      "source_floor": 31803,
+      "source_xy": [
+        13,
+        16
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31804,
+      "target_xy": [
+        7,
+        3
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 146,
+      "original_byte_span": [
+        17596,
+        17701
+      ],
+      "original_block_sha256": "8e28bc90cf69587187b81518d5ec2bf0c9be20a6df949da4a78b23853a0cd785",
+      "source_floor": 31804,
+      "source_xy": [
+        7,
+        3
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31803,
+      "target_xy": [
+        13,
+        16
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 147,
+      "original_byte_span": [
+        17711,
+        17820
+      ],
+      "original_block_sha256": "a99cf585af294cfdf21c2724550a8e5f9bbac1d1209d055e9dcf0f5166b1ae91",
+      "source_floor": 31804,
+      "source_xy": [
+        29,
+        35
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31805,
+      "target_xy": [
+        44,
+        40
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 148,
+      "original_byte_span": [
+        17830,
+        17939
+      ],
+      "original_block_sha256": "0b41d4997cdc42aaeb7b1fd01fbf9d8d70a9fb2a74c5d46558b53afab10289e3",
+      "source_floor": 31805,
+      "source_xy": [
+        44,
+        40
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31804,
+      "target_xy": [
+        29,
+        35
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": true
+    },
+    {
+      "ordinal": 149,
+      "original_byte_span": [
+        17949,
+        18055
+      ],
+      "original_block_sha256": "67bc35455cd2ebc29ef17c934ffdeb83c547cdf48184ee2f5220b75d50a2fb39",
+      "source_floor": 31806,
+      "source_xy": [
+        34,
+        5
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 31805,
+      "target_xy": [
+        22,
+        5
+      ],
+      "target_geometry": "WITHIN_DAT_DIMENSIONS",
+      "exact_reverse_present": false
+    },
+    {
+      "ordinal": 150,
+      "original_byte_span": [
+        18065,
+        18174
+      ],
+      "original_block_sha256": "ebfed2adb31c1346739e259cbd4c3f3dd0e8cf5de6899b2d6189eec09b9999fa",
+      "source_floor": 31805,
+      "source_xy": [
+        45,
+        13
+      ],
+      "source_geometry": "WITHIN_DAT_DIMENSIONS",
+      "type": "npcgen_warp",
+      "target_floor": 300,
+      "target_xy": [
+        483,
+        196
+      ],
+      "target_geometry": "NO_QUALIFIED_DAT",
+      "exact_reverse_present": false
+    }
+  ],
+  "limits": {
+    "new_original_DAT_bytes_read": 0,
+    "new_original_RD_pixels_decoded": 0,
+    "original_handler_text_published": false,
+    "native_gameplay_or_transfers_executed": false,
+    "same_official_build_qualified": false,
+    "original_300_floor_geometry_proven": false,
+    "original_1999_or_TW1_gameplay_identity_proven": false,
+    "old_31902_coord_dispute_resolved": false
+  }
+}

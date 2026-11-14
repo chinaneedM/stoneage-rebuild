@@ -1,0 +1,29 @@
+name: Verify StoneAge INTEGRATION105 dungeon02 original source bounds
+
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION105-DUNGEON02-151-ORIGINAL-STATIC-ROUTES-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION105-DUNGEON02-ORIGINAL-STATIC-ROUTES-20261114.md'
+      - 'tests/test_stoneage_integration105_dungeon02_original.py'
+      - '.github/workflows/verify-stoneage-integration105-dungeon02.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION105-DUNGEON02-151-ORIGINAL-STATIC-ROUTES-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION105-DUNGEON02-ORIGINAL-STATIC-ROUTES-20261114.md'
+      - 'tests/test_stoneage_integration105_dungeon02_original.py'
+      - '.github/workflows/verify-stoneage-integration105-dungeon02.yml'
+  workflow_dispatch:
+
+jobs:
+  original-source-derivation:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify public original-source spans, map geometry and limitations
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration105_dungeon02_original.py' -v
