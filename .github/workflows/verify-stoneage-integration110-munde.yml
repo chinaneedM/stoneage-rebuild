@@ -1,0 +1,29 @@
+name: Verify StoneAge INTEGRATION110 original Munde NPC and static routes
+
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION110-MUNDE-TRIBE-ORIGINAL-NPC-STATIC-ROUTE-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION110-MUNDE-NPC-STATIC-ROUTE-20261114.md'
+      - 'tests/test_stoneage_integration110_munde.py'
+      - '.github/workflows/verify-stoneage-integration110-munde.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION110-MUNDE-TRIBE-ORIGINAL-NPC-STATIC-ROUTE-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION110-MUNDE-NPC-STATIC-ROUTE-20261114.md'
+      - 'tests/test_stoneage_integration110_munde.py'
+      - '.github/workflows/verify-stoneage-integration110-munde.yml'
+  workflow_dispatch:
+
+jobs:
+  source-claims-and-negative-boundaries:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Replay exact 22 original source spans, handler refs and prior DAT geometry
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration110_munde.py' -v
