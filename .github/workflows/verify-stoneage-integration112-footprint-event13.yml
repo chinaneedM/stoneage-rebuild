@@ -1,0 +1,29 @@
+name: Verify StoneAge INTEGRATION112 original cave NPC footprint item evidence
+
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION112-FOOTPRINT-NPC-EVENT13-SOURCE-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION112-FOOTPRINT-NPC-EVENT13-20261114.md'
+      - 'tests/test_stoneage_integration112_footprint_event13.py'
+      - '.github/workflows/verify-stoneage-integration112-footprint-event13.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION112-FOOTPRINT-NPC-EVENT13-SOURCE-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION112-FOOTPRINT-NPC-EVENT13-20261114.md'
+      - 'tests/test_stoneage_integration112_footprint_event13.py'
+      - '.github/workflows/verify-stoneage-integration112-footprint-event13.yml'
+  workflow_dispatch:
+
+jobs:
+  qualified-original-source-relations:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Recheck source indices, quest13 original values and negative evidence
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration112_footprint_event13.py' -v
