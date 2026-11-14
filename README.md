@@ -2862,3 +2862,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ### 2026-11-14 — INTEGRATION110｜夢德族原NPC短文本與七層原靜態路由來源
 
 [來源、明確界限及下一步](docs/continuity/STONEAGE-INTEGRATION110-MUNDE-NPC-STATIC-ROUTE-20261114.md)／[22原段SHA和七DAT源尺寸派生JSON](research/recovered/STONEAGE-INTEGRATION110-MUNDE-TRIBE-ORIGINAL-NPC-STATIC-ROUTE-R1.json)：從新的精確main `422a5d067b61997c92d534c0687eca4262a5dbba`／tree `879780e89bf45122256283a78629803688927e0b` 重新啟動；完整原CURRENT Git blob `c89e0e33`／2709173字節不更動。後期社群保存mixed25私人NPC ZIP995176B／2205 CRC實讀，源 `11100npc.create` 8個NPC/標牌/留言源配置及7份指向外參真原字節核，`11101d.create` 14個來源傳送配置（12有原字面精確反向、2在本源檔無），與舊CHAR01全索引22/22 byte-spans/SHA一致；先前七floor 11101–11107 DAT尺寸SHA合格，來源點20/20、目標點12/12界內，floor100於**所選舊覆蓋清單**無尺寸資格。重要實物異文：入村原參數100(443,127)→11101(33,29)，原出口11101(33,28)→100(442,127)，均一格偏差，不虛構對稱路徑、原生可走性或原服運行。新增原DAT/RD讀取0、商用原文/原圖不公開；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暫停、總percent=null。候選/main CI和合併必須據真實Actions後驗，不能提前認定成功。**NEXT**輪換可獨立取證、有新實際原像素或實質任務/寵物內容的未重複來源，停止擴這組純靜態路由。
+
+
+### 2026-11-14 — INTEGRATION110 正式72條候選＋內容主線 Actions 驗收
+
+[永久驗收](docs/continuity/STONEAGE-INTEGRATION110-PUBLICATION-ACCEPTANCE-20261114.md)／[72條精確run身份機器收據](research/recovered/STONEAGE-INTEGRATION110-PUBLICATION-ACCEPTANCE-R1.json)：[內容PR #403](https://github.com/chinaneedM/stoneage-rebuild/pull/403)實際合併。候選 `b5356ea33f4697b406532ba350b3fbaacd005324` **45/45**（push26/PR19）完成成功，正式內容main `dc17be8630bb174b31a9995a8d81e40000a680e9` **27/27**完成成功，兩者同tree `f3805940bbe6fdc30b621057f14341eab4349db9`；專用PR和main實際作業均8測試/OK。原私人NPC ZIP 2,205 CRC、22配置與CHAR01舊來源索引SHA、七floor舊DAT尺寸與入口一格異文均保留限定；原DAT/RD新讀0，非原服執行。歷史CURRENT 2,709,173B/blob `c89e0e33`完整不變，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暫停，percent=null。**本收據新HEAD Actions須另外真驗；NEXT**另一未重複的新實際原2D/寵物/任務材料。
