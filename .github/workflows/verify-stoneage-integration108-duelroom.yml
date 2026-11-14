@@ -1,0 +1,29 @@
+name: Verify StoneAge INTEGRATION108 source-bound arena services
+
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION108-DUELROOM-34-CREATE-26-SOURCE-WARP-ITEM-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION108-DUELROOM-ORIGINAL-SERVICES-WARP-AND-2D-20261114.md'
+      - 'tests/test_stoneage_integration108_duelroom.py'
+      - '.github/workflows/verify-stoneage-integration108-duelroom.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION108-DUELROOM-34-CREATE-26-SOURCE-WARP-ITEM-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION108-DUELROOM-ORIGINAL-SERVICES-WARP-AND-2D-20261114.md'
+      - 'tests/test_stoneage_integration108_duelroom.py'
+      - '.github/workflows/verify-stoneage-integration108-duelroom.yml'
+  workflow_dispatch:
+
+jobs:
+  source-geometry-and-lookup-negative-evidence:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Replay existing source-bounded numeric and SHA bridges only
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration108_duelroom.py' -v

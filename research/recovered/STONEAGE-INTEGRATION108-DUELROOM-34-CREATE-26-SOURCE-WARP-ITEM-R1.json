@@ -1,0 +1,2495 @@
+{
+  "schema": "stoneage.integration108.duelroom_original_static_source_and_image_bridge.r1",
+  "date": "2026-11-14",
+  "baseline": {
+    "repo": "chinaneedM/stoneage-rebuild",
+    "main_head": "ebd200b9ffcceb6f7661ad4f969ed39846655eee",
+    "main_tree": "2c9a462b9f1a3e45ab486351688ec93920e2fc8b",
+    "full_prior_CURRENT_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "prior_CURRENT_bytes": 2709173
+  },
+  "provenance": {
+    "source_scope": "LATER_COMMUNITY_MIXED25_PRESERVED_NPC_AND_MAP_RECORDS_NOT_AUTHENTICATED_OFFICIAL_TW1_OR_RUNTIME",
+    "original_NPC_private_ZIP_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "original_NPC_zip_members_CRC_verified": 2205,
+    "source_file": "npc/genout/duelroom.create",
+    "source_file_bytes": 5732,
+    "source_file_full_sha256": "4c47e9c320f9d3fe6616e6860d14d2681df1994bb8c4a849e5b6d93a38998a91",
+    "source_original_handler_member_count": 26,
+    "prior_MAP01_original_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "prior_MAP01_manifest_git_blob": "03675ee98d391f9ef0246315b2426f2a8b721fd3",
+    "ITEM01_original_private_ZIP_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "ITEM01_original_private_zip_members_CRC_verified": 838,
+    "SCENE13_private_original_sprite_ZIP_sha256": "21b56fe9a49357f0d7815698bd1db67f72076759a2528348888fe06444868238",
+    "SCENE13_original_private_zip_members_CRC_verified": 6
+  },
+  "counts": {
+    "create_blocks": 34,
+    "all_unique_floor_coordinate_points": 34,
+    "source_floor_counts": {
+      "110": 1,
+      "130": 29,
+      "1000": 1,
+      "2000": 1,
+      "3000": 1,
+      "4000": 1
+    },
+    "source_template_counts": {
+      "npcgen_dengon": 5,
+      "npcgen_healer": 2,
+      "npcgen_man": 1,
+      "npcgen_mugon": 1,
+      "npcgen_petshop": 1,
+      "npcgen_poolitemshop": 1,
+      "npcgen_shop": 9,
+      "npcgen_signboard": 5,
+      "npcgen_warpman": 9
+    },
+    "source_file_references": 26,
+    "original_distinct_handler_files": 26,
+    "source_floor_130_positions": 29,
+    "prior_MAP01_qualified_coordinate_in_bounds": 32,
+    "prior_MAP01_no_qualified_DAT": 2,
+    "prior_MAP01_qualified_out_of_bounds": 0,
+    "warpman_source_pairs": 9,
+    "shop_explicit_itemlists": 9,
+    "shop_explicit_itemlist_occurrences": 127,
+    "shop_distinct_explicit_item_IDs": 100,
+    "original_source_item_ids_looked_up_in_both_itemsets": 110,
+    "same_carrier_actor_graphic_links": 1,
+    "prior_same_carrier_actor_original_sprite_new_discovery_claim": 0,
+    "TW1_retail_candidate_item_icon_distinct_source_PNG": 2
+  },
+  "original_CREATE_numeric_rows_with_sha256": [
+    {
+      "ordinal": 0,
+      "original_byte_span": [
+        114,
+        279
+      ],
+      "original_create_block_sha256": "ade6b12421a570f21ff13a9bf98d2e6fa90eaae23bbc71089c5cfe0f8b4efc5a",
+      "floor": 1000,
+      "xy": [
+        56,
+        59
+      ],
+      "template": "npcgen_warpman",
+      "graphicname": 16055,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/wpm_1000_56_59",
+      "map01_DAT_dimension_qualification": "NO_QUALIFIED_DAT_IN_MAP01",
+      "original_create_name_field_sha256": "e4265dc09636c590f38991c9c2d4c257112d04f0d4093af432cd449ceeb81ca8"
+    },
+    {
+      "ordinal": 1,
+      "original_byte_span": [
+        288,
+        453
+      ],
+      "original_create_block_sha256": "6edd7dfdb3c757ea7fcd8deb9410c9a55d9a927a506558b089e9306805846804",
+      "floor": 2000,
+      "xy": [
+        85,
+        79
+      ],
+      "template": "npcgen_warpman",
+      "graphicname": 16055,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/wpm_2000_85_79",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "e4265dc09636c590f38991c9c2d4c257112d04f0d4093af432cd449ceeb81ca8"
+    },
+    {
+      "ordinal": 2,
+      "original_byte_span": [
+        462,
+        627
+      ],
+      "original_create_block_sha256": "734c148ba274f089807af6c73395b311095d50fb4d59c892d24a9cd6fb147dea",
+      "floor": 3000,
+      "xy": [
+        93,
+        86
+      ],
+      "template": "npcgen_warpman",
+      "graphicname": 16055,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/wpm_3000_93_86",
+      "map01_DAT_dimension_qualification": "NO_QUALIFIED_DAT_IN_MAP01",
+      "original_create_name_field_sha256": "e4265dc09636c590f38991c9c2d4c257112d04f0d4093af432cd449ceeb81ca8"
+    },
+    {
+      "ordinal": 3,
+      "original_byte_span": [
+        637,
+        802
+      ],
+      "original_create_block_sha256": "f8442384c14b45848da199393fe4c21110ca85cde88d7c21d98c2cd4919d6084",
+      "floor": 4000,
+      "xy": [
+        88,
+        61
+      ],
+      "template": "npcgen_warpman",
+      "graphicname": 16055,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/wpm_4000_88_61",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "e4265dc09636c590f38991c9c2d4c257112d04f0d4093af432cd449ceeb81ca8"
+    },
+    {
+      "ordinal": 4,
+      "original_byte_span": [
+        812,
+        975
+      ],
+      "original_create_block_sha256": "1a1a7162769b4292f34449879c30979ff1c80aa39fb46631f862069c4dd7ce93",
+      "floor": 110,
+      "xy": [
+        38,
+        37
+      ],
+      "template": "npcgen_warpman",
+      "graphicname": 16205,
+      "source_dir": 6,
+      "original_handler_relative_path": "genout/wpm_110_38_37",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "e4265dc09636c590f38991c9c2d4c257112d04f0d4093af432cd449ceeb81ca8"
+    },
+    {
+      "ordinal": 5,
+      "original_byte_span": [
+        985,
+        1150
+      ],
+      "original_create_block_sha256": "ee2d0a1a17cd101b3bcf04eb73de6f63eea8e74e7c52375d5f9611390ca64a5f",
+      "floor": 130,
+      "xy": [
+        57,
+        12
+      ],
+      "template": "npcgen_warpman",
+      "graphicname": 16065,
+      "source_dir": 6,
+      "original_handler_relative_path": "genout/wpm_130_57_12",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "5a5d5393347e6285aeb0de98740664aee8e6542de321b5739d2642d1552fb796"
+    },
+    {
+      "ordinal": 6,
+      "original_byte_span": [
+        1160,
+        1325
+      ],
+      "original_create_block_sha256": "e5dbae6ff6cdbfabba0e8ef2e386b34d565741f517772a68f07f21c3224ed074",
+      "floor": 130,
+      "xy": [
+        57,
+        21
+      ],
+      "template": "npcgen_warpman",
+      "graphicname": 16067,
+      "source_dir": 6,
+      "original_handler_relative_path": "genout/wpm_130_57_21",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "a9d1638833eaedd7680346280ba060ba03b6b7d568331879b8b20e8b8ce316e5"
+    },
+    {
+      "ordinal": 7,
+      "original_byte_span": [
+        1335,
+        1496
+      ],
+      "original_create_block_sha256": "278bc057d81e4eec67c467805c400d8efb0c62050c3d2365ba53c34af8594fc9",
+      "floor": 130,
+      "xy": [
+        57,
+        30
+      ],
+      "template": "npcgen_warpman",
+      "graphicname": 16030,
+      "source_dir": 6,
+      "original_handler_relative_path": "genout/wpm_130_57_30",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "31ec18b9998e86fb11c10f68aa4d4bf8721eb2d2a2e790fb1edb727d71b2f84e"
+    },
+    {
+      "ordinal": 8,
+      "original_byte_span": [
+        1506,
+        1671
+      ],
+      "original_create_block_sha256": "bd53ab04708134825bb157c7003866b32a5cedb08b10baae1244d944fff48be9",
+      "floor": 130,
+      "xy": [
+        57,
+        39
+      ],
+      "template": "npcgen_warpman",
+      "graphicname": 16033,
+      "source_dir": 6,
+      "original_handler_relative_path": "genout/wpm_130_57_39",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "e36ca02ed7e4a16246adce2dc30085b20b1b9679c24dc29b9fa8e5196909b322"
+    },
+    {
+      "ordinal": 9,
+      "original_byte_span": [
+        1681,
+        1841
+      ],
+      "original_create_block_sha256": "c075ebd6ba709efb0f6960f9671f6225a5317f2d9ad36a4ba7564f827771a103",
+      "floor": 130,
+      "xy": [
+        1,
+        14
+      ],
+      "template": "npcgen_shop",
+      "graphicname": 16203,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/ss_130_3_14",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "a3bdda731f2d5b732ae336d3376b71e671719734276b4119c7465f9b71e982cb"
+    },
+    {
+      "ordinal": 10,
+      "original_byte_span": [
+        1851,
+        2011
+      ],
+      "original_create_block_sha256": "777d66347ea382f1283a4598a9c8f530d2663f44b972acf9c1a6107039e12d91",
+      "floor": 130,
+      "xy": [
+        23,
+        3
+      ],
+      "template": "npcgen_shop",
+      "graphicname": 16201,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/ss_130_23_3",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "a3bdda731f2d5b732ae336d3376b71e671719734276b4119c7465f9b71e982cb"
+    },
+    {
+      "ordinal": 11,
+      "original_byte_span": [
+        2021,
+        2178
+      ],
+      "original_create_block_sha256": "7bbccf0e43a6e1696b4ab88f7f08653517422285ca7c32dfc42552f97fdbe807",
+      "floor": 130,
+      "xy": [
+        3,
+        3
+      ],
+      "template": "npcgen_shop",
+      "graphicname": 16200,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/ss_130_3_3",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "1bf43195cad87e466cb82a6a74a1aa0fb5097261b9984a46e37bc96cbca393d3"
+    },
+    {
+      "ordinal": 12,
+      "original_byte_span": [
+        2188,
+        2345
+      ],
+      "original_create_block_sha256": "51f5aac6c48e53ddc7181c9673a9df08bc59894002342b2992f6d81f3b5ae52e",
+      "floor": 130,
+      "xy": [
+        9,
+        3
+      ],
+      "template": "npcgen_shop",
+      "graphicname": 16201,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/ss_130_9_3",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "1bf43195cad87e466cb82a6a74a1aa0fb5097261b9984a46e37bc96cbca393d3"
+    },
+    {
+      "ordinal": 13,
+      "original_byte_span": [
+        2355,
+        2515
+      ],
+      "original_create_block_sha256": "42d22e9607c998bd3bc5c185fa6e9d18d21b7204ce12bc19b5b1b29906ac56e4",
+      "floor": 130,
+      "xy": [
+        16,
+        3
+      ],
+      "template": "npcgen_shop",
+      "graphicname": 16068,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/ss_130_16_3",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "34b4c9118ba251cbc6266eaf459622dcdad2fbc0a67567f525224183ad949a8b"
+    },
+    {
+      "ordinal": 14,
+      "original_byte_span": [
+        2525,
+        2685
+      ],
+      "original_create_block_sha256": "ffed1be1fedec9988cc4ddb58309d38e49b1cbba9dbbb19678477f882f9bb9ed",
+      "floor": 130,
+      "xy": [
+        43,
+        3
+      ],
+      "template": "npcgen_shop",
+      "graphicname": 16066,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/ss_130_43_3",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "34b4c9118ba251cbc6266eaf459622dcdad2fbc0a67567f525224183ad949a8b"
+    },
+    {
+      "ordinal": 15,
+      "original_byte_span": [
+        2695,
+        2831
+      ],
+      "original_create_block_sha256": "321790bfe160d1314da7810ef2e0b05de4132b5ad337453bd5e1cce8e9513579",
+      "floor": 130,
+      "xy": [
+        31,
+        3
+      ],
+      "template": "npcgen_healer",
+      "graphicname": 16012,
+      "source_dir": 4,
+      "original_handler_relative_path": null,
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "c709b7f49e5723862a94c2561d419e9be777e298ec514313aa47991e2a4637da"
+    },
+    {
+      "ordinal": 16,
+      "original_byte_span": [
+        2841,
+        3001
+      ],
+      "original_create_block_sha256": "81fe4ce7fbf7c3ce0ea56ace4eac19506af719f2cd0bab4d273575878fda4c34",
+      "floor": 130,
+      "xy": [
+        28,
+        3
+      ],
+      "template": "npcgen_shop",
+      "graphicname": 16023,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/ss_130_28_3",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "6375a8154f9b9943346d26a25682092ab6cb04b786c458880f73011eb1036e46"
+    },
+    {
+      "ordinal": 17,
+      "original_byte_span": [
+        3011,
+        3147
+      ],
+      "original_create_block_sha256": "7c3c5a2306f191ff91d444aee903c1fd78a2a1d1f7000c825d7b031e9c5ac1e6",
+      "floor": 130,
+      "xy": [
+        4,
+        26
+      ],
+      "template": "npcgen_healer",
+      "graphicname": 16012,
+      "source_dir": 4,
+      "original_handler_relative_path": null,
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "c709b7f49e5723862a94c2561d419e9be777e298ec514313aa47991e2a4637da"
+    },
+    {
+      "ordinal": 18,
+      "original_byte_span": [
+        3157,
+        3317
+      ],
+      "original_create_block_sha256": "58cf9741f177f6cae5e9f7742e38549288b39b6f5438aae34bc751e4f7a9ba1a",
+      "floor": 130,
+      "xy": [
+        1,
+        26
+      ],
+      "template": "npcgen_shop",
+      "graphicname": 16023,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/ss_130_1_26",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "6375a8154f9b9943346d26a25682092ab6cb04b786c458880f73011eb1036e46"
+    },
+    {
+      "ordinal": 19,
+      "original_byte_span": [
+        3327,
+        3484
+      ],
+      "original_create_block_sha256": "18a5ddf4325dbde347d4ec35d9748fd3e8ab304606e93f33b4758f79de1e918a",
+      "floor": 130,
+      "xy": [
+        4,
+        38
+      ],
+      "template": "npcgen_man",
+      "graphicname": 16035,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/msg_130_4_38",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "e4265dc09636c590f38991c9c2d4c257112d04f0d4093af432cd449ceeb81ca8"
+    },
+    {
+      "ordinal": 20,
+      "original_byte_span": [
+        3494,
+        3644
+      ],
+      "original_create_block_sha256": "9069e5c4d910924cb43897b3b6cbbc75c45a04ee875f6eeafe78d979d7ff97e9",
+      "floor": 130,
+      "xy": [
+        1,
+        38
+      ],
+      "template": "npcgen_shop",
+      "graphicname": 16049,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/ss_130_1_38",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "1eb2b2d662dcc8db3c7fc4f82e8d8bf2264e9ebebbe3765a6989782db7923571"
+    },
+    {
+      "ordinal": 21,
+      "original_byte_span": [
+        3654,
+        3809
+      ],
+      "original_create_block_sha256": "650e35fa7f7a4450c1d56558e57babd63c04f95cdb7bbcee9e25009a5e236152",
+      "floor": 130,
+      "xy": [
+        49,
+        3
+      ],
+      "template": "npcgen_petshop",
+      "graphicname": 16038,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/ps_130_49_3",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "f3309cfde3878f5cba68c1eebb30b6c9c406a2d927a5070ddcb5775e0c000dc5"
+    },
+    {
+      "ordinal": 22,
+      "original_byte_span": [
+        3819,
+        3947
+      ],
+      "original_create_block_sha256": "66461c23214df71d5d7cea82fe9f0d25b6b39bdb41378475093d54556b6e829f",
+      "floor": 130,
+      "xy": [
+        48,
+        3
+      ],
+      "template": "npcgen_mugon",
+      "graphicname": 100250,
+      "source_dir": 4,
+      "original_handler_relative_path": null,
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "e5b98696603bce0543d418f1681c9dc9e3525922a67478aa78912416a2b02256"
+    },
+    {
+      "ordinal": 23,
+      "original_byte_span": [
+        3957,
+        4122
+      ],
+      "original_create_block_sha256": "669e679643e7b2e327b09ec6dc8fc293a99ecc5028488615eb78cf2aca0b089b",
+      "floor": 130,
+      "xy": [
+        17,
+        13
+      ],
+      "template": "npcgen_signboard",
+      "graphicname": 10096,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/signb_130_17_13",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "26a0afb10d3d7023f5de5e18a23035edeb7711c8952890ba7bb77680494650bb"
+    },
+    {
+      "ordinal": 24,
+      "original_byte_span": [
+        4132,
+        4297
+      ],
+      "original_create_block_sha256": "d4acfeedfe55312fb67ffae86dfb9b7f84a7206cd2e98ced57d8e2db7648f661",
+      "floor": 130,
+      "xy": [
+        18,
+        13
+      ],
+      "template": "npcgen_signboard",
+      "graphicname": 10096,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/signb_130_18_13",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "26a0afb10d3d7023f5de5e18a23035edeb7711c8952890ba7bb77680494650bb"
+    },
+    {
+      "ordinal": 25,
+      "original_byte_span": [
+        4307,
+        4472
+      ],
+      "original_create_block_sha256": "8e72e07fe7582a6ad4c9da97bad73d9aad1c8981796f192c9c757c9023693f82",
+      "floor": 130,
+      "xy": [
+        19,
+        13
+      ],
+      "template": "npcgen_signboard",
+      "graphicname": 10096,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/signb_130_19_13",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "26a0afb10d3d7023f5de5e18a23035edeb7711c8952890ba7bb77680494650bb"
+    },
+    {
+      "ordinal": 26,
+      "original_byte_span": [
+        4482,
+        4647
+      ],
+      "original_create_block_sha256": "c15bbd14c886866add2ee518916a95305b2b87d3082802964c3f6456319de9d5",
+      "floor": 130,
+      "xy": [
+        20,
+        13
+      ],
+      "template": "npcgen_signboard",
+      "graphicname": 10096,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/signb_130_20_13",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "26a0afb10d3d7023f5de5e18a23035edeb7711c8952890ba7bb77680494650bb"
+    },
+    {
+      "ordinal": 27,
+      "original_byte_span": [
+        4657,
+        4822
+      ],
+      "original_create_block_sha256": "b8e11d8975d5803145001c57dd58c4d95bab6c7b3029798d7b27bc9bf00ca797",
+      "floor": 130,
+      "xy": [
+        21,
+        13
+      ],
+      "template": "npcgen_signboard",
+      "graphicname": 10096,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/signb_130_21_13",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "26a0afb10d3d7023f5de5e18a23035edeb7711c8952890ba7bb77680494650bb"
+    },
+    {
+      "ordinal": 28,
+      "original_byte_span": [
+        4832,
+        4970
+      ],
+      "original_create_block_sha256": "f488f7b94c69e6d1adf9ff9c1a5c4b8c5a2635349c12d6eac8497e38a09692be",
+      "floor": 130,
+      "xy": [
+        37,
+        13
+      ],
+      "template": "npcgen_dengon",
+      "graphicname": 10063,
+      "source_dir": 4,
+      "original_handler_relative_path": null,
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "06fcb79b81b9d01eefd2080dafcba3ada435b2cc025468839c9c8ad38cb00a55"
+    },
+    {
+      "ordinal": 29,
+      "original_byte_span": [
+        4980,
+        5115
+      ],
+      "original_create_block_sha256": "9fe58713a9b9b47f327c6efa36678978739f8f8eb013d1e23b43409346f56584",
+      "floor": 130,
+      "xy": [
+        22,
+        18
+      ],
+      "template": "npcgen_dengon",
+      "graphicname": 10063,
+      "source_dir": 4,
+      "original_handler_relative_path": null,
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "7a8b6a4fb9747386257880a29f08753e2911acab688ca690761cebda213772e7"
+    },
+    {
+      "ordinal": 30,
+      "original_byte_span": [
+        5125,
+        5260
+      ],
+      "original_create_block_sha256": "c6a99b44637446412aabeedb1ed71627bf14ffb4e6f6784aa21bbdea76f26388",
+      "floor": 130,
+      "xy": [
+        35,
+        18
+      ],
+      "template": "npcgen_dengon",
+      "graphicname": 10063,
+      "source_dir": 4,
+      "original_handler_relative_path": null,
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "d98cdaaaea3a34607336eefaea4fc3fd45a9f2667544a3539ddbade85b0dc649"
+    },
+    {
+      "ordinal": 31,
+      "original_byte_span": [
+        5270,
+        5405
+      ],
+      "original_create_block_sha256": "b65b670e75907409d99137aafabe526d7bfb4c2499f6027dd598f16ce441e3b6",
+      "floor": 130,
+      "xy": [
+        22,
+        31
+      ],
+      "template": "npcgen_dengon",
+      "graphicname": 10063,
+      "source_dir": 4,
+      "original_handler_relative_path": null,
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "6a5df40f9447afff497a0255fa7406c2518599788c0eb68b1c0675eb9c34655b"
+    },
+    {
+      "ordinal": 32,
+      "original_byte_span": [
+        5415,
+        5550
+      ],
+      "original_create_block_sha256": "d5e80e2ad21aafa6cc1258c2b6723191d82f52f9ac8b0715132d486fec9e2068",
+      "floor": 130,
+      "xy": [
+        35,
+        31
+      ],
+      "template": "npcgen_dengon",
+      "graphicname": 10063,
+      "source_dir": 4,
+      "original_handler_relative_path": null,
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "00e4ba4dde82327376288f0a1d57cfada40212c262bb6fd4d08d23d443adc760"
+    },
+    {
+      "ordinal": 33,
+      "original_byte_span": [
+        5561,
+        5732
+      ],
+      "original_create_block_sha256": "5530056ea594a7ef1cef928e58d5655dca8ea7251775fa42267b4bb6c5ca4ea7",
+      "floor": 130,
+      "xy": [
+        4,
+        14
+      ],
+      "template": "npcgen_poolitemshop",
+      "graphicname": 16027,
+      "source_dir": 4,
+      "original_handler_relative_path": "genout/pis_1009_14_13",
+      "map01_DAT_dimension_qualification": "WITHIN_QUALIFIED_DAT_HEADER",
+      "original_create_name_field_sha256": "97199f6a1427adb8465feb6021662184c2e7be82f55aea437a9629fffd6c8a8a"
+    }
+  ],
+  "original_referenced_handler_sha_and_parsed_directives": {
+    "genout/wpm_1000_56_59": {
+      "source_relative_path": "genout/wpm_1000_56_59",
+      "original_bytes": 311,
+      "original_full_sha256": "9ebd7a48c3ab5e9b83f1e2d4b88b07ca623a42235f5b2e1867982119011f0cc9",
+      "source_template": "npcgen_warpman",
+      "static_WARP_target_ints": [
+        130,
+        57,
+        13
+      ],
+      "raw_FREE_clause_sha256": "c0c74fc1f6560af15a27975d208d954af5432dbd1f75835f778c74042ab32225",
+      "raw_FREE_item_ids": [
+        2597
+      ],
+      "static_DelItem_ids": [
+        2521,
+        2522,
+        2523,
+        2524,
+        2602,
+        2598,
+        2599,
+        2600,
+        2601
+      ],
+      "raw_MONEY_lexeme": "-1"
+    },
+    "genout/wpm_2000_85_79": {
+      "source_relative_path": "genout/wpm_2000_85_79",
+      "original_bytes": 311,
+      "original_full_sha256": "8a634de622a142f8fe41367efcb69cde4734f027ef88979b0d1cf9bde1675be8",
+      "source_template": "npcgen_warpman",
+      "static_WARP_target_ints": [
+        130,
+        57,
+        22
+      ],
+      "raw_FREE_clause_sha256": "8bf85226f5600586ba298c6a318936f5084e71fb5c059a11bdc291a97a28a70e",
+      "raw_FREE_item_ids": [
+        2598
+      ],
+      "static_DelItem_ids": [
+        2521,
+        2522,
+        2523,
+        2524,
+        2602,
+        2597,
+        2599,
+        2600,
+        2601
+      ],
+      "raw_MONEY_lexeme": "-1"
+    },
+    "genout/wpm_3000_93_86": {
+      "source_relative_path": "genout/wpm_3000_93_86",
+      "original_bytes": 311,
+      "original_full_sha256": "ca8a5435474ad3baeea6295f42b8700bf9f216ca195bdd5076c5f1b46e8b6aa2",
+      "source_template": "npcgen_warpman",
+      "static_WARP_target_ints": [
+        130,
+        57,
+        31
+      ],
+      "raw_FREE_clause_sha256": "280ae4f38761305f57f4eb95f5ec480465e64a70148b246d1699d34bf3d2400e",
+      "raw_FREE_item_ids": [
+        2599
+      ],
+      "static_DelItem_ids": [
+        2521,
+        2522,
+        2523,
+        2524,
+        2602,
+        2597,
+        2598,
+        2600,
+        2601
+      ],
+      "raw_MONEY_lexeme": "-1"
+    },
+    "genout/wpm_4000_88_61": {
+      "source_relative_path": "genout/wpm_4000_88_61",
+      "original_bytes": 311,
+      "original_full_sha256": "02444eb8065cd097f9b60baba6ca1d0f0410fd3355b7585b2f7310caf64f0459",
+      "source_template": "npcgen_warpman",
+      "static_WARP_target_ints": [
+        130,
+        57,
+        40
+      ],
+      "raw_FREE_clause_sha256": "7bdea651ca0a94bf1e2179ae83adb1b5784be55ed5aa2eb5eaa04c9d034b2281",
+      "raw_FREE_item_ids": [
+        2600
+      ],
+      "static_DelItem_ids": [
+        2521,
+        2522,
+        2523,
+        2524,
+        2602,
+        2597,
+        2598,
+        2599,
+        2601
+      ],
+      "raw_MONEY_lexeme": "-1"
+    },
+    "genout/wpm_110_38_37": {
+      "source_relative_path": "genout/wpm_110_38_37",
+      "original_bytes": 299,
+      "original_full_sha256": "3f18af9489b570d6af5d558a43ce2fc5d4536c00163d2e7832bf1e5178a33b30",
+      "source_template": "npcgen_warpman",
+      "static_WARP_target_ints": [
+        130,
+        57,
+        49
+      ],
+      "raw_FREE_clause_sha256": "2597c272a509ee91b97f71cb96c212a7baabfbe8606617a368726c63c1c55ad4",
+      "raw_FREE_item_ids": [
+        2597,
+        2598,
+        2599,
+        2600,
+        2601
+      ],
+      "static_DelItem_ids": [],
+      "raw_MONEY_lexeme": "-1"
+    },
+    "genout/wpm_130_57_12": {
+      "source_relative_path": "genout/wpm_130_57_12",
+      "original_bytes": 314,
+      "original_full_sha256": "ba56c3038ebf934447bb0674eae7a085c60bd917aef620024c45718c5f643d59",
+      "source_template": "npcgen_warpman",
+      "static_WARP_target_ints": [
+        1000,
+        55,
+        59
+      ],
+      "raw_FREE_clause_sha256": "5b39d62238c053001482e104d95bb266f1ff9ec0ea8ed2703cffaab5fadf764e",
+      "raw_FREE_item_ids": [
+        2597
+      ],
+      "static_DelItem_ids": [
+        2521,
+        2522,
+        2523,
+        2524,
+        2597,
+        2598,
+        2599,
+        2600,
+        2601,
+        2602
+      ],
+      "raw_MONEY_lexeme": "-1"
+    },
+    "genout/wpm_130_57_21": {
+      "source_relative_path": "genout/wpm_130_57_21",
+      "original_bytes": 314,
+      "original_full_sha256": "a4fd41a6d73e0370c95a03ea93dd76b882b70472269921f1c64e0da28d9f53fa",
+      "source_template": "npcgen_warpman",
+      "static_WARP_target_ints": [
+        2000,
+        84,
+        79
+      ],
+      "raw_FREE_clause_sha256": "bf0301aa3f58605c5976c8a5008cecdf3f3dfac6c70b658cd3356884bc010ced",
+      "raw_FREE_item_ids": [
+        2598
+      ],
+      "static_DelItem_ids": [
+        2521,
+        2522,
+        2523,
+        2524,
+        2597,
+        2598,
+        2599,
+        2600,
+        2601,
+        2602
+      ],
+      "raw_MONEY_lexeme": "-1"
+    },
+    "genout/wpm_130_57_30": {
+      "source_relative_path": "genout/wpm_130_57_30",
+      "original_bytes": 306,
+      "original_full_sha256": "efcc67cee31a033faf7ccbd313a09ee686292a3652f422d0617f8bc1e6597000",
+      "source_template": "npcgen_warpman",
+      "static_WARP_target_ints": [
+        3000,
+        92,
+        86
+      ],
+      "raw_FREE_clause_sha256": "4a0c39ae8094172fe34231bbcd0f25ab16d50fb5845b4edf2eb9292596e46ac0",
+      "raw_FREE_item_ids": [
+        2599
+      ],
+      "static_DelItem_ids": [
+        2521,
+        2522,
+        2523,
+        2524,
+        2597,
+        2598,
+        2599,
+        2600,
+        2601,
+        2602
+      ],
+      "raw_MONEY_lexeme": "-1"
+    },
+    "genout/wpm_130_57_39": {
+      "source_relative_path": "genout/wpm_130_57_39",
+      "original_bytes": 314,
+      "original_full_sha256": "699d5930778fab218b4726c9e9ba4d3e986c5746a737fc466f7c50ddde66df0a",
+      "source_template": "npcgen_warpman",
+      "static_WARP_target_ints": [
+        4000,
+        87,
+        61
+      ],
+      "raw_FREE_clause_sha256": "b02a77a261aabb17c1c776fc8ed0e10f6806365b7b299eefaa1588df7d8d18bd",
+      "raw_FREE_item_ids": [
+        2600
+      ],
+      "static_DelItem_ids": [
+        2521,
+        2522,
+        2523,
+        2524,
+        2597,
+        2598,
+        2599,
+        2600,
+        2601,
+        2602
+      ],
+      "raw_MONEY_lexeme": "-1"
+    },
+    "genout/ss_130_3_14": {
+      "source_relative_path": "genout/ss_130_3_14",
+      "original_bytes": 577,
+      "original_full_sha256": "9ba2f44f401fe6e10d1b0523c029977f79b0f639bb9826bd8f52afa1d95b9599",
+      "source_template": "npcgen_shop",
+      "literal_ItemList_sha256": "e5d36327b2b7e789e5189eab66a8b1de3423a09c2a4b3dfa6fc230af2b1a317d",
+      "literal_ItemList_explicit_ids": [
+        60,
+        160,
+        161,
+        260,
+        330,
+        340,
+        344,
+        350,
+        360,
+        660,
+        661,
+        710,
+        720,
+        730,
+        740,
+        750,
+        760
+      ],
+      "literal_LimitItemNo_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "literal_LimitItemNo_has_range_syntax": false
+    },
+    "genout/ss_130_23_3": {
+      "source_relative_path": "genout/ss_130_23_3",
+      "original_bytes": 559,
+      "original_full_sha256": "56e70d3b7390e758a73420b543931f99ea0cee906b71d4f6843a7aa75d2f0fa5",
+      "source_template": "npcgen_shop",
+      "literal_ItemList_sha256": "3dc483939c3c9ab476dcf78f0246fd71759582727a998f7a1e595d9081cdee1c",
+      "literal_ItemList_explicit_ids": [
+        54,
+        60,
+        62,
+        70,
+        80,
+        152,
+        160,
+        164,
+        170,
+        180,
+        241,
+        260,
+        270,
+        335,
+        360,
+        380,
+        640,
+        650,
+        660,
+        700,
+        710,
+        720,
+        730,
+        740,
+        750
+      ],
+      "literal_LimitItemNo_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "literal_LimitItemNo_has_range_syntax": false
+    },
+    "genout/ss_130_3_3": {
+      "source_relative_path": "genout/ss_130_3_3",
+      "original_bytes": 548,
+      "original_full_sha256": "945d04f069253ca36b9f8e3ee12cd2e9c13284955c689293f0d58eaf8cd5958b",
+      "source_template": "npcgen_shop",
+      "literal_ItemList_sha256": "5d9e930d9ca9dce77527310e25713b66a26987a823f155d79a3c3705667ca91c",
+      "literal_ItemList_explicit_ids": [
+        840,
+        855,
+        860,
+        940,
+        960,
+        965,
+        990,
+        1040,
+        1051,
+        1060,
+        1064,
+        1140,
+        1155,
+        1160,
+        1164,
+        1165,
+        1180
+      ],
+      "literal_LimitItemNo_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "literal_LimitItemNo_has_range_syntax": false
+    },
+    "genout/ss_130_9_3": {
+      "source_relative_path": "genout/ss_130_9_3",
+      "original_bytes": 530,
+      "original_full_sha256": "1ba3c13e30e53e3bdb32e7bf4cdeba8256f0f4763ca3e3dd0163aab55bdfe703",
+      "source_template": "npcgen_shop",
+      "literal_ItemList_sha256": "9368c8e26eec0d5a9f803a5c04ee22d6a177e73fd873c51bee8cb62b10be4c98",
+      "literal_ItemList_explicit_ids": [
+        844,
+        850,
+        890,
+        950,
+        962,
+        980,
+        1050,
+        1061,
+        1062,
+        1063,
+        1150,
+        1152,
+        1161,
+        1162
+      ],
+      "literal_LimitItemNo_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "literal_LimitItemNo_has_range_syntax": false
+    },
+    "genout/ss_130_16_3": {
+      "source_relative_path": "genout/ss_130_16_3",
+      "original_bytes": 526,
+      "original_full_sha256": "b1d3d1c1f372c2112a99435928c3fd15c4678cb0087a77111257a6e77174e336",
+      "source_template": "npcgen_shop",
+      "literal_ItemList_sha256": "8a333f4a7214252f5049c01083f9745c6a751b3eacb96d8e79a59557139b44eb",
+      "literal_ItemList_explicit_ids": [
+        1212,
+        1214,
+        1271,
+        1272,
+        1278,
+        1279,
+        1310,
+        1360,
+        1361,
+        1362,
+        1363,
+        1364,
+        1410,
+        1412
+      ],
+      "literal_LimitItemNo_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "literal_LimitItemNo_has_range_syntax": false
+    },
+    "genout/ss_130_43_3": {
+      "source_relative_path": "genout/ss_130_43_3",
+      "original_bytes": 531,
+      "original_full_sha256": "8d694cbfe6b0a6063568a753fb6fcf4a7ab1ce56e12b8ff437bd9ea0dd23b432",
+      "source_template": "npcgen_shop",
+      "literal_ItemList_sha256": "077cb2baa9792813be19acd0d17df3eb4eac954f75458c85a0711ed34d2ea5e8",
+      "literal_ItemList_explicit_ids": [
+        1211,
+        1213,
+        1273,
+        1274,
+        1280,
+        1281,
+        1311,
+        1312,
+        1360,
+        1361,
+        1362,
+        1363,
+        1364,
+        1407,
+        1411
+      ],
+      "literal_LimitItemNo_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "literal_LimitItemNo_has_range_syntax": false
+    },
+    "genout/ss_130_28_3": {
+      "source_relative_path": "genout/ss_130_28_3",
+      "original_bytes": 524,
+      "original_full_sha256": "5b589fd0b7f2bd955b8775ed4d84d80af0496caff72af7f340ef913014e85664",
+      "source_template": "npcgen_shop",
+      "literal_ItemList_sha256": "4e00f249afce3c41cf90838b93a642f3b9e76f3d25d9aea72e20137a4191551d",
+      "literal_ItemList_explicit_ids": [
+        1500,
+        1501,
+        1510,
+        1511,
+        1512,
+        1530,
+        1531,
+        1540,
+        1541,
+        1542,
+        1543,
+        1545
+      ],
+      "literal_LimitItemNo_sha256": "4eb14a77c029619ecccd3134cf29ddea89888d3152d5ee7a4993bb9b28bf8362",
+      "literal_LimitItemNo_has_range_syntax": true
+    },
+    "genout/ss_130_1_26": {
+      "source_relative_path": "genout/ss_130_1_26",
+      "original_bytes": 506,
+      "original_full_sha256": "f884571016dc1c97b820e08c9c6ca90ba957dcb115729e75abd6ec813038a03a",
+      "source_template": "npcgen_shop",
+      "literal_ItemList_sha256": "4e00f249afce3c41cf90838b93a642f3b9e76f3d25d9aea72e20137a4191551d",
+      "literal_ItemList_explicit_ids": [
+        1500,
+        1501,
+        1510,
+        1511,
+        1512,
+        1530,
+        1531,
+        1540,
+        1541,
+        1542,
+        1543,
+        1545
+      ],
+      "literal_LimitItemNo_sha256": "4eb14a77c029619ecccd3134cf29ddea89888d3152d5ee7a4993bb9b28bf8362",
+      "literal_LimitItemNo_has_range_syntax": true
+    },
+    "genout/msg_130_4_38": {
+      "source_relative_path": "genout/msg_130_4_38",
+      "original_bytes": 232,
+      "original_full_sha256": "8666709d73ac6e224bc601052d62edc48b8d61e7ae7b81229d3280db6dd9b33a",
+      "source_template": "npcgen_man"
+    },
+    "genout/ss_130_1_38": {
+      "source_relative_path": "genout/ss_130_1_38",
+      "original_bytes": 432,
+      "original_full_sha256": "86ec449a0d0402822c1419434a724ca2ec1c253cbdbe5acc75404ea8f896343f",
+      "source_template": "npcgen_shop",
+      "literal_ItemList_sha256": "b6316aa9a0bfcfd8f2f36eae197c78173d893fb9409d12d0f1815a1fe62c89da",
+      "literal_ItemList_explicit_ids": [
+        2612
+      ],
+      "literal_LimitItemNo_sha256": "b6316aa9a0bfcfd8f2f36eae197c78173d893fb9409d12d0f1815a1fe62c89da",
+      "literal_LimitItemNo_has_range_syntax": false
+    },
+    "genout/ps_130_49_3": {
+      "source_relative_path": "genout/ps_130_49_3",
+      "original_bytes": 373,
+      "original_full_sha256": "b6147b9cf873c1a1af4643d0ac06b4ac557d54d97bea40d0b85b06340dfe2acc",
+      "source_template": "npcgen_petshop"
+    },
+    "genout/signb_130_17_13": {
+      "source_relative_path": "genout/signb_130_17_13",
+      "original_bytes": 169,
+      "original_full_sha256": "db0465009299d3dd802252c768cb2fec33c01ab313bf874814f82d51878e7780",
+      "source_template": "npcgen_signboard",
+      "source_text_length_CP950_bytes": 169,
+      "contains_level_band_literal": true,
+      "contains_three_item_numeric_limit": false,
+      "contains_30_round_limit": false
+    },
+    "genout/signb_130_18_13": {
+      "source_relative_path": "genout/signb_130_18_13",
+      "original_bytes": 141,
+      "original_full_sha256": "7919366a8ba3293d3ef6668da101b639a3eb61ce1c0530cb006a2e3390fdf292",
+      "source_template": "npcgen_signboard",
+      "source_text_length_CP950_bytes": 141,
+      "contains_level_band_literal": true,
+      "contains_three_item_numeric_limit": false,
+      "contains_30_round_limit": false
+    },
+    "genout/signb_130_19_13": {
+      "source_relative_path": "genout/signb_130_19_13",
+      "original_bytes": 167,
+      "original_full_sha256": "5b927d91c71984ed4b08c6797441b07a2374ee31e48c059a6d44f6151262aef1",
+      "source_template": "npcgen_signboard",
+      "source_text_length_CP950_bytes": 167,
+      "contains_level_band_literal": false,
+      "contains_three_item_numeric_limit": false,
+      "contains_30_round_limit": false
+    },
+    "genout/signb_130_20_13": {
+      "source_relative_path": "genout/signb_130_20_13",
+      "original_bytes": 116,
+      "original_full_sha256": "05b9e6790fed424ff630c5aa1464fc05f963e3f6abb20b42b0dbbe64131a639c",
+      "source_template": "npcgen_signboard",
+      "source_text_length_CP950_bytes": 116,
+      "contains_level_band_literal": false,
+      "contains_three_item_numeric_limit": true,
+      "contains_30_round_limit": false
+    },
+    "genout/signb_130_21_13": {
+      "source_relative_path": "genout/signb_130_21_13",
+      "original_bytes": 179,
+      "original_full_sha256": "86e2ee894b40f271663d7523e25d98c6d8d4b2fff3255df9804843a4acf8f2e0",
+      "source_template": "npcgen_signboard",
+      "source_text_length_CP950_bytes": 179,
+      "contains_level_band_literal": false,
+      "contains_three_item_numeric_limit": false,
+      "contains_30_round_limit": true
+    },
+    "genout/pis_1009_14_13": {
+      "source_relative_path": "genout/pis_1009_14_13",
+      "original_bytes": 124,
+      "original_full_sha256": "fa4ef22f3110fc8c33d0770ab792ed8f235e05c8dc04e567e331818c2d6eea04",
+      "source_template": "npcgen_poolitemshop",
+      "literal_cost_token": "50"
+    }
+  },
+  "original_bounded_warpman_values": [
+    {
+      "from_create_ordinal": 0,
+      "source_floor": 1000,
+      "source_xy": [
+        56,
+        59
+      ],
+      "original_target_tuple": [
+        130,
+        57,
+        13
+      ],
+      "source_FREE_item_ids": [
+        2597
+      ],
+      "source_DelItem_ids": [
+        2521,
+        2522,
+        2523,
+        2524,
+        2602,
+        2598,
+        2599,
+        2600,
+        2601
+      ],
+      "source_MONEY_raw": "-1",
+      "target_DAT_qualification": "WITHIN_QUALIFIED_DAT_HEADER"
+    },
+    {
+      "from_create_ordinal": 1,
+      "source_floor": 2000,
+      "source_xy": [
+        85,
+        79
+      ],
+      "original_target_tuple": [
+        130,
+        57,
+        22
+      ],
+      "source_FREE_item_ids": [
+        2598
+      ],
+      "source_DelItem_ids": [
+        2521,
+        2522,
+        2523,
+        2524,
+        2602,
+        2597,
+        2599,
+        2600,
+        2601
+      ],
+      "source_MONEY_raw": "-1",
+      "target_DAT_qualification": "WITHIN_QUALIFIED_DAT_HEADER"
+    },
+    {
+      "from_create_ordinal": 2,
+      "source_floor": 3000,
+      "source_xy": [
+        93,
+        86
+      ],
+      "original_target_tuple": [
+        130,
+        57,
+        31
+      ],
+      "source_FREE_item_ids": [
+        2599
+      ],
+      "source_DelItem_ids": [
+        2521,
+        2522,
+        2523,
+        2524,
+        2602,
+        2597,
+        2598,
+        2600,
+        2601
+      ],
+      "source_MONEY_raw": "-1",
+      "target_DAT_qualification": "WITHIN_QUALIFIED_DAT_HEADER"
+    },
+    {
+      "from_create_ordinal": 3,
+      "source_floor": 4000,
+      "source_xy": [
+        88,
+        61
+      ],
+      "original_target_tuple": [
+        130,
+        57,
+        40
+      ],
+      "source_FREE_item_ids": [
+        2600
+      ],
+      "source_DelItem_ids": [
+        2521,
+        2522,
+        2523,
+        2524,
+        2602,
+        2597,
+        2598,
+        2599,
+        2601
+      ],
+      "source_MONEY_raw": "-1",
+      "target_DAT_qualification": "WITHIN_QUALIFIED_DAT_HEADER"
+    },
+    {
+      "from_create_ordinal": 4,
+      "source_floor": 110,
+      "source_xy": [
+        38,
+        37
+      ],
+      "original_target_tuple": [
+        130,
+        57,
+        49
+      ],
+      "source_FREE_item_ids": [
+        2597,
+        2598,
+        2599,
+        2600,
+        2601
+      ],
+      "source_DelItem_ids": [],
+      "source_MONEY_raw": "-1",
+      "target_DAT_qualification": "WITHIN_QUALIFIED_DAT_HEADER"
+    },
+    {
+      "from_create_ordinal": 5,
+      "source_floor": 130,
+      "source_xy": [
+        57,
+        12
+      ],
+      "original_target_tuple": [
+        1000,
+        55,
+        59
+      ],
+      "source_FREE_item_ids": [
+        2597
+      ],
+      "source_DelItem_ids": [
+        2521,
+        2522,
+        2523,
+        2524,
+        2597,
+        2598,
+        2599,
+        2600,
+        2601,
+        2602
+      ],
+      "source_MONEY_raw": "-1",
+      "target_DAT_qualification": "NO_QUALIFIED_DAT_OR_OUTSIDE"
+    },
+    {
+      "from_create_ordinal": 6,
+      "source_floor": 130,
+      "source_xy": [
+        57,
+        21
+      ],
+      "original_target_tuple": [
+        2000,
+        84,
+        79
+      ],
+      "source_FREE_item_ids": [
+        2598
+      ],
+      "source_DelItem_ids": [
+        2521,
+        2522,
+        2523,
+        2524,
+        2597,
+        2598,
+        2599,
+        2600,
+        2601,
+        2602
+      ],
+      "source_MONEY_raw": "-1",
+      "target_DAT_qualification": "WITHIN_QUALIFIED_DAT_HEADER"
+    },
+    {
+      "from_create_ordinal": 7,
+      "source_floor": 130,
+      "source_xy": [
+        57,
+        30
+      ],
+      "original_target_tuple": [
+        3000,
+        92,
+        86
+      ],
+      "source_FREE_item_ids": [
+        2599
+      ],
+      "source_DelItem_ids": [
+        2521,
+        2522,
+        2523,
+        2524,
+        2597,
+        2598,
+        2599,
+        2600,
+        2601,
+        2602
+      ],
+      "source_MONEY_raw": "-1",
+      "target_DAT_qualification": "NO_QUALIFIED_DAT_OR_OUTSIDE"
+    },
+    {
+      "from_create_ordinal": 8,
+      "source_floor": 130,
+      "source_xy": [
+        57,
+        39
+      ],
+      "original_target_tuple": [
+        4000,
+        87,
+        61
+      ],
+      "source_FREE_item_ids": [
+        2600
+      ],
+      "source_DelItem_ids": [
+        2521,
+        2522,
+        2523,
+        2524,
+        2597,
+        2598,
+        2599,
+        2600,
+        2601,
+        2602
+      ],
+      "source_MONEY_raw": "-1",
+      "target_DAT_qualification": "WITHIN_QUALIFIED_DAT_HEADER"
+    }
+  ],
+  "prior_original_map_DAT_metadata": [
+    {
+      "floor": 110,
+      "file": "110.DAT",
+      "source_sha256": "7d3e4e1dd8582268e14b3d21d0b0594c166f28062b05c8af260a6b214c41930d",
+      "crc32": "8dbbb741",
+      "dimensions": [
+        46,
+        45
+      ],
+      "original_bytes": 12428
+    },
+    {
+      "floor": 130,
+      "file": "130.DAT",
+      "source_sha256": "85d710a270c6b945de21de53c9257ebaf38647cb54e77071db194cf5c5e203f3",
+      "crc32": "092b6c32",
+      "dimensions": [
+        60,
+        60
+      ],
+      "original_bytes": 21608
+    },
+    {
+      "floor": 2000,
+      "file": "2000.DAT",
+      "source_sha256": "d75231434c69118a518a8d5dd34f266264b8551fe4f2d55a20cdfa11b46584b3",
+      "crc32": "35bf728a",
+      "dimensions": [
+        150,
+        150
+      ],
+      "original_bytes": 135008
+    },
+    {
+      "floor": 4000,
+      "file": "4000.DAT",
+      "source_sha256": "9d327505c74ccb27b62bcce7259be246c9c4a0477c6ee0fceb78f921e7a0dfa5",
+      "crc32": "bbf5e51f",
+      "dimensions": [
+        150,
+        150
+      ],
+      "original_bytes": 135008
+    }
+  ],
+  "cross_existing_two_original_itemsets_numeric_rows": [
+    {
+      "item_id": 54,
+      "source_a_original_row_sha256": "3d4e5534ba0fb3aa08b5e52e3d75a99fcb43601aa3baf9bfbbaf5f13feea9801",
+      "source_b_original_row_sha256": "3d4e5534ba0fb3aa08b5e52e3d75a99fcb43601aa3baf9bfbbaf5f13feea9801",
+      "source_b_image_number": 20014,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 60,
+      "source_a_original_row_sha256": "80f0b62654efa1758a5d57c6dccb0a3b4774e10285f9ff7c856c00dce3abebbd",
+      "source_b_original_row_sha256": "80f0b62654efa1758a5d57c6dccb0a3b4774e10285f9ff7c856c00dce3abebbd",
+      "source_b_image_number": 20023,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 62,
+      "source_a_original_row_sha256": "2bd9e6104f3230b8043db65a67db0e77386ec562fc56cb278328dfa04e142618",
+      "source_b_original_row_sha256": "2bd9e6104f3230b8043db65a67db0e77386ec562fc56cb278328dfa04e142618",
+      "source_b_image_number": 20019,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 70,
+      "source_a_original_row_sha256": "54fbf70735ef7663854f8ee80a0677d859904b323de7174efe48e8961a14293e",
+      "source_b_original_row_sha256": "54fbf70735ef7663854f8ee80a0677d859904b323de7174efe48e8961a14293e",
+      "source_b_image_number": 20041,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 80,
+      "source_a_original_row_sha256": "6915b8d82a58882750de77c7f91c30585eb76f8fdc1ab10398ee01be1cd30e47",
+      "source_b_original_row_sha256": "6915b8d82a58882750de77c7f91c30585eb76f8fdc1ab10398ee01be1cd30e47",
+      "source_b_image_number": 20040,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 152,
+      "source_a_original_row_sha256": "8f4fe3f2218ff1d55c976210b10e9e957c6e38d799dc752a3fd8f9d5202a8125",
+      "source_b_original_row_sha256": "8f4fe3f2218ff1d55c976210b10e9e957c6e38d799dc752a3fd8f9d5202a8125",
+      "source_b_image_number": 20109,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 160,
+      "source_a_original_row_sha256": "5b0ea3518dfbb72d2595b7202a8b9d2fce2d12d022ad9b86c14b77b6ee0c65dd",
+      "source_b_original_row_sha256": "5b0ea3518dfbb72d2595b7202a8b9d2fce2d12d022ad9b86c14b77b6ee0c65dd",
+      "source_b_image_number": 20116,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 161,
+      "source_a_original_row_sha256": "5df677c632dab7d47c1f2b431b9b9e84875c8131ec1a9157576b5b772452d5d6",
+      "source_b_original_row_sha256": "5df677c632dab7d47c1f2b431b9b9e84875c8131ec1a9157576b5b772452d5d6",
+      "source_b_image_number": 20105,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 164,
+      "source_a_original_row_sha256": "5c21094dd8e42a11b3a541710d839d8305728322de8a3439171f7f739b3478ae",
+      "source_b_original_row_sha256": "5c21094dd8e42a11b3a541710d839d8305728322de8a3439171f7f739b3478ae",
+      "source_b_image_number": 20105,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 170,
+      "source_a_original_row_sha256": "3afe4d3584253543f8d5b3c645fe497954f851685ec94a0d041e533001e72c29",
+      "source_b_original_row_sha256": "3afe4d3584253543f8d5b3c645fe497954f851685ec94a0d041e533001e72c29",
+      "source_b_image_number": 20108,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 180,
+      "source_a_original_row_sha256": "55f32d688836e14dc74112de7d3777563d6938100c089195364aca9bfc6b8f49",
+      "source_b_original_row_sha256": "55f32d688836e14dc74112de7d3777563d6938100c089195364aca9bfc6b8f49",
+      "source_b_image_number": 20143,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 241,
+      "source_a_original_row_sha256": "f431a82099a4291252c2163c2b3114b9f578927172016912f267a3790be00415",
+      "source_b_original_row_sha256": "f431a82099a4291252c2163c2b3114b9f578927172016912f267a3790be00415",
+      "source_b_image_number": 20510,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 260,
+      "source_a_original_row_sha256": "e7ac6bf19638cefc1ee39589e5177dcf7bcc5f2536b7c77abe42d2fcc8f8aeb6",
+      "source_b_original_row_sha256": "e7ac6bf19638cefc1ee39589e5177dcf7bcc5f2536b7c77abe42d2fcc8f8aeb6",
+      "source_b_image_number": 20426,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 270,
+      "source_a_original_row_sha256": "cb32d043bce0b2b051ca5d7a97a62b1358c783aa8b55a7d0c331be1fc5b042b7",
+      "source_b_original_row_sha256": "cb32d043bce0b2b051ca5d7a97a62b1358c783aa8b55a7d0c331be1fc5b042b7",
+      "source_b_image_number": 20441,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 330,
+      "source_a_original_row_sha256": "ee83d181cfa44ba6133d0cf14aea4dd453dde0e68de95e3c233327dd7b81125f",
+      "source_b_original_row_sha256": "ee83d181cfa44ba6133d0cf14aea4dd453dde0e68de95e3c233327dd7b81125f",
+      "source_b_image_number": 20217,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 335,
+      "source_a_original_row_sha256": "af29e4866594470c81d0a4aba5b7b52ba4e1f47949cd25d87bdd1b3058446a4f",
+      "source_b_original_row_sha256": "af29e4866594470c81d0a4aba5b7b52ba4e1f47949cd25d87bdd1b3058446a4f",
+      "source_b_image_number": 20206,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 340,
+      "source_a_original_row_sha256": "a6de2ca4937b401c7c53e25b7a8f1a596a1fc7605ceec9885541190a99c2010f",
+      "source_b_original_row_sha256": "a6de2ca4937b401c7c53e25b7a8f1a596a1fc7605ceec9885541190a99c2010f",
+      "source_b_image_number": 20226,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 344,
+      "source_a_original_row_sha256": "fc9157b814655390e06c31e28bd1f73c25bbb93d209163b8a151c63cf1a38901",
+      "source_b_original_row_sha256": "fc9157b814655390e06c31e28bd1f73c25bbb93d209163b8a151c63cf1a38901",
+      "source_b_image_number": 20220,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 350,
+      "source_a_original_row_sha256": "75806b9e7f5434d7217cab94b032e2735b9c67d8aa324e6638d6a42dbc81c0ef",
+      "source_b_original_row_sha256": "75806b9e7f5434d7217cab94b032e2735b9c67d8aa324e6638d6a42dbc81c0ef",
+      "source_b_image_number": 20213,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 360,
+      "source_a_original_row_sha256": "d715033438d2d6b045e4b59ce8067d8981d3c2a611bf53565f4efdc4e7079fb9",
+      "source_b_original_row_sha256": "d715033438d2d6b045e4b59ce8067d8981d3c2a611bf53565f4efdc4e7079fb9",
+      "source_b_image_number": 20225,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 380,
+      "source_a_original_row_sha256": "60113a67d6619895afbaa6a4be3c250971383e461d7d0ff03d39dd72d0ccbfef",
+      "source_b_original_row_sha256": "60113a67d6619895afbaa6a4be3c250971383e461d7d0ff03d39dd72d0ccbfef",
+      "source_b_image_number": 20227,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 640,
+      "source_a_original_row_sha256": "54717e8a7fe0ad93c96b8673c2bc472b44fbfe102aa934b5d4cf6bc255d27d05",
+      "source_b_original_row_sha256": "54717e8a7fe0ad93c96b8673c2bc472b44fbfe102aa934b5d4cf6bc255d27d05",
+      "source_b_image_number": 20532,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 650,
+      "source_a_original_row_sha256": "068c5992dea07e486257fdeed51617c5c9a6907083d0359c8d2483d7930cf398",
+      "source_b_original_row_sha256": "068c5992dea07e486257fdeed51617c5c9a6907083d0359c8d2483d7930cf398",
+      "source_b_image_number": 20530,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 660,
+      "source_a_original_row_sha256": "3704e5fa736348168426b525dda5eb4281e4b56950fa031d0a2e3f66649a37dd",
+      "source_b_original_row_sha256": "3704e5fa736348168426b525dda5eb4281e4b56950fa031d0a2e3f66649a37dd",
+      "source_b_image_number": 20532,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 661,
+      "source_a_original_row_sha256": "4cc05a8281d951508cd2fa91b99dbde870dd55dfdb982f7e6339aa099a0fbead",
+      "source_b_original_row_sha256": "4cc05a8281d951508cd2fa91b99dbde870dd55dfdb982f7e6339aa099a0fbead",
+      "source_b_image_number": 20508,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 700,
+      "source_a_original_row_sha256": "331c63a46fd35738945e1e852e1e26a00d97293b2c431f8d028de190ac9e4be1",
+      "source_b_original_row_sha256": "331c63a46fd35738945e1e852e1e26a00d97293b2c431f8d028de190ac9e4be1",
+      "source_b_image_number": 20503,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 710,
+      "source_a_original_row_sha256": "7d6c7137ee754ac1aeb04601ae3a6bbef791ea164f0f2b876ce0270acebb28d7",
+      "source_b_original_row_sha256": "7d6c7137ee754ac1aeb04601ae3a6bbef791ea164f0f2b876ce0270acebb28d7",
+      "source_b_image_number": 20501,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 720,
+      "source_a_original_row_sha256": "294c64f13a0672747ac0ced45568f350b999d6734c516d9862389990270fdbb4",
+      "source_b_original_row_sha256": "294c64f13a0672747ac0ced45568f350b999d6734c516d9862389990270fdbb4",
+      "source_b_image_number": 20503,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 730,
+      "source_a_original_row_sha256": "1703913e4f24511859022810dd29f8bd1394a90e197a00365d1f67ecaff2cfd4",
+      "source_b_original_row_sha256": "1703913e4f24511859022810dd29f8bd1394a90e197a00365d1f67ecaff2cfd4",
+      "source_b_image_number": 20527,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 740,
+      "source_a_original_row_sha256": "d0a9326fc57e7084d4a6c41af7cf5600131d8f17f4007ae07dc8ad19407ce325",
+      "source_b_original_row_sha256": "d0a9326fc57e7084d4a6c41af7cf5600131d8f17f4007ae07dc8ad19407ce325",
+      "source_b_image_number": 20500,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 750,
+      "source_a_original_row_sha256": "1c2df47137f6a84c36445b59c22fd8cc211d385c41ce692f25c58455933d89aa",
+      "source_b_original_row_sha256": "1c2df47137f6a84c36445b59c22fd8cc211d385c41ce692f25c58455933d89aa",
+      "source_b_image_number": 20526,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 760,
+      "source_a_original_row_sha256": "4c60e42d5b4e58a7181e29d6d344dfb9099efc30b39666d8d998426dd935467a",
+      "source_b_original_row_sha256": "4c60e42d5b4e58a7181e29d6d344dfb9099efc30b39666d8d998426dd935467a",
+      "source_b_image_number": 20548,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 840,
+      "source_a_original_row_sha256": "a257b10f4676a67a00c732f5d7057308165106b89a8c10976643162a92877c4b",
+      "source_b_original_row_sha256": "a257b10f4676a67a00c732f5d7057308165106b89a8c10976643162a92877c4b",
+      "source_b_image_number": 21543,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 844,
+      "source_a_original_row_sha256": "6d5e89a0af47d2c1b65b0a159608324f0a0490dcd921f67eccb2a60496d7faf6",
+      "source_b_original_row_sha256": "6d5e89a0af47d2c1b65b0a159608324f0a0490dcd921f67eccb2a60496d7faf6",
+      "source_b_image_number": 21518,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 850,
+      "source_a_original_row_sha256": "b157289709dc97bfd36686e43aa1127f9fe2ed3627798897848fbe7e2f10d20d",
+      "source_b_original_row_sha256": "b157289709dc97bfd36686e43aa1127f9fe2ed3627798897848fbe7e2f10d20d",
+      "source_b_image_number": 21545,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 855,
+      "source_a_original_row_sha256": "2110d2775f521f32aec04d6f931d41155276d0ce1cefd6fee7496c009d4ed2b6",
+      "source_b_original_row_sha256": "2110d2775f521f32aec04d6f931d41155276d0ce1cefd6fee7496c009d4ed2b6",
+      "source_b_image_number": 21519,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 860,
+      "source_a_original_row_sha256": "18e4ced25002c081a208510432d06f6be47044219207173549418f70e0a7b0d9",
+      "source_b_original_row_sha256": "18e4ced25002c081a208510432d06f6be47044219207173549418f70e0a7b0d9",
+      "source_b_image_number": 21544,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 890,
+      "source_a_original_row_sha256": "357e494946a8bab3ae3bec54303367895fe4f2016149112e34b2056945f5b8ec",
+      "source_b_original_row_sha256": "357e494946a8bab3ae3bec54303367895fe4f2016149112e34b2056945f5b8ec",
+      "source_b_image_number": 21516,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 940,
+      "source_a_original_row_sha256": "ca3d8b80abe04a6f6c77780a25eb43421fd63a290607e289d1071b281c80ac1c",
+      "source_b_original_row_sha256": "ca3d8b80abe04a6f6c77780a25eb43421fd63a290607e289d1071b281c80ac1c",
+      "source_b_image_number": 21531,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 950,
+      "source_a_original_row_sha256": "9add509fc665d4f1bc33ce541f575eb60e0d389c6c582c8ace0cf3484cff37b5",
+      "source_b_original_row_sha256": "9add509fc665d4f1bc33ce541f575eb60e0d389c6c582c8ace0cf3484cff37b5",
+      "source_b_image_number": 21501,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 960,
+      "source_a_original_row_sha256": "342970331af1ef3a3f5d5a79b023efb80ee8140c042c688033d3bde8dc95bdde",
+      "source_b_original_row_sha256": "342970331af1ef3a3f5d5a79b023efb80ee8140c042c688033d3bde8dc95bdde",
+      "source_b_image_number": 21532,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 962,
+      "source_a_original_row_sha256": "d95650d6a0550059a43c625ab2a98aae91d22ebaa0c6770716edf2e962dfa146",
+      "source_b_original_row_sha256": "d95650d6a0550059a43c625ab2a98aae91d22ebaa0c6770716edf2e962dfa146",
+      "source_b_image_number": 21536,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 965,
+      "source_a_original_row_sha256": "69d16dfcb2066ef78d840a090cacf5c8c908011cd96f63c4fee4a32708535e38",
+      "source_b_original_row_sha256": "69d16dfcb2066ef78d840a090cacf5c8c908011cd96f63c4fee4a32708535e38",
+      "source_b_image_number": 21536,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 980,
+      "source_a_original_row_sha256": "b1fda8ab8509a5c95730fc4b44ba824d8cb8efb35e66b5c2ad9a990c33d1da14",
+      "source_b_original_row_sha256": "b1fda8ab8509a5c95730fc4b44ba824d8cb8efb35e66b5c2ad9a990c33d1da14",
+      "source_b_image_number": 21533,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 990,
+      "source_a_original_row_sha256": "200efbc9f5b8f237e62b08d10f287ee1a54dcaeb5cc75807c86b1830a6f5e157",
+      "source_b_original_row_sha256": "200efbc9f5b8f237e62b08d10f287ee1a54dcaeb5cc75807c86b1830a6f5e157",
+      "source_b_image_number": 21503,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1040,
+      "source_a_original_row_sha256": "566ad3d2f38019450da53a7f8c83c3748c018089a518be74f02d99a4126f4e2c",
+      "source_b_original_row_sha256": "566ad3d2f38019450da53a7f8c83c3748c018089a518be74f02d99a4126f4e2c",
+      "source_b_image_number": 21025,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1050,
+      "source_a_original_row_sha256": "0c42a3a29956c77e59b565d6e35c80da0cbc837b1343220ee3584411c6e241e5",
+      "source_b_original_row_sha256": "0c42a3a29956c77e59b565d6e35c80da0cbc837b1343220ee3584411c6e241e5",
+      "source_b_image_number": 21023,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1051,
+      "source_a_original_row_sha256": "cd6094cb15ba0cce9862066cb0066cd2cdfed6b1a72fedd7bf744ddc6f53aa12",
+      "source_b_original_row_sha256": "cd6094cb15ba0cce9862066cb0066cd2cdfed6b1a72fedd7bf744ddc6f53aa12",
+      "source_b_image_number": 21025,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1060,
+      "source_a_original_row_sha256": "47aec9a596818b2b367ef97474478ad0bf60b9e459e9fb7c2de5d7e105c9af78",
+      "source_b_original_row_sha256": "47aec9a596818b2b367ef97474478ad0bf60b9e459e9fb7c2de5d7e105c9af78",
+      "source_b_image_number": 21016,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1061,
+      "source_a_original_row_sha256": "f35e35e4ae7a4ba3678b778e346d8a2697405be8a2fdb2ed8d013db6e5d987d1",
+      "source_b_original_row_sha256": "f35e35e4ae7a4ba3678b778e346d8a2697405be8a2fdb2ed8d013db6e5d987d1",
+      "source_b_image_number": 21017,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1062,
+      "source_a_original_row_sha256": "71448ccfb9f76ee9f6a3c19014ae666f41ee46c51d9ee12e046800e36410b752",
+      "source_b_original_row_sha256": "71448ccfb9f76ee9f6a3c19014ae666f41ee46c51d9ee12e046800e36410b752",
+      "source_b_image_number": 21017,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1063,
+      "source_a_original_row_sha256": "82f75bacc018e70a54dcea6d0f10eba47ae1d3ae26643979e470bc142b498539",
+      "source_b_original_row_sha256": "82f75bacc018e70a54dcea6d0f10eba47ae1d3ae26643979e470bc142b498539",
+      "source_b_image_number": 21017,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1064,
+      "source_a_original_row_sha256": "45f49f2f0fa4a61c6fcace9553afbe93e02f503b705f75c36f84061e9cfc09c4",
+      "source_b_original_row_sha256": "45f49f2f0fa4a61c6fcace9553afbe93e02f503b705f75c36f84061e9cfc09c4",
+      "source_b_image_number": 21018,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1140,
+      "source_a_original_row_sha256": "93cb50e22c6b222a6ffe5901f56aedb28c952f6a6d14311d816e702913908291",
+      "source_b_original_row_sha256": "93cb50e22c6b222a6ffe5901f56aedb28c952f6a6d14311d816e702913908291",
+      "source_b_image_number": 21004,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1150,
+      "source_a_original_row_sha256": "9d20878aee7b68e632893e672b3a3883ace940c39ee3eb73130999e4675f62a3",
+      "source_b_original_row_sha256": "9d20878aee7b68e632893e672b3a3883ace940c39ee3eb73130999e4675f62a3",
+      "source_b_image_number": 21004,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1152,
+      "source_a_original_row_sha256": "ac2b6762b20e9a4f7f66ec8d319c5cbac424c9108797089f8d9a036e9c28f63e",
+      "source_b_original_row_sha256": "ac2b6762b20e9a4f7f66ec8d319c5cbac424c9108797089f8d9a036e9c28f63e",
+      "source_b_image_number": 21006,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1155,
+      "source_a_original_row_sha256": "60a4c291489fd0d0ce9343b1792e8ba2dac4e1a1d0ed330674532f26447c7696",
+      "source_b_original_row_sha256": "60a4c291489fd0d0ce9343b1792e8ba2dac4e1a1d0ed330674532f26447c7696",
+      "source_b_image_number": 21005,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1160,
+      "source_a_original_row_sha256": "020599035d505231ce8df678d84b05fb47153ef8767c88caeb283bad4907837c",
+      "source_b_original_row_sha256": "020599035d505231ce8df678d84b05fb47153ef8767c88caeb283bad4907837c",
+      "source_b_image_number": 21038,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1161,
+      "source_a_original_row_sha256": "f01142ba22c4d8a8bcec1452141ab07416a2bad567cba7e2a9bbaf912195a4cc",
+      "source_b_original_row_sha256": "f01142ba22c4d8a8bcec1452141ab07416a2bad567cba7e2a9bbaf912195a4cc",
+      "source_b_image_number": 21037,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1162,
+      "source_a_original_row_sha256": "484b305572cc07901b54617b2466165cd20326a0669ebae21caaf37795447815",
+      "source_b_original_row_sha256": "484b305572cc07901b54617b2466165cd20326a0669ebae21caaf37795447815",
+      "source_b_image_number": 21037,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1164,
+      "source_a_original_row_sha256": "973b6dcd859ff28ea136039df858aaa6176ed0a1bfba86a4e24d51041cf9b32f",
+      "source_b_original_row_sha256": "973b6dcd859ff28ea136039df858aaa6176ed0a1bfba86a4e24d51041cf9b32f",
+      "source_b_image_number": 21011,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1165,
+      "source_a_original_row_sha256": "94d0137f7b6536d53ae389fe57afda505dee3a64bde1955210ca5d7791f57e86",
+      "source_b_original_row_sha256": "94d0137f7b6536d53ae389fe57afda505dee3a64bde1955210ca5d7791f57e86",
+      "source_b_image_number": 21011,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1180,
+      "source_a_original_row_sha256": "c2d318fc4bc6407fe62f7e70db0db1901f4cb4b5d96e06cebb572888f793a7aa",
+      "source_b_original_row_sha256": "c2d318fc4bc6407fe62f7e70db0db1901f4cb4b5d96e06cebb572888f793a7aa",
+      "source_b_image_number": 21042,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1211,
+      "source_a_original_row_sha256": "7a9e5372d87ccf44a74359b6a4996e4c6357d104b613ca8b107d34fc701ad9a7",
+      "source_b_original_row_sha256": "7a9e5372d87ccf44a74359b6a4996e4c6357d104b613ca8b107d34fc701ad9a7",
+      "source_b_image_number": 22084,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1212,
+      "source_a_original_row_sha256": "98aff65d0b90e62bae311053db8c2ba691563d7f3c42a8944d416e3c95e925f5",
+      "source_b_original_row_sha256": "98aff65d0b90e62bae311053db8c2ba691563d7f3c42a8944d416e3c95e925f5",
+      "source_b_image_number": 22074,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1213,
+      "source_a_original_row_sha256": "6267a83dae6661d797cd96fb1a440f85c1a6d34f22a2646bf058af7e3b2aa4a3",
+      "source_b_original_row_sha256": "6267a83dae6661d797cd96fb1a440f85c1a6d34f22a2646bf058af7e3b2aa4a3",
+      "source_b_image_number": 22073,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1214,
+      "source_a_original_row_sha256": "190d7d2b75ab5d21b6819adc16958e03e0f7c65ed895d0e3d3bfb5529b2adcf5",
+      "source_b_original_row_sha256": "190d7d2b75ab5d21b6819adc16958e03e0f7c65ed895d0e3d3bfb5529b2adcf5",
+      "source_b_image_number": 22072,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1271,
+      "source_a_original_row_sha256": "1dfdd3c1e0e3c420d12f0e945a4e5ba2bd5647cf714c171a45e974751af475dc",
+      "source_b_original_row_sha256": "1dfdd3c1e0e3c420d12f0e945a4e5ba2bd5647cf714c171a45e974751af475dc",
+      "source_b_image_number": 24215,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1272,
+      "source_a_original_row_sha256": "d783c91c805e9e74a5fc7df07dfa81e3db861a3349af3d316eaf2a2b0b4d608c",
+      "source_b_original_row_sha256": "d783c91c805e9e74a5fc7df07dfa81e3db861a3349af3d316eaf2a2b0b4d608c",
+      "source_b_image_number": 24212,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1273,
+      "source_a_original_row_sha256": "9f3a3da58b5e4f22eeeed4881fad9b08e06d4e345f63327906a5dada5cd34f67",
+      "source_b_original_row_sha256": "9f3a3da58b5e4f22eeeed4881fad9b08e06d4e345f63327906a5dada5cd34f67",
+      "source_b_image_number": 24211,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1274,
+      "source_a_original_row_sha256": "4af154f0caf4f6a7c93375a539df76d964dfb608c7e0994a66b0905adf88f914",
+      "source_b_original_row_sha256": "4af154f0caf4f6a7c93375a539df76d964dfb608c7e0994a66b0905adf88f914",
+      "source_b_image_number": 24213,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1278,
+      "source_a_original_row_sha256": "a7441611994300c46ef967015e9f760769b1173d13ed2b8c74e662535fcf0d5f",
+      "source_b_original_row_sha256": "a7441611994300c46ef967015e9f760769b1173d13ed2b8c74e662535fcf0d5f",
+      "source_b_image_number": 24218,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1279,
+      "source_a_original_row_sha256": "6783e1b5776e938871c5a802472ffd11d8286d944c0cd5927f628c49cfc39967",
+      "source_b_original_row_sha256": "6783e1b5776e938871c5a802472ffd11d8286d944c0cd5927f628c49cfc39967",
+      "source_b_image_number": 24217,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1280,
+      "source_a_original_row_sha256": "59fc9578fc794f53356bd530ca6fae3f16741efa885cccbcb47bcdc24cf50a55",
+      "source_b_original_row_sha256": "59fc9578fc794f53356bd530ca6fae3f16741efa885cccbcb47bcdc24cf50a55",
+      "source_b_image_number": 24216,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1281,
+      "source_a_original_row_sha256": "24beb8314922efbf56ad9bf46e02fd8b76019b9da4f91105de8a745c1323ea05",
+      "source_b_original_row_sha256": "24beb8314922efbf56ad9bf46e02fd8b76019b9da4f91105de8a745c1323ea05",
+      "source_b_image_number": 24220,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1310,
+      "source_a_original_row_sha256": "3acfa8fee8279706069ce94cefd00af0c4047340d389fbcdc2f2a1c50790d579",
+      "source_b_original_row_sha256": "3acfa8fee8279706069ce94cefd00af0c4047340d389fbcdc2f2a1c50790d579",
+      "source_b_image_number": 22053,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1311,
+      "source_a_original_row_sha256": "1e70ae24a32409058088edacb4c27a36ed1e79113f4e0c59edfdaae9c22f29f1",
+      "source_b_original_row_sha256": "1e70ae24a32409058088edacb4c27a36ed1e79113f4e0c59edfdaae9c22f29f1",
+      "source_b_image_number": 22102,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1312,
+      "source_a_original_row_sha256": "f7cdce5ee34a5e095baebbab0f04db76263cf94d6fd47062c8ccfb984f42f8ba",
+      "source_b_original_row_sha256": "f7cdce5ee34a5e095baebbab0f04db76263cf94d6fd47062c8ccfb984f42f8ba",
+      "source_b_image_number": 22109,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1360,
+      "source_a_original_row_sha256": "ecaf0d2b0c8f0fa1df4dbb06ca4979ce61745a6981d538f66ea578f88fdb89d8",
+      "source_b_original_row_sha256": "ecaf0d2b0c8f0fa1df4dbb06ca4979ce61745a6981d538f66ea578f88fdb89d8",
+      "source_b_image_number": 22042,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1361,
+      "source_a_original_row_sha256": "a485082de3178a327aa89b05d004eeced907adbf0d8e5aa015bce903dfc56f8a",
+      "source_b_original_row_sha256": "a485082de3178a327aa89b05d004eeced907adbf0d8e5aa015bce903dfc56f8a",
+      "source_b_image_number": 22038,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1362,
+      "source_a_original_row_sha256": "b5995ec9e3fa47709c8be15f56a9b73be56a8dd4a77c011cb338ccbc3d643c4c",
+      "source_b_original_row_sha256": "b5995ec9e3fa47709c8be15f56a9b73be56a8dd4a77c011cb338ccbc3d643c4c",
+      "source_b_image_number": 22041,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1363,
+      "source_a_original_row_sha256": "e29d95ad98764174c003d4c4a2b9f241752350391cda04c7f5ee551259c650d2",
+      "source_b_original_row_sha256": "e29d95ad98764174c003d4c4a2b9f241752350391cda04c7f5ee551259c650d2",
+      "source_b_image_number": 22040,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1364,
+      "source_a_original_row_sha256": "d06452d8a87e43a502dbf27b894ce9dde979e06f3880badfe1b1decd683abf29",
+      "source_b_original_row_sha256": "d06452d8a87e43a502dbf27b894ce9dde979e06f3880badfe1b1decd683abf29",
+      "source_b_image_number": 22039,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1407,
+      "source_a_original_row_sha256": "70732a2f08008267c69d2aaa8391a5b3ec5cad8bb132fd4a4fd063120cdb555a",
+      "source_b_original_row_sha256": "70732a2f08008267c69d2aaa8391a5b3ec5cad8bb132fd4a4fd063120cdb555a",
+      "source_b_image_number": 22104,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1410,
+      "source_a_original_row_sha256": "98584d835381d8a53c364c2d2e3ed4fdd8332c4c1f2052d8a7e3585cdf0212b4",
+      "source_b_original_row_sha256": "98584d835381d8a53c364c2d2e3ed4fdd8332c4c1f2052d8a7e3585cdf0212b4",
+      "source_b_image_number": 22056,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1411,
+      "source_a_original_row_sha256": "49a87e94da19f02533ff1721054541c0a05f770ecda599aafe995f9dd63519a0",
+      "source_b_original_row_sha256": "49a87e94da19f02533ff1721054541c0a05f770ecda599aafe995f9dd63519a0",
+      "source_b_image_number": 22105,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1412,
+      "source_a_original_row_sha256": "782180f92c9b7fff081981428b216e61aa05c982d0683cec0c71b0a2e1892cf9",
+      "source_b_original_row_sha256": "782180f92c9b7fff081981428b216e61aa05c982d0683cec0c71b0a2e1892cf9",
+      "source_b_image_number": 22052,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1500,
+      "source_a_original_row_sha256": "24ee803daccf79e1431111b51e9949ad96a38d1fa08ad349ec9cee90f033175b",
+      "source_b_original_row_sha256": "24ee803daccf79e1431111b51e9949ad96a38d1fa08ad349ec9cee90f033175b",
+      "source_b_image_number": 23013,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1501,
+      "source_a_original_row_sha256": "05e30220520216cb04c525e449ec8c5c2ecb1ecb17b38a5709d20535aca8fde4",
+      "source_b_original_row_sha256": "05e30220520216cb04c525e449ec8c5c2ecb1ecb17b38a5709d20535aca8fde4",
+      "source_b_image_number": 23014,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1510,
+      "source_a_original_row_sha256": "5c32551302e381d20eac48f625c68d84867e6bb979b017c7b75f046f6460c1b2",
+      "source_b_original_row_sha256": "5c32551302e381d20eac48f625c68d84867e6bb979b017c7b75f046f6460c1b2",
+      "source_b_image_number": 23005,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1511,
+      "source_a_original_row_sha256": "ff1f0bd8f1dac46daf74d039304ae2dea481579f37a91960adafa99a5e2077e7",
+      "source_b_original_row_sha256": "ff1f0bd8f1dac46daf74d039304ae2dea481579f37a91960adafa99a5e2077e7",
+      "source_b_image_number": 23006,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1512,
+      "source_a_original_row_sha256": "b8fc05fa5a021731ea64d6f8b64506f303e3609b526e53920a7dfc28861ac1f7",
+      "source_b_original_row_sha256": "b8fc05fa5a021731ea64d6f8b64506f303e3609b526e53920a7dfc28861ac1f7",
+      "source_b_image_number": 23007,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1530,
+      "source_a_original_row_sha256": "b0f0732e5f136853f70594d90e82237b3cd4d898981ac908f0467337c3305fc9",
+      "source_b_original_row_sha256": "b0f0732e5f136853f70594d90e82237b3cd4d898981ac908f0467337c3305fc9",
+      "source_b_image_number": 23021,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1531,
+      "source_a_original_row_sha256": "e660eaede34083b78f4350f1367ab551894f07dfc0e3f166e5192f0fa3b4e49c",
+      "source_b_original_row_sha256": "e660eaede34083b78f4350f1367ab551894f07dfc0e3f166e5192f0fa3b4e49c",
+      "source_b_image_number": 23021,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1540,
+      "source_a_original_row_sha256": "545f8a3762032053686fb9c6e58167b12e3aab8201108ab81b4eb2f3645b26db",
+      "source_b_original_row_sha256": "545f8a3762032053686fb9c6e58167b12e3aab8201108ab81b4eb2f3645b26db",
+      "source_b_image_number": 23026,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1541,
+      "source_a_original_row_sha256": "9e788b87aaf53561110d506c95bd20482b715fb657cf3cdb99887d246744f09a",
+      "source_b_original_row_sha256": "9e788b87aaf53561110d506c95bd20482b715fb657cf3cdb99887d246744f09a",
+      "source_b_image_number": 23027,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1542,
+      "source_a_original_row_sha256": "671944cd880cf62cefe445a395febebb60a81b464c008abd761005ff37b63f4f",
+      "source_b_original_row_sha256": "671944cd880cf62cefe445a395febebb60a81b464c008abd761005ff37b63f4f",
+      "source_b_image_number": 23024,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1543,
+      "source_a_original_row_sha256": "857c5ad81ef0d62edc65e0e442fba3f554b2ca4f059f36a98004ed7c8dc19c45",
+      "source_b_original_row_sha256": "857c5ad81ef0d62edc65e0e442fba3f554b2ca4f059f36a98004ed7c8dc19c45",
+      "source_b_image_number": 23028,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 1545,
+      "source_a_original_row_sha256": "0a7c8c47cc8f53120ac15684d11103c956062c0a33d15c9a87ff55d44b383d3d",
+      "source_b_original_row_sha256": "0a7c8c47cc8f53120ac15684d11103c956062c0a33d15c9a87ff55d44b383d3d",
+      "source_b_image_number": 23025,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 2521,
+      "source_a_original_row_sha256": "7c2ece6ed065e61a4395e04e9d560be0f232b9fa38e58086841a975c8e1c7457",
+      "source_b_original_row_sha256": "7c2ece6ed065e61a4395e04e9d560be0f232b9fa38e58086841a975c8e1c7457",
+      "source_b_image_number": 24176,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 2522,
+      "source_a_original_row_sha256": "30af396217a160c7e13e3f03fb8523812052ac39478a18914f6132ac83d4c32c",
+      "source_b_original_row_sha256": "30af396217a160c7e13e3f03fb8523812052ac39478a18914f6132ac83d4c32c",
+      "source_b_image_number": 24176,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 2523,
+      "source_a_original_row_sha256": "644820214bc5c88671b98365221e633ff3c359e39593ed7b751031916d260f57",
+      "source_b_original_row_sha256": "644820214bc5c88671b98365221e633ff3c359e39593ed7b751031916d260f57",
+      "source_b_image_number": 24176,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 2524,
+      "source_a_original_row_sha256": "5bd20cae9c2737b1e5b4e9f8a248783c0723418a90d66f3602d51e072c46ab09",
+      "source_b_original_row_sha256": "5bd20cae9c2737b1e5b4e9f8a248783c0723418a90d66f3602d51e072c46ab09",
+      "source_b_image_number": 24176,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 2597,
+      "source_a_original_row_sha256": "3e8027e57c6e9ce878b586850fa8cd147b9c53281e41f686fdc6dd920011f2b2",
+      "source_b_original_row_sha256": "3e8027e57c6e9ce878b586850fa8cd147b9c53281e41f686fdc6dd920011f2b2",
+      "source_b_image_number": 24177,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 2598,
+      "source_a_original_row_sha256": "ccf7a4ba673fc6caa1df64bbea12691acd85fcfec33583dfbfa0b92afa0513fe",
+      "source_b_original_row_sha256": "ccf7a4ba673fc6caa1df64bbea12691acd85fcfec33583dfbfa0b92afa0513fe",
+      "source_b_image_number": 24177,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 2599,
+      "source_a_original_row_sha256": "c0f635ca5cbdb6eece268cd8579ba11c5133ce962eed8225dfefb9d3978c5290",
+      "source_b_original_row_sha256": "c0f635ca5cbdb6eece268cd8579ba11c5133ce962eed8225dfefb9d3978c5290",
+      "source_b_image_number": 24177,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 2600,
+      "source_a_original_row_sha256": "92d196db665eb1f283af8c3f0babbcc79f72a37bd0fd263459064db8d467923b",
+      "source_b_original_row_sha256": "92d196db665eb1f283af8c3f0babbcc79f72a37bd0fd263459064db8d467923b",
+      "source_b_image_number": 24177,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 2601,
+      "source_a_original_row_sha256": "72ac977860cf589db82393ac47145dfd704a09fe48c1887d6f4535c7d5501909",
+      "source_b_original_row_sha256": "72ac977860cf589db82393ac47145dfd704a09fe48c1887d6f4535c7d5501909",
+      "source_b_image_number": 24177,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 2602,
+      "source_a_original_row_sha256": "b63db8555959cd0709735ec161f6e91274921813b31948e3d5ac13e0b6f38292",
+      "source_b_original_row_sha256": "b63db8555959cd0709735ec161f6e91274921813b31948e3d5ac13e0b6f38292",
+      "source_b_image_number": 24176,
+      "source_b_tw1_image_status": "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS"
+    },
+    {
+      "item_id": 2612,
+      "source_a_original_row_sha256": "6e8220c7d78e777840a4c9ff476315f80c75478653bc4600385c620f4e6da71b",
+      "source_b_original_row_sha256": "6e8220c7d78e777840a4c9ff476315f80c75478653bc4600385c620f4e6da71b",
+      "source_b_image_number": 24298,
+      "source_b_tw1_image_status": "NOT_IN_RETAIL_INDEX"
+    }
+  ],
+  "original_shop_all_explicit_item_IDs_once": [
+    54,
+    60,
+    62,
+    70,
+    80,
+    152,
+    160,
+    161,
+    164,
+    170,
+    180,
+    241,
+    260,
+    270,
+    330,
+    335,
+    340,
+    344,
+    350,
+    360,
+    380,
+    640,
+    650,
+    660,
+    661,
+    700,
+    710,
+    720,
+    730,
+    740,
+    750,
+    760,
+    840,
+    844,
+    850,
+    855,
+    860,
+    890,
+    940,
+    950,
+    960,
+    962,
+    965,
+    980,
+    990,
+    1040,
+    1050,
+    1051,
+    1060,
+    1061,
+    1062,
+    1063,
+    1064,
+    1140,
+    1150,
+    1152,
+    1155,
+    1160,
+    1161,
+    1162,
+    1164,
+    1165,
+    1180,
+    1211,
+    1212,
+    1213,
+    1214,
+    1271,
+    1272,
+    1273,
+    1274,
+    1278,
+    1279,
+    1280,
+    1281,
+    1310,
+    1311,
+    1312,
+    1360,
+    1361,
+    1362,
+    1363,
+    1364,
+    1407,
+    1410,
+    1411,
+    1412,
+    1500,
+    1501,
+    1510,
+    1511,
+    1512,
+    1530,
+    1531,
+    1540,
+    1541,
+    1542,
+    1543,
+    1545,
+    2612
+  ],
+  "original_same_carrier_sprite_candidate": {
+    "original_SPR_graphic_group": 100250,
+    "original_action": 0,
+    "original_direction": 0,
+    "first_frame_bitmap": 95883,
+    "prior_source_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+    "first_frame_original_RD_sha256": "a344ce3110b3fc2c3bf544c7edcd5912d68a156fce501ccbf1406d96a6d90f56",
+    "prior_candidate_PNG_sha256": "32020af425521f05014d68538fa2355ff70d3c52d73761044ed2e6532bec8a43",
+    "private_PNG_recovery_SHA_matches_prior_report": true,
+    "first_frame_canvas": [
+      28,
+      52
+    ]
+  },
+  "cross_carrier_TW1_original_item_PNG_candidates": {
+    "source-TW1-original-RD-candidates/alias-24176.png": {
+      "sha256": "82334c031191fb20b31f6a469a9a9985dac36592ba362defc8ed0b9a15a06572",
+      "width": 52,
+      "height": 44,
+      "rgba_sha256": "f2b53a2c2e35c3e24c308a7d390400dbd3c8045544f18cff5c5010a510075b5a",
+      "bytes": 2786
+    },
+    "source-TW1-original-RD-candidates/alias-24177.png": {
+      "sha256": "a2f420e60ffc78dd2f17bbfcbac183de95cc5d66e8ff99adb6b2b6d8a3c03843",
+      "width": 52,
+      "height": 42,
+      "rgba_sha256": "8430d82f7ae7e11765a5dcb0853245d4b2554f67e78a6aceca85383aff19107a",
+      "bytes": 1753
+    }
+  },
+  "counterexamples": [
+    {
+      "kind": "MISMATCH_BETWEEN_CREATE_COORD_AND_ARG_BASENAME",
+      "create_ordinal": 9,
+      "create_floor": 130,
+      "create_xy": [
+        1,
+        14
+      ],
+      "literal_handler": "genout/ss_130_3_14",
+      "not_autocorrected": true
+    },
+    {
+      "kind": "ARG_FILE_NUMERIC_FLOOR_DIFFERS_FROM_ACTUAL_CREATE_FLOOR",
+      "create_ordinal": 33,
+      "create_floor": 130,
+      "create_xy": [
+        4,
+        14
+      ],
+      "literal_handler": "genout/pis_1009_14_13",
+      "not_autocorrected": true
+    }
+  ],
+  "limitations": {
+    "commercial_create_or_dialogue_or_png_in_public_git": false,
+    "original_TW1_1_0_and_later_community_same_deployment_proven": false,
+    "native_warp_exec_or_collision_proven": false,
+    "shop_trade_or_price_exec_proven": false,
+    "arena_rules_enforced_by_native_runtime_proven": false,
+    "original_130_floor_native_screen_observed": false,
+    "MAP01_failure_for_floor_1000_or_3000_means_original_file_never_existed": false,
+    "source_130_DAT_header_implies_actor_display_selection": false
+  },
+  "NEXT": "Rotate to another nonduplicate original visual pet/quest/scene family; floor1000/3000 need independent qualified DAT for this MAP01 carrier. No trade/arena runtime claims."
+}
