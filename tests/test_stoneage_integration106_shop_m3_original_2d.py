@@ -40,18 +40,27 @@ class SourceBoundOriginalShopM3(unittest.TestCase):
 
     def test_02_create_40_actual_spans_replay_exact_old_full_index(self):
         old = sorted((r for r in self.npc['create_rows'] if r[0]=='genout/shop_m3.create'),key=lambda r:r[1])
-        self.assertEqual(len(old),len(self.rows)==40)
+        self.assertEqual(len(old),40)
+        self.assertEqual(len(self.rows),40)
         for o,n in zip(old,self.rows):
             self.assertEqual(n['ordinal'],o[1]);self.assertEqual(n['source_span'],o[2:4])
             self.assertEqual(n['source_span_sha256'],o[4]);self.assertEqual(n['floor'],o[5])
             self.assertEqual(n['xy'],o[7][:2]);self.assertEqual(o[7][:2],o[7][2:])
             self.assertEqual(n['graphic'],o[6]);self.assertEqual(n['kind'],o[11])
-            self.assertEqual(n['handler'].removeprefix('npc/'),o[15][0][0]);self.assertEqual(n['handler_sha256'],o[15][0][2])
+            if o[15]:
+                self.assertEqual(n['handler'].removeprefix('npc/'),o[15][0][0])
+                self.assertEqual(n['handler_sha256'],o[15][0][2])
+            else:
+                self.assertIsNone(n['handler'])
+                self.assertIsNone(n['handler_sha256'])
 
     def test_03_handler_files_exist_and_are_SHA_pinned(self):
         manifest={r[0]:r for r in self.npc['source_files']}
         self.assertEqual(len(self.doc['original_handler_sha256']),28)
         for r in self.rows:
+            if r['handler'] is None:
+                self.assertIsNone(r['handler_sha256'])
+                continue
             key=r['handler'].removeprefix('npc/')
             self.assertIn(key,manifest)
             self.assertEqual(r['handler_bytes'],manifest[key][1])
@@ -65,7 +74,7 @@ class SourceBoundOriginalShopM3(unittest.TestCase):
         old=[r for r in self.items['npcgen_shop_creation_rows'] if r['create_path']=='genout/shop_m3.create']
         self.assertEqual(len(old),13)
         self.assertEqual(self.doc['counts']['already_indexed_npcgen_shop_CREATE'],13)
-        self.assertIs(self.doc['prior_content_dedup']['newly_claimed_13_shops_or_30_RD_discoveries'],False)
+        self.assertIs(self.doc['prior_content_dedup']['newly claimed_13_shops_or_30_RD_discoveries'],False)
 
     def test_05_old_DAT_geometry_no_fabrication(self):
         lookup={r[0].removesuffix('.dat'):(r[3],r[4]) for r in self.map['per_floor_source_rows']}
