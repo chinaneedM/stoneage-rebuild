@@ -63,8 +63,8 @@ class TwoAxisGovernance(unittest.TestCase):
         self.assertIn("actual_in_world_lore",d["timeline_strata"])
         self.assertIn("marketing_or_developer_design_intent",d["timeline_strata"])
         self.assertIn("future_reconstruction_design",d["timeline_strata"])
-        self.assertIn("not evidence",d["history_to_gameplay_causality"])
-        self.assertIn("only",d["identity_merge_requirements"].lower())
+        self.assertIn("do not prove relationship",d["history_to_gameplay_causality"])
+        self.assertIn("without independent",d["identity_merge_requirements"].lower())
         self.assertTrue(d["cannot_reinterpret_as_runtime_proof"])
 
     def test_old_current_and_phase_unchanged(self):
