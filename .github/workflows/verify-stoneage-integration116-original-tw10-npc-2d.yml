@@ -1,0 +1,36 @@
+name: Verify StoneAge INTEGRATION116 authentic 10 NPC original TW1 two-dimensional source receipts
+
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-stoneage-integration116-original-tw10-npc-2d.yml'
+      - 'tests/test_stoneage_integration116_ten_tw10_original_spr_rd.py'
+      - 'research/recovered/STONEAGE-INTEGRATION116-TEN-NPC-ORIGINAL-TW10-2D-R1.json'
+      - 'research/recovered/STONEAGE-CHARACTER-NPC-MODULE-04-SAME-CARRIER-GRAPHIC-FUNCTION-JOIN-R1.json'
+      - 'research/recovered/STONEAGE-PET-MODULE-15-TW10-ALL-SELECTED-MOTION-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-CHAR11-TW10-REMAINING-BODY-MOTION-R1.json'
+      - 'research/recovered/STONEAGE-INTEGRATION115-TW10-FIVE-GATE-BREEDER-ACTUAL-ORIGINAL-2D-R1.json'
+  pull_request:
+    paths:
+      - '.github/workflows/verify-stoneage-integration116-original-tw10-npc-2d.yml'
+      - 'tests/test_stoneage_integration116_ten_tw10_original_spr_rd.py'
+      - 'research/recovered/STONEAGE-INTEGRATION116-TEN-NPC-ORIGINAL-TW10-2D-R1.json'
+      - 'research/recovered/STONEAGE-CHARACTER-NPC-MODULE-04-SAME-CARRIER-GRAPHIC-FUNCTION-JOIN-R1.json'
+      - 'research/recovered/STONEAGE-PET-MODULE-15-TW10-ALL-SELECTED-MOTION-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-CHAR11-TW10-REMAINING-BODY-MOTION-R1.json'
+      - 'research/recovered/STONEAGE-INTEGRATION115-TW10-FIVE-GATE-BREEDER-ACTUAL-ORIGINAL-2D-R1.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-tw10-ten-source-evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate real original two-dimensional source SHA, strict-vs-bounded and cross-version negative controls
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration116_ten_tw10_original_spr_rd.py' -v
