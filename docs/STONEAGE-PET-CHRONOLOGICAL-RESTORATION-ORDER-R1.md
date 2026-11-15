@@ -123,3 +123,7 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## PET42 2026-11-15｜台湾零售盘与华义宠物馆的双向名称缺口
 
 [PET42 来源限定差异审计](continuity/STONEAGE-PET42-TW10-MUSEUM-BIDIRECTIONAL-GAP-20261115.md)／[22网页未匹配与19客户端未被逐字覆盖的机读清单](../research/recovered/STONEAGE-PET42-TW10-OPERATOR-MUSEUM-BIDIRECTIONAL-GAP-R1.json)：复用 PET39 台湾1.0正本客户端 124 条源限定相册名及 PET41 华义官网所托管的 128 个玩家图鉴编号，双向审核发现官网 106 条名称逐字命中客户端 105 个不同图号，**官网另22条未精确命中、客户端另19条未被官网逐字覆盖**。新差异分类严格为文本候选（含异字、颜色括号、山贼／盗贼等身份修饰），没有原网页GIF/原客户端新解码，没有自动把差异变成新物种或官服实装；新增官服具名实际投放证据0、总种数UNKNOWN，2000年仍 OPEN。**PET43** 继续客户端优先搜证2000年JP JSS／KR Inium／TW Waei／CN初版的原盘和补丁，原件缺失再针对2000年WGS首套三宠卡与JOT奖品求运营方原发放证据。PET模块锁保持，CURRENT历史原blob不更动。
+
+## PET43 2026-11-15｜缺旧客户端时可从后版反向补录原宠物资源
+
+[PET43有界实测](continuity/STONEAGE-PET43-LATER-CLIENT-REVERSE-BACKFILL-20261115.md)及[124条原图号/整SPR继承关系机器表](../research/recovered/STONEAGE-PET43-LATER-CLIENT-SPR-BACKFILL-R1.json)：源认证台湾1.0客户端124条具名宠物候选，在CN5/TW85/mixed25保存资源索引中均见同图号；R28已证明TW1↔TW85、CN50↔TW85的这124组完整SPR数据相同。此事实支持“旧版难以取得时以高版保存原图/动画候选”作为研究方法，却不保证所有后版本都涵盖老宠、也不证明三份晚版为纯官方、服务器实装或首次开放年代。新用户策略已记录连续性协议§24，PET43新增官服投放数0，2000年份游标OPEN；NEXT PET44继续来源分隔的高版宠物批量提取，不强求先拿齐早期安装盘。

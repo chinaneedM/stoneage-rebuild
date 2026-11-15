@@ -1,0 +1,2169 @@
+{
+  "schema": "stoneage.pet43.later_client_reverse_backfill.r1",
+  "date": "2026-11-15",
+  "source_base_head": "ee18b6752a046c238a102c37c1604f06fb920c74",
+  "source_base_tree": "21b90f8cd7ce1ae0231a040228e2744851622582",
+  "frontier_year": 2000,
+  "year_2000_status": "OPEN_NOT_YEAR_CLOSED",
+  "active_module": "PET",
+  "source_pins": [
+    {
+      "path": "research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json",
+      "blob": "1aada81d7314769bf683b816cc5a8762c3bd9400",
+      "status": "AUTHENTICATED_TW1_CLIENT_LOCAL_NAMED_SPR"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PET-MODULE-01-BATCH-SOURCE-SPR-INDEX-R1.json",
+      "blob": "5c4864e87f717711eac3c10cd9cefd27970484e6",
+      "status": "ORIGINAL_SOURCE_DERIVED_MULTICARRIER_NUMERIC_INDEX_WITH_2016_COMMUNITY_JOIN"
+    },
+    {
+      "path": "research/recovered/tw85-spr137-r28/SOURCE-DERIVED-R28.json",
+      "blob": "df6ca18070f1c5cf5371a340698be90d51318507",
+      "status": "PRIOR_EXACT_WHOLE_SPR_SEGMENT_CROSS_CARRIER_PROOF"
+    }
+  ],
+  "carriers": {
+    "TW1": "AUTHENTICATED_WAEI_JSS_TW1_RETAIL",
+    "CN50": "PRESERVED_CANDIDATE_NOT_OFFICIAL_CLEAN_AUTHENTICATED",
+    "TW85": "PRESERVED_CANDIDATE_NOT_OFFICIAL_CLEAN_AUTHENTICATED",
+    "MIXED25": "COMMUNITY_PRESERVED_NON_OFFICIAL_CLEAN_CLIENT"
+  },
+  "observations": {
+    "early_named_graphic_cohort": 124,
+    "found_same_numeric_group_in_CN50": 124,
+    "found_same_numeric_group_in_TW85": 124,
+    "found_same_numeric_group_in_MIXED25": 124,
+    "TW1_TW85_exact_full_SPR_group": 124,
+    "CN50_TW85_exact_full_SPR_group": 124,
+    "MIXED25_exact_group_sha_claimed": false,
+    "new_qualified_official_live_pet_releases": 0,
+    "historical_pet_species_count": null
+  },
+  "records": [
+    {
+      "tw1_graphic": 100250,
+      "tw1_original_name": "烏力",
+      "tw1_name_row_sha256": "84702939e9e1ea6ae7dff51b2c3425faba28d549d17fcf45b520998016672d37",
+      "tw1_full_spr_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "spr_group_indexes": {
+        "TW1": 240,
+        "CN50": 240,
+        "TW85": 240,
+        "MIXED25": 240
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100251,
+      "tw1_original_name": "烏力烏力",
+      "tw1_name_row_sha256": "976d757d9699fdf3686f2ae3d71a7f8a3a01c0467d2c32fd84156d40d8eaf52a",
+      "tw1_full_spr_sha256": "073278ba6ae1e623eea969deef11f99fd9be8b995af332506e830bd046c86764",
+      "spr_group_indexes": {
+        "TW1": 241,
+        "CN50": 241,
+        "TW85": 241,
+        "MIXED25": 241
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100252,
+      "tw1_original_name": "烏力斯坦",
+      "tw1_name_row_sha256": "22aabf582cd070d55d7b5cfdac707eb10161a1ba7d0577fcb01958662244b10f",
+      "tw1_full_spr_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "spr_group_indexes": {
+        "TW1": 242,
+        "CN50": 242,
+        "TW85": 242,
+        "MIXED25": 242
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100253,
+      "tw1_original_name": "烏力布魯",
+      "tw1_name_row_sha256": "6e1505a884dc297b7235ea009dfd835ea9bfb43268e8005b0f1a0aede3b163bb",
+      "tw1_full_spr_sha256": "9796944a8c54a33832a8d3a89349bbdd86629fdc437d21fb163645d8c253802b",
+      "spr_group_indexes": {
+        "TW1": 243,
+        "CN50": 243,
+        "TW85": 243,
+        "MIXED25": 243
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100254,
+      "tw1_original_name": "布比",
+      "tw1_name_row_sha256": "64a24643d520ac140fde1d8c2abe83089ab9a191099733a18c680bcce741f872",
+      "tw1_full_spr_sha256": "764763f8dba2b73de6849f25d55fecdb5aac2433e90a93255a58b7ce2db184a7",
+      "spr_group_indexes": {
+        "TW1": 244,
+        "CN50": 244,
+        "TW85": 244,
+        "MIXED25": 244
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100255,
+      "tw1_original_name": "金布伊",
+      "tw1_name_row_sha256": "67211a13e9fdabe93e4ab8cef6bf8e54d51b29b34091eee2cd2b60b34c39370a",
+      "tw1_full_spr_sha256": "afdb53a9f70aa8b0cf3ef51ee201d47fa8acedacc1616fb3b12c0ccc71adc044",
+      "spr_group_indexes": {
+        "TW1": 245,
+        "CN50": 245,
+        "TW85": 245,
+        "MIXED25": 245
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100256,
+      "tw1_original_name": "布伊",
+      "tw1_name_row_sha256": "f2f6014eeaf313ddfdb57311cbcf86e8b545b34605e71e62a9d317b0c577a5a0",
+      "tw1_full_spr_sha256": "9562d4d766c128d0342c35529c6cedbbc1efde8dddf14fa083645c1629ceb990",
+      "spr_group_indexes": {
+        "TW1": 246,
+        "CN50": 246,
+        "TW85": 246,
+        "MIXED25": 246
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100257,
+      "tw1_original_name": "布伊比",
+      "tw1_name_row_sha256": "19310eba6fffae1c341dd8629ca391c14189fd143f948638ff4afdadc45edd63",
+      "tw1_full_spr_sha256": "931bb3a1e1455c403f25b8b836028d2787613fc35f237edad0adab93946e06cc",
+      "spr_group_indexes": {
+        "TW1": 247,
+        "CN50": 247,
+        "TW85": 247,
+        "MIXED25": 247
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100258,
+      "tw1_original_name": "卡布伊",
+      "tw1_name_row_sha256": "a824badce8e4944885ced7c29f4d5e6240363ff6b9d3fe1e89fd6ba6d0e58b1b",
+      "tw1_full_spr_sha256": "098d92f9ea74a345c43680ce6e5c2f4add8772bb37a3c90c485f6c76f4c5cc08",
+      "spr_group_indexes": {
+        "TW1": 248,
+        "CN50": 248,
+        "TW85": 248,
+        "MIXED25": 248
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100259,
+      "tw1_original_name": "加美",
+      "tw1_name_row_sha256": "8ce86a8d6e921f216aca8fca2da13ecb0bc05f5a945f75962c92e9a2c7140efc",
+      "tw1_full_spr_sha256": "eb1be1d64b6e23a5302c5298d7a5d55a6466e0974bc2b4568c988349bb66c4e1",
+      "spr_group_indexes": {
+        "TW1": 249,
+        "CN50": 249,
+        "TW85": 249,
+        "MIXED25": 249
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100260,
+      "tw1_original_name": "加比",
+      "tw1_name_row_sha256": "5cee4fe098b72905fe670ab2e3bb6d86c7276508b8ad1cc878b45a2be66aef36",
+      "tw1_full_spr_sha256": "d93a146e8dc07e5e786ab2a010133b291b36dd733004321f16ada5ed02a21743",
+      "spr_group_indexes": {
+        "TW1": 250,
+        "CN50": 250,
+        "TW85": 250,
+        "MIXED25": 250
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100261,
+      "tw1_original_name": "加比奧",
+      "tw1_name_row_sha256": "8acbb006c8cf95e61f2d0e5108e66c930eea92f2d725f8425bfda42e5f3ee8b5",
+      "tw1_full_spr_sha256": "ccc39b539666ccd42c6b0d8de14dc0784981bd96a69f527f3ec5335b8ad62c08",
+      "spr_group_indexes": {
+        "TW1": 251,
+        "CN50": 251,
+        "TW85": 251,
+        "MIXED25": 251
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100262,
+      "tw1_original_name": "加斯",
+      "tw1_name_row_sha256": "49141d5c6b361e1ddb0ab6d46a3a17a07708b6d2721405eb7956e27615541fae",
+      "tw1_full_spr_sha256": "5d01c9a4466f26b1f2ec79f5a3a84621796c0e25f2aa273687d7863a1d73b8e0",
+      "spr_group_indexes": {
+        "TW1": 252,
+        "CN50": 252,
+        "TW85": 252,
+        "MIXED25": 252
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100263,
+      "tw1_original_name": "烏寶寶",
+      "tw1_name_row_sha256": "3c693dc69b20f3d600d03c7cf806bd61374ee645dcc90fd495527a5f9b234dda",
+      "tw1_full_spr_sha256": "15db31dd6681ea540fb1e89fe792eb686fd4eb4a382d95518d08462a4f472ee6",
+      "spr_group_indexes": {
+        "TW1": 253,
+        "CN50": 253,
+        "TW85": 253,
+        "MIXED25": 253
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100264,
+      "tw1_original_name": "威威",
+      "tw1_name_row_sha256": "000e37913b379a6cbe184594f7396b9a694c662ef824fa09d563972e172305ae",
+      "tw1_full_spr_sha256": "b4cc246fbecba64075fd1ee55e9b1a8e3723c42c960927230a99c1ba5c640b0e",
+      "spr_group_indexes": {
+        "TW1": 254,
+        "CN50": 254,
+        "TW85": 254,
+        "MIXED25": 254
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100265,
+      "tw1_original_name": "烏卡魯",
+      "tw1_name_row_sha256": "e57cfdf81cf4faa2de2633cb678cb2033517a02e24b9d1f7925d300a083b5852",
+      "tw1_full_spr_sha256": "1e9b11eccbe88525bc55eaa613bc88ea18f21b6c3587a26adee89fed2ad12b2b",
+      "spr_group_indexes": {
+        "TW1": 255,
+        "CN50": 255,
+        "TW85": 255,
+        "MIXED25": 255
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100266,
+      "tw1_original_name": "威伯",
+      "tw1_name_row_sha256": "dc4125d7a7e7a3b953c6924cfd666475ee7d03fdfffc7489c8538e6bdf565290",
+      "tw1_full_spr_sha256": "fad067e8ee01a23c8305a3a4a2b72b7c07438694cde1bb4de3f5fceeda678777",
+      "spr_group_indexes": {
+        "TW1": 256,
+        "CN50": 256,
+        "TW85": 256,
+        "MIXED25": 256
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100267,
+      "tw1_original_name": "貝洛恩",
+      "tw1_name_row_sha256": "a551079c1127fa9daa4499270cf9ffff250cfd92c66c7bd04e2c6d556047964e",
+      "tw1_full_spr_sha256": "73091db2f79c4f92b1d30221b5c9e63b01bd793c86f235d5160ea172830d6452",
+      "spr_group_indexes": {
+        "TW1": 257,
+        "CN50": 257,
+        "TW85": 257,
+        "MIXED25": 257
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100268,
+      "tw1_original_name": "貝洛洛克",
+      "tw1_name_row_sha256": "5896c4b50916167c05862107f6ca4afad3f6bcdcb194334460637b17515a45c9",
+      "tw1_full_spr_sha256": "ae13018b2e80bb5caa801002461dfc9dbf0c9003a7055571924d846d5e9f85d7",
+      "spr_group_indexes": {
+        "TW1": 258,
+        "CN50": 258,
+        "TW85": 258,
+        "MIXED25": 258
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100269,
+      "tw1_original_name": "貝洛寶克爾",
+      "tw1_name_row_sha256": "2896ea75a36dc3ee6f57e319171acb2e143b59400b0fb91c4f1ab4dc07f862a3",
+      "tw1_full_spr_sha256": "8249ab3abf570c44a3302afdc849c01b38e0166d3711defbc8ffb36b1c96ac8e",
+      "spr_group_indexes": {
+        "TW1": 259,
+        "CN50": 259,
+        "TW85": 259,
+        "MIXED25": 259
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100270,
+      "tw1_original_name": "貝洛寶利",
+      "tw1_name_row_sha256": "0d1cd3adb5dfd86e52a9e0b7e2fdde54c52ba76b6b1436f89bf753ec64ea1e10",
+      "tw1_full_spr_sha256": "113f37c6eb3cee48f75d3768e878b15f3924f24ae5c9270200bd5d7c6f176cec",
+      "spr_group_indexes": {
+        "TW1": 260,
+        "CN50": 260,
+        "TW85": 260,
+        "MIXED25": 260
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100271,
+      "tw1_original_name": "龜之盾",
+      "tw1_name_row_sha256": "a9044dbb143285deb9ff7954d7204db2c49da5fac25a07267d8a2fbcbdcc2617",
+      "tw1_full_spr_sha256": "9d82c6429e1d8c7cd9949d969c1728536942094e77ae1cfa78aee8b756b2eaa9",
+      "spr_group_indexes": {
+        "TW1": 261,
+        "CN50": 261,
+        "TW85": 261,
+        "MIXED25": 261
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100272,
+      "tw1_original_name": "綠龜",
+      "tw1_name_row_sha256": "53f21bf9e8951036de5aeca0ebe9fc326997a1017c1d212e9865bbcef6ce117c",
+      "tw1_full_spr_sha256": "f2de589e39b12e5c4ed1c346818ae71fefbc2a6c692bce39e6115c9768566822",
+      "spr_group_indexes": {
+        "TW1": 262,
+        "CN50": 262,
+        "TW85": 262,
+        "MIXED25": 262
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100273,
+      "tw1_original_name": "卡梅蘭恩",
+      "tw1_name_row_sha256": "c8bcbc87e269b7789a02e1c1af3eea6827fc76e814b85fccf148c05cfd47d132",
+      "tw1_full_spr_sha256": "c1efda8a7444a4d2da3c2a9334ce276d1b7098dc9142c2c75439ac5c24470dac",
+      "spr_group_indexes": {
+        "TW1": 263,
+        "CN50": 263,
+        "TW85": 263,
+        "MIXED25": 263
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100274,
+      "tw1_original_name": "石龜",
+      "tw1_name_row_sha256": "ae2b867b4a19dfbbfe9c852f61354b4e9d2fb2640b5233dfa61e046b6b176c70",
+      "tw1_full_spr_sha256": "12ec2cffab263c6b14f9f35e3a4f6dcf731d4c7aebeda2440f0b5bc207618bd2",
+      "spr_group_indexes": {
+        "TW1": 264,
+        "CN50": 264,
+        "TW85": 264,
+        "MIXED25": 264
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100275,
+      "tw1_original_name": "阿哥亞",
+      "tw1_name_row_sha256": "d5ad0ba694bdb136aa1e459e54975baa43cfe46e13c923c7068e30b859b2ec2f",
+      "tw1_full_spr_sha256": "5174e6e37c46fae81c7a3f29f9ebff0390886d661f61eb666aadf0a4eecab6c5",
+      "spr_group_indexes": {
+        "TW1": 265,
+        "CN50": 265,
+        "TW85": 265,
+        "MIXED25": 265
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100276,
+      "tw1_original_name": "尼可斯",
+      "tw1_name_row_sha256": "2832bd1cc3a964fe382e58643cedb34a6d04079bbe64abc06065b10249df4cb8",
+      "tw1_full_spr_sha256": "f323a47f5dba7c57cdaf05c1f3521514446a59a61827c670ee8bdf752732709d",
+      "spr_group_indexes": {
+        "TW1": 266,
+        "CN50": 266,
+        "TW85": 266,
+        "MIXED25": 266
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100277,
+      "tw1_original_name": "特洛昆",
+      "tw1_name_row_sha256": "54cb9cd15466a1a2cadd650372f18b6705becd7e440eb444e7669ea6a08897ed",
+      "tw1_full_spr_sha256": "61e7aa1eb5029e6e87f37be5e0ec3b2d680fb2b7ad2760d5828bf81785b905b7",
+      "spr_group_indexes": {
+        "TW1": 267,
+        "CN50": 267,
+        "TW85": 267,
+        "MIXED25": 267
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100278,
+      "tw1_original_name": "達克爾",
+      "tw1_name_row_sha256": "02e7d46f11375f7883ae93a1a4a993359e8c0de61d11420f2082d5059b34ba52",
+      "tw1_full_spr_sha256": "c4d19f9248cb21fa8123eb7a997e3dd16314d46b9a8b63389092396f0ab233ce",
+      "spr_group_indexes": {
+        "TW1": 268,
+        "CN50": 268,
+        "TW85": 268,
+        "MIXED25": 268
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100279,
+      "tw1_original_name": "拉奇魯哥",
+      "tw1_name_row_sha256": "86354db96f31d71172dac73d2bc26de099c18704baee08343790b843d3a86bef",
+      "tw1_full_spr_sha256": "81414567556249573853ac844309a2b2cdcdc7d93ec36b7a5cede1ca1ec403ff",
+      "spr_group_indexes": {
+        "TW1": 269,
+        "CN50": 269,
+        "TW85": 269,
+        "MIXED25": 269
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100280,
+      "tw1_original_name": "呼拔拔",
+      "tw1_name_row_sha256": "1d13cf34e871cf617975e213daed0e73220bfcb71818b5e30565014813a6b37f",
+      "tw1_full_spr_sha256": "d2e12702aacf131e513a56a752be544b69256e17928c4ba041e816f0dc162198",
+      "spr_group_indexes": {
+        "TW1": 270,
+        "CN50": 270,
+        "TW85": 270,
+        "MIXED25": 270
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100281,
+      "tw1_original_name": "多薩金格",
+      "tw1_name_row_sha256": "db70b9605869d3f877f2bee8b5acaeca6f2495920174cea0c59f3f52a815e73c",
+      "tw1_full_spr_sha256": "329088eddcbe6718dc519d4cbce3027131af1549ee63d2aaaf1c3a77482b69e0",
+      "spr_group_indexes": {
+        "TW1": 271,
+        "CN50": 271,
+        "TW85": 271,
+        "MIXED25": 271
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100282,
+      "tw1_original_name": "魯尼帖斯",
+      "tw1_name_row_sha256": "d1f059cc7a582a68f1595d9a53058a84755c987c79f77fb6ef9793e3758f15d1",
+      "tw1_full_spr_sha256": "72ba10b44c0bb90cb6c52eb5348ab86eaeecac5758fedea722788435407ccdfa",
+      "spr_group_indexes": {
+        "TW1": 272,
+        "CN50": 272,
+        "TW85": 272,
+        "MIXED25": 272
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100283,
+      "tw1_original_name": "卡達魯卡斯",
+      "tw1_name_row_sha256": "5749886d8f11e17471855d24583e64e14740c2476bb287a3a58e13dd2c63bdc0",
+      "tw1_full_spr_sha256": "1d9f67eb04bb39f0ca57f5df80514eefff54228ff7673f17b3ce7763467ae77b",
+      "spr_group_indexes": {
+        "TW1": 273,
+        "CN50": 273,
+        "TW85": 273,
+        "MIXED25": 273
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100284,
+      "tw1_original_name": "柯伊達",
+      "tw1_name_row_sha256": "05f8fb5e77392920a316d4f619f423f796cf8ebeac301d6c326035c1d91acd1b",
+      "tw1_full_spr_sha256": "0359614436b28986877ca49e3f91fdf247257f351d451121315b506e346ea1c0",
+      "spr_group_indexes": {
+        "TW1": 274,
+        "CN50": 274,
+        "TW85": 274,
+        "MIXED25": 274
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100285,
+      "tw1_original_name": "柯洛加斯",
+      "tw1_name_row_sha256": "6bbfbf9352c824d3e3ce76756e7541a3c12efdf8d46be4988915e42be13e25d3",
+      "tw1_full_spr_sha256": "2410c08290b27200cb9c077d245abd30a49c3d12920917ec1b7439ac5f4cd3eb",
+      "spr_group_indexes": {
+        "TW1": 275,
+        "CN50": 275,
+        "TW85": 275,
+        "MIXED25": 275
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100286,
+      "tw1_original_name": "洛奇安",
+      "tw1_name_row_sha256": "b108080d8091e36265b74bfcfbb49acb920d978c3defa0e546424ba04e2a149f",
+      "tw1_full_spr_sha256": "585ee0e409e36111e411597dcc11b7a1d2f49018b8de380a2238e64cbfd317d7",
+      "spr_group_indexes": {
+        "TW1": 276,
+        "CN50": 276,
+        "TW85": 276,
+        "MIXED25": 276
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100287,
+      "tw1_original_name": "利則諾頓",
+      "tw1_name_row_sha256": "96796058e5243eee8fe1cd61631e91473de1864a66cdc434fe974ebd3abbf248",
+      "tw1_full_spr_sha256": "ef9b8508b2df8eae3865d279831ef78ff75ae3e8f5465b88211c7a8f7acfcc8a",
+      "spr_group_indexes": {
+        "TW1": 277,
+        "CN50": 277,
+        "TW85": 277,
+        "MIXED25": 277
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100288,
+      "tw1_original_name": "揚奇洛斯",
+      "tw1_name_row_sha256": "a327fa766a525120ef7b3b0dd48b84251ae2c84cf9efce278e60f942a09b90fe",
+      "tw1_full_spr_sha256": "9668ac38f750d8a0d7d6022d46df8593e107fb6a37d465202466258cd53bf64d",
+      "spr_group_indexes": {
+        "TW1": 278,
+        "CN50": 278,
+        "TW85": 278,
+        "MIXED25": 278
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100289,
+      "tw1_original_name": "邦浦洛斯",
+      "tw1_name_row_sha256": "fc639bb9a9e70fd21ee0b13d2a74ec022b493a385b7210b6d570c4c799e3253b",
+      "tw1_full_spr_sha256": "a7ca74c4d9b9cdf8992ff5dbe2692dfc3a006bd73d797c7b05799cbccbe451ec",
+      "spr_group_indexes": {
+        "TW1": 279,
+        "CN50": 279,
+        "TW85": 279,
+        "MIXED25": 279
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100290,
+      "tw1_original_name": "邦奇諾",
+      "tw1_name_row_sha256": "dd772d306edbb40fe5f032914b9a7e835cfc1f5722df643ef3d68c8dbbb407a9",
+      "tw1_full_spr_sha256": "b8a07e6aaad3f273008477ee0563499115f11ac7ec1714f0fa09855cfc84e978",
+      "spr_group_indexes": {
+        "TW1": 280,
+        "CN50": 280,
+        "TW85": 280,
+        "MIXED25": 280
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100291,
+      "tw1_original_name": "克雷爾",
+      "tw1_name_row_sha256": "6258000272a582ced4c9ecb356c73762d4bf958ae1d79a793f89ffcd17b5af82",
+      "tw1_full_spr_sha256": "533993d77c3b4c06ab82dbe3484330a59da9c5b6822411dc03189b975b815976",
+      "spr_group_indexes": {
+        "TW1": 281,
+        "CN50": 281,
+        "TW85": 281,
+        "MIXED25": 281
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100292,
+      "tw1_original_name": "克克爾",
+      "tw1_name_row_sha256": "d0eb844f076a417b1a6990ddb4da355b79f0d2a71de094274a7505d8087efbd9",
+      "tw1_full_spr_sha256": "1f7b960aebced3cc35cb1aa037c2e178584ae67de7673241a023449a7c9614bb",
+      "spr_group_indexes": {
+        "TW1": 282,
+        "CN50": 282,
+        "TW85": 282,
+        "MIXED25": 282
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100293,
+      "tw1_original_name": "克洛爾",
+      "tw1_name_row_sha256": "7cc66872547065c6cbf4b9cb283f59b751f397c16346a655ebed0a0515e44b01",
+      "tw1_full_spr_sha256": "84c700dab5357cf470268f4b72d066e844da273541ef1e6396b56430d07d71f5",
+      "spr_group_indexes": {
+        "TW1": 283,
+        "CN50": 283,
+        "TW85": 283,
+        "MIXED25": 283
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100294,
+      "tw1_original_name": "里斯基",
+      "tw1_name_row_sha256": "99cdf55d7d925d26f41d5bbdc404c84a346f0963575309db1a48b46d6a2a3e68",
+      "tw1_full_spr_sha256": "2d37af85c129ef51988ea2e78d09c6aa3e7d91a7606586a4b84fad4584d17f1e",
+      "spr_group_indexes": {
+        "TW1": 284,
+        "CN50": 284,
+        "TW85": 284,
+        "MIXED25": 284
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100295,
+      "tw1_original_name": "卡比特",
+      "tw1_name_row_sha256": "2dcffbd316fb0f07f8422d8297f070ccea6551c06ff7e3ce14a154177a6db22e",
+      "tw1_full_spr_sha256": "f3c9c360adb5c090bb4f21184ea563cb41f40f1f17b4798fddc7969a335bfdd7",
+      "spr_group_indexes": {
+        "TW1": 285,
+        "CN50": 285,
+        "TW85": 285,
+        "MIXED25": 285
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100296,
+      "tw1_original_name": "凱比",
+      "tw1_name_row_sha256": "b93bff93ff63731d1119d272333804701d557c64e4758f9799fe9688607d7818",
+      "tw1_full_spr_sha256": "d93b5f3443eaad602e02f9d51e1d3bbd7db728a41a980d15d809101ada588a13",
+      "spr_group_indexes": {
+        "TW1": 286,
+        "CN50": 286,
+        "TW85": 286,
+        "MIXED25": 286
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100297,
+      "tw1_original_name": "昆伊",
+      "tw1_name_row_sha256": "16da2749766fdbb94d64334e738082b97975a3fec6ebf8b9c49872c64353b1f3",
+      "tw1_full_spr_sha256": "0be2deee9bc390903efc8e6f5f600b4aaf3cac2f0ee140cdd4d590e2300d3ec9",
+      "spr_group_indexes": {
+        "TW1": 287,
+        "CN50": 287,
+        "TW85": 287,
+        "MIXED25": 287
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100298,
+      "tw1_original_name": "凱比特",
+      "tw1_name_row_sha256": "8ff5015206097f0dc12d81f2df209fcb0c0cdba11c53ca0671742decf740860d",
+      "tw1_full_spr_sha256": "1f3dec860eff8133c9afcb8ed1d85d7ca0c659722b5b4d5d4cf008a4edcf651b",
+      "spr_group_indexes": {
+        "TW1": 288,
+        "CN50": 288,
+        "TW85": 288,
+        "MIXED25": 288
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100307,
+      "tw1_original_name": "格爾頓",
+      "tw1_name_row_sha256": "fe32fdb67532976d91495e8cbde2811fd8d14551d260aee951e5e776995da67f",
+      "tw1_full_spr_sha256": "e82d100a84a24c1d16b5a8c2edd4ab7e5cc9c1656bbaa080177f34378312c2b8",
+      "spr_group_indexes": {
+        "TW1": 289,
+        "CN50": 289,
+        "TW85": 289,
+        "MIXED25": 289
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100308,
+      "tw1_original_name": "奇拉頓",
+      "tw1_name_row_sha256": "f3017b2d24026937cac50c58a83b9aaf52ee343360b44b94828ccca9f1229e70",
+      "tw1_full_spr_sha256": "b1da67c329bfb9f96769921e8a39374d9ae2236fbcdb01c258b7cc98fa447b26",
+      "spr_group_indexes": {
+        "TW1": 290,
+        "CN50": 290,
+        "TW85": 290,
+        "MIXED25": 290
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100309,
+      "tw1_original_name": "齊爾格爾頓",
+      "tw1_name_row_sha256": "86654b0ae10352b2102b51a359700d01e9d5c02849325fb674e06c6886c1fe57",
+      "tw1_full_spr_sha256": "db6de1529a07b0bbcaaed24c29399bef11935d6ff2397eca6f13b76991f496af",
+      "spr_group_indexes": {
+        "TW1": 291,
+        "CN50": 291,
+        "TW85": 291,
+        "MIXED25": 291
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100310,
+      "tw1_original_name": "格爾格",
+      "tw1_name_row_sha256": "beeff76a67fcdc2c8b0ecc398dfcb4d8a7dcbf51b8d2dcf08da3a5ca3843a77c",
+      "tw1_full_spr_sha256": "b6d2a586eb82a456d2e91ee37c25d25694475233074a6b57bedfbc05e0850505",
+      "spr_group_indexes": {
+        "TW1": 292,
+        "CN50": 292,
+        "TW85": 292,
+        "MIXED25": 292
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100319,
+      "tw1_original_name": "修寶",
+      "tw1_name_row_sha256": "a6fe244cf75ade5db476e13f88a6b1f6141934c815df6782f8e4d8087fc27864",
+      "tw1_full_spr_sha256": "f776bacec9370a6f8f665ffd47fcdf84839f0f348e787e11b43af4f3d0909ef6",
+      "spr_group_indexes": {
+        "TW1": 293,
+        "CN50": 293,
+        "TW85": 293,
+        "MIXED25": 293
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100320,
+      "tw1_original_name": "卡搭寶斯",
+      "tw1_name_row_sha256": "151d4982708c53455f35e6aeb64aad37c0a35bee7816b5726025267c04d3aa17",
+      "tw1_full_spr_sha256": "9928bf4b0ead837cf7d82265059ab4e77b71ee86f26929a516d9c78c33b1a806",
+      "spr_group_indexes": {
+        "TW1": 294,
+        "CN50": 294,
+        "TW85": 294,
+        "MIXED25": 294
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100321,
+      "tw1_original_name": "布克布克",
+      "tw1_name_row_sha256": "4b502d22ac2d5284c7b8152780d2a5b1b7df6d9f198d0923c946bb8409870ed5",
+      "tw1_full_spr_sha256": "a949b99c53f5863a85feb041504679d179f05ad42ed6569fc71e07a0200c5c03",
+      "spr_group_indexes": {
+        "TW1": 295,
+        "CN50": 295,
+        "TW85": 295,
+        "MIXED25": 295
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100322,
+      "tw1_original_name": "多洛加",
+      "tw1_name_row_sha256": "29dd03c945f3038e54adf29c827a4f79e0dc59ef9b474a20b10b1776b2e602a2",
+      "tw1_full_spr_sha256": "14af768381457de178568e8c65bc8a87becd0488c73d9c3a0cbd30ce0ff70b00",
+      "spr_group_indexes": {
+        "TW1": 296,
+        "CN50": 296,
+        "TW85": 296,
+        "MIXED25": 296
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100323,
+      "tw1_original_name": "卡克爾",
+      "tw1_name_row_sha256": "ef5ba24dd235f9fd9e4a723cb5fe174b6578f3e3eb70d855fb01c3361ae1af61",
+      "tw1_full_spr_sha256": "8120d96a71e5ed67eb823a29fac4e7fdd103adf34c71cacf8088a85fdc769bce",
+      "spr_group_indexes": {
+        "TW1": 297,
+        "CN50": 297,
+        "TW85": 297,
+        "MIXED25": 297
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100324,
+      "tw1_original_name": "巴克",
+      "tw1_name_row_sha256": "84b7cd2957bc9bad57bf34e1d6cdfa0acc7b1d4bac10617bc72c599588410671",
+      "tw1_full_spr_sha256": "6dd9ee41a92cbefb58d91a0fd2822d404fccc015df031b4649ef858d72c93a7e",
+      "spr_group_indexes": {
+        "TW1": 298,
+        "CN50": 298,
+        "TW85": 298,
+        "MIXED25": 298
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100325,
+      "tw1_original_name": "鮑",
+      "tw1_name_row_sha256": "d448c1ec49282b738abced14f586d7aeb9353140c5ccb055b5d6a32bf287999b",
+      "tw1_full_spr_sha256": "4cf83444dd788c74f14e131aad49bee2ad441ff16a9c7b2340d26914a7d4eb35",
+      "spr_group_indexes": {
+        "TW1": 299,
+        "CN50": 299,
+        "TW85": 299,
+        "MIXED25": 299
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100326,
+      "tw1_original_name": "卡拉卡利",
+      "tw1_name_row_sha256": "d75dfc87f42cf9e2fbca1d603f86cfe58fc304c0da5b993cc994b98c77a3522d",
+      "tw1_full_spr_sha256": "7a5a42c9150602c7b0da7a3179f368fd3eb24e3269b1f773401cf55cdb3d98e5",
+      "spr_group_indexes": {
+        "TW1": 300,
+        "CN50": 300,
+        "TW85": 300,
+        "MIXED25": 300
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100327,
+      "tw1_original_name": "貝魯卡",
+      "tw1_name_row_sha256": "04bda00e8fcbfc9bc7cdcadfdce1aa1f3dbd453823d40e0627bc7de1d0cdd769",
+      "tw1_full_spr_sha256": "4be5173b9f5d7b17901798de32598c437fbcd671bce74419a425fb1f15d356c2",
+      "spr_group_indexes": {
+        "TW1": 301,
+        "CN50": 301,
+        "TW85": 301,
+        "MIXED25": 301
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100328,
+      "tw1_original_name": "貝魯伊卡",
+      "tw1_name_row_sha256": "1a839ebecbb9f3ad8df2df60704cff7aa3e301324f17bc71544a447895fe0e38",
+      "tw1_full_spr_sha256": "aba72fe1706a7fd5f4d016e4e82ee957b8e4efd38030b1a6fbbc930076347fad",
+      "spr_group_indexes": {
+        "TW1": 302,
+        "CN50": 302,
+        "TW85": 302,
+        "MIXED25": 302
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100329,
+      "tw1_original_name": "格魯西斯",
+      "tw1_name_row_sha256": "cc4dc48685d2a27ffbe27bb8d75b9df8b85aff44ce16f0080e9dbb0ee94b7a45",
+      "tw1_full_spr_sha256": "7e50e9e34385f29e64de256ad053bfe1c2540d17444b74d5218c37ee5b7d57ce",
+      "spr_group_indexes": {
+        "TW1": 303,
+        "CN50": 303,
+        "TW85": 303,
+        "MIXED25": 303
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100330,
+      "tw1_original_name": "金格薩貝魯",
+      "tw1_name_row_sha256": "1f3599efae93c46fc17f84cbc34693fe762e30de877ac75cf8591e8eef718527",
+      "tw1_full_spr_sha256": "25e98217d01253afe10088eccc1a8738d2b5b0f347fb2be2135b9611829cef39",
+      "spr_group_indexes": {
+        "TW1": 304,
+        "CN50": 304,
+        "TW85": 304,
+        "MIXED25": 304
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100335,
+      "tw1_original_name": "多利諾布斯",
+      "tw1_name_row_sha256": "a5eda71d86f5b7902a9183aca208af3e85ad077919a577f35eecd7fd5dddb69c",
+      "tw1_full_spr_sha256": "edfba5be50c121be29c7e864505a9706fe331bfb4747c4f675f707562ac1e965",
+      "spr_group_indexes": {
+        "TW1": 305,
+        "CN50": 305,
+        "TW85": 305,
+        "MIXED25": 305
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100336,
+      "tw1_original_name": "貝恩達斯",
+      "tw1_name_row_sha256": "b6bde147b5b20924be7adc2474e32685967655d87e5246a976bf1b8deb972c10",
+      "tw1_full_spr_sha256": "5e32c11804f6c231b8f31f143c8de9325dff466e34fa0f8f09cab6424165eb19",
+      "spr_group_indexes": {
+        "TW1": 306,
+        "CN50": 306,
+        "TW85": 306,
+        "MIXED25": 306
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100337,
+      "tw1_original_name": "多利凱拉",
+      "tw1_name_row_sha256": "17df124138eecf55e6a9477c6752cb3dd11027004c57836ad8715f57e0d0df30",
+      "tw1_full_spr_sha256": "831b746da6afe7dd93034115058ae91bc73d19e3ff179c9ed1bc83c76e4279b7",
+      "spr_group_indexes": {
+        "TW1": 307,
+        "CN50": 307,
+        "TW85": 307,
+        "MIXED25": 307
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100338,
+      "tw1_original_name": "多洛布斯",
+      "tw1_name_row_sha256": "529d7ebf4534b7507c07b836f74c7a1d10ca5c18fa003dfc20ee4524c00c6a5a",
+      "tw1_full_spr_sha256": "13abd701cb10d7b9da7fe3b6ba4ba5cbd13a09ddb6745d1cfee64e4410c28ef5",
+      "spr_group_indexes": {
+        "TW1": 308,
+        "CN50": 308,
+        "TW85": 308,
+        "MIXED25": 308
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100339,
+      "tw1_original_name": "克邦凱斯",
+      "tw1_name_row_sha256": "e606c1fc36029e99ee353e13b2a62c62fca7dd332cd36d4453189b3ca1712d22",
+      "tw1_full_spr_sha256": "30a8c295b2f5898208bff43ee5acb76d1bc32341b54edb401dbc2c3df09a082f",
+      "spr_group_indexes": {
+        "TW1": 309,
+        "CN50": 309,
+        "TW85": 309,
+        "MIXED25": 309
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100340,
+      "tw1_original_name": "加克拉",
+      "tw1_name_row_sha256": "1d91bd36da4a9f95b86650b74f52ac9f726ca6031ae979f1b3f02926fd7ce1ea",
+      "tw1_full_spr_sha256": "9306cf435d5a87c3c8a31f6afeea56f8e312d3a98547a9580d820fd23acac3e2",
+      "spr_group_indexes": {
+        "TW1": 310,
+        "CN50": 310,
+        "TW85": 310,
+        "MIXED25": 310
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100341,
+      "tw1_original_name": "加格",
+      "tw1_name_row_sha256": "fff3412609912631832023a2b0896b117c3ca7c6049058d26f904ebd3ee23ec5",
+      "tw1_full_spr_sha256": "4dec4ea259e4083d0b4a233ef1892075bb9bd48dec3d143e289b5b515b8505f3",
+      "spr_group_indexes": {
+        "TW1": 311,
+        "CN50": 311,
+        "TW85": 311,
+        "MIXED25": 311
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100342,
+      "tw1_original_name": "邦恩吉",
+      "tw1_name_row_sha256": "a897a29cea3597a68526f5a937cfa36aba46faf776019384e4a4ab7c90ea592b",
+      "tw1_full_spr_sha256": "40e219521c55e2cba48b13b0b777bec7a552c8def2f14ef0354019171a32c382",
+      "spr_group_indexes": {
+        "TW1": 312,
+        "CN50": 312,
+        "TW85": 312,
+        "MIXED25": 312
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100343,
+      "tw1_original_name": "奇卡洛斯",
+      "tw1_name_row_sha256": "97fb7c681ccc7dea079e1dd10355f159478cf50874e3003db47bb45b1568ccee",
+      "tw1_full_spr_sha256": "df891631ea3fd5004085716fb181ee88f2efe2d31ac894c47eec4cbdd2c2dab3",
+      "spr_group_indexes": {
+        "TW1": 313,
+        "CN50": 313,
+        "TW85": 313,
+        "MIXED25": 313
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100344,
+      "tw1_original_name": "奇娜",
+      "tw1_name_row_sha256": "6fefafd48c42df6cdbc979df3104b1f963de2f06540ffec1b79194648a9bac8c",
+      "tw1_full_spr_sha256": "257d724dafde5482fc6afb224f0f485efb46e96c095b40851607608ec364df93",
+      "spr_group_indexes": {
+        "TW1": 314,
+        "CN50": 314,
+        "TW85": 314,
+        "MIXED25": 314
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100345,
+      "tw1_original_name": "奇卡寶斯",
+      "tw1_name_row_sha256": "13ab106d24e410a944bac16b2cb7c172b8f12a1645d0e90b06d52c5363ca7ae5",
+      "tw1_full_spr_sha256": "2629ca4250e3cc20235b85d36c3110bef14d1fbe9ea1eb611a71e502820aa168",
+      "spr_group_indexes": {
+        "TW1": 315,
+        "CN50": 315,
+        "TW85": 315,
+        "MIXED25": 315
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100346,
+      "tw1_original_name": "卡卡金寶",
+      "tw1_name_row_sha256": "42cd85eef28f2fb6e348dbb6cfcd6e74d873a0a3617d5c8d270ab2f69298a0cc",
+      "tw1_full_spr_sha256": "6d559775ca817d9e58c47370c2bdd1b54b71b2d4f16971e1958208e806e0edec",
+      "spr_group_indexes": {
+        "TW1": 316,
+        "CN50": 316,
+        "TW85": 316,
+        "MIXED25": 316
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100347,
+      "tw1_original_name": "邦奇",
+      "tw1_name_row_sha256": "3b9cf5d1ae498d648a07fe958e11c244fbceadc02c91279715fafb64ab9b1828",
+      "tw1_full_spr_sha256": "e2e6b1cdc03b64ad6a60db9ea9a79d6024de03540dcfd1c853af601570c5bb90",
+      "spr_group_indexes": {
+        "TW1": 317,
+        "CN50": 317,
+        "TW85": 317,
+        "MIXED25": 317
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100348,
+      "tw1_original_name": "姆伊",
+      "tw1_name_row_sha256": "58f37c417a1d1046370eb9d73cb0f4001c0a7318718577020c62108a0ebe7e2d",
+      "tw1_full_spr_sha256": "6422ee00f705a2996cc7fc043d3e8a3c0545edfbb116666efa9c8e38ec1ef75a",
+      "spr_group_indexes": {
+        "TW1": 318,
+        "CN50": 318,
+        "TW85": 318,
+        "MIXED25": 318
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100349,
+      "tw1_original_name": "海主人",
+      "tw1_name_row_sha256": "84455c9c0e1ec796bcd77014f007e952aef9d688749601888a26b074dad74462",
+      "tw1_full_spr_sha256": "02b1d5918e6a780ff6aaf65edb4efc08ffd324acb762654a0a52a5672ad3fc3e",
+      "spr_group_indexes": {
+        "TW1": 319,
+        "CN50": 319,
+        "TW85": 319,
+        "MIXED25": 319
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100350,
+      "tw1_original_name": "多魯寶",
+      "tw1_name_row_sha256": "543ff4109ea2515a32d4dd71876c8e08f78538c7c8bf7f42badc602afe9428bd",
+      "tw1_full_spr_sha256": "14f8d5b6ae32fda4d5f3768bd70f7ccfaa75aa66d536f0b4515e3984ab193d49",
+      "spr_group_indexes": {
+        "TW1": 320,
+        "CN50": 320,
+        "TW85": 320,
+        "MIXED25": 320
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100351,
+      "tw1_original_name": "布洛多斯",
+      "tw1_name_row_sha256": "e36cf9a7001fc43fb37984c905e2721f5375df01ffbad858624d6d545a4e1130",
+      "tw1_full_spr_sha256": "0cfc2eabf5b43eb51b23bec35a3e23ed0171c84a56a2d79d3d44387e53a966b1",
+      "spr_group_indexes": {
+        "TW1": 321,
+        "CN50": 321,
+        "TW85": 321,
+        "MIXED25": 321
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100352,
+      "tw1_original_name": "布林帖斯",
+      "tw1_name_row_sha256": "231355575d7a6522d7d53990db75a5cc537078f5ba41890cde047dde2115e9a7",
+      "tw1_full_spr_sha256": "c790f3156c0a62a18404a74af3b5eaf4c4f82670df25f31a551239f64f17620d",
+      "spr_group_indexes": {
+        "TW1": 322,
+        "CN50": 322,
+        "TW85": 322,
+        "MIXED25": 322
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100353,
+      "tw1_original_name": "布拉奇多斯",
+      "tw1_name_row_sha256": "79a8343b8ef342b25f85a3e56d7c0cb53116c7f624775d2f631f34d65fc1dea6",
+      "tw1_full_spr_sha256": "2086365f81dc486e3e58a108a752c13bd960150e3857a461e771c06bf57ec7ae",
+      "spr_group_indexes": {
+        "TW1": 323,
+        "CN50": 323,
+        "TW85": 323,
+        "MIXED25": 323
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100354,
+      "tw1_original_name": "斯天多斯",
+      "tw1_name_row_sha256": "eff1edcd275249351d1b16ad6b34cfdcbbc6fe84ee1495c852e790e0e49ea5bc",
+      "tw1_full_spr_sha256": "2d2f5076afd20caa4b1f0a819ec628198f78d3ca0cb07d858e6d9fa65e8bee20",
+      "spr_group_indexes": {
+        "TW1": 324,
+        "CN50": 324,
+        "TW85": 324,
+        "MIXED25": 324
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100355,
+      "tw1_original_name": "瑪恩摩",
+      "tw1_name_row_sha256": "194525bc0e7e35f97549c1e18640f2086a2564e2e77c5009f41e650178842b35",
+      "tw1_full_spr_sha256": "409081b2ead88925b44eeccca02005ff3de59906b8736ae6d2cdc3bcdcf070a3",
+      "spr_group_indexes": {
+        "TW1": 325,
+        "CN50": 325,
+        "TW85": 325,
+        "MIXED25": 325
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100356,
+      "tw1_original_name": "恩摩摩",
+      "tw1_name_row_sha256": "27e823af525bcb7282b2d72284bf8f764ef19c4bda5ea29b9247fd7f9ad8742c",
+      "tw1_full_spr_sha256": "d8fff8110694e7726d87abcfb62a811869a2f066be7475f00f68912ffd233bbe",
+      "spr_group_indexes": {
+        "TW1": 326,
+        "CN50": 326,
+        "TW85": 326,
+        "MIXED25": 326
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100357,
+      "tw1_original_name": "瑪摩那斯",
+      "tw1_name_row_sha256": "af4bed97778540e483aeed0bd85d0bc80e8e8e32fd112e6b1a37882f87e9569d",
+      "tw1_full_spr_sha256": "813d101cad648b00cef2d435e8fecd7f2ed6d43854738081b674bef228bcab69",
+      "spr_group_indexes": {
+        "TW1": 327,
+        "CN50": 327,
+        "TW85": 327,
+        "MIXED25": 327
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100358,
+      "tw1_original_name": "瑪恩摩洛斯",
+      "tw1_name_row_sha256": "ad67fb336480dbc0ba0d2b841ace629420c2dc20bc3ec1d45490e611efafdc5d",
+      "tw1_full_spr_sha256": "fda4d9af12a80e633c848ae981795974bdf1fb303ecfe40a3f5bb8313c4f4dfd",
+      "spr_group_indexes": {
+        "TW1": 328,
+        "CN50": 328,
+        "TW85": 328,
+        "MIXED25": 328
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100359,
+      "tw1_original_name": "帖拉格恩",
+      "tw1_name_row_sha256": "1a8cbe8f63efe7013885d1ee11a0da9e3877747d36b131b3cdaacae052d816d3",
+      "tw1_full_spr_sha256": "99c09a003670dd66480fb43876f5e1a0a3e4523c27c668b33b7bc463c8513828",
+      "spr_group_indexes": {
+        "TW1": 329,
+        "CN50": 329,
+        "TW85": 329,
+        "MIXED25": 329
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100360,
+      "tw1_original_name": "洛卡倫恩",
+      "tw1_name_row_sha256": "0de9f3d89cfca20380a38f625ac9d488d03587ef78d61d9ff1962ea3162edb1f",
+      "tw1_full_spr_sha256": "71111d4395a68bf72dc7fb068a6286fef66c4b1afeae17b697b4a336518ddf94",
+      "spr_group_indexes": {
+        "TW1": 330,
+        "CN50": 330,
+        "TW85": 330,
+        "MIXED25": 330
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100361,
+      "tw1_original_name": "加寶格恩",
+      "tw1_name_row_sha256": "65c34c9816476353c938e6605ef0abb3ed0d1f635f6cf53503b3304101859b67",
+      "tw1_full_spr_sha256": "066c7939f15860b4a3d322035fc337199debaeb085ee1460be1d7a66e807b5d5",
+      "spr_group_indexes": {
+        "TW1": 331,
+        "CN50": 331,
+        "TW85": 331,
+        "MIXED25": 331
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100362,
+      "tw1_original_name": "朵拉比斯",
+      "tw1_name_row_sha256": "516331ac536f649801d7822bac41e6235b190dacdd22e3aa947498c8ea076532",
+      "tw1_full_spr_sha256": "42a308083c2f8ca1a69b0818b3f621586fe9c351098ed32e095fd8b8c3ac70db",
+      "spr_group_indexes": {
+        "TW1": 332,
+        "CN50": 332,
+        "TW85": 332,
+        "MIXED25": 332
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100367,
+      "tw1_original_name": "火雞",
+      "tw1_name_row_sha256": "e071b24f8e77aa572674557cea26dc482d5ade0598e0881bc379e4365f70151f",
+      "tw1_full_spr_sha256": "ac37952e597ac450e4da63672d77a0dd817244dfd9461453e9be220123ab085e",
+      "spr_group_indexes": {
+        "TW1": 333,
+        "CN50": 333,
+        "TW85": 333,
+        "MIXED25": 333
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100368,
+      "tw1_original_name": "克克洛斯",
+      "tw1_name_row_sha256": "3c3e3cae5fad278910dccf1e2d6343b6d744052a33692964b2c07277c2933c19",
+      "tw1_full_spr_sha256": "d7f7f9881cf685bcccfa73587f4c36f531fc57b6df0a6f0021fb58f414f07bea",
+      "spr_group_indexes": {
+        "TW1": 334,
+        "CN50": 334,
+        "TW85": 334,
+        "MIXED25": 334
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100369,
+      "tw1_original_name": "霍爾克",
+      "tw1_name_row_sha256": "427168dfb88e5ad7d5a5f52ecac298bbc1c5502290890f94d92c98e739abf6e0",
+      "tw1_full_spr_sha256": "2386701de4a541403e6f5e27b462bfaf6263175b3114a440057d71a81bef3591",
+      "spr_group_indexes": {
+        "TW1": 335,
+        "CN50": 335,
+        "TW85": 335,
+        "MIXED25": 335
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100370,
+      "tw1_original_name": "奇寶",
+      "tw1_name_row_sha256": "778aa5fc73821e6de4f42132c26914263317c58b63b9bdb8c703ae730c5e4354",
+      "tw1_full_spr_sha256": "63ba530888f46c6ccd0905ae978bf95d4adc52d4386c043cc417e80a0f1efc79",
+      "spr_group_indexes": {
+        "TW1": 336,
+        "CN50": 336,
+        "TW85": 336,
+        "MIXED25": 336
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100371,
+      "tw1_original_name": "奧卡洛斯",
+      "tw1_name_row_sha256": "6704645d2aa858d5ca23234e299a5e716d6c8d6596d32dee61265d0d0f6bb034",
+      "tw1_full_spr_sha256": "fff075bbef9214c1220742f8714934564e232dbb59e1a5125714275c3e82cff4",
+      "spr_group_indexes": {
+        "TW1": 337,
+        "CN50": 337,
+        "TW85": 337,
+        "MIXED25": 337
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100372,
+      "tw1_original_name": "左迪洛斯",
+      "tw1_name_row_sha256": "2459c4491b9f2a3d3fc522e5dba5da5c98c0b5bb18cda69412e702d8a189fbf5",
+      "tw1_full_spr_sha256": "770cab7bb2ba84daa827692a3b5ce47f83ce36595a164d19cde8e54ebfdc3627",
+      "spr_group_indexes": {
+        "TW1": 338,
+        "CN50": 338,
+        "TW85": 338,
+        "MIXED25": 338
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100373,
+      "tw1_original_name": "巴朵蘭恩",
+      "tw1_name_row_sha256": "1d71485bf63627da65d034fd32ce6ac6ca643ec37375559b74dea14380a7c714",
+      "tw1_full_spr_sha256": "f3d76b5cc31542a372b4a207a2fb5b58c6eddeea45891182c53330e343563721",
+      "spr_group_indexes": {
+        "TW1": 339,
+        "CN50": 339,
+        "TW85": 339,
+        "MIXED25": 339
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100374,
+      "tw1_original_name": "帖拉所伊朵",
+      "tw1_name_row_sha256": "e9a12ba5f22a7c8368d13cbf50c5122cacc9dd2d9719c5aac1cbebc01870bd64",
+      "tw1_full_spr_sha256": "407dd04efad37832e1a938f93e4f2eb30138c13881726120e22622dffcd479de",
+      "spr_group_indexes": {
+        "TW1": 340,
+        "CN50": 340,
+        "TW85": 340,
+        "MIXED25": 340
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100375,
+      "tw1_original_name": "布伊德",
+      "tw1_name_row_sha256": "ecc5125d3a56d6a3d9d487c77d25ba5e16bcfe48c9e34cf6bd0dbf516eff44c0",
+      "tw1_full_spr_sha256": "b5ad1a444b30c013f202aef8e4aa209589933a4489539c30e4d18adb611dca1c",
+      "spr_group_indexes": {
+        "TW1": 341,
+        "CN50": 341,
+        "TW85": 341,
+        "MIXED25": 341
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100376,
+      "tw1_original_name": "摩娜西普",
+      "tw1_name_row_sha256": "5706b29e21f81ce9cebd4610f1455c06efb95138d7bd9076c53a77114b5070a6",
+      "tw1_full_spr_sha256": "617db52b14409fdbdb24ca96fae3456a03183a327abb49aa9630914944d9d4d0",
+      "spr_group_indexes": {
+        "TW1": 342,
+        "CN50": 342,
+        "TW85": 342,
+        "MIXED25": 342
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100377,
+      "tw1_original_name": "卡伊霍恩",
+      "tw1_name_row_sha256": "21fe4186c505fbad32530a905c5ebda4636d5f4f3d943970d5d5b2fa859c2a4c",
+      "tw1_full_spr_sha256": "630c5533e4a07e084214e63f2463940162128ee4d741ea4f38aa7d3792923d94",
+      "spr_group_indexes": {
+        "TW1": 343,
+        "CN50": 343,
+        "TW85": 343,
+        "MIXED25": 343
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100378,
+      "tw1_original_name": "拉伊霍恩",
+      "tw1_name_row_sha256": "1f10bc0c2e45e046fb136c47578f9593d0700924b1e421e0c0cde77a9f3a0975",
+      "tw1_full_spr_sha256": "fef68f600e6e301d109ea15d3aabd11e2f47765bd808ad79766b7a2be42e242e",
+      "spr_group_indexes": {
+        "TW1": 344,
+        "CN50": 344,
+        "TW85": 344,
+        "MIXED25": 344
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100379,
+      "tw1_original_name": "史多拉奇頓",
+      "tw1_name_row_sha256": "478051cca12818bfcb2f0b96739cc82f04778158774773283af0af948bbe8fe9",
+      "tw1_full_spr_sha256": "355f06e73d0e277beed5abf221f80babbac98c123047a732ca4f1181dd80b65d",
+      "spr_group_indexes": {
+        "TW1": 345,
+        "CN50": 345,
+        "TW85": 345,
+        "MIXED25": 345
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100380,
+      "tw1_original_name": "薩美洛斯",
+      "tw1_name_row_sha256": "ef66e9e01b82875ebaa95bcf198a43c24ba7e809829a02f7ea0461c4c10d29c4",
+      "tw1_full_spr_sha256": "28045083c659de91c7c6288e30bbe6602d0b3a89f0ee6ce1c8176352a760f682",
+      "spr_group_indexes": {
+        "TW1": 346,
+        "CN50": 346,
+        "TW85": 346,
+        "MIXED25": 346
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100381,
+      "tw1_original_name": "阿利給洛斯",
+      "tw1_name_row_sha256": "18889302696f568aea1f08c58d99e466690bef52a54c08af1409d9c96cfe7a7c",
+      "tw1_full_spr_sha256": "41e0bcee88f18249bbe418311cac48c278d7412a1e4029ce920933124cadef82",
+      "spr_group_indexes": {
+        "TW1": 347,
+        "CN50": 347,
+        "TW85": 347,
+        "MIXED25": 347
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100382,
+      "tw1_original_name": "達伊諾洛斯",
+      "tw1_name_row_sha256": "ea96f21aad9cd8f1e73f8e8344fa5e2c13e31f3ad1d86606ee72cc38ac67d9ef",
+      "tw1_full_spr_sha256": "4a48eb56e7b161213305cdb3535e22830fc78e69d2f541da48a2d00502f35eed",
+      "spr_group_indexes": {
+        "TW1": 348,
+        "CN50": 348,
+        "TW85": 348,
+        "MIXED25": 348
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100383,
+      "tw1_original_name": "拉可洛斯",
+      "tw1_name_row_sha256": "8b7612e9bfe904f4264fdfecb708daf8dd6b0840eda3525767b2d88974a6e0c5",
+      "tw1_full_spr_sha256": "74bdacac0a96b7f73254280629c25fe3179c15f8ecb1c2e47abb047a09595bee",
+      "spr_group_indexes": {
+        "TW1": 349,
+        "CN50": 349,
+        "TW85": 349,
+        "MIXED25": 349
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100384,
+      "tw1_original_name": "巴洛洛克斯",
+      "tw1_name_row_sha256": "856d8243c319320ec4243629c02865348523fa2c569f107bedc0d9a0bb92c54c",
+      "tw1_full_spr_sha256": "38c47a6f86e858b3af0d608e751299d28ca5e30ad1a0cb884ed71f46f92a70b3",
+      "spr_group_indexes": {
+        "TW1": 350,
+        "CN50": 350,
+        "TW85": 350,
+        "MIXED25": 350
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100385,
+      "tw1_original_name": "蘭貝魯斯",
+      "tw1_name_row_sha256": "f2eb3e4609a63026291a073603ee7a575edd8bce241ce54783fbbc2b83028c2d",
+      "tw1_full_spr_sha256": "167e0502ed8151e0b1ea237a94327e7df913e8c9f0e0a33726c81ab17a7bedff",
+      "spr_group_indexes": {
+        "TW1": 351,
+        "CN50": 351,
+        "TW85": 351,
+        "MIXED25": 351
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100386,
+      "tw1_original_name": "可利多洛斯",
+      "tw1_name_row_sha256": "644c71b849119421dc8e4d87373a57e80711fa0f8b3043f25d203d6c7ebdcc4e",
+      "tw1_full_spr_sha256": "be2f65666905ab33531feb55fde56e716c889f839f8eb8b5580c11a2159e9aa0",
+      "spr_group_indexes": {
+        "TW1": 352,
+        "CN50": 352,
+        "TW85": 352,
+        "MIXED25": 352
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100387,
+      "tw1_original_name": "諾斯多洛斯",
+      "tw1_name_row_sha256": "2659b659c77bd7624d50127f2ce68905d1e78e4107488f8c2f7c4e8386387b53",
+      "tw1_full_spr_sha256": "c10cddd22c44e433cd7fbc2e3bc750c345c936b3217f0f9a71782fe5378361d1",
+      "spr_group_indexes": {
+        "TW1": 353,
+        "CN50": 353,
+        "TW85": 353,
+        "MIXED25": 353
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100388,
+      "tw1_original_name": "黑烏力",
+      "tw1_name_row_sha256": "6657b58912c1534322a931984a25f34c84bce1b582ecdd4a38621c5f2610d65d",
+      "tw1_full_spr_sha256": "d8ee442c59eaa9a3eec71336bff5ffb280d6296416c887c23b961a4d3cb49ebb",
+      "spr_group_indexes": {
+        "TW1": 354,
+        "CN50": 354,
+        "TW85": 354,
+        "MIXED25": 354
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100389,
+      "tw1_original_name": "洛克斯",
+      "tw1_name_row_sha256": "cb7ff42a81879a4e5a6057d8eaf4d6df1f76b56a0d74807f552384e29dd16d59",
+      "tw1_full_spr_sha256": "324300f2f0f1b37d75dd74d274ef28a561984a7275d8865ba0feab652473855d",
+      "spr_group_indexes": {
+        "TW1": 355,
+        "CN50": 355,
+        "TW85": 355,
+        "MIXED25": 355
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100390,
+      "tw1_original_name": "阿伊薩",
+      "tw1_name_row_sha256": "9dbccb71b69369568ece67a418acc1e6db8b1c42fc74d93ec926e278cf460ff4",
+      "tw1_full_spr_sha256": "b13d04cf59d372a15261159ad66a158362b53084ac9027ef2318934b6d4461e7",
+      "spr_group_indexes": {
+        "TW1": 356,
+        "CN50": 356,
+        "TW85": 356,
+        "MIXED25": 356
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100391,
+      "tw1_original_name": "格洛格魯",
+      "tw1_name_row_sha256": "e44e86d713c80bf8c08e05ae6f1644ade525bcdd0a7ee0811aec06502be22d39",
+      "tw1_full_spr_sha256": "92aedf30177e523e0d012210559aba490707b735474aa2328d3d932d956440be",
+      "spr_group_indexes": {
+        "TW1": 357,
+        "CN50": 357,
+        "TW85": 357,
+        "MIXED25": 357
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100392,
+      "tw1_original_name": "朵洛將恩",
+      "tw1_name_row_sha256": "5b0d8638acc3c1d29f18a990b033f6a942cb87166037c8e8d34154c8c0a94756",
+      "tw1_full_spr_sha256": "80238687e911c0f1393a2d79bb178fde02c6f826e35974ab56fe8f7f8e744789",
+      "spr_group_indexes": {
+        "TW1": 358,
+        "CN50": 358,
+        "TW85": 358,
+        "MIXED25": 358
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100393,
+      "tw1_original_name": "柏克爾",
+      "tw1_name_row_sha256": "1d2cc32bea16c37d405937fb3edab58dc3c9e91acf57e1b7735473be19439e09",
+      "tw1_full_spr_sha256": "8616fba53e6a8b995577119cf22fd40199d14903b7dd7a0fc5050dcd546e914c",
+      "spr_group_indexes": {
+        "TW1": 359,
+        "CN50": 359,
+        "TW85": 359,
+        "MIXED25": 359
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100394,
+      "tw1_original_name": "布魯頓",
+      "tw1_name_row_sha256": "47165f1555960602736f2cef5a25dfaadad49b20315b8c2feaef7bca1971b655",
+      "tw1_full_spr_sha256": "3df3893d1528273fdd935d46c729713ec5ff4efd73df4eb64fc47b9e5ab7225e",
+      "spr_group_indexes": {
+        "TW1": 360,
+        "CN50": 360,
+        "TW85": 360,
+        "MIXED25": 360
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100395,
+      "tw1_original_name": "布魯寶",
+      "tw1_name_row_sha256": "567f9567eea830d840ec2a314382743580dcc589673afe4ef421fed2ea13eb64",
+      "tw1_full_spr_sha256": "4a835ba8927bb19912541ed3ac9a45ce5a713d32796e099c9e0c43a54a9fa4ce",
+      "spr_group_indexes": {
+        "TW1": 361,
+        "CN50": 361,
+        "TW85": 361,
+        "MIXED25": 361
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100396,
+      "tw1_original_name": "邦恩多斯",
+      "tw1_name_row_sha256": "af0062fad1a5cb8c442837e23eea24daa4cb429ec737edcfddc7c4020395def9",
+      "tw1_full_spr_sha256": "c53a4d78b271438aa8c590c511af42f84d37170ba1268177bd0c8194730942b3",
+      "spr_group_indexes": {
+        "TW1": 362,
+        "CN50": 362,
+        "TW85": 362,
+        "MIXED25": 362
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    },
+    {
+      "tw1_graphic": 100430,
+      "tw1_original_name": "邦達霍恩",
+      "tw1_name_row_sha256": "47e639aec9e29a8e33fd63e801ed9d5e8e576649761cc1b71be3a33a36878eaa",
+      "tw1_full_spr_sha256": "7da183de051160b99c95791e326e75343d77955a4f79f3eba3c74ba6c5d1fb13",
+      "spr_group_indexes": {
+        "TW1": 393,
+        "CN50": 393,
+        "TW85": 393,
+        "MIXED25": 393
+      },
+      "TW1_TW85_exact_full_spr": true,
+      "CN50_TW85_exact_full_spr": true,
+      "MIXED25_equal_numeric_group_only": true,
+      "official_live_release_confirmed": false,
+      "later_build_official_certified": false
+    }
+  ],
+  "guardrails": {
+    "all_later_versions_contain_every_older_pet": false,
+    "same_animation_implies_official_pet_issuance": false,
+    "same_graphic_implies_same_species": false,
+    "early_year_closure": false,
+    "new_commercial_client_bytes_recovered": false,
+    "native_gameplay_observed": false,
+    "community_server_records_backdated_as_official": false
+  },
+  "reopen": "A newly authenticated precise early or later official build/patch, and independent operator/native issuance for historical pet dates; source-ready later specimens can be batch catalogued meanwhile.",
+  "next": "PET44_BATCH_SOURCE_SEPARATED_LATER_CLIENT_PET_IDENTITIES_AND_SPR",
+  "current_state_blob_preserved": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}

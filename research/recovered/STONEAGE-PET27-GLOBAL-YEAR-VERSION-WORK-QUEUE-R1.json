@@ -18,8 +18,8 @@
     "year": 2000,
     "phase": "YEAR_2000_OFFICIAL_PC_REGION_VERSION_PET_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET42-TW10-OPERATOR-MUSEUM-BIDIRECTIONAL-GAP-20261115",
-    "next": "PET43: Maintain 2000 OPEN; locate authenticated contemporaneous JP JSS/KR Inium/TW Waei/CN early clients and patches first, then operator issuance records for 2000 WGS cards and JOT prize claims.",
+    "latest_partial_root_review": "PET43-LATER-CLIENT-REVERSE-BACKFILL-20261115",
+    "next": "PET44: extract source-separated pet identities, visuals/actions and available native fields in held later preserved client carriers, with older missing original version placeholders and 2000 official frontier still OPEN.",
     "current_source_acquisition_priority": "CLIENT_FIRST_VERSION_AUTHENTICATION_AND_PET_RESOURCE_EXTRACTION_BEFORE_EXTERNAL_NEWS"
   },
   "region_tracks": [
@@ -1289,6 +1289,17 @@
       "textual_candidate_only": true,
       "new_named_pet_release_proofs": 0,
       "historical_pet_population_count": null
+    },
+    {
+      "id": "PET43-LATER-CLIENT-REVERSE-BACKFILL-20261115",
+      "report": "docs/continuity/STONEAGE-PET43-LATER-CLIENT-REVERSE-BACKFILL-20261115.md",
+      "evidence_json": "research/recovered/STONEAGE-PET43-LATER-CLIENT-SPR-BACKFILL-R1.json",
+      "tw1_early_named_records": 124,
+      "numeric_spr_groups_in_three_later_preserved_carriers": 124,
+      "full_spr_sha_match_TW1_TW85": 124,
+      "full_spr_sha_match_CN50_TW85": 124,
+      "new_named_pet_release_proofs": 0,
+      "historical_pet_population_count": null
     }
   ],
   "client_first_methodology": {
@@ -1296,8 +1307,9 @@
     "policy_section": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md#23-client-first-official-pet-extraction-historical-documents-as-targeted-supplements----2026-11-15",
     "source_manifest": "research/recovered/STONEAGE-PET38-CLIENT-FIRST-AVAILABLE-SOURCE-INVENTORY-R1.json",
     "target": "TW_WAEI_JSS_1_0_RETAIL",
-    "next": "PET42_2000_ORIGINAL_JOT_ISSUANCE_AND_WGS_CARD_ORIGINALS_OR_OFFICIAL_CLIENTS",
+    "next": "PET44_LATER_CLIENT_REVERSE_BACKFILL_WITHOUT_2000_OFFICIAL_BACKDATING",
     "reiterated_module_lock": "PET",
-    "year_cursor_unchanged": 2000
+    "year_cursor_unchanged": 2000,
+    "later_client_candidate_backfill_enabled": true
   }
 }
