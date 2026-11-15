@@ -5,6 +5,9 @@ on:
       - "research/recovered/STONEAGE-PET-MODULE-16-SOURCE-SEPARATED-UNIFIED-CATALOG-R1.json"
       - "tools/stoneage_pet16_lookup.py"
       - "tools/stoneage_pet39_tw10_album.py"
+      - "tools/stoneage_pet41_taiwan_museum.py"
+      - "tests/test_stoneage_pet41_taiwan_museum.py"
+      - "research/recovered/STONEAGE-PET41-TW-EARLY-WGS-MUSEUM-R1.json"
       - "tests/test_stoneage_pet39_tw10_album.py"
       - "research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json"
       - "tests/test_stoneage_pet16_unified_catalog.py"
@@ -27,6 +30,9 @@ on:
       - "research/recovered/STONEAGE-PET-MODULE-16-SOURCE-SEPARATED-UNIFIED-CATALOG-R1.json"
       - "tools/stoneage_pet16_lookup.py"
       - "tools/stoneage_pet39_tw10_album.py"
+      - "tools/stoneage_pet41_taiwan_museum.py"
+      - "tests/test_stoneage_pet41_taiwan_museum.py"
+      - "research/recovered/STONEAGE-PET41-TW-EARLY-WGS-MUSEUM-R1.json"
       - "tests/test_stoneage_pet39_tw10_album.py"
       - "research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json"
       - "tests/test_stoneage_pet16_unified_catalog.py"
@@ -69,6 +75,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet23_receipt
       - name: Verify Taiwan 1.0 original client album names and portraits
         run: python -m unittest tests.test_stoneage_pet39_tw10_album
+      - name: Verify Taiwanese museum source boundaries and original-name lookup
+        run: python -m unittest tests.test_stoneage_pet41_taiwan_museum
       - name: Verify source-separated retrieval and cross-carrier candidate scope
         run: |
           python tools/stoneage_pet16_lookup.py --query 100400 --limit 10

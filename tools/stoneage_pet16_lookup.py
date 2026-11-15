@@ -14,7 +14,9 @@ PET21_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-
 PET22_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-22-JP-124-ARCHIVED-IMAGE-RECOVERY-R1.json"
 PET23_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-23-JP-LOW-RATE-IMAGE-REACCESS-R1.json"
 PET39_PATH = PATH.with_name("STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json")
+PET41_PATH = PATH.with_name("STONEAGE-PET41-TW-EARLY-WGS-MUSEUM-R1.json")
 CLIENT_ALBUM = "tw10_client_album"
+TW_MUSEUM = "tw_early_wgs_museum"
 
 # Only datasets carrying an original numeric graphic field participate.
 # Official JP/CN page ordinals/image filenames are NOT client graphic numbers.
@@ -25,13 +27,21 @@ GRAPHIC_DATASETS = (
 
 
 def load_catalog(path=PATH):
-    """Load the frozen PET16 catalogue and the same-client Taiwan 1.0 supplement."""
+    """Load the frozen PET16 catalogue and the Taiwan client and museum indexes."""
     catalog = json.loads(path.read_text(encoding="utf-8"))
     if path.resolve() == PATH:
         album = json.loads(PET39_PATH.read_text(encoding="utf-8"))["records"]
         catalog["datasets"][CLIENT_ALBUM] = album
+        museum = json.loads(PET41_PATH.read_text(encoding="utf-8"))
+        pages = {page["filename"]: page["replay_url"] for page in museum["pages"]}
+        catalog["datasets"][TW_MUSEUM] = [
+            {**row, "id": f"TW_WGS_MUSEUM:{row['web_ordinal']:04d}",
+             "source": museum["evidence"], "source_page_replay_url": pages[row["source_page"]]}
+            for row in museum["rows"]
+        ]
         counts = catalog["metrics"]["source_namespace_row_counts_NOT_species"]
         counts[CLIENT_ALBUM] = len(album)
+        counts[TW_MUSEUM] = len(museum["rows"])
         catalog["metrics"]["record_total_NOT_species"] = sum(counts.values())
     return catalog
 
@@ -45,7 +55,8 @@ def lookup(catalog, query="", dataset=None, limit=20, details=False):
             continue
         for row in records:
             fields = (row.get("id"), row.get("name_as_written"), row.get("label_as_written"),
-                      row.get("template_id"), row.get("graphic_number"), row.get("web_ordinal"))
+                      row.get("template_id"), row.get("graphic_number"), row.get("web_ordinal"),
+                      row.get("tw10_same_printed_name_graphic"))
             if q and not any(q in str(v).casefold() for v in fields if v is not None):
                 continue
             result.append(
@@ -83,6 +94,8 @@ def graphic_trace(catalog, graphic_number, limit=20):
         }
     album_record = next((row for row in catalog["datasets"].get(CLIENT_ALBUM, [])
                          if row["graphic_number"] == graphic_number), None)
+    museum_matches = [row for row in catalog["datasets"].get(TW_MUSEUM, [])
+                      if row["tw10_same_printed_name_graphic"] == graphic_number]
     return {
         "graphic_number": graphic_number,
         "relation": "LITERAL_GRAPHIC_NUMBER_COINCIDENCE_ONLY",
@@ -90,6 +103,7 @@ def graphic_trace(catalog, graphic_number, limit=20):
         "same_historical_build_or_server_deployment_verified": False,
         "tw10_original_species_name": None,
         "tw10_same_client_album_record": album_record,
+        "tw_museum_exact_printed_name_matches": museum_matches[:limit],
         "official_JP_CN_web_ordinal_or_image_URL_not_mappable_to_graphic": True,
         "note": ("The same graphic number may be reused by multiple source templates. "
                  "A named late-community row never names the TW10 retail sprite. "
@@ -295,7 +309,7 @@ def main():
     p.add_argument("--dataset", choices=(
         "later2016_templates", "later2016_graphics",
         "mixed25_main", "mixed25_alternative", "tw10_visual",
-        "jp_official_web", "cn_official_web", CLIENT_ALBUM))
+        "jp_official_web", "cn_official_web", CLIENT_ALBUM, TW_MUSEUM))
     p.add_argument("--limit", type=int, default=20)
     p.add_argument("--summary", action="store_true")
     p.add_argument("--details", action="store_true",
