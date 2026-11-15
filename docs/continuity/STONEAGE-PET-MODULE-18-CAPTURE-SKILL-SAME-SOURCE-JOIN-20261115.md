@@ -45,3 +45,8 @@ python -m unittest tests.test_stoneage_pet16_unified_catalog tests.test_stoneage
 - PET16七项原缺口及官方同部署/原生行为/授权缺口全部保留；不可声明SOURCE_BOUNDED_CLOSED，更不能声明历史100%。
 - 历史 `docs/CURRENT-STATE.md` blob `c89e0e33537990aa2132b47c40fef49a985a935c` 不变；Stage A 7 PARTIAL + 2 OPEN；Stage B/wiki GATED；R79 PAUSED_NON_BLOCKING；整体完成率 UNKNOWN。
 - **后续仍在 PET 模块内**：优先批量追溯2016同源102个未定义的正数技能槽与mixed25备表12个未定义技能槽；没有可用同版技能主档则保留MISSING_SOURCE；另审查原宠物成长列的有据定义与真正原生效果缺口，不按字段名虚构公式。
+
+
+## 2026-11-15 前向PET19技能缺源复核
+
+[PET19 102+12次缺定义技能原槽/来源审计](STONEAGE-PET-MODULE-19-MISSING-SKILL-SOURCE-GAPS-20261115.md)已接入同一宠物统一查询入口的 `--skill-gaps`，未另造第二份宠物身份主表。2016备用技能文件原SHA与56个不同技能ID已核，不能补30个缺项；mixed25备表5个缺技能ID在主技能表另有同数字记录，但源表配置未知，不能替代原配对。上文初始 `下一步` 现由这份PET19实际审计前向续接为PET20；PET仍唯一活动模块，旧报告不改写。
