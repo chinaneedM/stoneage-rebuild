@@ -76,5 +76,16 @@ class TwoAxisGovernance(unittest.TestCase):
         self.assertEqual(d["r79"],"PAUSED_NON_BLOCKING")
         self.assertIsNone(d["overall_completion_percent"])
 
+
+    def test_stage_a_frozen_historical_prefix_survives_module_policy_updates(self):
+        import hashlib
+        from tools.stoneage_stage_a_review_packet import DEFAULT
+        manifest=json.loads(DEFAULT.read_text(encoding="utf-8"))
+        pin=next(x for x in manifest["preserved_historical_prefixes"]
+                 if x["path"]=="docs/PROJECT-CONTINUITY-PROTOCOL-R1.md")
+        body=(ROOT/pin["path"]).read_bytes()
+        self.assertGreaterEqual(len(body),pin["bytes"])
+        self.assertEqual(hashlib.sha256(body[:pin["bytes"]]).hexdigest(),pin["sha256"])
+
 if __name__=="__main__":
     unittest.main()

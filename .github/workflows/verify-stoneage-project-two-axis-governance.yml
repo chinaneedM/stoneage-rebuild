@@ -29,3 +29,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Enforce single active module and shared historical chronology across fresh conversations
         run: python -m unittest tests.test_stoneage_project_two_axis_governance
+      - name: Verify pre-existing Stage A frozen historical prefixes and immutable source pins
+        run: |
+          python -m unittest tests.test_stoneage_stage_a_review_packet tests.test_stoneage_stage_a_joint_review_decision
+          python tools/stoneage_stage_a_review_packet.py
