@@ -227,6 +227,27 @@ def operator_image_trace(catalog, pet21, region, ordinal, pet22=None, pet23=None
                     raise ValueError("PET23 image SHA not qualified by original byte response")
                 best_sha = x["image_original_sha256_or_null"]
                 best_capture = x["image_observed_archive_capture_or_null"]
+    followup = []
+    if pet23 is not None and source == "jp_official_web":
+        second = pet23.get("independent_followup_after_initial_receipt", {})
+        followup = [x for x in second.get("records", []) if x["web_ordinal"] == ordinal]
+        if len(followup) > 1:
+            raise ValueError("duplicate PET23 independent source replay webpage position")
+        if followup:
+            s = followup[0]
+            ref = original["source_refs"][0] if original else {}
+            if (original is None or s["original_source_record_id"] != original["id"] or
+                    s["original_image_url"] != original["image_reference_url"] or
+                    s["source_original_page_sha256"] != ref.get("sha256")):
+                raise ValueError("PET23 independent replay original official page/source mismatch")
+            repeated_sha = s["image_original_sha256_or_null"]
+            if repeated_sha is not None:
+                if s["image_result_kind"] != "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED":
+                    raise ValueError("unqualified PET23 followup GIF SHA")
+                if best_sha is not None and repeated_sha != best_sha:
+                    raise ValueError("different archived image SHA must remain a historical conflict")
+                best_sha = repeated_sha
+                best_capture = s["image_archive_capture_or_null"]
     return {
         "source_namespace": source,
         "web_ordinal": ordinal,
@@ -238,6 +259,7 @@ def operator_image_trace(catalog, pet21, region, ordinal, pet22=None, pet23=None
         "pet21_source_receipt_or_null": checked[0] if checked else None,
         "pet22_source_receipt_or_null": later[0] if later else None,
         "pet23_source_receipt_or_null": newest[0] if newest else None,
+        "pet23_independent_replay_source_receipt_or_null": followup[0] if followup else None,
         "best_observed_operator_archived_image_sha256_or_null": best_sha,
         "best_observed_operator_archived_image_capture_or_null": best_capture,
         "operator_web_image_is_not_authenticated_game_sprite": True,

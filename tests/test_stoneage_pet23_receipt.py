@@ -48,6 +48,23 @@ class Pet23(unittest.TestCase):
   self.assertIsNone(self.trace(124)["best_observed_operator_archived_image_sha256_or_null"])
   self.assertIsNone(self.trace(1,region="cn")["pet23_source_receipt_or_null"])
   self.assertFalse(self.trace(11)["original_official_client_species_ID_proven"])
+ def test_independent_action_repeats_nine_and_observes_number_110(self):
+  r=self.now["independent_followup_after_initial_receipt"]
+  self.assertEqual((r["source_workflow_run_id"],r["source_job_id"]),(43697189670,132760240615))
+  self.assertEqual((r["genuine_GIF_source_byte_responses_this_run"],r["nine_original_sha_reproduced_verbatim"]),(10,9))
+  self.assertEqual(r["sha_mismatches"],0)
+  self.assertEqual(r["additionally_observed_previously_missing_original_web_positions"],[110])
+  self.assertEqual((r["cumulative_positions_with_archived_GIF_byte_SHA"],r["remaining_positions_without_actual_GIF_byte_SHA"]),(38,86))
+  self.assertEqual(len(r["records"]),12)
+  repeated=[x for x in r["records"] if x["prior_first_run_image_sha256_or_null"]]
+  self.assertEqual(len(repeated),9)
+  self.assertTrue(all(x["prior_first_run_image_sha256_or_null"]==x["image_original_sha256_or_null"] for x in repeated))
+  new=self.trace(110)
+  self.assertEqual(new["best_observed_operator_archived_image_sha256_or_null"],
+      next(x["image_original_sha256_or_null"] for x in r["records"] if x["web_ordinal"]==110))
+  self.assertIsNotNone(new["pet23_independent_replay_source_receipt_or_null"])
+  self.assertFalse(new["original_official_client_species_ID_proven"])
+  self.assertIsNone(self.trace(124)["best_observed_operator_archived_image_sha256_or_null"])
  def test_reject_page_hash_forgery_and_illegal_old_sha_replace(self):
   forged=copy.deepcopy(self.now)
   forged["records"][0]["original_page_bytes_sha256"]="0"*64

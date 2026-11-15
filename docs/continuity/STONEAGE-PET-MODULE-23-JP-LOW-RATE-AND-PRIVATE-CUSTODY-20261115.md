@@ -38,3 +38,12 @@
 原图的归档捕获日期分别可能落在2003、2006或2008年，不等于原HTML页捕获瞬间；不证明台湾1.0或日本1999初代宠物身份、原客户端2D动画、原服效果或授权。GIF原始字节只在Runner进程内存中计算SHA，本次私人持久图像=0，Git公开图像=0；离线私人校验器仅为今后持有确切原文件时复核身份。统一图鉴 `python tools/stoneage_pet16_lookup.py --operator-web jp --web-ordinal 11` 已接纳第三批来源，但不能用官网位置当SPR号。
 
 **本批止点：** 12条已检，三条继续记录网络阻塞，不重复无限重试。宠物模块仍 `SOURCE_BOUNDED_PARTIAL`，下一任务仍为PET内部已保存的TW85/大陆候选原RD实际像素与资料联接／确实合法取得原图的私人永久保管；未达到PET整模块终审与用户确认，其他模块继续锁定。Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、整体完成率未知。
+
+
+## 独立PR来源重测得到第10项新SHA（前向追加，不改写首轮9/12）
+
+[候选Pull Request精确源Actions 43697189670](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43697189670) / Job `132760240615`，源HEAD `524949a901b6314169445475685832aff05b4206` 完成且success；同样严格单工人、原先12个确切URL。**此前9项均再次读到原GIF、9个SHA逐项完全一致、0不同**。原第一次失败的**第110位置「テラゾイド」**本次另实取60×65 GIF、捕获 `20031214200927`、SHA256 `cbba4ee95810bf4242d3028dfbe282fd8ee29b055f70a477d4915ade887f8c80`。第114与124继续网络失败，不能断言原图不存在。
+
+现在唯一真实来源覆盖 **38 / 124 个官网图片位置具有原GIF字节SHA**，剩下 **86 / 124** 尚无图像字节证据。第一批PET23的9/12及失败序列原封不动保留；第二批12项实际重读另存在[原机器收据的独立后验字段](../../research/recovered/STONEAGE-PET-MODULE-23-JP-LOW-RATE-IMAGE-REACCESS-R1.json)。`--operator-web jp --web-ordinal 110` 从同一个PET16入口检索到后验哈希，不能提升网页序号为游戏内宠物图号。
+
+本阶段原商业GIF永久私人保存仍为0、公开Git商业GIF仍为0；暂无原生JSS1999/TW1种属身份、配色/动作与历史运行证据，版权不授予。PET模块仍SOURCE_BOUNDED_PARTIAL，尚不向其它内容模块切换。
