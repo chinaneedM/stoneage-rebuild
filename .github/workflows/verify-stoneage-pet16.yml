@@ -1,4 +1,4 @@
-name: PET16 PET17 PET18 PET19 PET20 PET21 pet-source catalogue and coverage
+name: PET16-22 whole-pet source-qualified catalogue and receipts
 on:
   push:
     paths:
@@ -10,6 +10,7 @@ on:
       - "tests/test_stoneage_pet19_skill_gap_audit.py"
       - "tests/test_stoneage_pet20_whole_module_coverage.py"
       - "tests/test_stoneage_pet21_source_receipt.py"
+      - "tests/test_stoneage_pet22_jp_124_source_targets.py"
       - "research/recovered/STONEAGE-PET-MODULE-21-OFFICIAL-WEB-ARCHIVED-IMAGE-REACCESS-R1.json"
       - "research/recovered/STONEAGE-PET-MODULE-20-FIELD-COVERAGE-AND-SOURCE-STOP-MATRIX-R1.json"
       - "research/recovered/STONEAGE-PET-MODULE-19-MISSING-SKILL-SOURCE-GAP-AUDIT-R1.json"
@@ -24,6 +25,7 @@ on:
       - "tests/test_stoneage_pet19_skill_gap_audit.py"
       - "tests/test_stoneage_pet20_whole_module_coverage.py"
       - "tests/test_stoneage_pet21_source_receipt.py"
+      - "tests/test_stoneage_pet22_jp_124_source_targets.py"
       - "research/recovered/STONEAGE-PET-MODULE-21-OFFICIAL-WEB-ARCHIVED-IMAGE-REACCESS-R1.json"
       - "research/recovered/STONEAGE-PET-MODULE-20-FIELD-COVERAGE-AND-SOURCE-STOP-MATRIX-R1.json"
       - "research/recovered/STONEAGE-PET-MODULE-19-MISSING-SKILL-SOURCE-GAP-AUDIT-R1.json"
@@ -45,6 +47,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet20_whole_module_coverage
       - name: Verify PET21 archived operator-image SHA source receipts
         run: python -m unittest tests.test_stoneage_pet21_source_receipt
+      - name: Verify PET22 all 124 original JP web image source references and historical SHA receipt guards
+        run: python -m unittest tests.test_stoneage_pet22_jp_124_source_targets
       - name: Verify source-separated retrieval and cross-carrier candidate scope
         run: |
           python tools/stoneage_pet16_lookup.py --query 100400 --limit 10
