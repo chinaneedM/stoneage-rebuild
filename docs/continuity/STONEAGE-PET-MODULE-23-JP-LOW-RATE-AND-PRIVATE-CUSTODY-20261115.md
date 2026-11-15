@@ -27,3 +27,14 @@
 原官方JSS1999/TW1同部署宠物身份、原生技能成长效果、历史总宠物种数、所有GIF私有保管、版权可重发或新游戏直接复用。宠物模块维持 SOURCE_BOUNDED_PARTIAL；Stage A 7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，overall_percent=null。
 
 **网络运行结果与正式发布**须按精确Actions和原Git树实际补充，不能从脚本或CI配置推断。
+
+
+## 精确来源 Action 已执行及真实 PET23 结果（前向追加）
+
+精确 GitHub Actions [Run 43696651764](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43696651764)，Job `132758581358`，源代码 HEAD `6c88fac7660bbeb8b69686e467427296f8b6f165`，两个步骤均 `completed/success`。只核既有官方网页真实URL，不生成序号邻近的假URL，串行1工作者。
+
+本轮12次源位置复查：9张实际获得GIF原始二进制响应并计算真实SHA、3处实际未获得字节（110、114、124）；全部图片格式GIF、60×65。新增真实SHA位置为 **11、22、33、43、49、60、71、84、103**，都不在PET21/PET22已核28位置中；累计 **37/124** 个网页位置具备已核原图SHA，另 **87/124** 仍无实证图字节。原PET21/PET22失败、旧SHA均不覆盖。详见 [12条实测原网页、捕获时间与逐图SHA永久收据](../../research/recovered/STONEAGE-PET-MODULE-23-JP-LOW-RATE-IMAGE-REACCESS-R1.json)。
+
+原图的归档捕获日期分别可能落在2003、2006或2008年，不等于原HTML页捕获瞬间；不证明台湾1.0或日本1999初代宠物身份、原客户端2D动画、原服效果或授权。GIF原始字节只在Runner进程内存中计算SHA，本次私人持久图像=0，Git公开图像=0；离线私人校验器仅为今后持有确切原文件时复核身份。统一图鉴 `python tools/stoneage_pet16_lookup.py --operator-web jp --web-ordinal 11` 已接纳第三批来源，但不能用官网位置当SPR号。
+
+**本批止点：** 12条已检，三条继续记录网络阻塞，不重复无限重试。宠物模块仍 `SOURCE_BOUNDED_PARTIAL`，下一任务仍为PET内部已保存的TW85/大陆候选原RD实际像素与资料联接／确实合法取得原图的私人永久保管；未达到PET整模块终审与用户确认，其他模块继续锁定。Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、整体完成率未知。
