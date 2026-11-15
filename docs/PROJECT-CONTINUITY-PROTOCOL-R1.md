@@ -17,14 +17,10 @@ When the user sends the restart message, the assistant must:
 3. Read, in this order:
    - `README.md`
    - `docs/PROJECT-CONTINUITY-PROTOCOL-R1.md`
-   - `docs/STONEAGE-GLOBAL-TWO-AXIS-RESTORATION-CONSTITUTION-R1.md`
-   - `research/recovered/STONEAGE-RESTORATION-TWO-AXIS-GOVERNANCE-R1.json`
-   - `docs/CURRENT-STATE.md` (complete exact Git blob, never infer emptiness from blank file-interface output)
+   - `docs/CURRENT-STATE.md`
    - `docs/DESIGN-DECISIONS.md`
    - `docs/HISTORICAL-TIMELINE.md`
    - `docs/SOURCE-REGISTRY.md`
-   - `docs/RESTORATION-MODULE-FIRST-20261102.md`
-   - `docs/STONEAGE-PET-CHRONOLOGICAL-RESTORATION-ORDER-R1.md` and PET27 current yearly cursor while PET is ACTIVE
 4. Inspect recent commits to determine what changed most recently.
 5. Resume from the highest-priority unfinished item in `docs/CURRENT-STATE.md` unless the user gives a new priority.
 6. Do not ask the user to restate already-recorded project history.
@@ -248,7 +244,6 @@ The working human-readable order is `docs/STONEAGE-PET-CHRONOLOGICAL-RESTORATION
 
 **Highest immediate NEXT:** `PET-OFFICIAL-CHRONOLOGY-01: PRE-2000/2000 ROOT OFFICIAL PC YEAR-VERSION AND PET SOURCE AUDIT`, followed by 2001, 2002 and the succeeding years in order, documenting precise evidence and deferring unproven release claims.
 
-
 ## 22. Project-wide two-axis historical content restoration constitution — 2026-11-15
 
 **Latest user-approved underlying reconstruction logic, binding across ALL future conversations and content modules:** Combine **one locked active content module at a time** with **one global oldest-to-newest official release timeline** separated into independently attested territory/operator/product/version lanes. PET remains ACTIVE until its §19 terminal source-bounded review and explicit user approval of switching modules. Once a new module is intentionally unlocked, **restart the new module at the earliest relevant official year/version**, referencing (not duplicating or inventing) the previously established shared chronological/version/source index; the calendar frontier of PET does not become the starting year of NPC or MAP. This is a long-term implementation invariant for NPC/characters, world/maps, items, quests/story, mechanics, final cross-module integration, future archival guides and later separate offline game design. It supersedes old intermittent rotation instructions or NEXT lines that ask to jump to whatever unrelated content is easiest. Never reinterpret an early-stage cataloguing checkpoint as user permission to change the active module.
@@ -260,3 +255,6 @@ The working human-readable order is `docs/STONEAGE-PET-CHRONOLOGICAL-RESTORATION
 **Mandatory startup order and conflict resolution:** On every continuation, verify fresh remote main/ref/HEAD/tree/commit/open PR/exact Actions; read this protocol, the shared [two-axis constitution](STONEAGE-GLOBAL-TWO-AXIS-RESTORATION-CONSTITUTION-R1.md), the [machine-checkable governance](../research/recovered/STONEAGE-RESTORATION-TWO-AXIS-GOVERNANCE-R1.json), the [module-first order](RESTORATION-MODULE-FIRST-20261102.md), the active [pet historical year order](STONEAGE-PET-CHRONOLOGICAL-RESTORATION-ORDER-R1.md) and its PET27 cursor, plus the complete original current-state blob. The precedence is **latest explicit user instruction → this protocol §§19–22 + current module lock and chronological cursor → latest source-qualified active-module plan → old milestone reports/README/CURRENT historical NEXT → chat memory**. If a later user explicitly changes the policy, append a dated supersession to this protocol; do not silently replace the old instructions. New conversations must not require the user to remember the pet roster or repeat settled methodology.
 
 **Current NEXT remains unchanged:** `PET-OFFICIAL-CHRONOLOGY-01`, cautiously investigating actual earliest classic operator/pet evidence around 1999–2000. This policy update itself does not close any year, prove any pet, advance the frontier, restart a different content module, open Stage B or validate original native runtime. Preserve full `docs/CURRENT-STATE.md` Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`, Stage A 7 PARTIAL + 2 OPEN, Stage B/wiki GATED, R79 PAUSED_NON_BLOCKING, unknown overall percent, and private commercial resources.
+
+
+**Explicit stable startup path manifest (§22; forward-additive, immutable-prefix-compatible):** On new conversations, after fresh main verification and the old §2 sequence, additionally read  `docs/PROJECT-CONTINUITY-PROTOCOL-R1.md`, `docs/STONEAGE-GLOBAL-TWO-AXIS-RESTORATION-CONSTITUTION-R1.md`, `docs/DESIGN-DECISIONS.md`, `docs/RESTORATION-MODULE-FIRST-20261102.md`, `docs/STONEAGE-PET-CHRONOLOGICAL-RESTORATION-ORDER-R1.md`, `research/recovered/STONEAGE-RESTORATION-TWO-AXIS-GOVERNANCE-R1.json`, `docs/CURRENT-STATE.md`; fetch `docs/CURRENT-STATE.md` by the exact Git blob SHA if standard file read is blank. Latest user policy and active PET year frontier override outdated historical NEXT entries. This appended manifest has the same force as §22 and changes no earlier protocol prefix.
