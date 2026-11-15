@@ -1,0 +1,26 @@
+name: Verify StoneAge INTEGRATION118 original SignBoard checkpoint source and historical boundaries
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-stoneage-integration118-checkpoints.yml'
+      - 'tests/test_stoneage_integration118_checkpoint_signboards.py'
+      - 'research/recovered/STONEAGE-INTEGRATION118-TWO-SETS-OF-12-ORIGINAL-CHECKPOINT-SIGNBOARDS-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION118-TWO-CHECKPOINT-12-SIGNBOARDS-20261115.md'
+  pull_request:
+    paths:
+      - '.github/workflows/verify-stoneage-integration118-checkpoints.yml'
+      - 'tests/test_stoneage_integration118_checkpoint_signboards.py'
+      - 'research/recovered/STONEAGE-INTEGRATION118-TWO-SETS-OF-12-ORIGINAL-CHECKPOINT-SIGNBOARDS-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION118-TWO-CHECKPOINT-12-SIGNBOARDS-20261115.md'
+jobs:
+  source-only-checkpoint-crosswalk:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Crosscheck 24 original source texts against immutable prior CHAR07 and MAP04 catalogs, guard historical boundaries
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration118_checkpoint_signboards.py' -v
