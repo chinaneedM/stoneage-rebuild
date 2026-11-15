@@ -190,3 +190,14 @@ MAP/SCENE维持**SOURCE_BOUNDED_PARTIAL**，历史 CURRENT blob `c89e0e33537990a
 
 **当前 NEXT：`PET-MODULE-16 CONSOLIDATED CATALOGUE GAP AUDIT`。** 先审计PET01–PET15及11月15日前相关宠物成果的重复与覆盖，形成**持续维护的一份宠物图鉴/数据/动作/技能/获取全域索引**和覆盖缺口；然后沿同一宠物模块补真实来源材料，不再随意跨任务/NPC/地图/商店轮换。历史CURRENT完整2,709,173B原blob `c89e0e33537990aa2132b47c40fef49a985a935c`不改；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING、overall_percent=null。
 
+
+
+## 2026-11-15 最高生效更正：全球官方实装宠物全集，而非台湾1.0素材全集
+
+依据[连续性协议第20节](PROJECT-CONTINUITY-PROTOCOL-R1.md)，用户再次明确**全部官方实际推出的宠物**才是本模块的收录目标：大陆／台湾／日本／韩国及其它有证据运营区，早期和后期全部版本，生肖（年兽／马年）、商业宠（机豹／蒙奇等待核实原名和运营来源）、融合及后期宠（海胆／肥龙等待核实具体发行版）均在研究范围。可以扩展到确实获授权的其它石器IP正式产品，但必须按**不同作品／独立版本线**分开。
+
+**旧技术资料与新官方名录明确分离。** PET16原2,792条来自七个来源命名空间（含2016社区服务端模板、mixed25私服保存表、台湾1.0匿名SPR和官方网页位置），绝非2,792官方宠物；全部原证据保留，不删除或改造历史。新的[官方宠物收录规则及字段](STONEAGE-PET-OFFICIAL-GLOBAL-INCLUSION-R1.md)和[官方来源线索登记](../research/recovered/STONEAGE-PET-OFFICIAL-GLOBAL-RELEASE-EVIDENCE-R1.json)作为当前**官方宠物图鉴口径**；只有官方**实际投入游戏**的证据满足时才入已确认宠物统计。官方网页已展示、广告预告、安装包预载但未证明开放的宠物维持单独候选状态。跨版本同名、同图、不同皮肤、融合成品均独立保留，身份确证后才能合并。
+
+**当前唯一活动模块仍为PET。** NEXT 改为 `PET-OFFICIAL-01 GLOBAL OFFICIAL RELEASE ROSTER CENSUS`：以各运营地区／官服年代为分层，先从官网正式更新、活动投放、商业宠与后期融合宠实际发行证据建立可计数的真实宠物目录，再按宠物逐项回填2D图、动作、名称/别名、基础数值、成长、技能、获取途径；台湾1.0SPR仍可服务有据宠物，但不再先无止境穷举匿名图块。用户未来自己设计的宠物另建`DESIGN_FUTURE`数据层，当前历史资料不得伪称原创或混入现代重设计。
+
+旧PET23官网38个原图SHA有据位置仍属于官网网页证据，不是38种已证官服宠物。 `docs/CURRENT-STATE.md` 原完整blob `c89e0e33537990aa2132b47c40fef49a985a935c`保持不变；Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、总体完成率 UNKNOWN。
