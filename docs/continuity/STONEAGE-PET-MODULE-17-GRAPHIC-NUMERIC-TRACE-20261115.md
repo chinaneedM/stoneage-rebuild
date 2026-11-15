@@ -51,3 +51,8 @@ python -m unittest tests.test_stoneage_pet16_unified_catalog tests.test_stoneage
 - 未改历史 `docs/CURRENT-STATE.md`，保留原 blob `c89e0e33537990aa2132b47c40fef49a985a935c`。Stage A **7 PARTIAL + 2 OPEN**，Stage B/wiki **GATED**，R79 **PAUSED_NON_BLOCKING**，总体完成率 **UNKNOWN**。
 
 **下一项仍只能 PET18**：从已保存宠物技能、成长/级别、原捕捉和 GETPET 资料逐个来源建立可查询的技能—模板—实例及获取路径字段关系；同源可证边才接、缺早期官方主档则标 MISSING_SOURCE，绝不因为资料暂缺就退出宠物模块。
+
+
+## 2026-11-15 前向 PET18 同来源追溯
+
+[PET18 捕捉/物品/技能候选精确联接](STONEAGE-PET-MODULE-18-CAPTURE-SKILL-SAME-SOURCE-JOIN-20261115.md)继续使用同一宠物查询工具新增 `--capture-template`。11条 PET13 编译捕捉来源、其中10条 PETFLG1 主表四字段+SHA匹配，另1条 PETFLG0 仍单独保留；未宣称原生运行。本节只更新上文先前“下一项PET18”的阶段性指针：新一项在仍锁定 PET 的前提下审查同源缺失技能定义、成长与原生规则缺口，不切换模块；PET17原报告与首次失败/修正CI历史均保持。
