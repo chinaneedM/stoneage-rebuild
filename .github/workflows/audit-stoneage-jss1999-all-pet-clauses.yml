@@ -1,0 +1,43 @@
+name: PET31 audit all 1999 JSS official update clauses without species promotion
+on:
+  push:
+    paths:
+      - tools/stoneage_jss1999_pet_source_census.py
+      - tests/test_stoneage_jss1999_pet_source_census.py
+      - .github/workflows/audit-stoneage-jss1999-all-pet-clauses.yml
+  pull_request:
+    paths:
+      - tools/stoneage_jss1999_pet_source_census.py
+      - tests/test_stoneage_jss1999_pet_source_census.py
+      - .github/workflows/audit-stoneage-jss1999-all-pet-clauses.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay-certified-1999-update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Unit source and identity guard tests
+        run: python -m unittest tests.test_stoneage_jss1999_pet_source_census -v
+      - name: Acquire one first-party archived page and census all 15 1999 entries
+        shell: bash
+        run: |
+          python -m tools.stoneage_jss1999_pet_source_census --output "${{ runner.temp }}/pet31-jss1999.json"
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          x=json.loads((Path(os.environ["RUNNER_TEMP"])/"pet31-jss1999.json").read_text())
+          print("PET31_SOURCE_CENSUS_SUMMARY_START")
+          print(json.dumps({"source":x["source"],"operator_history":x["original_operator_history"],"hits":x["lexical_hit_clause_counts"],"dated_source_rows":x["dated_rows_1999"]},ensure_ascii=False,separators=(',',':')))
+          print("PET31_SOURCE_CENSUS_SUMMARY_END")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet31-jss1999-derived-census-only
+          path: ${{ runner.temp }}/pet31-jss1999.json
+          retention-days: 30
