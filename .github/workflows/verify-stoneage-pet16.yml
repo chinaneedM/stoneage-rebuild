@@ -1,0 +1,25 @@
+name: PET16 source-qualified unified catalogue
+on:
+  push:
+    paths:
+      - "research/recovered/STONEAGE-PET-MODULE-16-SOURCE-SEPARATED-UNIFIED-CATALOG-R1.json"
+      - "tools/stoneage_pet16_lookup.py"
+      - "tests/test_stoneage_pet16_unified_catalog.py"
+      - ".github/workflows/verify-stoneage-pet16.yml"
+  pull_request:
+    paths:
+      - "research/recovered/STONEAGE-PET-MODULE-16-SOURCE-SEPARATED-UNIFIED-CATALOG-R1.json"
+      - "tools/stoneage_pet16_lookup.py"
+      - "tests/test_stoneage_pet16_unified_catalog.py"
+      - ".github/workflows/verify-stoneage-pet16.yml"
+jobs:
+  pet16-source-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Independently compare against archived original-derived source records
+        run: python -m unittest tests.test_stoneage_pet16_unified_catalog
+      - name: Verify source-separated retrieval
+        run: |
+          python tools/stoneage_pet16_lookup.py --query 100400 --limit 10
+          python tools/stoneage_pet16_lookup.py --dataset jp_official_web --query ウーリ
