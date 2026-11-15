@@ -56,7 +56,7 @@ class TestOriginalMixed25SignboardSource(unittest.TestCase):
         self.assertEqual([x["checkpoint_label_number"] for x in self.rows],expected)
         self.assertEqual(self.rep["summary"]["physical_order_group_1_labels"],expected[:12])
         self.assertEqual(self.rep["summary"]["physical_order_group_2_labels"],expected[12:])
-        self.assertEqual(set(x["graphic_numeric_field"] for x in self.rows),{10062})
+        self.assertEqual(dict(Counter(x["graphic_numeric_field"] for x in self.rows)),{10062:14,10063:10})
 
     def test_04_duplicate_text_body_hashes_only_source_bound(self):
         groups={}
