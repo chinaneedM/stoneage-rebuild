@@ -201,3 +201,10 @@ MAP/SCENE维持**SOURCE_BOUNDED_PARTIAL**，历史 CURRENT blob `c89e0e33537990a
 **当前唯一活动模块仍为PET。** NEXT 改为 `PET-OFFICIAL-01 GLOBAL OFFICIAL RELEASE ROSTER CENSUS`：以各运营地区／官服年代为分层，先从官网正式更新、活动投放、商业宠与后期融合宠实际发行证据建立可计数的真实宠物目录，再按宠物逐项回填2D图、动作、名称/别名、基础数值、成长、技能、获取途径；台湾1.0SPR仍可服务有据宠物，但不再先无止境穷举匿名图块。用户未来自己设计的宠物另建`DESIGN_FUTURE`数据层，当前历史资料不得伪称原创或混入现代重设计。
 
 旧PET23官网38个原图SHA有据位置仍属于官网网页证据，不是38种已证官服宠物。 `docs/CURRENT-STATE.md` 原完整blob `c89e0e33537990aa2132b47c40fef49a985a935c`保持不变；Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、总体完成率 UNKNOWN。
+
+
+## 2026-11-15 新最高执行顺序：全球宠物按年份／国家／版本由远及近恢复
+
+用户要求**从最早年份及版本起，按年代推进至近期，避免跳查造成遗漏**。本约定优先于旧PET16、PET25、PET26尾段NEXT，且继续仅恢复 PET 模块。读取[协议第21节](PROJECT-CONTINUITY-PROTOCOL-R1.md)和[宠物历史年份工作令](STONEAGE-PET-CHRONOLOGICAL-RESTORATION-ORDER-R1.md)。**一个总年份、多个地区/运营商独立版本分支**；同年台服2.0与大陆2.0不能偷换上线日期、各国官方版和后续授权手游不能跨服混编。按2000前最早官服来源调查起，2000、2001、2002……至今；跨年前先做年份/地区/版本以及各宠物维度的有界核验，缺件保留 OPEN、允许新证据后向旧年增量补记。旧PET25+26 28条**发行文档事件**已在[PET27逐年来源游标](../research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json)按来源日期分类，**非全球独立物种数或28年完成**。
+
+**最新NEXT：`PET-OFFICIAL-CHRONOLOGY-01 1999-PROVISIONAL THROUGH 2000 EARLIEST OFFICIAL VERSION CENSUS`**；1999只是待证历史搜寻起点，绝非最早官方发行年的既定事实。先获取最早期正式JP/KR/TW/CN运营版别与实际宠物身份并核完整；若缺原件则记录证据止点，再按年份前进。不因为已知2008日服229种或2026活动素材而跳跃，亦不删已完成的后期研究。旧CURRENT原blob不修改，Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、完成率未知。

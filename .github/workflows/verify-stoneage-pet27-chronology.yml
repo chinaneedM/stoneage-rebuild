@@ -1,0 +1,37 @@
+name: PET27 chronological global official year-version restoration gate
+on:
+  push:
+    paths:
+      - "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md"
+      - "docs/RESTORATION-MODULE-FIRST-20261102.md"
+      - "docs/STONEAGE-PET-OFFICIAL-GLOBAL-INCLUSION-R1.md"
+      - "docs/STONEAGE-PET-CHRONOLOGICAL-RESTORATION-ORDER-R1.md"
+      - "research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json"
+      - "tools/stoneage_pet27_chronology.py"
+      - "tests/test_stoneage_pet27_chronology.py"
+      - ".github/workflows/verify-stoneage-pet27-chronology.yml"
+  pull_request:
+    paths:
+      - "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md"
+      - "docs/RESTORATION-MODULE-FIRST-20261102.md"
+      - "docs/STONEAGE-PET-OFFICIAL-GLOBAL-INCLUSION-R1.md"
+      - "docs/STONEAGE-PET-CHRONOLOGICAL-RESTORATION-ORDER-R1.md"
+      - "research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json"
+      - "tools/stoneage_pet27_chronology.py"
+      - "tests/test_stoneage_pet27_chronology.py"
+      - ".github/workflows/verify-stoneage-pet27-chronology.yml"
+permissions:
+  contents: read
+jobs:
+  chronology-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assert source-exact chronological order, version separation and earliest unreviewed year
+        run: python -m unittest tests.test_stoneage_pet27_chronology
+      - name: Replay year ordering and 2002 source attestation boundary
+        run: |
+          python tools/stoneage_pet27_chronology.py --validate --summary
+          python tools/stoneage_pet27_chronology.py --year 1999 --region JP
+          python tools/stoneage_pet27_chronology.py --year 2002
+          python tools/stoneage_pet27_chronology.py --year 2026 --region KR
