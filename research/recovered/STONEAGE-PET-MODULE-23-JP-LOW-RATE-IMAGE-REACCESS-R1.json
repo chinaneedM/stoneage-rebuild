@@ -403,5 +403,356 @@
       "right_to_publish_or_reuse_image_approved": false,
       "source_image_at_same_time_as_HTML_page_proven": false
     }
-  ]
+  ],
+  "independent_followup_after_initial_receipt": {
+    "purpose": "SOURCE_ONLY_INDEPENDENT_REPRODUCIBILITY_AND_ONE_NEW_ORIGINAL_GIF_SHA",
+    "source_workflow_run_id": 43697189670,
+    "source_job_id": 132760240615,
+    "exact_source_candidate_head_sha": "524949a901b6314169445475685832aff05b4206",
+    "workflow_page": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43697189670",
+    "actions_status": "completed",
+    "actions_conclusion": "success",
+    "total_same_12_source_positions_reprobed": 12,
+    "genuine_GIF_source_byte_responses_this_run": 10,
+    "nine_original_sha_reproduced_verbatim": 9,
+    "sha_mismatches": 0,
+    "additionally_observed_previously_missing_original_web_positions": [
+      110
+    ],
+    "failed_gif_replay_this_run": [
+      114,
+      124
+    ],
+    "previously_verified_positions_before_PET23": 28,
+    "unique_new_verified_positions_first_PET23_run": 9,
+    "unique_additionally_verified_positions_this_followup": 1,
+    "cumulative_positions_with_archived_GIF_byte_SHA": 38,
+    "remaining_positions_without_actual_GIF_byte_SHA": 86,
+    "historical_first_PET23_run_result_9_of_12_preserved": true,
+    "original_GIF_bytes_persisted_privately_in_both_runs": 0,
+    "original_GIF_bytes_published_in_both_runs": 0,
+    "source_web_image_is_not_original_client_species_or_sprite_ID": true,
+    "source_image_rights_to_use_in_new_game_or_wiki_verified": false,
+    "original_JSS1999_TW1_same_deployment_verified": false,
+    "records": [
+      {
+        "web_ordinal": 11,
+        "original_source_record_id": "jp-hangame-pet-web:position:011",
+        "original_image_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup1-11.gif",
+        "source_original_page_sha256": "a01a2c93d410511b9e08f7a066569d8cec8db883f50047baf0ca3160d50ed0fc",
+        "image_result_kind": "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED",
+        "first_attempt": {
+          "content_type": "image/gif",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        "availability_attempt": null,
+        "followup_archive_attempt": null,
+        "image_archive_capture_or_null": "20060604070220",
+        "image_original_sha256_or_null": "1f5c5ca8d18e49392984958ccd0dca06a8bd294d386f564ba766ecc95444fa7f",
+        "image_original_byte_length_or_null": 4610,
+        "image_dimensions_or_null": [
+          60,
+          65
+        ],
+        "prior_first_run_image_sha256_or_null": "1f5c5ca8d18e49392984958ccd0dca06a8bd294d386f564ba766ecc95444fa7f",
+        "conflict_with_first_run_sha": false,
+        "original_file_durably_stored_privately": false,
+        "original_client_species_identity_verified": false,
+        "permission_for_public_use_verified": false
+      },
+      {
+        "web_ordinal": 22,
+        "original_source_record_id": "jp-hangame-pet-web:position:022",
+        "original_image_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup1-22.gif",
+        "source_original_page_sha256": "a01a2c93d410511b9e08f7a066569d8cec8db883f50047baf0ca3160d50ed0fc",
+        "image_result_kind": "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED",
+        "first_attempt": {
+          "content_type": "image/gif",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        "availability_attempt": null,
+        "followup_archive_attempt": null,
+        "image_archive_capture_or_null": "20060604070504",
+        "image_original_sha256_or_null": "36bd92303aaab3b2b5e9fdc435f5909ebf10cc422a572dd0f92b81a519cd476a",
+        "image_original_byte_length_or_null": 4378,
+        "image_dimensions_or_null": [
+          60,
+          65
+        ],
+        "prior_first_run_image_sha256_or_null": "36bd92303aaab3b2b5e9fdc435f5909ebf10cc422a572dd0f92b81a519cd476a",
+        "conflict_with_first_run_sha": false,
+        "original_file_durably_stored_privately": false,
+        "original_client_species_identity_verified": false,
+        "permission_for_public_use_verified": false
+      },
+      {
+        "web_ordinal": 33,
+        "original_source_record_id": "jp-hangame-pet-web:position:033",
+        "original_image_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup1-33.gif",
+        "source_original_page_sha256": "a01a2c93d410511b9e08f7a066569d8cec8db883f50047baf0ca3160d50ed0fc",
+        "image_result_kind": "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED",
+        "first_attempt": {
+          "content_type": "image/gif",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        "availability_attempt": null,
+        "followup_archive_attempt": null,
+        "image_archive_capture_or_null": "20031214184734",
+        "image_original_sha256_or_null": "8c30c65a6b61a39faafd54a26a463ad8491e5b9175ad4d8aa49b1b8871bf2d04",
+        "image_original_byte_length_or_null": 4196,
+        "image_dimensions_or_null": [
+          60,
+          65
+        ],
+        "prior_first_run_image_sha256_or_null": "8c30c65a6b61a39faafd54a26a463ad8491e5b9175ad4d8aa49b1b8871bf2d04",
+        "conflict_with_first_run_sha": false,
+        "original_file_durably_stored_privately": false,
+        "original_client_species_identity_verified": false,
+        "permission_for_public_use_verified": false
+      },
+      {
+        "web_ordinal": 43,
+        "original_source_record_id": "jp-hangame-pet-web:position:043",
+        "original_image_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup1-43.gif",
+        "source_original_page_sha256": "a01a2c93d410511b9e08f7a066569d8cec8db883f50047baf0ca3160d50ed0fc",
+        "image_result_kind": "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED",
+        "first_attempt": {
+          "content_type": "image/gif",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        "availability_attempt": null,
+        "followup_archive_attempt": null,
+        "image_archive_capture_or_null": "20031214214103",
+        "image_original_sha256_or_null": "1d2b6b3daa28b5113d6339b800441df4626b86cd34d93e7174e7fedb2fad7229",
+        "image_original_byte_length_or_null": 4280,
+        "image_dimensions_or_null": [
+          60,
+          65
+        ],
+        "prior_first_run_image_sha256_or_null": "1d2b6b3daa28b5113d6339b800441df4626b86cd34d93e7174e7fedb2fad7229",
+        "conflict_with_first_run_sha": false,
+        "original_file_durably_stored_privately": false,
+        "original_client_species_identity_verified": false,
+        "permission_for_public_use_verified": false
+      },
+      {
+        "web_ordinal": 49,
+        "original_source_record_id": "jp-hangame-pet-web:position:049",
+        "original_image_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup2-4.gif",
+        "source_original_page_sha256": "09faee5a55cb09ea8527090fb09fc00166abce94c83ef34322f4cacd4ad65249",
+        "image_result_kind": "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED",
+        "first_attempt": {
+          "content_type": "image/gif",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        "availability_attempt": null,
+        "followup_archive_attempt": null,
+        "image_archive_capture_or_null": "20080819083927",
+        "image_original_sha256_or_null": "e1e493495c202228c67a0ec48ccf97f13eff89b9a150b3c8e888d04aa3f8a389",
+        "image_original_byte_length_or_null": 4373,
+        "image_dimensions_or_null": [
+          60,
+          65
+        ],
+        "prior_first_run_image_sha256_or_null": "e1e493495c202228c67a0ec48ccf97f13eff89b9a150b3c8e888d04aa3f8a389",
+        "conflict_with_first_run_sha": false,
+        "original_file_durably_stored_privately": false,
+        "original_client_species_identity_verified": false,
+        "permission_for_public_use_verified": false
+      },
+      {
+        "web_ordinal": 60,
+        "original_source_record_id": "jp-hangame-pet-web:position:060",
+        "original_image_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup2-15.gif",
+        "source_original_page_sha256": "09faee5a55cb09ea8527090fb09fc00166abce94c83ef34322f4cacd4ad65249",
+        "image_result_kind": "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED",
+        "first_attempt": {
+          "content_type": "image/gif",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        "availability_attempt": null,
+        "followup_archive_attempt": null,
+        "image_archive_capture_or_null": "20080819083446",
+        "image_original_sha256_or_null": "aec5da422a7afab8d33f066b4777918cd533baf3af89c183cb6f103e04381d63",
+        "image_original_byte_length_or_null": 4530,
+        "image_dimensions_or_null": [
+          60,
+          65
+        ],
+        "prior_first_run_image_sha256_or_null": "aec5da422a7afab8d33f066b4777918cd533baf3af89c183cb6f103e04381d63",
+        "conflict_with_first_run_sha": false,
+        "original_file_durably_stored_privately": false,
+        "original_client_species_identity_verified": false,
+        "permission_for_public_use_verified": false
+      },
+      {
+        "web_ordinal": 71,
+        "original_source_record_id": "jp-hangame-pet-web:position:071",
+        "original_image_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup2-26.gif",
+        "source_original_page_sha256": "09faee5a55cb09ea8527090fb09fc00166abce94c83ef34322f4cacd4ad65249",
+        "image_result_kind": "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED",
+        "first_attempt": {
+          "content_type": "image/gif",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        "availability_attempt": null,
+        "followup_archive_attempt": null,
+        "image_archive_capture_or_null": "20080819084950",
+        "image_original_sha256_or_null": "3930085e0bb716b257de81e3fa90be1d087251e8151de222187a090c46a71cea",
+        "image_original_byte_length_or_null": 4128,
+        "image_dimensions_or_null": [
+          60,
+          65
+        ],
+        "prior_first_run_image_sha256_or_null": "3930085e0bb716b257de81e3fa90be1d087251e8151de222187a090c46a71cea",
+        "conflict_with_first_run_sha": false,
+        "original_file_durably_stored_privately": false,
+        "original_client_species_identity_verified": false,
+        "permission_for_public_use_verified": false
+      },
+      {
+        "web_ordinal": 84,
+        "original_source_record_id": "jp-hangame-pet-web:position:084",
+        "original_image_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup2-39.gif",
+        "source_original_page_sha256": "09faee5a55cb09ea8527090fb09fc00166abce94c83ef34322f4cacd4ad65249",
+        "image_result_kind": "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED",
+        "first_attempt": {
+          "content_type": "image/gif",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        "availability_attempt": null,
+        "followup_archive_attempt": null,
+        "image_archive_capture_or_null": "20080819083856",
+        "image_original_sha256_or_null": "f2e45baa31615f1a1ac2e80b4c4a6781caddebb5970ac5e434823f0f7614a190",
+        "image_original_byte_length_or_null": 4283,
+        "image_dimensions_or_null": [
+          60,
+          65
+        ],
+        "prior_first_run_image_sha256_or_null": "f2e45baa31615f1a1ac2e80b4c4a6781caddebb5970ac5e434823f0f7614a190",
+        "conflict_with_first_run_sha": false,
+        "original_file_durably_stored_privately": false,
+        "original_client_species_identity_verified": false,
+        "permission_for_public_use_verified": false
+      },
+      {
+        "web_ordinal": 103,
+        "original_source_record_id": "jp-hangame-pet-web:position:103",
+        "original_image_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup3-13.gif",
+        "source_original_page_sha256": "b9284c6185fc5a999dd3bf0da3ac9d341e31312dcdf5859ee5a5786eb0cbc9ad",
+        "image_result_kind": "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED",
+        "first_attempt": {
+          "content_type": "image/gif",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        "availability_attempt": null,
+        "followup_archive_attempt": null,
+        "image_archive_capture_or_null": "20080819080147",
+        "image_original_sha256_or_null": "01d4720741a933a59cf21b342b8f1c1c828250da7818a2c98763bb9ac85ed8de",
+        "image_original_byte_length_or_null": 4530,
+        "image_dimensions_or_null": [
+          60,
+          65
+        ],
+        "prior_first_run_image_sha256_or_null": "01d4720741a933a59cf21b342b8f1c1c828250da7818a2c98763bb9ac85ed8de",
+        "conflict_with_first_run_sha": false,
+        "original_file_durably_stored_privately": false,
+        "original_client_species_identity_verified": false,
+        "permission_for_public_use_verified": false
+      },
+      {
+        "web_ordinal": 110,
+        "original_source_record_id": "jp-hangame-pet-web:position:110",
+        "original_image_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup3-20.gif",
+        "source_original_page_sha256": "b9284c6185fc5a999dd3bf0da3ac9d341e31312dcdf5859ee5a5786eb0cbc9ad",
+        "image_result_kind": "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED",
+        "first_attempt": {
+          "content_type": "image/gif",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        "availability_attempt": null,
+        "followup_archive_attempt": null,
+        "image_archive_capture_or_null": "20031214200927",
+        "image_original_sha256_or_null": "cbba4ee95810bf4242d3028dfbe282fd8ee29b055f70a477d4915ade887f8c80",
+        "image_original_byte_length_or_null": 4202,
+        "image_dimensions_or_null": [
+          60,
+          65
+        ],
+        "prior_first_run_image_sha256_or_null": null,
+        "conflict_with_first_run_sha": false,
+        "original_file_durably_stored_privately": false,
+        "original_client_species_identity_verified": false,
+        "permission_for_public_use_verified": false
+      },
+      {
+        "web_ordinal": 114,
+        "original_source_record_id": "jp-hangame-pet-web:position:114",
+        "original_image_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup3-24.gif",
+        "source_original_page_sha256": "b9284c6185fc5a999dd3bf0da3ac9d341e31312dcdf5859ee5a5786eb0cbc9ad",
+        "image_result_kind": "ARCHIVED_URL_NOT_READABLE_NOW",
+        "first_attempt": {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        },
+        "availability_attempt": {
+          "content_type": "application/json",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        "followup_archive_attempt": {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        },
+        "image_archive_capture_or_null": null,
+        "image_original_sha256_or_null": null,
+        "image_original_byte_length_or_null": null,
+        "image_dimensions_or_null": null,
+        "prior_first_run_image_sha256_or_null": null,
+        "conflict_with_first_run_sha": false,
+        "original_file_durably_stored_privately": false,
+        "original_client_species_identity_verified": false,
+        "permission_for_public_use_verified": false
+      },
+      {
+        "web_ordinal": 124,
+        "original_source_record_id": "jp-hangame-pet-web:position:124",
+        "original_image_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup3-34.gif",
+        "source_original_page_sha256": "b9284c6185fc5a999dd3bf0da3ac9d341e31312dcdf5859ee5a5786eb0cbc9ad",
+        "image_result_kind": "ARCHIVED_URL_NOT_READABLE_NOW",
+        "first_attempt": {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        },
+        "availability_attempt": {
+          "content_type": "application/json",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        "followup_archive_attempt": {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        },
+        "image_archive_capture_or_null": null,
+        "image_original_sha256_or_null": null,
+        "image_original_byte_length_or_null": null,
+        "image_dimensions_or_null": null,
+        "prior_first_run_image_sha256_or_null": null,
+        "conflict_with_first_run_sha": false,
+        "original_file_durably_stored_privately": false,
+        "original_client_species_identity_verified": false,
+        "permission_for_public_use_verified": false
+      }
+    ]
+  }
 }
