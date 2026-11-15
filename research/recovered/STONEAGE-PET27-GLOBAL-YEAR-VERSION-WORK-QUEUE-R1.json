@@ -18,8 +18,8 @@
     "year": 2000,
     "phase": "YEAR_2000_OFFICIAL_PC_REGION_VERSION_PET_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET36-1999-SOURCE-BOUNDED-YEAR-AUDIT-20261115",
-    "next": "PET37 2000 Taiwan Waei official 1.0 pet roster, Korea Inium 10/10 vs 10/12 source conflict, Japan JSS 2000 dated updates, China late beta evidence; keep 1999 source-bounded but historically incomplete and reopen on original evidence"
+    "latest_partial_root_review": "PET37-TW2000-MINSHENG-LOYALTY-20261115",
+    "next": "PET38: continue year 2000 JSS JP original 25 date official updates and source-exact pet claims; TW Waei 1.0 and Minsheng paper/PCGAMER book gap; KR Inium October conflict. Do not close 2000 or name species from journalist description."
   },
   "region_tracks": [
     "CN",
@@ -458,7 +458,16 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "partial_source_review_receipts": [
+        {
+          "id": "PET37-TW2000-MINSHENG-LOYALTY-20261115",
+          "region": "TW",
+          "report": "docs/continuity/STONEAGE-PET37-TW2000-MINSHENG-PET-PRESS-20261115.md",
+          "evidence_json": "research/recovered/STONEAGE-PET37-TW2000-MINSHENG-PET-PRESS-R1.json",
+          "year_not_closed": true
+        }
+      ]
     },
     {
       "year": 2001,
@@ -1233,6 +1242,17 @@
       "new_qualified_named_live_pet_proofs": 0,
       "historical_pet_population_count": null,
       "reopen_on_new_original_1999_source": true
+    },
+    {
+      "id": "PET37-TW2000-MINSHENG-LOYALTY-20261115",
+      "year_frontier_before": 2000,
+      "year_frontier_after": 2000,
+      "review_status": "CONTEMPORANEOUS_2000_TW_NEWSPAPER_REPRINT_PET_MECHANIC_DESCRIPTION_NOT_NATIVE_RELEASE",
+      "report": "docs/continuity/STONEAGE-PET37-TW2000-MINSHENG-PET-PRESS-20261115.md",
+      "evidence_json": "research/recovered/STONEAGE-PET37-TW2000-MINSHENG-PET-PRESS-R1.json",
+      "reported_newspaper_date": "2000-04-11",
+      "new_named_pet_release_proofs": 0,
+      "historical_pet_population_count": null
     }
   ]
 }
