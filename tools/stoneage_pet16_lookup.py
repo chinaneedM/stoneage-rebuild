@@ -11,6 +11,7 @@ PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MO
 PET13_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-13-ORIGINAL-CAPTURE-TEMPLATE-ATTRIBUTES-SKILLS-R1.json"
 PET19_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-19-MISSING-SKILL-SOURCE-GAP-AUDIT-R1.json"
 PET21_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-21-OFFICIAL-WEB-ARCHIVED-IMAGE-REACCESS-R1.json"
+PET22_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-22-JP-124-ARCHIVED-IMAGE-RECOVERY-R1.json"
 
 # Only datasets carrying an original numeric graphic field participate.
 # Official JP/CN page ordinals/image filenames are NOT client graphic numbers.
@@ -170,7 +171,7 @@ def skill_gap_trace(audit, skill_id=None, limit=20):
     }
 
 
-def operator_image_trace(catalog, pet21, region, ordinal):
+def operator_image_trace(catalog, pet21, region, ordinal, pet22=None):
     """Show archived operator-web image SHA receipt without mapping any game pet ID."""
     if region not in ("jp", "cn"):
         raise ValueError("region must be 'jp' or 'cn'")
@@ -189,6 +190,22 @@ def operator_image_trace(catalog, pet21, region, ordinal):
         raise ValueError("duplicate operator-image probe receipt")
     if checked and (original is None or checked[0]["original_record_id"] != original["id"]):
         raise ValueError("PET21 source receipt does not match original catalogue record")
+    later = []
+    if pet22 is not None and source == "jp_official_web":
+        later = [x for x in pet22["records"] if x["web_ordinal"] == ordinal]
+        if len(later) > 1:
+            raise ValueError("PET22 contains duplicated JP historical web ordinal")
+        if later and (original is None or
+                      later[0]["original_operator_web_record_id"] != original["id"]):
+            raise ValueError("PET22 source receipt does not match original operator record")
+    best_sha = (
+        later[0]["best_archival_observation_sha256_or_null"] if later else
+        checked[0]["returned_original_media_image_sha256_or_null"] if checked else None
+    )
+    best_capture = (
+        later[0]["best_archival_observation_capture_or_null"] if later else
+        checked[0]["observed_image_archive_capture_or_null"] if checked else None
+    )
     return {
         "source_namespace": source,
         "web_ordinal": ordinal,
@@ -198,6 +215,10 @@ def operator_image_trace(catalog, pet21, region, ordinal):
             "NOT_IN_PET21_SAMPLE" if original else "NO_SOURCE_POSITION"
         ),
         "pet21_source_receipt_or_null": checked[0] if checked else None,
+        "pet22_source_receipt_or_null": later[0] if later else None,
+        "best_observed_operator_archived_image_sha256_or_null": best_sha,
+        "best_observed_operator_archived_image_capture_or_null": best_capture,
+        "operator_web_image_is_not_authenticated_game_sprite": True,
         "original_official_client_species_ID_proven": False,
         "jss1999_tw10_early_same_deployment_proven": False,
         "webpage_and_image_same_capture_instant_proven": False,
@@ -266,7 +287,9 @@ def main():
             p.error("--operator-web is an independent exact-source lookup mode")
         catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
         report = json.loads(PET21_PATH.read_text(encoding="utf-8"))
-        result = operator_image_trace(catalog, report, args.operator_web, args.web_ordinal)
+        pet22 = json.loads(PET22_PATH.read_text(encoding="utf-8"))
+        result = operator_image_trace(catalog, report, args.operator_web,
+                                      args.web_ordinal, pet22=pet22)
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return 0
     catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
