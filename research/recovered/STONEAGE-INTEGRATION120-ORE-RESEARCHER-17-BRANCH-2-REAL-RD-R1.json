@@ -1,0 +1,267 @@
+{
+  "schema": "stoneage.integration120_community_ore_researcher_17_source_events_two_retail_original_RD_visual_join.r1",
+  "date": "2026-11-15",
+  "starting_remote": {
+    "main_sha": "09e544bce770345772246e99a2dc7bf414b6deee",
+    "main_tree": "754519b04e82ffa7655e085bedfc11d9eade7805",
+    "previous_head_actions_completed_success": 1,
+    "open_prs_before_work": 0,
+    "preserved_historical_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "original_community_mixed25": {
+    "source_npc_zip_size": 995176,
+    "source_npc_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "zip_members_crc_verified": 2205,
+    "original_source_create_path": "genout/1200npc_m.create",
+    "original_create_SHA256": "c1acf84f3210e4d996c1f56e8f3a57e438a9ee66268c56fe530317adfa4cb87f",
+    "create_entry_ordinal": 0,
+    "create_block_sha256": "b23c76bc07c8a40d44ce7184756b0279d5fe73d00847bba440438c22e66f0c45",
+    "floor_id": 2000,
+    "borncorner": [
+      87,
+      95,
+      87,
+      95
+    ],
+    "graphic_alias": 16209,
+    "original_source_parameter_path": "genout/msg_1200_58_43",
+    "original_source_parameter_sha256": "a4d8273078cb60070432cb18339a4973ba531f4f8b0578af1fd01518eef28518",
+    "original_source_parameter_size": 6304,
+    "original_SOURCE_TYPE_count": 17,
+    "source_directives": {
+      "REQUEST": 1,
+      "MESSAGE": 1,
+      "ACCEPT": 15
+    },
+    "events": [
+      {
+        "ordinal": 0,
+        "type": "REQUEST",
+        "predicate": "LV>29&ENDEV=4&ITEM!=2785&ITEM!=2786",
+        "getItem": 2785
+      },
+      {
+        "ordinal": 1,
+        "type": "MESSAGE",
+        "predicate": "LV>29&ENDEV=4&ITEM=2785&ITEM!=2786"
+      },
+      {
+        "ordinal": 2,
+        "type": "ACCEPT",
+        "predicate": "ITEM=2785&ITEM=2786*14",
+        "getStone": 50000,
+        "delItem": [
+          2785,
+          2786
+        ]
+      },
+      {
+        "ordinal": 3,
+        "type": "ACCEPT",
+        "predicate": "ITEM=2785&ITEM=2786*13",
+        "getStone": 30000,
+        "delItem": [
+          2785,
+          2786
+        ]
+      },
+      {
+        "ordinal": 4,
+        "type": "ACCEPT",
+        "predicate": "ITEM=2785&ITEM=2786*12",
+        "getStone": 20000,
+        "delItem": [
+          2785,
+          2786
+        ]
+      },
+      {
+        "ordinal": 5,
+        "type": "ACCEPT",
+        "predicate": "ITEM=2785&ITEM=2786*11",
+        "getStone": 15000,
+        "delItem": [
+          2785,
+          2786
+        ]
+      },
+      {
+        "ordinal": 6,
+        "type": "ACCEPT",
+        "predicate": "ITEM=2785&ITEM=2786*10",
+        "getStone": 10000,
+        "delItem": [
+          2785,
+          2786
+        ]
+      },
+      {
+        "ordinal": 7,
+        "type": "ACCEPT",
+        "predicate": "ITEM=2785&ITEM=2786*9",
+        "getStone": 9000,
+        "delItem": [
+          2785,
+          2786
+        ]
+      },
+      {
+        "ordinal": 8,
+        "type": "ACCEPT",
+        "predicate": "ITEM=2785&ITEM=2786*8",
+        "getStone": 8000,
+        "delItem": [
+          2785,
+          2786
+        ]
+      },
+      {
+        "ordinal": 9,
+        "type": "ACCEPT",
+        "predicate": "ITEM=2785&ITEM=2786*7",
+        "getStone": 7000,
+        "delItem": [
+          2785,
+          2786
+        ]
+      },
+      {
+        "ordinal": 10,
+        "type": "ACCEPT",
+        "predicate": "ITEM=2785&ITEM=2786*6",
+        "getStone": 6000,
+        "delItem": [
+          2785,
+          2786
+        ]
+      },
+      {
+        "ordinal": 11,
+        "type": "ACCEPT",
+        "predicate": "ITEM=2785&ITEM=2786*5",
+        "getStone": 5000,
+        "delItem": [
+          2785,
+          2786
+        ]
+      },
+      {
+        "ordinal": 12,
+        "type": "ACCEPT",
+        "predicate": "ITEM=2785&ITEM=2786*4",
+        "getStone": 4000,
+        "delItem": [
+          2785,
+          2786
+        ]
+      },
+      {
+        "ordinal": 13,
+        "type": "ACCEPT",
+        "predicate": "ITEM=2785&ITEM=2786*3",
+        "getStone": 3000,
+        "delItem": [
+          2785,
+          2786
+        ]
+      },
+      {
+        "ordinal": 14,
+        "type": "ACCEPT",
+        "predicate": "ITEM=2785&ITEM=2786*2",
+        "getStone": 2000,
+        "delItem": [
+          2785,
+          2786
+        ]
+      },
+      {
+        "ordinal": 15,
+        "type": "ACCEPT",
+        "predicate": "ITEM=2785&ITEM=2786*1",
+        "getStone": 1000,
+        "delItem": [
+          2785,
+          2786
+        ]
+      },
+      {
+        "ordinal": 16,
+        "type": "ACCEPT",
+        "predicate": "ITEM!=2785&ITEM=2786",
+        "getStone": 1000,
+        "delItem": [
+          2786
+        ]
+      }
+    ]
+  },
+  "original_community_two_itemsets": {
+    "source_artifact_zip_size": 5868386,
+    "source_artifact_zip_sha256": "cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa",
+    "zip_members_crc_verified": 838,
+    "original_itemset_a_SHA256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+    "original_itemset_b_SHA256": "6d6d63fda59c6bda2f239fe18c9361b5c9da18c84f678b7cc95bde24544292fb",
+    "both_original_source_rows_identical_between_two_tables": true,
+    "items": [
+      {
+        "id": 2785,
+        "source_94col_row_sha256": "1d9752539f7f8dcb9ef85c09a4c4259d0553f617959a927e93a2157c30cb0377",
+        "image_alias": 24222,
+        "width": 28,
+        "height": 39,
+        "retail_original_RD_sha256": "d519e1dbfcf21cb23c7850eb741381698dc0ebd7437d69d68d877b0ad7cf8052",
+        "retail_original_indexed_pixels_sha256": "1effa165ba143f54cd79bd43bf780879f5016a7eb51c2bd5529e2913e97e91c2",
+        "private_PNG_sha256": "a17cd31b136a7d6a147d4c803bd5d0c01af58dc1c7570e95741195ef25edd7b1"
+      },
+      {
+        "id": 2786,
+        "source_94col_row_sha256": "9df6e6fdc886a67c6954e1b71e0e4dad1a0dda0feca225826dead12eef6a93e5",
+        "image_alias": 14659,
+        "width": 24,
+        "height": 23,
+        "retail_original_RD_sha256": "ea6e817c85523fc3e6c95b1b91e48fbeaea7e7183fc3ec25c56a9e690bbbf015",
+        "retail_original_indexed_pixels_sha256": "9602a1a058783e3e4ddd4781b2777f17db5152836c60791177ffc04da97b0913",
+        "private_PNG_sha256": "a98bc47db893ecddfdf88fd9196d92b7effe62b5116fac698eae90fe5d4cf2e3"
+      }
+    ]
+  },
+  "authenticated_retail_tw1_independent": {
+    "source_zip_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "original_source_RD_bitmap_candidates": 2,
+    "newly_decoded_in_this_unit": 0,
+    "actual_tw1_RD_from_private_previous_item01_verified_images_reopened": 2
+  },
+  "private_artifact": {
+    "name": "StoneAge-INTEGRATION120-ore-researcher-two-actual-RD-original-quest-private.zip",
+    "size_bytes": 8490,
+    "sha256": "87cdc57f305e997884f8ef141bddf8702228cddf3f7e1363d6ca2b8bce62cc97",
+    "members_crc_passed": 6,
+    "original_source_text_and_RD_art_in_private_only": true,
+    "personal_Library_uploaded_and_independently_read_back_SHA_CRC": true,
+    "local_HTML_static_observer": true,
+    "HTML_in_browser_executed": false
+  },
+  "incremental_scope": {
+    "previous_world22_same_15_currency_fields_already_published": true,
+    "previous_quest01_source_sections_already_catalogued": true,
+    "new_source_script_files_discovered": 0,
+    "new_original_RD_bitmap_source_discovered": 0,
+    "new_cross_module_private_visible_link_of_two_source_qualified_images_to_specific_17_branch_NPC": true
+  },
+  "historical_limits": {
+    "later_community_NPC_and_itemsets_certified_official_tw1_same_deployment": false,
+    "native_NPC_script_executed": false,
+    "original_CLIENT_executed": false,
+    "official_item_graphic_selector_proven": false,
+    "original_palette_and_alpha_proven": false,
+    "original_currency_payment_proven": false,
+    "original_event_condition_priority_proven": false,
+    "source_project_StageA": "7 PARTIAL + 2 OPEN",
+    "StageB_and_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null,
+    "no_original_proprietary_bytes_or_images_in_public_Git": true
+  },
+  "next": "Return to source-qualified specific game-world content links; do not convert this cross-carrier numeric candidate to original executable shop, map or quest fact."
+}
