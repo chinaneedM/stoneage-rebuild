@@ -1,0 +1,327 @@
+{
+  "schema": "stoneage.pet26.classic_JP_TW_official_release_qualifications.r1",
+  "date": "2026-11-15",
+  "active_module": "PET",
+  "goal": "autonomous worldwide official pet restoration without user-supplied roster",
+  "baseline_main_head": "59b42baa19a995d83d292fe929c22d02cc63fae6",
+  "baseline_main_tree": "bc12d000456009813c0b31c065799acc3151a24b",
+  "preserved_current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "sources": [
+    {
+      "id": "JP2006",
+      "date": "2006-11-21",
+      "url": "https://www.4gamer.net/games/013/G001377/20061121175908/",
+      "claim": "GaiaX report: two new unnamed pets added to randomized paid bags",
+      "tier": "CONTEMPORANEOUS_REPORT_COMPLETED_RELEASE",
+      "source_page_original_sha256": null,
+      "licensed_original_art_not_copied": true
+    },
+    {
+      "id": "JP2008FUKU",
+      "date": "2008-07-15",
+      "url": "https://www.4gamer.net/games/013/G001377/20080715027/",
+      "claim": "Gamania original press text: pet No.200 フクゥーリ actually catchable in game",
+      "tier": "PUBLISHER_RELEASE_REPRINT",
+      "source_page_original_sha256": null,
+      "licensed_original_art_not_copied": true
+    },
+    {
+      "id": "JP2008EVOL",
+      "date": "2008-11-11",
+      "url": "https://www.4gamer.net/games/013/G001377/20081111023/",
+      "claim": "DigiPark original press text: four existing tiger-line pets gain actual evolution",
+      "tier": "PUBLISHER_RELEASE_REPRINT",
+      "source_page_original_sha256": null,
+      "licensed_original_art_not_copied": true
+    },
+    {
+      "id": "JP2009HAKU",
+      "date": "2009-04-28",
+      "url": "https://www.4gamer.net/games/013/G001377/20090428039/",
+      "claim": "DigiPark original press text: ハクエン pet released via 白炎チケット (400Gstone) and redemption",
+      "tier": "PUBLISHER_RELEASE_REPRINT",
+      "source_page_original_sha256": null,
+      "licensed_original_art_not_copied": true
+    },
+    {
+      "id": "JP2009KOKU",
+      "date": "2009-06-29",
+      "url": "https://www.4gamer.net/games/013/G001377/20090629031/",
+      "claim": "DigiPark first-party post-release text: コクエン new pet sold from 2009-06-23; 黒炎の袋 (400Gstone) and redemption",
+      "tier": "PUBLISHER_RELEASE_REPRINT",
+      "source_page_original_sha256": null,
+      "licensed_original_art_not_copied": true
+    },
+    {
+      "id": "JP2009COUNT",
+      "date": "2009-10-07",
+      "url": "https://www.4gamer.net/games/013/G001377/20091007007/",
+      "claim": "DigiPark first-party tenth-anniversary text: Japan official game pet types total 229 as of Oct2009",
+      "tier": "PUBLISHER_RELEASE_REPRINT",
+      "source_page_original_sha256": null,
+      "licensed_original_art_not_copied": true
+    },
+    {
+      "id": "JP2005PRE",
+      "date": "2005-07-05",
+      "url": "https://ddo.4gamer.net/news/history/2005.07/20050705162235detail.html",
+      "claim": "7/05 artwork/gallery patch before scheduled actual pet appearance July12",
+      "tier": "CONTEMPORANEOUS_PREVIEW_NOT_RELEASE",
+      "source_page_original_sha256": null,
+      "licensed_original_art_not_copied": true
+    },
+    {
+      "id": "JP2005NAME",
+      "date": "2005-07-22",
+      "url": "https://ddo.4gamer.net/news/history/2005.07/20050722185152detail.html",
+      "claim": "Future black-tiger naming contest for September release, not yet proof of actual introduction",
+      "tier": "CONTEMPORANEOUS_PREVIEW_NOT_RELEASE",
+      "source_page_original_sha256": null,
+      "licensed_original_art_not_copied": true
+    },
+    {
+      "id": "TW2002WOLF",
+      "date": "2002-09-13",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=5718",
+      "claim": "2002-09-13 Taiwan product promo says 09-15 引狼入室包 planned to contain 狼人, 10000 units",
+      "tier": "PRE_LAUNCH_PRODUCT_REPORT",
+      "source_page_original_sha256": null,
+      "licensed_original_art_not_copied": true
+    },
+    {
+      "id": "TW2002FUSE",
+      "date": "2002-11-14",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=6751",
+      "claim": "TW 5.0 third generation pet fusion via three animals/medicines/egg/hatching, no individual resulting species",
+      "tier": "CONTEMPORANEOUS_SYSTEM_REPORT",
+      "source_page_original_sha256": null,
+      "licensed_original_art_not_copied": true
+    },
+    {
+      "id": "TWRETRO",
+      "date": "2014",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=4345",
+      "claim": "Later fan chronology of 2002 Taiwan, cannot upgrade individual original release identity",
+      "tier": "LATER_FAN_RETROSPECTIVE",
+      "source_page_original_sha256": null,
+      "licensed_original_art_not_copied": true
+    }
+  ],
+  "new_japan_classic_official_release_events": [
+    {
+      "id": "JP-2006-TWO-MYSTERY",
+      "product_line": "STONEAGE_CLASSIC_PC_JAPAN_2004_2010",
+      "region": "JP",
+      "official_name_as_written_or_null": null,
+      "identity_kind": "UNNAMED_PAIR_ONE_RELEASE_EVENT",
+      "first_published_release_date": "2006-11-21",
+      "original_acquisition_as_published": "不思議な袋（大/中）随机获得",
+      "source_ids": [
+        "JP2006"
+      ],
+      "unnamed_pets_reported_or_null": 2,
+      "status": "OFFICIAL_GAME_RELEASE_DOCUMENTED",
+      "global_species_count_contribution": null,
+      "original_client_species_ID_or_null": null,
+      "native_gameplay_personally_run": false,
+      "private_server_provenance": false,
+      "original_copyright_art_committed": false
+    },
+    {
+      "id": "JP-2008-FUKUURI",
+      "product_line": "STONEAGE_CLASSIC_PC_JAPAN_2004_2010",
+      "region": "JP",
+      "official_name_as_written_or_null": "フクゥーリ",
+      "identity_kind": "NAMED_PET",
+      "first_published_release_date": "2008-07-15",
+      "original_acquisition_as_published": "日本官服野外捕捉；第200种宠物活动",
+      "source_ids": [
+        "JP2008FUKU"
+      ],
+      "unnamed_pets_reported_or_null": null,
+      "status": "OFFICIAL_GAME_RELEASE_DOCUMENTED",
+      "global_species_count_contribution": null,
+      "original_client_species_ID_or_null": null,
+      "native_gameplay_personally_run": false,
+      "private_server_provenance": false,
+      "original_copyright_art_committed": false
+    },
+    {
+      "id": "JP-2009-HAKUEN",
+      "product_line": "STONEAGE_CLASSIC_PC_JAPAN_2004_2010",
+      "region": "JP",
+      "official_name_as_written_or_null": "ハクエン",
+      "identity_kind": "NAMED_PET",
+      "first_published_release_date": "2009-04-28",
+      "original_acquisition_as_published": "白炎チケット400Gstone -> 白炎の袋/交换券，活动至5/12",
+      "source_ids": [
+        "JP2009HAKU"
+      ],
+      "unnamed_pets_reported_or_null": null,
+      "status": "OFFICIAL_GAME_RELEASE_DOCUMENTED",
+      "global_species_count_contribution": null,
+      "original_client_species_ID_or_null": null,
+      "native_gameplay_personally_run": false,
+      "private_server_provenance": false,
+      "original_copyright_art_committed": false
+    },
+    {
+      "id": "JP-2009-KOKUEN",
+      "product_line": "STONEAGE_CLASSIC_PC_JAPAN_2004_2010",
+      "region": "JP",
+      "official_name_as_written_or_null": "コクエン",
+      "identity_kind": "NAMED_PET",
+      "first_published_release_date": "2009-06-23",
+      "original_acquisition_as_published": "黒炎の袋400Gstone -> 随机道具/交换券，活动至7/21",
+      "source_ids": [
+        "JP2009KOKU"
+      ],
+      "unnamed_pets_reported_or_null": null,
+      "status": "OFFICIAL_GAME_RELEASE_DOCUMENTED",
+      "global_species_count_contribution": null,
+      "original_client_species_ID_or_null": null,
+      "native_gameplay_personally_run": false,
+      "private_server_provenance": false,
+      "original_copyright_art_committed": false
+    }
+  ],
+  "japan_2008_existing_base_evolution_records": [
+    {
+      "id": "JP-EVO-BASE-1",
+      "name": "ベルガー",
+      "product_line": "STONEAGE_CLASSIC_PC_JAPAN_2004_2010",
+      "enabled_since": "2008-11-11",
+      "source_ids": [
+        "JP2008EVOL"
+      ],
+      "evolved_new_form_name_or_null": null,
+      "evolution_mechanic_documented": true,
+      "is_four_new_named_species": false
+    },
+    {
+      "id": "JP-EVO-BASE-2",
+      "name": "ベルイガー",
+      "product_line": "STONEAGE_CLASSIC_PC_JAPAN_2004_2010",
+      "enabled_since": "2008-11-11",
+      "source_ids": [
+        "JP2008EVOL"
+      ],
+      "evolved_new_form_name_or_null": null,
+      "evolution_mechanic_documented": true,
+      "is_four_new_named_species": false
+    },
+    {
+      "id": "JP-EVO-BASE-3",
+      "name": "ゴルシス",
+      "product_line": "STONEAGE_CLASSIC_PC_JAPAN_2004_2010",
+      "enabled_since": "2008-11-11",
+      "source_ids": [
+        "JP2008EVOL"
+      ],
+      "evolved_new_form_name_or_null": null,
+      "evolution_mechanic_documented": true,
+      "is_four_new_named_species": false
+    },
+    {
+      "id": "JP-EVO-BASE-4",
+      "name": "キングサーベル",
+      "product_line": "STONEAGE_CLASSIC_PC_JAPAN_2004_2010",
+      "enabled_since": "2008-11-11",
+      "source_ids": [
+        "JP2008EVOL"
+      ],
+      "evolved_new_form_name_or_null": null,
+      "evolution_mechanic_documented": true,
+      "is_four_new_named_species": false
+    }
+  ],
+  "japan_official_version_species_count_snapshots": [
+    {
+      "date": "2008-07-15",
+      "publisher_reported_species": 200,
+      "source_ids": [
+        "JP2008FUKU"
+      ],
+      "product_line": "STONEAGE_CLASSIC_PC_JAPAN_2004_2010",
+      "itemized_individual_pet_names": false,
+      "not_a_global_cross_region_species_total": true
+    },
+    {
+      "date": "2009-10",
+      "publisher_reported_species": 229,
+      "source_ids": [
+        "JP2009COUNT"
+      ],
+      "product_line": "STONEAGE_CLASSIC_PC_JAPAN_2004_2010",
+      "itemized_individual_pet_names": false,
+      "not_a_global_cross_region_species_total": true
+    }
+  ],
+  "japan_taiwan_prelaunch_or_mechanic_leads": [
+    {
+      "id": "JP-2005-ARTONLY",
+      "region": "JP",
+      "official_name_as_written_or_null": null,
+      "source_ids": [
+        "JP2005PRE"
+      ],
+      "reason": "07/05 only graphics/gallery; actual game appearance scheduled for 07/12, not independently post-verified",
+      "status": "UNVERIFIED_ACTUAL_NAMED_GAME_RELEASE",
+      "counts_as_official_released_pet": false
+    },
+    {
+      "id": "JP-2005-BLACKTIGER",
+      "region": "JP",
+      "official_name_as_written_or_null": null,
+      "source_ids": [
+        "JP2005NAME"
+      ],
+      "reason": "Name campaign for future black tiger is not proof of released named species",
+      "status": "UNVERIFIED_ACTUAL_NAMED_GAME_RELEASE",
+      "counts_as_official_released_pet": false
+    },
+    {
+      "id": "TW-2002-WEREWOLF",
+      "region": "TW",
+      "official_name_as_written_or_null": "狼人",
+      "source_ids": [
+        "TW2002WOLF",
+        "TWRETRO"
+      ],
+      "reason": "09/13 presale article for 09/15, only retrospective fan confirmation; requires post-release native source or operator record",
+      "status": "UNVERIFIED_ACTUAL_NAMED_GAME_RELEASE",
+      "counts_as_official_released_pet": false
+    },
+    {
+      "id": "TW-2002-THIRDGEN",
+      "region": "TW",
+      "official_name_as_written_or_null": null,
+      "source_ids": [
+        "TW2002FUSE"
+      ],
+      "reason": "Fusion mechanic and third-gen type described, but actual named descendants not enumerated",
+      "status": "UNVERIFIED_ACTUAL_NAMED_GAME_RELEASE",
+      "counts_as_official_released_pet": false
+    }
+  ],
+  "counts": {
+    "prior_PET25_documentary_events": 24,
+    "new_japan_release_events": 4,
+    "combined_release_events_not_species": 28,
+    "named_pet_release_events": 3,
+    "unnamed_2006_release_event_pets": 2,
+    "evolution_base_names_not_new_species": 4,
+    "japan_marketing_species_snapshots": [
+      200,
+      229
+    ],
+    "global_individual_species_count": null,
+    "actual_original_game_runtime_newly_verified": 0
+  },
+  "rights": "source metadata only, no original client/images/GIFs/binaries committed",
+  "next": "PET-OFFICIAL-03 Japanese 200/229 itemized official roster and live availability, Taiwanese postlaunch werewolf/third generation exact names, original Korean PC official sources",
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "completion_percent": null
+}
