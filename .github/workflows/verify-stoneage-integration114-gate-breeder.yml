@@ -1,0 +1,29 @@
+name: Verify StoneAge INTEGRATION114 original guard and breeder source
+
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION114-GATE-BREEDER-ORIGINAL-SOURCE-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION114-GATE-BREEDER-SOURCE-20261115.md'
+      - 'tests/test_stoneage_integration114_gate_breeder.py'
+      - '.github/workflows/verify-stoneage-integration114-gate-breeder.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION114-GATE-BREEDER-ORIGINAL-SOURCE-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION114-GATE-BREEDER-SOURCE-20261115.md'
+      - 'tests/test_stoneage_integration114_gate_breeder.py'
+      - '.github/workflows/verify-stoneage-integration114-gate-breeder.yml'
+  workflow_dispatch:
+
+jobs:
+  bounded-original-source-regression:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify source window evidence, original numbers and JBA counterexample
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration114_gate_breeder.py' -v
