@@ -1,0 +1,870 @@
+{
+  "schema": "stoneage.pet31.jss1999_all_operator_update_entries_lexical_census.r1",
+  "source": {
+    "url": "https://web.archive.org/web/20010417162544id_/http://www.titan.co.jp/stoneage/verup.html",
+    "bytes": 11239,
+    "sha256": "ba71d859f34f31261f4293dc61583c53a8e77133898c4a8148c544a452abc3cb",
+    "actual_archive_capture": "20010417162544"
+  },
+  "original_operator_history": {
+    "total_rows_1999_through_2000": 40,
+    "source_rows_1999": 15,
+    "first_1999_operator_date": "1999-10-18",
+    "last_1999_operator_date": "1999-12-20"
+  },
+  "matching_rule": "FIXED_LITERAL_OCCURRENCE_IN_NORMALIZED_FIRST_PARTY_TEXT",
+  "signals": {
+    "PET": "ペット",
+    "DINOSAUR": "恐竜",
+    "CAPTURE": "捕獲",
+    "PET_MAIL": "ペットメール",
+    "RARE": "レア",
+    "PRIZE": "賞品",
+    "PRESENT": "プレゼント",
+    "URIURI_LITERAL": "ウリウリ",
+    "SKILL": "技",
+    "UPDATE_ADD": "追加",
+    "BUG_FIX": "修正",
+    "EVENT": "イベント",
+    "PET_SHOP": "ペットショップ"
+  },
+  "lexical_hit_clause_counts": {
+    "PET": 7,
+    "DINOSAUR": 0,
+    "CAPTURE": 0,
+    "PET_MAIL": 5,
+    "RARE": 0,
+    "PRIZE": 0,
+    "PRESENT": 0,
+    "URIURI_LITERAL": 1,
+    "SKILL": 9,
+    "UPDATE_ADD": 13,
+    "BUG_FIX": 28,
+    "EVENT": 10,
+    "PET_SHOP": 0
+  },
+  "dated_rows_1999": [
+    {
+      "original_source_order": 25,
+      "operator_written_date": "1999-12-20",
+      "date_as_written": "1999/12/20（月）",
+      "weekday_as_written": "月",
+      "weekday_matches_calendar": true,
+      "entry_text_characters": 47,
+      "entry_body_sha256": "be96a58c25348241ff1f2d9281640363780b72e6ff4f4eaf3dd42b99c2b87c29",
+      "clause_count": 1,
+      "clauses": [
+        {
+          "clause_order_in_entry": 0,
+          "normalized_characters": 46,
+          "normalized_sha256": "81334d962e334e0dac32a2229faef8d8dbd9d79f0e404d2c080bd18d6c25178a",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        }
+      ]
+    },
+    {
+      "original_source_order": 26,
+      "operator_written_date": "1999-12-20",
+      "date_as_written": "1999/12/20（月）",
+      "weekday_as_written": "月",
+      "weekday_matches_calendar": true,
+      "entry_text_characters": 129,
+      "entry_body_sha256": "38a971f96889a7c32403b89514167d786d76fd4f6de588e380d30654a9e5048c",
+      "clause_count": 4,
+      "clauses": [
+        {
+          "clause_order_in_entry": 0,
+          "normalized_characters": 22,
+          "normalized_sha256": "75b2b230c878d59b63a36c461c4a3f95f0d6472170ca4d7a7f835c28f08db49f",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 1,
+          "normalized_characters": 48,
+          "normalized_sha256": "fa1a56c1739de81b0abbe745fb7d2550996a6013a49d1f68d3c0284edebb9b14",
+          "literal_signals": [
+            "SKILL",
+            "UPDATE_ADD"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 2,
+          "normalized_characters": 29,
+          "normalized_sha256": "e381a5425c24751212c74b15959b786ac407f9aaf85b0db0f796cb73ca66ab4f",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 3,
+          "normalized_characters": 23,
+          "normalized_sha256": "1e3f67488d3bab1caf4715d5f21af788fc1e5b099733e13ee11329df7c55d67a",
+          "literal_signals": [
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        }
+      ]
+    },
+    {
+      "original_source_order": 27,
+      "operator_written_date": "1999-12-13",
+      "date_as_written": "1999/12/13（月）",
+      "weekday_as_written": "月",
+      "weekday_matches_calendar": true,
+      "entry_text_characters": 61,
+      "entry_body_sha256": "145fd506256e8d82ff49c4a4ae5ac8ce44b4b8527b4ba33e7c7e73f98cf2257b",
+      "clause_count": 2,
+      "clauses": [
+        {
+          "clause_order_in_entry": 0,
+          "normalized_characters": 30,
+          "normalized_sha256": "979e4c13b0ffdea2b4ecbc1e3bfbc013d7496f48a1bc283f41e3d081b4250e95",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 1,
+          "normalized_characters": 28,
+          "normalized_sha256": "fd27bf57acf54e790b5191925be783d2ca2c09dd90cf28637a16bb122df90db4",
+          "literal_signals": [
+            "BUG_FIX",
+            "EVENT"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        }
+      ]
+    },
+    {
+      "original_source_order": 28,
+      "operator_written_date": "1999-12-06",
+      "date_as_written": "1999/12/06（月）",
+      "weekday_as_written": "月",
+      "weekday_matches_calendar": true,
+      "entry_text_characters": 185,
+      "entry_body_sha256": "ffa1cef2e99ff6347ce9553cc34a256fa17e7501156753b4b572c6449ac48d18",
+      "clause_count": 4,
+      "clauses": [
+        {
+          "clause_order_in_entry": 0,
+          "normalized_characters": 91,
+          "normalized_sha256": "2456b52773b6d2f841eedb3e0f4904378e0657d6528600a7a2564596c843d2f0",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 1,
+          "normalized_characters": 12,
+          "normalized_sha256": "16974978a84ee48d4217cf1db0903f43532d22f02c0e49a5e6b1969b5679d774",
+          "literal_signals": [
+            "UPDATE_ADD",
+            "EVENT"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 2,
+          "normalized_characters": 61,
+          "normalized_sha256": "d08558c55473b57c07e323c28e79f7a12e662598f4d769e3c23f9bd05bbc50a1",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 3,
+          "normalized_characters": 14,
+          "normalized_sha256": "5cc2d46804d7e82c66bf66e38604cfbcac5b4516150a596a228599b2d0e6833c",
+          "literal_signals": [
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        }
+      ]
+    },
+    {
+      "original_source_order": 29,
+      "operator_written_date": "1999-11-29",
+      "date_as_written": "1999/11/29（月）",
+      "weekday_as_written": "月",
+      "weekday_matches_calendar": true,
+      "entry_text_characters": 102,
+      "entry_body_sha256": "e2d18a6042be0d7ef7115c2a888ab49dfb01bc13e14a65f90204b7b09ad12f7b",
+      "clause_count": 3,
+      "clauses": [
+        {
+          "clause_order_in_entry": 0,
+          "normalized_characters": 48,
+          "normalized_sha256": "c8c09a776355ed8b65f752bad81d17ae1c3c42667b9a7e05f8d93e391ad3e2d8",
+          "literal_signals": [
+            "SKILL"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 1,
+          "normalized_characters": 33,
+          "normalized_sha256": "a0903fb70f71954910097eceeb70d4e81dbb826be5507d2393d0df7f8e148274",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 2,
+          "normalized_characters": 16,
+          "normalized_sha256": "db15ce95b5bc09391ce8fc1ca52534336015ca5abffeaa27e45a31ca13b31d07",
+          "literal_signals": [
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        }
+      ]
+    },
+    {
+      "original_source_order": 30,
+      "operator_written_date": "1999-11-26",
+      "date_as_written": "1999/11/26（金）",
+      "weekday_as_written": "金",
+      "weekday_matches_calendar": true,
+      "entry_text_characters": 87,
+      "entry_body_sha256": "137931444d499803493dfff6c2fdf7294566f3a41f416bfdc1cced39d764cb2b",
+      "clause_count": 3,
+      "clauses": [
+        {
+          "clause_order_in_entry": 0,
+          "normalized_characters": 25,
+          "normalized_sha256": "d4bc63f3f1ba485d41bbac66c1a39ddacbb6ae60e121506d5d4f8fb5219b1c56",
+          "literal_signals": [
+            "PET",
+            "PET_MAIL",
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 1,
+          "normalized_characters": 38,
+          "normalized_sha256": "fc04e72bd9eaada2c4ee25ac02985f86f5bc5f4b473157c8bf083bf7720d7832",
+          "literal_signals": [
+            "SKILL",
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 2,
+          "normalized_characters": 19,
+          "normalized_sha256": "cd7f3105a22c7569bc23542886001c6da25bdf19a3ac70feff0882297c9025aa",
+          "literal_signals": [
+            "BUG_FIX",
+            "EVENT"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        }
+      ]
+    },
+    {
+      "original_source_order": 31,
+      "operator_written_date": "1999-11-22",
+      "date_as_written": "1999/11/22（月）",
+      "weekday_as_written": "月",
+      "weekday_matches_calendar": true,
+      "entry_text_characters": 483,
+      "entry_body_sha256": "26720a29e4bf5c381c6dcef99153ae2976e358eccbb72599eb17d204841b33b7",
+      "clause_count": 9,
+      "clauses": [
+        {
+          "clause_order_in_entry": 0,
+          "normalized_characters": 91,
+          "normalized_sha256": "755919a6a9e6cfddd04b9559d481703df2a99f8ca29c61d0f866776298565e7a",
+          "literal_signals": [
+            "SKILL"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 1,
+          "normalized_characters": 14,
+          "normalized_sha256": "4fd3bd0a2f338d8f26ee8f68df0ca64f79057e03bb346d509f35dd9a65e402fd",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 2,
+          "normalized_characters": 101,
+          "normalized_sha256": "b26d799ac8fcb409fb2b1003596ff6af656ad9c4c9b3f8648585d4410ce8acff",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 3,
+          "normalized_characters": 90,
+          "normalized_sha256": "4e1b95514e7a7154bb2d01e4530738b3cbec7fdbaec14b723481a25be7353851",
+          "literal_signals": [
+            "PET",
+            "PET_MAIL"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 4,
+          "normalized_characters": 10,
+          "normalized_sha256": "a02e4d31514bcdc66cb8e3dd7cad54a82596b60e86b899194d6c3b7b886cb96a",
+          "literal_signals": [
+            "UPDATE_ADD"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 5,
+          "normalized_characters": 12,
+          "normalized_sha256": "16974978a84ee48d4217cf1db0903f43532d22f02c0e49a5e6b1969b5679d774",
+          "literal_signals": [
+            "UPDATE_ADD",
+            "EVENT"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 6,
+          "normalized_characters": 15,
+          "normalized_sha256": "28db7105054f0a5de58a29c0830b6f8e81dd8ad89cc1e50146d17c5abdb3537e",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 7,
+          "normalized_characters": 115,
+          "normalized_sha256": "6576b94280c6b41126e6460baf02cf73e89994abd6e234c22cc32ef304314459",
+          "literal_signals": [
+            "UPDATE_ADD"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 8,
+          "normalized_characters": 18,
+          "normalized_sha256": "04e0d70511f00835721a9eb2c0a5f3d3eba956d04e1b619ad7f4f295ad62a38f",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        }
+      ]
+    },
+    {
+      "original_source_order": 32,
+      "operator_written_date": "1999-11-15",
+      "date_as_written": "1999/11/15（月）",
+      "weekday_as_written": "月",
+      "weekday_matches_calendar": true,
+      "entry_text_characters": 34,
+      "entry_body_sha256": "21bedc452fe7c81214bf46144181ab5ce09c91086ac26bdd694fafa5a50d8b91",
+      "clause_count": 2,
+      "clauses": [
+        {
+          "clause_order_in_entry": 0,
+          "normalized_characters": 16,
+          "normalized_sha256": "2cb5e5e53f151c7e16424fe22f8d30a752f0f55dd3dff39e7c1eef0836166f63",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 1,
+          "normalized_characters": 15,
+          "normalized_sha256": "ba179ccb07b07c7df4bcf518592711ed3de04027d81b29063224a54f34f19c74",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        }
+      ]
+    },
+    {
+      "original_source_order": 33,
+      "operator_written_date": "1999-11-09",
+      "date_as_written": "1999/11/9（金）",
+      "weekday_as_written": "金",
+      "weekday_matches_calendar": false,
+      "entry_text_characters": 117,
+      "entry_body_sha256": "39286bd39d111cfac833f9e6282f65c53205730ccb758e8413bc2e6fb5d9e227",
+      "clause_count": 5,
+      "clauses": [
+        {
+          "clause_order_in_entry": 0,
+          "normalized_characters": 33,
+          "normalized_sha256": "f71b46bc3200bd1e947ae36d1e5c41b7566254052915d00c4236a6fb565970c0",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 1,
+          "normalized_characters": 18,
+          "normalized_sha256": "62a2b4381a477eabbc4af49b829fc8af7b0407649fe9ecab19feb705924b4ebb",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 2,
+          "normalized_characters": 20,
+          "normalized_sha256": "db983bf105b2ac9fca58ebda57547dba7b5108f1e93d7b158ff57e0b2ad6b24c",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 3,
+          "normalized_characters": 29,
+          "normalized_sha256": "1a3554b2387dadff708655b3db461774792126f7972fe69b7fd6a68502c977ae",
+          "literal_signals": [
+            "UPDATE_ADD",
+            "BUG_FIX",
+            "EVENT"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 4,
+          "normalized_characters": 9,
+          "normalized_sha256": "ac42fc1a4b83acd6bce9daf6e6e12ec01d5b94d13895cea1762815f9e2680d97",
+          "literal_signals": [
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        }
+      ]
+    },
+    {
+      "original_source_order": 34,
+      "operator_written_date": "1999-11-08",
+      "date_as_written": "1999/11/8（月）",
+      "weekday_as_written": "月",
+      "weekday_matches_calendar": true,
+      "entry_text_characters": 161,
+      "entry_body_sha256": "c9de3d5d092d31b5129dd89ff477296e5ed5f476956a37eba0c079e91461c73f",
+      "clause_count": 5,
+      "clauses": [
+        {
+          "clause_order_in_entry": 0,
+          "normalized_characters": 48,
+          "normalized_sha256": "fcbd21e8ea83d8aed2275eedee64acdee940d348abe62f4bcc2658984344ec3e",
+          "literal_signals": [
+            "UPDATE_ADD"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 1,
+          "normalized_characters": 24,
+          "normalized_sha256": "f36b826c4b04e868dec944870efa6f72137472f1dbf3ab7dc703cc3d9517aff0",
+          "literal_signals": [
+            "PET",
+            "SKILL",
+            "UPDATE_ADD"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 2,
+          "normalized_characters": 23,
+          "normalized_sha256": "dd11c3473e7d17ebd0709d3608c07e71bba17c02ed56e5d5d3360279db5ddbbc",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 3,
+          "normalized_characters": 29,
+          "normalized_sha256": "1a3554b2387dadff708655b3db461774792126f7972fe69b7fd6a68502c977ae",
+          "literal_signals": [
+            "UPDATE_ADD",
+            "BUG_FIX",
+            "EVENT"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 4,
+          "normalized_characters": 28,
+          "normalized_sha256": "57b1565ef08667351ab7d94b1b52abb19efe13fe9c327e82695606debb00399d",
+          "literal_signals": [
+            "PET",
+            "PET_MAIL",
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        }
+      ]
+    },
+    {
+      "original_source_order": 35,
+      "operator_written_date": "1999-11-01",
+      "date_as_written": "1999/11/1（月）",
+      "weekday_as_written": "月",
+      "weekday_matches_calendar": true,
+      "entry_text_characters": 94,
+      "entry_body_sha256": "3260c883e6d8f496f3b8a5cfeb6bb817eea39d52b0ba98fb37b71d1dfaea6ec8",
+      "clause_count": 4,
+      "clauses": [
+        {
+          "clause_order_in_entry": 0,
+          "normalized_characters": 20,
+          "normalized_sha256": "7e96bdbb5419ba543af4b5b6206e5af2ee5ad4e34deb64839a008740b1101f67",
+          "literal_signals": [
+            "UPDATE_ADD"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 1,
+          "normalized_characters": 11,
+          "normalized_sha256": "d754731da1da67a9209d4a19ee1cca57320dd611d6cf0e5e92f8347e4957ad27",
+          "literal_signals": [
+            "UPDATE_ADD"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 2,
+          "normalized_characters": 29,
+          "normalized_sha256": "1a3554b2387dadff708655b3db461774792126f7972fe69b7fd6a68502c977ae",
+          "literal_signals": [
+            "UPDATE_ADD",
+            "BUG_FIX",
+            "EVENT"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 3,
+          "normalized_characters": 27,
+          "normalized_sha256": "48585331ffb2b7ea24c25542f3239e57f6df6465e3804fd3698072a867f83582",
+          "literal_signals": [
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        }
+      ]
+    },
+    {
+      "original_source_order": 36,
+      "operator_written_date": "1999-10-27",
+      "date_as_written": "1999/10/27（水）",
+      "weekday_as_written": "水",
+      "weekday_matches_calendar": true,
+      "entry_text_characters": 25,
+      "entry_body_sha256": "32be95fb7d9d8b47200fd92ae3677dbd8f4692d2ef4fd3fcf39caf870597af84",
+      "clause_count": 1,
+      "clauses": [
+        {
+          "clause_order_in_entry": 0,
+          "normalized_characters": 24,
+          "normalized_sha256": "01a5bf144baaa0fe2132fd4185f2bf25ec49ef6d55c0adf1db96bc6f0a4b2f07",
+          "literal_signals": [
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        }
+      ]
+    },
+    {
+      "original_source_order": 37,
+      "operator_written_date": "1999-10-26",
+      "date_as_written": "1999/10/26（火）",
+      "weekday_as_written": "火",
+      "weekday_matches_calendar": true,
+      "entry_text_characters": 102,
+      "entry_body_sha256": "30e51801e1a91e8a188f8fa02fd4e6cd7cad5c05fe5d40287e23d510e108f13e",
+      "clause_count": 4,
+      "clauses": [
+        {
+          "clause_order_in_entry": 0,
+          "normalized_characters": 38,
+          "normalized_sha256": "f2f7f6b393783683e5d393af049d7a11cf91fe997adbf78875e013170b4aac5f",
+          "literal_signals": [
+            "PET",
+            "PET_MAIL",
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 1,
+          "normalized_characters": 18,
+          "normalized_sha256": "421c4365aaa2ef02f22f931cb3d3f3104338aa5a2b7951222e6e447db9d7d81e",
+          "literal_signals": [
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 2,
+          "normalized_characters": 18,
+          "normalized_sha256": "fe0faa013f1c2472a601271e6b8819d3e90a2b14d52cf8695a2762906c2f6bbf",
+          "literal_signals": [
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 3,
+          "normalized_characters": 21,
+          "normalized_sha256": "b3d93da0fc202d3223eb6269cc45f7c3605d18d3e91b31d928b44e865bb21e0f",
+          "literal_signals": [
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        }
+      ]
+    },
+    {
+      "original_source_order": 38,
+      "operator_written_date": "1999-10-25",
+      "date_as_written": "1999/10/25（月）",
+      "weekday_as_written": "月",
+      "weekday_matches_calendar": true,
+      "entry_text_characters": 342,
+      "entry_body_sha256": "81ecb9f1d0e57bac4f6d8027a9ba76dc00896c231f9d18b07483601275b033c7",
+      "clause_count": 10,
+      "clauses": [
+        {
+          "clause_order_in_entry": 0,
+          "normalized_characters": 13,
+          "normalized_sha256": "40def293fcb1a85740c54999f8fc3647cf3b8e7e10d6f0790319b67efb7d35a1",
+          "literal_signals": [
+            "UPDATE_ADD",
+            "EVENT"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 1,
+          "normalized_characters": 22,
+          "normalized_sha256": "f333df3a8bc243880e578398f7f30d27bd74afb460ba43b4a6a92971392db6ac",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 2,
+          "normalized_characters": 23,
+          "normalized_sha256": "26acffa6ba141f23ac7f95e05fa9606b92f756b817e00b243c6959142f21d74c",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 3,
+          "normalized_characters": 54,
+          "normalized_sha256": "d4f6c4a59e912351c6f217a76893a3a8f49e7960517db65dc70880c47742e311",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 4,
+          "normalized_characters": 42,
+          "normalized_sha256": "09ca6a45e27bff59da1b21f7a8a086a984ee36259b005ab540f772181749770d",
+          "literal_signals": [
+            "SKILL"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 5,
+          "normalized_characters": 90,
+          "normalized_sha256": "17f4a41fc53919ed7e59a5714e5f8212c7b7e2eec6c37e1ddd1e9271dbe9c43d",
+          "literal_signals": [
+            "PET",
+            "PET_MAIL"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 6,
+          "normalized_characters": 23,
+          "normalized_sha256": "c6fad5305b34feaa72cfa2b752c18f2474cf1b5756a132493eebc69a90963d56",
+          "literal_signals": [
+            "PET",
+            "SKILL",
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 7,
+          "normalized_characters": 20,
+          "normalized_sha256": "99bee5ad7dbc89279bae8d58a1ca427a74c764532873d6058d1a73ba56aabe51",
+          "literal_signals": [
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 8,
+          "normalized_characters": 19,
+          "normalized_sha256": "cd7f3105a22c7569bc23542886001c6da25bdf19a3ac70feff0882297c9025aa",
+          "literal_signals": [
+            "BUG_FIX",
+            "EVENT"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 9,
+          "normalized_characters": 17,
+          "normalized_sha256": "9cfb8e8c013c8304f64d16951ddd4db442d2483eb1794a82f94982ffb025ec1f",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        }
+      ]
+    },
+    {
+      "original_source_order": 39,
+      "operator_written_date": "1999-10-18",
+      "date_as_written": "1999/10/18（月）",
+      "weekday_as_written": "月",
+      "weekday_matches_calendar": true,
+      "entry_text_characters": 244,
+      "entry_body_sha256": "6ee84d2d7126429750cdb36b9cec4bc3ee9f61dcba0c2e48ec562a57747cd72b",
+      "clause_count": 8,
+      "clauses": [
+        {
+          "clause_order_in_entry": 0,
+          "normalized_characters": 18,
+          "normalized_sha256": "877c4a2278fac93d1f70784bb4da524916a20c1181894dad3b8c2332be12c5c2",
+          "literal_signals": [],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 1,
+          "normalized_characters": 41,
+          "normalized_sha256": "d0f7909bc33a90e5a765468b758255fd62c9dcd84c2f1c7d3b6e050ce40c96e6",
+          "literal_signals": [
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 2,
+          "normalized_characters": 26,
+          "normalized_sha256": "b08535ab68b5372cc1b7f2a578384f49fadae5e0343a465c673f8798f33f5c4b",
+          "literal_signals": [
+            "SKILL",
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 3,
+          "normalized_characters": 27,
+          "normalized_sha256": "9ce102223f549a612ae8d7ae7413aca887ea5eb48eb841ebaedfbd6763a419aa",
+          "literal_signals": [
+            "URIURI_LITERAL",
+            "BUG_FIX",
+            "EVENT"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 4,
+          "normalized_characters": 16,
+          "normalized_sha256": "b655045647dd57254c24f36eb2a63c1a8184c59d7149531b007d12c041531e4f",
+          "literal_signals": [
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 5,
+          "normalized_characters": 38,
+          "normalized_sha256": "38dfa3e66928696a0def975f3e12788c1d6b28773165d8227ddf08e2e5767cd4",
+          "literal_signals": [
+            "SKILL",
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 6,
+          "normalized_characters": 27,
+          "normalized_sha256": "53df3f2ae73c7d2b4462100592dde3b8ff964e13aaf0022700fa3a625f0e7f96",
+          "literal_signals": [
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        },
+        {
+          "clause_order_in_entry": 7,
+          "normalized_characters": 36,
+          "normalized_sha256": "3f7e0164495b4bf1b482a89593870dd77c8e95e5aa553ccfeeb49a190977f6da",
+          "literal_signals": [
+            "BUG_FIX"
+          ],
+          "official_pet_species_name_identified": false,
+          "official_obtainable_pet_record_proven": false
+        }
+      ]
+    }
+  ],
+  "new_official_species_records": [],
+  "year_1999_historically_complete": false,
+  "year_1999_source_bounded_reviewed": false,
+  "negative_non_matches_prove_no_pets": false,
+  "new_JSS_named_reward_or_native_pet_ID_from_keyword_scan_proven": false,
+  "raw_original_html_or_images_published": false
+}

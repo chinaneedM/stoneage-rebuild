@@ -12,7 +12,7 @@ class Pet31SourceCensus(unittest.TestCase):
             census.build(b"fake", census.URL.replace("20010417162544", "20000101120000"))
 
     def test_no_auto_species_from_literal(self):
-        self.assertIn("GAME_PET_NAME_URIURI", census.LABELS)
+        self.assertIn("URIURI_LITERAL", census.LABELS)
         self.assertIn("PET", census.LABELS)
         self.assertIn("プレゼント", census.LABELS.values())
 

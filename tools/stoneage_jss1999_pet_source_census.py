@@ -23,18 +23,13 @@ LABELS = {
     "RARE": "レア",
     "PRIZE": "賞品",
     "PRESENT": "プレゼント",
-    "GAME_PET_NAME_URIURI": "ウリウリ",
+    "URIURI_LITERAL": "ウリウリ",
     "SKILL": "技",
     "UPDATE_ADD": "追加",
     "BUG_FIX": "修正",
     "EVENT": "イベント",
     "PET_SHOP": "ペットショップ",
 }
-KNOWN_NO_RELEASE_KEYS = (
-    "GAME_PET_NAME_URIURI", "PRESENT", "PRIZE", "PET", "DINOSAUR", "CAPTURE"
-)
-
-
 def build(raw: bytes, final_url: str) -> dict:
     require(final_url == URL, "source URL/capture changed")
     require(len(raw) == SOURCE_BYTES and hashlib.sha256(raw).hexdigest() == SHA,

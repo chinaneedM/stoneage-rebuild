@@ -67,3 +67,8 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## PET30 2026-11-15｜旧纸本攻略集的法院证据（年代待确认）
 
 [源报告](continuity/STONEAGE-PET30-PRINTED-PET-GUIDE-COURT-LEAD-20261115.md)／[机器登记](../research/recovered/STONEAGE-PET30-PRINTED-PET-GUIDE-COURT-LEAD-R1.json)：2022法院判决书公开转录描述地质出版社《石器时代权威攻略集》ISBN 7-900063-10-2 第41–61页有124个宠物名称及图谱；**124只为纸本图鉴条目，不等于1999、2000或全球官服已实装宠物**。该书首印年份/版别未证；同案2005 DigiPark说明书119图与损坏光盘且法院难采信的内容保持隔离。继续1999 PET主线，1999/2000 NOT_YEAR_AUDITED，物种总数UNKNOWN。
+
+
+## PET31 2026-11-15｜JSS 1999官网15行/65子句来源扫描
+
+[报告](continuity/STONEAGE-PET31-JSS1999-ALL-OPERATOR-UPDATE-CLAUSES-20261115.md)／[65子句SHA机器索引](../research/recovered/STONEAGE-PET31-JSS1999-ALL-CLAUSE-CENSUS-R1.json)：已认证官方11,239B更新页原字节在GitHub Actions真实回放，1999年15/15行拆65个原 `・` 子句；`ペット` 7子句、`ペットメール` 5子句，含11-22、11-26待精确语义核读的新指针。字面检索≠具名宠物发行；`ウリウリ` 一处仍只是既有事件词。同日重复1999-12-20两块独立保留、1999-11-9星期冲突不改。新获实际官服具名宠物证明0、1999/2000 NOT_YEAR_AUDITED、游标1999。下一步优先细读命中分句和原始具名宠物资料。

@@ -4,6 +4,9 @@ on:
     paths:
       - tools/stoneage_jss1999_pet_source_census.py
       - tests/test_stoneage_jss1999_pet_source_census.py
+      - tests/test_stoneage_pet31_published_contract.py
+      - research/recovered/STONEAGE-PET31-JSS1999-ALL-CLAUSE-CENSUS-R1.json
+      - docs/continuity/STONEAGE-PET31-JSS1999-ALL-OPERATOR-UPDATE-CLAUSES-20261115.md
       - .github/workflows/audit-stoneage-jss1999-all-pet-clauses.yml
   pull_request:
     paths:
@@ -23,11 +26,12 @@ jobs:
         with:
           python-version: "3.12"
       - name: Unit source and identity guard tests
-        run: python -m unittest tests.test_stoneage_jss1999_pet_source_census -v
+        run: python -m unittest tests.test_stoneage_jss1999_pet_source_census tests.test_stoneage_pet31_published_contract -v
       - name: Acquire one first-party archived page and census all 15 1999 entries
         shell: bash
         run: |
           python -m tools.stoneage_jss1999_pet_source_census --output "${{ runner.temp }}/pet31-jss1999.json"
+          cmp "${{ runner.temp }}/pet31-jss1999.json" research/recovered/STONEAGE-PET31-JSS1999-ALL-CLAUSE-CENSUS-R1.json
           python - <<'PY'
           import json, os
           from pathlib import Path
