@@ -47,3 +47,8 @@ PET25+PET26已确有 **28 条来源限定的发行事件文档**。按发布日�
 **PET-OFFICIAL-CHRONOLOGY-01：1999年前后至2000年最早官服开服及宠物清单**。第一阶段从原版历史首次运营源查日本JSS、韩国和台湾／大陆最早阶段的原游戏官网、补丁/包内容及宠物图鉴；先定哪国哪年何版是有据；再源限定列初代野生/赠送/事件宠，核原美术/动作。证据缺失则分年记录缺口、按规则再前进，而非任意跳到有商业资料的后期。
 
 此文与[连续性协议§21](PROJECT-CONTINUITY-PROTOCOL-R1.md)共同生效。保留原大CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`，StageA7PARTIAL+2OPEN，StageB/wiki GATED，R79暂停，不公布无依据整体完成率。
+
+
+## 2026-11-15 全项目长期继承规则
+
+PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份、版别、来源键重新从最早可证年份核查自身内容，但继承已建立的**单一官方历史索引**，不继承PET某年“完成”状态、也不另造一份版本真相。完整原则在[项目级双轴宪章](STONEAGE-GLOBAL-TWO-AXIS-RESTORATION-CONSTITUTION-R1.md)，机器版在[双轴治理JSON](../research/recovered/STONEAGE-RESTORATION-TWO-AXIS-GOVERNANCE-R1.json)。当前仍只做PET、1999待证至2000最早源。

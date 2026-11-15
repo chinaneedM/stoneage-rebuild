@@ -208,3 +208,10 @@ MAP/SCENE维持**SOURCE_BOUNDED_PARTIAL**，历史 CURRENT blob `c89e0e33537990a
 用户要求**从最早年份及版本起，按年代推进至近期，避免跳查造成遗漏**。本约定优先于旧PET16、PET25、PET26尾段NEXT，且继续仅恢复 PET 模块。读取[协议第21节](PROJECT-CONTINUITY-PROTOCOL-R1.md)和[宠物历史年份工作令](STONEAGE-PET-CHRONOLOGICAL-RESTORATION-ORDER-R1.md)。**一个总年份、多个地区/运营商独立版本分支**；同年台服2.0与大陆2.0不能偷换上线日期、各国官方版和后续授权手游不能跨服混编。按2000前最早官服来源调查起，2000、2001、2002……至今；跨年前先做年份/地区/版本以及各宠物维度的有界核验，缺件保留 OPEN、允许新证据后向旧年增量补记。旧PET25+26 28条**发行文档事件**已在[PET27逐年来源游标](../research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json)按来源日期分类，**非全球独立物种数或28年完成**。
 
 **最新NEXT：`PET-OFFICIAL-CHRONOLOGY-01 1999-PROVISIONAL THROUGH 2000 EARLIEST OFFICIAL VERSION CENSUS`**；1999只是待证历史搜寻起点，绝非最早官方发行年的既定事实。先获取最早期正式JP/KR/TW/CN运营版别与实际宠物身份并核完整；若缺原件则记录证据止点，再按年份前进。不因为已知2008日服229种或2026活动素材而跳跃，亦不删已完成的后期研究。旧CURRENT原blob不修改，Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、完成率未知。
+
+
+## 2026-11-15 永久双轴原则：内容按模块集中，历史按共同年份／官方版别组织
+
+用户确认这一方法应贯穿**以后所有模块而非仅PET**。现行依据[项目连续性协议§22](PROJECT-CONTINUITY-PROTOCOL-R1.md)、[跨模块双轴宪章](STONEAGE-GLOBAL-TWO-AXIS-RESTORATION-CONSTITUTION-R1.md)、[设计决议DD-033](DESIGN-DECISIONS.md)：**工作模块只有一个ACTIVE**，当前 PET；**世界官方历史共用一根最早→最近年份主轴**，各地区/运营商/作品/服务版别独立。PET经有界复原复核、用户明确认可后再换NPC；下一个NPC模块从最早可证年份重新逐年查**NPC自身内容**，同时复用已核实历史版本背景，不接着PET末尾年份继续，也不复制另一套来源真相。依此恢复地图、装备、任务、玩法，最后做跨模块同版史料核对。
+
+**时间轴还必须分两种历史**：现实中的官方发行/版本升级/商业活动 vs 原游戏世界内部的地理、人物、文明、传说和剧情故事；宣传意图、实际原版本规则、未来新游戏创作均保留独立状态。能够核对的跨模块关系才连接；无证据不造统一背景故事或重置老任务成果。最新PET高优先级仍是 `PET-OFFICIAL-CHRONOLOGY-01`（1999年前后待证起点至2000年初期来源），不因这一政策产生新阶段、开放其他模块、把PET25+26 28条发行文档当全球物种数。大CURRENT全文和原商业素材版权边界保持不变。
