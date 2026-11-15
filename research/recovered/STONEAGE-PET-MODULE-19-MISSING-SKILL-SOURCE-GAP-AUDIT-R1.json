@@ -1,0 +1,1467 @@
+{
+  "schema": "stoneage.pet19_source_separated_missing_skill_references.r1",
+  "date": "2026-11-15",
+  "active_module": "PET",
+  "source_scope": "DERIVED_STATIC_ORIGINAL_SOURCE_REPLAY_NOT_EARLY_OFFICIAL_NATIVE_RUNTIME",
+  "preserved_historical_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "source_refs": {
+    "unified_pet16_catalogue": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-16-SOURCE-SEPARATED-UNIFIED-CATALOG-R1.json",
+      "git_blob": "fdb7d9aade2df62d1a1e06b2d2f9e383693ed980"
+    },
+    "later2016_skill_join": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-03-SAME-SOURCE-SKILL-JOIN-R1.json",
+      "git_blob": "f03ebbbb535faf3e72b350e26448b24f5ff38cad",
+      "configured_template_git_blob": "a19a508975e3a982fada323861b35b2edab79349",
+      "active_skill_git_blob": "83d2daeb9e57b089a304f127361f88514386b870",
+      "source_commit": "57b14e2bb373ba851c14db28a239273e4a8831bb",
+      "selector": "petskillfile2"
+    },
+    "later2016_fallback_skill_id_only": {
+      "repository": "pimpcapital/longzoro-sa",
+      "source_commit": "57b14e2bb373ba851c14db28a239273e4a8831bb",
+      "path": "gmsv/data/petskill.txt",
+      "git_blob": "846d379f0c7977b3e74d5a5a9580a35a85cafc51",
+      "exact_original_skill_lines": 56,
+      "source_id_column_0based": 4,
+      "derived_ids_sorted": [
+        0,
+        1,
+        2,
+        3,
+        10,
+        11,
+        12,
+        13,
+        20,
+        30,
+        31,
+        40,
+        41,
+        50,
+        51,
+        52,
+        60,
+        61,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        151,
+        152,
+        200,
+        201,
+        210,
+        301,
+        302,
+        303,
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324,
+        325
+      ],
+      "note": "Different conditional fallback table; no license to substitute for petskillfile2, and zero overlap with 30 missing positive configured IDs"
+    },
+    "mixed25_primary_alternative": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-10-ORIGINAL-MIXED25-SERVER-TABLES-R1.json",
+      "git_blob": "25a37aeb134fb180e322e7dc335029b7374452d8",
+      "original_rar_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+      "primary_skill_sha256": "f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4",
+      "alternative_skill_sha256": "3afc4591f906fe5c7bb921f4599dbee5a7bfe7ba6f4c518d2bb894e365453a72"
+    }
+  },
+  "totals": {
+    "later2016": {
+      "configured_petflag1_template_rows": 1024,
+      "positive_skill_slot_references": 2886,
+      "defined_in_selected_petskill2": 2784,
+      "missing_in_selected_petskill2": 102,
+      "distinct_missing_skill_ids": 30,
+      "affected_original_template_rows": 76,
+      "negative_sentinel_slots_not_positive": 20,
+      "missing_ids_present_in_conditional_fallback": 0
+    },
+    "mixed25_primary": {
+      "petflag1_original_template_rows": 495,
+      "positive_skill_slot_references": 1050,
+      "undefined_in_own_primary_skill_table": 0
+    },
+    "mixed25_alternative": {
+      "petflag1_original_template_rows": 316,
+      "positive_skill_slot_references": 661,
+      "defined_in_own_alternative_skill_table": 649,
+      "missing_in_own_alternative_skill_table": 12,
+      "distinct_missing_skill_ids": 5,
+      "missing_refs_with_same_numeric_id_in_other_primary_table": 12
+    }
+  },
+  "missing_by_source": {
+    "later2016_configured_selected_active": [
+      {
+        "skill_id": 18,
+        "reference_count": 2,
+        "source_template_rows": 2,
+        "original_references": [
+          {
+            "skill_id": 18,
+            "original_row": 1781,
+            "template_id": 21001,
+            "graphic_number": 110166,
+            "slot_1based": 5,
+            "source_record_id": "COMMUNITY2016:1781",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 18,
+            "original_row": 1828,
+            "template_id": 20098,
+            "graphic_number": 110126,
+            "slot_1based": 5,
+            "source_record_id": "COMMUNITY2016:1828",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 21,
+        "reference_count": 6,
+        "source_template_rows": 6,
+        "original_references": [
+          {
+            "skill_id": 21,
+            "original_row": 1029,
+            "template_id": 1274,
+            "graphic_number": 101760,
+            "slot_1based": 5,
+            "source_record_id": "COMMUNITY2016:1029",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 21,
+            "original_row": 1044,
+            "template_id": 1288,
+            "graphic_number": 100371,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1044",
+            "tw10_numeric_graphic_candidate": true
+          },
+          {
+            "skill_id": 21,
+            "original_row": 1045,
+            "template_id": 1289,
+            "graphic_number": 100906,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1045",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 21,
+            "original_row": 1046,
+            "template_id": 1290,
+            "graphic_number": 100907,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1046",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 21,
+            "original_row": 1047,
+            "template_id": 1291,
+            "graphic_number": 100908,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1047",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 21,
+            "original_row": 1048,
+            "template_id": 1292,
+            "graphic_number": 100909,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1048",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 22,
+        "reference_count": 2,
+        "source_template_rows": 2,
+        "original_references": [
+          {
+            "skill_id": 22,
+            "original_row": 1763,
+            "template_id": 20025,
+            "graphic_number": 101871,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1763",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 22,
+            "original_row": 1783,
+            "template_id": 21003,
+            "graphic_number": 102042,
+            "slot_1based": 5,
+            "source_record_id": "COMMUNITY2016:1783",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 42,
+        "reference_count": 6,
+        "source_template_rows": 6,
+        "original_references": [
+          {
+            "skill_id": 42,
+            "original_row": 1718,
+            "template_id": 15009,
+            "graphic_number": 101819,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1718",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 42,
+            "original_row": 1781,
+            "template_id": 21001,
+            "graphic_number": 110166,
+            "slot_1based": 6,
+            "source_record_id": "COMMUNITY2016:1781",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 42,
+            "original_row": 1783,
+            "template_id": 21003,
+            "graphic_number": 102042,
+            "slot_1based": 6,
+            "source_record_id": "COMMUNITY2016:1783",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 42,
+            "original_row": 1793,
+            "template_id": 20046,
+            "graphic_number": 110003,
+            "slot_1based": 5,
+            "source_record_id": "COMMUNITY2016:1793",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 42,
+            "original_row": 1807,
+            "template_id": 20061,
+            "graphic_number": 103131,
+            "slot_1based": 5,
+            "source_record_id": "COMMUNITY2016:1807",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 42,
+            "original_row": 1809,
+            "template_id": 20069,
+            "graphic_number": 110112,
+            "slot_1based": 5,
+            "source_record_id": "COMMUNITY2016:1809",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 111,
+        "reference_count": 4,
+        "source_template_rows": 2,
+        "original_references": [
+          {
+            "skill_id": 111,
+            "original_row": 1150,
+            "template_id": 2026,
+            "graphic_number": 101881,
+            "slot_1based": 2,
+            "source_record_id": "COMMUNITY2016:1150",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 111,
+            "original_row": 1150,
+            "template_id": 2026,
+            "graphic_number": 101881,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1150",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 111,
+            "original_row": 1151,
+            "template_id": 2027,
+            "graphic_number": 101882,
+            "slot_1based": 2,
+            "source_record_id": "COMMUNITY2016:1151",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 111,
+            "original_row": 1151,
+            "template_id": 2027,
+            "graphic_number": 101882,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1151",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 112,
+        "reference_count": 2,
+        "source_template_rows": 2,
+        "original_references": [
+          {
+            "skill_id": 112,
+            "original_row": 1150,
+            "template_id": 2026,
+            "graphic_number": 101881,
+            "slot_1based": 5,
+            "source_record_id": "COMMUNITY2016:1150",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 112,
+            "original_row": 1151,
+            "template_id": 2027,
+            "graphic_number": 101882,
+            "slot_1based": 5,
+            "source_record_id": "COMMUNITY2016:1151",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 113,
+        "reference_count": 1,
+        "source_template_rows": 1,
+        "original_references": [
+          {
+            "skill_id": 113,
+            "original_row": 1780,
+            "template_id": 21000,
+            "graphic_number": 102024,
+            "slot_1based": 5,
+            "source_record_id": "COMMUNITY2016:1780",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 114,
+        "reference_count": 18,
+        "source_template_rows": 14,
+        "original_references": [
+          {
+            "skill_id": 114,
+            "original_row": 1082,
+            "template_id": 1326,
+            "graphic_number": 101955,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1082",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 114,
+            "original_row": 1083,
+            "template_id": 1327,
+            "graphic_number": 101953,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1083",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 114,
+            "original_row": 1084,
+            "template_id": 1328,
+            "graphic_number": 101956,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1084",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 114,
+            "original_row": 1085,
+            "template_id": 1329,
+            "graphic_number": 101954,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1085",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 114,
+            "original_row": 1102,
+            "template_id": 1346,
+            "graphic_number": 101955,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1102",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 114,
+            "original_row": 1103,
+            "template_id": 1347,
+            "graphic_number": 101953,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1103",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 114,
+            "original_row": 1104,
+            "template_id": 1348,
+            "graphic_number": 101956,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1104",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 114,
+            "original_row": 1105,
+            "template_id": 1349,
+            "graphic_number": 101954,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1105",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 114,
+            "original_row": 1568,
+            "template_id": 4002,
+            "graphic_number": 101912,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1568",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 114,
+            "original_row": 1569,
+            "template_id": 4003,
+            "graphic_number": 101913,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1569",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 114,
+            "original_row": 1660,
+            "template_id": 13101,
+            "graphic_number": 102005,
+            "slot_1based": 1,
+            "source_record_id": "COMMUNITY2016:1660",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 114,
+            "original_row": 1660,
+            "template_id": 13101,
+            "graphic_number": 102005,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1660",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 114,
+            "original_row": 1661,
+            "template_id": 13102,
+            "graphic_number": 102005,
+            "slot_1based": 1,
+            "source_record_id": "COMMUNITY2016:1661",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 114,
+            "original_row": 1661,
+            "template_id": 13102,
+            "graphic_number": 102005,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1661",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 114,
+            "original_row": 1662,
+            "template_id": 13103,
+            "graphic_number": 102005,
+            "slot_1based": 1,
+            "source_record_id": "COMMUNITY2016:1662",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 114,
+            "original_row": 1662,
+            "template_id": 13103,
+            "graphic_number": 102005,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1662",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 114,
+            "original_row": 1663,
+            "template_id": 13104,
+            "graphic_number": 102005,
+            "slot_1based": 1,
+            "source_record_id": "COMMUNITY2016:1663",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 114,
+            "original_row": 1663,
+            "template_id": 13104,
+            "graphic_number": 102005,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1663",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 515,
+        "reference_count": 5,
+        "source_template_rows": 5,
+        "original_references": [
+          {
+            "skill_id": 515,
+            "original_row": 1557,
+            "template_id": 3043,
+            "graphic_number": 101996,
+            "slot_1based": 1,
+            "source_record_id": "COMMUNITY2016:1557",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 515,
+            "original_row": 1558,
+            "template_id": 3044,
+            "graphic_number": 101987,
+            "slot_1based": 1,
+            "source_record_id": "COMMUNITY2016:1558",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 515,
+            "original_row": 1559,
+            "template_id": 3045,
+            "graphic_number": 101994,
+            "slot_1based": 1,
+            "source_record_id": "COMMUNITY2016:1559",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 515,
+            "original_row": 1560,
+            "template_id": 3046,
+            "graphic_number": 101995,
+            "slot_1based": 1,
+            "source_record_id": "COMMUNITY2016:1560",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 515,
+            "original_row": 1561,
+            "template_id": 3047,
+            "graphic_number": 102006,
+            "slot_1based": 1,
+            "source_record_id": "COMMUNITY2016:1561",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 517,
+        "reference_count": 2,
+        "source_template_rows": 2,
+        "original_references": [
+          {
+            "skill_id": 517,
+            "original_row": 1570,
+            "template_id": 4004,
+            "graphic_number": 101990,
+            "slot_1based": 5,
+            "source_record_id": "COMMUNITY2016:1570",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 517,
+            "original_row": 1571,
+            "template_id": 4005,
+            "graphic_number": 101991,
+            "slot_1based": 5,
+            "source_record_id": "COMMUNITY2016:1571",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 518,
+        "reference_count": 5,
+        "source_template_rows": 3,
+        "original_references": [
+          {
+            "skill_id": 518,
+            "original_row": 1564,
+            "template_id": 3049,
+            "graphic_number": 101278,
+            "slot_1based": 1,
+            "source_record_id": "COMMUNITY2016:1564",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 518,
+            "original_row": 1564,
+            "template_id": 3049,
+            "graphic_number": 101278,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1564",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 518,
+            "original_row": 1564,
+            "template_id": 3049,
+            "graphic_number": 101278,
+            "slot_1based": 6,
+            "source_record_id": "COMMUNITY2016:1564",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 518,
+            "original_row": 1572,
+            "template_id": 4006,
+            "graphic_number": 101992,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1572",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 518,
+            "original_row": 1573,
+            "template_id": 4007,
+            "graphic_number": 101993,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1573",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 519,
+        "reference_count": 2,
+        "source_template_rows": 2,
+        "original_references": [
+          {
+            "skill_id": 519,
+            "original_row": 1572,
+            "template_id": 4006,
+            "graphic_number": 101992,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1572",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 519,
+            "original_row": 1573,
+            "template_id": 4007,
+            "graphic_number": 101993,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1573",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 520,
+        "reference_count": 2,
+        "source_template_rows": 2,
+        "original_references": [
+          {
+            "skill_id": 520,
+            "original_row": 1572,
+            "template_id": 4006,
+            "graphic_number": 101992,
+            "slot_1based": 5,
+            "source_record_id": "COMMUNITY2016:1572",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 520,
+            "original_row": 1573,
+            "template_id": 4007,
+            "graphic_number": 101993,
+            "slot_1based": 5,
+            "source_record_id": "COMMUNITY2016:1573",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 561,
+        "reference_count": 1,
+        "source_template_rows": 1,
+        "original_references": [
+          {
+            "skill_id": 561,
+            "original_row": 1129,
+            "template_id": 1407,
+            "graphic_number": 101871,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1129",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 567,
+        "reference_count": 4,
+        "source_template_rows": 4,
+        "original_references": [
+          {
+            "skill_id": 567,
+            "original_row": 1574,
+            "template_id": 4008,
+            "graphic_number": 102013,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1574",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 567,
+            "original_row": 1575,
+            "template_id": 4009,
+            "graphic_number": 102014,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1575",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 567,
+            "original_row": 1576,
+            "template_id": 4010,
+            "graphic_number": 102015,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1576",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 567,
+            "original_row": 1577,
+            "template_id": 4011,
+            "graphic_number": 102016,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1577",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 568,
+        "reference_count": 6,
+        "source_template_rows": 6,
+        "original_references": [
+          {
+            "skill_id": 568,
+            "original_row": 1582,
+            "template_id": 4016,
+            "graphic_number": 110010,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1582",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 568,
+            "original_row": 1719,
+            "template_id": 15010,
+            "graphic_number": 101762,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1719",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 568,
+            "original_row": 1720,
+            "template_id": 15011,
+            "graphic_number": 101763,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1720",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 568,
+            "original_row": 1721,
+            "template_id": 15012,
+            "graphic_number": 101764,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1721",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 568,
+            "original_row": 1722,
+            "template_id": 15013,
+            "graphic_number": 101765,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1722",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 568,
+            "original_row": 1728,
+            "template_id": 15019,
+            "graphic_number": 101155,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1728",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 645,
+        "reference_count": 4,
+        "source_template_rows": 4,
+        "original_references": [
+          {
+            "skill_id": 645,
+            "original_row": 119,
+            "template_id": 123,
+            "graphic_number": 101705,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:119",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 645,
+            "original_row": 120,
+            "template_id": 124,
+            "graphic_number": 101706,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:120",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 645,
+            "original_row": 1128,
+            "template_id": 1406,
+            "graphic_number": 101766,
+            "slot_1based": 5,
+            "source_record_id": "COMMUNITY2016:1128",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 645,
+            "original_row": 1762,
+            "template_id": 20024,
+            "graphic_number": 101766,
+            "slot_1based": 5,
+            "source_record_id": "COMMUNITY2016:1762",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 729,
+        "reference_count": 4,
+        "source_template_rows": 4,
+        "original_references": [
+          {
+            "skill_id": 729,
+            "original_row": 1773,
+            "template_id": 20035,
+            "graphic_number": 101997,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1773",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 729,
+            "original_row": 1774,
+            "template_id": 20036,
+            "graphic_number": 101998,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1774",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 729,
+            "original_row": 1818,
+            "template_id": 20083,
+            "graphic_number": 102036,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1818",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 729,
+            "original_row": 1849,
+            "template_id": 20115,
+            "graphic_number": 130112,
+            "slot_1based": 5,
+            "source_record_id": "COMMUNITY2016:1849",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 730,
+        "reference_count": 3,
+        "source_template_rows": 3,
+        "original_references": [
+          {
+            "skill_id": 730,
+            "original_row": 1793,
+            "template_id": 20046,
+            "graphic_number": 110003,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1793",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 730,
+            "original_row": 1807,
+            "template_id": 20061,
+            "graphic_number": 103131,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1807",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 730,
+            "original_row": 1809,
+            "template_id": 20069,
+            "graphic_number": 110112,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1809",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 731,
+        "reference_count": 2,
+        "source_template_rows": 2,
+        "original_references": [
+          {
+            "skill_id": 731,
+            "original_row": 1819,
+            "template_id": 20087,
+            "graphic_number": 110117,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1819",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 731,
+            "original_row": 1820,
+            "template_id": 20088,
+            "graphic_number": 110116,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1820",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 732,
+        "reference_count": 3,
+        "source_template_rows": 3,
+        "original_references": [
+          {
+            "skill_id": 732,
+            "original_row": 1823,
+            "template_id": 20091,
+            "graphic_number": 130180,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1823",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 732,
+            "original_row": 1824,
+            "template_id": 20092,
+            "graphic_number": 130200,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1824",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 732,
+            "original_row": 1825,
+            "template_id": 20093,
+            "graphic_number": 130021,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1825",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 737,
+        "reference_count": 1,
+        "source_template_rows": 1,
+        "original_references": [
+          {
+            "skill_id": 737,
+            "original_row": 1851,
+            "template_id": 20117,
+            "graphic_number": 103121,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1851",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 738,
+        "reference_count": 1,
+        "source_template_rows": 1,
+        "original_references": [
+          {
+            "skill_id": 738,
+            "original_row": 1851,
+            "template_id": 20117,
+            "graphic_number": 103121,
+            "slot_1based": 6,
+            "source_record_id": "COMMUNITY2016:1851",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 739,
+        "reference_count": 1,
+        "source_template_rows": 1,
+        "original_references": [
+          {
+            "skill_id": 739,
+            "original_row": 1839,
+            "template_id": 20118,
+            "graphic_number": 101482,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1839",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 740,
+        "reference_count": 2,
+        "source_template_rows": 2,
+        "original_references": [
+          {
+            "skill_id": 740,
+            "original_row": 1836,
+            "template_id": 20105,
+            "graphic_number": 103125,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1836",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 740,
+            "original_row": 1837,
+            "template_id": 20053,
+            "graphic_number": 103126,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1837",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 741,
+        "reference_count": 2,
+        "source_template_rows": 2,
+        "original_references": [
+          {
+            "skill_id": 741,
+            "original_row": 1795,
+            "template_id": 20048,
+            "graphic_number": 103173,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1795",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 741,
+            "original_row": 1796,
+            "template_id": 20049,
+            "graphic_number": 103174,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1796",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 742,
+        "reference_count": 2,
+        "source_template_rows": 2,
+        "original_references": [
+          {
+            "skill_id": 742,
+            "original_row": 1795,
+            "template_id": 20048,
+            "graphic_number": 103173,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1795",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 742,
+            "original_row": 1796,
+            "template_id": 20049,
+            "graphic_number": 103174,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1796",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 743,
+        "reference_count": 1,
+        "source_template_rows": 1,
+        "original_references": [
+          {
+            "skill_id": 743,
+            "original_row": 1792,
+            "template_id": 20045,
+            "graphic_number": 103187,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1792",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 744,
+        "reference_count": 4,
+        "source_template_rows": 4,
+        "original_references": [
+          {
+            "skill_id": 744,
+            "original_row": 1729,
+            "template_id": 15020,
+            "graphic_number": 101427,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1729",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 744,
+            "original_row": 1730,
+            "template_id": 15021,
+            "graphic_number": 101424,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1730",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 744,
+            "original_row": 1731,
+            "template_id": 15022,
+            "graphic_number": 101425,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1731",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 744,
+            "original_row": 1732,
+            "template_id": 15023,
+            "graphic_number": 101426,
+            "slot_1based": 4,
+            "source_record_id": "COMMUNITY2016:1732",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      },
+      {
+        "skill_id": 745,
+        "reference_count": 4,
+        "source_template_rows": 4,
+        "original_references": [
+          {
+            "skill_id": 745,
+            "original_row": 1729,
+            "template_id": 15020,
+            "graphic_number": 101427,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1729",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 745,
+            "original_row": 1730,
+            "template_id": 15021,
+            "graphic_number": 101424,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1730",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 745,
+            "original_row": 1731,
+            "template_id": 15022,
+            "graphic_number": 101425,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1731",
+            "tw10_numeric_graphic_candidate": false
+          },
+          {
+            "skill_id": 745,
+            "original_row": 1732,
+            "template_id": 15023,
+            "graphic_number": 101426,
+            "slot_1based": 3,
+            "source_record_id": "COMMUNITY2016:1732",
+            "tw10_numeric_graphic_candidate": false
+          }
+        ]
+      }
+    ],
+    "mixed25_alternative_paired_not_proven_active": [
+      {
+        "skill_id": 503,
+        "reference_count": 4,
+        "source_template_rows": 4,
+        "original_references": [
+          {
+            "skill_id": 503,
+            "original_row": 547,
+            "template_id": 957,
+            "graphic_number": 101284,
+            "slot_1based": 3,
+            "source_record_id": "MIXED25_ALTERNATIVE:547",
+            "original_fields_sha256": "c0cd3ecfa2066d213edd2d76d8a3999c8a0ab4caff5f7c23dc7bcd99b07a7cab",
+            "primary_other_table_numeric_candidate": {
+              "original_skill_row": 61,
+              "original_skill_row_sha256": "f449380f6b9eec5c9915a85cb2234b44b63f0d8f076c8a3f81aac57319e422d2",
+              "skill_id": 503
+            }
+          },
+          {
+            "skill_id": 503,
+            "original_row": 548,
+            "template_id": 958,
+            "graphic_number": 101285,
+            "slot_1based": 3,
+            "source_record_id": "MIXED25_ALTERNATIVE:548",
+            "original_fields_sha256": "78539bd18118a7046185219537ac5318c8ca9d2c11ca0ea0e5d70c23d236dac8",
+            "primary_other_table_numeric_candidate": {
+              "original_skill_row": 61,
+              "original_skill_row_sha256": "f449380f6b9eec5c9915a85cb2234b44b63f0d8f076c8a3f81aac57319e422d2",
+              "skill_id": 503
+            }
+          },
+          {
+            "skill_id": 503,
+            "original_row": 549,
+            "template_id": 959,
+            "graphic_number": 101286,
+            "slot_1based": 3,
+            "source_record_id": "MIXED25_ALTERNATIVE:549",
+            "original_fields_sha256": "f9b7f03d888c60a21f314168c6bda521f2848a54e2dc3dba526bb2f6b55099de",
+            "primary_other_table_numeric_candidate": {
+              "original_skill_row": 61,
+              "original_skill_row_sha256": "f449380f6b9eec5c9915a85cb2234b44b63f0d8f076c8a3f81aac57319e422d2",
+              "skill_id": 503
+            }
+          },
+          {
+            "skill_id": 503,
+            "original_row": 550,
+            "template_id": 960,
+            "graphic_number": 101287,
+            "slot_1based": 3,
+            "source_record_id": "MIXED25_ALTERNATIVE:550",
+            "original_fields_sha256": "ed9c9b1e7398c89d9c68f599f5244350a1f40afb088954b38f220024263b1f6e",
+            "primary_other_table_numeric_candidate": {
+              "original_skill_row": 61,
+              "original_skill_row_sha256": "f449380f6b9eec5c9915a85cb2234b44b63f0d8f076c8a3f81aac57319e422d2",
+              "skill_id": 503
+            }
+          }
+        ]
+      },
+      {
+        "skill_id": 541,
+        "reference_count": 2,
+        "source_template_rows": 2,
+        "original_references": [
+          {
+            "skill_id": 541,
+            "original_row": 555,
+            "template_id": 965,
+            "graphic_number": 101177,
+            "slot_1based": 3,
+            "source_record_id": "MIXED25_ALTERNATIVE:555",
+            "original_fields_sha256": "c10a1a835791bab03ac71edef5cdd4ec193edfdfaadb5056a2c59e0acf6ee4db",
+            "primary_other_table_numeric_candidate": {
+              "original_skill_row": 68,
+              "original_skill_row_sha256": "b46e9cbce75ac9e080590405e3680fadf30891ca03baaa400a787992e158cde1",
+              "skill_id": 541
+            }
+          },
+          {
+            "skill_id": 541,
+            "original_row": 569,
+            "template_id": 979,
+            "graphic_number": 100906,
+            "slot_1based": 3,
+            "source_record_id": "MIXED25_ALTERNATIVE:569",
+            "original_fields_sha256": "a03e11fa74a1f99052a27dd53d390242f3443c522fa1d269f878c1d85094c9b9",
+            "primary_other_table_numeric_candidate": {
+              "original_skill_row": 68,
+              "original_skill_row_sha256": "b46e9cbce75ac9e080590405e3680fadf30891ca03baaa400a787992e158cde1",
+              "skill_id": 541
+            }
+          }
+        ]
+      },
+      {
+        "skill_id": 542,
+        "reference_count": 1,
+        "source_template_rows": 1,
+        "original_references": [
+          {
+            "skill_id": 542,
+            "original_row": 558,
+            "template_id": 968,
+            "graphic_number": 101423,
+            "slot_1based": 3,
+            "source_record_id": "MIXED25_ALTERNATIVE:558",
+            "original_fields_sha256": "8d2f157d6e853527e6938b810bbca77657271c0504ab52cd407b45a4a8c62218",
+            "primary_other_table_numeric_candidate": {
+              "original_skill_row": 69,
+              "original_skill_row_sha256": "4e38ad1186ba2bb1730f8f4abe32e97269756e67cf7dbb45c1ff63837bf80db9",
+              "skill_id": 542
+            }
+          }
+        ]
+      },
+      {
+        "skill_id": 580,
+        "reference_count": 1,
+        "source_template_rows": 1,
+        "original_references": [
+          {
+            "skill_id": 580,
+            "original_row": 559,
+            "template_id": 969,
+            "graphic_number": 101412,
+            "slot_1based": 3,
+            "source_record_id": "MIXED25_ALTERNATIVE:559",
+            "original_fields_sha256": "3f6d8f5c234e39c1c2764f1401a9cf31a37cc9ff3c34b40e41cf1d0e5dc6bb18",
+            "primary_other_table_numeric_candidate": {
+              "original_skill_row": 88,
+              "original_skill_row_sha256": "07c3dd6563be5806826a2383766fd7f4c8759f56f0388c81219348f66bdc2eec",
+              "skill_id": 580
+            }
+          }
+        ]
+      },
+      {
+        "skill_id": 600,
+        "reference_count": 4,
+        "source_template_rows": 4,
+        "original_references": [
+          {
+            "skill_id": 600,
+            "original_row": 570,
+            "template_id": 981,
+            "graphic_number": 101427,
+            "slot_1based": 3,
+            "source_record_id": "MIXED25_ALTERNATIVE:570",
+            "original_fields_sha256": "6289415f4ebebf7316b1241b469edcd1e2de9c6f8153e62451d77d62069c64a1",
+            "primary_other_table_numeric_candidate": {
+              "original_skill_row": 98,
+              "original_skill_row_sha256": "fa62dffc35be9583a340a73610a08e91035eda7f2b1f10433efea1fdc7f54e02",
+              "skill_id": 600
+            }
+          },
+          {
+            "skill_id": 600,
+            "original_row": 571,
+            "template_id": 982,
+            "graphic_number": 101424,
+            "slot_1based": 3,
+            "source_record_id": "MIXED25_ALTERNATIVE:571",
+            "original_fields_sha256": "93ec32ed888f326ba98b7a529015f466de6063173d5470282753dc81b743786c",
+            "primary_other_table_numeric_candidate": {
+              "original_skill_row": 98,
+              "original_skill_row_sha256": "fa62dffc35be9583a340a73610a08e91035eda7f2b1f10433efea1fdc7f54e02",
+              "skill_id": 600
+            }
+          },
+          {
+            "skill_id": 600,
+            "original_row": 572,
+            "template_id": 983,
+            "graphic_number": 101425,
+            "slot_1based": 3,
+            "source_record_id": "MIXED25_ALTERNATIVE:572",
+            "original_fields_sha256": "9593eb646a9297cf6e0cf1ec795f7e3de152a344354f785d297fbdbb7d3f5ccd",
+            "primary_other_table_numeric_candidate": {
+              "original_skill_row": 98,
+              "original_skill_row_sha256": "fa62dffc35be9583a340a73610a08e91035eda7f2b1f10433efea1fdc7f54e02",
+              "skill_id": 600
+            }
+          },
+          {
+            "skill_id": 600,
+            "original_row": 573,
+            "template_id": 984,
+            "graphic_number": 101426,
+            "slot_1based": 3,
+            "source_record_id": "MIXED25_ALTERNATIVE:573",
+            "original_fields_sha256": "a5daf405e0cc38e381f8c8cdaa8ad38b9af1d0864d6fea11c701fd6ba56c6a69",
+            "primary_other_table_numeric_candidate": {
+              "original_skill_row": 98,
+              "original_skill_row_sha256": "fa62dffc35be9583a340a73610a08e91035eda7f2b1f10433efea1fdc7f54e02",
+              "skill_id": 600
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "evidence_guards": {
+    "no_skill_id_name_cross_source_transfer": true,
+    "no_fallback_or_primary_table_automatic_replacement": true,
+    "no_original_game_skill_effect_or_learning_rule_proven": true,
+    "no_same_deployment_between_2016_mixed25_TW1": true,
+    "mixed25_main_and_alternative_coactive_unknown": true,
+    "no_pets_species_count_or_overall_completion_percentage": true,
+    "rights_safe_only_numeric_hash_receipt": true
+  },
+  "next": "PET20 examine existing same-source stat/growth field definitions or new qualified per-skill handler evidence; preserve missing ID source limits; PET remains ACTIVE."
+}
