@@ -41,8 +41,8 @@ class Pet34MagazineSource(unittest.TestCase):
 
     def test_latest_1999_cursor_receipt(self):
         q=json.loads(Path("research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json").read_text(encoding="utf-8"))
-        self.assertEqual(q["current_frontier"]["year"],1999)
-        self.assertEqual(q["current_frontier"]["status"],"OPEN_NOT_YEAR_CLOSED")
+        self.assertGreaterEqual(q["current_frontier"]["year"],1999)
+        # Historical PET34 remains verifiable even when the next year starts.
         # Latest cursor advances with newer PET batches; PET34's verified
         # historical receipt must remain immutable and independently findable.
         records = [x for x in q["root_source_census_receipts"]

@@ -10,6 +10,8 @@ on:
       - "tools/stoneage_pet27_chronology.py"
       - "tests/test_stoneage_pet27_chronology.py"
       - "tests/test_stoneage_pet35_1999_jss_evidence_boundary.py"
+      - "tests/test_stoneage_pet36_1999_year_audit.py"
+      - "research/recovered/STONEAGE-PET36-1999-SOURCE-BOUNDED-YEAR-AUDIT-R1.json"
       - "research/recovered/STONEAGE-PET35-JP1999-OPERATOR-AND-PRINT-LEADS-R1.json"
       - ".github/workflows/verify-stoneage-pet27-chronology.yml"
   pull_request:
@@ -22,6 +24,8 @@ on:
       - "tools/stoneage_pet27_chronology.py"
       - "tests/test_stoneage_pet27_chronology.py"
       - "tests/test_stoneage_pet35_1999_jss_evidence_boundary.py"
+      - "tests/test_stoneage_pet36_1999_year_audit.py"
+      - "research/recovered/STONEAGE-PET36-1999-SOURCE-BOUNDED-YEAR-AUDIT-R1.json"
       - "research/recovered/STONEAGE-PET35-JP1999-OPERATOR-AND-PRINT-LEADS-R1.json"
       - ".github/workflows/verify-stoneage-pet27-chronology.yml"
 permissions:
@@ -35,6 +39,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet27_chronology
       - name: PET35 evidence-layer and historic source-boundary test
         run: python -m unittest tests.test_stoneage_pet35_1999_jss_evidence_boundary
+      - name: PET36 year-bounded audit source and reopen guards
+        run: python -m unittest tests.test_stoneage_pet36_1999_year_audit
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary
