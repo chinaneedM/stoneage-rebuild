@@ -28,9 +28,14 @@ class Pet35HistoricalSourceBoundary(unittest.TestCase):
         self.assertFalse(p["issue_016_download_size_verified"])
         self.assertEqual(p["source_status"], "UNREAD_SOURCE_LEAD_ONLY")
         q = json.loads(Path("research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json").read_text(encoding="utf-8"))
-        self.assertEqual(q["current_frontier"]["year"], 1999)
-        self.assertEqual(q["yearly_work_queue"][0]["research_gate"], "NOT_YEAR_AUDITED")
-        self.assertEqual(q["current_frontier"]["latest_partial_root_review"], "PET35-JP1999-SUCCESSOR-OPERATOR-PRINT-LEADS-20261115")
+        # Future PET36+ work may advance the cursor; PET35 must remain
+        # historically discoverable without freezing future research.
+        rows = [r for r in q["root_source_census_receipts"]
+                if r["id"] == "PET35-JP1999-SUCCESSOR-OPERATOR-PRINT-LEADS-20261115"]
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["year_frontier_before"], 1999)
+        self.assertEqual(rows[0]["year_frontier_after"], 1999)
+        self.assertEqual(rows[0]["new_qualified_official_released_named_pet_count"], 0)
         self.assertEqual(d["preserved_current_blob"], "c89e0e33537990aa2132b47c40fef49a985a935c")
 
 
