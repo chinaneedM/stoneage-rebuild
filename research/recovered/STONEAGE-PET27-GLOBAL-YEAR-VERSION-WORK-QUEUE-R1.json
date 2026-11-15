@@ -18,7 +18,8 @@
     "year": 1999,
     "phase": "PRE_2000_ORIGINAL_OFFICIAL_LAUNCH_SOURCE_CENSUS",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "next": "Verify earliest original StoneAge publisher/operator and 1999-2000 official PC timelines separately for TW, JP, KR, CN; then enumerate every pet released through first verified version. Do NOT jump to 2008/2026 until earlier years have audited source limits."
+    "next": "Continue JSS 1999-2000 named official pet patch/retail record and TW/KR original operator pet roster; reconcile KR 10-10/10-12 service dates and TW book 2000-08/2.0 metadata before any species promotion; no year advance",
+    "latest_partial_root_review": "PET28-ROOT-1999-2000-20261115"
   },
   "region_tracks": [
     "CN",
@@ -1076,5 +1077,18 @@
   "stage_A": "7_PARTIAL_2_OPEN",
   "stage_B_wiki": "GATED",
   "r79": "PAUSED_NON_BLOCKING",
-  "overall_game_completion_percent": null
+  "overall_game_completion_percent": null,
+  "root_source_census_receipts": [
+    {
+      "id": "PET28-ROOT-1999-2000-20261115",
+      "year_frontier_before": 1999,
+      "year_frontier_after": 1999,
+      "review_status": "SOURCE_ROOT_PARTIAL_NOT_YEAR_AUDITED",
+      "report": "docs/continuity/STONEAGE-PET28-ROOT-1999-2000-OFFICIAL-SOURCE-CENSUS-20261115.md",
+      "evidence_json": "research/recovered/STONEAGE-PET28-ROOT-1999-2000-SOURCE-CENSUS-R1.json",
+      "added_external_source_count": 4,
+      "new_named_released_pet_count_in_this_audit": 0,
+      "historical_pet_population_count": null
+    }
+  ]
 }

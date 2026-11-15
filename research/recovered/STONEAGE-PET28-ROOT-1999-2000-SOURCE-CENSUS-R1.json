@@ -1,0 +1,209 @@
+{
+  "schema": "stoneage.pet28.root_1999_2000_official_source_census.r1",
+  "research_date": "2026-11-15",
+  "module_lock": "PET",
+  "unit": "PET-OFFICIAL-CHRONOLOGY-01_ROOT_SOURCE_CENSUS",
+  "source_main_head": "d75533639c621da8baabd53e61f2babeed155b33",
+  "source_main_tree": "ad0b59e3cf3ebbd36fd8e62408d2fb8c8e77044d",
+  "immutable_historical_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "chronology_start_year_provisional": 1999,
+  "current_frontier_year": 1999,
+  "year_status": {
+    "1999": "NOT_YEAR_AUDITED",
+    "2000": "NOT_YEAR_AUDITED"
+  },
+  "coverage_scope": "Classic PC only; later licensed product lines remain independently tracked by PET25/26",
+  "new_named_pet_records_passing_official_live_release_gate": [],
+  "global_official_pet_species_count": null,
+  "source_count_in_this_receipt": 6,
+  "new_external_source_records": 4,
+  "previously_registered_context_records": 2,
+  "source_records": [
+    {
+      "source_id": "PET28-JP-1999-PRIOR-OFFICIAL",
+      "region": "JP",
+      "historical_year": 1999,
+      "source_title": "1999 JSS/Gamer's Dream launch and updater evidence already in repository",
+      "locator": "docs/SOURCE-REGISTRY.md#SRC-JP-GD-STONEAGE-INTRO-ARCHIVE-01",
+      "original_date_or_null": "1999-10-15",
+      "evidence_kind": "PREVIOUSLY_REGISTERED_FIRST_PARTY_ARCHIVE_AND_CONTEMPORANEOUS_COVERAGE",
+      "status": "EXISTING_SOURCE_REUSED_NOT_NEW",
+      "confirmed_claims": [
+        "Gamer's Dream preserved product page states 1999-10-15 commercial release",
+        "JSS official version-up history reaches 1999-10-18"
+      ],
+      "limits": [
+        "No named, per-version officially obtainable pet list in this source summary",
+        "No original 1999 retail pet master/species or patch byte delta verified"
+      ]
+    },
+    {
+      "source_id": "PET28-KR-2000-ETNEWS-1013",
+      "region": "KR",
+      "historical_year": 2000,
+      "source_title": "이니엄, 롤플레잉게임 스톤에이지 무료서비스",
+      "locator": "https://www.etnews.com/200010120085",
+      "original_date_or_null": "2000-10-13",
+      "evidence_kind": "CONTEMPORANEOUS_INDUSTRY_PRESS",
+      "status": "VERIFIED_SOURCE_SERVICE_REPORT_NOT_PET_ROSTER",
+      "confirmed_claims": [
+        "Inium reported on 2000-10-12 that Korean localization and server work were completed and free StoneAge service had begun",
+        "Report names former JSS original and an Inium Korea service site"
+      ],
+      "limits": [
+        "Article's hundreds of dinosaurs and twelve avatars are marketing descriptions, not named species enumeration or live per-pet proof",
+        "Early-December fee introduction is a plan, not evidence of actual billing start",
+        "Exact free-live start day conflicts with next October article"
+      ]
+    },
+    {
+      "source_id": "PET28-KR-2000-ETNEWS-1028",
+      "region": "KR",
+      "historical_year": 2000,
+      "source_title": "스톤에이지 제품 발표회",
+      "locator": "https://m.etnews.com/200010270015",
+      "original_date_or_null": "2000-10-28",
+      "event_date_or_null": "2000-10-27",
+      "evidence_kind": "CONTEMPORANEOUS_INDUSTRY_PRESS_EVENT_REPORT",
+      "status": "VERIFIED_SOURCE_SERVICE_REPORT_WITH_DATE_CONFLICT",
+      "confirmed_claims": [
+        "2000-10-27 product presentation reported Inium's executive saying free service started on 2000-10-10",
+        "JSS representative was reported present and collaborating with Inium"
+      ],
+      "limits": [
+        "2000-10-10 is the quoted executive's retrospective service-start wording, not reconciled with the 2000-10-12 announcement",
+        "No source-bound named official live pet list or executable build checksum"
+      ]
+    },
+    {
+      "source_id": "PET28-TW-2000-WAEI-CORPORATE-CHRONICLE",
+      "region": "TW",
+      "historical_year": 2000,
+      "source_title": "华义大事记（contemporaneous Sina mirror of Waei company chronology）",
+      "locator": "https://games.sina.com.cn/zhuanqu/saonline/dsj.shtml",
+      "original_date_or_null": null,
+      "date_precision": "MONTH_2000_04",
+      "evidence_kind": "CORPORATE_ORIGIN_CHRONICLE_PRESERVED_ON_CONTEMPORANEOUS_MEDIA_PAGE",
+      "status": "VERIFIED_SOURCE_MONTH_LEVEL_OPERATOR_LAUNCH_CLAIM",
+      "confirmed_claims": [
+        "Waei corporate chronology says it launched StoneAge in Taiwan in April 2000",
+        "Same chronology says WGS began fee charging in July 2000"
+      ],
+      "limits": [
+        "Does not independently confirm precise 2000-04-20 launch date",
+        "Does not provide a named 2000 pet roster or patch-build mapping",
+        "Page's own first publication timestamp is not independently verified"
+      ]
+    },
+    {
+      "source_id": "PET28-TW-CITE-PET-GUIDE-BOOK-METADATA",
+      "region": "TW",
+      "historical_year": 2000,
+      "source_title": "石器時代寵物圖鑑（PCGAMER / 城邦 catalogue record）",
+      "locator": "https://www.cite.com.tw/book?id=557",
+      "original_date_or_null": null,
+      "displayed_publication_date": "2000-08-01",
+      "displayed_isbn": "9789572043424",
+      "displayed_page_count": 196,
+      "evidence_kind": "PUBLISHER_BOOKSTORE_CATALOGUE_METADATA_NOT_PHYSICAL_BOOK",
+      "status": "CONFLICTED_CATALOGUE_METADATA_NOT_LIVE_PET_PROOF",
+      "confirmed_claims": [
+        "Catalogue currently lists 2000-08-01 publication metadata and ISBN",
+        "Catalogue describes a Waei-authorized pet guide and bundled StoneAge 2.0 full CD",
+        "Catalogue advertises 200-plus pets, including over 100 Bora Island pets"
+      ],
+      "limits": [
+        "Catalogue date/2.0-content combination conflicts with the later Taiwan 2.0 timing in PET27; do not resolve without physical colophon/first printing",
+        "Catalogue marketing count does not confirm 200+ distinct obtainable species in 2000",
+        "Actual pages and bundled CD bytes not obtained; copyright assets not published",
+        "The catalogue's current listing does not establish original-page first publication"
+      ]
+    },
+    {
+      "source_id": "PET28-CN-2000-LEGACY-CANDIDATE",
+      "region": "CN",
+      "historical_year": 2000,
+      "source_title": "2000-12-15 Mainland trial date from later chronology",
+      "locator": "research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json",
+      "original_date_or_null": null,
+      "evidence_kind": "PRIOR_REGISTERED_RETROSPECTIVE_DATE_CANDIDATE",
+      "status": "PREVIOUS_CANDIDATE_RETAINED_NO_NEW_SOURCE",
+      "confirmed_claims": [
+        "PET27 retains a secondary retrospective claim of 2000-12-15 China testing"
+      ],
+      "limits": [
+        "Trial date is not independently contemporary operator-patch-confirmed",
+        "Not proof of any specifically named pet's official availability"
+      ]
+    }
+  ],
+  "conflict_register": [
+    {
+      "id": "PET28-KR-FREE-SERVICE-START-DATE",
+      "territory": "KR",
+      "year": 2000,
+      "reading_a": "2000-10-12 Inium announcement of begun free service reported 2000-10-13",
+      "reading_b": "2000-10-10 free start quoted by executive at Oct 27 presentation",
+      "status": "DISPUTED_SOURCE",
+      "reopen": "Contemporaneous first-party Inium dated notice/server operation archive or operator release log"
+    },
+    {
+      "id": "PET28-TW-GUIDE-PUBLICATION-2.0",
+      "territory": "TW",
+      "year": 2000,
+      "reading_a": "Bookstore labels pet guide published 2000-08-01",
+      "reading_b": "Same catalogue advertises bundled StoneAge 2.0 and Bora Island pets while PET27 later-version chronology places Taiwan 2.0 in 2001",
+      "status": "DISPUTED_CATALOG_METADATA",
+      "reopen": "Physical first-edition colophon/printing page, original catalog scan and accompanying CD identity"
+    }
+  ],
+  "source_bound_pet_dimensions": {
+    "names_and_species": "MISSING_1999_2000_VERSION_QUALIFIED_NAMED_OFFICIAL_ROSTER",
+    "source_graphic_ids_and_2d_actions": "NO_NEW_VERSION_QUALIFIED_PET_ID_BRIDGE_FROM_THESE_WEB_SOURCES",
+    "stats_growth_and_skills": "MISSING_SOURCE",
+    "capture_acquisition_gifts": "MISSING_SOURCE",
+    "native_same_version_execution": "UNVERIFIED_RUNTIME"
+  },
+  "residuals": [
+    {
+      "territory": "JP",
+      "year": 1999,
+      "gap": "First retail JSS official named pet master/index, specific 1999 version-up pet entries, original build checksums",
+      "reopen": "Dated JSS first-party update pet lines, physically authenticated 1999 retail/manual, or provenance-qualified launch client"
+    },
+    {
+      "territory": "KR",
+      "year": 2000,
+      "gap": "Resolve free-service start conflict and original Inium Korean pet roster/build",
+      "reopen": "Official Inium 2000 service notice, update log, original clean client or in-game capture with version identity"
+    },
+    {
+      "territory": "TW",
+      "year": 2000,
+      "gap": "Verify pet guide physical book printing date and 2.0 claim, obtain Taiwan 1.0 period operator version-specific named pet roster",
+      "reopen": "Book colophon and ISBN-collated edition, bundled CD provenance and Waei dated game update/pet catalogue"
+    },
+    {
+      "territory": "CN",
+      "year": 2000,
+      "gap": "Independent contemporaneous test/availability evidence and original trial pet roster",
+      "reopen": "Dated official test event/patch notices or authenticated original test files"
+    },
+    {
+      "territory": "OTHER",
+      "year": 1999,
+      "gap": "Other qualified official region/operator earliest-year census not yet exhaustive",
+      "reopen": "New primary official operating evidence with exact year/version"
+    }
+  ],
+  "next": "PET-OFFICIAL-CHRONOLOGY-01 continue 1999 JSS primary patch-level pet text and original pet manual/retail roster, then 2000 TW/KR/CN official pet-level evidence; do not advance the year cursor until explicit source-bounded review",
+  "historical_world_lore_inferred_from_release_dates": false,
+  "technical_sprite_counts_counted_as_species": false,
+  "in_game_release_count_inference_from_marketing": false,
+  "private_server_only_included": false,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null,
+  "source_asset_payload_publication": "NONE"
+}
