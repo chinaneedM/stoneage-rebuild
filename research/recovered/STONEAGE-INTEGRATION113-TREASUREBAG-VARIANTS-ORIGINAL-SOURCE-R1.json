@@ -1,0 +1,466 @@
+{
+  "schema": "stoneage.integration113_mixed25_treasurebag_source_variants_and_TW1_pet_candidate.r1",
+  "date": "2026-11-15",
+  "baseline": {
+    "main": "7cd3601bfe0fefd2861bfbc964b1e23b8a85812e",
+    "tree": "d6700ad0bbea95cbcac013915581ddd6c03e11b8",
+    "main_actions_completed_success": 26,
+    "open_PRs": 0,
+    "preserved_CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "preserved_CURRENT_bytes": 2709173
+  },
+  "carrier": {
+    "kind": "LATER_COMMUNITY_PRESERVED_MIXED25_NPC_NOT_AUTHENTICATED_EARLY_OFFICIAL",
+    "private_NPC_archive_bytes": 995176,
+    "private_NPC_archive_SHA256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "private_NPC_archive_member_CRC_all_pass": 2205,
+    "seven_original_files_actually_re_read_and_SHA_matched": true,
+    "original_CP950_roundtrip_note": "300/sb_hag.create contains at least one undecodable CP950 byte in the original comment/name; raw file SHA and ASCII source controls are authoritative; no repair applied.",
+    "files": [
+      {
+        "path": "100/sb_mimi.create",
+        "bytes": 1804,
+        "sha256": "c74c35f5b34bc426b1bf5836be756f3464664b71daac6fa967ecf08966b683b4",
+        "crc32": "e4bb070d"
+      },
+      {
+        "path": "100/sb_mimi.template",
+        "bytes": 160,
+        "sha256": "6e151c16ecf9e7d4649564f1223e97deda5fb8317c9c656c055c2a2db120ee40",
+        "crc32": "039f0a57"
+      },
+      {
+        "path": "100/sb_mimi.arg",
+        "bytes": 268,
+        "sha256": "f41f262b765f9236c02e6636a1e993df36b6a4bfe3e981541ed37877971a3e8c",
+        "crc32": "41280975"
+      },
+      {
+        "path": "300/sb_hag.template",
+        "bytes": 159,
+        "sha256": "4ac7a9faea57758adb75dc64a1b92475b491ff3b57fb07dd3b6843b50a47ce18",
+        "crc32": "51dfedea"
+      },
+      {
+        "path": "300/sb_hag.create",
+        "bytes": 196,
+        "sha256": "fd0ae54dad805ede050952c508d8bcc0e1080f57f9e5ab5f981a7133cad107b1",
+        "crc32": "0342f83b"
+      },
+      {
+        "path": "300/sb_hag.arg",
+        "bytes": 191,
+        "sha256": "2e9b5f0ef5da9ae75b592d9b13276070f5dba36cab50f3aebb6560ad3e038217",
+        "crc32": "c79e4777"
+      },
+      {
+        "path": "extra/event/marju.create",
+        "bytes": 1896,
+        "sha256": "a93b179d1c5b4ac637d381d49f7aea9c5cdd161929ab128cf6d3e0eb6cd5a878",
+        "crc32": "dccec099"
+      }
+    ]
+  },
+  "sb_mimi_variant": {
+    "source_create_file": "100/sb_mimi.create",
+    "source_template_file": "100/sb_mimi.template",
+    "source_arg_file": "100/sb_mimi.arg",
+    "raw_CREATE_config_count": 12,
+    "source_locations_by_floor": {
+      "118": 6,
+      "122": 6
+    },
+    "all_source_graphic_alias": 16073,
+    "raw_original_create_blocks": [
+      {
+        "source_create_file": "100/sb_mimi.create",
+        "source_block_ordinal": 0,
+        "source_raw_byte_window": [
+          43,
+          188
+        ],
+        "source_raw_block_sha256": "9258d1a248c76d4c5467da6b6ab3f6ed62100f606327f0693c956be73ce12dab",
+        "floor": 122,
+        "source_borncenter": [
+          78,
+          102,
+          1,
+          1
+        ],
+        "source_graphic_alias": 16073,
+        "source_function_token": "sb_hag",
+        "source_template_file": "300/sb_hag.template",
+        "source_template_block_sha256": "c6e17724c2629b79794a35b5912bab71cf3f89a60927a76c94285cf59276d78d",
+        "source_arg_file": "100/sb_mimi.arg",
+        "source_arg_SHA256": "f41f262b765f9236c02e6636a1e993df36b6a4bfe3e981541ed37877971a3e8c"
+      },
+      {
+        "source_create_file": "100/sb_mimi.create",
+        "source_block_ordinal": 1,
+        "source_raw_byte_window": [
+          188,
+          332
+        ],
+        "source_raw_block_sha256": "582cc1cf93af2137ed4042bafff4c11a0a9cecdc4cf90ea43a0f625baeb07120",
+        "floor": 122,
+        "source_borncenter": [
+          78,
+          96,
+          1,
+          1
+        ],
+        "source_graphic_alias": 16073,
+        "source_function_token": "sb_hag",
+        "source_template_file": "300/sb_hag.template",
+        "source_template_block_sha256": "c6e17724c2629b79794a35b5912bab71cf3f89a60927a76c94285cf59276d78d",
+        "source_arg_file": "100/sb_mimi.arg",
+        "source_arg_SHA256": "f41f262b765f9236c02e6636a1e993df36b6a4bfe3e981541ed37877971a3e8c"
+      },
+      {
+        "source_create_file": "100/sb_mimi.create",
+        "source_block_ordinal": 2,
+        "source_raw_byte_window": [
+          332,
+          477
+        ],
+        "source_raw_block_sha256": "558d01b8df55d9c98e57502b3440a5665b0d28c5d2c2a061102a2246ebeb2be1",
+        "floor": 122,
+        "source_borncenter": [
+          93,
+          152,
+          1,
+          1
+        ],
+        "source_graphic_alias": 16073,
+        "source_function_token": "sb_hag",
+        "source_template_file": "300/sb_hag.template",
+        "source_template_block_sha256": "c6e17724c2629b79794a35b5912bab71cf3f89a60927a76c94285cf59276d78d",
+        "source_arg_file": "100/sb_mimi.arg",
+        "source_arg_SHA256": "f41f262b765f9236c02e6636a1e993df36b6a4bfe3e981541ed37877971a3e8c"
+      },
+      {
+        "source_create_file": "100/sb_mimi.create",
+        "source_block_ordinal": 3,
+        "source_raw_byte_window": [
+          477,
+          622
+        ],
+        "source_raw_block_sha256": "08cc453f1dd0a341862f96c01b1fa6a16d65989c89aca82785a95f12d6be7876",
+        "floor": 122,
+        "source_borncenter": [
+          45,
+          152,
+          1,
+          1
+        ],
+        "source_graphic_alias": 16073,
+        "source_function_token": "sb_hag",
+        "source_template_file": "300/sb_hag.template",
+        "source_template_block_sha256": "c6e17724c2629b79794a35b5912bab71cf3f89a60927a76c94285cf59276d78d",
+        "source_arg_file": "100/sb_mimi.arg",
+        "source_arg_SHA256": "f41f262b765f9236c02e6636a1e993df36b6a4bfe3e981541ed37877971a3e8c"
+      },
+      {
+        "source_create_file": "100/sb_mimi.create",
+        "source_block_ordinal": 4,
+        "source_raw_byte_window": [
+          622,
+          768
+        ],
+        "source_raw_block_sha256": "0bdb8f780186bfdf99e2a1909a615b749051e0ea1e9dd15058944bd8f991c1d3",
+        "floor": 122,
+        "source_borncenter": [
+          120,
+          145,
+          1,
+          1
+        ],
+        "source_graphic_alias": 16073,
+        "source_function_token": "sb_hag",
+        "source_template_file": "300/sb_hag.template",
+        "source_template_block_sha256": "c6e17724c2629b79794a35b5912bab71cf3f89a60927a76c94285cf59276d78d",
+        "source_arg_file": "100/sb_mimi.arg",
+        "source_arg_SHA256": "f41f262b765f9236c02e6636a1e993df36b6a4bfe3e981541ed37877971a3e8c"
+      },
+      {
+        "source_create_file": "100/sb_mimi.create",
+        "source_block_ordinal": 5,
+        "source_raw_byte_window": [
+          768,
+          913
+        ],
+        "source_raw_block_sha256": "a8badce3a1e735e1f9bf162c5e61de3b4c1ac5c70c9f56fbf39c8ecfb6c53ad8",
+        "floor": 122,
+        "source_borncenter": [
+          162,
+          12,
+          1,
+          1
+        ],
+        "source_graphic_alias": 16073,
+        "source_function_token": "sb_hag",
+        "source_template_file": "300/sb_hag.template",
+        "source_template_block_sha256": "c6e17724c2629b79794a35b5912bab71cf3f89a60927a76c94285cf59276d78d",
+        "source_arg_file": "100/sb_mimi.arg",
+        "source_arg_SHA256": "f41f262b765f9236c02e6636a1e993df36b6a4bfe3e981541ed37877971a3e8c"
+      },
+      {
+        "source_create_file": "100/sb_mimi.create",
+        "source_block_ordinal": 6,
+        "source_raw_byte_window": [
+          938,
+          1081
+        ],
+        "source_raw_block_sha256": "ded9e31f9d8e29956a2fbb5ce2aa7c8d54f21295a226e576ecc625dd64d8ed3e",
+        "floor": 118,
+        "source_borncenter": [
+          75,
+          9,
+          1,
+          1
+        ],
+        "source_graphic_alias": 16073,
+        "source_function_token": "sb_hag",
+        "source_template_file": "300/sb_hag.template",
+        "source_template_block_sha256": "c6e17724c2629b79794a35b5912bab71cf3f89a60927a76c94285cf59276d78d",
+        "source_arg_file": "100/sb_mimi.arg",
+        "source_arg_SHA256": "f41f262b765f9236c02e6636a1e993df36b6a4bfe3e981541ed37877971a3e8c"
+      },
+      {
+        "source_create_file": "100/sb_mimi.create",
+        "source_block_ordinal": 7,
+        "source_raw_byte_window": [
+          1081,
+          1227
+        ],
+        "source_raw_block_sha256": "b95147eee3c32ca5c811edd0101baa515fc914cdbe1441664d122ae6282d324b",
+        "floor": 118,
+        "source_borncenter": [
+          129,
+          165,
+          1,
+          1
+        ],
+        "source_graphic_alias": 16073,
+        "source_function_token": "sb_hag",
+        "source_template_file": "300/sb_hag.template",
+        "source_template_block_sha256": "c6e17724c2629b79794a35b5912bab71cf3f89a60927a76c94285cf59276d78d",
+        "source_arg_file": "100/sb_mimi.arg",
+        "source_arg_SHA256": "f41f262b765f9236c02e6636a1e993df36b6a4bfe3e981541ed37877971a3e8c"
+      },
+      {
+        "source_create_file": "100/sb_mimi.create",
+        "source_block_ordinal": 8,
+        "source_raw_byte_window": [
+          1227,
+          1372
+        ],
+        "source_raw_block_sha256": "658962a1d7056b7b8950890ff536df1a9cf18b59987dd7b157ce0c9f184fe84d",
+        "floor": 118,
+        "source_borncenter": [
+          207,
+          99,
+          1,
+          1
+        ],
+        "source_graphic_alias": 16073,
+        "source_function_token": "sb_hag",
+        "source_template_file": "300/sb_hag.template",
+        "source_template_block_sha256": "c6e17724c2629b79794a35b5912bab71cf3f89a60927a76c94285cf59276d78d",
+        "source_arg_file": "100/sb_mimi.arg",
+        "source_arg_SHA256": "f41f262b765f9236c02e6636a1e993df36b6a4bfe3e981541ed37877971a3e8c"
+      },
+      {
+        "source_create_file": "100/sb_mimi.create",
+        "source_block_ordinal": 9,
+        "source_raw_byte_window": [
+          1372,
+          1517
+        ],
+        "source_raw_block_sha256": "ab1e5a05873d2f0555232d9a564159d9d2b1a4386b1463fe3b7b90a2490fe57a",
+        "floor": 118,
+        "source_borncenter": [
+          189,
+          69,
+          1,
+          1
+        ],
+        "source_graphic_alias": 16073,
+        "source_function_token": "sb_hag",
+        "source_template_file": "300/sb_hag.template",
+        "source_template_block_sha256": "c6e17724c2629b79794a35b5912bab71cf3f89a60927a76c94285cf59276d78d",
+        "source_arg_file": "100/sb_mimi.arg",
+        "source_arg_SHA256": "f41f262b765f9236c02e6636a1e993df36b6a4bfe3e981541ed37877971a3e8c"
+      },
+      {
+        "source_create_file": "100/sb_mimi.create",
+        "source_block_ordinal": 10,
+        "source_raw_byte_window": [
+          1517,
+          1661
+        ],
+        "source_raw_block_sha256": "1ad8d17e47df27325299e96916df20f17da1e1a795bbdaf6b6aa3ceb99905221",
+        "floor": 118,
+        "source_borncenter": [
+          99,
+          15,
+          1,
+          1
+        ],
+        "source_graphic_alias": 16073,
+        "source_function_token": "sb_hag",
+        "source_template_file": "300/sb_hag.template",
+        "source_template_block_sha256": "c6e17724c2629b79794a35b5912bab71cf3f89a60927a76c94285cf59276d78d",
+        "source_arg_file": "100/sb_mimi.arg",
+        "source_arg_SHA256": "f41f262b765f9236c02e6636a1e993df36b6a4bfe3e981541ed37877971a3e8c"
+      },
+      {
+        "source_create_file": "100/sb_mimi.create",
+        "source_block_ordinal": 11,
+        "source_raw_byte_window": [
+          1661,
+          1804
+        ],
+        "source_raw_block_sha256": "16d49904916d411fc49939dbd8cc7ede19acec9b5b0f905336783ec6b0d83188",
+        "floor": 118,
+        "source_borncenter": [
+          81,
+          15,
+          1,
+          1
+        ],
+        "source_graphic_alias": 16073,
+        "source_function_token": "sb_hag",
+        "source_template_file": "300/sb_hag.template",
+        "source_template_block_sha256": "c6e17724c2629b79794a35b5912bab71cf3f89a60927a76c94285cf59276d78d",
+        "source_arg_file": "100/sb_mimi.arg",
+        "source_arg_SHA256": "f41f262b765f9236c02e6636a1e993df36b6a4bfe3e981541ed37877971a3e8c"
+      }
+    ],
+    "original_literal_arg": {
+      "entype": 2,
+      "item": 2697,
+      "time": 60,
+      "dieact": 0,
+      "enemyno": [
+        1117,
+        1117,
+        1117,
+        1117,
+        1117,
+        1117,
+        1117,
+        1117,
+        1117,
+        1117
+      ],
+      "dialogue_only_summary": "The original preserved script refers to a cord-cutting stone and a creature appearing from a bag, without proving native event execution."
+    },
+    "function_template_resolution": {
+      "create_function_token": "sb_hag",
+      "actual_matching_template_file": "300/sb_hag.template",
+      "unreferenced_same_dir_template_key": "sb_mimi",
+      "same_dir_template_file": "100/sb_mimi.template",
+      "source_template_names": {
+        "sb_hag": {
+          "path": "300/sb_hag.template",
+          "raw_block_sha256": "c6e17724c2629b79794a35b5912bab71cf3f89a60927a76c94285cf59276d78d",
+          "source_functionset": "NPCEnemy",
+          "create_ref_count_in_public_index": 13
+        },
+        "sb_mimi": {
+          "path": "100/sb_mimi.template",
+          "raw_block_sha256": "19472495f4bec0b0c007d6fe6b245595cd2c10b31cf67924a06f97971cd2ad4f",
+          "source_functionset": "NPCEnemy",
+          "create_ref_count_in_public_index": 0
+        }
+      },
+      "source_template_key_sb_hag_matches_all_12": true,
+      "original_create_graphic_alias_16073_not_same_as_matching_template_type_100329": true,
+      "native_type_selector_UNVERIFIED": true
+    }
+  },
+  "prior_QUEST19_comparison": {
+    "source": "research/recovered/STONEAGE-QUEST19-MARJU-POST-TREASUREBAG-SOURCE-R1.json",
+    "QUEST19_original_source_create": "extra/event/marju.create",
+    "existing_quest19_bag_NPCs": 10,
+    "existing_quest19_create_count_including_delivery_people": 12,
+    "QUEST19_bag_function": "changeevent",
+    "QUEST19_bag_graphic_alias": 16073,
+    "QUEST19_original_script_condition_item": 2697,
+    "QUEST19_scripts_include_LV_gt_0_and_ITEM_2697": true,
+    "QUEST19_has_NpcWarp_and_GetRandItem_script_literals": true,
+    "source_bag_floor_names": "118 and 122 in preserved map indexes",
+    "exact_spawn_coordinate_collisions": [
+      {
+        "floor": 122,
+        "xy": [
+          162,
+          12
+        ],
+        "sb_mimi_ordinal": 5,
+        "other_original_quest19_script": "extra/event/marju04a",
+        "graphic_alias": 16073
+      }
+    ],
+    "distinct_source_CREATE_config_rows_must_not_be_summed_to_native_world_bag_count": true
+  },
+  "enemy_instance_and_original_visual_bridge": {
+    "source": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-09-ORIGINAL-NPCENEMY-ROSTER-BRIDGE-R1.json",
+    "original_ARG_enemy_ID_1117_repeat_count": 10,
+    "community_source_enemy_instance_1117": 1117,
+    "paired_template_ID": 3,
+    "paired_template_graphicno": 100252,
+    "paired_template_PETFLG_literal": 1,
+    "preserved_community_SPR_index": 242,
+    "preserved_community_SPR_declared_animation_count": 56,
+    "community_two_enemy_instance_rows_exact_same_SHA": false,
+    "community_two_enemy_template_rows_exact_same_SHA": false,
+    "qualified_TW10_client_P3H_source_SHA256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "TW10_original_SPR_graphic100252_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+    "TW10_original_SPR_group_index": 242,
+    "previously_verified_original_TW10_action1_direction_sequences": 8,
+    "previously_verified_original_TW10_action1_frame_occurrences": 16,
+    "previously_verified_actual_TW10_action1_RD_pixels": true,
+    "private_SCENE28_observer_zip_sha256": "f707d196acb6c449e2b6b11345a02db36ac6726131ce51f9a93587b32c3ad492",
+    "private_SCENE28_observer_zip_3_members_CRC_verified": true,
+    "private_SCENE28_original_ZIP_reread_not_same_as_full_P3H_source_replay": true,
+    "same_SPR_segment_does_not_prove_original_same_deployment_or_same_RD_pixels": true
+  },
+  "map_bounds_reuse": {
+    "source_QUEST19_map_118": {
+      "geometry": [
+        250,
+        180
+      ],
+      "source_DAT_sha256": "f4116dbcd8625bc81270a6215748c2ef46d67f0098161365669eb385f5798f9e"
+    },
+    "source_QUEST19_map_122": {
+      "geometry": [
+        300,
+        200
+      ],
+      "source_DAT_sha256": "64217be4a7e96959099e8872e332cfdabcbdfd71ed9420c4fe1086ba3ee35438"
+    },
+    "all_12_xy_within_prior_original_source_geometries": true,
+    "original_DAT_file_bytes_re_read_this_unit": 0
+  },
+  "counts": {
+    "new_original_source_files_discovered": 0,
+    "original_NPC_files_re_read": 7,
+    "original_NPC_CREATES_byte_windows_re_verified": 12,
+    "source_qualified_crossfamily_bag_schemes": 2,
+    "exact_coordinate_collisions": 1,
+    "new_original_TW10_RD_blocks_read": 0,
+    "new_original_native_game_client_server_execution": 0
+  },
+  "negative_limits": [
+    "The 12 source CREATE rows and 10 QUEST19 source CREATE rows are not 22 verified simultaneously active treasure bags.",
+    "The unique exact same-position source overlap at floor 122 (162,12) is not evidence that both entities coexisted or that either source definition won.",
+    "The literal item:2697 in NPCEnemy ARG does not authenticate required-item runtime semantics, reward, consumption, drop rate, or spawn behavior.",
+    "sb_mimi.template key is not the sb_hag function token referenced by these 12 CREATE rows; the matching sb_hag template resides in a different source directory and native search/override behavior is unverified.",
+    "The enemy1117-to-graphic100252 static numeric relation and identical SPR segments across preserved carriers do not prove the Taiwan1.0 official retail client served this later community quest or rendered the same bitmap bytes.",
+    "Original commercial scripts, full dialogue, static RD or PNG, and proprietary ZIP payloads remain private; public artifacts include short labels, source hashes, numeric fields and negative controls only."
+  ],
+  "next": "Rotate to a distinct original source-ready pet, map, quest, or gameplay family, preferably with actually new qualified visual/material bytes; stop this treasurebag source family at the two-version static conflict."
+}

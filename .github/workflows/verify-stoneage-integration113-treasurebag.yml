@@ -1,0 +1,29 @@
+name: Verify StoneAge INTEGRATION113 treasurebag source variants
+
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION113-TREASUREBAG-VARIANTS-ORIGINAL-SOURCE-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION113-TREASUREBAG-SOURCE-VARIANTS-20261115.md'
+      - 'tests/test_stoneage_integration113_treasurebag_variants.py'
+      - '.github/workflows/verify-stoneage-integration113-treasurebag.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION113-TREASUREBAG-VARIANTS-ORIGINAL-SOURCE-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION113-TREASUREBAG-SOURCE-VARIANTS-20261115.md'
+      - 'tests/test_stoneage_integration113_treasurebag_variants.py'
+      - '.github/workflows/verify-stoneage-integration113-treasurebag.yml'
+  workflow_dispatch:
+
+jobs:
+  source-byte-and-negative-evidence-contract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify original two treasurebag source schemes and pixel candidate boundaries
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration113_treasurebag_variants.py' -v
