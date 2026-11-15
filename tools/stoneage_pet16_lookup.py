@@ -13,6 +13,8 @@ PET19_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-
 PET21_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-21-OFFICIAL-WEB-ARCHIVED-IMAGE-REACCESS-R1.json"
 PET22_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-22-JP-124-ARCHIVED-IMAGE-RECOVERY-R1.json"
 PET23_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-23-JP-LOW-RATE-IMAGE-REACCESS-R1.json"
+PET39_PATH = PATH.with_name("STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json")
+CLIENT_ALBUM = "tw10_client_album"
 
 # Only datasets carrying an original numeric graphic field participate.
 # Official JP/CN page ordinals/image filenames are NOT client graphic numbers.
@@ -20,6 +22,18 @@ GRAPHIC_DATASETS = (
     "later2016_templates", "later2016_graphics",
     "mixed25_main", "mixed25_alternative", "tw10_visual",
 )
+
+
+def load_catalog(path=PATH):
+    """Load the frozen PET16 catalogue and the same-client Taiwan 1.0 supplement."""
+    catalog = json.loads(path.read_text(encoding="utf-8"))
+    if path.resolve() == PATH:
+        album = json.loads(PET39_PATH.read_text(encoding="utf-8"))["records"]
+        catalog["datasets"][CLIENT_ALBUM] = album
+        counts = catalog["metrics"]["source_namespace_row_counts_NOT_species"]
+        counts[CLIENT_ALBUM] = len(album)
+        catalog["metrics"]["record_total_NOT_species"] = sum(counts.values())
+    return catalog
 
 
 def lookup(catalog, query="", dataset=None, limit=20, details=False):
@@ -67,12 +81,15 @@ def graphic_trace(catalog, graphic_number, limit=20):
             "truncated": len(matched) > limit,
             "records": matched[:limit],
         }
+    album_record = next((row for row in catalog["datasets"].get(CLIENT_ALBUM, [])
+                         if row["graphic_number"] == graphic_number), None)
     return {
         "graphic_number": graphic_number,
         "relation": "LITERAL_GRAPHIC_NUMBER_COINCIDENCE_ONLY",
         "official_pet_species_identity_verified": False,
         "same_historical_build_or_server_deployment_verified": False,
         "tw10_original_species_name": None,
+        "tw10_same_client_album_record": album_record,
         "official_JP_CN_web_ordinal_or_image_URL_not_mappable_to_graphic": True,
         "note": ("The same graphic number may be reused by multiple source templates. "
                  "A named late-community row never names the TW10 retail sprite. "
@@ -278,7 +295,7 @@ def main():
     p.add_argument("--dataset", choices=(
         "later2016_templates", "later2016_graphics",
         "mixed25_main", "mixed25_alternative", "tw10_visual",
-        "jp_official_web", "cn_official_web"))
+        "jp_official_web", "cn_official_web", CLIENT_ALBUM))
     p.add_argument("--limit", type=int, default=20)
     p.add_argument("--summary", action="store_true")
     p.add_argument("--details", action="store_true",
@@ -329,7 +346,7 @@ def main():
                 args.trace_graphic is not None or args.capture_template is not None
                 or args.skill_gaps or args.skill_id is not None):
             p.error("--operator-web is an independent exact-source lookup mode")
-        catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
+        catalog = load_catalog(args.catalog)
         report = json.loads(PET21_PATH.read_text(encoding="utf-8"))
         pet22 = json.loads(PET22_PATH.read_text(encoding="utf-8"))
         pet23 = json.loads(PET23_PATH.read_text(encoding="utf-8"))
@@ -337,7 +354,7 @@ def main():
                                       args.web_ordinal, pet22=pet22, pet23=pet23)
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return 0
-    catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
+    catalog = load_catalog(args.catalog)
     if args.summary:
         out = catalog["metrics"]
     elif args.capture_template is not None:

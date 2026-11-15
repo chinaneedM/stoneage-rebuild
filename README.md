@@ -32,6 +32,8 @@ Primary targets:
 
 See [`docs/CURRENT-STATE.md`](docs/CURRENT-STATE.md).
 
+The current pet restoration work and its next step are recorded in the [Taiwan 1.0 client album evidence](docs/continuity/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-20261115.md).
+
 ## Continuity
 
 Every new ChatGPT conversation must start from the repository rather than chat memory.
