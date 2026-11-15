@@ -1,13 +1,24 @@
-name: PET32 inspect two certified 1999 JSS pet-mail clauses
+name: PET32 source-exact JSS 1999 battle-mail semantic boundary
 on:
   push:
     paths:
+      - "tools/stoneage_pet32_jss_mail_semantic.py"
+      - "tests/test_stoneage_pet32_jss_mail_semantic.py"
+      - "research/recovered/STONEAGE-PET32-JSS1999-BATTLE-MAIL-SEMANTIC-R1.json"
+      - "docs/continuity/STONEAGE-PET32-JSS1999-BATTLE-MAIL-SEMANTIC-20261115.md"
+      - ".github/workflows/pet32-inspect-1999-jss-mail.yml"
+  pull_request:
+    paths:
+      - "tools/stoneage_pet32_jss_mail_semantic.py"
+      - "tests/test_stoneage_pet32_jss_mail_semantic.py"
+      - "research/recovered/STONEAGE-PET32-JSS1999-BATTLE-MAIL-SEMANTIC-R1.json"
+      - "docs/continuity/STONEAGE-PET32-JSS1999-BATTLE-MAIL-SEMANTIC-20261115.md"
       - ".github/workflows/pet32-inspect-1999-jss-mail.yml"
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  source-bound-meaning:
+  verified-mail-semantics:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
@@ -15,32 +26,22 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Verify exact primary-source custody and inspect only two short clauses
+      - name: Check negative guards, source identity, and historical bounds
+        run: python -m unittest tests.test_stoneage_pet32_jss_mail_semantic -v
+      - name: Replay original 11239-byte archived operator source without publishing original text
         shell: bash
         run: |
+          python -m tools.stoneage_pet32_jss_mail_semantic --output "${{ runner.temp }}/pet32-derived.json"
           python - <<'PY'
-          import hashlib
-          import json
+          import json, os
           from pathlib import Path
-          from urllib.request import Request, urlopen
-          from tools.stoneage_jss_pet_patch_history import URL, SHA, change_rows
-          from tools.stoneage_jss_pet_faq import compact
-          with urlopen(Request(URL,headers={"User-Agent":"StoneAge-Historical-Research/1.0"}),timeout=60) as r:
-              raw=r.read()
-              assert r.url==URL, "capture changed"
-          assert len(raw)==11239 and hashlib.sha256(raw).hexdigest()==SHA, "source bytes changed"
-          rows=change_rows(raw.decode("shift_jis",errors="strict"))
-          assert len(rows)==40
-          published=json.loads(Path("research/recovered/STONEAGE-PET31-JSS1999-ALL-CLAUSE-CENSUS-R1.json").read_text(encoding="utf-8"))
-          print("SOURCE_VERIFIED",len(raw),SHA,"DATES",len(rows))
-          for source_order,clause_order,date in ((30,0,"1999-11-26"),(31,3,"1999-11-22")):
-              row=rows[source_order]
-              assert row["date"]==date
-              clauses=[compact(c) for c in row["text"].split("・") if compact(c)]
-              clause=clauses[clause_order]
-              original_record=next(x for x in published["dated_rows_1999"] if x["original_source_order"]==source_order)
-              assert hashlib.sha256(clause.encode()).hexdigest()==original_record["clauses"][clause_order]["normalized_sha256"]
-              print("PET32_CLAUSE_BEGIN",date,source_order,clause_order)
-              print(clause)
-              print("PET32_CLAUSE_END",len(clause),hashlib.sha256(clause.encode()).hexdigest())
+          actual=json.loads((Path(os.environ["RUNNER_TEMP"])/"pet32-derived.json").read_text())
+          published=json.loads(Path("research/recovered/STONEAGE-PET32-JSS1999-BATTLE-MAIL-SEMANTIC-R1.json").read_text())
+          assert actual==published, "source-exact semantic result diverges from permanently published receipt"
+          print("PET32_DERIVED_RECEIPT_EXACT_MATCH",len(actual["source_bounded_semantic_records"]))
           PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet32-jss1999-two-derived-clauses-only
+          path: ${{ runner.temp }}/pet32-derived.json
+          retention-days: 30
