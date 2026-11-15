@@ -82,3 +82,8 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## PET33 2026-11-15｜1999-05-18 日本上市前正式宠物构想同期证据
 
 [来源有界PET33报告](continuity/STONEAGE-PET33-JP1999-PRELAUNCH-PET-EVIDENCE-20261115.md)／[确证原页指纹与资格边界](../research/recovered/STONEAGE-PET33-JP1999-0518-PRELAUNCH-PET-SOURCE-R1.json)：同期 INTERNET Watch 1999-05-18 通知日本JSS `STONE AGE` 1999秋预定发售，并明确提及「恐竜を捕獲・飼育」。原23,747B页面已由GitHub Action 43711358176 实取并SHA认证；这是**上市前捕获/育成宣传**，不是1999官服实装、版本二进制、具名宠物或上线日证明。1999仍 `NOT_YEAR_AUDITED`，游标1999，新增真实具名官服宠物0。后续锁定最早JSS实际零售／测试同版原名及获取证据。
+
+
+## PET34 2026-11-15｜1999-09 测试期杂志原扫描文件身份回放与文字层不可核读
+
+[来源有限审查](continuity/STONEAGE-PET34-JSS1999-SEPTEMBER-BETA-PRINT-CUSTODY-20261115.md)／[31,915,180B/167页PDF SHA及否定边界](../research/recovered/STONEAGE-PET34-JSS1999-SEPTEMBER-BETA-PRINT-SOURCE-R1.json)：已知1999《Play Online》No.015原扫描由GitHub Actions两次实际取得、同一PDF SHA `fd6cb9e4a3f7023115ebff91042d7c9b4a8c956b822c5ffd6379230ec5ee328c`，源层确认原档身份；但日文文字层严重乱码，不能采信未经核对的「测试奖励道具」搜索转录，更**不能推成赠送宠物**或具名物种/同服实装。1999仍NOT_YEAR_AUDITED，PET继续唯一模块，后续改查尚缺的同版1999 JSS零售/测试原媒介及正式宠物名录。

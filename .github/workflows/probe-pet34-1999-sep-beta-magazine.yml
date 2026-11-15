@@ -1,0 +1,50 @@
+name: PET34 source-exact JSS 1999 September beta magazine custody
+on:
+  push:
+    paths:
+      - .github/workflows/probe-pet34-1999-sep-beta-magazine.yml
+      - tools/stoneage_pet34_jss1999_beta_print_custody.py
+      - tests/test_stoneage_pet34_jss1999_beta_print_custody.py
+      - research/recovered/STONEAGE-PET34-JSS1999-SEPTEMBER-BETA-PRINT-SOURCE-R1.json
+      - research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json
+      - docs/continuity/STONEAGE-PET34-JSS1999-SEPTEMBER-BETA-PRINT-CUSTODY-20261115.md
+  pull_request:
+    paths:
+      - .github/workflows/probe-pet34-1999-sep-beta-magazine.yml
+      - tools/stoneage_pet34_jss1999_beta_print_custody.py
+      - tests/test_stoneage_pet34_jss1999_beta_print_custody.py
+      - research/recovered/STONEAGE-PET34-JSS1999-SEPTEMBER-BETA-PRINT-SOURCE-R1.json
+      - research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json
+      - docs/continuity/STONEAGE-PET34-JSS1999-SEPTEMBER-BETA-PRINT-CUSTODY-20261115.md
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-boundary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Minimal original PDF page counter (no OCR or scan-image publication)
+        run: python -m pip install --disable-pip-version-check 'pymupdf==1.24.14'
+      - name: Verify PET chronology and negative pet release guards
+        run: python -m unittest tests.test_stoneage_pet34_jss1999_beta_print_custody -v
+      - name: Fetch exact scanned period magazine original and compare source-bound derivative
+        run: |
+          python -m tools.stoneage_pet34_jss1999_beta_print_custody --output "${{ runner.temp }}/pet34.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          original=json.loads((Path(os.environ["RUNNER_TEMP"])/"pet34.json").read_text(encoding="utf-8"))
+          pinned=json.loads(Path("research/recovered/STONEAGE-PET34-JSS1999-SEPTEMBER-BETA-PRINT-SOURCE-R1.json").read_text(encoding="utf-8"))
+          assert original==pinned,"PET34 derived source-custody receipt changed"
+          print("PET34_DERIVED_RECEIPT_SOURCE_EXACT_MATCH",original["source"]["sha256"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet34-september-1999-source-custody-only
+          path: ${{ runner.temp }}/pet34.json
+          retention-days: 30
