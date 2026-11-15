@@ -40,7 +40,7 @@ python tools/stoneage_pet16_lookup.py --dataset jp_official_web --query ウー�
 python -m unittest tests.test_stoneage_pet16_unified_catalog tests.test_stoneage_pet17_graphic_traces
 ```
 
-受限 `--limit` 只限制每来源显示的原行数，原命中总数照常披露。测试覆盖多记录碰撞、主备表互斥、真实台湾1.0动作段哈希与104动作方向段、零命中、不合法图号、官网名称不得自动反向赋ID。
+受限 `--limit` 只限制每来源显示的原行数，原命中总数照常披露。测试覆盖多记录碰撞、主备表互斥、真实台湾1.0动作段哈希与图号100329的56段/480帧位置、零命中、不合法图号、官网名称不得自动反向赋ID。
 
 ## 验收边界与后续
 
