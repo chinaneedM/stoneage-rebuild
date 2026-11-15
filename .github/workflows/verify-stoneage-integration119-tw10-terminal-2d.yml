@@ -1,0 +1,27 @@
+name: Verify StoneAge INTEGRATION119 original TW1 terminal SPR groups, 230 authentic indexed bitmaps
+on:
+  push:
+    branches:
+      - agent/integration119-tw10-terminal-2d-20261115
+      - main
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION119-TW10-16-SOURCE-QUALIFIED-2D-EFFECTLIKE-SPR-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION119-TW10-ORIGINAL-16-TERMINAL-SPR-2D-20261115.md'
+      - 'tests/test_stoneage_integration119_tw10_terminal_effectlike_spr.py'
+      - '.github/workflows/verify-stoneage-integration119-tw10-terminal-2d.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION119-TW10-16-SOURCE-QUALIFIED-2D-EFFECTLIKE-SPR-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION119-TW10-ORIGINAL-16-TERMINAL-SPR-2D-20261115.md'
+      - 'tests/test_stoneage_integration119_tw10_terminal_effectlike_spr.py'
+      - '.github/workflows/verify-stoneage-integration119-tw10-terminal-2d.yml'
+jobs:
+  source-derived-original-2d:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate original TW1 source-derived group and pixel counts, known old documents and explicit no-native-execution limits
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration119_tw10_terminal_effectlike_spr.py' -v
