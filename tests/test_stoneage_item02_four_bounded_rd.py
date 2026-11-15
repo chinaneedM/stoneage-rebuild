@@ -67,7 +67,7 @@ class TestItem02BoundedOriginalRD(unittest.TestCase):
         self.assertEqual([r['physical_original_ADRN_bitmap_number'] for r in self.rows],list(PHYSICALS))
         self.assertEqual([r['original_ADRN_record_index'] for r in self.rows],list(PHYSICALS))
         self.assertTrue(all(r['original_RD_flag']==1 for r in self.rows))
-        self.assertEqual(len(set(r['original_RD_sha256'] for r in self.rows)),4)
+        self.assertEqual(len(set(r['original_RD_SHA256'] for r in self.rows)),4)
 
     def test_04_preserve_exact_whole_original_rd_sha(self):
         self.assertEqual(tuple(r['original_RD_SHA256'] for r in self.rows),EXPECTED_RD_SHA)
