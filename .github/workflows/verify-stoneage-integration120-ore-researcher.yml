@@ -1,0 +1,27 @@
+name: Verify StoneAge INTEGRATION120 source NPC two actual original item RD crosswalk
+on:
+  push:
+    branches:
+      - agent/integration120-ore-researcher-original-item2-20261115
+      - main
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION120-ORE-RESEARCHER-17-BRANCH-2-REAL-RD-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION120-ORE-RESEARCHER-17-BRANCH-2-REAL-RD-20261115.md'
+      - 'tests/test_stoneage_integration120_ore_researcher_17_branch_2_rd.py'
+      - '.github/workflows/verify-stoneage-integration120-ore-researcher.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-INTEGRATION120-ORE-RESEARCHER-17-BRANCH-2-REAL-RD-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION120-ORE-RESEARCHER-17-BRANCH-2-REAL-RD-20261115.md'
+      - 'tests/test_stoneage_integration120_ore_researcher_17_branch_2_rd.py'
+      - '.github/workflows/verify-stoneage-integration120-ore-researcher.yml'
+jobs:
+  source-only-17-events-two-original-rd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify existing source corpus and new private-linkage derived numerical conservation only
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration120_ore_researcher_17_branch_2_rd.py' -v
