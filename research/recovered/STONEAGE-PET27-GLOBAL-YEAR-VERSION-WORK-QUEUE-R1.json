@@ -18,8 +18,8 @@
     "year": 2000,
     "phase": "YEAR_2000_OFFICIAL_PC_REGION_VERSION_PET_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET40-TW-JP-EARLY-OFFICIAL-SOURCE-BOUNDARIES-20261115",
-    "next": "PET41: Continue at the 2000 frontier. Identify the original Waei August card set or a version-matched deployment source for 布魯頓. Follow distinct authenticated original disc or full-game update leads for Japan, Korea, and Mainland China.",
+    "latest_partial_root_review": "PET41-TW-EARLY-WGS-MUSEUM-20261115",
+    "next": "PET42: Keep the 2000 frontier open. Check the two attributed JOT prizes against a contemporaneous operator result or exact client/deployment, and continue for the original WGS card set and early Japan/Korea/Mainland clients.",
     "current_source_acquisition_priority": "CLIENT_FIRST_VERSION_AUTHENTICATION_AND_PET_RESOURCE_EXTRACTION_BEFORE_EXTERNAL_NEWS"
   },
   "region_tracks": [
@@ -1270,6 +1270,15 @@
       "evidence_json": "research/recovered/STONEAGE-PET40-TW-JP-EARLY-OFFICIAL-SOURCE-BOUNDARIES-R1.json",
       "new_named_pet_release_proofs": 0,
       "historical_pet_population_count": null
+    },
+    {
+      "id": "PET41-TW-EARLY-WGS-MUSEUM-20261115",
+      "report": "docs/continuity/STONEAGE-PET41-TW-EARLY-WGS-MUSEUM-20261115.md",
+      "evidence_json": "research/recovered/STONEAGE-PET41-TW-EARLY-WGS-MUSEUM-R1.json",
+      "web_catalogue_positions": 128,
+      "exact_client_printed_name_matches": 106,
+      "new_named_pet_release_proofs": 0,
+      "historical_pet_population_count": null
     }
   ],
   "client_first_methodology": {
@@ -1277,7 +1286,7 @@
     "policy_section": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md#23-client-first-official-pet-extraction-historical-documents-as-targeted-supplements----2026-11-15",
     "source_manifest": "research/recovered/STONEAGE-PET38-CLIENT-FIRST-AVAILABLE-SOURCE-INVENTORY-R1.json",
     "target": "TW_WAEI_JSS_1_0_RETAIL",
-    "next": "PET41_2000_DATED_TW_WGS_SET_OR_MATCHED_PET_DEPLOYMENT_AND_MISSING_REGION_CLIENTS",
+    "next": "PET42_2000_ORIGINAL_JOT_ISSUANCE_AND_WGS_CARD_ORIGINALS_OR_OFFICIAL_CLIENTS",
     "reiterated_module_lock": "PET",
     "year_cursor_unchanged": 2000
   }

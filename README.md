@@ -2941,3 +2941,7 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-15 — PET40｜布魯頓取得线索与早期原件核查
 
 [台湾与日本的早期宠物原页和补丁核查](docs/continuity/STONEAGE-PET40-TW-JP-EARLY-OFFICIAL-SOURCE-BOUNDARIES-20261115.md)。华义官网保存的紫微服玩家投稿与台湾 1.0 原盘的「布魯頓」名称可对照，2000 年具体获得日期与运行版别继续查证。
+
+## 2026-11-15 — PET41｜台湾华义早期宠物馆
+
+[128 个网页条目与台湾 1.0 原盘对照](docs/continuity/STONEAGE-PET41-TW-EARLY-WGS-MUSEUM-20261115.md)。华义早期网页对照到 105 个同名原盘图号。布魯頓与两条不同的取得或出现线索可按原名和图号查阅。
