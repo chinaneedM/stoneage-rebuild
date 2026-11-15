@@ -39,7 +39,9 @@ class Pet17GraphicTraceTests(unittest.TestCase):
         t = graphic_trace(self.c, 100329)
         visual = t["source_separated_matches"]["tw10_visual"]["records"][0]
         self.assertEqual(visual["source"], "AUTHENTICATED_TW10_RETAIL_SPR_REAL")
-        self.assertEqual(visual["source_sequences"], 104)
+        self.assertEqual(visual["source_sequences"], 56)
+        self.assertEqual(visual["source_frame_positions"], 480)
+        self.assertEqual(visual["source_action_values"], [0, 1, 2, 3, 4, 9, 10])
         self.assertEqual(len(visual["spr_original_segment_sha256"]), 64)
         self.assertIs(visual["official_species_identity"], False)
         self.assertFalse(visual["native_palette_or_timing_verified"])
