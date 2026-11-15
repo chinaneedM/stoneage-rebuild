@@ -1,0 +1,45 @@
+name: PET34 probe 1999 September Play Online beta printed original source
+on:
+  push:
+    paths:
+      - .github/workflows/probe-pet34-1999-sep-beta-magazine.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pdf-source-page-identity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Inspect original 1999 September scan with strict source identity
+        run: |
+          python -m pip install --disable-pip-version-check pymupdf
+          python - <<'PY'
+          import hashlib
+          from urllib.request import Request,urlopen
+          import fitz
+          URL="https://www.kingpin.info/download/kingpin/media/magazine/Play_Online_Issue_015_%28Japanese%29_1999-09.pdf"
+          req=Request(URL,headers={"User-Agent":"Mozilla/5.0 (compatible; StoneAgeHistoricalEvidence/1.0)"})
+          with urlopen(req,timeout=120) as r:
+              source=r.read(40000001); final=r.url
+          assert source.startswith(b"%PDF-") and len(source)<=40000000
+          print("PET34_SOURCE",len(source),"SHA256",hashlib.sha256(source).hexdigest(),"FINAL",final)
+          d=fitz.open(stream=source,filetype="pdf")
+          print("PET34_PAGES",len(d))
+          matches=[]
+          for i,page in enumerate(d):
+              text=page.get_text(sort=True)
+              if any(t in text for t in ("STONEAGE","ストーンエイジ","ゲーマーズドリーム","Play Online読者200名","200名")):
+                  matches.append((i,len(text),hashlib.sha256(text.encode()).hexdigest(),text))
+          print("PET34_SEARCHABLE_PAGE_COUNT",len(matches))
+          for p,length,sha,txt in matches[:15]:
+              print("PET34_PAGE",p,"TEXT_CHARS",length,"TEXT_SHA",sha,
+                    "BETA",("ベータ" in txt),"PETS",("ペット" in txt),"BONUS",("特典アイテム" in txt),
+                    "SAMPLE",repr(" ".join(txt.split())[:230]))
+          print("PET34_NEAR_PRINTED36",[(i, len(d[i].get_text()),d[i].rect.width,d[i].rect.height)
+              for i in range(32,min(41,len(d)))])
+          PY
