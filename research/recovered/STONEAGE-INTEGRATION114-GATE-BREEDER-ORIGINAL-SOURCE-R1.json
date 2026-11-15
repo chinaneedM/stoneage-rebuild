@@ -1,0 +1,343 @@
+{
+  "schema": "stoneage.integration114_npcenemy_guard_breeder_literal_warp_provenance.r1",
+  "date": "2026-11-15",
+  "base": {
+    "main": "8c864e94a708d96dff817a82814cbd4d9c6dcae2",
+    "tree": "88abad5cf499bb84fef00028bf4086fbf6ddd711",
+    "preserved_CURRENT_sha1": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "preserved_CURRENT_bytes": 2709173
+  },
+  "source": {
+    "carrier": "LATER_COMMUNITY_MIXED25_PRESERVED_NPC_NOT_AUTHENTICATED_OFFICIAL_1999_OR_TW1_OR_CN182",
+    "private_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "private_zip_bytes": 995176,
+    "CRC_passed_member_count": 2205,
+    "actual_private_source_member_files_reread": 9,
+    "public_source_manifest_git_blob": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "source_files": {
+      "100/sb_uiy.create": {
+        "bytes": 553,
+        "sha256": "69fb8f0ef8dac160b745aa3e681d5992b945eea74d079f26a024b49d5b8f76fc",
+        "crc32": "05289202"
+      },
+      "100/sb_uiy.template": {
+        "bytes": 408,
+        "sha256": "f0156cf971292dec8c67b60adc2403b75624d3796e8b6ac0096b7cffc1f3a190",
+        "crc32": "dc597784"
+      },
+      "100/sb_uiy1.arg": {
+        "bytes": 231,
+        "sha256": "7abc07c4c9db82ab273ce344eb4219053b450da495f115ab86eaeb631fb49435",
+        "crc32": "3ef439cf"
+      },
+      "100/sb_uiy2.arg": {
+        "bytes": 183,
+        "sha256": "ca64ce9a56294dfddc5f1977d71dd61d1b8f1e0ba01ca9451856ef4a63afb77a",
+        "crc32": "d77d363e"
+      },
+      "100/sb_uiy3.arg": {
+        "bytes": 177,
+        "sha256": "52ff387b80a15876d49d33e0b588d874b281df0a1c176fb422649cdf0f2b0c3d",
+        "crc32": "2ed7b806"
+      },
+      "100/sb_sinsa.create": {
+        "bytes": 397,
+        "sha256": "2d9d39c9e310d285be18c4a7a916bc91394f494e5d2b41b733d5d092167ef69f",
+        "crc32": "4153c6ff"
+      },
+      "100/sb_sinsa.template": {
+        "bytes": 301,
+        "sha256": "5c0850b99bda5d82957da66ff9e3a97fb77d7d4046d189cb8f64545ff1a7d1c9",
+        "crc32": "c129b62a"
+      },
+      "100/sb_sbc.arg": {
+        "bytes": 269,
+        "sha256": "7859ee57e671b7954a1ce52e20381606347b15f89e0802c8eea4295eba2ebbcb",
+        "crc32": "6139819a"
+      },
+      "100/sb_jba.arg": {
+        "bytes": 268,
+        "sha256": "05b2eabf1c4866f4273e91908d9f9c29daf79ea44f55b0a93d01581e05fb6c2c",
+        "crc32": "fa3760e0"
+      }
+    }
+  },
+  "original_source_rows": [
+    {
+      "family": "THREE_BROTHERS_GATE",
+      "original_source_create": "100/sb_uiy.create",
+      "create_block_ordinal": 0,
+      "original_create_byte_window": [
+        47,
+        212
+      ],
+      "original_create_block_sha256": "fe1e6239202dd48556765d424da1d3996d83c730a3fadde6c96cbedac1d02b95",
+      "original_floor": 10007,
+      "original_xy": [
+        29,
+        39
+      ],
+      "original_graphicname": 100431,
+      "template_file": "100/sb_uiy.template",
+      "template_token": "sb_uiy1",
+      "original_template_sha256": "69e0471321658747e929e05807966eb15464933fa2ee97a73b37a83cecdf6644",
+      "original_template_type": 100431,
+      "original_handler_file": "100/sb_uiy1.arg",
+      "original_handler_sha256": "7abc07c4c9db82ab273ce344eb4219053b450da495f115ab86eaeb631fb49435",
+      "original_arg_literals": {
+        "entype": 2,
+        "dieact": 1,
+        "warpfl": 10007,
+        "warpx": 29,
+        "warpy": 37,
+        "enemyno": [
+          294,
+          295,
+          296,
+          297,
+          298
+        ],
+        "onebattle": null
+      },
+      "source_fields_are_literal_not_executed": true
+    },
+    {
+      "family": "THREE_BROTHERS_GATE",
+      "original_source_create": "100/sb_uiy.create",
+      "create_block_ordinal": 1,
+      "original_create_byte_window": [
+        219,
+        382
+      ],
+      "original_create_block_sha256": "df785842efbed35d90ccdf646b1e9192f93acbe6921cc530fd8894cb0010f372",
+      "original_floor": 10007,
+      "original_xy": [
+        28,
+        39
+      ],
+      "original_graphicname": 100439,
+      "template_file": "100/sb_uiy.template",
+      "template_token": "sb_uiy2",
+      "original_template_sha256": "ec20d1d1ec24f70249c5efa81e3b6bf37951aad1ef38ebba7a71141716aa48bb",
+      "original_template_type": 100439,
+      "original_handler_file": "100/sb_uiy2.arg",
+      "original_handler_sha256": "ca64ce9a56294dfddc5f1977d71dd61d1b8f1e0ba01ca9451856ef4a63afb77a",
+      "original_arg_literals": {
+        "entype": 2,
+        "dieact": 1,
+        "warpfl": 10007,
+        "warpx": 29,
+        "warpy": 37,
+        "enemyno": [
+          294,
+          295,
+          296,
+          297,
+          298
+        ],
+        "onebattle": null
+      },
+      "source_fields_are_literal_not_executed": true
+    },
+    {
+      "family": "THREE_BROTHERS_GATE",
+      "original_source_create": "100/sb_uiy.create",
+      "create_block_ordinal": 2,
+      "original_create_byte_window": [
+        389,
+        552
+      ],
+      "original_create_block_sha256": "2bffbd6576d0e08f6b324fe2a79342982c819d8b0fa499195a0167956a61d7c7",
+      "original_floor": 10007,
+      "original_xy": [
+        30,
+        39
+      ],
+      "original_graphicname": 100436,
+      "template_file": "100/sb_uiy.template",
+      "template_token": "sb_uiy3",
+      "original_template_sha256": "ac0fca0c9129eb305760313e1da0dab7acd38908aa8bbea1e8a650c90861a8d9",
+      "original_template_type": 100436,
+      "original_handler_file": "100/sb_uiy3.arg",
+      "original_handler_sha256": "52ff387b80a15876d49d33e0b588d874b281df0a1c176fb422649cdf0f2b0c3d",
+      "original_arg_literals": {
+        "entype": 2,
+        "dieact": 1,
+        "warpfl": 10007,
+        "warpx": 29,
+        "warpy": 37,
+        "enemyno": [
+          294,
+          295,
+          296,
+          297,
+          298
+        ],
+        "onebattle": null
+      },
+      "source_fields_are_literal_not_executed": true
+    },
+    {
+      "family": "BREEDER_EXAMINERS",
+      "original_source_create": "100/sb_sinsa.create",
+      "create_block_ordinal": 0,
+      "original_create_byte_window": [
+        40,
+        203
+      ],
+      "original_create_block_sha256": "e9ceedb47d430cbb2dc00c16c219810b482c01fa41c35936ab3c48dce0903bd0",
+      "original_floor": 10919,
+      "original_xy": [
+        4,
+        7
+      ],
+      "original_graphicname": 100407,
+      "template_file": "100/sb_sinsa.template",
+      "template_token": "sb_sbc",
+      "original_template_sha256": "132e43d6855658304fd00493460497554a2e957a010d66a8b9db9f336b99e37b",
+      "original_template_type": 100407,
+      "original_handler_file": "100/sb_sbc.arg",
+      "original_handler_sha256": "7859ee57e671b7954a1ce52e20381606347b15f89e0802c8eea4295eba2ebbcb",
+      "original_arg_literals": {
+        "entype": 2,
+        "dieact": 1,
+        "warpfl": 10920,
+        "warpx": 55,
+        "warpy": 28,
+        "enemyno": [
+          941,
+          942
+        ],
+        "onebattle": 1
+      },
+      "source_fields_are_literal_not_executed": true
+    },
+    {
+      "family": "BREEDER_EXAMINERS",
+      "original_source_create": "100/sb_sinsa.create",
+      "create_block_ordinal": 1,
+      "original_create_byte_window": [
+        233,
+        397
+      ],
+      "original_create_block_sha256": "1c35aa146e99328543fd83ad21d0797cf5625ab2d481a5ff43fb9ecf72460c28",
+      "original_floor": 20711,
+      "original_xy": [
+        19,
+        4
+      ],
+      "original_graphicname": 100437,
+      "template_file": "100/sb_sinsa.template",
+      "template_token": "sb_jba",
+      "original_template_sha256": "73e6adff8630748215919ae131908745ef5526c2be599d0c7645e204ea74d0f3",
+      "original_template_type": 100436,
+      "original_handler_file": "100/sb_jba.arg",
+      "original_handler_sha256": "05b2eabf1c4866f4273e91908d9f9c29daf79ea44f55b0a93d01581e05fb6c2c",
+      "original_arg_literals": {
+        "entype": 2,
+        "dieact": 1,
+        "warpfl": 20711,
+        "warpx": 23,
+        "warpy": 4,
+        "enemyno": [
+          943,
+          944
+        ],
+        "onebattle": 1
+      },
+      "source_fields_are_literal_not_executed": true
+    }
+  ],
+  "prior_map_geometries": [
+    {
+      "floor": 10007,
+      "name": "阿布的洞窟地下７樓",
+      "width": 60,
+      "height": 60,
+      "source_DAT_sha256": "054d794006e73f3f3ee67e66fcc49744a101bb1b46e29ecef418bd573f201b4e",
+      "provenance": "PRIOR_LATER_PRESERVED_WORLD_COVERAGE_NO_NEW_DAT_READ"
+    },
+    {
+      "floor": 10919,
+      "name": "審查室",
+      "width": 20,
+      "height": 20,
+      "source_DAT_sha256": "0813f01f6826549c2c9d5dc7b8b197b6881850502a1df721b159d3004b77fb60",
+      "provenance": "PRIOR_LATER_PRESERVED_WORLD_COVERAGE_NO_NEW_DAT_READ"
+    },
+    {
+      "floor": 20711,
+      "name": "審查室",
+      "width": 30,
+      "height": 40,
+      "source_DAT_sha256": "3c186e1357c0ffae56a0395da04855f12fa5cd87b1807f7078ab38894c756b8b",
+      "provenance": "PRIOR_LATER_PRESERVED_WORLD_COVERAGE_NO_NEW_DAT_READ"
+    },
+    {
+      "floor": 10920,
+      "name": "SBC本部",
+      "width": 100,
+      "height": 100,
+      "source_DAT_sha256": "5286f4229796c4adc7e3b1ca6acec7e102939842b504470b624f75214485bc50",
+      "provenance": "PRIOR_LATER_PRESERVED_WORLD_COVERAGE_NO_NEW_DAT_READ"
+    }
+  ],
+  "material_findings": {
+    "three_brothers_same_original_enemy_number_sequence": [
+      294,
+      295,
+      296,
+      297,
+      298
+    ],
+    "three_brothers_same_literal_warp_destination": [
+      10007,
+      29,
+      37
+    ],
+    "two_examiner_different_original_enemy_sequences": [
+      [
+        941,
+        942
+      ],
+      [
+        943,
+        944
+      ]
+    ],
+    "sbc_literal_destination": [
+      10920,
+      55,
+      28
+    ],
+    "jba_literal_destination": [
+      20711,
+      23,
+      4
+    ],
+    "both_examiner_onebattle_literal": 1,
+    "jba_graphicname_vs_template_type_differ": {
+      "original_create_graphicname": 100437,
+      "original_template_type": 100436
+    },
+    "no_runtime_success_or_native_graphics_selector_certified": true
+  },
+  "counts": {
+    "original_files_reread": 9,
+    "original_create_blocks_reread": 5,
+    "original_arg_handlers_reread": 5,
+    "source_qualified_static_NPC_to_warp_destination_edges": 5,
+    "new_original_DAT_bytes_read": 0,
+    "new_original_RD_bytes_read": 0,
+    "new_original_quest_scripts_recovered": 0,
+    "native_original_game_or_server_sessions": 0
+  },
+  "negative_evidence": [
+    "Literal dieact:1 plus warp fields does not prove original commercial win-triggered player warp, reward, quest completion, passability, or exact server handler.",
+    "SBC/JBA certification NPC naming and onebattle:1 do not establish official qualification, player state, cooldown, or event activation.",
+    "JBA CREATE graphicname 100437 differs from JBA TEMPLATE type 100436 in same later preserved carrier; never silently normalize these fields or assume original render precedence.",
+    "All five NPC source positions and destination coordinates are within prior 2D DAT geometry only; no new original DAT, graphics, collision or native player movement observed.",
+    "Different historical deployments, first-version population, official identity and audiovisual appearance remain UNKNOWN. Proprietary source contents remain private."
+  ],
+  "next": "Seek unprocessed actual original 2D, pet or quest primary evidence rather than expanding NPCEnemy static enumerate."
+}
