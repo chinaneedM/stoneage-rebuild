@@ -1,0 +1,360 @@
+{
+  "schema": "stoneage.pet20_whole_module_source_bounded_acceptance_matrix.r1",
+  "date": "2026-11-15",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "originating_main": "ccca05695e1464ef888c3f71d6cd17efa8485870",
+  "active_module": "PET",
+  "historical_current_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "evidence_taxonomy": [
+    "VERIFIED_SOURCE",
+    "CROSS_CARRIER_CANDIDATE",
+    "MISSING_SOURCE",
+    "UNVERIFIED_RUNTIME"
+  ],
+  "present_module_status": "SOURCE_BOUNDED_PARTIAL",
+  "source_bounded_closed": false,
+  "historically_complete": false,
+  "native_early_official_runtime_verified": false,
+  "allowed_to_unlock_next_module": false,
+  "Stage_A": "7_PARTIAL_2_OPEN",
+  "Stage_B_and_wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null,
+  "sources": {
+    "p09": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-09-CROSSCARRIER-ORIGINAL-MATERIAL-RECEIPTS-R1.json",
+      "git_blob": "2f9af31951082ce62bd96e8de5329fee5816cc98"
+    },
+    "p12": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-12-TW85-SIX-CAPTURE-SPR-RD-BRIDGE-R1.json",
+      "git_blob": "74f99360e847068797cf74eb596863ef492a0ac3"
+    },
+    "p13": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-13-ORIGINAL-CAPTURE-TEMPLATE-ATTRIBUTES-SKILLS-R1.json",
+      "git_blob": "835251479b2b7f55b3b6681af4d14b91008a305d"
+    },
+    "p15": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-15-TW10-ALL-SELECTED-MOTION-SOURCE-R1.json",
+      "git_blob": "e1cac6980353d09353de43fec0948bfcd84d49e6"
+    },
+    "p19": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-19-MISSING-SKILL-SOURCE-GAP-AUDIT-R1.json",
+      "git_blob": "0b014a5d4ccf8da81f7df4c96ba9d8392d3a6231"
+    },
+    "i87": {
+      "path": "research/recovered/STONEAGE-INTEGRATION87-36-GETPET-TW10-SPR-2D-BRIDGE-R1.json",
+      "git_blob": "4c834aa705af313da3961ffcd44a2b9fb6ef6beb"
+    },
+    "p16": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-16-SOURCE-SEPARATED-UNIFIED-CATALOG-R1.json",
+      "git_blob": "fdb7d9aade2df62d1a1e06b2d2f9e383693ed980"
+    },
+    "growth": {
+      "path": "research/mechanics/STONEAGE-PET-GROWTH-CORE-R1.md",
+      "git_blob": "87cdd063f05f6d6f334007cf3db7a31a8d1654a8"
+    },
+    "native": {
+      "path": "specs/STONEAGE-PARTY-PET-ORIGINAL-PET-GROWTH-R1.md",
+      "git_blob": "238cfba0bc0b11ff20728820d7d867949459900d"
+    }
+  },
+  "source_coverage_observed": {
+    "PET16_namespace_records_NOT_species": {
+      "later2016_templates": 1024,
+      "later2016_graphics": 598,
+      "mixed25_main": 495,
+      "mixed25_alternative": 316,
+      "tw10_visual": 131,
+      "jp_official_web": 124,
+      "cn_official_web": 104
+    },
+    "PET16_namespaces_sum_NOT_species": 2792,
+    "TW10_selected_source_SPR_groups": 131,
+    "TW10_original_animation_sequences": 7672,
+    "TW10_original_frame_positions": 73500,
+    "TW10_original_bitmap_keys": 32155,
+    "TW10_strict_pixel_bits": 32150,
+    "TW10_bounded_pixel_bits": 5,
+    "PET09_older_598_candidate_partition": {
+      "source_graphic_candidate_ids": 598,
+      "TW1_PET07_PRIVATE_PIXELS": 130,
+      "CN50_TW85_EXACT_ORIGINAL_SPR_ONLY": 214,
+      "TW85_R30_PRIOR_PRIVATE_PIXELS": 1,
+      "TW85_SPR_INDEX_ONLY": 197,
+      "NO_INDEX_FOUR_SAMPLES": 56,
+      "graph_ids_without_PET07_TW1_pixels": 468,
+      "graph_ids_with_prior_original_source_pixel_observation": 131,
+      "tw85_source_original_R30_frames": 8,
+      "cn50_tw85_full_original_SPR_exact_relationships_in_R28_all_groups": 1185,
+      "tw10_tw85_full_original_SPR_exact_relationships_in_R28_all_groups": 464
+    },
+    "PET12_source_index_qualified_TW85_six": {
+      "group_count": 6,
+      "sequences": 336,
+      "frame_positions": 2048,
+      "RD_source_index_refs": 1568,
+      "original_new_pixels_in_PET12": 0,
+      "graphic_numbers": [
+        101279,
+        101280,
+        101281,
+        101564,
+        101736,
+        101737
+      ]
+    },
+    "named_qualified_MIXED25_main": 10,
+    "JP_web_named_positions": 124,
+    "JP_web_actual_original_images": 1,
+    "CN_web_named_positions": 98,
+    "CN_web_unresolved_positions": 6,
+    "PET13_compiled_capture_static_rows": 11,
+    "mixed25_GetPet_static_instance_ids": 36,
+    "PET19_missing_skill_totals": {
+      "later2016": {
+        "configured_petflag1_template_rows": 1024,
+        "positive_skill_slot_references": 2886,
+        "defined_in_selected_petskill2": 2784,
+        "missing_in_selected_petskill2": 102,
+        "distinct_missing_skill_ids": 30,
+        "affected_original_template_rows": 76,
+        "negative_sentinel_slots_not_positive": 20,
+        "missing_ids_present_in_conditional_fallback": 0
+      },
+      "mixed25_primary": {
+        "petflag1_original_template_rows": 495,
+        "positive_skill_slot_references": 1050,
+        "undefined_in_own_primary_skill_table": 0
+      },
+      "mixed25_alternative": {
+        "petflag1_original_template_rows": 316,
+        "positive_skill_slot_references": 661,
+        "defined_in_own_alternative_skill_table": 649,
+        "missing_in_own_alternative_skill_table": 12,
+        "distinct_missing_skill_ids": 5,
+        "missing_refs_with_same_numeric_id_in_other_primary_table": 12
+      }
+    }
+  },
+  "seven_pet_dimensions": [
+    {
+      "id": "PET20-01_PROVENANCE_CARRIERS",
+      "subject": "来源载体与版本资格",
+      "evidence_statuses": [
+        "VERIFIED_SOURCE",
+        "MISSING_SOURCE"
+      ],
+      "witnessed": [
+        "TW10 authenticated retail client original resource SHA and private archive from PET15",
+        "MIXED25 community-preserved same RAR original main/alternative enemybase and skill member SHA from PET10/PET16/PET19",
+        "2016 community source snapshot fixed commit, not official early deployment",
+        "JP Hangame and CN Waei official web positions with dated captures; not complete rosters",
+        "CN50/TW85 candidate original SPR structural/hashes from PET09 and PET12 (not verified clean official deployments)"
+      ],
+      "missing": "Qualified earliest JSS1999 / TW10 same-build pet-server master and complete authorized later media batches; exact official source population unknown",
+      "reopen": "Provenance-check same-deployment official pet master, new authenticated client/server carriers or accessible exact source-qualified original files",
+      "source_keys": [
+        "p15",
+        "p16",
+        "p09",
+        "p12"
+      ]
+    },
+    {
+      "id": "PET20-02_IDENTITY_NAMES_ATLAS",
+      "subject": "宠物种属身份、名称与图鉴",
+      "evidence_statuses": [
+        "VERIFIED_SOURCE",
+        "CROSS_CARRIER_CANDIDATE",
+        "MISSING_SOURCE"
+      ],
+      "witnessed": [
+        "PET16 source-separated 2,792 catalogue rows (never pet species count)",
+        "10 PET13 verified mixed25 main PETFLG1 original names by row/template/graphic/56-field SHA",
+        "JP Hangame 124 named website positions, CN Waei 98 named +6 unresolved website positions",
+        "TW10 131 SPR groups are source graphics, not 131 official species"
+      ],
+      "missing": "Official same-build species-name↔template-ID↔SPR-ID register and authoritative complete historical species roster",
+      "reopen": "Same-build original species master or direct official graphic/name evidence with exact version; never join by ordinal, number or visual look alone",
+      "source_keys": [
+        "p16",
+        "p13",
+        "p15"
+      ]
+    },
+    {
+      "id": "PET20-03_2D_PIXELS_ACTIONS",
+      "subject": "二维原像素、动作方向及重放",
+      "evidence_statuses": [
+        "VERIFIED_SOURCE",
+        "CROSS_CARRIER_CANDIDATE",
+        "MISSING_SOURCE",
+        "UNVERIFIED_RUNTIME"
+      ],
+      "witnessed": [
+        "TW10 selected 131 original SPR groups, 7,672 action-direction sequences, 73,500 frame positions, 32,155 source bitmap IDs, 32,150 strict+5 bounded",
+        "PET09 older separate 598 candidate graphics partition: 130 TW1 PET07 prior pixels, 214 CN50/TW85 equal SPR segment only, 1 TW85 R30 eight-frame original pixel observation, 197 TW85 index only, 56 no index",
+        "PET12 six TW85 capture-linked groups have 336 original sequences, 2,048 frames and 1,568 distinct source-qualified RD index bindings but zero new original actual pixels"
+      ],
+      "missing": "TW85 six-group real_158/adrn_158 actual private payload replay for 1,568 bitmap IDs, other CN50/TW85 original images, early native palette/timing/action selector",
+      "reopen": "Obtain authenticated same-source REAL/ADRN/private existing files by exact SHA and run private double decode; native rendering/behavior separately proved",
+      "source_keys": [
+        "p15",
+        "p09",
+        "p12"
+      ]
+    },
+    {
+      "id": "PET20-04_STATS_GROWTH",
+      "subject": "属性、成长与可能进化",
+      "evidence_statuses": [
+        "VERIFIED_SOURCE",
+        "MISSING_SOURCE",
+        "UNVERIFIED_RUNTIME"
+      ],
+      "witnessed": [
+        "2016 PET16 1,024 later community template rows preserve literal initnum/lvup/four-base/four-element/slot values",
+        "MIXED25 495 main +316 alternative PETFLG1 rows retain original stat literals and row SHA separately",
+        "Earlier original descendant growth core and bounded two-lineage native-source experiment already exist and must be reused, not rediscovered"
+      ],
+      "missing": "TW10 and JSS same-deployment growth master and parameters; no proof 2016 lvup literal equals saved CHAR_LEVELUPPOINT or early original formula",
+      "reopen": "Matched original version growth source+data, authenticated native result and semantics of original stat fields; distinct version experimental witnesses",
+      "source_keys": [
+        "p16",
+        "growth",
+        "native"
+      ]
+    },
+    {
+      "id": "PET20-05_SKILLS_RULES",
+      "subject": "宠物技能定义、学习资格与原生效果",
+      "evidence_statuses": [
+        "VERIFIED_SOURCE",
+        "MISSING_SOURCE",
+        "UNVERIFIED_RUNTIME"
+      ],
+      "witnessed": [
+        "PET19 2016 configured selected petskill2: 2,886 positive slots; 2,784 own-source defined, 102 missing across 30 IDs / 76 template rows; 56-entry fallback covers none",
+        "MIXED25 main 1,050 positive slots all defined; alternative 661 with 12 missing across 5 IDs; those 5 appear in other main skill file but cannot replace paired alternative file",
+        "PET13 5 distinct PETFLG1 same-source skill IDs with original row and SHA qualified, without native effects"
+      ],
+      "missing": "Missing 30+5 source definitions/active table choice and version-matched handler, true effect/learning restrictions, early official skill roster",
+      "reopen": "Reacquire same-config skill definitions, source handler and controlled native gameplay or dated official exact-version rules",
+      "source_keys": [
+        "p19",
+        "p13",
+        "p16"
+      ]
+    },
+    {
+      "id": "PET20-06_PET_ACQUISITION_ACTIONS",
+      "subject": "捕捉、赠宠、野怪、骑乘、融合及其他宠物行为",
+      "evidence_statuses": [
+        "VERIFIED_SOURCE",
+        "CROSS_CARRIER_CANDIDATE",
+        "MISSING_SOURCE",
+        "UNVERIFIED_RUNTIME"
+      ],
+      "witnessed": [
+        "PET13 11 compiled capture key-static candidates, ten matched MIXED25 main PETFLG1 and one PETFLG0 separated; original required item ID refs only",
+        "INTEGRATION87 original MIXED25 GetPet static script 36 distinct instance IDs linked to distinct TW10 numeric sprite candidates without original reward execution",
+        "Previously recovered descendant growth/rider/evolution material remains separate source-qualified behavior, not confirmed first-generation runtime"
+      ],
+      "missing": "Early same-deployment capture/encounter/gift/level-up/evolution/riding real game-state outcomes, exact restrictions and full encounter habitat",
+      "reopen": "Same-version server source+config or authoritative game capture, controlled native IO/actor results; no cross-carrier numeric ID identity",
+      "source_keys": [
+        "p13",
+        "i87",
+        "growth",
+        "native"
+      ]
+    },
+    {
+      "id": "PET20-07_RIGHTS_PRIVATE_SOURCE_ACCESS",
+      "subject": "原商业素材许可与私人可复核性",
+      "evidence_statuses": [
+        "VERIFIED_SOURCE",
+        "MISSING_SOURCE"
+      ],
+      "witnessed": [
+        "PET15 private original replay ZIP SHA and source bitmap status preserved without publishing any commercial bitmap",
+        "JP original official image acquired in one source position; image copyright/public wiki or game reuse license not established",
+        "PET09/PET12 previous source access failures and exact reopening requirements preserved"
+      ],
+      "missing": "Rights clearance/independently authorized production artwork; re-access to absent private TW85/CN50 bitmap packs for actual pixel replay",
+      "reopen": "Rights authorization or independent lawful production assets and exact private original source re-access; no commercial asset in public Git",
+      "source_keys": [
+        "p15",
+        "p09",
+        "p12",
+        "p16"
+      ]
+    }
+  ],
+  "PET16_prior_gap_ids": [
+    {
+      "id": "PET16-01",
+      "status": "MISSING_SOURCE",
+      "domain": "official_early_pet_species_id",
+      "reopen_trigger": "Find and qualify same-client-build official server pet master or source in original client establishing name/ID/SPR identity"
+    },
+    {
+      "id": "PET16-02",
+      "status": "UNKNOWN",
+      "domain": "full_historical_species_roster",
+      "reopen_trigger": "Obtain exact version/release authoritative full population with documented completeness"
+    },
+    {
+      "id": "PET16-03",
+      "status": "SOURCE_BOUNDED_PARTIAL",
+      "domain": "more_original_pixels_and_palette_timing",
+      "reopen_trigger": "New original complete source-qualified REAL/SPR/ADRN and verified native selector/replay"
+    },
+    {
+      "id": "PET16-04",
+      "status": "UNVERIFIED_RUNTIME",
+      "domain": "native_skills_growth_training",
+      "reopen_trigger": "Matched compiled handler/qualified original native behavior and complete source skill definitions"
+    },
+    {
+      "id": "PET16-05",
+      "status": "STATIC_PARTIAL",
+      "domain": "capture_encounters_gifts_evolution_riding",
+      "reopen_trigger": "Qualified original game build state, handlers or authoritative primary rules for each original version"
+    },
+    {
+      "id": "PET16-06",
+      "status": "RIGHTS_UNCLEARED",
+      "domain": "private_media_and_future_rights",
+      "reopen_trigger": "Rights clearance or independent permitted artwork prior to any publication"
+    },
+    {
+      "id": "PET16-07",
+      "status": "SOURCE_CONFLICT",
+      "domain": "original_server_table_active_choice",
+      "reopen_trigger": "Qualify exact active configuration and deployment source for a known historical build"
+    }
+  ],
+  "next_intra_pet_work_priority": [
+    {
+      "id": "PET21-01",
+      "name": "OFFICIAL_WEB_NAMED_PET_ORIGINAL_IMAGE_SOURCE_REACCESS",
+      "reason": "JP124 official names/1 original image acquired, CN104 98 names 6 unknown original photo state; batch original page media could improve named visual identity while retaining website order vs official client ID boundary",
+      "stop": "If archived original media bytes are not publicly retrievable or provenance fails, record exact URL/capture/hash/unavailable and stop; original images private"
+    },
+    {
+      "id": "PET21-02",
+      "name": "TW85_CN50_PRIVATE_REAL_SOURCE_REACCESS",
+      "reason": "PET12 six groups 1,568 same-carrier RD index keys still have zero original pixels in PET12; only re-open on actual exact-source bytes",
+      "stop": "Do not download large community commercial pack without material eligibility and source hash; no fabricated pixel recovery"
+    },
+    {
+      "id": "PET21-03",
+      "name": "ORIGINAL_SAME_DEPLOYMENT_PET_SERVER_MASTER",
+      "reason": "No TW10 official species name/ID/stats source. Required for early official identity and PET close review",
+      "stop": "Exact authorized source and edition qualification needed; otherwise record OPEN rather than infer identity"
+    }
+  ],
+  "closure_review_required": "Do not mark SOURCE_BOUNDED_CLOSED, HISTORICALLY_COMPLETE or switch modules until field-by-field availability and explicit user source-bounded-stop decision. This matrix is not the final closure review.",
+  "provenance_not_reexecuted_in_this_pet20_work": true
+}
