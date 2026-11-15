@@ -1,0 +1,84 @@
+{
+  "schema": "stoneage.pet37.tw2000_period_newspaper_loyalty_evidence.r1",
+  "research_date": "2026-11-15",
+  "active_module": "PET",
+  "frontier_year": 2000,
+  "region": "TW",
+  "operator": "WAEI",
+  "product_line": "STONEAGE_CLASSIC_PC",
+  "baseline_head": "1cef920923962c501aba07d0b85b4fdd9a9ed921",
+  "baseline_tree": "56a271816f2505eebc6215ac1041b1b0e5c34c40",
+  "source": {
+    "id": "PET37-TW-2000-0411-MINSHENG-NEWSPAPER",
+    "original_newspaper": "民生報",
+    "original_title": "網路電玩 石器時代上線了",
+    "original_date": "2000-04-11",
+    "original_page": "37版",
+    "original_section": "3C新聞網",
+    "archival_reprint_url": "https://time.udn.com/udntime/story/122835/7095433",
+    "archive_kind": "LATER_NEWSPAPER_GROUP_REPRINT_OF_2000_TEXT_NOT_ORIGINAL_PAPER_SCAN",
+    "original_page_scan_verified": false,
+    "original_source_bytes_sha256": null,
+    "archived_webpage_source_bytes_sha256": null
+  },
+  "claims": [
+    {
+      "id": "TW_2000_0410_OPERATOR_PRESENTATION",
+      "event_date": "2000-04-10",
+      "basis": "2000-04-11 newspaper says Waei presented the game yesterday",
+      "semantics": "OPERATOR_PRESENTATION_NOT_DIRECT_OBSERVED_OFFICIAL_LIVE_OPENING",
+      "exact_first_live_day_verified": false
+    },
+    {
+      "id": "TW_2000_PERIOD_PRESS_PET_OWNERSHIP_AND_LOYALTY",
+      "event_date": "2000-04-11",
+      "basis": "Contemporaneous newspaper describes raised pets and possible loyalty decrease following battle defeat",
+      "semantics": "CONTEMPORANEOUS_JOURNALIST_GAMEPLAY_DESCRIPTION_NOT_NATIVE_EXECUTION",
+      "native_mechanic_verified": false,
+      "exact_loyalty_delta": null,
+      "original_client_build": null,
+      "pet_name": null,
+      "pet_id": null,
+      "pet_release_or_obtainability_proven": false
+    }
+  ],
+  "cross_source_status": {
+    "prior_tw_operator_month_source_id": "PET28-TW-2000-WAEI-CORPORATE-CHRONICLE",
+    "prior_operator_month": "2000-04",
+    "old_tw_1_0_release_candidate": "2000-04-20",
+    "old_tw_1_0_release_proven_by_newspaper": false,
+    "publisher_catalogue_source_id": "PET28-TW-CITE-PET-GUIDE-BOOK-METADATA",
+    "publisher_url": "https://www.cite.com.tw/book?id=557",
+    "publisher_book": "石器時代寵物圖鑑",
+    "publisher_isbn": "9789572043424",
+    "catalogue_publication_date": "2000-08-01",
+    "catalogue_claims_two_zero_disc": true,
+    "catalogue_claims_more_than_200_pets": true,
+    "secondary_tw_two_zero_date": "2001-08-01",
+    "catalogue_date_vs_version_conflict_unresolved": true,
+    "original_colophon_verified": false,
+    "original_disc_verified": false,
+    "catalogue_pet_quantity_promoted_to_historical_count": false,
+    "tw_2000_two_zero_live_verified": false
+  },
+  "new_qualified_original_2000_official_named_pet_release_records": [],
+  "historical_pet_species_count": null,
+  "other_region_year_2000_source_audits": {
+    "JP": "JSS_2000_25_OPERATOR_UPDATE_ROWS_PENDING_FULL_CENSUS",
+    "KR": "INIUM_2000_10_10_VS_10_12_CONFLICT_UNRESOLVED",
+    "CN": "EARLY_2000_TEST_CANDIDATE_UNVERIFIED",
+    "OTHER": "NOT_AUDITED"
+  },
+  "reopen_triggers": [
+    "MINSHENG_2000_ORIGINAL_PAGE37_IMAGE_OR_PRESS_ARCHIVE",
+    "WAEI_2000_EXACT_LIVE_DATE_FIRST_PARTY",
+    "PCGAMER_BOOK_ORIGINAL_COLOPHON_AND_CD_BYTES",
+    "TW_2000_OFFICIAL_SAME_BUILD_NAMED_PET_RECORD"
+  ],
+  "year_status": "NOT_YEAR_AUDITED",
+  "next_research_year": 2000,
+  "next_focus": "PET38_JP2000_JSS_25_DATED_UPDATE_ROWS_PLUS_TW_KR_GAPS",
+  "preserved_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "commercial_assets_publicly_committed": false,
+  "overall_completion_percent": null
+}

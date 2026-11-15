@@ -97,3 +97,13 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## PET36 2026-11-15｜1999年来源有界审查并开启2000年
 
 [1999年地区及证据缺口年度盘点](continuity/STONEAGE-PET36-1999-SOURCE-BOUNDED-YEAR-AUDIT-20261115.md)／[PET36原始来源和机器止点](../research/recovered/STONEAGE-PET36-1999-SOURCE-BOUNDED-YEAR-AUDIT-R1.json)：已按1999 JSS运营15条日期更新/65子句、当年预告与9月杂志身份、JP/TW/KR/CN/OTHER五轨核验目前来源；初版原CD/手册/宠物主表及原页仍缺。标注1999 SOURCE_BOUNDED_REVIEWED仅针对已调查和明确受阻的资料，HISTORICALLY_COMPLETE=false，官方具名实装宠物的本批新增证据0，1999全球总种数UNKNOWN；所有来源缺件可重开。PET唯一活动模块保持，研究游标进入2000；下一PET37核TW/JP/KR/CN各国最早版别和同版宠物。不改大CURRENT、Stage A/B/wiki/R79。
+
+
+## PET37 2026-11-15｜台湾2000-04-11《民生报》宠物忠诚度时期报道
+
+[来源有界报刊报告](continuity/STONEAGE-PET37-TW2000-MINSHENG-PET-PRESS-20261115.md)／[机器字段级证据](../research/recovered/STONEAGE-PET37-TW2000-MINSHENG-PET-PRESS-R1.json)：联合报系重刊《民生报》2000-04-11第37版原文，报道华义**前一日2000-04-10向外介绍产品**，且当时新闻描述饲养宠物、战败可能降低忠诚度。发表活动日≠精确正式开服；新闻描述≠同构建原生技能实测。PCGAMER图鉴现行书目2000-08-01/声称附2.0与旧二手台服2.0 2001-08日期冲突；未获实体版权页/原CD，200+宣传不升为2000实装宠物。2000年仍NOT_YEAR_AUDITED；NEXT继续2000 JSS 25条官网更新原证、TW/KR/CN版别和官服逐宠资料。PET唯一模块，旧CURRENT不改。
+
+
+## PET38 2026-11-15｜新规则：客户端优先取证，官网/图鉴仅做必要补缺
+
+[完整执行优先级与原证资格](continuity/STONEAGE-PET38-CLIENT-FIRST-RESTORATION-PRIORITY-20261115.md)／[四份既有资源索引和缺失年代原客户端的机器清单](../research/recovered/STONEAGE-PET38-CLIENT-FIRST-AVAILABLE-SOURCE-INVENTORY-R1.json)。当前2000年最先回收/重新校验已曾验真的台湾1.0完整私有零售包，查宠物名称/程序表/图号/原SPR动作的**同版本**链接，之后找2000韩国/日本原包或精确补丁；暂不继续无目的新闻搜寻。客户端`CLIENT_ASSET_PRESENT`不等于`OFFICIAL_IN_GAME_RELEASE_CONFIRMED`；服务端控制的实装、掉落、捕捉、成长/技能保留源缺；未从2016社区物种表自动倒填早期官服。1999有界审查可重开、2000游标OPEN、PET单模块锁与CURRENT原档不变。此条覆盖PET37报告里的旧“先查JSS新闻更新”NEXT，但不抹去其有据报刊史。

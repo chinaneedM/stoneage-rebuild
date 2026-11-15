@@ -1,0 +1,203 @@
+{
+  "schema": "stoneage.pet38.client_first_source_inventory_and_priority.r1",
+  "recorded_date": "2026-11-15",
+  "scope": "PET_ONLY_CHRONOLOGICAL_REGIONAL_OFFICIAL_HISTORY",
+  "priority_supersession": "USER_2026_11_15_CLIENT_FIRST_EVIDENCE_EXTRACTION_THEN_TARGETED_OFFICIAL_DOCUMENTS",
+  "starting_repository_head": "1cef920923962c501aba07d0b85b4fdd9a9ed921",
+  "working_branch_head_before_this_record": "b37caef4956f7aa064c209af24fff2a5d273be9d",
+  "working_year": 2000,
+  "active_module": "PET",
+  "year_1999_source_bounded_but_reopenable": true,
+  "year_2000_source_bounded_reviewed": false,
+  "client_evidence_levels": [
+    "SOURCE_VERIFIED_OFFICIAL_ORIGINAL_VERSION",
+    "SOURCE_VERIFIED_BUT_YEAR_BUILD_OR_REGION_UNCERTAIN",
+    "UNVERIFIED_CANDIDATE_OR_COMMUNITY_COPY",
+    "INDEX_OR_METADATA_ONLY",
+    "ORIGINAL_CLIENT_MISSING"
+  ],
+  "extraction_priority": [
+    "VERIFY_CLIENT_PACKAGE_IDENTITY_SHA256_CRC_TREE_AND_VERSION_PROVENANCE",
+    "INVENTORY_CLIENT_FILES_STRINGS_PET_NAMES_LOCAL_MASTER_TABLES_AND_SPR_RESOURCE_IDS",
+    "BIND_SAME_VERSION_NAME_TO_PET_ID_TO_GRAPHIC_ID_TO_SPR_ADRN_REAL_AND_ANIMATIONS_WHERE_SOURCE_PRESENT",
+    "ENUMERATE_LOCAL_SKILL_STAT_GROWTH_FIELDS_ONLY_WHERE_ORIGINAL_CLIENT_FILES_CONTAIN_THEM",
+    "DIFF_ORIGINAL_VERSION_IDENTITIES_AND_RESOURCE_PRESENCE_WITH_STRICT_REGION_SEPARATION",
+    "USE_OPERATOR_PATCH_ISSUANCE_EVENT_AND_ORIGINAL_MANUAL_ONLY_FOR_SERVER_SIDE_AVAILABILITY_AND_MISSING_FIELDS"
+  ],
+  "records": [
+    {
+      "id": "JP_JSS_1999_ORIGINAL_RETAIL_OR_BETA",
+      "region": "JP",
+      "product_line": "STONEAGE_CLASSIC_PC",
+      "year_candidate": 1999,
+      "version_label": "JSS_1999_LAUNCH_BETA",
+      "evidence_grade": "MISSING_PRIMARY_CLIENT",
+      "client_original_bytes_acquired": false,
+      "verified_bytes_in_current_session": false,
+      "pet_source_status": "MISSING_ORIGINAL_CLIENT",
+      "official_same_build_pet_roster_proven": false,
+      "source_path": null,
+      "reopen": "RECOVER_AND_AUTHENTICATE_1999_JSS_ORIGINAL_CLIENT_OR_DISC"
+    },
+    {
+      "id": "TW_WAEI_JSS_1_0_RETAIL",
+      "region": "TW",
+      "product_line": "STONEAGE_CLASSIC_PC",
+      "year_candidate": 2000,
+      "version_label": "TW1_0_RETAIL",
+      "evidence_grade": "ORIGINAL_RETAIL_SOURCE_VERIFIED_PRIOR_SESSIONS",
+      "client_original_bytes_acquired": true,
+      "verified_bytes_in_current_session": false,
+      "pet_source_status": "ORIGINAL_CLIENT_SOURCE_VERIFIED_PREVIOUSLY_UNMATERIALIZED_NOW",
+      "source_package_filename": "StoneAge-TW1-original-runtime-and-native-observation-P3H.zip",
+      "size_bytes": 372626292,
+      "zip_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+      "zip_member_count": 379,
+      "zip_crc_verified_count_prior": 379,
+      "source_manifest_refs": [
+        "research/recovered/STONEAGE-PET-ASSET-GROWTH-CATALOG-MATRIX-R1.json",
+        "research/recovered/STONEAGE-PET-MODULE-01-BATCH-SOURCE-SPR-INDEX-R1.json",
+        "docs/continuity/STONEAGE-INTEGRATION116-TEN-NPC-AUTHENTIC-TW10-ORIGINAL-2D-20261115.md"
+      ],
+      "resource_index_previously_verified": {
+        "spr_group_records": 464,
+        "adrn_bitmap_records": 125996,
+        "animations": 39065,
+        "frames": 242085
+      },
+      "species_names_from_same_build_master": null,
+      "exact_native_first_release_date_from_package": null,
+      "official_same_build_pet_roster_proven": false,
+      "next_extraction": "REACCESS_PRIVATE_ZIP_AND_VERIFY_SHA_CRC_THEN_SCAN_LOCAL_DATA_TEXT_TABLES_AND_PET_REFERENCE_CALLSITES;_DO_NOT_INFER_SPECIES_FROM_SPR_GROUP_COUNT"
+    },
+    {
+      "id": "KR_INIUM_2000_ORIGINAL_CLIENT",
+      "region": "KR",
+      "product_line": "STONEAGE_CLASSIC_PC",
+      "year_candidate": 2000,
+      "version_label": "KR_INIUM_EARLY_2000",
+      "evidence_grade": "MISSING_PRIMARY_CLIENT",
+      "client_original_bytes_acquired": false,
+      "verified_bytes_in_current_session": false,
+      "pet_source_status": "MISSING_ORIGINAL_CLIENT",
+      "official_same_build_pet_roster_proven": false,
+      "source_path": null,
+      "reopen": "AUTHENTICATE_ORIGINAL_2000_KR_CLIENT"
+    },
+    {
+      "id": "CN_EARLY_2000_TEST_CLIENT",
+      "region": "CN",
+      "product_line": "STONEAGE_CLASSIC_PC",
+      "year_candidate": 2000,
+      "version_label": "CN_2000_LATE_TEST_CANDIDATE",
+      "evidence_grade": "MISSING_PRIMARY_CLIENT_AND_RELEASE_PROOF",
+      "client_original_bytes_acquired": false,
+      "verified_bytes_in_current_session": false,
+      "pet_source_status": "MISSING_ORIGINAL_CLIENT",
+      "official_same_build_pet_roster_proven": false,
+      "source_path": null,
+      "reopen": "AUTHENTICATE_ORIGINAL_2000_MAINLAND_OFFICIAL_TEST_CLIENT"
+    },
+    {
+      "id": "CN5_CANDIDATE_RESOURCE_INDEX",
+      "region": "CN",
+      "product_line": "STONEAGE_CLASSIC_PC",
+      "year_candidate": null,
+      "version_label": "CN5_UNCERTIFIED_CANDIDATE",
+      "evidence_grade": "PRESERVED_RESOURCE_INDEX_NOT_CLEAN_OFFICIAL_BUILD",
+      "client_original_bytes_acquired": null,
+      "verified_bytes_in_current_session": false,
+      "pet_source_status": "DERIVED_SPR_INDEX_ONLY_ORIGINAL_OFFICIAL_UNCERTIFIED",
+      "unique_spr_no_count": 1185,
+      "official_same_build_pet_roster_proven": false,
+      "source_manifest_refs": [
+        "research/recovered/STONEAGE-PET-MODULE-01-BATCH-SOURCE-SPR-INDEX-R1.json"
+      ],
+      "exclude_from_2000_official_release": true
+    },
+    {
+      "id": "TW85_CANDIDATE_RESOURCE_INDEX",
+      "region": "TW",
+      "product_line": "STONEAGE_CLASSIC_PC",
+      "year_candidate": null,
+      "version_label": "TW8_5_PRESERVED_UNCERTIFIED",
+      "evidence_grade": "PRESERVED_RESOURCE_INDEX_NOT_CLEAN_OFFICIAL_BUILD",
+      "client_original_bytes_acquired": null,
+      "verified_bytes_in_current_session": false,
+      "pet_source_status": "DERIVED_SPR_INDEX_ONLY_ORIGINAL_OFFICIAL_UNCERTIFIED",
+      "spr_physical_records": 1739,
+      "spr_unique_groups": 1735,
+      "official_same_build_pet_roster_proven": false,
+      "source_manifest_refs": [
+        "research/recovered/STONEAGE-PET-MODULE-01-BATCH-SOURCE-SPR-INDEX-R1.json"
+      ],
+      "exclude_from_2000_official_release": true
+    },
+    {
+      "id": "MIXED25_COMMUNITY_PRESERVED",
+      "region": "MIXED_NOT_CERTIFIED",
+      "product_line": "STONEAGE_CLASSIC_PC_CROSS_VERSION_SOURCE",
+      "year_candidate": null,
+      "version_label": "MIXED2_5_COMMUNITY",
+      "evidence_grade": "COMMUNITY_MIXED_CLIENT_NOT_OFFICIAL_LIVE",
+      "client_original_bytes_acquired": null,
+      "verified_bytes_in_current_session": false,
+      "pet_source_status": "COMMUNITY_RESOURCE_INDEX_TECHNICAL_ONLY",
+      "spr_physical_records": 847,
+      "spr_unique_groups": 841,
+      "official_same_build_pet_roster_proven": false,
+      "source_manifest_refs": [
+        "research/recovered/STONEAGE-PET-MODULE-01-BATCH-SOURCE-SPR-INDEX-R1.json"
+      ],
+      "exclude_from_official_release_roster": true
+    }
+  ],
+  "pet_fact_layers": [
+    {
+      "id": "CLIENT_FILE_OR_SPR_PRESENT",
+      "count_as_official_released_pet": false,
+      "meaning": "VERIFIED_ASSET_IDENTITY_OR_LOCAL_FILE_RECORD_BUT_NOT_NECESSARILY_SPECIES"
+    },
+    {
+      "id": "CLIENT_IDENTIFIED_PET_CANDIDATE",
+      "count_as_official_released_pet": false,
+      "meaning": "SOURCE_QUALIFIED_LOCAL_PET_NAME_OR_ID_AND_GRAPHIC_LINK_WITHOUT_NATIVE_RELEASE"
+    },
+    {
+      "id": "OFFICIAL_VERSION_PET_RELEASE_CONFIRMED",
+      "count_as_official_released_pet": true,
+      "meaning": "VERSION_QUALIFIED_OPERATOR_RELEASE_OR_SAME_BUILD_GAMEPLAY_AVAILABILITY_PROOF"
+    }
+  ],
+  "server_only_unknown_fields": [
+    "OFFICIAL_LIVE_ISSUANCE",
+    "ACTUAL_CAPTURE_ENCOUNTER_MAP_AND_RATES",
+    "QUEST_EVENT_REWARD",
+    "SERVER_CONTROLLED_BASE_GROWTH",
+    "SERVER_SIDE_SKILL_EFFECT_OR_FORMULA",
+    "DATE_FIRST_ENABLED"
+  ],
+  "safety": [
+    "NEVER_EXECUTE_UNTRUSTED_COMMERCIAL_CLIENT_AS_PART_OF_STATIC_ARCHAEOLOGY",
+    "DO_NOT_COMMIT_ORIGINAL_COMMERCIAL_EXE_SPR_REAL_FULL_TABLES_OR_ART_IN_PUBLIC_GIT",
+    "NEVER_IMPORT_PRIVATE_SERVER_ONLY_PETS_AS_OFFICIAL",
+    "DO_NOT_COUNT_SPR_GROUPS_OR_SHARED_GRAPHIC_IDS_AS_PET_SPECIES",
+    "KEEP_1999_YEAR_REOPEN_TRIGGERS_AND_2000_YEAR_OPEN"
+  ],
+  "prior_community_server_index": {
+    "source": "research/recovered/STONEAGE-PET-MODULE-01-BATCH-SOURCE-SPR-INDEX-R1.json",
+    "petflag_one_template_records": 1024,
+    "distinct_petflag_one_graphic_ids": 598,
+    "source_year": 2016,
+    "official_original_jss_or_tw1_server": false,
+    "cross_source_numeric_matches_not_same_build": true
+  },
+  "immediate_next_task": "PET_CLIENT_ORIGINAL_2000_TW1_PACKAGE_REACCESS_AND_CONTENT_ROLE_INVENTORY",
+  "source_material_bytes_just_reacquired_this_session": false,
+  "original_current_blob_preserved": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "pet_species_population_by_year": null,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null
+}
