@@ -1,0 +1,873 @@
+{
+  "schema": "stoneage.pet21_official_jp_cn_operator_web_archived_image_byte_observation_receipt.r1",
+  "date_utc": "2026-11-15",
+  "active_module": "PET",
+  "baseline_main_before_pet21": "3f7345575895d7a330c45dde327ac970e8a16183",
+  "probe_exact_candidate_head_sha": "d3db47d6bec6a1f114161252e2b63f75ea6a85c4",
+  "probe_workflow_run_id": 43693853890,
+  "probe_job_id": 132749981173,
+  "probe_log": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/43693853890",
+  "original_frozen_catalogue_git_blob": "fdb7d9aade2df62d1a1e06b2d2f9e383693ed980",
+  "parent_official_jp_catalog_git_blob": "85e99d6fd6a7ca27eeaa3987510a6bcc1d701708",
+  "parent_official_cn_catalog_git_blob": "f950aa33af0b3ec8693b2867758faf006aee546b",
+  "source_sample_original_webpage_capures_in_scope": [
+    "20031214055443",
+    "20031214051259",
+    "20040220221717",
+    "20011204194619",
+    "20011023173210",
+    "20011023181629"
+  ],
+  "original_source_namespace_counts": {
+    "jp_web_positions": 124,
+    "cn_web_positions": 104,
+    "cn_web_named_positions": 98,
+    "cn_web_unknown_labels": 6,
+    "not_entire_pet_species_roster": true
+  },
+  "observed": {
+    "sampled_original_operator_img_urls": 23,
+    "jp_sample": 11,
+    "cn_sample": 12,
+    "jp_original_archived_image_bytes_observed_transient": 9,
+    "jp_original_archived_image_bytes_newly_hashed": 8,
+    "jp_existing_earlier_sha_match": 1,
+    "jp_unreadable_now": 2,
+    "cn_original_archived_image_bytes_observed_transient": 0,
+    "cn_unreadable_now": 12,
+    "network_outcome_counts": {
+      "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED": 9,
+      "ARCHIVED_URL_NOT_READABLE_NOW": 13,
+      "NOT_RETRIEVED_NETWORK_OR_INDEX_BLOCKED": 1
+    },
+    "original_2D_game_client_sprite_records_added": 0,
+    "official_verified_pet_species_added": 0,
+    "new_artwork_persistently_stored": 0,
+    "original_media_bytes_published_in_git": 0
+  },
+  "source_boundaries": {
+    "source_web_image_does_not_prove_official_client_sprite_or_pet_ID": true,
+    "operator_image_capture_can_precede_or_follow_page_capture": true,
+    "network_timeout_or_unreadable_not_archival_absence": true,
+    "original_commercial_images_are_transient_and_not_custodied": true,
+    "no_automatic_publication_or_new_game_asset_use_rights": true,
+    "main_PET16_catalogue_content_not_modified": true,
+    "source_bounded_closed": false,
+    "native_early_original_runtime_verified": false,
+    "allowed_to_switch_content_module": false
+  },
+  "records": [
+    {
+      "source_namespace": "jp_official_web",
+      "original_record_id": "jp-hangame-pet-web:position:001",
+      "web_ordinal": 1,
+      "name_as_written_or_null": "ウーリ",
+      "operator_image_reference_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup1-1.gif",
+      "operator_page_original_url": "http://www.hangame.co.jp/publish/sa/chara2.asp",
+      "operator_page_archive_capture": "20031214055443",
+      "operator_original_page_bytes_sha256": "a01a2c93d410511b9e08f7a066569d8cec8db883f50047baf0ca3160d50ed0fc",
+      "source_catalogue_prior_image_sha256_or_null": "593345c3edf78ebcaa2dff0c27a2d10a92b4eefcc4aef4db14aee2efdc5e013f",
+      "probe_status": "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED",
+      "probe_attempts": [
+        {
+          "content_type": "image/gif",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": "593345c3edf78ebcaa2dff0c27a2d10a92b4eefcc4aef4db14aee2efdc5e013f",
+      "observed_image_archive_capture_or_null": "20060604065927",
+      "observed_image_bytes_or_null": 4460,
+      "observed_image_type_or_null": "GIF",
+      "observed_image_dimensions_or_null": [
+        60,
+        65
+      ],
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence",
+      "archive_original_binary_url": "https://web.archive.org/web/20060604065927id_/http://images.hangame.co.jp/_images/game/saj/petpicgroup1-1.gif"
+    },
+    {
+      "source_namespace": "jp_official_web",
+      "original_record_id": "jp-hangame-pet-web:position:002",
+      "web_ordinal": 2,
+      "name_as_written_or_null": "ウリウリ",
+      "operator_image_reference_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup1-2.gif",
+      "operator_page_original_url": "http://www.hangame.co.jp/publish/sa/chara2.asp",
+      "operator_page_archive_capture": "20031214055443",
+      "operator_original_page_bytes_sha256": "a01a2c93d410511b9e08f7a066569d8cec8db883f50047baf0ca3160d50ed0fc",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED",
+      "probe_attempts": [
+        {
+          "content_type": "image/gif",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": "edab567f32a9777a2ebc2edd81284738251f056a5803eb7e4a7373ab5b2f29bb",
+      "observed_image_archive_capture_or_null": "20060604065940",
+      "observed_image_bytes_or_null": 4285,
+      "observed_image_type_or_null": "GIF",
+      "observed_image_dimensions_or_null": [
+        60,
+        65
+      ],
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence",
+      "archive_original_binary_url": "https://web.archive.org/web/20060604065940id_/http://images.hangame.co.jp/_images/game/saj/petpicgroup1-2.gif"
+    },
+    {
+      "source_namespace": "jp_official_web",
+      "original_record_id": "jp-hangame-pet-web:position:003",
+      "web_ordinal": 3,
+      "name_as_written_or_null": "ウリスタイン",
+      "operator_image_reference_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup1-3.gif",
+      "operator_page_original_url": "http://www.hangame.co.jp/publish/sa/chara2.asp",
+      "operator_page_archive_capture": "20031214055443",
+      "operator_original_page_bytes_sha256": "a01a2c93d410511b9e08f7a066569d8cec8db883f50047baf0ca3160d50ed0fc",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED",
+      "probe_attempts": [
+        {
+          "content_type": "image/gif",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": "3b489ab4b4537c0c3c48e4651bd9e276db45c89de63d758bcd362bf0de0a1b5a",
+      "observed_image_archive_capture_or_null": "20031214174630",
+      "observed_image_bytes_or_null": 4571,
+      "observed_image_type_or_null": "GIF",
+      "observed_image_dimensions_or_null": [
+        60,
+        65
+      ],
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence",
+      "archive_original_binary_url": "https://web.archive.org/web/20031214174630id_/http://images.hangame.co.jp/_images/game/saj/petpicgroup1-3.gif"
+    },
+    {
+      "source_namespace": "jp_official_web",
+      "original_record_id": "jp-hangame-pet-web:position:044",
+      "web_ordinal": 44,
+      "name_as_written_or_null": "リゼノドン",
+      "operator_image_reference_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup1-44.gif",
+      "operator_page_original_url": "http://www.hangame.co.jp/publish/sa/chara2.asp",
+      "operator_page_archive_capture": "20031214055443",
+      "operator_original_page_bytes_sha256": "a01a2c93d410511b9e08f7a066569d8cec8db883f50047baf0ca3160d50ed0fc",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED",
+      "probe_attempts": [
+        {
+          "content_type": "image/gif",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": "d74826f4823283aac3a827227b43d92e824fd67e40e8dc7a04d6b40eaa209c96",
+      "observed_image_archive_capture_or_null": "20031214215503",
+      "observed_image_bytes_or_null": 4440,
+      "observed_image_type_or_null": "GIF",
+      "observed_image_dimensions_or_null": [
+        60,
+        65
+      ],
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence",
+      "archive_original_binary_url": "https://web.archive.org/web/20031214215503id_/http://images.hangame.co.jp/_images/game/saj/petpicgroup1-44.gif"
+    },
+    {
+      "source_namespace": "jp_official_web",
+      "original_record_id": "jp-hangame-pet-web:position:045",
+      "web_ordinal": 45,
+      "name_as_written_or_null": "ヤンギロス",
+      "operator_image_reference_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup1-45.gif",
+      "operator_page_original_url": "http://www.hangame.co.jp/publish/sa/chara2.asp",
+      "operator_page_archive_capture": "20031214055443",
+      "operator_original_page_bytes_sha256": "a01a2c93d410511b9e08f7a066569d8cec8db883f50047baf0ca3160d50ed0fc",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED",
+      "probe_attempts": [
+        {
+          "content_type": "image/gif",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": "6ec372e4804f72d5306e598fc1ddb7725a3cfd6cd0065718a210b7fd8e0873f2",
+      "observed_image_archive_capture_or_null": "20031214221903",
+      "observed_image_bytes_or_null": 4385,
+      "observed_image_type_or_null": "GIF",
+      "observed_image_dimensions_or_null": [
+        60,
+        65
+      ],
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence",
+      "archive_original_binary_url": "https://web.archive.org/web/20031214221903id_/http://images.hangame.co.jp/_images/game/saj/petpicgroup1-45.gif"
+    },
+    {
+      "source_namespace": "jp_official_web",
+      "original_record_id": "jp-hangame-pet-web:position:046",
+      "web_ordinal": 46,
+      "name_as_written_or_null": "バンボロス",
+      "operator_image_reference_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup2-1.gif",
+      "operator_page_original_url": "http://www.hangame.co.jp/publish/sa/chara2-2.asp",
+      "operator_page_archive_capture": "20031214051259",
+      "operator_original_page_bytes_sha256": "09faee5a55cb09ea8527090fb09fc00166abce94c83ef34322f4cacd4ad65249",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED",
+      "probe_attempts": [
+        {
+          "content_type": "image/gif",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": "1f95613b33ffbb6e9e477f949466b25375006995ba444badca991ac08bcfdb24",
+      "observed_image_archive_capture_or_null": "20031214235508",
+      "observed_image_bytes_or_null": 4500,
+      "observed_image_type_or_null": "GIF",
+      "observed_image_dimensions_or_null": [
+        60,
+        65
+      ],
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence",
+      "archive_original_binary_url": "https://web.archive.org/web/20031214235508id_/http://images.hangame.co.jp/_images/game/saj/petpicgroup2-1.gif"
+    },
+    {
+      "source_namespace": "jp_official_web",
+      "original_record_id": "jp-hangame-pet-web:position:089",
+      "web_ordinal": 89,
+      "name_as_written_or_null": "トルーボ",
+      "operator_image_reference_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup2-44.gif",
+      "operator_page_original_url": "http://www.hangame.co.jp/publish/sa/chara2-2.asp",
+      "operator_page_archive_capture": "20031214051259",
+      "operator_original_page_bytes_sha256": "09faee5a55cb09ea8527090fb09fc00166abce94c83ef34322f4cacd4ad65249",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED",
+      "probe_attempts": [
+        {
+          "content_type": "image/gif",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": "0701540b182aa4352afe8ad278f67a8f16148b5796ed546fa4eb5c4aad42aaec",
+      "observed_image_archive_capture_or_null": "20080819082246",
+      "observed_image_bytes_or_null": 4300,
+      "observed_image_type_or_null": "GIF",
+      "observed_image_dimensions_or_null": [
+        60,
+        65
+      ],
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence",
+      "archive_original_binary_url": "https://web.archive.org/web/20080819082246id_/http://images.hangame.co.jp/_images/game/saj/petpicgroup2-44.gif"
+    },
+    {
+      "source_namespace": "jp_official_web",
+      "original_record_id": "jp-hangame-pet-web:position:090",
+      "web_ordinal": 90,
+      "name_as_written_or_null": "ブロントス",
+      "operator_image_reference_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup2-45.gif",
+      "operator_page_original_url": "http://www.hangame.co.jp/publish/sa/chara2-2.asp",
+      "operator_page_archive_capture": "20031214051259",
+      "operator_original_page_bytes_sha256": "09faee5a55cb09ea8527090fb09fc00166abce94c83ef34322f4cacd4ad65249",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_URL_NOT_READABLE_NOW",
+      "probe_attempts": [
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        },
+        {
+          "content_type": "application/json",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": null,
+      "observed_image_archive_capture_or_null": null,
+      "observed_image_bytes_or_null": null,
+      "observed_image_type_or_null": null,
+      "observed_image_dimensions_or_null": null,
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence"
+    },
+    {
+      "source_namespace": "jp_official_web",
+      "original_record_id": "jp-hangame-pet-web:position:091",
+      "web_ordinal": 91,
+      "name_as_written_or_null": "ブリンテス",
+      "operator_image_reference_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup3-1.gif",
+      "operator_page_original_url": "http://www.hangame.co.jp/publish/sa/chara2-3.asp",
+      "operator_page_archive_capture": "20040220221717",
+      "operator_original_page_bytes_sha256": "b9284c6185fc5a999dd3bf0da3ac9d341e31312dcdf5859ee5a5786eb0cbc9ad",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED",
+      "probe_attempts": [
+        {
+          "content_type": "image/gif",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": "ef5182e38bd90045d2f4b03260219e58e479edc86ee8998a1189b12a194501c3",
+      "observed_image_archive_capture_or_null": "20031214163657",
+      "observed_image_bytes_or_null": 4289,
+      "observed_image_type_or_null": "GIF",
+      "observed_image_dimensions_or_null": [
+        60,
+        65
+      ],
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence",
+      "archive_original_binary_url": "https://web.archive.org/web/20031214163657id_/http://images.hangame.co.jp/_images/game/saj/petpicgroup3-1.gif"
+    },
+    {
+      "source_namespace": "jp_official_web",
+      "original_record_id": "jp-hangame-pet-web:position:123",
+      "web_ordinal": 123,
+      "name_as_written_or_null": "コリトロス",
+      "operator_image_reference_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup3-33.gif",
+      "operator_page_original_url": "http://www.hangame.co.jp/publish/sa/chara2-3.asp",
+      "operator_page_archive_capture": "20040220221717",
+      "operator_original_page_bytes_sha256": "b9284c6185fc5a999dd3bf0da3ac9d341e31312dcdf5859ee5a5786eb0cbc9ad",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED",
+      "probe_attempts": [
+        {
+          "content_type": "image/gif",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": "df67a726a504345764a46ce527a980798e0a6dd130043142f685a3c47ffdfaec",
+      "observed_image_archive_capture_or_null": "20031214235358",
+      "observed_image_bytes_or_null": 4666,
+      "observed_image_type_or_null": "GIF",
+      "observed_image_dimensions_or_null": [
+        60,
+        65
+      ],
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence",
+      "archive_original_binary_url": "https://web.archive.org/web/20031214235358id_/http://images.hangame.co.jp/_images/game/saj/petpicgroup3-33.gif"
+    },
+    {
+      "source_namespace": "jp_official_web",
+      "original_record_id": "jp-hangame-pet-web:position:124",
+      "web_ordinal": 124,
+      "name_as_written_or_null": "ノーストロス",
+      "operator_image_reference_url": "http://images.hangame.co.jp/_images/game/saj/petpicgroup3-34.gif",
+      "operator_page_original_url": "http://www.hangame.co.jp/publish/sa/chara2-3.asp",
+      "operator_page_archive_capture": "20040220221717",
+      "operator_original_page_bytes_sha256": "b9284c6185fc5a999dd3bf0da3ac9d341e31312dcdf5859ee5a5786eb0cbc9ad",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_URL_NOT_READABLE_NOW",
+      "probe_attempts": [
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        },
+        {
+          "content_type": "application/json",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": null,
+      "observed_image_archive_capture_or_null": null,
+      "observed_image_bytes_or_null": null,
+      "observed_image_type_or_null": null,
+      "observed_image_dimensions_or_null": null,
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence"
+    },
+    {
+      "source_namespace": "cn_official_web",
+      "original_record_id": "waei-cn20:new-pet-web-position:001",
+      "web_ordinal": 1,
+      "name_as_written_or_null": null,
+      "operator_image_reference_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/img/newpet/6.JPG",
+      "operator_page_original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp",
+      "operator_page_archive_capture": "20011204194619",
+      "operator_original_page_bytes_sha256": "561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_URL_NOT_READABLE_NOW",
+      "probe_attempts": [
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        },
+        {
+          "content_type": "application/json",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": null,
+      "observed_image_archive_capture_or_null": null,
+      "observed_image_bytes_or_null": null,
+      "observed_image_type_or_null": null,
+      "observed_image_dimensions_or_null": null,
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence"
+    },
+    {
+      "source_namespace": "cn_official_web",
+      "original_record_id": "waei-cn20:new-pet-web-position:002",
+      "web_ordinal": 2,
+      "name_as_written_or_null": null,
+      "operator_image_reference_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/img/newpet/5.JPG",
+      "operator_page_original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp",
+      "operator_page_archive_capture": "20011204194619",
+      "operator_original_page_bytes_sha256": "561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_URL_NOT_READABLE_NOW",
+      "probe_attempts": [
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        },
+        {
+          "content_type": "application/json",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": null,
+      "observed_image_archive_capture_or_null": null,
+      "observed_image_bytes_or_null": null,
+      "observed_image_type_or_null": null,
+      "observed_image_dimensions_or_null": null,
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence"
+    },
+    {
+      "source_namespace": "cn_official_web",
+      "original_record_id": "waei-cn20:new-pet-web-position:006",
+      "web_ordinal": 6,
+      "name_as_written_or_null": null,
+      "operator_image_reference_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/img/newpet/4.JPG",
+      "operator_page_original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp",
+      "operator_page_archive_capture": "20011204194619",
+      "operator_original_page_bytes_sha256": "561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_URL_NOT_READABLE_NOW",
+      "probe_attempts": [
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        },
+        {
+          "content_type": "application/json",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": null,
+      "observed_image_archive_capture_or_null": null,
+      "observed_image_bytes_or_null": null,
+      "observed_image_type_or_null": null,
+      "observed_image_dimensions_or_null": null,
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence"
+    },
+    {
+      "source_namespace": "cn_official_web",
+      "original_record_id": "waei-cn20:new-pet-web-position:007",
+      "web_ordinal": 7,
+      "name_as_written_or_null": "阿米朵",
+      "operator_image_reference_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/img/newpet/7.JPG",
+      "operator_page_original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp",
+      "operator_page_archive_capture": "20011204194619",
+      "operator_original_page_bytes_sha256": "561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_URL_NOT_READABLE_NOW",
+      "probe_attempts": [
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        },
+        {
+          "content_type": "application/json",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": null,
+      "observed_image_archive_capture_or_null": null,
+      "observed_image_bytes_or_null": null,
+      "observed_image_type_or_null": null,
+      "observed_image_dimensions_or_null": null,
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence"
+    },
+    {
+      "source_namespace": "cn_official_web",
+      "original_record_id": "waei-cn20:new-pet-web-position:034",
+      "web_ordinal": 34,
+      "name_as_written_or_null": "戈登尔顿",
+      "operator_image_reference_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/img/newpet/35.JPG",
+      "operator_page_original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp",
+      "operator_page_archive_capture": "20011204194619",
+      "operator_original_page_bytes_sha256": "561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_URL_NOT_READABLE_NOW",
+      "probe_attempts": [
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        },
+        {
+          "content_type": "application/json",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": null,
+      "observed_image_archive_capture_or_null": null,
+      "observed_image_bytes_or_null": null,
+      "observed_image_type_or_null": null,
+      "observed_image_dimensions_or_null": null,
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence"
+    },
+    {
+      "source_namespace": "cn_official_web",
+      "original_record_id": "waei-cn20:new-pet-web-position:035",
+      "web_ordinal": 35,
+      "name_as_written_or_null": "哥斯哥斯",
+      "operator_image_reference_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/img/newpet/34.JPG",
+      "operator_page_original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp",
+      "operator_page_archive_capture": "20011204194619",
+      "operator_original_page_bytes_sha256": "561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "NOT_RETRIEVED_NETWORK_OR_INDEX_BLOCKED",
+      "probe_attempts": [
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        },
+        {
+          "content_type": "application/json",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": null,
+      "observed_image_archive_capture_or_null": null,
+      "observed_image_bytes_or_null": null,
+      "observed_image_type_or_null": null,
+      "observed_image_dimensions_or_null": null,
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence"
+    },
+    {
+      "source_namespace": "cn_official_web",
+      "original_record_id": "waei-cn20:new-pet-web-position:066",
+      "web_ordinal": 66,
+      "name_as_written_or_null": "玛斯特",
+      "operator_image_reference_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/img/newpet/66.JPG",
+      "operator_page_original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet1.asp",
+      "operator_page_archive_capture": "20011023173210",
+      "operator_original_page_bytes_sha256": "dfc191c476dc5c968e1957e58070297d048475e3f3f8d8d5e897ccae56ea0c65",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_URL_NOT_READABLE_NOW",
+      "probe_attempts": [
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        },
+        {
+          "content_type": "application/json",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": null,
+      "observed_image_archive_capture_or_null": null,
+      "observed_image_bytes_or_null": null,
+      "observed_image_type_or_null": null,
+      "observed_image_dimensions_or_null": null,
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence"
+    },
+    {
+      "source_namespace": "cn_official_web",
+      "original_record_id": "waei-cn20:new-pet-web-position:067",
+      "web_ordinal": 67,
+      "name_as_written_or_null": "麦丁布斯",
+      "operator_image_reference_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/img/newpet/67.JPG",
+      "operator_page_original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet1.asp",
+      "operator_page_archive_capture": "20011023173210",
+      "operator_original_page_bytes_sha256": "dfc191c476dc5c968e1957e58070297d048475e3f3f8d8d5e897ccae56ea0c65",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_URL_NOT_READABLE_NOW",
+      "probe_attempts": [
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        },
+        {
+          "content_type": "application/json",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": null,
+      "observed_image_archive_capture_or_null": null,
+      "observed_image_bytes_or_null": null,
+      "observed_image_type_or_null": null,
+      "observed_image_dimensions_or_null": null,
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence"
+    },
+    {
+      "source_namespace": "cn_official_web",
+      "original_record_id": "waei-cn20:new-pet-web-position:068",
+      "web_ordinal": 68,
+      "name_as_written_or_null": "毛宝",
+      "operator_image_reference_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/img/newpet/68.JPG",
+      "operator_page_original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet1.asp",
+      "operator_page_archive_capture": "20011023173210",
+      "operator_original_page_bytes_sha256": "dfc191c476dc5c968e1957e58070297d048475e3f3f8d8d5e897ccae56ea0c65",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_URL_NOT_READABLE_NOW",
+      "probe_attempts": [
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        },
+        {
+          "content_type": "application/json",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": null,
+      "observed_image_archive_capture_or_null": null,
+      "observed_image_bytes_or_null": null,
+      "observed_image_type_or_null": null,
+      "observed_image_dimensions_or_null": null,
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence"
+    },
+    {
+      "source_namespace": "cn_official_web",
+      "original_record_id": "waei-cn20:new-pet-web-position:102",
+      "web_ordinal": 102,
+      "name_as_written_or_null": "耶普鲁",
+      "operator_image_reference_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/img/newpet/101.JPG",
+      "operator_page_original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet2.asp",
+      "operator_page_archive_capture": "20011023181629",
+      "operator_original_page_bytes_sha256": "2c7aea8d0319c2070d5c7590a95bfc892c2463deb76c5b95fca8c281549c76f0",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_URL_NOT_READABLE_NOW",
+      "probe_attempts": [
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        },
+        {
+          "content_type": "application/json",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": null,
+      "observed_image_archive_capture_or_null": null,
+      "observed_image_bytes_or_null": null,
+      "observed_image_type_or_null": null,
+      "observed_image_dimensions_or_null": null,
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence"
+    },
+    {
+      "source_namespace": "cn_official_web",
+      "original_record_id": "waei-cn20:new-pet-web-position:103",
+      "web_ordinal": 103,
+      "name_as_written_or_null": "尤里蛙",
+      "operator_image_reference_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/img/newpet/102.JPG",
+      "operator_page_original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet2.asp",
+      "operator_page_archive_capture": "20011023181629",
+      "operator_original_page_bytes_sha256": "2c7aea8d0319c2070d5c7590a95bfc892c2463deb76c5b95fca8c281549c76f0",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_URL_NOT_READABLE_NOW",
+      "probe_attempts": [
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        },
+        {
+          "content_type": "application/json",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": null,
+      "observed_image_archive_capture_or_null": null,
+      "observed_image_bytes_or_null": null,
+      "observed_image_type_or_null": null,
+      "observed_image_dimensions_or_null": null,
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence"
+    },
+    {
+      "source_namespace": "cn_official_web",
+      "original_record_id": "waei-cn20:new-pet-web-position:104",
+      "web_ordinal": 104,
+      "name_as_written_or_null": "朱利洛斯",
+      "operator_image_reference_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/img/newpet/103.JPG",
+      "operator_page_original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet2.asp",
+      "operator_page_archive_capture": "20011023181629",
+      "operator_original_page_bytes_sha256": "2c7aea8d0319c2070d5c7590a95bfc892c2463deb76c5b95fca8c281549c76f0",
+      "source_catalogue_prior_image_sha256_or_null": null,
+      "probe_status": "ARCHIVED_URL_NOT_READABLE_NOW",
+      "probe_attempts": [
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        },
+        {
+          "content_type": "application/json",
+          "http_status": 200,
+          "status": "HTTP_OK"
+        },
+        {
+          "error_class": "URLError",
+          "status": "NETWORK_ERROR"
+        }
+      ],
+      "returned_original_media_image_sha256_or_null": null,
+      "observed_image_archive_capture_or_null": null,
+      "observed_image_bytes_or_null": null,
+      "observed_image_type_or_null": null,
+      "observed_image_dimensions_or_null": null,
+      "source_image_pixel_bytes_retained_in_private_library_now": false,
+      "original_client_species_id_proved": false,
+      "contemporaneous_image_with_operator_page_archive_proven": false,
+      "rights_for_public_redistribution_or_new_game_proven": false,
+      "reopen": "Retry only the exact already recorded image URL at an actual Wayback captured timestamp and verify binary SHA; require separate official game/client ID evidence"
+    }
+  ],
+  "next": "PET22: finish qualified archived image retrieval options and establish private rights-safe custody for proven SHA sources if available; preserve CN unavailable evidence and original official version-bound identity gaps. PET still ACTIVE."
+}

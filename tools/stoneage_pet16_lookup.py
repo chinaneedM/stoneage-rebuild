@@ -10,6 +10,7 @@ import json
 PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-16-SOURCE-SEPARATED-UNIFIED-CATALOG-R1.json"
 PET13_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-13-ORIGINAL-CAPTURE-TEMPLATE-ATTRIBUTES-SKILLS-R1.json"
 PET19_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-19-MISSING-SKILL-SOURCE-GAP-AUDIT-R1.json"
+PET21_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-21-OFFICIAL-WEB-ARCHIVED-IMAGE-REACCESS-R1.json"
 
 # Only datasets carrying an original numeric graphic field participate.
 # Official JP/CN page ordinals/image filenames are NOT client graphic numbers.
@@ -169,6 +170,43 @@ def skill_gap_trace(audit, skill_id=None, limit=20):
     }
 
 
+def operator_image_trace(catalog, pet21, region, ordinal):
+    """Show archived operator-web image SHA receipt without mapping any game pet ID."""
+    if region not in ("jp", "cn"):
+        raise ValueError("region must be 'jp' or 'cn'")
+    if isinstance(ordinal, bool) or not isinstance(ordinal, int) or ordinal <= 0:
+        raise ValueError("web ordinal must be a positive integer")
+    source = "jp_official_web" if region == "jp" else "cn_official_web"
+    items = [x for x in catalog["datasets"][source] if x["web_ordinal"] == ordinal]
+    if len(items) > 1:
+        raise ValueError("nonunique original web ordinal in source catalogue")
+    original = items[0] if items else None
+    checked = [
+        x for x in pet21["records"]
+        if x["source_namespace"] == source and x["web_ordinal"] == ordinal
+    ]
+    if len(checked) > 1:
+        raise ValueError("duplicate operator-image probe receipt")
+    if checked and (original is None or checked[0]["original_record_id"] != original["id"]):
+        raise ValueError("PET21 source receipt does not match original catalogue record")
+    return {
+        "source_namespace": source,
+        "web_ordinal": ordinal,
+        "original_catalogue_record_or_null": original,
+        "pet21_probe_status": (
+            checked[0]["probe_status"] if checked else
+            "NOT_IN_PET21_SAMPLE" if original else "NO_SOURCE_POSITION"
+        ),
+        "pet21_source_receipt_or_null": checked[0] if checked else None,
+        "original_official_client_species_ID_proven": False,
+        "jss1999_tw10_early_same_deployment_proven": False,
+        "webpage_and_image_same_capture_instant_proven": False,
+        "commercial_image_bytes_in_public_repository": False,
+        "image_custody_verified_private": False,
+        "permission_for_game_or_public_wiki_use_verified": False,
+    }
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--query", default="")
@@ -188,6 +226,10 @@ def main():
                    help="PET19 missing selected skill definitions with source-separated original row provenance")
     p.add_argument("--skill-id", type=int,
                    help="Filter PET19 missing definitions by positive original numeric skill ID")
+    p.add_argument("--operator-web", choices=("jp", "cn"),
+                   help="Exact historic operator website source namespace; no client pet IDs")
+    p.add_argument("--web-ordinal", type=int,
+                   help="Historic official website position, NOT client sprite or pet species ID")
     p.add_argument("--catalog", type=Path, default=PATH)
     args = p.parse_args()
     if args.limit < 1 or args.limit > 1000:
@@ -211,6 +253,20 @@ def main():
             p.error("--skill-id requires a positive original skill number")
         audit = json.loads(PET19_PATH.read_text(encoding="utf-8"))
         result = skill_gap_trace(audit, skill_id=args.skill_id, limit=args.limit)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return 0
+    if args.operator_web is None and args.web_ordinal is not None:
+        p.error("--web-ordinal requires --operator-web")
+    if args.operator_web is not None:
+        if args.web_ordinal is None or args.web_ordinal <= 0:
+            p.error("--operator-web requires a positive --web-ordinal")
+        if (args.query or args.dataset or args.summary or args.details or
+                args.trace_graphic is not None or args.capture_template is not None
+                or args.skill_gaps or args.skill_id is not None):
+            p.error("--operator-web is an independent exact-source lookup mode")
+        catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
+        report = json.loads(PET21_PATH.read_text(encoding="utf-8"))
+        result = operator_image_trace(catalog, report, args.operator_web, args.web_ordinal)
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return 0
     catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
