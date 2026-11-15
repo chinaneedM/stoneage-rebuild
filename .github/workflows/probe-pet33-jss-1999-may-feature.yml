@@ -1,0 +1,56 @@
+name: PET33 inspect 1999-05-18 period pet capture and rearing notice
+on:
+  push:
+    paths:
+      - ".github/workflows/probe-pet33-jss-1999-may-feature.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect-period-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Read contemporary 1999 original reporting with source-byte SHA; no raw page saved
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib,re
+          from html.parser import HTMLParser
+          from urllib.request import Request,urlopen
+          url="https://internet.watch.impress.co.jp/www/digest/backno/9905/18.htm"
+          req=Request(url,headers={"User-Agent":"Mozilla/5.0 (compatible; StoneAgeHistoricalEvidence/1.0)"})
+          with urlopen(req,timeout=50) as f:
+              raw=f.read();final=f.url;hdr=f.headers.get("Content-Type")
+          print("PET33_SOURCE",final,"BYTES",len(raw),"SHA256",hashlib.sha256(raw).hexdigest(),"MIME",hdr)
+          decoded={}
+          for enc in ("shift_jis","cp932","euc_jp","iso2022_jp","utf-8"):
+              try:
+                  d=raw.decode(enc)
+                  decoded[enc]=d
+                  print("PET33_CHARSET_OK",enc,"HAS_TITLE",("STONE AGE" in d),
+                        "HAS_CAPTURE",("恐竜を捕獲" in d),"HAS_REARING",("飼育" in d),
+                        "HAS_PUBLISHER",("日本システムサプライ" in d))
+              except UnicodeDecodeError:
+                  pass
+          selected=next(((enc,d) for enc,d in decoded.items() if
+              all(s in d for s in ("STONE AGE","恐竜を捕獲","飼育","1999年5月18日"))),None)
+          assert selected, "cannot identify period notice and date"
+          enc,d=selected
+          class P(HTMLParser):
+              def __init__(self):super().__init__();self.text=[]
+              def handle_data(self,s):self.text.append(s)
+          p=P();p.feed(d)
+          blocks=[" ".join(x.split()) for x in p.text]
+          hits=[x for x in blocks if "日本システムサプライ" in x and "恐竜を捕獲" in x]
+          assert len(hits)==1, "ambiguous or absent original product entry"
+          print("PET33_ENTRY",enc,"LENGTH",len(hits[0]),
+                "SHA256",hashlib.sha256(hits[0].encode("utf-8")).hexdigest(),
+                "RELEASE_PLANNED",("今秋発売予定" in hits[0]),
+                "WINDOWS_95_98",("Windows 95/98" in hits[0]),
+                "SPECIES_NAMED",False)
+          PY
