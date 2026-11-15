@@ -1,0 +1,34 @@
+name: PET official-only global region and version inclusion gate
+on:
+  push:
+    paths:
+      - "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md"
+      - "docs/RESTORATION-MODULE-FIRST-20261102.md"
+      - "docs/STONEAGE-PET-OFFICIAL-GLOBAL-INCLUSION-R1.md"
+      - "research/recovered/STONEAGE-PET-OFFICIAL-GLOBAL-RELEASE-EVIDENCE-R1.json"
+      - "tools/stoneage_pet_official_lookup.py"
+      - "tests/test_stoneage_pet_official_global_scope.py"
+      - ".github/workflows/verify-stoneage-pet-official-global-scope.yml"
+  pull_request:
+    paths:
+      - "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md"
+      - "docs/RESTORATION-MODULE-FIRST-20261102.md"
+      - "docs/STONEAGE-PET-OFFICIAL-GLOBAL-INCLUSION-R1.md"
+      - "research/recovered/STONEAGE-PET-OFFICIAL-GLOBAL-RELEASE-EVIDENCE-R1.json"
+      - "tools/stoneage_pet_official_lookup.py"
+      - "tests/test_stoneage_pet_official_global_scope.py"
+      - ".github/workflows/verify-stoneage-pet-official-global-scope.yml"
+permissions:
+  contents: read
+jobs:
+  verified-official-scope:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preserve official source, region and exclusion boundaries
+        run: python -m unittest tests.test_stoneage_pet_official_global_scope
+      - name: Query only official operator page evidence, not private servers
+        run: |
+          python tools/stoneage_pet_official_lookup.py --summary
+          python tools/stoneage_pet_official_lookup.py --region JP --query ウーリ
+          python tools/stoneage_pet_official_lookup.py --confirmed-only
