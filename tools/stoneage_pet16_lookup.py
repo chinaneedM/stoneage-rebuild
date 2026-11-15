@@ -9,6 +9,7 @@ import json
 
 PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-16-SOURCE-SEPARATED-UNIFIED-CATALOG-R1.json"
 PET13_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-13-ORIGINAL-CAPTURE-TEMPLATE-ATTRIBUTES-SKILLS-R1.json"
+PET19_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-19-MISSING-SKILL-SOURCE-GAP-AUDIT-R1.json"
 
 # Only datasets carrying an original numeric graphic field participate.
 # Official JP/CN page ordinals/image filenames are NOT client graphic numbers.
@@ -135,6 +136,39 @@ def capture_trace(catalog, pet13, template_id):
     }
 
 
+def skill_gap_trace(audit, skill_id=None, limit=20):
+    """Read PET19 independently source-qualified missing skill definitions.
+
+    Never copy a same numeric ID from a different skill table into a missing
+    definition, and never imply original game skill runtime behavior.
+    """
+    if skill_id is not None and (isinstance(skill_id, bool) or
+                                 not isinstance(skill_id, int) or skill_id <= 0):
+        raise ValueError("skill_id must be a positive integer")
+    if limit < 1:
+        raise ValueError("limit must be positive")
+    out = {}
+    for source, groups in audit["missing_by_source"].items():
+        selected = [g for g in groups if skill_id is None or g["skill_id"] == skill_id]
+        out[source] = [{
+            "skill_id": g["skill_id"],
+            "reference_count": g["reference_count"],
+            "source_template_rows": g["source_template_rows"],
+            "returned_references": min(len(g["original_references"]), limit),
+            "truncated": len(g["original_references"]) > limit,
+            "original_references": g["original_references"][:limit],
+        } for g in selected]
+    return {
+        "query_skill_id": skill_id,
+        "source_scope": audit["source_scope"],
+        "totals_all_skills_not_filtered": audit["totals"],
+        "exact_source_provenance": audit["source_refs"],
+        "missing_by_source": out,
+        "evidence_guards": audit["evidence_guards"],
+        "no_original_pet_skill_effect_or_early_official_identity_verified": True,
+    }
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--query", default="")
@@ -150,6 +184,10 @@ def main():
                    help="Trace equal numeric graphic references without identity merging")
     p.add_argument("--capture-template", type=int, metavar="TEMPLATE_ID",
                    help="PET13 original same-archive capture item/skill source links (not runtime)")
+    p.add_argument("--skill-gaps", action="store_true",
+                   help="PET19 missing selected skill definitions with source-separated original row provenance")
+    p.add_argument("--skill-id", type=int,
+                   help="Filter PET19 missing definitions by positive original numeric skill ID")
     p.add_argument("--catalog", type=Path, default=PATH)
     args = p.parse_args()
     if args.limit < 1 or args.limit > 1000:
@@ -163,6 +201,18 @@ def main():
             p.error("--capture-template requires a positive original template ID")
         if args.trace_graphic is not None or args.dataset or args.query or args.summary or args.details:
             p.error("--capture-template must be used by itself (and optional --catalog)")
+    if args.skill_id is not None and not args.skill_gaps:
+        p.error("--skill-id requires --skill-gaps")
+    if args.skill_gaps:
+        if (args.dataset or args.query or args.summary or args.details or
+                args.trace_graphic is not None or args.capture_template is not None):
+            p.error("--skill-gaps is separate from name/graphic/capture lookup modes")
+        if args.skill_id is not None and args.skill_id <= 0:
+            p.error("--skill-id requires a positive original skill number")
+        audit = json.loads(PET19_PATH.read_text(encoding="utf-8"))
+        result = skill_gap_trace(audit, skill_id=args.skill_id, limit=args.limit)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return 0
     catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
     if args.summary:
         out = catalog["metrics"]
