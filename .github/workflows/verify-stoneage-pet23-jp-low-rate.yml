@@ -1,0 +1,29 @@
+name: PET23 bounded one-worker JP official archived image retry and private SHA verifier
+on:
+  push:
+    paths:
+      - "tools/stoneage_pet23_low_rate_retry.py"
+      - "tools/stoneage_pet23_verify_private_gif.py"
+      - "tests/test_stoneage_pet23_retry_scope.py"
+      - ".github/workflows/verify-stoneage-pet23-jp-low-rate.yml"
+  pull_request:
+    types: [opened, reopened, synchronize]
+    paths:
+      - "tools/stoneage_pet23_low_rate_retry.py"
+      - "tools/stoneage_pet23_verify_private_gif.py"
+      - "tests/test_stoneage_pet23_retry_scope.py"
+      - ".github/workflows/verify-stoneage-pet23-jp-low-rate.yml"
+permissions:
+  contents: read
+jobs:
+  pet23-source-bounded:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify all pinned sources, historical SHA non-overwrite and private-check rejection
+        run: |
+          python -m unittest tests.test_stoneage_pet23_retry_scope
+          python tools/stoneage_pet23_low_rate_retry.py --verify-only
+      - name: Retry twelve already documented source URLs sequentially; log metadata not GIF bytes
+        run: python tools/stoneage_pet23_low_rate_retry.py --probe --timeout 10
