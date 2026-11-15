@@ -57,3 +57,8 @@
 这九项在**图像字节来源层**取得明确可复核结果；未升级到 **`VERIFIED_EARLY_GAME_PET_IDENTITY`**。统一检索入口增加 `--operator-web jp --web-ordinal 2` / `--operator-web cn --web-ordinal 1` 可直接查到原页、图片原URL、当次SHA/失败原因及剩余权限边界。未经本轮抽样的其它205个官方网页位置仍有原登记，不可据此自动升为缺图或已验证。
 
 **PET21 本批状态：有实际新增原图字节摘要的来源增量；PET整体仍 `SOURCE_BOUNDED_PARTIAL`。** 当前最高下一项 PET22：继续同一宠物模块内有界扩展日本已知来源的历史图片原字节验证，研究如何在合法私人素材库完成SHA确证的实际永久保管；中国华义先保留被阻塞的精确URL，不因当前网络错误重复所有104条无效下载。
+
+
+## 2026-11-15 前向 PET22 全124图像 URL 资格检查
+
+[PET22 三批来源归档原字节与初次复核不重复统计](STONEAGE-PET-MODULE-22-JP-124-ORIGINAL-WEB-IMAGE-BATCH-20261115.md)及[124条网络回读原SHA收据](../../research/recovered/STONEAGE-PET-MODULE-22-JP-124-ARCHIVED-IMAGE-RECOVERY-R1.json)已正式将此报告的23网址小样本扩为全部124条日本官网已登记URL。PET22当次24张GIF真正回读，其中与本报告日本9个旧SHA重合5张，另有4张本报告已核但PET22本次受阻；两批证据并集为28个不同网页位置，不是9+24=33种宠物。两批原来源均分别保留，当前官方实体/私有像素保管缺口仍OPEN，PET只保持SOURCE_BOUNDED_PARTIAL。
