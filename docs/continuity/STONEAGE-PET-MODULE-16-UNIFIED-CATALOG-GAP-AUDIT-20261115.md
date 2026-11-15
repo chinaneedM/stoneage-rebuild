@@ -50,3 +50,8 @@ python -m unittest tests.test_stoneage_pet16_unified_catalog
 - **PET16-07 original_server_table_active_choice**〔SOURCE_CONFLICT〕：mixed25 original main and alternative petflags conflict, 2016 later templates independent from TW10。重开：Qualify exact active configuration and deployment source for a known historical build
 
 **下一项仅限宠物：PET17**，按目录优先补官方同版本已具名宠物身份关系、已有真实原RD与动画来源归属、技能/成长/捕捉真实相互引用，逐批改写本统一目录，不重复制造第N份无关联的零散报告。缺失同部署证据即保持UNKNOWN。宠物模块仍 ACTIVE / SOURCE_BOUNDED_PARTIAL，Stage A 7 PARTIAL+2 OPEN，Stage B及wiki GATED，R79 PAUSED_NON_BLOCKING，整体完成率UNKNOWN；历史CURRENT 2,709,173字节 blob `c89e0e33537990aa2132b47c40fef49a985a935c`不改。
+
+
+## 2026-11-15 前向续接：PET17 图号跨来源溯源（原 PET16 内容保持不变）
+
+[PET17 原图号一对多来源核验与使用说明](STONEAGE-PET-MODULE-17-GRAPHIC-NUMERIC-TRACE-20261115.md)。统一查询入口已增加 `--trace-graphic` 和 `--details`，可分别查看台湾1.0原SPR动画、mixed25主/备表、2016后期模板的**同数字候选**及原属性、技能槽和来源哈希；官网顺序号不可映射为原图号。该接续明确将本文件上面的旧 `下一项PET17` 更新为 **PET18（技能／成长／获取来源可证关系）**，宠物模块锁、七缺口及旧统计均不变；PET17提交/CI结果需另外实测验收。
