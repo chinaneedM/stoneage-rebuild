@@ -1,0 +1,26 @@
+name: Verify StoneAge INTEGRATION117 actual original TW1 SPR source boundaries
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-stoneage-integration117-original-spr-source.yml'
+      - 'tests/test_stoneage_integration117_tw10_original_spr_source.py'
+      - 'research/recovered/STONEAGE-INTEGRATION117-ORIGINAL-TW10-UNCLASSIFIED-TEN-SPR-ACTUAL-PIXELS-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION117-TEN-TW10-ORIGINAL-SPR-SOURCE-20261115.md'
+  pull_request:
+    paths:
+      - '.github/workflows/verify-stoneage-integration117-original-spr-source.yml'
+      - 'tests/test_stoneage_integration117_tw10_original_spr_source.py'
+      - 'research/recovered/STONEAGE-INTEGRATION117-ORIGINAL-TW10-UNCLASSIFIED-TEN-SPR-ACTUAL-PIXELS-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION117-TEN-TW10-ORIGINAL-SPR-SOURCE-20261115.md'
+jobs:
+  exact-original-source-negative-contract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify derived original source receipt and disallowed promotions (no proprietary bytes)
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration117_tw10_original_spr_source.py' -v
