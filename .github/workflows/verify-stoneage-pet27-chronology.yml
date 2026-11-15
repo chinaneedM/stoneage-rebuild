@@ -15,6 +15,8 @@ on:
       - "research/recovered/STONEAGE-PET37-TW2000-MINSHENG-PET-PRESS-R1.json"
       - "tests/test_stoneage_pet37_tw2000_period_press.py"
       - "tests/test_stoneage_pet38_client_first_priority.py"
+      - "tests/test_stoneage_pet40_early_sources.py"
+      - "research/recovered/STONEAGE-PET40-TW-JP-EARLY-OFFICIAL-SOURCE-BOUNDARIES-R1.json"
       - "research/recovered/STONEAGE-PET38-CLIENT-FIRST-AVAILABLE-SOURCE-INVENTORY-R1.json"
       - "research/recovered/STONEAGE-PET35-JP1999-OPERATOR-AND-PRINT-LEADS-R1.json"
       - ".github/workflows/verify-stoneage-pet27-chronology.yml"
@@ -33,6 +35,8 @@ on:
       - "research/recovered/STONEAGE-PET37-TW2000-MINSHENG-PET-PRESS-R1.json"
       - "tests/test_stoneage_pet37_tw2000_period_press.py"
       - "tests/test_stoneage_pet38_client_first_priority.py"
+      - "tests/test_stoneage_pet40_early_sources.py"
+      - "research/recovered/STONEAGE-PET40-TW-JP-EARLY-OFFICIAL-SOURCE-BOUNDARIES-R1.json"
       - "research/recovered/STONEAGE-PET38-CLIENT-FIRST-AVAILABLE-SOURCE-INVENTORY-R1.json"
       - "research/recovered/STONEAGE-PET35-JP1999-OPERATOR-AND-PRINT-LEADS-R1.json"
       - ".github/workflows/verify-stoneage-pet27-chronology.yml"
@@ -53,6 +57,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet37_tw2000_period_press
       - name: PET38 source-qualified client-first priority and official-release boundaries
         run: python -m unittest tests.test_stoneage_pet38_client_first_priority
+      - name: PET40 early acquisition, card history and candidate patch separation
+        run: python -m unittest tests.test_stoneage_pet40_early_sources
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary
