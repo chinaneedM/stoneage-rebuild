@@ -1,0 +1,48 @@
+name: PET33 source-exact 1999 Japanese prelaunch pet capture rearing intent
+on:
+  push:
+    paths:
+      - "tools/stoneage_pet33_jp1999_capture_rearing.py"
+      - "tests/test_stoneage_pet33_jp1999_capture_rearing.py"
+      - "research/recovered/STONEAGE-PET33-JP1999-0518-PRELAUNCH-PET-SOURCE-R1.json"
+      - "docs/continuity/STONEAGE-PET33-JP1999-PRELAUNCH-PET-EVIDENCE-20261115.md"
+      - ".github/workflows/probe-pet33-jss-1999-may-feature.yml"
+      - "research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json"
+  pull_request:
+    paths:
+      - "tools/stoneage_pet33_jp1999_capture_rearing.py"
+      - "tests/test_stoneage_pet33_jp1999_capture_rearing.py"
+      - "research/recovered/STONEAGE-PET33-JP1999-0518-PRELAUNCH-PET-SOURCE-R1.json"
+      - "docs/continuity/STONEAGE-PET33-JP1999-PRELAUNCH-PET-EVIDENCE-20261115.md"
+      - ".github/workflows/probe-pet33-jss-1999-may-feature.yml"
+      - "research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  first-party-and-period-evidence-boundary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify date and historical announcement remain separate from released pet roster
+        run: python -m unittest tests.test_stoneage_pet33_jp1999_capture_rearing -v
+      - name: Fetch exact original period report and replay its single product snippet
+        run: |
+          python -m tools.stoneage_pet33_jp1999_capture_rearing --output "${{ runner.temp }}/pet33.json"
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          original=json.loads((Path(os.environ["RUNNER_TEMP"])/"pet33.json").read_text(encoding="utf-8"))
+          pinned=json.loads(Path("research/recovered/STONEAGE-PET33-JP1999-0518-PRELAUNCH-PET-SOURCE-R1.json").read_text(encoding="utf-8"))
+          assert original==pinned, "period source/reproduced derived receipt drifted"
+          print("PET33_EXACT_DERIVED_RECEIPT_REPLAY_OK",original["source"]["sha256"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet33-jp1999-prelaunch-derived-metadata-only
+          path: ${{ runner.temp }}/pet33.json
+          retention-days: 30

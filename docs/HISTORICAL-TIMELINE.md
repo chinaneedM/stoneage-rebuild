@@ -5048,3 +5048,8 @@ R14房间1001/NPC16017与R24三商品别名候选接在一个离线页，14原PN
 - https://games.sina.com.cn/newgames/2003/08/08284971.shtml
 
 仅作为**2003纪念服务器政策及迁服的同期转述官方公告史料**，不证明2001大陆初代1.82原服曾经禁止交易/原地登出、所有2003服务器同配置、同年客户端原EXE的SHA、JSS1999/TW1.0原始规则或原商业事件真执行。与旧R51大陆2.0指南语义不同的年代、部署保留并列，不把某个运营公告普遍化为引擎永恒规则。二进制仍未取得。本轮私人混合2.5原RAR复读及原DAT不能认证的CRC见`docs/continuity/STONEAGE-STAGE-A-ORIGINAL-RAR-BLOCK-REPLAY-20261104.md`。
+
+
+### 1999-05-18 contemporaneous prelaunch pet capture/rearing feature (PET33 documented 2026-11-15)
+
+**FACT AS PERIOD EDITORIAL STATEMENT / NOT LIVE DEPLOYMENT:** INTERNET Watch's dated 1999-05-18 Japanese product digest (last updated 23:38) described JSS's planned Gamer's Dream `STONE AGE` game and expressly included dinosaur capture and rearing as intended features. Actual newly checked webpage bytes: 23,747 UTF-8, SHA256 `f1403f84cfd2bf7fbc356db65c2e015e87c96fa2c3316812605e58571d33218c`, originally published page URL https://internet.watch.impress.co.jp/www/digest/backno/9905/18.htm ; full derived source custody and negative release qualification in `research/recovered/STONEAGE-PET33-JP1999-0518-PRELAUNCH-PET-SOURCE-R1.json`. This authentic 1999-dated newspaper item independently pre-dates the Japanese October launch notices; it is not proof of first deployment, original species names, count, captures, 1999 client or server runtime. Existing 1999 rollout timeline and 2001 JSS manual remain separate evidence tiers; 1999 PET year stays NOT_YEAR_AUDITED.

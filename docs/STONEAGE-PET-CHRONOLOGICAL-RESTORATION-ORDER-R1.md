@@ -77,3 +77,8 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## PET32 2026-11-15｜JSS 1999-11-22/26 战斗邮件正反范围核读
 
 [原页语义审核](continuity/STONEAGE-PET32-JSS1999-BATTLE-MAIL-SEMANTIC-20261115.md)／[可重放源位置与否定边界](../research/recovered/STONEAGE-PET32-JSS1999-BATTLE-MAIL-SEMANTIC-R1.json)：1999-11-22 官方当年记录战斗允许**普通邮件**，但**不能使用宠物邮件**（source_order31/clause3）；11-26记录「战斗中的宠物邮件」相关故障修复（order30/clause0），没有说明症状或之后是否解除禁令。PET31 关键词命中不等于功能开放，更不等于新宠物种。原11,239B源Sha在真实Action 43710057574核过，本次最终新版本需另行CI后验；新增具名实装证明0。1999/2000仍 NOT_YEAR_AUDITED，当前游标1999，PET锁不变。
+
+
+## PET33 2026-11-15｜1999-05-18 日本上市前正式宠物构想同期证据
+
+[来源有界PET33报告](continuity/STONEAGE-PET33-JP1999-PRELAUNCH-PET-EVIDENCE-20261115.md)／[确证原页指纹与资格边界](../research/recovered/STONEAGE-PET33-JP1999-0518-PRELAUNCH-PET-SOURCE-R1.json)：同期 INTERNET Watch 1999-05-18 通知日本JSS `STONE AGE` 1999秋预定发售，并明确提及「恐竜を捕獲・飼育」。原23,747B页面已由GitHub Action 43711358176 实取并SHA认证；这是**上市前捕获/育成宣传**，不是1999官服实装、版本二进制、具名宠物或上线日证明。1999仍 `NOT_YEAR_AUDITED`，游标1999，新增真实具名官服宠物0。后续锁定最早JSS实际零售／测试同版原名及获取证据。

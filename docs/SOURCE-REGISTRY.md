@@ -8883,3 +8883,12 @@ R14包351231B/SHA7684267ab528d13ceecb23a25632543ae839225607cbda702a32736e4c4d366
 - 新浪2003-08-28迁服公告：https://games.sina.com.cn/newgames/2003/08/08284971.shtml — 两组纪念1.82服务及迁服/升2.0的当时计划；不能凭计划断言无实际运营偏差。
 - Source class: contemporaneous republished operator statements; confidence **A for what text announced, not actual runtime/server build/content**.
 - New original early commercial client/server/map/quest bytes recovered from these publications: **0**. No 2001 early-1.82 gameplay rule promoted. Paired private RAR full-source reread recorded separately in `research/recovered/STONEAGE-STAGE-A-ORIGINAL-RAR-BLOCK-REPLAY-CN182-PROVENANCE-R1.json` with zero new qualified DAT among four blocked floors.
+
+
+### SRC-JP-1999-INTERNETWATCH-PRELAUNCH-PET-CAPTURE-20261115（PET33 新增同期见证）
+
+- 原址：https://internet.watch.impress.co.jp/www/digest/backno/9905/18.htm ；1999-05-18 23:38 最后更新（页面自记），INTERNET Watch《ダイジェストニュース》製品情報的一条JSS预售报道。
+- 本轮独立 GitHub Actions run `43711358176` / job `132803402723` 实得23,747字节，原整页SHA256 `f1403f84cfd2bf7fbc356db65c2e015e87c96fa2c3316812605e58571d33218c`，UTF-8；唯一 JSS/STONE AGE 产品段118规范化字符/SHA256 `f3840b1455c009cef20402043e3e0a5ef85287a9b2c320a5293fe2fe1ebfb6ef`。详细来源及准确资格在 `research/recovered/STONEAGE-PET33-JP1999-0518-PRELAUNCH-PET-SOURCE-R1.json`。
+- **FACT（当时发表了什么）**：该同期商业媒体稿称JSS的Gamer's Dream《STONE AGE》计划1999秋上市（Windows95/98，价格未定），明确将捕获和饲养恐龙作为宣传玩法。
+- **非事实边界**：这不是JSS可复核实服发布记录、1999原版二进制或正式宠物奖励发放证据；未具名任何宠物，不证明1999年已上线此功能、所有地区同版或种数。分类 A：同期媒体对产品公告的报道，而不是S等级原物证。
+- 相异来源：已有1999-09 TGS与JSS 10月以后官方更新文献仍各自独立；不得拼合成一次同部署实装证明。原网页正文与原游戏图像均未入公开Git。
