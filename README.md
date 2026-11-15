@@ -2937,3 +2937,7 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-15 — PET39｜台湾 1.0 原客户端的宠名与动画
 
 [台湾 1.0 原客户端的 124 条宠名与动画对应及下一项](docs/continuity/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-20261115.md)。原零售客户端的相册表与同包 SPR 逐条对应，120 条对应可在同版 REAL 找到原头像数据。2000 年正式开放和取得来源继续核查。
+
+## 2026-11-15 — PET40｜布魯頓取得线索与早期原件核查
+
+[台湾与日本的早期宠物原页和补丁核查](docs/continuity/STONEAGE-PET40-TW-JP-EARLY-OFFICIAL-SOURCE-BOUNDARIES-20261115.md)。华义官网保存的紫微服玩家投稿与台湾 1.0 原盘的「布魯頓」名称可对照，2000 年具体获得日期与运行版别继续查证。
