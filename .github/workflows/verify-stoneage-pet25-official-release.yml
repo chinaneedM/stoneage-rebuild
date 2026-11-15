@@ -1,0 +1,33 @@
+name: PET25 official-release cross-region roster identity and evidence
+on:
+  push:
+    paths:
+      - "research/recovered/STONEAGE-PET25-OFFICIAL-RELEASE-ROSTER-R1.json"
+      - "docs/continuity/STONEAGE-PET25-GLOBAL-OPERATOR-RELEASE-CENSUS-20261115.md"
+      - "docs/STONEAGE-PET-OFFICIAL-GLOBAL-INCLUSION-R1.md"
+      - "tools/stoneage_pet25_official_release_query.py"
+      - "tests/test_stoneage_pet25_official_release_roster.py"
+      - ".github/workflows/verify-stoneage-pet25-official-release.yml"
+  pull_request:
+    paths:
+      - "research/recovered/STONEAGE-PET25-OFFICIAL-RELEASE-ROSTER-R1.json"
+      - "docs/continuity/STONEAGE-PET25-GLOBAL-OPERATOR-RELEASE-CENSUS-20261115.md"
+      - "docs/STONEAGE-PET-OFFICIAL-GLOBAL-INCLUSION-R1.md"
+      - "tools/stoneage_pet25_official_release_query.py"
+      - "tests/test_stoneage_pet25_official_release_roster.py"
+      - ".github/workflows/verify-stoneage-pet25-official-release.yml"
+permissions:
+  contents: read
+jobs:
+  evidence-roster:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: PET25 exact source identity and exclusion tests
+        run: python -m unittest tests.test_stoneage_pet25_official_release_roster
+      - name: Run query and count by original product line
+        run: |
+          python tools/stoneage_pet25_official_release_query.py --summary
+          python tools/stoneage_pet25_official_release_query.py --product STONEAGE_CLASSIC_PC_CN_HUAYI
+          python tools/stoneage_pet25_official_release_query.py --region KR
+          python tools/stoneage_pet25_official_release_query.py --name 海胆 --leads
