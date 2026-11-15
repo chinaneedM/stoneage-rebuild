@@ -19,9 +19,17 @@ def validate(data):
     if {x["source_id"] for x in rows}!=expected:raise ValueError("source record identities drifted")
     if any(x["source_record_is_global_unique_species"] for x in rows):raise ValueError("unsupported species count asserted")
     if [y["year"] for y in data["yearly_work_queue"]]!=list(range(1999,2027)):raise ValueError("year range drifted")
-    for y in data["yearly_work_queue"]:
-        if y["research_gate"]!="NOT_YEAR_AUDITED": raise ValueError("incomplete year incorrectly marked closed")
+    years=data["yearly_work_queue"]
+    for y in years:
+        if y["research_gate"] not in {"NOT_YEAR_AUDITED","SOURCE_BOUNDED_REVIEWED"}:raise ValueError("unsupported year status")
         if y["documented_release_event_ids_from_existing_PET25_PET26"]!=[x["source_id"] for x in rows if x["year"]==y["year"]]:raise ValueError("year membership drifted")
+        if y["research_gate"]=="SOURCE_BOUNDED_REVIEWED":
+            receipt=y.get("source_bounded_review_receipt")
+            if not receipt or not (BASE.parent.parent/receipt).is_file():raise ValueError("missing source-bounded year audit")
+            if y.get("historically_complete") is not False or y.get("historical_species_count") is not None:raise ValueError("historically complete or invented pet total")
+            if not y.get("residual_reopen_triggers"):raise ValueError("no re-opening conditions")
+    first=next((y["year"] for y in years if y["research_gate"]=="NOT_YEAR_AUDITED"),None)
+    if first!=data["current_frontier"]["year"]:raise ValueError("frontier not earliest unreviewed year")
     return True
 def main():
     p=argparse.ArgumentParser(description=__doc__)

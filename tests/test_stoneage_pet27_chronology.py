@@ -10,11 +10,15 @@ class TestChronology(unittest.TestCase):
   self.assertTrue(validate(self.d))
   self.assertEqual(len(self.d["previously_recovered_release_events_ordered_by_evidence_year_not_first_actual_release"]),28)
   self.assertEqual(len(set(x["source_id"] for x in self.d["previously_recovered_release_events_ordered_by_evidence_year_not_first_actual_release"])),28)
- def test_years_start_from_provisional_oldest_and_are_never_preclosed(self):
+ def test_years_advance_only_after_source_bounded_review(self):
   d=self.d;years=d["yearly_work_queue"]
   self.assertEqual([y["year"] for y in years],list(range(1999,2027)))
-  self.assertEqual(d["current_frontier"]["year"],1999)
-  self.assertTrue(all(y["research_gate"]=="NOT_YEAR_AUDITED" for y in years))
+  self.assertEqual(years[0]["research_gate"],"SOURCE_BOUNDED_REVIEWED")
+  self.assertFalse(years[0]["historically_complete"])
+  self.assertIsNone(years[0]["historical_species_count"])
+  self.assertGreater(len(years[0]["residual_reopen_triggers"]),0)
+  self.assertEqual(d["current_frontier"]["year"],next(x["year"] for x in years if x["research_gate"]=="NOT_YEAR_AUDITED"))
+  self.assertGreaterEqual(d["current_frontier"]["year"],2000)
   self.assertEqual(len(choose(d,year=1999)),0)
   self.assertEqual(len(choose(d,year=2000)),0)
  def test_28_events_order_and_2002_2026(self):

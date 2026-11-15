@@ -92,3 +92,8 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## PET35 2026-11-15｜2005年日本继任官方运营商的初期宠物追述；1999年未读期刊来源清单
 
 [PET35原声明来源层与五期扫描待核边界](continuity/STONEAGE-PET35-JP1999-OPERATOR-RETROSPECTIVE-PRINT-LEADS-20261115.md)／[可核机器负证记录](../research/recovered/STONEAGE-PET35-JP1999-OPERATOR-AND-PRINT-LEADS-R1.json)：查到2005-04-04 GaiaX 运营权公告，后继运营方回述1999 JSS和恐龙收宠玩法，但无法证明1999同版具名宠物/宠邮/决斗实际可得；原网页只公开网页阅读，HTTP字节和SHA仍NULL。1999年《Play Online》No.013(6月)、014(8月)、016(10月)、017(11月)、018(12月)仅确认数字保存目录，**原页/宠物/源SHA未读**，不能算5份实装。1999仍NOT_YEAR_AUDITED，PET锁、实际具名发行数未知、下一项仍找1999原始JSS初回CD/手册及逐宠官方实装证据，保留旧CURRENT blob和Stage A/B/wiki/R79边界。
+
+
+## PET36 2026-11-15｜1999年来源有界审查并开启2000年
+
+[1999年地区及证据缺口年度盘点](continuity/STONEAGE-PET36-1999-SOURCE-BOUNDED-YEAR-AUDIT-20261115.md)／[PET36原始来源和机器止点](../research/recovered/STONEAGE-PET36-1999-SOURCE-BOUNDED-YEAR-AUDIT-R1.json)：已按1999 JSS运营15条日期更新/65子句、当年预告与9月杂志身份、JP/TW/KR/CN/OTHER五轨核验目前来源；初版原CD/手册/宠物主表及原页仍缺。标注1999 SOURCE_BOUNDED_REVIEWED仅针对已调查和明确受阻的资料，HISTORICALLY_COMPLETE=false，官方具名实装宠物的本批新增证据0，1999全球总种数UNKNOWN；所有来源缺件可重开。PET唯一活动模块保持，研究游标进入2000；下一PET37核TW/JP/KR/CN各国最早版别和同版宠物。不改大CURRENT、Stage A/B/wiki/R79。
