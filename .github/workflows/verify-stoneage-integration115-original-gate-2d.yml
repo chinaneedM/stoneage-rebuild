@@ -1,0 +1,28 @@
+name: Verify StoneAge INTEGRATION115 authentic five original SPR RD candidates
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-stoneage-integration115-original-gate-2d.yml'
+      - 'tests/test_stoneage_integration115_tw10_five_gate_2d.py'
+      - 'research/recovered/STONEAGE-INTEGRATION115-TW10-FIVE-GATE-BREEDER-ACTUAL-ORIGINAL-2D-R1.json'
+      - 'research/recovered/STONEAGE-INTEGRATION114-GATE-BREEDER-ORIGINAL-SOURCE-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION115-FIVE-GATE-BREEDER-TRUE-TW10-2D-20261115.md'
+  pull_request:
+    paths:
+      - '.github/workflows/verify-stoneage-integration115-original-gate-2d.yml'
+      - 'tests/test_stoneage_integration115_tw10_five_gate_2d.py'
+      - 'research/recovered/STONEAGE-INTEGRATION115-TW10-FIVE-GATE-BREEDER-ACTUAL-ORIGINAL-2D-R1.json'
+      - 'research/recovered/STONEAGE-INTEGRATION114-GATE-BREEDER-ORIGINAL-SOURCE-R1.json'
+      - 'docs/continuity/STONEAGE-INTEGRATION115-FIVE-GATE-BREEDER-TRUE-TW10-2D-20261115.md'
+jobs:
+  verify-source-bound-two-d:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate 5 source groups, 1624 actual RD receipts and negative boundaries
+        run: python -m unittest discover -s tests -p 'test_stoneage_integration115_tw10_five_gate_2d.py' -v
