@@ -1,13 +1,26 @@
-name: PET33 inspect 1999-05-18 period pet capture and rearing notice
+name: PET33 source-exact 1999 Japanese prelaunch pet capture rearing intent
 on:
   push:
     paths:
+      - "tools/stoneage_pet33_jp1999_capture_rearing.py"
+      - "tests/test_stoneage_pet33_jp1999_capture_rearing.py"
+      - "research/recovered/STONEAGE-PET33-JP1999-0518-PRELAUNCH-PET-SOURCE-R1.json"
+      - "docs/continuity/STONEAGE-PET33-JP1999-PRELAUNCH-PET-EVIDENCE-20261115.md"
       - ".github/workflows/probe-pet33-jss-1999-may-feature.yml"
+      - "research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json"
+  pull_request:
+    paths:
+      - "tools/stoneage_pet33_jp1999_capture_rearing.py"
+      - "tests/test_stoneage_pet33_jp1999_capture_rearing.py"
+      - "research/recovered/STONEAGE-PET33-JP1999-0518-PRELAUNCH-PET-SOURCE-R1.json"
+      - "docs/continuity/STONEAGE-PET33-JP1999-PRELAUNCH-PET-EVIDENCE-20261115.md"
+      - ".github/workflows/probe-pet33-jss-1999-may-feature.yml"
+      - "research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json"
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  inspect-period-source:
+  first-party-and-period-evidence-boundary:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
@@ -15,42 +28,21 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Read contemporary 1999 original reporting with source-byte SHA; no raw page saved
-        shell: bash
+      - name: Verify date and historical announcement remain separate from released pet roster
+        run: python -m unittest tests.test_stoneage_pet33_jp1999_capture_rearing -v
+      - name: Fetch exact original period report and replay its single product snippet
         run: |
+          python -m tools.stoneage_pet33_jp1999_capture_rearing --output "${{ runner.temp }}/pet33.json"
           python - <<'PY'
-          import hashlib,re
-          from html.parser import HTMLParser
-          from urllib.request import Request,urlopen
-          url="https://internet.watch.impress.co.jp/www/digest/backno/9905/18.htm"
-          req=Request(url,headers={"User-Agent":"Mozilla/5.0 (compatible; StoneAgeHistoricalEvidence/1.0)"})
-          with urlopen(req,timeout=50) as f:
-              raw=f.read();final=f.url;hdr=f.headers.get("Content-Type")
-          print("PET33_SOURCE",final,"BYTES",len(raw),"SHA256",hashlib.sha256(raw).hexdigest(),"MIME",hdr)
-          decoded={}
-          for enc in ("shift_jis","cp932","euc_jp","iso2022_jp","utf-8"):
-              try:
-                  d=raw.decode(enc)
-                  decoded[enc]=d
-                  print("PET33_CHARSET_OK",enc,"HAS_TITLE",("STONE AGE" in d),
-                        "HAS_CAPTURE",("恐竜を捕獲" in d),"HAS_REARING",("飼育" in d),
-                        "HAS_PUBLISHER",("日本システムサプライ" in d))
-              except UnicodeDecodeError:
-                  pass
-          selected=next(((enc,d) for enc,d in decoded.items() if
-              all(s in d for s in ("STONE AGE","恐竜を捕獲","飼育","1999年5月18日"))),None)
-          assert selected, "cannot identify period notice and date"
-          enc,d=selected
-          class P(HTMLParser):
-              def __init__(self):super().__init__();self.text=[]
-              def handle_data(self,s):self.text.append(s)
-          p=P();p.feed(d)
-          blocks=[" ".join(x.split()) for x in p.text]
-          hits=[x for x in blocks if "日本システムサプライ" in x and "恐竜を捕獲" in x]
-          assert len(hits)==1, "ambiguous or absent original product entry"
-          print("PET33_ENTRY",enc,"LENGTH",len(hits[0]),
-                "SHA256",hashlib.sha256(hits[0].encode("utf-8")).hexdigest(),
-                "RELEASE_PLANNED",("今秋発売予定" in hits[0]),
-                "WINDOWS_95_98",("Windows 95/98" in hits[0]),
-                "SPECIES_NAMED",False)
+          import json, os
+          from pathlib import Path
+          original=json.loads((Path(os.environ["RUNNER_TEMP"])/"pet33.json").read_text(encoding="utf-8"))
+          pinned=json.loads(Path("research/recovered/STONEAGE-PET33-JP1999-0518-PRELAUNCH-PET-SOURCE-R1.json").read_text(encoding="utf-8"))
+          assert original==pinned, "period source/reproduced derived receipt drifted"
+          print("PET33_EXACT_DERIVED_RECEIPT_REPLAY_OK",original["source"]["sha256"])
           PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet33-jp1999-prelaunch-derived-metadata-only
+          path: ${{ runner.temp }}/pet33.json
+          retention-days: 30
