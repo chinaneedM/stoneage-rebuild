@@ -32,8 +32,6 @@ Primary targets:
 
 See [`docs/CURRENT-STATE.md`](docs/CURRENT-STATE.md).
 
-The current pet restoration work and its next step are recorded in the [Taiwan 1.0 client album evidence](docs/continuity/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-20261115.md).
-
 ## Continuity
 
 Every new ChatGPT conversation must start from the repository rather than chat memory.
@@ -2934,3 +2932,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ### 2026-11-15 — INTEGRATION116 十组真原二维来源与73条正式Actions永久验收
 
 [真实73条run ID与版别边界](docs/continuity/STONEAGE-INTEGRATION116-PUBLICATION-ACCEPTANCE-20261115.md)／[73条机器身份及URL收据](research/recovered/STONEAGE-INTEGRATION116-PUBLICATION-ACCEPTANCE-R1.json)：[内容PR #418](https://github.com/chinaneedM/stoneage-rebuild/pull/418)已真实合并；候选`7fc735ff018396a5af06edad1cf2f6fe212f4417` **46/46** completed/success（27push+19PR）、正式内容main`a9d9e61c4cca8cd9e4df9bf2d46a6cee831481c4` **27/27** push completed/success，同一tree`4f7865b9c1f8bafdc6b26f844749c44ac0ac7694`，合计**73个不重复真实run ID**全success；两头专项12项来源反例测试真正OK。台湾1.0原认证ZIP372626292B/379CRC/六原成员SHA、十源SPR组5280帧位置、真原REAL3272不同RD双RLE一致（3270严格／2仅限定末尾零），私人两SAP候选图包620703B/5CRC在Library已双向回读SHA。晚期mixed25 41原CREATE配置与台湾1.0原图仅跨载体数值候选，不认证官方同服或真实人物身份/原生执行；私人商用像素不入Git。旧CURRENT2709173B/blob `c89e0e33`不变，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、percent=null。**本归档新提交与其后新main Actions必须另外实测，不继承73成功；NEXT换独立原任务/宠物/场景材料。**
+
+
+## 2026-11-15 — PET39｜台湾 1.0 原客户端的宠名与动画
+
+[台湾 1.0 原客户端的 124 条宠名与动画对应及下一项](docs/continuity/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-20261115.md)。原零售客户端的相册表与同包 SPR 逐条对应，120 条对应可在同版 REAL 找到原头像数据。2000 年正式开放和取得来源继续核查。
