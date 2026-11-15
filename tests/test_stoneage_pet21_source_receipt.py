@@ -31,8 +31,8 @@ class Pet21ReceiptTests(unittest.TestCase):
         self.assertEqual(r["original_frozen_catalogue_git_blob"],
                          "fdb7d9aade2df62d1a1e06b2d2f9e383693ed980")
         self.assertEqual(len(r["records"]), 23)
-        self.assertTrue(all(r["source_boundaries"].values()) is False
-                        if "source_bounded_closed" in r["source_boundaries"] else False)
+        self.assertTrue(r["source_boundaries"]["source_web_image_does_not_prove_official_client_sprite_or_pet_ID"])
+        self.assertTrue(r["source_boundaries"]["network_timeout_or_unreadable_not_archival_absence"])
         self.assertFalse(r["source_boundaries"]["source_bounded_closed"])
         self.assertFalse(r["source_boundaries"]["allowed_to_switch_content_module"])
         self.assertTrue(r["source_boundaries"]["no_automatic_publication_or_new_game_asset_use_rights"])
@@ -114,9 +114,7 @@ class Pet21ReceiptTests(unittest.TestCase):
         self.assertEqual(found["pet21_source_receipt_or_null"]["observed_image_archive_capture_or_null"],
                          "20060604065940")
         self.assertFalse(found["image_custody_verified_private"])
-        self.assertFalse(found["official_game_client_species_ID_proven"] if
-                         "official_game_client_species_ID_proven" in found else
-                         found["original_official_client_species_ID_proven"])
+        self.assertFalse(found["original_official_client_species_ID_proven"])
         unprobed = operator_image_trace(self.c, self.a, "jp", 25)
         self.assertEqual(unprobed["pet21_probe_status"], "NOT_IN_PET21_SAMPLE")
         self.assertIsNone(unprobed["pet21_source_receipt_or_null"])
