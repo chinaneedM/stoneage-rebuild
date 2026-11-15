@@ -1,0 +1,30 @@
+name: PET26 classic Japanese official pet releases and Taiwanese scope
+on:
+  push:
+    paths:
+      - "research/recovered/STONEAGE-PET26-JP-TW-CLASSIC-OFFICIAL-RELEASE-R1.json"
+      - "docs/continuity/STONEAGE-PET26-JAPAN-TAIWAN-PC-RELEASE-CENSUS-20261115.md"
+      - "tools/stoneage_pet_official_release_lookup.py"
+      - "tests/test_stoneage_pet26_classic_official.py"
+      - ".github/workflows/verify-stoneage-pet26-classic.yml"
+  pull_request:
+    paths:
+      - "research/recovered/STONEAGE-PET26-JP-TW-CLASSIC-OFFICIAL-RELEASE-R1.json"
+      - "docs/continuity/STONEAGE-PET26-JAPAN-TAIWAN-PC-RELEASE-CENSUS-20261115.md"
+      - "tools/stoneage_pet_official_release_lookup.py"
+      - "tests/test_stoneage_pet26_classic_official.py"
+      - ".github/workflows/verify-stoneage-pet26-classic.yml"
+permissions:
+  contents: read
+jobs:
+  source-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reject pre-release and species count promotions
+        run: python -m unittest tests.test_stoneage_pet26_classic_official
+      - name: Cross-source query actual PC releases
+        run: |
+          python tools/stoneage_pet_official_release_lookup.py --summary
+          python tools/stoneage_pet_official_release_lookup.py --region JP
+          python tools/stoneage_pet_official_release_lookup.py --region TW --name 狼人 --leads
