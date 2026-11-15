@@ -62,8 +62,8 @@ class Pet18CaptureSkillTests(unittest.TestCase):
         skills = {x["source_pet_skill_id"] for row in self.p13["templates"]
                   for x in row["same_archive_original_skill_links"]}
         self.assertEqual(skills, {1, 2, 60, 90, 110})
-        self.assertTrue(self.p13["bounds"]["original_actual_capturable_pets_species_verified"] is False
-                        if "original_actual_capturable_pets_species_verified" in self.p13["bounds"] else True)
+        self.assertFalse(self.p13["bounds"]["original_capture_success_sourced_now"])
+        self.assertFalse(self.p13["bounds"]["original_stat_growth_and_pet_skill_runtime_formula_verified_here"])
 
     def test_unknown_template_id_not_fabricated(self):
         r = capture_trace(self.c, self.p13, 99999999)
