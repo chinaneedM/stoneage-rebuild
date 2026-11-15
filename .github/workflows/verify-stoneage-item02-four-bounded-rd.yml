@@ -1,0 +1,28 @@
+name: Verify StoneAge ITEM02 four bounded original RD prefix receipts
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-stoneage-item02-four-bounded-rd.yml'
+      - 'tests/test_stoneage_item02_four_bounded_rd.py'
+      - 'research/recovered/STONEAGE-ITEM02-FOUR-TW10-RD-BOUNDED-PREFIX-R1.json'
+      - 'research/recovered/STONEAGE-ITEM-EQUIPMENT-SHOP-MODULE-01-TWO-ORIGINAL-ITEMSETS-AND-TW1-RD-SUMMARY-R1.json'
+      - 'docs/continuity/STONEAGE-ITEM02-FOUR-TW10-ORIGINAL-RD-BOUNDED-PREFIX-20261115.md'
+  pull_request:
+    paths:
+      - '.github/workflows/verify-stoneage-item02-four-bounded-rd.yml'
+      - 'tests/test_stoneage_item02_four_bounded_rd.py'
+      - 'research/recovered/STONEAGE-ITEM02-FOUR-TW10-RD-BOUNDED-PREFIX-R1.json'
+      - 'research/recovered/STONEAGE-ITEM-EQUIPMENT-SHOP-MODULE-01-TWO-ORIGINAL-ITEMSETS-AND-TW1-RD-SUMMARY-R1.json'
+      - 'docs/continuity/STONEAGE-ITEM02-FOUR-TW10-ORIGINAL-RD-BOUNDED-PREFIX-20261115.md'
+jobs:
+  original-rd-bounded-source-contract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify four authenticated RD receipts, parent failures and strict negative controls
+        run: python -m unittest discover -s tests -p 'test_stoneage_item02_four_bounded_rd.py' -v
