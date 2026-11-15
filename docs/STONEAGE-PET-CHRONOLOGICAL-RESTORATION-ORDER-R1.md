@@ -72,3 +72,8 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## PET31 2026-11-15｜JSS 1999官网15行/65子句来源扫描
 
 [报告](continuity/STONEAGE-PET31-JSS1999-ALL-OPERATOR-UPDATE-CLAUSES-20261115.md)／[65子句SHA机器索引](../research/recovered/STONEAGE-PET31-JSS1999-ALL-CLAUSE-CENSUS-R1.json)：已认证官方11,239B更新页原字节在GitHub Actions真实回放，1999年15/15行拆65个原 `・` 子句；`ペット` 7子句、`ペットメール` 5子句，含11-22、11-26待精确语义核读的新指针。字面检索≠具名宠物发行；`ウリウリ` 一处仍只是既有事件词。同日重复1999-12-20两块独立保留、1999-11-9星期冲突不改。新获实际官服具名宠物证明0、1999/2000 NOT_YEAR_AUDITED、游标1999。下一步优先细读命中分句和原始具名宠物资料。
+
+
+## PET32 2026-11-15｜JSS 1999-11-22/26 战斗邮件正反范围核读
+
+[原页语义审核](continuity/STONEAGE-PET32-JSS1999-BATTLE-MAIL-SEMANTIC-20261115.md)／[可重放源位置与否定边界](../research/recovered/STONEAGE-PET32-JSS1999-BATTLE-MAIL-SEMANTIC-R1.json)：1999-11-22 官方当年记录战斗允许**普通邮件**，但**不能使用宠物邮件**（source_order31/clause3）；11-26记录「战斗中的宠物邮件」相关故障修复（order30/clause0），没有说明症状或之后是否解除禁令。PET31 关键词命中不等于功能开放，更不等于新宠物种。原11,239B源Sha在真实Action 43710057574核过，本次最终新版本需另行CI后验；新增具名实装证明0。1999/2000仍 NOT_YEAR_AUDITED，当前游标1999，PET锁不变。

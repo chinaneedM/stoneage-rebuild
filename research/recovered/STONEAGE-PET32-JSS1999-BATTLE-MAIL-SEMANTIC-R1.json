@@ -1,0 +1,46 @@
+{
+  "schema": "stoneage.pet32.jss1999_battle_mail_semantic_r1",
+  "source": {
+    "url": "https://web.archive.org/web/20010417162544id_/http://www.titan.co.jp/stoneage/verup.html",
+    "bytes": 11239,
+    "sha256": "ba71d859f34f31261f4293dc61583c53a8e77133898c4a8148c544a452abc3cb",
+    "archive_capture": "20010417162544",
+    "source_type": "ARCHIVED_JSS_FIRST_PARTY_OPERATOR_CHANGELOG"
+  },
+  "parent_pet31_index": "research/recovered/STONEAGE-PET31-JSS1999-ALL-CLAUSE-CENSUS-R1.json",
+  "original_operator_dated_entries_total": 40,
+  "original_operator_dated_entries_1999": 15,
+  "source_bounded_semantic_records": [
+    {
+      "operator_date": "1999-11-22",
+      "original_source_order": 31,
+      "clause_order_in_entry": 3,
+      "normalized_characters": 90,
+      "normalized_sha256": "4e1b95514e7a7154bb2d01e4530738b3cbec7fdbaec14b723481a25be7353851",
+      "ordinary_mail_during_battle": "EXPLICITLY_AVAILABLE_BY_OPERATOR_CHANGELOG",
+      "pet_mail_during_battle": "EXPLICITLY_UNAVAILABLE_AS_OF_THIS_WRITTEN_CHANGE",
+      "actual_game_execution_proven": false
+    },
+    {
+      "operator_date": "1999-11-26",
+      "original_source_order": 30,
+      "clause_order_in_entry": 0,
+      "normalized_characters": 25,
+      "normalized_sha256": "d4bc63f3f1ba485d41bbac66c1a39ddacbb6ae60e121506d5d4f8fb5219b1c56",
+      "ordinary_mail_during_battle": "NOT_RESTATED_IN_THIS_CLAUSE",
+      "pet_mail_during_battle": "BUG_FIX_RECORDED_WITH_UNSPECIFIED_SYMPTOM_AND_POLICY",
+      "actual_game_execution_proven": false
+    }
+  ],
+  "inference_barriers": {
+    "keyword_pet_mail_does_not_mean_feature_allowed": true,
+    "nov_26_bug_fix_does_not_prove_nov_22_battle_restriction_removed": true,
+    "operator_written_dates_not_independently_observed_server_execution": true,
+    "official_named_pet_release_not_proven": true,
+    "client_or_server_build_not_recovered": true
+  },
+  "new_official_named_pet_species": [],
+  "year_1999": "NOT_YEAR_AUDITED",
+  "current_frontier_year": 1999,
+  "private_commercial_original_published": false
+}

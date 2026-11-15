@@ -1,0 +1,47 @@
+name: PET32 source-exact JSS 1999 battle-mail semantic boundary
+on:
+  push:
+    paths:
+      - "tools/stoneage_pet32_jss_mail_semantic.py"
+      - "tests/test_stoneage_pet32_jss_mail_semantic.py"
+      - "research/recovered/STONEAGE-PET32-JSS1999-BATTLE-MAIL-SEMANTIC-R1.json"
+      - "docs/continuity/STONEAGE-PET32-JSS1999-BATTLE-MAIL-SEMANTIC-20261115.md"
+      - ".github/workflows/pet32-inspect-1999-jss-mail.yml"
+  pull_request:
+    paths:
+      - "tools/stoneage_pet32_jss_mail_semantic.py"
+      - "tests/test_stoneage_pet32_jss_mail_semantic.py"
+      - "research/recovered/STONEAGE-PET32-JSS1999-BATTLE-MAIL-SEMANTIC-R1.json"
+      - "docs/continuity/STONEAGE-PET32-JSS1999-BATTLE-MAIL-SEMANTIC-20261115.md"
+      - ".github/workflows/pet32-inspect-1999-jss-mail.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verified-mail-semantics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check negative guards, source identity, and historical bounds
+        run: python -m unittest tests.test_stoneage_pet32_jss_mail_semantic -v
+      - name: Replay original 11239-byte archived operator source without publishing original text
+        shell: bash
+        run: |
+          python -m tools.stoneage_pet32_jss_mail_semantic --output "${{ runner.temp }}/pet32-derived.json"
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          actual=json.loads((Path(os.environ["RUNNER_TEMP"])/"pet32-derived.json").read_text())
+          published=json.loads(Path("research/recovered/STONEAGE-PET32-JSS1999-BATTLE-MAIL-SEMANTIC-R1.json").read_text())
+          assert actual==published, "source-exact semantic result diverges from permanently published receipt"
+          print("PET32_DERIVED_RECEIPT_EXACT_MATCH",len(actual["source_bounded_semantic_records"]))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet32-jss1999-two-derived-clauses-only
+          path: ${{ runner.temp }}/pet32-derived.json
+          retention-days: 30
