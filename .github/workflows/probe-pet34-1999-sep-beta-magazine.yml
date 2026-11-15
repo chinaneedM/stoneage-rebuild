@@ -42,14 +42,8 @@ jobs:
                     "SAMPLE",repr(" ".join(txt.split())[:230]))
           print("PET34_NEAR_PRINTED36",[(i, len(d[i].get_text()),d[i].rect.width,d[i].rect.height)
               for i in range(32,min(41,len(d)))])
-          import io, base64
-          from PIL import Image
-          for i in (34,35,36,37):
-              page=d[i]
-              pix=page.get_pixmap(matrix=fitz.Matrix(2.8,2.8),alpha=False)
-              im=Image.frombytes("RGB",[pix.width,pix.height],pix.samples)
-              out=io.BytesIO(); im.save(out,format="JPEG",quality=76,optimize=True)
-              b=out.getvalue()
-              print("PET34_RENDERED_PAGE",i,"BYTES",len(b),"SHA256",hashlib.sha256(b).hexdigest())
-              print("PET34_JPG_PAGE"+str(i)+"_BASE64",base64.b64encode(b).decode())
+          for i in (33,34,35,36,37,38):
+              txt=d[i].get_text(sort=True)
+              print("PET34_SCAN_TEXT",i,"TOTAL",len(txt),"NONASCII",sum(ord(ch)>127 for ch in txt),
+                    "OPENING_180",repr(" ".join(txt.split())[:180]))
           PY
