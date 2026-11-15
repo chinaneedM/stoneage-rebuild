@@ -107,3 +107,7 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## PET38 2026-11-15｜新规则：客户端优先取证，官网/图鉴仅做必要补缺
 
 [完整执行优先级与原证资格](continuity/STONEAGE-PET38-CLIENT-FIRST-RESTORATION-PRIORITY-20261115.md)／[四份既有资源索引和缺失年代原客户端的机器清单](../research/recovered/STONEAGE-PET38-CLIENT-FIRST-AVAILABLE-SOURCE-INVENTORY-R1.json)。当前2000年最先回收/重新校验已曾验真的台湾1.0完整私有零售包，查宠物名称/程序表/图号/原SPR动作的**同版本**链接，之后找2000韩国/日本原包或精确补丁；暂不继续无目的新闻搜寻。客户端`CLIENT_ASSET_PRESENT`不等于`OFFICIAL_IN_GAME_RELEASE_CONFIRMED`；服务端控制的实装、掉落、捕捉、成长/技能保留源缺；未从2016社区物种表自动倒填早期官服。1999有界审查可重开、2000游标OPEN、PET单模块锁与CURRENT原档不变。此条覆盖PET37报告里的旧“先查JSS新闻更新”NEXT，但不抹去其有据报刊史。
+
+## PET39 2026-11-15｜台湾 1.0 原客户端内置宠名与原动画
+
+[来源与提取记录](continuity/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-20261115.md)／[可检索的 124 条具名对应](../research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json)。同一认证零售客户端里的 124 条内置相册名已逐条绑定原 SPR，120 条能定位原头像 RD。2000 年继续调查台湾同版正式开放及获取证据，并追查其他地区的同年原客户端或补丁。

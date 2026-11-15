@@ -220,3 +220,5 @@ MAP/SCENE维持**SOURCE_BOUNDED_PARTIAL**，历史 CURRENT blob `c89e0e33537990a
 ## 2026-11-15 PET客户端优先的取证序列（以最新用户指令覆盖此前“先查报道”NEXT）
 
 最新用户明确提出：若有每个官方版本的客户端，应先直接查程序文件及数据/动画资源，再以报道和图鉴补充客户端缺失部分。落实为连续性协议§23、[PET38取证清单](../research/recovered/STONEAGE-PET38-CLIENT-FIRST-AVAILABLE-SOURCE-INVENTORY-R1.json)与[具体工作令](continuity/STONEAGE-PET38-CLIENT-FIRST-RESTORATION-PRIORITY-20261115.md)。此项**不改变PET单模块锁、1999–2026最早到最近历史游标、各国版别隔离和正式宠物收录门**；当前2000年优先核已存的台湾1.0原始客户端、认证源位置、宠物本地身份和二维动作，原服服务器控制的发放/成长/获宠仍需外部证据。CN5/TW85/mixed25候选版不能跨年代替台湾1.0。单凭SPR/图号不能报全版宠物数。新的历史来源缺损只做定点检索，不以反复广搜新闻替代已有客户端直接核查。
+
+**客户端优先执行结果及现行 NEXT**见[台湾 1.0 原客户端的 124 条宠名与动画对应](continuity/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-20261115.md)。PET40 在 2000 年继续核验原客户端与同部署官服发行证据。
