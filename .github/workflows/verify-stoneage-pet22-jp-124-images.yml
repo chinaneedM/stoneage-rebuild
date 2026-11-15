@@ -5,6 +5,12 @@ on:
       - "tools/stoneage_pet22_jp_official_124_archive_batch.py"
       - "tests/test_stoneage_pet22_jp_124_source_targets.py"
       - ".github/workflows/verify-stoneage-pet22-jp-124-images.yml"
+  pull_request:
+    types: [opened, reopened]
+    paths:
+      - "tools/stoneage_pet22_jp_official_124_archive_batch.py"
+      - "tests/test_stoneage_pet22_jp_124_source_targets.py"
+      - ".github/workflows/verify-stoneage-pet22-jp-124-images.yml"
 permissions:
   contents: read
 jobs:
