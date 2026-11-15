@@ -1,0 +1,27 @@
+name: PET22 JP operator all 124 original web-image archive source probes (metadata only)
+on:
+  push:
+    paths:
+      - "tools/stoneage_pet22_jp_official_124_archive_batch.py"
+      - "tests/test_stoneage_pet22_jp_124_source_targets.py"
+      - ".github/workflows/verify-stoneage-pet22-jp-124-images.yml"
+permissions:
+  contents: read
+jobs:
+  jp124-source-batch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        image-group: [1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate all operator source references and prior receipt without network
+        run: |
+          python -m unittest tests.test_stoneage_pet22_jp_124_source_targets
+          python tools/stoneage_pet22_jp_official_124_archive_batch.py --verify-only
+      - name: Probe exact historic operator source URL group and log only SHA/capture metadata
+        run: |
+          python tools/stoneage_pet22_jp_official_124_archive_batch.py --probe --group ${{ matrix.image-group }} --timeout 6 --workers 3
