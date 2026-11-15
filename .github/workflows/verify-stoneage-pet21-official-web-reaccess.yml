@@ -1,0 +1,29 @@
+name: PET21 historic operator pet web image source reaccess (metadata only)
+on:
+  push:
+    paths:
+      - "tools/stoneage_pet21_official_web_image_reaccess.py"
+      - "tests/test_stoneage_pet21_official_web_image_reaccess.py"
+      - "research/recovered/STONEAGE-PET-MODULE-16-SOURCE-SEPARATED-UNIFIED-CATALOG-R1.json"
+      - ".github/workflows/verify-stoneage-pet21-official-web-reaccess.yml"
+  pull_request:
+    paths:
+      - "tools/stoneage_pet21_official_web_image_reaccess.py"
+      - "tests/test_stoneage_pet21_official_web_image_reaccess.py"
+      - "research/recovered/STONEAGE-PET-MODULE-16-SOURCE-SEPARATED-UNIFIED-CATALOG-R1.json"
+      - ".github/workflows/verify-stoneage-pet21-official-web-reaccess.yml"
+permissions:
+  contents: read
+jobs:
+  source-bounded-private-bytes-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify operator URL allowlist and 23 independent source references (no network)
+        run: |
+          python -m unittest tests.test_stoneage_pet21_official_web_image_reaccess
+          python tools/stoneage_pet21_official_web_image_reaccess.py --verify-only
+      - name: Probe fixed public archive URLs, print bounded SHA metadata, discard all media bytes
+        run: |
+          python tools/stoneage_pet21_official_web_image_reaccess.py --probe --timeout 6 --workers 6
