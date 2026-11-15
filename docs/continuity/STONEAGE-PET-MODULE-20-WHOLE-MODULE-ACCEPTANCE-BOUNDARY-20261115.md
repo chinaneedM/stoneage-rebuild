@@ -45,3 +45,8 @@ PET12对六个后期候选 `101279/101280/101281/101564/101736/101737` 已取得
 **状态继承：** Stage A **7 PARTIAL+2 OPEN**；Stage B/wiki **GATED**，R79 **PAUSED_NON_BLOCKING**，总体完成率 **UNKNOWN**；完整旧 `docs/CURRENT-STATE.md` 的原 Git blob `c89e0e33537990aa2132b47c40fef49a985a935c` 保持未变。PET20是证据覆盖结项准备和下一真实来源批次排序，**不是用户已同意来源限定止点**，未征得明示接受前不得解锁NPC模块。
 
 验收以精确PR/主线Actions为准，不能从新增测试文件的存在推断已实际通过。
+
+
+## 2026-11-15 前向接续：PET21官网历史图片真实来源回读
+
+[PET21 日方9个归档GIF原字节即时核验（8新增SHA）／华义12个目标未取得图片](STONEAGE-PET-MODULE-21-OFFICIAL-WEB-IMAGE-SOURCE-REACCESS-20261115.md)以及[23条精确URL、网页来源和存档时间机器收据](../../research/recovered/STONEAGE-PET-MODULE-21-OFFICIAL-WEB-ARCHIVED-IMAGE-REACCESS-R1.json)已进入**同一PET模块**；原 PET20 七维矩阵作为当时历史快照保留不改写。PET21的SHA由精确 GitHub Actions Run `43693853890` 的真实即时原图响应获得；商用原图字节尚未持久保存在私人素材库，故不把来源SHA误算为所有原图已保存。最高后续PET22同域批量验证与私有保管，未验初版身份、版权与未解七缺口继续OPEN，PET执行锁不变。
