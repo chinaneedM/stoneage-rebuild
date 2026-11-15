@@ -43,8 +43,15 @@ class Pet34MagazineSource(unittest.TestCase):
         q=json.loads(Path("research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json").read_text(encoding="utf-8"))
         self.assertEqual(q["current_frontier"]["year"],1999)
         self.assertEqual(q["current_frontier"]["status"],"OPEN_NOT_YEAR_CLOSED")
-        self.assertEqual(q["current_frontier"]["latest_partial_root_review"],"PET34-JSS1999-SEPTEMBER-BETA-PRINT-CUSTODY-20261115")
-        self.assertEqual(q["root_source_census_receipts"][-1]["new_official_named_released_pets"],0)
+        # Latest cursor advances with newer PET batches; PET34's verified
+        # historical receipt must remain immutable and independently findable.
+        records = [x for x in q["root_source_census_receipts"]
+                   if x["id"] == "PET34-JSS1999-SEPTEMBER-BETA-PRINT-CUSTODY-20261115"]
+        self.assertEqual(len(records), 1)
+        self.assertEqual(records[0]["new_official_named_released_pets"], 0)
+        self.assertIsNone(records[0]["historical_pet_population_count"])
+        self.assertIn(q["current_frontier"]["latest_partial_root_review"],
+                      [x["id"] for x in q["root_source_census_receipts"]])
 
 
 if __name__=="__main__":
