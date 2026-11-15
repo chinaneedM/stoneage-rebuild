@@ -1,0 +1,124 @@
+{
+  "schema": "stoneage.pet36.1999_source_bounded_year_audit.r1",
+  "audit_date": "2026-11-15",
+  "base_main_head": "fbe38d6b4e81dafbe4a4cbea064583857fc54072",
+  "base_main_tree": "b5a3538c6ba4f03e21cd63cf8ad3deded256946d",
+  "active_module": "PET",
+  "year": 1999,
+  "review_status": "SOURCE_BOUNDED_REVIEWED",
+  "historically_complete": false,
+  "official_pet_population": null,
+  "new_named_official_live_pet_proofs": 0,
+  "declared_scope": "PET28_TO_PET35_CONCRETE_SOURCE_SET_AND_PET36_ACCESS_RESIDUALS",
+  "previous_verified_sources": [
+    {
+      "id": "PET33",
+      "dated": "1999-05-18",
+      "original_bytes": 23747,
+      "sha256": "f1403f84cfd2bf7fbc356db65c2e015e87c96fa2c3316812605e58571d33218c",
+      "type": "PRELAUNCH_FEATURE_INTENT"
+    },
+    {
+      "id": "PET31",
+      "dated": "1999-10-18_TO_1999-12-20",
+      "original_bytes": 11239,
+      "sha256": "ba71d859f34f31261f4293dc61583c53a8e77133898c4a8148c544a452abc3cb",
+      "dated_blocks": 15,
+      "clauses": 65,
+      "pet_literal_hits": 7,
+      "pet_mail_literal_hits": 5,
+      "type": "OFFICIAL_JSS_CHANGELOG_NOT_SPECIES"
+    },
+    {
+      "id": "PET34",
+      "dated": "1999-09",
+      "original_bytes": 31915180,
+      "pages": 167,
+      "sha256": "fd6cb9e4a3f7023115ebff91042d7c9b4a8c956b822c5ffd6379230ec5ee328c",
+      "type": "ORIGINAL_MAGAZINE_SCAN_FILE_WITH_UNREADABLE_JAPANESE_TEXT"
+    },
+    {
+      "id": "PET35",
+      "dated": "2005-04-04",
+      "type": "SUCCESSOR_OPERATOR_RETROSPECTIVE_ONLY"
+    }
+  ],
+  "region_source_reviews": {
+    "JP": {
+      "operator": "JSS_GAMERS_DREAM",
+      "release_date_attested": "1999-10-15",
+      "pet_features_evidenced": true,
+      "pet_roster_missing": true,
+      "pet_population": null
+    },
+    "TW": {
+      "operator": "WAEI_2000_CONTEXT",
+      "next_attestation": "2000-04",
+      "absence_1999_proven": false,
+      "pet_population": null
+    },
+    "KR": {
+      "operator": "INIUM_2000_CONTEXT",
+      "next_attestation": "2000-10",
+      "absence_1999_proven": false,
+      "pet_population": null
+    },
+    "CN": {
+      "operator": "MAINLAND_2000_2001_CONTEXT",
+      "next_attestation": "2000_LATE_TEST_CANDIDATE",
+      "absence_1999_proven": false,
+      "pet_population": null
+    },
+    "OTHER": {
+      "operator": null,
+      "absence_1999_proven": false,
+      "pet_population": null
+    }
+  },
+  "access_blockers": [
+    {
+      "source": "JSS_1999_RETAIL_BETA_DISC_MANUAL_PET_MASTER",
+      "status": "NOT_ACQUIRED",
+      "reopen": "AUTHENTIC_1999_JSS_DISC_MANUAL_OR_SAME_BUILD_PET_TABLE"
+    },
+    {
+      "source": "PLAY_ONLINE_1999_013_014_016_017_018",
+      "status": "UNREAD_CATALOGUE_ONLY_NO016_HTTP_403",
+      "reopen": "READABLE_1999_ORIGINAL_PRINT_PAGES_WITH_PROVENANCE"
+    },
+    {
+      "source": "PLAY_ONLINE_015_PDF",
+      "status": "PDF_SHA_VERIFIED_BUT_TEXT_UNREADABLE",
+      "reopen": "SOURCE_EXACT_VISUAL_PAGE_COLLATION"
+    },
+    {
+      "source": "JP_1999_LIVE_NAMED_PET_ISSUANCE",
+      "status": "NO_QUALIFIED_NAMED_EVIDENCE",
+      "reopen": "ORIGINAL_OPERATOR_PET_RELEASE_OR_SAME_BUILD_GAMEPLAY"
+    },
+    {
+      "source": "TW_KR_CN_OTHER_1999_OPERATOR",
+      "status": "NO_QUALIFIED_EVIDENCE_IN_SCOPED_SET",
+      "reopen": "NEW_1999_OPERATOR_PRIMARY_SOURCE"
+    }
+  ],
+  "source_bounded_review_not_historically_complete": true,
+  "unverified_native_runtime": true,
+  "unproven_original_release_1999_species_count": null,
+  "source_specific_reopen_triggers": [
+    "AUTHENTIC_1999_JSS_DISC_MANUAL_OR_SAME_BUILD_PET_TABLE",
+    "READABLE_1999_ORIGINAL_PRINT_PAGES_WITH_PROVENANCE",
+    "SOURCE_EXACT_VISUAL_PAGE_COLLATION",
+    "ORIGINAL_OPERATOR_PET_RELEASE_OR_SAME_BUILD_GAMEPLAY",
+    "NEW_1999_OPERATOR_PRIMARY_SOURCE"
+  ],
+  "next_research_year": 2000,
+  "next_unit": "PET37_2000_REGIONAL_OFFICIAL_PET_SOURCE_AUDIT",
+  "current_original_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "original_current_bytes": 2709173,
+  "commercial_assets_published": false,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}
