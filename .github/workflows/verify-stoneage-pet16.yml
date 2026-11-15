@@ -12,6 +12,8 @@ on:
       - "tests/test_stoneage_pet21_source_receipt.py"
       - "tests/test_stoneage_pet22_jp_124_source_targets.py"
       - "tests/test_stoneage_pet22_archive_receipt.py"
+      - "tests/test_stoneage_pet23_receipt.py"
+      - "research/recovered/STONEAGE-PET-MODULE-23-JP-LOW-RATE-IMAGE-REACCESS-R1.json"
       - "research/recovered/STONEAGE-PET-MODULE-22-JP-124-ARCHIVED-IMAGE-RECOVERY-R1.json"
       - "research/recovered/STONEAGE-PET-MODULE-21-OFFICIAL-WEB-ARCHIVED-IMAGE-REACCESS-R1.json"
       - "research/recovered/STONEAGE-PET-MODULE-20-FIELD-COVERAGE-AND-SOURCE-STOP-MATRIX-R1.json"
@@ -29,6 +31,8 @@ on:
       - "tests/test_stoneage_pet21_source_receipt.py"
       - "tests/test_stoneage_pet22_jp_124_source_targets.py"
       - "tests/test_stoneage_pet22_archive_receipt.py"
+      - "tests/test_stoneage_pet23_receipt.py"
+      - "research/recovered/STONEAGE-PET-MODULE-23-JP-LOW-RATE-IMAGE-REACCESS-R1.json"
       - "research/recovered/STONEAGE-PET-MODULE-22-JP-124-ARCHIVED-IMAGE-RECOVERY-R1.json"
       - "research/recovered/STONEAGE-PET-MODULE-21-OFFICIAL-WEB-ARCHIVED-IMAGE-REACCESS-R1.json"
       - "research/recovered/STONEAGE-PET-MODULE-20-FIELD-COVERAGE-AND-SOURCE-STOP-MATRIX-R1.json"
@@ -55,6 +59,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet22_jp_124_source_targets
       - name: Verify PET22 all 124 exact archived GIF byte receipts, repeat and failure evidence
         run: python -m unittest tests.test_stoneage_pet22_archive_receipt
+      - name: Verify PET23 exact nine GIF SHA and unified atlas source safety
+        run: python -m unittest tests.test_stoneage_pet23_receipt
       - name: Verify source-separated retrieval and cross-carrier candidate scope
         run: |
           python tools/stoneage_pet16_lookup.py --query 100400 --limit 10

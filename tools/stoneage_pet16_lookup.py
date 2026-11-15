@@ -12,6 +12,7 @@ PET13_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-
 PET19_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-19-MISSING-SKILL-SOURCE-GAP-AUDIT-R1.json"
 PET21_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-21-OFFICIAL-WEB-ARCHIVED-IMAGE-REACCESS-R1.json"
 PET22_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-22-JP-124-ARCHIVED-IMAGE-RECOVERY-R1.json"
+PET23_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-23-JP-LOW-RATE-IMAGE-REACCESS-R1.json"
 
 # Only datasets carrying an original numeric graphic field participate.
 # Official JP/CN page ordinals/image filenames are NOT client graphic numbers.
@@ -171,7 +172,7 @@ def skill_gap_trace(audit, skill_id=None, limit=20):
     }
 
 
-def operator_image_trace(catalog, pet21, region, ordinal, pet22=None):
+def operator_image_trace(catalog, pet21, region, ordinal, pet22=None, pet23=None):
     """Show archived operator-web image SHA receipt without mapping any game pet ID."""
     if region not in ("jp", "cn"):
         raise ValueError("region must be 'jp' or 'cn'")
@@ -206,6 +207,47 @@ def operator_image_trace(catalog, pet21, region, ordinal, pet22=None):
         later[0]["best_archival_observation_capture_or_null"] if later else
         checked[0]["observed_image_archive_capture_or_null"] if checked else None
     )
+    newest = []
+    if pet23 is not None and source == "jp_official_web":
+        newest = [x for x in pet23["records"] if x["web_ordinal"] == ordinal]
+        if len(newest) > 1:
+            raise ValueError("duplicate PET23 JP operator webpage position")
+        if newest:
+            x = newest[0]
+            ref = original["source_refs"][0] if original else {}
+            if (original is None or x["original_source_record_id"] != original["id"] or
+                    x["historical_operator_original_image_url"] != original["image_reference_url"] or
+                    x["original_page_archive_capture"] != ref.get("capture") or
+                    x["original_page_bytes_sha256"] != ref.get("sha256")):
+                raise ValueError("PET23 source mismatches original official operator HTML")
+            if later and later[0]["best_archival_observation_sha256_or_null"] is not None:
+                raise ValueError("PET23 cannot overwrite earlier proven archived image")
+            if x["image_original_sha256_or_null"] is not None:
+                if x["actual_probe_status"] != "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED":
+                    raise ValueError("PET23 image SHA not qualified by original byte response")
+                best_sha = x["image_original_sha256_or_null"]
+                best_capture = x["image_observed_archive_capture_or_null"]
+    followup = []
+    if pet23 is not None and source == "jp_official_web":
+        second = pet23.get("independent_followup_after_initial_receipt", {})
+        followup = [x for x in second.get("records", []) if x["web_ordinal"] == ordinal]
+        if len(followup) > 1:
+            raise ValueError("duplicate PET23 independent source replay webpage position")
+        if followup:
+            s = followup[0]
+            ref = original["source_refs"][0] if original else {}
+            if (original is None or s["original_source_record_id"] != original["id"] or
+                    s["original_image_url"] != original["image_reference_url"] or
+                    s["source_original_page_sha256"] != ref.get("sha256")):
+                raise ValueError("PET23 independent replay original official page/source mismatch")
+            repeated_sha = s["image_original_sha256_or_null"]
+            if repeated_sha is not None:
+                if s["image_result_kind"] != "ARCHIVED_IMAGE_BYTES_SHA256_OBSERVED":
+                    raise ValueError("unqualified PET23 followup GIF SHA")
+                if best_sha is not None and repeated_sha != best_sha:
+                    raise ValueError("different archived image SHA must remain a historical conflict")
+                best_sha = repeated_sha
+                best_capture = s["image_archive_capture_or_null"]
     return {
         "source_namespace": source,
         "web_ordinal": ordinal,
@@ -216,6 +258,8 @@ def operator_image_trace(catalog, pet21, region, ordinal, pet22=None):
         ),
         "pet21_source_receipt_or_null": checked[0] if checked else None,
         "pet22_source_receipt_or_null": later[0] if later else None,
+        "pet23_source_receipt_or_null": newest[0] if newest else None,
+        "pet23_independent_replay_source_receipt_or_null": followup[0] if followup else None,
         "best_observed_operator_archived_image_sha256_or_null": best_sha,
         "best_observed_operator_archived_image_capture_or_null": best_capture,
         "operator_web_image_is_not_authenticated_game_sprite": True,
@@ -288,8 +332,9 @@ def main():
         catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
         report = json.loads(PET21_PATH.read_text(encoding="utf-8"))
         pet22 = json.loads(PET22_PATH.read_text(encoding="utf-8"))
+        pet23 = json.loads(PET23_PATH.read_text(encoding="utf-8"))
         result = operator_image_trace(catalog, report, args.operator_web,
-                                      args.web_ordinal, pet22=pet22)
+                                      args.web_ordinal, pet22=pet22, pet23=pet23)
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return 0
     catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
