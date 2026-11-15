@@ -1,0 +1,31 @@
+name: Verify project-wide two-axis historical restoration continuity
+on:
+  push:
+    paths:
+      - "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md"
+      - "docs/DESIGN-DECISIONS.md"
+      - "docs/RESTORATION-MODULE-FIRST-20261102.md"
+      - "docs/STONEAGE-PET-CHRONOLOGICAL-RESTORATION-ORDER-R1.md"
+      - "docs/STONEAGE-GLOBAL-TWO-AXIS-RESTORATION-CONSTITUTION-R1.md"
+      - "research/recovered/STONEAGE-RESTORATION-TWO-AXIS-GOVERNANCE-R1.json"
+      - "tests/test_stoneage_project_two_axis_governance.py"
+      - ".github/workflows/verify-stoneage-project-two-axis-governance.yml"
+  pull_request:
+    paths:
+      - "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md"
+      - "docs/DESIGN-DECISIONS.md"
+      - "docs/RESTORATION-MODULE-FIRST-20261102.md"
+      - "docs/STONEAGE-PET-CHRONOLOGICAL-RESTORATION-ORDER-R1.md"
+      - "docs/STONEAGE-GLOBAL-TWO-AXIS-RESTORATION-CONSTITUTION-R1.md"
+      - "research/recovered/STONEAGE-RESTORATION-TWO-AXIS-GOVERNANCE-R1.json"
+      - "tests/test_stoneage_project_two_axis_governance.py"
+      - ".github/workflows/verify-stoneage-project-two-axis-governance.yml"
+permissions:
+  contents: read
+jobs:
+  two-axis-protocol:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Enforce single active module and shared historical chronology across fresh conversations
+        run: python -m unittest tests.test_stoneage_project_two_axis_governance

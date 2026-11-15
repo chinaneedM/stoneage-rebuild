@@ -1,0 +1,170 @@
+{
+  "schema": "stoneage.two_axis_global_historical_restoration_governance.r1",
+  "effective_date": "2026-11-15",
+  "document_status": "ACCEPTED_LONG_TERM_PROJECT_POLICY",
+  "priority": "PROJECT_WIDE_CROSS_MODULE_CONSTITUTION",
+  "source_of_truth": "CURRENT_REMOTE_GITHUB_MAIN_AND_VERSIONED_PROTOCOL",
+  "base_main_HEAD_at_adoption": "e3519cfbc13ba82739fb473a9ca42cfed9ea066c",
+  "base_main_tree_at_adoption": "f4bcc2d164779a6fca746222834c30d94f7e2774",
+  "current_state_complete_historical_git_blob_unmodified": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "architecture": {
+    "work_axis": "ONE_ACTIVE_CONTENT_MODULE_UNTIL_SOURCE_BOUNDED_REVIEW_AND_EXPLICIT_USER_UNLOCK",
+    "chronology_axis": "SINGLE_OLDEST_TO_NEWEST_HISTORICAL_YEAR_SPINE_WITH_REGION_OPERATOR_PRODUCT_VERSION_LANES",
+    "independence": "MODULE_SEQUENCE_IS_NOT_YEAR_SEQUENCE; each later module restarts its own earliest year, reusing verified common version identifiers rather than rewriting history",
+    "provenance_axis": "QUALIFIED_SOURCE_FACTS_AND_CANDIDATES_WITH_SOURCE_PINS_AND_EXPLICIT_NEGATIVE_BOUNDARIES",
+    "shared_lookup_goal": "A year/version can list historical qualified pets, maps, NPC, items, quests and gameplay as separately proven modules",
+    "current_active_module": "PET",
+    "next_frontier": "PET-OFFICIAL-CHRONOLOGY-01_PROVISIONAL_1999_THROUGH_2000",
+    "current_research_frontier_year_provisional": 1999,
+    "current_project_phase": "STAGE_A_HISTORICAL_RESTORATION",
+    "future_single_player_design": "DESIGN_FUTURE_SEPARATE_NOT_ACTIVE"
+  },
+  "version_identity_required_fields": [
+    "product_line_id",
+    "region_code",
+    "official_operator",
+    "server_or_service_era",
+    "official_version_or_build_or_unknown",
+    "effective_date_or_interval_or_unknown"
+  ],
+  "timeline_strata": {
+    "actual_operator_release": "RELEASE_HISTORY: country/operator/product/build/server patches events commercial distribution, includes planned vs live distinctions",
+    "actual_in_world_lore": "IN_WORLD_CANON_HISTORY: source-attested NPC civilizations geography quests ages myths and story developments, separated from real-world product dates",
+    "marketing_or_developer_design_intent": "ANNOUNCEMENT_DESIGN_INTENT: previews/ideas not confirmed shipped and cannot automatically become game canon",
+    "future_reconstruction_design": "DESIGN_FUTURE: new offline world-building original content and optimization not current source facts"
+  },
+  "cross_module_event_required_fields": [
+    "event_id",
+    "date_value_or_interval",
+    "date_type",
+    "historical_year_or_unknown",
+    "product_line_id",
+    "region_code",
+    "official_operator",
+    "original_release_version_or_unknown",
+    "subject_module",
+    "subject_source_key",
+    "event_kind",
+    "evidence_layer",
+    "source_locator_or_sha",
+    "field_status",
+    "open_questions",
+    "reopen_trigger"
+  ],
+  "source_status_values": [
+    "VERIFIED_SOURCE",
+    "CROSS_CARRIER_CANDIDATE",
+    "MISSING_SOURCE",
+    "UNVERIFIED_RUNTIME",
+    "DISPUTED_SOURCE",
+    "DESIGN_FUTURE"
+  ],
+  "time_semantics": [
+    "ORIGINAL_PUBLISHER_RELEASE_DATE",
+    "FIRST_ATTESTATION_DATE",
+    "PLANNED_NOT_YET_LIVE",
+    "IN_WORLD_SOURCE_CHRONOLOGY",
+    "UNKNOWN_UNRESOLVED"
+  ],
+  "history_to_gameplay_causality": "Only label a change as causally related to content if an operator note or same-deployment in-game evidence supports it; coincident years/IDs/sprites do not prove relationship",
+  "identity_merge_requirements": "No same-name, number or image cross-region/product merge without independent operator/build provenance; same in-world name may differ by translation and content",
+  "completed_year_status": "SOURCE_BOUNDED_REVIEWED_ONLY_WITH_PER_REGION_VERSION_COVERAGE_RESIDUAL_AND_REOPEN_TRIGGER",
+  "unstudied_year_status": "NOT_YEAR_AUDITED_NEVER_ZERO_PETS_OR_ZERO_CONTENT",
+  "module_switch_gate": "FINISH_CURRENT_PET_QUALIFIED_SOURCE_AND_GAP_MATRIX_AND_DELIBERATE_USER_APPROVAL_BEFORE_STARTING_ANOTHER_MODULE",
+  "modules_in_order": [
+    {
+      "module": "PET",
+      "label": "宠物",
+      "status": "ACTIVE",
+      "content": [
+        "官方实际投放物种与形态",
+        "图鉴与2D像素/SPR动作",
+        "属性成长技能",
+        "野生/商业/活动/融合/进化获取"
+      ]
+    },
+    {
+      "module": "CHARACTER_NPC",
+      "label": "角色/NPC",
+      "status": "LOCKED_NOT_ACTIVE",
+      "content": [
+        "玩家人物/动作",
+        "NPC名称与位置/对白/功能",
+        "各版本迁移"
+      ]
+    },
+    {
+      "module": "MAP_WORLD",
+      "label": "地图/世界",
+      "status": "LOCKED_NOT_ACTIVE",
+      "content": [
+        "岛屿/村镇/区域",
+        "原图层与传送关系",
+        "地图版本/开放/关闭与地理改动"
+      ]
+    },
+    {
+      "module": "ITEM_EQUIPMENT_SHOP",
+      "label": "道具/装备/商店",
+      "status": "LOCKED_NOT_ACTIVE",
+      "content": [
+        "装备/道具及ID",
+        "掉落/交易/商业品",
+        "合成与各版改动"
+      ]
+    },
+    {
+      "module": "QUEST_STORY",
+      "label": "任务/剧情",
+      "status": "LOCKED_NOT_ACTIVE",
+      "content": [
+        "任务条件/阶段/奖励",
+        "版本限定及节日活动",
+        "NPC/世界观叙事"
+      ]
+    },
+    {
+      "module": "GAMEPLAY_SYSTEM",
+      "label": "玩法/系统",
+      "status": "LOCKED_NOT_ACTIVE",
+      "content": [
+        "战斗与捕捉",
+        "骑乘/融合/成长",
+        "UI/声音/交互和原生行为"
+      ]
+    },
+    {
+      "module": "CROSS_MODULE_REVIEW",
+      "label": "历史整合与新游戏评估",
+      "status": "LOCKED_NOT_ACTIVE",
+      "content": [
+        "有来源的实体与因果引用",
+        "版本发展全景",
+        "Stage A闭合复核与Stage B切换授权"
+      ]
+    }
+  ],
+  "after_all_modules": "CONDUCT_SOURCE_QUALIFIED_RELATION_REVIEW_BEFORE_ANY_SEPARATE_NEW_OFFLINE_GAME_DEVELOPMENT_DECISION",
+  "guiding_principles": [
+    "OFFICIAL_OPERATOR_VERSION_ONLY_FOR_HISTORICAL_OFFICIAL_PET_ROSTER",
+    "PRIVATE_SERVER_DERIVED_RECORDS_QUARANTINED",
+    "RAW_COMMERCIAL_ASSETS_PRIVATE_NO_UNAUTHORIZED_PUBLICATION",
+    "HISTORICAL_FILE_APPEND_ONLY_FORWARD_CORRECTION",
+    "DO_NOT_CONFUSE_RELEASE_HISTORY_WITH_IN_WORLD_FICTION",
+    "NO_INFERRED_OVERALL_COMPLETION_PERCENT"
+  ],
+  "startup_required_reads": [
+    "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+    "docs/STONEAGE-GLOBAL-TWO-AXIS-RESTORATION-CONSTITUTION-R1.md",
+    "docs/DESIGN-DECISIONS.md",
+    "docs/RESTORATION-MODULE-FIRST-20261102.md",
+    "docs/STONEAGE-PET-CHRONOLOGICAL-RESTORATION-ORDER-R1.md",
+    "research/recovered/STONEAGE-RESTORATION-TWO-AXIS-GOVERNANCE-R1.json",
+    "docs/CURRENT-STATE.md"
+  ],
+  "cannot_reinterpret_as_runtime_proof": true,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null
+}
