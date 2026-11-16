@@ -184,3 +184,8 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## PET55 2026-11-16｜2001大陆玩家宠名七组台湾原1.0 SPR有限文字桥及韩国2.0早期评测
 
 [PET55来源分级报告](continuity/STONEAGE-PET55-2001-KR20-CNPLAYER-TW1-SPR-20261116.md)／[20条旧玩家称谓、7条原TW1完整SPR SHA与韩国媒体机读记录](../research/recovered/STONEAGE-PET55-2001-KR20-CNPLAYER-TW1-SPR-R1.json)：17173 2001-06-14俄罗斯牛奶玩家源**之前已登记**，20条非新发现宠物；本轮新增7条对早已认证TW1相簿及原SPR SHA的有界文字交叉索引（同字2、简繁2、另一2001玩家文章别称3），不证明大陆同版或官方实装。韩国Game Chosun于2002-03-30评测回顾**Inium 2001年12月升2.0**、部分骑宠及骑宠条件，近当期媒体不等于官方部署，约百余种量词不可当精确名录。新2001原客户端0B、官方具名发放新增证据0，2001 NOT_YEAR_AUDITED，PET独占；NEXT PET56仍2001 KR/JP/TW官方原件与宠名，原CURRENT blob不改。
+
+
+## PET60 2026-11-16｜2001年五地区有界年审，历史审查前沿进入2002年
+
+[2001年度五地区审查、年份争议及严格缺件界限](continuity/STONEAGE-PET60-YEAR2001-SOURCE-BOUNDED-PET-AUDIT-20261116.md)／[五地区机读来源和重开触发记录](../research/recovered/STONEAGE-PET60-YEAR2001-SOURCE-BOUNDED-AUDIT-R1.json)。综合先前PET51—PET59九份真实来源记录、TW1客户端124具名原相册SPR候选、2001华义2.0大陆运营与台湾产品报道、韩2.0近当期评测及日服玩家赠宠文字；本轮有界重查仍未获得可认证的2001完整原安装包/官方同服逐只投放表。先前官方网页具名、玩家投稿/中奖计划/非法GM流出、PE头日期、跨区同名SPR均按不同等级保留，不提升为官服实装。此本轮新增2001原客户端字节0、官方具名实际发放新证明0；**不代表历史2001没有宠物**。五地区的物种总量均UNKNOWN、各地区留原源重开条件；2001改`SOURCE_BOUNDED_REVIEWED`，`historically_complete=false`，年份游标**前移2002**，宠物仍唯一ACTIVE。先按2002已有CN3/CN4年兽、GP、端午兽、艾迪希洛的四项正式文档事件逐个审核来源与版本，不称四种全球独立宠物。完全停止付费盘/卖家考据，原CURRENT 2,709,173B/blob `c89e0e33537990aa2132b47c40fef49a985a935c`不改，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、percent=null；NEXT **PET61-2002-CN3-CN4-OFFICIAL-SOURCE-AND-CLIENT-GATE**。
