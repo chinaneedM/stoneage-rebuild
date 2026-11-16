@@ -151,7 +151,8 @@
     "RAW_COMMERCIAL_ASSETS_PRIVATE_NO_UNAUTHORIZED_PUBLICATION",
     "HISTORICAL_FILE_APPEND_ONLY_FORWARD_CORRECTION",
     "DO_NOT_CONFUSE_RELEASE_HISTORY_WITH_IN_WORLD_FICTION",
-    "NO_INFERRED_OVERALL_COMPLETION_PERCENT"
+    "NO_INFERRED_OVERALL_COMPLETION_PERCENT",
+    "NO_PAID_SECONDHAND_MARKETPLACE_OR_PLAYER_SOLD_DISC_RESEARCH_WITHOUT_DIRECT_FREE_OR_EXISTING_CLIENT_BYTES"
   ],
   "startup_required_reads": [
     "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
@@ -166,5 +167,28 @@
   "stage_A": "7_PARTIAL_2_OPEN",
   "stage_B_wiki": "GATED",
   "r79": "PAUSED_NON_BLOCKING",
-  "overall_completion_percent": null
+  "overall_completion_percent": null,
+  "source_acquisition_access_policy_2026_11_16": {
+    "decision_kind": "USER_EXPLICIT_PERMANENT_POLICY_SUPERSEDING_PREVIOUS_NEXT",
+    "formal_protocol_section": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md#25-no-paid-marketplace-client-carrier-investigations-accessible-source-bytes-first----2026-11-16",
+    "do_not_research": [
+      "paid secondhand marketplace/collector discs",
+      "seller product IDs, photos, labels, pressings and prices as standalone recovery work",
+      "contacting sellers, buying or paying for library supplements",
+      "discs/client links that require a purchase and do not yield readable original bytes"
+    ],
+    "eligible": [
+      "actually accessible and authenticated existing original bytes",
+      "lawfully free and publicly readable original game client/patch/resource bytes with source provenance",
+      "graded cross-version indices from already-preserved clients",
+      "free operator announcements and verified contemporaneous actual named pet issuance"
+    ],
+    "source_bounded_stop": "When a freely obtainable client cannot be found, state exact missing original and move to other 2001 PET evidence; no paid chase",
+    "current_frontier_year": 2001,
+    "active_module": "PET",
+    "pet59_previous_paid_marketplace_PR": 470,
+    "pr_state": "CLOSED_UNMERGED",
+    "main_historical_current_file_sha_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "no_new_original_bytes_or_official_pets_from_policy": true
+  }
 }

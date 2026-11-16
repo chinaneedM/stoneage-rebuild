@@ -19,8 +19,8 @@
     "phase": "YEAR_2001_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
     "latest_partial_root_review": "PET58-2001-TW20-WASONG-CARRIER-CLIENT-GRADE-20261116",
-    "next": "PET59: remain PET year 2001; original authenticated KR Inium/GameTime CD or TW Waei 2.0 2001 retail or magazine disc, plus operator same-build named issuance. No rework of PET58 merchant ad.",
-    "current_source_acquisition_priority": "CLIENT_FIRST_VERSION_AUTHENTICATION_AND_PET_RESOURCE_EXTRACTION_BEFORE_EXTERNAL_NEWS"
+    "next": "PET59 RESET by explicit user 2026-11-16 rule: search lawfully free directly readable original 2001 official KR/TW/JP/CN client/patch files or reuse authenticated already-held original/later client source bytes; if missing, period first-party named PET issuance. NO paid media, secondhand marketplace, physical disc sellers, price/photo/collector catalog research. Do not merge closed PR #470.",
+    "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
     "CN",
@@ -1642,6 +1642,26 @@
     "next": "PET44_LATER_CLIENT_REVERSE_BACKFILL_WITHOUT_2000_OFFICIAL_BACKDATING",
     "reiterated_module_lock": "PET",
     "year_cursor_unchanged": 2000,
-    "later_client_candidate_backfill_enabled": true
+    "later_client_candidate_backfill_enabled": true,
+    "qualified_access_supersession_date": "2026-11-16",
+    "qualified_access_supersession_protocol_section": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md#25-no-paid-marketplace-client-carrier-investigations-accessible-source-bytes-first----2026-11-16",
+    "disallow_as_research_work_units": [
+      "SECONDHAND_MARKETPLACE_LISTINGS",
+      "PLAYER_SOLD_OR_COLLECTOR_PAID_OPTICAL_DISCS",
+      "PAID_LIBRARY_SUPPLEMENT_PROCUREMENT",
+      "SELLER_PHOTO_DISK_LABEL_CATALOG",
+      "PRICE_OR_PRODUCT_ID_CENSUS_WITHOUT_DIRECT_CLIENT_SOURCE_BYTES",
+      "PURCHASE_OR_SELLER_CONTACT",
+      "PAYWALLED_INSTALLER_DOWNLOADS"
+    ],
+    "allowed_direct_paths": [
+      "AUTHENTICATED_ORIGINAL_BYTES_ALREADY_HELD_AND_ACTUALLY_ACCESSIBLE",
+      "LAWFULLY_FREE_PUBLICLY_READABLE_ORIGINAL_OFFICIAL_INSTALLER_PATCH_DATA_BYTES",
+      "PROVENANCE_GRADED_ALREADY_PRESERVED_LATER_CLIENT_RESOURCE_BACKFILL",
+      "FREE_CITABLE_ORIGINAL_OPERATOR_PET_RELEASE_OR_VERIFIABLE_SAME_DEPLOYMENT_NATIVE_GAMEPLAY"
+    ],
+    "on_bounded_unavailable_client": "RECORD_MISSING_VERSION_PUBLIC_BYTES_AND_REOPEN_TRIGGER_ONCE_THEN_CONTINUE_PERIOD_OFFICIAL_PET_EVIDENCE_IN_SAME_2001_FRONTIER",
+    "closed_unmerged_paid_marketplace_PR": 470,
+    "existing_marketplace_reports_status": "HISTORICAL_PRESERVED_NOT_ACTIVE_NEXT"
   }
 }
