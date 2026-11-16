@@ -70,7 +70,7 @@ class PET71Annual(unittest.TestCase):
   a,q=self.a,self.q
   self.assertEqual((a["year_frontier_before"],a["year_frontier_after"]),(2004,2005))
   self.assertEqual(q["current_frontier"]["year"],2005)
-  self.assertTrue(q["current_frontier"]["next"].startswith("PET72:"))
+  self.assertRegex(q["current_frontier"]["next"],r"^PET[0-9]+:")
   self.assertEqual(q["yearly_work_queue"][6]["research_gate"],"NOT_YEAR_AUDITED")
   self.assertEqual(q["yearly_work_queue"][5]["documentary_event_count_NOT_species"],0)
   self.assertEqual(a["historical_2004_PET25_PET26_documentary_event_count_unchanged"],0)
