@@ -1,0 +1,184 @@
+{
+  "schema": "STONEAGE-PET73-2005-FIVE-REGION-BOUNDED-OFFICIAL-PET-YEAR-AUDIT-R1",
+  "id": "PET73-2005-FIVE-REGION-SOURCE-BOUNDED-OFFICIAL-PET-AUDIT-20261116",
+  "date": "2026-11-16",
+  "active_module": "PET",
+  "year": 2005,
+  "review_status": "SOURCE_BOUNDED_REVIEWED",
+  "historically_complete": false,
+  "startup": {
+    "main_head": "4a11198dd1e5ad5de203f1e2c1972e8ce435eb09",
+    "main_tree": "e89ba0f2dd2b29d1300ef4195db965e5bcee470e",
+    "PR485_exact_head_success": 25,
+    "PR485_exact_main_push_success": 33,
+    "CURRENT_original_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "open_pr_at_start": 0
+  },
+  "prior_2005_receipts": [
+    "PET72-2005-CN75-TW-KIRIN-LAIFU-JP-STAGED-KR-RIDE-20261116"
+  ],
+  "new_source": {
+    "id": "JP-2005-0613-GAIAX-MIDJULY-LV1-PET-PLAN",
+    "region": "JP",
+    "period_date": "2005-06-13",
+    "url": "https://www.4gamer.net/news/history/2005.06/20050613184010detail.html",
+    "source_grade": "CONTEMPORANEOUS_DIRECT_READ_GAIAX_PRESS_COVERAGE",
+    "operator": "GAIAX",
+    "planned_capture_monster_update_time": "2005-07-mid",
+    "planned_new_huntable_species_count_unnamed": "multiple",
+    "planned_GM_event": "2005-07-30",
+    "report_does_not_confirm_actual_July12_live_patch": true,
+    "authentic_JP_2005_original_patched_pet_binary_acquired": 0
+  },
+  "region_reviews": {
+    "CN": {
+      "operator": "BEIJING_WAEI",
+      "version_tracks": [
+        "CN_2005_7_5_ONLY_FOR_0412_CHICKEN_OX",
+        "CN_2005_OTHER_1_82_2_0_2_5_7_0_NOT_INFERRED",
+        "CN_2005_STAGED_TO_7_5_OLD_SERVERS"
+      ],
+      "period_2005_pet_labels": [
+        "牛头人",
+        "鸡年兽"
+      ],
+      "evidence_grade": "PERIOD_OPERATOR_MARKETING_COPY_DIRECT_SINA_17173",
+      "historical_original_full_client_available": false,
+      "native_pet_master_verified": false,
+      "actual_native_award_log_verified": false,
+      "original_2005_production_issuance_confirmed": false,
+      "historical_species_count": null,
+      "reopen_trigger": "CN_2005_WAEI_7_5_PET_CLIENT_GRAPHIC_SKILL_ID_AND_REAL_CHICKEN_OX_STORE_REWARD_DATE_ACCOUNT_LOG_AND_OLDER_REGION_VERSION_GAP"
+    },
+    "TW": {
+      "operator": "TAIWAN_WAEI",
+      "version_tracks": [
+        "TW_2005_KIRIN_POINT_REDEMPTION",
+        "TW_2005_LAIFU_ANNIVERSARY_QUEST",
+        "TW_2005_8_0_JUNE_RELEASE",
+        "TW_2005_CHICKEN_YEAR_EVENT_LATE_CHRONOLOGY"
+      ],
+      "period_2005_pet_labels": [
+        "麒麟",
+        "萊福"
+      ],
+      "TW_2005_chicken_year_name_only_later_chronology": true,
+      "TW_8_0_two_new_mounts_unnamed": true,
+      "evidence_grade": "CONTEMPORANEOUS_GNN_SEARCH_INDEX_WITH_DIRECT_403_AND_LATER_TW_CHRONOLOGY_SEPARATED",
+      "historical_original_full_client_available": false,
+      "native_pet_master_verified": false,
+      "actual_native_award_log_verified": false,
+      "original_2005_production_issuance_confirmed": false,
+      "historical_species_count": null,
+      "reopen_trigger": "TW_2005_PERIOD_WAEI_CHICKEN_YEAR_FEB23_ORIGINAL_ANNOUNCEMENT_AND_8_0_TWO_MOUNT_NAMES_KIRIN_LAIFU_DELIVERY_LOGS_NATIVE_CLIENT"
+    },
+    "JP": {
+      "operator": "GAIAX",
+      "version_tracks": [
+        "JP_2005_JUNE13_MIDJULY_HUNTABLE_DINOS_PLAN",
+        "JP_2005_JULY05_ART_AND_ALBUM_PRELOAD",
+        "JP_2005_JULY12_LV1_FIELD_MONSTER_LIVE_TARGET",
+        "JP_2005_JULY22_UNNAMED_BLACK_TIGER",
+        "JP_2005_GM_CONTEST_SHOP_NAMED_PRIZES"
+      ],
+      "period_2005_pet_labels": [
+        "クロウリ",
+        "ガーヴィ",
+        "ヴァンレム"
+      ],
+      "black_tiger_as_of_july22_still_unidentified": true,
+      "art_preload_is_not_field_spawn_proof": true,
+      "evidence_grade": "CONTEMPORANEOUS_DIRECT_GAIAX_PRESS_4GAMER",
+      "historical_original_full_client_available": false,
+      "native_pet_master_verified": false,
+      "actual_native_award_log_verified": false,
+      "original_2005_production_issuance_confirmed": false,
+      "historical_species_count": null,
+      "reopen_trigger": "JP_2005_JULY05_JULY12_AUTHENTIC_GAIAX_PATCH_BYTES_AND_APPLIED_BUILD_PET_ALBUM_LV1_SPAWNS_BLACK_TIGER_LATER_ID"
+    },
+    "KR": {
+      "operator": "CJ_INTERNET_NETMARBLE",
+      "version_tracks": [
+        "KR_2005_OCT11_TWO_RIDING_FUNCTION_ADDITIONS",
+        "KR_2005_PET_EVOLUTION_QUEST_ADVERTISED"
+      ],
+      "period_2005_pet_labels": [
+        "고르고르",
+        "타쿠"
+      ],
+      "prior_2004_four_riding_pet_names": [
+        "라고고",
+        "무이",
+        "도라비스",
+        "고르돈"
+      ],
+      "ride_option_six_is_not_six_species_first_released": true,
+      "evidence_grade": "CONTEMPORANEOUS_CJ_OPERATOR_COPY_GG",
+      "historical_original_full_client_available": false,
+      "native_pet_master_verified": false,
+      "actual_native_award_log_verified": false,
+      "original_2005_production_issuance_confirmed": false,
+      "historical_species_count": null,
+      "reopen_trigger": "KR_2005_CJ_NETMARBLE_AUTHENTIC_BUILD_RIDE_SYSTEM_PET_ID_NAME_TABLE_REAL_ACCOUNT_MOUNT_QUEST"
+    },
+    "OTHER": {
+      "operator": null,
+      "version_tracks": [],
+      "period_2005_pet_labels": [],
+      "independently_proven_no_2005_official_pc_release": false,
+      "evidence_grade": "NO_ADDITIONAL_OPERATOR_SPECIFIC_PERIOD_PET_SOURCE_IN_BOUNDED_CORPUS",
+      "historical_original_full_client_available": false,
+      "native_pet_master_verified": false,
+      "actual_native_award_log_verified": false,
+      "original_2005_production_issuance_confirmed": false,
+      "historical_species_count": null,
+      "reopen_trigger": "OTHER_2005_INDEPENDENT_PC_STONEAGE_OPERATOR_REGION_AND_DATED_OFFICIAL_PET_OR_AUTHENTIC_CLIENT"
+    }
+  },
+  "source_weight_separation": {
+    "CN_mall_copy_does_not_prove_actual_2005_distribution": true,
+    "TW_GNN_search_index_not_original_HTML": true,
+    "TW_2005_Feb_chicken_release_date_is_retrospective_only": true,
+    "TW_2005_8_0_two_mounts_unnamed_not_resolved_by_cross_region_guess": true,
+    "JP_June13_announcement_plus_July5_art_not_proof_July12_patch_actually_applied": true,
+    "JP_July22_black_tiger_not_safely_identified_as_Vanrem": true,
+    "JP_october_contest_promise_not_verified_actual_gift": true,
+    "KR_two_new_mount_options_not_proof_new_species_creation": true,
+    "original_client_name_and_sprite_not_auto_full_live_official_roster": true,
+    "OTHER_region_absence_not_demonstrated": true
+  },
+  "unresolved": [
+    "CN_2005_7_5_STOCK_ACTUAL_DELIVERY_AND_CLIENT_7_5_ID_MISSING",
+    "TW_2005_CHICKEN_YEAR_0223_PRIMARY_SITE_SOURCE_MISSING",
+    "TW_2005_KIRIN_LAIFU_ACTUAL_PLAYER_ACCOUNT_AWARDS_MISSING",
+    "TW_2005_8_0_TWO_MOUNT_SPECIES_NAMES_AND_NATIVE_GRAPHICS_MISSING",
+    "JP_2005_0712_APPLIED_PATCH_OR_ACTUAL_SPAWN_NATIVE_PROOF_MISSING",
+    "JP_2005_UNNAMED_BLACK_TIGER_FINAL_NAME_AND_ID_MISSING",
+    "JP_2005_CONTEST_REWARDS_NAMED_NOT_WINNER_PROVEN",
+    "KR_2005_TWO_RIDE_NAMES_NATIVE_PET_LINK_MISSING",
+    "OTHER_2005_SEPARATE_OFFICIAL_PROVENANCE_MISSING"
+  ],
+  "residual_reopen_triggers": [
+    "CN_2005_WAEI_7_5_PET_CLIENT_GRAPHIC_SKILL_ID_AND_REAL_CHICKEN_OX_STORE_REWARD_DATE_ACCOUNT_LOG_AND_OLDER_REGION_VERSION_GAP",
+    "TW_2005_PERIOD_WAEI_CHICKEN_YEAR_FEB23_ORIGINAL_ANNOUNCEMENT_AND_8_0_TWO_MOUNT_NAMES_KIRIN_LAIFU_DELIVERY_LOGS_NATIVE_CLIENT",
+    "JP_2005_JULY05_JULY12_AUTHENTIC_GAIAX_PATCH_BYTES_AND_APPLIED_BUILD_PET_ALBUM_LV1_SPAWNS_BLACK_TIGER_LATER_ID",
+    "KR_2005_CJ_NETMARBLE_AUTHENTIC_BUILD_RIDE_SYSTEM_PET_ID_NAME_TABLE_REAL_ACCOUNT_MOUNT_QUEST",
+    "OTHER_2005_INDEPENDENT_PC_STONEAGE_OPERATOR_REGION_AND_DATED_OFFICIAL_PET_OR_AUTHENTIC_CLIENT"
+  ],
+  "previous_2005_PET25_PET26_documentary_event_count_unchanged": 0,
+  "new_original_2005_client_bytes": 0,
+  "new_same_build_original_pet_IDs": 0,
+  "new_actual_server_reward_grant_logs": 0,
+  "all_region_pet_population_unknown": true,
+  "historical_global_2005_official_species_count": null,
+  "year_frontier_before": 2005,
+  "year_frontier_after": 2006,
+  "next": "PET74: begin 2006 CN/TW/JP/KR/OTHER official PC pet original sources and dated naming/issuance; prefer authentic free original clients/patches, separate new product lines and preserved late-client art from actual 2006 live pet release.",
+  "no_paid_marketplace": true,
+  "no_original_commercial_material_published": true,
+  "historical_CURRENT_unchanged": true,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}
