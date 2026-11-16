@@ -79,7 +79,7 @@ class TestPET60Year2001Bounded(unittest.TestCase):
         self.assertEqual(q["yearly_work_queue"][3]["research_gate"],"NOT_YEAR_AUDITED")
         self.assertEqual(q["yearly_work_queue"][3]["documented_release_event_count_NOT_species"] if "documented_release_event_count_NOT_species" in q["yearly_work_queue"][3] else q["yearly_work_queue"][3]["documentary_event_count_NOT_species"],4)
         self.assertEqual(q["yearly_work_queue"][3]["documented_release_event_ids_from_existing_PET25_PET26"],a["next_2002_candidate_existing_release_event_ids"])
-        self.assertRegex(q["current_frontier"]["next"], r"^PET\\d+:")  # future PET batches may advance NEXT without changing 2001 receipt
+        self.assertRegex(q["current_frontier"]["next"], r"^PET[0-9]+:")  # forward-only receipt remains after new PET batches
         self.assertFalse(a["next_2002_facts_are_species_total"])
         self.assertEqual(a["new_original_2001_client_bytes_this_review"],0)
         self.assertEqual(a["free_direct_public_client_source_search"]["new_complete_original_installers_downloaded"],0)
