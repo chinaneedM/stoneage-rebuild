@@ -1,0 +1,227 @@
+{
+  "schema": "stoneage.pet60.year2001.source_bounded_annual_audit.r1",
+  "id": "PET60-YEAR2001-SOURCE-BOUNDED-REVIEW-20261116",
+  "record_date": "2026-11-16",
+  "active_module": "PET",
+  "year": 2001,
+  "baseline_remote": {
+    "head": "1cffe3dc27926a858502cd1552fafd5723aef96f",
+    "tree": "01d8df187c261e9c4cf375216ce9100d16b5c141",
+    "exact_head_actions_total": 3,
+    "exact_head_actions_success": 3,
+    "open_pr": 0,
+    "historical_current_blob_sha": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "historical_current_size_bytes": 2709173
+  },
+  "review_status": "SOURCE_BOUNDED_REVIEWED",
+  "historically_complete": false,
+  "source_scope": "PET51_TO_PET59_NINE_PREVIOUS_2001_ROOT_RECEIPTS_PLUS_ALREADY_CERTIFIED_TW10_CLIENT_DERIVED_INDEXES_AND_SINGLE_CURRENT_DIRECTLY_READABLE_OPERATOR_RELAY_RECHECK",
+  "previous_root_receipt_ids": [
+    "PET51-2001-TWCN-2_0-PET-MUSEUM-SOURCE-20261116",
+    "PET52-2001-CN-SA20-CARRIER-RELEASE-20261116",
+    "PET53-CN2001-PCFAN-ISO-SINA-FAMILY-PET-PRIZES-20261116",
+    "PET54-2001-CNTW-PELUXIA-NAME-REWARD-CONFLICT-20261116",
+    "PET55-2001-KR20-CNPLAYER-TW1SPR-20261116",
+    "PET56-2001-CN20-SERVER-ROLLOUT-PET-PERIOD-20261116",
+    "PET57-2001-CN-WAEI-UNRELEASED-PET-EXCLUSION-20261116",
+    "PET58-2001-TW20-WASONG-CARRIER-CLIENT-GRADE-20261116",
+    "PET59-2001-CNPLAYER-JSS-GIFT-TW10-EXACT-NAME-20261116"
+  ],
+  "previous_2001_root_receipt_count": 9,
+  "sources_reused_not_new_2001_client_bytes": [
+    {
+      "kind": "TW_ORIGINAL_VERIFIED_RETAIL_CLIENT",
+      "path": "research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json",
+      "local_named_graphic_spr_pairs": 124,
+      "year2001_same_deployment_proof": false
+    },
+    {
+      "kind": "PARTIAL_WAEI_PROGRAM_PROBES",
+      "path": "research/recovered/STONEAGE-WAEI-SA40-SA42-LINEAGE-R1.txt",
+      "sa40_build_pe_header_date": "2001-09-27",
+      "sa42_build_pe_header_date": "2001-11-01",
+      "complete_original_2_0_installer_attested": false,
+      "pe_timestamp_is_first_release": false
+    },
+    {
+      "kind": "PRIOR_TW_2001_MUSEUM_PLAYER_CLAIMS",
+      "path": "research/recovered/STONEAGE-PET51-YEAR2001-OPERATOR-MUSEUM-PET-CLAIM-CROSSWALK-R1.json",
+      "operator_owned_web_host_player_text_not_live_pet_table": true
+    }
+  ],
+  "directly_readable_public_historical_2001_distribution_recheck": {
+    "url": "https://news.17173.com/z/stoneage/banben/sa20-up.htm",
+    "page_kind": "PRESERVED_PORTAL_OPERATOR_DISTRIBUTION_TEXT_NOT_DOWNLOADED_INSTALLER",
+    "operator_2_0_announcement_date": "2001-11-01",
+    "software_actual_bytes_recovered_this_review": 0,
+    "original_2001_response_sha256": null,
+    "original_download_link_in_portal_text": "DECLARED_OFFICIAL_WAEI_SITE_BUT_NO_CURRENT_VERIFIED_BINARY",
+    "original_2001_pet_roster_or_same_server_file": false
+  },
+  "free_direct_public_client_source_search": {
+    "searched_scope": "2001 CN2.0/TW2.0/JP JSS/KR INIUM freely directly readable client/patch using public search and known old portals",
+    "new_complete_original_installers_downloaded": 0,
+    "new_original_2001_byte_hashes": 0,
+    "exclusions": [
+      "newer 2010/2012 public relaunch V1.200.012 is not 2001 build",
+      "post-2001 private-server launchers and community bundles are not early official clients",
+      "paid seller/catalogue sources excluded by §25"
+    ],
+    "claim_all_public_copies_exhausted": false,
+    "reopen_on_free_exact_binary_sha_with_source_provenance": true
+  },
+  "region_source_reviews": {
+    "CN": {
+      "operator": "BEIJING_WAEI",
+      "source_receipts": [
+        "PET52",
+        "PET53",
+        "PET54",
+        "PET55",
+        "PET56",
+        "PET57"
+      ],
+      "period_product_milestones": [
+        "2001-01-12 attributed Mainland initial official launch: later reprint, not original binary",
+        "2001-10-23 Waei CN2.0 archived web listing page position 081 佩露夏: operator web position, not live issuance",
+        "2001-11-01 Beijing Waei 2.0 release and planned server launch: operator-signed newspaper relay, not all-server deployment"
+      ],
+      "named_pet_evidence_grade": "OPERATOR_WEB_LISTED_AND_SECONDARY_PLAYER_ISSUANCE_CLAIMS_NO_SAME_DEPLOYMENT_CONFIRMATION",
+      "original_full_2001_official_client_custody": false,
+      "incomplete_executables_prior_recorded": true,
+      "pet_population": null,
+      "live_named_pet_roster_verified": false,
+      "reopen": true,
+      "reopen_trigger": "ORIGINAL_CN_2001_1X_OR_2_0_INSTALLER_WITH_IDENTITY_TABLE_OR_OPERATOR_NAMED_REDEMPTION_AND_ACTUAL_SERVER_PROOF",
+      "source_note": "PET57 attributed 2001 GM-unreleased-stone/tree discussion preserved as later reprint, never count unauthorized GM items as operator issuance"
+    },
+    "TW": {
+      "operator": "WAEI_JSS",
+      "source_receipts": [
+        "PET51",
+        "PET58"
+      ],
+      "period_product_milestones": [
+        "2001-07-01 Taiwan2.0 server update claimed in later player retrospective; not resolved",
+        "2001-08-01 Taiwan2.0 product launch reported by 2001-11-02 near-period GNN; original page direct read 403",
+        "2001-09-11 merchant offer of Taiwan 2.0 starter pack: source-only advertisement, excluded from future paid-carrier investigations"
+      ],
+      "authenticated_local_client_resource_basis": "TW1_0_RETAIL_124_NAMED_LOCAL_ALBUM_SPR_CANDIDATES_DATED_BUILD_ERA_NOT_LIVE_ROSTER",
+      "year2001_operator_hosted_player_museum_positions": 128,
+      "year2001_player_museum_is_operator_approved_live_roster": false,
+      "original_full_2001_tw2_client_custody": false,
+      "pet_population": null,
+      "live_named_pet_roster_verified": false,
+      "reopen": true,
+      "reopen_trigger": "ORIGINAL_TW_2001_2_0_CLIENT_OR_PATCH_WITH_MATCHED_SERVER_OR_OFFICIAL_2001_LIVE_NAMED_PET_ISSUANCE"
+    },
+    "JP": {
+      "operator": "JSS",
+      "source_receipts": [
+        "PET59"
+      ],
+      "period_product_milestones": [
+        "2001 JSS-original/manual provenance remains incomplete within this 2001 PET corpus"
+      ],
+      "player_2001_JSS_gift_claims": 9,
+      "player_author_individually_starred_as_firsthand": 0,
+      "other_region_TW1_local_names_textual_matches": 8,
+      "source_is_original_2001_JSS_operator_award_notice": false,
+      "original_full_2001_jss_client_custody": false,
+      "pet_population": null,
+      "live_named_pet_roster_verified": false,
+      "reopen": true,
+      "reopen_trigger": "ORIGINAL_2001_JSS_JP_CLIENT_OR_OFFICIAL_PRIZE_GIFT_RESULTS_WITH_NAMED_PETS_AND_DELIVERY"
+    },
+    "KR": {
+      "operator": "INIUM",
+      "source_receipts": [
+        "PET55"
+      ],
+      "period_product_milestones": [
+        "2001-12 2.0 upgrade reported by dated 2002-03-30 Game Chosun review, not original operator server log"
+      ],
+      "original_full_2001_inium_client_custody": false,
+      "named_official_2001_pet_issuance_confirmed": false,
+      "pet_population": null,
+      "live_named_pet_roster_verified": false,
+      "reopen": true,
+      "reopen_trigger": "INIUM_2001_OFFICIAL_CLIENT_PATCH_OR_DATED_OPERATOR_PET_ROSTER_ISSUANCE"
+    },
+    "OTHER": {
+      "operator": null,
+      "source_receipts": [],
+      "no_qualified_independent_2001_operator_found_within_declared_sources": true,
+      "all_other_regions_or_products_proven_absent": false,
+      "pet_population": null,
+      "live_named_pet_roster_verified": false,
+      "reopen": true,
+      "reopen_trigger": "IDENTIFIABLE_OTHER_REGION_2001_OFFICIAL_OPERATOR_PRODUCT_VERSION_AND_PET_SOURCE"
+    }
+  },
+  "year2001_PET25_PET26_documentary_operator_release_event_rows": 0,
+  "year2001_PET25_PET26_rows_are_not_full_universe": true,
+  "new_original_2001_client_bytes_this_review": 0,
+  "new_named_official_live_2001_pet_release_proofs_this_review": 0,
+  "global_historical_2001_pet_population": null,
+  "global_historical_official_pets_2001_never_existed": false,
+  "named_official_pet_identity_count_2001_from_this_bounded_audit": null,
+  "all_five_regions_pet_population_null": true,
+  "unresolved_conflicts": [
+    {
+      "kind": "TW_2_0_DATE_TYPES",
+      "labels": [
+        "2001-07-01 later player server update",
+        "2001-08-01 near-period reported product launch"
+      ],
+      "resolved": false
+    },
+    {
+      "kind": "CN_PELUXIA_FIFTH_REBIRTH_REWARD",
+      "reported_levels": [
+        125,
+        135
+      ],
+      "resolved": false
+    },
+    {
+      "kind": "CN_GM_UNRELEASED_PET_REPRINT",
+      "original_2001_first_party_notice_retrieved": false,
+      "resolved": false
+    },
+    {
+      "kind": "JP_GIFT_PLAYER_LIST_NO_JSS_PRIMARY_PROOF",
+      "claim_count": 9,
+      "official_redeemed_pet_count": null,
+      "resolved": false
+    },
+    {
+      "kind": "KR_2001_12_UPGRADE_NEAR_PERIOD_EDITORIAL_NOT_EXACT_SERVER",
+      "resolved": false
+    }
+  ],
+  "residual_reopen_triggers": [
+    "ORIGINAL_CN_2001_1X_OR_2_0_INSTALLER_WITH_IDENTITY_TABLE_OR_OPERATOR_NAMED_REDEMPTION_AND_ACTUAL_SERVER_PROOF",
+    "ORIGINAL_TW_2001_2_0_CLIENT_OR_PATCH_WITH_MATCHED_SERVER_OR_OFFICIAL_2001_LIVE_NAMED_PET_ISSUANCE",
+    "ORIGINAL_2001_JSS_JP_CLIENT_OR_OFFICIAL_PRIZE_GIFT_RESULTS_WITH_NAMED_PETS_AND_DELIVERY",
+    "INIUM_2001_OFFICIAL_CLIENT_PATCH_OR_DATED_OPERATOR_PET_ROSTER_ISSUANCE",
+    "IDENTIFIABLE_OTHER_REGION_2001_OFFICIAL_OPERATOR_PRODUCT_VERSION_AND_PET_SOURCE"
+  ],
+  "year_frontier_before": 2001,
+  "year_frontier_after": 2002,
+  "next_2002_candidate_existing_release_event_ids": [
+    "CN-PC-3-GP",
+    "CN-PC-3-YEAR",
+    "CN-PC-4-DRAGONBOAT",
+    "CN-PC-4-MECHLEOPARD"
+  ],
+  "next_2002_facts_are_species_total": false,
+  "next": "PET61: 2002 first-source official region/version audit; start existing CN 3.0/4.0 year-beast, GP, 端午兽, 艾迪希洛 operator product copy with exact release/issuance and original client gates; do not treat four event rows as four global species.",
+  "copyright_original_assets_committed": false,
+  "no_paid_secondhand_carrier_research": true,
+  "historical_CURRENT_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}
