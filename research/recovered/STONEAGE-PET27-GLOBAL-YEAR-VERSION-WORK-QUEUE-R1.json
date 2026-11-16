@@ -15,11 +15,11 @@
   "latest_year_in_scope": 2026,
   "reason_start_provisional": "1999 is a search-window starting point, NOT an independently authenticated first official launch date; earlier qualified evidence may extend the sequence backwards",
   "current_frontier": {
-    "year": 2001,
-    "phase": "YEAR_2001_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
+    "year": 2002,
+    "phase": "YEAR_2002_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET59-2001-CNPLAYER-JSS-GIFT-TW10-EXACT-NAME-20261116",
-    "next": "PET60: stay 2001; seek actually readable free original JP/KR/TW/CN client or patch, or original operator named issued pet evidence; otherwise source-bounded year audit, no pay listings.",
+    "latest_partial_root_review": "PET60-YEAR2001-SOURCE-BOUNDED-REVIEW-20261116",
+    "next": "PET61: 2002 first-source official region/version audit; start existing CN 3.0/4.0 year-beast, GP, 端午兽, 艾迪希洛 operator product copy with exact release/issuance and original client gates; do not treat four event rows as four global species.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -527,7 +527,7 @@
     {
       "year": 2001,
       "chronological_position": 3,
-      "research_gate": "NOT_YEAR_AUDITED",
+      "research_gate": "SOURCE_BOUNDED_REVIEWED",
       "documented_release_event_ids_from_existing_PET25_PET26": [],
       "documentary_event_count_NOT_species": 0,
       "unverified_early_and_mid_year_pets_may_exist": true,
@@ -653,8 +653,100 @@
           "nine_JSS_claims_unauthenticated": true,
           "original_TW10_exact_name_candidates": 8,
           "original_JP_official_live_pet_proofs": 0
+        },
+        {
+          "id": "PET60-YEAR2001-SOURCE-BOUNDED-REVIEW-20261116",
+          "regions": [
+            "CN",
+            "TW",
+            "JP",
+            "KR",
+            "OTHER"
+          ],
+          "report": "docs/continuity/STONEAGE-PET60-YEAR2001-SOURCE-BOUNDED-PET-AUDIT-20261116.md",
+          "evidence_json": "research/recovered/STONEAGE-PET60-YEAR2001-SOURCE-BOUNDED-AUDIT-R1.json",
+          "year_not_closed": false,
+          "historically_complete": false,
+          "year_frontier_after": 2002
         }
-      ]
+      ],
+      "historically_complete": false,
+      "historical_species_count": null,
+      "review_scope": "PET51_TO_PET59_SOURCE_BOUNDED_FIVE_REGION_REVIEW_PLUS_PREVIOUS_AUTHENTICATED_TW1_AND_PUBLIC_2001_CN_DISTRIBUTION_RECHECK",
+      "source_bounded_review_receipt": "research/recovered/STONEAGE-PET60-YEAR2001-SOURCE-BOUNDED-AUDIT-R1.json",
+      "residual_reopen_triggers": [
+        "ORIGINAL_CN_2001_1X_OR_2_0_INSTALLER_WITH_IDENTITY_TABLE_OR_OPERATOR_NAMED_REDEMPTION_AND_ACTUAL_SERVER_PROOF",
+        "ORIGINAL_TW_2001_2_0_CLIENT_OR_PATCH_WITH_MATCHED_SERVER_OR_OFFICIAL_2001_LIVE_NAMED_PET_ISSUANCE",
+        "ORIGINAL_2001_JSS_JP_CLIENT_OR_OFFICIAL_PRIZE_GIFT_RESULTS_WITH_NAMED_PETS_AND_DELIVERY",
+        "INIUM_2001_OFFICIAL_CLIENT_PATCH_OR_DATED_OPERATOR_PET_ROSTER_ISSUANCE",
+        "IDENTIFIABLE_OTHER_REGION_2001_OFFICIAL_OPERATOR_PRODUCT_VERSION_AND_PET_SOURCE"
+      ],
+      "region_source_reviews": {
+        "CN": {
+          "operator": "BEIJING_WAEI",
+          "pet_population": null,
+          "source_bounded_reviewed": true,
+          "period_pet_rich_sources_from_reports": [
+            "PET52",
+            "PET53",
+            "PET54",
+            "PET55",
+            "PET56",
+            "PET57"
+          ],
+          "official_2001_same_deployment_named_live_pet_roster_proven": false,
+          "authentic_2001_full_original_client_missing": true,
+          "reopen": true,
+          "reopen_trigger": "ORIGINAL_CN_2001_1X_OR_2_0_INSTALLER_WITH_IDENTITY_TABLE_OR_OPERATOR_NAMED_REDEMPTION_AND_ACTUAL_SERVER_PROOF"
+        },
+        "TW": {
+          "operator": "WAEI_JSS",
+          "pet_population": null,
+          "source_bounded_reviewed": true,
+          "period_pet_rich_sources_from_reports": [
+            "PET51",
+            "PET58"
+          ],
+          "official_2001_same_deployment_named_live_pet_roster_proven": false,
+          "authentic_2001_full_original_client_missing": true,
+          "reopen": true,
+          "reopen_trigger": "ORIGINAL_TW_2001_2_0_CLIENT_OR_PATCH_WITH_MATCHED_SERVER_OR_OFFICIAL_2001_LIVE_NAMED_PET_ISSUANCE"
+        },
+        "JP": {
+          "operator": "JSS",
+          "pet_population": null,
+          "source_bounded_reviewed": true,
+          "period_pet_rich_sources_from_reports": [
+            "PET59"
+          ],
+          "official_2001_same_deployment_named_live_pet_roster_proven": false,
+          "authentic_2001_full_original_client_missing": true,
+          "reopen": true,
+          "reopen_trigger": "ORIGINAL_2001_JSS_JP_CLIENT_OR_OFFICIAL_PRIZE_GIFT_RESULTS_WITH_NAMED_PETS_AND_DELIVERY"
+        },
+        "KR": {
+          "operator": "INIUM",
+          "pet_population": null,
+          "source_bounded_reviewed": true,
+          "period_pet_rich_sources_from_reports": [
+            "PET55"
+          ],
+          "official_2001_same_deployment_named_live_pet_roster_proven": false,
+          "authentic_2001_full_original_client_missing": true,
+          "reopen": true,
+          "reopen_trigger": "INIUM_2001_OFFICIAL_CLIENT_PATCH_OR_DATED_OPERATOR_PET_ROSTER_ISSUANCE"
+        },
+        "OTHER": {
+          "operator": null,
+          "pet_population": null,
+          "source_bounded_reviewed": true,
+          "period_pet_rich_sources_from_reports": [],
+          "official_2001_same_deployment_named_live_pet_roster_proven": false,
+          "authentic_2001_full_original_client_missing": true,
+          "reopen": true,
+          "reopen_trigger": "IDENTIFIABLE_OTHER_REGION_2001_OFFICIAL_OPERATOR_PRODUCT_VERSION_AND_PET_SOURCE"
+        }
+      }
     },
     {
       "year": 2002,
@@ -1666,6 +1758,27 @@
       "new_2001_original_client_bytes": 0,
       "new_official_live_pet_proofs": 0,
       "historical_pet_population_count": null
+    },
+    {
+      "id": "PET60-YEAR2001-SOURCE-BOUNDED-REVIEW-20261116",
+      "regions": [
+        "CN",
+        "TW",
+        "JP",
+        "KR",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET60-YEAR2001-SOURCE-BOUNDED-PET-AUDIT-20261116.md",
+      "evidence_json": "research/recovered/STONEAGE-PET60-YEAR2001-SOURCE-BOUNDED-AUDIT-R1.json",
+      "year_frontier_before": 2001,
+      "year_frontier_after": 2002,
+      "year_not_closed": false,
+      "historically_complete": false,
+      "reviewed_prior_2001_receipts_count": 9,
+      "new_original_2001_client_bytes": 0,
+      "new_official_live_pet_proofs": 0,
+      "historical_pet_population_count": null,
+      "reopen_on_new_primary_2001_source": true
     }
   ],
   "client_first_methodology": {
