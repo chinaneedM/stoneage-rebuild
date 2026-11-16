@@ -18,8 +18,8 @@
     "year": 2001,
     "phase": "YEAR_2001_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET51-2001-TWCN-2_0-PET-MUSEUM-SOURCE-20261116",
-    "next": "PET52: 2001 source-qualified TW2.0/2.5 and CN2.0 original clients or named actual official pet issuance, plus dated operator outcomes for 2001 design contest, no year closure.",
+    "latest_partial_root_review": "PET52-2001-CN-SA20-CARRIER-RELEASE-20261116",
+    "next": "PET53: recover one source-qualified Nov 2001 CN2.0 magazine/guide coverdisc or full upgrade installer with original file hashes and pet identity, alternatively original official raffle winner/delivery evidence; keep 2001 OPEN.",
     "current_source_acquisition_priority": "CLIENT_FIRST_VERSION_AUTHENTICATION_AND_PET_RESOURCE_EXTRACTION_BEFORE_EXTERNAL_NEWS"
   },
   "region_tracks": [
@@ -548,6 +548,16 @@
           ],
           "report": "docs/continuity/STONEAGE-PET51-2001-TWCN-2_0-PET-MUSEUM-CROSSWALK-20261116.md",
           "evidence_json": "research/recovered/STONEAGE-PET51-YEAR2001-OPERATOR-MUSEUM-PET-CLAIM-CROSSWALK-R1.json",
+          "year_not_closed": true,
+          "live_pet_roster_not_proven": true
+        },
+        {
+          "id": "PET52-2001-CN-SA20-CARRIER-RELEASE-20261116",
+          "regions": [
+            "CN"
+          ],
+          "report": "docs/continuity/STONEAGE-PET52-CN2001-SA20-PERIOD-CARRIER-PET-RELEASE-20261116.md",
+          "evidence_json": "research/recovered/STONEAGE-PET52-CN2001-SA20-PERIOD-CARRIER-PET-RELEASE-R1.json",
           "year_not_closed": true,
           "live_pet_roster_not_proven": true
         }
@@ -1436,6 +1446,18 @@
       "pet_submission_design_intent_only": true,
       "previously_stored_operator_hosted_player_claim_crosswalk": 8,
       "already_stored_tw1_original_client_spr_named_match": 8,
+      "new_original_client_bytes": 0,
+      "new_official_named_live_release_proofs": 0,
+      "historical_pet_population_count": null
+    },
+    {
+      "id": "PET52-2001-CN-SA20-CARRIER-RELEASE-20261116",
+      "report": "docs/continuity/STONEAGE-PET52-CN2001-SA20-PERIOD-CARRIER-PET-RELEASE-20261116.md",
+      "evidence_json": "research/recovered/STONEAGE-PET52-CN2001-SA20-PERIOD-CARRIER-PET-RELEASE-R1.json",
+      "year_frontier_before": 2001,
+      "year_frontier_after": 2001,
+      "year_not_closed": true,
+      "advertised_distribution_channels": 13,
       "new_original_client_bytes": 0,
       "new_official_named_live_release_proofs": 0,
       "historical_pet_population_count": null

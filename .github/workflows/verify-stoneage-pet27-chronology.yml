@@ -23,7 +23,9 @@ on:
       - "tests/test_stoneage_pet49_tw2000_operator_prospectus.py"
       - "tests/test_stoneage_pet50_year2000_bounded_audit.py"
       - "tests/test_stoneage_pet51_2001_operator_pets_and_version_dates.py"
+      - "tests/test_stoneage_pet52_cn2001_carrier_issuance.py"
       - "research/recovered/STONEAGE-PET51-YEAR2001-OPERATOR-MUSEUM-PET-CLAIM-CROSSWALK-R1.json"
+      - "research/recovered/STONEAGE-PET52-CN2001-SA20-PERIOD-CARRIER-PET-RELEASE-R1.json"
       - "research/recovered/STONEAGE-PET50-YEAR2000-SOURCE-BOUNDED-AUDIT-R1.json"
       - "research/recovered/STONEAGE-PET49-TW2000-OPERATOR-PROSPECTUS-SOURCE-R1.json"
       - "research/recovered/STONEAGE-PET48-KR2000-EARLY-PET-SOURCE-BOUNDARIES-R1.json"
@@ -57,7 +59,9 @@ on:
       - "tests/test_stoneage_pet49_tw2000_operator_prospectus.py"
       - "tests/test_stoneage_pet50_year2000_bounded_audit.py"
       - "tests/test_stoneage_pet51_2001_operator_pets_and_version_dates.py"
+      - "tests/test_stoneage_pet52_cn2001_carrier_issuance.py"
       - "research/recovered/STONEAGE-PET51-YEAR2001-OPERATOR-MUSEUM-PET-CLAIM-CROSSWALK-R1.json"
+      - "research/recovered/STONEAGE-PET52-CN2001-SA20-PERIOD-CARRIER-PET-RELEASE-R1.json"
       - "research/recovered/STONEAGE-PET50-YEAR2000-SOURCE-BOUNDED-AUDIT-R1.json"
       - "research/recovered/STONEAGE-PET49-TW2000-OPERATOR-PROSPECTUS-SOURCE-R1.json"
       - "research/recovered/STONEAGE-PET48-KR2000-EARLY-PET-SOURCE-BOUNDARIES-R1.json"
@@ -101,6 +105,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet50_year2000_bounded_audit
       - name: PET51 cross-check 2001 Waei player pet descriptions to original TW1 and separate official version dates
         run: python -m unittest tests.test_stoneage_pet51_2001_operator_pets_and_version_dates
+      - name: PET52 2001 CN2.0 period sources, unacquired carriers and pet release exclusion
+        run: python -m unittest tests.test_stoneage_pet52_cn2001_carrier_issuance
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary
