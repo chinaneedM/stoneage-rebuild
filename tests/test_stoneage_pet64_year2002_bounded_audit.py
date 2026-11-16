@@ -36,8 +36,8 @@ class PET64Audit(unittest.TestCase):
    self.assertTrue(v["reopen"] and v["reopen_trigger"],r)
   self.assertEqual(q["current_frontier"]["year"],2003)
   self.assertEqual(q["yearly_work_queue"][4]["research_gate"],"NOT_YEAR_AUDITED")
-  self.assertEqual(q["current_frontier"]["latest_partial_root_review"],d["id"])
-  self.assertTrue(q["current_frontier"]["next"].startswith("PET65:"))
+  self.assertIn(d["id"],[x["id"] for x in q["root_source_census_receipts"]])
+  self.assertRegex(q["current_frontier"]["next"],r"^PET[0-9]+:")
  def test_keeps_historical_receipts_and_event_count(self):
   d,q=self.d,self.q
   rs=[x["id"] for x in q["root_source_census_receipts"]]

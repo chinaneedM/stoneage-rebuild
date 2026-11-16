@@ -8925,3 +8925,10 @@ R14包351231B/SHA7684267ab528d13ceecb23a25632543ae839225607cbda702a32736e4c4d366
 
 - [2002-11-11《華義推寵物日誌包》企业署名新闻稿](https://www.digitalwall.com/scripts/displaypr.asp?UID=230)，数位之墙公开托管，原页**可阅读全文**并注明华义国际数位娱乐股份有限公司为发布方，宣传有效期至11/30。本轮获得正文可读性、非当年HTML原字节及SHA。文字称PET卡有机会刮到**「未開放新寵」**或其他宠物/道具，另附《宠物进化史》新版光盘；**这恰恰不能证明所谓未开放宠已在2002实服上线或已经被领取，也没有具名/数量/奖品发放名录及任何原客户端字节**。产品时代价格只作原官方宣传语境，不研究付费卖盘或求购。该一手署名原文与PET61—63四条2002原运营文档事件不新增同服实装物种。
 - 2002五地区年审见`docs/continuity/STONEAGE-PET64-YEAR2002-SOURCE-BOUNDED-PET-AUDIT-20261116.md`及机器版`research/recovered/STONEAGE-PET64-YEAR2002-SOURCE-BOUNDED-AUDIT-R1.json`：CN/TW/JP/KR/OTHER均缺同版真实发宠清单和已认证当年客户端；重放[2002-09-13 GNN狼人广告](https://gnn.gamer.com.tw/detail.php?sn=5718)（旧PET26）和[2002-11-14 GNN宠物融合营销](https://gnn.gamer.com.tw/detail.php?sn=6751)（旧PET62），并非新独立来源。2002 `SOURCE_BOUNDED_REVIEWED`不等于全球名录完成；2003作为下个年份游标，PET唯一活动，禁收费市场。
+
+
+### SRC-PET65-CN2003-WAEI-SIX-PETS-LOTTERY-TW-SOURCE-20261116
+- [2003-01-14联动蒙奇](https://news.17173.com/content/2003-1-14/n801_717217.html)已属于PET25的CN-PC-MONKEY-2003，另游戏《疯狂原始人2.0》与石器原生客户端不能混同。
+- [2003-06-23石器魔法牌同期运营文案](https://news.17173.com/content/2003-6-23/n340_256477.html)逐列佩露夏、蒙奇、帖拉所伊朵、邦诺斯娜、卡伊霍恩、鲁拉奇斯随机兑奖六名、宣传概率100%，不是六份服务端实发纪录；实物卡面/卡销售数字非宠数。
+- [5/21超级来吉卡介绍](https://news.17173.com/content/2003-5-21/n857_773384.html)30任务卡不等于30新宠；[7/10首轮](https://news.17173.com/content/2003-7-10/n824_740898.html)青龙／白虎／蒙奇／帖拉所伊朵各自卡片条件；[7/17规则变更](https://news.17173.com/content/2003-7-17/n978_894203.html)“最后一组服务器领取”是运营宣传尚无原生执行验证；[8/05第二轮](https://news.17173.com/content/2003-8-5/n642_558632.html)青龙400/蒙奇600是规划名额，白虎不在本轮，不能合并首轮奖励。
+- [2003-03-18台服GNN粉红人龙](https://gnn.gamer.com.tw/detail.php?sn=8569)仅搜索索引、原页403，“邦諾斯娜”与大陆「邦诺斯娜」候选不等于同服ID。认证TW1客户端原相簿「帖拉所伊朵」100374、 「卡伊霍恩」100377完整原SPR SHA旧PET39/PET46可重用，但不推2003CN同图和实发。详见 docs/continuity/STONEAGE-PET65-CN2003-WAEI-PETS-SOURCE-AUDIT-20261116.md 与 research/recovered/STONEAGE-PET65-CN2003-WAEI-PET-PROMO-R1.json。新2003客户端原字节0、实服获奖确证0、总体物种数UNKNOWN；不研究收费二手盘。

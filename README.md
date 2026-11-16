@@ -2985,3 +2985,7 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-16 — PET64｜2002全球官方宠物有界年度审查，前沿进入2003
 
 [五地区年审与官方新闻稿](docs/continuity/STONEAGE-PET64-YEAR2002-SOURCE-BOUNDED-PET-AUDIT-20261116.md)／[机读原证缺口及游标](research/recovered/STONEAGE-PET64-YEAR2002-SOURCE-BOUNDED-AUDIT-R1.json)：2002-11-11可直接读到台湾**华义企业署名原新闻稿**“宠物日志包”Pet卡可能抽到**未开放新宠**；这是实装**反边界**，不是已抽到的具体宠名/官方种数。核2002 CN/TW/KR/JP/OTHER全部现存合格材料与原程序缺件，旧4条2002发行文档事件保持，真正种数UNKNOWN、当年新官方实发宠确认0、认证原客户端0B。2002只标 `SOURCE_BOUNDED_REVIEWED`（并非历史完成），5地均可重开；PET单模块年份到**2003**，NEXT PET65；旧CURRENT blob/Stages/私有商业素材不变。
+
+
+## 2026-11-16 — PET65｜2003华义蒙奇／魔法牌六宠与活动规则
+[PET65原文证据与版本隔离](docs/continuity/STONEAGE-PET65-CN2003-WAEI-PETS-SOURCE-AUDIT-20261116.md)／[机读六名与原SPR](research/recovered/STONEAGE-PET65-CN2003-WAEI-PET-PROMO-R1.json)。当年华义产品六宠兑奖名、7月与8月两轮不同来吉卡奖项及台服「邦諾斯娜」来源有界登记。青龙400/蒙奇600是营销中奖名额，不是1000只实发；认证台湾1.0相簿帖拉所伊朵与卡伊霍恩完整SPR SHA不反证2003大陆同版客户端。2003原客户端0B、实际发奖新证明0；2003 PET25旧文档事件1不增，年度仍OPEN、PET单模块、NEXT PET66。CURRENT原blob与Stage不变。
