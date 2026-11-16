@@ -18,8 +18,8 @@
     "year": 2005,
     "phase": "YEAR_2005_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET71-YEAR2004-FIVE-REGION-SOURCE-BOUNDED-OFFICIAL-PET-AUDIT-20261116",
-    "next": "PET72: begin 2005 official PC pet release and original source first audit by region CN/TW/JP/KR/OTHER; prioritize dated 2005 named operator pet releases and accessible original clients without backdating or paid market sources.",
+    "latest_partial_root_review": "PET72-2005-CN75-TW-KIRIN-LAIFU-JP-STAGED-KR-RIDE-20261116",
+    "next": "PET73: 2005 official client/PET sources—original Taiwan chicken-year period announcements, Japan July 12 applied original patch and black tiger identity, mainland 7.5 actual named awards, Korean ride native pet mapping; then 2005 five-region bounded audit.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -1181,7 +1181,22 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "partial_source_review_receipts": [
+        {
+          "id": "PET72-2005-CN75-TW-KIRIN-LAIFU-JP-STAGED-KR-RIDE-20261116",
+          "regions": [
+            "CN",
+            "TW",
+            "JP",
+            "KR",
+            "OTHER"
+          ],
+          "report": "docs/continuity/STONEAGE-PET72-YEAR2005-CN-TW-JP-KR-SOURCE-20261116.md",
+          "evidence_json": "research/recovered/STONEAGE-PET72-YEAR2005-CN-TW-JP-KR-SOURCE-R1.json",
+          "year_not_closed": true
+        }
+      ]
     },
     {
       "year": 2006,
@@ -2376,6 +2391,42 @@
       "new_2004_native_pet_ids": 0,
       "new_2004_real_server_award_logs": 0,
       "historical_pet_population_count": null
+    },
+    {
+      "id": "PET72-2005-CN75-TW-KIRIN-LAIFU-JP-STAGED-KR-RIDE-20261116",
+      "regions": [
+        "CN",
+        "TW",
+        "JP",
+        "KR",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET72-YEAR2005-CN-TW-JP-KR-SOURCE-20261116.md",
+      "evidence_json": "research/recovered/STONEAGE-PET72-YEAR2005-CN-TW-JP-KR-SOURCE-R1.json",
+      "year_frontier_before": 2005,
+      "year_frontier_after": 2005,
+      "year_not_closed": true,
+      "JP_staged_sprite_0705_before_level_one_field_0712": true,
+      "CN_2005_75_marketed_named_pets": [
+        "牛头人",
+        "鸡年兽"
+      ],
+      "TW_2005_named_redeem_candidates": [
+        "麒麟",
+        "萊福"
+      ],
+      "JP_2005_named_prize_and_bag_candidates": [
+        "クロウリ",
+        "ガーヴィ",
+        "ヴァンレム"
+      ],
+      "KR_2005_named_new_rides": [
+        "고르고르",
+        "타쿠"
+      ],
+      "new_original_2005_client_bytes": 0,
+      "new_original_pet_IDs": 0,
+      "global_2005_species_total": null
     }
   ],
   "client_first_methodology": {
