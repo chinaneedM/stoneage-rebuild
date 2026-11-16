@@ -31,6 +31,9 @@ on:
       - "tests/test_stoneage_pet60_year2001_bounded_audit.py"
       - "tests/test_stoneage_pet61_cn2002_30_40_source_grade.py"
       - "tests/test_stoneage_pet62_cn25_taiwan_spr_boundary.py"
+      - "tests/test_stoneage_pet63_tw2002_waei_duanwu.py"
+      - "docs/continuity/STONEAGE-PET63-TW2002-WAEI-DUANWU-20261116.md"
+      - "research/recovered/STONEAGE-PET63-TW2002-WAEI-DUANWU-SOURCE-R1.json"
       - "research/recovered/STONEAGE-PET62-CN25-GIFT-BLACKSHEEP-QINGLONG-TW1-SOURCE-GRADE-R1.json"
       - "docs/continuity/STONEAGE-PET62-2002-CN25-GIFT-PET-TW1-SPR-QUEST-20261116.md"
       - "research/recovered/STONEAGE-PET61-CN2002-SA30-SA40-OPERATOR-PLAYER-PET-EVIDENCE-R1.json"
@@ -146,6 +149,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet61_cn2002_30_40_source_grade
       - name: PET62 2002 CN2.5 official pet gifts, exact original TW1 ram SPR and region boundaries
         run: python -m unittest tests.test_stoneage_pet62_cn25_taiwan_spr_boundary
+      - name: PET63 TW 4.0 source-limited promo and Duanwu candidate conflict
+        run: python -m unittest tests.test_stoneage_pet63_tw2002_waei_duanwu
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary
