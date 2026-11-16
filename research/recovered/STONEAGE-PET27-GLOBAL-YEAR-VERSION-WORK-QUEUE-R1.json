@@ -18,8 +18,8 @@
     "year": 2004,
     "phase": "YEAR_2004_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET69-2004-TW75-CNMONKEY-JPAVATAR-PET-SOURCE-20261116",
-    "next": "PET70: continue 2004 original Netmarble Korea pet sources, Taiwan Xuanwu/monkey year native issuance, CN7.5 operator award proofs and exact original client bytes; preserve official region boundaries.",
+    "latest_partial_root_review": "PET70-2004-KR-NETMARBLE-FOUR-RIDES-CN75-STAGED-TW-XUANWU-20261116",
+    "next": "PET71: review 2004 CN/TW/JP/KR/OTHER official pet source evidence in bounded five-region annual audit, preserving KR four ride names and CN 7.5 staged server deployments. Advance to 2005 only with historically incomplete marker and region reopen triggers.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -1057,6 +1057,17 @@
           ],
           "report": "docs/continuity/STONEAGE-PET69-YEAR2004-TW75-CNMONKEY-JPAVATAR-20261116.md",
           "evidence_json": "research/recovered/STONEAGE-PET69-YEAR2004-TW75-CNMONKEY-JPAVATAR-R1.json",
+          "year_not_closed": true
+        },
+        {
+          "id": "PET70-2004-KR-NETMARBLE-FOUR-RIDES-CN75-STAGED-TW-XUANWU-20261116",
+          "regions": [
+            "KR",
+            "CN",
+            "TW"
+          ],
+          "report": "docs/continuity/STONEAGE-PET70-2004-KR-RIDES-CN75-TW-XUANWU-20261116.md",
+          "evidence_json": "research/recovered/STONEAGE-PET70-2004-KR-RIDES-CN75-STAGED-TW-XUANWU-R1.json",
           "year_not_closed": true
         }
       ]
@@ -2220,6 +2231,33 @@
       "new_2004_original_client_bytes": 0,
       "new_2004_native_pet_ids": 0,
       "new_2004_verified_server_logs": 0,
+      "historical_pet_population_count": null
+    },
+    {
+      "id": "PET70-2004-KR-NETMARBLE-FOUR-RIDES-CN75-STAGED-TW-XUANWU-20261116",
+      "regions": [
+        "KR",
+        "CN",
+        "TW"
+      ],
+      "report": "docs/continuity/STONEAGE-PET70-2004-KR-RIDES-CN75-TW-XUANWU-20261116.md",
+      "evidence_json": "research/recovered/STONEAGE-PET70-2004-KR-RIDES-CN75-STAGED-TW-XUANWU-R1.json",
+      "year_frontier_before": 2004,
+      "year_frontier_after": 2004,
+      "year_not_closed": true,
+      "KR_operator_period_four_ride_names": [
+        "라고고",
+        "무이",
+        "도라비스",
+        "고르돈"
+      ],
+      "KR_new_three_unnamed_huntable_pets_distinct_from_four_rides": true,
+      "KR_operator_rough_pet_variety_count_not_exact": "120여종",
+      "CN_test_server_pet_handout_not_production_grant": true,
+      "CN_old_70_to_75_staged_into_2005": true,
+      "TW_Xuanwu_period_quest_mode_not_native_award": true,
+      "new_original_2004_client_bytes": 0,
+      "new_native_2004_pet_ids": 0,
       "historical_pet_population_count": null
     }
   ],
