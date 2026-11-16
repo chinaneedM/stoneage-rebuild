@@ -1,0 +1,127 @@
+{
+  "schema": "stoneage.pet58.2001.tw20_period_retail_installer_provenance_without_binary.r1",
+  "recorded": "2026-11-16",
+  "active_module": "PET",
+  "year": 2001,
+  "year_status": "NOT_YEAR_AUDITED",
+  "baseline": {
+    "main_head": "b3837f9bdbe1c24e5135a71cf25dbe5dbf0e5e81",
+    "main_tree": "c90cafba8caf64bea7ba2bdfef8f5ca90580c064",
+    "queue_sha": "f89ae357bf98ba88f81045adbb6dac800e64cf00",
+    "historical_CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "research_priority": "CLIENT_FIRST: identify physical retail media before reading secondary pet lists",
+  "material_finding": "A date-stamped TW merchant offer naming Waei StoneAge 2.0 starter package on 2001-09-11; period developer/rollout reports narrow client-version context; no disc/installer recovered.",
+  "primary_new_dated_carrier": {
+    "id": "TW2001-WASONG-RETAIL-POST-20010911",
+    "original_message_url": "https://groups.google.com/g/tw.bbs.computer.forsale/c/D8RunSIH_fc",
+    "source_type": "PERIOD_DATED_MERCHANT_OFFER_CURRENT_USENET_MIRROR",
+    "region": "TW",
+    "dated": "2001-09-11",
+    "date_kind": "MESSAGE_POSTING_DATE",
+    "named_item": "[華義]石器時代 2.0 家族開拓史 新手報到包",
+    "amount_ntd_claimed": 179,
+    "amount_semantics": "advertised_tax_included_offer_not_receipt_or_completed_purchase",
+    "message_sender": "華頌易購網",
+    "client_package_bytes_recovered": 0,
+    "original_2001_message_raw_SHA256": null,
+    "precise_product_SKU": null,
+    "original_CD_matrix": null,
+    "pet_issuance_proved": false
+  },
+  "supplementary_period_sources": [
+    {
+      "id": "TW2001-GNN-20010711-2_0-FUTURE-MAGAZINE",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=1524",
+      "source_type": "PERIOD_INDUSTRY_JOURNALIST_OPERATOR_ATTRIBUTED_PLAN",
+      "region": "TW",
+      "dated": "2001-07-11",
+      "date_kind": "PERIOD_ARTICLE_PUBLICATION",
+      "scope": "GNN journalist attributes March IP/source transaction and future August 1 rollout with magazine distribution; future-tense, not Aug 1 server deployment observed; source text directly publicly readable, not original media bytes",
+      "original_2001_html_sha256": null,
+      "client_package_bytes_recovered": 0,
+      "pet_issuance_proved": false
+    },
+    {
+      "id": "TW2001-ITHOME-20010709-JSS-WAEI",
+      "url": "https://www.ithome.com.tw/node/13643",
+      "source_type": "PERIOD_BUSINESS_REPORT_OPERATOR_ATTRIBUTED_STATEMENT",
+      "region": "TW",
+      "dated": "2001-07-09",
+      "date_kind": "PERIOD_ARTICLE_PUBLICATION",
+      "scope": "Media reports JSS bankruptcy and Waei March buyout/code/tools with planned August internally modified 2.0; do not claim original deed/actual shipping build or binary source identity from press",
+      "original_2001_html_sha256": null,
+      "client_package_bytes_recovered": 0,
+      "pet_issuance_proved": false
+    },
+    {
+      "id": "EARLY2001-17173-CLIENT-DIRECTORY-20010709",
+      "url": "https://news.17173.com/z/stoneage/content/2001-7-9/n653_569161.html",
+      "source_type": "PERIOD_DATED_MIGRATED_UNATTRIBUTED_CLIENT_DIRECTORY_ARTICLE",
+      "region": "UNKNOWN_WAEI_INSTALL_CONTEXT",
+      "dated": "2001-07-09",
+      "date_kind": "MIGRATED_ARTICLE_DATE_LABEL",
+      "scope": "Article names C:\\Program Files\\Waei\\石器时代\\data\\album.dat as a pet-album filename; context, not original client file custody or identified 2001 TW2.0/CN2.0 same build",
+      "original_2001_html_sha256": null,
+      "client_package_bytes_recovered": 0,
+      "pet_issuance_proved": false
+    }
+  ],
+  "previously_registered_source_reused": {
+    "id": "PET51_2001_GNN_20011102",
+    "report": "docs/continuity/STONEAGE-PET51-2001-TWCN-2_0-PET-MUSEUM-CROSSWALK-20261116.md",
+    "product_launch_TW_2_0_reported": "2001-08-01",
+    "date_kind": "PERIOD_REPORT_RETROSPECTIVE_PRODUCT_LAUNCH",
+    "not_server_log": true
+  },
+  "old_source_binary_leads_reused": {
+    "source": "research/recovered/STONEAGE-WAEI-SA40-SA42-LINEAGE-R1.txt",
+    "sha_of_git_source": "9722ad42fe83a0b5a5beaa6a99e25cde4666f004",
+    "sa40": {
+      "bytes": 528384,
+      "sha256": "d54a6c109644dd4842f61bdd42a95362fda7a16f5e9b9dbd829d6b97c678fde1",
+      "PE_header_timestamp_utc": "2001-09-27T08:31:27Z",
+      "is_recovered_TW2001_2_0_complete_disc": false
+    },
+    "sa42": {
+      "PE_header_timestamp_utc": "2001-11-01",
+      "time_only_from_existing_PET51_summary_not_reverified_this_round": true,
+      "is_recovered_TW2001_2_0_complete_disc": false
+    },
+    "client_path_string_prior": "data\\album_2.dat",
+    "source_relationship_to_20010911_merchant_disc": "UNKNOWN_NOT_PROVED_IN_THE_SAME_ORIGINAL_PACKAGE",
+    "warning": "sa40 PE timestamp is later than 2001-09-11 retail message, and timestamps are executable header values not distribution dates; do not attribute sa40 or sa42 to September 11 physical disc by chronology or name."
+  },
+  "evidence_gates": {
+    "retail_package_advertised": true,
+    "retail_package_sold_delivered_to_named_buyer": null,
+    "official_clean_TW2_0_CD_or_installer_recovered": false,
+    "original_disc_hash_sha256": null,
+    "volume_label": null,
+    "installer_hash_sha256": null,
+    "source_build_date": null,
+    "tw2001_2_0_local_original_album_loaded": false,
+    "tw2001_2_0_named_pet_to_graphic_same_build": 0,
+    "tw2001_2_0_actual_official_pet_live_issuance_confirmed": 0,
+    "new_official_pet_species_proven": 0,
+    "historical_official_pet_population": null
+  },
+  "independent_region_boundaries": {
+    "KR": "2001 Inium 2.0 official bytes missing (PET55 near-period review only)",
+    "JP": "2001 original official JSS client/issuance missing",
+    "CN": "2001 Beijing Waei product data retained PET52, not the TW retail SKU",
+    "TW": "TW2.0 2001 merchant listing is not original TW1.0 retail disc or CN2.0"
+  },
+  "unavailable_source_stop": "Current investigation did not retrieve legitimate 2001 TW2.0 original CD/ISO/EXE or merchant shipment evidence. Known 2020 collector-disc posts were already audited under STONEAGE-SHIQI-BLOG-EARLY-DISCS-R1 and SA25-COLLECTOR-MIRROR-CONTEXT-R1; they are not new original bytes.",
+  "reopen": [
+    "Find legitimately accessible complete 2001 Taiwan Waei StoneAge 2.0 newcomer CD, original ISO or installer with cover/volume/SHA and manufacturing provenance",
+    "Check retailer/disc photos with readable disc matrix/serial and seller shipment SKU then authenticate original bytes",
+    "Extract same verified build 2.0 local album/graphic SPR + original pet ID, distinguish data\\album.dat from data\\album_2.dat exact source/version",
+    "Find matched original TW2.0 operator patch or formal named pet issuance/available reward log; separate from marketing/buyer listing"
+  ],
+  "next": "PET59 remain 2001; prioritize tangible Korean Inium GameTime bonus CD or Taiwan 2.0 official original disc/patch; do not repeat this retail listing; pet catalogue gate unchanged",
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null
+}

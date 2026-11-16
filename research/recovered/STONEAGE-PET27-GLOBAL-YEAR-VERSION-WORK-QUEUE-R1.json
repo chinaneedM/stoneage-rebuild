@@ -18,8 +18,8 @@
     "year": 2001,
     "phase": "YEAR_2001_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET57-2001-CN-WAEI-UNRELEASED-PET-EXCLUSION-20261116",
-    "next": "PET58: 2001 original authentic KR/JP/TW/CN client patch or first-party actual named pet reward; verify earlier operator notice original, do not count GM illicit pets or later mirrors as live roster",
+    "latest_partial_root_review": "PET58-2001-TW20-WASONG-CARRIER-CLIENT-GRADE-20261116",
+    "next": "PET59: remain PET year 2001; original authenticated KR Inium/GameTime CD or TW Waei 2.0 2001 retail or magazine disc, plus operator same-build named issuance. No rework of PET58 merchant ad.",
     "current_source_acquisition_priority": "CLIENT_FIRST_VERSION_AUTHENTICATION_AND_PET_RESOURCE_EXTRACTION_BEFORE_EXTERNAL_NEWS"
   },
   "region_tracks": [
@@ -625,6 +625,20 @@
           "year_not_closed": true,
           "operator_notices": "LATER_REPRINT_ONLY_NOT_PRIMARY_RETRIEVED",
           "new_verified_named_live_pets": 0
+        },
+        {
+          "id": "PET58-2001-TW20-WASONG-CARRIER-CLIENT-GRADE-20261116",
+          "regions": [
+            "TW"
+          ],
+          "report": "docs/continuity/STONEAGE-PET58-2001-TW20-RETAIL-CLIENT-CARRIER-20261116.md",
+          "evidence_json": "research/recovered/STONEAGE-PET58-TW2001-2_0-PERIOD-RETAIL-CARRIER-SOURCE-R1.json",
+          "year_not_closed": true,
+          "retail_offered_date": "2001-09-11",
+          "not_original_CD": true,
+          "source_custody_only": true,
+          "original_client_bytes": 0,
+          "new_official_pet_release_confirmations": 0
         }
       ]
     },
@@ -1601,6 +1615,22 @@
       "new_live_official_pet_proofs": 0,
       "original_operator_transmission_missing": true,
       "secondary_reprints": 2,
+      "historical_pet_population_count": null
+    },
+    {
+      "id": "PET58-2001-TW20-WASONG-CARRIER-CLIENT-GRADE-20261116",
+      "regions": [
+        "TW"
+      ],
+      "report": "docs/continuity/STONEAGE-PET58-2001-TW20-RETAIL-CLIENT-CARRIER-20261116.md",
+      "evidence_json": "research/recovered/STONEAGE-PET58-TW2001-2_0-PERIOD-RETAIL-CARRIER-SOURCE-R1.json",
+      "year_frontier_before": 2001,
+      "year_frontier_after": 2001,
+      "year_not_closed": true,
+      "new_period_dated_retail_carrier_offer": 1,
+      "period_background_sources": 3,
+      "new_original_2001_tw2_client_bytes": 0,
+      "new_official_live_pet_proofs": 0,
       "historical_pet_population_count": null
     }
   ],
