@@ -51,11 +51,11 @@ class TestPet66(unittest.TestCase):
 
     def test_forward_only_year_and_global_source_boundary(self):
         d,q=self.d,self.q
-        self.assertEqual(q["current_frontier"]["year"],2003)
+        self.assertGreaterEqual(q["current_frontier"]["year"],2003)
         self.assertGreaterEqual(int(q["current_frontier"]["latest_partial_root_review"].split("-")[0][3:]),66)
         self.assertRegex(q["current_frontier"]["next"],r"^PET[0-9]+:")
         y=next(x for x in q["yearly_work_queue"] if x["year"]==2003)
-        self.assertEqual(y["research_gate"],"NOT_YEAR_AUDITED")
+        self.assertEqual(y["research_gate"],"NOT_YEAR_AUDITED" if q["current_frontier"]["year"]==2003 else "SOURCE_BOUNDED_REVIEWED")
         self.assertEqual(y["documentary_event_count_NOT_species"],1)
         self.assertEqual(sum(x["id"]==d["id"] for x in q["root_source_census_receipts"]),1)
         self.assertEqual(len([x for x in y["partial_source_review_receipts"] if x["id"]==d["id"]]),1)
