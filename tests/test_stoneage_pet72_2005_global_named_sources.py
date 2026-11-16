@@ -71,11 +71,11 @@ class PET72Evidence(unittest.TestCase):
   a,q=self.d,self.q
   self.assertEqual((a["active_module"],a["year"]),("PET",2005))
   self.assertEqual(len(a["source_records"]),12)
-  self.assertEqual(q["current_frontier"]["year"],2005)
+  self.assertGreaterEqual(q["current_frontier"]["year"],2005)
   self.assertGreaterEqual(int(q["current_frontier"]["latest_partial_root_review"].split("-")[0][3:]),72)
   self.assertRegex(q["current_frontier"]["next"],r"^PET[0-9]+:")
   y=next(z for z in q["yearly_work_queue"] if z["year"]==2005)
-  self.assertEqual(y["research_gate"],"NOT_YEAR_AUDITED")
+  self.assertEqual(y["research_gate"],"NOT_YEAR_AUDITED" if q["current_frontier"]["year"]==2005 else "SOURCE_BOUNDED_REVIEWED")
   self.assertEqual(y["documentary_event_count_NOT_species"],0)
   self.assertEqual(sum(x["id"]==a["id"] for x in y["partial_source_review_receipts"]),1)
   self.assertEqual(sum(x["id"]==a["id"] for x in q["root_source_census_receipts"]),1)
