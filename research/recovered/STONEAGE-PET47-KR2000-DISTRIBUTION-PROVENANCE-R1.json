@@ -1,0 +1,146 @@
+{
+  "schema": "stoneage.pet47.kr2000.original_client_distribution_source_boundary.r1",
+  "recorded_date": "2026-11-16",
+  "starting_main_head": "d778655f5d85f2a209704a597952aa61b9cedade",
+  "starting_main_tree": "d9090bdd3de4b44fe01fcc2b4768eaab34718f53",
+  "starting_main_exact_actions": {
+    "completed_success": 4,
+    "total": 4,
+    "open_prs": 0
+  },
+  "module": "PET",
+  "year_frontier": 2000,
+  "year_frontier_status": "OPEN",
+  "original_current_state_blob_unmodified": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "sources": [
+    {
+      "id": "KR2000-INDEX-OCT11",
+      "source_date": "2000-10-11",
+      "title_original": "외산 온라인게임 몰려 온다",
+      "url": "https://www.dailygame.co.kr/list.php?ct=g0101&nmd=1&pg=419&sds=&ssk=",
+      "retrieval": "SEARCH_INDEX_EXCERPT_ONLY_DYNAMIC_PAGINATION_NOT_FULL_ARTICLE",
+      "new_to_pet47": true,
+      "claim": {
+        "type": "CONTEMPORARY_REPORT_CLAIMED_TRIAL_START",
+        "claimed_start": "2000-10-04",
+        "claim_evidence": "reported article snippet about preceding Oct 4 trial"
+      },
+      "source_sha256": null,
+      "article_perma_url": null
+    },
+    {
+      "id": "KR2000-ETNEWS-OCT13",
+      "source_date": "2000-10-13",
+      "title_original": "이니엄, 롤플레잉게임 스톤에이지 무료서비스",
+      "url": "https://www.etnews.com/200010120085",
+      "retrieval": "PRIOR_PET28_REUSED_PERIOD_TEXT",
+      "new_to_pet47": false,
+      "claim": {
+        "type": "OPERATOR_STATEMENT_REPORTED",
+        "announcement_date": "2000-10-12",
+        "claimed_localization_server_and_free_service": true
+      },
+      "source_sha256": null
+    },
+    {
+      "id": "KR2000-DAILYGAME-OCT27",
+      "source_date": "2000-10-27",
+      "title_original": "이니엄, 스톤에이지 제작발표회 개최",
+      "url": "https://www.dailygame.co.kr/view.php?ud=200010271416380001837_26",
+      "retrieval": "CURRENT_SESSION_READ_WEBPAGE_FULL_ARTICLE_TEXT_NOT_RAW_HTTP",
+      "new_to_pet47": true,
+      "claim": {
+        "type": "OPERATOR_ANNOUNCEMENT_IN_PERIOD_NEWS",
+        "claimed_trial_start": "2000-10-10",
+        "claimed_downloads_by_event": 200000,
+        "mentech_package_supply_contract_quantity": 60000,
+        "mentech_quantity_semantics": "CONTRACT_NOT_VERIFIED_SHIPPED",
+        "sales_distribution": "PLANNED_YONGSAN_GAME_RETAIL"
+      },
+      "source_sha256": null
+    },
+    {
+      "id": "KR2000-ETNEWS-OCT28",
+      "source_date": "2000-10-28",
+      "title_original": "스톤에이지 제품 발표회",
+      "url": "https://m.etnews.com/200010270015",
+      "retrieval": "PRIOR_PET28_REUSED_PERIOD_TEXT",
+      "new_to_pet47": false,
+      "claim": {
+        "type": "OPERATOR_STATEMENT_REPORTED",
+        "claimed_trial_start": "2000-10-10"
+      },
+      "source_sha256": null
+    },
+    {
+      "id": "KR2000-GAMEMECA-DEC28",
+      "source_date": "2000-12-28",
+      "title_original": "스톤에이지 유료서비스, 순조롭게 진행중",
+      "url": "https://www.gamemeca.com/view.php?gid=5963",
+      "retrieval": "CURRENT_SESSION_READ_WEBPAGE_FULL_ARTICLE_TEXT_NOT_RAW_HTTP",
+      "new_to_pet47": true,
+      "claim": {
+        "type": "OPERATOR_UPDATE_AS_REPORTED",
+        "claimed_paid_service_start": "2000-12-11",
+        "client_distribution_operators": [
+          "Hananet",
+          "Cnet"
+        ],
+        "download_counts_claimed_by_operator": {
+          "Hananet": 400000,
+          "Cnet": 310000
+        }
+      },
+      "source_sha256": null
+    }
+  ],
+  "claims_date_disposition": {
+    "claimed_trials": [
+      "2000-10-04",
+      "2000-10-10"
+    ],
+    "statement_free_service_date": "2000-10-12",
+    "claimed_paid_service": "2000-12-11",
+    "exact_free_service_start_resolved": false,
+    "mutual_exclusivity_proven": false
+  },
+  "historical_client_hunt_targets": [
+    {
+      "carrier": "INIUM_ORIGINAL_OFFICIAL_2000_SITE",
+      "identifier": "stoneage.enium.co.kr",
+      "url_or_binary_verified": false
+    },
+    {
+      "carrier": "MENTECH_KR2000_RETAIL_PACKAGE",
+      "quantity_reported_supply_contract": 60000,
+      "physical_media_recovered": false
+    },
+    {
+      "carrier": "HANANET_2000_GAME_DOWNLOAD",
+      "original_binary_recovered": false
+    },
+    {
+      "carrier": "CNET_KR2000_GAME_DOWNLOAD",
+      "original_binary_recovered": false
+    }
+  ],
+  "original_korean_2000_client_bytes_acquired": 0,
+  "original_korean_2000_client_sha256": null,
+  "verified_korean_2000_same_build_pet_identity_count": 0,
+  "new_official_in_game_named_pet_release_confirmations": 0,
+  "historical_total_species_count": null,
+  "korean_2000_pet_names": null,
+  "client_stats_skills_growth": null,
+  "live_server_pet_acquisition_mechanisms": null,
+  "excluded_from_historical_roster": [
+    "2000_MEDIA_HUNDREDS_DINOSAURS_MARKETING",
+    "LATER_COMMUNITY_PETFLG1_TEMPLATES",
+    "PRIVATE_SERVER_DOWNLOADS",
+    "TAIWAN_1_0_CLIENT_NAME_COUNT"
+  ],
+  "next_task": "PET48_SOURCE_QUALIFIED_KR_2000_CLIENT_PACKAGE_OR_DISTRIBUTOR_CACHE_OR_TW_2000_OPERATOR_PET_ISSUANCE;_OTHERWISE_2000_INDEPENDENT_CLIENT_READY_SOURCE",
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null
+}
