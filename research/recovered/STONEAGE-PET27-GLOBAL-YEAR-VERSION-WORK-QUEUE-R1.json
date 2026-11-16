@@ -18,8 +18,8 @@
     "year": 2003,
     "phase": "YEAR_2003_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET64-YEAR2002-SOURCE-BOUNDED-REVIEW-20261116",
-    "next": "PET65: begin 2003 original PC official pet roster, CN year-of-monkey and Taiwan 5.0/6.0 original source-first with regional/version gates.",
+    "latest_partial_root_review": "PET65-2003-CN-WAEI-SIX-NAMED-CARD-PETS-TW1-SPR-20261116",
+    "next": "PET66: continue 2003 original TW 6.0 pet releases and authentic CN 2003 award results or client, then JP/KR official source audit.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -901,7 +901,19 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "partial_source_review_receipts": [
+        {
+          "id": "PET65-2003-CN-WAEI-SIX-NAMED-CARD-PETS-TW1-SPR-20261116",
+          "regions": [
+            "CN",
+            "TW"
+          ],
+          "report": "docs/continuity/STONEAGE-PET65-CN2003-WAEI-PETS-SOURCE-AUDIT-20261116.md",
+          "evidence_json": "research/recovered/STONEAGE-PET65-CN2003-WAEI-PET-PROMO-R1.json",
+          "year_not_closed": true
+        }
+      ]
     },
     {
       "year": 2004,
@@ -1976,6 +1988,26 @@
       "new_source_grade": "2002_DIRECTLY_READABLE_WAEI_OPERATOR_PRESS_RELEASE",
       "new_original_client_bytes": 0,
       "new_live_official_pet_proofs": 0,
+      "historical_pet_population_count": null
+    },
+    {
+      "id": "PET65-2003-CN-WAEI-SIX-NAMED-CARD-PETS-TW1-SPR-20261116",
+      "regions": [
+        "CN",
+        "TW",
+        "JP",
+        "KR",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET65-CN2003-WAEI-PETS-SOURCE-AUDIT-20261116.md",
+      "evidence_json": "research/recovered/STONEAGE-PET65-CN2003-WAEI-PET-PROMO-R1.json",
+      "year_frontier_before": 2003,
+      "year_frontier_after": 2003,
+      "year_not_closed": true,
+      "new_2003_operator_named_promotion_candidates": 6,
+      "old_TW1_client_exact_SPR_names_reused": 2,
+      "new_2003_client_bytes": 0,
+      "new_actual_live_pet_proofs": 0,
       "historical_pet_population_count": null
     }
   ],

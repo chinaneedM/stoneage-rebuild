@@ -209,3 +209,7 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## PET64 2026-11-16｜2002年五地区官方PET来源有界年审，游标进入2003
 
 [2002来源年审报告](continuity/STONEAGE-PET64-YEAR2002-SOURCE-BOUNDED-PET-AUDIT-20261116.md)／[五地区与重开缺口机读收据](../research/recovered/STONEAGE-PET64-YEAR2002-SOURCE-BOUNDED-AUDIT-R1.json)：新找到**2002-11-11可直接阅读的台湾华义企业署名《宠物日志包》新闻稿**，原文字眼称PET卡有机会抽中「**未开放新宠**」，故**不准当已实发新宠**；同时重放旧2002狼人商品、5.0三宠融合宣传，分别保留营销与真正原生宠物名单门槛。CN PET61–63当年产品/玩家主张有明确版本分轨，KR与JP原客户端仍缺，OTHER无可证独立来源；五地区均人口数UNKNOWN。新增2002原客户端0B、新同服发奖证据0；PET25/PET26的四个2002发行文档事件不是全球四物种。因当前材料有界复核完成，2002标 `SOURCE_BOUNDED_REVIEWED`、`historically_complete=false`，每区保留原件重开触发，**PET65从2003年**重新按官方版本推进。PET仍唯一模块，CURRENT完整原blob/Stage A与版权不变，不查付费二手盘。
+
+
+## PET65 2026-11-16｜2003华义六宠兑奖、两轮来吉卡、台服粉红人龙与旧TW1原SPR
+[PET65源限报告](continuity/STONEAGE-PET65-CN2003-WAEI-PETS-SOURCE-AUDIT-20261116.md)／[机读收据](../research/recovered/STONEAGE-PET65-CN2003-WAEI-PET-PROMO-R1.json)：2003-01-14蒙奇《疯狂原始人2.0》WGS联动原PET25旧源复用；2003-06-23同期华义文案逐名给出佩露夏、蒙奇、帖拉所伊朵、邦诺斯娜、卡伊霍恩、鲁拉奇斯六个随机兑奖宣传名，100%是商品宣传不是实服证据。07月首轮青龙/白虎/蒙奇/帖拉所伊朵各集卡条件独立；08月改制青龙400与蒙奇600仅**宣传名额**，不是已发1000只。03月台湾GNN粉红人龙「邦諾斯娜」只索引，原页403。原TW1认证相册重用帖拉所伊朵100374和卡伊霍恩100377完整SPR SHA，跨版本只证同字视觉候选。新2003原客户端0B、实服获奖新证明0、历史2003 PET25文档事件仍1、物种数UNKNOWN，2003继续NOT_YEAR_AUDITED，PET唯一，NEXT PET66。
