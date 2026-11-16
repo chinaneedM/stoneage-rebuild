@@ -18,6 +18,8 @@ on:
       - "tests/test_stoneage_pet40_early_sources.py"
       - "tests/test_stoneage_pet43_later_client_backfill.py"
       - "tests/test_stoneage_pet44_later_client_candidates.py"
+      - "tests/test_stoneage_pet46_tw10_album_visual.py"
+      - "research/recovered/STONEAGE-PET46-TW1-ALBUM-NAME-2D-CROSSWALK-R1.json"
       - "research/recovered/STONEAGE-PET44-LATER-CLIENT-PETFLAG1-GAP-CANDIDATES-R1.json"
       - "research/recovered/STONEAGE-PET43-LATER-CLIENT-SPR-BACKFILL-R1.json"
       - "research/recovered/STONEAGE-PET40-TW-JP-EARLY-OFFICIAL-SOURCE-BOUNDARIES-R1.json"
@@ -42,6 +44,8 @@ on:
       - "tests/test_stoneage_pet40_early_sources.py"
       - "tests/test_stoneage_pet43_later_client_backfill.py"
       - "tests/test_stoneage_pet44_later_client_candidates.py"
+      - "tests/test_stoneage_pet46_tw10_album_visual.py"
+      - "research/recovered/STONEAGE-PET46-TW1-ALBUM-NAME-2D-CROSSWALK-R1.json"
       - "research/recovered/STONEAGE-PET44-LATER-CLIENT-PETFLAG1-GAP-CANDIDATES-R1.json"
       - "research/recovered/STONEAGE-PET43-LATER-CLIENT-SPR-BACKFILL-R1.json"
       - "research/recovered/STONEAGE-PET40-TW-JP-EARLY-OFFICIAL-SOURCE-BOUNDARIES-R1.json"
@@ -71,6 +75,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet43_later_client_backfill
       - name: PET44 replay candidate graphic cohorts, R28 matches, duplicates, and official exclusion
         run: python -m unittest tests.test_stoneage_pet44_later_client_candidates
+      - name: PET46 original TW1 same-source album 124/124 exact SPR crosswalk
+        run: python -m unittest tests.test_stoneage_pet46_tw10_album_visual
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary

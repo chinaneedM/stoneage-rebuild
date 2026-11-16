@@ -1,0 +1,5012 @@
+{
+  "schema": "stoneage.pet46.tw1_retail_album_same_source_private_2d_crosswalk.r1",
+  "date": "2026-11-16",
+  "active_module": "PET",
+  "year_2000": "OPEN_NOT_YEAR_CLOSED",
+  "source_pins": [
+    {
+      "path": "research/recovered/STONEAGE-PET-MODULE-07-TW10-BATCH-PUBLIC-R1.json",
+      "git_blob": "0b5f81b41a642025ab53a12884638fdee887470e"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json",
+      "git_blob": "1aada81d7314769bf683b816cc5a8762c3bd9400"
+    }
+  ],
+  "source_original_TW1_private_archive_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+  "private_input_filename": "StoneAge-PET07-original-sprite-private-catalog.html",
+  "private_input_html_sha256": "58e8ee4ff5165ed2f61663d67ae1cd0a8183622fa3375c480232784bfce9dc76",
+  "private_output_filename": "StoneAge-PET46-TW1-original-pet-album-private.html",
+  "private_output_html_sha256": "321d366313dc30d71fe1f3aa0bb7f9feb63e5a6c1e0aa5411b4975adf9f3afe9",
+  "source_private_html_image_data_unchanged": true,
+  "source_private_html_animation_sequences_unchanged": true,
+  "private_asset_bytes_published_in_Git": false,
+  "private_viewer_reused_PNG_count": 2540,
+  "private_viewer_reused_source_sequences": 451,
+  "private_viewer_reused_frame_occurrences": 3817,
+  "private_chromium_render_verified": true,
+  "private_chromium_search_verified": true,
+  "source_album_table": {
+    "first_graphic": 100250,
+    "last_graphic": 100430,
+    "total_rows": 181,
+    "source_file_offset": 372568,
+    "source_table_sha256": "1fda43b69c9f0a19cf78f3f5b04c2bfe3e3c14c7abc80bd49582b7a31f76d35c"
+  },
+  "summary": {
+    "source_visual_SPR_groups": 130,
+    "named_original_client_local_album_groups": 124,
+    "same_original_SPR_number_index_sha_matches": 124,
+    "unnamed_original_SPR_groups": 6,
+    "unnamed_with_explicit_album_placeholder": 1,
+    "unnamed_outside_original_album_table_range": 5,
+    "existing_source_RD_blocks_previously_redecoded": 2176,
+    "new_original_pixels_decoded_now": 0,
+    "new_client_names_discovered_now": 0,
+    "new_official_live_pet_issuance_proofs": 0,
+    "global_official_species_total": null
+  },
+  "original_source_SPR_without_album_names": [
+    100015,
+    100018,
+    100401,
+    100432,
+    100451,
+    100454
+  ],
+  "candidate_records": [
+    {
+      "graphic_number": 100015,
+      "pet07_original_SPR_index": 15,
+      "pet07_original_whole_SPR_sha256": "5c0ee051075500b27707f13b3d57326b8719acf2b21a7b4cc654a05cb4236233",
+      "pet07_source_total_animations": 104,
+      "pet07_selected_source_frame_occurrences": 20,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          12,
+          "9202b36be26b45e4fe72502719c88d7f3143f0847cd7ef6077a08d47567f0471",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "450ebc4d2bb2c584363c7759369d7de3e6b4f70e7cbf7127f1de89e9ea556e4b",
+          600
+        ],
+        [
+          1,
+          0,
+          2,
+          "2224d97f9550a724047bbf76ca98b974ef45612371533b81c182472a7e3da4bd",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": null,
+      "client_original_album_row_sha256": null,
+      "client_original_album_row_file_offset": null,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "TW1_ORIGINAL_SPR_ONLY_NO_ALBUM_NAME",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100018,
+      "pet07_original_SPR_index": 18,
+      "pet07_original_whole_SPR_sha256": "450072691294679e510c0e58c764e8606a73bc35e7424e7edcee9492efd641af",
+      "pet07_source_total_animations": 104,
+      "pet07_selected_source_frame_occurrences": 20,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          12,
+          "6f2b69618c2abe91e25ffbd367257a82b78ebc6cb78526633abf735f2758df77",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "271b4730a05e807d1edfb97da603308598eb84d66b719e94f0739981d30c0c87",
+          600
+        ],
+        [
+          1,
+          0,
+          2,
+          "fcc1a964af926c3f4211387f3b22a10cdf1096ed3c696c137d87836189be6a6a",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": null,
+      "client_original_album_row_sha256": null,
+      "client_original_album_row_file_offset": null,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "TW1_ORIGINAL_SPR_ONLY_NO_ALBUM_NAME",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100250,
+      "pet07_original_SPR_index": 240,
+      "pet07_original_whole_SPR_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 19,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          9,
+          "d987dfc4df73cd6c66a40d97a5b307583b80cbe86bba8971746061fb12cbdde3",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "683541bd6f79171be4bcea1b2d70d36aa6e5f4b77376704ff9e80028e1d48725",
+          500
+        ],
+        [
+          1,
+          0,
+          4,
+          "39cf8d726c7d9e4a6d758f9bfe9e82acd0e059ce65aac1c0601d623b2cd83a64",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "烏力",
+      "client_original_album_row_sha256": "84702939e9e1ea6ae7dff51b2c3425faba28d549d17fcf45b520998016672d37",
+      "client_original_album_row_file_offset": 372568,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100251,
+      "pet07_original_SPR_index": 241,
+      "pet07_original_whole_SPR_sha256": "073278ba6ae1e623eea969deef11f99fd9be8b995af332506e830bd046c86764",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 19,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          9,
+          "9cb09f9cddf45f8da6fdf8f2fb51167b157d73ca8bc446f9b2a5bab9a06ae23c",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "2b7728dda6a4be74fbc21a2d3a73fb2eb9ef0a200a878d2df378caa652cdd5d9",
+          500
+        ],
+        [
+          1,
+          0,
+          4,
+          "0c09afc38255d85b07e241ffc09de931eb42989b3d43fe84a88daa4868a9c248",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "烏力烏力",
+      "client_original_album_row_sha256": "976d757d9699fdf3686f2ae3d71a7f8a3a01c0467d2c32fd84156d40d8eaf52a",
+      "client_original_album_row_file_offset": 372596,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100252,
+      "pet07_original_SPR_index": 242,
+      "pet07_original_whole_SPR_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 48,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          26,
+          "977a9aecf6369d2be2a9ba3836188561eb1bda28745745491d2aa41316c2e06d",
+          1400
+        ],
+        [
+          2,
+          0,
+          20,
+          "3575fbc312dc9581127232dfeb721aa59107203b815231367e6a67af5208dfeb",
+          1200
+        ],
+        [
+          1,
+          0,
+          2,
+          "931275ffd9e155a7e58e6373d8e8315709f527af2a1eedd08e07d05c4e345b44",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 20,
+      "client_original_album_name": "烏力斯坦",
+      "client_original_album_row_sha256": "22aabf582cd070d55d7b5cfdac707eb10161a1ba7d0577fcb01958662244b10f",
+      "client_original_album_row_file_offset": 372624,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100253,
+      "pet07_original_SPR_index": 243,
+      "pet07_original_whole_SPR_sha256": "9796944a8c54a33832a8d3a89349bbdd86629fdc437d21fb163645d8c253802b",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 19,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          9,
+          "6281c7cd7540d95a78e6ea1ae7dbc917d8207da52bf8803990ab1ad04374b458",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "69111643159195d71308066ed5fb3589d97b7e19a91a6dfddde561aa142c0b09",
+          500
+        ],
+        [
+          1,
+          0,
+          4,
+          "e47978d0ac89dd738c998ba24b596264a0ccf68effe7d7c4de086c630ec4f0a2",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "烏力布魯",
+      "client_original_album_row_sha256": "6e1505a884dc297b7235ea009dfd835ea9bfb43268e8005b0f1a0aede3b163bb",
+      "client_original_album_row_file_offset": 372652,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100254,
+      "pet07_original_SPR_index": 244,
+      "pet07_original_whole_SPR_sha256": "764763f8dba2b73de6849f25d55fecdb5aac2433e90a93255a58b7ce2db184a7",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 19,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          9,
+          "899975fa2359831aa9e1c629960d844d432a4bcff52118eaed2b37b070acf691",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "3409692743fc9f4b39dcd812e928951e121792380ac19c370eaf08dbe0133ae3",
+          1000
+        ],
+        [
+          1,
+          0,
+          4,
+          "bb63b485473fb8de2b2c2bc873f39941279356294fc03961fe177c8bf2c6fad9",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "布比",
+      "client_original_album_row_sha256": "64a24643d520ac140fde1d8c2abe83089ab9a191099733a18c680bcce741f872",
+      "client_original_album_row_file_offset": 372680,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100255,
+      "pet07_original_SPR_index": 245,
+      "pet07_original_whole_SPR_sha256": "afdb53a9f70aa8b0cf3ef51ee201d47fa8acedacc1616fb3b12c0ccc71adc044",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 19,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          9,
+          "e942d18ef037a55c1dc07f3ac57c943d75ebfbe30d5f7b45eeade6d783ee6aeb",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "74ec3ef6596eaeba9084468b95c2a60c527fe77493cf806d326f76f0f3466183",
+          1000
+        ],
+        [
+          1,
+          0,
+          4,
+          "89630cf4b8e7eeabaf2f202a4b6ea9d3f08cafe15cd62214ee4659d51a703fa8",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "金布伊",
+      "client_original_album_row_sha256": "67211a13e9fdabe93e4ab8cef6bf8e54d51b29b34091eee2cd2b60b34c39370a",
+      "client_original_album_row_file_offset": 372708,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100256,
+      "pet07_original_SPR_index": 246,
+      "pet07_original_whole_SPR_sha256": "9562d4d766c128d0342c35529c6cedbbc1efde8dddf14fa083645c1629ceb990",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 19,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          9,
+          "59efe58d06a044ee033b73c01bc8e52d6c0b9ef0b16c431a8ac87b47b278f288",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "1617d7743847331906217c97356f797bd261d860b57e237a0bc977c1c0e3171a",
+          1000
+        ],
+        [
+          1,
+          0,
+          4,
+          "675220c4a1df2851b08582aece1ec56700fd576d9e551d5745728efe370d6fff",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "布伊",
+      "client_original_album_row_sha256": "f2f6014eeaf313ddfdb57311cbcf86e8b545b34605e71e62a9d317b0c577a5a0",
+      "client_original_album_row_file_offset": 372736,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100257,
+      "pet07_original_SPR_index": 247,
+      "pet07_original_whole_SPR_sha256": "931bb3a1e1455c403f25b8b836028d2787613fc35f237edad0adab93946e06cc",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 19,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          9,
+          "4aabc1d77754768dfb97e58095d09e43f4930cc77cde46d80738ad9dc2db98c3",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "6606ec35727d164478680ebced2e40081296f4847465068622f5e28fa8490806",
+          1000
+        ],
+        [
+          1,
+          0,
+          4,
+          "483e3dd0c5508f6f36fd429f76ed235d5fa08c14e4714cdb2828a30e74e06e28",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "布伊比",
+      "client_original_album_row_sha256": "19310eba6fffae1c341dd8629ca391c14189fd143f948638ff4afdadc45edd63",
+      "client_original_album_row_file_offset": 372764,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100258,
+      "pet07_original_SPR_index": 248,
+      "pet07_original_whole_SPR_sha256": "098d92f9ea74a345c43680ce6e5c2f4add8772bb37a3c90c485f6c76f4c5cc08",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 19,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          9,
+          "19374acc5e25ba14b366de32b53e2a2861d31fdc74ac8798bca22e0546142d30",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "83ebf5a8b5115b214c637a2bc13129f3be6aade5168e96a04673738c329840dd",
+          1000
+        ],
+        [
+          1,
+          0,
+          4,
+          "da354a92761cd9c27f1ea5e064279c563b37950e275eadf73b27159b78aff5d3",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "卡布伊",
+      "client_original_album_row_sha256": "a824badce8e4944885ced7c29f4d5e6240363ff6b9d3fe1e89fd6ba6d0e58b1b",
+      "client_original_album_row_file_offset": 372792,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100259,
+      "pet07_original_SPR_index": 249,
+      "pet07_original_whole_SPR_sha256": "eb1be1d64b6e23a5302c5298d7a5d55a6466e0974bc2b4568c988349bb66c4e1",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 19,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          10,
+          "d4ca0e6596f60e877dd5a62efaf0edaba806d189d5d6159671d4b0afa882050f",
+          600
+        ],
+        [
+          2,
+          0,
+          7,
+          "5e01844425a7c1f1a78a65ccf752c01bff5277d8121fd157b56c2cfc12e19ac5",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "08d27c36b189513e066608f0e14fd591d4c3b9d97aac581780f7975dd32f7e7a",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 17,
+      "client_original_album_name": "加美",
+      "client_original_album_row_sha256": "8ce86a8d6e921f216aca8fca2da13ecb0bc05f5a945f75962c92e9a2c7140efc",
+      "client_original_album_row_file_offset": 372820,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100260,
+      "pet07_original_SPR_index": 250,
+      "pet07_original_whole_SPR_sha256": "d93a146e8dc07e5e786ab2a010133b291b36dd733004321f16ada5ed02a21743",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 19,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          10,
+          "85f7eae9d116e87813a44a7877616c61d434ea3f1f95fa3eb1ccc52b9f019f3a",
+          600
+        ],
+        [
+          2,
+          0,
+          7,
+          "e7b0e2f23e19c394a4b33423cb0129df6277088a699b5b0a88a4ea4c90bc7802",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "9bdfba37f993dc983ca2e7dde188cc28c6daed0136ef8e6b3af073af2f6c4d75",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 17,
+      "client_original_album_name": "加比",
+      "client_original_album_row_sha256": "5cee4fe098b72905fe670ab2e3bb6d86c7276508b8ad1cc878b45a2be66aef36",
+      "client_original_album_row_file_offset": 372848,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100261,
+      "pet07_original_SPR_index": 251,
+      "pet07_original_whole_SPR_sha256": "ccc39b539666ccd42c6b0d8de14dc0784981bd96a69f527f3ec5335b8ad62c08",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 19,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          10,
+          "fa7722092411ea1212f19a792e525af82aef4feeecea7828308b6f323b8971e8",
+          600
+        ],
+        [
+          2,
+          0,
+          7,
+          "4c50208fb41f23b76eebdbf1e7521bcbe1682db9f8a392089806e45ef5e38ecc",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "a7853035fec03cde463799b509890576a8ca301116540e411f641fa342f984ee",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 17,
+      "client_original_album_name": "加比奧",
+      "client_original_album_row_sha256": "8acbb006c8cf95e61f2d0e5108e66c930eea92f2d725f8425bfda42e5f3ee8b5",
+      "client_original_album_row_file_offset": 372876,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100262,
+      "pet07_original_SPR_index": 252,
+      "pet07_original_whole_SPR_sha256": "5d01c9a4466f26b1f2ec79f5a3a84621796c0e25f2aa273687d7863a1d73b8e0",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 19,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          10,
+          "c983cd63bd22d8466c53d637eb4f7d8e305774564f6c68b4073b9d7939db6fb4",
+          600
+        ],
+        [
+          2,
+          0,
+          7,
+          "48ed6fe179558cb80b881233b898020a05c55bc6db11653fcb4b7ae7eee1df6f",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "351ae3b0d8f350fef8c52d2dcdef249065221148ba2d13d09a0d3a0c4c92e6a3",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 17,
+      "client_original_album_name": "加斯",
+      "client_original_album_row_sha256": "49141d5c6b361e1ddb0ab6d46a3a17a07708b6d2721405eb7956e27615541fae",
+      "client_original_album_row_file_offset": 372904,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100263,
+      "pet07_original_SPR_index": 253,
+      "pet07_original_whole_SPR_sha256": "15db31dd6681ea540fb1e89fe792eb686fd4eb4a382d95518d08462a4f472ee6",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 22,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          14,
+          "6968ed4c7fd36f1934c4313cce0a76fb19308edf006b9b472ad2be462912095b",
+          1200
+        ],
+        [
+          2,
+          0,
+          6,
+          "cb4d558c4911290347addcd80b0b6d5f47f8ebd44bbc56fa323e9fa8bbd894c6",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "ef44c5fd9a5cb407152754aa129f1b087ab74a7693874aaa708b3e23fe94247e",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 22,
+      "client_original_album_name": "烏寶寶",
+      "client_original_album_row_sha256": "3c693dc69b20f3d600d03c7cf806bd61374ee645dcc90fd495527a5f9b234dda",
+      "client_original_album_row_file_offset": 372932,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100264,
+      "pet07_original_SPR_index": 254,
+      "pet07_original_whole_SPR_sha256": "b4cc246fbecba64075fd1ee55e9b1a8e3723c42c960927230a99c1ba5c640b0e",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 22,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          14,
+          "e53dc1e042c21f48907f98c6e125adec3c41537119d996c3d87a99542b2acaf9",
+          1200
+        ],
+        [
+          2,
+          0,
+          6,
+          "281dbf7b8b3ae2f41250ecd8fd5fbe4a378816d728b5494379b87f6f9d000755",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "7cd0047af2253505c3259949c9e5bef2bce4ef8417afe2ab168097a67877d171",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 22,
+      "client_original_album_name": "威威",
+      "client_original_album_row_sha256": "000e37913b379a6cbe184594f7396b9a694c662ef824fa09d563972e172305ae",
+      "client_original_album_row_file_offset": 372960,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100265,
+      "pet07_original_SPR_index": 255,
+      "pet07_original_whole_SPR_sha256": "1e9b11eccbe88525bc55eaa613bc88ea18f21b6c3587a26adee89fed2ad12b2b",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 22,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          14,
+          "5e6b4d53551806746b3c7a299955b0e5ab78d2c578ade72a880645abda083ffb",
+          1200
+        ],
+        [
+          2,
+          0,
+          6,
+          "2a07159c7602cc8b0a5c4f602f60ca32bf21357cc171160f0bc6645c17723ddf",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "73c9c864c5f980992c89f4bb73b6538153db85668fc5eb37323c00544f96e8ce",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 22,
+      "client_original_album_name": "烏卡魯",
+      "client_original_album_row_sha256": "e57cfdf81cf4faa2de2633cb678cb2033517a02e24b9d1f7925d300a083b5852",
+      "client_original_album_row_file_offset": 372988,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100266,
+      "pet07_original_SPR_index": 256,
+      "pet07_original_whole_SPR_sha256": "fad067e8ee01a23c8305a3a4a2b72b7c07438694cde1bb4de3f5fceeda678777",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 22,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          14,
+          "776d0198f8cddb1a486cbea9873073d91ee34a06d1bef7e160922bf110a4b9e6",
+          1200
+        ],
+        [
+          2,
+          0,
+          6,
+          "cbdf08a256bddf4af5dac43f2f05938348113fc29218c7f03254170f23b627c8",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "db57f90d4b29c61aca0f72b20b0e0c6b427e6d8433580a72be3daae0a6a09276",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 22,
+      "client_original_album_name": "威伯",
+      "client_original_album_row_sha256": "dc4125d7a7e7a3b953c6924cfd666475ee7d03fdfffc7489c8538e6bdf565290",
+      "client_original_album_row_file_offset": 373016,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100267,
+      "pet07_original_SPR_index": 257,
+      "pet07_original_whole_SPR_sha256": "73091db2f79c4f92b1d30221b5c9e63b01bd793c86f235d5160ea172830d6452",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 22,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "5fffaadb10f75d85a43ce6caacaae58c536d4fe1baf3dafbf3108f56ebe61092",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "5958ff321329b2d0a76285541ff48c3e27a7a39db228bbfa5b37a0648615a380",
+          1000
+        ],
+        [
+          1,
+          0,
+          8,
+          "11ba6545d58e47d611438e0e74a1dd236bdc16f1ae1a5750aacf9ecfb31db48c",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "貝洛恩",
+      "client_original_album_row_sha256": "a551079c1127fa9daa4499270cf9ffff250cfd92c66c7bd04e2c6d556047964e",
+      "client_original_album_row_file_offset": 373044,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100268,
+      "pet07_original_SPR_index": 258,
+      "pet07_original_whole_SPR_sha256": "ae13018b2e80bb5caa801002461dfc9dbf0c9003a7055571924d846d5e9f85d7",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 22,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "65e7d7eab11bd2d510ea3085eb962ce98c68ff99b8baa039911ac2d75ef35091",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "92829b616db3815965a02687d8566b955a9b0d0a1cb57a207eb2b9f47adbfdfc",
+          1000
+        ],
+        [
+          1,
+          0,
+          8,
+          "9b120eff8a581cce1f093cc3ff8d0e75343dcce8f0ed14a2ab33a12a6389733a",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "貝洛洛克",
+      "client_original_album_row_sha256": "5896c4b50916167c05862107f6ca4afad3f6bcdcb194334460637b17515a45c9",
+      "client_original_album_row_file_offset": 373072,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100269,
+      "pet07_original_SPR_index": 259,
+      "pet07_original_whole_SPR_sha256": "8249ab3abf570c44a3302afdc849c01b38e0166d3711defbc8ffb36b1c96ac8e",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 22,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "21954d47cbf309976713b238f911aff797dbd7fd854aa1d59887149bd9a705f2",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "80aaa4a8e432124c4ee1ad8c53e37d96a0d2056eec490df76883a7f3142f280b",
+          1000
+        ],
+        [
+          1,
+          0,
+          8,
+          "e3da88ebeafaf5dde8a467532a5c7e45628353a25582007944c7f015ae6e9e70",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "貝洛寶克爾",
+      "client_original_album_row_sha256": "2896ea75a36dc3ee6f57e319171acb2e143b59400b0fb91c4f1ab4dc07f862a3",
+      "client_original_album_row_file_offset": 373100,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100270,
+      "pet07_original_SPR_index": 260,
+      "pet07_original_whole_SPR_sha256": "113f37c6eb3cee48f75d3768e878b15f3924f24ae5c9270200bd5d7c6f176cec",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 34,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          20,
+          "1f2d5190cfb2fc4373979a874bf05343f35f025e9878474609f9669ec2d368be",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "f4d9ee3d04b261492339f14877d90668d6be9d321d1582346969ad6564bd0442",
+          1000
+        ],
+        [
+          1,
+          0,
+          8,
+          "88f69faca7750530025f915072fea3e640f4010109834af9f3bc21afb73a0d32",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "貝洛寶利",
+      "client_original_album_row_sha256": "0d1cd3adb5dfd86e52a9e0b7e2fdde54c52ba76b6b1436f89bf753ec64ea1e10",
+      "client_original_album_row_file_offset": 373128,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100271,
+      "pet07_original_SPR_index": 261,
+      "pet07_original_whole_SPR_sha256": "9d82c6429e1d8c7cd9949d969c1728536942094e77ae1cfa78aee8b756b2eaa9",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "1c55be5e2b272d3f7a6b115358495d3eff07e5bdfbf38cf365f313cff82a6c84",
+          800
+        ],
+        [
+          2,
+          0,
+          6,
+          "3fc7b8da726aa2e76dfe231c995387ec1060cc67eed5a6f171f136c5fff910e7",
+          600
+        ],
+        [
+          1,
+          0,
+          2,
+          "a44596501f6bf0cb552ec44da5228f835a793347765dca4797e0d42f25467d19",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "龜之盾",
+      "client_original_album_row_sha256": "a9044dbb143285deb9ff7954d7204db2c49da5fac25a07267d8a2fbcbdcc2617",
+      "client_original_album_row_file_offset": 373156,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100272,
+      "pet07_original_SPR_index": 262,
+      "pet07_original_whole_SPR_sha256": "f2de589e39b12e5c4ed1c346818ae71fefbc2a6c692bce39e6115c9768566822",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "eb1f40d115f722a6b117d1e572c6244583af23115ee2fda5300d79e0dca0112e",
+          800
+        ],
+        [
+          2,
+          0,
+          6,
+          "7d019de9f9829fe8e6cd52fdd94308cf711c2dc02b9250cb3139b0ab21f6a1b6",
+          600
+        ],
+        [
+          1,
+          0,
+          2,
+          "1e5920031efa72208932f5faf69cd38e6a7acd1a483d1a04a80735dca63ee0b3",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "綠龜",
+      "client_original_album_row_sha256": "53f21bf9e8951036de5aeca0ebe9fc326997a1017c1d212e9865bbcef6ce117c",
+      "client_original_album_row_file_offset": 373184,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100273,
+      "pet07_original_SPR_index": 263,
+      "pet07_original_whole_SPR_sha256": "c1efda8a7444a4d2da3c2a9334ce276d1b7098dc9142c2c75439ac5c24470dac",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "c4e698da766b8bb72e81822dceaffe80c1a3a93052bea43bf5e2a6918ca26310",
+          800
+        ],
+        [
+          2,
+          0,
+          6,
+          "2e1095f5c6fb99eb64545cc71b73a622a28eeb46c19dedf3730e96c29f7c28ef",
+          600
+        ],
+        [
+          1,
+          0,
+          2,
+          "1fd415d2c6c88683189e8ce92330fc4b657b6911dff167bd16038b9247f8d9e5",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "卡梅蘭恩",
+      "client_original_album_row_sha256": "c8bcbc87e269b7789a02e1c1af3eea6827fc76e814b85fccf148c05cfd47d132",
+      "client_original_album_row_file_offset": 373212,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100274,
+      "pet07_original_SPR_index": 264,
+      "pet07_original_whole_SPR_sha256": "12ec2cffab263c6b14f9f35e3a4f6dcf731d4c7aebeda2440f0b5bc207618bd2",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "5bb2b3c99974d2ee0ee2530f226f0bbcbfdcbb424dbee08285aac1cd2481d246",
+          800
+        ],
+        [
+          2,
+          0,
+          6,
+          "c0d4947fbfedb7d68a7ab5879f817592c52ae8bf3ae04318b744c21fbcd75d27",
+          600
+        ],
+        [
+          1,
+          0,
+          2,
+          "02fd1ca568163d758b5939fd6fb5f45acfbbccca4f8a154c96fc1d56025a5907",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "石龜",
+      "client_original_album_row_sha256": "ae2b867b4a19dfbbfe9c852f61354b4e9d2fb2640b5233dfa61e046b6b176c70",
+      "client_original_album_row_file_offset": 373240,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100275,
+      "pet07_original_SPR_index": 265,
+      "pet07_original_whole_SPR_sha256": "5174e6e37c46fae81c7a3f29f9ebff0390886d661f61eb666aadf0a4eecab6c5",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 17,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "e7430ffa3ae9fc820762fbc1caf2c4cd08ddeec7c3642107ecbe4524fe6465cc",
+          750
+        ],
+        [
+          2,
+          0,
+          6,
+          "488af2cfd22d6aaa30952ac41d56c70972812d84a05adabd26efb3326b4fd952",
+          1000
+        ],
+        [
+          1,
+          0,
+          3,
+          "0ea8250046235f312f9cc979524277bb6921880c8c224b79a93dc767e8f43970",
+          300
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 17,
+      "client_original_album_name": "阿哥亞",
+      "client_original_album_row_sha256": "d5ad0ba694bdb136aa1e459e54975baa43cfe46e13c923c7068e30b859b2ec2f",
+      "client_original_album_row_file_offset": 373268,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100276,
+      "pet07_original_SPR_index": 266,
+      "pet07_original_whole_SPR_sha256": "f323a47f5dba7c57cdaf05c1f3521514446a59a61827c670ee8bdf752732709d",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 17,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "5517b43671ac86c2bc4b442dbd0cfb7bd483315a064d42f34ebab1faa37fe5f5",
+          750
+        ],
+        [
+          2,
+          0,
+          6,
+          "b1561656db140dd91ae69e71b77d0e620e5551188df79a00cd441494ad26610e",
+          1000
+        ],
+        [
+          1,
+          0,
+          3,
+          "86b8a9738b9e8e8151cd87845b74d1972835aa00d028d64d197810d85eb45317",
+          300
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 17,
+      "client_original_album_name": "尼可斯",
+      "client_original_album_row_sha256": "2832bd1cc3a964fe382e58643cedb34a6d04079bbe64abc06065b10249df4cb8",
+      "client_original_album_row_file_offset": 373296,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100277,
+      "pet07_original_SPR_index": 267,
+      "pet07_original_whole_SPR_sha256": "61e7aa1eb5029e6e87f37be5e0ec3b2d680fb2b7ad2760d5828bf81785b905b7",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 18,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "92f4041cb64df5eaebc31e4f2e71ab84b32d37c13fa202f3b25f2bbeae987cf4",
+          1000
+        ],
+        [
+          2,
+          0,
+          7,
+          "7b57e31cd00094e3302ac737f1f19c1aa61eca75ba40fef18dc9689a2ec84b7c",
+          1000
+        ],
+        [
+          1,
+          0,
+          3,
+          "a7e729f9035678a2ca4976abd1d7b8352416ecd2665c71048f7150071a518698",
+          300
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 17,
+      "client_original_album_name": "特洛昆",
+      "client_original_album_row_sha256": "54cb9cd15466a1a2cadd650372f18b6705becd7e440eb444e7669ea6a08897ed",
+      "client_original_album_row_file_offset": 373324,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100278,
+      "pet07_original_SPR_index": 268,
+      "pet07_original_whole_SPR_sha256": "c4d19f9248cb21fa8123eb7a997e3dd16314d46b9a8b63389092396f0ab233ce",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 26,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          16,
+          "69a234f03a15f31fbdf71987c5758941d5af611920c6c39c1e6cd25dc8301741",
+          1000
+        ],
+        [
+          2,
+          0,
+          7,
+          "9d897ea18ed956ee927ff62cb4abc80374559dd6de73fada9ad3221635ded49c",
+          1000
+        ],
+        [
+          1,
+          0,
+          3,
+          "5ef9679a72ece08a28c465aac7568ab0e67104d884e6d62d8126e00cd19f2aa6",
+          300
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 17,
+      "client_original_album_name": "達克爾",
+      "client_original_album_row_sha256": "02e7d46f11375f7883ae93a1a4a993359e8c0de61d11420f2082d5059b34ba52",
+      "client_original_album_row_file_offset": 373352,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100279,
+      "pet07_original_SPR_index": 269,
+      "pet07_original_whole_SPR_sha256": "81414567556249573853ac844309a2b2cdcdc7d93ec36b7a5cede1ca1ec403ff",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 17,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          9,
+          "30c06b4ffe034f91a17427fd86a02ebe2a858ff0a4866bdc24be59bc5d3ea0a2",
+          800
+        ],
+        [
+          2,
+          0,
+          6,
+          "8d9217c4b29fb7aabb50eefabefcbaa80632dc64e3140644677396af1a846ae1",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "1a0412b5bf1334aad8e5f0448d88bc00c56a1b83021ab2e7e3ba28a595b17e28",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "拉奇魯哥",
+      "client_original_album_row_sha256": "86354db96f31d71172dac73d2bc26de099c18704baee08343790b843d3a86bef",
+      "client_original_album_row_file_offset": 373380,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100280,
+      "pet07_original_SPR_index": 270,
+      "pet07_original_whole_SPR_sha256": "d2e12702aacf131e513a56a752be544b69256e17928c4ba041e816f0dc162198",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 17,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          9,
+          "fa746cc23e60b98769086ce9209d7d88a57cd96e0d005ef1e41f95364138ad87",
+          800
+        ],
+        [
+          2,
+          0,
+          6,
+          "aae92e7c47ecf8fe373401f5548d0d207e47ebe93e592608ce8e73552969569c",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "2c9a9ca464ddb981c21d748441b3f8bf982de1d81bfa1154272ab4f8616bb1bd",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "呼拔拔",
+      "client_original_album_row_sha256": "1d13cf34e871cf617975e213daed0e73220bfcb71818b5e30565014813a6b37f",
+      "client_original_album_row_file_offset": 373408,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100281,
+      "pet07_original_SPR_index": 271,
+      "pet07_original_whole_SPR_sha256": "329088eddcbe6718dc519d4cbce3027131af1549ee63d2aaaf1c3a77482b69e0",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 17,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          9,
+          "932a5aac7777f23d7a6bbb62d568129180fba6ea6ad5d8b9599d6934e31832ce",
+          800
+        ],
+        [
+          2,
+          0,
+          6,
+          "c5448834416ce0f75aef768e533b2d1fe5e7ca0d3a90cd5209f01850a3042dff",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "3df0a03fffe9290c7ca2f480818d32491ea95e0b628c64d938efa23a6190b1d8",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "多薩金格",
+      "client_original_album_row_sha256": "db70b9605869d3f877f2bee8b5acaeca6f2495920174cea0c59f3f52a815e73c",
+      "client_original_album_row_file_offset": 373436,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100282,
+      "pet07_original_SPR_index": 272,
+      "pet07_original_whole_SPR_sha256": "72ba10b44c0bb90cb6c52eb5348ab86eaeecac5758fedea722788435407ccdfa",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 17,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          9,
+          "58cb33c7f54d62e7896efd50090d3be8cc1e18c8d412a7702fa1aedbee0cfeba",
+          800
+        ],
+        [
+          2,
+          0,
+          6,
+          "c96434f63a73bdb8bab79c7d20ffec256ebf024acafb06388a18239472b51666",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "a160a573061040aa0e6f3b71931656c90919386748556ce84635be7fe6f13f94",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "魯尼帖斯",
+      "client_original_album_row_sha256": "d1f059cc7a582a68f1595d9a53058a84755c987c79f77fb6ef9793e3758f15d1",
+      "client_original_album_row_file_offset": 373464,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100283,
+      "pet07_original_SPR_index": 273,
+      "pet07_original_whole_SPR_sha256": "1d9f67eb04bb39f0ca57f5df80514eefff54228ff7673f17b3ce7763467ae77b",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 48,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          35,
+          "097e13379608b1f5dc83feda0401eb444cc9f2e9a81fe49523c609692e5ff119",
+          1500
+        ],
+        [
+          2,
+          0,
+          10,
+          "7c95982e0770b42b0c8903beb916aef45db4a20a5fafacaa5a368edad34d7ed4",
+          1500
+        ],
+        [
+          1,
+          0,
+          3,
+          "d203dd0bff47413d2819c5aebc207fba059e3d4b3d169e9c7dfb83b23d4e1f54",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 24,
+      "client_original_album_name": "卡達魯卡斯",
+      "client_original_album_row_sha256": "5749886d8f11e17471855d24583e64e14740c2476bb287a3a58e13dd2c63bdc0",
+      "client_original_album_row_file_offset": 373492,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100284,
+      "pet07_original_SPR_index": 274,
+      "pet07_original_whole_SPR_sha256": "0359614436b28986877ca49e3f91fdf247257f351d451121315b506e346ea1c0",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 48,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          35,
+          "b9d105ec4f50d9f16f44f0fbac6181d045a30dc5e08fa75e2576c0ebaba9e953",
+          1500
+        ],
+        [
+          2,
+          0,
+          10,
+          "9c5a70f1badfba4c4b26ff006756cac1d6f1d4722bf65a2387bf18d6ced61d1d",
+          1500
+        ],
+        [
+          1,
+          0,
+          3,
+          "9a0bec4da78d817b480d539d65e61e2439ac2307b312f1a6f02d01bed0bdef65",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 24,
+      "client_original_album_name": "柯伊達",
+      "client_original_album_row_sha256": "05f8fb5e77392920a316d4f619f423f796cf8ebeac301d6c326035c1d91acd1b",
+      "client_original_album_row_file_offset": 373520,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100285,
+      "pet07_original_SPR_index": 275,
+      "pet07_original_whole_SPR_sha256": "2410c08290b27200cb9c077d245abd30a49c3d12920917ec1b7439ac5f4cd3eb",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 48,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          35,
+          "1277e63035285ad912f8ddb8a2d1fc097d55b23a119da2bbae85166215cf30e8",
+          1500
+        ],
+        [
+          2,
+          0,
+          10,
+          "432be3076f8fc6d85ca97c761e54af66a3e3254d5ac1ad4117b80acbe76ba182",
+          1500
+        ],
+        [
+          1,
+          0,
+          3,
+          "10aba6d43154a3045ec1c6106b02cd48858d9f1665f2b57bd1fa07f781d85d99",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 24,
+      "client_original_album_name": "柯洛加斯",
+      "client_original_album_row_sha256": "6bbfbf9352c824d3e3ce76756e7541a3c12efdf8d46be4988915e42be13e25d3",
+      "client_original_album_row_file_offset": 373548,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100286,
+      "pet07_original_SPR_index": 276,
+      "pet07_original_whole_SPR_sha256": "585ee0e409e36111e411597dcc11b7a1d2f49018b8de380a2238e64cbfd317d7",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 48,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          35,
+          "300b107c715dc37a274473f2a75c36a6e1dacbd31d258a9f23c8429b7e7b1a44",
+          1500
+        ],
+        [
+          2,
+          0,
+          10,
+          "e65f9f139b9b49981fa7e99678dee846f15d0144b50e0f6626ecd76d921468ca",
+          1500
+        ],
+        [
+          1,
+          0,
+          3,
+          "0705a291364af8ff6b91bac5991dfc88d7af701883fc09a7becbc3de651f2db8",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 24,
+      "client_original_album_name": "洛奇安",
+      "client_original_album_row_sha256": "b108080d8091e36265b74bfcfbb49acb920d978c3defa0e546424ba04e2a149f",
+      "client_original_album_row_file_offset": 373576,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100287,
+      "pet07_original_SPR_index": 277,
+      "pet07_original_whole_SPR_sha256": "ef9b8508b2df8eae3865d279831ef78ff75ae3e8f5465b88211c7a8f7acfcc8a",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 23,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "596c8d766721d47333cc4a24b9ccc670c1441580876cec76cccd1777b43629fb",
+          1200
+        ],
+        [
+          2,
+          0,
+          13,
+          "e043c9ceb91e898025bb6bafacc028a512ba40023ce9c9871c5e683cdcd4a053",
+          1500
+        ],
+        [
+          1,
+          0,
+          2,
+          "97520db7d3a16f603c3c1e95db5357402f0a8b25b944a08946af84e2c77f36f9",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "利則諾頓",
+      "client_original_album_row_sha256": "96796058e5243eee8fe1cd61631e91473de1864a66cdc434fe974ebd3abbf248",
+      "client_original_album_row_file_offset": 373604,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100288,
+      "pet07_original_SPR_index": 278,
+      "pet07_original_whole_SPR_sha256": "9668ac38f750d8a0d7d6022d46df8593e107fb6a37d465202466258cd53bf64d",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 27,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          12,
+          "19b61e58e907052d55bf7064359e59b6da99cbfd1fd6eb4718871d67e0048230",
+          1200
+        ],
+        [
+          2,
+          0,
+          13,
+          "5af1854a39aba5eb7cdad79c5a5199108d856963c4b38780ef7b6c7afc70d46a",
+          1500
+        ],
+        [
+          1,
+          0,
+          2,
+          "28ea534483b57f9405d68b07faab8e229e3e055aaa677f270e1ebbde78c6f74f",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 19,
+      "client_original_album_name": "揚奇洛斯",
+      "client_original_album_row_sha256": "a327fa766a525120ef7b3b0dd48b84251ae2c84cf9efce278e60f942a09b90fe",
+      "client_original_album_row_file_offset": 373632,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100289,
+      "pet07_original_SPR_index": 279,
+      "pet07_original_whole_SPR_sha256": "a7ca74c4d9b9cdf8992ff5dbe2692dfc3a006bd73d797c7b05799cbccbe451ec",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 27,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          12,
+          "67ef01efb7c509ac19d1b6b837a8db864d0a9498d0ed2de9dc21c5967cdf4384",
+          1200
+        ],
+        [
+          2,
+          0,
+          13,
+          "46c0f2a5ed81de857d7ff36513b9b416787e58894671f14df232e8cb1d2341b3",
+          1500
+        ],
+        [
+          1,
+          0,
+          2,
+          "494166e7db2a5501813e1ac16090c6fee1fa8210a59eb74f552497fdc5f2e8ce",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 19,
+      "client_original_album_name": "邦浦洛斯",
+      "client_original_album_row_sha256": "fc639bb9a9e70fd21ee0b13d2a74ec022b493a385b7210b6d570c4c799e3253b",
+      "client_original_album_row_file_offset": 373660,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100290,
+      "pet07_original_SPR_index": 280,
+      "pet07_original_whole_SPR_sha256": "b8a07e6aaad3f273008477ee0563499115f11ac7ec1714f0fa09855cfc84e978",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 23,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "7ce60f6e1fc82b54dbcd6f853510fa33f52f4632b63ae90ae176c2227420f3a5",
+          1200
+        ],
+        [
+          2,
+          0,
+          13,
+          "df8ff048d884cfbfa583fe11151f928e3fa59568b3bed5688cd35cce94128e9a",
+          1500
+        ],
+        [
+          1,
+          0,
+          2,
+          "318f209f325472abade9d465e53fb0219ea3b3f7783d4c715a91e3ebfdb53fd1",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "邦奇諾",
+      "client_original_album_row_sha256": "dd772d306edbb40fe5f032914b9a7e835cfc1f5722df643ef3d68c8dbbb407a9",
+      "client_original_album_row_file_offset": 373688,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100291,
+      "pet07_original_SPR_index": 281,
+      "pet07_original_whole_SPR_sha256": "533993d77c3b4c06ab82dbe3484330a59da9c5b6822411dc03189b975b815976",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 43,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          30,
+          "8139d4188a9b66f53041bb309852c5f8b1255219a69c0b1e352958a8d1ff9d98",
+          1500
+        ],
+        [
+          2,
+          0,
+          11,
+          "50e88870c8cfec4a51d0e2561d96655621d4f0415d6939c0395eecf2fc95245e",
+          1200
+        ],
+        [
+          1,
+          0,
+          2,
+          "03377fc2e10bf11ff5b4d066efec42d6b684132f26ad97579e8c24ac67918ec9",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "克雷爾",
+      "client_original_album_row_sha256": "6258000272a582ced4c9ecb356c73762d4bf958ae1d79a793f89ffcd17b5af82",
+      "client_original_album_row_file_offset": 373716,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100292,
+      "pet07_original_SPR_index": 282,
+      "pet07_original_whole_SPR_sha256": "1f7b960aebced3cc35cb1aa037c2e178584ae67de7673241a023449a7c9614bb",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 43,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          30,
+          "20b53e930a22ee4878c4f305565e378af696d53ba5540e637a2a2833c770b423",
+          1500
+        ],
+        [
+          2,
+          0,
+          11,
+          "cb46f1f77166e46ec99b9b3d7055849edddf10214338f038a37a1b52ffb4a9db",
+          1200
+        ],
+        [
+          1,
+          0,
+          2,
+          "6208d3f9a0c39c0a0f48c6533fdeed25479265ebcb013cc6f0ce2f0858ceb7bc",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "克克爾",
+      "client_original_album_row_sha256": "d0eb844f076a417b1a6990ddb4da355b79f0d2a71de094274a7505d8087efbd9",
+      "client_original_album_row_file_offset": 373744,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100293,
+      "pet07_original_SPR_index": 283,
+      "pet07_original_whole_SPR_sha256": "84c700dab5357cf470268f4b72d066e844da273541ef1e6396b56430d07d71f5",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 35,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          20,
+          "5a4ceb6c6c090039fac6c14d287ef11f2db86a1bca911be0de2291ea7c5222ef",
+          1500
+        ],
+        [
+          2,
+          0,
+          13,
+          "de849459d7611c26d12d6ab652be6acdb91b622a9761a66b371594efb311f1fb",
+          1200
+        ],
+        [
+          1,
+          0,
+          2,
+          "da2c05c262cfeedaf0541c00990ac1a86ec8f799fa82a5d1f8dea4e4c582a424",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 15,
+      "client_original_album_name": "克洛爾",
+      "client_original_album_row_sha256": "7cc66872547065c6cbf4b9cb283f59b751f397c16346a655ebed0a0515e44b01",
+      "client_original_album_row_file_offset": 373772,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100294,
+      "pet07_original_SPR_index": 284,
+      "pet07_original_whole_SPR_sha256": "2d37af85c129ef51988ea2e78d09c6aa3e7d91a7606586a4b84fad4584d17f1e",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 35,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          20,
+          "6f9ca31bf509cffa6b673e9b4855f2941c294591246fcbf2ddf938a10c250988",
+          1500
+        ],
+        [
+          2,
+          0,
+          13,
+          "e823e9b8da0fb3accf1bdb504238181538580ae2eb9fee641401e18095e97966",
+          1200
+        ],
+        [
+          1,
+          0,
+          2,
+          "86d6c6dee52a1d8fac975aed9d1bcd34932784b480cbc6f168f200d4fdef0ec8",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 15,
+      "client_original_album_name": "里斯基",
+      "client_original_album_row_sha256": "99cdf55d7d925d26f41d5bbdc404c84a346f0963575309db1a48b46d6a2a3e68",
+      "client_original_album_row_file_offset": 373800,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100295,
+      "pet07_original_SPR_index": 285,
+      "pet07_original_whole_SPR_sha256": "f3c9c360adb5c090bb4f21184ea563cb41f40f1f17b4798fddc7969a335bfdd7",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 27,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          13,
+          "7794ce57898161397958cb092121b634ff7ce9a79baa1b4570184b4d709297cd",
+          800
+        ],
+        [
+          2,
+          0,
+          6,
+          "cca31788732f509f026849463ae521898a72ed3f19a82c2cb373f4cfff013f2e",
+          1000
+        ],
+        [
+          1,
+          0,
+          8,
+          "15550e0f560b53eb3c9fe561ba1460f49a793aba662f0870decccf0b064a7e23",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "卡比特",
+      "client_original_album_row_sha256": "2dcffbd316fb0f07f8422d8297f070ccea6551c06ff7e3ce14a154177a6db22e",
+      "client_original_album_row_file_offset": 373828,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100296,
+      "pet07_original_SPR_index": 286,
+      "pet07_original_whole_SPR_sha256": "d93b5f3443eaad602e02f9d51e1d3bbd7db728a41a980d15d809101ada588a13",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 22,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "405953de10a9abcfe2b57ca40484a1e0d83261ec0068897bf0fd39743d14d846",
+          800
+        ],
+        [
+          2,
+          0,
+          6,
+          "8e7403dcb601b75632ce243a7d5924842a712d5a6c64e0374646ca7b6d4621f7",
+          1000
+        ],
+        [
+          1,
+          0,
+          8,
+          "44b3a9d804895d6c2cffd1348fd4760139841f9df44ab5d49a1e7d84bc661506",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "凱比",
+      "client_original_album_row_sha256": "b93bff93ff63731d1119d272333804701d557c64e4758f9799fe9688607d7818",
+      "client_original_album_row_file_offset": 373856,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100297,
+      "pet07_original_SPR_index": 287,
+      "pet07_original_whole_SPR_sha256": "0be2deee9bc390903efc8e6f5f600b4aaf3cac2f0ee140cdd4d590e2300d3ec9",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 22,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "cc85f7d9155eb47baf7ff59092070421ad71251ee7ee63f25ff3d73785f9bdcf",
+          800
+        ],
+        [
+          2,
+          0,
+          6,
+          "36d5885c8cba15bd5caa93f26b8636da8677fdf7e9e4ebf6caf1d7148cbafda9",
+          1000
+        ],
+        [
+          1,
+          0,
+          8,
+          "b9a99b8cf605984f9f9a98f30adcc8b1e35586ee276a1513dc5295d062a7725b",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "昆伊",
+      "client_original_album_row_sha256": "16da2749766fdbb94d64334e738082b97975a3fec6ebf8b9c49872c64353b1f3",
+      "client_original_album_row_file_offset": 373884,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100298,
+      "pet07_original_SPR_index": 288,
+      "pet07_original_whole_SPR_sha256": "1f3dec860eff8133c9afcb8ed1d85d7ca0c659722b5b4d5d4cf008a4edcf651b",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 30,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          16,
+          "ec89109d8d78a9680dc53d98ec883a0529c772e97d10b09da61916946aaef308",
+          1200
+        ],
+        [
+          2,
+          0,
+          6,
+          "9db8e7f950af79f36459d1d2c64880ee180ccfdcedd1e7d7412ca12a2436aae2",
+          1000
+        ],
+        [
+          1,
+          0,
+          8,
+          "81b29b14c20cf0be1b31fc6d51c5ab4a4ba07ba9a83f3d73567e91af693a195d",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 23,
+      "client_original_album_name": "凱比特",
+      "client_original_album_row_sha256": "8ff5015206097f0dc12d81f2df209fcb0c0cdba11c53ca0671742decf740860d",
+      "client_original_album_row_file_offset": 373912,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100307,
+      "pet07_original_SPR_index": 289,
+      "pet07_original_whole_SPR_sha256": "e82d100a84a24c1d16b5a8c2edd4ab7e5cc9c1656bbaa080177f34378312c2b8",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "d0ae139ddb2f2b414ac88e79dea2eb80408e9477134b186fc09454d0dad932c9",
+          600
+        ],
+        [
+          2,
+          0,
+          6,
+          "4ba8c65a9ffd271915dc9aa51c40d674efa9134f33ea90ee84484fdd246375b0",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "2eeb2b131f46316c36cc6a130b0c661dbb5a1df871e263c041a2ba858577751e",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "格爾頓",
+      "client_original_album_row_sha256": "fe32fdb67532976d91495e8cbde2811fd8d14551d260aee951e5e776995da67f",
+      "client_original_album_row_file_offset": 374164,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100308,
+      "pet07_original_SPR_index": 290,
+      "pet07_original_whole_SPR_sha256": "b1da67c329bfb9f96769921e8a39374d9ae2236fbcdb01c258b7cc98fa447b26",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "f11368e11a36dbf1d2cbb53c575cead2b6099affaf28d501be27176f86f2e4ce",
+          600
+        ],
+        [
+          2,
+          0,
+          6,
+          "d61cf48e186adb280e1dddcbf0347fb6e5c59e799d378bc33b72fe3f0c508ceb",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "a30cd233da0748765364572aa93fb9408e51407c3e383cadf998aa705784bbb9",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "奇拉頓",
+      "client_original_album_row_sha256": "f3017b2d24026937cac50c58a83b9aaf52ee343360b44b94828ccca9f1229e70",
+      "client_original_album_row_file_offset": 374192,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100309,
+      "pet07_original_SPR_index": 291,
+      "pet07_original_whole_SPR_sha256": "db6de1529a07b0bbcaaed24c29399bef11935d6ff2397eca6f13b76991f496af",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "1c2ce43d52a69cc93675998f1bc389b53efffe304def1bc71e5dacaa434c8833",
+          600
+        ],
+        [
+          2,
+          0,
+          6,
+          "a8a68dc5dfcaa32ce8ba7286a82861f4031995c7a2493fac22313e0e4f41d652",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "171bfbd8866e50dda7012c52ea2cf3bb3a6ffd8069cc62e13d9cad1e0654853d",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "齊爾格爾頓",
+      "client_original_album_row_sha256": "86654b0ae10352b2102b51a359700d01e9d5c02849325fb674e06c6886c1fe57",
+      "client_original_album_row_file_offset": 374220,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100310,
+      "pet07_original_SPR_index": 292,
+      "pet07_original_whole_SPR_sha256": "b6d2a586eb82a456d2e91ee37c25d25694475233074a6b57bedfbc05e0850505",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "a9e21bbf3975dbc9249a1fbc13828d128500de40fcd03a5f29109d6e9b49d029",
+          600
+        ],
+        [
+          2,
+          0,
+          6,
+          "e4db86252e79f87c88da1055c5d1b8418150465c8410c2b345a36b5fe24489e8",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "f17d4d31c51d1e6aa4be31aa0311e101a463301ee4eb81f0faaebb2a136ab764",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "格爾格",
+      "client_original_album_row_sha256": "beeff76a67fcdc2c8b0ecc398dfcb4d8a7dcbf51b8d2dcf08da3a5ca3843a77c",
+      "client_original_album_row_file_offset": 374248,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100319,
+      "pet07_original_SPR_index": 293,
+      "pet07_original_whole_SPR_sha256": "f776bacec9370a6f8f665ffd47fcdf84839f0f348e787e11b43af4f3d0909ef6",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 21,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          13,
+          "4ecdc92c7a6ec547867b95dc2e7d3bba43d6730fc3b6bc2dad4be2d1c4b647d6",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "2d0714ec724abdbe2a4db02257d6060bd7dcc694ada2cd228b9fc8003fd18c81",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "67c325023dbb8860fdda7cb5e4c19a63f51982a356aaac77e15cae918c082c67",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 13,
+      "client_original_album_name": "修寶",
+      "client_original_album_row_sha256": "a6fe244cf75ade5db476e13f88a6b1f6141934c815df6782f8e4d8087fc27864",
+      "client_original_album_row_file_offset": 374500,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100320,
+      "pet07_original_SPR_index": 294,
+      "pet07_original_whole_SPR_sha256": "9928bf4b0ead837cf7d82265059ab4e77b71ee86f26929a516d9c78c33b1a806",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "88f354f55b83c98b2f14b5f7d69fe28d76d77b02315630a56340982bbe4b5910",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "a0ab14d5ae0429613aae6a9b78ef88c1fe58c5d5bf8cde948b3b4df1bd9010c0",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "dceb5c510c39bce4130e27cae52d634cfd455c20c1e1c1e71ab66762d3314271",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "卡搭寶斯",
+      "client_original_album_row_sha256": "151d4982708c53455f35e6aeb64aad37c0a35bee7816b5726025267c04d3aa17",
+      "client_original_album_row_file_offset": 374528,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100321,
+      "pet07_original_SPR_index": 295,
+      "pet07_original_whole_SPR_sha256": "a949b99c53f5863a85feb041504679d179f05ad42ed6569fc71e07a0200c5c03",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 21,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          13,
+          "88ccf1399f821f39f1ba7958ad1440a068764ba5b0820db23ef0fb534cbb8c80",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "4efbf8e57fa797a4a851b69ab2776d51c4c9b85f1abf0893cc3b7a3c8e97baed",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "401659ab49be00c56775580d8aa48b5f750ff580f9d3e8f7897fcb2e7b0f0744",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 13,
+      "client_original_album_name": "布克布克",
+      "client_original_album_row_sha256": "4b502d22ac2d5284c7b8152780d2a5b1b7df6d9f198d0923c946bb8409870ed5",
+      "client_original_album_row_file_offset": 374556,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100322,
+      "pet07_original_SPR_index": 296,
+      "pet07_original_whole_SPR_sha256": "14af768381457de178568e8c65bc8a87becd0488c73d9c3a0cbd30ce0ff70b00",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "294458c2ba6e5f2db20a38addf87c374c3b5c83a7ebcd2a5f1d9f4d92c51cd28",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "01c46f3bf0d1183953fd8ef39331c3981c9abff0c645262f9d11adf6207d60e7",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "b08df5cf1334b951def5d7ed5ed70a59107c3c44697d1bc0f9d7600dc44aebe7",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "多洛加",
+      "client_original_album_row_sha256": "29dd03c945f3038e54adf29c827a4f79e0dc59ef9b474a20b10b1776b2e602a2",
+      "client_original_album_row_file_offset": 374584,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100323,
+      "pet07_original_SPR_index": 297,
+      "pet07_original_whole_SPR_sha256": "8120d96a71e5ed67eb823a29fac4e7fdd103adf34c71cacf8088a85fdc769bce",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 20,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          12,
+          "c3b09c84420547980776f167e531c2371451e9b3b6e2406f17e1466954da6b9d",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "5596ced0c57e93ffc237aff1051c7d0e9d779ef3b02a4d10d25690c46cfa5e04",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "713a03d2c85162d8e6781d39cd7bf2c36dbe8ea4232491539ce1b4e751f51034",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "卡克爾",
+      "client_original_album_row_sha256": "ef5ba24dd235f9fd9e4a723cb5fe174b6578f3e3eb70d855fb01c3361ae1af61",
+      "client_original_album_row_file_offset": 374612,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100324,
+      "pet07_original_SPR_index": 298,
+      "pet07_original_whole_SPR_sha256": "6dd9ee41a92cbefb58d91a0fd2822d404fccc015df031b4649ef858d72c93a7e",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 28,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          20,
+          "ff5274f4f8c89ec60257d568f6fb8524b747886c28f519442a95005bb86e744a",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "d6377bd0bd2235be0b575d15e53afb7dd3619cebe824a73d9b2e15558ed3b4b5",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "c5e24af514978961783e733faecf968545a4276d8cbcf8779ea038091749cdc4",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "巴克",
+      "client_original_album_row_sha256": "84b7cd2957bc9bad57bf34e1d6cdfa0acc7b1d4bac10617bc72c599588410671",
+      "client_original_album_row_file_offset": 374640,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100325,
+      "pet07_original_SPR_index": 299,
+      "pet07_original_whole_SPR_sha256": "4cf83444dd788c74f14e131aad49bee2ad441ff16a9c7b2340d26914a7d4eb35",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 28,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          20,
+          "1d9846a1fb1c1386f72b80e105446210e39bcaeda10833b5fc3d5d3e8c13e331",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "27786a18813c768616a1dfedd588df89cc6fbb799f7611f7f8b73d9ead9e7d87",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "47586c62972a4ebe754aa1885627aa591513e1f551f069ffdedb647c36caf6e5",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "鮑",
+      "client_original_album_row_sha256": "d448c1ec49282b738abced14f586d7aeb9353140c5ccb055b5d6a32bf287999b",
+      "client_original_album_row_file_offset": 374668,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100326,
+      "pet07_original_SPR_index": 300,
+      "pet07_original_whole_SPR_sha256": "7a5a42c9150602c7b0da7a3179f368fd3eb24e3269b1f773401cf55cdb3d98e5",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 20,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          12,
+          "68e9e165976ed36f2d4372dc740cb216ad5b8a0d30ebcb1b17d41b1994462797",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "f1771a24c2226c622ceee3eace13cce90cc863c4b00daaa3b3ff91dffd1a9595",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "b2a3586170329bb26b85b06e1d4a035299c529ee32d4c43a517b971d7b20dffd",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "卡拉卡利",
+      "client_original_album_row_sha256": "d75dfc87f42cf9e2fbca1d603f86cfe58fc304c0da5b993cc994b98c77a3522d",
+      "client_original_album_row_file_offset": 374696,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100327,
+      "pet07_original_SPR_index": 301,
+      "pet07_original_whole_SPR_sha256": "4be5173b9f5d7b17901798de32598c437fbcd671bce74419a425fb1f15d356c2",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 19,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          9,
+          "bca630207e7db43e126b3409c898dfabdacaf3211e34e0c2b8b295a85697fc2e",
+          1000
+        ],
+        [
+          2,
+          0,
+          8,
+          "bdfdc534dd0f1a5efa3395eb3288285714a9c267927ca0b00f54048e2f5d13e1",
+          1200
+        ],
+        [
+          1,
+          0,
+          2,
+          "1bc17bfbdf6ae49077d9d71dfbd9f27bce6552a7cd747b58dfd4d55f7574690c",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 14,
+      "client_original_album_name": "貝魯卡",
+      "client_original_album_row_sha256": "04bda00e8fcbfc9bc7cdcadfdce1aa1f3dbd453823d40e0627bc7de1d0cdd769",
+      "client_original_album_row_file_offset": 374724,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100328,
+      "pet07_original_SPR_index": 302,
+      "pet07_original_whole_SPR_sha256": "aba72fe1706a7fd5f4d016e4e82ee957b8e4efd38030b1a6fbbc930076347fad",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          6,
+          "90432f333d6b53cda56331e6b3267639baf08c64dea30e9e72ae2de057fb354b",
+          750
+        ],
+        [
+          2,
+          0,
+          8,
+          "51d7d49072cffec9b55c0d286a49d60980676507d2ccc970c9a3a2355f8bd5ec",
+          1200
+        ],
+        [
+          1,
+          0,
+          2,
+          "d4ed4a8fcf12b26ec0c640c53887055b2a226b4233dece46877acab83d4ea459",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 14,
+      "client_original_album_name": "貝魯伊卡",
+      "client_original_album_row_sha256": "1a839ebecbb9f3ad8df2df60704cff7aa3e301324f17bc71544a447895fe0e38",
+      "client_original_album_row_file_offset": 374752,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100329,
+      "pet07_original_SPR_index": 303,
+      "pet07_original_whole_SPR_sha256": "7e50e9e34385f29e64de256ad053bfe1c2540d17444b74d5218c37ee5b7d57ce",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          6,
+          "bd34f08a9c05a27504c7617dabf8531371ea5577a60da16843190c2e04d8e9e7",
+          750
+        ],
+        [
+          2,
+          0,
+          8,
+          "1f58b764f6e7a52e7ba6e3e014160a679649a5b8888d56b602eb56cbfd12a0fb",
+          1200
+        ],
+        [
+          1,
+          0,
+          2,
+          "bf73fb9579518c3ab114b0769e139911ce697cfe720f8b8881612d611920b81b",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 14,
+      "client_original_album_name": "格魯西斯",
+      "client_original_album_row_sha256": "cc4dc48685d2a27ffbe27bb8d75b9df8b85aff44ce16f0080e9dbb0ee94b7a45",
+      "client_original_album_row_file_offset": 374780,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100330,
+      "pet07_original_SPR_index": 304,
+      "pet07_original_whole_SPR_sha256": "25e98217d01253afe10088eccc1a8738d2b5b0f347fb2be2135b9611829cef39",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 19,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          9,
+          "73b615d341e9c6407c1a4ddbad7547c57b2eebfccd8848f33802aee93622f9e3",
+          1000
+        ],
+        [
+          2,
+          0,
+          8,
+          "0f940eb2d41c6895700ea981deec7632ece2a9e6bb5ae7c0be0278d6e7a86626",
+          1200
+        ],
+        [
+          1,
+          0,
+          2,
+          "dbd9855b9cefa75cb018548182e3769ac88fb08210c76648ee245b1b9a0e61e5",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 14,
+      "client_original_album_name": "金格薩貝魯",
+      "client_original_album_row_sha256": "1f3599efae93c46fc17f84cbc34693fe762e30de877ac75cf8591e8eef718527",
+      "client_original_album_row_file_offset": 374808,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100335,
+      "pet07_original_SPR_index": 305,
+      "pet07_original_whole_SPR_sha256": "edfba5be50c121be29c7e864505a9706fe331bfb4747c4f675f707562ac1e965",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 17,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          9,
+          "130b089fbf5abd1b2af9f9b764a7eb1fcfc48464715da78e74a5f1ebee1eacaa",
+          800
+        ],
+        [
+          2,
+          0,
+          6,
+          "71a07d8fceae9eecc690525185956bcc7ec5c06d52b68a368553d616841bd168",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "07670db89011fe768e883bd94e75ffc3778b2cba3422e84ec027db102ae65bed",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "多利諾布斯",
+      "client_original_album_row_sha256": "a5eda71d86f5b7902a9183aca208af3e85ad077919a577f35eecd7fd5dddb69c",
+      "client_original_album_row_file_offset": 374948,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100336,
+      "pet07_original_SPR_index": 306,
+      "pet07_original_whole_SPR_sha256": "5e32c11804f6c231b8f31f143c8de9325dff466e34fa0f8f09cab6424165eb19",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 17,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          9,
+          "628a2020792e0574a227a185e50c3afaa002aac030c7d3a501d27ddb3c337cac",
+          800
+        ],
+        [
+          2,
+          0,
+          6,
+          "2b7efb8cc8970498b81c88b9bfa1ec57b0ec9fbc437cb2100104431d4dcf6cd4",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "5880c9e09513031e74ed45334e05772520b2e9c623d0f7853d35f61d6cd96e3d",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "貝恩達斯",
+      "client_original_album_row_sha256": "b6bde147b5b20924be7adc2474e32685967655d87e5246a976bf1b8deb972c10",
+      "client_original_album_row_file_offset": 374976,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100337,
+      "pet07_original_SPR_index": 307,
+      "pet07_original_whole_SPR_sha256": "831b746da6afe7dd93034115058ae91bc73d19e3ff179c9ed1bc83c76e4279b7",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 17,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          9,
+          "97a27845345440147cf022ea6293e997095f1f3eb46a90353d99c0d9230a5c6d",
+          800
+        ],
+        [
+          2,
+          0,
+          6,
+          "17f998f0523a71ddbd79e8bad53b40364aea52292eaec557707612373880a3df",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "aefdb740b6b7c413db27a21690c2c5229b611fa609e07af323ad981f6c3199e4",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "多利凱拉",
+      "client_original_album_row_sha256": "17df124138eecf55e6a9477c6752cb3dd11027004c57836ad8715f57e0d0df30",
+      "client_original_album_row_file_offset": 375004,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100338,
+      "pet07_original_SPR_index": 308,
+      "pet07_original_whole_SPR_sha256": "13abd701cb10d7b9da7fe3b6ba4ba5cbd13a09ddb6745d1cfee64e4410c28ef5",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 17,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          9,
+          "afb242a7b32427c062461a6f61a99c52d5d7f9e176c57e4eca9ef5ce00834d8f",
+          800
+        ],
+        [
+          2,
+          0,
+          6,
+          "555511ba744ce60ea3f0b939782d7bc5cb248c17fe883ea737fc410d3410720a",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "ed5172261fe16965e750ea0ce4d28ceec3c7a5812cce87ff970ac6071addd86e",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "多洛布斯",
+      "client_original_album_row_sha256": "529d7ebf4534b7507c07b836f74c7a1d10ca5c18fa003dfc20ee4524c00c6a5a",
+      "client_original_album_row_file_offset": 375032,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100339,
+      "pet07_original_SPR_index": 309,
+      "pet07_original_whole_SPR_sha256": "30a8c295b2f5898208bff43ee5acb76d1bc32341b54edb401dbc2c3df09a082f",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 20,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          10,
+          "28405b2717398332701daf08e41e47e15080b09427b01648e9d038660a946667",
+          1000
+        ],
+        [
+          2,
+          0,
+          7,
+          "07b3e70678162cd41d2fe0a423cf3b391c0da1af178b5c1c233cb63e38fcfc17",
+          1000
+        ],
+        [
+          1,
+          0,
+          3,
+          "6fd694312fe2fa214f5b93befdcb724ea200dddf1690e20063ce92987b8fc287",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 17,
+      "client_original_album_name": "克邦凱斯",
+      "client_original_album_row_sha256": "e606c1fc36029e99ee353e13b2a62c62fca7dd332cd36d4453189b3ca1712d22",
+      "client_original_album_row_file_offset": 375060,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100340,
+      "pet07_original_SPR_index": 310,
+      "pet07_original_whole_SPR_sha256": "9306cf435d5a87c3c8a31f6afeea56f8e312d3a98547a9580d820fd23acac3e2",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 20,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          10,
+          "00f3ea4b125c7c97b6a9a4e52706f1a2c4ad735a024edabf8b79137947f0cd89",
+          1000
+        ],
+        [
+          2,
+          0,
+          7,
+          "bdcee95d011f550f9bddad72616aad536ddb738e37f306dc92046fb4ef1e651c",
+          1000
+        ],
+        [
+          1,
+          0,
+          3,
+          "0faa3f385cc179c74fddb1f60e73fa0805b3c8f4cb1bc0afa1715aa53580759b",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 17,
+      "client_original_album_name": "加克拉",
+      "client_original_album_row_sha256": "1d91bd36da4a9f95b86650b74f52ac9f726ca6031ae979f1b3f02926fd7ce1ea",
+      "client_original_album_row_file_offset": 375088,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100341,
+      "pet07_original_SPR_index": 311,
+      "pet07_original_whole_SPR_sha256": "4dec4ea259e4083d0b4a233ef1892075bb9bd48dec3d143e289b5b515b8505f3",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 20,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          10,
+          "f7af6156ea9fa8c8ed2c2340cbae780c1c655e6874fd9dffd362d9e712b06edf",
+          1000
+        ],
+        [
+          2,
+          0,
+          7,
+          "5f5a3759dca40ec9bf567462a6557f773a95ec5d5fae06f178ff567205a6c97a",
+          1000
+        ],
+        [
+          1,
+          0,
+          3,
+          "1c279d0ee3e61416259c6838b51e6863322e8ca06484937bc18aad3fe1470997",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 17,
+      "client_original_album_name": "加格",
+      "client_original_album_row_sha256": "fff3412609912631832023a2b0896b117c3ca7c6049058d26f904ebd3ee23ec5",
+      "client_original_album_row_file_offset": 375116,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100342,
+      "pet07_original_SPR_index": 312,
+      "pet07_original_whole_SPR_sha256": "40e219521c55e2cba48b13b0b777bec7a552c8def2f14ef0354019171a32c382",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 27,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          17,
+          "fc5b40c29078797f9c8f025dba0486d3223f73a657afdacd18803622b5c5578b",
+          1500
+        ],
+        [
+          2,
+          0,
+          7,
+          "b652061f9b3e7d520d8c503c1f01480ace97d6a5a8bae054f2999bd17a8f27c1",
+          1000
+        ],
+        [
+          1,
+          0,
+          3,
+          "83a5d6ec0ff59565049ff0b0ba3e4de7c9a09abc1b61a07d1e4c3cf3cc80541f",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 17,
+      "client_original_album_name": "邦恩吉",
+      "client_original_album_row_sha256": "a897a29cea3597a68526f5a937cfa36aba46faf776019384e4a4ab7c90ea592b",
+      "client_original_album_row_file_offset": 375144,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100343,
+      "pet07_original_SPR_index": 313,
+      "pet07_original_whole_SPR_sha256": "df891631ea3fd5004085716fb181ee88f2efe2d31ac894c47eec4cbdd2c2dab3",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 33,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          17,
+          "8a9e2323b7bed41ecd645a27b35bb19edcaad58805f15fcecb9df1c59cd6943b",
+          1000
+        ],
+        [
+          2,
+          0,
+          14,
+          "5a10eaee0a12ff631fb6018a7760f62ae2e75c0b76b1400386fa29b7f7eba3f9",
+          2000
+        ],
+        [
+          1,
+          0,
+          2,
+          "d39690fa8b9e14f62aac43cc0b85ff228e7d6c16b066e9051cdc25f171adce2d",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "奇卡洛斯",
+      "client_original_album_row_sha256": "97fb7c681ccc7dea079e1dd10355f159478cf50874e3003db47bb45b1568ccee",
+      "client_original_album_row_file_offset": 375172,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100344,
+      "pet07_original_SPR_index": 314,
+      "pet07_original_whole_SPR_sha256": "257d724dafde5482fc6afb224f0f485efb46e96c095b40851607608ec364df93",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 33,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          17,
+          "3640612be76e6038f8f1313584ac56787d3ed7e4e7aa6d9c0eb13bec8682e389",
+          1000
+        ],
+        [
+          2,
+          0,
+          14,
+          "f6e5319a1609b7c71bfd0a21be8b7df9d902d259a40157cf759c0a7fd14eba26",
+          2000
+        ],
+        [
+          1,
+          0,
+          2,
+          "d3c0b012689a7205a393b5078f839acbe0eda41d91cfe27f76255e6fcf474922",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "奇娜",
+      "client_original_album_row_sha256": "6fefafd48c42df6cdbc979df3104b1f963de2f06540ffec1b79194648a9bac8c",
+      "client_original_album_row_file_offset": 375200,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100345,
+      "pet07_original_SPR_index": 315,
+      "pet07_original_whole_SPR_sha256": "2629ca4250e3cc20235b85d36c3110bef14d1fbe9ea1eb611a71e502820aa168",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 33,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          17,
+          "3f958f72cdd52f0bacfff5885a971dd1cafcaead5bdc66a07a89b2c85e49c5ab",
+          1000
+        ],
+        [
+          2,
+          0,
+          14,
+          "7c39bbabf8301f65e6293e3aeed3e57fa1f09d3647fe480915cae302822316a7",
+          2000
+        ],
+        [
+          1,
+          0,
+          2,
+          "822b5d7f7a9684a3db892750e40cb5927930f7bb687f15850b9d076b9ba33586",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "奇卡寶斯",
+      "client_original_album_row_sha256": "13ab106d24e410a944bac16b2cb7c172b8f12a1645d0e90b06d52c5363ca7ae5",
+      "client_original_album_row_file_offset": 375228,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100346,
+      "pet07_original_SPR_index": 316,
+      "pet07_original_whole_SPR_sha256": "6d559775ca817d9e58c47370c2bdd1b54b71b2d4f16971e1958208e806e0edec",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 33,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          17,
+          "985d7e662073dacce6605d745e505fd6c47c8ea82e8f928863d5b62c23140d6c",
+          1000
+        ],
+        [
+          2,
+          0,
+          14,
+          "04ab453b9138ba8030724c134b8be84385d30ad03621dc65b3bf8aa285510bbf",
+          2000
+        ],
+        [
+          1,
+          0,
+          2,
+          "76cb982f755379699e114661047e0d00e3c1d49a3c8e2224ea345b3a6eae8aa0",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "卡卡金寶",
+      "client_original_album_row_sha256": "42cd85eef28f2fb6e348dbb6cfcd6e74d873a0a3617d5c8d270ab2f69298a0cc",
+      "client_original_album_row_file_offset": 375256,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100347,
+      "pet07_original_SPR_index": 317,
+      "pet07_original_whole_SPR_sha256": "e2e6b1cdc03b64ad6a60db9ea9a79d6024de03540dcfd1c853af601570c5bb90",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "120896d86d770254b7c58f3d5788aa973504060b516452a75af56f0fa06a2453",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "1dd66b5b441efd94a7cb869d1ca7ae40d9d476bff00fe1b071a61fc5d0a4f23e",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "6c01deecaf34edb3c03eff33e04dd62bdefadc52c848f3e69e8eda678fa17811",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "邦奇",
+      "client_original_album_row_sha256": "3b9cf5d1ae498d648a07fe958e11c244fbceadc02c91279715fafb64ab9b1828",
+      "client_original_album_row_file_offset": 375284,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100348,
+      "pet07_original_SPR_index": 318,
+      "pet07_original_whole_SPR_sha256": "6422ee00f705a2996cc7fc043d3e8a3c0545edfbb116666efa9c8e38ec1ef75a",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "58dd499aa7b47895cec4bef10dc88915fa0f8635c059cadd8f001ffc973911bf",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "0d5b20e7c58a8e3ccf6233512f54d31ff47a284988f3db38c3836101010167d7",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "e4910500ab085f6dbde8844d655cfe5812a0204aceac126ff0243c2e1098390e",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "姆伊",
+      "client_original_album_row_sha256": "58f37c417a1d1046370eb9d73cb0f4001c0a7318718577020c62108a0ebe7e2d",
+      "client_original_album_row_file_offset": 375312,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100349,
+      "pet07_original_SPR_index": 319,
+      "pet07_original_whole_SPR_sha256": "02b1d5918e6a780ff6aaf65edb4efc08ffd324acb762654a0a52a5672ad3fc3e",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "1919de8e79f3c4169fafce8b6638bca20f535ae28817faaf2b09ad3f851939bd",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "6b0d9d777f835a431e4b9817b030b686ed46b6805a6003dd4909f268122363c5",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "8fb8dc64a38d635425fcd2f0be0ae9f8596d1a406bf560889c7b932a83820a87",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "海主人",
+      "client_original_album_row_sha256": "84455c9c0e1ec796bcd77014f007e952aef9d688749601888a26b074dad74462",
+      "client_original_album_row_file_offset": 375340,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100350,
+      "pet07_original_SPR_index": 320,
+      "pet07_original_whole_SPR_sha256": "14f8d5b6ae32fda4d5f3768bd70f7ccfaa75aa66d536f0b4515e3984ab193d49",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 22,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          14,
+          "b0bac90cc9afef793b9a585d58a78a4d6c5a894781c6a66e4587cdffa543da3d",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "0be02f2ff475f527adc5bfcfc65261dbd45cc777cb6cc866d7dfeb2e68b110de",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "4707c74ae332434aa527626a09076e6514f918ba4c6dd5b239da6abec3e10f29",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "多魯寶",
+      "client_original_album_row_sha256": "543ff4109ea2515a32d4dd71876c8e08f78538c7c8bf7f42badc602afe9428bd",
+      "client_original_album_row_file_offset": 375368,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100351,
+      "pet07_original_SPR_index": 321,
+      "pet07_original_whole_SPR_sha256": "0cfc2eabf5b43eb51b23bec35a3e23ed0171c84a56a2d79d3d44387e53a966b1",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 35,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          26,
+          "783aec29333cf01006381b55f6b38bcfb079b6d49b3759fbc3361d0d25090cd9",
+          1300
+        ],
+        [
+          2,
+          0,
+          7,
+          "5d3abd1cb167339d2a707b560550c0263720cb12c691bfcee00b0a7a7003950a",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "ec7ccd74bc461f8473c287be72c9b39f0c0ddd93f7a4d4c8092a2cb0affe3d84",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "布洛多斯",
+      "client_original_album_row_sha256": "e36cf9a7001fc43fb37984c905e2721f5375df01ffbad858624d6d545a4e1130",
+      "client_original_album_row_file_offset": 375396,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100352,
+      "pet07_original_SPR_index": 322,
+      "pet07_original_whole_SPR_sha256": "c790f3156c0a62a18404a74af3b5eaf4c4f82670df25f31a551239f64f17620d",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 35,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          26,
+          "87427ede4675fdbffd1f7745aa5f558a724e9523d2b268c1eb5b33c08abd81a3",
+          1300
+        ],
+        [
+          2,
+          0,
+          7,
+          "99518d850e4bb2bff949670e3fa78bd4695f0ecd4c2c460399dd66269d926d45",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "a47c70dd53bb5e0a918aa58ddf31f087be0e68f703c9bd243d83445be9e828dc",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "布林帖斯",
+      "client_original_album_row_sha256": "231355575d7a6522d7d53990db75a5cc537078f5ba41890cde047dde2115e9a7",
+      "client_original_album_row_file_offset": 375424,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100353,
+      "pet07_original_SPR_index": 323,
+      "pet07_original_whole_SPR_sha256": "2086365f81dc486e3e58a108a752c13bd960150e3857a461e771c06bf57ec7ae",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 35,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          26,
+          "cb59f4e001c510da01cca95ca2facdae30e69d1de401104949820d35293600cf",
+          1300
+        ],
+        [
+          2,
+          0,
+          7,
+          "933e9e5b9ba2a62139216f6fbb6044bf9b9a879189a9bd59c9b30eb4aa3145eb",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "737b91956eb8fb244233564de4688b407be878dd17a113891eb78139b68d25c4",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "布拉奇多斯",
+      "client_original_album_row_sha256": "79a8343b8ef342b25f85a3e56d7c0cb53116c7f624775d2f631f34d65fc1dea6",
+      "client_original_album_row_file_offset": 375452,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100354,
+      "pet07_original_SPR_index": 324,
+      "pet07_original_whole_SPR_sha256": "2d2f5076afd20caa4b1f0a819ec628198f78d3ca0cb07d858e6d9fa65e8bee20",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 35,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          26,
+          "3296515ce95287d1c9efe48d88d9e3d4f0a087f0173bee1cb702ebde0f7c5dcb",
+          1300
+        ],
+        [
+          2,
+          0,
+          7,
+          "1f28ad9a61e99897b61623adff80bac0db85c41412a623e9f1e322b1cded101e",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "3812a7ccb12dc06fc442734b8f5d6addf8c8eb627a09318fb93f098f8e7261b1",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "斯天多斯",
+      "client_original_album_row_sha256": "eff1edcd275249351d1b16ad6b34cfdcbbc6fe84ee1495c852e790e0e49ea5bc",
+      "client_original_album_row_file_offset": 375480,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100355,
+      "pet07_original_SPR_index": 325,
+      "pet07_original_whole_SPR_sha256": "409081b2ead88925b44eeccca02005ff3de59906b8736ae6d2cdc3bcdcf070a3",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 18,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          10,
+          "c2db8004ca83da5824117f8b2a1d573ec8ca0e7e330d1d83ca8ba8bd618dcb29",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "225ef76fb643f0b2ce658530df85ef0334c0d4d12721321cadf67c14a57053eb",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "29b706fbe96fbad642bf796975b01d7e54324bbe4d291dda56291184c0a93dbd",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "瑪恩摩",
+      "client_original_album_row_sha256": "194525bc0e7e35f97549c1e18640f2086a2564e2e77c5009f41e650178842b35",
+      "client_original_album_row_file_offset": 375508,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100356,
+      "pet07_original_SPR_index": 326,
+      "pet07_original_whole_SPR_sha256": "d8fff8110694e7726d87abcfb62a811869a2f066be7475f00f68912ffd233bbe",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 18,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          10,
+          "0397052076bf43e303064df25b7767645749ce45b80d6cb9d128cd37819335a5",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "5dca6d41a932c0930f467fd2c5ef79e7d157415302701ea5871cdd4436ff52f5",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "f9f1445ee1ccd0a7b44b4ba6fdf565f3c78ae5dbe6458cba8de551c4564538ae",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "恩摩摩",
+      "client_original_album_row_sha256": "27e823af525bcb7282b2d72284bf8f764ef19c4bda5ea29b9247fd7f9ad8742c",
+      "client_original_album_row_file_offset": 375536,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100357,
+      "pet07_original_SPR_index": 327,
+      "pet07_original_whole_SPR_sha256": "813d101cad648b00cef2d435e8fecd7f2ed6d43854738081b674bef228bcab69",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 18,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          10,
+          "28384abe8415a8da4cb18ec8ecce1d148a77eb43bb1bfd78e025dba05eb2d6d6",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "497965eea3a32dcc85b8a5680126353b72d646c63bc753d280555f24de846241",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "4410b9240a575e4cd4ed48f782de16a38780923229201b7b2ee146cca452d099",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "瑪摩那斯",
+      "client_original_album_row_sha256": "af4bed97778540e483aeed0bd85d0bc80e8e8e32fd112e6b1a37882f87e9569d",
+      "client_original_album_row_file_offset": 375564,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100358,
+      "pet07_original_SPR_index": 328,
+      "pet07_original_whole_SPR_sha256": "fda4d9af12a80e633c848ae981795974bdf1fb303ecfe40a3f5bb8313c4f4dfd",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 18,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          10,
+          "68ca3995f306bc9e2edb23788d6134d25fe343f99b9fa5b0fe7fd3fd5a6db10e",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "098a9da94972b2c25cb28927aa0b82ef3e17733238c4d8c26fe987fd05e769ce",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "a6d453c1aaf465625782867888412f2e4ecff5ce1ac16c9cef6845f4573e15d1",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "瑪恩摩洛斯",
+      "client_original_album_row_sha256": "ad67fb336480dbc0ba0d2b841ace629420c2dc20bc3ec1d45490e611efafdc5d",
+      "client_original_album_row_file_offset": 375592,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100359,
+      "pet07_original_SPR_index": 329,
+      "pet07_original_whole_SPR_sha256": "99c09a003670dd66480fb43876f5e1a0a3e4523c27c668b33b7bc463c8513828",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 26,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          18,
+          "f1c6e24164a38eea32f40ace7f45865eeca5a7d34033f8a1eded851afbf1abba",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "74fd9f4f5e04b13d5d39b9e610f955485792af8542d64c6b069a94edb98fd819",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "ca24a777824f9d5981603f4daed68e73b026610cb96abe3774f66c2186f9720e",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "帖拉格恩",
+      "client_original_album_row_sha256": "1a8cbe8f63efe7013885d1ee11a0da9e3877747d36b131b3cdaacae052d816d3",
+      "client_original_album_row_file_offset": 375620,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100360,
+      "pet07_original_SPR_index": 330,
+      "pet07_original_whole_SPR_sha256": "71111d4395a68bf72dc7fb068a6286fef66c4b1afeae17b697b4a336518ddf94",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 26,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          18,
+          "ec04a87a05bdb8c25dab9a1106e8df07f79139f7c293c8b8d727f76747bc8758",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "9ef02192f17a2d3defdad5ac0ac6874191a81511519a95e0b9312edeeba9c00e",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "3719692e5a37bff91bf0c6629b52e66657de1a2bc0906f63038c15154833b8b6",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "洛卡倫恩",
+      "client_original_album_row_sha256": "0de9f3d89cfca20380a38f625ac9d488d03587ef78d61d9ff1962ea3162edb1f",
+      "client_original_album_row_file_offset": 375648,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100361,
+      "pet07_original_SPR_index": 331,
+      "pet07_original_whole_SPR_sha256": "066c7939f15860b4a3d322035fc337199debaeb085ee1460be1d7a66e807b5d5",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 26,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          18,
+          "c466ac819c9fbe33def98e74aed0b21f0d8a5a845082431c3401c2672f5d0610",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "5bfc668138169236df5995202ee763e603eeb2168b539f5ac060465f5ba2f3cc",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "e03ab567fbd0c780bf7925881cc85c7c10772cbb87acb84e44dddd8d48e1b80c",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "加寶格恩",
+      "client_original_album_row_sha256": "65c34c9816476353c938e6605ef0abb3ed0d1f635f6cf53503b3304101859b67",
+      "client_original_album_row_file_offset": 375676,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100362,
+      "pet07_original_SPR_index": 332,
+      "pet07_original_whole_SPR_sha256": "42a308083c2f8ca1a69b0818b3f621586fe9c351098ed32e095fd8b8c3ac70db",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 25,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          17,
+          "40d60925b6d2a02cc5bc4ba603e26b1b2458fb00e6c8218c540d714df0715198",
+          1100
+        ],
+        [
+          2,
+          0,
+          6,
+          "c7df3b6451a58bd1b3e1db6ea975b8fbd073f1c2551e172614f78ea5ab989fdf",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "c0615a77ddf02c60bac2b4e75bcdc2dc5b43b8799edf2c7c0ba40f3fda0b0b0c",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "朵拉比斯",
+      "client_original_album_row_sha256": "516331ac536f649801d7822bac41e6235b190dacdd22e3aa947498c8ea076532",
+      "client_original_album_row_file_offset": 375704,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100367,
+      "pet07_original_SPR_index": 333,
+      "pet07_original_whole_SPR_sha256": "ac37952e597ac450e4da63672d77a0dd817244dfd9461453e9be220123ab085e",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 24,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          16,
+          "17d8c6cba86281a80e2a95d3f267287b2e354a90e485987138224ccb44681237",
+          1200
+        ],
+        [
+          2,
+          0,
+          6,
+          "68b474d91fe908992d76b5edddc0838e7aa522fbee752ced3c2d6c0ab8332875",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "c6ff8319ac1ad01253934caa4da2f035be9fc036f5fcc4b8c2af3113e4f4c81f",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "火雞",
+      "client_original_album_row_sha256": "e071b24f8e77aa572674557cea26dc482d5ade0598e0881bc379e4365f70151f",
+      "client_original_album_row_file_offset": 375844,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100368,
+      "pet07_original_SPR_index": 334,
+      "pet07_original_whole_SPR_sha256": "d7f7f9881cf685bcccfa73587f4c36f531fc57b6df0a6f0021fb58f414f07bea",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 54,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          46,
+          "b5d03513bcb2cbe294f35b924856154c86c6630970b9b591f956a2ee6dd180ac",
+          1500
+        ],
+        [
+          2,
+          0,
+          6,
+          "0bd5fab270245d47f38e9e87738547fb31f85c8beb1d668180a2f34439e68dea",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "a8f6152923a3027278014d8f938ba05d81e2482fc041156d18b840f756e5bdbb",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "克克洛斯",
+      "client_original_album_row_sha256": "3c3e3cae5fad278910dccf1e2d6343b6d744052a33692964b2c07277c2933c19",
+      "client_original_album_row_file_offset": 375872,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100369,
+      "pet07_original_SPR_index": 335,
+      "pet07_original_whole_SPR_sha256": "2386701de4a541403e6f5e27b462bfaf6263175b3114a440057d71a81bef3591",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 24,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          16,
+          "51a43ad349cc19e412e11a570314bd09d5bc9f06bebfee10fa790ec69c8c3a85",
+          1200
+        ],
+        [
+          2,
+          0,
+          6,
+          "d4ed6db4309e551f17d66b508bd0e9b202688b752cb85e379c2f2b87d14920b7",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "c0ba37a1f2c1f61a831da0a0b6a15de8f38f249847b463a0e2b9f2d7d9debdcf",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "霍爾克",
+      "client_original_album_row_sha256": "427168dfb88e5ad7d5a5f52ecac298bbc1c5502290890f94d92c98e739abf6e0",
+      "client_original_album_row_file_offset": 375900,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100370,
+      "pet07_original_SPR_index": 336,
+      "pet07_original_whole_SPR_sha256": "63ba530888f46c6ccd0905ae978bf95d4adc52d4386c043cc417e80a0f1efc79",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 24,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          16,
+          "fcb9936d7d9e710b03425ee4932dce54b55314fb93ba1c80dd822406568553c4",
+          1200
+        ],
+        [
+          2,
+          0,
+          6,
+          "cb5dad96ddb551b0ae6bf8011c24ce07af055d4fe11bd386b2843af3b942f37c",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "d60ae793f2c429cf089d15cf8d196e3cf4963087435f95e319a545af490958b5",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "奇寶",
+      "client_original_album_row_sha256": "778aa5fc73821e6de4f42132c26914263317c58b63b9bdb8c703ae730c5e4354",
+      "client_original_album_row_file_offset": 375928,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100371,
+      "pet07_original_SPR_index": 337,
+      "pet07_original_whole_SPR_sha256": "fff075bbef9214c1220742f8714934564e232dbb59e1a5125714275c3e82cff4",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 20,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          10,
+          "270e9326e1f703a8619330f45668a3c796f9241c62e6096ec2c4aec31dd68a61",
+          1200
+        ],
+        [
+          2,
+          0,
+          9,
+          "ffece0692c127bbe4b7285b16d3a029653e5c1e8ae1119ae0e791a0a4e673a2f",
+          1000
+        ],
+        [
+          1,
+          0,
+          1,
+          "352aab2430598e61e79c7d7bfd2d15cbd9609c9fc6111999eea1ab31a219456b",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 14,
+      "client_original_album_name": "奧卡洛斯",
+      "client_original_album_row_sha256": "6704645d2aa858d5ca23234e299a5e716d6c8d6596d32dee61265d0d0f6bb034",
+      "client_original_album_row_file_offset": 375956,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100372,
+      "pet07_original_SPR_index": 338,
+      "pet07_original_whole_SPR_sha256": "770cab7bb2ba84daa827692a3b5ce47f83ce36595a164d19cde8e54ebfdc3627",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 27,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          17,
+          "d9445dcd829131869a00514760ee7d739c1d32ef9b90de93efc4e0d11ac4315a",
+          1750
+        ],
+        [
+          2,
+          0,
+          9,
+          "4580e7856196e88b420320723f59ae487bb33380da230a686fe8a036fc54dc7c",
+          1000
+        ],
+        [
+          1,
+          0,
+          1,
+          "e3b5e2b41308392cf58d4b4046aa33aa44a417e9ffad2dc8535db914686a0fdf",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 15,
+      "client_original_album_name": "左迪洛斯",
+      "client_original_album_row_sha256": "2459c4491b9f2a3d3fc522e5dba5da5c98c0b5bb18cda69412e702d8a189fbf5",
+      "client_original_album_row_file_offset": 375984,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100373,
+      "pet07_original_SPR_index": 339,
+      "pet07_original_whole_SPR_sha256": "f3d76b5cc31542a372b4a207a2fb5b58c6eddeea45891182c53330e343563721",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 27,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          17,
+          "c23d3b7c949a9e91c435621b93a9e511de2d1daee10a58bfbd94b1a7471f6295",
+          2000
+        ],
+        [
+          2,
+          0,
+          9,
+          "b44acb8d9f145114c6990c92cb9a4cbc26c54c4cf3db4eb1c4732059472215ed",
+          1000
+        ],
+        [
+          1,
+          0,
+          1,
+          "eba988cfe4290c19e51733a7e9dd4272256be653cdf8a02dce0e9740250fa216",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 14,
+      "client_original_album_name": "巴朵蘭恩",
+      "client_original_album_row_sha256": "1d71485bf63627da65d034fd32ce6ac6ca643ec37375559b74dea14380a7c714",
+      "client_original_album_row_file_offset": 376012,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100374,
+      "pet07_original_SPR_index": 340,
+      "pet07_original_whole_SPR_sha256": "407dd04efad37832e1a938f93e4f2eb30138c13881726120e22622dffcd479de",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 32,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          22,
+          "9401617856022a928996a698d414f9b13de16347f2613750da940f2fc9ec72ee",
+          1750
+        ],
+        [
+          2,
+          0,
+          9,
+          "b5d2e5aba638a3a9a43af86969874ca5d4c95b250c5ade3840beed61c76550f1",
+          1000
+        ],
+        [
+          1,
+          0,
+          1,
+          "ea8571d898ad01bd1fd1a1ecd7cc4450a931d41ba3e55b19308f59643b38f5ad",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 15,
+      "client_original_album_name": "帖拉所伊朵",
+      "client_original_album_row_sha256": "e9a12ba5f22a7c8368d13cbf50c5122cacc9dd2d9719c5aac1cbebc01870bd64",
+      "client_original_album_row_file_offset": 376040,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100375,
+      "pet07_original_SPR_index": 341,
+      "pet07_original_whole_SPR_sha256": "b5ad1a444b30c013f202aef8e4aa209589933a4489539c30e4d18adb611dca1c",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "d5fcc7340cea480228acd657ba7e69e7faa571275fe6e785a29d81caaf083d62",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "54cfff4bfc17f32c4c5ccea1c7ca96e7afc6fccc84f1ace0b3edbad8fc81f5f3",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "9477dd90e91993e581ed4977c25e2510cbdd8766a71e42abc72c0dcccc2f34e8",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "布伊德",
+      "client_original_album_row_sha256": "ecc5125d3a56d6a3d9d487c77d25ba5e16bcfe48c9e34cf6bd0dbf516eff44c0",
+      "client_original_album_row_file_offset": 376068,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100376,
+      "pet07_original_SPR_index": 342,
+      "pet07_original_whole_SPR_sha256": "617db52b14409fdbdb24ca96fae3456a03183a327abb49aa9630914944d9d4d0",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "86fd09115adf50d5962c9b8f6e21c01440ca853f07ea80135e873e37b0dadf42",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "1b2424b9bf487e067a4bd0c4b7050c6ed153751c3ec909ce812a3e5897038ddb",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "89799c1f0aef15a8ecdf4de7993f5bba5eb00146ef17528d4ff91f077a8d8c05",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "摩娜西普",
+      "client_original_album_row_sha256": "5706b29e21f81ce9cebd4610f1455c06efb95138d7bd9076c53a77114b5070a6",
+      "client_original_album_row_file_offset": 376096,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100377,
+      "pet07_original_SPR_index": 343,
+      "pet07_original_whole_SPR_sha256": "630c5533e4a07e084214e63f2463940162128ee4d741ea4f38aa7d3792923d94",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "e748a09d29078a30f5021f6b331dc72f499cd6b34f7b4bb89ff947657438aa48",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "91374d97d4029ea1ce30738451beac9079883a5d9e120d91c29a96e499d73ef9",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "fa0951c15325981ade14b0e7f0a54e05a884891154c0b5ac7fd703a08166995a",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "卡伊霍恩",
+      "client_original_album_row_sha256": "21fe4186c505fbad32530a905c5ebda4636d5f4f3d943970d5d5b2fa859c2a4c",
+      "client_original_album_row_file_offset": 376124,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100378,
+      "pet07_original_SPR_index": 344,
+      "pet07_original_whole_SPR_sha256": "fef68f600e6e301d109ea15d3aabd11e2f47765bd808ad79766b7a2be42e242e",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 20,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          12,
+          "8dcdcb2d0d542020b7bcaef2b2ac39b69b2c1833d35663e2b1f9e8ee9cdbf865",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "83c8c010b420d76b39e9b62ab4d7690dc0a00ebe25fdaee4731ff064de04eb31",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "ed8409a8b7171d44c4902f49b84edb757eabc1481c8a4131f7cd90321e2f96e0",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "拉伊霍恩",
+      "client_original_album_row_sha256": "1f10bc0c2e45e046fb136c47578f9593d0700924b1e421e0c0cde77a9f3a0975",
+      "client_original_album_row_file_offset": 376152,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100379,
+      "pet07_original_SPR_index": 345,
+      "pet07_original_whole_SPR_sha256": "355f06e73d0e277beed5abf221f80babbac98c123047a732ca4f1181dd80b65d",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 22,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          14,
+          "4fb76b1573099ced545e81b888c1bbc97678ff6952a4b610f889d1fe4aa4b230",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "8f22350e06d2304e80e535ce86aadd44a971316334c5477ad212990a7c9eec75",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "1a78cc03d9a8c32da67dbbe43dbb5f40d6f2844f375b95008fdbf835674573ef",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "史多拉奇頓",
+      "client_original_album_row_sha256": "478051cca12818bfcb2f0b96739cc82f04778158774773283af0af948bbe8fe9",
+      "client_original_album_row_file_offset": 376180,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100380,
+      "pet07_original_SPR_index": 346,
+      "pet07_original_whole_SPR_sha256": "28045083c659de91c7c6288e30bbe6602d0b3a89f0ee6ce1c8176352a760f682",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 22,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          14,
+          "88f9b852498a2a878e8e3adb194795c08b485878f6ded89aff00312b23db41eb",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "2251359c3571c42c4c6281ac22b7503a09d1689713828d81e4188d036b6016b9",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "3a61ca355e83ac6c05e0213912c2b129089281e1f663ed47fed76d3b4a37227a",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "薩美洛斯",
+      "client_original_album_row_sha256": "ef66e9e01b82875ebaa95bcf198a43c24ba7e809829a02f7ea0461c4c10d29c4",
+      "client_original_album_row_file_offset": 376208,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100381,
+      "pet07_original_SPR_index": 347,
+      "pet07_original_whole_SPR_sha256": "41e0bcee88f18249bbe418311cac48c278d7412a1e4029ce920933124cadef82",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 22,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          14,
+          "6c2009b9514f05caffb05ba99353a4d924e1194a7a101c491ca888b3cc4a88a4",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "4b7da0bc4aa18bb709a84644346abe71e4a3401c999f83a2116dc012f1921e54",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "c160e8e13500c03b2df620072fba3386d1386ff180fa5bb1bfd08d49dd155679",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "阿利給洛斯",
+      "client_original_album_row_sha256": "18889302696f568aea1f08c58d99e466690bef52a54c08af1409d9c96cfe7a7c",
+      "client_original_album_row_file_offset": 376236,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100382,
+      "pet07_original_SPR_index": 348,
+      "pet07_original_whole_SPR_sha256": "4a48eb56e7b161213305cdb3535e22830fc78e69d2f541da48a2d00502f35eed",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 96,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          88,
+          "6bb77d8ca242df764a1873e96a1dc6d29909fe944db21195007c46bdc28d632a",
+          1200
+        ],
+        [
+          2,
+          0,
+          6,
+          "a39fac9ca8ad1596217932a6ae9679fff5f95685253fd1f8492ee5576d3023ca",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "e3a73832fbb4fef3678b02e84ff97b4f7d0d9375768a85dc0056a45cfe5f8e36",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "達伊諾洛斯",
+      "client_original_album_row_sha256": "ea96f21aad9cd8f1e73f8e8344fa5e2c13e31f3ad1d86606ee72cc38ac67d9ef",
+      "client_original_album_row_file_offset": 376264,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100383,
+      "pet07_original_SPR_index": 349,
+      "pet07_original_whole_SPR_sha256": "74bdacac0a96b7f73254280629c25fe3179c15f8ecb1c2e47abb047a09595bee",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 22,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          14,
+          "451416731a859fbeb7ab2a94ca64f8cacb01d7fb11da6759fbb0c937bcc8e883",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "b806304dec86302722a4914792f7d4c010f8ccfccb40d956b7c89c36f23e27f9",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "b1c410df5034d2e8380f0e7da6e6b781da0ca447b42de3b2ae78c84109f51f5e",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "拉可洛斯",
+      "client_original_album_row_sha256": "8b7612e9bfe904f4264fdfecb708daf8dd6b0840eda3525767b2d88974a6e0c5",
+      "client_original_album_row_file_offset": 376292,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100384,
+      "pet07_original_SPR_index": 350,
+      "pet07_original_whole_SPR_sha256": "38c47a6f86e858b3af0d608e751299d28ca5e30ad1a0cb884ed71f46f92a70b3",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "3dd74dd8e3c50f79052c979f0826abb009d9105da9521927b71aa36187e9b263",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "a2570a55c5361d1ec0f4d6344a396b8cea4029ecefb3f6381301596a926e3bb8",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "8dd658eebf01297dc78eccafa3300ae031c9ab19802f63f01055afea930331ff",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "巴洛洛克斯",
+      "client_original_album_row_sha256": "856d8243c319320ec4243629c02865348523fa2c569f107bedc0d9a0bb92c54c",
+      "client_original_album_row_file_offset": 376320,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100385,
+      "pet07_original_SPR_index": 351,
+      "pet07_original_whole_SPR_sha256": "167e0502ed8151e0b1ea237a94327e7df913e8c9f0e0a33726c81ab17a7bedff",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "813c8e39b739ae0cdf8145528126624b9ce1f26c3d50edc2d93183fb29cd7688",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "53c11e15cf1ec6e092e4e868e21735e772904f6d6cb158f40b3ee02907238515",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "08b28d555b548020908b8adcfb32dcbd68a2467d67a778a92e173ffe512d334e",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "蘭貝魯斯",
+      "client_original_album_row_sha256": "f2eb3e4609a63026291a073603ee7a575edd8bce241ce54783fbbc2b83028c2d",
+      "client_original_album_row_file_offset": 376348,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100386,
+      "pet07_original_SPR_index": 352,
+      "pet07_original_whole_SPR_sha256": "be2f65666905ab33531feb55fde56e716c889f839f8eb8b5580c11a2159e9aa0",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "db7ef6eb809457c57bec909b40628ca31a1f4862853b86efcf358dba7732d524",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "7aa83a15e8f657065745454598a292d490b37c9057dd454d8fcacd8ff4116009",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "d29f45316b3f7a5a5aab53ef496ffad7ed8bdeeaa0f46c2c40b529730c8417f3",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "可利多洛斯",
+      "client_original_album_row_sha256": "644c71b849119421dc8e4d87373a57e80711fa0f8b3043f25d203d6c7ebdcc4e",
+      "client_original_album_row_file_offset": 376376,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100387,
+      "pet07_original_SPR_index": 353,
+      "pet07_original_whole_SPR_sha256": "c10cddd22c44e433cd7fbc2e3bc750c345c936b3217f0f9a71782fe5378361d1",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "4345f64947e9807465232e732ab35b1ba808e70eb0959c1efabda5a4d2369bad",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "bf581396616688f3538569c913dce77e44511fd00c7703752932de0176ee2638",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "6b99aa9817c1b89448ee3473eee93ea4b40c20f6798962a2aa49dec125dabc8c",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "諾斯多洛斯",
+      "client_original_album_row_sha256": "2659b659c77bd7624d50127f2ce68905d1e78e4107488f8c2f7c4e8386387b53",
+      "client_original_album_row_file_offset": 376404,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100388,
+      "pet07_original_SPR_index": 354,
+      "pet07_original_whole_SPR_sha256": "d8ee442c59eaa9a3eec71336bff5ffb280d6296416c887c23b961a4d3cb49ebb",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 52,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          44,
+          "5accfff4b3a7db5fd2fa226bc70e17f9b8a36c583376478378090c6755576760",
+          2000
+        ],
+        [
+          2,
+          0,
+          6,
+          "db9d80f66595dbbd99304965acc2a5b3fe3d3c0bf5842826581b29050cbe9c39",
+          100
+        ],
+        [
+          1,
+          0,
+          2,
+          "fb7628e04bb7a18916987993fbf6642934a7ac840506c8db1e69b72029003057",
+          400
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 18,
+      "client_original_album_name": "黑烏力",
+      "client_original_album_row_sha256": "6657b58912c1534322a931984a25f34c84bce1b582ecdd4a38621c5f2610d65d",
+      "client_original_album_row_file_offset": 376432,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100389,
+      "pet07_original_SPR_index": 355,
+      "pet07_original_whole_SPR_sha256": "324300f2f0f1b37d75dd74d274ef28a561984a7275d8865ba0feab652473855d",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 47,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          34,
+          "0be24743f9b7ef8e5d73c9e7747856f3e4a0897e2c713f2284c3cc68320a2780",
+          1500
+        ],
+        [
+          2,
+          0,
+          10,
+          "93578f0712ee3fa2132385e29049ef6d28887447993503096c7432b51b27eac7",
+          1500
+        ],
+        [
+          1,
+          0,
+          3,
+          "08d7eb27d49381bd69c572590e0fa069ac9ae92bfac1563c977d5b02e2aedf5b",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 24,
+      "client_original_album_name": "洛克斯",
+      "client_original_album_row_sha256": "cb7ff42a81879a4e5a6057d8eaf4d6df1f76b56a0d74807f552384e29dd16d59",
+      "client_original_album_row_file_offset": 376460,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100390,
+      "pet07_original_SPR_index": 356,
+      "pet07_original_whole_SPR_sha256": "b13d04cf59d372a15261159ad66a158362b53084ac9027ef2318934b6d4461e7",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 47,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          34,
+          "b14341edb826956708d8318884fb955d63cafca885150b345aa9943133f2dd66",
+          1500
+        ],
+        [
+          2,
+          0,
+          10,
+          "63a2a2dd767005b28b7fa4d3ae0632b08a8764991db7d19b5f3d9a65efad8bd9",
+          1500
+        ],
+        [
+          1,
+          0,
+          3,
+          "bb18e2d86b5895fd1cc40733b6788ebec0ea37d0e82b49c153ac15f6d08e57a1",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 24,
+      "client_original_album_name": "阿伊薩",
+      "client_original_album_row_sha256": "9dbccb71b69369568ece67a418acc1e6db8b1c42fc74d93ec926e278cf460ff4",
+      "client_original_album_row_file_offset": 376488,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100391,
+      "pet07_original_SPR_index": 357,
+      "pet07_original_whole_SPR_sha256": "92aedf30177e523e0d012210559aba490707b735474aa2328d3d932d956440be",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 47,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          34,
+          "b63fdf9220fcc6d944ac6ca693302fbce65944808628184419ac8eceebf7976a",
+          1500
+        ],
+        [
+          2,
+          0,
+          10,
+          "bac1114b2e9dc9e73987eaedb456efcff2cc49ff26508bdd1c41b10f703b4188",
+          1500
+        ],
+        [
+          1,
+          0,
+          3,
+          "bd35cd3f82205c860d4f408a2156e6b9edfdcfbea9d43b6ee9992a599810e11b",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 24,
+      "client_original_album_name": "格洛格魯",
+      "client_original_album_row_sha256": "e44e86d713c80bf8c08e05ae6f1644ade525bcdd0a7ee0811aec06502be22d39",
+      "client_original_album_row_file_offset": 376516,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100392,
+      "pet07_original_SPR_index": 358,
+      "pet07_original_whole_SPR_sha256": "80238687e911c0f1393a2d79bb178fde02c6f826e35974ab56fe8f7f8e744789",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 47,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          34,
+          "7b0c91a40c44f415e99b0b6fee753e6ab05f1ac5d041cc920cf21dc805d734cc",
+          1500
+        ],
+        [
+          2,
+          0,
+          10,
+          "9cf25a7a8c140072ad13c3b4243764bc1e938a6a871198d260e1f01dcd0f68d5",
+          1500
+        ],
+        [
+          1,
+          0,
+          3,
+          "44097e6594868ab4339dacf3a740f626dbfc1fec069c1d884bfe5d418f4ad195",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 24,
+      "client_original_album_name": "朵洛將恩",
+      "client_original_album_row_sha256": "5b0d8638acc3c1d29f18a990b033f6a942cb87166037c8e8d34154c8c0a94756",
+      "client_original_album_row_file_offset": 376544,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100393,
+      "pet07_original_SPR_index": 359,
+      "pet07_original_whole_SPR_sha256": "8616fba53e6a8b995577119cf22fd40199d14903b7dd7a0fc5050dcd546e914c",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 17,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "92def21cb1d9bea1268ef14588458f16644c439f98fa4f7436f2908ef7d39512",
+          750
+        ],
+        [
+          2,
+          0,
+          6,
+          "109266dfc4edda9aca89740a4b76189b4797e85facbdd786b4ef7ebdfa1ee9da",
+          1000
+        ],
+        [
+          1,
+          0,
+          3,
+          "fa29f7f9882e01630be5a740a9851841b35c28612ff2f6f314a816f48274c5d4",
+          300
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 17,
+      "client_original_album_name": "柏克爾",
+      "client_original_album_row_sha256": "1d2cc32bea16c37d405937fb3edab58dc3c9e91acf57e1b7735473be19439e09",
+      "client_original_album_row_file_offset": 376572,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100394,
+      "pet07_original_SPR_index": 360,
+      "pet07_original_whole_SPR_sha256": "3df3893d1528273fdd935d46c729713ec5ff4efd73df4eb64fc47b9e5ab7225e",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 23,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "d27bbe5f38a3494ebc41f76c58ab0feb14afd7894817dcee3663f5f0119d28f8",
+          1200
+        ],
+        [
+          2,
+          0,
+          13,
+          "8ead80d073d22305c29806cbcace1b1fca9414c821aa851579ed65e78f2dee0a",
+          1500
+        ],
+        [
+          1,
+          0,
+          2,
+          "63660208684fed1e5e9d0d0d1310ab781db78a1ece1eb6c070fc73cf2a45daff",
+          1000
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "布魯頓",
+      "client_original_album_row_sha256": "47165f1555960602736f2cef5a25dfaadad49b20315b8c2feaef7bca1971b655",
+      "client_original_album_row_file_offset": 376600,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100395,
+      "pet07_original_SPR_index": 361,
+      "pet07_original_whole_SPR_sha256": "4a835ba8927bb19912541ed3ac9a45ce5a713d32796e099c9e0c43a54a9fa4ce",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 16,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "5cb344bb950a00b393e29b9ff634acacd69c3fa381b4231ce564a8ce59f09dbd",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "068123e0c3af92b5f968814dadecb081d55061a6fa041638f6755b3816850747",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "4c9c91f9a6bc1324227a6cb76c6591a6b2db19a2009939479a36f9ae5858a951",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "布魯寶",
+      "client_original_album_row_sha256": "567f9567eea830d840ec2a314382743580dcc589673afe4ef421fed2ea13eb64",
+      "client_original_album_row_file_offset": 376628,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100396,
+      "pet07_original_SPR_index": 362,
+      "pet07_original_whole_SPR_sha256": "c53a4d78b271438aa8c590c511af42f84d37170ba1268177bd0c8194730942b3",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 35,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          26,
+          "300a53e8e5c099b30eef011b7b8eda78450eccf4b511f6cddaaa0970c4f6b298",
+          1300
+        ],
+        [
+          2,
+          0,
+          7,
+          "1bf1baa2ba2e257b9bb9bceeb6cb354bea7a06549336f827abf21f912b80637b",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "09917ba9a856c05c8baa69fa99e19220ea250480ddbf926f22ba7a37af1cc9ff",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "邦恩多斯",
+      "client_original_album_row_sha256": "af0062fad1a5cb8c442837e23eea24daa4cb429ec737edcfddc7c4020395def9",
+      "client_original_album_row_file_offset": 376656,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100401,
+      "pet07_original_SPR_index": 364,
+      "pet07_original_whole_SPR_sha256": "0284af96efdff07da2b5b73ccc3f8a84a2a4158e9c653e3a4f3977293f3ec2a4",
+      "pet07_source_total_animations": 104,
+      "pet07_selected_source_frame_occurrences": 34,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          26,
+          "da12a9359d2599d613644695b6da0cc1998aa3371b12c64a3fdf28f545ef7f88",
+          1600
+        ],
+        [
+          2,
+          0,
+          6,
+          "418113a9767251bb6e2bfeabc03175c1c2945817bdc5c61a6fd190d035649ac6",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "b745511cb80958e4659ae3f29f98d10e5c78ce9a6737b5031c29af1ec876af5e",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": null,
+      "client_original_album_row_sha256": null,
+      "client_original_album_row_file_offset": null,
+      "client_original_album_explicit_placeholder": true,
+      "name_evidence_grade": "TW1_ORIGINAL_SPR_ONLY_NO_ALBUM_NAME",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100430,
+      "pet07_original_SPR_index": 393,
+      "pet07_original_whole_SPR_sha256": "7da183de051160b99c95791e326e75343d77955a4f79f3eba3c74ba6c5d1fb13",
+      "pet07_source_total_animations": 56,
+      "pet07_selected_source_frame_occurrences": 20,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          12,
+          "720af740a1dcaa9de8ab6de4b99b56e6a1b614229250432f591a9527d6a8db07",
+          1000
+        ],
+        [
+          2,
+          0,
+          6,
+          "5ba093fcfdf72d4108e2e090c68cd55b6416f710883e91ffdec4e3ea356c2df5",
+          1000
+        ],
+        [
+          1,
+          0,
+          2,
+          "133aca71d43a3f11e5f80f4a707b30afd5f470401606e9fe5cbc20f5f6f4dd8e",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": "邦達霍恩",
+      "client_original_album_row_sha256": "47e639aec9e29a8e33fd63e801ed9d5e8e576649761cc1b71be3a33a36878eaa",
+      "client_original_album_row_file_offset": 377608,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "AUTHENTICATED_SAME_TW1_RETAIL_CLIENT_ORIGINAL_LOCAL_ALBUM",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100432,
+      "pet07_original_SPR_index": 395,
+      "pet07_original_whole_SPR_sha256": "d5e4f229a3f71457d000c8d07e7406423d97b321be00d587c671836d656690d1",
+      "pet07_source_total_animations": 104,
+      "pet07_selected_source_frame_occurrences": 26,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          13,
+          "c6535d5f807df21594acd12d7754c38cda29f755e7e679d41976cd69e849152d",
+          800
+        ],
+        [
+          2,
+          0,
+          11,
+          "7822c2199fc4bf117235bd625e99255ab25b17a0b5c57c720c15e668be656d10",
+          1500
+        ],
+        [
+          1,
+          0,
+          2,
+          "a9d69156a23798055388a772c30b12f9f08e1ddd1dc631f00a7a29ac5dea21f5",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": null,
+      "client_original_album_row_sha256": null,
+      "client_original_album_row_file_offset": null,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "TW1_ORIGINAL_SPR_ONLY_NO_ALBUM_NAME",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100451,
+      "pet07_original_SPR_index": 414,
+      "pet07_original_whole_SPR_sha256": "01b99009142ed6ddecdc467a324ee89b4ea5b28dfe7a8b488b8dee8a3c0d6df6",
+      "pet07_source_total_animations": 104,
+      "pet07_selected_source_frame_occurrences": 38,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          27,
+          "5b93e796465facfe305384bf82b6b4e26cbe2df39364a3cf4f98b1975c063954",
+          1000
+        ],
+        [
+          2,
+          0,
+          9,
+          "523842cb91f32ddcf0c035c81ba03c7cb38e7d8cb716cfc2b0d8ba1e126a180b",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "f32bf0d7aa56cdb163c0d71168ee8ee33142ae3a01fd06b355da19efc629ef44",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": null,
+      "client_original_album_row_sha256": null,
+      "client_original_album_row_file_offset": null,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "TW1_ORIGINAL_SPR_ONLY_NO_ALBUM_NAME",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    },
+    {
+      "graphic_number": 100454,
+      "pet07_original_SPR_index": 417,
+      "pet07_original_whole_SPR_sha256": "13d1f6017a55d85d57af7b5a14b577ec30c50c9e48625c8b565e71d09325119a",
+      "pet07_source_total_animations": 104,
+      "pet07_selected_source_frame_occurrences": 19,
+      "pet07_selected_original_actions": [
+        [
+          0,
+          0,
+          8,
+          "c10c842a9f8df7a3a97812343e4efb02a9c3ca42b628615daa514f8280b61ec4",
+          800
+        ],
+        [
+          2,
+          0,
+          9,
+          "cc80b0605d287e14c21e7fa9b2e405cacb6681d38fa14d66163a18c4fdabf3c9",
+          800
+        ],
+        [
+          1,
+          0,
+          2,
+          "846e8a6e971a389517f9466802a5ee8fd622bb22cd9992c614c0624b93c7f218",
+          100
+        ]
+      ],
+      "pet07_selected_distinct_bitmap_ids": 16,
+      "client_original_album_name": null,
+      "client_original_album_row_sha256": null,
+      "client_original_album_row_file_offset": null,
+      "client_original_album_explicit_placeholder": false,
+      "name_evidence_grade": "TW1_ORIGINAL_SPR_ONLY_NO_ALBUM_NAME",
+      "official_live_pet_proven": false,
+      "original_pixels_newly_decoded_in_this_work": false
+    }
+  ],
+  "evidence_limits": {
+    "client_original_local_album_equals_official_live_issuance": false,
+    "private_png_count_equals_newly_decoded_original_RD_count": false,
+    "unlabelled_original_SPR_equals_new_species": false,
+    "same_client_name_entails_known_historical_release_year": false,
+    "original_client_runtime_executed_now": false
+  },
+  "current_state_preserved_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "PET47_EARLY_2000_OFFICIAL_LIVE_PET_ISSUANCE_OR_NEW_QUALIFIED_CLIENT_NAME_GRAPHICS"
+}
