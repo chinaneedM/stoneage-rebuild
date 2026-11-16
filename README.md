@@ -2989,3 +2989,7 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 
 ## 2026-11-16 — PET65｜2003华义蒙奇／魔法牌六宠与活动规则
 [PET65原文证据与版本隔离](docs/continuity/STONEAGE-PET65-CN2003-WAEI-PETS-SOURCE-AUDIT-20261116.md)／[机读六名与原SPR](research/recovered/STONEAGE-PET65-CN2003-WAEI-PET-PROMO-R1.json)。当年华义产品六宠兑奖名、7月与8月两轮不同来吉卡奖项及台服「邦諾斯娜」来源有界登记。青龙400/蒙奇600是营销中奖名额，不是1000只实发；认证台湾1.0相簿帖拉所伊朵与卡伊霍恩完整SPR SHA不反证2003大陆同版客户端。2003原客户端0B、实际发奖新证明0；2003 PET25旧文档事件1不增，年度仍OPEN、PET单模块、NEXT PET66。CURRENT原blob与Stage不变。
+
+
+## 2026-11-16 — PET66｜2003 台湾6.0具名水母／大陆7.0分发和朱雀年份边界
+[PET66 同期官方与媒体来源等级报告](docs/continuity/STONEAGE-PET66-2003-TW6-CN7-PET-SOURCE-20261116.md)／[机读逐项证据、版本和未决列表](research/recovered/STONEAGE-PET66-2003-TW6-CN7-PET-SOURCE-R1.json)：台湾2003年GNN同期索引有包月承诺水母「貝沃特」、威威乐透及水蓝人龙/黑鸟奖项，仅为新闻索引而非原网页或实际发放证明；大陆2003-12-19华义7.0分发通知记录当期`StoneAge7.rar`及只兼容7.0服务器限制，原RAR字节尚未取得。2003-12-17朱雀「菲奇亚」竞拍宣传是已登记CN70的同名材料，不重算新宠；2004-01-12奖励公告不倒填2003；2003-07-07玩家「戈登尔顿」捕获自述不证明同服主档。2003原客户端新增0B、原生宠ID新增0、实服宠物发放新证0，宠物真实总数UNKNOWN；年度仍OPEN、PET唯一，NEXT PET67核日韩2003官方源和免费直接读取的原补丁。原CURRENT完整Git blob不变、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总完成率未知。
