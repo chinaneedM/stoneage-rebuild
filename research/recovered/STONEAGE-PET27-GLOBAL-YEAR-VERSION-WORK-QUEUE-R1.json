@@ -18,8 +18,8 @@
     "year": 2003,
     "phase": "YEAR_2003_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET65-2003-CN-WAEI-SIX-NAMED-CARD-PETS-TW1-SPR-20261116",
-    "next": "PET66: continue 2003 original TW 6.0 pet releases and authentic CN 2003 award results or client, then JP/KR official source audit.",
+    "latest_partial_root_review": "PET66-2003-TW6-CN7-NAMED-PET-CLIENT-CARRIER-20261116",
+    "next": "PET67: bounded 2003 JP/KR operator-qualified pet and freely obtainable original client/patch sources; then 2003 five-region source-bounded review.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -911,6 +911,16 @@
           ],
           "report": "docs/continuity/STONEAGE-PET65-CN2003-WAEI-PETS-SOURCE-AUDIT-20261116.md",
           "evidence_json": "research/recovered/STONEAGE-PET65-CN2003-WAEI-PET-PROMO-R1.json",
+          "year_not_closed": true
+        },
+        {
+          "id": "PET66-2003-TW6-CN7-NAMED-PET-CLIENT-CARRIER-20261116",
+          "regions": [
+            "TW",
+            "CN"
+          ],
+          "report": "docs/continuity/STONEAGE-PET66-2003-TW6-CN7-PET-SOURCE-20261116.md",
+          "evidence_json": "research/recovered/STONEAGE-PET66-2003-TW6-CN7-PET-SOURCE-R1.json",
           "year_not_closed": true
         }
       ]
@@ -2008,6 +2018,26 @@
       "old_TW1_client_exact_SPR_names_reused": 2,
       "new_2003_client_bytes": 0,
       "new_actual_live_pet_proofs": 0,
+      "historical_pet_population_count": null
+    },
+    {
+      "id": "PET66-2003-TW6-CN7-NAMED-PET-CLIENT-CARRIER-20261116",
+      "regions": [
+        "CN",
+        "TW",
+        "JP",
+        "KR",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET66-2003-TW6-CN7-PET-SOURCE-20261116.md",
+      "evidence_json": "research/recovered/STONEAGE-PET66-2003-TW6-CN7-PET-SOURCE-R1.json",
+      "year_frontier_before": 2003,
+      "year_frontier_after": 2003,
+      "year_not_closed": true,
+      "new_2003_TW_named_promo_candidates": 1,
+      "new_2003_CN_original_client_distribution_notice": 1,
+      "new_confirmed_official_server_grants": 0,
+      "new_2003_original_client_bytes": 0,
       "historical_pet_population_count": null
     }
   ],
