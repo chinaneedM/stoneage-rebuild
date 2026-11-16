@@ -15,11 +15,11 @@
   "latest_year_in_scope": 2026,
   "reason_start_provisional": "1999 is a search-window starting point, NOT an independently authenticated first official launch date; earlier qualified evidence may extend the sequence backwards",
   "current_frontier": {
-    "year": 2003,
-    "phase": "YEAR_2003_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
+    "year": 2004,
+    "phase": "YEAR_2004_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET67-2003-JP174A-KRINIUM-NETMARBLE-PET-VERSION-BOUNDARY-20261116",
-    "next": "PET68: 2003 CN/TW/JP/KR/OTHER five-region source-bounded annual pet audit; advance to 2004 with historically incomplete marker and region reopening triggers only.",
+    "latest_partial_root_review": "PET68-YEAR2003-FIVE-REGION-BOUNDED-AUDIT-OFFICIAL-POBI-20261116",
+    "next": "PET69: begin 2004 official PC pet releases by CN/TW/JP/KR/OTHER operator version; prefer directly accessible verified original clients and source-grade actual pet awards.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -888,7 +888,7 @@
     {
       "year": 2003,
       "chronological_position": 5,
-      "research_gate": "NOT_YEAR_AUDITED",
+      "research_gate": "SOURCE_BOUNDED_REVIEWED",
       "documented_release_event_ids_from_existing_PET25_PET26": [
         "CN-PC-MONKEY-2003"
       ],
@@ -932,8 +932,103 @@
           "report": "docs/continuity/STONEAGE-PET67-2003-JP174A-KR-OPERATOR-BOUNDARY-20261116.md",
           "evidence_json": "research/recovered/STONEAGE-PET67-2003-JPKR-OPERATOR-CLIENT-BOUNDARY-R1.json",
           "year_not_closed": true
+        },
+        {
+          "id": "PET68-YEAR2003-FIVE-REGION-BOUNDED-AUDIT-OFFICIAL-POBI-20261116",
+          "regions": [
+            "CN",
+            "TW",
+            "JP",
+            "KR",
+            "OTHER"
+          ],
+          "report": "docs/continuity/STONEAGE-PET68-YEAR2003-SOURCE-BOUNDED-PET-AUDIT-20261116.md",
+          "evidence_json": "research/recovered/STONEAGE-PET68-YEAR2003-SOURCE-BOUNDED-AUDIT-R1.json",
+          "year_not_closed": false,
+          "historically_complete": false
         }
-      ]
+      ],
+      "historically_complete": false,
+      "historical_species_count": null,
+      "source_bounded_review_receipt": "research/recovered/STONEAGE-PET68-YEAR2003-SOURCE-BOUNDED-AUDIT-R1.json",
+      "region_source_reviews": {
+        "CN": {
+          "operator_labels": [
+            "BEIJING_WAEI"
+          ],
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2003_full_original_client_missing": true,
+          "operator_reported_actual_award_name_count_lower_bound": 1,
+          "first_party_operator_award_report_proven": true,
+          "native_award_log_recovered": false,
+          "reopen": true,
+          "reopen_trigger": "CN_2003_AUTHENTIC_WAEI_1_82_5_0_6_0_7_0_NATIVE_PET_ID_SPR_MASTERS_AND_EVENT_POBI_PRIZE_RECEIPT_OR_OTHER_IN_GAME_RELEASE_PROOF"
+        },
+        "TW": {
+          "operator_labels": [
+            "WAEI_TAIWAN"
+          ],
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2003_full_original_client_missing": true,
+          "operator_reported_actual_award_name_count_lower_bound": 0,
+          "first_party_operator_award_report_proven": false,
+          "native_award_log_recovered": false,
+          "reopen": true,
+          "reopen_trigger": "TW_2003_WAEI_6_0_7_0_AUTHENTIC_CLIENT_AND_ISSUED_PET_BETOVT_WEEWEE_PINK_DINO_WAEO_RECORD"
+        },
+        "JP": {
+          "operator_labels": [
+            "BOTHTEC_NHN_JAPAN",
+            "PREVIOUS_JSS_HISTORY_SEPARATE"
+          ],
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2003_full_original_client_missing": true,
+          "operator_reported_actual_award_name_count_lower_bound": 0,
+          "first_party_operator_award_report_proven": false,
+          "native_award_log_recovered": false,
+          "reopen": true,
+          "reopen_trigger": "JP_2003_BOTHTEC_1_74A_ORIGINAL_BYTES_AND_SERVER_DEPLOYMENT_NAMED_PET_TABLE_OR_OPERATOR_AWARD"
+        },
+        "KR": {
+          "operator_labels": [
+            "INIUM_PRE_20030705",
+            "NETMARBLE_AFTER_200307"
+          ],
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2003_full_original_client_missing": true,
+          "operator_reported_actual_award_name_count_lower_bound": 0,
+          "first_party_operator_award_report_proven": false,
+          "native_award_log_recovered": false,
+          "reopen": true,
+          "reopen_trigger": "KR_2003_INIUM_AND_NETMARBLE_INDEPENDENT_NATIVE_CLIENTS_AND_NAMED_OPERATOR_ISSUANCE"
+        },
+        "OTHER": {
+          "operator_labels": [],
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2003_full_original_client_missing": true,
+          "operator_reported_actual_award_name_count_lower_bound": 0,
+          "first_party_operator_award_report_proven": false,
+          "native_award_log_recovered": false,
+          "reopen": true,
+          "reopen_trigger": "OTHER_2003_IDENTIFIABLE_OFFICIAL_OPERATOR_VERSION_AND_ISSUED_PET_EVIDENCE"
+        }
+      },
+      "residual_reopen_triggers": [
+        "CN_2003_AUTHENTIC_WAEI_1_82_5_0_6_0_7_0_NATIVE_PET_ID_SPR_MASTERS_AND_EVENT_POBI_PRIZE_RECEIPT_OR_OTHER_IN_GAME_RELEASE_PROOF",
+        "TW_2003_WAEI_6_0_7_0_AUTHENTIC_CLIENT_AND_ISSUED_PET_BETOVT_WEEWEE_PINK_DINO_WAEO_RECORD",
+        "JP_2003_BOTHTEC_1_74A_ORIGINAL_BYTES_AND_SERVER_DEPLOYMENT_NAMED_PET_TABLE_OR_OPERATOR_AWARD",
+        "KR_2003_INIUM_AND_NETMARBLE_INDEPENDENT_NATIVE_CLIENTS_AND_NAMED_OPERATOR_ISSUANCE",
+        "OTHER_2003_IDENTIFIABLE_OFFICIAL_OPERATOR_VERSION_AND_ISSUED_PET_EVIDENCE"
+      ],
+      "official_operator_reported_actual_award_name_labels": [
+        "波比"
+      ],
+      "reported_award_is_not_native_pet_master": true
     },
     {
       "year": 2004,
@@ -2067,6 +2162,27 @@
       "historical_pet_population_count": null,
       "KR_Netmarble_174_reposted_source": true,
       "JP_BOTHTEC_174a_period_release_source": true
+    },
+    {
+      "id": "PET68-YEAR2003-FIVE-REGION-BOUNDED-AUDIT-OFFICIAL-POBI-20261116",
+      "regions": [
+        "CN",
+        "TW",
+        "JP",
+        "KR",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET68-YEAR2003-SOURCE-BOUNDED-PET-AUDIT-20261116.md",
+      "evidence_json": "research/recovered/STONEAGE-PET68-YEAR2003-SOURCE-BOUNDED-AUDIT-R1.json",
+      "year_frontier_before": 2003,
+      "year_frontier_after": 2004,
+      "year_not_closed": false,
+      "historically_complete": false,
+      "first_party_CN_2003_named_operator_reported_actual_GM_award": "波比",
+      "verified_native_pet_id_count": 0,
+      "raw_native_award_log_count": 0,
+      "new_original_2003_client_bytes": 0,
+      "historical_pet_population_count": null
     }
   ],
   "client_first_methodology": {

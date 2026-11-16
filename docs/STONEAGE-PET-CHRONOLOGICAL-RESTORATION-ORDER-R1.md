@@ -223,3 +223,7 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## PET67 2026-11-16｜2003日韩官方版别断点及免费原客户端目标
 
 [日韩当期证据报告](continuity/STONEAGE-PET67-2003-JP174A-KR-OPERATOR-BOUNDARY-20261116.md)／[机读原证字段](../research/recovered/STONEAGE-PET67-2003-JPKR-OPERATOR-CLIENT-BOUNDARY-R1.json)：韩国Inium 2003-07-05停运，Netmarble 7月接续且当期转贴官方答复称启动1.74，需区分旧Inium主档与新Netmarble版本；日本BOTH TEC 12/16公开β、同期软件媒体报道1.74a(12/12)，虽有2003年官方免费分发记载，但本轮原安装包文件仍0B且无同源PET表。2004-06-03日本正式服务属于2004。两国全部具体2003官服宠物是否实装/数量仍UNKNOWN，不能从版本介绍媒体和旧玩家宠物文本反推逐只官方ID。2003依然NOT_YEAR_AUDITED，PET唯一活动，NEXT PET68做2003五地区有界年度审核；旧CURRENT整blob保持，不查收费市场、Stage等原状态不变。
+
+
+## PET68 2026-11-16｜2003全球五地区有界年审、北京华义实际发奖自述及2004游标
+[2003年逐国运营版本/宠物实装证据年审](continuity/STONEAGE-PET68-YEAR2003-SOURCE-BOUNDED-PET-AUDIT-20261116.md)／[逐来源事件、跨版本排除和重开条件](../research/recovered/STONEAGE-PET68-YEAR2003-SOURCE-BOUNDED-AUDIT-R1.json)：当期运营方4篇不同日期GM战报称**松鼠「波比」已交付玩家**，其中一份明记11月12日第一名玩家交奇娜获波比；是`OFFICIAL_OPERATOR_REPORTED_ACTUAL_LIVE_AWARD`，不是新原服二进制、确定真实赠送总数或已找到游戏内部物种ID。其它大陆6宠魔法牌广告、魔兽抽奖、台服貝沃特宣传仍较弱，不因类似广告主张变为实际投放。大陆同期5.0于1/20分服升级、3/21另办1.82旧版服，和年末7.0互不可混；日本2003 1.74a β/2004正式服务分开；韩国7月换运营不能跨源合全宠物。五地区真宠物总量均UNKNOWN、无新增2003原客户端字节或原生宠物ID；PET65–67史料保留，2003`SOURCE_BOUNDED_REVIEWED`并非历史完成，允许新源重开，年份有界推进2004、NEXT **PET69**。Stage及原商业素材/历史CURRENT严格不变。

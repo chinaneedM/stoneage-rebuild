@@ -2997,3 +2997,7 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 
 ## 2026-11-16 — PET67｜2003日本1.74a公测和韩国Inium→Netmarble运营断点
 [日韩当年官方版别与宠物原文件证据边界](docs/continuity/STONEAGE-PET67-2003-JP174A-KR-OPERATOR-BOUNDARY-20261116.md)／[PET67机读时间/版本/证据分层](research/recovered/STONEAGE-PET67-2003-JPKR-OPERATOR-CLIENT-BOUNDARY-R1.json)：韩国2003-07-05 Inium停运和07/10 Netmarble接续据同期媒体可证，07/21玩家转录官方答复称计划07/28启用1.74，**不能视为Inium后期版宠物资料完全继承**；日本BOTH TEC/NHN Japan 2003-12-16公开β据当期实况报道，Win软件媒体明确1.74a（03/12/12）及当期免费客户端下载，但今天取得原客户端字节0。2004年6月正式服务不得倒填2003。日/韩具名2003官服新增物种验证0（不等于历史没有）、原版宠ID0、历史总种数UNKNOWN；PET仍独占，2003 NOT_YEAR_AUDITED，NEXT PET68做2003五地区有界年审再考虑推进2004。无收费卖盘调查，旧CURRENT完整blob不改，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、percent UNKNOWN。
+
+
+## 2026-11-16 — PET68｜2003 五地区官方宠物有界年审与大陆「波比」实发报道
+[2003年五地区史料和发奖分级审查](docs/continuity/STONEAGE-PET68-YEAR2003-SOURCE-BOUNDED-PET-AUDIT-20261116.md)／[机读运营方波比GM发奖叙述和逐国重开清单](research/recovered/STONEAGE-PET68-YEAR2003-SOURCE-BOUNDED-AUDIT-R1.json)：新核2003-11-07、10、11、13四份新浪刊载北京华义署名GM在线报道，直接叙述玩家曾获松鼠「波比」，11/12有玩家交「奇娜」换波比，属于**运营方实际颁发自述**而非单纯未来抽奖宣传；同一宠名/运营作者四份报道不计四物种，真实原服发奖记录、身份ID、Sprite/技能仍0。本年新核大陆5.0首批中国网通9/西安网通2分服升级、1.82庆典服、手机伴随产品仅意向，均不能把CN1.82/5/6/7或纸牌宠物算成单一同部署全宠物表。台湾包月贝沃特宣传仍未核领取；日本BOTHTEC 1.74a 2003公测、韩国Inium至Netmarble换运营均缺同版原宠主档，OTHER未证地区不推不存在。2003年只标 `SOURCE_BOUNDED_REVIEWED`／`historically_complete=false`，全球真实宠物种数UNKNOWN，历史PET25事件1条不加；**年份游标推进2004，NEXT PET69**。新增原2003客户端0B、原生ID0，原CURRENT blob完整不改；PET唯一模块，收费光盘/商用原图禁查，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总百分比未知。
