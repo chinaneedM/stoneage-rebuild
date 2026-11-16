@@ -15,11 +15,11 @@
   "latest_year_in_scope": 2026,
   "reason_start_provisional": "1999 is a search-window starting point, NOT an independently authenticated first official launch date; earlier qualified evidence may extend the sequence backwards",
   "current_frontier": {
-    "year": 2004,
-    "phase": "YEAR_2004_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
+    "year": 2005,
+    "phase": "YEAR_2005_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET70-2004-KR-NETMARBLE-FOUR-RIDES-CN75-STAGED-TW-XUANWU-20261116",
-    "next": "PET71: review 2004 CN/TW/JP/KR/OTHER official pet source evidence in bounded five-region annual audit, preserving KR four ride names and CN 7.5 staged server deployments. Advance to 2005 only with historically incomplete marker and region reopen triggers.",
+    "latest_partial_root_review": "PET71-YEAR2004-FIVE-REGION-SOURCE-BOUNDED-OFFICIAL-PET-AUDIT-20261116",
+    "next": "PET72: begin 2005 official PC pet release and original source first audit by region CN/TW/JP/KR/OTHER; prioritize dated 2005 named operator pet releases and accessible original clients without backdating or paid market sources.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -1033,7 +1033,7 @@
     {
       "year": 2004,
       "chronological_position": 6,
-      "research_gate": "NOT_YEAR_AUDITED",
+      "research_gate": "SOURCE_BOUNDED_REVIEWED",
       "documented_release_event_ids_from_existing_PET25_PET26": [],
       "documentary_event_count_NOT_species": 0,
       "unverified_early_and_mid_year_pets_may_exist": true,
@@ -1069,7 +1069,102 @@
           "report": "docs/continuity/STONEAGE-PET70-2004-KR-RIDES-CN75-TW-XUANWU-20261116.md",
           "evidence_json": "research/recovered/STONEAGE-PET70-2004-KR-RIDES-CN75-STAGED-TW-XUANWU-R1.json",
           "year_not_closed": true
+        },
+        {
+          "id": "PET71-YEAR2004-FIVE-REGION-SOURCE-BOUNDED-OFFICIAL-PET-AUDIT-20261116",
+          "regions": [
+            "CN",
+            "TW",
+            "JP",
+            "KR",
+            "OTHER"
+          ],
+          "report": "docs/continuity/STONEAGE-PET71-YEAR2004-FIVE-REGION-PET-AUDIT-20261116.md",
+          "evidence_json": "research/recovered/STONEAGE-PET71-YEAR2004-FIVE-REGION-AUDIT-R1.json",
+          "year_not_closed": false,
+          "historically_complete": false
         }
+      ],
+      "historically_complete": false,
+      "historical_species_count": null,
+      "source_bounded_review_receipt": "research/recovered/STONEAGE-PET71-YEAR2004-FIVE-REGION-AUDIT-R1.json",
+      "region_source_reviews": {
+        "CN": {
+          "operator": "BEIJING_WAEI",
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2004_full_original_client_missing": true,
+          "live_named_pet_roster_verified": false,
+          "first_party_named_riding_or_gift_labels_reported": [],
+          "native_pet_ids_verified": 0,
+          "actual_native_award_log_recovered": false,
+          "reopen": true,
+          "reopen_trigger": "CN_2004_WAEI_SERVER_SPECIFIC_1_82_2_0_2_5_7_0_7_5_CLIENT_MASTERS_AND_NAMED_PRODUCTION_AWARDS"
+        },
+        "TW": {
+          "operator": "TAIWAN_WAEI",
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2004_full_original_client_missing": true,
+          "live_named_pet_roster_verified": false,
+          "first_party_named_riding_or_gift_labels_reported": [
+            "弗麗露",
+            "弗麗雅",
+            "火風鷹人"
+          ],
+          "native_pet_ids_verified": 0,
+          "actual_native_award_log_recovered": false,
+          "reopen": true,
+          "reopen_trigger": "TW_2004_ORIGINAL_WAEI_75_CLIENT_PET_MASTER_AND_XUANWU_QUEST_SCRIPT_REDEEMED_PET_PRIZE_LOGS"
+        },
+        "JP": {
+          "operator": "BOTHTEC_NHN_JAPAN",
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2004_full_original_client_missing": true,
+          "live_named_pet_roster_verified": false,
+          "first_party_named_riding_or_gift_labels_reported": [],
+          "native_pet_ids_verified": 0,
+          "actual_native_award_log_recovered": false,
+          "reopen": true,
+          "reopen_trigger": "JP_2004_BOTHTEC_NHN_AUTHENTIC_CLIENT_NATIVE_PET_SKILL_NAME_TABLE_AND_DATED_NAMED_PET_OPERATOR_ISSUANCE"
+        },
+        "KR": {
+          "operator": "CJ_INTERNET_NETMARBLE",
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2004_full_original_client_missing": true,
+          "live_named_pet_roster_verified": false,
+          "first_party_named_riding_or_gift_labels_reported": [
+            "라고고",
+            "무이",
+            "도라비스",
+            "고르돈"
+          ],
+          "native_pet_ids_verified": 0,
+          "actual_native_award_log_recovered": false,
+          "reopen": true,
+          "reopen_trigger": "KR_2004_NETMARBLE_ORIGINAL_BUILD_PET_NAME_ID_TABLE_3_HUNTABLE_NAMES_AND_RIDE_QUEST_REAL_DEPLOYMENT"
+        },
+        "OTHER": {
+          "operator": null,
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2004_full_original_client_missing": true,
+          "live_named_pet_roster_verified": false,
+          "first_party_named_riding_or_gift_labels_reported": [],
+          "native_pet_ids_verified": 0,
+          "actual_native_award_log_recovered": false,
+          "reopen": true,
+          "reopen_trigger": "OTHER_2004_IDENTIFIABLE_OFFICIAL_PC_OPERATOR_REGION_BUILD_OR_NAMED_PET_ISSUANCE"
+        }
+      },
+      "residual_reopen_triggers": [
+        "CN_2004_WAEI_SERVER_SPECIFIC_1_82_2_0_2_5_7_0_7_5_CLIENT_MASTERS_AND_NAMED_PRODUCTION_AWARDS",
+        "TW_2004_ORIGINAL_WAEI_75_CLIENT_PET_MASTER_AND_XUANWU_QUEST_SCRIPT_REDEEMED_PET_PRIZE_LOGS",
+        "JP_2004_BOTHTEC_NHN_AUTHENTIC_CLIENT_NATIVE_PET_SKILL_NAME_TABLE_AND_DATED_NAMED_PET_OPERATOR_ISSUANCE",
+        "KR_2004_NETMARBLE_ORIGINAL_BUILD_PET_NAME_ID_TABLE_3_HUNTABLE_NAMES_AND_RIDE_QUEST_REAL_DEPLOYMENT",
+        "OTHER_2004_IDENTIFIABLE_OFFICIAL_PC_OPERATOR_REGION_BUILD_OR_NAMED_PET_ISSUANCE"
       ]
     },
     {
@@ -2258,6 +2353,28 @@
       "TW_Xuanwu_period_quest_mode_not_native_award": true,
       "new_original_2004_client_bytes": 0,
       "new_native_2004_pet_ids": 0,
+      "historical_pet_population_count": null
+    },
+    {
+      "id": "PET71-YEAR2004-FIVE-REGION-SOURCE-BOUNDED-OFFICIAL-PET-AUDIT-20261116",
+      "regions": [
+        "CN",
+        "TW",
+        "JP",
+        "KR",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET71-YEAR2004-FIVE-REGION-PET-AUDIT-20261116.md",
+      "evidence_json": "research/recovered/STONEAGE-PET71-YEAR2004-FIVE-REGION-AUDIT-R1.json",
+      "year_frontier_before": 2004,
+      "year_frontier_after": 2005,
+      "year_not_closed": false,
+      "historically_complete": false,
+      "JP_2004_official_beta_cooking_skill_pet_requirement": true,
+      "KR_2004_four_operator_riding_pets_not_first_added_species": true,
+      "new_2004_original_client_bytes": 0,
+      "new_2004_native_pet_ids": 0,
+      "new_2004_real_server_award_logs": 0,
       "historical_pet_population_count": null
     }
   ],
