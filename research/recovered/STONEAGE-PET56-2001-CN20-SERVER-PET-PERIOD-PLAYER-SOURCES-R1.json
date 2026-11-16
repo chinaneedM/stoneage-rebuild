@@ -1,0 +1,139 @@
+{
+  "schema": "stoneage.pet56.2001.cn_2_0_period_player_server_rollout_and_pet_evidence_boundaries.r1",
+  "recorded_date": "2026-11-16",
+  "active_module": "PET",
+  "frontier_year": 2001,
+  "year_gate": "NOT_YEAR_AUDITED",
+  "baseline": {
+    "head": "c22dcd0431d6303b85126ba17ad41bde479f0cfe",
+    "tree": "fb7046db4d5f1c40ed0715dd0e347a7cc08afe93",
+    "queue_blob": "1b5c11aba7c507151e400ec023795b0c06b7b209",
+    "current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "purpose": "Distinguish 2001 mainland 2.0 retail date, attributed per-server activation reports, rideable-pet claims, package marketing, and true official same-build pet release proofs",
+  "prior_reporting": "PET51: contemporary GNN published 2001-11-02 retrospectively describes CN 2.0 product launch 2001-11-01; neither official uniform server activation nor pet master",
+  "client_first_result": "No 2001 original client, authoritative Korean Inium 2001-12 update package, original Japanese or Taiwanese 2001 installer, or verified original package bytes newly obtained",
+  "source_authenticity": "Current readable 17173 migrated player article pages bearing 2001 dates/bylines; original 2001 HTML/HTTP and SHA unverified, player testimony is not operator-side deployment evidence",
+  "articles": [
+    {
+      "id": "CN-20011124-TERRY",
+      "date": "2001-11-24",
+      "author": "TERRY",
+      "title": "石器2.0骑隐型宠",
+      "url": "https://news.17173.com/z/stoneage/content/2001-11-24/n532_448280.html",
+      "type": "PERIOD_ATTRIBUTED_MIGRATED_PLAYER_ACCOUNT",
+      "server": null,
+      "pet_terms": [
+        "绿虎",
+        "黄虎",
+        "金猪",
+        "绿龙"
+      ],
+      "scope": "讨论骑虎与忠诚值；关于异常骑乘/删宠的传闻不是官服正常骑宠开放名单，也未原生复现",
+      "original_2001_html_sha256": null,
+      "original_client_build": null,
+      "original_server_pet_id": null,
+      "official_live_release_confirmed": false
+    },
+    {
+      "id": "CN-20011129-SENNANMARU",
+      "date": "2001-11-29",
+      "author": "森南丸",
+      "title": "人物骑宠状态下HP的损耗浅谈",
+      "url": "https://news.17173.com/z/stoneage/content/2001-11-29/n589_506066.html",
+      "type": "PERIOD_ATTRIBUTED_MIGRATED_PLAYER_ACCOUNT",
+      "server": "上海1（作者自称2.0）",
+      "pet_terms": [
+        "虎",
+        "雷龙",
+        "暴龙"
+      ],
+      "scope": "2001-11-29作者自述2.0骑乘体验；HP损耗例子及1.82沿用公式是假设非原生规则",
+      "original_2001_html_sha256": null,
+      "original_client_build": null,
+      "original_server_pet_id": null,
+      "official_live_release_confirmed": false
+    },
+    {
+      "id": "CN-20011207-LANLAN",
+      "date": "2001-12-07",
+      "author": "蓝蓝",
+      "title": "石器时代2.0的真相",
+      "url": "https://news.17173.com/z/stoneage/content/2001-12-7/n936_852883.html",
+      "type": "PERIOD_ATTRIBUTED_MIGRATED_PLAYER_ACCOUNT",
+      "server": "深圳1（回述2001-11-29开始2.0）；中国网通/上海网通（声称12-05仍未升级）",
+      "pet_terms": [
+        "红暴",
+        "蓝暴",
+        "金虎",
+        "白虎",
+        "粉红色人龙",
+        "虎",
+        "雷龙"
+      ],
+      "scope": "不同服部署日期的玩家自述；包装百种/三百种广告及任务奖宠主张未验原包装、官方奖宠或同服ID",
+      "original_2001_html_sha256": null,
+      "original_client_build": null,
+      "original_server_pet_id": null,
+      "official_live_release_confirmed": false
+    },
+    {
+      "id": "CN-20011225-HENGHENG",
+      "date": "2001-12-25",
+      "author": "哼哼哈哈小丫丫",
+      "title": "非常石器",
+      "url": "https://news.17173.com/z/stoneage/content/2001-12-25/n901_817162.html",
+      "type": "PERIOD_ATTRIBUTED_MIGRATED_PLAYER_ACCOUNT",
+      "server": null,
+      "pet_terms": [
+        "蓝人龙",
+        "红虎",
+        "绿人龙",
+        "红人龙",
+        "金虎",
+        "黄人龙",
+        "绿虎"
+      ],
+      "scope": "自述2.0五兄弟获黄人龙及培育宠物体验；无原版服务器发奖/成长公式验证",
+      "original_2001_html_sha256": null,
+      "original_client_build": null,
+      "original_server_pet_id": null,
+      "official_live_release_confirmed": false
+    }
+  ],
+  "distinctions": {
+    "confirmed_product_date_type": "2001-11-01 NEWS_REPORTED_RETAIL_RELEASE_FROM_PET51",
+    "shanghai1_claim": "2001-11-29 attributed 2.0 account, not original operator server log",
+    "shenzhen1_claim": "2001-12-07 article recalls 2001-11-29 server 2.0 opening",
+    "shanghai_netcom_claim": "2001-12-07 article states some China Netcom/Shanghai Netcom lines still lacked 2.0 by 12-05; not proven same server as Shanghai1",
+    "slogans_not_live_species_counts": [
+      100,
+      300
+    ],
+    "source_specific_riding_experience_not_original_server_rule": true,
+    "client_name_and_spr_same_build_links_proven": 0,
+    "native_hp_formula_verified": false,
+    "player_quest_rewards_not_proven_officially_issued": true
+  },
+  "new_source_results": {
+    "original_2001_client_bytes": 0,
+    "original_package_bytes": 0,
+    "official_named_pet_live_release_proofs": 0,
+    "historical_official_pet_population": null
+  },
+  "unacquired": {
+    "KR_2001_Inium_2_0": "original installer and operator dispatch",
+    "JP_2001_JSS": "source-bound client/operator reward",
+    "TW_2001": "original 2.0/2.5 carrier",
+    "CN_2001": "2001 authentic server-associated binary and actual named award"
+  },
+  "provenance_and_rights": "No original commercial binaries/art/server tables or wholesale source text in public Git; article URLs and bounded paraphrases only",
+  "next": "PET57: 2001 KR/JP/TW/CN authentic period client or operator issued named pet reward; stop adding player speculation as released pet evidence",
+  "preservation": {
+    "CURRENT_git_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  }
+}
