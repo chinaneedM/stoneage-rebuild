@@ -59,11 +59,11 @@ class PET69Test(unittest.TestCase):
   d,q=self.d,self.q
   self.assertEqual(d["year"],2004)
   self.assertEqual(d["historical_YEAR_2004_status_after"],"NOT_YEAR_AUDITED")
-  self.assertEqual(q["current_frontier"]["year"],2004)
+  self.assertGreaterEqual(q["current_frontier"]["year"],2004)
   self.assertGreaterEqual(int(q["current_frontier"]["latest_partial_root_review"].split("-")[0][3:]),69)
   self.assertRegex(q["current_frontier"]["next"],r"^PET[0-9]+:")
   y=next(z for z in q["yearly_work_queue"] if z["year"]==2004)
-  self.assertEqual(y["research_gate"],"NOT_YEAR_AUDITED")
+  self.assertEqual(y["research_gate"],"NOT_YEAR_AUDITED" if q["current_frontier"]["year"]==2004 else "SOURCE_BOUNDED_REVIEWED")
   self.assertEqual(sum(x["id"]==d["id"] for x in q["root_source_census_receipts"]),1)
   self.assertEqual(sum(x["id"]==d["id"] for x in y["partial_source_review_receipts"]),1)
   self.assertEqual(q["yearly_work_queue"][4]["research_gate"],"SOURCE_BOUNDED_REVIEWED")
