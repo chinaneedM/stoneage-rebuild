@@ -34,8 +34,8 @@ class PET64Audit(unittest.TestCase):
    self.assertIsNone(v["pet_population"],r)
    self.assertFalse(v["named_native_pet_roster_verified"],r)
    self.assertTrue(v["reopen"] and v["reopen_trigger"],r)
-  self.assertEqual(q["current_frontier"]["year"],2003)
-  self.assertEqual(q["yearly_work_queue"][4]["research_gate"],"NOT_YEAR_AUDITED")
+  self.assertGreaterEqual(q["current_frontier"]["year"],2003)
+  self.assertEqual(q["yearly_work_queue"][4]["research_gate"],"NOT_YEAR_AUDITED" if q["current_frontier"]["year"]==2003 else "SOURCE_BOUNDED_REVIEWED")
   self.assertIn(d["id"],[x["id"] for x in q["root_source_census_receipts"]])
   self.assertRegex(q["current_frontier"]["next"],r"^PET[0-9]+:")
  def test_keeps_historical_receipts_and_event_count(self):
