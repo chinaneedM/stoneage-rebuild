@@ -1,0 +1,87 @@
+"""PET69 2004 regional official pet source grades and physical-avatar exclusions."""
+import json,unittest
+from pathlib import Path
+R=Path(__file__).resolve().parents[1]/"research"/"recovered"
+class PET69Test(unittest.TestCase):
+ @classmethod
+ def setUpClass(cls):
+  cls.d=json.loads((R/"STONEAGE-PET69-YEAR2004-TW75-CNMONKEY-JPAVATAR-R1.json").read_text(encoding="utf8"))
+  cls.q=json.loads((R/"STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json").read_text(encoding="utf8"))
+ def source(self,id):
+  return next(x for x in self.d["region_sources"] if x["id"]==id)
+ def test_TW_75_on_site_named_pets_vs_not_native_record(self):
+  a=self.source("TW_20040624_75_PRESS_GIVEAWAY")
+  self.assertEqual(a["named_fox_woman_prize_labels"],["弗麗露","弗麗雅"])
+  self.assertEqual(a["generic_hawk_label"],"火風鷹人")
+  self.assertEqual(a["producer_announced_extra_hawks"],5)
+  self.assertEqual(a["producer_reported_ingame_firewind_hawk_population_below"],20)
+  self.assertTrue(a["producer_quoted_presence_not_verified_by_original_server"])
+  self.assertTrue(a["report_on_site_giveaway_not_native_delivery_log"])
+  self.assertFalse(a["fox_prize_actual_account_delivery_verified"])
+  self.assertIsNone(a["exact_hawk_species_ID"])
+  b=self.source("TW_20040630_75_VERSION")
+  self.assertEqual(b["reported_update_date"],"2004-06-30")
+  self.assertTrue(b["retrospective_claims_2004_07_02_still_unresolved"])
+  self.assertTrue(b["team_tournament_commercial_pets_excluded_in_rule_not_pets_absent_from_all_servers"])
+ def test_late_TW_named_promotions_not_confirmed_issued_roster(self):
+  a=self.source("TW_20041214_GNN_CHAOS_EGG")
+  self.assertEqual(a["advertised_reward_names"],["奈坎特","哈沃恩","奇歐巴肯","奈宇羅","布里薩爾","艾柏瑞","拉特利"])
+  self.assertTrue(a["advertised_initial_lottery_and_collection_prizes"])
+  self.assertFalse(a["actual_issued_quantities_or_native_ids_proven"])
+  self.assertTrue(a["prior_2004_december_prize_catalog_not_global_species_count"])
+ def test_CN_monkey_Xuanwu_separate_region_deployment(self):
+  a=self.source("CN_20040913_DEVELOPER_FORUM")
+  self.assertTrue(a["user_says_cn_monkey_year_beast_not_yet_released"])
+  self.assertTrue(a["producer_response_emphasizes_TW_CN_distinct_release_plans"])
+  self.assertFalse(a["producer_independently_confirms_TW_monkey_native_deployment"])
+  self.assertFalse(a["producer_confirms_CN_monkey_has_been_released"])
+  self.assertTrue(a["producer_says_TW_Xuanwu_quest_and_CN_planned"])
+  self.assertFalse(a["cn_玄武_reward_issued_verified"])
+  b=self.source("CN_20040913_NEW_PLAYER_CUP")
+  self.assertTrue(b["contest_future_2004_2005"])
+  self.assertEqual(b["actual_2004_grant_registry_obtained"],False)
+  self.assertTrue(b["reward_promises_not_actual_landed_species"])
+ def test_JP_avatar_items_are_not_natively_new_in_game_species(self):
+  a=self.source("JP_20040318_HANGAME_AVATAR")
+  self.assertEqual(a["avatar_item_count"],7)
+  self.assertEqual(a["examples"],["ゴルシス","ウポポ","ミドリガメ"])
+  self.assertTrue(a["avatar_name_not_native_in_game_2004_pet_issuance"])
+  self.assertTrue(a["avatar_items_not_population_count"])
+  b=self.source("JP_20040527_HANGAME_AVATAR_PRE_SALE")
+  self.assertTrue(b["reward_account_avatar_not_native_pet_species"])
+  c=self.source("JP_20040603_NHN_FORMAL")
+  self.assertEqual(c["official_service_started"],"2004-06-03T15:00")
+  self.assertEqual(c["prior_beta"],"2003-12-16")
+  self.assertTrue(c["report_describes_pet_capture_possible"])
+  self.assertIsNone(c["game_pet_species_named_in_this_release"])
+  self.assertFalse(c["authentic_2004_original_pet_table_obtained"])
+ def test_year_2004_partial_does_not_overwrite_2003_year_review(self):
+  d,q=self.d,self.q
+  self.assertEqual(d["year"],2004)
+  self.assertEqual(d["historical_YEAR_2004_status_after"],"NOT_YEAR_AUDITED")
+  self.assertEqual(q["current_frontier"]["year"],2004)
+  self.assertGreaterEqual(int(q["current_frontier"]["latest_partial_root_review"].split("-")[0][3:]),69)
+  self.assertRegex(q["current_frontier"]["next"],r"^PET[0-9]+:")
+  y=next(z for z in q["yearly_work_queue"] if z["year"]==2004)
+  self.assertEqual(y["research_gate"],"NOT_YEAR_AUDITED")
+  self.assertEqual(sum(x["id"]==d["id"] for x in q["root_source_census_receipts"]),1)
+  self.assertEqual(sum(x["id"]==d["id"] for x in y["partial_source_review_receipts"]),1)
+  self.assertEqual(q["yearly_work_queue"][4]["research_gate"],"SOURCE_BOUNDED_REVIEWED")
+  self.assertFalse(q["yearly_work_queue"][4]["historically_complete"])
+  self.assertTrue(d["existing_2003_year_review_unchanged"])
+  self.assertEqual(q["yearly_work_queue"][4]["official_operator_reported_actual_award_name_labels"],["波比"])
+ def test_qualified_missing_fields_and_rights(self):
+  d=self.d
+  self.assertEqual(set(d["region_frontier"]),{"CN","TW","JP","KR","OTHER"})
+  self.assertEqual(len(d["region_sources"]),8)
+  self.assertEqual(d["native_2004_original_client_bytes_acquired"],0)
+  self.assertEqual(d["native_2004_pet_ids_verified"],0)
+  self.assertEqual(d["current_named_pet_actual_account_delivery_proven"],0)
+  self.assertIsNone(d["global_2004_pet_species_total"])
+  self.assertTrue(d["historical_CURRENT_unchanged"])
+  self.assertTrue(d["no_paid_marketplace"])
+  self.assertTrue(d["no_original_commercial_media_committed"])
+  self.assertEqual(d["startup"]["CURRENT_original_blob"],"c89e0e33537990aa2132b47c40fef49a985a935c")
+  self.assertEqual((d["stage_A"],d["stage_B_wiki"],d["r79"]),("7_PARTIAL_2_OPEN","GATED","PAUSED_NON_BLOCKING"))
+  self.assertIsNone(d["overall_percent"])
+if __name__=="__main__":unittest.main()

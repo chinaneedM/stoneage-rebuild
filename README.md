@@ -3001,3 +3001,7 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 
 ## 2026-11-16 — PET68｜2003 五地区官方宠物有界年审与大陆「波比」实发报道
 [2003年五地区史料和发奖分级审查](docs/continuity/STONEAGE-PET68-YEAR2003-SOURCE-BOUNDED-PET-AUDIT-20261116.md)／[机读运营方波比GM发奖叙述和逐国重开清单](research/recovered/STONEAGE-PET68-YEAR2003-SOURCE-BOUNDED-AUDIT-R1.json)：新核2003-11-07、10、11、13四份新浪刊载北京华义署名GM在线报道，直接叙述玩家曾获松鼠「波比」，11/12有玩家交「奇娜」换波比，属于**运营方实际颁发自述**而非单纯未来抽奖宣传；同一宠名/运营作者四份报道不计四物种，真实原服发奖记录、身份ID、Sprite/技能仍0。本年新核大陆5.0首批中国网通9/西安网通2分服升级、1.82庆典服、手机伴随产品仅意向，均不能把CN1.82/5/6/7或纸牌宠物算成单一同部署全宠物表。台湾包月贝沃特宣传仍未核领取；日本BOTHTEC 1.74a 2003公测、韩国Inium至Netmarble换运营均缺同版原宠主档，OTHER未证地区不推不存在。2003年只标 `SOURCE_BOUNDED_REVIEWED`／`historically_complete=false`，全球真实宠物种数UNKNOWN，历史PET25事件1条不加；**年份游标推进2004，NEXT PET69**。新增原2003客户端0B、原生ID0，原CURRENT blob完整不改；PET唯一模块，收费光盘/商用原图禁查，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总百分比未知。
+
+
+## 2026-11-16 — PET69｜2004台湾7.5原具名奖宠、大陆猴年兽版别分歧与日本非游戏头像排除
+[PET69按官方版本审查2004当期宠物源](docs/continuity/STONEAGE-PET69-YEAR2004-TW75-CNMONKEY-JPAVATAR-20261116.md)／[机读奖宠、运营版本与排除记录](research/recovered/STONEAGE-PET69-YEAR2004-TW75-CNMONKEY-JPAVATAR-R1.json)：2004-06-24巴哈GNN现场采访台湾制作人记录「弗麗露」「弗麗雅」两狐狸女奖宠与临时加赠5只「火風鷹人」，制作人口述同年火风鹰人在游戏中「不到20只」是报道估计，非本项目原服统计/精确宠ID；2004-12-14台湾圣诞转蛋广告另有奈坎特/哈沃恩/奇歐巴肯/奈宇羅/布里薩爾/艾柏瑞/拉特利七名，但仍是奖品宣传。2004-09-13北京华义现场答问称猴年兽/玄武台陆规划差异，不能推CN已实投或台服同宠ID；北京新人杯奖品也只计划。日本2004-03-18的7种石器恐龙**Hangame账号头像不是原游戏实装7种宠**，6/3原日服正式开放亦不提供新的同版名单。KR/OTHER没可验证当期原官宠主档。本批实际新增2004原客户端0B、原宠ID0、原服发奖日志0；年份**仍2004 NOT_YEAR_AUDITED，NEXT PET70**，PET单模块不改、旧CURRENT blob不覆盖、版权与禁收费盘/Stage不变。

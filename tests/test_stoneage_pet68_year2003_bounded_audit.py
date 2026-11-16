@@ -84,7 +84,7 @@ class PET68YearAudit(unittest.TestCase):
   a,q=self.a,self.q
   self.assertEqual((a["year_frontier_before"],a["year_frontier_after"]),(2003,2004))
   self.assertEqual(q["current_frontier"]["year"],2004)
-  self.assertTrue(q["current_frontier"]["next"].startswith("PET69:"))
+  self.assertRegex(q["current_frontier"]["next"],r"^PET[0-9]+:")
   self.assertEqual(q["yearly_work_queue"][5]["research_gate"],"NOT_YEAR_AUDITED")
   self.assertEqual(q["yearly_work_queue"][4]["documentary_event_count_NOT_species"],1)
   self.assertEqual(a["old_2003_PET25_PET26_documentary_event_count_unchanged"],1)

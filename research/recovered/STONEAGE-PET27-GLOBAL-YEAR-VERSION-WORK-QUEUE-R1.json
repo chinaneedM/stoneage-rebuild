@@ -18,8 +18,8 @@
     "year": 2004,
     "phase": "YEAR_2004_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET68-YEAR2003-FIVE-REGION-BOUNDED-AUDIT-OFFICIAL-POBI-20261116",
-    "next": "PET69: begin 2004 official PC pet releases by CN/TW/JP/KR/OTHER operator version; prefer directly accessible verified original clients and source-grade actual pet awards.",
+    "latest_partial_root_review": "PET69-2004-TW75-CNMONKEY-JPAVATAR-PET-SOURCE-20261116",
+    "next": "PET70: continue 2004 original Netmarble Korea pet sources, Taiwan Xuanwu/monkey year native issuance, CN7.5 operator award proofs and exact original client bytes; preserve official region boundaries.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -1044,7 +1044,22 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "partial_source_review_receipts": [
+        {
+          "id": "PET69-2004-TW75-CNMONKEY-JPAVATAR-PET-SOURCE-20261116",
+          "regions": [
+            "TW",
+            "CN",
+            "JP",
+            "KR",
+            "OTHER"
+          ],
+          "report": "docs/continuity/STONEAGE-PET69-YEAR2004-TW75-CNMONKEY-JPAVATAR-20261116.md",
+          "evidence_json": "research/recovered/STONEAGE-PET69-YEAR2004-TW75-CNMONKEY-JPAVATAR-R1.json",
+          "year_not_closed": true
+        }
+      ]
     },
     {
       "year": 2005,
@@ -2182,6 +2197,29 @@
       "verified_native_pet_id_count": 0,
       "raw_native_award_log_count": 0,
       "new_original_2003_client_bytes": 0,
+      "historical_pet_population_count": null
+    },
+    {
+      "id": "PET69-2004-TW75-CNMONKEY-JPAVATAR-PET-SOURCE-20261116",
+      "regions": [
+        "TW",
+        "CN",
+        "JP",
+        "KR",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET69-YEAR2004-TW75-CNMONKEY-JPAVATAR-20261116.md",
+      "evidence_json": "research/recovered/STONEAGE-PET69-YEAR2004-TW75-CNMONKEY-JPAVATAR-R1.json",
+      "year_frontier_before": 2004,
+      "year_frontier_after": 2004,
+      "year_not_closed": true,
+      "tw_2004_contemporary_named_fox_woman_candidates": 2,
+      "tw_firewind_hawk_count_reported_under": 20,
+      "cn_monkey_year_version_divergence": true,
+      "JP_Hangame_pet_avatar_is_not_in_game_pet": true,
+      "new_2004_original_client_bytes": 0,
+      "new_2004_native_pet_ids": 0,
+      "new_2004_verified_server_logs": 0,
       "historical_pet_population_count": null
     }
   ],
