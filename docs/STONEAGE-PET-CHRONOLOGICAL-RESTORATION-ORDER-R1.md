@@ -135,3 +135,7 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## PET45 2026-11-16｜台湾8.5保存包412候选图号与197,680帧原RD索引覆盖
 
 [PET45原素材与帧到位图联接审计](continuity/STONEAGE-PET45-TW85-CANDIDATE-SPR-RD-20261116.md)／[412图号及416物理SPR组的逐源明细](../research/recovered/STONEAGE-PET45-TW85-SAME-CARRIER-SPR-RD-INDEX-R1.json)：对现存PET44 412候选，精确重放R28源SPR和同包R29源RD派生表，197680原帧位置中197678有唯一同包RD原索引、2为空值，索引缺件0；214物理组与CN50已有全段同SHA、另202仅TW85原段有证。此为已验证原字节源派生的新增412批量来源关联，不是新取原商业字节或新原像素解码；无新的同构建宠物名字及正式官服投放，历史物种总数UNKNOWN。TW85候选未认证纯官服、2000年份游标OPEN，PET仍唯一活动模块；NEXT PET46优先同载体名字/原RD私人图像可见复原，资料不够留准确未决，不转NPC。
+
+## PET46 2026-11-16｜台湾1.0原客户端相册名与私有原图动作真实接通
+
+[PET46来源逐项复核和私人离线原图图鉴](continuity/STONEAGE-PET46-TW1-ALBUM-ORIGINAL-2D-PRIVATE-VIEWER-20261116.md)／[130组源精确原名/SPR的机读交叉表](../research/recovered/STONEAGE-PET46-TW1-ALBUM-NAME-2D-CROSSWALK-R1.json)：私人Library实际取回PET07原像素单文件HTML的130源图形组/451原动作方向序列/3817帧位置/2540既存PNG，PET39同一认证台湾1.0客户端124原相册名和源SPR图号/组序号/原整段SHA全124精确一致。已实际交付带原名过滤、序列帧查看的私有离线图鉴，Chromium已验证实际图片、124/6筛选、0JS错误。100401是相册表占位，另外5个未具名图号不在相册表窗口，不能当6新宠。所有原商业图像不进入公共Git。PET46新原像素0、新官方实装0；2000年仍OPEN，PET单模块锁持续，下一PET47转2000官方实装正本或来源可信新增客户端主数据，不再重复既有SPR索引。
