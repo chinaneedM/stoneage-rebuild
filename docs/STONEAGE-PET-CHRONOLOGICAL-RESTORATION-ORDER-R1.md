@@ -139,3 +139,8 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## PET46 2026-11-16｜台湾1.0原客户端相册名与私有原图动作真实接通
 
 [PET46来源逐项复核和私人离线原图图鉴](continuity/STONEAGE-PET46-TW1-ALBUM-ORIGINAL-2D-PRIVATE-VIEWER-20261116.md)／[130组源精确原名/SPR的机读交叉表](../research/recovered/STONEAGE-PET46-TW1-ALBUM-NAME-2D-CROSSWALK-R1.json)：私人Library实际取回PET07原像素单文件HTML的130源图形组/451原动作方向序列/3817帧位置/2540既存PNG，PET39同一认证台湾1.0客户端124原相册名和源SPR图号/组序号/原整段SHA全124精确一致。已实际交付带原名过滤、序列帧查看的私有离线图鉴，Chromium已验证实际图片、124/6筛选、0JS错误。100401是相册表占位，另外5个未具名图号不在相册表窗口，不能当6新宠。所有原商业图像不进入公共Git。PET46新原像素0、新官方实装0；2000年仍OPEN，PET单模块锁持续，下一PET47转2000官方实装正本或来源可信新增客户端主数据，不再重复既有SPR索引。
+
+
+## PET47 2026-11-16｜韩国2000年原版安装盘的明确分发追索点（仍未取得原文件）
+
+[韩国 Inium 当期日期冲突、Mentech 盒装合同和 Hananet/Cnet 下载渠道来源报告](continuity/STONEAGE-PET47-KR2000-ORIGINAL-CLIENT-DISTRIBUTION-20261116.md)／[带源分级的机读收据](../research/recovered/STONEAGE-PET47-KR2000-DISTRIBUTION-PROVENANCE-R1.json)：本轮直接读取 2000-10-27 Dailygame 和 2000-12-28 GameMeca 同期报道正文，新见 Mentech **6万份供货合同而非证实已售6万**、12月11日收费、Hananet/Cnet 原渠道；另 2000-10-11 Dailygame **搜索索引片段**称10月4日试运营，但缺文章固定正文，和既有10月10日/12日不同说法并置而不硬裁决。韩国2000年原客户端实得0B、同构建宠物名字与正式投放仍无新证明，**总种数UNKNOWN、2000年度仍OPEN**。NEXT PET48 只定向追可验证源的2000 Inium 原盘/缓存或台湾当期官服具名发放原证；不得用当代私服包或晚版模板倒填早期官服。CURRENT 原Git blob `c89e0e33537990aa2132b47c40fef49a985a935c` 未修改，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体完成率未知。
