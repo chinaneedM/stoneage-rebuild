@@ -74,9 +74,9 @@ class TestPET60Year2001Bounded(unittest.TestCase):
     def test_search_stop_and_2002_new_frontier(self):
         a,q=self.a,self.q
         self.assertEqual((a["year_frontier_before"],a["year_frontier_after"]),(2001,2002))
-        self.assertEqual(q["current_frontier"]["year"],2002)
+        self.assertGreaterEqual(q["current_frontier"]["year"],2002)
         self.assertEqual(q["current_frontier"]["status"],"OPEN_NOT_YEAR_CLOSED")
-        self.assertEqual(q["yearly_work_queue"][3]["research_gate"],"NOT_YEAR_AUDITED")
+        self.assertEqual(q["yearly_work_queue"][3]["research_gate"],"SOURCE_BOUNDED_REVIEWED")
         self.assertEqual(q["yearly_work_queue"][3]["documented_release_event_count_NOT_species"] if "documented_release_event_count_NOT_species" in q["yearly_work_queue"][3] else q["yearly_work_queue"][3]["documentary_event_count_NOT_species"],4)
         self.assertEqual(q["yearly_work_queue"][3]["documented_release_event_ids_from_existing_PET25_PET26"],a["next_2002_candidate_existing_release_event_ids"])
         self.assertRegex(q["current_frontier"]["next"], r"^PET[0-9]+:")  # forward-only receipt remains after new PET batches

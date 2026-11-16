@@ -5053,3 +5053,8 @@ R14房间1001/NPC16017与R24三商品别名候选接在一个离线页，14原PN
 ### 1999-05-18 contemporaneous prelaunch pet capture/rearing feature (PET33 documented 2026-11-15)
 
 **FACT AS PERIOD EDITORIAL STATEMENT / NOT LIVE DEPLOYMENT:** INTERNET Watch's dated 1999-05-18 Japanese product digest (last updated 23:38) described JSS's planned Gamer's Dream `STONE AGE` game and expressly included dinosaur capture and rearing as intended features. Actual newly checked webpage bytes: 23,747 UTF-8, SHA256 `f1403f84cfd2bf7fbc356db65c2e015e87c96fa2c3316812605e58571d33218c`, originally published page URL https://internet.watch.impress.co.jp/www/digest/backno/9905/18.htm ; full derived source custody and negative release qualification in `research/recovered/STONEAGE-PET33-JP1999-0518-PRELAUNCH-PET-SOURCE-R1.json`. This authentic 1999-dated newspaper item independently pre-dates the Japanese October launch notices; it is not proof of first deployment, original species names, count, captures, 1999 client or server runtime. Existing 1999 rollout timeline and 2001 JSS manual remain separate evidence tiers; 1999 PET year stays NOT_YEAR_AUDITED.
+
+
+### 2002-11-11 华义台湾第一方新闻稿“未开放新宠”与宠物日志包（PET64年审追加）
+
+[华义国际公开署名当期企业新闻稿](https://www.digitalwall.com/scripts/displaypr.asp?UID=230)明确在2002-11-11公告宠物日志包附《宠物进化史》新版光盘和Pet卡，文案称**有机会**刮出「**未開放新寵**」或其他宠/道具。**这是运营宣传且字面说未开放，不能据新闻稿追认2002官服已开放、已实发、原客户端已取得。** 来源于数位之墙免费公开文本、无原2002 HTML SHA，未购买客户端。2002全球五区源有界年审详见`docs/continuity/STONEAGE-PET64-YEAR2002-SOURCE-BOUNDED-PET-AUDIT-20261116.md`，年审状态不等于史实完整，PET下一年2003。

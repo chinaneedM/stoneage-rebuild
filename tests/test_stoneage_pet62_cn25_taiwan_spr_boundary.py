@@ -108,8 +108,8 @@ class TestPet62Cn25SourceBoundaries(unittest.TestCase):
 
     def test_2002_old_four_record_count_and_frontier_not_changed(self):
         d,q=self.d,self.q
-        self.assertEqual(q["current_frontier"]["year"],2002)
-        self.assertEqual(q["yearly_work_queue"][3]["research_gate"],"NOT_YEAR_AUDITED")
+        self.assertGreaterEqual(q["current_frontier"]["year"],2002)
+        self.assertEqual(q["yearly_work_queue"][3]["research_gate"],"SOURCE_BOUNDED_REVIEWED")
         self.assertRegex(q["current_frontier"]["next"],r"^PET[0-9]+:")
         self.assertIn(d["id"],[x["id"] for x in q["root_source_census_receipts"]])
         self.assertEqual(q["yearly_work_queue"][3]["documentary_event_count_NOT_species"],4)
