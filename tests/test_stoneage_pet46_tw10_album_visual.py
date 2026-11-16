@@ -40,7 +40,9 @@ class PET46(unittest.TestCase):
   self.assertEqual(out["year_2000"],"OPEN_NOT_YEAR_CLOSED")
  def test_chronology_still_open(self):
   q=load("STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json")
-  self.assertEqual((q["current_frontier"]["year"],q["current_frontier"]["status"]),(2000,"OPEN_NOT_YEAR_CLOSED"))
+  # PET46 receipt remains TW1/2000-open at publication; current frontier can advance source-bounded.
+  self.assertGreaterEqual(q["current_frontier"]["year"],2000)
+  self.assertEqual(q["current_frontier"]["status"],"OPEN_NOT_YEAR_CLOSED")
   self.assertIn("PET46-TW1-ALBUM-PRIVATE-ORIGINAL-2D-20261116",[x["id"] for x in q["root_source_census_receipts"]])
   s=(ROOT/"docs/STONEAGE-PET-CHRONOLOGICAL-RESTORATION-ORDER-R1.md").read_text(encoding="utf-8")
   self.assertEqual(s.count("## PET46 2026-11-16"),1)
