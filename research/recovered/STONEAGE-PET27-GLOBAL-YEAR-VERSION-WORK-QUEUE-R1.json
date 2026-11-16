@@ -15,11 +15,11 @@
   "latest_year_in_scope": 2026,
   "reason_start_provisional": "1999 is a search-window starting point, NOT an independently authenticated first official launch date; earlier qualified evidence may extend the sequence backwards",
   "current_frontier": {
-    "year": 2005,
-    "phase": "YEAR_2005_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
+    "year": 2006,
+    "phase": "YEAR_2006_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET72-2005-CN75-TW-KIRIN-LAIFU-JP-STAGED-KR-RIDE-20261116",
-    "next": "PET73: 2005 official client/PET sources—original Taiwan chicken-year period announcements, Japan July 12 applied original patch and black tiger identity, mainland 7.5 actual named awards, Korean ride native pet mapping; then 2005 five-region bounded audit.",
+    "latest_partial_root_review": "PET73-2005-FIVE-REGION-SOURCE-BOUNDED-OFFICIAL-PET-AUDIT-20261116",
+    "next": "PET74: begin 2006 official PC pet releases and authentic client/patch sources by region CN/TW/JP/KR/OTHER; prioritize dated operator named issuance, separate mobile and modern/private servers, no paid disc marketplace.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -1170,7 +1170,7 @@
     {
       "year": 2005,
       "chronological_position": 7,
-      "research_gate": "NOT_YEAR_AUDITED",
+      "research_gate": "SOURCE_BOUNDED_REVIEWED",
       "documented_release_event_ids_from_existing_PET25_PET26": [],
       "documentary_event_count_NOT_species": 0,
       "unverified_early_and_mid_year_pets_may_exist": true,
@@ -1195,7 +1195,88 @@
           "report": "docs/continuity/STONEAGE-PET72-YEAR2005-CN-TW-JP-KR-SOURCE-20261116.md",
           "evidence_json": "research/recovered/STONEAGE-PET72-YEAR2005-CN-TW-JP-KR-SOURCE-R1.json",
           "year_not_closed": true
+        },
+        {
+          "id": "PET73-2005-FIVE-REGION-SOURCE-BOUNDED-OFFICIAL-PET-AUDIT-20261116",
+          "regions": [
+            "CN",
+            "TW",
+            "JP",
+            "KR",
+            "OTHER"
+          ],
+          "report": "docs/continuity/STONEAGE-PET73-YEAR2005-FIVE-REGION-AUDIT-20261116.md",
+          "evidence_json": "research/recovered/STONEAGE-PET73-YEAR2005-FIVE-REGION-AUDIT-R1.json",
+          "year_not_closed": false,
+          "historically_complete": false
         }
+      ],
+      "historically_complete": false,
+      "historical_species_count": null,
+      "source_bounded_review_receipt": "research/recovered/STONEAGE-PET73-YEAR2005-FIVE-REGION-AUDIT-R1.json",
+      "region_source_reviews": {
+        "CN": {
+          "operator": "BEIJING_WAEI",
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2005_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2005_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "CN_2005_WAEI_7_5_PET_CLIENT_GRAPHIC_SKILL_ID_AND_REAL_CHICKEN_OX_STORE_REWARD_DATE_ACCOUNT_LOG_AND_OLDER_REGION_VERSION_GAP"
+        },
+        "TW": {
+          "operator": "TAIWAN_WAEI",
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2005_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2005_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "TW_2005_PERIOD_WAEI_CHICKEN_YEAR_FEB23_ORIGINAL_ANNOUNCEMENT_AND_8_0_TWO_MOUNT_NAMES_KIRIN_LAIFU_DELIVERY_LOGS_NATIVE_CLIENT"
+        },
+        "JP": {
+          "operator": "GAIAX",
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2005_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2005_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "JP_2005_JULY05_JULY12_AUTHENTIC_GAIAX_PATCH_BYTES_AND_APPLIED_BUILD_PET_ALBUM_LV1_SPAWNS_BLACK_TIGER_LATER_ID"
+        },
+        "KR": {
+          "operator": "CJ_INTERNET_NETMARBLE",
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2005_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2005_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "KR_2005_CJ_NETMARBLE_AUTHENTIC_BUILD_RIDE_SYSTEM_PET_ID_NAME_TABLE_REAL_ACCOUNT_MOUNT_QUEST"
+        },
+        "OTHER": {
+          "operator": null,
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2005_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2005_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "OTHER_2005_INDEPENDENT_PC_STONEAGE_OPERATOR_REGION_AND_DATED_OFFICIAL_PET_OR_AUTHENTIC_CLIENT"
+        }
+      },
+      "residual_reopen_triggers": [
+        "CN_2005_WAEI_7_5_PET_CLIENT_GRAPHIC_SKILL_ID_AND_REAL_CHICKEN_OX_STORE_REWARD_DATE_ACCOUNT_LOG_AND_OLDER_REGION_VERSION_GAP",
+        "TW_2005_PERIOD_WAEI_CHICKEN_YEAR_FEB23_ORIGINAL_ANNOUNCEMENT_AND_8_0_TWO_MOUNT_NAMES_KIRIN_LAIFU_DELIVERY_LOGS_NATIVE_CLIENT",
+        "JP_2005_JULY05_JULY12_AUTHENTIC_GAIAX_PATCH_BYTES_AND_APPLIED_BUILD_PET_ALBUM_LV1_SPAWNS_BLACK_TIGER_LATER_ID",
+        "KR_2005_CJ_NETMARBLE_AUTHENTIC_BUILD_RIDE_SYSTEM_PET_ID_NAME_TABLE_REAL_ACCOUNT_MOUNT_QUEST",
+        "OTHER_2005_INDEPENDENT_PC_STONEAGE_OPERATOR_REGION_AND_DATED_OFFICIAL_PET_OR_AUTHENTIC_CLIENT"
       ]
     },
     {
@@ -2427,6 +2508,29 @@
       "new_original_2005_client_bytes": 0,
       "new_original_pet_IDs": 0,
       "global_2005_species_total": null
+    },
+    {
+      "id": "PET73-2005-FIVE-REGION-SOURCE-BOUNDED-OFFICIAL-PET-AUDIT-20261116",
+      "regions": [
+        "CN",
+        "TW",
+        "JP",
+        "KR",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET73-YEAR2005-FIVE-REGION-AUDIT-20261116.md",
+      "evidence_json": "research/recovered/STONEAGE-PET73-YEAR2005-FIVE-REGION-AUDIT-R1.json",
+      "year_frontier_before": 2005,
+      "year_frontier_after": 2006,
+      "year_not_closed": false,
+      "historically_complete": false,
+      "JP_2005_June13_multiple_capturable_dinosaurs_announced_but_July12_original_patch_not_recovered": true,
+      "TW_2005_chicken_0223_primary_operator_source_missing": true,
+      "one_year_PET25_2005_documentary_event_count_NOT_species": 0,
+      "new_original_2005_client_bytes": 0,
+      "new_native_2005_pet_ids": 0,
+      "new_server_grant_logs": 0,
+      "historical_pet_population_count": null
     }
   ],
   "client_first_methodology": {
