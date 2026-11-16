@@ -144,3 +144,8 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## PET47 2026-11-16｜韩国2000年原版安装盘的明确分发追索点（仍未取得原文件）
 
 [韩国 Inium 当期日期冲突、Mentech 盒装合同和 Hananet/Cnet 下载渠道来源报告](continuity/STONEAGE-PET47-KR2000-ORIGINAL-CLIENT-DISTRIBUTION-20261116.md)／[带源分级的机读收据](../research/recovered/STONEAGE-PET47-KR2000-DISTRIBUTION-PROVENANCE-R1.json)：本轮直接读取 2000-10-27 Dailygame 和 2000-12-28 GameMeca 同期报道正文，新见 Mentech **6万份供货合同而非证实已售6万**、12月11日收费、Hananet/Cnet 原渠道；另 2000-10-11 Dailygame **搜索索引片段**称10月4日试运营，但缺文章固定正文，和既有10月10日/12日不同说法并置而不硬裁决。韩国2000年原客户端实得0B、同构建宠物名字与正式投放仍无新证明，**总种数UNKNOWN、2000年度仍OPEN**。NEXT PET48 只定向追可验证源的2000 Inium 原盘/缓存或台湾当期官服具名发放原证；不得用当代私服包或晚版模板倒填早期官服。CURRENT 原Git blob `c89e0e33537990aa2132b47c40fef49a985a935c` 未修改，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体完成率未知。
+
+
+## PET48 2026-11-16｜韩国2000年的124宠营销首次同期月份前移与PET47来源层校正
+
+[PET48有界核读及旧源纠正](continuity/STONEAGE-PET48-KR2000-EARLY-PET-CLAIMS-20261116.md)／[按字段证据层、负证与地区分轨的机读记录](../research/recovered/STONEAGE-PET48-KR2000-EARLY-PET-SOURCE-BOUNDARIES-R1.json)：现查2000-07-04 iNews24与**新纳入PET审查**的2000-07-12《电子新闻》，均记当年韩国游戏推广的「124类宠物」及尚未发生的9月测试计划。数值与PET39 **台湾1.0本地原相册124具名图形**相等，但项目旧CNET/GameTime也早已保存韩文124宣传说法；不得宣称本轮新增124新宠，更不得跨地区同一实装名单。另本轮新核2000-11-11运营商署名报纸条目、2000-12-21韩国同期评测对捕获/初始宠/野外随行技能的描述，均非源码/原生韩服实测，也没有具名可得宠物证明。2000-10-27/28韩国后续版本共同开发与源码移交是当年媒体记述，非本轮取得源程序。**前向纠正PET47**：已有更早客户端研究库已保存10月4日试运营说法的固定文章地址，PET47「只有索引、无永久地址」不完整；现今原文访问受限，不声称本轮已读原文全字节。韩原版客户端本轮获0B、具名官服实装新增证据0、历史总种数UNKNOWN；1999来源有界可重开、**2000继续OPEN**。下一PET49优先同年份其它地区可认证的原始客户端或具名实际发放，不在旧韩客户端404上空转。大CURRENT原Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`不动，PET唯一ACTIVE，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、percent=null。
