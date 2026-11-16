@@ -1,0 +1,185 @@
+{
+  "schema": "stoneage.pet50.year2000.source_bounded_annual_review.r1",
+  "audit_date": "2026-11-16",
+  "baseline": {
+    "main_head": "a8f7889f71bf66eae49b393a3b2467c1b1d0660b",
+    "main_tree": "d8ee8d4c271d1d7e29b88804371895d66cb20662",
+    "main_actions": {
+      "total": 2,
+      "completed_success": 2
+    },
+    "open_prs": 0,
+    "current_blob_sha": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_blob_size_bytes": 2709173
+  },
+  "year": 2000,
+  "review_status": "SOURCE_BOUNDED_REVIEWED",
+  "historically_complete": false,
+  "scope": "DECLARED_PET28_AND_PET37_TO_PET49_PLUS_RELEVANT_PRIOR_CLIENT_ARCHIVE_AND_ONE_2001_JUDGMENT_TEXT",
+  "active_module": "PET",
+  "year_frontier_before": 2000,
+  "year_frontier_after": 2001,
+  "all_regions_official_live_pet_species_count": null,
+  "new_named_official_live_pet_release_confirmations": 0,
+  "new_original_year2000_client_bytes_acquired": 0,
+  "sources_new_to_pet50": [
+    {
+      "id": "PET50-TW-COURT-NTDM-90-YI-131",
+      "document_date": "2001-06-21",
+      "jurisdiction": "Taiwan",
+      "type": "JUDICIAL_RULING_REPUBLISHED_FROM_JUDICIAL_YUAN_TEXT",
+      "url": "https://lawplayer.com/valuable-judgment/646b8b89c3e2a9cc78b47afe",
+      "independent_secondary_index": "https://lawbot.tw/judgment/NTDM_90_%E6%98%93_131_20010621_1",
+      "access_grade": "MIRROR_HTML_FULL_TEXT_READ_NOT_OFFICIAL_ORIGINAL_BYTES",
+      "original_court_file_sha256": null,
+      "original_licensing_contract_copy_sha256": null,
+      "claims": [
+        {
+          "date": "1999-10-27",
+          "type": "COURT_FINDS_JSS_WAEI_DEVELOPMENT_MANUFACTURE_SALES_LICENSE_CONTRACT",
+          "scope": "TW_AND_HK_RIGHTS",
+          "document_copy_mentioned_in_investigation_record": true,
+          "original_contract_directly_read": false,
+          "proves_1999_tw_live_game": false,
+          "proves_1999_named_pet_release": false
+        },
+        {
+          "date": null,
+          "type": "COURT_DESCRIBES_PACKAGED_GAME_CD_REGISTRATION",
+          "manual": true,
+          "product_serial_registration": true,
+          "registration_points_stated": 300,
+          "autoload_install_menu": true,
+          "applies_to_every_2000_kit": false,
+          "proves_original_binary_custody": false
+        },
+        {
+          "date": "2001-06-21",
+          "type": "CASE_DISPOSITION",
+          "disposition": "NOT_GUILTY",
+          "prosecution_allegation_of_unauthorized_copies_adopted_as_fact": false,
+          "physical_stoneage_cd_seized_at_shop": false
+        }
+      ],
+      "person_name_address_account_credentials_published": false,
+      "web_html_bytes_stored": false
+    },
+    {
+      "id": "PET50-LATER-COMMUNITY-2000-FEB-CONTACT",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=4345",
+      "type": "SECONDARY_FAN_REPRINT_WITH_UNVERIFIED_ORIGIN",
+      "claim": "2000-02_FIRST_CONTACT_WITH_JSS",
+      "conflicts_with_court_found_contract_date": true,
+      "adjudicated_as_court_error": false,
+      "original_source_sha256": null
+    }
+  ],
+  "region_source_reviews": {
+    "JP": {
+      "operator": "JSS",
+      "source_paths": [
+        "docs/continuity/STONEAGE-PET40-TW-JP-EARLY-OFFICIAL-SOURCE-BOUNDARIES-20261115.md"
+      ],
+      "bounded_evidence": "DATED_2000_OPERATOR_UPDATES_AND_2000_03_06_NAMED_SKILL_TEXT",
+      "original_2000_full_client_acquired": false,
+      "original_named_live_pets_verified": null,
+      "pet_population": null,
+      "reopen": true
+    },
+    "TW": {
+      "operator": "WAEI_JSS",
+      "source_paths": [
+        "docs/continuity/STONEAGE-PET37-TW2000-MINSHENG-PET-PRESS-20261115.md",
+        "docs/continuity/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-20261115.md",
+        "docs/continuity/STONEAGE-PET40-TW-JP-EARLY-OFFICIAL-SOURCE-BOUNDARIES-20261115.md",
+        "docs/continuity/STONEAGE-PET41-TW-EARLY-WGS-MUSEUM-20261115.md",
+        "docs/continuity/STONEAGE-PET42-TW10-MUSEUM-BIDIRECTIONAL-GAP-20261115.md",
+        "docs/continuity/STONEAGE-PET46-TW1-ALBUM-ORIGINAL-2D-PRIVATE-VIEWER-20261116.md",
+        "docs/continuity/STONEAGE-PET49-TW2000-WAEI-OPERATOR-PROSPECTUS-20261116.md"
+      ],
+      "authentic_tw1_local_named_album_spr_records": 124,
+      "local_name_and_spr_is_live_roster": false,
+      "judgment_evidence_grade": "2001_JUDGMENT_REPORTS_1999_LICENSE_AND_CD_REGISTRATION_NOT_ORIGINAL_MEDIA",
+      "exact_2000_first_live_day": null,
+      "original_named_live_pets_verified": null,
+      "pet_population": null,
+      "reopen": true
+    },
+    "KR": {
+      "operator": "INIUM",
+      "source_paths": [
+        "docs/continuity/STONEAGE-PET28-ROOT-1999-2000-OFFICIAL-SOURCE-CENSUS-20261115.md",
+        "docs/continuity/STONEAGE-PET47-KR2000-ORIGINAL-CLIENT-DISTRIBUTION-20261116.md",
+        "docs/continuity/STONEAGE-PET48-KR2000-EARLY-PET-CLAIMS-20261116.md"
+      ],
+      "period_promotional_pet_number": 124,
+      "period_marketing_is_same_build_live_roster": false,
+      "exact_first_service_day": null,
+      "original_2000_full_client_acquired": false,
+      "pet_population": null,
+      "reopen": true
+    },
+    "CN": {
+      "operator": null,
+      "source_paths": [
+        "docs/continuity/STONEAGE-PET28-ROOT-1999-2000-OFFICIAL-SOURCE-CENSUS-20261115.md"
+      ],
+      "late_2000_beta_claim_only_secondary": true,
+      "original_official_2000_client_acquired": false,
+      "pet_population": null,
+      "reopen": true
+    },
+    "OTHER": {
+      "operator": null,
+      "source_paths": [],
+      "source_scope": "NO_IDENTIFIABLE_2000_OTHER_REGION_IN_AUDITED_MATERIALS",
+      "absence_proven": false,
+      "pet_population": null,
+      "reopen": true
+    }
+  },
+  "date_conflicts_unresolved": [
+    {
+      "type": "TW_1999_CONTRACT_VS_COMMUNITY_2000_FIRST_CONTACT",
+      "court_date": "1999-10-27",
+      "community_reprint_date": "2000-02",
+      "resolution": null,
+      "can_imply_1999_tw_live": false
+    },
+    {
+      "type": "KR_TRIAL_SERVICE_STAGES",
+      "claimed_dates": [
+        "2000-10-01",
+        "2000-10-04",
+        "2000-10-10",
+        "2000-10-12"
+      ],
+      "resolution": null
+    },
+    {
+      "type": "TW_2_0_BOOK_PUBLISHER_DATE_VS_SECONDARY_VERSION_DATE",
+      "publisher_catalog_date": "2000-08-01",
+      "secondary_date": "2001-08-01",
+      "original_colophon_verified": false,
+      "original_disc_verified": false
+    }
+  ],
+  "residual_reopen_triggers": [
+    "JP2000_AUTHENTIC_JSS_CLIENT_OR_SAME_BUILD_ISSUANCE",
+    "TW2000_ORIGINAL_DISC_INSTALLER_MANUAL_OR_ISSUANCE_AND_THREE_CARDS",
+    "KR2000_INIUM_ORIGINAL_CD_CNET_HANANET_BINARY_OR_LIVE_PET_ISSUANCE",
+    "CN2000_TEST_CLIENT_OR_FIRST_PARTY_ANNOUNCEMENT_AND_PET_CONTENT",
+    "OTHER_2000_INDEPENDENT_REGION_OFFICIAL_SOURCE",
+    "1999_JSS_WAEI_LICENSE_ORIGINAL_COPY_OR_JUDICIAL_DIRECT_ORIGINAL"
+  ],
+  "named_2000_live_pet_release_proofs_added_by_this_audit": 0,
+  "year2000_source_bounded_not_historical_pet_complete": true,
+  "year2001_new_frontier_gate": "NOT_YEAR_AUDITED",
+  "private_commercial_originals_committed": false,
+  "historical_current_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null,
+  "next": "PET51_YEAR2001_REGION_OPERATOR_OFFICIAL_CLIENT_FIRST_AND_ACTUAL_NAMED_PET_ISSUANCE"
+}

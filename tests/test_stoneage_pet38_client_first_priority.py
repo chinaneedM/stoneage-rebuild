@@ -15,7 +15,8 @@ class TestPet38ClientFirstPriority(unittest.TestCase):
   self.assertIn("## 23. Client-first official pet extraction",self.p)
   self.assertIn("CLIENT_ASSET_PRESENT",self.p)
   self.assertIn("OFFICIAL_IN_GAME_RELEASE_CONFIRMED",self.p)
-  self.assertEqual(self.q["current_frontier"]["year"],2000)
+  # PET38 historically began on 2000; PET50 may advance the live cursor after bounded audit.
+  self.assertGreaterEqual(self.q["current_frontier"]["year"],2000)
   self.assertEqual(self.q["current_frontier"]["current_source_acquisition_priority"],"CLIENT_FIRST_VERSION_AUTHENTICATION_AND_PET_RESOURCE_EXTRACTION_BEFORE_EXTERNAL_NEWS")
   self.assertEqual(self.m["active_module"],"PET")
   self.assertFalse(self.m["year_2000_source_bounded_reviewed"])
