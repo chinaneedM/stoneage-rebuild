@@ -1,0 +1,175 @@
+{
+  "schema": "stoneage.pet48.kr2000.early_pets_and_source_corrections.r1",
+  "date_recorded": "2026-11-16",
+  "start_main_head": "49d2ba9b6104f4a303a120708d6623237a3e95c3",
+  "start_main_tree": "223d2c39a9251c6fb1a313cc7f659a3f4c966a5a",
+  "start_main_exact_actions": {
+    "completed_success": 2,
+    "total": 2
+  },
+  "active_module": "PET",
+  "frontier_year": 2000,
+  "frontier_status": "OPEN",
+  "sources": [
+    {
+      "id": "PET48-KR-2000-JUL04-INEWS24",
+      "url": "https://m.inews24.com/v/8928",
+      "published_date": "2000-07-04",
+      "kind": "PERIOD_PRESS_OPERATOR_PLANS_AND_PRODUCT_MARKETING",
+      "source_previously_known_for_distribution": true,
+      "pet_fields_new_to_current_pet_audit": [
+        "124_PETS_AS_MARKETING_CAPABILITY"
+      ],
+      "description_claims": [
+        "124_pets_marketed",
+        "12_player_characters_marketed"
+      ],
+      "time_claims": [
+        {
+          "date": "2000-09-01",
+          "kind": "PLANNED_KR_TRIAL_NOT_PROVEN_LIVE"
+        },
+        {
+          "date": "2000-12",
+          "kind": "PLANNED_PAID_SERVICE_NOT_PROVEN_LIVE"
+        },
+        {
+          "date": "2000-05-01",
+          "kind": "PRESS_REPORTS_TW_SERVICE_START_NOT_PRIMARY_OPERATOR_PROOF"
+        }
+      ],
+      "distribution_channels_planned": [
+        "SAMSUNG_PC_PURCHASERS",
+        "SAMSUNG_PC_EDUCATION_CENTERS",
+        "PRIMARY_SCHOOL_INTERNET_CLASSES"
+      ],
+      "access": "WEB_ARTICLE_TEXT_READ_NOT_RAW_BYTES",
+      "source_sha256": null
+    },
+    {
+      "id": "PET48-KR-2000-JUL12-ETNEWS",
+      "url": "https://m.etnews.com/200007120070",
+      "published_date": "2000-07-12",
+      "kind": "INDEPENDENT_PERIOD_PRESS_PRELAUNCH",
+      "new_to_repository_pet_corpus": true,
+      "description_claims": [
+        "124_pets_marketed"
+      ],
+      "time_claims": [
+        {
+          "date": "2000-09",
+          "kind": "PLANNED_KR_TRIAL_NOT_PROVEN_LIVE"
+        }
+      ],
+      "access": "WEB_ARTICLE_TEXT_READ_NOT_RAW_BYTES",
+      "source_sha256": null
+    },
+    {
+      "id": "PET48-KR-2000-NOV11-ETNEWS-OPERATOR",
+      "url": "https://www.etnews.com/200011090215",
+      "published_date": "2000-11-11",
+      "kind": "CONTEMPORARY_PAPER_COLUMN_ATTRIBUTED_TO_INIUM_CEO",
+      "new_to_repository_pet_corpus": true,
+      "description_claims": [
+        "can_capture_monsters_as_pets",
+        "can_raise_them",
+        "captured_pets_help_in_battle"
+      ],
+      "operational_build_sha": null,
+      "access": "WEB_ARTICLE_TEXT_READ_NOT_RAW_BYTES",
+      "source_sha256": null
+    },
+    {
+      "id": "PET48-KR-2000-DEC21-GAMEMECA-REVIEW",
+      "url": "https://www.gamemeca.com/view.php?gid=118579",
+      "published_date": "2000-12-21",
+      "kind": "CONTEMPORARY_EDITORIAL_REVIEW_DESCRIPTION",
+      "new_to_repository_pet_corpus": true,
+      "description_claims": [
+        "initial_pet_companion_described",
+        "catchable_pets_described",
+        "field_follow_with_skill_described"
+      ],
+      "native_program_execution_verified": false,
+      "access": "WEB_ARTICLE_TEXT_READ_NOT_RAW_BYTES",
+      "source_sha256": null
+    },
+    {
+      "id": "PET48-KR-2000-OCT27-INEWS24",
+      "url": "https://www.inews24.com/view/17769",
+      "published_date": "2000-10-27",
+      "kind": "CONTEMPORARY_OPERATOR_AGREEMENT_AS_REPORTED",
+      "new_to_repository_pet_corpus": true,
+      "description_claims": [
+        "agreement_about_future_korean_japanese_joint_development"
+      ],
+      "no_original_source_code_acquired": true,
+      "access": "WEB_ARTICLE_TEXT_READ_NOT_RAW_BYTES",
+      "source_sha256": null
+    },
+    {
+      "id": "PET48-KR-2000-OCT28-ETNEWS",
+      "url": "https://m.etnews.com/200010270015",
+      "published_date": "2000-10-28",
+      "kind": "PREVIOUSLY_RECORDED_PERIOD_OPERATOR_CONFERENCE_REPORT",
+      "new_to_repository_pet_corpus": false,
+      "description_claims": [
+        "reported_JSS_source_code_handover_at_presentation"
+      ],
+      "actual_original_source_code_acquired": false,
+      "access": "WEB_ARTICLE_TEXT_READ_NOT_RAW_BYTES",
+      "source_sha256": null
+    }
+  ],
+  "prior_repository_evidence_reused": [
+    {
+      "path": "research/clients/STONEAGE-KOREA-2000-PUBLIC-DISTRIBUTION-RECOVERY-R1.md",
+      "known_since": "2026-09-19",
+      "legacy_perma_article": "https://www.dailygame.co.kr/view.php?ud=200010121149020000950_26",
+      "claim_start_date": "2000-10-04",
+      "status": "PRIOR_REPO_PERMALINK_NOT_CURRENT_RAW_CONTENT"
+    },
+    {
+      "path": "research/recovered/STONEAGE-GAMETIME-2001-RECORD-RESOLUTION-R1.txt",
+      "claim_start_date": "2000-10-01",
+      "status": "PRIOR_VERIFIED_ARCHIVED_ARTICLE_WORDING_ONLY"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CNET-KOREA-EXACT-RECORD-R1.txt",
+      "prior_marketed_pet_count": 124,
+      "source_date": "2000-12",
+      "status": "EXISTING_WEB_RECORD_NOT_NEW_KR_CLIENT_BINARY"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json",
+      "prior_tw10_named_graphic_pet_records": 124,
+      "status": "TW_ORIGINAL_CLIENT_NAME_GRAPHIC_LINK_NOT_KOREAN_ROSTER"
+    }
+  ],
+  "forward_only_correction": {
+    "historical_record": "docs/continuity/STONEAGE-PET47-KR2000-ORIGINAL-CLIENT-DISTRIBUTION-20261116.md",
+    "previous_assertion": "KR2000 Oct4 article only dynamic index no perma URL",
+    "superseding_observation": "Earlier repository had fixed DailyGame article path prior to PET47; present full article fetch blocked, URL and prior historical content are distinct evidence",
+    "do_not_mutate_previous_report": true,
+    "article_full_content_read_this_turn": false
+  },
+  "source_count_vs_asset_count": {
+    "korean_early_marketed_pet_count": 124,
+    "tw10_original_client_album_named_graphic_count": 124,
+    "identical_pet_roster_proven": false,
+    "official_korean_live_pets_from_124_proven": false,
+    "first_release_year_pet_total": null
+  },
+  "new_original_kr2000_client_bytes": 0,
+  "new_kr2000_original_binary_sha256": null,
+  "new_pet_names_with_same_deployment_availability_evidence": 0,
+  "new_confirmed_official_in_game_pet_release_evidence": 0,
+  "year_1999": "SOURCE_BOUNDED_REVIEWED_REOPENABLE",
+  "year_2000": "OPEN",
+  "current_state_git_blob_preserved": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null,
+  "next": "PET49_OTHER_2000_REGION_OFFICIAL_CLIENT_OR_NAMED_ISSUANCE_AVAILABLE;_KR_CLIENT_RESUME_ON_VERIFIED_ORIGINAL_INSTALLER_ONLY"
+}
