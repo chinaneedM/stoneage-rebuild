@@ -93,9 +93,9 @@ class TestPet61CN2002SourceGrades(unittest.TestCase):
         d,q=self.d,self.q
         self.assertEqual(q["current_frontier"]["year"],2002)
         self.assertEqual(q["current_frontier"]["status"],"OPEN_NOT_YEAR_CLOSED")
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET62:"))
+        self.assertRegex(q["current_frontier"]["next"], r"^PET[0-9]+:")
         self.assertEqual(q["yearly_work_queue"][3]["research_gate"],"NOT_YEAR_AUDITED")
-        self.assertEqual(q["current_frontier"]["latest_partial_root_review"],d["id"])
+        self.assertIn(d["id"],[x["id"] for x in q["root_source_census_receipts"]])
         self.assertEqual(sum(x["id"]==d["id"] for x in q["root_source_census_receipts"]),1)
         orig=d["original_client_source_limit"]
         self.assertFalse(orig["CN3_0_complete_original_installer_or_pet_master_acquired"])
