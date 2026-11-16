@@ -17,7 +17,14 @@ class TestPet38ClientFirstPriority(unittest.TestCase):
   self.assertIn("OFFICIAL_IN_GAME_RELEASE_CONFIRMED",self.p)
   # PET38 historically began on 2000; PET50 may advance the live cursor after bounded audit.
   self.assertGreaterEqual(self.q["current_frontier"]["year"],2000)
-  self.assertEqual(self.q["current_frontier"]["current_source_acquisition_priority"],"CLIENT_FIRST_VERSION_AUTHENTICATION_AND_PET_RESOURCE_EXTRACTION_BEFORE_EXTERNAL_NEWS")
+  # 2026-11-16 user policy qualifies client-first acquisition: direct free file bytes only.
+  self.assertEqual(self.q["current_frontier"]["current_source_acquisition_priority"],"FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE")
+  self.assertIn("## 25. No paid marketplace client-carrier investigations",self.p)
+  access=self.q["client_first_methodology"]
+  self.assertEqual(access["qualified_access_supersession_date"],"2026-11-16")
+  self.assertIn("SECONDHAND_MARKETPLACE_LISTINGS",access["disallow_as_research_work_units"])
+  self.assertIn("LAWFULLY_FREE_PUBLICLY_READABLE_ORIGINAL_OFFICIAL_INSTALLER_PATCH_DATA_BYTES",access["allowed_direct_paths"])
+  self.assertEqual(access["closed_unmerged_paid_marketplace_PR"],470)
   self.assertEqual(self.m["active_module"],"PET")
   self.assertFalse(self.m["year_2000_source_bounded_reviewed"])
  def test_older_taiwan_original_custody_is_not_new_extraction(self):
