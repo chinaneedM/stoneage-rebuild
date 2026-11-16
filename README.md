@@ -2993,3 +2993,7 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 
 ## 2026-11-16 — PET66｜2003 台湾6.0具名水母／大陆7.0分发和朱雀年份边界
 [PET66 同期官方与媒体来源等级报告](docs/continuity/STONEAGE-PET66-2003-TW6-CN7-PET-SOURCE-20261116.md)／[机读逐项证据、版本和未决列表](research/recovered/STONEAGE-PET66-2003-TW6-CN7-PET-SOURCE-R1.json)：台湾2003年GNN同期索引有包月承诺水母「貝沃特」、威威乐透及水蓝人龙/黑鸟奖项，仅为新闻索引而非原网页或实际发放证明；大陆2003-12-19华义7.0分发通知记录当期`StoneAge7.rar`及只兼容7.0服务器限制，原RAR字节尚未取得。2003-12-17朱雀「菲奇亚」竞拍宣传是已登记CN70的同名材料，不重算新宠；2004-01-12奖励公告不倒填2003；2003-07-07玩家「戈登尔顿」捕获自述不证明同服主档。2003原客户端新增0B、原生宠ID新增0、实服宠物发放新证0，宠物真实总数UNKNOWN；年度仍OPEN、PET唯一，NEXT PET67核日韩2003官方源和免费直接读取的原补丁。原CURRENT完整Git blob不变、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总完成率未知。
+
+
+## 2026-11-16 — PET67｜2003日本1.74a公测和韩国Inium→Netmarble运营断点
+[日韩当年官方版别与宠物原文件证据边界](docs/continuity/STONEAGE-PET67-2003-JP174A-KR-OPERATOR-BOUNDARY-20261116.md)／[PET67机读时间/版本/证据分层](research/recovered/STONEAGE-PET67-2003-JPKR-OPERATOR-CLIENT-BOUNDARY-R1.json)：韩国2003-07-05 Inium停运和07/10 Netmarble接续据同期媒体可证，07/21玩家转录官方答复称计划07/28启用1.74，**不能视为Inium后期版宠物资料完全继承**；日本BOTH TEC/NHN Japan 2003-12-16公开β据当期实况报道，Win软件媒体明确1.74a（03/12/12）及当期免费客户端下载，但今天取得原客户端字节0。2004年6月正式服务不得倒填2003。日/韩具名2003官服新增物种验证0（不等于历史没有）、原版宠ID0、历史总种数UNKNOWN；PET仍独占，2003 NOT_YEAR_AUDITED，NEXT PET68做2003五地区有界年审再考虑推进2004。无收费卖盘调查，旧CURRENT完整blob不改，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、percent UNKNOWN。

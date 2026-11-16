@@ -1,0 +1,157 @@
+{
+  "schema": "STONEAGE-PET67-2003-JP-KR-OPERATOR-CLIENT-PET-BOUNDARY-R1",
+  "id": "PET67-2003-JP174A-KRINIUM-NETMARBLE-PET-VERSION-BOUNDARY-20261116",
+  "date": "2026-11-16",
+  "startup": {
+    "main_head": "d5f797b70a2efd27facc048b5969107ec7e94ed8",
+    "main_tree": "3c01a603d6d106f37581a8d8f588e3ac8e990387",
+    "prior_PR479_candidate_success_runs": 25,
+    "prior_main_push_actions_currently_in_progress": true,
+    "CURRENT_original_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "active_module": "PET",
+  "year": 2003,
+  "year_gate_after": "NOT_YEAR_AUDITED",
+  "prior_receipt": "PET66-2003-TW6-CN7-NAMED-PET-CLIENT-CARRIER-20261116",
+  "source_records": [
+    {
+      "id": "KR_20030625_CONTRACT_PROSPECT",
+      "region": "KR",
+      "date": "2003-06-25",
+      "url": "https://www.etnews.com/200306240082",
+      "grade": "PERIOD_INDUSTRY_PRESS",
+      "claim": "DigiPark may replace Inium with Netmarble; Netmarble CEO says no formal agreement yet",
+      "operator_change_contract_signed_confirmed_on_this_day": false,
+      "pet_release_roster_or_native_ids": null
+    },
+    {
+      "id": "KR_20030711_NETMARBLE_ANNOUNCEMENT",
+      "region": "KR",
+      "date": "2003-07-11",
+      "url": "https://www.etnews.com/200307100179",
+      "grade": "PERIOD_INDUSTRY_PRESS_REPRINTING_OPERATOR_ANNOUNCEMENT",
+      "claim": "Netmarble announced service on 2003-07-10, planning to start with an early-development version and update later",
+      "claimed_same_as_old_INIUM_5_0": false,
+      "actual_operator_pet_roster_proven": false
+    },
+    {
+      "id": "KR_20030715_INIUM_STOP",
+      "region": "KR",
+      "date": "2003-07-15",
+      "url": "https://www.etnews.com/200307140147",
+      "grade": "PERIOD_INDUSTRY_PRESS",
+      "in_situ_inium_shutdown_claim": "2003-07-05",
+      "claim": "Existing Inium accounts and previously raised pets were not transferable to the incoming Netmarble operation",
+      "native_old_server_pet_rows_recovered": false,
+      "old_deployment_new_deployment_identity_proven": false
+    },
+    {
+      "id": "KR_20030721_QUOTED_OFFICIAL_PLAN",
+      "region": "KR",
+      "date": "2003-07-21",
+      "url": "https://www.gamemeca.com/fam.php?gcode=fam_scarecrow&gid=133954&rts=board",
+      "grade": "CONTEMPORANEOUS_USER_REPOST_OF_NETMARBLE_FORUM_TEXT",
+      "planned_start": "2003-07-28",
+      "printed_version": "1.74",
+      "source_is_reposted_not_original_operator_page": true,
+      "install_binary_obtained": false,
+      "any_pet_species_named": false
+    },
+    {
+      "id": "JP_20030927_TGS_PREVIEW",
+      "region": "JP",
+      "date": "2003-09-27",
+      "url": "https://ddo.4gamer.net/news/history/2003.09/20030927063935detail.html",
+      "grade": "CONTEMPORANEOUS_HANDS_ON_JOURNALIST_REPORT_WITH_STAFF_QUOTE",
+      "operator": "BOTHTEC",
+      "claim": "Reboot largely like former game with minor trading-interface changes and planned post-beta additions; does not assert a 2003 new-pet species list",
+      "original_pets_from_1999_client_same_binary_confirmed": false,
+      "pet_species_release_count": null
+    },
+    {
+      "id": "JP_20031212_BETA_DOWNLOAD",
+      "region": "JP",
+      "date": "2003-12-12",
+      "url": "https://www.4gamer.net/news/history/2003.12/20031212000000detail.html",
+      "grade": "PERIOD_JOURNALIST_REPORT_OF_BOTHTEC_NHN_JAPAN_ANNOUNCEMENT",
+      "operator": "BOTHTEC_NHN_JAPAN",
+      "planned_beta_start": "2003-12-16",
+      "claimed_early_client_download_available_on": "2003-12-12",
+      "actual_archive_bytes_obtained": 0,
+      "actual_archive_sha256": null,
+      "original_2003_pets_natively_identified": false
+    },
+    {
+      "id": "JP_20031217_ACTUAL_BETA_AND_BUILD",
+      "region": "JP",
+      "date": "2003-12-17",
+      "url": "https://forest.watch.impress.co.jp/article/2003/12/17/stoneage.html",
+      "grade": "PERIOD_SOFTWARE_RELEASE_REPORT",
+      "reported_beta_start": "2003-12-16",
+      "printed_version": "1.74a",
+      "version_date": "2003-12-12",
+      "OS": "Windows 98/Me/2000/XP",
+      "then_free_distribution": true,
+      "original_official_site": "http://stoneage.to/",
+      "original_archive_bytes_obtained": 0,
+      "actual_file_name_unknown": true,
+      "pet_description": "Pig-like pets can join original turn-based battles; no enumerated pet roster",
+      "native_pet_name_count_proven": null
+    },
+    {
+      "id": "JP_20040520_2004_FORMAL_BOUNDARY",
+      "region": "JP",
+      "date": "2004-05-20",
+      "url": "https://www.4gamer.net/games/013/G001377/20040520194557/",
+      "grade": "PERIOD_INDUSTRY_PRESS",
+      "operator": "BOTHTEC",
+      "formal_service_planned": "2004-06-03",
+      "do_not_count_2004_formal_service_as_2003_actual_release": true,
+      "pets_released_year_2003_count": null
+    }
+  ],
+  "explicit_version_carriers": [
+    {
+      "region": "KR",
+      "period": "2003-07",
+      "operator": "NETMARBLE",
+      "version_as_period_reposted": "1.74",
+      "native_client_sha256": null,
+      "client_bytes_obtained": 0,
+      "relation_to_INIUM_5_0_content": "UNKNOWN"
+    },
+    {
+      "region": "JP",
+      "period": "2003-12",
+      "operator": "BOTHTEC",
+      "version_as_period_software_release": "1.74a",
+      "native_client_sha256": null,
+      "client_bytes_obtained": 0,
+      "relation_to_JSS_1999_client_content": "UNKNOWN"
+    }
+  ],
+  "free_original_download_policy": {
+    "historical_free_official_download_evidence": true,
+    "current_directly_retrievable_original_binary_verified": false,
+    "paid_discs_and_marketplace_disallowed": true
+  },
+  "historical_2003_confirmed_named_new_official_pet_release_count": 0,
+  "interpretation_of_zero": "NO_NEW_VERIFIED_NAMED_RELEASE_PROOF_IN_THIS_BATCH_NOT_HISTORICAL_ZERO",
+  "historical_2003_pet_population": null,
+  "actual_new_original_2003_pet_asset_bytes": 0,
+  "newly_verified_same_build_native_pet_ids": 0,
+  "all_FIVE_regions_year_audited": false,
+  "areas": [
+    "JP",
+    "KR"
+  ],
+  "existing_2003_PET25_event_count_unchanged": 1,
+  "prior_historical_YEAR_GATE": "NOT_YEAR_AUDITED",
+  "next": "PET68: review 2003 CN/TW/JP/KR/OTHER qualified materials in one bounded annual audit and advance to 2004 only with explicit historically-incomplete marker.",
+  "historical_CURRENT_untouched": true,
+  "no_original_commercial_files_public": true,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}

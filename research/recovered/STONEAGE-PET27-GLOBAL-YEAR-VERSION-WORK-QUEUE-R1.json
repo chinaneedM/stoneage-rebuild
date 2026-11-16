@@ -18,8 +18,8 @@
     "year": 2003,
     "phase": "YEAR_2003_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET66-2003-TW6-CN7-NAMED-PET-CLIENT-CARRIER-20261116",
-    "next": "PET67: bounded 2003 JP/KR operator-qualified pet and freely obtainable original client/patch sources; then 2003 five-region source-bounded review.",
+    "latest_partial_root_review": "PET67-2003-JP174A-KRINIUM-NETMARBLE-PET-VERSION-BOUNDARY-20261116",
+    "next": "PET68: 2003 CN/TW/JP/KR/OTHER five-region source-bounded annual pet audit; advance to 2004 with historically incomplete marker and region reopening triggers only.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -921,6 +921,16 @@
           ],
           "report": "docs/continuity/STONEAGE-PET66-2003-TW6-CN7-PET-SOURCE-20261116.md",
           "evidence_json": "research/recovered/STONEAGE-PET66-2003-TW6-CN7-PET-SOURCE-R1.json",
+          "year_not_closed": true
+        },
+        {
+          "id": "PET67-2003-JP174A-KRINIUM-NETMARBLE-PET-VERSION-BOUNDARY-20261116",
+          "regions": [
+            "JP",
+            "KR"
+          ],
+          "report": "docs/continuity/STONEAGE-PET67-2003-JP174A-KR-OPERATOR-BOUNDARY-20261116.md",
+          "evidence_json": "research/recovered/STONEAGE-PET67-2003-JPKR-OPERATOR-CLIENT-BOUNDARY-R1.json",
           "year_not_closed": true
         }
       ]
@@ -2039,6 +2049,24 @@
       "new_confirmed_official_server_grants": 0,
       "new_2003_original_client_bytes": 0,
       "historical_pet_population_count": null
+    },
+    {
+      "id": "PET67-2003-JP174A-KRINIUM-NETMARBLE-PET-VERSION-BOUNDARY-20261116",
+      "regions": [
+        "JP",
+        "KR"
+      ],
+      "report": "docs/continuity/STONEAGE-PET67-2003-JP174A-KR-OPERATOR-BOUNDARY-20261116.md",
+      "evidence_json": "research/recovered/STONEAGE-PET67-2003-JPKR-OPERATOR-CLIENT-BOUNDARY-R1.json",
+      "year_frontier_before": 2003,
+      "year_frontier_after": 2003,
+      "year_not_closed": true,
+      "new_2003_original_client_bytes": 0,
+      "new_2003_pets_native_id": 0,
+      "new_verified_2003_official_pets": 0,
+      "historical_pet_population_count": null,
+      "KR_Netmarble_174_reposted_source": true,
+      "JP_BOTHTEC_174a_period_release_source": true
     }
   ],
   "client_first_methodology": {

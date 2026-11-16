@@ -35,6 +35,9 @@ on:
       - "tests/test_stoneage_pet64_year2002_bounded_audit.py"
       - "tests/test_stoneage_pet65_2003_waei_promo.py"
       - "tests/test_stoneage_pet66_2003_tw_cn_source.py"
+      - "tests/test_stoneage_pet67_jp_kr_2003_versions.py"
+      - "research/recovered/STONEAGE-PET67-2003-JPKR-OPERATOR-CLIENT-BOUNDARY-R1.json"
+      - "docs/continuity/STONEAGE-PET67-2003-JP174A-KR-OPERATOR-BOUNDARY-20261116.md"
       - "research/recovered/STONEAGE-PET66-2003-TW6-CN7-PET-SOURCE-R1.json"
       - "docs/continuity/STONEAGE-PET66-2003-TW6-CN7-PET-SOURCE-20261116.md"
       - "research/recovered/STONEAGE-PET65-CN2003-WAEI-PET-PROMO-R1.json"
@@ -169,6 +172,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet65_2003_waei_promo
       - name: PET66 2003 Taiwan 6.0 promise and China 7.0 native-client boundary
         run: python -m unittest tests.test_stoneage_pet66_2003_tw_cn_source
+      - name: PET67 2003 Japan 1.74a beta and Korea operator-bound pet evidence
+        run: python -m unittest tests.test_stoneage_pet67_jp_kr_2003_versions
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary
