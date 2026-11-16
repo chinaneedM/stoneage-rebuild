@@ -2950,3 +2950,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-16 — PET52｜2001大陆2.0原附盘与红暴抽奖来源边界
 
 [运营方10月29日／11月1日公告、13项分发载体及实际发放待证记录](docs/continuity/STONEAGE-PET52-CN2001-SA20-PERIOD-CARRIER-PET-RELEASE-20261116.md)。原客户端0字节新增、2001年官服宠物实装新增证明0项。PET仍唯一活动模块，2001年未审完，下一任务PET53。完整 `docs/CURRENT-STATE.md` 原blob保留未覆。
+
+
+## 2026-11-16 — PET53｜2001大陆2.0旧ISO候选和新浪奖宠发放资格
+
+[2001《电脑迷》11月配套ISO元数据与新浪40个梦幻宠物拟奖名额的来源审查](docs/continuity/STONEAGE-PET53-2001-CN-ISO-CARRIER-AND-SINA-PET-PRIZES-20261116.md)。候选`PCFan200111.iso`有后期目录所报SHA-1，但实物内容未得/未经本项目核算；新浪40奖位非40已交付宠物，更非种数。2001仍OPEN、PET模块唯一，PET54优先原光盘／真实同服发奖原证。完整旧CURRENT Git blob不动。
