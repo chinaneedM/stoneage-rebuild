@@ -15,11 +15,11 @@
   "latest_year_in_scope": 2026,
   "reason_start_provisional": "1999 is a search-window starting point, NOT an independently authenticated first official launch date; earlier qualified evidence may extend the sequence backwards",
   "current_frontier": {
-    "year": 2000,
-    "phase": "YEAR_2000_OFFICIAL_PC_REGION_VERSION_PET_SOURCE_AUDIT",
+    "year": 2001,
+    "phase": "YEAR_2001_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET46-TW1-ALBUM-PRIVATE-ORIGINAL-2D-20261116",
-    "next": "PET47: prioritize fresh same-deployment 2000 official live pet availability or source-qualified JP/KR original client and new later same-build name/graphic bytes; avoid repeating existing sprite-only indexing.",
+    "latest_partial_root_review": "PET50-YEAR2000-SOURCE-BOUNDED-REVIEW-20261116",
+    "next": "PET51: 2001 official PC pet names and actual issuance by independent region/operator, client-first; 1999/2000 source-bounded years remain reopenable on new original evidence.",
     "current_source_acquisition_priority": "CLIENT_FIRST_VERSION_AUTHENTICATION_AND_PET_RESOURCE_EXTRACTION_BEFORE_EXTERNAL_NEWS"
   },
   "region_tracks": [
@@ -448,7 +448,7 @@
     {
       "year": 2000,
       "chronological_position": 2,
-      "research_gate": "NOT_YEAR_AUDITED",
+      "research_gate": "SOURCE_BOUNDED_REVIEWED",
       "documented_release_event_ids_from_existing_PET25_PET26": [],
       "documentary_event_count_NOT_species": 0,
       "unverified_early_and_mid_year_pets_may_exist": true,
@@ -467,8 +467,62 @@
           "report": "docs/continuity/STONEAGE-PET37-TW2000-MINSHENG-PET-PRESS-20261115.md",
           "evidence_json": "research/recovered/STONEAGE-PET37-TW2000-MINSHENG-PET-PRESS-R1.json",
           "year_not_closed": true
+        },
+        {
+          "id": "PET50-2000-YEAR-REVIEW-20261116",
+          "region": "ALL_FIVE_REGION_TRACKS",
+          "report": "docs/continuity/STONEAGE-PET50-YEAR2000-SOURCE-BOUNDED-PET-AUDIT-20261116.md",
+          "evidence_json": "research/recovered/STONEAGE-PET50-YEAR2000-SOURCE-BOUNDED-AUDIT-R1.json",
+          "year_not_closed": false,
+          "historically_complete": false
         }
-      ]
+      ],
+      "historically_complete": false,
+      "historical_species_count": null,
+      "review_scope": "PET28_PET37_TO_PET49_PRIOR_RELEVANT_CLIENT_TRACKS_PLUS_PET50_2001_JUDGMENT_REPRINT",
+      "source_bounded_review_receipt": "research/recovered/STONEAGE-PET50-YEAR2000-SOURCE-BOUNDED-AUDIT-R1.json",
+      "residual_reopen_triggers": [
+        "JP2000_AUTHENTIC_JSS_CLIENT_OR_SAME_BUILD_ISSUANCE",
+        "TW2000_ORIGINAL_DISC_INSTALLER_MANUAL_OR_ISSUANCE_AND_THREE_CARDS",
+        "KR2000_INIUM_ORIGINAL_CD_CNET_HANANET_BINARY_OR_LIVE_PET_ISSUANCE",
+        "CN2000_TEST_CLIENT_OR_FIRST_PARTY_ANNOUNCEMENT_AND_PET_CONTENT",
+        "OTHER_2000_INDEPENDENT_REGION_OFFICIAL_SOURCE",
+        "1999_JSS_WAEI_LICENSE_ORIGINAL_COPY_OR_JUDICIAL_DIRECT_ORIGINAL"
+      ],
+      "region_source_reviews": {
+        "JP": {
+          "operator": "JSS",
+          "pet_population": null,
+          "source_bounded_reviewed": true,
+          "pet_roster_missing": true
+        },
+        "TW": {
+          "operator": "WAEI_JSS",
+          "pet_population": null,
+          "source_bounded_reviewed": true,
+          "original_tw1_local_album_names": 124,
+          "server_live_roster_verified": false
+        },
+        "KR": {
+          "operator": "INIUM",
+          "pet_population": null,
+          "source_bounded_reviewed": true,
+          "period_marketed_pet_count": 124,
+          "original_client_missing": true
+        },
+        "CN": {
+          "operator": null,
+          "pet_population": null,
+          "source_bounded_reviewed": true,
+          "late_2000_test_only_secondary_claim": true
+        },
+        "OTHER": {
+          "operator": null,
+          "pet_population": null,
+          "source_bounded_reviewed": true,
+          "absence_proven": false
+        }
+      }
     },
     {
       "year": 2001,
@@ -1334,6 +1388,26 @@
       "private_embedded_PNGs_prior": 2540,
       "private_browser_display_verified": true,
       "unnamed_spr_source_groups": 6,
+      "new_named_pet_release_proofs": 0,
+      "historical_pet_population_count": null
+    },
+    {
+      "id": "PET50-YEAR2000-SOURCE-BOUNDED-REVIEW-20261116",
+      "report": "docs/continuity/STONEAGE-PET50-YEAR2000-SOURCE-BOUNDED-PET-AUDIT-20261116.md",
+      "evidence_json": "research/recovered/STONEAGE-PET50-YEAR2000-SOURCE-BOUNDED-AUDIT-R1.json",
+      "year_frontier_before": 2000,
+      "year_frontier_after": 2001,
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "region_tracks": [
+        "JP",
+        "TW",
+        "KR",
+        "CN",
+        "OTHER"
+      ],
+      "reopen_on_new_original_2000_source": true,
+      "court_found_1999_10_27_contract_not_1999_tw_game_release": true,
       "new_named_pet_release_proofs": 0,
       "historical_pet_population_count": null
     }
