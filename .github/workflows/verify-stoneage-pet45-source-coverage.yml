@@ -5,6 +5,7 @@ on:
       - "agent/pet45-tw85-same-carrier-pet-frame-coverage-20261116"
     paths:
       - "tools/stoneage_pet45_tw85_rd_index_coverage.py"
+      - "tests/test_stoneage_pet45_tw85_source_join.py"
       - ".github/workflows/verify-stoneage-pet45-source-coverage.yml"
   pull_request:
     paths:
@@ -24,7 +25,9 @@ jobs:
       - name: Source-exact original sprite and RD metadata candidate derivation
         run: python -m tools.stoneage_pet45_tw85_rd_index_coverage --mode generate
       - name: Self-replay generated report
-        run: python -m tools.stoneage_pet45_tw85_rd_index_coverage --mode verify
+        run: |
+          python -m tools.stoneage_pet45_tw85_rd_index_coverage --mode verify
+          python -m unittest tests.test_stoneage_pet45_tw85_source_join
       - name: Store only derived metadata on candidate branch
         shell: bash
         run: |

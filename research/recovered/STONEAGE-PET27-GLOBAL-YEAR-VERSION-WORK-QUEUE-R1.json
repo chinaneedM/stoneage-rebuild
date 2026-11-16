@@ -18,8 +18,8 @@
     "year": 2000,
     "phase": "YEAR_2000_OFFICIAL_PC_REGION_VERSION_PET_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET43-LATER-CLIENT-REVERSE-BACKFILL-20261115",
-    "next": "PET44: extract source-separated pet identities, visuals/actions and available native fields in held later preserved client carriers, with older missing original version placeholders and 2000 official frontier still OPEN.",
+    "latest_partial_root_review": "PET45-TW85-SAME-CARRIER-SPR-RD-20261116",
+    "next": "PET46: locate qualified same-carrier original pet name-to-graphic client bytes or privately replay source-bound original RD pixels; do not promote preserved sprite indices to official release and do not advance 2000 frontier without official source audit.",
     "current_source_acquisition_priority": "CLIENT_FIRST_VERSION_AUTHENTICATION_AND_PET_RESOURCE_EXTRACTION_BEFORE_EXTERNAL_NEWS"
   },
   "region_tracks": [
@@ -1298,6 +1298,30 @@
       "numeric_spr_groups_in_three_later_preserved_carriers": 124,
       "full_spr_sha_match_TW1_TW85": 124,
       "full_spr_sha_match_CN50_TW85": 124,
+      "new_named_pet_release_proofs": 0,
+      "historical_pet_population_count": null
+    },
+    {
+      "id": "PET44-LATER-CLIENT-CANDIDATE-GAPS-20261115",
+      "report": "docs/continuity/STONEAGE-PET44-LATER-CLIENT-CANDIDATE-GAPS-20261115.md",
+      "evidence_json": "research/recovered/STONEAGE-PET44-LATER-CLIENT-PETFLAG1-GAP-CANDIDATES-R1.json",
+      "community_petflag1_distinct_graphic_selectors": 598,
+      "tw85_later_graphic_candidates_not_species": 412,
+      "missing_graphic_numbers_in_all_four_indices": 56,
+      "tw1_indexed_without_album_name": 6,
+      "new_named_pet_release_proofs": 0,
+      "historical_pet_population_count": null
+    },
+    {
+      "id": "PET45-TW85-SAME-CARRIER-SPR-RD-20261116",
+      "report": "docs/continuity/STONEAGE-PET45-TW85-CANDIDATE-SPR-RD-20261116.md",
+      "evidence_json": "research/recovered/STONEAGE-PET45-TW85-SAME-CARRIER-SPR-RD-INDEX-R1.json",
+      "source_graphic_candidates_not_species": 412,
+      "original_tw85_physical_sprite_groups": 416,
+      "original_frame_occurrences": 197680,
+      "original_frames_with_same_carrier_rd_index": 197678,
+      "original_sentinel_frames": 2,
+      "original_rd_source_index_missing_frames": 0,
       "new_named_pet_release_proofs": 0,
       "historical_pet_population_count": null
     }
