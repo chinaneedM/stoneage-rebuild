@@ -26,10 +26,12 @@ on:
       - "tests/test_stoneage_pet52_cn2001_carrier_issuance.py"
       - "tests/test_stoneage_pet53_2001_iso_and_sina_rewards.py"
       - "tests/test_stoneage_pet54_2001_peluxia_eligibility.py"
+      - "tests/test_stoneage_pet55_2001_cn_tw1_kr_media.py"
       - "research/recovered/STONEAGE-PET51-YEAR2001-OPERATOR-MUSEUM-PET-CLAIM-CROSSWALK-R1.json"
       - "research/recovered/STONEAGE-PET52-CN2001-SA20-PERIOD-CARRIER-PET-RELEASE-R1.json"
       - "research/recovered/STONEAGE-PET53-2001-CN-ISO-CARRIER-AND-SINA-PET-PRIZES-R1.json"
       - "research/recovered/STONEAGE-PET54-2001-PELUXIA-REWARD-ELIGIBILITY-SOURCE-R1.json"
+      - "research/recovered/STONEAGE-PET55-2001-KR20-CNPLAYER-TW1-SPR-R1.json"
       - "research/recovered/STONEAGE-PET50-YEAR2000-SOURCE-BOUNDED-AUDIT-R1.json"
       - "research/recovered/STONEAGE-PET49-TW2000-OPERATOR-PROSPECTUS-SOURCE-R1.json"
       - "research/recovered/STONEAGE-PET48-KR2000-EARLY-PET-SOURCE-BOUNDARIES-R1.json"
@@ -66,10 +68,12 @@ on:
       - "tests/test_stoneage_pet52_cn2001_carrier_issuance.py"
       - "tests/test_stoneage_pet53_2001_iso_and_sina_rewards.py"
       - "tests/test_stoneage_pet54_2001_peluxia_eligibility.py"
+      - "tests/test_stoneage_pet55_2001_cn_tw1_kr_media.py"
       - "research/recovered/STONEAGE-PET51-YEAR2001-OPERATOR-MUSEUM-PET-CLAIM-CROSSWALK-R1.json"
       - "research/recovered/STONEAGE-PET52-CN2001-SA20-PERIOD-CARRIER-PET-RELEASE-R1.json"
       - "research/recovered/STONEAGE-PET53-2001-CN-ISO-CARRIER-AND-SINA-PET-PRIZES-R1.json"
       - "research/recovered/STONEAGE-PET54-2001-PELUXIA-REWARD-ELIGIBILITY-SOURCE-R1.json"
+      - "research/recovered/STONEAGE-PET55-2001-KR20-CNPLAYER-TW1-SPR-R1.json"
       - "research/recovered/STONEAGE-PET50-YEAR2000-SOURCE-BOUNDED-AUDIT-R1.json"
       - "research/recovered/STONEAGE-PET49-TW2000-OPERATOR-PROSPECTUS-SOURCE-R1.json"
       - "research/recovered/STONEAGE-PET48-KR2000-EARLY-PET-SOURCE-BOUNDARIES-R1.json"
@@ -119,6 +123,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet53_2001_iso_and_sina_rewards
       - name: PET54 2001 Waei named Baihu and incompatible reward eligibility claims
         run: python -m unittest tests.test_stoneage_pet54_2001_peluxia_eligibility
+      - name: PET55 2001 CN player names to certified TW1 SPR and near-period KR2.0
+        run: python -m unittest tests.test_stoneage_pet55_2001_cn_tw1_kr_media
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary
