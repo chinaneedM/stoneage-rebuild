@@ -37,10 +37,10 @@ class TestPet65(unittest.TestCase):
   self.assertFalse(a["CN_2003_same_original_SPR_proven"])
  def test_year_and_current_preserved(self):
   a,q=self.d,self.q
-  self.assertEqual(q["current_frontier"]["year"],2003)
+  self.assertGreaterEqual(q["current_frontier"]["year"],2003)
   self.assertGreaterEqual(int(q["current_frontier"]["latest_partial_root_review"].split("-")[0][3:]),65)
   self.assertRegex(q["current_frontier"]["next"],r"^PET[0-9]+:")
-  self.assertEqual(q["yearly_work_queue"][4]["research_gate"],"NOT_YEAR_AUDITED")
+  self.assertEqual(q["yearly_work_queue"][4]["research_gate"],"NOT_YEAR_AUDITED" if q["current_frontier"]["year"]==2003 else "SOURCE_BOUNDED_REVIEWED")
   self.assertEqual(q["yearly_work_queue"][4]["documentary_event_count_NOT_species"],1)
   self.assertEqual(sum(x["id"]==a["id"] for x in q["root_source_census_receipts"]),1)
   self.assertEqual(a["new_2003_original_client_bytes"],0)
