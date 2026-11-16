@@ -131,3 +131,7 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## PET44 2026-11-15｜高版保存SPR的412后期候选／56缺组／6早版未具名图号
 
 [PET44有界源审计](continuity/STONEAGE-PET44-LATER-CLIENT-CANDIDATE-GAPS-20261115.md)和[468+6条图号级来源清单](../research/recovered/STONEAGE-PET44-LATER-CLIENT-PETFLAG1-GAP-CANDIDATES-R1.json)：2016社区PETFLG=1模板涉及598不同图号，按已存4来源索引分为TW1/CN50/TW85/MIXED25均有130，后3有130，CN50+TW85有84，仅TW85有198，全部无56。TW1组130中仅124条有同客户端原相册名，6条不具名；不在TW1的412候选在TW85有416物理记录（3键重复），其中214已由R28整原SPR段证明CN50/TW85字节一致。未新取得原客户端、未绘像素、未证明任何新官服实际发放宠物；高版候选源身份未认证纯净官方，2000年份仍OPEN。CURRENT c89e0e33537990aa2132b47c40fef49a985a935c原封不动。最高NEXT PET45优先已存后版同构建本地名字/图号和2D动作的原件可读性；若缺保留准确阻塞，不跨到NPC模块。
+
+## PET45 2026-11-16｜台湾8.5保存包412候选图号与197,680帧原RD索引覆盖
+
+[PET45原素材与帧到位图联接审计](continuity/STONEAGE-PET45-TW85-CANDIDATE-SPR-RD-20261116.md)／[412图号及416物理SPR组的逐源明细](../research/recovered/STONEAGE-PET45-TW85-SAME-CARRIER-SPR-RD-INDEX-R1.json)：对现存PET44 412候选，精确重放R28源SPR和同包R29源RD派生表，197680原帧位置中197678有唯一同包RD原索引、2为空值，索引缺件0；214物理组与CN50已有全段同SHA、另202仅TW85原段有证。此为已验证原字节源派生的新增412批量来源关联，不是新取原商业字节或新原像素解码；无新的同构建宠物名字及正式官服投放，历史物种总数UNKNOWN。TW85候选未认证纯官服、2000年份游标OPEN，PET仍唯一活动模块；NEXT PET46优先同载体名字/原RD私人图像可见复原，资料不够留准确未决，不转NPC。
