@@ -2975,3 +2975,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-16 — PET61｜2002年大陆3.0/4.0官方文案、年兽四名与白虎兑奖证据等级
 
 [2002北京华义宠物证据报告](docs/continuity/STONEAGE-PET61-CN2002-SA30-SA40-PET-ISSUANCE-SOURCE-GRADES-20261116.md)／[机读源链与未决](research/recovered/STONEAGE-PET61-CN2002-SA30-SA40-OPERATOR-PLAYER-PET-EVIDENCE-R1.json)。3.0/4.0官方产品文案（已登记PET25四条发行证据）重放，与2002-08-28玩家列出的四种年兽 **葛雷吉鲁／葛雷洛比／葛雷马恩／葛雷基欧**分级对应；2002-11-07玩家称实际领取机豹**艾迪希洛**，仍不是原生技能验证。新增2002-09-17《京华时报》同期报道：官方第三弹来吉卡30种集齐后白虎奖励**“赠送”与报道所称“抽奖”相冲突**，不声称1000只实际发完、30卡=30宠或跨台服佩露夏同服。大陆3.0/4.0**认证原客户端新增0B**，当年原生宠物ID/SHA/技能验证0，旧PET25/PET26发行记录数不变。2002年份仍 `NOT_YEAR_AUDITED`，仅PET活动；NEXT **PET62同年2.5/台湾/日本/韩国有来源宠物**，不查收费卖盘，历史CURRENT原blob、Stage A 7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总完成率UNKNOWN保持。
+
+
+## 2026-11-16 — PET62｜2002年大陆2.5宠物礼品具名与台湾旧版原2D散列跨源复用
+
+[PET62：华义2.5产品宠名／黑暗精灵王黑羊／青龙凯恩异区领取源](docs/continuity/STONEAGE-PET62-2002-CN25-GIFT-PET-TW1-SPR-QUEST-20261116.md)／[机读证据与十项重开条件](research/recovered/STONEAGE-PET62-CN25-GIFT-BLACKSHEEP-QINGLONG-TW1-SOURCE-GRADE-R1.json)。旧已登记17173官方运营2.5说明重新逐项核得：**扑满乌力**（春满钱坤包，LV1中奖宣传1/3）、**年兽**（延年益兽包，不分具体形态）、**卡伊霍恩**（红羊WGS红包兑奖条件）；同名台服**认证原1.0相簿**存在100377号图及完整SPR SHA/56动作序列，此只证跨地区**同字与原2D候选**，2002大陆原宠ID/同版SPR未知。复用2002-05-20旧玩家任务稿找到作者自称完成“黑羊”奖励，另一攻略注明大陆/台服结局可能不同；2002-12-27大陆玩家“凯恩”第四弹来吉卡说与台服后期编年史“五月声望2000”说不合并。**2002-05-04《搞笑篇》不得充作北京华义官方日程表。** 2002台湾5.0融合、韩服2.0及日本运营原证缺口保留。旧PET25/PET26官方发行文档事件不增，2002原客户端新增0B、原生宠物ID/SPR重解码0、实服新确认0；2002 `NOT_YEAR_AUDITED`、唯一PET活动，NEXT PET63仍2002台湾具名官方来源/韩国原件，旧CURRENT、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总完成率UNKNOWN，禁查付费二手盘。
