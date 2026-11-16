@@ -189,3 +189,8 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## PET60 2026-11-16｜2001年五地区有界年审，历史审查前沿进入2002年
 
 [2001年度五地区审查、年份争议及严格缺件界限](continuity/STONEAGE-PET60-YEAR2001-SOURCE-BOUNDED-PET-AUDIT-20261116.md)／[五地区机读来源和重开触发记录](../research/recovered/STONEAGE-PET60-YEAR2001-SOURCE-BOUNDED-AUDIT-R1.json)。综合先前PET51—PET59九份真实来源记录、TW1客户端124具名原相册SPR候选、2001华义2.0大陆运营与台湾产品报道、韩2.0近当期评测及日服玩家赠宠文字；本轮有界重查仍未获得可认证的2001完整原安装包/官方同服逐只投放表。先前官方网页具名、玩家投稿/中奖计划/非法GM流出、PE头日期、跨区同名SPR均按不同等级保留，不提升为官服实装。此本轮新增2001原客户端字节0、官方具名实际发放新证明0；**不代表历史2001没有宠物**。五地区的物种总量均UNKNOWN、各地区留原源重开条件；2001改`SOURCE_BOUNDED_REVIEWED`，`historically_complete=false`，年份游标**前移2002**，宠物仍唯一ACTIVE。先按2002已有CN3/CN4年兽、GP、端午兽、艾迪希洛的四项正式文档事件逐个审核来源与版本，不称四种全球独立宠物。完全停止付费盘/卖家考据，原CURRENT 2,709,173B/blob `c89e0e33537990aa2132b47c40fef49a985a935c`不改，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、percent=null；NEXT **PET61-2002-CN3-CN4-OFFICIAL-SOURCE-AND-CLIENT-GATE**。
+
+
+## PET61 2026-11-16｜2002年大陆3.0／4.0官方产品与同期玩家具名宠物证据分层
+
+[PET61原3.0/4.0产品文案、同年玩家年兽四名、白虎兑现争议](continuity/STONEAGE-PET61-CN2002-SA30-SA40-PET-ISSUANCE-SOURCE-GRADES-20261116.md)／[8个来源、4条既有发行文档事件、4个2002玩家年兽名字及条件冲突机读JSON](../research/recovered/STONEAGE-PET61-CN2002-SA30-SA40-OPERATOR-PLAYER-PET-EVIDENCE-R1.json)。北京华义公司自述大陆3.0/4.0为2002年4月/9月；两版运营方商品文案在17173仍可直接读：GP卡兑奖与“落马技”、年兽卡、端午卡随机4属性、机豹“艾迪希洛”（地5水5／疾速攻击）均仅按出处分级。新逐行确认2002-08-28玩家正文的火/水/风/地四年兽「葛雷吉鲁／葛雷洛比／葛雷马恩／葛雷基欧」，**玩家当年具名≠运营方版内主表或另添四条官方发行**；2002-11-07玩家第一人称称领取艾迪希洛，但原程序和数值仍待核。4.0华义卡片活动写集齐30卡赠“白虎”（宣传限1000、截止10/30），同年9月17日《京华时报》记“参加抽奖”，**赠送还是抽奖冲突OPEN**，不能据赠品广告或卡片30种当实得宠数。2002官网原HTML/官方原客户端均未取得2002字节SHA，游戏原版宠物ID、SPR与技能未新增，四既有PET25发行事件不变；2002依然`NOT_YEAR_AUDITED`、宠物唯一ACTIVE、NEXT PET62查同年较早大陆2.5及日韩台官方源；不查付费盘。原CURRENT历史Git blob不动，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、百分比UNKNOWN。

@@ -8900,3 +8900,11 @@ R14包351231B/SHA7684267ab528d13ceecb23a25632543ae839225607cbda702a32736e4c4d366
 - 新的**扫描文件原件身份**：https://www.kingpin.info/download/kingpin/media/magazine/Play_Online_Issue_015_%28Japanese%29_1999-09.pdf ；31,915,180 B；167 PDF页；SHA256 `fd6cb9e4a3f7023115ebff91042d7c9b4a8c956b822c5ffd6379230ec5ee328c`。实际 GitHub Actions run 43712624585 与 43713031321 重放成功；缓存原版二进制/整页图像没有提交公开Git。
 - **严重限制**：此扫描原生文字层日文识别失真，当前不能据乱码抽字、更不能确认搜索引擎对「テスター特典アイテム」的转录。即使后续原页独立确认有特典，道具非宠物身份；不能据此登记1999实服宠物。
 - 分级：当年出版物是**同期杂志证据载体**，第三方存档复制与物理纸本校勘仍缺；原 β 客户端/首批零售光盘、宠物ID、原绘和实际发放证据未获取。详见 PET34报告/机器JSON；PET1999年度未审尽。
+
+
+### SRC-CN-2002-WAEI-SA30-SA40-PET-SOURCE-BOUNDARY-PET61-20261116
+
+- **既有一手运营商文字镜像，非新史实首发**：3.0 [产品文案](https://news.17173.com/z/stoneage/banben/sa30-cq.htm)、4.0 [产品文案](https://news.17173.com/z/stoneage/banben/sa40-cq.htm)、[WGS积分兑奖说明](https://news.17173.com/z/stoneage/guide/11.htm)。原PET25的CN3/CN4/CNWGS已登记；本次重新直接打开可读，仍未获得**2002原版HTML独立SHA**、2002大陆原版完整客户端、原生宠物表/技能值。企业自述2002年4月3.0和9月4.0见[北京华义公司大事记新浪存本](https://games.sina.com.cn/zhuanqu/waeivia/waei.html)；2012综述的具体日子只作后世候选，不提升为同服实装日。
+- **本轮逐字具名同期玩家见证**：2002-08-28[「雪无痕」《现在石器宠物的评论》](https://news.17173.com/z/stoneage/content/2002-8-28/n738_654198.html?_platform=PC) 明列4年兽姓名和属性，为玩家当年描述；来源内容此前PET25作为CNYEAR_2002已登记，但本轮以`?_platform=PC`页面实际读到四种具体名称。2002-11-07[「月光」《谈一谈机豹》](https://news.17173.com/z/stoneage/content/2002-11-7/n147_64110.html?_platform=PC)为第一人称领取艾迪希洛证言，原PET25已登记CNMECH_2002；玩家报出的成长和技能效果不得进入同版原生数值表。
+- **新独立同期报道与条款冲突**：2002-09-17[《京华时报》/人民网经搜狐转载](https://news.sohu.com/79/17/news203221779.shtml) 记载北京华义9月10日第三弹来吉卡、集30卡“抽奖”得白虎、华义市场总监答复卡片分发问题；4.0华义运营文案却写集满30种可获白虎并写1000只/10月30日截止。报道不仅是不同网址转发的运营广告，还是记者调查与公司答复，**不是实际白虎领奖者的原账号记录**；兑奖“抽奖/即送”仍未决。30张卡面不是30个宠物物种，1000只宣传名额不代表1000次实际发放。
+- **永久核对边界**：四条2002年既有PET25产品发行记录（CN-PC-3-GP、CN-PC-3-YEAR、CN-PC-4-DRAGONBOAT、CN-PC-4-MECHLEOPARD）仍是4条，不因本轮4个玩家命名或1个白虎活动广告升级为新发行/全球独立宠物。2002 `NOT_YEAR_AUDITED`，PET唯一模块，实际原文件0B，新同版SPR/原生宠ID0，旧CURRENT完整blob不动。详见`docs/continuity/STONEAGE-PET61-CN2002-SA30-SA40-PET-ISSUANCE-SOURCE-GRADES-20261116.md`和机器记录。

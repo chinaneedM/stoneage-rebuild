@@ -25,7 +25,7 @@ class TestPET60Year2001Bounded(unittest.TestCase):
         for id_ in a["previous_root_receipt_ids"]:
             self.assertEqual(ids.count(id_), 1, id_)
         self.assertEqual(ids.count(a["id"]), 1)
-        self.assertEqual(q["current_frontier"]["latest_partial_root_review"], a["id"])
+        self.assertIn(a["id"], [x["id"] for x in q["root_source_census_receipts"]])  # retained after later 2002 PET batches
         self.assertEqual(len(q["yearly_work_queue"][2]["partial_source_review_receipts"]), 10)
 
     def test_2001_review_is_not_historical_completion(self):
@@ -79,7 +79,7 @@ class TestPET60Year2001Bounded(unittest.TestCase):
         self.assertEqual(q["yearly_work_queue"][3]["research_gate"],"NOT_YEAR_AUDITED")
         self.assertEqual(q["yearly_work_queue"][3]["documented_release_event_count_NOT_species"] if "documented_release_event_count_NOT_species" in q["yearly_work_queue"][3] else q["yearly_work_queue"][3]["documentary_event_count_NOT_species"],4)
         self.assertEqual(q["yearly_work_queue"][3]["documented_release_event_ids_from_existing_PET25_PET26"],a["next_2002_candidate_existing_release_event_ids"])
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET61:"))
+        self.assertRegex(q["current_frontier"]["next"], r"^PET[0-9]+:")  # forward-only receipt remains after new PET batches
         self.assertFalse(a["next_2002_facts_are_species_total"])
         self.assertEqual(a["new_original_2001_client_bytes_this_review"],0)
         self.assertEqual(a["free_direct_public_client_source_search"]["new_complete_original_installers_downloaded"],0)
