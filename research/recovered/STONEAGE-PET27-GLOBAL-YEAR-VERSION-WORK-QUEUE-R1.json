@@ -18,8 +18,8 @@
     "year": 2002,
     "phase": "YEAR_2002_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET62-2002-CN25-NAMED-GIFT-BLACKSHEEP-QINGLONG-TW1-SPR-20261116",
-    "next": "PET63: stay 2002 PET; seek original 2002 TW first-party named pet issuances for 青龍凱恩, 端午獸卡恩, 4.0/5.0 and Korean Inium original pet/client sources; retain CN2.5 source-bounded original client gap, no paid seller sources.",
+    "latest_partial_root_review": "PET63-2002-TW40-WAEI-AND-CN-DUANWU-SOURCE-20261116",
+    "next": "PET64: remain in 2002 PET; original TW4.0/5.0 operator named pet issuance, then original KR/JP source; do not pursue paid sellers.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -1856,6 +1856,27 @@
       "new_official_live_pet_proofs": 0,
       "historical_pet_population_count": null,
       "satire_not_operator_notice": true
+    },
+    {
+      "id": "PET63-2002-TW40-WAEI-AND-CN-DUANWU-SOURCE-20261116",
+      "regions": [
+        "TW",
+        "CN",
+        "KR",
+        "JP",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET63-TW2002-WAEI-DUANWU-20261116.md",
+      "evidence_json": "research/recovered/STONEAGE-PET63-TW2002-WAEI-DUANWU-SOURCE-R1.json",
+      "year_frontier_before": 2002,
+      "year_frontier_after": 2002,
+      "year_not_closed": true,
+      "tw_period_news_index_count": 1,
+      "duanwu_secondary_named_candidates": 4,
+      "unresolved_element_conflicts": 1,
+      "new_client_bytes": 0,
+      "new_official_live_pets": 0,
+      "historical_pet_population_count": null
     }
   ],
   "client_first_methodology": {

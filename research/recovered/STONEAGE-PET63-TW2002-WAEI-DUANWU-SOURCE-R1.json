@@ -1,0 +1,116 @@
+{
+  "schema": "stoneage.pet63.tw2002_duanwu_source_audit.r1",
+  "id": "PET63-2002-TW40-WAEI-AND-CN-DUANWU-SOURCE-20261116",
+  "year": 2002,
+  "active_module": "PET",
+  "year_gate": "NOT_YEAR_AUDITED",
+  "base_commit": "b7e024abf17db73c2253667fd6be6bec1f93d871",
+  "base_tree": "415ec45a3e4eec7a5cb76626f12da7692dd756aa",
+  "prework_action_success": 34,
+  "sources": [
+    {
+      "source": "GNN_TW_20020627",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=4746",
+      "date": "2002-06-27",
+      "kind": "CONTEMPORANEOUS_TW_OPERATOR_PROMO_AS_MEDIA_SEARCH_INDEX",
+      "direct_http": "403",
+      "original_html_sha256": null
+    },
+    {
+      "source": "SINA_CN_20030407",
+      "url": "https://games.sina.com.cn/zhqu/sta/cwzl/chongwu03.shtml",
+      "date": "2003-04-07",
+      "kind": "PLAYER_SUBMISSION_NOT_2002_NATIVE_MASTER"
+    },
+    {
+      "source": "17173_CN_UNDATED_DUANWU",
+      "url": "https://news.17173.com/z/stoneage/chongwu/pet13.htm",
+      "date": null,
+      "kind": "UNDATED_SECONDARY_PET_GUIDE"
+    },
+    {
+      "source": "R92_CN_20030108",
+      "url": "https://news.17173.com/z/stoneage/content/2003-1-8/n852_768685.html",
+      "date": "2003-01-08",
+      "kind": "EXISTING_R92_SOURCE_REUSED_NOT_NEW"
+    },
+    {
+      "source": "KR_PET55_20020330",
+      "url": "https://www.gamechosun.co.kr/webzine/article/view.php?no=11141&pvMode=pc",
+      "date": "2002-03-30",
+      "kind": "REUSED_KOREA_MEDIA_NO_NAMED_OFFICIAL_PET"
+    }
+  ],
+  "taiwan_promo": {
+    "planned_first_sale": "2002-06-29",
+    "planned_version_month": "2002-07",
+    "puman_name": "撲滿烏力",
+    "spend_threshold_twd": 500,
+    "advertised_max_pets": 300,
+    "advertised_stone_currency": 50000,
+    "duanwu_card": "新花怒放 稀寵卡",
+    "lucky_card_wave": 3,
+    "merchandise_models": 10,
+    "actual_server_rewards_verified": false,
+    "original_native_pet_id": null
+  },
+  "duanwu_text_candidates": [
+    {
+      "name": "卡恩法尔",
+      "sina_list_no": 235,
+      "element": "火7风3"
+    },
+    {
+      "name": "卡恩修比",
+      "sina_list_no": 236,
+      "element": "风7地3"
+    },
+    {
+      "name": "卡恩格登",
+      "sina_list_no": 233,
+      "element": "地3水7",
+      "r92_element": "地7水3",
+      "conflict_unresolved": true
+    },
+    {
+      "name": "卡恩米兹",
+      "sina_list_no": 234,
+      "element": "水7火3",
+      "r92_original_corrupted": "卡恩米��"
+    }
+  ],
+  "exclusion_guards": {
+    "sina_numbers_are_not_native_ids": true,
+    "tw_third_wave_not_cn_fourth_wave": true,
+    "tw_puman_not_cn_puman_promotion": true,
+    "models_not_live_species": true,
+    "r92_not_independent_new_source": true,
+    "taiwan_event_advertisement_not_execution": true
+  },
+  "old_2002_operator_documentary_events": 4,
+  "new_2002_official_release_events": 0,
+  "new_2002_original_client_bytes": 0,
+  "new_2002_native_pet_ids": 0,
+  "new_2002_original_sprite_decodes": 0,
+  "new_2002_official_live_awards": 0,
+  "worldwide_2002_pet_population": null,
+  "reopen_when": [
+    "TW2002_WAEI_ORIGINAL_HTML_OR_SERVER_PROMOTION_LOG",
+    "TW2002_WAEI_AUTHENTIC_4_0_5_0_CLIENT_AND_PET_MASTER",
+    "TW2002_OFFICIAL_NAMED_DUANWU_OR_QINGLONG_RELEASE",
+    "CN2002_PET_SAME_BUILD_PET_ID_AND_ELEMENTS",
+    "INDEPENDENT_GE_DENG_ELEMENT_CONFLICT_RESOLUTION",
+    "KR2002_ORIGINAL_INIUM_PET_CARRIER",
+    "JP2002_ORIGINAL_OPERATOR_PET_RECORD",
+    "OTHER2002_OFFICIAL_CARRIER"
+  ],
+  "original_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "original_state_bytes": 2709173,
+  "original_state_changed": false,
+  "paid_seller_search": false,
+  "public_original_art": false,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}
