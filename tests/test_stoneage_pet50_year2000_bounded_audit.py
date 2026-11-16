@@ -76,7 +76,11 @@ class Pet50Year2000Bounded(unittest.TestCase):
         self.assertEqual(q["current_frontier"]["status"], "OPEN_NOT_YEAR_CLOSED")
         # PET50 records the 2000→2001 transition; later PET work must be free to advance NEXT.
         self.assertRegex(q["current_frontier"]["next"], r"^PET\d+:")
-        self.assertEqual(q["current_frontier"]["current_source_acquisition_priority"], "CLIENT_FIRST_VERSION_AUTHENTICATION_AND_PET_RESOURCE_EXTRACTION_BEFORE_EXTERNAL_NEWS")
+        # The current PET acquisition channel is further qualified by the explicit 2026-11-16 user rule.
+        self.assertEqual(q["current_frontier"]["current_source_acquisition_priority"], "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE")
+        access = q["client_first_methodology"]
+        self.assertIn("SECONDHAND_MARKETPLACE_LISTINGS", access["disallow_as_research_work_units"])
+        self.assertIn("AUTHENTICATED_ORIGINAL_BYTES_ALREADY_HELD_AND_ACTUALLY_ACCESSIBLE", access["allowed_direct_paths"])
         row, = [x for x in q["root_source_census_receipts"] if x["id"] == "PET50-YEAR2000-SOURCE-BOUNDED-REVIEW-20261116"]
         self.assertEqual((row["year_frontier_before"], row["year_frontier_after"]), (2000, 2001))
         self.assertTrue(row["reopen_on_new_original_2000_source"])
