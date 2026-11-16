@@ -2970,3 +2970,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-16 — PET60｜2001 年五地区官方宠物来源有界年审、2002 游标开启
 
 [2001 JP/TW/KR/CN/OTHER分轨年审，确认不足与重开条件](docs/continuity/STONEAGE-PET60-YEAR2001-SOURCE-BOUNDED-PET-AUDIT-20261116.md)／[永久机读源限与五地区缺口](research/recovered/STONEAGE-PET60-YEAR2001-SOURCE-BOUNDED-AUDIT-R1.json)：重新核最新真实远端 main `1cffe3dc27926a858502cd1552fafd5723aef96f`/tree `01d8df187c261e9c4cf375216ce9100d16b5c141`，3/3 Actions 成功、0 PR、完整原CURRENT 2709173B/blob `c89e0e33`。依最新付费盘禁查政策核PET51—59九份已知年源＋TW1本地124具名相册/SPR（**不是2001官服年名单**）及2001 2.0原运营镜像说明，对五地区分别登记完整客户端、同源宠物表、真实发放与年代差异的缺口。新2001原客户端字节0、当年官方具名实际投放新证明0，历史真总种数UNKNOWN；不声称史料全量/官方没有宠物/原游戏可运行。2001仅`SOURCE_BOUNDED_REVIEWED`、历史完整性false，按时间游标前进至**2002**，PET单模块锁不变。**NEXT PET61：2002年年兽/GP/端午兽/艾迪希洛的大陆3.0/4.0官方源及实服/原文件资格分开核实**；原商业素材不公开、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、overall percent=null。候选与main Actions仅据后验另行验收。
+
+
+## 2026-11-16 — PET61｜2002年大陆3.0/4.0官方文案、年兽四名与白虎兑奖证据等级
+
+[2002北京华义宠物证据报告](docs/continuity/STONEAGE-PET61-CN2002-SA30-SA40-PET-ISSUANCE-SOURCE-GRADES-20261116.md)／[机读源链与未决](research/recovered/STONEAGE-PET61-CN2002-SA30-SA40-OPERATOR-PLAYER-PET-EVIDENCE-R1.json)。3.0/4.0官方产品文案（已登记PET25四条发行证据）重放，与2002-08-28玩家列出的四种年兽 **葛雷吉鲁／葛雷洛比／葛雷马恩／葛雷基欧**分级对应；2002-11-07玩家称实际领取机豹**艾迪希洛**，仍不是原生技能验证。新增2002-09-17《京华时报》同期报道：官方第三弹来吉卡30种集齐后白虎奖励**“赠送”与报道所称“抽奖”相冲突**，不声称1000只实际发完、30卡=30宠或跨台服佩露夏同服。大陆3.0/4.0**认证原客户端新增0B**，当年原生宠物ID/SHA/技能验证0，旧PET25/PET26发行记录数不变。2002年份仍 `NOT_YEAR_AUDITED`，仅PET活动；NEXT **PET62同年2.5/台湾/日本/韩国有来源宠物**，不查收费卖盘，历史CURRENT原blob、Stage A 7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总完成率UNKNOWN保持。
