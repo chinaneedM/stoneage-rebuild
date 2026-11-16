@@ -2955,3 +2955,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-16 — PET53｜2001大陆2.0旧ISO候选和新浪奖宠发放资格
 
 [2001《电脑迷》11月配套ISO元数据与新浪40个梦幻宠物拟奖名额的来源审查](docs/continuity/STONEAGE-PET53-2001-CN-ISO-CARRIER-AND-SINA-PET-PRIZES-20261116.md)。候选`PCFan200111.iso`有后期目录所报SHA-1，但实物内容未得/未经本项目核算；新浪40奖位非40已交付宠物，更非种数。2001仍OPEN、PET模块唯一，PET54优先原光盘／真实同服发奖原证。完整旧CURRENT Git blob不动。
+
+
+## 2026-11-16 — PET54｜白虎佩露夏2001年官网列名与125/135级获奖规则未决
+
+[官方2001年10月华义大陆旧网第81目录位置、17173旧图鉴／2003新浪玩家报道奖励条件冲突、后期混合版同名相簿严格分轨](docs/continuity/STONEAGE-PET54-2001-PELUXIA-CN-TW-WEB-AND-REWARD-SOURCE-20261116.md)。新增认证2001客户端0B、官方实装新证据0，2001仍OPEN；PCFan200111.iso的2001/2003期刊目录年份疑点前向保留。PET55继续2001其它可靠原件和发放记录；旧CURRENT完整原blob不改。
