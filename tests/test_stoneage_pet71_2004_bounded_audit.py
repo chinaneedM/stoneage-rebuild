@@ -64,7 +64,7 @@ class PET71Annual(unittest.TestCase):
   self.assertEqual(self.a["region_source_reviews"]["TW"]["claimed_hawk_live_quantity_less_than"],20)
   self.assertFalse(self.a["region_source_reviews"]["JP"]["is_2004_Hangame_avatar_in_game_species"])
   self.assertIsNone(self.a["region_source_reviews"]["CN"]["pet_population"])
-  self.assertFalse(self.prior69["source_records"] if "source_records" in self.prior69 else False)
+  self.assertEqual(len(self.prior69["region_sources"]),8)
   self.assertEqual(self.prior69["region_sources"][0]["region"],"TW")
  def test_year_2005_frontier_retains_all_prior_2004_receipts(self):
   a,q=self.a,self.q
