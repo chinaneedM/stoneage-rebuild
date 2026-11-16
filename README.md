@@ -2945,3 +2945,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-15 — PET41｜台湾华义早期宠物馆
 
 [128 个网页条目与台湾 1.0 原盘对照](docs/continuity/STONEAGE-PET41-TW-EARLY-WGS-MUSEUM-20261115.md)。华义早期网页对照到 105 个同名原盘图号。布魯頓与两条不同的取得或出现线索可按原名和图号查阅。
+
+
+## 2026-11-16 — PET52｜2001大陆2.0原附盘与红暴抽奖来源边界
+
+[运营方10月29日／11月1日公告、13项分发载体及实际发放待证记录](docs/continuity/STONEAGE-PET52-CN2001-SA20-PERIOD-CARRIER-PET-RELEASE-20261116.md)。原客户端0字节新增、2001年官服宠物实装新增证明0项。PET仍唯一活动模块，2001年未审完，下一任务PET53。完整 `docs/CURRENT-STATE.md` 原blob保留未覆。
