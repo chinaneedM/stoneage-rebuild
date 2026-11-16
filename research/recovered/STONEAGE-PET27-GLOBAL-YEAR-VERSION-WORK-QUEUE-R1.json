@@ -18,8 +18,8 @@
     "year": 2001,
     "phase": "YEAR_2001_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET56-2001-CN20-SERVER-ROLLOUT-PET-PERIOD-20261116",
-    "next": "PET57: 2001 KR/JP/TW/CN verified original clients/patches or official actual named pet issuance, not player hearsay nor 100/300 advertising; remain 2001 OPEN",
+    "latest_partial_root_review": "PET57-2001-CN-WAEI-UNRELEASED-PET-EXCLUSION-20261116",
+    "next": "PET58: 2001 original authentic KR/JP/TW/CN client patch or first-party actual named pet reward; verify earlier operator notice original, do not count GM illicit pets or later mirrors as live roster",
     "current_source_acquisition_priority": "CLIENT_FIRST_VERSION_AUTHENTICATION_AND_PET_RESOURCE_EXTRACTION_BEFORE_EXTERNAL_NEWS"
   },
   "region_tracks": [
@@ -614,6 +614,17 @@
           "year_not_closed": true,
           "original_2001_client_bytes": 0,
           "official_pet_issuance_proofs": 0
+        },
+        {
+          "id": "PET57-2001-CN-WAEI-UNRELEASED-PET-EXCLUSION-20261116",
+          "regions": [
+            "CN"
+          ],
+          "report": "docs/continuity/STONEAGE-PET57-2001-CN-GM-UNRELEASED-PET-NOTICES-20261116.md",
+          "evidence_json": "research/recovered/STONEAGE-PET57-2001-CN-WAEI-GM-UNRELEASED-PET-NOTICES-R1.json",
+          "year_not_closed": true,
+          "operator_notices": "LATER_REPRINT_ONLY_NOT_PRIMARY_RETRIEVED",
+          "new_verified_named_live_pets": 0
         }
       ]
     },
@@ -1573,6 +1584,23 @@
       "attributed_player_articles": 4,
       "new_2001_original_client_bytes": 0,
       "new_official_live_pet_proofs": 0,
+      "historical_pet_population_count": null
+    },
+    {
+      "id": "PET57-2001-CN-WAEI-UNRELEASED-PET-EXCLUSION-20261116",
+      "regions": [
+        "CN"
+      ],
+      "report": "docs/continuity/STONEAGE-PET57-2001-CN-GM-UNRELEASED-PET-NOTICES-20261116.md",
+      "evidence_json": "research/recovered/STONEAGE-PET57-2001-CN-WAEI-GM-UNRELEASED-PET-NOTICES-R1.json",
+      "year_frontier_before": 2001,
+      "year_frontier_after": 2001,
+      "year_not_closed": true,
+      "original_notice_bytes": 0,
+      "original_2001_client_bytes": 0,
+      "new_live_official_pet_proofs": 0,
+      "original_operator_transmission_missing": true,
+      "secondary_reprints": 2,
       "historical_pet_population_count": null
     }
   ],
