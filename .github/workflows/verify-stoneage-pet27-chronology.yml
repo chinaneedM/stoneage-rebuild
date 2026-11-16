@@ -39,6 +39,9 @@ on:
       - "tests/test_stoneage_pet68_year2003_bounded_audit.py"
       - "tests/test_stoneage_pet69_2004_tw_cn_jp_source.py"
       - "tests/test_stoneage_pet70_2004_kr_cn_tw_source.py"
+      - "tests/test_stoneage_pet71_2004_bounded_audit.py"
+      - "research/recovered/STONEAGE-PET71-YEAR2004-FIVE-REGION-AUDIT-R1.json"
+      - "docs/continuity/STONEAGE-PET71-YEAR2004-FIVE-REGION-PET-AUDIT-20261116.md"
       - "research/recovered/STONEAGE-PET70-2004-KR-RIDES-CN75-STAGED-TW-XUANWU-R1.json"
       - "docs/continuity/STONEAGE-PET70-2004-KR-RIDES-CN75-TW-XUANWU-20261116.md"
       - "research/recovered/STONEAGE-PET69-YEAR2004-TW75-CNMONKEY-JPAVATAR-R1.json"
@@ -126,6 +129,9 @@ on:
       - "tests/test_stoneage_pet68_year2003_bounded_audit.py"
       - "tests/test_stoneage_pet69_2004_tw_cn_jp_source.py"
       - "tests/test_stoneage_pet70_2004_kr_cn_tw_source.py"
+      - "tests/test_stoneage_pet71_2004_bounded_audit.py"
+      - "research/recovered/STONEAGE-PET71-YEAR2004-FIVE-REGION-AUDIT-R1.json"
+      - "docs/continuity/STONEAGE-PET71-YEAR2004-FIVE-REGION-PET-AUDIT-20261116.md"
       - "research/recovered/STONEAGE-PET70-2004-KR-RIDES-CN75-STAGED-TW-XUANWU-R1.json"
       - "docs/continuity/STONEAGE-PET70-2004-KR-RIDES-CN75-TW-XUANWU-20261116.md"
       - "research/recovered/STONEAGE-PET69-YEAR2004-TW75-CNMONKEY-JPAVATAR-R1.json"
@@ -198,6 +204,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet69_2004_tw_cn_jp_source
       - name: PET70 2004 original KR four riding pets, CN 7.5 staged and TW Xuanwu evidence
         run: python -m unittest tests.test_stoneage_pet70_2004_kr_cn_tw_source
+      - name: PET71 2004 five-region bounded official pet annual review and year 2005 frontier
+        run: python -m unittest tests.test_stoneage_pet71_2004_bounded_audit
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary
