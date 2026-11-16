@@ -71,8 +71,8 @@ class Pet50Year2000Bounded(unittest.TestCase):
         self.assertEqual((a["year_frontier_before"], a["year_frontier_after"]), (2000, 2001))
         self.assertEqual(q["yearly_work_queue"][0]["research_gate"], "SOURCE_BOUNDED_REVIEWED")
         self.assertFalse(q["yearly_work_queue"][0]["historically_complete"])
-        self.assertEqual(q["yearly_work_queue"][2]["research_gate"], "NOT_YEAR_AUDITED")
-        self.assertEqual(q["current_frontier"]["year"], 2001)
+        self.assertIn(q["yearly_work_queue"][2]["research_gate"], {"NOT_YEAR_AUDITED", "SOURCE_BOUNDED_REVIEWED"})
+        self.assertGreaterEqual(q["current_frontier"]["year"], 2001)
         self.assertEqual(q["current_frontier"]["status"], "OPEN_NOT_YEAR_CLOSED")
         # PET50 records the 2000→2001 transition; later PET work must be free to advance NEXT.
         self.assertRegex(q["current_frontier"]["next"], r"^PET\d+:")
