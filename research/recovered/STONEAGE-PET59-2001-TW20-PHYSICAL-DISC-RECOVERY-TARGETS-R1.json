@@ -1,0 +1,203 @@
+{
+  "schema": "stoneage.pet59.2001.tw20_existing_physical_disc_marketplace_leads_and_custody_gate.r1",
+  "recorded": "2026-11-16",
+  "module": "PET",
+  "year": 2001,
+  "year_status": "NOT_YEAR_AUDITED",
+  "base_main": {
+    "head": "f3c8ad0a8c31ea6c6fdf699c7f9eb419fabe0f62",
+    "tree": "43855284eb6377d9ffeae2f88cfbd89891a169d4",
+    "pet27_blob_sha": "d58b0d4e9a6e0e71a40cd832a6199b2f3cd2ead2",
+    "original_historical_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "purpose": "Client-first targeted 2001 TW Waei 2.0 original CD preservation leads, not shopping or verified acquisition; careful seller group de-dup and media/custody classification.",
+  "historical_product_context": {
+    "earlier_PET58_same_period_offer": "2001-09-11 TW Waei 2.0 newcomer package",
+    "earlier_PET51_period_report": "2001-11-02 GNN reporting TW2.0 product release 2001-08-01",
+    "the_2026_disc_listing_is_NOT_sufficient_to_establish_original_2001_pressing": true
+  },
+  "targets": [
+    {
+      "id": "TW20-RUTEN-22018505458011",
+      "url": "https://www.ruten.com.tw/item/22018505458011/",
+      "seller_group": "TW-B",
+      "record_type": "MARKETPLACE_LISTING",
+      "title": "家族開拓史 一片裝 PC 中文版",
+      "reported_items": "1 loose optical disc",
+      "claimed_disc_tested": true,
+      "listed_images": 6,
+      "listing_date_not_historical": true,
+      "price_TWD_as_seen_20261116": 399,
+      "priority": "P1_PHYSICAL_DISC_CANDIDATE",
+      "source_direct_open": "OK",
+      "provenance": "SELLER_ASSERTED_GENUINE_NOT_INDEPENDENTLY_AUTHENTICATED",
+      "work_needed": [
+        "disc face photographs with Waei/game code",
+        "reverse and hub ring/matrix photos",
+        "licensed first-press or magazine marking",
+        "optical sector dump via legal access",
+        "ISO/full disc bytes and SHA256",
+        "filename/size/timestamps file tree",
+        "client original version marker and PET ALBUM/SPR/SOURCE linkage"
+      ]
+    },
+    {
+      "id": "TW20-RUTEN-22528139481533",
+      "url": "https://www.ruten.com.tw/item/22528139481533/",
+      "seller_group": "TW-A",
+      "record_type": "MARKETPLACE_LISTING",
+      "title": "遊戲光碟 石器時代 2.0版 家族開拓史",
+      "reported_items": "game disc according to listing title",
+      "claimed_disc_tested": null,
+      "listed_images": 1,
+      "listing_date_not_historical": true,
+      "price_TWD_as_seen_20261116": 500,
+      "priority": "P1_DIRECT_2_0_DISC_TITLE",
+      "source_direct_open": "OK",
+      "provenance": "SELLER_TITLE_NOT_VALIDATED_ORIGINAL_PRESSING",
+      "work_needed": [
+        "read photographed disc label and rear matrix",
+        "complete original optical dump and source custody",
+        "check whether Taiwan Waei official or magazine/compilation",
+        "identify build before pet extraction"
+      ]
+    },
+    {
+      "id": "TW20-RUTEN-22443075875513",
+      "url": "https://www.ruten.com.tw/item/22443075875513/",
+      "seller_group": "TW-A",
+      "record_type": "MARKETPLACE_LISTING",
+      "title": "Game People 遊戲人間 石器時代2.0 家族開拓史 D81",
+      "reported_items": "a 2.0-labelled media object, form and publisher edition not yet authenticated",
+      "claimed_disc_tested": null,
+      "listed_images": 1,
+      "listing_date_not_historical": true,
+      "price_TWD_as_seen_20261116": 1000,
+      "priority": "P2_POSSIBLE_MAGAZINE_OR_PROMOTIONAL_CARRIER",
+      "source_direct_open": "OK",
+      "provenance": "GAME_PEOPLE_LABEL_ONLY_NOT_PROOF_OF_2001_COVERDISC_OR_WAEI_OFFICIAL_BUILD",
+      "work_needed": [
+        "disc title verso, magazine issue/pressing and publication date",
+        "actual sector bytes and optical SHA",
+        "check same-build equivalence versus Waei retail and other Game People links"
+      ]
+    },
+    {
+      "id": "TW20-RUTEN-22622802071417",
+      "url": "https://www.ruten.com.tw/item/22622802071417/",
+      "seller_group": "TW-A",
+      "record_type": "MARKETPLACE_LISTING",
+      "title": "Game People 遊戲人間 石器時代2.0 家族開拓史 F88盒",
+      "reported_items": "box-labelled 2.0 media object from same shop group",
+      "claimed_disc_tested": null,
+      "listed_images": 1,
+      "listing_date_not_historical": true,
+      "price_TWD_as_seen_20261116": 400,
+      "priority": "P2_POTENTIAL_FORMAT_VARIANT",
+      "source_direct_open": "OK",
+      "provenance": "SAME_SHOP_SEPARATE_LISTING_NOT_PROVEN_DISTINCT_DISC_BUILD",
+      "work_needed": [
+        "box/disc matrix",
+        "prove specific 2001 date or original pressing",
+        "dump original disc and compare hashes"
+      ]
+    },
+    {
+      "id": "TW20-RUTEN-22414193861405",
+      "url": "https://www.ruten.com.tw/item/22414193861405/",
+      "seller_group": "TW-A",
+      "record_type": "MARKETPLACE_LISTING",
+      "title": "Game People 遊戲人間 石器時代2.0 家族開拓史 使用說明書 D98",
+      "reported_items": "usage manual ONLY according to item name",
+      "claimed_disc_tested": null,
+      "listed_images": 2,
+      "listing_date_not_historical": true,
+      "price_TWD_as_seen_20261116": 400,
+      "priority": "P3_MANUAL_TEXT_ONLY_NO_DISC_LISTED",
+      "source_direct_open": "OK",
+      "provenance": "DO_NOT_COUNT_AS_CD_OR_CLIENT",
+      "work_needed": [
+        "original manual publication colophon if acquired",
+        "printed official game/pet terms but not local client bytes"
+      ]
+    },
+    {
+      "id": "TW20-RUTEN-22218822434581",
+      "url": "https://www.ruten.com.tw/item/22218822434581/",
+      "seller_group": "TW-B",
+      "record_type": "MARKETPLACE_SEARCH_INDEX_ONLY",
+      "title": "家族開拓史 一片裝 PC 中文版",
+      "reported_items": "1 loose optical disc claimed in indexed snippet",
+      "claimed_disc_tested": null,
+      "listed_images": null,
+      "listing_date_not_historical": true,
+      "price_TWD_as_seen_20261116": 299,
+      "priority": "P3_SAME_SELLER_DEDUP_PENDING",
+      "source_direct_open": "TIMEOUT",
+      "provenance": "SEARCH_RESULT_ONLY_NOT_SECOND_INDEPENDENT_ORIGINAL_PRESSING",
+      "work_needed": [
+        "direct confirmation, photo hash and disc matrix compare versus 22018505458011"
+      ]
+    }
+  ],
+  "source_groups": {
+    "TW-A": {
+      "seller_platform_handle": "alixson7",
+      "ids": [
+        "TW20-RUTEN-22528139481533",
+        "TW20-RUTEN-22443075875513",
+        "TW20-RUTEN-22622802071417",
+        "TW20-RUTEN-22414193861405"
+      ],
+      "identity_relation": "same merchant, not evidence of 4 distinct original pressings or builds"
+    },
+    "TW-B": {
+      "seller_platform_handle": "nb888888",
+      "ids": [
+        "TW20-RUTEN-22018505458011",
+        "TW20-RUTEN-22218822434581"
+      ],
+      "identity_relation": "same merchant title duplicates; no two independent original discs proven"
+    }
+  },
+  "search_bounds_and_reuse": {
+    "already_explored_older": "research/recovered/STONEAGE-RUTEN-EARLY-BARE-DISC-IDENTITY-R2.txt and research/recovered/STONEAGE-SA25-RUTEN-PROVENANCE-METADATA-R1.txt are distinct older generic bare disc / 2002 CN2.5 targets; these item IDs were not found by exact repo code search.",
+    "collectors_2020_already_registered": [
+      "research/recovered/STONEAGE-SHIQI-BLOG-EARLY-DISCS-R1.txt",
+      "research/recovered/STONEAGE-SA25-COLLECTOR-MIRROR-CONTEXT-R1.txt"
+    ],
+    "other_region_KR_not_recovered": {
+      "book_id": "GameTime StoneAge Perfect Guide",
+      "isbn13": "9788995182123",
+      "isbn10": "8995182121",
+      "KOLIS_previous_evidence": "research/recovered/STONEAGE-GAMETIME-2001-KOLIS-HOLDINGS-R1.txt",
+      "recent_store_listing": "https://www.yes24.com/product/goods/199761",
+      "publisher_2001_date_on_store": "2001-04-30",
+      "cd1_is_publisher_catalog_claim": true,
+      "current_sale": "OUT_OF_STOCK",
+      "complete_CD_dump_recovered": false,
+      "physical_cd_seller_verified": false,
+      "pet_summary_chapter_table_of_contents_only_not_original_full_page": true
+    },
+    "historical_JP_2001_original_installer_recovered": false
+  },
+  "preservation_acceptance_gate": [
+    "photo of both sides of exact candidate original disc, disc matrix/IFPI and physical label",
+    "complete lawful ISO/BIN/CUE with raw byte SHA256, sector count/filesystem/volume label, and file tree",
+    "source history and first-party retail/magazine cover mapping; detect burn/repack/autorun edits",
+    "PE/header resource version plus original on-disc date and source line, don't infer all from timestamp",
+    "verify same-build pet name/ID vs ALBUM, SPR/ADRN/REAL, skill/action resources",
+    "only separate original official issuance or native same-deployment proof can upgrade live release"
+  ],
+  "no_external_purchase_or_contact_performed": true,
+  "client_bytes_recovered_this_round": 0,
+  "new_authenticated_2001_taiwan_2_0_builds": 0,
+  "new_official_pet_release_proofs": 0,
+  "historical_2001_pet_count": null,
+  "current_module_switch_allowed": false,
+  "next": "PET60: remain 2001; source-quality physical disc image/hash for highest-priority TW2.0 marketplace candidate or KR GameTime CD; otherwise target 2001 first-party verifiable issued pets and bounded year closure work, do not re-count these six listings.",
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}
