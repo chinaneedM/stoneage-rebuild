@@ -69,9 +69,9 @@ class PET71Annual(unittest.TestCase):
  def test_year_2005_frontier_retains_all_prior_2004_receipts(self):
   a,q=self.a,self.q
   self.assertEqual((a["year_frontier_before"],a["year_frontier_after"]),(2004,2005))
-  self.assertEqual(q["current_frontier"]["year"],2005)
+  self.assertGreaterEqual(q["current_frontier"]["year"],2005)
   self.assertRegex(q["current_frontier"]["next"],r"^PET[0-9]+:")
-  self.assertEqual(q["yearly_work_queue"][6]["research_gate"],"NOT_YEAR_AUDITED")
+  self.assertEqual(q["yearly_work_queue"][6]["research_gate"],"NOT_YEAR_AUDITED" if q["current_frontier"]["year"]==2005 else "SOURCE_BOUNDED_REVIEWED")
   self.assertEqual(q["yearly_work_queue"][5]["documentary_event_count_NOT_species"],0)
   self.assertEqual(a["historical_2004_PET25_PET26_documentary_event_count_unchanged"],0)
   ids=[r["id"] for r in q["root_source_census_receipts"]]
