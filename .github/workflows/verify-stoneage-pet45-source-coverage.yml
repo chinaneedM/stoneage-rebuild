@@ -1,0 +1,44 @@
+name: PET45 TW85 original frame-to-RD source-qualified candidate matrix
+on:
+  push:
+    branches:
+      - "agent/pet45-tw85-same-carrier-pet-frame-coverage-20261116"
+    paths:
+      - "tools/stoneage_pet45_tw85_rd_index_coverage.py"
+      - ".github/workflows/verify-stoneage-pet45-source-coverage.yml"
+  pull_request:
+    paths:
+      - "tools/stoneage_pet45_tw85_rd_index_coverage.py"
+      - "research/recovered/STONEAGE-PET45-TW85-SAME-CARRIER-SPR-RD-INDEX-R1.json"
+      - ".github/workflows/verify-stoneage-pet45-source-coverage.yml"
+permissions:
+  contents: read
+jobs:
+  source-derive:
+    if: github.event_name == 'push'
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Source-exact original sprite and RD metadata candidate derivation
+        run: python -m tools.stoneage_pet45_tw85_rd_index_coverage --mode generate
+      - name: Self-replay generated report
+        run: python -m tools.stoneage_pet45_tw85_rd_index_coverage --mode verify
+      - name: Store only derived metadata on candidate branch
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/recovered/STONEAGE-PET45-TW85-SAME-CARRIER-SPR-RD-INDEX-R1.json
+          if ! git diff --cached --quiet; then
+            git commit -m "PET45: archive exact original-source cohort RD mapping"
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi
+  replay-pr:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replay source-exact 412 graphic, 416 group original bitmap coverage
+        run: python -m tools.stoneage_pet45_tw85_rd_index_coverage --mode verify
