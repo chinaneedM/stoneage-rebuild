@@ -18,8 +18,8 @@
     "year": 2001,
     "phase": "YEAR_2001_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET50-YEAR2000-SOURCE-BOUNDED-REVIEW-20261116",
-    "next": "PET51: 2001 official PC pet names and actual issuance by independent region/operator, client-first; 1999/2000 source-bounded years remain reopenable on new original evidence.",
+    "latest_partial_root_review": "PET51-2001-TWCN-2_0-PET-MUSEUM-SOURCE-20261116",
+    "next": "PET52: 2001 source-qualified TW2.0/2.5 and CN2.0 original clients or named actual official pet issuance, plus dated operator outcomes for 2001 design contest, no year closure.",
     "current_source_acquisition_priority": "CLIENT_FIRST_VERSION_AUTHENTICATION_AND_PET_RESOURCE_EXTRACTION_BEFORE_EXTERNAL_NEWS"
   },
   "region_tracks": [
@@ -538,7 +538,20 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "partial_source_review_receipts": [
+        {
+          "id": "PET51-2001-TWCN-2_0-PET-MUSEUM-SOURCE-20261116",
+          "regions": [
+            "TW",
+            "CN"
+          ],
+          "report": "docs/continuity/STONEAGE-PET51-2001-TWCN-2_0-PET-MUSEUM-CROSSWALK-20261116.md",
+          "evidence_json": "research/recovered/STONEAGE-PET51-YEAR2001-OPERATOR-MUSEUM-PET-CLAIM-CROSSWALK-R1.json",
+          "year_not_closed": true,
+          "live_pet_roster_not_proven": true
+        }
+      ]
     },
     {
       "year": 2002,
@@ -1409,6 +1422,22 @@
       "reopen_on_new_original_2000_source": true,
       "court_found_1999_10_27_contract_not_1999_tw_game_release": true,
       "new_named_pet_release_proofs": 0,
+      "historical_pet_population_count": null
+    },
+    {
+      "id": "PET51-2001-TWCN-2_0-PET-MUSEUM-SOURCE-20261116",
+      "report": "docs/continuity/STONEAGE-PET51-2001-TWCN-2_0-PET-MUSEUM-CROSSWALK-20261116.md",
+      "evidence_json": "research/recovered/STONEAGE-PET51-YEAR2001-OPERATOR-MUSEUM-PET-CLAIM-CROSSWALK-R1.json",
+      "year_frontier_before": 2001,
+      "year_frontier_after": 2001,
+      "year_not_closed": true,
+      "press_dates_tw20": "2001-08-01",
+      "press_dates_cn20": "2001-11-01",
+      "pet_submission_design_intent_only": true,
+      "previously_stored_operator_hosted_player_claim_crosswalk": 8,
+      "already_stored_tw1_original_client_spr_named_match": 8,
+      "new_original_client_bytes": 0,
+      "new_official_named_live_release_proofs": 0,
       "historical_pet_population_count": null
     }
   ],

@@ -1,0 +1,356 @@
+{
+  "schema": "stoneage.pet51.year2001.operator_hosted_player_pets_versus_same_name_original_client_and_period_version_dates.r1",
+  "date_recorded": "2026-11-16",
+  "baseline": {
+    "main_head": "ceb209de565dad6ce0e24dceb706f85eb0a03e6e",
+    "main_tree": "3005099e880563756f018762335380acf10c7431",
+    "exact_head_actions_success": 4,
+    "open_prs": 0,
+    "current_state_blob_sha": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_state_blob_size_bytes": 2709173
+  },
+  "active_module": "PET",
+  "active_year": 2001,
+  "year_2001_gate": "NOT_YEAR_AUDITED",
+  "year_2000_gate": "SOURCE_BOUNDED_REVIEWED_REOPENABLE",
+  "original_repo_sources_replayed": {
+    "pet41": {
+      "path": "research/recovered/STONEAGE-PET41-TW-EARLY-WGS-MUSEUM-R1.json",
+      "git_blob": "a01ca037b40c43ce542c7e2656bbaff3ececfb8f",
+      "operator_hosted_website_player_contributions": true,
+      "operator_adjudicated_pet_roster": false,
+      "website_records": 128,
+      "pet_pages_archived": 14,
+      "exact_named_client_rows": 106,
+      "distinct_exact_client_graphics": 105,
+      "non_exact_web_names": 22
+    },
+    "pet39": {
+      "path": "research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json",
+      "git_blob": "1aada81d7314769bf683b816cc5a8762c3bd9400",
+      "authentic_original_tw1_client_prior_receipt": true,
+      "local_album_named_graphics": 124,
+      "official_same_build_live_roster_proven": false
+    },
+    "pet42": {
+      "path": "research/recovered/STONEAGE-PET42-TW10-OPERATOR-MUSEUM-BIDIRECTIONAL-GAP-R1.json",
+      "git_blob": "31ca2c06b6df87d0a493126ae786a84a8db8f285",
+      "web_non_exact_name_records": 22,
+      "original_client_names_missing_on_website_exact": 19,
+      "duplicate_website_printed_name_groups": 2
+    },
+    "early_client_source": {
+      "path": "research/recovered/STONEAGE-WAEI-SA40-SA42-LINEAGE-R1.txt",
+      "git_blob": "9722ad42fe83a0b5a5beaa6a99e25cde4666f004",
+      "sa40_old_preserved_file_sha256": "d54a6c109644dd4842f61bdd42a95362fda7a16f5e9b9dbd829d6b97c678fde1",
+      "sa40_embedded_pe_timestamp_utc": "2001-09-27T08:31:27+00:00",
+      "sa42_old_preserved_file_sha256": "744fc0557f024930f351ef31b6adac0dbe41968625105d5f0eba45be1a048df6",
+      "sa42_embedded_pe_timestamp_utc": "2001-11-01T02:54:29+00:00",
+      "sa42_path_string_not_verified_existing_asset": "data\\album_2.dat",
+      "version2_game_client_authoritatively_identified": false,
+      "new_bytes_recovered_in_pet51": 0
+    }
+  },
+  "year2001_period_sources": [
+    {
+      "id": "PET51-GNN-2001-1102-TW-CN-2.0",
+      "title": "石器時代進軍大陸，遊戲銷售100萬套",
+      "period_report_published": "2001-11-02",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=2147",
+      "access": "SEARCH_INDEXED_PERIOD_ARTICLE_TEXT_DIRECT_OPEN_403_NO_ORIGINAL_BYTES",
+      "original_html_sha256": null,
+      "region": "TW_CN",
+      "claims": [
+        {
+          "region": "TW",
+          "operator": "WAEI",
+          "version": "STONEAGE_2.0_家族開拓史",
+          "claimed_launch_date": "2001-08-01",
+          "date_kind": "PERIOD_NEWS_RETROSPECTIVE_OFFICIAL_PRODUCT_LAUNCH",
+          "same_build_original_pet_list_acquired": false
+        },
+        {
+          "region": "CN",
+          "operator": "BEIJING_WAEI",
+          "version": "STONEAGE_2.0_家族開拓史",
+          "claimed_launch_date": "2001-11-01",
+          "date_kind": "PERIOD_NEWS_REPORT_FIRST_DAY_NEW_VERSION_RELEASE",
+          "same_build_original_pet_list_acquired": false
+        },
+        {
+          "region": "TW",
+          "operator": "WAEI",
+          "version": "STONEAGE_2.5_精靈王傳說",
+          "claimed_launch_date": null,
+          "date_kind": "AS_OF_2001_11_02_UPCOMING_NOT_RELEASE_CONFIRMED",
+          "same_build_original_pet_list_acquired": false
+        }
+      ],
+      "marketing_software_sales_units_not_species_count": 1000000
+    },
+    {
+      "id": "PET51-GNN-2001-0913-PET-SUBMISSION",
+      "title": "石器時代寵物邀請玩家一同製作",
+      "period_report_published": "2001-09-13",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=1889",
+      "access": "SEARCH_INDEXED_PERIOD_ARTICLE_TEXT_DIRECT_OPEN_403_NO_ORIGINAL_BYTES",
+      "original_html_sha256": null,
+      "region": "TW",
+      "operator": "WAEI",
+      "pet_submission_competition": {
+        "title": "石器夢幻寵物徵稿大賽",
+        "proposed_original_user_drawing_size_px": [
+          200,
+          200
+        ],
+        "maximum_bmp_bytes": null,
+        "original_announced_maximum_kb": 150,
+        "pet_name_character_limit": 5,
+        "submitter_may_propose_attributes": true,
+        "accepted_submissions_or_pet_names_verified": [],
+        "any_submission_selected_verified": false,
+        "any_new_live_pet_proven": false,
+        "contest_is_announced_design_intent_not_existing_live_pet": true,
+        "deadline": "UNLIMITED_AS_ANNOUNCED",
+        "maximum_bytes_unresolvable_without_definition_of_kb": true
+      },
+      "actual_pet_release_proven": false
+    }
+  ],
+  "retrospective_conflicting_taiwan_2_0": {
+    "source": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=4345",
+    "source_type": "LATER_REPOSTED_FAN_CHRONOLOGY",
+    "stated_server_update_date": "2001-07-01",
+    "period_reported_official_product_launch_date": "2001-08-01",
+    "dates_may_describe_different_operations": true,
+    "exact_conflict_resolution": null,
+    "do_not_backdate_2001_08_product_or_any_pet_to_2000": true
+  },
+  "year2001_same_name_player_claim_to_original_tw1_client_cases": [
+    {
+      "web_ordinal": 3,
+      "website_printed_name": "威伯",
+      "source_website_page": "pet1.htm",
+      "source_page_archived_capture_timestamp": "20010128181300",
+      "source_original_page_url": "http://www7.waei.net:80/wgs/stoneage/content/museum/pet1.htm",
+      "source_webpage_sha256_from_pet41": "43868ac845174570dcdec95fcfe34ae580f097102a90e9e6b6a3eacfbcf2e702",
+      "player_contributed_claim_kind": "STARTER_CLAIM",
+      "player_contributed_claim_summary_from_pet41": "威伯是卡魯它那村的出生宠",
+      "player_contributed_elements_not_native_game_stats": {
+        "地": 6,
+        "風": 4
+      },
+      "contributed_location_text_original_sha256_from_pet41": "2435333e8733556964da96f16e90a654cbfe68ab1b7cf540deb43c00fc0f5898",
+      "original_tw1_client_name_exact_match": true,
+      "tw1_client_original_graphic_number": 100266,
+      "tw1_client_original_album_row_sha256_from_pet39": "dc4125d7a7e7a3b953c6924cfd666475ee7d03fdfffc7489c8538e6bdf565290",
+      "tw1_client_original_spr_group_index": 256,
+      "tw1_client_original_spr_full_segment_sha256_from_pet39": "fad067e8ee01a23c8305a3a4a2b72b7c07438694cde1bb4de3f5fceeda678777",
+      "cross_carrier_identity_evidence": "EXACT_PRINTED_NAME_ONLY",
+      "client_asset_present": true,
+      "official_gameplay_availability_proven": false,
+      "claimed_event_year_proven": false,
+      "entry_contributes_new_native_client_bytes": false
+    },
+    {
+      "web_ordinal": 35,
+      "website_printed_name": "洛奇安",
+      "source_website_page": "pet4.htm",
+      "source_page_archived_capture_timestamp": "20010306033541",
+      "source_original_page_url": "http://www7.waei.net:80/wgs/stoneage/content/museum/pet4.htm",
+      "source_webpage_sha256_from_pet41": "c3dfb34599ed7658e5c4a1d98be7c7412750d06e449a61cec8a152e48bf27cfa",
+      "player_contributed_claim_kind": "QUEST_REWARD_CLAIM",
+      "player_contributed_claim_summary_from_pet41": "洛奇安是吉魯島五兄弟之谜的奖励",
+      "player_contributed_elements_not_native_game_stats": {
+        "地": 8,
+        "風": 2
+      },
+      "contributed_location_text_original_sha256_from_pet41": "bb02afa70891fa730a295cdd7d13c64e0ebafeec31a0d4e3b34643cc4b8134bb",
+      "original_tw1_client_name_exact_match": true,
+      "tw1_client_original_graphic_number": 100286,
+      "tw1_client_original_album_row_sha256_from_pet39": "b108080d8091e36265b74bfcfbb49acb920d978c3defa0e546424ba04e2a149f",
+      "tw1_client_original_spr_group_index": 276,
+      "tw1_client_original_spr_full_segment_sha256_from_pet39": "585ee0e409e36111e411597dcc11b7a1d2f49018b8de380a2238e64cbfd317d7",
+      "cross_carrier_identity_evidence": "EXACT_PRINTED_NAME_ONLY",
+      "client_asset_present": true,
+      "official_gameplay_availability_proven": false,
+      "claimed_event_year_proven": false,
+      "entry_contributes_new_native_client_bytes": false
+    },
+    {
+      "web_ordinal": 36,
+      "website_printed_name": "利則諾頓",
+      "source_website_page": "pet4.htm",
+      "source_page_archived_capture_timestamp": "20010306033541",
+      "source_original_page_url": "http://www7.waei.net:80/wgs/stoneage/content/museum/pet4.htm",
+      "source_webpage_sha256_from_pet41": "c3dfb34599ed7658e5c4a1d98be7c7412750d06e449a61cec8a152e48bf27cfa",
+      "player_contributed_claim_kind": "QUEST_REWARD_CLAIM",
+      "player_contributed_claim_summary_from_pet41": "利則諾頓是吉魯島五兄弟之谜的奖励",
+      "player_contributed_elements_not_native_game_stats": {
+        "地": 10
+      },
+      "contributed_location_text_original_sha256_from_pet41": "bb02afa70891fa730a295cdd7d13c64e0ebafeec31a0d4e3b34643cc4b8134bb",
+      "original_tw1_client_name_exact_match": true,
+      "tw1_client_original_graphic_number": 100287,
+      "tw1_client_original_album_row_sha256_from_pet39": "96796058e5243eee8fe1cd61631e91473de1864a66cdc434fe974ebd3abbf248",
+      "tw1_client_original_spr_group_index": 277,
+      "tw1_client_original_spr_full_segment_sha256_from_pet39": "ef9b8508b2df8eae3865d279831ef78ff75ae3e8f5465b88211c7a8f7acfcc8a",
+      "cross_carrier_identity_evidence": "EXACT_PRINTED_NAME_ONLY",
+      "client_asset_present": true,
+      "official_gameplay_availability_proven": false,
+      "claimed_event_year_proven": false,
+      "entry_contributes_new_native_client_bytes": false
+    },
+    {
+      "web_ordinal": 74,
+      "website_printed_name": "朵拉比斯",
+      "source_website_page": "pet8.htm",
+      "source_page_archived_capture_timestamp": "20010128213400",
+      "source_original_page_url": "http://www7.waei.net:80/wgs/stoneage/content/museum/pet8.htm",
+      "source_webpage_sha256_from_pet41": "f3ffd93417fe8204ea9465953ab389b3afee163a32ac7de143eb25fecf6ddec1",
+      "player_contributed_claim_kind": "EVENT_REWARD_CLAIM",
+      "player_contributed_claim_summary_from_pet41": "朵拉比斯被写作 JOT 奖品",
+      "player_contributed_elements_not_native_game_stats": {
+        "風": 10
+      },
+      "contributed_location_text_original_sha256_from_pet41": "340a9cbdc04488d34c232510c1094ab6da8eaba3aa686d4cd5f38d47d3bf8b6b",
+      "original_tw1_client_name_exact_match": true,
+      "tw1_client_original_graphic_number": 100362,
+      "tw1_client_original_album_row_sha256_from_pet39": "516331ac536f649801d7822bac41e6235b190dacdd22e3aa947498c8ea076532",
+      "tw1_client_original_spr_group_index": 332,
+      "tw1_client_original_spr_full_segment_sha256_from_pet39": "42a308083c2f8ca1a69b0818b3f621586fe9c351098ed32e095fd8b8c3ac70db",
+      "cross_carrier_identity_evidence": "EXACT_PRINTED_NAME_ONLY",
+      "client_asset_present": true,
+      "official_gameplay_availability_proven": false,
+      "claimed_event_year_proven": false,
+      "entry_contributes_new_native_client_bytes": false
+    },
+    {
+      "web_ordinal": 103,
+      "website_printed_name": "克克爾",
+      "source_website_page": "pet11.htm",
+      "source_page_archived_capture_timestamp": "20010128183800",
+      "source_original_page_url": "http://www7.waei.net:80/wgs/stoneage/content/museum/pet11.htm",
+      "source_webpage_sha256_from_pet41": "f42bb07ef4f2aa09298d7d69d8bf526707a529521471cc8c80d5942afa6bbf45",
+      "player_contributed_claim_kind": "STARTER_CLAIM",
+      "player_contributed_claim_summary_from_pet41": "克克爾是加加村的出生宠",
+      "player_contributed_elements_not_native_game_stats": {
+        "水": 7,
+        "火": 3
+      },
+      "contributed_location_text_original_sha256_from_pet41": "e6eb9ea0ae08126541b18712e9db5e504842edb59b2218666dbd352ccd5c9e9f",
+      "original_tw1_client_name_exact_match": true,
+      "tw1_client_original_graphic_number": 100292,
+      "tw1_client_original_album_row_sha256_from_pet39": "d0eb844f076a417b1a6990ddb4da355b79f0d2a71de094274a7505d8087efbd9",
+      "tw1_client_original_spr_group_index": 282,
+      "tw1_client_original_spr_full_segment_sha256_from_pet39": "1f7b960aebced3cc35cb1aa037c2e178584ae67de7673241a023449a7c9614bb",
+      "cross_carrier_identity_evidence": "EXACT_PRINTED_NAME_ONLY",
+      "client_asset_present": true,
+      "official_gameplay_availability_proven": false,
+      "claimed_event_year_proven": false,
+      "entry_contributes_new_native_client_bytes": false
+    },
+    {
+      "web_ordinal": 107,
+      "website_printed_name": "黑烏力",
+      "source_website_page": "pet11.htm",
+      "source_page_archived_capture_timestamp": "20010128183800",
+      "source_original_page_url": "http://www7.waei.net:80/wgs/stoneage/content/museum/pet11.htm",
+      "source_webpage_sha256_from_pet41": "f42bb07ef4f2aa09298d7d69d8bf526707a529521471cc8c80d5942afa6bbf45",
+      "player_contributed_claim_kind": "EVENT_REWARD_CLAIM",
+      "player_contributed_claim_summary_from_pet41": "黑烏力被写作 JOT 奖品",
+      "player_contributed_elements_not_native_game_stats": {},
+      "contributed_location_text_original_sha256_from_pet41": "340a9cbdc04488d34c232510c1094ab6da8eaba3aa686d4cd5f38d47d3bf8b6b",
+      "original_tw1_client_name_exact_match": true,
+      "tw1_client_original_graphic_number": 100388,
+      "tw1_client_original_album_row_sha256_from_pet39": "6657b58912c1534322a931984a25f34c84bce1b582ecdd4a38621c5f2610d65d",
+      "tw1_client_original_spr_group_index": 354,
+      "tw1_client_original_spr_full_segment_sha256_from_pet39": "d8ee442c59eaa9a3eec71336bff5ffb280d6296416c887c23b961a4d3cb49ebb",
+      "cross_carrier_identity_evidence": "EXACT_PRINTED_NAME_ONLY",
+      "client_asset_present": true,
+      "official_gameplay_availability_proven": false,
+      "claimed_event_year_proven": false,
+      "entry_contributes_new_native_client_bytes": false
+    },
+    {
+      "web_ordinal": 114,
+      "website_printed_name": "布魯頓",
+      "source_website_page": "pet12.htm",
+      "source_page_archived_capture_timestamp": "20010214232219",
+      "source_original_page_url": "http://www7.waei.net:80/wgs/stoneage/content/museum/pet12.htm",
+      "source_webpage_sha256_from_pet41": "37b62c3265c2f071c645043f100750c7cf6ac5a540471c43ab5a5f423fa6e3ee",
+      "player_contributed_claim_kind": "APPEARANCE_LOCATION_CLAIM",
+      "player_contributed_claim_summary_from_pet41": "布魯頓在達那村附近出现",
+      "player_contributed_elements_not_native_game_stats": {
+        "火": 2,
+        "風": 8
+      },
+      "contributed_location_text_original_sha256_from_pet41": "38b8b3a2bbda657b6bc923da29f8955b3ab4620e06117ab30082b7e73b4a27cd",
+      "original_tw1_client_name_exact_match": true,
+      "tw1_client_original_graphic_number": 100394,
+      "tw1_client_original_album_row_sha256_from_pet39": "47165f1555960602736f2cef5a25dfaadad49b20315b8c2feaef7bca1971b655",
+      "tw1_client_original_spr_group_index": 360,
+      "tw1_client_original_spr_full_segment_sha256_from_pet39": "3df3893d1528273fdd935d46c729713ec5ff4efd73df4eb64fc47b9e5ab7225e",
+      "cross_carrier_identity_evidence": "EXACT_PRINTED_NAME_ONLY",
+      "client_asset_present": true,
+      "official_gameplay_availability_proven": false,
+      "claimed_event_year_proven": false,
+      "entry_contributes_new_native_client_bytes": false
+    },
+    {
+      "web_ordinal": 115,
+      "website_printed_name": "布魯寶",
+      "source_website_page": "pet12.htm",
+      "source_page_archived_capture_timestamp": "20010214232219",
+      "source_original_page_url": "http://www7.waei.net:80/wgs/stoneage/content/museum/pet12.htm",
+      "source_webpage_sha256_from_pet41": "37b62c3265c2f071c645043f100750c7cf6ac5a540471c43ab5a5f423fa6e3ee",
+      "player_contributed_claim_kind": "APPEARANCE_LOCATION_CLAIM",
+      "player_contributed_claim_summary_from_pet41": "布魯寶在五兄弟的洞窟出现",
+      "player_contributed_elements_not_native_game_stats": {
+        "火": 4,
+        "風": 6
+      },
+      "contributed_location_text_original_sha256_from_pet41": "5a732d88416f43a812ec4928a73d86986dd2ffa4401ca78a019c2b15616caab3",
+      "original_tw1_client_name_exact_match": true,
+      "tw1_client_original_graphic_number": 100395,
+      "tw1_client_original_album_row_sha256_from_pet39": "567f9567eea830d840ec2a314382743580dcc589673afe4ef421fed2ea13eb64",
+      "tw1_client_original_spr_group_index": 361,
+      "tw1_client_original_spr_full_segment_sha256_from_pet39": "4a835ba8927bb19912541ed3ac9a45ce5a713d32796e099c9e0c43a54a9fa4ce",
+      "cross_carrier_identity_evidence": "EXACT_PRINTED_NAME_ONLY",
+      "client_asset_present": true,
+      "official_gameplay_availability_proven": false,
+      "claimed_event_year_proven": false,
+      "entry_contributes_new_native_client_bytes": false
+    }
+  ],
+  "counts": {
+    "already_saved_2001_waei_player_pet_museum_rows": 128,
+    "old_museum_exact_client_name_rows": 106,
+    "old_museum_distinct_exact_client_graphics": 105,
+    "old_museum_web_name_non_exact_count": 22,
+    "selected_clauses_with_actual_acquisition_or_location_claim": 8,
+    "selected_exact_original_tw1_client_name_and_spr_crosschecks": 8,
+    "new_official_2001_named_pet_live_release_proofs": 0,
+    "new_2001_original_client_bytes_acquired": 0,
+    "historical_year2001_official_species_total": null
+  },
+  "residual_need": [
+    "AUTHENTIC_2001_TW_2_0_OR_2_5_FULL_CLIENT_AND_SAME_BUILD_PET_NAME_GRAPHICS",
+    "AUTHENTIC_2001_CN_2_0_FULL_CLIENT_AND_SAME_BUILD_PET_NAME_GRAPHICS",
+    "WAEI_OFFICIAL_2001_NAMED_PET_AWARD_OR_GAMEPLAY_DEPLOYMENT_PROOF",
+    "WAEI_CONTEST_WINNER_ADOPTION_AND_ACTUAL_RELEASE_FIRST_PARTY_EVIDENCE",
+    "PET41_PLAYER_CONTRIBUTED_LOCATION_AND_ELEMENTS_ORIGINAL_SERVER_CORROBORATION",
+    "JAN2001_CLAIMED_NEW_YEAR_GM_GIFTS_WITH_SAME_ERA_ORIGINAL_OPERATOR_EVIDENCE",
+    "RECONCILE_2001_TW_JUL_SERVER_UPDATE_VS_AUG_RETAIL_RELEASE",
+    "QUALIFIED_JP_KR_2001_CLIENTS_AND_PET_ISSUANCE"
+  ],
+  "old_raw_commercial_art_published": false,
+  "new_original_2001_client_bytes_acquired": 0,
+  "new_official_2001_named_pet_live_release_proofs": 0,
+  "year2001_historically_complete": false,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null,
+  "next": "PET52_2001_SOURCE_EXACT_NAMED_OPERATOR_ISSUANCE_OR_ORIGINAL_2_0_CLIENT_AND_ARCHIVED_CONTEST_OUTCOME"
+}
