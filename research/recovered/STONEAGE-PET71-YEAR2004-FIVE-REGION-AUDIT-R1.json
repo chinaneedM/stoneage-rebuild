@@ -1,0 +1,220 @@
+{
+  "schema": "stoneage.pet71.year2004.source_bounded_global_annual_audit.r1",
+  "id": "PET71-YEAR2004-FIVE-REGION-SOURCE-BOUNDED-OFFICIAL-PET-AUDIT-20261116",
+  "date": "2026-11-16",
+  "active_module": "PET",
+  "year": 2004,
+  "review_status": "SOURCE_BOUNDED_REVIEWED",
+  "historically_complete": false,
+  "startup": {
+    "main_head": "44c44be9e24202c5eed2bfda3d9754e1ff467306",
+    "main_tree": "31d67c6a312f11953e66b4bf6efd7ac15fb0ea38",
+    "main_exact_head_actions_success": 33,
+    "main_exact_head_actions_total": 33,
+    "open_pr_count": 0,
+    "original_CURRENT_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_CURRENT_bytes": 2709173
+  },
+  "prior_2004_root_receipts": [
+    "PET69-2004-TW75-CNMONKEY-JPAVATAR-PET-SOURCE-20261116",
+    "PET70-2004-KR-NETMARBLE-FOUR-RIDES-CN75-STAGED-TW-XUANWU-20261116"
+  ],
+  "new_2004_original_period_source": {
+    "id": "JP_20040210_BOTHTEC_BETA_PET_COOKING_REQUIRED",
+    "region": "JP",
+    "date": "2004-02-10",
+    "scheduled_event_date": "2004-02-13",
+    "url": "https://www.4gamer.net/news/history/2004.02/20040210202905detail.html",
+    "grade": "CONTEMPORANEOUS_OPERATOR_RELEASE_REPORTED_BY_GAME_PRESS",
+    "direct_original_2004_period_news_read": true,
+    "operator": "BOTHTEC",
+    "product_stage": "JAPAN_2004_OPEN_BETA",
+    "operator_named_servers": [
+      "月",
+      "水星",
+      "金星"
+    ],
+    "operator_gm_chocolate_cooking_class_announced": true,
+    "player_participation_requires_pet_with_cooking_skill": true,
+    "player_quest_pet_name_or_species_id": null,
+    "pet_skill_natively_verified_from_original_2004_client": false,
+    "is_first_official_pet_release_event": false,
+    "operator_pet_full_roster_in_article": false,
+    "original_client_bytes_recovered": 0
+  },
+  "region_source_reviews": {
+    "CN": {
+      "operator": "BEIJING_WAEI",
+      "source_receipts": [
+        "PET69",
+        "PET70"
+      ],
+      "version_tracks": [
+        "CN_2004_1_82_2_0_2_5_PRESERVED",
+        "CN_2004_7_0_PRESERVED_NONUPGRADED_FOUR",
+        "CN_2004_7_5_BETA_2_TEST_SERVERS",
+        "CN_2004_7_5_TWO_NEW_PRODUCTION_SERVERS",
+        "CN_2004_7_0_TO_7_5_UPGRADES_2004_DEC20_TO_2005_JAN14"
+      ],
+      "evidence": "Sept producer Q&A region split on 玄武/monkey-year; Sept 15 two beta servers GM handed out unnamed pets; Nov 2 planned two new 7.5 official servers and free client/patch; Dec 8 confirms two 7.5 servers already exist and stages upgrades into Jan 2005, four old 7.0 servers remain, 1.82/2.0/2.5 stay original",
+      "operator_reported_actual_named_live_awards_this_year": [],
+      "original_complete_2004_client_build_available": false,
+      "native_pet_master_verified": false,
+      "actual_native_reward_log_recovered": false,
+      "pet_population": null,
+      "official_live_named_2004_released_species_count": null,
+      "reopen": true,
+      "reopen_trigger": "CN_2004_WAEI_SERVER_SPECIFIC_1_82_2_0_2_5_7_0_7_5_CLIENT_MASTERS_AND_NAMED_PRODUCTION_AWARDS"
+    },
+    "TW": {
+      "operator": "TAIWAN_WAEI",
+      "source_receipts": [
+        "PET69",
+        "PET70"
+      ],
+      "version_tracks": [
+        "TW_2004_75_SUMMER_UPDATE",
+        "TW_2004_XUANWU_TASK_OPERATOR_QA",
+        "TW_2004_DEC_EGG_PRIZE_ADVERTISEMENT"
+      ],
+      "evidence": "June 24 on-site media and producer says 弗麗露/弗麗雅 gift and reports in-game 火風鷹人 <20; June30 contemporary 7.5 update, Jul2 later history conflict; Sept producer says 玄武 quest in Taiwan but Feb dates only later chronology; Dec seven named egg promotional prizes not actual grants",
+      "period_named_operator_gift_labels": [
+        "弗麗露",
+        "弗麗雅",
+        "火風鷹人"
+      ],
+      "period_2004_dec_advertised_lottery_labels": [
+        "奈坎特",
+        "哈沃恩",
+        "奇歐巴肯",
+        "奈宇羅",
+        "布里薩爾",
+        "艾柏瑞",
+        "拉特利"
+      ],
+      "claimed_hawk_live_quantity_less_than": 20,
+      "quantity_is_producer_quotation_not_raw_server_count": true,
+      "original_2004_tw_玄武_quest_complete_script_recovered": false,
+      "named_pet_actual_account_delivery_log_recovered": false,
+      "original_complete_2004_client_build_available": false,
+      "native_pet_master_verified": false,
+      "actual_native_reward_log_recovered": false,
+      "pet_population": null,
+      "official_live_named_2004_released_species_count": null,
+      "reopen": true,
+      "reopen_trigger": "TW_2004_ORIGINAL_WAEI_75_CLIENT_PET_MASTER_AND_XUANWU_QUEST_SCRIPT_REDEEMED_PET_PRIZE_LOGS"
+    },
+    "JP": {
+      "operator": "BOTHTEC_NHN_JAPAN",
+      "source_receipts": [
+        "PET69",
+        "PET71"
+      ],
+      "version_tracks": [
+        "JP_2004_FEB_BETA_COOKING_PET_SKILL",
+        "JP_2004_JUNE03_FORMAL_SERVICE",
+        "JP_2004_HANGAME_AVATAR_OUTSIDE_GAME"
+      ],
+      "evidence": "Feb 10 contemporary 4Gamer BOTHTEC GM Feb13 cooking event requires pet with cooking skill on Moon/Mercury/Venus beta servers; June3 operator formal service includes pet capture according to contemporary GameWatch; 7 Hangame pet-motif avatar products are account decorations outside in-game pet master",
+      "new_2004_same_server_named_pet_release": null,
+      "is_2004_Hangame_avatar_in_game_species": false,
+      "original_complete_2004_client_build_available": false,
+      "native_pet_master_verified": false,
+      "actual_native_reward_log_recovered": false,
+      "pet_population": null,
+      "official_live_named_2004_released_species_count": null,
+      "reopen": true,
+      "reopen_trigger": "JP_2004_BOTHTEC_NHN_AUTHENTIC_CLIENT_NATIVE_PET_SKILL_NAME_TABLE_AND_DATED_NAMED_PET_OPERATOR_ISSUANCE"
+    },
+    "KR": {
+      "operator": "CJ_INTERNET_NETMARBLE",
+      "source_receipts": [
+        "PET70"
+      ],
+      "version_tracks": [
+        "KR_2004_NETMARBLE_RAGOGO_RIDE_QUEST"
+      ],
+      "evidence": "Nov16 operator-attributed original period report four ride names 라고고/무이/도라비스/고르돈, riding quest for 라고고; three newly-added huntable creatures unnamed; about 120 species is approximate publisher context, not a native pet roster",
+      "period_four_named_ride_labels": [
+        "라고고",
+        "무이",
+        "도라비스",
+        "고르돈"
+      ],
+      "period_newly_added_huntable_pets_unnamed_count": 3,
+      "period_operator_approx_pet_varieties": "120여종",
+      "four_ride_names_are_four_2004_new_species": false,
+      "three_unnamed_not_inferred_to_four_ride_names": true,
+      "original_complete_2004_client_build_available": false,
+      "native_pet_master_verified": false,
+      "actual_native_reward_log_recovered": false,
+      "pet_population": null,
+      "official_live_named_2004_released_species_count": null,
+      "reopen": true,
+      "reopen_trigger": "KR_2004_NETMARBLE_ORIGINAL_BUILD_PET_NAME_ID_TABLE_3_HUNTABLE_NAMES_AND_RIDE_QUEST_REAL_DEPLOYMENT"
+    },
+    "OTHER": {
+      "operator": null,
+      "source_receipts": [],
+      "version_tracks": [],
+      "evidence": "Bounded 2004 corpus lacks independently identified original official 2004 PC StoneAge operator+native pet records in any other region; this is a source gap, not an absence finding",
+      "all_other_regions_absent_proven": false,
+      "original_complete_2004_client_build_available": false,
+      "native_pet_master_verified": false,
+      "actual_native_reward_log_recovered": false,
+      "pet_population": null,
+      "official_live_named_2004_released_species_count": null,
+      "reopen": true,
+      "reopen_trigger": "OTHER_2004_IDENTIFIABLE_OFFICIAL_PC_OPERATOR_REGION_BUILD_OR_NAMED_PET_ISSUANCE"
+    }
+  },
+  "source_evidence_exclusions": {
+    "TW_June30_2004_75_news_not_july2_retrospective_same_date": true,
+    "TW_producer_quote_on_hawk_lt20_not_exact_pet_count": true,
+    "TW_玄武_quest_mode_2004_source_does_not_prove_actual_grant_log": true,
+    "CN_2004_sep_beta_GM_pets_not_official_production_distribution": true,
+    "CN_2004_dec_old_servers_upgrade_to_2005_and_preserve_four_70": true,
+    "CN_2004_old_182_20_25_stay_separate": true,
+    "KR_four_ridable_names_not_four_fresh_2004_pet_species": true,
+    "KR_about_120_is_not_exact_total": true,
+    "KR_three_huntable_unnamed_cannot_attach_to_rides": true,
+    "JP_2004_Hangame_avatared_pet_figures_not_ingame_species": true,
+    "JP_2004_cooking_skill_requirement_is_not_new_named_pet_issuance": true,
+    "OTHER_2004_absence_of_sources_not_absence_of_pet_releases": true
+  },
+  "unresolved_conflicts": [
+    "CN_2004_TEST_BETA_PET_HANDOUT_VS_PRODUCTION_NAMED_RELEASE",
+    "CN_2004_7_0_7_5_STAGED_UPGRADES_THROUGH_2005",
+    "TW_2004_JUNE30_SEVENFIVE_UPDATE_VS_LATER_JULY02_DATE",
+    "TW_2004_XUANWU_TASK_LATE_RETROSPECTIVE_DATES_AND_NATIVE_SCRIPT_MISSING",
+    "TW_2004_GIVEAWAY_AND_SEVEN_DEC_REWARD_NAMES_NOT_GRANT_LOGS",
+    "KR_2004_FOUR_RIDABLE_NAMES_VS_THREE_UNNAMED_HUNTABLE_VS_ABOUT120",
+    "JP_2004_NO_AUTHENTIC_BUILD_PET_MASTER_THOUGH_COOK_SKILL_BETA_ACTIVITY",
+    "OTHER_2004_INDEPENDENT_OFFICIAL_PC_OPERATOR_PET_SOURCES_MISSING"
+  ],
+  "residual_reopen_triggers": [
+    "CN_2004_WAEI_SERVER_SPECIFIC_1_82_2_0_2_5_7_0_7_5_CLIENT_MASTERS_AND_NAMED_PRODUCTION_AWARDS",
+    "TW_2004_ORIGINAL_WAEI_75_CLIENT_PET_MASTER_AND_XUANWU_QUEST_SCRIPT_REDEEMED_PET_PRIZE_LOGS",
+    "JP_2004_BOTHTEC_NHN_AUTHENTIC_CLIENT_NATIVE_PET_SKILL_NAME_TABLE_AND_DATED_NAMED_PET_OPERATOR_ISSUANCE",
+    "KR_2004_NETMARBLE_ORIGINAL_BUILD_PET_NAME_ID_TABLE_3_HUNTABLE_NAMES_AND_RIDE_QUEST_REAL_DEPLOYMENT",
+    "OTHER_2004_IDENTIFIABLE_OFFICIAL_PC_OPERATOR_REGION_BUILD_OR_NAMED_PET_ISSUANCE"
+  ],
+  "historical_2004_PET25_PET26_documentary_event_count_unchanged": 0,
+  "historical_2004_PET25_PET26_rows_not_universe": true,
+  "new_2004_original_client_bytes": 0,
+  "new_2004_native_pet_id_rows": 0,
+  "new_2004_original_server_reward_logs": 0,
+  "global_2004_official_species_population": null,
+  "all_regions_pet_population_null": true,
+  "year_frontier_before": 2004,
+  "year_frontier_after": 2005,
+  "year_2005_initial_documentary_event_count": 0,
+  "next": "PET72: start 2005 official PC pet chronological audit from CN/TW/JP/KR/OTHER dated operator releases; source-first Taiwan 麒麟/鸡年兽 and Korean Netmarble dated official pet items, without retrojecting 2004 operators or modern private server tables.",
+  "copyright_original_assets_published": false,
+  "no_paid_marketplace": true,
+  "historical_CURRENT_blob_unchanged": true,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}
