@@ -43,13 +43,17 @@ class TestPET52(unittest.TestCase):
 
     def test_no_frontier_or_current_state_promotion(self):
         q=self.q
-        self.assertEqual(q["current_frontier"]["year"],2001)
-        self.assertEqual(q["current_frontier"]["latest_partial_root_review"],"PET52-2001-CN-SA20-CARRIER-RELEASE-20261116")
-        self.assertRegex(q["current_frontier"]["next"],r"^PET53:")
-        self.assertEqual(next(y for y in q["yearly_work_queue"] if y["year"]==2001)["research_gate"],"NOT_YEAR_AUDITED")
+        # PET52 is a historical receipt: newer PET milestones may advance the frontier.
+        self.assertGreaterEqual(q["current_frontier"]["year"],2001)
+        self.assertRegex(q["current_frontier"]["next"],r"^PET\d+:")
+        self.assertIn(next(y for y in q["yearly_work_queue"] if y["year"]==2001)["research_gate"],
+                      {"NOT_YEAR_AUDITED","SOURCE_BOUNDED_REVIEWED"})
         ids=[r["id"] for r in q["root_source_census_receipts"]]
         self.assertEqual(ids.count("PET52-2001-CN-SA20-CARRIER-RELEASE-20261116"),1)
         self.assertIn("PET51-2001-TWCN-2_0-PET-MUSEUM-SOURCE-20261116",ids)
+        self.assertLess(ids.index("PET51-2001-TWCN-2_0-PET-MUSEUM-SOURCE-20261116"),
+                        ids.index("PET52-2001-CN-SA20-CARRIER-RELEASE-20261116"))
+        self.assertIn(q["current_frontier"]["latest_partial_root_review"],ids)
         self.assertEqual(self.x["baseline"]["current_state_blob_sha"],"c89e0e33537990aa2132b47c40fef49a985a935c")
         self.assertFalse(self.x["year_2001_review_finished"])
         self.assertEqual(self.x["stage_A"],"7_PARTIAL_2_OPEN")

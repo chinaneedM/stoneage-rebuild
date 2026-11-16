@@ -169,3 +169,8 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## PET52 2026-11-16｜大陆2001年2.0客户端发行渠道与红暴抽奖证据限界
 
 [可读同期运营公告与13分发载体来源核读](continuity/STONEAGE-PET52-CN2001-SA20-PERIOD-CARRIER-PET-RELEASE-20261116.md)／[机读13项名称及严格发放边界](../research/recovered/STONEAGE-PET52-CN2001-SA20-PERIOD-CARRIER-PET-RELEASE-R1.json)：北京华义署名宣布10/29注册、11/1新2.0服及红暴抽奖注册；17173保留11月版完整升级程序11种期刊/光盘+2种攻略渠道。旧R2索引仍是未获原客户端的历史工作，不重复计为新发现。红暴兑奖和同服实装仍未证，新增官方发行实装0项、新原始程序0B；2001仍NOT_YEAR_AUDITED、PET唯一模块。NEXT PET53追2001原附盘/安装程序或当期运营实际发奖证据。完整CURRENT原blob不改。
+
+
+## PET53 2026-11-16｜2001大陆2.0相邻旧光盘具体候选及新浪40个梦幻宠物拟奖名额
+
+[PET53有界目标与未证实交付](continuity/STONEAGE-PET53-2001-CN-ISO-CARRIER-AND-SINA-PET-PRIZES-20261116.md)／[机读ISO元数据及40项奖位排除证据](../research/recovered/STONEAGE-PET53-2001-CN-ISO-CARRIER-AND-SINA-PET-PRIZES-R1.json)：新增SHOPMSDN后期目录所列`PCFan200111.iso`、654030848B及**未经本项目原字节复核**的SHA1，目标可能是2001年电脑报配套的《电脑迷》11月光盘，但没有ISO/客户端/目录，也不等同旧《电脑报—游戏世界》光盘。2001新浪活动当期页面有1+3+9+27=40个“梦幻宠物”拟奖名额，未见具名宠物/实际中奖交付。PET53取得原客户端0B、已证宠物新增0项，2001仍`NOT_YEAR_AUDITED`；NEXT PET54查真正光盘原件或原中奖同服投放，不推断物种总数。大CURRENT未改。
