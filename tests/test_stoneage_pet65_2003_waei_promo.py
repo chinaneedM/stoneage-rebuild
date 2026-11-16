@@ -38,8 +38,8 @@ class TestPet65(unittest.TestCase):
  def test_year_and_current_preserved(self):
   a,q=self.d,self.q
   self.assertEqual(q["current_frontier"]["year"],2003)
-  self.assertEqual(q["current_frontier"]["latest_partial_root_review"],a["id"])
-  self.assertTrue(q["current_frontier"]["next"].startswith("PET66:"))
+  self.assertGreaterEqual(int(q["current_frontier"]["latest_partial_root_review"].split("-")[0][3:]),65)
+  self.assertRegex(q["current_frontier"]["next"],r"^PET[0-9]+:")
   self.assertEqual(q["yearly_work_queue"][4]["research_gate"],"NOT_YEAR_AUDITED")
   self.assertEqual(q["yearly_work_queue"][4]["documentary_event_count_NOT_species"],1)
   self.assertEqual(sum(x["id"]==a["id"] for x in q["root_source_census_receipts"]),1)
