@@ -91,10 +91,10 @@ class TestPet61CN2002SourceGrades(unittest.TestCase):
 
     def test_2002_year_not_closed_no_original_client_published(self):
         d,q=self.d,self.q
-        self.assertEqual(q["current_frontier"]["year"],2002)
+        self.assertGreaterEqual(q["current_frontier"]["year"],2002)
         self.assertEqual(q["current_frontier"]["status"],"OPEN_NOT_YEAR_CLOSED")
         self.assertRegex(q["current_frontier"]["next"], r"^PET[0-9]+:")
-        self.assertEqual(q["yearly_work_queue"][3]["research_gate"],"NOT_YEAR_AUDITED")
+        self.assertEqual(q["yearly_work_queue"][3]["research_gate"],"SOURCE_BOUNDED_REVIEWED")
         self.assertIn(d["id"],[x["id"] for x in q["root_source_census_receipts"]])
         self.assertEqual(sum(x["id"]==d["id"] for x in q["root_source_census_receipts"]),1)
         orig=d["original_client_source_limit"]

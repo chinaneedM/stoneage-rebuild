@@ -1,0 +1,166 @@
+{
+  "schema": "stoneage.pet64.year2002_source_bounded_review.r1",
+  "id": "PET64-YEAR2002-SOURCE-BOUNDED-REVIEW-20261116",
+  "date": "2026-11-16",
+  "module": "PET",
+  "year": 2002,
+  "status": "SOURCE_BOUNDED_REVIEWED",
+  "historically_complete": false,
+  "start": {
+    "main": "0a1bbba6b4cad18ee637777ab1276c3cfd2b1795",
+    "tree": "2b16bbc0c3af4ab9e2ccafba4df2f4a737a4840d",
+    "exact_head_action_success": 4,
+    "exact_head_action_total": 4,
+    "open_pr": 0,
+    "original_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_current_bytes": 2709173
+  },
+  "prior_2002_receipt_ids": [
+    "PET61-2002-CN30-CN40-PROMOTION-PLAYER-NAMED-PETS-20261116",
+    "PET62-2002-CN25-NAMED-GIFT-BLACKSHEEP-QINGLONG-TW1-SPR-20261116",
+    "PET63-2002-TW40-WAEI-AND-CN-DUANWU-SOURCE-20261116"
+  ],
+  "new_primary_operator_source": {
+    "id": "TW_WAEI_20021111_DIGITALWALL_PRESS_RELEASE",
+    "url": "https://www.digitalwall.com/scripts/displaypr.asp?UID=230",
+    "published": "2002-11-11",
+    "publisher_as_stated": "華義國際數位娛樂股份有限公司",
+    "publication_kind": "FIRST_PARTY_OPERATOR_PRESS_RELEASE_HOSTED_BY_DIGITALWALL",
+    "direct_full_text_read": true,
+    "original_2002_html_raw_sha256": null,
+    "press_release_text_says_unopened_new_pet_scratch_chance": true,
+    "source_terms": "寵物日誌包 Pet卡 possible 未開放新寵 or other pets/items; Pet Evolution disc mentioned",
+    "named_pet_in_release": null,
+    "actually_awarded_pet_identity_confirmed": false,
+    "original_client_included_obtained": false,
+    "original_software_bytes_acquired": 0,
+    "marketing_promise_not_live_award": true,
+    "sale_price_is_historical_operator_context_not_paid_carrier_research": true
+  },
+  "preexisting_TW_sources": [
+    {
+      "source_id": "TW_GNN_20020627_PET63",
+      "proof": "planned 4.0 first-sale/merchandise wording only; no pet in-game issuance"
+    },
+    {
+      "source_id": "TW_GNN_20020913_WEREWOLF_PET26",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=5718",
+      "proof": "operator promotional promise of werewolf pack, not redemption log",
+      "preexisting": true
+    },
+    {
+      "source_id": "TW_GNN_20021114_FUSION_PET62",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=6751",
+      "proof": "third-generation fusion concept and 3-pet egg publicity, without list of exact released fusions",
+      "preexisting": true
+    }
+  ],
+  "inclusions": {
+    "original_2002_documentary_events_from_PET25_PET26": 4,
+    "original_events_are_species_count": false,
+    "later_2003_player_four_Duanwu_names_are_2002_operator_named_live_roster": false,
+    "CN_2002_year_beast_four_player_names_not_four_official_issuance_receipts": true,
+    "card_and_physical_merchandise_not_distinct_in_game_pet_species": true,
+    "original_TW1_local_album_names_not_2002_live_server_identity": true
+  },
+  "region_source_reviews": {
+    "CN": {
+      "operator": "BEIJING_WAEI",
+      "source_receipts": [
+        "PET61",
+        "PET62",
+        "PET63"
+      ],
+      "provenance_scope": "2002 2.5/3.0/4.0 operator product-copy promotions plus player-reported named pet rewards; 4 PET25-26 documentary events not species",
+      "named_native_pet_roster_verified": false,
+      "official_live_named_pet_count": null,
+      "pet_population": null,
+      "reopen": true,
+      "reopen_trigger": "ORIGINAL_2002_CN_WAEI_CLIENT_PET_NAME_ID_SPR_AND_SAME_DEPLOYMENT_SERVER_REWARD_LOG_OR_OPERATOR_ISSUANCE"
+    },
+    "TW": {
+      "operator": "TAIWAN_WAEI",
+      "source_receipts": [
+        "PET62",
+        "PET63",
+        "PET64"
+      ],
+      "provenance_scope": "2002 dated GNN 4.0 promo index, 5.0 fusion press index, 2002-11-11 directly readable operator-authored press release; no 2002 original game pet master",
+      "named_native_pet_roster_verified": false,
+      "official_live_named_pet_count": null,
+      "pet_population": null,
+      "reopen": true,
+      "reopen_trigger": "ORIGINAL_TW2002_4_0_OR_5_0_CLIENT_SERVER_PET_MASTER_OR_OPERATOR_DATED_NAMED_RECEIPT_AND_RELEASE_RECORD"
+    },
+    "JP": {
+      "operator": "JSS_OR_SEPARATELY_ATTESTED_OPERATOR_UNKNOWN_FOR_2002",
+      "source_receipts": [
+        "PET62",
+        "PET63"
+      ],
+      "provenance_scope": "No 2002 JSS native pet client/dated operator item from declared corpus; 1999/2001 JSS source is not 2002 service proof",
+      "named_native_pet_roster_verified": false,
+      "official_live_named_pet_count": null,
+      "pet_population": null,
+      "reopen": true,
+      "reopen_trigger": "AUTHENTIC_2002_JP_OPERATOR_BUILD_OR_DATED_OFFICIAL_NAMED_PET_ISSUANCE"
+    },
+    "KR": {
+      "operator": "INIUM_AND_2002_STATUS_UNQUALIFIED",
+      "source_receipts": [
+        "PET55",
+        "PET62",
+        "PET63"
+      ],
+      "provenance_scope": "2002-03-30 period Game Chosun retrospectively describes Korean 2.0 but supplies no original 2002 named local pet/issuance table",
+      "named_native_pet_roster_verified": false,
+      "official_live_named_pet_count": null,
+      "pet_population": null,
+      "reopen": true,
+      "reopen_trigger": "ORIGINAL_KR_INIUM_2002_CLIENT_PATCH_OR_OPERATOR_NAMED_PET_EVENT_RESULT"
+    },
+    "OTHER": {
+      "operator": null,
+      "source_receipts": [],
+      "provenance_scope": "No separately qualified other-region original 2002 PC operator/pet master in declared corpus; existence or absence not proven",
+      "all_other_regions_absent_proven": false,
+      "named_native_pet_roster_verified": false,
+      "official_live_named_pet_count": null,
+      "pet_population": null,
+      "reopen": true,
+      "reopen_trigger": "IDENTIFIABLE_2002_OTHER_REGION_OFFICIAL_OPERATOR_PRODUCT_AND_SOURCE_QUALIFIED_PET_LIST"
+    }
+  },
+  "residual_reopen_triggers": [
+    "ORIGINAL_2002_CN_WAEI_CLIENT_PET_NAME_ID_SPR_AND_SAME_DEPLOYMENT_SERVER_REWARD_LOG_OR_OPERATOR_ISSUANCE",
+    "ORIGINAL_TW2002_4_0_OR_5_0_CLIENT_SERVER_PET_MASTER_OR_OPERATOR_DATED_NAMED_RECEIPT_AND_RELEASE_RECORD",
+    "AUTHENTIC_2002_JP_OPERATOR_BUILD_OR_DATED_OFFICIAL_NAMED_PET_ISSUANCE",
+    "ORIGINAL_KR_INIUM_2002_CLIENT_PATCH_OR_OPERATOR_NAMED_PET_EVENT_RESULT",
+    "IDENTIFIABLE_2002_OTHER_REGION_OFFICIAL_OPERATOR_PRODUCT_AND_SOURCE_QUALIFIED_PET_LIST"
+  ],
+  "unresolved_conflicts": [
+    "TW_2002_PUMAN_EVENT_GIFT_PHYSICAL_VS_DIGITAL_AND_FULFILLMENT",
+    "CN_2002_WHITE_TIGER_CARD_GUARANTEED_VS_RAFFLE",
+    "CN_2002_KAEN_CARD_VS_TW_REPUTATION_CLAIMS",
+    "CN_2002_KAEN_GEDENG_ELEMENT_3_7_VS_7_3",
+    "TW_2002_5_0_FUSION_NAMED_PET_VS_PUBLICITY",
+    "2002_ALL_REGION_ORIGINAL_CLIENT_PET_MASTER_UNAVAILABLE"
+  ],
+  "new_original_2002_client_bytes": 0,
+  "new_native_original_pet_ids": 0,
+  "new_official_live_2002_pets_verified": 0,
+  "global_2002_pet_population": null,
+  "all_regions_pet_population_null": true,
+  "prior_four_event_records_unchanged": true,
+  "no_paid_marketplace": true,
+  "copyrighted_original_assets_published": false,
+  "current_state_original_unchanged": true,
+  "year_frontier_before": 2002,
+  "year_frontier_after": 2003,
+  "year_2003_initial_source_events": 1,
+  "next": "PET65: begin 2003 original PC official pet roster, CN year-of-monkey and Taiwan 5.0/6.0 original source-first with regional/version gates.",
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}

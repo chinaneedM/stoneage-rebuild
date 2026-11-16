@@ -204,3 +204,8 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## PET63 2026-11-16｜台湾2002年4.0华义宣传索引、端午四名与地水异文
 
 [来源分级报告](continuity/STONEAGE-PET63-TW2002-WAEI-DUANWU-20261116.md)／[PET63 JSON](../research/recovered/STONEAGE-PET63-TW2002-WAEI-DUANWU-SOURCE-R1.json)：2002-06-27 GNN搜索索引显示台湾华义计划6月29日4.0首卖，满500台币送「撲滿烏力」及5万石币、限300，另有端午稀宠卡和第三弹来吉卡；**原页403/没有原HTML SHA/不等实际发奖**，与大陆2.5促销分开。17173无署日攻略与新浪2003-04-07玩家表具四个卡恩文本候选，表号非原PET ID；新浪「卡恩格登」地3水7与旧R92地7水3冲突、R92「卡恩米��」损字不改写。2002原客户端新增0B、官方实服新证0、旧四运营发行事件不变；PET唯一活动、2002 NOT_YEAR_AUDITED，NEXT PET64仍2002 TW4.0/5.0和日韩原件；禁付费卖盘、原大CURRENT blob不变、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、percent UNKNOWN。
+
+
+## PET64 2026-11-16｜2002年五地区官方PET来源有界年审，游标进入2003
+
+[2002来源年审报告](continuity/STONEAGE-PET64-YEAR2002-SOURCE-BOUNDED-PET-AUDIT-20261116.md)／[五地区与重开缺口机读收据](../research/recovered/STONEAGE-PET64-YEAR2002-SOURCE-BOUNDED-AUDIT-R1.json)：新找到**2002-11-11可直接阅读的台湾华义企业署名《宠物日志包》新闻稿**，原文字眼称PET卡有机会抽中「**未开放新宠**」，故**不准当已实发新宠**；同时重放旧2002狼人商品、5.0三宠融合宣传，分别保留营销与真正原生宠物名单门槛。CN PET61–63当年产品/玩家主张有明确版本分轨，KR与JP原客户端仍缺，OTHER无可证独立来源；五地区均人口数UNKNOWN。新增2002原客户端0B、新同服发奖证据0；PET25/PET26的四个2002发行文档事件不是全球四物种。因当前材料有界复核完成，2002标 `SOURCE_BOUNDED_REVIEWED`、`historically_complete=false`，每区保留原件重开触发，**PET65从2003年**重新按官方版本推进。PET仍唯一模块，CURRENT完整原blob/Stage A与版权不变，不查付费二手盘。

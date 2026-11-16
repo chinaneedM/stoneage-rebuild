@@ -2980,3 +2980,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 ## 2026-11-16 — PET62｜2002年大陆2.5宠物礼品具名与台湾旧版原2D散列跨源复用
 
 [PET62：华义2.5产品宠名／黑暗精灵王黑羊／青龙凯恩异区领取源](docs/continuity/STONEAGE-PET62-2002-CN25-GIFT-PET-TW1-SPR-QUEST-20261116.md)／[机读证据与十项重开条件](research/recovered/STONEAGE-PET62-CN25-GIFT-BLACKSHEEP-QINGLONG-TW1-SOURCE-GRADE-R1.json)。旧已登记17173官方运营2.5说明重新逐项核得：**扑满乌力**（春满钱坤包，LV1中奖宣传1/3）、**年兽**（延年益兽包，不分具体形态）、**卡伊霍恩**（红羊WGS红包兑奖条件）；同名台服**认证原1.0相簿**存在100377号图及完整SPR SHA/56动作序列，此只证跨地区**同字与原2D候选**，2002大陆原宠ID/同版SPR未知。复用2002-05-20旧玩家任务稿找到作者自称完成“黑羊”奖励，另一攻略注明大陆/台服结局可能不同；2002-12-27大陆玩家“凯恩”第四弹来吉卡说与台服后期编年史“五月声望2000”说不合并。**2002-05-04《搞笑篇》不得充作北京华义官方日程表。** 2002台湾5.0融合、韩服2.0及日本运营原证缺口保留。旧PET25/PET26官方发行文档事件不增，2002原客户端新增0B、原生宠物ID/SPR重解码0、实服新确认0；2002 `NOT_YEAR_AUDITED`、唯一PET活动，NEXT PET63仍2002台湾具名官方来源/韩国原件，旧CURRENT、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总完成率UNKNOWN，禁查付费二手盘。
+
+
+## 2026-11-16 — PET64｜2002全球官方宠物有界年度审查，前沿进入2003
+
+[五地区年审与官方新闻稿](docs/continuity/STONEAGE-PET64-YEAR2002-SOURCE-BOUNDED-PET-AUDIT-20261116.md)／[机读原证缺口及游标](research/recovered/STONEAGE-PET64-YEAR2002-SOURCE-BOUNDED-AUDIT-R1.json)：2002-11-11可直接读到台湾**华义企业署名原新闻稿**“宠物日志包”Pet卡可能抽到**未开放新宠**；这是实装**反边界**，不是已抽到的具体宠名/官方种数。核2002 CN/TW/KR/JP/OTHER全部现存合格材料与原程序缺件，旧4条2002发行文档事件保持，真正种数UNKNOWN、当年新官方实发宠确认0、认证原客户端0B。2002只标 `SOURCE_BOUNDED_REVIEWED`（并非历史完成），5地均可重开；PET单模块年份到**2003**，NEXT PET65；旧CURRENT blob/Stages/私有商业素材不变。

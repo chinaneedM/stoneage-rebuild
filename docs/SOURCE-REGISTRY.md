@@ -8919,3 +8919,9 @@ R14包351231B/SHA7684267ab528d13ceecb23a25632543ae839225607cbda702a32736e4c4d366
 - **近当期其他地区与明确缺口**：[2002-11-14巴哈GNN新闻索引](https://gnn.gamer.com.tw/detail.php?sn=6751)记录台湾华义《宠物进化史》5.0三宠融合蛋宣传，直接打开403且无新具名宠，尚非原客户端或已上线逐宠证明；2002-03-30韩国[Game Chosun评测](https://www.gamechosun.co.kr/webzine/article/view.php?no=11141&pvMode=pc)是PET55已有韩2.0近当期回顾，无本次新增韩服宠物身份证据；本轮未见2002日本官方具名宠源并不能证明无该年日服宠物。
 - **反证拦截**：[2002-05-04“网5游侠”《华义回报活动时间表(搞笑篇)》](https://news.17173.com/z/stoneage/content/2002-5-4/n795_711174.html)网页明示“超级搞笑”，**不是**华义宣布各种准确上市日或黑羊任务日的原公告，不能用它的似真日期填补官方历表。
 - 来源与字段级证明范围：`docs/continuity/STONEAGE-PET62-2002-CN25-GIFT-PET-TW1-SPR-QUEST-20261116.md`、`research/recovered/STONEAGE-PET62-CN25-GIFT-BLACKSHEEP-QINGLONG-TW1-SOURCE-GRADE-R1.json`。本批**新2002原客户端0B、同版新宠ID0、官方具名原服实发新确认0**，两条具名运营**推广候选**不是正式实服物种数。年份2002不关闭；PET唯一活动、版权边界和旧`CURRENT-STATE.md`原Git blob不动。
+
+
+### SRC-PET64-TW2002-WAEI-ORIGINAL-OPERATOR-PRESS-20021111
+
+- [2002-11-11《華義推寵物日誌包》企业署名新闻稿](https://www.digitalwall.com/scripts/displaypr.asp?UID=230)，数位之墙公开托管，原页**可阅读全文**并注明华义国际数位娱乐股份有限公司为发布方，宣传有效期至11/30。本轮获得正文可读性、非当年HTML原字节及SHA。文字称PET卡有机会刮到**「未開放新寵」**或其他宠物/道具，另附《宠物进化史》新版光盘；**这恰恰不能证明所谓未开放宠已在2002实服上线或已经被领取，也没有具名/数量/奖品发放名录及任何原客户端字节**。产品时代价格只作原官方宣传语境，不研究付费卖盘或求购。该一手署名原文与PET61—63四条2002原运营文档事件不新增同服实装物种。
+- 2002五地区年审见`docs/continuity/STONEAGE-PET64-YEAR2002-SOURCE-BOUNDED-PET-AUDIT-20261116.md`及机器版`research/recovered/STONEAGE-PET64-YEAR2002-SOURCE-BOUNDED-AUDIT-R1.json`：CN/TW/JP/KR/OTHER均缺同版真实发宠清单和已认证当年客户端；重放[2002-09-13 GNN狼人广告](https://gnn.gamer.com.tw/detail.php?sn=5718)（旧PET26）和[2002-11-14 GNN宠物融合营销](https://gnn.gamer.com.tw/detail.php?sn=6751)（旧PET62），并非新独立来源。2002 `SOURCE_BOUNDED_REVIEWED`不等于全球名录完成；2003作为下个年份游标，PET唯一活动，禁收费市场。
