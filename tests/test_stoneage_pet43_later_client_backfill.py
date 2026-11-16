@@ -47,7 +47,8 @@ class TestPet43(unittest.TestCase):
         self.assertFalse(j["guardrails"]["new_commercial_client_bytes_recovered"])
         self.assertEqual(j["current_state_blob_preserved"],"c89e0e33537990aa2132b47c40fef49a985a935c")
         year=load("STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json")
-        self.assertEqual(year["current_frontier"]["year"],2000)
+        # Preserved PET43 evidence is fixed; live chronological cursor can advance.
+        self.assertGreaterEqual(year["current_frontier"]["year"],2000)
         self.assertIn("PET43-LATER-CLIENT-REVERSE-BACKFILL-20261115",[r["id"] for r in year["root_source_census_receipts"]])
         self.assertIn("## 24. Source-bounded later-client reverse backfill",(ROOT/"docs/PROJECT-CONTINUITY-PROTOCOL-R1.md").read_text(encoding="utf-8"))
 if __name__=="__main__":
