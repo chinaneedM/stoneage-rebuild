@@ -18,13 +18,14 @@
     "year": 2019,
     "phase": "YEAR_2019_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET115-YEAR2018-SIX-REGION-CLASSIC-PC-SOURCE-BOUNDED-AUDIT-20261118",
-    "next": "PET116: independently audit 2019 original 2D classic PC country/operator/client and actually issued pets; 2018 SOURCE_BOUNDED_REVIEWED only, historically incomplete and reopenable",
+    "latest_partial_root_review": "PET116-TW2019-DRAGONBOAT-SUMMER-2006-EIGHT-NAME-BOUNDARY-20261118",
+    "next": "PET117: complete 2019 CN/TW/HK_MO/KR/JP/OTHER authorized original classic 2D PC pet source-bounded annual review; new original client bytes first, no historical completion claim",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE",
     "latest_source_bounded_annual_review": "PET115-YEAR2018-SIX-REGION-CLASSIC-PC-SOURCE-BOUNDED-AUDIT-20261118",
     "latest_2016_partial_source_receipt": "PET109-TW2016-PLAYER-PET-REWARD-AND-HALLOWEEN-CROSSYEAR-20261118",
     "latest_2017_partial_source_receipt": "PET112-TW2017-AUG-BLUE-TIGER-REOPENED-PROMO-20261118",
-    "latest_2018_partial_source_receipt": "PET114-TW2018-TWO-REALM-SUMMER-PET-MOBILE-BOUNDARY-20261118"
+    "latest_2018_partial_source_receipt": "PET114-TW2018-TWO-REALM-SUMMER-PET-MOBILE-BOUNDARY-20261118",
+    "latest_2019_partial_source_receipt": "PET116-TW2019-DRAGONBOAT-SUMMER-2006-EIGHT-NAME-BOUNDARY-20261118"
   },
   "region_tracks": [
     "CN",
@@ -3388,7 +3389,30 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "partial_source_review_receipts": [
+        {
+          "id": "PET116-TW2019-DRAGONBOAT-SUMMER-2006-EIGHT-NAME-BOUNDARY-20261118",
+          "date": "2026-11-18",
+          "receipt": "research/recovered/STONEAGE-PET116-TW2019-DRAGONBOAT-SUMMER-2006-NAME-BOUNDARY-R1.json",
+          "region_scope": [
+            "TW"
+          ],
+          "year_not_closed": true,
+          "period_player_2019_summer_and_dragonboat_reward_guides": true,
+          "prior_2006_all_eight_literal_names_counterevidence": true,
+          "name_reuse_not_2019_first_release": true,
+          "no_2006_official_same_build_claim": true,
+          "original_2019_pc_client_bytes": 0,
+          "new_2019_native_pet_ids": 0
+        }
+      ],
+      "source_bounded_partial_review_notes_forward_only": [
+        "PET116: TW2019 6/20 Dragonboat fat dragon player reward and 7/5-9/4 summer sea dragon player quest; 2006/11/29 player fusion guide already contains all eight identical literal names. No native PC client, ID, issuance logs; 2019 still NOT_YEAR_AUDITED; six-region review remains NEXT PET117."
+      ],
+      "historically_complete": false,
+      "historical_species_count": null,
+      "year_reopenable": true
     },
     {
       "year": 2020,
