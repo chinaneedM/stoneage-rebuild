@@ -38,10 +38,11 @@ class PET81Test(unittest.TestCase):
     def test_forward_only_cursor_and_no_population_inflation(self):
         e,q=self.e,self.q
         y=q["yearly_work_queue"][2009-1999]
-        self.assertEqual((e["year"],e["year_frontier_before"],e["year_frontier_after"],q["current_frontier"]["year"]),(2009,2009,2009,2009))
-        self.assertEqual(y["research_gate"],"NOT_YEAR_AUDITED")
+        self.assertEqual((e["year"],e["year_frontier_before"],e["year_frontier_after"]),(2009,2009,2009))
+        self.assertGreaterEqual(q["current_frontier"]["year"],2009)
+        self.assertEqual(y["research_gate"],"NOT_YEAR_AUDITED" if q["current_frontier"]["year"]==2009 else "SOURCE_BOUNDED_REVIEWED")
         self.assertFalse(e["historically_complete"])
-        self.assertEqual(q["current_frontier"]["latest_partial_root_review"],e["id"])
+        self.assertIn(e["id"],[r["id"] for r in y["partial_source_review_receipts"]])
         self.assertEqual(sum(r["id"]==e["id"] for r in y["partial_source_review_receipts"]),1)
         self.assertEqual(sum(r["id"]==e["id"] for r in q["root_source_census_receipts"]),1)
         self.assertEqual(y["documented_release_event_ids_from_existing_PET25_PET26"],["JP-2009-HAKUEN","JP-2009-KOKUEN"])

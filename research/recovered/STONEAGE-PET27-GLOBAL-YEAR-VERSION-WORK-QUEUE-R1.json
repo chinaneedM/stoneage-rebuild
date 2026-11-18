@@ -15,11 +15,11 @@
   "latest_year_in_scope": 2026,
   "reason_start_provisional": "1999 is a search-window starting point, NOT an independently authenticated first official launch date; earlier qualified evidence may extend the sequence backwards",
   "current_frontier": {
-    "year": 2009,
-    "phase": "YEAR_2009_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
+    "year": 2010,
+    "phase": "YEAR_2010_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET81-2009-KR-CHILDRENS-DAY-NAMED-PETS-JP-DEC-OPEN-20261118",
-    "next": "PET82: 2009 five-region source-bounded year review; independent JP December actually executed updates, KR original PC first-party runtime/awards and CN/TW/OTHER operator source. No speculative pet population.",
+    "latest_partial_root_review": "PET82-2009-FIVE-REGION-ORIGINAL-PC-BOUNDED-YEAR-AUDIT-20261118",
+    "next": "PET83: earliest unreviewed year 2010, first-party original PC pet and patch releases by JP/KR/CN/TW/OTHER; separate 2010 operator license from actual game launch; no paid seller materials.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -1653,7 +1653,7 @@
     {
       "year": 2009,
       "chronological_position": 11,
-      "research_gate": "NOT_YEAR_AUDITED",
+      "research_gate": "SOURCE_BOUNDED_REVIEWED",
       "documented_release_event_ids_from_existing_PET25_PET26": [
         "JP-2009-HAKUEN",
         "JP-2009-KOKUEN"
@@ -1718,8 +1718,107 @@
             "설표"
           ],
           "original_operator_press_groups_not_independent_reprints": 1
+        },
+        {
+          "id": "PET82-2009-FIVE-REGION-ORIGINAL-PC-BOUNDED-YEAR-AUDIT-20261118",
+          "regions": [
+            "CN",
+            "TW",
+            "JP",
+            "KR",
+            "OTHER"
+          ],
+          "report": "docs/continuity/STONEAGE-PET82-YEAR2009-FIVE-REGION-OFFICIAL-PET-BOUNDED-AUDIT-20261118.md",
+          "evidence_json": "research/recovered/STONEAGE-PET82-YEAR2009-FIVE-REGION-SOURCE-BOUNDED-AUDIT-R1.json",
+          "year_frontier_before": 2009,
+          "year_frontier_after": 2010,
+          "year_not_closed": false,
+          "historically_complete": false,
+          "new_original_2009_client_bytes": 0,
+          "new_native_pet_ids": 0,
+          "global_2009_species_count": null
         }
-      ]
+      ],
+      "historically_complete": false,
+      "historical_species_count": null,
+      "source_bounded_review_receipt": "research/recovered/STONEAGE-PET82-YEAR2009-FIVE-REGION-SOURCE-BOUNDED-AUDIT-R1.json",
+      "residual_reopen_triggers": [
+        "CN_2009_ORIGINAL_STONEAGE1_OPERATOR_LIVE_LICENSE_AND_SAME_DEPLOYMENT_CLIENT_PET_RELEASE_NOT_2009_STONEAGE2",
+        "TW_2009_ORIGINAL_STONEAGE1_OPERATOR_APPLIED_SHUTDOWN_OR_NEW_LICENSE_NATIVE_PET_RELEASE_NOT_STONEAGE2",
+        "JP_2009_DIGIPARK_DEC01_DEC22_DEC29_APPLIED_NATIVE_PATCH_UNNAMED_PETS_AND_ACTUAL_GRANTS",
+        "KR_2009_CJ_NETMARBLE_APR29_JUL28_PERIOD_NATIVE_PET_NAMES_ID_SPR_AND_ACTUAL_GRANT_LOG",
+        "OTHER_2009_VERIFIED_ORIGINAL_PC_STONEAGE1_LICENSED_OPERATOR_AND_NATIVE_PET_RELEASE"
+      ],
+      "region_source_reviews": {
+        "CN": {
+          "operator_tracks": [
+            "KINGSOFT_NEW_STONEAGE1_2008_SHUTDOWN_BOUNDARY_UNRESOLVED",
+            "SHENGSI_2009_STONEAGE2_ONLY",
+            "SHENGSI_STONEAGE1_8_5_RIGHTS_ANNOUNCED_2010_05_21"
+          ],
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2009_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2009_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "CN_2009_ORIGINAL_STONEAGE1_OPERATOR_LIVE_LICENSE_AND_SAME_DEPLOYMENT_CLIENT_PET_RELEASE_NOT_2009_STONEAGE2"
+        },
+        "TW": {
+          "operator_tracks": [
+            "WAEI_STONEAGE1_2008_SHUTDOWN_RELAY",
+            "INSREA_STONEAGE2_2009_SEPARATE"
+          ],
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2009_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2009_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "TW_2009_ORIGINAL_STONEAGE1_OPERATOR_APPLIED_SHUTDOWN_OR_NEW_LICENSE_NATIVE_PET_RELEASE_NOT_STONEAGE2"
+        },
+        "JP": {
+          "operator_tracks": [
+            "DIGIPARK_STONEAGE1_2009",
+            "DIGIPARK_STONEAGE2_SEPARATE"
+          ],
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2009_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2009_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "JP_2009_DIGIPARK_DEC01_DEC22_DEC29_APPLIED_NATIVE_PATCH_UNNAMED_PETS_AND_ACTUAL_GRANTS"
+        },
+        "KR": {
+          "operator_tracks": [
+            "CJ_NETMARBLE_STONEAGE1_2009",
+            "STONEAGE2_SEPARATE"
+          ],
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2009_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2009_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "KR_2009_CJ_NETMARBLE_APR29_JUL28_PERIOD_NATIVE_PET_NAMES_ID_SPR_AND_ACTUAL_GRANT_LOG"
+        },
+        "OTHER": {
+          "operator_tracks": [],
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2009_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2009_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "OTHER_2009_VERIFIED_ORIGINAL_PC_STONEAGE1_LICENSED_OPERATOR_AND_NATIVE_PET_RELEASE"
+        }
+      }
     },
     {
       "year": 2010,
@@ -3050,6 +3149,25 @@
       "year_frontier_before": 2009,
       "year_frontier_after": 2009,
       "year_not_closed": true,
+      "historically_complete": false,
+      "new_original_2009_client_bytes": 0,
+      "new_native_pet_ids": 0,
+      "global_2009_species_count": null
+    },
+    {
+      "id": "PET82-2009-FIVE-REGION-ORIGINAL-PC-BOUNDED-YEAR-AUDIT-20261118",
+      "regions": [
+        "CN",
+        "TW",
+        "JP",
+        "KR",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET82-YEAR2009-FIVE-REGION-OFFICIAL-PET-BOUNDED-AUDIT-20261118.md",
+      "evidence_json": "research/recovered/STONEAGE-PET82-YEAR2009-FIVE-REGION-SOURCE-BOUNDED-AUDIT-R1.json",
+      "year_frontier_before": 2009,
+      "year_frontier_after": 2010,
+      "year_not_closed": false,
       "historically_complete": false,
       "new_original_2009_client_bytes": 0,
       "new_native_pet_ids": 0,

@@ -50,6 +50,9 @@ on:
       - "tests/test_stoneage_pet79_year2008_bounded_audit.py"
       - "tests/test_stoneage_pet80_year2009_partial_audit.py"
       - "tests/test_stoneage_pet81_year2009_childrens_day.py"
+      - "tests/test_stoneage_pet82_year2009_bounded_audit.py"
+      - "research/recovered/STONEAGE-PET82-YEAR2009-FIVE-REGION-SOURCE-BOUNDED-AUDIT-R1.json"
+      - "docs/continuity/STONEAGE-PET82-YEAR2009-FIVE-REGION-OFFICIAL-PET-BOUNDED-AUDIT-20261118.md"
       - "research/recovered/STONEAGE-PET81-KR2009-COW-SNOWLEOPARD-SOURCE-AUDIT-R1.json"
       - "docs/continuity/STONEAGE-PET81-KR2009-CHILDRENS-DAY-NAMED-PETS-JP-DEC-GAP-20261118.md"
       - "research/recovered/STONEAGE-PET76-YEAR2007-FIVE-REGION-BOUNDED-AUDIT-R1.json"
@@ -162,6 +165,9 @@ on:
       - "tests/test_stoneage_pet79_year2008_bounded_audit.py"
       - "tests/test_stoneage_pet80_year2009_partial_audit.py"
       - "tests/test_stoneage_pet81_year2009_childrens_day.py"
+      - "tests/test_stoneage_pet82_year2009_bounded_audit.py"
+      - "research/recovered/STONEAGE-PET82-YEAR2009-FIVE-REGION-SOURCE-BOUNDED-AUDIT-R1.json"
+      - "docs/continuity/STONEAGE-PET82-YEAR2009-FIVE-REGION-OFFICIAL-PET-BOUNDED-AUDIT-20261118.md"
       - "research/recovered/STONEAGE-PET81-KR2009-COW-SNOWLEOPARD-SOURCE-AUDIT-R1.json"
       - "docs/continuity/STONEAGE-PET81-KR2009-CHILDRENS-DAY-NAMED-PETS-JP-DEC-GAP-20261118.md"
       - "research/recovered/STONEAGE-PET76-YEAR2007-FIVE-REGION-BOUNDED-AUDIT-R1.json"
@@ -270,6 +276,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet80_year2009_partial_audit
       - name: PET81 2009 Korean named pet operator source and Japan December gap
         run: python -m unittest tests.test_stoneage_pet81_year2009_childrens_day
+      - name: PET82 2009 five-region bounded review and 2010 handoff
+        run: python -m unittest tests.test_stoneage_pet82_year2009_bounded_audit
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary

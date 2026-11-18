@@ -12,8 +12,9 @@ class PET80Audit(unittest.TestCase):
  def test_annual_2009_open_and_both_append_only_receipts(self):
   a,q=self.a,self.q
   y=q["yearly_work_queue"][2009-1999]
-  self.assertEqual((a["year"],a["year_frontier_before"],a["year_frontier_after"],q["current_frontier"]["year"]),(2009,2009,2009,2009))
-  self.assertEqual(y["research_gate"],"NOT_YEAR_AUDITED")
+  self.assertEqual((a["year"],a["year_frontier_before"],a["year_frontier_after"]),(2009,2009,2009))
+  self.assertGreaterEqual(q["current_frontier"]["year"],2009)
+  self.assertEqual(y["research_gate"],"NOT_YEAR_AUDITED" if q["current_frontier"]["year"]==2009 else "SOURCE_BOUNDED_REVIEWED")
   self.assertFalse(a["historically_complete"])
   self.assertIn(a["id"],{r["id"] for r in y["partial_source_review_receipts"]})
   self.assertEqual(sum(r["id"]==a["id"] for r in y["partial_source_review_receipts"]),1)
