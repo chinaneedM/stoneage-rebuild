@@ -28,8 +28,7 @@ class TestPet107Year2016SourceBoundaries(unittest.TestCase):
         self.assertFalse(a["year_source_bounded_reviewed"])
         self.assertIsNone(a["global_pet_species_count"])
         self.assertIsNone(a["tw2016_new_species_count"])
-        self.assertEqual(q["current_frontier"]["latest_2016_partial_source_receipt"], a["id"])
-        self.assertEqual(y["partial_source_review_receipts"][-1]["id"], a["id"])
+        self.assertIn(a["id"], [x["id"] for x in y["partial_source_review_receipts"]])  # forward-only: later receipts preserve PET107
         self.assertTrue(a["next"].startswith("PET108:"))  # historical receipt next survives future cursor progress
         self.assertIn("PET107", REPORT.read_text(encoding="utf-8"))
 
