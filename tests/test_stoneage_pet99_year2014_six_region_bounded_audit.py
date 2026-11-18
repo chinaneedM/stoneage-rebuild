@@ -31,7 +31,7 @@ class Pet99Year2014BoundedAudit(unittest.TestCase):
         self.assertEqual(y["source_bounded_review_receipt"],str(A.relative_to(ROOT)))
         self.assertEqual(q["yearly_work_queue"][16]["research_gate"],"NOT_YEAR_AUDITED")
         self.assertEqual(q["current_frontier"]["year"],2015)
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET100:"))
+        self.assertTrue(a["next"].startswith("PET100:"))
         self.assertEqual(q["active_module"],"PET")
         self.assertIn("PET99",REPORT.read_text(encoding="utf-8"))
 
