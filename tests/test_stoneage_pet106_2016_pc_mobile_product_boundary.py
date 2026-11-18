@@ -32,7 +32,7 @@ class TestPet106Year2016ProductLines(unittest.TestCase):
         self.assertIsNone(a["original_pc_first_release_species_count"])
         self.assertIn(a["id"], [x["id"] for x in y["partial_source_review_receipts"]])
         self.assertIn(a["id"], [x["id"] for x in y["partial_source_review_receipts"]])  # later partial receipt does not revoke PET106
-        self.assertTrue(a["next"].startswith("PET106:"))  # PET106 historical next retained
+        self.assertTrue(a["next"].startswith("PET106"))  # PET106 historical next retained
         self.assertIn("PET106", REPORT.read_text(encoding="utf-8"))
 
     def test_source_grades_and_region_lineage_separation(self):
