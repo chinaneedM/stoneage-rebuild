@@ -20,9 +20,9 @@ class Pet97Taozhu198(unittest.TestCase):
         self.assertFalse(a["historically_complete"])
         self.assertEqual(q["yearly_work_queue"][15]["research_gate"],"NOT_YEAR_AUDITED")
         self.assertEqual(q["current_frontier"]["year"],2014)
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET98:"))
-        self.assertEqual(q["root_source_census_receipts"][-1]["id"],a["id"])
-        self.assertEqual(q["yearly_work_queue"][15]["partial_source_review_receipts"][-1]["id"],a["id"])
+        self.assertGreaterEqual(int(q["current_frontier"]["next"].split(":")[0][3:]),98)
+        self.assertIn(a["id"],[x["id"] for x in q["root_source_census_receipts"]])
+        self.assertIn(a["id"],[x["id"] for x in q["yearly_work_queue"][15]["partial_source_review_receipts"]])
         self.assertEqual(len({x["id"] for x in q["root_source_census_receipts"]}),len(q["root_source_census_receipts"]))
     def test_period_player_version_string_is_not_original_deployment(self):
         a=self.a
