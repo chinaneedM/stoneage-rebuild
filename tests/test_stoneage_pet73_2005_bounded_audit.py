@@ -58,7 +58,11 @@ class PET73Annual(unittest.TestCase):
   d,q=self.a,self.q
   self.assertEqual((d["year_frontier_before"],d["year_frontier_after"]),(2005,2006))
   self.assertEqual(q["current_frontier"]["year"],2006)
-  self.assertTrue(q["current_frontier"]["next"].startswith("PET74:"))
+  # PET73 was completed before the later PET74 partial audit. Do not regress the 2006 cursor.
+  if q["current_frontier"].get("latest_partial_root_review","").startswith("PET74-"):
+   self.assertTrue(q["current_frontier"]["next"].startswith("PET75:"))
+  else:
+   self.assertTrue(q["current_frontier"]["next"].startswith("PET74:"))
   self.assertEqual(q["yearly_work_queue"][2006-1999]["research_gate"],"NOT_YEAR_AUDITED")
   self.assertEqual(q["yearly_work_queue"][2005-1999]["documentary_event_count_NOT_species"],0)
   self.assertEqual(d["previous_2005_PET25_PET26_documentary_event_count_unchanged"],0)
