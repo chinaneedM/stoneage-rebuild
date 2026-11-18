@@ -1,0 +1,269 @@
+{
+  "schema": "STONEAGE-PET79-YEAR2008-OFFICIAL-FIVE-REGION-SOURCE-BOUNDED-AUDIT-R1",
+  "id": "PET79-2008-FIVE-REGION-OFFICIAL-PET-BOUNDED-REVIEW-20261118",
+  "date": "2026-11-18",
+  "active_module": "PET",
+  "year": 2008,
+  "review_status": "SOURCE_BOUNDED_REVIEWED",
+  "historically_complete": false,
+  "startup": {
+    "main_head": "b21c200cff8e657d319d1ae577c27eebdea4d7b3",
+    "main_tree": "9c7461bf3958244cd8a8d2a6e1cb35aa4398c4d9",
+    "main_exact_actions_success": 4,
+    "main_exact_actions_total": 4,
+    "open_prs": 0,
+    "original_current_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_current_bytes": 2709173
+  },
+  "prior_partial_receipts": [
+    "PET77-2008-OFFICIAL-FIVE-REGION-SOURCE-FIRST-PASS-20261118",
+    "PET78-2008-JP-ORIGINAL-NAMED-QUEST-AND-NINE_POOL-CN_TW-PERIOD-20261118"
+  ],
+  "source_records": [
+    {
+      "id": "KR-2008-0114-ICECASTLE",
+      "region": "KR",
+      "date": "2008-01-14",
+      "url": "https://www.inven.co.kr/webzine/news/?news=14976",
+      "kind": "PERIOD_OPERATOR_NINE_UNNAMED_PET_CLAIM",
+      "advertised_pet_count": 9,
+      "original_nine_names_recovered": 0
+    },
+    {
+      "id": "KR-2008-0825-TARIEN",
+      "region": "KR",
+      "date": "2008-08-25",
+      "url": "https://www.inven.co.kr/webzine/news/?game=111&iskin=webzine&news=17230",
+      "kind": "PERIOD_CJ_TARIEN_PET_REWARDS_AND_DESIGN_COMPETITION_BOSSES",
+      "pet_reward_names_recovered": 0,
+      "distinct_from_ice_castle": true,
+      "contest_boss_not_proven_capturable": true
+    },
+    {
+      "id": "KR-2008-1002-DANGUN",
+      "region": "KR",
+      "date": "2008-10-02",
+      "url": "https://www.inven.co.kr/webzine/news/?game=111&iskin=webzine&news=17718",
+      "kind": "PERIOD_CJ_UNNAMED_EVENT_PET",
+      "official_pet_reward_name_recovered": false,
+      "later_woongi_community_not_promoted": true
+    },
+    {
+      "id": "KR-2008-1117-DOEDIC",
+      "region": "KR",
+      "date": "2008-11-17",
+      "url": "https://www.gamemeca.com/view.php?gid=74794",
+      "related_same_operator_copy": [
+        "https://www.ggemguide.com/news/128892/?dpage=2449",
+        "https://www.inven.co.kr/webzine/news/?news=18422&vtype=pc"
+      ],
+      "kind": "PERIOD_OPERATOR_NAMED_OBTAINABLE_QUEST_REWARD",
+      "original_pet_name": "도에디크",
+      "quest_name": "설녀의 전설",
+      "minimum_level": 80,
+      "permanent_quest_reported": true,
+      "design_competition_grand_prize_winner": true,
+      "obtainable_on_completion_announced": true,
+      "actual_live_reward_log_verified": false,
+      "original_native_pet_id": null,
+      "icecastle_nine_membership_proven": false
+    },
+    {
+      "id": "JP-2008-0620-THREE-TIGER",
+      "region": "JP",
+      "date": "2008-06-20",
+      "url": "https://www.4gamer.net/games/013/G001377/20080620060/",
+      "kind": "PERIOD_DIGIPARK_THREE_TIGERS_QUEST_NARRATIVE",
+      "planned_update_date": "2008-06-24",
+      "quest_name": "三匹の虎 〜虎追いの詩〜",
+      "dungeon": "虎追い山",
+      "original_named_pet_ids_recovered": 0
+    },
+    {
+      "id": "JP-2008-1028-SHADOW-CHAPTER2",
+      "region": "JP",
+      "date": "2008-10-28",
+      "url": "https://www.4gamer.net/games/013/G001377/20081028007/",
+      "kind": "PERIOD_DIGIPARK_NON_PET_VERSION_ANCHOR",
+      "named_new_pets_from_source": 0
+    },
+    {
+      "id": "JP-2008-1125-SHADOW-CHAPTER3",
+      "region": "JP",
+      "date": "2008-11-25",
+      "url": "https://www.4gamer.net/games/013/G001377/20081125066/",
+      "kind": "PERIOD_DIGIPARK_NON_PET_VERSION_ANCHOR",
+      "named_new_pets_from_source": 0
+    },
+    {
+      "id": "CN-2008-0704-SHUTDOWN_PLAN",
+      "region": "CN",
+      "date": "2008-07-04",
+      "url": "https://tech.sina.com.cn/i/2008-07-04/17572305627.shtml",
+      "kind": "CONTEMPORANEOUS_OPERATOR_REPORTED_PLAN_NOT_LIVE_SHUTDOWN",
+      "planned_stop_date": "2008-08-02",
+      "actual_stop_verified": false
+    },
+    {
+      "id": "TW-2008-0630-SHUTDOWN_REPOST",
+      "region": "TW",
+      "date": "2008-06-30",
+      "url": "https://m.mobile01.com/topicdetail.php?f=284&t=678347",
+      "kind": "CONTEMPORANEOUS_PLAYER_REPOST_NOT_ORIGINAL_OPERATOR_HTML",
+      "planned_stop_date": "2008-07-31",
+      "original_operator_HTML_verified": false
+    },
+    {
+      "id": "KR-LATER-COMMUNITY-GRAMGOR",
+      "region": "KR",
+      "date": null,
+      "url": "https://seore.org/w/%EA%B7%B8%EB%9E%A8%EA%B3%A0%EB%A5%B4?rev=1",
+      "kind": "LATER_COMMUNITY_NOT_PERIOD_PRIMARY",
+      "candidate_name": "그램고르",
+      "candidate_number_claim": 277,
+      "official_2008_native_identity_proven": false
+    },
+    {
+      "id": "KR-LATER-COMMUNITY-WOONGI",
+      "region": "KR",
+      "date": null,
+      "url": "https://gamezone.live/board_vJGK77/606064",
+      "kind": "LATER_PLAYER_RECOLLECTION_NOT_PERIOD_PRIMARY",
+      "candidate_name": "웅이",
+      "official_2008_reward_identity_proven": false
+    }
+  ],
+  "region_reviews": {
+    "CN": {
+      "operator_tracks": [
+        "KINGSOFT_NEW_8_0",
+        "CHINA_LEGACY_OTHER_SERVER_TRACKS"
+      ],
+      "source_note": "2008-08-02 shutdown planned not actual; 2012 retrospective 10-20 later claim, different product tracks",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "pet_population": null,
+      "authentic_2008_complete_original_client_missing": true,
+      "native_pet_id_rows_verified": 0,
+      "actual_reward_grant_log_verified": false,
+      "first_year_2008_species_count_verified": null,
+      "reopen": true,
+      "reopen_trigger": "CN_2008_KINGSOFT_NEW_8_0_AND_LEGACY_ORIGINAL_PATCH_NATIVE_PET_ID_TABLE_PERIOD_ISSUANCE_AND_SHUTDOWN_PRIMARY"
+    },
+    "TW": {
+      "operator_tracks": [
+        "TAIWAN_WAEI_STONEAGE1"
+      ],
+      "source_note": "2008-06-30/07-01 contemporaneous same-operator shutdown notice reposts not primary HTML",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "pet_population": null,
+      "authentic_2008_complete_original_client_missing": true,
+      "native_pet_id_rows_verified": 0,
+      "actual_reward_grant_log_verified": false,
+      "first_year_2008_species_count_verified": null,
+      "reopen": true,
+      "reopen_trigger": "TW_2008_WAEI_ORIGINAL_NOTICE_APPLIED_NATIVE_PET_NAME_ID_SPR_AND_ACTUAL_SERVER_LOG"
+    },
+    "JP": {
+      "operator_tracks": [
+        "DIGIPARK_STONEAGE1_JAPAN",
+        "STONEAGE2_SEPARATE"
+      ],
+      "source_note": "June unnamed tiger quest, Rimfy, Fukuuri, Sept nine named lottery pool with Urubos 2007 overlap, Nov saber inputs; four evolved names in 2009 only",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "pet_population": null,
+      "authentic_2008_complete_original_client_missing": true,
+      "native_pet_id_rows_verified": 0,
+      "actual_reward_grant_log_verified": false,
+      "first_year_2008_species_count_verified": null,
+      "reopen": true,
+      "reopen_trigger": "JP_2008_DIGIPARK_APPLIED_NATIVE_PATCH_PET_IDS_RIMFY_NINE_POOL_THREE_TIGERS_SABER_EVOLUTION_AND_GRANT"
+    },
+    "KR": {
+      "operator_tracks": [
+        "CJ_NETMARBLE_STONEAGE1",
+        "STONEAGE2_SEPARATE"
+      ],
+      "source_note": "January icecastle nine unnamed, August Tarien pet rewards unnamed, October Dangun unnamed, November long-term named quest Doedic",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "pet_population": null,
+      "authentic_2008_complete_original_client_missing": true,
+      "native_pet_id_rows_verified": 0,
+      "actual_reward_grant_log_verified": false,
+      "first_year_2008_species_count_verified": null,
+      "reopen": true,
+      "reopen_trigger": "KR_2008_CJ_NETMARBLE_ICE_CASTLE_NINE_NAMES_TARIEN_REWARD_LIST_DOEDIC_NATIVE_ID_SPR_AND_DANGUN_GRANT"
+    },
+    "OTHER": {
+      "operator_tracks": [],
+      "source_note": "No confirmed 2008 licensed original PC pet data, no negative existence claim",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "pet_population": null,
+      "authentic_2008_complete_original_client_missing": true,
+      "native_pet_id_rows_verified": 0,
+      "actual_reward_grant_log_verified": false,
+      "first_year_2008_species_count_verified": null,
+      "reopen": true,
+      "reopen_trigger": "OTHER_2008_LICENCED_ORIGINAL_PC_OPERATOR_PERIOD_NATIVE_PET_RELEASE_AND_PROVENANCE"
+    }
+  },
+  "five_region_reopen_triggers": [
+    "CN_2008_KINGSOFT_NEW_8_0_AND_LEGACY_ORIGINAL_PATCH_NATIVE_PET_ID_TABLE_PERIOD_ISSUANCE_AND_SHUTDOWN_PRIMARY",
+    "TW_2008_WAEI_ORIGINAL_NOTICE_APPLIED_NATIVE_PET_NAME_ID_SPR_AND_ACTUAL_SERVER_LOG",
+    "JP_2008_DIGIPARK_APPLIED_NATIVE_PATCH_PET_IDS_RIMFY_NINE_POOL_THREE_TIGERS_SABER_EVOLUTION_AND_GRANT",
+    "KR_2008_CJ_NETMARBLE_ICE_CASTLE_NINE_NAMES_TARIEN_REWARD_LIST_DOEDIC_NATIVE_ID_SPR_AND_DANGUN_GRANT",
+    "OTHER_2008_LICENCED_ORIGINAL_PC_OPERATOR_PERIOD_NATIVE_PET_RELEASE_AND_PROVENANCE"
+  ],
+  "korean_2008_newly_named_obtainable_pet": [
+    "도에디크"
+  ],
+  "korean_icecastle_nine_advertised": 9,
+  "korean_icecastle_original_names_recovered": 0,
+  "japanese_nine_prize_pool_names_count_not_new_species": 9,
+  "japanese_pool_prior_2007_overlap": [
+    "ウロボス"
+  ],
+  "japanese_june_tigers_pet_ids_found": 0,
+  "boundaries": {
+    "doedic_2008_period_operator_named_quest": true,
+    "doedic_original_pet_id_not_recovered": true,
+    "doedic_not_proven_member_of_icecastle_nine": true,
+    "doedic_not_global_first_species_proven": true,
+    "tarien_second_dungeon_not_icecastle": true,
+    "tarien_boss_does_not_prove_capturable_boss_pet": true,
+    "gramgor_277_not_2008_native_evidence": true,
+    "woongi_not_2008_period_named_reward": true,
+    "tiger_three_quest_not_three_named_pet_ids": true,
+    "lottery_nine_not_nine_new_species": true,
+    "japan_2009_four_evolution_names_not_backdated": true,
+    "china_planned_vs_actual_shutdown_separate": true,
+    "taiwan_reposts_not_original_HTML": true,
+    "other_missing_not_no_pets": true,
+    "stoneage2_separate": true,
+    "private_server_not_original_official": true
+  },
+  "free_native_client_review": {
+    "year": 2008,
+    "official_2008_raw_client_or_patch_bytes_recovered": 0,
+    "original_build_sha256": null,
+    "pet_id_rows_found": 0,
+    "original_server_grant_logs_found": 0,
+    "paid_marketplace_research": false,
+    "private_server_source_as_official": false
+  },
+  "original_2008_client_bytes_acquired": 0,
+  "new_2008_native_pet_ids": 0,
+  "real_2008_reward_grant_logs": 0,
+  "global_2008_historical_species_count": null,
+  "confirmed_2008_first_new_species_count": null,
+  "year_frontier_before": 2008,
+  "year_frontier_after": 2009,
+  "next": "PET80: begin 2009 five-region original PC official PET audit; free direct original client/patch first, document 2009 Japanese evolved saber names without backdating 2008.",
+  "no_paid_marketplace": true,
+  "no_private_server_only_pet_included": true,
+  "no_original_commercial_art_published": true,
+  "historical_CURRENT_untouched": true,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}

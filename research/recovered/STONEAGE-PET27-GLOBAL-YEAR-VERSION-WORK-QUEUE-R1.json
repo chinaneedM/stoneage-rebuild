@@ -15,11 +15,11 @@
   "latest_year_in_scope": 2026,
   "reason_start_provisional": "1999 is a search-window starting point, NOT an independently authenticated first official launch date; earlier qualified evidence may extend the sequence backwards",
   "current_frontier": {
-    "year": 2008,
-    "phase": "YEAR_2008_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
+    "year": 2009,
+    "phase": "YEAR_2009_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET78-2008-JP-ORIGINAL-NAMED-QUEST-AND-NINE_POOL-CN_TW-PERIOD-20261118",
-    "next": "PET79: continue 2008 five-region chronological official pet/client audit. Find original same-build Japanese JP2008 pet table and Korean Ice Castle nine names/IDs. Source-bound 2008 region-by-region before moving to 2009.",
+    "latest_partial_root_review": "PET79-2008-FIVE-REGION-OFFICIAL-PET-BOUNDED-REVIEW-20261118",
+    "next": "PET80: begin 2009 five-region original PC official PET audit; free direct original client/patch first, document 2009 Japanese evolved saber names without backdating 2008.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -1502,7 +1502,7 @@
     {
       "year": 2008,
       "chronological_position": 10,
-      "research_gate": "NOT_YEAR_AUDITED",
+      "research_gate": "SOURCE_BOUNDED_REVIEWED",
       "documented_release_event_ids_from_existing_PET25_PET26": [
         "JP-2008-FUKUURI"
       ],
@@ -1552,8 +1552,103 @@
             "ウロボス"
           ],
           "japan_2009_later_four_evolved_names_not_2008_firsts": true
+        },
+        {
+          "id": "PET79-2008-FIVE-REGION-OFFICIAL-PET-BOUNDED-REVIEW-20261118",
+          "regions": [
+            "CN",
+            "TW",
+            "JP",
+            "KR",
+            "OTHER"
+          ],
+          "report": "docs/continuity/STONEAGE-PET79-YEAR2008-FIVE-REGION-BOUNDED-OFFICIAL-PET-AUDIT-20261118.md",
+          "evidence_json": "research/recovered/STONEAGE-PET79-YEAR2008-FIVE-REGION-SOURCE-BOUNDED-AUDIT-R1.json",
+          "year_not_closed": false,
+          "historically_complete": false,
+          "new_original_2008_client_bytes": 0,
+          "new_native_pet_ids": 0,
+          "global_species_count": null
         }
-      ]
+      ],
+      "historically_complete": false,
+      "historical_species_count": null,
+      "source_bounded_review_receipt": "research/recovered/STONEAGE-PET79-YEAR2008-FIVE-REGION-SOURCE-BOUNDED-AUDIT-R1.json",
+      "residual_reopen_triggers": [
+        "CN_2008_KINGSOFT_NEW_8_0_AND_LEGACY_ORIGINAL_PATCH_NATIVE_PET_ID_TABLE_PERIOD_ISSUANCE_AND_SHUTDOWN_PRIMARY",
+        "TW_2008_WAEI_ORIGINAL_NOTICE_APPLIED_NATIVE_PET_NAME_ID_SPR_AND_ACTUAL_SERVER_LOG",
+        "JP_2008_DIGIPARK_APPLIED_NATIVE_PATCH_PET_IDS_RIMFY_NINE_POOL_THREE_TIGERS_SABER_EVOLUTION_AND_GRANT",
+        "KR_2008_CJ_NETMARBLE_ICE_CASTLE_NINE_NAMES_TARIEN_REWARD_LIST_DOEDIC_NATIVE_ID_SPR_AND_DANGUN_GRANT",
+        "OTHER_2008_LICENCED_ORIGINAL_PC_OPERATOR_PERIOD_NATIVE_PET_RELEASE_AND_PROVENANCE"
+      ],
+      "region_source_reviews": {
+        "CN": {
+          "operator_tracks": [
+            "KINGSOFT_NEW_8_0",
+            "CHINA_LEGACY_OTHER_SERVER_TRACKS"
+          ],
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2008_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2008_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "CN_2008_KINGSOFT_NEW_8_0_AND_LEGACY_ORIGINAL_PATCH_NATIVE_PET_ID_TABLE_PERIOD_ISSUANCE_AND_SHUTDOWN_PRIMARY"
+        },
+        "TW": {
+          "operator_tracks": [
+            "TAIWAN_WAEI_STONEAGE1"
+          ],
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2008_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2008_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "TW_2008_WAEI_ORIGINAL_NOTICE_APPLIED_NATIVE_PET_NAME_ID_SPR_AND_ACTUAL_SERVER_LOG"
+        },
+        "JP": {
+          "operator_tracks": [
+            "DIGIPARK_STONEAGE1_JAPAN",
+            "STONEAGE2_SEPARATE"
+          ],
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2008_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2008_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "JP_2008_DIGIPARK_APPLIED_NATIVE_PATCH_PET_IDS_RIMFY_NINE_POOL_THREE_TIGERS_SABER_EVOLUTION_AND_GRANT"
+        },
+        "KR": {
+          "operator_tracks": [
+            "CJ_NETMARBLE_STONEAGE1",
+            "STONEAGE2_SEPARATE"
+          ],
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2008_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2008_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "KR_2008_CJ_NETMARBLE_ICE_CASTLE_NINE_NAMES_TARIEN_REWARD_LIST_DOEDIC_NATIVE_ID_SPR_AND_DANGUN_GRANT"
+        },
+        "OTHER": {
+          "operator_tracks": [],
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2008_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2008_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "OTHER_2008_LICENCED_ORIGINAL_PC_OPERATOR_PERIOD_NATIVE_PET_RELEASE_AND_PROVENANCE"
+        }
+      }
     },
     {
       "year": 2009,
@@ -2846,6 +2941,25 @@
       "year_frontier_before": 2008,
       "year_frontier_after": 2008,
       "year_not_closed": true,
+      "historically_complete": false,
+      "new_original_2008_client_bytes": 0,
+      "new_native_pet_ids": 0,
+      "global_2008_species_count": null
+    },
+    {
+      "id": "PET79-2008-FIVE-REGION-OFFICIAL-PET-BOUNDED-REVIEW-20261118",
+      "regions": [
+        "CN",
+        "TW",
+        "JP",
+        "KR",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET79-YEAR2008-FIVE-REGION-BOUNDED-OFFICIAL-PET-AUDIT-20261118.md",
+      "evidence_json": "research/recovered/STONEAGE-PET79-YEAR2008-FIVE-REGION-SOURCE-BOUNDED-AUDIT-R1.json",
+      "year_frontier_before": 2008,
+      "year_frontier_after": 2009,
+      "year_not_closed": false,
       "historically_complete": false,
       "new_original_2008_client_bytes": 0,
       "new_native_pet_ids": 0,
