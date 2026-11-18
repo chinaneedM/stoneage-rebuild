@@ -73,7 +73,7 @@ class PET86Review(unittest.TestCase):
     def test_original_current_git_blob_preserved(self):
         raw = (ROOT / "docs" / "CURRENT-STATE.md").read_bytes()
         self.assertEqual(len(raw), 2709173)
-        sha = hashlib.sha1(b"blob " + str(len(raw)).encode("ascii") + b"\\x00" + raw).hexdigest()
+        sha = hashlib.sha1(b"blob " + str(len(raw)).encode("ascii") + b"\x00" + raw).hexdigest()
         self.assertEqual(sha, self.a["startup"]["current_blob"])
 
 
