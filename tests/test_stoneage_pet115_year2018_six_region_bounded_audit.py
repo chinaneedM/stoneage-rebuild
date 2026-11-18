@@ -46,7 +46,7 @@ class Pet115Year2018Annual(unittest.TestCase):
   y=next(x for x in q["yearly_work_queue"] if x["year"]==2018)
   self.assertEqual(a["prior_partial_receipts"],[x["id"] for x in y["partial_source_review_receipts"]][:1])
   self.assertEqual(y["partial_source_review_receipts"][-1]["id"],a["id"])
-  self.assertEqual(q["root_source_census_receipts"][-1]["id"],a["id"])
+  self.assertIn(a["id"], [receipt["id"] for receipt in q["root_source_census_receipts"]])  # forward-only future PET root receipts allowed
   self.assertEqual(len(a["sources"]),len(set(s["id"] for s in a["sources"])))
   self.assertEqual(set(x["region"] for x in a["sources"])|{"OTHER"},REGIONS|{"TW_HK_MO_MOBILE"})
   self.assertTrue(all(a["negative_controls"].values()))
