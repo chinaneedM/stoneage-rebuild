@@ -18,7 +18,7 @@ class Pet115Year2018Annual(unittest.TestCase):
   self.assertEqual(q["current_frontier"]["year"],2019)
   self.assertEqual(n["research_gate"],"NOT_YEAR_AUDITED")
   self.assertEqual(q["current_frontier"]["latest_source_bounded_annual_review"],a["id"])
-  self.assertTrue(q["current_frontier"]["next"].startswith("PET116:"))
+  self.assertGreaterEqual(int(q["current_frontier"]["next"].split(":")[0].removeprefix("PET")), 116)  # forward-only next package, PET116 may now be a preserved partial receipt
   self.assertEqual(y["source_bounded_review_receipt"],str(A.relative_to(ROOT)))
   self.assertFalse(y["historically_complete"])
   self.assertTrue(a["source_bounded_only"] and a["year_reopenable"])
