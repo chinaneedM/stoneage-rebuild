@@ -1,0 +1,207 @@
+{
+  "schema": "stoneage.pet91.year2013.cn_operator_pet_source_first_pass.r1",
+  "id": "PET91-YEAR2013-CN-OPERATOR-PET-KR-MOBILE-FIRST-PASS-20261118",
+  "date": "2026-11-18",
+  "active_module": "PET",
+  "year": 2013,
+  "review_status": "PARTIAL_NOT_YEAR_AUDITED",
+  "year_frontier_before": 2013,
+  "year_frontier_after": 2013,
+  "source_bounded_annual_audit_complete": false,
+  "historically_complete": false,
+  "global_original_pc_pet_species_count_2013": null,
+  "first_release_2013_species_count": null,
+  "historical_current_blob_untouched": true,
+  "baseline": {
+    "main_head": "44c6364810be46c2bdecbe36088cc2103c9a13a3",
+    "main_tree": "c1347f2e70b4ad495a60428bc745ecfd73ac87cd",
+    "main_actions_success": 4,
+    "main_actions_total": 4,
+    "open_prs": 0,
+    "current_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_bytes": 2709173
+  },
+  "source_count": 7,
+  "sources": [
+    {
+      "id": "CN2013-01-18-DEEP-RED-CAVE-ITEM-NOT-PET",
+      "date_published": "2013-01-18",
+      "region": "CN",
+      "operator": "CINS_SHENGSI",
+      "product_line": "ORIGINAL_PC",
+      "version": "CN_PC_VERSION_UNRESOLVED",
+      "url": "https://games.sina.com.cn/o/n/2013-01-18/1442684848.shtml",
+      "grade": "CONTEMPORANEOUS_OPERATOR_ORIGIN_TEXT_IN_MEDIA_RELAY",
+      "pet_name_attestations": [],
+      "negative_control": {
+        "item": "不死鸟的羽毛[火]",
+        "entity": "QUEST_ITEM_NOT_OWNED_PET",
+        "other": "火的羽毛饰品[火] is quest equipment; narrated 不死鸟 not proved acquirable pet"
+      },
+      "native_client_verified": false
+    },
+    {
+      "id": "CN2013-01-31-TAURUS-JAN30-TASK",
+      "date_published": "2013-01-31",
+      "source_stated_event_date": "2013-01-30",
+      "region": "CN",
+      "operator": "CINS_SHENGSI",
+      "product_line": "ORIGINAL_PC",
+      "version": "CN_PC_VERSION_UNRESOLVED",
+      "url": "https://games.sina.com.cn/o/n/2013-01-31/1336687495.shtml",
+      "grade": "CONTEMPORANEOUS_OPERATOR_ORIGIN_TEXT_IN_MEDIA_RELAY",
+      "pet_name_attestations": [
+        "塔乌鲁斯"
+      ],
+      "claimed_acquisition": "牛头任务，稿件写2013-01-30开始及永久上线；一转120级可接，转生后可再接",
+      "advertised_skill": "涅槃：一次倒地复活并获水灵力量（文本字面，非技能函数）",
+      "actual_server_run_verified": false,
+      "native_client_verified": false
+    },
+    {
+      "id": "CN2013-03-14-BLUDIBAN-SUANNI-ANNOUNCED",
+      "date_published": "2013-03-14",
+      "region": "CN",
+      "operator": "CINS_SHENGSI",
+      "product_line": "ORIGINAL_PC",
+      "version": "CN_PC_VERSION_UNRESOLVED",
+      "url": "https://games.sina.com.cn/o/n/2013-03-14/1436694517.shtml",
+      "grade": "CONTEMPORANEOUS_OPERATOR_ORIGIN_TEXT_IN_MEDIA_RELAY",
+      "pet_name_attestations": [
+        "布鲁迪斑",
+        "狻猊"
+      ],
+      "evidence_status": "OFFICIAL_ANNOUNCED_OR_WEB_LISTED_RELEASE_UNVERIFIED",
+      "warning": "稿中既称更新后诞生，又称布鲁迪斑即将登陆，不能定已经上线、获取方式或同版原生ID",
+      "native_client_verified": false
+    },
+    {
+      "id": "CN2013-03-20-ILLUSORY-PERUSHA-EVOLUTION",
+      "date_published": "2013-03-20",
+      "region": "CN",
+      "operator": "CINS_SHENGSI",
+      "product_line": "ORIGINAL_PC",
+      "version": "CN_PC_VERSION_UNRESOLVED",
+      "url": "https://games.sina.com.cn/o/n/2013-03-20/1005695518.shtml",
+      "grade": "CONTEMPORANEOUS_OPERATOR_ORIGIN_TEXT_IN_MEDIA_RELAY",
+      "pet_name_attestations": [
+        "幻·佩露夏"
+      ],
+      "base_pet_name": "佩露夏",
+      "claimed_acquisition": "神秘的泉水＋佩露夏，在阿布的洞窟最底层找查罕族祭司进化兑换",
+      "advertised_skill": "虎啸",
+      "actual_server_run_verified": false,
+      "native_client_verified": false
+    },
+    {
+      "id": "CN2013-03-28-GRIFFIN-RIDE-TASK",
+      "date_published": "2013-03-28",
+      "region": "CN",
+      "operator": "CINS_SHENGSI",
+      "product_line": "ORIGINAL_PC",
+      "version": "CN_PC_VERSION_UNRESOLVED",
+      "url": "https://games.sina.com.cn/o/n/2013-03-28/1140697511.shtml",
+      "grade": "CONTEMPORANEOUS_OPERATOR_ORIGIN_TEXT_IN_MEDIA_RELAY",
+      "pet_name_attestations": [
+        "狮鹫"
+      ],
+      "claimed_acquisition": "五转及以上120级完成成人礼，至加加村冒险家NPC坐标(105,105)接受任务",
+      "advertised_mechanic": "宣称完成任务获得的狮鹫可无需骑乘证骑乘；实际发放、选择器和地图原ID未核",
+      "identity_precision": "狮鹫可能是通称，尚无确切原生宠种ID/变体枚举",
+      "actual_server_run_verified": false,
+      "native_client_verified": false
+    },
+    {
+      "id": "CN2013-04-25-YAAN-25-85-REWARDS",
+      "date_published": "2013-04-25",
+      "source_stated_end_date": "2013-05-06",
+      "region": "CN",
+      "operator": "CINS_SHENGSI",
+      "product_line": "ORIGINAL_PC",
+      "version": "CN_2_5_AND_8_5_DISTINCT",
+      "url": "https://games.sina.com.cn/o/n/2013-04-25/1043702927.shtml",
+      "grade": "CONTEMPORANEOUS_OPERATOR_ORIGIN_TEXT_IN_MEDIA_RELAY",
+      "pet_name_attestations": [
+        "幻·佩露夏",
+        "贝莱瑞贡",
+        "巴雅"
+      ],
+      "advertised_reward_lanes": {
+        "2.5": {
+          "7_chars": "幻·佩露夏（宠）",
+          "5_chars": "机暴证（非宠物，骑乘凭证）",
+          "4_chars": "兽环（非宠物）"
+        },
+        "8.5": {
+          "7_chars": "幻·佩露夏（宠）",
+          "5_chars": "贝莱瑞贡（宠）",
+          "4_chars": "巴雅（宠）"
+        }
+      },
+      "explicit_non_pet_items": [
+        "机暴证",
+        "兽环"
+      ],
+      "claim_only": "活动公布的奖励规则；原服兑换日志、具体PET/物种ID、概率与实际领取未证；两服同名不是一条同版客户端实物",
+      "native_client_verified": false,
+      "actual_server_reward_verified": false
+    },
+    {
+      "id": "KR2013-10-08-NETMARBLE-MOBILE-DISTINCT",
+      "date_published": "2013-10-08",
+      "region": "KR",
+      "operator": "CJ_E_AND_M_NETMARBLE",
+      "product_line": "STONEAGE_MOBILE_SEPARATE_FROM_ORIGINAL_PC",
+      "version": "MOBILE_PRE_REGISTRATION",
+      "url": "https://zdnet.co.kr/view/?no=20131008114001",
+      "grade": "CONTEMPORANEOUS_KOREAN_PRESS_RELAY_OPERATOR_ANNOUNCEMENT",
+      "pet_name_attestations": [],
+      "source_stated_reward": "预注册计划赠3枚随机宠物蛋，不具名，不可推作原PC1物种/实际发放",
+      "excluded_from_original_pc_roster": true,
+      "native_client_verified": false
+    }
+  ],
+  "named_pc_pet_labels_not_species": 7,
+  "grouped_published_name_tokens": [
+    "塔乌鲁斯",
+    "布鲁迪斑",
+    "狻猊",
+    "幻·佩露夏",
+    "狮鹫",
+    "贝莱瑞贡",
+    "巴雅"
+  ],
+  "native_2013_source": {
+    "authenticated_new_client_bytes": 0,
+    "original_pet_ids": 0,
+    "original_spr_pixels": 0,
+    "verified_native_skill_functions": 0,
+    "server_reward_receipts": 0
+  },
+  "source_negative_controls": {
+    "operator_origin_media_relay_not_original_operator_page_or_native_file": true,
+    "mar14_imminent_not_live_confirmation": true,
+    "april_reward_items_not_living_pets": true,
+    "same_name_cross_version_not_same_build_identity": true,
+    "jan18_phoenix_feather_not_pet": true,
+    "korean_2013_mobile_product_not_original_pc": true,
+    "activity_start_claim_not_observed_server_execution": true
+  },
+  "region_gaps": {
+    "CN": "No authenticated 2013 CINS 2.5/8.5 same-build installer/patch or PET/SPR master; later 2013 months and regional original PC variants remain to review",
+    "TW": "2013 Taozhu contemporary operator original PC client/update and actual pet reward sources not yet established in this first pass",
+    "HK_MO": "2013 Honglong operator/client/pet grants not independently evidenced",
+    "KR": "Original CJ/Netmarble 2013 PC1 pet issuance unknown; 2013 mobile pre-registration belongs to separate product line",
+    "JP": "2013 PC1 re-entry or original JP pet updates not positively evidenced; earlier 2010 end does not establish all products absent",
+    "OTHER": "Other 2013 licensed original PC regional evidence unreviewed"
+  },
+  "reopening_triggers": [
+    "CN2013_CINS_OFFICIAL_AUTHENTIC_25_85_CLIENT_PATCH_PET_ID_SPR_OR_REWARD",
+    "TW2013_TAOZHU_FIRST_PARTY_PC1_PET_PATCH_AND_CLIENT",
+    "HKMO2013_HONGLONG_ORIGINAL_PC1_PET_EVENT_SOURCE",
+    "KR2013_NETMARBLE_PC1_PERIOD_NATIVE_PET_SOURCE",
+    "JP2013_ORIGINAL_PC1_OPERATOR_RELAUNCH_OR_PET_UPDATE",
+    "OTHER2013_LICENSED_PC1_REGION_PET_RELEASE_SOURCE"
+  ],
+  "next": "PET92 2013 original PC region/version follow-through; prioritize freely readable authentic client/patch bytes, contemporary first-party TW/HKMO/KR/JP originals and remaining months; year remains NOT_YEAR_AUDITED"
+}
