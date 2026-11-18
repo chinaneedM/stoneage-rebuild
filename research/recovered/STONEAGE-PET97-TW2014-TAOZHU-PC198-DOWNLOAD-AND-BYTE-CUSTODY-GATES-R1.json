@@ -1,0 +1,159 @@
+{
+  "schema": "stoneage.pet97.tw2014_official_pc_version_198_source_to_byte_custody_gate.r1",
+  "id": "PET97-TW2014-TAOZHU-PC-198-CLIENT-ACQUISITION-GATE-20261118",
+  "date": "2026-11-18",
+  "active_module": "PET",
+  "year": 2014,
+  "frontier_before": 2014,
+  "frontier_after": 2014,
+  "review_status": "PARTIAL_NOT_YEAR_AUDITED",
+  "year_closed": false,
+  "historically_complete": false,
+  "starting_remote": {
+    "repository": "chinaneedM/stoneage-rebuild",
+    "head": "42a4c999d635694a1b6b4540b28f415d62a4d239",
+    "tree": "8a234df37b0453c409b6fbb9fb0f3c250fe5e11c",
+    "main_exact_sha_actions_success": 4,
+    "open_prs": 0,
+    "current_state_original_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_state_original_bytes": 2709173
+  },
+  "specific_line": {
+    "year": 2014,
+    "region": "TW",
+    "operator": "TAOZHU",
+    "product_line": "ORIGINAL_PC",
+    "historical_launcher_version_string": "198",
+    "version_identifier_kind": "PLAYER_REPORTED_ONSCREEN_LAUNCHER_OR_PATCH_REVISION_NOT_AUTHENTICATED_FULL_BUILD",
+    "original_first_party_build_signature": null,
+    "confirmed_official_client_checksum_sha256": null
+  },
+  "primary_candidate_paths": [
+    {
+      "purpose": "2014 Taiwanese official PC installation package path",
+      "url": "http://www.stoneage.tw/download.php?c=2",
+      "source": "2014-09-06 contemporary PTT player complaint quoted in 2014-09-09 reply",
+      "status": "LINK_RECORDED_SOURCE_DID_NOT_RETURN_BYTES",
+      "access_notes": "2026 web open of official download domain unsuccessful; does not prove server content permanently missing"
+    },
+    {
+      "purpose": "2014 Taiwanese original-PC manual patch path",
+      "url": "http://www.stoneage.tw/download.php?c=1",
+      "source": "2014-09-09 PTT player reply",
+      "status": "LINK_RECORDED_SOURCE_DID_NOT_RETURN_BYTES",
+      "access_notes": "2026 web open could not access; no patch original archive or checksum"
+    },
+    {
+      "purpose": "2014 user backup noninstalled executable (NOT independent official distribution)",
+      "url": "https://www.dropbox.com/s/lpjk9r658h6kxac/Sa_Free_installation.exe?dl=0",
+      "file_name": "Sa_Free_installation.exe",
+      "source": "2014-09-09 PTT player reply",
+      "status": "LINK_RECORDED_SOURCE_DID_NOT_RETURN_BYTES",
+      "access_notes": "2026 web tool could not access; container HTTP DNS unavailable, so cannot decide live file availability or run anti-malware/provenance tests"
+    }
+  ],
+  "sources": [
+    {
+      "id": "TW2014-0831-PLAYER-198-RUNNING-MIRROR",
+      "url": "https://game.faqs.tw/%E5%AE%8C%E5%85%A8%E7%84%A1%E6%B3%95%E7%8E%A9-%E6%88%91%E9%9C%80%E8%A6%81%E8%A7%A3%E6%95%91-1409497278",
+      "source_date": "2014-08-31",
+      "firsthand": "PLAYER_REPORT_OF_PERSONALLY_RUN_UNINSTALLED_PC_PROGRAM",
+      "read_access": "DIRECT_PUBLIC_HTML_READ_OF_LATER_HOST_MIRROR",
+      "claim": "Player ran locally downloaded no-installation PC client; launcher reported version 198 and no update necessary; server login errors at two server groups",
+      "scope": "ATTESTS_PLAYER_REPORTED_198_DISPLAY_NOT_OFFICIAL_INTEGRITY_OR_SUCCESSFUL_GAME_SESSION",
+      "official_pet_release_verified": false
+    },
+    {
+      "id": "TW2014-0906-PLAYER-OFFICIAL-DOWNLOAD-INTERRUPTION",
+      "url": "https://www.pttweb.cc/bbs/StoneAge/t/3497406",
+      "source_date": "2014-09-06",
+      "firsthand": "PLAYER_SAYS_DOWNLOAD_FROM_TAOZHU_SITE_STOPS_PARTWAY",
+      "read_access": "SEARCH_INDEX_OR_THREAD_MIRROR_ONLY_ORIGINAL_PTT_FETCH_403",
+      "claim": "Quoted author reports official stoneage.tw main-program download at ?c=2 repeatedly disconnecting while downloading",
+      "scope": "DOES_NOT_MEAN_ORIGINAL_ARCHIVE_IS_PARTIALLY_OWNED_BY_THIS_PROJECT",
+      "official_pet_release_verified": false
+    },
+    {
+      "id": "TW2014-0909-PTT-PLAYER-EXPLICIT-198-PATCH-LINKS",
+      "url": "https://www.ptt.cc/bbs/StoneAge/M.1410200955.A.AB2.html",
+      "source_date": "2014-09-09",
+      "last_known_edit": "2014-09-09 11:19:13",
+      "firsthand": "PLAYER_STATES_PERSONAL_BACKUP_AND_SPECIFIES_OFFICIAL_198_PATCH_ROUTE",
+      "read_access": "SEARCH_INDEX_FULL_SNIPPET_ORIGINAL_PTT_HTML_FETCH_403",
+      "claim": "Player backup Sa_Free_installation.exe Dropbox link, instructs official manual updater from stoneage.tw/download.php?c=1 to 198 for first two server partitions",
+      "scope": "DIRECT_DOWNLOAD_LINK_WITNESS_NOT_CLIENT_BYTES_OR_OFFICIAL_DEPLOYMENT_HASH",
+      "official_pet_release_verified": false
+    },
+    {
+      "id": "TW2014-1031-PLAYER-198-LAUNCHER-REPORT",
+      "url": "https://forum.gamer.com.tw/Co.php?bsn=1571&sn=281780",
+      "source_date": "2014-10-31",
+      "firsthand": "PLAYER_LAUNCHER_VERSION_LABEL_POST_INSTALLATION",
+      "read_access": "SEARCH_INDEX_ONLY_DIRECT_ORIGINAL_FORUM_HTML_403",
+      "claim": "October player reports launcher displaying version 198 and completed update followed by crash",
+      "scope": "CORROBORATES_YEAR_198_LAUNCHER_STRING_ONLY_NOT_FUNCTIONING_RESOURCE_PAYLOAD",
+      "official_pet_release_verified": false
+    },
+    {
+      "id": "TW2015-0131-PLAYER-GUIDE-INSTALLER-AND-UPDATER-NAMES",
+      "url": "https://home.gamer.com.tw/artwork.php?sn=2731842",
+      "source_date": "2015-01-31",
+      "firsthand": "LATER_PLAYER_INSTALLATION_GUIDE",
+      "read_access": "SEARCH_INDEX_CONTENT",
+      "claim": "Following-year player guide names Sa_Free_installation.exe main program and Launch.rar separate patch file; cannot assume identical 2014 bytes or bit-identical 198 state",
+      "scope": "LATER_SEPARATE_CORROBORATION_OF_FILENAME_AND_SPLIT_INSTALLER_UPDATER_ONLY",
+      "official_pet_release_verified": false
+    }
+  ],
+  "access_validation": {
+    "web_dropbox": "NOT_ACCESSIBLE_VIA_WEB_TOOL",
+    "web_taozhu_installer": "NOT_ACCESSIBLE_VIA_WEB_TOOL",
+    "web_taozhu_patch": "NOT_ACCESSIBLE_VIA_WEB_TOOL",
+    "container_http": "DNS_RESOLUTION_BLOCKED_IN_EXECUTION_ENVIRONMENT_NO_SERVER_AVAILABILITY_INFERENCE",
+    "local_downloaded_installers": 0,
+    "local_downloaded_patch_files": 0,
+    "original_bytes_new": 0,
+    "sha256_verified": false,
+    "crc_verified": false,
+    "malware_scan_possible": false,
+    "provenance_attested_as_official_bytes": false
+  },
+  "native_pet_evidence": {
+    "new_native_pet_ids": 0,
+    "new_native_spr_frames": 0,
+    "new_native_pet_skill_code": 0,
+    "new_live_2014_issue_records": 0,
+    "first_released_2014_species_total": null,
+    "global_original_pc_2014_species_total": null,
+    "per_region_totals_verified": false
+  },
+  "all_2014_regions": {
+    "CN": "PET95 original-PC 2.5/8.5/9.0 archived operator history only; no new 2014 original client pet proof",
+    "TW": "Version 198 contemporaneous player running report + official installer and patch URL witnessed, neither original client nor authenticated PET table acquired",
+    "HK_MO": "2014 independent official original PC pet deployment not verified",
+    "KR": "2014 original PC pet client/patch and release not verified; third-party Korean client titles not usable as original byte evidence",
+    "JP": "2014 original PC service not independently verified; mobile spinoff isolated",
+    "OTHER": "No qualifying 2014 original PC official pet receipt"
+  },
+  "negative_controls": {
+    "do_not_count_198_as_198_species": true,
+    "do_not_count_2014_client_version_as_2014_pet_release": true,
+    "do_not_infer_official_same_deployment_checksum_from_fan_backup": true,
+    "do_not_claim_link_is_dead_from_tool_inaccessibility": true,
+    "do_not_mix_private_server_repack_or_paid_client": true,
+    "no_nonverified_2014_species_zero_claim": true,
+    "year_remains_open": true
+  },
+  "reopen_when": [
+    "Lawful direct downloadable 2014 Taozhu official installer and corresponding manual patch bytes become inspectable, hashable and provenance-qualified",
+    "Independent official TW 2014 patch listing identifies exact file/revision and its manifest checksums",
+    "2014 specific TW original PC PET names IDs SPR and skills can be extracted and attributed to same authenticated deployment",
+    "2014 original-PC official pet issuance/date across CN HKMO KR JP OTHER verified from operator update or original client evidence"
+  ],
+  "historical_CURRENT_unchanged": true,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null,
+  "next": "PET98: continue 2014 six-region original-PC pet release evidence; correlate actual patch/client bytes and native pet roster if lawfully accessible, do not infer 198 contents from version label"
+}
