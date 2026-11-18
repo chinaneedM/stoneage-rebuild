@@ -55,3 +55,6 @@
 **结论**：`PET85=PARTIAL_SOURCE_FIRST_PASS`，2011 `NOT_YEAR_AUDITED`、`historically_complete=false`，PET仍唯一活动模块；原Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、overall_percent=null 不变。具体11条来源、11条具名候选及5地区重开门在机读 [PET85 JSON](../../research/recovered/STONEAGE-PET85-YEAR2011-CN85-TW-OFFICIAL-PET-EVENT-CANDIDATES-R1.json)。
 
 **NEXT PET86（继续2011）**：有限追查可合法免费取得的2011大陆8.5/2.5与台湾4/25主程序/更新包**真实字节**；逐条找陶朱2011年季节活动官方宠物名字及对应原补丁，韩CJ同期具名宠物补丁、日本原PC官方服务资格、OTHER同期独立官服来源。有明确源缺口就止点记录，不以新闻重复搜索代替可读原件，也不提前结2011年进入2012。
+
+### PET85 前向勘误（2026-11-18：等级门槛比较符）
+2011-01-27原时期运营公告字面为 **“朵巴奈特（Lv100以上）”** 与 **“欧西摩米（Lv120以上）”**。首版JSON字段名误作 `rage_input_level_greater_than`、`scorpion_input_level_greater_than`，若据此生成判断会错误排除等级恰为100或120的宠物。现按字面更正为 `rage_input_min_level_inclusive: 100`、`scorpion_input_min_level_inclusive: 120`，同时保留原字面字段与本条纠错收据。此处只是公告准入阈值的**文本准确性**修订，实际游戏服务器是否按文字执行仍 `UNVERIFIED_RUNTIME`；没有更改物种/奖励数量或历史大文件。
