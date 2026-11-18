@@ -1,0 +1,236 @@
+{
+  "schema": "stoneage.pet113.year2017_six_region_original_classicpc_source_bounded_annual_review.r1",
+  "id": "PET113-YEAR2017-SIX-REGION-ORIGINAL-PC-SOURCE-BOUNDED-AUDIT-20261118",
+  "date": "2026-11-18",
+  "active_module": "PET",
+  "year": 2017,
+  "year_frontier_before": 2017,
+  "year_frontier_after": 2018,
+  "review_status": "SOURCE_BOUNDED_REVIEWED",
+  "year_source_bounded_closed": true,
+  "year_reopenable": true,
+  "source_bounded_only": true,
+  "historically_complete": false,
+  "starting_remote": {
+    "main_sha": "945cf99af7d5abeec302609cdc17a108fcf0da03",
+    "main_tree": "d2fbf97e770b1cdc86108b166cdff3df4c746cfc",
+    "current_state_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_state_bytes": 2709173,
+    "open_prs_at_start": 0,
+    "main_exact_actions_success": 5
+  },
+  "prior_partial_receipts": [
+    "PET111-TW2017-DADI-OLDREALM-PET-SOURCE-BOUNDARY-20261118",
+    "PET112-TW2017-AUG-BLUE-TIGER-REOPENED-PROMO-20261118"
+  ],
+  "sources": [
+    {
+      "id": "CN2016-GAMERES-CINS-PC-CLOSURE-ALREADY-PET110",
+      "region": "CN",
+      "url": "https://www.gameres.com/655173.html",
+      "published_date": "2016-04",
+      "grade": "CONTEMPORANEOUS_2016_INDUSTRY_SECONDARY_NOT_2017_NATIVE",
+      "proves": "2016 original PC CINS shutdown reporting; separately dated 3D mobile closure",
+      "not_proved": "2017 live PC original operation absent in every Mainland service or 2017 PET full roster",
+      "prior_receipt": "PET110"
+    },
+    {
+      "id": "CN2022-SHANGHAI-YANGPU-COPYRIGHT-LICENCE-JUDICIAL-TRANSCRIPTION",
+      "region": "CN",
+      "url": "https://zh.wikisource.org/zh-hans/北京银河聚阵网络技术有限公司与北京宇通互动文化传播有限公司等著作权权属、侵权纠纷民事一审案件民事判决书",
+      "judgment_date": "2022-05-30",
+      "case_number": "（2021）沪0110民初13991号",
+      "grade": "LATER_JUDICIAL_TEXT_PUBLIC_WIKISOURCE_TRANSCRIPTION_NOT_ORIGINAL_COURT_URL_OR_2017_SOURCE",
+      "proves": "Reported 2016-05-02 copyright authorization, effective 2016-05-16 to 2018-11-01 and later litigant says no original operation resumed by its later testimony; regional IP rights and actual 2017 PC live deployment are different",
+      "not_proved": "Definitive proof that no separate 2017 official service, legally valid standalone PC game licence, original 2017 pet master"
+    },
+    {
+      "id": "TW2017-PET111-PERIOD-REALM-SOURCE",
+      "region": "TW",
+      "url": "https://www.ptt.cc/bbs/StoneAge/M.1493304995.A.CC3.html",
+      "published_date": "2017-04-27",
+      "grade": "PERIOD_PLAYER_VERBATIM_OPERATOR_RELAY_SEARCH_INDEX_DIRECT_403",
+      "proves": "Dadi vs Sayinas policy announcement as period copy",
+      "not_proved": "Original Taozhu HTML, client build, real pet availability",
+      "prior_receipt": "PET111"
+    },
+    {
+      "id": "TW2017-PET112-PERIOD-AUG-BLUE-TIGER-SOURCE",
+      "region": "TW",
+      "url": "https://www.pttweb.cc/bbs/StoneAge/M.1503905246.A.8CE",
+      "published_date": "2017-08-28",
+      "grade": "CONTEMPORANEOUS_MIRROR_OF_PLAYER_FACEBOOK_OPERATOR_RELAY",
+      "proves": "Second blue tiger promotion announcement, two eligible cohorts",
+      "not_proved": "Official Facebook primary HTML or native award logs",
+      "prior_receipt": "PET112"
+    },
+    {
+      "id": "TW2018-TAICHUNG-CRIMINAL-REVIEW-SECONDARY-TRANSCRIPTION",
+      "region": "TW",
+      "url": "https://www.shiqi.club/shiqi6417.html",
+      "judgment_claimed_date": "2018-12-12",
+      "case_claimed": "臺灣臺中地方法院107年度聲判字第115號",
+      "grade": "2026_THIRD_PARTY_REPRINT_OF_PURPORTED_2018_JUDICIAL_TEXT_NOT_ORIGINAL_JUDICIAL_SOURCE",
+      "proves": "Reproduced litigation narratives distinguish 2010 two-year original game-operating contract, 2011 ten-year character licence, and disputed source-code/copyright; court reportedly rejected application to commit to criminal trial",
+      "not_proved": "Unambiguous 2017 operator full legal authorization, original official per-server client, any particular original PC PET identity or criminal liability"
+    },
+    {
+      "id": "HKMO2011-DIGIPARK-TAOZHU-LICENCE-PRIOR",
+      "region": "HK_MO",
+      "url": "https://www.4gamer.net/games/013/G001377/20110908008/",
+      "published_date": "2011-09-08",
+      "grade": "PRIOR_PERIOD_DEVELOPER_VOICE_NEWS_RELEASE_NOT_2017_SERVICE_PROOF",
+      "proves": "Earlier HK/MO licensing intention",
+      "not_proved": "2017 HK/MO independent deployment/identical pet data",
+      "prior_receipt": "PET101"
+    },
+    {
+      "id": "KR2015-NETMARBLE-PC-STOP-PRIOR",
+      "region": "KR",
+      "url": "https://m.hungryapp.co.kr/news/news_view.php?bcode=news&pid=29038",
+      "published_date": "2015-07-22",
+      "grade": "CONTEMPORANEOUS_KOREAN_GAMES_PRESS_NOT_OPERATOR_NATIVE_CLIENT",
+      "proves": "Reports 2015 Aug original Korean classic PC termination plan",
+      "not_proved": "2017 official-PC species population 0 or universal absence",
+      "prior_receipt": "PET110"
+    },
+    {
+      "id": "KR2017-INVEN-ANIMATION-NEITHER-CLASSIC-PC-NOR-PET-ISSUANCE",
+      "region": "KR",
+      "url": "https://www.inven.co.kr/webzine/news/?game=111&iskin=webzine&vtype=pc",
+      "published_date": "2017-09-15",
+      "grade": "2017_KOREAN_TRADE_NEWS_ANIMATION_DERIVATIVE_NOT_ORIGINAL_PC",
+      "proves": "2017 coverage involves StoneAge animation promotional tie-in",
+      "not_proved": "2017 classic PC first-issue pets"
+    },
+    {
+      "id": "JP2010-NETGAMEBM-CLASSIC-PC-END-HISTORY",
+      "region": "JP",
+      "url": "https://netgamebm.com/games/view/46",
+      "historical_date": "2010-02-24T17:00",
+      "grade": "INDEPENDENT_JP_PC_GAME_DIRECTORY_HISTORICAL_END_RECORD_NOT_2017_PRIMARY",
+      "proves": "Original JP 2D Windows PC service historical closure dated Feb24 2010",
+      "not_proved": "Independent authorized 2017 reboot or native pet list"
+    },
+    {
+      "id": "JP2009-4GAMER-OPERATOR-EXIT-PRIOR",
+      "region": "JP",
+      "url": "https://www.4gamer.net/games/013/G001377/20091126051/",
+      "published_date": "2009-11-26",
+      "grade": "CONTEMPORANEOUS_JP_PRESS_RELAY_OF_DIGIPARK_TERMINATION",
+      "proves": "DigiPark original classic PC plan to end 2010-02-24",
+      "not_proved": "2017 native official pet population",
+      "prior_receipt": "PET110"
+    }
+  ],
+  "region_reviews": {
+    "CN": {
+      "region": "CN",
+      "version_lane": "CINS_CLASSIC_PC_CLOSED_2016_COURT_LATER_LICENSE_NOT_2017_NATIVE_DEPLOYMENT",
+      "grade": "2016_CONTEMPORANEOUS_SECONDARY_PC_CLOSURE_PLUS_2022_JUDICIAL_HTML_TRANSCRIPTION_OF_2016_2018_IP_LICENSE",
+      "known": "PET110 retained 2016-04-28 CINS original-PC closure period reporting. 2022 Shanghai Yangpu judgment public Wikisource transcription describes Netmarble->Yinhe Juzhen Mainland copyright licence signed 2016-05-02, effective 2016-05-16 through 2018-11-01 (later extensions), and litigant's retrospective statement that an original operation had not resumed due to publication approval by the time of testimony. A copyright licence DOES NOT prove an original 2017 PC deployment or any pet.",
+      "gap": "2017 Mainland actual operator authorization for live original classic PC, publisher/approval, independently authenticated 2017 classic PC client/patch, same-service pet tables and issuer logs. Contemporaneous closure + later litigant statement cannot establish a universal zero.",
+      "reopen_trigger": "CN2017_PRIMARY_ORIGINAL_PC_REOPEN_APPROVAL_CLIENT_HASH_NATIVE_PET_RELEASE"
+    },
+    "TW": {
+      "region": "TW",
+      "version_lane": "TAOZHU_DADI_VS_SAYINAS_2017_DISTINCT_PC_REALMS_LEGAL_LICENSE_LAYERS_UNRESOLVED",
+      "grade": "PET111_2017_CONTEMPORANEOUS_PLAYER_OPERATOR_RELAY_PET112_PERIOD_FANPAGE_RELAY_AND_2018_JUDICIAL_REPRINT_UNVERIFIED_PRIMARY",
+      "known": "PET111 Apr27 period PTT relay of 2017-04-26 operator plan for May1 Dadi realm; level1 pet obtain by wild/quest/pet shop, lottery exclusion, fusion sealed, starter unnamed, Blue Tiger reward through May31. PET112 Aug28 contemporaneous fanpage relay provides Aug30-Nov1 repeat Blue Tiger grant with two account-level cohorts, still not native logs. A 2026 secondary reprint of a 2018 Taiwan Taichung court decision describes 2010 two-year game-operation agreement and a separate 2011 ten-year characters licence; criminal request was dismissed and programme implementation/original-source relationship was disputed, NOT judicial certification of 2017 specific PET build or universal termination of authorization.",
+      "gap": "2017 dated directly accessible Taozhu first-party original notice, downloadable authenticated client/patch and same-build pet map/SPR/skills, server-specific Dadi/Sayinas pet eligibility and actual blue-tiger/starter grants; independently read 2018 court original if legal provenance impacts classifying this lineage.",
+      "reopen_trigger": "TW2017_TAOZHU_ORIGINAL_OPERATOR_CLIENT_HASH_REALM_PET_MASTER_AND_GRANTS_COURT_ORIGINAL"
+    },
+    "HK_MO": {
+      "region": "HK_MO",
+      "version_lane": "TAOZHU_DIGIPARK_2011_LICENSE_HKMO_DISTINCT_2017_DEPLOYMENT_UNKNOWN",
+      "grade": "2011_PERIOD_DIGIPARK_LICENCE_AND_2018_SECONDARY_COURT_REPRINT_CHARACTER_LICENCE_DISTINCT_FROM_2017_SERVICE",
+      "known": "PET101 records DigiPark 2011 contemporaneous license to Taozhu for HK/MO service planning. The 2018 Taiwan court reprint discusses a separate 2011 characters licence referring to TW/HK/MO, but that is not proof an independent HK or MO original PC service or shared 2017 Taiwan realm pet table existed.",
+      "gap": "2017 separately licensed HK/MO service or proof that HK/MO players accessed particular TW realms, exact build/source bytes, original pet IDs, issued pet events.",
+      "reopen_trigger": "HKMO2017_INDEPENDENT_OPERATOR_DEPLOYMENT_OR_PROVEN_TW_REALM_SHARED_NATIVE_PET_MASTER"
+    },
+    "KR": {
+      "region": "KR",
+      "version_lane": "NETMARBLE_CLASSIC_PC_2015_SHUTDOWN_NO_VERIFIED_2017_OFFICIAL_PC_RELAUNCH",
+      "grade": "2015_CONTEMPORANEOUS_SECONDARY_PC_TERMINATION_PLUS_2017_ANIMATION_MARKETING_DISTINCT",
+      "known": "PET110 documented 2015-07-22 Korean contemporaneous gaming press scheduling classic PC closure for 2015-08-21. 2017-09-15 Inven coverage explicitly relates to StoneAge animated television product rather than 2017 original PC pet issuance; Netmarble 2016 Origins mobile is separate.",
+      "gap": "Direct archived Netmarble PC closure original and any real 2017 officially relaunched classic PC title/operator/build with same-version pet release or provenance-qualified live gameplay.",
+      "reopen_trigger": "KR2017_NETMARBLE_OR_AUTHORIZED_ORIGINAL_PC_RESTART_NATIVE_PET_SOURCE"
+    },
+    "JP": {
+      "region": "JP",
+      "version_lane": "DIGIPARK_CLASSIC_PC_2010_END_NOT_A_2017_LIVE_SPECIES_CENSUS",
+      "grade": "2009_CONTEMPORANEOUS_INDUSTRY_OPERATOR_EXIT_AND_INDEPENDENT_JP_PC_GAME_HISTORY_2010",
+      "known": "PET110 retained 2009 4Gamer contemporary DigiPark termination announcement. Independent Japanese PC directory Netgamebm gives classic 2D Windows service end 2010-02-24 17:00, not a dated 2017 re-launch or official pet roster.",
+      "gap": "First-party 2017 Japanese PC operating reissue if any, exact license, native client/patch, pet table and official issued/captured pet records. Prior closure never means all 2017 possible population zero.",
+      "reopen_trigger": "JP2017_LICENSED_CLASSIC_PC_RESTART_OPERATOR_BUILD_AND_LIVE_PET_ISSUE"
+    },
+    "OTHER": {
+      "region": "OTHER",
+      "version_lane": "OTHER_OFFICIALLY_LICENSED_2017_CLASSIC_PC_OPERATOR_UNRESOLVED",
+      "grade": "BOUNDED_FREE_SEARCH_NO_IDENTIFIED_INDEPENDENT_2017_CLASSIC_PC_OFFICIAL_CLIENT_BYTES",
+      "known": "Bounded 2017 free-source review did not locate another independently verifiable country/operator with an authenticated 2017 original classic-PC client or server pet issue. Modern derivative/mobiles and unlicensed modifications are not original PC region proof.",
+      "gap": "Specific 2017 country, original operator license and period archive, full original PC release/build, authentic 2017 named pet issuance and source hashes.",
+      "reopen_trigger": "OTHER2017_COUNTRY_OPERATOR_OFFICIAL_CLASSIC_PC_NATIVE_PET_SOURCE"
+    }
+  },
+  "reopen_triggers": [
+    "CN2017_PRIMARY_ORIGINAL_PC_REOPEN_APPROVAL_CLIENT_HASH_NATIVE_PET_RELEASE",
+    "TW2017_TAOZHU_ORIGINAL_OPERATOR_CLIENT_HASH_REALM_PET_MASTER_AND_GRANTS_COURT_ORIGINAL",
+    "HKMO2017_INDEPENDENT_OPERATOR_DEPLOYMENT_OR_PROVEN_TW_REALM_SHARED_NATIVE_PET_MASTER",
+    "KR2017_NETMARBLE_OR_AUTHORIZED_ORIGINAL_PC_RESTART_NATIVE_PET_SOURCE",
+    "JP2017_LICENSED_CLASSIC_PC_RESTART_OPERATOR_BUILD_AND_LIVE_PET_ISSUE",
+    "OTHER2017_COUNTRY_OPERATOR_OFFICIAL_CLASSIC_PC_NATIVE_PET_SOURCE"
+  ],
+  "candidate_labels_by_grade": {
+    "TW_period_relay_event_named_pet_not_verified_native": [
+      "藍虎"
+    ],
+    "TW_period_relay_unnamed_starter": [
+      "出生寵"
+    ],
+    "CN_2017_original_native_pet_names_verified": [],
+    "KR_2017_original_native_pet_names_verified": [],
+    "JP_2017_original_native_pet_names_verified": []
+  },
+  "legal_boundary": {
+    "cn_later_judicial_transcription_not_2017_deployment": true,
+    "cn_2016_2018_ip_copyright_license_separate_from_pc_2017_operating_license": true,
+    "tw_2018_court_secondary_text_not_official_judicial_page": true,
+    "tw_2010_two_year_operation_agreement_and_2011_ten_year_character_agreement_separate": true,
+    "tw_criminal_review_dismissal_not_final_civil_rights_clearance": true,
+    "tw_operator_software_source_not_2017_client_sha": true
+  },
+  "negative_controls": {
+    "year_source_bounded_not_historically_complete": true,
+    "six_regions_individually_reopenable": true,
+    "no_announced_blue_tiger_grant_as_native_release": true,
+    "no_repeated_reward_as_new_species": true,
+    "no_late_judicial_2022_statement_as_2017_period_log": true,
+    "no_cn_copyright_license_as_2017_original_pc_operation": true,
+    "no_tw_legal_dispute_flattened_to_unlicensed_or_permanently_licensed": true,
+    "no_court_reprint_as_primary_original": true,
+    "no_hk_mo_character_license_as_2017_pet_service": true,
+    "no_kr_2017_animation_or_mobile_as_classic_pc_pet": true,
+    "no_jp_2010_shutdown_as_2017_zero_species": true,
+    "no_species_count_from_absent_clients": true,
+    "no_other_country_absence_as_true_zero": true,
+    "no_private_server_or_sales_lookups": true,
+    "no_proprietary_original_assets_published": true,
+    "no_other_module_unlocked": true
+  },
+  "new_2017_original_pc_client_bytes": 0,
+  "new_2017_original_pc_patch_bytes": 0,
+  "new_2017_native_pet_ids": 0,
+  "new_2017_original_spr_frames": 0,
+  "new_2017_native_pet_skills": 0,
+  "new_2017_server_pet_grant_logs": 0,
+  "original_pc_global_2017_species_count": null,
+  "original_pc_2017_first_release_count": null,
+  "current_state_original_blob_unchanged": true,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "report_path": "docs/continuity/STONEAGE-PET113-YEAR2017-SIX-REGION-ORIGINAL-PC-BOUNDED-AUDIT-20261118.md",
+  "next": "PET114: begin 2018 six-region classic-PC official version/client-first pet source investigation; 2017 reviewed only source-bounded and all six regions reopenable"
+}

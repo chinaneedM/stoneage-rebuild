@@ -234,3 +234,8 @@ PET仍独占活动模块，2001年份继续OPEN。优先真实**能合法免费�
 ## 2026-11-18｜PET112 2017 台服藍虎活動第二期已限界記錄，2017 年審仍未完成
 
 [PET112 當期 PTT 玩家轉貼及兩組補領條件](continuity/STONEAGE-PET112-TW2017-AUGUST-BLUE-TIGER-REOPENED-PROMOTION-20261118.md)僅補2017台服「大地女神」8/30–11/01第二期藍虎、騎證**公開預告**，與PET111在4月所存5/31第一期相互分離，沒有新增原客戶端/SPR/技能/官服發放和新物種實裝。2017仍 **NOT_YEAR_AUDITED**，唯一活動模組 **PET**；NEXT **PET113** 才繼續2017六地逐區來源及有界年審。完整CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`（2,709,173B）不變；無其他模組解鎖、無收費賣盤，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING、總完成率 UNKNOWN。
+
+
+## 2026-11-18｜PET113 2017 六地区官方原版 PC 宠物有界年审 → 2018
+
+[PET113六地区2017年审](continuity/STONEAGE-PET113-YEAR2017-SIX-REGION-ORIGINAL-PC-BOUNDED-AUDIT-20261118.md)已保留 TW PET111/112 同期玩家转引及两次蓝虎活动与服务器原生缺口，CN 2016经典PC停服与后出2016–18 **IP著作许可**（非2017上线）、HK/MO授权地区与真实2017部署分离、KR/JP旧PC停运与2017其他IP衍生隔离。新认证原2017PC客户端/补丁/原PET ID/SPR/技能/实际发宠全0，历史总/首发宠物种数null。2017仅**SOURCE_BOUNDED_REVIEWED**，不是官服宠物历史完整；六地可独立重开。PET依旧唯一活动模块，**NEXT PET114 2018各地区/运营/版本客户端优先考据**。原历史CURRENT `c89e0e33537990aa2132b47c40fef49a985a935c`（2,709,173B）不写，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING、总完成率UNKNOWN。

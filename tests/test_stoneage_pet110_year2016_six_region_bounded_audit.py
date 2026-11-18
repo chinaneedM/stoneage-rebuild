@@ -35,10 +35,10 @@ class TestPet110Year2016SourceBoundedReview(unittest.TestCase):
         self.assertIsNone(year["historical_species_count"])
         self.assertIsNone(a["original_pc_global_2016_species_count"])
         self.assertIsNone(a["original_pc_2016_first_release_count"])
-        self.assertEqual(next_year["research_gate"], "NOT_YEAR_AUDITED")
-        self.assertEqual(q["current_frontier"]["year"], 2017)
-        self.assertEqual(q["current_frontier"]["latest_source_bounded_annual_review"], a["id"])
-        self.assertEqual(q["current_frontier"]["latest_partial_root_review"], a["id"])
+        self.assertEqual(next_year["research_gate"], "SOURCE_BOUNDED_REVIEWED")  # PET113 forward-only later year review
+        self.assertGreaterEqual(q["current_frontier"]["year"], 2017)
+        self.assertIn(a["id"],[z["id"] for z in q["root_source_census_receipts"]])
+        self.assertIn(a["id"],[z["id"] for z in q["root_source_census_receipts"]])
         self.assertTrue(a["next"].startswith("PET111:"))  # historical 2016 closure NEXT not current live NEXT
         self.assertIn("2017", REPORT.read_text(encoding="utf-8"))
 
@@ -67,8 +67,8 @@ class TestPet110Year2016SourceBoundedReview(unittest.TestCase):
         self.assertEqual(len(a["prior_partial_receipts"]), 4)
         self.assertEqual([r["id"] for r in y["partial_source_review_receipts"]][:4], a["prior_partial_receipts"])
         self.assertEqual(y["partial_source_review_receipts"][-1]["id"], a["id"])
-        self.assertEqual(q["root_source_census_receipts"][-1]["id"], a["id"])
-        self.assertEqual(q["root_source_census_receipts"][-1]["year_frontier_after"], 2017)
+        self.assertIn(a["id"],[z["id"] for z in q["root_source_census_receipts"]])
+        self.assertEqual(next(z for z in q["root_source_census_receipts"] if z["id"] == a["id"])["year_frontier_after"], 2017)
         self.assertEqual(len(q["root_source_census_receipts"]),
                          len({z["id"] for z in q["root_source_census_receipts"]}))
         self.assertEqual(q["current_frontier"]["latest_2016_partial_source_receipt"], a["prior_partial_receipts"][-1])
