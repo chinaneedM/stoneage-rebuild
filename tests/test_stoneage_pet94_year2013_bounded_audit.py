@@ -27,7 +27,7 @@ class Pet94Year2013(unittest.TestCase):
         self.assertTrue(a["year_reopenable"])
         self.assertIsNone(a["global_original_pc_pet_species_count_2013"])
         self.assertIsNone(a["first_release_2013_species_count"])
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET96:"))
+        self.assertTrue(q["current_frontier"]["next"].startswith("PET97:"))
     def test_2013_receipts_prefix_preserved_and_six_gates(self):
         a,q=self.a,self.q
         self.assertEqual(len(a["prior_receipts"]),3)
