@@ -35,6 +35,12 @@ class PET85Year2011(unittest.TestCase):
         self.assertEqual(x["separate_monster_event_reward"], "PET_EXCHANGE_VOUCHER_RANDOM_SPECIES_UNKNOWN")
         j = e["2011_CN_JAN26_FEB09"]
         self.assertEqual(j["rage_input_pet"], "朵巴奈特")
+        self.assertEqual(j["rage_input_min_level_inclusive"], 100)
+        self.assertEqual(j["rage_input_level_operator_text"], "Lv100以上")
+        self.assertEqual(j["scorpion_input_min_level_inclusive"], 120)
+        self.assertEqual(j["scorpion_input_level_operator_text"], "Lv120以上")
+        self.assertNotIn("rage_input_level_greater_than", j)
+        self.assertNotIn("scorpion_input_level_greater_than", j)
         self.assertEqual(j["rage_output"], "狂暴版朵巴奈特")
         self.assertEqual(j["rage_skill"], "狂暴攻击")
         self.assertEqual(j["scorpion_input_pet"], "欧西摩米")
