@@ -1,0 +1,248 @@
+{
+  "schema": "stoneage.pet82.year2009.official_five_region_bounded_audit.r1",
+  "id": "PET82-2009-FIVE-REGION-ORIGINAL-PC-BOUNDED-YEAR-AUDIT-20261118",
+  "date": "2026-11-18",
+  "active_module": "PET",
+  "year": 2009,
+  "review_status": "SOURCE_BOUNDED_REVIEWED",
+  "historically_complete": false,
+  "startup": {
+    "head": "3b787f3c14dbc0e4e2aca0d29e5a98a44023d362",
+    "tree": "6dae67d4a3b1e238f8e1719b174702e26327976c",
+    "main_actions_success": 4,
+    "main_actions_total": 4,
+    "open_prs": 0,
+    "current_native_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_native_bytes": 2709173
+  },
+  "prior_partial_receipts": [
+    "PET80-2009-JP-KR-OFFICIAL-NAMED-PET-FIRST-PASS-20261118",
+    "PET81-2009-KR-CHILDRENS-DAY-NAMED-PETS-JP-DEC-OPEN-20261118"
+  ],
+  "source_records": [
+    {
+      "id": "JP2009-DIGIPARK-1126-DEC-FUTURE",
+      "region": "JP",
+      "attestation_date": "2009-11-26",
+      "url": "https://www.4gamer.net/games/013/G001377/20091126051/",
+      "kind": "REUSED_PERIOD_DIGIPARK_ORIGINAL_2009_DEC_PLANS_NOT_ACTUAL_PATCH",
+      "planned_2009_dates": [
+        "2009-12-01",
+        "2009-12-22",
+        "2009-12-29"
+      ],
+      "planned_2010_dates": [
+        "2010-01-12",
+        "2010-01-19"
+      ],
+      "notice_allows_schedule_change": true,
+      "actual_dec_updates_verified": false,
+      "new_pets_named": false
+    },
+    {
+      "id": "JP2009-DIGIPARK-HAKUEN-KOKUEN",
+      "region": "JP",
+      "attestation_date": "2009",
+      "urls": [
+        "https://www.4gamer.net/games/013/G001377/20090428039/",
+        "https://www.4gamer.net/games/013/G001377/20090629031/"
+      ],
+      "kind": "REUSE_PET80_OPERATOR_NAMED_EXCHANGE_MECHANISMS",
+      "historical_PET25_PET26_event_ids": [
+        "JP-2009-HAKUEN",
+        "JP-2009-KOKUEN"
+      ],
+      "additional_new_event_count": 0
+    },
+    {
+      "id": "KR2009-CJ-0429-REWARD",
+      "region": "KR",
+      "attestation_date": "2009-04-29",
+      "urls": [
+        "https://www.gamechosun.co.kr/webzine/article/view.php?no=59534",
+        "https://www.inven.co.kr/webzine/news/?news=20964"
+      ],
+      "kind": "REUSE_PET81_PERIOD_OPERATOR_NAMED_PETS_ONE_PRESS_ORIGIN",
+      "names": [
+        "젖소",
+        "흑우",
+        "화우",
+        "하누",
+        "설표"
+      ],
+      "all_new_species_in_2009_proven": false,
+      "level30_is_adoption_eligibility_not_guaranteed_award": true
+    },
+    {
+      "id": "KR2009-CJ-0728-PLATIUS",
+      "region": "KR",
+      "attestation_date": "2009-07-28",
+      "url": "https://www.gamemeca.com/view.php?gid=79470",
+      "kind": "REUSE_PET80_CJ_PERIOD_QUEST_REWARD_NAME",
+      "name": "플라티우스",
+      "map_pieces_are_items_not_pets": 6,
+      "original_native_id": null
+    },
+    {
+      "id": "KR2008-DANGUN-NOT_2009",
+      "region": "KR",
+      "attestation_date": "2008-10-02",
+      "url": "https://www.inven.co.kr/webzine/news/?news=17718",
+      "kind": "EXCLUDE_2008_NEWS_FROM_2009_AS_WRONG_YEAR",
+      "not_2009": true
+    },
+    {
+      "id": "CN2009-SHENGSI-STONEAGE2",
+      "region": "CN",
+      "attestation_date": "2009-10-16",
+      "urls": [
+        "https://games.sina.com.cn/o/g/2009-10-16/18249328.shtml",
+        "https://news.17173.com/content/2009-11-19/20091119122952481,1.shtml",
+        "https://news.17173.com/content/2009-11-25/20091125155433968_all.shtml"
+      ],
+      "kind": "CONTEMPORANEOUS_OPERATOR_ANNOUNCED_STONEAGE2_LICENSE_AND_SOURCE_AUTHORIZATION",
+      "actual_product_line": "StoneAge2",
+      "does_not_prove_2009_original_pc_8_5_live": true
+    },
+    {
+      "id": "CN2010-SHENGSI-ORIGINAL-8_5-ANNOUNCEMENT",
+      "region": "CN",
+      "attestation_date": "2010-05-21",
+      "url": "https://games.sina.com.cn/o/n/2010-05-21/1553401597.shtml",
+      "kind": "OUT_OF_YEAR_FUTURE_FIRST_PARTY_RELAY_DISTINGUISH_2010_STONEAGE1_LICENSE_FROM_2009_STONEAGE2",
+      "original_pc_license_announced_2010": true,
+      "new_2009_pet_release_derived": false,
+      "first_2010_live_server_verified": false
+    },
+    {
+      "id": "TW2008-WAEI-ORIGINAL-END-RELAY",
+      "region": "TW",
+      "attestation_date": "2008-07-01",
+      "url": "https://www.ptt.cc/bbs/DepthFantasy/M.1214904072.A.AE7.html",
+      "kind": "PRIOR_YEAR_WAEI_OPERATOR_NOTICE_RELAY_PLANNED_STOP_ORIGINAL_2008_07_31",
+      "executed_shutdown_independently_verified": false
+    },
+    {
+      "id": "TW2009-INSREA-STONEAGE2-SUSPENSION",
+      "region": "TW",
+      "attestation_date": "2009-11-23",
+      "urls": [
+        "https://gnn.gamer.com.tw/detail.php?sn=40676",
+        "https://www.gamersky.com/news/200911/153217.shtml"
+      ],
+      "kind": "CONTEMPORANEOUS_RELAY_OF_OPERATOR_STONEAGE2_SUSPENSION_NOTICE",
+      "actual_product_line": "StoneAge2",
+      "planned_stoppage_date": "2009-12-24",
+      "original_operator_html_exact_bytes_verified": false,
+      "post_stop_execution_verified": false
+    }
+  ],
+  "region_reviews": {
+    "CN": {
+      "tracks": [
+        "KINGSOFT_NEW_STONEAGE1_2008_SHUTDOWN_BOUNDARY_UNRESOLVED",
+        "SHENGSI_2009_STONEAGE2_ONLY",
+        "SHENGSI_STONEAGE1_8_5_RIGHTS_ANNOUNCED_2010_05_21"
+      ],
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "pet_population": null,
+      "native_pet_id_rows_verified": 0,
+      "same_build_client_bytes_new": 0,
+      "actual_reward_grant_log_verified": false,
+      "historically_complete": false,
+      "reopen_trigger": "CN_2009_ORIGINAL_STONEAGE1_OPERATOR_LIVE_LICENSE_AND_SAME_DEPLOYMENT_CLIENT_PET_RELEASE_NOT_2009_STONEAGE2"
+    },
+    "TW": {
+      "tracks": [
+        "WAEI_STONEAGE1_2008_SHUTDOWN_RELAY",
+        "INSREA_STONEAGE2_2009_SEPARATE"
+      ],
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "pet_population": null,
+      "native_pet_id_rows_verified": 0,
+      "same_build_client_bytes_new": 0,
+      "actual_reward_grant_log_verified": false,
+      "historically_complete": false,
+      "reopen_trigger": "TW_2009_ORIGINAL_STONEAGE1_OPERATOR_APPLIED_SHUTDOWN_OR_NEW_LICENSE_NATIVE_PET_RELEASE_NOT_STONEAGE2"
+    },
+    "JP": {
+      "tracks": [
+        "DIGIPARK_STONEAGE1_2009",
+        "DIGIPARK_STONEAGE2_SEPARATE"
+      ],
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "pet_population": null,
+      "native_pet_id_rows_verified": 0,
+      "same_build_client_bytes_new": 0,
+      "actual_reward_grant_log_verified": false,
+      "historically_complete": false,
+      "reopen_trigger": "JP_2009_DIGIPARK_DEC01_DEC22_DEC29_APPLIED_NATIVE_PATCH_UNNAMED_PETS_AND_ACTUAL_GRANTS"
+    },
+    "KR": {
+      "tracks": [
+        "CJ_NETMARBLE_STONEAGE1_2009",
+        "STONEAGE2_SEPARATE"
+      ],
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "pet_population": null,
+      "native_pet_id_rows_verified": 0,
+      "same_build_client_bytes_new": 0,
+      "actual_reward_grant_log_verified": false,
+      "historically_complete": false,
+      "reopen_trigger": "KR_2009_CJ_NETMARBLE_APR29_JUL28_PERIOD_NATIVE_PET_NAMES_ID_SPR_AND_ACTUAL_GRANT_LOG"
+    },
+    "OTHER": {
+      "tracks": [],
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "pet_population": null,
+      "native_pet_id_rows_verified": 0,
+      "same_build_client_bytes_new": 0,
+      "actual_reward_grant_log_verified": false,
+      "historically_complete": false,
+      "reopen_trigger": "OTHER_2009_VERIFIED_ORIGINAL_PC_STONEAGE1_LICENSED_OPERATOR_AND_NATIVE_PET_RELEASE"
+    }
+  },
+  "five_region_reopen_triggers": [
+    "CN_2009_ORIGINAL_STONEAGE1_OPERATOR_LIVE_LICENSE_AND_SAME_DEPLOYMENT_CLIENT_PET_RELEASE_NOT_2009_STONEAGE2",
+    "TW_2009_ORIGINAL_STONEAGE1_OPERATOR_APPLIED_SHUTDOWN_OR_NEW_LICENSE_NATIVE_PET_RELEASE_NOT_STONEAGE2",
+    "JP_2009_DIGIPARK_DEC01_DEC22_DEC29_APPLIED_NATIVE_PATCH_UNNAMED_PETS_AND_ACTUAL_GRANTS",
+    "KR_2009_CJ_NETMARBLE_APR29_JUL28_PERIOD_NATIVE_PET_NAMES_ID_SPR_AND_ACTUAL_GRANT_LOG",
+    "OTHER_2009_VERIFIED_ORIGINAL_PC_STONEAGE1_LICENSED_OPERATOR_AND_NATIVE_PET_RELEASE"
+  ],
+  "evidence_boundaries": {
+    "japan_dec_announced_plans_not_actual_live_patch": true,
+    "japan_2009_229_marketing_not_native_species_master": true,
+    "japan_2010_future_dates_not_2009_release": true,
+    "japanese_exchange_tickets_and_transform_items_not_species": true,
+    "korean_2009_cow_etc_list_not_complete_and_five_names_not_first_2009_species": true,
+    "korean_snow_leopard_30_is_eligibility_not_automatic_grant": true,
+    "korean_july_six_map_shards_not_six_pets": true,
+    "korean_2008_dangun_event_not_relabelled_2009": true,
+    "chinese_2009_shengsi_stoneage2_not_original_pc_one": true,
+    "chinese_original_pc_8_5_license_2010_notice_not_2009_pet_release": true,
+    "taiwan_2009_insrea_stoneage2_not_waei_stoneage1": true,
+    "taiwan_2008_waei_shutdown_relay_not_original_server_execution": true,
+    "regional_population_unknown_not_zero": true,
+    "one_operator_release_multiple_media_reprints_not_independent_reward_logs": true,
+    "no_paid_marketplace": true,
+    "no_private_server_as_official": true,
+    "no_native_in_game_runtime_proof": true
+  },
+  "new_authentic_2009_original_client_bytes": 0,
+  "new_original_2009_native_pet_ids": 0,
+  "new_original_2009_native_sprite_skill_links": 0,
+  "new_actual_2009_original_server_grant_logs": 0,
+  "confirmed_first_year_species_count": null,
+  "global_official_species_population": null,
+  "year_frontier_before": 2009,
+  "year_frontier_after": 2010,
+  "year_2009_source_bounded_reviewed": true,
+  "year_2009_historically_complete": false,
+  "next": "PET83: earliest unreviewed year 2010, first-party original PC pet and patch releases by JP/KR/CN/TW/OTHER; separate 2010 operator license from actual game launch; no paid seller materials.",
+  "historical_current_unmodified": true,
+  "source_art_released": false,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}
