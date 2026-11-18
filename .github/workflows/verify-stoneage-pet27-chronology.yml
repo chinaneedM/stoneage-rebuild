@@ -53,6 +53,9 @@ on:
       - "tests/test_stoneage_pet82_year2009_bounded_audit.py"
       - "tests/test_stoneage_pet83_year2010_original_pc_sources.py"
       - "tests/test_stoneage_pet84_year2010_bounded_audit.py"
+      - "tests/test_stoneage_pet85_year2011_original_pc_pets.py"
+      - "research/recovered/STONEAGE-PET85-YEAR2011-CN85-TW-OFFICIAL-PET-EVENT-CANDIDATES-R1.json"
+      - "docs/continuity/STONEAGE-PET85-YEAR2011-CN85-TW-ORIGINAL-PC-NAMED-PET-REWARD-AND-REGION-FIRST-PASS-20261118.md"
       - "research/recovered/STONEAGE-PET84-YEAR2010-DRAGONS-FIVE-REGION-BOUNDED-AUDIT-R1.json"
       - "docs/continuity/STONEAGE-PET84-YEAR2010-FIVE-REGION-BOUNDED-OFFICIAL-PET-AUDIT-20261118.md"
       - "research/recovered/STONEAGE-PET83-YEAR2010-CN85-ORIGINAL-CLIENT-MERMAID-WHALES-OTHER-REGION-BOUNDARIES-R1.json"
@@ -174,6 +177,9 @@ on:
       - "tests/test_stoneage_pet82_year2009_bounded_audit.py"
       - "tests/test_stoneage_pet83_year2010_original_pc_sources.py"
       - "tests/test_stoneage_pet84_year2010_bounded_audit.py"
+      - "tests/test_stoneage_pet85_year2011_original_pc_pets.py"
+      - "research/recovered/STONEAGE-PET85-YEAR2011-CN85-TW-OFFICIAL-PET-EVENT-CANDIDATES-R1.json"
+      - "docs/continuity/STONEAGE-PET85-YEAR2011-CN85-TW-ORIGINAL-PC-NAMED-PET-REWARD-AND-REGION-FIRST-PASS-20261118.md"
       - "research/recovered/STONEAGE-PET84-YEAR2010-DRAGONS-FIVE-REGION-BOUNDED-AUDIT-R1.json"
       - "docs/continuity/STONEAGE-PET84-YEAR2010-FIVE-REGION-BOUNDED-OFFICIAL-PET-AUDIT-20261118.md"
       - "research/recovered/STONEAGE-PET83-YEAR2010-CN85-ORIGINAL-CLIENT-MERMAID-WHALES-OTHER-REGION-BOUNDARIES-R1.json"
@@ -294,6 +300,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet83_year2010_original_pc_sources
       - name: PET84 2010 five-region official-source bounded year audit
         run: python -m unittest tests.test_stoneage_pet84_year2010_bounded_audit
+      - name: PET85 2011 original PC named pet and client source boundaries
+        run: python -m unittest tests.test_stoneage_pet85_year2011_original_pc_pets
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary

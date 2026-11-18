@@ -18,8 +18,8 @@
     "year": 2011,
     "phase": "YEAR_2011_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET84-2010-FIVE-REGION-SOURCE-BOUNDED-REVIEW-CN-DRAGONS-20261118",
-    "next": "PET85: 2011 five-region official original PC pet client-first audit: CN Shengsi Jan15 nonwipe, TW Taozhu Apr official first client, KR CJ original pet patches, JP 2010 shutdown/new operator qualification, OTHER. No paid market.",
+    "latest_partial_root_review": "PET85-YEAR2011-CN-TW-JP-KR-OTHER-NAMED-PET-AND-CLIENT-FIRST-PASS-20261118",
+    "next": "PET86: keep 2011 OPEN; bounded free true original CN8.5/CN2.5/TW Apr25 client/patch bytes and native pet mapping, TW seasonal rewards, KR contemporary CJ named original PC patch, JP operator status, OTHER.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -1965,7 +1965,34 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "partial_source_review_receipts": [
+        {
+          "id": "PET85-YEAR2011-CN-TW-JP-KR-OTHER-NAMED-PET-AND-CLIENT-FIRST-PASS-20261118",
+          "regions": [
+            "CN",
+            "TW",
+            "JP",
+            "KR",
+            "OTHER"
+          ],
+          "report": "docs/continuity/STONEAGE-PET85-YEAR2011-CN85-TW-ORIGINAL-PC-NAMED-PET-REWARD-AND-REGION-FIRST-PASS-20261118.md",
+          "evidence_json": "research/recovered/STONEAGE-PET85-YEAR2011-CN85-TW-OFFICIAL-PET-EVENT-CANDIDATES-R1.json",
+          "year_frontier_before": 2011,
+          "year_frontier_after": 2011,
+          "year_not_closed": true,
+          "historically_complete": false,
+          "new_original_2011_client_bytes": 0,
+          "new_native_pet_ids": 0,
+          "global_2011_species_count": null,
+          "new_named_source_attestation_rows": 11,
+          "source_classes": [
+            "CN8.5_TEST_EXCHANGE_PROMISES",
+            "CN8.5_HONOR_SHOP_PLANNED_VS_OPERATOR_CURRENT",
+            "TW2011_ORIGINAL_CLIENT_PUBLIC_RELEASE_NOTICE"
+          ]
+        }
+      ]
     },
     {
       "year": 2012,
@@ -3337,6 +3364,31 @@
       "new_2010_named_pet_source_attestations": [
         "邦恩多斯",
         "斯天多斯"
+      ]
+    },
+    {
+      "id": "PET85-YEAR2011-CN-TW-JP-KR-OTHER-NAMED-PET-AND-CLIENT-FIRST-PASS-20261118",
+      "regions": [
+        "CN",
+        "TW",
+        "JP",
+        "KR",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET85-YEAR2011-CN85-TW-ORIGINAL-PC-NAMED-PET-REWARD-AND-REGION-FIRST-PASS-20261118.md",
+      "evidence_json": "research/recovered/STONEAGE-PET85-YEAR2011-CN85-TW-OFFICIAL-PET-EVENT-CANDIDATES-R1.json",
+      "year_frontier_before": 2011,
+      "year_frontier_after": 2011,
+      "year_not_closed": true,
+      "historically_complete": false,
+      "new_original_2011_client_bytes": 0,
+      "new_native_pet_ids": 0,
+      "global_2011_species_count": null,
+      "new_named_source_attestation_rows": 11,
+      "source_classes": [
+        "CN8.5_TEST_EXCHANGE_PROMISES",
+        "CN8.5_HONOR_SHOP_PLANNED_VS_OPERATOR_CURRENT",
+        "TW2011_ORIGINAL_CLIENT_PUBLIC_RELEASE_NOTICE"
       ]
     }
   ],
