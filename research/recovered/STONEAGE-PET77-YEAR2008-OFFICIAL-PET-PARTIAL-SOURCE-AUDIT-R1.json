@@ -1,0 +1,176 @@
+{
+  "schema": "STONEAGE-PET77-YEAR2008-OFFICIAL-SOURCE-PARTIAL-R1",
+  "id": "PET77-2008-OFFICIAL-FIVE-REGION-SOURCE-FIRST-PASS-20261118",
+  "date": "2026-11-18",
+  "active_module": "PET",
+  "year": 2008,
+  "review_status": "PARTIAL_NOT_YEAR_AUDITED",
+  "historically_complete": false,
+  "startup": {
+    "head": "fe4d581cfe5bb1eca3b04fb9f9a1f07f625f5dab",
+    "tree": "59892675756838e455d197e99d06fbdf0d06332f",
+    "head_checks_success": 29,
+    "head_checks_total": 29,
+    "open_prs": 0,
+    "original_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_state_size_bytes": 2709173
+  },
+  "sources": [
+    {
+      "id": "KR-2008-0114-ICE-CASTLE",
+      "region": "KR",
+      "product_line": "NETMARBLE_STONEAGE1_PC",
+      "date": "2008-01-14",
+      "source_grade": "PERIOD_MEDIA_OPERATOR_STATEMENT",
+      "url": "https://kr.aving.net/news/articleViewAmp.html?idxno=70329",
+      "kind": "ADDITION_ANNOUNCEMENT",
+      "claimed_new_pets": 9,
+      "claimed_rare_items": 26,
+      "actual_native_names_found": 0,
+      "lvl1_capture_room_reported": true,
+      "real_release_server_logs": false
+    },
+    {
+      "id": "KR-2008-0114-NATE-REPRINT",
+      "region": "KR",
+      "product_line": "NETMARBLE_STONEAGE1_PC",
+      "date": "2008-01-14",
+      "source_grade": "PERIOD_MEDIA_REPRINT_NOT_INDEPENDENT_NATIVE_EVIDENCE",
+      "url": "https://news.nate.com/view/20080114n22853"
+    },
+    {
+      "id": "KR-2008-1002-DANGUN-EVENT",
+      "region": "KR",
+      "product_line": "NETMARBLE_STONEAGE1_PC",
+      "date": "2008-10-02",
+      "source_grade": "PERIOD_MEDIA_OPERATOR_PROVIDED_COPY",
+      "url": "https://www.inven.co.kr/webzine/news/?news=17718",
+      "event_pet_unnamed": true
+    },
+    {
+      "id": "JP-2008-0415-GORUNFOOT",
+      "region": "JP",
+      "product_line": "DIGIPARK_STONEAGE1_PC_GASH_MARKETING",
+      "date": "2008-04-15",
+      "source_grade": "PERIOD_OPERATOR_PLATFORM_TEXT",
+      "url": "https://www.4gamer.net/games/013/G001377/20080415033/",
+      "names": [
+        "ゴルンフット"
+      ],
+      "claim": "Possible promotional lottery pet; no actual delivery proof",
+      "first_appearance_proved": false
+    },
+    {
+      "id": "JP-2008-0715-FUKUURI",
+      "region": "JP",
+      "product_line": "DIGIPARK_STONEAGE1_PC",
+      "date": "2008-07-15",
+      "source_grade": "PERIOD_OPERATOR_PLATFORM_TEXT",
+      "url": "https://www.4gamer.net/games/013/G001377/20080715027/",
+      "names": [
+        "フクゥーリ"
+      ],
+      "reused_existing_event_id": "JP-2008-FUKUURI",
+      "new_unique_species_proven": false
+    },
+    {
+      "id": "JP-2008-1006-NINTH-ANNIVERSARY",
+      "region": "JP",
+      "product_line": "DIGIPARK_STONEAGE1_PC",
+      "date": "2008-10-06",
+      "source_grade": "PERIOD_OPERATOR_TEXT",
+      "url": "https://www.4gamer.net/games/013/G001377/20081006014/",
+      "fox_transformation_is_not_new_pet": true
+    },
+    {
+      "id": "JP-2008-1111-SABER-EVOLUTION",
+      "region": "JP",
+      "product_line": "DIGIPARK_STONEAGE1_PC",
+      "date": "2008-11-11",
+      "source_grade": "PERIOD_OPERATOR_TEXT",
+      "url": "https://www.4gamer.net/games/013/G001377/20081111023/",
+      "original_pet_evolution_input_names": [
+        "ベルガー",
+        "ベルイガー",
+        "ゴルシス",
+        "キングサーベル"
+      ],
+      "new_species_count_proved": 0,
+      "output_native_pet_ids_found": 0
+    },
+    {
+      "id": "TW-2008-0701-OPERATOR-SHUTDOWN-REPOST",
+      "region": "TW",
+      "product_line": "WAEI_STONEAGE1_PC",
+      "date": "2008-07-01",
+      "source_grade": "PERIOD_PLAYER_REPOST_OF_OPERATOR_NOTICE",
+      "url": "https://www.ptt.cc/bbs/DepthFantasy/M.1214904072.A.AE7.html",
+      "planned_shutdown_date": "2008-07-31",
+      "original_operator_html_verified": false,
+      "actual_shutdown_log_verified": false
+    },
+    {
+      "id": "CN-2008-KINGSOFT-SHUTDOWN-RETROSPECTIVE",
+      "region": "CN",
+      "product_line": "KINGSOFT_NEW_STONEAGE_PC",
+      "date_of_source": "2012-02-21",
+      "alleged_historical_date": "2008-10-20",
+      "source_grade": "RETROSPECTIVE_SECONDARY_NOT_PERIOD_OPERATOR",
+      "url": "https://news.17173.com/content/2012-02-21/20120221105152639_all.shtml",
+      "primary_period_date_proven": false
+    }
+  ],
+  "region_reviews": {
+    "CN": {
+      "status": "PARTIAL",
+      "source_missing": "2008 official Kingsoft + legacy service pet/client original table",
+      "species_count": null
+    },
+    "TW": {
+      "status": "PARTIAL",
+      "source_missing": "Waei original closure notice and native 2008 pet table",
+      "species_count": null
+    },
+    "JP": {
+      "status": "PARTIAL",
+      "source_missing": "Original applied 2008 patch; saber evolution output IDs; GASH delivery",
+      "species_count": null
+    },
+    "KR": {
+      "status": "PARTIAL",
+      "source_missing": "Ice castle nine Korean names/IDs, original Netmarble native patch, Dangun event grant log",
+      "species_count": null
+    },
+    "OTHER": {
+      "status": "PARTIAL",
+      "source_missing": "Independently dated operator/product and original pet evidence",
+      "species_count": null
+    }
+  },
+  "bounds": {
+    "kr_nine_press_not_nine_verified_native_rows": true,
+    "kr_media_copies_not_independent_native_proof": true,
+    "jp_four_evolution_input_names_not_four_new_species": true,
+    "gorunfoot_advertised_not_actual_grant": true,
+    "jp_fukuuri_existing_no_duplicate": true,
+    "jp_fox_transformation_item_not_pet": true,
+    "tw_notice_repost_not_original_html": true,
+    "cn_2012_retrospective_not_2008_primary": true,
+    "stoneage2_separate": true
+  },
+  "new_2008_original_client_bytes": 0,
+  "new_2008_native_pet_ids": 0,
+  "actual_2008_original_grant_logs": 0,
+  "confirmed_global_2008_species_count": null,
+  "year_cursor_before": 2008,
+  "year_cursor_after": 2008,
+  "next": "PET78: continue five-lane 2008 source-bounded audit with authenticated free native pet source and original operator release evidence",
+  "historical_current_modified": false,
+  "no_paid_marketplace": true,
+  "no_private_server_only_pets": true,
+  "private_commercial_originals_published": false,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}

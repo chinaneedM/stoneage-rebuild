@@ -18,8 +18,8 @@
     "year": 2008,
     "phase": "YEAR_2008_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET76-2007-FIVE-REGION-OFFICIAL-PET-SOURCE-BOUNDED-AUDIT-20261118",
-    "next": "PET77: inspect 2008 CN/TW/JP/KR/OTHER original PC official pet releases, pay special attention to KR Jan Ice Castle nine-pet report versus actual source bytes, and region-specific shutdown dates; no paid discs or private-server species.",
+    "latest_partial_root_review": "PET77-2008-OFFICIAL-FIVE-REGION-SOURCE-FIRST-PASS-20261118",
+    "next": "PET78: continue 2008 CN/TW/JP/KR/OTHER official pet audit. Seek native Korean Ice Castle nine pet identities and Japanese saber evolution outputs, with source-bounded reviews; no paid discs.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -1515,7 +1515,18 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "partial_source_review_receipts": [
+        {
+          "id": "PET77-2008-OFFICIAL-FIVE-REGION-SOURCE-FIRST-PASS-20261118",
+          "regions": ["CN", "TW", "JP", "KR", "OTHER"],
+          "report": "docs/continuity/STONEAGE-PET77-YEAR2008-KR-JP-TW-CN-OFFICIAL-PET-SOURCE-FIRST-PASS-20261118.md",
+          "evidence_json": "research/recovered/STONEAGE-PET77-YEAR2008-OFFICIAL-PET-PARTIAL-SOURCE-AUDIT-R1.json",
+          "year_not_closed": true,
+          "historically_complete": false,
+          "new_native_2008_pet_ids": 0
+        }
+      ]
     },
     {
       "year": 2009,
@@ -2774,6 +2785,19 @@
       "confirmed_2007_global_species_count": null,
       "new_original_2007_client_bytes": 0,
       "new_same_build_pet_ids": 0
+    },
+    {
+      "id": "PET77-2008-OFFICIAL-FIVE-REGION-SOURCE-FIRST-PASS-20261118",
+      "regions": ["CN", "TW", "JP", "KR", "OTHER"],
+      "report": "docs/continuity/STONEAGE-PET77-YEAR2008-KR-JP-TW-CN-OFFICIAL-PET-SOURCE-FIRST-PASS-20261118.md",
+      "evidence_json": "research/recovered/STONEAGE-PET77-YEAR2008-OFFICIAL-PET-PARTIAL-SOURCE-AUDIT-R1.json",
+      "year_frontier_before": 2008,
+      "year_frontier_after": 2008,
+      "year_not_closed": true,
+      "historically_complete": false,
+      "new_original_2008_client_bytes": 0,
+      "new_native_pet_ids": 0,
+      "global_2008_species_count": null
     }
   ],
   "client_first_methodology": {

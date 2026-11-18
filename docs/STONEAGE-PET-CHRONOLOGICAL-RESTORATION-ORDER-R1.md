@@ -247,3 +247,9 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 
 ## PET73 2026-11-16｜2005年五区来源有界审计与2006正式游标
 [2005年区域版本、当期宠名/奖品与未决来源报告](continuity/STONEAGE-PET73-YEAR2005-FIVE-REGION-AUDIT-20261116.md)／[可机核五区域重开条件](../research/recovered/STONEAGE-PET73-YEAR2005-FIVE-REGION-AUDIT-R1.json)：大陆7.5牛头人、鸡年兽为4/12同期官方商店预告，未获真实发奖/原同服技能数据；台湾麒麟积分、犬人萊福和8.0新融合/两未具名骑宠为原时期GNN搜索索引（原站403）、鸡年兽2/23仅后年玩家编年；日本2005-06-13 GaiaX当期预告7月中旬多种可捕恐龙，7/5预装图形/图鉴，7/12计划加野外Lv1实际可见宠，**图形预载不等实服可抓**，7月黑虎未命名、9月ヴァンレム不能自动强连，クロウリ、ガーヴィ奖宠皆未证真实帐号受领；韩国当年高尔戈尔/塔库骑乘功能新增不是新物种首次诞生。OTHER源不足不代表没有发行。各地区原2005客户端字节0B、原PET ID0、实服发奖日志0、历史全种数UNKNOWN；保留5个明确重开触发，2005仅`SOURCE_BOUNDED_REVIEWED`且`historically_complete=false`，最早新年度 **2006/NOT_YEAR_AUDITED**、NEXT PET74。原CURRENT blob及版权/Stage/模块锁不改，禁收费交易盘。
+
+## PET74—PET76 2026-11-18｜2006—2007已发布年度来源审计索引补记（非新研究、仅补齐本档案指针）
+此前本路线文件停留PET73；本补记**仅链接既已合并**的[PET74 2006初审](continuity/STONEAGE-PET74-YEAR2006-CN-TW-JP-KR-BOUNDED-SOURCES-20261118.md)、[PET75 2006五区年审](continuity/STONEAGE-PET75-YEAR2006-FIVE-REGION-BOUNDED-AUDIT-20261118.md)、[PET76 2007五区年审](continuity/STONEAGE-PET76-YEAR2007-CN-TW-JP-KR-OTHER-OFFICIAL-PET-AUDIT-20261118.md)，不重新编造物种或改写旧收据。PET27当前最早未审年份为2008；2006与2007仅SOURCE_BOUNDED_REVIEWED，historically_complete=false，缺源可重开。
+
+## PET77 2026-11-18｜2008韩国冰城九宠、日本剑虎进化与台陆关服：阶段审查
+[2008 PET77各地区逐项证据与缺口](continuity/STONEAGE-PET77-YEAR2008-KR-JP-TW-CN-OFFICIAL-PET-SOURCE-FIRST-PASS-20261118.md)／[机读阶段审查记录](../research/recovered/STONEAGE-PET77-YEAR2008-OFFICIAL-PET-PARTIAL-SOURCE-AUDIT-R1.json)：韩国01-14运营新闻称冰城有九种新宠和Lv1捕获室，原九宠韩文逐名/ID未得；十月开天节奖宠未具名。日本四月GASH具名ゴルンフット为计划抽奖，七月フクゥーリ为已登记PET25/26之旧源复核，十月周年狐变身道具不是新宠，十一月原宠ベルガー/ベルイガー/ゴルシス/キングサーベル可进化，但没有可认证进化**结果**PET ID、不能算四新物种。台湾华义07-31关服为2008当期玩家转录**计划**、大陆金山10-20终服日期出自2012后期资料，跨运营线/出处分级。新2008原客户端0B、原生PET IDs 0，全球/各区真实宠数UNKNOWN；**2008依然NOT_YEAR_AUDITED / historically_complete=false，最早未审游标仍2008，NEXT PET78**。PET单模块锁，禁付费载体与私服污染，原CURRENT整blob/Stage不变。
