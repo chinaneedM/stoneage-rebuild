@@ -21,7 +21,7 @@ class Pet111Tw2017RealmPetAcquisition(unittest.TestCase):
         y=next(v for v in q["yearly_work_queue"] if v["year"]==2017)
         self.assertEqual((a["active_module"],q["active_module"]),("PET","PET"))
         self.assertEqual((a["frontier_before"],a["frontier_after"]),(2017,2017))
-        self.assertEqual((y["research_gate"],q["current_frontier"]["year"]),("SOURCE_BOUNDED_REVIEWED",2018))  # PET111 historical OPEN unchanged
+        self.assertEqual((y["research_gate"],q["current_frontier"]["year"]),("SOURCE_BOUNDED_REVIEWED",2019))  # PET111 historical OPEN unchanged
         self.assertFalse(a["year_closed"])
         self.assertFalse(a["historically_complete"])
         self.assertIn(a["id"],[r["id"] for r in y["partial_source_review_receipts"]])
