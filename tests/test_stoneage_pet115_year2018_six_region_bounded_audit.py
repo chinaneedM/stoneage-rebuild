@@ -54,7 +54,7 @@ class Pet115Year2018Annual(unittest.TestCase):
   self.assertEqual(a["product_line_boundary"]["mobile_japanese_later_press_date"],"2018-07-17")
   self.assertEqual(a["product_line_boundary"]["operator_press_mobile_reward_pet_label"],"3星卡米魯")
   self.assertFalse(a["product_line_boundary"]["original_appstore_first_listed_datetime_verified"])
-  self.assertTrue(a["product_line_boundary"]["mobile_300plus_advertised_not_classic_pc_population"])
+  self.assertTrue(a["product_line_boundary"]["mobile_marketing_population_not_2018_classic_pc_population"])
  def test_zero_new_native_unchanged_big_blob_and_stage(self):
   a,q=self.a,self.q
   for k in ("new_2018_original_pc_client_bytes","new_2018_original_pc_patch_bytes","new_2018_native_pet_ids","new_2018_original_spr_frames","new_2018_native_skill_functions","new_2018_server_pet_grants"):
