@@ -18,8 +18,8 @@
     "year": 2011,
     "phase": "YEAR_2011_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET85-YEAR2011-CN-TW-JP-KR-OTHER-NAMED-PET-AND-CLIENT-FIRST-PASS-20261118",
-    "next": "PET86: keep 2011 OPEN; bounded free true original CN8.5/CN2.5/TW Apr25 client/patch bytes and native pet mapping, TW seasonal rewards, KR contemporary CJ named original PC patch, JP operator status, OTHER.",
+    "latest_partial_root_review": "PET86-2011-CN-NAMED-TW-HKMO-KR-JP-PARTIAL-20261118",
+    "next": "PET87: year 2011 CN/TW/HK-MO/JP/KR/OTHER source-bounded annual review and actual free original-client byte availability; retain all missing native IDs and species counts, do not advance before gate.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -1991,6 +1991,30 @@
             "CN8.5_HONOR_SHOP_PLANNED_VS_OPERATOR_CURRENT",
             "TW2011_ORIGINAL_CLIENT_PUBLIC_RELEASE_NOTICE"
           ]
+        },
+        {
+          "id": "PET86-2011-CN-NAMED-TW-HKMO-KR-JP-PARTIAL-20261118",
+          "regions": [
+            "CN",
+            "TW",
+            "HK_MO",
+            "JP",
+            "KR",
+            "OTHER"
+          ],
+          "report": "docs/continuity/STONEAGE-PET86-YEAR2011-CN-PET-FAMILIES-TW-HKMO-KR-JP-BOUNDED-SOURCES-20261118.md",
+          "evidence_json": "research/recovered/STONEAGE-PET86-YEAR2011-CN-NAMED-PETS-TW-HK-KR-JP-SOURCE-BOUNDARIES-R1.json",
+          "year_frontier_before": 2011,
+          "year_frontier_after": 2011,
+          "year_not_closed": true,
+          "historically_complete": false,
+          "new_original_2011_client_bytes": 0,
+          "new_native_pet_ids": 0,
+          "global_2011_species_count": null,
+          "source_entries": 12,
+          "named_source_attestations_not_species": 30,
+          "regional_extra_lane": "HK_MO",
+          "source_first_client_download": "2011-06-22 CN8.5 ZOL 1.15GB download click HTTP403 / official timeout"
         }
       ]
     },
@@ -3390,6 +3414,30 @@
         "CN8.5_HONOR_SHOP_PLANNED_VS_OPERATOR_CURRENT",
         "TW2011_ORIGINAL_CLIENT_PUBLIC_RELEASE_NOTICE"
       ]
+    },
+    {
+      "id": "PET86-2011-CN-NAMED-TW-HKMO-KR-JP-PARTIAL-20261118",
+      "regions": [
+        "CN",
+        "TW",
+        "HK_MO",
+        "JP",
+        "KR",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET86-YEAR2011-CN-PET-FAMILIES-TW-HKMO-KR-JP-BOUNDED-SOURCES-20261118.md",
+      "evidence_json": "research/recovered/STONEAGE-PET86-YEAR2011-CN-NAMED-PETS-TW-HK-KR-JP-SOURCE-BOUNDARIES-R1.json",
+      "year_frontier_before": 2011,
+      "year_frontier_after": 2011,
+      "year_not_closed": true,
+      "historically_complete": false,
+      "new_original_2011_client_bytes": 0,
+      "new_native_pet_ids": 0,
+      "global_2011_species_count": null,
+      "source_entries": 12,
+      "named_source_attestations_not_species": 30,
+      "regional_extra_lane": "HK_MO",
+      "source_first_client_download": "2011-06-22 CN8.5 ZOL 1.15GB download click HTTP403 / official timeout"
     }
   ],
   "client_first_methodology": {
