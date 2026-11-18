@@ -68,7 +68,7 @@ class TestPet106Year2016ProductLines(unittest.TestCase):
             self.assertEqual(a[key], 0)
         raw = (ROOT / "docs/CURRENT-STATE.md").read_bytes()
         self.assertEqual(len(raw), a["starting_remote"]["unchanged_current_bytes"])
-        git_hash = hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\\x00" + raw).hexdigest()
+        git_hash = hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\x00" + raw).hexdigest()
         self.assertEqual(git_hash, a["starting_remote"]["unchanged_current_blob"])
         self.assertTrue(a["original_current_unchanged"])
         self.assertEqual((a["stage_A"], a["stage_B_wiki"], a["r79"], a["overall_percent"]),
