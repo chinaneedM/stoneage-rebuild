@@ -19,10 +19,10 @@
     "phase": "YEAR_2016_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
     "latest_partial_root_review": "PET105-YEAR2015-SIX-REGION-SOURCE-BOUNDED-AUDIT-20261118",
-    "next": "PET109: continue 2016 six-region classic-PC official pet source audit; only reopen DLER mirror on readable free bytes, do not infer 2016 species from 2018 metadata",
+    "next": "PET110: source-bounded 2016 original PC official pet regional audit CN/TW/HK_MO/KR/JP/OTHER, original client first; do not prematurely advance 2017",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE",
     "latest_source_bounded_annual_review": "PET105-YEAR2015-SIX-REGION-SOURCE-BOUNDED-AUDIT-20261118",
-    "latest_2016_partial_source_receipt": "PET108-TW-CLIENT-DLER-170423-CHECKSUM-ACCESS-BOUNDARY-20261118"
+    "latest_2016_partial_source_receipt": "PET109-TW2016-PLAYER-PET-REWARD-AND-HALLOWEEN-CROSSYEAR-20261118"
   },
   "region_tracks": [
     "CN",
@@ -2910,12 +2910,28 @@
           "later_mirror_direct_download_404_at_research_time": true,
           "original_2016_client_bytes_obtained": 0,
           "original_pc_pet_ids_verified": 0
+        },
+        {
+          "id": "PET109-TW2016-PLAYER-PET-REWARD-AND-HALLOWEEN-CROSSYEAR-20261118",
+          "date": "2026-11-18",
+          "region_scope": [
+            "TW"
+          ],
+          "receipt": "research/recovered/STONEAGE-PET109-TW2016-PLAYER-PET-REWARDS-HALLOWEEN-2015-CROSSYEAR-BOUNDARY-R1.json",
+          "year_not_closed": true,
+          "dated_player_tw2016_amido_and_archaeopteryx_claims": true,
+          "halloween_2016_event_later_edited_player_guide": true,
+          "prior_2015_reward_overlap_explicit": true,
+          "dated_and_later_edited_source_layers_separated": true,
+          "new_original_pc_client_bytes": 0,
+          "new_native_pet_ids": 0
         }
       ],
       "source_bounded_partial_review_notes_forward_only": [
         "PET106: 2016 CN CINS closure contemporary relay and TW original-PC Duanwu player index distinct from Netmarble Origins mobile first-party 10/13 Latapa-family and 10/28 Kamilu updates; no same-build original PC pet evidence, year remains OPEN.",
         "PET107: 2016/2/2 third-party verbatim Taiwan beetle permanent quest pet reward type, 3/16 player self-reported juvenile beetle capture, 6/13 Dragon Boat 10 foe labels and 3 pet-box-type reward labels; player 205 build string not authenticated original installer. 2016 remains NOT_YEAR_AUDITED.",
-        "PET108: older repository already mentions 2018 Taiwan DLER mirror; exact 1,039,663,798 B and webpage-asserted MD5 510f9811a3341d5023ecdd3b55c15482 added; direct StoneAge.rar 404, original bytes 0, 170423 name not authenticated date/build. Year 2016 remains NOT_YEAR_AUDITED and eligible for source-bounded operator-pet review."
+        "PET108: older repository already mentions 2018 Taiwan DLER mirror; exact 1,039,663,798 B and webpage-asserted MD5 510f9811a3341d5023ecdd3b55c15482 added; direct StoneAge.rar 404, original bytes 0, 170423 name not authenticated date/build. Year 2016 remains NOT_YEAR_AUDITED and eligible for source-bounded operator-pet review.",
+        "PET109: 2016/10/30 original-PC player guide claims Amido rearing and archaeopteryx fossil pet/accuracy skill; edited-in-2025 guide titled 2016 Halloween reports owl/ghost/dinosaur egg and nonpet rewards, overlaps 2015 PET104 already attested Skeleton/Ghost names; no 2016 first-release upgrade, no original bytes."
       ]
     },
     {
