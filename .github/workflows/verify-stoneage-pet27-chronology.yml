@@ -84,6 +84,11 @@ on:
       - "tests/test_stoneage_pet113_year2017_six_region_bounded_audit.py"
       - "tests/test_stoneage_pet114_tw2018_realm_summer_pet_boundary.py"
       - "tests/test_stoneage_pet115_year2018_six_region_bounded_audit.py"
+      - "tests/test_stoneage_pet117_year2019_six_region_source_initial.py"
+      - "research/recovered/STONEAGE-PET116-TW2019-PLAYER-PET-EVIDENCE-R1.json"
+      - "research/recovered/STONEAGE-PET117-YEAR2019-SIX-REGION-PC-INITIAL-PET-SOURCE-REVIEW-R1.json"
+      - "docs/continuity/STONEAGE-PET116-TW2019-SUMMER-MIDAUTUMN-PLAYER-EVIDENCE-20261118.md"
+      - "docs/continuity/STONEAGE-PET117-YEAR2019-SIX-REGION-ORIGINAL-PC-FIRST-PASS-20261118.md"
       - "research/recovered/STONEAGE-PET105-YEAR2015-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json"
       - "research/recovered/STONEAGE-PET106-YEAR2016-CLASSIC-PC-VS-ORIGINS-MOBILE-FIRST-PASS-R1.json"
       - "research/recovered/STONEAGE-PET107-TW2016-BEETLE-DUANWU-2016-SOURCE-GRADES-R1.json"
@@ -542,6 +547,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet114_tw2018_realm_summer_pet_boundary
       - name: PET115 2018 six-region original PC PET source-bounded annual review and 2019 handoff
         run: python -m unittest tests.test_stoneage_pet115_year2018_six_region_bounded_audit
+      - name: PET117 2019 six-region PC initial PET source review, pig relay vs live release and M mobile
+        run: python -m unittest tests.test_stoneage_pet117_year2019_six_region_source_initial
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary
