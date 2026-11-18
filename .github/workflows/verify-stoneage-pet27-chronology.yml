@@ -64,6 +64,9 @@ on:
       - "tests/test_stoneage_pet93_2013_snake_tw_kr.py"
       - "tests/test_stoneage_pet94_year2013_bounded_audit.py"
       - "tests/test_stoneage_pet95_year2014_source_first_pass.py"
+      - "tests/test_stoneage_pet96_year2014_taiwan_horse_lineage.py"
+      - "research/recovered/STONEAGE-PET96-YEAR2014-TW-HORSE-ACQUISITION-AND-EARLIER-ATTESTATION-R1.json"
+      - "docs/continuity/STONEAGE-PET96-YEAR2014-TW-HORSE-QUEST-LINEAGE-SOURCE-GATES-20261118.md"
       - "research/recovered/STONEAGE-PET95-YEAR2014-CN-TW-ORIGINAL-PC-SOURCE-FIRST-PASS-R1.json"
       - "docs/continuity/STONEAGE-PET95-YEAR2014-CN-TW-ORIGINAL-PC-SOURCE-FIRST-PASS-20261118.md"
       - "research/recovered/STONEAGE-PET94-YEAR2013-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json"
@@ -218,6 +221,9 @@ on:
       - "tests/test_stoneage_pet93_2013_snake_tw_kr.py"
       - "tests/test_stoneage_pet94_year2013_bounded_audit.py"
       - "tests/test_stoneage_pet95_year2014_source_first_pass.py"
+      - "tests/test_stoneage_pet96_year2014_taiwan_horse_lineage.py"
+      - "research/recovered/STONEAGE-PET96-YEAR2014-TW-HORSE-ACQUISITION-AND-EARLIER-ATTESTATION-R1.json"
+      - "docs/continuity/STONEAGE-PET96-YEAR2014-TW-HORSE-QUEST-LINEAGE-SOURCE-GATES-20261118.md"
       - "research/recovered/STONEAGE-PET95-YEAR2014-CN-TW-ORIGINAL-PC-SOURCE-FIRST-PASS-R1.json"
       - "docs/continuity/STONEAGE-PET95-YEAR2014-CN-TW-ORIGINAL-PC-SOURCE-FIRST-PASS-20261118.md"
       - "research/recovered/STONEAGE-PET94-YEAR2013-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json"
@@ -382,6 +388,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet94_year2013_bounded_audit
       - name: PET95 2014 CN TW official-PC source-first boundaries and year-open gate
         run: python -m unittest tests.test_stoneage_pet95_year2014_source_first_pass
+      - name: PET96 2014 Taiwan horse-year historical lineage and evidence gates
+        run: python -m unittest tests.test_stoneage_pet96_year2014_taiwan_horse_lineage
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary
