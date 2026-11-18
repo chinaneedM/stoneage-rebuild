@@ -18,8 +18,8 @@
     "year": 2014,
     "phase": "YEAR_2014_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET93-YEAR2013-CN-SNAKE-TW-CLIENT-KR-PC-SOURCE-GATES-20261118",
-    "next": "PET95: 2014 original PC official pet region/year first pass; client-first authenticated free-access bytes, separate 2.5/8.5 and TW/HKMO/KR/JP/OTHER; 2013 historical gaps reopenable",
+    "latest_partial_root_review": "PET95-YEAR2014-CN-TW-ORIGINAL-PC-SOURCE-FIRST-PASS-20261118",
+    "next": "PET96: continue 2014 six-region original-PC official pet/patch/client source audit; verify actual pet release and keep product lines separate",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE",
     "latest_source_bounded_annual_review": "PET94-YEAR2013-SIX-REGION-BOUNDED-AUDIT-20261118"
   },
@@ -2468,7 +2468,17 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "partial_source_review_receipts": [
+        {
+          "id": "PET95-YEAR2014-CN-TW-ORIGINAL-PC-SOURCE-FIRST-PASS-20261118",
+          "receipt": "research/recovered/STONEAGE-PET95-YEAR2014-CN-TW-ORIGINAL-PC-SOURCE-FIRST-PASS-R1.json",
+          "report": "docs/continuity/STONEAGE-PET95-YEAR2014-CN-TW-ORIGINAL-PC-SOURCE-FIRST-PASS-20261118.md",
+          "review_status": "PARTIAL_NOT_YEAR_AUDITED",
+          "historically_complete": false,
+          "first_release_species_count": null
+        }
+      ]
     },
     {
       "year": 2015,
@@ -4039,6 +4049,28 @@
       "previous_receipt_source_rows_not_unique_species": 21,
       "first_party_jp_mobile_press_explicit_not_original_pc": true,
       "tw_same_year_fan_index_is_not_new_official_issuance": true
+    },
+    {
+      "id": "PET95-YEAR2014-CN-TW-ORIGINAL-PC-SOURCE-FIRST-PASS-20261118",
+      "regions": [
+        "CN",
+        "TW",
+        "HK_MO",
+        "JP",
+        "KR",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET95-YEAR2014-CN-TW-ORIGINAL-PC-SOURCE-FIRST-PASS-20261118.md",
+      "evidence_json": "research/recovered/STONEAGE-PET95-YEAR2014-CN-TW-ORIGINAL-PC-SOURCE-FIRST-PASS-R1.json",
+      "year_frontier_before": 2014,
+      "year_frontier_after": 2014,
+      "year_not_closed": true,
+      "historically_complete": false,
+      "new_original_2014_client_bytes": 0,
+      "new_native_pet_ids": 0,
+      "global_2014_species_count": null,
+      "source_rows": 5,
+      "source_grade_boundary": "CN later judicial 2014 original operator archive recital; TW contemporaneous fan mirror of 2014 official service notice; not 2014 native pet release"
     }
   ],
   "client_first_methodology": {
