@@ -15,11 +15,11 @@
   "latest_year_in_scope": 2026,
   "reason_start_provisional": "1999 is a search-window starting point, NOT an independently authenticated first official launch date; earlier qualified evidence may extend the sequence backwards",
   "current_frontier": {
-    "year": 2010,
-    "phase": "YEAR_2010_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
+    "year": 2011,
+    "phase": "YEAR_2011_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET83-YEAR2010-CN85-TW-JP-KR-ORIGINAL-PC-PET-SOURCE-FIRST-PASS-20261118",
-    "next": "PET84: continue 2010, first authentic free test client with reported MD5 and native pet records, independent mermaid actual grant/five whales live update, KR qualified operator named patches and JP Jan applied updates; no species total promotion.",
+    "latest_partial_root_review": "PET84-2010-FIVE-REGION-SOURCE-BOUNDED-REVIEW-CN-DRAGONS-20261118",
+    "next": "PET85: 2011 five-region official original PC pet client-first audit: CN Shengsi Jan15 nonwipe, TW Taozhu Apr official first client, KR CJ original pet patches, JP 2010 shutdown/new operator qualification, OTHER. No paid market.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -1823,7 +1823,7 @@
     {
       "year": 2010,
       "chronological_position": 12,
-      "research_gate": "NOT_YEAR_AUDITED",
+      "research_gate": "SOURCE_BOUNDED_REVIEWED",
       "documented_release_event_ids_from_existing_PET25_PET26": [],
       "documentary_event_count_NOT_species": 0,
       "unverified_early_and_mid_year_pets_may_exist": true,
@@ -1863,8 +1863,93 @@
             "夏乐地"
           ],
           "source_md5_metadata_only": "cd0ac0c0bc26bcfefdd08957d8d86e7c"
+        },
+        {
+          "id": "PET84-2010-FIVE-REGION-SOURCE-BOUNDED-REVIEW-CN-DRAGONS-20261118",
+          "regions": [
+            "CN",
+            "TW",
+            "JP",
+            "KR",
+            "OTHER"
+          ],
+          "report": "docs/continuity/STONEAGE-PET84-YEAR2010-FIVE-REGION-BOUNDED-OFFICIAL-PET-AUDIT-20261118.md",
+          "evidence_json": "research/recovered/STONEAGE-PET84-YEAR2010-DRAGONS-FIVE-REGION-BOUNDED-AUDIT-R1.json",
+          "year_frontier_before": 2010,
+          "year_frontier_after": 2011,
+          "year_not_closed": false,
+          "historically_complete": false,
+          "new_original_2010_client_bytes": 0,
+          "new_native_pet_ids": 0,
+          "global_2010_species_count": null,
+          "new_2010_named_pet_source_attestations": [
+            "邦恩多斯",
+            "斯天多斯"
+          ]
         }
-      ]
+      ],
+      "historically_complete": false,
+      "historical_species_count": null,
+      "source_bounded_review_receipt": "research/recovered/STONEAGE-PET84-YEAR2010-DRAGONS-FIVE-REGION-BOUNDED-AUDIT-R1.json",
+      "residual_reopen_triggers": [
+        "CN_2010_MD5_MATCHING_AUTHENTIC_CLIENT_AND_PET_IDS",
+        "TW_2010_TAOZHU_ORIGINAL_ONE_LIVE_PETS_NOT_LICENSE",
+        "JP_2010_JAN_PATCH_PETS_AND_FEB_END",
+        "KR_2010_CJ_NATIVE_PET_IDS_AND_GRANTS",
+        "OTHER_2010_OFFICIAL_PC_ONE_OPERATOR_PETS"
+      ],
+      "region_source_reviews": {
+        "CN": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2010_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2010_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "CN_2010_MD5_MATCHING_AUTHENTIC_CLIENT_AND_PET_IDS"
+        },
+        "TW": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2010_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2010_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "TW_2010_TAOZHU_ORIGINAL_ONE_LIVE_PETS_NOT_LICENSE"
+        },
+        "JP": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2010_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2010_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "JP_2010_JAN_PATCH_PETS_AND_FEB_END"
+        },
+        "KR": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2010_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2010_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "KR_2010_CJ_NATIVE_PET_IDS_AND_GRANTS"
+        },
+        "OTHER": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2010_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2010_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "OTHER_2010_OFFICIAL_PC_ONE_OPERATOR_PETS"
+        }
+      }
     },
     {
       "year": 2011,
@@ -3230,6 +3315,29 @@
         "夏乐地"
       ],
       "source_md5_metadata_only": "cd0ac0c0bc26bcfefdd08957d8d86e7c"
+    },
+    {
+      "id": "PET84-2010-FIVE-REGION-SOURCE-BOUNDED-REVIEW-CN-DRAGONS-20261118",
+      "regions": [
+        "CN",
+        "TW",
+        "JP",
+        "KR",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET84-YEAR2010-FIVE-REGION-BOUNDED-OFFICIAL-PET-AUDIT-20261118.md",
+      "evidence_json": "research/recovered/STONEAGE-PET84-YEAR2010-DRAGONS-FIVE-REGION-BOUNDED-AUDIT-R1.json",
+      "year_frontier_before": 2010,
+      "year_frontier_after": 2011,
+      "year_not_closed": false,
+      "historically_complete": false,
+      "new_original_2010_client_bytes": 0,
+      "new_native_pet_ids": 0,
+      "global_2010_species_count": null,
+      "new_2010_named_pet_source_attestations": [
+        "邦恩多斯",
+        "斯天多斯"
+      ]
     }
   ],
   "client_first_methodology": {

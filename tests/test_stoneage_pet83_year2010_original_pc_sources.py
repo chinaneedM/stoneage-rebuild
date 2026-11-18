@@ -10,9 +10,10 @@ class PET83(unittest.TestCase):
   cls.q=load("STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json")
  def test_cursor_and_append_only_receipts(self):
   a,q=self.a,self.q; y=q["yearly_work_queue"][2010-1999]
-  self.assertEqual((a["year"],a["year_frontier_before"],a["year_frontier_after"],q["current_frontier"]["year"]),(2010,2010,2010,2010))
-  self.assertEqual(y["research_gate"],"NOT_YEAR_AUDITED")
-  self.assertEqual(q["current_frontier"]["latest_partial_root_review"],a["id"])
+  self.assertEqual((a["year"],a["year_frontier_before"],a["year_frontier_after"]),(2010,2010,2010))
+  self.assertGreaterEqual(q["current_frontier"]["year"],2010)
+  self.assertEqual(y["research_gate"],"NOT_YEAR_AUDITED" if q["current_frontier"]["year"]==2010 else "SOURCE_BOUNDED_REVIEWED")
+  self.assertIn(a["id"],[x["id"] for x in y["partial_source_review_receipts"]])
   self.assertFalse(a["historically_complete"])
   self.assertEqual(sum(x["id"]==a["id"] for x in y["partial_source_review_receipts"]),1)
   self.assertEqual(sum(x["id"]==a["id"] for x in q["root_source_census_receipts"]),1)
