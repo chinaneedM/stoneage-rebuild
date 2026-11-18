@@ -1,0 +1,242 @@
+{
+  "schema": "stoneage.pet115.year2018_six_region_original_pc_source_bounded_audit.r1",
+  "id": "PET115-YEAR2018-SIX-REGION-ORIGINAL-PC-BOUNDED-AUDIT-20261118",
+  "date": "2026-11-18",
+  "active_module": "PET",
+  "year": 2018,
+  "year_frontier_before": 2018,
+  "year_frontier_after": 2019,
+  "year_gate": "SOURCE_BOUNDED_REVIEWED",
+  "historically_complete": false,
+  "fully_reconstructed": false,
+  "product_scope": "AUTHORIZED_CLASSIC_2D_PC_ONLY",
+  "region_scope": [
+    "CN",
+    "TW",
+    "HK_MO",
+    "KR",
+    "JP",
+    "OTHER"
+  ],
+  "start_baseline": {
+    "main_head": "1c910fa368d58e52681b70201bf4fbab6b4e750e",
+    "main_tree": "cee4adf156af0513b863a6f557e64b111251802a",
+    "preserved_current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "preserved_current_state_bytes": 2709173,
+    "prior_pet114_id": "PET114-TW2018-TWO-REALM-SUMMER-PET-MOBILE-BOUNDARY-20261118"
+  },
+  "sources": [
+    {
+      "id": "CN2018-COPYRIGHT-EXTENSION-LATER-COURT-TRANSCRIPT",
+      "url": "https://zh.wikisource.org/zh-hans/北京银河聚阵网络技术有限公司与北京宇通互动文化传播有限公司等著作权权属、侵权纠纷民事一审案件民事判决书",
+      "original_event_date": "2018-10-31",
+      "source_date": "2022-05-30",
+      "grade": "LATER_COURT_TEXT_TRANSCRIPTION_DESCRIBING_2020_AGREEMENT_AND_2018_EXTENSION_NOT_ORIGINAL_CONTRACT",
+      "claim": "Two 2018-10-31 supplements reportedly extended mainland exclusive IP copyright authorization through 2020-12-31",
+      "not_proved": "Authorized original classic PC 2018 live deployment or issued pets"
+    },
+    {
+      "id": "CN2018-NO-RESUMPTION-PARTY-STATEMENT-IN-COURT-TRANSCRIPT",
+      "url": "https://zh.wikisource.org/zh-hans/北京银河聚阵网络技术有限公司与北京宇通互动文化传播有限公司等著作权权属、侵权纠纷民事一审案件民事判决书",
+      "source_date": "2022-05-30",
+      "grade": "LATER_COURT_TRANSCRIPT_OF_PLAINTIFF_STATEMENT_NOT_INDEPENDENT_2018_SERVER_OBSERVATION",
+      "claim": "Plaintiff represented at litigation that it had not resumed original mainland PC operation owing to approval difficulties",
+      "not_proved": "Independent exhaustive 2018 all-operators no-service fact"
+    },
+    {
+      "id": "CN2018-119-ARTWORK-AND-124-GUIDE-COUNTS-SAME-COURT",
+      "url": "https://zh.wikisource.org/zh-hans/北京银河聚阵网络技术有限公司与北京宇通互动文化传播有限公司等著作权权属、侵权纠纷民事一审案件民事判决书",
+      "source_date": "2022-05-30",
+      "grade": "LATER_COURT_TRANSCRIPT_TWICE_REUSED_SINGLE_SOURCE",
+      "claim": "119 claimed lawsuit pet artworks versus 124 figures in one guide are distinct evidentiary denominators",
+      "not_proved": "2018 official PC live species roster or species count"
+    },
+    {
+      "id": "TW2018-REALM-AND-SUMMER-PRIOR-PET114",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/blob/1c910fa368d58e52681b70201bf4fbab6b4e750e/docs/continuity/STONEAGE-PET114-TW2018-TWO-REALM-SUMMER-PET-AND-MOBILE-BOUNDARY-20261118.md",
+      "source_date": "2018-03_to_2018-12",
+      "grade": "REUSED_PRIOR_CONTEMPORANEOUS_PLAYER_POSTS_SEARCH_INDEX_OR_RELAY_NOT_NATIVE_OPERATOR",
+      "claim": "2011/2017 realm labels and six player summer quest pet mentions",
+      "not_proved": "Two independently verified exe builds, PC pet live roster, newly issued 2018 pets"
+    },
+    {
+      "id": "TW-HK-MO2018-MOBILE-OPERATOR-20180629",
+      "url": "https://tw.gashpoint.com/games/article/3711",
+      "source_date": "2018-06-29",
+      "grade": "PERIOD_FIRST_PARTY_NETMARBLE_OPERATOR_NEWS_RELEASE_REPRINT",
+      "claim": "Mobile StoneAge M preannounce 2018-07-18, 3D, TW/HK/MO, >300 promotional mobile pets, Uli/Beruka/Mamonas promotional mentions",
+      "not_proved": "Any classic original 2D PC species or classic PC code"
+    },
+    {
+      "id": "TW-HK-MO2018-MOBILE-LAUNCH-20180718",
+      "url": "https://news.gamebase.com.tw/news/detail/99056741",
+      "source_date": "2018-07-18",
+      "grade": "PERIOD_OPERATOR_LAUNCH_COPY_IN_NEWS_PRESS",
+      "claim": "Netmarble mobile app announced live 'today the 18th'; Camelou is a mobile game gift",
+      "not_proved": "Independent classic PC original pet issuance or native 2018 source files"
+    },
+    {
+      "id": "TW-HK-MO2018-MOBILE-JP-PRESS-DATE-VARIANT",
+      "url": "https://gamebiz.jp/news/216017",
+      "source_date": "2018-07-23",
+      "grade": "CONTEMPORANEOUS_INDUSTRY_PRESS_NOT_FIRST_PARTY_LAUNCH_CONTRACT",
+      "claim": "Japanese press says StoneAge M distributed 2018-07-17 versus official 2018-07-18 announcement",
+      "not_proved": "Cause of date difference or original PC species"
+    },
+    {
+      "id": "JP2010-ORIGINAL-PC-END-SERVICE-PERIOD",
+      "url": "https://netgamebm.com/game_news/index/20100224",
+      "source_date": "2010-02-24",
+      "grade": "CONTEMPORANEOUS_JAPANESE_PC_SERVICE_END_REPORT_REUSED",
+      "claim": "Classic Japanese StoneAge service ended at 17:00 2010-02-24, separate successor line",
+      "not_proved": "Never authorized another 2018 original PC server"
+    },
+    {
+      "id": "KR2015-ORIGINAL-PC-STOP-PRIOR-PET113",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/blob/1c910fa368d58e52681b70201bf4fbab6b4e750e/docs/continuity/STONEAGE-PET113-YEAR2017-SIX-REGION-ORIGINAL-PC-BOUNDED-AUDIT-20261118.md",
+      "source_date": "2015-07-22",
+      "grade": "REUSED_PRIOR_KOREAN_CLASSIC_PC_SERVICE_BOUNDARY_WITHOUT_NEW_2018_BUILD",
+      "claim": "Korean classic PC original previously closed; later Begins is distinct mobile product",
+      "not_proved": "Exhaustive negative proof of Korean 2018 classic PC reauthorization"
+    },
+    {
+      "id": "TW2018-CATALOG-PET108-MISSING-BYTES-REUSED",
+      "url": "https://dler.com/index.php?o=display%3Bid%3D7143",
+      "source_date": "2018-07-23",
+      "grade": "REUSED_PRIOR_THIRD_PARTY_CATALOG_FILENAME_SIZE_MD5_DOWNLOAD_404",
+      "claim": "Mirror directory lists purported TW classic PC package but raw bytes unavailable",
+      "not_proved": "Original installer obtained or exact native build and PET ID"
+    }
+  ],
+  "regions": [
+    {
+      "code": "CN",
+      "candidate_context": [
+        "2016 classic PC cessation",
+        "2018-10-31 IP agreement extension described later"
+      ],
+      "classic_pc_2018_deployment_proved": false,
+      "official_native_pet_names": [],
+      "original_client_sha": null,
+      "reopening_trigger": "2018 classic PC operator build and official native pet roster or issuance proof"
+    },
+    {
+      "code": "TW",
+      "candidate_context": [
+        "2011/2017 rule-server labels from period players",
+        "summer 2018 six pet-name task mentions"
+      ],
+      "classic_pc_2018_deployment_proved_by_operator_native_record": false,
+      "official_native_pet_names": [],
+      "original_client_sha": null,
+      "reopening_trigger": "Taozhu original 2018 signed build or official event config and separate-realm server PET table"
+    },
+    {
+      "code": "HK_MO",
+      "candidate_context": [
+        "Mobile StoneAge M release is not original PC",
+        "Earlier territory licence does not certify independent classic PC deployment"
+      ],
+      "classic_pc_2018_deployment_proved": false,
+      "official_native_pet_names": [],
+      "original_client_sha": null,
+      "reopening_trigger": "Independent HK/MO classic PC server or substantiated same-realm deployment with pet roster"
+    },
+    {
+      "code": "KR",
+      "candidate_context": [
+        "Previously reviewed original PC closure in 2015",
+        "StoneAge Begins separate mobile line"
+      ],
+      "classic_pc_2018_deployment_proved": false,
+      "official_native_pet_names": [],
+      "original_client_sha": null,
+      "reopening_trigger": "2018 officially relaunched Korean classic PC and attributable same-build PET content"
+    },
+    {
+      "code": "JP",
+      "candidate_context": [
+        "2010-02-24 original Japanese PC cessation",
+        "StoneAge2 separate successor product"
+      ],
+      "classic_pc_2018_deployment_proved": false,
+      "official_native_pet_names": [],
+      "original_client_sha": null,
+      "reopening_trigger": "2018 original Japanese classic PC service restart operator notice, build and PET evidence"
+    },
+    {
+      "code": "OTHER",
+      "candidate_context": [
+        "Bounded original PC search yielded no attributable source-ready 2018 region"
+      ],
+      "classic_pc_2018_deployment_proved": false,
+      "official_native_pet_names": [],
+      "original_client_sha": null,
+      "reopening_trigger": "Country, authorized 2018 classic PC operator, original client and official pet proof"
+    }
+  ],
+  "period_player_tw2018_task_pet_labels_reused": [
+    "貝洛寶利",
+    "乎拔拔",
+    "紅虎",
+    "綠龜",
+    "凱比特",
+    "姆伊"
+  ],
+  "counting_rules": {
+    "player_quest_pets_are_not_first_release": true,
+    "cn_copyright_extension_is_not_2018_pc_relaunch": true,
+    "cn_119_litigation_artworks_are_not_total_pets": true,
+    "cn_124_guide_figures_are_not_live_2018_pets": true,
+    "mo_hk_mobile_names_are_not_pc_pets": true,
+    "tw_2011_and_2017_realm_labels_are_not_executable_hashes": true,
+    "one_operator_multiple_reports_are_not_independent_native_builds": true
+  },
+  "mobile_2018_excluded": {
+    "product": "Netmarble StoneAge M",
+    "regions": [
+      "TW",
+      "HK_MO"
+    ],
+    "platform": "Android_iOS_3D_DISTINCT",
+    "first_party_published_2018_07_18": true,
+    "japanese_press_reported_2018_07_17": true,
+    "date_variant_unresolved": true,
+    "operator_promotional_mobile_pet_labels": [
+      "★3星烏力",
+      "貝魯卡",
+      "瑪摩那斯",
+      "3星卡米魯"
+    ],
+    "mobile_marketing_pet_count_claim": "OVER_300_PROMOTIONAL_NOT_PC",
+    "backfill_to_classic_pc_permitted": false
+  },
+  "original_pc_native_2018_new_evidence": {
+    "new_authenticated_original_client_bytes": 0,
+    "new_authenticated_original_patch_bytes": 0,
+    "new_original_spr_frames": 0,
+    "new_same_build_pet_ids": 0,
+    "new_same_build_pet_skill_functions": 0,
+    "new_official_pet_award_or_capture_logs": 0
+  },
+  "world_2018_official_pc_species_total": null,
+  "world_2018_official_pc_first_release_species_count": null,
+  "all_region_totals_known": false,
+  "negative_controls": {
+    "no_new_official_live_pet_species_claim": true,
+    "no_historical_completeness_claim": true,
+    "no_old_year_jp_korean_absence_proof": true,
+    "no_paid_marketplace_search": true,
+    "no_repeat_failed_pet108_404": true,
+    "no_private_original_proprietary_asset_publication": true,
+    "no_mmoinfrastructure_or_stage_b": true,
+    "no_current_state_truncation": true,
+    "pet_module_only": true
+  },
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "report": "docs/continuity/STONEAGE-PET115-YEAR2018-SIX-REGION-ORIGINAL-PC-SOURCE-BOUNDED-AUDIT-20261118.md",
+  "next": "PET116: 2019 six-region authorized original PC pet source/client-first annual audit; preserve 2018 reopening gates; PET remains sole active module"
+}
