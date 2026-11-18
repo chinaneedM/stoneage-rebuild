@@ -35,7 +35,9 @@ class Pet105Year2015SixRegionBoundedReview(unittest.TestCase):
         self.assertGreaterEqual(q["current_frontier"]["year"],2016)
         self.assertIn(a["id"],[v["id"] for v in q["root_source_census_receipts"]])
         self.assertIn(a["id"],[v["id"] for v in q["root_source_census_receipts"]])
-        self.assertEqual(q["root_source_census_receipts"][-2]["id"],a["id"])  # 2016 PET110 follows
+        roots=[v["id"] for v in q["root_source_census_receipts"]]
+        i=roots.index(a["id"])
+        self.assertEqual(roots[i+1],"PET110-YEAR2016-SIX-REGION-SOURCE-BOUNDED-AUDIT-20261118")  # preserve immediate successor; allow later append
         self.assertEqual(next(v for v in q["root_source_census_receipts"] if v["id"]==a["id"])["year_frontier_after"],2016)
         self.assertEqual(q["active_module"],"PET")
         self.assertTrue(a["next"].startswith("PET106:"))
@@ -48,7 +50,7 @@ class Pet105Year2015SixRegionBoundedReview(unittest.TestCase):
         self.assertEqual(len(a["prior_receipts"]),5)
         self.assertEqual([r["id"] for r in y["partial_source_review_receipts"]][:5],a["prior_receipts"])
         self.assertEqual(y["partial_source_review_receipts"][-1]["id"],a["id"])
-        self.assertEqual([v["id"] for v in q["root_source_census_receipts"]][-7:-1],a["prior_receipts"]+[a["id"]])
+        self.assertEqual(roots[i-5:i+1],a["prior_receipts"]+[a["id"]])  # historical contiguous prefix independent of newer annual receipts
         self.assertEqual(len(q["root_source_census_receipts"]),len({r["id"] for r in q["root_source_census_receipts"]}))
         self.assertEqual(set(a["region_reviews"]),{"CN","TW","HK_MO","KR","JP","OTHER"})
         self.assertEqual(len(a["reopen_triggers"]),6)
