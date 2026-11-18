@@ -22,14 +22,14 @@ class PET92(unittest.TestCase):
         self.assertFalse(r["source_bounded_annual_audit_complete"])
         self.assertIsNone(r["year_boundaries"]["global_original_pc_species_count_2013"])
         self.assertIsNone(r["year_boundaries"]["first_introduced_official_pc_pet_species_count_2013"])
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET93:"))
+        self.assertTrue(q["current_frontier"]["next"].startswith("PET94:"))
 
     def test_forward_only_2012_2013_receipts(self):
         r,q=self.r,self.q
         ids=[x["id"] for x in q["root_source_census_receipts"]]
-        self.assertEqual(ids[-2:],[ "PET91-YEAR2013-CN-OPERATOR-PET-KR-MOBILE-FIRST-PASS-20261118",r["id"]])
+        self.assertIn(["PET91-YEAR2013-CN-OPERATOR-PET-KR-MOBILE-FIRST-PASS-20261118",r["id"]], [ids[i:i+2] for i in range(len(ids)-1)])
         self.assertEqual(len(ids),len(set(ids)))
-        self.assertEqual(q["yearly_work_queue"][14]["partial_source_review_receipts"][-1]["id"],r["id"])
+        self.assertIn(r["id"], [x["id"] for x in q["yearly_work_queue"][14]["partial_source_review_receipts"]])
         self.assertEqual(q["yearly_work_queue"][13]["research_gate"],"SOURCE_BOUNDED_REVIEWED")
         self.assertFalse(q["yearly_work_queue"][13]["historically_complete"])
         self.assertEqual(q["active_module"],"PET")
