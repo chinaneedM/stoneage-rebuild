@@ -60,7 +60,7 @@ class Pet112Tw2017AugustBlueTiger(unittest.TestCase):
         self.assertTrue(all(a["negative_controls"].values()))
         raw=(ROOT/"docs/CURRENT-STATE.md").read_bytes()
         self.assertEqual(len(raw),a["base"]["unchanged_current_state_bytes"])
-        sha=hashlib.sha1(b"blob "+str(len(raw)).encode("ascii")+b"\\x00"+raw).hexdigest()
+        sha=hashlib.sha1(b"blob "+str(len(raw)).encode("ascii")+b"\x00"+raw).hexdigest()
         self.assertEqual(sha,a["base"]["unchanged_current_state_blob"])
         self.assertIn("PET112",REPORT.read_text(encoding="utf-8"))
 
