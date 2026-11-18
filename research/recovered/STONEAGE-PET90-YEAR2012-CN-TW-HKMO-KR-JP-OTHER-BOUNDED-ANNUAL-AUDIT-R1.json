@@ -1,0 +1,262 @@
+{
+  "schema": "stoneage.pet90.year2012.source_bounded_annual_original_pc_review.r1",
+  "id": "PET90-YEAR2012-CN-TW-HKMO-KR-JP-OTHER-SOURCE-BOUNDED-AUDIT-20261118",
+  "date": "2026-11-18",
+  "active_module": "PET",
+  "year": 2012,
+  "year_frontier_before": 2012,
+  "year_frontier_after": 2013,
+  "review_status": "SOURCE_BOUNDED_REVIEWED",
+  "historically_complete": false,
+  "source_bounded_only": true,
+  "annual_scope": "SOURCE_BOUND_2012_PET_ORIGINAL_PC_6_REGION_LANES_NOT_RUNTIME_OR_COMPLETE_SPECIES",
+  "startup": {
+    "main_head": "c14eb3fbd8b65a246db5e7826207455eb3364594",
+    "main_tree": "f680720ea6ead426aad0182564c39688fd801b4f",
+    "main_actions_success": 4,
+    "main_actions_total": 4,
+    "open_prs": 0,
+    "original_current_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_current_bytes": 2709173
+  },
+  "prior_receipts": [
+    "PET88-YEAR2012-CN85-CN25-CLIENT-NAMED-PET-TW-HKMO-KR-JP-PARTIAL-20261118",
+    "PET89-YEAR2012-CN-CAPTURE-TW-TRIKA-CLIENT-REGION-SOURCE-GATES-20261118"
+  ],
+  "source_audit": [
+    {
+      "id": "2012-CN-OCT09-V1_200_012-LISTING-ONLY",
+      "region": "CN",
+      "date": "2012-10-09",
+      "source_url": "https://games.sina.com.cn/z/sqsd/download.shtml",
+      "source_grade": "PUBLIC_SINA_CLIENT_DOWNLOAD_TABLE_NO_BYTES",
+      "record": "Page heading 2010-11-19 is not the 2012-10-09 version date; table lists public-test V1.200.012 1.34GB published MD5 2a1743e07e4f97f1b2e337048918da6a; mirror previously HTTP502; not a verified local installer",
+      "authentic_client_bytes_acquired": 0,
+      "native_pet_ids": 0
+    },
+    {
+      "id": "2012-CN-JAN-FEB-NAMED-OPERATORS",
+      "region": "CN",
+      "date": "2012-01-16—2012-02-20",
+      "source_url": "https://games.sina.com.cn/o/n/2012-02-20/1537584808.shtml",
+      "source_grade": "CONTEMPORANEOUS_OPERATOR_ORIGIN_RELAY_MULTI_DATES_PET88_89",
+      "record": "PET88 and PET89 preserve exact distinct operator-origin named reward/shop and capture geography, no same version native data. Editorial source text not real executed client.",
+      "authentic_client_bytes_acquired": 0,
+      "native_pet_ids": 0
+    },
+    {
+      "id": "2012-TW-MAY22-CHANGE-OF-SCHEDULE-ERRATUM",
+      "region": "TW",
+      "date": "2012-05-22",
+      "source_url": "https://www.ptt.cc/bbs/StoneAge/M.1337697685.A.969.html",
+      "original_official_page": "http://www.stoneage.tw/news.php?id=1071",
+      "source_grade": "CONTEMPORANEOUS_PTT_VERBATIM_RELAY_OPERATOR_NOTICE_OFFICIAL_PAGE_UNAVAILABLE",
+      "record": "PET89 phrasing 2012-05-23 maintenance should be the ORIGINAL SCHEDULE, not observed patch install. As transcribed: original 5/23 maintenance postponed to 5/24 22:00 through 5/25 14:00. The planned maintenance would open 特里卡莊園 and exclusive riding-pet graphics. Original operator page not accessible; no original update bytes.",
+      "old_planned_maintenance": "2012-05-23",
+      "announced_deferred_start": "2012-05-24T22:00",
+      "announced_deferred_end": "2012-05-25T14:00",
+      "correction_forward_only": true,
+      "original_operator_page_readable_now": false,
+      "actual_patch_execution_verified": false
+    },
+    {
+      "id": "2012-TW-MAY25-V189-INDEX",
+      "region": "TW",
+      "date": "2012-05-25 metadata claim",
+      "source_url": "https://needmorefood.com/info/tz%E7%9F%B3%E5%99%A8%E6%99%82%E4%BB%A3%E5%AE%98%E7%B6%B2.html",
+      "source_grade": "THIRD_PARTY_INDEXED_SNIPPET_ORIGINAL_OPERATOR_METADATA_NOT_VERIFIED_FILE",
+      "record": "Search index says Taiwan official V.189 manual update and free-installation original program published 2012-05-25, but aggregator full page 403 and neither original provider webpage nor files acquired. May25 indexed date aligns with PTT deferred window, does not prove binaries or native image IDs.",
+      "original_bytes": 0,
+      "official_version_binary_verified": false
+    },
+    {
+      "id": "2012-TW-DEC28-BINARY-CANDIDATE-NONCUSTODY",
+      "region": "TW",
+      "date": "2012-12-28",
+      "source_url": "https://www.ptt.cc/bbs/StoneAge/M.1356710072.A.18A.html",
+      "source_grade": "CONTEMPORANEOUS_PLAYER_FB_OPERATOR_NOTICE_RELAY_NOT_BINARY_CUSTODY",
+      "record": "Period player quotes former Taozhu Facebook links http://61.66.116.158/Sa_Free_installation.exe and http://61.66.116.158/sa.rar. Historical paths only, no successful present download or content hashing, no artifact committed. Bare IP address and filenames not sufficient for authentic version proof.",
+      "bytes_acquired": 0,
+      "native_pet_ids": 0
+    },
+    {
+      "id": "2012-TW-OCT18-OPERATOR-STATUS-NOT-PET",
+      "region": "TW",
+      "date": "2012-10-18",
+      "source_url": "https://www.ptt.cc/bbs/StoneAge/M.1350563568.A.EA9.html",
+      "original_official_page": "http://www.stoneage.tw/news.php?id=1135",
+      "source_grade": "CONTEMPORANEOUS_PLAYER_RELAY_OPERATOR_STATUS_ONLY",
+      "record": "Original operator announcement copied into period post says free-to-play conversion, not official pet newly released nor closure; no merchant transaction reconstruction.",
+      "new_named_pet_count": 0
+    },
+    {
+      "id": "2012-HKMO-LATER-RETROSPECTIVE",
+      "region": "HK_MO",
+      "date": "claimed 2012-04-10 and 2012-04-29",
+      "source_url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=4519",
+      "source_grade": "POST_2012_PLAYER_RECOLLECTION_ONLY",
+      "record": "Honglong wolf task ending and server consolidation come from later player index. No contemporary Honglong original official 2012 pet master or distinct original client.",
+      "new_native_pet_count": 0
+    },
+    {
+      "id": "2012-KR-LATER-REISSUED-BOKURI",
+      "region": "KR",
+      "date": "2012-04-30 claimed by later chronology",
+      "source_url": "https://gamezone.live/board_vJGK77/12834869",
+      "companion_url": "https://seore.org/raw/%EB%B3%B5%EC%9A%B0%EB%A6%AC",
+      "source_grade": "POST_2012_FAN_CHRONOLOGY_AND_FAN_PET_WIKI",
+      "record": "2012 어린이날 복우리/몽몽 not 2012 operator contemporaneous proof; 복우리 wiki traces 2010 earlier introduction and warns easy visible transformation is not owned pet, no confirmed 2012 reward accounting.",
+      "new_species_2012_confirmed": 0
+    },
+    {
+      "id": "2012-JP-PC1-2010-END-NOT-PET",
+      "region": "JP",
+      "date": "2010-02-24 previous service end",
+      "source_url": "https://www.onlinegamer.jp/game/1000000002/",
+      "source_grade": "SERVICE_HISTORY_EARLIER_YEAR",
+      "record": "Japanese DigiPark original PC1 stopped 2010; cannot infer 2012 operating native pet list, or absence of all other StoneAge-related products."
+    },
+    {
+      "id": "2012-OTHER-MOBILE-AND-SEPARATE-GAME-CONTAMINATION",
+      "region": "OTHER",
+      "date": "2012-10-09 iOS 2012 press",
+      "source_url": "https://news.17173.com/content/10092012/114216271.shtml",
+      "secondary_product_url": "https://games.sina.com.cn/o/n/2011-09-14/1054530457.shtml",
+      "source_grade": "CONTEMPORANEOUS_OTHER_PRODUCT_LINE_EXCLUSION",
+      "record": "石器时代online iOS is a licensed smartphone product line, not PC1 client; 石器2012 is another independent product; neither can be counted as the official original 2D PC1 pet roster in 2012."
+    }
+  ],
+  "region_reviews": {
+    "CN": {
+      "region": "CN",
+      "version_lane": "SHENGSI_PC1_8_5_AND_2_5_SEPARATE",
+      "source_status": "PERIOD_OPERATOR_NAMED_PET_AND_PUBLIC_CLIENT_METADATA",
+      "known": "PET88 2012 Jan 麒麟/貔貅, 8.5 怀肯沃 vs 2.5 塔斯夫, Feb 蛇宠 司卡奇/莫里卡奇, 1/2转 玛蕾菲雅, June 旧宠展示; PET89 Feb 当期原PC宣传 呼拔拔/多萨金格/鲁尼帖斯 three named capture places, old 2010 dragons recapped",
+      "gap": "2012 8.5+2.5 same-build PET/SPR master, encounter map and capture probability, real reward logs; 2012-10-09 V1.200.012 1.34GB original file inaccessible (mirror HTTP502), published MD5 never rehashed",
+      "trigger": "CN2012_OFFICIAL_PC1_V1_200_012_AUTHENTIC_BYTES_85_25_NATIVE_PET_ENCOUNTER_AND_GRANT",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "native_pet_id_rows_verified_in_review": 0,
+      "real_original_server_pet_grant_verified": false
+    },
+    "TW": {
+      "region": "TW",
+      "version_lane": "TAOZHU_TAIWAN_ORIGINAL_PC1_INDEPENDENT",
+      "source_status": "CONTEMPORANEOUS_PLAYER_EXACT_OPERATOR_BULLETIN_RELAY_NOT_NATIVE_FILE",
+      "known": "2012-05-22 PTT transcribes original official news?id=1071: May23 planned maintenance explicitly deferred to May24 22:00–May25 14:00, plan opening 特里卡莊園 and associated mount sprites; 2012-10-18 operator message contemporaneously relayed, 2012-12-28 Facebook operator-client paths copied by PTT",
+      "gap": "Actual 2012-05-24/25 installed patch and native mount SPR, any real user reward; V.189 2012-05-25 only lower-grade indexed site metadata, no authenticated bytes; bare-IP install and update files not obtained/hashed; 2012 named pet first releases unconfirmed",
+      "trigger": "TW2012_TAOZHU_20120525_ORIGINAL_V189_PATCH_AND_DEC_INSTALLER_AUTHENTIC_BYTES_NATIVE_PETS",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "native_pet_id_rows_verified_in_review": 0,
+      "real_original_server_pet_grant_verified": false
+    },
+    "HK_MO": {
+      "region": "HK_MO",
+      "version_lane": "TAOZHU_HONGLONG_PC1_INDEPENDENT",
+      "source_status": "LATER_PLAYER_CHRONOLOGY_LEAD_ONLY",
+      "known": "2011 period authorization and planned 2011 Oct Honglong server established earlier; 2012 April Honglong merge/task events cited in later player retrospective but no original operating release record",
+      "gap": "2012 licensed Honglong same-build original client, server-specific pet availability and patch/real owner pet evidence missing; Taiwan pet claims cannot be imported",
+      "trigger": "HKMO2012_HONGLONG_CONTEMPORANEOUS_LICENSE_SERVER_PATCH_NATIVE_PET_LOG",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "native_pet_id_rows_verified_in_review": 0,
+      "real_original_server_pet_grant_verified": false
+    },
+    "KR": {
+      "region": "KR",
+      "version_lane": "CJ_NETMARBLE_ORIGINAL_PC1_DISTINCT",
+      "source_status": "LATER_FAN_CHRONOLOGY_LEAD_ONLY",
+      "known": "Later Korean chronology lists 2012 Apr30 Children's Day 복우리 / 몽몽, 2012 spring/July gacha pet names; later fan pet article says 복우리 already 2010 special event, and easy 'appearance' via shapeshift item is not actual owned pet",
+      "gap": "No original 2012 CJ/Netmarble period native-client/patch, original operator announcements, server issuance/account reward; no 2012 first-species judgement allowed",
+      "trigger": "KR2012_CJ_NETMARBLE_PERIOD_2012_PET_EVENT_NATIVE_CLIENT_ID_AND_RECEIPT",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "native_pet_id_rows_verified_in_review": 0,
+      "real_original_server_pet_grant_verified": false
+    },
+    "JP": {
+      "region": "JP",
+      "version_lane": "DIGIPARK_ORIGINAL_PC1_SERVICE_BOUNDARY",
+      "source_status": "VERIFIED_PREVIOUS_SERVICE_END_BOUNDARY_ONLY",
+      "known": "Period DigiPark notice and later service records place the original PC1 service end at 2010-02-24; no qualified 2012 original-PC official re-opening/native pet event found",
+      "gap": "No positive 2012 operator license/official product line same-version build or pet evidence; does not assert no Japan StoneAge-branded games existed",
+      "trigger": "JP2012_ORIGINAL_PC1_OPERATOR_RELAUNCH_AND_NATIVE_PET_UPDATE_IF_PROVEN",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "native_pet_id_rows_verified_in_review": 0,
+      "real_original_server_pet_grant_verified": false
+    },
+    "OTHER": {
+      "region": "OTHER",
+      "version_lane": "OTHER_LEGITIMATELY_LICENSED_PC1_OPERATOR_UNKNOWN",
+      "source_status": "NO_ADDITIONAL_QUALIFIED_OPERATOR_FOUND",
+      "known": "No additional independent 2012 region/operator original PC release evidence confirmed in source-bounded search; mobile 石器时代online iOS and independent 3D 石器2012 are explicitly excluded, not backfilled",
+      "gap": "2012 legally licensed original 2D PC1 local region/operator, original client data and actual pet issuance unknown; UNKNOWN not ZERO",
+      "trigger": "OTHER2012_QUALIFIED_ORIGINAL_PC1_REGIONAL_LICENSE_CLIENT_AND_LIVE_PET",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "native_pet_id_rows_verified_in_review": 0,
+      "real_original_server_pet_grant_verified": false
+    }
+  },
+  "reopen_triggers": [
+    "CN2012_OFFICIAL_PC1_V1_200_012_AUTHENTIC_BYTES_85_25_NATIVE_PET_ENCOUNTER_AND_GRANT",
+    "TW2012_TAOZHU_20120525_ORIGINAL_V189_PATCH_AND_DEC_INSTALLER_AUTHENTIC_BYTES_NATIVE_PETS",
+    "HKMO2012_HONGLONG_CONTEMPORANEOUS_LICENSE_SERVER_PATCH_NATIVE_PET_LOG",
+    "KR2012_CJ_NETMARBLE_PERIOD_2012_PET_EVENT_NATIVE_CLIENT_ID_AND_RECEIPT",
+    "JP2012_ORIGINAL_PC1_OPERATOR_RELAUNCH_AND_NATIVE_PET_UPDATE_IF_PROVEN",
+    "OTHER2012_QUALIFIED_ORIGINAL_PC1_REGIONAL_LICENSE_CLIENT_AND_LIVE_PET"
+  ],
+  "native_client_custody": {
+    "actual_new_authenticated_2012_original_pc_bytes": 0,
+    "original_pc_native_pet_id_rows": 0,
+    "original_2012_spr_pixels_verified": 0,
+    "native_2012_encounter_records": 0,
+    "actual_server_pet_reward_receipts": 0,
+    "cn_download_metadata_not_file": true,
+    "tw_2012_v189_announced_not_downloaded": true,
+    "tw_historical_download_binary_candidates_unread": true
+  },
+  "novel_historical_findings": {
+    "tw_original_schedule_before_deferral": "2012-05-23",
+    "tw_revised_planned_maintenance": "2012-05-24T22:00/2012-05-25T14:00",
+    "tw_official_original_notice_per_relay": "http://www.stoneage.tw/news.php?id=1071",
+    "tw_v189_metadata_indexed_as_of": "2012-05-25",
+    "tw_service_and_hkmo_separate": true,
+    "additional_2012_confirmed_new_species_from_later_fan_roster": 0
+  },
+  "source_negative_controls": {
+    "cn_85_and_25_independent": true,
+    "cn_site_reported_md5_not_recomputed": true,
+    "tw_20120523_was_planned_but_deferred_not_observed_patch": true,
+    "tw_original_operator_1071_unavailable_original_binary_unread": true,
+    "tw_v189_third_party_index_not_native_checksum": true,
+    "tw_operator_20121228_bare_ip_download_lead_not_acquired": true,
+    "tw_hkmo_client_pet_rosters_not_auto_copied": true,
+    "kr_later_복우리_wiki_not_2012_first_release": true,
+    "kr_transform_visual_not_actual_owned_pet": true,
+    "jp_original_pc_2010_close_does_not_disprove_other_product": true,
+    "mobile_and_3d_separate_products_excluded": true,
+    "year_source_bounded_not_history_complete": true,
+    "no_sale_or_paid_marketplace_carrier_research": true,
+    "no_original_private_commercial_assets_publicly_uploaded": true,
+    "no_private_server_repacked_client_promoted_to_official": true
+  },
+  "global_original_pc_pet_species_count_2012": null,
+  "first_release_2012_species_count": null,
+  "year_source_bounded_closed": true,
+  "year_reopenable_when_authentic_2012_native_clients_or_operator_sources_arrive": true,
+  "historical_CURRENT_untouched": true,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "PET91: year 2013 CN 8.5/2.5 TW Taozhu HK/MO Honglong KR CJ/Netmarble JP OTHER original PC pet region-by-region source-first; priority authentic directly readable free client/patch first, later media only for unresolved live release; preserve product-line boundaries. 2012 remains reopenable, not historically complete."
+}
