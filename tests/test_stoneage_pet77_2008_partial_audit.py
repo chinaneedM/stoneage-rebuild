@@ -11,9 +11,10 @@ class PET77Partial(unittest.TestCase):
   cls.q=get("STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json")
  def test_both_receipts_and_2008_open(self):
   a,q=self.a,self.q
-  self.assertEqual((a["year"],a["year_cursor_after"],q["current_frontier"]["year"]),(2008,2008,2008))
-  self.assertEqual(q["current_frontier"]["latest_partial_root_review"],a["id"])
-  self.assertEqual(q["yearly_work_queue"][9]["research_gate"],"NOT_YEAR_AUDITED")
+  # The historical PET77 partial receipt is immutable; current year may advance.
+  self.assertEqual((a["year"],a["year_cursor_after"]),(2008,2008))
+  self.assertGreaterEqual(q["current_frontier"]["year"],2008)
+  self.assertEqual(q["yearly_work_queue"][9]["research_gate"],"NOT_YEAR_AUDITED" if q["current_frontier"]["year"]==2008 else "SOURCE_BOUNDED_REVIEWED")
   self.assertFalse(a["historically_complete"])
   self.assertEqual(sum(x["id"]==a["id"] for x in q["root_source_census_receipts"]),1)
   self.assertEqual(sum(x["id"]==a["id"] for x in q["yearly_work_queue"][9]["partial_source_review_receipts"]),1)

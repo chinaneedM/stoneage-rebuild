@@ -18,7 +18,7 @@ class PET76Annual(unittest.TestCase):
   self.assertFalse(year["historically_complete"])
   self.assertIsNone(year["historical_species_count"])
   self.assertEqual(year["source_bounded_review_receipt"],"research/recovered/STONEAGE-PET76-YEAR2007-FIVE-REGION-BOUNDED-AUDIT-R1.json")
-  self.assertEqual(q["yearly_work_queue"][2008-1999]["research_gate"],"NOT_YEAR_AUDITED")
+  self.assertEqual(q["yearly_work_queue"][2008-1999]["research_gate"],"NOT_YEAR_AUDITED" if q["current_frontier"]["year"]==2008 else "SOURCE_BOUNDED_REVIEWED")
   self.assertEqual(a["year_2007_existing_PET25_PET26_documentary_events_NOT_species"],0)
   self.assertEqual(year["documentary_event_count_NOT_species"],0)
  def test_japan_six_named_original_official_pool_not_six_new(self):

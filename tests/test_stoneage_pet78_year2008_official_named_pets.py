@@ -12,10 +12,11 @@ class TestPet78(unittest.TestCase):
   cls.p=get("STONEAGE-PET77-YEAR2008-OFFICIAL-PET-PARTIAL-SOURCE-AUDIT-R1.json")
  def test_year_remains_2008_and_two_receipts_unique(self):
   a,q=self.a,self.q;year=q["yearly_work_queue"][9]
-  self.assertEqual((a["year"],q["current_frontier"]["year"],a["current_cursor_after"]),(2008,2008,2008))
-  self.assertEqual(year["research_gate"],"NOT_YEAR_AUDITED")
+  # PET78 snapshot remains a 2008 source review after the next year starts.
+  self.assertEqual((a["year"],a["current_cursor_after"]),(2008,2008))
+  self.assertGreaterEqual(q["current_frontier"]["year"],2008)
+  self.assertEqual(year["research_gate"],"NOT_YEAR_AUDITED" if q["current_frontier"]["year"]==2008 else "SOURCE_BOUNDED_REVIEWED")
   self.assertFalse(a["historically_complete"])
-  self.assertEqual(q["current_frontier"]["latest_partial_root_review"],a["id"])
   self.assertEqual(sum(x["id"]==a["id"] for x in q["root_source_census_receipts"]),1)
   self.assertEqual(sum(x["id"]==a["id"] for x in year["partial_source_review_receipts"]),1)
   self.assertEqual(sum(x["id"]==self.p["id"] for x in q["root_source_census_receipts"]),1)
