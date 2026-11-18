@@ -75,10 +75,13 @@ on:
       - "tests/test_stoneage_pet104_tw2015_halloween_prize_egg_boundary.py"
       - "tests/test_stoneage_pet105_year2015_six_region_bounded_audit.py"
       - "tests/test_stoneage_pet106_2016_pc_mobile_product_boundary.py"
+      - "tests/test_stoneage_pet107_tw2016_beetle_duanwu_originalpc.py"
       - "research/recovered/STONEAGE-PET105-YEAR2015-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json"
       - "research/recovered/STONEAGE-PET106-YEAR2016-CLASSIC-PC-VS-ORIGINS-MOBILE-FIRST-PASS-R1.json"
+      - "research/recovered/STONEAGE-PET107-TW2016-BEETLE-DUANWU-2016-SOURCE-GRADES-R1.json"
       - "docs/continuity/STONEAGE-PET105-YEAR2015-SIX-REGION-ORIGINAL-PC-PET-SOURCE-BOUNDED-AUDIT-20261118.md"
       - "docs/continuity/STONEAGE-PET106-YEAR2016-CLASSIC-PC-AND-ORIGINS-MOBILE-PRODUCT-BOUNDARY-20261118.md"
+      - "docs/continuity/STONEAGE-PET107-TW2016-BEETLE-DUANWU-PLAYER-CLIENT-BOUNDARY-20261118.md"
       - "research/recovered/STONEAGE-PET104-TW2015-HALLOWEEN-RELAY-PRIZE-EGG-BOUNDARY-R1.json"
       - "docs/continuity/STONEAGE-PET104-TW2015-HALLOWEEN-OFFICIAL-RELAY-PRIZE-BOX-BOUNDARY-20261118.md"
       - "research/recovered/STONEAGE-PET103-TW2015-CHRISTMAS-PLAYER-REWARDS-NOT-NATIVE-PET-R1.json"
@@ -262,10 +265,13 @@ on:
       - "tests/test_stoneage_pet104_tw2015_halloween_prize_egg_boundary.py"
       - "tests/test_stoneage_pet105_year2015_six_region_bounded_audit.py"
       - "tests/test_stoneage_pet106_2016_pc_mobile_product_boundary.py"
+      - "tests/test_stoneage_pet107_tw2016_beetle_duanwu_originalpc.py"
       - "research/recovered/STONEAGE-PET105-YEAR2015-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json"
       - "research/recovered/STONEAGE-PET106-YEAR2016-CLASSIC-PC-VS-ORIGINS-MOBILE-FIRST-PASS-R1.json"
+      - "research/recovered/STONEAGE-PET107-TW2016-BEETLE-DUANWU-2016-SOURCE-GRADES-R1.json"
       - "docs/continuity/STONEAGE-PET105-YEAR2015-SIX-REGION-ORIGINAL-PC-PET-SOURCE-BOUNDED-AUDIT-20261118.md"
       - "docs/continuity/STONEAGE-PET106-YEAR2016-CLASSIC-PC-AND-ORIGINS-MOBILE-PRODUCT-BOUNDARY-20261118.md"
+      - "docs/continuity/STONEAGE-PET107-TW2016-BEETLE-DUANWU-PLAYER-CLIENT-BOUNDARY-20261118.md"
       - "research/recovered/STONEAGE-PET104-TW2015-HALLOWEEN-RELAY-PRIZE-EGG-BOUNDARY-R1.json"
       - "docs/continuity/STONEAGE-PET104-TW2015-HALLOWEEN-OFFICIAL-RELAY-PRIZE-BOX-BOUNDARY-20261118.md"
       - "research/recovered/STONEAGE-PET103-TW2015-CHRISTMAS-PLAYER-REWARDS-NOT-NATIVE-PET-R1.json"
@@ -470,6 +476,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet105_year2015_six_region_bounded_audit
       - name: PET106 2016 original-PC CINS TW evidence versus separated Origins mobile release
         run: python -m unittest tests.test_stoneage_pet106_2016_pc_mobile_product_boundary
+      - name: PET107 2016 Taiwan beetle juvenile, 10 Dragon Boat foe labels and client205 boundary
+        run: python -m unittest tests.test_stoneage_pet107_tw2016_beetle_duanwu_originalpc
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary

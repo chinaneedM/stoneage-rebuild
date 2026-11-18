@@ -1,0 +1,186 @@
+{
+  "schema": "stoneage.pet107.tw2016_beetle_duanwu_source_grades.r1",
+  "id": "PET107-TW2016-BEETLE-DUANWU-CLIENT-BOUNDARY-20261118",
+  "date": "2026-11-18",
+  "module": "PET",
+  "year": 2016,
+  "region": "TW",
+  "product_line": "STONEAGE_ORIGINAL_PC_TAOZHU",
+  "baseline": {
+    "main_sha": "64c08a7eaf796ddaf9ffbeb9f6ee7bd8fd9d57fd",
+    "main_tree": "c045dbfbe63f59390db4f7f2842ba404d64d9c5a",
+    "current_state_original_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_state_original_size": 2709173,
+    "prior_receipt": "PET106-YEAR2016-CLASSIC-PC-MOBILE-BOUNDARY-20261118"
+  },
+  "status": "PARTIAL_PERIOD_SOURCE_REVIEW",
+  "year_source_bounded_reviewed": false,
+  "historically_complete": false,
+  "year_cursor_before": 2016,
+  "year_cursor_after": 2016,
+  "newly_retrieved_original_taiwan_2016_pc_client_bytes": 0,
+  "newly_retrieved_original_taiwan_2016_pc_patch_bytes": 0,
+  "new_native_pet_ids": 0,
+  "new_original_spr_pixel_replays": 0,
+  "new_same_build_pet_skill_rows": 0,
+  "new_original_operator_server_grant_logs": 0,
+  "global_pet_species_count": null,
+  "tw2016_new_species_count": null,
+  "sources": [
+    {
+      "id": "TW2016-0202-BEETLE-OPERATOR-VOICE-MIRROR",
+      "url": "https://www.shiqi.me/pt_8.htm",
+      "publication_date": "2016-02-02",
+      "source_kind": "DATED_THIRD_PARTY_FULL_HTML_OPERATOR_VOICE_RELAY",
+      "content_access": "PUBLIC_DIRECT_HTML_READ",
+      "authentic_original_operator_domain": false,
+      "operator_live_pet_grant_proved": false,
+      "claim": "Feb03 scheduled maintenance opens permanent beetle ecology study quest from NPC 伊雷特; prize type beetle pet, level120 and prior 奇寶養育訓練 quest required",
+      "qualified_level": "CONTEMPORANEOUS_OFFICIAL_WORDING_RELAY_ANNOUNCEMENT_NOT_ORIGINAL_OPERATOR_OR_NATIVE"
+    },
+    {
+      "id": "TW2016-0316-BEETLE-FIRST-PERSON-PLAYER",
+      "url": "https://forum.gamer.com.tw/Co.php?bsn=1571&sn=291194",
+      "source_edit_date": "2016-03-16 00:44:59",
+      "source_kind": "DATED_FIRST_PERSON_PLAYER_GUIDE",
+      "content_access": "SEARCH_INDEX_EXCERPT_ONLY_DIRECT_PAGE_403",
+      "player_reported": "Captured juvenile beetle pets in two encounter areas, acquired beetle egg, held wind-earth juvenile beetle in pet slots and advanced training to level140; player mentions battle skills and error but not original compiled mechanics",
+      "original_pc_same_build_verified": false,
+      "original_operator_reward_grant_verified": false,
+      "qualified_level": "CONTEMPORANEOUS_PLAYER_FIRSTHAND_GAMEPLAY_SELF_REPORT_NOT_NATIVE_CLIENT_EXECUTION"
+    },
+    {
+      "id": "TW2016-0613-DUANWU-PLAYER-GUIDE",
+      "url": "https://forum.gamer.com.tw/Co.php?bPage=0&bsn=1571&sn=292257&subbsn=10",
+      "source_edit_date": "2016-06-13 08:50:02",
+      "source_kind": "DATED_PLAYER_COLLATION_GUIDE",
+      "content_access": "SEARCH_INDEX_EXTENDED_TEXT_DIRECT_PAGE_403",
+      "player_reported": "Four elemental 端午蛇 names, six further 三頭蛇／天使蛇／惡魔蛇 foe labels; 端午蛇袋子, 2號變種狼人福袋 and 甲蟲禮盒 in player-collected candidate reward list",
+      "qualified_level": "PLAYER_CROWD_AGGREGATED_ENCOUNTER_AND_REWARD_CANDIDATES_NOT_FIRST_PARTY_RELEASE"
+    },
+    {
+      "id": "TW2016-0302-CLIENT-VERSION205-PLAYER-EDIT",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=1571&snA=76233",
+      "source_edit_or_display_date": "2016-03-02 14:19:11",
+      "source_kind": "PLAYER_CLIENT_INSTALL_GUIDE",
+      "content_access": "SEARCH_INDEX_EXCERPT_ONLY_DIRECT_PAGE_403",
+      "player_reported": "199-labelled original installer link, launch updater, player text currently latest 205 version; actual original 2016 client/patch bytes not independently retrieved",
+      "qualified_level": "VERSION205_PLAYER_STATEMENT_ONLY_NOT_AUTHENTICATED_BUILD"
+    },
+    {
+      "id": "CN2016-7K7K-SEPARATE-WEB-GAME-OPERATOR-NOTICE",
+      "url": "https://web.7k7k.com/games/sqsd/notice/55722.html",
+      "source_date": "2016-04-22",
+      "source_kind": "FIRST_PARTY_WEB_GAME_NOTICE",
+      "content_access": "PUBLIC_DIRECT_HTML_READ",
+      "game_identification": "WEB_REMAKE_NOT_ORIGINAL_CLASSIC_PC",
+      "shutdown_date": "2016-05-29",
+      "qualified_level": "NEGATIVE_PRODUCT_LINE_GUARD_NOT_CLASSIC_PC_PET_COUNT"
+    }
+  ],
+  "source_attempts": [
+    {
+      "target": "2015-2016 original TW Taozhu no-install client via stoneage2.com.tw/download.php?c=2",
+      "url": "https://www.stoneage2.com.tw/download.php?c=2",
+      "attempt_result": "NOT_ACCESSIBLE_VIA_WEB_READER",
+      "file_bytes_obtained": 0,
+      "source_build_authenticated": false
+    },
+    {
+      "target": "2016 original TW operator download via stoneage.tw",
+      "url": "https://www.stoneage.tw/download.php?c=2",
+      "attempt_result": "TIMEOUT_VIA_WEB_READER",
+      "file_bytes_obtained": 0,
+      "source_build_authenticated": false
+    },
+    {
+      "target": "2015 player shared stoneage.exe patch",
+      "url": "https://drive.google.com/file/d/0Bwkyp1Ozotu6WHhZdGNwSWowTzA/view",
+      "attempt_result": "NOT_ACCESSIBLE_VIA_WEB_READER_UNTRUSTED_PLAYER_PATCH",
+      "file_bytes_obtained": 0,
+      "source_build_authenticated": false
+    }
+  ],
+  "beetle": {
+    "source_operator_announcement_type": "ANNOUNCED_BEETLE_TYPE_PET_2016_OPERATOR_VOICE_RELAY",
+    "first_person_player_reports_capture": true,
+    "first_person_player_reports_pet_ownership": true,
+    "first_person_player_reports_egg_drop": true,
+    "named_final_reward_pet": null,
+    "source_pet_id": null,
+    "source_sprite_id": null,
+    "not_verified_first_historical_issue": true,
+    "source_child_beetle_label": "幼甲蟲",
+    "player_variant_descriptor": "風地幼甲蟲",
+    "no_native_skill_effect_proof": true
+  },
+  "dragon_boat": {
+    "source": "TW2016-0613-DUANWU-PLAYER-GUIDE",
+    "monster_labels_by_group": {
+      "elemental_snakes": [
+        "卡恩格登",
+        "卡恩米茲",
+        "卡恩法爾",
+        "卡恩修比"
+      ],
+      "three_headed_snakes": [
+        "史奈克特",
+        "葛利斯奈",
+        "艾柏瑞",
+        "拉特利"
+      ],
+      "angel_demon": [
+        "司卡奇",
+        "莫里卡其"
+      ]
+    },
+    "monster_label_count_not_species_count": 10,
+    "reward_item_labels": [
+      "端午蛇袋子",
+      "2號變種狼人福袋",
+      "甲蟲禮盒"
+    ],
+    "claimed_2016_new_pet_species_count": null,
+    "reward_bag_is_not_native_pet_identity": true,
+    "monster_name_is_not_necessarily_released_catchable_pet": true
+  },
+  "client_version": {
+    "player_mentioned_version": "205",
+    "first_hand_build_sha": null,
+    "operator_2016_version_bytes": null,
+    "authenticated_client_version_build": false
+  },
+  "separate_product_lines": [
+    {
+      "product": "7K7K_STONEAGE_BROWSER_WEB_REMAKE",
+      "not_classic_pc": true
+    },
+    {
+      "product": "STONEAGE_ORIGINS_MOBILE",
+      "not_classic_pc": true,
+      "prior_receipt": "PET106-YEAR2016-CLASSIC-PC-MOBILE-BOUNDARY-20261118"
+    }
+  ],
+  "negative_controls": {
+    "relay_site_disclaimer_not_operator_original": true,
+    "player_edited_page_not_stable_original_source_bytes": true,
+    "direct_forum_page_403_does_not_create_full_html_custody": true,
+    "larva_encounter_not_final_beetle_reward_species_identity": true,
+    "dragonboat_enemy_labels_not_pet_population": true,
+    "pet_box_egg_item_not_live_pet_without_original_identity": true,
+    "item_rewards_and_skill_cans_not_pet_species": true,
+    "preexisting_pet_variant_not_2016_first_release_without_proof": true,
+    "no_original_clients_claimed_from_failed_url_access": true,
+    "cannot_promote_player205_to_authenticated_patch": true,
+    "cannot_merge_7k7k_web_or_mobile_to_classic_pc": true,
+    "no_paid_marketplace_or_private_server_proof": true,
+    "no_proprietary_game_assets_committed": true
+  },
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_game_completion_percent": null,
+  "current_state_unchanged": true,
+  "report_path": "docs/continuity/STONEAGE-PET107-TW2016-BEETLE-DUANWU-PLAYER-CLIENT-BOUNDARY-20261118.md",
+  "next": "PET108: continue 2016 PC pet source-first, prioritize locating original Taozhu February beetle reward page and exact client patch bytes/native pet rewards; five other region gates remain open, no advancement to 2017"
+}

@@ -39,7 +39,7 @@ class Pet105Year2015SixRegionBoundedReview(unittest.TestCase):
         self.assertEqual(q["root_source_census_receipts"][-1]["year_frontier_after"],2016)
         self.assertEqual(q["active_module"],"PET")
         self.assertTrue(a["next"].startswith("PET106:"))
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET106:"))
+        self.assertTrue(q["current_frontier"]["next"].startswith("PET"))  # later PET batches may supersede a historical NEXT
         self.assertIn("PET105",REPORT.read_text(encoding="utf-8"))
 
     def test_five_prior_receipts_preserved_and_six_reopen_triggers(self):
