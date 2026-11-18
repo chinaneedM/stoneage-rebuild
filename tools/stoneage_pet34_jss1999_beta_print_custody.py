@@ -7,6 +7,7 @@ certify page transcription or claim a pet was released in-game.
 import argparse
 import hashlib
 import json
+import time
 from pathlib import Path
 from urllib.request import Request, urlopen
 
@@ -77,6 +78,32 @@ def build(raw, final_url, pages):
     }
 
 
+
+def fetch_exact_magazine(max_attempts=3, fetcher=urlopen, pause=time.sleep):
+    """Retry transient downloads, fail-closed unless the original URL, length and SHA match.
+
+    A truncated PDF or an HTML error body must never reach PyMuPDF as an original scan.
+    Keep source identity constraints exactly as strict as build().
+    """
+    require(max_attempts >= 1, "attempt count must be positive")
+    last_error = None
+    for attempt in range(max_attempts):
+        try:
+            with fetcher(Request(URL, headers={"User-Agent": "Mozilla/5.0 (compatible; StoneAgeHistoricalEvidence/1.0)"}), timeout=120) as response:
+                raw = response.read(BYTES + 1)
+                final_url = response.url
+            require(final_url == URL, "source redirect changed")
+            require(len(raw) == BYTES, "wrong original magazine PDF size")
+            require(raw.startswith(b"%PDF-"), "not the magazine PDF")
+            require(hashlib.sha256(raw).hexdigest() == SHA256, "original magazine PDF SHA drift")
+            return raw, final_url
+        except (OSError, ValueError) as exc:
+            last_error = exc
+            if attempt + 1 < max_attempts:
+                pause(min(attempt + 1, 2))
+    raise ValueError("original magazine PDF not recovered with exact URL/size/SHA after retries") from last_error
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--input", type=Path)
@@ -86,9 +113,12 @@ def main():
         raw = args.input.read_bytes()
         final = URL
     else:
-        with urlopen(Request(URL, headers={"User-Agent": "Mozilla/5.0 (compatible; StoneAgeHistoricalEvidence/1.0)"}), timeout=120) as r:
-            raw = r.read(BYTES + 1)
-            final = r.url
+        raw, final = fetch_exact_magazine()
+    # The same exact-identity guard also covers a caller-supplied --input file.
+    require(final == URL, "source redirect changed")
+    require(len(raw) == BYTES, "wrong original magazine PDF size")
+    require(raw.startswith(b"%PDF-"), "not the magazine PDF")
+    require(hashlib.sha256(raw).hexdigest() == SHA256, "original magazine PDF SHA drift")
     import fitz
     pdf = fitz.open(stream=raw, filetype="pdf")
     report = build(raw, final, len(pdf))
