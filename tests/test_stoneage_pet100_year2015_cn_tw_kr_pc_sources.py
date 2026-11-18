@@ -24,11 +24,11 @@ class Pet100Year2015FirstPass(unittest.TestCase):
         self.assertFalse(a["year_closed"])
         self.assertFalse(a["historically_complete"])
         self.assertEqual(q["current_frontier"]["year"],2015)
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET101:"))
+        self.assertTrue(a["next"].startswith("PET101:"))
         self.assertEqual(q["yearly_work_queue"][16]["research_gate"],"NOT_YEAR_AUDITED")
         self.assertEqual(q["yearly_work_queue"][15]["research_gate"],"SOURCE_BOUNDED_REVIEWED")
-        self.assertEqual(q["root_source_census_receipts"][-1]["id"],a["id"])
-        self.assertEqual(q["yearly_work_queue"][16]["partial_source_review_receipts"][-1]["id"],a["id"])
+        self.assertIn(a["id"],[r["id"] for r in q["root_source_census_receipts"]])
+        self.assertIn(a["id"],[r["id"] for r in q["yearly_work_queue"][16]["partial_source_review_receipts"]])
         self.assertIn("PET100",REPORT.read_text(encoding="utf-8"))
 
     def test_six_sources_distinct_grades_and_operator_text_not_native(self):

@@ -69,6 +69,9 @@ on:
       - "tests/test_stoneage_pet98_tw2014_seasonal_pet_rewards.py"
       - "tests/test_stoneage_pet99_year2014_six_region_bounded_audit.py"
       - "tests/test_stoneage_pet100_year2015_cn_tw_kr_pc_sources.py"
+      - "tests/test_stoneage_pet101_tw2015_pc_versions_hkmo_license.py"
+      - "research/recovered/STONEAGE-PET101-TW2015-PC199-200-202-HKMO-ORIGINAL-LICENSE-BOUNDARY-R1.json"
+      - "docs/continuity/STONEAGE-PET101-TW2015-PC199-200-202-HKMO-ORIGINAL-LICENSE-BOUNDARY-20261118.md"
       - "research/recovered/STONEAGE-PET100-YEAR2015-CN-TW-KR-ORIGINAL-PC-PET-SOURCE-FIRST-PASS-R1.json"
       - "docs/continuity/STONEAGE-PET100-YEAR2015-CN-TW-KR-ORIGINAL-PC-SOURCE-FIRST-PASS-20261118.md"
       - "research/recovered/STONEAGE-PET99-YEAR2014-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json"
@@ -238,6 +241,9 @@ on:
       - "tests/test_stoneage_pet98_tw2014_seasonal_pet_rewards.py"
       - "tests/test_stoneage_pet99_year2014_six_region_bounded_audit.py"
       - "tests/test_stoneage_pet100_year2015_cn_tw_kr_pc_sources.py"
+      - "tests/test_stoneage_pet101_tw2015_pc_versions_hkmo_license.py"
+      - "research/recovered/STONEAGE-PET101-TW2015-PC199-200-202-HKMO-ORIGINAL-LICENSE-BOUNDARY-R1.json"
+      - "docs/continuity/STONEAGE-PET101-TW2015-PC199-200-202-HKMO-ORIGINAL-LICENSE-BOUNDARY-20261118.md"
       - "research/recovered/STONEAGE-PET100-YEAR2015-CN-TW-KR-ORIGINAL-PC-PET-SOURCE-FIRST-PASS-R1.json"
       - "docs/continuity/STONEAGE-PET100-YEAR2015-CN-TW-KR-ORIGINAL-PC-SOURCE-FIRST-PASS-20261118.md"
       - "research/recovered/STONEAGE-PET99-YEAR2014-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json"
@@ -422,6 +428,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet99_year2014_six_region_bounded_audit
       - name: PET100 2015 CN TW KR source first pass and year-open gate
         run: python -m unittest tests.test_stoneage_pet100_year2015_cn_tw_kr_pc_sources
+      - name: PET101 2015 TW 199 200 202 client label and HK MO license boundaries
+        run: python -m unittest tests.test_stoneage_pet101_tw2015_pc_versions_hkmo_license
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary
