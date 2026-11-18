@@ -77,14 +77,17 @@ on:
       - "tests/test_stoneage_pet106_2016_pc_mobile_product_boundary.py"
       - "tests/test_stoneage_pet107_tw2016_beetle_duanwu_originalpc.py"
       - "tests/test_stoneage_pet108_tw2018_dler_source_bytes_boundary.py"
+      - "tests/test_stoneage_pet109_tw2016_halloween_crossyear_pet_source.py"
       - "research/recovered/STONEAGE-PET105-YEAR2015-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json"
       - "research/recovered/STONEAGE-PET106-YEAR2016-CLASSIC-PC-VS-ORIGINS-MOBILE-FIRST-PASS-R1.json"
       - "research/recovered/STONEAGE-PET107-TW2016-BEETLE-DUANWU-2016-SOURCE-GRADES-R1.json"
       - "research/recovered/STONEAGE-PET108-TW-CLIENT-DLER-170423-CHECKSUM-ACCESS-BOUNDARY-R1.json"
+      - "research/recovered/STONEAGE-PET109-TW2016-PLAYER-PET-REWARDS-HALLOWEEN-2015-CROSSYEAR-BOUNDARY-R1.json"
       - "docs/continuity/STONEAGE-PET105-YEAR2015-SIX-REGION-ORIGINAL-PC-PET-SOURCE-BOUNDED-AUDIT-20261118.md"
       - "docs/continuity/STONEAGE-PET106-YEAR2016-CLASSIC-PC-AND-ORIGINS-MOBILE-PRODUCT-BOUNDARY-20261118.md"
       - "docs/continuity/STONEAGE-PET107-TW2016-BEETLE-DUANWU-PLAYER-CLIENT-BOUNDARY-20261118.md"
       - "docs/continuity/STONEAGE-PET108-TW-2018-DLER-CLIENT-HASH-AND-2016-SOURCE-ACCESS-20261118.md"
+      - "docs/continuity/STONEAGE-PET109-TW2016-CONTEMPORANEOUS-PLAYER-AND-HALLOWEEN-CROSSYEAR-20261118.md"
       - "research/recovered/STONEAGE-PET104-TW2015-HALLOWEEN-RELAY-PRIZE-EGG-BOUNDARY-R1.json"
       - "docs/continuity/STONEAGE-PET104-TW2015-HALLOWEEN-OFFICIAL-RELAY-PRIZE-BOX-BOUNDARY-20261118.md"
       - "research/recovered/STONEAGE-PET103-TW2015-CHRISTMAS-PLAYER-REWARDS-NOT-NATIVE-PET-R1.json"
@@ -270,14 +273,17 @@ on:
       - "tests/test_stoneage_pet106_2016_pc_mobile_product_boundary.py"
       - "tests/test_stoneage_pet107_tw2016_beetle_duanwu_originalpc.py"
       - "tests/test_stoneage_pet108_tw2018_dler_source_bytes_boundary.py"
+      - "tests/test_stoneage_pet109_tw2016_halloween_crossyear_pet_source.py"
       - "research/recovered/STONEAGE-PET105-YEAR2015-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json"
       - "research/recovered/STONEAGE-PET106-YEAR2016-CLASSIC-PC-VS-ORIGINS-MOBILE-FIRST-PASS-R1.json"
       - "research/recovered/STONEAGE-PET107-TW2016-BEETLE-DUANWU-2016-SOURCE-GRADES-R1.json"
       - "research/recovered/STONEAGE-PET108-TW-CLIENT-DLER-170423-CHECKSUM-ACCESS-BOUNDARY-R1.json"
+      - "research/recovered/STONEAGE-PET109-TW2016-PLAYER-PET-REWARDS-HALLOWEEN-2015-CROSSYEAR-BOUNDARY-R1.json"
       - "docs/continuity/STONEAGE-PET105-YEAR2015-SIX-REGION-ORIGINAL-PC-PET-SOURCE-BOUNDED-AUDIT-20261118.md"
       - "docs/continuity/STONEAGE-PET106-YEAR2016-CLASSIC-PC-AND-ORIGINS-MOBILE-PRODUCT-BOUNDARY-20261118.md"
       - "docs/continuity/STONEAGE-PET107-TW2016-BEETLE-DUANWU-PLAYER-CLIENT-BOUNDARY-20261118.md"
       - "docs/continuity/STONEAGE-PET108-TW-2018-DLER-CLIENT-HASH-AND-2016-SOURCE-ACCESS-20261118.md"
+      - "docs/continuity/STONEAGE-PET109-TW2016-CONTEMPORANEOUS-PLAYER-AND-HALLOWEEN-CROSSYEAR-20261118.md"
       - "research/recovered/STONEAGE-PET104-TW2015-HALLOWEEN-RELAY-PRIZE-EGG-BOUNDARY-R1.json"
       - "docs/continuity/STONEAGE-PET104-TW2015-HALLOWEEN-OFFICIAL-RELAY-PRIZE-BOX-BOUNDARY-20261118.md"
       - "research/recovered/STONEAGE-PET103-TW2015-CHRISTMAS-PLAYER-REWARDS-NOT-NATIVE-PET-R1.json"
@@ -486,6 +492,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet107_tw2016_beetle_duanwu_originalpc
       - name: PET108 third-party Taiwan client checksum and original bytes access boundary
         run: python -m unittest tests.test_stoneage_pet108_tw2018_dler_source_bytes_boundary
+      - name: PET109 Taiwan dated pet-player claims versus retrospectively edited Halloween rewards
+        run: python -m unittest tests.test_stoneage_pet109_tw2016_halloween_crossyear_pet_source
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary
