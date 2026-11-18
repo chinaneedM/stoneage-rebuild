@@ -14,15 +14,16 @@ class Pet114Tw2018PetSources(unittest.TestCase):
   a,q=self.a,self.q
   y=next(v for v in q["yearly_work_queue"] if v["year"]==2018)
   self.assertEqual((a["year_frontier_before"],a["year_frontier_after"]),(2018,2018))
-  self.assertEqual((a["year_gate"],y["research_gate"]),( "NOT_YEAR_AUDITED","NOT_YEAR_AUDITED"))
+  self.assertEqual(a["year_gate"],"NOT_YEAR_AUDITED") # PET114 historical source gate remains, PET115 later reviewed year
+  self.assertEqual(y["research_gate"],"SOURCE_BOUNDED_REVIEWED")
   self.assertEqual((q["active_module"],a["active_module"]),( "PET","PET"))
-  self.assertEqual(q["current_frontier"]["year"],2018)
+  self.assertEqual(q["current_frontier"]["year"],2019)
   self.assertEqual(q["current_frontier"]["latest_2018_partial_source_receipt"],a["id"])
-  self.assertTrue(q["current_frontier"]["next"].startswith("PET115:"))
-  self.assertEqual(y["partial_source_review_receipts"][-1]["id"],a["id"])
+  self.assertTrue(q["current_frontier"]["next"].startswith(("PET115:","PET116:")))
+  self.assertEqual(y["partial_source_review_receipts"][0]["id"],a["id"])
   self.assertFalse(a["year_closed"])
   self.assertFalse(a["historically_complete"])
-  self.assertEqual(q["current_frontier"]["latest_source_bounded_annual_review"],a["baseline"]["prior_latest_source_bounded_review"])
+  self.assertIn(a["baseline"]["prior_latest_source_bounded_review"],[v["id"] for v in q["root_source_census_receipts"]])
 
  def test_period_source_grades_and_pets_not_items(self):
   a=self.a
