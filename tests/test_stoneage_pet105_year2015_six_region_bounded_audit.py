@@ -50,6 +50,8 @@ class Pet105Year2015SixRegionBoundedReview(unittest.TestCase):
         self.assertEqual(len(a["prior_receipts"]),5)
         self.assertEqual([r["id"] for r in y["partial_source_review_receipts"]][:5],a["prior_receipts"])
         self.assertEqual(y["partial_source_review_receipts"][-1]["id"],a["id"])
+        roots=[v["id"] for v in q["root_source_census_receipts"]]
+        i=roots.index(a["id"])
         self.assertEqual(roots[i-5:i+1],a["prior_receipts"]+[a["id"]])  # historical contiguous prefix independent of newer annual receipts
         self.assertEqual(len(q["root_source_census_receipts"]),len({r["id"] for r in q["root_source_census_receipts"]}))
         self.assertEqual(set(a["region_reviews"]),{"CN","TW","HK_MO","KR","JP","OTHER"})
