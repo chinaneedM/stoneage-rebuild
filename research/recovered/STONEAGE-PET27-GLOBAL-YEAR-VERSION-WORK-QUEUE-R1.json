@@ -18,8 +18,8 @@
     "year": 2010,
     "phase": "YEAR_2010_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET82-2009-FIVE-REGION-ORIGINAL-PC-BOUNDED-YEAR-AUDIT-20261118",
-    "next": "PET83: earliest unreviewed year 2010, first-party original PC pet and patch releases by JP/KR/CN/TW/OTHER; separate 2010 operator license from actual game launch; no paid seller materials.",
+    "latest_partial_root_review": "PET83-YEAR2010-CN85-TW-JP-KR-ORIGINAL-PC-PET-SOURCE-FIRST-PASS-20261118",
+    "next": "PET84: continue 2010, first authentic free test client with reported MD5 and native pet records, independent mermaid actual grant/five whales live update, KR qualified operator named patches and JP Jan applied updates; no species total promotion.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -1834,7 +1834,37 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "partial_source_review_receipts": [
+        {
+          "id": "PET83-YEAR2010-CN85-TW-JP-KR-ORIGINAL-PC-PET-SOURCE-FIRST-PASS-20261118",
+          "regions": [
+            "CN",
+            "TW",
+            "JP",
+            "KR",
+            "OTHER"
+          ],
+          "report": "docs/continuity/STONEAGE-PET83-YEAR2010-CN85-TW-JP-KR-OFFICIAL-PET-CLIENT-SOURCE-FIRST-PASS-20261118.md",
+          "evidence_json": "research/recovered/STONEAGE-PET83-YEAR2010-CN85-ORIGINAL-CLIENT-MERMAID-WHALES-OTHER-REGION-BOUNDARIES-R1.json",
+          "year_frontier_before": 2010,
+          "year_frontier_after": 2010,
+          "year_not_closed": true,
+          "historically_complete": false,
+          "new_original_2010_client_bytes": 0,
+          "new_native_pet_ids": 0,
+          "global_2010_species_count": null,
+          "named_cn_2010_official_test_reward": "人鱼",
+          "named_cn_2010_five_visual_candidates": [
+            "夏克",
+            "夏莫",
+            "夏波",
+            "夏基",
+            "夏乐地"
+          ],
+          "source_md5_metadata_only": "cd0ac0c0bc26bcfefdd08957d8d86e7c"
+        }
+      ]
     },
     {
       "year": 2011,
@@ -3172,6 +3202,34 @@
       "new_original_2009_client_bytes": 0,
       "new_native_pet_ids": 0,
       "global_2009_species_count": null
+    },
+    {
+      "id": "PET83-YEAR2010-CN85-TW-JP-KR-ORIGINAL-PC-PET-SOURCE-FIRST-PASS-20261118",
+      "regions": [
+        "CN",
+        "TW",
+        "JP",
+        "KR",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET83-YEAR2010-CN85-TW-JP-KR-OFFICIAL-PET-CLIENT-SOURCE-FIRST-PASS-20261118.md",
+      "evidence_json": "research/recovered/STONEAGE-PET83-YEAR2010-CN85-ORIGINAL-CLIENT-MERMAID-WHALES-OTHER-REGION-BOUNDARIES-R1.json",
+      "year_frontier_before": 2010,
+      "year_frontier_after": 2010,
+      "year_not_closed": true,
+      "historically_complete": false,
+      "new_original_2010_client_bytes": 0,
+      "new_native_pet_ids": 0,
+      "global_2010_species_count": null,
+      "named_cn_2010_official_test_reward": "人鱼",
+      "named_cn_2010_five_visual_candidates": [
+        "夏克",
+        "夏莫",
+        "夏波",
+        "夏基",
+        "夏乐地"
+      ],
+      "source_md5_metadata_only": "cd0ac0c0bc26bcfefdd08957d8d86e7c"
     }
   ],
   "client_first_methodology": {
