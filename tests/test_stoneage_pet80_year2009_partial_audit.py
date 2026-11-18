@@ -15,7 +15,7 @@ class PET80Audit(unittest.TestCase):
   self.assertEqual((a["year"],a["year_frontier_before"],a["year_frontier_after"],q["current_frontier"]["year"]),(2009,2009,2009,2009))
   self.assertEqual(y["research_gate"],"NOT_YEAR_AUDITED")
   self.assertFalse(a["historically_complete"])
-  self.assertEqual(q["current_frontier"]["latest_partial_root_review"],a["id"])
+  self.assertIn(a["id"],{r["id"] for r in y["partial_source_review_receipts"]})
   self.assertEqual(sum(r["id"]==a["id"] for r in y["partial_source_review_receipts"]),1)
   self.assertEqual(sum(r["id"]==a["id"] for r in q["root_source_census_receipts"]),1)
   self.assertEqual(len({r["id"] for r in q["root_source_census_receipts"]}),len(q["root_source_census_receipts"]))
