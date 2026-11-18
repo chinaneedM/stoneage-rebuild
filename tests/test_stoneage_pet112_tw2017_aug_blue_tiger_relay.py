@@ -24,7 +24,7 @@ class Pet112Tw2017AugustBlueTiger(unittest.TestCase):
         self.assertEqual(a["parent_pet111"],p["id"])
         self.assertEqual((q["current_frontier"]["year"],y["research_gate"]),(2019,"SOURCE_BOUNDED_REVIEWED"))  # PET113 forward-only year audit
         self.assertEqual(q["current_frontier"]["latest_2017_partial_source_receipt"],a["id"])
-        self.assertTrue(q["current_frontier"]["next"].startswith(("PET113:","PET114:","PET115:","PET116:")))
+        self.assertGreaterEqual(int(q["current_frontier"]["next"].split(":")[0].removeprefix("PET")), 113)  # forward-only handoffs do not invalidate earlier source receipts
         self.assertEqual([z["id"] for z in y["partial_source_review_receipts"]][:2],[p["id"],a["id"]])
         self.assertFalse(a["historically_complete"])
         self.assertFalse(a["year_closed"])
