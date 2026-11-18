@@ -13,10 +13,14 @@ class PET74Boundaries(unittest.TestCase):
  def test_stays_2006_partial(self):
   a,q=self.a,self.q
   self.assertEqual((a["year_frontier_before"],a["year_frontier_after"]),(2006,2006))
-  self.assertEqual((q["current_frontier"]["year"],q["yearly_work_queue"][2006-1999]["year"]),(2006,2006))
-  self.assertEqual(q["yearly_work_queue"][2006-1999]["research_gate"],"NOT_YEAR_AUDITED")
+  self.assertGreaterEqual(q["current_frontier"]["year"],2006)
   self.assertFalse(a["historically_complete"])
-  self.assertTrue(q["current_frontier"]["next"].startswith("PET75:"))
+  if q["current_frontier"]["year"]==2006:
+   self.assertEqual(q["yearly_work_queue"][7]["research_gate"],"NOT_YEAR_AUDITED")
+   self.assertTrue(q["current_frontier"]["next"].startswith("PET75:"))
+  else:
+   self.assertEqual(q["yearly_work_queue"][7]["research_gate"],"SOURCE_BOUNDED_REVIEWED")
+   self.assertEqual(q["yearly_work_queue"][7]["source_bounded_review_receipt"],"research/recovered/STONEAGE-PET75-YEAR2006-FIVE-REGION-BOUNDED-AUDIT-R1.json")
   self.assertIsNone(a["confirmed_2006_global_official_species_count"])
  def test_five_regions_and_product_separation(self):
   a=self.a
@@ -45,5 +49,6 @@ class PET74Boundaries(unittest.TestCase):
   y=q["yearly_work_queue"][7]
   self.assertIn("JP-2006-TWO-MYSTERY",y["documented_release_event_ids_from_existing_PET25_PET26"])
   self.assertEqual(y["documentary_event_count_NOT_species"],1)
-  self.assertEqual(y["partial_source_review_receipts"][-1]["id"],a["id"])
+  # Later annual reviews append after PET74 without removing its historical partial receipt.
+  self.assertEqual(sum(r["id"]==a["id"] for r in y["partial_source_review_receipts"]),1)
 if __name__=="__main__": unittest.main()

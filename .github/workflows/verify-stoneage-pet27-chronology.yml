@@ -43,6 +43,9 @@ on:
       - "tests/test_stoneage_pet72_2005_global_named_sources.py"
       - "tests/test_stoneage_pet73_2005_bounded_audit.py"
       - "tests/test_stoneage_pet74_2006_source_boundaries.py"
+      - "tests/test_stoneage_pet75_year2006_bounded_audit.py"
+      - "research/recovered/STONEAGE-PET75-YEAR2006-FIVE-REGION-BOUNDED-AUDIT-R1.json"
+      - "docs/continuity/STONEAGE-PET75-YEAR2006-FIVE-REGION-BOUNDED-AUDIT-20261118.md"
       - "research/recovered/STONEAGE-PET74-YEAR2006-CN-TW-JP-KR-PARTIAL-R1.json"
       - "docs/continuity/STONEAGE-PET74-YEAR2006-CN-TW-JP-KR-BOUNDED-SOURCES-20261118.md"
       - "research/recovered/STONEAGE-PET73-YEAR2005-FIVE-REGION-AUDIT-R1.json"
@@ -142,6 +145,9 @@ on:
       - "tests/test_stoneage_pet72_2005_global_named_sources.py"
       - "tests/test_stoneage_pet73_2005_bounded_audit.py"
       - "tests/test_stoneage_pet74_2006_source_boundaries.py"
+      - "tests/test_stoneage_pet75_year2006_bounded_audit.py"
+      - "research/recovered/STONEAGE-PET75-YEAR2006-FIVE-REGION-BOUNDED-AUDIT-R1.json"
+      - "docs/continuity/STONEAGE-PET75-YEAR2006-FIVE-REGION-BOUNDED-AUDIT-20261118.md"
       - "research/recovered/STONEAGE-PET74-YEAR2006-CN-TW-JP-KR-PARTIAL-R1.json"
       - "docs/continuity/STONEAGE-PET74-YEAR2006-CN-TW-JP-KR-BOUNDED-SOURCES-20261118.md"
       - "research/recovered/STONEAGE-PET73-YEAR2005-FIVE-REGION-AUDIT-R1.json"
@@ -230,6 +236,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet73_2005_bounded_audit
       - name: PET74 2006 five-region evidence and no species count promotion
         run: python -m unittest tests.test_stoneage_pet74_2006_source_boundaries
+      - name: PET75 2006 five-region year source-bounded audit and 2007 cursor
+        run: python -m unittest tests.test_stoneage_pet75_year2006_bounded_audit
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary
