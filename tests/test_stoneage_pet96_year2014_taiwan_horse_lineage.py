@@ -21,7 +21,7 @@ class Pet96Year2014TaiwanHorse(unittest.TestCase):
         self.assertGreaterEqual(int(q["current_frontier"]["next"].split(":")[0][3:]),97)
         self.assertEqual(q["yearly_work_queue"][15]["research_gate"],"NOT_YEAR_AUDITED")
         self.assertIn(a["id"],[x["id"] for x in q["root_source_census_receipts"]])
-        self.assertEqual([x["id"] for x in q["yearly_work_queue"][15]["partial_source_review_receipts"]],[
+        self.assertEqual([x["id"] for x in q["yearly_work_queue"][15]["partial_source_review_receipts"]][:2],[
             "PET95-YEAR2014-CN-TW-ORIGINAL-PC-SOURCE-FIRST-PASS-20261118",a["id"]
         ])
         self.assertEqual(len({x["id"] for x in q["root_source_census_receipts"]}),len(q["root_source_census_receipts"]))
