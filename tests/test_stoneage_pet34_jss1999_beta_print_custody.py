@@ -1,4 +1,6 @@
 import json
+import hashlib
+from unittest.mock import patch
 from pathlib import Path
 import unittest
 from tools import stoneage_pet34_jss1999_beta_print_custody as p
@@ -38,6 +40,61 @@ class Pet34MagazineSource(unittest.TestCase):
             p.build(b"%PDF-wrong","https://fake.example/a.pdf",p.PAGES)
         with self.assertRaises(ValueError):
             p.build(b"%PDF-wrong",p.URL,42)
+
+
+    def test_bounded_fetch_retries_truncated_or_html_response_but_not_source_drift(self):
+        # Synthetic bytes: tests the transport guard without downloading a copyrighted scan.
+        valid = b"%PDF-1.5\\n" + b"example-original-test-bytes"
+        class FakeResponse:
+            def __init__(self, data, url=p.URL):
+                self.data = data
+                self.url = url
+            def __enter__(self):
+                return self
+            def __exit__(self, exc_type, exc_val, exc_tb):
+                return False
+            def read(self, n):
+                return self.data[:n]
+        attempts=[]
+        pauses=[]
+        def fetcher(request, timeout):
+            attempts.append((request.full_url, timeout))
+            if len(attempts) == 1:
+                return FakeResponse(b"<html>temporary upstream error</html>")
+            if len(attempts) == 2:
+                return FakeResponse(valid[:8])
+            return FakeResponse(valid)
+        with patch.object(p, "BYTES", len(valid)), patch.object(p, "SHA256", hashlib.sha256(valid).hexdigest()):
+            received, url = p.fetch_exact_magazine(max_attempts=3, fetcher=fetcher, pause=pauses.append)
+        self.assertEqual(received, valid)
+        self.assertEqual(url, p.URL)
+        self.assertEqual(len(attempts), 3)
+        self.assertEqual(pauses, [1, 2])
+        self.assertTrue(all(url == p.URL and timeout == 120 for url, timeout in attempts))
+
+    def test_bounded_fetch_fails_closed_when_every_response_is_wrong_or_redirected(self):
+        valid = b"%PDF-1.5\\n" + b"example-original-test-bytes"
+        class FakeResponse:
+            def __init__(self, data, url):
+                self.data = data
+                self.url = url
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                return False
+            def read(self, n):
+                return self.data[:n]
+        for raw, destination in [(b"<html>bad</html>", p.URL),
+                                 (valid[:-1], p.URL),
+                                 (valid, "https://invalid.example/file.pdf")]:
+            calls=[]
+            def bad_fetch(req, timeout):
+                calls.append(req.full_url)
+                return FakeResponse(raw, destination)
+            with patch.object(p, "BYTES", len(valid)), patch.object(p, "SHA256", hashlib.sha256(valid).hexdigest()):
+                with self.assertRaisesRegex(ValueError, "after retries"):
+                    p.fetch_exact_magazine(max_attempts=2, fetcher=bad_fetch, pause=lambda n: None)
+            self.assertEqual(len(calls), 2)
 
     def test_latest_1999_cursor_receipt(self):
         q=json.loads(Path("research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json").read_text(encoding="utf-8"))
