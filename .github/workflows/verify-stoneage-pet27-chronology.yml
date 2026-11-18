@@ -68,6 +68,9 @@ on:
       - "tests/test_stoneage_pet97_tw2014_original_pc198_source_gate.py"
       - "tests/test_stoneage_pet98_tw2014_seasonal_pet_rewards.py"
       - "tests/test_stoneage_pet99_year2014_six_region_bounded_audit.py"
+      - "tests/test_stoneage_pet100_year2015_cn_tw_kr_pc_sources.py"
+      - "research/recovered/STONEAGE-PET100-YEAR2015-CN-TW-KR-ORIGINAL-PC-PET-SOURCE-FIRST-PASS-R1.json"
+      - "docs/continuity/STONEAGE-PET100-YEAR2015-CN-TW-KR-ORIGINAL-PC-SOURCE-FIRST-PASS-20261118.md"
       - "research/recovered/STONEAGE-PET99-YEAR2014-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json"
       - "docs/continuity/STONEAGE-PET99-YEAR2014-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-20261118.md"
       - "research/recovered/STONEAGE-PET98-TW2014-SEASONAL-QUEST-PET-REWARD-GRADED-LINKS-R1.json"
@@ -234,6 +237,9 @@ on:
       - "tests/test_stoneage_pet97_tw2014_original_pc198_source_gate.py"
       - "tests/test_stoneage_pet98_tw2014_seasonal_pet_rewards.py"
       - "tests/test_stoneage_pet99_year2014_six_region_bounded_audit.py"
+      - "tests/test_stoneage_pet100_year2015_cn_tw_kr_pc_sources.py"
+      - "research/recovered/STONEAGE-PET100-YEAR2015-CN-TW-KR-ORIGINAL-PC-PET-SOURCE-FIRST-PASS-R1.json"
+      - "docs/continuity/STONEAGE-PET100-YEAR2015-CN-TW-KR-ORIGINAL-PC-SOURCE-FIRST-PASS-20261118.md"
       - "research/recovered/STONEAGE-PET99-YEAR2014-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json"
       - "docs/continuity/STONEAGE-PET99-YEAR2014-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-20261118.md"
       - "research/recovered/STONEAGE-PET98-TW2014-SEASONAL-QUEST-PET-REWARD-GRADED-LINKS-R1.json"
@@ -414,6 +420,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet98_tw2014_seasonal_pet_rewards
       - name: PET99 2014 six-region original-PC source-bounded audit and 2015 handoff
         run: python -m unittest tests.test_stoneage_pet99_year2014_six_region_bounded_audit
+      - name: PET100 2015 CN TW KR source first pass and year-open gate
+        run: python -m unittest tests.test_stoneage_pet100_year2015_cn_tw_kr_pc_sources
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary
