@@ -15,7 +15,7 @@ class PET95(unittest.TestCase):
         a,q=self.a,self.q
         self.assertEqual((a["year"],a["year_frontier_before"],a["year_frontier_after"]),(2014,2014,2014))
         self.assertEqual(q["current_frontier"]["year"],2014)
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET96:"))
+        self.assertTrue(q["current_frontier"]["next"].startswith("PET97:"))
         self.assertEqual(q["yearly_work_queue"][15]["research_gate"],"NOT_YEAR_AUDITED")
         self.assertEqual(a["review_status"],"PARTIAL_NOT_YEAR_AUDITED")
         self.assertFalse(a["year_source_bounded_closed"])
