@@ -3033,3 +3033,7 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 
 ## 2026-11-18 — PET76｜2007五地区官方宠物年审：日本6具名奖池与韩国骑宠/冰城跨年隔离
 [PET76 2007五区同期官方宠物来源审查](docs/continuity/STONEAGE-PET76-YEAR2007-CN-TW-JP-KR-OTHER-OFFICIAL-PET-AUDIT-20261118.md)／[PET76机读11条来源、六名字、五区重开条件](research/recovered/STONEAGE-PET76-YEAR2007-FIVE-REGION-BOUNDED-AUDIT-R1.json)：7/27日本GaiaX/UTD运营稿「黒檀のくじ」列**ギガドラン／ドルーザス／パンダホーン／クロウリ／ムールロス／ウロボス**六款宠物随机奖池，7/30调整前二名字出现率两倍；六款≠2007六种新增（**クロウリ**2005已见）。日本4/2 GaiaX→UTD、9/1→DigiPark移转，二代独立，二代骑乘不回填一代。韩国CJ 7/18骑宠文书使用已有宠（非新增物种）、12/21圣诞村奖宠公告，冰城及可捕宠只说即将推出，2008/1/14“冰城9宠”**严禁倒灌2007**；同期韩国二代5月封测的未来坐骑礼包不算原版发奖。台湾2007虚拟包仅后期编年标题不算原生宠名或原料包；大陆金山8.0/旧服分轨、OTHER均保留独立原证缺口。2007可认证原始客户端0B、同版PET ID0、发奖实际日志0、全球物种数UNKNOWN。**2007 `SOURCE_BOUNDED_REVIEWED` 但historically_complete=false，年份推进2008，NEXT PET77**。PET单模块、原CURRENT巨大blob不变、无付费卖盘、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总完成率未知。
+
+## 2026-11-18｜PET86 2011官方原PC宠物：来源限定的版本化名称与台港澳/日韩边界
+
+[PET86 2011年大陆原运营名称、旧宠强化与区域证据报告](docs/continuity/STONEAGE-PET86-YEAR2011-CN-PET-FAMILIES-TW-HKMO-KR-JP-BOUNDED-SOURCES-20261118.md)／[PET86 12来源、30具名来源提及（**非官方新物种计数**）](research/recovered/STONEAGE-PET86-YEAR2011-CN-NAMED-PETS-TW-HK-KR-JP-SOURCE-BOUNDARIES-R1.json)：仅本批新增2011年原客户端0B/原宠ID0/原实服发奖0；大陆8.5、2.5的奖励分离，旧宠强化与原生数据分离，台湾当期玩家见证、港澳授权预告和韩日历史材料分级。旧大陆2011-06-22下载登记1.15GB，实际入口403、原运营站超时，不虚称成功回收。2011仍 `NOT_YEAR_AUDITED`，PET唯一活动模块；下一PET87仍核2011五区+港澳来源有界年审。原2,709,173字节CURRENT Git Blob不修改；Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79暂停，总体完成率UNKNOWN。
