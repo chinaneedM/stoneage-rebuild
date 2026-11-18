@@ -18,8 +18,8 @@
     "year": 2013,
     "phase": "YEAR_2013_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET90-YEAR2012-CN-TW-HKMO-KR-JP-OTHER-SOURCE-BOUNDED-AUDIT-20261118",
-    "next": "PET91: year 2013 CN 8.5/2.5 TW Taozhu HK/MO Honglong KR CJ/Netmarble JP OTHER original PC pet region-by-region source-first; priority authentic directly readable free client/patch first, later media only for unresolved live release; preserve product-line boundaries. 2012 remains reopenable, not historically complete.",
+    "latest_partial_root_review": "PET91-YEAR2013-CN-OPERATOR-PET-KR-MOBILE-FIRST-PASS-20261118",
+    "next": "PET92: 2013 original PC region/version follow-through; prioritize freely readable authentic client/patch bytes, contemporary first-party TW/HKMO/KR/JP originals and remaining months; year remains NOT_YEAR_AUDITED",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -2279,7 +2279,34 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "partial_source_review_receipts": [
+        {
+          "id": "PET91-YEAR2013-CN-OPERATOR-PET-KR-MOBILE-FIRST-PASS-20261118",
+          "regions": [
+            "CN",
+            "TW",
+            "HK_MO",
+            "KR",
+            "JP",
+            "OTHER"
+          ],
+          "report": "docs/continuity/STONEAGE-PET91-2013-CN-OPERATOR-PET-SOURCE-FIRST-PASS-20261118.md",
+          "evidence_json": "research/recovered/STONEAGE-PET91-YEAR2013-CN-PET-OPERATOR-KR-MOBILE-SCOPE-FIRST-PASS-R1.json",
+          "year_frontier_before": 2013,
+          "year_frontier_after": 2013,
+          "year_not_closed": true,
+          "historically_complete": false,
+          "new_original_2013_client_bytes": 0,
+          "new_native_pet_ids": 0,
+          "global_2013_species_count": null,
+          "source_entries": 7,
+          "observed_pet_labels_not_distinct_species": 7,
+          "original_pc_operator_mirrored_release_claims_not_native_verified": true,
+          "separate_mobile_product_lane": true
+        }
+      ],
+      "source_bounded_partial_review_note": "PET91 CN original PC 2013 operator-origin mirrored press and distinct Korean mobile product-line, no native client or confirmed species count; 2013 NOT_YEAR_AUDITED"
     },
     {
       "year": 2014,
@@ -3766,6 +3793,30 @@
       "year_review_status": "SOURCE_BOUNDED_REVIEWED",
       "source_entries": 10,
       "forward_only_erratum": "TW 2012/5/23 maintenance scheduled but postponed to 5/24 22:00—5/25 14:00, actual patch execution unproven"
+    },
+    {
+      "id": "PET91-YEAR2013-CN-OPERATOR-PET-KR-MOBILE-FIRST-PASS-20261118",
+      "regions": [
+        "CN",
+        "TW",
+        "HK_MO",
+        "KR",
+        "JP",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET91-2013-CN-OPERATOR-PET-SOURCE-FIRST-PASS-20261118.md",
+      "evidence_json": "research/recovered/STONEAGE-PET91-YEAR2013-CN-PET-OPERATOR-KR-MOBILE-SCOPE-FIRST-PASS-R1.json",
+      "year_frontier_before": 2013,
+      "year_frontier_after": 2013,
+      "year_not_closed": true,
+      "historically_complete": false,
+      "new_original_2013_client_bytes": 0,
+      "new_native_pet_ids": 0,
+      "global_2013_species_count": null,
+      "source_entries": 7,
+      "observed_pet_labels_not_distinct_species": 7,
+      "original_pc_operator_mirrored_release_claims_not_native_verified": true,
+      "separate_mobile_product_lane": true
     }
   ],
   "client_first_methodology": {
