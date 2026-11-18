@@ -15,11 +15,11 @@
   "latest_year_in_scope": 2026,
   "reason_start_provisional": "1999 is a search-window starting point, NOT an independently authenticated first official launch date; earlier qualified evidence may extend the sequence backwards",
   "current_frontier": {
-    "year": 2012,
-    "phase": "YEAR_2012_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
+    "year": 2013,
+    "phase": "YEAR_2013_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET89-YEAR2012-CN-CAPTURE-TW-TRIKA-CLIENT-REGION-SOURCE-GATES-20261118",
-    "next": "PET90: bounded 2012 six-region original PC yearly audit and candidate client byte availability; if sufficient 2012 SOURCE_BOUNDED_REVIEWED, historically_complete false and 2013 next. Otherwise 2012 remains OPEN; never count retrospective fan pet names.",
+    "latest_partial_root_review": "PET90-YEAR2012-CN-TW-HKMO-KR-JP-OTHER-SOURCE-BOUNDED-AUDIT-20261118",
+    "next": "PET91: year 2013 CN 8.5/2.5 TW Taozhu HK/MO Honglong KR CJ/Netmarble JP OTHER original PC pet region-by-region source-first; priority authentic directly readable free client/patch first, later media only for unresolved live release; preserve product-line boundaries. 2012 remains reopenable, not historically complete.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -2112,7 +2112,7 @@
     {
       "year": 2012,
       "chronological_position": 14,
-      "research_gate": "NOT_YEAR_AUDITED",
+      "research_gate": "SOURCE_BOUNDED_REVIEWED",
       "documented_release_event_ids_from_existing_PET25_PET26": [],
       "documentary_event_count_NOT_species": 0,
       "unverified_early_and_mid_year_pets_may_exist": true,
@@ -2176,8 +2176,94 @@
             "CONTEMPORANEOUS_PLAYER_WITNESS_ONLY",
             "LATER_COMMUNITY_LEAD_ONLY"
           ]
+        },
+        {
+          "id": "PET90-YEAR2012-CN-TW-HKMO-KR-JP-OTHER-SOURCE-BOUNDED-AUDIT-20261118",
+          "regions": [
+            "CN",
+            "TW",
+            "HK_MO",
+            "KR",
+            "JP",
+            "OTHER"
+          ],
+          "report": "docs/continuity/STONEAGE-PET90-YEAR2012-SIX-REGION-OFFICIAL-PC-SOURCE-BOUNDED-AUDIT-20261118.md",
+          "evidence_json": "research/recovered/STONEAGE-PET90-YEAR2012-CN-TW-HKMO-KR-JP-OTHER-BOUNDED-ANNUAL-AUDIT-R1.json",
+          "year_frontier_before": 2012,
+          "year_frontier_after": 2013,
+          "year_not_closed": false,
+          "historically_complete": false,
+          "new_original_2012_client_bytes": 0,
+          "new_native_pet_ids": 0,
+          "global_2012_species_count": null,
+          "year_review_status": "SOURCE_BOUNDED_REVIEWED",
+          "source_entries": 10,
+          "forward_only_erratum": "TW 2012/5/23 maintenance scheduled but postponed to 5/24 22:00—5/25 14:00, actual patch execution unproven"
         }
-      ]
+      ],
+      "historically_complete": false,
+      "historical_species_count": null,
+      "source_bounded_review_receipt": "research/recovered/STONEAGE-PET90-YEAR2012-CN-TW-HKMO-KR-JP-OTHER-BOUNDED-ANNUAL-AUDIT-R1.json",
+      "residual_reopen_triggers": [
+        "CN2012_OFFICIAL_PC1_V1_200_012_AUTHENTIC_BYTES_85_25_NATIVE_PET_ENCOUNTER_AND_GRANT",
+        "TW2012_TAOZHU_20120525_ORIGINAL_V189_PATCH_AND_DEC_INSTALLER_AUTHENTIC_BYTES_NATIVE_PETS",
+        "HKMO2012_HONGLONG_CONTEMPORANEOUS_LICENSE_SERVER_PATCH_NATIVE_PET_LOG",
+        "KR2012_CJ_NETMARBLE_PERIOD_2012_PET_EVENT_NATIVE_CLIENT_ID_AND_RECEIPT",
+        "JP2012_ORIGINAL_PC1_OPERATOR_RELAUNCH_AND_NATIVE_PET_UPDATE_IF_PROVEN",
+        "OTHER2012_QUALIFIED_ORIGINAL_PC1_REGIONAL_LICENSE_CLIENT_AND_LIVE_PET"
+      ],
+      "region_source_reviews": {
+        "CN": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "native_pet_id_rows_verified": 0,
+          "real_account_pet_grant_verified": false,
+          "reopen_trigger": "CN2012_OFFICIAL_PC1_V1_200_012_AUTHENTIC_BYTES_85_25_NATIVE_PET_ENCOUNTER_AND_GRANT"
+        },
+        "TW": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "native_pet_id_rows_verified": 0,
+          "real_account_pet_grant_verified": false,
+          "reopen_trigger": "TW2012_TAOZHU_20120525_ORIGINAL_V189_PATCH_AND_DEC_INSTALLER_AUTHENTIC_BYTES_NATIVE_PETS"
+        },
+        "JP": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "native_pet_id_rows_verified": 0,
+          "real_account_pet_grant_verified": false,
+          "reopen_trigger": "JP2012_ORIGINAL_PC1_OPERATOR_RELAUNCH_AND_NATIVE_PET_UPDATE_IF_PROVEN"
+        },
+        "KR": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "native_pet_id_rows_verified": 0,
+          "real_account_pet_grant_verified": false,
+          "reopen_trigger": "KR2012_CJ_NETMARBLE_PERIOD_2012_PET_EVENT_NATIVE_CLIENT_ID_AND_RECEIPT"
+        },
+        "OTHER": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "native_pet_id_rows_verified": 0,
+          "real_account_pet_grant_verified": false,
+          "reopen_trigger": "OTHER2012_QUALIFIED_ORIGINAL_PC1_REGIONAL_LICENSE_CLIENT_AND_LIVE_PET"
+        }
+      },
+      "additional_region_reviews": {
+        "HK_MO": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "native_pet_id_rows_verified": 0,
+          "real_account_pet_grant_verified": false,
+          "reopen_trigger": "HKMO2012_HONGLONG_CONTEMPORANEOUS_LICENSE_SERVER_PATCH_NATIVE_PET_LOG"
+        }
+      }
     },
     {
       "year": 2013,
@@ -3657,6 +3743,29 @@
         "CONTEMPORANEOUS_PLAYER_WITNESS_ONLY",
         "LATER_COMMUNITY_LEAD_ONLY"
       ]
+    },
+    {
+      "id": "PET90-YEAR2012-CN-TW-HKMO-KR-JP-OTHER-SOURCE-BOUNDED-AUDIT-20261118",
+      "regions": [
+        "CN",
+        "TW",
+        "HK_MO",
+        "KR",
+        "JP",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET90-YEAR2012-SIX-REGION-OFFICIAL-PC-SOURCE-BOUNDED-AUDIT-20261118.md",
+      "evidence_json": "research/recovered/STONEAGE-PET90-YEAR2012-CN-TW-HKMO-KR-JP-OTHER-BOUNDED-ANNUAL-AUDIT-R1.json",
+      "year_frontier_before": 2012,
+      "year_frontier_after": 2013,
+      "year_not_closed": false,
+      "historically_complete": false,
+      "new_original_2012_client_bytes": 0,
+      "new_native_pet_ids": 0,
+      "global_2012_species_count": null,
+      "year_review_status": "SOURCE_BOUNDED_REVIEWED",
+      "source_entries": 10,
+      "forward_only_erratum": "TW 2012/5/23 maintenance scheduled but postponed to 5/24 22:00—5/25 14:00, actual patch execution unproven"
     }
   ],
   "client_first_methodology": {
