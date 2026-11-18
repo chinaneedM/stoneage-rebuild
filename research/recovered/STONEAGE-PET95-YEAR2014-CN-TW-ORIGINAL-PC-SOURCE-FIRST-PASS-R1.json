@@ -1,0 +1,172 @@
+{
+  "schema": "stoneage.pet95.year2014.cn_tw_original_pc_source_first_pass.r1",
+  "id": "PET95-YEAR2014-CN-TW-ORIGINAL-PC-SOURCE-FIRST-PASS-20261118",
+  "date": "2026-11-18",
+  "year": 2014,
+  "year_frontier_before": 2014,
+  "year_frontier_after": 2014,
+  "review_status": "PARTIAL_NOT_YEAR_AUDITED",
+  "year_source_bounded_closed": false,
+  "historically_complete": false,
+  "year_reopenable": true,
+  "active_module": "PET",
+  "starting_main_head": "6212c53f1ebbf6990a7206054a65fcc7d7052dee",
+  "starting_main_tree": "2ef30f22a23d4815e59719a071ae9012749537c6",
+  "starting_main_exact_head_actions": {
+    "total": 4,
+    "success": 4,
+    "failed": 0,
+    "open_prs": 0
+  },
+  "original_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "original_current_blob_bytes": 2709173,
+  "sources": [
+    {
+      "id": "CN2014-LATER-COURT-RECITAL-ARCHIVED-CINS",
+      "url": "https://zh.wikisource.org/zh-hans/北京银河聚阵网络技术有限公司与北京宇通互动文化传播有限公司等著作权权属、侵权纠纷民事一审案件民事判决书",
+      "document_year": 2022,
+      "claimed_original_dates": [
+        "2014-07-17",
+        "2014-07-23"
+      ],
+      "region": "CN",
+      "product_line": "ORIGINAL_PC",
+      "operator": "CINS_SHENGSI",
+      "grade": "LATER_JUDICIAL_RECITAL_OF_ORIGINAL_OPERATOR_ARCHIVE_NOT_NATIVE_SOURCE",
+      "qualification": "2022 judgment recounts a reviewed 2014 sa.cins.cn archived page: July 17 new 2.5 精灵觉醒 opening notice and July 23 2.5/8.5/9.0 opening notice. Does not independently supply 2014 HTML bytes or PET tables.",
+      "version_lanes": [
+        "2.5",
+        "8.5",
+        "9.0"
+      ],
+      "new_pet_species_verified": 0,
+      "original_client_verified": false
+    },
+    {
+      "id": "TW2014-APR08-FAN-VERBATIM-OPERATOR-MERGE",
+      "url": "https://w.welovesa.com/news.php?news_id=118",
+      "original_operator_url": "http://www.stoneage.tw/news.php?id=1304",
+      "original_operator_page_access": "TIMEOUT_NOT_READ",
+      "published_date": "2014-04-08",
+      "planned_effective_date": "2014-04-09",
+      "region": "TW",
+      "operator": "TAOZHU",
+      "product_line": "ORIGINAL_PC",
+      "grade": "CONTEMPORANEOUS_PLAYER_VERBATIM_OPERATOR_NOTICE_MIRROR",
+      "claim": "Original operator announcement as transcribed in an on-period fan page: planned merging 加魯卡 into 薩伊那斯, character and service handling; execution and PET state not verified",
+      "merge_executed_verified": false,
+      "new_pet_species_verified": 0
+    },
+    {
+      "id": "TW2014-LATER-FAN-CHRONOLOGY",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=4519",
+      "source_year": 2016,
+      "region": "TW",
+      "grade": "LATER_PLAYER_CHRONICLE_SEARCH_INDEX_ORIGINAL_PAGE_403",
+      "claimed_2014_items": [
+        "2014年马年罐头条目",
+        "2014年端午取消宠物奖励条目",
+        "2014年中秋变种狼人活动条目"
+      ],
+      "qualification": "Search-index/secondary chronology only; not retrieved original 2014 operator pages, pet award, native IDs or actual first release.",
+      "new_pet_species_verified": 0
+    },
+    {
+      "id": "KR2014-MOBILE-LATER-COMMUNITY-NEGATIVE",
+      "url": "https://seore.org/raw/스톤에이지%20모바일",
+      "region": "KR",
+      "grade": "LATER_COMMUNITY_PRODUCT_LINE_LEAD_NOT_OPERATOR_ORIGINAL_PC",
+      "product_line": "STONEAGE_MOBILE_DISTINCT_FROM_ORIGINAL_PC",
+      "qualification": "Later mobile chronology cannot backfill Netmarble original PC live roster; dated mobile changes not verified by original operator artifact.",
+      "new_original_pc_pet_species_verified": 0
+    },
+    {
+      "id": "JP-ORIGINAL-PC-ENDED-PRIOR-PET90",
+      "url": "https://www.onlinegamer.jp/game/1000000002/",
+      "region": "JP",
+      "grade": "PREVIOUSLY_REVIEWED_SERVICE_HISTORY_POINTER_NOT_2014_NEW_FINDING",
+      "qualification": "Previously recorded Japan first PC service 2010 closure; no 2014 original PC return or pet release authenticated, do not imply zero pets in other product lines.",
+      "new_pet_species_verified": 0
+    }
+  ],
+  "regions": [
+    "CN",
+    "TW",
+    "HK_MO",
+    "KR",
+    "JP",
+    "OTHER"
+  ],
+  "region_reviews": {
+    "CN": {
+      "research_gate": "NOT_YEAR_AUDITED",
+      "named_2014_new_pets_verified": 0,
+      "actual_species_total": null,
+      "source_bound": "July operator opening announcements only through later judicial recital",
+      "reopen_trigger": "Readable original 2014 CINS operator notice and freely verifiable 2.5/8.5/9.0 client/patch PET tables or native pet award logs"
+    },
+    "TW": {
+      "research_gate": "NOT_YEAR_AUDITED",
+      "named_2014_new_pets_verified": 0,
+      "actual_species_total": null,
+      "source_bound": "2014 April merge notice mirrored by contemporaneous player site; later year pets are unverified retrospective candidates",
+      "reopen_trigger": "Original 2014 stoneage.tw notice, same-service Taozhu client/patch and 2014 actual reward pet identifiers"
+    },
+    "HK_MO": {
+      "research_gate": "NOT_YEAR_AUDITED",
+      "named_2014_new_pets_verified": 0,
+      "actual_species_total": null,
+      "source_bound": "No independently authenticated 2014 official server/version or pet original",
+      "reopen_trigger": "2014 HK/MO official operator-service identity and same-deployment client or named issued pet"
+    },
+    "KR": {
+      "research_gate": "NOT_YEAR_AUDITED",
+      "named_2014_new_pets_verified": 0,
+      "actual_species_total": null,
+      "source_bound": "Later Korean mobile chronology is not original PC",
+      "reopen_trigger": "2014 contemporary CJ/Netmarble original PC update/earned pet notice or native original-PC client"
+    },
+    "JP": {
+      "research_gate": "NOT_YEAR_AUDITED",
+      "named_2014_new_pets_verified": 0,
+      "actual_species_total": null,
+      "source_bound": "Prior original PC ending; no 2014 original PC relaunch proved",
+      "reopen_trigger": "Authenticated 2014 original-PC authorized relaunch/service and same-build source"
+    },
+    "OTHER": {
+      "research_gate": "NOT_YEAR_AUDITED",
+      "named_2014_new_pets_verified": 0,
+      "actual_species_total": null,
+      "source_bound": "No authenticated independent 2014 official original PC lane source",
+      "reopen_trigger": "New independent official territory/operator/version evidence plus pet source"
+    }
+  },
+  "source_custody": {
+    "new_authentic_original_2014_client_bytes": 0,
+    "new_native_pet_ids": 0,
+    "new_spr_pixels": 0,
+    "new_skill_functions": 0,
+    "new_real_server_pet_grants": 0
+  },
+  "global_2014_original_pc_species_total": null,
+  "first_release_2014_pet_species_total": null,
+  "negative_controls": {
+    "later_court_recital_not_operator_original_bytes": true,
+    "taiwan_merge_plan_not_execution": true,
+    "operator_service_news_not_pet_issuance": true,
+    "player_chronology_not_official_release": true,
+    "items_cans_not_native_pets": true,
+    "korean_mobile_not_original_pc": true,
+    "original_pc_service_closed_prior_not_proof_of_2014_zero_pets": true,
+    "no_paid_marketplace": true,
+    "private_server_not_official": true,
+    "unknown_total_not_zero": true,
+    "source_bounded_first_pass_not_year_closure": true
+  },
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "historical_CURRENT_untouched": true,
+  "next": "PET96: continue 2014 original-PC pet source-first review and cross-region operator/version evidence before a six-region year-end audit; do not move to 2015 yet."
+}
