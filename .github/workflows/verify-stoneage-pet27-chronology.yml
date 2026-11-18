@@ -56,6 +56,9 @@ on:
       - "tests/test_stoneage_pet85_year2011_original_pc_pets.py"
       - "tests/test_stoneage_pet86_year2011_regional_named_pets.py"
       - "tests/test_stoneage_pet87_year2011_bounded_audit.py"
+      - "tests/test_stoneage_pet88_year2012_original_pc_source_first.py"
+      - "research/recovered/STONEAGE-PET88-YEAR2012-CN-85-25-ORIGINAL-CLIENT-AND-NAMED-PETS-FIRST-PASS-R1.json"
+      - "docs/continuity/STONEAGE-PET88-YEAR2012-CN-CLIENT-AND-NAMED-PETS-TW-HKMO-KR-JP-FIRST-PASS-20261118.md"
       - "research/recovered/STONEAGE-PET87-YEAR2011-CN-TW-HKMO-JP-KR-OTHER-SOURCE-BOUNDED-ANNUAL-AUDIT-R1.json"
       - "docs/continuity/STONEAGE-PET87-YEAR2011-CN-TW-HKMO-JP-KR-OTHER-SOURCE-BOUNDED-ANNUAL-AUDIT-20261118.md"
       - "research/recovered/STONEAGE-PET86-YEAR2011-CN-NAMED-PETS-TW-HK-KR-JP-SOURCE-BOUNDARIES-R1.json"
@@ -186,6 +189,9 @@ on:
       - "tests/test_stoneage_pet85_year2011_original_pc_pets.py"
       - "tests/test_stoneage_pet86_year2011_regional_named_pets.py"
       - "tests/test_stoneage_pet87_year2011_bounded_audit.py"
+      - "tests/test_stoneage_pet88_year2012_original_pc_source_first.py"
+      - "research/recovered/STONEAGE-PET88-YEAR2012-CN-85-25-ORIGINAL-CLIENT-AND-NAMED-PETS-FIRST-PASS-R1.json"
+      - "docs/continuity/STONEAGE-PET88-YEAR2012-CN-CLIENT-AND-NAMED-PETS-TW-HKMO-KR-JP-FIRST-PASS-20261118.md"
       - "research/recovered/STONEAGE-PET87-YEAR2011-CN-TW-HKMO-JP-KR-OTHER-SOURCE-BOUNDED-ANNUAL-AUDIT-R1.json"
       - "docs/continuity/STONEAGE-PET87-YEAR2011-CN-TW-HKMO-JP-KR-OTHER-SOURCE-BOUNDED-ANNUAL-AUDIT-20261118.md"
       - "research/recovered/STONEAGE-PET86-YEAR2011-CN-NAMED-PETS-TW-HK-KR-JP-SOURCE-BOUNDARIES-R1.json"
@@ -318,6 +324,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet86_year2011_regional_named_pets
       - name: PET87 2011 source-bounded year review with 2012 cursor
         run: python -m unittest tests.test_stoneage_pet87_year2011_bounded_audit
+      - name: PET88 2012 CN 2.5/8.5 client source and named-pet first pass
+        run: python -m unittest tests.test_stoneage_pet88_year2012_original_pc_source_first
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary
