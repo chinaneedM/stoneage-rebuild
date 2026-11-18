@@ -26,9 +26,8 @@ class TestPet108ThirdPartyClientBoundary(unittest.TestCase):
         self.assertEqual(y["research_gate"], "NOT_YEAR_AUDITED")
         self.assertFalse(a["historically_complete"])
         self.assertFalse(a["year_source_bounded_reviewed"])
-        self.assertEqual(y["partial_source_review_receipts"][-1]["id"], a["id"])
-        self.assertEqual(q["current_frontier"]["latest_2016_partial_source_receipt"], a["id"])
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET109:"))
+        self.assertIn(a["id"], [x["id"] for x in y["partial_source_review_receipts"]])  # retained history
+        self.assertTrue(a["next"].startswith("PET109:"))  # historical next is not the live next
         self.assertIsNone(a["year2016_species_count"])
         self.assertIsNone(a["year2016_first_release_count"])
         self.assertIn("PET108", REPORT.read_text(encoding="utf-8"))
