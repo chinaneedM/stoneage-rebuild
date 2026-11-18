@@ -1,0 +1,196 @@
+{
+  "schema": "stoneage.pet106.year2016_original_pc_versus_origins_mobile_first_pass.r1",
+  "id": "PET106-YEAR2016-CLASSIC-PC-MOBILE-BOUNDARY-20261118",
+  "date": "2026-11-18",
+  "active_module": "PET",
+  "starting_remote": {
+    "repo": "chinaneedM/stoneage-rebuild",
+    "main_head": "780aba11149221a72db5e0edaaf68f5c8cee5551",
+    "main_tree": "85d9c4ff5c0bda4dcb6de551d38cc6a5a912378a",
+    "unchanged_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "unchanged_current_bytes": 2709173
+  },
+  "year": 2016,
+  "year_frontier_before": 2016,
+  "year_frontier_after": 2016,
+  "annual_gate": "NOT_YEAR_AUDITED",
+  "partial_review_type": "PARTIAL_SOURCE_AUDIT",
+  "historically_complete": false,
+  "source_bounded_year_closed": false,
+  "original_pc_global_pet_species_count": null,
+  "original_pc_first_release_species_count": null,
+  "newly_acquired_original_2016_pc_client_bytes": 0,
+  "newly_acquired_original_2016_pc_patch_bytes": 0,
+  "new_verified_same_build_original_pc_pet_ids": 0,
+  "new_verified_original_pc_spr_pixels": 0,
+  "new_verified_original_pc_skill_definitions": 0,
+  "new_verified_original_pc_server_pet_grants": 0,
+  "source_records": [
+    {
+      "source_id": "CN2016-CINS-CLOSURE-CONTEMPORARY-RELAY",
+      "url": "https://www.shiqi.me/pt_49.htm",
+      "source_date": "2016-04-19",
+      "region": "CN",
+      "product_line": "STONEAGE_ORIGINAL_PC",
+      "source_grade": "CONTEMPORANEOUS_THIRD_PARTY_VERBATIM_OPERATOR_RELAY_NOT_ORIGINAL_OPERATOR_HTML",
+      "documented_claim": "Relay lists separate 2.5,8.5,9.0,09-2.5,09-8.5 service variants and a proposed 2016-04-28 online server closure",
+      "first_party_original_html_retrieved": false,
+      "original_2016_pc_build_retrieved": false,
+      "proves_2016_new_pet_release": false
+    },
+    {
+      "source_id": "TW2016-DRAGONBOAT-CONTEMPORANEOUS-PLAYER-GUIDE",
+      "url": "https://forum.gamer.com.tw/Co.php?bPage=0&bsn=1571&sn=292257&subbsn=10",
+      "source_date": "2016-06-13",
+      "region": "TW",
+      "product_line": "STONEAGE_ORIGINAL_PC_TAOZHU_PLAYER_CLAIM",
+      "source_grade": "CONTEMPORANEOUS_PLAYER_GUIDE_SEARCH_SNIPPET_ORIGINAL_PAGE_NOT_DIRECTLY_READABLE",
+      "documented_claim": "Player guide references 2016 Dragon Boat snake bag (1st/2nd generation snakes), names and gifts, but not native client master or official issuance",
+      "direct_full_page_retrieved": false,
+      "proves_same_build_native_pet_identity": false,
+      "proves_first_release_date": false
+    },
+    {
+      "source_id": "TW2016-DRAGONBOAT-FIRSTHAND-PLAYER-NUMERIC-POST",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=1571&snA=80006",
+      "source_date": "2016-06-11",
+      "region": "TW",
+      "product_line": "STONEAGE_ORIGINAL_PC_TAOZHU_PLAYER_CLAIM",
+      "source_grade": "CONTEMPORANEOUS_PLAYER_FORUM_SEARCH_SNIPPET_ONLY",
+      "documented_claim": "Snake stats thread visible in contemporary index, no recovered PC native source",
+      "direct_full_page_retrieved": false,
+      "proves_official_live_release": false
+    },
+    {
+      "source_id": "ORIGINS-MOBILE-TWHK-2016-CBT",
+      "url": "https://nmn.joybomb.com.tw/mobile/newscontent/8299?gid=48&type=15",
+      "source_date": "2016-06-21",
+      "region": "TW_HK",
+      "product_line": "STONEAGE_ORIGINS_MOBILE_SEPARATE_PRODUCT",
+      "source_grade": "FIRST_PARTY_OPERATOR_FULL_PAGE",
+      "documented_claim": "Netmarble N2 developed 3D mobile title, five-day closed beta from June 15; not the original PC",
+      "proves_original_pc_pet_release": false
+    },
+    {
+      "source_id": "ORIGINS-MOBILE-TWHK-2016-APP-AND-RECOMMENDATIONS",
+      "url": "https://nmn.joybomb.com.tw/mobile/newscontent/8841?gid=48&type=16",
+      "source_date": "2016-10-06",
+      "later_content_update_date": "2016-12-07",
+      "region": "TW_HK",
+      "product_line": "STONEAGE_ORIGINS_MOBILE_SEPARATE_PRODUCT",
+      "source_grade": "FIRST_PARTY_OPERATOR_FULL_PAGE_WITH_LATER_EDITS",
+      "documented_claim": "9/28 available for download; pet recommendations are not new issuance list or original-PC species",
+      "proves_original_pc_pet_release": false
+    },
+    {
+      "source_id": "ORIGINS-MOBILE-TWHK-2016-OCT13-LATAPA",
+      "url": "https://nmn.joybomb.com.tw/mobile/newscontent/8892?gid=48&type=16",
+      "source_date": "2016-10-19",
+      "stated_live_update_date": "2016-10-13",
+      "region": "TW_HK",
+      "product_line": "STONEAGE_ORIGINS_MOBILE_SEPARATE_PRODUCT",
+      "source_grade": "FIRST_PARTY_OPERATOR_UPDATED_MOBILE",
+      "pet_family": "拉泰帕系列",
+      "form_labels": [
+        {
+          "label": "魯泰帕",
+          "element": "water"
+        },
+        {
+          "label": "卡泰帕",
+          "element": "fire"
+        },
+        {
+          "label": "拉泰帕",
+          "element": "fire_wind",
+          "obtaining": "fusion_from_卡泰帕"
+        }
+      ],
+      "form_labels_not_global_species_count": true,
+      "original_pc_issuance_confirmed": false,
+      "original_mobile_client_pet_data_verified": false
+    },
+    {
+      "source_id": "ORIGINS-MOBILE-TWHK-2016-OCT28-KAMILU",
+      "url": "https://nmn.joybomb.com.tw/mobile/newscontent/8951?gid=48&type=15",
+      "source_date": "2016-10-28",
+      "region": "TW_HK",
+      "product_line": "STONEAGE_ORIGINS_MOBILE_SEPARATE_PRODUCT",
+      "source_grade": "FIRST_PARTY_OPERATOR_UPDATED_MOBILE",
+      "pet_family": "卡米魯",
+      "elemental_forms": 4,
+      "elemental_forms_not_species_count": true,
+      "original_pc_issuance_confirmed": false,
+      "original_mobile_client_pet_data_verified": false
+    }
+  ],
+  "region_reviews": {
+    "CN": {
+      "version_lanes": [
+        "CINS_2_5",
+        "CINS_8_5",
+        "CINS_9_0",
+        "CINS_09_2_5",
+        "CINS_09_8_5"
+      ],
+      "status": "PARTIAL_RELAY_ONLY",
+      "open": "Original CINS April notice HTML, actual shutdown status and per-version original 2016 client/master/pet issuance"
+    },
+    "TW": {
+      "version_lanes": [
+        "TAOZHU_ORIGINAL_PC_2016_BUILD_UNKNOWN"
+      ],
+      "status": "CONTEMPORANEOUS_PLAYER_SEARCH_ONLY",
+      "open": "2016 original operator event page, exact patched native PC files and pet/box/egg source relations"
+    },
+    "HK_MO": {
+      "version_lanes": [
+        "ORIGINAL_PC_2016_OPERATOR_DEPLOYMENT_UNKNOWN",
+        "ORIGINS_MOBILE_DISTINCT"
+      ],
+      "status": "ORIGINAL_PC_UNVERIFIED",
+      "open": "Independent or shared 2016 licensed PC operation and actual PC pet records; do not substitute Origins mobile"
+    },
+    "KR": {
+      "version_lanes": [
+        "ORIGINAL_PC_2016_SERVICE_UNKNOWN",
+        "ORIGINS_MOBILE_DISTINCT"
+      ],
+      "status": "ORIGINAL_PC_UNVERIFIED",
+      "open": "Original classic PC operation and source-qualified native pet issuance, separate from new mobile product"
+    },
+    "JP": {
+      "version_lanes": [
+        "ORIGINAL_PC_REOPEN_2016_UNKNOWN"
+      ],
+      "status": "ORIGINAL_PC_UNVERIFIED",
+      "open": "First-party 2016 original PC operator build/license evidence if any"
+    },
+    "OTHER": {
+      "version_lanes": [
+        "OTHER_OFFICIAL_2016_PC_UNKNOWN"
+      ],
+      "status": "ORIGINAL_PC_UNVERIFIED",
+      "open": "Authentic additional region classic PC build, operator and pet issue"
+    }
+  },
+  "negative_controls": {
+    "original_pc_and_3d_mobile_not_same_product_line": true,
+    "contemporary_relay_not_original_operator_html": true,
+    "forum_snippet_not_original_native_client": true,
+    "no_2015_xmas_crossyear_second_first_release": true,
+    "cins_service_shutdown_not_pet_species_count": true,
+    "mobile_first_party_update_can_prove_mob_operator_claim_but_not_pc_pet": true,
+    "pet_family_forms_not_species_population": true,
+    "mobile_20161006_later_edited_list_not_20161006_snapshot": true,
+    "no_later_community_original_pc_official_population_promotion": true,
+    "no_paid_marketplace_or_proprietary_art_publication": true
+  },
+  "original_current_unchanged": true,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "PET106 follow-up: year 2016 remains OPEN; seek exact original classic PC client bytes/operator releases and live pet issue evidence for TW/CN/HK_MO/KR/JP/OTHER, no 2017 advance yet",
+  "report_path": "docs/continuity/STONEAGE-PET106-YEAR2016-CLASSIC-PC-AND-ORIGINS-MOBILE-PRODUCT-BOUNDARY-20261118.md"
+}
