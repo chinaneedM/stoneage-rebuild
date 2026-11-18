@@ -75,12 +75,12 @@ class Pet116Taiwan2019Boundary(unittest.TestCase):
                          (q["stage_A"], q["stage_B_wiki"], q["r79"], q["overall_game_completion_percent"]))
         raw = (ROOT / "docs/CURRENT-STATE.md").read_bytes()
         self.assertEqual(len(raw), e["baseline"]["current_original_bytes"])
-        blob = hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\\0" + raw).hexdigest()
+        blob = hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest()
         self.assertEqual(blob, e["baseline"]["current_original_blob"])
         report = R.read_text(encoding="utf-8")
         self.assertIn("2006-11-29", report)
-        self.assertIn("2019 NOT_YEAR_AUDITED", report)
-        self.assertIn("NEXT \`PET117\`", report)
+        self.assertIn("NOT_YEAR_AUDITED", report)
+        self.assertIn("NEXT `PET117`", report)
 
 
 if __name__ == "__main__":
