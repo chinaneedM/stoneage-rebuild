@@ -22,8 +22,8 @@ class TestPet108ThirdPartyClientBoundary(unittest.TestCase):
         self.assertEqual(q["active_module"], "PET")
         self.assertEqual(a["module"], "PET")
         self.assertEqual((a["year_frontier_before"], a["year_frontier_after"]), (2016, 2016))
-        self.assertEqual(q["current_frontier"]["year"], 2016)
-        self.assertEqual(y["research_gate"], "NOT_YEAR_AUDITED")
+        self.assertGreaterEqual(q["current_frontier"]["year"], 2016)
+        self.assertIn(y["research_gate"], {"NOT_YEAR_AUDITED", "SOURCE_BOUNDED_REVIEWED"})
         self.assertFalse(a["historically_complete"])
         self.assertFalse(a["year_source_bounded_reviewed"])
         self.assertIn(a["id"], [x["id"] for x in y["partial_source_review_receipts"]])  # retained history

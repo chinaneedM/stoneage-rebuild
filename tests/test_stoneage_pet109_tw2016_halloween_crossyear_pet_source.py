@@ -21,15 +21,15 @@ class TestPet109DatedPlayerAndCrossyear(unittest.TestCase):
         a, q = self.a, self.q
         y = next(z for z in q["yearly_work_queue"] if z["year"] == 2016)
         self.assertEqual((a["module"], q["active_module"]), ("PET", "PET"))
-        self.assertEqual(q["current_frontier"]["year"], 2016)
+        self.assertGreaterEqual(q["current_frontier"]["year"], 2016)
         self.assertEqual((a["year_frontier_before"], a["year_frontier_after"]), (2016, 2016))
-        self.assertEqual(y["research_gate"], "NOT_YEAR_AUDITED")
+        self.assertIn(y["research_gate"], {"NOT_YEAR_AUDITED", "SOURCE_BOUNDED_REVIEWED"})
         self.assertFalse(a["source_bounded_year_closed"])
         self.assertFalse(a["historically_complete"])
-        self.assertEqual(y["partial_source_review_receipts"][-1]["id"], a["id"])
+        self.assertIn(a["id"], [x["id"] for x in y["partial_source_review_receipts"]])
         self.assertEqual(q["current_frontier"]["latest_2016_partial_source_receipt"], a["id"])
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET110:"))
-        self.assertEqual(len(y["partial_source_review_receipts"]), 4)
+        self.assertTrue(a["next"].startswith("PET110:"))  # historical NEXT retained
+        self.assertGreaterEqual(len(y["partial_source_review_receipts"]), 4)
         self.assertIn("PET109", REPORT.read_text(encoding="utf-8"))
 
     def test_2016_player_and_later_2025_edited_guide_not_confounded(self):

@@ -1,0 +1,277 @@
+{
+  "schema": "stoneage.pet110.year2016_six_region_original_pc_official_pet_source_bounded_annual_review.r1",
+  "id": "PET110-YEAR2016-SIX-REGION-SOURCE-BOUNDED-AUDIT-20261118",
+  "date": "2026-11-18",
+  "active_module": "PET",
+  "year": 2016,
+  "year_frontier_before": 2016,
+  "year_frontier_after": 2017,
+  "review_status": "SOURCE_BOUNDED_REVIEWED",
+  "source_bounded_only": true,
+  "year_source_bounded_closed": true,
+  "year_reopenable": true,
+  "historically_complete": false,
+  "starting_remote": {
+    "main_sha": "6fb67e0e003090d172cb4ad9ccf341ad00384a3e",
+    "main_tree": "1f2a76505654dab7d411e127de25ee99532248a6",
+    "open_prs": 0,
+    "current_state_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_state_bytes": 2709173,
+    "latest_2016_partial_receipt": "PET109-TW2016-PLAYER-PET-REWARD-AND-HALLOWEEN-CROSSYEAR-20261118"
+  },
+  "prior_partial_receipts": [
+    "PET106-YEAR2016-CLASSIC-PC-MOBILE-BOUNDARY-20261118",
+    "PET107-TW2016-BEETLE-DUANWU-CLIENT-BOUNDARY-20261118",
+    "PET108-TW-CLIENT-DLER-170423-CHECKSUM-ACCESS-BOUNDARY-20261118",
+    "PET109-TW2016-PLAYER-PET-REWARD-AND-HALLOWEEN-CROSSYEAR-20261118"
+  ],
+  "sources": [
+    {
+      "id": "CN2016-CINS-APR19-OPERATOR-VOICE-RELAY",
+      "year": 2016,
+      "region": "CN",
+      "url": "https://www.shiqi.me/pt_49.htm",
+      "date": "2016-04-19",
+      "grade": "CONTEMPORANEOUS_THIRD_PARTY_VERBATIM_OPERATOR_VOICE_NOT_FIRSTPARTY_HTML",
+      "proves": "2016 Apr28 intended all original-PC CINS online server shutdown per relay and split 2.5 8.5 9.0 / 零九 lines",
+      "not_proved": "Exact original operator page, original server shutdown log or original PC PET ID"
+    },
+    {
+      "id": "CN2016-INDEPENDENT-CLOSURE-PERIOD-PRESS",
+      "year": 2016,
+      "region": "CN",
+      "url": "https://www.gameres.com/655173.html",
+      "date": "2016-04",
+      "grade": "CONTEMPORANEOUS_INDUSTRY_SECONDARY_PRESS",
+      "proves": "Independently reports April28 CINS original PC shutdown versus separate April29 StoneAge2 3D mobile end",
+      "not_proved": "Actual build pet records or release counts"
+    },
+    {
+      "id": "TW2016-BEETLE-FEB-MAR-PRIOR",
+      "year": 2016,
+      "region": "TW",
+      "prior_receipt": "PET107-TW2016-BEETLE-DUANWU-CLIENT-BOUNDARY-20261118",
+      "url": "https://www.shiqi.me/pt_8.htm",
+      "grade": "FEB_OPERATOR_VOICE_THIRD_PARTY_RELAY_AND_MARCH_PLAYER_FIRSTPERSON_PRIOR_RECORD",
+      "proves": "2016 original PC permanent beetle-type quest reward announcement and player larva possession reports",
+      "not_proved": "Original operator HTML or exact beetle native PET ID/grant"
+    },
+    {
+      "id": "TW2016-JUN-DRAGONBOAT-PRIOR",
+      "year": 2016,
+      "region": "TW",
+      "prior_receipt": "PET107-TW2016-BEETLE-DUANWU-CLIENT-BOUNDARY-20261118",
+      "url": "https://forum.gamer.com.tw/Co.php?bPage=0&bsn=1571&sn=292257&subbsn=10",
+      "grade": "CONTEMPORANEOUS_PLAYER_SEARCH_EXCERPT_ALREADY_REGISTERED",
+      "proves": "Four elemental snake/four triple-headed/two angel-demon foe labels and prize box candidates as player text",
+      "not_proved": "10 catchable pets, ten first-release species or awarded live pet"
+    },
+    {
+      "id": "TW2016-OCT30-ORIGINAL-PC-PLAYER-PRIOR",
+      "year": 2016,
+      "region": "TW",
+      "prior_receipt": "PET109-TW2016-PLAYER-PET-REWARD-AND-HALLOWEEN-CROSSYEAR-20261118",
+      "url": "https://forum.gamer.com.tw/Co.php?bsn=1571&sn=293257",
+      "date": "2016-10-30",
+      "grade": "CONTEMPORANEOUS_PLAYER_ORIGINAL_PC_GUIDE_SEARCH_TEXT",
+      "proves": "Player names Amido rearing, fossil archaeopteryx and accuracy skill as available task/pet candidates",
+      "not_proved": "new 2016 species, exact original skill behavior or same-build pet ID"
+    },
+    {
+      "id": "TW2016-HALLOWEEN-RETRO-REWARD-PRIOR",
+      "year": 2016,
+      "region": "TW",
+      "prior_receipt": "PET109-TW2016-PLAYER-PET-REWARD-AND-HALLOWEEN-CROSSYEAR-20261118",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=5376",
+      "date": "2025-02-01 edited; event title 2016-10-26..2016-11-02",
+      "grade": "RETROSPECTIVELY_EDITED_PLAYER_GUIDE_SEARCH_TEXT",
+      "proves": "Player-edited seven categories of Halloween rewards and 2015 Skeleton/Ghost reuse candidates",
+      "not_proved": "original 2016 operator original and first new pet identity"
+    },
+    {
+      "id": "KR2015-PC-AUG21-CLOSURE-CONTEMPORANEOUS",
+      "region": "KR",
+      "year": 2015,
+      "url": "https://m.hungryapp.co.kr/news/news_view.php?bcode=news&pid=29038",
+      "date": "2015-07-22",
+      "grade": "CONTEMPORANEOUS_KOREAN_GAME_INDUSTRY_PRESS_NOT_OPERATOR_PRIMARY",
+      "proves": "Reports Netmarble original PC August21 2015 termination plan",
+      "not_proved": "2016 PC universal absence or original client and exact pet tables"
+    },
+    {
+      "id": "JP2009-CLASSIC-PC-END-ANNOUNCEMENT-CONTEMPORANEOUS",
+      "region": "JP",
+      "year": 2009,
+      "url": "https://www.4gamer.net/games/013/G001377/20091126051/",
+      "date": "2009-11-26",
+      "grade": "CONTEMPORANEOUS_JAPANESE_INDUSTRY_PRESS_QUOTES_DIGIPARK_OPERATOR",
+      "proves": "Reports DigiPark planned Japanese PC service end 2010-02-24",
+      "not_proved": "that no legal 2016 separate PC reboot existed or original 2016 pet population"
+    },
+    {
+      "id": "HKMO2011-OPERATOR-LICENSE-EARLIER",
+      "region": "HK_MO",
+      "year": 2011,
+      "prior_receipt": "PET101-TW2015-PC199-200-202-AND-HKMO-OPERATOR-BOUNDARY-20261118",
+      "grade": "PRIOR_LICENSING_SOURCE_CANNOT_PROVE_2016_NATIVE_PET",
+      "proves": "Earlier license to Taozhu covered HK/MO",
+      "not_proved": "2016 independently deployed HK/MO original PC and pets"
+    },
+    {
+      "id": "TW2018-DLER-LATER-CLIENT-PRIOR",
+      "region": "TW",
+      "year": 2018,
+      "prior_receipt": "PET108-TW-CLIENT-DLER-170423-CHECKSUM-ACCESS-BOUNDARY-20261118",
+      "url": "https://dler.com/index.php?o=display%3Bid%3D7143",
+      "grade": "THIRD_PARTY_2018_PORTAL_METADATA_ZERO_BYTES_NOT_2016_BUILD",
+      "proves": "Public later client listing checksum claim with actual fetch 404 in PET108",
+      "not_proved": "Authentic 2016 original PC build/pet file"
+    },
+    {
+      "id": "PRODUCT2016-ORIGINS-MOBILE-SEPARATE",
+      "region": "KR",
+      "year": 2016,
+      "prior_receipt": "PET106-YEAR2016-CLASSIC-PC-MOBILE-BOUNDARY-20261118",
+      "url": "https://nmn.joybomb.com.tw/mobile/newscontent/8892?gid=48&type=16",
+      "grade": "2016_FIRST_PARTY_OPERATOR_MOBILE_BUT_NOT_CLASSIC_PC",
+      "proves": "Original Netmarble Origins mobile received named Latapa pet family update 2016",
+      "not_proved": "Any original PC pet deployment"
+    },
+    {
+      "id": "PRODUCT2016-7K7K-BROWSER-SEPARATE",
+      "region": "CN",
+      "year": 2016,
+      "prior_receipt": "PET107-TW2016-BEETLE-DUANWU-CLIENT-BOUNDARY-20261118",
+      "url": "https://web.7k7k.com/games/sqsd/notice/55722.html",
+      "grade": "2016_FIRST_PARTY_WEB_BROWSER_GAME_NOT_CLASSIC_PC",
+      "proves": "7k7k web remake service closure 2016-05-29 separately",
+      "not_proved": "CINS original PC or Taiwan classic PC closure or pet"
+    }
+  ],
+  "region_reviews": {
+    "CN": {
+      "region": "CN",
+      "version_lane": "CINS_ORIGINAL_PC_2_5_8_5_9_0_AND_ZERO_NINE_DISTINCT",
+      "known": "PET106 2016 Apr19 third-party contemporary relay purporting CINS official closure Apr28; April 2016 independent game industry report contemporaneously confirms CINS PC shutdown, not pet roster",
+      "grade": "CONTEMPORANEOUS_THIRD_PARTY_OPERATOR_VOICE_RELAY_AND_INDEPENDENT_PERIOD_PRESS",
+      "gap": "Actual CINS original 2016 issuer HTML, version-specific authenticated 2.5 8.5 9.0/09 client or patch, pet ID/SPR/skill and official issuance/grant; post-closure servers not automatically original",
+      "reopen_trigger": "CN2016_CINS_VERBATIM_OPERATOR_PAGE_EXACT_PC_BUILD_PET_MASTER_AND_LIVE_ISSUE"
+    },
+    "TW": {
+      "region": "TW",
+      "version_lane": "TAOZHU_ORIGINAL_PC_205_PLAYER_LABEL_NOT_AUTHENTICATED",
+      "known": "PET107 Feb beetle permanent quest operator-voice mirror plus Mar first-person juvenile beetle capture, Jun Dragon Boat ten foe labels and reward containers; PET109 Oct 30 contemporaneous Amido/archaeopteryx pet/skill player guide and 2016 Halloween 2025-edited retrospective prize menu. PET108 later 2018 third-party free client listing did not yield bytes",
+      "grade": "CONTAINED_OPERATOR_VOICE_RELAY_PERIOD_PLAYER_SEARCH_INDEX_AND_LATER_REVISED_GUIDE",
+      "gap": "Direct Taozhu original 2016 official notice and real 2016 client/patch (including 205 only a player label), native pet names/IDs/SPR/skills, same-era reward draws, captured or issuer logs; 2015 reused Ghost/Skeleton cannot be 2016 first issue",
+      "reopen_trigger": "TW2016_TAOZHU_ORIGINAL_CLIENT_PATCH_205_ID_AND_BEETLE_DUANWU_HALLOWEEN_PET_GRANTS"
+    },
+    "HK_MO": {
+      "region": "HK_MO",
+      "version_lane": "DIGIPARK_2011_TAOZHU_LICENSE_2016_SERVERS_ORIGINAL_PET_BUILD_UNKNOWN",
+      "known": "PET101/2011 contemporary publisher license covers HK/MO Taozhu management; not identical to proof of 2016 independent operation or same-build original PC pets",
+      "grade": "HISTORICAL_2011_LICENSE_ONLY_NOT_2016_OPERATOR_BUILD",
+      "gap": "2016 authorized HK/MO server/deployment region and original PC build whether shared TW or independent; native pet and actual issuance",
+      "reopen_trigger": "HKMO2016_PRIMARY_LICENSE_DEPLOYMENT_SHARED_OR_INDEPENDENT_ORIGINAL_PC_PET_ISSUE"
+    },
+    "KR": {
+      "region": "KR",
+      "version_lane": "NETMARBLE_CLASSIC_PC_2015_AUG_TERMINATION_NO_2016_REOPEN_PROVED",
+      "known": "Contemporaneous 2015/07/22 Hungryapp industry press reports Netmarble classic PC to end Aug21; separate Netmarble first-party mobile 2015 closure not proof of PC; 2016 Netmarble N2 Stone Age Begins is another 3D mobile game",
+      "grade": "CONTEMPORANEOUS_2015_CLASSIC_PC_TERMINATION_PRESS_PLUS_2016_FIRST_PARTY_MOBILE_SEPARATION",
+      "gap": "Original first-party PC closure service archive and any actually licensed/reopened 2016 Korean classic PC client or live pet names/IDs; cannot conclude 2016 population was zero",
+      "reopen_trigger": "KR2016_POST2015_OFFICIAL_CLASSIC_PC_REOPEN_ORIGINAL_BUILD_AND_PET_ISSUANCE"
+    },
+    "JP": {
+      "region": "JP",
+      "version_lane": "DIGIPARK_CLASSIC_PC_2010_FEB_END_NO_2016_CLASSIC_REOPEN_ATTESTED",
+      "known": "4Gamer 2009/11/26 contemporaneous account of DigiPark announcement names Feb24 2010 original-PC service termination; later Japanese StoneAge mobile or StoneAge2 not classic PC",
+      "grade": "CONTEMPORANEOUS_2009_OPERATOR_TERMINATION_PRESS_NOT_2016_PET_SOURCE",
+      "gap": "If official original classic PC resumed by 2016, exact operator/relicense, original installer/patch and deployed named pet issues; prior 2010 stop alone does not prove no 2016 pets everywhere",
+      "reopen_trigger": "JP2016_LICENSED_CLASSIC_PC_RELAUNCH_NATIVE_CLIENT_ISSUE"
+    },
+    "OTHER": {
+      "region": "OTHER",
+      "version_lane": "OTHER_COUNTRY_INDEPENDENTLY_AUTHORIZED_CLASSIC_PC_2016_UNKNOWN",
+      "known": "No independently verified free 2016 original classic PC country/operator/source pet evidence in this bounded audit",
+      "grade": "NO_QUALIFIED_2016_EVIDENCE_DOES_NOT_EQUAL_ZERO",
+      "gap": "Independent country license/operator, dated 2016 original PC build, same-instance native pet/reward with traceable official source",
+      "reopen_trigger": "OTHER2016_ORIGINAL_OFFICIAL_CLIENT_ONE_COUNTRY_OPERATOR_AND_PET_ISSUE"
+    }
+  },
+  "reopen_triggers": [
+    "CN2016_CINS_VERBATIM_OPERATOR_PAGE_EXACT_PC_BUILD_PET_MASTER_AND_LIVE_ISSUE",
+    "TW2016_TAOZHU_ORIGINAL_CLIENT_PATCH_205_ID_AND_BEETLE_DUANWU_HALLOWEEN_PET_GRANTS",
+    "HKMO2016_PRIMARY_LICENSE_DEPLOYMENT_SHARED_OR_INDEPENDENT_ORIGINAL_PC_PET_ISSUE",
+    "KR2016_POST2015_OFFICIAL_CLASSIC_PC_REOPEN_ORIGINAL_BUILD_AND_PET_ISSUANCE",
+    "JP2016_LICENSED_CLASSIC_PC_RELAUNCH_NATIVE_CLIENT_ISSUE",
+    "OTHER2016_ORIGINAL_OFFICIAL_CLIENT_ONE_COUNTRY_OPERATOR_AND_PET_ISSUE"
+  ],
+  "candidate_labels_by_grade": {
+    "TW_period_player_firsthand_or_dated": [
+      "幼甲蟲",
+      "風地幼甲蟲",
+      "阿米朵",
+      "始祖鳥",
+      "精準(玩家所述技能)"
+    ],
+    "TW_period_player_encounter_monster_labels_not_pet_releases": [
+      "卡恩格登",
+      "卡恩米茲",
+      "卡恩法爾",
+      "卡恩修比",
+      "史奈克特",
+      "葛利斯奈",
+      "艾柏瑞",
+      "拉特利",
+      "司卡奇",
+      "莫里卡其"
+    ],
+    "TW_later_edited_halloween_prize_names_not_2016_first_release": [
+      "古斯特",
+      "史凱勒頓",
+      "貓頭鷹禮盒",
+      "希林南瓜禮盒",
+      "遠古的恐龍蛋"
+    ],
+    "CN_2016_native_pet_names_verified": [],
+    "KR_2016_original_pc_pet_names_verified": [],
+    "JP_2016_original_pc_pet_names_verified": []
+  },
+  "negative_controls": {
+    "source_bounded_annual_review_not_historically_complete": true,
+    "all_region_reopen_triggers_preserved": true,
+    "limited_2016_period_sources_cannot_claim_global_species_count": true,
+    "classic_pc_official_build_not_inferred_from_player205_label": true,
+    "cn_original_closure_not_server_pet_deletion_history": true,
+    "tw_retro_2025_halloween_text_not_contemporaneous_2016_official": true,
+    "tw_halloween_2015_names_not_2016_first_release": true,
+    "reward_bag_or_egg_not_live_native_pet_id": true,
+    "same_monster_fight_name_not_catchable_pet_identity": true,
+    "hkmo_2011_license_not_2016_same_build": true,
+    "jp_2010_shutdown_not_proof_of_zero_pets_in_2016_everywhere": true,
+    "kr_2015_shutdown_not_2016_native_client_evidence": true,
+    "separate_mobile_game_not_classic_pc": true,
+    "separate_web_7k7k_not_original_pc": true,
+    "DLER_portal_md5_not_recomputed_original_file_sha": true,
+    "inaccessible_free_installer_not_claimed_obtained": true,
+    "no_paid_marketplace_or_collector_research": true,
+    "no_private_server_species_as_official": true,
+    "no_proprietary_client_or_graphics_published": true,
+    "stage_B_or_other_module_not_unlocked": true
+  },
+  "new_2016_original_pc_client_bytes": 0,
+  "new_2016_original_pc_patch_bytes": 0,
+  "new_2016_native_pet_ids": 0,
+  "new_2016_original_spr_frames": 0,
+  "new_2016_native_pet_skills": 0,
+  "new_2016_server_pet_grant_logs": 0,
+  "original_pc_global_2016_species_count": null,
+  "original_pc_2016_first_release_count": null,
+  "current_state_original_blob_unchanged": true,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "report_path": "docs/continuity/STONEAGE-PET110-YEAR2016-SIX-REGION-ORIGINAL-PC-SOURCE-BOUNDED-AUDIT-20261118.md",
+  "next": "PET111: start 2017 original-PC country/operator/version client-first pet source review; 2016 SOURCE_BOUNDED_REVIEWED not historically complete and all six regions reopenable"
+}
