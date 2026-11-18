@@ -18,8 +18,8 @@
     "year": 2009,
     "phase": "YEAR_2009_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET79-2008-FIVE-REGION-OFFICIAL-PET-BOUNDED-REVIEW-20261118",
-    "next": "PET80: begin 2009 five-region original PC official PET audit; free direct original client/patch first, document 2009 Japanese evolved saber names without backdating 2008.",
+    "latest_partial_root_review": "PET80-2009-JP-KR-OFFICIAL-NAMED-PET-FIRST-PASS-20261118",
+    "next": "PET81: continue 2009 CN/TW/JP/KR/OTHER original PC source-bounded review; find authentic 2009 client or period operator pet data and Japanese Dec actual event evidence; no native pet count promotion.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -1667,7 +1667,32 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "partial_source_review_receipts": [
+        {
+          "id": "PET80-2009-JP-KR-OFFICIAL-NAMED-PET-FIRST-PASS-20261118",
+          "regions": [
+            "JP",
+            "KR",
+            "CN",
+            "TW",
+            "OTHER"
+          ],
+          "report": "docs/continuity/STONEAGE-PET80-YEAR2009-JP-KR-CN-TW-OTHER-OFFICIAL-PET-SOURCE-FIRST-PASS-20261118.md",
+          "evidence_json": "research/recovered/STONEAGE-PET80-YEAR2009-JP-KR-OFFICIAL-PET-PARTIAL-SOURCE-AUDIT-R1.json",
+          "year_not_closed": true,
+          "historically_complete": false,
+          "new_original_2009_client_bytes": 0,
+          "new_native_pet_ids": 0,
+          "official_JP_2009_oct_operator_pet_total_marketing": 229,
+          "not_global_or_exact_native_pet_count": true,
+          "korean_new_named_period_quest_pet": "플라티우스",
+          "jp_prior_PET25_PET26_named_events_reused_not_new_species": [
+            "JP-2009-HAKUEN",
+            "JP-2009-KOKUEN"
+          ]
+        }
+      ]
     },
     {
       "year": 2010,
@@ -2964,6 +2989,25 @@
       "new_original_2008_client_bytes": 0,
       "new_native_pet_ids": 0,
       "global_2008_species_count": null
+    },
+    {
+      "id": "PET80-2009-JP-KR-OFFICIAL-NAMED-PET-FIRST-PASS-20261118",
+      "regions": [
+        "JP",
+        "KR",
+        "CN",
+        "TW",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET80-YEAR2009-JP-KR-CN-TW-OTHER-OFFICIAL-PET-SOURCE-FIRST-PASS-20261118.md",
+      "evidence_json": "research/recovered/STONEAGE-PET80-YEAR2009-JP-KR-OFFICIAL-PET-PARTIAL-SOURCE-AUDIT-R1.json",
+      "year_frontier_before": 2009,
+      "year_frontier_after": 2009,
+      "year_not_closed": true,
+      "historically_complete": false,
+      "new_original_2009_client_bytes": 0,
+      "new_native_pet_ids": 0,
+      "global_2009_species_count": null
     }
   ],
   "client_first_methodology": {
