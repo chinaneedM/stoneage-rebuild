@@ -6,7 +6,7 @@
 
 本轮按 `docs/PROJECT-CONTINUITY-PROTOCOL-R1.md` §19—25，重新读取GitHub远端main HEAD `95498d135cd03b34e88b3d175edede5a17d947f1`、tree `209159cd48a20dc07c96546c734f74c607bb6df8`、最新提交、同HEAD 4/4 Actions成功、开放PR0及2012 PET27年份游标；完整原Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`（2,709,173字节）经原生Blob读取核对，普通文件API仍空。大历史状态文件**绝不覆盖**。PET88已登记的11条具名文本、V1.200.012 2012/10/09客户端1.34GB公告MD5和已失败的HTTP502镜像保留，不能重复算新客户端或新物种。
 
-本轮[机读PET89逐源账本](../../research/recovered/STONEAGE-PET89-YEAR2012-CN-PET-CAPTURE-TW-OFFICIAL-CLIENT-REGION-GATES-R1.json)登记 **10条来源/不同证据边界，8条原文宠物名称提及**，包括重复旧宠及**同篇错字**，不是8种2012首次出现的新宠。当前是2012**第二轮部分审查**，不足以转入2013。
+本轮[机读PET89逐源账本](../../research/recovered/STONEAGE-PET89-YEAR2012-CN-PET-CAPTURE-TW-OFFICIAL-CLIENT-RELAY-REGIONAL-GATES-R1.json)登记 **10条来源/不同证据边界，8条原文宠物名称提及**，包括重复旧宠及**同篇错字**，不是8种2012首次出现的新宠。当前是2012**第二轮部分审查**，不足以转入2013。
 
 ## CN 2012-02-20｜捕捉位置的当年署名官方供稿
 
