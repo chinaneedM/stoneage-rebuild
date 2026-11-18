@@ -21,15 +21,14 @@ class Pet111Tw2017RealmPetAcquisition(unittest.TestCase):
         y=next(v for v in q["yearly_work_queue"] if v["year"]==2017)
         self.assertEqual((a["active_module"],q["active_module"]),("PET","PET"))
         self.assertEqual((a["frontier_before"],a["frontier_after"]),(2017,2017))
-        self.assertEqual((y["research_gate"],q["current_frontier"]["year"]),("NOT_YEAR_AUDITED",2017))
+        self.assertEqual((y["research_gate"],q["current_frontier"]["year"]),("SOURCE_BOUNDED_REVIEWED",2018))  # PET111 historical OPEN unchanged
         self.assertFalse(a["year_closed"])
         self.assertFalse(a["historically_complete"])
         self.assertIn(a["id"],[r["id"] for r in y["partial_source_review_receipts"]])
         self.assertEqual(y["partial_source_review_receipts"][0]["id"],a["id"])
-        self.assertTrue(q["current_frontier"]["next"].startswith(("PET112:","PET113:")))
+        self.assertTrue(q["current_frontier"]["next"].startswith(("PET112:","PET113:","PET114:")))
         self.assertEqual(q["yearly_work_queue"][17]["research_gate"],"SOURCE_BOUNDED_REVIEWED")
-        self.assertEqual(q["current_frontier"]["latest_source_bounded_annual_review"],
-                         a["main_baseline"].get("previous_annual_id","PET110-YEAR2016-SIX-REGION-SOURCE-BOUNDED-AUDIT-20261118"))
+        self.assertIn(a["main_baseline"].get("previous_annual_id","PET110-YEAR2016-SIX-REGION-SOURCE-BOUNDED-AUDIT-20261118"),[z["id"] for z in q["root_source_census_receipts"]])
         self.assertIn("PET111",REPORT.read_text(encoding="utf-8"))
 
     def test_same_year_operator_relay_not_operator_native_or_grant(self):
