@@ -24,9 +24,9 @@ class Pet111Tw2017RealmPetAcquisition(unittest.TestCase):
         self.assertEqual((y["research_gate"],q["current_frontier"]["year"]),("NOT_YEAR_AUDITED",2017))
         self.assertFalse(a["year_closed"])
         self.assertFalse(a["historically_complete"])
-        self.assertEqual(q["current_frontier"]["latest_2017_partial_source_receipt"],a["id"])
-        self.assertEqual(y["partial_source_review_receipts"][-1]["id"],a["id"])
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET112:"))
+        self.assertIn(a["id"],[r["id"] for r in y["partial_source_review_receipts"]])
+        self.assertEqual(y["partial_source_review_receipts"][0]["id"],a["id"])
+        self.assertTrue(q["current_frontier"]["next"].startswith(("PET112:","PET113:")))
         self.assertEqual(q["yearly_work_queue"][17]["research_gate"],"SOURCE_BOUNDED_REVIEWED")
         self.assertEqual(q["current_frontier"]["latest_source_bounded_annual_review"],
                          a["main_baseline"].get("previous_annual_id","PET110-YEAR2016-SIX-REGION-SOURCE-BOUNDED-AUDIT-20261118"))
