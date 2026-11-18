@@ -244,3 +244,8 @@ PET仍独占活动模块，2001年份继续OPEN。优先真实**能合法免费�
 ## 2026-11-18｜PET114 2018 台湾原 PC 双规则、暑期任务与手游独立
 
 [PET114报告](continuity/STONEAGE-PET114-TW2018-TWO-REALM-SUMMER-PET-AND-MOBILE-BOUNDARY-20261118.md)将2018同期台湾玩家2011/2017双设置、暑期红虎/贝洛宝利/乎拔拔/绿龟/凯比特/姆伊任务获宠文字保留为玩家证词；强化血清与胖胖龙徽章不算活宠；陶朱12/3官口法律公告为转录而非官方已核服务器；2018/7《石器时代M》移动版独立。新2018 original PC安装文件／PET ID／SPR／技能／发奖日志0，种数未知。**2018 NOT_YEAR_AUDITED、NEXT PET115**，继续PET客户端优先各区考据，不切NPC，CURRENT原blob `c89e0e33537990aa2132b47c40fef49a985a935c` 2,709,173B保持不变，Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停。
+
+
+## 2026-11-18｜PET115 2018 六地区 PC 宠物有限年审，时间轴进入2019
+
+[PET115来源限定年度报告](continuity/STONEAGE-PET115-YEAR2018-SIX-REGION-CLASSIC-PC-PET-BOUNDED-AUDIT-20261118.md)复核 CN/TW/HK_MO/KR/JP/OTHER 2018 经典原版 PC 运营与宠物，保留 PET114 台湾同期玩家抓宠/双运营设置，不以旧版停服或版权授权推断零物种；《石器时代M》2018/07/18手机正式发布的3星卡米鲁活动与手游“300多宠”宣传完全隔离，7/17日媒异文不被推作PC时点。2018仍无新增可认证原 PC 原包、宠物ID/SPR/技能与真实发放数据；六地均有独立重开门。`2018=SOURCE_BOUNDED_REVIEWED`只是来源有界，不是物种完整，**NEXT PET116 2019六地官方原版 PC 宠物/客户端优先考据**。PET唯一、`docs/CURRENT-STATE.md`原blob `c89e0e33537990aa2132b47c40fef49a985a935c` (2,709,173B)不写、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总进度UNKNOWN。
