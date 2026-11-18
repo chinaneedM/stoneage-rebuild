@@ -27,12 +27,12 @@ class Pet94Year2013(unittest.TestCase):
         self.assertTrue(a["year_reopenable"])
         self.assertIsNone(a["global_original_pc_pet_species_count_2013"])
         self.assertIsNone(a["first_release_2013_species_count"])
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET95:"))
+        self.assertTrue(q["current_frontier"]["next"].startswith("PET96:"))
     def test_2013_receipts_prefix_preserved_and_six_gates(self):
         a,q=self.a,self.q
         self.assertEqual(len(a["prior_receipts"]),3)
         self.assertEqual([x["id"] for x in q["yearly_work_queue"][14]["partial_source_review_receipts"]],a["prior_receipts"]+[a["id"]])
-        self.assertEqual([x["id"] for x in q["root_source_census_receipts"]][-1],a["id"])
+        self.assertIn(a["id"],[x["id"] for x in q["root_source_census_receipts"]])
         self.assertEqual(len({x["id"] for x in q["root_source_census_receipts"]}),len(q["root_source_census_receipts"]))
         self.assertEqual(len(set(a["reopen_triggers"])),6)
         self.assertEqual(set(a["region_reviews"]),{"CN","TW","HK_MO","KR","JP","OTHER"})
