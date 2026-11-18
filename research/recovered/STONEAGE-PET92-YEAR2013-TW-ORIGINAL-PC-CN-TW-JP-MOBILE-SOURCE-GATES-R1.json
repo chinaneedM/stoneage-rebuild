@@ -1,0 +1,228 @@
+{
+  "schema": "stoneage.pet92.2013.original_pc_custody_and_distinct_mobile_lines.r1",
+  "id": "PET92-YEAR2013-TW-ORIGINAL-CLIENT-CUSTODY-CN-JP-TW-MOBILE-SPLIT-20261118",
+  "date": "2026-11-18",
+  "active_module": "PET",
+  "year": 2013,
+  "year_frontier_before": 2013,
+  "year_frontier_after": 2013,
+  "review_status": "PARTIAL_NOT_YEAR_AUDITED",
+  "source_bounded_annual_audit_complete": false,
+  "historically_complete": false,
+  "startup": {
+    "main_head": "8ced75b16185103ef5fbe88cee4ccd274ee6f729",
+    "main_tree": "38ae40abd8f143b4c5afc5edec5ce5594dffd564",
+    "main_actions_success": 4,
+    "main_actions_total": 4,
+    "open_prs": 0,
+    "current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_bytes": 2709173
+  },
+  "source_count": 9,
+  "contemporary_2013_count": 8,
+  "prior_2012_reopen_control_count": 1,
+  "sources": [
+    {
+      "id": "TW-2013-04-25-PTT-OFFICIAL-CLIENT-REAL192-PATH",
+      "year": 2013,
+      "publication_date": "2013-04-25",
+      "region": "TW",
+      "lane": "TAOZHU_ORIGINAL_PC",
+      "url": "https://www.ptt.cc/bbs/StoneAge/M.1366898784.A.712.html",
+      "source_grade": "CONTEMPORANEOUS_DIRECT_PLAYER_DOWNLOAD_AND_INSTALL_WITNESS",
+      "read_status": "FULL_TEXT_READABLE",
+      "record": "Player claimed to download main client from official Taozhu site, reported extraction CRC error at Taozhu\\StoneAge\\data\\real_192.bin and subsequent game real.bin initialization failure. Replies mention stepwise updates and official manual patch downloaded 2013-04-28.",
+      "file_path_as_claimed": "Taozhu\\StoneAge\\data\\real_192.bin",
+      "source_evidence_type": "CLIENT_PATH_AND_DISTRIBUTION_WITNESS_ONLY",
+      "native_client_bytes_acquired": 0,
+      "verified_sha256": null,
+      "official_build_date": null,
+      "actual_program_executed_by_researcher": false,
+      "original_distribution_verified": false,
+      "pet_name_attestations": []
+    },
+    {
+      "id": "TW-2013-10-23-PTT-OPERATOR-FB-RELAY",
+      "year": 2013,
+      "publication_date": "2013-10-23",
+      "region": "TW",
+      "lane": "TAOZHU_ORIGINAL_PC",
+      "url": "https://www.ptt.cc/bbs/StoneAge/M.1382519312.A.668.html",
+      "source_grade": "CONTEMPORANEOUS_PLAYER_RELAY_OPERATOR_FACEBOOK_SOURCE_INDEX_READABLE_FULL_PAGE_403",
+      "read_status": "SEARCH_EXCERPT_ONLY_FULL_PAGE_403",
+      "record": "A period PTT repost quotes Taozhu operator statement about continued 2013 service and a policy change scheduled 2013-12-01, not a pet release, PET table or update file. Do not conflate with separate 2012-10 partial service policy.",
+      "original_official_fb_bytes_acquired": 0,
+      "native_client_bytes_acquired": 0,
+      "pet_name_attestations": []
+    },
+    {
+      "id": "TW-2013-07-09-JOYBOMB-ACTION-ONLINE-MOBILE-UPDATE",
+      "year": 2013,
+      "publication_date": "2013-07-07",
+      "operator_claimed_update_date": "2013-07-09",
+      "region": "TW",
+      "lane": "TAIWAN_MOBILE_STONEAGE_ACTIONONLINE_NOT_TAOZHU_PC",
+      "url": "https://www.ptt.cc/bbs/StoneAge/M.1373190244.A.A63.html",
+      "operator_url": "http://san.joybomb.com.tw/notice/notice_content?N=11&K=1633",
+      "source_grade": "CONTEMPORANEOUS_PLAYER_QUOTE_OPERATOR_MOBILE_PATCH_SEARCH_INDEX_ONLY",
+      "read_status": "SEARCH_EXCERPT_ONLY_FULL_PAGE_403",
+      "record": "Mobile 《石器時代 行動Online》 operator notice quoted: four Tyrannosaur color forms (green/blue/red/gold) talent reset to 疾速 and new riding skill/certificate series 霍爾克, 奇寶, 羅嚴塔. These are skill and mount certificate claims, not four newly released original PC species.",
+      "pet_name_attestations": [
+        "綠暴龍",
+        "藍暴龍",
+        "紅暴龍",
+        "金暴龍"
+      ],
+      "game_release_verified": false,
+      "exact_mobile_ids_verified": false,
+      "pc_original_species_eligible": false
+    },
+    {
+      "id": "TW-2013-02-07-GILUMIA-MOBILE-ANNOUNCEMENT",
+      "year": 2013,
+      "publication_date": "2013-02-07",
+      "region": "TW",
+      "lane": "TAIWAN_STONEAGE_GILUMIA_MOBILE_NOT_TAOZHU_PC_PRODUCT_IDENTITY_TO_JOYBOMB_UNRESOLVED",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=76569",
+      "source_grade": "CONTEMPORANEOUS_GAME_MEDIA_INDEX_ONLY",
+      "read_status": "SEARCH_SNIPPET_ONLY_PAGE_403",
+      "record": "2013 newspaper title announces 《石器時代：吉魯米亞大陸》 mobile version, not evidence for original Taozhu PC pet roster. Whether this is another label of ActionOnline remains unresolved.",
+      "pet_name_attestations": [],
+      "pc_original_species_eligible": false
+    },
+    {
+      "id": "CN-2013-01-09-GOLD-TIGER-RECAP",
+      "year": 2013,
+      "publication_date": "2013-01-09",
+      "region": "CN",
+      "lane": "CINS_ORIGINAL_PC_RETROSPECTIVE_PET_DESCRIPTION",
+      "url": "https://news.17173.com/content/2013-01-09/20130109114115651.shtml",
+      "source_grade": "CONTEMPORANEOUS_EDITORIAL_OLD_PET_DESCRIPTION",
+      "read_status": "FULL_TEXT_READABLE",
+      "record": "2013 article describes old gold tiger 金格萨贝鲁, quest acquisition and range-like stats. It explicitly refers to a return from previous eras. Those ranges and skills are unverified same-build native data and 2013 not first release.",
+      "pet_name_attestations": [
+        "金格萨贝鲁"
+      ],
+      "claimed_stats_not_native": true,
+      "first_release_2013_verified": false
+    },
+    {
+      "id": "CN-2012-07-04-GOLD-TIGER-EARLIER-PUBLISHED",
+      "year": 2012,
+      "publication_date": "2012-07-04",
+      "region": "CN",
+      "lane": "CINS_ORIGINAL_PC_PRIOR_ATTESTATION_REOPEN_2012_NOT_2013",
+      "url": "https://news.17173.com/content/2012-07-04/20120704151723074.shtml",
+      "source_grade": "CONTEMPORANEOUS_EDITORIAL_PRIOR_ATTESTATION",
+      "read_status": "FULL_TEXT_READABLE",
+      "record": "An earlier 2012 article already names 金虎—金格萨贝鲁 and reports a tiger-trainer NPC / four sacred stones quest as acquisition descriptions. It invalidates any claim that the 2013-01-09 description first introduced this pet, but does not settle original first historical release.",
+      "pet_name_attestations": [
+        "金格萨贝鲁"
+      ],
+      "first_release_2013_verified": false,
+      "prior_year_forward_only_reference": true
+    },
+    {
+      "id": "CN-2013-09-03-STONEAGE-OL-MOBILE-TWO-PETS",
+      "year": 2013,
+      "publication_date": "2013-09-03",
+      "region": "CN",
+      "lane": "STONEAGE_OL_MOBILE_SEPARATE_FROM_CINS_PC25_PC85",
+      "url": "https://games.sina.com.cn/o/n/2013-09-03/1556730887.shtml",
+      "source_grade": "CONTEMPORANEOUS_OPERATOR_ORIGIN_MEDIA_MOBILE_ADVERTISEMENT",
+      "read_status": "FULL_TEXT_READABLE",
+      "record": "《石器时代OL》 mobile game announcement names 熊先生 riding pet and 人狼 changing visual appearance in/out of battle; footer identifies 《石器时代移动版》. Not native original PC pet IDs, not verified actual live capture.",
+      "pet_name_attestations": [
+        "熊先生",
+        "人狼"
+      ],
+      "advertised_live_obtainable": true,
+      "original_pc_eligible": false,
+      "actual_mobile_pet_id_verified": false
+    },
+    {
+      "id": "CN-2013-09-11-STONEAGE-OL-MOBILE-BEAR-REWARD",
+      "year": 2013,
+      "publication_date": "2013-09-11",
+      "region": "CN",
+      "lane": "STONEAGE_OL_MOBILE_SEPARATE_FROM_CINS_PC25_PC85",
+      "url": "https://games.sina.com.cn/o/n/2013-09-11/1244732574.shtml",
+      "source_grade": "CONTEMPORANEOUS_OPERATOR_ORIGIN_MEDIA_MOBILE_REWARD_SEARCH_SNIPPET_ONLY",
+      "read_status": "SEARCH_EXCERPT_ONLY_PAGE_UNICODE_ERROR",
+      "record": "Same branded mobile game's media story says 5 campaign tokens could exchange a gift pack with a chance of 熊先生 pet or 熊先生 riding certificate package. Campaign item/lottery is not guaranteed pet and not old PC evidence.",
+      "pet_name_attestations": [
+        "熊先生"
+      ],
+      "actual_reward_verified": false,
+      "original_pc_eligible": false
+    },
+    {
+      "id": "JP-2013-08-22-CJ-STONEAGE-MOBILE-PUBLISHING-LICENSE",
+      "year": 2013,
+      "publication_date": "2013-08-22",
+      "region": "JP",
+      "lane": "CJ_INTERNET_JAPAN_STONEAGE_MOBILE_SEPARATE_FROM_ORIGINAL_JP_PC",
+      "url": "https://www.gamer.ne.jp/news/201308220046/",
+      "source_grade": "CONTEMPORANEOUS_MEDIA_REPORT_OPERATOR_MOBILE_LICENSING_ANNOUNCEMENT",
+      "read_status": "FULL_TEXT_READABLE",
+      "record": "CJ Internet Japan announced Japan publishing agreement with CJ E&M Netmarble for iOS/Android StoneAge Mobile, scheduled autumn 2013. Announcement does not by itself prove actual autumn release or a named original PC pet.",
+      "pet_name_attestations": [],
+      "release_date_kind": "PLANNED_AUTUMN_2013",
+      "actual_release_verified": false,
+      "original_jp_pc_eligible": false
+    }
+  ],
+  "native_custody": {
+    "verified_new_2013_original_pc_installer_bytes": 0,
+    "verified_new_2013_original_pc_pet_id_rows": 0,
+    "new_original_2013_spr_pixels": 0,
+    "server_issuance_receipts": 0,
+    "claimed_real_192_bin_path_not_bytes": true,
+    "official_taozhu_download_page_attempt": "https://www.stoneage.tw/download.php?c=2",
+    "official_taozhu_download_page_attempt_result": "TIMEOUT_NO_BINARY",
+    "download_link_2013_current_verified": false
+  },
+  "year_boundaries": {
+    "global_original_pc_species_count_2013": null,
+    "first_introduced_official_pc_pet_species_count_2013": null,
+    "original_pc_cn_2013_added_named_pet_species_verified": 0,
+    "original_pc_tw_2013_named_pet_release_verified": 0,
+    "product_line_mobile_pet_names_not_imported_into_original_pc": [
+      "熊先生",
+      "人狼",
+      "綠暴龍",
+      "藍暴龍",
+      "紅暴龍",
+      "金暴龍"
+    ],
+    "year2013_remains_unreviewed": true
+  },
+  "negative_controls": {
+    "crc_error_user_report_does_not_prove_original_game_content_corrupt": true,
+    "path_real192_only_not_authenticated_source_bytes": true,
+    "taiwan_mobile_dinosaur_four_color_skill_change_not_pc_original_four_new_pets": true,
+    "taiwan_gilumia_vs_actiononline_identity_not_forced": true,
+    "gold_tiger_2013_media_not_first_release": true,
+    "cn_ol_mobile_bear_wolf_not_cn_cins_original_pc": true,
+    "jp_mobile_2013_autumn_planned_not_released_pc": true,
+    "player_operator_fb_relay_not_original_pet_issuance": true,
+    "borrowed_2012_control_does_not_change_2012_year_close_status": true
+  },
+  "region_remaining": {
+    "CN": "2013 original PC 2.5/8.5 authenticated freely readable installer/patch and native pet IDs still missing; editorial 2013 old pet not first release; separate OL mobile only documented in own namespace",
+    "TW": "2013 Taozhu original PC user reports real_192.bin and manual updates but no bytes; contemporaneous original operator direct patch and new pet list still missing",
+    "HK_MO": "2013 original Honglong standalone official client/PET/reward source not obtained",
+    "KR": "2013 PC1 CJ/Netmarble native original pet master and first-party announcements unverified; old PET91 Korean mobile separate",
+    "JP": "2013 Japan original PC1 reopening/patch unverified; 2013 CJ Japan mobile agreement is different game",
+    "OTHER": "2013 qualified other original PC release and native pet roster unreviewed"
+  },
+  "reopen_triggers": [
+    "TW2013_TAOZHU_REAL192_OR_PATCH_OFFICIAL_SOURCE_BYTES_SHA",
+    "CN2013_CINS_ORIGINAL_PC25_PC85_NATIVE_CLIENT_AND_PETS",
+    "HKMO2013_HONGLONG_PC1_PET_UPDATE_SOURCE",
+    "KR2013_CJ_PC1_CONTEMPORANEOUS_PET_NATIVE_SOURCE",
+    "JP2013_PC1_OPERATOR_RELAUNCH_OR_NATIVE_PET",
+    "OTHER2013_LICENSED_PC1_OPERATOR_EVENT"
+  ],
+  "next": "PET93: continue 2013 original-PC CN/TW/HKMO/KR/JP/OTHER source-bounded audit; genuine accessible client bytes or operator live pet release before annual closure; preserve separate mobile 2013 product lines"
+}

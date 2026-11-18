@@ -28,8 +28,8 @@ class Pet91Year2013(unittest.TestCase):
 
     def test_forward_only_source_receipt(self):
         a, q = self.a, self.q
-        self.assertEqual(q["yearly_work_queue"][14]["partial_source_review_receipts"][-1]["id"], a["id"])
-        self.assertEqual(q["root_source_census_receipts"][-1]["id"], a["id"])
+        self.assertIn(a["id"], [x["id"] for x in q["yearly_work_queue"][14]["partial_source_review_receipts"]])
+        self.assertIn(a["id"], [x["id"] for x in q["root_source_census_receipts"]])
         self.assertEqual(sum(x["id"] == a["id"] for x in q["root_source_census_receipts"]), 1)
         self.assertEqual(len({x["id"] for x in q["root_source_census_receipts"]}), len(q["root_source_census_receipts"]))
         self.assertEqual(q["yearly_work_queue"][13]["research_gate"], "SOURCE_BOUNDED_REVIEWED")
