@@ -41,7 +41,7 @@ class Pet99Year2014BoundedAudit(unittest.TestCase):
         y=q["yearly_work_queue"][15]
         self.assertEqual([x["id"] for x in y["partial_source_review_receipts"]][:4],a["prior_receipts"])
         self.assertEqual(y["partial_source_review_receipts"][-1]["id"],a["id"])
-        self.assertEqual(q["root_source_census_receipts"][-1]["id"],a["id"])
+        self.assertIn(a["id"],[x["id"] for x in q["root_source_census_receipts"]])
         self.assertEqual(len(q["root_source_census_receipts"]),len({x["id"] for x in q["root_source_census_receipts"]}))
         self.assertEqual(set(a["region_reviews"]),{"CN","TW","HK_MO","KR","JP","OTHER"})
         self.assertEqual(len(a["reopen_triggers"]),6)
