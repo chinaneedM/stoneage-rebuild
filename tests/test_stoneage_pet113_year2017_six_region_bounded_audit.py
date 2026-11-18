@@ -55,7 +55,7 @@ class Pet113Year2017SourceBounded(unittest.TestCase):
   self.assertEqual(q["root_source_census_receipts"][-1]["id"],a["id"])
   self.assertEqual(len(a["sources"]),len({s["id"] for s in a["sources"]}))
   self.assertTrue(any("JUDICIAL_TEXT_PUBLIC_WIKISOURCE_TRANSCRIPTION" in s["grade"] for s in a["sources"]))
-  self.assertTrue(any("SECONDARY" in s["grade"] and s["region"]=="TW" for s in a["sources"]))
+  self.assertTrue(any("THIRD_PARTY" in s["grade"] and s["region"]=="TW" for s in a["sources"]))
   self.assertTrue(all(a["legal_boundary"].values()))
   self.assertTrue(all(a["negative_controls"].values()))
   self.assertEqual(a["candidate_labels_by_grade"]["TW_period_relay_event_named_pet_not_verified_native"],["藍虎"])
