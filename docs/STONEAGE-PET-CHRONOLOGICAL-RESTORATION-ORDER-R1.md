@@ -338,3 +338,7 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 
 ## PET96 2026-11-18｜2014陶朱马年兽任务候选与2002旧年兽历史来源隔离
 [PET96马年兽多年代证据与负证](continuity/STONEAGE-PET96-YEAR2014-TW-HORSE-QUEST-LINEAGE-SOURCE-GATES-20261118.md)／[PET96机读源分级](../research/recovered/STONEAGE-PET96-YEAR2014-TW-HORSE-ACQUISITION-AND-EARLIER-ATTESTATION-R1.json)：2011-06-15玩家直读追述2002华义四马年葛雷基欧／葛雷洛比／葛雷吉鲁／葛雷马恩，是**旧年见证而非2002原运营原件**；2013-12-31玩家原帖已说自己在陶朱服解过马年；2015-02玩家常见问答搜索摘要记录2014「萬馬奔騰罐頭」取消（罐头是道具，不是新宠），2015-04玩家索引描述每人三挑战券，而2016-01-11后修巴哈〈2014/07/30项链的秘密〉索引记五张二级挑战券换马年、2015改NPC及始祖鸟140级精準，两份晚出规则不可合为2014原版运行。2014官服原始兑换规则/原PET身份依然UNKNOWN。2014客户端新原B=0、原PET ID=0、实服领取=0，全球/2014首发物种数null；年份**仍NOT_YEAR_AUDITED、下一轮PET97仍查2014**。PET单模块、原CURRENT原blob原字节不变，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall percent UNKNOWN。
+
+
+## PET97 2026-11-18｜台湾陶朱2014原PC「198」安装／手动更新来源路径，不等于取得客户端
+[PET97原版客户端来源与字节止点](continuity/STONEAGE-PET97-TW2014-PC198-CLIENT-WITNESSES-NOT-ACQUIRED-20261118.md)／[PET97机读目录与下载验收门](../research/recovered/STONEAGE-PET97-TW2014-TAOZHU-PC198-DOWNLOAD-AND-BYTE-CUSTODY-GATES-R1.json)：2014/8/31玩家发帖镜像**直接可读**，本机启动免安装客户端显示版本198；9/6玩家在陶朱原站`download.php?c=2`下载半途停止；9/9 PTT同年回帖（原页403、全文索引）留玩家自行Dropbox备份`Sa_Free_installation.exe`及陶朱原站`download.php?c=1`「手动更新到198」步骤；10/31另一玩家仅索引称启动器显示198，2015玩家指南续证安装包/Launch.rar名称不能反推2014原包相同。三原地址**本轮未能实际获取任何原字节**，工具访问失败≠文件永久不存在；不得认作官方原客户端、可复算CRC/SHA或原PET名录。TW 198是**观察到的版本标签**不是物种数，六地2014原PC未获新原客户端、PET ID、原SPR、原发宠日志；全球/年度首发物种仍null，年份**NOT_YEAR_AUDITED、NEXT PET98仍2014**。PET唯一，原CURRENT原blob 2,709,173B不动，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体完成率UNKNOWN。
