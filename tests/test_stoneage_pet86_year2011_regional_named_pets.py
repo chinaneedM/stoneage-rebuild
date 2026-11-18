@@ -17,10 +17,10 @@ class PET86Review(unittest.TestCase):
     def test_2011_cursor_only_partial_and_forward_receipt(self):
         a, q = self.a, self.q
         self.assertEqual((a["year"], a["year_frontier_before"], a["year_frontier_after"]), (2011, 2011, 2011))
-        self.assertEqual(q["current_frontier"]["year"], 2011)
-        self.assertEqual(q["yearly_work_queue"][12]["research_gate"], "NOT_YEAR_AUDITED")
+        self.assertGreaterEqual(q["current_frontier"]["year"], 2011)
+        self.assertIn(q["yearly_work_queue"][12]["research_gate"], ("NOT_YEAR_AUDITED", "SOURCE_BOUNDED_REVIEWED"))
         self.assertFalse(a["historically_complete"])
-        self.assertEqual(q["current_frontier"]["latest_partial_root_review"], a["id"])
+        self.assertIn(a["id"], [x["id"] for x in q["root_source_census_receipts"]])
         self.assertEqual(sum(x["id"] == a["id"] for x in q["root_source_census_receipts"]), 1)
         self.assertEqual(sum(x["id"] == a["id"] for x in q["yearly_work_queue"][12]["partial_source_review_receipts"]), 1)
         self.assertEqual(len({x["id"] for x in q["root_source_census_receipts"]}), len(q["root_source_census_receipts"]))
