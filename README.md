@@ -3021,3 +3021,7 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 
 ## 2026-11-16 — PET73｜2005五地区官方宠物来源有界年审，正式年份游标推进2006
 [PET73 2005 CN/TW/JP/KR/OTHER年度报告](docs/continuity/STONEAGE-PET73-YEAR2005-FIVE-REGION-AUDIT-20261116.md)／[机读五区宠物来源等级、原客户端缺口与5项重开条件](research/recovered/STONEAGE-PET73-YEAR2005-FIVE-REGION-AUDIT-R1.json)：承接PET72大陆7.5牛头人/鸡年兽（仅7.5商城运营宣称，不等领到）、台服麒麟/萊福与8.0两未具名骑宠（GNN同期索引原页403）、日服7/5新恐龙**图像及图鉴预装**、7/12才**计划野外可出现Lv1恐龙**、奖宠「クロウリ」「ガーヴィ」「ヴァンレム」及7/22未命名黑虎、韩服10/11「고르고르」「타쿠」骑乘功能（非两种物种首次发行），本轮又核2005-06-13 GaiaX原同期公告：7月中旬拟**增加多个可捕获恐龙物种**，但没有7/12实际原补丁或同版抓宠证明。台湾鸡年兽2/23仅多年后玩家编年，不能凭大陆4月营销文案跨服推。五地区原客户端与PET ID/SPR/实际发奖日志均未获，所有物种实际总数null、全球UNKNOWN。2005标`SOURCE_BOUNDED_REVIEWED`、`historically_complete=false`，不是史实全集已完整；**当前最早未审年份2006，NEXT PET74**。PET唯一模块、禁止收费卖盘及公开原商业素材、CURRENT原完整Git blob不改，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体完成率未知。
+
+
+## 2026-11-18 — PET74｜2006五地区同期官方宠物初审（年度未闭合）
+[PET74地区/作品线隔离与来源有界报告](docs/continuity/STONEAGE-PET74-YEAR2006-CN-TW-JP-KR-BOUNDED-SOURCES-20261118.md)／[机读同期来源和五地区重开门](research/recovered/STONEAGE-PET74-YEAR2006-CN-TW-JP-KR-PARTIAL-R1.json)：大陆金山《新石器时代》同期“2298种宠物”为宣传统计非原PET主表；台服8.5六月公告及7月计划分服不能替代实际补丁或同源宠物名录；日本GaiaX原作10/31未命名红恐龙征名、11/21商城新增两未具名神秘宠与12/26袋系统变更分层，不将征名恐龙推为其中之一；同期日本《StoneAge2》是另行运营且角色不迁移的独立作品，不能并入原作；韩服12/15宠物转生/进化和“146种宠物”同期运营宣传不等原始146物种主表。此次2006原客户端0B/原同版PET ID0/实际领奖日志0，疑似华义下载路径未得原文件不算取得。**2006仍NOT_YEAR_AUDITED，NEXT PET75继续2006**；PET唯一、无收费卖盘/公开原商业资源；原CURRENT blob保持，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体百分比未知。

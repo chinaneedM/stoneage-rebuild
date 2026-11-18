@@ -18,8 +18,8 @@
     "year": 2006,
     "phase": "YEAR_2006_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET73-2005-FIVE-REGION-SOURCE-BOUNDED-OFFICIAL-PET-AUDIT-20261116",
-    "next": "PET74: begin 2006 official PC pet releases and authentic client/patch sources by region CN/TW/JP/KR/OTHER; prioritize dated operator named issuance, separate mobile and modern/private servers, no paid disc marketplace.",
+    "latest_partial_root_review": "PET74-2006-FIVE-REGION-PARTIAL-OFFICIAL-PET-SOURCE-AUDIT-20261118",
+    "next": "PET75: continue 2006 CN/TW/JP/KR/OTHER official pet year review; prioritize free verified original client/patch bytes and JP late-year mystery pet names, TW 8.5 real updates, KR evolution pet identities, CN Kingsoft native master versus advertising; then bounded annual audit.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -1295,7 +1295,17 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "partial_source_review_receipts": [
+        {
+          "id": "PET74-2006-FIVE-REGION-PARTIAL-OFFICIAL-PET-SOURCE-AUDIT-20261118",
+          "report": "docs/continuity/STONEAGE-PET74-YEAR2006-CN-TW-JP-KR-BOUNDED-SOURCES-20261118.md",
+          "evidence_json": "research/recovered/STONEAGE-PET74-YEAR2006-CN-TW-JP-KR-PARTIAL-R1.json",
+          "year_not_audited": true,
+          "original_2006_client_bytes": 0,
+          "new_native_pet_ids": 0
+        }
+      ]
     },
     {
       "year": 2007,
@@ -2531,6 +2541,25 @@
       "new_native_2005_pet_ids": 0,
       "new_server_grant_logs": 0,
       "historical_pet_population_count": null
+    },
+    {
+      "id": "PET74-2006-FIVE-REGION-PARTIAL-OFFICIAL-PET-SOURCE-AUDIT-20261118",
+      "regions": [
+        "CN",
+        "TW",
+        "JP",
+        "KR",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET74-YEAR2006-CN-TW-JP-KR-BOUNDED-SOURCES-20261118.md",
+      "evidence_json": "research/recovered/STONEAGE-PET74-YEAR2006-CN-TW-JP-KR-PARTIAL-R1.json",
+      "year_frontier_before": 2006,
+      "year_frontier_after": 2006,
+      "year_not_closed": true,
+      "historically_complete": false,
+      "original_2006_client_bytes": 0,
+      "new_native_pet_ids": 0,
+      "global_2006_species_total": null
     }
   ],
   "client_first_methodology": {
