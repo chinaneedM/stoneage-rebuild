@@ -23,7 +23,7 @@ class PET92(unittest.TestCase):
         self.assertFalse(r["source_bounded_annual_audit_complete"])
         self.assertIsNone(r["year_boundaries"]["global_original_pc_species_count_2013"])
         self.assertIsNone(r["year_boundaries"]["first_introduced_official_pc_pet_species_count_2013"])
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET95:"))
+        self.assertTrue(q["current_frontier"]["next"].startswith("PET96:"))
 
     def test_forward_only_2012_2013_receipts(self):
         r,q=self.r,self.q
