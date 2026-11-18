@@ -249,3 +249,8 @@ PET仍独占活动模块，2001年份继续OPEN。优先真实**能合法免费�
 ## 2026-11-18｜PET115 2018 六地区 PC 宠物有限年审，时间轴进入2019
 
 [PET115来源限定年度报告](continuity/STONEAGE-PET115-YEAR2018-SIX-REGION-CLASSIC-PC-PET-BOUNDED-AUDIT-20261118.md)复核 CN/TW/HK_MO/KR/JP/OTHER 2018 经典原版 PC 运营与宠物，保留 PET114 台湾同期玩家抓宠/双运营设置，不以旧版停服或版权授权推断零物种；《石器时代M》2018/07/18手机正式发布的3星卡米鲁活动与手游“300多宠”宣传完全隔离，7/17日媒异文不被推作PC时点。2018仍无新增可认证原 PC 原包、宠物ID/SPR/技能与真实发放数据；六地均有独立重开门。`2018=SOURCE_BOUNDED_REVIEWED`只是来源有界，不是物种完整，**NEXT PET116 2019六地官方原版 PC 宠物/客户端优先考据**。PET唯一、`docs/CURRENT-STATE.md`原blob `c89e0e33537990aa2132b47c40fef49a985a935c` (2,709,173B)不写、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总进度UNKNOWN。
+
+
+## 2026-11-18｜PET116 2019台湾端午/暑期宠物来源与2006同名跨年限界
+
+[2019端午肥龙、暑期海龙来源与先年反证](continuity/STONEAGE-PET116-TW2019-DRAGONBOAT-SUMMER-PET-REISSUE-2006-NAME-BOUNDARY-20261118.md)／[机读收据](../research/recovered/STONEAGE-PET116-TW2019-DRAGONBOAT-SUMMER-2006-NAME-BOUNDARY-R1.json)：2019当期玩家攻略有肥龙4名、海龙4名及兑换／强化描述，**2006/11/29当时玩家配方文中同样已有八个字面名字**，仅证明跨年同名文本，不证明同原版PET ID、首次发行或2006官方发宠；原2019客户端／SPR／技能／原发奖记录新增0。本批仅`TW_2019_PERIOD_PLAYER_SOURCE_PARTIAL`，**2019仍NOT_YEAR_AUDITED，NEXT PET117**核2019 CN/TW/HK_MO/KR/JP/OTHER正式原2D PC，可能复开旧年需新源。模块PET唯一，原CURRENT完整2,709,173B blob `c89e0e33537990aa2132b47c40fef49a985a935c`不触碰，Stage A7PARTIAL+2OPEN，B/wiki GATED，R79暂停，overall UNKNOWN。
