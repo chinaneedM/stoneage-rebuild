@@ -1,0 +1,162 @@
+{
+  "schema": "stoneage.pet105.year2015_six_region_classic_pc_source_bounded_audit.r1",
+  "id": "PET105-YEAR2015-SIX-REGION-SOURCE-BOUNDED-AUDIT-20261118",
+  "date": "2026-11-18",
+  "active_module": "PET",
+  "year": 2015,
+  "year_frontier_before": 2015,
+  "year_frontier_after": 2016,
+  "review_status": "SOURCE_BOUNDED_REVIEWED",
+  "year_source_bounded_closed": true,
+  "year_reopenable": true,
+  "historically_complete": false,
+  "source_bounded_only": true,
+  "starting_remote": {
+    "repository": "chinaneedM/stoneage-rebuild",
+    "main_head": "5a1bbc026a04ba9b94ad7b44cdb5cd201bfad5fe",
+    "main_tree": "46077b292fc599f06ded61b281d2e4b633da5ed1",
+    "main_actions_success": 4,
+    "open_prs": 0,
+    "original_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_current_bytes": 2709173
+  },
+  "prior_receipts": [
+    "PET100-YEAR2015-CN-TW-KR-ORIGINAL-PC-SOURCE-FIRST-PASS-20261118",
+    "PET101-TW2015-PC199-200-202-AND-HKMO-OPERATOR-BOUNDARY-20261118",
+    "PET102-TW2015-DRAGONBOAT-PLAYER-BOX-NOT-VERIFIED-PET-20261118",
+    "PET103-TW2015-CHRISTMAS-PLAYER-REWARDS-NOT-NATIVE-PET-20261118",
+    "PET104-TW2015-HALLOWEEN-RELAY-PRIZE-EGG-BOUNDARY-20261118"
+  ],
+  "new_source_audit": [
+    {
+      "id": "TW2025-QUEST-DIRECTORY-LATER-NOT_ORIGINAL",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=5358",
+      "grade": "2025_EDITED_PLAYER_DIRECTORY_NOT_2015_OPERATOR",
+      "date": "2025-10-23",
+      "claim": "entry 92 says 五月節的插曲(2015端午節)",
+      "original_operator_html_2015": false,
+      "original_native_pet_identity_2015": false,
+      "independent_2015_original": false
+    },
+    {
+      "id": "TW2016-DRAGONBOAT-GUIDE-NOT_2015",
+      "url": "https://forum.gamer.com.tw/Co.php?bPage=0&bsn=1571&sn=292257&subbsn=10",
+      "grade": "CONTEMPORANEOUS_2016_PLAYER_EVENT_GUIDE_NOT_2015",
+      "date": "2016-06-13",
+      "claims": [
+        "2016 史奈克特 葛利斯奈 three-head snakes",
+        "2016 elemental snakes 卡恩格登 etc",
+        "2016 angel demon snakes 司卡奇 莫里卡其",
+        "2016 端午蛇袋子"
+      ],
+      "not_original_2015_pc_pet_records": true,
+      "not_backfill_2015_reward_table": true
+    },
+    {
+      "id": "TW2015-0621-PTT-HEARSAY-REPORTED-RIDE-CHICKEN",
+      "url": "https://www.ptt.cc/bbs/StoneAge/M.1434858505.A.42A.html",
+      "grade": "CONTEMPORANEOUS_2015_PLAYER_QUESTION_HEARSAY_NOT_OWN_CAPTURE",
+      "date": "2015-06-21 11:48:23",
+      "text_claim": "看到好像都有黑雞了，還能騎",
+      "direct_natively_verified": false,
+      "verified_server_build": false,
+      "first_2015_pet_issuance": false
+    }
+  ],
+  "prior_source_limits": {
+    "CN_third_party_25_85_notice_not_original_html": true,
+    "TW_client_199_200_202_are_labels_not_bytes": true,
+    "TW_June_Moloso_2015_from_later_compilation": true,
+    "TW_dragonboat_three_head_snake_box_is_item_not_pet": true,
+    "TW_Halloween_eight_reward_labels_include_three_nonpets": true,
+    "TW_bone_dragon_egg_not_in_eight_prize_strings": true,
+    "TW_Christmas_2015_to_2016_not_two_first_release_years": true,
+    "HKMO_2011_license_does_not_prove_2015_build": true,
+    "KR_first_party_mobile_shutdown_not_classic_pc": true,
+    "JP_old_pc_stop_does_not_establish_2015_zero_species": true,
+    "OTHER_not_found_is_not_global_zero": true
+  },
+  "global_original_pc_pet_species_count_2015": null,
+  "first_release_species_count_2015": null,
+  "new_native_client_bytes": 0,
+  "new_patch_bytes": 0,
+  "new_native_pet_ids": 0,
+  "new_native_spr_pixels": 0,
+  "new_skill_functions": 0,
+  "new_server_grants": 0,
+  "region_reviews": {
+    "CN": {
+      "region": "CN",
+      "version_lane": "CINS_2_5_AND_8_5_DISTINCT_2015_PC",
+      "known": "PET100 third-party mirror of purported CINS spring 2015 event text separates 2.5/8.5 eggs, rides, rankings, and has contradictory Feb start/Jan end dates",
+      "gap": "Authentic 2015 operator HTML, separately authenticated original 2.5/8.5 native PET/SPR/skills and grant",
+      "trigger": "CN2015_CINS_ORIGINAL_25_85_OPERATOR_HTML_AND_NATIVE_PET_GRANT"
+    },
+    "TW": {
+      "region": "TW",
+      "version_lane": "TAOZHU_PC_199_200_202_LABEL_ONLY",
+      "known": "PET101 199/200/202 player/official relay labels; PET102 contemporary snake gift-box item not live pet; PET103 Dec Christmas rewards across 2016; PET104 Oct Halloween eight reported prizes distinct from bone dragon egg; June 17 Moloso only later player chronology",
+      "gap": "First-party June/Sept/Oct/Dec 2015 operator pages, original PC199 200 202 client/patch same-build pet+item IDs, original SPR and real opened-box live pet grant",
+      "trigger": "TW2015_TAOZHU_ORIGINAL_JUNE_NOTICES_PC199_200_202_PET_ITEM_ID_AND_GRANTS"
+    },
+    "HK_MO": {
+      "region": "HK_MO",
+      "version_lane": "DIGIPARK_2011_LICENCE_TO_TAOZHU_2015_DEPLOYMENT_UNKNOWN",
+      "known": "PET101 direct 2011 DigiPark original publisher press release reprinted at 4Gamer licenses both territories to Taozhu; 2015 same build still unproved",
+      "gap": "Original 2015 HK/MO independent or merged service deployment, version, native pet/issue records",
+      "trigger": "HKMO2015_OPERATOR_TERRITORY_MERGE_DEPLOYMENT_AND_ORIGINAL_PET_PROOF"
+    },
+    "KR": {
+      "region": "KR",
+      "version_lane": "NETMARBLE_ORIGINAL_PC_NOT_SEPARATE_MOBILE",
+      "known": "PET100 2015 contemporary press says original PC planned Aug21 end, separate Netmarble first party Aug21 end notice is Mobile only",
+      "gap": "Original first-party PC shutdown and final native 2015 client pet files, official grant",
+      "trigger": "KR2015_NETMARBLE_FIRSTPARTY_CLASSIC_PC_CLOSE_AND_PET_ASSET_GRANTS"
+    },
+    "JP": {
+      "region": "JP",
+      "version_lane": "JP_CLASSIC_PC_2010_STOP_2015_RELAUNCH_UNPROVEN",
+      "known": "Old Japanese classic PC ended about 2010 in previously reviewed history; later mobile is different work",
+      "gap": "2015 licensed classic PC reopening evidence if any with original build/native pet issuance",
+      "trigger": "JP2015_LICENSED_CLASSIC_PC_REOPEN_AND_NATIVE_PET_ISSUE"
+    },
+    "OTHER": {
+      "region": "OTHER",
+      "version_lane": "OTHER_AUTHORIZED_CLASSIC_PC_REGION_UNVERIFIED",
+      "known": "No independent 2015 licensed classic PC operating build/pet source qualified within reviewed available corpus",
+      "gap": "2015 separate official territory, operator, native original classic client and real pet issuance",
+      "trigger": "OTHER2015_LEGAL_CLASSIC_PC_OPERATOR_ORIGINAL_PET_ASSETS_AND_ISSUANCE"
+    }
+  },
+  "reopen_triggers": [
+    "CN2015_CINS_ORIGINAL_25_85_OPERATOR_HTML_AND_NATIVE_PET_GRANT",
+    "TW2015_TAOZHU_ORIGINAL_JUNE_NOTICES_PC199_200_202_PET_ITEM_ID_AND_GRANTS",
+    "HKMO2015_OPERATOR_TERRITORY_MERGE_DEPLOYMENT_AND_ORIGINAL_PET_PROOF",
+    "KR2015_NETMARBLE_FIRSTPARTY_CLASSIC_PC_CLOSE_AND_PET_ASSET_GRANTS",
+    "JP2015_LICENSED_CLASSIC_PC_REOPEN_AND_NATIVE_PET_ISSUE",
+    "OTHER2015_LEGAL_CLASSIC_PC_OPERATOR_ORIGINAL_PET_ASSETS_AND_ISSUANCE"
+  ],
+  "negative_controls": {
+    "source_bounded_review_is_not_historically_complete": true,
+    "pet_species_total_null_not_zero": true,
+    "original_bytes_not_acquired": true,
+    "source_date_not_always_true_issuance": true,
+    "forum_copy_not_original_operator_html": true,
+    "2016_snake_names_not_2015_first_release": true,
+    "2025_task_index_not_2015_firsthand": true,
+    "2015_black_chicken_riding_question_not_runtime_verification": true,
+    "client_version_199_200_202_not_pet_counts": true,
+    "box_egg_trophy_canned_skill_not_live_species": true,
+    "HKMO_license_not_2015_same_build": true,
+    "KR_PC_mobile_distinct": true,
+    "no_paid_marketplace": true,
+    "no_private_server_only_roster": true,
+    "no_commercial_art_publication": true
+  },
+  "historical_current_unchanged": true,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "PET106: begin 2016 original classic PC six-region pet audit, client bytes first; 2015 source bounded reopenable and 2015 Christmas cross-year not 2016 first-release proof"
+}
