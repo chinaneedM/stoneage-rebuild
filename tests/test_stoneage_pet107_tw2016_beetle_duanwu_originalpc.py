@@ -30,7 +30,7 @@ class TestPet107Year2016SourceBoundaries(unittest.TestCase):
         self.assertIsNone(a["tw2016_new_species_count"])
         self.assertEqual(q["current_frontier"]["latest_2016_partial_source_receipt"], a["id"])
         self.assertEqual(y["partial_source_review_receipts"][-1]["id"], a["id"])
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET108:"))
+        self.assertTrue(a["next"].startswith("PET108:"))  # historical receipt next survives future cursor progress
         self.assertIn("PET107", REPORT.read_text(encoding="utf-8"))
 
     def test_dated_spring_and_duanwu_are_distinct_graded_layers(self):
