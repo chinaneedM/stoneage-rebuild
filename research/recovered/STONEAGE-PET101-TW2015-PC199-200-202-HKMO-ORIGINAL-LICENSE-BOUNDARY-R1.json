@@ -1,0 +1,159 @@
+{
+  "schema": "stoneage.pet101.2015_tw_original_pc_199_200_202_version_evidence_hkmo_operator_boundary.r1",
+  "id": "PET101-TW2015-PC199-200-202-AND-HKMO-OPERATOR-BOUNDARY-20261118",
+  "date": "2026-11-18",
+  "active_module": "PET",
+  "year": 2015,
+  "frontier_before": 2015,
+  "frontier_after": 2015,
+  "review_status": "PARTIAL_NOT_YEAR_AUDITED",
+  "year_closed": false,
+  "historically_complete": false,
+  "startup": {
+    "repository": "chinaneedM/stoneage-rebuild",
+    "main_head": "d5cd512b3c4e1d57016f13222d44bd80a04a8a7d",
+    "main_tree": "3a227a4503b9f37ad36634ec83ab124d304c8b5e",
+    "main_actions_success": 4,
+    "open_prs": 0,
+    "current_state_blob_sha": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_state_git_blob_bytes": 2709173,
+    "year_frontier_status": "NOT_YEAR_AUDITED",
+    "latest_partial_review": "PET100-YEAR2015-CN-TW-KR-ORIGINAL-PC-SOURCE-FIRST-PASS-20261118"
+  },
+  "tw_version_evidence": [
+    {
+      "id": "TW-PC199-PLAYER-GUIDE-LATER-EDITED",
+      "claimed_version_label": "199",
+      "date_in_later_guide": "2015-02-25",
+      "source_url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=4621",
+      "source_grade": "PLAYER_CONTINUALLY_EDITED_GUIDE_WITH_RETROSPECTIVE_199_LINK_DATE",
+      "post_contains_later_205_reference": true,
+      "original_2015_installer_bytes_acquired": false,
+      "original_release_date_confirmed": false,
+      "pet_identity_proof": false
+    },
+    {
+      "id": "TW-PC200-CONTEMPORANEOUS-PLAYER-UPDATE-OBSERVATION",
+      "reported_version_label": "200",
+      "source_edit_date": "2015-03-06",
+      "source_url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=4507",
+      "original_taozhu_download_page": "http://www.stoneage2.com.tw/download.php?c=2",
+      "supplemental_google_drive_exe": "https://drive.google.com/file/d/0Bwkyp1Ozotu6WHhZdGNwSWowTzA/view?usp=sharing",
+      "workflow_described": [
+        "launch.exe",
+        "Newlaunch.exe",
+        "stoneage.exe supplemental player link",
+        "stoneage2.exe"
+      ],
+      "source_grade": "CONTEMPORANEOUS_PLAYER_FIRSTHAND_SOFTWARE_UPDATE_DESCRIPTION_NOT_AUTHENTICATED_INSTALLER",
+      "original_2015_installer_bytes_acquired": false,
+      "original_patch_bytes_acquired": false,
+      "pet_identity_proof": false
+    },
+    {
+      "id": "TW-PC202-CONTEMPORANEOUS-TZ-OPERATOR-TEXT-RELAY",
+      "reported_version_label": "202",
+      "source_date": "2015-09-22",
+      "source_url": "https://forum.gamer.com.tw/C.php?bsn=1571&snA=78396",
+      "original_taozhu_news_url": "http://www.stoneage.tw/news.php?id=1453",
+      "source_grade": "CONTEMPORANEOUS_PLAYER_RELAY_OF_DATED_OFFICIAL_NOTICE_NOT_ORIGINAL_HTML",
+      "original_2015_client_or_patch_bytes_acquired": false,
+      "same_build_pet_table_acquired": false,
+      "pet_identity_proof": false
+    }
+  ],
+  "attempted_historical_access": [
+    {
+      "id": "TW-2015-MARCH-OFFICIAL-DOWNLOAD-PAGE-REPORTED",
+      "url": "http://www.stoneage2.com.tw/download.php?c=2",
+      "web_open_result": "NOT_ACCESSIBLE_VIA_TOOL",
+      "container_network_result": "CONNECTION_FAILED",
+      "bytes_verified": 0,
+      "is_original_installer_verified": false,
+      "do_not_claim_permanently_gone": true
+    },
+    {
+      "id": "TW-2015-PLAYER-SUPPLEMENTAL-EXE",
+      "url": "https://drive.google.com/file/d/0Bwkyp1Ozotu6WHhZdGNwSWowTzA/view?usp=sharing",
+      "web_open_result": "NOT_ACCESSIBLE_VIA_TOOL",
+      "container_network_result": "CONNECTION_FAILED",
+      "bytes_verified": 0,
+      "official_distribution_proved": false,
+      "not_whole_client": true
+    },
+    {
+      "id": "TW-2015-SEP-ANNOUNCEMENT-1452",
+      "url": "http://www.stoneage.tw/news.php?id=1452",
+      "web_open_result": "NOT_ACCESSIBLE_VIA_TOOL",
+      "bytes_verified": 0,
+      "original_2015_html_verified": false
+    },
+    {
+      "id": "TW-2015-SEP-ANNOUNCEMENT-1453",
+      "url": "http://www.stoneage.tw/news.php?id=1453",
+      "web_open_result": "NOT_ACCESSIBLE_VIA_TOOL",
+      "container_network_result": "CONNECTION_FAILED",
+      "bytes_verified": 0,
+      "original_2015_html_verified": false
+    }
+  ],
+  "hk_mo_license": {
+    "primary_text_2011_url": "https://www.4gamer.net/games/013/G001377/20110908008/",
+    "primary_text_publication_date": "2011-09-08",
+    "original_issuer": "DigiPark Inc.",
+    "original_pc_product": "STONE AGE",
+    "licensee": "Taozhu Ltd.",
+    "licensed_regions": [
+      "HK",
+      "MO"
+    ],
+    "source_grade": "CONTEMPORANEOUS_PUBLISHER_PRESS_RELEASE_REPRINTED_VERBATIM_IN_4GAMER",
+    "licensed_taiwan_operator_same": true,
+    "october_2011_planned_start_not_execution_proof": true,
+    "independent_hkmo_server_in_2015_verified": false,
+    "hkmo_2015_pc_client_proven_same_as_tw202": false,
+    "hkmo_2015_official_pet_species_verified": false,
+    "player_retrospective_2011_2012_url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=4519",
+    "player_claims_separate": [
+      "2011-10-05 港龍 star system opened",
+      "2012-04 港龍／吉魯 merged into 加魯卡"
+    ],
+    "retrospective_claim_not_original_operator_page": true
+  },
+  "region_gaps": {
+    "CN": "Still need original 2015 CINS operator pages and 2.5/8.5 original client pet files",
+    "TW": "Original contemporaneous 2015 Taozhu PC199/200/202 bytes, original 2015 June Dragon Boat notice, native pet names to SPR and grants",
+    "HK_MO": "2011 license proven in original press release; 2015 region-specific service/deployment and actual pet evidence unresolved",
+    "KR": "2015 original PC service records and client separate from mobile",
+    "JP": "Proof of authorized original PC 2015 active service if any",
+    "OTHER": "2015 authorized original PC territory/version/pet original sources"
+  },
+  "boundaries": {
+    "version_labels_are_not_pet_species_counts": true,
+    "reported_199_200_202_not_cryptographically_validated": true,
+    "later_205_mention_not_backdated_to_2015": true,
+    "not_filling_gap_201_without_source": true,
+    "no_exe_execution": true,
+    "no_third_party_exe_upgraded_to_official_distribution": true,
+    "no_publisher_license_taken_as_2015_territory_server": true,
+    "no_hkmo_assumed_identical_to_tw_pet_deployment": true,
+    "no_paid_media_or_marketplace": true,
+    "no_private_server_species_proofs": true,
+    "no_pc_mobile_collapse": true,
+    "no_original_commercial_asset_publish": true
+  },
+  "new_authentic_2015_original_pc_client_bytes": 0,
+  "new_authentic_2015_original_pc_patch_bytes": 0,
+  "new_2015_native_pet_ids": 0,
+  "new_native_original_spr_assets": 0,
+  "new_native_skill_records": 0,
+  "new_verified_server_pet_grants": 0,
+  "official_global_species_total_2015": null,
+  "new_official_first_issued_species_2015": null,
+  "original_current_state_unchanged": true,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_game_completion_percent": null,
+  "next": "PET102: continue 2015 TW first-party June Dragon Boat announcement and genuine PC202/199/200 source bytes, HK/MO year-2015 actual deployment proof, six-region PC pet issuance; keep 2015 year open"
+}
