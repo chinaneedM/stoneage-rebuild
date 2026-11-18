@@ -84,6 +84,9 @@ on:
       - "tests/test_stoneage_pet113_year2017_six_region_bounded_audit.py"
       - "tests/test_stoneage_pet114_tw2018_realm_summer_pet_boundary.py"
       - "tests/test_stoneage_pet115_year2018_six_region_bounded_audit.py"
+      - "tests/test_stoneage_pet116_tw2019_event_prior2006_name_boundary.py"
+      - "research/recovered/STONEAGE-PET116-TW2019-DRAGONBOAT-SUMMER-2006-NAME-BOUNDARY-R1.json"
+      - "docs/continuity/STONEAGE-PET116-TW2019-DRAGONBOAT-SUMMER-PET-REISSUE-2006-NAME-BOUNDARY-20261118.md"
       - "research/recovered/STONEAGE-PET105-YEAR2015-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json"
       - "research/recovered/STONEAGE-PET106-YEAR2016-CLASSIC-PC-VS-ORIGINS-MOBILE-FIRST-PASS-R1.json"
       - "research/recovered/STONEAGE-PET107-TW2016-BEETLE-DUANWU-2016-SOURCE-GRADES-R1.json"
@@ -542,6 +545,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet114_tw2018_realm_summer_pet_boundary
       - name: PET115 2018 six-region original PC PET source-bounded annual review and 2019 handoff
         run: python -m unittest tests.test_stoneage_pet115_year2018_six_region_bounded_audit
+      - name: PET116 2019 TW Dragonboat/summer pet player-reward and 2006 exact-name counterevidence
+        run: python -m unittest tests.test_stoneage_pet116_tw2019_event_prior2006_name_boundary
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary
