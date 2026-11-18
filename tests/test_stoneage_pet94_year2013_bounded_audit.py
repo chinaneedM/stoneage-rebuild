@@ -15,8 +15,8 @@ class Pet94Year2013(unittest.TestCase):
         a,q=self.a,self.q
         y=q["yearly_work_queue"][14]
         self.assertEqual((a["year"],a["year_frontier_before"],a["year_frontier_after"]),(2013,2013,2014))
-        self.assertEqual(q["current_frontier"]["year"],2014)
-        self.assertEqual(q["yearly_work_queue"][15]["research_gate"],"NOT_YEAR_AUDITED")
+        self.assertGreaterEqual(q["current_frontier"]["year"],2014)
+        self.assertEqual(q["yearly_work_queue"][15]["research_gate"],"SOURCE_BOUNDED_REVIEWED")
         self.assertEqual(y["research_gate"],"SOURCE_BOUNDED_REVIEWED")
         self.assertEqual(y["source_bounded_review_receipt"],"research/recovered/STONEAGE-PET94-YEAR2013-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json")
         self.assertFalse(y["historically_complete"])

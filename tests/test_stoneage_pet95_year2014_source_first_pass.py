@@ -14,9 +14,9 @@ class PET95(unittest.TestCase):
     def test_year_open_chronology_and_unique_receipt(self):
         a,q=self.a,self.q
         self.assertEqual((a["year"],a["year_frontier_before"],a["year_frontier_after"]),(2014,2014,2014))
-        self.assertEqual(q["current_frontier"]["year"],2014)
+        self.assertGreaterEqual(q["current_frontier"]["year"],2014)
         self.assertGreaterEqual(int(q["current_frontier"]["next"].split(":")[0][3:]),97)
-        self.assertEqual(q["yearly_work_queue"][15]["research_gate"],"NOT_YEAR_AUDITED")
+        self.assertEqual(q["yearly_work_queue"][15]["research_gate"],"SOURCE_BOUNDED_REVIEWED")
         self.assertEqual(a["review_status"],"PARTIAL_NOT_YEAR_AUDITED")
         self.assertFalse(a["year_source_bounded_closed"])
         self.assertFalse(a["historically_complete"])

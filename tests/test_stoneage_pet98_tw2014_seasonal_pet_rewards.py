@@ -18,11 +18,11 @@ class Pet98SeasonalRewards(unittest.TestCase):
         self.assertEqual(a["review_status"],"PARTIAL_NOT_YEAR_AUDITED")
         self.assertFalse(a["historically_complete"])
         self.assertFalse(a["year_closed"])
-        self.assertEqual(q["current_frontier"]["year"],2014)
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET99:"))
-        self.assertEqual(q["yearly_work_queue"][15]["research_gate"],"NOT_YEAR_AUDITED")
-        self.assertEqual(q["root_source_census_receipts"][-1]["id"],a["id"])
-        self.assertEqual(q["yearly_work_queue"][15]["partial_source_review_receipts"][-1]["id"],a["id"])
+        self.assertGreaterEqual(q["current_frontier"]["year"],2014)
+        self.assertTrue(a["next"].startswith("PET99:"))
+        self.assertEqual(q["yearly_work_queue"][15]["research_gate"],"SOURCE_BOUNDED_REVIEWED")
+        self.assertIn(a["id"],[x["id"] for x in q["root_source_census_receipts"]])
+        self.assertIn(a["id"],[x["id"] for x in q["yearly_work_queue"][15]["partial_source_review_receipts"]])
         self.assertEqual(len({x["id"] for x in q["root_source_census_receipts"]}),len(q["root_source_census_receipts"]))
     def test_source_grade_not_original_operator_2014(self):
         a=self.a

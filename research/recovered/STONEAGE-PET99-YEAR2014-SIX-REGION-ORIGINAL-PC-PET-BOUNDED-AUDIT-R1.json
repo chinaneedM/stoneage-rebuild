@@ -1,0 +1,142 @@
+{
+  "schema": "stoneage.pet99.2014.six_region_pc_source_bounded_audit.r1",
+  "id": "PET99-YEAR2014-SIX-REGION-SOURCE-BOUNDED-AUDIT-20261118",
+  "date": "2026-11-18",
+  "active_module": "PET",
+  "year": 2014,
+  "year_frontier_before": 2014,
+  "year_frontier_after": 2015,
+  "review_status": "SOURCE_BOUNDED_REVIEWED",
+  "year_source_bounded_closed": true,
+  "year_reopenable": true,
+  "historically_complete": false,
+  "source_bounded_only": true,
+  "starting_remote": {
+    "repository": "chinaneedM/stoneage-rebuild",
+    "head": "b28c597c0b4053b02bdfae64f2ebb3f0c1578ade",
+    "tree": "dd8d4b4186f69b9d4dfafcd58a483e5cb797dbe9",
+    "exact_main_push_actions_success": 4,
+    "open_prs": 0,
+    "original_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_current_bytes": 2709173
+  },
+  "prior_receipts": [
+    "PET95-YEAR2014-CN-TW-ORIGINAL-PC-SOURCE-FIRST-PASS-20261118",
+    "PET96-YEAR2014-TW-HORSE-QUEST-LINEAGE-SOURCE-GATES-20261118",
+    "PET97-TW2014-TAOZHU-PC-198-CLIENT-ACQUISITION-GATE-20261118",
+    "PET98-TW2014-SEASONAL-REWARD-AND-RETROSPECTIVE-ISSUANCE-GATES-20261118"
+  ],
+  "new_source_audit": [
+    {
+      "id": "TW2015-0408-RESCUED-2014-DRAGON-BOAT-QUEST-GUIDE",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=4236",
+      "document_edit_date": "2015-04-08",
+      "original_2014_post_recovered_exact_date": null,
+      "source_kind": "LATER_PLAYER_REPOST_OF_GOOGLE_CACHE_OF_LOST_PLAYER_2014_QUEST_TEXT",
+      "access_grade": "WEB_SEARCH_VISIBLE_FULL_TEXT_NOT_NATIVE_2014_ORIGINAL_OPERATOR_NOTICE",
+      "grade": "LATER_SECONDARY_RESCUED_PLAYER_TEXT",
+      "claims": [
+        "Rescued player quest route calls a post-quest reward 端午蛇盒子",
+        "2015 editor says current reward is 命中之石 格檔之石 迴避之石 and 沒有寵物",
+        "Editor notes original post lost and editorial author did not himself complete the quest"
+      ],
+      "original_operator_2014": false,
+      "original_2014_pet_grant_verified": false,
+      "box_contents_verified": false,
+      "exact_revision_date_verified": false
+    }
+  ],
+  "prior_2014_source_limits": [
+    "PET95_CN2014_CINS_MIRRORED_OLD_OPERATOR_OPENING_DESCRIBED_IN_LATER_COURT_NOT_NATIVE_PET_TABLE",
+    "PET95_TW2014_CONTEMPORANEOUS_FAN_RELAY_OF_TAOZHU_MERGE_PLAN_NOT_SERVER_EXECUTION",
+    "PET96_HORSE_PET_EARLIER_PLAYER_TESTIMONY_AND_LATER_QUEST_DESCRIPTIONS_NOT_2014_FIRST_RELEASE",
+    "PET97_2014_PLAYER_DISPLAY_LAUNCHER_198_DOWNLOAD_ROUTE_NOT_AUTHENTICATED_BINARY",
+    "PET98_2015_PTT_CANCELLED_SNAKE_WEREWOLF_AND_2015_RESCUED_MOON_GUIDE_NOT_ORIGINAL_2014_ISSUER"
+  ],
+  "grade_disambiguation": {
+    "gift_box_name": "ITEM_LABEL_NOT_PROVEN_PET_SPECIES_OR_OPEN_CONTENT",
+    "three_inlay_stones": "2015_EDITOR_CURRENT_REWARD_NOT_2014_INITIAL_OFFICIAL_REWARD",
+    "snake_cancellation": "2015_PLAYER_QA_REPORTED_CANCELLATION_NOT_2014_EXACT_TIME",
+    "wolf_sagelu_black_tiger": "DISTINCT_LATER_PLAYER_REWARD_REFERENCES_NOT_SAME_DEPLOYMENT_NATIVE_IDS_OR_FOUR_VERIFIED_NEW_SPECIES",
+    "skill_cans": "SKILL_ITEMS_NOT_PETS",
+    "later_2016_event": "LATER_YEAR_NOT_2014_ORIGINAL_PC"
+  },
+  "global_original_pc_pet_species_count_2014": null,
+  "first_release_species_count_2014": null,
+  "new_native_client_bytes": 0,
+  "new_patch_bytes": 0,
+  "new_native_pet_ids": 0,
+  "new_native_spr_pixels": 0,
+  "new_skill_functions": 0,
+  "new_server_grants": 0,
+  "region_reviews": {
+    "CN": {
+      "region": "CN",
+      "version_lane": "CINS_25_85_90_DISTINCT_ORIGINAL_PC",
+      "known": "PET95 later court recites archive of 2014 original operator opening notice, not independently acquired 2014 original HTML or PET file",
+      "gap": "2014 client/server-specific PET ids/SPR skills and issuance unknown",
+      "trigger": "CN2014_ORIGINAL_CINS_25_85_90_OPERATOR_SOURCE_AND_CLIENT_PET_ISSUE"
+    },
+    "TW": {
+      "region": "TW",
+      "version_lane": "TAOZHU_ORIGINAL_PC_LAUNCHER_198_PLAYER_ATTESTED",
+      "known": "Contemporary fan merger-plan relay; 198 launcher player text/links without bytes; 2015 rescued Dragon Boat snake box versus later stones/no pet; 2015 PTT canceled snake/wolf; later Moon quest guide names Sagelu and black tiger",
+      "gap": "2014 Taozhu original May 28 June 11 Sept 1 official award change notices and original PC198 installer/patch/source/native granted pet IDs unknown",
+      "trigger": "TW2014_TAOZHU_ORIGINAL_0528_0611_0901_NOTICES_AND_PC198_PET_BYTES"
+    },
+    "HK_MO": {
+      "region": "HK_MO",
+      "version_lane": "HKMO_LICENSED_REGION_ACTUAL_2014_SERVICE_AND_MERGE_UNKNOWN",
+      "known": "No independent 2014 official original PC pet source in qualified reviewed corpus",
+      "gap": "Independent or merged deployment and original pet issuance unknown",
+      "trigger": "HKMO2014_LICENSE_SERVICE_MERGE_AND_PET_DEPLOYMENT_PROOF"
+    },
+    "KR": {
+      "region": "KR",
+      "version_lane": "KOREAN_NETMARBLE_ORIGINAL_PC_NOT_MOBILE",
+      "known": "No qualified 2014 PC pet issuer/source from reviewed corpus",
+      "gap": "Original operator native version and real grants absent",
+      "trigger": "KR2014_NETMARBLE_FIRSTPARTY_PC_CLIENT_PET_GRANTS"
+    },
+    "JP": {
+      "region": "JP",
+      "version_lane": "JAPAN_CLASSIC_PC_CLOSED_2010_POSSIBLE_RELAUNCH_NOT_ESTABLISHED",
+      "known": "Earlier documented original PC closure; 2013 mobile product is separate",
+      "gap": "2014 original PC relaunch and corresponding official pet release not demonstrated",
+      "trigger": "JP2014_LEGAL_ORIGINAL_PC_RELAUNCH_AND_NATIVE_PET_SOURCE"
+    },
+    "OTHER": {
+      "region": "OTHER",
+      "version_lane": "OTHER_LEGAL_DISTINCT_CLASSIC_PC_ORIGINAL",
+      "known": "No independently qualified 2014 original PC pet release in reviewed corpus",
+      "gap": "Licensed original original PC operator and native pet identity unknown",
+      "trigger": "OTHER2014_ORIGINAL_PC_OPERATOR_CLIENT_PET_PROOF"
+    }
+  },
+  "reopen_triggers": [
+    "CN2014_ORIGINAL_CINS_25_85_90_OPERATOR_SOURCE_AND_CLIENT_PET_ISSUE",
+    "TW2014_TAOZHU_ORIGINAL_0528_0611_0901_NOTICES_AND_PC198_PET_BYTES",
+    "HKMO2014_LICENSE_SERVICE_MERGE_AND_PET_DEPLOYMENT_PROOF",
+    "KR2014_NETMARBLE_FIRSTPARTY_PC_CLIENT_PET_GRANTS",
+    "JP2014_LEGAL_ORIGINAL_PC_RELAUNCH_AND_NATIVE_PET_SOURCE",
+    "OTHER2014_ORIGINAL_PC_OPERATOR_CLIENT_PET_PROOF"
+  ],
+  "negative_controls": {
+    "no_false_2014_first_species_from_2015_copy": true,
+    "no_box_implies_pet": true,
+    "no_2015_stones_backdate_2014": true,
+    "no_cancellation_date_guess": true,
+    "no_later_2016_reward_backdate": true,
+    "no_pet_count_from_news": true,
+    "no_mobile_or_private_server": true,
+    "no_paid_marketplace": true,
+    "no_original_private_assets_publish": true,
+    "original_current_untouched": true
+  },
+  "historical_current_unchanged": true,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "PET100: begin 2015 six-region original-PC official pet evidence in chronological order, original client bytes first"
+}

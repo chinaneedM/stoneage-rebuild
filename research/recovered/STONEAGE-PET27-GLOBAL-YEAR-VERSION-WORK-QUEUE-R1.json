@@ -15,13 +15,13 @@
   "latest_year_in_scope": 2026,
   "reason_start_provisional": "1999 is a search-window starting point, NOT an independently authenticated first official launch date; earlier qualified evidence may extend the sequence backwards",
   "current_frontier": {
-    "year": 2014,
-    "phase": "YEAR_2014_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
+    "year": 2015,
+    "phase": "YEAR_2015_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET98-TW2014-SEASONAL-REWARD-AND-RETROSPECTIVE-ISSUANCE-GATES-20261118",
-    "next": "PET99: continue 2014 original-PC six-region pet evidence; seek 2014 Taozhu May/June and September first-party issuance or authentic same-build PC native pet roster",
+    "latest_partial_root_review": "PET99-YEAR2014-SIX-REGION-SOURCE-BOUNDED-AUDIT-20261118",
+    "next": "PET100: begin 2015 official original-PC six-region pet source audit; authentic available original client bytes first, isolate 2014 recycled rewards and mobile product lines",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE",
-    "latest_source_bounded_annual_review": "PET94-YEAR2013-SIX-REGION-BOUNDED-AUDIT-20261118"
+    "latest_source_bounded_annual_review": "PET99-YEAR2014-SIX-REGION-SOURCE-BOUNDED-AUDIT-20261118"
   },
   "region_tracks": [
     "CN",
@@ -2457,7 +2457,7 @@
     {
       "year": 2014,
       "chronological_position": 16,
-      "research_gate": "NOT_YEAR_AUDITED",
+      "research_gate": "SOURCE_BOUNDED_REVIEWED",
       "documented_release_event_ids_from_existing_PET25_PET26": [],
       "documentary_event_count_NOT_species": 0,
       "unverified_early_and_mid_year_pets_may_exist": true,
@@ -2501,8 +2501,99 @@
           "review_status": "PARTIAL_NOT_YEAR_AUDITED",
           "historically_complete": false,
           "first_release_species_count": null
+        },
+        {
+          "id": "PET99-YEAR2014-SIX-REGION-SOURCE-BOUNDED-AUDIT-20261118",
+          "regions": [
+            "CN",
+            "TW",
+            "HK_MO",
+            "KR",
+            "JP",
+            "OTHER"
+          ],
+          "report": "docs/continuity/STONEAGE-PET99-YEAR2014-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-20261118.md",
+          "evidence_json": "research/recovered/STONEAGE-PET99-YEAR2014-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json",
+          "year_frontier_before": 2014,
+          "year_frontier_after": 2015,
+          "year_not_closed": false,
+          "historically_complete": false,
+          "new_original_2014_client_bytes": 0,
+          "new_native_pet_ids": 0,
+          "global_2014_species_count": null,
+          "year_review_status": "SOURCE_BOUNDED_REVIEWED",
+          "new_source_entries": 1,
+          "prior_partial_receipts": 4,
+          "rescued_2015_dragon_boat_box_not_pet_identity": true
         }
-      ]
+      ],
+      "source_bounded_partial_review_note": "PET99: 2014 six-region original PC source-bounded annual audit; TW April 2015 rescued 2014 Dragon Boat quest separates 端午蛇盒子 from editor's later stones/no-pet note, not official first-party 2014 issue or box-to-species identity; CN post-year court account, TW version198 unacquired, HKMO/KR/JP/OTHER unavailable originals and later mobile product separated; annual research closed as source-bounded only; global species UNKNOWN; 0 new original bytes or native ID; six precise reopen triggers",
+      "source_bounded_partial_review_notes_forward_only": [
+        "PET99: 2014 six-region original PC source-bounded annual audit; TW April 2015 rescued 2014 Dragon Boat quest separates 端午蛇盒子 from editor's later stones/no-pet note, not official first-party 2014 issue or box-to-species identity; CN post-year court account, TW version198 unacquired, HKMO/KR/JP/OTHER unavailable originals and later mobile product separated; annual research closed as source-bounded only; global species UNKNOWN; 0 new original bytes or native ID; six precise reopen triggers"
+      ],
+      "historically_complete": false,
+      "historical_species_count": null,
+      "source_bounded_review_receipt": "research/recovered/STONEAGE-PET99-YEAR2014-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json",
+      "residual_reopen_triggers": [
+        "CN2014_ORIGINAL_CINS_25_85_90_OPERATOR_SOURCE_AND_CLIENT_PET_ISSUE",
+        "TW2014_TAOZHU_ORIGINAL_0528_0611_0901_NOTICES_AND_PC198_PET_BYTES",
+        "HKMO2014_LICENSE_SERVICE_MERGE_AND_PET_DEPLOYMENT_PROOF",
+        "KR2014_NETMARBLE_FIRSTPARTY_PC_CLIENT_PET_GRANTS",
+        "JP2014_LEGAL_ORIGINAL_PC_RELAUNCH_AND_NATIVE_PET_SOURCE",
+        "OTHER2014_ORIGINAL_PC_OPERATOR_CLIENT_PET_PROOF"
+      ],
+      "region_source_reviews": {
+        "CN": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "native_pet_id_rows_verified": 0,
+          "real_account_pet_grant_verified": false,
+          "reopen_trigger": "CN2014_ORIGINAL_CINS_25_85_90_OPERATOR_SOURCE_AND_CLIENT_PET_ISSUE"
+        },
+        "TW": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "native_pet_id_rows_verified": 0,
+          "real_account_pet_grant_verified": false,
+          "reopen_trigger": "TW2014_TAOZHU_ORIGINAL_0528_0611_0901_NOTICES_AND_PC198_PET_BYTES"
+        },
+        "KR": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "native_pet_id_rows_verified": 0,
+          "real_account_pet_grant_verified": false,
+          "reopen_trigger": "KR2014_NETMARBLE_FIRSTPARTY_PC_CLIENT_PET_GRANTS"
+        },
+        "JP": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "native_pet_id_rows_verified": 0,
+          "real_account_pet_grant_verified": false,
+          "reopen_trigger": "JP2014_LEGAL_ORIGINAL_PC_RELAUNCH_AND_NATIVE_PET_SOURCE"
+        },
+        "OTHER": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "native_pet_id_rows_verified": 0,
+          "real_account_pet_grant_verified": false,
+          "reopen_trigger": "OTHER2014_ORIGINAL_PC_OPERATOR_CLIENT_PET_PROOF"
+        }
+      },
+      "additional_region_reviews": {
+        "HK_MO": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "native_pet_id_rows_verified": 0,
+          "real_account_pet_grant_verified": false,
+          "reopen_trigger": "HKMO2014_LICENSE_SERVICE_MERGE_AND_PET_DEPLOYMENT_PROOF"
+        }
+      }
     },
     {
       "year": 2015,
@@ -4162,6 +4253,30 @@
       "source_rows": 4,
       "candidate_reward_rows_NOT_DISTINCT_SPECIES": 4,
       "source_grade_boundary": "2014 Taiwan Dragon Boat and mid-autumn event dates from later chronology; 2015 player FAQ confirms cancelled three-headed snake and 2D werewolf reward descriptions; rescued 2015 quest guide names Lv1 Sagelu and enhanced black tiger, no 2014 original native issuance"
+    },
+    {
+      "id": "PET99-YEAR2014-SIX-REGION-SOURCE-BOUNDED-AUDIT-20261118",
+      "regions": [
+        "CN",
+        "TW",
+        "HK_MO",
+        "KR",
+        "JP",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET99-YEAR2014-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-20261118.md",
+      "evidence_json": "research/recovered/STONEAGE-PET99-YEAR2014-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json",
+      "year_frontier_before": 2014,
+      "year_frontier_after": 2015,
+      "year_not_closed": false,
+      "historically_complete": false,
+      "new_original_2014_client_bytes": 0,
+      "new_native_pet_ids": 0,
+      "global_2014_species_count": null,
+      "year_review_status": "SOURCE_BOUNDED_REVIEWED",
+      "new_source_entries": 1,
+      "prior_partial_receipts": 4,
+      "rescued_2015_dragon_boat_box_not_pet_identity": true
     }
   ],
   "client_first_methodology": {
