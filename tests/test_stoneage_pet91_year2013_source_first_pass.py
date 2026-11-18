@@ -17,8 +17,8 @@ class Pet91Year2013(unittest.TestCase):
     def test_2013_open_no_false_closure(self):
         a, q = self.a, self.q
         self.assertEqual((a["year"], a["year_frontier_before"], a["year_frontier_after"]), (2013, 2013, 2013))
-        self.assertEqual(q["current_frontier"]["year"], 2013)
-        self.assertEqual(q["yearly_work_queue"][14]["research_gate"], "NOT_YEAR_AUDITED")
+        self.assertGreaterEqual(q["current_frontier"]["year"], 2014)
+        self.assertEqual(q["yearly_work_queue"][14]["research_gate"], "SOURCE_BOUNDED_REVIEWED")
         self.assertEqual(a["review_status"], "PARTIAL_NOT_YEAR_AUDITED")
         self.assertFalse(a["source_bounded_annual_audit_complete"])
         self.assertFalse(a["historically_complete"])

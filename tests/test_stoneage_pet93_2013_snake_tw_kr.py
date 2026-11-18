@@ -12,14 +12,15 @@ class PET93(unittest.TestCase):
         cls.q=json.loads(Q.read_text(encoding="utf-8"))
     def test_pet_year_still_open(self):
         r,q=self.r,self.q
-        self.assertEqual((r["yearFrontierBefore"],r["yearFrontierAfter"],q["current_frontier"]["year"]),(2013,2013,2013))
+        self.assertEqual((r["yearFrontierBefore"],r["yearFrontierAfter"]),(2013,2013))
+        self.assertGreaterEqual(q["current_frontier"]["year"],2014)
         self.assertEqual(q["active_module"],"PET")
-        self.assertEqual(q["yearly_work_queue"][14]["research_gate"],"NOT_YEAR_AUDITED")
+        self.assertEqual(q["yearly_work_queue"][14]["research_gate"],"SOURCE_BOUNDED_REVIEWED")
         self.assertEqual(r["reviewStatus"],"PARTIAL_NOT_YEAR_AUDITED")
         self.assertFalse(r["annualAuditComplete"])
         self.assertIsNone(r["globalPetSpeciesTotal"])
         self.assertIsNone(r["firstRelease2013SpeciesTotal"])
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET94:"))
+        self.assertTrue(q["current_frontier"]["next"].startswith("PET95:"))
     def test_five_sources_six_regions_and_negative_gates(self):
         r=self.r
         self.assertEqual(r["sourceCount"],5)
@@ -55,9 +56,9 @@ class PET93(unittest.TestCase):
     def test_additive_receipts_original_current_blob_and_zero_new_bytes(self):
         r,q=self.r,self.q
         ids=[x["id"] for x in q["root_source_census_receipts"]]
-        self.assertEqual(ids[-1],r["id"])
+        self.assertIn(r["id"],ids)
         self.assertEqual(len(ids),len(set(ids)))
-        self.assertEqual(q["yearly_work_queue"][14]["partial_source_review_receipts"][-1]["id"],r["id"])
+        self.assertIn(r["id"],[x["id"] for x in q["yearly_work_queue"][14]["partial_source_review_receipts"]])
         self.assertEqual(r["startup"]["currentGitBlob"],"c89e0e33537990aa2132b47c40fef49a985a935c")
         self.assertEqual(set(r["sourceCustody"].values()),{0})
         self.assertEqual((q["stage_A"],q["stage_B_wiki"],q["r79"],q["overall_game_completion_percent"]),("7_PARTIAL_2_OPEN","GATED","PAUSED_NON_BLOCKING",None))

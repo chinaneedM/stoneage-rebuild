@@ -15,14 +15,15 @@ class PET92(unittest.TestCase):
 
     def test_not_2013_year_end_and_next_remains_same_year(self):
         r,q=self.r,self.q
-        self.assertEqual((r["year_frontier_before"],r["year_frontier_after"],q["current_frontier"]["year"]),(2013,2013,2013))
-        self.assertEqual(q["yearly_work_queue"][14]["research_gate"],"NOT_YEAR_AUDITED")
+        self.assertEqual((r["year_frontier_before"],r["year_frontier_after"]),(2013,2013))
+        self.assertGreaterEqual(q["current_frontier"]["year"],2014)
+        self.assertEqual(q["yearly_work_queue"][14]["research_gate"],"SOURCE_BOUNDED_REVIEWED")
         self.assertEqual(r["review_status"],"PARTIAL_NOT_YEAR_AUDITED")
         self.assertFalse(r["historically_complete"])
         self.assertFalse(r["source_bounded_annual_audit_complete"])
         self.assertIsNone(r["year_boundaries"]["global_original_pc_species_count_2013"])
         self.assertIsNone(r["year_boundaries"]["first_introduced_official_pc_pet_species_count_2013"])
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET94:"))
+        self.assertTrue(q["current_frontier"]["next"].startswith("PET95:"))
 
     def test_forward_only_2012_2013_receipts(self):
         r,q=self.r,self.q

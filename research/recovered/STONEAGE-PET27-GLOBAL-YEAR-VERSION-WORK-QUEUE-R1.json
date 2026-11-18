@@ -15,12 +15,13 @@
   "latest_year_in_scope": 2026,
   "reason_start_provisional": "1999 is a search-window starting point, NOT an independently authenticated first official launch date; earlier qualified evidence may extend the sequence backwards",
   "current_frontier": {
-    "year": 2013,
-    "phase": "YEAR_2013_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
+    "year": 2014,
+    "phase": "YEAR_2014_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
     "latest_partial_root_review": "PET93-YEAR2013-CN-SNAKE-TW-CLIENT-KR-PC-SOURCE-GATES-20261118",
-    "next": "PET94: 2013 six-region original-PC official-pet source-bounded annual review; allow move to 2014 only on bounded documentary gate, preserve all missing native source triggers",
-    "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
+    "next": "PET95: 2014 original PC official pet region/year first pass; client-first authenticated free-access bytes, separate 2.5/8.5 and TW/HKMO/KR/JP/OTHER; 2013 historical gaps reopenable",
+    "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE",
+    "latest_source_bounded_annual_review": "PET94-YEAR2013-SIX-REGION-BOUNDED-AUDIT-20261118"
   },
   "region_tracks": [
     "CN",
@@ -2268,7 +2269,7 @@
     {
       "year": 2013,
       "chronological_position": 15,
-      "research_gate": "NOT_YEAR_AUDITED",
+      "research_gate": "SOURCE_BOUNDED_REVIEWED",
       "documented_release_event_ids_from_existing_PET25_PET26": [],
       "documentary_event_count_NOT_species": 0,
       "unverified_early_and_mid_year_pets_may_exist": true,
@@ -2355,14 +2356,103 @@
           "cn_element_count_not_native_ids": 4,
           "tw_installer_filenames_not_bytes": 3,
           "kr_later_pc_chronicle_not_firstparty": true
+        },
+        {
+          "id": "PET94-YEAR2013-SIX-REGION-BOUNDED-AUDIT-20261118",
+          "regions": [
+            "CN",
+            "TW",
+            "HK_MO",
+            "KR",
+            "JP",
+            "OTHER"
+          ],
+          "report": "docs/continuity/STONEAGE-PET94-YEAR2013-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-20261118.md",
+          "evidence_json": "research/recovered/STONEAGE-PET94-YEAR2013-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json",
+          "year_frontier_before": 2013,
+          "year_frontier_after": 2014,
+          "year_not_closed": false,
+          "historically_complete": false,
+          "new_original_2013_client_bytes": 0,
+          "new_native_pet_ids": 0,
+          "global_2013_species_count": null,
+          "year_review_status": "SOURCE_BOUNDED_REVIEWED",
+          "source_entries": 6,
+          "previous_receipt_source_rows_not_unique_species": 21,
+          "first_party_jp_mobile_press_explicit_not_original_pc": true,
+          "tw_same_year_fan_index_is_not_new_official_issuance": true
         }
       ],
       "source_bounded_partial_review_note": "PET91 CN original PC 2013 operator-origin mirrored press and distinct Korean mobile product-line, no native client or confirmed species count; 2013 NOT_YEAR_AUDITED",
       "source_bounded_partial_review_notes_forward_only": [
         "PET91 CN original PC 2013 operator-origin mirrored press and distinct Korean mobile product-line, no native client or confirmed species count; 2013 NOT_YEAR_AUDITED",
         "PET92: 2013 Taiwan original PC manual-patch/real_192.bin player witness (no bytes), older gold tiger before 2013, CN/TW/JP mobile distinct; year remains NOT_YEAR_AUDITED",
-        "PET93 CN 2013 original PC snake event 2.5/8.5 separate, six name tokens not species, four elements unmapped, Katan fish task not first-release; TW later installer names not bytes, operator PTT mirrored relay full-text; KR later original PC event chronology not original operator; 2013 still NOT_YEAR_AUDITED"
-      ]
+        "PET93 CN 2013 original PC snake event 2.5/8.5 separate, six name tokens not species, four elements unmapped, Katan fish task not first-release; TW later installer names not bytes, operator PTT mirrored relay full-text; KR later original PC event chronology not original operator; 2013 still NOT_YEAR_AUDITED",
+        "PET94: 2013 six-region source-bounded annual closure only; TW five contemporary crowdsourced site edits not official first release, JP original first-party 2013 announcement MOBILE sequel, CN separate 2.5/8.5, KR secondary PC timeline, HKMO former merger claim; still 0 original 2013 client bytes, no global species count, reopen all gaps"
+      ],
+      "historically_complete": false,
+      "historical_species_count": null,
+      "source_bounded_review_receipt": "research/recovered/STONEAGE-PET94-YEAR2013-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json",
+      "residual_reopen_triggers": [
+        "CN2013_AUTHENTIC_25_85_ORIGINAL_CLIENT_PET_SNAKE_NAME_ELEMENT_AND_REWARD",
+        "TW2013_TAOZHU_ORIGINAL_CLIENT_PATCH_SHA_PET_ID_AND_OPERATOR_RELEASE",
+        "HKMO2013_HONGLONG_LICENSE_REGION_SERVER_MERGE_AND_LIVE_PET_PROOF",
+        "KR2013_NETMARBLE_FIRST_PARTY_PC_PET_AND_NATIVE_GRANT",
+        "JP2013_ORIGINAL_PC_RELAUNCH_AND_PET_OPERATOR_SOURCE_IF_ANY",
+        "OTHER2013_LEGAL_ORIGINAL_PC_OPERATOR_AND_NATIVE_PET_ISSUE"
+      ],
+      "region_source_reviews": {
+        "CN": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "native_pet_id_rows_verified": 0,
+          "real_account_pet_grant_verified": false,
+          "reopen_trigger": "CN2013_AUTHENTIC_25_85_ORIGINAL_CLIENT_PET_SNAKE_NAME_ELEMENT_AND_REWARD"
+        },
+        "TW": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "native_pet_id_rows_verified": 0,
+          "real_account_pet_grant_verified": false,
+          "reopen_trigger": "TW2013_TAOZHU_ORIGINAL_CLIENT_PATCH_SHA_PET_ID_AND_OPERATOR_RELEASE"
+        },
+        "KR": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "native_pet_id_rows_verified": 0,
+          "real_account_pet_grant_verified": false,
+          "reopen_trigger": "KR2013_NETMARBLE_FIRST_PARTY_PC_PET_AND_NATIVE_GRANT"
+        },
+        "JP": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "native_pet_id_rows_verified": 0,
+          "real_account_pet_grant_verified": false,
+          "reopen_trigger": "JP2013_ORIGINAL_PC_RELAUNCH_AND_PET_OPERATOR_SOURCE_IF_ANY"
+        },
+        "OTHER": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "native_pet_id_rows_verified": 0,
+          "real_account_pet_grant_verified": false,
+          "reopen_trigger": "OTHER2013_LEGAL_ORIGINAL_PC_OPERATOR_AND_NATIVE_PET_ISSUE"
+        }
+      },
+      "additional_region_reviews": {
+        "HK_MO": {
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "native_pet_id_rows_verified": 0,
+          "real_account_pet_grant_verified": false,
+          "reopen_trigger": "HKMO2013_HONGLONG_LICENSE_REGION_SERVER_MERGE_AND_LIVE_PET_PROOF"
+        }
+      }
     },
     {
       "year": 2014,
@@ -3924,6 +4014,31 @@
       "cn_element_count_not_native_ids": 4,
       "tw_installer_filenames_not_bytes": 3,
       "kr_later_pc_chronicle_not_firstparty": true
+    },
+    {
+      "id": "PET94-YEAR2013-SIX-REGION-BOUNDED-AUDIT-20261118",
+      "regions": [
+        "CN",
+        "TW",
+        "HK_MO",
+        "KR",
+        "JP",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET94-YEAR2013-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-20261118.md",
+      "evidence_json": "research/recovered/STONEAGE-PET94-YEAR2013-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json",
+      "year_frontier_before": 2013,
+      "year_frontier_after": 2014,
+      "year_not_closed": false,
+      "historically_complete": false,
+      "new_original_2013_client_bytes": 0,
+      "new_native_pet_ids": 0,
+      "global_2013_species_count": null,
+      "year_review_status": "SOURCE_BOUNDED_REVIEWED",
+      "source_entries": 6,
+      "previous_receipt_source_rows_not_unique_species": 21,
+      "first_party_jp_mobile_press_explicit_not_original_pc": true,
+      "tw_same_year_fan_index_is_not_new_official_issuance": true
     }
   ],
   "client_first_methodology": {

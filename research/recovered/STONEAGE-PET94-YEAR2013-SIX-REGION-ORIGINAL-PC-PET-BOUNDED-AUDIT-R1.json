@@ -1,0 +1,245 @@
+{
+  "schema": "stoneage.pet94.2013.pc_six_region_bounded.r1",
+  "id": "PET94-YEAR2013-SIX-REGION-BOUNDED-AUDIT-20261118",
+  "date": "2026-11-18",
+  "year": 2013,
+  "year_frontier_before": 2013,
+  "year_frontier_after": 2014,
+  "review_status": "SOURCE_BOUNDED_REVIEWED",
+  "historically_complete": false,
+  "source_bounded_only": true,
+  "year_source_bounded_closed": true,
+  "year_reopenable": true,
+  "source_count": 6,
+  "source_audit": [
+    {
+      "id": "TW2013-MAR22-INDEX",
+      "url": "https://w.welovesa.com/news.php?news_id=110",
+      "date": "2013-03-22",
+      "region": "TW",
+      "grade": "CONTEMPORANEOUS_PLAYER_EDIT_NOT_OPERATOR",
+      "finding": "2013 site editor added 13 pet chart labels and 8 textual skill names; graphics were not all uploaded, not a 2013 official first issue",
+      "labels": [
+        "烏力王",
+        "戈力拉",
+        "多奇",
+        "索維爾",
+        "索迪斯",
+        "沃克比",
+        "沃斯姆",
+        "布林特",
+        "菲爾特",
+        "布魯多基",
+        "哈斯多基",
+        "畢格多基",
+        "普德多基"
+      ],
+      "official_new_pet_verified": false
+    },
+    {
+      "id": "TW2013-MAR22-RECATEGORIZE",
+      "url": "https://w.welovesa.com/news.php?news_id=111",
+      "date": "2013-03-22",
+      "region": "TW",
+      "grade": "CONTEMPORANEOUS_PLAYER_GUIDE_REVISION",
+      "finding": "Moves whale group names, updates acquisition entries 多奇/戈力拉/4 year beasts and calls them already discontinued; edit date not initial 2013 release",
+      "names": [
+        "多奇",
+        "戈力拉",
+        "布魯多基",
+        "哈斯多基",
+        "畢格多基",
+        "普德多基"
+      ],
+      "first_release_2013_verified": false
+    },
+    {
+      "id": "TW2013-MAR25-SKILLS",
+      "url": "https://w.welovesa.com/news.php?news_id=112",
+      "date": "2013-03-25",
+      "region": "TW",
+      "grade": "CONTEMPORANEOUS_PLAYER_SKILL_GUIDE",
+      "finding": "New guide skill entries 靈魂掠奪 and 鑲寶石, not native functions",
+      "native_functions_verified": 0
+    },
+    {
+      "id": "TW2013-MAR27-BUIKU",
+      "url": "https://w.welovesa.com/news.php?news_id=113",
+      "date": "2013-03-27",
+      "region": "TW",
+      "grade": "CONTEMPORANEOUS_CROWD_PET_CATALOG",
+      "finding": "Adds 布伊酷 entry, modifies 憤怒/憤怒改 textual skill notes; operator explicitly acknowledges lost crowd-entered pet records",
+      "pet_label": "布伊酷",
+      "official_live_issue_verified": false,
+      "crowd_data_loss_acknowledged": true
+    },
+    {
+      "id": "TW2013-APR10-QUEST-EDITS",
+      "url": "https://w.welovesa.com/news.php?news_id=115",
+      "date": "2013-04-10",
+      "region": "TW",
+      "grade": "CONTEMPORANEOUS_FAN_QUEST_GUIDE",
+      "finding": "Guide updates pig, antelope, cave, Reir and sixth reincarnation pages; not operator new pet announcement",
+      "original_pet_ids_verified": 0
+    },
+    {
+      "id": "JP2013-AUG22-CJIJ-PRIMARY-MOBILE",
+      "url": "https://prtimes.jp/main/html/rd/p/000000021.000007736.html",
+      "date": "2013-08-22",
+      "region": "JP",
+      "grade": "CONTEMPORANEOUS_FIRST_PARTY_CJ_INTERNET_JAPAN_RELEASE",
+      "finding": "CJ Internet Japan licenses StoneAge Mobile sequel for iOS/Android and PLANS autumn 2013 service; NOT re-opening original PC",
+      "product_line": "STONEAGE_MOBILE",
+      "platforms": [
+        "iOS",
+        "Android"
+      ],
+      "first_party": true,
+      "original_pc_relaunch_verified": false,
+      "actual_mobile_launch_verified": false
+    }
+  ],
+  "prior_receipts": [
+    "PET91-YEAR2013-CN-OPERATOR-PET-KR-MOBILE-FIRST-PASS-20261118",
+    "PET92-YEAR2013-TW-ORIGINAL-CLIENT-CUSTODY-CN-JP-TW-MOBILE-SPLIT-20261118",
+    "PET93-YEAR2013-CN-SNAKE-TW-CLIENT-KR-PC-SOURCE-GATES-20261118"
+  ],
+  "prior_source_rows_not_unique_species": 21,
+  "original_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "starting_main_head": "e765ad540ac414a0c3ff57c2a69d67d8af4e7745",
+  "starting_main_tree": "1a6eacd57879741a9b31543cbd87cacca149cc32",
+  "starting_main_actions": "4/4 SUCCESS",
+  "starting_open_prs": 0,
+  "global_original_pc_pet_species_count_2013": null,
+  "first_release_2013_species_count": null,
+  "new_native_client_bytes": 0,
+  "new_native_pet_ids": 0,
+  "new_spr_pixels": 0,
+  "new_skill_functions": 0,
+  "new_server_grants": 0,
+  "region_reviews": {
+    "CN": {
+      "region": "CN",
+      "version_lane": "CINS_ORIGINAL_PC_2_5_AND_8_5_SEPARATE",
+      "known": "PET91 operator-origin period named reward and PET93 six snake names/four attributes plus Katan fish quest; 2.5/8.5 reward lanes separate",
+      "gap": "No authenticated 2013 CINS 2.5/8.5 installer/native pet ID/SPR/skill functions or actual server reward",
+      "trigger": "CN2013_AUTHENTIC_25_85_ORIGINAL_CLIENT_PET_SNAKE_NAME_ELEMENT_AND_REWARD",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "native_pet_id_rows_verified_in_review": 0,
+      "real_original_server_pet_grant_verified": false
+    },
+    "TW": {
+      "region": "TW",
+      "version_lane": "TAOZHU_CLASSIC_PC",
+      "known": "PET92 contemporaneous player real_192.bin installer-path witness; PET93 later installer basenames and contemporary operator-FB PTT relay; PET94 independently read five 2013 We Love SA fan guide edits",
+      "gap": "Neither original 2013 Taozhu client/patch bytes SHA nor operator PET master, native same-build identity, actual pet reward; fan site openly admits crowd data loss",
+      "trigger": "TW2013_TAOZHU_ORIGINAL_CLIENT_PATCH_SHA_PET_ID_AND_OPERATOR_RELEASE",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "native_pet_id_rows_verified_in_review": 0,
+      "real_original_server_pet_grant_verified": false
+    },
+    "HK_MO": {
+      "region": "HK_MO",
+      "version_lane": "HONGLONG_LICENSED_REGION_MERGE_UNVERIFIED",
+      "known": "PET90 prior-year later player chronology suggests 2012 Honglong merger into Garuka, not verified 2013 separate server or unique pet roster",
+      "gap": "Original Honglong 2013 separate or shared deployment/authorized access, pet announcements, patches and live grants unverified",
+      "trigger": "HKMO2013_HONGLONG_LICENSE_REGION_SERVER_MERGE_AND_LIVE_PET_PROOF",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "native_pet_id_rows_verified_in_review": 0,
+      "real_original_server_pet_grant_verified": false
+    },
+    "KR": {
+      "region": "KR",
+      "version_lane": "NETMARBLE_CJ_ORIGINAL_PC_NOT_MOBILE",
+      "known": "PET93 later PC event chronology lists 2013 Korean Children Day pet bottles, Mammoth cash coupons, Chuseok names and transformation items; PET91 Korean mobile is separate",
+      "gap": "No original 2013 Netmarble PC operator notice or original client PET ID and same deployment reward; later calendar not independent first-party",
+      "trigger": "KR2013_NETMARBLE_FIRST_PARTY_PC_PET_AND_NATIVE_GRANT",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "native_pet_id_rows_verified_in_review": 0,
+      "real_original_server_pet_grant_verified": false
+    },
+    "JP": {
+      "region": "JP",
+      "version_lane": "DIGIPARK_OLD_PC_CLOSED_2010_SEPARATE_CJIJ_MOBILE_2013",
+      "known": "PET90 prior Japanese PC service stopped 2010-02-24; PET94 new CJ Internet Japan 2013-08-22 first-party explicitly plans smartphone sequel",
+      "gap": "No evidence original Japanese PC reopened or issued pets in 2013; 2013 mobile license not original-PC pet evidence",
+      "trigger": "JP2013_ORIGINAL_PC_RELAUNCH_AND_PET_OPERATOR_SOURCE_IF_ANY",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "native_pet_id_rows_verified_in_review": 0,
+      "real_original_server_pet_grant_verified": false
+    },
+    "OTHER": {
+      "region": "OTHER",
+      "version_lane": "OTHER_LEGALLY_LICENSED_CLASSIC_PC1_NOT_MOBILE_OR_SEQUEL",
+      "known": "CN TW HKMO KR JP original PC bounded; separate mobile and 石器时代2 product line excluded",
+      "gap": "No verified additional distinct 2013 original 2D PC1 official operator, original binary or pet issuance; unknown not 0",
+      "trigger": "OTHER2013_LEGAL_ORIGINAL_PC_OPERATOR_AND_NATIVE_PET_ISSUE",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "native_pet_id_rows_verified_in_review": 0,
+      "real_original_server_pet_grant_verified": false
+    }
+  },
+  "reopen_triggers": [
+    "CN2013_AUTHENTIC_25_85_ORIGINAL_CLIENT_PET_SNAKE_NAME_ELEMENT_AND_REWARD",
+    "TW2013_TAOZHU_ORIGINAL_CLIENT_PATCH_SHA_PET_ID_AND_OPERATOR_RELEASE",
+    "HKMO2013_HONGLONG_LICENSE_REGION_SERVER_MERGE_AND_LIVE_PET_PROOF",
+    "KR2013_NETMARBLE_FIRST_PARTY_PC_PET_AND_NATIVE_GRANT",
+    "JP2013_ORIGINAL_PC_RELAUNCH_AND_PET_OPERATOR_SOURCE_IF_ANY",
+    "OTHER2013_LEGAL_ORIGINAL_PC_OPERATOR_AND_NATIVE_PET_ISSUE"
+  ],
+  "source_negative_controls": {
+    "old_year_pets_not_new_2013": true,
+    "fan_encyclopedia_entries_not_operator_issues": true,
+    "fan_data_loss_acknowledged": true,
+    "cn_2_5_8_5_separate": true,
+    "six_snake_names_not_six_verified_species": true,
+    "korean_cash_items_and_transforms_not_owned_pets": true,
+    "honglong_2012_merger_later_claim_not_2013_proof": true,
+    "japanese_2013_firstparty_mobile_not_original_pc": true,
+    "jp_autumn_mobile_planned_not_actual": true,
+    "other_region_missing_not_zero": true,
+    "original_client_bytes_zero_not_entire_historical_roster_zero": true,
+    "source_bounded_review_not_historical_completeness": true,
+    "no_paid_carriers": true,
+    "no_private_server_as_official": true,
+    "no_public_commercial_assets": true
+  },
+  "related_prior_source_controls": [
+    {
+      "year": 2010,
+      "region": "JP",
+      "url": "https://www.onlinegamer.jp/game/1000000002/",
+      "status": "JAPAN_ORIGINAL_PC_SERVICE_ENDED_2010_02_24_CARRIED_PET90"
+    },
+    {
+      "year": 2012,
+      "region": "HK_MO",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=4519",
+      "status": "LATER_PLAYER_2012_HONGLONG_MERGER_HINT_NOT_FIRST_PARTY"
+    },
+    {
+      "year": 2012,
+      "region": "CN",
+      "url": "https://news.17173.com/content/2012-07-04/20120704151723074.shtml",
+      "status": "PRIOR_GOLD_TIGER_ATTESTATION_IN_PET92"
+    }
+  ],
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "historical_CURRENT_untouched": true,
+  "next": "PET95: 2014 original PC official pet region/year first pass; client-first authenticated free-access bytes, separate 2.5/8.5 and TW/HKMO/KR/JP/OTHER; 2013 historical gaps reopenable"
+}
