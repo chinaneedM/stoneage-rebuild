@@ -1,0 +1,132 @@
+{
+  "schema": "stoneage.pet102.tw2015_dragonboat_contemporaneous_firsthand_player_quest_box_boundary.r1",
+  "id": "PET102-TW2015-DRAGONBOAT-PLAYER-BOX-NOT-VERIFIED-PET-20261118",
+  "date": "2026-11-18",
+  "active_module": "PET",
+  "year": 2015,
+  "year_frontier_before": 2015,
+  "year_frontier_after": 2015,
+  "annual_review_status": "NOT_YEAR_AUDITED",
+  "year_closed": false,
+  "historically_complete": false,
+  "startup": {
+    "repository": "chinaneedM/stoneage-rebuild",
+    "main_head": "22ec84ca6d79fb950b5af9ad346f651da145c80d",
+    "main_tree": "f376781d0776c3917f0e59e70b81b7b5065fd432",
+    "exact_head_main_actions_success": 4,
+    "open_prs": 0,
+    "original_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_current_bytes": 2709173,
+    "latest_receipt_before": "PET101-TW2015-PC199-200-202-AND-HKMO-OPERATOR-BOUNDARY-20261118"
+  },
+  "new_evidence": [
+    {
+      "id": "TW2015-0924-CONTEMPORANEOUS-PLAYER-SELF-REPORTED-BOX",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=1571&snA=77817",
+      "source_grade": "CONTEMPORANEOUS_FIRSTHAND_PLAYER_SELF_REPORT_NOT_OPERATOR_NATIVE",
+      "original_live_page_directly_read": true,
+      "forum_floor": "5",
+      "floor_edited_date": "2015-09-25 11:54:05",
+      "gameplay_claim_date_in_floor": "09/24",
+      "gameplay_claim_year_from_same_floor_context": 2015,
+      "quest_label": "2015五月節的插曲",
+      "claimed_item_label": "三頭蛇禮盒",
+      "claimed_holder": "人物一",
+      "claimed_quest_process": [
+        "打羽毛",
+        "打大塊肉",
+        "人物二移交裝著肉粽的袋子至人物一",
+        "人物二無法兌換獎勵",
+        "空袋子丟地上消失",
+        "格里蘭的肉不接任務也能掉落"
+      ],
+      "claim_grade": "PLAYER_REPORTED_OBTAINED_NAMED_QUEST_GIFT_BOX_ITEM",
+      "contemporaneous_evidence_of_named_item": true,
+      "original_server_grant_log_verified": false,
+      "original_screenshot_pixels_independently_verified": false,
+      "box_opening_pet_contents_verified": false,
+      "any_live_pet_granted_verified": false,
+      "three_headed_snake_pet_received_proved": false,
+      "first_release_date_proved": false,
+      "original_2015_pc_pet_id_verified": false
+    },
+    {
+      "id": "TW2015-0617-RETROSPECTIVE-MOLOSO",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=4519",
+      "source_grade": "LATER_EDITS_PLAYER_CHRONOLOGY",
+      "date_claimed_in_later_text": "2015-06-17",
+      "claimed_quest": "五月節的插曲",
+      "claimed_lottery_pet": "摩洛索思（麒麟）",
+      "first_party_june_2015_operator_notice_retrieved": false,
+      "source_is_2015_contemporaneous": false,
+      "live_first_issuance_confirmed": false,
+      "native_pet_identity_confirmed": false
+    },
+    {
+      "id": "TW2017-DRAGONBOAT-SNAKE-PRIZE-DIFFERENT-YEAR",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=1571&snA=80727",
+      "source_grade": "2017_CONTEMPORANEOUS_PLAYER_TASK_REPORT_NOT_2015",
+      "source_year": 2017,
+      "reported_snakelike_rewards": [
+        "天使蛇司卡奇",
+        "惡魔蛇莫里卡奇"
+      ],
+      "retroactively_confirm_2015_snake_box_contents": false,
+      "retroactively_confirm_2015_pet_grant": false
+    },
+    {
+      "id": "TW2023-DRAGONBOAT-ITEMS-DIFFERENT-YEAR",
+      "url": "https://forum.gamer.com.tw/Co.php?bsn=1571&sn=295936",
+      "source_grade": "2023_CONTEMPORANEOUS_PLAYER_ACTIVITY_REPORT_NOT_2015",
+      "source_year": 2023,
+      "mentions": [
+        "端午蛇禮物袋",
+        "小盒子",
+        "融合寵",
+        "雷爾的意念"
+      ],
+      "retroactively_prove_2015_reward_table": false
+    }
+  ],
+  "historical_cross_year_separation": {
+    "cannot_backdate_2017_snake_pet_to_2015": true,
+    "cannot_backdate_2023_box_or_fusion_pet_to_2015": true,
+    "cannot_identify_2014_serena_quest_reward_with_2015_dragonboat_snake_box": true,
+    "cannot_use_2015_box_to_prove_2014_serena_live_snake_grant": true,
+    "cannot_use_2015_later_compilation_moloso_as_original_2015_announcement": true
+  },
+  "region_gaps": {
+    "CN": "2015 original CINS 2.5 and 8.5 official pet data absent",
+    "TW": "2015 original june Taozhu notice, verified client 199 200 202 and item-opening/live pet logs absent; firsthand box item recorded",
+    "HK_MO": "2011 DigiPark license proved but no year2015 independent client and live pet distribution",
+    "KR": "original 2015 PC pet grants and pet files needed; mobile distinct",
+    "JP": "2015 original PC authorized operation proof if any",
+    "OTHER": "2015 independent official original PC pet source needed"
+  },
+  "boundary_guards": {
+    "gift_box_is_not_pet_species": true,
+    "player_item_self_report_not_first_party_operator_issuance": true,
+    "original_game_runtime_not_executed": true,
+    "june_17_is_retrospective_2016_or_later_account": true,
+    "sept_24_is_player_date_in_2015_09_25_edited_floor": true,
+    "exclude_mobile_private_server_and_paid_media": true,
+    "do_not_impute_complete_client_from_forum_text": true,
+    "no_original_commercial_asset_publication": true,
+    "do_not_close_year_2015": true
+  },
+  "new_contested_firsthand_player_observed_quest_reward_item_records": 1,
+  "new_authenticated_2015_original_pc_client_bytes": 0,
+  "new_authenticated_2015_original_patch_bytes": 0,
+  "new_native_pet_ids": 0,
+  "new_original_spr_assets": 0,
+  "new_native_skill_functions": 0,
+  "new_official_verified_live_pet_grants": 0,
+  "global_official_2015_pet_species_count": null,
+  "first_issued_2015_pet_species_count": null,
+  "original_current_state_unchanged": true,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "PET103: continue 2015 original-PC six-region official pet audit; prioritize June Taozhu original notice, verified PC client bytes and direct actual pet issuance, distinguish box item from live snake"
+}
