@@ -18,8 +18,8 @@
     "year": 2008,
     "phase": "YEAR_2008_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET77-2008-OFFICIAL-FIVE-REGION-SOURCE-FIRST-PASS-20261118",
-    "next": "PET78: continue 2008 CN/TW/JP/KR/OTHER official pet audit. Seek native Korean Ice Castle nine pet identities and Japanese saber evolution outputs, with source-bounded reviews; no paid discs.",
+    "latest_partial_root_review": "PET78-2008-JP-ORIGINAL-NAMED-QUEST-AND-NINE_POOL-CN_TW-PERIOD-20261118",
+    "next": "PET79: continue 2008 five-region chronological official pet/client audit. Find original same-build Japanese JP2008 pet table and Korean Ice Castle nine names/IDs. Source-bound 2008 region-by-region before moving to 2009.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -1519,12 +1519,39 @@
       "partial_source_review_receipts": [
         {
           "id": "PET77-2008-OFFICIAL-FIVE-REGION-SOURCE-FIRST-PASS-20261118",
-          "regions": ["CN", "TW", "JP", "KR", "OTHER"],
+          "regions": [
+            "CN",
+            "TW",
+            "JP",
+            "KR",
+            "OTHER"
+          ],
           "report": "docs/continuity/STONEAGE-PET77-YEAR2008-KR-JP-TW-CN-OFFICIAL-PET-SOURCE-FIRST-PASS-20261118.md",
           "evidence_json": "research/recovered/STONEAGE-PET77-YEAR2008-OFFICIAL-PET-PARTIAL-SOURCE-AUDIT-R1.json",
           "year_not_closed": true,
           "historically_complete": false,
           "new_native_2008_pet_ids": 0
+        },
+        {
+          "id": "PET78-2008-JP-ORIGINAL-NAMED-QUEST-AND-NINE_POOL-CN_TW-PERIOD-20261118",
+          "regions": [
+            "JP",
+            "KR",
+            "CN",
+            "TW",
+            "OTHER"
+          ],
+          "report": "docs/continuity/STONEAGE-PET78-2008-JP-RIMFY-NINE-PET-POOL-CN-TW-DATED-SOURCES-20261118.md",
+          "evidence_json": "research/recovered/STONEAGE-PET78-2008-JP-NAMED-PET-POOL-AND-SOURCE-GATES-R1.json",
+          "year_not_closed": true,
+          "historically_complete": false,
+          "new_original_2008_client_bytes": 0,
+          "new_native_pet_ids": 0,
+          "japan_original_2008_named_random_pool_count_not_new_species": 9,
+          "known_2007_name_overlap": [
+            "ウロボス"
+          ],
+          "japan_2009_later_four_evolved_names_not_2008_firsts": true
         }
       ]
     },
@@ -2788,9 +2815,34 @@
     },
     {
       "id": "PET77-2008-OFFICIAL-FIVE-REGION-SOURCE-FIRST-PASS-20261118",
-      "regions": ["CN", "TW", "JP", "KR", "OTHER"],
+      "regions": [
+        "CN",
+        "TW",
+        "JP",
+        "KR",
+        "OTHER"
+      ],
       "report": "docs/continuity/STONEAGE-PET77-YEAR2008-KR-JP-TW-CN-OFFICIAL-PET-SOURCE-FIRST-PASS-20261118.md",
       "evidence_json": "research/recovered/STONEAGE-PET77-YEAR2008-OFFICIAL-PET-PARTIAL-SOURCE-AUDIT-R1.json",
+      "year_frontier_before": 2008,
+      "year_frontier_after": 2008,
+      "year_not_closed": true,
+      "historically_complete": false,
+      "new_original_2008_client_bytes": 0,
+      "new_native_pet_ids": 0,
+      "global_2008_species_count": null
+    },
+    {
+      "id": "PET78-2008-JP-ORIGINAL-NAMED-QUEST-AND-NINE_POOL-CN_TW-PERIOD-20261118",
+      "regions": [
+        "JP",
+        "KR",
+        "CN",
+        "TW",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET78-2008-JP-RIMFY-NINE-PET-POOL-CN-TW-DATED-SOURCES-20261118.md",
+      "evidence_json": "research/recovered/STONEAGE-PET78-2008-JP-NAMED-PET-POOL-AND-SOURCE-GATES-R1.json",
       "year_frontier_before": 2008,
       "year_frontier_after": 2008,
       "year_not_closed": true,
