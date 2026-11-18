@@ -3033,3 +3033,8 @@ QUEST31 [正式出版验收](research/recovered/STONEAGE-QUEST31-PUBLICATION-ACC
 
 ## 2026-11-18 — PET76｜2007五地区官方宠物年审：日本6具名奖池与韩国骑宠/冰城跨年隔离
 [PET76 2007五区同期官方宠物来源审查](docs/continuity/STONEAGE-PET76-YEAR2007-CN-TW-JP-KR-OTHER-OFFICIAL-PET-AUDIT-20261118.md)／[PET76机读11条来源、六名字、五区重开条件](research/recovered/STONEAGE-PET76-YEAR2007-FIVE-REGION-BOUNDED-AUDIT-R1.json)：7/27日本GaiaX/UTD运营稿「黒檀のくじ」列**ギガドラン／ドルーザス／パンダホーン／クロウリ／ムールロス／ウロボス**六款宠物随机奖池，7/30调整前二名字出现率两倍；六款≠2007六种新增（**クロウリ**2005已见）。日本4/2 GaiaX→UTD、9/1→DigiPark移转，二代独立，二代骑乘不回填一代。韩国CJ 7/18骑宠文书使用已有宠（非新增物种）、12/21圣诞村奖宠公告，冰城及可捕宠只说即将推出，2008/1/14“冰城9宠”**严禁倒灌2007**；同期韩国二代5月封测的未来坐骑礼包不算原版发奖。台湾2007虚拟包仅后期编年标题不算原生宠名或原料包；大陆金山8.0/旧服分轨、OTHER均保留独立原证缺口。2007可认证原始客户端0B、同版PET ID0、发奖实际日志0、全球物种数UNKNOWN。**2007 `SOURCE_BOUNDED_REVIEWED` 但historically_complete=false，年份推进2008，NEXT PET77**。PET单模块、原CURRENT巨大blob不变、无付费卖盘、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总完成率未知。
+
+
+## 2026-11-18｜PET115 2018 六地区经典原版 PC 宠物来源有界年审 → 2019
+
+[PET115 六地区2018年审](docs/continuity/STONEAGE-PET115-YEAR2018-SIX-REGION-ORIGINAL-PC-SOURCE-BOUNDED-AUDIT-20261118.md)／[机读分区、来源和重开矩阵](research/recovered/STONEAGE-PET115-YEAR2018-SIX-REGION-ORIGINAL-PC-SOURCE-BOUNDED-AUDIT-R1.json)：承接PET114台湾双版本与暑假宠物玩家自述，完成2018 **CN/TW/HK_MO/KR/JP/OTHER 六区**有界审查。新核2022法院公开转录称大陆Netmarble→银河聚阵版权授权于2018/10/31续期至2020/12/31，亦记录当事人后来称未能恢复原PC运营；版权授权不等于2018官服开服。台湾玩家任务宠不认定2018首发，日韩旧原PC停运记录不等于所有2018绝无运营。Netmarble台港澳3D手游《石器時代M》6/29预告、7/18官宣正式上架；保留日本产业稿7/17的日期冲突，手游300+宠物营销数及具名奖宠不并入经典2D PC。2018新增可认证原PC客户端/补丁字节0B、原生PET ID/技能/SPR/实际发宠0，全球真实官方宠物数与首发数UNKNOWN。**2018 SOURCE_BOUNDED_REVIEWED但historically_complete=false，游标推进2019，NEXT PET116**；PET单模块、不查付费卖盘、不公开商业资源；原完整CURRENT Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、overall百分比未知。
