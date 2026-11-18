@@ -209,7 +209,6 @@
     },
     "2011_CN_JAN26_FEB09": {
       "rage_input_pet": "朵巴奈特",
-      "rage_input_level_greater_than": 100,
       "rage_output": "狂暴版朵巴奈特",
       "rage_skill": "狂暴攻击",
       "rage_materials": [
@@ -220,7 +219,6 @@
         "不可思议的贝壳 x1"
       ],
       "scorpion_input_pet": "欧西摩米",
-      "scorpion_input_level_greater_than": 120,
       "scorpion_materials": [
         "深恋戒指",
         "祈福戒指",
@@ -237,7 +235,11 @@
         "精准",
         "深层注射"
       ],
-      "actual_grant_receipt_verified": false
+      "actual_grant_receipt_verified": false,
+      "rage_input_min_level_inclusive": 100,
+      "rage_input_level_operator_text": "Lv100以上",
+      "scorpion_input_min_level_inclusive": 120,
+      "scorpion_input_level_operator_text": "Lv120以上"
     },
     "2011_CN_JUN_JUL_SHOP": {
       "announced_shop_open": "2011-06-22",
@@ -293,5 +295,22 @@
   "stage_B_wiki": "GATED",
   "r79": "PAUSED_NON_BLOCKING",
   "overall_percent": null,
-  "next": "PET86: stay 2011, source-bounded region/year audit with genuine free original CN8.5/TW Apr25 client bytes where accessible, KR official 2011 PC pet patch, JP original PC evidence, Taiwan dated pet rewards; cannot close year or count unique species yet."
+  "next": "PET86: stay 2011, source-bounded region/year audit with genuine free original CN8.5/TW Apr25 client bytes where accessible, KR official 2011 PC pet patch, JP original PC evidence, Taiwan dated pet rewards; cannot close year or count unique species yet.",
+  "forward_corrections": [
+    {
+      "date": "2026-11-18",
+      "kind": "SOURCE_TEXT_NUMERICAL_BOUNDARY_CORRECTION",
+      "source": "https://news.17173.com/content/2011-01-27/20110127101602072.shtml",
+      "prior_machine_keys": [
+        "rage_input_level_greater_than",
+        "scorpion_input_level_greater_than"
+      ],
+      "correct_machine_keys": [
+        "rage_input_min_level_inclusive",
+        "scorpion_input_min_level_inclusive"
+      ],
+      "reason": "Original says Lv100以上 and Lv120以上, inclusively 100 and 120. Strict greater-than excluded exactly eligible boundary; source does not support exclusion.",
+      "historical_pet_population_unchanged": true
+    }
+  ]
 }
