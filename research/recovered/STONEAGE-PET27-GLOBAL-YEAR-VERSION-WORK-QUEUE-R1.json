@@ -15,11 +15,11 @@
   "latest_year_in_scope": 2026,
   "reason_start_provisional": "1999 is a search-window starting point, NOT an independently authenticated first official launch date; earlier qualified evidence may extend the sequence backwards",
   "current_frontier": {
-    "year": 2007,
-    "phase": "YEAR_2007_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
+    "year": 2008,
+    "phase": "YEAR_2008_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET75-2006-FIVE-REGION-SOURCE-BOUNDED-OFFICIAL-PET-AUDIT-20261118",
-    "next": "PET76: 2007 CN/TW/JP/KR/OTHER official PC pet evidence, authentic free client/patch first, source-bounded yearly chronology; preserve 2006 reopening triggers.",
+    "latest_partial_root_review": "PET76-2007-FIVE-REGION-OFFICIAL-PET-SOURCE-BOUNDED-AUDIT-20261118",
+    "next": "PET77: inspect 2008 CN/TW/JP/KR/OTHER original PC official pet releases, pay special attention to KR Jan Ice Castle nine-pet report versus actual source bytes, and region-specific shutdown dates; no paid discs or private-server species.",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE"
   },
   "region_tracks": [
@@ -1391,7 +1391,7 @@
     {
       "year": 2007,
       "chronological_position": 9,
-      "research_gate": "NOT_YEAR_AUDITED",
+      "research_gate": "SOURCE_BOUNDED_REVIEWED",
       "documented_release_event_ids_from_existing_PET25_PET26": [],
       "documentary_event_count_NOT_species": 0,
       "unverified_early_and_mid_year_pets_may_exist": true,
@@ -1402,7 +1402,102 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "historically_complete": false,
+      "historical_species_count": null,
+      "source_bounded_review_receipt": "research/recovered/STONEAGE-PET76-YEAR2007-FIVE-REGION-BOUNDED-AUDIT-R1.json",
+      "residual_reopen_triggers": [
+        "CN_2007_KINGSOFT_NEW_STONEAGE_8_0_AND_CONCURRENT_LEGACY_ORIGINAL_RELEASE_CLIENT_PET_TABLE_AND_DIRECT_2007_PERIOD_OFFICIAL_NAMED_PET_ISSUANCE",
+        "TW_2007_WAEI_PRIMARY_DATED_PET_ANNOUNCEMENTS_AND_ACTUAL_VIRTUAL_PACK_PET_NAME_TABLE_AND_ORIGINAL_8_5_APPLIED_CLIENT_SPR_PET_IDS",
+        "JP_2007_GAIAX_UTD_DIGIPARK_ORIGINAL_SAME_BUILD_PET_IG_ID_2007_BLACK_LOTTERY_SIX_NAME_CROSSWALK_AND_LIVE_DELIVERY_RECORDS",
+        "KR_2007_CJ_NETMARBLE_ORIGINAL_PET_RIDE_MOUNT_ELIGIBLE_LIST_AND_SANTA_PET_REWARDS_AND_ICE_CASTLE_2008_APPLIED_PATCH_BOUNDARY",
+        "OTHER_2007_INDEPENDENT_OFFICIALLY_LICENSED_PC_STONEAGE_OPERATOR_PERIOD_SOURCE_OR_AUTHENTIC_ORIGINAL_PET_BYTES"
+      ],
+      "region_source_reviews": {
+        "CN": {
+          "operator_tracks": [
+            "KINGSOFT_NEW_STONEAGE_8_0",
+            "LEGACY_WAEI_STONEAGE_SERVER_TRACKS"
+          ],
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2007_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2007_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "CN_2007_KINGSOFT_NEW_STONEAGE_8_0_AND_CONCURRENT_LEGACY_ORIGINAL_RELEASE_CLIENT_PET_TABLE_AND_DIRECT_2007_PERIOD_OFFICIAL_NAMED_PET_ISSUANCE"
+        },
+        "TW": {
+          "operator_tracks": [
+            "TAIWAN_WAEI_STONEAGE_8_5"
+          ],
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2007_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2007_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "TW_2007_WAEI_PRIMARY_DATED_PET_ANNOUNCEMENTS_AND_ACTUAL_VIRTUAL_PACK_PET_NAME_TABLE_AND_ORIGINAL_8_5_APPLIED_CLIENT_SPR_PET_IDS"
+        },
+        "JP": {
+          "operator_tracks": [
+            "GAIAX_ORIGINAL_TO_UTD_2007_APR02",
+            "UTD_ORIGINAL_TO_DIGIPARK_2007_SEP01",
+            "STONEAGE2_SEPARATE"
+          ],
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2007_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2007_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "JP_2007_GAIAX_UTD_DIGIPARK_ORIGINAL_SAME_BUILD_PET_IG_ID_2007_BLACK_LOTTERY_SIX_NAME_CROSSWALK_AND_LIVE_DELIVERY_RECORDS"
+        },
+        "KR": {
+          "operator_tracks": [
+            "CJ_INTERNET_NETMARBLE_STONEAGE1",
+            "CJ_INTERNET_STONEAGE2_SEQUEL_SEPARATE"
+          ],
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2007_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2007_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "KR_2007_CJ_NETMARBLE_ORIGINAL_PET_RIDE_MOUNT_ELIGIBLE_LIST_AND_SANTA_PET_REWARDS_AND_ICE_CASTLE_2008_APPLIED_PATCH_BOUNDARY"
+        },
+        "OTHER": {
+          "operator_tracks": [],
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "pet_population": null,
+          "authentic_2007_complete_original_client_missing": true,
+          "native_pet_id_rows_verified": 0,
+          "actual_reward_grant_log_verified": false,
+          "first_year_2007_species_count_verified": null,
+          "reopen": true,
+          "reopen_trigger": "OTHER_2007_INDEPENDENT_OFFICIALLY_LICENSED_PC_STONEAGE_OPERATOR_PERIOD_SOURCE_OR_AUTHENTIC_ORIGINAL_PET_BYTES"
+        }
+      },
+      "partial_source_review_receipts": [
+        {
+          "id": "PET76-2007-FIVE-REGION-OFFICIAL-PET-SOURCE-BOUNDED-AUDIT-20261118",
+          "regions": [
+            "CN",
+            "TW",
+            "JP",
+            "KR",
+            "OTHER"
+          ],
+          "report": "docs/continuity/STONEAGE-PET76-YEAR2007-CN-TW-JP-KR-OTHER-OFFICIAL-PET-AUDIT-20261118.md",
+          "evidence_json": "research/recovered/STONEAGE-PET76-YEAR2007-FIVE-REGION-BOUNDED-AUDIT-R1.json",
+          "year_not_closed": false,
+          "historically_complete": false
+        }
+      ]
     },
     {
       "year": 2008,
@@ -2660,6 +2755,25 @@
       "new_2006_original_client_bytes": 0,
       "new_native_2006_pet_ids": 0,
       "historical_species_count": null
+    },
+    {
+      "id": "PET76-2007-FIVE-REGION-OFFICIAL-PET-SOURCE-BOUNDED-AUDIT-20261118",
+      "regions": [
+        "CN",
+        "TW",
+        "JP",
+        "KR",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET76-YEAR2007-CN-TW-JP-KR-OTHER-OFFICIAL-PET-AUDIT-20261118.md",
+      "evidence_json": "research/recovered/STONEAGE-PET76-YEAR2007-FIVE-REGION-BOUNDED-AUDIT-R1.json",
+      "year_frontier_before": 2007,
+      "year_frontier_after": 2008,
+      "year_not_closed": false,
+      "historically_complete": false,
+      "confirmed_2007_global_species_count": null,
+      "new_original_2007_client_bytes": 0,
+      "new_same_build_pet_ids": 0
     }
   ],
   "client_first_methodology": {

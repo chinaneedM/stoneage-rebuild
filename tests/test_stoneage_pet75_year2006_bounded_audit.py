@@ -13,13 +13,15 @@ class PET75Annual(unittest.TestCase):
   a,p,q=self.a,self.p,self.q
   y=q["yearly_work_queue"][2006-1999]
   self.assertEqual((a["year_frontier_before"],a["year_frontier_after"]),(2006,2007))
-  self.assertEqual(q["current_frontier"]["year"],2007)
-  self.assertTrue(q["current_frontier"]["next"].startswith("PET76:"))
+  # Preserve PET75 historical handoff when later years are reviewed.
+  self.assertGreaterEqual(q["current_frontier"]["year"],2007)
+  if q["current_frontier"]["year"]==2007:
+   self.assertTrue(q["current_frontier"]["next"].startswith("PET76:"))
   self.assertEqual(y["research_gate"],"SOURCE_BOUNDED_REVIEWED")
   self.assertFalse(y["historically_complete"])
   self.assertIsNone(y["historical_species_count"])
   self.assertEqual(y["source_bounded_review_receipt"],"research/recovered/STONEAGE-PET75-YEAR2006-FIVE-REGION-BOUNDED-AUDIT-R1.json")
-  self.assertEqual(q["yearly_work_queue"][2007-1999]["research_gate"],"NOT_YEAR_AUDITED")
+  self.assertEqual(q["yearly_work_queue"][2007-1999]["research_gate"],"NOT_YEAR_AUDITED" if q["current_frontier"]["year"]==2007 else "SOURCE_BOUNDED_REVIEWED")
   self.assertEqual((p["year_frontier_after"],p["year_research_gate_after"]),(2006,"NOT_YEAR_AUDITED"))
   self.assertEqual(y["documentary_event_count_NOT_species"],1)
   self.assertEqual(y["documented_release_event_ids_from_existing_PET25_PET26"],["JP-2006-TWO-MYSTERY"])
@@ -66,7 +68,9 @@ class PET75Annual(unittest.TestCase):
   self.assertEqual(sum(x["id"]==p["id"] for x in arr),1)
   self.assertEqual(len({x["id"] for x in arr}),len(arr))
   self.assertEqual(q["yearly_work_queue"][7]["partial_source_review_receipts"][0]["id"],p["id"])
-  self.assertIsNone(q["root_source_census_receipts"][-1]["historical_species_count"])
+  # PET75 remains append-only; later receipts need not duplicate its exact field layout.
+  rec=next(x for x in arr if x["id"]==a["id"])
+  self.assertIsNone(rec["historical_species_count"])
   self.assertEqual((a["stage_A"],a["stage_B_wiki"],a["r79"] ),("7_PARTIAL_2_OPEN","GATED","PAUSED_NON_BLOCKING"))
   self.assertIsNone(a["overall_percent"])
 if __name__=="__main__":unittest.main()
