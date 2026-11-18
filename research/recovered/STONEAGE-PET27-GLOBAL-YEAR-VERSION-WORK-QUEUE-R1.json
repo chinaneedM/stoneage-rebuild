@@ -19,9 +19,10 @@
     "phase": "YEAR_2016_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
     "latest_partial_root_review": "PET105-YEAR2015-SIX-REGION-SOURCE-BOUNDED-AUDIT-20261118",
-    "next": "PET106: begin 2016 original classic PC six-region pet audit, client bytes first; 2015 source bounded reopenable and 2015 Christmas cross-year not 2016 first-release proof",
+    "next": "PET106: continue 2016 original classic PC six-region client-first source audit after PET106 product-line separation; seek original TW/CN source bytes and issuance, year NOT_YEAR_AUDITED and not yet 2017",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE",
-    "latest_source_bounded_annual_review": "PET105-YEAR2015-SIX-REGION-SOURCE-BOUNDED-AUDIT-20261118"
+    "latest_source_bounded_annual_review": "PET105-YEAR2015-SIX-REGION-SOURCE-BOUNDED-AUDIT-20261118",
+    "latest_2016_partial_source_receipt": "PET106-YEAR2016-CLASSIC-PC-MOBILE-BOUNDARY-20261118"
   },
   "region_tracks": [
     "CN",
@@ -2863,7 +2864,29 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "partial_source_review_receipts": [
+        {
+          "id": "PET106-YEAR2016-CLASSIC-PC-MOBILE-BOUNDARY-20261118",
+          "receipt": "research/recovered/STONEAGE-PET106-YEAR2016-CLASSIC-PC-VS-ORIGINS-MOBILE-FIRST-PASS-R1.json",
+          "date": "2026-11-18",
+          "region_scope": [
+            "CN",
+            "TW",
+            "HK_MO",
+            "KR",
+            "JP",
+            "OTHER"
+          ],
+          "year_not_closed": true,
+          "mobile_product_line_separated": true,
+          "new_original_2016_pc_client_bytes": 0,
+          "qualified_original_pc_new_pet_id_count": 0
+        }
+      ],
+      "source_bounded_partial_review_notes_forward_only": [
+        "PET106: 2016 CN CINS closure contemporary relay and TW original-PC Duanwu player index distinct from Netmarble Origins mobile first-party 10/13 Latapa-family and 10/28 Kamilu updates; no same-build original PC pet evidence, year remains OPEN."
+      ]
     },
     {
       "year": 2017,
