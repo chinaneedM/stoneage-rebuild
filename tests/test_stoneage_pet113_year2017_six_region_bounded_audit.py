@@ -21,7 +21,7 @@ class Pet113Year2017SourceBounded(unittest.TestCase):
   self.assertEqual(q["current_frontier"]["year"],2018)
   self.assertEqual(n["research_gate"],"NOT_YEAR_AUDITED")
   self.assertEqual(q["current_frontier"]["latest_source_bounded_annual_review"],a["id"])
-  self.assertTrue(q["current_frontier"]["next"].startswith("PET114:"))
+  self.assertTrue(q["current_frontier"]["next"].startswith(("PET114:","PET115:")))
   self.assertEqual(y["source_bounded_review_receipt"],str(A.relative_to(ROOT)))
   self.assertTrue(a["source_bounded_only"] and a["year_reopenable"])
   self.assertFalse(a["historically_complete"])

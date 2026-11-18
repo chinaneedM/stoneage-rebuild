@@ -1,0 +1,189 @@
+{
+  "schema": "stoneage.pet114.tw2018_pc_two_realm_summer_pet_mobile_boundary.r1",
+  "id": "PET114-TW2018-TWO-REALM-SUMMER-PET-MOBILE-BOUNDARY-20261118",
+  "date": "2026-11-18",
+  "active_module": "PET",
+  "year": 2018,
+  "year_frontier_before": 2018,
+  "year_frontier_after": 2018,
+  "year_gate": "NOT_YEAR_AUDITED",
+  "year_closed": false,
+  "historically_complete": false,
+  "region_scope": [
+    "TW",
+    "HK_MO"
+  ],
+  "product_scope": "TAOZHU_ORIGINAL_PC_VS_NETMARBLE_STONEAGE_M_MOBILE",
+  "baseline": {
+    "main_head": "5ddcb5f5724fd844d1bf5632531871951e97320b",
+    "main_tree": "587625ae164529fc1ac25068c9ce643d58c3ce3b",
+    "unchanged_current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "unchanged_current_state_bytes": 2709173,
+    "prior_latest_source_bounded_review": "PET113-YEAR2017-SIX-REGION-ORIGINAL-PC-SOURCE-BOUNDED-AUDIT-20261118"
+  },
+  "sources": [
+    {
+      "id": "TW2018-0304-TWO-VERSIONS-PERIOD-PLAYER",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=1571&snA=80959",
+      "date": "2018-03-04",
+      "grade": "CONTEMPORANEOUS_2018_PLAYER_VERSION_COMPARISON_SEARCH_INDEX_DIRECT_403",
+      "proves": "Period player respondents differentiate 2011 versus 2017 Taozhu rule settings including no magic for pets in 2017 and most level1 pets planned/opportunity in-game",
+      "not_proved": "Authentic separate client EXE byte builds, actual server PET list or full feature implementation"
+    },
+    {
+      "id": "TW2018-0708-SUMMER-TASK-PERIOD-PLAYER",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=1571&snA=81072",
+      "date_kind": "2018-07-08 EDIT plus 2018-09 same-year followup",
+      "grade": "CONTEMPORANEOUS_2018_PLAYER_FIRSTHAND_TASK_GUIDE_SEARCH_INDEX_DIRECT_403",
+      "proves": "Player-described summer quest catching/training named pets and reported item rewards",
+      "not_proved": "Operator first-party original event HTML, native quest script, first-release pets or exact same-build names/IDs"
+    },
+    {
+      "id": "TW2018-0705-SUMMER-G2-DUPLICATE",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&lorder=1&parent=5128&sn=5132",
+      "date_kind": "2018-07-05 EDIT",
+      "grade": "SAME_PLAYER_GUIDE_ARCHIVED_G2_DUPLICATE_NOT_INDEPENDENT_OPERATOR",
+      "prior_source": "TW2018-0708-SUMMER-TASK-PERIOD-PLAYER",
+      "proves": "Another indexed view of 2018 player summer task",
+      "not_proved": "Independent original operator or original native client"
+    },
+    {
+      "id": "TW2018-1203-TAOZHU-LEGAL-OPERATOR-RELAY",
+      "url": "https://forum.gamer.com.tw/Co.php?bsn=1571&sn=294976",
+      "date": "2018-12-03 18:46",
+      "claimed_first_party_notice": "http://www.stoneage2.com.tw/news.php?id=1727",
+      "claimed_first_party_date": "2018-12-03 17:24",
+      "grade": "PERIOD_PLAYER_VERBATIM_RELAY_OF_TAOZHU_OPERATOR_LEGAL_POSITION_ORIGINAL_OFFICIAL_PAGE_INACCESSIBLE",
+      "proves": "Operator's claimed legitimacy announcement in period player relay and claimed 2018 June/Aug procedural events",
+      "not_proved": "Uncontested legal rights, original court document, native 2018 pet program or exact software provenance"
+    },
+    {
+      "id": "TW2018-DLER-CLIENT-MIRROR-PRIOR-PET108",
+      "url": "https://dler.com/index.php?o=display%3Bid%3D7143",
+      "date_kind": "2018-07-23 file date; 2018-07-24 updated",
+      "grade": "THIRD_PARTY_FREE_CATALOG_MD5_AND_SIZE_NOT_ACTUAL_CLIENT_BYTES_ALREADY_PET108",
+      "prior_receipt": "PET108-TW-CLIENT-DLER-170423-CHECKSUM-ACCESS-BOUNDARY-20261118",
+      "proves": "Third-party index purports original PC StoneAge installer 170423 with MD5 and size",
+      "not_proved": "Downloaded content, authenticated original build or 2018 native pet IDs",
+      "download_file_bytes_new": 0
+    },
+    {
+      "id": "TW_HK_MO2018-NETMARBLE-MOBILE-LAUNCH-GAMEBIZ",
+      "url": "https://gamebiz.jp/news/216017",
+      "date": "2018-07-23",
+      "claimed_release_date": "2018-07-17",
+      "grade": "CONTEMPORANEOUS_2018_JAPANESE_GAME_INDUSTRY_PRESS_MOBILE_NOT_CLASSIC_PC",
+      "proves": "Netmarble StoneAge M separate mobile RPG launched TW/HK/MO around 2018-07-17",
+      "not_proved": "Any official 2018 original 2D PC pet roster"
+    }
+  ],
+  "realm_version_policy": {
+    "two_player_labels": [
+      "2011版本",
+      "2017版本"
+    ],
+    "native_client_builds_independently_authenticated": 0,
+    "player_2011_magic_claim": true,
+    "player_2017_no_magic_claim": true,
+    "player_2017_most_level1_pets_possible_claim": true,
+    "player_said_both_have_lottery": true,
+    "lottery_mechanism_does_not_prove_pet_prizes": true,
+    "version_label_not_executable_build_sha": true,
+    "server_specific_pet_identity_not_inferred": true
+  },
+  "player_summer_task_candidate_pet_mentions": [
+    {
+      "label": "貝洛寶利",
+      "role": "reported_capture_train_to_121",
+      "first_2018_release_proved": false
+    },
+    {
+      "label": "乎拔拔",
+      "role": "reported_capture_train_to_140",
+      "first_2018_release_proved": false
+    },
+    {
+      "label": "紅虎",
+      "linked_labels_in_player_text": [
+        "格魯西斯",
+        "加特利奴",
+        "加特力奴"
+      ],
+      "role": "reported_catch_then_player_name_change_for_quest",
+      "canonical_native_pet_id": null,
+      "first_2018_release_proved": false
+    },
+    {
+      "label": "綠龜",
+      "role": "reported_quest_train_to_120",
+      "first_2018_release_proved": false
+    },
+    {
+      "label": "凱比特",
+      "role": "reported_quest_train_to_125",
+      "first_2018_release_proved": false
+    },
+    {
+      "label": "姆伊",
+      "role": "reported_quest_train_to_130",
+      "first_2018_release_proved": false
+    }
+  ],
+  "player_summer_item_mentions_not_native_pets": [
+    {
+      "label": "凱恩（青龍）強化血清",
+      "class": "PET_ENHANCEMENT_CONSUMABLE_PLAYER_REPORT_NOT_NEW_PET",
+      "reported_skill_effect": "MP attack and sound-wave described by player; no native function verified"
+    },
+    {
+      "label": "胖胖龍徽章",
+      "class": "QUEST_REWARD_BADGE_NOT_LIVE_PET"
+    },
+    {
+      "label": "毒磨菇",
+      "class": "QUEST_ITEM_NOT_LIVE_PET"
+    }
+  ],
+  "mobile_boundary": {
+    "product": "Netmarble 石器時代M",
+    "launch_date_reported": "2018-07-17",
+    "regions": [
+      "TW",
+      "HK_MO"
+    ],
+    "is_distinct_product": true,
+    "classic_pc_pet_backfill_permitted": false
+  },
+  "negative_controls": {
+    "year_not_advanced_from_2018": true,
+    "active_module_pet_only": true,
+    "period_player_sources_not_operator_original_html": true,
+    "edited_guides_not_literal_first_issue_timestamps": true,
+    "same_g2_guide_not_duplicate_witness": true,
+    "both_have_lottery_not_pets_from_lottery": true,
+    "two_year_labels_not_verified_same_client_builds": true,
+    "no_training_quest_as_2018_species_first_issue": true,
+    "no_potion_or_badge_counted_as_live_pet": true,
+    "no_red_tiger_renaming_as_native_new_species": true,
+    "no_2018_mobile_pet_backfilled_to_pc": true,
+    "no_litigation_claim_as_original_build_proof": true,
+    "no_client_download_repeated_after_pet108_404": true,
+    "no_paid_client_marketplace": true,
+    "no_original_proprietary_art_published": true,
+    "no_switch_to_other_modules": true
+  },
+  "new_original_2018_pc_client_bytes": 0,
+  "new_original_2018_pc_patch_bytes": 0,
+  "new_2018_native_pet_ids": 0,
+  "new_original_spr_frames": 0,
+  "new_original_native_pet_skill_functions": 0,
+  "new_original_pc_pet_issuance_logs": 0,
+  "global_2018_original_pc_species_count": null,
+  "first_released_2018_original_pc_species_count": null,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "report": "docs/continuity/STONEAGE-PET114-TW2018-TWO-REALM-SUMMER-PET-AND-MOBILE-BOUNDARY-20261118.md",
+  "next": "PET115: continue 2018 CN/HK_MO/KR/JP/OTHER authorized classic-PC client-first official pet source review and TW native gaps, then bounded annual six-region audit; 2018 stays NOT_YEAR_AUDITED"
+}

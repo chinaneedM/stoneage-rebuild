@@ -239,3 +239,8 @@ PET仍独占活动模块，2001年份继续OPEN。优先真实**能合法免费�
 ## 2026-11-18｜PET113 2017 六地区官方原版 PC 宠物有界年审 → 2018
 
 [PET113六地区2017年审](continuity/STONEAGE-PET113-YEAR2017-SIX-REGION-ORIGINAL-PC-BOUNDED-AUDIT-20261118.md)已保留 TW PET111/112 同期玩家转引及两次蓝虎活动与服务器原生缺口，CN 2016经典PC停服与后出2016–18 **IP著作许可**（非2017上线）、HK/MO授权地区与真实2017部署分离、KR/JP旧PC停运与2017其他IP衍生隔离。新认证原2017PC客户端/补丁/原PET ID/SPR/技能/实际发宠全0，历史总/首发宠物种数null。2017仅**SOURCE_BOUNDED_REVIEWED**，不是官服宠物历史完整；六地可独立重开。PET依旧唯一活动模块，**NEXT PET114 2018各地区/运营/版本客户端优先考据**。原历史CURRENT `c89e0e33537990aa2132b47c40fef49a985a935c`（2,709,173B）不写，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING、总完成率UNKNOWN。
+
+
+## 2026-11-18｜PET114 2018 台湾原 PC 双规则、暑期任务与手游独立
+
+[PET114报告](continuity/STONEAGE-PET114-TW2018-TWO-REALM-SUMMER-PET-AND-MOBILE-BOUNDARY-20261118.md)将2018同期台湾玩家2011/2017双设置、暑期红虎/贝洛宝利/乎拔拔/绿龟/凯比特/姆伊任务获宠文字保留为玩家证词；强化血清与胖胖龙徽章不算活宠；陶朱12/3官口法律公告为转录而非官方已核服务器；2018/7《石器时代M》移动版独立。新2018 original PC安装文件／PET ID／SPR／技能／发奖日志0，种数未知。**2018 NOT_YEAR_AUDITED、NEXT PET115**，继续PET客户端优先各区考据，不切NPC，CURRENT原blob `c89e0e33537990aa2132b47c40fef49a985a935c` 2,709,173B保持不变，Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停。

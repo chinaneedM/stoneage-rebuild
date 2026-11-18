@@ -19,11 +19,12 @@
     "phase": "YEAR_2018_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
     "latest_partial_root_review": "PET113-YEAR2017-SIX-REGION-ORIGINAL-PC-SOURCE-BOUNDED-AUDIT-20261118",
-    "next": "PET114: begin 2018 six-region classic-PC official version/client-first pet source investigation; 2017 reviewed only source-bounded and all six regions reopenable",
+    "next": "PET115: continue 2018 CN/HK_MO/KR/JP/OTHER authorized classic-PC client-first official pet source review and TW native gaps, then bounded annual six-region audit; 2018 stays NOT_YEAR_AUDITED",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE",
     "latest_source_bounded_annual_review": "PET113-YEAR2017-SIX-REGION-ORIGINAL-PC-SOURCE-BOUNDED-AUDIT-20261118",
     "latest_2016_partial_source_receipt": "PET109-TW2016-PLAYER-PET-REWARD-AND-HALLOWEEN-CROSSYEAR-20261118",
-    "latest_2017_partial_source_receipt": "PET112-TW2017-AUG-BLUE-TIGER-REOPENED-PROMO-20261118"
+    "latest_2017_partial_source_receipt": "PET112-TW2017-AUG-BLUE-TIGER-REOPENED-PROMO-20261118",
+    "latest_2018_partial_source_receipt": "PET114-TW2018-TWO-REALM-SUMMER-PET-MOBILE-BOUNDARY-20261118"
   },
   "region_tracks": [
     "CN",
@@ -3235,7 +3236,28 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "partial_source_review_receipts": [
+        {
+          "id": "PET114-TW2018-TWO-REALM-SUMMER-PET-MOBILE-BOUNDARY-20261118",
+          "date": "2026-11-18",
+          "receipt": "research/recovered/STONEAGE-PET114-TW2018-PC-TWO-REALM-SUMMER-PET-SOURCE-BOUNDARY-R1.json",
+          "region_scope": [
+            "TW",
+            "HK_MO"
+          ],
+          "year_not_closed": true,
+          "tw_period_2018_two_realms_player_setting_comparison": true,
+          "tw_2018_summer_player_capture_and_items_separated": true,
+          "netmarble_stoneage_m_2018_mobile_product_separate": true,
+          "old_2018_dler_mirror_pet108_metadata_not_new_client": true,
+          "new_2018_original_pc_client_bytes": 0,
+          "new_2018_native_pet_ids": 0
+        }
+      ],
+      "source_bounded_partial_review_notes_forward_only": [
+        "PET114: 2018 March Taiwan player contemporaneous 2011/2017 variant setting comparison (not two verified client builds), July 2018 first-person summer quest pet capture/training vs enhancement serum/badge items, Dec3 operator-voice legal notice relay; DLER 2018 third-party catalog already PET108 no original bytes; Netmarble StoneAge M Jul17 mobile TW/HK/MO distinct product. All player-period search index 403 and original operator page inaccessible; no verified new native PET IDs/skills/actual award logs; 2018 remains NOT_YEAR_AUDITED."
+      ]
     },
     {
       "year": 2019,
