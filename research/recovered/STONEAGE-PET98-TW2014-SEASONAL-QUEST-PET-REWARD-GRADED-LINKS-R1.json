@@ -1,0 +1,181 @@
+{
+  "schema": "stoneage.pet98.tw2014_official_pc_seasonal_pet_reward_source_bounded_matrix.r1",
+  "id": "PET98-TW2014-SEASONAL-REWARD-AND-RETROSPECTIVE-ISSUANCE-GATES-20261118",
+  "date": "2026-11-18",
+  "active_module": "PET",
+  "year": 2014,
+  "frontier_before": 2014,
+  "frontier_after": 2014,
+  "review_status": "PARTIAL_NOT_YEAR_AUDITED",
+  "historically_complete": false,
+  "year_closed": false,
+  "startup": {
+    "head": "563205734f87acb460fd1ebc9f3c5c2ea2d1fc6e",
+    "tree": "65079d4624362861a87415b37f95eb3407b221",
+    "exact_head_actions_success": 4,
+    "open_prs": 0,
+    "original_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_current_bytes": 2709173
+  },
+  "scope": {
+    "region": "TW",
+    "operator": "TAOZHU",
+    "product_line": "ORIGINAL_PC",
+    "client_build": "UNKNOWN; PET97 PLAYER-REPORTED LAUNCHER 198 NOT ORIGINAL FILE",
+    "native_pet_table_verified": false
+  },
+  "sources": [
+    {
+      "id": "TW2014-QUEST-RETRO-CHRONOLOGY",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=4519",
+      "document_date": "LATER_THAN_2014_EXACT_POST_DATE_NOT_REVERIFIED",
+      "access_grade": "SEARCH_INDEX_HTML_403",
+      "evidence_grade": "LATER_PLAYER_COMPILED_YEAR_CHRONOLOGY_NOT_OFFICIAL_OPERATOR_2014",
+      "claims": [
+        "2014-05-28 Dragon Boat event opens; later pet reward canceled",
+        "2014-06-11 Dragon Boat task reward changed per cited notice, original notice unavailable",
+        "2014-07-30 項鍊的秘密 new quest reported",
+        "2014-09-01 元神宮密令 moon festival quest reported; variant werewolf limited activity noted"
+      ],
+      "original_2014_operator_notice_verified": false
+    },
+    {
+      "id": "TW2015-0203-PTT-CANCELLED-REWARDS",
+      "url": "https://www.ptt.cc/bbs/StoneAge/M.1422953256.A.E9E.html",
+      "document_date": "2015-02-03",
+      "access_grade": "SEARCH_INDEX_FULL_TEXT_ORIGINAL_HTML_403",
+      "evidence_grade": "LATER_CONTEMPORANEOUS_PLAYER_QA_NOT_2014_OPERATOR",
+      "claims": [
+        "賽琳娜的小豬 三頭蛇獎勵已經取消",
+        "元神宮密令 2D狼人兌換已經取消",
+        "2014春節 萬馬奔騰罐頭 task canceled",
+        "萬聖節 靈魂掠奪罐頭 removed",
+        "聖誕節 冰浪湧現罐頭 removed"
+      ],
+      "original_2014_award_or_cancellation_date_verified": false
+    },
+    {
+      "id": "TW2015-0712-BAHAMUT-RESCUED-PLAYER-QUEST",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&lorder=2&parent=4270&sn=4272",
+      "document_date": "2015-07-12 edited",
+      "access_grade": "SEARCH_INDEX_FULL_TEXT_ORIGINAL_HTML_403",
+      "evidence_grade": "LATER_EDITED_REPOST_OF_LOST_PLAYER_QUEST_ACCOUNT",
+      "claims": [
+        "元神宮密令 quest described in repost, with scholar reward Lv1 薩格魯",
+        "Guide also discusses original black tiger from fortune tube being exchanged for strengthened black tiger",
+        "變種狼人 described as quest foes; being enemy does not make pet reward"
+      ],
+      "same_species_black_tiger_and_sagelu_verified": false,
+      "original_2014_player_post_date_verified": false
+    },
+    {
+      "id": "TW2015-0922-BAHAMUT-LATER-WEREWOLF-DISCUSSION",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=1571&snA=78396",
+      "document_date": "2015-09-22 to 2015-09-24",
+      "access_grade": "SEARCH_INDEX_FULL_TEXT_ORIGINAL_HTML_403",
+      "evidence_grade": "LATER_PLAYER_AND_PASTED_OPERATOR_2015_NOT_2014_PRIMARY",
+      "claims": [
+        "2015 player mentions previous 元神宮 four first-gen-wolf route and 2015 mooncake 2D wolf exchange",
+        "2015-09-24 reported operator statement discusses 強化瑪斯貝卡 and 薩格魯 adjustment, not 2014 issue"
+      ],
+      "original_2014_first_issuance_verified": false
+    }
+  ],
+  "historical_event_candidates": [
+    {
+      "date": "2014-05-28",
+      "quest": "賽琳娜的小豬",
+      "year2014_operator_original": false,
+      "candidate_rewards": [
+        "三頭蛇"
+      ],
+      "label_grade": "LATER_PLAYER_MENTIONS_REWARD_ALREADY_CANCELLED_BY_2015_02",
+      "date_of_pet_reward": null,
+      "pet_ids": null,
+      "first_release_proven": false
+    },
+    {
+      "date": "2014-06-11",
+      "quest": "賽琳娜的小豬",
+      "year2014_operator_original": false,
+      "candidate_rewards": [
+        "unspecified changed prize"
+      ],
+      "label_grade": "LATER_COMPILED_OFFICIAL_TITLE_NO_ORIGINAL_NOTICE",
+      "exact_change": null,
+      "pet_ids": null,
+      "first_release_proven": false
+    },
+    {
+      "date": "2014-07-30",
+      "quest": "項鍊的秘密",
+      "year2014_operator_original": false,
+      "candidate_rewards": [],
+      "label_grade": "REPORTED_QUEST_OPEN_NOT_2014_PET_REWARD",
+      "pet_ids": null,
+      "first_release_proven": false
+    },
+    {
+      "date": "2014-09-01",
+      "quest": "元神宮密令",
+      "year2014_operator_original": false,
+      "candidate_rewards": [
+        "2D狼人",
+        "薩格魯",
+        "黑虎／強化黑虎"
+      ],
+      "label_grade": "2015_QA_AND_REPOSTED_QUEST_GUIDE_DIFFERENT_SOURCES_NOT_NATIVE_ID",
+      "pet_ids": null,
+      "first_release_proven": false
+    }
+  ],
+  "object_identity_boundaries": {
+    "三頭蛇": "TW_2014_QUEST_REWARD_CANDIDATE_NOT_2014_NATIVE_FIRST_RELEASE",
+    "2D狼人": "TW_2014_QUEST_EXCHANGE_CANDIDATE_NOT_ORIGINAL_2014_NATIVE_ID",
+    "薩格魯": "2015_REPOST_REPORTS_LV1_REWARD_2014_SOURCE_NOT_FOUND",
+    "黑虎／強化黑虎": "POSSIBLE_UPGRADE_OR_ALIAS_NOT_INDEPENDENT_VERIFIED_SPECIES",
+    "變種狼人": "ENCOUNTER_OR_SEASONAL_EVENT_LABEL_NOT_AUTOMATIC_AWARD",
+    "萬馬奔騰罐頭": "SKILL_ITEM_NOT_PET",
+    "靈魂掠奪罐頭": "SKILL_ITEM_NOT_PET",
+    "冰浪湧現罐頭": "SKILL_ITEM_NOT_PET"
+  },
+  "gaps_by_region": {
+    "CN": "PET95 original-PC report; no new 2014 original pet issue proof",
+    "TW": "2014 first-party issue/award notices and original PC198 PET IDs/SPR/skills/grants unknown",
+    "HK_MO": "2014 official original-PC issuance not verified",
+    "KR": "2014 official original-PC issuance not verified; mobile excluded",
+    "JP": "2014 original-PC service/release not verified; mobile excluded",
+    "OTHER": "2014 independent original-PC carrier not verified"
+  },
+  "new_native_material": {
+    "client_bytes": 0,
+    "patch_bytes": 0,
+    "pet_ids": 0,
+    "spr_frames": 0,
+    "skill_functions": 0,
+    "live_grant_records": 0,
+    "global_2014_original_pc_species_count": null,
+    "first_release_2014_species_count": null
+  },
+  "constraints": {
+    "no_false_four_species_claim": true,
+    "no_2014_issuer_promotion": true,
+    "no_2014_cancellation_date_invented": true,
+    "no_native_same_species_link_of_sagelu_and_black_tiger": true,
+    "no_mobile_or_private_server_material": true,
+    "no_paid_marketplace": true,
+    "original_github_CURRENT_unchanged": true
+  },
+  "reopen_triggers": [
+    "2014-05-28 or 06-11 Taozhu original event/award alteration source",
+    "2014-09-01 Taozhu original mid-autumn exchange/issued pet announcement",
+    "same-build original PC 198 native pet names, ids, sprites and skill files",
+    "authenticated 2014 dated quest gameplay/image showing reward in official deployment",
+    "CN/HK_MO/KR/JP/OTHER same-year original PC operator or native pet issue evidence"
+  ],
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "PET99: retain 2014 open, seek dated operator reward originals for Taiwan May/June/September and original PC pet client bytes; preserve six-region source boundaries"
+}
