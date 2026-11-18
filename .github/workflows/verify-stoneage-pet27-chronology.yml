@@ -67,6 +67,9 @@ on:
       - "tests/test_stoneage_pet96_year2014_taiwan_horse_lineage.py"
       - "tests/test_stoneage_pet97_tw2014_original_pc198_source_gate.py"
       - "tests/test_stoneage_pet98_tw2014_seasonal_pet_rewards.py"
+      - "tests/test_stoneage_pet99_year2014_six_region_bounded_audit.py"
+      - "research/recovered/STONEAGE-PET99-YEAR2014-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json"
+      - "docs/continuity/STONEAGE-PET99-YEAR2014-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-20261118.md"
       - "research/recovered/STONEAGE-PET98-TW2014-SEASONAL-QUEST-PET-REWARD-GRADED-LINKS-R1.json"
       - "docs/continuity/STONEAGE-PET98-TW2014-SEASONAL-REWARD-TIMELINE-NOT-FIRST-RELEASE-20261118.md"
       - "research/recovered/STONEAGE-PET97-TW2014-TAOZHU-PC198-DOWNLOAD-AND-BYTE-CUSTODY-GATES-R1.json"
@@ -230,6 +233,9 @@ on:
       - "tests/test_stoneage_pet96_year2014_taiwan_horse_lineage.py"
       - "tests/test_stoneage_pet97_tw2014_original_pc198_source_gate.py"
       - "tests/test_stoneage_pet98_tw2014_seasonal_pet_rewards.py"
+      - "tests/test_stoneage_pet99_year2014_six_region_bounded_audit.py"
+      - "research/recovered/STONEAGE-PET99-YEAR2014-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json"
+      - "docs/continuity/STONEAGE-PET99-YEAR2014-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-20261118.md"
       - "research/recovered/STONEAGE-PET98-TW2014-SEASONAL-QUEST-PET-REWARD-GRADED-LINKS-R1.json"
       - "docs/continuity/STONEAGE-PET98-TW2014-SEASONAL-REWARD-TIMELINE-NOT-FIRST-RELEASE-20261118.md"
       - "research/recovered/STONEAGE-PET97-TW2014-TAOZHU-PC198-DOWNLOAD-AND-BYTE-CUSTODY-GATES-R1.json"
@@ -406,6 +412,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet97_tw2014_original_pc198_source_gate
       - name: PET98 2014 Taiwan original-PC seasonal reward candidate and native issuance gates
         run: python -m unittest tests.test_stoneage_pet98_tw2014_seasonal_pet_rewards
+      - name: PET99 2014 six-region original-PC source-bounded audit and 2015 handoff
+        run: python -m unittest tests.test_stoneage_pet99_year2014_six_region_bounded_audit
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary
