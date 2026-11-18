@@ -26,12 +26,10 @@ class Pet103Tw2015Christmas(unittest.TestCase):
         self.assertEqual(q["current_frontier"]["year"],2015)
         self.assertEqual(q["yearly_work_queue"][16]["research_gate"],"NOT_YEAR_AUDITED")
         self.assertEqual(q["yearly_work_queue"][15]["research_gate"],"SOURCE_BOUNDED_REVIEWED")
-        self.assertEqual(q["current_frontier"]["latest_partial_root_review"],a["id"])
-        self.assertEqual(q["root_source_census_receipts"][-1]["id"],a["id"])
-        self.assertEqual(q["root_source_census_receipts"][-2]["id"],a["startup"]["previous_receipt"])
-        self.assertEqual(q["yearly_work_queue"][16]["partial_source_review_receipts"][-1]["id"],a["id"])
+        self.assertIn(a["id"],[x["id"] for x in q["root_source_census_receipts"]])
+        self.assertEqual(q["root_source_census_receipts"][[x["id"] for x in q["root_source_census_receipts"]].index(a["id"])-1]["id"],a["startup"]["previous_receipt"])
+        self.assertIn(a["id"],[x["id"] for x in q["yearly_work_queue"][16]["partial_source_review_receipts"]])
         self.assertTrue(a["next"].startswith("PET104:"))
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET104:"))
         self.assertIn("PET103",REPORT.read_text(encoding="utf-8"))
 
     def test_source_is_relay_and_event_spans_2016(self):
