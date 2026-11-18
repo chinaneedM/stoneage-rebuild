@@ -26,7 +26,7 @@ class Pet111Tw2017RealmPetAcquisition(unittest.TestCase):
         self.assertFalse(a["historically_complete"])
         self.assertIn(a["id"],[r["id"] for r in y["partial_source_review_receipts"]])
         self.assertEqual(y["partial_source_review_receipts"][0]["id"],a["id"])
-        self.assertTrue(q["current_frontier"]["next"].startswith(("PET112:","PET113:","PET114:","PET115:","PET116:")))
+        self.assertTrue(q["current_frontier"]["next"].startswith(("PET112:","PET113:","PET114:","PET115:","PET116:","PET117:","PET118:")))
         self.assertEqual(q["yearly_work_queue"][17]["research_gate"],"SOURCE_BOUNDED_REVIEWED")
         self.assertIn(a["main_baseline"].get("previous_annual_id","PET110-YEAR2016-SIX-REGION-SOURCE-BOUNDED-AUDIT-20261118"),[z["id"] for z in q["root_source_census_receipts"]])
         self.assertIn("PET111",REPORT.read_text(encoding="utf-8"))
