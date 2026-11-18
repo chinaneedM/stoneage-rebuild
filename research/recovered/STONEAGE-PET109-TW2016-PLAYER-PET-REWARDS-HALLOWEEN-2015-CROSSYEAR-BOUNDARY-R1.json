@@ -1,0 +1,156 @@
+{
+  "schema": "stoneage.pet109.tw2016_player_reward_halloween_crossyear_source_boundary.r1",
+  "id": "PET109-TW2016-PLAYER-PET-REWARD-AND-HALLOWEEN-CROSSYEAR-20261118",
+  "date": "2026-11-18",
+  "module": "PET",
+  "year": 2016,
+  "year_frontier_before": 2016,
+  "year_frontier_after": 2016,
+  "year_review_status": "NOT_YEAR_AUDITED",
+  "historically_complete": false,
+  "starting_remote": {
+    "main_head": "2d70a95345b738f92218e8b8b0d633e55d5b7d67",
+    "main_tree": "09c706fe9841d1df9c033426421946066973f092",
+    "latest_pr": 522,
+    "post_merge_main_checks_success": 4,
+    "post_merge_main_checks_total": 4,
+    "current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_bytes": 2709173
+  },
+  "product_line": "TW_TAOZHU_ORIGINAL_PC_NOT_MOBILE",
+  "sources": [
+    {
+      "id": "TW2016-1030-CONTEMPORANEOUS-PLAYER-GUIDE",
+      "url": "https://forum.gamer.com.tw/Co.php?bsn=1571&sn=293257",
+      "search_index_captured_at": "2026-11-18",
+      "visible_post_edit_timestamp": "2016-10-30 21:38:31",
+      "source_kind": "CONTEMPORANEOUS_PLAYER_FIRST_PERSON_GUIDE",
+      "access_grade": "SEARCH_INDEX_EXTENDED_TEXT_DIRECT_ORIGINAL_FORUM_403",
+      "scope": "TW Taozhu original PC player",
+      "qualified_claims": [
+        "阿米朵復育之路 task named and described as offering a strengthened 阿米朵 / 米暴 candidate",
+        "始祖鳥化石 task named and player describes 始祖鳥 with 精準 skill",
+        "Same 2016 player guide explicitly mentions in-game PC pet enhancement and pet reincarnation mechanisms, not same-build executable evidence"
+      ],
+      "not_proved": [
+        "operator original reward table",
+        "original PC PET record",
+        "skill compiled or actual math",
+        "first release in 2016",
+        "retail paid purchases not a client source"
+      ],
+      "graded_as": "DATED_PLAYER_GAMEPLAY_CLAIM_NOT_NATIVE_PET_RELEASE"
+    },
+    {
+      "id": "TW2016-1026-HALLOWEEN-LATER-EDITED-GUIDE",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=5376",
+      "named_event_year": "2016",
+      "named_event_window": "2016-10-26 to 2016-11-02",
+      "visible_edit_timestamp": "2025-02-01 14:26:02",
+      "source_kind": "RETROSPECTIVELY_EDITED_PLAYER_WALKTHROUGH_NOT_CONTEMPORANEOUS_SOURCE_BYTES",
+      "access_grade": "SEARCH_INDEX_EXTENDED_TEXT_DIRECT_FORUM_403",
+      "scope": "TW Taozhu original PC seasonal quest candidate",
+      "reported_reward_strings": [
+        "貓頭鷹禮盒",
+        "古斯特禮盒",
+        "遠古的恐龍蛋(史凱勒頓)",
+        "憤怒改技能罐頭",
+        "希林南瓜禮盒",
+        "太陽首飾",
+        "哥達偽裝服"
+      ],
+      "string_count_not_species_count": 7,
+      "graded_as": "LATER_EDITED_EVENT_GUIDE_PLAYER_REPORTED_REWARD_MENU_NOT_NATIVE_2016",
+      "original_2016_date_is_heading_only": true,
+      "claimed_player_live_issuance_logs_obtained": false
+    },
+    {
+      "id": "TW2015-1028-HALLOWEEN-CROSSYEAR-EXISTING-PET104",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=1571&snA=78698",
+      "year": 2015,
+      "already_registered_pet_receipt": "PET104-TW2015-HALLOWEEN-RELAY-PRIZE-EGG-BOUNDARY-20261118",
+      "existing_repo_receipt_path": "research/recovered/STONEAGE-PET104-TW2015-HALLOWEEN-RELAY-PRIZE-EGG-BOUNDARY-R1.json",
+      "source_kind": "CONTEMPORANEOUS_PLAYER_RELAY_OF_OPERATOR_NOTICE_EXISTING_RECORD",
+      "crossyear_overlap_named_reward_candidates": [
+        "史凱勒頓",
+        "古斯特"
+      ],
+      "overlap_reported_owl_route": true,
+      "graded_as": "2015_PRIOR_ATTESTATION_NO_NEW_2016_FIRST_APPEARANCE"
+    },
+    {
+      "id": "TW2025-QUEST-INDEX-RETROSPECTIVE-2016-METADATA",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=5358",
+      "source_kind": "RETROSPECTIVE_PLAYER_CURATED_QUEST_INDEX",
+      "access_grade": "SEARCH_INDEX_ONLY_DIRECT_FORUM_403",
+      "list_contains_entries": [
+        "96 甲蟲生態研究",
+        "97 阿米朵復育之路",
+        "98 仙杜麗拉(2016萬聖節)",
+        "99 聖誕的憂慮"
+      ],
+      "graded_as": "NAVIGATIONAL_INDEX_NOT_2016_ORIGINAL_OPERATOR_OR_PET_RELEASE"
+    }
+  ],
+  "dedup": {
+    "historical_2015_pet104_unchanged": true,
+    "overlapping_pet_names_from_2015": [
+      "史凱勒頓",
+      "古斯特"
+    ],
+    "claimed_halloween_bone_egg_is_pet_item_not_new_species": true,
+    "owl_gift_box_is_container_not_native_pet_identity": true,
+    "halloween_2016_potential_reward_reuse_not_equal_2016_first_release": true,
+    "earlier_2011_阿米朵_pet_attested_elsewhere": true,
+    "original_2016_amido_variant_pet_id": null,
+    "original_2016_fossil_archaeopteryx_pet_id": null,
+    "precise_oct_2016_operator_reward_issued_count": null,
+    "no_retroactive_pet_release_first_date": true
+  },
+  "unverified_details": {
+    "halloween_event_original_operator_html_missing": true,
+    "later_2025_edited_guide_cannot_upgrade_to_2016_original_text": true,
+    "player_skill_precise_effect_unknown": true,
+    "original_patch_client_2016_unacquired": true,
+    "literal_2016_mobile_development_not_pc_official_reward": true,
+    "named_pet_reward_is_not_same_build_pet_master_record": true,
+    "crossyear_original_server_identity_unverified": true
+  },
+  "new_original_2016_pc_client_bytes": 0,
+  "new_original_2016_pc_patch_bytes": 0,
+  "new_original_pc_pet_ids": 0,
+  "new_original_pc_spr_frames": 0,
+  "new_verified_original_pc_skill_rows": 0,
+  "new_verified_official_server_reward_grants": 0,
+  "first_release_2016_species_count": null,
+  "global_2016_species_count": null,
+  "source_bounded_year_closed": false,
+  "region_review_scope": [
+    "TW"
+  ],
+  "other_regions_pending": [
+    "CN",
+    "HK_MO",
+    "KR",
+    "JP",
+    "OTHER"
+  ],
+  "exact_current_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_game_completion_percent": null,
+  "negative_controls": {
+    "no_2015_reward_overcount_as_2016_first_release": true,
+    "no_2016_halloween_2025_edit_backdating": true,
+    "no_item_or_gift_box_counted_as_species": true,
+    "no_2016_paid_resale_media_search": true,
+    "no_origins_mobile_counted_as_pc": true,
+    "no_private_server_claim_as_original": true,
+    "no_new_byte_or_skill_claim_from_forum_text": true,
+    "no_proprietary_original_assets_published": true,
+    "no_year_closure_or_module_switch": true
+  },
+  "report": "docs/continuity/STONEAGE-PET109-TW2016-CONTEMPORANEOUS-PLAYER-AND-HALLOWEEN-CROSSYEAR-20261118.md",
+  "next": "PET110: 2016 CN/TW/HK_MO/KR/JP/OTHER official original-PC source-bounded year audit; seek first-party issue or exact native pet bytes first, then gate to 2017 only if audit complete"
+}
