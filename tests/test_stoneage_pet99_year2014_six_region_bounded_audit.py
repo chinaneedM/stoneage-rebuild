@@ -80,7 +80,7 @@ class Pet99Year2014BoundedAudit(unittest.TestCase):
         self.assertIsNone(a["first_release_species_count_2014"])
         raw=(ROOT/"docs/CURRENT-STATE.md").read_bytes()
         self.assertEqual(len(raw),2709173)
-        gitblob=hashlib.sha1(b"blob "+str(len(raw)).encode("ascii")+b"\\x00"+raw).hexdigest()
+        gitblob=hashlib.sha1(b"blob "+str(len(raw)).encode("ascii")+b"\x00"+raw).hexdigest()
         self.assertEqual(gitblob,a["starting_remote"]["original_current_blob"])
         self.assertTrue(a["historical_current_unchanged"])
         self.assertEqual((q["stage_A"],q["stage_B_wiki"],q["r79"],q["overall_game_completion_percent"]),("7_PARTIAL_2_OPEN","GATED","PAUSED_NON_BLOCKING",None))
