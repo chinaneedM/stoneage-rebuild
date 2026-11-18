@@ -432,3 +432,12 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## PET115 2026-11-18｜2018 全球六地区原版 PC 宠物来源有限年审 → 2019
 
 [六地区审查](continuity/STONEAGE-PET115-YEAR2018-SIX-REGION-CLASSIC-PC-PET-BOUNDED-AUDIT-20261118.md)／[PET115机器级来源/重开证据](../research/recovered/STONEAGE-PET115-YEAR2018-SIX-REGION-ORIGINAL-PC-PET-SOURCE-AUDIT-R1.json)：CN2016胜思经典PC停服，2016–18版权许可来源为2022后出司法转录、不证明2018原PC运营与实装。TW PET114 的2011／2017两运营设置玩家对照、2018夏季贝洛宝利、乎拔拔、红虎、绿龟、凯比特、姆伊抓/练/改名任务属于同期玩家见证，不足确定2018首发种数，强化血清和徽章不计宠；2018/12陶朱法律公告为玩家转录，DLER文件仅第三方登记散列没有原字节。HK/MO 2011 PC授权不等于2018独立部署；KR2015/JP2010原PC停运与2018独立IP手机线分离；OTHER无独立可核原版PC原文件。Netmarble 2018/06/29官口PR与2018/07/18上线PR证实**《石器时代M》独立3D手游在台港澳宣布于7/18上市**，手游活动“3星卡米鲁”和超过300种捕捉的宣传不能算2018旧2D PC宠；2018/07/23日媒另写7/17开始分发，记作**来源日期异文**，不虚构一致上线时刻。六地2018新认证原PC客户端/补丁0B、PET ID/SPR/技能/实服发宠0，2018/全球总种数与当年首次发行仍null。**2018研究门仅SOURCE_BOUNDED_REVIEWED且historically_complete=false，六地区独立重开**，最早未审年份**2019、NEXT PET116**。PET唯一、拒付费卖盘与私服冒充、CURRENT原blob `c89e0e33537990aa2132b47c40fef49a985a935c`、2709173字节完全不写，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总进度UNKNOWN。
+
+
+## PET116–117 2026-11-18｜2019 台湾三季玩家宠物见证、猪年转贴和六地区原版 PC 首轮审查
+
+[PET116 台湾2019暑假与中秋](continuity/STONEAGE-PET116-TW2019-SUMMER-MIDAUTUMN-PLAYER-EVIDENCE-20261118.md)／[PET116机器证据](../research/recovered/STONEAGE-PET116-TW2019-PLAYER-PET-EVIDENCE-R1.json)：2019/07/05—09/04同期暑假玩家攻略记海龙、肥龙/乌力斯坦等任务线（同名与变体不能擅自合并），2019/09/18中秋攻略作者称「虎人」新出且只见「火虎人」；均非同部署原客户端或首次出种证明，血清/橡树果/徽章属物品。
+
+[PET117六地区2019首轮报告](continuity/STONEAGE-PET117-YEAR2019-SIX-REGION-ORIGINAL-PC-FIRST-PASS-20261118.md)／[PET117机器分区与来源审查](../research/recovered/STONEAGE-PET117-YEAR2019-SIX-REGION-PC-INITIAL-PET-SOURCE-REVIEW-R1.json)：新增**2019/01/29当期台湾玩家转贴陶朱运营口吻春节通知**（活动1/30—2/20；「猪年宠物袋」随机「乌力王、黑乌力王、猪年」，血清是道具；强化「变身」「冲锋」「乌力化改／黑乌力化改」）；同帖玩家1/31及后续述140级小猪交付、风猪年/黑乌力王与强化技能的**个人操作见证**，并非原官HTML/原奖励数据库。乌力王此前就有任务见证，不将2019再获取记作该种首发。CN2016旧PC停服、HK/MO历史授权、KR2015/JP2010旧PC结束与OTHER缺原件均按2019各地区重开；2019手游《石器时代M》Netmarble官口1/23雷科斯系、巨龟系、四星乌力/巧克洛儿/咕鲁玛鲁预告**完全独立于经典2D PC**。
+
+新认证2019经典PC原客户端、补丁、原生PET ID/SPR/技能/发宠日志**本批皆0**；全球宠种及2019首次发种数 **UNKNOWN/null**。2019仍 `NOT_YEAR_AUDITED`，不可提前跳2020；NEXT **PET118 2019 六地区全年来源有界年审**。PET单模块锁、不可付费卖盘/私服冒充、原CURRENT大blob `c89e0e33537990aa2132b47c40fef49a985a935c`、Stage A7PARTIAL+2OPEN/B-wiki GATED/R79暂停、总体完成率UNKNOWN保持不变。
