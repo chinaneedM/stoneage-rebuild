@@ -58,6 +58,9 @@ on:
       - "tests/test_stoneage_pet87_year2011_bounded_audit.py"
       - "tests/test_stoneage_pet88_year2012_original_pc_source_first.py"
       - "tests/test_stoneage_pet89_year2012_capture_tw_client_leads.py"
+      - "tests/test_stoneage_pet90_year2012_bounded_audit.py"
+      - "research/recovered/STONEAGE-PET90-YEAR2012-CN-TW-HKMO-KR-JP-OTHER-BOUNDED-ANNUAL-AUDIT-R1.json"
+      - "docs/continuity/STONEAGE-PET90-YEAR2012-SIX-REGION-OFFICIAL-PC-SOURCE-BOUNDED-AUDIT-20261118.md"
       - "research/recovered/STONEAGE-PET89-YEAR2012-CN-PET-CAPTURE-TW-OFFICIAL-CLIENT-RELAY-REGIONAL-GATES-R1.json"
       - "docs/continuity/STONEAGE-PET89-YEAR2012-CN-PET-LOCATIONS-TW-TRIKA-ORIGINAL-CLIENT-LEADS-20261118.md"
       - "research/recovered/STONEAGE-PET88-YEAR2012-CN-85-25-ORIGINAL-CLIENT-AND-NAMED-PETS-FIRST-PASS-R1.json"
@@ -194,6 +197,9 @@ on:
       - "tests/test_stoneage_pet87_year2011_bounded_audit.py"
       - "tests/test_stoneage_pet88_year2012_original_pc_source_first.py"
       - "tests/test_stoneage_pet89_year2012_capture_tw_client_leads.py"
+      - "tests/test_stoneage_pet90_year2012_bounded_audit.py"
+      - "research/recovered/STONEAGE-PET90-YEAR2012-CN-TW-HKMO-KR-JP-OTHER-BOUNDED-ANNUAL-AUDIT-R1.json"
+      - "docs/continuity/STONEAGE-PET90-YEAR2012-SIX-REGION-OFFICIAL-PC-SOURCE-BOUNDED-AUDIT-20261118.md"
       - "research/recovered/STONEAGE-PET89-YEAR2012-CN-PET-CAPTURE-TW-OFFICIAL-CLIENT-RELAY-REGIONAL-GATES-R1.json"
       - "docs/continuity/STONEAGE-PET89-YEAR2012-CN-PET-LOCATIONS-TW-TRIKA-ORIGINAL-CLIENT-LEADS-20261118.md"
       - "research/recovered/STONEAGE-PET88-YEAR2012-CN-85-25-ORIGINAL-CLIENT-AND-NAMED-PETS-FIRST-PASS-R1.json"
@@ -334,6 +340,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet88_year2012_original_pc_source_first
       - name: PET89 2012 official PC capture text and Taozhu original-client source leads
         run: python -m unittest tests.test_stoneage_pet89_year2012_capture_tw_client_leads
+      - name: PET90 2012 six-region original PC pet bounded annual audit and 2013 handoff
+        run: python -m unittest tests.test_stoneage_pet90_year2012_bounded_audit
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary
