@@ -334,3 +334,7 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## PET95 2026-11-18｜2014原PC大陆胜思开服档案与台服合服公告的来源先行核验
 
 [PET95当年原PC六地区来源首审](continuity/STONEAGE-PET95-YEAR2014-CN-TW-ORIGINAL-PC-SOURCE-FIRST-PASS-20261118.md)／[PET95机读版本/来源/重开止点](../research/recovered/STONEAGE-PET95-YEAR2014-CN-TW-ORIGINAL-PC-SOURCE-FIRST-PASS-R1.json)：2022判决书记录2021年检索胜思原2014年7月17日2.5精灵觉醒及7月23日2.5/8.5/9.0开服公告，属**晚年法庭所述旧网页**，不是本项目拿到2014原HTML/客户端/宠物表；台湾2014年4月8日同期玩家站转录陶朱原4月9日将加鲁卡并至萨伊那斯星系的**计划**，原站链接未重获，不能虚构合服实际执行或宠物迁移与新增。后期台湾2014马年罐头/变种狼人条目仅二手候选、韩手机史与原PC隔离；HK/MO/JP/OTHER缺当年独立原PC PET来源。原2014客户端0B、PET ID0、SPR0、技能0、实服奖励日志0，全球/2014首发宠物种数 UNKNOWN，不把没有新验证误写作零宠。**2014保持NOT_YEAR_AUDITED，游标仍2014，NEXT PET96**，原CURRENT完整Git blob不动；PET唯一、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体完成率未知。
+
+
+## PET96 2026-11-18｜2014陶朱马年兽任务候选与2002旧年兽历史来源隔离
+[PET96马年兽多年代证据与负证](continuity/STONEAGE-PET96-YEAR2014-TW-HORSE-QUEST-LINEAGE-SOURCE-GATES-20261118.md)／[PET96机读源分级](../research/recovered/STONEAGE-PET96-YEAR2014-TW-HORSE-ACQUISITION-AND-EARLIER-ATTESTATION-R1.json)：2011-06-15玩家直读追述2002华义四马年葛雷基欧／葛雷洛比／葛雷吉鲁／葛雷马恩，是**旧年见证而非2002原运营原件**；2013-12-31玩家原帖已说自己在陶朱服解过马年；2015-02玩家常见问答搜索摘要记录2014「萬馬奔騰罐頭」取消（罐头是道具，不是新宠），2015-04玩家索引描述每人三挑战券，而2016-01-11后修巴哈〈2014/07/30项链的秘密〉索引记五张二级挑战券换马年、2015改NPC及始祖鸟140级精準，两份晚出规则不可合为2014原版运行。2014官服原始兑换规则/原PET身份依然UNKNOWN。2014客户端新原B=0、原PET ID=0、实服领取=0，全球/2014首发物种数null；年份**仍NOT_YEAR_AUDITED、下一轮PET97仍查2014**。PET单模块、原CURRENT原blob原字节不变，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall percent UNKNOWN。

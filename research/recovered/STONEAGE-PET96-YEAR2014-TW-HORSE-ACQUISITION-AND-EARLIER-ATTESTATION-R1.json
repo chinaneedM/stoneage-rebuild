@@ -1,0 +1,136 @@
+{
+  "schema": "stoneage.pet96.year2014.tw_horse_reappearance_not_first_release.r1",
+  "id": "PET96-YEAR2014-TW-HORSE-QUEST-LINEAGE-SOURCE-GATES-20261118",
+  "date": "2026-11-18",
+  "active_module": "PET",
+  "year": 2014,
+  "year_frontier_before": 2014,
+  "year_frontier_after": 2014,
+  "review_status": "PARTIAL_NOT_YEAR_AUDITED",
+  "year_source_bounded_closed": false,
+  "historically_complete": false,
+  "year_reopenable": true,
+  "startup": {
+    "head": "aa5f84af6a1ffb8abecdb81a53fe03dd757b5c44",
+    "tree": "f0fcbd1020eb654c38296df9b468bea8ec6a4f8c",
+    "actions_exact_head_success": 4,
+    "open_prs": 0,
+    "original_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_current_bytes": 2709173
+  },
+  "official_version_scope": {
+    "product_line_id": "ORIGINAL_PC",
+    "region": "TW",
+    "operator": "TAOZHU",
+    "service": "TAOZHU_TW_2014_UNVERIFIED_EXACT_DEPLOYMENT",
+    "build": "UNKNOWN",
+    "CN_prior_report": "PET95",
+    "KR_JP_HKMO_OTHER": "SIX_REGION_2014_GAPS_UNCHANGED"
+  },
+  "sources": [
+    {
+      "id": "TW-2011-06-15-PTT-PREVIOUS-WAEI-HORSE-FOUR",
+      "url": "https://www.ptt.cc/bbs/StoneAge/M.1308080266.A.54B.html",
+      "source_date": "2011-06-15",
+      "claimed_historical_release_year": 2002,
+      "source_kind": "DIRECT_READ_PLAYER_RETROSPECTIVE_NOT_OPERATOR",
+      "verification": "DIRECT_HTML_READ",
+      "assertion": "Player named Waei-period horse-year four elemental forms; predates 2014 and is not original 2002 official operator proof",
+      "candidate_names": [
+        "葛雷基歐",
+        "葛雷洛比",
+        "葛雷吉魯",
+        "葛雷馬恩"
+      ],
+      "names_belong_to_2014_same_native_species_verified": false,
+      "first_release_2014_verified": false
+    },
+    {
+      "id": "TW-2013-12-31-PTT-PLAYER-HORSE-QUEST",
+      "url": "https://www.ptt.cc/bbs/StoneAge/M.1388485166.A.472.html",
+      "source_date": "2013-12-31",
+      "source_kind": "DIRECT_READ_CONTEMPORANEOUS_PLAYER_FIRSTHAND_ACCOUNT",
+      "verification": "DIRECT_HTML_READ",
+      "assertion": "Player describes former Taiwan TZ play and completing a horse-year quest with four resistances, written before 2014; no exact build, screenshot, PET ID or reward identity",
+      "qualified_earliest_documented_player_experience_at_or_before": "2013-12-31",
+      "first_release_2014_verified": false
+    },
+    {
+      "id": "TW-2015-02-03-PTT-QA-2014-REWARDS-REMOVED",
+      "url": "https://www.ptt.cc/bbs/StoneAge/M.1422953256.A.E9E.html",
+      "source_date": "2015-02-03",
+      "source_kind": "LATER_PLAYER_QA_SEARCH_INDEX_DIRECT_PAGE_403",
+      "verification": "SEARCH_INDEX_ONLY_URL_FETCH_403",
+      "assertion": "2015 player FAQ describes 2014 spring task 万馬奔騰 skill-can as removed, 2014 other task reward closures; skill can is NOT horse pet",
+      "item_label": "萬馬奔騰罐頭",
+      "item_not_pet": true,
+      "actual_2014_original_official_pet_issuance_verified": false
+    },
+    {
+      "id": "TW-2015-04-01-PTT-CHALLENGE-TICKET-ACCOUNT",
+      "url": "https://www.ptt.cc/bbs/StoneAge/M.1427875341.A.C27.html",
+      "source_date": "2015-04-01",
+      "source_kind": "LATER_PLAYER_FIRSTHAND_GUIDE_SEARCH_INDEX_DIRECT_PAGE_403",
+      "verification": "SEARCH_INDEX_ONLY_URL_FETCH_403",
+      "assertion": "Player explains three initial challenge tickets per character and three chances of horse-year combat/pet in 2015 context; does not establish original 2014 exact rules",
+      "challenge_ticket_count_2015_claim": 3,
+      "native_pet_reward_verified": false
+    },
+    {
+      "id": "TW-2016-01-11-EDITED-BAHAMUT-JUL2014-QUEST-GUIDE",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&lorder=2&parent=4084&sn=4085",
+      "source_edited_date": "2016-01-11",
+      "claimed_quest_publication_date": "2014-07-30",
+      "source_kind": "LATER_EDITED_PLAYER_GUIDE_SEARCH_INDEX_DIRECT_PAGE_403",
+      "verification": "SEARCH_INDEX_ONLY_URL_FETCH_403",
+      "assertion": "Edited guide claims 2014-07-30 necklace quest, five level-2 challenge tickets exchanging for horse-year pet at 伊麗卡; contains 2015-11-04 NPC replacement detail and bird precision training at level 140; cannot project revised rules into 2014",
+      "horse_ticket_exchange_count_claim": 5,
+      "npc_claim": "伊麗卡",
+      "npc_change_claimed_date": "2015-11-04",
+      "bird_precision_level_claim": 140,
+      "original_2014_rules_verified": false,
+      "original_pet_id_verified": false
+    }
+  ],
+  "disambiguation": {
+    "candidate_2002_waei_horse_forms_vs_2014_taozhu_horse_reward": "NOT_PROVEN_SAME_NATIVE_IDENTITY_OR_VERSION",
+    "pre_2014_horse_quest_evidence": "2013_FIRSTHAND_PLAYER_ACCOUNT_ONLY_NOT_OFFICIAL_2014_ISSUE",
+    "2014_spring_萬馬奔騰罐頭": "SKILL_ITEM_NOT_PET",
+    "2015_three_tickets_vs_2016_edited_five_tickets": "DIFFERENT_TIME_CONTEXT_AND_POSSIBLY_DIFFERENT_ACQUISITION_OPERATIONS; NO_2014_RULE_CONFIRMED",
+    "new_2014_source_bounded_pet_species": "NONE_VERIFIED_NOT_ZERO_HISTORICAL_POPULATION",
+    "named_2014_horse_species_original_ids": null,
+    "same_deployment_original_client_sha256": null
+  },
+  "region_2014_gap_reviews": {
+    "CN": "Prior PET95 2014 2.5/8.5/9.0 later-court original website recital; no original PC pet table",
+    "TW": "Horse quest/reward reappearance is candidate only; no operator same-build update, client PET table or actual grant",
+    "HK_MO": "No official 2014 independent server/receipt",
+    "KR": "No contemporaneous 2014 original-PC pet release or client authenticated; mobile isolated",
+    "JP": "No verified 2014 original PC relaunch; mobile isolated",
+    "OTHER": "No independent 2014 original PC source"
+  },
+  "source_custody": {
+    "original_2014_client_bytes_acquired": 0,
+    "new_native_pet_ids": 0,
+    "new_spr_pixels": 0,
+    "new_native_skill_functions": 0,
+    "actual_original_server_pet_grants": 0,
+    "official_2014_first_release_species_count": null,
+    "global_2014_pet_species_count": null
+  },
+  "reopen_triggers": [
+    "2014 陶朱官方原版项链的秘密发布公告/更新日志含当期实服宠奖字段",
+    "2014 台湾同运营客户端/补丁含可检验 PET/SPR/技能资源及 SHA",
+    "能按年份拆分2013、2014、2015挑战券与NPC兑奖条件的同期原版实据",
+    "2002 华义最初四马年兽与2014陶朱再次出现之间的原生ID/族系对应证明",
+    "CN/HKMO/KR/JP/OTHER 2014原PC同期官方宠物公告或原客户端身份证据"
+  ],
+  "no_paid_sources": true,
+  "private_server_roster_excluded": true,
+  "historical_CURRENT_untouched": true,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "PET97: keep 2014 open; locate same-year contemporary official pet issuance/PC client for CN/TW/HKMO/KR/JP/OTHER and independently confirm Taiwan 2014 quest rewards before year review."
+}

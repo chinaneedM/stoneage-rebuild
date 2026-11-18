@@ -15,7 +15,7 @@ class PET95(unittest.TestCase):
         a,q=self.a,self.q
         self.assertEqual((a["year"],a["year_frontier_before"],a["year_frontier_after"]),(2014,2014,2014))
         self.assertEqual(q["current_frontier"]["year"],2014)
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET96:"))
+        self.assertTrue(q["current_frontier"]["next"].startswith("PET97:"))
         self.assertEqual(q["yearly_work_queue"][15]["research_gate"],"NOT_YEAR_AUDITED")
         self.assertEqual(a["review_status"],"PARTIAL_NOT_YEAR_AUDITED")
         self.assertFalse(a["year_source_bounded_closed"])
@@ -23,9 +23,9 @@ class PET95(unittest.TestCase):
         self.assertTrue(a["year_reopenable"])
         self.assertEqual(q["active_module"],"PET")
         ids=[x["id"] for x in q["root_source_census_receipts"]]
-        self.assertEqual(ids[-1],a["id"])
+        self.assertIn(a["id"],ids)
         self.assertEqual(len(set(ids)),len(ids))
-        self.assertEqual(q["yearly_work_queue"][15]["partial_source_review_receipts"][-1]["id"],a["id"])
+        self.assertIn(a["id"],[x["id"] for x in q["yearly_work_queue"][15]["partial_source_review_receipts"]])
         self.assertIsNone(a["global_2014_original_pc_species_total"])
         self.assertIsNone(a["first_release_2014_pet_species_total"])
     def test_evidence_grades_and_version_lanes(self):
