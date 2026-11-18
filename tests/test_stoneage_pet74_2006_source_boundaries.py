@@ -49,5 +49,6 @@ class PET74Boundaries(unittest.TestCase):
   y=q["yearly_work_queue"][7]
   self.assertIn("JP-2006-TWO-MYSTERY",y["documented_release_event_ids_from_existing_PET25_PET26"])
   self.assertEqual(y["documentary_event_count_NOT_species"],1)
-  self.assertEqual(y["partial_source_review_receipts"][-1]["id"],a["id"])
+  # Later annual reviews append after PET74 without removing its historical partial receipt.
+  self.assertEqual(sum(r["id"]==a["id"] for r in y["partial_source_review_receipts"]),1)
 if __name__=="__main__": unittest.main()
