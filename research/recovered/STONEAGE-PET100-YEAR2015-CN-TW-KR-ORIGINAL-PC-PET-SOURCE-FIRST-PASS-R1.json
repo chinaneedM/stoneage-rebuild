@@ -1,0 +1,190 @@
+{
+  "schema": "stoneage.pet100.year2015_cn_tw_kr_pc_official_pet_source_first_pass.r1",
+  "id": "PET100-YEAR2015-CN-TW-KR-ORIGINAL-PC-SOURCE-FIRST-PASS-20261118",
+  "date": "2026-11-18",
+  "active_module": "PET",
+  "year": 2015,
+  "frontier_before": 2015,
+  "frontier_after": 2015,
+  "review_status": "PARTIAL_NOT_YEAR_AUDITED",
+  "year_closed": false,
+  "historically_complete": false,
+  "startup": {
+    "repository": "chinaneedM/stoneage-rebuild",
+    "main_head": "f1ffdeb945ba9340b4386b30c346edc6999b2333",
+    "main_tree": "ad6387daffbe31902d11a1caf730a1c315543983",
+    "exact_head_main_actions_success": 4,
+    "open_prs": 0,
+    "original_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "original_current_bytes": 2709173,
+    "prior_latest_annual": "PET99-YEAR2014-SIX-REGION-SOURCE-BOUNDED-AUDIT-20261118"
+  },
+  "sources": [
+    {
+      "id": "CN2015-SPRING-CINS-25-85-REHOST",
+      "url": "https://shiqisifu.cc/Article/1/News_8.html",
+      "original_2015_official_page_acquired": false,
+      "source_grade": "UNAUTHENTICATED_THIRD_PARTY_MIRROR_OF_PURPORTED_CINS_2015_OPERATOR_TEXT",
+      "direct_html_read": true,
+      "printed_title": "胜思石器时代2015年春节活动",
+      "year": 2015,
+      "service_lanes": [
+        "CN_CINS_2_5_SPIRIT_AWAKENING",
+        "CN_CINS_8_5_SPIRIT_AWAKENING"
+      ],
+      "text_internal_date_inconsistency": [
+        "phase2 starts Feb12 but ends Jan18",
+        "phase3 starts Feb19 but ends Jan25"
+      ],
+      "actual_rewards_granted_verified": false,
+      "native_pet_identity_verified": false
+    },
+    {
+      "id": "TW2015-0922-MID_AUTUMN-OPERATOR-NOTICE-RELAY",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=1571&snA=78396",
+      "original_official_urls": [
+        "http://www.stoneage.tw/news.php?id=1452",
+        "http://www.stoneage.tw/news.php?id=1453"
+      ],
+      "source_date": "2015-09-22",
+      "grade": "CONTEMPORANEOUS_PLAYER_FULL_TEXT_RELAY_OF_TAOZHU_OPERATOR_2015_NOTICE_SEARCH_INDEX_ORIGINAL_403",
+      "official_original_html_directly_read": false,
+      "original_patch_bytes_read": false,
+      "launcher_update_label": "202",
+      "reported_content": [
+        "甘巴爹玉兔 permanent Mid-Autumn quest",
+        "werewolf research event until October 7",
+        "operator message says maintenance completed and update client to version 202"
+      ],
+      "client_202_verified": false,
+      "actual_server_deployed_patch_verified": false
+    },
+    {
+      "id": "TW2015-0922-CONTEMPORANEOUS-PLAYER-QUEST-THREAD",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=1571&gothis=288575&page=1&snA=78396",
+      "source_date": "2015-09-22",
+      "grade": "CONTEMPORANEOUS_PLAYER_TASK_WALKTHROUGH_SEARCH_INDEX_NOT_NATIVE_FILES",
+      "claims": [
+        "enhanced orange tiger 瑪斯貝卡",
+        "玉兔 from rabbit capture represented in 大地之眼",
+        "item and reward interactions with NPC described"
+      ],
+      "original_native_pet_grants_or_ids_verified": false
+    },
+    {
+      "id": "TW2016-RETRO-2015-QUEST-INDEX",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=4519",
+      "source_date": "2016-06-11_EDITED",
+      "claim_target_year": 2015,
+      "grade": "LATER_PLAYER_CHRONOLOGY_NOT_2015_OPERATOR_NOTICE",
+      "claims": [
+        "June 17 2015 五月節的插曲 drawing pet 摩洛索思 麒麟",
+        "September 22 2015 Mid-Autumn orange-tiger strengthening and rabbit reward",
+        "moon cake exchange four wolves into 2D werewolf time-limited"
+      ],
+      "same_build_native_ids_verified": false,
+      "first_release_2015_verified": false
+    },
+    {
+      "id": "KR2015-0821-PC-TERMINATION-CONTEMPORARY-PRESS",
+      "url": "https://m.hungryapp.co.kr/news/news_view.php?bcode=news&pid=29038",
+      "source_date": "2015-ORIGINAL_PRESS_EXACT_PUBLICATION_DAY_NOT_IN_READABLE_BODY",
+      "grade": "CONTEMPORANEOUS_GAME_INDUSTRY_PRESS_QUOTES_OPERATOR_PC_CLOSURE_INTENT",
+      "pc_original_operator": "NETMARBLE",
+      "pc_close_effective_date_reported": "2015-08-21",
+      "actual_pc_shutdown_log_verified": false,
+      "original_pet_names_or_new_pet_issuance_verified": false
+    },
+    {
+      "id": "KR2015-0522-MOBILE-NETMARBLE-FIRST-PARTY-CLOSURE",
+      "url": "https://notice.netmarble.net/main/BbsContentView.asp?SearchYear=2015&best=&cateId=0&choice=0&pageno=2&searchmonth=0&searchrange=0&searchstring=&searchstringoptionval=0&seq=12578201&usememosp=0",
+      "source_date": "2015-05-22",
+      "grade": "DIRECT_FIRST_PARTY_NETMARBLE_NOTICE_MOBILE_ONLY",
+      "product_line": "STONEAGE_MOBILE_NOT_PC",
+      "planned_close_date": "2015-08-21",
+      "download_and_purchases_blocked": "2015-05-22",
+      "pc_pet_evidence": false
+    }
+  ],
+  "candidate_named_pet_and_item_relations": [
+    {
+      "region": "CN",
+      "lane": "CINS_2_5",
+      "labels": [
+        "三色龙魂宠物蛋",
+        "新春宠物蛋",
+        "水幻飞龙宠物蛋",
+        "玄武蛋",
+        "扑满乌力",
+        "新品暴",
+        "四圣兽",
+        "水飞",
+        "恶魔宠物蛋",
+        "军绿虎骑证",
+        "葛雷基欧",
+        "威咔宠物蛋",
+        "四色兔子宠物蛋"
+      ],
+      "note": "THIRD_PARTY_COPIED_OPERATOR_STYLE_TEXT_REWARD_EGGS_OR_EXISTING_PETS_NOT_NATIVE_2015_NEW_SPECIES"
+    },
+    {
+      "region": "CN",
+      "lane": "CINS_8_5",
+      "labels": [
+        "格鲁西斯",
+        "军绿虎骑宠套",
+        "白狼骑宠证书",
+        "黑飞暴骑宠套"
+      ],
+      "note": "DIFFERENT_SERVER_VERSION_AND_RIDE_OBJECTS_NOT_DISTINCT_NATIVE_PET_SPECIES"
+    },
+    {
+      "region": "TW",
+      "lane": "TAOZHU_PC_202_REPORTED",
+      "labels": [
+        "甘巴爹玉兔",
+        "瑪斯貝卡",
+        "摩洛索思",
+        "2D狼人",
+        "大地之眼"
+      ],
+      "note": "QUEST_REWARD_NAME_LEADS_FROM_2015_RELAY_AND_LATER_YEAR_COMPILATION_NOT_ORIGINAL_PET_TABLE_OR_NEW_SPECIES"
+    }
+  ],
+  "boundaries": {
+    "not_202_pets": true,
+    "not_2015_official_issued_from_third_party_rehost": true,
+    "no_china_version_cross_collapse": true,
+    "no_egg_as_species": true,
+    "no_ride_certificate_as_species": true,
+    "no_2014_moon_wolf_reissue_as_2015_first_release": true,
+    "no_mobile_pc_confusion": true,
+    "no_source_date_fix_without_original": true,
+    "no_2015_official_taozhu_patch_bytes_claim": true,
+    "no_paid_marketplace": true,
+    "no_private_server_roster": true,
+    "no_original_private_assets_publish": true
+  },
+  "region_gaps": {
+    "CN": "Need original 2015 CINS 2.5 and 8.5 archived operator announcement and exact client PET files, actual issuance",
+    "TW": "Need original 2015 Taozhu June and September operator original HTML, 202 exact patch and native PET plus actual grant",
+    "HK_MO": "Need original HK/MO service or integration exact deployment and pet evidence",
+    "KR": "Need Netmarble original PC closure announcement, 2015 native client PET and last service pet grants; Mobile first-party notice is not PC",
+    "JP": "Need original PC authorized 2015 continuation/reopening if it occurred and original PET evidence",
+    "OTHER": "Need original independently authorized 2015 classic PC operator and pet evidence"
+  },
+  "native_2015_original_client_new_bytes": 0,
+  "native_2015_original_patch_new_bytes": 0,
+  "new_native_pet_ids": 0,
+  "new_original_spr_pixels": 0,
+  "new_pet_skill_functions": 0,
+  "new_verified_server_pet_grants": 0,
+  "global_official_2015_original_pc_pet_species_count": null,
+  "new_first_released_species_2015_count": null,
+  "original_current_unchanged": true,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "PET101: continue 2015, seek Taozhu original PC202/June operator original, CINS original page and six region bounded annual evidence; 2015 not year audited"
+}
