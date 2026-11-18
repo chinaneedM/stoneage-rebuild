@@ -19,10 +19,11 @@
     "phase": "YEAR_2017_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
     "latest_partial_root_review": "PET110-YEAR2016-SIX-REGION-SOURCE-BOUNDED-AUDIT-20261118",
-    "next": "PET111: begin 2017 original classic-PC official PET source-first annual year: CN/TW/HK_MO/KR/JP/OTHER independently, earliest original client/patch bytes first, separate Origins mobile/web remakes, pet year remains NOT_YEAR_AUDITED",
+    "next": "PET112: 2017 Taozhu Dadi vs Sayinas original client/patch and real pet reward sources first, then CN/HK_MO/KR/JP/OTHER original PC annual review; do not advance 2018 yet",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE",
     "latest_source_bounded_annual_review": "PET110-YEAR2016-SIX-REGION-SOURCE-BOUNDED-AUDIT-20261118",
-    "latest_2016_partial_source_receipt": "PET109-TW2016-PLAYER-PET-REWARD-AND-HALLOWEEN-CROSSYEAR-20261118"
+    "latest_2016_partial_source_receipt": "PET109-TW2016-PLAYER-PET-REWARD-AND-HALLOWEEN-CROSSYEAR-20261118",
+    "latest_2017_partial_source_receipt": "PET111-TW2017-DADI-OLDREALM-PET-SOURCE-BOUNDARY-20261118"
   },
   "region_tracks": [
     "CN",
@@ -3064,7 +3065,28 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "partial_source_review_receipts": [
+        {
+          "id": "PET111-TW2017-DADI-OLDREALM-PET-SOURCE-BOUNDARY-20261118",
+          "date": "2026-11-18",
+          "receipt": "research/recovered/STONEAGE-PET111-TW2017-DADI-OLDREALM-PET-ISSUANCE-SOURCE-BOUNDARY-R1.json",
+          "region_scope": [
+            "TW"
+          ],
+          "year_not_closed": true,
+          "period_2017_operator_announcement_relay": true,
+          "dadi_new_realm_pet_acquisition_not_same_as_old_sayinas": true,
+          "operator_original_html_not_acquired": true,
+          "2017_november_player_independent_experience": true,
+          "blue_tiger_relay_is_promo_not_native_first_issue": true,
+          "new_2017_original_pc_client_bytes": 0,
+          "new_2017_native_pet_ids": 0
+        }
+      ],
+      "source_bounded_partial_review_notes_forward_only": [
+        "PET111: 2017-04-27 contemporary player verbatim 04/26 Taozhu announcement says Dadi 05/01 new separate realm, all lv1 pets via wild/quest/store and not lottery, no fusion/migration, starter unnamed + time limited blue tiger gift. 2017/11 PTT first-person player supports realm experience, not exact 05/01 original operator log or same-build PET bytes. Old Sayinas separate; 2018 DLER file not authenticated. Year remains NOT_YEAR_AUDITED."
+      ]
     },
     {
       "year": 2018,
