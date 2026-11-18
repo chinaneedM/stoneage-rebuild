@@ -20,7 +20,7 @@ class PET93(unittest.TestCase):
         self.assertFalse(r["annualAuditComplete"])
         self.assertIsNone(r["globalPetSpeciesTotal"])
         self.assertIsNone(r["firstRelease2013SpeciesTotal"])
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET95:"))
+        self.assertTrue(q["current_frontier"]["next"].startswith("PET96:"))
     def test_five_sources_six_regions_and_negative_gates(self):
         r=self.r
         self.assertEqual(r["sourceCount"],5)
