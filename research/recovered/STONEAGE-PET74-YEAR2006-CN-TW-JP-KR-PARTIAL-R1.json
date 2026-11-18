@@ -1,0 +1,198 @@
+{
+  "schema": "STONEAGE-PET74-2006-CN-TW-JP-KR-FIVE-REGION-PARTIAL-OFFICIAL-PET-SOURCE-AUDIT-R1",
+  "id": "PET74-2006-FIVE-REGION-PARTIAL-OFFICIAL-PET-SOURCE-AUDIT-20261118",
+  "date": "2026-11-18",
+  "active_module": "PET",
+  "year": 2006,
+  "review_status": "PARTIAL_SOURCES_NOT_YEAR_AUDITED",
+  "historically_complete": false,
+  "startup": {
+    "main_head": "4061414197578b5934f64575c6f9c78d951a5b80",
+    "main_tree": "a579840af3406579f0b83117d58f9627b270402e",
+    "exact_main_head_actions_success": 33,
+    "exact_main_head_actions_total": 33,
+    "open_prs_at_start": 0,
+    "current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_state_bytes": 2709173
+  },
+  "prior_receipt": "PET73-2005-FIVE-REGION-SOURCE-BOUNDED-OFFICIAL-PET-AUDIT-20261116",
+  "source_records": [
+    {
+      "id": "CN-2006-0316-KINGSOFT-NEW-STONEAGE",
+      "region": "CN",
+      "product_line": "KINGSOFT_NEW_STONEAGE_PC_DISTINCT_SERVICE_TRACK",
+      "date": "2006-03-16",
+      "url": "https://news.17173.com/content/2006-03-16/20060316100702181.shtml",
+      "claim": "Kingsoft 新石器时代公测/运营宣传，称2298种宠物",
+      "grade": "CONTEMPORANEOUS_MARKETING_REPORT",
+      "pet_names": [],
+      "claimed_number_not_master_rows": 2298,
+      "in_game_release_eligible": false
+    },
+    {
+      "id": "TW-2006-0621-WAEI-85-ANNOUNCEMENT",
+      "region": "TW",
+      "product_line": "TAIWAN_WAEI_STONEAGE_PC_8_5",
+      "date": "2006-06-21",
+      "url": "https://www.games.idv.tw/news.php?nid=615",
+      "claim": "8.5魔域大冒險公告：6/21至7/5测试，7/5蒼龍服先更新，7/12其他服计划更新；新怪非新宠实名名单",
+      "grade": "CONTEMPORANEOUS_OPERATOR_ANNOUNCEMENT_SYNDICATED",
+      "pet_names": [],
+      "in_game_release_eligible": false
+    },
+    {
+      "id": "JP-2006-0710-STONEAGE2-PRODUCT-LINE",
+      "region": "JP",
+      "product_line": "JAPAN_STONEAGE2_PAL_COLLECTION_SEPARATE_PRODUCT",
+      "date": "2006-07-10",
+      "url": "https://www.4gamer.net/games/028/G002819/20060710162836/",
+      "claim": "另行运营的石器时代2，预定7/25正式服务，与初代不迁移角色；不得导入初代宠物名录",
+      "grade": "CONTEMPORANEOUS_PRODUCT_LAUNCH_REPORT",
+      "pet_names": [],
+      "in_game_release_eligible": false
+    },
+    {
+      "id": "JP-2006-1031-GAIAX-RED-DINO-NAME",
+      "region": "JP",
+      "product_line": "JAPAN_STONEAGE1_GAIAX_PC",
+      "date": "2006-10-31",
+      "url": "https://www.4gamer.net/news/history/2006.10/20061031185933detail.html",
+      "claim": "红色小型恐龙宠物征名10/31-11/14；命名/中奖/实际发放和与11/21二宠关联均未证明",
+      "grade": "CONTEMPORANEOUS_OPERATOR_NAMING_PROMOTION",
+      "pet_names": [],
+      "in_game_release_eligible": false
+    },
+    {
+      "id": "JP-2006-1121-GAIAX-TWO-MYSTERY-PETS",
+      "region": "JP",
+      "product_line": "JAPAN_STONEAGE1_GAIAX_PC",
+      "date": "2006-11-21",
+      "url": "https://www.4gamer.net/games/013/G001377/20061121175908/",
+      "claim": "运营更新报道商城不思議な袋(大/中)新增两只未具名神秘宠物；不知物种身份/实际账号领取",
+      "grade": "CONTEMPORANEOUS_OPERATOR_SHOP_RELEASE_REPORT",
+      "pet_names": [],
+      "announced_unnamed_pet_count": 2,
+      "in_game_release_eligible": false
+    },
+    {
+      "id": "JP-2006-1226-GAIAX-BAG-SHOP-REVISION",
+      "region": "JP",
+      "product_line": "JAPAN_STONEAGE1_GAIAX_PC",
+      "date": "2006-12-26",
+      "url": "https://www.4gamer.net/games/013/G001377/20061226135825/",
+      "claim": "商城更名及恐龙袋改版，不能按袋品类当新宠物物种",
+      "grade": "CONTEMPORANEOUS_OPERATOR_SHOP_NOTICE",
+      "pet_names": [],
+      "in_game_release_eligible": false
+    },
+    {
+      "id": "KR-2006-1215-CJ-NETMARBLE-PET-REINCARNATION-EVOLUTION",
+      "region": "KR",
+      "product_line": "KOREA_CJ_NETMARBLE_STONEAGE_PC",
+      "date": "2006-12-15",
+      "url": "https://www.ggemguide.com/news/10707/?dpage=2725",
+      "claim": "CJ/Netmarble宣布宠物환생/진화系统；同期146种宠物为运营口径，不是完整核读的原PET主表",
+      "grade": "CONTEMPORANEOUS_OPERATOR_COPY_NEWS",
+      "pet_names": [],
+      "claimed_number_not_master_rows": 146,
+      "in_game_release_eligible": false
+    }
+  ],
+  "region_reviews": {
+    "CN": {
+      "operator": "KINGSOFT",
+      "product_line": "NEW_STONEAGE_PC_DISTINCT_CN_TRACK",
+      "period_sources": [
+        "CN-2006-0316-KINGSOFT-NEW-STONEAGE"
+      ],
+      "pet_names_verified_from_native_build": [],
+      "operator_marketing_pet_count_not_species_census": 2298,
+      "source_boundary": "有同期运营广告，无2298原始PET ID/图组主档；与北京华义旧线不可无证合并",
+      "historical_species_count": null,
+      "reopen_trigger": "CN_2006_KINGSOFT_OFFICIAL_PATCH_AND_NATIVE_PET_MASTER_ID_ART_SKILL_AND_ACTUAL_SERVICE_RELEASE"
+    },
+    "TW": {
+      "operator": "TAIWAN_WAEI",
+      "product_line": "TAIWAN_PC_8_5",
+      "period_sources": [
+        "TW-2006-0621-WAEI-85-ANNOUNCEMENT"
+      ],
+      "pet_names_verified_from_native_build": [],
+      "source_boundary": "8.5分服公告与预定日期可据；没有实际同服应用补丁/宠物名录",
+      "historical_species_count": null,
+      "reopen_trigger": "TW_2006_85_AUTHENTIC_PATCH_OR_OPERATOR_NAMED_PET_ISSUANCE_AND_LIVE_SERVER_APPLICATION"
+    },
+    "JP": {
+      "operator": "GAIAX",
+      "product_line": "STONEAGE1_PC; STONEAGE2_SEPARATE_PRODUCT_LINE",
+      "period_sources": [
+        "JP-2006-0710-STONEAGE2-PRODUCT-LINE",
+        "JP-2006-1031-GAIAX-RED-DINO-NAME",
+        "JP-2006-1121-GAIAX-TWO-MYSTERY-PETS",
+        "JP-2006-1226-GAIAX-BAG-SHOP-REVISION"
+      ],
+      "pet_names_verified_from_native_build": [],
+      "nov_21_unnamed_pet_announcement": 2,
+      "red_dino_contest_link_to_nov_21_unproven": true,
+      "stoneage2_does_not_merge_with_original": true,
+      "source_boundary": "商城新增两神秘宠与红恐龙征名均没有身份/原图/实服领宠日志；7月另作产品的石器2不得混入原作",
+      "historical_species_count": null,
+      "reopen_trigger": "JP_2006_GAIAX_UNNAMED_PET_REAL_NAME_ID_AND_ORIGINAL_PATCH_OR_SHOP_REWARD_ACCOUNT_LOG;JP2_SEPARATE_BUILD"
+    },
+    "KR": {
+      "operator": "CJ_INTERNET_NETMARBLE",
+      "product_line": "KOREA_STONEAGE_PC",
+      "period_sources": [
+        "KR-2006-1215-CJ-NETMARBLE-PET-REINCARNATION-EVOLUTION"
+      ],
+      "pet_names_verified_from_native_build": [],
+      "operator_claimed_pet_number_not_species_census": 146,
+      "source_boundary": "运营报道宠物转生/进化功能与146种广告，不证明146条原主表/进化种数/完整可抓名录",
+      "historical_species_count": null,
+      "reopen_trigger": "KR_2006_CJ_NATIVE_PET_MASTERS_AND_SAME_BUILD_EVOLUTION_TABLES_ACTUAL_DEPLOYMENT"
+    },
+    "OTHER": {
+      "operator": null,
+      "product_line": null,
+      "period_sources": [],
+      "pet_names_verified_from_native_build": [],
+      "source_boundary": "有限检索未取得2006独立官方PC地区资料；不等于该地区无官服",
+      "historical_species_count": null,
+      "reopen_trigger": "OTHER_2006_PROVEN_OFFICIAL_OPERATOR_MAINLINE_PC_AND_DATED_PET_RECORD_OR_NATIVE_CLIENT"
+    }
+  },
+  "excluded_evidence": {
+    "kingsoft_2298_marketing_not_original_master": true,
+    "korea_146_operator_claim_not_original_species_table": true,
+    "japan_two_unnamed_not_two_identified_species": true,
+    "japan_stoneage2_is_distinct_product_line": true,
+    "japan_red_dino_identity_unproven": true,
+    "taiwan_july_dates_not_all_confirmed_live_patch": true,
+    "real_pet_spokesanimal_contest_not_in_game_pet": true,
+    "same_operator_syndicated_reports_not_independent_sources": true
+  },
+  "accessible_client_search": {
+    "possible_unverified_2006_taiwan_official_download_url": "http://download.wayi.com.tw/download/STONEAGE20060616.exe",
+    "source_status": "NOT_DOWNLOADED_NOT_AUTHENTICATED",
+    "downloaded_original_client_bytes": 0,
+    "original_installer_sha256": null,
+    "original_patched_pet_master_available": false,
+    "private_original_client_assets_in_public_git": false
+  },
+  "new_original_2006_client_bytes": 0,
+  "new_same_build_native_pet_ids": 0,
+  "new_native_reward_delivery_logs": 0,
+  "confirmed_2006_official_species_count": null,
+  "confirmed_2006_global_official_species_count": null,
+  "year_frontier_before": 2006,
+  "year_frontier_after": 2006,
+  "year_research_gate_after": "NOT_YEAR_AUDITED",
+  "next": "PET75: continue 2006 CN/TW/JP/KR/OTHER official pet year review; prioritize free verified original client/patch bytes and JP late-year mystery pet names, TW 8.5 real updates, KR evolution pet identities, CN Kingsoft native master versus advertising; then bounded annual audit.",
+  "no_paid_marketplace": true,
+  "original_commercial_assets_published": false,
+  "historical_current_blob_unchanged": true,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}
