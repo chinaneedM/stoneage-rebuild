@@ -39,7 +39,7 @@ class TestPet110Year2016SourceBoundedReview(unittest.TestCase):
         self.assertEqual(q["current_frontier"]["year"], 2017)
         self.assertEqual(q["current_frontier"]["latest_source_bounded_annual_review"], a["id"])
         self.assertEqual(q["current_frontier"]["latest_partial_root_review"], a["id"])
-        self.assertTrue(q["current_frontier"]["next"].startswith("PET111:"))
+        self.assertTrue(a["next"].startswith("PET111:"))  # historical 2016 closure NEXT not current live NEXT
         self.assertIn("2017", REPORT.read_text(encoding="utf-8"))
 
     def test_all_six_independent_regions_and_reopening_triggers(self):
