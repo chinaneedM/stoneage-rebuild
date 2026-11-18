@@ -55,6 +55,9 @@ on:
       - "tests/test_stoneage_pet84_year2010_bounded_audit.py"
       - "tests/test_stoneage_pet85_year2011_original_pc_pets.py"
       - "tests/test_stoneage_pet86_year2011_regional_named_pets.py"
+      - "tests/test_stoneage_pet87_year2011_bounded_audit.py"
+      - "research/recovered/STONEAGE-PET87-YEAR2011-CN-TW-HKMO-JP-KR-OTHER-SOURCE-BOUNDED-ANNUAL-AUDIT-R1.json"
+      - "docs/continuity/STONEAGE-PET87-YEAR2011-CN-TW-HKMO-JP-KR-OTHER-SOURCE-BOUNDED-ANNUAL-AUDIT-20261118.md"
       - "research/recovered/STONEAGE-PET86-YEAR2011-CN-NAMED-PETS-TW-HK-KR-JP-SOURCE-BOUNDARIES-R1.json"
       - "docs/continuity/STONEAGE-PET86-YEAR2011-CN-PET-FAMILIES-TW-HKMO-KR-JP-BOUNDED-SOURCES-20261118.md"
       - "research/recovered/STONEAGE-PET85-YEAR2011-CN85-TW-OFFICIAL-PET-EVENT-CANDIDATES-R1.json"
@@ -182,6 +185,9 @@ on:
       - "tests/test_stoneage_pet84_year2010_bounded_audit.py"
       - "tests/test_stoneage_pet85_year2011_original_pc_pets.py"
       - "tests/test_stoneage_pet86_year2011_regional_named_pets.py"
+      - "tests/test_stoneage_pet87_year2011_bounded_audit.py"
+      - "research/recovered/STONEAGE-PET87-YEAR2011-CN-TW-HKMO-JP-KR-OTHER-SOURCE-BOUNDED-ANNUAL-AUDIT-R1.json"
+      - "docs/continuity/STONEAGE-PET87-YEAR2011-CN-TW-HKMO-JP-KR-OTHER-SOURCE-BOUNDED-ANNUAL-AUDIT-20261118.md"
       - "research/recovered/STONEAGE-PET86-YEAR2011-CN-NAMED-PETS-TW-HK-KR-JP-SOURCE-BOUNDARIES-R1.json"
       - "docs/continuity/STONEAGE-PET86-YEAR2011-CN-PET-FAMILIES-TW-HKMO-KR-JP-BOUNDED-SOURCES-20261118.md"
       - "research/recovered/STONEAGE-PET85-YEAR2011-CN85-TW-OFFICIAL-PET-EVENT-CANDIDATES-R1.json"
@@ -310,6 +316,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet85_year2011_original_pc_pets
       - name: PET86 2011 cross-region PC original pet named sources and boundaries
         run: python -m unittest tests.test_stoneage_pet86_year2011_regional_named_pets
+      - name: PET87 2011 source-bounded year review with 2012 cursor
+        run: python -m unittest tests.test_stoneage_pet87_year2011_bounded_audit
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary
