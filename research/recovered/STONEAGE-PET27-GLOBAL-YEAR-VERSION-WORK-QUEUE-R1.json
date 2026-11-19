@@ -15,13 +15,13 @@
   "latest_year_in_scope": 2026,
   "reason_start_provisional": "1999 is a search-window starting point, NOT an independently authenticated first official launch date; earlier qualified evidence may extend the sequence backwards",
   "current_frontier": {
-    "year": 2020,
-    "phase": "YEAR_2020_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
+    "year": 2021,
+    "phase": "YEAR_2021_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET118-YEAR2019-SIX-REGION-ORIGINAL-PC-PET-SOURCE-BOUNDED-ANNUAL-AUDIT-20261119",
-    "next": "PET120: independently review 2020 six-region classic PC original bytes and actual officially issued pets; keep the 2020 Netmarble StoneAge World mobile source namespace separate; 2020 remains NOT_YEAR_AUDITED",
+    "latest_partial_root_review": "PET120-YEAR2020-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
+    "next": "PET121: 2021 six-region classic 2D PC original client/patch bytes and official live pet evidence; mobile products remain independent; 2021 NOT_YEAR_AUDITED",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE",
-    "latest_source_bounded_annual_review": "PET118-YEAR2019-SIX-REGION-ORIGINAL-PC-PET-SOURCE-BOUNDED-ANNUAL-AUDIT-20261119",
+    "latest_source_bounded_annual_review": "PET120-YEAR2020-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
     "latest_2016_partial_source_receipt": "PET109-TW2016-PLAYER-PET-REWARD-AND-HALLOWEEN-CROSSYEAR-20261118",
     "latest_2017_partial_source_receipt": "PET112-TW2017-AUG-BLUE-TIGER-REOPENED-PROMO-20261118",
     "latest_2018_partial_source_receipt": "PET114-TW2018-TWO-REALM-SUMMER-PET-MOBILE-BOUNDARY-20261118",
@@ -3541,7 +3541,7 @@
     {
       "year": 2020,
       "chronological_position": 22,
-      "research_gate": "NOT_YEAR_AUDITED",
+      "research_gate": "SOURCE_BOUNDED_REVIEWED",
       "documented_release_event_ids_from_existing_PET25_PET26": [
         "KR-WORLD-2020-KALO",
         "KR-WORLD-2020-PUGON"
@@ -3571,10 +3571,107 @@
           "kr_2020_world_mobile_firstparty_two_named_pets": true,
           "new_2020_original_pc_client_bytes": 0,
           "new_native_pet_ids": 0
+        },
+        {
+          "id": "PET120-YEAR2020-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
+          "date": "2026-11-19",
+          "receipt": "research/recovered/STONEAGE-PET120-YEAR2020-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json",
+          "region_scope": [
+            "CN",
+            "TW",
+            "HK_MO",
+            "KR",
+            "JP",
+            "OTHER"
+          ],
+          "source_bounded_review_closed": true,
+          "historically_complete": false,
+          "year_reopenable": true,
+          "new_2020_original_pc_client_bytes": 0,
+          "new_2020_native_pet_ids": 0,
+          "global_2020_species_count": null
         }
       ],
       "source_bounded_partial_review_notes_forward_only": [
-        "PET119: Taiwan 2020-01-19 operator-voice rat-year relay and same-thread Jan/Feb updated rule: random 鼠年/卡芙娜/卡蘿麗 (two cats stop 2/19), four village rat-year labels, reward boxes and enhancement serum as items; 2/3 change challenge ticket re-use and coupon trade. Period player level120 maze quest account not native PET master. Korean Netmarble independent 2020 World mobile firstparty June18 launch, July31 named 푸곤/칼로, Aug12 Giiroo-family 6 and 메카기로 announcement; cannot inject into classic 2D PC population. Original classic PC 2020 client bytes/ID/SPR/skills/grants still 0 newly verified. Year remains NOT_YEAR_AUDITED and globally incomplete. Next PET120 full six-region PC year audit."
+        "PET119: Taiwan 2020-01-19 operator-voice rat-year relay and same-thread Jan/Feb updated rule: random 鼠年/卡芙娜/卡蘿麗 (two cats stop 2/19), four village rat-year labels, reward boxes and enhancement serum as items; 2/3 change challenge ticket re-use and coupon trade. Period player level120 maze quest account not native PET master. Korean Netmarble independent 2020 World mobile firstparty June18 launch, July31 named 푸곤/칼로, Aug12 Giiroo-family 6 and 메카기로 announcement; cannot inject into classic 2D PC population. Original classic PC 2020 client bytes/ID/SPR/skills/grants still 0 newly verified. Year remains NOT_YEAR_AUDITED and globally incomplete. Next PET120 full six-region PC year audit.",
+        "PET120: 2020 six-region year source-bounded review: TW July1 Lv1 player list (includes 未開放), Aug29 editable third-party catalogue (later 2020 mid-autumn edits, 那提拉 internally both reward and 未開放), Oct29 Halloween player relay five reward labels 雷爾/艾蜜/卡普莉/波摩多/波摩希; 2017 Mart labels 吉比/魯比/蒙奇 prevent 2020-first-debut claims. PET119 rat year same-thread correction and distinct Netmarble World mobile retained. CN/HK_MO/KR/JP/OTHER no newly certified 2020 original 2D PC native client/master/issued pet, does not imply global zero. 2020 SOURCE_BOUNDED_REVIEWED, historically_complete=false, population null, reopenable; 2021/PET121 next."
+      ],
+      "historically_complete": false,
+      "year_reopenable": true,
+      "historical_species_count": null,
+      "source_bounded_review_receipt": "research/recovered/STONEAGE-PET120-YEAR2020-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json",
+      "source_bounded_review_report": "docs/continuity/STONEAGE-PET120-YEAR2020-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119.md",
+      "region_source_reviews": {
+        "CN": {
+          "region": "CN",
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "official_2020_first_release_species_count": null,
+          "native_pet_id_rows_verified": 0,
+          "source_boundary": "2016_OLD_PC_END_NOT_2020_DEPLOYMENT",
+          "reopen_trigger": "CN2020_AUTHORIZED_CLASSIC_PC_DEPLOYMENT_BUILD_SHA_AND_PET_MASTER_GRANTED"
+        },
+        "TW": {
+          "region": "TW",
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "official_2020_first_release_species_count": null,
+          "native_pet_id_rows_verified": 0,
+          "source_boundary": "2020_PLAYER_RELAY_LV1_EDITABLE_LIST_AND_HALLOWEEN_SEARCH_INDEX",
+          "reopen_trigger": "TW2020_ORIGINAL_TAOZHU_OPERATOR_HTML_BUILD_PET_ID_SPR_SKILLS_REWARD_LOG"
+        },
+        "KR": {
+          "region": "KR",
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "official_2020_first_release_species_count": null,
+          "native_pet_id_rows_verified": 0,
+          "source_boundary": "OLD_2015_PC_END_SEPARATE_FROM_2020_NETMARBLE_WORLD_MOBILE",
+          "reopen_trigger": "KR2020_AUTHORIZED_CLASSIC_PC_RESTART_AND_SAMEBUILD_PET_MASTER"
+        },
+        "JP": {
+          "region": "JP",
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "official_2020_first_release_species_count": null,
+          "native_pet_id_rows_verified": 0,
+          "source_boundary": "2009_OPERATOR_NOTICE_2010_PC_END_NO_2020_REOPEN_CERTIFIED",
+          "reopen_trigger": "JP2020_ORIGINAL_2D_PC_OPERATOR_RESTART_BUILD_AND_NATIVE_PETS"
+        },
+        "OTHER": {
+          "region": "OTHER",
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "official_2020_first_release_species_count": null,
+          "native_pet_id_rows_verified": 0,
+          "source_boundary": "NO_VERIFIED_COUNTRY_OPERATOR_2020_OLD_PC_NATIVE_PET_COMBINATION",
+          "reopen_trigger": "OTHER2020_NAMED_COUNTRY_OPERATOR_ORIGINAL_PC_BUILD_REWARD_SOURCE"
+        }
+      },
+      "additional_region_reviews": {
+        "HK_MO": {
+          "region": "HK_MO",
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "official_2020_first_release_species_count": null,
+          "native_pet_id_rows_verified": 0,
+          "source_boundary": "2011_LICENSE_NOT_2020_PC_REALM",
+          "reopen_trigger": "HKMO2020_AUTHORIZED_OR_SHARED_CLASSIC_PC_REALM_NATIVE_PET_RECORDS"
+        }
+      },
+      "residual_reopen_triggers": [
+        "CN2020_AUTHORIZED_CLASSIC_PC_DEPLOYMENT_BUILD_SHA_AND_PET_MASTER_GRANTED",
+        "TW2020_ORIGINAL_TAOZHU_OPERATOR_HTML_BUILD_PET_ID_SPR_SKILLS_REWARD_LOG",
+        "HKMO2020_AUTHORIZED_OR_SHARED_CLASSIC_PC_REALM_NATIVE_PET_RECORDS",
+        "KR2020_AUTHORIZED_CLASSIC_PC_RESTART_AND_SAMEBUILD_PET_MASTER",
+        "JP2020_ORIGINAL_2D_PC_OPERATOR_RESTART_BUILD_AND_NATIVE_PETS",
+        "OTHER2020_NAMED_COUNTRY_OPERATOR_ORIGINAL_PC_BUILD_REWARD_SOURCE"
       ]
     },
     {
@@ -5402,6 +5499,30 @@
       "new_original_2019_client_bytes": 0,
       "new_native_pet_ids": 0,
       "global_2019_species_count": null
+    },
+    {
+      "id": "PET120-YEAR2020-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
+      "regions": [
+        "CN",
+        "TW",
+        "HK_MO",
+        "KR",
+        "JP",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET120-YEAR2020-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119.md",
+      "evidence_json": "research/recovered/STONEAGE-PET120-YEAR2020-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json",
+      "year_frontier_before": 2020,
+      "year_frontier_after": 2021,
+      "year_not_closed": false,
+      "year_review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "prior_partial_receipts": 1,
+      "independent_region_reviews": 6,
+      "year_reopenable": true,
+      "new_original_2020_client_bytes": 0,
+      "new_native_pet_ids": 0,
+      "global_2020_species_count": null
     }
   ],
   "client_first_methodology": {

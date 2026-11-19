@@ -18,10 +18,10 @@ class Pet118Year2019Annual(unittest.TestCase):
   self.assertEqual((a["year_frontier_before"],a["year_frontier_after"]),(2019,2020))
   self.assertEqual((a["review_status"],y["research_gate"]),("SOURCE_BOUNDED_REVIEWED","SOURCE_BOUNDED_REVIEWED"))
   self.assertEqual((q["active_module"],a["active_module"]),( "PET","PET"))
-  self.assertEqual(q["current_frontier"]["year"],2020)
-  self.assertEqual(n["research_gate"],"NOT_YEAR_AUDITED")
+  self.assertGreaterEqual(q["current_frontier"]["year"],2020)
+  self.assertIn(n["research_gate"],{"NOT_YEAR_AUDITED","SOURCE_BOUNDED_REVIEWED"})  # PET120 may review 2020
   self.assertGreaterEqual(int(q["current_frontier"]["next"].split(":")[0][3:]),119) # forward-only later PET numbers remain admissible
-  self.assertEqual(q["current_frontier"]["latest_source_bounded_annual_review"],a["id"])
+  self.assertIn(a["id"],[z["id"] for z in q["root_source_census_receipts"]])  # historical annual remains present
   self.assertTrue(a["source_bounded_only"] and a["year_source_bounded_closed"] and a["year_reopenable"])
   self.assertFalse(a["historically_complete"])
   self.assertFalse(y["historically_complete"])
@@ -60,7 +60,7 @@ class Pet118Year2019Annual(unittest.TestCase):
   y=next(x for x in q["yearly_work_queue"] if x["year"]==2019)
   self.assertEqual([x["id"] for x in y["partial_source_review_receipts"]][-3:],[*a["prior_partial_receipts"],a["id"]])
   self.assertEqual(y["source_bounded_review_receipt"],str(P.relative_to(ROOT)))
-  self.assertEqual(q["root_source_census_receipts"][-1]["id"],a["id"])
+  self.assertIn(a["id"],[z["id"] for z in q["root_source_census_receipts"]])  # source receipts append forward-only
  def test_original_client_zero_only_new_evidence_and_current_immutable(self):
   a,q=self.a,self.q
   for k in ("new_2019_original_pc_client_bytes","new_2019_original_pc_patch_bytes","new_2019_native_pet_ids",
