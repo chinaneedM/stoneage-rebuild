@@ -1,0 +1,23 @@
+name: PET123 2023 six-region original-PC source-bounded pet audit
+on:
+  push:
+    paths:
+      - "research/recovered/STONEAGE-PET123-YEAR2023-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json"
+      - "research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json"
+      - "docs/continuity/STONEAGE-PET123-YEAR2023-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119.md"
+      - "docs/STONEAGE-PET-CHRONOLOGICAL-RESTORATION-ORDER-R1.md"
+      - "tests/test_stoneage_pet123_year2023_six_region_pc_bounded_audit.py"
+      - ".github/workflows/validate-stoneage-pet123-year2023-pc.yml"
+  pull_request:
+    paths:
+      - "research/recovered/STONEAGE-PET123-YEAR2023-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json"
+      - "research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json"
+      - "tests/test_stoneage_pet123_year2023_six_region_pc_bounded_audit.py"
+      - ".github/workflows/validate-stoneage-pet123-year2023-pc.yml"
+jobs:
+  source-bounded-2023:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check pet source boundaries, chronology and exact historical blob
+        run: python -m unittest discover -s tests -p 'test_stoneage_pet123_year2023_six_region_pc_bounded_audit.py' -v
