@@ -305,9 +305,9 @@
     }
   ],
   "counts": {
-    "prior_PET25_documentary_events": 24,
+    "prior_PET25_documentary_events": 5,
     "new_japan_release_events": 4,
-    "combined_release_events_not_species": 28,
+    "combined_release_events_not_species": 9,
     "named_pet_release_events": 3,
     "unnamed_2006_release_event_pets": 2,
     "evolution_base_names_not_new_species": 4,
@@ -323,5 +323,12 @@
   "stage_A": "7_PARTIAL_2_OPEN",
   "stage_B": "GATED",
   "r79": "PAUSED_NON_BLOCKING",
-  "completion_percent": null
+  "completion_percent": null,
+  "pc_only_scope_supersession": {
+    "effective_date": "2026-11-19",
+    "protocol_section": 26,
+    "classic_pc_events_only": true,
+    "prior_pet25_pc_events": 5,
+    "new_japan_pc_events": 4
+  }
 }
