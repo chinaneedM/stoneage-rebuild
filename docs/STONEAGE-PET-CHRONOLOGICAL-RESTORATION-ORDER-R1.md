@@ -467,3 +467,7 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## 2026-11-19 — PET123 2023 source-bounded classic-PC six-region review, 2024 cursor
 
 [PET123](continuity/STONEAGE-PET123-YEAR2023-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119.md)／[machine receipt](../research/recovered/STONEAGE-PET123-YEAR2023-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json)保留2023台服玩家兔年「里拉拉／伊甸兔子」候选与中秋／万圣「里拉拉之戒／克達達之戒」**道具非新增宠物**，没有同服原ID/SPR、运营方原生发放验证；2023大陆《新石器时代》3D手游与《石器时代：觉醒》双端产品独立，不回填旧经典PC。六地区2023原经典PC新增可认证安装包/补丁0B，年度宠物数及首发数保持null。**2023 SOURCE_BOUNDED_REVIEWED 仅来源有界，非历史完整；2024 NOT_YEAR_AUDITED，NEXT PET124**。PET单模块、合法免费原文件优先、禁收费卖盘、旧CURRENT原完整blob不写，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null。
+
+## 2026-11-19 — PET124 2024 annual official classic-PC source-bounded audit → 2025 PET125
+
+[PET124报告](continuity/STONEAGE-PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119.md)／[来源等级与六区重开收据](../research/recovered/STONEAGE-PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json)：2024台服龙年玩家攻略索引及中秋/万圣21选一奖池均非原官服PET ID/原生发奖，狼血清/任务道具≠新活宠；大陆《觉醒》同年04-02及04-25两次运营公告列21+9宠物名录位置，属于**授权新双端产品线**，不可倒填旧经典2D PC或当作历史全球30独立物种实装。六区本轮2024原PC客户端/补丁认证0B，原PET-ID/SPR/技能/发放0；世界/当年首发宠总数null。**2024 SOURCE_BOUNDED_REVIEWED、historically_complete=false，2025 NOT_YEAR_AUDITED、NEXT PET125。** 单PET模块、来源原字节优先/来源边界与重开条件不变，原CURRENT旧历史blob不写、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、进度UNKNOWN。
