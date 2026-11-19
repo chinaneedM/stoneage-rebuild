@@ -1,0 +1,223 @@
+{
+  "schema": "stoneage.pet123.year2023_six_region_classic_pc_source_bounded_audit.r1",
+  "id": "PET123-YEAR2023-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
+  "date": "2026-11-19",
+  "active_module": "PET",
+  "year": 2023,
+  "baseline": {
+    "main_head": "0b32d6921b9c03c81a26b20f724a45a16a2f6ba8",
+    "main_tree": "a079da3b53520f345e97b10f010db5957d4289e4",
+    "previous_pet122_pr": 537,
+    "current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_state_bytes": 2709173
+  },
+  "year_frontier_before": 2023,
+  "year_frontier_after": 2024,
+  "review_status": "SOURCE_BOUNDED_REVIEWED",
+  "historically_complete": false,
+  "source_bounded_only": true,
+  "year_reopenable": true,
+  "independent_region_reviews": 6,
+  "region_reviews": {
+    "CN": {
+      "region": "CN",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "official_2023_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "2023_TWO_LICENSED_NEW_TITLES_MOBILE_OR_DISTINCT_DUAL_CLIENT_NOT_CLASSIC_PC_PET_MASTER",
+      "reopen_trigger": "CN2023_AUTHORIZED_ORIGINAL_CLASSIC_PC_BUILD_PET_ID_SKILL_SPR_AND_LIVE_GRANTS"
+    },
+    "TW": {
+      "region": "TW",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "official_2023_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "2023_PLAYER_RABBIT_GUIDE_INDEX_AND_AUTUMN_RINGS_ITEMS_NOT_SOURCE_QUALIFIED_NATIVE_PETS",
+      "reopen_trigger": "TW2023_ORIGINAL_OPERATOR_NOTICE_REALM_LICENSE_CLASSIC_CLIENT_SHA_PET_MASTER_SKILL_AND_GRANTS"
+    },
+    "HK_MO": {
+      "region": "HK_MO",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "official_2023_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "OLD_REGION_LICENSE_NOT_PROOF_OF_2023_INDEPENDENT_OR_SHARED_CLASSIC_REALM",
+      "reopen_trigger": "HKMO2023_OPERATOR_LICENSE_OR_REALM_BRIDGE_ORIGINAL_PC_AND_NATIVE_PET_ISSUANCE"
+    },
+    "KR": {
+      "region": "KR",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "official_2023_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "PRIOR_OLDPC_END_AND_NEW_MOBILE_PRODUCTS_DO_NOT_PROVE_2023_CLASSIC_REOPEN",
+      "reopen_trigger": "KR2023_AUTHORIZED_CLASSIC_2D_PC_REOPEN_BUILD_NATIVE_PET_AND_REAL_GRANT"
+    },
+    "JP": {
+      "region": "JP",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "official_2023_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "PRIOR_DIGIPARK_PC_END_DOES_NOT_PROVE_2023_CLASSIC_REOPEN",
+      "reopen_trigger": "JP2023_AUTHORIZED_CLASSIC_2D_PC_RESTART_CLIENT_PET_MASTER_AND_LIVE_GRANT"
+    },
+    "OTHER": {
+      "region": "OTHER",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "official_2023_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "NO_2023_NAMED_COUNTRY_OPERATOR_ORIGINAL_CLASSIC_PC_SAME_BUILD_PET_BYTES_IN_THIS_REVIEW",
+      "reopen_trigger": "OTHER2023_NAMED_COUNTRY_OPERATOR_LICENSE_AND_ORIGINAL_PC_SAME_BUILD_PET_RELEASE"
+    }
+  },
+  "sources": [
+    {
+      "id": "TW2023-RABBIT-PLAYER-GUIDE-INDEX",
+      "region": "TW",
+      "product": "CLASSIC_2D_PC_PLAYER_CLAIM_DEPLOYMENT_UNVERIFIED",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=1571&snA=81683",
+      "source_year": 2023,
+      "grade": "CONTEMPORANEOUS_PLAYER_GUIDE_SEARCH_INDEX_ORIGINAL_403",
+      "candidate_pet_labels": [
+        "里拉拉",
+        "伊甸兔子（克克爾系列，玩家说法）"
+      ],
+      "candidate_item_labels": [
+        "拉斯基之戒"
+      ],
+      "actual_official_first_release_proved": false,
+      "classic_same_build_pet_id": null,
+      "negative": "PLAYER_GUIDE_NOT_OPERATOR_NOTICE_OR_NATIVE_ID; SAME_2023_EVENT_NOT_FIRST_RELEASE_PROOF; RINGS_NOT_PETS"
+    },
+    {
+      "id": "TW2023-MIDAUTUMN-HALLOWEEN-FORUM",
+      "region": "TW",
+      "product": "CLASSIC_2D_PC_PLAYER_CLAIM_DEPLOYMENT_UNVERIFIED",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=1571&snA=81724",
+      "source_year": 2023,
+      "grade": "CONTEMPORANEOUS_PLAYER_DISCUSSION_SEARCH_INDEX_ORIGINAL_403",
+      "npc_task_labels": [
+        "克達達",
+        "里拉拉"
+      ],
+      "candidate_item_labels": [
+        "大久野島的紅蘿蔔",
+        "糖果"
+      ],
+      "negative": "NPC_OR_TASK_OBJECT_NOT_PROVEN_COLLECTIBLE_PET_OR_OPERATOR_NATIVE_RELEASE"
+    },
+    {
+      "id": "TW2023-MIDAUTUMN-HALLOWEEN-GUIDE",
+      "region": "TW",
+      "product": "CLASSIC_2D_PC_PLAYER_CLAIM_DEPLOYMENT_UNVERIFIED",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=5263",
+      "source_year": 2023,
+      "grade": "CONTEMPORANEOUS_PLAYER_GUIDE_SEARCH_INDEX_ORIGINAL_403",
+      "event_reward_items": [
+        "克達達之戒",
+        "里拉拉之戒"
+      ],
+      "native_pet_reward_confirmed": false,
+      "negative": "TWO_RINGS_NOT_TWO_PET_SPECIES_OR_PET_GRANTS"
+    },
+    {
+      "id": "TW2023-MIDAUTUMN-HALLOWEEN-SAME-EVENT-RELAY",
+      "region": "TW",
+      "product": "CLASSIC_2D_PC_PLAYER_CLAIM_DEPLOYMENT_UNVERIFIED",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&lorder=2&parent=5256&sn=5262",
+      "source_year": 2023,
+      "grade": "SAME_EVENT_PLAYER_RELAY_NOT_INDEPENDENT_OPERATOR_NOTICE",
+      "not_independent_from": "TW2023-MIDAUTUMN-HALLOWEEN-GUIDE",
+      "negative": "FORWARDED_TEXT_CANNOT_BE_COUNTED_AS_ANOTHER_OFFICIAL_PRIMARY_SOURCE"
+    },
+    {
+      "id": "TW2024-RETROSPECT-EQUIPMENT-SEMANTIC-CONTROL",
+      "region": "TW",
+      "product": "CLASSIC_2D_PC_LATER_PLAYER_EQUIPMENT_GUIDE",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&lorder=1&parent=5354&sn=5353",
+      "source_year": 2024,
+      "grade": "LATER_PLAYER_EQUIPMENT_GUIDE_NOT_2023_ORIGINAL_CLIENT",
+      "candidate_item_labels": [
+        "克達達之戒"
+      ],
+      "negative": "LATER_GUIDE_SUPPORTS_ITEM_TYPE_NOT_BACKDATED_2023_NATIVE_STATS"
+    },
+    {
+      "id": "CN2023-JUN28-NEW_STONEAGE-MOBILE-OFFICIAL",
+      "region": "CN",
+      "product": "NEW_STONEAGE_3D_MOBILE_CN_2023",
+      "url": "https://www.taptap.cn/app/333440/strategy/collection/2",
+      "source_date": "2023-06-28",
+      "grade": "FIRST_PARTY_DISTINCT_MOBILE_PRODUCT_PUBLIC_TEST_AND_REWARD_PROMOTION",
+      "candidate_announced_reward_labels": [
+        "三星克洛尔"
+      ],
+      "actual_reward_grant_unverified": true,
+      "negative": "3D_MOBILE_LAUNCH_AND_PROMOTED_PET_NOT_CLASSIC_2D_PC_SAME_BUILD_RELEASE"
+    },
+    {
+      "id": "CN2023-OCT26-AWAKENING-DUAL-END-OFFICIAL",
+      "region": "CN",
+      "product": "STONEAGE_AWAKENING_DUAL_END_CN_2023",
+      "url": "https://www.taptap.cn/moment/466528469585494866",
+      "source_date": "2023-10-26",
+      "grade": "FIRST_PARTY_DISTINCT_PRODUCT_LAUNCH",
+      "platforms": [
+        "PC",
+        "MOBILE"
+      ],
+      "native_legacy_pc_pet_id_proved": false,
+      "negative": "DUAL_END_PC_PLAYABILITY_NOT_LEGACY_CLASSIC_2D_PC_NATIVE_BUILD_OR_PET_MASTER"
+    }
+  ],
+  "source_boundaries": {
+    "taiwan_rabbit_guide": "PLAYER_GUIDE_SEARCH_INDEX_403_NOT_OPERATOR_SOURCE_OR_NATIVE_PET_ID",
+    "taiwan_pet_vs_item": "RABBIT_CANDIDATE_SEPARATE_FROM_RINGS_EQUIPMENT_AND_NPC_LABELS",
+    "taiwan_event_duplicate": "SAME_AUTUMN_EVENT_RELAY_NOT_INDEPENDENT_ORIGINAL_OPERATOR_NOTICE",
+    "taiwan_realm_legal_authorization": "NOT_CONFIRMED_FROM_THIS_REVIEW",
+    "cn_new_stoneage": "2023_FIRSTPARTY_3D_MOBILE_SEPARATE_PRODUCT_LINE",
+    "cn_awakening": "2023_FIRSTPARTY_PC_MOBILE_DUAL_END_SEPARATE_FROM_LEGACY_CLASSIC_2D_PC",
+    "client_first": "NO_DIRECT_FREE_OR_ALREADY_ACCESSIBLE_AUTHENTICATED_2023_CLASSIC_PC_BYTE_SOURCE_OBTAINED_THIS_UNIT"
+  },
+  "new_original_pc_client_bytes": 0,
+  "new_original_pc_patch_bytes": 0,
+  "new_native_pet_id_rows": 0,
+  "new_original_pc_spr_frames": 0,
+  "new_native_skill_functions": 0,
+  "new_original_server_pet_grants": 0,
+  "original_pc_global_2023_species_count": null,
+  "original_pc_2023_first_release_species_count": null,
+  "negative_controls": {
+    "no_paid_marketplace": true,
+    "no_private_server_as_official": true,
+    "no_unsupported_original_client_byte_claim": true,
+    "no_search_index_as_original_operator_html": true,
+    "no_player_guide_as_native_master": true,
+    "no_rabbit_guide_as_first_global_release": true,
+    "no_ring_npc_or_token_as_pet": true,
+    "no_relay_as_independent_primary_source": true,
+    "no_later_equipment_guide_as_2023_server_stats": true,
+    "no_2023_authorization_inferred_from_2022_realm": true,
+    "no_new_stoneage_mobile_as_old_pc": true,
+    "no_awakening_pc_platform_as_old_pc": true,
+    "no_missing_files_as_zero_species": true,
+    "no_proprietary_assets_in_git": true,
+    "current_state_original_blob_unchanged": true
+  },
+  "report": "docs/continuity/STONEAGE-PET123-YEAR2023-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119.md",
+  "next": "PET124_2024_SIX_REGION_CLASSIC_PC_SOURCE_FIRST_AND_NEW_PRODUCT_LINES_SEPARATE",
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}
