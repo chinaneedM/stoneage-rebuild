@@ -83,6 +83,10 @@ class Pet123Year2023SourceBoundedAudit(unittest.TestCase):
         self.assertEqual(dual["product"], "STONEAGE_AWAKENING_DUAL_END_CN_2023")
         self.assertIn("PC", dual["platforms"])
         self.assertFalse(dual["native_legacy_pc_pet_id_proved"])
+        operator_lead = s["TW2023-SEP27-OPERATOR-LINK-CITED-UNREADABLE"]
+        self.assertTrue(operator_lead["claimed_original_operator_url"].endswith("id=1849"))
+        self.assertFalse(operator_lead["original_html_actually_obtained"])
+        self.assertFalse(operator_lead["original_patch_actually_obtained"])
         self.assertIn("2023", REPORT.read_text(encoding="utf-8"))
         self.assertIn("PET123", (ROOT / "README.md").read_text(encoding="utf-8"))
         self.assertIn("PET123", (ROOT / "docs/STONEAGE-PET-CHRONOLOGICAL-RESTORATION-ORDER-R1.md").read_text(encoding="utf-8"))
