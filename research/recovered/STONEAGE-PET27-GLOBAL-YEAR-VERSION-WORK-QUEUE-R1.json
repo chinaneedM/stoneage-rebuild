@@ -19,8 +19,8 @@
     "phase": "YEAR_2025_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
     "latest_partial_root_review": "PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
-    "next": "PET125: 2025 official classic 2D PC only, by CN/TW/HK_MO/KR/JP/OTHER and exact original client/PET master/official pet issuance; exclude all mobile and mobile-first dual-end titles",
-    "current_source_acquisition_priority": "AUTHENTICATED_OFFICIAL_CLASSIC_PC_CLIENT_BYTES_FIRST_NO_PAID_SELLERS_NO_MOBILE",
+    "next": "PET125: 2025 original official classic 2D PC only, authentic original PC bytes and operator live PET issuance, six-region source-bounded; no unrelated product lines",
+    "current_source_acquisition_priority": "DIRECT_AUTHENTICATED_OFFICIAL_CLASSIC_PC_FILES_OR_PRIOR_VERIFIED_PC_FILES_NO_PAID",
     "latest_source_bounded_annual_review": "PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
     "latest_2016_partial_source_receipt": "PET109-TW2016-PLAYER-PET-REWARD-AND-HALLOWEEN-CROSSYEAR-20261118",
     "latest_2017_partial_source_receipt": "PET112-TW2017-AUG-BLUE-TIGER-REOPENED-PROMO-20261118",
@@ -3743,7 +3743,7 @@
         }
       ],
       "source_bounded_partial_review_notes_forward_only": [
-        "PET123: 2023 Taiwan player rabbit guide names 里拉拉 and Eden 克克爾-family rabbit as candidate, not same-build PET ID or first official 2023 debut. 2023 autumn and Halloween player guides identify 克達達之戒/里拉拉之戒 as equipment rewards, not new pets. CN New StoneAge June 28 3D mobile and Awakening Oct 26 PC/mobile cross-platform are distinct licensed product lines, not legacy classic 2D PC native builds. Six-region authenticated 2023 original PC client, native PET master/SPR/skill/grants new verification 0; species totals null. SOURCE_BOUNDED_REVIEWED only, historically_complete=false, year reopenable; 2024 PET124 next."
+        "PC-only correction 2026-11-19: year 2023 remains SOURCE_BOUNDED_REVIEWED and reopenable for official classic 2D PC. No authenticated same-deployment PET master/client/SPR/skill/grant bytes in this specific work unit; native species totals null. PET source eligibility excludes mobile and mobile/PC hybrid products. Source receipt PET123-YEAR2023-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119."
       ],
       "region_source_reviews": {
         "CN": {
@@ -3753,8 +3753,8 @@
           "pet_population": null,
           "official_2023_first_release_species_count": null,
           "native_pet_id_rows_verified": 0,
-          "source_boundary": "2023_TWO_LICENSED_NEW_TITLES_MOBILE_OR_DISTINCT_DUAL_CLIENT_NOT_CLASSIC_PC_PET_MASTER",
-          "reopen_trigger": "CN2023_AUTHORIZED_ORIGINAL_CLASSIC_PC_BUILD_PET_ID_SKILL_SPR_AND_LIVE_GRANTS"
+          "source_boundary": "2023_NO_AUTHENTICATED_CLASSIC_2D_PC_OPERATOR_RELEASE_NATIVE_CLIENT_OR_IN_GAME_PET_ISSUANCE_FOUND_THIS_REVIEW",
+          "reopen_trigger": "CN2023_AUTHORIZED_CLASSIC_PC_OPERATOR_CLIENT_SHA_NATIVE_PET_IDS_SPR_SKILLS_GRANTS"
         },
         "TW": {
           "region": "TW",
@@ -3810,7 +3810,7 @@
         }
       },
       "residual_reopen_triggers": [
-        "CN2023_AUTHORIZED_ORIGINAL_CLASSIC_PC_BUILD_PET_ID_SKILL_SPR_AND_LIVE_GRANTS",
+        "CN2023_AUTHORIZED_CLASSIC_PC_OPERATOR_CLIENT_SHA_NATIVE_PET_IDS_SPR_SKILLS_GRANTS",
         "TW2023_ORIGINAL_OPERATOR_NOTICE_REALM_LICENSE_CLASSIC_CLIENT_SHA_PET_MASTER_SKILL_AND_GRANTS",
         "HKMO2023_OPERATOR_LICENSE_OR_REALM_BRIDGE_ORIGINAL_PC_AND_NATIVE_PET_ISSUANCE",
         "KR2023_AUTHORIZED_CLASSIC_2D_PC_REOPEN_BUILD_NATIVE_PET_AND_REAL_GRANT",
@@ -3861,7 +3861,7 @@
         }
       ],
       "source_bounded_partial_review_notes_forward_only": [
-        "PET124: TW 2024 dragon new-year and autumn/Halloween guides available as search index, operator original page/2024 PET same-build master not retrieved; player autumn 21-prize pool is not 21 newly first-released pet species, wolf serum/items are not live pets. CN first-party distinct StoneAge Awakening 2024 Apr2 21 named pet update positions and Apr25 9 named positions, 30 positions only within 2023-onward Awakening dual-end product; not legacy classic 2D PC native pet ID, award logs or global first release count. Six-region 2024 original PC authenticated client, native PET master, SPR/skill/grants new verification 0, totals null. 2024 SOURCE_BOUNDED_REVIEWED historically_complete=false; 2025 PET125 next."
+        "PC-only correction 2026-11-19: year 2024 remains SOURCE_BOUNDED_REVIEWED and reopenable for official classic 2D PC. No authenticated same-deployment PET master/client/SPR/skill/grant bytes in this specific work unit; native species totals null. PET source eligibility excludes mobile and mobile/PC hybrid products. Source receipt PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119."
       ],
       "region_source_reviews": {
         "CN": {
@@ -3872,8 +3872,8 @@
           "pet_population": null,
           "official_2024_first_release_species_count": null,
           "native_pet_id_rows_verified": 0,
-          "source_boundary": "2024_FIRSTPARTY_AWAKENING_21_PLUS_9_NAMED_UPDATE_POSITIONS_ARE_DISTINCT_2023_DUAL_END_PRODUCT_NOT_LEGACY_CLASSIC_PC",
-          "reopen_trigger": "CN2024_AUTHORIZED_ORIGINAL_CLASSIC_2D_PC_DEPLOYMENT_CLIENT_SHA_PET_MASTER_SPR_SKILLS_GRANTS"
+          "source_boundary": "NO_AUTHENTICATED_2024_ORIGINAL_CLASSIC_2D_PC_OPERATOR_CLIENT_OR_NATIVE_PET_MASTER_ACQUIRED",
+          "reopen_trigger": "CN2024_AUTHORIZED_CLASSIC_2D_PC_OPERATOR_PATCH_SHA_SAME_DEPLOYMENT_PET_MASTER_SPR_SKILLS_GRANTS"
         },
         "TW": {
           "region": "TW",
@@ -3934,7 +3934,7 @@
         }
       },
       "residual_reopen_triggers": [
-        "CN2024_AUTHORIZED_ORIGINAL_CLASSIC_2D_PC_DEPLOYMENT_CLIENT_SHA_PET_MASTER_SPR_SKILLS_GRANTS",
+        "CN2024_AUTHORIZED_CLASSIC_2D_PC_OPERATOR_PATCH_SHA_SAME_DEPLOYMENT_PET_MASTER_SPR_SKILLS_GRANTS",
         "TW2024_ORIGINAL_OPERATOR_NOTICE_REALM_LICENSE_CLIENT_PATCH_SHA_NATIVE_PET_POOL_ID_SPR_SKILLS_GRANT",
         "HKMO2024_LICENSE_AND_SAME_REALM_CLIENT_PET_MASTER_OR_NATIVE_ISSUE",
         "KR2024_AUTHORIZED_CLASSIC_2D_PC_REOPEN_PATCH_PET_ID_AND_ACTUAL_GRANT",
@@ -5782,7 +5782,8 @@
       "year_reopenable": true,
       "new_original_2023_client_bytes": 0,
       "new_native_pet_ids": 0,
-      "global_2023_species_count": null
+      "global_2023_species_count": null,
+      "pc_only_source_filter_applied_20261119": true
     },
     {
       "id": "PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
@@ -5806,7 +5807,8 @@
       "year_reopenable": true,
       "new_original_2024_client_bytes": 0,
       "new_native_pet_ids": 0,
-      "global_2024_species_count": null
+      "global_2024_species_count": null,
+      "pc_only_source_filter_applied_20261119": true
     }
   ],
   "client_first_methodology": {
@@ -5843,6 +5845,7 @@
     "effective_date": "2026-11-19",
     "protocol_section": 26,
     "excluded_mobile_release_event_count": 19,
-    "active_original_pc_release_event_count": 9
+    "active_original_pc_release_event_count": 9,
+    "mixed_2023_and_2024_source_receipts_revised_pc_only": true
   }
 }
