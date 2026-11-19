@@ -254,3 +254,8 @@ PET仍独占活动模块，2001年份继续OPEN。优先真实**能合法免费�
 ## 2026-11-18｜PET116–117：2019 宠物史料入库，年度仍 OPEN
 
 本轮[PET116](continuity/STONEAGE-PET116-TW2019-SUMMER-MIDAUTUMN-PLAYER-EVIDENCE-20261118.md)与[PET117](continuity/STONEAGE-PET117-YEAR2019-SIX-REGION-ORIGINAL-PC-FIRST-PASS-20261118.md)只在当前唯一的 PET 模块新增：台湾2019暑假/中秋同期玩家宠物、2019/01/29台湾春节运营口吻玩家转录的「乌力王／黑乌力王／猪年」奖袋及当年玩家练级领宠证词；CN/TW/HK_MO/KR/JP/OTHER六地原版PC缺同部署客户端/技能/发奖原证分级；2019年Netmarble手机《石器时代M》明确分离。玩家转录不等原官文，奖品物品≠活宠，年内有奖≠全球首次推出。PET27机读年游标仍2019 `NOT_YEAR_AUDITED`，最高 **NEXT PET118 完成2019年源有界正式年审**，不得无审跳2020，也不得换NPC。旧大CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c` 完整不写，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体百分比UNKNOWN，版权/无收费卖盘边界不变。
+
+
+## 2026-11-19｜PET118：2019六地区经典PC来源有界年审完成，继续2020 PET119
+
+按照[PET118年审](continuity/STONEAGE-PET118-YEAR2019-SIX-REGION-CLASSIC-PC-SOURCE-BOUNDED-AUDIT-20261119.md)及[机器来源矩阵](../research/recovered/STONEAGE-PET118-YEAR2019-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json)，台湾2019春节乌力王／黑乌力王／猪年奖励转引、夏季海龙肥龙任务及中秋虎人玩家资料已按同源/道具/变体/真实原服限制保留。大陆、港澳、韩国、日本、其他各区2019仍缺同版正式 PC 原安装包/补丁及原始发宠资料，分区可前向重开；Netmarble 2019手游《石器時代M》另建产品线。**2019仅SOURCE_BOUNDED_REVIEWED，不是物种完整，年游标进入2020，最高NEXT PET119继续2020年度PC原客户端优先与独立手游区别。**PET仍是唯一活动模块；原CURRENT Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`完全不变；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING、总体百分比UNKNOWN；不购买/研究卖盘，不公布原商业客户端和原图。
