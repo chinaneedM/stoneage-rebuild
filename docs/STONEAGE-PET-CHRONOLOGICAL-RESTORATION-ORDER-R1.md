@@ -441,3 +441,8 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 [PET117六地区2019首轮报告](continuity/STONEAGE-PET117-YEAR2019-SIX-REGION-ORIGINAL-PC-FIRST-PASS-20261118.md)／[PET117机器分区与来源审查](../research/recovered/STONEAGE-PET117-YEAR2019-SIX-REGION-PC-INITIAL-PET-SOURCE-REVIEW-R1.json)：新增**2019/01/29当期台湾玩家转贴陶朱运营口吻春节通知**（活动1/30—2/20；「猪年宠物袋」随机「乌力王、黑乌力王、猪年」，血清是道具；强化「变身」「冲锋」「乌力化改／黑乌力化改」）；同帖玩家1/31及后续述140级小猪交付、风猪年/黑乌力王与强化技能的**个人操作见证**，并非原官HTML/原奖励数据库。乌力王此前就有任务见证，不将2019再获取记作该种首发。CN2016旧PC停服、HK/MO历史授权、KR2015/JP2010旧PC结束与OTHER缺原件均按2019各地区重开；2019手游《石器时代M》Netmarble官口1/23雷科斯系、巨龟系、四星乌力/巧克洛儿/咕鲁玛鲁预告**完全独立于经典2D PC**。
 
 新认证2019经典PC原客户端、补丁、原生PET ID/SPR/技能/发宠日志**本批皆0**；全球宠种及2019首次发种数 **UNKNOWN/null**。2019仍 `NOT_YEAR_AUDITED`，不可提前跳2020；NEXT **PET118 2019 六地区全年来源有界年审**。PET单模块锁、不可付费卖盘/私服冒充、原CURRENT大blob `c89e0e33537990aa2132b47c40fef49a985a935c`、Stage A7PARTIAL+2OPEN/B-wiki GATED/R79暂停、总体完成率UNKNOWN保持不变。
+
+
+## PET118 2026-11-19｜2019六地区经典 PC 宠物来源有界年审 → 2020
+
+[PET118原PC年审](continuity/STONEAGE-PET118-YEAR2019-SIX-REGION-CLASSIC-PC-SOURCE-BOUNDED-AUDIT-20261119.md)／[机读审查](../research/recovered/STONEAGE-PET118-YEAR2019-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json)：在已合并的PET116夏季/中秋玩家资料、PET117 1/29台湾春节「豬年寵物袋」（乌力王/黑乌力王/猪年）同期运营口吻转录及玩家领宠见证基础上，逐一区分 CN/TW/HK_MO/KR/JP/OTHER 的旧 PC 运营、原字节和真实实发缺口；巴哈精华版同稿不当第二份独立官文，旧「乌力王」在2019年的活动不能说首次发行。2019/1/23 Netmarble《石器時代M》雷科斯／巨龜／4星烏力等手游官方口吻宣传独立建线，不回灌原2D PC。CN 2016已停的原服和2016—18 IP许可、HK/MO历史授权、KR/JP早期旧服终止均不代表2019独立运营或当年宠物数零；各区独立原客户端/SHA、原SPR/技能、实服发宠重开门保留。本批2019新认证原PC安装/补丁0B、PET ID/原SPR/原技能/原发奖全0；2019全球及首次物种数null。**2019仅 `SOURCE_BOUNDED_REVIEWED` 且 `historically_complete=false`，2020 `NOT_YEAR_AUDITED`，唯一NEXT PET119 继续2020原 PC 与独立韩服手游《StoneAge World》分线。**PET独占、禁付费市场卖盘/私服充官方、CURRENT原blob `c89e0e33537990aa2132b47c40fef49a985a935c` 保护，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体UNKNOWN。
