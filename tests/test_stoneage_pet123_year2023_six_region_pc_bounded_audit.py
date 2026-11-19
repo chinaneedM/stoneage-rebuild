@@ -78,11 +78,9 @@ class Pet123Year2023SourceBoundedAudit(unittest.TestCase):
         self.assertFalse(rings["native_pet_reward_confirmed"])
         duplicate = s["TW2023-MIDAUTUMN-HALLOWEEN-SAME-EVENT-RELAY"]
         self.assertEqual(duplicate["not_independent_from"], rings["id"])
-        self.assertEqual(s["CN2023-JUN28-NEW_STONEAGE-MOBILE-OFFICIAL"]["product"], "NEW_STONEAGE_3D_MOBILE_CN_2023")
-        dual = s["CN2023-OCT26-AWAKENING-DUAL-END-OFFICIAL"]
-        self.assertEqual(dual["product"], "STONEAGE_AWAKENING_DUAL_END_CN_2023")
-        self.assertIn("PC", dual["platforms"])
-        self.assertFalse(dual["native_legacy_pc_pet_id_proved"])
+        self.assertTrue(all("MOBILE" not in (r.get("product") or "") for r in s.values()))
+        self.assertTrue(all("AWAKENING" not in (r.get("product") or "") for r in s.values()))
+        self.assertEqual(len(s), 6)
         operator_lead = s["TW2023-SEP27-OPERATOR-LINK-CITED-UNREADABLE"]
         self.assertTrue(operator_lead["claimed_original_operator_url"].endswith("id=1849"))
         self.assertFalse(operator_lead["original_html_actually_obtained"])
