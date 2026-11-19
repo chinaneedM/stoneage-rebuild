@@ -1,7 +1,5 @@
 # stoneage-rebuild
 
-**2026-11-19 当前最高范围：只研究官方 PC 端《石器时代》，手游及手机服务双端新作已从现行官方宠物目录和年度发行事件表移除。** [协议§26](docs/PROJECT-CONTINUITY-PROTOCOL-R1.md)／[PC-only 收录标准](docs/STONEAGE-PET-OFFICIAL-GLOBAL-INCLUSION-R1.md)。老日志涉及的非PC资料不再是有效任务及统计来源。
-
 A long-term research and development project to reconstruct the origins, evolution, and core experience of **StoneAge / 石器时代**, then rebuild it as a modern single-player 2D turn-based RPG.
 
 ## Project intent
@@ -3063,3 +3061,5 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 
 ## 2026-11-19｜PC-only PET124 2024 六区官方PC年审 → 2025 PET125
  [2024六区PC年审](docs/continuity/STONEAGE-PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119.md)／[机读PC证据](research/recovered/STONEAGE-PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json)：台湾2024年龙年与中秋/万圣玩家证据仍缺同版原生身份；「21种随机一只」为玩家奖池而非21种2024新宠，狼血清及任务道具不计物种；CN/TW/HK_MO/KR/JP/OTHER认证2024原PC构建及发宠资料增量0。2024=`SOURCE_BOUNDED_REVIEWED`且`historically_complete=false`，全球与首发宠物数null；**2025=`NOT_YEAR_AUDITED`，唯一NEXT PET125，只查原版官方PC**。PET唯一模块，原CURRENT Git blob c89e0e33537990aa2132b47c40fef49a985a935c不动，Stage A7PARTIAL+2OPEN，Stage B/wiki GATED，R79暂停，百分比UNKNOWN。
+
+**2026-11-19 当前最高范围：只研究官方 PC 端《石器时代》，手游及手机服务双端新作已从现行官方宠物目录和年度发行事件表移除。** [协议§26](docs/PROJECT-CONTINUITY-PROTOCOL-R1.md)／[PC-only 收录标准](docs/STONEAGE-PET-OFFICIAL-GLOBAL-INCLUSION-R1.md)。老日志涉及的非PC资料不再是有效任务及统计来源。
