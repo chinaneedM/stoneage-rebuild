@@ -1,0 +1,27 @@
+name: PET124 2024 six-region classic-PC bounded pet evidence
+on:
+  push:
+    paths:
+      - "research/recovered/STONEAGE-PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json"
+      - "research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json"
+      - "docs/continuity/STONEAGE-PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119.md"
+      - "docs/STONEAGE-PET-CHRONOLOGICAL-RESTORATION-ORDER-R1.md"
+      - "tests/test_stoneage_pet124_year2024_six_region_pc_bounded_audit.py"
+      - "tests/test_stoneage_pet123_year2023_six_region_pc_bounded_audit.py"
+      - ".github/workflows/validate-stoneage-pet124-year2024-pc.yml"
+  pull_request:
+    paths:
+      - "research/recovered/STONEAGE-PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json"
+      - "research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json"
+      - "tests/test_stoneage_pet124_year2024_six_region_pc_bounded_audit.py"
+      - "tests/test_stoneage_pet123_year2023_six_region_pc_bounded_audit.py"
+      - ".github/workflows/validate-stoneage-pet124-year2024-pc.yml"
+jobs:
+  source-bounded-2024:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify 2024 original PC limits and 2023 historical continuity
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pet124_year2024_six_region_pc_bounded_audit.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet123_year2023_six_region_pc_bounded_audit.py' -v
