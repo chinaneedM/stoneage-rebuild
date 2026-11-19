@@ -22,7 +22,8 @@ class Pet112Tw2017AugustBlueTiger(unittest.TestCase):
         y=next(z for z in q["yearly_work_queue"] if z["year"]==2017)
         self.assertEqual((a["year"],a["region"],a["active_module"]),(2017,"TW","PET"))
         self.assertEqual(a["parent_pet111"],p["id"])
-        self.assertEqual((q["current_frontier"]["year"],y["research_gate"]),(2020,"SOURCE_BOUNDED_REVIEWED"))  # PET113 forward-only year audit
+        self.assertGreaterEqual(q["current_frontier"]["year"],2020)  # permit subsequent official yearly reviews
+        self.assertEqual(y["research_gate"],"SOURCE_BOUNDED_REVIEWED")  # keep 2017 review immutable
         self.assertEqual(q["current_frontier"]["latest_2017_partial_source_receipt"],a["id"])
         self.assertGreaterEqual(int(q["current_frontier"]["next"].split(":")[0][3:]),113) # forward-only later PET numbers remain admissible
         self.assertEqual([z["id"] for z in y["partial_source_review_receipts"]][:2],[p["id"],a["id"]])
