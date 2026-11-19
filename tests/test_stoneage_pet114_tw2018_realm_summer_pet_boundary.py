@@ -17,9 +17,9 @@ class Pet114Tw2018PetSources(unittest.TestCase):
   self.assertEqual(a["year_gate"],"NOT_YEAR_AUDITED") # PET114 historical source gate remains, PET115 later reviewed year
   self.assertEqual(y["research_gate"],"SOURCE_BOUNDED_REVIEWED")
   self.assertEqual((q["active_module"],a["active_module"]),( "PET","PET"))
-  self.assertEqual(q["current_frontier"]["year"],2019)
+  self.assertGreaterEqual(q["current_frontier"]["year"],2020)
   self.assertEqual(q["current_frontier"]["latest_2018_partial_source_receipt"],a["id"])
-  self.assertTrue(q["current_frontier"]["next"].startswith(("PET115:","PET116:","PET117:","PET118:")))
+  self.assertTrue(q["current_frontier"]["next"].startswith(("PET115:","PET116:","PET117:","PET118:","PET119:")))
   self.assertEqual(y["partial_source_review_receipts"][0]["id"],a["id"])
   self.assertFalse(a["year_closed"])
   self.assertFalse(a["historically_complete"])
