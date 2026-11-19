@@ -26,7 +26,7 @@ class Pet121Year2021BoundedAudit(unittest.TestCase):
         self.assertIn(n["research_gate"], {"NOT_YEAR_AUDITED", "SOURCE_BOUNDED_REVIEWED"})
         self.assertGreaterEqual(q["current_frontier"]["year"], 2022)
         self.assertGreaterEqual(int(q["current_frontier"]["next"].split(":")[0][3:]), 122)
-        self.assertEqual(a["active_module"], q["active_module"] == "PET" and "PET")
+        self.assertEqual((a["active_module"], q["active_module"]), ("PET", "PET"))
         self.assertTrue(a["year_reopenable"])
         self.assertFalse(a["historically_complete"])
         self.assertFalse(y["historically_complete"])
@@ -68,7 +68,7 @@ class Pet121Year2021BoundedAudit(unittest.TestCase):
         autumn = s["TW2021-MIDAUTUMN-PLAYER-G2"]
         self.assertIn("布爾摩", spring["candidate_enemy_labels"])
         self.assertIn("牛年挑戰券", spring["candidate_item_labels"])
-        self.assertIn("DEC25", a["source_boundaries"]["tw_player_guides"])
+        self.assertIn("12_25", a["source_boundaries"]["tw_player_guides"])
         self.assertEqual(autumn["reward_kind"], "REWARD_OBJECT_KIND_UNVERIFIED")
         self.assertIn("牛人布偶", autumn["candidate_reward_labels"])
         self.assertIn("UNVERIFIED", a["source_boundaries"]["tw_legal_authorisation"])
@@ -83,7 +83,7 @@ class Pet121Year2021BoundedAudit(unittest.TestCase):
         a, q = self.a, self.q
         raw = (ROOT / "docs/CURRENT-STATE.md").read_bytes()
         self.assertEqual(len(raw), a["baseline"]["current_state_bytes"])
-        sha = hashlib.sha1(b"blob " + str(len(raw)).encode("ascii") + b"\\x00" + raw).hexdigest()
+        sha = hashlib.sha1(b"blob " + str(len(raw)).encode("ascii") + b"\x00" + raw).hexdigest()
         self.assertEqual(sha, a["baseline"]["current_state_blob"])
         self.assertEqual((a["stage_A"], a["stage_B_wiki"], a["r79"], a["overall_percent"]),
                          (q["stage_A"], q["stage_B_wiki"], q["r79"], q["overall_game_completion_percent"]))
