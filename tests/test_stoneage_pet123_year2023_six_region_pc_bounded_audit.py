@@ -37,7 +37,7 @@ class Pet123Year2023SourceBoundedAudit(unittest.TestCase):
         self.assertEqual(y["source_bounded_review_receipt"], str(AUDIT.relative_to(ROOT)))
         self.assertEqual(y["source_bounded_review_report"], str(REPORT.relative_to(ROOT)))
         self.assertEqual(y["partial_source_review_receipts"][0]["id"], a["id"])
-        self.assertIn(a["id"], [x["id"] for x in q["root_source_census_receipts"]]
+        self.assertIn(a["id"], [x["id"] for x in q["root_source_census_receipts"]])
         for year in range(1999, 2023):
             earlier = next(x for x in q["yearly_work_queue"] if x["year"] == year)
             self.assertNotEqual(earlier["research_gate"], "NOT_YEAR_AUDITED")
