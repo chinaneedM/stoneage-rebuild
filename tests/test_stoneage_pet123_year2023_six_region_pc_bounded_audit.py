@@ -90,7 +90,7 @@ class Pet123Year2023SourceBoundedAudit(unittest.TestCase):
     def test_original_current_blob_is_preserved_and_stage_gates_unchanged(self):
         raw = (ROOT / "docs/CURRENT-STATE.md").read_bytes()
         self.assertEqual(len(raw), self.a["baseline"]["current_state_bytes"])
-        got = hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\\x00" + raw).hexdigest()
+        got = hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\x00" + raw).hexdigest()
         self.assertEqual(got, self.a["baseline"]["current_state_blob"])
         self.assertEqual((self.a["stage_A"], self.a["stage_B_wiki"], self.a["r79"], self.a["overall_percent"]),
                          (self.q["stage_A"], self.q["stage_B_wiki"], self.q["r79"], self.q["overall_game_completion_percent"]))
