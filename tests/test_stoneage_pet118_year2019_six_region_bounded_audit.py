@@ -20,7 +20,7 @@ class Pet118Year2019Annual(unittest.TestCase):
   self.assertEqual((q["active_module"],a["active_module"]),( "PET","PET"))
   self.assertEqual(q["current_frontier"]["year"],2020)
   self.assertEqual(n["research_gate"],"NOT_YEAR_AUDITED")
-  self.assertTrue(q["current_frontier"]["next"].startswith("PET119:"))
+  self.assertGreaterEqual(int(q["current_frontier"]["next"].split(":")[0][3:]),119) # forward-only later PET numbers remain admissible
   self.assertEqual(q["current_frontier"]["latest_source_bounded_annual_review"],a["id"])
   self.assertTrue(a["source_bounded_only"] and a["year_source_bounded_closed"] and a["year_reopenable"])
   self.assertFalse(a["historically_complete"])

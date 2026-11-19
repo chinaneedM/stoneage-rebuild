@@ -259,3 +259,8 @@ PET仍独占活动模块，2001年份继续OPEN。优先真实**能合法免费�
 ## 2026-11-19｜PET118：2019六地区经典PC来源有界年审完成，继续2020 PET119
 
 按照[PET118年审](continuity/STONEAGE-PET118-YEAR2019-SIX-REGION-CLASSIC-PC-SOURCE-BOUNDED-AUDIT-20261119.md)及[机器来源矩阵](../research/recovered/STONEAGE-PET118-YEAR2019-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json)，台湾2019春节乌力王／黑乌力王／猪年奖励转引、夏季海龙肥龙任务及中秋虎人玩家资料已按同源/道具/变体/真实原服限制保留。大陆、港澳、韩国、日本、其他各区2019仍缺同版正式 PC 原安装包/补丁及原始发宠资料，分区可前向重开；Netmarble 2019手游《石器時代M》另建产品线。**2019仅SOURCE_BOUNDED_REVIEWED，不是物种完整，年游标进入2020，最高NEXT PET119继续2020年度PC原客户端优先与独立手游区别。**PET仍是唯一活动模块；原CURRENT Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`完全不变；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING、总体百分比UNKNOWN；不购买/研究卖盘，不公布原商业客户端和原图。
+
+
+## 2026-11-19｜PET119：2020台服鼠年任务及独立韩国手游官源；2020年度继续OPEN
+
+PET118 2019来源有界年审已合并，当前最早未审年份2020。新增[PET119可核证据](continuity/STONEAGE-PET119-TW2020-RAT-FESTIVAL-KR-WORLD-MOBILE-SOURCE-20261119.md)：台湾2020鼠年春节玩家转录及1/26任务玩家见证区分「鼠年、卡芙娜、卡蘿麗」奖宠候选、四村年兽、勾玉/宝箱/项圈/血清/兑换券物件；1/28坐标与2/3运营口吻改版须同服原件才能证明实际机制。韩国Netmarble一手2020年6/18手游《StoneAge World》上线、7/31新宠「푸곤／칼로」和8/12 Giiroo系/机械款亦单列授权手游来源，不给旧原版PC增加2019/2020新宠。**PET唯一活动模块，2020仍NOT_YEAR_AUDITED、NEXT PET120继续2020六地区原2D PC年度审核**；所有原生同版PET/SPR/技能及真实发放缺件 OPEN；原CURRENT `c89e0e33537990aa2132b47c40fef49a985a935c`不改，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体UNKNOWN，不查收费盘/卖家或公开原商业资产。
