@@ -1,7 +1,5 @@
 # 《石器时代》全球官方宠物：由远及近、按年份／地区／版本逐层复原（PET27）
 
-**2026-11-19 最新用户指令：仅官方原版 PC 端；禁将任何手游/共享手机服务的新作继续计入年度PC宠物事件或研究重点。** 以[连续性协议§26](PROJECT-CONTINUITY-PROTOCOL-R1.md)及PET27 PC-only表优先于此前所有跨产品历史说明。
-
 **生效：2026-11-15，当前唯一活动模块 PET。** 用户提出按最早年份、最早版本到近期逐层整理，而不是哪只宠物有资料就先跳过去；本工作令为连续性协议§21的操作入口，并覆盖之前PET25/PET26的跳跃式调查NEXT。
 
 ## 先固定顺序，不依赖用户回忆宠物
@@ -471,3 +469,5 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 
 ## 2026-11-19｜PC-only PET124 2024 六区官方PC年审 → 2025 PET125
  [2024六区PC年审](continuity/STONEAGE-PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119.md)／[机读PC证据](../research/recovered/STONEAGE-PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json)：台湾2024年龙年与中秋/万圣玩家证据仍缺同版原生身份；「21种随机一只」为玩家奖池而非21种2024新宠，狼血清及任务道具不计物种；CN/TW/HK_MO/KR/JP/OTHER认证2024原PC构建及发宠资料增量0。2024=`SOURCE_BOUNDED_REVIEWED`且`historically_complete=false`，全球与首发宠物数null；**2025=`NOT_YEAR_AUDITED`，唯一NEXT PET125，只查原版官方PC**。PET唯一模块，原CURRENT Git blob c89e0e33537990aa2132b47c40fef49a985a935c不动，Stage A7PARTIAL+2OPEN，Stage B/wiki GATED，R79暂停，百分比UNKNOWN。
+
+**2026-11-19 最新用户指令：仅官方原版 PC 端；禁将任何手游/共享手机服务的新作继续计入年度PC宠物事件或研究重点。** 以[连续性协议§26](PROJECT-CONTINUITY-PROTOCOL-R1.md)及PET27 PC-only表优先于此前所有跨产品历史说明。
