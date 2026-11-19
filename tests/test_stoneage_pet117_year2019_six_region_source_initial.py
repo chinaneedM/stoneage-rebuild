@@ -21,8 +21,8 @@ class Pet117Year2019SourceInitial(unittest.TestCase):
   old=next(v for v in q["yearly_work_queue"] if v["year"]==2018)
   self.assertEqual((a["year_frontier_before"],a["year_frontier_after"]),(2019,2019))
   self.assertEqual(a["review_status"],"NOT_YEAR_AUDITED")
-  self.assertEqual(y["research_gate"],"NOT_YEAR_AUDITED")
-  self.assertEqual(q["current_frontier"]["year"],2019)
+  self.assertEqual(y["research_gate"],"SOURCE_BOUNDED_REVIEWED") # PET118 later annual review
+  self.assertGreaterEqual(q["current_frontier"]["year"],2020)
   self.assertEqual(q["active_module"],"PET")
   self.assertEqual(old["research_gate"],"SOURCE_BOUNDED_REVIEWED")
   self.assertFalse(a["historically_complete"])
