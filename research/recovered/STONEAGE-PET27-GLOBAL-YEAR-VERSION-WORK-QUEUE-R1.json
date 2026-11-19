@@ -19,13 +19,14 @@
     "phase": "YEAR_2020_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
     "latest_partial_root_review": "PET118-YEAR2019-SIX-REGION-ORIGINAL-PC-PET-SOURCE-BOUNDED-ANNUAL-AUDIT-20261119",
-    "next": "PET119: 2020 six-region classic 2D PC official PET source audit, with Netmarble StoneAge World mobile in an independent product line; 2019 SOURCE_BOUNDED_REVIEWED only and historically incomplete",
+    "next": "PET120: independently review 2020 six-region classic PC original bytes and actual officially issued pets; keep the 2020 Netmarble StoneAge World mobile source namespace separate; 2020 remains NOT_YEAR_AUDITED",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE",
     "latest_source_bounded_annual_review": "PET118-YEAR2019-SIX-REGION-ORIGINAL-PC-PET-SOURCE-BOUNDED-ANNUAL-AUDIT-20261119",
     "latest_2016_partial_source_receipt": "PET109-TW2016-PLAYER-PET-REWARD-AND-HALLOWEEN-CROSSYEAR-20261118",
     "latest_2017_partial_source_receipt": "PET112-TW2017-AUG-BLUE-TIGER-REOPENED-PROMO-20261118",
     "latest_2018_partial_source_receipt": "PET114-TW2018-TWO-REALM-SUMMER-PET-MOBILE-BOUNDARY-20261118",
-    "latest_2019_partial_source_receipt": "PET117-YEAR2019-SIX-REGION-PC-PET-SOURCE-FIRST-PASS-20261118"
+    "latest_2019_partial_source_receipt": "PET117-YEAR2019-SIX-REGION-PC-PET-SOURCE-FIRST-PASS-20261118",
+    "latest_2020_partial_source_receipt": "PET119-TW2020-RAT-FESTIVAL-AND-KR-WORLD-MOBILE-SEPARATION-20261119"
   },
   "region_tracks": [
     "CN",
@@ -3554,7 +3555,27 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "partial_source_review_receipts": [
+        {
+          "id": "PET119-TW2020-RAT-FESTIVAL-AND-KR-WORLD-MOBILE-SEPARATION-20261119",
+          "date": "2026-11-19",
+          "receipt": "research/recovered/STONEAGE-PET119-TW2020-RAT-AND-KR-STONEAGE-WORLD-MOBILE-SOURCE-GRADES-R1.json",
+          "region_scope": [
+            "TW",
+            "KR_GLOBAL_MOBILE"
+          ],
+          "year_not_closed": true,
+          "tw_rat_year_operator_voice_relay": true,
+          "tw_2020_february_rule_revision_in_same_player_thread": true,
+          "kr_2020_world_mobile_firstparty_two_named_pets": true,
+          "new_2020_original_pc_client_bytes": 0,
+          "new_native_pet_ids": 0
+        }
+      ],
+      "source_bounded_partial_review_notes_forward_only": [
+        "PET119: Taiwan 2020-01-19 operator-voice rat-year relay and same-thread Jan/Feb updated rule: random 鼠年/卡芙娜/卡蘿麗 (two cats stop 2/19), four village rat-year labels, reward boxes and enhancement serum as items; 2/3 change challenge ticket re-use and coupon trade. Period player level120 maze quest account not native PET master. Korean Netmarble independent 2020 World mobile firstparty June18 launch, July31 named 푸곤/칼로, Aug12 Giiroo-family 6 and 메카기로 announcement; cannot inject into classic 2D PC population. Original classic PC 2020 client bytes/ID/SPR/skills/grants still 0 newly verified. Year remains NOT_YEAR_AUDITED and globally incomplete. Next PET120 full six-region PC year audit."
+      ]
     },
     {
       "year": 2021,
