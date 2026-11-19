@@ -15,13 +15,14 @@ class Pet119Year2020Sources(unittest.TestCase):
   y=next(x for x in q["yearly_work_queue"] if x["year"]==2020)
   prev=next(x for x in q["yearly_work_queue"] if x["year"]==2019)
   self.assertEqual((a["year_frontier_before"],a["year_frontier_after"]),(2020,2020))
-  self.assertEqual((q["current_frontier"]["year"],y["research_gate"]),(2020,"NOT_YEAR_AUDITED"))
+  self.assertGreaterEqual(q["current_frontier"]["year"],2020)
+  self.assertIn(y["research_gate"],{"NOT_YEAR_AUDITED","SOURCE_BOUNDED_REVIEWED"}) # PET120 subsequent audit
   self.assertEqual(prev["research_gate"],"SOURCE_BOUNDED_REVIEWED")
   self.assertFalse(prev["historically_complete"])
-  self.assertTrue(q["current_frontier"]["next"].startswith("PET120:"))
-  self.assertEqual(y["partial_source_review_receipts"][-1]["id"],a["id"])
+  self.assertGreaterEqual(int(q["current_frontier"]["next"].split(":")[0][3:]),120)  # allow PET121 onward
+  self.assertIn(a["id"],[z["id"] for z in y["partial_source_review_receipts"]])  # preserve old partial when annual appends
   self.assertEqual(q["current_frontier"]["latest_2020_partial_source_receipt"],a["id"])
-  self.assertEqual(q["root_source_census_receipts"][-1]["id"],a["prior_annual"])
+  self.assertIn(a["prior_annual"],[z["id"] for z in q["root_source_census_receipts"]])  # PET118 remains
   self.assertFalse(a["historically_complete"])
   self.assertIsNone(a["original_pc_2020_first_release_species_count"])
   self.assertIsNone(a["original_pc_2020_global_species_count"])
