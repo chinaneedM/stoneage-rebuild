@@ -19,7 +19,7 @@ class Pet114Tw2018PetSources(unittest.TestCase):
   self.assertEqual((q["active_module"],a["active_module"]),( "PET","PET"))
   self.assertGreaterEqual(q["current_frontier"]["year"],2020)
   self.assertEqual(q["current_frontier"]["latest_2018_partial_source_receipt"],a["id"])
-  self.assertTrue(q["current_frontier"]["next"].startswith(("PET115:","PET116:","PET117:","PET118:","PET119:")))
+  self.assertGreaterEqual(int(q["current_frontier"]["next"].split(":")[0][3:]),115) # forward-only later PET numbers remain admissible
   self.assertEqual(y["partial_source_review_receipts"][0]["id"],a["id"])
   self.assertFalse(a["year_closed"])
   self.assertFalse(a["historically_complete"])
