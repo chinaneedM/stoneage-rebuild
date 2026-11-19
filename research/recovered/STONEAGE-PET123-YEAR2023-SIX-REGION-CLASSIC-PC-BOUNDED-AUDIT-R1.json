@@ -26,8 +26,8 @@
       "pet_population": null,
       "official_2023_first_release_species_count": null,
       "native_pet_id_rows_verified": 0,
-      "source_boundary": "2023_TWO_LICENSED_NEW_TITLES_MOBILE_OR_DISTINCT_DUAL_CLIENT_NOT_CLASSIC_PC_PET_MASTER",
-      "reopen_trigger": "CN2023_AUTHORIZED_ORIGINAL_CLASSIC_PC_BUILD_PET_ID_SKILL_SPR_AND_LIVE_GRANTS"
+      "source_boundary": "2023_NO_AUTHENTICATED_CLASSIC_2D_PC_OPERATOR_RELEASE_NATIVE_CLIENT_OR_IN_GAME_PET_ISSUANCE_FOUND_THIS_REVIEW",
+      "reopen_trigger": "CN2023_AUTHORIZED_CLASSIC_PC_OPERATOR_CLIENT_SHA_NATIVE_PET_IDS_SPR_SKILLS_GRANTS"
     },
     "TW": {
       "region": "TW",
@@ -153,33 +153,6 @@
       "negative": "LATER_GUIDE_SUPPORTS_ITEM_TYPE_NOT_BACKDATED_2023_NATIVE_STATS"
     },
     {
-      "id": "CN2023-JUN28-NEW_STONEAGE-MOBILE-OFFICIAL",
-      "region": "CN",
-      "product": "NEW_STONEAGE_3D_MOBILE_CN_2023",
-      "url": "https://www.taptap.cn/app/333440/strategy/collection/2",
-      "source_date": "2023-06-28",
-      "grade": "FIRST_PARTY_DISTINCT_MOBILE_PRODUCT_PUBLIC_TEST_AND_REWARD_PROMOTION",
-      "candidate_announced_reward_labels": [
-        "三星克洛尔"
-      ],
-      "actual_reward_grant_unverified": true,
-      "negative": "3D_MOBILE_LAUNCH_AND_PROMOTED_PET_NOT_CLASSIC_2D_PC_SAME_BUILD_RELEASE"
-    },
-    {
-      "id": "CN2023-OCT26-AWAKENING-DUAL-END-OFFICIAL",
-      "region": "CN",
-      "product": "STONEAGE_AWAKENING_DUAL_END_CN_2023",
-      "url": "https://www.taptap.cn/moment/466528469585494866",
-      "source_date": "2023-10-26",
-      "grade": "FIRST_PARTY_DISTINCT_PRODUCT_LAUNCH",
-      "platforms": [
-        "PC",
-        "MOBILE"
-      ],
-      "native_legacy_pc_pet_id_proved": false,
-      "negative": "DUAL_END_PC_PLAYABILITY_NOT_LEGACY_CLASSIC_2D_PC_NATIVE_BUILD_OR_PET_MASTER"
-    },
-    {
       "id": "TW2023-SEP27-OPERATOR-LINK-CITED-UNREADABLE",
       "region": "TW",
       "product": "CLASSIC_2D_PC_PLAYER_RELAY_OPERATOR_IDENTITY_UNVERIFIED",
@@ -199,9 +172,7 @@
     "taiwan_pet_vs_item": "RABBIT_CANDIDATE_SEPARATE_FROM_RINGS_EQUIPMENT_AND_NPC_LABELS",
     "taiwan_event_duplicate": "SAME_AUTUMN_EVENT_RELAY_NOT_INDEPENDENT_ORIGINAL_OPERATOR_NOTICE",
     "taiwan_realm_legal_authorization": "NOT_CONFIRMED_FROM_THIS_REVIEW",
-    "cn_new_stoneage": "2023_FIRSTPARTY_3D_MOBILE_SEPARATE_PRODUCT_LINE",
-    "cn_awakening": "2023_FIRSTPARTY_PC_MOBILE_DUAL_END_SEPARATE_FROM_LEGACY_CLASSIC_2D_PC",
-    "client_first": "NO_DIRECT_FREE_OR_ALREADY_ACCESSIBLE_AUTHENTICATED_2023_CLASSIC_PC_BYTE_SOURCE_OBTAINED_THIS_UNIT",
+    "client_first": "NO_DIRECT_2023_AUTHENTICATED_CLASSIC_PC_CLIENT_BYTES_ACQUIRED_IN_THIS_WORK_UNIT",
     "tw_original_2023_september_operator_url": "NEWS_ID_1849_CITED_BY_CONTEMPORANEOUS_PLAYER_RELAY_ORIGINAL_NOT_READABLE; DO_NOT_PROMOTE"
   },
   "new_original_pc_client_bytes": 0,
@@ -223,17 +194,26 @@
     "no_relay_as_independent_primary_source": true,
     "no_later_equipment_guide_as_2023_server_stats": true,
     "no_2023_authorization_inferred_from_2022_realm": true,
-    "no_new_stoneage_mobile_as_old_pc": true,
-    "no_awakening_pc_platform_as_old_pc": true,
     "no_missing_files_as_zero_species": true,
     "no_proprietary_assets_in_git": true,
     "current_state_original_blob_unchanged": true,
-    "no_cited_operator_url_as_obtained_original_html": true
+    "no_cited_operator_url_as_obtained_original_html": true,
+    "pc_only_source_records": true,
+    "no_mobile_or_shared_client_product_as_classic": true
   },
   "report": "docs/continuity/STONEAGE-PET123-YEAR2023-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119.md",
-  "next": "PET124_2024_SIX_REGION_CLASSIC_PC_SOURCE_FIRST_AND_NEW_PRODUCT_LINES_SEPARATE",
+  "next": "PET124_2024_SIX_REGION_CLASSIC_PC_SOURCE_FIRST",
   "stage_A": "7_PARTIAL_2_OPEN",
   "stage_B_wiki": "GATED",
   "r79": "PAUSED_NON_BLOCKING",
-  "overall_percent": null
+  "overall_percent": null,
+  "pc_only_scope_supersession": {
+    "date": "2026-11-19",
+    "protocol_section": 26,
+    "mobile_source_records_removed": [
+      "CN2023-JUN28-NEW_STONEAGE-MOBILE-OFFICIAL",
+      "CN2023-OCT26-AWAKENING-DUAL-END-OFFICIAL"
+    ],
+    "eligible_original_pc_source_count": 6
+  }
 }
