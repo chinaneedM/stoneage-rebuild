@@ -249,3 +249,8 @@ PET仍独占活动模块，2001年份继续OPEN。优先真实**能合法免费�
 ## 2026-11-18｜PET115 2018 六地区 PC 宠物有限年审，时间轴进入2019
 
 [PET115来源限定年度报告](continuity/STONEAGE-PET115-YEAR2018-SIX-REGION-CLASSIC-PC-PET-BOUNDED-AUDIT-20261118.md)复核 CN/TW/HK_MO/KR/JP/OTHER 2018 经典原版 PC 运营与宠物，保留 PET114 台湾同期玩家抓宠/双运营设置，不以旧版停服或版权授权推断零物种；《石器时代M》2018/07/18手机正式发布的3星卡米鲁活动与手游“300多宠”宣传完全隔离，7/17日媒异文不被推作PC时点。2018仍无新增可认证原 PC 原包、宠物ID/SPR/技能与真实发放数据；六地均有独立重开门。`2018=SOURCE_BOUNDED_REVIEWED`只是来源有界，不是物种完整，**NEXT PET116 2019六地官方原版 PC 宠物/客户端优先考据**。PET唯一、`docs/CURRENT-STATE.md`原blob `c89e0e33537990aa2132b47c40fef49a985a935c` (2,709,173B)不写、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总进度UNKNOWN。
+
+
+## 2026-11-18｜PET116–117：2019 宠物史料入库，年度仍 OPEN
+
+本轮[PET116](continuity/STONEAGE-PET116-TW2019-SUMMER-MIDAUTUMN-PLAYER-EVIDENCE-20261118.md)与[PET117](continuity/STONEAGE-PET117-YEAR2019-SIX-REGION-ORIGINAL-PC-FIRST-PASS-20261118.md)只在当前唯一的 PET 模块新增：台湾2019暑假/中秋同期玩家宠物、2019/01/29台湾春节运营口吻玩家转录的「乌力王／黑乌力王／猪年」奖袋及当年玩家练级领宠证词；CN/TW/HK_MO/KR/JP/OTHER六地原版PC缺同部署客户端/技能/发奖原证分级；2019年Netmarble手机《石器时代M》明确分离。玩家转录不等原官文，奖品物品≠活宠，年内有奖≠全球首次推出。PET27机读年游标仍2019 `NOT_YEAR_AUDITED`，最高 **NEXT PET118 完成2019年源有界正式年审**，不得无审跳2020，也不得换NPC。旧大CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c` 完整不写，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体百分比UNKNOWN，版权/无收费卖盘边界不变。

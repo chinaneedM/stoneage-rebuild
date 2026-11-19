@@ -19,12 +19,13 @@
     "phase": "YEAR_2019_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
     "latest_partial_root_review": "PET115-YEAR2018-SIX-REGION-CLASSIC-PC-SOURCE-BOUNDED-AUDIT-20261118",
-    "next": "PET116: independently audit 2019 original 2D classic PC country/operator/client and actually issued pets; 2018 SOURCE_BOUNDED_REVIEWED only, historically incomplete and reopenable",
+    "next": "PET118: finalize 2019 six-region classic PC source-bounded annual PET audit; verify original clients and official issuance per region before any 2020 handoff",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE",
     "latest_source_bounded_annual_review": "PET115-YEAR2018-SIX-REGION-CLASSIC-PC-SOURCE-BOUNDED-AUDIT-20261118",
     "latest_2016_partial_source_receipt": "PET109-TW2016-PLAYER-PET-REWARD-AND-HALLOWEEN-CROSSYEAR-20261118",
     "latest_2017_partial_source_receipt": "PET112-TW2017-AUG-BLUE-TIGER-REOPENED-PROMO-20261118",
-    "latest_2018_partial_source_receipt": "PET114-TW2018-TWO-REALM-SUMMER-PET-MOBILE-BOUNDARY-20261118"
+    "latest_2018_partial_source_receipt": "PET114-TW2018-TWO-REALM-SUMMER-PET-MOBILE-BOUNDARY-20261118",
+    "latest_2019_partial_source_receipt": "PET117-YEAR2019-SIX-REGION-PC-PET-SOURCE-FIRST-PASS-20261118"
   },
   "region_tracks": [
     "CN",
@@ -3388,7 +3389,47 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "partial_source_review_receipts": [
+        {
+          "id": "PET116-TW2019-PLAYER-EVIDENCE-SUMMER-MIDAUTUMN",
+          "date": "2026-11-18",
+          "receipt": "research/recovered/STONEAGE-PET116-TW2019-PLAYER-PET-EVIDENCE-R1.json",
+          "region_scope": [
+            "TW"
+          ],
+          "year_not_closed": true,
+          "new_2019_original_pc_client_bytes": 0,
+          "new_native_pet_ids": 0,
+          "source_grade": "CONTEMPORANEOUS_PLAYER_GUIDE_SEARCH_INDEX_NOT_OFFICIAL_RELEASE"
+        },
+        {
+          "id": "PET117-YEAR2019-SIX-REGION-PC-PET-SOURCE-FIRST-PASS-20261118",
+          "date": "2026-11-18",
+          "receipt": "research/recovered/STONEAGE-PET117-YEAR2019-SIX-REGION-PC-INITIAL-PET-SOURCE-REVIEW-R1.json",
+          "region_scope": [
+            "CN",
+            "TW",
+            "HK_MO",
+            "KR",
+            "JP",
+            "OTHER"
+          ],
+          "year_not_closed": true,
+          "new_2019_original_pc_client_bytes": 0,
+          "new_native_pet_ids": 0,
+          "tw_pig_year_operator_voice_player_relay": true,
+          "tw_pig_rewards_player_firsthand_not_native": true,
+          "netmarble_stoneage_m_mobile_not_original_pc": true
+        }
+      ],
+      "source_bounded_partial_review_notes_forward_only": [
+        "PET116: 2019 Taiwan July5-Sep4 summer gameplay guides mention 烏力斯坦, 海龍 and 肥龍 source/variant candidates and Sep18 mid-autumn player report notes 虎人/火虎人 plus items; period forum search index, not original Taozhu operator HTML nor native 2019 client, official first-release species null.",
+        "PET117: 2019 Jan29 contemporaneous Taiwan player reprint of purported Taozhu Jan30-Feb20 春節 event has 豬年寵物袋 naming 烏力王/黑烏力王/豬年; same-thread Jan31-Feb/Mar player 140-level exchange reports and enhancement skills add player experience, not independent operator records/native PET IDs or official initial species date. CN earlier PC closure, HKMO prior licence, KR/JP old PC closure and OTHER separate insufficient for 2019 native proof; Jan23 2019 StoneAge M Netmarble mobile launch updates strictly separate. Six region bounded first pass, year NOT_YEAR_AUDITED and reopenable; NEXT PET118 annual review."
+      ],
+      "historically_complete": false,
+      "historical_species_count": null,
+      "year_reopenable": true
     },
     {
       "year": 2020,
