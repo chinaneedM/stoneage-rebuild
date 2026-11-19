@@ -563,6 +563,8 @@ jobs:
         run: python -m unittest tests.test_stoneage_pet120_year2020_six_region_pc_bounded_audit
       - name: PET121 2021 six-region classic PC source-bounded audit and 2022 handoff
         run: python -m unittest tests.test_stoneage_pet121_year2021_six_region_pc_bounded_audit
+      - name: PET122 2022 six-region classic PC source-bounded audit and 2023 handoff
+        run: python -m unittest tests.test_stoneage_pet122_year2022_six_region_pc_bounded_audit
       - name: Replay year ordering and 2002 source attestation boundary
         run: |
           python tools/stoneage_pet27_chronology.py --validate --summary

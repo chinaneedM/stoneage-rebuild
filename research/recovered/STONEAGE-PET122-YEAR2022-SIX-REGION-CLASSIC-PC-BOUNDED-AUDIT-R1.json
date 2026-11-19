@@ -1,0 +1,295 @@
+{
+  "schema": "stoneage.pet122.year2022_six_region_classic_pc_source_bounded_audit.r1",
+  "id": "PET122-YEAR2022-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
+  "date": "2026-11-19",
+  "active_module": "PET",
+  "year": 2022,
+  "baseline": {
+    "main_head": "0af0befcf56d8d870a7dc968987072a840e04281",
+    "main_tree": "4274f58ecc36ca6ebbbda543365900dc215a577f",
+    "previous_pet121_pr": 536,
+    "current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_state_bytes": 2709173
+  },
+  "year_frontier_before": 2022,
+  "year_frontier_after": 2023,
+  "review_status": "SOURCE_BOUNDED_REVIEWED",
+  "historically_complete": false,
+  "source_bounded_only": true,
+  "year_reopenable": true,
+  "independent_region_reviews": 6,
+  "region_reviews": {
+    "CN": {
+      "region": "CN",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "official_2022_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "PRIOR_2016_CLASSIC_PC_SHUTDOWN_AND_LATER_LICENSE_NOT_2022_ORIGINAL_PC_PET_RELEASE",
+      "reopen_trigger": "CN2022_AUTHORIZED_ORIGINAL_CLASSIC_PC_OPERATOR_CLIENT_SHA_SAMEDEPLOYMENT_PET_MASTER_NATIVE_GRANTS"
+    },
+    "TW": {
+      "region": "TW",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "official_2022_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "2022_JAN29_TIGER_PLAYER_FIRSTHAND_AND_2024_RETROSPECTIVE_2022_MIDAUTUMN_GUIDE_NO_OFFICIAL_NATIVE_OR_LICENSE",
+      "reopen_trigger": "TW2022_TAOZHU_ORIGINAL_2022_OPERATOR_NOTICES_REALM_AUTHORIZATION_CLIENT_SHA_PET_ID_SPR_SKILL_GRANTS"
+    },
+    "HK_MO": {
+      "region": "HK_MO",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "official_2022_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "2011_REGION_LICENSE_NOT_2022_STANDALONE_OR_SHARED_CLASSIC_PC_DEPLOYMENT",
+      "reopen_trigger": "HKMO2022_OFFICIAL_PC_REALM_SHARED_OR_STANDALONE_NATIVE_CLIENT_PET_ISSUANCE"
+    },
+    "KR": {
+      "region": "KR",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "official_2022_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "2015_OLDPC_END_VS_2022_NETMARBLE_STONEAGE_WORLD_SEPARATE_MOBILE_OFFICIAL",
+      "reopen_trigger": "KR2022_AUTHORIZED_ORIGINAL_2D_PC_RESTART_BUILD_AND_NATIVE_PET_ISSUANCE"
+    },
+    "JP": {
+      "region": "JP",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "official_2022_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "2010_DIGIPARK_OLDPC_END_NO_2022_AUTHORIZED_2D_PC_RESTART_PROOF",
+      "reopen_trigger": "JP2022_AUTHORIZED_ORIGINAL_2D_PC_OPERATOR_BUILD_PET_MASTER_LIVE_RELEASE"
+    },
+    "OTHER": {
+      "region": "OTHER",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "official_2022_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "NO_2022_NAMED_COUNTRY_OFFICIAL_2D_PC_BUILD_AND_PET_NATIVE_COMBINATION",
+      "reopen_trigger": "OTHER2022_NAMED_COUNTRY_LICENSED_CLASSIC_PC_BUILD_PET_MASTER_OR_GRANT"
+    }
+  },
+  "sources": [
+    {
+      "id": "TW2022-JAN29-TIGER-PLAYER-FIRSTHAND",
+      "region": "TW",
+      "product": "CLASSIC_2D_PC_CLAIMED_TAOZHU_REALM_UNVERIFIED",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&lorder=2&parent=5197&sn=5199",
+      "source_time_display": "2022-01-29 13:15:57 edited",
+      "grade": "CONTEMPORANEOUS_PLAYER_FIRSTHAND_REWARD_ACCOUNT_SEARCH_INDEX_ORIGINAL_403",
+      "firsthand_reward": {
+        "consumed_item": "銀色虎牙",
+        "pet_label": "莫可",
+        "client_pet_id": null,
+        "original_server_log_verified": false
+      },
+      "same_player_reported_prize_candidates": [
+        {
+          "token": "金色虎牙",
+          "summoned_pet_claim": "莫洛特",
+          "firsthand_this_player_obtained": false
+        },
+        {
+          "item": "莫洛特強化血清"
+        },
+        {
+          "item": "莫可強化血清"
+        }
+      ],
+      "negative": "FIRSTHAND_PLAYER_OBSERVED_NOT_FIRSTPARTY_OPERATOR_OR_NATIVE_PET_MASTER; TOKEN_AND_SERUM_ARE_ITEMS_NOT_OTHER_SPECIES"
+    },
+    {
+      "id": "TW2022-JAN25-OPERATOR-VOICE-MAINTENANCE-RELAY",
+      "region": "TW",
+      "product": "CLASSIC_2D_PC_CLAIMED_TAOZHU_REALM_UNVERIFIED",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&lorder=2&parent=5197&sn=5199",
+      "source_date_claim": "2022-01-25",
+      "grade": "SAME_FORUM_THREAD_TITLE_REFERENCES_OPERATOR_NOTICE_NO_VERIFIED_ORIGINAL_HTML",
+      "not_independent_from": "TW2022-JAN29-TIGER-PLAYER-FIRSTHAND",
+      "negative": "TITLE_NOT_NATIVE_UPDATE_BINARY_OR_SERVER_REWARD_SCRIPT"
+    },
+    {
+      "id": "TW2022-MIDAUTUMN-RETROSPECT-2024",
+      "region": "TW",
+      "product": "CLASSIC_2D_PC_CLAIMED_TAOZHU_REALM_UNVERIFIED",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&lorder=3&parent=5225&sn=5321",
+      "source_last_edit_display": "2024-11-05 11:43:58",
+      "claimed_game_event_year": 2022,
+      "grade": "RETROSPECTIVE_2024_PLAYER_QUEST_GUIDE_SEARCH_INDEX_DIRECT_403",
+      "player_claim_obtainable_pet_labels": [
+        "阿道夫狼",
+        "人寵阿道夫"
+      ],
+      "item_labels": [
+        "狼之牙",
+        "祝福狼之牙",
+        "白狼扣環",
+        "訓練手冊"
+      ],
+      "gameplay_claims": [
+        "pet training to levels 120 130 140",
+        "阿道夫狼可郵寄交易騎乘",
+        "人寵阿道夫天生技能 憤怒改 繳械",
+        "task claimed permanent"
+      ],
+      "native_2022_bytes_obtained": false,
+      "negative": "2024_EDITION_NOT_VERIFIED_2022_NATIVE_BUILD_OR_FIRST_2022_ISSUANCE"
+    },
+    {
+      "id": "TW2022-MIDAUTUMN-COPY-2024-C-INDEX",
+      "region": "TW",
+      "product": "CLASSIC_2D_PC_CLAIMED_TAOZHU_REALM_UNVERIFIED",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=1571&snA=81800",
+      "source_period": "2024_RETROSPECTIVE_MIRROR",
+      "grade": "SAME_GUIDE_FORUM_INDEX_NOT_SECOND_INDEPENDENT_SOURCE",
+      "not_independent_from": "TW2022-MIDAUTUMN-RETROSPECT-2024"
+    },
+    {
+      "id": "TW2022-AUG28-PTT-REALM-PLAYER-DISCUSSION",
+      "region": "TW",
+      "product": "TAOZHU_CLASSIC_PC_PLAYER_ACCOUNT_UNVERIFIED_LICENSE",
+      "url": "https://www.ptt.cc/bbs/StoneAge/M.1661617429.A.3BC.html",
+      "source_time_display": "2022-08-28 00:23:47",
+      "grade": "CONTEMPORANEOUS_PLAYER_REALM_USAGE_AND_LICENSE_QUESTION_NOT_AUTHORIZATION_DOC",
+      "claim": "author mentions Taozhu 3D toggle, Oct2 reply returning to Dadi realm, Sep6 asks whether licensing remains",
+      "negative": "DISCUSSION_NOT_OPERATOR_LICENSE_OR_NATIVE_CLIENT_PET_RELEASE"
+    },
+    {
+      "id": "TW2022-FEB17-COMMUNITY-CLIENT-LINK",
+      "region": "TW_UNCONFIRMED",
+      "product": "UNKNOWN_CLIENT_MAY_BE_MIXED_COMMUNITY_BUILD",
+      "url": "https://lab.welovesa.com/viewthread.php?action=printable&tid=3785",
+      "source_time_display": "2022-02-17 05:18",
+      "grade": "UNVERIFIED_PRIVATE_SERVER_TECH_FORUM_SELF_DESCRIBED_OFFICIAL_CLIENT_LINK_NO_BYTES",
+      "file_link": "https://pan.baidu.com/s/1gfFzDb9",
+      "public_link_open_status": "NON_RETRYABLE_OPEN_ERROR_NO_BYTES",
+      "actual_file_downloaded": false,
+      "official_distribution_proved": false,
+      "sha256": null,
+      "original_operator_version": null,
+      "reopening_trigger": "OPEN_LICENSED_FREE_DIRECT_ORIGINAL_BYTES_WITH_REGION_VERSION_DISTRIBUTOR_CHAIN_ONLY",
+      "negative": "DO_NOT_COUNT_AS_ACQUIRED_ORIGINAL_CLIENT_OR_PAY_OR_REPEAT_DEAD_LINK"
+    },
+    {
+      "id": "KR2022-FEB07-WORLD-MOBILE-OPERATOR",
+      "region": "KR_GLOBAL_MOBILE",
+      "product": "NETMARBLE_STONEAGE_WORLD_MOBILE",
+      "url": "https://ch.netmarble.com/Newsroom/PressRelease/Detail?bbs_code=1014&post_seq=2914",
+      "source_date": "2022-02-07",
+      "grade": "FIRSTPARTY_MOBILE_OFFICIAL_ADDED_RAID_PET_ANNOUNCEMENT",
+      "new_raids": [
+        "산들바람 협곡 포베이"
+      ],
+      "announced_new_pet_labels": [
+        "사루아치"
+      ],
+      "other_possible_drop_pet_labels": [
+        "골로스"
+      ],
+      "six_star_upgraded_raid_pets": [
+        "메카크로톤",
+        "사루아치"
+      ],
+      "six_star_upgraded_mecha_pets": [
+        "메카카키",
+        "메카쿠쿠",
+        "메카호크",
+        "메카프타",
+        "골로스"
+      ],
+      "negative": "SEVEN_UPGRADES_ARE_NOT_SEVEN_NEW_SPECIES; NO_CLASSIC_PC_ID_OR_SPR"
+    },
+    {
+      "id": "KR2021-DEC-MECHA-PRIOR-CONTROL",
+      "region": "KR_GLOBAL_MOBILE",
+      "product": "NETMARBLE_STONEAGE_WORLD_MOBILE",
+      "url": "https://ch.netmarble.com/Newsroom/PressRelease/Detail?bbs_code=1014&post_seq=2833",
+      "source_date": "2021-12-13",
+      "grade": "PRIOR_FIRSTPARTY_MOBILE_REWARD_CONTROL_NOT_2022_NEW_SPECIES",
+      "labels": [
+        "메카크로톤"
+      ],
+      "negative": "ALREADY_2021_MOBILE_PET_NOT_2022_GLOBAL_FIRST_RELEASE"
+    },
+    {
+      "id": "JP2009-ORIGINAL-PC-END-PRIOR",
+      "region": "JP",
+      "product": "ORIGINAL_CLASSIC_PC_JP",
+      "url": "https://www.4gamer.net/games/013/G001377/20091126051/",
+      "source_date": "2009-11-26",
+      "grade": "PRIOR_PERIOD_JP_PC_OPERATOR_TERMINATION_ANNOUNCEMENT_NOT_2022_RESTART",
+      "negative": "NO_NULL_SOURCE_AS_ZERO_PETS"
+    },
+    {
+      "id": "CN2016-ORIGINAL-PC-END-PRIOR",
+      "region": "CN",
+      "product": "ORIGINAL_CLASSIC_PC_CN",
+      "url": "https://www.gameres.com/655173.html",
+      "source_date": "2016-04",
+      "grade": "PRIOR_PERIOD_CN_CLASSIC_PC_STOP_REPORT_NOT_2022_PET_PROOF",
+      "negative": "LATER_2022_RIGHTS_OR_2026_REMAKE_NOT_2022_DEPLOYMENT"
+    },
+    {
+      "id": "HKMO2011-REGION-LICENSE-PRIOR",
+      "region": "HK_MO",
+      "product": "PRIOR_2011_PC_LICENSE",
+      "url": "https://www.4gamer.net/games/013/G001377/20110908008/",
+      "source_date": "2011-09-08",
+      "grade": "PRIOR_LICENSE_HISTORY_NOT_2022_INDEPENDENT_PC_REALM_PROOF"
+    }
+  ],
+  "source_boundaries": {
+    "tw_tiger_player_moko": "FIRSTHAND_CLAIM_PLAYER_ONLY_NOT_2022_NATIVE_ISSUE",
+    "tw_molote_claim": "SAME_PLAYER_PRIZE_POOL_NOT_FIRSTHAND_GOLD_TOKEN_PET",
+    "tw_tiger_trophy_items": "GOLD_SILVER_TIGER_TOOTH_AND_STRENGTHENING_SERUM_NOT_PET_SPECIES",
+    "tw_midautumn_retrospective": "2024_EDITED_GUIDE_CLAIMS_2022_PERSISTENT_QUEST_BUT_NOT_AUTHENTICATED_2022_LIVE_NATIVE",
+    "tw_adolf_wolf_vs_human_pet": "PLAYER_CLAIMS_TWO_POSSESSIBLE_PETS_DISTINCT_FROM_WOLF_TOOTH_WHITE_COLLAR_ITEMS",
+    "tw_2022_license": "CONTEMPORANEOUS_PTT_PLAYER_QUESTION_LEGALITY_UNVERIFIED",
+    "tw_2022_original_installer": "COMMUNITY_BAIDU_LINK_NOT_OPENABLE_NO_BYTES_NO_OFFICIAL_VERSION_OR_SHA",
+    "kr_mobile": "NETMARBLE_2022_FIRSTPARTY_SARUACHI_NEW_RAID_PET_MOBILE_ONLY",
+    "kr_seven_six_star": "UPGRADE_CAPABILITY_NOT_SEVEN_NEWLY_FIRST_RELEASED_SPECIES"
+  },
+  "new_original_pc_client_bytes": 0,
+  "new_original_pc_patch_bytes": 0,
+  "new_native_pet_id_rows": 0,
+  "new_original_pc_spr_frames": 0,
+  "new_native_skill_functions": 0,
+  "new_original_server_pet_grants": 0,
+  "original_pc_global_2022_species_count": null,
+  "original_pc_2022_first_release_species_count": null,
+  "negative_controls": {
+    "no_paid_marketplace": true,
+    "no_private_server_as_official": true,
+    "no_unverified_community_client_link_as_original_bytes": true,
+    "no_source_404_403_promoted_to_original_operator_html": true,
+    "no_player_firsthand_as_native_master": true,
+    "no_player_pool_as_firsthand_this_account": true,
+    "no_tiger_tooth_or_serum_as_pet": true,
+    "no_2024_retrospective_as_2022_native_record": true,
+    "no_wolf_tooth_or_collar_as_pet": true,
+    "no_same_guide_mirror_as_second_independent_operator_source": true,
+    "no_taiwan_player_discussion_as_official_license": true,
+    "no_old_pc_pets_from_netmarble_mobile": true,
+    "no_mecha_six_star_upgrades_as_seven_new_species": true,
+    "no_missing_sources_as_zero_actual_official_pets": true,
+    "no_proprietary_assets_in_git": true,
+    "current_state_original_blob_unchanged": true
+  },
+  "report": "docs/continuity/STONEAGE-PET122-YEAR2022-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119.md",
+  "next": "PET123_2023_SIX_REGION_CLASSIC_PC_SOURCE_FIRST_AND_MOBILE_SEPARATE",
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}
