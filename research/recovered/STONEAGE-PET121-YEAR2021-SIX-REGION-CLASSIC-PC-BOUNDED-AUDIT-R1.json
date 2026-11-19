@@ -1,0 +1,283 @@
+{
+  "schema": "stoneage.pet121.year2021_six_region_classic_pc_source_bounded_audit.r1",
+  "id": "PET121-YEAR2021-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
+  "date": "2026-11-19",
+  "active_module": "PET",
+  "year": 2021,
+  "baseline": {
+    "main_head": "5966b777c071b4af42f58fb7c7e14c95234d8f06",
+    "main_tree": "00df2c15519c8c90666d87a5add79dc10154066a",
+    "previous_pet120_pr": 535,
+    "current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_state_bytes": 2709173
+  },
+  "year_frontier_before": 2021,
+  "year_frontier_after": 2022,
+  "review_status": "SOURCE_BOUNDED_REVIEWED",
+  "historically_complete": false,
+  "year_reopenable": true,
+  "independent_region_reviews": 6,
+  "region_reviews": {
+    "CN": {
+      "region": "CN",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "official_2021_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "PRE_2016_OLDPC_STOP_AND_2020_12_IP_LICENSE_NEITHER_2021_PC_DEPLOYMENT",
+      "reopen_trigger": "CN2021_AUTHORIZED_ORIGINAL_2D_PC_REALM_CLIENT_SHA_PET_MASTER_ISSUANCE"
+    },
+    "TW": {
+      "region": "TW",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "official_2021_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "2021_PLAYER_FESTIVAL_GUIDES_EDITS_DEC25_OPERATOR_META_ONLY_INDEX",
+      "reopen_trigger": "TW2021_TAOZHU_LIVE_LICENSE_ORIGINAL_HTML_PER_REALM_BUILD_PET_ITEM_ID_SPR_SKILL_REWARD"
+    },
+    "HK_MO": {
+      "region": "HK_MO",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "official_2021_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "2011_LICENSE_NOT_2021_INDEPENDENT_OR_SHARED_PC_REALM",
+      "reopen_trigger": "HKMO2021_AUTHORIZED_2D_PC_SERVICE_SHARED_OR_STANDALONE_BUILD_PET_GRANTS"
+    },
+    "KR": {
+      "region": "KR",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "official_2021_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "2015_ORIGINAL_PC_CLOSURE_VS_2021_NETMARBLE_WORLD_MOBILE",
+      "reopen_trigger": "KR2021_AUTHORIZED_CLASSIC_PC_RESTART_SAMEBUILD_PET_NATIVE_GRANTS"
+    },
+    "JP": {
+      "region": "JP",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "official_2021_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "2010_Digipark_CLASSIC_PC_END_2021_REOPEN_UNVERIFIED",
+      "reopen_trigger": "JP2021_AUTHORIZED_2D_PC_REALM_RESTART_CLIENT_PET_MASTER_RELEASE"
+    },
+    "OTHER": {
+      "region": "OTHER",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "pet_population": null,
+      "official_2021_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "NO_2021_NAMED_COUNTRY_OPERATOR_ORIGINAL_PC_BUILD_PET_SOURCE_OBTAINED",
+      "reopen_trigger": "OTHER2021_COUNTRY_OPERATOR_ORIGINAL_CLASSIC_PC_BUILD_NATIVE_PET_REWARDS"
+    }
+  },
+  "sources": [
+    {
+      "id": "TW2021-JAN-PLAYER-OLD_NEW_REALM",
+      "region": "TW",
+      "product": "CLASSIC_PC_OPERATOR_QUALIFICATION_UNVERIFIED",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=1571&snA=81425",
+      "source_date": "2021-01-04",
+      "grade": "CONTEMPORANEOUS_PLAYER_QUESTION_AND_RESPONSES_NOT_OPERATOR_LICENSE_DOCUMENT",
+      "claim": "new/old realm, training and pet players; poster explicitly asks legal status, not independent proof of authorization"
+    },
+    {
+      "id": "TW2021-SPRING-FESTIVAL-PLAYER-G2",
+      "region": "TW",
+      "product": "CLASSIC_2D_PC_CANDIDATE",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=5158",
+      "source_date_claim": "2021_SPRING_FESTIVAL_TITLE",
+      "last_edit_display": "2021-12-25 13:29:23",
+      "access": "SEARCH_INDEX_DIRECT_403",
+      "grade": "PLAYER_QUEST_GUIDE_EDITED_LATER_NOT_ORIGINAL_OPERATOR_OR_NATIVE",
+      "candidate_enemy_labels": [
+        "火牛",
+        "布爾摩"
+      ],
+      "candidate_item_labels": [
+        "布爾摩的鼻環",
+        "牛年挑戰券"
+      ],
+      "claim": "quest fights fire ox, brings nose ring, incomplete three-gift list; not proven live pet grant"
+    },
+    {
+      "id": "TW2021-MIDAUTUMN-PLAYER-G2",
+      "region": "TW",
+      "product": "CLASSIC_2D_PC_CANDIDATE",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&lorder=2&parent=5174&sn=5155",
+      "source_date_claim": "2021_MIDAUTUMN_TITLE",
+      "last_edit_display": "2021-12-25 13:28:39",
+      "access": "SEARCH_INDEX_DIRECT_403",
+      "grade": "PLAYER_QUEST_GUIDE_EDITED_LATER_NOT_NATIVE_OR_OPERATOR",
+      "candidate_training_pet_labels": [
+        "四屬性1等狼人"
+      ],
+      "candidate_enemy_family_labels": [
+        "四属性二代狼"
+      ],
+      "candidate_reward_labels": [
+        "牛人布偶"
+      ],
+      "reward_kind": "REWARD_OBJECT_KIND_UNVERIFIED",
+      "claim": "wolves trained 89/99/109/119 and submitted; doll gift labelled innate skill cannot prove obtainable separate species"
+    },
+    {
+      "id": "TW2011-OLDER-MIDAUTUMN-WOLF",
+      "region": "TW",
+      "product": "OLDER_CLASSIC_PC_CANDIDATE",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&lorder=2&parent=3945&sn=3946",
+      "source_date_claim": "2011_PERIOD",
+      "grade": "OLDER_PLAYER_GUIDE_CROSSYEAR_NEGATIVE_FIRST_2021_RELEASING",
+      "claim": "older Mid-Autumn werewolf reward source, no 2021 first appearance"
+    },
+    {
+      "id": "TW2021-DEC22-OPERATOR-HEADLINE-AGGREGATOR",
+      "region": "TW",
+      "product": "CLASSIC_PC_OPERATOR_QUALIFICATION_UNVERIFIED",
+      "url": "https://needmorefood.com/info/tz%E7%9F%B3%E5%99%A8%E6%99%82%E4%BB%A3%E5%AE%98%E7%B6%B2.html",
+      "source_date_claim": "2021-12-22 operator item headlines",
+      "grade": "THIRD_PARTY_SEARCH_AGGREGATOR_HEADLINES_NOT_ORIGINAL_HTML_OR_PATCH",
+      "headline_labels": [
+        "2021聖誕節新年活動公告",
+        "糜鹿套裝屬性說明"
+      ],
+      "claim": "headlines indexed, no verified new 2021 pet; costume is not pet by title"
+    },
+    {
+      "id": "TW2010-ORIGINAL-OPERATOR-LICENSE",
+      "region": "TW",
+      "product": "2010_LICENSE_HISTORY_NOT_2021_AUTOMATIC",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=49036",
+      "source_date": "2010-12-02",
+      "grade": "PRIOR_PERIOD_OFFICIAL_LICENSE_NEWS_REPORTED_NOT_2021_LIVE_DEPLOYMENT",
+      "claim": "historic DigiPark Taozhu authorisation but not 2021 each realm current permissions"
+    },
+    {
+      "id": "CN2020-LICENSE-2022-COURT-TRANSCRIPT",
+      "region": "CN",
+      "product": "RIGHTS_LAYER_NOT_PC_2021",
+      "url": "https://zh.wikisource.org/zh-hans/%E5%8C%97%E4%BA%AC%E9%93%B6%E6%B2%B3%E8%81%9A%E9%98%B5%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E4%B8%8E%E5%8C%97%E4%BA%AC%E5%AE%87%E9%80%9A%E4%BA%92%E5%8A%A8%E6%96%87%E5%8C%96%E4%BC%A0%E6%92%AD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E7%AD%89%E8%91%97%E4%BD%9C%E6%9D%83%E6%9D%83%E5%B1%9E%E3%80%81%E4%BE%B5%E6%9D%83%E7%BA%A0%E7%BA%B7%E6%B0%91%E4%BA%8B%E4%B8%80%E5%AE%A1%E6%A1%88%E4%BB%B6%E6%B0%91%E4%BA%8B%E5%88%A4%E5%86%B3%E4%B9%A6",
+      "source_date": "2022_COURT_DOCUMENT",
+      "grade": "LATER_JUDICIAL_TRANSCRIPT_DERIVED_PRIOR_RIGHTS_NOT_2021_PC_DEPLOYMENT",
+      "claim": "2020 Netmarble CN rights supplemental agreement, not original 2021 PC server or pet"
+    },
+    {
+      "id": "KR2021-MOBILE-SHUI-DATE-CONFLICT",
+      "region": "KR_GLOBAL_MOBILE",
+      "product": "NETMARBLE_STONEAGE_WORLD_MOBILE",
+      "url": "https://ch.netmarble.com/Newsroom/PressRelease/Detail?bbs_code=1014&post_seq=2178",
+      "source_date_site": "2021-01-05",
+      "body_date_expression": "29日",
+      "grade": "FIRSTPARTY_MOBILE_PET_ANNOUNCEMENT_INTERNAL_DATE_AMBIGUITY",
+      "named_pet_labels": [
+        "슈이"
+      ],
+      "claim": "new 4-star Mui family; uncertain actual late-2020 vs early-2021 date; no classic PC merge"
+    },
+    {
+      "id": "KR2021-MOBILE-MAR-LEVIATHAN",
+      "region": "KR_GLOBAL_MOBILE",
+      "product": "NETMARBLE_STONEAGE_WORLD_MOBILE",
+      "url": "https://ch.netmarble.com/Newsroom/PressRelease/Detail?bbs_code=1014&post_seq=2339",
+      "source_date": "2021-03-23",
+      "grade": "FIRSTPARTY_MOBILE_ADDED_PET_UPDATE_ANNOUNCEMENT",
+      "named_pet_labels": [
+        "리바이어던"
+      ],
+      "family_labels": [
+        "살링카",
+        "크랩",
+        "라나프",
+        "말랑토끼"
+      ],
+      "claim": "Leviathan newly announced and Eden capture families; four families not four globally new PC species"
+    },
+    {
+      "id": "KR2021-MOBILE-JUN-AQUDON",
+      "region": "KR_GLOBAL_MOBILE",
+      "product": "NETMARBLE_STONEAGE_WORLD_MOBILE",
+      "url": "https://ch.netmarble.com/Newsroom/PressRelease/Detail?bbs_code=1014&post_seq=2522",
+      "source_date": "2021-06-17",
+      "grade": "FIRSTPARTY_MOBILE_ADDED_PET_UPDATE_ANNOUNCEMENT",
+      "named_pet_labels": [
+        "아쿠돈"
+      ],
+      "claim": "anniversary update Aqudon in Eden Water Way, mobile only"
+    },
+    {
+      "id": "KR2021-MOBILE-DEC-MECHA",
+      "region": "KR_GLOBAL_MOBILE",
+      "product": "NETMARBLE_STONEAGE_WORLD_MOBILE",
+      "url": "https://ch.netmarble.com/Newsroom/PressRelease/Detail?bbs_code=1014&post_seq=2833",
+      "source_date": "2021-12-13",
+      "grade": "FIRSTPARTY_MOBILE_ADDED_MECHA_PET_AND_SEASONAL_FIELD_UPDATE",
+      "named_pet_labels": [
+        "메카크로톤"
+      ],
+      "seasonal_field_families": [
+        "밤미",
+        "프테쿠스",
+        "파이어노스돈"
+      ],
+      "claim": "mobile Mecha Crotaur new, winter field capture preexisting family labels not debut"
+    },
+    {
+      "id": "JP2009-ORIGINAL-END",
+      "region": "JP",
+      "product": "OLD_CLASSIC_2D_PC",
+      "url": "https://www.4gamer.net/games/013/G001377/20091126051/",
+      "source_date": "2009-11-26",
+      "grade": "PRIOR_PERIOD_PC_END_NOTICE_NOT_2021_REOPEN_PROOF",
+      "claim": "known service closure; no 2021 species count by absence"
+    }
+  ],
+  "source_boundaries": {
+    "tw_player_guides": "2021_DATE_IN_TITLE_AND_2021_12_25_EDIT_NOT_OPERATOR_NATIVE_LIVE_DATE",
+    "tw_legal_authorisation": "TW2021_OPERATOR_LICENSE_BY_REALM_UNVERIFIED",
+    "spring_enemy_vs_reward": "FIRE_OX_BULMOR_ENEMY_NO_LIVE_PET_ISSUANCE",
+    "midautumn_temporary_training_vs_object": "WOLF_TRAIN_AND_SUBMIT_NOT_PERMANENT_PET_BULL_DOLL_OBJECT_KIND_OPEN",
+    "christmas": "SEARCH_HEADLINES_OF_SUITS_AND_EVENT_NOT_ORIGINAL_OPERATOR_SOURCE",
+    "kr_mobile_2021_shui": "SITE_DATE_2021_01_05_VS_BODY_DAY_29_UNRESOLVED",
+    "kr_mobile_world": "SEPARATE_LICENSED_MOBILE_PRODUCT_NOT_CLASSIC_PC"
+  },
+  "new_original_pc_client_bytes": 0,
+  "new_original_pc_patch_bytes": 0,
+  "new_native_pet_id_rows": 0,
+  "new_original_pc_spr_frames": 0,
+  "new_native_skill_functions": 0,
+  "new_original_server_pet_grants": 0,
+  "original_pc_global_2021_species_count": null,
+  "original_pc_2021_first_release_species_count": null,
+  "negative_controls": {
+    "no_search_index_as_original_operator": true,
+    "no_player_guide_as_original_client": true,
+    "no_last_edit_as_original_event_release_date": true,
+    "no_fire_ox_enemy_as_live_bull_pet": true,
+    "no_item_nose_ring_ticket_as_species": true,
+    "no_temp_wolf_training_as_permanent_pet": true,
+    "no_bull_doll_object_as_confirmed_species": true,
+    "no_2011_wolf_source_as_first_2021_release": true,
+    "no_later_licence_implies_2021_every_realm_authorised": true,
+    "no_mobile_to_classic_pc_merge": true,
+    "no_mobile_skill_rebalance_as_new_species": true,
+    "no_missing_original_client_implies_zero_global_pets": true,
+    "no_paid_sellers": true,
+    "no_private_server_as_official": true,
+    "no_proprietary_copyright_assets_in_public_git": true,
+    "current_state_original_blob_preserved": true
+  },
+  "report": "docs/continuity/STONEAGE-PET121-YEAR2021-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119.md",
+  "next": "PET122_2022_SIX_REGION_CLASSIC_PC_ORIGINAL_BYTES_AND_OFFICIAL_LIVE_PET_SOURCE",
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}
