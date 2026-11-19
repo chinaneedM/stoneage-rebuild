@@ -82,25 +82,12 @@ class Pet124Year2024SourceBoundedAudit(unittest.TestCase):
         self.assertIsNone(dragon["native_new_pet_id"])
         self.assertIn("木笛", dragon["task_object_labels"])
 
-    def test_awakening_narrative_21_plus_9_are_distinct_product_only(self):
-        s = self.ss
-        b1 = s["CN2024-APR02-AWAKENING-OFFICIAL-EDEN-BATCH"]
-        b2 = s["CN2024-APR25-AWAKENING-OFFICIAL-EDEN-BATCH"]
-        expected1, expected2 = (7, 11, 3), (4, 4, 1)
-        for batch, expected in ((b1, expected1), (b2, expected2)):
-            self.assertEqual(batch["product"], "STONEAGE_AWAKENING_DUAL_END_CN_2023_ONWARD")
-            c = batch["named_pet_categories"]
-            self.assertEqual(tuple(len(c[k]) for k in ("quest", "catchable", "event")), expected)
-            self.assertEqual(sum(len(v) for v in c.values()), batch["named_pet_listing_positions"])
-            self.assertEqual(batch["actual_original_pc_2024_native_grants"], 0)
-        self.assertEqual(b1["white_tiger_album_display_only"], "白虎佩露夏")
-        self.assertIn("里拉拉", b1["named_pet_categories"]["quest"])
-        self.assertIn("迪基格斯", b2["named_pet_categories"]["event"])
-        p = self.a["separate_product_line_evidence"]
-        self.assertEqual((p["april02_named_positions"], p["april25_named_positions"]), (21, 9))
-        self.assertEqual(p["total_2024_official_announcement_named_positions"], 30)
-        self.assertIsNone(p["actual_legacy_original_pc_species_from_these_entries"])
-        self.assertEqual(p["actual_native_award_logs_obtained"], 0)
+    def test_no_mobile_source_or_remake_product_entries(self):
+        self.assertEqual(len(self.ss), 3)
+        self.assertTrue(all("CLASSIC_2D_PC" in s["product"] for s in self.ss.values()))
+        self.assertNotIn("separate_product_line_evidence", self.a)
+        self.assertTrue(self.a["negative_controls"]["no_mobile_product_entries_in_pc_sources"])
+        self.assertTrue(self.a["negative_controls"]["no_mobile_or_dual_end_qualifies_as_classic_pc"])
         self.assertIn("2024", REPORT.read_text(encoding="utf-8"))
         self.assertIn("PET124", (ROOT / "README.md").read_text(encoding="utf-8"))
         self.assertIn("PET124", (ROOT / "docs/STONEAGE-PET-CHRONOLOGICAL-RESTORATION-ORDER-R1.md").read_text(encoding="utf-8"))
