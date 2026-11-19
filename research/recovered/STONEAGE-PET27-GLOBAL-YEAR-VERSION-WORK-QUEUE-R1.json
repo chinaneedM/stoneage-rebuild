@@ -2,8 +2,8 @@
   "schema": "stoneage.pet27.global_official_version_year_first_work_queue.r1",
   "date": "2026-11-15",
   "active_module": "PET",
-  "originating_user_instruction": "由远及近：最早年份/版本到最近年份，各地区分支独立，逐年查全，漏项补回原年份，不依赖用户记忆",
-  "priority_over_previous_candidate_NEXT": "PET27 CHRONOLOGICAL START GATE OVERRIDES PET26 NEXT JAPANESE_229_OR_TAIWAN_5.0_WHEN_EARLIER_YEARS_UNAUDITED",
+  "originating_user_instruction": "PC_ONLY_2026_11_19_SUPERSEDES_GLOBAL_FRANCHISE_MOBILE_AND_HYBRID",
+  "priority_over_previous_candidate_NEXT": "ONLY_OFFICIAL_ORIGINAL_CLASSIC_2D_PC_RELEASE_EVENTS_IN_ALL_YEAR_INDEXES",
   "baselines": {
     "main_HEAD": "0e36a3492153b36da0dc87f7ed25fd8afd4e3e09",
     "main_tree": "f76ce192acb95ef43dee76ff56771a2f4a84155c",
@@ -19,8 +19,8 @@
     "phase": "YEAR_2025_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
     "latest_partial_root_review": "PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
-    "next": "PET125: 2025 six-region original classic 2D PC client and patch bytes, same-deployment PET identity, skills, SPR and official native pet issuance; 2025 NOT_YEAR_AUDITED; licensed remake and mobile product lines separate",
-    "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE",
+    "next": "PET125: 2025 official classic 2D PC only, by CN/TW/HK_MO/KR/JP/OTHER and exact original client/PET master/official pet issuance; exclude all mobile and mobile-first dual-end titles",
+    "current_source_acquisition_priority": "AUTHENTICATED_OFFICIAL_CLASSIC_PC_CLIENT_BYTES_FIRST_NO_PAID_SELLERS_NO_MOBILE",
     "latest_source_bounded_annual_review": "PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
     "latest_2016_partial_source_receipt": "PET109-TW2016-PLAYER-PET-REWARD-AND-HALLOWEEN-CROSSYEAR-20261118",
     "latest_2017_partial_source_receipt": "PET112-TW2017-AUG-BLUE-TIGER-REOPENED-PROMO-20261118",
@@ -52,7 +52,7 @@
   "annual_progress_policy": "Only mark a year SOURCE_BOUNDED_REVIEWED after official operator/version source census + pet evidence audit + residual list. Nothing is HISTORICALLY_COMPLETE without independent full historical proof. A year with 0 current records means NOT INVESTIGATED, not no pets.",
   "region_version_policy": "One chronological year spine, independent version lanes for each official operating region and product line, never substitute Taiwanese dates/client for mainland or Japan/Korea, never treat licensed mobile titles as same classic PC build.",
   "late_discovery_policy": "On new earlier evidence add a forward-only dated correction/backfill to that year's lane, keep old snapshot/pins, never append a 2001 pet as a 2026 release merely because discovered in 2026",
-  "count_policy": "documentary release EVENT rows and original web positions/sprite groups are not global unique species. A region's marketing total of 200/229 is a milestone, not 229 independently verified names",
+  "count_policy": "OFFICIAL_CLASSIC_2D_PC_DOCUMENTARY_EVENTS_ONLY_NO_MOBILE_NO_DUAL_END;_NOT_NUMBER_OF_PET_SPECIES",
   "previously_recovered_release_events_ordered_by_evidence_year_not_first_actual_release": [
     {
       "source_namespace": "PET25",
@@ -161,234 +161,6 @@
       "name": "コクエン",
       "source_record_status": "OFFICIAL_GAME_RELEASE_DOCUMENTED",
       "source_record_is_global_unique_species": false
-    },
-    {
-      "source_namespace": "PET25",
-      "source_id": "KR-WORLD-2020-KALO",
-      "year": 2020,
-      "chronology_date": "2020-07-31",
-      "date_kind": "OFFICIAL_REPORTED_RELEASE_DATE",
-      "region": "KR",
-      "product_line": "STONEAGE_WORLD_MOBILE_KR_NETMARBLE",
-      "name": "칼로",
-      "source_record_status": "OFFICIAL_IN_GAME_RELEASE_DOCUMENTED",
-      "source_record_is_global_unique_species": false
-    },
-    {
-      "source_namespace": "PET25",
-      "source_id": "KR-WORLD-2020-PUGON",
-      "year": 2020,
-      "chronology_date": "2020-07-31",
-      "date_kind": "OFFICIAL_REPORTED_RELEASE_DATE",
-      "region": "KR",
-      "product_line": "STONEAGE_WORLD_MOBILE_KR_NETMARBLE",
-      "name": "푸곤",
-      "source_record_status": "OFFICIAL_IN_GAME_RELEASE_DOCUMENTED",
-      "source_record_is_global_unique_species": false
-    },
-    {
-      "source_namespace": "PET25",
-      "source_id": "KR-WORLD-2021-SHUI",
-      "year": 2021,
-      "chronology_date": "2021-01-05",
-      "date_kind": "SOURCE_ATTESTATION_DATE_NOT_FIRST_RELEASE",
-      "region": "KR",
-      "product_line": "STONEAGE_WORLD_MOBILE_KR_NETMARBLE",
-      "name": "슈이",
-      "source_record_status": "OFFICIAL_IN_GAME_RELEASE_DOCUMENTED",
-      "source_record_is_global_unique_species": false
-    },
-    {
-      "source_namespace": "PET25",
-      "source_id": "CN-NEW-2026-DRAGON-01",
-      "year": 2026,
-      "chronology_date": "2026-02-13",
-      "date_kind": "OFFICIAL_REPORTED_RELEASE_DATE",
-      "region": "CN",
-      "product_line": "NEW_STONEAGE_MOBILE_CN_2026",
-      "name": "卡托立恩",
-      "source_record_status": "OFFICIAL_IN_GAME_RELEASE_DOCUMENTED",
-      "source_record_is_global_unique_species": false
-    },
-    {
-      "source_namespace": "PET25",
-      "source_id": "CN-NEW-2026-DRAGON-02",
-      "year": 2026,
-      "chronology_date": "2026-02-13",
-      "date_kind": "OFFICIAL_REPORTED_RELEASE_DATE",
-      "region": "CN",
-      "product_line": "NEW_STONEAGE_MOBILE_CN_2026",
-      "name": "欧托立恩",
-      "source_record_status": "OFFICIAL_IN_GAME_RELEASE_DOCUMENTED",
-      "source_record_is_global_unique_species": false
-    },
-    {
-      "source_namespace": "PET25",
-      "source_id": "CN-NEW-2026-DRAGON-03",
-      "year": 2026,
-      "chronology_date": "2026-02-13",
-      "date_kind": "OFFICIAL_REPORTED_RELEASE_DATE",
-      "region": "CN",
-      "product_line": "NEW_STONEAGE_MOBILE_CN_2026",
-      "name": "希托立恩",
-      "source_record_status": "OFFICIAL_IN_GAME_RELEASE_DOCUMENTED",
-      "source_record_is_global_unique_species": false
-    },
-    {
-      "source_namespace": "PET25",
-      "source_id": "CN-NEW-2026-DRAGON-04",
-      "year": 2026,
-      "chronology_date": "2026-02-13",
-      "date_kind": "OFFICIAL_REPORTED_RELEASE_DATE",
-      "region": "CN",
-      "product_line": "NEW_STONEAGE_MOBILE_CN_2026",
-      "name": "山托立恩",
-      "source_record_status": "OFFICIAL_IN_GAME_RELEASE_DOCUMENTED",
-      "source_record_is_global_unique_species": false
-    },
-    {
-      "source_namespace": "PET25",
-      "source_id": "CN-NEW-2026-DRAGON-05",
-      "year": 2026,
-      "chronology_date": "2026-02-13",
-      "date_kind": "OFFICIAL_REPORTED_RELEASE_DATE",
-      "region": "CN",
-      "product_line": "NEW_STONEAGE_MOBILE_CN_2026",
-      "name": "机械萌龙地",
-      "source_record_status": "OFFICIAL_IN_GAME_RELEASE_DOCUMENTED",
-      "source_record_is_global_unique_species": false
-    },
-    {
-      "source_namespace": "PET25",
-      "source_id": "CN-NEW-2026-DRAGON-06",
-      "year": 2026,
-      "chronology_date": "2026-02-13",
-      "date_kind": "OFFICIAL_REPORTED_RELEASE_DATE",
-      "region": "CN",
-      "product_line": "NEW_STONEAGE_MOBILE_CN_2026",
-      "name": "机械萌龙水",
-      "source_record_status": "OFFICIAL_IN_GAME_RELEASE_DOCUMENTED",
-      "source_record_is_global_unique_species": false
-    },
-    {
-      "source_namespace": "PET25",
-      "source_id": "CN-NEW-2026-DRAGON-07",
-      "year": 2026,
-      "chronology_date": "2026-02-13",
-      "date_kind": "OFFICIAL_REPORTED_RELEASE_DATE",
-      "region": "CN",
-      "product_line": "NEW_STONEAGE_MOBILE_CN_2026",
-      "name": "机械萌龙火",
-      "source_record_status": "OFFICIAL_IN_GAME_RELEASE_DOCUMENTED",
-      "source_record_is_global_unique_species": false
-    },
-    {
-      "source_namespace": "PET25",
-      "source_id": "CN-NEW-2026-DRAGON-08",
-      "year": 2026,
-      "chronology_date": "2026-02-13",
-      "date_kind": "OFFICIAL_REPORTED_RELEASE_DATE",
-      "region": "CN",
-      "product_line": "NEW_STONEAGE_MOBILE_CN_2026",
-      "name": "机械萌龙风",
-      "source_record_status": "OFFICIAL_IN_GAME_RELEASE_DOCUMENTED",
-      "source_record_is_global_unique_species": false
-    },
-    {
-      "source_namespace": "PET25",
-      "source_id": "CN-NEW-2026-HORSE-01",
-      "year": 2026,
-      "chronology_date": "2026-02-13",
-      "date_kind": "OFFICIAL_REPORTED_RELEASE_DATE",
-      "region": "CN",
-      "product_line": "NEW_STONEAGE_MOBILE_CN_2026",
-      "name": "新春马年",
-      "source_record_status": "OFFICIAL_IN_GAME_RELEASE_DOCUMENTED",
-      "source_record_is_global_unique_species": false
-    },
-    {
-      "source_namespace": "PET25",
-      "source_id": "CN-NEW-2026-HORSE-02",
-      "year": 2026,
-      "chronology_date": "2026-02-13",
-      "date_kind": "OFFICIAL_REPORTED_RELEASE_DATE",
-      "region": "CN",
-      "product_line": "NEW_STONEAGE_MOBILE_CN_2026",
-      "name": "新春机械马年地",
-      "source_record_status": "OFFICIAL_IN_GAME_RELEASE_DOCUMENTED",
-      "source_record_is_global_unique_species": false
-    },
-    {
-      "source_namespace": "PET25",
-      "source_id": "CN-NEW-2026-HORSE-03",
-      "year": 2026,
-      "chronology_date": "2026-02-13",
-      "date_kind": "OFFICIAL_REPORTED_RELEASE_DATE",
-      "region": "CN",
-      "product_line": "NEW_STONEAGE_MOBILE_CN_2026",
-      "name": "新春机械马年水",
-      "source_record_status": "OFFICIAL_IN_GAME_RELEASE_DOCUMENTED",
-      "source_record_is_global_unique_species": false
-    },
-    {
-      "source_namespace": "PET25",
-      "source_id": "CN-NEW-2026-HORSE-04",
-      "year": 2026,
-      "chronology_date": "2026-02-13",
-      "date_kind": "OFFICIAL_REPORTED_RELEASE_DATE",
-      "region": "CN",
-      "product_line": "NEW_STONEAGE_MOBILE_CN_2026",
-      "name": "新春机械马年火",
-      "source_record_status": "OFFICIAL_IN_GAME_RELEASE_DOCUMENTED",
-      "source_record_is_global_unique_species": false
-    },
-    {
-      "source_namespace": "PET25",
-      "source_id": "CN-NEW-2026-HORSE-05",
-      "year": 2026,
-      "chronology_date": "2026-02-13",
-      "date_kind": "OFFICIAL_REPORTED_RELEASE_DATE",
-      "region": "CN",
-      "product_line": "NEW_STONEAGE_MOBILE_CN_2026",
-      "name": "新春机械马年风",
-      "source_record_status": "OFFICIAL_IN_GAME_RELEASE_DOCUMENTED",
-      "source_record_is_global_unique_species": false
-    },
-    {
-      "source_namespace": "PET25",
-      "source_id": "KR-IDLE-2026-KINGGOR",
-      "year": 2026,
-      "chronology_date": "2026-06-05",
-      "date_kind": "SOURCE_ATTESTATION_DATE_NOT_FIRST_RELEASE",
-      "region": "KR",
-      "product_line": "STONEAGE_IDLE_MOBILE_KR_NETMARBLE",
-      "name": "킹고르",
-      "source_record_status": "OFFICIAL_IN_GAME_RELEASE_DOCUMENTED",
-      "source_record_is_global_unique_species": false
-    },
-    {
-      "source_namespace": "PET25",
-      "source_id": "CN-AWAKEN-2026-FATDRAGON",
-      "year": 2026,
-      "chronology_date": "2026-10-21",
-      "date_kind": "OFFICIAL_REPORTED_RELEASE_DATE",
-      "region": "CN",
-      "product_line": "STONEAGE_AWAKENING_MOBILE_CN_2026",
-      "name": "肥龙系（自选）",
-      "source_record_status": "OFFICIAL_IN_GAME_RELEASE_DOCUMENTED",
-      "source_record_is_global_unique_species": false
-    },
-    {
-      "source_namespace": "PET25",
-      "source_id": "CN-AWAKEN-2026-HORSE",
-      "year": 2026,
-      "chronology_date": "2026-10-23",
-      "date_kind": "SOURCE_ATTESTATION_DATE_NOT_FIRST_RELEASE",
-      "region": "CN",
-      "product_line": "STONEAGE_AWAKENING_MOBILE_CN_2026",
-      "name": "马年兽系",
-      "source_record_status": "OFFICIAL_IN_GAME_RELEASE_DOCUMENTED",
-      "source_record_is_global_unique_species": false
     }
   ],
   "yearly_work_queue": [
@@ -449,7 +221,8 @@
           "absence_1999_proven": false,
           "pet_population": null
         }
-      }
+      },
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2000,
@@ -528,7 +301,8 @@
           "source_bounded_reviewed": true,
           "absence_proven": false
         }
-      }
+      },
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2001,
@@ -752,7 +526,8 @@
           "reopen": true,
           "reopen_trigger": "IDENTIFIABLE_OTHER_REGION_2001_OFFICIAL_OPERATOR_PRODUCT_VERSION_AND_PET_SOURCE"
         }
-      }
+      },
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2002,
@@ -889,7 +664,8 @@
         "IDENTIFIABLE_2002_OTHER_REGION_OFFICIAL_OPERATOR_PRODUCT_AND_SOURCE_QUALIFIED_PET_LIST"
       ],
       "year_review_scope": "DECLARED_PET61_TO_PET64_AND_EXISTING_PET25_PET26_2002_MATERIAL_ONLY",
-      "official_in_game_global_roster_complete": false
+      "official_in_game_global_roster_complete": false,
+      "pc_only_eligible_documentary_events": 4
     },
     {
       "year": 2003,
@@ -1034,7 +810,8 @@
       "official_operator_reported_actual_award_name_labels": [
         "波比"
       ],
-      "reported_award_is_not_native_pet_master": true
+      "reported_award_is_not_native_pet_master": true,
+      "pc_only_eligible_documentary_events": 1
     },
     {
       "year": 2004,
@@ -1171,7 +948,8 @@
         "JP_2004_BOTHTEC_NHN_AUTHENTIC_CLIENT_NATIVE_PET_SKILL_NAME_TABLE_AND_DATED_NAMED_PET_OPERATOR_ISSUANCE",
         "KR_2004_NETMARBLE_ORIGINAL_BUILD_PET_NAME_ID_TABLE_3_HUNTABLE_NAMES_AND_RIDE_QUEST_REAL_DEPLOYMENT",
         "OTHER_2004_IDENTIFIABLE_OFFICIAL_PC_OPERATOR_REGION_BUILD_OR_NAMED_PET_ISSUANCE"
-      ]
+      ],
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2005,
@@ -1283,7 +1061,8 @@
         "JP_2005_JULY05_JULY12_AUTHENTIC_GAIAX_PATCH_BYTES_AND_APPLIED_BUILD_PET_ALBUM_LV1_SPAWNS_BLACK_TIGER_LATER_ID",
         "KR_2005_CJ_NETMARBLE_AUTHENTIC_BUILD_RIDE_SYSTEM_PET_ID_NAME_TABLE_REAL_ACCOUNT_MOUNT_QUEST",
         "OTHER_2005_INDEPENDENT_PC_STONEAGE_OPERATOR_REGION_AND_DATED_OFFICIAL_PET_OR_AUTHENTIC_CLIENT"
-      ]
+      ],
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2006,
@@ -1392,7 +1171,8 @@
         "JP_2006_KOEN_NATIVE_PET_IDS_AND_0523_ACTUAL_EVENT_CAPTURE_TARGETS_PLUS_1031_NAMING_FINAL_1121_MYSTERY_PET_ID_1226_SHOP_TABLE",
         "KR_2006_CJ_146_NATIVE_SOURCE_SPECIES_IDS_REBIRTH_EVOLUTION_MAPPING_AND_REAL_SIEGE_RARE_PET_ACCOUNT_GRANTS",
         "OTHER_2006_INDEPENDENT_PC_STONEAGE_OPERATOR_OR_ORIGINALLY_LICENSED_SEPARATE_PRODUCT_AND_DATED_NATIVE_PET_SOURCE"
-      ]
+      ],
+      "pc_only_eligible_documentary_events": 1
     },
     {
       "year": 2007,
@@ -1503,7 +1283,8 @@
           "year_not_closed": false,
           "historically_complete": false
         }
-      ]
+      ],
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2008,
@@ -1654,7 +1435,8 @@
           "reopen": true,
           "reopen_trigger": "OTHER_2008_LICENCED_ORIGINAL_PC_OPERATOR_PERIOD_NATIVE_PET_RELEASE_AND_PROVENANCE"
         }
-      }
+      },
+      "pc_only_eligible_documentary_events": 1
     },
     {
       "year": 2009,
@@ -1824,7 +1606,8 @@
           "reopen": true,
           "reopen_trigger": "OTHER_2009_VERIFIED_ORIGINAL_PC_STONEAGE1_LICENSED_OPERATOR_AND_NATIVE_PET_RELEASE"
         }
-      }
+      },
+      "pc_only_eligible_documentary_events": 2
     },
     {
       "year": 2010,
@@ -1955,7 +1738,8 @@
           "reopen": true,
           "reopen_trigger": "OTHER_2010_OFFICIAL_PC_ONE_OPERATOR_PETS"
         }
-      }
+      },
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2011,
@@ -2113,7 +1897,8 @@
           "reopen": true,
           "reopen_trigger": "HKMO2011_HONGLONG_OFFICIAL_ACTUAL_START_PATCH_AND_PET_ROSTER"
         }
-      }
+      },
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2012,
@@ -2269,7 +2054,8 @@
           "real_account_pet_grant_verified": false,
           "reopen_trigger": "HKMO2012_HONGLONG_CONTEMPORANEOUS_LICENSE_SERVER_PATCH_NATIVE_PET_LOG"
         }
-      }
+      },
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2013,
@@ -2457,7 +2243,8 @@
           "real_account_pet_grant_verified": false,
           "reopen_trigger": "HKMO2013_HONGLONG_LICENSE_REGION_SERVER_MERGE_AND_LIVE_PET_PROOF"
         }
-      }
+      },
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2014,
@@ -2598,7 +2385,8 @@
           "real_account_pet_grant_verified": false,
           "reopen_trigger": "HKMO2014_LICENSE_SERVICE_MERGE_AND_PET_DEPLOYMENT_PROOF"
         }
-      }
+      },
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2015,
@@ -2852,7 +2640,8 @@
           "pet_population": null,
           "native_pet_id_rows_verified": 0
         }
-      }
+      },
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2016,
@@ -3052,7 +2841,8 @@
         "KR2016_POST2015_OFFICIAL_CLASSIC_PC_REOPEN_ORIGINAL_BUILD_AND_PET_ISSUANCE",
         "JP2016_LICENSED_CLASSIC_PC_RELAUNCH_NATIVE_CLIENT_ISSUE",
         "OTHER2016_ORIGINAL_OFFICIAL_CLIENT_ONE_COUNTRY_OPERATOR_AND_PET_ISSUE"
-      ]
+      ],
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2017,
@@ -3222,7 +3012,8 @@
         "KR2017_NETMARBLE_OR_AUTHORIZED_ORIGINAL_PC_RESTART_NATIVE_PET_SOURCE",
         "JP2017_LICENSED_CLASSIC_PC_RESTART_OPERATOR_BUILD_AND_LIVE_PET_ISSUE",
         "OTHER2017_COUNTRY_OPERATOR_OFFICIAL_CLASSIC_PC_NATIVE_PET_SOURCE"
-      ]
+      ],
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2018,
@@ -3374,7 +3165,8 @@
         "KR2018_AUTHORIZED_CLASSIC_PC_RESTART_CLIENT_AND_ORIGINAL_PET_ISSUANCE",
         "JP2018_OFFICIAL_ORIGINAL_2D_PC_REOPEN_CLIENT_AND_ISSUED_PETS",
         "OTHER2018_COUNTRY_OPERATOR_OFFICIAL_ORIGINAL_PC_BUILD_PET_ISSUANCE"
-      ]
+      ],
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2019,
@@ -3536,17 +3328,15 @@
         "KR2019_AUTHORIZED_CLASSIC_PC_RESTART_SAMEBUILD_PET_MASTER_GRANTS",
         "JP2019_AUTHORIZED_CLASSIC_2D_PC_REOPEN_BUILD_AND_NATIVE_PETS",
         "OTHER2019_COUNTRY_OPERATOR_ORIGINAL_PC_BUILD_PET_ISSUANCE"
-      ]
+      ],
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2020,
       "chronological_position": 22,
       "research_gate": "SOURCE_BOUNDED_REVIEWED",
-      "documented_release_event_ids_from_existing_PET25_PET26": [
-        "KR-WORLD-2020-KALO",
-        "KR-WORLD-2020-PUGON"
-      ],
-      "documentary_event_count_NOT_species": 2,
+      "documented_release_event_ids_from_existing_PET25_PET26": [],
+      "documentary_event_count_NOT_species": 0,
       "unverified_early_and_mid_year_pets_may_exist": true,
       "region_coverage": {
         "CN": "NOT_FULLY_AUDITED",
@@ -3672,16 +3462,15 @@
         "KR2020_AUTHORIZED_CLASSIC_PC_RESTART_AND_SAMEBUILD_PET_MASTER",
         "JP2020_ORIGINAL_2D_PC_OPERATOR_RESTART_BUILD_AND_NATIVE_PETS",
         "OTHER2020_NAMED_COUNTRY_OPERATOR_ORIGINAL_PC_BUILD_REWARD_SOURCE"
-      ]
+      ],
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2021,
       "chronological_position": 23,
       "research_gate": "SOURCE_BOUNDED_REVIEWED",
-      "documented_release_event_ids_from_existing_PET25_PET26": [
-        "KR-WORLD-2021-SHUI"
-      ],
-      "documentary_event_count_NOT_species": 1,
+      "documented_release_event_ids_from_existing_PET25_PET26": [],
+      "documentary_event_count_NOT_species": 0,
       "unverified_early_and_mid_year_pets_may_exist": true,
       "region_coverage": {
         "CN": "NOT_FULLY_AUDITED",
@@ -3791,7 +3580,8 @@
         "KR2021_AUTHORIZED_CLASSIC_PC_RESTART_SAMEBUILD_PET_NATIVE_GRANTS",
         "JP2021_AUTHORIZED_2D_PC_REALM_RESTART_CLIENT_PET_MASTER_RELEASE",
         "OTHER2021_COUNTRY_OPERATOR_ORIGINAL_CLASSIC_PC_BUILD_NATIVE_PET_REWARDS"
-      ]
+      ],
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2022,
@@ -3908,7 +3698,8 @@
         "KR2022_AUTHORIZED_ORIGINAL_2D_PC_RESTART_BUILD_AND_NATIVE_PET_ISSUANCE",
         "JP2022_AUTHORIZED_ORIGINAL_2D_PC_OPERATOR_BUILD_PET_MASTER_LIVE_RELEASE",
         "OTHER2022_NAMED_COUNTRY_LICENSED_CLASSIC_PC_BUILD_PET_MASTER_OR_GRANT"
-      ]
+      ],
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2023,
@@ -4025,7 +3816,8 @@
         "KR2023_AUTHORIZED_CLASSIC_2D_PC_REOPEN_BUILD_NATIVE_PET_AND_REAL_GRANT",
         "JP2023_AUTHORIZED_CLASSIC_2D_PC_RESTART_CLIENT_PET_MASTER_AND_LIVE_GRANT",
         "OTHER2023_NAMED_COUNTRY_OPERATOR_LICENSE_AND_ORIGINAL_PC_SAME_BUILD_PET_RELEASE"
-      ]
+      ],
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2024,
@@ -4148,7 +3940,8 @@
         "KR2024_AUTHORIZED_CLASSIC_2D_PC_REOPEN_PATCH_PET_ID_AND_ACTUAL_GRANT",
         "JP2024_AUTHORIZED_CLASSIC_2D_PC_REOPEN_CLIENT_NATIVE_PET_ISSUANCE",
         "OTHER2024_NAMED_COUNTRY_AUTHORIZED_ORIGINAL_2D_PC_BUILD_AND_NATIVE_PET_RELEASE"
-      ]
+      ],
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2025,
@@ -4164,31 +3957,15 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "pc_only_eligible_documentary_events": 0
     },
     {
       "year": 2026,
       "chronological_position": 28,
       "research_gate": "NOT_YEAR_AUDITED",
-      "documented_release_event_ids_from_existing_PET25_PET26": [
-        "CN-NEW-2026-DRAGON-01",
-        "CN-NEW-2026-DRAGON-02",
-        "CN-NEW-2026-DRAGON-03",
-        "CN-NEW-2026-DRAGON-04",
-        "CN-NEW-2026-DRAGON-05",
-        "CN-NEW-2026-DRAGON-06",
-        "CN-NEW-2026-DRAGON-07",
-        "CN-NEW-2026-DRAGON-08",
-        "CN-NEW-2026-HORSE-01",
-        "CN-NEW-2026-HORSE-02",
-        "CN-NEW-2026-HORSE-03",
-        "CN-NEW-2026-HORSE-04",
-        "CN-NEW-2026-HORSE-05",
-        "KR-IDLE-2026-KINGGOR",
-        "CN-AWAKEN-2026-FATDRAGON",
-        "CN-AWAKEN-2026-HORSE"
-      ],
-      "documentary_event_count_NOT_species": 16,
+      "documented_release_event_ids_from_existing_PET25_PET26": [],
+      "documentary_event_count_NOT_species": 0,
       "unverified_early_and_mid_year_pets_may_exist": true,
       "region_coverage": {
         "CN": "NOT_FULLY_AUDITED",
@@ -4197,7 +3974,8 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "pc_only_eligible_documentary_events": 0
     }
   ],
   "version_milestone_candidate_sources": [
@@ -6060,5 +5838,11 @@
     "on_bounded_unavailable_client": "RECORD_MISSING_VERSION_PUBLIC_BYTES_AND_REOPEN_TRIGGER_ONCE_THEN_CONTINUE_PERIOD_OFFICIAL_PET_EVIDENCE_IN_SAME_2001_FRONTIER",
     "closed_unmerged_paid_marketplace_PR": 470,
     "existing_marketplace_reports_status": "HISTORICAL_PRESERVED_NOT_ACTIVE_NEXT"
+  },
+  "pc_only_scope_supersession": {
+    "effective_date": "2026-11-19",
+    "protocol_section": 26,
+    "excluded_mobile_release_event_count": 19,
+    "active_original_pc_release_event_count": 9
   }
 }
