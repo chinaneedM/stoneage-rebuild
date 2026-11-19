@@ -89,7 +89,7 @@ class Pet125Year2025PCBoundedAudit(unittest.TestCase):
         a=self.a
         raw=(ROOT/"docs/CURRENT-STATE.md").read_bytes()
         self.assertEqual(len(raw),2709173)
-        self.assertEqual(hashlib.sha1(b"blob "+str(len(raw)).encode()+b"\\x00"+raw).hexdigest(),a["baseline"]["current_state_blob"])
+        self.assertEqual(hashlib.sha1(b"blob "+str(len(raw)).encode()+b"\x00"+raw).hexdigest(),a["baseline"]["current_state_blob"])
         self.assertEqual((a["stage_A"],a["stage_B_wiki"],a["r79"],a["overall_percent"]),(self.q["stage_A"],self.q["stage_B_wiki"],self.q["r79"],self.q["overall_game_completion_percent"]))
 
 
