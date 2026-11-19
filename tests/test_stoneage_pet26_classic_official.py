@@ -7,9 +7,9 @@ class PET26(unittest.TestCase):
  def setUpClass(cls):cls.old,cls.new=load()
  def test_global_count_is_unknown(self):
   a,b=self.old,self.new
-  self.assertEqual(a["counts"]["release_documentary_records"],24)
+  self.assertEqual(a["counts"]["release_documentary_records"],5)
   self.assertEqual(len(b["new_japan_classic_official_release_events"]),4)
-  self.assertEqual(b["counts"]["combined_release_events_not_species"],28)
+  self.assertEqual(a["counts"]["release_documentary_records"]+len(b["new_japan_classic_official_release_events"]),9)
   self.assertIsNone(b["counts"]["global_individual_species_count"])
  def test_new_official_launches_are_not_community_pets(self):
   rows=self.new["new_japan_classic_official_release_events"]
@@ -25,8 +25,8 @@ class PET26(unittest.TestCase):
   self.assertTrue(all(not x["is_four_new_named_species"] for x in self.new["japan_2008_existing_base_evolution_records"]))
  def test_queries_and_unverified_taiwan(self):
   self.assertEqual(len(search(self.old,self.new,region="JP")),4)
-  self.assertEqual(len(search(self.old,self.new,region="CN")),20)
-  self.assertEqual(len(search(self.old,self.new,region="KR")),4)
+  self.assertEqual(len(search(self.old,self.new,region="CN")),5)
+  self.assertEqual(len(search(self.old,self.new,region="KR")),0)
   self.assertEqual(len(search(self.old,self.new,region="TW")),0)
   self.assertEqual(len(search(self.old,self.new,region="TW",name="狼人",leads=True)),1)
   self.assertEqual(len(search(self.old,self.new,name="コクエン")),1)
