@@ -23,7 +23,7 @@ class Pet120Year2020SourceBounded(unittest.TestCase):
         n=next(v for v in q["yearly_work_queue"] if v["year"]==2021)
         self.assertEqual((a["year_frontier_before"],a["year_frontier_after"]),(2020,2021))
         self.assertEqual(y["research_gate"],"SOURCE_BOUNDED_REVIEWED")
-        self.assertEqual(n["research_gate"],"NOT_YEAR_AUDITED")
+        self.assertIn(n["research_gate"],{"NOT_YEAR_AUDITED","SOURCE_BOUNDED_REVIEWED"})  # subsequent PET121 annual audit is forward-only
         self.assertGreaterEqual(q["current_frontier"]["year"],2021)
         self.assertEqual(q["active_module"],"PET")
         self.assertFalse(a["historically_complete"])
