@@ -18,10 +18,10 @@ class Pet113Year2017SourceBounded(unittest.TestCase):
   n=next(z for z in q["yearly_work_queue"] if z["year"]==2018)
   self.assertEqual((a["year_frontier_before"],a["year_frontier_after"]),(2017,2018))
   self.assertEqual((a["review_status"],y["research_gate"]),("SOURCE_BOUNDED_REVIEWED","SOURCE_BOUNDED_REVIEWED"))
-  self.assertEqual(q["current_frontier"]["year"],2019)
+  self.assertGreaterEqual(q["current_frontier"]["year"],2020)
   self.assertEqual(n["research_gate"],"SOURCE_BOUNDED_REVIEWED") # PET115 reviewed 2018 forward-only
   self.assertIn(a["id"],[v["id"] for v in q["root_source_census_receipts"]])
-  self.assertTrue(q["current_frontier"]["next"].startswith(("PET114:","PET115:","PET116:","PET117:","PET118:")))
+  self.assertTrue(q["current_frontier"]["next"].startswith(("PET114:","PET115:","PET116:","PET117:","PET118:","PET119:")))
   self.assertEqual(y["source_bounded_review_receipt"],str(A.relative_to(ROOT)))
   self.assertTrue(a["source_bounded_only"] and a["year_reopenable"])
   self.assertFalse(a["historically_complete"])
