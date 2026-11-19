@@ -18,7 +18,7 @@ class Pet115Year2018Annual(unittest.TestCase):
   self.assertGreaterEqual(q["current_frontier"]["year"],2020)
   self.assertEqual(n["research_gate"],"SOURCE_BOUNDED_REVIEWED") # PET118 subsequent year review, PET115 handoff remains 2019
   self.assertIn(a["id"],[r["id"] for r in q["root_source_census_receipts"]])
-  self.assertTrue(q["current_frontier"]["next"].startswith(("PET116:","PET117:","PET118:","PET119:")))
+  self.assertGreaterEqual(int(q["current_frontier"]["next"].split(":")[0][3:]),116) # forward-only later PET numbers remain admissible
   self.assertEqual(y["source_bounded_review_receipt"],str(A.relative_to(ROOT)))
   self.assertFalse(y["historically_complete"])
   self.assertTrue(a["source_bounded_only"] and a["year_reopenable"])
