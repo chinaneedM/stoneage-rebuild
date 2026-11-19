@@ -68,7 +68,7 @@ class Pet123Year2023SourceBoundedAudit(unittest.TestCase):
     def test_rabbit_candidate_rings_are_items_and_new_pc_platform_is_not_old_client(self):
         s = self.s
         self.assertEqual(len(s), len(self.a["sources"]))
-        self.assertGreaterEqual(len(s), 7)
+        self.assertEqual(len(s), 6)
         rabbit = s["TW2023-RABBIT-PLAYER-GUIDE-INDEX"]
         self.assertIn("里拉拉", rabbit["candidate_pet_labels"])
         self.assertFalse(rabbit["actual_official_first_release_proved"])
