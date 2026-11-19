@@ -1,0 +1,192 @@
+{
+  "schema": "stoneage.pet124.year2024_six_region_classic_pc_source_bounded_audit.r1",
+  "id": "PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
+  "date": "2026-11-19",
+  "active_module": "PET",
+  "year": 2024,
+  "baseline": {
+    "main_head": "cd530907e30921a6e0a2b2f5aa2522049898ef87",
+    "main_tree": "b589e88eab43800474dbf400cb46c49e04eb1855",
+    "previous_pet123_pr": 538,
+    "previous_main_checks_success": 31,
+    "previous_main_checks_total": 31,
+    "current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_state_bytes": 2709173
+  },
+  "year_frontier_before": 2024,
+  "year_frontier_after": 2025,
+  "review_status": "SOURCE_BOUNDED_REVIEWED",
+  "source_bounded_only": true,
+  "historically_complete": false,
+  "year_reopenable": true,
+  "independent_region_reviews": 6,
+  "region_reviews": {
+    "CN": {
+      "region": "CN",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "year_reopenable": true,
+      "pet_population": null,
+      "official_2024_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "NO_AUTHENTICATED_2024_ORIGINAL_CLASSIC_2D_PC_OPERATOR_CLIENT_OR_NATIVE_PET_MASTER_ACQUIRED",
+      "reopen_trigger": "CN2024_AUTHORIZED_CLASSIC_2D_PC_OPERATOR_PATCH_SHA_SAME_DEPLOYMENT_PET_MASTER_SPR_SKILLS_GRANTS"
+    },
+    "TW": {
+      "region": "TW",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "year_reopenable": true,
+      "pet_population": null,
+      "official_2024_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "2024_DRAGON_PLAYER_RELAY_INDEX_AND_2024_AUTUMN_PLAYER_GUIDE_21_REWARD_POOL_WITH_NO_VERIFIED_OPERATOR_NATIVE_MASTER",
+      "reopen_trigger": "TW2024_ORIGINAL_OPERATOR_NOTICE_REALM_LICENSE_CLIENT_PATCH_SHA_NATIVE_PET_POOL_ID_SPR_SKILLS_GRANT"
+    },
+    "HK_MO": {
+      "region": "HK_MO",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "year_reopenable": true,
+      "pet_population": null,
+      "official_2024_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "PRIOR_2011_REGIONAL_LICENSE_DOES_NOT_CONFIRM_2024_SHARED_TW_OR_INDEPENDENT_PC_DEPLOYMENT",
+      "reopen_trigger": "HKMO2024_LICENSE_AND_SAME_REALM_CLIENT_PET_MASTER_OR_NATIVE_ISSUE"
+    },
+    "KR": {
+      "region": "KR",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "year_reopenable": true,
+      "pet_population": null,
+      "official_2024_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "PRIOR_OLD_PC_TERMINATION_NOT_EQUIVALENT_TO_2024_OFFICIAL_PC_RESTART_OR_ZERO_PET_PROOF",
+      "reopen_trigger": "KR2024_AUTHORIZED_CLASSIC_2D_PC_REOPEN_PATCH_PET_ID_AND_ACTUAL_GRANT"
+    },
+    "JP": {
+      "region": "JP",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "year_reopenable": true,
+      "pet_population": null,
+      "official_2024_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "PREVIOUS_JP_DIGIPARK_PC_END_NOT_A_2024_REVIVAL_OR_PET_ID_RECORD",
+      "reopen_trigger": "JP2024_AUTHORIZED_CLASSIC_2D_PC_REOPEN_CLIENT_NATIVE_PET_ISSUANCE"
+    },
+    "OTHER": {
+      "region": "OTHER",
+      "review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "year_reopenable": true,
+      "pet_population": null,
+      "official_2024_first_release_species_count": null,
+      "native_pet_id_rows_verified": 0,
+      "source_boundary": "NO_SPECIFIC_2024_NAMED_COUNTRY_OPERATOR_ORIGINAL_CLASSIC_PC_SAME_DEPLOYMENT_PET_MASTER_VERIFIED_THIS_UNIT",
+      "reopen_trigger": "OTHER2024_NAMED_COUNTRY_AUTHORIZED_ORIGINAL_2D_PC_BUILD_AND_NATIVE_PET_RELEASE"
+    }
+  },
+  "sources": [
+    {
+      "id": "TW2024-DRAGON-PLAYER-RELAY-INDEX",
+      "region": "TW",
+      "product": "CLASSIC_2D_PC_PLAYER_CLAIM_REALM_AND_LICENSE_UNVERIFIED",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&lorder=1&parent=5301&sn=5302",
+      "source_year": 2024,
+      "grade": "PLAYER_RELAYED_DRAGON_FESTIVAL_GUIDE_SEARCH_INDEX_DIRECT_403",
+      "task_object_labels": [
+        "年糕",
+        "尼斯之石",
+        "時光果子",
+        "未知碎片",
+        "木笛",
+        "疾速之龍的寶玉"
+      ],
+      "native_new_pet_id": null,
+      "actual_2024_first_new_species_proved": false,
+      "negative": "ITEMS_AND_DRAGON_TASK_BOSS_NOT_NATIVE_NEW_LIVE_PET_ID"
+    },
+    {
+      "id": "TW2024-AUTUMN-C-PLAYER-FIRSTHAND-GUIDE-INDEX",
+      "region": "TW",
+      "product": "CLASSIC_2D_PC_PLAYER_CLAIM_REALM_AND_LICENSE_UNVERIFIED",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=1571&snA=81814",
+      "source_date_display": "2024-09-14",
+      "grade": "CONTEMPORANEOUS_PLAYER_QUEST_GUIDE_SEARCH_INDEX_SOURCE_PAGE_NOT_OBTAINED",
+      "mentioned_pool_count": 21,
+      "pool_claim": "座狼能力提昇血清加21種寵物其中1種",
+      "named_reward_pet_ids_verified": 0,
+      "reward_pool_actual_member_names": null,
+      "task_npc_labels": [
+        "克達達",
+        "里拉拉"
+      ],
+      "task_item_labels": [
+        "紅蘿蔔",
+        "糖果",
+        "魔法南瓜"
+      ],
+      "negative": "21_PLAYER_POOL_POSITIONS_NOT_21_NEW_2024_SPECIES;_SERUM_AND_ITEMS_NOT_PETS"
+    },
+    {
+      "id": "TW2024-AUTUMN-INDEX-MIRROR",
+      "region": "TW",
+      "product": "CLASSIC_2D_PC_PLAYER_CLAIM_REALM_AND_LICENSE_UNVERIFIED",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=5346",
+      "source_year": 2024,
+      "grade": "PLAYER_GUIDE_SAME_EVENT_INDEX_DIRECT_403",
+      "not_independent_from": "TW2024-AUTUMN-C-PLAYER-FIRSTHAND-GUIDE-INDEX",
+      "claims": [
+        "二代狼兌換",
+        "狼血清獎勵",
+        "萬聖寵強化"
+      ],
+      "negative": "SAME_PLAYER_EVENT_AND_SERUM_NOT_SECOND_INDEPENDENT_OPERATOR_ANNOUNCEMENT_OR_NEW_SPECIES"
+    }
+  ],
+  "source_boundaries": {
+    "tw_dragon": "PLAYER_GUIDE_INDEX_ONLY_PAGE_403_NOT_OPERATOR_ORIGINAL_HTML_OR_2024_PET_MASTER",
+    "tw_autumn_21": "21_PLAYER_CLAIMED_POOL_CHOICES_NOT_NEW_SPECIES_OR_NATIVE_PET_TABLE",
+    "tw_autumn_mirror": "SAME_PLAYER_EVENT_NOT_SECOND_INDEPENDENT_OPERATOR_RECORD",
+    "taiwan_licensing": "2024_AUTHORIZATION_BY_REALM_NOT_VERIFIED",
+    "client_search": "NO_2024_DIRECT_ORIGINAL_CLASSIC_PC_CLIENT_BYTES_OBTAINED_THIS_UNIT_FREE_SOURCE_PRIORITY"
+  },
+  "new_original_pc_client_bytes": 0,
+  "new_original_pc_patch_bytes": 0,
+  "new_native_pet_id_rows": 0,
+  "new_original_pc_spr_frames": 0,
+  "new_native_skill_functions": 0,
+  "new_original_server_pet_grants": 0,
+  "original_pc_global_2024_species_count": null,
+  "original_pc_2024_first_release_species_count": null,
+  "negative_controls": {
+    "no_paid_marketplace": true,
+    "no_private_server_as_official": true,
+    "no_client_link_as_acquired_bytes": true,
+    "no_search_index_as_original_operator_html": true,
+    "no_player_pool_21_as_2024_new_species": true,
+    "no_festival_item_as_pet": true,
+    "no_serum_as_pet": true,
+    "no_relay_mirror_counted_twice": true,
+    "no_missing_sources_as_zero_pets": true,
+    "no_proprietary_assets_in_public_git": true,
+    "current_state_original_blob_unchanged": true,
+    "no_mobile_product_entries_in_pc_sources": true,
+    "no_mobile_or_dual_end_qualifies_as_classic_pc": true
+  },
+  "report": "docs/continuity/STONEAGE-PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119.md",
+  "next": "PET125_2025_ORIGINAL_CLASSIC_PC_OFFICIAL_ONLY_SOURCE_FIRST",
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "pc_only_scope": {
+    "effective_date": "2026-11-19",
+    "source": "USER_EXPLICIT",
+    "protocol_section": 26,
+    "excluded_mobile_source_records": 3,
+    "eligible_source_records": 3
+  }
+}

@@ -12,6 +12,7 @@ def search(a,b,region=None,name="",leads=False,limit=100):
  rows=([*a["remaining_unconfirmed_official_leads"],*b["japan_taiwan_prelaunch_or_mechanic_leads"]] if leads else [*a["confirmed_official_release_records"],*b["new_japan_classic_official_release_events"]])
  result=[]
  for r in rows:
+  if r.get("product_line") and "CLASSIC_PC" not in r["product_line"]:continue
   if region and r.get("region")!=region:continue
   text=str(r.get("official_name_as_written") or r.get("official_name_as_written_or_null") or r.get("name_as_source") or "").casefold()
   if name and name.casefold() not in text:continue

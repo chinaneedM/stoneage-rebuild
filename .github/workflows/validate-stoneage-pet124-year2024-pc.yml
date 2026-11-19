@@ -1,0 +1,37 @@
+name: PET124 PC-only source and 2025 chronology
+on:
+  push:
+    paths:
+      - "research/recovered/STONEAGE-PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json"
+      - "research/recovered/STONEAGE-PET123-YEAR2023-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json"
+      - "research/recovered/STONEAGE-PET25-OFFICIAL-RELEASE-ROSTER-R1.json"
+      - "research/recovered/STONEAGE-PET26-JP-TW-CLASSIC-OFFICIAL-RELEASE-R1.json"
+      - "research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json"
+      - "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md"
+      - "docs/STONEAGE-PET-OFFICIAL-GLOBAL-INCLUSION-R1.md"
+      - "tests/test_stoneage_pet124_year2024_six_region_pc_bounded_audit.py"
+      - "tests/test_stoneage_pc_only_scope_20261119.py"
+      - ".github/workflows/validate-stoneage-pet124-year2024-pc.yml"
+  pull_request:
+    paths:
+      - "research/recovered/STONEAGE-PET25-OFFICIAL-RELEASE-ROSTER-R1.json"
+      - "research/recovered/STONEAGE-PET26-JP-TW-CLASSIC-OFFICIAL-RELEASE-R1.json"
+      - "research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json"
+      - "research/recovered/STONEAGE-PET123-YEAR2023-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json"
+      - "research/recovered/STONEAGE-PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json"
+      - "tests/test_stoneage_pc_only_scope_20261119.py"
+      - ".github/workflows/validate-stoneage-pet124-year2024-pc.yml"
+jobs:
+  pc-only-source-acceptance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify only eligible classic-PC official pet sources, chronology and original blob
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pc_only_scope_20261119.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet25_official_release_roster.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet26_classic_official.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet27_chronology.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet123_year2023_six_region_pc_bounded_audit.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet124_year2024_six_region_pc_bounded_audit.py' -v
+          python -m tools.stoneage_pet27_chronology --validate

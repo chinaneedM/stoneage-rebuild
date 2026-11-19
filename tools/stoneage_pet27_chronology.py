@@ -7,6 +7,7 @@ PATH=BASE/"STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json"
 def load(): return json.loads(PATH.read_text(encoding="utf-8"))
 def choose(data,year=None,region=None,product=None):
     return [x for x in data["previously_recovered_release_events_ordered_by_evidence_year_not_first_actual_release"] if
+            "CLASSIC_PC" in x["product_line"] and
             (year is None or x["year"]==year) and
             (region is None or x["region"]==region) and
             (product is None or x["product_line"]==product)]
@@ -14,6 +15,7 @@ def validate(data):
     a=json.loads((BASE/"STONEAGE-PET25-OFFICIAL-RELEASE-ROSTER-R1.json").read_text(encoding="utf-8"))
     b=json.loads((BASE/"STONEAGE-PET26-JP-TW-CLASSIC-OFFICIAL-RELEASE-R1.json").read_text(encoding="utf-8"))
     rows=data["previously_recovered_release_events_ordered_by_evidence_year_not_first_actual_release"]
+    if any("CLASSIC_PC" not in x["product_line"] for x in rows):raise ValueError("non-PC event in official PC chronological index")
     if len(rows)!=a["counts"]["release_documentary_records"]+len(b["new_japan_classic_official_release_events"]):raise ValueError("source event count has drifted")
     expected={x["record_id"] for x in a["confirmed_official_release_records"]}|{x["id"] for x in b["new_japan_classic_official_release_events"]}
     if {x["source_id"] for x in rows}!=expected:raise ValueError("source record identities drifted")

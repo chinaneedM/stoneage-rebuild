@@ -23,7 +23,7 @@ class TestPet61CN2002SourceGrades(unittest.TestCase):
         self.assertEqual(d["source_corpus_preexisting_2002_documentary_release_events"],4)
         self.assertEqual(d["source_corpus_new_documentary_operator_release_events_added_to_PET25"],0)
         self.assertEqual(year["documentary_event_count_NOT_species"],4)
-        self.assertEqual(len(self.p25["confirmed_official_release_records"]),24)
+        self.assertEqual(len(self.p25["confirmed_official_release_records"]),5)
         expected=set(year["documented_release_event_ids_from_existing_PET25_PET26"])
         actual={x["record_id"] for x in d["original_registered_2002_documentary_records"]}
         self.assertEqual(expected,actual)

@@ -11,7 +11,8 @@ def select(d,region=None,product=None,name="",only_leads=False,limit=100):
     rows=d["remaining_unconfirmed_official_leads"] if only_leads else d["confirmed_official_release_records"]
     needle=name.casefold().strip()
     return [r for r in rows
-            if (not region or r["region"]==region)
+            if r["product_line"].startswith("STONEAGE_CLASSIC_PC_")
+            and (not region or r["region"]==region)
             and (not product or r["product_line"]==product)
             and (not needle or needle in (r.get("official_name_as_written") or r.get("name_as_source") or "").casefold())][:limit]
 
