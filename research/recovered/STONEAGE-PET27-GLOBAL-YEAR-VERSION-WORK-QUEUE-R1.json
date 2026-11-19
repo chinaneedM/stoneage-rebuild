@@ -15,13 +15,13 @@
   "latest_year_in_scope": 2026,
   "reason_start_provisional": "1999 is a search-window starting point, NOT an independently authenticated first official launch date; earlier qualified evidence may extend the sequence backwards",
   "current_frontier": {
-    "year": 2022,
-    "phase": "YEAR_2022_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
+    "year": 2023,
+    "phase": "YEAR_2023_OFFICIAL_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET121-YEAR2021-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
-    "next": "PET122: 2022 six-region classic 2D PC original client/patch bytes and actual officially issued pets; Korean and other mobile franchises separate; 2022 NOT_YEAR_AUDITED",
+    "latest_partial_root_review": "PET122-YEAR2022-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
+    "next": "PET123: 2023 six-region classic 2D PC official original client/patch bytes, same-deployment native PET sources, actual authorized pet issuance; mobile and derivative releases remain separated; 2023 NOT_YEAR_AUDITED",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE",
-    "latest_source_bounded_annual_review": "PET121-YEAR2021-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
+    "latest_source_bounded_annual_review": "PET122-YEAR2022-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
     "latest_2016_partial_source_receipt": "PET109-TW2016-PLAYER-PET-REWARD-AND-HALLOWEEN-CROSSYEAR-20261118",
     "latest_2017_partial_source_receipt": "PET112-TW2017-AUG-BLUE-TIGER-REOPENED-PROMO-20261118",
     "latest_2018_partial_source_receipt": "PET114-TW2018-TWO-REALM-SUMMER-PET-MOBILE-BOUNDARY-20261118",
@@ -3796,7 +3796,7 @@
     {
       "year": 2022,
       "chronological_position": 24,
-      "research_gate": "NOT_YEAR_AUDITED",
+      "research_gate": "SOURCE_BOUNDED_REVIEWED",
       "documented_release_event_ids_from_existing_PET25_PET26": [],
       "documentary_event_count_NOT_species": 0,
       "unverified_early_and_mid_year_pets_may_exist": true,
@@ -3807,7 +3807,108 @@
         "KR": "NOT_FULLY_AUDITED",
         "OTHER": "NOT_FULLY_AUDITED"
       },
-      "version_release_date_conflicts_closeable_only_by_primary_sources": true
+      "version_release_date_conflicts_closeable_only_by_primary_sources": true,
+      "historically_complete": false,
+      "historical_species_count": null,
+      "year_reopenable": true,
+      "source_bounded_review_receipt": "research/recovered/STONEAGE-PET122-YEAR2022-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json",
+      "source_bounded_review_report": "docs/continuity/STONEAGE-PET122-YEAR2022-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119.md",
+      "partial_source_review_receipts": [
+        {
+          "id": "PET122-YEAR2022-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
+          "date": "2026-11-19",
+          "receipt": "research/recovered/STONEAGE-PET122-YEAR2022-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json",
+          "region_scope": [
+            "CN",
+            "TW",
+            "HK_MO",
+            "KR",
+            "JP",
+            "OTHER"
+          ],
+          "source_bounded_review_closed": true,
+          "historically_complete": false,
+          "year_reopenable": true,
+          "new_2022_original_pc_client_bytes": 0,
+          "new_2022_native_pet_ids": 0,
+          "global_2022_species_count": null
+        }
+      ],
+      "source_bounded_partial_review_notes_forward_only": [
+        "PET122: 2022 TW Jan29 tiger spring player first-hand says silver tiger tooth yielded 莫可, same account prize pool gold tiger tooth -> 莫洛特 candidate plus two enhancement sera, not original server grant or first debut; Jan25 operator relay only thread title. 2024 Nov edited retrospective 2022 Mid-Autumn persistent quest guide says obtainable 阿道夫狼 and 人寵阿道夫, white wolf buckle and wolf teeth are items, original 2022 build/reward unverified. TW 2022 Aug PTT contemporaneous comments on Taozhu experience and license question, neither official authorization proof. 2022 community claimed official client Baidu link cannot be publicly opened, 0B acquired; source is private server tech context. KR Netmarble firstparty 2022-02-07 StoneAge World mobile adds raid pet 사루아치, seven 6-star upgrades not seven new classic PC pets. Six-region original PC client, native pet master/SPR/skills/grants new verification 0. Year SOURCE_BOUNDED_REVIEWED, historically_complete=false, totals null, 2023 PET123 next."
+      ],
+      "region_source_reviews": {
+        "CN": {
+          "region": "CN",
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "official_2022_first_release_species_count": null,
+          "native_pet_id_rows_verified": 0,
+          "source_boundary": "PRIOR_2016_CLASSIC_PC_SHUTDOWN_AND_LATER_LICENSE_NOT_2022_ORIGINAL_PC_PET_RELEASE",
+          "reopen_trigger": "CN2022_AUTHORIZED_ORIGINAL_CLASSIC_PC_OPERATOR_CLIENT_SHA_SAMEDEPLOYMENT_PET_MASTER_NATIVE_GRANTS"
+        },
+        "TW": {
+          "region": "TW",
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "official_2022_first_release_species_count": null,
+          "native_pet_id_rows_verified": 0,
+          "source_boundary": "2022_JAN29_TIGER_PLAYER_FIRSTHAND_AND_2024_RETROSPECTIVE_2022_MIDAUTUMN_GUIDE_NO_OFFICIAL_NATIVE_OR_LICENSE",
+          "reopen_trigger": "TW2022_TAOZHU_ORIGINAL_2022_OPERATOR_NOTICES_REALM_AUTHORIZATION_CLIENT_SHA_PET_ID_SPR_SKILL_GRANTS"
+        },
+        "KR": {
+          "region": "KR",
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "official_2022_first_release_species_count": null,
+          "native_pet_id_rows_verified": 0,
+          "source_boundary": "2015_OLDPC_END_VS_2022_NETMARBLE_STONEAGE_WORLD_SEPARATE_MOBILE_OFFICIAL",
+          "reopen_trigger": "KR2022_AUTHORIZED_ORIGINAL_2D_PC_RESTART_BUILD_AND_NATIVE_PET_ISSUANCE"
+        },
+        "JP": {
+          "region": "JP",
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "official_2022_first_release_species_count": null,
+          "native_pet_id_rows_verified": 0,
+          "source_boundary": "2010_DIGIPARK_OLDPC_END_NO_2022_AUTHORIZED_2D_PC_RESTART_PROOF",
+          "reopen_trigger": "JP2022_AUTHORIZED_ORIGINAL_2D_PC_OPERATOR_BUILD_PET_MASTER_LIVE_RELEASE"
+        },
+        "OTHER": {
+          "region": "OTHER",
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "official_2022_first_release_species_count": null,
+          "native_pet_id_rows_verified": 0,
+          "source_boundary": "NO_2022_NAMED_COUNTRY_OFFICIAL_2D_PC_BUILD_AND_PET_NATIVE_COMBINATION",
+          "reopen_trigger": "OTHER2022_NAMED_COUNTRY_LICENSED_CLASSIC_PC_BUILD_PET_MASTER_OR_GRANT"
+        }
+      },
+      "additional_region_reviews": {
+        "HK_MO": {
+          "region": "HK_MO",
+          "review_status": "SOURCE_BOUNDED_REVIEWED",
+          "historically_complete": false,
+          "pet_population": null,
+          "official_2022_first_release_species_count": null,
+          "native_pet_id_rows_verified": 0,
+          "source_boundary": "2011_REGION_LICENSE_NOT_2022_STANDALONE_OR_SHARED_CLASSIC_PC_DEPLOYMENT",
+          "reopen_trigger": "HKMO2022_OFFICIAL_PC_REALM_SHARED_OR_STANDALONE_NATIVE_CLIENT_PET_ISSUANCE"
+        }
+      },
+      "residual_reopen_triggers": [
+        "CN2022_AUTHORIZED_ORIGINAL_CLASSIC_PC_OPERATOR_CLIENT_SHA_SAMEDEPLOYMENT_PET_MASTER_NATIVE_GRANTS",
+        "TW2022_TAOZHU_ORIGINAL_2022_OPERATOR_NOTICES_REALM_AUTHORIZATION_CLIENT_SHA_PET_ID_SPR_SKILL_GRANTS",
+        "HKMO2022_OFFICIAL_PC_REALM_SHARED_OR_STANDALONE_NATIVE_CLIENT_PET_ISSUANCE",
+        "KR2022_AUTHORIZED_ORIGINAL_2D_PC_RESTART_BUILD_AND_NATIVE_PET_ISSUANCE",
+        "JP2022_AUTHORIZED_ORIGINAL_2D_PC_OPERATOR_BUILD_PET_MASTER_LIVE_RELEASE",
+        "OTHER2022_NAMED_COUNTRY_LICENSED_CLASSIC_PC_BUILD_PET_MASTER_OR_GRANT"
+      ]
     },
     {
       "year": 2023,
@@ -5648,6 +5749,30 @@
       "new_original_2021_client_bytes": 0,
       "new_native_pet_ids": 0,
       "global_2021_species_count": null
+    },
+    {
+      "id": "PET122-YEAR2022-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
+      "regions": [
+        "CN",
+        "TW",
+        "HK_MO",
+        "KR",
+        "JP",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET122-YEAR2022-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119.md",
+      "evidence_json": "research/recovered/STONEAGE-PET122-YEAR2022-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json",
+      "year_frontier_before": 2022,
+      "year_frontier_after": 2023,
+      "year_not_closed": false,
+      "year_review_status": "SOURCE_BOUNDED_REVIEWED",
+      "historically_complete": false,
+      "prior_partial_receipts": 0,
+      "independent_region_reviews": 6,
+      "year_reopenable": true,
+      "new_original_2022_client_bytes": 0,
+      "new_native_pet_ids": 0,
+      "global_2022_species_count": null
     }
   ],
   "client_first_methodology": {
