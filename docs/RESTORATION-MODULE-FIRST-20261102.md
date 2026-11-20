@@ -271,3 +271,8 @@ PET118 2019来源有界年审已合并，当前最早未审年份2020。新增[P
 ## 2026-11-19｜PET125 2025 PC-only 年份游标续进
 
 主线 PR #539 合并后，继续仅以 **PET** 为活动内容模块。2025 TW 同期玩家蛇年／端午暑期／秋季宠物礼包与任务资料仅能证实玩家描述的名称候选和奖品分类；原官方PC客户端、同版PET主档和真实发宠未得。CN 2025 新PC原生复刻有第一方预约/测试公告，**不是原经典PC产品线的自动延续**，未纳入当前经典PC宠物总数。依 [PET125证据](../research/recovered/STONEAGE-PET125-YEAR2025-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json)及[年审报告](continuity/STONEAGE-PET125-YEAR2025-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119.md)，2025只记来源有界审查、缺件可重开，2026尚未年审，**NEXT PET126 / 2026六地区原经典PC宠物来源核查**。宠物总体结束门和用户明确换模块许可仍未满足；原CURRENT Blob `c89e0e33537990aa2132b47c40fef49a985a935c`不改。
+
+
+## 2026-11-20 — PET126C：原台湾 1.0 PC 私人零售包重新取得并独立复查（仍未模块结项）
+
+[真实原件再访问及 124 条同版本宠物具名图形验证](continuity/STONEAGE-PET126C-TW10-ORIGINAL-BYTES-REACCESS-20261120.md)／[安全派生收据](../research/recovered/STONEAGE-PET126C-TW10-ORIGINAL-SOURCE-REACCESS-R1.json)：从私人文件库本轮**实际**重取 `P3H.zip`，整包372626292B SHA-256匹配，379/379全成员 SHA/CRC 重读（375原`source/`成员）。独立静态复查 `sa_3.exe` 原编译相册181位置的124具名／57空，124同包SPR组、6944动作序列/70236帧引用、120可定位原REAL头像和4个缺头像。**全部与已登记PET39旧实证一致，不记新种或官服已发宠；原生游戏未执行**。此次实质进展是原件重新可访问并复现；2026仍`NOT_YEAR_AUDITED`，PET`SOURCE_BOUNDED_PARTIAL`，NEXT **PET126D**核同版本其它技能／ID／实际发放可用源，形成七维终审收据。无原版权资源公开、无付费卖盘/手游，旧CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`原样保留，Stage A 7PARTIAL+2OPEN、B/wiki gated、R79暂停、总体完成率未知。
