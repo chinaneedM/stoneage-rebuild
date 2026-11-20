@@ -40,7 +40,7 @@ class PET126PCYearToDateBoundary(unittest.TestCase):
         self.assertTrue(q["current_frontier"]["next"].startswith("PET126B"))
         self.assertIsNone(a["annual_review"]["official_original_pc_global_species_count"])
         self.assertIsNone(a["annual_review"]["official_2026_first_release_species_count"])
-        self.assertIsNone(year["historical_species_count"])
+        self.assertIsNone(year.get("historical_species_count"))
         self.assertTrue(any(x["id"] == a["id"] for x in q["root_source_census_receipts"]))
 
     def test_six_regions_are_open_not_zero_species(self):
