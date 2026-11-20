@@ -1,0 +1,26 @@
+name: PET126D original TW1 source-exact CP950 pet text and nonruntime gate
+on:
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-PET126D-TW10-ORIGINAL-CLIENT-PET-UI-CP950-LITERALS-R1.json'
+      - 'docs/continuity/STONEAGE-PET126D-TW10-BIG5-ORIGINAL-PET-UI-STATIC-SOURCE-20261120.md'
+      - 'tests/test_stoneage_pet126d_tw10_original_cp950_ui.py'
+      - '.github/workflows/validate-stoneage-pet126d-cp950-ui.yml'
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-PET126D-TW10-ORIGINAL-CLIENT-PET-UI-CP950-LITERALS-R1.json'
+      - 'docs/continuity/STONEAGE-PET126D-TW10-BIG5-ORIGINAL-PET-UI-STATIC-SOURCE-20261120.md'
+      - 'tests/test_stoneage_pet126d_tw10_original_cp950_ui.py'
+      - '.github/workflows/validate-stoneage-pet126d-cp950-ui.yml'
+jobs:
+  tw10-cp950-static-client-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify derived original CP950 digests and earlier PET same-build/source gates
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pet126d_tw10_original_cp950_ui.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet126c_tw10_reaccess.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet126_2026_ytd_pc_gap_matrix.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet27_chronology.py' -v
+          python -m tools.stoneage_pet27_chronology --validate
