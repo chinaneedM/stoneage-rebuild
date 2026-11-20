@@ -1,0 +1,169 @@
+{
+  "schema": "stoneage.pet126d.tw10_compiled_client_capture_slot_gate_static.r1",
+  "recorded_date": "2026-11-20",
+  "active_module": "PET",
+  "scope": "ORIGINAL_OFFICIAL_CLASSIC_2D_PC_ONLY",
+  "working_year": 2026,
+  "working_year_status": "NOT_YEAR_AUDITED",
+  "source": {
+    "archive_basename": "StoneAge-TW1-original-runtime-and-native-observation-P3H.zip",
+    "archive_bytes": 372626292,
+    "archive_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "archive_members_rechecked_this_session": 379,
+    "zip_crc_all_pass": true,
+    "pe_member": "source/sa_3.exe",
+    "pe_member_bytes": 425984,
+    "pe_member_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "pe_source_file_offset_equals_va_minus_0x400000_for_examined_text_and_data": true,
+    "native_program_executed_in_this_unit": false,
+    "proprietary_original_published": false
+  },
+  "source_code_windows": [
+    {
+      "id": "five_slot_flag_counter",
+      "file_start": 5840,
+      "file_end_exclusive": 5866,
+      "virtual_address": "0x4016D0",
+      "sha256": "ca6ecd3b9466bbd31ae2c3858684ab914792325d60e4b779682d1fdc2e6cfe6c",
+      "kind": "STATIC_DISASSEMBLED_COUNTER"
+    },
+    {
+      "id": "capture_threshold_and_labels",
+      "file_start": 9044,
+      "file_end_exclusive": 9143,
+      "virtual_address": "0x402354",
+      "sha256": "a2baf04999d257814660823e5f5a83f4aeca331601844b99930345631acb5bf0",
+      "kind": "STATIC_CALL_COMPARE_AND_BRANCH"
+    },
+    {
+      "id": "second_five_slot_threshold",
+      "file_start": 17795,
+      "file_end_exclusive": 17805,
+      "virtual_address": "0x404583",
+      "sha256": "97b91cc44043e4a71b685fe1475314ff91c6e5d7523a47b994f98da5b7542450",
+      "kind": "STATIC_CALL_COMPARE_AND_BRANCH"
+    }
+  ],
+  "slot_counter": {
+    "function_va": "0x4016D0",
+    "array_start_va": "0x017F76C0",
+    "array_end_exclusive_va": "0x017F78DC",
+    "element_stride_bytes": 108,
+    "slot_count": 5,
+    "flag_width_bits": 16,
+    "count_if_flag_equals": 1,
+    "counter_returns_matched_slots": true,
+    "slot_species_identity_proven": false,
+    "slot_semantic": "LOCAL_5_ENTRY_FLAGGED_STATE_UNRESOLVED"
+  },
+  "capture_gate": {
+    "source_va": "0x402354",
+    "counter_call_target_va": "0x4016D0",
+    "compare_count_against": 5,
+    "less_than_five_label": "捕捉。",
+    "greater_equal_five_label": "不能再捕獲更多的寵物了。",
+    "less_than_five_local_branch_va": "0x4023B2",
+    "label_vas": [
+      "0x455F00",
+      "0x455F08"
+    ],
+    "client_ui_branch_static_proven": true,
+    "original_server_capture_accepted_proven": false,
+    "total_owned_pet_capacity_proven": false
+  },
+  "second_counter_comparison": {
+    "source_va": "0x404583",
+    "counter_target_va": "0x4016D0",
+    "compare_count_against": 5,
+    "subsequent_execution_semantics_proven": false
+  },
+  "other_pet_ui_literal_xrefs": [
+    {
+      "role": "no_active_battle_pet",
+      "file_offset": 352068,
+      "label_va": "0x455F44",
+      "text_instruction_ref_va": "0x403288"
+    },
+    {
+      "role": "switch_pet",
+      "file_offset": 352128,
+      "label_va": "0x455F80",
+      "text_instruction_ref_va": "0x402DD0"
+    },
+    {
+      "role": "use_skill",
+      "file_offset": 352180,
+      "label_va": "0x455FB4",
+      "text_instruction_ref_va": "0x403796"
+    },
+    {
+      "role": "no_pet",
+      "file_offset": 378044,
+      "label_va": "0x45C4BC",
+      "text_instruction_ref_va": "0x429489"
+    },
+    {
+      "role": "pet_mail_notice",
+      "file_offset": 379308,
+      "label_va": "0x45C9AC",
+      "text_instruction_ref_va": "0x432F85"
+    }
+  ],
+  "evidence_grade": "ORIGINAL_CLIENT_STATIC_LOCAL_CAPTURE_UI_CAPACITY_GATE",
+  "assertions_not_supported": [
+    "TOTAL_ACCOUNT_PET_CAPACITY_FIVE",
+    "SERVER_ENFORCED_CAPTURE_LIMIT_FIVE",
+    "FIVE_OFFICIAL_PET_SPECIES",
+    "ORIGINAL_PET_SKILL_EFFECT",
+    "IN_GAME_PET_RELEASE_CONFIRMED",
+    "NATIVE_CAPTURE_EXECUTION"
+  ],
+  "seven_dimensions": [
+    {
+      "id": "provenance",
+      "increment": "SOURCE_PRESERVED_AND_REACCESSED",
+      "closed": false
+    },
+    {
+      "id": "identity",
+      "increment": "NO_NEW_PET_IDENTITY",
+      "closed": false
+    },
+    {
+      "id": "pixels_actions",
+      "increment": "NO_NEW_PIXELS",
+      "closed": false
+    },
+    {
+      "id": "stats_growth",
+      "increment": "NO_NEW_SAME_BUILD_GROWTH",
+      "closed": false
+    },
+    {
+      "id": "skills",
+      "increment": "ONLY_LITERAL_CLIENT_UI_WORD_NOT_SKILL_DEFINITION",
+      "closed": false
+    },
+    {
+      "id": "capture_issuance_riding",
+      "increment": "FIVE_SLOT_CAPTURE_UI_BRANCH_STATIC",
+      "closed": false
+    },
+    {
+      "id": "rights",
+      "increment": "DERIVED_OFFSETS_SHA_ONLY",
+      "closed": false
+    }
+  ],
+  "new_official_pet_species_proven": 0,
+  "source_bounded_closed": false,
+  "historically_complete": false,
+  "native_runtime_verified": false,
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "historical_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "prior_receipt": "research/recovered/STONEAGE-PET126C-TW10-ORIGINAL-SOURCE-REACCESS-R1.json",
+  "next": "PET126E_BOUND_LOCAL_SLOT_STATE_AND_CAPTURE_PROTOCOL_DATAFLOW_OR_EXPLICIT_MISSING_SERVER_SOURCE"
+}
