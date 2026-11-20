@@ -42,10 +42,10 @@ class PCOnlyProjectScope(unittest.TestCase):
         self.assertTrue(all("CLASSIC_PC" in x["product_line"] for x in events))
         counts = {x["year"]: x["documentary_event_count_NOT_species"] for x in self.q["yearly_work_queue"] if x["documentary_event_count_NOT_species"]}
         self.assertEqual(counts, {2002: 4, 2003: 1, 2006: 1, 2008: 1, 2009: 2})
-        self.assertEqual(self.q["current_frontier"]["year"], 2025)
-        self.assertTrue(self.q["current_frontier"]["next"].startswith("PET125"))
+        self.assertEqual(self.q["current_frontier"]["year"], 2026)
+        self.assertTrue(self.q["current_frontier"]["next"].startswith("PET126"))
         self.assertTrue(all(not x.get("documented_release_event_ids_from_existing_PET25_PET26") for x in self.q["yearly_work_queue"] if x["year"] >= 2010))
-        self.assertFalse(any(x["research_gate"] == "NOT_YEAR_AUDITED" for x in self.q["yearly_work_queue"] if x["year"] < 2025))
+        self.assertFalse(any(x["research_gate"] == "NOT_YEAR_AUDITED" for x in self.q["yearly_work_queue"] if x["year"] < 2026))
         self.assertTrue(all(not x.get("historically_complete", False) for x in self.q["yearly_work_queue"] if x["research_gate"] == "SOURCE_BOUNDED_REVIEWED"))
 
     def test_2023_and_2024_audits_have_only_pc_evidence(self):

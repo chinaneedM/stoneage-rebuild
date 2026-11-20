@@ -266,3 +266,8 @@ PET仍独占活动模块，2001年份继续OPEN。优先真实**能合法免费�
 PET118 2019来源有界年审已合并，当前最早未审年份2020。新增[PET119可核证据](continuity/STONEAGE-PET119-TW2020-RAT-FESTIVAL-KR-WORLD-MOBILE-SOURCE-20261119.md)：台湾2020鼠年春节玩家转录及1/26任务玩家见证区分「鼠年、卡芙娜、卡蘿麗」奖宠候选、四村年兽、勾玉/宝箱/项圈/血清/兑换券物件；1/28坐标与2/3运营口吻改版须同服原件才能证明实际机制。韩国Netmarble一手2020年6/18手游《StoneAge World》上线、7/31新宠「푸곤／칼로」和8/12 Giiroo系/机械款亦单列授权手游来源，不给旧原版PC增加2019/2020新宠。**PET唯一活动模块，2020仍NOT_YEAR_AUDITED、NEXT PET120继续2020六地区原2D PC年度审核**；所有原生同版PET/SPR/技能及真实发放缺件 OPEN；原CURRENT `c89e0e33537990aa2132b47c40fef49a985a935c`不改，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体UNKNOWN，不查收费盘/卖家或公开原商业资产。
 
 **2026-11-19 最高用户范围修订（协议§26）：只研究有资格的官方经典 2D PC《石器时代》。任何手游、手机服务的PC登录端及双端独立新作，不纳入当前宠物图鉴、发行统计或后续各模块恢复；旧有跨产品历史语句均属已被覆盖的历史工作口径。**
+
+
+## 2026-11-19｜PET125 2025 PC-only 年份游标续进
+
+主线 PR #539 合并后，继续仅以 **PET** 为活动内容模块。2025 TW 同期玩家蛇年／端午暑期／秋季宠物礼包与任务资料仅能证实玩家描述的名称候选和奖品分类；原官方PC客户端、同版PET主档和真实发宠未得。CN 2025 新PC原生复刻有第一方预约/测试公告，**不是原经典PC产品线的自动延续**，未纳入当前经典PC宠物总数。依 [PET125证据](../research/recovered/STONEAGE-PET125-YEAR2025-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json)及[年审报告](continuity/STONEAGE-PET125-YEAR2025-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119.md)，2025只记来源有界审查、缺件可重开，2026尚未年审，**NEXT PET126 / 2026六地区原经典PC宠物来源核查**。宠物总体结束门和用户明确换模块许可仍未满足；原CURRENT Blob `c89e0e33537990aa2132b47c40fef49a985a935c`不改。

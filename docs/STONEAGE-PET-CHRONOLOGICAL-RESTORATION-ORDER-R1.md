@@ -471,3 +471,8 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
  [2024六区PC年审](continuity/STONEAGE-PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119.md)／[机读PC证据](../research/recovered/STONEAGE-PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json)：台湾2024年龙年与中秋/万圣玩家证据仍缺同版原生身份；「21种随机一只」为玩家奖池而非21种2024新宠，狼血清及任务道具不计物种；CN/TW/HK_MO/KR/JP/OTHER认证2024原PC构建及发宠资料增量0。2024=`SOURCE_BOUNDED_REVIEWED`且`historically_complete=false`，全球与首发宠物数null；**2025=`NOT_YEAR_AUDITED`，唯一NEXT PET125，只查原版官方PC**。PET唯一模块，原CURRENT Git blob c89e0e33537990aa2132b47c40fef49a985a935c不动，Stage A7PARTIAL+2OPEN，Stage B/wiki GATED，R79暂停，百分比UNKNOWN。
 
 **2026-11-19 最新用户指令：仅官方原版 PC 端；禁将任何手游/共享手机服务的新作继续计入年度PC宠物事件或研究重点。** 以[连续性协议§26](PROJECT-CONTINUITY-PROTOCOL-R1.md)及PET27 PC-only表优先于此前所有跨产品历史说明。
+
+
+## 2026-11-19｜PET125：2025 官方经典 PC 宠物来源有界年审，游标进入 2026
+
+[六地区来源/原客户端缺口报告](continuity/STONEAGE-PET125-YEAR2025-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119.md)／[机读候选、负证与重开条件](../research/recovered/STONEAGE-PET125-YEAR2025-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json)：台湾蛇年玩家「新春幻獸包」4个名字、端午暑假7项玩家礼包候选以及中秋／万圣依妮任务、布偶盾奖励，均来自搜索索引可读而原论坛URL 403 的玩家材料，不是运营方原HTML、同版原宠物主档或2025全球首次发行物种。强化丹、血清、戒指与盾牌属于物件或装备，不计活宠；早年复刻活动不能重复算新宠。大陆2025/11/28、12/29第一方证明另一个新开发的**PC原生复刻**预约与删档测试，但非旧经典2D PC同服/同构建，完全隔离，不按“上百只”宣传补旧版物种；这是PC版别边界核查，非扩充其它产品的当前宠物库。CN/TW/HK_MO/KR/JP/OTHER本轮新增认证2025原经典PC客户端、PET ID、SPR、技能、发宠0；**2025仅`SOURCE_BOUNDED_REVIEWED`，historically_complete=false，全年真实宠物及首发种数null；2026 `NOT_YEAR_AUDITED`，唯一NEXT `PET126`。** 用户的PC-only最高范围、PET模块锁、正版来源优先、禁止付费卖盘、私有版权素材、原CURRENT完整 Git Blob `c89e0e33537990aa2132b47c40fef49a985a935c`均不变；Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总进度UNKNOWN。
