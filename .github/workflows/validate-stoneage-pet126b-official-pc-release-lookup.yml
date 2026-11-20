@@ -1,0 +1,27 @@
+name: PET126B official classic PC documented pet release lookup
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet16_lookup.py'
+      - 'tests/test_stoneage_pet126b_official_pc_release_lookup.py'
+      - 'docs/continuity/STONEAGE-PET126B-OFFICIAL-PC-RELEASE-QUERY-CROSSWALK-20261120.md'
+      - '.github/workflows/validate-stoneage-pet126b-official-pc-release-lookup.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet16_lookup.py'
+      - 'tests/test_stoneage_pet126b_official_pc_release_lookup.py'
+      - 'docs/continuity/STONEAGE-PET126B-OFFICIAL-PC-RELEASE-QUERY-CROSSWALK-20261120.md'
+      - '.github/workflows/validate-stoneage-pet126b-official-pc-release-lookup.yml'
+jobs:
+  original-pc-release-lookup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate existing source-separated lookup and PC-only documentary release view
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pet126b_official_pc_release_lookup.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet16_unified_catalog.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet25_official_release_roster.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet26_classic_official.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet27_chronology.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pc_only_scope_20261119.py' -v
