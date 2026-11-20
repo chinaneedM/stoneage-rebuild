@@ -18,8 +18,8 @@
     "year": 2026,
     "phase": "YEAR_2026_OFFICIAL_CLASSIC_PC_PET_REGION_OPERATOR_VERSION_SOURCE_AUDIT",
     "status": "OPEN_NOT_YEAR_CLOSED",
-    "latest_partial_root_review": "PET125-YEAR2025-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
-    "next": "PET126: 2026 original official classic 2D PC only six-region source-first pet audit, then separate PET module closeout gap matrix; no other modules without user gate",
+    "latest_partial_root_review": "PET126-2026-YTD-SIX-REGION-PC-SOURCE-AND-PET-FIELD-GAPS-20261120",
+    "next": "PET126B: continue 2026 YTD original classic PC source-first and verify PET closure seven field gaps; year stays NOT_YEAR_AUDITED and PET module remains locked",
     "current_source_acquisition_priority": "FREE_DIRECTLY_READABLE_ORIGINAL_CLIENT_BYTES_OR_EXISTING_AUTHENTICATED_SOURCE_FIRST_NO_PAID_MARKETPLACE",
     "latest_source_bounded_annual_review": "PET125-YEAR2025-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119",
     "latest_2016_partial_source_receipt": "PET109-TW2016-PLAYER-PET-REWARD-AND-HALLOWEEN-CROSSYEAR-20261118",
@@ -4082,7 +4082,32 @@
         "OTHER": "NOT_FULLY_AUDITED"
       },
       "version_release_date_conflicts_closeable_only_by_primary_sources": true,
-      "pc_only_eligible_documentary_events": 0
+      "pc_only_eligible_documentary_events": 0,
+      "historical_species_count": null,
+      "year_reopenable": true,
+      "historically_complete": false,
+      "partial_source_review_receipts": [
+        {
+          "id": "PET126-2026-YTD-SIX-REGION-PC-SOURCE-AND-PET-FIELD-GAPS-20261120",
+          "date": "2026-11-20",
+          "review_status": "IN_PROGRESS_YTD_SOURCE_BOUND_PRELIMINARY",
+          "year_not_closed": true,
+          "regions": [
+            "CN",
+            "TW",
+            "HK_MO",
+            "KR",
+            "JP",
+            "OTHER"
+          ],
+          "evidence_json": "research/recovered/STONEAGE-PET126-YEAR2026-YTD-CLASSIC-PC-SOURCE-AND-MODULE-GAPS-R1.json",
+          "new_official_classic_pc_native_pet_id_rows": 0,
+          "original_PC_first_2026_release_species_count": null
+        }
+      ],
+      "source_bounded_partial_review_notes_forward_only": [
+        "2026-11-20 PET126 in-progress 2026 current-year PC-only snapshot: Taiwan horse-year four-element player reward/skill upgrade and summer guide leads are index/403 not original operator native pet IDs; new CN independently developed PC remake operator FAQ is OUT OF historical original 2D PC roster. No 2026 original classic-PC native client/pet master bytes or confirmed first-release species; 2026 NOT_YEAR_AUDITED remains, no next year advance; PET remains SOURCE_BOUNDED_PARTIAL."
+      ]
     }
   ],
   "version_milestone_candidate_sources": [
@@ -5940,6 +5965,30 @@
       "new_native_pet_ids": 0,
       "global_2025_species_count": null,
       "pc_only_source_filter_applied_20261119": true
+    },
+    {
+      "id": "PET126-2026-YTD-SIX-REGION-PC-SOURCE-AND-PET-FIELD-GAPS-20261120",
+      "regions": [
+        "CN",
+        "TW",
+        "HK_MO",
+        "KR",
+        "JP",
+        "OTHER"
+      ],
+      "report": "docs/continuity/STONEAGE-PET126-YEAR2026-YTD-CLASSIC-PC-SOURCE-AND-MODULE-GAPS-20261120.md",
+      "evidence_json": "research/recovered/STONEAGE-PET126-YEAR2026-YTD-CLASSIC-PC-SOURCE-AND-MODULE-GAPS-R1.json",
+      "year_frontier_before": 2026,
+      "year_frontier_after": 2026,
+      "year_not_closed": true,
+      "year_review_status": "IN_PROGRESS_YTD_SOURCE_BOUND_PRELIMINARY",
+      "historically_complete": false,
+      "independent_region_reviews": 6,
+      "new_original_2026_client_bytes": 0,
+      "new_native_pet_ids": 0,
+      "global_2026_species_count": null,
+      "pet_module_closed": false,
+      "pc_only_source_filter_applied_20261120": true
     }
   ],
   "client_first_methodology": {
