@@ -3073,3 +3073,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-20 — PET126｜2026 官方经典 PC 截至目前来源/宠物七维缺口（本年仍开放）
 
 [2026 截至 11 月 20 日 PC-only 来源边界与 PET 模块缺口报告](docs/continuity/STONEAGE-PET126-YEAR2026-YTD-CLASSIC-PC-SOURCE-AND-MODULE-GAPS-20261120.md)／[机读收据及六地区重开门](research/recovered/STONEAGE-PET126-YEAR2026-YTD-CLASSIC-PC-SOURCE-AND-MODULE-GAPS-R1.json)：台湾马年四属性奖励、强化技能和暑期玩家线索目前仅搜索索引可核，原巴哈页 HTTP403，无原运营同服 PET ID、SPR、技能与实际发宠证明；2026 大陆独立 PC 复刻运营答疑不等于原经典 2D PC 旧服身份，更不得以“客户端预留内容”证明原版活服已经开放该宠。CN/TW/HK_MO/KR/JP/OTHER 六区现有来源均为 **YTD_PARTIAL_OPEN**；本年总宠物和新增物种数 UNKNOWN，当前年 **2026=NOT_YEAR_AUDITED**，不提前结项或移到 2027。PET20 七维审查复用已证指标但仍有同版身份、成长、技能、获宠执行、版权/私有原件的实质缺口，**PET模块未闭合**，下一步 PET126B，同年可取得原经典PC载体/正式运营原证优先，逐字段终审后才可请求来源有界停止决定。历史 CURRENT Git blob `c89e0e33537990aa2132b47c40fef49a985a935c` 保留、Stage A 7 PARTIAL + 2 OPEN、Stage B/wiki GATED、R79 暂停、整体百分比 UNKNOWN；只研究官方原版 PC，不涉及手游/付费玩家卖盘/原商业素材公开。
+
+
+## 2026-11-20 — PET126B｜官方经典 PC 发行宠物文献查询，源目录不混淆
+
+[PET126B 工作收据及跨时期网页来源负证](docs/continuity/STONEAGE-PET126B-OFFICIAL-PC-RELEASE-QUERY-CROSSWALK-20261120.md)：原 `tools/stoneage_pet16_lookup.py` 新增 `--official-releases`、`--release-region`、`--release-web-name-check`，只从既有 PET25+PET26（9条原版PC发行文献事件，5具名/3家族级/1匿名双宠单事件）直接查询，不加载社区服务端和原SPR技术行来混作官服物种。大陆2001网页104处、日本2003–04网页124处与9条后期PC发行文献**原名字面全等命中0**，不等于这些宠历史不存在；全部源文献日期不当作全球首次实装日。2003华义7.0下载/朱雀文献在PET66已归档，未重复算新宠。当前2026仍`NOT_YEAR_AUDITED`，PET仍`SOURCE_BOUNDED_PARTIAL`。下轮PET126C优先真实可获取原PC安装包/补丁及同版PET身份，未取得原件不宣称原像素或数值已恢复。原CURRENT Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`保持，Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、整体百分比 UNKNOWN。
