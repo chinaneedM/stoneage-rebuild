@@ -3078,3 +3078,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-20 — PET126B｜官方经典 PC 发行宠物文献查询，源目录不混淆
 
 [PET126B 工作收据及跨时期网页来源负证](docs/continuity/STONEAGE-PET126B-OFFICIAL-PC-RELEASE-QUERY-CROSSWALK-20261120.md)：原 `tools/stoneage_pet16_lookup.py` 新增 `--official-releases`、`--release-region`、`--release-web-name-check`，只从既有 PET25+PET26（9条原版PC发行文献事件，5具名/3家族级/1匿名双宠单事件）直接查询，不加载社区服务端和原SPR技术行来混作官服物种。大陆2001网页104处、日本2003–04网页124处与9条后期PC发行文献**原名字面全等命中0**，不等于这些宠历史不存在；全部源文献日期不当作全球首次实装日。2003华义7.0下载/朱雀文献在PET66已归档，未重复算新宠。当前2026仍`NOT_YEAR_AUDITED`，PET仍`SOURCE_BOUNDED_PARTIAL`。下轮PET126C优先真实可获取原PC安装包/补丁及同版PET身份，未取得原件不宣称原像素或数值已恢复。原CURRENT Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`保持，Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、整体百分比 UNKNOWN。
+
+
+## 2026-11-20 — PET126D｜原台湾1.0客户端 Big5 宠物交互文字确证（非运行结果）
+
+[PET126D 原客户端静态文字与文件偏移报告](docs/continuity/STONEAGE-PET126D-TW10-BIG5-ORIGINAL-PET-UI-STATIC-SOURCE-20261120.md)／[9条原文及10处CP950字节匹配的派生证据](research/recovered/STONEAGE-PET126D-TW10-ORIGINAL-CLIENT-PET-UI-CP950-LITERALS-R1.json)：在PR#544已重新取得、校验的台湾1.0原 `sa_3.exe`（425984B，SHA256 `cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a`）上再次私人静态读取得9个短原字文字字节对应，覆盖捕捉、换宠、技能指令、宠物选择及宠物邮件通知等。某选择提示出现两次字节匹配，其中一处是更长字串前缀，不可解释为两个独立界面/动作。**只有同源原客户端文字存在**，没有原程序执行/服务器发奖、宠物物种ID/原技能效果或首次实装日期；也不是第二份官方客户端。原商业EXE/SPR/REAL仍仅私人保管。2026 `NOT_YEAR_AUDITED`、PET `SOURCE_BOUNDED_PARTIAL`、NEXT PET126E仅调查具名同构建实际身份证据，不能把这些字符串当新宠物；历史CURRENT完整blob保持，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总百分比UNKNOWN。
