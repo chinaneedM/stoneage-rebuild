@@ -15,6 +15,11 @@ PET22_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-
 PET23_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-23-JP-LOW-RATE-IMAGE-REACCESS-R1.json"
 PET39_PATH = PATH.with_name("STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json")
 PET41_PATH = PATH.with_name("STONEAGE-PET41-TW-EARLY-WGS-MUSEUM-R1.json")
+PET25_OFFICIAL_PATH = PATH.with_name("STONEAGE-PET25-OFFICIAL-RELEASE-ROSTER-R1.json")
+PET26_OFFICIAL_PATH = PATH.with_name("STONEAGE-PET26-JP-TW-CLASSIC-OFFICIAL-RELEASE-R1.json")
+JP_OFFICIAL_PAGE_PATH = PATH.with_name("STONEAGE-JP-OFFICIAL-PET-CATALOG-R1.json")
+CN_OFFICIAL_PAGE_PATH = PATH.with_name("STONEAGE-WAEI-CN20-NEW-PET-FINITE-CATALOG-R1.json")
+
 CLIENT_ALBUM = "tw10_client_album"
 TW_MUSEUM = "tw_early_wgs_museum"
 
@@ -303,6 +308,125 @@ def operator_image_trace(catalog, pet21, region, ordinal, pet22=None, pet23=None
     }
 
 
+def official_pc_release_view(pet25, pet26, query="", region=None,
+                             check_earlier_web_names=False, jp_page=None, cn_page=None):
+    """Search only historically documented original-classic-PC release *events*.
+
+    This deliberately excludes community server templates, sprite IDs, mobile
+    derivatives, independent PC remakes and prelaunch-only web positions.
+    An event is not a unique species, and dated reporting is not first release.
+    """
+    if region not in (None, "CN", "JP"):
+        raise ValueError("release region must be CN or JP")
+    if check_earlier_web_names and (jp_page is None or cn_page is None):
+        raise ValueError("both early source-qualified operator web catalogues required")
+    sources25 = {x["id"]: x for x in pet25["source_register"]}
+    sources26 = {x["id"]: x for x in pet26["sources"]}
+    if len(sources25) != len(pet25["source_register"]) or len(sources26) != len(pet26["sources"]):
+        raise ValueError("original source register has repeated IDs")
+    entries = []
+    original_web = {
+        "CN": cn_page["records"] if check_earlier_web_names else [],
+        "JP": jp_page["records"] if check_earlier_web_names else [],
+    }
+    for src, rows, registry, status in (
+        ("PET25", pet25["confirmed_official_release_records"], sources25,
+         "OFFICIAL_IN_GAME_RELEASE_DOCUMENTED"),
+        ("PET26", pet26["new_japan_classic_official_release_events"], sources26,
+         "OFFICIAL_GAME_RELEASE_DOCUMENTED"),
+    ):
+        for record in rows:
+            if record["status"] != status:
+                raise ValueError("unqualified original PC release record")
+            name = (record["official_name_as_written"] if src == "PET25"
+                    else record["official_name_as_written_or_null"])
+            kind = (record["record_identity_kind"] if src == "PET25"
+                    else record["identity_kind"])
+            if name is None and kind != "UNNAMED_PAIR_ONE_RELEASE_EVENT":
+                raise ValueError("unexpected anonymous release category")
+            original_ids = record["source_ids"]
+            if not original_ids or any(i not in registry for i in original_ids):
+                raise ValueError("release record has a missing original source reference")
+            if not record["product_line"].startswith("STONEAGE_CLASSIC_PC_"):
+                raise ValueError("non-original PC product lineage in release events")
+            current_region = record["region"]
+            if current_region not in ("CN", "JP"):
+                raise ValueError("unexpected release event region")
+            date_text = (record["release_documented_no_later_than_or_announced_at"]
+                         if src == "PET25" else record["first_published_release_date"])
+            event = {
+                "source_namespace": src,
+                "record_id": record["record_id"] if src == "PET25" else record["id"],
+                "region": current_region,
+                "product_line": record["product_line"],
+                "original_name_or_null": name,
+                "record_identity_kind": kind,
+                "original_documentary_status": status,
+                "source_attestation_date_not_first_actual_release": date_text,
+                "first_actual_official_release_date_proven": False,
+                "native_original_pc_pet_id": None,
+                "native_same_deployment_sprite_link_verified": False,
+                "native_same_deployment_stats_skills_verified": False,
+                "unique_global_species_contribution": None,
+                "source_references": [
+                    {"id": key, "url": registry[key]["url"],
+                     "source_grade": registry[key].get("layer", registry[key].get("tier"))}
+                    for key in original_ids
+                ],
+            }
+            if check_earlier_web_names:
+                hits = [
+                    {"original_web_record_id": x["record_id"],
+                     "name_as_written": x["name_as_written"]}
+                    for x in original_web[current_region]
+                    if name is not None and x["name_as_written"] == name
+                ]
+                event["earlier_operator_web_exact_literal_matches"] = hits
+                event["web_literal_match_is_not_pet_identity"] = True
+                event["web_archive_is_not_a_later_live_promotion"] = True
+            entries.append(event)
+    if len({(x["source_namespace"], x["record_id"]) for x in entries}) != len(entries):
+        raise ValueError("duplicate original documentary release event")
+    if len(entries) != (pet25["counts"]["release_documentary_records"] +
+                        pet26["counts"]["new_japan_release_events"]):
+        raise ValueError("published documentary event counters disagree")
+    selected = [
+        x for x in entries
+        if (region is None or x["region"] == region)
+        and (not query or str(query).casefold() in
+             " ".join(str(v) for v in (x["record_id"], x["original_name_or_null"],
+                                       x["product_line"], x["source_namespace"])).casefold())
+    ]
+    return {
+        "scope": "ONLY_OFFICIAL_ORIGINAL_CLASSIC_PC_DOCUMENTARY_RELEASE_EVENTS",
+        "counts_all_unfiltered_not_pet_species": {
+            "documentary_release_events": len(entries),
+            "named_pet_or_form_release_events": sum(x["record_identity_kind"] == "NAMED_PET"
+                                                    for x in entries),
+            "family_or_card_series_events": sum(x["record_identity_kind"] == "FAMILY_OR_CARD_SERIES"
+                                                 for x in entries),
+            "unnamed_pair_events_not_two_separate_documentary_events":
+                sum(x["record_identity_kind"] == "UNNAMED_PAIR_ONE_RELEASE_EVENT"
+                    for x in entries),
+            "unique_original_pc_species_population": None,
+            "native_original_pc_species_id_verified": 0,
+        },
+        "query": query,
+        "region_filter": region,
+        "returned_event_count": len(selected),
+        "early_web_literal_check": check_earlier_web_names,
+        "records": selected,
+        "negative_boundaries": {
+            "no_private_server_templates_in_release_view": True,
+            "no_independent_pc_remake_or_mobile_products": True,
+            "no_web_order_as_species_id": True,
+            "no_cross_version_name_as_identity_without_same_build": True,
+            "no_documentary_events_added_as_unique_species": True,
+            "no_source_attestation_date_as_proven_first_release": True,
+        },
+    }
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--query", default="")
@@ -326,10 +450,41 @@ def main():
                    help="Exact historic operator website source namespace; no client pet IDs")
     p.add_argument("--web-ordinal", type=int,
                    help="Historic official website position, NOT client sprite or pet species ID")
+    p.add_argument("--official-releases", action="store_true",
+                   help="PET25+PET26 verified classic-PC release DOCUMENTARY events only")
+    p.add_argument("--release-region", choices=("CN", "JP"),
+                   help="Region filter for --official-releases")
+    p.add_argument("--release-web-name-check", action="store_true",
+                   help="Exact older CN/JP operator web NAME lookup; never identity")
     p.add_argument("--catalog", type=Path, default=PATH)
     args = p.parse_args()
     if args.limit < 1 or args.limit > 1000:
         p.error("--limit must be 1 to 1000")
+    if (args.release_region or args.release_web_name_check) and not args.official_releases:
+        p.error("--release-region/--release-web-name-check require --official-releases")
+    if args.official_releases:
+        if (args.dataset or args.details or args.trace_graphic is not None or
+                args.capture_template is not None or args.skill_gaps or
+                args.skill_id is not None or args.operator_web or
+                args.web_ordinal is not None or args.catalog != PATH):
+            p.error("--official-releases is independent of raw graphic/skill/web lookup modes")
+        original25 = json.loads(PET25_OFFICIAL_PATH.read_text(encoding="utf-8"))
+        original26 = json.loads(PET26_OFFICIAL_PATH.read_text(encoding="utf-8"))
+        jp_page = (json.loads(JP_OFFICIAL_PAGE_PATH.read_text(encoding="utf-8"))
+                   if args.release_web_name_check else None)
+        cn_page = (json.loads(CN_OFFICIAL_PAGE_PATH.read_text(encoding="utf-8"))
+                   if args.release_web_name_check else None)
+        result = official_pc_release_view(
+            original25, original26, query=args.query, region=args.release_region,
+            check_earlier_web_names=args.release_web_name_check,
+            jp_page=jp_page, cn_page=cn_page)
+        if args.summary:
+            result["records"] = []
+        else:
+            result["records"] = result["records"][:args.limit]
+            result["truncated_by_limit"] = result["returned_event_count"] > args.limit
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return 0
     if args.trace_graphic is not None and (args.dataset or args.query or args.summary or args.details):
         p.error("--trace-graphic must be used without --dataset/--query/--summary/--details")
     if args.trace_graphic is not None and args.trace_graphic <= 0:

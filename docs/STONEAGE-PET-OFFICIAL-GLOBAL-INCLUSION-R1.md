@@ -30,3 +30,8 @@
 优先真实免费可合法读取的原官方 PC 客户端/更新包；按字节、原文件目录、PET-ID、SPR、帧/方向、名字和技能做同源连接。旧版缺失时，后期可验证客户端只能作为分级回溯候选；不回填最初年份、服务器数值或发行证据。定点官方 PC 发放资料补证，禁止收费卖盘、私服独有宠物及不受证据支持的总种数。
 
 PET是唯一活动模块；完成全球PC宠物来源/缺口矩阵并经过用户明确同意，才切换下一模块。Stage A仍7 PARTIAL+2 OPEN；Stage B与攻略网站尚未开启；R79 PAUSED_NON_BLOCKING；整体完成率UNKNOWN。多兆字节 `docs/CURRENT-STATE.md` 原Git blob `c89e0e33537990aa2132b47c40fef49a985a935c` 必须保持不变。原版权素材保留私人存储。
+
+
+## 2026-11-20 前向补充：官方 PC 发行文献查询，不等于全球宠物名单
+
+上文“2025仍待审”已由后续 PET125/PET126 取代：**当前审查年份是 2026，状态 `NOT_YEAR_AUDITED`**，PET 仍为唯一活动模块。新增 [PET126B 证据分级检索](continuity/STONEAGE-PET126B-OFFICIAL-PC-RELEASE-QUERY-CROSSWALK-20261120.md)：`python tools/stoneage_pet16_lookup.py --official-releases --summary`、`--official-releases --query 年兽`、`--official-releases --release-web-name-check`。该模式直接读取已归档 PET25（5条大陆文献）及 PET26（4条日本文献），合计**9条发行文献事件（5具名、3家族卡组、1双未具名单事件）**；不是9只可独立计数的宠物，也无现同构建原宠物 ID。与早期大陆104网页位置、日本124网页位置**精确原文字面**比对均未命中，0字面命中仅是这些时间不同的官方网页样本负证，不证明宠物历史不存在。工具禁止这类不合资格名称/图像自动联接，继续保持未来需要原 PC 客户端、同服 PET ID、来源合格发放证据等重开门。
