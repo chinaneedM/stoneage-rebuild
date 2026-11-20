@@ -1,0 +1,28 @@
+name: PET126 2026 original classic PC YTD source and pet module gap acceptance
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-PET126-YEAR2026-YTD-CLASSIC-PC-SOURCE-AND-MODULE-GAPS-R1.json'
+      - 'research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json'
+      - 'docs/continuity/STONEAGE-PET126-YEAR2026-YTD-CLASSIC-PC-SOURCE-AND-MODULE-GAPS-20261120.md'
+      - 'tests/test_stoneage_pet126_2026_ytd_pc_gap_matrix.py'
+      - '.github/workflows/validate-stoneage-pet126-ytd-pc.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-PET126-YEAR2026-YTD-CLASSIC-PC-SOURCE-AND-MODULE-GAPS-R1.json'
+      - 'research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json'
+      - 'docs/continuity/STONEAGE-PET126-YEAR2026-YTD-CLASSIC-PC-SOURCE-AND-MODULE-GAPS-20261120.md'
+      - 'tests/test_stoneage_pet126_2026_ytd_pc_gap_matrix.py'
+      - '.github/workflows/validate-stoneage-pet126-ytd-pc.yml'
+jobs:
+  pet126-open-year-pc-boundary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate non-closed 2026 year and seven pet module gaps
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pet126_2026_ytd_pc_gap_matrix.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet125_year2025_six_region_pc_bounded_audit.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pc_only_scope_20261119.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet27_chronology.py' -v
+          python -m tools.stoneage_pet27_chronology --validate
