@@ -51,7 +51,7 @@ class PET126CPrivateTW1Custody(unittest.TestCase):
         self.assertEqual(len(r["original_375_member_sorted_JSON_manifest_sha256"]), 64)
 
     def test_original_same_source_pet_graphics_and_program_hashes(self):
-        r = self.r["archive"]["original_member_full_sha256_and_zip_crc32"]
+        r = self.r["original_member_full_sha256_and_zip_crc32"]
         self.assertEqual(len(r), 8)
         text = META.read_text(encoding="utf-8")
         for name in ("adrn_1.bin", "spr_1.bin", "spradrn_1.bin", "real_1.bin"):
