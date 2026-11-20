@@ -3078,3 +3078,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-20 — PET126B｜官方经典 PC 发行宠物文献查询，源目录不混淆
 
 [PET126B 工作收据及跨时期网页来源负证](docs/continuity/STONEAGE-PET126B-OFFICIAL-PC-RELEASE-QUERY-CROSSWALK-20261120.md)：原 `tools/stoneage_pet16_lookup.py` 新增 `--official-releases`、`--release-region`、`--release-web-name-check`，只从既有 PET25+PET26（9条原版PC发行文献事件，5具名/3家族级/1匿名双宠单事件）直接查询，不加载社区服务端和原SPR技术行来混作官服物种。大陆2001网页104处、日本2003–04网页124处与9条后期PC发行文献**原名字面全等命中0**，不等于这些宠历史不存在；全部源文献日期不当作全球首次实装日。2003华义7.0下载/朱雀文献在PET66已归档，未重复算新宠。当前2026仍`NOT_YEAR_AUDITED`，PET仍`SOURCE_BOUNDED_PARTIAL`。下轮PET126C优先真实可获取原PC安装包/补丁及同版PET身份，未取得原件不宣称原像素或数值已恢复。原CURRENT Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`保持，Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、整体百分比 UNKNOWN。
+
+
+## 2026-11-20 — PET126D｜原台湾1.0 PC客户端捕捉五槽位计数与静态UI门槛
+
+[PET126D 原字节反汇编定位与七维限制](docs/continuity/STONEAGE-PET126D-TW10-CLIENT-CAPTURE-FIVE-SLOT-STATIC-20261120.md)／[机器收据](research/recovered/STONEAGE-PET126D-TW10-CLIENT-CAPTURE-FIVE-SLOT-STATIC-R1.json)：实际可读 TW1 原源包的原 `sa_3.exe`，本地计数函数 `0x4016D0` 遍历5个108B状态槽位，标记值1时计数；捕捉UI入口 `0x402354` 和另一入口 `0x404583` 均作 `count < 5` 门槛检查。捕捉／更多宠物提示文案与原代码直接对应。**仅证明客户端静态本地状态/显示约束，不证明永久宠物仓库上限、原服务器接受捕捉、技能效果或当年实服发宠。** 没有新发现物种；同原 TW1 原件/124具名图形已由PET126C归档，不重复计数。唯一PET模块仍 `SOURCE_BOUNDED_PARTIAL`、2026 `NOT_YEAR_AUDITED`；下一步PET126E有限检查相同原客户端槽位和宠物状态数据流及七维缺口，无手游/收费卖盘/原商业资源公开。原 `docs/CURRENT-STATE.md` blob `c89e0e33537990aa2132b47c40fef49a985a935c` 不变，Stage A 7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79暂停，总体百分比 UNKNOWN。

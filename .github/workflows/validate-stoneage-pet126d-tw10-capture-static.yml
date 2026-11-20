@@ -1,0 +1,25 @@
+name: PET126D TW1 original PC capture five-slot static evidence
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-PET126D-TW10-CLIENT-CAPTURE-FIVE-SLOT-STATIC-R1.json'
+      - 'docs/continuity/STONEAGE-PET126D-TW10-CLIENT-CAPTURE-FIVE-SLOT-STATIC-20261120.md'
+      - 'tests/test_stoneage_pet126d_tw10_capture_static.py'
+      - '.github/workflows/validate-stoneage-pet126d-tw10-capture-static.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-PET126D-TW10-CLIENT-CAPTURE-FIVE-SLOT-STATIC-R1.json'
+      - 'docs/continuity/STONEAGE-PET126D-TW10-CLIENT-CAPTURE-FIVE-SLOT-STATIC-20261120.md'
+      - 'tests/test_stoneage_pet126d_tw10_capture_static.py'
+      - '.github/workflows/validate-stoneage-pet126d-tw10-capture-static.yml'
+jobs:
+  tw10-pet-capture-client-static:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check no official pet release or server skill promotion from original client static UI
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pet126d_tw10_capture_static.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet126c_tw10_reaccess.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet27_chronology.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pc_only_scope_20261119.py' -v
