@@ -1,0 +1,112 @@
+{
+  "schema": "stoneage.pet126c.authenticated_tw10_original_client_bytes_reaccess.r1",
+  "recorded_date": "2026-11-20",
+  "id": "PET126C-TW10-REACCESS-ORIGINAL-PRIVATE-P3H-20261120",
+  "active_module": "PET",
+  "scope": "OFFICIAL_ORIGINAL_CLASSIC_2D_PC_ONLY",
+  "working_year": 2026,
+  "working_year_status": "NOT_YEAR_AUDITED",
+  "original_source": {
+    "carrier_id": "TW_WAEI_JSS_1_0_RETAIL",
+    "source_grade": "ORIGINAL_RETAIL_SOURCE_VERIFIED_REACCESSED_THIS_SESSION",
+    "private_library_basename": "StoneAge-TW1-original-runtime-and-native-observation-P3H.zip",
+    "archive_bytes": 372626292,
+    "archive_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "zip_member_count": 379,
+    "zip_members_sha256_rehashed_this_session": 379,
+    "zip_members_full_read_crc_passed_this_session": 379,
+    "source_original_member_count": 375,
+    "source_original_members_sha256_rehashed_this_session": 375,
+    "private_original_source_not_published": true
+  },
+  "source_file_pins": {
+    "source/sa_3.exe": {
+      "bytes": 425984,
+      "sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+      "crc32": "3453fd16"
+    },
+    "source/StoneAge.exe": {
+      "bytes": 409600,
+      "sha256": "9b280068063b4398e5c8901b881daa1f13576201e475efede3127b59cdad2867",
+      "crc32": "4eb51770"
+    },
+    "source/data/spradrn_1.bin": {
+      "bytes": 5568,
+      "sha256": "275b64ff55667aec633a7e82e09d65c84141380521f0f2e64c9a28e0d3aa6c25",
+      "crc32": "7656bc5f"
+    },
+    "source/data/spr_1.bin": {
+      "bytes": 2889630,
+      "sha256": "53d5b2d40453a30fd1569637ebf0db7b3010542b00970ec83af0295a3b3ae31a",
+      "crc32": "d1c02e96"
+    },
+    "source/data/adrn_1.bin": {
+      "bytes": 10079680,
+      "sha256": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+      "crc32": "10cebde6"
+    },
+    "source/data/real_1.bin": {
+      "bytes": 315842228,
+      "sha256": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13",
+      "crc32": "28585d2d"
+    }
+  },
+  "independent_read_only_pet_album_recheck": {
+    "original_executable": "source/sa_3.exe",
+    "original_binary_table_va": "0x45af58",
+    "original_binary_table_offset": 372568,
+    "original_binary_table_rows": 181,
+    "original_binary_table_stride_bytes": 28,
+    "original_binary_table_sha256": "1fda43b69c9f0a19cf78f3f5b04c2bfe3e3c14c7abc80bd49582b7a31f76d35c",
+    "original_name_encoding": "cp950",
+    "same_build_named_graphic_spr_candidates": 124,
+    "table_placeholders": 57,
+    "placeholders_with_spr_but_no_name": 30,
+    "same_build_named_spr_sequences": 6944,
+    "same_build_named_spr_frame_references": 70236,
+    "physical_original_portrait_rd_verified": 120,
+    "original_portrait_missing_graphic_numbers": [
+      100389,
+      100390,
+      100391,
+      100392
+    ],
+    "source_spr_group_count_not_species": 464,
+    "source_spr_animation_count_not_species": 39065,
+    "source_spr_frame_references_not_species": 242085,
+    "checked_against_existing_pet39": true,
+    "new_pet_species_authenticated": 0,
+    "new_original_resource_files_discovered": 0,
+    "native_game_executed": false,
+    "live_pet_release_authenticated": false,
+    "historical_official_pet_species_count": null
+  },
+  "evidence_limits": {
+    "this_is_new_custody_and_independent_replay_not_new_identity_discovery": true,
+    "original_tw10_same_build_pet_skill_growth_and_live_rewards_still_open": true,
+    "existing_private_later_client_sources_not_regraded_as_official": true,
+    "no_mobile_scope": true,
+    "no_paid_client_or_marketplace_source": true,
+    "only_hashes_counts_public": true,
+    "public_ci_does_not_claim_private_zip_reexecution": true
+  },
+  "links": {
+    "prior_primary": "research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json",
+    "prior_source_inventory": "research/recovered/STONEAGE-PET38-CLIENT-FIRST-AVAILABLE-SOURCE-INVENTORY-R1.json",
+    "prior_pet_gap_matrix": "research/recovered/STONEAGE-PET-MODULE-20-FIELD-COVERAGE-AND-SOURCE-STOP-MATRIX-R1.json",
+    "current_year": "research/recovered/STONEAGE-PET126-YEAR2026-YTD-CLASSIC-PC-SOURCE-AND-MODULE-GAPS-R1.json",
+    "historical_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "module_gate": {
+    "current": "SOURCE_BOUNDED_PARTIAL",
+    "source_bounded_closed": false,
+    "historically_complete": false,
+    "native_runtime_verified": false,
+    "next_module_unlocked": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "PET126D_SAME_SOURCE_TW10_PET_IDENTITY_TO_AVAILABLE_SKILL_OR_GAMEPLAY_FILES_AND_FINAL_SEVEN_FIELD_MATRIX"
+}
