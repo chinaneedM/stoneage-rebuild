@@ -3078,3 +3078,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-20 — PET126B｜官方经典 PC 发行宠物文献查询，源目录不混淆
 
 [PET126B 工作收据及跨时期网页来源负证](docs/continuity/STONEAGE-PET126B-OFFICIAL-PC-RELEASE-QUERY-CROSSWALK-20261120.md)：原 `tools/stoneage_pet16_lookup.py` 新增 `--official-releases`、`--release-region`、`--release-web-name-check`，只从既有 PET25+PET26（9条原版PC发行文献事件，5具名/3家族级/1匿名双宠单事件）直接查询，不加载社区服务端和原SPR技术行来混作官服物种。大陆2001网页104处、日本2003–04网页124处与9条后期PC发行文献**原名字面全等命中0**，不等于这些宠历史不存在；全部源文献日期不当作全球首次实装日。2003华义7.0下载/朱雀文献在PET66已归档，未重复算新宠。当前2026仍`NOT_YEAR_AUDITED`，PET仍`SOURCE_BOUNDED_PARTIAL`。下轮PET126C优先真实可获取原PC安装包/补丁及同版PET身份，未取得原件不宣称原像素或数值已恢复。原CURRENT Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`保持，Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、整体百分比 UNKNOWN。
+
+
+## 2026-11-20 — PET126C｜台湾 1.0 私人原零售客户端重新取得与真实源文件核验
+
+[PET126C 原件复核报告](docs/continuity/STONEAGE-PET126C-TW10-PRIVATE-CLIENT-REACCESS-AND-PET-IDENTITY-GATE-20261120.md)／[机读派生 SHA/CRC 保管收据](research/recovered/STONEAGE-PET126C-TW10-PRIVATE-CLIENT-REACCESS-SOURCE-ROLE-R1.json)：从原私人文件库重新取得 `StoneAge-TW1-original-runtime-and-native-observation-P3H.zip`，实际整包核对 **372,626,292B**、SHA256 `3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24`、379/379 ZIP 成员 CRC 全通过；375份原 `source/` 文件，4份旧私人观察衍生材料不计原客户端。SPR/ADRN/REAL/EXE等原文件完整 SHA 与此前来源元数据一致。文件名及两个文本原词检查没有找出独立宠物主档；这**不能排除EXE内嵌/编码宠物名称或原服主档**，未证同构建宠物名称↔ID↔SPR、原生获宠/成长、全物种数或原游戏实际运行。此包是已记录 TW1 原版本的**重新访问确认**，不是新版本/新物种。原商业文件仍私藏，GitHub CI只复验可公开派生记录，不声称重取372MB。2026 `NOT_YEAR_AUDITED`，PET `SOURCE_BOUNDED_PARTIAL` 未闭合；NEXT PET126D 查具体同构建PET身份源，无证则图像候选仍 UNKNOWN。旧CURRENT 2,709,173B Git blob `c89e0e33537990aa2132b47c40fef49a985a935c` 不变，Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、整体完成率UNKNOWN。
