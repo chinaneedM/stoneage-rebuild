@@ -1,0 +1,179 @@
+{
+  "schema": "stoneage.pet126d.tw10_original_client_cp950_pet_function_literals.r1",
+  "id": "PET126D-TW10-SAME-CLIENT-PET-UI-CP950-LITERALS-20261120",
+  "date": "2026-11-20",
+  "active_module": "PET",
+  "scope": "OFFICIAL_ORIGINAL_CLASSIC_TW1_RETAIL_2D_PC_CLIENT_STATIC_TEXT",
+  "origin": {
+    "original_archive_receipt": "research/recovered/STONEAGE-PET126C-TW10-PRIVATE-CLIENT-REACCESS-SOURCE-ROLE-R1.json",
+    "original_exe_zip_member": "source/sa_3.exe",
+    "exe_size_bytes": 425984,
+    "exe_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "original_client_archive_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "original_exe_bytes_re_read_private_work_unit": true,
+    "original_exe_publicly_committed": false,
+    "baseline_merged_main": "0698eaab1020a909d14166beefbc2eb59f47a282",
+    "baseline_main_tree": "cb122170b234259c82a0ad5612bf1857a1e53d44",
+    "existing_actual_source_receipt": "research/recovered/STONEAGE-PET126C-TW10-ORIGINAL-SOURCE-REACCESS-R1.json",
+    "existing_same_build_named_124_candidate_source": "research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json",
+    "not_second_independent_client": true
+  },
+  "encoding": "cp950_big5",
+  "match_policy": "ENCODE_EXACT_COMPLETE_SHORT_LITERAL_CP950_SEARCH_ALL_OFFSETS_IN_ORIGINAL_425984_BYTE_EXE;_NO_OCR_NO_TRANSLATION_NO_DISASSEMBLY",
+  "row_count": 9,
+  "total_byte_pattern_occurrences": 10,
+  "rows": [
+    {
+      "id": "capture_command",
+      "short_original_ui_literal": "捕捉。",
+      "original_file_offset_zero_based": [
+        352000
+      ],
+      "byte_length": 6,
+      "cp950_literal_sha256": "171f70043b33cff4a04e8ebe5dc6b8cb1f35b5169ad445d9d392756c758c00d7",
+      "original_byte_match_count": 1,
+      "source_status": "TW10_CLIENT_LITERAL_PRESENT_SOURCE_BYTES_VERIFIED_ONLY",
+      "not_a_pet_species_identity": true,
+      "not_native_action_executed": true
+    },
+    {
+      "id": "capture_capacity_text",
+      "short_original_ui_literal": "不能再捕獲更多的寵物了。",
+      "original_file_offset_zero_based": [
+        352008
+      ],
+      "byte_length": 24,
+      "cp950_literal_sha256": "faf376f6e2f4f72a732502d6788c8eb3fcda18649b4f4779fbbc9ce509ed9213",
+      "original_byte_match_count": 1,
+      "source_status": "TW10_CLIENT_LITERAL_PRESENT_SOURCE_BYTES_VERIFIED_ONLY",
+      "not_a_pet_species_identity": true,
+      "not_native_action_executed": true
+    },
+    {
+      "id": "no_active_pet_text",
+      "short_original_ui_literal": "沒有參戰的寵物",
+      "original_file_offset_zero_based": [
+        352068
+      ],
+      "byte_length": 14,
+      "cp950_literal_sha256": "ddcaf5c913d56debb45c1ec79fa72166d9c6663342c702a6ba5d3641e5980865",
+      "original_byte_match_count": 1,
+      "source_status": "TW10_CLIENT_LITERAL_PRESENT_SOURCE_BYTES_VERIFIED_ONLY",
+      "not_a_pet_species_identity": true,
+      "not_native_action_executed": true
+    },
+    {
+      "id": "pet_switch_command",
+      "short_original_ui_literal": "更換寵物。",
+      "original_file_offset_zero_based": [
+        352128
+      ],
+      "byte_length": 10,
+      "cp950_literal_sha256": "5b0bdb4aca9fa8ad571046fdfb3bd52f4967be8b3cd7ae2eb92d48000e80bcee",
+      "original_byte_match_count": 1,
+      "source_status": "TW10_CLIENT_LITERAL_PRESENT_SOURCE_BYTES_VERIFIED_ONLY",
+      "not_a_pet_species_identity": true,
+      "not_native_action_executed": true
+    },
+    {
+      "id": "use_skill_command",
+      "short_original_ui_literal": "使用技能。",
+      "original_file_offset_zero_based": [
+        352180
+      ],
+      "byte_length": 10,
+      "cp950_literal_sha256": "af10678990ba0808ad4d2c33cd3978d144b902207852ba1beda3a2a69f927d5d",
+      "original_byte_match_count": 1,
+      "source_status": "TW10_CLIENT_LITERAL_PRESENT_SOURCE_BYTES_VERIFIED_ONLY",
+      "not_a_pet_species_identity": true,
+      "not_native_action_executed": true
+    },
+    {
+      "id": "pet_choice_prompt",
+      "short_original_ui_literal": "請選擇寵物",
+      "original_file_offset_zero_based": [
+        366255,
+        366334
+      ],
+      "byte_length": 10,
+      "cp950_literal_sha256": "2be9ba9c7574141c9988129a0fdc77d2b2ad143596b80f8330d3bf15ec5620b3",
+      "original_byte_match_count": 2,
+      "source_status": "TW10_CLIENT_LITERAL_PRESENT_SOURCE_BYTES_VERIFIED_ONLY",
+      "not_a_pet_species_identity": true,
+      "not_native_action_executed": true
+    },
+    {
+      "id": "pet_or_teammate_prompt",
+      "short_original_ui_literal": "請選擇寵物或是隊友",
+      "original_file_offset_zero_based": [
+        366334
+      ],
+      "byte_length": 18,
+      "cp950_literal_sha256": "ce7a6516a883727499e1be35e163ac575250f1b6c9e0aff8f4477fb600937bc4",
+      "original_byte_match_count": 1,
+      "source_status": "TW10_CLIENT_LITERAL_PRESENT_SOURCE_BYTES_VERIFIED_ONLY",
+      "not_a_pet_species_identity": true,
+      "not_native_action_executed": true
+    },
+    {
+      "id": "no_owned_pet_text",
+      "short_original_ui_literal": "你沒有寵物",
+      "original_file_offset_zero_based": [
+        378044
+      ],
+      "byte_length": 10,
+      "cp950_literal_sha256": "2c89ae361199ae14fd18ba7ac7546116da5eebcd48ff31a7eeffab9984879aab",
+      "original_byte_match_count": 1,
+      "source_status": "TW10_CLIENT_LITERAL_PRESENT_SOURCE_BYTES_VERIFIED_ONLY",
+      "not_a_pet_species_identity": true,
+      "not_native_action_executed": true
+    },
+    {
+      "id": "pet_mail_notification",
+      "short_original_ui_literal": "收到%s送來的寵物郵件！",
+      "original_file_offset_zero_based": [
+        379308
+      ],
+      "byte_length": 22,
+      "cp950_literal_sha256": "acbdad6cbb1bc71787faa27046c259ebca68343e4288347b5157c785e408b653",
+      "original_byte_match_count": 1,
+      "source_status": "TW10_CLIENT_LITERAL_PRESENT_SOURCE_BYTES_VERIFIED_ONLY",
+      "not_a_pet_species_identity": true,
+      "not_native_action_executed": true
+    }
+  ],
+  "substring_guard": {
+    "id": "pet_choice_prompt",
+    "two_offsets_due_to_substring_at_start_of_longer_literal": true,
+    "overlapping_with_full_pet_or_teammate_prompt_at_offset": 366334,
+    "not_two_independent_menu_actions_proved": true
+  },
+  "observed_qualification": {
+    "source_binary_contains_pet_capture_switch_skill_choice_pet_mail_literal_fragments": true,
+    "same_client_original_pc_static_evidence": true,
+    "authentic_tw1_client_byte_provenance": true,
+    "pet_command_action_runtime_invoked": false,
+    "pet_command_protocol_mapped_to_action": false,
+    "pet_capture_success_or_server_result_verified": false,
+    "species_name_id_graphic_in_same_build_verified": false,
+    "original_pet_skill_effect_learning_rule_verified": false,
+    "any_new_pet_species_discovered": false,
+    "client_binary_text_string_presence_is_not_native_gameplay_validation": true
+  },
+  "negative_boundary": {
+    "no_full_PE_code_disassembly_or_handler_trace_this_unit": true,
+    "no_early_pet_server_master_acquired": true,
+    "no_source_based_species_roster_complete": true,
+    "no_original_executable_or_proprietary_2d_art_published": true,
+    "not_a_mobile_or_independent_remake_source": true,
+    "no_official_2026_new_pets_implied": true
+  },
+  "source_bounded_close": false,
+  "year_2026": "NOT_YEAR_AUDITED",
+  "next": "PET126E_SOURCE_QUALIFIED_NATIVE_CALLSITE_OR_SAME_BUILD_PET_ID_MASTER_ONLY_IF_MATERIAL;_PET_MODULE_REMAINS_OPEN",
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "historical_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+}
