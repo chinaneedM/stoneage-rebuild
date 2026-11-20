@@ -1,0 +1,28 @@
+name: PET126C original TW1 private retail client source reaccess receipt
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-PET126C-TW10-PRIVATE-CLIENT-REACCESS-SOURCE-ROLE-R1.json'
+      - 'docs/continuity/STONEAGE-PET126C-TW10-PRIVATE-CLIENT-REACCESS-AND-PET-IDENTITY-GATE-20261120.md'
+      - 'research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json'
+      - 'tests/test_stoneage_pet126c_tw10_client_source_reaccess.py'
+      - '.github/workflows/validate-stoneage-pet126c-private-reaccess.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-PET126C-TW10-PRIVATE-CLIENT-REACCESS-SOURCE-ROLE-R1.json'
+      - 'docs/continuity/STONEAGE-PET126C-TW10-PRIVATE-CLIENT-REACCESS-AND-PET-IDENTITY-GATE-20261120.md'
+      - 'research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json'
+      - 'tests/test_stoneage_pet126c_tw10_client_source_reaccess.py'
+      - '.github/workflows/validate-stoneage-pet126c-private-reaccess.yml'
+jobs:
+  derived-source-boundary-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate immutable original-client derived metadata and historical PET boundaries
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pet126c_tw10_client_source_reaccess.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet126_2026_ytd_pc_gap_matrix.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet126b_official_pc_release_lookup.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet27_chronology.py' -v
+          python -m tools.stoneage_pet27_chronology --validate
