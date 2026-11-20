@@ -34,7 +34,7 @@
 | `sa_3.exe` | 425,984 | `cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a` |
 | `StoneAge.exe` | 409,600 | `9b280068063b4398e5c8901b881daa1f13576201e475efede3127b59cdad2867` |
 
-原客户端4个主要图像相关文件的哈希与以前已发表的 [R1 资源源哈希](../recovered/tw10-resource-metadata/MANIFEST-R1.txt)完全一致。这属于**同一原实物重新取得及独立检查**，不是发现另一独立官服客户端，也没有把以前的131个SPR候选组算作131只新宠。
+原客户端4个主要图像相关文件的哈希与以前已发表的 [R1 资源源哈希](../../research/recovered/tw10-resource-metadata/MANIFEST-R1.txt)完全一致。这属于**同一原实物重新取得及独立检查**，不是发现另一独立官服客户端，也没有把以前的131个SPR候选组算作131只新宠。
 
 ## 宠物身份证据的明确边界
 
