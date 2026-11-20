@@ -88,7 +88,7 @@ class OriginalTw10ClientCaptureStaticGate(unittest.TestCase):
         p=ROOT / "docs/CURRENT-STATE.md"
         data=p.read_bytes()
         self.assertEqual(len(data),2709173)
-        actual=hashlib.sha1(b"blob "+str(len(data)).encode()+b"\\x00"+data).hexdigest()
+        actual=hashlib.sha1(b"blob "+str(len(data)).encode()+bytes([0])+data).hexdigest()
         self.assertEqual(actual,self.r["historical_current_blob"])
         self.assertEqual(actual,"c89e0e33537990aa2132b47c40fef49a985a935c")
 
