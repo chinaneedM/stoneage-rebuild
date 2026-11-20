@@ -99,7 +99,7 @@ class PET126PCYearToDateBoundary(unittest.TestCase):
     def test_historical_current_state_immutable(self):
         raw = (ROOT / "docs/CURRENT-STATE.md").read_bytes()
         self.assertEqual(len(raw), 2709173)
-        git_blob = hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\\x00" + raw).hexdigest()
+        git_blob = hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\x00" + raw).hexdigest()
         self.assertEqual(git_blob, self.a["baseline"]["historical_current_state_blob"])
         self.assertEqual(git_blob, "c89e0e33537990aa2132b47c40fef49a985a935c")
         self.assertEqual((self.a["stage_A"], self.a["stage_B_wiki"],
