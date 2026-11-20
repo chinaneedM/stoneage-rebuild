@@ -89,7 +89,7 @@ class Pet126CAuthenticatedBytesReaccess(unittest.TestCase):
     def test_historical_current_git_blob_unchanged(self):
         original = (ROOT / "docs/CURRENT-STATE.md").read_bytes()
         self.assertEqual(len(original),2709173)
-        git_sha = hashlib.sha1(b"blob " + str(len(original)).encode() + b"\\0" + original).hexdigest()
+        git_sha = hashlib.sha1(b"blob " + str(len(original)).encode() + bytes([0]) + original).hexdigest()
         self.assertEqual(git_sha, self.recheck["links"]["historical_current_blob"])
         self.assertEqual(git_sha,"c89e0e33537990aa2132b47c40fef49a985a935c")
 
