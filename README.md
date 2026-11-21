@@ -3123,3 +3123,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-21 — PET126Q｜原PC相册辅助函数静态源验收、停止泛CRT追踪
 
 [PET126Q源说明](docs/continuity/STONEAGE-PET126Q-CN50-ALBUM-CORE-FORWARDING-SOURCE-20261121.md)／[源JSON](research/recovered/STONEAGE-PET126Q-CN50-ORIGINAL-PC-HELPER-SOURCE-DETAIL-R1.json)／[永久收据](research/recovered/STONEAGE-PET126Q-CN50-ORIGINAL-PC-HELPER-FORWARDING-ACCEPTANCE-R1.json)：真实原PC保存EXE来源SHA与独立Actions成功，编译包装函数3参定位、4参定长读，底层模式0/1/2与size×count成立；原游戏未运行，文件、C库符号、SPR绑定及官服实际发宠未证。避免继续无界分析通用CRT函数，NEXT PET126R检查同版宠物名称/ID/真实SPR及七维来源有界矩阵。PET仍唯一活动，2026未年结，Stage A7PARTIAL+2OPEN，Stage B/wiki GATED，R79暂停，整体百分比UNKNOWN。原2709173B docs/CURRENT-STATE.md blob c89e0e33537990aa2132b47c40fef49a985a935c 原样保留。
+
+
+## 2026-11-21 — PET126R｜完整原PC编译宠物名录：362槽与静态图像候选
+
+[本轮说明](docs/continuity/STONEAGE-PET126R-CN50-362-SLOT-ALBUM-SPR-NATIVE-U32-20261121.md)／[可查362槽源派生目录](research/recovered/STONEAGE-PET126R-CN50-PC-ORIGINAL-ALBUM-FULL-362-SLOT-SOURCE-CATALOGUE-R1.json)：CN5.0第三方保存经典PC编译表305具名/57空，以TW1版别图号假设对190条具名源找到同CAB SPR组、与经认证TW1的124段全SHA相等；编译 `.text` 原+24字段转发到运行时+36，**仍无CN5原生选择器或官方发宠证明**。新 source Actions 44880073848 验收成功，完整历史 CURRENT blob不变，NEXT PET126S限定核同源图像消费者，否则进入宠物七维有界终审；PET唯一／2026开放／总进度UNKNOWN。

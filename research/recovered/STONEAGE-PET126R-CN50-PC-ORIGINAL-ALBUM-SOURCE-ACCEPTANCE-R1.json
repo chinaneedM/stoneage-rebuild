@@ -1,0 +1,66 @@
+{
+  "schema": "stoneage.pet126r.cn50_classic_pc_compiled_album_source_and_native_field_bridge_acceptance.r1",
+  "date": "2026-11-21",
+  "active_module": "PET",
+  "scope": "ONLY_HISTORICAL_ORIGINAL_CLASSIC_2D_PC",
+  "source_starting_main": "6964235cf22fe6d148eab5564309b24b035f9565",
+  "original_program": {
+    "name": "sa_5000.exe",
+    "bytes": 630784,
+    "sha256": "5dbcc3fa276f9f245fb706bce957e9c3300d870df813889502b789b727e49c97",
+    "compiled_table_sha256": "ba3ad4db233971ee5d9603cdbded6b871f73082445f1ca51d02f0fdf0314d39b",
+    "cab_sha256": "cb414ad1ef4cc7925ec429ec088d0146892834c72667d1af82c8075d09f1683b",
+    "carrier_grade": "THIRD_PARTY_PRESERVED_CN50_CLASSIC_PC_NOT_CERTIFIED_ORIGINAL_OFFICIAL_PRESSING",
+    "original_program_executed": false
+  },
+  "original_source_actions": {
+    "first_synthetic_failure_run": 44879758842,
+    "second_synthetic_failure_run": 44879879730,
+    "prior_successful_source_run": 44879926508,
+    "accepted_source_run": 44880073848,
+    "accepted_original_job_id": 136773295511,
+    "accepted_synthetic_job_id": 136773208656,
+    "accepted_source_commit": "f00fbdfd15caf0998fa178d0efdea97ab044593b",
+    "source_and_synthetic_status": "success",
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/44880073848",
+    "all_failed_attempts_retained_not_erased": true
+  },
+  "permanent_machine_derived": {
+    "path": "research/recovered/STONEAGE-PET126R-CN50-PC-ORIGINAL-ALBUM-FULL-362-SLOT-SOURCE-CATALOGUE-R1.json",
+    "git_blob_sha": "8b1058a43c267dfeaa298d4c2c472209cebd24d9",
+    "json_replayed_exactly_from_Actions": true,
+    "original_proprietary_binary_not_published": true
+  },
+  "observed": {
+    "all_compiled_name_slots": 362,
+    "populated_client_compiled_labels": 305,
+    "client_compiled_blank_slots": 57,
+    "CN50_candidate_SPR_by_TW1_ordinal_base_present_named": 190,
+    "CN50_candidate_SPR_by_TW1_ordinal_base_present_blank": 30,
+    "authenticated_TW1_named_ordinals_with_exact_same_CN50_SPR_segment_sha": 124,
+    "native_two_direct_source_reads_of_table_plus_24": true,
+    "exact_static_source_tail_u32_to_runtime_record_offset36": true,
+    "source_read_instruction": "mov eax,DWORD PTR [eax+0x482f80]",
+    "adjacent_write_instruction": "mov DWORD PTR [edi+0x3300ccc],eax"
+  },
+  "limits": {
+    "ordinal_plus_TW1_base_is_original_CN50_client_selector_proven": false,
+    "compiled_table_last_u32_is_original_SPR_graphic_proven": false,
+    "native_display_or_kit_avatar_use_proven": false,
+    "original_CN50_CAB_authentic_official_pressing_proven": false,
+    "original_server_pet_master_covered": false,
+    "genuine_original_live_species_newly_proven": 0,
+    "historical_pet_total": null,
+    "CN50_hypothesis_unmatched_115_names_do_not_prove_missing_original_graphics": true,
+    "no_mobile_or_paid_marketplace_or_private_server_pets_promoted": true,
+    "no_original_assets_or_program_published": true,
+    "original_CURRENT_git_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "pet_source_bounded_closed": false,
+    "year_2026": "NOT_YEAR_AUDITED",
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "PET126S: reuse this complete original-client-source catalogue; determine whether any proven original same-build runtime selector connects last U32/80B album field to SPR/REAL. If not, stop unbounded static work and prepare seven-field source-bounded pet module closure review; never auto-switch NPC."
+}

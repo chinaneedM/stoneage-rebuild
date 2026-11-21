@@ -502,3 +502,8 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## 2026-11-21｜PET126Q：原PC相册文件底层转发源码核验与止点
 
 [PET126Q 真实EXE源验证](continuity/STONEAGE-PET126Q-CN50-ALBUM-CORE-FORWARDING-SOURCE-20261121.md)／[永久派生源JSON](../research/recovered/STONEAGE-PET126Q-CN50-ORIGINAL-PC-HELPER-SOURCE-DETAIL-R1.json)／[机读源验收](../research/recovered/STONEAGE-PET126Q-CN50-ORIGINAL-PC-HELPER-FORWARDING-ACCEPTANCE-R1.json)：真实第三方保存大陆5.0原PC EXE的SHA再校验，原0x45f182向0x45f151转发打开候选，0x45ed40向0x45ed6c转发3参且核心测试0/1/2定位模式，0x45f018向0x45f047转发4参且核心乘两个大小/次数参数；源Action 44877857331与合成单测均 success。这是进一步强化的**源代码级静态本地文件寻址/读取结构**，不等于已经认证fopen/fseek/fread/fclose C库符号、相册磁盘真实内容、同构建名字→SPR图形关联或官服实发宠。本支达到有界止点，**NEXT PET126R**回原经典PC可用客户端的真实宠物名称/ID/SPR/REAL关系及宠物七维来源有界终审，禁无意义CRT扩大。PET唯一、2026 OPEN、官方实发新增可证0（不等于历史总数0）、原CURRENT blob不变、Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、总体UNKNOWN。
+
+
+## 2026-11-21｜PET126R：大陆5.0 原PC完整362槽编译宠物相册目录与+24字段→+36运行时传递
+
+[有界来源与差额](continuity/STONEAGE-PET126R-CN50-362-SLOT-ALBUM-SPR-NATIVE-U32-20261121.md)／[可按源槽位审查的362条派生JSON](../research/recovered/STONEAGE-PET126R-CN50-PC-ORIGINAL-ALBUM-FULL-362-SLOT-SOURCE-CATALOGUE-R1.json)／[原件收据](../research/recovered/STONEAGE-PET126R-CN50-PC-ORIGINAL-ALBUM-SOURCE-ACCEPTANCE-R1.json)：新来源Actions 44880073848原EXE静态与合成验收success。原编译本地名字362槽/305具名/57空；以TW1.0 `100250+ordinal` 公式作**明确假设**，CN5同CAB共190具名槽可命中候选SPR组、30空槽也有组，124个认证TW1具名资源与CN5同号SPR完整段SHA逐一精确相等；均不得晋升CN5本地原生图形选择器或官服实发数。新增实际 `.text` 原指令链于 `0x43476e` 把原表 `+24` 的末尾原u32寄存器值直接写入相册运行时记录 `+36`，不等于渲染器已证。两次早期合成失败均存历史，不抹掉。最高NEXT PET126S 限定查本地+36字段是否真实消费为图像；缺同服主档就转七维缺件矩阵。仅经典PC，年2026未结，PET仍部分，Stage A7PARTIAL+2OPEN／B/wiki GATED／R79暂停／总体UNKNOWN；原CURRENT git blob不变。
