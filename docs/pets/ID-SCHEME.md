@@ -11,7 +11,7 @@
 
 原版号码要完整留下，例如台湾1.0乌力客户端原SPR图号 **100250**、组号 **240**、头像RD号 **7246**；其中100250**不是我们的宠物号，也不能冒充原版服务器宠物ID**。以后另有日文、韩文或大陆客户端证据时建对应OBS来源记录；若身份确认可以指向同一PET档案，不覆盖原号码。
 
-机器索引：[PET-ID-REGISTRY-R1.json](../../research/pets/PET-ID-REGISTRY-R1.json)。以[机读编号登记簿](../../research/pets/PET-ID-REGISTRY-R1.json)为实时准据；截至本次 PET-PROFILE-BATCH04 已建 `PET-000001`—`PET-000055` 共55份部分档案、OBS来源记录124条、未建档69条、完整历史验收0只。这里的“55份”只指单独有档案，**不指55种官服已发放宠物**。
+机器索引：[PET-ID-REGISTRY-R1.json](../../research/pets/PET-ID-REGISTRY-R1.json)。以[机读编号登记簿](../../research/pets/PET-ID-REGISTRY-R1.json)为实时准据；截至本次 PET-PROFILE-BATCH05 已建 `PET-000001`—`PET-000085` 共85份部分档案、OBS来源记录124条、未建档39条、完整历史验收0只。这里的“85份”只指单独有档案，**不指85种官服已发放宠物**。
 
 ## 二、分配与合并（避免未来推倒重编）
 

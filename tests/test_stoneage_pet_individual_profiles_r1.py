@@ -34,7 +34,9 @@ class PETIndividualProfilesR1(unittest.TestCase):
         self.assertEqual((expected["tw10_original_client_named_album_candidates"],expected["tw10_named_with_spr_source_actions"],expected["tw10_named_with_portrait_rd"],expected["tw10_named_missing_portrait_rd"]),(124,124,120,4))
         self.assertEqual(expected["cn50_preserved_compiled_named_slots_independent_nonadditive"],305)
         c=self.progress["per_pet_profile_counts"]
-        self.assertEqual((c["source_indexed_candidate_rows"],c["individual_detailed_profiles"],c["individual_detailed_partial_profiles"],c["fully_historically_verified_pet_profiles"],c["individual_profiles_not_yet_created_for_candidates"]),(124,55,55,0,69))
+        allocated=len(read(P/"PET-ID-REGISTRY-R1.json")["catalog_entries"])
+        self.assertGreaterEqual(allocated,85)
+        self.assertEqual((c["source_indexed_candidate_rows"],c["individual_detailed_profiles"],c["individual_detailed_partial_profiles"],c["fully_historically_verified_pet_profiles"],c["individual_profiles_not_yet_created_for_candidates"]),(124,allocated,allocated,0,124-allocated))
         self.assertIsNone(self.progress["boundaries"]["all_pet_species_historical_total"])
 
     def test_wuli_original_client_source_and_no_official_id_promotions(self):
@@ -91,27 +93,29 @@ class PETIndividualProfilesR1(unittest.TestCase):
         ix=(ROOT/"docs/pets/INDEX.md").read_text(encoding="utf-8")
         rows=re.findall(r"^\| (\d+) \| (.*?) \| (OBS-TW10-\d{4}) \| (.*?) \| (.*?) \| (\d+) \| (.*?) \| 已验源 \| (.*?) \|$",ix,re.M)
         self.assertEqual(len(rows),124)
+        allocated=self.progress["per_pet_profile_counts"]["individual_detailed_profiles"]
         for i,(order,internal_id,observation_id,name,cn,graphic,portrait,detail) in enumerate(rows):
             src=self.tw["records"][i];s=self.cross["records"][i]
             self.assertEqual((int(order),name,cn,int(graphic)),(i+1,src["name_as_written"],s["cn50_preserved_compiled_literal"],src["graphic_number"]))
-            self.assertEqual(internal_id,"PET-"+str(i+1).zfill(6) if i<55 else "—（待建档）")
+            self.assertEqual(internal_id,"PET-"+str(i+1).zfill(6) if i<allocated else "—（待建档）")
             self.assertEqual(observation_id,"OBS-TW10-"+str(i+1).zfill(4))
             self.assertEqual(portrait,"已定位" if src["portrait_rd"] else "待补")
-            self.assertEqual("查看" in detail,i<55)
+            self.assertEqual("查看" in detail,i<allocated)
         self.assertEqual(ix.count("| 已验源 |"),124)
 
 
-    def test_all_55_source_grounded_independent_ids_and_unknowns(self):
+    def test_all_allocated_source_grounded_independent_ids_and_unknowns(self):
         registry=read(P/"PET-ID-REGISTRY-R1.json")
         self.assertEqual(registry["counts"]["source_observation_rows"],124)
-        self.assertEqual(registry["counts"]["assigned_catalog_pet_ids"],55)
-        self.assertEqual(registry["counts"]["unassigned_source_observations"],69)
-        self.assertEqual(registry["policy"]["next_unassigned_catalog_pet_id"],"PET-000056")
-        self.assertEqual(len(registry["catalog_entries"]),55)
+        allocated=len(registry["catalog_entries"])
+        self.assertGreaterEqual(allocated,85)
+        self.assertEqual(registry["counts"]["assigned_catalog_pet_ids"],allocated)
+        self.assertEqual(registry["counts"]["unassigned_source_observations"],124-allocated)
+        self.assertEqual(registry["policy"]["next_unassigned_catalog_pet_id"],"PET-"+str(allocated+1).zfill(6))
         self.assertEqual(len(registry["source_observations"]),124)
-        self.assertEqual(len({r["catalog_pet_id"] for r in registry["catalog_entries"]}),55)
+        self.assertEqual(len({r["catalog_pet_id"] for r in registry["catalog_entries"]}),allocated)
         motions={x["graphic"]:x for x in self.motion["groups"]}
-        for i in range(55):
+        for i in range(allocated):
             a=self.tw["records"][i]
             x=self.cross["records"][i]
             entry=registry["catalog_entries"][i]
@@ -142,6 +146,19 @@ class PETIndividualProfilesR1(unittest.TestCase):
             self.assertIsNone(dossier["skills"]["innate_at_acquisition"])
             self.assertIsNone(dossier["combat_stats"]["level_1"]["values"]["derived_hp"])
             self.assertIsNone(dossier["acquisition"]["original_capture"]["coordinates"])
+            self.assertFalse(dossier["actual_official_pet_identity"]["official_living_pet_release_proven"])
+            self.assertEqual(dossier["version_scope"]["product_line"],"CLASSIC_ORIGINAL_2D_PC")
+            self.assertEqual(dossier["combat_stats"]["status"],"OPEN_NOT_PROVEN")
+            self.assertEqual(dossier["growth"]["status"],"OPEN_NOT_PROVEN")
+            self.assertEqual(dossier["skills"]["status"],"OPEN_NOT_PROVEN")
+            self.assertEqual(dossier["acquisition"]["status"],"OPEN_NOT_PROVEN")
+            for value in dossier["combat_stats"]["level_1"]["values"].values():
+                self.assertIsNone(value)
+            for value in dossier["combat_stats"]["elements"].values():
+                self.assertIsNone(value)
+            for bound in ("minimum","maximum"):
+                for value in dossier["combat_stats"]["initial_stat_ranges"][bound].values():
+                    self.assertIsNone(value)
             self.assertFalse(dossier["status"]["all_fields_historically_complete"])
             self.assertIsNone(dossier["status"]["overall_project_completion_percent"])
             ob=registry["source_observations"][i]
@@ -149,6 +166,9 @@ class PETIndividualProfilesR1(unittest.TestCase):
             self.assertEqual(ob["assigned_catalog_pet_id"],entry["catalog_pet_id"])
             self.assertFalse(ob["official_live_release_verified"])
             self.assertIn(entry["catalog_pet_id"],(ROOT/entry["visible_dossier_path"]).read_text(encoding="utf-8"))
+        for ordinal,original_graphic in ((55,100320),(65,100330),(66,100335),(85,100354)):
+            path=registry["catalog_entries"][ordinal-1]["machine_dossier_path"]
+            self.assertEqual(read(ROOT/path)["appearance"]["graphic_number"],original_graphic)
         special=read(P/"profiles/TW10-G100320.json")
         self.assertEqual(special["profile_id"],"PET-000055")
         self.assertEqual(special["names"]["original_client"],"卡搭寶斯")
