@@ -1,0 +1,25 @@
+name: PET126O original classic PC client album_13.dat string helper evidence
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-PET126O-CN50-ORIGINAL-ALBUM13-LOCAL-HELPERS-R1.json'
+      - 'docs/continuity/STONEAGE-PET126O-CN50-ALBUM13-HELPER-SOURCE-20261121.md'
+      - 'tests/test_stoneage_pet126o_source_receipt.py'
+      - '.github/workflows/verify-stoneage-pet126o-source-receipt.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-PET126O-CN50-ORIGINAL-ALBUM13-LOCAL-HELPERS-R1.json'
+      - 'docs/continuity/STONEAGE-PET126O-CN50-ALBUM13-HELPER-SOURCE-20261121.md'
+      - 'tests/test_stoneage_pet126o_source_receipt.py'
+      - '.github/workflows/verify-stoneage-pet126o-source-receipt.yml'
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_pet126o_source_receipt.py' -v

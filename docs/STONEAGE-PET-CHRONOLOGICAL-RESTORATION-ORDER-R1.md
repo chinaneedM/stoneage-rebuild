@@ -489,3 +489,7 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## 2026-11-21｜PET126N 大陆5.0经典PC的362编译名称槽与80B运行时状态结构
 
 [PET126N原件审核](continuity/STONEAGE-PET126N-CN50-80BYTE-RUNTIME-SLOT-20261121.md)／[机器收据](../research/recovered/STONEAGE-PET126N-CN50-ORIGINAL-80BYTE-RUNTIME-SLOT-SOURCE-R1.json)：第三方保存大陆5.0 PC EXE整SHA重取；原PE `.data`仅180224B文件承载、54301716B虚拟段。程序原指令将全局数设0x16A=362，名字表28B行首i32用于80B运行时记录寻址，`0x3300ca8`为槽首、`0x3300cf4`为槽内+76状态字段；原指令检查0及设置1/2，名称字串地址及槽指针共同进入辅助函数0x45f560。目标字段及±80B地址有37处静态字面引用（6+31）。真实源检验[Action44872812525](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/44872812525)成功，但尚未证实这是ADRN磁盘记录、SPR选择器、真实可运行功能或官服实发物种。PET唯一活动，2026仍OPEN，官方新增物种0，NEXT **PET126O** 限定函数与图像链；原CURRENT及Stage A 7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall百分比UNKNOWN不变。
+
+## 2026-11-21｜PET126O：大陆5.0原PC本地相册文件 `data\album_13.dat` 和字符串辅助函数
+
+[PET126O真实EXE短指令报告](continuity/STONEAGE-PET126O-CN50-ALBUM13-HELPER-SOURCE-20261121.md)／[原程序可回溯收据](../research/recovered/STONEAGE-PET126O-CN50-ORIGINAL-ALBUM13-LOCAL-HELPERS-R1.json)：同一原大陆5.0 PC sa_5000.exe SHA再次重读成功；`0x45f560`原.text 232个直接调用，跳转后确证从源地址读字节并向目标写字节，支持普通字符串复制而非SPR图形函数。`0x430665`共5处调用（相册路径2处），原程序对输入序号限定0..361，再将原EXE文件承载的 `data\album_13.dat` 和模式 `r+b` 送入辅助函数 `0x45f182`，表示具体本地相册文件IO候选，尚不证明原客户端实际运行文件打开或确切IO函数符号。源CAB完整413原安装成员无album命名文件，不能据此推断真实运行不存在该文件。原来源验收[Action44873426532](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/44873426532)成功。未证实原80B槽就是ADRN，也未证same-build图像选择器和官服发宠；新增真实官服物种0、2026仍OPEN。PET唯一活动，NEXT **PET126P**：有界定位原生album文件IO与实际图形宠物ID链，不重复无效通用字符串helper；CURRENT历史原Blob、StageA7PARTIAL+2OPEN、B/wiki GATED、R79暂停及percent=null均不变。
