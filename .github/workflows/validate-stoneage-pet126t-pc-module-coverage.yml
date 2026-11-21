@@ -1,14 +1,18 @@
-name: PET126T PC-only pet module cross-carrier coverage and seven-field stop gate
+name: PET126T-U original PC pet source coverage and operator URL evidence guards
 on:
   push:
     paths:
       - 'research/recovered/STONEAGE-PET126T-PC-MODULE-SOURCE-COVERAGE-AND-STOP-GATE-R1.json'
       - 'tests/test_stoneage_pet126t_pc_module_coverage.py'
+      - 'research/recovered/STONEAGE-PET126U-KR2011-DIRECT-CDN-TW2026-REWARD-ROLES-R1.json'
+      - 'tests/test_stoneage_pet126u_public_pc_source_boundaries.py'
       - '.github/workflows/validate-stoneage-pet126t-pc-module-coverage.yml'
   pull_request:
     paths:
       - 'research/recovered/STONEAGE-PET126T-PC-MODULE-SOURCE-COVERAGE-AND-STOP-GATE-R1.json'
       - 'tests/test_stoneage_pet126t_pc_module_coverage.py'
+      - 'research/recovered/STONEAGE-PET126U-KR2011-DIRECT-CDN-TW2026-REWARD-ROLES-R1.json'
+      - 'tests/test_stoneage_pet126u_public_pc_source_boundaries.py'
       - '.github/workflows/validate-stoneage-pet126t-pc-module-coverage.yml'
 permissions:
   contents: read
@@ -23,5 +27,6 @@ jobs:
       - name: Verify 362-slot original-PC coverage and negative promotion gates
         run: |
           python -m unittest discover -s tests -p 'test_stoneage_pet126t_pc_module_coverage.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet126u_public_pc_source_boundaries.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pet126s_source_bounded_acceptance.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pc_only_scope_20261119.py' -v
