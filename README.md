@@ -3148,3 +3148,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-21 — PET126V｜TW1.0 / CN5.0 / 2001华义宠物馆三源原名异文 + 精确SPR段
 
 [三方异文分析](docs/continuity/STONEAGE-PET126V-TW10-CN50-WAEI2001-PET-NAME-TRIANGULATION-20261121.md)／[机器数据](research/recovered/STONEAGE-PET126V-TW10-CN50-WAEI2001-THREE-CARRIER-PET-NAME-VARIANTS-R1.json)：从既有主线真实认证TW1零售原盘124具名SPR、第三方保存CN5原程序362槽/同CAB完整SPR SHA及2001华义官网托管**玩家投稿**宠物馆条目，独立复算124/124两版完整SPR段SHA同一，**49对编译名称完全同字、75对名称原字不同**；其中3组具备明确**非繁简异文**并获第三份网页原名互证：「卡搭寶斯→卡拉寶斯→卡拉宝斯」（100320）、「拉可洛斯→拉可拉斯→拉可拉斯」（100383）、「巴洛洛克斯→邦洛洛克斯→邦洛洛克斯」（100384）。因此不能把这三个写法一概视作大陆5.0新改名；2001台湾玩家馆已经采用了对应的另一写法。**这只证实真实原名文本异文+TW1与CN5原SPR段继承，不能证明馆藏GIF的像素对应、CN5本地名称→SPR运行选择器、同服PET ID或官服实发新物种；不计3种新品种。** 当轮2003年「1.82怀旧服可用5.0客户端」新闻已在旧 Stage A 存档，已严格去重。新增原客户端字节0，2026`NOT_YEAR_AUDITED`、PET唯一，NEXT PET126W优先真实可得原PC同版本PET master/技能与客户端；CURRENT原blob不变、StageA7PARTIAL+2OPEN、StageB/wiki GATED、R79暂停、总百分比UNKNOWN。
+
+
+## 2026-11-21 — PET126W｜原经典PC台湾1.0／大陆保存5.0全部124名对源字形与异文结项
+
+[PET126W原件来源与完整124名分层](docs/continuity/STONEAGE-PET126W-TW10-CN50-124-NAME-VARIANT-CLOSURE-20261121.md)／[124行机读姓名+SPR原段SHA](research/recovered/STONEAGE-PET126W-TW10-CN50-ALL-124-ORIGINAL-PC-NAME-VARIANTS-R1.json)：此前PET126V只明确49原字相同、75不同及3条非繁简异文；本轮据真正复取的原台湾1.0私人P3H原程序与既存源验CN5派生，逐行核定**49同字＋72纯繁简＋3非字形异文＝124原具名行**，原SPR完整段**124/124跨源SHA相同**。24组有界繁简映射用独立ICU复核，不把「搭→拉」「洛→拉」「巴→邦」误当字形转换；2001华义托管**玩家投稿**名称只支持三条用字候选，不是官方同服发宠证明。原盘181相簿槽57占位「無」已重读，新增独立原PC构建0、技能/同服身份/发放新证0，绝不把名字计为新宠。简化保留PET126T-V原有流水线并增W源比较回归；原商业EXE/图片不入Git。NEXT **PET126X**只在取得真正可合法免费读取的原PC同版PET master/技能/客户端补丁/官服发放凭证后重开同部署身份；PET唯一，2026 NOT_YEAR_AUDITED，StageA7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体进度UNKNOWN。旧CURRENT原Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`（2709173B）原样保留。
