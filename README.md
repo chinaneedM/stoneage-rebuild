@@ -3133,3 +3133,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-21 — PET126S｜原大陆5.0 PC相册+36字段真实调用证据与七维缺口
 
 [原件分析](docs/continuity/STONEAGE-PET126S-CN50-ALBUM-U32-EXACT-CONSUMER-SEVEN-DIMENSION-20261121.md)／[真实原程序指令源派生](research/recovered/STONEAGE-PET126S-CN50-PC-ORIGINAL-RUNTIME-ALBUM-U32-CONSUMER-R1.json)／[七维/六地缺口](research/recovered/STONEAGE-PET126S-PET20-PC-SEVEN-DIMENSION-SOURCE-DELTA-R1.json)：实际Actions原件SHA重放仅2处直接+36绝对引用，写0x434774、读0x439f0e，读数传0x453b68第4参且目标在有限指令中写入内部存储，**未证SPR渲染或官服实际宠物**；停止泛CRT继续PET七维最终来源审查。原游戏不执行，商业EXE/CAB/原素材不公开，CURRENT原blob不变，2026开放、PET未完成、NPC未解锁、总体UNKNOWN。
+
+
+## 2026-11-21 — PET126T｜原PC宠物362槽源覆盖分层与七维未闭合门槛
+
+[PET126T完整来源审阅](docs/continuity/STONEAGE-PET126T-PC-PET-MODULE-SOURCE-BOUNDED-FINAL-REVIEW-20261121.md)／[机读跨载体覆盖与止点](research/recovered/STONEAGE-PET126T-PC-MODULE-SOURCE-COVERAGE-AND-STOP-GATE-R1.json)：基于先前真实原件验证后已存入Git的PET126R/S源派生，独立逐条重算CN5编译相册362槽，305具名/57空，前181槽124具名全部按既有假设同CAB命中SPR、另30空名有组；后181槽181具名，只有66按旧版序号假设命中同CAB图组、**115没有命中这个假设**，不是115种缺失官方宠物。124条TW1具名完整SPR段哈希同一不能作为官服实装证明。七维全未CLOSED、2026六地YTD开放／2026未年审，PET继续唯一工作，NPC不解锁；NEXT PET126U只优先能实际取得的免费合格原PC同构建身份/发宠/技能/图像证据，不再扩普通CRT反汇编。本轮只独立重算已有公开派生源，**未重取原EXE或新官方PC客户端，新增官服物种证明0**。保留历史CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`、StageA7PARTIAL+2OPEN／StageB/wiki GATED／R79暂停／总体百分比UNKNOWN。原商业素材不入库，无手游/收费盘/私服晋级。
