@@ -3173,3 +3173,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-21 — PET-PROFILE-BATCH03｜首25份源级宠物档案可逐只查询
 
 **最新档案入口**：[台湾1.0原PC宠物来源总表（124条候选）](docs/pets/INDEX.md) · [已分配永久档案ID及每条OBS编号](research/pets/PET-ID-REGISTRY-R1.json) · [第三批20只已建档源级收据](docs/continuity/STONEAGE-PET-PROFILES-BATCH03-20261121.md)。沿源相簿顺序累计 **PET-000001—PET-000025 共25份PARTIAL逐只档案**；前124条原编译候选仍为124（不是官服实发种数），尚未建立详细档案 **99条**；所有原服属性、技能、成长、野外捕获与实际发行全字段验收**0只**，全球PC历史物种总数和项目百分比仍UNKNOWN。每份档案独立保存同版原名/图号/SPR/头像/动作/帧数/原SHA并明确断开后版和混合服端的数值。新增原版权像素/原服源/客户端运行均0，**PET唯一活动模块**，2026年审未闭，Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。保护 `docs/CURRENT-STATE.md` 完整原Git blob `c89e0e33537990aa2132b47c40fef49a985a935c` 2,709,173B。下一步依序 `PET-000026`，同时优先等可信原PC同部署PET主档/技能/遭遇/发奖新原证。
+
+
+## 2026-11-21 — PET-PROFILE-BATCH04｜55份经典PC宠物逐只源证档案
+
+最新进度以 [124源候选总表及独立档案链接](docs/pets/INDEX.md)、[PET/OBS双编号登记簿](research/pets/PET-ID-REGISTRY-R1.json)、[本轮30份审计记录](docs/continuity/STONEAGE-PET-PROFILES-BATCH04-20261121.md)为准。延续TW1原相簿序号：**PET-000026—000055** 新增30份部分档案，累计55份 `PARTIAL_EVIDENCE_PROFILE`，尚未建档69源条；完整历史宠物全字段验收**0**，实际官服物种总数仍未知，2026年审`NOT_YEAR_AUDITED`。新增非繁简异文 `PET-000055`「卡搭寶斯／卡拉宝斯」分别记录原文，绝不因此加一只。每档只填真实原客户端源码可证的2D图/头像/动作/帧及来源；技能、成长、初值范围、捕捉位置和同服实发保留未知。没有公开原商业像素，只有PET模块活动，Stage A7 PARTIAL+2OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING，总完成率UNKNOWN；保护旧完整`docs/CURRENT-STATE.md`2,709,173B、Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`，NEXT `PET-000056`。
