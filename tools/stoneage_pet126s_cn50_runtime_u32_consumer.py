@@ -128,6 +128,69 @@ def bounded_native_reader_following_call(code, reader_va=0x439f0e):
     }
 
 
+def exact_native_five_argument_callsite(code):
+    """Single-site original PE32 cdecl-shaped push call contract.
+
+    A known argument order is supported because no interposed call, branch,
+    other push/pop or ESP adjustment exists between the five source pushes
+    and the call. 0x453b68 semantics are not guessed.
+    """
+    required=[
+      (0x439f0a,"push   ebx"),
+      (0x439f0e,"push   DWORD PTR [eax+0x3300ccc]"),
+      (0x439f22,"push   0x69"),
+      (0x439f29,"push   ecx"),
+      (0x439f2a,"push   eax"),
+      (0x439f2b,"call   0x453b68"),
+      (0x439f36,"add    esp,0x14")
+    ]
+    address={row["address"]:i for i,row in enumerate(code)}
+    for va,expected in required:
+        if va not in address or code[address[va]]["instruction"]!=expected:
+            raise ValueError("native-CN50-callsite-instruction-source-mismatch:"+hex(va))
+    start=address[0x439f0a]
+    finish=address[0x439f2b]
+    if finish-start>32 or start>=finish:
+        raise ValueError("native-callsite-not-contiguous-in-bounded-window")
+    inside=code[start:finish]
+    pushes=[(z["address"],z["instruction"]) for z in inside if z["instruction"].startswith("push ")]
+    if pushes!=required[:5]:
+        raise ValueError("extra-argument-or-missing-stack-push")
+    if any(re.search(r"^(?:pop|call|ret|jmp|j[a-z]{1,4}|int|syscall)\b",z["instruction"])
+           or re.search(r"^(?:add|sub|mov|lea)\s+esp\b",z["instruction"])
+           for z in inside):
+        raise ValueError("intervening-stack-modification-or-branch")
+    callee=address.get(0x453b68)
+    if callee is None:
+        raise ValueError("original-callee-not-decoded")
+    body=code[callee:callee+96]
+    arg4_sites=[
+      {"va":hex(z["address"]),"instruction":z["instruction"]}
+      for z in body if 0x14 in exact_hex_tokens(z["instruction"]) and
+         re.search(r"\[ebp\+0x14\]",z["instruction"])
+    ]
+    return {
+      "callee_original_static_target":"0x453b68",
+      "source_call_instruction_va":"0x439f2b",
+      "source_call_instruction":"call   0x453b68",
+      "static_cdecl_shaped_arguments_first_to_fifth":[
+        "eax_coordinate_or_source_register_NOT_RUNTIME_PROVEN",
+        "ecx_coordinate_or_source_register_NOT_RUNTIME_PROVEN",
+        "literal_0x69",
+        "original_runtime_record_plus36_value",
+        "ebx_register"],
+      "native_plus36_u32_is_fourth_pushed_argument_at_this_single_callsite":True,
+      "caller_cleans_exactly_20_bytes_after_call":True,
+      "intervening_push_pop_branch_call_or_esp_adjustment":False,
+      "callee_first_96_linear_instructions":[
+         {"va":hex(z["address"]),"instruction":z["instruction"]} for z in body
+      ],
+      "callee_ebp_plus_0x14_argument_mentions_first_96":arg4_sites,
+      "callee_identity_as_real_bitmap_or_original_sprite_selector_proven":False,
+      "calling_convention_and_reachability_dynamically_verified":False
+    }
+
+
 def inspect(path:Path):
     program=path.read_bytes()
     if (len(program),hashlib.sha256(program).hexdigest())!=EXPECTED["sa_5000.exe"]:
@@ -179,6 +242,7 @@ def inspect(path:Path):
         "native_record_base_literal_reference":base,
         "compiled_table_tail_literal_reference":tail,
         "bounded_original_plus36_reader_call_window":bounded_native_reader_following_call(decoded),
+        "native_five_argument_album_field_callsite":exact_native_five_argument_callsite(decoded),
         "summary":{
            "exact_encoded_field_literals":direct["exact_instruction_hits"],
            "explicit_direct_memory_reader_or_mutator_sites":direct_reads,

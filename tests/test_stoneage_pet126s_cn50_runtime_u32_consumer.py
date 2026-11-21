@@ -38,6 +38,33 @@ class PET126SStaticConsumer(unittest.TestCase):
         self.assertEqual(found["by_access_class"]["EXPLICIT_MEMORY_READ"],1)
         self.assertEqual(found["by_access_class"]["ADDRESS_ONLY_LEA_NOT_DEREFERENCE"],1)
 
+    def test_exact_five_push_source_call_contract_and_argument_position(self):
+        from tools.stoneage_pet126s_cn50_runtime_u32_consumer import exact_native_five_argument_callsite
+        code=[
+          {"address":0x439f0a,"instruction":"push   ebx"},
+          {"address":0x439f0e,"instruction":"push   DWORD PTR [eax+0x3300ccc]"},
+          {"address":0x439f14,"instruction":"mov    eax,ds:0x332e4b8"},
+          {"address":0x439f22,"instruction":"push   0x69"},
+          {"address":0x439f29,"instruction":"push   ecx"},
+          {"address":0x439f2a,"instruction":"push   eax"},
+          {"address":0x439f2b,"instruction":"call   0x453b68"},
+          {"address":0x439f36,"instruction":"add    esp,0x14"},
+          {"address":0x453b68,"instruction":"push   ebp"},
+          {"address":0x453b69,"instruction":"mov    ebp,esp"},
+          {"address":0x453b6b,"instruction":"mov    eax,DWORD PTR [ebp+0x14]"}
+        ]
+        result=exact_native_five_argument_callsite(code)
+        self.assertTrue(result["native_plus36_u32_is_fourth_pushed_argument_at_this_single_callsite"])
+        self.assertTrue(result["caller_cleans_exactly_20_bytes_after_call"])
+        self.assertEqual(len(result["callee_ebp_plus_0x14_argument_mentions_first_96"]),1)
+        self.assertFalse(result["callee_identity_as_real_bitmap_or_original_sprite_selector_proven"])
+        # Extra conditional flow in argument sequence invalidates static callsite proof.
+        bad=code[:2]+[{"address":0x439f10,"instruction":"jne    0x439f22"}]+code[2:]
+        with self.assertRaises(ValueError):exact_native_five_argument_callsite(bad)
+        # Same numeric literal, different pushed memory operand is not accepted.
+        bad=[dict(row,instruction="push   DWORD PTR [eax+0x3300cd0]") if row["address"]==0x439f0e else row for row in code]
+        with self.assertRaises(ValueError):exact_native_five_argument_callsite(bad)
+
     def test_bounded_original_reader_call_does_not_imply_renderer(self):
         b=0x439f0e
         code=[
