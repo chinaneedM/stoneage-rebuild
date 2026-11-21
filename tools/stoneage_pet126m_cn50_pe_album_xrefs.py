@@ -130,7 +130,7 @@ def inspect(program_path: Path):
     if not all(section[2] <= x < section[2]+section[3] for x in PINNED_OFFSETS):
         raise ValueError("xref-outside-text")
     for x in xref["literal_va_locations"]:
-        if struct.unpack_from("<I",program,x["file_offset"])[0] != image_base + x["rva"]:
+        if struct.unpack_from("<I",program,x["file_offset"])[0] != image_base + xref["table_rva"]:
             raise ValueError("original-address-literal-PE-mapping-failed")
     command = ["objdump","-d","-M","intel","-j",".text",str(program_path)]
     result = subprocess.run(command,capture_output=True,text=True,timeout=90)
