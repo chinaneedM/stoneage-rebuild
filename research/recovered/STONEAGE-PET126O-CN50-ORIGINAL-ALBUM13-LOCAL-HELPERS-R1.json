@@ -1,0 +1,88 @@
+{
+  "schema": "stoneage.pet126o.cn50_pc_original_local_album_helper_source_r1",
+  "date": "2026-11-21",
+  "active_module": "PET",
+  "scope": "CLASSIC_PC_ONLY",
+  "source": {
+    "archive": "THIRD_PARTY_PRESERVED_CN50_5_0_PC_CAB_NOT_INDEPENDENTLY_OFFICIAL_PRESSING_CERTIFIED",
+    "program": "sa_5000.exe",
+    "program_bytes": 630784,
+    "program_sha256": "5dbcc3fa276f9f245fb706bce957e9c3300d870df813889502b789b727e49c97",
+    "original_program_executed": false,
+    "original_program_committed": false,
+    "source_action_run": 44873426532,
+    "source_action_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/44873426532",
+    "source_job": 136752876266,
+    "source_job_conclusion": "success",
+    "source_probe_commit": "75b973d68ea023e15f7a6aecb90f73bba27a007f"
+  },
+  "helper_0x45f560": {
+    "direct_call_sites_in_same_exe": 232,
+    "pet_compiled_album_call_sites": [
+      4394697
+    ],
+    "entry_three_instructions": [
+      {
+        "ins": "push   edi",
+        "va": 4584800
+      },
+      {
+        "ins": "mov    edi,DWORD PTR [esp+0x8]",
+        "va": 4584801
+      },
+      {
+        "ins": "jmp    0x45f5d1",
+        "va": 4584805
+      }
+    ],
+    "actual_followed_target": "0x45f5d1",
+    "string_source_byte_read_instruction": "mov dl,BYTE PTR [ecx]",
+    "string_dest_byte_write_instruction": "mov BYTE PTR [edi],dl",
+    "terminator_branch_instruction": "test dl,dl",
+    "verified_character_copy_pattern": true,
+    "specific_platform_symbol_strcpy_not_proven": true,
+    "graphical_rendering_function_proven": false
+  },
+  "helper_0x430665": {
+    "direct_call_sites_in_same_exe": 5,
+    "pet_compiled_album_call_sites": [
+      4394033,
+      4394703
+    ],
+    "source_index_lower_guard": "cmp esi,ebx; jl 0x430740",
+    "source_index_upper_guard": "cmp esi,DWORD PTR ds:0x332e4bc; jge 0x430740",
+    "original_local_file": {
+      "literal_path": "data\\album_13.dat",
+      "source_va": "0x485830",
+      "source_sha256": "82125187fcf50b75604bac5f372013fe5d31b8561e38bb8b49f2042acbca67a3",
+      "file_backed_literal": true,
+      "literal_mode": "r+b",
+      "mode_va": "0x46d300",
+      "mode_sha256": "d35e15313f1da943e16ff9fac37e912f56d8484c561aad81620f9d6a3ae4d145",
+      "call_target_using_these_args": "0x45f182",
+      "call_target_known_as_fopen_not_yet_independently_decoded": true
+    },
+    "native_storage_first_return_va": 4392776,
+    "local_album_file_not_present_in_413_install_member_names": true,
+    "original_installer_member_count_examined": 413,
+    "original_file_currently_read_or_created_in_runtime_not_proven": true,
+    "direct_link_to_original_pet_sprite_graphic_not_proven": true
+  },
+  "qualified_conclusions": {
+    "real_client_compiled_album_to_local_persistent_file_name_reference": true,
+    "source_name_to_runtime_80B_cache_record": true,
+    "graphical_data_selector_proven": false,
+    "official_live_pet_issuance_confirmed": 0,
+    "pet_module_closed": false,
+    "historically_complete": false,
+    "year_2026": "NOT_YEAR_AUDITED",
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null,
+    "mobile_source_included": false,
+    "paid_marketplace_included": false,
+    "original_current_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "next": "PET126P bounded original local album_13.dat persistence semantics (file open/mode/write) and original-source byte availability, but prioritize independently evidenced actual pet sprite/name selector for full PET restoration"
+}
