@@ -1,0 +1,49 @@
+name: PET126P classic original PC 5.0 native album file IO bounded source context
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet126p_cn50_album_io.py'
+      - 'tests/test_stoneage_pet126p_cn50_album_io.py'
+      - '.github/workflows/validate-stoneage-pet126p-cn50-album-io.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet126p_cn50_album_io.py'
+      - 'tests/test_stoneage_pet126p_cn50_album_io.py'
+      - '.github/workflows/validate-stoneage-pet126p-cn50-album-io.yml'
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_pet126p_cn50_album_io.py' -v
+  actual-original-pc:
+    if: github.event_name == 'push'
+    needs: synthetic
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq cabextract binutils
+      - name: Rehydrate original CN5 PC CAB prefix without public asset commit
+        run: python -m tools.stoneage_stoneage5_battle_extract_probe --output-cab /tmp/pet126p.cab --prefix-bytes 12582912
+      - name: Verify real static original PE32 local album file IO context
+        run: |
+          mkdir -p /tmp/pet126p-source
+          cabextract -q -F sa_5000.exe -d /tmp/pet126p-source /tmp/pet126p.cab
+          python -m tools.stoneage_pet126p_cn50_album_io --program /tmp/pet126p-source/sa_5000.exe --output /tmp/pet126p-derived.json
+          echo PET126P_BEGIN
+          cat /tmp/pet126p-derived.json
+          echo PET126P_END
+      - name: Delete private original client bytes
+        if: always()
+        run: rm -rf /tmp/pet126p.cab /tmp/pet126p-source
