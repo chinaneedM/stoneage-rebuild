@@ -82,7 +82,7 @@ class PET126TSourceGate(unittest.TestCase):
     def test_historical_current_full_byte_blob_protected(self):
         b=(ROOT/"docs"/"CURRENT-STATE.md").read_bytes()
         self.assertEqual(len(b),2709173)
-        git_sha=hashlib.sha1(b"blob "+str(len(b)).encode("ascii")+b"\\0"+b).hexdigest()
+        git_sha=hashlib.sha1(b"blob "+str(len(b)).encode("ascii")+bytes([0])+b).hexdigest()
         self.assertEqual(git_sha,"c89e0e33537990aa2132b47c40fef49a985a935c")
         self.assertEqual(git_sha,self.audit["delivery_stop_gate"]["historical_current_state_git_blob_to_preserve"])
 
