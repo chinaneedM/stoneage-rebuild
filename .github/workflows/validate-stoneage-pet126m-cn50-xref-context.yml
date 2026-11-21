@@ -1,0 +1,49 @@
+name: PET126M original classic PC compiled pet-name table static PE32 xref context
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet126m_cn50_pe_album_xrefs.py'
+      - 'tests/test_stoneage_pet126m_cn50_pe_album_xrefs.py'
+      - '.github/workflows/validate-stoneage-pet126m-cn50-xref-context.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet126m_cn50_pe_album_xrefs.py'
+      - 'tests/test_stoneage_pet126m_cn50_pe_album_xrefs.py'
+      - '.github/workflows/validate-stoneage-pet126m-cn50-xref-context.yml'
+permissions:
+  contents: read
+jobs:
+  synthetic-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_pet126m_cn50_pe_album_xrefs.py' -v
+  original-source-static-context:
+    if: github.event_name == 'push'
+    needs: synthetic-regression
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq cabextract binutils
+      - name: Retrieve bounded 5.0 original program CAB prefix
+        run: python -m tools.stoneage_stoneage5_battle_extract_probe --output-cab /tmp/pet126m.cab --prefix-bytes 12582912
+      - name: Original EXE SHA and derived text instruction context
+        run: |
+          mkdir -p /tmp/pet126m-exe
+          cabextract -q -F sa_5000.exe -d /tmp/pet126m-exe /tmp/pet126m.cab
+          python -m tools.stoneage_pet126m_cn50_pe_album_xrefs --program /tmp/pet126m-exe/sa_5000.exe --output /tmp/pet126m-derived.json
+          echo PET126M_DERIVED_BEGIN
+          cat /tmp/pet126m-derived.json
+          echo PET126M_DERIVED_END
+      - name: Remove original proprietary program
+        if: always()
+        run: rm -rf /tmp/pet126m.cab /tmp/pet126m-exe
