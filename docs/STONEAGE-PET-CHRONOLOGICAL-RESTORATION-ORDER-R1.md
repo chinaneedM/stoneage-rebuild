@@ -507,3 +507,8 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## 2026-11-21｜PET126R：大陆5.0 原PC完整362槽编译宠物相册目录与+24字段→+36运行时传递
 
 [有界来源与差额](continuity/STONEAGE-PET126R-CN50-362-SLOT-ALBUM-SPR-NATIVE-U32-20261121.md)／[可按源槽位审查的362条派生JSON](../research/recovered/STONEAGE-PET126R-CN50-PC-ORIGINAL-ALBUM-FULL-362-SLOT-SOURCE-CATALOGUE-R1.json)／[原件收据](../research/recovered/STONEAGE-PET126R-CN50-PC-ORIGINAL-ALBUM-SOURCE-ACCEPTANCE-R1.json)：新来源Actions 44880073848原EXE静态与合成验收success。原编译本地名字362槽/305具名/57空；以TW1.0 `100250+ordinal` 公式作**明确假设**，CN5同CAB共190具名槽可命中候选SPR组、30空槽也有组，124个认证TW1具名资源与CN5同号SPR完整段SHA逐一精确相等；均不得晋升CN5本地原生图形选择器或官服实发数。新增实际 `.text` 原指令链于 `0x43476e` 把原表 `+24` 的末尾原u32寄存器值直接写入相册运行时记录 `+36`，不等于渲染器已证。两次早期合成失败均存历史，不抹掉。最高NEXT PET126S 限定查本地+36字段是否真实消费为图像；缺同服主档就转七维缺件矩阵。仅经典PC，年2026未结，PET仍部分，Stage A7PARTIAL+2OPEN／B/wiki GATED／R79暂停／总体UNKNOWN；原CURRENT git blob不变。
+
+
+## 2026-11-21｜PET126S：原PC相册+36数值读取与五参传递、七维缺口续核
+
+[报告](continuity/STONEAGE-PET126S-CN50-ALBUM-U32-EXACT-CONSUMER-SEVEN-DIMENSION-20261121.md)／[原PC Actions派生源](../research/recovered/STONEAGE-PET126S-CN50-PC-ORIGINAL-RUNTIME-ALBUM-U32-CONSUMER-R1.json)／[七维与六区缺口机读复核](../research/recovered/STONEAGE-PET126S-PET20-PC-SEVEN-DIMENSION-SOURCE-DELTA-R1.json)：重新读取哈希认证第三方保存CN5原PC程序，131461静态指令中直接相册80B+36绝对字段两处：0x434774写、0x439f0e读取。该数字成为0x453b68五参函数第4栈参数；被调函数在原限域指令中读取该形参并写入内部字段，但可条件调整；**原生SPR/REAL像素选择器、官服物种身份和游戏实运行仍未证实**。PET126R 305具名/57空与190同CAB假设SPR/124跨版同SHA仅作候选/资产证据，不等于物种数。七维均PARTIAL、2026六区YTD OPEN、PET唯一、Stage A7PARTIAL+2OPEN/B/wiki GATED/R79暂停/整体UNKNOWN；NEXT PET126T只做有界完整缺口最终审查，不再无界CRT、手游/付费卖盘。原CURRENT blob c89e0e33537990aa2132b47c40fef49a985a935c不变。

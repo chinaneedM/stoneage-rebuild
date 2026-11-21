@@ -1,0 +1,929 @@
+{
+  "active_module": "PET",
+  "bounded_original_plus36_reader_call_window": {
+    "call_target_is_original_SPR_or_ADRN_bitmap_renderer_proven": false,
+    "first_call_is_always_reached_or_push_still_on_stack_proven": false,
+    "first_direct_call_target_va": "0x453b68",
+    "first_static_linear_following_call_instruction": "call   0x453b68",
+    "first_static_linear_following_call_va": "0x439f2b",
+    "first_target_first_12_decoded_instructions": [
+      {
+        "instruction": "push   ebp",
+        "va": "0x453b68"
+      },
+      {
+        "instruction": "mov    ebp,esp",
+        "va": "0x453b69"
+      },
+      {
+        "instruction": "push   ecx",
+        "va": "0x453b6b"
+      },
+      {
+        "instruction": "push   ecx",
+        "va": "0x453b6c"
+      },
+      {
+        "instruction": "mov    cx,WORD PTR ds:0x3376590",
+        "va": "0x453b6d"
+      },
+      {
+        "instruction": "push   esi",
+        "va": "0x453b74"
+      },
+      {
+        "instruction": "movsx  eax,cx",
+        "va": "0x453b75"
+      },
+      {
+        "instruction": "push   edi",
+        "va": "0x453b78"
+      },
+      {
+        "instruction": "cmp    cx,0x1000",
+        "va": "0x453b79"
+      },
+      {
+        "instruction": "lea    edi,[eax*4+0x3372590]",
+        "va": "0x453b7e"
+      },
+      {
+        "instruction": "lea    eax,[eax+eax*4]",
+        "va": "0x453b85"
+      },
+      {
+        "instruction": "lea    esi,[eax*4+0x335e590]",
+        "va": "0x453b88"
+      }
+    ],
+    "native_consumer_instruction": "push   DWORD PTR [eax+0x3300ccc]",
+    "native_plus36_consumer_va": "0x439f0e",
+    "native_preceding_four": [
+      {
+        "instruction": "add    esp,0x54",
+        "va": "0x439f04"
+      },
+      {
+        "instruction": "lea    eax,[eax+eax*4]",
+        "va": "0x439f07"
+      },
+      {
+        "instruction": "push   ebx",
+        "va": "0x439f0a"
+      },
+      {
+        "instruction": "shl    eax,0x4",
+        "va": "0x439f0b"
+      }
+    ],
+    "native_runtime_source_bytes_or_game_execution_recovered": false,
+    "source_next_32_instruction_bound": [
+      {
+        "instruction": "mov    eax,ds:0x332e4b8",
+        "va": "0x439f14"
+      },
+      {
+        "instruction": "mov    ecx,DWORD PTR [eax+0x1c]",
+        "va": "0x439f19"
+      },
+      {
+        "instruction": "mov    eax,DWORD PTR [eax+0x18]",
+        "va": "0x439f1c"
+      },
+      {
+        "instruction": "add    ecx,0x75",
+        "va": "0x439f1f"
+      },
+      {
+        "instruction": "push   0x69",
+        "va": "0x439f22"
+      },
+      {
+        "instruction": "add    eax,0xc7",
+        "va": "0x439f24"
+      },
+      {
+        "instruction": "push   ecx",
+        "va": "0x439f29"
+      },
+      {
+        "instruction": "push   eax",
+        "va": "0x439f2a"
+      },
+      {
+        "instruction": "call   0x453b68",
+        "va": "0x439f2b"
+      },
+      {
+        "instruction": "mov    ecx,DWORD PTR ds:0x332e4b8",
+        "va": "0x439f30"
+      },
+      {
+        "instruction": "add    esp,0x14",
+        "va": "0x439f36"
+      },
+      {
+        "instruction": "mov    eax,DWORD PTR [ecx+0x1c]",
+        "va": "0x439f39"
+      },
+      {
+        "instruction": "mov    ecx,DWORD PTR ds:0x3300520",
+        "va": "0x439f3c"
+      },
+      {
+        "instruction": "mov    esi,ecx",
+        "va": "0x439f42"
+      },
+      {
+        "instruction": "add    eax,0xd7",
+        "va": "0x439f44"
+      },
+      {
+        "instruction": "shl    esi,0x3",
+        "va": "0x439f49"
+      },
+      {
+        "instruction": "mov    DWORD PTR [esp+0x28],esi",
+        "va": "0x439f4c"
+      },
+      {
+        "instruction": "mov    DWORD PTR [esp+0x20],eax",
+        "va": "0x439f50"
+      },
+      {
+        "instruction": "lea    esi,[esi+esi*4]",
+        "va": "0x439f54"
+      },
+      {
+        "instruction": "inc    eax",
+        "va": "0x439f57"
+      },
+      {
+        "instruction": "shl    esi,0x4",
+        "va": "0x439f58"
+      },
+      {
+        "instruction": "mov    DWORD PTR [esp+0x18],ebx",
+        "va": "0x439f5b"
+      },
+      {
+        "instruction": "mov    DWORD PTR [esp+0x14],eax",
+        "va": "0x439f5f"
+      },
+      {
+        "instruction": "mov    DWORD PTR [esp+0x30],0x332f194",
+        "va": "0x439f63"
+      },
+      {
+        "instruction": "add    esi,0x3300cf4",
+        "va": "0x439f6b"
+      },
+      {
+        "instruction": "mov    eax,DWORD PTR [esp+0x28]",
+        "va": "0x439f71"
+      },
+      {
+        "instruction": "mov    ecx,DWORD PTR [esp+0x18]",
+        "va": "0x439f75"
+      },
+      {
+        "instruction": "add    eax,ecx",
+        "va": "0x439f79"
+      },
+      {
+        "instruction": "cmp    eax,0x131",
+        "va": "0x439f7b"
+      },
+      {
+        "instruction": "jge    0x43a043",
+        "va": "0x439f80"
+      },
+      {
+        "instruction": "cmp    DWORD PTR [esi],0x2",
+        "va": "0x439f86"
+      },
+      {
+        "instruction": "jne    0x439fa7",
+        "va": "0x439f89"
+      }
+    ]
+  },
+  "compiled_table_tail_literal_reference": {
+    "all_hit_instruction_addresses": [
+      "0x430bf0",
+      "0x43476e"
+    ],
+    "by_access_class": {
+      "ADDRESS_LITERAL_WITHOUT_EXPLICIT_DEREFERENCE": 1,
+      "EXPLICIT_MEMORY_READ": 1
+    },
+    "contexts_truncated": false,
+    "exact_instruction_hits": 2,
+    "first_bounded_contexts": [
+      {
+        "category": "ADDRESS_LITERAL_WITHOUT_EXPLICIT_DEREFERENCE",
+        "instruction": "mov    ecx,0x482f80",
+        "nearby_after": [
+          "test   edx,edx",
+          "je     0x430c39",
+          "mov    esi,DWORD PTR [edi]"
+        ],
+        "nearby_before": [
+          "cmp    DWORD PTR ds:0x332e4bc,eax",
+          "jle    0x430c39",
+          "mov    edx,DWORD PTR [edi+0x28]"
+        ],
+        "va": "0x430bf0"
+      },
+      {
+        "category": "EXPLICIT_MEMORY_READ",
+        "instruction": "mov    eax,DWORD PTR [eax+0x482f80]",
+        "nearby_after": [
+          "mov    DWORD PTR [edi+0x3300ccc],eax",
+          "mov    eax,ds:0x3307a30",
+          "imul   eax,eax,0x74"
+        ],
+        "nearby_before": [
+          "push   ebp",
+          "push   esi",
+          "push   0xc9"
+        ],
+        "va": "0x43476e"
+      }
+    ]
+  },
+  "date": "2026-11-21",
+  "decision": {
+    "classification": "EXACT_ADDRESS_SITE_CENSUS_SOURCE_BOUNDED_NOT_COMPLETE_DATAFLOW",
+    "do_not_claim_absence_of_other_alias_readers": true,
+    "native_real_sprite_selector": null,
+    "new_official_species_verified": 0,
+    "next": "PET126T: integrate exact native +36 scan with PET126F seven-dimension original-PC source/gaps; stop this static subroutine trail unless independent original same-build selector or issued server master arrives.",
+    "original_server_pet_master": null,
+    "overall_percent": null,
+    "pet_module_closed": false,
+    "year_2026": "NOT_YEAR_AUDITED"
+  },
+  "native_direct_access_to_runtime_record_plus36": {
+    "all_hit_instruction_addresses": [
+      "0x434774",
+      "0x439f0e"
+    ],
+    "by_access_class": {
+      "EXPLICIT_MEMORY_TEST_OR_PUSH_READ": 1,
+      "EXPLICIT_MEMORY_WRITE": 1
+    },
+    "contexts_truncated": false,
+    "exact_instruction_hits": 2,
+    "first_bounded_contexts": [
+      {
+        "category": "EXPLICIT_MEMORY_WRITE",
+        "instruction": "mov    DWORD PTR [edi+0x3300ccc],eax",
+        "nearby_after": [
+          "mov    eax,ds:0x3307a30",
+          "imul   eax,eax,0x74",
+          "mov    ecx,DWORD PTR [eax+0x3358de0]"
+        ],
+        "nearby_before": [
+          "push   esi",
+          "push   0xc9",
+          "mov    eax,DWORD PTR [eax+0x482f80]"
+        ],
+        "va": "0x434774"
+      },
+      {
+        "category": "EXPLICIT_MEMORY_TEST_OR_PUSH_READ",
+        "instruction": "push   DWORD PTR [eax+0x3300ccc]",
+        "nearby_after": [
+          "mov    eax,ds:0x332e4b8",
+          "mov    ecx,DWORD PTR [eax+0x1c]",
+          "mov    eax,DWORD PTR [eax+0x18]"
+        ],
+        "nearby_before": [
+          "lea    eax,[eax+eax*4]",
+          "push   ebx",
+          "shl    eax,0x4"
+        ],
+        "va": "0x439f0e"
+      }
+    ]
+  },
+  "native_direct_literal_field_address": "0x3300ccc",
+  "native_five_argument_album_field_callsite": {
+    "callee_ebp_plus_0x14_argument_mentions_first_96": [
+      {
+        "instruction": "mov    eax,DWORD PTR [ebp+0x14]",
+        "va": "0x453b91"
+      },
+      {
+        "instruction": "lea    ecx,[ebp+0x14]",
+        "va": "0x453ba8"
+      },
+      {
+        "instruction": "push   DWORD PTR [ebp+0x14]",
+        "va": "0x453bba"
+      },
+      {
+        "instruction": "mov    DWORD PTR [ebp+0x14],eax",
+        "va": "0x453bcf"
+      },
+      {
+        "instruction": "mov    eax,DWORD PTR [ebp+0x14]",
+        "va": "0x453bf4"
+      },
+      {
+        "instruction": "mov    ebx,DWORD PTR [ebp+0x14]",
+        "va": "0x453c3f"
+      },
+      {
+        "instruction": "lea    eax,[ebp+0x14]",
+        "va": "0x453c5a"
+      },
+      {
+        "instruction": "and    DWORD PTR [ebp+0x14],0x0",
+        "va": "0x453c69"
+      }
+    ],
+    "callee_first_96_linear_instructions": [
+      {
+        "instruction": "push   ebp",
+        "va": "0x453b68"
+      },
+      {
+        "instruction": "mov    ebp,esp",
+        "va": "0x453b69"
+      },
+      {
+        "instruction": "push   ecx",
+        "va": "0x453b6b"
+      },
+      {
+        "instruction": "push   ecx",
+        "va": "0x453b6c"
+      },
+      {
+        "instruction": "mov    cx,WORD PTR ds:0x3376590",
+        "va": "0x453b6d"
+      },
+      {
+        "instruction": "push   esi",
+        "va": "0x453b74"
+      },
+      {
+        "instruction": "movsx  eax,cx",
+        "va": "0x453b75"
+      },
+      {
+        "instruction": "push   edi",
+        "va": "0x453b78"
+      },
+      {
+        "instruction": "cmp    cx,0x1000",
+        "va": "0x453b79"
+      },
+      {
+        "instruction": "lea    edi,[eax*4+0x3372590]",
+        "va": "0x453b7e"
+      },
+      {
+        "instruction": "lea    eax,[eax+eax*4]",
+        "va": "0x453b85"
+      },
+      {
+        "instruction": "lea    esi,[eax*4+0x335e590]",
+        "va": "0x453b88"
+      },
+      {
+        "instruction": "jge    0x453b9e",
+        "va": "0x453b8f"
+      },
+      {
+        "instruction": "mov    eax,DWORD PTR [ebp+0x14]",
+        "va": "0x453b91"
+      },
+      {
+        "instruction": "cmp    eax,0xffffffff",
+        "va": "0x453b94"
+      },
+      {
+        "instruction": "jl     0x453ba3",
+        "va": "0x453b97"
+      },
+      {
+        "instruction": "cmp    eax,0x63",
+        "va": "0x453b99"
+      },
+      {
+        "instruction": "jg     0x453ba8",
+        "va": "0x453b9c"
+      },
+      {
+        "instruction": "push   0xfffffffe",
+        "va": "0x453b9e"
+      },
+      {
+        "instruction": "pop    eax",
+        "va": "0x453ba0"
+      },
+      {
+        "instruction": "jmp    0x453c12",
+        "va": "0x453ba1"
+      },
+      {
+        "instruction": "cmp    eax,0x63",
+        "va": "0x453ba3"
+      },
+      {
+        "instruction": "jle    0x453bc7",
+        "va": "0x453ba6"
+      },
+      {
+        "instruction": "lea    ecx,[ebp+0x14]",
+        "va": "0x453ba8"
+      },
+      {
+        "instruction": "push   ecx",
+        "va": "0x453bab"
+      },
+      {
+        "instruction": "push   eax",
+        "va": "0x453bac"
+      },
+      {
+        "instruction": "call   0x4116cd",
+        "va": "0x453bad"
+      },
+      {
+        "instruction": "lea    eax,[ebp-0x8]",
+        "va": "0x453bb2"
+      },
+      {
+        "instruction": "push   eax",
+        "va": "0x453bb5"
+      },
+      {
+        "instruction": "lea    eax,[ebp-0x4]",
+        "va": "0x453bb6"
+      },
+      {
+        "instruction": "push   eax",
+        "va": "0x453bb9"
+      },
+      {
+        "instruction": "push   DWORD PTR [ebp+0x14]",
+        "va": "0x453bba"
+      },
+      {
+        "instruction": "call   0x411597",
+        "va": "0x453bbd"
+      },
+      {
+        "instruction": "add    esp,0x14",
+        "va": "0x453bc2"
+      },
+      {
+        "instruction": "jmp    0x453bd2",
+        "va": "0x453bc5"
+      },
+      {
+        "instruction": "and    DWORD PTR [ebp-0x4],0x0",
+        "va": "0x453bc7"
+      },
+      {
+        "instruction": "and    DWORD PTR [ebp-0x8],0x0",
+        "va": "0x453bcb"
+      },
+      {
+        "instruction": "mov    DWORD PTR [ebp+0x14],eax",
+        "va": "0x453bcf"
+      },
+      {
+        "instruction": "mov    al,BYTE PTR [ebp+0x10]",
+        "va": "0x453bd2"
+      },
+      {
+        "instruction": "mov    BYTE PTR [edi+0x2],al",
+        "va": "0x453bd5"
+      },
+      {
+        "instruction": "mov    ax,ds:0x3376590",
+        "va": "0x453bd8"
+      },
+      {
+        "instruction": "mov    WORD PTR [edi],ax",
+        "va": "0x453bde"
+      },
+      {
+        "instruction": "movsx  eax,WORD PTR [ebp-0x4]",
+        "va": "0x453be1"
+      },
+      {
+        "instruction": "add    eax,DWORD PTR [ebp+0x8]",
+        "va": "0x453be5"
+      },
+      {
+        "instruction": "mov    DWORD PTR [esi],eax",
+        "va": "0x453be8"
+      },
+      {
+        "instruction": "movsx  eax,WORD PTR [ebp-0x8]",
+        "va": "0x453bea"
+      },
+      {
+        "instruction": "add    eax,DWORD PTR [ebp+0xc]",
+        "va": "0x453bee"
+      },
+      {
+        "instruction": "mov    DWORD PTR [esi+0x4],eax",
+        "va": "0x453bf1"
+      },
+      {
+        "instruction": "mov    eax,DWORD PTR [ebp+0x14]",
+        "va": "0x453bf4"
+      },
+      {
+        "instruction": "and    DWORD PTR [esi+0xc],0x0",
+        "va": "0x453bf7"
+      },
+      {
+        "instruction": "mov    DWORD PTR [esi+0x8],eax",
+        "va": "0x453bfb"
+      },
+      {
+        "instruction": "mov    eax,DWORD PTR [ebp+0x18]",
+        "va": "0x453bfe"
+      },
+      {
+        "instruction": "mov    DWORD PTR [esi+0x10],eax",
+        "va": "0x453c01"
+      },
+      {
+        "instruction": "movsx  eax,WORD PTR ds:0x3376590",
+        "va": "0x453c04"
+      },
+      {
+        "instruction": "inc    WORD PTR ds:0x3376590",
+        "va": "0x453c0b"
+      },
+      {
+        "instruction": "pop    edi",
+        "va": "0x453c12"
+      },
+      {
+        "instruction": "pop    esi",
+        "va": "0x453c13"
+      },
+      {
+        "instruction": "leave",
+        "va": "0x453c14"
+      },
+      {
+        "instruction": "ret",
+        "va": "0x453c15"
+      },
+      {
+        "instruction": "push   ebp",
+        "va": "0x453c16"
+      },
+      {
+        "instruction": "mov    ebp,esp",
+        "va": "0x453c17"
+      },
+      {
+        "instruction": "push   ecx",
+        "va": "0x453c19"
+      },
+      {
+        "instruction": "mov    cx,WORD PTR ds:0x3376590",
+        "va": "0x453c1a"
+      },
+      {
+        "instruction": "push   ebx",
+        "va": "0x453c21"
+      },
+      {
+        "instruction": "movsx  eax,cx",
+        "va": "0x453c22"
+      },
+      {
+        "instruction": "push   esi",
+        "va": "0x453c25"
+      },
+      {
+        "instruction": "push   edi",
+        "va": "0x453c26"
+      },
+      {
+        "instruction": "lea    edi,[eax*4+0x3372590]",
+        "va": "0x453c27"
+      },
+      {
+        "instruction": "lea    eax,[eax+eax*4]",
+        "va": "0x453c2e"
+      },
+      {
+        "instruction": "cmp    cx,0x1000",
+        "va": "0x453c31"
+      },
+      {
+        "instruction": "lea    esi,[eax*4+0x335e590]",
+        "va": "0x453c36"
+      },
+      {
+        "instruction": "jge    0x453c4c",
+        "va": "0x453c3d"
+      },
+      {
+        "instruction": "mov    ebx,DWORD PTR [ebp+0x14]",
+        "va": "0x453c3f"
+      },
+      {
+        "instruction": "cmp    ebx,0xffffffff",
+        "va": "0x453c42"
+      },
+      {
+        "instruction": "jl     0x453c51",
+        "va": "0x453c45"
+      },
+      {
+        "instruction": "cmp    ebx,0x63",
+        "va": "0x453c47"
+      },
+      {
+        "instruction": "jg     0x453c56",
+        "va": "0x453c4a"
+      },
+      {
+        "instruction": "push   0xfffffffe",
+        "va": "0x453c4c"
+      },
+      {
+        "instruction": "pop    eax",
+        "va": "0x453c4e"
+      },
+      {
+        "instruction": "jmp    0x453cae",
+        "va": "0x453c4f"
+      },
+      {
+        "instruction": "cmp    ebx,0x63",
+        "va": "0x453c51"
+      },
+      {
+        "instruction": "jle    0x453c69",
+        "va": "0x453c54"
+      },
+      {
+        "instruction": "lea    eax,[ebp-0x4]",
+        "va": "0x453c56"
+      },
+      {
+        "instruction": "push   eax",
+        "va": "0x453c59"
+      },
+      {
+        "instruction": "lea    eax,[ebp+0x14]",
+        "va": "0x453c5a"
+      },
+      {
+        "instruction": "push   eax",
+        "va": "0x453c5d"
+      },
+      {
+        "instruction": "push   ebx",
+        "va": "0x453c5e"
+      },
+      {
+        "instruction": "call   0x411597",
+        "va": "0x453c5f"
+      },
+      {
+        "instruction": "add    esp,0xc",
+        "va": "0x453c64"
+      },
+      {
+        "instruction": "jmp    0x453c71",
+        "va": "0x453c67"
+      },
+      {
+        "instruction": "and    DWORD PTR [ebp+0x14],0x0",
+        "va": "0x453c69"
+      },
+      {
+        "instruction": "and    DWORD PTR [ebp-0x4],0x0",
+        "va": "0x453c6d"
+      },
+      {
+        "instruction": "mov    al,BYTE PTR [ebp+0x10]",
+        "va": "0x453c71"
+      },
+      {
+        "instruction": "mov    BYTE PTR [edi+0x2],al",
+        "va": "0x453c74"
+      },
+      {
+        "instruction": "mov    ax,ds:0x3376590",
+        "va": "0x453c77"
+      },
+      {
+        "instruction": "mov    WORD PTR [edi],ax",
+        "va": "0x453c7d"
+      }
+    ],
+    "callee_identity_as_real_bitmap_or_original_sprite_selector_proven": false,
+    "callee_original_static_target": "0x453b68",
+    "caller_cleans_exactly_20_bytes_after_call": true,
+    "calling_convention_and_reachability_dynamically_verified": false,
+    "intervening_push_pop_branch_call_or_esp_adjustment": false,
+    "native_plus36_u32_is_fourth_pushed_argument_at_this_single_callsite": true,
+    "source_call_instruction": "call   0x453b68",
+    "source_call_instruction_va": "0x439f2b",
+    "static_cdecl_shaped_arguments_first_to_fifth": [
+      "eax_coordinate_or_source_register_NOT_RUNTIME_PROVEN",
+      "ecx_coordinate_or_source_register_NOT_RUNTIME_PROVEN",
+      "literal_0x69",
+      "original_runtime_record_plus36_value",
+      "ebx_register"
+    ]
+  },
+  "native_record_base_address": "0x3300ca8",
+  "native_record_base_literal_reference": {
+    "all_hit_instruction_addresses": [
+      "0x430705",
+      "0x4308db",
+      "0x4309bc",
+      "0x430a0a",
+      "0x430b01",
+      "0x430c24",
+      "0x430ebb",
+      "0x434757"
+    ],
+    "by_access_class": {
+      "ADDRESS_LITERAL_WITHOUT_EXPLICIT_DEREFERENCE": 4,
+      "ADDRESS_ONLY_LEA_NOT_DEREFERENCE": 4
+    },
+    "contexts_truncated": false,
+    "exact_instruction_hits": 8,
+    "first_bounded_contexts": [
+      {
+        "category": "ADDRESS_ONLY_LEA_NOT_DEREFERENCE",
+        "instruction": "lea    eax,[esi+0x3300ca8]",
+        "nearby_after": [
+          "push   ebx",
+          "push   0x50",
+          "push   eax"
+        ],
+        "nearby_before": [
+          "push   edi",
+          "push   0x1",
+          "pop    ebx"
+        ],
+        "va": "0x430705"
+      },
+      {
+        "category": "ADDRESS_LITERAL_WITHOUT_EXPLICIT_DEREFERENCE",
+        "instruction": "push   0x3300ca8",
+        "nearby_after": [
+          "call   0x45f018",
+          "add    esp,0x10",
+          "push   DWORD PTR [ebp+0x8]"
+        ],
+        "nearby_before": [
+          "push   DWORD PTR [ebp+0x8]",
+          "push   0x131",
+          "push   0x50"
+        ],
+        "va": "0x4308db"
+      },
+      {
+        "category": "ADDRESS_LITERAL_WITHOUT_EXPLICIT_DEREFERENCE",
+        "instruction": "push   0x3300ca8",
+        "nearby_after": [
+          "jmp    0x430a26",
+          "mov    eax,ds:0x332fa48",
+          "push   0x0"
+        ],
+        "nearby_before": [
+          "push   DWORD PTR [ebp+0x8]",
+          "push   0x131",
+          "push   0x50"
+        ],
+        "va": "0x4309bc"
+      },
+      {
+        "category": "ADDRESS_LITERAL_WITHOUT_EXPLICIT_DEREFERENCE",
+        "instruction": "mov    edi,0x3300ca8",
+        "nearby_after": [
+          "push   esi",
+          "push   0x50",
+          "push   edi"
+        ],
+        "nearby_before": [
+          "jmp    0x43099c",
+          "push   DWORD PTR [ebp+0x8]",
+          "mov    esi,0x131"
+        ],
+        "va": "0x430a0a"
+      },
+      {
+        "category": "ADDRESS_ONLY_LEA_NOT_DEREFERENCE",
+        "instruction": "lea    eax,[esi+0x3300ca8]",
+        "nearby_after": [
+          "push   eax",
+          "call   0x45f1a0",
+          "push   ebx"
+        ],
+        "nearby_before": [
+          "lea    eax,[ebp+esi*1-0x5f60]",
+          "push   0x50",
+          "push   eax"
+        ],
+        "va": "0x430b01"
+      },
+      {
+        "category": "ADDRESS_LITERAL_WITHOUT_EXPLICIT_DEREFERENCE",
+        "instruction": "add    eax,0x3300ca8",
+        "nearby_after": [
+          "push   eax",
+          "call   0x45f1a0",
+          "push   DWORD PTR [esi]"
+        ],
+        "nearby_before": [
+          "mov    eax,DWORD PTR [esi]",
+          "lea    eax,[eax+eax*4]",
+          "shl    eax,0x4"
+        ],
+        "va": "0x430c24"
+      },
+      {
+        "category": "ADDRESS_ONLY_LEA_NOT_DEREFERENCE",
+        "instruction": "lea    eax,[eax+0x3300ca8]",
+        "nearby_after": [
+          "push   ecx",
+          "push   eax",
+          "mov    DWORD PTR [edx],0x1"
+        ],
+        "nearby_before": [
+          "lea    edx,[eax+0x3300cf4]",
+          "jne    0x430ed7",
+          "lea    ecx,[ecx+0x482f6c]"
+        ],
+        "va": "0x430ebb"
+      },
+      {
+        "category": "ADDRESS_ONLY_LEA_NOT_DEREFERENCE",
+        "instruction": "lea    eax,[edi+0x3300ca8]",
+        "nearby_after": [
+          "push   eax",
+          "call   0x45f560",
+          "mov    eax,DWORD PTR [esp+0x1c]"
+        ],
+        "nearby_before": [
+          "pop    ecx",
+          "lea    eax,[eax+0x482f6c]",
+          "push   eax"
+        ],
+        "va": "0x434757"
+      }
+    ]
+  },
+  "original_compiled_name_tail_address": "0x482f80",
+  "previous_verified_original_static_data_bridge": {
+    "exact_original_static_adjacent_operand_transfer_verified": true,
+    "native_original_client_not_executed": true,
+    "read_compiled_table_relative_byte_offset": 24,
+    "register_index_origin_and_runtime_reachability_not_proven": true,
+    "runtime_record_base_va": "0x3300ca8",
+    "same_EAX_immediate_following_write_instruction": "mov    DWORD PTR [edi+0x3300ccc],eax",
+    "same_EAX_immediate_following_write_va": "0x434774",
+    "source_compiled_table_base_va": "0x482f68",
+    "source_read_instruction": "mov    eax,DWORD PTR [eax+0x482f80]",
+    "source_read_va": "0x43476e",
+    "this_is_not_SPR_selector_or_ADRN_alias_runtime_proof": true,
+    "write_runtime_record_relative_byte_offset": 36
+  },
+  "schema": "stoneage.pet126s.cn50_pc_exact_original_runtime_album_u32_consumer_bounded_scan.r1",
+  "scope": "ORIGINAL_CLASSIC_2D_PC_ONLY",
+  "source": {
+    "exe": "sa_5000.exe",
+    "exe_bytes": 630784,
+    "exe_sha256": "5dbcc3fa276f9f245fb706bce957e9c3300d870df813889502b789b727e49c97",
+    "historical_original_official_pressing_certified": false,
+    "objdump": "GNU_BINUTILS_INTEL_LINEAR_DISASSEMBLY",
+    "original_exe_executed": false,
+    "original_instruction_count": 131461,
+    "original_proprietary_binary_disclosed": false,
+    "pe_image_base": "0x400000"
+  },
+  "summary": {
+    "do_not_continue_generic_CRT_or_unbounded_static_reverse_engineering": true,
+    "exact_encoded_field_literals": 2,
+    "explicit_direct_memory_reader_or_mutator_sites": 1,
+    "indirect_alias_analysis_completed": false,
+    "known_original_source_writer_replayed": true,
+    "native_graphics_renderer_or_SPR_selector_proven": false,
+    "native_pet_name_to_SPR_species_identity_proven": false,
+    "official_live_pet_issuance_proven": false,
+    "source_bounded_consumer_question_complete": true
+  }
+}

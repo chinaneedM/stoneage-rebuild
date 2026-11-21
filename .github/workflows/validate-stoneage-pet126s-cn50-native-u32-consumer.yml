@@ -1,0 +1,60 @@
+name: PET126S bounded classic PC runtime album U32 +36 direct consumer audit
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet126s_cn50_runtime_u32_consumer.py'
+      - 'tests/test_stoneage_pet126s_cn50_runtime_u32_consumer.py'
+      - 'tests/test_stoneage_pet126s_source_bounded_acceptance.py'
+      - 'research/recovered/STONEAGE-PET126S-CN50-PC-ORIGINAL-RUNTIME-ALBUM-U32-CONSUMER-R1.json'
+      - 'research/recovered/STONEAGE-PET126S-PET20-PC-SEVEN-DIMENSION-SOURCE-DELTA-R1.json'
+      - 'research/recovered/STONEAGE-PET126S-CN50-PC-NATIVE-PLUS36-ACCEPTANCE-R1.json'
+      - '.github/workflows/validate-stoneage-pet126s-cn50-native-u32-consumer.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet126s_cn50_runtime_u32_consumer.py'
+      - 'tests/test_stoneage_pet126s_cn50_runtime_u32_consumer.py'
+      - 'tests/test_stoneage_pet126s_source_bounded_acceptance.py'
+      - 'research/recovered/STONEAGE-PET126S-CN50-PC-ORIGINAL-RUNTIME-ALBUM-U32-CONSUMER-R1.json'
+      - 'research/recovered/STONEAGE-PET126S-PET20-PC-SEVEN-DIMENSION-SOURCE-DELTA-R1.json'
+      - 'research/recovered/STONEAGE-PET126S-CN50-PC-NATIVE-PLUS36-ACCEPTANCE-R1.json'
+      - '.github/workflows/validate-stoneage-pet126s-cn50-native-u32-consumer.yml'
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pet126s_cn50_runtime_u32_consumer.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet126s_source_bounded_acceptance.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet126r_cn50_lookup_integration.py' -v
+  original-classic-PC:
+    if: github.event_name == 'push'
+    needs: synthetic
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq cabextract binutils
+      - name: Rehydrate exact original 5.0 classic PC binary in private runner only
+        run: python -m tools.stoneage_stoneage5_battle_extract_probe --output-cab /tmp/pet126s.cab --prefix-bytes 12582912
+      - name: Static read/write census for previously verified original runtime +36
+        run: |
+          mkdir -p /tmp/pet126s-original
+          cabextract -q -F sa_5000.exe -d /tmp/pet126s-original /tmp/pet126s.cab
+          python -m tools.stoneage_pet126s_cn50_runtime_u32_consumer --program /tmp/pet126s-original/sa_5000.exe --output /tmp/pet126s-derived.json
+          echo PET126S_BEGIN
+          cat /tmp/pet126s-derived.json
+          echo PET126S_END
+      - name: Delete all original proprietary material
+        if: always()
+        run: rm -rf /tmp/pet126s.cab /tmp/pet126s-original
