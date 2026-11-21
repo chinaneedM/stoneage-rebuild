@@ -67,11 +67,29 @@ def exact_global_literal_sites(items,value):
             hits.append({"va":i["address"],"instruction":i["instruction"]})
     return hits
 
+def infer_numeric_layout_only(raw_rows,block_stride=0x5f60,header=0x10,record_size=0x50):
+    """Arithmetic and data-source bounds ONLY; not a proven file schema."""
+    keys=[r["raw_i32"] for r in raw_rows if r["raw_i32"]!=-1]
+    fitted=(block_stride-header)//record_size
+    return {
+      "compiled_name_rows":len(raw_rows),"populated_rows":len(keys),
+      "raw_first_i32_min":min(keys),"raw_first_i32_max":max(keys),
+      "distinct_raw_first_i32":len(set(keys)),
+      "first_i32_values_greater_equal_305":sum(k>=305 for k in keys),
+      "block_stride_bytes":block_stride,"record_size_candidate_bytes":record_size,
+      "possible_header_bytes_arithmetic":header,
+      "block_stride_equals_16_plus_305_times_80":block_stride==header+305*record_size,
+      "integer_records_fit_after_16_bytes":fitted,
+      "record_layout_and_disk_schema_not_proven":True,
+      "compiled_slot_number_to_per_account_file_offset_unverified":True
+    }
+
+
 def inspect(path:Path):
     program=path.read_bytes()
     if (len(program),hashlib.sha256(program).hexdigest())!=EXPECTED["sa_5000.exe"]:
         raise ValueError("original-program-sha-mismatch")
-    source_rows(program)
+    rows=source_rows(program)
     prior=json.loads(PRIOR.read_text("utf-8"))
     if prior["source"]["program_sha256"]!=EXPECTED["sa_5000.exe"][1]:
         raise ValueError("pet126o-source-not-same-original")
@@ -104,6 +122,11 @@ def inspect(path:Path):
         raise ValueError("source-local-file-dynamic-0x5f60-stride-missing")
     if not any("0x332e4bc" in x and x.startswith("cmp") for x in instructions):
         raise ValueError("source-original-362-entries-range-check-missing")
+    if not any(x["call_instruction"]=="call   0x45f018" for x in calls):
+        raise ValueError("original-fixed-width-record-buffer-read-call-missing")
+    key=next(x for x in calls if x["call_instruction"]=="call   0x45f018")
+    if not any(x["instruction"]=="push   0x50" for x in key["nearest_previous"]):
+        raise ValueError("original-80byte-record-buffer-call-shape-differs")
     return {
       "schema":"stoneage.pet126p.cn50_pc_original_album_file_primitive_bound_r1",
       "date":"2026-11-21","active_module":"PET","scope":"ORIGINAL_CLASSIC_PC_ONLY",
@@ -117,12 +140,15 @@ def inspect(path:Path):
         "full_control_flow_proven":False,
         "returns_within_bound":[{"va":x["address"],"ins":x["instruction"]} for x in body if re.fullmatch(r"ret(?:\s+0x[0-9a-f]+)?",x["instruction"])],
         "source_initial_12_instructions":[{"va":x["address"],"ins":x["instruction"]} for x in body[:12]],
+        "confirmed_80_byte_buffer_call":key,
         "all_in_bound_calls_with_source_neighborhood":calls,
         "local_dynamic_stride_0x5f60":[{"va":x["address"],"ins":x["instruction"]} for x in body if "0x5f60" in x["instruction"]],
         "local_file_mode_address_literals":exact_global_literal_sites(body,PINNED_MODE_VA),
         "local_file_path_address_literals":exact_global_literal_sites(body,PINNED_NAME_VA),
       },
       "compiled_helper_entry_prefixes":[short_entry(allcode,x) for x in KNOWN_HELPERS],
+      "record_buffer_io_helper_entry":short_entry(allcode,0x45f018,count=20),
+      "compiled_name_first_integer_bounds_vs_block_stride":infer_numeric_layout_only(rows),
       "original_installer_album_file_available":False,
       "original_installer_inventory_source":"research/recovered/STONEAGE-STONEAGE5-REAL-CAB-PAYLOAD-R1.json",
       "claims":{

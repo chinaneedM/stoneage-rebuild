@@ -1,6 +1,6 @@
 import unittest
 from tools.stoneage_pet126p_cn50_album_io import (
- bounded_instructions,source_call_context,short_entry,exact_global_literal_sites
+ bounded_instructions,source_call_context,short_entry,exact_global_literal_sites,infer_numeric_layout_only
 )
 class PET126P(unittest.TestCase):
  def test_call_context_and_target_range(self):
@@ -20,4 +20,11 @@ class PET126P(unittest.TestCase):
   with self.assertRaises(ValueError):bounded_instructions([],0x430665,0x430750)
   with self.assertRaises(ValueError):bounded_instructions([{"address":0x430666,"encoded_length":2,"instruction":"ret"}],0x430665,0x430750)
   with self.assertRaises(ValueError):bounded_instructions([],0x430750,0x430665)
+ def test_305_times_80_plus_16_arithmetic_is_not_alone_disk_evidence(self):
+  rows=[{"raw_i32":k} for k in [0,1,-1,305,361]]
+  observed=infer_numeric_layout_only(rows)
+  self.assertTrue(observed["block_stride_equals_16_plus_305_times_80"])
+  self.assertEqual(observed["first_i32_values_greater_equal_305"],2)
+  self.assertTrue(observed["compiled_slot_number_to_per_account_file_offset_unverified"])
+
 if __name__=="__main__":unittest.main()
