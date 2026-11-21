@@ -20,6 +20,7 @@ from tools.stoneage_pet126m_cn50_pe_album_xrefs import (
 from tools.stoneage_pet126l_cn50_table_graphic_probe import (
     EXPECTED, TABLE_OFFSET, source_rows, exact_pointer_literals,
 )
+from tools.stoneage_pet126n_cn50_global80 import pe_sections, section_for_va
 PET126N = ROOT / "research/recovered/STONEAGE-PET126N-CN50-ORIGINAL-80BYTE-RUNTIME-SLOT-SOURCE-R1.json"
 TARGETS=(0x45F560,0x430665)
 WINDOW_LEN=50
@@ -45,6 +46,22 @@ def entry_context(disasm,entry,maximum=WINDOW_LEN):
                 for x in first if x["instruction"].startswith("call")][:15],
             "limited_lookahead_not_complete_control_flow":True}
 
+def read_file_backed_cstring(program: bytes, image_base: int, sections, va: int):
+    """At most 64 printable ASCII characters plus hashes, never original binary."""
+    for section in sections:
+        off=va-image_base-section["virtual_rva"]
+        if 0<=off<section["raw_size"]:
+            origin=section["raw_offset"]+off
+            raw=program[origin:origin+96].split(b"\x00",1)[0]
+            if not raw:return {"va":hex(va),"file_backed":True,"empty":True}
+            printable=all(32<=x<127 for x in raw)
+            return {"va":hex(va),"file_backed":True,"ascii_printable":printable,
+                    "observed_span_length_capped_96":len(raw),
+                    "span_sha256":hashlib.sha256(raw).hexdigest(),
+                    "short_literal":raw[:64].decode("ascii") if printable and len(raw)<=64 else None}
+    return {"va":hex(va),"file_backed":False,"short_literal":None}
+
+
 def inspect(original:Path):
     data=original.read_bytes()
     if (len(data),hashlib.sha256(data).hexdigest()) != EXPECTED["sa_5000.exe"]:
@@ -54,6 +71,8 @@ def inspect(original:Path):
     if n["source"]["exe_sha256"]!=EXPECTED["sa_5000.exe"][1]:
         raise ValueError("source-chain-pet126n-sha-mismatch")
     imagebase,text=pe32_text_identity(data)
+    imagebase2,_,sections=pe_sections(data)
+    if imagebase2!=imagebase:raise ValueError('pe-section-base-not-identical')
     e=exact_pointer_literals(data,TABLE_OFFSET)
     if [x["file_offset"] for x in e["literal_va_locations"]] != list(SOURCE_3_XREFS):
         raise ValueError("source-compiled-name-address-locations-disagree")
@@ -83,7 +102,20 @@ def inspect(original:Path):
             "call_sites_truncated":len(calls)>30,
             "bounded_entry_context":context
         })
+    if out[0]["bounded_entry_context"]["first_instructions"][2]["ins"]!="jmp    0x45f5d1":
+        raise ValueError("source-string-helper-jump-target-changed")
+    target=entry_context(decoded,0x45f5d1,maximum=64)
+    if not target["decoded_entry"]:raise ValueError("source-string-helper-body-unknown")
+    extended_index=entry_context(decoded,0x430665,maximum=110)
+    string_arguments=[read_file_backed_cstring(data,imagebase,sections,x)
+                      for x in (0x46d300,0x485830)]
     return {
+        "static_followup":{"0x45f560_jump_target":"0x45f5d1",
+                           "0x45f5d1_first_32_instructions":target["first_instructions"],
+                           "0x430665_first_return_within_110_instructions":extended_index["first_return_va_within_window"],
+                           "0x430665_calls_within_110_instructions":extended_index["calls_within_first_window"],
+                           "0x430665_string_argument_VAs":string_arguments,
+                           "string_copy_semantics_not_assumed_without_operand_path":True},
         "schema":"stoneage.pet126o.cn50_original_pc_2_compiled_helper_entry_contexts.r1",
         "date":"2026-11-21", "active_module":"PET", "scope":"CLASSIC_PC_ONLY",
         "source_original_program_size":len(data),
