@@ -3163,3 +3163,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-21 — PET-PROFILE-ID-01｜用户允许自主永久编号，PET档案与原版来源号分开
 
 [宠物内部编号规范](docs/pets/ID-SCHEME.md)／[124条证据与内部ID机读登记](research/pets/PET-ID-REGISTRY-R1.json)／[浏览总表](docs/pets/INDEX.md)。后续不用原客户端图号做宠物档案ID：`PET-000001`永久指向第一张乌力的**逐只档案**，`OBS-TW10-0001`标识早期台湾1.0原相簿第1条**来源候选**；全部124行仅建立OBS观察号，其他123行未占PET号。各版原ID及图号继续保留，跨版同名同SPR也不可无证合并。来源独立字段增加族系/变体、元素、初始属性范围、成长、技能、捕捉条件与概率、声音/动画、骑乘、图鉴生态、历史事件和逐项证据状态，缺原版证据保留空值。源哈希和原图私有，不搞手游/私人服/付费素材。当前仅**PET档案1只PARTIAL、完成0只、TW1原客户端具名来源OBS124条**；无新原版物种/服务端实证。StageA7PARTIAL+2OPEN、B/wiki gated、R79暂停、overall UNKNOWN；`docs/CURRENT-STATE.md`原blob `c89e0e33537990aa2132b47c40fef49a985a935c`不变。下一项依此双ID契约填充 `PET-000002`，来源不足不强填。
+
+
+## 2026-11-21 — PET-METHOD-01｜用户明确将宠物详细模板作为其他模块的通用方法样板
+
+采用[跨模块逐项复原方法R1](docs/RESTORATION-ENTITY-RECORD-METHOD-R1.md)：沿用已落地的自主永久编号（PET）和每个客户端原件观察号（OBS）、来源/版本差异、资源、逐字段证据与“候选/详细档案/完全验收”三层进度；地图NPC装备任务玩法以后只**复用方法、不复制宠物字段、不提前展开**。尤其地图的连通和坐标、NPC对话/任务条件、装备属性/配方、活动与常驻任务有各自专属字段；查询标签不影响永久编号。当前继续PET-000002逐只补档，原官方经典PC为唯一对象，无新宠物实证、没有新增其它模块或网站开发。原`docs/CURRENT-STATE.md` 2,709,173B、blob `c89e0e33537990aa2132b47c40fef49a985a935c`不变，Stage A 7PARTIAL +2OPEN、Stage B/wiki GATED、R79暂停、总进度UNKNOWN。

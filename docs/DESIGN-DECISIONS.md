@@ -783,3 +783,8 @@ Current Stage A work proceeds from source-qualified original maps, images/animat
 ## DD-034 — 宠物自主永久编号与来源观察号分离（2026-11-21）
 
 **Status: Accepted.** 用户明确授权宠物资料主编号自行制定，无须遵照原版。采用`PET-000001`起的**永久内部档案ID**，与`OBS-TW10-0001`起的**来源候选观察ID**分开。真实原版图号、客户端局部ID、服务器真实Pet ID均保留完整版别命名空间，不以同图同名跨服自动合并；来源候选数不计为历史官方实发物种。后续同宠物跨地域版本仅在证据允许时关联，保留具体版别属性、技能、抓捕、原文字形、动作和版权隔离；未证继续`null`。详细规范：[docs/pets/ID-SCHEME.md](pets/ID-SCHEME.md)；机读索引：[PET-ID-REGISTRY-R1.json](../research/pets/PET-ID-REGISTRY-R1.json)。当前PET号1、台湾1.0 OBS号124、全字段验收0，其他工作锁与历史CURRENT不变。该决议是资料架构而非历史新增物种证据。
+
+
+## DD-035 — 逐项实体档案法：宠物试行，后续复用到NPC/装备/地图（2026-11-21）
+
+**Status: Accepted for future method only; non-PET module work remains LOCKED.** 用户要求逐步完善PET模板以为未来NPC、地图、装备等模块形成可复用思路。采纳[跨模块逐项复原方法R1](RESTORATION-ENTITY-RECORD-METHOD-R1.md)：**永久自主档案编号、来源观察号、跨版本原件、逐项状态及进度分层**六类公共规则；各模块专有字段独立，不提前创建其它模块数据，不把分类塞入永久编号。同一实体跨地域的名字/SPR/数字重合只做候选关联，不自动同物种或同服。当前只有PET-000001乌力建详细档案，TW1有124源OBS、全字段完成0；未来NPC/地图/装备编号只是规划示例，不代表立项。历史CURRENT、Stage和NEXT PET-000002持续遵守。
