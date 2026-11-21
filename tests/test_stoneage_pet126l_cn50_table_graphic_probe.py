@@ -43,6 +43,7 @@ class Pet126LSourceQualification(unittest.TestCase):
         self.assertEqual(got["table_rva"],0x1008)
         self.assertEqual(got["literal_va_hits"],1)
         self.assertFalse(got["proves_selector"])
+        self.assertEqual(got["literal_va_locations"],[{"file_offset":520,"rva":0x1008}])
 
 
 if __name__=="__main__":

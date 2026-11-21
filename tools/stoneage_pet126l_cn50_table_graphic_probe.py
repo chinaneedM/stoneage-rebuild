@@ -94,10 +94,26 @@ def exact_pointer_literals(program: bytes, source_offset: int):
         return {"pe32_supported": True, "table_rva": None, "literal_va_hits": 0,
                 "literal_rva_hits": 0, "proves_selector": False}
     table_rva = matching[0][2] + source_offset - matching[0][4]
-    code = b"".join(program[x[4]:x[4] + x[3]] for x in entries if x[0] == ".text")
+    def raw_immediate_locations(word):
+        token = struct.pack("<I", word)
+        positions = []
+        for name, _, sec_rva, length, raw_off in entries:
+            if name != ".text":
+                continue
+            code = program[raw_off:raw_off + length]
+            cursor = 0
+            while True:
+                at = code.find(token, cursor)
+                if at < 0:
+                    break
+                positions.append({"file_offset": raw_off + at, "rva": sec_rva + at})
+                cursor = at + 1
+        return positions
+    absolute = raw_immediate_locations(image_base + table_rva)
+    relative = raw_immediate_locations(table_rva)
     return {"pe32_supported": True, "table_rva": table_rva,
-            "literal_va_hits": code.count(struct.pack("<I", image_base + table_rva)),
-            "literal_rva_hits": code.count(struct.pack("<I", table_rva)),
+            "literal_va_hits": len(absolute), "literal_va_locations": absolute[:16],
+            "literal_rva_hits": len(relative), "literal_rva_locations": relative[:16],
             "proves_selector": False}
 
 
@@ -116,6 +132,17 @@ def crosswalk(rows, groups, frames, bitmapnos):
             "distinct_bitmap_keys": len({row[field] for row in present if row[field] in bitmapnos})
         }
         matched_group_indices.update(groups[row[field]]["index"] for row in present if row[field] in groups)
+        values = [row[field] for row in present]
+        low, high = min(values), max(values)
+        span = high - low + 1
+        # Numeric overlap is weak evidence when the entire nearby ADRN key domain
+        # exists. Record the background key density, not just positive matches.
+        counts[field]["tested_integer_span_min"] = low
+        counts[field]["tested_integer_span_max"] = high
+        counts[field]["integer_span_length"] = span
+        counts[field]["integer_span_existing_adrn_bitmap_keys"] = (
+            sum(n in bitmapnos for n in range(low, high + 1)) if span <= 500000 else None
+        )
     chosen = [f for f in frames if f["group_index"] in matched_group_indices]
     bmp_refs = {f["bmp_no"] for f in chosen if f["bmp_no"] != 0xffffffff}
     samples = []
@@ -143,6 +170,32 @@ def crosswalk(rows, groups, frames, bitmapnos):
         "native_pet_graphic_selector_proven": False,
         "official_live_pet_issuance_proven": False,
         "species_count_inferable": False,
+    }
+
+
+def historical_tw10_alias_same_ordinal(rows):
+    """Independent TW1 retail album comparison; never a CN5 native selector."""
+    tw = json.loads((ROOT / "research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json").read_text(encoding="utf-8"))
+    base = int(tw["table"]["first_graphic"])
+    cohort = []
+    for entry in tw["records"]:
+        ordinal = int(entry["graphic_number"]) - base
+        if not (0 <= ordinal < 181) or rows[ordinal]["raw_i32"] == -1:
+            raise ValueError("cross-version-album-ordinal-identity-mismatch")
+        cohort.append({"ordinal": ordinal,
+                       "tw10_portrait_alias": entry.get("portrait_logical_alias"),
+                       "cn50_5_0_trailing_u32": rows[ordinal]["raw_u32"]})
+    return {
+        "tw10_source": "STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json",
+        "source_qualified_cross_region_same_ordinal_candidates": len(cohort),
+        "equal_literal_portrait_alias_numeric_field": sum(
+            x["tw10_portrait_alias"] == x["cn50_5_0_trailing_u32"] for x in cohort
+        ),
+        "different_or_unknown": sum(
+            x["tw10_portrait_alias"] != x["cn50_5_0_trailing_u32"] for x in cohort
+        ),
+        "native_same_deployment_or_live_pet_identity_proven": False,
+        "same_number_not_proven_original_graphic_selector": True
     }
 
 
@@ -178,6 +231,7 @@ def audit(original_program: Path):
     if frame_total != manifest["metrics"]["spr"]["frames"]:
         raise ValueError("original-frame-total-differs")
     result = crosswalk(rows, groups, frames, bitmapnos)
+    result["tw10_original_album_numeric_alias_cross_region_comparison"] = historical_tw10_alias_same_ordinal(rows)
     return {
         "schema": "stoneage.pet126l.cn50_original_compiled_names_same_cab_graphics_crosswalk.r1",
         "date": "2026-11-21", "active_module": "PET", "scope": "CLASSIC_ORIGINAL_PC_ONLY",
