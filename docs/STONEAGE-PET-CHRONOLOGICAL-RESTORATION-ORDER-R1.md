@@ -497,3 +497,8 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## 2026-11-21｜PET126P：原大陆5.0 PC `album_13.dat` 可复核305×80+16存档寻址布局候选
 
 [PET126P原EXE读写指令有界报告](continuity/STONEAGE-PET126P-CN50-ALBUM13-305X80-SOURCE-20261121.md)／[相册磁盘寻址源JSON](../research/recovered/STONEAGE-PET126P-CN50-ORIGINAL-ALBUM13-305X80-FILE-ACCESS-R1.json)：原始保存大陆5.0经典PC源 EXE完整SHA再验，源名字表362行（305具名、57空）；**重新枚举305具名原首i32恰好为0..304、305个互不重复**。原函数 `0x430665` 83条来源有界指令，先用某全局值×`0x5f60=24416`调3参文件定位候选，再按原首i32×80+16调同函数，最后以80B记录指针和`0x50`、`1`、源文件句柄候选调用4参记录读取函数。`24416=16+305×80`，索引304对应尾部24336..24416，精确对齐；**仅编译行为/文件布局候选，不等于实际磁盘文件头、服务器/角色槽数或已证fseek/fread符号**。原完整CAB413成员不含album实际文件，原生运行/原SPR选择器/官服实际发宠仍缺；新认证官服宠0、2026 `NOT_YEAR_AUDITED`，PET唯一，NEXT **PET126Q**限定确认已知存档IO语义，随后回到同构建宠物名称→图形源和官方发行，避免无界CRT考据。原完整CURRENT blob不变，StageA7PARTIAL+2OPEN/B/wiki GATED/R79暂停/总体UNKNOWN。
+
+
+## 2026-11-21｜PET126Q：原PC相册文件底层转发源码核验与止点
+
+[PET126Q 真实EXE源验证](continuity/STONEAGE-PET126Q-CN50-ALBUM-CORE-FORWARDING-SOURCE-20261121.md)／[永久派生源JSON](../research/recovered/STONEAGE-PET126Q-CN50-ORIGINAL-PC-HELPER-SOURCE-DETAIL-R1.json)／[机读源验收](../research/recovered/STONEAGE-PET126Q-CN50-ORIGINAL-PC-HELPER-FORWARDING-ACCEPTANCE-R1.json)：真实第三方保存大陆5.0原PC EXE的SHA再校验，原0x45f182向0x45f151转发打开候选，0x45ed40向0x45ed6c转发3参且核心测试0/1/2定位模式，0x45f018向0x45f047转发4参且核心乘两个大小/次数参数；源Action 44877857331与合成单测均 success。这是进一步强化的**源代码级静态本地文件寻址/读取结构**，不等于已经认证fopen/fseek/fread/fclose C库符号、相册磁盘真实内容、同构建名字→SPR图形关联或官服实发宠。本支达到有界止点，**NEXT PET126R**回原经典PC可用客户端的真实宠物名称/ID/SPR/REAL关系及宠物七维来源有界终审，禁无意义CRT扩大。PET唯一、2026 OPEN、官方实发新增可证0（不等于历史总数0）、原CURRENT blob不变、Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、总体UNKNOWN。

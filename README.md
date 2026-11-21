@@ -3118,3 +3118,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-21 — PET126K｜大陆5.0原PC编译宠物姓名表362槽，台湾1.0 57空位精确继承
 
 [源码重读及362槽证据](docs/continuity/STONEAGE-PET126K-CN50-ORIGINAL-PET-NAME-TABLE-362-SLOTS-20261121.md)／[机器收据](research/recovered/STONEAGE-PET126K-CN50-ORIGINAL-362-NAMED-SLOTS-TW10-CROSSWALK-R1.json)：经过Actions实际重读并哈希核原大陆5.0光盘存档的两程序共856064B（非新独立构建），sa_5000.exe文件偏移536424的362×28字节GB18030连续表，305具名／57空；**前181槽124具名、57空**，全部57空槽位置与旧台湾1.0客户端相同，同位49原字逐字相同；**后181槽全部具名**。本地名槽不等于已发官方物种305或新增181种，未证同版PET ID/SPR/技能/实际实服投放。第三方存档压盘身份仍待独立证明，无版权源文件入Git，2026仍NOT_YEAR_AUDITED、PET SOURCE_BOUNDED_PARTIAL，StageA7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总进度UNKNOWN。NEXT PET126L核同版名称行→图号/真实身份链。
+
+
+## 2026-11-21 — PET126Q｜原PC相册辅助函数静态源验收、停止泛CRT追踪
+
+[PET126Q源说明](docs/continuity/STONEAGE-PET126Q-CN50-ALBUM-CORE-FORWARDING-SOURCE-20261121.md)／[源JSON](research/recovered/STONEAGE-PET126Q-CN50-ORIGINAL-PC-HELPER-SOURCE-DETAIL-R1.json)／[永久收据](research/recovered/STONEAGE-PET126Q-CN50-ORIGINAL-PC-HELPER-FORWARDING-ACCEPTANCE-R1.json)：真实原PC保存EXE来源SHA与独立Actions成功，编译包装函数3参定位、4参定长读，底层模式0/1/2与size×count成立；原游戏未运行，文件、C库符号、SPR绑定及官服实际发宠未证。避免继续无界分析通用CRT函数，NEXT PET126R检查同版宠物名称/ID/真实SPR及七维来源有界矩阵。PET仍唯一活动，2026未年结，Stage A7PARTIAL+2OPEN，Stage B/wiki GATED，R79暂停，整体百分比UNKNOWN。原2709173B docs/CURRENT-STATE.md blob c89e0e33537990aa2132b47c40fef49a985a935c 原样保留。

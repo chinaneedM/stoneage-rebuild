@@ -1,0 +1,57 @@
+{
+  "schema": "stoneage.pet126q.original_classic_pc_helper_forwarding_source_acceptance.r1",
+  "date": "2026-11-21",
+  "active_module": "PET",
+  "scope": "OFFICIAL_HISTORICAL_CLASSIC_PC_RESEARCH_ONLY",
+  "baseline_main_head": "d1a73483017b61871360a0ab7c9c994518466558",
+  "original_PC_source": {
+    "filename": "sa_5000.exe",
+    "size_bytes": 630784,
+    "sha256": "5dbcc3fa276f9f245fb706bce957e9c3300d870df813889502b789b727e49c97",
+    "carrier_grade": "THIRD_PARTY_PRESERVED_CN50_NOT_INDEPENDENTLY_AUTHENTICATED_AS_OFFICIAL_DISC"
+  },
+  "verified_action": {
+    "run_id": 44877857331,
+    "source_job_id": 136766472482,
+    "synthetic_job_id": 136766432612,
+    "source_tested_commit": "b44214aa42e6cb1194d2c6ece801469202e9eb02",
+    "status": "success",
+    "original_program_static_extracted": true,
+    "game_executed": false,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/44877857331"
+  },
+  "durable_derived_report": {
+    "path": "research/recovered/STONEAGE-PET126Q-CN50-ORIGINAL-PC-HELPER-SOURCE-DETAIL-R1.json",
+    "git_blob_sha": "801acc9d442acc5192f3e43e7891d75aefd6e423",
+    "replayed_exactly_from_actions_logged_json": true,
+    "original_binary_published": false
+  },
+  "verified_compiled_shape": {
+    "open_wrapper": "0x45f182 -> 0x45f151: 2 arguments plus literal 0x40",
+    "seek_wrapper": "0x45ed40 -> 0x45ed6c: exact 3-argument forwarding; core tests mode integer 0, 1, 2",
+    "read_wrapper": "0x45f018 -> 0x45f047: exact 4-argument forwarding; core multiplies two count/size argument values",
+    "file_close_candidate": "0x45ef9b and 0x45efcc have source-backed stream-flags and cleanup operations",
+    "original_album_entry": "0x430665: earlier source showed 24416 stride, offset 16+80*record_index, 80 byte record candidate",
+    "exact_CRT_fopen_fseek_fread_fclose_symbols": "NOT_INDEPENDENTLY_VERIFIED"
+  },
+  "negative_boundaries": {
+    "source_analysis_only": true,
+    "no_native_original_client_execution": true,
+    "no_album_13_dat_runtime_file": true,
+    "no_known_actual_file_length": true,
+    "no_authoritative_client_pet_name_to_SPR_identity_bind": true,
+    "no_server_pet_issuance_proof": true,
+    "new_official_live_species_proved": 0,
+    "NOT_zero_actual_historical_pets": true,
+    "pet_module_closed": false,
+    "actual_original_disk_block_header_or_account_meaning": "UNKNOWN",
+    "year_2026": "NOT_YEAR_AUDITED",
+    "original_current_state_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percent": null
+  },
+  "source_bound_decision": "STOP_GENERIC_CRT_HELPER_FOLLOWUPS_UNLESS_NEW_EXACT_ORIGINAL_MATERIAL_CHANGES_PET_GRAPHIC_IDENTITY",
+  "next": "PET126R: pursue original-classic-PC same-build pet name-ID-graphic SPR/REAL association from source-qualified actual client files; otherwise finalize source-bounded PET field residual/closure-review matrix without claiming full history."
+}

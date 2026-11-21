@@ -1,0 +1,522 @@
+{
+  "active_module": "PET",
+  "date": "2026-11-21",
+  "native_album_context_call_targets": [
+    "0x45f182",
+    "0x45ed40",
+    "ebx",
+    "0x45ed40",
+    "ebx",
+    "0x45f018",
+    "0x45ef9b",
+    "ds:0x46b23c"
+  ],
+  "next": "Close generic file-helper branch without further source; seek original same-build PC pet name-to-graphic binding or actual runtime album bytes; then source-bounded PET module field review.",
+  "original_callee_static_bounded_prefixes": [
+    {
+      "C_runtime_symbol_proven": false,
+      "entry_va": "0x45f151",
+      "first_return_within_32": true,
+      "only_linear_static_context": true,
+      "static_instruction_prefix": [
+        {
+          "ins": "push   esi",
+          "va": "0x45f151"
+        },
+        {
+          "ins": "call   0x462786",
+          "va": "0x45f152"
+        },
+        {
+          "ins": "mov    esi,eax",
+          "va": "0x45f157"
+        },
+        {
+          "ins": "test   esi,esi",
+          "va": "0x45f159"
+        },
+        {
+          "ins": "jne    0x45f15f",
+          "va": "0x45f15b"
+        },
+        {
+          "ins": "pop    esi",
+          "va": "0x45f15d"
+        },
+        {
+          "ins": "ret",
+          "va": "0x45f15e"
+        }
+      ]
+    },
+    {
+      "C_runtime_symbol_proven": false,
+      "entry_va": "0x45ed6c",
+      "first_return_within_32": false,
+      "only_linear_static_context": true,
+      "static_instruction_prefix": [
+        {
+          "ins": "push   esi",
+          "va": "0x45ed6c"
+        },
+        {
+          "ins": "mov    esi,DWORD PTR [esp+0x8]",
+          "va": "0x45ed6d"
+        },
+        {
+          "ins": "push   edi",
+          "va": "0x45ed71"
+        },
+        {
+          "ins": "mov    eax,DWORD PTR [esi+0xc]",
+          "va": "0x45ed72"
+        },
+        {
+          "ins": "test   al,0x83",
+          "va": "0x45ed75"
+        },
+        {
+          "ins": "je     0x45ede8",
+          "va": "0x45ed77"
+        },
+        {
+          "ins": "mov    edi,DWORD PTR [esp+0x14]",
+          "va": "0x45ed79"
+        },
+        {
+          "ins": "test   edi,edi",
+          "va": "0x45ed7d"
+        },
+        {
+          "ins": "je     0x45ed8b",
+          "va": "0x45ed7f"
+        },
+        {
+          "ins": "cmp    edi,0x1",
+          "va": "0x45ed81"
+        },
+        {
+          "ins": "je     0x45ed8b",
+          "va": "0x45ed84"
+        },
+        {
+          "ins": "cmp    edi,0x2",
+          "va": "0x45ed86"
+        },
+        {
+          "ins": "jne    0x45ede8",
+          "va": "0x45ed89"
+        },
+        {
+          "ins": "and    al,0xef",
+          "va": "0x45ed8b"
+        },
+        {
+          "ins": "cmp    edi,0x1",
+          "va": "0x45ed8d"
+        },
+        {
+          "ins": "mov    DWORD PTR [esi+0xc],eax",
+          "va": "0x45ed90"
+        },
+        {
+          "ins": "jne    0x45eda2",
+          "va": "0x45ed93"
+        },
+        {
+          "ins": "push   esi",
+          "va": "0x45ed95"
+        },
+        {
+          "ins": "call   0x461d88",
+          "va": "0x45ed96"
+        },
+        {
+          "ins": "add    DWORD PTR [esp+0x14],eax",
+          "va": "0x45ed9b"
+        },
+        {
+          "ins": "pop    ecx",
+          "va": "0x45ed9f"
+        },
+        {
+          "ins": "xor    edi,edi",
+          "va": "0x45eda0"
+        },
+        {
+          "ins": "push   esi",
+          "va": "0x45eda2"
+        },
+        {
+          "ins": "call   0x461c7f",
+          "va": "0x45eda3"
+        },
+        {
+          "ins": "mov    eax,DWORD PTR [esi+0xc]",
+          "va": "0x45eda8"
+        },
+        {
+          "ins": "pop    ecx",
+          "va": "0x45edab"
+        },
+        {
+          "ins": "test   al,0x80",
+          "va": "0x45edac"
+        },
+        {
+          "ins": "je     0x45edb7",
+          "va": "0x45edae"
+        },
+        {
+          "ins": "and    al,0xfc",
+          "va": "0x45edb0"
+        },
+        {
+          "ins": "mov    DWORD PTR [esi+0xc],eax",
+          "va": "0x45edb2"
+        },
+        {
+          "ins": "jmp    0x45edcb",
+          "va": "0x45edb5"
+        },
+        {
+          "ins": "test   al,0x1",
+          "va": "0x45edb7"
+        }
+      ]
+    },
+    {
+      "C_runtime_symbol_proven": false,
+      "entry_va": "0x45f047",
+      "first_return_within_32": false,
+      "only_linear_static_context": true,
+      "static_instruction_prefix": [
+        {
+          "ins": "push   ebp",
+          "va": "0x45f047"
+        },
+        {
+          "ins": "mov    ebp,esp",
+          "va": "0x45f048"
+        },
+        {
+          "ins": "push   ecx",
+          "va": "0x45f04a"
+        },
+        {
+          "ins": "push   ebx",
+          "va": "0x45f04b"
+        },
+        {
+          "ins": "push   esi",
+          "va": "0x45f04c"
+        },
+        {
+          "ins": "push   edi",
+          "va": "0x45f04d"
+        },
+        {
+          "ins": "mov    edi,DWORD PTR [ebp+0xc]",
+          "va": "0x45f04e"
+        },
+        {
+          "ins": "imul   edi,DWORD PTR [ebp+0x10]",
+          "va": "0x45f051"
+        },
+        {
+          "ins": "mov    eax,DWORD PTR [ebp+0x8]",
+          "va": "0x45f055"
+        },
+        {
+          "ins": "mov    DWORD PTR [ebp-0x4],edi",
+          "va": "0x45f058"
+        },
+        {
+          "ins": "test   edi,edi",
+          "va": "0x45f05b"
+        },
+        {
+          "ins": "mov    DWORD PTR [ebp+0x8],eax",
+          "va": "0x45f05d"
+        },
+        {
+          "ins": "mov    ebx,edi",
+          "va": "0x45f060"
+        },
+        {
+          "ins": "jne    0x45f06b",
+          "va": "0x45f062"
+        },
+        {
+          "ins": "xor    eax,eax",
+          "va": "0x45f064"
+        },
+        {
+          "ins": "jmp    0x45f138",
+          "va": "0x45f066"
+        },
+        {
+          "ins": "mov    esi,DWORD PTR [ebp+0x14]",
+          "va": "0x45f06b"
+        },
+        {
+          "ins": "test   WORD PTR [esi+0xc],0x10c",
+          "va": "0x45f06e"
+        },
+        {
+          "ins": "je     0x45f07e",
+          "va": "0x45f074"
+        },
+        {
+          "ins": "mov    eax,DWORD PTR [esi+0x18]",
+          "va": "0x45f076"
+        },
+        {
+          "ins": "mov    DWORD PTR [ebp+0x14],eax",
+          "va": "0x45f079"
+        },
+        {
+          "ins": "jmp    0x45f085",
+          "va": "0x45f07c"
+        },
+        {
+          "ins": "mov    DWORD PTR [ebp+0x14],0x1000",
+          "va": "0x45f07e"
+        },
+        {
+          "ins": "mov    ecx,DWORD PTR [esi+0xc]",
+          "va": "0x45f085"
+        },
+        {
+          "ins": "and    ecx,0x108",
+          "va": "0x45f088"
+        },
+        {
+          "ins": "je     0x45f0b9",
+          "va": "0x45f08e"
+        },
+        {
+          "ins": "mov    eax,DWORD PTR [esi+0x4]",
+          "va": "0x45f090"
+        },
+        {
+          "ins": "test   eax,eax",
+          "va": "0x45f093"
+        },
+        {
+          "ins": "je     0x45f0b9",
+          "va": "0x45f095"
+        },
+        {
+          "ins": "cmp    ebx,eax",
+          "va": "0x45f097"
+        },
+        {
+          "ins": "mov    edi,ebx",
+          "va": "0x45f099"
+        },
+        {
+          "ins": "jb     0x45f09f",
+          "va": "0x45f09b"
+        }
+      ]
+    },
+    {
+      "C_runtime_symbol_proven": false,
+      "entry_va": "0x45efcc",
+      "first_return_within_32": true,
+      "only_linear_static_context": true,
+      "static_instruction_prefix": [
+        {
+          "ins": "push   esi",
+          "va": "0x45efcc"
+        },
+        {
+          "ins": "mov    esi,DWORD PTR [esp+0x8]",
+          "va": "0x45efcd"
+        },
+        {
+          "ins": "push   edi",
+          "va": "0x45efd1"
+        },
+        {
+          "ins": "or     edi,0xffffffff",
+          "va": "0x45efd2"
+        },
+        {
+          "ins": "test   BYTE PTR [esi+0xc],0x83",
+          "va": "0x45efd5"
+        },
+        {
+          "ins": "je     0x45f00f",
+          "va": "0x45efd9"
+        },
+        {
+          "ins": "push   esi",
+          "va": "0x45efdb"
+        },
+        {
+          "ins": "call   0x461c7f",
+          "va": "0x45efdc"
+        },
+        {
+          "ins": "push   esi",
+          "va": "0x45efe1"
+        },
+        {
+          "ins": "mov    edi,eax",
+          "va": "0x45efe2"
+        },
+        {
+          "ins": "call   0x4622e3",
+          "va": "0x45efe4"
+        },
+        {
+          "ins": "push   DWORD PTR [esi+0x10]",
+          "va": "0x45efe9"
+        },
+        {
+          "ins": "call   0x462203",
+          "va": "0x45efec"
+        },
+        {
+          "ins": "add    esp,0xc",
+          "va": "0x45eff1"
+        },
+        {
+          "ins": "test   eax,eax",
+          "va": "0x45eff4"
+        },
+        {
+          "ins": "jge    0x45effd",
+          "va": "0x45eff6"
+        },
+        {
+          "ins": "or     edi,0xffffffff",
+          "va": "0x45eff8"
+        },
+        {
+          "ins": "jmp    0x45f00f",
+          "va": "0x45effb"
+        },
+        {
+          "ins": "mov    eax,DWORD PTR [esi+0x1c]",
+          "va": "0x45effd"
+        },
+        {
+          "ins": "test   eax,eax",
+          "va": "0x45f000"
+        },
+        {
+          "ins": "je     0x45f00f",
+          "va": "0x45f002"
+        },
+        {
+          "ins": "push   eax",
+          "va": "0x45f004"
+        },
+        {
+          "ins": "call   0x45ec6d",
+          "va": "0x45f005"
+        },
+        {
+          "ins": "and    DWORD PTR [esi+0x1c],0x0",
+          "va": "0x45f00a"
+        },
+        {
+          "ins": "pop    ecx",
+          "va": "0x45f00e"
+        },
+        {
+          "ins": "and    DWORD PTR [esi+0xc],0x0",
+          "va": "0x45f00f"
+        },
+        {
+          "ins": "mov    eax,edi",
+          "va": "0x45f013"
+        },
+        {
+          "ins": "pop    edi",
+          "va": "0x45f015"
+        },
+        {
+          "ins": "pop    esi",
+          "va": "0x45f016"
+        },
+        {
+          "ins": "ret",
+          "va": "0x45f017"
+        }
+      ]
+    }
+  ],
+  "qualification": {
+    "actual_album_file_obtained": false,
+    "actual_file_IO_executed": false,
+    "actual_official_pet_release_new": 0,
+    "close_symbol_fclose_proven": false,
+    "native_graphic_pet_selector_found": false,
+    "open_symbol_fopen_proven": false,
+    "original_current_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "overall_percent": null,
+    "pet_closed": false,
+    "r79": "PAUSED_NON_BLOCKING",
+    "read_symbol_fread_proven": false,
+    "seek_symbol_fseek_proven": false,
+    "source_bound_stop_after_this_helper_check": true,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED"
+  },
+  "schema": "stoneage.pet126q.original_classic_pc_file_helper_forwarding.r1",
+  "scope": "ORIGINAL_CLASSIC_PC_ONLY",
+  "source": {
+    "carrier": "CN50_THIRD_PARTY_PRESERVED_NOT_OFFICIAL_PRESSING_CERTIFIED",
+    "exe_sha256": "5dbcc3fa276f9f245fb706bce957e9c3300d870df813889502b789b727e49c97",
+    "exe_size": 630784,
+    "original_EXE_executed": false,
+    "original_EXE_published": false,
+    "prior": "research/recovered/STONEAGE-PET126P-CN50-ORIGINAL-ALBUM13-305X80-FILE-ACCESS-R1.json"
+  },
+  "verified_compiled_argument_forwarding": {
+    "open": {
+      "C_runtime_symbol_proven": false,
+      "decoded_count": 6,
+      "first_return_found": true,
+      "inner_call_va": "0x45f18c",
+      "inner_va": "0x45f151",
+      "source_immediate_pushes": [
+        "push   0x40",
+        "push   DWORD PTR [esp+0xc]",
+        "push   DWORD PTR [esp+0xc]"
+      ],
+      "wrapper_va": "0x45f182"
+    },
+    "read": {
+      "C_runtime_symbol_proven": false,
+      "decoded_count": 18,
+      "first_return_found": true,
+      "inner_call_va": "0x45f030",
+      "inner_va": "0x45f047",
+      "source_immediate_pushes": [
+        "push   DWORD PTR [ebp+0x14]",
+        "push   DWORD PTR [ebp+0x10]",
+        "push   DWORD PTR [ebp+0xc]",
+        "push   DWORD PTR [ebp+0x8]"
+      ],
+      "wrapper_va": "0x45f018"
+    },
+    "seek": {
+      "C_runtime_symbol_proven": false,
+      "decoded_count": 17,
+      "first_return_found": true,
+      "inner_call_va": "0x45ed55",
+      "inner_va": "0x45ed6c",
+      "source_immediate_pushes": [
+        "push   DWORD PTR [ebp+0x10]",
+        "push   DWORD PTR [ebp+0xc]",
+        "push   DWORD PTR [ebp+0x8]"
+      ],
+      "wrapper_va": "0x45ed40"
+    }
+  }
+}
