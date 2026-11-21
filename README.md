@@ -3153,3 +3153,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-21 — PET126W｜原经典PC台湾1.0／大陆保存5.0全部124名对源字形与异文结项
 
 [PET126W原件来源与完整124名分层](docs/continuity/STONEAGE-PET126W-TW10-CN50-124-NAME-VARIANT-CLOSURE-20261121.md)／[124行机读姓名+SPR原段SHA](research/recovered/STONEAGE-PET126W-TW10-CN50-ALL-124-ORIGINAL-PC-NAME-VARIANTS-R1.json)：此前PET126V只明确49原字相同、75不同及3条非繁简异文；本轮据真正复取的原台湾1.0私人P3H原程序与既存源验CN5派生，逐行核定**49同字＋72纯繁简＋3非字形异文＝124原具名行**，原SPR完整段**124/124跨源SHA相同**。24组有界繁简映射用独立ICU复核，不把「搭→拉」「洛→拉」「巴→邦」误当字形转换；2001华义托管**玩家投稿**名称只支持三条用字候选，不是官方同服发宠证明。原盘181相簿槽57占位「無」已重读，新增独立原PC构建0、技能/同服身份/发放新证0，绝不把名字计为新宠。简化保留PET126T-V原有流水线并增W源比较回归；原商业EXE/图片不入Git。NEXT **PET126X**只在取得真正可合法免费读取的原PC同版PET master/技能/客户端补丁/官服发放凭证后重开同部署身份；PET唯一，2026 NOT_YEAR_AUDITED，StageA7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体进度UNKNOWN。旧CURRENT原Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`（2709173B）原样保留。
+
+
+## 2026-11-21 — PET-PROFILE-01｜按照单只宠物建立统一档案与用户可查进度总表
+
+[打开PC原版宠物124条候选总表](docs/pets/INDEX.md)／[完整宠物字段模板](docs/pets/TEMPLATE.md)／[第一只：乌力（原TW1.0资源实证、数值未证）](docs/pets/TW10-G100250-WULI.md)／[源级进度机读收据](research/pets/PET-PROGRESS-R1.json)。用户明确要求“边整理边还原，一只一份具体模板，包括初始区间、成长、技能、图鉴、2D模型与全部动作及抓捕地点，能随时看整理了多少只”。本轮按最新原PET39/15/126W来源复核：**TW1原客户端124具名候选，124条具源动作，120有原头像RD（4待补）；已建立详细档案1只（乌力，PARTIAL），完整历史全字段验收0只，其余123待逐只建档**。另CN5第三方保存PC编译姓名305槽只作为独立版别，**不与TW1的124相加**。私人离线乌力图册已生成（原SPR 56动作方向序列／304帧位置／232不同RD图块），公共仓库只记录源哈希，不存原版权图像。基础数值/初始范围/技能/成长/捕捉地点缺同版官方PET主档，全部写null而非猜值。验收已接入现有PET-only测试，不改2,709,173字节原CURRENT blob。最高NEXT **PET-PROFILE-02**：优先为124条已验原PC具名资源逐只建立源级部分档案，再以新同部署证据补属性/成长/技能/捕捉，不因为模板填充而关闭PET；2026 NOT_YEAR_AUDITED、StageA7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体完成率UNKNOWN。

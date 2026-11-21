@@ -1,0 +1,66 @@
+{
+  "schema": "stoneage.pet_profile.progress.r1",
+  "date": "2026-11-21",
+  "active_module": "PET",
+  "scope": "HISTORICAL_ORIGINAL_CLASSIC_2D_PC_ONLY",
+  "source_period": "Taiwan original PC 1.0 retail source; independent preserved CN50 comparison not additive",
+  "source_scope_counts": {
+    "tw10_original_client_named_album_candidates": 124,
+    "tw10_named_with_spr_source_actions": 124,
+    "tw10_named_with_private_original_source_bitmap_motion_observation": 124,
+    "tw10_named_with_portrait_rd": 120,
+    "tw10_named_missing_portrait_rd": 4,
+    "cn50_preserved_compiled_named_slots_independent_nonadditive": 305
+  },
+  "per_pet_profile_counts": {
+    "source_indexed_candidate_rows": 124,
+    "individual_detailed_profiles": 1,
+    "individual_detailed_partial_profiles": 1,
+    "fully_historically_verified_pet_profiles": 0,
+    "individual_profiles_not_yet_created_for_candidates": 123
+  },
+  "completeness_basis": {
+    "full_pet_requirements": [
+      "named_version_source",
+      "same_deployment_official_pet_identity",
+      "original_2d_portrait_and_motion",
+      "level_1_stats_and_initial_range",
+      "growth_rates_and_formula",
+      "source_matched_innate_and_learnable_skills",
+      "original_capture_or_reward_location_and_conditions",
+      "official_live_release_or_qualified_no_issue_boundary"
+    ],
+    "not_enough_to_mark_complete": [
+      "matching_client_graphic_numeric_id",
+      "client_local_album_name_only",
+      "same_source_spr_segment_sha",
+      "different_version_or_community_server_stats",
+      "advertisement_new_pet_name_only"
+    ],
+    "unknown_overall_total": true
+  },
+  "existing_details": [
+    {
+      "profile_id": "TW10-G100250",
+      "name_original": "烏力",
+      "name_simplified": "乌力",
+      "graphic_number": 100250,
+      "region_version": "TW1.0",
+      "status": "PARTIAL_EVIDENCE_PROFILE",
+      "public_profile_path": "docs/pets/TW10-G100250-WULI.md",
+      "public_machine_profile_path": "research/pets/profiles/TW10-G100250-WULI.json"
+    }
+  ],
+  "duplicate_avoidance": "TW1 124 named album candidates and CN5 305 compiled album names are NOT summable populations; across-version same bytes/name is not same-deployment Pet ID.",
+  "boundaries": {
+    "new_official_live_species_verified_this_work_unit": 0,
+    "all_pet_species_historical_total": null,
+    "new_original_client_builds_this_work_unit": 0,
+    "original_proprietary_bytes_published": false,
+    "original_3d_models_inferred": false,
+    "year_2026": "NOT_YEAR_AUDITED",
+    "pet_module_closed": false,
+    "npc_module_open": false,
+    "current_state_immutable_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  }
+}
