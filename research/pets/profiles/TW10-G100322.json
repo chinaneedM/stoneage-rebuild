@@ -1,0 +1,286 @@
+{
+  "schema": "stoneage.pet_profile.classic_pc.provenance_per_field.r1",
+  "profile_id": "PET-000057",
+  "profile_stage": "PARTIAL_EVIDENCE_PROFILE",
+  "entity_type": "ORIGINAL_CLIENT_NAMED_GRAPHIC_CANDIDATE_NOT_CONFIRMED_LIVE_SPECIES",
+  "version_scope": {
+    "product_line": "CLASSIC_ORIGINAL_2D_PC",
+    "region": "TW",
+    "version": "TAIWAN_1_0_ORIGINAL_RETAIL",
+    "version_public_release_date": null,
+    "certified_live_deployment": false,
+    "source_observation_id": "OBS-TW10-0057"
+  },
+  "names": {
+    "status": "VERIFIED_CLIENT_LOCAL",
+    "original_client": "多洛加",
+    "simplified_display": "多洛加",
+    "other_region_compiled": [
+      {
+        "region": "CN",
+        "carrier": "PRESERVED_PC_5_0_THIRD_PARTY_NOT_CERTIFIED_OFFICIAL_PRESSING",
+        "literal": "多洛加",
+        "status": "CROSS_VERSION_CANDIDATE_ONLY",
+        "native_server_identity_match": false
+      }
+    ],
+    "local_name_row_sha256": "29dd03c945f3038e54adf29c827a4f79e0dc59ef9b474a20b10b1776b2e602a2",
+    "cross_carrier_original_compiled_relation": {
+      "candidate_only": true,
+      "cn50_relation_class": "EXACT_SOURCE_LITERAL",
+      "tw10_original_compiled_row_sha256": "29dd03c945f3038e54adf29c827a4f79e0dc59ef9b474a20b10b1776b2e602a2",
+      "cn50_preserved_original_compiled_row_sha256": "80417103713b6e6f2c45a087aeae07930ec507d013df8bad7272a800d1e38e05",
+      "identical_original_spr_segment_sha256": "14af768381457de178568e8c65bc8a87becd0488c73d9c3a0cbd30ce0ff70b00",
+      "not_same_deployment_species_id": true
+    }
+  },
+  "actual_official_pet_identity": {
+    "status": "OPEN_NOT_PROVEN",
+    "source_pet_id": null,
+    "species_id": null,
+    "official_living_pet_release_proven": false,
+    "first_issued_date": null,
+    "official_species_population_count": null
+  },
+  "appearance": {
+    "status": "VERIFIED_CLIENT_LOCAL",
+    "graphic_number": 100322,
+    "spr_group_index": 296,
+    "full_original_spr_segment_sha256": "14af768381457de178568e8c65bc8a87becd0488c73d9c3a0cbd30ce0ff70b00",
+    "source": "TAIWAN_1_0_ORIGINAL_CLIENT_SPR",
+    "original_asset_type": "2D_SPR_BITMAP_NOT_3D_MODEL",
+    "private_original_assets_only": true,
+    "palette_in_runtime": null,
+    "portrait": {
+      "status": "VERIFIED_CLIENT_LOCAL",
+      "original_logical_alias": 28174,
+      "source_rd_bitmap_number": 7305,
+      "source_rd_sha256": "7d31fec3b4f6531b5951b9aa915b6106b0e7a89fa74c5b4660725d4a578efd38",
+      "asset_delivery": "PRIVATE_LIBRARY_ONLY_NOT_IN_PUBLIC_GIT"
+    },
+    "action_sequences": {
+      "status": "VERIFIED_SOURCE_DERIVED",
+      "source_group_index": 296,
+      "source_sequences": 56,
+      "source_directions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "source_action_codes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        9,
+        10
+      ],
+      "source_frame_positions": 584,
+      "source_distinct_bitmap_numbers": 232,
+      "fully_observable_sequences": 56,
+      "original_action_meanings": null,
+      "original_runtime_frame_timing": null,
+      "offline_preview_is_game_native_execution": false
+    }
+  },
+  "combat_stats": {
+    "status": "OPEN_NOT_PROVEN",
+    "verified_version_specific_server_master": false,
+    "level_1": {
+      "status": "OPEN_NOT_PROVEN",
+      "values": {
+        "base_vitality": null,
+        "base_strength": null,
+        "base_toughness": null,
+        "base_dexterity": null,
+        "derived_hp": null,
+        "derived_attack": null,
+        "derived_defense": null,
+        "derived_agility": null
+      }
+    },
+    "initial_stat_ranges": {
+      "status": "OPEN_NOT_PROVEN",
+      "minimum": {
+        "base_vitality": null,
+        "base_strength": null,
+        "base_toughness": null,
+        "base_dexterity": null,
+        "derived_hp": null,
+        "derived_attack": null,
+        "derived_defense": null,
+        "derived_agility": null
+      },
+      "maximum": {
+        "base_vitality": null,
+        "base_strength": null,
+        "base_toughness": null,
+        "base_dexterity": null,
+        "derived_hp": null,
+        "derived_attack": null,
+        "derived_defense": null,
+        "derived_agility": null
+      },
+      "probability_distribution": null
+    },
+    "elements": {
+      "earth": null,
+      "water": null,
+      "fire": null,
+      "wind": null
+    }
+  },
+  "growth": {
+    "status": "OPEN_NOT_PROVEN",
+    "growth_rate": null,
+    "growth_grade": null,
+    "per_level_growth": null,
+    "level_cap": null,
+    "stat_growth_formula": null,
+    "awakening_or_rebirth": null
+  },
+  "skills": {
+    "status": "OPEN_NOT_PROVEN",
+    "innate_at_acquisition": null,
+    "skill_slots": null,
+    "learnable_skills": null,
+    "skill_ids_with_same_build_master": null,
+    "effects_and_formula": null
+  },
+  "acquisition": {
+    "status": "OPEN_NOT_PROVEN",
+    "modes": null,
+    "original_capture": {
+      "can_capture": null,
+      "map_id": null,
+      "map_name": null,
+      "coordinates": null,
+      "encounter_level_range": null,
+      "capture_conditions": null
+    },
+    "starter_pet_award": null,
+    "quest_event_reward": null,
+    "shop_or_exchange": null,
+    "operator_real_reward_log_proven": false
+  },
+  "pet_systems": {
+    "status": "OPEN_NOT_PROVEN",
+    "rides": null,
+    "combination_or_fusion": null,
+    "evolution": null,
+    "breeding": null,
+    "other_original_mechanics": null
+  },
+  "encyclopedia": {
+    "status": "PARTIAL_EVIDENCE_PROFILE",
+    "historical_bio": null,
+    "original_official_encyclopedia_text": null,
+    "habitats": null,
+    "category_or_family": null,
+    "source_note": "Local named album entry and source image/animation indices only; no invented lore"
+  },
+  "provenance": {
+    "source_archive_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "original_exe_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "sources": [
+      {
+        "path": "research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json",
+        "git_blob": "1aada81d7314769bf683b816cc5a8762c3bd9400",
+        "scope": "TW1_AUTHENTICATED_CLIENT_LOCAL_ALBUM_AND_PORTRAIT"
+      },
+      {
+        "path": "research/recovered/STONEAGE-PET-MODULE-15-TW10-ALL-SELECTED-MOTION-SOURCE-R1.json",
+        "git_blob": "e1cac6980353d09353de43fec0948bfcd84d49e6",
+        "scope": "TW1_ORIGINAL_SPR_REAL_SOURCE_DERIVED_ACTION_FRAMES"
+      },
+      {
+        "path": "research/recovered/STONEAGE-PET126W-TW10-CN50-ALL-124-ORIGINAL-PC-NAME-VARIANTS-R1.json",
+        "git_blob": "244251c54b5f8f274502daff984eacdd1a0b7c97",
+        "scope": "TW1_TO_PRESERVED_CN5_COMPILED_NAME_ALIAS_NOT_OFFICIAL_LIVE_SAME_ID"
+      }
+    ],
+    "private_observation_html_basename": null,
+    "private_observation_html_sha256": null,
+    "private_observation_scope": "PREVIOUS_VERIFIED_PRIVATE_ALL_124_SOURCE_MOTION_OBSERVATION_ONLY_NO_NEW_SINGLE_PET_HTML",
+    "policy_path": "docs/pets/ID-SCHEME.md"
+  },
+  "status": {
+    "all_fields_historically_complete": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "pet_module": "SOURCE_BOUNDED_PARTIAL",
+    "year_2026": "NOT_YEAR_AUDITED",
+    "other_modules_locked": true,
+    "overall_project_completion_percent": null
+  },
+  "next_evidence_gap": "Need same-deployment original Taiwanese 1.0 PC pet identity, actual live issuance, level-one stats/ranges, growth, innate/learnable skills, encounter/capture or official award sources. Client artwork and saved PC5/mixed25 references do not prove mechanics.",
+  "internal_id_system": {
+    "kind": "PROJECT_CANONICAL_PET_DOSSIER_HANDLE",
+    "assigned_pet_catalog_id": "PET-000057",
+    "permanent": true,
+    "legacy_key": "TW10-G100322",
+    "source_observation_ids": [
+      "OBS-TW10-0057"
+    ],
+    "official_server_id_equals_internal_id": false,
+    "official_live_species_certified": false,
+    "source_identity_resolution": "CLIENT_ALBUM_NAME_GRAPHIC_ONLY"
+  },
+  "future_optional_edition_data": {
+    "status": "NOT_YET_SOURCED",
+    "family_or_lineage": null,
+    "sex_or_presentation_variants": null,
+    "palette_variants": null,
+    "encounter_probability": null,
+    "encounter_time_or_weather": null,
+    "encounter_level_distribution": null,
+    "capture_success_probability": null,
+    "capture_restrictions": null,
+    "egg_or_breeding": null,
+    "official_encyclopedia_original_text": null,
+    "rare_or_event_window": null,
+    "pet_trade_or_npc_sources": null,
+    "battle_ai": null,
+    "skill_formula_details": null,
+    "animation_sound_or_effect_link": null,
+    "patch_change_history": null,
+    "source_conflicts": [],
+    "cross_carrier_same_graphic_numeric_hints": {
+      "source": "PET_MODULE_15_PRESERVED_MIXED25_ENEMYBASE_ROWS",
+      "status": "CROSS_VERSION_CANDIDATE_ONLY_NOT_AUTHENTICATED_LIVE_SERVER",
+      "raw_rows": {
+        "enemybase.txt": [
+          [
+            174,
+            174,
+            1
+          ],
+          [
+            459,
+            658,
+            0
+          ]
+        ],
+        "enemybase2.txt": [
+          [
+            65,
+            174,
+            1
+          ],
+          [
+            251,
+            658,
+            0
+          ]
+        ]
+      },
+      "stat_transfer_authorized": false
+    }
+  }
+}
