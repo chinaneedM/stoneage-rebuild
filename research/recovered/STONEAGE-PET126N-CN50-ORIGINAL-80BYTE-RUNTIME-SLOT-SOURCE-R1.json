@@ -1,0 +1,86 @@
+{
+  "schema": "stoneage.pet126n.cn50_original_pc_80byte_runtime_album_source_r1",
+  "date": "2026-11-21",
+  "active_module": "PET",
+  "scope": "ORIGINAL_CLASSIC_PC_ONLY",
+  "source": {
+    "carrier": "THIRD_PARTY_PRESERVED_CN50_PC_CAB_NOT_INDEPENDENTLY_AUTHENTICATED_OFFICIAL_PRESSING",
+    "exe": "sa_5000.exe",
+    "exe_bytes": 630784,
+    "exe_sha256": "5dbcc3fa276f9f245fb706bce957e9c3300d870df813889502b789b727e49c97",
+    "original_exe_executed": false,
+    "original_binary_committed": false,
+    "source_probe_tool": "tools/stoneage_pet126n_cn50_global80.py",
+    "original_probe_action": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/44872812525",
+    "actual_original_source_job_id": 136750929260,
+    "actual_job_conclusion": "success",
+    "synthetic_tests_conclusion": "success"
+  },
+  "pe": {
+    "image_base": 4194304,
+    "size_of_image": 54755328,
+    "data_section": {
+      "name": ".data",
+      "virtual_size": 54301716,
+      "raw_size": 180224,
+      "writable": true
+    },
+    "compiled_name_table": {
+      "va": "0x482f68",
+      "file_backed": true
+    },
+    "runtime_record": {
+      "base_va": "0x3300ca8",
+      "file_backed": false
+    },
+    "runtime_status": {
+      "va": "0x3300cf4",
+      "file_backed": false
+    }
+  },
+  "source_verified": {
+    "compiled_table_rows": 362,
+    "compile_table_row_stride": 28,
+    "count_global_va": "0x332e4bc",
+    "count_global_init": "mov DWORD PTR ds:0x332e4bc,0x16a",
+    "album_first_i32_used_for_runtime_index": true,
+    "runtime_record_stride": 80,
+    "status_offset_from_runtime_record_base": 76,
+    "state_zero_read": "cmp DWORD PTR [eax+0x3300cf4],0x0",
+    "state_one_write": "mov DWORD PTR [edx],0x1",
+    "state_two_write": "mov DWORD PTR [edi+0x3300cf4],0x2",
+    "original_name_field_address": "0x482f6c",
+    "name_pointer_instruction": "lea ecx,[ecx+0x482f6c]",
+    "slot_pointer_instruction": "lea eax,[eax+0x3300ca8]",
+    "shared_unknown_helper": "call 0x45f560",
+    "compiled_table_pointer_file_positions": [
+      199700,
+      200343,
+      214772
+    ],
+    "state_field_exact_literal_references": 6,
+    "neighbor_fields_within_80_bytes_literal_references": 31,
+    "same_region_total_literal_references": 37,
+    "global_count_literal_references": 6
+  },
+  "limits": {
+    "program_runtime_exec_verified": false,
+    "known_slot_semantic_identity": "RUNTIME_PER_ALBUM_ENTRY_STATE_OR_CACHE_CANDIDATE_ONLY",
+    "runtime_status_0_1_2_meanings_verified": false,
+    "same_source_80_byte_slot_is_original_disk_adrn": false,
+    "matching_disk_adrn_record_layout_proven": false,
+    "same_version_graphic_selector_proven": false,
+    "official_pet_species_new_confirmed": 0,
+    "official_pet_roster_complete": false,
+    "year_2026": "NOT_YEAR_AUDITED",
+    "pet_active_module_closed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null,
+    "mobile_included": false,
+    "paid_marketplace_included": false,
+    "source_state_git_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "next": "PET126O investigate only source-qualified compiled helper functions 0x45f560/0x430665 and 80-byte record writes; do not infer true pet-Spr selector or operator live issuance"
+}
