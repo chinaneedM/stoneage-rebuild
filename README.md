@@ -3083,3 +3083,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-20 — PET126D｜原台湾1.0 PC客户端捕捉五槽位计数与静态UI门槛
 
 [PET126D 原字节反汇编定位与七维限制](docs/continuity/STONEAGE-PET126D-TW10-CLIENT-CAPTURE-FIVE-SLOT-STATIC-20261120.md)／[机器收据](research/recovered/STONEAGE-PET126D-TW10-CLIENT-CAPTURE-FIVE-SLOT-STATIC-R1.json)：实际可读 TW1 原源包的原 `sa_3.exe`，本地计数函数 `0x4016D0` 遍历5个108B状态槽位，标记值1时计数；捕捉UI入口 `0x402354` 和另一入口 `0x404583` 均作 `count < 5` 门槛检查。捕捉／更多宠物提示文案与原代码直接对应。**仅证明客户端静态本地状态/显示约束，不证明永久宠物仓库上限、原服务器接受捕捉、技能效果或当年实服发宠。** 没有新发现物种；同原 TW1 原件/124具名图形已由PET126C归档，不重复计数。唯一PET模块仍 `SOURCE_BOUNDED_PARTIAL`、2026 `NOT_YEAR_AUDITED`；下一步PET126E有限检查相同原客户端槽位和宠物状态数据流及七维缺口，无手游/收费卖盘/原商业资源公开。原 `docs/CURRENT-STATE.md` blob `c89e0e33537990aa2132b47c40fef49a985a935c` 不变，Stage A 7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79暂停，总体百分比 UNKNOWN。
+
+
+## 2026-11-21 — PET126E｜台湾原版 PC S/K 宠物槽位状态与本地捕捉门槛来源联接
+
+[原 `sa_3.exe` 静态证据和权威等级界限](docs/continuity/STONEAGE-PET126E-TW10-K-STATUS-CAPTURE-BRIDGE-20261121.md)／[机读收据及原字节位点](research/recovered/STONEAGE-PET126E-TW10-K-STATUS-CAPTURE-STATIC-R1.json)：本轮独立重读已取台湾 1.0 官方原 PC 私人包 SHA256／379 全 CRC。原客户端接收 `S/K<digit>` 状态解析器通过 108B 槽位跨度写入五槽位中 +104 的 16-bit 占用标记，正是 PET126D 原捕捉本地门槛 `count < 5` 计数所读；掩码0清标记、掩码1整项更新，其他非零掩码逐字段更新；后续20字段的全量/增量地址目标全部相同。公开只留精确偏移/小段 SHA、回归工具及测试，**无原 EXE/商业源码/SPR 入库**。这只证明 TW1 客户端**静态状态→界面**数据流，不证明原服务器捕捉接受、账号宠物仓库容量、同服已实装物种、原成长公式或原版 native 游戏运行。宠物新增认证种数0；`PET SOURCE_BOUNDED_PARTIAL`，2026仍`NOT_YEAR_AUDITED`。**NEXT PET126F** 回 PET20 七维矩阵复核可访问原件、字段缺口及重开门，不随意延展服务端、不得转 NPC／手游／付费卖盘。历史 `docs/CURRENT-STATE.md` Git blob `c89e0e33537990aa2132b47c40fef49a985a935c` 保持；Stage A 7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79暂停，整体百分比 UNKNOWN。

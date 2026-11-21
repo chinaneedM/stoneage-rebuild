@@ -1,0 +1,344 @@
+{
+  "schema": "stoneage.pet126e.tw10_s_k_capture_state_join.r1",
+  "date": "2026-11-21",
+  "baseline_main_head": "bdc9193c20407cdb673eac6106a0327f9a92e90d",
+  "active_module": "PET",
+  "scope": "OFFICIAL_CLASSIC_PC_ONLY",
+  "year": 2026,
+  "year_status": "NOT_YEAR_AUDITED",
+  "original_source": {
+    "archive": "StoneAge-TW1-original-runtime-and-native-observation-P3H.zip",
+    "archive_size": 372626292,
+    "archive_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "zip_crc_reverified_count": 379,
+    "zip_crc_bad_count": 0,
+    "exe_member": "source/sa_3.exe",
+    "exe_size": 425984,
+    "exe_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "original_exe_executed": false,
+    "original_server_contacted": false,
+    "published_original_payload": false
+  },
+  "upstream": "research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json",
+  "previous_capture": "research/recovered/STONEAGE-PET126D-TW10-CLIENT-CAPTURE-FIVE-SLOT-STATIC-R1.json",
+  "k_parser": {
+    "envelope": "S",
+    "category": "K",
+    "callback_va": "0x42FE94",
+    "callback_rva": "0x2FE94",
+    "prefix": "K<digit>",
+    "index_encoding": "ASCII_BYTE_MINUS_0x30",
+    "stride": 108,
+    "slot_struct_base_va": "0x017F7658",
+    "mask_token_index": 1,
+    "mask_decoding": "BASE62_INTEGER_TOKEN",
+    "mask_zero": "SETS_OCCUPIED_FLAG_ZERO_ONLY",
+    "mask_one": "SETS_FLAG_ONE_AND_REPLACES_FULL_FIELDS_2_TO_21",
+    "mask_other": "SETS_FLAG_ONE_AND_APPLIES_SELECTED_FIELD_BITS",
+    "slot_digit_range_validation_proven": false,
+    "membership_flag_offset": 104,
+    "membership_flag_va": "0x017F76C0",
+    "membership_flag_width": 2,
+    "secondary_flag_offset": 106,
+    "field_count": 20,
+    "full_field_mask_count": 20,
+    "field_map": [
+      {
+        "token": 2,
+        "name_from_early_lineage": "graphic_id",
+        "semantic_evidence": "EARLY_LINEAGE",
+        "position_and_address_evidence": "TW1_EXE_DIRECT",
+        "struct_offset": 0,
+        "source_width": 4,
+        "full_address_immediate_offset": 196345,
+        "delta_address_immediate_offset": 196875,
+        "delta_bit": 2
+      },
+      {
+        "token": 3,
+        "name_from_early_lineage": "hp",
+        "semantic_evidence": "EARLY_LINEAGE",
+        "position_and_address_evidence": "TW1_EXE_DIRECT",
+        "struct_offset": 4,
+        "source_width": 4,
+        "full_address_immediate_offset": 196361,
+        "delta_address_immediate_offset": 196904,
+        "delta_bit": 4
+      },
+      {
+        "token": 4,
+        "name_from_early_lineage": "max_hp",
+        "semantic_evidence": "EARLY_LINEAGE",
+        "position_and_address_evidence": "TW1_EXE_DIRECT",
+        "struct_offset": 8,
+        "source_width": 4,
+        "full_address_immediate_offset": 196377,
+        "delta_address_immediate_offset": 196933,
+        "delta_bit": 8
+      },
+      {
+        "token": 5,
+        "name_from_early_lineage": "mp",
+        "semantic_evidence": "EARLY_LINEAGE",
+        "position_and_address_evidence": "TW1_EXE_DIRECT",
+        "struct_offset": 12,
+        "source_width": 4,
+        "full_address_immediate_offset": 196393,
+        "delta_address_immediate_offset": 196962,
+        "delta_bit": 16
+      },
+      {
+        "token": 6,
+        "name_from_early_lineage": "max_mp",
+        "semantic_evidence": "EARLY_LINEAGE",
+        "position_and_address_evidence": "TW1_EXE_DIRECT",
+        "struct_offset": 16,
+        "source_width": 4,
+        "full_address_immediate_offset": 196409,
+        "delta_address_immediate_offset": 196991,
+        "delta_bit": 32
+      },
+      {
+        "token": 7,
+        "name_from_early_lineage": "exp",
+        "semantic_evidence": "EARLY_LINEAGE",
+        "position_and_address_evidence": "TW1_EXE_DIRECT",
+        "struct_offset": 20,
+        "source_width": 4,
+        "full_address_immediate_offset": 196423,
+        "delta_address_immediate_offset": 197020,
+        "delta_bit": 64
+      },
+      {
+        "token": 8,
+        "name_from_early_lineage": "max_exp",
+        "semantic_evidence": "EARLY_LINEAGE",
+        "position_and_address_evidence": "TW1_EXE_DIRECT",
+        "struct_offset": 24,
+        "source_width": 4,
+        "full_address_immediate_offset": 196444,
+        "delta_address_immediate_offset": 197052,
+        "delta_bit": 128
+      },
+      {
+        "token": 9,
+        "name_from_early_lineage": "level",
+        "semantic_evidence": "EARLY_LINEAGE",
+        "position_and_address_evidence": "TW1_EXE_DIRECT",
+        "struct_offset": 28,
+        "source_width": 4,
+        "full_address_immediate_offset": 196460,
+        "delta_address_immediate_offset": 197084,
+        "delta_bit": 256
+      },
+      {
+        "token": 10,
+        "name_from_early_lineage": "attack",
+        "semantic_evidence": "EARLY_LINEAGE",
+        "position_and_address_evidence": "TW1_EXE_DIRECT",
+        "struct_offset": 32,
+        "source_width": 4,
+        "full_address_immediate_offset": 196476,
+        "delta_address_immediate_offset": 197116,
+        "delta_bit": 512
+      },
+      {
+        "token": 11,
+        "name_from_early_lineage": "defense",
+        "semantic_evidence": "EARLY_LINEAGE",
+        "position_and_address_evidence": "TW1_EXE_DIRECT",
+        "struct_offset": 36,
+        "source_width": 4,
+        "full_address_immediate_offset": 196492,
+        "delta_address_immediate_offset": 197148,
+        "delta_bit": 1024
+      },
+      {
+        "token": 12,
+        "name_from_early_lineage": "quick",
+        "semantic_evidence": "EARLY_LINEAGE",
+        "position_and_address_evidence": "TW1_EXE_DIRECT",
+        "struct_offset": 40,
+        "source_width": 4,
+        "full_address_immediate_offset": 196508,
+        "delta_address_immediate_offset": 197180,
+        "delta_bit": 2048
+      },
+      {
+        "token": 13,
+        "name_from_early_lineage": "ai",
+        "semantic_evidence": "EARLY_LINEAGE",
+        "position_and_address_evidence": "TW1_EXE_DIRECT",
+        "struct_offset": 44,
+        "source_width": 4,
+        "full_address_immediate_offset": 196522,
+        "delta_address_immediate_offset": 197212,
+        "delta_bit": 4096
+      },
+      {
+        "token": 14,
+        "name_from_early_lineage": "earth",
+        "semantic_evidence": "EARLY_LINEAGE",
+        "position_and_address_evidence": "TW1_EXE_DIRECT",
+        "struct_offset": 48,
+        "source_width": 4,
+        "full_address_immediate_offset": 196543,
+        "delta_address_immediate_offset": 197244,
+        "delta_bit": 8192
+      },
+      {
+        "token": 15,
+        "name_from_early_lineage": "water",
+        "semantic_evidence": "EARLY_LINEAGE",
+        "position_and_address_evidence": "TW1_EXE_DIRECT",
+        "struct_offset": 52,
+        "source_width": 4,
+        "full_address_immediate_offset": 196559,
+        "delta_address_immediate_offset": 197276,
+        "delta_bit": 16384
+      },
+      {
+        "token": 16,
+        "name_from_early_lineage": "fire",
+        "semantic_evidence": "EARLY_LINEAGE",
+        "position_and_address_evidence": "TW1_EXE_DIRECT",
+        "struct_offset": 56,
+        "source_width": 4,
+        "full_address_immediate_offset": 196575,
+        "delta_address_immediate_offset": 197308,
+        "delta_bit": 32768
+      },
+      {
+        "token": 17,
+        "name_from_early_lineage": "wind",
+        "semantic_evidence": "EARLY_LINEAGE",
+        "position_and_address_evidence": "TW1_EXE_DIRECT",
+        "struct_offset": 60,
+        "source_width": 4,
+        "full_address_immediate_offset": 196591,
+        "delta_address_immediate_offset": 197340,
+        "delta_bit": 65536
+      },
+      {
+        "token": 18,
+        "name_from_early_lineage": "max_skill_slots",
+        "semantic_evidence": "EARLY_LINEAGE",
+        "position_and_address_evidence": "TW1_EXE_DIRECT",
+        "struct_offset": 64,
+        "source_width": 4,
+        "full_address_immediate_offset": 196607,
+        "delta_address_immediate_offset": 197372,
+        "delta_bit": 131072
+      },
+      {
+        "token": 19,
+        "name_from_early_lineage": "rename_flag",
+        "semantic_evidence": "EARLY_LINEAGE",
+        "position_and_address_evidence": "TW1_EXE_DIRECT",
+        "struct_offset": 106,
+        "source_width": 2,
+        "full_address_immediate_offset": 196626,
+        "delta_address_immediate_offset": 197405,
+        "delta_bit": 262144
+      },
+      {
+        "token": 20,
+        "name_from_early_lineage": "name",
+        "semantic_evidence": "EARLY_LINEAGE",
+        "position_and_address_evidence": "TW1_EXE_DIRECT",
+        "struct_offset": 70,
+        "source_width": 17,
+        "full_address_immediate_offset": 196693,
+        "delta_address_immediate_offset": 197488,
+        "delta_bit": 524288
+      },
+      {
+        "token": 21,
+        "name_from_early_lineage": "free_name",
+        "semantic_evidence": "EARLY_LINEAGE",
+        "position_and_address_evidence": "TW1_EXE_DIRECT",
+        "struct_offset": 87,
+        "source_width": 17,
+        "full_address_immediate_offset": 196798,
+        "delta_address_immediate_offset": 197575,
+        "delta_bit": 1048576
+      }
+    ],
+    "flag_address_immediate_positions": [
+      196285,
+      196316
+    ]
+  },
+  "capture_join": {
+    "count_va": "0x4016D0",
+    "count_predicate": "16_BIT_FLAG_EQUALS_1",
+    "count_total_slots": 5,
+    "count_threshold": 5,
+    "gate_va": "0x402354",
+    "second_gate_va": "0x404583",
+    "ui_name_roster_loop_va": "0x4179D6",
+    "ui_loop_stride": 108,
+    "ui_loop_end_exclusive_va": "0x017F78DC",
+    "selection_compare_sample_va": "0x427AA1",
+    "server_capture_accepted_proven": false,
+    "account_storage_cap_proven": false
+  },
+  "source_windows": [
+    {
+      "id": "selector_flag",
+      "start": 196244,
+      "end": 196328,
+      "sha256": "faf7019912379a44303d21fd383a058e1d2a7afe6e03be8a5bc11653063ef49e"
+    },
+    {
+      "id": "full",
+      "start": 196328,
+      "end": 196831,
+      "sha256": "2c6b9fce690832edb79c38b5ceb2bcdfe64744bc00d735ef15e93b70b6af9ebf"
+    },
+    {
+      "id": "delta",
+      "start": 196831,
+      "end": 197640,
+      "sha256": "7f167fb752c2c37b4f4e5b65995f4710e0a2eb4ee2fa14fee3fa85ae74f11e3d"
+    },
+    {
+      "id": "names",
+      "start": 158965,
+      "end": 159058,
+      "sha256": "f13b41956ebefe050cb66a8cbc9efcc2bca8371671f43a53280c0404fdcb5946"
+    },
+    {
+      "id": "selection",
+      "start": 158352,
+      "end": 158547,
+      "sha256": "74e4eb2f00461a24328ed1e0ce7ba48b1e042efaa7753864e404f6bcc9a63ddd"
+    },
+    {
+      "id": "count",
+      "start": 5840,
+      "end": 5866,
+      "sha256": "ca6ecd3b9466bbd31ae2c3858684ab914792325d60e4b779682d1fdc2e6cfe6c"
+    }
+  ],
+  "evidence_grade": "SOURCE_VERIFIED_TW1_CLIENT_STATIC_S_K_STATE_TO_CAPTURE_GATE",
+  "new_official_species_proven": 0,
+  "official_pets_complete": false,
+  "source_bounded_closed": false,
+  "historically_complete": false,
+  "native_runtime_verified": false,
+  "still_missing": [
+    "AUTHENTICATED_OFFICIAL_SAME_BUILD_PET_MASTER",
+    "ORIGINAL_SERVER_CAPTURE_ACCEPTANCE",
+    "ACTUAL_OFFICIAL_PET_GRANT",
+    "NATIVE_CAPTURE_UI_EXECUTION",
+    "ORIGINAL_GROWTH_SKILLS_ACTIVE_RULES",
+    "OFFICIAL_COMPLETE_GLOBAL_PC_ROSTER"
+  ],
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null,
+  "historical_current_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "next": "PET126F_PRIVATE_SOURCE_REACCESS_AND_SEVEN_DIMENSION_PET_MODULE_RESIDUAL_REVIEW"
+}

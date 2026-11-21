@@ -1,0 +1,32 @@
+name: PET126E original TW1 K status and capture slot source boundary
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-PET126E-TW10-K-STATUS-CAPTURE-STATIC-R1.json'
+      - 'docs/continuity/STONEAGE-PET126E-TW10-K-STATUS-CAPTURE-BRIDGE-20261121.md'
+      - 'tests/test_stoneage_pet126e_tw10_k_slot_bridge.py'
+      - 'tools/stoneage_pet126e_tw10_k_slot_audit.py'
+      - '.github/workflows/validate-stoneage-pet126e-tw10-k-slot.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-PET126E-TW10-K-STATUS-CAPTURE-STATIC-R1.json'
+      - 'docs/continuity/STONEAGE-PET126E-TW10-K-STATUS-CAPTURE-BRIDGE-20261121.md'
+      - 'tests/test_stoneage_pet126e_tw10_k_slot_bridge.py'
+      - 'tools/stoneage_pet126e_tw10_k_slot_audit.py'
+      - '.github/workflows/validate-stoneage-pet126e-tw10-k-slot.yml'
+jobs:
+  metadata-cross-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check original TW1 static K/slot evidence without proprietary bytes
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pet126e_tw10_k_slot_bridge.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet126d_tw10_capture_static.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pc_only_scope_20261119.py' -v
+      - name: Compile optional private-source verifier without executing game
+        run: |
+          python -m py_compile tools/stoneage_pet126e_tw10_k_slot_audit.py
