@@ -3143,3 +3143,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-21 — PET126U｜2011韩国 Netmarble 官方CDN原链接补证；2026台湾马年活动奖品类型隔离
 
 [PET126U分源审查](docs/continuity/STONEAGE-PET126U-KR2011-NETMARBLE-PUBLIC-CDN-TW2026-PC-PET-REWARD-SCOPE-20261121.md)／[机器收据](research/recovered/STONEAGE-PET126U-KR2011-DIRECT-CDN-TW2026-REWARD-ROLES-R1.json)：发现2011-08-06原时期**公开**玩家帖中Netmarble官方域名 `nmgame.cdn.netmarble.net/Stoneage/NetmarbleStoneAge120.exe` **真实刊载的PC程序直链**，填补此前论坛tid2117被权限拦住的确切路径缺口；目前访问该官方域名路径仍HTTP502、EXE **0B**，不冒称客户端下载/版本/SPR成功，也不追付费论坛。台湾2026二级转载文案中将**随机四属性馬年獸候选**与**瑪蕾菲雅領養證、五种强化石、朱雀之翎**等物件明确分离，玩家公告索引与转载**不是两份独立官服原始发宠凭证**。同部署原PET ID、原图/技能/真正发放全未证，本轮新增官服宠物数0（非历史总数0）；2026仍`NOT_YEAR_AUDITED`、PET唯一、NPC不解锁，NEXT PET126V继续免费实际可取得原PC同版本文件/正式宠物证据，不重复死链或手游/私服。CURRENT 2,709,173B Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`未动，StageA7PARTIAL+2OPEN、StageB/wiki GATED、R79暂停、总体完成率UNKNOWN。
+
+
+## 2026-11-21 — PET126V｜TW1.0 / CN5.0 / 2001华义宠物馆三源原名异文 + 精确SPR段
+
+[三方异文分析](docs/continuity/STONEAGE-PET126V-TW10-CN50-WAEI2001-PET-NAME-TRIANGULATION-20261121.md)／[机器数据](research/recovered/STONEAGE-PET126V-TW10-CN50-WAEI2001-THREE-CARRIER-PET-NAME-VARIANTS-R1.json)：从既有主线真实认证TW1零售原盘124具名SPR、第三方保存CN5原程序362槽/同CAB完整SPR SHA及2001华义官网托管**玩家投稿**宠物馆条目，独立复算124/124两版完整SPR段SHA同一，**49对编译名称完全同字、75对名称原字不同**；其中3组具备明确**非繁简异文**并获第三份网页原名互证：「卡搭寶斯→卡拉寶斯→卡拉宝斯」（100320）、「拉可洛斯→拉可拉斯→拉可拉斯」（100383）、「巴洛洛克斯→邦洛洛克斯→邦洛洛克斯」（100384）。因此不能把这三个写法一概视作大陆5.0新改名；2001台湾玩家馆已经采用了对应的另一写法。**这只证实真实原名文本异文+TW1与CN5原SPR段继承，不能证明馆藏GIF的像素对应、CN5本地名称→SPR运行选择器、同服PET ID或官服实发新物种；不计3种新品种。** 当轮2003年「1.82怀旧服可用5.0客户端」新闻已在旧 Stage A 存档，已严格去重。新增原客户端字节0，2026`NOT_YEAR_AUDITED`、PET唯一，NEXT PET126W优先真实可得原PC同版本PET master/技能与客户端；CURRENT原blob不变、StageA7PARTIAL+2OPEN、StageB/wiki GATED、R79暂停、总百分比UNKNOWN。
