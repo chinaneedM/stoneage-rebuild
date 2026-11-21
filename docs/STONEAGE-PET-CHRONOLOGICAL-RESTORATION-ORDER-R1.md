@@ -481,3 +481,7 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## 2026-11-21｜PET126L：大陆 5.0 原 PC 编译宠物名称与同 CAB 图形源限定核对
 
 [PET126L 静态源码级证据、完整差异与剩余缺件](continuity/STONEAGE-PET126L-CN50-NAME-SPR-ADRN-SOURCE-KEY-CROSSWALK-20261121.md)／[PET126L JSON 收据](../research/recovered/STONEAGE-PET126L-CN50-COMPILED-NAME-SAME-CAB-KEY-AUDIT-R1.json)：原 5.0 编译表 362 行、305 具名、57 空位；两个原始字段直接命中原 `SPR` 组号均 0/305。字段匹配 `ADRN` 号虽各 305/305，但全整数范围同样已覆盖（0–304 全 305；28001–28428 全 428），不得据此声称选择器已证。大陆同槽末尾 `raw_u32` 与已认证台湾 1.0 的 124 个头像别名 **124/124 数值一致**，支持原编译相册别名继承，仅为跨版数据源比较。原 PE32 `.text` 中有三处名称表指针字面数值，文件偏移 199700/200343/214772，未证明编译代码调用/运行路径。原来源为第三方保存经典PC 5.0 CAB，未经独立官方零售压盘认证；本次原 EXE 整 SHA 与同载体派生资源 SHA 有据重放并通过 Action `44870030337`。官方实发物种新增0、2026仍 NOT_YEAR_AUDITED、PET 仍 SOURCE_BOUNDED_PARTIAL，**NEXT PET126M 三处静态指令上下文及真实 PET/SPR 数据流关联**。原历史 CURRENT blob 不变，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、整体百分比UNKNOWN。
+
+## 2026-11-21｜PET126M：大陆5.0原PC名称表首数字字段的真实指令路径
+
+[PET126M反汇编源限定说明](continuity/STONEAGE-PET126M-CN50-PE32-THREE-TABLE-REFERENCES-20261121.md)／[PET126M机读原件验收](../research/recovered/STONEAGE-PET126M-CN50-PE32-THREE-NAME-REFERENCE-STATIC-INSTRUCTION-R1.json)：已核原EXE真实 `.text` 三地址文件偏移199700、200343、214772均属于可解码指令；两处用28B相册行宽，读取表首i32再通过乘5和移4位获得80B记录寻址，另一处也检空位-1。**实际程序字段读取/80B索引是证据，80B内存记录与ADRN同长度不等于已证图形选择器。** 初次审计脚本目标VA校验错误曾令CI失败，修复后真实源重放[Action44870583521](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/44870583521)及合成测试success。新官服实发宠0，年份2026继续OPEN，PET唯一活动；**NEXT PET126N 限定同源80B记录身份与原图形连接**。CURRENT原blob不变，StageA7PARTIAL+2OPEN，B/wiki GATED，R79暂停，总体UNKNOWN。
