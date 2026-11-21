@@ -14,6 +14,7 @@ PET21_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-
 PET22_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-22-JP-124-ARCHIVED-IMAGE-RECOVERY-R1.json"
 PET23_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-23-JP-LOW-RATE-IMAGE-REACCESS-R1.json"
 PET39_PATH = PATH.with_name("STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json")
+PET126R_PATH = PATH.with_name("STONEAGE-PET126R-CN50-PC-ORIGINAL-ALBUM-FULL-362-SLOT-SOURCE-CATALOGUE-R1.json")
 PET41_PATH = PATH.with_name("STONEAGE-PET41-TW-EARLY-WGS-MUSEUM-R1.json")
 PET25_OFFICIAL_PATH = PATH.with_name("STONEAGE-PET25-OFFICIAL-RELEASE-ROSTER-R1.json")
 PET26_OFFICIAL_PATH = PATH.with_name("STONEAGE-PET26-JP-TW-CLASSIC-OFFICIAL-RELEASE-R1.json")
@@ -21,6 +22,7 @@ JP_OFFICIAL_PAGE_PATH = PATH.with_name("STONEAGE-JP-OFFICIAL-PET-CATALOG-R1.json
 CN_OFFICIAL_PAGE_PATH = PATH.with_name("STONEAGE-WAEI-CN20-NEW-PET-FINITE-CATALOG-R1.json")
 
 CLIENT_ALBUM = "tw10_client_album"
+CN50_COMPILED_ALBUM = "cn50_compiled_album"
 TW_MUSEUM = "tw_early_wgs_museum"
 
 # Only datasets carrying an original numeric graphic field participate.
@@ -37,6 +39,38 @@ def load_catalog(path=PATH):
     if path.resolve() == PATH:
         album = json.loads(PET39_PATH.read_text(encoding="utf-8"))["records"]
         catalog["datasets"][CLIENT_ALBUM] = album
+        cn50 = json.loads(PET126R_PATH.read_text(encoding="utf-8"))
+        if (cn50.get("scope") != "ORIGINAL_CLASSIC_PC_ONLY" or
+            cn50["metrics"]["compiled_source_named_rows"] != 305 or
+            len(cn50["records"]) != 362 or
+            cn50["negative_boundaries"]["CN50_same_build_name_to_SPR_selector_proven"]):
+            raise ValueError("CN50-album-source-grade-or-count-mismatch")
+        # Compiled names are searchable in their *own* source namespace.
+        # Do not put the hypothetical TW10-ordinal graphic into graphic_number.
+        cn50_named = [
+            {
+                "id": raw["record_key"], "source": raw["carrier"],
+                "name_as_written": raw["label_as_compiled_GB18030"],
+                "source_ordinal": raw["ordinal"],
+                "compiled_raw_i32": raw["source_raw_first_i32"],
+                "compiled_raw_u32": raw["source_raw_trailing_u32"],
+                "graphic_number": None,
+                "TW10_ordinal_based_candidate_SPR_only":
+                    raw["TW10_ordinal_based_graphic_hypothesis"],
+                "same_carrier_candidate_SPR_present":
+                    raw["same_CAB_SPR_group_for_hypothesis_present"],
+                "TW10_cross_version_exact_SPR_hash":
+                    raw["TW10_retail_exact_same_SPR_segment_at_this_ordinal"],
+                "source_evidence": "CLIENT_COMPILED_NAME_ONLY_GRAPHIC_SELECTOR_UNPROVEN",
+                "official_live_release_confirmed": False,
+                "native_same_build_graphic_selector_proven": False,
+            }
+            for raw in cn50["records"]
+            if raw["label_as_compiled_GB18030"] is not None
+        ]
+        if len(cn50_named) != 305:
+            raise ValueError("CN50-compiled-source-name-rows-missing")
+        catalog["datasets"][CN50_COMPILED_ALBUM] = cn50_named
         museum = json.loads(PET41_PATH.read_text(encoding="utf-8"))
         pages = {page["filename"]: page["replay_url"] for page in museum["pages"]}
         catalog["datasets"][TW_MUSEUM] = [
@@ -46,6 +80,7 @@ def load_catalog(path=PATH):
         ]
         counts = catalog["metrics"]["source_namespace_row_counts_NOT_species"]
         counts[CLIENT_ALBUM] = len(album)
+        counts[CN50_COMPILED_ALBUM] = len(cn50_named)
         counts[TW_MUSEUM] = len(museum["rows"])
         catalog["metrics"]["record_total_NOT_species"] = sum(counts.values())
     return catalog
@@ -433,7 +468,7 @@ def main():
     p.add_argument("--dataset", choices=(
         "later2016_templates", "later2016_graphics",
         "mixed25_main", "mixed25_alternative", "tw10_visual",
-        "jp_official_web", "cn_official_web", CLIENT_ALBUM, TW_MUSEUM))
+        "jp_official_web", "cn_official_web", CLIENT_ALBUM, CN50_COMPILED_ALBUM, TW_MUSEUM))
     p.add_argument("--limit", type=int, default=20)
     p.add_argument("--summary", action="store_true")
     p.add_argument("--details", action="store_true",
