@@ -1,0 +1,260 @@
+{
+  "active_module": "PET",
+  "carrier": "STONEAGE5_THIRD_PARTY_PRESERVED_ORIGINAL_PC_CAB_NOT_INDEPENDENTLY_OFFICIAL_PRESSING_CERTIFIED",
+  "claims": {
+    "all_three_literal_positions_verified": true,
+    "bytes_of_proprietary_program_published": false,
+    "full_pe_binary_hash_verified": true,
+    "instruction_adjacent_window_not_control_flow_or_runtime_proof": true,
+    "new_official_species": 0,
+    "official_live_pet_release_proven": false,
+    "pet_module_closed": false,
+    "same_version_name_to_spr_selector_proven": false,
+    "static_linear_disassembly_only_not_native_execution": true
+  },
+  "compiled_name_table_sha256": "ba3ad4db233971ee5d9603cdbded6b871f73082445f1ca51d02f0fdf0314d39b",
+  "date": "2026-11-21",
+  "disassembler": "GNU_BINUTILS_OBJDUMP_INTEL_LINEAR_DISASSEMBLY",
+  "disassembly_instruction_count": 131461,
+  "exact_original_table_address_literal_sites": [
+    {
+      "context": [
+        {
+          "contains_original_table_literal": false,
+          "instruction": "cmp    eax,DWORD PTR ds:0x332e4bc",
+          "virtual_address": 4393987
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "jl     0x430bf5",
+          "virtual_address": 4393993
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "jmp    0x430c39",
+          "virtual_address": 4393995
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "imul   eax,eax,0x1c",
+          "virtual_address": 4393997
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "push   0x50",
+          "virtual_address": 4394000
+        },
+        {
+          "contains_original_table_literal": true,
+          "instruction": "lea    esi,[eax+0x482f68]",
+          "virtual_address": 4394002
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "lea    eax,[edi-0x24]",
+          "virtual_address": 4394008
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "push   eax",
+          "virtual_address": 4394011
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "mov    eax,DWORD PTR [esi]",
+          "virtual_address": 4394012
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "lea    eax,[eax+eax*4]",
+          "virtual_address": 4394014
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "shl    eax,0x4",
+          "virtual_address": 4394017
+        }
+      ],
+      "decoded_instruction_byte_length": 6,
+      "decoded_instruction_count": 1,
+      "decoded_instruction_text": "lea    esi,[eax+0x482f68]",
+      "decoded_instruction_virtual_address": 4394002,
+      "instruction_attribution": "SINGLE_LINEAR_DISASSEMBLY_INSTRUCTION",
+      "literal_file_offset": 199700,
+      "literal_offset_within_decoded_instruction": 2,
+      "literal_va": 4394004
+    },
+    {
+      "context": [
+        {
+          "contains_original_table_literal": false,
+          "instruction": "jl     0x430ed7",
+          "virtual_address": 4394630
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "cmp    eax,DWORD PTR ds:0x332e4bc",
+          "virtual_address": 4394632
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "jge    0x430ed7",
+          "virtual_address": 4394638
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "mov    ecx,eax",
+          "virtual_address": 4394640
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "imul   ecx,ecx,0x1c",
+          "virtual_address": 4394642
+        },
+        {
+          "contains_original_table_literal": true,
+          "instruction": "mov    esi,DWORD PTR [ecx+0x482f68]",
+          "virtual_address": 4394645
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "cmp    esi,0xffffffff",
+          "virtual_address": 4394651
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "je     0x430ed7",
+          "virtual_address": 4394654
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "lea    eax,[esi+esi*4]",
+          "virtual_address": 4394656
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "shl    eax,0x4",
+          "virtual_address": 4394659
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "cmp    DWORD PTR [eax+0x3300cf4],0x0",
+          "virtual_address": 4394662
+        }
+      ],
+      "decoded_instruction_byte_length": 6,
+      "decoded_instruction_count": 1,
+      "decoded_instruction_text": "mov    esi,DWORD PTR [ecx+0x482f68]",
+      "decoded_instruction_virtual_address": 4394645,
+      "instruction_attribution": "SINGLE_LINEAR_DISASSEMBLY_INSTRUCTION",
+      "literal_file_offset": 200343,
+      "literal_offset_within_decoded_instruction": 2,
+      "literal_va": 4394647
+    },
+    {
+      "context": [
+        {
+          "contains_original_table_literal": false,
+          "instruction": "jl     0x434829",
+          "virtual_address": 4409049
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "cmp    eax,DWORD PTR ds:0x332e4bc",
+          "virtual_address": 4409055
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "jge    0x434829",
+          "virtual_address": 4409061
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "imul   eax,eax,0x1c",
+          "virtual_address": 4409067
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "mov    DWORD PTR [esp+0x14],eax",
+          "virtual_address": 4409070
+        },
+        {
+          "contains_original_table_literal": true,
+          "instruction": "mov    eax,DWORD PTR [eax+0x482f68]",
+          "virtual_address": 4409074
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "cmp    eax,0xffffffff",
+          "virtual_address": 4409080
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "mov    DWORD PTR [esp+0x24],eax",
+          "virtual_address": 4409083
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "je     0x434829",
+          "virtual_address": 4409087
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "mov    edi,eax",
+          "virtual_address": 4409093
+        },
+        {
+          "contains_original_table_literal": false,
+          "instruction": "lea    eax,[ecx+0x3358e1f]",
+          "virtual_address": 4409095
+        }
+      ],
+      "decoded_instruction_byte_length": 6,
+      "decoded_instruction_count": 1,
+      "decoded_instruction_text": "mov    eax,DWORD PTR [eax+0x482f68]",
+      "decoded_instruction_virtual_address": 4409074,
+      "instruction_attribution": "SINGLE_LINEAR_DISASSEMBLY_INSTRUCTION",
+      "literal_file_offset": 214772,
+      "literal_offset_within_decoded_instruction": 2,
+      "literal_va": 4409076
+    }
+  ],
+  "next": "PET126N trace native 80-byte record identity, original graphics/SPR linkage, and separate official server release evidence",
+  "pe_image_base": 4194304,
+  "schema": "stoneage.pet126m.cn50_pet_album_pe_text_reference_context.r1",
+  "scope": "ORIGINAL_CLASSIC_PC_ONLY",
+  "source_cab_sha256": "cb414ad1ef4cc7925ec429ec088d0146892834c72667d1af82c8075d09f1683b",
+  "source_file": "sa_5000.exe",
+  "source_sha256": "5dbcc3fa276f9f245fb706bce957e9c3300d870df813889502b789b727e49c97",
+  "source_text_section": {
+    "raw_file_offset": 4096,
+    "raw_section_size": 434176,
+    "rva": 4096
+  },
+  "derived_interpretation": {
+    "real_compiled_row_stride_28bytes_from_imul": true,
+    "real_compiled_first_i32_field_read_in_three_windows": true,
+    "two_windows_scale_first_integer_to_80_byte_record": true,
+    "disk_adrn_record_same_80byte_size_is_hypothesis_only": true,
+    "native_same_build_runtime_selector_still_unverified": true,
+    "official_issued_pet_species_count_not_inferable": true
+  },
+  "source_validation": {
+    "action_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/44870583521",
+    "action_run": 44870583521,
+    "job": 136744013931,
+    "conclusion": "success",
+    "synth_tests": "success",
+    "commit": "988650fbb7e3333cddcff0355d20bb9b023c5503"
+  },
+  "continuity": {
+    "base_main": "03e10a6176e5e6938bc6f835ac644838466caef2",
+    "current_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "active_module": "PET",
+    "year_2026": "NOT_YEAR_AUDITED",
+    "overall_percent": null
+  }
+}
