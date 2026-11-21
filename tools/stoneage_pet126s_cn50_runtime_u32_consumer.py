@@ -85,6 +85,49 @@ def occurrences(code, address, context=3):
       "contexts_truncated":len(all_sites)>MAX_CONTEXTS
     }
 
+def bounded_native_reader_following_call(code, reader_va=0x439f0e):
+    """One fixed +36 reader, at most 32 following decoded instructions.
+
+    Reports nearby source *without* claiming real reachability, recovered
+    calling convention, that the value survives the stack, or sprite drawing.
+    """
+    sites=[i for i,row in enumerate(code) if row["address"]==reader_va]
+    if len(sites)!=1:
+        raise ValueError("target-original-field-reader-not-single-site")
+    n=sites[0]
+    reader=code[n]
+    if reader["instruction"]!="push   DWORD PTR [eax+0x3300ccc]":
+        raise ValueError("reader-is-not-the-native-pushed-plus36-field")
+    tail=code[n+1:n+33]
+    calls=[(z,k) for k,z in enumerate(tail) if z["instruction"].startswith("call ")]
+    first_call=calls[0][0] if calls else None
+    direct_target=None
+    target_code=[]
+    if first_call is not None:
+        match=re.fullmatch(r"call\s+0x([0-9a-fA-F]+)",first_call["instruction"])
+        if match:
+            direct_target=int(match.group(1),16)
+            indices=[i for i,z in enumerate(code) if z["address"]==direct_target]
+            if len(indices)==1:
+                target_code=[{"va":hex(z["address"]),"instruction":z["instruction"]}
+                             for z in code[indices[0]:indices[0]+12]]
+    return {
+        "native_plus36_consumer_va":hex(reader_va),
+        "native_consumer_instruction":reader["instruction"],
+        "native_preceding_four":[{"va":hex(z["address"]),"instruction":z["instruction"]}
+                                 for z in code[max(0,n-4):n]],
+        "source_next_32_instruction_bound":[{"va":hex(z["address"]),"instruction":z["instruction"]}
+                                             for z in tail],
+        "first_static_linear_following_call_va":hex(first_call["address"]) if first_call else None,
+        "first_static_linear_following_call_instruction":first_call["instruction"] if first_call else None,
+        "first_direct_call_target_va":hex(direct_target) if direct_target is not None else None,
+        "first_target_first_12_decoded_instructions":target_code,
+        "first_call_is_always_reached_or_push_still_on_stack_proven":False,
+        "call_target_is_original_SPR_or_ADRN_bitmap_renderer_proven":False,
+        "native_runtime_source_bytes_or_game_execution_recovered":False
+    }
+
+
 def inspect(path:Path):
     program=path.read_bytes()
     if (len(program),hashlib.sha256(program).hexdigest())!=EXPECTED["sa_5000.exe"]:
@@ -135,6 +178,7 @@ def inspect(path:Path):
         "native_direct_access_to_runtime_record_plus36":direct,
         "native_record_base_literal_reference":base,
         "compiled_table_tail_literal_reference":tail,
+        "bounded_original_plus36_reader_call_window":bounded_native_reader_following_call(decoded),
         "summary":{
            "exact_encoded_field_literals":direct["exact_instruction_hits"],
            "explicit_direct_memory_reader_or_mutator_sites":direct_reads,
