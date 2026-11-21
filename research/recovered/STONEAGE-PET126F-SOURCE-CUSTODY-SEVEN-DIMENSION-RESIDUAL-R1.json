@@ -1,0 +1,234 @@
+{
+  "schema": "stoneage.pet126f.private_carrier_reaccess_and_seven_dimension_residual_preflight.r1",
+  "date": "2026-11-21",
+  "scope": "OFFICIAL_ORIGINAL_CLASSIC_2D_PC_ONLY",
+  "active_module": "PET",
+  "baseline_main_head": "a2c2d02ab94ca13713a90b605f3cfbec8867bc53",
+  "historical_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "source_pins": {
+    "pet20": "research/recovered/STONEAGE-PET-MODULE-20-FIELD-COVERAGE-AND-SOURCE-STOP-MATRIX-R1.json",
+    "pet15": "research/recovered/STONEAGE-PET-MODULE-15-TW10-ALL-SELECTED-MOTION-SOURCE-R1.json",
+    "pet126c": "research/recovered/STONEAGE-PET126C-TW10-ORIGINAL-SOURCE-REACCESS-R1.json",
+    "pet126e": "research/recovered/STONEAGE-PET126E-TW10-K-STATUS-CAPTURE-STATIC-R1.json",
+    "pet19": "research/recovered/STONEAGE-PET-MODULE-19-MISSING-SKILL-SOURCE-GAP-AUDIT-R1.json",
+    "pet25": "research/recovered/STONEAGE-PET25-OFFICIAL-RELEASE-ROSTER-R1.json",
+    "pet26": "research/recovered/STONEAGE-PET26-JP-TW-CLASSIC-OFFICIAL-RELEASE-R1.json",
+    "pet27": "research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json",
+    "pet38": "research/recovered/STONEAGE-PET38-CLIENT-FIRST-AVAILABLE-SOURCE-INVENTORY-R1.json"
+  },
+  "private_custody_rechecked_this_session": {
+    "tw1_original_archive": {
+      "kind": "AUTHENTICATED_TW1_CLASSIC_PC_CLIENT_SOURCE",
+      "private_basename": "StoneAge-TW1-original-runtime-and-native-observation-P3H.zip",
+      "bytes": 372626292,
+      "sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+      "members": 379,
+      "source_members": 375,
+      "crc_all_pass": true,
+      "source_extension_counts": {
+        ".sab": 218,
+        ".wav": 127,
+        ".sap": 16,
+        ".bin": 6,
+        ".txt": 2,
+        ".dat": 1,
+        ".exe": 2,
+        ".bmp": 2,
+        ".ico": 1
+      },
+      "source_bin_data_filenames": [
+        "adrn_1.bin",
+        "battle_1.bin",
+        "real_1.bin",
+        "sound_1.bin",
+        "spr_1.bin",
+        "spradrn_1.bin"
+      ],
+      "standalone_file_named_official_pet_server_master_found_in_member_list": false,
+      "negative_filename_inventory_only_not_embedded_data_exclusion": true,
+      "verified_member_hashes": {
+        "source/data/spradrn_1.bin": {
+          "bytes": 5568,
+          "sha256": "275b64ff55667aec633a7e82e09d65c84141380521f0f2e64c9a28e0d3aa6c25"
+        },
+        "source/data/spr_1.bin": {
+          "bytes": 2889630,
+          "sha256": "53d5b2d40453a30fd1569637ebf0db7b3010542b00970ec83af0295a3b3ae31a"
+        },
+        "source/data/adrn_1.bin": {
+          "bytes": 10079680,
+          "sha256": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8"
+        },
+        "source/data/real_1.bin": {
+          "bytes": 315842228,
+          "sha256": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13"
+        },
+        "source/data/pal/Palet_1.sap": {
+          "bytes": 708,
+          "sha256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0"
+        }
+      },
+      "source_original_executed_this_unit": false,
+      "server_connection_this_unit": false
+    },
+    "pet15_derived_private_observer": {
+      "kind": "PRIVATE_DERIVATIVE_FROM_TW1_ORIGINAL_NOT_SECOND_OFFICIAL_CLIENT",
+      "private_basename": "StoneAge-PET15-private-TW10-complete-motion-observer.zip",
+      "bytes": 95048011,
+      "sha256": "74146f388dd3ea2f6b87821efea627bce82a1cfc321178dc5f6789c7d63e351c",
+      "zip_members": 32157,
+      "crc_all_pass": true,
+      "rendered_png_count": 32155,
+      "receipt_entry_count": 32155,
+      "png_id_set_exactly_matches_private_receipt_keys": true,
+      "png_sha256_against_private_receipts_verified": 32155,
+      "png_sha256_mismatches": 0,
+      "strict_decode_receipt_count": 32150,
+      "bounded_terminal_zero_outside_canvas_count": 5,
+      "bounded_original_bitmap_numbers": [
+        82729,
+        100249,
+        109890,
+        113576,
+        118187
+      ],
+      "private_rendered_pngs_are_original_game_binary": false,
+      "private_proprietary_images_published": false
+    }
+  },
+  "field_coverage_preserved": {
+    "original_client_source_archive_count_authenticated_in_this_unit": 1,
+    "private_derived_observer_archives_authenticated_in_this_unit": 1,
+    "tw1_pet_album_client_table_positions": 181,
+    "tw1_pet_album_names_with_spr": 124,
+    "tw1_pet_album_placeholder_positions": 57,
+    "tw1_placeholder_positions_with_spr_but_no_name": 30,
+    "tw1_album_named_spr_sequences": 6944,
+    "tw1_album_named_frame_refs": 70236,
+    "tw1_album_portrait_source_rd_present": 120,
+    "tw1_album_portrait_source_rd_missing_ids": [
+      100389,
+      100390,
+      100391,
+      100392
+    ],
+    "pet15_selected_graphic_groups_not_species": 131,
+    "pet15_selected_sequences": 7672,
+    "pet15_selected_frame_positions": 73500,
+    "pet15_distinct_original_bitmap_keys": 32155,
+    "pet15_strict_bitmap_keys": 32150,
+    "pet15_bounded_bitmap_keys": 5,
+    "tw1_original_exe_s_k_status_pets_fields": 20,
+    "tw1_original_exe_pet_slot_count": 5,
+    "tw1_original_exe_static_capture_ui_gate_only": true,
+    "pet16_mixed_source_rows_not_species": 2792,
+    "official_cn_pet25_documentary_events_not_species": 5,
+    "official_jp_pet26_documentary_events_not_species": 4,
+    "official_pc_documentary_events_not_species": 9,
+    "community2016_positive_skill_references": 2886,
+    "community2016_skill_refs_missing_same_selected_table": 102,
+    "community2016_distinct_missing_skill_ids": 30,
+    "mixed25_main_positive_skill_refs": 1050,
+    "mixed25_main_missing_same_source": 0,
+    "mixed25_alt_positive_skill_refs": 661,
+    "mixed25_alt_missing_same_source": 12,
+    "historically_confirmed_complete_global_pc_species_count": null
+  },
+  "seven_dimensions": [
+    {
+      "id": "PET20-01_PROVENANCE_CARRIERS",
+      "conclusion": "PARTIAL_IMPROVED_CUSTODY",
+      "reverified": "TW1 original archive and 5 original resource members fully hash rechecked; private derived PET15 archive re-accessed separately",
+      "remaining": "JSS1999 early authentic client, KR2000 original, official later version builds and same-deployment server pet master still missing",
+      "reopen": "A legally accessible source-qualified original client/patch or service-side master with region/operator/build and full bytes",
+      "closed": false
+    },
+    {
+      "id": "PET20-02_IDENTITY_NAMES_ATLAS",
+      "conclusion": "PARTIAL_STATIC_SAME_BUILD_ALBUM",
+      "reverified": "TW1 181 source positions /124 named SPR candidates /57 placeholders from earlier PET126C, not pet species count",
+      "remaining": "No certified same-deployment pet species ID/name/graphic/server live issuance chain and no authoritative global total",
+      "reopen": "Exact original official pet master or original version-qualified issue/gameplay showing same pet identity and active availability",
+      "closed": false
+    },
+    {
+      "id": "PET20-03_2D_PIXELS_ACTIONS",
+      "conclusion": "PARTIAL_STRONG_TW1_RENDERED_CUSTODY",
+      "reverified": "PET15 private ZIP 32155 rendered PNGs matched 32155 private receipts by complete individual SHA; 32150 strict +5 bounded; TW1 same-build album has 4 missing portrait RD",
+      "remaining": "Five bounded decoding cases remain bounded; TW1 original native frame timing and palette selection, four portraits, later original pixel sources and native rendering OPEN",
+      "reopen": "Exact same-build bitmap source or qualified later carrier, native selector/animation evidence, no cross-year promotion",
+      "closed": false
+    },
+    {
+      "id": "PET20-04_STATS_GROWTH",
+      "conclusion": "PARTIAL_CLIENT_DISPLAY_FIELDS_NOT_GROWTH",
+      "reverified": "PET126E twenty local K status fields, full and delta update targets, reused without new growth master",
+      "remaining": "Official original TW1 server growth formula, base stats, values and actual level-up behavior not present in accepted proof",
+      "reopen": "Official same-build pet source/master and controlled original runtime growth evidence",
+      "closed": false
+    },
+    {
+      "id": "PET20-05_SKILLS_RULES",
+      "conclusion": "PARTIAL_MISSING_SOURCE_DEFINITIONS",
+      "reverified": "PET19 exact source-scoped 102 missing positive references 2016; 12 missing alt mixed25, no substitution across tables",
+      "remaining": "Original early PC pet skills and learning restrictions, active deployment, handler effects still missing",
+      "reopen": "Matching same-configuration skill definitions and original version-qualified handler/skill execution",
+      "closed": false
+    },
+    {
+      "id": "PET20-06_PET_ACQUISITION_ACTIONS",
+      "conclusion": "PARTIAL_STATIC_CLIENT_NO_SERVER",
+      "reverified": "PET126D/E local five-slot and S/K state update to UI capture gate; no native running capture",
+      "remaining": "Actual official same-server capture/award/fusion/riding outcomes, rates, encounters and issuance unverified",
+      "reopen": "Authenticated service build with reward/capture configuration plus original gameplay or operator live issuance proof",
+      "closed": false
+    },
+    {
+      "id": "PET20-07_RIGHTS_PRIVATE_SOURCE_ACCESS",
+      "conclusion": "PARTIAL_PRIVATE_REPLAY_NO_PUBLICATION_PERMISSION",
+      "reverified": "TW1 source and PET15 derived private assets re-accessible and bitwise audited",
+      "remaining": "Commercial art licensing and permission to publish/use in new game unresolved; other version carriers not certified",
+      "reopen": "Separate legal rights clearance or independently authorized replacements; new original byte-custody audit",
+      "closed": false
+    }
+  ],
+  "priority_after_preflight": [
+    {
+      "priority": 1,
+      "task": "QUALIFIED_ORIGINAL_PC_SAME_BUILD_PET_MASTER_OR_OFFICIAL_ISSUANCE",
+      "why": "Only this can elevate candidate graphics to official species and actual release dates",
+      "stop": "No free byte-qualified source -> preserve exact missing carrier and continue source-bounded PET review"
+    },
+    {
+      "priority": 2,
+      "task": "SOURCE_QUALIFIED_LATER_PC_CLIENT_FOR_MISSING_PET_2D_SKILL_COHORTS",
+      "why": "Capture legacy graphics/actions still missing in later originals; enforce never backdate assets or treat private server as official",
+      "stop": "No original payload actually readable -> keep INDEX_ONLY and UNKNOWN"
+    },
+    {
+      "priority": 3,
+      "task": "ORIGINAL_PC_NATIVE_BEHAVIOR_EVIDENCE_AND_RIGHTS",
+      "why": "Growth/skills/capture beyond client display and private original artwork rights unproven",
+      "stop": "Only claim when real same-deployment evidence or legal permissions obtained"
+    }
+  ],
+  "decision": {
+    "year2026": "NOT_YEAR_AUDITED",
+    "all_six_regions_ytd": "YTD_PARTIAL_OPEN",
+    "module": "SOURCE_BOUNDED_PARTIAL",
+    "source_bounded_closed": false,
+    "historically_complete": false,
+    "native_runtime_verified": false,
+    "release_roster_complete": false,
+    "may_request_user_switch_to_npc": false,
+    "new_official_species_authenticated_this_unit": 0,
+    "new_independent_original_client_carriers_acquired_this_unit": 0,
+    "prior_original_source_custody_reverified": 1,
+    "prior_private_derived_observer_reverified": 1,
+    "overall_completion_percent": null,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "PET126G_PRIORITIZED_ORIGINAL_PC_PET_IDENTITY_AND_SOURCE_REOPEN_ATTEMPT_WITH_NO_REDUNDANT_CLIENT_HASHING"
+}
