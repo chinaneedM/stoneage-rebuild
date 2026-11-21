@@ -3138,3 +3138,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-21 — PET126T｜原PC宠物362槽源覆盖分层与七维未闭合门槛
 
 [PET126T完整来源审阅](docs/continuity/STONEAGE-PET126T-PC-PET-MODULE-SOURCE-BOUNDED-FINAL-REVIEW-20261121.md)／[机读跨载体覆盖与止点](research/recovered/STONEAGE-PET126T-PC-MODULE-SOURCE-COVERAGE-AND-STOP-GATE-R1.json)：基于先前真实原件验证后已存入Git的PET126R/S源派生，独立逐条重算CN5编译相册362槽，305具名/57空，前181槽124具名全部按既有假设同CAB命中SPR、另30空名有组；后181槽181具名，只有66按旧版序号假设命中同CAB图组、**115没有命中这个假设**，不是115种缺失官方宠物。124条TW1具名完整SPR段哈希同一不能作为官服实装证明。七维全未CLOSED、2026六地YTD开放／2026未年审，PET继续唯一工作，NPC不解锁；NEXT PET126U只优先能实际取得的免费合格原PC同构建身份/发宠/技能/图像证据，不再扩普通CRT反汇编。本轮只独立重算已有公开派生源，**未重取原EXE或新官方PC客户端，新增官服物种证明0**。保留历史CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`、StageA7PARTIAL+2OPEN／StageB/wiki GATED／R79暂停／总体百分比UNKNOWN。原商业素材不入库，无手游/收费盘/私服晋级。
+
+
+## 2026-11-21 — PET126U｜2011韩国 Netmarble 官方CDN原链接补证；2026台湾马年活动奖品类型隔离
+
+[PET126U分源审查](docs/continuity/STONEAGE-PET126U-KR2011-NETMARBLE-PUBLIC-CDN-TW2026-PC-PET-REWARD-SCOPE-20261121.md)／[机器收据](research/recovered/STONEAGE-PET126U-KR2011-DIRECT-CDN-TW2026-REWARD-ROLES-R1.json)：发现2011-08-06原时期**公开**玩家帖中Netmarble官方域名 `nmgame.cdn.netmarble.net/Stoneage/NetmarbleStoneAge120.exe` **真实刊载的PC程序直链**，填补此前论坛tid2117被权限拦住的确切路径缺口；目前访问该官方域名路径仍HTTP502、EXE **0B**，不冒称客户端下载/版本/SPR成功，也不追付费论坛。台湾2026二级转载文案中将**随机四属性馬年獸候选**与**瑪蕾菲雅領養證、五种强化石、朱雀之翎**等物件明确分离，玩家公告索引与转载**不是两份独立官服原始发宠凭证**。同部署原PET ID、原图/技能/真正发放全未证，本轮新增官服宠物数0（非历史总数0）；2026仍`NOT_YEAR_AUDITED`、PET唯一、NPC不解锁，NEXT PET126V继续免费实际可取得原PC同版本文件/正式宠物证据，不重复死链或手游/私服。CURRENT 2,709,173B Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`未动，StageA7PARTIAL+2OPEN、StageB/wiki GATED、R79暂停、总体完成率UNKNOWN。
