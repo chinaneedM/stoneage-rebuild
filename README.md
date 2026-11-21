@@ -3113,3 +3113,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-21 — PET126J｜台湾原 PC 1.0 CP950 宠物选择文字证据：旧PR #545去重归档
 
 [原文字节偏移及主线同源去重](docs/continuity/STONEAGE-PET126J-TW10-ORIGINAL-CP950-PET-CHOICE-RECONCILIATION-20261121.md)／[9短字样10偏移的旧原客户端派生摘要](research/recovered/STONEAGE-PET126J-TW10-CP950-PET-CHOICE-DIFFERENTIAL-R1.json)：旧PR #545 的TW1原 `sa_3.exe` 精确CP950原字及哈希与主线PET126D/E的**同一官方原版程序**一致；其中7短字样已有主线交叉引用，另保留 `請選擇寵物`（原偏移366255/366334）与 `請選擇寵物或是隊友`（366334）两项原字形，重复偏移是**子串包含**不是两个独立选择窗口。**本轮仅复核旧 Git 派生源未重读私有EXE，0新客户端/物种/技能/同服主档**；保留原PET126D/E静态判断及2026未审年游标，不合并过时旧PR PET27变化。NEXT PET126K只继续寻找可合法免费取得的正式原经典PC客户端/补丁、同版PET主档。原CURRENT Git blob `c89e0e33537990aa2132b47c40fef49a985a935c` 不变，PET仍部分、StageA7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体UNKNOWN。
+
+
+## 2026-11-21 — PET126K｜大陆5.0原PC编译宠物姓名表362槽，台湾1.0 57空位精确继承
+
+[源码重读及362槽证据](docs/continuity/STONEAGE-PET126K-CN50-ORIGINAL-PET-NAME-TABLE-362-SLOTS-20261121.md)／[机器收据](research/recovered/STONEAGE-PET126K-CN50-ORIGINAL-362-NAMED-SLOTS-TW10-CROSSWALK-R1.json)：经过Actions实际重读并哈希核原大陆5.0光盘存档的两程序共856064B（非新独立构建），sa_5000.exe文件偏移536424的362×28字节GB18030连续表，305具名／57空；**前181槽124具名、57空**，全部57空槽位置与旧台湾1.0客户端相同，同位49原字逐字相同；**后181槽全部具名**。本地名槽不等于已发官方物种305或新增181种，未证同版PET ID/SPR/技能/实际实服投放。第三方存档压盘身份仍待独立证明，无版权源文件入Git，2026仍NOT_YEAR_AUDITED、PET SOURCE_BOUNDED_PARTIAL，StageA7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总进度UNKNOWN。NEXT PET126L核同版名称行→图号/真实身份链。

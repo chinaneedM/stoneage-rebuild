@@ -1,0 +1,53 @@
+name: PET126K bounded 5.0 classic PC source executable pet-name audit
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet126k_cn50_original_exe_probe.py'
+      - 'tests/test_stoneage_pet126k_cn50_original_exe.py'
+      - '.github/workflows/validate-stoneage-pet126k-cn50-exe.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet126k_cn50_original_exe_probe.py'
+      - 'tests/test_stoneage_pet126k_cn50_original_exe.py'
+      - '.github/workflows/validate-stoneage-pet126k-cn50-exe.yml'
+permissions:
+  contents: read
+jobs:
+  source-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_pet126k_cn50_original_exe.py' -v
+  actual-archived-executable:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install CAB decoder
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq cabextract
+      - name: Reacquire 12 MiB source CAB prefix from original range endpoint
+        run: |
+          python -m tools.stoneage_stoneage5_battle_extract_probe --output-cab /tmp/stoneage5-source.cab --prefix-bytes 12582912
+      - name: Extract exactly two original 5.0 program members and SHA verify
+        run: |
+          mkdir -p /tmp/stoneage5-twoexe
+          cabextract -q -F sa_5000.exe -d /tmp/stoneage5-twoexe /tmp/stoneage5-source.cab
+          cabextract -q -F StoneAge.exe -d /tmp/stoneage5-twoexe /tmp/stoneage5-source.cab
+          python -m tools.stoneage_pet126k_cn50_original_exe_probe --source-dir /tmp/stoneage5-twoexe --output /tmp/pet126k-derived.json
+      - name: Emit derived provenance metadata only for review
+        run: |
+          echo PET126K_JSON_START
+          cat /tmp/pet126k-derived.json
+          echo PET126K_JSON_END
+      - name: Delete proprietary bytes
+        if: always()
+        run: rm -rf /tmp/stoneage5-source.cab /tmp/stoneage5-twoexe

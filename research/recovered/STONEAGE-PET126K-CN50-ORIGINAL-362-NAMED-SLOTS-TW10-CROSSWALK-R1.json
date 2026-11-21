@@ -1,0 +1,201 @@
+{
+  "schema": "stoneage.pet126k.classic_pc_5_0_362_name_table_source.r1",
+  "active_module": "PET",
+  "date": "2026-11-21",
+  "baseline": {
+    "head": "3900c4836783333be5ffec3f14038de327f664f3",
+    "tree": "426c83fe0fa7d8c180b7901a4a9d81b279febb53",
+    "current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "source": {
+    "archive": "Stoneage-5",
+    "type": "THIRD_PARTY_PRESERVED_5_0_COMMERCIAL_OPTICAL_NOT_INDEPENDENTLY_OFFICIAL_PRESSING_CERTIFIED",
+    "cab_sha256": "cb414ad1ef4cc7925ec429ec088d0146892834c72667d1af82c8075d09f1683b",
+    "prior_manifest": "research/recovered/STONEAGE-STONEAGE5-REAL-CAB-PAYLOAD-R1.json",
+    "program": "sa_5000.exe",
+    "program_bytes": 630784,
+    "program_sha256": "5dbcc3fa276f9f245fb706bce957e9c3300d870df813889502b789b727e49c97",
+    "launcher": "StoneAge.exe",
+    "launcher_bytes": 225280,
+    "launcher_sha256": "cb118a01c2673da221fa15b4ae93dbfcbc7786f1142bfffa542459ec6716f61c",
+    "new_original_source_program_bytes_rehashed": 856064,
+    "not_new_unique_client_build": true,
+    "run": 44868957638,
+    "job": 136738910998,
+    "link": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/44868957638",
+    "original_program_never_executed": true,
+    "raw_proprietary_exe_committed": false,
+    "first_party_2003_product_notice": "https://news.17173.com/content/2003-1-16/n470_387077.html"
+  },
+  "original_5_0_typed_client_name_table": {
+    "source_file_offset": 536424,
+    "row_stride_bytes": 28,
+    "rows": 362,
+    "source_span_sha256": "ba3ad4db233971ee5d9603cdbded6b871f73082445f1ca51d02f0fdf0314d39b",
+    "filled": 305,
+    "empty": 57,
+    "distinct_printed_names": 305,
+    "first_181": {
+      "filled": 124,
+      "empty": 57,
+      "exactly_same_TW10_blank_positions": true,
+      "blank_slot_ordinals": [
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        81,
+        82,
+        83,
+        84,
+        113,
+        114,
+        115,
+        116,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179
+      ],
+      "same_slot_literal_exact_unicode_name_matches": 49,
+      "exact_name_examples": [
+        {
+          "mainland_5_0_name": "布比",
+          "ordinal": 4,
+          "original_tw10_name": "布比"
+        },
+        {
+          "mainland_5_0_name": "金布伊",
+          "ordinal": 5,
+          "original_tw10_name": "金布伊"
+        },
+        {
+          "mainland_5_0_name": "布伊",
+          "ordinal": 6,
+          "original_tw10_name": "布伊"
+        },
+        {
+          "mainland_5_0_name": "布伊比",
+          "ordinal": 7,
+          "original_tw10_name": "布伊比"
+        },
+        {
+          "mainland_5_0_name": "卡布伊",
+          "ordinal": 8,
+          "original_tw10_name": "卡布伊"
+        },
+        {
+          "mainland_5_0_name": "加美",
+          "ordinal": 9,
+          "original_tw10_name": "加美"
+        },
+        {
+          "mainland_5_0_name": "加比",
+          "ordinal": 10,
+          "original_tw10_name": "加比"
+        },
+        {
+          "mainland_5_0_name": "加斯",
+          "ordinal": 12,
+          "original_tw10_name": "加斯"
+        },
+        {
+          "mainland_5_0_name": "威威",
+          "ordinal": 14,
+          "original_tw10_name": "威威"
+        },
+        {
+          "mainland_5_0_name": "威伯",
+          "ordinal": 16,
+          "original_tw10_name": "威伯"
+        }
+      ]
+    },
+    "second_181": {
+      "filled": 181,
+      "empty": 0,
+      "first_names": [
+        "扑满乌力",
+        "乌力莱德",
+        "乌力固力",
+        "布依布鲁",
+        "布依布依",
+        "布依胖"
+      ],
+      "last_names": [
+        "帖尼恩",
+        "帖尼斯",
+        "查洛奇斯",
+        "查洛可利",
+        "查洛毕尔",
+        "查洛比克"
+      ]
+    },
+    "tw10_name_candidates_tested": 124,
+    "tw10_exact_same_printed_names_anywhere_in_5_0_program": 49,
+    "cp950_not_right_for_5_0_name_region": true,
+    "source_code": "tools/stoneage_pet126k_cn50_original_exe_probe.py",
+    "tw10_source": "research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json"
+  },
+  "guard": {
+    "no_species_populations_from_305_compiled_names": true,
+    "no_181_new_official_releases_from_appended_names": true,
+    "no_native_pet_id_or_graphic_binding": true,
+    "no_actual_official_live_server_pet_issuance": true,
+    "no_game_executed": true,
+    "no_new_clean_pressing_proven": true,
+    "no_mobile_or_private_server_pets": true
+  },
+  "new_qualifying_official_species": 0,
+  "year_2026": "NOT_YEAR_AUDITED",
+  "pet_status": "SOURCE_BOUNDED_PARTIAL",
+  "source_bounded_closed": false,
+  "historically_complete": false,
+  "native_runtime_verified": false,
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "PET126L: mainland 5.0 source-program compiled name-to-graphic native selector and same-build SPR/ADRN binding, without assuming all local labels were officially issued"
+}
