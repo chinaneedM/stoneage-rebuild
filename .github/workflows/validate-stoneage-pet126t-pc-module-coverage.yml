@@ -1,4 +1,4 @@
-name: PET126T-U original PC pet source coverage and operator URL evidence guards
+name: PET126T-V PC-only pet source and three-carrier historical name bridge guards
 on:
   push:
     paths:
@@ -6,6 +6,8 @@ on:
       - 'tests/test_stoneage_pet126t_pc_module_coverage.py'
       - 'research/recovered/STONEAGE-PET126U-KR2011-DIRECT-CDN-TW2026-REWARD-ROLES-R1.json'
       - 'tests/test_stoneage_pet126u_public_pc_source_boundaries.py'
+      - 'research/recovered/STONEAGE-PET126V-TW10-CN50-WAEI2001-THREE-CARRIER-PET-NAME-VARIANTS-R1.json'
+      - 'tests/test_stoneage_pet126v_three_carrier_name_variants.py'
       - '.github/workflows/validate-stoneage-pet126t-pc-module-coverage.yml'
   pull_request:
     paths:
@@ -13,6 +15,8 @@ on:
       - 'tests/test_stoneage_pet126t_pc_module_coverage.py'
       - 'research/recovered/STONEAGE-PET126U-KR2011-DIRECT-CDN-TW2026-REWARD-ROLES-R1.json'
       - 'tests/test_stoneage_pet126u_public_pc_source_boundaries.py'
+      - 'research/recovered/STONEAGE-PET126V-TW10-CN50-WAEI2001-THREE-CARRIER-PET-NAME-VARIANTS-R1.json'
+      - 'tests/test_stoneage_pet126v_three_carrier_name_variants.py'
       - '.github/workflows/validate-stoneage-pet126t-pc-module-coverage.yml'
 permissions:
   contents: read
@@ -28,5 +32,6 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_stoneage_pet126t_pc_module_coverage.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pet126u_public_pc_source_boundaries.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet126v_three_carrier_name_variants.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pet126s_source_bounded_acceptance.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pc_only_scope_20261119.py' -v

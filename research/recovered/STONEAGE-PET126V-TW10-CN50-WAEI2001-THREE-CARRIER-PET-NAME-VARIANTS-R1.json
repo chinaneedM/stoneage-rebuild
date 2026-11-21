@@ -1,0 +1,196 @@
+{
+  "schema": "stoneage.pet126v.tw10_cn50_2001_waei_player_museum_three_carrier_graphic_name_variant_bridge.r1",
+  "date": "2026-11-21",
+  "active_module": "PET",
+  "scope": "OFFICIAL_HISTORICAL_CLASSIC_2D_PC_SOURCE_ONLY",
+  "starting_main_head": "7211e16046816cea9eab24f91e5e026151ef4ba2",
+  "starting_main_tree": "4123e7746a7aa8526363504f24d20cc107e28747",
+  "source_level_this_work_unit": "PRIOR_PRESERVED_PUBLIC_DERIVED_ORIGINAL_CLIENT_EVIDENCE_ONLY_NO_NEW_RAW_BYTES",
+  "sources": {
+    "tw10": {
+      "path": "research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json",
+      "git_blob": "1aada81d7314769bf683b816cc5a8762c3bd9400",
+      "source_original_archive_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24"
+    },
+    "cn50": {
+      "path": "research/recovered/STONEAGE-PET126R-CN50-PC-ORIGINAL-ALBUM-FULL-362-SLOT-SOURCE-CATALOGUE-R1.json",
+      "git_blob": "8b1058a43c267dfeaa298d4c2c472209cebd24d9"
+    },
+    "web_museum": {
+      "path": "research/recovered/STONEAGE-PET42-TW10-OPERATOR-MUSEUM-BIDIRECTIONAL-GAP-R1.json",
+      "git_blob": "31ca2c06b6df87d0a493126ae786a84a8db8f285",
+      "source_class": "2001_OPERATOR_HOSTED_PLAYER_CONTRIBUTED_PET_MUSEUM",
+      "historical_period_operator_website": "WAEI_TAIWAN",
+      "original_web_GIF_pixel_hash_verified_in_this_work_unit": false
+    },
+    "prior_bounded_gate": {
+      "path": "research/recovered/STONEAGE-PET126T-PC-MODULE-SOURCE-COVERAGE-AND-STOP-GATE-R1.json",
+      "git_blob": "c8d103807d43bf9dd9cf34de9890184604bdbb60"
+    },
+    "already_known_2003_compatibility_prior": {
+      "path": "research/recovered/STONEAGE-STAGE-A-ORIGINAL-RAR-BLOCK-REPLAY-CN182-PROVENANCE-R1.json",
+      "git_blob": "4d2665d4e3ccf39a00b4049919eeebf4900dc860",
+      "not_a_new_finding_this_work_unit": true
+    }
+  },
+  "independent_scan_summary": {
+    "tw10_named_source_rows": 124,
+    "tw10_rows_with_cn50_same_complete_SPR_SHA256": 124,
+    "same_ordinal_tw10_cn50_literal_names_exact_unicode": 49,
+    "same_ordinal_tw10_cn50_literal_names_differ": 75,
+    "non_orthographic_variants_with_third_2001_player_museum_source": 3,
+    "orthographic_only_name_differences_independently_certified_as_this_unit": null,
+    "not_three_new_species": true,
+    "not_repeated_cn50_known_305_name_total_as_a_new_result": true
+  },
+  "name_variant_relationships": [
+    {
+      "case_id": "TW10-CN50-MUSEUM-ALIAS-100320",
+      "tw10_original_client": {
+        "source": "AUTHENTICATED_TW10_RETAIL",
+        "album_ordinal": 70,
+        "graphic_number": 100320,
+        "printed_name": "卡搭寶斯",
+        "original_album_row_sha256": "151d4982708c53455f35e6aeb64aad37c0a35bee7816b5726025267c04d3aa17",
+        "full_original_SPR_segment_sha256": "9928bf4b0ead837cf7d82265059ab4e77b71ee86f26929a516d9c78c33b1a806",
+        "pet_id": null
+      },
+      "cn50_preserved_client": {
+        "source": "THIRD_PARTY_PRESERVED_CN5_CLASSIC_PC_NOT_PROVEN_OFFICIAL_PRESSING",
+        "compiled_album_ordinal": 70,
+        "source_file_offset": 538384,
+        "printed_name": "卡拉宝斯",
+        "original_album_row_sha256": "78171fada90dac60daf1a1ae69e3485d4466799ecf2f3ea80fc4901173a5d206",
+        "hypothesis_ordinal_graphic_number": 100320,
+        "complete_SPR_segment_sha256": "9928bf4b0ead837cf7d82265059ab4e77b71ee86f26929a516d9c78c33b1a806",
+        "same_original_sprite_sha256_as_tw10": true,
+        "native_name_to_sprite_selector_proven": false,
+        "pet_id": null
+      },
+      "tw2001_operator_hosted_player_museum": {
+        "name_as_archived": "卡拉寶斯",
+        "index_row": 106,
+        "source_page": "pet11.htm",
+        "as_recorded_image_url": "http://www7.waei.net:80/wgs/stoneage/images/museum/pet/pet263.gif",
+        "source_characteristics": "WAEI_OPERATOR_HOSTED_PLAYER_SUBMITTED_WEB_MUSEUM_NOT_OFFICIAL_SERVER_PET_MASTER",
+        "source_candidate_kind": "SINGLE_CHARACTER_NEAR_NAME",
+        "independent_native_client_image_same_as_museum_GIF_verified": false,
+        "client_pet_identity_confirmed": false
+      },
+      "name_relation": {
+        "non_orthographic_source_literal_difference": "搭→拉",
+        "web_name_to_cn50_restricted_script_conversion": "卡拉宝斯",
+        "web_and_cn50_text_spellings_equivalent_after_explicit_script_conversion": true,
+        "source_supported_historical_alt_name_link": true,
+        "release_issued_identity_or_same_species_proven": false,
+        "official_operator_editorial_alias_decree_verified": false
+      }
+    },
+    {
+      "case_id": "TW10-CN50-MUSEUM-ALIAS-100383",
+      "tw10_original_client": {
+        "source": "AUTHENTICATED_TW10_RETAIL",
+        "album_ordinal": 133,
+        "graphic_number": 100383,
+        "printed_name": "拉可洛斯",
+        "original_album_row_sha256": "8b7612e9bfe904f4264fdfecb708daf8dd6b0840eda3525767b2d88974a6e0c5",
+        "full_original_SPR_segment_sha256": "74bdacac0a96b7f73254280629c25fe3179c15f8ecb1c2e47abb047a09595bee",
+        "pet_id": null
+      },
+      "cn50_preserved_client": {
+        "source": "THIRD_PARTY_PRESERVED_CN5_CLASSIC_PC_NOT_PROVEN_OFFICIAL_PRESSING",
+        "compiled_album_ordinal": 133,
+        "source_file_offset": 540148,
+        "printed_name": "拉可拉斯",
+        "original_album_row_sha256": "8e5a67fdaa133857a05a5d21bd76ee6ad685b25d017294e7fefe5150c2ab1ad3",
+        "hypothesis_ordinal_graphic_number": 100383,
+        "complete_SPR_segment_sha256": "74bdacac0a96b7f73254280629c25fe3179c15f8ecb1c2e47abb047a09595bee",
+        "same_original_sprite_sha256_as_tw10": true,
+        "native_name_to_sprite_selector_proven": false,
+        "pet_id": null
+      },
+      "tw2001_operator_hosted_player_museum": {
+        "name_as_archived": "拉可拉斯",
+        "index_row": 88,
+        "source_page": "pet9.htm",
+        "as_recorded_image_url": "http://www7.waei.net:80/wgs/stoneage/images/museum/pet/pet215.gif",
+        "source_characteristics": "WAEI_OPERATOR_HOSTED_PLAYER_SUBMITTED_WEB_MUSEUM_NOT_OFFICIAL_SERVER_PET_MASTER",
+        "source_candidate_kind": "SINGLE_CHARACTER_NEAR_NAME",
+        "independent_native_client_image_same_as_museum_GIF_verified": false,
+        "client_pet_identity_confirmed": false
+      },
+      "name_relation": {
+        "non_orthographic_source_literal_difference": "洛→拉",
+        "web_name_to_cn50_restricted_script_conversion": "拉可拉斯",
+        "web_and_cn50_text_spellings_equivalent_after_explicit_script_conversion": true,
+        "source_supported_historical_alt_name_link": true,
+        "release_issued_identity_or_same_species_proven": false,
+        "official_operator_editorial_alias_decree_verified": false
+      }
+    },
+    {
+      "case_id": "TW10-CN50-MUSEUM-ALIAS-100384",
+      "tw10_original_client": {
+        "source": "AUTHENTICATED_TW10_RETAIL",
+        "album_ordinal": 134,
+        "graphic_number": 100384,
+        "printed_name": "巴洛洛克斯",
+        "original_album_row_sha256": "856d8243c319320ec4243629c02865348523fa2c569f107bedc0d9a0bb92c54c",
+        "full_original_SPR_segment_sha256": "38c47a6f86e858b3af0d608e751299d28ca5e30ad1a0cb884ed71f46f92a70b3",
+        "pet_id": null
+      },
+      "cn50_preserved_client": {
+        "source": "THIRD_PARTY_PRESERVED_CN5_CLASSIC_PC_NOT_PROVEN_OFFICIAL_PRESSING",
+        "compiled_album_ordinal": 134,
+        "source_file_offset": 540176,
+        "printed_name": "邦洛洛克斯",
+        "original_album_row_sha256": "905a6cef5cd2c47c8d5af1c81ac523d6bfb96e288e97a6a195f470d7703cebf1",
+        "hypothesis_ordinal_graphic_number": 100384,
+        "complete_SPR_segment_sha256": "38c47a6f86e858b3af0d608e751299d28ca5e30ad1a0cb884ed71f46f92a70b3",
+        "same_original_sprite_sha256_as_tw10": true,
+        "native_name_to_sprite_selector_proven": false,
+        "pet_id": null
+      },
+      "tw2001_operator_hosted_player_museum": {
+        "name_as_archived": "邦洛洛克斯",
+        "index_row": 55,
+        "source_page": "pet6.htm",
+        "as_recorded_image_url": "http://www7.waei.net:80/wgs/stoneage/images/museum/pet/pet139.gif",
+        "source_characteristics": "WAEI_OPERATOR_HOSTED_PLAYER_SUBMITTED_WEB_MUSEUM_NOT_OFFICIAL_SERVER_PET_MASTER",
+        "source_candidate_kind": "SINGLE_CHARACTER_NEAR_NAME",
+        "independent_native_client_image_same_as_museum_GIF_verified": false,
+        "client_pet_identity_confirmed": false
+      },
+      "name_relation": {
+        "non_orthographic_source_literal_difference": "巴→邦",
+        "web_name_to_cn50_restricted_script_conversion": "邦洛洛克斯",
+        "web_and_cn50_text_spellings_equivalent_after_explicit_script_conversion": true,
+        "source_supported_historical_alt_name_link": true,
+        "release_issued_identity_or_same_species_proven": false,
+        "official_operator_editorial_alias_decree_verified": false
+      }
+    }
+  ],
+  "boundaries": {
+    "original_proprietary_game_or_GIF_bytes_acquired_this_unit": 0,
+    "new_client_release_or_original_pressing_certified": 0,
+    "new_official_live_pet_species_verified": 0,
+    "no_new_same_deployment_pet_ID_or_server_skill_master": true,
+    "original_CN50_native_name_to_SPR_selector_not_established": true,
+    "museum_player_submitted_text_does_not_prove_official_same_species_or_same_original_GIF_pixels": true,
+    "cross_version_identical_original_sprite_segment_does_not_prove_shared_server_pet_ID_or_stats": true,
+    "three_non_orthographic_variants_not_three_new_species": true,
+    "tw1_web_museum_cn5_dates_not_first_official_live_release_dates": true,
+    "historical_2003_1_82_5_0_server_client_compatibility_already_in_repository_not_duplicate": true,
+    "historical_CURRENT_original_blob_sha": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "historical_CURRENT_original_bytes": 2709173,
+    "year_2026": "NOT_YEAR_AUDITED",
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percent": null,
+    "PET_module_closed": false,
+    "NPC_module_started": false
+  },
+  "next": "PET126W: prioritize actually obtainable free authentic original PC client/patch or same-deployment official pet master; reuse graphically verified aliases for catalog when qualified; no new generic CRT/static callsite crawl"
+}
