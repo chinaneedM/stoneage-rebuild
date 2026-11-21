@@ -16,7 +16,7 @@ class PET126R(unittest.TestCase):
         rows=[{"ordinal":i,"name":"测试"+str(i) if i%2==0 else "无",
                 "raw_i32":i//2 if i%2==0 else -1,
                 "raw_u32":28000+i if i%2==0 else 0,
-                "raw_record":(str(i).encode()+"x"*28)[:28]} for i in range(362)]
+                "raw_record":(str(i).encode()+b"x"*28)[:28]} for i in range(362)]
         # The entire same-CAB source group namespace is independent from names.
         groups=[{"spr_no":str(100250+i),"index":str(i),"segment_sha256":"a"*64} for i in range(1185)]
         tw=[{"graphic_number":100250+i,"spr_original_segment_sha256":"a"*64} for i in range(124)]
