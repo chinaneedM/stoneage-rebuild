@@ -778,3 +778,8 @@ Current Stage A work proceeds from source-qualified original maps, images/animat
 **事实分层：** “真实世界的游戏运营发行时间”与“原游戏世界内部人物/传说/文明/剧情时间”是两条不同史料线；还应区分当年运营宣传构想、真实已实装玩法和未来用户原创石器世界的 `DESIGN_FUTURE`。只有原始官方素材、具体版本与可追溯关联证据支持时，才可连接跨模块对象或世界观叙事；不据相同数字/名字/年份推断官服同部署、先后因果、游戏原生运行或官方统一世界设定。
 
 **落实：** [协议§22](PROJECT-CONTINUITY-PROTOCOL-R1.md)、[跨模块双轴执行宪章](STONEAGE-GLOBAL-TWO-AXIS-RESTORATION-CONSTITUTION-R1.md)、[机器规则](../research/recovered/STONEAGE-RESTORATION-TWO-AXIS-GOVERNANCE-R1.json)。旧 DD-032 以内容分类便利查询的方向仍有效，但旧“MAP→QUEST”等工作NEXT已被PET唯一模块锁和最早年份游标明确取代。该决议是工作方法，不是新素材实证；不提高任何历史完成率，不批准Stage B和新单机游戏开发。
+
+
+## DD-034 — 宠物自主永久编号与来源观察号分离（2026-11-21）
+
+**Status: Accepted.** 用户明确授权宠物资料主编号自行制定，无须遵照原版。采用`PET-000001`起的**永久内部档案ID**，与`OBS-TW10-0001`起的**来源候选观察ID**分开。真实原版图号、客户端局部ID、服务器真实Pet ID均保留完整版别命名空间，不以同图同名跨服自动合并；来源候选数不计为历史官方实发物种。后续同宠物跨地域版本仅在证据允许时关联，保留具体版别属性、技能、抓捕、原文字形、动作和版权隔离；未证继续`null`。详细规范：[docs/pets/ID-SCHEME.md](pets/ID-SCHEME.md)；机读索引：[PET-ID-REGISTRY-R1.json](../research/pets/PET-ID-REGISTRY-R1.json)。当前PET号1、台湾1.0 OBS号124、全字段验收0，其他工作锁与历史CURRENT不变。该决议是资料架构而非历史新增物种证据。
