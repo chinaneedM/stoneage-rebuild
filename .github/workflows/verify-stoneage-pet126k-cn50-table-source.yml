@@ -1,0 +1,25 @@
+name: PET126K CN5 original classic PC compiled name table evidence audit
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-PET126K-CN50-ORIGINAL-362-NAMED-SLOTS-TW10-CROSSWALK-R1.json'
+      - 'docs/continuity/STONEAGE-PET126K-CN50-ORIGINAL-PET-NAME-TABLE-362-SLOTS-20261121.md'
+      - 'tests/test_stoneage_pet126k_362_compiled_name_table_source.py'
+      - '.github/workflows/verify-stoneage-pet126k-cn50-table-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-PET126K-CN50-ORIGINAL-362-NAMED-SLOTS-TW10-CROSSWALK-R1.json'
+      - 'docs/continuity/STONEAGE-PET126K-CN50-ORIGINAL-PET-NAME-TABLE-362-SLOTS-20261121.md'
+      - 'tests/test_stoneage_pet126k_362_compiled_name_table_source.py'
+      - '.github/workflows/verify-stoneage-pet126k-cn50-table-source.yml'
+permissions:
+  contents: read
+jobs:
+  source-cross-version-no-promotion:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_pet126k_362_compiled_name_table_source.py' -v
