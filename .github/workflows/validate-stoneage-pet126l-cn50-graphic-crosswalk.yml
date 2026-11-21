@@ -1,0 +1,49 @@
+name: PET126L same-CAB original PC compiled-name to SPR/ADRN source-key audit
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet126l_cn50_table_graphic_probe.py'
+      - 'tests/test_stoneage_pet126l_cn50_table_graphic_probe.py'
+      - '.github/workflows/validate-stoneage-pet126l-cn50-graphic-crosswalk.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet126l_cn50_table_graphic_probe.py'
+      - 'tests/test_stoneage_pet126l_cn50_table_graphic_probe.py'
+      - '.github/workflows/validate-stoneage-pet126l-cn50-graphic-crosswalk.yml'
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_pet126l_cn50_table_graphic_probe.py' -v
+  original-source-probe:
+    if: github.event_name == 'push'
+    needs: regression
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq cabextract
+      - name: Reacquire bounded original CN5 CAB prefix
+        run: python -m tools.stoneage_stoneage5_battle_extract_probe --output-cab /tmp/stoneage5-pet126l.cab --prefix-bytes 12582912
+      - name: Extract and verify original EXE, compare same-CAB pinned graphic indexes
+        run: |
+          mkdir -p /tmp/pet126l-source
+          cabextract -q -F sa_5000.exe -d /tmp/pet126l-source /tmp/stoneage5-pet126l.cab
+          python -m tools.stoneage_pet126l_cn50_table_graphic_probe --program /tmp/pet126l-source/sa_5000.exe --output /tmp/pet126l-derived.json
+          echo PET126L_DERIVED_BEGIN
+          cat /tmp/pet126l-derived.json
+          echo PET126L_DERIVED_END
+      - name: Remove original proprietary executable and CAB fragment
+        if: always()
+        run: rm -rf /tmp/stoneage5-pet126l.cab /tmp/pet126l-source

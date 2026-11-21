@@ -476,3 +476,8 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## 2026-11-19｜PET125：2025 官方经典 PC 宠物来源有界年审，游标进入 2026
 
 [六地区来源/原客户端缺口报告](continuity/STONEAGE-PET125-YEAR2025-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-20261119.md)／[机读候选、负证与重开条件](../research/recovered/STONEAGE-PET125-YEAR2025-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json)：台湾蛇年玩家「新春幻獸包」4个名字、端午暑假7项玩家礼包候选以及中秋／万圣依妮任务、布偶盾奖励，均来自搜索索引可读而原论坛URL 403 的玩家材料，不是运营方原HTML、同版原宠物主档或2025全球首次发行物种。强化丹、血清、戒指与盾牌属于物件或装备，不计活宠；早年复刻活动不能重复算新宠。大陆2025/11/28、12/29第一方证明另一个新开发的**PC原生复刻**预约与删档测试，但非旧经典2D PC同服/同构建，完全隔离，不按“上百只”宣传补旧版物种；这是PC版别边界核查，非扩充其它产品的当前宠物库。CN/TW/HK_MO/KR/JP/OTHER本轮新增认证2025原经典PC客户端、PET ID、SPR、技能、发宠0；**2025仅`SOURCE_BOUNDED_REVIEWED`，historically_complete=false，全年真实宠物及首发种数null；2026 `NOT_YEAR_AUDITED`，唯一NEXT `PET126`。** 用户的PC-only最高范围、PET模块锁、正版来源优先、禁止付费卖盘、私有版权素材、原CURRENT完整 Git Blob `c89e0e33537990aa2132b47c40fef49a985a935c`均不变；Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总进度UNKNOWN。
+
+
+## 2026-11-21｜PET126L：大陆 5.0 原 PC 编译宠物名称与同 CAB 图形源限定核对
+
+[PET126L 静态源码级证据、完整差异与剩余缺件](continuity/STONEAGE-PET126L-CN50-NAME-SPR-ADRN-SOURCE-KEY-CROSSWALK-20261121.md)／[PET126L JSON 收据](../research/recovered/STONEAGE-PET126L-CN50-COMPILED-NAME-SAME-CAB-KEY-AUDIT-R1.json)：原 5.0 编译表 362 行、305 具名、57 空位；两个原始字段直接命中原 `SPR` 组号均 0/305。字段匹配 `ADRN` 号虽各 305/305，但全整数范围同样已覆盖（0–304 全 305；28001–28428 全 428），不得据此声称选择器已证。大陆同槽末尾 `raw_u32` 与已认证台湾 1.0 的 124 个头像别名 **124/124 数值一致**，支持原编译相册别名继承，仅为跨版数据源比较。原 PE32 `.text` 中有三处名称表指针字面数值，文件偏移 199700/200343/214772，未证明编译代码调用/运行路径。原来源为第三方保存经典PC 5.0 CAB，未经独立官方零售压盘认证；本次原 EXE 整 SHA 与同载体派生资源 SHA 有据重放并通过 Action `44870030337`。官方实发物种新增0、2026仍 NOT_YEAR_AUDITED、PET 仍 SOURCE_BOUNDED_PARTIAL，**NEXT PET126M 三处静态指令上下文及真实 PET/SPR 数据流关联**。原历史 CURRENT blob 不变，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、整体百分比UNKNOWN。
