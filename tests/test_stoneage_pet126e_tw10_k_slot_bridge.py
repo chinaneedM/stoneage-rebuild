@@ -37,7 +37,7 @@ class OriginalTW1SKEvidence(unittest.TestCase):
         prior = self.s["records"]["status_pet_full"]
         self.assertEqual(prior["transport"]["protocol"], "S")
         self.assertEqual(prior["transport"]["category"], "K")
-        self.assertEqual(prior["transport"]["callback_rva"], k["callback_rva"])
+        self.assertEqual(int(prior["transport"]["callback_rva"], 16), int(k["callback_rva"], 16))
         self.assertEqual(prior["transport"]["slot_prefix"], k["prefix"])
         self.assertEqual(prior["full_record_width"], 21)
         self.assertEqual(k["field_count"], 20)
