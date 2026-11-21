@@ -16,12 +16,12 @@ class PETIndependentIdentifierContract(unittest.TestCase):
         cls.names=load("research/recovered/STONEAGE-PET126W-TW10-CN50-ALL-124-ORIGINAL-PC-NAME-VARIANTS-R1.json")
     def test_stable_separate_catalog_and_source_ids(self):
         r=self.registry
-        self.assertEqual(r["policy"]["next_unassigned_catalog_pet_id"],"PET-000002")
-        self.assertEqual(r["counts"]["assigned_catalog_pet_ids"],1)
+        self.assertEqual(r["policy"]["next_unassigned_catalog_pet_id"],"PET-"+str(len(r["catalog_entries"])+1).zfill(6))
+        self.assertEqual(r["counts"]["assigned_catalog_pet_ids"],len(r["catalog_entries"]))
         self.assertEqual(r["counts"]["source_observation_rows"],124)
-        self.assertEqual(r["counts"]["unassigned_source_observations"],123)
+        self.assertEqual(r["counts"]["unassigned_source_observations"],124-len(r["catalog_entries"]))
         self.assertIsNone(r["counts"]["global_original_classic_pc_pet_count"])
-        cats=r["catalog_entries"];self.assertEqual(len(cats),1)
+        cats=r["catalog_entries"];self.assertEqual(len({c["catalog_pet_id"] for c in cats}),len(cats))
         self.assertEqual(cats[0]["catalog_pet_id"],"PET-000001")
         self.assertFalse(cats[0]["historically_verified_official_species"])
         self.assertIsNone(cats[0]["official_server_pet_id"])
@@ -30,14 +30,14 @@ class PETIndependentIdentifierContract(unittest.TestCase):
         self.assertEqual(self.profile["internal_id_system"]["source_observation_ids"],cats[0]["observations"])
         self.assertEqual(self.profile["internal_id_system"]["legacy_key"],"TW10-G100250")
         self.assertEqual(self.progress["existing_details"][0]["profile_id"],"PET-000001")
-        self.assertEqual(self.progress["per_pet_profile_counts"]["individual_detailed_profiles"],1)
+        self.assertEqual(self.progress["per_pet_profile_counts"]["individual_detailed_profiles"],len(cats))
     def test_124_observations_mirror_exact_tw10_source_not_124_species(self):
         r=self.registry;observations=r["source_observations"]
         self.assertEqual(len(observations),124)
         self.assertEqual(len({x["observation_id"] for x in observations}),124)
         self.assertEqual(len({x["source_key"] for x in observations}),124)
         self.assertEqual(len({x["source_graphic_number"] for x in observations}),124)
-        self.assertEqual(len({x["assigned_catalog_pet_id"] for x in observations if x["assigned_catalog_pet_id"]}),1)
+        self.assertEqual(len({x["assigned_catalog_pet_id"] for x in observations if x["assigned_catalog_pet_id"]}),len(r["catalog_entries"]))
         for i,(o,s,n) in enumerate(zip(observations,self.source["records"],self.names["records"])):
             self.assertEqual(o["observation_id"],"OBS-TW10-"+str(i+1).zfill(4))
             self.assertEqual(o["source_album_ordinal"],i)
@@ -49,7 +49,7 @@ class PETIndependentIdentifierContract(unittest.TestCase):
             self.assertEqual(o["cn50_preserved_compiled_name_corroboration"],n["cn50_preserved_compiled_literal"])
             self.assertFalse(o["official_live_release_verified"])
             self.assertFalse(o["cn50_qualified_as_official_pressing"])
-            self.assertEqual(o["assigned_catalog_pet_id"],"PET-000001" if i==0 else None)
+            self.assertEqual(o["assigned_catalog_pet_id"],r["catalog_entries"][i]["catalog_pet_id"] if i<len(r["catalog_entries"]) else None)
             self.assertNotEqual(o["observation_id"],o["assigned_catalog_pet_id"])
         self.assertFalse(r["boundaries"]["do_not_count_album_rows_as_official_live_species"] is False)
         self.assertTrue(r["boundaries"]["do_not_sum_tw10_and_cn50_entries"])
@@ -58,8 +58,8 @@ class PETIndependentIdentifierContract(unittest.TestCase):
         p=self.progress; r=self.registry
         self.assertEqual(p["internal_id_registry"]["allocated_pet_catalog_ids"],len(r["catalog_entries"]))
         self.assertEqual(p["internal_id_registry"]["tw10_source_observation_ids"],len(r["source_observations"]))
-        self.assertEqual(p["internal_id_registry"]["source_observations_without_pet_catalog_number"],123)
-        self.assertEqual(p["internal_id_registry"]["next_free_catalog_id"],"PET-000002")
+        self.assertEqual(p["internal_id_registry"]["source_observations_without_pet_catalog_number"],len(r["source_observations"])-len(r["catalog_entries"]))
+        self.assertEqual(p["internal_id_registry"]["next_free_catalog_id"],r["policy"]["next_unassigned_catalog_pet_id"])
         self.assertFalse(self.profile["actual_official_pet_identity"]["official_living_pet_release_proven"])
         self.assertIsNone(self.profile["actual_official_pet_identity"]["source_pet_id"])
         self.assertEqual(r["boundaries"]["current_state_original_sha"],p["boundaries"]["current_state_immutable_blob"])
