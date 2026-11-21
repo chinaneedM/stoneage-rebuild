@@ -3098,3 +3098,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-21 — PET126G｜日本原经典 PC 2003–04 官网页面与2010玩家相册编号及名字冲突
 
 [来源有界跨年报告](docs/continuity/STONEAGE-PET126G-JAPAN-2003-2010-OPERATOR-FAN-ALBUM-20261121.md)／[可复算124位原字对照与23差异/6受限发行文献名联接](research/recovered/STONEAGE-PET126G-JP-OPERATOR-PLAYER-ALBUM-2003-2010-CROSSWALK-R1.json)：新发现可免费公开直接访问的日本原经典 PC 玩家相册站`kbpetzukan.iinaa.net`，网站自报截至2010/3/18收录202种宠物资料，可见相册编号达247，**二者都非官方物种数**；页面禁止图片转载，本轮不下载/复制图。以前已经保存的日本Hangame**2003/12及2004/2**原网页124名位为较强运营源，与玩家站前124个同编号名字精确比较得**101一致／23不同**（例如旧官网40「レムガス」，后期站40「ロックス」）；不得以同编号跨年代强行等同物种、臆断改名。后期相册200号「フクゥーリ」与2008/07运营方**第200种可捕获宠物**公告字面与序号吻合；另与旧日本运营报道原字联系クロウリ(#5)、ヴァンレム(#143)、ゴルンフット(#188)、ハクエン(#219)、コクエン(#221)，但**没有同部署 PET ID、SPR/原生运行及真实玩家发奖证明**。新认证官服物种0，原始客户端0，既有PET25/26官方发行事件计数不变。2026仍`NOT_YEAR_AUDITED`、PET`SOURCE_BOUNDED_PARTIAL`，NEXT PET126H优先真正原官方PC同版PET身份主表/补丁。原CURRENT Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`不动，Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、完成率UNKNOWN。 
+
+
+## 2026-11-21 — PET126H｜日本 GaiaX 2005-09-29 原运营宠物新闻稿的发行时点与来源级别
+
+[2005 原运营页与 09/30 媒体稿日期/宠名同源审查](docs/continuity/STONEAGE-PET126H-JP2005-GAIAX-DIRECT-OPERATOR-PET-PRESS-20261121.md)／[机读源级与负证收据](research/recovered/STONEAGE-PET126H-JP2005-GAIAX-DIRECT-OPERATOR-PET-PRESS-R1.json)：**新核到运营方 GaiaX 自署名新闻稿日期 2005-09-29 16:00 JST**，较 PET72 4Gamer 09/30 报道早一日，公开称 `不思議な袋(中)` 宣传新宠 `ヴァンレム` Lv1，官网账号 10/04 维护后／Hangame 10 月中旬仍是预告。两篇为同事件不同发布渠道，不重计官服新宠、不证玩家实发；2010 玩家相册第143号同名不能回填 2005 原 PET ID。新原经典 PC 客户端/补丁原字节、新同服主表与发奖均0，2026 `NOT_YEAR_AUDITED`、PET `SOURCE_BOUNDED_PARTIAL`，NEXT PET126I 实际免费可获取 PC 原件和同版宠物主档；禁止非 PC、付费卖盘及私服冒充，原 CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c` 与 Stage A 7 PARTIAL+2 OPEN/B/wiki GATED/R79暂停/总体UNKNOWN 全部不变。
