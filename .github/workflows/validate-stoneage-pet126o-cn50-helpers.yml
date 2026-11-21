@@ -1,0 +1,49 @@
+name: PET126O original classic PC source-verified bounded helpers and pet-album caller links
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet126o_cn50_bounded_helpers.py'
+      - 'tests/test_stoneage_pet126o_cn50_bounded_helpers.py'
+      - '.github/workflows/validate-stoneage-pet126o-cn50-helpers.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet126o_cn50_bounded_helpers.py'
+      - 'tests/test_stoneage_pet126o_cn50_bounded_helpers.py'
+      - '.github/workflows/validate-stoneage-pet126o-cn50-helpers.yml'
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_pet126o_cn50_bounded_helpers.py' -v
+  original-helper-byte-audit:
+    if: github.event_name == 'push'
+    needs: synthetic
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq cabextract binutils
+      - name: Reacquire bounded original CN5 PC CAB executable prefix
+        run: python -m tools.stoneage_stoneage5_battle_extract_probe --output-cab /tmp/pet126o.cab --prefix-bytes 12582912
+      - name: Two helper entries under original executable SHA and published pointers
+        run: |
+          mkdir -p /tmp/pet126o-source
+          cabextract -q -F sa_5000.exe -d /tmp/pet126o-source /tmp/pet126o.cab
+          python -m tools.stoneage_pet126o_cn50_bounded_helpers --program /tmp/pet126o-source/sa_5000.exe --output /tmp/pet126o.json
+          echo PET126O_BEGIN
+          cat /tmp/pet126o.json
+          echo PET126O_END
+      - name: Remove original proprietary PC bytes
+        if: always()
+        run: rm -rf /tmp/pet126o.cab /tmp/pet126o-source
