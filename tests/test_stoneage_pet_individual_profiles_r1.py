@@ -34,7 +34,7 @@ class PETIndividualProfilesR1(unittest.TestCase):
         self.assertEqual((expected["tw10_original_client_named_album_candidates"],expected["tw10_named_with_spr_source_actions"],expected["tw10_named_with_portrait_rd"],expected["tw10_named_missing_portrait_rd"]),(124,124,120,4))
         self.assertEqual(expected["cn50_preserved_compiled_named_slots_independent_nonadditive"],305)
         c=self.progress["per_pet_profile_counts"]
-        self.assertEqual((c["source_indexed_candidate_rows"],c["individual_detailed_profiles"],c["individual_detailed_partial_profiles"],c["fully_historically_verified_pet_profiles"],c["individual_profiles_not_yet_created_for_candidates"]),(124,25,25,0,99))
+        self.assertEqual((c["source_indexed_candidate_rows"],c["individual_detailed_profiles"],c["individual_detailed_partial_profiles"],c["fully_historically_verified_pet_profiles"],c["individual_profiles_not_yet_created_for_candidates"]),(124,55,55,0,69))
         self.assertIsNone(self.progress["boundaries"]["all_pet_species_historical_total"])
 
     def test_wuli_original_client_source_and_no_official_id_promotions(self):
@@ -94,24 +94,24 @@ class PETIndividualProfilesR1(unittest.TestCase):
         for i,(order,internal_id,observation_id,name,cn,graphic,portrait,detail) in enumerate(rows):
             src=self.tw["records"][i];s=self.cross["records"][i]
             self.assertEqual((int(order),name,cn,int(graphic)),(i+1,src["name_as_written"],s["cn50_preserved_compiled_literal"],src["graphic_number"]))
-            self.assertEqual(internal_id,"PET-"+str(i+1).zfill(6) if i<25 else "—（待建档）")
+            self.assertEqual(internal_id,"PET-"+str(i+1).zfill(6) if i<55 else "—（待建档）")
             self.assertEqual(observation_id,"OBS-TW10-"+str(i+1).zfill(4))
             self.assertEqual(portrait,"已定位" if src["portrait_rd"] else "待补")
-            self.assertEqual("查看" in detail,i<25)
+            self.assertEqual("查看" in detail,i<55)
         self.assertEqual(ix.count("| 已验源 |"),124)
 
 
-    def test_all_25_source_grounded_independent_ids_and_unknowns(self):
+    def test_all_55_source_grounded_independent_ids_and_unknowns(self):
         registry=read(P/"PET-ID-REGISTRY-R1.json")
         self.assertEqual(registry["counts"]["source_observation_rows"],124)
-        self.assertEqual(registry["counts"]["assigned_catalog_pet_ids"],25)
-        self.assertEqual(registry["counts"]["unassigned_source_observations"],99)
-        self.assertEqual(registry["policy"]["next_unassigned_catalog_pet_id"],"PET-000026")
-        self.assertEqual(len(registry["catalog_entries"]),25)
+        self.assertEqual(registry["counts"]["assigned_catalog_pet_ids"],55)
+        self.assertEqual(registry["counts"]["unassigned_source_observations"],69)
+        self.assertEqual(registry["policy"]["next_unassigned_catalog_pet_id"],"PET-000056")
+        self.assertEqual(len(registry["catalog_entries"]),55)
         self.assertEqual(len(registry["source_observations"]),124)
-        self.assertEqual(len({r["catalog_pet_id"] for r in registry["catalog_entries"]}),25)
+        self.assertEqual(len({r["catalog_pet_id"] for r in registry["catalog_entries"]}),55)
         motions={x["graphic"]:x for x in self.motion["groups"]}
-        for i in range(25):
+        for i in range(55):
             a=self.tw["records"][i]
             x=self.cross["records"][i]
             entry=registry["catalog_entries"][i]
@@ -149,6 +149,13 @@ class PETIndividualProfilesR1(unittest.TestCase):
             self.assertEqual(ob["assigned_catalog_pet_id"],entry["catalog_pet_id"])
             self.assertFalse(ob["official_live_release_verified"])
             self.assertIn(entry["catalog_pet_id"],(ROOT/entry["visible_dossier_path"]).read_text(encoding="utf-8"))
+        special=read(P/"profiles/TW10-G100320.json")
+        self.assertEqual(special["profile_id"],"PET-000055")
+        self.assertEqual(special["names"]["original_client"],"卡搭寶斯")
+        self.assertEqual(special["names"]["simplified_display"],"卡拉宝斯")
+        self.assertEqual(special["names"]["cross_carrier_original_compiled_relation"]["cn50_relation_class"],"NON_ORTHOGRAPHIC_SOURCE_LITERAL_VARIANT")
+        self.assertIn("non_orthographic_warning",special["names"]["cross_carrier_original_compiled_relation"])
+        self.assertFalse(special["actual_official_pet_identity"]["official_living_pet_release_proven"])
         for ob in registry["source_observations"][len(registry["catalog_entries"]):]:
             self.assertIsNone(ob["assigned_catalog_pet_id"])
 
