@@ -58,7 +58,7 @@ class PET126UOnlyClassicPC(unittest.TestCase):
         self.assertEqual(a["source_main_head"],"86d90ea1ba09bde7579a37d36c5bb773a7a4c8c3")
         self.assertEqual(a["scope"],"HISTORICAL_ORIGINAL_CLASSIC_2D_PC_ONLY")
         self.assertEqual(a["raw_original_proprietary_client_or_pet_master_bytes_acquired"],0)
-        self.assertEqual(a["new_original_official_PC_species_verified"],0)
+        self.assertEqual(a["new_official_original_PC_species_verified"],0)
         self.assertIsNone(a["worldwide_official_original_PC_species_total"])
         self.assertEqual(self.y["annual_review"]["yearly_research_gate"],"NOT_YEAR_AUDITED")
         self.assertEqual(a["completion_gate"]["year_frontier"],2026)
