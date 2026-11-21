@@ -3,7 +3,7 @@ import json
 import struct
 import unittest
 from pathlib import Path
-from tools.stoneage_pet126k_cn50_original_exe_probe import EXPECTED, text_hits,parse_row,table_candidates,aligned_region_metadata
+from tools.stoneage_pet126k_cn50_original_exe_probe import EXPECTED, text_hits,parse_row,table_candidates,aligned_region_metadata,native_362_row_half_comparison
 ROOT=Path(__file__).resolve().parents[1]
 class PET126KSourceBoundary(unittest.TestCase):
  def test_synthetic_pet_name_in_valid_rows(self):
@@ -31,6 +31,19 @@ class PET126KSourceBoundary(unittest.TestCase):
   tables=table_candidates(buf,"gb18030")
   self.assertEqual(len(tables),1)
   self.assertEqual(tables[0]["rows"],362)
+ def test_cross_half_topology_is_not_species_count(self):
+  name="烏力".encode("gb18030")
+  good=struct.pack("<i20sI",9,name+bytes(20-len(name)),28001)
+  blank="无".encode("gb18030")
+  no=struct.pack("<i20sI",-1,blank+bytes(20-len(blank)),0)
+  source=bytes(536424)+good+no+good*179+good*181
+  ref={"table":{"first_graphic":100250,"placeholder_graphics":[100251]},
+       "records":[{"graphic_number":100250,"name_as_written":"烏力"}]}
+  result=native_362_row_half_comparison(source,ref)
+  self.assertEqual(result["first_half"]["rows"],181)
+  self.assertEqual(result["second_half"]["populated"],181)
+  self.assertTrue(result["first_half"]["exact_match_to_TW10_57_placeholder_indices"])
+  self.assertFalse(result["claims"]["native_same_version_pet_species_id_proven"])
  def test_malformed_not_promoted(self):
   bad=struct.pack("<i20sI",7,"寵物".encode("cp950")+bytes(16),0)
   self.assertIsNone(parse_row(bad,0,"cp950"))

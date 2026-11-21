@@ -83,6 +83,45 @@ def aligned_region_metadata(raw,start,rows,codec):
          "source_span_sha256":sha(raw[start:start+28*rows]),
          "raw_table_bytes_published":False}
 
+def native_362_row_half_comparison(raw,tw):
+ """Cross-check row topology only; ordinal/label equality is NOT same pet species ID."""
+ start=536424;stride=28
+ rows=[parse_row(raw,start+stride*i,"gb18030") for i in range(362)]
+ if any(x is None for x in rows):raise ValueError("362-source-row-cannot-decode")
+ half_a,half_b=rows[:181],rows[181:]
+ ref_empty=sorted(int(i)-int(tw["table"]["first_graphic"])
+                  for i in tw["table"]["placeholder_graphics"])
+ actual_empty=[i for i,x in enumerate(half_a) if x["slot"]==-1]
+ tw_names={int(x["graphic_number"])-int(tw["table"]["first_graphic"]):x["name_as_written"]
+           for x in tw["records"]}
+ matches=[{"ordinal":i,"original_tw10_name":tw_names[i],
+           "mainland_5_0_name":half_a[i]["name"]}
+          for i in sorted(tw_names) if half_a[i]["slot"]!=-1
+          and tw_names[i]==half_a[i]["name"]]
+ all_names=[x["name"] for x in rows if x["slot"]!=-1]
+ return {
+  "source_file_offset":start,"stride":stride,"candidate_total_slots":362,
+  "source_span_sha256":sha(raw[start:start+362*stride]),
+  "tw10_original_181_slots":181,
+  "first_half":{"rows":len(half_a),"populated":sum(x["slot"]!=-1 for x in half_a),
+                "placeholders":len(actual_empty),"placeholder_slot_indices":actual_empty,
+                "exact_match_to_TW10_57_placeholder_indices":actual_empty==ref_empty,
+                "TW10_recorded_name_same_ordinal_equal_unicode":len(matches),
+                "same_ordinal_equal_examples":matches[:10]},
+  "second_half":{"rows":len(half_b),"populated":sum(x["slot"]!=-1 for x in half_b),
+                 "placeholders":sum(x["slot"]==-1 for x in half_b),
+                 "first_names":[x["name"] for x in half_b[:6]],
+                 "last_names":[x["name"] for x in half_b[-6:]]},
+  "overall":{"populated":len(all_names),"distinct_printed_labels":len(set(all_names)),
+             "placeholders":sum(x["slot"]==-1 for x in rows)},
+  "claims":{"client_compiled_name_table_evidence":True,
+            "native_same_version_pet_species_id_proven":False,
+            "all_compiled_name_rows_currently_issuable_in_official_server":False,
+            "additional_181_row_capacity_equals_181_newly_issued_species":False,
+            "cross_region_ordinal_implies_same_pet_species":False,
+            "graphic_id_in_CN50_derived_from_ordinal":False}
+ }
+
 def inspect(directory):
  manifest=json.loads((ROOT/"research/recovered/STONEAGE-STONEAGE5-REAL-CAB-PAYLOAD-R1.json").read_text(encoding="utf-8"))
  tw=json.loads((ROOT/"research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json").read_text(encoding="utf-8"))
@@ -104,7 +143,8 @@ def inspect(directory):
   for codec in ("cp950","gb18030"):
    hits=text_hits(content,names,codec)
    groups=table_candidates(content,codec)
-   enc[codec]={"candidate_362_row_contiguous_span":aligned_region_metadata(content,536424,362,codec) if file=="sa_5000.exe" else None,
+   enc[codec]={"cross_version_181_row_pair":native_362_row_half_comparison(content,tw) if file=="sa_5000.exe" and codec=="gb18030" else None,
+               "candidate_362_row_contiguous_span":aligned_region_metadata(content,536424,362,codec) if file=="sa_5000.exe" else None,
                "matched_distinct_names":len({x["name"] for x in hits}),
                "matching_occurrences":len(hits),
                "matched_name_offsets":hits[:150],
