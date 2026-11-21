@@ -3103,3 +3103,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-21 — PET126H｜日本 GaiaX 2005-09-29 原运营宠物新闻稿的发行时点与来源级别
 
 [2005 原运营页与 09/30 媒体稿日期/宠名同源审查](docs/continuity/STONEAGE-PET126H-JP2005-GAIAX-DIRECT-OPERATOR-PET-PRESS-20261121.md)／[机读源级与负证收据](research/recovered/STONEAGE-PET126H-JP2005-GAIAX-DIRECT-OPERATOR-PET-PRESS-R1.json)：**新核到运营方 GaiaX 自署名新闻稿日期 2005-09-29 16:00 JST**，较 PET72 4Gamer 09/30 报道早一日，公开称 `不思議な袋(中)` 宣传新宠 `ヴァンレム` Lv1，官网账号 10/04 维护后／Hangame 10 月中旬仍是预告。两篇为同事件不同发布渠道，不重计官服新宠、不证玩家实发；2010 玩家相册第143号同名不能回填 2005 原 PET ID。新原经典 PC 客户端/补丁原字节、新同服主表与发奖均0，2026 `NOT_YEAR_AUDITED`、PET `SOURCE_BOUNDED_PARTIAL`，NEXT PET126I 实际免费可获取 PC 原件和同版宠物主档；禁止非 PC、付费卖盘及私服冒充，原 CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c` 与 Stage A 7 PARTIAL+2 OPEN/B/wiki GATED/R79暂停/总体UNKNOWN 全部不变。
+
+
+## 2026-11-21 — PET126I｜2006玩家八个已见宠物名与2019活动名字分年对照
+
+[有界对照报告](docs/continuity/STONEAGE-PET126I-2006-2019-EIGHT-NAME-BACKFILL-20261121.md)／[跨年同名字面机读记录](research/recovered/STONEAGE-PET126I-2006-2019-EIGHT-NAME-RECONCILIATION-R1.json)：从旧未合并PR #532 回收2006/11/29玩家来源、比对主线2019PET116的肥龙「奧普薩斯／利普多爾／邦克普斯／拉佛洛斯」和海怪／海龙「畢格艾斯／裘比斯／阿卡西斯／洛可洛斯」，8个原字在2006已见，不可把2019活动回述误记为全球首次出现；**2006原官方同服发宠、两年同一PET ID/SPR/技能均未证**。2019主线已 `SOURCE_BOUNDED_REVIEWED`，不回退旧PR的2019待审游标；2026仍 `NOT_YEAR_AUDITED`、PET仍 `SOURCE_BOUNDED_PARTIAL`。当轮无新增原PC安装/补丁字节、官服物种或原始实体主档；韩国论坛须登录与大陆2003 FTP旧死链早有来源审计，禁止重记下载成功。下一 PET126J 审核旧PR #545的TW1原CP950文字与已合并PET126D/E重叠；保留所有版权与CURRENT原blob、StageA7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体百分比UNKNOWN。

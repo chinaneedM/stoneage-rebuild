@@ -1,0 +1,26 @@
+name: PET126I classic-PC 2006 vs 2019 name attestation
+on:
+  push:
+    paths:
+      - '.github/workflows/validate-stoneage-pet126i-2006-2019-names.yml'
+      - 'docs/continuity/STONEAGE-PET126I-2006-2019-EIGHT-NAME-BACKFILL-20261121.md'
+      - 'research/recovered/STONEAGE-PET126I-2006-2019-EIGHT-NAME-RECONCILIATION-R1.json'
+      - 'tests/test_stoneage_pet126i_early_eight_name.py'
+  pull_request:
+    paths:
+      - '.github/workflows/validate-stoneage-pet126i-2006-2019-names.yml'
+      - 'docs/continuity/STONEAGE-PET126I-2006-2019-EIGHT-NAME-BACKFILL-20261121.md'
+      - 'research/recovered/STONEAGE-PET126I-2006-2019-EIGHT-NAME-RECONCILIATION-R1.json'
+      - 'tests/test_stoneage_pet126i_early_eight_name.py'
+jobs:
+  pc-only-evidence-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate chronology without release promotion
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pet126i_early_eight_name.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pc_only_scope_20261119.py' -v

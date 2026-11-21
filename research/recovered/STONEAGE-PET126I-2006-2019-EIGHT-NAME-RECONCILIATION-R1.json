@@ -1,0 +1,98 @@
+{
+  "schema": "stoneage.pet126i.pc_2006_vs_2019_player_names.r1",
+  "id": "PET126I-2006-TO-2019-PR532-CHRONOLOGY-CONFLICT",
+  "date": "2026-11-21",
+  "active_module": "PET",
+  "pc_only": true,
+  "source_base": {
+    "main_head": "e2ba4c7538642a7e849f9006cf9de277571a5df1",
+    "main_tree": "56f91a9c5711a60428829b77d38d686ebec3d89f",
+    "original_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "old_unmerged_pr": 532,
+    "old_candidate_json_blob": "a3b71e4fbb30f24398cfe9a3923f322292b9171e",
+    "current_main_2019": "research/recovered/STONEAGE-PET116-TW2019-PLAYER-PET-EVIDENCE-R1.json",
+    "current_main_2019_review": "research/recovered/STONEAGE-PET118-YEAR2019-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json"
+  },
+  "sources": [
+    {
+      "label": "TW2006_PLAYER_FUSION_TEXT",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=3132",
+      "displayed_edit": "2006-11-29 18:26:32",
+      "grade": "CONTEMPORANEOUS_PLAYER_TEXT_SEARCH_INDEX_AND_EXISTING_PR532_NOT_OPERATOR",
+      "full_page_http_direct_verified_this_turn": false,
+      "search_index_snippet_seen": true
+    },
+    {
+      "label": "TW2019_PLAYER_SUMMER_GUIDE",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=1571&snA=81239",
+      "displayed_last_edit": "2019-11-08",
+      "grade": "CONTEMPORANEOUS_PLAYER_TEXT_SEARCH_INDEX_AND_EXISTING_MAIN_PET116_NOT_OPERATOR",
+      "full_page_http_direct_verified_this_turn": false,
+      "search_index_snippet_seen": true
+    }
+  ],
+  "grouping": [
+    {
+      "name_2006": "肥龍",
+      "name_2019": "肥龍（端午活動回述）",
+      "names": [
+        "奧普薩斯",
+        "利普多爾",
+        "邦克普斯",
+        "拉佛洛斯"
+      ],
+      "exact_unicode_name_matches": 4
+    },
+    {
+      "name_2006": "海怪",
+      "name_2019": "海龍（暑假活動）",
+      "names": [
+        "畢格艾斯",
+        "裘比斯",
+        "阿卡西斯",
+        "洛可洛斯"
+      ],
+      "exact_unicode_name_matches": 4
+    }
+  ],
+  "exact_name_matches": 8,
+  "evidence_grade": "PRE2019_PLAYER_LITERAL_NAME_ATTESTATION_NOT_OFFICIAL_SAME_PET_ID",
+  "player_source_bounded": true,
+  "no_promotion": {
+    "not_2006_official_issuance": true,
+    "not_2019_global_first_release": true,
+    "not_cross_year_same_pet_identity": true,
+    "not_2006_2019_same_build_sprite_or_skill": true,
+    "not_original_fusion_formula_verified": true,
+    "not_eight_new_2019_species": true,
+    "no_original_program_or_copyright_images_in_git": true,
+    "no_mobile_or_dual_end_content": true,
+    "no_paid_marketplace_or_login_download": true
+  },
+  "source_access": {
+    "new_classic_pc_original_client_bytes": 0,
+    "new_original_pet_id_spr_binding": 0,
+    "korean_netmarble120": {
+      "url": "https://lab.welovesa.com/viewthread.php?tid=2117",
+      "already_audited": "docs/specs/STONEAGE-KR-NETMARBLE120-R27.md",
+      "status": "GUEST_LOGIN_REQUIRED_NO_NEW_BYTES_NOT_PROVEN_2000_OFFICIAL"
+    },
+    "china_sina2003": {
+      "url": "https://games.sina.com.cn/zhqu/sta/download.shtml",
+      "already_audited": "research/recovered/STONEAGE-SINA-DOWNLOAD-TARGETS-R1.txt",
+      "status": "HISTORICAL_TARGETS_REGISTERED_NO_NEW_PAYLOAD_BYTES"
+    }
+  },
+  "preserved_state": {
+    "year2019": "SOURCE_BOUNDED_REVIEWED",
+    "year2019_historically_complete": false,
+    "year2026": "NOT_YEAR_AUDITED",
+    "pet_module": "SOURCE_BOUNDED_PARTIAL",
+    "source_bounded_closed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "completion_percent": null
+  },
+  "next": "PET126J audit unmerged PR545 source-qualified TW1 CP950 byte literals, compare with already merged PET126D/E to retain only nonduplicative evidence; source-first original official classic PC client bytes remain priority"
+}
