@@ -3178,3 +3178,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-21 — PET-PROFILE-BATCH05｜原PC宠物逐只档案增至85份
 
 新增布克布克到斯天多斯30份部分档案，累计自主编号PET-000001至PET-000085共85份（全PARTIAL），原认证台湾1.0经典PC源具名相簿候选仍124条，待逐只建档39条，原服完整历史验收0只，真实发行物种总数未知。详见[124条总表](docs/pets/INDEX.md)、[永久编号登记](research/pets/PET-ID-REGISTRY-R1.json)、[本次详细原证审计](docs/continuity/STONEAGE-PET-PROFILES-BATCH05-20261121.md)。只在原证范围内填写各自2D图、SHA、头像和动作；成长、初值、技能、捕捉与官服实际发放缺证均null；没有新增原客户端字节、公开原商业图片或真实官服宠物证明。2026 NOT_YEAR_AUDITED，PET唯一，Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停，总体UNKNOWN；CURRENT-STATE.md 2,709,173字节原blob c89e0e33537990aa2132b47c40fef49a985a935c 保留。NEXT PET-000086。
+
+
+## 2026-11-21 — PET-PROFILES-BATCH06｜台湾1.0经典PC来源124条全部已有逐只源级档案
+
+[完整124项索引](docs/pets/INDEX.md) · [自主编号总簿](research/pets/PET-ID-REGISTRY-R1.json) · [第六批39份原证收据](docs/continuity/STONEAGE-PET-PROFILES-BATCH06-20261121.md)。已由PET-000085推进至PET-000124，**124份均为PARTIAL客户端具名图形候选档案，官服真实发宠及完整历史验收仍0**；四份第116–119号原客户端头像RD未定位并保留null，第110/111号跨版原名不同保留异文。剩余待建档来源候选0，但其他官方经典PC地区/年份与实际发放、属性、成长、技能、捕捉不完整，PET模块不关闭。下步PET-DETAIL-EVIDENCE-01逐项补同版原服证据，拒绝手游/私服/付费卖盘与跨服统计推断。完整历史CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`未动；Stage A 7PARTIAL+2OPEN，Stage B/wiki GATED，R79暂停，项目总体完成率UNKNOWN。

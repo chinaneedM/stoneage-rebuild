@@ -131,8 +131,15 @@ class PETIndividualProfilesR1(unittest.TestCase):
             self.assertEqual(dossier["appearance"]["graphic_number"],a["graphic_number"])
             self.assertEqual(dossier["appearance"]["spr_group_index"],m["group_index"])
             self.assertEqual(dossier["appearance"]["full_original_spr_segment_sha256"],a["spr_original_segment_sha256"])
-            self.assertEqual(dossier["appearance"]["portrait"]["source_rd_sha256"],a["portrait_rd"]["sha256"])
-            self.assertEqual(dossier["appearance"]["portrait"]["source_rd_bitmap_number"],a["portrait_rd"]["bitmap_number"])
+            self.assertEqual(dossier["appearance"]["portrait"]["original_logical_alias"],a["portrait_logical_alias"])
+            if a["portrait_rd"]:
+                self.assertEqual(dossier["appearance"]["portrait"]["status"],"VERIFIED_CLIENT_LOCAL")
+                self.assertEqual(dossier["appearance"]["portrait"]["source_rd_sha256"],a["portrait_rd"]["sha256"])
+                self.assertEqual(dossier["appearance"]["portrait"]["source_rd_bitmap_number"],a["portrait_rd"]["bitmap_number"])
+            else:
+                self.assertEqual(dossier["appearance"]["portrait"]["status"],"OPEN_NOT_PROVEN")
+                self.assertIsNone(dossier["appearance"]["portrait"]["source_rd_sha256"])
+                self.assertIsNone(dossier["appearance"]["portrait"]["source_rd_bitmap_number"])
             self.assertEqual(dossier["appearance"]["action_sequences"]["source_sequences"],m["source_sequences"])
             self.assertEqual(dossier["appearance"]["action_sequences"]["source_distinct_bitmap_numbers"],m["distinct_bitmaps"])
             if i>=5:
@@ -178,5 +185,18 @@ class PETIndividualProfilesR1(unittest.TestCase):
         self.assertFalse(special["actual_official_pet_identity"]["official_living_pet_release_proven"])
         for ob in registry["source_observations"][len(registry["catalog_entries"]):]:
             self.assertIsNone(ob["assigned_catalog_pet_id"])
+        # Four TW1 original local portrait aliases lack located RD blobs; preserve null rather than inventing art.
+        for ordinal,graphic in ((116,100389),(117,100390),(118,100391),(119,100392)):
+            self.assertEqual(registry["catalog_entries"][ordinal-1]["legacy_dossier_key"],"TW10-G"+str(graphic))
+            no_rd=read(P/("profiles/TW10-G"+str(graphic)+".json"))
+            self.assertEqual(no_rd["appearance"]["portrait"]["status"],"OPEN_NOT_PROVEN")
+            self.assertIsNone(no_rd["appearance"]["portrait"]["source_rd_sha256"])
+            self.assertEqual(no_rd["appearance"]["action_sequences"]["source_sequences"],56)
+        for ordinal in (110,111):
+            v=read(ROOT/registry["catalog_entries"][ordinal-1]["machine_dossier_path"])
+            self.assertEqual(v["names"]["cross_carrier_original_compiled_relation"]["cn50_relation_class"],"NON_ORTHOGRAPHIC_SOURCE_LITERAL_VARIANT")
+            self.assertIn("non_orthographic_warning",v["names"]["cross_carrier_original_compiled_relation"])
+        self.assertEqual(read(ROOT/registry["catalog_entries"][123]["machine_dossier_path"])["appearance"]["graphic_number"],100430)
+
 
 if __name__=="__main__":unittest.main()
