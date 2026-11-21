@@ -1,0 +1,123 @@
+{
+  "schema": "stoneage.pet126p.cn50_album13_305x80_plus16_original_pe_compiled_access_r1",
+  "date": "2026-11-21",
+  "active_module": "PET",
+  "scope": "ORIGINAL_CLASSIC_2D_PC_ONLY",
+  "base_main": "f4de4cbfa2d927c80b93c7d02f3ad97478c38bde",
+  "source": {
+    "carrier": "THIRD_PARTY_PRESERVED_CN50_5_0_PC_NOT_INDEPENDENTLY_CERTIFIED_OFFICIAL_PRESSING",
+    "program": "sa_5000.exe",
+    "bytes": 630784,
+    "sha256": "5dbcc3fa276f9f245fb706bce957e9c3300d870df813889502b789b727e49c97",
+    "source_album_name_sha256": "ba3ad4db233971ee5d9603cdbded6b871f73082445f1ca51d02f0fdf0314d39b",
+    "same_original_cab_sha256": "cb414ad1ef4cc7925ec429ec088d0146892834c72667d1af82c8075d09f1683b",
+    "source_executable_executed": false,
+    "original_commercial_exe_or_album_bytes_published": false
+  },
+  "actual_source_replay": {
+    "run_id": 44875250993,
+    "job_id": 136758465132,
+    "action_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/44875250993",
+    "real_source_sha_check": "success",
+    "test_synthetic": "success",
+    "verified_source_commit": "88d8ebcdc2d2e3499f3ee25a0f0e3894c683815c",
+    "probe": "tools/stoneage_pet126p_cn50_album_io.py"
+  },
+  "input_name_table": {
+    "original_compiled_rows": 362,
+    "populated_names": 305,
+    "blank_slots": 57,
+    "populated_unique_raw_first_i32": 305,
+    "first_i32_min": 0,
+    "first_i32_max": 304,
+    "exact_coverage": "ALL_INTEGERS_0_THROUGH_304",
+    "source_layout_row_bytes": 28,
+    "first_i32_is_official_pet_species_id_proven": false
+  },
+  "original_local_file": {
+    "filename_literal": "data\\album_13.dat",
+    "mode_literal": "r+b",
+    "mode_and_name_original_PE_bytes_replayed": true,
+    "installer_archive_verified_member_count": 413,
+    "matched_installer_members_with_album_name": 0,
+    "local_album_runtime_file_obtained": false,
+    "local_album_full_length_or_contents_verified": false
+  },
+  "original_native_source_path": {
+    "compiled_native_entry": "0x430665",
+    "bounded_source_instruction_count": 83,
+    "within_original_text_returns": [
+      4392776
+    ],
+    "compiled_index_guard_uses_upper_bound": 362,
+    "source_original_compiled_buffer_start_va": "0x3300ca8",
+    "first_global_offset_source": [
+      "mov eax,ds:0x332fa48",
+      "imul eax,eax,0x5f60",
+      "push ebx",
+      "push eax",
+      "push edi",
+      "call 0x45ed40"
+    ],
+    "second_relative_offset_source": [
+      "lea esi,[esi+esi*4]",
+      "push 0x1",
+      "shl esi,0x4",
+      "lea eax,[esi+0x10]",
+      "push eax",
+      "push edi",
+      "call 0x45ed40"
+    ],
+    "record_buffer_call_source": [
+      "lea eax,[esi+0x3300ca8]",
+      "push ebx",
+      "push 0x50",
+      "push eax",
+      "call 0x45f018"
+    ],
+    "after_record_call_source": [
+      "add esp,0x10",
+      "cmp eax,ebx",
+      "jb 0x430720",
+      "call 0x45ef9b"
+    ],
+    "local_global_file_block_stride_hex": "0x5f60",
+    "local_global_file_block_stride_dec": 24416,
+    "native_compiled_per_row_file_width_hex": "0x50",
+    "native_compiled_per_row_file_width_dec": 80,
+    "potential_block_header_bytes": 16,
+    "derived_exact_arithmetic": "24416 == 16 + 305 * 80",
+    "possible_row_slot_last_record_index": 304,
+    "last_record_relative_start_offset": 24336,
+    "last_record_exclusive_end_offset": 24416,
+    "unique_key_range_fits_entire_candidate_block": true,
+    "first_global_multiplier_semantics_unidentified": true,
+    "seek_and_read_semantics": "SOURCE_CALL_SIGNATURE_AND_OPERANDS_MATCH_SEEK_PLUS_FIXED_80_BYTE_READ_BUT_HELPER_SYMBOLS_NOT_INDEPENDENTLY_AUTHENTICATED",
+    "helper_calls": {
+      "file_open_candidate": "0x45f182",
+      "seek_candidate": "0x45ed40",
+      "record_read_candidate": "0x45f018",
+      "handle_close_candidate": "0x45ef9b"
+    }
+  },
+  "grading": {
+    "compiled_client_file_access_layout": "SOURCE_VERIFIED_STATIC_FIXED_WIDTH_80BYTE_FILE_ACCESS_CANDIDATE",
+    "actual_original_runtime_album_file_content": "MISSING",
+    "compiled_name_to_spr_image_group": "NOT_PROVEN",
+    "one_raw_first_i32_is_official_pet_species_id": "NOT_PROVEN",
+    "species_officially_released_new_count": 0,
+    "program_reachability_not_proven": true,
+    "per_global_stride_really_per_player_or_account_unknown": true,
+    "does_not_prove_exact_original_disk_header_or_all_records_present": true,
+    "no_new_avatar_model_or_skill_data": true,
+    "no_mobile_or_paid_sources": true,
+    "year_2026": "NOT_YEAR_AUDITED",
+    "pet_closed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null,
+    "original_current_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "next": "PET126Q: independently qualify exact native seek/read/open helper meanings only if source-bounded, then prioritize original same-build pet name graphic SPR/REAL linkage and official release proof."
+}
