@@ -1,0 +1,49 @@
+name: PET126Q source-bounded PC 5.0 album file-helper forwarding
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet126q_cn50_helper_forward.py'
+      - 'tests/test_stoneage_pet126q_cn50_helper_forward.py'
+      - '.github/workflows/validate-stoneage-pet126q-cn50-helper-forward.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet126q_cn50_helper_forward.py'
+      - 'tests/test_stoneage_pet126q_cn50_helper_forward.py'
+      - '.github/workflows/validate-stoneage-pet126q-cn50-helper-forward.yml'
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_pet126q_cn50_helper_forward.py' -v
+  original-static:
+    if: github.event_name == 'push'
+    needs: synthetic
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq cabextract binutils
+      - name: Rehydrate source-bounded privately preserved original PC CAB
+        run: python -m tools.stoneage_stoneage5_battle_extract_probe --output-cab /tmp/pet126q.cab --prefix-bytes 12582912
+      - name: Validate original EXE SHA and bounded core helper forwarding
+        run: |
+          mkdir -p /tmp/pet126q-private
+          cabextract -q -F sa_5000.exe -d /tmp/pet126q-private /tmp/pet126q.cab
+          python -m tools.stoneage_pet126q_cn50_helper_forward --program /tmp/pet126q-private/sa_5000.exe --output /tmp/pet126q-derived.json
+          echo PET126Q_BEGIN
+          cat /tmp/pet126q-derived.json
+          echo PET126Q_END
+      - name: Delete original source bytes from runner
+        if: always()
+        run: rm -rf /tmp/pet126q.cab /tmp/pet126q-private
