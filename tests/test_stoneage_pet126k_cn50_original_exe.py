@@ -30,7 +30,7 @@ class PET126KSourceBoundary(unittest.TestCase):
   self.assertEqual(result["counts"],{"populated":181,"empty":181,"unparsed":0})
   tables=table_candidates(buf,"gb18030")
   self.assertEqual(len(tables),1)
-  self.assertEqual(tables[0]["rows"],300)  # static helper's conservative 300-row reporting cap
+  self.assertEqual(tables[0]["rows"],362)
  def test_malformed_not_promoted(self):
   bad=struct.pack("<i20sI",7,"寵物".encode("cp950")+bytes(16),0)
   self.assertIsNone(parse_row(bad,0,"cp950"))

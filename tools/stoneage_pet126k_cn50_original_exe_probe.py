@@ -49,7 +49,7 @@ def table_candidates(raw,codec,min_rows=10):
   if parse_row(raw,offset,codec) is None:
    offset+=1;continue
   rows=[];pos=offset
-  while len(rows)<300:
+  while len(rows)<2000:
    row=parse_row(raw,pos,codec)
    if row is None:break
    rows.append(row);pos+=28
