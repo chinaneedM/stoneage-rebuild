@@ -485,3 +485,7 @@ PET27只负责PET年份游标；今后其它内容模块仍按相同历史年份
 ## 2026-11-21｜PET126M：大陆5.0原PC名称表首数字字段的真实指令路径
 
 [PET126M反汇编源限定说明](continuity/STONEAGE-PET126M-CN50-PE32-THREE-TABLE-REFERENCES-20261121.md)／[PET126M机读原件验收](../research/recovered/STONEAGE-PET126M-CN50-PE32-THREE-NAME-REFERENCE-STATIC-INSTRUCTION-R1.json)：已核原EXE真实 `.text` 三地址文件偏移199700、200343、214772均属于可解码指令；两处用28B相册行宽，读取表首i32再通过乘5和移4位获得80B记录寻址，另一处也检空位-1。**实际程序字段读取/80B索引是证据，80B内存记录与ADRN同长度不等于已证图形选择器。** 初次审计脚本目标VA校验错误曾令CI失败，修复后真实源重放[Action44870583521](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/44870583521)及合成测试success。新官服实发宠0，年份2026继续OPEN，PET唯一活动；**NEXT PET126N 限定同源80B记录身份与原图形连接**。CURRENT原blob不变，StageA7PARTIAL+2OPEN，B/wiki GATED，R79暂停，总体UNKNOWN。
+
+## 2026-11-21｜PET126N 大陆5.0经典PC的362编译名称槽与80B运行时状态结构
+
+[PET126N原件审核](continuity/STONEAGE-PET126N-CN50-80BYTE-RUNTIME-SLOT-20261121.md)／[机器收据](../research/recovered/STONEAGE-PET126N-CN50-ORIGINAL-80BYTE-RUNTIME-SLOT-SOURCE-R1.json)：第三方保存大陆5.0 PC EXE整SHA重取；原PE `.data`仅180224B文件承载、54301716B虚拟段。程序原指令将全局数设0x16A=362，名字表28B行首i32用于80B运行时记录寻址，`0x3300ca8`为槽首、`0x3300cf4`为槽内+76状态字段；原指令检查0及设置1/2，名称字串地址及槽指针共同进入辅助函数0x45f560。目标字段及±80B地址有37处静态字面引用（6+31）。真实源检验[Action44872812525](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/44872812525)成功，但尚未证实这是ADRN磁盘记录、SPR选择器、真实可运行功能或官服实发物种。PET唯一活动，2026仍OPEN，官方新增物种0，NEXT **PET126O** 限定函数与图像链；原CURRENT及Stage A 7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall百分比UNKNOWN不变。
