@@ -3128,3 +3128,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-21 — PET126R｜完整原PC编译宠物名录：362槽与静态图像候选
 
 [本轮说明](docs/continuity/STONEAGE-PET126R-CN50-362-SLOT-ALBUM-SPR-NATIVE-U32-20261121.md)／[可查362槽源派生目录](research/recovered/STONEAGE-PET126R-CN50-PC-ORIGINAL-ALBUM-FULL-362-SLOT-SOURCE-CATALOGUE-R1.json)：CN5.0第三方保存经典PC编译表305具名/57空，以TW1版别图号假设对190条具名源找到同CAB SPR组、与经认证TW1的124段全SHA相等；编译 `.text` 原+24字段转发到运行时+36，**仍无CN5原生选择器或官方发宠证明**。新 source Actions 44880073848 验收成功，完整历史 CURRENT blob不变，NEXT PET126S限定核同源图像消费者，否则进入宠物七维有界终审；PET唯一／2026开放／总进度UNKNOWN。
+
+
+## 2026-11-21 — PET126S｜原大陆5.0 PC相册+36字段真实调用证据与七维缺口
+
+[原件分析](docs/continuity/STONEAGE-PET126S-CN50-ALBUM-U32-EXACT-CONSUMER-SEVEN-DIMENSION-20261121.md)／[真实原程序指令源派生](research/recovered/STONEAGE-PET126S-CN50-PC-ORIGINAL-RUNTIME-ALBUM-U32-CONSUMER-R1.json)／[七维/六地缺口](research/recovered/STONEAGE-PET126S-PET20-PC-SEVEN-DIMENSION-SOURCE-DELTA-R1.json)：实际Actions原件SHA重放仅2处直接+36绝对引用，写0x434774、读0x439f0e，读数传0x453b68第4参且目标在有限指令中写入内部存储，**未证SPR渲染或官服实际宠物**；停止泛CRT继续PET七维最终来源审查。原游戏不执行，商业EXE/CAB/原素材不公开，CURRENT原blob不变，2026开放、PET未完成、NPC未解锁、总体UNKNOWN。
