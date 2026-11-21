@@ -3108,3 +3108,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-21 — PET126I｜2006玩家八个已见宠物名与2019活动名字分年对照
 
 [有界对照报告](docs/continuity/STONEAGE-PET126I-2006-2019-EIGHT-NAME-BACKFILL-20261121.md)／[跨年同名字面机读记录](research/recovered/STONEAGE-PET126I-2006-2019-EIGHT-NAME-RECONCILIATION-R1.json)：从旧未合并PR #532 回收2006/11/29玩家来源、比对主线2019PET116的肥龙「奧普薩斯／利普多爾／邦克普斯／拉佛洛斯」和海怪／海龙「畢格艾斯／裘比斯／阿卡西斯／洛可洛斯」，8个原字在2006已见，不可把2019活动回述误记为全球首次出现；**2006原官方同服发宠、两年同一PET ID/SPR/技能均未证**。2019主线已 `SOURCE_BOUNDED_REVIEWED`，不回退旧PR的2019待审游标；2026仍 `NOT_YEAR_AUDITED`、PET仍 `SOURCE_BOUNDED_PARTIAL`。当轮无新增原PC安装/补丁字节、官服物种或原始实体主档；韩国论坛须登录与大陆2003 FTP旧死链早有来源审计，禁止重记下载成功。下一 PET126J 审核旧PR #545的TW1原CP950文字与已合并PET126D/E重叠；保留所有版权与CURRENT原blob、StageA7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体百分比UNKNOWN。
+
+
+## 2026-11-21 — PET126J｜台湾原 PC 1.0 CP950 宠物选择文字证据：旧PR #545去重归档
+
+[原文字节偏移及主线同源去重](docs/continuity/STONEAGE-PET126J-TW10-ORIGINAL-CP950-PET-CHOICE-RECONCILIATION-20261121.md)／[9短字样10偏移的旧原客户端派生摘要](research/recovered/STONEAGE-PET126J-TW10-CP950-PET-CHOICE-DIFFERENTIAL-R1.json)：旧PR #545 的TW1原 `sa_3.exe` 精确CP950原字及哈希与主线PET126D/E的**同一官方原版程序**一致；其中7短字样已有主线交叉引用，另保留 `請選擇寵物`（原偏移366255/366334）与 `請選擇寵物或是隊友`（366334）两项原字形，重复偏移是**子串包含**不是两个独立选择窗口。**本轮仅复核旧 Git 派生源未重读私有EXE，0新客户端/物种/技能/同服主档**；保留原PET126D/E静态判断及2026未审年游标，不合并过时旧PR PET27变化。NEXT PET126K只继续寻找可合法免费取得的正式原经典PC客户端/补丁、同版PET主档。原CURRENT Git blob `c89e0e33537990aa2132b47c40fef49a985a935c` 不变，PET仍部分、StageA7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体UNKNOWN。
