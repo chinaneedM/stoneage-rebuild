@@ -1,6 +1,6 @@
 import unittest
 from tools.stoneage_pet126r_cn50_source_catalogue import (
-    album_index,instruction_exact_sites
+    album_index,instruction_exact_sites,actual_native_tail_field_bridge
 )
 
 class PET126R(unittest.TestCase):
@@ -27,6 +27,20 @@ class PET126R(unittest.TestCase):
         self.assertTrue(all(not x["CN50_name_to_SPR_native_selector_proven"] for x in entries))
         self.assertTrue(all(not x["original_official_live_pet_release_proven"] for x in entries))
         self.assertTrue(all(x["original_server_species_identifier"] is None for x in entries))
+    def test_real_original_native_tail_transfer_is_adjacent_not_graphic_proof(self):
+        start=0x43476e
+        code=[
+            {"address":start,"instruction":"mov    eax,DWORD PTR [eax+0x482f80]"},
+            {"address":start+6,"instruction":"mov    DWORD PTR [edi+0x3300ccc],eax"}
+        ]
+        result=actual_native_tail_field_bridge(code)
+        self.assertEqual(result["read_compiled_table_relative_byte_offset"],24)
+        self.assertEqual(result["write_runtime_record_relative_byte_offset"],36)
+        self.assertTrue(result["exact_original_static_adjacent_operand_transfer_verified"])
+        self.assertTrue(result["this_is_not_SPR_selector_or_ADRN_alias_runtime_proof"])
+        wrong=[code[0],dict(code[1],instruction="mov    DWORD PTR [edi+0x3300ccc],edx")]
+        with self.assertRaises(ValueError):actual_native_tail_field_bridge(wrong)
+
     def test_invalid_group_duplicate_rejected(self):
         rows=[{"ordinal":i,"name":"无","raw_i32":-1,"raw_u32":0,"raw_record":b" "*28} for i in range(362)]
         groups=[{"spr_no":"1","index":str(i),"segment_sha256":"x"} for i in range(1185)]

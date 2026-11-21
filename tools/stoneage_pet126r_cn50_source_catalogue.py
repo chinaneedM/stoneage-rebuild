@@ -46,6 +46,40 @@ def instruction_exact_sites(code, candidates, cap=10):
                        "contexts_truncated":len(hits)>cap}
     return results
 
+def actual_native_tail_field_bridge(code):
+    """A bounded *adjacent* original PE32 value move, not source pet identity.
+
+    Native instruction at 0x43476e reads source compiled table base+24 using
+    the incoming index; the next decoded instruction writes that same EAX
+    into an indexed slot at runtime base 0x3300ca8+36. We have NOT proven
+    the runtime instance to be SPR/REAL graphics or live original game play.
+    """
+    target=0x43476e
+    i=next((i for i,row in enumerate(code) if row["address"]==target),None)
+    if i is None or i+1>=len(code):
+        raise ValueError("source-field-bridge-native-entry-missing")
+    source=code[i]["instruction"]
+    write=code[i+1]["instruction"]
+    if source!="mov    eax,DWORD PTR [eax+0x482f80]":
+        raise ValueError("original-plus24-source-read-not-identical")
+    if write!="mov    DWORD PTR [edi+0x3300ccc],eax":
+        raise ValueError("original-plus36-runtime-record-write-not-identical")
+    return {
+        "source_read_va":hex(target),
+        "source_read_instruction":source,
+        "same_EAX_immediate_following_write_va":hex(code[i+1]["address"]),
+        "same_EAX_immediate_following_write_instruction":write,
+        "read_compiled_table_relative_byte_offset":24,
+        "write_runtime_record_relative_byte_offset":0x3300ccc-0x3300ca8,
+        "source_compiled_table_base_va":hex(0x482f68),
+        "runtime_record_base_va":hex(0x3300ca8),
+        "exact_original_static_adjacent_operand_transfer_verified":True,
+        "register_index_origin_and_runtime_reachability_not_proven":True,
+        "this_is_not_SPR_selector_or_ADRN_alias_runtime_proof":True,
+        "native_original_client_not_executed":True
+    }
+
+
 def album_index(raw_rows, group_rows, tw_records):
     """All 362 real named/blank positions; full names are factual metadata only."""
     if len(raw_rows)!=362:
@@ -169,6 +203,7 @@ def inspect(path:Path):
         "historical_total_species":None
       },
       "original_source_native_table_and_graphic_literal_sites":sites,
+      "native_tail_field_into_80_byte_slot_bounded_source":actual_native_tail_field_bridge(code),
       "source_table_original_mapping_va":hex(tableva),
       "catalogue_record_status":"CN50_CLIENT_COMPILED_ALBUM_NAME_PLUS_ORDINAL_GRAPHIC_HYPOTHESIS_ONLY",
       "records":entries,
