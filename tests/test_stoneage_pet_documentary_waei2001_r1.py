@@ -130,7 +130,7 @@ class PETDetailEvidence01Waei2001(unittest.TestCase):
             self.assertIn("[" + e["pet_id"] + "]", view)
         self.assertIn("0041（", view)
         self.assertIn("0103（", view)
-        self.assertIn("不是官服", view)
+        self.assertIn("不能代表运营方正式PET主档", view)
         self.assertIn("玩家", (ROOT / "docs/pets/INDEX.md").read_text(encoding="utf-8"))
 
 if __name__ == "__main__": unittest.main()
