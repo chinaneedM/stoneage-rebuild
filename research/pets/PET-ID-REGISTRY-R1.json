@@ -8,7 +8,7 @@
       "PET-000001",
       "PET-000002"
     ],
-    "next_unassigned_catalog_pet_id": "PET-000002",
+    "next_unassigned_catalog_pet_id": "PET-000006",
     "source_observation_pattern": "OBS-[A-Z0-9]+-[0-9]{4}",
     "source_observation_example": "OBS-TW10-0001",
     "catalog_id_meaning": "INTERNAL_CATALOG_DOSSIER_HANDLE_NOT_GAME_SERVER_SPECIES_ID",
@@ -25,8 +25,8 @@
   },
   "counts": {
     "source_observation_rows": 124,
-    "assigned_catalog_pet_ids": 1,
-    "unassigned_source_observations": 123,
+    "assigned_catalog_pet_ids": 5,
+    "unassigned_source_observations": 119,
     "fully_historically_verified_official_pet_species": 0,
     "global_original_classic_pc_pet_count": null
   },
@@ -45,6 +45,66 @@
       "legacy_dossier_key": "TW10-G100250",
       "machine_dossier_path": "research/pets/profiles/TW10-G100250-WULI.json",
       "visible_dossier_path": "docs/pets/TW10-G100250-WULI.md"
+    },
+    {
+      "catalog_pet_id": "PET-000002",
+      "display_name_simplified": "乌力乌力",
+      "original_client_name": "烏力烏力",
+      "source_scope": "TW10_RETAIL_PC_LOCAL_ALBUM",
+      "evidence_status": "PROVISIONAL_CLIENT_LOCAL_NOT_VERIFIED_LIVE_SPECIES",
+      "observations": [
+        "OBS-TW10-0002"
+      ],
+      "historically_verified_official_species": false,
+      "official_server_pet_id": null,
+      "legacy_dossier_key": "TW10-G100251",
+      "machine_dossier_path": "research/pets/profiles/TW10-G100251.json",
+      "visible_dossier_path": "docs/pets/TW10-G100251.md"
+    },
+    {
+      "catalog_pet_id": "PET-000003",
+      "display_name_simplified": "乌力斯坦",
+      "original_client_name": "烏力斯坦",
+      "source_scope": "TW10_RETAIL_PC_LOCAL_ALBUM",
+      "evidence_status": "PROVISIONAL_CLIENT_LOCAL_NOT_VERIFIED_LIVE_SPECIES",
+      "observations": [
+        "OBS-TW10-0003"
+      ],
+      "historically_verified_official_species": false,
+      "official_server_pet_id": null,
+      "legacy_dossier_key": "TW10-G100252",
+      "machine_dossier_path": "research/pets/profiles/TW10-G100252.json",
+      "visible_dossier_path": "docs/pets/TW10-G100252.md"
+    },
+    {
+      "catalog_pet_id": "PET-000004",
+      "display_name_simplified": "乌力布鲁",
+      "original_client_name": "烏力布魯",
+      "source_scope": "TW10_RETAIL_PC_LOCAL_ALBUM",
+      "evidence_status": "PROVISIONAL_CLIENT_LOCAL_NOT_VERIFIED_LIVE_SPECIES",
+      "observations": [
+        "OBS-TW10-0004"
+      ],
+      "historically_verified_official_species": false,
+      "official_server_pet_id": null,
+      "legacy_dossier_key": "TW10-G100253",
+      "machine_dossier_path": "research/pets/profiles/TW10-G100253.json",
+      "visible_dossier_path": "docs/pets/TW10-G100253.md"
+    },
+    {
+      "catalog_pet_id": "PET-000005",
+      "display_name_simplified": "布比",
+      "original_client_name": "布比",
+      "source_scope": "TW10_RETAIL_PC_LOCAL_ALBUM",
+      "evidence_status": "PROVISIONAL_CLIENT_LOCAL_NOT_VERIFIED_LIVE_SPECIES",
+      "observations": [
+        "OBS-TW10-0005"
+      ],
+      "historically_verified_official_species": false,
+      "official_server_pet_id": null,
+      "legacy_dossier_key": "TW10-G100254",
+      "machine_dossier_path": "research/pets/profiles/TW10-G100254.json",
+      "visible_dossier_path": "docs/pets/TW10-G100254.md"
     }
   ],
   "source_observations": [
@@ -74,7 +134,7 @@
       "source_spr_segment_sha256": "073278ba6ae1e623eea969deef11f99fd9be8b995af332506e830bd046c86764",
       "cn50_preserved_compiled_name_corroboration": "乌力乌力",
       "cn50_qualified_as_official_pressing": false,
-      "assigned_catalog_pet_id": null,
+      "assigned_catalog_pet_id": "PET-000002",
       "source_evidence_class": "CLIENT_NAMED_GRAPHIC_CANDIDATE_NOT_LIVE_SPECIES",
       "official_live_release_verified": false
     },
@@ -89,7 +149,7 @@
       "source_spr_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
       "cn50_preserved_compiled_name_corroboration": "乌力斯坦",
       "cn50_qualified_as_official_pressing": false,
-      "assigned_catalog_pet_id": null,
+      "assigned_catalog_pet_id": "PET-000003",
       "source_evidence_class": "CLIENT_NAMED_GRAPHIC_CANDIDATE_NOT_LIVE_SPECIES",
       "official_live_release_verified": false
     },
@@ -104,7 +164,7 @@
       "source_spr_segment_sha256": "9796944a8c54a33832a8d3a89349bbdd86629fdc437d21fb163645d8c253802b",
       "cn50_preserved_compiled_name_corroboration": "乌力布鲁",
       "cn50_qualified_as_official_pressing": false,
-      "assigned_catalog_pet_id": null,
+      "assigned_catalog_pet_id": "PET-000004",
       "source_evidence_class": "CLIENT_NAMED_GRAPHIC_CANDIDATE_NOT_LIVE_SPECIES",
       "official_live_release_verified": false
     },
@@ -119,7 +179,7 @@
       "source_spr_segment_sha256": "764763f8dba2b73de6849f25d55fecdb5aac2433e90a93255a58b7ce2db184a7",
       "cn50_preserved_compiled_name_corroboration": "布比",
       "cn50_qualified_as_official_pressing": false,
-      "assigned_catalog_pet_id": null,
+      "assigned_catalog_pet_id": "PET-000005",
       "source_evidence_class": "CLIENT_NAMED_GRAPHIC_CANDIDATE_NOT_LIVE_SPECIES",
       "official_live_release_verified": false
     },

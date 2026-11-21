@@ -14,10 +14,10 @@
   },
   "per_pet_profile_counts": {
     "source_indexed_candidate_rows": 124,
-    "individual_detailed_profiles": 1,
-    "individual_detailed_partial_profiles": 1,
+    "individual_detailed_profiles": 5,
+    "individual_detailed_partial_profiles": 5,
     "fully_historically_verified_pet_profiles": 0,
-    "individual_profiles_not_yet_created_for_candidates": 123
+    "individual_profiles_not_yet_created_for_candidates": 119
   },
   "completeness_basis": {
     "full_pet_requirements": [
@@ -51,6 +51,54 @@
       "public_machine_profile_path": "research/pets/profiles/TW10-G100250-WULI.json",
       "source_observation_id": "OBS-TW10-0001",
       "legacy_source_key": "TW10-G100250"
+    },
+    {
+      "profile_id": "PET-000002",
+      "name_original": "烏力烏力",
+      "name_simplified": "乌力乌力",
+      "graphic_number": 100251,
+      "region_version": "TW1.0",
+      "status": "PARTIAL_EVIDENCE_PROFILE",
+      "public_profile_path": "docs/pets/TW10-G100251.md",
+      "public_machine_profile_path": "research/pets/profiles/TW10-G100251.json",
+      "source_observation_id": "OBS-TW10-0002",
+      "legacy_source_key": "TW10-G100251"
+    },
+    {
+      "profile_id": "PET-000003",
+      "name_original": "烏力斯坦",
+      "name_simplified": "乌力斯坦",
+      "graphic_number": 100252,
+      "region_version": "TW1.0",
+      "status": "PARTIAL_EVIDENCE_PROFILE",
+      "public_profile_path": "docs/pets/TW10-G100252.md",
+      "public_machine_profile_path": "research/pets/profiles/TW10-G100252.json",
+      "source_observation_id": "OBS-TW10-0003",
+      "legacy_source_key": "TW10-G100252"
+    },
+    {
+      "profile_id": "PET-000004",
+      "name_original": "烏力布魯",
+      "name_simplified": "乌力布鲁",
+      "graphic_number": 100253,
+      "region_version": "TW1.0",
+      "status": "PARTIAL_EVIDENCE_PROFILE",
+      "public_profile_path": "docs/pets/TW10-G100253.md",
+      "public_machine_profile_path": "research/pets/profiles/TW10-G100253.json",
+      "source_observation_id": "OBS-TW10-0004",
+      "legacy_source_key": "TW10-G100253"
+    },
+    {
+      "profile_id": "PET-000005",
+      "name_original": "布比",
+      "name_simplified": "布比",
+      "graphic_number": 100254,
+      "region_version": "TW1.0",
+      "status": "PARTIAL_EVIDENCE_PROFILE",
+      "public_profile_path": "docs/pets/TW10-G100254.md",
+      "public_machine_profile_path": "research/pets/profiles/TW10-G100254.json",
+      "source_observation_id": "OBS-TW10-0005",
+      "legacy_source_key": "TW10-G100254"
     }
   ],
   "duplicate_avoidance": "TW1 124 named album candidates and CN5 305 compiled album names are NOT summable populations; across-version same bytes/name is not same-deployment Pet ID.",
@@ -68,10 +116,10 @@
   "internal_id_registry": {
     "path": "research/pets/PET-ID-REGISTRY-R1.json",
     "policy_doc": "docs/pets/ID-SCHEME.md",
-    "allocated_pet_catalog_ids": 1,
+    "allocated_pet_catalog_ids": 5,
     "tw10_source_observation_ids": 124,
-    "source_observations_without_pet_catalog_number": 123,
-    "next_free_catalog_id": "PET-000002",
+    "source_observations_without_pet_catalog_number": 119,
+    "next_free_catalog_id": "PET-000006",
     "global_pet_count_known": false
   }
 }

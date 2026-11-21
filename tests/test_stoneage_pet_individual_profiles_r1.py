@@ -34,7 +34,7 @@ class PETIndividualProfilesR1(unittest.TestCase):
         self.assertEqual((expected["tw10_original_client_named_album_candidates"],expected["tw10_named_with_spr_source_actions"],expected["tw10_named_with_portrait_rd"],expected["tw10_named_missing_portrait_rd"]),(124,124,120,4))
         self.assertEqual(expected["cn50_preserved_compiled_named_slots_independent_nonadditive"],305)
         c=self.progress["per_pet_profile_counts"]
-        self.assertEqual((c["source_indexed_candidate_rows"],c["individual_detailed_profiles"],c["individual_detailed_partial_profiles"],c["fully_historically_verified_pet_profiles"],c["individual_profiles_not_yet_created_for_candidates"]),(124,1,1,0,123))
+        self.assertEqual((c["source_indexed_candidate_rows"],c["individual_detailed_profiles"],c["individual_detailed_partial_profiles"],c["fully_historically_verified_pet_profiles"],c["individual_profiles_not_yet_created_for_candidates"]),(124,5,5,0,119))
         self.assertIsNone(self.progress["boundaries"]["all_pet_species_historical_total"])
 
     def test_wuli_original_client_source_and_no_official_id_promotions(self):
@@ -94,10 +94,55 @@ class PETIndividualProfilesR1(unittest.TestCase):
         for i,(order,internal_id,observation_id,name,cn,graphic,portrait,detail) in enumerate(rows):
             src=self.tw["records"][i];s=self.cross["records"][i]
             self.assertEqual((int(order),name,cn,int(graphic)),(i+1,src["name_as_written"],s["cn50_preserved_compiled_literal"],src["graphic_number"]))
-            self.assertEqual(internal_id,"PET-000001" if i==0 else "—（待建档）")
+            self.assertEqual(internal_id,"PET-"+str(i+1).zfill(6) if i<5 else "—（待建档）")
             self.assertEqual(observation_id,"OBS-TW10-"+str(i+1).zfill(4))
             self.assertEqual(portrait,"已定位" if src["portrait_rd"] else "待补")
-            self.assertEqual("查看乌力档案" in detail,src["graphic_number"]==100250)
+            self.assertEqual("查看" in detail,i<5)
         self.assertEqual(ix.count("| 已验源 |"),124)
+
+
+    def test_batch02_source_grounded_independent_ids_and_unknowns(self):
+        registry=read(P/"PET-ID-REGISTRY-R1.json")
+        self.assertEqual(registry["counts"]["source_observation_rows"],124)
+        self.assertEqual(registry["counts"]["assigned_catalog_pet_ids"],5)
+        self.assertEqual(registry["counts"]["unassigned_source_observations"],119)
+        self.assertEqual(registry["policy"]["next_unassigned_catalog_pet_id"],"PET-000006")
+        self.assertEqual(len(registry["catalog_entries"]),5)
+        self.assertEqual(len(registry["source_observations"]),124)
+        self.assertEqual(len({r["catalog_pet_id"] for r in registry["catalog_entries"]}),5)
+        motions={x["graphic"]:x for x in self.motion["groups"]}
+        for i in range(5):
+            a=self.tw["records"][i]
+            x=self.cross["records"][i]
+            entry=registry["catalog_entries"][i]
+            dossier=read(ROOT/entry["machine_dossier_path"])
+            obs="OBS-TW10-"+str(i+1).zfill(4)
+            m=motions[a["graphic_number"]]
+            self.assertEqual(entry["catalog_pet_id"],"PET-"+str(i+1).zfill(6))
+            self.assertEqual(entry["observations"],[obs])
+            self.assertEqual(dossier["profile_id"],entry["catalog_pet_id"])
+            self.assertEqual(dossier["names"]["original_client"],a["name_as_written"])
+            self.assertEqual(dossier["names"]["simplified_display"],x["cn50_preserved_compiled_literal"])
+            self.assertEqual(dossier["names"]["local_name_row_sha256"],a["source_row_sha256"])
+            self.assertEqual(dossier["appearance"]["graphic_number"],a["graphic_number"])
+            self.assertEqual(dossier["appearance"]["spr_group_index"],m["group_index"])
+            self.assertEqual(dossier["appearance"]["full_original_spr_segment_sha256"],a["spr_original_segment_sha256"])
+            self.assertEqual(dossier["appearance"]["portrait"]["source_rd_sha256"],a["portrait_rd"]["sha256"])
+            self.assertEqual(dossier["appearance"]["action_sequences"]["source_frame_positions"],m["frame_positions"])
+            self.assertEqual(dossier["appearance"]["action_sequences"]["source_action_codes"],m["source_actions"])
+            self.assertEqual(dossier["appearance"]["action_sequences"]["source_directions"],m["source_directions"])
+            self.assertIsNone(dossier["actual_official_pet_identity"]["source_pet_id"])
+            self.assertIsNone(dossier["skills"]["innate_at_acquisition"])
+            self.assertIsNone(dossier["combat_stats"]["level_1"]["values"]["derived_hp"])
+            self.assertIsNone(dossier["acquisition"]["original_capture"]["coordinates"])
+            self.assertFalse(dossier["status"]["all_fields_historically_complete"])
+            self.assertIsNone(dossier["status"]["overall_project_completion_percent"])
+            ob=registry["source_observations"][i]
+            self.assertEqual(ob["observation_id"],obs)
+            self.assertEqual(ob["assigned_catalog_pet_id"],entry["catalog_pet_id"])
+            self.assertFalse(ob["official_live_release_verified"])
+            self.assertIn(entry["catalog_pet_id"],(ROOT/entry["visible_dossier_path"]).read_text(encoding="utf-8"))
+        for ob in registry["source_observations"][5:]:
+            self.assertIsNone(ob["assigned_catalog_pet_id"])
 
 if __name__=="__main__":unittest.main()
