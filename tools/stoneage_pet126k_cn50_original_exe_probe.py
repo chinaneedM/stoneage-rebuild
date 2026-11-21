@@ -38,7 +38,7 @@ def parse_row(raw, offset, codec):
  try: name=blob.decode(codec,"strict")
  except UnicodeDecodeError:return None
  if slot==-1:
-  if name!="無" or face!=0:return None
+  if name not in ("無","无") or face!=0:return None
  elif not (1<=len(name)<=10 and 0<face<=5000000 and
             any("\u4e00"<=c<="\u9fff" for c in name)):return None
  return {"slot":slot,"name":name,"face":face}
@@ -64,6 +64,25 @@ def table_candidates(raw,codec,min_rows=10):
   else:offset+=1
  return out
 
+def aligned_region_metadata(raw,start,rows,codec):
+ """Read only typed row summaries; never copy raw original table bytes into Git."""
+ if start<0 or start+28*rows>len(raw):raise ValueError("out-of-bounds")
+ kinds={"populated":0,"empty":0,"unparsed":0}
+ bad=[]
+ for idx in range(rows):
+  off=start+28*idx
+  item=parse_row(raw,off,codec)
+  if item is None:
+   kinds["unparsed"]+=1
+   if len(bad)<12:
+    slot,_,face=struct.unpack_from("<i20sI",raw,off)
+    bad.append({"index":idx,"slot_integer":slot,"face_integer":face})
+  else:kinds["empty" if item["slot"]==-1 else "populated"]+=1
+ return {"start_offset":start,"rows":rows,"stride":28,"counts":kinds,
+         "first_unparsed_row_shapes":bad,"is_whole_region_decodable":kinds["unparsed"]==0,
+         "source_span_sha256":sha(raw[start:start+28*rows]),
+         "raw_table_bytes_published":False}
+
 def inspect(directory):
  manifest=json.loads((ROOT/"research/recovered/STONEAGE-STONEAGE5-REAL-CAB-PAYLOAD-R1.json").read_text(encoding="utf-8"))
  tw=json.loads((ROOT/"research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json").read_text(encoding="utf-8"))
@@ -85,7 +104,8 @@ def inspect(directory):
   for codec in ("cp950","gb18030"):
    hits=text_hits(content,names,codec)
    groups=table_candidates(content,codec)
-   enc[codec]={"matched_distinct_names":len({x["name"] for x in hits}),
+   enc[codec]={"candidate_362_row_contiguous_span":aligned_region_metadata(content,536424,362,codec) if file=="sa_5000.exe" else None,
+               "matched_distinct_names":len({x["name"] for x in hits}),
                "matching_occurrences":len(hits),
                "matched_name_offsets":hits[:150],
                "name_hits_truncated":len(hits)>150,

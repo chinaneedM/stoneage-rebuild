@@ -3,7 +3,7 @@ import json
 import struct
 import unittest
 from pathlib import Path
-from tools.stoneage_pet126k_cn50_original_exe_probe import EXPECTED, text_hits,parse_row,table_candidates
+from tools.stoneage_pet126k_cn50_original_exe_probe import EXPECTED, text_hits,parse_row,table_candidates,aligned_region_metadata
 ROOT=Path(__file__).resolve().parents[1]
 class PET126KSourceBoundary(unittest.TestCase):
  def test_synthetic_pet_name_in_valid_rows(self):
@@ -18,6 +18,19 @@ class PET126KSourceBoundary(unittest.TestCase):
   self.assertEqual(tables[0]["file_offset"],6)
   self.assertEqual(tables[0]["rows"],12)
   self.assertFalse(tables[0]["native_pet_id_or_release_proven"])
+ def test_simplified_empty_rows_and_full_362_span(self):
+  named="烏力".encode("gb18030")
+  good=struct.pack("<i20sI",5,named+bytes(20-len(named)),28001)
+  blank="无".encode("gb18030")
+  empty=struct.pack("<i20sI",-1,blank+bytes(20-len(blank)),0)
+  buf=(good+empty)*181
+  self.assertEqual(len(buf),362*28)
+  result=aligned_region_metadata(buf,0,362,"gb18030")
+  self.assertTrue(result["is_whole_region_decodable"])
+  self.assertEqual(result["counts"],{"populated":181,"empty":181,"unparsed":0})
+  tables=table_candidates(buf,"gb18030")
+  self.assertEqual(len(tables),1)
+  self.assertEqual(tables[0]["rows"],300)  # static helper's conservative 300-row reporting cap
  def test_malformed_not_promoted(self):
   bad=struct.pack("<i20sI",7,"寵物".encode("cp950")+bytes(16),0)
   self.assertIsNone(parse_row(bad,0,"cp950"))
