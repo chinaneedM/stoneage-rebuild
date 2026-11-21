@@ -41,7 +41,9 @@ class PETIndividualProfilesR1(unittest.TestCase):
         p=self.profile
         w=next(x for x in self.tw["records"] if x["graphic_number"]==100250)
         m=next(x for x in self.motion["groups"] if x["graphic"]==100250)
-        self.assertEqual(p["profile_id"],"TW10-G100250")
+        self.assertEqual(p["profile_id"],"PET-000001")
+        self.assertEqual(p["internal_id_system"]["legacy_key"],"TW10-G100250")
+        self.assertEqual(p["internal_id_system"]["source_observation_ids"],["OBS-TW10-0001"])
         self.assertEqual(p["names"]["original_client"],w["name_as_written"])
         self.assertEqual(p["names"]["local_name_row_sha256"],w["source_row_sha256"])
         self.assertEqual(p["appearance"]["graphic_number"],w["graphic_number"])
@@ -87,11 +89,13 @@ class PETIndividualProfilesR1(unittest.TestCase):
         self.assertEqual(p["provenance"]["original_exe_sha256"],self.tw["archive"]["files"]["source/sa_3.exe"]["sha256"])
         self.assertEqual(git_blob(ROOT/"docs/CURRENT-STATE.md"),self.progress["boundaries"]["current_state_immutable_blob"])
         ix=(ROOT/"docs/pets/INDEX.md").read_text(encoding="utf-8")
-        rows=re.findall(r"^\| (\d+) \| (.*?) \| (.*?) \| (\d+) \| (.*?) \| 已验源 \| (.*?) \|$",ix,re.M)
+        rows=re.findall(r"^\| (\d+) \| (.*?) \| (OBS-TW10-\d{4}) \| (.*?) \| (.*?) \| (\d+) \| (.*?) \| 已验源 \| (.*?) \|$",ix,re.M)
         self.assertEqual(len(rows),124)
-        for i,(order,name,cn,graphic,portrait,detail) in enumerate(rows):
+        for i,(order,internal_id,observation_id,name,cn,graphic,portrait,detail) in enumerate(rows):
             src=self.tw["records"][i];s=self.cross["records"][i]
             self.assertEqual((int(order),name,cn,int(graphic)),(i+1,src["name_as_written"],s["cn50_preserved_compiled_literal"],src["graphic_number"]))
+            self.assertEqual(internal_id,"PET-000001" if i==0 else "—（待建档）")
+            self.assertEqual(observation_id,"OBS-TW10-"+str(i+1).zfill(4))
             self.assertEqual(portrait,"已定位" if src["portrait_rd"] else "待补")
             self.assertEqual("查看乌力档案" in detail,src["graphic_number"]==100250)
         self.assertEqual(ix.count("| 已验源 |"),124)

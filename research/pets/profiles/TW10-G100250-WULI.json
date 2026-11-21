@@ -1,6 +1,6 @@
 {
   "schema": "stoneage.pet_profile.classic_pc.provenance_per_field.r1",
-  "profile_id": "TW10-G100250",
+  "profile_id": "PET-000001",
   "profile_stage": "PARTIAL_EVIDENCE_PROFILE",
   "entity_type": "ORIGINAL_CLIENT_NAMED_GRAPHIC_CANDIDATE_NOT_CONFIRMED_LIVE_SPECIES",
   "version_scope": {
@@ -8,7 +8,8 @@
     "region": "TW",
     "version": "TAIWAN_1_0_ORIGINAL_RETAIL",
     "version_public_release_date": null,
-    "certified_live_deployment": false
+    "certified_live_deployment": false,
+    "source_observation_id": "OBS-TW10-0001"
   },
   "names": {
     "status": "VERIFIED_CLIENT_LOCAL",
@@ -198,7 +199,8 @@
     ],
     "private_observation_html_basename": "StoneAge-TW10-Wuli-Original-Pet-Profile-Private.html",
     "private_observation_html_sha256": "52b627179785398be64f5ef5437a2f58ac29f35313ab3d79724a46777cdebad6",
-    "private_observation_scope": "PRIVATE_USER_FILE_NOT_COMMITTED_PUBLICLY"
+    "private_observation_scope": "PRIVATE_USER_FILE_NOT_COMMITTED_PUBLICLY",
+    "policy_path": "docs/pets/ID-SCHEME.md"
   },
   "status": {
     "all_fields_historically_complete": false,
@@ -209,5 +211,37 @@
     "other_modules_locked": true,
     "overall_project_completion_percent": null
   },
-  "next_evidence_gap": "Authenticate same-deployment official original PC pet master with base stats ranges and growth/skills/capture; do not promote 2016 or mixed25 server numeric rows to TW1."
+  "next_evidence_gap": "Authenticate same-deployment official original PC pet master with base stats ranges and growth/skills/capture; do not promote 2016 or mixed25 server numeric rows to TW1.",
+  "internal_id_system": {
+    "kind": "PROJECT_CANONICAL_PET_DOSSIER_HANDLE",
+    "assigned_pet_catalog_id": "PET-000001",
+    "permanent": true,
+    "legacy_key": "TW10-G100250",
+    "source_observation_ids": [
+      "OBS-TW10-0001"
+    ],
+    "official_server_id_equals_internal_id": false,
+    "official_live_species_certified": false,
+    "source_identity_resolution": "CLIENT_ALBUM_NAME_GRAPHIC_ONLY"
+  },
+  "future_optional_edition_data": {
+    "status": "NOT_YET_SOURCED",
+    "family_or_lineage": null,
+    "sex_or_presentation_variants": null,
+    "palette_variants": null,
+    "encounter_probability": null,
+    "encounter_time_or_weather": null,
+    "encounter_level_distribution": null,
+    "capture_success_probability": null,
+    "capture_restrictions": null,
+    "egg_or_breeding": null,
+    "official_encyclopedia_original_text": null,
+    "rare_or_event_window": null,
+    "pet_trade_or_npc_sources": null,
+    "battle_ai": null,
+    "skill_formula_details": null,
+    "animation_sound_or_effect_link": null,
+    "patch_change_history": null,
+    "source_conflicts": []
+  }
 }

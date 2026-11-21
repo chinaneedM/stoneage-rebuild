@@ -3158,3 +3158,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-21 — PET-PROFILE-01｜按照单只宠物建立统一档案与用户可查进度总表
 
 [打开PC原版宠物124条候选总表](docs/pets/INDEX.md)／[完整宠物字段模板](docs/pets/TEMPLATE.md)／[第一只：乌力（原TW1.0资源实证、数值未证）](docs/pets/TW10-G100250-WULI.md)／[源级进度机读收据](research/pets/PET-PROGRESS-R1.json)。用户明确要求“边整理边还原，一只一份具体模板，包括初始区间、成长、技能、图鉴、2D模型与全部动作及抓捕地点，能随时看整理了多少只”。本轮按最新原PET39/15/126W来源复核：**TW1原客户端124具名候选，124条具源动作，120有原头像RD（4待补）；已建立详细档案1只（乌力，PARTIAL），完整历史全字段验收0只，其余123待逐只建档**。另CN5第三方保存PC编译姓名305槽只作为独立版别，**不与TW1的124相加**。私人离线乌力图册已生成（原SPR 56动作方向序列／304帧位置／232不同RD图块），公共仓库只记录源哈希，不存原版权图像。基础数值/初始范围/技能/成长/捕捉地点缺同版官方PET主档，全部写null而非猜值。验收已接入现有PET-only测试，不改2,709,173字节原CURRENT blob。最高NEXT **PET-PROFILE-02**：优先为124条已验原PC具名资源逐只建立源级部分档案，再以新同部署证据补属性/成长/技能/捕捉，不因为模板填充而关闭PET；2026 NOT_YEAR_AUDITED、StageA7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体完成率UNKNOWN。
+
+
+## 2026-11-21 — PET-PROFILE-ID-01｜用户允许自主永久编号，PET档案与原版来源号分开
+
+[宠物内部编号规范](docs/pets/ID-SCHEME.md)／[124条证据与内部ID机读登记](research/pets/PET-ID-REGISTRY-R1.json)／[浏览总表](docs/pets/INDEX.md)。后续不用原客户端图号做宠物档案ID：`PET-000001`永久指向第一张乌力的**逐只档案**，`OBS-TW10-0001`标识早期台湾1.0原相簿第1条**来源候选**；全部124行仅建立OBS观察号，其他123行未占PET号。各版原ID及图号继续保留，跨版同名同SPR也不可无证合并。来源独立字段增加族系/变体、元素、初始属性范围、成长、技能、捕捉条件与概率、声音/动画、骑乘、图鉴生态、历史事件和逐项证据状态，缺原版证据保留空值。源哈希和原图私有，不搞手游/私人服/付费素材。当前仅**PET档案1只PARTIAL、完成0只、TW1原客户端具名来源OBS124条**；无新原版物种/服务端实证。StageA7PARTIAL+2OPEN、B/wiki gated、R79暂停、overall UNKNOWN；`docs/CURRENT-STATE.md`原blob `c89e0e33537990aa2132b47c40fef49a985a935c`不变。下一项依此双ID契约填充 `PET-000002`，来源不足不强填。
