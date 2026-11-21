@@ -1,0 +1,42 @@
+name: PET-DETAIL01 original PC source-bounded player testimony crosswalk
+on:
+  push:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE01-WAEI2001-WITNESSES-R1.json'
+      - 'research/pets/PET-PROGRESS-R1.json'
+      - 'docs/pets/WAEI-2001-PLAYER-MUSEUM-CROSSWALK.md'
+      - 'docs/pets/INDEX.md'
+      - 'docs/pets/TEMPLATE.md'
+      - 'research/recovered/STONEAGE-PET41-TW-EARLY-WGS-MUSEUM-R1.json'
+      - 'research/recovered/STONEAGE-PET42-TW10-OPERATOR-MUSEUM-BIDIRECTIONAL-GAP-R1.json'
+      - 'research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json'
+      - 'tests/test_stoneage_pet_documentary_waei2001_r1.py'
+      - '.github/workflows/validate-stoneage-pet-documentary-waei2001.yml'
+  pull_request:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE01-WAEI2001-WITNESSES-R1.json'
+      - 'research/pets/PET-PROGRESS-R1.json'
+      - 'docs/pets/WAEI-2001-PLAYER-MUSEUM-CROSSWALK.md'
+      - 'docs/pets/INDEX.md'
+      - 'docs/pets/TEMPLATE.md'
+      - 'research/recovered/STONEAGE-PET41-TW-EARLY-WGS-MUSEUM-R1.json'
+      - 'research/recovered/STONEAGE-PET42-TW10-OPERATOR-MUSEUM-BIDIRECTIONAL-GAP-R1.json'
+      - 'research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json'
+      - 'tests/test_stoneage_pet_documentary_waei2001_r1.py'
+      - '.github/workflows/validate-stoneage-pet-documentary-waei2001.yml'
+permissions:
+  contents: read
+jobs:
+  original-source-boundary-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Independently verify 124 profiles and Waei 2001 player claims
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pet_documentary_waei2001_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_individual_profiles_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_internal_ids_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet41_taiwan_museum.py' -v

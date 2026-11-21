@@ -3183,3 +3183,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-21 — PET-PROFILES-BATCH06｜台湾1.0经典PC来源124条全部已有逐只源级档案
 
 [完整124项索引](docs/pets/INDEX.md) · [自主编号总簿](research/pets/PET-ID-REGISTRY-R1.json) · [第六批39份原证收据](docs/continuity/STONEAGE-PET-PROFILES-BATCH06-20261121.md)。已由PET-000085推进至PET-000124，**124份均为PARTIAL客户端具名图形候选档案，官服真实发宠及完整历史验收仍0**；四份第116–119号原客户端头像RD未定位并保留null，第110/111号跨版原名不同保留异文。剩余待建档来源候选0，但其他官方经典PC地区/年份与实际发放、属性、成长、技能、捕捉不完整，PET模块不关闭。下步PET-DETAIL-EVIDENCE-01逐项补同版原服证据，拒绝手游/私服/付费卖盘与跨服统计推断。完整历史CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`未动；Stage A 7PARTIAL+2OPEN，Stage B/wiki GATED，R79暂停，项目总体完成率UNKNOWN。
+
+
+## 2026-11-21｜PET-DETAIL-EVIDENCE-01：124份台湾1.0宠物逐只关联华义2001年玩家史料
+
+[按PET编号查询玩家投稿的四元素及来源](docs/pets/WAEI-2001-PLAYER-MUSEUM-CROSSWALK.md) · [机读124行源级联接](research/pets/PET-DETAIL-EVIDENCE01-WAEI2001-WITNESSES-R1.json) · [本轮收据](docs/continuity/STONEAGE-PET-DETAIL-EVIDENCE01-WAEI2001-PLAYER-WITNESSES-20261121.md)。已固定华义官网2001年托管128条玩家投稿，106网页逐字同名→105个TW1原客户端候选，19个无精确名字，15个具仅文本近字线索。所有玩家地水火风数字和8条获取/出现主张仅作为史料旁证，不入实际原版属性/技能/成长/捕获/发放字段。TW1具名124个仍全PARTIAL，官服全验0，四头像RD缺口不动；PET唯一、2026 NOT_YEAR_AUDITED、StageA7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体UNKNOWN。原CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`不改。NEXT PET-DETAIL-EVIDENCE-02同部署官服主档与获宠实证。
