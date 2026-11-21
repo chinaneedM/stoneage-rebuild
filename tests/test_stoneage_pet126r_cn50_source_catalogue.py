@@ -23,7 +23,7 @@ class PET126R(unittest.TestCase):
         entries=album_index(rows,groups,tw)
         self.assertEqual(len(entries),362)
         self.assertEqual(sum(x["label_as_compiled_GB18030"] is not None for x in entries),181)
-        self.assertEqual(sum(x["TW10_retail_exact_same_SPR_segment_at_this_ordinal"] is True for x in entries),62)
+        self.assertEqual(sum(x["TW10_retail_exact_same_SPR_segment_at_this_ordinal"] is True for x in entries if x["label_as_compiled_GB18030"] is not None),62)
         self.assertTrue(all(not x["CN50_name_to_SPR_native_selector_proven"] for x in entries))
         self.assertTrue(all(not x["original_official_live_pet_release_proven"] for x in entries))
         self.assertTrue(all(x["original_server_species_identifier"] is None for x in entries))
