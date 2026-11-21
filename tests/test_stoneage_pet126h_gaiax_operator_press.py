@@ -38,7 +38,7 @@ class PET126HOperatorPress(unittest.TestCase):
         self.assertIsNone(r["gate"]["completion_percent"])
         current = (ROOT / "docs/CURRENT-STATE.md").read_bytes()
         self.assertEqual(len(current), 2709173)
-        blob = hashlib.sha1(b"blob " + str(len(current)).encode() + b"\\0" + current).hexdigest()
+        blob = hashlib.sha1(b"blob " + str(len(current)).encode() + b"\0" + current).hexdigest()
         self.assertEqual(blob, r["gate"]["original_current_state_git_blob"])
 
 if __name__ == "__main__":
