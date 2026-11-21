@@ -3168,3 +3168,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-21 — PET-METHOD-01｜用户明确将宠物详细模板作为其他模块的通用方法样板
 
 采用[跨模块逐项复原方法R1](docs/RESTORATION-ENTITY-RECORD-METHOD-R1.md)：沿用已落地的自主永久编号（PET）和每个客户端原件观察号（OBS）、来源/版本差异、资源、逐字段证据与“候选/详细档案/完全验收”三层进度；地图NPC装备任务玩法以后只**复用方法、不复制宠物字段、不提前展开**。尤其地图的连通和坐标、NPC对话/任务条件、装备属性/配方、活动与常驻任务有各自专属字段；查询标签不影响永久编号。当前继续PET-000002逐只补档，原官方经典PC为唯一对象，无新宠物实证、没有新增其它模块或网站开发。原`docs/CURRENT-STATE.md` 2,709,173B、blob `c89e0e33537990aa2132b47c40fef49a985a935c`不变，Stage A 7PARTIAL +2OPEN、Stage B/wiki GATED、R79暂停、总进度UNKNOWN。
+
+
+## 2026-11-21 — PET-PROFILE-BATCH03｜首25份源级宠物档案可逐只查询
+
+**最新档案入口**：[台湾1.0原PC宠物来源总表（124条候选）](docs/pets/INDEX.md) · [已分配永久档案ID及每条OBS编号](research/pets/PET-ID-REGISTRY-R1.json) · [第三批20只已建档源级收据](docs/continuity/STONEAGE-PET-PROFILES-BATCH03-20261121.md)。沿源相簿顺序累计 **PET-000001—PET-000025 共25份PARTIAL逐只档案**；前124条原编译候选仍为124（不是官服实发种数），尚未建立详细档案 **99条**；所有原服属性、技能、成长、野外捕获与实际发行全字段验收**0只**，全球PC历史物种总数和项目百分比仍UNKNOWN。每份档案独立保存同版原名/图号/SPR/头像/动作/帧数/原SHA并明确断开后版和混合服端的数值。新增原版权像素/原服源/客户端运行均0，**PET唯一活动模块**，2026年审未闭，Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。保护 `docs/CURRENT-STATE.md` 完整原Git blob `c89e0e33537990aa2132b47c40fef49a985a935c` 2,709,173B。下一步依序 `PET-000026`，同时优先等可信原PC同部署PET主档/技能/遭遇/发奖新原证。

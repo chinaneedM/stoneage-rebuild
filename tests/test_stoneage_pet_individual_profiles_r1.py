@@ -149,7 +149,7 @@ class PETIndividualProfilesR1(unittest.TestCase):
             self.assertEqual(ob["assigned_catalog_pet_id"],entry["catalog_pet_id"])
             self.assertFalse(ob["official_live_release_verified"])
             self.assertIn(entry["catalog_pet_id"],(ROOT/entry["visible_dossier_path"]).read_text(encoding="utf-8"))
-        for ob in registry["source_observations"][5:]:
+        for ob in registry["source_observations"][len(registry["catalog_entries"]):]:
             self.assertIsNone(ob["assigned_catalog_pet_id"])
 
 if __name__=="__main__":unittest.main()
