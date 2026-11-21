@@ -10,6 +10,12 @@ on:
       - 'tests/test_stoneage_pet126v_three_carrier_name_variants.py'
       - 'research/recovered/STONEAGE-PET126W-TW10-CN50-ALL-124-ORIGINAL-PC-NAME-VARIANTS-R1.json'
       - 'tests/test_stoneage_pet126w_full_name_differences.py'
+      - 'docs/pets/INDEX.md'
+      - 'docs/pets/TEMPLATE.md'
+      - 'docs/pets/TW10-G100250-WULI.md'
+      - 'research/pets/profiles/TW10-G100250-WULI.json'
+      - 'research/pets/PET-PROGRESS-R1.json'
+      - 'tests/test_stoneage_pet_individual_profiles_r1.py'
       - 'docs/continuity/STONEAGE-PET126W-TW10-CN50-124-NAME-VARIANT-CLOSURE-20261121.md'
       - '.github/workflows/validate-stoneage-pet126t-pc-module-coverage.yml'
   pull_request:
@@ -22,6 +28,12 @@ on:
       - 'tests/test_stoneage_pet126v_three_carrier_name_variants.py'
       - 'research/recovered/STONEAGE-PET126W-TW10-CN50-ALL-124-ORIGINAL-PC-NAME-VARIANTS-R1.json'
       - 'tests/test_stoneage_pet126w_full_name_differences.py'
+      - 'docs/pets/INDEX.md'
+      - 'docs/pets/TEMPLATE.md'
+      - 'docs/pets/TW10-G100250-WULI.md'
+      - 'research/pets/profiles/TW10-G100250-WULI.json'
+      - 'research/pets/PET-PROGRESS-R1.json'
+      - 'tests/test_stoneage_pet_individual_profiles_r1.py'
       - 'docs/continuity/STONEAGE-PET126W-TW10-CN50-124-NAME-VARIANT-CLOSURE-20261121.md'
       - '.github/workflows/validate-stoneage-pet126t-pc-module-coverage.yml'
 permissions:
@@ -40,5 +52,6 @@ jobs:
           python -m unittest discover -s tests -p 'test_stoneage_pet126u_public_pc_source_boundaries.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pet126v_three_carrier_name_variants.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pet126w_full_name_differences.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_individual_profiles_r1.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pet126s_source_bounded_acceptance.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pc_only_scope_20261119.py' -v
