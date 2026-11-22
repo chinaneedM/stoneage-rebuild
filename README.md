@@ -3258,3 +3258,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-22｜PET-DETAIL25：2001红虎格鲁西斯两只Lv1、同一B只Lv80玩家面板与另一玩家捕抓文字对照
 
 [证据与历史限制](docs/continuity/STONEAGE-PET-DETAIL25-2001-RED-TIGER-PLAYER-SAMPLES-20261122.md) · [永久PET-000064](docs/pets/TW10-G100329.md) · [来源分轨机读数值](research/pets/PET-DETAIL-EVIDENCE25-2001-RED-TIGER-TWO-LV1-LV80-PLAYER-WITNESSES-R1.json)。2001网页标注来源「风信」自报两只不同红虎1级分别HP/攻/防/敏=32/8/5/7与37/8/5/6，第二只80级771/170/98/139；另一作者「快击」明确把「格鲁西斯」与红虎同称，记录常见一级范围、火风属性及吉鲁岛福尔德附近抓捕**玩家说法**。既有俄罗斯牛奶四个尚未确证栏目数值槽只独立比对，未当官方范围。TW1认证原客户端格魯西斯100329只确认本地具名图像；无同部署原服务器数据、原创2001网页SHA或真实网络抓包。正式属性／成长／技能／遇敌仍null，原TW1 124候选PARTIAL、0历史完整，PET唯一；原CURRENT 2709173B/blob c89e0e33537990aa2132b47c40fef49a985a935c不动，Stage A 7PARTIAL+2OPEN、B/wiki GATED、R79暂停、percent=UNKNOWN。NEXT PET-DETAIL26继续找有源同版本官方主表或真正新同年实物，不扩无源辅助链。
+
+
+## 2026-11-22｜PET-DETAIL26：2001玩家奥卡洛斯Lv1区间及「布洛多斯／布拉奇多斯」冲突止错
+
+[来源等级和三份独立客户端档案](docs/continuity/STONEAGE-PET-DETAIL26-2001-DINO-THUNDER-NAME-COLLISION-20261122.md) · [逐源机读收据](research/pets/PET-DETAIL-EVIDENCE26-2001-LV1-DINO-THUNDER-ALIAS-CONFLICT-R1.json) · [PET-000098](docs/pets/TW10-G100371.md) · [PET-000082](docs/pets/TW10-G100351.md) · [PET-000084](docs/pets/TW10-G100353.md)。2001年标注的快击玩家经验记奥卡洛斯Lv1常见HP47–53/攻击8–10/防御8–10/敏捷5–6、地6水4、矿山6F；另一段「布洛多斯(红雷龙)」HP53–58/攻9–11/防8–10/敏0–2、火8水2、沙姆岛全域。复用先前O92依波波资料，该作者却把沙姆岛出没归于「布拉奇多斯」并称华义曾误植，未有官方纠错原件。认证TW1原客户端同时存两名字、两SPR组100351/321与100353/323，绝不自动同物种/同服，玩家范围只入独立研究层。原服主表、技能、出生随机及真实捕捉继续null，124份PARTIAL、0官方全字段证实、新实发种证明0，PET独占、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体UNKNOWN。历史CURRENT 2709173B/blob c89e0e33537990aa2132b47c40fef49a985a935c不动。NEXT PET-DETAIL27定位同版一手宠物主表或官方命名更正，不循环无源材料。

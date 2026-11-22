@@ -1,0 +1,250 @@
+{
+  "schema": "stoneage.pet_detail26.classic_pc_2001_player_lv1_claim_and_early_name_conflict.r1",
+  "record_date": "2026-11-22",
+  "active_module": "PET",
+  "history_baseline": {
+    "main_sha": "5c66744d72f4b9b375bdcaf09be857a1bc4ba403",
+    "root_tree_sha": "3c455bde46a3b4009348a5128cf8b81fc9531e57",
+    "current_state_blob_sha": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_state_bytes": 2709173
+  },
+  "platform_scope": "CLASSIC_ORIGINAL_2D_PC_ONLY",
+  "player_sources": {
+    "kuaiji": {
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n2_919075.html",
+      "title": "抓一级宠物的技巧",
+      "byline": "快击",
+      "page_displayed_date": "2001-06-14",
+      "first_person_capture_guide": true,
+      "original_2001_html_bytes_verified": false,
+      "official_operator_or_server_master": false,
+      "page_text_reused_from_pet25": true
+    },
+    "yibobo": {
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n182_98793.html",
+      "title": "所有lv1宠物的捕抓地点或取得法",
+      "byline": "依波波",
+      "page_displayed_date": "2001-06-14",
+      "self_claimed_stars_are_game_observation_not_independent_certification": true,
+      "original_2001_html_bytes_verified": false,
+      "official_operator_misprint_document_verified": false,
+      "previously_reviewed_in": "research/recovered/STONEAGE-O92-EARLY-PET-ACQUISITION-CENSUS-R1.json",
+      "previous_git_blob": "81eb64c6b5681e71017be352a59e480fdc39a266"
+    },
+    "earlier_milk": {
+      "previously_archived_path": "research/pets/PET-DETAIL-EVIDENCE07-CN2001-LEVEL1-20-NUMERIC-SOURCE-CLAIMS-R1.json",
+      "previous_git_blob": "bd2b5d560c20663dcd22259d562aef8bef2ea90c",
+      "role": "INDEPENDENT_PLAYER_NICKNAME_ONLY_NOT_SAME_DEPLOYMENT"
+    },
+    "tw10": {
+      "path": "research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json",
+      "git_blob": "1aada81d7314769bf683b816cc5a8762c3bd9400",
+      "role": "AUTHENTICATED_CLIENT_LOCAL_COMPILED_NAME_AND_SPR_NOT_SERVER_DEPLOYMENT"
+    }
+  },
+  "original_tw10_three_distinct_client_entries": [
+    {
+      "profile_id": "PET-000082",
+      "observation_id": "OBS-TW10-0082",
+      "original": "布洛多斯",
+      "graphic_number": 100351,
+      "spr_group": 321,
+      "source_row_offset": 375396,
+      "source_row_sha256": "e36cf9a7001fc43fb37984c905e2721f5375df01ffbad858624d6d545a4e1130",
+      "spr_segment_sha256": "0cfc2eabf5b43eb51b23bec35a3e23ed0171c84a56a2d79d3d44387e53a966b1"
+    },
+    {
+      "profile_id": "PET-000084",
+      "observation_id": "OBS-TW10-0084",
+      "original": "布拉奇多斯",
+      "graphic_number": 100353,
+      "spr_group": 323,
+      "source_row_offset": 375452,
+      "source_row_sha256": "79a8343b8ef342b25f85a3e56d7c0cb53116c7f624775d2f631f34d65fc1dea6",
+      "spr_segment_sha256": "2086365f81dc486e3e58a108a752c13bd960150e3857a461e771c06bf57ec7ae"
+    },
+    {
+      "profile_id": "PET-000098",
+      "observation_id": "OBS-TW10-0098",
+      "original": "奧卡洛斯",
+      "graphic_number": 100371,
+      "spr_group": 337,
+      "source_row_offset": 375956,
+      "source_row_sha256": "6704645d2aa858d5ca23234e299a5e716d6c8d6596d32dee61265d0d0f6bb034",
+      "spr_segment_sha256": "fff075bbef9214c1220742f8714934564e232dbb59e1a5125714275c3e82cff4"
+    }
+  ],
+  "kuaiji_claimed_level_one_records": [
+    {
+      "claim_id": "KUAIJI_2001_LV1_AOKALUOSI",
+      "literal": "Lv1奥卡洛斯(暴龙)",
+      "client_name_text_match": "奥卡洛斯",
+      "matched_dossier": "PET-000098",
+      "kind": "PLAYER_COMMON_RANGES_NOT_SAMPLED_OR_OFFICIAL_BOUNDS",
+      "hp": {
+        "min": 47,
+        "max": 53
+      },
+      "attack": {
+        "min": 8,
+        "max": 10
+      },
+      "defense": {
+        "min": 8,
+        "max": 10
+      },
+      "agility": {
+        "min": 5,
+        "max": 6
+      },
+      "claimed_elements": {
+        "earth": 6,
+        "water": 4
+      },
+      "claimed_location": {
+        "place": "吉鲁岛阿斯玛鲁矿山6F",
+        "original_map_id": null,
+        "server_spawn_table_verified": false
+      },
+      "capture_player_recommended_level_at_least": 55,
+      "capture_rule_verified": false,
+      "official_source_migrated_date_exact_first_post_verified": false,
+      "earlier_milk_nickname_crosscheck": {
+        "literal": "暴龙",
+        "source_obs_id": "OBS-CN2001-MILK-LV1-0003",
+        "unlabeled_four_slots": [
+          {
+            "min": 44,
+            "max": 54
+          },
+          {
+            "min": 8,
+            "max": 10
+          },
+          {
+            "min": 8,
+            "max": 10
+          },
+          {
+            "min": 4,
+            "max": 6
+          }
+        ],
+        "same_original_species_id_or_server_proven": false
+      }
+    },
+    {
+      "claim_id": "KUAIJI_2001_LV1_BULUODUOSI_RED_THUNDER",
+      "literal": "Lv1布洛多斯(红雷龙)",
+      "client_name_text_match": "布洛多斯",
+      "matched_dossier": "PET-000082",
+      "kind": "PLAYER_COMMON_RANGES_WITH_IDENTITY_CONFLICT",
+      "hp": {
+        "min": 53,
+        "max": 58
+      },
+      "attack": {
+        "min": 9,
+        "max": 11
+      },
+      "defense": {
+        "min": 8,
+        "max": 10
+      },
+      "agility": {
+        "min": 0,
+        "max": 2
+      },
+      "claimed_elements": {
+        "fire": 8,
+        "water": 2
+      },
+      "claimed_location": {
+        "place": "沙姆岛全域",
+        "original_map_id": null,
+        "server_spawn_table_verified": false
+      },
+      "capture_player_recommended_level_at_least": 30,
+      "capture_rule_verified": false,
+      "official_source_migrated_date_exact_first_post_verified": false,
+      "earlier_milk_nickname_crosscheck": {
+        "literal": "雷龙",
+        "source_obs_id": "OBS-CN2001-MILK-LV1-0004",
+        "unlabeled_four_slots": [
+          {
+            "min": 50,
+            "max": 59
+          },
+          {
+            "min": 9,
+            "max": 11
+          },
+          {
+            "min": 8,
+            "max": 10
+          },
+          {
+            "min": 0,
+            "max": 3
+          }
+        ],
+        "same_original_species_id_or_server_proven": false
+      }
+    }
+  ],
+  "yibobo_thunder_source_specific_contradiction": {
+    "list_row_90": {
+      "player_list_position": 90,
+      "literal": "布洛多斯",
+      "reported_acquisition": "目前尚无信息",
+      "starred_by_author": false
+    },
+    "list_row_92": {
+      "player_list_position": 92,
+      "literal": "布拉奇多斯",
+      "reported_acquisition": "沙姆岛奇努伊村周边(东31南99)",
+      "starred_by_author": true,
+      "author_claim_about_operator_name": "华义将名称误植为布洛多斯"
+    },
+    "operator_typo_claim_independently_officially_verified": false,
+    "source_list_ordinals_not_official_pet_ids": true,
+    "observed_both_names_in_authenticated_tw10_client": true,
+    "original_client_two_graphic_numbers": [
+      100351,
+      100353
+    ],
+    "original_client_two_spr_groups": [
+      321,
+      323
+    ],
+    "same_pet_identity_or_original_race_equivalence_proven": false,
+    "resolution": "CONFLICT_UNRESOLVED_NO_AUTOMATIC_MERGE_OR_STAT_TRANSFER",
+    "kuaiji_claim_for_buluoduosi_retained_at_literal_text_only": true
+  },
+  "field_safety": {
+    "official_birth_panel": null,
+    "official_lv1_min_max": null,
+    "official_elements": null,
+    "official_growth_formula": null,
+    "official_innate_skills": null,
+    "official_map_or_spawn": null,
+    "official_live_issue_date": null,
+    "official_same_deployment_pet_id": null
+  },
+  "scope_guard": {
+    "only_module": "PET",
+    "pc_only": true,
+    "no_paid_marketplace": true,
+    "no_mobile": true,
+    "tw10_named_client_candidates": 124,
+    "tw10_pet_dossiers_partial": 124,
+    "tw10_original_album_portraits": 120,
+    "tw10_all_fields_historically_complete": 0,
+    "new_official_live_species_this_unit": 0,
+    "stage_A": "7_PARTIAL+2_OPEN",
+    "stage_B_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percent": null
+  },
+  "next": "PET-DETAIL27: seek same-deployment official classic PC server pet master/early original encounter and skill sources; test 雷龙 name against a provenance-qualified original operator correction before resolving 100351 versus 100353. Do not transfer player numeric ranges to TW1 official fields."
+}
