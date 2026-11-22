@@ -1,0 +1,34 @@
+name: PET-DETAIL20 original TW1 PC PS request and reply source boundary safeguards
+on:
+  push:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE20-TW10-ORIGINAL-PS-REQUEST-SEND-REPLY-R1.json'
+      - 'docs/continuity/STONEAGE-PET-DETAIL20-ORIGINAL-TW10-PS-REQUEST-REPLY-20261122.md'
+      - 'tools/stoneage_pet_detail20_tw10_original_PS_request_response_audit.py'
+      - 'tests/test_stoneage_pet_detail20_original_PS_message_r1.py'
+      - 'docs/pets/INDEX.md'
+      - '.github/workflows/validate-stoneage-pet-detail20-original-ps-request-response.yml'
+  pull_request:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE20-TW10-ORIGINAL-PS-REQUEST-SEND-REPLY-R1.json'
+      - 'docs/continuity/STONEAGE-PET-DETAIL20-ORIGINAL-TW10-PS-REQUEST-REPLY-20261122.md'
+      - 'tools/stoneage_pet_detail20_tw10_original_PS_request_response_audit.py'
+      - 'tests/test_stoneage_pet_detail20_original_PS_message_r1.py'
+      - 'docs/pets/INDEX.md'
+      - '.github/workflows/validate-stoneage-pet-detail20-original-ps-request-response.yml'
+permissions:
+  contents: read
+jobs:
+  original-source-derived-PS-protocol-receipt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate original static PS packet and negative historical claims without commercial EXE
+        run: |
+          python -m py_compile tools/stoneage_pet_detail20_tw10_original_PS_request_response_audit.py
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail20_original_PS_message_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail19_original_inventory_selection_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail18_native_ui_label_r1.py' -v
