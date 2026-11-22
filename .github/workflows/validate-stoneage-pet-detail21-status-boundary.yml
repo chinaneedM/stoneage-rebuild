@@ -1,0 +1,32 @@
+name: PET-DETAIL21 TW1 original PS versus pet and inventory status evidence boundaries
+on:
+  push:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE21-PS-STATUS-K-W-I-SOURCE-BOUNDARY-R1.json'
+      - 'docs/continuity/STONEAGE-PET-DETAIL21-PS-VS-PET-ITEM-STATE-REFRESH-20261122.md'
+      - 'tests/test_stoneage_pet_detail21_status_boundary_r1.py'
+      - 'docs/pets/INDEX.md'
+      - 'README.md'
+      - '.github/workflows/validate-stoneage-pet-detail21-status-boundary.yml'
+  pull_request:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE21-PS-STATUS-K-W-I-SOURCE-BOUNDARY-R1.json'
+      - 'docs/continuity/STONEAGE-PET-DETAIL21-PS-VS-PET-ITEM-STATE-REFRESH-20261122.md'
+      - 'tests/test_stoneage_pet_detail21_status_boundary_r1.py'
+      - 'docs/pets/INDEX.md'
+      - 'README.md'
+      - '.github/workflows/validate-stoneage-pet-detail21-status-boundary.yml'
+permissions:
+  contents: read
+jobs:
+  source-only-status-causality-boundary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test pinned original source receipts and deny inferred historical outcomes
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail21_status_boundary_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail20_original_PS_message_r1.py' -v

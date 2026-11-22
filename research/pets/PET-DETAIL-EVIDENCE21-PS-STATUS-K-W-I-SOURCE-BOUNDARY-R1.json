@@ -1,0 +1,166 @@
+{
+  "schema": "stoneage.pet_detail21.original_TW10_PS_vs_K_W_I_source_bounded_relation_r1",
+  "date": "2026-11-22",
+  "module": "PET",
+  "game_scope": "ORIGINAL_CLASSIC_2D_PC_ONLY",
+  "evidence_type": "DERIVED_CROSS_RECORD_AUDIT_NO_NEW_ORIGINAL_BYTES",
+  "source_main_head": "163e0cca11c5eddc496a47df031b32aa5cf6ea35",
+  "source_tree": "d873508bc2394a2d00599a531bea5ad6e9b99f3d",
+  "pinned_source_blobs": {
+    "research/pets/PET-DETAIL-EVIDENCE20-TW10-ORIGINAL-PS-REQUEST-SEND-REPLY-R1.json": "6d002cf5ad11464a9f3db0f0b45cbf4ec74b84e6",
+    "research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json": "e39a3a6020b578da017ab0bfa9369dc083e0b700",
+    "research/recovered/STONEAGE-PET126E-TW10-K-STATUS-CAPTURE-STATIC-R1.json": "d04c9442e7c16f7bff99f597cb99228dcd63f584",
+    "docs/CURRENT-STATE.md": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "original_source_reopened_this_work": false,
+  "original_client_executed_this_work": false,
+  "original_server_packet_observed_this_work": false,
+  "prior_verified_original_PS": {
+    "request_command": "PS",
+    "outgoing_material_representation": "%d|",
+    "selected_item_indices": {
+      "min": 5,
+      "max": 19
+    },
+    "response_parsed_field_count": 4,
+    "response_handler_va": "0x433030",
+    "verified_handler_window": {
+      "begin": "0x433030",
+      "end_exclusive": "0x43306d",
+      "source_sha256": "33909af3ba14e9bee92a38b821ddf2680d237b1c0f6d1c43aee12b1831eb545a"
+    },
+    "pending_flag_reset_va": "0x43303c",
+    "zero_value_failure_message": "失敗！",
+    "nonzero_means_success_proven": false,
+    "actual_PS_packet": null
+  },
+  "independently_documented_client_status_update_channels": [
+    {
+      "record": "status_pet_full",
+      "protocol": "S",
+      "category": "K",
+      "callback_rva": "0x2fe94",
+      "field_count": 21,
+      "field_names": [
+        "update_mask",
+        "graphic_id",
+        "hp",
+        "max_hp",
+        "mp",
+        "max_mp",
+        "exp",
+        "max_exp",
+        "level",
+        "attack",
+        "defense",
+        "quick",
+        "ai",
+        "earth",
+        "water",
+        "fire",
+        "wind",
+        "max_skill_slots",
+        "rename_flag",
+        "name",
+        "free_name"
+      ],
+      "position_evidence": "V1_DIRECT",
+      "semantic_evidence": "EARLY_LINEAGE",
+      "is_verified_as_caused_by_PS": false
+    },
+    {
+      "record": "pet_skill_view_slot",
+      "protocol": "S",
+      "category": "W",
+      "callback_rva": "0x30b4f",
+      "field_count": 5,
+      "field_names": [
+        "skill_id",
+        "field_context",
+        "target_class",
+        "name",
+        "comment"
+      ],
+      "position_evidence": "V1_DIRECT",
+      "semantic_evidence": "EARLY_LINEAGE",
+      "is_verified_as_caused_by_PS": false
+    },
+    {
+      "record": "inventory_full_slot",
+      "protocol": "S",
+      "category": "I",
+      "callback_rva": "0x30922",
+      "field_count": 9,
+      "field_names": [
+        "name",
+        "secondary_display_text",
+        "color",
+        "memo_or_effect_text",
+        "graphic_id",
+        "field_context",
+        "target_class",
+        "level",
+        "send_or_use_flags"
+      ],
+      "position_evidence": "V1_DIRECT",
+      "semantic_evidence": "EARLY_LINEAGE",
+      "is_verified_as_caused_by_PS": false
+    },
+    {
+      "record": "inventory_incremental_record",
+      "protocol": "I",
+      "category": null,
+      "callback_rva": "0x325f0",
+      "field_count": 10,
+      "field_names": [
+        "inventory_slot",
+        "name",
+        "secondary_display_text",
+        "color",
+        "memo_or_effect_text",
+        "graphic_id",
+        "field_context",
+        "target_class",
+        "level",
+        "send_or_use_flags"
+      ],
+      "position_evidence": "V1_DIRECT",
+      "semantic_evidence": "EARLY_LINEAGE",
+      "is_verified_as_caused_by_PS": false
+    }
+  ],
+  "original_K_local_slot_evidence": {
+    "callback_va": "0x42FE94",
+    "in_memory_pet_slots_count": 5,
+    "per_slot_record_stride_bytes": 108,
+    "full_record_update_bit_count": 20,
+    "mask_zero_behavior": "SETS_OCCUPIED_FLAG_ZERO_ONLY",
+    "mask_one_behavior": "SETS_FLAG_ONE_AND_REPLACES_FULL_FIELDS_2_TO_21",
+    "server_live_pet_grant_proven": false
+  },
+  "cross_message_causality": {
+    "PS_handler_directly_invokes_S_K_status_update": null,
+    "PS_handler_directly_invokes_S_W_skill_view_update": null,
+    "PS_handler_directly_invokes_S_I_inventory_full_update": null,
+    "PS_handler_directly_invokes_I_inventory_incremental_update": null,
+    "observed_original_reply_followed_by_refresh_sequence": null,
+    "observed_material_consumption_or_skill_learning": null,
+    "observed_pet_birth_or_recipe_probability": null,
+    "conclusion": "PS_RESPONSE_BRANCH_AND_INDEPENDENT_CLIENT_UPDATE_HANDLERS_EXIST; SAME_DEPLOYMENT_TRANSACTION_LINK_UNPROVEN"
+  },
+  "limits": {
+    "TW10_source_named_pet_dossiers_partial": 124,
+    "TW10_complete_official_historical_pet_dossiers": 0,
+    "new_official_live_species_proven": 0,
+    "missing_original_portraits_RDs": 4,
+    "same_deployment_original_pet_skill_master": null,
+    "original_pet_birth_skill_loadouts": null,
+    "real_early_TW10_server_stats_and_growth": null,
+    "authentic_live_PS_and_following_K_W_I_packets": null,
+    "overall_completion_percent": null,
+    "stage_A": "7_PARTIAL+2_OPEN",
+    "stage_B_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "Find authenticated original same-deployment PS reply plus subsequent S:K/S:W/S:I/I packet or bounded native caller graph; without source stop PS deepening and address source-ready PET image/identity gap. PC-only, no invented server."
+}
