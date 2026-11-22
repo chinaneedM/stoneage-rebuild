@@ -3198,3 +3198,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-22｜PET-DETAIL-EVIDENCE-03：2003华义GM奖宠文字与经典PC编译源对照
 
 [2003波比及3个换宠名称的逐项史料记录](docs/pets/CN2003-OPERATOR-AWARD-SOURCE-CROSSWALK.md) · [机读原件跨索引](research/pets/PET-DETAIL-EVIDENCE03-CN2003-GM-ROLE-BRIDGE-R1.json) · [本次有界收据](docs/continuity/STONEAGE-PET-DETAIL03-2003-CN-GM-ROLE-20261122.md)。原华义新闻转载报告11/12「奇娜」换得奖宠「波比」，多鲁宝/洛卡伦恩仅具活动规则可提交资格；实际运营方发奖叙述有据，但缺原2003发奖数据库。原TW10 124名单与保存CN50 362槽重核：三输入名有本地原名候选（TW PET-000075/081/091、CN50槽94/100/110），波比两个相簿均无对应原编译名。这是**限定样本缺字面**，不能否定当年官方发宠，也不能用同名证明同服身份。新增OBS-CN2003-GM-BOBI-0001文字观察，**永久PET号仍124、完备0、2026年审未闭、模块不切换**。原CURRENT完整blob c89e0e33537990aa2132b47c40fef49a985a935c不变，Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、overall UNKNOWN。NEXT PET-DETAIL-EVIDENCE-04: seek real original same-deployment pet main table/selector or independently authenticated PC carrier.
+
+
+## 2026-11-22｜PET-DETAIL04 2003年带日期玩家投稿与15只原客户端PET个人档的有界补充
+
+[2003玩家数值/技能/取得方式文献旁证](docs/pets/CN2003-SINA-PLAYER-CLAIMS-15-FACTCHECK.md) · [机读源级对照](research/pets/PET-DETAIL-EVIDENCE04-SINA2003-15-PLAYER-CLAIMS-R1.json) · [连续性增量](docs/continuity/STONEAGE-PET-DETAIL04-SINA2003-15-PLAYER-CLAIMS-20261122.md)。2001 Waei馆藏玩家元素与2003新浪投稿对照：15条里10条同数、1条邦达霍恩冲突（2001水5火5；2003火5风5）、4条无可比。均不能回填原TW1官方Pet主档，永久档仍124份PARTIAL、全字段完整0，2026年份及总体进度未知。NEXT PET-DETAIL-EVIDENCE-05寻找经典PC同部署原主档/技能/地图捕捉与奖励真实材料。
