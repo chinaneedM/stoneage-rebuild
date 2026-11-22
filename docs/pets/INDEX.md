@@ -267,3 +267,7 @@
 ## 2026-11-22｜PET-DETAIL20：原台湾1.0实物直接认证PS材料槽索引协议发包与响应失败提示
 
 [原PC静态PS请求构造→输出队列→Winsock send→PS接收分派→本机失敗！文字的逐址考据](../continuity/STONEAGE-PET-DETAIL20-ORIGINAL-TW10-PS-REQUEST-REPLY-20261122.md) · [9原生代码窗口／27字节锚／49独立反汇编锚／3原字符串及否定断言的机读收据](../../research/pets/PET-DETAIL-EVIDENCE20-TW10-ORIGINAL-PS-REQUEST-SEND-REPLY-R1.json)。原台湾1.0零售ZIP/PE重新逐SHA认证；原生合成/料理相关的选择槽5—19通过「%d|」格式生成材料**槽号列表**，0x419090以命令字面量「PS」构造请求，经原本机发送回调和缓冲区可进入WSOCK32.dll ordinal19的send。原接收端独立比较同一「PS」命令、取4字段并调用0x433030，清除本地待处理标记；首结果值0时转入原版「失敗！」提示。**这证明原客户端存在协议双向分支，不等于实际官服抓包、成功率、服务器配方消耗、宠物天生技能或完整配方被恢复**。TW1 124份PARTIAL、历史全字段0，PET唯一、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停，总体UNKNOWN，原历史CURRENT git blob未动。NEXT PET-DETAIL21审真正可证的PS回复与宠物/物品状态跨模块数据刷新边界。
+
+## 2026-11-22｜PET-DETAIL21：原版 PS 返回与宠物／技能／物品更新并非已证同一事务
+
+[逐址限定的PS→K/W/I证据边界](../continuity/STONEAGE-PET-DETAIL21-PS-VS-PET-ITEM-STATE-REFRESH-20261122.md) · [机器收据与严格无联动断言](../../research/pets/PET-DETAIL-EVIDENCE21-PS-STATUS-K-W-I-SOURCE-BOUNDARY-R1.json)。复核同版原PC已验PET20静态PS回复和PET126E原K更新，以及TW1数据表中S:K（21字段）、S:W（5字段）、S:I（9字段）、I（10字段）四组接收入口。分别存在**不等于PS成功后由服务器按固定顺序刷新它们**；未获原联机包、配方、扣料、官方出生技能或真宠物出生值。本轮未重新取原EXE；旧原件校验和全历史CURRENT保留，124档PARTIAL、完全验收0。PS无新源证即停止扩助手链，下一步原早期同部署主档或4份头像原RD可得即补，仍仅经典PC宠物。

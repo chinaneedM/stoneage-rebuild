@@ -3233,3 +3233,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-22｜PET-DETAIL10：深入到后期PC服务端基础面板计算并核出原TW1的K协议差异
 
 [2016年后期PC原源码限定的124份宠物基础HP／攻击／防御／敏捷理论值参考](docs/pets/TW10-124-2016-BASE-UI-STATS-AND-K-PROTOCOL-CROSSWALK.md) · [195后期模板×4指标=780单项有理数数学包络与TW1原客户端K20字段](research/pets/PET-DETAIL-EVIDENCE10-LATER2016-124-HP-ATK-DEF-QUICK-AND-TW10-K-BOUNDARY-R1.json) · [PET10连续性收据](docs/continuity/STONEAGE-PET-DETAIL10-2016-STAT-UI-TW10-K-PROTOCOL-20261122.md)。继PET09原`ENEMY_createPetFromEnemyIndex`源码之后直接审2016固定后期PC源码`gmsv/src/char/char.c`，确认`CHAR_initcharWorkInt`下的最大HP/攻击/防御/速度混合计算，可对124个TW1原图号对应的195条后期服务器模板计算**未装备未特殊影响的纯数学截断基础数值包络**；但尚未原C实际执行，浮点边界未认证，也不是TW1.0官服出生值。更重要：对照已经静态取证的原TW1`sa_3.exe` `S/K`接收字段，确认后期2016服务器`K`前18数值字段顺序相合，**token20早期原客户端期待宠物原名而后期服务器插入宠物转生整数**，故全包不可宣称兼容/同服务器。永久TW1宠物124份仍PARTIAL，完整官方证实0、新官服初值0，PC-only、PET唯一；CURRENT完整原Git Blob`c89e0e33537990aa2132b47c40fef49a985a935c`未动，StageA7PARTIAL+2OPEN、B/wiki GATED、R79暂停，完成率未知。NEXT PET-DETAIL11优先获得早期PC原服真正主档、K服务端发包或真实出生实测，不跨版回填。
+
+
+## 2026-11-22｜PET-DETAIL21：原始PS操作与宠物／技能／库存接收入口的证据隔离
+
+[来源受限核对](docs/continuity/STONEAGE-PET-DETAIL21-PS-VS-PET-ITEM-STATE-REFRESH-20261122.md) · [机读验收](research/pets/PET-DETAIL-EVIDENCE21-PS-STATUS-K-W-I-SOURCE-BOUNDARY-R1.json) · [124条宠物进度总表](docs/pets/INDEX.md)。在PET20原台湾1.0客户端PS回包失败路径之外，复核已登记的S:K（21字段）、S:W（5字段）、S:I（9字段）、I（10字段）彼此独立的本机接收字段/入口，以及PET126E原K本地更新状态。**未见足以确认PS结果必触发其中任一字段更新的同部署原消息因果证据**；不把本机有接口视为原服务器已证配方、扣料、技能出生或真正新物种。本轮仅对以前已证原件的派生Git证据交叉核对、原EXE再读0B、原服封包0，避免继续无源空转。优先实际新增早期同部署原PetSkill/PS收发实证或回源补4头像RD。TW1仍124PARTIAL/0完整，PET唯一、2026年审未毕；历史CURRENT Git Blob`c89e0e33537990aa2132b47c40fef49a985a935c`不变；StageA7 PARTIAL+2 OPEN、StageB/wiki GATED、R79暂停、总体UNKNOWN。
