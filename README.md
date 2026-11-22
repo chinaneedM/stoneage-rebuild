@@ -3272,3 +3272,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-22｜PET-DETAIL28：2001灰人龙1→101级同一个体玩家面板及跨年份颜色称名冲突
 
 [2001来源、算术和2002/2011矛盾的有界审计](docs/continuity/STONEAGE-PET-DETAIL28-2001-GREY-DRAGON-LV101-20261122.md) · [机读原数字与版本隔离](research/pets/PET-DETAIL-EVIDENCE28-2001-GREY-DRAGON-LV1-LV101-NAME-CONFLICT-R1.json) · [台湾1.0邦浦洛斯PET-000040](docs/pets/TW10-G100289.md)。2001署名阿花自报同一「灰人龙」1级52/11/7/7、101级1027/248/143/134，四项100级差均值9.75/2.37/1.36/1.27；2002玩家称灰人龙=邦浦洛斯，2011经典PC强化报道则称灰人龙=布鲁顿，明确冲突，不能强填原TW1官服初值或成长。作者隐藏成长公式只是理论；0新同服原PetMaster、0新官服物种实发证、0原图像及原封包。124源候选PARTIAL、0官方全字段完整、120原头像，PET唯一，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING、整体percent UNKNOWN。原`CURRENT-STATE.md` blob `c89e0e33537990aa2132b47c40fef49a985a935c`保留不写。NEXT PET-DETAIL29继续查可得经典PC同版原主表、实机技能与真实发放，或独立具有原数字的旧玩家记录。
+
+
+## 2026-11-22 — PET-DETAIL29：原PC服务端出生／成长源码精确计算补证（source first）
+
+据用户本轮提出的优先级，直接复读4套固定Git版本的**后期PC服务端** ENEMY_getRank、ENEMY_createEnemy、CHAR_PetLevelUp：模板Rank、出生4项±2、出生10点、独立升级10点和六档随机倍率均有C源码。修正Python近似使用binary64/合并乘法的问题：原C先分别做float32乘法、float32加法、再截整数；对425216个单项输入，旧模型和C行为有1636项差1。现修复tools/stoneage_pet_growth_model.py并加入明确出生内部能力投影、独立编译C对照、源约束测试。[PET-DETAIL29报告](docs/continuity/STONEAGE-PET-DETAIL29-PC-SOURCE-FLOAT32-BIRTH-GROWTH-20261122.md)和[机读收据](research/pets/PET-DETAIL-EVIDENCE29-PC-GROWTH-SOURCE-FLOAT32-R1.json)。这些是不同后期社区源中共享的PC规则，不算四套独立官方证明；尚不能回填早期TW1/大陆1.82/JSS1999官服出生属性、成长、技能或捕获。原完整CURRENT-STATE blob原样保留，124份TW1原档仍PARTIAL、历史全字段0，PET唯一活动，StageA7 PARTIAL+2 OPEN、StageB/wiki GATED、R79 PAUSED，整体UNKNOWN。NEXT PET-DETAIL30：对已证同提交后期PC宠物模板做出生→成长→基础面板的数值可复现个例，并明确COMPLIANCE及装备/状态边界；发现早期真正同部署官服来源则优先恢复它，不再让玩家文章主导公式。

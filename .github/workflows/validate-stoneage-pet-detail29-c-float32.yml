@@ -1,0 +1,31 @@
+name: PET-DETAIL29 PC server growth source C-float32 and birth
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_growth_model.py'
+      - 'research/mechanics/STONEAGE-PET-GROWTH-CORE-R1.md'
+      - 'research/pets/PET-DETAIL-EVIDENCE29-PC-GROWTH-SOURCE-FLOAT32-R1.json'
+      - 'docs/continuity/STONEAGE-PET-DETAIL29-PC-SOURCE-FLOAT32-BIRTH-GROWTH-20261122.md'
+      - 'tests/test_stoneage_pet_detail29_c_float32_r1.py'
+      - '.github/workflows/validate-stoneage-pet-detail29-c-float32.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_growth_model.py'
+      - 'tests/test_stoneage_pet_detail29_c_float32_r1.py'
+      - '.github/workflows/validate-stoneage-pet-detail29-c-float32.yml'
+permissions:
+  contents: read
+jobs:
+  source_native_and_core_growth:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run historical pet-growth model tests and compile native C oracle
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pet_growth_model.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail29_c_float32_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_stage_a_review_packet.py' -v
+          python tools/stoneage_stage_a_review_packet.py

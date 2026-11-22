@@ -262,9 +262,9 @@
     },
     "pet_growth": {
       "path": "research/mechanics/STONEAGE-PET-GROWTH-CORE-R1.md",
-      "bytes": 8969,
-      "sha256": "891c0ef3775f88a6df0ff17d494a0074690d96a0d7087fea35ccff7dd7d3e8eb",
-      "git_blob": "87cdd063f05f6d6f334007cf3db7a31a8d1654a8"
+      "bytes": 10577,
+      "sha256": "33bf9abfe479f4f9ceb51d4b29d8745eb79b74b594426f6b626b7f35646b2cd2",
+      "git_blob": "568f461f31370a1b537d42791a1d333597672e77"
     },
     "petskill": {
       "path": "research/mechanics/STONEAGE-PETSKILL-CORE-R1.md",
@@ -930,5 +930,26 @@
     "stage_a_accepted": false,
     "original_game_execution": false,
     "phase_gate_append_only_rule": "Preserve pinned original phase_gate prefix bytes and SHA; do not demand live document is frozen at previous length."
+  },
+  "source_pin_refresh_detail29": {
+    "date": "2026-11-22",
+    "kind": "PIN_REFRESH_AFTER_SOURCE_MODEL_PRECISION_CORRECTION_NOT_HISTORICAL_SOURCE_PROMOTION",
+    "previous_pet_growth_pin": {
+      "path": "research/mechanics/STONEAGE-PET-GROWTH-CORE-R1.md",
+      "bytes": 8969,
+      "sha256": "891c0ef3775f88a6df0ff17d494a0074690d96a0d7087fea35ccff7dd7d3e8eb",
+      "git_blob": "87cdd063f05f6d6f334007cf3db7a31a8d1654a8"
+    },
+    "new_pet_growth_pin": {
+      "path": "research/mechanics/STONEAGE-PET-GROWTH-CORE-R1.md",
+      "bytes": 10577,
+      "sha256": "33bf9abfe479f4f9ceb51d4b29d8745eb79b74b594426f6b626b7f35646b2cd2",
+      "git_blob": "568f461f31370a1b537d42791a1d333597672e77"
+    },
+    "corrective_evidence": "research/pets/PET-DETAIL-EVIDENCE29-PC-GROWTH-SOURCE-FLOAT32-R1.json",
+    "reason": "PET-DETAIL29 revised the descendant PC growth model explanatory source; keep old source digest and snapshot in this manifest and Git history, validate new current bytes without weakening normal file-content custody checks.",
+    "original_current_state_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "early_official_source_upgrade": false,
+    "stage_a_accepted": false
   }
 }

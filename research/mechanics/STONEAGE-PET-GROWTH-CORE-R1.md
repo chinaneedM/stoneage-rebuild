@@ -168,7 +168,7 @@ Let:
 Then each stat's raw increment is:
 
 ```text
-increment[i] = int((B[i] + P[i]) * R)
+increment[i] ≈ trunc((B[i] + P[i]) × (rank_roll × 0.01))
 ```
 
 where the C cast truncates toward zero.
@@ -238,6 +238,39 @@ maximum; level-up does **not** imply automatic healing in this seam.
 The hidden VARIABLEAI is persisted separately. The visible pet AI/loyalty value
 is not rewritten here because its full owner/charm/template compliance
 projection remains a distinct evidence boundary.
+
+
+### 8.3 PET-DETAIL29 correction: source C float versus simplified arithmetic
+
+The historical integer rank draw is rank_roll (one of 450–600, constrained
+by its rank band). C first stores the effective multiplier in a binary32
+float, then performs TWO separate binary32 products, a binary32 addition,
+and a truncating integer cast. The approximate algebraic formula above is
+not bit-equivalent to source machine arithmetic.
+
+Source-shaped operation boundaries:
+
+    fRand = float32(rank_roll * 0.01)
+    term1 = float32(BASE * fRand)
+    term2 = float32(P * fRand)
+    delta = trunc_toward_zero(float32(term1 + term2))
+
+A separately compiled C witness for BASE=17, P=3, roll=470 gives 93,
+while the old Python binary64 implementation returned 94. For
+BASE=20, P=5, roll=472, C gives 117, old Python 118. Complete bounded
+single-stat arithmetic enumeration 256 BASE bytes × 11 allocations
+× 151 rolls = 425216 inputs: 1636 mismatches against the former Python
+implementation, without claiming 425216 observed original pets.
+Compiler optimization/ABI and exact *retail* deployment are still OPEN.
+
+The deterministic project_pet_birth function mirrors the descendant
+ENEMY_createEnemy template/individualized-base/creation-roll ordering
+with caller-supplied random choices, returning internally packed growth
+identity and four internal attributes. It does not re-create the entire
+server, the status-panel compliance effects, skills, capture availability,
+or any 1999–2002 official value. Source receipts and independently
+compiled C parity tests: PET-DETAIL29, dated 2026-11-22.
+
 
 ## 9. Why this matters for reconstruction
 
