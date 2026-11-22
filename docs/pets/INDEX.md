@@ -28,6 +28,10 @@
 
 [**查看原客户端的七行技能接收缓存和宠物资料界面源级关联**](../continuity/STONEAGE-PET-DETAIL13-TW10-ORIGINAL-W-SKILL-UI-BRIDGE-20261122.md) · [原件窗口SHA/22处原指令/8处原位移复核与字段表](../../research/pets/PET-DETAIL-EVIDENCE13-TW10-ORIGINAL-W-SKILL-UI-BRIDGE-R1.json)。从同一认证TW1原版PC客户端`sa_3.exe`实际核验：`S/W`按宠物槽每742字节保存**七条各106字节**的源级技能缓存（状态、ID、场域、目标、名称、说明），`S/K`的技能槽上限字段（+64）在本机UI控制遍历，原W技能名/说明则进入绘制路径。**只有客户端接收、存储、显示能力得到新的同版本源码证明；没有原服宠物初生技能／技能效果、原服完整Pet表或原版运行验证。**124份档案依旧PARTIAL、历史完全0，不能把七个槽位当作七个出生技能。
 
+## PET-DETAIL14｜三份后期经典PC服务端W技能发包源码和原TW1接收结构核对
+
+[**查看2012及2016三套固定源码提交的技能消息原C发送例程**](../continuity/STONEAGE-PET-DETAIL14-THREE-PC-W-SKILL-SENDERS-20261122.md) · [六文件Git SHA、7×5字段发送结构和禁止跨版本升级的证据表](../../research/pets/PET-DETAIL-EVIDENCE14-THREE-PC-W-SKILL-SENDER-LINEAGES-R1.json)。后期三份公开社区PC服务端在`CHAR_makeStatusString`正常`case 'w'`中均生成**7个技能槽×5字段**，每个槽的技能ID来自当前角色持有的**宠物实例**，再查该源的技能定义（ID、场域、目标、姓名、说明），无定义时保留5个空栏。它与原台湾1.0客户端PET-DETAIL13的W接收结构**字段位置同型**，但后期三源的K包已在token20与初版错位，**绝不据此认定早期官方技能ID、出生自带技能或整个客户端/服务端兼容**。本次TW1档案仍124 PARTIAL、完全恢复0。
+
 ## 当前可核对进度（2026-11-21）
 
 本页采用 [自主永久编号规则](ID-SCHEME.md)：**PET号是我们自己的档案号，OBS号是原证据号**；不能因源条数多，就把它们视为已经恢复的宠物。

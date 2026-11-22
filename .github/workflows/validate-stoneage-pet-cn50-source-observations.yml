@@ -1,4 +1,4 @@
-name: PET-DETAIL02-13 classic PC pet source birth projection and original TW1 K schema guards
+name: PET-DETAIL02-14 classic PC pet source birth projection and original TW1 K schema guards
 on:
   push:
     paths:
@@ -20,6 +20,9 @@ on:
       - 'tests/test_stoneage_pet_detail11_three_pc_k_sender_lineages_r1.py'
       - 'tests/test_stoneage_pet_detail12_tw10_native_k_to_status_view_r1.py'
       - 'tests/test_stoneage_pet_detail13_tw10_w_skill_ui_bridge_r1.py'
+      - 'tests/test_stoneage_pet_detail14_three_pc_w_skill_sender_r1.py'
+      - 'research/pets/PET-DETAIL-EVIDENCE14-THREE-PC-W-SKILL-SENDER-LINEAGES-R1.json'
+      - 'docs/continuity/STONEAGE-PET-DETAIL14-THREE-PC-W-SKILL-SENDERS-20261122.md'
       - 'research/pets/PET-DETAIL-EVIDENCE13-TW10-ORIGINAL-W-SKILL-UI-BRIDGE-R1.json'
       - 'docs/continuity/STONEAGE-PET-DETAIL13-TW10-ORIGINAL-W-SKILL-UI-BRIDGE-20261122.md'
       - 'tools/stoneage_pet_detail13_tw10_w_skill_audit.py'
@@ -68,6 +71,9 @@ on:
       - 'tests/test_stoneage_pet_detail11_three_pc_k_sender_lineages_r1.py'
       - 'tests/test_stoneage_pet_detail12_tw10_native_k_to_status_view_r1.py'
       - 'tests/test_stoneage_pet_detail13_tw10_w_skill_ui_bridge_r1.py'
+      - 'tests/test_stoneage_pet_detail14_three_pc_w_skill_sender_r1.py'
+      - 'research/pets/PET-DETAIL-EVIDENCE14-THREE-PC-W-SKILL-SENDER-LINEAGES-R1.json'
+      - 'docs/continuity/STONEAGE-PET-DETAIL14-THREE-PC-W-SKILL-SENDERS-20261122.md'
       - 'research/pets/PET-DETAIL-EVIDENCE13-TW10-ORIGINAL-W-SKILL-UI-BRIDGE-R1.json'
       - 'docs/continuity/STONEAGE-PET-DETAIL13-TW10-ORIGINAL-W-SKILL-UI-BRIDGE-20261122.md'
       - 'tools/stoneage_pet_detail13_tw10_w_skill_audit.py'
@@ -123,4 +129,5 @@ jobs:
           python -m unittest discover -s tests -p 'test_stoneage_pet_detail11_three_pc_k_sender_lineages_r1.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pet_detail12_tw10_native_k_to_status_view_r1.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pet_detail13_tw10_w_skill_ui_bridge_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail14_three_pc_w_skill_sender_r1.py' -v
           python -m py_compile tools/stoneage_pet_detail13_tw10_w_skill_audit.py
