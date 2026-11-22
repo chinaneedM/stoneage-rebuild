@@ -59,8 +59,8 @@ class PetDetail10CrossSourceTest(unittest.TestCase):
         for idx,(p,old,reg) in enumerate(zip(d["pet_source_views"],self.prev["dossiers"],self.petreg["catalog_entries"])):
             self.assertEqual(p["pet_id"],old["pet_id"])
             self.assertEqual(p["pet_id"],reg["catalog_pet_id"])
-            self.assertEqual(p["original_TW10_client_name"],old["tw10_name"])
-            self.assertEqual(p["original_TW10_client_graphic_number"],old["tw10_graphic"])
+            self.assertEqual(p["tw10_original_album_name"],old["tw10_name"])
+            self.assertEqual(p["tw10_original_graphic"],old["tw10_graphic"])
             self.assertEqual(p["tw10_dossier_md"],reg["visible_dossier_path"])
             self.assertIsNone(p["original_early_TW10_HP_ATK_DEF_QUICK_birth_range"])
             self.assertEqual(len(p["candidates"]),len(old["server2016_candidates"]))
@@ -145,7 +145,7 @@ class PetDetail10CrossSourceTest(unittest.TestCase):
         self.assertEqual(doc.count("\n### PET-"),124)
         for p in d["pet_source_views"]:
             self.assertIn("### "+p["pet_id"],doc)
-            self.assertIn(p["original_TW10_client_name"],doc)
+            self.assertIn(p["tw10_original_album_name"],doc)
         idx=(ROOT/"docs/pets/INDEX.md").read_text(encoding="utf-8")
         self.assertIn("TW10-124-2016-BASE-UI-STATS-AND-K-PROTOCOL-CROSSWALK.md",idx)
 
