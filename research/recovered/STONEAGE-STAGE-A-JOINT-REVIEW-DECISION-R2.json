@@ -7,7 +7,7 @@
   "source_pins": {
     "review": {
       "path": "research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R2.json",
-      "git_blob": "72f3bbee8de2728db7955001f2c9567ad165a3fc"
+      "git_blob": "29b062e2616afc4efbd69a3ae4fca873f0da7bc3"
     },
     "gap": {
       "path": "research/recovered/STONEAGE-STAGE-A-EARLY-SOURCE-GAP-TRIAGE-R1.json",
@@ -182,5 +182,35 @@
       "git_blob": "72f3bbee8de2728db7955001f2c9567ad165a3fc"
     },
     "stage_a_accepted": false
+  },
+  "source_pin_refresh_detail29": {
+    "date": "2026-11-22",
+    "kind": "CROSS_PACKET_PIN_REFRESH_NOT_ACCEPTANCE",
+    "previous_current_consolidated_review_pin": {
+      "path": "research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R2.json",
+      "git_blob": "72f3bbee8de2728db7955001f2c9567ad165a3fc"
+    },
+    "new_current_consolidated_review_pin": {
+      "path": "research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R2.json",
+      "git_blob": "29b062e2616afc4efbd69a3ae4fca873f0da7bc3"
+    },
+    "prior_snapshot_refresh": {
+      "date": "2026-11-01",
+      "kind": "PIN_REFRESH_ONLY",
+      "supersedes": "research/recovered/STONEAGE-STAGE-A-JOINT-REVIEW-DECISION-R1.json",
+      "previous_review_pin": {
+        "path": "research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R2.json",
+        "git_blob": "fa0cfd4a1a484f85912e0155bf339916d6751c52"
+      },
+      "updated_review_pin": {
+        "path": "research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R2.json",
+        "git_blob": "72f3bbee8de2728db7955001f2c9567ad165a3fc"
+      },
+      "stage_a_accepted": false
+    },
+    "reason": "PET-DETAIL29 changed the growth-source section and refreshed Stage A consolidated packet with full old SHA provenance; dependent joint review packet must pin exact current reviewed bytes while retaining earlier Git history.",
+    "stage_a_accepted": false,
+    "stage_b_started": false,
+    "original_current_state_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c"
   }
 }
