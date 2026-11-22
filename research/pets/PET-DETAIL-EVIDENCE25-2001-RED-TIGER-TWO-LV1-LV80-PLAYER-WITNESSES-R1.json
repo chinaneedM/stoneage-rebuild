@@ -1,0 +1,210 @@
+{
+  "schema": "stoneage.pet_detail25.classic_pc.2001_player_red_tiger_sources.r1",
+  "date": "2026-11-22",
+  "active_module": "PET",
+  "platform_scope": "CLASSIC_ORIGINAL_2D_PC_ONLY",
+  "baseline_main_sha": "e9192f4b6eaf40798a4a73884bc0fb89a0d357ba",
+  "baseline_tree_sha": "84a1526589dafe610f16fc7458ffab09d2e3100b",
+  "source_records": [
+    {
+      "key": "FENGXIN",
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n813_730019.html",
+      "title": "极品宠物培养法",
+      "visible_author": "风信",
+      "page_displayed_date": "2001-06-14",
+      "historical_original_html_sha_authenticated": false,
+      "provenance_grade": "MIGRATED_PLAYER_FIRST_PERSON_TEXT_NOT_ORIGINAL_GAME_PACKET",
+      "pet_phrase": "红虎",
+      "individuals_described": 2
+    },
+    {
+      "key": "KUAIJI",
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n2_919075.html",
+      "title": "抓一级宠物的技巧",
+      "visible_author": "快击",
+      "page_displayed_date": "2001-06-14",
+      "historical_original_html_sha_authenticated": false,
+      "provenance_grade": "MIGRATED_PLAYER_CAPTURING_GUIDE_NOT_ORIGINAL_SERVER_CONFIG",
+      "direct_textual_name_pair": {
+        "display_name": "格鲁西斯",
+        "nickname": "红虎"
+      }
+    }
+  ],
+  "original_client_identity_crosswalk": {
+    "profile_id": "PET-000064",
+    "observation_id": "OBS-TW10-0064",
+    "source_version": "AUTHENTICATED_TAIWAN_1_0_RETAIL_PC_CLIENT",
+    "source_path": "research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json",
+    "source_git_blob": "1aada81d7314769bf683b816cc5a8762c3bd9400",
+    "compiled_original_name": "格魯西斯",
+    "simplified_name": "格鲁西斯",
+    "graphic_number": 100329,
+    "original_spr_group": 303,
+    "compiled_name_row_offset": 374780,
+    "compiled_name_row_sha256": "cc4dc48685d2a27ffbe27bb8d75b9df8b85aff44ce16f0080e9dbb0ee94b7a45",
+    "full_spr_sha256": "7e50e9e34385f29e64de256ad053bfe1c2540d17444b74d5218c37ee5b7d57ce",
+    "same_2001_player_server_as_tw10_retail_verified": false,
+    "player_nickname_is_original_tw10_compiled_name": false
+  },
+  "fengxin_individual_player_claims": [
+    {
+      "individual_id": "FENGXIN_RED_TIGER_A",
+      "distinct_player_owned_animal": true,
+      "reported_panels": [
+        {
+          "level": 1,
+          "hp": 32,
+          "attack": 8,
+          "defense": 5,
+          "agility": 7
+        }
+      ],
+      "reported_growth_quality_opinion": "AUTHOR_JUDGED_POOR_NO_FOLLOWUP_NUMERIC_PANELS",
+      "official_min_max_estimate": false
+    },
+    {
+      "individual_id": "FENGXIN_RED_TIGER_B",
+      "distinct_player_owned_animal": true,
+      "reported_panels": [
+        {
+          "level": 1,
+          "hp": 37,
+          "attack": 8,
+          "defense": 5,
+          "agility": 6
+        },
+        {
+          "level": 80,
+          "hp": 771,
+          "attack": 170,
+          "defense": 98,
+          "agility": 139
+        }
+      ],
+      "reported_growth_quality_opinion": "AUTHOR_JUDGED_GOOD_NOT_FORMULA",
+      "official_min_max_estimate": false
+    }
+  ],
+  "fengxin_second_pet_arithmetic": {
+    "level_gaps": 79,
+    "derived_differences": {
+      "hp": 734,
+      "attack": 162,
+      "defense": 93,
+      "agility": 133
+    },
+    "mean_per_level_exact_rationals": {
+      "hp": {
+        "numerator": 734,
+        "denominator": 79
+      },
+      "attack": {
+        "numerator": 162,
+        "denominator": 79
+      },
+      "defense": {
+        "numerator": 93,
+        "denominator": 79
+      },
+      "agility": {
+        "numerator": 133,
+        "denominator": 79
+      }
+    },
+    "type": "POST_HOC_CUMULATIVE_AVERAGE_OF_TWO_PLAYER_CLAIMED_PANELS_NOT_SERVER_GROWTH_ALGORITHM"
+  },
+  "kuaiji_claimed_common_level1_ranges": {
+    "source_role": "ANOTHER_PLAYER_GUIDE_NOT_OFFICIAL_STAT_DISTRIBUTION",
+    "hp": {
+      "min": 32,
+      "max": 38
+    },
+    "attack": {
+      "min": 7,
+      "max": 9
+    },
+    "defense": {
+      "min": 4,
+      "max": 6
+    },
+    "agility": {
+      "min": 5,
+      "max": 7
+    },
+    "elements_as_author_text": {
+      "fire": 8,
+      "wind": 2
+    },
+    "encounter_as_author_text": {
+      "island": "吉鲁岛",
+      "area": "福尔德村下方出口向左",
+      "approx_coordinate": [
+        244,
+        366
+      ]
+    },
+    "claim_officially_verified": false
+  },
+  "independent_earlier_player_text_relation": {
+    "source_path": "research/pets/PET-DETAIL-EVIDENCE07-CN2001-LEVEL1-20-NUMERIC-SOURCE-CLAIMS-R1.json",
+    "source_git_blob": "bd2b5d560c20663dcd22259d562aef8bef2ea90c",
+    "source_obs_id": "OBS-CN2001-MILK-LV1-0018",
+    "player_name": "红虎",
+    "four_unlabeled_slots": [
+      {
+        "min": 32,
+        "max": 39
+      },
+      {
+        "min": 7,
+        "max": 8
+      },
+      {
+        "min": 4,
+        "max": 5
+      },
+      {
+        "min": 5,
+        "max": 7
+      }
+    ],
+    "stat_slot_names_authenticated": false,
+    "source_source_same_deployment_unproven": true
+  },
+  "evidence_verification": {
+    "source_page_first_party_official": false,
+    "same_build_official_pet_server_master_found": false,
+    "tw10_authentic_client_name_found": true,
+    "two_distinct_level1_player_observations": true,
+    "one_followup_same_player_animal_claimed": true,
+    "level80_other_tiger_is_not_third_animal": true,
+    "player_level1_samples_inside_kuaiji_ranges": 2,
+    "source_has_independent_original_2001_web_archive_capture": false,
+    "authentic_native_game_network_capture": false
+  },
+  "official_game_fields_preserved_unknown": {
+    "official_original_server_pet_id": null,
+    "official_level1_fixed_values": null,
+    "official_level1_min_max": null,
+    "official_elements": null,
+    "official_growth_algorithm": null,
+    "official_innate_skills": null,
+    "official_capture_location": null,
+    "official_capture_probability": null,
+    "official_release_date": null
+  },
+  "coverage_guard": {
+    "original_client_named_profiles": 124,
+    "original_client_portraits": 120,
+    "fully_verified_official_profiles": 0,
+    "added_official_live_species": 0,
+    "only_active_module": "PET",
+    "stage_A": "7_PARTIAL+2_OPEN",
+    "stage_B_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percent": null,
+    "original_current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "next": "PET-DETAIL26: seek a readable same-deployment original PC server pet master, verified origin birth/skills/encounter source or truly new independent dated original PC player evidence, then continue per-pet source-only dossiers without upgrading these ranges to TW1 official data."
+}

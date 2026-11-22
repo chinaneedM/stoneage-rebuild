@@ -3253,3 +3253,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-22｜PET-DETAIL24：2001唐歌「扬奇洛斯」单只宠物Lv1–71八行HP/攻/防/敏玩家观察
 
 [全8行、28项成长平均值及来源限制](docs/continuity/STONEAGE-PET-DETAIL24-2001-YANGQILUOSI-PLAYER-EIGHT-LEVEL-SOURCE-20261122.md) · [机读玩家样本／2001两独立文献交叉](research/pets/PET-DETAIL-EVIDENCE24-2001-YANGQILUOSI-SINGLE-PET-LV1-LV71-R1.json) · [逐只PET-000039档](docs/pets/TW10-G100288.md)。新发现直接可读的2001-06-14页面标签唐歌稿，记录自己一只「蓝人龙扬奇洛斯」8级面板（1级61/13/8/6→71级791/172/108/92），7×4=28个打印累计平均数以精确有理分数核算一致。重新用真实台湾1.0原零售EXE SHA并读取offset373632的28B原名行，CP950「揚奇洛斯」原行SHA完整一致；另一玩家2001「蓝龙人」原报告四数值槽52–64/11–14/6–9/5–8包含前者单只初生数值，但**词序/当年原服部署、字段语义与全部官方属性仍没有确认**。文献只进`historical_player_measurement_evidence`独立层；正式TW1原初值/随机范围/元素/成长/技能/捕捉继续`null`，124份PARTIAL/0历史完整，新官方实发种数0，总体完成率UNKNOWN。原CURRENT Git Blob`c89e0e33537990aa2132b47c40fef49a985a935c`保留，PET经典PC独占，Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停。NEXT PET-DETAIL25优先早期同部署官方源的真实数值/技能/实际获取，停止把玩家单样本晋升为官方物种统计。
+
+
+## 2026-11-22｜PET-DETAIL25：2001红虎格鲁西斯两只Lv1、同一B只Lv80玩家面板与另一玩家捕抓文字对照
+
+[证据与历史限制](docs/continuity/STONEAGE-PET-DETAIL25-2001-RED-TIGER-PLAYER-SAMPLES-20261122.md) · [永久PET-000064](docs/pets/TW10-G100329.md) · [来源分轨机读数值](research/pets/PET-DETAIL-EVIDENCE25-2001-RED-TIGER-TWO-LV1-LV80-PLAYER-WITNESSES-R1.json)。2001网页标注来源「风信」自报两只不同红虎1级分别HP/攻/防/敏=32/8/5/7与37/8/5/6，第二只80级771/170/98/139；另一作者「快击」明确把「格鲁西斯」与红虎同称，记录常见一级范围、火风属性及吉鲁岛福尔德附近抓捕**玩家说法**。既有俄罗斯牛奶四个尚未确证栏目数值槽只独立比对，未当官方范围。TW1认证原客户端格魯西斯100329只确认本地具名图像；无同部署原服务器数据、原创2001网页SHA或真实网络抓包。正式属性／成长／技能／遇敌仍null，原TW1 124候选PARTIAL、0历史完整，PET唯一；原CURRENT 2709173B/blob c89e0e33537990aa2132b47c40fef49a985a935c不动，Stage A 7PARTIAL+2OPEN、B/wiki GATED、R79暂停、percent=UNKNOWN。NEXT PET-DETAIL26继续找有源同版本官方主表或真正新同年实物，不扩无源辅助链。
