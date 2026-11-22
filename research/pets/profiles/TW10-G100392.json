@@ -109,6 +109,53 @@
       "is_original_album_portrait": false,
       "original_native_runtime_palette_confirmed": false,
       "original_game_execution_proven": false
+    },
+    "higher_version_portrait_source_candidates": {
+      "status": "LATER_CLASSIC_PC_CANDIDATE_ONLY_NOT_ORIGINAL_TW10_PORTRAIT",
+      "original_taiwan_1_0_face_alias": 28088,
+      "source_receipt": "research/pets/PET-DETAIL-EVIDENCE32-TW1-FOUR-CN50-PATCH129-FACE-CANDIDATES-R1.json",
+      "originating_r43_source_git_blob": "dbc1b46fe14f105898757d1199ac338e9971c330",
+      "cn50_preserved_pc5": {
+        "source_qualification": "THIRD_PARTY_PRESERVED_CLASSIC_PC_NOT_VERIFIED_ORIGINAL_OFFICIAL_PRESSING",
+        "original_album_face_source_alias": 28088,
+        "candidates": [
+          {
+            "physical_bitmapno": 126069,
+            "rd_bytes": 9412,
+            "rd_sha256": "ecabeb85dad02b2f3a0f534fc434533a206fbf26394239fea0f5c1fdd1edd116",
+            "source_catalog_index": 126069
+          },
+          {
+            "physical_bitmapno": 126225,
+            "rd_bytes": 8318,
+            "rd_sha256": "74188535ac343b466232f51c94459330eadda596ea5ccc6416408884639d67b7",
+            "source_catalog_index": 126225
+          }
+        ]
+      },
+      "patch129_original_pc_resource": {
+        "source_qualification": "SOURCE_QUALIFIED_PC_REPAIR_RESOURCE_NOT_TW10_DEPLOYMENT",
+        "original_album_face_source_alias": 28088,
+        "candidates": [
+          {
+            "physical_bitmapno": 126069,
+            "rd_bytes": 9412,
+            "rd_sha256": "ecabeb85dad02b2f3a0f534fc434533a206fbf26394239fea0f5c1fdd1edd116",
+            "source_catalog_index": 126069
+          },
+          {
+            "physical_bitmapno": 126225,
+            "rd_bytes": 8318,
+            "rd_sha256": "74188535ac343b466232f51c94459330eadda596ea5ccc6416408884639d67b7",
+            "source_catalog_index": 126225
+          }
+        ]
+      },
+      "two_distinct_rd_contents_not_selected": true,
+      "actual_original_taiwan_1_0_portrait": null,
+      "native_runtime_winning_candidate": null,
+      "new_original_pixels_in_public_repository": false,
+      "official_live_issuance_proven": false
     }
   },
   "combat_stats": {
@@ -230,6 +277,11 @@
         "path": "research/pets/PET-DETAIL-EVIDENCE22-TW10-FOUR-POSES-NO-PORTRAIT-R1.json",
         "git_blob": "cc49a4b61390f1f5a5e74d37c1c4bf5bcaf65663",
         "scope": "ADDITIVE_TW1_ORIGINAL_SPR_POSE_NOT_ORIGINAL_ALBUM_PORTRAIT"
+      },
+      {
+        "path": "research/recovered/STONEAGE-ALBUM-CROSSVERSION-MATERIAL-R43.json.xz",
+        "git_blob": "dbc1b46fe14f105898757d1199ac338e9971c330",
+        "scope": "PRESERVED_CN50_AND_PATCH129_LATER_PC_FACE_ALIAS_RD_CANDIDATES_NOT_TW10_ORIGINAL_FACE"
       }
     ],
     "private_observation_html_basename": null,

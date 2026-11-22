@@ -3287,3 +3287,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-22｜PET-DETAIL31：124份台湾1.0 PC逐宠档案正式字段来源有界审计
 
 [全量复核报告](docs/continuity/STONEAGE-PET-DETAIL31-TW10-124-SOURCE-GAPS-20261122.md) · [124条逐只源状态与Git指纹](research/pets/PET-DETAIL-EVIDENCE31-TW10-FIELD-COVERAGE-R1.json) · [可重跑只读审计器](tools/stoneage_pet_detail31_profile_coverage.py)。按远端已合并PET30继续，实际由GitHub Action逐一读取原TW1 124份机读档案和124条OBS登记：原名字/SPR段/动作序列124，原相簿头像120，洛克斯／阿伊薩／格洛格魯／朵洛將恩四项只有SPR姿态候选、原头像未定位。早期**同服官服**宠物ID、正式投放、初始数值/区间、元素、成长、技能、捕获/发奖和官方图鉴正文各自仍0份证实，不等于历史没有这些内容。新保存全量逐档字段真值和SHA，未改变原TW1档案原值，不把后期PC社区源码或玩家转载回灌原官服。有限搜索中的2001来源只给版史/计划/未开放的背景，未获得原同版PetMaster字节。PET唯一，124档PARTIAL、全字段0、StageA7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体UNKNOWN；原CURRENT完整Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`未动。**NEXT PET-DETAIL32**：逐只补真正可取的早期官方PC同服主表、技能、初值及抓捕/发行证据；来源缺失只记准确止点，不重复扩社区后期外围规则、手游或收费卖盘。
+
+
+## 2026-11-22｜PET-DETAIL32：从高版本经典PC资源反查台湾1.0缺失4份头像
+
+[4只逐源报告](docs/continuity/STONEAGE-PET-DETAIL32-HIGH-VERSION-FOUR-PORTRAIT-CANDIDATES-20261122.md) · [8种后版原RD SHA及16项两载体引用](research/pets/PET-DETAIL-EVIDENCE32-TW1-FOUR-CN50-PATCH129-FACE-CANDIDATES-R1.json) · [原源复演工具](tools/stoneage_pet_detail32_high_version_portraits.py)。经已有 R43 全量原RD来源数据实证，台湾1.0洛克斯/阿伊薩/格洛格魯/朵洛將恩缺失头像别名28085—28088，**大陆5.0保存PC资源和后续PC修复包129均各有两条互不相同的RD内容**，两载体各别名的内容集合SHA完全相同。将每只候选A/B的原资源位置、长度、完整SHA和版本资格回填4份永久PET详细档案（独立高版字段），不再只提示“头像待补”。台湾1.0原头像字段仍为null，**原TW1头像120/124、4项未证**；双候选尚无原native运行选择器证明、这轮没读新原像素、不可编成TW1原图。所有项目闸门不变：PET唯一，StageA7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、整体UNKNOWN，旧CURRENT全Git blob不改。NEXT PET-DETAIL33优先验证上述8内容的真实原RD像素或同版头像选择规则，若原件不可得则暂停本支线回主表/技能/取得原证。
