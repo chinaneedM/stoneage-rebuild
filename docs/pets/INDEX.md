@@ -263,3 +263,7 @@
 ## 2026-11-22｜PET-DETAIL19：原台湾1.0 PC合成／料理同界面物品槽及至少2项本地选择门槛
 
 [原实物回放及客户端与服务端分轨解释](../continuity/STONEAGE-PET-DETAIL19-TW10-ORIGINAL-ITEM-SELECT-COUNT-GATE-20261122.md) · [原位址/本地状态/负面断言机读收据](../../research/pets/PET-DETAIL-EVIDENCE19-TW10-NATIVE-ITEM-SELECT-COUNT-GATE-R1.json)。私人原零售ZIP/sa_3.exe再次完整SHA核验；代码窗口3、独立反汇编36、原操作码25均通过。原客户端本机物品记录每项156B，UI状态每项32B；20槽循环索引0—19，合成／料理相关选择代码只允许索引5—19的15个槽，选择状态不低于1计数，**至少2项**才可进入下一段本地显示状态过渡。此条件**不能当作官服配方最少2材料、实际消耗、网络发包或成功概率的证明**，技能主表/出生技能/原W包仍未知。TW1 124份原客户端部分档案、历史完整0；PET唯一、StageA7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall未知，历史CURRENT未动。NEXT PET-DETAIL20寻原生操作封包/结果路径的可验证源证。
+
+## 2026-11-22｜PET-DETAIL20：原台湾1.0实物直接认证PS材料槽索引协议发包与响应失败提示
+
+[原PC静态PS请求构造→输出队列→Winsock send→PS接收分派→本机失敗！文字的逐址考据](../continuity/STONEAGE-PET-DETAIL20-ORIGINAL-TW10-PS-REQUEST-REPLY-20261122.md) · [9原生代码窗口／27字节锚／49独立反汇编锚／3原字符串及否定断言的机读收据](../../research/pets/PET-DETAIL-EVIDENCE20-TW10-ORIGINAL-PS-REQUEST-SEND-REPLY-R1.json)。原台湾1.0零售ZIP/PE重新逐SHA认证；原生合成/料理相关的选择槽5—19通过「%d|」格式生成材料**槽号列表**，0x419090以命令字面量「PS」构造请求，经原本机发送回调和缓冲区可进入WSOCK32.dll ordinal19的send。原接收端独立比较同一「PS」命令、取4字段并调用0x433030，清除本地待处理标记；首结果值0时转入原版「失敗！」提示。**这证明原客户端存在协议双向分支，不等于实际官服抓包、成功率、服务器配方消耗、宠物天生技能或完整配方被恢复**。TW1 124份PARTIAL、历史全字段0，PET唯一、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停，总体UNKNOWN，原历史CURRENT git blob未动。NEXT PET-DETAIL21审真正可证的PS回复与宠物/物品状态跨模块数据刷新边界。

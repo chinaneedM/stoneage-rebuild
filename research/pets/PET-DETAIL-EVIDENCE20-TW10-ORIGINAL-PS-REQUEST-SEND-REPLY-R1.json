@@ -1,0 +1,177 @@
+{
+  "schema": "stoneage.pet_detail20.authenticated_TW10_original_PC_PS_request_send_receive_static_bridge_r1",
+  "date": "2026-11-22",
+  "module": "PET",
+  "scope": "ORIGINAL_AUTHENTICATED_TAIWAN_V1_0_CLASSIC_PC_CLIENT_STATIC_ONLY",
+  "remote_project_base_main": "c33a5da8468dae4bf44aca563f6daa20726ec2f6",
+  "source": {
+    "source_name": "StoneAge-TW1-original-runtime-and-native-observation-P3H.zip",
+    "archive_bytes": 372626292,
+    "archive_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "original_exe": "source/sa_3.exe",
+    "exe_bytes": 425984,
+    "exe_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "exe_crc32": "3453fd16",
+    "original_source_zip_and_exe_reopened_this_work": true,
+    "original_PE_disassembly_performed_this_work": true,
+    "original_game_runtime_executed": false,
+    "original_game_source_bytes_publicly_distributed": false,
+    "private_audit_script": "tools/stoneage_pet_detail20_tw10_original_PS_request_response_audit.py"
+  },
+  "source_windows": [
+    {
+      "name": "selected_material_slot_ascii_formatter",
+      "begin": "0x424571",
+      "end_exclusive": "0x4245e5",
+      "size": 116,
+      "sha256": "85c1e69d5f639fdeab01b9e568799400a471a76e4cb9398ce7f1ef95c9a9ca62"
+    },
+    {
+      "name": "pet_skill_request_caller",
+      "begin": "0x4245e5",
+      "end_exclusive": "0x424627",
+      "size": 66,
+      "sha256": "45767c3aecf5678c18537126258d919bb41acc367f3a455bc57016267fe8e6de"
+    },
+    {
+      "name": "PS_request_serializer",
+      "begin": "0x419090",
+      "end_exclusive": "0x419141",
+      "size": 177,
+      "sha256": "d908a1b6f8061bfe3a2d7377b422db58e3708998fa87de65c8d07d91131b6c0d"
+    },
+    {
+      "name": "packet_frame_finalize",
+      "begin": "0x41b3f0",
+      "end_exclusive": "0x41b47a",
+      "size": 138,
+      "sha256": "fb554968556c36df7142f9ae185f674e7d9276cee7fc08b4910b8fc54c1d9f90"
+    },
+    {
+      "name": "send_callback_registration",
+      "begin": "0x42ebd2",
+      "end_exclusive": "0x42ebeb",
+      "size": 25,
+      "sha256": "ad8f0a998c1b8ee6e782445fd9c26d46e8a24cc1c93589a59a6110af24752321"
+    },
+    {
+      "name": "outbound_buffer_append",
+      "begin": "0x42eca0",
+      "end_exclusive": "0x42eceb",
+      "size": 75,
+      "sha256": "5d2043b8df3090d02c92291a34d86a128500b14e504a29009eacb7901239edae"
+    },
+    {
+      "name": "socket_send_invocation",
+      "begin": "0x42eb1f",
+      "end_exclusive": "0x42eb45",
+      "size": 38,
+      "sha256": "6e6b4afea3acf22d2bfea1715b5f5f633a85e56bcd7eaada67c0c09b2f9d4c94"
+    },
+    {
+      "name": "PS_inbound_dispatch",
+      "begin": "0x41a50c",
+      "end_exclusive": "0x41a5a7",
+      "size": 155,
+      "sha256": "65e9fa49cfbfcd4fb67a0d19b1e0e3587e8d4ae807a080d2ad1b8f6c81b8c975"
+    },
+    {
+      "name": "PS_response_handler",
+      "begin": "0x433030",
+      "end_exclusive": "0x43306d",
+      "size": 61,
+      "sha256": "33909af3ba14e9bee92a38b821ddf2680d237b1c0f6d1c43aee12b1831eb545a"
+    }
+  ],
+  "direct_original_validation": {
+    "source_window_sha256_checks": 9,
+    "original_raw_opcode_checks": 27,
+    "independent_objdump_instruction_anchors": 49,
+    "embedded_literal_checks": 3,
+    "PE_import_library": "WSOCK32.dll",
+    "import_symbol": "send",
+    "import_ordinal": 19,
+    "original_thunk_va": "0x448466",
+    "original_thunk_IAT_va": "0x452254"
+  },
+  "packet_code_path": {
+    "selected_material_UI_state_start": "0x17bcdf4",
+    "selected_material_UI_end_exclusive": "0x17bcfd4",
+    "state_stride_bytes": 32,
+    "first_candidate_slot_index": 5,
+    "last_candidate_slot_index": 19,
+    "original_source_format_literal": "%d|",
+    "literal_va": "0x45c3a4",
+    "output_slot_index_list_not_item_IDs": true,
+    "outbound_request_function_call_va": "0x424612",
+    "outbound_request_serializer_va": "0x419090",
+    "original_protocol_command_ascii": "PS",
+    "command_literal_va": "0x459834",
+    "scalar_args_count_before_escaped_string": 3,
+    "scalar_arg_semantics": "NOT_IDENTIFIED",
+    "text_args_count": 1,
+    "serialization_helper_integer": "0x41b0b0",
+    "serialization_helper_text": "0x41b0f0",
+    "message_finalizer": "0x41b3f0",
+    "callback_pointer_va": "0x4598e0",
+    "callback_registration_setup_va": "0x42ebde",
+    "registered_callback_va": "0x42eca0",
+    "outbound_queue_address": "0x17f1e34",
+    "outbound_queue_length_address": "0x17ede20",
+    "Winsock_send_call_va": "0x42eb33",
+    "Winsock_send_import_jump_va": "0x448466",
+    "call_queued_static_source_proven": true,
+    "real_online_packet_sent_or_captured": false,
+    "exact_runtime_encrypted_wire_bytes": null
+  },
+  "reply_code_path": {
+    "same_PS_literal_ref_va": "0x41a50c",
+    "command_match_response_callback_call_va": "0x41a592",
+    "response_handler_entry": "0x433030",
+    "parsed_response_fields_count": 4,
+    "response_handler_checks_first_parsed_numeric_field": true,
+    "local_pending_flag_va": "0x17e5a74",
+    "client_pending_set_after_request_va": "0x42461a",
+    "client_pending_cleared_on_PS_response_va": "0x43303c",
+    "zero_value_failure_branch_va": "0x433046",
+    "failure_CP950_original_literal": "失敗！",
+    "failure_original_literal_va": "0x45c9c4",
+    "client_failure_message_function_va": "0x409090",
+    "nonzero_result_equates_to_proven_success": false,
+    "live_original_PS_response_packet_captured": false,
+    "official_server_synthesis_result": null
+  },
+  "prior_source_guard": {
+    "PET19": {
+      "path": "research/pets/PET-DETAIL-EVIDENCE19-TW10-NATIVE-ITEM-SELECT-COUNT-GATE-R1.json",
+      "blob": "932840f7be341a77ca39e0f0db3721a02c27f918"
+    },
+    "PET18": {
+      "path": "research/pets/PET-DETAIL-EVIDENCE18-TW10-NATIVE-ID200-201-UI-LABEL-BRIDGE-R1.json",
+      "blob": "dd0e026d0b5bd1a0b7413c2605b2c186d238dd3b"
+    },
+    "TW10_schema": {
+      "path": "research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json",
+      "blob": "e39a3a6020b578da017ab0bfa9369dc083e0b700"
+    }
+  },
+  "limit_guards": {
+    "original_TW1_official_server_PetSkill_master": null,
+    "original_actual_W_packet": null,
+    "original_actual_PS_packet": null,
+    "original_pet_innate_skill_loadout": null,
+    "original_material_consumption_rules": null,
+    "original_recipe_formula_and_success_probability": null,
+    "original_TW10_verified_new_species": 0,
+    "original_TW10_pet_dossiers_PARTIAL": 124,
+    "original_TW10_pet_dossiers_historically_complete": 0,
+    "source_compilation_not_runtime_executed": true,
+    "source_list_static_historical_claim_not_server_authority": true,
+    "stage_A": "7_PARTIAL+2_OPEN",
+    "stage_B_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null,
+    "preserved_docs_current_state_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "next": "PET-DETAIL21: source-bound true original PS reply and S/I data update interop, or independently authenticated same build live packet; do not infer formulas or implement a fake online server. PET only."
+}
