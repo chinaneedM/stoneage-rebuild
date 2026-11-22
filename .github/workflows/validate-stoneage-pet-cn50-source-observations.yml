@@ -1,4 +1,4 @@
-name: PET-DETAIL02/03/04 classic PC source-only pet and player-claim regression
+name: PET-DETAIL02/03/04/05 classic PC source-only pet & 7.0 tournament witness guard
 on:
   push:
     paths:
@@ -11,6 +11,9 @@ on:
       - 'tests/test_stoneage_pet_cn50_source_observations_r1.py'
       - 'tests/test_stoneage_pet_detail03_operator_award_gap_r1.py'
       - 'tests/test_stoneage_pet_detail04_sina2003_player_claims_r1.py'
+      - 'tests/test_stoneage_pet_detail05_cn70_operator_tournament_r1.py'
+      - 'research/pets/PET-DETAIL-EVIDENCE05-CN70-2003-2004-OPERATOR-LIVE-COMBAT-R1.json'
+      - 'docs/pets/CN70-DOUBLEWOLF-PACK-AND-TOURNAMENT-2003-2004.md'
       - 'research/pets/PET-DETAIL-EVIDENCE04-SINA2003-15-PLAYER-CLAIMS-R1.json'
       - 'docs/pets/CN2003-SINA-PLAYER-CLAIMS-15-FACTCHECK.md'
       - 'docs/HISTORICAL-TIMELINE.md'
@@ -31,6 +34,9 @@ on:
       - 'tests/test_stoneage_pet_cn50_source_observations_r1.py'
       - 'tests/test_stoneage_pet_detail03_operator_award_gap_r1.py'
       - 'tests/test_stoneage_pet_detail04_sina2003_player_claims_r1.py'
+      - 'tests/test_stoneage_pet_detail05_cn70_operator_tournament_r1.py'
+      - 'research/pets/PET-DETAIL-EVIDENCE05-CN70-2003-2004-OPERATOR-LIVE-COMBAT-R1.json'
+      - 'docs/pets/CN70-DOUBLEWOLF-PACK-AND-TOURNAMENT-2003-2004.md'
       - 'research/pets/PET-DETAIL-EVIDENCE04-SINA2003-15-PLAYER-CLAIMS-R1.json'
       - 'docs/pets/CN2003-SINA-PLAYER-CLAIMS-15-FACTCHECK.md'
       - 'docs/HISTORICAL-TIMELINE.md'
@@ -58,3 +64,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_stoneage_pet_documentary_waei2001_r1.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pet_detail03_operator_award_gap_r1.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pet_detail04_sina2003_player_claims_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail05_cn70_operator_tournament_r1.py' -v

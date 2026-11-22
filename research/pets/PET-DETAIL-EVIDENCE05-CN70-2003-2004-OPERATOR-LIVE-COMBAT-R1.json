@@ -1,0 +1,166 @@
+{
+  "schema": "stoneage.pet_detail05.cn7_2003_operator_pack_2004_reported_pet_skill_roles.r1",
+  "date": "2026-11-22",
+  "active_module": "PET",
+  "scope": "OFFICIAL_CLASSIC_2D_PC_ONLY",
+  "fresh_start": {
+    "main_head": "58d7b0d2350aaa9f4ccb86d8ec36f0f27183cb08",
+    "main_tree": "bed372d6c6c65334c06c735575879ede81095bb5",
+    "current_original_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "current_bytes": 2709173
+  },
+  "sources": [
+    {
+      "id": "CN70_OFFICIAL_RELEASE_2003_12_12",
+      "url": "https://games.sina.com.cn/newgames/2003/12/12129889.shtml",
+      "publication_date": "2003-12-12 00:12",
+      "grade": "BEIJING_WAEI_FIRST_PARTY_PRODUCT_COPY_REPRINT",
+      "original_period_html_bytes_recovered": false
+    },
+    {
+      "id": "CN70_FIRST_SERVER_2003_12_15",
+      "url": "https://games.sina.com.cn/newgames/2003/12/121510031.shtml",
+      "publication_date": "2003-12-15 16:39",
+      "grade": "BEIJING_WAEI_FIRST_PARTY_ROLLOUT_COPY_REPRINT",
+      "original_period_html_bytes_recovered": false
+    },
+    {
+      "id": "CN70_PVP_REPORT_2004_06_18",
+      "url": "https://games.sina.com.cn/newgames/2004/06/061826328.shtml",
+      "publication_date": "2004-06-18 15:24",
+      "byline": "首席战地记者 忧之梦魇",
+      "grade": "FIRST_PERSON_TOURNAMENT_WITNESS_TEXT_NOT_NATIVE_SERVER_LOG",
+      "original_period_html_bytes_recovered": false
+    }
+  ],
+  "git_source_catalogue_pins": {
+    "research/pets/PET-ID-REGISTRY-R1.json": "564bb2c0433cdd0f80e5b34917132d11516097d8",
+    "research/recovered/STONEAGE-PET126R-CN50-PC-ORIGINAL-ALBUM-FULL-362-SLOT-SOURCE-CATALOGUE-R1.json": "8b1058a43c267dfeaa298d4c2c472209cebd24d9",
+    "research/recovered/STONEAGE-PET66-2003-TW6-CN7-PET-SOURCE-R1.json": "5772982b59c8082b60712e66c8b79c15940019c5"
+  },
+  "period_connections": {
+    "operator": "北京华义",
+    "version": "7.0石头就业所",
+    "officially_announced_first_upgraded_CN_server_group": "中国网通九",
+    "tournament_players_home_server_as_reported": "中国网通九",
+    "tournament_is_separate_PK_server": true,
+    "official_source_7_client_cannot_login_older_182_20_60_servers": true,
+    "same_native_build_and_pet_master_verified": false
+  },
+  "source_name_check": {
+    "two_catalogue_scopes": [
+      "AUTHENTICATED_TAIWAN10_124_NAME_SPR_CLIENT",
+      "PRESERVED_CN50_362_COMPILED_NAME_CLIENT"
+    ],
+    "exact_names_checked": [
+      "双头狼",
+      "双头恶狼",
+      "红肥龙",
+      "肥龙",
+      "海马",
+      "狂暴熊",
+      "白虎"
+    ],
+    "all_exact_name_hits_in_both": 0,
+    "this_is_only_a_bounded_literal_gap_not_proof_of_nonrelease": true
+  },
+  "records": [
+    {
+      "id": "OBS-CN2003-CN7-DOUBLEWOLF-CARD-0001",
+      "type": "OFFICIAL_OPERATOR_PRODUCT_ANNOUNCEMENT",
+      "printed_pet_label": "石器双头狼",
+      "commercial_product_name": "双头恶狼卡",
+      "published": "2003-12-12",
+      "planned_release": "2003-12-15",
+      "advertised_price_RMB": 198,
+      "advertised_quantity_of_pet": 1,
+      "advertised_elements_random": true,
+      "original_element_random_distribution": null,
+      "proof_of_actual_retail_account_redemption": false,
+      "original_2003_official_pet_id": null
+    },
+    {
+      "id": "OBS-CN2004-CN7-PK-DOUBLEWOLF-0001",
+      "type": "CONTEMPORANEOUS_FIRST_PERSON_TOURNAMENT_BATTLE_REPORT",
+      "source_date": "2004-06-18",
+      "actual_battle_day_from_original_log": null,
+      "combat_players_from_CN_netcom9_as_reported": true,
+      "reported_first_round_pet": "双头狼",
+      "reported_first_round_pet_skill": "巨毒",
+      "reported_opponent_water_wolf_level": 140,
+      "reported_fire_wolf_turns_to_earth_during_battle": true,
+      "fire_to_earth_is_base_element_change_proof": false,
+      "same_wolf_as_2003_premium_award_verified": false,
+      "original_skill_id": null,
+      "original_pet_id": null
+    },
+    {
+      "id": "OBS-CN2004-CN7-PK-REDFATDRAGON-0001",
+      "type": "CONTEMPORANEOUS_FIRST_PERSON_TOURNAMENT_BATTLE_REPORT",
+      "source_date": "2004-06-18",
+      "name_as_reported": "红肥龙",
+      "player_name": "黎明前夕",
+      "reported_skill_C_set": [
+        "狂暴攻击",
+        "沉默",
+        "闪避",
+        "巨毒",
+        "净化"
+      ],
+      "skill_set_is_individual_report_not_species_innate": true,
+      "original_skill_ids": null,
+      "original_pet_id": null
+    },
+    {
+      "id": "OBS-CN2004-CN7-PK-OTHER-NAMES-0001",
+      "type": "MATCH_SITUATIONAL_PET_DESCRIPTIONS_NOT_NATIVE_SPECIES_MASTER",
+      "source_date": "2004-06-18",
+      "original_report_pet_descriptions": [
+        "NONO狂暴海马",
+        "NONO狂暴熊",
+        "白虎",
+        "高等净化宠"
+      ],
+      "all_labels_correspond_to_native_species_verified": false,
+      "original_pet_ids": null
+    }
+  ],
+  "additional_2003_operator_advertised_pet_system": {
+    "pet_trade_inspection_shows_skill_attribute_status": true,
+    "dropped_pet_cannot_be_picked_up_by_another_player": true,
+    "actual_original_7_0_runtime_trace": null,
+    "player_hunter_profession_pet_related_skills": [
+      "驯伏宠物",
+      "激怒宠物"
+    ],
+    "those_are_player_profession_not_pet_innate_skills": true
+  },
+  "counts": {
+    "new_documentary_OBS_records": 4,
+    "independent_contemporary_source_webpages": 3,
+    "original_version_verified_native_pet_ids_added": 0,
+    "verified_actual_original_official_pet_server_master_rows_added": 0,
+    "new_permanent_PET_IDs": 0,
+    "additional_official_species_confirmed": 0,
+    "official_pet_full_historical_profiles_complete": 0,
+    "original_2003_2004_PC_client_bytes_recovered": 0,
+    "historical_total_classic_PC_species": null,
+    "overall_percent": null
+  },
+  "boundaries": {
+    "pack_product_offer_not_actual_account_fulfilment": true,
+    "first_person_report_is_stronger_than_guide_but_not_original_packet_or_award_log": true,
+    "reported_five_redfatdragon_skills_not_intrinsic_species_default": true,
+    "element_turnover_from_battle_not_permanent_native_element": true,
+    "wolf_match_not_same_as_premium_pack_pet_verified": true,
+    "other_descriptive_names_not_original_pet_ids": true,
+    "original_TW10_124_pet_machine_profiles_unchanged": true,
+    "CN50_181_OBS_unchanged": true,
+    "no_proprietary_original_binary_committed": true,
+    "year2026_NOT_YEAR_AUDITED": true,
+    "PET_only_module": true,
+    "mobile_excluded": true,
+    "paid_seller_and_private_server_excluded": true
+  },
+  "next": "PET-DETAIL-EVIDENCE06: real source-qualified original classic PC 7.0 client/patch or same-deployment pet master, original name-graphic selector and native skill/growth/acquisition; no permanent PET number merely from media text."
+}

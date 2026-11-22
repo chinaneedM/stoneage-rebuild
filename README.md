@@ -3203,3 +3203,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-22｜PET-DETAIL04 2003年带日期玩家投稿与15只原客户端PET个人档的有界补充
 
 [2003玩家数值/技能/取得方式文献旁证](docs/pets/CN2003-SINA-PLAYER-CLAIMS-15-FACTCHECK.md) · [机读源级对照](research/pets/PET-DETAIL-EVIDENCE04-SINA2003-15-PLAYER-CLAIMS-R1.json) · [连续性增量](docs/continuity/STONEAGE-PET-DETAIL04-SINA2003-15-PLAYER-CLAIMS-20261122.md)。2001 Waei馆藏玩家元素与2003新浪投稿对照：15条里10条同数、1条邦达霍恩冲突（2001水5火5；2003火5风5）、4条无可比。均不能回填原TW1官方Pet主档，永久档仍124份PARTIAL、全字段完整0，2026年份及总体进度未知。NEXT PET-DETAIL-EVIDENCE-05寻找经典PC同部署原主档/技能/地图捕捉与奖励真实材料。
+
+
+## 2026-11-22｜PET-DETAIL05：北京华义7.0双头狼商品宠与2004比赛技能来源
+
+[7.0双头狼个人来源观察](docs/pets/CN70-DOUBLEWOLF-PACK-AND-TOURNAMENT-2003-2004.md) · [四角色机读源](research/pets/PET-DETAIL-EVIDENCE05-CN70-2003-2004-OPERATOR-LIVE-COMBAT-R1.json) · [连续性](docs/continuity/STONEAGE-PET-DETAIL05-CN70-2003-2004-OPERATOR-PET-EVIDENCE-20261122.md)。2003-12-12北京华义官方7.0广告「双头恶狼卡」198元承诺一只属性随机双头狼；2004-06-18《石器》7.0现场记者记录双头狼首回合「巨毒」、140级双头水狼及火狼属性变化；另有红肥龙技能C五技，但这**不是物种天赋技能**。两份当年报导相对一般玩家自发图鉴增加了可定位的运营和战斗行为历史证据，但不是同服原生Pet主表/图号/实际付费兑奖日志。新增OBS4类而非新PET永久号，已建TW1 124PARTIAL/全字段0不变；NEXT PET-DETAIL-EVIDENCE06真实PC原客户端或同部署主档、技能/属性/获取证据。
