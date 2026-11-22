@@ -120,6 +120,6 @@ class CN50SourceOnlyObservations(unittest.TestCase):
         listing=(ROOT/"docs/pets/CN50-SOURCE-OBSERVATIONS.md").read_text(encoding="utf-8")
         self.assertEqual(listing.count("| [OBS-CN50-SLOT-"),181)
         self.assertIn("不是历史上新增181只宠物",listing)
-        self.assertIn("SOURCE",self.batch["entry_tier"])
+        self.assertIn("OBSERVATION",self.batch["entry_tier"])
 
 if __name__=="__main__":unittest.main()
