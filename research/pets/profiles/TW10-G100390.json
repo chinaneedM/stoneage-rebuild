@@ -109,6 +109,53 @@
       "is_original_album_portrait": false,
       "original_native_runtime_palette_confirmed": false,
       "original_game_execution_proven": false
+    },
+    "cross_version_original_portrait_rd_candidates": {
+      "status": "HIGHER_PC_ORIGINAL_RD_SOURCE_BYTES_LOCATED_BY_DERIVED_HASH_INDEX_NOT_YET_PIXEL_DECODED",
+      "original_TW10_portrait_remains_missing": true,
+      "logical_portrait_alias": 28086,
+      "name_and_full_SPR_segment_identical_across_TW10_CN50": true,
+      "not_source_server_live_identity": true,
+      "CN50_preserved_PC5": {
+        "original_client_pressing_authenticated": false,
+        "alias_record_field": "ADRN+76 map_number",
+        "raw_album_face_alias": 28086,
+        "native_bitmapno": 126223,
+        "native_adrn_index": 126223,
+        "rd_sha256": "abcc1bbb6a7be06149ca8b171fbaa1eda9cb2348d4ed43dace1d68f1e35a10e6",
+        "width": 96,
+        "height": 104,
+        "actual_pixel_decoded_this_run": false
+      },
+      "TW85_saved_PC_higher_variants": [
+        {
+          "source_build": "TW85_SAVED_PC_CLIENT_R157_R158_PAIRED_WITH_WAEI_OFFICIAL_ADRN129_PATCH",
+          "source": "OFFICIAL_PATCH_ADRN_129_ALIAS_TO_SAVED_TW85_EXACT_NATIVE_80B_AND_REAL_RD",
+          "logical_alias": 28086,
+          "native_bitmapno": 126067,
+          "native_adrn_index": 126067,
+          "rd_sha256": "24b2f19d0405fc306d9fd45872ed8550cd05b54164152c203aba98aafe531536",
+          "width": 96,
+          "height": 104,
+          "native_runtime_selected_default": null,
+          "same_real_RD_bytes_as_preserved_CN50": false
+        },
+        {
+          "source_build": "TW85_SAVED_PC_CLIENT_R157_R158_PAIRED_WITH_WAEI_OFFICIAL_ADRN129_PATCH",
+          "source": "OFFICIAL_PATCH_ADRN_129_ALIAS_TO_SAVED_TW85_EXACT_NATIVE_80B_AND_REAL_RD",
+          "logical_alias": 28086,
+          "native_bitmapno": 126223,
+          "native_adrn_index": 126223,
+          "rd_sha256": "abcc1bbb6a7be06149ca8b171fbaa1eda9cb2348d4ed43dace1d68f1e35a10e6",
+          "width": 96,
+          "height": 104,
+          "native_runtime_selected_default": null,
+          "same_real_RD_bytes_as_preserved_CN50": true
+        }
+      ],
+      "comparison": "One TW85 alternate shares full original RD block SHA with CN50; another has independent original RD bytes. Which was selected at runtime is unknown.",
+      "original_TW10_source_RDto_appearance_portrait_not_backfilled": true,
+      "evidence_path": "research/pets/PET-DETAIL-EVIDENCE32-HIGHER-PC-PORTRAIT-ALIAS-R1.json"
     }
   },
   "combat_stats": {
@@ -230,6 +277,11 @@
         "path": "research/pets/PET-DETAIL-EVIDENCE22-TW10-FOUR-POSES-NO-PORTRAIT-R1.json",
         "git_blob": "cc49a4b61390f1f5a5e74d37c1c4bf5bcaf65663",
         "scope": "ADDITIVE_TW1_ORIGINAL_SPR_POSE_NOT_ORIGINAL_ALBUM_PORTRAIT"
+      },
+      {
+        "path": "research/pets/PET-DETAIL-EVIDENCE32-HIGHER-PC-PORTRAIT-ALIAS-R1.json",
+        "git_blob": "e60feab898e5c60e130caf330203ce5c5cb5fb02",
+        "scope": "LATER_PC_CROSS_VERSION_RD_SOURCE_CANDIDATES_ONLY_NOT_TW10_ORIGINAL_PORTRAIT"
       }
     ],
     "private_observation_html_basename": null,
