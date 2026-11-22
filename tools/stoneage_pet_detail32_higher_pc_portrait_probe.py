@@ -77,6 +77,14 @@ def audit(root=ROOT):
     cn_collision_path = verified_gzip(root, f"{CN_DIR}/COLLISION-ATTR-R1.tsv.gz", md["COLLISION-ATTR-R1.tsv.gz"])
     cn_adrn_path = verified_gzip(root, f"{CN_DIR}/ADRN-R1.tsv.gz", md["ADRN-R1.tsv.gz"])
     tw85_path = verified_gzip(root, f"{TW85_DIR}/NATIVE-R1.tsv.gz", tw85["tables"]["NATIVE-R1.tsv.gz"])
+    # Native TW8.5 index preserves original 28-byte header/whole-record hash
+    # but NOT parsed +76 alias. WAEI's archived official patch carries all
+    # 80-byte fields. Only exact patch-record -> saved native-record matches
+    # allow a sourced 8.5 native RD claim.
+    patch_meta = json.loads((root / "research/recovered/wayi-adrn129-patch-metadata/REPORT-R1.json").read_text(encoding="utf-8"))
+    patch_info = patch_meta["indexes"][0]["derived_pin"]
+    patch_path = verified_gzip(root, "research/recovered/wayi-adrn129-patch-metadata/INDEX-1-R1.tsv.gz", patch_info)
+    pairs_path = verified_gzip(root, f"{TW85_DIR}/PAIRS-R1.tsv.gz", tw85["tables"]["PAIRS-R1.tsv.gz"])
 
     aliases = [p[0] for p in ALIAS_TO_PET]
     cn_alias = select_rows(cn_collision_path, "map_number", aliases)
@@ -84,7 +92,28 @@ def audit(root=ROOT):
     # If map_number maps to physical 7xxx, resolve via native full source
     chosen = [int(r["bitmapno"]) for arr in cn_alias.values() for r in arr]
     cn_mapped_rd = select_rows(cn_adrn_path, "bitmapno", chosen) if chosen else {}
-    tw85_alias = select_rows(tw85_path, "map_number", aliases)
+    patch_alias = select_rows(patch_path, "map_number", aliases)
+    patch_indices = [int(row["index"]) for rows in patch_alias.values() for row in rows]
+    pair_by_patch = select_rows(pairs_path, "patch_index", patch_indices) if patch_indices else {}
+    tw85_alias = {alias: [] for alias in aliases}
+    for alias in aliases:
+        for patch_row in patch_alias[alias]:
+            pair = pair_by_patch.get(int(patch_row["index"]), [])
+            if len(pair) != 1:
+                raise ValueError("patch-native RD pairing must preserve record multiplicity exactly")
+            pair = pair[0]
+            if pair["patch_record_sha256"] != patch_row["record_sha256"]:
+                raise ValueError("official patch original 80-byte record changed across source tables")
+            exact = pair["qualification"] == "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE"
+            tw85_alias[alias].append({
+                "original_2005_official_patch": brief_rd(patch_row),
+                "same_saved_tw85_native_RD_exact_original_record": exact,
+                "saved_tw85_native_indexes": [
+                    int(i) for i in pair["native_exact_indices"].split(",") if i
+                ],
+                "saved_tw85_native_RD_sha256_if_source_exact": pair["rd_sha256"] if exact else None,
+                "original_pairing_grade": pair["qualification"],
+            })
     tw85_by_physical = select_rows(tw85_path, "bitmapno", aliases)
     tw10_rows = {int(r["ordinal_graphic_hypothesis"]): r for r in cross["records"]}
     cn_rows = {int(r["TW10_ordinal_based_graphic_hypothesis"]): r for r in cat["records"]
@@ -125,13 +154,18 @@ def audit(root=ROOT):
             "cn50_saved_5_0_ADRN_physical_bitmapno_same_integer_NOT_alias": [
                 brief_rd(x) for x in cn_by_physical[alias]
             ],
-            "tw85_saved_8_5_ADRN_plus76_alias_candidate_rows": [
-                brief_rd(x) for x in tw85_alias[alias]
+            "tw85_official_2005_patch_plus76_alias_candidates": tw85_alias[alias],
+            "tw85_saved_8_5_native_exact_RD_from_official_patch": [
+                x for x in tw85_alias[alias]
+                if x["same_saved_tw85_native_RD_exact_original_record"]
             ],
             "tw85_saved_8_5_ADRN_physical_bitmapno_same_integer_NOT_alias": [
                 brief_rd(x) for x in tw85_by_physical[alias]
             ],
-            "cross_version_portrait_source_candidate_found": bool(raw_matches or tw85_alias[alias]),
+            "cross_version_portrait_source_candidate_found": bool(
+                raw_matches or any(x["same_saved_tw85_native_RD_exact_original_record"]
+                                   for x in tw85_alias[alias])
+            ),
             "source_pixel_actually_decoded_this_audit": False,
             "tw10_original_album_face_recovered_this_audit": False,
             "official_original_pet_issuance_certified": False
@@ -146,6 +180,8 @@ def audit(root=ROOT):
             "CN50_ADRN_SHA256": md["ADRN-R1.tsv.gz"]["sha256"],
             "CN50_COLLISION_SHA256": md["COLLISION-ATTR-R1.tsv.gz"]["sha256"],
             "TW85_NATIVE_SHA256": tw85["tables"]["NATIVE-R1.tsv.gz"]["sha256"],
+            "TW85_OFFICIAL_2005_PATCH_ADRN_INDEX_SHA256": patch_info["sha256"],
+            "TW85_NATIVE_PATCH_EXACT_RD_PAIRS_SHA256": tw85["tables"]["PAIRS-R1.tsv.gz"]["sha256"],
             "CN50_album_362_slots_source": CN_CATALOG,
             "TW10_CN50_cross_version_names": TW_CROSS
         },
@@ -153,7 +189,8 @@ def audit(root=ROOT):
         "stats": {
             "tw10_original_missing_album_portraits": 4,
             "cn50_adRN_aliases_with_at_least_one_candidate": sum(bool(x["cn50_saved_5_0_ADRN_plus76_alias_candidate_rows"]) for x in entries),
-            "tw85_ADRN_aliases_with_at_least_one_candidate": sum(bool(x["tw85_saved_8_5_ADRN_plus76_alias_candidate_rows"]) for x in entries),
+            "tw85_official_patch_aliases_present": sum(bool(x["tw85_official_2005_patch_plus76_alias_candidates"]) for x in entries),
+            "tw85_saved_client_source_exact_native_RD_matches": sum(bool(x["tw85_saved_8_5_native_exact_RD_from_official_patch"]) for x in entries),
             "cross_version_face_candidates_found": sum(x["cross_version_portrait_source_candidate_found"] for x in entries),
             "original_TW10_album_faces_newly_authenticated": 0
         },

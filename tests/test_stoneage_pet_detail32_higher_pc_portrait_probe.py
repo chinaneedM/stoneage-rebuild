@@ -47,9 +47,16 @@ class Pet32HigherPcPortraitTests(unittest.TestCase):
         for x in self.result["records"]:
             for y in x["cn50_saved_5_0_ADRN_plus76_alias_candidate_rows"]:
                 self.assertTrue(y["source_RD"]["rd_block_sha256"])
-            for y in x["tw85_saved_8_5_ADRN_plus76_alias_candidate_rows"]:
-                self.assertTrue(y["rd_sha256"])
-                self.assertIn(y["rd_status"],("HEADER_MATCH","HEADER_MISMATCH","BAD_RD_MAGIC","OUT_OF_BOUNDS_OR_SHORT"))
+            for y in x["tw85_official_2005_patch_plus76_alias_candidates"]:
+                self.assertEqual(
+                    int(y["original_2005_official_patch"]["map_number"]),
+                    x["album_logical_alias_original_both_versions"]
+                )
+                if y["same_saved_tw85_native_RD_exact_original_record"]:
+                    self.assertTrue(y["saved_tw85_native_RD_sha256_if_source_exact"])
+                    self.assertTrue(y["saved_tw85_native_indexes"])
+                else:
+                    self.assertIsNone(y["saved_tw85_native_RD_sha256_if_source_exact"])
 
 
 if __name__ == "__main__":
