@@ -259,3 +259,7 @@
 ## 2026-11-22｜PET-DETAIL18：原台湾1.0实物验证技能200→合成，201→料理的客户端操作字
 
 [完整原客户端同函数控制流及来源边界](../continuity/STONEAGE-PET-DETAIL18-TW10-ORIGINAL-ID200-201-UI-LABELS-20261122.md) · [真实原二进制窗口/指令/CP950字符串的可复核机读收据](../../research/pets/PET-DETAIL-EVIDENCE18-TW10-NATIVE-ID200-201-UI-LABEL-BRIDGE-R1.json)。重新取回并完整认证台湾1.0原ZIP、原EXE，实际验3段本机代码SHA、26条反汇编锚、22原字节指令、2独立原文字及其唯一地址引用。原程序查询拥有的200→本机状态1→原文字「合成」；201→本机状态2→原文字「料理」。这是**原客户端操作文字**，并未取得原服技能名、原生W包或实机执行；PET17后期社区200「加工」仍为另一来源，不能倒灌。TW1 124部分档、全字段0，PET唯一、StageA7PARTIAL+2OPEN、B/wiki GATED、R79暂停，overall未知，历史CURRENT未改。NEXT PET-DETAIL19。
+
+## 2026-11-22｜PET-DETAIL19：原台湾1.0 PC合成／料理同界面物品槽及至少2项本地选择门槛
+
+[原实物回放及客户端与服务端分轨解释](../continuity/STONEAGE-PET-DETAIL19-TW10-ORIGINAL-ITEM-SELECT-COUNT-GATE-20261122.md) · [原位址/本地状态/负面断言机读收据](../../research/pets/PET-DETAIL-EVIDENCE19-TW10-NATIVE-ITEM-SELECT-COUNT-GATE-R1.json)。私人原零售ZIP/sa_3.exe再次完整SHA核验；代码窗口3、独立反汇编36、原操作码25均通过。原客户端本机物品记录每项156B，UI状态每项32B；20槽循环索引0—19，合成／料理相关选择代码只允许索引5—19的15个槽，选择状态不低于1计数，**至少2项**才可进入下一段本地显示状态过渡。此条件**不能当作官服配方最少2材料、实际消耗、网络发包或成功概率的证明**，技能主表/出生技能/原W包仍未知。TW1 124份原客户端部分档案、历史完整0；PET唯一、StageA7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall未知，历史CURRENT未动。NEXT PET-DETAIL20寻原生操作封包/结果路径的可验证源证。
