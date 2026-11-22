@@ -1,0 +1,21 @@
+name: Validate StoneAge PET-DETAIL31 original 124 field audit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_pet_detail31_profile_coverage.py
+      - tests/test_stoneage_pet_detail31_profile_coverage.py
+      - research/pets/PET-DETAIL-EVIDENCE31-TW10-FIELD-COVERAGE-R1.json
+      - docs/continuity/STONEAGE-PET-DETAIL31-TW10-124-SOURCE-GAPS-20261122.md
+      - .github/workflows/validate-stoneage-pet-detail31-profile-coverage.yml
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test exact original client dossier and register links
+        run: python3 -m unittest tests.test_stoneage_pet_detail31_profile_coverage -v
+      - name: Emit complete 124-entry machine audit
+        run: python3 -m tools.stoneage_pet_detail31_profile_coverage --full

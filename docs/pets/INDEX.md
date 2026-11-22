@@ -2,6 +2,10 @@
 
 > **重要：这是一份原客户端的“具名图形候选清单”，不是官服实发物种统计；不同版本不可累加。** 原姓名保持原繁体字形，大陆5.0列是第三方保存的 PC 本地编译异名候选，不代表同服ID。完整图像仅在私人观察文件中，不进公开Git。
 
+## PET-DETAIL31｜124份原PC宠物档案逐字段审计（2026-11-22）
+
+[逐只124条可追溯机器证据](../../research/pets/PET-DETAIL-EVIDENCE31-TW10-FIELD-COVERAGE-R1.json) · [执行报告与准确缺件](../continuity/STONEAGE-PET-DETAIL31-TW10-124-SOURCE-GAPS-20261122.md)：原客户端具名条目、SPR和动作源各124；已定位的原相簿头像120，另4项仅同源SPR姿态候选（PET-000116—000119），不是原头像。**早期官方服端**Pet ID、真正已开放、初始四围/范围、成长、技能及获取字段尚无同部署认证；124份只是来源可见且逐只建档，历史全字段完成0，不作全游戏完成率。此审计自动复核永久编号→OBS原名/图形/SPR SHA→逐只字段与源Git对象，不改既有早期数值。
+
 ## PET-DETAIL29｜四套后期PC服务端源码：出生链与升级float32运算修复
 
 [源码逐链审计、C独立对照与数值边界](../continuity/STONEAGE-PET-DETAIL29-PC-SOURCE-FLOAT32-BIRTH-GROWTH-20261122.md) · [四树来源与425216单项输入比对](../../research/pets/PET-DETAIL-EVIDENCE29-PC-GROWTH-SOURCE-FLOAT32-R1.json) · [可重复出生/升级模型](../../tools/stoneage_pet_growth_model.py)。后期PC源码中确认模板Rank、出生±2、出生十点、升级独立十点和六档倍率；C按二次单精度乘法、单精度加法及整数截断。旧Python双精度近似在425216项输入有1636项与C结果不同，现加入C独立回归。**不是**1999–2002官方服务端算法证明，TW1原124档仍PARTIAL、完整0。
