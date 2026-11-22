@@ -3208,3 +3208,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-22｜PET-DETAIL05：北京华义7.0双头狼商品宠与2004比赛技能来源
 
 [7.0双头狼个人来源观察](docs/pets/CN70-DOUBLEWOLF-PACK-AND-TOURNAMENT-2003-2004.md) · [四角色机读源](research/pets/PET-DETAIL-EVIDENCE05-CN70-2003-2004-OPERATOR-LIVE-COMBAT-R1.json) · [连续性](docs/continuity/STONEAGE-PET-DETAIL05-CN70-2003-2004-OPERATOR-PET-EVIDENCE-20261122.md)。2003-12-12北京华义官方7.0广告「双头恶狼卡」198元承诺一只属性随机双头狼；2004-06-18《石器》7.0现场记者记录双头狼首回合「巨毒」、140级双头水狼及火狼属性变化；另有红肥龙技能C五技，但这**不是物种天赋技能**。两份当年报导相对一般玩家自发图鉴增加了可定位的运营和战斗行为历史证据，但不是同服原生Pet主表/图号/实际付费兑奖日志。新增OBS4类而非新PET永久号，已建TW1 124PARTIAL/全字段0不变；NEXT PET-DETAIL-EVIDENCE06真实PC原客户端或同部署主档、技能/属性/获取证据。
+
+
+## 2026-11-22｜PET-DETAIL06：2004年九庄园骑宠＋特殊五转骑宠的十份个人档案来源链接
+
+[十条同名字面可查页面](docs/pets/CN2004-RIDING-GUIDE-TEN-NAME-CROSSWALK.md) · [带OBS号机读复核](research/pets/PET-DETAIL-EVIDENCE06-CN2004-RIDING-TW10-NAME-CROSSWALK-R1.json) · [本轮原状态保留收据](docs/continuity/STONEAGE-PET-DETAIL06-CN2004-RIDING-TW10-CROSSWALK-20261122.md)。复用R56已归档的2004年2月23日新浪经典PC骑宠攻略（**不是新发现的独立原件或同服主档**），把九庄园具名骑宠、另一个五转机械暴龙逐一连接到原TW1独立客户端具名永久档：十个姓名均有唯一简体字面命中，新增**10条来源OBS，不增加永久PET号**；攻略所述骑乘条件、地点与获得方法保持单页来源主张，不回填台湾1.0原生事实。PET-000001—000124仍全PARTIAL、全字段完备0；原PC历史总种数和整体百分比UNKNOWN，2026未年审，PET为唯一活动模块、Stage A 7PARTIAL+2OPEN、B/wiki GATED、R79暂停。原完整CURRENT blob c89e0e33537990aa2132b47c40fef49a985a935c原样不动。NEXT PET-DETAIL07优先实得经典PC官方同构建原宠物主档/技能/实际发宠或骑乘依据，不做无止境网页同名堆积。
