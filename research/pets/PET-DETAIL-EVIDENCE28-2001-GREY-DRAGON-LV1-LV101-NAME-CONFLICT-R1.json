@@ -1,0 +1,132 @@
+{
+  "schema": "stoneage.pet_detail28.original_PC_2001_grey_dragon_one_sample.r1",
+  "date": "2026-11-22",
+  "base_head": "9b0d226aec4dbf64fc626378ebc16475cea9e79b",
+  "base_tree": "fa51d19264553ef1d2f7f908ab3aaee7b4d9a542",
+  "protected_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "protected_current_bytes": 2709173,
+  "sources": [
+    {
+      "id": "ahua2001",
+      "title": "关于宠物的成长和隐藏属性",
+      "author": "阿花",
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n289_205254.html",
+      "page_date": "2001-06-14",
+      "grade": "MIGRATED_FIRST_PERSON_PLAYER_NOT_ORIGINAL_GAME_PACKET",
+      "original_html_sha_verified": false
+    },
+    {
+      "id": "lili2002",
+      "title": "我谈级品转宠",
+      "author": "丽丽",
+      "url": "https://news.17173.com/z/stoneage/content/2002-5-7/n123_39482.html",
+      "page_date": "2002-05-07",
+      "grade": "PC_PLAYER_NAME_ALIAS_ONLY"
+    },
+    {
+      "id": "press2011",
+      "title": "王者归来 《石器时代》强化版宠物出炉",
+      "url": "https://news.17173.com/content/2011-03-03/20110303104041572.shtml",
+      "page_date": "2011-03-03",
+      "grade": "LATER_CLASSIC_PC_PRESS_NOT_TW1_OPERATOR_PETMASTER"
+    }
+  ],
+  "player_sample": {
+    "source": "ahua2001",
+    "verbatim_color_alias": "灰人龙",
+    "number_of_distinct_pets": 1,
+    "panels": [
+      {
+        "level": 1,
+        "hp": 52,
+        "attack": 11,
+        "defense": 7,
+        "agility": 7
+      },
+      {
+        "level": 101,
+        "hp": 1027,
+        "attack": 248,
+        "defense": 143,
+        "agility": 134
+      }
+    ],
+    "level_gap": 100,
+    "average_deltas": [
+      {
+        "stat": "hp",
+        "numerator": 975,
+        "denominator": 100,
+        "author_printed": "9.75"
+      },
+      {
+        "stat": "attack",
+        "numerator": 237,
+        "denominator": 100,
+        "author_printed": "2.37"
+      },
+      {
+        "stat": "defense",
+        "numerator": 136,
+        "denominator": 100,
+        "author_printed": "1.36"
+      },
+      {
+        "stat": "agility",
+        "numerator": 127,
+        "denominator": 100,
+        "author_printed": "1.27"
+      }
+    ],
+    "author_hidden_hp_theory": "1.1875",
+    "author_total_growth_theory": "6.1875",
+    "theory_is_proven_original_pc_algorithm": false,
+    "panels_are_authenticated_native_gameplay": false
+  },
+  "alias_disagreement": {
+    "status": "UNRESOLVED",
+    "claims": [
+      {
+        "source": "lili2002",
+        "grey": "邦浦洛斯",
+        "yellow": "布鲁顿"
+      },
+      {
+        "source": "press2011",
+        "grey": "布鲁顿",
+        "yellow": "邦浦洛斯"
+      }
+    ],
+    "author_ahua_explicitly_named_bangpuluosi": false,
+    "same_original_game_build_proven": false,
+    "official_corrected_name_proven": false
+  },
+  "separate_original_client": {
+    "verified_artifact": "TW1_RETAIL_PC_SOURCE_LOCAL",
+    "source_path": "research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json",
+    "source_blob": "1aada81d7314769bf683b816cc5a8762c3bd9400",
+    "pet_profile": "PET-000040",
+    "local_name": "邦浦洛斯",
+    "graphic": 100289,
+    "spr_group": 279,
+    "original_compiled_row_sha": "fc639bb9a9e70fd21ee0b13d2a74ec022b493a385b7210b6d570c4c799e3253b",
+    "player_sample_can_be_assigned_to_this_profile": false
+  },
+  "progress": {
+    "pc_only": true,
+    "pet_module_only": true,
+    "original_official_server_master_new": 0,
+    "original_client_bytes_new": 0,
+    "original_gameplay_packets_new": 0,
+    "new_official_live_pet_species": 0,
+    "tw10_named_candidates": 124,
+    "tw10_partial_profiles": 124,
+    "tw10_complete_profiles": 0,
+    "tw10_portraits": 120,
+    "stage_A": "7_PARTIAL+2_OPEN",
+    "stage_B": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "PET-DETAIL29: authentic same-deployment early classic PC PetMaster/skills/spawns or original gameplay evidence; only independent historical first-person numeric sources as fallback."
+}
