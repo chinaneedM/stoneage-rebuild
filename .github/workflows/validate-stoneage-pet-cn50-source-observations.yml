@@ -1,4 +1,4 @@
-name: PET-DETAIL02/03 classic PC name observations and 2003 operator reward source guard
+name: PET-DETAIL02/03/04 classic PC source-only pet and player-claim regression
 on:
   push:
     paths:
@@ -10,6 +10,10 @@ on:
       - 'research/recovered/STONEAGE-PET126R-CN50-PC-ORIGINAL-ALBUM-FULL-362-SLOT-SOURCE-CATALOGUE-R1.json'
       - 'tests/test_stoneage_pet_cn50_source_observations_r1.py'
       - 'tests/test_stoneage_pet_detail03_operator_award_gap_r1.py'
+      - 'tests/test_stoneage_pet_detail04_sina2003_player_claims_r1.py'
+      - 'research/pets/PET-DETAIL-EVIDENCE04-SINA2003-15-PLAYER-CLAIMS-R1.json'
+      - 'docs/pets/CN2003-SINA-PLAYER-CLAIMS-15-FACTCHECK.md'
+      - 'docs/HISTORICAL-TIMELINE.md'
       - 'research/pets/PET-DETAIL-EVIDENCE03-CN2003-GM-ROLE-BRIDGE-R1.json'
       - 'docs/pets/CN2003-OPERATOR-AWARD-SOURCE-CROSSWALK.md'
       - 'docs/pets/TW10-G100344.md'
@@ -26,6 +30,10 @@ on:
       - 'research/recovered/STONEAGE-PET126R-CN50-PC-ORIGINAL-ALBUM-FULL-362-SLOT-SOURCE-CATALOGUE-R1.json'
       - 'tests/test_stoneage_pet_cn50_source_observations_r1.py'
       - 'tests/test_stoneage_pet_detail03_operator_award_gap_r1.py'
+      - 'tests/test_stoneage_pet_detail04_sina2003_player_claims_r1.py'
+      - 'research/pets/PET-DETAIL-EVIDENCE04-SINA2003-15-PLAYER-CLAIMS-R1.json'
+      - 'docs/pets/CN2003-SINA-PLAYER-CLAIMS-15-FACTCHECK.md'
+      - 'docs/HISTORICAL-TIMELINE.md'
       - 'research/pets/PET-DETAIL-EVIDENCE03-CN2003-GM-ROLE-BRIDGE-R1.json'
       - 'docs/pets/CN2003-OPERATOR-AWARD-SOURCE-CROSSWALK.md'
       - 'docs/pets/TW10-G100344.md'
@@ -49,3 +57,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_stoneage_pet_internal_ids_r1.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pet_documentary_waei2001_r1.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pet_detail03_operator_award_gap_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail04_sina2003_player_claims_r1.py' -v
