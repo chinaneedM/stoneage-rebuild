@@ -36,6 +36,10 @@
 
 [**六只可逐项查询档案：金布伊、布伊、加比、加斯、卡梅兰恩、石龟的PC年代文字技能候选**](../continuity/STONEAGE-PET-DETAIL15-SIX-EARLY-PC-SKILL-CLAIM-CROSSWALK-20261122.md) · [8个网页来源、18条原文字面候选与六张源档的机读关系](../../research/pets/PET-DETAIL-EVIDENCE15-SIX-TW10-EARLY-PC-SKILL-CLAIMS-R1.json)。2001玩家证词有“石龟天生石化”却明列传闻，“布伊有加工”与另一问答“加工需学”也不能合并为原版默认配招；2003网友投稿与无原发布日期的PC图鉴只作后期文字对照。六张PET网页新增**来源独立的史料旁证章节**，但台湾1.0机读原版技能、初值与真实技能槽均保持`null`；124份仍PARTIAL，0份全字段完成。
 
+## PET-DETAIL16｜原台湾1.0真实原PC战斗技能、目标分派及数字技能ID 200／201
+
+[**原EXE战斗技能菜单、W目标类型0–7分派、跨五个宠物栏按技能ID查找的源码核验**](../continuity/STONEAGE-PET-DETAIL16-TW10-ORIGINAL-BATTLE-SKILL-ID-TARGET-20261122.md) · [七段原EXE窗口SHA、32处独立反汇编、14处原字节操作数与两数字ID机读收据](../../research/pets/PET-DETAIL-EVIDENCE16-TW10-NATIVE-BATTLE-SKILL-ID-AND-TARGET-R1.json)。从原认证台湾1.0 PC `sa_3.exe` 再次直接静态核验：W技能字段`+4`参与不同上下文选择，`+6`参与战斗目标分派；`+2`技能ID在**原本机五宠物栏×每宠七技能缓存**中被检索。原代码确实包含数字ID **200／201** 的常量查询，**但没有对应的原官服技能名称、效果、学习方法或任何PET出生所带证据**，不能把后期同ID列表直接认作台湾1.0版。124份TW1逐只档案仍PARTIAL，完整验收0。
+
 ## 当前可核对进度（2026-11-21）
 
 本页采用 [自主永久编号规则](ID-SCHEME.md)：**PET号是我们自己的档案号，OBS号是原证据号**；不能因源条数多，就把它们视为已经恢复的宠物。

@@ -1,4 +1,4 @@
-name: PET-DETAIL02-15 classic PC pet source birth projection and original TW1 K schema guards
+name: PET-DETAIL02-16 classic PC pet source birth projection and original TW1 K schema guards
 on:
   push:
     paths:
@@ -22,6 +22,10 @@ on:
       - 'tests/test_stoneage_pet_detail13_tw10_w_skill_ui_bridge_r1.py'
       - 'tests/test_stoneage_pet_detail14_three_pc_w_skill_sender_r1.py'
       - 'tests/test_stoneage_pet_detail15_six_tw10_skill_claims_r1.py'
+      - 'tests/test_stoneage_pet_detail16_tw10_native_battle_skill_r1.py'
+      - 'research/pets/PET-DETAIL-EVIDENCE16-TW10-NATIVE-BATTLE-SKILL-ID-AND-TARGET-R1.json'
+      - 'docs/continuity/STONEAGE-PET-DETAIL16-TW10-ORIGINAL-BATTLE-SKILL-ID-TARGET-20261122.md'
+      - 'tools/stoneage_pet_detail16_tw10_battle_skill_audit.py'
       - 'research/pets/PET-DETAIL-EVIDENCE15-SIX-TW10-EARLY-PC-SKILL-CLAIMS-R1.json'
       - 'docs/continuity/STONEAGE-PET-DETAIL15-SIX-EARLY-PC-SKILL-CLAIM-CROSSWALK-20261122.md'
       - 'docs/pets/TW10-G100255.md'
@@ -82,6 +86,10 @@ on:
       - 'tests/test_stoneage_pet_detail13_tw10_w_skill_ui_bridge_r1.py'
       - 'tests/test_stoneage_pet_detail14_three_pc_w_skill_sender_r1.py'
       - 'tests/test_stoneage_pet_detail15_six_tw10_skill_claims_r1.py'
+      - 'tests/test_stoneage_pet_detail16_tw10_native_battle_skill_r1.py'
+      - 'research/pets/PET-DETAIL-EVIDENCE16-TW10-NATIVE-BATTLE-SKILL-ID-AND-TARGET-R1.json'
+      - 'docs/continuity/STONEAGE-PET-DETAIL16-TW10-ORIGINAL-BATTLE-SKILL-ID-TARGET-20261122.md'
+      - 'tools/stoneage_pet_detail16_tw10_battle_skill_audit.py'
       - 'research/pets/PET-DETAIL-EVIDENCE15-SIX-TW10-EARLY-PC-SKILL-CLAIMS-R1.json'
       - 'docs/continuity/STONEAGE-PET-DETAIL15-SIX-EARLY-PC-SKILL-CLAIM-CROSSWALK-20261122.md'
       - 'docs/pets/TW10-G100255.md'
@@ -149,4 +157,6 @@ jobs:
           python -m unittest discover -s tests -p 'test_stoneage_pet_detail13_tw10_w_skill_ui_bridge_r1.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pet_detail14_three_pc_w_skill_sender_r1.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pet_detail15_six_tw10_skill_claims_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail16_tw10_native_battle_skill_r1.py' -v
           python -m py_compile tools/stoneage_pet_detail13_tw10_w_skill_audit.py
+          python -m py_compile tools/stoneage_pet_detail16_tw10_battle_skill_audit.py

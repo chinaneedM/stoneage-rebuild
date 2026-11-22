@@ -1,0 +1,257 @@
+{
+  "schema": "stoneage.pet_detail16.authentic_TW10_native_battle_skill_context_target_ID_lookup_r1",
+  "date": "2026-11-22",
+  "active_module": "PET",
+  "scope": "ORIGINAL_CLASSIC_PC_TW_V1_ORIGINAL_EXECUTABLE_ONLY",
+  "source": {
+    "private_original_archive": "StoneAge-TW1-original-runtime-and-native-observation-P3H.zip",
+    "archive_byte_size": 372626292,
+    "archive_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "archive_member_count": 379,
+    "original_executable": "source/sa_3.exe",
+    "original_executable_byte_size": 425984,
+    "original_executable_crc32": "3453fd16",
+    "original_executable_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "native_exe_format": "PE32 i386",
+    "image_base": "0x400000",
+    "toolchain": "GNU objdump and independent original PE raw-byte operand/window checks",
+    "original_zip_and_member_independently_read_this_work": true,
+    "original_executable_executed": false,
+    "original_software_source_bytes_published": false
+  },
+  "prior_pinned": {
+    "native_W_writer_and_UI": {
+      "path": "research/pets/PET-DETAIL-EVIDENCE13-TW10-ORIGINAL-W-SKILL-UI-BRIDGE-R1.json",
+      "git_blob": "ff5723b859f882eccf99029ff898190a42a67683"
+    },
+    "native_K_receiver": {
+      "path": "research/pets/PET-DETAIL-EVIDENCE12-TW10-NATIVE-K-TO-STATUS-VIEW-R1.json",
+      "git_blob": "afdf6c440379f9e59a8d98b651c3c2aa27b0990c"
+    },
+    "original_W_wire": {
+      "path": "research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json",
+      "git_blob": "e39a3a6020b578da017ab0bfa9369dc083e0b700"
+    }
+  },
+  "native_battle_skill_logic": {
+    "K_original_pet_slot_structure_bytes": 108,
+    "K_capacity_relative_to_pet_struct": 64,
+    "W_record_per_pet": 7,
+    "W_record_bytes": 106,
+    "W_pet_stride_bytes": 742,
+    "W_presence_relative_offset": 0,
+    "W_skill_id_relative_offset": 2,
+    "W_field_context_relative_offset": 4,
+    "W_target_class_relative_offset": 6,
+    "W_name_relative_offset": 8,
+    "W_comment_relative_offset": 33,
+    "battle_skill_menu_path_va": "0x40380f",
+    "battle_skill_menu_K_skill_capacity_read_va": [
+      "0x403815",
+      "0x4038a5",
+      "0x4039e2"
+    ],
+    "battle_skill_menu_presence_check_va": "0x4038d3",
+    "battle_skill_menu_field_context_compare_to_2_va": [
+      "0x4039c1",
+      "0x403a06",
+      "0x403b91"
+    ],
+    "original_pet_status_UI_field_context_compare_to_1_va": "0x427cf2",
+    "native_skill_target_selection_entry": "0x403390",
+    "native_target_class_read_va": [
+      "0x4033cd",
+      "0x403e80"
+    ],
+    "native_target_jump_dispatch_va": "0x4033de",
+    "native_target_integer_dispatch_range_inclusive": [
+      0,
+      7
+    ],
+    "target_number_to_actual_effects_or_gameplay_targets_confirmed": false,
+    "battle_native_name_source_va": "0x4047f0",
+    "client_actual_gameplay_battle_executed": false
+  },
+  "cross_carried_pet_skill_id_lookup": {
+    "lookup_entry_va": "0x4250d0",
+    "slot_index_pet_structure_base_for_capacity": "0x17f7698",
+    "slot_K_stride_bytes": 108,
+    "W_first_pet_first_skill_ID_address": "0x17f7aea",
+    "W_record_presence_comparator_va": "0x4250f7",
+    "W_numeric_skill_ID_comparator_va": "0x4250fd",
+    "W_per_skill_advance_bytes": 106,
+    "W_per_pet_advance_bytes": 742,
+    "search_end_exclusive_W_skill_ID_address": "0x17f8968",
+    "search_end_exclusive_equals_first_ID_plus_5_pet_buffers": true,
+    "supports_five_pet_slot_scan_in_original_client": true,
+    "K_capacity_guard_for_each_pet": true,
+    "K_plus_104_local_state_word_must_equal_1": "0x4250e7",
+    "K_plus_104_state_semantics": "NOT_RECOVERED",
+    "empty_result_zero_va": "0x425122",
+    "candidate_callers": [
+      {
+        "call_va": "0x42a85f",
+        "argument_push_va": "0x42a85a",
+        "original_exe_compiled_ID_decimal": 201,
+        "name": null,
+        "effect": null
+      },
+      {
+        "call_va": "0x42a888",
+        "argument_push_va": "0x42a883",
+        "original_exe_compiled_ID_decimal": 200,
+        "name": null,
+        "effect": null
+      }
+    ],
+    "original_official_species_having_200_or_201_confirmed": false,
+    "original_200_or_201_skill_name_effect_confirmed": false,
+    "original_200_or_201_skill_training_location_confirmed": false,
+    "original_server_status_SKILL_packet_captured": false
+  },
+  "private_original_source_checks": {
+    "source_windows": [
+      {
+        "name": "battle_target_dispatch",
+        "start_va": "0x403390",
+        "end_exclusive_va": "0x4033e5",
+        "byte_length": 85,
+        "sha256": "5a13a34ac6cc492f072dbc3a7fd8e151beb4cb00ba22fcd8edf507682be450c8"
+      },
+      {
+        "name": "battle_W_field_menu",
+        "start_va": "0x40380f",
+        "end_exclusive_va": "0x403a31",
+        "byte_length": 546,
+        "sha256": "34187bbdb739e689cd864310a889d7e106ed49fc48a8b948fe5d5ab9a2590683"
+      },
+      {
+        "name": "battle_target_secondary",
+        "start_va": "0x403e5e",
+        "end_exclusive_va": "0x403e95",
+        "byte_length": 55,
+        "sha256": "2e0dc5dcb4585f8bdad4d9a37f04300fbb52594f27a8ec17b0f9dc81583b315e"
+      },
+      {
+        "name": "cross_pet_skill_id_lookup",
+        "start_va": "0x4250d0",
+        "end_exclusive_va": "0x425129",
+        "byte_length": 89,
+        "sha256": "563a05c8fcef9739fab0deb3d7d00dcf06ffc1353f2b8d49ab6ce806d9f4bbb4"
+      },
+      {
+        "name": "battle_skill_name_read",
+        "start_va": "0x4047cb",
+        "end_exclusive_va": "0x404804",
+        "byte_length": 57,
+        "sha256": "437e906d535f584cf6304624773b6b5d9d06e7c5ece64f4dd2edc9a8c514a14d"
+      },
+      {
+        "name": "caller_skill_id_200_201",
+        "start_va": "0x42a850",
+        "end_exclusive_va": "0x42a895",
+        "byte_length": 69,
+        "sha256": "84e60a7500a56b406cd2fadc3acec8d20dbbb2c8ecf918f39f0a4dd49d894827"
+      },
+      {
+        "name": "status_field_context",
+        "start_va": "0x427ce0",
+        "end_exclusive_va": "0x427d30",
+        "byte_length": 80,
+        "sha256": "e9916bb0da6ed5d791f93a852baa9de15f09b14bd9a4176ca3bb32026a8eb3cc"
+      }
+    ],
+    "source_windows_sha256_verified": 7,
+    "private_disassembler_instruction_anchors_verified": 32,
+    "private_direct_original_bytes_operand_checks_verified": 14,
+    "checked_little_endian_operands": [
+      {
+        "at_va": "0x4033cd",
+        "operand_le_offset_bytes": 4,
+        "operand_value_hex": "0x17f7aee"
+      },
+      {
+        "at_va": "0x403815",
+        "operand_le_offset_bytes": 3,
+        "operand_value_hex": "0x17f7698"
+      },
+      {
+        "at_va": "0x4039c1",
+        "operand_le_offset_bytes": 4,
+        "operand_value_hex": "0x17f7aec"
+      },
+      {
+        "at_va": "0x4039e2",
+        "operand_le_offset_bytes": 3,
+        "operand_value_hex": "0x17f7698"
+      },
+      {
+        "at_va": "0x4039f9",
+        "operand_le_offset_bytes": 3,
+        "operand_value_hex": "0x17f7aec"
+      },
+      {
+        "at_va": "0x403b91",
+        "operand_le_offset_bytes": 4,
+        "operand_value_hex": "0x17f7aec"
+      },
+      {
+        "at_va": "0x403e80",
+        "operand_le_offset_bytes": 4,
+        "operand_value_hex": "0x17f7aee"
+      },
+      {
+        "at_va": "0x4047f0",
+        "operand_le_offset_bytes": 3,
+        "operand_value_hex": "0x17f7af0"
+      },
+      {
+        "at_va": "0x4250d8",
+        "operand_le_offset_bytes": 1,
+        "operand_value_hex": "0x17f7698"
+      },
+      {
+        "at_va": "0x4250dd",
+        "operand_le_offset_bytes": 1,
+        "operand_value_hex": "0x17f7aea"
+      },
+      {
+        "at_va": "0x42511a",
+        "operand_le_offset_bytes": 2,
+        "operand_value_hex": "0x17f8968"
+      },
+      {
+        "at_va": "0x42a85a",
+        "operand_le_offset_bytes": 1,
+        "operand_value_hex": "0xc9"
+      },
+      {
+        "at_va": "0x42a883",
+        "operand_le_offset_bytes": 1,
+        "operand_value_hex": "0xc8"
+      },
+      {
+        "at_va": "0x427cf2",
+        "operand_le_offset_bytes": 3,
+        "operand_value_hex": "0x17f7aec"
+      }
+    ],
+    "independent_full_32_asm_anchors_private_audit_replayed": true,
+    "arithmetic_assertion": "5 * 742 == 3710 and (0x17f7aea + 3710) == 0x17f8968"
+  },
+  "qualification": {
+    "early_2000_official_server_skill_database_found": false,
+    "original_2000_pet_born_skills_confirmed": 0,
+    "new_original_native_PC_compiled_numeric_skill_IDs_200_201_detected": 2,
+    "new_official_skill_definitions": 0,
+    "new_confirmed_skill_ID_to_name_pairs": 0,
+    "all_124_TW1_pet_profiles_PARTIAL": true,
+    "historically_fully_restored_pet_profiles": 0,
+    "original_current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "stage_A": "7_PARTIAL+2_OPEN",
+    "stage_B_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "PET-DETAIL17: seek independently source-qualified original PC skill IDs 200/201 names/effects or same-era original pet master; do not assign to a pet or to later PC server ID tables; continue PET-only"
+}
