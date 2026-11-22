@@ -1,4 +1,4 @@
-name: PET-DETAIL02/03/04/05 classic PC source-only pet & 7.0 tournament witness guard
+name: PET-DETAIL02/03/04/05/06 classic PC pet & riding guide source guards
 on:
   push:
     paths:
@@ -12,6 +12,9 @@ on:
       - 'tests/test_stoneage_pet_detail03_operator_award_gap_r1.py'
       - 'tests/test_stoneage_pet_detail04_sina2003_player_claims_r1.py'
       - 'tests/test_stoneage_pet_detail05_cn70_operator_tournament_r1.py'
+      - 'tests/test_stoneage_pet_detail06_cn2004_riding_crosswalk_r1.py'
+      - 'research/pets/PET-DETAIL-EVIDENCE06-CN2004-RIDING-TW10-NAME-CROSSWALK-R1.json'
+      - 'docs/pets/CN2004-RIDING-GUIDE-TEN-NAME-CROSSWALK.md'
       - 'research/pets/PET-DETAIL-EVIDENCE05-CN70-2003-2004-OPERATOR-LIVE-COMBAT-R1.json'
       - 'docs/pets/CN70-DOUBLEWOLF-PACK-AND-TOURNAMENT-2003-2004.md'
       - 'research/pets/PET-DETAIL-EVIDENCE04-SINA2003-15-PLAYER-CLAIMS-R1.json'
@@ -35,6 +38,9 @@ on:
       - 'tests/test_stoneage_pet_detail03_operator_award_gap_r1.py'
       - 'tests/test_stoneage_pet_detail04_sina2003_player_claims_r1.py'
       - 'tests/test_stoneage_pet_detail05_cn70_operator_tournament_r1.py'
+      - 'tests/test_stoneage_pet_detail06_cn2004_riding_crosswalk_r1.py'
+      - 'research/pets/PET-DETAIL-EVIDENCE06-CN2004-RIDING-TW10-NAME-CROSSWALK-R1.json'
+      - 'docs/pets/CN2004-RIDING-GUIDE-TEN-NAME-CROSSWALK.md'
       - 'research/pets/PET-DETAIL-EVIDENCE05-CN70-2003-2004-OPERATOR-LIVE-COMBAT-R1.json'
       - 'docs/pets/CN70-DOUBLEWOLF-PACK-AND-TOURNAMENT-2003-2004.md'
       - 'research/pets/PET-DETAIL-EVIDENCE04-SINA2003-15-PLAYER-CLAIMS-R1.json'
@@ -65,3 +71,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_stoneage_pet_detail03_operator_award_gap_r1.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pet_detail04_sina2003_player_claims_r1.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pet_detail05_cn70_operator_tournament_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail06_cn2004_riding_crosswalk_r1.py' -v
