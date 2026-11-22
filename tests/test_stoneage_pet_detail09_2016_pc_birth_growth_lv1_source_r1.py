@@ -50,11 +50,11 @@ class SourceGradeEarlyPetBirthTest(unittest.TestCase):
                          self.d["restrictions"]["current_original_blob"])
         original=self.d["source"]
         self.assertEqual(original["commit"],"57b14e2bb373ba851c14db28a239273e4a8831bb")
-        self.assertEqual(original["public_C_source_files"][0]["sha"],
+        self.assertEqual(original["original_C_files"][0]["sha"],
                          "72e43f44a76db4baa23dfcea568f16d54d3bf620")
-        self.assertEqual(original["public_C_source_files"][1]["sha"],
+        self.assertEqual(original["original_C_files"][1]["sha"],
                          "f12bee31be5ad9b7bd6754201631b441d1e4107e")
-        self.assertEqual(original["public_C_source_files"][2]["sha"],
+        self.assertEqual(original["original_C_files"][2]["sha"],
                          "a86dd72c1d71cef41ce0f1ad228b7cc1832daa90")
         self.assertEqual(self.d["source"]["pinned_local_indexes"][0]["original_2016_enemybase1_blob"],
                          "a19a508975e3a982fada323861b35b2edab79349")
@@ -123,8 +123,8 @@ class SourceGradeEarlyPetBirthTest(unittest.TestCase):
                                   r[1]==s["source_template_id"]))
                 same=[r for r in mrows if finger25(r)==raw]
                 self.assertEqual(s["crossarchive_mixed25_exact_numeric_matches"],
-                                 [{"mixed25_line":r[0],"mixed25_template_id":r[1],
-                                   "source_56field_sha256":r[16]} for r in same])
+                                 [{"row":r[0],"template_id":r[1],
+                                   "original_row_sha256":r[16]} for r in same])
                 if same:
                     exactly+=1
                     anymatched=True
@@ -159,7 +159,7 @@ class SourceGradeEarlyPetBirthTest(unittest.TestCase):
         self.assertIsNone(c["overall_percent"])
         self.assertTrue(self.d["restrictions"]["original_tw10_official_fields_stay_null"])
         self.assertTrue(self.d["code_evidence"]["static_2016_source_does_not_confirm_TW10_or_CN182_same_build"])
-        self.assertFalse(self.d["code_evidence"]["actual_final_stat_HP_ATK_DEF_SPEED_distribution_verified"])
+        self.assertFalse(self.d["code_evidence"]["full_player_visible_HP_ATK_DEF_SPEED_exact_values_derived"])
         doc=(ROOT/DOC).read_text(encoding="utf-8")
         self.assertEqual(doc.count("\n### PET-"),124)
         self.assertIn("2016与混合2.5",doc)
