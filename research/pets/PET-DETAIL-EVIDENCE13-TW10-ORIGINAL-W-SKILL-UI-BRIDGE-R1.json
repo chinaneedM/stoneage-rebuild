@@ -1,0 +1,327 @@
+{
+  "schema": "stoneage.pet_detail13.original_TW10_W_skill_writer_K_capacity_UI_consumer.r1",
+  "date": "2026-11-22",
+  "scope": "ORIGINAL_CLASSIC_PC_TAIWAN_V1_ONLY",
+  "source": {
+    "private_archive_name": "StoneAge-TW1-original-runtime-and-native-observation-P3H.zip",
+    "private_archive_bytes": 372626292,
+    "private_archive_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "zip_members": 379,
+    "original_member": "source/sa_3.exe",
+    "original_member_size": 425984,
+    "original_member_crc32": "3453fd16",
+    "original_member_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "actual_original_archive_read_in_this_work": true,
+    "original_binary_executed": false,
+    "original_binary_or_original_machinecode_published": false,
+    "replay_kind": "two independent source static checks: GNU objdump PE32 i386 and direct little-endian private source immediate displacement checks"
+  },
+  "prior_source_refs": {
+    "K_client_original": {
+      "path": "research/recovered/STONEAGE-PET126E-TW10-K-STATUS-CAPTURE-STATIC-R1.json",
+      "git_blob": "d04c9442e7c16f7bff99f597cb99228dcd63f584"
+    },
+    "K_to_UI_detail12": {
+      "path": "research/pets/PET-DETAIL-EVIDENCE12-TW10-NATIVE-K-TO-STATUS-VIEW-R1.json",
+      "git_blob": "afdf6c440379f9e59a8d98b651c3c2aa27b0990c"
+    },
+    "original_gameplay_wire_schema": {
+      "path": "research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json",
+      "git_blob": "e39a3a6020b578da017ab0bfa9369dc083e0b700"
+    }
+  },
+  "W_original_native": {
+    "S_category": "W",
+    "callback_va": "0x430b4f",
+    "original_wire_prefix": "W<digit>|",
+    "original_wire_schema_source": "research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json#records.pet_skill_view_slot",
+    "pet_index_parse": "ASCII source byte at +1 minus 0x30",
+    "W_pet_slot_count_bound_directly_checked": false,
+    "per_pet_base_va": "0x017f7ae8",
+    "per_pet_bytes": 742,
+    "per_pet_arithmetic": "original executable slot-index chain: 9n -> 37n -> 185n -> 371n -> 742n",
+    "skill_rows_per_pet": 7,
+    "skill_row_bytes": 106,
+    "W_source_field_positions_1based": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "W_first_row_name_token_index_1based": 4,
+    "W_following_row_name_token_indices_1based": [
+      4,
+      9,
+      14,
+      19,
+      24,
+      29,
+      34
+    ],
+    "W_row_name_token_step": 5,
+    "row_layout": [
+      {
+        "field": "presence_flag",
+        "offset": 0,
+        "bytes": 2,
+        "evidence": "native writer sets 1 for source-name-bearing row"
+      },
+      {
+        "field": "skill_id",
+        "offset": 2,
+        "bytes": 2,
+        "semantic_grade": "EARLY_LINEAGE"
+      },
+      {
+        "field": "field_context",
+        "offset": 4,
+        "bytes": 2,
+        "semantic_grade": "EARLY_LINEAGE"
+      },
+      {
+        "field": "target_class",
+        "offset": 6,
+        "bytes": 2,
+        "semantic_grade": "EARLY_LINEAGE"
+      },
+      {
+        "field": "name_buffer",
+        "offset": 8,
+        "bytes": 25,
+        "evidence": "native text decode/copy; no official per-pet birth skill confirmed"
+      },
+      {
+        "field": "comment_buffer",
+        "offset": 33,
+        "bytes": 73,
+        "evidence": "native text decode/copy; no native skill-effect formula certified"
+      }
+    ],
+    "seven_record_storage_bytes": 742,
+    "five_local_pet_slot_storage_bytes_if_index_in_K_range": 3710,
+    "K_max_skill_slots_field_token": 18,
+    "K_max_skill_slots_struct_offset": 64,
+    "K_max_skill_slots_effective_display_limit_proven": true,
+    "K_original_pet_struct_base_va": "0x017f7658",
+    "K_original_pet_stride_bytes": 108,
+    "K_original_selected_pet_index_va": "0x017bf7ec",
+    "K_capacity_field_zero_slot_va": "0x017f7698",
+    "K_display_limit_source_read_va": [
+      "0x427bd3",
+      "0x427e64"
+    ],
+    "W_ui_occupied_check_va": [
+      "0x427c01",
+      "0x427e92"
+    ],
+    "W_ui_comment_pointer_va": "0x427c21",
+    "W_ui_name_pointer_va": "0x427e9c",
+    "W_ui_selected_pet_from_K_index_va": "0x4279c0",
+    "ui_skill_count_check_and_display": "Loop displays skills only up to K-provided max_skill_slots and tests W per-row presence before drawing W-provided name/comment",
+    "ui_path_truly_executed": false,
+    "received_original_server_packets_captured": false,
+    "server_skill_id_to_effect_definition_obtained": false
+  },
+  "private_replay": {
+    "source_windows": [
+      {
+        "id": "w_handler",
+        "start": 199503,
+        "end": 199894,
+        "sha256": "249719bc1ec74cbd8f7fcb50d28134349dfba51cb0243f17217df00c896ac91a"
+      },
+      {
+        "id": "w_setup",
+        "start": 199503,
+        "end": 199558,
+        "sha256": "0091f74443307b67ad3531aad13ceed96380f8adaa37706b47df8bb71cb5d10f"
+      },
+      {
+        "id": "w_fields",
+        "start": 199562,
+        "end": 199860,
+        "sha256": "25a9e0828882e1ce94460bc340d5cf02246a83756fbc16925a66d8aff0685e3a"
+      },
+      {
+        "id": "w_repeat",
+        "start": 199860,
+        "end": 199894,
+        "sha256": "672287731ec4ef8fe44383d4c921f93f600c99c53459e3a3bba3750e780ad2c7"
+      },
+      {
+        "id": "ui_comment",
+        "start": 158667,
+        "end": 158860,
+        "sha256": "d82d13098ade104caaf81be477973a230b48b54637e15ec88215ebf4d305dc24"
+      },
+      {
+        "id": "ui_name",
+        "start": 159324,
+        "end": 159527,
+        "sha256": "cf611a63bdc96ff828866ba1bf568f6ca73ab3dec3c5ce58e98672444da08f6a"
+      },
+      {
+        "id": "ui_header",
+        "start": 158144,
+        "end": 158225,
+        "sha256": "f7c12f507a2e5e59b471d37f83e41f6864b958d254084ede585f52b869bb347d"
+      }
+    ],
+    "disassembler_instruction_checks": [
+      {
+        "va": "0x430b4f",
+        "normalized_instruction": "movsx eax,byte ptr [ebx+0x1]"
+      },
+      {
+        "va": "0x430b53",
+        "normalized_instruction": "sub eax,0x30"
+      },
+      {
+        "va": "0x430b62",
+        "normalized_instruction": "mov ecx,0x7"
+      },
+      {
+        "va": "0x430b6a",
+        "normalized_instruction": "shl ebp,1"
+      },
+      {
+        "va": "0x430b6c",
+        "normalized_instruction": "lea eax,[ebp+0x17f7ae8]"
+      },
+      {
+        "va": "0x430b75",
+        "normalized_instruction": "add eax,0x6a"
+      },
+      {
+        "va": "0x430b80",
+        "normalized_instruction": "lea ebp,[ebp+0x17f7af0]"
+      },
+      {
+        "va": "0x430bcd",
+        "normalized_instruction": "mov word ptr [ebp-0x8],0x1"
+      },
+      {
+        "va": "0x430c23",
+        "normalized_instruction": "mov word ptr [ebp-0x6],ax"
+      },
+      {
+        "va": "0x430c36",
+        "normalized_instruction": "mov word ptr [ebp-0x4],ax"
+      },
+      {
+        "va": "0x430c57",
+        "normalized_instruction": "mov word ptr [ebp-0x2],ax"
+      },
+      {
+        "va": "0x430c8a",
+        "normalized_instruction": "lea edx,[ebp+0x19]"
+      },
+      {
+        "va": "0x430cb8",
+        "normalized_instruction": "add ebp,0x6a"
+      },
+      {
+        "va": "0x430cbb",
+        "normalized_instruction": "add eax,0x5"
+      },
+      {
+        "va": "0x430cbe",
+        "normalized_instruction": "cmp eax,0x24"
+      },
+      {
+        "va": "0x4279c0",
+        "normalized_instruction": "mov eax,ds:0x17bf7ec"
+      },
+      {
+        "va": "0x427bd3",
+        "normalized_instruction": "mov edx,dword ptr [ecx*4+0x17f7698]"
+      },
+      {
+        "va": "0x427c01",
+        "normalized_instruction": "cmp word ptr [edx+0x17f7ae8],0x1"
+      },
+      {
+        "va": "0x427c21",
+        "normalized_instruction": "lea esi,[edx+0x17f7b09]"
+      },
+      {
+        "va": "0x427e64",
+        "normalized_instruction": "mov ecx,dword ptr [eax*4+0x17f7698]"
+      },
+      {
+        "va": "0x427e92",
+        "normalized_instruction": "cmp word ptr [eax+0x17f7ae8],0x1"
+      },
+      {
+        "va": "0x427e9c",
+        "normalized_instruction": "lea ecx,[eax+0x17f7af0]"
+      }
+    ],
+    "independent_u32_displacement_checks": [
+      {
+        "va": "0x430b6c",
+        "within_instruction": 2,
+        "expected_u32": "0x17f7ae8"
+      },
+      {
+        "va": "0x430b80",
+        "within_instruction": 2,
+        "expected_u32": "0x17f7af0"
+      },
+      {
+        "va": "0x427bd3",
+        "within_instruction": 3,
+        "expected_u32": "0x17f7698"
+      },
+      {
+        "va": "0x427c01",
+        "within_instruction": 3,
+        "expected_u32": "0x17f7ae8"
+      },
+      {
+        "va": "0x427c21",
+        "within_instruction": 2,
+        "expected_u32": "0x17f7b09"
+      },
+      {
+        "va": "0x427e64",
+        "within_instruction": 3,
+        "expected_u32": "0x17f7698"
+      },
+      {
+        "va": "0x427e92",
+        "within_instruction": 3,
+        "expected_u32": "0x17f7ae8"
+      },
+      {
+        "va": "0x427e9c",
+        "within_instruction": 2,
+        "expected_u32": "0x17f7af0"
+      }
+    ],
+    "windows_passed": 7,
+    "disassembler_instructions_passed": 22,
+    "u32_displacements_passed": 8,
+    "actual_private_replay_succeeded": true
+  },
+  "evidence_limits": {
+    "new_early_TW10_official_pet_skill_loadout_confirmed": 0,
+    "new_early_TW10_server_pet_master_confirmed": 0,
+    "new_early_TW10_official_birth_stats_confirmed": 0,
+    "new_early_TW10_server_side_skill_effects_confirmed": 0,
+    "new_original_live_pet_instances_captured": 0,
+    "new_official_released_pet_species_confirmed": 0,
+    "TW10_dossier_count_unchanged": 124,
+    "fully_historically_restored_dossiers": 0,
+    "no_early_K_W_sender_official_runtime_compatibility_claim": true,
+    "no_W_index_validity_bounds_claim": true,
+    "no_source_role_override_from_later_private_server_data": true,
+    "original_CURRENT_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "stage_A": "7_PARTIAL+2_OPEN",
+    "stage_B_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percent": null
+  },
+  "next": "PET-DETAIL14: only corroborate original same-era PC official pet skill ID/learn/initial loadout if original server data or authenticated live record available. Otherwise keep source-separated PET skill availability and profile gaps OPEN, never rotate modules."
+}
