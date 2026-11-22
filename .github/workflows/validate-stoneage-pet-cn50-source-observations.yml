@@ -1,4 +1,4 @@
-name: PET-DETAIL02-08 classic PC pet source, player-guide and original server numeric guards
+name: PET-DETAIL02-09 classic PC pet source and original server birth code guards
 on:
   push:
     paths:
@@ -15,6 +15,9 @@ on:
       - 'tests/test_stoneage_pet_detail06_cn2004_riding_crosswalk_r1.py'
       - 'tests/test_stoneage_pet_detail07_cn2001_player_initial_ranges_r1.py'
       - 'tests/test_stoneage_pet_detail08_tw10_mixed25_server_stat_crosswalk_r1.py'
+      - 'tests/test_stoneage_pet_detail09_2016_pc_birth_growth_lv1_source_r1.py'
+      - 'research/pets/PET-DETAIL-EVIDENCE09-2016-PC-BIRTH-GROWTH-124-LV1-REFERENCE-R1.json'
+      - 'docs/pets/TW10-124-2016-PC-SOURCE-PET-BIRTH-GROWTH-REFERENCE.md'
       - 'research/pets/PET-DETAIL-EVIDENCE08-TW10-MIXED25-124-GRAPHIC-NUMERIC-SERVER-TEMPLATE-REFERENCE-R1.json'
       - 'docs/pets/TW10-124-MIXED25-SERVER-TEMPLATE-STATS-REFERENCE.md'
       - 'research/pets/PET-DETAIL-EVIDENCE07-CN2001-LEVEL1-20-NUMERIC-SOURCE-CLAIMS-R1.json'
@@ -47,6 +50,9 @@ on:
       - 'tests/test_stoneage_pet_detail06_cn2004_riding_crosswalk_r1.py'
       - 'tests/test_stoneage_pet_detail07_cn2001_player_initial_ranges_r1.py'
       - 'tests/test_stoneage_pet_detail08_tw10_mixed25_server_stat_crosswalk_r1.py'
+      - 'tests/test_stoneage_pet_detail09_2016_pc_birth_growth_lv1_source_r1.py'
+      - 'research/pets/PET-DETAIL-EVIDENCE09-2016-PC-BIRTH-GROWTH-124-LV1-REFERENCE-R1.json'
+      - 'docs/pets/TW10-124-2016-PC-SOURCE-PET-BIRTH-GROWTH-REFERENCE.md'
       - 'research/pets/PET-DETAIL-EVIDENCE08-TW10-MIXED25-124-GRAPHIC-NUMERIC-SERVER-TEMPLATE-REFERENCE-R1.json'
       - 'docs/pets/TW10-124-MIXED25-SERVER-TEMPLATE-STATS-REFERENCE.md'
       - 'research/pets/PET-DETAIL-EVIDENCE07-CN2001-LEVEL1-20-NUMERIC-SOURCE-CLAIMS-R1.json'
@@ -86,3 +92,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_stoneage_pet_detail06_cn2004_riding_crosswalk_r1.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pet_detail07_cn2001_player_initial_ranges_r1.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pet_detail08_tw10_mixed25_server_stat_crosswalk_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail09_2016_pc_birth_growth_lv1_source_r1.py' -v
