@@ -3213,3 +3213,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-22｜PET-DETAIL06：2004年九庄园骑宠＋特殊五转骑宠的十份个人档案来源链接
 
 [十条同名字面可查页面](docs/pets/CN2004-RIDING-GUIDE-TEN-NAME-CROSSWALK.md) · [带OBS号机读复核](research/pets/PET-DETAIL-EVIDENCE06-CN2004-RIDING-TW10-NAME-CROSSWALK-R1.json) · [本轮原状态保留收据](docs/continuity/STONEAGE-PET-DETAIL06-CN2004-RIDING-TW10-CROSSWALK-20261122.md)。复用R56已归档的2004年2月23日新浪经典PC骑宠攻略（**不是新发现的独立原件或同服主档**），把九庄园具名骑宠、另一个五转机械暴龙逐一连接到原TW1独立客户端具名永久档：十个姓名均有唯一简体字面命中，新增**10条来源OBS，不增加永久PET号**；攻略所述骑乘条件、地点与获得方法保持单页来源主张，不回填台湾1.0原生事实。PET-000001—000124仍全PARTIAL、全字段完备0；原PC历史总种数和整体百分比UNKNOWN，2026未年审，PET为唯一活动模块、Stage A 7PARTIAL+2OPEN、B/wiki GATED、R79暂停。原完整CURRENT blob c89e0e33537990aa2132b47c40fef49a985a935c原样不动。NEXT PET-DETAIL07优先实得经典PC官方同构建原宠物主档/技能/实际发宠或骑乘依据，不做无止境网页同名堆积。
+
+
+## 2026-11-22｜PET-DETAIL07：2001年玩家一级宠物20条数值槽与2003年同文转载去重
+
+[一览可查20个一级宠物的玩家数值槽、既有7个PET来源关联](docs/pets/CN2001-LV1-20-PLAYER-NUMERIC-RANGES.md) · [机读20行×4值与源限](research/pets/PET-DETAIL-EVIDENCE07-CN2001-LEVEL1-20-NUMERIC-SOURCE-CLAIMS-R1.json) · [本批完整验源和NEXT](docs/continuity/STONEAGE-PET-DETAIL07-CN2001-20-LV1-NUMERIC-WITNESS-20261122.md)。这不是20条新宠物：早在PET55已登记17173署名“俄罗斯牛奶”的2001年迁移页20条**玩家称谓**与7条台湾1.0客户端文字/别名候选。本轮新增80个可单独查阅的玩家数值槽/范围表达与具体文献元素/捕捉地点附注，确认新浪2003年“转载”同一作者、同样20行而非另一份独立实测。原文章无真正服务器列定义、原部署主档、样本量与技能/遭遇官方记录，故任何数值均未写入原TW1机器PET主档，不提升永久PET号或官服发行数。台湾1.0客户端124份PARTIAL、完整历史验收0、来源CN5另外181 OBS保持；PET唯一活动、StageA 7PARTIAL+2OPEN、StageB/wiki GATED、R79暂停、总百分比UNKNOWN。原CURRENT历史Git blob `c89e0e33537990aa2132b47c40fef49a985a935c`不动。NEXT PET-DETAIL08优先原PC同构建真实宠物数值/技能/发放源，停止将转载文章计为多份证据。
