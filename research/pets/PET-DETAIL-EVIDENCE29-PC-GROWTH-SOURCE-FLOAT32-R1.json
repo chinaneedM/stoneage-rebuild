@@ -1,0 +1,202 @@
+{
+  "schema": "stoneage.pet_detail29.pc_descendant_birth_growth_float32_source_audit.r1",
+  "date": "2026-11-22",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "source_code_snapshots": [
+    {
+      "repository": "BismarckDD/stoneage",
+      "commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "enemy_path": "server/gmsv/char/enemy.c",
+      "enemy_blob": "7ac0064360ad93dbe64d3b089736c003963910b9",
+      "char_data_path": "server/gmsv/char/char_data.c",
+      "char_data_blob": "a8190b44b86567956c1e1a5a3fb5c7455b1b184b",
+      "birth_conditional_branch": "_BT_PET template scaling before growth packing",
+      "levelup_deviation": "max(0,(int)float_increment); optional _LEVELUP_RECOVERY heals after levelup"
+    },
+    {
+      "repository": "gavinlinasd/StoneAge",
+      "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "enemy_path": "gmsv/src/char/enemy.c",
+      "enemy_blob": "65e5a2e352253a214407f07425427f539db5e863",
+      "char_data_path": "gmsv/src/char/char_data.c",
+      "char_data_blob": "924238fa29c5fd06024721493e509c2bae305e59",
+      "birth_conditional_branch": "default four ±2 offsets, 10 independent creation rolls",
+      "levelup_deviation": "unmodified signed int cast; level >30 fame side effects differ"
+    },
+    {
+      "repository": "iriselia/StoneAge",
+      "commit": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+      "enemy_path": "Source/gmsv/char/enemy.c",
+      "enemy_blob": "586621333774c0470e5cceed56201c15b7773ef5",
+      "char_data_path": "Source/gmsv/char/char_data.c",
+      "char_data_blob": "2b578280829a8b138fc1c72b61a371e1ee771b4b",
+      "birth_conditional_branch": "Japanese source comments directly describe ±2 and ten rolls",
+      "levelup_deviation": "Japanese source comments explicitly describe ten dice and rank-based range"
+    },
+    {
+      "repository": "pimpcapital/longzoro-sa",
+      "commit": "57b14e2bb373ba851c14db28a239273e4a8831bb",
+      "enemy_path": "gmsv/src/char/enemy.c",
+      "enemy_blob": "72e43f44a76db4baa23dfcea568f16d54d3bf620",
+      "char_data_path": "gmsv/src/char/char_data.c",
+      "char_data_blob": "f12bee31be5ad9b7bd6754201631b441d1e4107e",
+      "birth_conditional_branch": "2016 post-era PC community code, same baseline",
+      "levelup_deviation": "fame side effects differ; may use optional later macros"
+    }
+  ],
+  "common_code_evidence": {
+    "rank_template_sum_thresholds": [
+      100,
+      95,
+      90,
+      85,
+      80,
+      0
+    ],
+    "rank_roll_integer_ranges": [
+      [
+        450,
+        500
+      ],
+      [
+        470,
+        520
+      ],
+      [
+        490,
+        540
+      ],
+      [
+        510,
+        560
+      ],
+      [
+        530,
+        580
+      ],
+      [
+        550,
+        600
+      ]
+    ],
+    "birth_individual_offsets_per_component_inclusive": [
+      -2,
+      2
+    ],
+    "birth_ten_random_allocation_points": 10,
+    "levelup_ten_new_random_allocation_points": 10,
+    "persistent_allocpoint": "four signed-offset-adjusted byte growth bases before birth addition",
+    "birth_internal_formula": "((level - 1)*LVUPPOINT + INITNUM) * (BASE + offset + birth_alloc_count)",
+    "levelup_binary32_formula": "float32(float32(BASE * float32(roll*0.01)) + float32(level_alloc_count * float32(roll*0.01))) then int truncation",
+    "capture_identity": "pet.c copies enemy CHAR_PETRANK and CHAR_ALLOCPOINT without new draw",
+    "status_boundary": "CHAR_complianceParameter additional effects not covered by this birth-core function"
+  },
+  "arithmetic_corpus": {
+    "base_range_inclusive": [
+      0,
+      255
+    ],
+    "allocated_points_range_inclusive": [
+      0,
+      10
+    ],
+    "roll_range_inclusive": [
+      450,
+      600
+    ],
+    "total_combinations": 425216,
+    "old_model_mismatches": 1636,
+    "comparison": "new explicit C-float32 operation order versus earlier Python binary64 int((base+points)*(roll*.01))",
+    "compiled_c_witnesses": [
+      {
+        "base": 17,
+        "points": 3,
+        "roll": 470,
+        "c_result": 93,
+        "old_python_result": 94
+      },
+      {
+        "base": 20,
+        "points": 5,
+        "roll": 472,
+        "c_result": 117,
+        "old_python_result": 118
+      },
+      {
+        "base": 22,
+        "points": 3,
+        "roll": 508,
+        "c_result": 126,
+        "old_python_result": 127
+      },
+      {
+        "base": 20,
+        "points": 0,
+        "roll": 500,
+        "c_result": 100,
+        "old_python_result": 100
+      }
+    ],
+    "not_interpretations": [
+      "not 425216 historical pet specimens",
+      "not inferred probability",
+      "not early official growth rate",
+      "does not include actual compiler/CPU retail ABI proof"
+    ]
+  },
+  "sample_source_later2016_template": {
+    "description": "2016 community PC enemybase template1, same-graphic reference only, not original TW1 WuLi",
+    "graphic": 100250,
+    "base": [
+      20,
+      12,
+      15,
+      25
+    ],
+    "initnum": 10,
+    "birth_offsets": [
+      -2,
+      1,
+      2,
+      0
+    ],
+    "birth_rolls": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      3
+    ],
+    "expected_rank": 5,
+    "expected_growth_base": [
+      18,
+      13,
+      17,
+      25
+    ],
+    "expected_internal_stats_at_level1": [
+      210,
+      150,
+      190,
+      280
+    ],
+    "not_historical_official_birth": true
+  },
+  "historical_qualification": "DESCENDANT_PC_SOURCE_ONLY_NOT_EARLY_OFFICIAL",
+  "tw10_candidates": 124,
+  "tw10_official_full_profiles": 0,
+  "new_early_official_pet_master_rows": 0,
+  "new_official_released_species": 0,
+  "original_current_state_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "stage_a": "7 PARTIAL + 2 OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null,
+  "next": "PET-DETAIL30: source-version-bounded same-commit template->birth->Cfloat32 level->base panel worked examples and compliance boundary, early authentic paired server only if actually accessible"
+}

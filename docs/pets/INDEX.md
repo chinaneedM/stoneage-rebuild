@@ -2,6 +2,10 @@
 
 > **重要：这是一份原客户端的“具名图形候选清单”，不是官服实发物种统计；不同版本不可累加。** 原姓名保持原繁体字形，大陆5.0列是第三方保存的 PC 本地编译异名候选，不代表同服ID。完整图像仅在私人观察文件中，不进公开Git。
 
+## PET-DETAIL29｜四套后期PC服务端源码：出生链与升级float32运算修复
+
+[源码逐链审计、C独立对照与数值边界](../continuity/STONEAGE-PET-DETAIL29-PC-SOURCE-FLOAT32-BIRTH-GROWTH-20261122.md) · [四树来源与425216单项输入比对](../../research/pets/PET-DETAIL-EVIDENCE29-PC-GROWTH-SOURCE-FLOAT32-R1.json) · [可重复出生/升级模型](../../tools/stoneage_pet_growth_model.py)。后期PC源码中确认模板Rank、出生±2、出生十点、升级独立十点和六档倍率；C按二次单精度乘法、单精度加法及整数截断。旧Python双精度近似在425216项输入有1636项与C结果不同，现加入C独立回归。**不是**1999–2002官方服务端算法证明，TW1原124档仍PARTIAL、完整0。
+
 ## PET-DETAIL28｜2001灰人龙同一只宠物1级→101级面板及姓名来源矛盾
 
 [审计与数值](../continuity/STONEAGE-PET-DETAIL28-2001-GREY-DRAGON-LV101-20261122.md) · [机读源](../../research/pets/PET-DETAIL-EVIDENCE28-2001-GREY-DRAGON-LV1-LV101-NAME-CONFLICT-R1.json) · [台湾1.0邦浦洛斯独立档（不得混入玩家数字）](TW10-G100289.md)。2001阿花自报灰人龙Lv1 52/11/7/7→Lv101 1027/248/143/134，四均值9.75/2.37/1.36/1.27。2002「灰=邦浦洛斯」与2011「灰=布鲁顿」相冲突，玩家样本不证明早期原客户端同一Pet ID/初值，124份档仍PARTIAL/0完全验收。

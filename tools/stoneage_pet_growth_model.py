@@ -2,6 +2,7 @@
 """Reference model for the convergent StoneAge descendant pet-growth core."""
 
 from dataclasses import dataclass
+from struct import pack, unpack
 from typing import Mapping, Sequence
 
 from tools.stoneage_player_growth_model import resolve_player_exp_transition
@@ -21,6 +22,18 @@ class PetLevelGrowthRolls:
             self, "allocation_rolls", tuple(int(x) for x in self.allocation_rolls)
         )
         object.__setattr__(self, "rank_roll", int(self.rank_roll))
+
+
+@dataclass(frozen=True)
+class PetBirthCore:
+    """Descendant PC enemy creation projection, never early official identity."""
+
+    level: int
+    rank: int
+    individualized_growth_base: tuple[int, int, int, int]
+    packed_alloc_point: int
+    birth_allocation_counts: tuple[int, int, int, int]
+    internal_stats: tuple[int, int, int, int]
 
 
 @dataclass(frozen=True)
@@ -99,6 +112,50 @@ def allocation_counts(allocation_rolls):
             raise ValueError("allocation rolls must be in 0..3")
         counts[roll]+=1
     return tuple(counts)
+
+
+def project_pet_birth(
+    *,
+    template_base,
+    init_num,
+    lvup_point,
+    level,
+    offsets,
+    birth_rolls,
+):
+    """Deterministic core of descendant-PC ENEMY_createEnemy.
+
+    Rank uses the unmodified four template bases. Four individualized birth
+    offsets are packed BEFORE ten independent creation allocation rolls
+    affect initial internal stats; upgrade rolls are separate again.
+    No RNG, no original retail server claim, no panel stat/equipment projection.
+    """
+    raw = tuple(int(x) for x in template_base)
+    if len(raw) != 4 or any(x < 0 or x > 255 for x in raw):
+        raise ValueError("template_base must have four unsigned-byte values")
+    level, init_num, lvup_point = int(level), int(init_num), int(lvup_point)
+    if level < 1 or init_num < 0 or lvup_point < 0:
+        raise ValueError("level >= 1 and non-negative source coefficients required")
+    rank = pet_rank_from_template_base(*raw)
+    growth_base = individualize_growth_base(raw, offsets)
+    birth_counts = allocation_counts(birth_rolls)
+    scale = (level - 1) * lvup_point + init_num
+    return PetBirthCore(
+        level=level,
+        rank=rank,
+        individualized_growth_base=growth_base,
+        packed_alloc_point=pack_growth_base(*growth_base),
+        birth_allocation_counts=birth_counts,
+        internal_stats=tuple(
+            scale * (value + bonus)
+            for value, bonus in zip(growth_base, birth_counts)
+        ),
+    )
+
+
+def _source_float32(value):
+    """Round to IEEE-754 binary32 as each stored C float expression does."""
+    return unpack("<f", pack("<f", float(value)))[0]
 
 
 def adjust_pet_variable_ai(current_variable_ai,delta):
@@ -230,5 +287,19 @@ def pet_level_increments(growth_base,rank,allocation_rolls,rank_roll):
     if not lo<=rank_roll<=hi:
         raise ValueError("rank_roll outside PETRANK range")
     counts=allocation_counts(allocation_rolls)
-    multiplier=rank_roll*0.01
-    return tuple(int((int(base)+bonus)*multiplier) for base,bonus in zip(growth_base,counts))
+    if any(not 0 <= int(base) <= 255 for base in growth_base):
+        raise ValueError("stored CHAR_ALLOCPOINT values must be unsigned bytes")
+    # C: float fRand = (float)RAND(lo,hi) * 0.01;
+    # C: float increment = (float)base * fRand + Param[i] * fRand;
+    # C: CHAR_XXX += (int)increment;
+    # Each stored intermediate is binary32, not Python's default binary64.
+    factor = _source_float32(rank_roll * 0.01)
+    return tuple(
+        int(
+            _source_float32(
+                _source_float32(int(base) * factor)
+                + _source_float32(bonus * factor)
+            )
+        )
+        for base, bonus in zip(growth_base, counts)
+    )
