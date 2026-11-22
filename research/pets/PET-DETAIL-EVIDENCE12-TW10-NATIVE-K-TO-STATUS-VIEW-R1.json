@@ -1,0 +1,213 @@
+{
+  "schema": "stoneage.pet_detail12.authenticated_tw10_native_K_to_status_view_r1",
+  "date": "2026-11-22",
+  "scope": "Original classic Taiwanese 1.0 PC client only; source static field linkage, no native original game execution or early official server",
+  "source": {
+    "previously_held_private_library_archive": "StoneAge-TW1-original-runtime-and-native-observation-P3H.zip",
+    "archive_bytes": 372626292,
+    "archive_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "original_member": "source/sa_3.exe",
+    "original_member_bytes": 425984,
+    "original_member_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "original_member_crc32": "3453fd16",
+    "read_in_this_session": true,
+    "native_toolchain": "GNU objdump PE32 i386 and independent Python original-byte opcode/operand checks",
+    "original_binary_or_raw_instruction_bytes_published": false
+  },
+  "linked_prior_receipts": {
+    "native_K_field_map": {
+      "path": "research/recovered/STONEAGE-PET126E-TW10-K-STATUS-CAPTURE-STATIC-R1.json",
+      "git_blob": "d04c9442e7c16f7bff99f597cb99228dcd63f584"
+    },
+    "original_client_album": {
+      "path": "research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json",
+      "git_blob": "1aada81d7314769bf683b816cc5a8762c3bd9400"
+    },
+    "prior_pet11": {
+      "path": "research/pets/PET-DETAIL-EVIDENCE11-THREE-PC-K-SENDER-LINEAGES-R1.json",
+      "git_blob": null
+    }
+  },
+  "native_K_to_UI_bridge": {
+    "original_native_K_full_handler_va": "0x42fe94",
+    "original_native_K_full_fragment": {
+      "start_va": "0x42fe94",
+      "end_exclusive_va": "0x430340",
+      "bytes": 1196,
+      "sha256": "0312911f0d4a3c14c182b6354561d09cdbde7a3274e697744968878c2d2e44fe"
+    },
+    "original_native_display_window": {
+      "start_va": "0x428613",
+      "end_exclusive_va": "0x428b20",
+      "bytes": 1293,
+      "sha256": "1716e82ccc77cb223ac6a1253d308cb9a1ac400333bc67a381ec7a7e19ba3de6"
+    },
+    "selected_pet_slot_index_global_va": "0x017bf7ec",
+    "slot_structure_base_va": "0x017f7658",
+    "slot_stride_bytes": 108,
+    "stride_arithmetic": "slot * 3 * 9 * 4 = slot * 108",
+    "K_full_data_tokens": [
+      2,
+      21
+    ],
+    "static_native_UI_read_count": 13,
+    "native_numeric_text_field_count": 9,
+    "native_element_visual_field_count": 4,
+    "field_reads": [
+      {
+        "field": "level",
+        "k_data_token": 9,
+        "struct_offset": 28,
+        "native_instruction_va": "0x4286b6",
+        "access_target_va": "0x17f7674",
+        "ui_handling": "numeric_text",
+        "byte_checked_from_verified_exe": true
+      },
+      {
+        "field": "exp",
+        "k_data_token": 7,
+        "struct_offset": 20,
+        "native_instruction_va": "0x4286f3",
+        "access_target_va": "0x17f766c",
+        "ui_handling": "numeric_text",
+        "byte_checked_from_verified_exe": true
+      },
+      {
+        "field": "max_exp",
+        "k_data_token": 8,
+        "struct_offset": 24,
+        "native_instruction_va": "0x42872d",
+        "access_target_va": "0x17f7670",
+        "ui_handling": "numeric_text",
+        "byte_checked_from_verified_exe": true
+      },
+      {
+        "field": "hp",
+        "k_data_token": 3,
+        "struct_offset": 4,
+        "native_instruction_va": "0x428767",
+        "access_target_va": "0x17f765c",
+        "ui_handling": "numeric_text",
+        "byte_checked_from_verified_exe": true
+      },
+      {
+        "field": "max_hp",
+        "k_data_token": 4,
+        "struct_offset": 8,
+        "native_instruction_va": "0x42879e",
+        "access_target_va": "0x17f7660",
+        "ui_handling": "numeric_text",
+        "byte_checked_from_verified_exe": true
+      },
+      {
+        "field": "earth",
+        "k_data_token": 14,
+        "struct_offset": 48,
+        "native_instruction_va": "0x4287d8",
+        "access_target_va": "0x17f7688",
+        "ui_handling": "element_visual",
+        "byte_checked_from_verified_exe": true
+      },
+      {
+        "field": "attack",
+        "k_data_token": 10,
+        "struct_offset": 32,
+        "native_instruction_va": "0x428878",
+        "access_target_va": "0x17f7678",
+        "ui_handling": "numeric_text",
+        "byte_checked_from_verified_exe": true
+      },
+      {
+        "field": "water",
+        "k_data_token": 15,
+        "struct_offset": 52,
+        "native_instruction_va": "0x4288ae",
+        "access_target_va": "0x17f768c",
+        "ui_handling": "element_visual",
+        "byte_checked_from_verified_exe": true
+      },
+      {
+        "field": "defense",
+        "k_data_token": 11,
+        "struct_offset": 36,
+        "native_instruction_va": "0x42894d",
+        "access_target_va": "0x17f767c",
+        "ui_handling": "numeric_text",
+        "byte_checked_from_verified_exe": true
+      },
+      {
+        "field": "fire",
+        "k_data_token": 16,
+        "struct_offset": 56,
+        "native_instruction_va": "0x428983",
+        "access_target_va": "0x17f7690",
+        "ui_handling": "element_visual",
+        "byte_checked_from_verified_exe": true
+      },
+      {
+        "field": "quick",
+        "k_data_token": 12,
+        "struct_offset": 40,
+        "native_instruction_va": "0x428a22",
+        "access_target_va": "0x17f7680",
+        "ui_handling": "numeric_text",
+        "byte_checked_from_verified_exe": true
+      },
+      {
+        "field": "wind",
+        "k_data_token": 17,
+        "struct_offset": 60,
+        "native_instruction_va": "0x428a58",
+        "access_target_va": "0x17f7694",
+        "ui_handling": "element_visual",
+        "byte_checked_from_verified_exe": true
+      },
+      {
+        "field": "ai",
+        "k_data_token": 13,
+        "struct_offset": 44,
+        "native_instruction_va": "0x428af7",
+        "access_target_va": "0x17f7684",
+        "ui_handling": "numeric_text",
+        "byte_checked_from_verified_exe": true
+      }
+    ],
+    "native_status_name_selection": {
+      "free_name_field_token": 21,
+      "free_name_source_offset": 87,
+      "source_read_first_character_va": "0x42863d",
+      "name_field_token": 20,
+      "name_field_source_offset": 70,
+      "fallback_original_name_pointer_va": "0x428659",
+      "behavior": "When custom name is nonempty, render from slot custom name; otherwise render slot original name in this status-view path. This separate path must not be conflated with an album-table fallback observed by PET39.",
+      "verified_native_text_render": "Client data flows through 0x425050 and 0x40ced0 visible drawing call sites; exact original screen execution not performed."
+    },
+    "native_display_functions_source_grade": "ORIGINAL_CLIENT_SOURCE_STATIC_NOT_RUNTIME"
+  },
+  "old_client_album_crosscheck": {
+    "source_table_va": "0x45af58",
+    "record_stride": 28,
+    "record_count": 181,
+    "full_table_sha256": "1fda43b69c9f0a19cf78f3f5b04c2bfe3e3c14c7abc80bd49582b7a31f76d35c",
+    "valid_nonnegative_table_entries": 124,
+    "missing_minus_one_entries": 57,
+    "placeholder_word": "無",
+    "source_grade": "Already known PET39; reverified original bytes this session; NOT 181 official live species, 57 missing resources or 124 official releases"
+  },
+  "qualification": {
+    "new_early_TW10_official_pet_birth_stat_values_confirmed": 0,
+    "actual_early_official_server_pet_masters_acquired": 0,
+    "actual_early_official_server_K_sender_acquired": 0,
+    "original_native_client_executed": false,
+    "native_client_rendering_original_screen_observed": false,
+    "new_official_pet_species_confirmed": 0,
+    "historical_dossiers_unchanged": 124,
+    "historical_dossiers_fully_restored": 0,
+    "old_CURRENT_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "overall_completion_percent": null,
+    "stage_A": "7_PARTIAL+2_OPEN",
+    "stage_B_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "PET-DETAIL13: only obtain free/authenticated early official PC server birth/Pet master/same-deployment K sender if actual bytes surface; otherwise source-qualified pet UI and skill/instance boundaries without attributing later stats to TW1."
+}
