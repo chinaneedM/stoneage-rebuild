@@ -139,7 +139,7 @@ class PetDetail08SourceOnlyTest(unittest.TestCase):
             if key=="original_CURRENT_state_blob_unmodified":
                 continue
             self.assertTrue(value,key)
-        self.assertIn("mixed25",self.d["next"].lower())
+        self.assertIn("cross-build",self.d["next"].lower())
 
     def test_human_reference_and_master_index_are_navigable(self):
         text = (ROOT / DOC).read_text(encoding="utf-8")
