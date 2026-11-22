@@ -3188,3 +3188,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-21｜PET-DETAIL-EVIDENCE-01：124份台湾1.0宠物逐只关联华义2001年玩家史料
 
 [按PET编号查询玩家投稿的四元素及来源](docs/pets/WAEI-2001-PLAYER-MUSEUM-CROSSWALK.md) · [机读124行源级联接](research/pets/PET-DETAIL-EVIDENCE01-WAEI2001-WITNESSES-R1.json) · [本轮收据](docs/continuity/STONEAGE-PET-DETAIL-EVIDENCE01-WAEI2001-PLAYER-WITNESSES-20261121.md)。已固定华义官网2001年托管128条玩家投稿，106网页逐字同名→105个TW1原客户端候选，19个无精确名字，15个具仅文本近字线索。所有玩家地水火风数字和8条获取/出现主张仅作为史料旁证，不入实际原版属性/技能/成长/捕获/发放字段。TW1具名124个仍全PARTIAL，官服全验0，四头像RD缺口不动；PET唯一、2026 NOT_YEAR_AUDITED、StageA7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体UNKNOWN。原CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`不改。NEXT PET-DETAIL-EVIDENCE-02同部署官服主档与获宠实证。
+
+
+## 2026-11-22｜PET-DETAIL-EVIDENCE-02：大陆保存5.0原PC后181个具名槽建立独立OBS来源档案
+
+[181条可逐项浏览的保存版5.0客户端原名观察](docs/pets/CN50-SOURCE-OBSERVATIONS.md) · [机读可复验181条OBS](research/pets/CN50-SOURCE-OBSERVATIONS-R1.json) · [本轮审核收据](docs/continuity/STONEAGE-PET-DETAIL-EVIDENCE02-CN50-181-SOURCE-OBSERVATIONS-20261122.md)。原EXE相册共362槽305具名57空，后181槽全具名且不重复前181槽的原姓名；按未认证台湾序号公式66项可在同CAB找到源SPR段、115项未命中。**新建181份仅来源观察档案OBS，不新增永久PET号；原TW1 124份仍PARTIAL，完整官服验收0，官方全历史种数UNKNOWN。** 大陆5.0保存CAB尚非认证官方当年压盘；原生姓名→SPR、真实发行、初值区间、属性、成长、技能、捕捉均未证，保持null/OPEN，不将社区服端/后版数字导入。没有新商业源字节、原版游戏执行或官服实发证明。原历史CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`不动；PET唯一、2026 NOT_YEAR_AUDITED、Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、整体UNKNOWN。NEXT PET-DETAIL-EVIDENCE-03原服原证。
