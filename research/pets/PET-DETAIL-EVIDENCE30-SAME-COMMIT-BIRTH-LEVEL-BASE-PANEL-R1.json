@@ -1,0 +1,167 @@
+{
+  "schema": "stoneage.pet_detail30.same_commit_pc_birth_to_base_panel.r1",
+  "date": "2026-11-22",
+  "source_grade": "LATER_DESCENDANT_COMMUNITY_CLASSIC_PC_SOURCE_NOT_OFFICIAL_EARLY",
+  "source": {
+    "repository": "gavinlinasd/StoneAge",
+    "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "files": [
+      {
+        "path": "gmsv/data/enemybase1.txt",
+        "git_blob": "a19a508975e3a982fada323861b35b2edab79349",
+        "object": "first row, enemybase template1, art 100250, INITNUM10, BASE 20/12/15/25"
+      },
+      {
+        "path": "gmsv/src/char/enemy.c",
+        "git_blob": "65e5a2e352253a214407f07425427f539db5e863",
+        "functions": [
+          "ENEMY_getRank",
+          "ENEMY_createEnemy"
+        ]
+      },
+      {
+        "path": "gmsv/src/char/char_data.c",
+        "git_blob": "924238fa29c5fd06024721493e509c2bae305e59",
+        "functions": [
+          "CHAR_PetLevelUp"
+        ]
+      },
+      {
+        "path": "gmsv/src/char/char.c",
+        "git_blob": "fcc14db98511e5e0f62e05dec74ce55c6838acfb",
+        "functions": [
+          "CHAR_initcharWorkInt",
+          "_CHAR_complianceParameter"
+        ]
+      }
+    ],
+    "same_pinned_commit": true
+  },
+  "fixture": {
+    "identity": "2016 community PC enemybase1 template 1 (local name 乌力), graphic 100250, NOT official TW1 identity",
+    "level1": {
+      "template_growth_base": [
+        20,
+        12,
+        15,
+        25
+      ],
+      "initnum": 10,
+      "lvup_point_argument": 0,
+      "lvup_point_note": "Level1 term (level-1)*LVUPPOINT=0. Explicit Python argument 0 is mathematically inert and is NOT asserted to be the source field.",
+      "offsets": [
+        -2,
+        1,
+        2,
+        0
+      ],
+      "birth_allocation_rolls": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        3
+      ],
+      "rank": 5,
+      "packed_allocpoint_hex": "0x120d1119",
+      "stored_growth_base": [
+        18,
+        13,
+        17,
+        25
+      ],
+      "birth_alloc_counts": [
+        3,
+        2,
+        2,
+        3
+      ],
+      "internal_stats": [
+        210,
+        150,
+        190,
+        280
+      ],
+      "unmodified_base_panel": {
+        "max_hp": 14,
+        "attack": 2,
+        "defense": 2,
+        "quick": 2
+      }
+    },
+    "level2": {
+      "new_allocation_rolls": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        3
+      ],
+      "rank_roll": 550,
+      "rank_band_inclusive": [
+        550,
+        600
+      ],
+      "increment": [
+        115,
+        82,
+        104,
+        154
+      ],
+      "internal_stats": [
+        325,
+        232,
+        294,
+        434
+      ],
+      "variable_ai_before": 0,
+      "variable_ai_after": 500,
+      "unchanged_allocpoint_hex": "0x120d1119",
+      "unmodified_base_panel": {
+        "max_hp": 22,
+        "attack": 3,
+        "defense": 3,
+        "quick": 4
+      }
+    }
+  },
+  "base_projection_qualification": {
+    "source_function": "CHAR_initcharWorkInt",
+    "expression_order": "C double expressions for attack/defense/quick, float hp = (4*V+S+T+D)*0.01 before (int) hp",
+    "baseline_only": true,
+    "excluded_after_baseline": [
+      "ITEM_equipEffect",
+      "Other_DefcharWorkInt",
+      "status, item and owner-related modifiers",
+      "current CHAR_HP clamp/recovery",
+      "network K packet serialization and original retail UI runtime"
+    ],
+    "numeric_outputs_not_official_early_birth_stats": true,
+    "no_original_PC_runtime_executed": true,
+    "no_original_server_compiled": true,
+    "no_claim_random_rng_sequence_observed": true,
+    "early_1999_2002_same_deployment_server_proven": false
+  },
+  "preservation": {
+    "original_current_state_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "pet_module": "ACTIVE_ONLY",
+    "tw10_named_candidates": 124,
+    "tw10_full_early_official_profiles": 0,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percent": null
+  },
+  "next": "PET-DETAIL31: source-qualified official early PC paired pet master/native level panels if accessible, otherwise stop expanding unsupported late-source status effects and resume actual PET source field completion by version."
+}

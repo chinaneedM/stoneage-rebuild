@@ -3277,3 +3277,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-22 — PET-DETAIL29：原PC服务端出生／成长源码精确计算补证（source first）
 
 据用户本轮提出的优先级，直接复读4套固定Git版本的**后期PC服务端** ENEMY_getRank、ENEMY_createEnemy、CHAR_PetLevelUp：模板Rank、出生4项±2、出生10点、独立升级10点和六档随机倍率均有C源码。修正Python近似使用binary64/合并乘法的问题：原C先分别做float32乘法、float32加法、再截整数；对425216个单项输入，旧模型和C行为有1636项差1。现修复tools/stoneage_pet_growth_model.py并加入明确出生内部能力投影、独立编译C对照、源约束测试。[PET-DETAIL29报告](docs/continuity/STONEAGE-PET-DETAIL29-PC-SOURCE-FLOAT32-BIRTH-GROWTH-20261122.md)和[机读收据](research/pets/PET-DETAIL-EVIDENCE29-PC-GROWTH-SOURCE-FLOAT32-R1.json)。这些是不同后期社区源中共享的PC规则，不算四套独立官方证明；尚不能回填早期TW1/大陆1.82/JSS1999官服出生属性、成长、技能或捕获。原完整CURRENT-STATE blob原样保留，124份TW1原档仍PARTIAL、历史全字段0，PET唯一活动，StageA7 PARTIAL+2 OPEN、StageB/wiki GATED、R79 PAUSED，整体UNKNOWN。NEXT PET-DETAIL30：对已证同提交后期PC宠物模板做出生→成长→基础面板的数值可复现个例，并明确COMPLIANCE及装备/状态边界；发现早期真正同部署官服来源则优先恢复它，不再让玩家文章主导公式。
+
+
+## 2026-11-22｜PET-DETAIL30：同一固定PC源码模板出生→升级→基础面板单例
+
+[来源有界报告](docs/continuity/STONEAGE-PET-DETAIL30-SAME-COMMIT-BASE-PANEL-20261122.md) · [机读可重演数值](research/pets/PET-DETAIL-EVIDENCE30-SAME-COMMIT-BIRTH-LEVEL-BASE-PANEL-R1.json)。复用gavinlinasd/StoneAge固定提交的template1四BASE20/12/15/25，固定出生十点与四偏移，Lv1内部210/150/190/280→基础MAXHP/攻/防/敏14/2/2/2；固定升级十点与Rank5倍率550，Lv2内部325/232/294/434→基础22/3/3/4。新增C语义基础投影模型与回归测试；装备/状态/当前HP/K封包及原官服同服资格**未证明**，不得回填TW1。PET仍唯一活动模块，124源候选PARTIAL、0官方历史全字段，完整CURRENT blob c89e0e33537990aa2132b47c40fef49a985a935c未改，Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、整体UNKNOWN。NEXT PET-DETAIL31优先真实早期PC原始同服数据，否则回到宠物版本全量资料与缺项归档，不继续无界扩社区版装备辅助链。

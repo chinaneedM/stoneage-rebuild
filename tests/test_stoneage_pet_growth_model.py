@@ -178,5 +178,70 @@ class PetGrowthModelTests(unittest.TestCase):
         )
 
 
+class PetDetail30SameSourcePanelTests(unittest.TestCase):
+    """2016 PC template1, explicit simulated RNG; no early official claim."""
+
+    def test_template1_birth_then_levelup_baseline_panel(self):
+        from tools.stoneage_pet_growth_model import (
+            project_pet_birth, project_pet_source_base_panel,
+        )
+        # Actual later-PC enemybase1 template1 has INITNUM=10 and four
+        # base bytes 20/12/15/25, graphic100250. The Lv1 term makes
+        # LVUPPOINT irrelevant; zero here is NOT the template's field.
+        draws = (0,0,0,1,1,2,2,3,3,3)
+        birth = project_pet_birth(
+            template_base=(20,12,15,25),
+            init_num=10,
+            lvup_point=0,
+            level=1,
+            offsets=(-2,1,2,0),
+            birth_rolls=draws,
+        )
+        self.assertEqual(birth.rank, 5)
+        self.assertEqual(birth.individualized_growth_base,(18,13,17,25))
+        self.assertEqual(birth.packed_alloc_point,0x120d1119)
+        self.assertEqual(birth.birth_allocation_counts,(3,2,2,3))
+        self.assertEqual(birth.internal_stats,(210,150,190,280))
+        born_panel=project_pet_source_base_panel(birth.internal_stats)
+        self.assertEqual(
+            (born_panel.max_hp,born_panel.attack,born_panel.defense,born_panel.quick),
+            (14,2,2,2),
+        )
+
+        levelup=advance_pet_growth(
+            growth_base=birth.individualized_growth_base,
+            rank=birth.rank,
+            current_internal_stats=birth.internal_stats,
+            current_variable_ai=0,
+            level_rolls=(PetLevelGrowthRolls(draws,550),),
+        )
+        self.assertEqual(levelup.per_level_increments,((115,82,104,154),))
+        self.assertEqual(levelup.end_internal_stats,(325,232,294,434))
+        self.assertEqual(levelup.end_variable_ai,500)
+        after_panel=project_pet_source_base_panel(levelup.end_internal_stats)
+        self.assertEqual(
+            (after_panel.max_hp,after_panel.attack,after_panel.defense,after_panel.quick),
+            (22,3,3,4),
+        )
+        # Lv-up neither rerolls stored base nor ranks this individual again.
+        self.assertEqual(birth.individualized_growth_base,(18,13,17,25))
+        self.assertEqual(birth.rank,5)
+
+    def test_base_panel_rejects_invalid_vectors(self):
+        from tools.stoneage_pet_growth_model import project_pet_source_base_panel
+        for value in ((),(1,2,3),(1,2,3,4,5),(-1,2,3,4)):
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                project_pet_source_base_panel(value)
+
+    def test_baseline_panel_is_not_raw_internal_values(self):
+        from tools.stoneage_pet_growth_model import project_pet_source_base_panel
+        output = project_pet_source_base_panel((210,150,190,280))
+        self.assertNotEqual(output.max_hp,210)
+        self.assertNotEqual(output.attack,150)
+        self.assertNotEqual(output.defense,190)
+        self.assertNotEqual(output.quick,280)
+
+
+
 if __name__=="__main__":
     unittest.main()
