@@ -20,6 +20,10 @@
 
 [**查看三份固定Git提交的宠物状态包字段比对**](../continuity/STONEAGE-PET-DETAIL11-THREE-PC-K-SENDERS-20261122.md) · [机读源码SHA和原台湾1.0协议拒绝越界证据](../../research/pets/PET-DETAIL-EVIDENCE11-THREE-PC-K-SENDER-LINEAGES-R1.json)。新增对2012保存的`librae8226/gmsv`、2016的社区2.5`chenmingbiao/stone-age`及2016后期PC`pimpcapital/longzoro-sa`原`char.c`中宠物`K`发送函数的**三源直接审阅**：三者默认均在原TW1.0客户端期望名称的token20发送`CHAR_TRANSMIGRATION`整数，使两名称后移；早于2016的公开源码存档也存在这个差异，不能直接把后期端接早期客户端使用。**仍没有原台湾1.0同部署官方Pet主表、出生数值或服务端发包证据；124档案皆PARTIAL，完成0。**
 
+## PET-DETAIL12｜原台湾1.0本机宠物K收包数据真正进入界面
+
+[**查看原生PC客户端13项K字段与资料面板的直接源码读取关联**](../continuity/STONEAGE-PET-DETAIL12-TW10-NATIVE-K-TO-STATUS-VIEW-20261122.md) · [13处原EXE指令地址／源哈希／旧PET39、PET126E证据机读表](../../research/pets/PET-DETAIL-EVIDENCE12-TW10-NATIVE-K-TO-STATUS-VIEW-R1.json)。从私人已认证原台湾1.0包直接重读`sa_3.exe`并重核整SHA，独立`objdump`及原字节核查确认宠物`K`的**同一个108字节栏结构**被原资料界面读取，覆盖等级、经验、HP、攻防敏、AI类和四元素，共13处静态原指令；原名/改名文本回退也有源码位置。本批**证明原客户端会使用服务器传来的数据**，不代表已得到服务器如何生成初始属性；旧相簿124有效候选／57占位仅原样复核，124份档案仍PARTIAL、原官方初生数值仍0项认证。
+
 ## 当前可核对进度（2026-11-21）
 
 本页采用 [自主永久编号规则](ID-SCHEME.md)：**PET号是我们自己的档案号，OBS号是原证据号**；不能因源条数多，就把它们视为已经恢复的宠物。
