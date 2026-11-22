@@ -1,0 +1,20 @@
+name: PET-DETAIL32 cross-version TW1 four missing portrait source candidates
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_pet_detail32_high_version_portraits.py
+      - tests/test_stoneage_pet_detail32_high_version_portraits.py
+      - research/pets/PET-DETAIL-EVIDENCE32-TW1-FOUR-CN50-PATCH129-FACE-CANDIDATES-R1.json
+      - .github/workflows/validate-stoneage-pet-detail32-high-version-faces.yml
+permissions:
+  contents: read
+jobs:
+  four-high-version-candidates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replay and test exact high-version original resource metadata
+        run: python3 -m unittest tests.test_stoneage_pet_detail32_high_version_portraits -v
+      - name: Print all eight full RD source references and hashes
+        run: python3 -m tools.stoneage_pet_detail32_high_version_portraits --full
