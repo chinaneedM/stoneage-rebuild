@@ -16,6 +16,10 @@
 
 [**查看124份PET档案的后期2016 PC源码最大生命／攻击／防御／敏捷理论范围**](TW10-124-2016-BASE-UI-STATS-AND-K-PROTOCOL-CROSSWALK.md) · [124→195模板→780个基础面板投影和原TW1.0 20字段K接收表机器证据](../../research/pets/PET-DETAIL-EVIDENCE10-LATER2016-124-HP-ATK-DEF-QUICK-AND-TW10-K-BOUNDARY-R1.json)。这次从**2016后期社区PC服务器原C文件**继续追到`CHAR_initcharWorkInt`、`_CHAR_complianceParameter`、`CHAR_makeStatusString('k')`，把PET09原四内部出生能力条件值换算到**基础**HP/攻击/防御/速度（未装备、未其他特殊修饰、数学有理截断模型，C浮点边界及原服实际值未测）；两套原代码数据严格分离。此外独立确认**TW1.0原客户端K解码接收的20个字段**与2016后期PC服务器K发送在token2–19前18个数字字段语义一致，但2016后期额外插入`TRANSMIGRATION`于token20，而TW1原接收期待token20为宠物姓名；全包不兼容，绝不把两版本断言能直接联网或视为同版原宠物主档。**124份TW1原官方属性全未验收，仍PARTIAL。**
 
+## PET-DETAIL11｜2012、2016三份后期PC服务端K发送代码谱系
+
+[**查看三份固定Git提交的宠物状态包字段比对**](../continuity/STONEAGE-PET-DETAIL11-THREE-PC-K-SENDERS-20261122.md) · [机读源码SHA和原台湾1.0协议拒绝越界证据](../../research/pets/PET-DETAIL-EVIDENCE11-THREE-PC-K-SENDER-LINEAGES-R1.json)。新增对2012保存的`librae8226/gmsv`、2016的社区2.5`chenmingbiao/stone-age`及2016后期PC`pimpcapital/longzoro-sa`原`char.c`中宠物`K`发送函数的**三源直接审阅**：三者默认均在原TW1.0客户端期望名称的token20发送`CHAR_TRANSMIGRATION`整数，使两名称后移；早于2016的公开源码存档也存在这个差异，不能直接把后期端接早期客户端使用。**仍没有原台湾1.0同部署官方Pet主表、出生数值或服务端发包证据；124档案皆PARTIAL，完成0。**
+
 ## 当前可核对进度（2026-11-21）
 
 本页采用 [自主永久编号规则](ID-SCHEME.md)：**PET号是我们自己的档案号，OBS号是原证据号**；不能因源条数多，就把它们视为已经恢复的宠物。
