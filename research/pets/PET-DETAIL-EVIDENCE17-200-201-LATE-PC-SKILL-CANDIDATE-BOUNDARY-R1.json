@@ -1,0 +1,161 @@
+{
+  "schema": "stoneage.pet_detail17.classic_pc_200_201_cross_era_skill_reference_candidate_r1",
+  "date": "2026-11-22",
+  "active_module": "PET",
+  "source_scope": "CLASSIC_2D_PC_ONLY; community datasets are not original official same-deployment masters",
+  "reproduction_method": "direct GitHub connector file reads at pinned commits, exact git blob and CSV row-column verification",
+  "original_tw10_client": {
+    "receipt_path": "research/pets/PET-DETAIL-EVIDENCE16-TW10-NATIVE-BATTLE-SKILL-ID-AND-TARGET-R1.json",
+    "receipt_blob_sha": "4ff9a07975b8bebd8c380d071dd30f8333544474",
+    "original_executable_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "observed_compiled_numeric_ids": [
+      200,
+      201
+    ],
+    "original_call_sites": {
+      "id_201": "0x42a85f",
+      "id_200": "0x42a888"
+    },
+    "original_skill_names": {
+      "200": null,
+      "201": null
+    },
+    "original_skill_effects": {
+      "200": null,
+      "201": null
+    },
+    "authenticated_original_server_petskill_master": null,
+    "authenticated_original_server_W_packet": null,
+    "private_TW10_original_binary_reopened_during_this_work": false,
+    "same_build_numeric_identity_to_later_community_master_confirmed": false
+  },
+  "later_community_PC_skill_tables": [
+    {
+      "repository": "chenmingbiao/stone-age",
+      "commit": "0c58fb6683a49a178a8ad845a8c296c2cb83bd81",
+      "file": "gmsv/data/petskill.txt",
+      "git_blob": "4c0dff7b40dc60077db61bf61faf408079ec25d0",
+      "record_width": 12,
+      "id_column_zero_based": 6,
+      "field_context_column_zero_based": 7,
+      "target_column_zero_based": 8,
+      "rows": [
+        {
+          "line": 29,
+          "id": 200,
+          "name": "加工",
+          "callback": "PETSKILL_Merge",
+          "symbol": "PETSKILL_MERGE",
+          "field_context": 2,
+          "target_class": 0
+        },
+        {
+          "line": 30,
+          "id": 201,
+          "name": "料理",
+          "callback": "PETSKILL_Merge",
+          "symbol": "PETSKILL_MERGE2",
+          "field_context": 2,
+          "target_class": 0
+        }
+      ]
+    },
+    {
+      "repository": "pimpcapital/longzoro-sa",
+      "commit": "57b14e2bb373ba851c14db28a239273e4a8831bb",
+      "file": "gmsv/data/petskill.txt",
+      "git_blob": "846d379f0c7977b3e74d5a5a9580a35a85cafc51",
+      "record_width": 9,
+      "id_column_zero_based": 4,
+      "field_context_column_zero_based": 5,
+      "target_column_zero_based": 6,
+      "rows": [
+        {
+          "line": 29,
+          "id": 200,
+          "name": "加工",
+          "callback": "PETSKILL_Merge",
+          "symbol": "PETSKILL_MERGE",
+          "field_context": 2,
+          "target_class": 0
+        },
+        {
+          "line": 30,
+          "id": 201,
+          "name": "料理",
+          "callback": "PETSKILL_Merge",
+          "symbol": "PETSKILL_MERGE2",
+          "field_context": 2,
+          "target_class": 0
+        }
+      ]
+    },
+    {
+      "repository": "pimpcapital/longzoro-sa",
+      "commit": "57b14e2bb373ba851c14db28a239273e4a8831bb",
+      "file": "gmsv/data/petskill2.txt",
+      "git_blob": "83d2daeb9e57b089a304f127361f88514386b870",
+      "record_width": 12,
+      "id_column_zero_based": 6,
+      "field_context_column_zero_based": 7,
+      "target_column_zero_based": 8,
+      "rows": [
+        {
+          "line": 36,
+          "id": 200,
+          "name": "加工",
+          "callback": "PETSKILL_Merge",
+          "symbol": "PETSKILL_MERGE",
+          "field_context": 2,
+          "target_class": 0
+        },
+        {
+          "line": 37,
+          "id": 201,
+          "name": "料理",
+          "callback": "PETSKILL_Merge",
+          "symbol": "PETSKILL_MERGE2",
+          "field_context": 2,
+          "target_class": 0
+        }
+      ]
+    }
+  ],
+  "independent_lineage_count_confirmed": null,
+  "dependent_copy_or_derivative_possible": true,
+  "later_community_ID_name_candidates": {
+    "200": "加工",
+    "201": "料理"
+  },
+  "dated_skill_name_only_player_context": {
+    "path": "research/pets/PET-DETAIL-EVIDENCE15-SIX-TW10-EARLY-PC-SKILL-CLAIMS-R1.json",
+    "git_blob_sha": "6ca08f0861d16e947dce63f0da5341314437d1f1",
+    "role": "2001-migrated player testimony and 2004 classic-PC skill teaching show names exist but do not contain original numeric IDs or same-build birth records"
+  },
+  "findings": {
+    "community_PC_tables_with_both_mapping_rows": 3,
+    "community_PC_repositories_with_tables": 2,
+    "distinct_original_client_numeric_references": 2,
+    "later_definition_pairs_by_ID": 2,
+    "fully_verified_early_official_ID_to_name_pairs": 0,
+    "early_official_birth_skill_names_new": 0,
+    "original_era_Server_skill_masters_new": 0,
+    "original_era_server_skill_W_packets_new": 0,
+    "newly_confirmed_official_pet_species": 0
+  },
+  "guardrails": {
+    "original_client_200_201_names_remain_null": true,
+    "later_community_ID_equals_original_era_ID_not_proven": true,
+    "community_source_lines_are_not_early_official_server_masters": true,
+    "data_schemas_must_use_per_file_id_columns": true,
+    "context_field_2_does_not_prove_TW10_server_semantics": true,
+    "original_TW10_124_pet_dossiers_all_partial": true,
+    "original_TW10_historically_complete_pet_dossiers": 0,
+    "current_state_git_blob_preserved": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "stage_A": "7_PARTIAL+2_OPEN",
+    "stage_B_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "PET-DETAIL18: find independently authenticated early official PC same-deployment PetSkill master, original W packet or first-party ID/name binding; if not available, limit to material original-client observations without promoting later community labels; PET-only."
+}
