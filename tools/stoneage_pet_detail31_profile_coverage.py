@@ -171,10 +171,32 @@ def audit(root: Path) -> dict:
                 and portrait["status"] == "OPEN_NOT_PROVEN"
             ), "portrait absent/present contradiction: " + pet_id
         )
+        # An authenticated operator release can prove live availability even
+        # when the original server's numeric Pet ID remains inaccessible.
+        # Require explicit grade, NOT a fictitious numeric ID.
         _expect(
-            not fields["official_live_release"] or fields["official_pet_id"],
-            "new live-release claim needs identified official pet ID: " + pet_id
+            not fields["official_live_release"]
+            or official["status"] not in ("OPEN_NOT_PROVEN", "CROSS_VERSION_CANDIDATE_ONLY"),
+            "official live-release requires qualifying source grade: " + pet_id
         )
+        # Do not let a populated early-official formal field silently inherit
+        # the current OPEN status from client art or descendant server guesses.
+        source_grade_by_field = {
+            "official_pet_id": official["status"],
+            "level1_stats": combat["level_1"]["status"],
+            "initial_stat_ranges": combat["initial_stat_ranges"]["status"],
+            "elements": combat["status"],
+            "growth": grow["status"],
+            "skills": skill["status"],
+            "capture": obtain["status"],
+            "award": obtain["status"],
+        }
+        for field_name, grade in source_grade_by_field.items():
+            if fields[field_name]:
+                _expect(
+                    grade not in ("OPEN_NOT_PROVEN", "CROSS_VERSION_CANDIDATE_ONLY", None),
+                    "formally populated field lacks source grade: " + pet_id + "." + field_name
+                )
         _expect(
             not fields["historically_complete"] or (
                 fields["official_live_release"] and fields["growth"]

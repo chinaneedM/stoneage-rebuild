@@ -53,6 +53,43 @@ class Pet31ProfileCoverageTests(unittest.TestCase):
         self.assertTrue(present(0))
         self.assertFalse(present(None))
 
+    def _fixture_root(self, root):
+        from shutil import copy2, copytree
+        dst = Path(root) / "research/pets"
+        dst.mkdir(parents=True)
+        copy2(ROOT / "research/pets/PET-ID-REGISTRY-R1.json",
+              dst / "PET-ID-REGISTRY-R1.json")
+        copytree(ROOT / "research/pets/profiles", dst / "profiles")
+        return Path(root)
+
+    def test_operator_issuance_does_not_require_server_numeric_pet_id(self):
+        # The official release evidence is independent from an inaccessible
+        # historical PET numeric server ID. A source-graded operator statement
+        # must not be rejected merely because source_pet_id stays null.
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._fixture_root(tmp)
+            file = root / "research/pets/profiles/TW10-G100250-WULI.json"
+            j=json.loads(file.read_text(encoding="utf-8"))
+            j["actual_official_pet_identity"]["status"]="VERIFIED_OFFICIAL_OPERATOR_SOURCE"
+            j["actual_official_pet_identity"]["official_living_pet_release_proven"]=True
+            self.assertIsNone(j["actual_official_pet_identity"]["source_pet_id"])
+            file.write_text(json.dumps(j, ensure_ascii=False), encoding="utf-8")
+            report=audit(root)
+            counts=report["field_coverage_counts_NOT_OFFICIAL_SPECIES_TOTALS"]
+            self.assertEqual(counts["official_live_release"],1)
+            self.assertEqual(counts["official_pet_id"],0)
+
+    def test_ungraded_formal_early_stat_is_not_silently_promoted(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=self._fixture_root(tmp)
+            file=root / "research/pets/profiles/TW10-G100250-WULI.json"
+            j=json.loads(file.read_text(encoding="utf-8"))
+            j["combat_stats"]["level_1"]["values"]["derived_hp"]=35
+            # Grade intentionally stays OPEN_NOT_PROVEN, so this is a leak.
+            file.write_text(json.dumps(j,ensure_ascii=False),encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "formally populated field lacks source grade"):
+                audit(root)
+
     def test_source_registry_original_dossier_hashes_and_pc_scope(self):
         for row in self.report["records"]:
             self.assertEqual(len(row["dossier_git_blob"]),40)
