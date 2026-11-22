@@ -1,0 +1,124 @@
+{
+  "schema": "stoneage.pet_detail18.original_tw10_native_skill_200_201_UI_literals_r1",
+  "date": "2026-11-22",
+  "scope": "ORIGINAL_PC_TAIWAN_1_0",
+  "active_module": "PET",
+  "source": {
+    "original_private_zip_name": "StoneAge-TW1-original-runtime-and-native-observation-P3H.zip",
+    "original_zip_bytes": 372626292,
+    "original_zip_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "members": 379,
+    "exe_member": "source/sa_3.exe",
+    "exe_size": 425984,
+    "exe_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "exe_crc32": "3453fd16",
+    "original_zip_exe_reopened_and_verified_this_turn": true,
+    "original_binary_executed": false,
+    "original_asset_bytes_published": false,
+    "replay_script": "tools/stoneage_pet_detail18_tw10_native_ui_label_replay.py"
+  },
+  "source_windows": [
+    {
+      "name": "ability_gate_control",
+      "start_va": "0x42a7f5",
+      "end_exclusive_va": "0x42a8cd",
+      "length": 216,
+      "sha256": "947a172be0d4085a85ba2831dc28a9955c26178b625e4e986e1fc36b1fb492fe"
+    },
+    {
+      "name": "label_select_draw",
+      "start_va": "0x42aa22",
+      "end_exclusive_va": "0x42aa93",
+      "length": 113,
+      "sha256": "92d65024ddc2cbe5596fa4cf3326d77043727df0900b83d15c3de13b2f0240fa"
+    },
+    {
+      "name": "display_string_queue",
+      "start_va": "0x40ced0",
+      "end_exclusive_va": "0x40cf5e",
+      "length": 142,
+      "sha256": "4ab5393abbea7bbb0cedf354efed59fe74c085efd27654d9b7bb0b3cb43dacbd"
+    }
+  ],
+  "private_audit_checks": {
+    "source_window_SHA": 3,
+    "original_objdump_instruction_anchors": 26,
+    "independent_raw_instruction_opcodes": 22,
+    "unique_CP950_UI_literal_pointer_refs": 2
+  },
+  "public_replay_checks": {
+    "source_window_SHA": 3,
+    "original_objdump_instruction_anchors": 12,
+    "independent_raw_instruction_opcodes": 22,
+    "unique_CP950_UI_literal_pointer_refs": 2
+  },
+  "native_client": {
+    "owned_pet_skill_ID_lookup_va": "0x4250d0",
+    "selector_flag_mask": 4,
+    "selector_flag_semantics": "NOT_RECOVERED",
+    "client_text_queue_va": "0x40ced0",
+    "text_queue_copies_C_strings": true,
+    "verified_ID_to_UI_operation": [
+      {
+        "client_checked_skill_id": 200,
+        "id_push_va": "0x42a883",
+        "ID_lookup_call_va": "0x42a888",
+        "on_success_state_write_va": "0x42a8c0",
+        "client_local_state": 1,
+        "display_state_check_va": "0x42aa3a",
+        "original_CP950_operation_literal": "合成",
+        "string_address": "0x45c4ac",
+        "string_bytes_hex": "a658a6a8",
+        "literal_with_4_nul_sha256": "9b6f1ebf7f2efbd6e6595da8ca2b340e8fccf86db55ae55570d7f5c1672eb7fb",
+        "literal_pointer_instruction_va": "0x42aa4c",
+        "text_queue_call_va": "0x42aa59"
+      },
+      {
+        "client_checked_skill_id": 201,
+        "id_push_va": "0x42a85a",
+        "ID_lookup_call_va": "0x42a85f",
+        "on_success_state_write_va": "0x42a876",
+        "client_local_state": 2,
+        "display_state_check_va": "0x42aa63",
+        "original_CP950_operation_literal": "料理",
+        "string_address": "0x45c4a4",
+        "string_bytes_hex": "aec6b27a",
+        "literal_with_4_nul_sha256": "8f4829124d8a77cf79a0c91ff1133a99c1720e89807ce5fe508f7745665cb91b",
+        "literal_pointer_instruction_va": "0x42aa76",
+        "text_queue_call_va": "0x42aa83"
+      }
+    ],
+    "extra_preconditions": "The branch also checks earlier client-local context, selected input and state; not unconditional skill usage or success"
+  },
+  "pinned_prior": [
+    {
+      "path": "research/pets/PET-DETAIL-EVIDENCE16-TW10-NATIVE-BATTLE-SKILL-ID-AND-TARGET-R1.json",
+      "git_blob": "4ff9a07975b8bebd8c380d071dd30f8333544474"
+    },
+    {
+      "path": "research/pets/PET-DETAIL-EVIDENCE17-200-201-LATE-PC-SKILL-CANDIDATE-BOUNDARY-R1.json",
+      "git_blob": "95c62311ca4be9caa909da89a15c2e906d2b424b"
+    }
+  ],
+  "limits": {
+    "verified_client_UI_operation_not_original_official_server_skill_name": true,
+    "native_200_UI_label_合成_not_加工": true,
+    "later_community_200_加工_not_promoted": true,
+    "original_server_skill_name_200": null,
+    "original_server_skill_name_201": null,
+    "original_server_skill_effects": null,
+    "original_official_pet_birth_skills": null,
+    "original_server_PetSkill_master": null,
+    "original_real_W_packet": null,
+    "original_client_runtime_UI_executed": false,
+    "new_official_species": 0,
+    "TW10_partial_pet_profiles": 124,
+    "TW10_historically_fully_accepted": 0,
+    "current_historical_state_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "stage_A": "7_PARTIAL+2_OPEN",
+    "stage_B_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "PET-DETAIL19: seek original same-deployment PC PetSkill master, observed W skill packet or original native pet crafting outcome; no later community birth promotion; PET-only"
+}

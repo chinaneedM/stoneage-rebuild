@@ -255,3 +255,7 @@
 ## 2026-11-22｜PET-DETAIL17：原PC技能数值200／201与后期社区PC源表的候选名字，严格隔离
 
 [本轮后期PC源表三份逐行对照及不能认定原台湾1.0官服技能名的界限](../continuity/STONEAGE-PET-DETAIL17-200-201-LATE-PC-SKILL-CROSSWALK-20261122.md) · [机读原件Git Blob/CSV列/零确证门槛](../../research/pets/PET-DETAIL-EVIDENCE17-200-201-LATE-PC-SKILL-CANDIDATE-BOUNDARY-R1.json)。原台湾1.0实际认证客户端在PET-DETAIL16查得编译数值200/201；本轮另实际读到**两个后期社区PC仓库的三份技能表**，其200=「加工」、201=「料理」文字一致，但分别存在12列/9列两种CSV布局，其中两个文件可能共源。**跨版数字相同不是原服定义同一的证据**：原版技能名/效果、出生配招、同服技能表和实际获宠均不能回填，仍`null`；124份TW1源档均PARTIAL，历史完整0，新增官方实发0。原历史CURRENT不变，PET唯一活动，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停，总体UNKNOWN。NEXT PET-DETAIL18优先原时代同构建官方PetSkill主表/W实发原包/官方数值名称对照，资料不可得则做原客户端有限源取证，不重复搜社区转载或切其他模块。
+
+## 2026-11-22｜PET-DETAIL18：原台湾1.0实物验证技能200→合成，201→料理的客户端操作字
+
+[完整原客户端同函数控制流及来源边界](../continuity/STONEAGE-PET-DETAIL18-TW10-ORIGINAL-ID200-201-UI-LABELS-20261122.md) · [真实原二进制窗口/指令/CP950字符串的可复核机读收据](../../research/pets/PET-DETAIL-EVIDENCE18-TW10-NATIVE-ID200-201-UI-LABEL-BRIDGE-R1.json)。重新取回并完整认证台湾1.0原ZIP、原EXE，实际验3段本机代码SHA、26条反汇编锚、22原字节指令、2独立原文字及其唯一地址引用。原程序查询拥有的200→本机状态1→原文字「合成」；201→本机状态2→原文字「料理」。这是**原客户端操作文字**，并未取得原服技能名、原生W包或实机执行；PET17后期社区200「加工」仍为另一来源，不能倒灌。TW1 124部分档、全字段0，PET唯一、StageA7PARTIAL+2OPEN、B/wiki GATED、R79暂停，overall未知，历史CURRENT未改。NEXT PET-DETAIL19。
