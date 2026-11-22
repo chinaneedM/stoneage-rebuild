@@ -1,0 +1,32 @@
+name: PET-DETAIL17 PC-only original numeric skills versus late community candidate safeguards
+on:
+  push:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE17-200-201-LATE-PC-SKILL-CANDIDATE-BOUNDARY-R1.json'
+      - 'docs/continuity/STONEAGE-PET-DETAIL17-200-201-LATE-PC-SKILL-CROSSWALK-20261122.md'
+      - 'tests/test_stoneage_pet_detail17_200_201_community_candidate_r1.py'
+      - 'docs/pets/INDEX.md'
+      - '.github/workflows/validate-stoneage-pet-detail17-source-candidates.yml'
+  pull_request:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE17-200-201-LATE-PC-SKILL-CANDIDATE-BOUNDARY-R1.json'
+      - 'docs/continuity/STONEAGE-PET-DETAIL17-200-201-LATE-PC-SKILL-CROSSWALK-20261122.md'
+      - 'tests/test_stoneage_pet_detail17_200_201_community_candidate_r1.py'
+      - 'docs/pets/INDEX.md'
+      - '.github/workflows/validate-stoneage-pet-detail17-source-candidates.yml'
+permissions:
+  contents: read
+jobs:
+  public-derived-pet-skill-reference-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check PET-DETAIL17 candidate and preserved original-source evidence
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail17_200_201_community_candidate_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail16_tw10_native_battle_skill_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail15_six_tw10_skill_claims_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail14_three_pc_w_skill_sender_r1.py' -v

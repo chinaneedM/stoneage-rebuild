@@ -251,3 +251,7 @@
 ## 2026-11-22｜PET-DETAIL05：大陆7.0双头狼官方产品与比赛见闻（OBS，不占永久号）
 
 [双头狼可查询历史资料](CN70-DOUBLEWOLF-PACK-AND-TOURNAMENT-2003-2004.md)有2003华义双头恶狼卡一只属性随机狼的公告，和2004同期战地记者见证的「双头狼巨毒」「红肥龙五技能C」等情境。**无本地原7.0 Pet ID、客户端对应图号、技能原编号或实发日志**，只新增4类源观察；TW1 124档及CN50 181 OBS无变、完整PET0。
+
+## 2026-11-22｜PET-DETAIL17：原PC技能数值200／201与后期社区PC源表的候选名字，严格隔离
+
+[本轮后期PC源表三份逐行对照及不能认定原台湾1.0官服技能名的界限](../continuity/STONEAGE-PET-DETAIL17-200-201-LATE-PC-SKILL-CROSSWALK-20261122.md) · [机读原件Git Blob/CSV列/零确证门槛](../../research/pets/PET-DETAIL-EVIDENCE17-200-201-LATE-PC-SKILL-CANDIDATE-BOUNDARY-R1.json)。原台湾1.0实际认证客户端在PET-DETAIL16查得编译数值200/201；本轮另实际读到**两个后期社区PC仓库的三份技能表**，其200=「加工」、201=「料理」文字一致，但分别存在12列/9列两种CSV布局，其中两个文件可能共源。**跨版数字相同不是原服定义同一的证据**：原版技能名/效果、出生配招、同服技能表和实际获宠均不能回填，仍`null`；124份TW1源档均PARTIAL，历史完整0，新增官方实发0。原历史CURRENT不变，PET唯一活动，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停，总体UNKNOWN。NEXT PET-DETAIL18优先原时代同构建官方PetSkill主表/W实发原包/官方数值名称对照，资料不可得则做原客户端有限源取证，不重复搜社区转载或切其他模块。
