@@ -1,0 +1,18 @@
+name: Validate StoneAge PET-DETAIL30 same-source base panel
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_pet_detail30_base_panel.py
+      - tests/test_stoneage_pet_detail30_base_panel.py
+      - research/pets/PET-DETAIL-EVIDENCE30-SAME-COMMIT-BIRTH-LEVEL-BASE-PANEL-R1.json
+      - docs/continuity/STONEAGE-PET-DETAIL30-SAME-COMMIT-BASE-PANEL-20261122.md
+      - .github/workflows/validate-stoneage-pet-detail30-base-panel.yml
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_stoneage_pet_detail30_base_panel -v
