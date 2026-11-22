@@ -48,3 +48,9 @@
 ## Stage A历史源码哈希与本次模型更新的兼容验收
 
 Stage A早期审阅包`research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R2.json`固定引用旧`research/mechanics/STONEAGE-PET-GROWTH-CORE-R1.md`：8969字节、SHA256`891c0ef3…`、原Git Blob`87cdd063…`。本轮修改说明文档后，该旧钉死哈希触发`source custody: pet_growth`失败，属于历史审阅包跟当前源版本不一致，并非源资料缺失。已将历史原pin逐字段保留在`source_pin_refresh_detail29.previous_pet_growth_pin`，当前`source_pins.pet_growth`精确改为10577字节、SHA256`33bf9abfe479f4f9ceb51d4b29d8745eb79b74b594426f6b626b7f35646b2cd2`、Git Blob`568f461f...`。**没有修改验证器或绕过任何哈希比较**；新值和原值分别可审，旧CURRENT状态Blob、StageA门槛及官方证据边界不变。
+
+## 主线后验补丁：Stage A 联合审阅的第二层来源链
+
+PR #602 原候选31/31 Actions成功、已合并至 main `c084e781b6f2cee6ef6e77d29210162b53141ba6`，原 `CURRENT-STATE.md` blob 不变。合并后全量 main Action `Validate Stage A evidence-limited review acceptance` 发现现有 *第二层* 历史来源链中，`STONEAGE-STAGE-A-JOINT-REVIEW-DECISION-R2.json` 和 `tools/stoneage_stage_a_joint_review_decision.py` 均仍固定引用原旧 `STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R2.json` Git blob `72f3bbee8de2728db7955001f2c9567ad165a3fc`。新同路径当前Git blob为 `29b062e2616afc4efbd69a3ae4fca873f0da7bc3`。该 Action 因而报告 `ValueError: pin bytes: review`，与 PET29 成长公式数值无关。
+
+后验修复仅将这两个**当前相依引用**改为新 Git Blob，联合审阅R2收据 `source_pin_refresh_detail29` 中永久保存先前原值与初始快照，未修订旧R1档案和审批决策，未放宽 `hash_git` 的逐字节验证。新增 test 断言旧与新 pin 同时存在，另将当前联审R2引用变更加入两项 Stage A workflow 的 paths 触发条件，防止下次文本/引用改动不触发整链检查。后验修复 PR 和 Actions 分别验收，不等于追认原合并后失败过的那次CI为成功。

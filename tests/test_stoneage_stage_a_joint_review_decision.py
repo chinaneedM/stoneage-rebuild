@@ -29,6 +29,15 @@ class JointReviewDecisionTests(unittest.TestCase):
   with self.assertRaises(ValueError):validate(x)
   x=copy.deepcopy(self.packet);x["default_on_ordinary_continue"]="START_STAGE_B"
   with self.assertRaises(ValueError):validate(x)
+ def test_detail29_nested_source_refresh_preserves_historical_pin(self):
+  prior=self.packet["source_pin_refresh_detail29"]["previous_current_consolidated_review_pin"]
+  current=self.packet["source_pins"]["review"]
+  self.assertEqual(prior["git_blob"],"72f3bbee8de2728db7955001f2c9567ad165a3fc")
+  self.assertEqual(current["git_blob"],"29b062e2616afc4efbd69a3ae4fca873f0da7bc3")
+  self.assertNotEqual(prior["git_blob"],current["git_blob"])
+  self.assertFalse(self.packet["source_pin_refresh_detail29"]["stage_a_accepted"])
+  self.assertFalse(self.packet["source_pin_refresh_detail29"]["stage_b_started"])
+  self.assertEqual(validate(self.packet)["status"],"PASS")
  def test_pins_prevent_unnoticed_source_replacement(self):
   x=copy.deepcopy(self.packet);x["source_pins"]["review"]["git_blob"]="0"*40
   with self.assertRaisesRegex(ValueError,"pin"):validate(x)
