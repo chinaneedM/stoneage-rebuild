@@ -27,3 +27,5 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_stoneage_pet_growth_model.py' -v
           python -m unittest discover -s tests -p 'test_stoneage_pet_detail29_c_float32_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_stage_a_review_packet.py' -v
+          python tools/stoneage_stage_a_review_packet.py
