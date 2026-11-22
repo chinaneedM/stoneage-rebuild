@@ -1,0 +1,1082 @@
+{
+  "schema": "stoneage.pet_detail07.2001_level1_player_numeric_slots_tw10_source_only.r1",
+  "created_at": "2026-11-22",
+  "active_module": "PET",
+  "scope": "OFFICIAL_CLASSIC_2D_PC_RESEARCH_SUPPORTING_PLAYER_SOURCE_ONLY",
+  "sources": {
+    "canonical_player_text": {
+      "page_title": "最新抓宠物综合经验",
+      "attributed_author": "俄罗斯牛奶",
+      "page_date_label": "2001-06-14",
+      "date_label_not_original_first_publication_proof": true,
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n500_416268.html",
+      "page_read": "PUBLIC_MIGRATED_VISIBLE_HTML_TEXT",
+      "complete_original_2001_html_byte_capture": false,
+      "source_role": "PLAYER_EXPERIENCE_NOT_OPERATOR_OR_ORIGINAL_PC_MASTER"
+    },
+    "duplicate_text_republication": {
+      "page_title": "捕捉宠物的精华经验",
+      "display_byline": "转载",
+      "embedded_attribution": "服6：俄罗斯牛奶",
+      "page_date_label": "2003-10-19",
+      "url": "https://games.sina.com.cn/z/sta/2003-10-19/56528.shtml",
+      "equivalence": "SAME_AUTHOR_GUIDE_AND_TWENTY_ROW_NUMBER_TABLE_AFTER_VISIBLE_LAYOUT_NORMALIZATION",
+      "independent_original_stat_observation": false,
+      "note": "2003 page concatenates the end of 飞龙's fourth slot and next 布伊 row; compare normalized 2001 table, do not misparse 6-8布伊 as a single value"
+    }
+  },
+  "antecedents": {
+    "source_2001_pet20": {
+      "path": "research/recovered/STONEAGE-PET55-2001-KR20-CNPLAYER-TW1-SPR-R1.json",
+      "git_blob_sha": "dd4722c760f3041becd887c4c5312b2224a83ddb",
+      "existing_20_names": true,
+      "existing_7_crosslinks": true,
+      "existing_stat_slot_ranges_transcribed": false
+    },
+    "TW10_registry": {
+      "path": "research/pets/PET-ID-REGISTRY-R1.json",
+      "git_blob_sha": "564bb2c0433cdd0f80e5b34917132d11516097d8",
+      "source_named_dossier_count": 124
+    },
+    "overlapping_capture_source": {
+      "path": "research/recovered/STONEAGE-O92-EARLY-PET-ACQUISITION-CENSUS-R1.json",
+      "overlap_is_not_same_witness": true
+    }
+  },
+  "numeric_semantics": {
+    "level1_context": "The player guide appendix labels the table as initial values and Lv1, but the table header only calls the numeric group 三围",
+    "raw_group": "FOUR_NUMERIC_SLOTS_PER_ROW_FIRST_SLOT_POSSIBLE_HP_AND_REMAINING_THREE_POSSIBLE_STAT_TRIPLE_NOT_NATIVE_DEFINITION",
+    "original_native_column_ids_verified": false,
+    "individual_value_not_equal_zero_proven_not_applicable": false,
+    "range_for_single_number": "For search only, parse a singleton n as [n,n]; this is not a proven server-wide min=max",
+    "guide_numbers_may_be_unbounded_sample_or_repost": false,
+    "exact_client_version_year_identity_available": false
+  },
+  "records": [
+    {
+      "obs_id": "OBS-CN2001-MILK-LV1-0001",
+      "player_article_row": 1,
+      "pet_name_as_2001_player_page": "红象",
+      "element_text_as_player_page": "地7水3",
+      "location_or_reward_as_player_page_summary": "吉鲁岛，东132南43",
+      "numeric_slots_as_page": [
+        "60-64",
+        "8-9",
+        "5",
+        "3"
+      ],
+      "numeric_slots_bounds_without_stat_labels": [
+        {
+          "min": 60,
+          "max": 64
+        },
+        {
+          "min": 8,
+          "max": 9
+        },
+        {
+          "min": 5,
+          "max": 5
+        },
+        {
+          "min": 3,
+          "max": 3
+        }
+      ],
+      "source_headers_as_visible": [
+        "宠物名称",
+        "属性",
+        "出没地",
+        "三围"
+      ],
+      "source_stat_slot_count": 4,
+      "fourth_slot_semantic_proven_from_page": false,
+      "source_level1_context_claim": true,
+      "skill_note_as_player_page": null,
+      "linked_tw10_pet_id": null,
+      "linked_tw10_dossier_path": null,
+      "linked_tw10_source_grade": null,
+      "linked_tw10_same_species_or_server_proven": false,
+      "original_official_server_pet_id": null,
+      "official_initial_stat_range": null,
+      "actual_original_server_element_values": null,
+      "original_skill_id": null,
+      "qualified_official_2001_PC_live_release": false
+    },
+    {
+      "obs_id": "OBS-CN2001-MILK-LV1-0002",
+      "player_article_row": 2,
+      "pet_name_as_2001_player_page": "白象",
+      "element_text_as_player_page": "水5火5",
+      "location_or_reward_as_player_page_summary": "吉鲁岛，东105南147",
+      "numeric_slots_as_page": [
+        "66-70",
+        "8-9",
+        "5-7",
+        "2-4"
+      ],
+      "numeric_slots_bounds_without_stat_labels": [
+        {
+          "min": 66,
+          "max": 70
+        },
+        {
+          "min": 8,
+          "max": 9
+        },
+        {
+          "min": 5,
+          "max": 7
+        },
+        {
+          "min": 2,
+          "max": 4
+        }
+      ],
+      "source_headers_as_visible": [
+        "宠物名称",
+        "属性",
+        "出没地",
+        "三围"
+      ],
+      "source_stat_slot_count": 4,
+      "fourth_slot_semantic_proven_from_page": false,
+      "source_level1_context_claim": true,
+      "skill_note_as_player_page": null,
+      "linked_tw10_pet_id": null,
+      "linked_tw10_dossier_path": null,
+      "linked_tw10_source_grade": null,
+      "linked_tw10_same_species_or_server_proven": false,
+      "original_official_server_pet_id": null,
+      "official_initial_stat_range": null,
+      "actual_original_server_element_values": null,
+      "original_skill_id": null,
+      "qualified_official_2001_PC_live_release": false
+    },
+    {
+      "obs_id": "OBS-CN2001-MILK-LV1-0003",
+      "player_article_row": 3,
+      "pet_name_as_2001_player_page": "暴龙",
+      "element_text_as_player_page": "地6水4",
+      "location_or_reward_as_player_page_summary": "吉鲁岛或SOT奖品",
+      "numeric_slots_as_page": [
+        "44-54",
+        "8-10",
+        "8-10",
+        "4-6"
+      ],
+      "numeric_slots_bounds_without_stat_labels": [
+        {
+          "min": 44,
+          "max": 54
+        },
+        {
+          "min": 8,
+          "max": 10
+        },
+        {
+          "min": 8,
+          "max": 10
+        },
+        {
+          "min": 4,
+          "max": 6
+        }
+      ],
+      "source_headers_as_visible": [
+        "宠物名称",
+        "属性",
+        "出没地",
+        "三围"
+      ],
+      "source_stat_slot_count": 4,
+      "fourth_slot_semantic_proven_from_page": false,
+      "source_level1_context_claim": true,
+      "skill_note_as_player_page": "注：有一级必杀的技能",
+      "linked_tw10_pet_id": null,
+      "linked_tw10_dossier_path": null,
+      "linked_tw10_source_grade": null,
+      "linked_tw10_same_species_or_server_proven": false,
+      "original_official_server_pet_id": null,
+      "official_initial_stat_range": null,
+      "actual_original_server_element_values": null,
+      "original_skill_id": null,
+      "qualified_official_2001_PC_live_release": false
+    },
+    {
+      "obs_id": "OBS-CN2001-MILK-LV1-0004",
+      "player_article_row": 4,
+      "pet_name_as_2001_player_page": "雷龙",
+      "element_text_as_player_page": "火8水2",
+      "location_or_reward_as_player_page_summary": "沙姆岛",
+      "numeric_slots_as_page": [
+        "50-59",
+        "9-11",
+        "8-10",
+        "0-3"
+      ],
+      "numeric_slots_bounds_without_stat_labels": [
+        {
+          "min": 50,
+          "max": 59
+        },
+        {
+          "min": 9,
+          "max": 11
+        },
+        {
+          "min": 8,
+          "max": 10
+        },
+        {
+          "min": 0,
+          "max": 3
+        }
+      ],
+      "source_headers_as_visible": [
+        "宠物名称",
+        "属性",
+        "出没地",
+        "三围"
+      ],
+      "source_stat_slot_count": 4,
+      "fourth_slot_semantic_proven_from_page": false,
+      "source_level1_context_claim": true,
+      "skill_note_as_player_page": null,
+      "linked_tw10_pet_id": null,
+      "linked_tw10_dossier_path": null,
+      "linked_tw10_source_grade": null,
+      "linked_tw10_same_species_or_server_proven": false,
+      "original_official_server_pet_id": null,
+      "official_initial_stat_range": null,
+      "actual_original_server_element_values": null,
+      "original_skill_id": null,
+      "qualified_official_2001_PC_live_release": false
+    },
+    {
+      "obs_id": "OBS-CN2001-MILK-LV1-0005",
+      "player_article_row": 5,
+      "pet_name_as_2001_player_page": "绿鲨鱼",
+      "element_text_as_player_page": "地4水6",
+      "location_or_reward_as_player_page_summary": "卡鲁它那村海边沿岸，东232南545",
+      "numeric_slots_as_page": [
+        "29-36",
+        "5-7",
+        "4-5",
+        "2-3"
+      ],
+      "numeric_slots_bounds_without_stat_labels": [
+        {
+          "min": 29,
+          "max": 36
+        },
+        {
+          "min": 5,
+          "max": 7
+        },
+        {
+          "min": 4,
+          "max": 5
+        },
+        {
+          "min": 2,
+          "max": 3
+        }
+      ],
+      "source_headers_as_visible": [
+        "宠物名称",
+        "属性",
+        "出没地",
+        "三围"
+      ],
+      "source_stat_slot_count": 4,
+      "fourth_slot_semantic_proven_from_page": false,
+      "source_level1_context_claim": true,
+      "skill_note_as_player_page": null,
+      "linked_tw10_pet_id": null,
+      "linked_tw10_dossier_path": null,
+      "linked_tw10_source_grade": null,
+      "linked_tw10_same_species_or_server_proven": false,
+      "original_official_server_pet_id": null,
+      "official_initial_stat_range": null,
+      "actual_original_server_element_values": null,
+      "original_skill_id": null,
+      "qualified_official_2001_PC_live_release": false
+    },
+    {
+      "obs_id": "OBS-CN2001-MILK-LV1-0006",
+      "player_article_row": 6,
+      "pet_name_as_2001_player_page": "蓝龙人",
+      "element_text_as_player_page": "火水3",
+      "location_or_reward_as_player_page_summary": "吉鲁岛或五兄弟奖品",
+      "numeric_slots_as_page": [
+        "52-64",
+        "11-14",
+        "6-9",
+        "5-8"
+      ],
+      "numeric_slots_bounds_without_stat_labels": [
+        {
+          "min": 52,
+          "max": 64
+        },
+        {
+          "min": 11,
+          "max": 14
+        },
+        {
+          "min": 6,
+          "max": 9
+        },
+        {
+          "min": 5,
+          "max": 8
+        }
+      ],
+      "source_headers_as_visible": [
+        "宠物名称",
+        "属性",
+        "出没地",
+        "三围"
+      ],
+      "source_stat_slot_count": 4,
+      "fourth_slot_semantic_proven_from_page": false,
+      "source_level1_context_claim": true,
+      "skill_note_as_player_page": null,
+      "linked_tw10_pet_id": null,
+      "linked_tw10_dossier_path": null,
+      "linked_tw10_source_grade": null,
+      "linked_tw10_same_species_or_server_proven": false,
+      "original_official_server_pet_id": null,
+      "official_initial_stat_range": null,
+      "actual_original_server_element_values": null,
+      "original_skill_id": null,
+      "qualified_official_2001_PC_live_release": false
+    },
+    {
+      "obs_id": "OBS-CN2001-MILK-LV1-0007",
+      "player_article_row": 7,
+      "pet_name_as_2001_player_page": "红龙人",
+      "element_text_as_player_page": "火10",
+      "location_or_reward_as_player_page_summary": "吉鲁岛或五兄弟奖品",
+      "numeric_slots_as_page": [
+        "45-53",
+        "11-14",
+        "5-8",
+        "4-7"
+      ],
+      "numeric_slots_bounds_without_stat_labels": [
+        {
+          "min": 45,
+          "max": 53
+        },
+        {
+          "min": 11,
+          "max": 14
+        },
+        {
+          "min": 5,
+          "max": 8
+        },
+        {
+          "min": 4,
+          "max": 7
+        }
+      ],
+      "source_headers_as_visible": [
+        "宠物名称",
+        "属性",
+        "出没地",
+        "三围"
+      ],
+      "source_stat_slot_count": 4,
+      "fourth_slot_semantic_proven_from_page": false,
+      "source_level1_context_claim": true,
+      "skill_note_as_player_page": null,
+      "linked_tw10_pet_id": null,
+      "linked_tw10_dossier_path": null,
+      "linked_tw10_source_grade": null,
+      "linked_tw10_same_species_or_server_proven": false,
+      "original_official_server_pet_id": null,
+      "official_initial_stat_range": null,
+      "actual_original_server_element_values": null,
+      "original_skill_id": null,
+      "qualified_official_2001_PC_live_release": false
+    },
+    {
+      "obs_id": "OBS-CN2001-MILK-LV1-0008",
+      "player_article_row": 8,
+      "pet_name_as_2001_player_page": "银龙人",
+      "element_text_as_player_page": "火5风5",
+      "location_or_reward_as_player_page_summary": "吉鲁岛或五兄弟奖品",
+      "numeric_slots_as_page": [
+        "47-55",
+        "11-13",
+        "5-8",
+        "5-7"
+      ],
+      "numeric_slots_bounds_without_stat_labels": [
+        {
+          "min": 47,
+          "max": 55
+        },
+        {
+          "min": 11,
+          "max": 13
+        },
+        {
+          "min": 5,
+          "max": 8
+        },
+        {
+          "min": 5,
+          "max": 7
+        }
+      ],
+      "source_headers_as_visible": [
+        "宠物名称",
+        "属性",
+        "出没地",
+        "三围"
+      ],
+      "source_stat_slot_count": 4,
+      "fourth_slot_semantic_proven_from_page": false,
+      "source_level1_context_claim": true,
+      "skill_note_as_player_page": null,
+      "linked_tw10_pet_id": null,
+      "linked_tw10_dossier_path": null,
+      "linked_tw10_source_grade": null,
+      "linked_tw10_same_species_or_server_proven": false,
+      "original_official_server_pet_id": null,
+      "official_initial_stat_range": null,
+      "actual_original_server_element_values": null,
+      "original_skill_id": null,
+      "qualified_official_2001_PC_live_release": false
+    },
+    {
+      "obs_id": "OBS-CN2001-MILK-LV1-0009",
+      "player_article_row": 9,
+      "pet_name_as_2001_player_page": "黄龙人",
+      "element_text_as_player_page": "火2风8",
+      "location_or_reward_as_player_page_summary": "吉鲁岛或五兄弟奖品",
+      "numeric_slots_as_page": [
+        "40-51",
+        "8-11",
+        "5-7",
+        "6-8"
+      ],
+      "numeric_slots_bounds_without_stat_labels": [
+        {
+          "min": 40,
+          "max": 51
+        },
+        {
+          "min": 8,
+          "max": 11
+        },
+        {
+          "min": 5,
+          "max": 7
+        },
+        {
+          "min": 6,
+          "max": 8
+        }
+      ],
+      "source_headers_as_visible": [
+        "宠物名称",
+        "属性",
+        "出没地",
+        "三围"
+      ],
+      "source_stat_slot_count": 4,
+      "fourth_slot_semantic_proven_from_page": false,
+      "source_level1_context_claim": true,
+      "skill_note_as_player_page": null,
+      "linked_tw10_pet_id": null,
+      "linked_tw10_dossier_path": null,
+      "linked_tw10_source_grade": null,
+      "linked_tw10_same_species_or_server_proven": false,
+      "original_official_server_pet_id": null,
+      "official_initial_stat_range": null,
+      "actual_original_server_element_values": null,
+      "original_skill_id": null,
+      "qualified_official_2001_PC_live_release": false
+    },
+    {
+      "obs_id": "OBS-CN2001-MILK-LV1-0010",
+      "player_article_row": 10,
+      "pet_name_as_2001_player_page": "奇卡宝斯",
+      "element_text_as_player_page": "火3风7",
+      "location_or_reward_as_player_page_summary": "阿斯玛鲁矿山6F",
+      "numeric_slots_as_page": [
+        "48-54",
+        "9-11",
+        "8-10",
+        "3-5"
+      ],
+      "numeric_slots_bounds_without_stat_labels": [
+        {
+          "min": 48,
+          "max": 54
+        },
+        {
+          "min": 9,
+          "max": 11
+        },
+        {
+          "min": 8,
+          "max": 10
+        },
+        {
+          "min": 3,
+          "max": 5
+        }
+      ],
+      "source_headers_as_visible": [
+        "宠物名称",
+        "属性",
+        "出没地",
+        "三围"
+      ],
+      "source_stat_slot_count": 4,
+      "fourth_slot_semantic_proven_from_page": false,
+      "source_level1_context_claim": true,
+      "skill_note_as_player_page": null,
+      "linked_tw10_pet_id": "PET-000076",
+      "linked_tw10_dossier_path": "docs/pets/TW10-G100345.md",
+      "linked_tw10_source_grade": "SCRIPT",
+      "linked_tw10_same_species_or_server_proven": false,
+      "original_official_server_pet_id": null,
+      "official_initial_stat_range": null,
+      "actual_original_server_element_values": null,
+      "original_skill_id": null,
+      "qualified_official_2001_PC_live_release": false
+    },
+    {
+      "obs_id": "OBS-CN2001-MILK-LV1-0011",
+      "player_article_row": 11,
+      "pet_name_as_2001_player_page": "飞龙",
+      "element_text_as_player_page": "火2风8",
+      "location_or_reward_as_player_page_summary": "卡鲁它那村附近飞龙洞",
+      "numeric_slots_as_page": [
+        "49-54",
+        "10-12",
+        "7-9",
+        "6-8"
+      ],
+      "numeric_slots_bounds_without_stat_labels": [
+        {
+          "min": 49,
+          "max": 54
+        },
+        {
+          "min": 10,
+          "max": 12
+        },
+        {
+          "min": 7,
+          "max": 9
+        },
+        {
+          "min": 6,
+          "max": 8
+        }
+      ],
+      "source_headers_as_visible": [
+        "宠物名称",
+        "属性",
+        "出没地",
+        "三围"
+      ],
+      "source_stat_slot_count": 4,
+      "fourth_slot_semantic_proven_from_page": false,
+      "source_level1_context_claim": true,
+      "skill_note_as_player_page": null,
+      "linked_tw10_pet_id": null,
+      "linked_tw10_dossier_path": null,
+      "linked_tw10_source_grade": null,
+      "linked_tw10_same_species_or_server_proven": false,
+      "original_official_server_pet_id": null,
+      "official_initial_stat_range": null,
+      "actual_original_server_element_values": null,
+      "original_skill_id": null,
+      "qualified_official_2001_PC_live_release": false
+    },
+    {
+      "obs_id": "OBS-CN2001-MILK-LV1-0012",
+      "player_article_row": 12,
+      "pet_name_as_2001_player_page": "布伊",
+      "element_text_as_player_page": "地6水4",
+      "location_or_reward_as_player_page_summary": "霍特村附近",
+      "numeric_slots_as_page": [
+        "50-57",
+        "6-7",
+        "5-6",
+        "2-4"
+      ],
+      "numeric_slots_bounds_without_stat_labels": [
+        {
+          "min": 50,
+          "max": 57
+        },
+        {
+          "min": 6,
+          "max": 7
+        },
+        {
+          "min": 5,
+          "max": 6
+        },
+        {
+          "min": 2,
+          "max": 4
+        }
+      ],
+      "source_headers_as_visible": [
+        "宠物名称",
+        "属性",
+        "出没地",
+        "三围"
+      ],
+      "source_stat_slot_count": 4,
+      "fourth_slot_semantic_proven_from_page": false,
+      "source_level1_context_claim": true,
+      "skill_note_as_player_page": "注：有加工的技能",
+      "linked_tw10_pet_id": "PET-000007",
+      "linked_tw10_dossier_path": "docs/pets/TW10-G100256.md",
+      "linked_tw10_source_grade": "EXACT",
+      "linked_tw10_same_species_or_server_proven": false,
+      "original_official_server_pet_id": null,
+      "official_initial_stat_range": null,
+      "actual_original_server_element_values": null,
+      "original_skill_id": null,
+      "qualified_official_2001_PC_live_release": false
+    },
+    {
+      "obs_id": "OBS-CN2001-MILK-LV1-0013",
+      "player_article_row": 13,
+      "pet_name_as_2001_player_page": "金布伊",
+      "element_text_as_player_page": "火3风7",
+      "location_or_reward_as_player_page_summary": "卡鲁它那村道场猜谜三兄弟",
+      "numeric_slots_as_page": [
+        "51-55",
+        "6-8",
+        "9-11",
+        "2-4"
+      ],
+      "numeric_slots_bounds_without_stat_labels": [
+        {
+          "min": 51,
+          "max": 55
+        },
+        {
+          "min": 6,
+          "max": 8
+        },
+        {
+          "min": 9,
+          "max": 11
+        },
+        {
+          "min": 2,
+          "max": 4
+        }
+      ],
+      "source_headers_as_visible": [
+        "宠物名称",
+        "属性",
+        "出没地",
+        "三围"
+      ],
+      "source_stat_slot_count": 4,
+      "fourth_slot_semantic_proven_from_page": false,
+      "source_level1_context_claim": true,
+      "skill_note_as_player_page": null,
+      "linked_tw10_pet_id": "PET-000006",
+      "linked_tw10_dossier_path": "docs/pets/TW10-G100255.md",
+      "linked_tw10_source_grade": "EXACT",
+      "linked_tw10_same_species_or_server_proven": false,
+      "original_official_server_pet_id": null,
+      "official_initial_stat_range": null,
+      "actual_original_server_element_values": null,
+      "original_skill_id": null,
+      "qualified_official_2001_PC_live_release": false
+    },
+    {
+      "obs_id": "OBS-CN2001-MILK-LV1-0014",
+      "player_article_row": 14,
+      "pet_name_as_2001_player_page": "石龟",
+      "element_text_as_player_page": "地9风1",
+      "location_or_reward_as_player_page_summary": "柯奥山洞穴4楼",
+      "numeric_slots_as_page": [
+        "30-37",
+        "5-6",
+        "8-10",
+        "0-2"
+      ],
+      "numeric_slots_bounds_without_stat_labels": [
+        {
+          "min": 30,
+          "max": 37
+        },
+        {
+          "min": 5,
+          "max": 6
+        },
+        {
+          "min": 8,
+          "max": 10
+        },
+        {
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "source_headers_as_visible": [
+        "宠物名称",
+        "属性",
+        "出没地",
+        "三围"
+      ],
+      "source_stat_slot_count": 4,
+      "fourth_slot_semantic_proven_from_page": false,
+      "source_level1_context_claim": true,
+      "skill_note_as_player_page": "注：有石化技能",
+      "linked_tw10_pet_id": "PET-000025",
+      "linked_tw10_dossier_path": "docs/pets/TW10-G100274.md",
+      "linked_tw10_source_grade": "SCRIPT",
+      "linked_tw10_same_species_or_server_proven": false,
+      "original_official_server_pet_id": null,
+      "official_initial_stat_range": null,
+      "actual_original_server_element_values": null,
+      "original_skill_id": null,
+      "qualified_official_2001_PC_live_release": false
+    },
+    {
+      "obs_id": "OBS-CN2001-MILK-LV1-0015",
+      "player_article_row": 15,
+      "pet_name_as_2001_player_page": "穿山甲",
+      "element_text_as_player_page": "地10",
+      "location_or_reward_as_player_page_summary": "柯尔克矿坑1楼",
+      "numeric_slots_as_page": [
+        "43-45",
+        "6-8",
+        "10-13",
+        "1-2"
+      ],
+      "numeric_slots_bounds_without_stat_labels": [
+        {
+          "min": 43,
+          "max": 45
+        },
+        {
+          "min": 6,
+          "max": 8
+        },
+        {
+          "min": 10,
+          "max": 13
+        },
+        {
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "source_headers_as_visible": [
+        "宠物名称",
+        "属性",
+        "出没地",
+        "三围"
+      ],
+      "source_stat_slot_count": 4,
+      "fourth_slot_semantic_proven_from_page": false,
+      "source_level1_context_claim": true,
+      "skill_note_as_player_page": null,
+      "linked_tw10_pet_id": null,
+      "linked_tw10_dossier_path": null,
+      "linked_tw10_source_grade": null,
+      "linked_tw10_same_species_or_server_proven": false,
+      "original_official_server_pet_id": null,
+      "official_initial_stat_range": null,
+      "actual_original_server_element_values": null,
+      "original_skill_id": null,
+      "qualified_official_2001_PC_live_release": false
+    },
+    {
+      "obs_id": "OBS-CN2001-MILK-LV1-0016",
+      "player_article_row": 16,
+      "pet_name_as_2001_player_page": "绿虎",
+      "element_text_as_player_page": "地6水4",
+      "location_or_reward_as_player_page_summary": "乌鲁力村周围，南岛(450,628)",
+      "numeric_slots_as_page": [
+        "37-43",
+        "7-9",
+        "4-6",
+        "6-8"
+      ],
+      "numeric_slots_bounds_without_stat_labels": [
+        {
+          "min": 37,
+          "max": 43
+        },
+        {
+          "min": 7,
+          "max": 9
+        },
+        {
+          "min": 4,
+          "max": 6
+        },
+        {
+          "min": 6,
+          "max": 8
+        }
+      ],
+      "source_headers_as_visible": [
+        "宠物名称",
+        "属性",
+        "出没地",
+        "三围"
+      ],
+      "source_stat_slot_count": 4,
+      "fourth_slot_semantic_proven_from_page": false,
+      "source_level1_context_claim": true,
+      "skill_note_as_player_page": null,
+      "linked_tw10_pet_id": "PET-000062",
+      "linked_tw10_dossier_path": "docs/pets/TW10-G100327.md",
+      "linked_tw10_source_grade": "PLAYER_ALIAS",
+      "linked_tw10_same_species_or_server_proven": false,
+      "original_official_server_pet_id": null,
+      "official_initial_stat_range": null,
+      "actual_original_server_element_values": null,
+      "original_skill_id": null,
+      "qualified_official_2001_PC_live_release": false
+    },
+    {
+      "obs_id": "OBS-CN2001-MILK-LV1-0017",
+      "player_article_row": 17,
+      "pet_name_as_2001_player_page": "黄虎",
+      "element_text_as_player_page": "火3风7",
+      "location_or_reward_as_player_page_summary": "小人国村外",
+      "numeric_slots_as_page": [
+        "38-46",
+        "7-10",
+        "5-7",
+        "5-8"
+      ],
+      "numeric_slots_bounds_without_stat_labels": [
+        {
+          "min": 38,
+          "max": 46
+        },
+        {
+          "min": 7,
+          "max": 10
+        },
+        {
+          "min": 5,
+          "max": 7
+        },
+        {
+          "min": 5,
+          "max": 8
+        }
+      ],
+      "source_headers_as_visible": [
+        "宠物名称",
+        "属性",
+        "出没地",
+        "三围"
+      ],
+      "source_stat_slot_count": 4,
+      "fourth_slot_semantic_proven_from_page": false,
+      "source_level1_context_claim": true,
+      "skill_note_as_player_page": null,
+      "linked_tw10_pet_id": "PET-000063",
+      "linked_tw10_dossier_path": "docs/pets/TW10-G100328.md",
+      "linked_tw10_source_grade": "PLAYER_ALIAS",
+      "linked_tw10_same_species_or_server_proven": false,
+      "original_official_server_pet_id": null,
+      "official_initial_stat_range": null,
+      "actual_original_server_element_values": null,
+      "original_skill_id": null,
+      "qualified_official_2001_PC_live_release": false
+    },
+    {
+      "obs_id": "OBS-CN2001-MILK-LV1-0018",
+      "player_article_row": 18,
+      "pet_name_as_2001_player_page": "红虎",
+      "element_text_as_player_page": "火8风2",
+      "location_or_reward_as_player_page_summary": "福尔德村下方(233,367)，JOT A/JT D奖品",
+      "numeric_slots_as_page": [
+        "32-39",
+        "7-8",
+        "4-5",
+        "5-7"
+      ],
+      "numeric_slots_bounds_without_stat_labels": [
+        {
+          "min": 32,
+          "max": 39
+        },
+        {
+          "min": 7,
+          "max": 8
+        },
+        {
+          "min": 4,
+          "max": 5
+        },
+        {
+          "min": 5,
+          "max": 7
+        }
+      ],
+      "source_headers_as_visible": [
+        "宠物名称",
+        "属性",
+        "出没地",
+        "三围"
+      ],
+      "source_stat_slot_count": 4,
+      "fourth_slot_semantic_proven_from_page": false,
+      "source_level1_context_claim": true,
+      "skill_note_as_player_page": null,
+      "linked_tw10_pet_id": "PET-000064",
+      "linked_tw10_dossier_path": "docs/pets/TW10-G100329.md",
+      "linked_tw10_source_grade": "PLAYER_ALIAS",
+      "linked_tw10_same_species_or_server_proven": false,
+      "original_official_server_pet_id": null,
+      "official_initial_stat_range": null,
+      "actual_original_server_element_values": null,
+      "original_skill_id": null,
+      "qualified_official_2001_PC_live_release": false
+    },
+    {
+      "obs_id": "OBS-CN2001-MILK-LV1-0019",
+      "player_article_row": 19,
+      "pet_name_as_2001_player_page": "彩虹穿山甲",
+      "element_text_as_player_page": "水4火6",
+      "location_or_reward_as_player_page_summary": "盗贼洞窟地下4楼，东40南43",
+      "numeric_slots_as_page": [
+        "30-34",
+        "5-7",
+        "7-9",
+        "0-2"
+      ],
+      "numeric_slots_bounds_without_stat_labels": [
+        {
+          "min": 30,
+          "max": 34
+        },
+        {
+          "min": 5,
+          "max": 7
+        },
+        {
+          "min": 7,
+          "max": 9
+        },
+        {
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "source_headers_as_visible": [
+        "宠物名称",
+        "属性",
+        "出没地",
+        "三围"
+      ],
+      "source_stat_slot_count": 4,
+      "fourth_slot_semantic_proven_from_page": false,
+      "source_level1_context_claim": true,
+      "skill_note_as_player_page": null,
+      "linked_tw10_pet_id": null,
+      "linked_tw10_dossier_path": null,
+      "linked_tw10_source_grade": null,
+      "linked_tw10_same_species_or_server_proven": false,
+      "original_official_server_pet_id": null,
+      "official_initial_stat_range": null,
+      "actual_original_server_element_values": null,
+      "original_skill_id": null,
+      "qualified_official_2001_PC_live_release": false
+    },
+    {
+      "obs_id": "OBS-CN2001-MILK-LV1-0020",
+      "player_article_row": 20,
+      "pet_name_as_2001_player_page": "银呼拔拔",
+      "element_text_as_player_page": "地6风4",
+      "location_or_reward_as_player_page_summary": "SOT C奖品",
+      "numeric_slots_as_page": [
+        "38-45",
+        "6-8",
+        "6-7",
+        "6-7"
+      ],
+      "numeric_slots_bounds_without_stat_labels": [
+        {
+          "min": 38,
+          "max": 45
+        },
+        {
+          "min": 6,
+          "max": 8
+        },
+        {
+          "min": 6,
+          "max": 7
+        },
+        {
+          "min": 6,
+          "max": 7
+        }
+      ],
+      "source_headers_as_visible": [
+        "宠物名称",
+        "属性",
+        "出没地",
+        "三围"
+      ],
+      "source_stat_slot_count": 4,
+      "fourth_slot_semantic_proven_from_page": false,
+      "source_level1_context_claim": true,
+      "skill_note_as_player_page": null,
+      "linked_tw10_pet_id": null,
+      "linked_tw10_dossier_path": null,
+      "linked_tw10_source_grade": null,
+      "linked_tw10_same_species_or_server_proven": false,
+      "original_official_server_pet_id": null,
+      "official_initial_stat_range": null,
+      "actual_original_server_element_values": null,
+      "original_skill_id": null,
+      "qualified_official_2001_PC_live_release": false
+    }
+  ],
+  "counts": {
+    "source_visible_player_rows": 20,
+    "independent_stat_sources": 1,
+    "duplicated_reprint_pages": 1,
+    "parsed_numeric_slots": 80,
+    "four_slots_per_row": 4,
+    "matched_existing_source_tier_tw10_dossiers": 7,
+    "unlinked_with_current_TW10_client_dossier": 13,
+    "new_official_PC_pet_master_rows": 0,
+    "new_native_original_skill_ids": 0,
+    "official_initial_stat_ranges_verified": 0,
+    "new_permanent_pet_ids": 0,
+    "fully_complete_original_pc_pet_dossiers": 0,
+    "original_PC_pet_species_count": null,
+    "overall_percent": null
+  },
+  "preservation": {
+    "source_claims_are_separate_from_official_profile_values": true,
+    "do_not_backfill_tw10_combat_stats_or_acquisition": true,
+    "no_standalone_authoritative_2003_witness": true,
+    "no_proprietary_images_or_binaries_committed": true,
+    "no_mobile_or_private_server_content": true,
+    "preserve_CURRENT_original_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "next": "PET-DETAIL08: seek truly usable same-deployment PC pet master/skill/growth/encounter or official first-party issuance; do not recycle 2001/2003 player article as two confirmations."
+}
