@@ -13,7 +13,7 @@ def read(path):
 
 def blob(path):
     b = (ROOT / path).read_bytes()
-    return hashlib.sha1(b"blob " + str(len(b)).encode() + b"\\0" + b).hexdigest()
+    return hashlib.sha1(b"blob " + str(len(b)).encode() + bytes([0]) + b).hexdigest()
 
 class PetDetail06(unittest.TestCase):
     @classmethod
