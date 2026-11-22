@@ -1,0 +1,29 @@
+name: PET-DETAIL28 PC grey dragon 100-level source-bound audit
+on:
+  push:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE28-2001-GREY-DRAGON-LV1-LV101-NAME-CONFLICT-R1.json'
+      - 'docs/continuity/STONEAGE-PET-DETAIL28-2001-GREY-DRAGON-LV101-20261122.md'
+      - 'docs/pets/INDEX.md'
+      - 'README.md'
+      - 'tests/test_stoneage_pet_detail28_grey_lv101_r1.py'
+      - '.github/workflows/validate-stoneage-pet-detail28-grey-lv101.yml'
+  pull_request:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE28-2001-GREY-DRAGON-LV1-LV101-NAME-CONFLICT-R1.json'
+      - 'tests/test_stoneage_pet_detail28_grey_lv101_r1.py'
+      - '.github/workflows/validate-stoneage-pet-detail28-grey-lv101.yml'
+permissions:
+  contents: read
+jobs:
+  player_stats_color_names_official_null:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test 2001 numerical witness and original-PC source boundaries
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail28_grey_lv101_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_individual_profiles_r1.py' -v
