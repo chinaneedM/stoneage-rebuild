@@ -1,0 +1,37 @@
+name: PET-DETAIL26 classic PC 2001 pet names and ranges guard
+on:
+  push:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE26-2001-LV1-DINO-THUNDER-ALIAS-CONFLICT-R1.json'
+      - 'research/pets/profiles/TW10-G100351.json'
+      - 'research/pets/profiles/TW10-G100353.json'
+      - 'research/pets/profiles/TW10-G100371.json'
+      - 'docs/pets/TW10-G100351.md'
+      - 'docs/pets/TW10-G100353.md'
+      - 'docs/pets/TW10-G100371.md'
+      - 'docs/pets/INDEX.md'
+      - 'README.md'
+      - 'tests/test_stoneage_pet_detail26_2001_name_collision_r1.py'
+      - '.github/workflows/validate-stoneage-pet-detail26-2001-name-boundaries.yml'
+  pull_request:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE26-2001-LV1-DINO-THUNDER-ALIAS-CONFLICT-R1.json'
+      - 'research/pets/profiles/TW10-G100351.json'
+      - 'research/pets/profiles/TW10-G100353.json'
+      - 'research/pets/profiles/TW10-G100371.json'
+      - 'tests/test_stoneage_pet_detail26_2001_name_collision_r1.py'
+      - '.github/workflows/validate-stoneage-pet-detail26-2001-name-boundaries.yml'
+permissions:
+  contents: read
+jobs:
+  verified_original_tw1_two_thunders_no_alias_merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Recheck original 2001 client name provenance, player ranges and official null guards
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail26_2001_name_collision_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_individual_profiles_r1.py' -v
