@@ -1,0 +1,406 @@
+{
+  "schema": "stoneage.pet_detail15.early_pc_six_pet_textual_skill_claims_r1",
+  "date": "2026-11-22",
+  "scope": "CLASSIC_2D_PC_ONLY_SOURCE_GRADED_NOT_ORIGINAL_OFFICIAL_SKILL_MASTER",
+  "source_boundary": {
+    "accessible_web_page_text_observed": true,
+    "original_2001_html_bytes_recovered": false,
+    "tw10_original_server_skill_master_recovered": false,
+    "original_TW10_W_packet_captured": false,
+    "fto_claim_located_inside_rumor_section": true,
+    "later_sina_and_undated_17173_page_can_be_dependent": true,
+    "undated_5_6_7_skill_capacity_not_early_original_native_limit": true
+  },
+  "prior_pinned_evidence": {
+    "cn2001_milk": {
+      "path": "research/pets/PET-DETAIL-EVIDENCE07-CN2001-LEVEL1-20-NUMERIC-SOURCE-CLAIMS-R1.json",
+      "git_blob": "bd2b5d560c20663dcd22259d562aef8bef2ea90c"
+    },
+    "native_original_TW10_W": {
+      "path": "research/pets/PET-DETAIL-EVIDENCE13-TW10-ORIGINAL-W-SKILL-UI-BRIDGE-R1.json",
+      "git_blob": "ff5723b859f882eccf99029ff898190a42a67683"
+    },
+    "original_TW10_album": {
+      "path": "research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json",
+      "git_blob": "1aada81d7314769bf683b816cc5a8762c3bd9400"
+    }
+  },
+  "sources": [
+    {
+      "id": "milk",
+      "byline": "俄罗斯牛奶",
+      "display_date": "2001-06-14",
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n500_416268.html",
+      "grade": "MIGRATED_PLAYER_ARTICLE",
+      "original_publication_html_bytes_authenticated": false,
+      "early_TW10_official_build_proven": false
+    },
+    {
+      "id": "fto",
+      "byline": "fto",
+      "display_date": "2001-06-14",
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n330_246758.html",
+      "grade": "MIGRATED_PLAYER_RUMOR",
+      "original_publication_html_bytes_authenticated": false,
+      "early_TW10_official_build_proven": false
+    },
+    {
+      "id": "qa",
+      "byline": "未知",
+      "display_date": "2001-06-14",
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n775_691475.html",
+      "grade": "MIGRATED_COMPILED_PLAYER_QA",
+      "original_publication_html_bytes_authenticated": false,
+      "early_TW10_official_build_proven": false
+    },
+    {
+      "id": "p02",
+      "byline": null,
+      "display_date": null,
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow02.htm",
+      "grade": "UNDATED_EDITORIAL_PC_COMPILATION",
+      "original_publication_html_bytes_authenticated": false,
+      "early_TW10_official_build_proven": false
+    },
+    {
+      "id": "p03",
+      "byline": null,
+      "display_date": null,
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow03.htm",
+      "grade": "UNDATED_EDITORIAL_PC_COMPILATION",
+      "original_publication_html_bytes_authenticated": false,
+      "early_TW10_official_build_proven": false
+    },
+    {
+      "id": "p06",
+      "byline": null,
+      "display_date": null,
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow06.htm",
+      "grade": "UNDATED_EDITORIAL_PC_COMPILATION",
+      "original_publication_html_bytes_authenticated": false,
+      "early_TW10_official_build_proven": false
+    },
+    {
+      "id": "sina2003",
+      "byline": "网友投稿",
+      "display_date": "2003-04-03",
+      "url": "https://games.sina.com.cn/zhqu/sta/cwzl/cwzl_2.shtml",
+      "grade": "DATED_2003_PLAYER_COMPILATION",
+      "original_publication_html_bytes_authenticated": false,
+      "early_TW10_official_build_proven": false
+    },
+    {
+      "id": "sina2004",
+      "byline": "新浪游戏",
+      "display_date": "2004-02-23",
+      "url": "https://games.sina.com.cn/zhqu/sta/xsxl/cwxg.shtml",
+      "grade": "DATED_2004_PC_SKILL_TRAINING_GUIDE",
+      "original_publication_html_bytes_authenticated": false,
+      "early_TW10_official_build_proven": false
+    }
+  ],
+  "pet_profiles": [
+    {
+      "pet_id": "PET-000006",
+      "observation_id": "OBS-TW10-0006",
+      "tw10_literal": "金布伊",
+      "tw10_graphic": 100255,
+      "md_path": "docs/pets/TW10-G100255.md",
+      "json_path": "research/pets/profiles/TW10-G100255.json",
+      "source_identity_relation": "TW10_LOCAL_NAME_TO_EXTERNAL_TEXT_NAME_ONLY_NOT_CONFIRMED_SAME_DEPLOYMENT",
+      "official_initial_skill_ids": null,
+      "official_initial_skill_names": null,
+      "official_skill_slot_count": null,
+      "source_claims": [
+        {
+          "source_id": "p02",
+          "web_row": 10,
+          "skill_names": [
+            "防御",
+            "破除防御",
+            "一击必杀"
+          ],
+          "web_skill_capacity_literal": "7技",
+          "grade": "TALENT_UNDATED",
+          "official_innate_or_learned_confirmed": false
+        },
+        {
+          "source_id": "sina2003",
+          "web_row": 10,
+          "skill_names": [
+            "破除防御",
+            "一击必杀"
+          ],
+          "web_skill_capacity_literal": null,
+          "grade": "TALENT_2003_PLAYER",
+          "official_innate_or_learned_confirmed": false
+        }
+      ]
+    },
+    {
+      "pet_id": "PET-000007",
+      "observation_id": "OBS-TW10-0007",
+      "tw10_literal": "布伊",
+      "tw10_graphic": 100256,
+      "md_path": "docs/pets/TW10-G100256.md",
+      "json_path": "research/pets/profiles/TW10-G100256.json",
+      "source_identity_relation": "TW10_LOCAL_NAME_TO_EXTERNAL_TEXT_NAME_ONLY_NOT_CONFIRMED_SAME_DEPLOYMENT",
+      "official_initial_skill_ids": null,
+      "official_initial_skill_names": null,
+      "official_skill_slot_count": null,
+      "source_claims": [
+        {
+          "source_id": "milk",
+          "web_row": 12,
+          "skill_names": [
+            "加工"
+          ],
+          "web_skill_capacity_literal": null,
+          "grade": "HAS_SKILL_NOT_BORN",
+          "official_innate_or_learned_confirmed": false
+        },
+        {
+          "source_id": "qa",
+          "web_row": null,
+          "skill_names": [
+            "加工"
+          ],
+          "web_skill_capacity_literal": null,
+          "grade": "LEARNING_ADVICE_NOT_BORN",
+          "official_innate_or_learned_confirmed": false
+        },
+        {
+          "source_id": "p02",
+          "web_row": 11,
+          "skill_names": [
+            "攻击"
+          ],
+          "web_skill_capacity_literal": "5技",
+          "grade": "TALENT_UNDATED",
+          "official_innate_or_learned_confirmed": false
+        },
+        {
+          "source_id": "sina2003",
+          "web_row": 11,
+          "skill_names": [],
+          "web_skill_capacity_literal": null,
+          "grade": "UNLISTED_NOT_PROOF_ABSENCE",
+          "official_innate_or_learned_confirmed": false
+        },
+        {
+          "source_id": "sina2004",
+          "web_row": null,
+          "skill_names": [
+            "加工"
+          ],
+          "web_skill_capacity_literal": null,
+          "grade": "LATER_LEARNABLE_GENERAL",
+          "official_innate_or_learned_confirmed": false
+        }
+      ]
+    },
+    {
+      "pet_id": "PET-000011",
+      "observation_id": "OBS-TW10-0011",
+      "tw10_literal": "加比",
+      "tw10_graphic": 100260,
+      "md_path": "docs/pets/TW10-G100260.md",
+      "json_path": "research/pets/profiles/TW10-G100260.json",
+      "source_identity_relation": "TW10_LOCAL_NAME_TO_EXTERNAL_TEXT_NAME_ONLY_NOT_CONFIRMED_SAME_DEPLOYMENT",
+      "official_initial_skill_ids": null,
+      "official_initial_skill_names": null,
+      "official_skill_slot_count": null,
+      "source_claims": [
+        {
+          "source_id": "p03",
+          "web_row": 18,
+          "skill_names": [
+            "攻击",
+            "毒攻击"
+          ],
+          "web_skill_capacity_literal": "5技",
+          "grade": "TALENT_UNDATED",
+          "official_innate_or_learned_confirmed": false
+        },
+        {
+          "source_id": "sina2003",
+          "web_row": 18,
+          "skill_names": [
+            "毒攻击"
+          ],
+          "web_skill_capacity_literal": null,
+          "grade": "TALENT_2003_PLAYER",
+          "official_innate_or_learned_confirmed": false
+        }
+      ]
+    },
+    {
+      "pet_id": "PET-000013",
+      "observation_id": "OBS-TW10-0013",
+      "tw10_literal": "加斯",
+      "tw10_graphic": 100262,
+      "md_path": "docs/pets/TW10-G100262.md",
+      "json_path": "research/pets/profiles/TW10-G100262.json",
+      "source_identity_relation": "TW10_LOCAL_NAME_TO_EXTERNAL_TEXT_NAME_ONLY_NOT_CONFIRMED_SAME_DEPLOYMENT",
+      "official_initial_skill_ids": null,
+      "official_initial_skill_names": null,
+      "official_skill_slot_count": null,
+      "source_claims": [
+        {
+          "source_id": "p03",
+          "web_row": 20,
+          "skill_names": [
+            "攻击",
+            "混乱攻击"
+          ],
+          "web_skill_capacity_literal": "5技",
+          "grade": "TALENT_UNDATED",
+          "official_innate_or_learned_confirmed": false
+        },
+        {
+          "source_id": "sina2003",
+          "web_row": 20,
+          "skill_names": [
+            "混乱攻击"
+          ],
+          "web_skill_capacity_literal": null,
+          "grade": "TALENT_2003_PLAYER",
+          "official_innate_or_learned_confirmed": false
+        }
+      ]
+    },
+    {
+      "pet_id": "PET-000024",
+      "observation_id": "OBS-TW10-0024",
+      "tw10_literal": "卡梅蘭恩",
+      "tw10_graphic": 100273,
+      "md_path": "docs/pets/TW10-G100273.md",
+      "json_path": "research/pets/profiles/TW10-G100273.json",
+      "source_identity_relation": "TW10_LOCAL_NAME_TO_EXTERNAL_TEXT_NAME_ONLY_NOT_CONFIRMED_SAME_DEPLOYMENT",
+      "official_initial_skill_ids": null,
+      "official_initial_skill_names": null,
+      "official_skill_slot_count": null,
+      "source_claims": [
+        {
+          "source_id": "p06",
+          "web_row": 43,
+          "skill_names": [
+            "攻击",
+            "防御",
+            "连续攻击"
+          ],
+          "web_skill_capacity_literal": "6技",
+          "grade": "TALENT_UNDATED",
+          "official_innate_or_learned_confirmed": false
+        },
+        {
+          "source_id": "sina2003",
+          "web_row": 43,
+          "skill_names": [
+            "连续攻击"
+          ],
+          "web_skill_capacity_literal": null,
+          "grade": "TALENT_2003_PLAYER",
+          "official_innate_or_learned_confirmed": false
+        }
+      ]
+    },
+    {
+      "pet_id": "PET-000025",
+      "observation_id": "OBS-TW10-0025",
+      "tw10_literal": "石龜",
+      "tw10_graphic": 100274,
+      "md_path": "docs/pets/TW10-G100274.md",
+      "json_path": "research/pets/profiles/TW10-G100274.json",
+      "source_identity_relation": "TW10_LOCAL_NAME_TO_EXTERNAL_TEXT_NAME_ONLY_NOT_CONFIRMED_SAME_DEPLOYMENT",
+      "official_initial_skill_ids": null,
+      "official_initial_skill_names": null,
+      "official_skill_slot_count": null,
+      "source_claims": [
+        {
+          "source_id": "milk",
+          "web_row": 14,
+          "skill_names": [
+            "石化技能"
+          ],
+          "web_skill_capacity_literal": null,
+          "grade": "HAS_SKILL_NOT_BORN",
+          "official_innate_or_learned_confirmed": false
+        },
+        {
+          "source_id": "fto",
+          "web_row": null,
+          "skill_names": [
+            "石化攻击"
+          ],
+          "web_skill_capacity_literal": null,
+          "grade": "INNATE_WORDING_IN_HEARSAY_SECTION",
+          "official_innate_or_learned_confirmed": false
+        },
+        {
+          "source_id": "p06",
+          "web_row": 44,
+          "skill_names": [
+            "攻击",
+            "防御",
+            "石化攻击"
+          ],
+          "web_skill_capacity_literal": "5技",
+          "grade": "TALENT_UNDATED",
+          "official_innate_or_learned_confirmed": false
+        },
+        {
+          "source_id": "sina2003",
+          "web_row": 44,
+          "skill_names": [
+            "石化攻击"
+          ],
+          "web_skill_capacity_literal": null,
+          "grade": "TALENT_2003_PLAYER",
+          "official_innate_or_learned_confirmed": false
+        },
+        {
+          "source_id": "sina2004",
+          "web_row": null,
+          "skill_names": [
+            "石化攻击"
+          ],
+          "web_skill_capacity_literal": null,
+          "grade": "LATER_LEARNABLE_GENERAL",
+          "official_innate_or_learned_confirmed": false
+        }
+      ]
+    }
+  ],
+  "unlinked_name_only": [
+    {
+      "source_id": "milk",
+      "literal": "暴龙",
+      "claim": "一级必杀",
+      "tw10_pet_profile": null,
+      "reason": "No confirmed same-identity original TW10 source key"
+    }
+  ],
+  "counts": {
+    "source_pages": 8,
+    "pet_profiles_with_new_textual_links": 6,
+    "individual_page_claim_rows": 18,
+    "unlinked_name_claims": 1,
+    "early_official_birth_skill_names_new": 0,
+    "original_official_skill_ids_new": 0,
+    "official_pet_species_new": 0,
+    "tw10_all_profiles_partial": 124,
+    "tw10_historically_fully_verified": 0
+  },
+  "guards": {
+    "unchanged_original_current_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "source_pages_do_not_override_TW10_profile_skill_nulls": true,
+    "source_ids_not_original_pet_ids": true,
+    "same_name_no_same_server_proof": true,
+    "stage_A": "7_PARTIAL+2_OPEN",
+    "stage_B_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "PET-DETAIL16: priority original same-era official PC server pet skill/master/learn mechanics; otherwise preserve independent author and edition graded claims, no mobile, no paid seller, no module switch"
+}
