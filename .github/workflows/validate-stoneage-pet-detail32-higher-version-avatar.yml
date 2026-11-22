@@ -1,0 +1,27 @@
+name: Validate StoneAge PET-DETAIL32 higher-PC original avatar alias lookup
+on:
+  push:
+    paths:
+      - tools/stoneage_pet_detail32_higher_pc_portrait_probe.py
+      - tests/test_stoneage_pet_detail32_higher_pc_portrait_probe.py
+      - 'research/pets/profiles/TW10-G10038*.json'
+      - 'research/pets/profiles/TW10-G10039*.json'
+      - 'docs/pets/TW10-G10038*.md'
+      - 'docs/pets/TW10-G10039*.md'
+      - docs/pets/INDEX.md
+      - README.md
+      - research/pets/PET-DETAIL-EVIDENCE32-HIGHER-PC-PORTRAIT-ALIAS-R1.json
+      - docs/continuity/STONEAGE-PET-DETAIL32-HIGHER-VERSION-AVATAR-CROSSWALK-20261122.md
+      - .github/workflows/validate-stoneage-pet-detail32-higher-version-avatar.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-qualified-cross-version-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate high-version PC original derived metadata and exact alias semantics
+        run: python3 -m unittest tests.test_stoneage_pet_detail32_higher_pc_portrait_probe -v
+      - name: Emit four-portrait candidate evidence without proprietary images
+        run: python3 -m tools.stoneage_pet_detail32_higher_pc_portrait_probe

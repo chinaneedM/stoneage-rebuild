@@ -1,0 +1,617 @@
+{
+  "boundaries": {
+    "historical_official_live_species_certified": 0,
+    "no_higher_version_official_same_deployment_inferred": true,
+    "overall_completion_percent": null,
+    "raw_original_pixels_copied_to_public_git": false,
+    "same_number_at_physical_ADRN_bitmapno_NOT_a_portrait_alias": true,
+    "tw10_portrait_map_number_misses_unaltered": true
+  },
+  "method": "exact source SHA verified client metadata: original 28-byte +24 face alias -> same saved version ADRN +76 map_number -> native RD record, not physical bitmapno equality",
+  "records": [
+    {
+      "album_logical_alias_original_both_versions": 28085,
+      "cn50_saved_5_0_ADRN_physical_bitmapno_same_integer_NOT_alias": [
+        {
+          "bitmapno": "28085",
+          "height": "68",
+          "index": "28085",
+          "rd_block_sha256": "9e5b0a4a49536088c4ed5907990f2088a581a72a7f739587d396790779419e4c",
+          "rd_flag": "1",
+          "size": "1574",
+          "width": "44",
+          "xoff": "-19",
+          "yoff": "-57"
+        }
+      ],
+      "cn50_saved_5_0_ADRN_plus76_alias_candidate_rows": [
+        {
+          "logical_alias_map_number": 28085,
+          "source_RD": {
+            "bitmapno": "126222",
+            "height": "104",
+            "index": "126222",
+            "rd_block_sha256": "dc12fc3d0a65628017d27f70fecb3225d35a6ab7cae21dad9f7956445fef3451",
+            "rd_flag": "1",
+            "size": "7861",
+            "width": "96",
+            "xoff": "-48",
+            "yoff": "-52"
+          },
+          "source_collision_metadata": {
+            "adrn_index": 126222,
+            "bitmapno": 126222
+          }
+        }
+      ],
+      "cn50_saved_compiled_name": "洛克斯",
+      "cross_version_portrait_source_candidate_found": true,
+      "official_original_pet_issuance_certified": false,
+      "pet_id": "PET-000116",
+      "source_pixel_actually_decoded_this_audit": false,
+      "tw10_cn50_full_SPR_segment_SHA256_exact": "324300f2f0f1b37d75dd74d274ef28a561984a7275d8865ba0feab652473855d",
+      "tw10_original_album_face_recovered_this_audit": false,
+      "tw10_original_graphic": 100389,
+      "tw10_original_name": "洛克斯",
+      "tw10_original_portrait_alias_missing_in_tw10_ADRN_plus76": true,
+      "tw85_official_2005_patch_plus76_alias_candidates": [
+        {
+          "original_2005_official_patch": {
+            "bitmapno": "126066",
+            "height": "104",
+            "index": "126066",
+            "map_number": "28085",
+            "record_sha256": "1d09be06e01e2d8aa257f6bb271ce225ba1b29ff7d5024eca309ef645cd2cb50",
+            "size": "9370",
+            "width": "96",
+            "xoff": "-48",
+            "yoff": "-52"
+          },
+          "original_pairing_grade": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+          "same_saved_tw85_native_RD_exact_original_record": true,
+          "saved_tw85_native_RD_sha256_if_source_exact": "41f09825f96d0527c99a0fd8642972a2ff2c0cce9443bb89e605088a0b6606e1",
+          "saved_tw85_native_indexes": [
+            126066
+          ]
+        },
+        {
+          "original_2005_official_patch": {
+            "bitmapno": "126222",
+            "height": "104",
+            "index": "126222",
+            "map_number": "28085",
+            "record_sha256": "259172829b4b538105d56b45b54c47f714a6724acc8d4d9416f12759ff49ae24",
+            "size": "7861",
+            "width": "96",
+            "xoff": "-48",
+            "yoff": "-52"
+          },
+          "original_pairing_grade": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+          "same_saved_tw85_native_RD_exact_original_record": true,
+          "saved_tw85_native_RD_sha256_if_source_exact": "dc12fc3d0a65628017d27f70fecb3225d35a6ab7cae21dad9f7956445fef3451",
+          "saved_tw85_native_indexes": [
+            126222
+          ]
+        }
+      ],
+      "tw85_saved_8_5_ADRN_physical_bitmapno_same_integer_NOT_alias": [
+        {
+          "bitmapno": "28085",
+          "height": "68",
+          "index": "28085",
+          "rd_flag": "1",
+          "rd_sha256": "9e5b0a4a49536088c4ed5907990f2088a581a72a7f739587d396790779419e4c",
+          "rd_status": "HEADER_MATCH",
+          "record_sha256": "10e5e4f3df8acb9bbe3fbbc820a7861caf8c37e0bd61c4b0f3ed19e756c537d8",
+          "size": "1574",
+          "width": "44",
+          "xoff": "-19",
+          "yoff": "-57"
+        }
+      ],
+      "tw85_saved_8_5_native_exact_RD_from_official_patch": [
+        {
+          "original_2005_official_patch": {
+            "bitmapno": "126066",
+            "height": "104",
+            "index": "126066",
+            "map_number": "28085",
+            "record_sha256": "1d09be06e01e2d8aa257f6bb271ce225ba1b29ff7d5024eca309ef645cd2cb50",
+            "size": "9370",
+            "width": "96",
+            "xoff": "-48",
+            "yoff": "-52"
+          },
+          "original_pairing_grade": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+          "same_saved_tw85_native_RD_exact_original_record": true,
+          "saved_tw85_native_RD_sha256_if_source_exact": "41f09825f96d0527c99a0fd8642972a2ff2c0cce9443bb89e605088a0b6606e1",
+          "saved_tw85_native_indexes": [
+            126066
+          ]
+        },
+        {
+          "original_2005_official_patch": {
+            "bitmapno": "126222",
+            "height": "104",
+            "index": "126222",
+            "map_number": "28085",
+            "record_sha256": "259172829b4b538105d56b45b54c47f714a6724acc8d4d9416f12759ff49ae24",
+            "size": "7861",
+            "width": "96",
+            "xoff": "-48",
+            "yoff": "-52"
+          },
+          "original_pairing_grade": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+          "same_saved_tw85_native_RD_exact_original_record": true,
+          "saved_tw85_native_RD_sha256_if_source_exact": "dc12fc3d0a65628017d27f70fecb3225d35a6ab7cae21dad9f7956445fef3451",
+          "saved_tw85_native_indexes": [
+            126222
+          ]
+        }
+      ]
+    },
+    {
+      "album_logical_alias_original_both_versions": 28086,
+      "cn50_saved_5_0_ADRN_physical_bitmapno_same_integer_NOT_alias": [
+        {
+          "bitmapno": "28086",
+          "height": "72",
+          "index": "28086",
+          "rd_block_sha256": "63498c91bee2175fad4f509cbe9e1b739887db5964c257c1cfb1c313584e8abd",
+          "rd_flag": "1",
+          "size": "1497",
+          "width": "52",
+          "xoff": "-23",
+          "yoff": "-55"
+        }
+      ],
+      "cn50_saved_5_0_ADRN_plus76_alias_candidate_rows": [
+        {
+          "logical_alias_map_number": 28086,
+          "source_RD": {
+            "bitmapno": "126223",
+            "height": "104",
+            "index": "126223",
+            "rd_block_sha256": "abcc1bbb6a7be06149ca8b171fbaa1eda9cb2348d4ed43dace1d68f1e35a10e6",
+            "rd_flag": "1",
+            "size": "8427",
+            "width": "96",
+            "xoff": "-48",
+            "yoff": "-52"
+          },
+          "source_collision_metadata": {
+            "adrn_index": 126223,
+            "bitmapno": 126223
+          }
+        }
+      ],
+      "cn50_saved_compiled_name": "阿伊萨",
+      "cross_version_portrait_source_candidate_found": true,
+      "official_original_pet_issuance_certified": false,
+      "pet_id": "PET-000117",
+      "source_pixel_actually_decoded_this_audit": false,
+      "tw10_cn50_full_SPR_segment_SHA256_exact": "b13d04cf59d372a15261159ad66a158362b53084ac9027ef2318934b6d4461e7",
+      "tw10_original_album_face_recovered_this_audit": false,
+      "tw10_original_graphic": 100390,
+      "tw10_original_name": "阿伊薩",
+      "tw10_original_portrait_alias_missing_in_tw10_ADRN_plus76": true,
+      "tw85_official_2005_patch_plus76_alias_candidates": [
+        {
+          "original_2005_official_patch": {
+            "bitmapno": "126067",
+            "height": "104",
+            "index": "126067",
+            "map_number": "28086",
+            "record_sha256": "cae6d07ce7d6f9b48bb6c24e02603747b6b943b5e4ad574dc3f6a793bfdb98aa",
+            "size": "9667",
+            "width": "96",
+            "xoff": "-48",
+            "yoff": "-52"
+          },
+          "original_pairing_grade": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+          "same_saved_tw85_native_RD_exact_original_record": true,
+          "saved_tw85_native_RD_sha256_if_source_exact": "24b2f19d0405fc306d9fd45872ed8550cd05b54164152c203aba98aafe531536",
+          "saved_tw85_native_indexes": [
+            126067
+          ]
+        },
+        {
+          "original_2005_official_patch": {
+            "bitmapno": "126223",
+            "height": "104",
+            "index": "126223",
+            "map_number": "28086",
+            "record_sha256": "add085c412abc2d38dfae9b777cc542b0b49f7e6d5382920df9701427946cd5f",
+            "size": "8427",
+            "width": "96",
+            "xoff": "-48",
+            "yoff": "-52"
+          },
+          "original_pairing_grade": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+          "same_saved_tw85_native_RD_exact_original_record": true,
+          "saved_tw85_native_RD_sha256_if_source_exact": "abcc1bbb6a7be06149ca8b171fbaa1eda9cb2348d4ed43dace1d68f1e35a10e6",
+          "saved_tw85_native_indexes": [
+            126223
+          ]
+        }
+      ],
+      "tw85_saved_8_5_ADRN_physical_bitmapno_same_integer_NOT_alias": [
+        {
+          "bitmapno": "28086",
+          "height": "72",
+          "index": "28086",
+          "rd_flag": "1",
+          "rd_sha256": "63498c91bee2175fad4f509cbe9e1b739887db5964c257c1cfb1c313584e8abd",
+          "rd_status": "HEADER_MATCH",
+          "record_sha256": "f31d7dbd38b629d3260d5debb7f4f647d2871d1ee9151393d1bd518f8d047e46",
+          "size": "1497",
+          "width": "52",
+          "xoff": "-23",
+          "yoff": "-55"
+        }
+      ],
+      "tw85_saved_8_5_native_exact_RD_from_official_patch": [
+        {
+          "original_2005_official_patch": {
+            "bitmapno": "126067",
+            "height": "104",
+            "index": "126067",
+            "map_number": "28086",
+            "record_sha256": "cae6d07ce7d6f9b48bb6c24e02603747b6b943b5e4ad574dc3f6a793bfdb98aa",
+            "size": "9667",
+            "width": "96",
+            "xoff": "-48",
+            "yoff": "-52"
+          },
+          "original_pairing_grade": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+          "same_saved_tw85_native_RD_exact_original_record": true,
+          "saved_tw85_native_RD_sha256_if_source_exact": "24b2f19d0405fc306d9fd45872ed8550cd05b54164152c203aba98aafe531536",
+          "saved_tw85_native_indexes": [
+            126067
+          ]
+        },
+        {
+          "original_2005_official_patch": {
+            "bitmapno": "126223",
+            "height": "104",
+            "index": "126223",
+            "map_number": "28086",
+            "record_sha256": "add085c412abc2d38dfae9b777cc542b0b49f7e6d5382920df9701427946cd5f",
+            "size": "8427",
+            "width": "96",
+            "xoff": "-48",
+            "yoff": "-52"
+          },
+          "original_pairing_grade": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+          "same_saved_tw85_native_RD_exact_original_record": true,
+          "saved_tw85_native_RD_sha256_if_source_exact": "abcc1bbb6a7be06149ca8b171fbaa1eda9cb2348d4ed43dace1d68f1e35a10e6",
+          "saved_tw85_native_indexes": [
+            126223
+          ]
+        }
+      ]
+    },
+    {
+      "album_logical_alias_original_both_versions": 28087,
+      "cn50_saved_5_0_ADRN_physical_bitmapno_same_integer_NOT_alias": [
+        {
+          "bitmapno": "28087",
+          "height": "62",
+          "index": "28087",
+          "rd_block_sha256": "eaf41ca871879c4955fb8e09ff774cf0e9d3b45227c7d68ce0fb386ae7524d56",
+          "rd_flag": "1",
+          "size": "1268",
+          "width": "32",
+          "xoff": "-15",
+          "yoff": "-58"
+        }
+      ],
+      "cn50_saved_5_0_ADRN_plus76_alias_candidate_rows": [
+        {
+          "logical_alias_map_number": 28087,
+          "source_RD": {
+            "bitmapno": "126224",
+            "height": "104",
+            "index": "126224",
+            "rd_block_sha256": "f60ed90f405abcb7ec175d383373cf002b3bfefc2a19b49e803c1a018c2607f8",
+            "rd_flag": "1",
+            "size": "9077",
+            "width": "96",
+            "xoff": "-48",
+            "yoff": "-52"
+          },
+          "source_collision_metadata": {
+            "adrn_index": 126224,
+            "bitmapno": 126224
+          }
+        }
+      ],
+      "cn50_saved_compiled_name": "格洛格鲁",
+      "cross_version_portrait_source_candidate_found": true,
+      "official_original_pet_issuance_certified": false,
+      "pet_id": "PET-000118",
+      "source_pixel_actually_decoded_this_audit": false,
+      "tw10_cn50_full_SPR_segment_SHA256_exact": "92aedf30177e523e0d012210559aba490707b735474aa2328d3d932d956440be",
+      "tw10_original_album_face_recovered_this_audit": false,
+      "tw10_original_graphic": 100391,
+      "tw10_original_name": "格洛格魯",
+      "tw10_original_portrait_alias_missing_in_tw10_ADRN_plus76": true,
+      "tw85_official_2005_patch_plus76_alias_candidates": [
+        {
+          "original_2005_official_patch": {
+            "bitmapno": "126068",
+            "height": "104",
+            "index": "126068",
+            "map_number": "28087",
+            "record_sha256": "5b5a4241ae194540dfe1b55ecfd114d556c8d44d772b8be3792c7cda16c94872",
+            "size": "9875",
+            "width": "96",
+            "xoff": "-48",
+            "yoff": "-52"
+          },
+          "original_pairing_grade": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+          "same_saved_tw85_native_RD_exact_original_record": true,
+          "saved_tw85_native_RD_sha256_if_source_exact": "3c8f0deb788f166e9550d6be13ecf1db2a17018215c95e1ec8af1c41cbe193e5",
+          "saved_tw85_native_indexes": [
+            126068
+          ]
+        },
+        {
+          "original_2005_official_patch": {
+            "bitmapno": "126224",
+            "height": "104",
+            "index": "126224",
+            "map_number": "28087",
+            "record_sha256": "ac3beba78546844877a7835d70803c44fbcea54d520c44fc8ce745b483dec4f4",
+            "size": "9077",
+            "width": "96",
+            "xoff": "-48",
+            "yoff": "-52"
+          },
+          "original_pairing_grade": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+          "same_saved_tw85_native_RD_exact_original_record": true,
+          "saved_tw85_native_RD_sha256_if_source_exact": "f60ed90f405abcb7ec175d383373cf002b3bfefc2a19b49e803c1a018c2607f8",
+          "saved_tw85_native_indexes": [
+            126224
+          ]
+        }
+      ],
+      "tw85_saved_8_5_ADRN_physical_bitmapno_same_integer_NOT_alias": [
+        {
+          "bitmapno": "28087",
+          "height": "62",
+          "index": "28087",
+          "rd_flag": "1",
+          "rd_sha256": "eaf41ca871879c4955fb8e09ff774cf0e9d3b45227c7d68ce0fb386ae7524d56",
+          "rd_status": "HEADER_MATCH",
+          "record_sha256": "b5e90cbb688d83365b477a4a70563fda2268b9f0449a3385b7475696efdb9a24",
+          "size": "1268",
+          "width": "32",
+          "xoff": "-15",
+          "yoff": "-58"
+        }
+      ],
+      "tw85_saved_8_5_native_exact_RD_from_official_patch": [
+        {
+          "original_2005_official_patch": {
+            "bitmapno": "126068",
+            "height": "104",
+            "index": "126068",
+            "map_number": "28087",
+            "record_sha256": "5b5a4241ae194540dfe1b55ecfd114d556c8d44d772b8be3792c7cda16c94872",
+            "size": "9875",
+            "width": "96",
+            "xoff": "-48",
+            "yoff": "-52"
+          },
+          "original_pairing_grade": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+          "same_saved_tw85_native_RD_exact_original_record": true,
+          "saved_tw85_native_RD_sha256_if_source_exact": "3c8f0deb788f166e9550d6be13ecf1db2a17018215c95e1ec8af1c41cbe193e5",
+          "saved_tw85_native_indexes": [
+            126068
+          ]
+        },
+        {
+          "original_2005_official_patch": {
+            "bitmapno": "126224",
+            "height": "104",
+            "index": "126224",
+            "map_number": "28087",
+            "record_sha256": "ac3beba78546844877a7835d70803c44fbcea54d520c44fc8ce745b483dec4f4",
+            "size": "9077",
+            "width": "96",
+            "xoff": "-48",
+            "yoff": "-52"
+          },
+          "original_pairing_grade": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+          "same_saved_tw85_native_RD_exact_original_record": true,
+          "saved_tw85_native_RD_sha256_if_source_exact": "f60ed90f405abcb7ec175d383373cf002b3bfefc2a19b49e803c1a018c2607f8",
+          "saved_tw85_native_indexes": [
+            126224
+          ]
+        }
+      ]
+    },
+    {
+      "album_logical_alias_original_both_versions": 28088,
+      "cn50_saved_5_0_ADRN_physical_bitmapno_same_integer_NOT_alias": [
+        {
+          "bitmapno": "28088",
+          "height": "74",
+          "index": "28088",
+          "rd_block_sha256": "14cb177058b3d67ed4f32999f47389c834e7e637a2b48c6738e7a38882d79c7a",
+          "rd_flag": "1",
+          "size": "1644",
+          "width": "40",
+          "xoff": "-20",
+          "yoff": "-69"
+        }
+      ],
+      "cn50_saved_5_0_ADRN_plus76_alias_candidate_rows": [
+        {
+          "logical_alias_map_number": 28088,
+          "source_RD": {
+            "bitmapno": "126225",
+            "height": "104",
+            "index": "126225",
+            "rd_block_sha256": "74188535ac343b466232f51c94459330eadda596ea5ccc6416408884639d67b7",
+            "rd_flag": "1",
+            "size": "8318",
+            "width": "96",
+            "xoff": "-48",
+            "yoff": "-52"
+          },
+          "source_collision_metadata": {
+            "adrn_index": 126225,
+            "bitmapno": 126225
+          }
+        }
+      ],
+      "cn50_saved_compiled_name": "朵洛将恩",
+      "cross_version_portrait_source_candidate_found": true,
+      "official_original_pet_issuance_certified": false,
+      "pet_id": "PET-000119",
+      "source_pixel_actually_decoded_this_audit": false,
+      "tw10_cn50_full_SPR_segment_SHA256_exact": "80238687e911c0f1393a2d79bb178fde02c6f826e35974ab56fe8f7f8e744789",
+      "tw10_original_album_face_recovered_this_audit": false,
+      "tw10_original_graphic": 100392,
+      "tw10_original_name": "朵洛將恩",
+      "tw10_original_portrait_alias_missing_in_tw10_ADRN_plus76": true,
+      "tw85_official_2005_patch_plus76_alias_candidates": [
+        {
+          "original_2005_official_patch": {
+            "bitmapno": "126069",
+            "height": "104",
+            "index": "126069",
+            "map_number": "28088",
+            "record_sha256": "43a350e6bb749c29e50447be6c81f14dbf44dacf9136d76e181c6a64a55ffa26",
+            "size": "9412",
+            "width": "96",
+            "xoff": "-48",
+            "yoff": "-52"
+          },
+          "original_pairing_grade": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+          "same_saved_tw85_native_RD_exact_original_record": true,
+          "saved_tw85_native_RD_sha256_if_source_exact": "ecabeb85dad02b2f3a0f534fc434533a206fbf26394239fea0f5c1fdd1edd116",
+          "saved_tw85_native_indexes": [
+            126069
+          ]
+        },
+        {
+          "original_2005_official_patch": {
+            "bitmapno": "126225",
+            "height": "104",
+            "index": "126225",
+            "map_number": "28088",
+            "record_sha256": "4acb08bd23e28c8b4b8f73ca1485d3677c91e5e03f9db4bae744ed048a4c8be1",
+            "size": "8318",
+            "width": "96",
+            "xoff": "-48",
+            "yoff": "-52"
+          },
+          "original_pairing_grade": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+          "same_saved_tw85_native_RD_exact_original_record": true,
+          "saved_tw85_native_RD_sha256_if_source_exact": "74188535ac343b466232f51c94459330eadda596ea5ccc6416408884639d67b7",
+          "saved_tw85_native_indexes": [
+            126225
+          ]
+        }
+      ],
+      "tw85_saved_8_5_ADRN_physical_bitmapno_same_integer_NOT_alias": [
+        {
+          "bitmapno": "28088",
+          "height": "74",
+          "index": "28088",
+          "rd_flag": "1",
+          "rd_sha256": "14cb177058b3d67ed4f32999f47389c834e7e637a2b48c6738e7a38882d79c7a",
+          "rd_status": "HEADER_MATCH",
+          "record_sha256": "708a978c78e6ae971832835f5fe09b2e04550e23e3368c611d02ba0ecfd5d56c",
+          "size": "1644",
+          "width": "40",
+          "xoff": "-20",
+          "yoff": "-69"
+        }
+      ],
+      "tw85_saved_8_5_native_exact_RD_from_official_patch": [
+        {
+          "original_2005_official_patch": {
+            "bitmapno": "126069",
+            "height": "104",
+            "index": "126069",
+            "map_number": "28088",
+            "record_sha256": "43a350e6bb749c29e50447be6c81f14dbf44dacf9136d76e181c6a64a55ffa26",
+            "size": "9412",
+            "width": "96",
+            "xoff": "-48",
+            "yoff": "-52"
+          },
+          "original_pairing_grade": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+          "same_saved_tw85_native_RD_exact_original_record": true,
+          "saved_tw85_native_RD_sha256_if_source_exact": "ecabeb85dad02b2f3a0f534fc434533a206fbf26394239fea0f5c1fdd1edd116",
+          "saved_tw85_native_indexes": [
+            126069
+          ]
+        },
+        {
+          "original_2005_official_patch": {
+            "bitmapno": "126225",
+            "height": "104",
+            "index": "126225",
+            "map_number": "28088",
+            "record_sha256": "4acb08bd23e28c8b4b8f73ca1485d3677c91e5e03f9db4bae744ed048a4c8be1",
+            "size": "8318",
+            "width": "96",
+            "xoff": "-48",
+            "yoff": "-52"
+          },
+          "original_pairing_grade": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+          "same_saved_tw85_native_RD_exact_original_record": true,
+          "saved_tw85_native_RD_sha256_if_source_exact": "74188535ac343b466232f51c94459330eadda596ea5ccc6416408884639d67b7",
+          "saved_tw85_native_indexes": [
+            126225
+          ]
+        }
+      ]
+    }
+  ],
+  "schema": "stoneage.pet_detail32.classic_pc_higher_version_face_alias_research.r1",
+  "source_scope": [
+    "AUTHENTICATED_TW10_RETAIL_ORIGINAL_ASSET_MISSING_FOUR_FACES",
+    "CN50_THIRD_PARTY_PRESERVED_SAVED_PC_5_0_UNVERIFIED_PRESSING",
+    "TW85_THIRD_PARTY_PRESERVED_SAVED_PC_8_5_UNVERIFIED_PRESSING"
+  ],
+  "sources": {
+    "CN50_ADRN_SHA256": "e24afc513d28c7f25bd26bde9c69ddc0de4000147a2b11f50b5176655d8558fd",
+    "CN50_COLLISION_SHA256": "4417afac7caffee86bf64ca36d9bfdff06fef61b9e3af200bf59b153280dc8df",
+    "CN50_album_362_slots_source": "research/recovered/STONEAGE-PET126R-CN50-PC-ORIGINAL-ALBUM-FULL-362-SLOT-SOURCE-CATALOGUE-R1.json",
+    "TW10_CN50_cross_version_names": "research/recovered/STONEAGE-PET126W-TW10-CN50-ALL-124-ORIGINAL-PC-NAME-VARIANTS-R1.json",
+    "TW85_NATIVE_PATCH_EXACT_RD_PAIRS_SHA256": "ee41e4266b3bbab162d9271c1b86cceaa85354e60ff3e389fffccd68010b1314",
+    "TW85_NATIVE_SHA256": "495928a0a44d7c81bf1d6ef7b06d26decfc5096803fbd60b9e8e0aa9752a45ce",
+    "TW85_OFFICIAL_2005_PATCH_ADRN_INDEX_SHA256": "d8049cb6ce74a2c048372aa51fc81b6921a995b6fa45b03dd5511a93509958ca"
+  },
+  "stats": {
+    "cn50_adRN_aliases_with_at_least_one_candidate": 4,
+    "cross_version_face_candidates_found": 4,
+    "original_TW10_album_faces_newly_authenticated": 0,
+    "tw10_original_missing_album_portraits": 4,
+    "tw85_official_patch_aliases_present": 4,
+    "tw85_saved_client_source_exact_native_RD_matches": 4
+  },
+  "validation": {
+    "candidate_commit": "1cabfe7a145a0cb833a430cf9f345a3d016e839a",
+    "github_run_id": 45021691311,
+    "github_job_id": 137205807438,
+    "validation_source": "GitHub Actions checked-out actual SOURCE-DERIVED original PC carrier metadata; saved 5.0 original CAB/REAL not re-acquired or rendered in this run",
+    "ci_test_status": "success_checked_in_prior_step"
+  },
+  "interpretation": {
+    "cn50_ADRN_plus76_mapping_is_a_source_candidate_not_a_native_visual_selector": true,
+    "tw85_official_patch_has_two_distinct_RD_candidates_per_alias": true,
+    "runtime_default_selected_face_unknown": true,
+    "tw10_original_1_0_album_RD_still_missing": true,
+    "high_version_saved_original_RD_sha_verified_by_prior_source_run": true,
+    "original_RD_bytes_or_decoded_pixels_newly_reacquired_in_this_run": false,
+    "official_live_pet_species_proven_from_visuals": 0,
+    "global_official_pc_species_total": null
+  }
+}
