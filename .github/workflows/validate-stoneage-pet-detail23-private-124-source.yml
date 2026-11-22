@@ -1,0 +1,30 @@
+name: PET-DETAIL23 original TW1 PC 124 privately observed pet source atlas
+on:
+  push:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE23-TW10-124-ORIGINAL-PRIVATE-VISUAL-ATLAS-R1.json'
+      - 'docs/continuity/STONEAGE-PET-DETAIL23-TW10-124-ORIGINAL-PRIVATE-ATLAS-20261122.md'
+      - 'tests/test_stoneage_pet_detail23_124_private_atlas_source_r1.py'
+      - '.github/workflows/validate-stoneage-pet-detail23-private-124-source.yml'
+      - 'docs/pets/INDEX.md'
+      - 'README.md'
+  pull_request:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE23-TW10-124-ORIGINAL-PRIVATE-VISUAL-ATLAS-R1.json'
+      - 'docs/continuity/STONEAGE-PET-DETAIL23-TW10-124-ORIGINAL-PRIVATE-ATLAS-20261122.md'
+      - 'tests/test_stoneage_pet_detail23_124_private_atlas_source_r1.py'
+      - '.github/workflows/validate-stoneage-pet-detail23-private-124-source.yml'
+permissions:
+  contents: read
+jobs:
+  verify-original-pet-source-not-live-issuance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: PET23 official-PC-source-boundary original 124 names, portraits and all animations
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail23_124_private_atlas_source_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_individual_profiles_r1.py' -v

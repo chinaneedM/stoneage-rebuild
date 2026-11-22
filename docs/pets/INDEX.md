@@ -2,6 +2,10 @@
 
 > **重要：这是一份原客户端的“具名图形候选清单”，不是官服实发物种统计；不同版本不可累加。** 原姓名保持原繁体字形，大陆5.0列是第三方保存的 PC 本地编译异名候选，不代表同服ID。完整图像仅在私人观察文件中，不进公开Git。
 
+## PET-DETAIL23｜124份台湾1.0原客户端宠物离线可视图鉴（私人文件）
+
+[124份源码→真正120张原相册头像→6944条原SPR动作序列的全体源复核](../continuity/STONEAGE-PET-DETAIL23-TW10-124-ORIGINAL-PRIVATE-ATLAS-20261122.md) · [124项PET永久编号、原名字节SHA、原SPR SHA及120真实RD SHA机读证据](../../research/pets/PET-DETAIL-EVIDENCE23-TW10-124-ORIGINAL-PRIVATE-VISUAL-ATLAS-R1.json)。从已认证台湾1.0原零售ZIP重新直接解181行原编译表、124具名/57空，重读原SPR与PET15私人图册逐项一致的**6944段、70236帧引用、29891张独立源位图**；再回本版ADRN/REAL实际解码**120张原相册头像**。私人 ZIP 约84 MB，已存ChatGPT Library的`/石器时代/StoneAge-PET23-TW10-124-original-private-atlas.zip`，完整解压后`index.html`可按宠物名字、编号和图号查、选动作/方向/逐帧；生成脚本在同目录独立私有存档。**4张历史头像继续缺失**，以原SPR帧作明确标注的替代；所有原版权像素留私人，不进Git。**124个本地编译候选不是历史官服实发总数**；原服数值／出生技能／成长／捕捉地点等仍全未知，完整PET档案0，Stage模块锁及整体UNKNOWN不变。
+
 ## PET-DETAIL22｜原台湾1.0缺头像4项已直接恢复同版SPR四方向可视资料
 
 [16张真正原客户端SPR动作首帧与头像数字命名空间复核](../continuity/STONEAGE-PET-DETAIL22-TW10-FOUR-POSE-FALLBACK-20261122.md) · [原RD逐项散列及永久档案联接](../../research/pets/PET-DETAIL-EVIDENCE22-TW10-FOUR-POSES-NO-PORTRAIT-R1.json)。已认证零售ZIP、PET15私人原图册重读：PET-000116 [洛克斯](TW10-G100389.md)、PET-000117 [阿伊薩](TW10-G100390.md)、PET-000118 [格洛格魯](TW10-G100391.md)、PET-000119 [朵洛將恩](TW10-G100392.md)，各4方向动作码0原SPR帧直接匹配ADRN与REAL RD，并以独立RD索引解码核对旧PNG。**原相册头像仍缺4张**：原图逻辑别名28085–28088只可按ADRN的+76别名字段查询；其同数字物理位图号存在却各自别名为0，绝不能混淆为头像。公开Git不存版权像素，本轮新可查的是**视觉参考关系**而非宠物种数/初值/技能/抓捕；台湾1.0档案124份PARTIAL、头像120/124、历史全字段0不变。
