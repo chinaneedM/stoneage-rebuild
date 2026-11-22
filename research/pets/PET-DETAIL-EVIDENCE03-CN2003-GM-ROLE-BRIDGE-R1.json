@@ -1,0 +1,171 @@
+{
+  "schema": "stoneage.pet_detail03.cn2003_operator_gm_award_to_original_pc_client_name_gap.r1",
+  "date": "2026-11-22",
+  "active_module": "PET",
+  "scope": "CLASSIC_ORIGINAL_2D_PC_ONLY",
+  "source_pins": {
+    "contemporaneous_operator_GM_2003_PET68": {
+      "path": "research/recovered/STONEAGE-PET68-YEAR2003-SOURCE-BOUNDED-AUDIT-R1.json",
+      "git_blob": "f462366e91c607aa940c54799634bc90c7da4d90"
+    },
+    "CN50_preserved_exe_compiled_362": {
+      "path": "research/recovered/STONEAGE-PET126R-CN50-PC-ORIGINAL-ALBUM-FULL-362-SLOT-SOURCE-CATALOGUE-R1.json",
+      "git_blob": "8b1058a43c267dfeaa298d4c2c472209cebd24d9"
+    },
+    "TW10_catalogue_permanent_ids": {
+      "path": "research/pets/PET-ID-REGISTRY-R1.json",
+      "git_blob": "564bb2c0433cdd0f80e5b34917132d11516097d8"
+    }
+  },
+  "published_operator_sources": [
+    {
+      "url": "https://games.sina.com.cn/newgames/2003/11/11118108.shtml",
+      "publication_date": "2003-11-11",
+      "published_claim": "GM already delivered a named squirrel 波比; 三个指定转生宠 are eligible inputs"
+    },
+    {
+      "url": "https://games.sina.com.cn/newgames/2003/11/11138274.shtml",
+      "publication_date": "2003-11-13",
+      "reported_activity_date": "2003-11-12",
+      "published_claim": "player reportedly traded 奇娜 to GM and received 波比; other two names only event rule"
+    },
+    {
+      "url": "https://news.17173.com/content/2003-3-21/n48_964760.html",
+      "publication_date": "2003-03-21",
+      "published_claim": "CN1.82-anniversary server permitted use of then-current 宠物进化史 client; a server label does not uniquely identify client bytes"
+    }
+  ],
+  "source_rederived_counts": {
+    "documentary_named_roles": 4,
+    "checked_TW10_named_client_rows": 124,
+    "checked_CN50_album_slots": 362,
+    "matched_exact_CN50_names": 3,
+    "matched_TW10_display_names": 3,
+    "not_present_in_two_checked_catalogues": 1,
+    "new_authentic_2003_CNpc_master_rows": 0,
+    "new_game_source_bytes": 0,
+    "new_permanent_PET_ids": 0,
+    "fully_completed_pet_profiles_added": 0
+  },
+  "records": [
+    {
+      "original_operator_literal": "波比",
+      "operator_2003_event_role": "OPERATOR_REPORTED_ACTUAL_GM_AWARD_2003_11_12",
+      "operator_article_reported_fact": "GM handed the named squirrel to a player (operator's published account)",
+      "contemporary_2003_official_PC_operator_source_grade": "FIRST_PARTY_OPERATOR_TEXT_REPRINT_NOT_RAW_SERVER_LOG",
+      "original_TW10_client_source_exact_or_simplified_name_candidate": null,
+      "original_CN50_preserved_compiled_client_source_literal": null,
+      "name_absent_from_checked_124_TW10_and_362_CN50_album_rows": true,
+      "historical_2003_original_native_source_pet_id": null,
+      "original_2003_PC_pet_skills": null,
+      "original_2003_PC_level1_stats": null,
+      "original_2003_PC_growth": null,
+      "original_2003_PC_graphic_binding": null,
+      "authentic_2003_operator_server_logs_obtained": false,
+      "assigned_new_permanent_PET_id": null,
+      "no_identity_promotion_from_text_or_cross_build": true
+    },
+    {
+      "original_operator_literal": "奇娜",
+      "operator_2003_event_role": "OPERATOR_REPORTED_ACTUAL_EXCHANGE_INPUT_2003_11_12",
+      "operator_article_reported_fact": "named blue frog handed to GM in reported completed exchange",
+      "contemporary_2003_official_PC_operator_source_grade": "FIRST_PARTY_OPERATOR_TEXT_REPRINT_NOT_RAW_SERVER_LOG",
+      "original_TW10_client_source_exact_or_simplified_name_candidate": {
+        "catalog_pet_id": "PET-000075",
+        "original_client_literal": "奇娜",
+        "document": "docs/pets/TW10-G100344.md",
+        "client_same_as_2003_CN_species_confirmed": false
+      },
+      "original_CN50_preserved_compiled_client_source_literal": {
+        "album_slot_zero_based": 94,
+        "source_exe_row_sha256": "e28161345513bb8e837806091cce94e184c25d2cdbb04bc41b9a5afb31dfeaaa",
+        "original_exe_row_offset": 539056,
+        "original_same_CAB_SPR_sha_if_ordinal_guess": "257d724dafde5482fc6afb224f0f485efb46e96c095b40851607608ec364df93",
+        "original_name_to_SPR_selector_proven": false,
+        "actual_official_same_deployment_pet_id": null
+      },
+      "name_absent_from_checked_124_TW10_and_362_CN50_album_rows": false,
+      "historical_2003_original_native_source_pet_id": null,
+      "original_2003_PC_pet_skills": null,
+      "original_2003_PC_level1_stats": null,
+      "original_2003_PC_growth": null,
+      "original_2003_PC_graphic_binding": null,
+      "authentic_2003_operator_server_logs_obtained": false,
+      "assigned_new_permanent_PET_id": null,
+      "no_identity_promotion_from_text_or_cross_build": true
+    },
+    {
+      "original_operator_literal": "多鲁宝",
+      "operator_2003_event_role": "ELIGIBLE_EXCHANGE_INPUT_ONLY_NOT_THIS_EVENT_OBSERVED",
+      "operator_article_reported_fact": "named as eligible rebirth pet for exchange; completion not observed in the selected report",
+      "contemporary_2003_official_PC_operator_source_grade": "FIRST_PARTY_OPERATOR_TEXT_REPRINT_NOT_RAW_SERVER_LOG",
+      "original_TW10_client_source_exact_or_simplified_name_candidate": {
+        "catalog_pet_id": "PET-000081",
+        "original_client_literal": "多魯寶",
+        "document": "docs/pets/TW10-G100350.md",
+        "client_same_as_2003_CN_species_confirmed": false
+      },
+      "original_CN50_preserved_compiled_client_source_literal": {
+        "album_slot_zero_based": 100,
+        "source_exe_row_sha256": "44ffbe9c630f3b09bebb57b36aae46f6b785e4cb887943b84ec43e2c8d4fae1b",
+        "original_exe_row_offset": 539224,
+        "original_same_CAB_SPR_sha_if_ordinal_guess": "14f8d5b6ae32fda4d5f3768bd70f7ccfaa75aa66d536f0b4515e3984ab193d49",
+        "original_name_to_SPR_selector_proven": false,
+        "actual_official_same_deployment_pet_id": null
+      },
+      "name_absent_from_checked_124_TW10_and_362_CN50_album_rows": false,
+      "historical_2003_original_native_source_pet_id": null,
+      "original_2003_PC_pet_skills": null,
+      "original_2003_PC_level1_stats": null,
+      "original_2003_PC_growth": null,
+      "original_2003_PC_graphic_binding": null,
+      "authentic_2003_operator_server_logs_obtained": false,
+      "assigned_new_permanent_PET_id": null,
+      "no_identity_promotion_from_text_or_cross_build": true
+    },
+    {
+      "original_operator_literal": "洛卡伦恩",
+      "operator_2003_event_role": "ELIGIBLE_EXCHANGE_INPUT_ONLY_NOT_THIS_EVENT_OBSERVED",
+      "operator_article_reported_fact": "named as eligible rebirth pet for exchange; completion not observed in the selected report",
+      "contemporary_2003_official_PC_operator_source_grade": "FIRST_PARTY_OPERATOR_TEXT_REPRINT_NOT_RAW_SERVER_LOG",
+      "original_TW10_client_source_exact_or_simplified_name_candidate": {
+        "catalog_pet_id": "PET-000091",
+        "original_client_literal": "洛卡倫恩",
+        "document": "docs/pets/TW10-G100360.md",
+        "client_same_as_2003_CN_species_confirmed": false
+      },
+      "original_CN50_preserved_compiled_client_source_literal": {
+        "album_slot_zero_based": 110,
+        "source_exe_row_sha256": "da309e625d55e85f6352afdcc725aac89c9e1340455c0484215d708be5925e6f",
+        "original_exe_row_offset": 539504,
+        "original_same_CAB_SPR_sha_if_ordinal_guess": "71111d4395a68bf72dc7fb068a6286fef66c4b1afeae17b697b4a336518ddf94",
+        "original_name_to_SPR_selector_proven": false,
+        "actual_official_same_deployment_pet_id": null
+      },
+      "name_absent_from_checked_124_TW10_and_362_CN50_album_rows": false,
+      "historical_2003_original_native_source_pet_id": null,
+      "original_2003_PC_pet_skills": null,
+      "original_2003_PC_level1_stats": null,
+      "original_2003_PC_growth": null,
+      "original_2003_PC_graphic_binding": null,
+      "authentic_2003_operator_server_logs_obtained": false,
+      "assigned_new_permanent_PET_id": null,
+      "no_identity_promotion_from_text_or_cross_build": true
+    }
+  ],
+  "grade_boundary": {
+    "operator_report_of_actual_award_is_documentary_evidence_not_native_server_log": true,
+    "later_CN50_third_party_preserved_sample_certified_2003_client": false,
+    "same_name_does_not_prove_same_species_across_regions": true,
+    "CN50_albums_not_full_live_2003_roster": true,
+    "TW10_local_graphics_not_2003_CN_operator_server_master": true,
+    "absence_of_BOBI_not_negative_proof_of_historical_release": true,
+    "eligible_rule_does_not_prove_each_pet_exchanged": true,
+    "new_mobile_or_private_server_pet_data_included": false,
+    "historic_CURRENT_blob_unchanged": "c89e0e33537990aa2132b47c40fef49a985a935c",
+    "full_historical_completion": false,
+    "year_2026": "NOT_YEAR_AUDITED",
+    "overall_percent": null
+  },
+  "next": "PET-DETAIL-EVIDENCE-04: locate authentic classic PC contemporary operator patch/client or same-deployment service PET master and name->graphic bridge, especially documented 波比 award; never promote cross-region names to verified species or fill stats from community sources."
+}
