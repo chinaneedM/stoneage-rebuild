@@ -1,0 +1,33 @@
+name: PET-DETAIL22 TW1 original four missing album portrait sprite pose evidence
+on:
+  push:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE22-TW10-FOUR-POSES-NO-PORTRAIT-R1.json'
+      - 'research/pets/profiles/TW10-G10038*.json'
+      - 'research/pets/profiles/TW10-G10039*.json'
+      - 'docs/pets/TW10-G10038*.md'
+      - 'docs/pets/TW10-G10039*.md'
+      - 'docs/continuity/STONEAGE-PET-DETAIL22-TW10-FOUR-POSE-FALLBACK-20261122.md'
+      - 'tests/test_stoneage_pet_detail22_four_sprite_pose_boundary_r1.py'
+      - '.github/workflows/validate-stoneage-pet-detail22-four-pose-source.yml'
+  pull_request:
+    paths:
+      - 'research/pets/**'
+      - 'docs/pets/**'
+      - 'docs/continuity/STONEAGE-PET-DETAIL22-TW10-FOUR-POSE-FALLBACK-20261122.md'
+      - 'tests/test_stoneage_pet_detail22_four_sprite_pose_boundary_r1.py'
+      - '.github/workflows/validate-stoneage-pet-detail22-four-pose-source.yml'
+permissions:
+  contents: read
+jobs:
+  verify-source-only-four-sprite-pose-references:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify exact source records, immutable original history and no falsely restored portraits
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail22_four_sprite_pose_boundary_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_individual_profiles_r1.py' -v
