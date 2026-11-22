@@ -1,0 +1,36 @@
+name: PET-DETAIL27 classic PC thunder dual-name 2001-2003 player sample audit
+on:
+  push:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE27-2001-2003-THUNDER-DUAL-NAMES-PLAYER-GROWTH-R1.json'
+      - 'research/pets/profiles/TW10-G100351.json'
+      - 'research/pets/profiles/TW10-G100353.json'
+      - 'docs/pets/TW10-G100351.md'
+      - 'docs/pets/TW10-G100353.md'
+      - 'docs/pets/INDEX.md'
+      - 'README.md'
+      - 'docs/continuity/STONEAGE-PET-DETAIL27-THUNDER-NAME-AND-GROWTH-SAMPLES-20261122.md'
+      - 'tests/test_stoneage_pet_detail27_thunder_name_and_growth_2001_2003_r1.py'
+      - '.github/workflows/validate-stoneage-pet-detail27-thunder-name-growth.yml'
+  pull_request:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE27-2001-2003-THUNDER-DUAL-NAMES-PLAYER-GROWTH-R1.json'
+      - 'research/pets/profiles/TW10-G100351.json'
+      - 'research/pets/profiles/TW10-G100353.json'
+      - 'tests/test_stoneage_pet_detail27_thunder_name_and_growth_2001_2003_r1.py'
+      - '.github/workflows/validate-stoneage-pet-detail27-thunder-name-growth.yml'
+permissions:
+  contents: read
+jobs:
+  independently_checked_player_name_and_growth_text:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check five player growth texts, source quality and both official-null records
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail27_thunder_name_and_growth_2001_2003_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail26_2001_name_collision_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_individual_profiles_r1.py' -v

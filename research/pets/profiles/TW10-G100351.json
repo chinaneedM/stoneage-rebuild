@@ -208,6 +208,11 @@
         "path": "research/pets/PET-DETAIL-EVIDENCE26-2001-LV1-DINO-THUNDER-ALIAS-CONFLICT-R1.json",
         "git_blob": "633bf856e7204258810f3b0912e07640a5b3faec",
         "scope": "2001_PLAYER_LV1_RANGES_AND_DISTINCT_THUNDER_NAME_CONFLICT_NOT_ORIGINAL_OFFICIAL_STATS"
+      },
+      {
+        "path": "research/pets/PET-DETAIL-EVIDENCE27-2001-2003-THUNDER-DUAL-NAMES-PLAYER-GROWTH-R1.json",
+        "git_blob": "9267ec57b90449cccbccddfa9e47bcba679fe7b8",
+        "scope": "2001_2003_CLASSIC_PC_PLAYER_NAMES_2003_REPORTED_GROWTH_NOT_ORIGINAL_TW10_OFFICIAL_SERVER_CONFIG"
       }
     ],
     "private_observation_html_basename": null,
@@ -314,5 +319,43 @@
     "claimed_player_min_max_not_official_bounds": true,
     "exact_official_pet_identity_resolution": "UNRESOLVED",
     "official_birth_growth_skill_capture_fields_untouched": true
+  },
+  "historical_player_nickname_and_growth_evidence": {
+    "status": "MULTI_YEAR_PLAYER_TEXT_CORROBORATED_NOT_OFFICIAL_PC_SERVER_ID",
+    "detail_evidence_path": "research/pets/PET-DETAIL-EVIDENCE27-2001-2003-THUNDER-DUAL-NAMES-PLAYER-GROWTH-R1.json",
+    "detail_evidence_blob": "9267ec57b90449cccbccddfa9e47bcba679fe7b8",
+    "player_color_nickname": "棕雷／咖啡雷",
+    "player_textual_elements_claim": {
+      "earth": 9,
+      "water": 1
+    },
+    "player_2003_sina_site_roster_number_not_server_id": 161,
+    "player_2002_level_one_estimates": {
+      "hp": [
+        53,
+        63
+      ],
+      "attack": [
+        8,
+        12
+      ],
+      "defense": [
+        9,
+        12
+      ],
+      "agility": [
+        1,
+        3
+      ]
+    },
+    "player_2003_reported_growth_sample_count": 3,
+    "player_2003_reported_growth_sample_sections": [
+      "未转宠",
+      "转宠"
+    ],
+    "earlier_2001_kuaiji_body_name_conflict_still_recorded": true,
+    "identity_same_deployment_as_tw10_official_source_proven": false,
+    "native_official_element_or_stat_or_growth_or_skill_or_capture_proven": false,
+    "original_client_two_pet_names_remain_distinct": true
   }
 }
