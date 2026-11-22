@@ -87,6 +87,28 @@
       "original_action_meanings": null,
       "original_runtime_frame_timing": null,
       "offline_preview_is_game_native_execution": false
+    },
+    "source_SPR_pose_reference": {
+      "status": "VERIFIED_ORIGINAL_TW10_2D_SOURCE_SPR_POSE_NOT_ORIGINAL_ALBUM_FACE",
+      "action_code": 0,
+      "direction_codes": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "source_frame_numbers": [
+        105739,
+        105813,
+        105887,
+        105961
+      ],
+      "evidence_path": "research/pets/PET-DETAIL-EVIDENCE22-TW10-FOUR-POSES-NO-PORTRAIT-R1.json",
+      "evidence_blob": "cc49a4b61390f1f5a5e74d37c1c4bf5bcaf65663",
+      "private_source_image_alternate_available": true,
+      "is_original_album_portrait": false,
+      "original_native_runtime_palette_confirmed": false,
+      "original_game_execution_proven": false
     }
   },
   "combat_stats": {
@@ -203,6 +225,11 @@
         "path": "research/recovered/STONEAGE-PET126W-TW10-CN50-ALL-124-ORIGINAL-PC-NAME-VARIANTS-R1.json",
         "git_blob": "244251c54b5f8f274502daff984eacdd1a0b7c97",
         "scope": "TW1_TO_PRESERVED_CN5_COMPILED_NAME_ALIAS_NOT_OFFICIAL_LIVE_SAME_ID"
+      },
+      {
+        "path": "research/pets/PET-DETAIL-EVIDENCE22-TW10-FOUR-POSES-NO-PORTRAIT-R1.json",
+        "git_blob": "cc49a4b61390f1f5a5e74d37c1c4bf5bcaf65663",
+        "scope": "ADDITIVE_TW1_ORIGINAL_SPR_POSE_NOT_ORIGINAL_ALBUM_PORTRAIT"
       }
     ],
     "private_observation_html_basename": null,

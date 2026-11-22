@@ -3238,3 +3238,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-22｜PET-DETAIL21：原始PS操作与宠物／技能／库存接收入口的证据隔离
 
 [来源受限核对](docs/continuity/STONEAGE-PET-DETAIL21-PS-VS-PET-ITEM-STATE-REFRESH-20261122.md) · [机读验收](research/pets/PET-DETAIL-EVIDENCE21-PS-STATUS-K-W-I-SOURCE-BOUNDARY-R1.json) · [124条宠物进度总表](docs/pets/INDEX.md)。在PET20原台湾1.0客户端PS回包失败路径之外，复核已登记的S:K（21字段）、S:W（5字段）、S:I（9字段）、I（10字段）彼此独立的本机接收字段/入口，以及PET126E原K本地更新状态。**未见足以确认PS结果必触发其中任一字段更新的同部署原消息因果证据**；不把本机有接口视为原服务器已证配方、扣料、技能出生或真正新物种。本轮仅对以前已证原件的派生Git证据交叉核对、原EXE再读0B、原服封包0，避免继续无源空转。优先实际新增早期同部署原PetSkill/PS收发实证或回源补4头像RD。TW1仍124PARTIAL/0完整，PET唯一、2026年审未毕；历史CURRENT Git Blob`c89e0e33537990aa2132b47c40fef49a985a935c`不变；StageA7 PARTIAL+2 OPEN、StageB/wiki GATED、R79暂停、总体UNKNOWN。
+
+
+## 2026-11-22｜PET-DETAIL22：原台湾1.0四只缺头像宠物，实取16帧2D动作画面做私人源级参考
+
+[四档逐帧原证及编号碰撞保护](docs/continuity/STONEAGE-PET-DETAIL22-TW10-FOUR-POSE-FALLBACK-20261122.md) · [机读16个原RD SHA](research/pets/PET-DETAIL-EVIDENCE22-TW10-FOUR-POSES-NO-PORTRAIT-R1.json) · [逐只入口](docs/pets/INDEX.md)。本轮再取原台湾1.0经典2D PC零售ZIP372626292B完整SHA/379 CRC、PET15私人动作观察包95048011B全SHA，实际重解SPR组355—358的动作码0、4方向首帧共16个原ADRN/REAL RD；原RD和旧PET15像素索引双验证，候选配色只私人存档。关键反例：**ADRN物理位图号28085—28088均存在，但+76逻辑别名值=0，不是原相册逻辑头像28085—28088**；四张官方相册头像仍缺，未伪报恢复。4份永久宠物档补源级图片参考而不回填官方技能/初值/成长/实发。TW1源候选124份PARTIAL、历史完备0、头像120/124；当前仅PET经典PC、原CURRENT 2709173B/blob c89e0e33537990aa2132b47c40fef49a985a935c未动，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体UNKNOWN。NEXT PET-DETAIL23仅真正新同版原头像映射或官方原服PetSkill/初值/获取源出现才重开，或继续其它PET已持原件的实质补全，不扩无源辅助链。

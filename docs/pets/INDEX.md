@@ -2,6 +2,10 @@
 
 > **重要：这是一份原客户端的“具名图形候选清单”，不是官服实发物种统计；不同版本不可累加。** 原姓名保持原繁体字形，大陆5.0列是第三方保存的 PC 本地编译异名候选，不代表同服ID。完整图像仅在私人观察文件中，不进公开Git。
 
+## PET-DETAIL22｜原台湾1.0缺头像4项已直接恢复同版SPR四方向可视资料
+
+[16张真正原客户端SPR动作首帧与头像数字命名空间复核](../continuity/STONEAGE-PET-DETAIL22-TW10-FOUR-POSE-FALLBACK-20261122.md) · [原RD逐项散列及永久档案联接](../../research/pets/PET-DETAIL-EVIDENCE22-TW10-FOUR-POSES-NO-PORTRAIT-R1.json)。已认证零售ZIP、PET15私人原图册重读：PET-000116 [洛克斯](TW10-G100389.md)、PET-000117 [阿伊薩](TW10-G100390.md)、PET-000118 [格洛格魯](TW10-G100391.md)、PET-000119 [朵洛將恩](TW10-G100392.md)，各4方向动作码0原SPR帧直接匹配ADRN与REAL RD，并以独立RD索引解码核对旧PNG。**原相册头像仍缺4张**：原图逻辑别名28085–28088只可按ADRN的+76别名字段查询；其同数字物理位图号存在却各自别名为0，绝不能混淆为头像。公开Git不存版权像素，本轮新可查的是**视觉参考关系**而非宠物种数/初值/技能/抓捕；台湾1.0档案124份PARTIAL、头像120/124、历史全字段0不变。
+
 ## PET-DETAIL08｜先看原服务器数值候选：124份档案全覆盖（不是初代官方属性）
 
 [**按124份PET档案逐只查看后期PC服务端所有属性／元素／技能槽模板**](TW10-124-MIXED25-SERVER-TEMPLATE-STATS-REFERENCE.md) · [124→297行完整机器来源与拒绝跨版认证规则](../../research/pets/PET-DETAIL-EVIDENCE08-TW10-MIXED25-124-GRAPHIC-NUMERIC-SERVER-TEMPLATE-REFERENCE-R1.json)。
