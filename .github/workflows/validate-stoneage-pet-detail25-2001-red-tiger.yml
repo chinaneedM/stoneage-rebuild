@@ -1,0 +1,33 @@
+name: PET-DETAIL25 2001 PC red tiger dual-player evidence guard
+on:
+  push:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE25-2001-RED-TIGER-TWO-LV1-LV80-PLAYER-WITNESSES-R1.json'
+      - 'research/pets/profiles/TW10-G100329.json'
+      - 'docs/pets/TW10-G100329.md'
+      - 'docs/pets/INDEX.md'
+      - 'README.md'
+      - 'tests/test_stoneage_pet_detail25_2001_red_tiger_player_samples_r1.py'
+      - '.github/workflows/validate-stoneage-pet-detail25-2001-red-tiger.yml'
+  pull_request:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE25-2001-RED-TIGER-TWO-LV1-LV80-PLAYER-WITNESSES-R1.json'
+      - 'research/pets/profiles/TW10-G100329.json'
+      - 'docs/pets/TW10-G100329.md'
+      - 'docs/pets/INDEX.md'
+      - 'tests/test_stoneage_pet_detail25_2001_red_tiger_player_samples_r1.py'
+      - '.github/workflows/validate-stoneage-pet-detail25-2001-red-tiger.yml'
+permissions:
+  contents: read
+jobs:
+  red_tiger_player_sources_not_server_stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify two individuals, Lv80 arithmetic, provenance and official-null boundaries
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail25_2001_red_tiger_player_samples_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_individual_profiles_r1.py' -v

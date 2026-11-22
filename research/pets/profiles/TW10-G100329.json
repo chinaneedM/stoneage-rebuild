@@ -203,6 +203,11 @@
         "path": "research/recovered/STONEAGE-PET126W-TW10-CN50-ALL-124-ORIGINAL-PC-NAME-VARIANTS-R1.json",
         "git_blob": "244251c54b5f8f274502daff984eacdd1a0b7c97",
         "scope": "TW1_TO_PRESERVED_CN5_COMPILED_NAME_ALIAS_NOT_OFFICIAL_LIVE_SAME_ID"
+      },
+      {
+        "path": "research/pets/PET-DETAIL-EVIDENCE25-2001-RED-TIGER-TWO-LV1-LV80-PLAYER-WITNESSES-R1.json",
+        "git_blob": "db2a44914852b83699510ceb8acda54d1e68b3ca",
+        "scope": "2001_PC_PLAYER_RED_TIGER_TWO_LV1_AND_ONE_LV80_TESTIMONY_NOT_OFFICIAL_TW10_STATS"
       }
     ],
     "private_observation_html_basename": null,
@@ -322,5 +327,35 @@
       },
       "stat_transfer_authorized": false
     }
+  },
+  "historical_player_measurement_evidence": {
+    "status": "PLAYER_REPORTS_ONLY_NOT_TW10_OFFICIAL_SERVER_VALUES",
+    "source_evidence_path": "research/pets/PET-DETAIL-EVIDENCE25-2001-RED-TIGER-TWO-LV1-LV80-PLAYER-WITNESSES-R1.json",
+    "source_evidence_git_blob": "db2a44914852b83699510ceb8acda54d1e68b3ca",
+    "reported_red_tiger_individuals": 2,
+    "level1_player_sample_count": 2,
+    "level80_followup_same_second_individual_count": 1,
+    "sample_A_level1": {
+      "hp": 32,
+      "attack": 8,
+      "defense": 5,
+      "agility": 7
+    },
+    "sample_B_level1": {
+      "hp": 37,
+      "attack": 8,
+      "defense": 5,
+      "agility": 6
+    },
+    "sample_B_level80": {
+      "hp": 771,
+      "attack": 170,
+      "defense": 98,
+      "agility": 139
+    },
+    "other_player_common_ranges_are_not_official": true,
+    "source_name_to_tw10_match": "SIMPLIFIED_TEXTUAL_CROSSWALK_NOT_SAME_DEPLOYMENT_PROOF",
+    "same_game_server_as_original_tw10_proven": false,
+    "official_birth_growth_skill_capture_fields_untouched": true
   }
 }
