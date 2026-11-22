@@ -203,6 +203,11 @@
         "path": "research/recovered/STONEAGE-PET126W-TW10-CN50-ALL-124-ORIGINAL-PC-NAME-VARIANTS-R1.json",
         "git_blob": "244251c54b5f8f274502daff984eacdd1a0b7c97",
         "scope": "TW1_TO_PRESERVED_CN5_COMPILED_NAME_ALIAS_NOT_OFFICIAL_LIVE_SAME_ID"
+      },
+      {
+        "path": "research/pets/PET-DETAIL-EVIDENCE24-2001-YANGQILUOSI-SINGLE-PET-LV1-LV71-R1.json",
+        "git_blob": "fc9724737a7657d23026314d8bada9a7774a088e",
+        "scope": "EARLY_PLAYER_SINGLE_PET_EIGHT_PANEL_SNAPSHOTS_NOT_OFFICIAL_PET_MASTER"
       }
     ],
     "private_observation_html_basename": null,
@@ -297,5 +302,36 @@
       },
       "stat_transfer_authorized": false
     }
+  },
+  "historical_player_measurement_evidence": {
+    "status": "PLAYER_SELF_REPORTED_OBSERVATION_SEPARATE_FROM_VERIFIED_TW10_OFFICIAL_STATS",
+    "source_evidence_path": "research/pets/PET-DETAIL-EVIDENCE24-2001-YANGQILUOSI-SINGLE-PET-LV1-LV71-R1.json",
+    "source_evidence_git_blob": "fc9724737a7657d23026314d8bada9a7774a088e",
+    "source_player_byline": "唐歌",
+    "source_page_date_as_displayed": "2001-06-14",
+    "reported_one_player_pet_level_count": 8,
+    "reported_first_level_panel_sample": {
+      "hp": 61,
+      "attack": 13,
+      "defense": 8,
+      "agility": 6
+    },
+    "reported_last_level_71_panel_sample": {
+      "hp": 791,
+      "attack": 172,
+      "defense": 108,
+      "agility": 92
+    },
+    "reported_level_71_cumulative_per_level_averages": {
+      "hp": "10.4",
+      "attack": "2.27",
+      "defense": "1.43",
+      "agility": "1.23"
+    },
+    "earlier_different_player_level1_textual_range_comparison": "4_SOURCE_SLOTS_INSIDE_PLAYER_RANGE_NOT_OFFICIAL_AND_NOT_SAME_DEPLOYMENT",
+    "source_2001_original_html_authenticated": false,
+    "same_game_deployment_as_original_TW10_proven": false,
+    "verified_official_pet_birth_or_growth_formula": false,
+    "official_stats_fields_untouched": true
   }
 }

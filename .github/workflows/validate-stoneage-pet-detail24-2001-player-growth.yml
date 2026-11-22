@@ -1,0 +1,34 @@
+name: PET-DETAIL24 2001 original PC single-player pet growth source guard
+on:
+  push:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE24-2001-YANGQILUOSI-SINGLE-PET-LV1-LV71-R1.json'
+      - 'research/pets/profiles/TW10-G100288.json'
+      - 'docs/pets/TW10-G100288.md'
+      - 'docs/pets/INDEX.md'
+      - 'README.md'
+      - 'docs/continuity/STONEAGE-PET-DETAIL24-2001-YANGQILUOSI-PLAYER-EIGHT-LEVEL-SOURCE-20261122.md'
+      - 'tests/test_stoneage_pet_detail24_2001_yangqiluosi_player_growth_r1.py'
+      - '.github/workflows/validate-stoneage-pet-detail24-2001-player-growth.yml'
+  pull_request:
+    paths:
+      - 'research/pets/PET-DETAIL-EVIDENCE24-2001-YANGQILUOSI-SINGLE-PET-LV1-LV71-R1.json'
+      - 'research/pets/profiles/TW10-G100288.json'
+      - 'docs/pets/TW10-G100288.md'
+      - 'docs/continuity/STONEAGE-PET-DETAIL24-2001-YANGQILUOSI-PLAYER-EIGHT-LEVEL-SOURCE-20261122.md'
+      - 'tests/test_stoneage_pet_detail24_2001_yangqiluosi_player_growth_r1.py'
+      - '.github/workflows/validate-stoneage-pet-detail24-2001-player-growth.yml'
+permissions:
+  contents: read
+jobs:
+  one_player_sample_not_original_server_master:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify original PC source name, all 28 self-reported averages, and null official fields
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_pet_detail24_2001_yangqiluosi_player_growth_r1.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_pet_individual_profiles_r1.py' -v
