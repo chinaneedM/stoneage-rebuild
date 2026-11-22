@@ -32,6 +32,10 @@
 
 [**查看2012及2016三套固定源码提交的技能消息原C发送例程**](../continuity/STONEAGE-PET-DETAIL14-THREE-PC-W-SKILL-SENDERS-20261122.md) · [六文件Git SHA、7×5字段发送结构和禁止跨版本升级的证据表](../../research/pets/PET-DETAIL-EVIDENCE14-THREE-PC-W-SKILL-SENDER-LINEAGES-R1.json)。后期三份公开社区PC服务端在`CHAR_makeStatusString`正常`case 'w'`中均生成**7个技能槽×5字段**，每个槽的技能ID来自当前角色持有的**宠物实例**，再查该源的技能定义（ID、场域、目标、姓名、说明），无定义时保留5个空栏。它与原台湾1.0客户端PET-DETAIL13的W接收结构**字段位置同型**，但后期三源的K包已在token20与初版错位，**绝不据此认定早期官方技能ID、出生自带技能或整个客户端/服务端兼容**。本次TW1档案仍124 PARTIAL、完全恢复0。
 
+## PET-DETAIL15｜六只原PC宠物史料的出生/已学/可学技能严格分层
+
+[**六只可逐项查询档案：金布伊、布伊、加比、加斯、卡梅兰恩、石龟的PC年代文字技能候选**](../continuity/STONEAGE-PET-DETAIL15-SIX-EARLY-PC-SKILL-CLAIM-CROSSWALK-20261122.md) · [8个网页来源、18条原文字面候选与六张源档的机读关系](../../research/pets/PET-DETAIL-EVIDENCE15-SIX-TW10-EARLY-PC-SKILL-CLAIMS-R1.json)。2001玩家证词有“石龟天生石化”却明列传闻，“布伊有加工”与另一问答“加工需学”也不能合并为原版默认配招；2003网友投稿与无原发布日期的PC图鉴只作后期文字对照。六张PET网页新增**来源独立的史料旁证章节**，但台湾1.0机读原版技能、初值与真实技能槽均保持`null`；124份仍PARTIAL，0份全字段完成。
+
 ## 当前可核对进度（2026-11-21）
 
 本页采用 [自主永久编号规则](ID-SCHEME.md)：**PET号是我们自己的档案号，OBS号是原证据号**；不能因源条数多，就把它们视为已经恢复的宠物。
