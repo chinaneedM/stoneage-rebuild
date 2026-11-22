@@ -1,0 +1,118 @@
+{
+  "schema": "stoneage.pet_detail11.three_public_PC_sender_lineages_and_early_TW10_K_boundary.r1",
+  "date": "2026-11-22",
+  "scope": "Classic native PC StoneAge PET module only; no mobile, no paid carriers, no community-only species census",
+  "early_client": {
+    "repository_path": "research/recovered/STONEAGE-PET126E-TW10-K-STATUS-CAPTURE-STATIC-R1.json",
+    "repository_git_blob": "d04c9442e7c16f7bff99f597cb99228dcd63f584",
+    "source_exe_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "verified_native_static_k_receiver": true,
+    "full_K_fields_count": 20,
+    "prefix_numeric_tokens": [
+      2,
+      19
+    ],
+    "token20": "name_text",
+    "token21": "custom_name_text",
+    "original_same_build_server_sender_found": false
+  },
+  "prior_pet10": {
+    "path": "research/pets/PET-DETAIL-EVIDENCE10-LATER2016-124-HP-ATK-DEF-QUICK-AND-TW10-K-BOUNDARY-R1.json",
+    "git_blob": "567d4fa8415a024b548cb1403b32879dc81c28e3"
+  },
+  "later_community_source_snapshots": [
+    {
+      "repo": "librae8226/gmsv",
+      "ref": "49928c291c6789013cba56d7c07d389f87cdfb0c",
+      "file": "char/char.c",
+      "git_blob": "d1028cf7fe894b772aa7093a05951188ff50631e",
+      "repo_commit_date": "2012-05-04",
+      "source_label": "2012 public community-preserved PC server source",
+      "default_k_printf_integer_count": 20,
+      "fusion_k_printf_integer_count": 21,
+      "optional_fusion_macro": "_SHOW_FUSION",
+      "expiry_arg_signature": "CHAR_GetLevelExp(level+1) one-argument variant",
+      "default_k_format": "K<slot>|1|19_int_fields|",
+      "default_k_data_token_20": "transmigration_integer",
+      "default_k_data_tokens_21_22": [
+        "name_text",
+        "custom_name_text"
+      ],
+      "fusion_data_token_21": "fusion_flag_integer",
+      "source_historically_authenticated_early_official_server": false,
+      "serializes_numeric_fields_tokens_2_through_19_compatible_in_position": true,
+      "source_file_inspected": "GitHub connector exact-commit file"
+    },
+    {
+      "repo": "chenmingbiao/stone-age",
+      "ref": "0c58fb6683a49a178a8ad845a8c296c2cb83bd81",
+      "file": "gmsv/char/char.c",
+      "git_blob": "54defb74e0ec345567ce525f84c19f9e359747cb",
+      "repo_commit_date": "2016-03-25",
+      "source_label": "2016 archived community StoneAge 2.5 PC server code",
+      "default_k_printf_integer_count": 20,
+      "fusion_k_printf_integer_count": null,
+      "optional_fusion_macro": null,
+      "expiry_arg_signature": "CHAR_GetLevelExp(index, level+1) indexed variant",
+      "default_k_format": "K<slot>|1|19_int_fields|",
+      "default_k_data_token_20": "transmigration_integer",
+      "default_k_data_tokens_21_22": [
+        "name_text",
+        "custom_name_text"
+      ],
+      "fusion_data_token_21": null,
+      "source_historically_authenticated_early_official_server": false,
+      "serializes_numeric_fields_tokens_2_through_19_compatible_in_position": true,
+      "source_file_inspected": "GitHub connector exact-commit file"
+    },
+    {
+      "repo": "pimpcapital/longzoro-sa",
+      "ref": "57b14e2bb373ba851c14db28a239273e4a8831bb",
+      "file": "gmsv/src/char/char.c",
+      "git_blob": "5a044dc68bb76758b2a757a8e83c10b93578be31",
+      "repo_commit_date": "2016 (source archive commit; not original game release date)",
+      "source_label": "2016 archive of later PC server code",
+      "default_k_printf_integer_count": 20,
+      "fusion_k_printf_integer_count": 21,
+      "optional_fusion_macro": "_SHOW_FUSION",
+      "expiry_arg_signature": "CHAR_GetLevelExp(index, level+1) indexed variant",
+      "default_k_format": "K<slot>|1|19_int_fields|",
+      "default_k_data_token_20": "transmigration_integer",
+      "default_k_data_tokens_21_22": [
+        "name_text",
+        "custom_name_text"
+      ],
+      "fusion_data_token_21": "fusion_flag_integer",
+      "source_historically_authenticated_early_official_server": false,
+      "serializes_numeric_fields_tokens_2_through_19_compatible_in_position": true,
+      "source_file_inspected": "GitHub connector exact-commit file"
+    }
+  ],
+  "cross_source_observation": {
+    "snapshots_inspected": 3,
+    "snapshots_with_unconditional_transmigration_before_names": 3,
+    "snapshots_with_optional_fusion_flag_after_transmigration": 2,
+    "shared_early_numeric_position_prefix_token_count": 18,
+    "first_incompatible_early_token": 20,
+    "default_server_k_payload_numeric_count_after_slot": 19,
+    "default_server_appended_name_fields_count": 2,
+    "default_server_K_total_data_fields_after_mask": 21,
+    "early_client_K_total_data_fields_after_mask": 20,
+    "no_direct_full_packet_compatibility_proven": true,
+    "shared_historical_ancestor_by_repo_dates_proven": false,
+    "native_runtime_test_executed": false,
+    "source_code_archived_2012_not_equivalent_to_original_1999_2002_official_release": true
+  },
+  "original_history_scope": {
+    "official_1999_2002_pet_master_obtained": false,
+    "authenticated_original_official_1999_2002_K_server_sender_obtained": false,
+    "new_early_official_birth_attributes_confirmed": 0,
+    "new_early_official_capture_or_skill_claims_confirmed": 0,
+    "old_pet_dossiers_unchanged_count": 124,
+    "old_pet_dossiers_fully_restored_count": 0,
+    "new_official_pet_species_confirmed": 0,
+    "overall_completion_percent": null,
+    "original_CURRENT_git_blob": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "next": "PET-DETAIL12: inspect remaining original TW10 client-side K-to-visible-profile semantics using already authenticated local source receipts; investigate truly era-matched PC server packet or birth data only if free directly readable source bytes surface. No retroactive official stats and no new module."
+}
