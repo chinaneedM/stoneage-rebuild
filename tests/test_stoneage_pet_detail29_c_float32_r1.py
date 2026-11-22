@@ -150,6 +150,12 @@ class PetDetail29SourceFloatTests(unittest.TestCase):
         self.assertIsNone(p["combat_stats"]["level_1"]["values"]["derived_hp"])
         self.assertIsNone(p["growth"]["stat_growth_formula"])
         self.assertFalse(p["actual_official_pet_identity"]["official_living_pet_release_proven"])
+        stage = json.loads((ROOT / "research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R2.json").read_text(encoding="utf-8"))
+        former = stage["source_pin_refresh_detail29"]["previous_pet_growth_pin"]
+        current = stage["source_pins"]["pet_growth"]
+        self.assertEqual(former["git_blob"], "87cdd063f05f6d6f334007cf3db7a31a8d1654a8")
+        self.assertEqual(current["git_blob"], "568f461f31370a1b537d42791a1d333597672e77")
+        self.assertEqual(former["sha256"], "891c0ef3775f88a6df0ff17d494a0074690d96a0d7087fea35ccff7dd7d3e8eb")
 
 
 if __name__ == "__main__":

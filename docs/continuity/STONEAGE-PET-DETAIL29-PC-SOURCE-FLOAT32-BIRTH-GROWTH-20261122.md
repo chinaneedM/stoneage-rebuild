@@ -44,3 +44,7 @@
 目前仍没有实得1999 JSS、台湾1.0或大陆1.82同部署官方服务端源码和真实Pet主表，因此**只修复已取得PC后代源码的数学复现能力，不提升早年官服认证等级**。早期TW1 124份具名图形观察档、120份原头像、0份全字段官方档案不变，未修改任何早期官服宠物属性/成长/捕获/技能资料；PET唯一活跃，StageA 7PARTIAL+2OPEN、StageB/wiki GATED、R79暂停，整体完成率UNKNOWN。原完整CURRENT历史大文件不动。
 
 [NEXT PET-DETAIL30]：优先在**同一个2016 PC提交和模板版本**内，把模板→出生→升级→`CHAR_complianceParameter`基础面板演示计算链真正接通、明确装备/状态不确定性；若得到可合法直接读取的原PC同部署服务端则立即重审对应早期数值，不因玩家推算替代。机读源表： [PET-DETAIL29](../../research/pets/PET-DETAIL-EVIDENCE29-PC-GROWTH-SOURCE-FLOAT32-R1.json)。
+
+## Stage A历史源码哈希与本次模型更新的兼容验收
+
+Stage A早期审阅包`research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R2.json`固定引用旧`research/mechanics/STONEAGE-PET-GROWTH-CORE-R1.md`：8969字节、SHA256`891c0ef3…`、原Git Blob`87cdd063…`。本轮修改说明文档后，该旧钉死哈希触发`source custody: pet_growth`失败，属于历史审阅包跟当前源版本不一致，并非源资料缺失。已将历史原pin逐字段保留在`source_pin_refresh_detail29.previous_pet_growth_pin`，当前`source_pins.pet_growth`精确改为10577字节、SHA256`33bf9abfe479f4f9ceb51d4b29d8745eb79b74b594426f6b626b7f35646b2cd2`、Git Blob`568f461f...`。**没有修改验证器或绕过任何哈希比较**；新值和原值分别可审，旧CURRENT状态Blob、StageA门槛及官方证据边界不变。
