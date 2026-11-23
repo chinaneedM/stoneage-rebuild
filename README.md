@@ -3325,3 +3325,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-23｜TW85 保存客户端相对于 CN50 的 550 个独有源图组（PET-HIGH-FIRST-06）
 
 原生 SPR 全段校验确认台湾保存 8.5 追加 550 个连续图组号／554 条物理记录；逐号保留原索引、完整段 SHA 和动作表头数，尚无同版宠物身份归属或官方实发确证。[来源与后续](docs/continuity/STONEAGE-PET-HIGH-FIRST-06-TW85-EXTRA-SPR-SOURCE-ATLAS-20261123.md) · [逐项机读](research/pets/PET-HIGH-FIRST-TW85-EXTRA-SPR-GROUPS-R1.json)。
+
+
+## 2026-11-23｜PET-HIGH-FIRST-07：台湾保存8.5真实客户端原程序的4轨名称表
+
+原六分卷及MSI再SHA认证，静态解包四个原客户端代码文件并发现 `sa/sb/sc/sd` 分别有508/491/407/483条具名28B本地相簿记录，四轨共同保留57个原空槽，6个同原整数差异名字；额外550 SPR图组尚无原生姓名选择器，不能算550只宠物。[版本有界研究](docs/continuity/STONEAGE-PET-HIGH-FIRST-07-TW85-ORIGINAL-UPX-NAMED-ALBUM-20261123.md) · [逐源原名和别名](research/pets/PET-HIGH-FIRST-TW85-ORIGINAL-PE-ALBUM-GRID-R1.json)。
