@@ -1,0 +1,36 @@
+name: PET-HIGH-FIRST-10 TW85 prior private frames native-name join
+on:
+  push:
+    branches:
+      - agent/pet-high-first-10-20261123
+    paths:
+      - tools/stoneage_pet_high_first_tw85_named_private_frame_join.py
+      - tests/test_stoneage_pet_high_first_tw85_named_frame.py
+      - .github/workflows/pet-high-first-10-named-visual.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Join exact previous private pixel hashes to original TW85 local names
+        run: python -m tools.stoneage_pet_high_first_tw85_named_private_frame_join --mode generate
+      - name: Test historical-source evidence and adversarial negative guards
+        run: python -m unittest discover -s tests -p test_stoneage_pet_high_first_tw85_named_frame.py
+      - name: Verify exact semantic replay
+        run: python -m tools.stoneage_pet_high_first_tw85_named_private_frame_join --mode verify
+      - name: Publish derived hashes and source-only names, never original image data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/pets/PET-HIGH-FIRST-TW85-NAMED-PRIVATE-FRAMES-R1.json
+          if ! git diff --cached --quiet; then
+            git commit -m "PET10: preserve source-qualified old TW85 real pixels to native name bridge"
+            git push
+          fi
