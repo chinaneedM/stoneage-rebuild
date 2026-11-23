@@ -47,13 +47,25 @@ def validate(report=None):
     report = load() if report is None else report
     if report.get("schema") != SCHEMA:
         raise ValueError("bad source report schema")
-    if not report["source_program_provenance"]["original_full_EXE_or_code_published"] is False:
+    if report["source_program_provenance"]["original_full_EXE_or_code_published"] is not False:
         raise ValueError("copyright source boundary breached")
     if report["native_executable_loaded_or_server_issued_pet"] is not False:
         raise ValueError("unproven source operator activation")
     if report["metrics"]["official_confirmed_pet_species"] != 0:
         raise ValueError("local names are not official live pet species")
-    if not all(report["boundaries"].values()) or report["boundaries"]["new_official_pet_species_count"] != 0:
+    boundaries = report["boundaries"]
+    required_true = (
+        "sprite_group_present_does_not_prove_live_pet",
+        "selector_source_code_proves_conditional_lookup_not_server_deployment",
+        "client_build_is_uncertified_official_pressing",
+        "map_route_unexecuted",
+        "same_sprite_name_differences_must_remain_per_program",
+        "sprite_selection_runtime_count_unverified",
+        "server_pet_ids_stats_skills_capture_year_unverified",
+    )
+    if (not all(boundaries[key] is True for key in required_true)
+            or boundaries["new_official_pet_species_count"] != 0
+            or boundaries["original_programs_sprites_or_pixel_bytes_in_repo"] is not False):
         raise ValueError("source evidence gate violated")
     old = json.loads(SPR.read_text(encoding="utf-8"))
     album = json.loads(ALBUM.read_text(encoding="utf-8"))
