@@ -14,6 +14,17 @@ PINS={
   "docs/STAGE-B-COLLABORATIVE-DESIGN-BRIEF-R1.md": "3a791ba28cad340a7603c9ac3ade32d3e63955ee",
   "docs/STONEAGE-PET-QUEST-CONTENT-COVERAGE-RECHECK-R1.md": "9c5f41a9db9bce91528a0d370b25c4083fd760ba"
 }
+# 2026-11-22 PET-DETAIL29 appended source-backed float32/growth corrections
+# after the 2026-10-17 preproduction archive had pinned its historical text.
+# Keep the original archive's source_pins immutable. Only this exact reviewed
+# later Git blob is acceptable in a moving HEAD checkout, never arbitrary edits.
+APPROVED_LATER_SOURCE_BLOBS={
+  "research/mechanics/STONEAGE-PET-GROWTH-CORE-R1.md": {
+    "blob": "568f461f31370a1b537d42791a1d333597672e77",
+    "commit": "170dcbc49272e6ecadc51c0db027f15dc02d2921",
+    "historical_archive_blob": "87cdd063f05f6d6f334007cf3db7a31a8d1654a8"
+  }
+}
 DOMAIN_IDS=["version_lineage","login_splash","character_creation","character_sprite_model","world_map","npc_identity","npc_dialog_ui","quest_content","pet_species","pet_visual","pet_stats","pet_growth","pet_skills","pet_encounter","ride_mount","battle_ui_rules","item_equipment_economy","audio_fx","helper_versions","helper_capabilities","reference_web","future_player_wiki"]
 RELATION_IDS=["char_creation_body","char_creation_face","npc_world_record","npc_dialog_event","quest_dialog","pet_graphic","pet_stats","pet_growth","pet_skill","pet_habitat","pet_ride","quest_item","battle_graphics","helpers_history","wiki_exports"]
 PROFILES=["JSS1999_ORIGIN","TW10","CN182","RECOVERED25","LATER_OFFICIAL","PRIVATE_SERVER","NEW_GAME"]
@@ -27,7 +38,12 @@ def validate(p):
  req(p["baseline_main"]=="ba4e12c265c1db7caf5d5afdd4b3e068b3df1d1f" and p["baseline_tree"]=="081c6952f3ae9ee37ec4e99b25f75edd6c0d3b84","baseline")
  req(p["source_pins"]==PINS,"source pin list drift")
  for path,sha in PINS.items():
-  req(gitblob((ROOT/path).read_bytes())==sha,"source blob mismatch "+path)
+  observed=gitblob((ROOT/path).read_bytes())
+  revised=APPROVED_LATER_SOURCE_BLOBS.get(path)
+  if revised is not None:
+   req(revised["historical_archive_blob"]==sha,"historical source pin rewritten "+path)
+  req(observed==sha or (revised is not None and observed==revised["blob"]),
+      "source blob mismatch "+path)
  req([v["id"] for v in p["version_profiles"]]==PROFILES,"version provenance")
  req(all(v["can_backfill"] is False for v in p["version_profiles"]),"unsafe cross-build merging")
  req([d["id"] for d in p["domains"]]==DOMAIN_IDS,"missing content domain")

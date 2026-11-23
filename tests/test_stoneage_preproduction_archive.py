@@ -1,6 +1,6 @@
 """Adversarial checks: catalogs are not completed gameplay, no bogus UI or website."""
 import unittest,json,copy
-from tools.stoneage_preproduction_archive import PATH,validate
+from tools.stoneage_preproduction_archive import PATH,ROOT,PINS,APPROVED_LATER_SOURCE_BLOBS,gitblob,validate
 class PreproductionCoverageTests(unittest.TestCase):
  @classmethod
  def setUpClass(cls):cls.p=json.loads(PATH.read_text(encoding="utf-8"))
@@ -32,6 +32,19 @@ class PreproductionCoverageTests(unittest.TestCase):
   self.invalid(lambda v:v["domains"].pop(1))
  def test_missing_wiki_collection_rejected(self):
   self.invalid(lambda v:v["future_website"]["required_collections"].remove("screens"))
+ def test_original_growth_snapshot_pin_and_reviewed_later_revision(self):
+  path="research/mechanics/STONEAGE-PET-GROWTH-CORE-R1.md"
+  self.assertEqual(PINS[path],"87cdd063f05f6d6f334007cf3db7a31a8d1654a8")
+  self.assertEqual(self.p["source_pins"][path],PINS[path])
+  approved=APPROVED_LATER_SOURCE_BLOBS[path]
+  self.assertEqual(approved["historical_archive_blob"],PINS[path])
+  self.assertEqual(approved["commit"],"170dcbc49272e6ecadc51c0db027f15dc02d2921")
+  self.assertEqual(gitblob((ROOT/path).read_bytes()),approved["blob"])
+ def test_unknown_growth_revision_rejected(self):
+  from unittest.mock import patch
+  with patch.dict(APPROVED_LATER_SOURCE_BLOBS,{},clear=True):
+   with self.assertRaisesRegex(ValueError,"source blob mismatch"):
+    validate(self.p)
  def test_built_website_is_false(self):
   self.invalid(lambda v:v["future_website"].__setitem__("website_development_started",True))
 if __name__=="__main__":unittest.main()
