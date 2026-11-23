@@ -30,7 +30,7 @@ ORIGINAL_CURRENT_BLOB = "c89e0e33537990aa2132b47c40fef49a985a935c"
 
 
 def git_blob(raw: bytes) -> str:
-    return hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\\0" + raw).hexdigest()
+    return hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest()
 
 
 def audit(root=ROOT):
