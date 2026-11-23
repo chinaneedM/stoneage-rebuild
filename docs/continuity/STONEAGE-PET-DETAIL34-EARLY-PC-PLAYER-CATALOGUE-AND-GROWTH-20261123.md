@@ -24,3 +24,7 @@
 [机读证据及网页字节哈希](../../research/pets/PET-DETAIL-EVIDENCE34-EARLY-PC-PLAYER-CATALOGUE-AND-GROWTH-R1.json) · [离线复核程序](../../tools/stoneage_pet_detail34_player_witnesses.py)。
 
 本轮基准为 GitHub 主线 `0a6afd6dae12150cc4921ec9eaa3ef4ff3ddb994`，树 `d2372425a9ee018291f4ed9a41dea27060a0b640`，42 项 Actions 成功。完整 CURRENT 文件的原 blob `c89e0e33537990aa2132b47c40fef49a985a935c` 已核验。本续接记录补充历史 CURRENT。PET 仍为唯一活动模块，优先级仍是早期官方 PC 同部署宠物主档、技能配置、出生与捕捉的数据载体，及能核验评选表中个体的原截图和同期核实结果。
+
+## 归档校验
+
+首次候选检查 [45116240225](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/45116240225) 发现旧审计用历史指纹校验 PET29 更新后的现行成长笔记。已从 Git 取回原指纹对应的文档快照并让该检查使用它，原指纹与现行笔记均保留。
