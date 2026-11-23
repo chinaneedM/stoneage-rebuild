@@ -24,14 +24,14 @@ SOURCE_BLOBS = {
 
 
 def git_blob(raw: bytes) -> str:
-    return hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\\0" + raw).hexdigest()
+    return hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest()
 
 
 def read_groups(path: Path):
     raw = (ROOT / path).read_bytes()
     assert git_blob(raw) == SOURCE_BLOBS[str(path)], "source-git-blob-changed: " + str(path)
     with gzip.open(ROOT / path, mode="rt", encoding="utf-8", newline="") as stream:
-        for row in csv.DictReader(stream, delimiter="\\t"):
+        for row in csv.DictReader(stream, delimiter="\t"):
             yield {
                 "index": int(row["index"]),
                 "spr_no": int(row["spr_no"]),
@@ -102,7 +102,7 @@ def main():
     ap.add_argument("--log-json", action="store_true")
     args = ap.parse_args()
     report = make_inventory()
-    raw = (json.dumps(report, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\\n").encode("utf-8")
+    raw = (json.dumps(report, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n").encode("utf-8")
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_bytes(raw)
