@@ -1,4 +1,6 @@
+import json
 import unittest
+from tools.stoneage_pet_high_first_cn50_sina import REPORT, element_claim, make_report
 from tools.stoneage_pet16_lookup import (
     CN50_COMPILED_ALBUM, CLIENT_ALBUM, GRAPHIC_DATASETS, load_catalog, lookup, graphic_trace
 )
@@ -30,6 +32,45 @@ class PET126RLookup(unittest.TestCase):
         [zodiac] = lookup(self.c, "葛雷马恩", CN50_COMPILED_ALBUM, details=True)
         self.assertEqual(zodiac["cn50_native_spr_group_numbers"], [101155, 101279])
         self.assertEqual(zodiac["cn50_native_held_pet_spr_group_numbers"], [101155])
+
+    def test_sina_claims_keep_source_and_native_identifiers_separate(self):
+        [monkey] = lookup(self.c, "蒙奇", CN50_COMPILED_ALBUM, details=True)
+        [sina] = monkey["sina_2003_editorial_same_name_rows"]
+        self.assertEqual(sina["printed_catalogue_number"], 238)
+        self.assertEqual(sina["reported_elements"], {"fire": 3, "wind": 7})
+        self.assertTrue(sina["level_one_acquisition_cell_has_text"])
+        self.assertIsNone(monkey["graphic_number"])
+        self.assertFalse(monkey["official_live_release_confirmed"])
+
+    def test_sina_homonyms_and_rebirth_forms_remain_distinct(self):
+        [pet] = lookup(self.c, "乌力布鲁", CN50_COMPILED_ALBUM, details=True)
+        rows = pet["sina_2003_editorial_same_name_rows"]
+        self.assertEqual([row["printed_catalogue_number"] for row in rows], [4, 8])
+        self.assertNotEqual(rows[0]["reported_elements"], rows[1]["reported_elements"])
+        [rebirth_pet] = lookup(self.c, "乌力斯坦", CN50_COMPILED_ALBUM, details=True)
+        self.assertEqual([row["rebirth_variant_label"] for row in
+                          rebirth_pet["sina_2003_editorial_same_name_rows"]], [False, True])
+
+    def test_sina_receipt_counts_duplicates_and_unmatched_rows(self):
+        report = json.loads(REPORT.read_bytes())
+        year_card = report["cn30_year_card_announcement"]
+        self.assertEqual(make_report(report["rows"], year_card["named_variants"]), report)
+        self.assertEqual(year_card["displayed_article_date"], "2002-04-18")
+        self.assertEqual(len(year_card["named_variants"]), 4)
+        self.assertFalse(year_card["individual_awards_verified"])
+        [zodiac] = lookup(self.c, "葛雷马恩", CN50_COMPILED_ALBUM, details=True)
+        self.assertEqual(zodiac["cn30_2002_year_card_same_name_announcement"]["main_element"], "wind")
+        self.assertFalse(zodiac["official_live_release_confirmed"])
+        metrics = report["metrics"]
+        self.assertEqual(metrics["compiled_name_slots_with_sina_citation"], 219)
+        self.assertEqual(metrics["single_name_links_without_earlier_tw10_link"], 100)
+        self.assertEqual(metrics["single_name_links_without_earlier_tw10_link_with_acquisition_cell"], 46)
+        self.assertEqual(metrics["unmatched_sina_rows"], 16)
+        self.assertEqual(metrics["duplicate_printed_numbers"], [145])
+        self.assertEqual(len(metrics["other_number_among_single_name_links"]), 16)
+        self.assertEqual(element_claim("火2 风8"), {"fire": 2, "wind": 8})
+        with self.assertRaises(ValueError):
+            element_claim("火3风8")
 
     def test_tw10_true_graphics_not_overwritten_or_merged(self):
         self.assertNotIn(CN50_COMPILED_ALBUM,GRAPHIC_DATASETS)

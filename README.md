@@ -3305,3 +3305,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-23｜大陆保存 5.0 宠物相簿的原 SPR 动作索引
 
 原客户端的分段图号规则把同包 SPR 关联到全部 305 个具名相簿槽位。旧公式中 66 个有源组的槽位原先选错，另有 115 个原公式位置缺源组，本轮均找到该保存客户端自身的对应。四个重复头像别名的 80 字节记录已全表核对，并验证加载后按别名取末条物理位图的原程序路径。官服身份、成长、技能、捕捉与实际发放继续逐版核对。[来源与复核](docs/continuity/STONEAGE-PET-HIGH-FIRST-02-CN50-NATIVE-SPR-ALBUM-20261123.md) · [原 SPR 与相簿档案](docs/pets/INDEX.md)
+
+
+## 2026-11-23｜大陆保存 5.0 宠物档案补入同期属性、取得与战斗证言
+
+2003 年新浪两页资料与 219 个保存包具名槽接上，其中 100 个此前无台湾 1.0 关联，46 个有等级 1 取得栏。马年兽、机豹与蒙奇获宠史料分别定位到当年产品、实售、玩家领取或实战，另从同包原程序证实沉默状态限制咒术菜单的客户端分支。[来源复核与接续](docs/continuity/STONEAGE-PET-HIGH-FIRST-03-CN50-2002-2003-PC-PET-EVIDENCE-20261123.md)
