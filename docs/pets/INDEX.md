@@ -2,6 +2,10 @@
 
 > **重要：这是一份原客户端的“具名图形候选清单”，不是官服实发物种统计；不同版本不可累加。** 原姓名保持原繁体字形，大陆5.0列是第三方保存的 PC 本地编译异名候选，不代表同服ID。完整图像仅在私人观察文件中，不进公开Git。
 
+## PET-DETAIL37｜台湾1.0原头像与保存大陆5.0完整RD哈希交叉（2026-11-23）
+
+[305条逐只源级状态](../../research/pets/PET-DETAIL-EVIDENCE37-TW10-CN50-ORIGINAL-RD-OVERLAP-R1.json) · [本轮来源审计与缺口](../continuity/STONEAGE-PET-DETAIL37-TW10-CN50-ORIGINAL-RD-OVERLAP-20261123.md)。经已锁定的124条原具名SPR跨版桥核实：**120个TW1本版真实头像完整RD SHA与CN5保存包末条图像来源一致**，**4个TW1旧版缺原头像仅有后期双图参考**；另外**181个CN5具名行**尚无合格TW1原SPR身份桥，不能计为181只新物种。仅新建可查询的字段级分级，不新增原服宠物ID、技能、初值、捕捉、实发确证。原CN5全ADRN撞号仍需全量重扫，末条不是经证运行时默认选择器。
+
 ## PET-DETAIL36｜保存大陆5.0原编译305个具名相簿→同CAB原RD源图索引（2026-11-23）
 
 [逐只305条原编译名／逻辑别名／物理RD块SHA/96×104](../../research/pets/PET-DETAIL-EVIDENCE36-CN50-ALBUM-ADRN-RD-PROJECTION-R1.json) · [七只年兽/商业宠等重点及撞号风险](../continuity/STONEAGE-PET-DETAIL36-CN50-305-NAMES-NATIVE-ADRN-RD-BRIDGE-20261123.md)。**305/305**原具名行有同保存CAB的ADRN末条图像投影；七只重点原像物理号已准确配到原RD记录。这是**高版本可追溯的源图像索引，不是同版官方Pet ID、运行时默认选图或活服物种统计**。四只老版缺头像的别名已有两张真实原图，末条不能消掉前条；所有早期官方完整字段仍0。
