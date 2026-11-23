@@ -1,3 +1,6 @@
+import hashlib
+import json
+import struct
 import unittest
 from tools.stoneage_pet_detail32_higher_pc_portrait_probe import (
     ROOT, ALIAS_TO_PET, audit, select_rows, brief_rd
@@ -5,6 +8,7 @@ from tools.stoneage_pet_detail32_higher_pc_portrait_probe import (
 from pathlib import Path
 import tempfile
 import gzip
+from tools.stoneage_pet_detail33_portrait_pixels import PET32, RECEIPT, compare_album_cohort
 
 
 class Pet32HigherPcPortraitTests(unittest.TestCase):
@@ -26,7 +30,7 @@ class Pet32HigherPcPortraitTests(unittest.TestCase):
         self.assertEqual(r["stats"]["original_TW10_album_faces_newly_authenticated"],0)
         self.assertIsNone(r["boundaries"]["overall_completion_percent"])
 
-    def test_all_four_have_one_inherited_and_one_distinct_higher_pc_rd(self):
+    def test_pet32_collision_projection_shows_last_of_two_records(self):
         from json import loads
         from pathlib import Path
         expected = [(100389, 126222, 126066), (100390, 126223, 126067),
@@ -86,6 +90,61 @@ class Pet32HigherPcPortraitTests(unittest.TestCase):
                     self.assertTrue(y["saved_tw85_native_indexes"])
                 else:
                     self.assertIsNone(y["saved_tw85_native_RD_sha256_if_source_exact"])
+
+    def test_pet33_receipt_and_profiles_preserve_both_source_verified_variants(self):
+        replay = json.loads((ROOT / RECEIPT).read_bytes())
+        self.assertEqual(
+            replay["sources"][PET32]["sha256"],
+            hashlib.sha256((ROOT / PET32).read_bytes()).hexdigest(),
+        )
+        self.assertEqual(replay["verified_pixel_blocks"], 8)
+        self.assertEqual(replay["tw10_native_portraits_newly_verified"], 0)
+        self.assertFalse(replay["original_game_or_native_portrait_selection_observed"])
+        cohort = replay["album_cohort"]
+        self.assertEqual(cohort["tw10_match_count_by_alias"], {"0": 4, "1": 120})
+        self.assertEqual(cohort["cn50_match_count_by_alias"], {"1": 120, "2": 4})
+        self.assertEqual(cohort["cn50_match_count_by_alias"], cohort["mixed25_match_count_by_alias"])
+        self.assertEqual(cohort["tw10_missing_aliases"], cohort["later_sources_duplicate_aliases"])
+
+        for original, record in zip(self.result["records"], replay["records"], strict=True):
+            with self.subTest(pet=record["pet_id"]):
+                self.assertEqual(record["pet_id"], original["pet_id"])
+                variants = record["variants"]
+                self.assertEqual(len(variants), 2)
+                self.assertNotEqual(variants[0]["indexed_pixels_sha256"], variants[1]["indexed_pixels_sha256"])
+                self.assertGreater(record["differing_index_positions"], 0)
+                before = original["tw85_saved_8_5_native_exact_RD_from_official_patch"]
+                for variant, candidate in zip(variants, before, strict=True):
+                    self.assertEqual(variant["rd_sha256"], candidate["saved_tw85_native_RD_sha256_if_source_exact"])
+                    self.assertEqual(variant["indexed_pixel_count"], 96 * 104)
+                    self.assertEqual(
+                        variant["mixed25_adrn_record_sha256"],
+                        candidate["original_2005_official_patch"]["record_sha256"],
+                    )
+
+                profile_path = ROOT / "research/pets/profiles" / f"TW10-G{record['tw10_graphic']}.json"
+                appearance = json.loads(profile_path.read_bytes())["appearance"]
+                profile = appearance["cross_version_original_portrait_rd_candidates"]
+                self.assertIsNone(appearance["portrait"]["source_rd_bitmap_number"])
+                self.assertEqual(profile["pixel_replay"]["physical_bitmap_numbers_in_ADRN_order"],
+                                 [variant["physical_bitmap_number"] for variant in variants])
+                self.assertEqual(profile["pixel_replay"]["evidence_path"], RECEIPT)
+                self.assertTrue(all(v["same_real_RD_bytes_as_preserved_CN50"]
+                                    for v in profile["TW85_saved_PC_higher_variants"]))
+
+    def test_album_cohort_requires_ordered_occurrences_not_last_alias_only(self):
+        first = struct.pack("<I72xI", 126066, 28085)
+        last = struct.pack("<I72xI", 126222, 28085)
+        native = struct.pack("<I72xI", 8010, 28001)
+        result = compare_album_cohort(native, native + first + last, native + first + last,
+                                      {28001, 28085}, {28085})
+        self.assertEqual(result["cn50_match_count_by_alias"], {1: 1, 2: 1})
+        with self.assertRaisesRegex(ValueError, "unexpected missing, duplicate or changed record"):
+            compare_album_cohort(native, native + last, native + first + last,
+                                 {28001, 28085}, {28085})
+        with self.assertRaisesRegex(ValueError, "unexpected missing, duplicate or changed record"):
+            compare_album_cohort(native, native + last + first, native + first + last,
+                                 {28001, 28085}, {28085})
 
 
 if __name__ == "__main__":

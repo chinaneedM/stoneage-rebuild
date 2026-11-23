@@ -111,7 +111,7 @@
       "original_game_execution_proven": false
     },
     "cross_version_original_portrait_rd_candidates": {
-      "status": "HIGHER_PC_ORIGINAL_RD_SOURCE_BYTES_LOCATED_BY_DERIVED_HASH_INDEX_NOT_YET_PIXEL_DECODED",
+      "status": "TWO_CROSS_VERSION_ORIGINAL_RD_VARIANTS_PIXEL_VERIFIED",
       "original_TW10_portrait_remains_missing": true,
       "logical_portrait_alias": 28086,
       "name_and_full_SPR_segment_identical_across_TW10_CN50": true,
@@ -125,7 +125,8 @@
         "rd_sha256": "abcc1bbb6a7be06149ca8b171fbaa1eda9cb2348d4ed43dace1d68f1e35a10e6",
         "width": 96,
         "height": 104,
-        "actual_pixel_decoded_this_run": false
+        "actual_pixel_decoded_this_run": false,
+        "alias_lookup_collision_projection_only": true
       },
       "TW85_saved_PC_higher_variants": [
         {
@@ -138,7 +139,7 @@
           "width": 96,
           "height": 104,
           "native_runtime_selected_default": null,
-          "same_real_RD_bytes_as_preserved_CN50": false
+          "same_real_RD_bytes_as_preserved_CN50": true
         },
         {
           "source_build": "TW85_SAVED_PC_CLIENT_R157_R158_PAIRED_WITH_WAEI_OFFICIAL_ADRN129_PATCH",
@@ -153,9 +154,19 @@
           "same_real_RD_bytes_as_preserved_CN50": true
         }
       ],
-      "comparison": "One TW85 alternate shares full original RD block SHA with CN50; another has independent original RD bytes. Which was selected at runtime is unknown.",
+      "comparison": "Both variants occur under the same original alias in the full CN50 ADRN table. The PET32 collision projection preserved the last record only. Both RD blocks were replayed from matching mixed25 source bytes. Runtime selection is unknown.",
       "original_TW10_source_RDto_appearance_portrait_not_backfilled": true,
-      "evidence_path": "research/pets/PET-DETAIL-EVIDENCE32-HIGHER-PC-PORTRAIT-ALIAS-R1.json"
+      "evidence_path": "research/pets/PET-DETAIL-EVIDENCE32-HIGHER-PC-PORTRAIT-ALIAS-R1.json",
+      "pixel_replay": {
+        "actual_rd_source": "PRESERVED_MIXED25_PC_REAL_15_BIN",
+        "physical_bitmap_numbers_in_ADRN_order": [
+          126067,
+          126223
+        ],
+        "differing_index_positions": 9385,
+        "pixel_count_per_variant": 9984,
+        "evidence_path": "research/pets/PET-DETAIL-EVIDENCE33-FOUR-PC-PORTRAIT-PIXEL-PAIRS-R1.json"
+      }
     }
   },
   "combat_stats": {
