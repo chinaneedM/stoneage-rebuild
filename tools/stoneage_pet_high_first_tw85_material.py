@@ -131,8 +131,20 @@ def build():
     must(set(pairs) == patch_indices, "missing source patch/REAL pair")
 
     native = {}
+    native_direct_alias = defaultdict(list)
     for row in read_gz_rows(paths["native"]):
         idx = int(row["index"])
+        direct_alias = int(row["map_number"])
+        if direct_alias in aliases:
+            native_direct_alias[direct_alias].append({
+                "original_native_index": idx,
+                "physical_bitmapno": int(row["bitmapno"]),
+                "rd_sha256": row["rd_sha256"],
+                "rd_status": row["rd_status"],
+                "width": int(row["width"]),
+                "height": int(row["height"]),
+                "original_adrn_record_sha256": row["record_sha256"],
+            })
         if idx in selected_native:
             native[idx] = {
                 "bitmapno": int(row["bitmapno"]),
@@ -147,6 +159,9 @@ def build():
     portrait_metrics = Counter()
     for alias in sorted(aliases):
         matches = []
+        direct = native_direct_alias[alias]
+        portrait_metrics["aliases_with_direct_native_adrn" if direct else "aliases_without_direct_native_adrn"] += 1
+        portrait_metrics["direct_native_original_record_candidates"] += len(direct)
         for patch in alias_patch[alias]:
             pair = pairs[patch["patch_index"]]
             must(pair["patch_record_sha256"] == patch["full_patch_adrn_record_sha256"],
@@ -166,6 +181,11 @@ def build():
                 "native_exact_candidates": candidates,
                 "renderer_default_choice_proven": False,
             })
+        direct_ids = {x["original_native_index"] for x in direct}
+        for match in matches:
+            for exact in match["native_exact_candidates"]:
+                must(exact["original_native_index"] in direct_ids,
+                     "official patch exact native record not present at matching native alias")
         portrait[str(alias)] = matches
         portrait_metrics["aliases_with_patch_records" if matches else "aliases_not_in_patch"] += 1
         portrait_metrics["patch_candidate_rows"] += len(matches)
@@ -273,6 +293,9 @@ def build():
             "historic_same_deployment_pet_master_skill_capture": False,
         },
         "portrait_alias_to_saved_tw85_native_rd_candidates": portrait,
+        "direct_saved_tw85_native_adrn_alias_candidates": {
+            str(alias): native_direct_alias[alias] for alias in sorted(aliases)
+        },
         "records": records,
     }
 
