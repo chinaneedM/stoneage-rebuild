@@ -3330,3 +3330,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-23｜PET-HIGH-FIRST-07：台湾保存8.5真实客户端原程序的4轨名称表
 
 原六分卷及MSI再SHA认证，静态解包四个原客户端代码文件并发现 `sa/sb/sc/sd` 分别有508/491/407/483条具名28B本地相簿记录，四轨共同保留57个原空槽，6个同原整数差异名字；额外550 SPR图组尚无原生姓名选择器，不能算550只宠物。[版本有界研究](docs/continuity/STONEAGE-PET-HIGH-FIRST-07-TW85-ORIGINAL-UPX-NAMED-ALBUM-20261123.md) · [逐源原名和别名](research/pets/PET-HIGH-FIRST-TW85-ORIGINAL-PE-ALBUM-GRID-R1.json)。
+
+
+## 2026-11-23｜PET-HIGH-FIRST-08：台湾8.5原程序550额外SPR图号的四轨本地姓名关联
+
+本批首次用原保存8.5客户端同包4个PE逐条静态重放图号-100250、多段分支、28B本地姓名表寻址，对其额外550个图组实际连接本地姓名：sa/sb/sc/sd分别508/497/227/464个**有名图号**（分别覆盖207/190/106/182个**不同名字槽**），另有41个图号跨程序名字不同。仅作**本地客户端条件路由**候选，未证明原运营商实发宠物或原服技能/成长/捕获；源程序未运行，原版权资源未上Git。[完整研究与NEXT](docs/continuity/STONEAGE-PET-HIGH-FIRST-08-TW85-NATIVE-SPR-NAME-BRIDGE-20261123.md) · [逐图号四轨JSON](research/pets/PET-HIGH-FIRST-TW85-NATIVE-SPR-ALBUM-R1.json)。
