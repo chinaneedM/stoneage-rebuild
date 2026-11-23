@@ -1,0 +1,49 @@
+name: PET07 source-bounded original TW85 PC executable pet identity triage
+
+on:
+  push:
+    branches:
+      - agent/pet-high-first-07-tw85-original-pe-inspection-20261123
+    paths:
+      - 'tools/stoneage_pet_high_first_tw85_native.py'
+      - '.github/workflows/pet07-tw85-original-exe-source-inspect.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect-original-pc-programs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Source analyser synthetic preflight (no download)
+        run: python -m tools.stoneage_pet_high_first_tw85_native --self-test
+      - name: Install existing static MSI extraction dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq p7zip-full innoextract msitools
+      - name: Re-obtain pinned six-part publicly preserved TW85 installer
+        run: |
+          python -m tools.stoneage_wayi85_sixpart_acquisition \
+            --work /tmp/sa85-pet07 --output /tmp/sa85-pet07-custody.json
+      - name: Inspect six hash-verified original PE files without running them
+        run: |
+          python -m tools.stoneage_pet_high_first_tw85_native \
+            --source-root /tmp/sa85-pet07/msi-client \
+            --output /tmp/sa85-pet07-derived.json \
+            --log-json
+      - name: Retain derived provenance and evidence only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pet07-tw85-derived-source-inspection
+          path: |
+            /tmp/sa85-pet07-custody.json
+            /tmp/sa85-pet07-derived.json
+          if-no-files-found: warn
+          retention-days: 15
