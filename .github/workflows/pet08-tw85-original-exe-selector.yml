@@ -1,0 +1,47 @@
+name: PET08 original TW85 PC executable album selector source reconnaissance
+on:
+  push:
+    branches:
+      - agent/pet-high-first-08-tw85-code-selector-20261123
+    paths:
+      - tools/stoneage_pet_high_first_tw85_selector_recon.py
+      - .github/workflows/pet08-tw85-original-exe-selector.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-client-static-trace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Source xref analyzer tests (synthetic only)
+        run: python -m tools.stoneage_pet_high_first_tw85_selector_recon --self-test
+      - name: Install original MSI parser and UPX static unpacker
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq upx-ucl p7zip-full innoextract msitools binutils
+      - name: Restore previously pinned archived six-part TW85 PC carrier (no game run)
+        run: |
+          python -m tools.stoneage_wayi85_sixpart_acquisition \
+            --work /tmp/pet08-tw85 --output /tmp/pet08-tw85-custody.json
+      - name: Source-hash-check, UPX static unpack and xref original native album data
+        run: |
+          python -m tools.stoneage_pet_high_first_tw85_selector_recon \
+            --source-root /tmp/pet08-tw85/msi-client \
+            --output /tmp/pet08-selector-derivative.json --log-json
+      - name: Retain only derived metadata, never original binaries/disassembly
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pet08-native-source-xrefs-derived-only
+          path: |
+            /tmp/pet08-tw85-custody.json
+            /tmp/pet08-selector-derivative.json
+          if-no-files-found: warn
+          retention-days: 15
