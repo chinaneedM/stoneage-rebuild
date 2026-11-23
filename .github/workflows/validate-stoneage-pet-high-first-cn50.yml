@@ -1,0 +1,21 @@
+name: PET high-first original classic PC 305 named asset atlas
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_cn50_catalog.py'
+      - 'tests/test_stoneage_pet_high_first_cn50_catalog.py'
+      - 'research/pets/PET-HIGH-FIRST-CN50-305-SOURCE-ASSET-CATALOG-R1.tsv'
+      - '.github/workflows/validate-stoneage-pet-high-first-cn50.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify native same-CAB portraits and source-only sprite candidate boundaries
+        run: |
+          python -m unittest tests.test_stoneage_pet_high_first_cn50_catalog -v
+          python -m tools.stoneage_pet_high_first_cn50_catalog
