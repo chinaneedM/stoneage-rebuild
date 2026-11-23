@@ -9,6 +9,7 @@ on:
       - 'tools/stoneage_pet_high_first_cn50_sina.py'
       - 'tools/stoneage_pet_high_first_cn50_fusion.py'
       - 'tools/stoneage_pet_high_first_retention.py'
+      - 'tools/stoneage_pet_high_first_tw85_extra.py'
       - 'research/pets/PET-HIGH-FIRST-CN50-TW85-ART-RETENTION-R1.json'
       - 'research/pets/PET-HIGH-FIRST-CN50-FUSION-PANELS-R1.json'
       - 'research/pets/PET-HIGH-FIRST-CN50-SINA2003-CATALOG-R1.json'
@@ -37,3 +38,4 @@ jobs:
           python -m tools.stoneage_pet_high_first_cn50_sina
           python -m tools.stoneage_pet_high_first_cn50_fusion
           python -m tools.stoneage_pet_high_first_retention
+          python -m tools.stoneage_pet_high_first_tw85_extra --log-json
