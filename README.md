@@ -3320,3 +3320,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-23｜大陆保存 5.0 与台湾保存 8.5 的宠物资源对应
 
 45 条具名融合宠的 94 个原动画组、33,568 个帧位置及 45 张头像均在台湾 8.5 保存包找到同字节对应。保存大陆 5.0 的 305 个具名槽共 594 组动画、305 张所用头像也完成同样核验。台湾 8.5 保存包另有 550 个图组号，具体用途待同版原程序确定。[本轮取证及逐只查询](docs/continuity/STONEAGE-PET-HIGH-FIRST-05-CN50-TW85-ART-RETENTION-20261123.md)
+
+
+## 2026-11-23｜TW85 保存客户端相对于 CN50 的 550 个独有源图组（PET-HIGH-FIRST-06）
+
+原生 SPR 全段校验确认台湾保存 8.5 追加 550 个连续图组号／554 条物理记录；逐号保留原索引、完整段 SHA 和动作表头数，尚无同版宠物身份归属或官方实发确证。[来源与后续](docs/continuity/STONEAGE-PET-HIGH-FIRST-06-TW85-EXTRA-SPR-SOURCE-ATLAS-20261123.md) · [逐项机读](research/pets/PET-HIGH-FIRST-TW85-EXTRA-SPR-GROUPS-R1.json)。
