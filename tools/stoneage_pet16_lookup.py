@@ -16,6 +16,7 @@ PET23_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-
 PET39_PATH = PATH.with_name("STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json")
 PET126R_PATH = PATH.with_name("STONEAGE-PET126R-CN50-PC-ORIGINAL-ALBUM-FULL-362-SLOT-SOURCE-CATALOGUE-R1.json")
 CN50_NATIVE_PATH = PATH.parent.parent / "pets/PET-HIGH-FIRST-CN50-NATIVE-SPR-ALBUM-R1.json"
+CN50_SINA_PATH = PATH.parent.parent / "pets/PET-HIGH-FIRST-CN50-SINA2003-CATALOG-R1.json"
 PET41_PATH = PATH.with_name("STONEAGE-PET41-TW-EARLY-WGS-MUSEUM-R1.json")
 PET25_OFFICIAL_PATH = PATH.with_name("STONEAGE-PET25-OFFICIAL-RELEASE-ROSTER-R1.json")
 PET26_OFFICIAL_PATH = PATH.with_name("STONEAGE-PET26-JP-TW-CLASSIC-OFFICIAL-RELEASE-R1.json")
@@ -51,6 +52,36 @@ def load_catalog(path=PATH):
         if (native["schema"] != "stoneage.pet_high_first.cn50_native_spr_to_album.r1"
             or len(native["records"]) != len(by_ordinal) or len(by_ordinal) != 305):
             raise ValueError("CN50 native source routes missing or duplicated")
+        sina = json.loads(CN50_SINA_PATH.read_text(encoding="utf-8"))
+        if (sina["schema"] != "stoneage.pet.cn50_sina_2003_source_crosswalk.r1"
+            or sina["published_number_is_server_species_id"]
+            or sina["serving_version_and_official_release_established_by_web_join"]):
+            raise ValueError("CN50 editorial catalogue is not a bounded source crosswalk")
+        sina_by_ordinal = {}
+        for row in sina["rows"]:
+            ordinal = row["cn50_album_ordinal_by_name_only"]
+            if ordinal is None:
+                continue
+            page = sina["pages"][row["page"]]
+            sina_by_ordinal.setdefault(ordinal, []).append({
+                "source_url": page["url"],
+                "displayed_date": page["displayed_date"],
+                "row_in_pet_table": row["row_in_pet_table"],
+                "printed_catalogue_number": row["printed_number"],
+                "rebirth_variant_label": row["rebirth_variant_label"],
+                "reported_elements": row["reported_elements"],
+                "innate_skill_cell_has_text": row["innate_skill_cell_has_text"],
+                "level_one_acquisition_cell_has_text": row["level_one_acquisition_cell_has_text"],
+            })
+        year_card = sina["cn30_year_card_announcement"]
+        year_card_by_ordinal = {
+            row["cn50_album_ordinal_by_name_only"]: {
+                "source_url": year_card["archive_url"],
+                "displayed_date": year_card["displayed_article_date"],
+                "main_element": row["main_element"],
+            }
+            for row in year_card["named_variants"]
+        }
         cn50_named = []
         for raw in cn50["records"]:
             if raw["label_as_compiled_GB18030"] is None:
@@ -81,6 +112,8 @@ def load_catalog(path=PATH):
                 ],
                 "cn50_portrait_bitmap_after_ordered_adrn_load":
                     route["portrait_lookup_after_ordered_load"],
+                "sina_2003_editorial_same_name_rows": sina_by_ordinal.get(raw["ordinal"], []),
+                "cn30_2002_year_card_same_name_announcement": year_card_by_ordinal.get(raw["ordinal"]),
                 "source_evidence": "SAME_CAB_STATIC_NATIVE_SPR_TO_COMPILED_ALBUM_SLOT",
                 "official_live_release_confirmed": False,
                 # The source code resolves SPR to a slot, which can have several SPR groups.

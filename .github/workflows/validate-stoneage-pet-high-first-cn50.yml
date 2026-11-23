@@ -6,6 +6,8 @@ on:
       - 'tests/test_stoneage_pet_high_first_cn50_catalog.py'
       - 'research/pets/PET-HIGH-FIRST-CN50-305-SOURCE-ASSET-CATALOG-R1.tsv'
       - 'tools/stoneage_pet_high_first_cn50_native.py'
+      - 'tools/stoneage_pet_high_first_cn50_sina.py'
+      - 'research/pets/PET-HIGH-FIRST-CN50-SINA2003-CATALOG-R1.json'
       - 'tools/stoneage_pet16_lookup.py'
       - 'tests/test_stoneage_pet_high_first_cn50_native.py'
       - 'tests/test_stoneage_pet126r_cn50_lookup_integration.py'
@@ -28,3 +30,4 @@ jobs:
             tests.test_stoneage_pet126r_cn50_lookup_integration
           python -m tools.stoneage_pet_high_first_cn50_catalog
           python -m tools.stoneage_pet_high_first_cn50_native
+          python -m tools.stoneage_pet_high_first_cn50_sina
