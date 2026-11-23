@@ -11,6 +11,9 @@ on:
       - 'tools/stoneage_pet_high_first_retention.py'
       - 'tools/stoneage_pet_high_first_tw85_extra.py'
       - 'tools/stoneage_pet_high_first_tw85_lookup.py'
+      - 'tools/stoneage_pet_high_first_tw85_native_bridge.py'
+      - 'tests/test_stoneage_pet_high_first_tw85_bridge.py'
+      - 'research/pets/PET-HIGH-FIRST-TW85-NATIVE-SPR-ALBUM-R1.json'
       - 'tests/test_stoneage_pet_high_first_tw85_native.py'
       - 'research/pets/PET-HIGH-FIRST-TW85-ORIGINAL-PE-ALBUM-GRID-R1.json'
       - 'research/pets/PET-HIGH-FIRST-TW85-EXTRA-SPR-GROUPS-R1.json'
@@ -42,7 +45,8 @@ jobs:
           python -m tools.stoneage_pet_high_first_cn50_sina
           python -m tools.stoneage_pet_high_first_cn50_fusion
           python -m tools.stoneage_pet_high_first_retention
-          python -m unittest -v tests.test_stoneage_pet_high_first_tw85_native
+          python -m unittest -v tests.test_stoneage_pet_high_first_tw85_native tests.test_stoneage_pet_high_first_tw85_bridge
+          python -m tools.stoneage_pet_high_first_tw85_native_bridge --verify > /tmp/tw85-native-source-bridge.json
           python -m tools.stoneage_pet_high_first_tw85_lookup --summary > /tmp/tw85-grid-summary.json
           python -m tools.stoneage_pet_high_first_tw85_extra --output /tmp/tw85-extra.json
           cmp /tmp/tw85-extra.json research/pets/PET-HIGH-FIRST-TW85-EXTRA-SPR-GROUPS-R1.json
