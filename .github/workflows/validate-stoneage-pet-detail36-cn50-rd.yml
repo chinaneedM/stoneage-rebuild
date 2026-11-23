@@ -1,0 +1,21 @@
+name: PET-DETAIL36 saved classic-PC album-to-native-RD metadata crosswalk
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_detail36_cn50_album_portrait_join.py'
+      - 'tests/test_stoneage_pet_detail36_cn50_album_portrait_join.py'
+      - 'research/pets/PET-DETAIL-EVIDENCE36-CN50-ALBUM-ADRN-RD-PROJECTION-R1.json'
+      - '.github/workflows/validate-stoneage-pet-detail36-cn50-rd.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify original-source-pinned CN5 named album to same-saved-cab derived ADRN index
+        run: |
+          python -m unittest tests.test_stoneage_pet_detail36_cn50_album_portrait_join -v
+          python -m tools.stoneage_pet_detail36_cn50_album_portrait_join
