@@ -1,11 +1,13 @@
 """Regression contract for full 124 original TW1 classic PC client pet dossiers."""
 import copy
+from decimal import Decimal
 import json
 import tempfile
 import unittest
 from pathlib import Path
 
 from tools.stoneage_pet_detail31_profile_coverage import audit
+from tools.stoneage_pet_detail34_player_witnesses import RECEIPT, mirror_rows
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -96,6 +98,37 @@ class Pet31ProfileCoverageTests(unittest.TestCase):
             self.assertEqual(row["source_motion_sequences"],56)
             self.assertTrue(row["dossier_path"].startswith("research/pets/profiles/TW10-G"))
         self.assertEqual(self.report["fully_historical_pet_species_certified"],0)
+
+    def test_period_player_evidence_does_not_fill_official_fields(self):
+        replay = json.loads((ROOT / RECEIPT).read_bytes())
+        comparison = replay["catalogue_comparison"]
+        self.assertEqual(comparison["rows_per_catalogue"], 124)
+        self.assertEqual(comparison["exact_names_at_same_position"], 122)
+        self.assertFalse(comparison["independent_acquisition_witnesses_established"])
+        self.assertEqual([r["position"] for r in comparison["source_name_variants_at_same_position"]], [21, 60])
+        self.assertEqual(replay["official_birth_capture_skills_or_growth_fields_newly_verified"], 0)
+        self.assertEqual(sum(r["skill_column_text"] is None for r in replay["six_netease_skill_witnesses"]), 2)
+        self.assertTrue(all(not r["skill_at_birth_established"] for r in replay["six_netease_skill_witnesses"]))
+        growth = replay["growth_contest"]
+        self.assertFalse(growth["in_game_verification_outcome_recovered"])
+        rows = growth["published_rows"]
+        self.assertEqual(len(rows), 12)
+        for row in rows:
+            expected = sum(Decimal(row[k]) for k in ("attack", "defense", "agility")) - Decimal(row["printed_total"])
+            self.assertEqual(Decimal(row["atk_def_agi_minus_printed_total"]), expected)
+        self.assertEqual(rows[2]["printed_rank"], 3)
+        self.assertEqual(rows[2]["atk_def_agi_minus_printed_total"], "-0.0360")
+
+    def test_legacy_empty_skill_cells_keep_acquisition_text_separate(self):
+        rows = mirror_rows(
+            "宠物名称&nbsp;&nbsp;属性<BR>"
+            "布伊&nbsp;&nbsp;地６水４&nbsp;&nbsp;&nbsp;某村<BR>"
+            "加比&nbsp;&nbsp;地５风５&nbsp;&nbsp;毒攻击&nbsp;&nbsp;某洞<BR>----"
+        )
+        self.assertIsNone(rows[0]["skills"])
+        self.assertEqual(rows[0]["acquisition"], "某村")
+        self.assertEqual(rows[1]["skills"], "毒攻击")
+        self.assertEqual(rows[1]["acquisition"], "某洞")
 
 
 if __name__=="__main__":

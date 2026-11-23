@@ -9,7 +9,8 @@ BLOBS={
   "docs/specs/STONEAGE-TW10-UI-RESOURCE-BIND-R1.md": "600ea59798153f2ab85887b5207f3323b1a19959",
   "research/recovered/STONEAGE-TW10-UI-RESOURCE-BIND-SCOPE-R1.json": "8db0381f876aea901fbdaf55aaa031157d035800",
   "research/recovered/STONEAGE-TW10-VS-25-RESOURCE-DIFF-R1.txt": "b86de21a9c1dc28af1b533f20ebd4b37428517a6",
-  "research/mechanics/STONEAGE-PET-GROWTH-CORE-R1.md": "87cdd063f05f6d6f334007cf3db7a31a8d1654a8",
+  # The historical audit cites the pre-PET29 revision of the living growth note.
+  "research/recovered/STONEAGE-LEGACY-PET-GROWTH-CORE-R1-SOURCE-SNAPSHOT.md": "87cdd063f05f6d6f334007cf3db7a31a8d1654a8",
   "research/recovered/STONEAGE-25-PET-GROWTH-R1.txt": "5c528fb382ad13484572bd49905480a6b5775e18",
   "research/clients/STONEAGE-TW10-CLIENT-DATA-BOUNDARY-R1.md": "11e2b77bce2febfef37c3a0c87dec878a6f289ee"
 }
