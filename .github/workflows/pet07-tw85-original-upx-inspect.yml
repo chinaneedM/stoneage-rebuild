@@ -1,0 +1,45 @@
+name: PET07 source-only UPX unpack and original pet album candidate triage
+on:
+  push:
+    branches: ['agent/pet-high-first-07-tw85-original-pe-inspection-20261123']
+    paths:
+      - 'tools/stoneage_pet_high_first_tw85_unpacked.py'
+      - '.github/workflows/pet07-tw85-original-upx-inspect.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect-source-unpacked:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Preflight source-only decoder
+        run: python -m tools.stoneage_pet_high_first_tw85_unpacked --self-test
+      - name: Install pinned Ubuntu distribution's PE decompressor and previously accepted MSI tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq upx-ucl p7zip-full innoextract msitools
+          upx --version | head -n 1
+      - name: Restore exact 8.5 preserved installer without executing it
+        run: |
+          python -m tools.stoneage_wayi85_sixpart_acquisition \
+            --work /tmp/sa85-pet07-upx --output /tmp/sa85-pet07-upx-custody.json
+      - name: Static-unpack five original programs, inspect candidate native pet album records
+        run: |
+          python -m tools.stoneage_pet_high_first_tw85_unpacked \
+            --source-root /tmp/sa85-pet07-upx/msi-client \
+            --output /tmp/sa85-pet07-upx-report.json --log-json
+      - name: Publish metadata only (no packed or unpacked original programs)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pet07-tw85-upx-static-derived-only
+          path: |
+            /tmp/sa85-pet07-upx-custody.json
+            /tmp/sa85-pet07-upx-report.json
+          retention-days: 15
+          if-no-files-found: warn
