@@ -1,8 +1,9 @@
 """PET20 source-bounded pet closure matrix: no historic species-count or runtime promotion."""
-import hashlib
 import json
 import unittest
 from pathlib import Path
+
+from tools.stoneage_preproduction_archive import APPROVED_LATER_SOURCE_BLOBS, gitblob
 
 ROOT = Path(__file__).resolve().parents[1]
 R = ROOT / "research/recovered"
@@ -27,9 +28,15 @@ class Pet20ClosureMatrixTests(unittest.TestCase):
     def test_all_source_git_blobs_match_actual_full_files(self):
         for key, pin in self.matrix["sources"].items():
             with self.subTest(key=key):
-                raw = (ROOT / pin["path"]).read_bytes()
-                digest = hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest()
-                self.assertEqual(digest, pin["git_blob"])
+                observed = gitblob((ROOT / pin["path"]).read_bytes())
+                if key == "growth":
+                    revision = APPROVED_LATER_SOURCE_BLOBS[pin["path"]]
+                    self.assertEqual(revision["historical_archive_blob"], pin["git_blob"])
+                    self.assertIn(observed, (pin["git_blob"], revision["blob"]))
+                    observed = gitblob(
+                        (R / "STONEAGE-LEGACY-PET-GROWTH-CORE-R1-SOURCE-SNAPSHOT.md").read_bytes()
+                    )
+                self.assertEqual(observed, pin["git_blob"])
 
     def test_exact_pet16_namespace_rows_are_not_counted_as_species(self):
         m = self.matrix["source_coverage_observed"]

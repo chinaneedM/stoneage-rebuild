@@ -33,4 +33,6 @@
 
 使用光盘的 HTTP 206 字节范围取回 CAB 开头及第 1、2 号压缩文件夹，重新解出 `sa_5000.exe`、`adrn_31.bin`、`spradrn_17.bin`、`spr_17.bin`，四者整文件 SHA-256 与先前 CAB 验收逐一一致。反汇编解释器独立复算 4,000 个图号及两个分支，与分段规则完全一致。全量重导 1,185 个 SPR 组、96,783 条动作表头、598,455 条帧记录，三份派生表均与已存版本逐字节相同。本轮头像使用完整原 ADRN 与既存 RD 摘要，没有重新下载完整 REAL。来源指纹和原指令区间见[机读档案](../../research/pets/PET-HIGH-FIRST-CN50-NATIVE-SPR-ALBUM-R1.json)，可用[复核程序](../../tools/stoneage_pet_high_first_cn50_native.py)传入同源四个文件再次复算。
 
+[首次分支检查](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/45152190896)暴露 PET20 历史成长文档的旧哈希与主线已接受的 PET-DETAIL29 修订冲突。验收现核对已存历史快照及同一份[获准修订指纹](STONEAGE-PREPRODUCTION-ARCHIVE-GROWTH-SOURCE-PIN-REVISION-20261123.md)，历史矩阵继续引用原始指纹。
+
 按名称或原 SPR 组号查询，详见[宠物档案入口](../pets/INDEX.md)。下一个工作项从已有可靠的高版本 PC 材料核对年兽、蒙奇、艾迪希洛等图号在实际原游戏、同部署宠物主档或运营资料中的身份和用途，并在有原证时回填属性、技能、取得及官服投放年份。早期相簿关联仍按版本保留，PET 模块继续开展。
