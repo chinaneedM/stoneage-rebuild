@@ -22,6 +22,15 @@ class PET126RLookup(unittest.TestCase):
         self.assertIsNone(complete[0]["graphic_number"])
         self.assertEqual(complete[0]["TW10_ordinal_based_candidate_SPR_only"],100250)
         self.assertTrue(all(not x["native_same_build_graphic_selector_proven"] for x in complete))
+    def test_native_sprite_routes_query_without_singular_graphic_id(self):
+        [monkey] = lookup(self.c, "蒙奇", CN50_COMPILED_ALBUM, details=True)
+        self.assertEqual(monkey["cn50_native_spr_group_numbers"], [101165, 101289, 101412])
+        self.assertIsNone(monkey["graphic_number"])
+        self.assertEqual(lookup(self.c, "101412", CN50_COMPILED_ALBUM, details=True), [monkey])
+        [zodiac] = lookup(self.c, "葛雷马恩", CN50_COMPILED_ALBUM, details=True)
+        self.assertEqual(zodiac["cn50_native_spr_group_numbers"], [101155, 101279])
+        self.assertEqual(zodiac["cn50_native_held_pet_spr_group_numbers"], [101155])
+
     def test_tw10_true_graphics_not_overwritten_or_merged(self):
         self.assertNotIn(CN50_COMPILED_ALBUM,GRAPHIC_DATASETS)
         self.assertEqual(len(self.c["datasets"][CLIENT_ALBUM]),124)
@@ -29,6 +38,6 @@ class PET126RLookup(unittest.TestCase):
         self.assertEqual(trace["tw10_same_client_album_record"]["name_as_written"],"烏力")
         self.assertIn("tw10_visual",trace["source_separated_matches"])
     def test_name_rows_not_species_or_official_proof(self):
-        self.assertTrue(all(row["source_evidence"]=="CLIENT_COMPILED_NAME_ONLY_GRAPHIC_SELECTOR_UNPROVEN" for row in self.rows))
+        self.assertTrue(all(row["source_evidence"]=="SAME_CAB_STATIC_NATIVE_SPR_TO_COMPILED_ALBUM_SLOT" for row in self.rows))
         self.assertTrue(any(row["same_carrier_candidate_SPR_present"] for row in self.rows))
 if __name__=="__main__":unittest.main()
