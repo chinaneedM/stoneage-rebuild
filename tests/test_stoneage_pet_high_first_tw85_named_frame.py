@@ -71,5 +71,28 @@ class TestPet10NamedPriorRealPixels(unittest.TestCase):
         saved=(ROOT/"research/pets/PET-HIGH-FIRST-TW85-NAMED-PRIVATE-FRAMES-R1.json").read_text(encoding="utf-8")
         self.assertEqual(saved,json.dumps(build(),ensure_ascii=False,sort_keys=True,indent=2)+"\n")
 
+    def test_bounded_2003_2004_classic_pc_sources(self):
+        path=ROOT/"research/pets/PET-HIGH-FIRST-10-CLASSIC-PC-PERIOD-RAIDISILUO-R1.json"
+        data=json.loads(path.read_text(encoding="utf-8"))
+        self.assertEqual(data["schema"],"stoneage.pet.high_first_10.classic_pc_period_player_and_vendor_name_evidence.r1")
+        self.assertEqual(data["scope"],"CLASSIC_2D_PC_ONLY")
+        self.assertEqual(data["target_tw85_saved_local_graphic_source_key"],"TW85-SOURCE-SPR-101501")
+        self.assertEqual(data["cross_region_source_link"],
+                         "EXACT_CHINESE_NAME_MATCH_NOT_SAME_OPERATOR_OR_DEPLOYMENT_PROOF")
+        docs=data["dated_documents"]
+        self.assertEqual([x["document_date"] for x in docs],
+                         ["2003-08-25","2004-01-17","2004-12-01"])
+        self.assertEqual(len({x["url"] for x in docs}),3)
+        self.assertTrue(docs[0]["url"].startswith("https://news.17173.com/z/stoneage/"))
+        self.assertTrue(docs[1]["url"].startswith("https://news.17173.com/z/stoneage/"))
+        self.assertTrue(docs[2]["url"].startswith("https://product.zol.com.cn/xinhuanet/"))
+        self.assertEqual(docs[0]["reported_alias"],"无魔")
+        self.assertEqual(docs[2]["product_pet_alias"],"无魔兽")
+        self.assertTrue(data["boundary"]["not_a_mobile_or_private_server_source"])
+        self.assertFalse(data["boundary"]["single_cross_region_official_species_identity_claimed"])
+        self.assertFalse(data["boundary"]["these_documents_prove_first_world_release_date"])
+        self.assertEqual(data["boundary"]["new_official_live_species_count_by_this_record"],0)
+        self.assertTrue(all(d["source_directly_names"]=="雷帝斯洛" for d in docs))
+
 if __name__=="__main__":
     unittest.main()
