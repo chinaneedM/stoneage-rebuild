@@ -3335,3 +3335,7 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-23｜PET-HIGH-FIRST-08：台湾8.5原程序550额外SPR图号的四轨本地姓名关联
 
 本批首次用原保存8.5客户端同包4个PE逐条静态重放图号-100250、多段分支、28B本地姓名表寻址，对其额外550个图组实际连接本地姓名：sa/sb/sc/sd分别508/497/227/464个**有名图号**（分别覆盖207/190/106/182个**不同名字槽**），另有41个图号跨程序名字不同。仅作**本地客户端条件路由**候选，未证明原运营商实发宠物或原服技能/成长/捕获；源程序未运行，原版权资源未上Git。[完整研究与NEXT](docs/continuity/STONEAGE-PET-HIGH-FIRST-08-TW85-NATIVE-SPR-NAME-BRIDGE-20261123.md) · [逐图号四轨JSON](research/pets/PET-HIGH-FIRST-TW85-NATIVE-SPR-ALBUM-R1.json)。
+
+## 2026-11-23｜PET-HIGH-FIRST-09：台湾8.5高版本宠物原图索引和动作帧来源
+
+[逐图号可重演来源报告](docs/continuity/STONEAGE-PET-HIGH-FIRST-09-TW85-VISUAL-ACTION-REFERENCES-20261123.md) · [源派生机读JSON](research/pets/PET-HIGH-FIRST-TW85-VISUAL-ACTION-REFERENCES-R1.json) · [宠物查询总览](docs/pets/INDEX.md)。将前轮550个TW85额外SPR图号的四套原程序本地名字，接到554处原物理SPR组、137,211帧引用（137,192同源RD可映射、19原空帧）与207原头像逻辑别名：**182个别名**在华义补丁及保存TW85原ADRN/REAL找到精确原RD配对，**25个别名**仅因当前补丁索引无记录保持OPEN，不宣称客户端缺头像。原动作编号未作攻击/行走等语义推定，未运行原游戏/解码原头像、未核原官服发放或技能初始成长。增补`PET09`源锁定可重演脚本及回归测试；失败的原生map_number补证尝试保留[Actions记录45180990056](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/45180990056)，因归档派生NATIVE-R1.tsv.gz不保留map_number已恢复可靠的原程序。**NEXT PET-HIGH-FIRST-10**：在既有合法保存PC原字节可得时实际私人解码原RD/帧图并观察，另查真实同运营版本主表与发行证据。PET仍唯一活动模块，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、整体UNKNOWN；完整历史CURRENT Git blob`c89e0e33537990aa2132b47c40fef49a985a935c`不变。
