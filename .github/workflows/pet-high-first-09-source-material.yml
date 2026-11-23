@@ -5,6 +5,7 @@ on:
       - agent/pet-high-first-09-20261123
     paths:
       - tools/stoneage_pet_high_first_tw85_material.py
+      - tests/test_stoneage_pet_high_first_tw85_material.py
       - .github/workflows/pet-high-first-09-source-material.yml
   workflow_dispatch:
 permissions:
@@ -26,6 +27,8 @@ jobs:
         run: python -m tools.stoneage_pet_high_first_tw85_material --mode verify
       - name: Recheck PET08 source identity guards
         run: python -m unittest discover -s tests -p test_stoneage_pet_high_first_tw85_bridge.py
+      - name: Test PET09 conservation and negative historical proof gates
+        run: python -m unittest discover -s tests -p test_stoneage_pet_high_first_tw85_material.py
       - name: Publish rights-safe derived JSON to this research branch
         run: |
           git config user.name "github-actions[bot]"
