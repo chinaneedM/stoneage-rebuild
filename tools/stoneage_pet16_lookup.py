@@ -16,6 +16,7 @@ PET23_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-
 PET39_PATH = PATH.with_name("STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json")
 PET126R_PATH = PATH.with_name("STONEAGE-PET126R-CN50-PC-ORIGINAL-ALBUM-FULL-362-SLOT-SOURCE-CATALOGUE-R1.json")
 CN50_NATIVE_PATH = PATH.parent.parent / "pets/PET-HIGH-FIRST-CN50-NATIVE-SPR-ALBUM-R1.json"
+CN50_RETENTION_PATH = PATH.parent.parent / "pets/PET-HIGH-FIRST-CN50-TW85-ART-RETENTION-R1.json"
 CN50_FUSION_PATH = PATH.parent.parent / "pets/PET-HIGH-FIRST-CN50-FUSION-PANELS-R1.json"
 CN50_SINA_PATH = PATH.parent.parent / "pets/PET-HIGH-FIRST-CN50-SINA2003-CATALOG-R1.json"
 PET41_PATH = PATH.with_name("STONEAGE-PET41-TW-EARLY-WGS-MUSEUM-R1.json")
@@ -107,6 +108,14 @@ def load_catalog(path=PATH):
             for row in may_fusion["rows"]
             if row["cn50_album_ordinal_by_exact_name"] is not None
         }
+        retention = json.loads(CN50_RETENTION_PATH.read_text(encoding="utf-8"))
+        if (retention["schema"] != "stoneage.pet.cn50_tw85_art_retention.r1"
+            or retention["tw85_runtime_pet_selector_or_name_table_verified"]
+            or retention["official_release_or_gameplay_verified"]):
+            raise ValueError("TW85 retention is resource evidence")
+        retention_by_ordinal = {r["cn50_album_ordinal"]: r for r in retention["records"]}
+        if set(retention_by_ordinal) != set(by_ordinal) or len(retention["records"]) != len(retention_by_ordinal):
+            raise ValueError("TW85 retention atlas is incomplete")
         cn50_named = []
         for raw in cn50["records"]:
             if raw["label_as_compiled_GB18030"] is None:
@@ -141,6 +150,7 @@ def load_catalog(path=PATH):
                 "cn30_2002_year_card_same_name_announcement": year_card_by_ordinal.get(raw["ordinal"]),
                 "sina_2003_may_fusion_editorial_entry": may_fusion_by_ordinal.get(raw["ordinal"]),
                 "sina_2003_fusion_panel": fusion_by_ordinal.get(raw["ordinal"]),
+                "tw85_preserved_art_comparison": retention_by_ordinal[raw["ordinal"]],
                 "source_evidence": "SAME_CAB_STATIC_NATIVE_SPR_TO_COMPILED_ALBUM_SLOT",
                 "official_live_release_confirmed": False,
                 # The source code resolves SPR to a slot, which can have several SPR groups.
