@@ -5,6 +5,11 @@ on:
       - 'tools/stoneage_pet_high_first_cn50_catalog.py'
       - 'tests/test_stoneage_pet_high_first_cn50_catalog.py'
       - 'research/pets/PET-HIGH-FIRST-CN50-305-SOURCE-ASSET-CATALOG-R1.tsv'
+      - 'tools/stoneage_pet_high_first_cn50_native.py'
+      - 'tools/stoneage_pet16_lookup.py'
+      - 'tests/test_stoneage_pet_high_first_cn50_native.py'
+      - 'tests/test_stoneage_pet126r_cn50_lookup_integration.py'
+      - 'research/pets/PET-HIGH-FIRST-CN50-NATIVE-SPR-ALBUM-R1.json'
       - '.github/workflows/validate-stoneage-pet-high-first-cn50.yml'
   workflow_dispatch:
 jobs:
@@ -15,7 +20,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Verify native same-CAB portraits and source-only sprite candidate boundaries
+      - name: Verify preserved CN50 portraits and native SPR-to-album source catalogue
         run: |
-          python -m unittest tests.test_stoneage_pet_high_first_cn50_catalog -v
+          python -m unittest -v \
+            tests.test_stoneage_pet_high_first_cn50_catalog \
+            tests.test_stoneage_pet_high_first_cn50_native \
+            tests.test_stoneage_pet126r_cn50_lookup_integration
           python -m tools.stoneage_pet_high_first_cn50_catalog
+          python -m tools.stoneage_pet_high_first_cn50_native

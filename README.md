@@ -3300,3 +3300,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-23｜PET-DETAIL34：2001 宠物目录逐行核对及 2003 成长表复算
 
 重新取得此前只见摘要的网易精华区完整镜像。它和 17173 旧表各列 124 条，同位同字 122 条，43 条共享坐标，4 条出生宠与 9 条 JSS 奖宠说法同位，按相关来源处理。网易有 102 行元素、20 行技能文字，已将金布伊等六档的来源考据补齐。另复算新浪贝鲁伊卡未转生评选的 12 条统计，发现第 3 名的总成长刊值与三项相加差 0.0360。早期官方同部署字段仍待证。后续优先原服宠物主档、技能、出生与捕捉数据。[来源报告](docs/continuity/STONEAGE-PET-DETAIL34-EARLY-PC-PLAYER-CATALOGUE-AND-GROWTH-20261123.md) · [机读证据](research/pets/PET-DETAIL-EVIDENCE34-EARLY-PC-PLAYER-CATALOGUE-AND-GROWTH-R1.json)
+
+
+## 2026-11-23｜大陆保存 5.0 宠物相簿的原 SPR 动作索引
+
+原客户端的分段图号规则把同包 SPR 关联到全部 305 个具名相簿槽位。旧公式中 66 个有源组的槽位原先选错，另有 115 个原公式位置缺源组，本轮均找到该保存客户端自身的对应。四个重复头像别名的 80 字节记录已全表核对，并验证加载后按别名取末条物理位图的原程序路径。官服身份、成长、技能、捕捉与实际发放继续逐版核对。[来源与复核](docs/continuity/STONEAGE-PET-HIGH-FIRST-02-CN50-NATIVE-SPR-ALBUM-20261123.md) · [原 SPR 与相簿档案](docs/pets/INDEX.md)

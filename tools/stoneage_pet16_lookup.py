@@ -15,6 +15,7 @@ PET22_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-
 PET23_PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-23-JP-LOW-RATE-IMAGE-REACCESS-R1.json"
 PET39_PATH = PATH.with_name("STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json")
 PET126R_PATH = PATH.with_name("STONEAGE-PET126R-CN50-PC-ORIGINAL-ALBUM-FULL-362-SLOT-SOURCE-CATALOGUE-R1.json")
+CN50_NATIVE_PATH = PATH.parent.parent / "pets/PET-HIGH-FIRST-CN50-NATIVE-SPR-ALBUM-R1.json"
 PET41_PATH = PATH.with_name("STONEAGE-PET41-TW-EARLY-WGS-MUSEUM-R1.json")
 PET25_OFFICIAL_PATH = PATH.with_name("STONEAGE-PET25-OFFICIAL-RELEASE-ROSTER-R1.json")
 PET26_OFFICIAL_PATH = PATH.with_name("STONEAGE-PET26-JP-TW-CLASSIC-OFFICIAL-RELEASE-R1.json")
@@ -45,10 +46,22 @@ def load_catalog(path=PATH):
             len(cn50["records"]) != 362 or
             cn50["negative_boundaries"]["CN50_same_build_name_to_SPR_selector_proven"]):
             raise ValueError("CN50-album-source-grade-or-count-mismatch")
-        # Compiled names are searchable in their *own* source namespace.
-        # Do not put the hypothetical TW10-ordinal graphic into graphic_number.
-        cn50_named = [
-            {
+        native = json.loads(CN50_NATIVE_PATH.read_text(encoding="utf-8"))
+        by_ordinal = {row["ordinal"]: row for row in native["records"]}
+        if (native["schema"] != "stoneage.pet_high_first.cn50_native_spr_to_album.r1"
+            or len(native["records"]) != len(by_ordinal) or len(by_ordinal) != 305):
+            raise ValueError("CN50 native source routes missing or duplicated")
+        cn50_named = []
+        for raw in cn50["records"]:
+            if raw["label_as_compiled_GB18030"] is None:
+                continue
+            route = by_ordinal[raw["ordinal"]]
+            if (route["compiled_name"] != raw["label_as_compiled_GB18030"]
+                or route["exe_row_sha256"] != raw["source_exe_row_sha256"]
+                or route["portrait_alias"] != raw["source_raw_trailing_u32"]
+                or not route["spr_groups"]):
+                raise ValueError("CN50 native SPR route disagrees with compiled source row")
+            cn50_named.append({
                 "id": raw["record_key"], "source": raw["carrier"],
                 "name_as_written": raw["label_as_compiled_GB18030"],
                 "source_ordinal": raw["ordinal"],
@@ -61,13 +74,18 @@ def load_catalog(path=PATH):
                     raw["same_CAB_SPR_group_for_hypothesis_present"],
                 "TW10_cross_version_exact_SPR_hash":
                     raw["TW10_retail_exact_same_SPR_segment_at_this_ordinal"],
-                "source_evidence": "CLIENT_COMPILED_NAME_ONLY_GRAPHIC_SELECTOR_UNPROVEN",
+                "cn50_native_spr_group_numbers": [group["spr_group"] for group in route["spr_groups"]],
+                "cn50_native_held_pet_spr_group_numbers": [
+                    group["spr_group"] for group in route["spr_groups"]
+                    if group["held_pet_path_also_maps_to_slot"]
+                ],
+                "cn50_portrait_bitmap_after_ordered_adrn_load":
+                    route["portrait_lookup_after_ordered_load"],
+                "source_evidence": "SAME_CAB_STATIC_NATIVE_SPR_TO_COMPILED_ALBUM_SLOT",
                 "official_live_release_confirmed": False,
+                # The source code resolves SPR to a slot, which can have several SPR groups.
                 "native_same_build_graphic_selector_proven": False,
-            }
-            for raw in cn50["records"]
-            if raw["label_as_compiled_GB18030"] is not None
-        ]
+            })
         if len(cn50_named) != 305:
             raise ValueError("CN50-compiled-source-name-rows-missing")
         catalog["datasets"][CN50_COMPILED_ALBUM] = cn50_named
@@ -96,7 +114,8 @@ def lookup(catalog, query="", dataset=None, limit=20, details=False):
         for row in records:
             fields = (row.get("id"), row.get("name_as_written"), row.get("label_as_written"),
                       row.get("template_id"), row.get("graphic_number"), row.get("web_ordinal"),
-                      row.get("tw10_same_printed_name_graphic"))
+                      row.get("tw10_same_printed_name_graphic"),
+                      *row.get("cn50_native_spr_group_numbers", ()))
             if q and not any(q in str(v).casefold() for v in fields if v is not None):
                 continue
             result.append(
