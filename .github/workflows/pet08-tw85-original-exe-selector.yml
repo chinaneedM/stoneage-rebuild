@@ -5,6 +5,7 @@ on:
       - agent/pet-high-first-08-tw85-code-selector-20261123
     paths:
       - tools/stoneage_pet_high_first_tw85_selector_recon.py
+      - tools/stoneage_pet_high_first_tw85_selector_deep.py
       - .github/workflows/pet08-tw85-original-exe-selector.yml
   workflow_dispatch:
 
@@ -26,6 +27,8 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq upx-ucl p7zip-full innoextract msitools binutils
+      - name: Second source analysis selftest
+        run: python -m tools.stoneage_pet_high_first_tw85_selector_deep --self-test
       - name: Restore previously pinned archived six-part TW85 PC carrier (no game run)
         run: |
           python -m tools.stoneage_wayi85_sixpart_acquisition \
@@ -35,6 +38,11 @@ jobs:
           python -m tools.stoneage_pet_high_first_tw85_selector_recon \
             --source-root /tmp/pet08-tw85/msi-client \
             --output /tmp/pet08-selector-derivative.json --log-json
+      - name: Verify native album 28-byte record access code and source selector thresholds
+        run: |
+          python -m tools.stoneage_pet_high_first_tw85_selector_deep \
+            --source-root /tmp/pet08-tw85/msi-client \
+            --output /tmp/pet08-selector-deep.json --log-json
       - name: Retain only derived metadata, never original binaries/disassembly
         if: always()
         uses: actions/upload-artifact@v4
@@ -43,5 +51,6 @@ jobs:
           path: |
             /tmp/pet08-tw85-custody.json
             /tmp/pet08-selector-derivative.json
+            /tmp/pet08-selector-deep.json
           if-no-files-found: warn
           retention-days: 15
