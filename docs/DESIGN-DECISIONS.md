@@ -807,3 +807,9 @@ Current Stage A work proceeds from source-qualified original maps, images/animat
 **施工顺序不变：** 先以最可靠的**原始客户端和服务端**逐模块恢复“实际存在过什么”，采用高版本交叉补全并继续独立验证；**PET → NPC → 装备 → 地图 → 任务 → 玩法**，按同一历史时间轴与各国官方 PC 版本独立归档；完成来源有界审查后，才启动跨模块原作世界史整合和后续原创世界设计。现阶段不得为了立即实现上述愿景而提前写原创主线、研发新引擎或切换PET模块。遵守[协议§16—§26](PROJECT-CONTINUITY-PROTOCOL-R1.md)、[双轴宪章](STONEAGE-GLOBAL-TWO-AXIS-RESTORATION-CONSTITUTION-R1.md)及既有版权和证据边界。
 
 **记录时状态：** 主线前次 PET-DETAIL35；PET 当前唯一活动模块，124份TW1候选档 PARTIAL，0份全字段原服资格验收；Stage A 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体百分比 UNKNOWN。此设计决议**不增加任何新史料、不改变这些状态**，原 `docs/CURRENT-STATE.md` 完整历史字节不改。
+
+## DD-037 — 宠物资源从高版本向低版本反向复原，历史发行仍由早至晚（2026-11-23）
+
+**Status: Accepted; latest explicit user execution correction.** 先从已有、可合法读取的后期经典PC客户端及其有来源标签的保存样本，**逐版本独立批量提取**名称、图像、动作、原始ID、同版属性/技能与获取数据，再沿确证的地区／运营商版本线向旧版寻找继承、改名、替换和删除。**台湾1.0不再是新宠物或后期记录的准入条件**。早期找不到对应不构成缺失错误，更不能直接证明这是后期官方实发新宠。
+
+**两种顺序独立：高→低为资源提取与兼容核查；早→晚为官方发行年表和版别演变叙述。** 高版本不一定包含所有旧版资源；跨地区高低版本号不能强行排成一条线。保存大陆5.0本地305个具名图像候选里120原头像精确早版重合、4早版头像缺而后期有图、181无合格早版同源身份桥；181条应该按高版自身原始资源继续，而不是要求台湾1.0补足181只。来源等级、实际官服开放身份、初始属性、技能、捕捉、首发日期继续分别核验。见[协议§27](PROJECT-CONTINUITY-PROTOCOL-R1.md)和[PET纠偏与执行优先序](continuity/STONEAGE-PET-HIGH-VERSION-FIRST-METHOD-CORRECTION-20261123.md)。PET锁、PC-only、历史原CURRENT及阶段边界不变。
