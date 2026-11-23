@@ -104,6 +104,10 @@ def code_probe(src_root, name, manifest, album):
         "total_xrefs_to_table_fields_0_4_24":len(fieldrefs),
         "first_raw_table_field_xrefs":[{"va":f"0x{a:x}","field_offsets":f} for i,a,f in fieldrefs[:60]],
         "original_album_index_x28_code_sites":tablepaths,
+        "native_selector_extended_source_windows": [
+            {"kind":reason, "ref_va":f"0x{a:x}", "instructions":excerpt(code,i,145,55)}
+            for i,a,reason in exact[:3]
+        ],
         "graphic_base_100250_code_sites":[{"va":f"0x{a:x}", "disassembly":excerpt(code,i,28,28)}
                                            for i,a in graphic_lit[:4]],
         "CN50_piecewise_range_constants_in_source":len(compare_threshold),
