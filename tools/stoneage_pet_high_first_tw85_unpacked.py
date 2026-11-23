@@ -91,6 +91,68 @@ def detect_28byte_album(raw: bytes, hits: list, max_tables=6):
     return tables
 
 
+
+def full_aligned_album_grid(raw: bytes):
+    """Recover the complete 28-byte slot grid, including short named runs and gaps.
+
+    Anchor the first source record on the authenticated Taiwan 1.0 original
+    28-byte row hash. The same bytes in the independently recovered later
+    carrier make the start unambiguous. End at the final valid row before 100
+    consecutive invalid rows; this bounded structural boundary is source-
+    derived rather than an assumed 550-pet count.
+    """
+    source_anchor_sha = "84702939e9e1ea6ae7dff51b2c3425faba28d549d17fcf45b520998016672d37"
+    literal = "烏力".encode("cp950")
+    starts = []
+    at = raw.find(literal)
+    while at >= 0:
+        offset = at - 4
+        if offset >= 0 and sha(raw[offset:offset + 28]) == source_anchor_sha:
+            starts.append(offset)
+        at = raw.find(literal, at + 1)
+    if len(starts) != 1:
+        return {"status": "ANCHOR_MISSING_OR_NONUNIQUE", "anchors": starts}
+    start = starts[0]
+    slots = []
+    last_named = -1
+    streak = 0
+    for index in range(900):
+        offset = start + index * 28
+        if offset + 28 > len(raw):
+            break
+        item = candidate_row(raw, offset)
+        first_i32 = struct.unpack_from("<i", raw, offset)[0]
+        if item is None:
+            streak += 1
+            slots.append({"slot": index, "file_offset": offset,
+                          "status": "UNQUALIFIED_OR_BLANK",
+                          "raw_first_i32": first_i32,
+                          "raw_trailing_u32": struct.unpack_from("<I", raw, offset + 24)[0],
+                          "raw_record_sha256": sha(raw[offset:offset + 28])})
+        else:
+            streak = 0
+            last_named = index
+            slots.append({"slot": index, "status": "NAMED_28_BYTE_ROW", **item})
+        if streak >= 100 and last_named >= 0:
+            break
+    slots = slots[:last_named + 1]
+    named = [x for x in slots if x["status"] == "NAMED_28_BYTE_ROW"]
+    absent = [x for x in slots if x["status"] != "NAMED_28_BYTE_ROW"]
+    return {
+        "status": "BOUNDED_ALIGNED_28_BYTE_SOURCE_GRID",
+        "start_file_offset": start,
+        "total_slots_to_last_named": len(slots),
+        "named_slots": len(named),
+        "unqualified_or_blank_slots": len(absent),
+        "blank_first_i32_minus_one": sum(x["raw_first_i32"] == -1 for x in absent),
+        "unqualified_nonblank_first_i32": [x["slot"] for x in absent if x["raw_first_i32"] != -1],
+        "named_original_first_i32_unique": len({x["first_i32"] for x in named}) == len(named),
+        "named_source_records": named,
+        "unqualified_source_records": absent,
+        "classification": "SAME_SOURCE_COMPILED_ALBUM_CANDIDATE_NOT_OFFICIAL_LIVE_PET_ROSTER",
+    }
+
+
 def selftest():
     name = "烏力".encode("cp950")
     row = struct.pack("<i", 17) + name + b"\0" * (20 - len(name)) + struct.pack("<I", 28001)
@@ -165,11 +227,13 @@ def main():
             if hits:
                 literals.append({"number": n, "offsets": hits})
         tables = detect_28byte_album(plain, tw)
+        grid = full_aligned_album_grid(plain)
         res.update({
             "literal_tw10_name_hits": tw,
             "literal_cn50_name_hits": cn,
             "literal_extra_spr_numbers": literals,
             "candidate_28byte_album_tables": tables,
+            "complete_aligned_album_grid": grid,
             "name_hit_count_not_pet_species": len(tw),
             "graphic_number_occurrence_not_selector": True,
         })
@@ -182,6 +246,12 @@ def main():
         "extra_graphic_literals_mentioned": len({x["number"] for f in out["files"]
                                                  for x in f.get("literal_extra_spr_numbers", [])}),
         "candidate_28byte_tables": sum(len(f.get("candidate_28byte_album_tables", [])) for f in out["files"]),
+        "aligned_album_grid_named_rows_by_file": {
+            f["name"]: f.get("complete_aligned_album_grid", {}).get("named_slots")
+            for f in out["files"]},
+        "aligned_album_grid_total_slots_by_file": {
+            f["name"]: f.get("complete_aligned_album_grid", {}).get("total_slots_to_last_named")
+            for f in out["files"]},
         "official_new_pet_identities_proven": 0,
     }
     raw = (json.dumps(out, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n").encode("utf-8")
