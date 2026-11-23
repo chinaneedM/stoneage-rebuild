@@ -3310,3 +3310,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-23｜大陆保存 5.0 宠物档案补入同期属性、取得与战斗证言
 
 2003 年新浪两页资料与 219 个保存包具名槽接上，其中 100 个此前无台湾 1.0 关联，46 个有等级 1 取得栏。马年兽、机豹与蒙奇获宠史料分别定位到当年产品、实售、玩家领取或实战，另从同包原程序证实沉默状态限制咒术菜单的客户端分支。[来源复核与接续](docs/continuity/STONEAGE-PET-HIGH-FIRST-03-CN50-2002-2003-PC-PET-EVIDENCE-20261123.md)
+
+
+## 2026-11-23｜大陆保存 5.0 宠物档案新增 41 张同期融合宠面板
+
+从 2003 年新浪三页资料读出 41 张等级 1 面板的宠名、血攻防敏和元素。均能以名字与独立的顺序关系对应保存大陆 5.0 的相簿槽，覆盖地海胆邦欧里、地肥龙奥普萨斯等。三名称组合中有 18 组在原表指向不同结果，原服精确规则仍待证。另录 5 只机豹的征文奖励渠道及蒙奇参与融合的同期分级样本。[来源报告](docs/continuity/STONEAGE-PET-HIGH-FIRST-04-CN50-FUSION-PANELS-20261123.md) · [面板机读档案](research/pets/PET-HIGH-FIRST-CN50-FUSION-PANELS-R1.json)
