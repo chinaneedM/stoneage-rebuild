@@ -30,7 +30,7 @@ def candidate_row(raw: bytes, at: int):
         return None
     field = raw[at + 4:at + 24]
     encoded_name = field.split(b"\0", 1)[0]
-    if not 4 <= len(encoded_name) <= 19:
+    if not 2 <= len(encoded_name) <= 19:
         return None
     if b"\0" in field and any(field[len(encoded_name) + 1:]):
         return None
@@ -38,7 +38,7 @@ def candidate_row(raw: bytes, at: int):
         name = encoded_name.decode("cp950")
     except UnicodeDecodeError:
         return None
-    if len(name) < 2 or not any("\u4e00" <= c <= "\u9fff" for c in name):
+    if not name or not any("\u4e00" <= c <= "\u9fff" for c in name):
         return None
     return {"file_offset": at, "first_i32": original_i,
             "name_cp950": name, "trailing_u32": portrait,
