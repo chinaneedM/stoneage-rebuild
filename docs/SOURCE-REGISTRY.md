@@ -8932,3 +8932,9 @@ R14包351231B/SHA7684267ab528d13ceecb23a25632543ae839225607cbda702a32736e4c4d366
 - [2003-06-23石器魔法牌同期运营文案](https://news.17173.com/content/2003-6-23/n340_256477.html)逐列佩露夏、蒙奇、帖拉所伊朵、邦诺斯娜、卡伊霍恩、鲁拉奇斯随机兑奖六名、宣传概率100%，不是六份服务端实发纪录；实物卡面/卡销售数字非宠数。
 - [5/21超级来吉卡介绍](https://news.17173.com/content/2003-5-21/n857_773384.html)30任务卡不等于30新宠；[7/10首轮](https://news.17173.com/content/2003-7-10/n824_740898.html)青龙／白虎／蒙奇／帖拉所伊朵各自卡片条件；[7/17规则变更](https://news.17173.com/content/2003-7-17/n978_894203.html)“最后一组服务器领取”是运营宣传尚无原生执行验证；[8/05第二轮](https://news.17173.com/content/2003-8-5/n642_558632.html)青龙400/蒙奇600是规划名额，白虎不在本轮，不能合并首轮奖励。
 - [2003-03-18台服GNN粉红人龙](https://gnn.gamer.com.tw/detail.php?sn=8569)仅搜索索引、原页403，“邦諾斯娜”与大陆「邦诺斯娜」候选不等于同服ID。认证TW1客户端原相簿「帖拉所伊朵」100374、 「卡伊霍恩」100377完整原SPR SHA旧PET39/PET46可重用，但不推2003CN同图和实发。详见 docs/continuity/STONEAGE-PET65-CN2003-WAEI-PETS-SOURCE-AUDIT-20261116.md 与 research/recovered/STONEAGE-PET65-CN2003-WAEI-PET-PROMO-R1.json。新2003客户端原字节0、实服获奖确证0、总体物种数UNKNOWN；不研究收费二手盘。
+
+## PET-DETAIL34｜早期 PC 玩家目录与同期论坛评选
+
+- https://www.moon-soft.com/program/bbs/readelite131452.htm — 网易精华区在月光软件站的镜像，整理日显示 2001-03-28，当前 GB2312 响应 16,654 字节。续 O92 旧摘要线索，和现存 17173 捕捉目录分开著录但按相关来源审读。
+- https://games.sina.com.cn/zhqu/sta/article/2003-05-31/10169.shtml — 新浪游戏同期论坛贝鲁伊卡评选结果，2003-05-31，当前响应 48,670 字节。提供 12 条玩家送评的统计数据和后续核实条件。可取得的页面未附原截图或核实结论。
+- [逐源响应哈希和来源边界](../research/pets/PET-DETAIL-EVIDENCE34-EARLY-PC-PLAYER-CATALOGUE-AND-GROWTH-R1.json)。

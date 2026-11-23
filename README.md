@@ -3296,3 +3296,7 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-23｜PET-DETAIL33：四只宠物的八张跨版本原头像已实读验证
 
 [四宠对照与来源](docs/continuity/STONEAGE-PET-DETAIL33-FOUR-PC-PORTRAIT-PIXEL-PAIRS-20261123.md) · [逐块偏移、SHA 与像素索引](research/pets/PET-DETAIL-EVIDENCE33-FOUR-PC-PORTRAIT-PIXEL-PAIRS-R1.json) · [逐宠入口](docs/pets/INDEX.md)。洛克斯、阿伊薩、格洛格魯、朵洛將恩各有两张 96 × 104 的原图。重新取回大陆保存 5.0 完整 ADRN，发现碰撞派生表只保留同别名的最后一行，原表实际保留 126066—126069 和 126222—126225 两套。八条完整 ADRN 与混合 2.5 及台湾保存 8.5／华义补丁对应；实际从已认证混合 2.5 原 REAL 取得八个精确匹配的 RD 块，两套解码器逐像素相同，四组各有图像差异。重扫 124 个别名：台湾 1.0 有 120 条原头像映射，四处仍缺；大陆保存 5.0 与混合 2.5 对这 124 个别名的完整记录和顺序一致。私人对照可查，公开仓库只保留证据和复核代码。**后续**：早期官方 PC 同版本宠物主档、初生、技能与捕捉。默认头像的原生选择仍待直接证据。
+
+## 2026-11-23｜PET-DETAIL34：2001 宠物目录逐行核对及 2003 成长表复算
+
+重新取得此前只见摘要的网易精华区完整镜像。它和 17173 旧表各列 124 条，同位同字 122 条，43 条共享坐标，4 条出生宠与 9 条 JSS 奖宠说法同位，按相关来源处理。网易有 102 行元素、20 行技能文字，已将金布伊等六档的来源考据补齐。另复算新浪贝鲁伊卡未转生评选的 12 条统计，发现第 3 名的总成长刊值与三项相加差 0.0360。早期官方同部署字段仍待证。后续优先原服宠物主档、技能、出生与捕捉数据。[来源报告](docs/continuity/STONEAGE-PET-DETAIL34-EARLY-PC-PLAYER-CATALOGUE-AND-GROWTH-20261123.md) · [机读证据](research/pets/PET-DETAIL-EVIDENCE34-EARLY-PC-PLAYER-CATALOGUE-AND-GROWTH-R1.json)
