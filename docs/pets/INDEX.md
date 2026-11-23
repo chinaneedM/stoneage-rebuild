@@ -2,6 +2,10 @@
 
 > **重要：这是一份原客户端的“具名图形候选清单”，不是官服实发物种统计；不同版本不可累加。** 原姓名保持原繁体字形，大陆5.0列是第三方保存的 PC 本地编译异名候选，不代表同服ID。完整图像仅在私人观察文件中，不进公开Git。
 
+## PET-DETAIL36｜保存大陆5.0原编译305个具名相簿→同CAB原RD源图索引（2026-11-23）
+
+[逐只305条原编译名／逻辑别名／物理RD块SHA/96×104](../../research/pets/PET-DETAIL-EVIDENCE36-CN50-ALBUM-ADRN-RD-PROJECTION-R1.json) · [七只年兽/商业宠等重点及撞号风险](../continuity/STONEAGE-PET-DETAIL36-CN50-305-NAMES-NATIVE-ADRN-RD-BRIDGE-20261123.md)。**305/305**原具名行有同保存CAB的ADRN末条图像投影；七只重点原像物理号已准确配到原RD记录。这是**高版本可追溯的源图像索引，不是同版官方Pet ID、运行时默认选图或活服物种统计**。四只老版缺头像的别名已有两张真实原图，末条不能消掉前条；所有早期官方完整字段仍0。
+
 ## PET-DETAIL35｜2002—2003经典PC同名历史证据与保存5.0原相簿七项桥接（2026-11-23）
 
 同期玩家四年兽、发行文献机豹「艾迪希洛」和「蒙奇」、7.0宣传「菲奇亚」分别与保存CN5本地原编译相簿名精确相符（**7条原行SHA已核**）。全部仍缺原生姓名→SPR、同构建Pet ID及原服实发证据；7.0菲奇亚在5.0保存名表出现需要核档本源。[源报告](../continuity/STONEAGE-PET-DETAIL35-2002-2003-PC-ORIGINAL-NAMES-CN50-ALBUM-BRIDGE-20261123.md) · [7条机读桥接](../../research/pets/PET-DETAIL-EVIDENCE35-CN2002-2003-NAME-TO-CN50-ALBUM-BRIDGE-R1.json)。
