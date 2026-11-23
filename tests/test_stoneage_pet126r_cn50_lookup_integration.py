@@ -1,5 +1,6 @@
 import json
 import unittest
+from tools.stoneage_pet_high_first_retention import TARGET as RETENTION_REPORT
 from tools.stoneage_pet_high_first_cn50_fusion import TARGET as FUSION_REPORT, verify as verify_fusion
 from tools.stoneage_pet_high_first_cn50_sina import REPORT, element_claim, make_report
 from tools.stoneage_pet16_lookup import (
@@ -97,6 +98,27 @@ class PET126RLookup(unittest.TestCase):
         self.assertIsNone(variant_name["sina_2003_may_fusion_editorial_entry"])
         [parent] = lookup(self.c, "艾迪希洛", CN50_COMPILED_ALBUM, details=True)
         self.assertIsNone(parent["sina_2003_fusion_panel"])
+
+    def test_later_preserved_assets_keep_original_source_qualifications(self):
+        report = json.loads(RETENTION_REPORT.read_bytes())
+        fusion = report["metrics"]["fusion_slots"]
+        self.assertEqual((fusion["exact_sprite_groups"], fusion["exact_rd_frame_positions"]), (94, 33568))
+        self.assertEqual(fusion["selected_portraits_matched_by_official_patch_alias"], 45)
+        self.assertEqual(report["metrics"]["tw85_additional_distinct_sprite_group_numbers"], 550)
+        self.assertEqual(report["metrics"]["tw85_additional_physical_sprite_groups"], 554)
+        [pet] = lookup(self.c, "邦欧里", CN50_COMPILED_ALBUM, details=True)
+        preserved = pet["tw85_preserved_art_comparison"]
+        self.assertEqual([r["sprite_group"] for r in preserved["routes"]], [101340, 101481])
+        self.assertEqual(preserved["cn50_selected_physical_bitmap"], 300851)
+        self.assertFalse(pet["official_live_release_confirmed"])
+        [alias] = [row for row in lookup(self.c, "洛克斯", CN50_COMPILED_ALBUM, details=True)
+                   if row["name_as_written"] == "洛克斯"]
+        options = alias["tw85_preserved_art_comparison"]["official_patch_alias_matches"]
+        self.assertEqual([(r["physical_bitmap"], r["same_cn50_selected_rd"]) for r in options],
+                         [(126066, False), (126222, True)])
+        [raw] = lookup(self.c, "玛恩摩洛斯", CN50_COMPILED_ALBUM, details=True)
+        [option] = raw["tw85_preserved_art_comparison"]["official_patch_alias_matches"]
+        self.assertEqual(option["qualification"], "RAW_FLAG0_ADRN_SIZE_AUTHORITATIVE")
 
     def test_tw10_true_graphics_not_overwritten_or_merged(self):
         self.assertNotIn(CN50_COMPILED_ALBUM,GRAPHIC_DATASETS)
