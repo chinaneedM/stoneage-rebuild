@@ -1,5 +1,6 @@
 import json
 import unittest
+from tools.stoneage_pet_high_first_cn50_fusion import TARGET as FUSION_REPORT, verify as verify_fusion
 from tools.stoneage_pet_high_first_cn50_sina import REPORT, element_claim, make_report
 from tools.stoneage_pet16_lookup import (
     CN50_COMPILED_ALBUM, CLIENT_ALBUM, GRAPHIC_DATASETS, load_catalog, lookup, graphic_trace
@@ -71,6 +72,25 @@ class PET126RLookup(unittest.TestCase):
         self.assertEqual(element_claim("火2 风8"), {"fire": 2, "wind": 8})
         with self.assertRaises(ValueError):
             element_claim("火3风8")
+
+    def test_fusion_panels_support_observed_values_only(self):
+        report = json.loads(FUSION_REPORT.read_bytes())
+        verify_fusion(report)
+        self.assertEqual(len(report["records"]), 41)
+        self.assertEqual(report["summary"]["exact_ordered_triplets_linked_to_multiple_results"], 18)
+        self.assertEqual(report["summary"]["ordered_triplet_lines"], 533)
+        self.assertEqual([x["linked_printed_numbers"] for x in report["conflict_examples"]],
+                         [[262, 274], [272, 274]])
+        [pet] = lookup(self.c, "邦欧里", CN50_COMPILED_ALBUM, details=True)
+        panel = pet["sina_2003_fusion_panel"]
+        self.assertEqual(panel["displayed_name"], "邦歐里")
+        self.assertEqual(panel["printed_number"], 289)
+        self.assertEqual(panel["image"]["observed_stats"]["max_hp"], 51)
+        self.assertEqual(panel["image"]["observed_elements"], {"earth": 8, "water": 2, "fire": 0, "wind": 0})
+        self.assertEqual(pet["source_ordinal"], 345)
+        self.assertFalse(pet["official_live_release_confirmed"])
+        [parent] = lookup(self.c, "艾迪希洛", CN50_COMPILED_ALBUM, details=True)
+        self.assertIsNone(parent["sina_2003_fusion_panel"])
 
     def test_tw10_true_graphics_not_overwritten_or_merged(self):
         self.assertNotIn(CN50_COMPILED_ALBUM,GRAPHIC_DATASETS)
