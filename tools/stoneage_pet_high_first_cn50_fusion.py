@@ -11,7 +11,7 @@ from pathlib import Path
 import re
 
 from tools.stoneage_pet_high_first_cn50_catalog import git_blob
-from tools.stoneage_pet_high_first_cn50_sina import compiled_catalogues
+from tools.stoneage_pet_high_first_cn50_sina import compiled_catalogues, element_claim
 from tools.stoneage_stoneage5_cab_probe import parse_cab_files, parse_cab_header
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -37,6 +37,12 @@ PET_INPUTS = ("机豹", "蒙奇", "猴子")
 EXAMPLES = (("黑暴", "猴子", "黑暴"), ("机豹", "火蛇", "克克洛斯"))
 MSI_JOIN = ROOT / "research/recovered/STONEAGE-STONEAGE5-REAL-CAB-MSI-PATH-JOIN-R1.json"
 MSI_GIT_BLOB = "b2532248355b35cd9d4ed7d15d3f59aeeb9beadf"
+MAY_PAGE = {
+    "url": "https://games.sina.com.cn/zhqu/sta/article/2003-05-15/5848.shtml?from=wap",
+    "article_date": "2003-05-15",
+    "bytes": 70101,
+    "sha256": "b60650b407fc8c8ad46658663d4662c792db4ff0ff16a574e9c2e8cd6cd5c0e4",
+}
 CAB_SHA = "d5dbf5a664211c2cee5fa92645a9e00290c1a4023a4b52ebf46c9402c2bcdfde"
 
 
@@ -123,6 +129,40 @@ def page_rows(directory):
             yield page, int(no), img_url, lines
 
 
+def may_catalogue(directory, july_rows):
+    raw = (directory / "may-fusion.html").read_bytes()
+    if (len(raw), hex_hash(raw)) != (MAY_PAGE["bytes"], MAY_PAGE["sha256"]):
+        raise ValueError("May editorial catalogue response changed")
+    source = raw.decode("gb18030")
+    start = source.index("融合方法", source.index("宠物名称", source.index("编号")))
+    table = source[start:source.index("</table>", start)]
+    compiled, native = compiled_catalogues()
+    july = {row["printed_number"]: row for row in july_rows}
+    may_rows = []
+    for row in re.findall(r"<tr\b[^>]*>(.*?)</tr\s*>", table, re.I | re.S):
+        cells = re.findall(r"<td\b[^>]*>(.*?)</td\s*>", row, re.I | re.S)
+        num, name, elements, recipes = (
+            "".join(unescape(re.sub(r"<[^>]*>", "", cell)).split()) for cell in cells
+        )
+        number = int(num)
+        observed = element_claim(elements)
+        slot = native[name]["ordinal"] if name in native else None
+        if slot is not None and compiled[slot]["source_raw_first_i32"] != number - 1:
+            raise ValueError(f"May catalogue name and number disagree at {number}")
+        image = july.get(number)
+        may_rows.append({
+            "printed_number": number, "name_as_printed": name,
+            "reported_elements": observed, "formula_cell_has_text": bool(recipes),
+            "cn50_album_ordinal_by_exact_name": slot,
+            "july_panel_same_printed_number": image is not None,
+            "july_elements_match_by_printed_number": (
+                all(observed.get(key, 0) == value for key, value in image["image"]["observed_elements"].items())
+                if image else None
+            ),
+        })
+    return {**MAY_PAGE, "rows": may_rows}
+
+
 def album_links():
     compiled, native = compiled_catalogues()
     for number, display_name in zip(NUMBERS, PANEL_NAMES, strict=True):
@@ -206,6 +246,7 @@ def replay(directory, cab):
             for n, (size, pin, time) in PAGES.items()
         },
         "preserved_client_cabinet": cab_inventory(cab),
+        "may_editorial_catalogue": may_catalogue(directory, rows),
         "image_serving_build_or_operator_verified": False,
         "printed_number_is_official_pet_id": False,
         "observations_are_official_template_or_growth_parameters": False,
@@ -242,6 +283,14 @@ def verify(report):
             or any(im["element_bar_pixels"][key] != min(im["observed_elements"][key] * 8, 79) for key in ELEMENTS)
         ):
             raise ValueError("invalid level-one panel observation")
+    may = report["may_editorial_catalogue"]["rows"]
+    if (
+        [row["printed_number"] for row in may] != list(range(252, 297))
+        or [row["printed_number"] for row in may if row["cn50_album_ordinal_by_exact_name"] is None] != [255]
+        or [row["printed_number"] for row in may if not row["july_panel_same_printed_number"]] != [256, 257, 258, 259]
+        or sum(row["july_elements_match_by_printed_number"] is True for row in may) != 41
+    ):
+        raise ValueError("May text and July panel cross-check changed")
     if report["schema"] != "stoneage.pet.cn50_sina_2003_fusion_panels.r1":
         raise ValueError("unexpected panel evidence schema")
     if (

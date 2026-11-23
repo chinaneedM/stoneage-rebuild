@@ -96,6 +96,17 @@ def load_catalog(path=PATH):
             }
             for row in fusion["records"]
         }
+        may_fusion = fusion["may_editorial_catalogue"]
+        may_fusion_by_ordinal = {
+            row["cn50_album_ordinal_by_exact_name"]: {
+                "source_url": may_fusion["url"],
+                "article_date": may_fusion["article_date"],
+                "reported_elements": row["reported_elements"],
+                "formula_cell_has_text": row["formula_cell_has_text"],
+            }
+            for row in may_fusion["rows"]
+            if row["cn50_album_ordinal_by_exact_name"] is not None
+        }
         cn50_named = []
         for raw in cn50["records"]:
             if raw["label_as_compiled_GB18030"] is None:
@@ -128,6 +139,7 @@ def load_catalog(path=PATH):
                     route["portrait_lookup_after_ordered_load"],
                 "sina_2003_editorial_same_name_rows": sina_by_ordinal.get(raw["ordinal"], []),
                 "cn30_2002_year_card_same_name_announcement": year_card_by_ordinal.get(raw["ordinal"]),
+                "sina_2003_may_fusion_editorial_entry": may_fusion_by_ordinal.get(raw["ordinal"]),
                 "sina_2003_fusion_panel": fusion_by_ordinal.get(raw["ordinal"]),
                 "source_evidence": "SAME_CAB_STATIC_NATIVE_SPR_TO_COMPILED_ALBUM_SLOT",
                 "official_live_release_confirmed": False,

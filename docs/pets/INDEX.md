@@ -4,7 +4,7 @@
 
 ## PET-HIGH-FIRST-04｜41 张同期融合宠等级 1 面板（2026-11-23）
 
-[41 份面板与保存 5.0 相簿索引](../../research/pets/PET-HIGH-FIRST-CN50-FUSION-PANELS-R1.json) · [机豹与蒙奇、原图和组合复核](../continuity/STONEAGE-PET-HIGH-FIRST-04-CN50-FUSION-PANELS-20261123.md)。实读 41 张等级 1 面板的原名、血攻防敏与元素，均能对回保存大陆 5.0 原相簿名。18 组文字完全相同的输入组合在同期表里指向多个编号。画面部署、官方宠物号、原服出生区间和世界首发仍待证。
+[41 份面板与保存 5.0 相簿索引](../../research/pets/PET-HIGH-FIRST-CN50-FUSION-PANELS-R1.json) · [机豹与蒙奇、原图和组合复核](../continuity/STONEAGE-PET-HIGH-FIRST-04-CN50-FUSION-PANELS-20261123.md)。实读 41 张等级 1 面板的原名、血攻防敏与元素，均能对回保存大陆 5.0 原相簿名。18 组文字完全相同的输入组合在同期表里指向多个编号。5 月文字表补了四项缺图记录的元素。画面部署、官方宠物号、原服出生区间和世界首发仍待证。
 
 ## PET-HIGH-FIRST-03｜2002—2003 大陆 PC 宠物的目录、领取与使用证据（2026-11-23）
 

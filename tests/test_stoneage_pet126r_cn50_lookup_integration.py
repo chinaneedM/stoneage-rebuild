@@ -89,6 +89,12 @@ class PET126RLookup(unittest.TestCase):
         self.assertEqual(panel["image"]["observed_elements"], {"earth": 8, "water": 2, "fire": 0, "wind": 0})
         self.assertEqual(pet["source_ordinal"], 345)
         self.assertFalse(pet["official_live_release_confirmed"])
+        [gap] = lookup(self.c, "史奈克特", CN50_COMPILED_ALBUM, details=True)
+        self.assertIsNone(gap["sina_2003_fusion_panel"])
+        self.assertEqual(gap["sina_2003_may_fusion_editorial_entry"]["reported_elements"], {"earth": 7, "wind": 3})
+        [variant_name] = lookup(self.c, "贝库尔", CN50_COMPILED_ALBUM, details=True)
+        self.assertIsNotNone(variant_name["sina_2003_fusion_panel"])
+        self.assertIsNone(variant_name["sina_2003_may_fusion_editorial_entry"])
         [parent] = lookup(self.c, "艾迪希洛", CN50_COMPILED_ALBUM, details=True)
         self.assertIsNone(parent["sina_2003_fusion_panel"])
 
