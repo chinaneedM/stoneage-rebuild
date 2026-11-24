@@ -449,3 +449,8 @@
 ## 2026-11-24｜PET-HIGH-FIRST-23 2009日韩取得档案
 
 [8个新具名取得档案](JP-KR-2009-ACQUISITION-DOSSIERS.md) · [机读记录](../../research/pets/PET-HIGH-FIRST-23-2009-ACQUISITION-DOSSIERS-R1.json) · [续接](../continuity/STONEAGE-PET-HIGH-FIRST-23-2009-ACQUISITION-DOSSIERS-20261124.md)。与PET22的29条去重；黑炎单样本、5条旧名复证、4个仅外观新增名目及3组未知原名奖励分开。PET唯一。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-24 大陆2010五鲸两雷龙
+
+[逐宠档案](CN-2010-WHALE-DRAGON-MERMAID.md) · [机读数据](../../research/pets/PET-HIGH-FIRST-24-CN2010-NAMED-PANEL-CROSSWALK-R1.json) · [接续](../continuity/STONEAGE-PET-HIGH-FIRST-24-CN2010-NAMED-PANEL-CROSSWALK-20261124.md)。7面板、5完整四围样本、2部分样本、1人鱼通称；4名TW85原图鉴同名，保留跨程序冲突与独立版本条件区间。无新2010原客户端，PET唯一。

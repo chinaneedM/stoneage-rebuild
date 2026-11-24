@@ -1,0 +1,1103 @@
+{
+  "schema": "stoneage.pet.high_first_24.cn2010_named_panel_crosswalk.r1",
+  "source_head": "a5b696d9a0adeac298f55aba07c251975c71cd43",
+  "source_pins_git_blob": {
+    "research/recovered/STONEAGE-PET83-YEAR2010-CN85-ORIGINAL-CLIENT-MERMAID-WHALES-OTHER-REGION-BOUNDARIES-R1.json": "c4d2f1cc92799f6b23722ff9efd134d735ac7bd3",
+    "research/recovered/STONEAGE-PET84-YEAR2010-DRAGONS-FIVE-REGION-BOUNDED-AUDIT-R1.json": "e0230d57155d5914ab89eeb4dc24f3f2044e0157",
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-TW85-ORIGINAL-PE-ALBUM-GRID-R1.json": "7fb8eceba23dea6dc90ebb18e404d6e837210eaf",
+    "research/pets/PET-HIGH-FIRST-TW85-NATIVE-SPR-ALBUM-R1.json": "e7cff0d53585964c9d755ef1fbd2bc5531d883d6",
+    "research/pets/PET-HIGH-FIRST-CN50-NATIVE-SPR-ALBUM-R1.json": "98fea71c051dfa887b91154a8a72d17c67b57744",
+    "research/pets/PET-HIGH-FIRST-16-TW75-CONDITIONAL-BIRTH-GROWTH-R1.json": "8cb864a78f1ff2b3c89ae1739ac485968d104c10",
+    "research/pets/PET-HIGH-FIRST-17-COMPARISON-SKILL-ENCOUNTER-R1.json": "63af501ab483770c5c58cb2d62152ab8923dcc2b"
+  },
+  "scope": "2010 mainland Shengsi original classic PC, exact name matches to separate preserved carriers; no claim of original 2010 installer",
+  "rows": [
+    {
+      "name": "人鱼",
+      "names": [
+        "人鱼",
+        "人魚"
+      ],
+      "kind": "TEST_EVENT_REWARD_LABEL_NOT_EXACT_SPECIES_NAME",
+      "source": "https://game.zol.com.cn/204/2043781.html",
+      "date": "2010-11-13",
+      "acquisition": {
+        "event": "人鱼躲猫猫",
+        "window": [
+          "2010-11-13",
+          "2010-11-17"
+        ],
+        "daily_start": "15:00"
+      },
+      "sample": null,
+      "source_candidates": {
+        "claimed_tw75_master": [],
+        "tw85_program_grid": [],
+        "tw85_extra_spr_groups": [],
+        "cn50_native_spr": [],
+        "conditional_tw75_ranges": [],
+        "later_comparison_encounters": []
+      },
+      "cn2010_native_pet_id": null,
+      "cn2010_original_sprite_id": null,
+      "cn2010_birth_stat_range": null,
+      "cn2010_growth": null,
+      "cn2010_skills": null,
+      "actual_live_release_verified": false,
+      "actual_player_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "name": "夏克",
+      "names": [
+        "夏克"
+      ],
+      "kind": "OPERATOR_PROMOTIONAL_NAMED_PET",
+      "source": "https://games.sina.com.cn/o/n/2010-12-22/1429462290.shtml",
+      "date": "2010-12-22",
+      "element_label": "水",
+      "sample": {
+        "url": "https://i3.sinaimg.cn/gm/2010/1222/U4511P115DT20101222142806.jpg",
+        "association": "EXPLICIT_SOURCE_CAPTION_AND_STATUS_PANEL",
+        "observed_web_render": true,
+        "raw_response_sha256": null,
+        "level": 1,
+        "exp": 0,
+        "next": 2,
+        "hp_attack_defense_agility": [
+          74,
+          16,
+          9,
+          11
+        ],
+        "loyalty": 100,
+        "element_bars_nonzero": [
+          "water"
+        ],
+        "element_numeric_values": null,
+        "appearance": "blue bipedal whale holding a weapon",
+        "scope": "INDIVIDUAL_PROMOTIONAL_PANEL_NOT_SPECIES_BIRTH_RANGE_OR_CERTIFIED_SERVER_RUNTIME"
+      },
+      "acquisition": null,
+      "source_candidates": {
+        "claimed_tw75_master": [],
+        "tw85_program_grid": [
+          {
+            "program": "sa.exe",
+            "slot": 549,
+            "original_first_i32": 492,
+            "original_name_cp950": "夏克",
+            "source_portrait_alias": 28646,
+            "unpacked_file_offset": 811644,
+            "original_row_sha256": "31cbbefc3f87a739d009ccb04a95e32bbf5cd85ef12e281cb77f8a3d6d9bfdb8"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 549,
+            "original_first_i32": 492,
+            "original_name_cp950": "夏克",
+            "source_portrait_alias": 28646,
+            "unpacked_file_offset": 722940,
+            "original_row_sha256": "31cbbefc3f87a739d009ccb04a95e32bbf5cd85ef12e281cb77f8a3d6d9bfdb8"
+          }
+        ],
+        "tw85_extra_spr_groups": [
+          {
+            "graphic": 101974,
+            "occurrences": [
+              {
+                "source_occurrence_index": 1660,
+                "original_spr_segment_sha256": "9e4fdfc7f5e83b97ee8253e1dad8f452b3ab70103501e5173d8e80480ead8b42",
+                "original_animation_header_count": 104
+              }
+            ],
+            "conflicting_names": true,
+            "all_program_routes": {
+              "sa.exe": "夏克",
+              "sb.exe": "洛狄雷諾",
+              "sc.exe": null,
+              "sd.exe": null
+            }
+          },
+          {
+            "graphic": 101999,
+            "occurrences": [
+              {
+                "source_occurrence_index": 1687,
+                "original_spr_segment_sha256": "b7d190ea1bf4147c340e0c70b37a22d11d3de334d714c1c73baee63f1753eac0",
+                "original_animation_header_count": 56
+              }
+            ],
+            "conflicting_names": false,
+            "all_program_routes": {
+              "sa.exe": "夏克",
+              "sb.exe": "夏克",
+              "sc.exe": null,
+              "sd.exe": null
+            }
+          }
+        ],
+        "cn50_native_spr": [],
+        "conditional_tw75_ranges": [],
+        "later_comparison_encounters": []
+      },
+      "cn2010_native_pet_id": null,
+      "cn2010_original_sprite_id": null,
+      "cn2010_birth_stat_range": null,
+      "cn2010_growth": null,
+      "cn2010_skills": null,
+      "actual_live_release_verified": false,
+      "actual_player_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "name": "夏莫",
+      "names": [
+        "夏莫",
+        "下莫"
+      ],
+      "kind": "OPERATOR_PROMOTIONAL_NAMED_PET",
+      "source": "https://games.sina.com.cn/o/n/2010-12-22/1429462290.shtml",
+      "date": "2010-12-22",
+      "element_label": "风",
+      "sample": {
+        "url": "https://i0.sinaimg.cn/gm/2010/1222/U4511P115DT20101222142816.jpg",
+        "association": "EXPLICIT_SOURCE_CAPTION_AND_STATUS_PANEL",
+        "observed_web_render": true,
+        "raw_response_sha256": null,
+        "level": 1,
+        "exp": 0,
+        "next": 2,
+        "hp_attack_defense_agility": [
+          67,
+          17,
+          8,
+          12
+        ],
+        "loyalty": 100,
+        "element_bars_nonzero": [
+          "fire",
+          "wind"
+        ],
+        "element_numeric_values": null,
+        "appearance": "yellow bipedal whale holding a weapon",
+        "scope": "INDIVIDUAL_PROMOTIONAL_PANEL_NOT_SPECIES_BIRTH_RANGE_OR_CERTIFIED_SERVER_RUNTIME"
+      },
+      "acquisition": null,
+      "source_candidates": {
+        "claimed_tw75_master": [],
+        "tw85_program_grid": [],
+        "tw85_extra_spr_groups": [],
+        "cn50_native_spr": [],
+        "conditional_tw75_ranges": [],
+        "later_comparison_encounters": []
+      },
+      "cn2010_native_pet_id": null,
+      "cn2010_original_sprite_id": null,
+      "cn2010_birth_stat_range": null,
+      "cn2010_growth": null,
+      "cn2010_skills": null,
+      "actual_live_release_verified": false,
+      "actual_player_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "name": "夏波",
+      "names": [
+        "夏波"
+      ],
+      "kind": "OPERATOR_PROMOTIONAL_NAMED_PET",
+      "source": "https://games.sina.com.cn/o/n/2010-12-22/1429462290.shtml",
+      "date": "2010-12-22",
+      "element_label": "地",
+      "sample": {
+        "url": "https://i0.sinaimg.cn/gm/2010/1222/U4511P115DT20101222142825.jpg",
+        "association": "EXPLICIT_SOURCE_CAPTION_AND_STATUS_PANEL",
+        "observed_web_render": true,
+        "raw_response_sha256": null,
+        "level": 1,
+        "exp": 0,
+        "next": 2,
+        "hp_attack_defense_agility": [
+          65,
+          16,
+          9,
+          12
+        ],
+        "loyalty": 100,
+        "element_bars_nonzero": [
+          "earth",
+          "wind"
+        ],
+        "element_numeric_values": null,
+        "appearance": "green bipedal whale holding a weapon",
+        "scope": "INDIVIDUAL_PROMOTIONAL_PANEL_NOT_SPECIES_BIRTH_RANGE_OR_CERTIFIED_SERVER_RUNTIME"
+      },
+      "acquisition": null,
+      "source_candidates": {
+        "claimed_tw75_master": [],
+        "tw85_program_grid": [],
+        "tw85_extra_spr_groups": [],
+        "cn50_native_spr": [],
+        "conditional_tw75_ranges": [],
+        "later_comparison_encounters": []
+      },
+      "cn2010_native_pet_id": null,
+      "cn2010_original_sprite_id": null,
+      "cn2010_birth_stat_range": null,
+      "cn2010_growth": null,
+      "cn2010_skills": null,
+      "actual_live_release_verified": false,
+      "actual_player_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "name": "夏基",
+      "names": [
+        "夏基"
+      ],
+      "kind": "OPERATOR_PROMOTIONAL_NAMED_PET",
+      "source": "https://games.sina.com.cn/o/n/2010-12-22/1429462290.shtml",
+      "date": "2010-12-22",
+      "element_label": "火",
+      "sample": {
+        "url": "https://i1.sinaimg.cn/gm/2010/1222/U4511P115DT20101222142839.jpg",
+        "association": "EXPLICIT_SOURCE_CAPTION_AND_STATUS_PANEL",
+        "observed_web_render": true,
+        "raw_response_sha256": null,
+        "level": 1,
+        "exp": 0,
+        "next": 2,
+        "hp_attack_defense_agility": [
+          63,
+          17,
+          10,
+          10
+        ],
+        "loyalty": 100,
+        "element_bars_nonzero": [
+          "water",
+          "fire"
+        ],
+        "element_numeric_values": null,
+        "appearance": "red bipedal whale holding a weapon",
+        "scope": "INDIVIDUAL_PROMOTIONAL_PANEL_NOT_SPECIES_BIRTH_RANGE_OR_CERTIFIED_SERVER_RUNTIME"
+      },
+      "acquisition": null,
+      "source_candidates": {
+        "claimed_tw75_master": [],
+        "tw85_program_grid": [
+          {
+            "program": "sa.exe",
+            "slot": 550,
+            "original_first_i32": 493,
+            "original_name_cp950": "夏基",
+            "source_portrait_alias": 28647,
+            "unpacked_file_offset": 811672,
+            "original_row_sha256": "efdb3329ba8a0622266e32b9e257dd3b0410add6b7bf03cdf862e293e63b0488"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 550,
+            "original_first_i32": 493,
+            "original_name_cp950": "夏基",
+            "source_portrait_alias": 28647,
+            "unpacked_file_offset": 722968,
+            "original_row_sha256": "efdb3329ba8a0622266e32b9e257dd3b0410add6b7bf03cdf862e293e63b0488"
+          }
+        ],
+        "tw85_extra_spr_groups": [
+          {
+            "graphic": 101975,
+            "occurrences": [
+              {
+                "source_occurrence_index": 1661,
+                "original_spr_segment_sha256": "224c23b4f8aa25012adb9230b6a07492a388926785d7c74ca6cb0eb73ebf1a1c",
+                "original_animation_header_count": 104
+              }
+            ],
+            "conflicting_names": true,
+            "all_program_routes": {
+              "sa.exe": "夏基",
+              "sb.exe": "雷諾吉洛",
+              "sc.exe": null,
+              "sd.exe": null
+            }
+          },
+          {
+            "graphic": 102000,
+            "occurrences": [
+              {
+                "source_occurrence_index": 1688,
+                "original_spr_segment_sha256": "ef1b8bcf34a8f8bfba2f09c67d1dbee47dc2307b2d2111421df44b5507b98fc5",
+                "original_animation_header_count": 56
+              }
+            ],
+            "conflicting_names": false,
+            "all_program_routes": {
+              "sa.exe": "夏基",
+              "sb.exe": "夏基",
+              "sc.exe": null,
+              "sd.exe": null
+            }
+          }
+        ],
+        "cn50_native_spr": [],
+        "conditional_tw75_ranges": [],
+        "later_comparison_encounters": []
+      },
+      "cn2010_native_pet_id": null,
+      "cn2010_original_sprite_id": null,
+      "cn2010_birth_stat_range": null,
+      "cn2010_growth": null,
+      "cn2010_skills": null,
+      "actual_live_release_verified": false,
+      "actual_player_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "name": "夏乐地",
+      "names": [
+        "夏乐地",
+        "夏樂地"
+      ],
+      "kind": "OPERATOR_PROMOTIONAL_NAMED_PET",
+      "source": "https://games.sina.com.cn/o/n/2010-12-22/1429462290.shtml",
+      "date": "2010-12-22",
+      "element_label": "地水",
+      "sample": {
+        "url": "https://i2.sinaimg.cn/gm/2010/1222/U4511P115DT20101222142849.jpg",
+        "association": "EXPLICIT_SOURCE_CAPTION_AND_STATUS_PANEL",
+        "observed_web_render": true,
+        "raw_response_sha256": null,
+        "level": 1,
+        "exp": 0,
+        "next": 2,
+        "hp_attack_defense_agility": [
+          68,
+          15,
+          12,
+          11
+        ],
+        "loyalty": 100,
+        "element_bars_nonzero": [
+          "earth",
+          "water"
+        ],
+        "element_numeric_values": null,
+        "appearance": "dark gray bipedal whale holding a weapon",
+        "scope": "INDIVIDUAL_PROMOTIONAL_PANEL_NOT_SPECIES_BIRTH_RANGE_OR_CERTIFIED_SERVER_RUNTIME"
+      },
+      "acquisition": null,
+      "source_candidates": {
+        "claimed_tw75_master": [],
+        "tw85_program_grid": [],
+        "tw85_extra_spr_groups": [],
+        "cn50_native_spr": [],
+        "conditional_tw75_ranges": [],
+        "later_comparison_encounters": []
+      },
+      "cn2010_native_pet_id": null,
+      "cn2010_original_sprite_id": null,
+      "cn2010_birth_stat_range": null,
+      "cn2010_growth": null,
+      "cn2010_skills": null,
+      "actual_live_release_verified": false,
+      "actual_player_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "name": "邦恩多斯",
+      "names": [
+        "邦恩多斯"
+      ],
+      "kind": "OPERATOR_NAMED_PET_ACQUISITION_DESCRIPTION",
+      "source": "https://games.sina.com.cn/o/n/2010-12-24/1552463215.shtml",
+      "date": "2010-12-24",
+      "element_label": "风火",
+      "element_ratio_reported": null,
+      "acquisition": {
+        "kind": "ENCOUNTER_LOCATION_CLAIM",
+        "location": "50年前的波拉岛",
+        "coordinates": null,
+        "capture_verified": false
+      },
+      "riding_claim": "RIDEABLE_DESCRIBED",
+      "sample": {
+        "url": "https://i0.sinaimg.cn/gm/2010/1224/U4511P115DT20101224155205.jpg",
+        "association": "EXPLICIT_SOURCE_CAPTION_AND_STATUS_PANEL",
+        "observed_web_render": true,
+        "raw_response_sha256": null,
+        "level": 1,
+        "exp": 0,
+        "next": 2,
+        "hp_attack_defense_agility": [
+          62,
+          10,
+          11,
+          null
+        ],
+        "loyalty": null,
+        "element_bars_nonzero": [
+          "fire",
+          "wind"
+        ],
+        "element_numeric_values": null,
+        "appearance": "yellow green sauropod",
+        "scope": "INDIVIDUAL_PROMOTIONAL_PANEL_NOT_SPECIES_BIRTH_RANGE_OR_CERTIFIED_SERVER_RUNTIME"
+      },
+      "source_candidates": {
+        "claimed_tw75_master": [
+          {
+            "base": [
+              37,
+              30,
+              27,
+              10
+            ],
+            "client_join_status": "TW10_SAME_GRAPHIC_NAME",
+            "comparison_matching_physical_lines": [
+              207
+            ],
+            "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+            "elements": [
+              0,
+              0,
+              20,
+              80
+            ],
+            "graphic": 100396,
+            "initnum": 28,
+            "lvup_literal": "4.50",
+            "name": "邦恩多斯",
+            "official_live_pet_release_verified": false,
+            "pet_flag": 1,
+            "physical_line": 217,
+            "row_sha256": "3081e66fe7a905998171fb8eb510c91216c892c13b0131792a73a038ec9a7693",
+            "skill_slot_capacity": 4,
+            "skill_slots": [
+              1,
+              2,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "template_id": 255,
+            "tw10_names_at_graphic": [
+              "邦恩多斯"
+            ],
+            "tw85_exact_name_album_slots": [
+              [
+                "sa.exe",
+                146
+              ],
+              [
+                "sb.exe",
+                146
+              ],
+              [
+                "sc.exe",
+                146
+              ],
+              [
+                "sd.exe",
+                146
+              ]
+            ],
+            "tw85_matching_programs": [],
+            "tw85_native_graphic_names": {}
+          }
+        ],
+        "tw85_program_grid": [
+          {
+            "program": "sa.exe",
+            "slot": 146,
+            "original_first_i32": 164,
+            "original_name_cp950": "邦恩多斯",
+            "source_portrait_alias": 28255,
+            "unpacked_file_offset": 800360,
+            "original_row_sha256": "346f58fd6c73dda4472a8053bb0fd36578f9c78f6503024dc42dbd74a8cc3222"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 146,
+            "original_first_i32": 164,
+            "original_name_cp950": "邦恩多斯",
+            "source_portrait_alias": 28255,
+            "unpacked_file_offset": 711656,
+            "original_row_sha256": "346f58fd6c73dda4472a8053bb0fd36578f9c78f6503024dc42dbd74a8cc3222"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 146,
+            "original_first_i32": 164,
+            "original_name_cp950": "邦恩多斯",
+            "source_portrait_alias": 28255,
+            "unpacked_file_offset": 682280,
+            "original_row_sha256": "346f58fd6c73dda4472a8053bb0fd36578f9c78f6503024dc42dbd74a8cc3222"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 146,
+            "original_first_i32": 164,
+            "original_name_cp950": "邦恩多斯",
+            "source_portrait_alias": 28255,
+            "unpacked_file_offset": 791896,
+            "original_row_sha256": "346f58fd6c73dda4472a8053bb0fd36578f9c78f6503024dc42dbd74a8cc3222"
+          }
+        ],
+        "tw85_extra_spr_groups": [],
+        "cn50_native_spr": [
+          {
+            "compiled_name": "邦恩多斯",
+            "earlier_tw10_relation": "EARLY_TW10_PORTRAIT_FULL_RD_SHA_EXACT",
+            "exe_row_sha256": "cc8a3f4baf6df376736b514c3728e3ef951119cd623dcf78eaa51d849fd6dc76",
+            "formula_100250_plus_ordinal_agrees": true,
+            "ordinal": 146,
+            "portrait_alias": 28255,
+            "portrait_bitmap_numbers_in_file_order": [
+              7335
+            ],
+            "portrait_lookup_after_ordered_load": 7335,
+            "portrait_lookup_rd_sha256": "7698c04f46e6629eeaa23e8e812e37bf4c62f3111009f18e20fe35d8ec6ffd14",
+            "source_record_id": "OBS-CN50-SLOT-0146",
+            "spr_groups": [
+              {
+                "animation_header_count": 56,
+                "frame_record_count": 824,
+                "held_pet_path_also_maps_to_slot": true,
+                "sha256": "c53a4d78b271438aa8c590c511af42f84d37170ba1268177bd0c8194730942b3",
+                "spr_group": 100396
+              },
+              {
+                "animation_header_count": 104,
+                "frame_record_count": 424,
+                "held_pet_path_also_maps_to_slot": true,
+                "sha256": "e6f81e2cc0d6c8d59461bde7db8a98b928b8e7590f64d1f82f47af06df02380a",
+                "spr_group": 100785
+              }
+            ]
+          }
+        ],
+        "conditional_tw75_ranges": [
+          {
+            "template_id": 255,
+            "source_row_sha256": "3081e66fe7a905998171fb8eb510c91216c892c13b0131792a73a038ec9a7693",
+            "rank": 0,
+            "level1_internal_marginal_ranges": [
+              [
+                980,
+                1372
+              ],
+              [
+                784,
+                1176
+              ],
+              [
+                700,
+                1092
+              ],
+              [
+                224,
+                616
+              ]
+            ],
+            "level1_unmodified_work_panel_marginal_ranges": [
+              [
+                59,
+                75
+              ],
+              [
+                9,
+                13
+              ],
+              [
+                9,
+                13
+              ],
+              [
+                2,
+                6
+              ]
+            ],
+            "per_level_internal_increment_marginal_ranges": [
+              [
+                157,
+                245
+              ],
+              [
+                126,
+                210
+              ],
+              [
+                112,
+                195
+              ],
+              [
+                36,
+                110
+              ]
+            ]
+          }
+        ],
+        "later_comparison_encounters": [
+          {
+            "template_id": 255,
+            "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+            "comparison_instance_count": 6,
+            "instance_petflag1_count": 5,
+            "instance_petflag1_lv1_count": 2,
+            "positive_reference_count": 26,
+            "comparison_floor_ids": [
+              500,
+              5501,
+              5502,
+              5503,
+              5504,
+              5505,
+              5506,
+              5507,
+              5508,
+              5510
+            ],
+            "lv1_positive_reference_count": 1,
+            "first_route": {
+              "floor": 500,
+              "rect": [
+                270,
+                192,
+                241,
+                460
+              ],
+              "encounter_index": 638,
+              "encounter_row_ordinal": 600,
+              "group_id": 761,
+              "enemy_id": 1468,
+              "level": [
+                80,
+                90
+              ],
+              "group_item_gates": [
+                -1,
+                -1
+              ],
+              "event_fields": [
+                -1,
+                -1,
+                -1
+              ],
+              "weights": [
+                1,
+                30
+              ],
+              "encounter_rate_fields": [
+                1,
+                6
+              ]
+            },
+            "first_lv1_route": {
+              "floor": 500,
+              "rect": [
+                614,
+                409,
+                481,
+                621
+              ],
+              "encounter_index": 652,
+              "encounter_row_ordinal": 613,
+              "group_id": 775,
+              "enemy_id": 1451,
+              "level": [
+                1,
+                1
+              ],
+              "group_item_gates": [
+                -1,
+                -1
+              ],
+              "event_fields": [
+                -1,
+                -1,
+                -1
+              ],
+              "weights": [
+                2,
+                2
+              ],
+              "encounter_rate_fields": [
+                1,
+                3
+              ]
+            }
+          }
+        ]
+      },
+      "cn2010_native_pet_id": null,
+      "cn2010_original_sprite_id": null,
+      "cn2010_birth_stat_range": null,
+      "cn2010_growth": null,
+      "cn2010_skills": null,
+      "actual_live_release_verified": false,
+      "actual_player_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "name": "斯天多斯",
+      "names": [
+        "斯天多斯"
+      ],
+      "kind": "OPERATOR_NAMED_PET_ACQUISITION_DESCRIPTION",
+      "source": "https://games.sina.com.cn/o/n/2010-12-24/1552463215.shtml",
+      "date": "2010-12-24",
+      "element_label": "地水",
+      "element_ratio_reported": [
+        5,
+        5,
+        0,
+        0
+      ],
+      "acquisition": {
+        "kind": "QUEST_REWARD_CLAIM",
+        "quest": "英雄岛后传",
+        "actual_grant_verified": false
+      },
+      "riding_claim": "FEMALE_CHARACTER_ONLY",
+      "sample": {
+        "url": "https://i2.sinaimg.cn/gm/2010/1224/U4511P115DT20101224155216.jpg",
+        "association": "EXPLICIT_SOURCE_CAPTION_AND_STATUS_PANEL",
+        "observed_web_render": true,
+        "raw_response_sha256": null,
+        "level": 1,
+        "exp": 0,
+        "next": 2,
+        "hp_attack_defense_agility": [
+          66,
+          10,
+          12,
+          null
+        ],
+        "loyalty": null,
+        "element_bars_nonzero": [
+          "earth",
+          "water"
+        ],
+        "element_numeric_values": null,
+        "appearance": "green blue sauropod",
+        "scope": "INDIVIDUAL_PROMOTIONAL_PANEL_NOT_SPECIES_BIRTH_RANGE_OR_CERTIFIED_SERVER_RUNTIME"
+      },
+      "source_candidates": {
+        "claimed_tw75_master": [
+          {
+            "base": [
+              40,
+              25,
+              35,
+              5
+            ],
+            "client_join_status": "TW10_SAME_GRAPHIC_NAME",
+            "comparison_matching_physical_lines": [
+              206
+            ],
+            "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+            "elements": [
+              50,
+              50,
+              0,
+              0
+            ],
+            "graphic": 100354,
+            "initnum": 28,
+            "lvup_literal": "4.50",
+            "name": "斯天多斯",
+            "official_live_pet_release_verified": false,
+            "pet_flag": 1,
+            "physical_line": 216,
+            "row_sha256": "1f7560675fd6862960c37e6139853dbb8b491d4bade570018d01dc707a55cfb1",
+            "skill_slot_capacity": 4,
+            "skill_slots": [
+              1,
+              2,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "template_id": 254,
+            "tw10_names_at_graphic": [
+              "斯天多斯"
+            ],
+            "tw85_exact_name_album_slots": [
+              [
+                "sa.exe",
+                104
+              ],
+              [
+                "sb.exe",
+                104
+              ],
+              [
+                "sc.exe",
+                104
+              ],
+              [
+                "sd.exe",
+                104
+              ]
+            ],
+            "tw85_matching_programs": [],
+            "tw85_native_graphic_names": {}
+          }
+        ],
+        "tw85_program_grid": [
+          {
+            "program": "sa.exe",
+            "slot": 104,
+            "original_first_i32": 163,
+            "original_name_cp950": "斯天多斯",
+            "source_portrait_alias": 28254,
+            "unpacked_file_offset": 799184,
+            "original_row_sha256": "c4fc3d24b7fc1f10735170197bcb5e8034d6e2c6e9da041c71e518e0bfef7643"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 104,
+            "original_first_i32": 163,
+            "original_name_cp950": "斯天多斯",
+            "source_portrait_alias": 28254,
+            "unpacked_file_offset": 710480,
+            "original_row_sha256": "c4fc3d24b7fc1f10735170197bcb5e8034d6e2c6e9da041c71e518e0bfef7643"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 104,
+            "original_first_i32": 163,
+            "original_name_cp950": "斯天多斯",
+            "source_portrait_alias": 28254,
+            "unpacked_file_offset": 681104,
+            "original_row_sha256": "c4fc3d24b7fc1f10735170197bcb5e8034d6e2c6e9da041c71e518e0bfef7643"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 104,
+            "original_first_i32": 163,
+            "original_name_cp950": "斯天多斯",
+            "source_portrait_alias": 28254,
+            "unpacked_file_offset": 790720,
+            "original_row_sha256": "c4fc3d24b7fc1f10735170197bcb5e8034d6e2c6e9da041c71e518e0bfef7643"
+          }
+        ],
+        "tw85_extra_spr_groups": [],
+        "cn50_native_spr": [
+          {
+            "compiled_name": "斯天多斯",
+            "earlier_tw10_relation": "EARLY_TW10_PORTRAIT_FULL_RD_SHA_EXACT",
+            "exe_row_sha256": "3a2cd16753a81c20852ec1b1dabc7ca92430eb9179135fb340647aa73a9f1d87",
+            "formula_100250_plus_ordinal_agrees": true,
+            "ordinal": 104,
+            "portrait_alias": 28254,
+            "portrait_bitmap_numbers_in_file_order": [
+              7334
+            ],
+            "portrait_lookup_after_ordered_load": 7334,
+            "portrait_lookup_rd_sha256": "053772b6e267074b02f08c5e48f041a46b819068e1738fbfe61339c75b01a158",
+            "source_record_id": "OBS-CN50-SLOT-0104",
+            "spr_groups": [
+              {
+                "animation_header_count": 56,
+                "frame_record_count": 824,
+                "held_pet_path_also_maps_to_slot": true,
+                "sha256": "2d2f5076afd20caa4b1f0a819ec628198f78d3ca0cb07d858e6d9fa65e8bee20",
+                "spr_group": 100354
+              },
+              {
+                "animation_header_count": 104,
+                "frame_record_count": 352,
+                "held_pet_path_also_maps_to_slot": true,
+                "sha256": "cb1243d7fb5782f2a7bd18433b2232fbe9eb8dc2c8a3a8845e7d536dc4cdc192",
+                "spr_group": 100743
+              }
+            ]
+          }
+        ],
+        "conditional_tw75_ranges": [
+          {
+            "template_id": 254,
+            "source_row_sha256": "1f7560675fd6862960c37e6139853dbb8b491d4bade570018d01dc707a55cfb1",
+            "rank": 0,
+            "level1_internal_marginal_ranges": [
+              [
+                1064,
+                1456
+              ],
+              [
+                644,
+                1036
+              ],
+              [
+                924,
+                1316
+              ],
+              [
+                84,
+                476
+              ]
+            ],
+            "level1_unmodified_work_panel_marginal_ranges": [
+              [
+                61,
+                78
+              ],
+              [
+                8,
+                12
+              ],
+              [
+                11,
+                15
+              ],
+              [
+                0,
+                4
+              ]
+            ],
+            "per_level_internal_increment_marginal_ranges": [
+              [
+                171,
+                260
+              ],
+              [
+                103,
+                185
+              ],
+              [
+                148,
+                235
+              ],
+              [
+                13,
+                85
+              ]
+            ]
+          }
+        ],
+        "later_comparison_encounters": [
+          {
+            "template_id": 254,
+            "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+            "comparison_instance_count": 5,
+            "instance_petflag1_count": 5,
+            "instance_petflag1_lv1_count": 2,
+            "positive_reference_count": 24,
+            "comparison_floor_ids": [
+              500,
+              5501,
+              5502,
+              5503,
+              5504,
+              5505,
+              5506,
+              5507,
+              5508,
+              5510
+            ],
+            "lv1_positive_reference_count": 0,
+            "first_route": {
+              "floor": 500,
+              "rect": [
+                270,
+                192,
+                241,
+                460
+              ],
+              "encounter_index": 638,
+              "encounter_row_ordinal": 600,
+              "group_id": 761,
+              "enemy_id": 1467,
+              "level": [
+                80,
+                90
+              ],
+              "group_item_gates": [
+                -1,
+                -1
+              ],
+              "event_fields": [
+                -1,
+                -1,
+                -1
+              ],
+              "weights": [
+                1,
+                30
+              ],
+              "encounter_rate_fields": [
+                1,
+                6
+              ]
+            },
+            "first_lv1_route": null
+          }
+        ]
+      },
+      "cn2010_native_pet_id": null,
+      "cn2010_original_sprite_id": null,
+      "cn2010_birth_stat_range": null,
+      "cn2010_growth": null,
+      "cn2010_skills": null,
+      "actual_live_release_verified": false,
+      "actual_player_grant_verified": false,
+      "first_release_date": null
+    }
+  ],
+  "installer_notice": {
+    "id": "CN2010-1111-85-FIRST-TEST-INSTALLER-MD5",
+    "region": "CN",
+    "date": "2010-11-11",
+    "url": "https://news.17173.com/content/2010-11-11/20101111103609500,1.shtml",
+    "also_same_operator_release": "https://games.sina.com.cn/o/n/2010-11-11/1518451208.shtml",
+    "kind": "CONTEMPORANEOUS_OPERATOR_ORIGIN_DOWNLOAD_RELEASE_NOTICE_NOT_ACQUIRED_BINARY",
+    "original_pc_one": true,
+    "version_label": "StoneAge 8.5 first external pressure-test",
+    "stated_size": "1.19G",
+    "stated_md5": "cd0ac0c0bc26bcfefdd08957d8d86e7c",
+    "md5_observed_in_original_bytes": false,
+    "installer_original_bytes_acquired": 0,
+    "legacy_download_url": "https://download.17173.com/10939/",
+    "legacy_download_page_current_result": "TIMEOUT",
+    "different_later_2012_download_md5": "2a1743e07e4f97f1b2e337048918da6a",
+    "different_later_2012_version": "V1.200.012"
+  },
+  "later_2011_25_cross_version_attestation": {
+    "url": "https://games.sina.com.cn/o/n/2011-09-07/1606528944.shtml",
+    "date": "2011-09-07",
+    "names": [
+      "布洛多斯",
+      "布拉奇多斯",
+      "布尔帖斯",
+      "斯天多斯",
+      "邦恩多斯"
+    ],
+    "ride_training_location": "玛丽娜丝庄园",
+    "loyalty_required": 100,
+    "scope": "2011 mainland 2.5 promotional report; not backfilled into 2010 8.5"
+  },
+  "summary": {
+    "records": 8,
+    "named_pets": 7,
+    "test_reward_generic_label": 1,
+    "web_rendered_status_panels": 7,
+    "complete_four_stat_samples": 5,
+    "tw85_exact_name_grid_matches": 4,
+    "tw85_extra_spr_named_matches": 2,
+    "claimed_tw75_master_matches": 2,
+    "cn50_exact_name_matches": 2,
+    "original_cn2010_client_bytes": 0,
+    "raw_image_bytes_new": 0
+  },
+  "official_species_count": null,
+  "original_assets_published": false
+}
