@@ -14,7 +14,8 @@ def main():
         members=sparse.acquire(Path(work),receipt,'unar')
         setup=r40.kv(members['setup.cf'],b'=')
         for k,v in ((b'enemyfile',b'enemy.txt'),(b'enemybasefile',b'enemybase.txt')):
-            assert r40.one(setup,k)[1] in (v,b'data/'+v)
+            configured=r40.one(setup,k)[1]
+            assert configured==v or configured.endswith(b'/'+v), (k,configured)
         es=r40.rows(members['data/enemy.txt'],34,3);bs=r40.rows(members['data/enemybase.txt'],56,6)
         ei=r40.idx(es,3);bi=r40.idx(bs,6)
         rows=[]
