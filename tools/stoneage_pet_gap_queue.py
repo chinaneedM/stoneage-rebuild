@@ -25,7 +25,7 @@ def queue(d, entries):
     for e in entries:
         s, ptr = e["source"], e["pointer"]
         x = resolve(d, s, ptr)
-        if s not in CORE | LATE | {"hf21", "hf22", "hf23", "hf34"}:
+        if s not in CORE | LATE | {"hf21", "hf22", "hf23", "hf34", "hf35"}:
             continue
         # Only independently named acquisition dossiers for Japan/Korea.
         # Appearance-only, generic rewards, and re-attestation rows stay in R32.
@@ -73,6 +73,26 @@ def queue(d, entries):
             evidence = {"name":"CLAIMED_MASTER_ROW", "client_join_status":x["client_join_status"], "comparison_status":x["comparison_status"]}
             fields.update(official_native_id="CLAIMED_TEMPLATE_ID_ONLY", birth_stats="CONDITIONAL_MODEL_RANGE", initial_ranges="CONDITIONAL_MODEL_RANGE", elements="CLAIMED_MASTER_VALUES", growth="CONDITIONAL_MODEL_INCREMENT", innate_skills="CLAIMED_MASTER_SKILL_SLOTS", capture="LATER_COMPARISON_FLOOR_REFERENCE" if detail["comparison_floor_ids"] else "NOT_INDEXED_IN_COMPARISON")
             priority = "P1_AUTHENTICATE_CLAIMED_MASTER_DEPLOYMENT"
+        elif s == "hf35":
+            if x["acquisition"]["kind"] == "DIALOGUE_ONLY_NO_REWARD_ATTRIBUTION":
+                continue
+            evidence = {"name":"PERIOD_NAMED_FIELD_WITNESS", "source_ids":x["source_ids"],
+                        "family":x["family"], "element_bar_observation":x["element_label"],
+                        "period_skill":x["skill"], "period_acquisition":x["acquisition"]}
+            if x["element_label"] is not None:
+                fields["elements"] = "PERIOD_VISIBLE_BAR_NOT_NUMERIC_NATIVE_MASTER"
+            if x["skill"]["label"] is not None:
+                fields["innate_skills"] = "PERIOD_SKILL_CLAIM_NOT_INNATE_VERIFIED"
+            if x["acquisition"]["kind"] not in {"PREVIEW_ACQUISITION_UNSPECIFIED"}:
+                fields["award"] = "PERIOD_ACQUISITION_CLAIM_NOT_ACTUAL_GRANT"
+            if x.get("panel"):
+                evidence["status_sample"] = x["panel"]
+                if x["panel"]["level"] == 1:
+                    fields["birth_stats"] = "PERIOD_INDIVIDUAL_LV1_PANEL_NOT_RANGE"
+            if x.get("growth_seal"):
+                evidence["growth_seal"] = x["growth_seal"]
+                fields["growth"] = "PERIOD_LEVEL_SEAL_CLAIM_NOT_FORMULA"
+            priority = "P1_FREE_LATER_ORIGINAL_CLIENT"
         elif s == "hf34":
             evidence = {"name":"PERIOD_NAMED_FIELD_WITNESS",
                         "source_ids":x["source_ids"], "family":x["family"],
@@ -139,7 +159,14 @@ def verify(d, entries, rows):
     assert all(x["official_same_deployment_verified"] is False and x["official_birth_range"] is None and x["first_release_date"] is None for x in d["hf34"]["rows"])
     panel = next(x["panel"] for x in d["hf34"]["rows"] if x["name"]=="蜜雪莉雅")
     assert [panel[k] for k in ("max_hp","attack","defense","agility")]==[69,15,7,14]
-    assert len(rows)==3002, len(rows)
+    assert n["hf35"]==13
+    hf35=d["hf35"]["rows"]
+    assert len(hf35)==14 and sum(x["acquisition"]["kind"]=="DIALOGUE_ONLY_NO_REWARD_ATTRIBUTION" for x in hf35)==1
+    assert all(x["element_ratio"] is None and x["official_birth_range"] is None and x["official_same_deployment_verified"] is False for x in hf35)
+    assert sum(x.get("panel",{}).get("level")==1 for x in hf35)==3
+    assert sum(x.get("panel",{}).get("level")==140 for x in hf35)==1
+    assert all(x["acquisition"]["individual_reward_mapping"] is None for x in hf35 if x["family"]=="蛇年兽公告具名组")
+    assert len(rows)==3015, len(rows)
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
