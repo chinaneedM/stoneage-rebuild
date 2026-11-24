@@ -91,6 +91,14 @@ def build(d):
         return res
     def link(source,pointer,qualification):
         return dict(source=source,pointer=pointer,qualification=qualification)
+    cnrows=d["cn50"]["records"]; cnid=by_id(cnrows,"ordinal")
+    sina_by=collections.defaultdict(list)
+    for i,x in enumerate(d["sina2003"]["rows"]):
+        if x["cn50_album_ordinal_by_name_only"] in cnid:sina_by[x["cn50_album_ordinal_by_name_only"]].append(i)
+    cn50_by_spr = collections.defaultdict(list)
+    for i, row in enumerate(cnrows):
+        for group in row["spr_groups"]:
+            cn50_by_spr[(group["spr_group"], group["sha256"])].append(i)
     # Link by source-bound dossier ID and verify the original name/graphic
     # before comparing values. The later links do not establish species identity.
     album_by_graphic = by_id(d["tw10_album"]["records"], "graphic_number")
@@ -118,16 +126,22 @@ def build(d):
         if starter_index is not None:
             starter = d["hf18"]["starters"][starter_index]
             links.append(link("hf18", ["starters", starter_index], "PERIOD_STARTER_NAME_ONLY"))
+        reference = tw10_field_reference(witness, later, starter)
+        reference["mainland_2003_catalogue_rows"] = []
+        for cn_index in cn50_by_spr.get((graphic, album["spr_original_segment_sha256"]), ()):
+            links.append(link("cn50", ["records", cn_index], "EXACT_SPR_ASSET_NOT_SERVER_IDENTITY"))
+            for position in sina_by[cnrows[cn_index]["ordinal"]]:
+                row = d["sina2003"]["rows"][position]
+                links.append(link("sina2003", ["rows", position], "CN50_NAME_REFERENCE_VIA_SHARED_SPR_ASSET"))
+                reference["mainland_2003_catalogue_rows"].append(dict(
+                    page=row["page"], printed_number=row["printed_number"],
+                    reported_elements=row["reported_elements"], rebirth_variant=row["rebirth_variant_label"],
+                ))
         add("tw10", ["records", i], [name], "ORIGINAL_TW10_CLIENT_NAME_ASSET", [pet_id, graphic], links,
             dict(pet_id=pet_id, graphic=graphic, original_portrait_rd=x["original_portrait_rd"],
                  source_motion_sequences=x["source_motion_sequences"], dossier_path=x["dossier_path"],
-                 formal_missing_fields=x["formal_missing_fields"],
-                 field_reference=tw10_field_reference(witness, later, starter)))
-    cnrows=d["cn50"]["records"]; cnid=by_id(cnrows,"ordinal")
+                 formal_missing_fields=x["formal_missing_fields"], field_reference=reference))
     artid=by_id(d["cn50_art"]["records"],"cn50_album_ordinal")
-    sina_by=collections.defaultdict(list)
-    for i,x in enumerate(d["sina2003"]["rows"]):
-        if x["cn50_album_ordinal_by_name_only"] in cnid:sina_by[x["cn50_album_ordinal_by_name_only"]].append(i)
     fusion_by=collections.defaultdict(list)
     for i,x in enumerate(d["fusion2003"]["records"]):fusion_by[x["cn50_album_ordinal"]].append(i)
     for i,x in enumerate(cnrows):
@@ -213,6 +227,21 @@ def verify(m,d,entries):
     assert tw10_refs["PET-000115"]["missing_web_elements"] == [107]  # 黑烏力, blank
     assert tw10_refs["PET-000017"]["period_starter_witness"]["differs_from_all_valid_museum_ratios"] is True
     assert sum(r["period_starter_witness"] is not None for r in tw10_refs.values()) == 4
+    assert {r["printed_number"] for r in tw10_refs["PET-000004"]["mainland_2003_catalogue_rows"]} == {4, 8}
+    assert sum(bool(r["mainland_2003_catalogue_rows"]) for r in tw10_refs.values()) == 119
+    assert sum(len(r["mainland_2003_catalogue_rows"]) for r in tw10_refs.values()) == 121
+    assert all(
+        sum(l["source"] == "cn50" for l in entry["linked_records"]) == 1
+        for entry in entries if entry["source"] == "tw10"
+    )
+    for reference in tw10_refs.values():
+        if reference["element_status"] == "DISJOINT_RATIOS":
+            later_ratios = {c["elements"] for c in reference["later_candidates"]}
+            assert any(
+                row["reported_elements"] and tuple(
+                    row["reported_elements"].get(key, 0) * 10 for key in ("earth", "water", "fire", "wind")
+                ) in later_ratios for row in reference["mainland_2003_catalogue_rows"]
+            )
     assert all(x["role"]!="PET_NAME_CANDIDATE" for x in search(entries,"馬年獸",exact=True,source="hf30_31"))
     assert len([x for x in entries if x["source"]=="hf30_31" and x["detail"].get("year")==2026 and x["role"]=="ITEM"])==7
     hf36=d["hf36"]["rows"]
