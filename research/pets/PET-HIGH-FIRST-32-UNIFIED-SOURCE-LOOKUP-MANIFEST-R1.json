@@ -200,6 +200,12 @@
       "git_blob": "177bb226ad17310a6f135d75ef2658cc7c2874ba",
       "expected_array": "rows",
       "expected_rows": 5
+    },
+    "hf40": {
+      "path": "research/pets/PET-HIGH-FIRST-40-ACQUISITION-CROSSWALK-R1.json",
+      "git_blob": "2597ed4c8c20cdd4e292caaf29f51f8050c512a0",
+      "expected_array": "rows",
+      "expected_rows": 5
     }
   },
   "expected": {
@@ -260,5 +266,10 @@
     "source_head": "6ee13be05c21fdad4121c56a123434523dad025f",
     "source_tree": "af11d6db875bdca8779c666f78a7aef35c9a9dab",
     "scope": "Five existing dossier positions; identical community Git blobs, archived mixed25 derived rows and period player evidence; four rendered Japanese status panels, raw JPEG hashes not obtained"
+  },
+  "supplement_hf40": {
+    "source_head": "7ce31b7e70e4746492616fb367d6cf819e98ebe2",
+    "source_tree": "f9bbb021c422c54b48994efdda11f1d158eb9a39",
+    "scope": "Five existing source-scoped pet dossiers; 14 exact mixed25 members and fixed later public PC data/quest code crosswalk."
   }
 }

@@ -8981,3 +8981,8 @@ R14包351231B/SHA7684267ab528d13ceecb23a25632543ae839225607cbda702a32736e4c4d366
 
 - 固定社区PC主表两仓实际同Git blob `a19a508975e3a982fada323861b35b2edab79349`，不可当独立双证。保存混合2.5仅复用已验派生记录。同期2001-09-11推荐全文、2002-12-17机械文明攻略、2003目录及2003-09-24转宠成长汇编，分别保留来源资格。[逐宠来源、原链接与机读回执](continuity/STONEAGE-PET-HIGH-FIRST-39-FIVE-PC-FIELD-CASES-20261124.md)。
 - 日本玩家图鉴40/41/42/115四张19级原图经网页图像渲染目视读取，原JPEG字节及散列未取得；色条仅为目视配比，服务器构建未知。原图不入Git。日本15无原图入口。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-40 五宠同载体取得链
+
+- 保存混合2.5 RAR 184段HTTP206实际回读12,013,836字节，14件完整成员分别核对既有SHA-256与RAR CRC。源Actions 45413714992，派生JSON经独立ZIP散列及原JSON Git blob复验；不宣称整包重新取得或早期官服部署。后期PC固定源 gavinlinasd/StoneAge `1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56` 独立回读Git原件、验证配置链，五张地图44字节头有别、两层数据完全相同。详见[逐宠及来源证据](continuity/STONEAGE-PET-HIGH-FIRST-40-PC-ACQUISITION-20261124.md)。

@@ -107,6 +107,7 @@ def build(d):
     starters = by_id(d["hf18"]["starters"], "name")
     field_cases = by_id(d["hf38"]["rows"], "pet_id")
     field_cases39 = by_id(d["hf39"]["rows"], "pet_id")
+    field_cases40 = by_id(d["hf40"]["rows"], "pet_id")
     for i,x in enumerate(d["tw10"]["records"]):
         pet_id, graphic, name = x["pet_id"], x["client_graphic"], x["client_name_original"]
         album_index = album_by_graphic[graphic]
@@ -133,6 +134,11 @@ def build(d):
             case = d["hf39"]["rows"][case_index]
             assert (case["tw10_graphic"], case["original_client_name"]) == (graphic, name)
             links.append(link("hf39", ["rows", case_index], "PC_SOURCE_CASE_NOT_SAME_DEPLOYMENT"))
+        if pet_id in field_cases40:
+            case_index = field_cases40[pet_id]
+            case = d["hf40"]["rows"][case_index]
+            assert (case["tw10_graphic"], case["original_client_name"]) == (graphic, name)
+            links.append(link("hf40", ["rows", case_index], "PC_SOURCE_ACQUISITION_NOT_SAME_DEPLOYMENT"))
         starter_index = starters.get(name)
         starter = None
         if starter_index is not None:
@@ -288,6 +294,14 @@ def verify(m,d,entries):
     assert panels39["PET-000116"]["visually_estimated_elements_earth_water_fire_wind"] == [5, 5, 0, 0]
     assert [panels39["PET-000124"][k] for k in ("hp_max", "attack", "defense", "speed")] == [199, 41, 30, 35]
     assert all(r["period_growth_20030924"] is None or r["period_growth_20030924"]["section"] == "转宠" for r in cases39)
+    cases40 = d["hf40"]["rows"]
+    assert {r["pet_id"] for r in cases40} == {"PET-000014", "PET-000116", "PET-000117", "PET-000118", "PET-000124"}
+    assert sum(l["source"] == "hf40" for e in entries if e["source"] == "tw10" for l in e["linked_records"]) == 5
+    assert sum(r["archive_positive_reference_count"] for r in cases40) == 70
+    assert sum(r["archive_lv1_reference_count"] for r in cases40) == 6
+    assert [r["period_floor_lv1_static_match"] for r in cases40] == [None, False, True, True, None]
+    assert cases40[-1]["quest_reward"]["instance_id"] == 484 and cases40[-1]["quest_reward"]["template_id"] == 315
+    assert all(r["official_tw10_native_stats"] is None and r["official_tw10_skillset"] is None and not r["official_tw10_acquisition_verified"] and r["official_first_release_date"] is None for r in cases40)
     wulibulu, weibo, beiluobaoli = cases
     panel = wulibulu["japan_album_panel"]
     assert panel["level"] == 19 and panel["visible_element_bar_center_widths_px"] == [0, 0, 56, 24]

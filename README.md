@@ -3390,3 +3390,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-24｜PET-HIGH-FIRST-39 五只经典PC宠物的属性与取得来源隔离
 
 [最新接续记录](docs/continuity/STONEAGE-PET-HIGH-FIRST-39-FIVE-PC-FIELD-CASES-20261124.md) · [统一查询](docs/pets/UNIFIED-PC-PET-SOURCE-LOOKUP.md)。五只现有档案比对两份实际上同Git blob的社区主表、保存混合档派生数据及同期玩家文献；非宠模板与普通宠物分开，转宠成长不当原始成长，正式同部署仍待证。NEXT PET-HIGH-FIRST-40；历史CURRENT不改，PET唯一。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-40 五宠同载体取得配置
+
+[最新续接记录](docs/continuity/STONEAGE-PET-HIGH-FIRST-40-PC-ACQUISITION-20261124.md)。实际取回14份保存混合2.5原成员，70条双宠物标记正权重链、6条含1级；阿伊萨和格洛格鲁洞窟链、邦达霍恩484→315任务链；五张地图两层原数据跨载体一致。洛克斯旧攻略冲突保留，正式官服部署未验。NEXT PET-HIGH-FIRST-41，PET唯一、历史CURRENT不改。
