@@ -1,0 +1,973 @@
+{
+  "schema": "stoneage.pet_high_first_39.five_pc_field_cases.r1",
+  "source_head": "6ee13be05c21fdad4121c56a123434523dad025f",
+  "source_tree": "af11d6db875bdca8779c666f78a7aef35c9a9dab",
+  "scope": "Five unresolved TW10 attribute conflicts; later tables are source-local, not official same-deployment evidence",
+  "pinned_inputs": [
+    {
+      "path": "research/pets/PET-DETAIL-EVIDENCE01-WAEI2001-WITNESSES-R1.json",
+      "git_blob": "6e8e4b620b9184c1de0a695a8bba256732075303"
+    },
+    {
+      "path": "research/pets/PET-DETAIL-EVIDENCE08-TW10-MIXED25-124-GRAPHIC-NUMERIC-SERVER-TEMPLATE-REFERENCE-R1.json",
+      "git_blob": "15c34c61a5fb8ddae2553447d7e926c65b448e8e"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JP-OFFICIAL-PET-CATALOG-R1.json",
+      "git_blob": "85e99d6fd6a7ca27eeaa3987510a6bcc1d701708"
+    },
+    {
+      "path": "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json",
+      "git_blob": "fec03646d7c7e4e287f9347c306119cc626d6abf"
+    },
+    {
+      "path": "research/pets/PET-DETAIL-EVIDENCE09-2016-PC-BIRTH-GROWTH-124-LV1-REFERENCE-R1.json",
+      "git_blob": "92993638e39a6bbaadd68022fcec3883f8e6944d"
+    }
+  ],
+  "community_sources": [
+    {
+      "repo": "gavinlinasd/StoneAge",
+      "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "path": "gmsv/data/enemybase1.txt",
+      "git_blob": "a19a508975e3a982fada323861b35b2edab79349"
+    },
+    {
+      "repo": "pimpcapital/longzoro-sa",
+      "commit": "57b14e2bb373ba851c14db28a239273e4a8831bb",
+      "path": "gmsv/data/enemybase1.txt",
+      "git_blob": "a19a508975e3a982fada323861b35b2edab79349"
+    }
+  ],
+  "community_source_independence": "IDENTICAL_GIT_BLOB_AND_RETURNED_TEXT_NOT_INDEPENDENT",
+  "mixed25_source_read_status": "REUSED_PINNED_DERIVED_PROJECTION_NOT_FRESH_RAR_BYTES",
+  "web_sources": {
+    "capture_20010614": "https://news.17173.com/z/stoneage/content/2001-6-14/n182_98793.html",
+    "recommendation_20010911": "https://news.17173.com/z/stoneage/content/2001-9-11/n907_823387.html",
+    "quest_20021217": "https://news.17173.com/z/stoneage/content/2002-12-17/n527_443886.html",
+    "sina_20030403": "https://games.sina.com.cn/zhqu/sta/cwzl/cwzl_2.shtml",
+    "sina_20030407": "https://games.sina.com.cn/zhqu/sta/cwzl/chongwu03.shtml",
+    "growth_20030924": "https://news.17173.com/z/stoneage/content/2003-9-24/n973_890114.html",
+    "jp_album": "https://kbpetzukan.iinaa.net/",
+    "jp_album_101_150": "https://kbpetzukan.iinaa.net/101kara150.html"
+  },
+  "web_access": "INDEXED_PAGE_BODY_NOT_ORIGINAL_HTML_BYTES_OR_JPEG",
+  "counts": {
+    "rows": 5,
+    "mixed25_template_rows": 10,
+    "community_template_rows": 10,
+    "mixed25_nonpet": 4,
+    "community_nonpet": 4,
+    "new_official_species": 0
+  },
+  "original_assets_published": false,
+  "official_species_count": null,
+  "rows": [
+    {
+      "pet_id": "PET-000014",
+      "original_client_name": "烏寶寶",
+      "tw10_graphic": 100263,
+      "museum_2001": [
+        {
+          "ordinal": 17,
+          "elements": {
+            "火": 3,
+            "風": 7
+          }
+        }
+      ],
+      "mixed25_archived_projection": [
+        {
+          "physical_line": 31,
+          "template_id": 31,
+          "pet_flag": 1,
+          "elements": [
+            30,
+            0,
+            0,
+            70
+          ],
+          "row_sha256": "a4d0751c73fed0302fc5d8388b044d875f83c58b4d951ee9cb3ca990fc0f7968",
+          "skill_slots": [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "physical_line": 464,
+          "template_id": 663,
+          "pet_flag": 0,
+          "elements": [
+            30,
+            0,
+            0,
+            70
+          ],
+          "row_sha256": "cb515aeb3f1c08bab4eb523e0864b2c3d6aa4108139681c8b8fc902a48c297f3",
+          "skill_slots": [
+            41,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "community_fixed_table": [
+        {
+          "physical_line": 31,
+          "template_id": 31,
+          "name": "乌宝宝",
+          "graphic": 100263,
+          "pet_flag": 1,
+          "elements": [
+            30,
+            0,
+            0,
+            70
+          ],
+          "initnum": 13,
+          "lvup_literal": "4.50",
+          "base": [
+            17,
+            20,
+            10,
+            32
+          ],
+          "skill_slots": [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "physical_line": 454,
+          "template_id": 663,
+          "name": "乌宝宝",
+          "graphic": 100263,
+          "pet_flag": 0,
+          "elements": [
+            30,
+            0,
+            0,
+            70
+          ],
+          "initnum": 13,
+          "lvup_literal": "5.00",
+          "base": [
+            18,
+            21,
+            11,
+            33
+          ],
+          "skill_slots": [
+            41,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "claimed_tw75": [
+        {
+          "template_id": 31,
+          "name": "烏寶寶",
+          "elements": [
+            30,
+            0,
+            0,
+            70
+          ],
+          "physical_line": 31,
+          "row_sha256": "a4d0751c73fed0302fc5d8388b044d875f83c58b4d951ee9cb3ca990fc0f7968"
+        }
+      ],
+      "later_2016_level1_static": [
+        {
+          "template_id": 31,
+          "instance_ids": [
+            28,
+            369,
+            370,
+            696
+          ]
+        }
+      ],
+      "period_capture_20010614": {
+        "ordinal": 15,
+        "claimed_location": "南岛加加村周边",
+        "author_marks_personally_confirmed": true
+      },
+      "period_sina_2003": {
+        "printed_number": 25,
+        "elements": [
+          30,
+          0,
+          0,
+          70
+        ],
+        "location": "南岛加加村周边",
+        "source": "sina_20030403"
+      },
+      "period_recommendation_20010911": null,
+      "period_quest_20021217": null,
+      "period_growth_20030924": null,
+      "japan_album": {
+        "ordinal": 15,
+        "album_name": "ウポポ",
+        "detail_link_present": false,
+        "archived_operator_name_at_ordinal": "ウポポ",
+        "exact_ordinal_name_match": true,
+        "actual_image_bytes_read": false,
+        "identity_verified": false
+      },
+      "official_tw10_native_stats": null,
+      "official_tw10_skillset": null,
+      "official_tw10_acquisition_verified": false,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000116",
+      "original_client_name": "洛克斯",
+      "tw10_graphic": 100389,
+      "museum_2001": [
+        {
+          "ordinal": 109,
+          "elements": {
+            "地": 10
+          }
+        }
+      ],
+      "mixed25_archived_projection": [
+        {
+          "physical_line": 85,
+          "template_id": 85,
+          "pet_flag": 1,
+          "elements": [
+            50,
+            0,
+            0,
+            50
+          ],
+          "row_sha256": "b827203077b4e8b9a18fa2d66b83623da93c4aa0b52440b12d1bb299f885f600",
+          "skill_slots": [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "physical_line": 498,
+          "template_id": 697,
+          "pet_flag": 0,
+          "elements": [
+            50,
+            50,
+            0,
+            0
+          ],
+          "row_sha256": "44fd33521f5b71114ac2a6cd3805420cad5455086dc18007aceae23efbadda9d",
+          "skill_slots": [
+            80,
+            30,
+            31,
+            3,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "community_fixed_table": [
+        {
+          "physical_line": 81,
+          "template_id": 85,
+          "name": "洛克斯",
+          "graphic": 100389,
+          "pet_flag": 1,
+          "elements": [
+            50,
+            0,
+            0,
+            50
+          ],
+          "initnum": 20,
+          "lvup_literal": "4.50",
+          "base": [
+            19,
+            27,
+            43,
+            10
+          ],
+          "skill_slots": [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "physical_line": 488,
+          "template_id": 697,
+          "name": "漆黑的守护兽",
+          "graphic": 100389,
+          "pet_flag": 0,
+          "elements": [
+            50,
+            50,
+            0,
+            0
+          ],
+          "initnum": 25,
+          "lvup_literal": "5.00",
+          "base": [
+            30,
+            30,
+            43,
+            4
+          ],
+          "skill_slots": [
+            80,
+            30,
+            31,
+            3,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "claimed_tw75": [
+        {
+          "template_id": 85,
+          "name": "洛克斯",
+          "elements": [
+            50,
+            0,
+            0,
+            50
+          ],
+          "physical_line": 85,
+          "row_sha256": "b827203077b4e8b9a18fa2d66b83623da93c4aa0b52440b12d1bb299f885f600"
+        }
+      ],
+      "later_2016_level1_static": [
+        {
+          "template_id": 85,
+          "instance_ids": [
+            477
+          ]
+        }
+      ],
+      "period_capture_20010614": {
+        "ordinal": 39,
+        "claimed_location": null,
+        "author_marks_personally_confirmed": false
+      },
+      "period_sina_2003": {
+        "printed_number": 68,
+        "elements": [
+          50,
+          0,
+          0,
+          50
+        ],
+        "location": "漆黑洞窟9楼(50,11)",
+        "source": "sina_20030403"
+      },
+      "period_recommendation_20010911": null,
+      "period_quest_20021217": null,
+      "period_growth_20030924": {
+        "three_stat": 5.7561,
+        "hp": 10.7642,
+        "section": "转宠"
+      },
+      "japan_album": {
+        "ordinal": 40,
+        "album_name": "ロックス",
+        "detail_link_present": true,
+        "archived_operator_name_at_ordinal": "レムガス",
+        "exact_ordinal_name_match": false,
+        "actual_image_bytes_read": false,
+        "identity_verified": false
+      },
+      "official_tw10_native_stats": null,
+      "official_tw10_skillset": null,
+      "official_tw10_acquisition_verified": false,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000117",
+      "original_client_name": "阿伊薩",
+      "tw10_graphic": 100390,
+      "museum_2001": [
+        {
+          "ordinal": 110,
+          "elements": {
+            "地": 10
+          }
+        }
+      ],
+      "mixed25_archived_projection": [
+        {
+          "physical_line": 86,
+          "template_id": 86,
+          "pet_flag": 1,
+          "elements": [
+            50,
+            50,
+            0,
+            0
+          ],
+          "row_sha256": "7295e901e6731821f900fa8f7127df4c6a7c37ad3a517473de719c2c821bd54f",
+          "skill_slots": [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "community_fixed_table": [
+        {
+          "physical_line": 82,
+          "template_id": 86,
+          "name": "阿伊萨",
+          "graphic": 100390,
+          "pet_flag": 1,
+          "elements": [
+            50,
+            50,
+            0,
+            0
+          ],
+          "initnum": 22,
+          "lvup_literal": "4.50",
+          "base": [
+            27,
+            19,
+            37,
+            6
+          ],
+          "skill_slots": [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "physical_line": 1142,
+          "template_id": 2018,
+          "name": "阿伊萨",
+          "graphic": 100390,
+          "pet_flag": 1,
+          "elements": [
+            0,
+            100,
+            0,
+            0
+          ],
+          "initnum": 32,
+          "lvup_literal": "4.50",
+          "base": [
+            27,
+            19,
+            37,
+            6
+          ],
+          "skill_slots": [
+            1,
+            2,
+            676,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "claimed_tw75": [
+        {
+          "template_id": 86,
+          "name": "阿伊薩",
+          "elements": [
+            50,
+            50,
+            0,
+            0
+          ],
+          "physical_line": 86,
+          "row_sha256": "7295e901e6731821f900fa8f7127df4c6a7c37ad3a517473de719c2c821bd54f"
+        }
+      ],
+      "later_2016_level1_static": [
+        {
+          "template_id": 86,
+          "instance_ids": [
+            478,
+            1386
+          ]
+        },
+        {
+          "template_id": 2018,
+          "instance_ids": []
+        }
+      ],
+      "period_capture_20010614": {
+        "ordinal": 40,
+        "claimed_location": null,
+        "author_marks_personally_confirmed": false
+      },
+      "period_sina_2003": {
+        "printed_number": 69,
+        "elements": [
+          50,
+          50,
+          0,
+          0
+        ],
+        "location": "吉鲁岛漆黑洞窟9楼(50,11)/(40,4)",
+        "source": "sina_20030403"
+      },
+      "period_recommendation_20010911": {
+        "elements": [
+          50,
+          50,
+          0,
+          0
+        ]
+      },
+      "period_quest_20021217": null,
+      "period_growth_20030924": {
+        "three_stat": 5.1885,
+        "hp": 11.4262,
+        "section": "转宠"
+      },
+      "japan_album": {
+        "ordinal": 41,
+        "album_name": "アイサー",
+        "detail_link_present": true,
+        "archived_operator_name_at_ordinal": "アイカス",
+        "exact_ordinal_name_match": false,
+        "actual_image_bytes_read": false,
+        "identity_verified": false
+      },
+      "official_tw10_native_stats": null,
+      "official_tw10_skillset": null,
+      "official_tw10_acquisition_verified": false,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000118",
+      "original_client_name": "格洛格魯",
+      "tw10_graphic": 100391,
+      "museum_2001": [
+        {
+          "ordinal": 112,
+          "elements": {
+            "地": 10
+          }
+        }
+      ],
+      "mixed25_archived_projection": [
+        {
+          "physical_line": 87,
+          "template_id": 87,
+          "pet_flag": 1,
+          "elements": [
+            0,
+            60,
+            40,
+            0
+          ],
+          "row_sha256": "544528f255d8446df3f37fbc4c9d994f9ab7a9273b56bc509d1fe2040f18277b",
+          "skill_slots": [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "community_fixed_table": [
+        {
+          "physical_line": 83,
+          "template_id": 87,
+          "name": "格洛格鲁",
+          "graphic": 100391,
+          "pet_flag": 1,
+          "elements": [
+            0,
+            60,
+            40,
+            0
+          ],
+          "initnum": 22,
+          "lvup_literal": "4.50",
+          "base": [
+            28,
+            24,
+            31,
+            6
+          ],
+          "skill_slots": [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "claimed_tw75": [
+        {
+          "template_id": 87,
+          "name": "格洛格魯",
+          "elements": [
+            0,
+            60,
+            40,
+            0
+          ],
+          "physical_line": 87,
+          "row_sha256": "544528f255d8446df3f37fbc4c9d994f9ab7a9273b56bc509d1fe2040f18277b"
+        }
+      ],
+      "later_2016_level1_static": [
+        {
+          "template_id": 87,
+          "instance_ids": [
+            479,
+            1390
+          ]
+        }
+      ],
+      "period_capture_20010614": {
+        "ordinal": 41,
+        "claimed_location": null,
+        "author_marks_personally_confirmed": false
+      },
+      "period_sina_2003": {
+        "printed_number": 70,
+        "elements": [
+          0,
+          60,
+          40,
+          0
+        ],
+        "location": "吉鲁岛漆黑洞窟11楼",
+        "source": "sina_20030403"
+      },
+      "period_recommendation_20010911": {
+        "elements": [
+          0,
+          60,
+          40,
+          0
+        ]
+      },
+      "period_quest_20021217": null,
+      "period_growth_20030924": null,
+      "japan_album": {
+        "ordinal": 42,
+        "album_name": "ゴロゴル",
+        "detail_link_present": true,
+        "archived_operator_name_at_ordinal": "クタス",
+        "exact_ordinal_name_match": false,
+        "actual_image_bytes_read": false,
+        "identity_verified": false
+      },
+      "official_tw10_native_stats": null,
+      "official_tw10_skillset": null,
+      "official_tw10_acquisition_verified": false,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000124",
+      "original_client_name": "邦達霍恩",
+      "tw10_graphic": 100430,
+      "museum_2001": [
+        {
+          "ordinal": 117,
+          "elements": {
+            "水": 5,
+            "火": 5
+          }
+        }
+      ],
+      "mixed25_archived_projection": [
+        {
+          "physical_line": 241,
+          "template_id": 315,
+          "pet_flag": 1,
+          "elements": [
+            0,
+            0,
+            50,
+            50
+          ],
+          "row_sha256": "bae2892dc4d4c986b9ffb328eb186948a80f5a3ea64e4ffc1c5a7a83ef5cc22c",
+          "skill_slots": [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "physical_line": 444,
+          "template_id": 623,
+          "pet_flag": 0,
+          "elements": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "row_sha256": "3c5659ff5377e9dcb0847c4aac75ae5e22b18c273ea4cf99742ddecefc74129c",
+          "skill_slots": [
+            0,
+            3,
+            60,
+            110,
+            80,
+            40,
+            130
+          ]
+        },
+        {
+          "physical_line": 512,
+          "template_id": 711,
+          "pet_flag": 0,
+          "elements": [
+            0,
+            0,
+            50,
+            50
+          ],
+          "row_sha256": "5a254e850ade9a204cfa459c60cd2da255ed355e3e3ccd5b7aca734cb0fc19db",
+          "skill_slots": [
+            60,
+            61,
+            152,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "physical_line": 988,
+          "template_id": 1240,
+          "pet_flag": 1,
+          "elements": [
+            0,
+            0,
+            50,
+            50
+          ],
+          "row_sha256": "2834bc53ee58758722b3e7d62451e8ef0cf5b8a4ce2f7ebcfe9c4b07704e4f5b",
+          "skill_slots": [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "community_fixed_table": [
+        {
+          "physical_line": 231,
+          "template_id": 315,
+          "name": "邦达霍恩",
+          "graphic": 100430,
+          "pet_flag": 1,
+          "elements": [
+            0,
+            0,
+            50,
+            50
+          ],
+          "initnum": 30,
+          "lvup_literal": "4.50",
+          "base": [
+            20,
+            28,
+            20,
+            32
+          ],
+          "skill_slots": [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "physical_line": 434,
+          "template_id": 623,
+          "name": "邦达霍恩",
+          "graphic": 100430,
+          "pet_flag": 0,
+          "elements": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "initnum": 50,
+          "lvup_literal": "1.00",
+          "base": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "skill_slots": [
+            0,
+            3,
+            60,
+            110,
+            80,
+            40,
+            130
+          ]
+        },
+        {
+          "physical_line": 502,
+          "template_id": 711,
+          "name": "邦达霍恩",
+          "graphic": 100430,
+          "pet_flag": 0,
+          "elements": [
+            0,
+            0,
+            50,
+            50
+          ],
+          "initnum": 30,
+          "lvup_literal": "5.00",
+          "base": [
+            22,
+            30,
+            22,
+            34
+          ],
+          "skill_slots": [
+            60,
+            61,
+            152,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "claimed_tw75": [
+        {
+          "template_id": 315,
+          "name": "邦達霍恩",
+          "elements": [
+            0,
+            0,
+            50,
+            50
+          ],
+          "physical_line": 241,
+          "row_sha256": "bae2892dc4d4c986b9ffb328eb186948a80f5a3ea64e4ffc1c5a7a83ef5cc22c"
+        }
+      ],
+      "later_2016_level1_static": [
+        {
+          "template_id": 315,
+          "instance_ids": [
+            484
+          ]
+        }
+      ],
+      "period_capture_20010614": {
+        "ordinal": 115,
+        "claimed_location": null,
+        "author_marks_personally_confirmed": false
+      },
+      "period_sina_2003": {
+        "printed_number": 205,
+        "elements": [
+          0,
+          0,
+          50,
+          50
+        ],
+        "location": "黑暗精灵王任务",
+        "source": "sina_20030407"
+      },
+      "period_recommendation_20010911": null,
+      "period_quest_20021217": {
+        "claim": "天空之岛击败柯黑穆肯后的赠礼",
+        "actual_award_verified": false
+      },
+      "period_growth_20030924": {
+        "three_stat": 5.96,
+        "hp": 10.8,
+        "section": "转宠"
+      },
+      "japan_album": {
+        "ordinal": 115,
+        "album_name": "パンダホーン",
+        "detail_link_present": true,
+        "archived_operator_name_at_ordinal": "パンダホーン",
+        "exact_ordinal_name_match": true,
+        "actual_image_bytes_read": false,
+        "identity_verified": false
+      },
+      "official_tw10_native_stats": null,
+      "official_tw10_skillset": null,
+      "official_tw10_acquisition_verified": false,
+      "official_first_release_date": null
+    }
+  ],
+  "next": "PET-HIGH-FIRST-40: original same-build data or authentic independently sourced early PC panel/issuance, especially 2003 cave route and black sheep reward; do not duplicate unresolved names or treat player growth as native ranges"
+}
