@@ -6,11 +6,15 @@ on:
       - 'tools/stoneage_pet_high_first_18_map_headers.py'
       - '.github/workflows/pet-high-first-18-map-headers.yml'
       - 'research/pets/PET-HIGH-FIRST-18-COMPARISON-MAP-HEADERS-R1.json'
+      - 'research/pets/PET-HIGH-FIRST-18-STARTER-AND-CAPTURE-WITNESSES-R1.json'
+      - 'tools/stoneage_pet_high_first_18_acquisition.py'
   pull_request:
     paths:
       - 'tools/stoneage_pet_high_first_18_map_headers.py'
       - '.github/workflows/pet-high-first-18-map-headers.yml'
       - 'research/pets/PET-HIGH-FIRST-18-COMPARISON-MAP-HEADERS-R1.json'
+      - 'research/pets/PET-HIGH-FIRST-18-STARTER-AND-CAPTURE-WITNESSES-R1.json'
+      - 'tools/stoneage_pet_high_first_18_acquisition.py'
 permissions:
   contents: read
 jobs:
@@ -24,6 +28,15 @@ jobs:
           ref: 1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56
           path: source-pc
           persist-credentials: false
+          sparse-checkout-cone-mode: false
           sparse-checkout: |
             gmsv/data/map
+            gmsv/data/enemy1.txt
+            gmsv/data/enemybase1.txt
+            gmsv/data/group1.txt
+            gmsv/data/encount.txt
+            gmsv/setup.cf
+            gmsv/src/char/char.c
+            gmsv/src/configfile.c
       - run: python3 -m tools.stoneage_pet_high_first_18_map_headers source-pc
+      - run: python3 -m tools.stoneage_pet_high_first_18_acquisition source-pc

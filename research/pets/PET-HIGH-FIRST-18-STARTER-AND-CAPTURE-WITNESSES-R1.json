@@ -1,0 +1,971 @@
+{
+  "scope": "PERIOD_PLAYER_CLAIMS_AND_LATER_PC_STATIC_COMPARISON_NOT_OFFICIAL_DEPLOYMENT",
+  "comparison_commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+  "comparison_source_blobs": {
+    "gmsv/data/enemy1.txt": "bf245a391adeace09915b6e425754b54ab69a8f6",
+    "gmsv/data/group1.txt": "1be75eb3e56ab16d4b433146ec59538ad651c874",
+    "gmsv/data/encount.txt": "89da97a15ea866a36f26ec3bb7ab5490f3eccc5f",
+    "gmsv/data/enemybase1.txt": "a19a508975e3a982fada323861b35b2edab79349",
+    "gmsv/setup.cf": "bd834cd1a7dfa3af6e14210d0cdf15b217b0e72f",
+    "gmsv/src/char/char.c": "fcc14db98511e5e0f62e05dec74ce55c6838acfb",
+    "gmsv/src/configfile.c": "7a9892ead091ff2766c44bb4fb8d3605bad3bbb2"
+  },
+  "derived_input_blobs": {
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-16-TW75-CONDITIONAL-BIRTH-GROWTH-R1.json": "8cb864a78f1ff2b3c89ae1739ac485968d104c10",
+    "research/pets/PET-HIGH-FIRST-17-COMPARISON-SKILL-ENCOUNTER-R1.json": "63af501ab483770c5c58cb2d62152ab8923dcc2b"
+  },
+  "map_source_run": 45382121522,
+  "map_source_head": "22086c7efac0ab43ce20e8346a24eb877a3bec6b",
+  "map_source_job": 138403539416,
+  "period_sources": [
+    {
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n182_98793.html",
+      "date_label": "2001-06-14",
+      "grade": "PERIOD_PLAYER_GUIDE_MIGRATED",
+      "coordinates_used": true
+    },
+    {
+      "url": "https://www.moon-soft.com/program/bbs/readelite131452.htm",
+      "date_label": "2001-03-28",
+      "grade": "PERIOD_PLAYER_INDEX_MIRROR_POSSIBLY_RELATED",
+      "starter_elements_used": true
+    }
+  ],
+  "source_independence_established": false,
+  "summary": {
+    "target_floors": 349,
+    "unambiguous_header_floors": 338,
+    "conflicting_header_floors": 2,
+    "missing_header_floors": 9,
+    "all_templates_with_unambiguous_floor": 281,
+    "exact_templates_with_unambiguous_floor": 270,
+    "selected_coordinate_pet_cases": 10,
+    "coordinate_intersection_cases": 10,
+    "exact_tail_cases": 9,
+    "starter_cases": 4,
+    "starter_element_agreement": 3
+  },
+  "starter_branch": {
+    "macro": "_NEW_PLAYER_CF",
+    "char_c_line_range": [
+      496,
+      533
+    ],
+    "configfile_c_line_range": [
+      2113,
+      2142
+    ],
+    "commented_earlier_branch_not_executable": true,
+    "setup_pet1_to_pet4_blank": true,
+    "setup_petlv": 1,
+    "global_config_mutation_possible": true,
+    "actual_runtime_not_observed": true
+  },
+  "starters": [
+    {
+      "name": "烏力烏力",
+      "village": "萨姆吉尔村",
+      "source_pos": 2,
+      "historical_elements": [
+        0,
+        40,
+        60,
+        0
+      ],
+      "default_enemy": 1,
+      "choice_enemy": 2076,
+      "templates": [
+        {
+          "enemy_id": 1,
+          "template_id": 2,
+          "graphic": 100251,
+          "instance_level": [
+            1,
+            1
+          ],
+          "instance_petflag": 1,
+          "raw_elements": [
+            0,
+            40,
+            60,
+            0
+          ],
+          "skill_slots": [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "conditional_level1_panel": [
+            [
+              28,
+              39
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              4,
+              7
+            ]
+          ]
+        },
+        {
+          "enemy_id": 2076,
+          "template_id": 1061,
+          "graphic": 100251,
+          "instance_level": [
+            1,
+            1
+          ],
+          "instance_petflag": 1,
+          "raw_elements": [
+            0,
+            40,
+            60,
+            0
+          ],
+          "skill_slots": [
+            1,
+            2,
+            201,
+            null,
+            null,
+            null,
+            null
+          ],
+          "conditional_level1_panel": [
+            [
+              28,
+              39
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              4,
+              7
+            ]
+          ]
+        }
+      ],
+      "historical_element_agrees": true
+    },
+    {
+      "name": "凱比",
+      "village": "玛丽娜丝渔村",
+      "source_pos": 54,
+      "historical_elements": [
+        20,
+        0,
+        0,
+        80
+      ],
+      "default_enemy": 2,
+      "choice_enemy": 2077,
+      "templates": [
+        {
+          "enemy_id": 2,
+          "template_id": 112,
+          "graphic": 100296,
+          "instance_level": [
+            1,
+            1
+          ],
+          "instance_petflag": 1,
+          "raw_elements": [
+            20,
+            0,
+            0,
+            80
+          ],
+          "skill_slots": [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "conditional_level1_panel": [
+            [
+              23,
+              35
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              5,
+              7
+            ]
+          ]
+        },
+        {
+          "enemy_id": 2077,
+          "template_id": 1062,
+          "graphic": 100296,
+          "instance_level": [
+            1,
+            1
+          ],
+          "instance_petflag": 1,
+          "raw_elements": [
+            20,
+            0,
+            0,
+            80
+          ],
+          "skill_slots": [
+            1,
+            2,
+            200,
+            null,
+            null,
+            null,
+            null
+          ],
+          "conditional_level1_panel": [
+            [
+              23,
+              35
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              5,
+              7
+            ]
+          ]
+        }
+      ],
+      "historical_element_agrees": true
+    },
+    {
+      "name": "克克爾",
+      "village": "加加村",
+      "source_pos": 50,
+      "historical_elements": [
+        0,
+        70,
+        30,
+        0
+      ],
+      "default_enemy": 3,
+      "choice_enemy": 2078,
+      "templates": [
+        {
+          "enemy_id": 3,
+          "template_id": 102,
+          "graphic": 100292,
+          "instance_level": [
+            1,
+            1
+          ],
+          "instance_petflag": 1,
+          "raw_elements": [
+            0,
+            70,
+            30,
+            0
+          ],
+          "skill_slots": [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "conditional_level1_panel": [
+            [
+              27,
+              38
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              7
+            ]
+          ]
+        },
+        {
+          "enemy_id": 2078,
+          "template_id": 1063,
+          "graphic": 100292,
+          "instance_level": [
+            1,
+            1
+          ],
+          "instance_petflag": 1,
+          "raw_elements": [
+            0,
+            70,
+            30,
+            0
+          ],
+          "skill_slots": [
+            1,
+            2,
+            572,
+            null,
+            null,
+            null,
+            null
+          ],
+          "conditional_level1_panel": [
+            [
+              27,
+              38
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              7
+            ]
+          ]
+        }
+      ],
+      "historical_element_agrees": true
+    },
+    {
+      "name": "威伯",
+      "village": "卡鲁它那村",
+      "source_pos": 18,
+      "historical_elements": [
+        60,
+        40,
+        0,
+        0
+      ],
+      "default_enemy": 4,
+      "choice_enemy": 2079,
+      "templates": [
+        {
+          "enemy_id": 4,
+          "template_id": 34,
+          "graphic": 100266,
+          "instance_level": [
+            1,
+            1
+          ],
+          "instance_petflag": 1,
+          "raw_elements": [
+            60,
+            0,
+            0,
+            40
+          ],
+          "skill_slots": [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "conditional_level1_panel": [
+            [
+              25,
+              36
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              5,
+              8
+            ]
+          ]
+        },
+        {
+          "enemy_id": 2079,
+          "template_id": 1064,
+          "graphic": 100266,
+          "instance_level": [
+            1,
+            1
+          ],
+          "instance_petflag": 1,
+          "raw_elements": [
+            60,
+            0,
+            0,
+            40
+          ],
+          "skill_slots": [
+            1,
+            2,
+            540,
+            null,
+            null,
+            null,
+            null
+          ],
+          "conditional_level1_panel": [
+            [
+              25,
+              36
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              5,
+              8
+            ]
+          ]
+        }
+      ],
+      "historical_element_agrees": false
+    }
+  ],
+  "coordinate_cases": [
+    {
+      "name": "布比",
+      "source_pos": 6,
+      "coordinates": [
+        [
+          608,
+          208
+        ]
+      ],
+      "comparison_floor_candidates": [
+        100
+      ],
+      "template_ids": [
+        11,
+        587
+      ],
+      "level1_route_count": 1,
+      "matches": [
+        {
+          "template_id": 11,
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "graphic": 100254,
+          "floor": 100,
+          "map_name_gb18030": "萨伊那斯",
+          "rect": [
+            547,
+            115,
+            699,
+            241
+          ],
+          "enemy": 156,
+          "group": 120,
+          "encounter_ordinal": 17,
+          "levels": [
+            1,
+            1
+          ],
+          "matched_points": [
+            [
+              608,
+              208
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "布伊",
+      "source_pos": 8,
+      "coordinates": [
+        [
+          607,
+          194
+        ]
+      ],
+      "comparison_floor_candidates": [
+        100
+      ],
+      "template_ids": [
+        13
+      ],
+      "level1_route_count": 1,
+      "matches": [
+        {
+          "template_id": 13,
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "graphic": 100256,
+          "floor": 100,
+          "map_name_gb18030": "萨伊那斯",
+          "rect": [
+            547,
+            115,
+            699,
+            241
+          ],
+          "enemy": 160,
+          "group": 124,
+          "encounter_ordinal": 17,
+          "levels": [
+            1,
+            1
+          ],
+          "matched_points": [
+            [
+              607,
+              194
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "加美",
+      "source_pos": 11,
+      "coordinates": [
+        [
+          195,
+          127
+        ]
+      ],
+      "comparison_floor_candidates": [
+        20301
+      ],
+      "template_ids": [
+        21
+      ],
+      "level1_route_count": 1,
+      "matches": [
+        {
+          "template_id": 21,
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "graphic": 100259,
+          "floor": 20301,
+          "map_name_gb18030": "拉多拉的回廊|0",
+          "rect": [
+            140,
+            10,
+            210,
+            140
+          ],
+          "enemy": 455,
+          "group": 328,
+          "encounter_ordinal": 184,
+          "levels": [
+            1,
+            1
+          ],
+          "matched_points": [
+            [
+              195,
+              127
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "加比",
+      "source_pos": 12,
+      "coordinates": [
+        [
+          195,
+          127
+        ]
+      ],
+      "comparison_floor_candidates": [
+        20301
+      ],
+      "template_ids": [
+        22
+      ],
+      "level1_route_count": 1,
+      "matches": [
+        {
+          "template_id": 22,
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "graphic": 100260,
+          "floor": 20301,
+          "map_name_gb18030": "拉多拉的回廊|0",
+          "rect": [
+            140,
+            10,
+            210,
+            140
+          ],
+          "enemy": 457,
+          "group": 330,
+          "encounter_ordinal": 184,
+          "levels": [
+            1,
+            1
+          ],
+          "matched_points": [
+            [
+              195,
+              127
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "加比奧",
+      "source_pos": 13,
+      "coordinates": [
+        [
+          50,
+          90
+        ],
+        [
+          42,
+          54
+        ]
+      ],
+      "comparison_floor_candidates": [
+        20304,
+        20305,
+        20307,
+        20308
+      ],
+      "template_ids": [
+        23
+      ],
+      "level1_route_count": 1,
+      "matches": [
+        {
+          "template_id": 23,
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "graphic": 100261,
+          "floor": 20307,
+          "map_name_gb18030": "拉多拉洞窟３楼|0",
+          "rect": [
+            0,
+            0,
+            99,
+            99
+          ],
+          "enemy": 1230,
+          "group": 671,
+          "encounter_ordinal": 467,
+          "levels": [
+            1,
+            1
+          ],
+          "matched_points": [
+            [
+              50,
+              90
+            ],
+            [
+              42,
+              54
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "加斯",
+      "source_pos": 14,
+      "coordinates": [
+        [
+          8,
+          18
+        ],
+        [
+          42,
+          54
+        ],
+        [
+          50,
+          90
+        ]
+      ],
+      "comparison_floor_candidates": [
+        20304,
+        20305,
+        20307,
+        20308
+      ],
+      "template_ids": [
+        24
+      ],
+      "level1_route_count": 1,
+      "matches": [
+        {
+          "template_id": 24,
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "graphic": 100262,
+          "floor": 20308,
+          "map_name_gb18030": "拉多拉洞窟３楼|0",
+          "rect": [
+            0,
+            0,
+            99,
+            99
+          ],
+          "enemy": 1231,
+          "group": 672,
+          "encounter_ordinal": 468,
+          "levels": [
+            1,
+            1
+          ],
+          "matched_points": [
+            [
+              8,
+              18
+            ],
+            [
+              42,
+              54
+            ],
+            [
+              50,
+              90
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "貝洛洛克",
+      "source_pos": 20,
+      "coordinates": [
+        [
+          13,
+          40
+        ]
+      ],
+      "comparison_floor_candidates": [
+        10101
+      ],
+      "template_ids": [
+        42
+      ],
+      "level1_route_count": 1,
+      "matches": [
+        {
+          "template_id": 42,
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "graphic": 100268,
+          "floor": 10101,
+          "map_name_gb18030": "往柯尔克的道路１楼|0",
+          "rect": [
+            1,
+            1,
+            49,
+            49
+          ],
+          "enemy": 271,
+          "group": 209,
+          "encounter_ordinal": 55,
+          "levels": [
+            1,
+            1
+          ],
+          "matched_points": [
+            [
+              13,
+              40
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "卡梅蘭恩",
+      "source_pos": 25,
+      "coordinates": [
+        [
+          18,
+          21
+        ],
+        [
+          35,
+          3
+        ]
+      ],
+      "comparison_floor_candidates": [
+        11003
+      ],
+      "template_ids": [
+        53,
+        588
+      ],
+      "level1_route_count": 1,
+      "matches": [
+        {
+          "template_id": 53,
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "graphic": 100273,
+          "floor": 11003,
+          "map_name_gb18030": "柯奥山的小洞窟３楼|0",
+          "rect": [
+            0,
+            0,
+            49,
+            49
+          ],
+          "enemy": 499,
+          "group": 360,
+          "encounter_ordinal": 208,
+          "levels": [
+            1,
+            1
+          ],
+          "matched_points": [
+            [
+              18,
+              21
+            ],
+            [
+              35,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "石龜",
+      "source_pos": 26,
+      "coordinates": [
+        [
+          14,
+          43
+        ]
+      ],
+      "comparison_floor_candidates": [
+        11004
+      ],
+      "template_ids": [
+        54
+      ],
+      "level1_route_count": 1,
+      "matches": [
+        {
+          "template_id": 54,
+          "comparison_status": "SAME_ID_DIFFERENT_TAIL",
+          "graphic": 100274,
+          "floor": 11004,
+          "map_name_gb18030": "柯奥山的小洞窟４楼|0",
+          "rect": [
+            0,
+            0,
+            49,
+            49
+          ],
+          "enemy": 502,
+          "group": 363,
+          "encounter_ordinal": 209,
+          "levels": [
+            1,
+            1
+          ],
+          "matched_points": [
+            [
+              14,
+              43
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "達克爾",
+      "source_pos": 30,
+      "coordinates": [
+        [
+          256,
+          178
+        ]
+      ],
+      "comparison_floor_candidates": [
+        100
+      ],
+      "template_ids": [
+        64
+      ],
+      "level1_route_count": 1,
+      "matches": [
+        {
+          "template_id": 64,
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "graphic": 100278,
+          "floor": 100,
+          "map_name_gb18030": "萨伊那斯",
+          "rect": [
+            180,
+            120,
+            315,
+            200
+          ],
+          "enemy": 178,
+          "group": 147,
+          "encounter_ordinal": 28,
+          "levels": [
+            1,
+            1
+          ],
+          "matched_points": [
+            [
+              256,
+              178
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "official_deployment_verified": false,
+  "official_acquisition_verified": false,
+  "official_birth_skills_verified": false,
+  "original_capture_probability": null
+}

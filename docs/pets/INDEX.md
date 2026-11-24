@@ -404,3 +404,8 @@
 ## 2026-11-24｜PET-HIGH-FIRST-17 技能与遇敌引用链
 
 [逐模板来源限定目录](../../research/pets/PET-HIGH-FIRST-17-COMPARISON-SKILL-ENCOUNTER-R1.json) · [接续与证据边界](../continuity/STONEAGE-PET-HIGH-FIRST-17-SKILL-ENCOUNTER-20261124.md)。429条全字段同对照模板中282有后期正权重地图引用、230含Lv1；40个非负技能编号均有后期扩展表定义。实例标记、原模板标记、技能学习和出生严格区分，非原服认证。NEXT同期捕捉与技能学习地点反核；原CURRENT不动，PET唯一。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-18 四村赠宠与十条捕捉坐标补证
+
+[来源分层可读档案](PC-2001-STARTER-AND-CAPTURE-CROSSWALK.md) · [机器数据](../../research/pets/PET-HIGH-FIRST-18-STARTER-AND-CAPTURE-WITNESSES-R1.json) · [原地图头索引](../../research/pets/PET-HIGH-FIRST-18-COMPARISON-MAP-HEADERS-R1.json)。349地图号338无字段歧义；270个全字段匹配模板至少有一地图头。不改变原TW1同部署字段、全字段官方验收数或永久编号。原CURRENT不变，PET唯一。
