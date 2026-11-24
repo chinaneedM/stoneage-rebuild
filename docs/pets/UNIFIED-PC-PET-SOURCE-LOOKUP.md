@@ -66,3 +66,6 @@ R52 对位置67、144、171、208增加 `hf52` 高版本原图鉴与普通任务
 
 
 R53 追加位置68、75、144、208的 `hf53` 取得参考，区分2001–2003华义商业红暴、2012胜思熊猫兑换及金蛙未具名活动。严格缺口67不减。[PET53](../continuity/STONEAGE-PET-HIGH-FIRST-53-COMMERCIAL-HONOR-REWARD-REFERENCES-20261124.md)。
+
+
+R54 追加位置387、453、454的 `hf54` 对象分类及原函数/后续GetEgg分层证据，不能认定孵化结果或新物种。严格缺口67。[PET54](../continuity/STONEAGE-PET-HIGH-FIRST-54-EGG-ROLE-AND-FUNCTION-20261124.md)。
