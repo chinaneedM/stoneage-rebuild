@@ -239,6 +239,11 @@ def build(d):
         if row["key"] == "AddPet" and row["qualification"] == "GETPET_OR_ADDPET_INSTANCE_LITERAL_CANDIDATE"
         for instance_id in row["matching_instance_tokens"]
     }
+    petabi51 = d["hf51_petabi"]["petabi_rows"]
+    petabi_by_tw75 = collections.defaultdict(list)
+    for ordinal, row in enumerate(petabi51):
+        for ref in row["tw75_name_and_graphic_only_references"]:
+            petabi_by_tw75[ref["position"]].append(ordinal)
     acquisition45 = d["hf45"]["projection"]
     route45 = by_id(acquisition45["mixed25_template_routes"], "template_id")
     area45 = by_id(acquisition45["area_metadata"], "id")
@@ -287,6 +292,9 @@ def build(d):
                 ls.append(link(ref["source"], ["records" if ref["source"] == "fusion2003" else "rows",ref["row_index"]], ref["qualification"]))
             gap_detail = dict(gap_state=gap["gap_state"],evidence_categories=gap["evidence_categories"],selected_table=gap["selected_table"]["status"],alternate_table=gap["alternate_table"]["status"],official_acquisition_verified=False)
         ls.extend(acquisition_updates[i])
+        ls.extend(link("hf51_petabi", ["petabi_rows", j],
+                       "SAVED_VIP_PRESET_NAME_AND_GRAPHIC_ONLY_NOT_SAME_TEMPLATE")
+                  for j in petabi_by_tw75[i])
         if i in original50_index:
             j = original50_index[i]
             original = original50[j]
@@ -301,6 +309,16 @@ def build(d):
                                "SAVED_LV1_TRAINER_REWARD_CONFIGURATION_NOT_OFFICIAL_AWARD"))
         saved_acquisition = dict(gap_classification=gap_detail,match_status=ac["match_status"],positive_route_count=ac["positive_route_count"],double_pet_flag_route_count=ac["double_pet_flag_route_count"],lv1_double_flag_route_count=ac["lv1_double_flag_route_count"],floor_candidates=floor_refs,official_acquisition_verified=False)
         add("tw75",["pet_flag_1_field_projections",i],[x["name"]],"CLAIMED_TW75_MASTER_TEMPLATE",[k,x["graphic"]],ls,dict(graphic=x["graphic"],template_id=k,elements=x["elements"],skill_slots=x["skill_slots"],conditional_lv1_panel=b["level1_unmodified_work_panel_marginal_ranges"],conditional_per_level_internal=b["per_level_internal_increment_marginal_ranges"],comparison_floor_ids=e["comparison_floor_ids"],comparison_status=e["comparison_status"],saved_mixed25_acquisition=saved_acquisition))
+    for i, row in enumerate(petabi51):
+        add("hf51_petabi", ["petabi_rows", i], [row["template_name"], row["instance_name"]],
+            "PRESERVED_VIP_PRESET_PET_CANDIDATE" if row["instance_pet_flag"] == row["template_pet_flag"] == 1
+            else "PRESERVED_VIP_PRESET_INSTANCE_FLAG_CONFLICT",
+            [row["instance_id"], row["template_id"], row["graphic_no"]],
+            [link("tw75", ["pet_flag_1_field_projections", ref["position"]],
+                  "SAVED_VIP_PRESET_NAME_AND_GRAPHIC_ONLY_NOT_SAME_TEMPLATE")
+             for ref in row["tw75_name_and_graphic_only_references"]],
+            dict(instance_id=row["instance_id"], template_id=row["template_id"], graphic=row["graphic_no"],
+                 vip_points=row["vip_points"], official_acquisition_verified=False))
     # Historical observations are separate, even when names/identifiers coincide.
     for i,x in enumerate(d["sina2003"]["rows"]):
         o=x["cn50_album_ordinal_by_name_only"]
@@ -428,6 +446,10 @@ def verify(m,d,entries):
     assert {key: source_counts[key] for key in ("hf46", "hf47", "hf48", "hf49", "hf50")} == {
         "hf46": 349, "hf47": 29, "hf48": 19, "hf49": 22, "hf50": 71,
     }
+    assert source_counts["hf51_petabi"] == 33
+    preset_lookup = [e for e in entries if e["source"] == "hf51_petabi"]
+    assert len(preset_lookup) == 28
+    assert sum(e["role"] == "PRESERVED_VIP_PRESET_PET_CANDIDATE" for e in preset_lookup) == 27
     for i, e in enumerate(high45):
         for evidence in e["linked_records"]:
             if evidence["qualification"] == "SAVED_LV1_TRAINER_REWARD_CONFIGURATION_NOT_OFFICIAL_AWARD":

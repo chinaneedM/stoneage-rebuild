@@ -9021,3 +9021,9 @@ R14包351231B/SHA7684267ab528d13ceecb23a25632543ae839225607cbda702a32736e4c4d366
 ## 2026-11-24｜PET47 同期取得缺件补证
 
 新浪2003-04-07网友投稿：[第1页](https://games.sina.com.cn/zhqu/sta/cwzl/chongwu02.shtml)、[第2页](https://games.sina.com.cn/zhqu/sta/cwzl/chongwu03.shtml)；可见文本复查、未获取原HTML哈希。R21/22/23/28/29固定源复用，见[逐条来源和限制](continuity/STONEAGE-PET-HIGH-FIRST-47-PC-PERIOD-ACQUISITION-GAP-20261124.md)。不认作同部署发放或首发。
+
+
+## 2026-11-24｜PET51 原 NPC、VIP 与同包可执行边界
+
+- 保存混合 2.5 社区 RAR 重核全包 SHA-256，两个解包实现覆盖 2,205 份 NPC 原文件及两个选中表，另验同包 GMSV。后期固定 PC 源树可解释 PETABI 格式，不能认定是本包编译源。[原件、源码与归档凭证](continuity/STONEAGE-PET-HIGH-FIRST-51-ORIGINAL-NPC-VIP-PETABI-20261124.md)
+- 17173 于 2007-04-04 发布的珊瑚装备玩家攻略，在第 70–71 行列出奇肯沃、奇肯克奈高等级战斗及物品掉落。其角色与 7.0 专区目录的 Lv1 出现说法分开保留。[历史页面](https://news.17173.com/z/stoneage/content/2007-04-04/1175676383.shtml)
