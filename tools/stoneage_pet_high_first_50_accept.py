@@ -20,6 +20,10 @@ REPORT = source.P / "PET-HIGH-FIRST-50-ORIGINAL-ACQUISITION-R1.json"
 ZIP_SHA256 = "ac513a71258260c3b50baef502be9e89e99a69512e928432f77380099fa8234f"
 REPORT_SHA256 = "0f57d7a41e57d22080fc72e4a871063c389da162ca262a59e20f8603fcdcb52e"
 REPORT_BLOB = "4d0b31a7fa196cf8f227a7b0b1aea7183d9598f0"
+VIP_REPORT = source.P / "PET-HIGH-FIRST-50-VIP-MENU-R1.json"
+VIP_ZIP_SHA256 = "7a26a469fc3c2be234d34879dc31af16f142ce86f7e65788c557552647d833f3"
+VIP_REPORT_SHA256 = "fe70ac60bb2d112f1ba66ebbc47d2caa692df817a76e96698f85921859ce5579"
+VIP_REPORT_BLOB = "322436e8978166e0f5f9d4f005ccbe4febbd3adf"
 TRAINERS = {2481: 161, 2482: 162, 2483: 163, 2484: 164}
 EXPECTED_SUMMARY = {
     "target_rows": 67,
@@ -250,17 +254,57 @@ def vip_menu(data, d, report):
     return files
 
 
+def accept_vip(report, artifact):
+    raw = VIP_REPORT.read_bytes()
+    assert (len(raw), sha(raw), source.r40.git_blob(raw)) == (
+        23872, VIP_REPORT_SHA256, VIP_REPORT_BLOB,
+    )
+    if artifact:
+        assert sha(artifact.read_bytes()) == VIP_ZIP_SHA256
+        with ZipFile(artifact) as archive:
+            assert archive.namelist() == ["pet50-vip-menu.json"]
+            assert archive.read("pet50-vip-menu.json") == raw
+    second = json.loads(raw)
+    assert second["archive_git_blob"] == REPORT_BLOB
+    assert second["source_projection_exact"] is True
+    assert second["official_acquisition_verified"] is False
+    assert second["original_payload_published"] is False
+    custody = second["source_custody"]
+    assert custody["extractor"] == "libarchive" and custody["matching_member_count"] == 12
+    assert len(custody["matching_ranges"]) == 7 and custody["range_bytes"] == 458752
+    assert all(r in report["member_receipt"]["range_receipts"] for r in custody["matching_ranges"])
+    files = second["menu_files"]
+    assert [f["path"] for f in files] == source.NPCS[:4]
+    assert [f["create_reference_count"] for f in files] == [1, 1, 1, 0]
+    assert [len(f["rows"]) for f in files] == [7, 19, 9, 7]
+    for f in files:
+        assert len(f["menu_label_physical_lines"]) == len(f["rows"])
+    rows = [r for f in files for r in f["rows"]]
+    assert sum(r["unparsed_value"] for r in rows) == 28
+    assert Counter(r["conditional_alias"] for r in rows if r["conditional_alias"]) == {"MM3": 2}
+    assert Counter(r["selected_template_id"] for r in rows if r["enemy_id"] is not None) == {
+        tid: 2 for tid in (755, 777, 901, 902, 903, 904)
+    }
+    assert all(r["exact_tw75_template_position"] is None and not r["among_67_residual_positions"] for r in rows)
+    print("PET50_VIP_ARCHIVE_PASS", "42 fields, 12 numeric, 2 conditional aliases, 28 unresolved")
+    return second
+
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--artifact", type=Path)
+    parser.add_argument("--vip-artifact", type=Path)
     parser.add_argument("--replay-output", type=Path)
     args = parser.parse_args()
     report, members, d = accept(args.artifact)
     print("PET50_ARCHIVE_PASS", EXPECTED_SUMMARY, "trainer_template_links", TRAINERS)
+    archived_vip = accept_vip(report, args.vip_artifact)
     if args.replay_output:
         data, custody = reacquire(report, members)
         assert source.derive(d, data) == report["projection"]
         menu = vip_menu(data, d, report)
+        assert menu == archived_vip["menu_files"]
         out = {
             "schema": "stoneage.pet50.original_vip_menu_candidate.r1",
             "archive_git_blob": REPORT_BLOB,

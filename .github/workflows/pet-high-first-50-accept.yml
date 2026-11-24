@@ -23,6 +23,7 @@ jobs:
           python-version: '3.12'
       - run: python -m tools.stoneage_pet_high_first_50_accept
       - run: python -m tools.stoneage_pet_high_first_49_accept
+      - run: python tools/stoneage_pet_source_lookup.py --verify
   independent-source:
     if: github.event_name == 'push' && github.ref_name == 'agent/pet-high-first-50-original-alternate-acquisition-20261124'
     runs-on: ubuntu-latest
