@@ -25,7 +25,7 @@ def main():
     assert sum(x["nearest_deltas"]==[1] for x in expected)==10
     assert sum(x["nearest_deltas"]==[-1] for x in expected)==4
     assert [dict(template_id=x["template_id"],name=x["name"],master_graphic=x["graphic"],early_names=x["tw10_names_at_graphic"]) for x in m if x["client_join_status"]=="TW10_GRAPHIC_OTHER_NAME"]==d["tw10_conflicts"]
-    assert [dict(group=x["tw85_original_spr_no_not_official_pet_id"],names={k:y.get("original_name_cp950",y.get("status")) for k,y in x["original_native_program_routes"].items()}) for x in v if 101865<=x["tw85_original_spr_no_not_official_pet_id"]<=101883]==d["tw85_local_window"]
+    assert [dict(group=x["tw85_original_spr_no_not_official_pet_id"],names={k:y["original_name_cp950"] if y.get("original_name_cp950") is not None else y.get("status") for k,y in x["original_native_program_routes"].items()}) for x in v if 101865<=x["tw85_original_spr_no_not_official_pet_id"]<=101883]==d["tw85_local_window"]
     assert len(d["coordinate_cases"])==26
     assert len({x["source_pos"] for x in d["coordinate_cases"]})==26
     for x in d["coordinate_cases"]:
