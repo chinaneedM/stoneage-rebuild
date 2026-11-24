@@ -282,6 +282,11 @@ def verify(m,d,entries):
     assert len({x["git_blob"] for x in d["hf39"]["community_sources"]}) == 1
     assert all(r["official_tw10_native_stats"] is None and r["official_tw10_skillset"] is None and not r["official_tw10_acquisition_verified"] and r["official_first_release_date"] is None and not r["japan_album"]["actual_image_bytes_read"] for r in cases39)
     assert sum(r["japan_album"]["exact_ordinal_name_match"] for r in cases39) == 2
+    panels39 = {r["pet_id"]: r["japan_album"]["panel"] for r in cases39 if r["japan_album"]["panel"] is not None}
+    assert len(panels39) == 4
+    assert all(p["level"] == 19 and p["original_jpeg_sha256"] is None and p["server"] is None and p["build"] is None and not p["official_tw10_identity_verified"] for p in panels39.values())
+    assert panels39["PET-000116"]["visually_estimated_elements_earth_water_fire_wind"] == [5, 5, 0, 0]
+    assert [panels39["PET-000124"][k] for k in ("hp_max", "attack", "defense", "speed")] == [199, 41, 30, 35]
     assert all(r["period_growth_20030924"] is None or r["period_growth_20030924"]["section"] == "转宠" for r in cases39)
     wulibulu, weibo, beiluobaoli = cases
     panel = wulibulu["japan_album_panel"]

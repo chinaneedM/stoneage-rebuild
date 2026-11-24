@@ -8975,3 +8975,9 @@ R14包351231B/SHA7684267ab528d13ceecb23a25632543ae839225607cbda702a32736e4c4d366
 - 日本玩家图鉴第4、18页引用的 JPEG 已实际下载并目视，原文件摘要、尺寸、色条宽度和名称差异见附表。首页更新标记为2010-03-18，个体截图年代和服务器构建仍未知。[日本玩家图鉴](https://kbpetzukan.iinaa.net/) · [R38证据](continuity/STONEAGE-PET-HIGH-FIRST-38-THREE-PC-FIELD-CASES-20261124.md)
 - 保存混合2.5档内的 `setup.cf`、`10406` 及八份配置数据实读并逐件散列。迷幻洞窟地图与固定后期副本只相差八个名称编码字节。保存档的实例标记、配置技能及遇敌关系按文件独立记录，实际官方部署仍待证。[机读来源收据](../research/pets/PET-HIGH-FIRST-38-PC-THREE-FIELD-CASES-R1.json)
 - We Love SA 的乌力布鲁、威伯、贝洛宝利三页读取索引正文。页面摘要与玩家登记样本的取值分开记录，原始 HTML、各样本日期和服务器构建未获得。[字段和页面定位](../research/pets/PET-HIGH-FIRST-38-PC-THREE-FIELD-CASES-R1.json)
+
+
+## 2026-11-24｜PET-HIGH-FIRST-39 五只早期经典PC宠物字段补证
+
+- 固定社区PC主表两仓实际同Git blob `a19a508975e3a982fada323861b35b2edab79349`，不可当独立双证。保存混合2.5仅复用已验派生记录。同期2001-09-11推荐全文、2002-12-17机械文明攻略、2003目录及2003-09-24转宠成长汇编，分别保留来源资格。[逐宠来源、原链接与机读回执](continuity/STONEAGE-PET-HIGH-FIRST-39-FIVE-PC-FIELD-CASES-20261124.md)。
+- 日本玩家图鉴40/41/42/115四张19级原图经网页图像渲染目视读取，原JPEG字节及散列未取得；色条仅为目视配比，服务器构建未知。原图不入Git。日本15无原图入口。
