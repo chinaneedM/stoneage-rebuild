@@ -3376,3 +3376,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-24｜PET-HIGH-FIRST-17 技能与遇敌引用链
 
 [最新接续](docs/continuity/STONEAGE-PET-HIGH-FIRST-17-SKILL-ENCOUNTER-20261124.md) · [来源限定机器目录](research/pets/PET-HIGH-FIRST-17-COMPARISON-SKILL-ENCOUNTER-R1.json)。429条全字段同后期对照模板中282有正权重地图引用，230含Lv1；40个非负技能编号均有后期扩展表定义。不认作原服抓捕或出生技能。NEXT PET18同期取得、技能学习及地图号独立反核。原CURRENT不改，PET唯一。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-18 宠物取得和地图原头
+
+[最新续接](docs/continuity/STONEAGE-PET-HIGH-FIRST-18-MAP-ACQUISITION-20261124.md) · [14只宠物的来源对照](docs/pets/PC-2001-STARTER-AND-CAPTURE-CROSSWALK.md)。原后期PC固定提交1284文件实读、349地图号338无原头字段歧义；四村赠宠分普通/选择模板，10个同期坐标在后期Lv1配置内，保留石龟主档和威伯元素冲突。原服实际取得未认证。NEXT PET19扩同期逐宠获得资料，不重复底层扫描。原CURRENT不变。
