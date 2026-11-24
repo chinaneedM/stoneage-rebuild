@@ -1,0 +1,30 @@
+name: PET-HIGH-FIRST-11 classic PC indexed pixel receipts
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/pet-high-first-11-visual-receipts.yml'
+      - 'tools/stoneage_pet_high_first_pc_visual.py'
+      - 'tools/stoneage_pet16_lookup.py'
+      - 'research/pets/PET-HIGH-FIRST-11-*'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/pet-high-first-11-visual-receipts.yml'
+      - 'tools/stoneage_pet_high_first_pc_visual.py'
+      - 'tools/stoneage_pet16_lookup.py'
+      - 'research/pets/PET-HIGH-FIRST-11-*'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Replay source attribution and block receipt metadata
+        run: python -m tools.stoneage_pet_high_first_pc_visual
+      - name: Run existing source-aware catalogue regressions
+        run: python -m unittest discover -s tests -p 'test_stoneage_pet_high_first_*.py'
