@@ -1,0 +1,78 @@
+{
+  "schema": "stoneage.pet57.free_classic_pc_client_pointer_probe.r1",
+  "date": "2026-11-24",
+  "scope": "PUBLIC_HISTORICAL_CLIENT_POINTERS_ONLY_NO_NEW_ORIGINAL_BYTES",
+  "records": [
+    {
+      "page": "https://games.sina.com.cn/z/sqsd/download.shtml",
+      "displayed_version": "V1.200.012",
+      "displayed_size": "1.34GB",
+      "displayed_md5": "2a1743e07e4f97f1b2e337048918da6a",
+      "operator": "胜思",
+      "page_lines": [
+        87,
+        101
+      ],
+      "attempts": [
+        {
+          "id": 38669,
+          "region": "成都电信",
+          "status": "WEB_FETCH_502"
+        },
+        {
+          "id": 38670,
+          "region": "上海电信",
+          "status": "WEB_FETCH_502"
+        },
+        {
+          "id": 38673,
+          "region": "北京电信",
+          "status": "WEB_FETCH_502"
+        }
+      ]
+    },
+    {
+      "page": "https://youxi.zol.com.cn/ol/13450/download.html?softId=357206",
+      "displayed_date": "2011-06-22",
+      "displayed_size": "1.15GB",
+      "page_lines": [
+        16,
+        26
+      ],
+      "attempts": [
+        {
+          "url": "https://youxi.zol.com.cn/down.php?site=11&softid=357206&subcatid=62",
+          "status": "WEB_FETCH_403"
+        },
+        {
+          "url": "https://sa.cins.cn/",
+          "status": "WEB_FETCH_TIMEOUT"
+        }
+      ]
+    },
+    {
+      "page": "https://game.zol.com.cn/2004/1103/128788.shtml",
+      "date": "2004-11-03",
+      "page_lines": [
+        22,
+        26
+      ],
+      "operator": "北京华义",
+      "version": "7.5",
+      "attempts": [
+        {
+          "url": "https://www.wayi.com.cn/zhuanqu/shiqi/xia.asp",
+          "status": "WEB_FETCH_TIMEOUT"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "HTML visible text only; no raw response checksum",
+    "errors are retrieval outcomes, not proof origin permanently offline",
+    "different operators and displayed sizes not merged as same build",
+    "do not download from paid sellers or private-server repacks"
+  ],
+  "new_client_bytes": 0,
+  "official_species_count": null
+}
