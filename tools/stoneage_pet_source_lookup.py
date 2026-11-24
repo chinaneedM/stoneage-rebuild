@@ -219,6 +219,7 @@ def build(d):
             if v["record_source_status"]!="SOURCE_LOCAL_NAMED_ROUTE":continue
             ls=[link("tw85_visual",["records",visualid[g]],"SAME_PRESERVED_SPR_NUMBER_PROGRAM_ROUTES_AND_FRAME_REFERENCES")]
             add("tw85_spr",["records",i,"program_routes",program],[v["original_name_cp950"]],"PRESERVED_TW85_PROGRAM_NAMED_SPR_ROUTE",[g,v["local_album_slot"]],ls,dict(program=program,graphic=g,local_slot=v["local_album_slot"],cross_program_name_conflict=x["graphic_has_conflicting_names_across_installer_programs"]))
+    gap46 = by_id(d["hf46"]["rows"], "tw75_row_index")
     acquisition45 = d["hf45"]["projection"]
     route45 = by_id(acquisition45["mixed25_template_routes"], "template_id")
     area45 = by_id(acquisition45["area_metadata"], "id")
@@ -253,7 +254,20 @@ def build(d):
                 nm = fr["later_recovered_name"]
                 floor_refs.append(dict(floor_id=fid,recovered_name_candidate=nm["display_name_candidate"] if nm else None,same_archive_dat_present=fr["same_archive_dat"] is not None))
                 ls.append(link("hf45_floor", ["rows",fi], "SAME_ARCHIVE_DAT_AND_SEPARATE_RECOVERED_NAME_REFERENCE"))
-        saved_acquisition = dict(match_status=ac["match_status"],positive_route_count=ac["positive_route_count"],double_pet_flag_route_count=ac["double_pet_flag_route_count"],lv1_double_flag_route_count=ac["lv1_double_flag_route_count"],floor_candidates=floor_refs,official_acquisition_verified=False)
+        gap_detail = None
+        if i in gap46:
+            gi = gap46[i]
+            gap = d["hf46"]["rows"][gi]
+            assert not ac["double_pet_flag_route_count"] and gap["row_sha256"] == x["row_sha256"]
+            ls.append(link("hf46", ["rows",gi], "SOURCE_SCOPED_ACQUISITION_GAP_NOT_OFFICIAL_RELEASE"))
+            for ref in gap["period_guide_refs"]:
+                ls.append(link("hf19c", ["rows",ref["row_index"]], "PERIOD_GUIDE_CLAIM_NOT_OFFICIAL_ACQUISITION"))
+            for ref in gap["capsule_refs"]:
+                ls.append(link("hf20", ["rows",ref["row_index"]], "CAPSULE_SOURCE_ASSOCIATION_NOT_ACTUAL_GRANT"))
+            for ref in gap["additional_refs"]:
+                ls.append(link(ref["source"], ["records" if ref["source"] == "fusion2003" else "rows",ref["row_index"]], ref["qualification"]))
+            gap_detail = dict(gap_state=gap["gap_state"],evidence_categories=gap["evidence_categories"],selected_table=gap["selected_table"]["status"],alternate_table=gap["alternate_table"]["status"],official_acquisition_verified=False)
+        saved_acquisition = dict(gap_classification=gap_detail,match_status=ac["match_status"],positive_route_count=ac["positive_route_count"],double_pet_flag_route_count=ac["double_pet_flag_route_count"],lv1_double_flag_route_count=ac["lv1_double_flag_route_count"],floor_candidates=floor_refs,official_acquisition_verified=False)
         add("tw75",["pet_flag_1_field_projections",i],[x["name"]],"CLAIMED_TW75_MASTER_TEMPLATE",[k,x["graphic"]],ls,dict(graphic=x["graphic"],template_id=k,elements=x["elements"],skill_slots=x["skill_slots"],conditional_lv1_panel=b["level1_unmodified_work_panel_marginal_ranges"],conditional_per_level_internal=b["per_level_internal_increment_marginal_ranges"],comparison_floor_ids=e["comparison_floor_ids"],comparison_status=e["comparison_status"],saved_mixed25_acquisition=saved_acquisition))
     # Historical observations are separate, even when names/identifiers coincide.
     for i,x in enumerate(d["sina2003"]["rows"]):
@@ -375,6 +389,11 @@ def verify(m,d,entries):
     assert all(r["official_tw10_native_stats"] is None and r["official_tw10_skillset"] is None and not r["official_tw10_acquisition_verified"] and r["official_first_release_date"] is None for r in cases40)
     high45 = [e for e in entries if e["source"] == "tw75"]
     assert len(high45) == 467
+    g46 = [e["detail"]["saved_mixed25_acquisition"]["gap_classification"] for e in high45 if e["detail"]["saved_mixed25_acquisition"]["gap_classification"] is not None]
+    assert len(g46) == 349
+    assert collections.Counter(g["gap_state"] for g in g46) == d["hf46"]["summary"]["gap_state_counts"]
+    assert sum(l["source"] == "hf46" for e in high45 for l in e["linked_records"]) == 349
+    assert all(not g["official_acquisition_verified"] for g in g46)
     assert sum(e["detail"]["saved_mixed25_acquisition"]["match_status"] == "EXACT_SHARED_TEMPLATE_ROW" for e in high45) == 440
     assert sum(e["detail"]["saved_mixed25_acquisition"]["positive_route_count"] > 0 for e in high45) == 123
     assert sum(e["detail"]["saved_mixed25_acquisition"]["double_pet_flag_route_count"] > 0 for e in high45) == 118

@@ -39,3 +39,8 @@ python3 tools/stoneage_pet_gap_queue.py --all > pet-source-gaps.json
 ## R37 台湾1.0原名档逐项对照
 
 现有124项均附 `source_evidence.field_reference`。可按 PET 档号核对2001投稿和后期模板的属性是否一致、存在异组、互不吻合或缺资料，并追出处。史料中的获取描述可随同查看。同部署正式字段仍等待原服证据。[逐项判断依据](../continuity/STONEAGE-PET-HIGH-FIRST-37-TW10-FIELD-REFERENCES-20261124.md)。
+
+
+## R46 高版本取得补缺分流
+
+349条无保存版双宠标记遇敌路径的既有TW75记录按来源资格分流，13有原任务奖励配置、234有其他来源参考、102本批无合格取得参考。没有新增队列位置，也未宣称任何官方取得字段关闭。[逐条矩阵与续接](../continuity/STONEAGE-PET-HIGH-FIRST-46-PC-ACQUISITION-GAP-20261124.md)。
