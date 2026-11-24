@@ -3366,3 +3366,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-24｜PET-HIGH-FIRST-15：声称华义7.5主档实得及原生RD路径
 
 [最新接续](docs/continuity/STONEAGE-PET-HIGH-FIRST-15-TW85-NATIVE-RD-20261124.md) · [宠物主档目录](docs/pets/TW75-CLAIMED-MASTER-CENSUS.md)。2012原帖公开enemybase1.txt实际两次下载同字节，960行56列，467条PETFLG=1字段投影（438不同原名）；917/960与后期保存主档同ID非名称/素材50列完全一致，243条模板与TW1/TW85同名同图号。原官服身份未证。原生RD静态153条指令支持尾零现象解释，严格完整组仍510/518、207头像。NEXT PET-HIGH-FIRST-16：优先主档字段及候选成长、同服技能取得与发行实证。PET唯一、历史CURRENT不改、总体UNKNOWN。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-16 声称7.5主档条件数值范围
+
+[最新接续记录](docs/continuity/STONEAGE-PET-HIGH-FIRST-16-TW75-FIELD-RANGES-20261124.md) · [467条逐模板派生范围](research/pets/PET-HIGH-FIRST-16-TW75-CONDITIONAL-BIRTH-GROWTH-R1.json)。26组同名多模板保留差异，雷帝斯洛两条异元素不规范化。复用后期PC默认模型计算条件Lv1基础面板与单级内部增长范围，未认证原服，独立重放待验。NEXT同源实例/技能与同期真实取得证据。原CURRENT不改，PET唯一。
