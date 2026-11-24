@@ -1,0 +1,2144 @@
+{
+  "schema": "stoneage.pet.high_first_19b.graphic_and_coordinate.r1",
+  "source_head": "d1fd6c3a44088beaa6c2744a096da57000bbe321",
+  "source_pins_git_blob": {
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-TW85-VISUAL-ACTION-REFERENCES-R1.json": "3bcfbba98cfb915b14679ba472dbc554db297018",
+    "research/pets/PET-HIGH-FIRST-17-COMPARISON-SKILL-ENCOUNTER-R1.json": "63af501ab483770c5c58cb2d62152ab8923dcc2b",
+    "research/pets/PET-HIGH-FIRST-18-COMPARISON-MAP-HEADERS-R1.json": "3b2bbe6d374a875baa8934d3ed8b7eca45e7b328"
+  },
+  "scope": "CLASSIC_PC_ONLY; derived source comparison; selected representative route intersection, not exhaustive",
+  "period_source": {
+    "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n182_98793.html",
+    "date": "2001-06-14",
+    "grade": "CONTEMPORARY_PLAYER_GUIDE",
+    "author": "依波波",
+    "raw_response_sha256": null
+  },
+  "summary": {
+    "master_rows": 467,
+    "join_status_counts": {
+      "TW10_SAME_GRAPHIC_NAME": 139,
+      "TW85_NATIVE_SAME_GRAPHIC_NAME": 104,
+      "TW10_GRAPHIC_OTHER_NAME": 16,
+      "TW85_NATIVE_GRAPHIC_OTHER_NAME": 14,
+      "NAME_ONLY_IN_TW85_GRID": 179,
+      "NO_QUALIFIED_NAME_GRAPHIC_LINK": 15
+    },
+    "tw85_conflicts": 14,
+    "nearest_plus1": 10,
+    "nearest_minus1": 4,
+    "tw10_conflicts": 16,
+    "coordinate_cases": 26,
+    "coordinate_intersection_cases": 26,
+    "explicit_cn_unconfirmed_cases": 2,
+    "name_variant_cases": 1
+  },
+  "tw85_conflicts": [
+    {
+      "template_id": 150,
+      "name": "懷沃夫",
+      "master_graphic": 101875,
+      "native_names": {
+        "sa.exe": "邦浦洛斯",
+        "sb.exe": "邦浦洛斯",
+        "sd.exe": "灰人龍"
+      },
+      "independent_name_groups": [
+        101682,
+        101785,
+        101833,
+        101876,
+        101897
+      ],
+      "nearest_deltas": [
+        1
+      ],
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL"
+    },
+    {
+      "template_id": 178,
+      "name": "萊恩奇夫",
+      "master_graphic": 101872,
+      "native_names": {
+        "sa.exe": "黑烏力王",
+        "sb.exe": "黑烏力王",
+        "sd.exe": "黑烏力王"
+      },
+      "independent_name_groups": [
+        101679,
+        101782,
+        101830,
+        101873,
+        101894
+      ],
+      "nearest_deltas": [
+        1
+      ],
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL"
+    },
+    {
+      "template_id": 179,
+      "name": "萊恩洛克",
+      "master_graphic": 101873,
+      "native_names": {
+        "sa.exe": "萊恩奇夫",
+        "sb.exe": "萊恩奇夫",
+        "sd.exe": "萊恩奇夫"
+      },
+      "independent_name_groups": [
+        101680,
+        101783,
+        101831,
+        101874,
+        101895
+      ],
+      "nearest_deltas": [
+        1
+      ],
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL"
+    },
+    {
+      "template_id": 1147,
+      "name": "黑烏力王",
+      "master_graphic": 101871,
+      "native_names": {
+        "sa.exe": "巴特",
+        "sb.exe": "巴特",
+        "sd.exe": "巴特"
+      },
+      "independent_name_groups": [
+        101678,
+        101781,
+        101829,
+        101872,
+        101893
+      ],
+      "nearest_deltas": [
+        1
+      ],
+      "comparison_status": "SAME_ID_DIFFERENT_TAIL"
+    },
+    {
+      "template_id": 1177,
+      "name": "布里薩爾",
+      "master_graphic": 101866,
+      "native_names": {
+        "sa.exe": "奧斯卡",
+        "sb.exe": "奧斯卡",
+        "sd.exe": "奧斯卡"
+      },
+      "independent_name_groups": [
+        101673,
+        101776,
+        101824,
+        101867
+      ],
+      "nearest_deltas": [
+        1
+      ],
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL"
+    },
+    {
+      "template_id": 1178,
+      "name": "沃克比",
+      "master_graphic": 101867,
+      "native_names": {
+        "sa.exe": "布里薩爾",
+        "sb.exe": "布里薩爾",
+        "sd.exe": "布里薩爾"
+      },
+      "independent_name_groups": [
+        101674,
+        101777,
+        101825,
+        101868
+      ],
+      "nearest_deltas": [
+        1
+      ],
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL"
+    },
+    {
+      "template_id": 1179,
+      "name": "沃斯姆",
+      "master_graphic": 101868,
+      "native_names": {
+        "sa.exe": "沃克比",
+        "sb.exe": "沃克比",
+        "sd.exe": "沃克比"
+      },
+      "independent_name_groups": [
+        101675,
+        101778,
+        101826,
+        101869
+      ],
+      "nearest_deltas": [
+        1
+      ],
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL"
+    },
+    {
+      "template_id": 1180,
+      "name": "巴雅",
+      "master_graphic": 101869,
+      "native_names": {
+        "sa.exe": "沃斯姆",
+        "sb.exe": "沃斯姆",
+        "sd.exe": "沃斯姆"
+      },
+      "independent_name_groups": [
+        101676,
+        101779,
+        101827,
+        101870
+      ],
+      "nearest_deltas": [
+        1
+      ],
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL"
+    },
+    {
+      "template_id": 1181,
+      "name": "巴特",
+      "master_graphic": 101870,
+      "native_names": {
+        "sa.exe": "巴雅",
+        "sb.exe": "巴雅",
+        "sd.exe": "巴雅"
+      },
+      "independent_name_groups": [
+        101677,
+        101780,
+        101828,
+        101871,
+        101892
+      ],
+      "nearest_deltas": [
+        1
+      ],
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL"
+    },
+    {
+      "template_id": 1182,
+      "name": "布伊酷",
+      "master_graphic": 101876,
+      "native_names": {
+        "sa.exe": "懷沃夫",
+        "sb.exe": "懷沃夫",
+        "sd.exe": "懷沃夫"
+      },
+      "independent_name_groups": [
+        101683,
+        101786,
+        101834,
+        101877,
+        101898
+      ],
+      "nearest_deltas": [
+        1
+      ],
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL"
+    },
+    {
+      "template_id": 1184,
+      "name": "菲爾特",
+      "master_graphic": 101879,
+      "native_names": {
+        "sa.exe": "布林特",
+        "sb.exe": "布林特",
+        "sd.exe": "布林特"
+      },
+      "independent_name_groups": [
+        101684,
+        101787,
+        101835,
+        101878,
+        101899
+      ],
+      "nearest_deltas": [
+        -1
+      ],
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL"
+    },
+    {
+      "template_id": 1185,
+      "name": "布林特",
+      "master_graphic": 101880,
+      "native_names": {
+        "sa.exe": "奈坎特",
+        "sb.exe": "奈坎特",
+        "sd.exe": "奈坎特"
+      },
+      "independent_name_groups": [
+        101685,
+        101788,
+        101836,
+        101879,
+        101900
+      ],
+      "nearest_deltas": [
+        -1
+      ],
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL"
+    },
+    {
+      "template_id": 1186,
+      "name": "奈坎特",
+      "master_graphic": 101881,
+      "native_names": {
+        "sa.exe": "奈宇羅",
+        "sb.exe": "奈宇羅",
+        "sd.exe": "奈宇羅"
+      },
+      "independent_name_groups": [
+        101686,
+        101789,
+        101837,
+        101880,
+        101901
+      ],
+      "nearest_deltas": [
+        -1
+      ],
+      "comparison_status": "SAME_ID_DIFFERENT_TAIL"
+    },
+    {
+      "template_id": 1187,
+      "name": "奈宇羅",
+      "master_graphic": 101882,
+      "native_names": {
+        "sa.exe": "卡芙娜",
+        "sb.exe": "卡芙娜",
+        "sd.exe": "卡芙娜"
+      },
+      "independent_name_groups": [
+        101687,
+        101790,
+        101838,
+        101881,
+        101902
+      ],
+      "nearest_deltas": [
+        -1
+      ],
+      "comparison_status": "SAME_ID_DIFFERENT_TAIL"
+    }
+  ],
+  "tw10_conflicts": [
+    {
+      "template_id": 97,
+      "name": "森林烏力",
+      "master_graphic": 100250,
+      "early_names": [
+        "烏力"
+      ]
+    },
+    {
+      "template_id": 161,
+      "name": "新手貝魯卡",
+      "master_graphic": 100327,
+      "early_names": [
+        "貝魯卡"
+      ]
+    },
+    {
+      "template_id": 162,
+      "name": "新手貝魯伊卡",
+      "master_graphic": 100328,
+      "early_names": [
+        "貝魯伊卡"
+      ]
+    },
+    {
+      "template_id": 163,
+      "name": "新手格魯西斯",
+      "master_graphic": 100329,
+      "early_names": [
+        "格魯西斯"
+      ]
+    },
+    {
+      "template_id": 164,
+      "name": "新手金格薩貝魯",
+      "master_graphic": 100330,
+      "early_names": [
+        "金格薩貝魯"
+      ]
+    },
+    {
+      "template_id": 172,
+      "name": "卡拉寶斯",
+      "master_graphic": 100320,
+      "early_names": [
+        "卡搭寶斯"
+      ]
+    },
+    {
+      "template_id": 325,
+      "name": "拉可拉斯",
+      "master_graphic": 100383,
+      "early_names": [
+        "拉可洛斯"
+      ]
+    },
+    {
+      "template_id": 331,
+      "name": "邦洛洛克斯",
+      "master_graphic": 100384,
+      "early_names": [
+        "巴洛洛克斯"
+      ]
+    },
+    {
+      "template_id": 524,
+      "name": "卡特利奴",
+      "master_graphic": 100329,
+      "early_names": [
+        "格魯西斯"
+      ]
+    },
+    {
+      "template_id": 693,
+      "name": "大地守護獸",
+      "master_graphic": 100338,
+      "early_names": [
+        "多洛布斯"
+      ]
+    },
+    {
+      "template_id": 694,
+      "name": "水的守護獸",
+      "master_graphic": 100380,
+      "early_names": [
+        "薩美洛斯"
+      ]
+    },
+    {
+      "template_id": 695,
+      "name": "火的守護獸",
+      "master_graphic": 100290,
+      "early_names": [
+        "邦奇諾"
+      ]
+    },
+    {
+      "template_id": 696,
+      "name": "風的守護獸",
+      "master_graphic": 100394,
+      "early_names": [
+        "布魯頓"
+      ]
+    },
+    {
+      "template_id": 716,
+      "name": "小烏烏",
+      "master_graphic": 100250,
+      "early_names": [
+        "烏力"
+      ]
+    },
+    {
+      "template_id": 717,
+      "name": "小坦坦",
+      "master_graphic": 100252,
+      "early_names": [
+        "烏力斯坦"
+      ]
+    },
+    {
+      "template_id": 721,
+      "name": "愛麗兒隊的加美",
+      "master_graphic": 100259,
+      "early_names": [
+        "加美"
+      ]
+    }
+  ],
+  "tw85_local_window": [
+    {
+      "group": 101865,
+      "names": {
+        "sa.exe": "吉姆拉",
+        "sb.exe": "吉姆拉",
+        "sc.exe": "OUTSIDE_QUALIFIED_LOCAL_GRID",
+        "sd.exe": "吉姆拉"
+      }
+    },
+    {
+      "group": 101866,
+      "names": {
+        "sa.exe": "奧斯卡",
+        "sb.exe": "奧斯卡",
+        "sc.exe": "OUTSIDE_QUALIFIED_LOCAL_GRID",
+        "sd.exe": "奧斯卡"
+      }
+    },
+    {
+      "group": 101867,
+      "names": {
+        "sa.exe": "布里薩爾",
+        "sb.exe": "布里薩爾",
+        "sc.exe": "OUTSIDE_QUALIFIED_LOCAL_GRID",
+        "sd.exe": "布里薩爾"
+      }
+    },
+    {
+      "group": 101868,
+      "names": {
+        "sa.exe": "沃克比",
+        "sb.exe": "沃克比",
+        "sc.exe": "OUTSIDE_QUALIFIED_LOCAL_GRID",
+        "sd.exe": "沃克比"
+      }
+    },
+    {
+      "group": 101869,
+      "names": {
+        "sa.exe": "沃斯姆",
+        "sb.exe": "沃斯姆",
+        "sc.exe": "OUTSIDE_QUALIFIED_LOCAL_GRID",
+        "sd.exe": "沃斯姆"
+      }
+    },
+    {
+      "group": 101870,
+      "names": {
+        "sa.exe": "巴雅",
+        "sb.exe": "巴雅",
+        "sc.exe": "OUTSIDE_QUALIFIED_LOCAL_GRID",
+        "sd.exe": "巴雅"
+      }
+    },
+    {
+      "group": 101871,
+      "names": {
+        "sa.exe": "巴特",
+        "sb.exe": "巴特",
+        "sc.exe": "OUTSIDE_QUALIFIED_LOCAL_GRID",
+        "sd.exe": "巴特"
+      }
+    },
+    {
+      "group": 101872,
+      "names": {
+        "sa.exe": "黑烏力王",
+        "sb.exe": "黑烏力王",
+        "sc.exe": "OUTSIDE_QUALIFIED_LOCAL_GRID",
+        "sd.exe": "黑烏力王"
+      }
+    },
+    {
+      "group": 101873,
+      "names": {
+        "sa.exe": "萊恩奇夫",
+        "sb.exe": "萊恩奇夫",
+        "sc.exe": "OUTSIDE_QUALIFIED_LOCAL_GRID",
+        "sd.exe": "萊恩奇夫"
+      }
+    },
+    {
+      "group": 101874,
+      "names": {
+        "sa.exe": "萊恩洛克",
+        "sb.exe": "萊恩洛克",
+        "sc.exe": "OUTSIDE_QUALIFIED_LOCAL_GRID",
+        "sd.exe": "萊恩洛克"
+      }
+    },
+    {
+      "group": 101875,
+      "names": {
+        "sa.exe": "邦浦洛斯",
+        "sb.exe": "邦浦洛斯",
+        "sc.exe": "OUTSIDE_QUALIFIED_LOCAL_GRID",
+        "sd.exe": "灰人龍"
+      }
+    },
+    {
+      "group": 101876,
+      "names": {
+        "sa.exe": "懷沃夫",
+        "sb.exe": "懷沃夫",
+        "sc.exe": "OUTSIDE_QUALIFIED_LOCAL_GRID",
+        "sd.exe": "懷沃夫"
+      }
+    },
+    {
+      "group": 101877,
+      "names": {
+        "sa.exe": "布伊酷",
+        "sb.exe": "布伊酷",
+        "sc.exe": "OUTSIDE_QUALIFIED_LOCAL_GRID",
+        "sd.exe": "布伊酷"
+      }
+    },
+    {
+      "group": 101878,
+      "names": {
+        "sa.exe": "菲爾特",
+        "sb.exe": "菲爾特",
+        "sc.exe": "OUTSIDE_QUALIFIED_LOCAL_GRID",
+        "sd.exe": "菲爾特"
+      }
+    },
+    {
+      "group": 101879,
+      "names": {
+        "sa.exe": "布林特",
+        "sb.exe": "布林特",
+        "sc.exe": "OUTSIDE_QUALIFIED_LOCAL_GRID",
+        "sd.exe": "布林特"
+      }
+    },
+    {
+      "group": 101880,
+      "names": {
+        "sa.exe": "奈坎特",
+        "sb.exe": "奈坎特",
+        "sc.exe": "OUTSIDE_QUALIFIED_LOCAL_GRID",
+        "sd.exe": "奈坎特"
+      }
+    },
+    {
+      "group": 101881,
+      "names": {
+        "sa.exe": "奈宇羅",
+        "sb.exe": "奈宇羅",
+        "sc.exe": "OUTSIDE_QUALIFIED_LOCAL_GRID",
+        "sd.exe": "奈宇羅"
+      }
+    },
+    {
+      "group": 101882,
+      "names": {
+        "sa.exe": "卡芙娜",
+        "sb.exe": "卡芙娜",
+        "sc.exe": "OUTSIDE_QUALIFIED_LOCAL_GRID",
+        "sd.exe": "卡芙娜"
+      }
+    },
+    {
+      "group": 101883,
+      "names": {
+        "sa.exe": "卡蘿麗",
+        "sb.exe": "卡蘿麗",
+        "sc.exe": "OUTSIDE_QUALIFIED_LOCAL_GRID",
+        "sd.exe": "卡蘿麗"
+      }
+    }
+  ],
+  "coordinate_cases": [
+    {
+      "source_pos": 19,
+      "source_name": "贝洛恩",
+      "master_name": "貝洛恩",
+      "template_id": 41,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "柯尔克通道1楼",
+      "source_points": [
+        [
+          15,
+          42
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 10101,
+        "rect": [
+          1,
+          1,
+          49,
+          49
+        ],
+        "encounter_index": 79,
+        "encounter_row_ordinal": 55,
+        "group_id": 216,
+        "enemy_id": 266,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          7
+        ]
+      },
+      "comparison_map_name": "往柯尔克的道路１楼|0",
+      "matched_points": [
+        [
+          15,
+          42
+        ]
+      ]
+    },
+    {
+      "source_pos": 21,
+      "source_name": "贝洛宝克",
+      "master_name": "貝洛寶克爾",
+      "template_id": 43,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "阿鲁姆山地下洞7楼",
+      "source_points": [
+        [
+          42,
+          21
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": true,
+      "representative_lv1_route": {
+        "floor": 20507,
+        "rect": [
+          0,
+          0,
+          60,
+          60
+        ],
+        "encounter_index": 274,
+        "encounter_row_ordinal": 246,
+        "group_id": 415,
+        "enemy_id": 726,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          3
+        ]
+      },
+      "comparison_map_name": "阿鲁姆山的洞窟地下７楼|0",
+      "matched_points": [
+        [
+          42,
+          21
+        ]
+      ]
+    },
+    {
+      "source_pos": 22,
+      "source_name": "贝洛宝利",
+      "master_name": "貝洛寶利",
+      "template_id": 44,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "迷幻洞窟",
+      "source_points": [
+        [
+          44,
+          15
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 10406,
+        "rect": [
+          0,
+          0,
+          49,
+          49
+        ],
+        "encounter_index": 252,
+        "encounter_row_ordinal": 226,
+        "group_id": 385,
+        "enemy_id": 530,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          5
+        ]
+      },
+      "comparison_map_name": "迷幻洞窟|0",
+      "matched_points": [
+        [
+          44,
+          15
+        ]
+      ]
+    },
+    {
+      "source_pos": 23,
+      "source_name": "龟之盾",
+      "master_name": "龜之盾",
+      "template_id": 51,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "愿藏桥至萨姆吉尔村",
+      "source_points": [
+        [
+          545,
+          389
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 100,
+        "rect": [
+          541,
+          375,
+          592,
+          554
+        ],
+        "encounter_index": 24,
+        "encounter_row_ordinal": 4,
+        "group_id": 95,
+        "enemy_id": 125,
+        "level": [
+          1,
+          2
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          5,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          5
+        ]
+      },
+      "comparison_map_name": "萨伊那斯",
+      "matched_points": [
+        [
+          545,
+          389
+        ]
+      ]
+    },
+    {
+      "source_pos": 24,
+      "source_name": "绿龟",
+      "master_name": "綠龜",
+      "template_id": 52,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "愿藏桥至萨姆吉尔村",
+      "source_points": [
+        [
+          549,
+          389
+        ],
+        [
+          568,
+          403
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 100,
+        "rect": [
+          541,
+          375,
+          592,
+          554
+        ],
+        "encounter_index": 24,
+        "encounter_row_ordinal": 4,
+        "group_id": 98,
+        "enemy_id": 128,
+        "level": [
+          1,
+          2
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          5,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          5
+        ]
+      },
+      "comparison_map_name": "萨伊那斯",
+      "matched_points": [
+        [
+          549,
+          389
+        ],
+        [
+          568,
+          403
+        ]
+      ]
+    },
+    {
+      "source_pos": 27,
+      "source_name": "阿哥亚",
+      "master_name": "阿哥亞",
+      "template_id": 61,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "深红洞6楼",
+      "source_points": [
+        [
+          3,
+          44
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 30010,
+        "rect": [
+          0,
+          0,
+          29,
+          49
+        ],
+        "encounter_index": 489,
+        "encounter_row_ordinal": 455,
+        "group_id": 649,
+        "enemy_id": 1203,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          3
+        ]
+      },
+      "comparison_map_name": "深红的洞窟地下６楼|0",
+      "matched_points": [
+        [
+          3,
+          44
+        ]
+      ]
+    },
+    {
+      "source_pos": 29,
+      "source_name": "特洛昆",
+      "master_name": "特洛昆",
+      "template_id": 63,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "卡坦村附近；另有任务奖品",
+      "source_points": [
+        [
+          256,
+          178
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 100,
+        "rect": [
+          180,
+          120,
+          315,
+          200
+        ],
+        "encounter_index": 49,
+        "encounter_row_ordinal": 28,
+        "group_id": 143,
+        "enemy_id": 174,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          5
+        ]
+      },
+      "comparison_map_name": "萨伊那斯",
+      "matched_points": [
+        [
+          256,
+          178
+        ]
+      ]
+    },
+    {
+      "source_pos": 33,
+      "source_name": "呼拔拔",
+      "master_name": "呼拔拔",
+      "template_id": 72,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "北岛；另有任务奖品",
+      "source_points": [
+        [
+          529,
+          140
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 100,
+        "rect": [
+          434,
+          115,
+          547,
+          176
+        ],
+        "encounter_index": 47,
+        "encounter_row_ordinal": 26,
+        "group_id": 131,
+        "enemy_id": 165,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          5
+        ]
+      },
+      "comparison_map_name": "萨伊那斯",
+      "matched_points": [
+        [
+          529,
+          140
+        ]
+      ]
+    },
+    {
+      "source_pos": 35,
+      "source_name": "鲁尼帖斯",
+      "master_name": "魯尼帖斯",
+      "template_id": 74,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "北岛洞窟入口周边",
+      "source_points": [
+        [
+          529,
+          140
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 100,
+        "rect": [
+          434,
+          115,
+          547,
+          176
+        ],
+        "encounter_index": 47,
+        "encounter_row_ordinal": 26,
+        "group_id": 135,
+        "enemy_id": 170,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          5
+        ]
+      },
+      "comparison_map_name": "萨伊那斯",
+      "matched_points": [
+        [
+          529,
+          140
+        ]
+      ]
+    },
+    {
+      "source_pos": 36,
+      "source_name": "卡达鲁卡斯",
+      "master_name": "卡達魯卡斯",
+      "template_id": 81,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "柯尔克矿坑1楼",
+      "source_points": [
+        [
+          31,
+          46
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 10601,
+        "rect": [
+          0,
+          0,
+          49,
+          49
+        ],
+        "encounter_index": 237,
+        "encounter_row_ordinal": 211,
+        "group_id": 368,
+        "enemy_id": 505,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          2
+        ]
+      },
+      "comparison_map_name": "东柯尔克的坑道１楼|0",
+      "matched_points": [
+        [
+          31,
+          46
+        ]
+      ]
+    },
+    {
+      "source_pos": 37,
+      "source_name": "柯伊达",
+      "master_name": "柯伊達",
+      "template_id": 82,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "柯尔克矿坑2楼",
+      "source_points": [
+        [
+          40,
+          4
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 10602,
+        "rect": [
+          0,
+          0,
+          49,
+          49
+        ],
+        "encounter_index": 238,
+        "encounter_row_ordinal": 212,
+        "group_id": 372,
+        "enemy_id": 509,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          7
+        ]
+      },
+      "comparison_map_name": "东柯尔克的坑道２楼|0",
+      "matched_points": [
+        [
+          40,
+          4
+        ]
+      ]
+    },
+    {
+      "source_pos": 38,
+      "source_name": "柯洛加斯",
+      "master_name": "柯洛加斯",
+      "template_id": 83,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "盗贼洞窟地下4楼；原文称名称曾误植",
+      "source_points": [
+        [
+          40,
+          43
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 10704,
+        "rect": [
+          0,
+          0,
+          49,
+          49
+        ],
+        "encounter_index": 245,
+        "encounter_row_ordinal": 219,
+        "group_id": 382,
+        "enemy_id": 520,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          7
+        ]
+      },
+      "comparison_map_name": "盗贼的洞窟地下４楼|0",
+      "matched_points": [
+        [
+          40,
+          43
+        ]
+      ]
+    },
+    {
+      "source_pos": 44,
+      "source_name": "利则诺顿",
+      "master_name": "利則諾頓",
+      "template_id": 91,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "琉璃洞窟13楼；另有洞窟奖品",
+      "source_points": [
+        [
+          15,
+          10
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 21013,
+        "rect": [
+          0,
+          0,
+          39,
+          39
+        ],
+        "encounter_index": 447,
+        "encounter_row_ordinal": 413,
+        "group_id": 594,
+        "enemy_id": 1138,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          5
+        ]
+      },
+      "comparison_map_name": "琉璃的洞窟１３楼|13",
+      "matched_points": [
+        [
+          15,
+          10
+        ]
+      ]
+    },
+    {
+      "source_pos": 45,
+      "source_name": "扬奇洛斯",
+      "master_name": "揚奇洛斯",
+      "template_id": 92,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "吉鲁岛达那村一侧；另有洞窟奖品",
+      "source_points": [
+        [
+          526,
+          101
+        ],
+        [
+          507,
+          105
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 300,
+        "rect": [
+          490,
+          78,
+          529,
+          108
+        ],
+        "encounter_index": 314,
+        "encounter_row_ordinal": 286,
+        "group_id": 443,
+        "enemy_id": 983,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          5
+        ]
+      },
+      "comparison_map_name": "吉鲁岛",
+      "matched_points": [
+        [
+          526,
+          101
+        ],
+        [
+          507,
+          105
+        ]
+      ]
+    },
+    {
+      "source_pos": 46,
+      "source_name": "邦浦洛斯",
+      "master_name": "邦浦洛斯",
+      "template_id": 93,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "吉鲁岛福尔德村一侧",
+      "source_points": [
+        [
+          398,
+          277
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": true,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 300,
+        "rect": [
+          393,
+          267,
+          406,
+          280
+        ],
+        "encounter_index": 332,
+        "encounter_row_ordinal": 304,
+        "group_id": 438,
+        "enemy_id": 979,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          5
+        ]
+      },
+      "comparison_map_name": "吉鲁岛",
+      "matched_points": [
+        [
+          398,
+          277
+        ]
+      ]
+    },
+    {
+      "source_pos": 47,
+      "source_name": "邦奇诺",
+      "master_name": "邦奇諾",
+      "template_id": 94,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "吉鲁岛达那村一侧；另有洞窟奖品",
+      "source_points": [
+        [
+          441,
+          104
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 300,
+        "rect": [
+          427,
+          100,
+          459,
+          126
+        ],
+        "encounter_index": 315,
+        "encounter_row_ordinal": 287,
+        "group_id": 445,
+        "enemy_id": 985,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          5
+        ]
+      },
+      "comparison_map_name": "吉鲁岛",
+      "matched_points": [
+        [
+          441,
+          104
+        ]
+      ]
+    },
+    {
+      "source_pos": 48,
+      "source_name": "布鲁顿",
+      "master_name": "布魯頓",
+      "template_id": 95,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "吉鲁岛福尔德村一侧",
+      "source_points": [
+        [
+          410,
+          357
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": true,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 300,
+        "rect": [
+          403,
+          346,
+          418,
+          363
+        ],
+        "encounter_index": 333,
+        "encounter_row_ordinal": 305,
+        "group_id": 440,
+        "enemy_id": 981,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          5
+        ]
+      },
+      "comparison_map_name": "吉鲁岛",
+      "matched_points": [
+        [
+          410,
+          357
+        ]
+      ]
+    },
+    {
+      "source_pos": 53,
+      "source_name": "卡比特",
+      "master_name": "卡比特",
+      "template_id": 111,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "北岛玄黄洞窟半岛",
+      "source_points": [
+        [
+          304,
+          328
+        ],
+        [
+          302,
+          322
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 100,
+        "rect": [
+          273,
+          282,
+          353,
+          366
+        ],
+        "encounter_index": 58,
+        "encounter_row_ordinal": 36,
+        "group_id": 171,
+        "enemy_id": 257,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          5
+        ]
+      },
+      "comparison_map_name": "萨伊那斯",
+      "matched_points": [
+        [
+          304,
+          328
+        ],
+        [
+          302,
+          322
+        ]
+      ]
+    },
+    {
+      "source_pos": 57,
+      "source_name": "格尔顿",
+      "master_name": "格爾頓",
+      "template_id": 141,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "吉鲁岛福尔德村下方",
+      "source_points": [
+        [
+          170,
+          350
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 300,
+        "rect": [
+          161,
+          331,
+          191,
+          361
+        ],
+        "encounter_index": 309,
+        "encounter_row_ordinal": 281,
+        "group_id": 432,
+        "enemy_id": 976,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          5
+        ]
+      },
+      "comparison_map_name": "吉鲁岛",
+      "matched_points": [
+        [
+          170,
+          350
+        ]
+      ]
+    },
+    {
+      "source_pos": 58,
+      "source_name": "奇拉顿",
+      "master_name": "奇拉頓",
+      "template_id": 142,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "没落矿坑4楼；另有SOT奖品",
+      "source_points": [
+        [
+          30,
+          53
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 31204,
+        "rect": [
+          0,
+          0,
+          59,
+          59
+        ],
+        "encounter_index": 328,
+        "encounter_row_ordinal": 300,
+        "group_id": 454,
+        "enemy_id": 991,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          7
+        ]
+      },
+      "comparison_map_name": "没落的矿坑４楼|0",
+      "matched_points": [
+        [
+          30,
+          53
+        ]
+      ]
+    },
+    {
+      "source_pos": 60,
+      "source_name": "格尔格",
+      "master_name": "格爾格",
+      "template_id": 144,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "没落矿坑4楼；另有JOT奖品",
+      "source_points": [
+        [
+          55,
+          45
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 31204,
+        "rect": [
+          0,
+          0,
+          59,
+          59
+        ],
+        "encounter_index": 328,
+        "encounter_row_ordinal": 300,
+        "group_id": 457,
+        "enemy_id": 994,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          7
+        ]
+      },
+      "comparison_map_name": "没落的矿坑４楼|0",
+      "matched_points": [
+        [
+          55,
+          45
+        ]
+      ]
+    },
+    {
+      "source_pos": 68,
+      "source_name": "鲍",
+      "master_name": "鮑",
+      "template_id": 183,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "森林洞窟2楼",
+      "source_points": [
+        [
+          23,
+          8
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 20102,
+        "rect": [
+          0,
+          0,
+          39,
+          69
+        ],
+        "encounter_index": 212,
+        "encounter_row_ordinal": 186,
+        "group_id": 333,
+        "enemy_id": 459,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          7
+        ]
+      },
+      "comparison_map_name": "森林洞窟２楼|0",
+      "matched_points": [
+        [
+          23,
+          8
+        ]
+      ]
+    },
+    {
+      "source_pos": 69,
+      "source_name": "卡拉卡利",
+      "master_name": "卡拉卡利",
+      "template_id": 184,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "森林洞窟4楼",
+      "source_points": [
+        [
+          12,
+          31
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 20104,
+        "rect": [
+          0,
+          0,
+          39,
+          39
+        ],
+        "encounter_index": 214,
+        "encounter_row_ordinal": 188,
+        "group_id": 336,
+        "enemy_id": 462,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          7
+        ]
+      },
+      "comparison_map_name": "森林洞窟４楼|0",
+      "matched_points": [
+        [
+          12,
+          31
+        ]
+      ]
+    },
+    {
+      "source_pos": 72,
+      "source_name": "格鲁西斯",
+      "master_name": "格魯西斯",
+      "template_id": 193,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "吉鲁岛福尔德村下方；另有SOT/JOT奖品",
+      "source_points": [
+        [
+          243,
+          369
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 300,
+        "rect": [
+          223,
+          348,
+          246,
+          374
+        ],
+        "encounter_index": 308,
+        "encounter_row_ordinal": 280,
+        "group_id": 435,
+        "enemy_id": 973,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          5
+        ]
+      },
+      "comparison_map_name": "吉鲁岛",
+      "matched_points": [
+        [
+          243,
+          369
+        ]
+      ]
+    },
+    {
+      "source_pos": 79,
+      "source_name": "加克拉",
+      "master_name": "加克拉",
+      "template_id": 222,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "科奥海底通道北岛侧1楼",
+      "source_points": [
+        [
+          20,
+          30
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 10201,
+        "rect": [
+          18,
+          27,
+          31,
+          41
+        ],
+        "encounter_index": 207,
+        "encounter_row_ordinal": 181,
+        "group_id": 317,
+        "enemy_id": 442,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          7
+        ]
+      },
+      "comparison_map_name": "海底通路地下１楼|10",
+      "matched_points": [
+        [
+          20,
+          30
+        ]
+      ]
+    },
+    {
+      "source_pos": 80,
+      "source_name": "加格",
+      "master_name": "加格",
+      "template_id": 223,
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "source_place_summary": "科奥海底通道南岛侧1楼",
+      "source_points": [
+        [
+          11,
+          32
+        ]
+      ],
+      "source_cn_appearance_explicitly_unconfirmed": false,
+      "name_variant_candidate_only": false,
+      "representative_lv1_route": {
+        "floor": 10203,
+        "rect": [
+          6,
+          27,
+          18,
+          36
+        ],
+        "encounter_index": 206,
+        "encounter_row_ordinal": 180,
+        "group_id": 319,
+        "enemy_id": 446,
+        "level": [
+          1,
+          1
+        ],
+        "group_item_gates": [
+          -1,
+          -1
+        ],
+        "event_fields": [
+          -1,
+          -1,
+          -1
+        ],
+        "weights": [
+          1,
+          1
+        ],
+        "encounter_rate_fields": [
+          1,
+          7
+        ]
+      },
+      "comparison_map_name": "海底通路地下１楼|10",
+      "matched_points": [
+        [
+          11,
+          32
+        ]
+      ]
+    }
+  ],
+  "official_deployment_verified": false,
+  "official_capture_verified": false,
+  "original_graphic_ids_changed": false,
+  "official_species_count": null
+}

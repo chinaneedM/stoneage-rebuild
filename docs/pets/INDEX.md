@@ -414,3 +414,8 @@
 ## 2026-11-24｜PET-HIGH-FIRST-19 同期活动取得与高版图号差异
 
 [逐宠取得档案](PC-2004-2005-EVENT-ACQUISITION.md) · [机读证据](../../research/pets/PET-HIGH-FIRST-19-PERIOD-ACQUISITION-R1.json) · [连续性及下一批](../continuity/STONEAGE-PET-HIGH-FIRST-19-PERIOD-ACQUISITION-20261124.md)。十条具名主档：4同图同名、5异名图号、1仅相簿名。三份同期全文和分级索引；台陆取得差异、奖励与实际领取严格区分。PET唯一，原CURRENT不动。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-19B 局部图号差异及26条坐标补证
+
+[第二批抓宠坐标](PC-2001-CAPTURE-COORDINATES-ADDITIONAL.md) · [机读记录](../../research/pets/PET-HIGH-FIRST-19B-GRAPHIC-AND-COORDINATE-R1.json) · [接续记录](../continuity/STONEAGE-PET-HIGH-FIRST-19B-GRAPHIC-AND-COORDINATE-20261124.md)。467模板中14条TW85异名图最近候选10条+1、4条-1；不改原ID。26条选定同期坐标与后期代表性Lv1矩形相交，非官服捕捉验收；原CURRENT不动，PET唯一。
