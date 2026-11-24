@@ -1,0 +1,364 @@
+{
+  "schema": "stoneage.pet40.pc_acquisition_crosswalk.r1",
+  "source_head": "7ce31b7e70e4746492616fb367d6cf819e98ebe2",
+  "source_tree": "f9bbb021c422c54b48994efdda11f1d158eb9a39",
+  "scope": "SOURCE_LOCAL_STATIC_CAPTURE_AND_REWARD_NOT_OFFICIAL_DEPLOYMENT",
+  "archive_source": {
+    "run_id": 45413714992,
+    "job_id": 138514106904,
+    "source_head": "c2959a5e8001548d19d7ade89cab6b943320d4e8",
+    "artifact_id": 14930252349,
+    "api_zip_sha256": "f339eb4b7c33987acc81fc2935e69daf7024476d8e56fc5bf2fd37106f2470c6",
+    "independent_zip_sha256": "f339eb4b7c33987acc81fc2935e69daf7024476d8e56fc5bf2fd37106f2470c6",
+    "artifact_zip_bytes": 17052,
+    "raw_json_sha256": "38a16d11181ee8b577f24976df71649593218a543aed6ef265dbf8ee18caa9f9",
+    "raw_json_bytes": 114585,
+    "derived_git_blob": "4d14310225cce39dc544aa76306dba2789efb2ba",
+    "original_member_count": 14,
+    "range_bytes": 12013836,
+    "range_requests": 184,
+    "whole_archive_rehashed": false,
+    "conclusion": "success"
+  },
+  "public_source": {
+    "repo": "gavinlinasd/StoneAge",
+    "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "tree": "33f71a5f804480cec28edee4bd6a6d1851ba2dab",
+    "input_git_blobs": {
+      "setup.cf": "bd834cd1a7dfa3af6e14210d0cdf15b217b0e72f",
+      "data/enemy1.txt": "bf245a391adeace09915b6e425754b54ab69a8f6",
+      "data/enemybase1.txt": "a19a508975e3a982fada323861b35b2edab79349",
+      "data/group1.txt": "1be75eb3e56ab16d4b433146ec59538ad651c874",
+      "data/encount.txt": "89da97a15ea866a36f26ec3bb7ab5490f3eccc5f",
+      "data/npc/king/event69_24": "f46ab71a562df675cc226f021a62b23f639cce6a",
+      "data/npc/king/event69_23.arg": "e4907e92d00b136affb85bf7fe921b28e10de8f6",
+      "data/npc/king/event69_alpha.create": "779f422cfb6779121dec07b0dd275a0c3a96c485",
+      "data/npc/king/event69_23.template": "c5b036e24fd0d32b5c6031f4c4b2ab7bec1bb7d8",
+      "data/map/giiru/dungeon/sikkoku/dan_3-20-09": "10347a191cfe97604dec3b71586b56ff54d60463",
+      "data/map/giiru/dungeon/sikkoku/dan_3-20-11": "65560244934d7ffbaa76b2ffc79461909c1b44a5",
+      "data/map/king/30670": "49dbcf3669b45d9a1cd252ba29896226fba287d3",
+      "data/map/king/30689": "41f771f4551913f538a1c74dbfd23944d09fff15",
+      "data/map/king/30692": "80f01f7dab7c8d4dc9c4cebfd326ce3cd5775864",
+      "src/npc/npc_exchangeman.c": "5d74290ed6f27163e0698b4375d5dc5e187c77c4",
+      "src/char/enemy.c": "65e5a2e352253a214407f07425427f539db5e863"
+    },
+    "table_counts": [
+      1816,
+      2958,
+      1392,
+      1197
+    ],
+    "all_positive_reference_count": 95,
+    "both_flags_positive_reference_count": 79,
+    "lv1_both_flags_reference_count": 7,
+    "script_source_boundary": "GetPet parsing and ENEMY_ID lookup function read; changeevent runtime registration and actual execution not verified"
+  },
+  "archive_table_counts": [
+    988,
+    2087,
+    1257,
+    660
+  ],
+  "archive_positive_reference_count": 70,
+  "archive_lv1_reference_count": 6,
+  "map_comparisons": [
+    {
+      "path": "data/map/giiru/dungeon/sikkoku/dan_3-20-09",
+      "public_git_blob": "10347a191cfe97604dec3b71586b56ff54d60463",
+      "public_sha256": "5d4660a63825c93ece0de0a74c736b65f8129c03ed49d76f37f864e7bfe49157",
+      "mixed_sha256": "5317e4ee9beb285f10b59c8efeae1039d070177be66c344259a57fc6d91ef62e",
+      "bytes": 14444,
+      "mixed_bytes": 14444,
+      "whole_equal": false,
+      "map": {
+        "floor": 32009,
+        "width": 60,
+        "height": 60,
+        "header_sha256": "24413c5091497c2f670a643d28ab4d93645c2c3af38f9cf50c087223d7135c05",
+        "planes_sha256": "1b770553afcc5b6214284fcc1159cfa078d7d978a0b2f66d810cf55ae4e20eee",
+        "plane_payload_equal": true,
+        "header_equal": false
+      }
+    },
+    {
+      "path": "data/map/giiru/dungeon/sikkoku/dan_3-20-11",
+      "public_git_blob": "65560244934d7ffbaa76b2ffc79461909c1b44a5",
+      "public_sha256": "d0f7f698943fe8b45e0de62e11f0f19791cd6f938b92271d5595568e4ddf9737",
+      "mixed_sha256": "191f292e4cacf40cc77074f5a4349b66ed7da3969b321639b3b8bb9cd90d8024",
+      "bytes": 14444,
+      "mixed_bytes": 14444,
+      "whole_equal": false,
+      "map": {
+        "floor": 32011,
+        "width": 60,
+        "height": 60,
+        "header_sha256": "38896a9daf8f244810e7bf22194289df7e40034c3df4c9d14bb84bdef312b2a4",
+        "planes_sha256": "eb2b05d95dafa067bea62acf51c8e233c3c7695bd75a9dcf2a13b10a345e42d9",
+        "plane_payload_equal": true,
+        "header_equal": false
+      }
+    },
+    {
+      "path": "data/map/king/30670",
+      "public_git_blob": "49dbcf3669b45d9a1cd252ba29896226fba287d3",
+      "public_sha256": "4b90609d5fdf7588a5658307741bc77caf495c9abb386296a38bb744aa5349e8",
+      "mixed_sha256": "5e7dda73a5a82dfff17c8ede6718d649bed6a06ce4192c76ccfc84a8ce7f016a",
+      "bytes": 3644,
+      "mixed_bytes": 3644,
+      "whole_equal": false,
+      "map": {
+        "floor": 30670,
+        "width": 30,
+        "height": 30,
+        "header_sha256": "69940b9ffe7a8f6ef8ddd8e6cccabb35c3c8a97cb133d701b11a16bdeea93864",
+        "planes_sha256": "69318a3a0c844118016378ab2e5579ca09f4c205efbb0504d3c46c6548978ba7",
+        "plane_payload_equal": true,
+        "header_equal": false
+      }
+    },
+    {
+      "path": "data/map/king/30689",
+      "public_git_blob": "41f771f4551913f538a1c74dbfd23944d09fff15",
+      "public_sha256": "9d04cfd653f9d7149d6d50d0f00ed11933e52db1bcd14a5d7451c9a74742554e",
+      "mixed_sha256": "fcea6306a3948d08c3fd75945cd4e7c5a13dfebb573d841ef3c68fc74b25a89c",
+      "bytes": 14444,
+      "mixed_bytes": 14444,
+      "whole_equal": false,
+      "map": {
+        "floor": 30689,
+        "width": 60,
+        "height": 60,
+        "header_sha256": "58aedebd2e86dd7f5b8f9ffbd716306019fc0bec0efe1ec97f0221c953a900ff",
+        "planes_sha256": "d22dda5f82938c2ff9b62fc8594d8d94830fb367e64032379568bbce34e842c9",
+        "plane_payload_equal": true,
+        "header_equal": false
+      }
+    },
+    {
+      "path": "data/map/king/30692",
+      "public_git_blob": "80f01f7dab7c8d4dc9c4cebfd326ce3cd5775864",
+      "public_sha256": "1ec37c8d2a202773371899166e08aa5b57852ab816eee978fd72e6d9df45340f",
+      "mixed_sha256": "e379ab278e7e420662eb794c9212749a0c96b57d608a3f95a5d7344b5abe8192",
+      "bytes": 25644,
+      "mixed_bytes": 25644,
+      "whole_equal": false,
+      "map": {
+        "floor": 30692,
+        "width": 80,
+        "height": 80,
+        "header_sha256": "760c55ab7994f99101bfc6b47e2daea69634dda2a8d9539317e39d9ac836bffc",
+        "planes_sha256": "66e18de4062c3504ceb76bf454700c8c49999f6d299dd82cd5f60c1d90c6f925",
+        "plane_payload_equal": true,
+        "header_equal": false
+      }
+    }
+  ],
+  "quest": {
+    "archive_and_public_semantic_expected_equal": true,
+    "public_parser_lines": [
+      2578,
+      2582,
+      3210,
+      3213,
+      3390,
+      3405,
+      3420,
+      3425,
+      3432,
+      3461
+    ],
+    "source_creation_lines": [
+      1581,
+      1596,
+      1605,
+      1607
+    ],
+    "official_runtime_verified": false,
+    "actual_award_verified": false
+  },
+  "rows": [
+    {
+      "pet_id": "PET-000014",
+      "original_client_name": "烏寶寶",
+      "tw10_graphic": 100263,
+      "ordinary_template_id": 31,
+      "archive_template_ids": [
+        31,
+        663
+      ],
+      "public_template_ids": [
+        31,
+        663
+      ],
+      "archive_positive_reference_count": 44,
+      "archive_lv1_reference_count": 3,
+      "public_positive_reference_count": 45,
+      "public_lv1_reference_count": 4,
+      "archive_lv1_route_indices": [
+        0,
+        1,
+        2
+      ],
+      "archive_lv1_floors": [
+        200
+      ],
+      "period_witness": "加加村周边；2001/2003玩家资料",
+      "period_floor_if_resolvable": null,
+      "period_floor_lv1_static_match": null,
+      "quest_reward": null,
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_tw10_skillset": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000116",
+      "original_client_name": "洛克斯",
+      "tw10_graphic": 100389,
+      "ordinary_template_id": 85,
+      "archive_template_ids": [
+        85,
+        697
+      ],
+      "public_template_ids": [
+        85,
+        697
+      ],
+      "archive_positive_reference_count": 2,
+      "archive_lv1_reference_count": 1,
+      "public_positive_reference_count": 2,
+      "public_lv1_reference_count": 1,
+      "archive_lv1_route_indices": [
+        68
+      ],
+      "archive_lv1_floors": [
+        30692
+      ],
+      "period_witness": "漆黑9楼(50,11)，2003目录",
+      "period_floor_if_resolvable": 32009,
+      "period_floor_lv1_static_match": false,
+      "quest_reward": null,
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_tw10_skillset": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000117",
+      "original_client_name": "阿伊薩",
+      "tw10_graphic": 100390,
+      "ordinary_template_id": 86,
+      "archive_template_ids": [
+        86
+      ],
+      "public_template_ids": [
+        86,
+        2018
+      ],
+      "archive_positive_reference_count": 12,
+      "archive_lv1_reference_count": 1,
+      "public_positive_reference_count": 12,
+      "public_lv1_reference_count": 1,
+      "archive_lv1_route_indices": [
+        52
+      ],
+      "archive_lv1_floors": [
+        32009
+      ],
+      "period_witness": "漆黑9楼(50,11)/(40,4)，2003目录",
+      "period_floor_if_resolvable": 32009,
+      "period_floor_lv1_static_match": true,
+      "quest_reward": null,
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_tw10_skillset": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000118",
+      "original_client_name": "格洛格魯",
+      "tw10_graphic": 100391,
+      "ordinary_template_id": 87,
+      "archive_template_ids": [
+        87
+      ],
+      "public_template_ids": [
+        87
+      ],
+      "archive_positive_reference_count": 12,
+      "archive_lv1_reference_count": 1,
+      "public_positive_reference_count": 20,
+      "public_lv1_reference_count": 1,
+      "archive_lv1_route_indices": [
+        58
+      ],
+      "archive_lv1_floors": [
+        32011
+      ],
+      "period_witness": "漆黑11楼，2003目录",
+      "period_floor_if_resolvable": 32011,
+      "period_floor_lv1_static_match": true,
+      "quest_reward": null,
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_tw10_skillset": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000124",
+      "original_client_name": "邦達霍恩",
+      "tw10_graphic": 100430,
+      "ordinary_template_id": 315,
+      "archive_template_ids": [
+        315,
+        623,
+        711,
+        1240
+      ],
+      "public_template_ids": [
+        315,
+        623,
+        711
+      ],
+      "archive_positive_reference_count": 0,
+      "archive_lv1_reference_count": 0,
+      "public_positive_reference_count": 0,
+      "public_lv1_reference_count": 0,
+      "archive_lv1_route_indices": [],
+      "archive_lv1_floors": [],
+      "period_witness": "天空之岛任务奖励，2002/2003玩家资料",
+      "period_floor_if_resolvable": null,
+      "period_floor_lv1_static_match": null,
+      "quest_reward": {
+        "instance_id": 484,
+        "template_id": 315,
+        "level": [
+          1,
+          1
+        ],
+        "npc_floor": 30670,
+        "npc_corner": [
+          15,
+          5,
+          15,
+          5
+        ],
+        "battle_floor": 30689,
+        "warp": [
+          30670,
+          15,
+          9
+        ]
+      },
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_tw10_skillset": null,
+      "official_first_release_date": null
+    }
+  ],
+  "original_assets_published": false,
+  "official_species_count": null,
+  "official_deployment_verified": false,
+  "runtime_executed": false,
+  "next": "PET-HIGH-FIRST-41: extend exact same-source acquisition chains to other already documented named pets with free original bytes; resolve real official deployment where possible; retain historical discrepancies, no repetitive name-only collection."
+}
