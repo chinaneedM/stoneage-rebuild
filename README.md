@@ -3356,3 +3356,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-24｜PET-HIGH-FIRST-13：台湾8.5长动作及特殊RD实读
 
 [最新接续记录](docs/continuity/STONEAGE-PET-HIGH-FIRST-13-TW85-LONG-SPECIAL-20261124.md)。原六分卷再次校验，20组642帧位置，12组新增完整样本，累计510/518具名物理组，207头像保持双解码。剩余8组原失败保留；新增华义2005-11-10狗年兽预告同期证据，不当逐宠实发。NEXT PET-HIGH-FIRST-14：有界核特殊编码原证及同服主档、真实发放等字段。完整历史CURRENT不改，PET唯一模块。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-14 TW85 special RD and period evidence
+
+[Latest continuation](docs/continuity/STONEAGE-PET-HIGH-FIRST-14-TW85-SPECIAL-RD-20261124.md). Authenticated source run 45348429899: eight exact RLE streams have one trailing zero beyond declared dimensions; two header-only blocks have no pixels. Native closure remains 510/518 physical groups and 207 portrait aliases; no new official pet identities. Original client census and separate period-event/skill observations archived. NEXT PET-HIGH-FIRST-15; PET-only lock, historic CURRENT blob unchanged, overall UNKNOWN.

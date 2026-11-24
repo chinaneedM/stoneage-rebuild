@@ -386,3 +386,7 @@
 ## 2026-11-22｜PET-DETAIL21：原版 PS 返回与宠物／技能／物品更新并非已证同一事务
 
 [逐址限定的PS→K/W/I证据边界](../continuity/STONEAGE-PET-DETAIL21-PS-VS-PET-ITEM-STATE-REFRESH-20261122.md) · [机器收据与严格无联动断言](../../research/pets/PET-DETAIL-EVIDENCE21-PS-STATUS-K-W-I-SOURCE-BOUNDARY-R1.json)。复核同版原PC已验PET20静态PS回复和PET126E原K更新，以及TW1数据表中S:K（21字段）、S:W（5字段）、S:I（9字段）、I（10字段）四组接收入口。分别存在**不等于PS成功后由服务器按固定顺序刷新它们**；未获原联机包、配方、扣料、官方出生技能或真宠物出生值。本轮未重新取原EXE；旧原件校验和全历史CURRENT保留，124档PARTIAL、完全验收0。PS无新源证即停止扩助手链，下一步原早期同部署主档或4份头像原RD可得即补，仍仅经典PC宠物。
+
+## 2026-11-24｜PET-HIGH-FIRST-14 高版特殊RD与同期技能资料
+
+[连续性收据](../continuity/STONEAGE-PET-HIGH-FIRST-14-TW85-SPECIAL-RD-20261124.md) · [特殊块机读证据](../../research/pets/PET-HIGH-FIRST-14-TW85-SPECIAL-RD-AND-MASTER-CENSUS-R1.json) · [同期史料](../../research/pets/PET-HIGH-FIRST-14-TW85-PERIOD-CLAIMS-R1.json)。10个原异常块复读：8个多1个尾零、2个16B无正文；仅候选解释，原生完整组仍510/518，207头像。7个具名候选对应8个残余组；同期活动、蚂蚁上线报道和玩家技能记载独立保存。557个原MSI文件名无明确主表候选，不排除嵌入表。查询兼容PET12/PET13，新官服实发确证0，完整PET0，PET锁不变。

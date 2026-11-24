@@ -44,3 +44,19 @@ class TestTw85Pixels(unittest.TestCase):
         self.assertEqual(group['spr'], 102016)
         portrait, = row['original_visual_candidates']['portrait_blocks']
         self.assertEqual(portrait['status'], 'DUAL_DECODED_INDEX_PIXELS')
+
+    def test_combined_pet12_pet13_sample_coverage(self):
+        rows = lookup.attach_visual_routes(lookup.query(lookup.load(), limit=2000))
+        groups = {}
+        for row in rows:
+            self.assertFalse(row['official_live_pet_id_verified'])
+            for g in row.get('original_visual_candidates', {}).get('sprite_groups', []):
+                key = g['source_group_index']
+                value = g['has_complete_index_pixel_sample']
+                if key in groups:
+                    self.assertEqual(groups[key], value)
+                groups[key] = value
+        self.assertEqual(len(groups), 518)
+        self.assertEqual(sum(groups.values()), 510)
+        self.assertEqual({i for i,v in groups.items() if not v},
+                         {1329,1369,1465,1479,1482,1495,1541,1586})
