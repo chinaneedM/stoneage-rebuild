@@ -1,0 +1,767 @@
+{
+  "schema": "stoneage.pet.high_first_34.cn_period_field_witness.r1",
+  "source_head": "e0fe68ab8f93b605f227adb7d88290e0289f71ef",
+  "source_tree": "c6895639f4c5c1a518d5cf51adc859906189dd44",
+  "scope": "Classic PC mainland period text and manually rendered individual status sample. No new original client or original server records. Names and claims are not official distinct species totals.",
+  "sources": {
+    "JAN25": {
+      "date": "2011-01-25",
+      "url": "https://news.17173.com/content/2011-01-25/20110125115103644.shtml",
+      "grade": "PERIOD_OPERATOR_RELAY_PREVIEW"
+    },
+    "JAN27": {
+      "date": "2011-01-27",
+      "url": "https://news.17173.com/content/2011-01-27/20110127101805947.shtml",
+      "grade": "PERIOD_OPERATOR_RELAY_CURRENT_EXCHANGE",
+      "prior": "PET86 CNVIP"
+    },
+    "FEB23": {
+      "date": "2011-02-23",
+      "url": "https://news.17173.com/content/2011-02-23/20110223103546623.shtml",
+      "grade": "PERIOD_OPERATOR_RELAY_CURRENT_EXCHANGE"
+    },
+    "SEP13": {
+      "date": "2011-09-13",
+      "url": "https://news.17173.com/content/2011-09-13/20110913135057629.shtml",
+      "grade": "PERIOD_OPERATOR_RELAY_PREVIEW",
+      "prior": "PET86 CNSEPT"
+    },
+    "DEC01": {
+      "date": "2011-12-01",
+      "url": "https://game.zol.com.cn/262/2624988.html",
+      "grade": "PERIOD_MEDIA_CURRENT_EXCHANGE",
+      "version": "CN8.5"
+    },
+    "NOV07": {
+      "date": "2012-11-07",
+      "url": "https://games.sina.com.cn/o/n/2012-11-07/1723667266.shtml",
+      "grade": "PERIOD_OPERATOR_RELAY_AUCTION_ANNOUNCEMENT",
+      "version": "CN8.5"
+    },
+    "NOV08": {
+      "date": "2012-11-08",
+      "url": "https://games.sina.com.cn/o/n/2012-11-08/1722667638.shtml",
+      "grade": "PERIOD_OPERATOR_RELAY_ANONYMOUS_PREVIEW"
+    },
+    "NOV12": {
+      "date": "2012-11-12",
+      "url": "https://games.sina.com.cn/o/n/2012-11-12/1108668196.shtml",
+      "grade": "PERIOD_OPERATOR_RELAY_CURRENT_AUCTION"
+    },
+    "APR25": {
+      "date": "2013-04-25",
+      "url": "https://games.sina.com.cn/o/n/2013-04-25/1043702927.shtml",
+      "grade": "PERIOD_OPERATOR_RELAY_EVENT_REWARD",
+      "prior": "PET91 CN2013-04-25-YAAN-25-85-REWARDS"
+    }
+  },
+  "rows": [
+    {
+      "name": "戈力多",
+      "family": "雪人",
+      "region": "CN",
+      "source_ids": [
+        "JAN25",
+        "JAN27"
+      ],
+      "element_label": "火",
+      "element_ratio": null,
+      "element_order": [
+        "earth",
+        "water",
+        "fire",
+        "wind"
+      ],
+      "skill": {
+        "label": "雪地藏匿",
+        "qualification": "LEARNABLE_VIA_SPECIFIC_PET_SKILL_CAN_NOT_INNATE"
+      },
+      "acquisition": {
+        "kind": "VIP_POINTS_SHOP",
+        "advertised_available_by": "2011-01-27",
+        "version": "CN85_CONTEXT_FROM_PET86"
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "conflict": "JAN27 戈力拉段正文错写戈力多，不能据此将地水归给戈力多"
+    },
+    {
+      "name": "戈力拉",
+      "family": "雪人",
+      "region": "CN",
+      "source_ids": [
+        "JAN25",
+        "JAN27"
+      ],
+      "element_label": "水",
+      "element_ratio": [
+        2,
+        8,
+        0,
+        0
+      ],
+      "element_order": [
+        "earth",
+        "water",
+        "fire",
+        "wind"
+      ],
+      "skill": {
+        "label": "雪地藏匿",
+        "qualification": "LEARNABLE_VIA_SPECIFIC_PET_SKILL_CAN_NOT_INNATE"
+      },
+      "acquisition": {
+        "kind": "VIP_POINTS_SHOP",
+        "advertised_available_by": "2011-01-27",
+        "version": "CN85_CONTEXT_FROM_PET86"
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "conflict": "JAN25明确地2水8，JAN27正文错名；不等同原始主档"
+    },
+    {
+      "name": "古丁巴拉",
+      "family": "企鹅",
+      "region": "CN",
+      "source_ids": [
+        "JAN25",
+        "JAN27"
+      ],
+      "element_label": "水",
+      "element_ratio": null,
+      "element_order": [
+        "earth",
+        "water",
+        "fire",
+        "wind"
+      ],
+      "skill": {
+        "label": null,
+        "qualification": "LEARNABLE_ATTRIBUTE_MAGIC_NOT_INNATE",
+        "trainer": "奇幻训练师",
+        "place": "达那村／大厅 东"
+      },
+      "acquisition": {
+        "kind": "VIP_POINTS_SHOP",
+        "advertised_available_by": "2011-01-27",
+        "version": "CN85_CONTEXT_FROM_PET86"
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false
+    },
+    {
+      "name": "古丁亚拉",
+      "family": "企鹅",
+      "region": "CN",
+      "source_ids": [
+        "JAN25",
+        "JAN27"
+      ],
+      "element_label": "火",
+      "element_ratio": null,
+      "element_order": [
+        "earth",
+        "water",
+        "fire",
+        "wind"
+      ],
+      "skill": {
+        "label": null,
+        "qualification": "LEARNABLE_ATTRIBUTE_MAGIC_NOT_INNATE",
+        "trainer": "奇幻训练师",
+        "place": "达那村／大厅 东"
+      },
+      "acquisition": {
+        "kind": "VIP_POINTS_SHOP",
+        "advertised_available_by": "2011-01-27",
+        "version": "CN85_CONTEXT_FROM_PET86"
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false
+    },
+    {
+      "name": "古丁拉尔",
+      "family": "企鹅",
+      "region": "CN",
+      "source_ids": [
+        "JAN25",
+        "JAN27"
+      ],
+      "element_label": "风",
+      "element_ratio": null,
+      "element_order": [
+        "earth",
+        "water",
+        "fire",
+        "wind"
+      ],
+      "skill": {
+        "label": null,
+        "qualification": "LEARNABLE_ATTRIBUTE_MAGIC_NOT_INNATE",
+        "trainer": "奇幻训练师",
+        "place": "达那村／大厅 东"
+      },
+      "acquisition": {
+        "kind": "VIP_POINTS_SHOP",
+        "advertised_available_by": "2011-01-27",
+        "version": "CN85_CONTEXT_FROM_PET86"
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false
+    },
+    {
+      "name": "古丁格格",
+      "family": "企鹅",
+      "region": "CN",
+      "source_ids": [
+        "JAN25",
+        "JAN27"
+      ],
+      "element_label": "地",
+      "element_ratio": null,
+      "element_order": [
+        "earth",
+        "water",
+        "fire",
+        "wind"
+      ],
+      "skill": {
+        "label": null,
+        "qualification": "LEARNABLE_ATTRIBUTE_MAGIC_NOT_INNATE",
+        "trainer": "奇幻训练师",
+        "place": "达那村／大厅 东"
+      },
+      "acquisition": {
+        "kind": "VIP_POINTS_SHOP",
+        "advertised_available_by": "2011-01-27",
+        "version": "CN85_CONTEXT_FROM_PET86"
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false
+    },
+    {
+      "name": "阔米尔",
+      "family": "狼",
+      "region": "CN",
+      "source_ids": [
+        "FEB23"
+      ],
+      "element_label": "火风",
+      "element_ratio": [
+        0,
+        0,
+        8,
+        2
+      ],
+      "element_order": [
+        "earth",
+        "water",
+        "fire",
+        "wind"
+      ],
+      "skill": {
+        "label": "爆裂攻击",
+        "qualification": "ADVERTISED_FAMILY_TALENT_NOT_NATIVE_EXECUTION",
+        "hp_condition_percent_strictly_greater": 60,
+        "defense_percent_delta": -30,
+        "hit_percent_delta": 50,
+        "knock_off_mount_claim": true
+      },
+      "acquisition": {
+        "kind": "POINTS_SHOP",
+        "advertised_available_by": "2011-02-23",
+        "version": "CN_PC_EXACT_BUILD_UNRESOLVED"
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false
+    },
+    {
+      "name": "怀沃夫",
+      "family": "狼",
+      "region": "CN",
+      "source_ids": [
+        "FEB23"
+      ],
+      "element_label": "水火",
+      "element_ratio": [
+        0,
+        9,
+        1,
+        0
+      ],
+      "element_order": [
+        "earth",
+        "water",
+        "fire",
+        "wind"
+      ],
+      "skill": {
+        "label": "爆裂攻击",
+        "qualification": "ADVERTISED_FAMILY_TALENT_NOT_NATIVE_EXECUTION",
+        "hp_condition_percent_strictly_greater": 60,
+        "defense_percent_delta": -30,
+        "hit_percent_delta": 50,
+        "knock_off_mount_claim": true
+      },
+      "acquisition": {
+        "kind": "POINTS_SHOP",
+        "advertised_available_by": "2011-02-23",
+        "version": "CN_PC_EXACT_BUILD_UNRESOLVED"
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false
+    },
+    {
+      "name": "阔尔达",
+      "family": "狼",
+      "region": "CN",
+      "source_ids": [
+        "FEB23"
+      ],
+      "element_label": "火风",
+      "element_ratio": [
+        0,
+        0,
+        5,
+        5
+      ],
+      "element_order": [
+        "earth",
+        "water",
+        "fire",
+        "wind"
+      ],
+      "skill": {
+        "label": "爆裂攻击",
+        "qualification": "ADVERTISED_FAMILY_TALENT_NOT_NATIVE_EXECUTION",
+        "hp_condition_percent_strictly_greater": 60,
+        "defense_percent_delta": -30,
+        "hit_percent_delta": 50,
+        "knock_off_mount_claim": true
+      },
+      "acquisition": {
+        "kind": "POINTS_SHOP",
+        "advertised_available_by": "2011-02-23",
+        "version": "CN_PC_EXACT_BUILD_UNRESOLVED"
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false
+    },
+    {
+      "name": "怀肯沃",
+      "family": "狼",
+      "region": "CN",
+      "source_ids": [
+        "FEB23"
+      ],
+      "element_label": "全火",
+      "element_ratio": [
+        0,
+        0,
+        10,
+        0
+      ],
+      "element_order": [
+        "earth",
+        "water",
+        "fire",
+        "wind"
+      ],
+      "skill": {
+        "label": "爆裂攻击",
+        "qualification": "ADVERTISED_FAMILY_TALENT_NOT_NATIVE_EXECUTION",
+        "hp_condition_percent_strictly_greater": 60,
+        "defense_percent_delta": -30,
+        "hit_percent_delta": 50,
+        "knock_off_mount_claim": true
+      },
+      "acquisition": {
+        "kind": "POINTS_SHOP",
+        "advertised_available_by": "2011-02-23",
+        "version": "CN_PC_EXACT_BUILD_UNRESOLVED"
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false
+    },
+    {
+      "name": "洛斯恩",
+      "family": "洛斯",
+      "region": "CN",
+      "source_ids": [
+        "SEP13",
+        "DEC01"
+      ],
+      "element_label": null,
+      "element_ratio": null,
+      "element_order": [
+        "earth",
+        "water",
+        "fire",
+        "wind"
+      ],
+      "skill": {
+        "label": "旅程伙伴3",
+        "qualification": "ADVERTISED_FAMILY_SKILL_NOT_INNATE",
+        "effect": "移除敌方一只恐龙出场"
+      },
+      "acquisition": {
+        "kind": "HONOR_AND_VOUCHER_SHOPS",
+        "version": "CN8.5",
+        "advertised_available_by": "2011-12-01",
+        "honor_points_current_week": 300,
+        "honor_points_following_week": 888
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "appearance": "红"
+    },
+    {
+      "name": "洛斯奇",
+      "family": "洛斯",
+      "region": "CN",
+      "source_ids": [
+        "SEP13",
+        "DEC01"
+      ],
+      "element_label": null,
+      "element_ratio": null,
+      "element_order": [
+        "earth",
+        "water",
+        "fire",
+        "wind"
+      ],
+      "skill": {
+        "label": "旅程伙伴3",
+        "qualification": "ADVERTISED_FAMILY_SKILL_NOT_INNATE",
+        "effect": "移除敌方一只恐龙出场"
+      },
+      "acquisition": {
+        "kind": "HONOR_AND_VOUCHER_SHOPS",
+        "version": "CN8.5",
+        "advertised_available_by": "2011-12-01",
+        "honor_points_current_week": 300,
+        "honor_points_following_week": 888
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "appearance": "蓝"
+    },
+    {
+      "name": "洛斯德",
+      "family": "洛斯",
+      "region": "CN",
+      "source_ids": [
+        "SEP13",
+        "DEC01"
+      ],
+      "element_label": "偏地",
+      "element_ratio": null,
+      "element_order": [
+        "earth",
+        "water",
+        "fire",
+        "wind"
+      ],
+      "skill": {
+        "label": "旅程伙伴3",
+        "qualification": "ADVERTISED_FAMILY_SKILL_NOT_INNATE",
+        "effect": "移除敌方一只恐龙出场"
+      },
+      "acquisition": {
+        "kind": "HONOR_AND_VOUCHER_SHOPS",
+        "version": "CN8.5",
+        "advertised_available_by": "2011-12-01",
+        "honor_points_current_week": 300,
+        "honor_points_following_week": 888
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "appearance": "绿"
+    },
+    {
+      "name": "洛斯奈",
+      "family": "洛斯",
+      "region": "CN",
+      "source_ids": [
+        "SEP13",
+        "DEC01"
+      ],
+      "element_label": "偏风",
+      "element_ratio": null,
+      "element_order": [
+        "earth",
+        "water",
+        "fire",
+        "wind"
+      ],
+      "skill": {
+        "label": "旅程伙伴3",
+        "qualification": "ADVERTISED_FAMILY_SKILL_NOT_INNATE",
+        "effect": "移除敌方一只恐龙出场"
+      },
+      "acquisition": {
+        "kind": "HONOR_AND_VOUCHER_SHOPS",
+        "version": "CN8.5",
+        "advertised_available_by": "2011-12-01",
+        "honor_points_current_week": 300,
+        "honor_points_following_week": 888
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "appearance": null
+    },
+    {
+      "name": "蜜雪莉雅",
+      "family": "人形宠",
+      "region": "CN",
+      "source_ids": [
+        "NOV12"
+      ],
+      "element_label": "火",
+      "element_ratio": null,
+      "element_order": [
+        "earth",
+        "water",
+        "fire",
+        "wind"
+      ],
+      "skill": {
+        "label": "魅惑",
+        "qualification": "ADVERTISED_SPECIAL_SKILL_NOT_NATIVE_EXECUTION",
+        "defense_percent_delta": -20,
+        "targets": "敌方全体",
+        "status": "混乱"
+      },
+      "acquisition": {
+        "kind": "AUCTION",
+        "advertised_available_by": "2012-11-12",
+        "version": "CN_PC_NOV07_85_AUCTION_CONTEXT_NOT_EXACT_LOT_LINK"
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "panel": {
+        "url": "https://i2.sinaimg.cn/gm/2012/1112/U4511P115DT20121112110745.jpg",
+        "qualification": "WEB_RENDERED_MANUAL_INDIVIDUAL_STATUS_SAMPLE_NOT_BIRTH_RANGE",
+        "raw_sha256": null,
+        "level": 1,
+        "xp": 0,
+        "next_xp": 2,
+        "current_hp": 69,
+        "max_hp": 69,
+        "attack": 15,
+        "defense": 7,
+        "agility": 14,
+        "loyalty": 0,
+        "element_bar": "fire_only_visible"
+      }
+    },
+    {
+      "name": "贝莱瑞贡",
+      "family": "幼年黑龙",
+      "region": "CN",
+      "source_ids": [
+        "NOV12",
+        "APR25"
+      ],
+      "element_label": "地水",
+      "element_ratio": [
+        7,
+        3,
+        0,
+        0
+      ],
+      "element_order": [
+        "earth",
+        "water",
+        "fire",
+        "wind"
+      ],
+      "skill": {
+        "label": "龙魂",
+        "qualification": "ADVERTISED_SPECIAL_SKILL_NOT_NATIVE_EXECUTION",
+        "status": "晕眩",
+        "turns": 3
+      },
+      "acquisition": {
+        "kind": "AUCTION",
+        "advertised_available_by": "2012-11-12",
+        "version": "CN_PC_NOV07_85_AUCTION_CONTEXT_NOT_EXACT_LOT_LINK",
+        "later_event": {
+          "version": "CN8.5",
+          "window": [
+            "2013-04-25",
+            "2013-05-06"
+          ],
+          "condition": "集齐五字为雅安祈福，渔村礼包兑换者"
+        }
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "advancement_claim": "幼年形态有进阶潜力"
+    }
+  ],
+  "auction_context": {
+    "source": "NOV07",
+    "announced_start": "2012-11-08",
+    "version": "CN8.5",
+    "daily": [
+      "00:00",
+      "24:00"
+    ],
+    "one_bid_per_account_per_day": true,
+    "start_rmb": 1,
+    "highest_bid_wins": true,
+    "failed_bid_refund": true,
+    "exact_nov12_lot_link_verified": false
+  },
+  "anonymous_preview": {
+    "source": "NOV08",
+    "announced_count": 4,
+    "image_url": "https://i2.sinaimg.cn/gm/2012/1108/U4511P115DT20121108172217.jpg",
+    "status": "WEB_RENDERED_FOUR_UNNAMED_IMAGES",
+    "raw_sha256": null,
+    "identities": null
+  },
+  "failed_image_urls": [
+    "https://i2.sinaimg.cn/gm/2012/1112/U4511P115DT20121112110800.jpg",
+    "https://i2.sinaimg.cn/gm/2012/1112/U4511P115DT20121112110813.jpg",
+    "https://i3.sinaimg.cn/gm/2012/1107/U4511P115DT20121107172306.jpg"
+  ],
+  "download_recheck": [
+    {
+      "source": "https://games.sina.com.cn/z/sqsd/download.shtml",
+      "version": "V1.200.012",
+      "published_md5": "2a1743e07e4f97f1b2e337048918da6a",
+      "prior": "PET88",
+      "results": [
+        "redirect url_id=38669 HTTP502",
+        "redirect url_id=38670 HTTP502"
+      ],
+      "bytes": 0
+    },
+    {
+      "source": "https://news.17173.com/content/2010-11-11/20101111103609500,1.shtml",
+      "published_md5": "cd0ac0c0bc26bcfefdd08957d8d86e7c",
+      "download_url": "https://download.17173.com/10939/",
+      "result": "HTTP403",
+      "bytes": 0
+    }
+  ],
+  "new_original_client_bytes": 0,
+  "original_assets_published": false,
+  "official_species_count": null,
+  "official_full_fields_certified": 0
+}

@@ -484,3 +484,8 @@
 ## 2026-11-24｜PET-HIGH-FIRST-33 逐条字段缺件队列
 
 [字段恢复队列](PC-PET-FIELD-GAP-QUEUE.md) · [查询工具](../../tools/stoneage_pet_gap_queue.py) · [续接](../continuity/STONEAGE-PET-HIGH-FIRST-33-FIELD-GAP-QUEUE-20261124.md)。2986来源位置，非物种。四轨精确原行散列关联，正式字段仍须同部署取证。PET唯一，原CURRENT不动。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-34 大陆2011—2012逐宠字段增证
+
+[16条具名来源档案](CN-2011-2012-PERIOD-FIELD-WITNESSES.md) · [机读记录](../../research/pets/PET-HIGH-FIRST-34-CN2011-2012-PERIOD-FIELD-WITNESSES-R1.json) · [续接](../continuity/STONEAGE-PET-HIGH-FIRST-34-CN-PERIOD-FIELDS-20261124.md)。6个明确元素比例、1个可读Lv1面板；26个固定源/3002来源位置，不当新物种或官服主档。原CURRENT不动，PET唯一。
