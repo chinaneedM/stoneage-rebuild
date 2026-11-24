@@ -1,0 +1,55 @@
+name: PET-HIGH-FIRST-15 bounded native RD control flow
+on:
+  push:
+    branches: [agent/pet-high-first-15-20261124, main]
+    paths:
+      - '.github/workflows/pet-high-first-15-tw85-source.yml'
+      - 'tools/stoneage_pet_high_first_tw85_native_rd.py'
+  pull_request:
+    paths:
+      - '.github/workflows/pet-high-first-15-tw85-source.yml'
+      - 'tools/stoneage_pet_high_first_tw85_native_rd.py'
+      - 'research/pets/PET-HIGH-FIRST-15-*'
+permissions:
+  contents: read
+jobs:
+  source:
+    if: github.ref == 'refs/heads/agent/pet-high-first-15-20261124'
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install static inspection tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq msitools upx-ucl
+          python -m pip install capstone Pillow
+      - name: Authenticate preserved original carrier
+        run: python -m tools.stoneage_wayi85_sixpart_acquisition --work "$RUNNER_TEMP/tw85" --output "$RUNNER_TEMP/tw85-acquisition.json"
+      - name: Read bounded original RD control flow without execution
+        run: |
+          python -m tools.stoneage_pet_high_first_tw85_native_rd --source-root "$RUNNER_TEMP/tw85/msi-client" --temp "$RUNNER_TEMP"
+          python -m tools.stoneage_pet_high_first_tw85_native_rd
+      - name: Archive derived source facts
+        run: |
+          git add research/pets/PET-HIGH-FIRST-15-TW85-NATIVE-RD-CONTROL-FLOW-R1.json
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'PET15: archive original static RD control flow facts'
+          git push origin "HEAD:$GITHUB_REF"
+  verify:
+    if: github.ref != 'refs/heads/agent/pet-high-first-15-20261124'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: |
+          python -m tools.stoneage_pet_high_first_tw85_native_rd
+          python -m tools.stoneage_pet_high_first_tw85_special
+          python -m unittest tests.test_stoneage_pet_high_first_tw85_pixels

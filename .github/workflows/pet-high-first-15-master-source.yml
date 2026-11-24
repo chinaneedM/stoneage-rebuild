@@ -1,0 +1,42 @@
+name: PET-HIGH-FIRST-15 claimed 7.5 master source probe
+on:
+  push:
+    branches: [agent/pet-high-first-15-20261124, main]
+    paths:
+      - '.github/workflows/pet-high-first-15-master-source.yml'
+      - 'tools/stoneage_pet_high_first_tw75_master_probe.py'
+  pull_request:
+    paths:
+      - '.github/workflows/pet-high-first-15-master-source.yml'
+      - 'tools/stoneage_pet_high_first_tw75_master_probe.py'
+      - 'research/pets/PET-HIGH-FIRST-15-CLAIMED-*'
+permissions:
+  contents: read
+jobs:
+  source:
+    if: github.ref == 'refs/heads/agent/pet-high-first-15-20261124'
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: |
+          python -m tools.stoneage_pet_high_first_tw75_master_probe --temp "$RUNNER_TEMP"
+          python -m tools.stoneage_pet_high_first_tw75_master_probe
+      - run: |
+          git add research/pets/PET-HIGH-FIRST-15-CLAIMED-TW75-MASTER-PROBE-R1.json
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'PET15: archive bounded claimed master retrieval and comparison metadata'
+          git push origin "HEAD:$GITHUB_REF"
+  verify:
+    if: github.ref != 'refs/heads/agent/pet-high-first-15-20261124'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m tools.stoneage_pet_high_first_tw75_master_probe

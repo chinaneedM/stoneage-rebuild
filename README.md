@@ -3361,3 +3361,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-24｜PET-HIGH-FIRST-14 TW85 special RD and period evidence
 
 [Latest continuation](docs/continuity/STONEAGE-PET-HIGH-FIRST-14-TW85-SPECIAL-RD-20261124.md). Authenticated source run 45348429899: eight exact RLE streams have one trailing zero beyond declared dimensions; two header-only blocks have no pixels. Native closure remains 510/518 physical groups and 207 portrait aliases; no new official pet identities. Original client census and separate period-event/skill observations archived. NEXT PET-HIGH-FIRST-15; PET-only lock, historic CURRENT blob unchanged, overall UNKNOWN.
+
+
+## 2026-11-24｜PET-HIGH-FIRST-15：声称华义7.5主档实得及原生RD路径
+
+[最新接续](docs/continuity/STONEAGE-PET-HIGH-FIRST-15-TW85-NATIVE-RD-20261124.md) · [宠物主档目录](docs/pets/TW75-CLAIMED-MASTER-CENSUS.md)。2012原帖公开enemybase1.txt实际两次下载同字节，960行56列，467条PETFLG=1字段投影（438不同原名）；917/960与后期保存主档同ID非名称/素材50列完全一致，243条模板与TW1/TW85同名同图号。原官服身份未证。原生RD静态153条指令支持尾零现象解释，严格完整组仍510/518、207头像。NEXT PET-HIGH-FIRST-16：优先主档字段及候选成长、同服技能取得与发行实证。PET唯一、历史CURRENT不改、总体UNKNOWN。

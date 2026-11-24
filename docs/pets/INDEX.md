@@ -390,3 +390,7 @@
 ## 2026-11-24｜PET-HIGH-FIRST-14 高版特殊RD与同期技能资料
 
 [连续性收据](../continuity/STONEAGE-PET-HIGH-FIRST-14-TW85-SPECIAL-RD-20261124.md) · [特殊块机读证据](../../research/pets/PET-HIGH-FIRST-14-TW85-SPECIAL-RD-AND-MASTER-CENSUS-R1.json) · [同期史料](../../research/pets/PET-HIGH-FIRST-14-TW85-PERIOD-CLAIMS-R1.json)。10个原异常块复读：8个多1个尾零、2个16B无正文；仅候选解释，原生完整组仍510/518，207头像。7个具名候选对应8个残余组；同期活动、蚂蚁上线报道和玩家技能记载独立保存。557个原MSI文件名无明确主表候选，不排除嵌入表。查询兼容PET12/PET13，新官服实发确证0，完整PET0，PET锁不变。
+
+## 2026-11-24｜PET-HIGH-FIRST-15 声称华义7.5主档及原生RD静态路径
+
+[主档可查询目录](TW75-CLAIMED-MASTER-CENSUS.md) · [467条字段投影](../../research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json) · [接续记录](../continuity/STONEAGE-PET-HIGH-FIRST-15-TW85-NATIVE-RD-20261124.md)。2012原帖公开文件实得960行56列，467条PETFLG=1、438不同原名、493非宠物标记；917/960与Gavin后期保存表50字段一致，243条宠物模板与TW1/TW85同名同图号。官服资格未证，原生完整组510/518、207头像不变。NEXT PET-HIGH-FIRST-16优先主档字段、初值成长及真实发行，不增加官服物种统计。
