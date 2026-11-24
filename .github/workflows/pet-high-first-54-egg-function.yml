@@ -1,0 +1,58 @@
+name: PET-HIGH-FIRST-54 preserve source receipt and inspect egg function
+on:
+  push:
+    branches: [agent/pet-high-first-54-egg-source-20261124]
+    paths:
+      - 'tools/stoneage_pet_high_first_54_egg_function.py'
+      - '.github/workflows/pet-high-first-54-egg-function.yml'
+permissions:
+  contents: write
+  actions: read
+jobs:
+  static-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch exact prior derived-only artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl --fail --silent --show-error --location -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/14956965438/zip" -o /tmp/pet54.zip
+          echo 'bbef41bff6900b8fc3709e7352f6c404fadf0846fd82e9234eb6241defd47b72  /tmp/pet54.zip' | sha256sum --check
+          python - <<'PY'
+          import zipfile, pathlib, hashlib
+          z=zipfile.ZipFile('/tmp/pet54.zip')
+          assert z.namelist()==['pet54-metadata.json']
+          raw=z.read('pet54-metadata.json')
+          assert len(raw)==427240 and hashlib.sha256(raw).hexdigest()=='254dbb336efb194a0c10e4801c0a5ea091839133e5db2c0f7af860c545ae58a1'
+          pathlib.Path('research/pets/PET-HIGH-FIRST-54-ORIGINAL-EGG-REFERENCE-PROBE-R1.json').write_bytes(raw)
+          PY
+      - run: python -m pip install rarfile==4.2 libarchive-c==5.3
+      - run: sudo apt-get update -qq && sudo apt-get install -y unar binutils
+      - run: python -m tools.stoneage_pet_high_first_54_egg_function --prior 'research/pets/PET-HIGH-FIRST-54-ORIGINAL-EGG-REFERENCE-PROBE-R1.json' --output 'research/pets/PET-HIGH-FIRST-54-EGG-FUNCTION-STATIC-PROBE-R1.json'
+      - name: Preserve only verified derived reports on exact candidate branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          test "${GITHUB_REF}" = 'refs/heads/agent/pet-high-first-54-egg-source-20261124'
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          test "$(git hash-object 'research/pets/PET-HIGH-FIRST-54-ORIGINAL-EGG-REFERENCE-PROBE-R1.json')" = '0b0e787110e95b17d1593be7534d25c9a9d191ce'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- 'research/pets/PET-HIGH-FIRST-54-ORIGINAL-EGG-REFERENCE-PROBE-R1.json' 'research/pets/PET-HIGH-FIRST-54-EGG-FUNCTION-STATIC-PROBE-R1.json'
+          git diff --cached --stat
+          git commit -m 'PET54: preserve exact original scan receipt and derived static function probe'
+          git -c http.extraheader="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)" push "https://github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/agent/pet-high-first-54-egg-source-20261124"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet54-function-derived-only
+          path: |
+            research/pets/PET-HIGH-FIRST-54-ORIGINAL-EGG-REFERENCE-PROBE-R1.json
+            research/pets/PET-HIGH-FIRST-54-EGG-FUNCTION-STATIC-PROBE-R1.json
+          retention-days: 7
