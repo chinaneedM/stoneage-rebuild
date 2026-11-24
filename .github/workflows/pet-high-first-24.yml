@@ -1,0 +1,21 @@
+name: PET-HIGH-FIRST-24 CN2010 panel crosswalk replay
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_24.py'
+      - 'research/pets/PET-HIGH-FIRST-24-CN2010-NAMED-PANEL-CROSSWALK-R1.json'
+      - '.github/workflows/pet-high-first-24.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_24.py'
+      - 'research/pets/PET-HIGH-FIRST-24-CN2010-NAMED-PANEL-CROSSWALK-R1.json'
+      - '.github/workflows/pet-high-first-24.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/stoneage_pet_high_first_24.py
