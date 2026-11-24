@@ -24,7 +24,7 @@ def code_semantics():
     bounded(2342,2440,[b'case 99:',b'"NomalWindowMsg1"',b'"NomalWindowMsg2"',b'"NomalWindowMsg%d"',b'WINDOW_BUTTONTYPE_NEXT',b'NPC_AcceptDel( meindex, talker,0)'])
     bounded(3210,3217,[b'"GetPet"',b'NPC_EventAddPet( meindex, talker, buff2,1)',b'return FALSE'])
     bounded(3279,3291,[b'"GetRandItem"',b'rand_j++',b'NPC_RandItemGet( meindex, talker, rand_j, buff2);'])
-    bounded(3390,3468,[b'CHAR_MAXPETHAVE',b'i = rand()%i + 1;',b'ENEMY_createPetFromEnemyIndex',b'CHAR_ENDEVENT'])
+    bounded(3390,3477,[b'CHAR_MAXPETHAVE',b'i = rand()%i + 1;',b'ENEMY_createPetFromEnemyIndex',b'CHAR_ENDEVENT'])
     rand_start=next(i for i,x in enumerate(lines) if x.startswith(b'BOOL NPC_RandItemGet(int meidex,'))
     rand_end=next(i for i in range(rand_start+1,len(lines)) if lines[i]==b'}')
     item=b'\n'.join(lines[rand_start:rand_end+1])
