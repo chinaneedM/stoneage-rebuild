@@ -226,8 +226,8 @@ def verify(report, plan):
     complete = [s for s in sequences if any(f[0] is not None for f in s['frames']) and
                 all(f[0] is None or frame_ref[str(f[0])] in decoded for f in s['frames'])]
     return {'portrait_aliases_with_records': sum(bool(v) for v in portraits.values()),
-            'portrait_aliases_outside_patch_with_records': sum(bool(v) and alias not in
-                atlas['portrait_alias_to_saved_tw85_native_rd_candidates'] for alias, v in portraits.items()),
+            'portrait_aliases_outside_patch_with_records': sum(bool(v) and not atlas['portrait_alias_to_saved_tw85_native_rd_candidates'].get(alias)
+                for alias, v in portraits.items()),
             'portrait_records': len(portrait_indices), 'portrait_records_decoded': len(decoded & portrait_indices),
             'sampled_groups': len(sequences), 'sampled_groups_fully_decoded': len(complete),
             'sampled_positions': sum(len(s['frames']) for s in sequences),

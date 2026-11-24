@@ -1,14 +1,25 @@
 name: PET-HIGH-FIRST-12 TW85 source pixels
 on:
-  push:
-    branches: [agent/pet-high-first-12-20261124]
+  pull_request:
     paths:
       - '.github/workflows/pet-high-first-12-tw85-source.yml'
-      - 'tools/stoneage_pet_high_first_tw85_pixels.py'
+      - 'tools/stoneage_pet_high_first_tw85_*.py'
+      - 'tests/test_stoneage_pet_high_first_tw85_pixels.py'
+      - 'research/pets/PET-HIGH-FIRST-12-*'
+  push:
+    branches: [agent/pet-high-first-12-20261124, main]
+    paths:
+      - '.github/workflows/pet-high-first-12-tw85-source.yml'
+      - 'tools/stoneage_pet_high_first_tw85_*.py'
+      - 'tests/test_stoneage_pet_high_first_tw85_pixels.py'
+      - 'research/pets/PET-HIGH-FIRST-12-*'
 permissions:
-  contents: write
+  contents: read
 jobs:
   source:
+    if: github.ref == 'refs/heads/agent/pet-high-first-12-20261124'
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     timeout-minutes: 55
     steps:
@@ -35,3 +46,14 @@ jobs:
           git add research/pets/PET-HIGH-FIRST-12-TW85-INDEXED-PIXELS-R1.json.gz
           git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'PET12: archive authenticated TW85 indexed-pixel receipt'
           git push origin "HEAD:$GITHUB_REF"
+  verify:
+    if: github.ref != 'refs/heads/agent/pet-high-first-12-20261124'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Replay visual receipt and guard source-typed catalogue lookup
+        run: python -m unittest tests.test_stoneage_pet_high_first_tw85_pixels tests.test_stoneage_pet45_tw85_source_join
