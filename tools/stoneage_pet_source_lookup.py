@@ -109,6 +109,18 @@ def build(d):
     field_cases39 = by_id(d["hf39"]["rows"], "pet_id")
     field_cases40 = by_id(d["hf40"]["rows"], "pet_id")
     field_cases41 = by_id(d["hf41"]["rows"], "pet_id")
+    reward42_tw10 = {r["tw10_candidate"]["pet_id"]: r for r in d["hf42_cross"]["rows"] if r["tw10_candidate"] is not None}
+    reward42_tw75 = {r["tw75_row_index"]: r for r in d["hf42_cross"]["rows"]}
+    def reward_links42(r, qualification):
+        i = r["reward_row_index"]
+        assert d["hf42"]["rows"][i]["award_instance_id"] == d["hf42_raw"]["rows"][i]["award_instance_id"] == r["award_instance_id"]
+        return [link("hf42_cross", ["rows", i], qualification),
+                link("hf42", ["rows", i], qualification),
+                link("hf42_raw", ["rows", i], qualification),
+                *[link("hf42_raw", ["scripts", j], "SAME_SAVED_SCRIPT_STATIC_REWARD_NOT_LIVE_ISSUE")
+                  for j, s in enumerate(d["hf42_raw"]["scripts"])
+                  if any(r["award_instance_id"] in c["numeric_literals"] for c in s["commands"])]]
+
     for i,x in enumerate(d["tw10"]["records"]):
         pet_id, graphic, name = x["pet_id"], x["client_graphic"], x["client_name_original"]
         album_index = album_by_graphic[graphic]
@@ -149,6 +161,10 @@ def build(d):
                 links.append(link("hf41_archive", ["projection", "capture_candidates", idx], "MIXED25_TEMPLATE_ROUTE_CANDIDATE_NOT_CAPTURE_PROOF"))
             for idx in case["award_row_indices"]:
                 links.append(link("hf41_archive", ["projection", "award_commands", idx], "MIXED25_STATIC_AWARD_NOT_LIVE_ISSUE"))
+        if pet_id in reward42_tw10:
+            r = reward42_tw10[pet_id]
+            assert r["graphic"] == graphic and r["tw10_candidate"]["client_name"] == name
+            links.extend(reward_links42(r, "SAVED_REWARD_NAME_GRAPHIC_CANDIDATE_NOT_SAME_DEPLOYMENT" if r["tw10_name_exact"] else "SAVED_REWARD_GRAPHIC_ONLY_NAME_CONFLICT_NOT_IDENTITY"))
         starter_index = starters.get(name)
         starter = None
         if starter_index is not None:
@@ -193,6 +209,10 @@ def build(d):
         k=x["template_id"];b=d["tw75_birth"]["rows"][birthid[k]];e=d["tw75_comparison"]["rows"][compid[k]]
         assert b["source_row_sha256"]==x["row_sha256"]
         ls=[link("tw75_birth",["rows",birthid[k]],"CONDITIONAL_MODEL_NOT_OFFICIAL_STATS"),link("tw75_comparison",["rows",compid[k]],"LATER_COMPARISON_ENCOUNTER_NOT_ORIGINAL_CAPTURE")]
+        if i in reward42_tw75:
+            r = reward42_tw75[i]
+            assert (r["template_id"], r["graphic"], r["shared_template_row_sha256"]) == (k, x["graphic"], x["row_sha256"])
+            ls.extend(reward_links42(r, "EXACT_SHARED_TEMPLATE_ROW_NOT_OFFICIAL_DEPLOYMENT"))
         add("tw75",["pet_flag_1_field_projections",i],[x["name"]],"CLAIMED_TW75_MASTER_TEMPLATE",[k,x["graphic"]],ls,dict(graphic=x["graphic"],template_id=k,elements=x["elements"],skill_slots=x["skill_slots"],conditional_lv1_panel=b["level1_unmodified_work_panel_marginal_ranges"],conditional_per_level_internal=b["per_level_internal_increment_marginal_ranges"],comparison_floor_ids=e["comparison_floor_ids"],comparison_status=e["comparison_status"]))
     # Historical observations are separate, even when names/identifiers coincide.
     for i,x in enumerate(d["sina2003"]["rows"]):
@@ -312,6 +332,10 @@ def verify(m,d,entries):
     assert [r["period_floor_lv1_static_match"] for r in cases40] == [None, False, True, True, None]
     assert cases40[-1]["quest_reward"]["instance_id"] == 484 and cases40[-1]["quest_reward"]["template_id"] == 315
     assert all(r["official_tw10_native_stats"] is None and r["official_tw10_skillset"] is None and not r["official_tw10_acquisition_verified"] and r["official_first_release_date"] is None for r in cases40)
+    assert len(d["hf42"]["rows"]) == len(d["hf42_raw"]["rows"]) == len(d["hf42_cross"]["rows"]) == 36
+    assert sum(l["source"] == "hf42_cross" for e in entries if e["source"] == "tw10" for l in e["linked_records"]) == 33
+    assert sum(l["source"] == "hf42_cross" for e in entries if e["source"] == "tw75" for l in e["linked_records"]) == 36
+    assert sum(l["qualification"] == "SAVED_REWARD_GRAPHIC_ONLY_NAME_CONFLICT_NOT_IDENTITY" and l["source"] == "hf42_cross" for e in entries for l in e["linked_records"]) == 2
     assert len(d["hf41"]["rows"]) == 57
     assert sum(l["source"] == "hf41" for e in entries if e["source"] == "tw10" for l in e["linked_records"]) == 57
     assert sum(l["source"] == "hf41_archive" for e in entries if e["source"] == "tw10" for l in e["linked_records"]) == 148

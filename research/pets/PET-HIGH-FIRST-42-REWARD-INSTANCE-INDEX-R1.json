@@ -1,0 +1,2790 @@
+{
+  "schema": "stoneage.pet42.reward_instance_index.r1",
+  "source_head": "a320a197da3a7813d26925dd4e3228cadb9156eb",
+  "source_tree": "b9131178503d1f864d629a4b582c44eb6887b18b",
+  "scope": "SAME_PRESERVED_MIXED25_DERIVED_SOURCE_JOIN_NOT_OFFICIAL_DEPLOYMENT",
+  "source_pins": {
+    "i05": "bc8486e1c0ff0a85f63264decd78b646b638c305",
+    "pet10": "25a37aeb134fb180e322e7dc335029b7374452d8",
+    "quest": "52db8b4b6cd43cd2afa4a8d2e8460f214933f5e2",
+    "guide": "2e4e1dfcdc5787bbd5384d075741f3998f1ece5f",
+    "tw10": "2a7fd05d70cb6679634fdbbb16a5ee0437ca4aaf"
+  },
+  "rar_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "counts": {
+    "source_create_refs": 24,
+    "unique_scripts": 23,
+    "source_getpet_lines": 25,
+    "distinct_instance_ids": 36,
+    "distinct_templates": 36,
+    "distinct_graphics": 36,
+    "tw10_graphic_candidates": 33,
+    "no_tw10_graphic_candidates": 3,
+    "exact_guide_template_graphic_candidates": 32,
+    "template_pet_flag_1": 36,
+    "accept_blocks": 21,
+    "message_blocks": 4,
+    "script_numeric_occurrences": 40
+  },
+  "rows": [
+    {
+      "award_instance_id": 14,
+      "template_id": 12,
+      "graphic": 100255,
+      "instance_nonempty_row": 10,
+      "instance_row_fields_sha256": "c9734f16e76520448333a9878cd2c6e8ed1b3bdc3274ba13b7c71368baa7f5db",
+      "template_nonempty_row": 12,
+      "template_row_fields_sha256": "aa62363ce42c388d16cfc25ae2661f57dc51d4fc8eb40e7f6646044ab0c57b85",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "31",
+        "20",
+        "32",
+        "12"
+      ],
+      "initnum": "25",
+      "lvup": "4.50",
+      "elements": [
+        "0",
+        "0",
+        "30",
+        "70"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        3,
+        40,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000006",
+        "client_name": "金布伊",
+        "graphic": 100255
+      },
+      "period_guide_candidates": [
+        {
+          "position": 7,
+          "name": "金布伊",
+          "claim": "RIDDLE_REWARD"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 18,
+          "path": "quiz/equiz_02",
+          "floor": 810,
+          "occurrences": 1,
+          "script_sha256": "c5b9ff6e85d8f392cc2a668c70de7f3c0a3adcbb0d1e5688006d7a153e999818",
+          "map_grade": "DAT_SHA_MATCH_GT99_RD_MISSING"
+        },
+        {
+          "i05_row_index": 19,
+          "path": "quiz/equiz_02",
+          "floor": 850,
+          "occurrences": 1,
+          "script_sha256": "c5b9ff6e85d8f392cc2a668c70de7f3c0a3adcbb0d1e5688006d7a153e999818",
+          "map_grade": "DAT_SHA_MATCH_GT99_RD_MISSING"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 44,
+      "template_id": 63,
+      "graphic": 100277,
+      "instance_nonempty_row": 32,
+      "instance_row_fields_sha256": "dc4dc0802da9b0eefedc5070b2a35af0a40b778b660782e69791046e39bc3a5e",
+      "template_nonempty_row": 63,
+      "template_row_fields_sha256": "c4e96276ae26af1167c257d66210c2950c81bab89bb63295d911ba151fb711f4",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "23",
+        "21",
+        "23",
+        "17"
+      ],
+      "initnum": "17",
+      "lvup": "4.50",
+      "elements": [
+        "70",
+        "0",
+        "0",
+        "30"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000028",
+        "client_name": "特洛昆",
+        "graphic": 100277
+      },
+      "period_guide_candidates": [
+        {
+          "position": 29,
+          "name": "特洛昆",
+          "claim": "GEYA_MOUNTAIN_REWARD"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 6,
+          "path": "jaruga/event/event06_1",
+          "floor": 20401,
+          "occurrences": 1,
+          "script_sha256": "3ac3d3388f7914e497eb884de310633e5386f9aaaa784c66cc54b9ad1bbf4aae",
+          "map_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 47,
+      "template_id": 72,
+      "graphic": 100280,
+      "instance_nonempty_row": 35,
+      "instance_row_fields_sha256": "333c3e609d3d53adbfae0c552746ad736f02f6c46a20e6880ba84aac9a3968bb",
+      "template_nonempty_row": 72,
+      "template_row_fields_sha256": "cb9e6705cc1a079793df2529ee24fa631ed7375d735d50f70e2dcd055ebb6e2a",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "22",
+        "24",
+        "19",
+        "27"
+      ],
+      "initnum": "24",
+      "lvup": "4.50",
+      "elements": [
+        "0",
+        "0",
+        "60",
+        "40"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000031",
+        "client_name": "呼拔拔",
+        "graphic": 100280
+      },
+      "period_guide_candidates": [
+        {
+          "position": 33,
+          "name": "呼拔拔",
+          "claim": "GEYA_MOUNTAIN_REWARD"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 6,
+          "path": "jaruga/event/event06_1",
+          "floor": 20401,
+          "occurrences": 1,
+          "script_sha256": "3ac3d3388f7914e497eb884de310633e5386f9aaaa784c66cc54b9ad1bbf4aae",
+          "map_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 48,
+      "template_id": 73,
+      "graphic": 100281,
+      "instance_nonempty_row": 36,
+      "instance_row_fields_sha256": "cf8ecc55f3ac4b78aa27881bc1d98529e3f76a0f88755ac8e2b3093c733a432f",
+      "template_nonempty_row": 73,
+      "template_row_fields_sha256": "03b49f79349d8340fbdd508cbfab0a57ad883981ad1eb0836733f49eac2d7322",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "23",
+        "24",
+        "23",
+        "25"
+      ],
+      "initnum": "19",
+      "lvup": "4.50",
+      "elements": [
+        "60",
+        "0",
+        "0",
+        "40"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        40,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000032",
+        "client_name": "多薩金格",
+        "graphic": 100281
+      },
+      "period_guide_candidates": [
+        {
+          "position": 34,
+          "name": "多萨金格",
+          "claim": "SOT_C"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 21,
+          "path": "sainasu/event/oev_edc",
+          "floor": 1000,
+          "occurrences": 1,
+          "script_sha256": "a1891aef372be0012df9f830560f513c41e8334a62ff31f26b2da0124632f037",
+          "map_grade": "INDEPENDENT_VERIFIED_DAT_1000_NOT_IN_955"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 54,
+      "template_id": 91,
+      "graphic": 100287,
+      "instance_nonempty_row": 42,
+      "instance_row_fields_sha256": "05b5ed44354bdfa7d60ad63c2d997034179689a649f46bad05bc76c92bae46f6",
+      "template_nonempty_row": 91,
+      "template_row_fields_sha256": "0846694d945b8ead82d8b2a77d99edaf9c926c1e796458d576b9203c5ff4323b",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "27",
+        "37",
+        "19",
+        "17"
+      ],
+      "initnum": "22",
+      "lvup": "4.50",
+      "elements": [
+        "100",
+        "0",
+        "0",
+        "0"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000038",
+        "client_name": "利則諾頓",
+        "graphic": 100287
+      },
+      "period_guide_candidates": [
+        {
+          "position": 44,
+          "name": "利则诺顿",
+          "claim": "FIVE_BROTHERS_CAVE"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 0,
+          "path": "giiru/event/ev28_ed1",
+          "floor": 31706,
+          "occurrences": 1,
+          "script_sha256": "76248f064cbc443ab1452c0cd18a3b12067bc51d0ca98a2bbf4ae91a891b9c4c",
+          "map_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 55,
+      "template_id": 92,
+      "graphic": 100288,
+      "instance_nonempty_row": 43,
+      "instance_row_fields_sha256": "060e73da277d89fa09078273301151efe4c3ab133db0838e51ed1c26122f2e58",
+      "template_nonempty_row": 92,
+      "template_row_fields_sha256": "26ecf5bb853189372d5b48b8536a56d0c5a2e2c867060531d2dae62907f99d71",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "27",
+        "36",
+        "16",
+        "20"
+      ],
+      "initnum": "29",
+      "lvup": "4.50",
+      "elements": [
+        "0",
+        "30",
+        "70",
+        "0"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000039",
+        "client_name": "揚奇洛斯",
+        "graphic": 100288
+      },
+      "period_guide_candidates": [
+        {
+          "position": 45,
+          "name": "扬奇洛斯",
+          "claim": "FIVE_BROTHERS_CAVE"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 2,
+          "path": "giiru/event/ev28_ed3",
+          "floor": 31706,
+          "occurrences": 1,
+          "script_sha256": "aa9ca5b780ed6bff478fc59865bc2239a37c392698259b17abe3b863635f4f46",
+          "map_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 56,
+      "template_id": 93,
+      "graphic": 100289,
+      "instance_nonempty_row": 44,
+      "instance_row_fields_sha256": "4d8ccac0c6a9383492cb6bba33621f7c9ed5710dd410fe4cf63f3accdb019586",
+      "template_nonempty_row": 93,
+      "template_row_fields_sha256": "f34bef898e13f1dd9b5489f8330f93714b4c1f916e5bb648e100c5a65d882765",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "25",
+        "37",
+        "15",
+        "21"
+      ],
+      "initnum": "27",
+      "lvup": "4.50",
+      "elements": [
+        "0",
+        "0",
+        "50",
+        "50"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000040",
+        "client_name": "邦浦洛斯",
+        "graphic": 100289
+      },
+      "period_guide_candidates": [
+        {
+          "position": 46,
+          "name": "邦浦洛斯",
+          "claim": "FIVE_BROTHERS_CAVE_CN_UNCONFIRMED"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 3,
+          "path": "giiru/event/ev28_ed4",
+          "floor": 31706,
+          "occurrences": 1,
+          "script_sha256": "660784e8ad1b2a3d1ca9592caf2ab6d1eed5d9ea77fd1f6ea8156d9544e6d2a0",
+          "map_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 57,
+      "template_id": 94,
+      "graphic": 100290,
+      "instance_nonempty_row": 45,
+      "instance_row_fields_sha256": "2069c96d091a36a7928e4da3bee93112729f74af71725e0c72f46671a60d50ea",
+      "template_nonempty_row": 94,
+      "template_row_fields_sha256": "1340995134b9d6386c42476f45054d73a0edb56db316519a7de9fb37ab4e4d3a",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "24",
+        "38",
+        "16",
+        "20"
+      ],
+      "initnum": "26",
+      "lvup": "4.50",
+      "elements": [
+        "0",
+        "0",
+        "100",
+        "0"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000041",
+        "client_name": "邦奇諾",
+        "graphic": 100290
+      },
+      "period_guide_candidates": [
+        {
+          "position": 47,
+          "name": "邦奇诺",
+          "claim": "FIVE_BROTHERS_CAVE"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 1,
+          "path": "giiru/event/ev28_ed2",
+          "floor": 31706,
+          "occurrences": 1,
+          "script_sha256": "5cd64953d462ac401a2a6f59ffae8fe5ee16086d68c9f682a292cf3daad80e4c",
+          "map_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 76,
+      "template_id": 142,
+      "graphic": 100308,
+      "instance_nonempty_row": 55,
+      "instance_row_fields_sha256": "f13a16eb17bb2120e7450d30c190a73c8ae8bf587db76a865075761a8b52fbbd",
+      "template_nonempty_row": 142,
+      "template_row_fields_sha256": "5f79bfc4b7e4fb5b431b68f587151b3cf8c8c0eb0eff9f2f637e513d49fa8fec",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "28",
+        "27",
+        "23",
+        "19"
+      ],
+      "initnum": "23",
+      "lvup": "4.50",
+      "elements": [
+        "80",
+        "20",
+        "0",
+        "0"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000051",
+        "client_name": "奇拉頓",
+        "graphic": 100308
+      },
+      "period_guide_candidates": [
+        {
+          "position": 58,
+          "name": "奇拉顿",
+          "claim": "SOT_D"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 22,
+          "path": "sainasu/event/oev_edd",
+          "floor": 2000,
+          "occurrences": 1,
+          "script_sha256": "e36d22aa365dae29b57eded4bb3b8dd3ed3edab0f069186ae6041e4eb45a4537",
+          "map_grade": "DAT_SHA_MATCH_GT99_RD_MISSING"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 78,
+      "template_id": 144,
+      "graphic": 100310,
+      "instance_nonempty_row": 57,
+      "instance_row_fields_sha256": "81867e0628dd4c81e5e0c10b01a4c2d89f323ab99c3c5dcb120d1ccdf7e6154a",
+      "template_nonempty_row": 144,
+      "template_row_fields_sha256": "43dd64da8ab4df55e0a8e96c51e95afc0cc6aacf552fafd1c78ab18b64071266",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "25",
+        "30",
+        "20",
+        "21"
+      ],
+      "initnum": "27",
+      "lvup": "4.50",
+      "elements": [
+        "0",
+        "0",
+        "90",
+        "10"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000053",
+        "client_name": "格爾格",
+        "graphic": 100310
+      },
+      "period_guide_candidates": [
+        {
+          "position": 60,
+          "name": "格尔格",
+          "claim": "JOT_B"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 8,
+          "path": "jaruga/event/oev_edb",
+          "floor": 3000,
+          "occurrences": 1,
+          "script_sha256": "0fd527bd0817d0362b1cab22828b8f2c963e4ca88b088af6f736a6a4a254b423",
+          "map_grade": "SOURCE_DAT_NOT_QUALIFIED"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 93,
+      "template_id": 171,
+      "graphic": 100319,
+      "instance_nonempty_row": 58,
+      "instance_row_fields_sha256": "1314f0df08d21c5268a593288879aa8b624d6a7d8606ffbcf32578bc273f1618",
+      "template_nonempty_row": 171,
+      "template_row_fields_sha256": "1d6f7eb269247b2d19e102fa3646a337dfe29946fbd677316c6ad8a69678a84e",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "26",
+        "28",
+        "25",
+        "16"
+      ],
+      "initnum": "18",
+      "lvup": "4.50",
+      "elements": [
+        "80",
+        "20",
+        "0",
+        "0"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000054",
+        "client_name": "修寶",
+        "graphic": 100319
+      },
+      "period_guide_candidates": [
+        {
+          "position": 61,
+          "name": "修宝",
+          "claim": "KATAN_FISH"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 23,
+          "path": "seimu/event/event02_1",
+          "floor": 100,
+          "occurrences": 1,
+          "script_sha256": "63712fde0c36778b6b65af560a4c396ce8a04877243a05da41f63dd0359b8c34",
+          "map_grade": "SOURCE_DAT_NOT_QUALIFIED"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 94,
+      "template_id": 172,
+      "graphic": 100320,
+      "instance_nonempty_row": 59,
+      "instance_row_fields_sha256": "235a0c7fd6a5d53058a711ff40aabb2061ff932d31b9fe1d5f3c61b2f205a075",
+      "template_nonempty_row": 172,
+      "template_row_fields_sha256": "dd312f5c1eb8755bec754522022bf49545e1ad7579b5a00e3e2f7737f66c3049",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "28",
+        "23",
+        "26",
+        "14"
+      ],
+      "initnum": "19",
+      "lvup": "4.50",
+      "elements": [
+        "30",
+        "70",
+        "0",
+        "0"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000055",
+        "client_name": "卡搭寶斯",
+        "graphic": 100320
+      },
+      "period_guide_candidates": [
+        {
+          "position": 62,
+          "name": "卡塔宝斯",
+          "claim": "SOT_C"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 21,
+          "path": "sainasu/event/oev_edc",
+          "floor": 1000,
+          "occurrences": 1,
+          "script_sha256": "a1891aef372be0012df9f830560f513c41e8334a62ff31f26b2da0124632f037",
+          "map_grade": "INDEPENDENT_VERIFIED_DAT_1000_NOT_IN_955"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 95,
+      "template_id": 173,
+      "graphic": 100321,
+      "instance_nonempty_row": 60,
+      "instance_row_fields_sha256": "e182a8a39df0c812ee0f1ad4df179fadc440450077a0e7984e6fdd565196aa1f",
+      "template_nonempty_row": 173,
+      "template_row_fields_sha256": "eaed97351651fcba722f0f6541b16c8d1c4e82efd6ddd29a221fdd6fe70bdb81",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "26",
+        "26",
+        "26",
+        "17"
+      ],
+      "initnum": "25",
+      "lvup": "4.50",
+      "elements": [
+        "0",
+        "50",
+        "50",
+        "0"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000056",
+        "client_name": "布克布克",
+        "graphic": 100321
+      },
+      "period_guide_candidates": [
+        {
+          "position": 63,
+          "name": "布克布克",
+          "claim": "DOCTOR_EXCHANGE"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 20,
+          "path": "sainasu/event/event15_1",
+          "floor": 11006,
+          "occurrences": 1,
+          "script_sha256": "cb90d02b6e9ad4ba9b4e8d21c01d0077ab2b82f8de1e5f018a4ccb1a80fae129",
+          "map_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 96,
+      "template_id": 174,
+      "graphic": 100322,
+      "instance_nonempty_row": 61,
+      "instance_row_fields_sha256": "f1344b625b50f8525fe62d5eb3748533845adff2d8486a75c33c679ae689bad8",
+      "template_nonempty_row": 174,
+      "template_row_fields_sha256": "72715e6b0c58fbd7f8e61c385b825308c7277912f09911f5de1ff4beb41a3fb3",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "25",
+        "26",
+        "25",
+        "16"
+      ],
+      "initnum": "21",
+      "lvup": "4.50",
+      "elements": [
+        "0",
+        "30",
+        "70",
+        "0"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        90,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000057",
+        "client_name": "多洛加",
+        "graphic": 100322
+      },
+      "period_guide_candidates": [
+        {
+          "position": 64,
+          "name": "多洛加",
+          "claim": "SOT_D_JOT_A_COORDINATE_INCOMPLETE"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 7,
+          "path": "jaruga/event/oev_ed1",
+          "floor": 4000,
+          "occurrences": 1,
+          "script_sha256": "169693318607445365974327825fbd4c491b6161a68b7e1e552ca04a69bf2cc5",
+          "map_grade": "DAT_SHA_MATCH_GT99_RD_MISSING"
+        },
+        {
+          "i05_row_index": 22,
+          "path": "sainasu/event/oev_edd",
+          "floor": 2000,
+          "occurrences": 1,
+          "script_sha256": "e36d22aa365dae29b57eded4bb3b8dd3ed3edab0f069186ae6041e4eb45a4537",
+          "map_grade": "DAT_SHA_MATCH_GT99_RD_MISSING"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 309,
+      "template_id": 193,
+      "graphic": 100329,
+      "instance_nonempty_row": 164,
+      "instance_row_fields_sha256": "c3e42000e8ab0ae249da337835080e7304be9a9fbc6bc2d38ad17f6b794926f8",
+      "template_nonempty_row": 186,
+      "template_row_fields_sha256": "eb872db644b4397180f4c0685d85b5169c4409e6f24ea208a99ed731f289b161",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "20",
+        "30",
+        "13",
+        "28"
+      ],
+      "initnum": "21",
+      "lvup": "4.50",
+      "elements": [
+        "0",
+        "0",
+        "80",
+        "20"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000064",
+        "client_name": "格魯西斯",
+        "graphic": 100329
+      },
+      "period_guide_candidates": [
+        {
+          "position": 72,
+          "name": "格鲁西斯",
+          "claim": "SOT_D_JOT_A"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 7,
+          "path": "jaruga/event/oev_ed1",
+          "floor": 4000,
+          "occurrences": 1,
+          "script_sha256": "169693318607445365974327825fbd4c491b6161a68b7e1e552ca04a69bf2cc5",
+          "map_grade": "DAT_SHA_MATCH_GT99_RD_MISSING"
+        },
+        {
+          "i05_row_index": 22,
+          "path": "sainasu/event/oev_edd",
+          "floor": 2000,
+          "occurrences": 1,
+          "script_sha256": "e36d22aa365dae29b57eded4bb3b8dd3ed3edab0f069186ae6041e4eb45a4537",
+          "map_grade": "DAT_SHA_MATCH_GT99_RD_MISSING"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 310,
+      "template_id": 194,
+      "graphic": 100330,
+      "instance_nonempty_row": 165,
+      "instance_row_fields_sha256": "905cf7505c28038e9c316346aa8b5d194d0ab304c9bcc415c74489933c93c1c7",
+      "template_nonempty_row": 187,
+      "template_row_fields_sha256": "64d4fe784e0754064b770044bef506aad392f04cbded11d3383244b3e72968d6",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "19",
+        "29",
+        "18",
+        "29"
+      ],
+      "initnum": "25",
+      "lvup": "4.50",
+      "elements": [
+        "30",
+        "0",
+        "0",
+        "70"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        40,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000065",
+        "client_name": "金格薩貝魯",
+        "graphic": 100330
+      },
+      "period_guide_candidates": [
+        {
+          "position": 73,
+          "name": "金格萨贝鲁",
+          "claim": "LOTTERY_FIRST_PRIZE"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 13,
+          "path": "poru/mary01",
+          "floor": 5530,
+          "occurrences": 1,
+          "script_sha256": "0c5c5fdd64ec72831cb473baf5aa39b05322dd80848aa024e0c6e9494e9b36cb",
+          "map_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 328,
+      "template_id": 243,
+      "graphic": 100349,
+      "instance_nonempty_row": 179,
+      "instance_row_fields_sha256": "c803cb8bfab894c370c25337b6d891f0b51187a18c07bf112273868b44675f18",
+      "template_nonempty_row": 211,
+      "template_row_fields_sha256": "b8bbd276ee7c46abcdc0bed0d2cbbbfb480f9faa8cf0b2edef5ed23ef42b3716",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "34",
+        "19",
+        "26",
+        "9"
+      ],
+      "initnum": "21",
+      "lvup": "4.50",
+      "elements": [
+        "20",
+        "80",
+        "0",
+        "0"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        110,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000080",
+        "client_name": "海主人",
+        "graphic": 100349
+      },
+      "period_guide_candidates": [
+        {
+          "position": 88,
+          "name": "海主人",
+          "claim": "JOT_A"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 7,
+          "path": "jaruga/event/oev_ed1",
+          "floor": 4000,
+          "occurrences": 1,
+          "script_sha256": "169693318607445365974327825fbd4c491b6161a68b7e1e552ca04a69bf2cc5",
+          "map_grade": "DAT_SHA_MATCH_GT99_RD_MISSING"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 333,
+      "template_id": 254,
+      "graphic": 100354,
+      "instance_nonempty_row": 184,
+      "instance_row_fields_sha256": "1139ba6d37a625cfe1b3ff9b4809fb0a69ce88e7cd469420a322a8b981f9b8cd",
+      "template_nonempty_row": 216,
+      "template_row_fields_sha256": "1f7560675fd6862960c37e6139853dbb8b491d4bade570018d01dc707a55cfb1",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "40",
+        "25",
+        "35",
+        "5"
+      ],
+      "initnum": "28",
+      "lvup": "4.50",
+      "elements": [
+        "50",
+        "50",
+        "0",
+        "0"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000085",
+        "client_name": "斯天多斯",
+        "graphic": 100354
+      },
+      "period_guide_candidates": [
+        {
+          "position": 93,
+          "name": "斯天多斯",
+          "claim": "JSS_GIFT_REPORTED"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 12,
+          "path": "poru/team03",
+          "floor": 5535,
+          "occurrences": 1,
+          "script_sha256": "9d9d8714cf8c9b86f22df3e626398bf0912e05dbcc6849ef46f4913d36af25c7",
+          "map_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 338,
+      "template_id": 271,
+      "graphic": 100359,
+      "instance_nonempty_row": 189,
+      "instance_row_fields_sha256": "f81c1bdc7144a568eac9277ec1ab9cff49f6839f2407e46367d110fbf9e887e0",
+      "template_nonempty_row": 224,
+      "template_row_fields_sha256": "a4da2665e1feb587bb8b924f25ba3e2cf8748637bcf653c1b4198f7dfe687e6a",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "23",
+        "31",
+        "23",
+        "25"
+      ],
+      "initnum": "27",
+      "lvup": "4.50",
+      "elements": [
+        "0",
+        "0",
+        "20",
+        "80"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000090",
+        "client_name": "帖拉格恩",
+        "graphic": 100359
+      },
+      "period_guide_candidates": [
+        {
+          "position": 99,
+          "name": "帖拉格恩",
+          "claim": "JOT_B"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 8,
+          "path": "jaruga/event/oev_edb",
+          "floor": 3000,
+          "occurrences": 1,
+          "script_sha256": "0fd527bd0817d0362b1cab22828b8f2c963e4ca88b088af6f736a6a4a254b423",
+          "map_grade": "SOURCE_DAT_NOT_QUALIFIED"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 341,
+      "template_id": 274,
+      "graphic": 100362,
+      "instance_nonempty_row": 192,
+      "instance_row_fields_sha256": "ddb1ccbc33ce06ff1b609173c6edf6d22c915d26ab576059a04b085bed86dce9",
+      "template_nonempty_row": 227,
+      "template_row_fields_sha256": "ac5e168832416529fc5e32d9694a518d5699cc43e5f2243f0af3d754f2e5f9f3",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "24",
+        "31",
+        "20",
+        "30"
+      ],
+      "initnum": "23",
+      "lvup": "4.50",
+      "elements": [
+        "0",
+        "0",
+        "0",
+        "100"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000093",
+        "client_name": "朵拉比斯",
+        "graphic": 100362
+      },
+      "period_guide_candidates": [
+        {
+          "position": 102,
+          "name": "朵拉比斯",
+          "claim": "KATAN_BIRDS"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 23,
+          "path": "seimu/event/event02_1",
+          "floor": 100,
+          "occurrences": 1,
+          "script_sha256": "63712fde0c36778b6b65af560a4c396ce8a04877243a05da41f63dd0359b8c34",
+          "map_grade": "SOURCE_DAT_NOT_QUALIFIED"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 350,
+      "template_id": 301,
+      "graphic": 100371,
+      "instance_nonempty_row": 197,
+      "instance_row_fields_sha256": "91fffdaa096b33faf55f9d877c88bc21a03848164229130954849547a64ca29d",
+      "template_nonempty_row": 233,
+      "template_row_fields_sha256": "1f7c3a9f57e4d208743ba7b22fcfd2087b9f32b8d9927fa3edb0e78b8a800302",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "26",
+        "29",
+        "28",
+        "20"
+      ],
+      "initnum": "25",
+      "lvup": "4.50",
+      "elements": [
+        "60",
+        "40",
+        "0",
+        "0"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        40,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000098",
+        "client_name": "奧卡洛斯",
+        "graphic": 100371
+      },
+      "period_guide_candidates": [
+        {
+          "position": 107,
+          "name": "奥卡洛斯",
+          "claim": "SOT_C"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 21,
+          "path": "sainasu/event/oev_edc",
+          "floor": 1000,
+          "occurrences": 1,
+          "script_sha256": "a1891aef372be0012df9f830560f513c41e8334a62ff31f26b2da0124632f037",
+          "map_grade": "INDEPENDENT_VERIFIED_DAT_1000_NOT_IN_955"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 351,
+      "template_id": 302,
+      "graphic": 100372,
+      "instance_nonempty_row": 198,
+      "instance_row_fields_sha256": "4dc89e97dd26d077a4cf5965a5a47b24652f85ce92db78c1cb4e3e5ea6685b75",
+      "template_nonempty_row": 234,
+      "template_row_fields_sha256": "4ee5141c63814cbca7694bed974057772254de3d18634a0e9aed2072bbbf57d1",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "28",
+        "30",
+        "22",
+        "22"
+      ],
+      "initnum": "26",
+      "lvup": "4.50",
+      "elements": [
+        "0",
+        "80",
+        "20",
+        "0"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        40,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000099",
+        "client_name": "左迪洛斯",
+        "graphic": 100372
+      },
+      "period_guide_candidates": [
+        {
+          "position": 108,
+          "name": "左迪洛斯",
+          "claim": "UNKNOWN_IN_2001_GUIDE"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 17,
+          "path": "quiz/equiz_04",
+          "floor": 812,
+          "occurrences": 1,
+          "script_sha256": "786a787c285ecd3821aa72cbb7262defe7d9156556dec2d8d9f9eea73b011bea",
+          "map_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 352,
+      "template_id": 303,
+      "graphic": 100373,
+      "instance_nonempty_row": 199,
+      "instance_row_fields_sha256": "931f1b1c78018e65b087c60d048f7a922998072bdb3420ca45d6a05fb5876c41",
+      "template_nonempty_row": 235,
+      "template_row_fields_sha256": "4b8a7573a855330f7dcb50556f74e28c1a836da9b822b694f26b4210352e2b97",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "23",
+        "37",
+        "20",
+        "25"
+      ],
+      "initnum": "27",
+      "lvup": "4.50",
+      "elements": [
+        "0",
+        "20",
+        "80",
+        "0"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000100",
+        "client_name": "巴朵蘭恩",
+        "graphic": 100373
+      },
+      "period_guide_candidates": [
+        {
+          "position": 109,
+          "name": "巴朵兰恩",
+          "claim": "UNKNOWN_IN_2001_GUIDE"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 11,
+          "path": "poru/boy04",
+          "floor": 5511,
+          "occurrences": 1,
+          "script_sha256": "a945359e2375c513f056178d752b9777ec62214eaade9130f3661f40c0ca4e24",
+          "map_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 355,
+      "template_id": 312,
+      "graphic": 100376,
+      "instance_nonempty_row": 202,
+      "instance_row_fields_sha256": "e004f4c2c2b0727eb596ec112b26bf92d8e8d0f9e36edd59a9a9a7735deaffe6",
+      "template_nonempty_row": 238,
+      "template_row_fields_sha256": "1521783aa07d32a604f720d6793e1baff036818240afbdf86cecd3c27aef1846",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "23",
+        "23",
+        "24",
+        "28"
+      ],
+      "initnum": "25",
+      "lvup": "4.50",
+      "elements": [
+        "0",
+        "0",
+        "0",
+        "100"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000103",
+        "client_name": "摩娜西普",
+        "graphic": 100376
+      },
+      "period_guide_candidates": [
+        {
+          "position": 112,
+          "name": "摩娜西普",
+          "claim": "GOLDEN_ANTELOPE"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 5,
+          "path": "king/event69_1",
+          "floor": 30600,
+          "occurrences": 1,
+          "script_sha256": "634ff3e405b3829da55b9291cad2f98b3fbef3567a46cc048ae52a045df324e9",
+          "map_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 358,
+      "template_id": 321,
+      "graphic": 100379,
+      "instance_nonempty_row": 205,
+      "instance_row_fields_sha256": "a175e87211a0c101cf26c008263234eff4503976f47076678393ccfc7ca25cc8",
+      "template_nonempty_row": 242,
+      "template_row_fields_sha256": "87a6cc35fc270018e393c80324a740aecbb2b36b77850d647b5c5161758c5d4e",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "34",
+        "19",
+        "23",
+        "19"
+      ],
+      "initnum": "21",
+      "lvup": "4.50",
+      "elements": [
+        "20",
+        "80",
+        "0",
+        "0"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000106",
+        "client_name": "史多拉奇頓",
+        "graphic": 100379
+      },
+      "period_guide_candidates": [
+        {
+          "position": 116,
+          "name": "史多拉奇顿",
+          "claim": "JOT_A"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 7,
+          "path": "jaruga/event/oev_ed1",
+          "floor": 4000,
+          "occurrences": 1,
+          "script_sha256": "169693318607445365974327825fbd4c491b6161a68b7e1e552ca04a69bf2cc5",
+          "map_grade": "DAT_SHA_MATCH_GT99_RD_MISSING"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 360,
+      "template_id": 323,
+      "graphic": 100381,
+      "instance_nonempty_row": 207,
+      "instance_row_fields_sha256": "4acc82b0f954e4de764640511b4272349368f2e002792b75f41e6cbdadabedea",
+      "template_nonempty_row": 244,
+      "template_row_fields_sha256": "148c493f1ce6ed1e21ef2b2e1f8ba5829255e696c93ae922ee04cd3f8ed57110",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "33",
+        "19",
+        "25",
+        "18"
+      ],
+      "initnum": "26",
+      "lvup": "4.50",
+      "elements": [
+        "50",
+        "50",
+        "0",
+        "0"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000108",
+        "client_name": "阿利給洛斯",
+        "graphic": 100381
+      },
+      "period_guide_candidates": [
+        {
+          "position": 118,
+          "name": "阿利给洛斯",
+          "claim": "JOT_B"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 8,
+          "path": "jaruga/event/oev_edb",
+          "floor": 3000,
+          "occurrences": 1,
+          "script_sha256": "0fd527bd0817d0362b1cab22828b8f2c963e4ca88b088af6f736a6a4a254b423",
+          "map_grade": "SOURCE_DAT_NOT_QUALIFIED"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 361,
+      "template_id": 324,
+      "graphic": 100382,
+      "instance_nonempty_row": 208,
+      "instance_row_fields_sha256": "8de9a4acc926065e7f6fcd6ccddab23d893a5ea12bec092435366d034ccac07c",
+      "template_nonempty_row": 245,
+      "template_row_fields_sha256": "cd38572dc6f8f03d4d701e7ff51fc0e1c9c71e33a7ed44fcdb80f5fda262a2ef",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "33",
+        "23",
+        "22",
+        "22"
+      ],
+      "initnum": "24",
+      "lvup": "4.50",
+      "elements": [
+        "0",
+        "50",
+        "50",
+        "0"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000109",
+        "client_name": "達伊諾洛斯",
+        "graphic": 100382
+      },
+      "period_guide_candidates": [
+        {
+          "position": 119,
+          "name": "达伊诺洛斯",
+          "claim": "SOT_D_SOURCE_SOUTH_LABEL"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 22,
+          "path": "sainasu/event/oev_edd",
+          "floor": 2000,
+          "occurrences": 1,
+          "script_sha256": "e36d22aa365dae29b57eded4bb3b8dd3ed3edab0f069186ae6041e4eb45a4537",
+          "map_grade": "DAT_SHA_MATCH_GT99_RD_MISSING"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 365,
+      "template_id": 333,
+      "graphic": 100386,
+      "instance_nonempty_row": 212,
+      "instance_row_fields_sha256": "9e8a54345d83e05cd0a8b10092be9fa77d8a05fe3d7b6c01315467d137c3f797",
+      "template_nonempty_row": 249,
+      "template_row_fields_sha256": "16ef0a7e7cd3c78b48d7d05f5ce61c6891fb5531b16e0eebf48c790ad14bf6e0",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "24",
+        "20",
+        "22",
+        "20"
+      ],
+      "initnum": "19",
+      "lvup": "4.50",
+      "elements": [
+        "70",
+        "30",
+        "0",
+        "0"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000113",
+        "client_name": "可利多洛斯",
+        "graphic": 100386
+      },
+      "period_guide_candidates": [
+        {
+          "position": 123,
+          "name": "可利多洛斯",
+          "claim": "JOT_A"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 7,
+          "path": "jaruga/event/oev_ed1",
+          "floor": 4000,
+          "occurrences": 1,
+          "script_sha256": "169693318607445365974327825fbd4c491b6161a68b7e1e552ca04a69bf2cc5",
+          "map_grade": "DAT_SHA_MATCH_GT99_RD_MISSING"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 366,
+      "template_id": 334,
+      "graphic": 100387,
+      "instance_nonempty_row": 213,
+      "instance_row_fields_sha256": "c7757e2de864371eefb2d0cb80ecc7d72ced9cce47608924868b949f5961f0df",
+      "template_nonempty_row": 250,
+      "template_row_fields_sha256": "4d551e350e0be57c38444c127f9789d0279e034d99753cee2d76b68adb5b89a9",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "21",
+        "24",
+        "19",
+        "23"
+      ],
+      "initnum": "24",
+      "lvup": "4.50",
+      "elements": [
+        "0",
+        "0",
+        "90",
+        "10"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000114",
+        "client_name": "諾斯多洛斯",
+        "graphic": 100387
+      },
+      "period_guide_candidates": [
+        {
+          "position": 124,
+          "name": "诺斯多洛斯",
+          "claim": "JOT_B"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 8,
+          "path": "jaruga/event/oev_edb",
+          "floor": 3000,
+          "occurrences": 1,
+          "script_sha256": "0fd527bd0817d0362b1cab22828b8f2c963e4ca88b088af6f736a6a4a254b423",
+          "map_grade": "SOURCE_DAT_NOT_QUALIFIED"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 481,
+      "template_id": 95,
+      "graphic": 100394,
+      "instance_nonempty_row": 320,
+      "instance_row_fields_sha256": "f77986cebe1c2076f8f2f8403354a84559b6e5e738e4524b98dde05f5fd4dc23",
+      "template_nonempty_row": 95,
+      "template_row_fields_sha256": "93970f8cbf0153211b9a930502efe3c1064e1869e17ffe35493553121f7f1a40",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "25",
+        "35",
+        "14",
+        "24"
+      ],
+      "initnum": "25",
+      "lvup": "4.50",
+      "elements": [
+        "0",
+        "0",
+        "20",
+        "80"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000121",
+        "client_name": "布魯頓",
+        "graphic": 100394
+      },
+      "period_guide_candidates": [
+        {
+          "position": 48,
+          "name": "布鲁顿",
+          "claim": "FIVE_BROTHERS_CAVE_CN_UNCONFIRMED"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 4,
+          "path": "giiru/event/ev28_ed5",
+          "floor": 31706,
+          "occurrences": 1,
+          "script_sha256": "612086ef08cd18aece794cb58b2a9e274676527ad144146f3e3ca4da7f9a517e",
+          "map_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 482,
+      "template_id": 175,
+      "graphic": 100395,
+      "instance_nonempty_row": 321,
+      "instance_row_fields_sha256": "d39ad4c0f5a88f020e49f43c668b415029cfe817de847c67a5602c257a76a56e",
+      "template_nonempty_row": 175,
+      "template_row_fields_sha256": "90a5e0ae295c659dfb12f9f5eb0e1b0ce8b091b849d400076ca98af20d0b8b86",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "23",
+        "25",
+        "24",
+        "20"
+      ],
+      "initnum": "20",
+      "lvup": "4.50",
+      "elements": [
+        "0",
+        "0",
+        "40",
+        "60"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000122",
+        "client_name": "布魯寶",
+        "graphic": 100395
+      },
+      "period_guide_candidates": [
+        {
+          "position": 65,
+          "name": "布鲁宝",
+          "claim": "SOT_C_JOT_B"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 8,
+          "path": "jaruga/event/oev_edb",
+          "floor": 3000,
+          "occurrences": 2,
+          "script_sha256": "0fd527bd0817d0362b1cab22828b8f2c963e4ca88b088af6f736a6a4a254b423",
+          "map_grade": "SOURCE_DAT_NOT_QUALIFIED"
+        },
+        {
+          "i05_row_index": 21,
+          "path": "sainasu/event/oev_edc",
+          "floor": 1000,
+          "occurrences": 1,
+          "script_sha256": "a1891aef372be0012df9f830560f513c41e8334a62ff31f26b2da0124632f037",
+          "map_grade": "INDEPENDENT_VERIFIED_DAT_1000_NOT_IN_955"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 484,
+      "template_id": 315,
+      "graphic": 100430,
+      "instance_nonempty_row": 323,
+      "instance_row_fields_sha256": "abe6a4f8cdcf8cccb4f506932795c1ef149996d5fb2bc26330268fc4d71c8c72",
+      "template_nonempty_row": 241,
+      "template_row_fields_sha256": "bae2892dc4d4c986b9ffb328eb186948a80f5a3ea64e4ffc1c5a7a83ef5cc22c",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "20",
+        "28",
+        "20",
+        "32"
+      ],
+      "initnum": "30",
+      "lvup": "4.50",
+      "elements": [
+        "0",
+        "0",
+        "50",
+        "50"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000124",
+        "client_name": "邦達霍恩",
+        "graphic": 100430
+      },
+      "period_guide_candidates": [
+        {
+          "position": 115,
+          "name": "邦达霍恩",
+          "claim": "UNKNOWN_IN_2001_GUIDE"
+        }
+      ],
+      "script_refs": [
+        {
+          "i05_row_index": 10,
+          "path": "king/event69_24",
+          "floor": 30670,
+          "occurrences": 1,
+          "script_sha256": "90196083dc0be26e3d61787a1e3af1cd2b3d78e5d26566c6edcaaa67ee6862e8",
+          "map_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 1479,
+      "template_id": 718,
+      "graphic": 100451,
+      "instance_nonempty_row": 1103,
+      "instance_row_fields_sha256": "dabdedc5bd7f642a5f0dcac43db9a11ca616c6c34a2e54122358e3d422434bc1",
+      "template_nonempty_row": 519,
+      "template_row_fields_sha256": "1d7e737ee254a94aee09654a7e7ddfb4bed8fdcf99090d578b01d88918eb58b1",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "25",
+        "25",
+        "25",
+        "25"
+      ],
+      "initnum": "20",
+      "lvup": "5.00",
+      "elements": [
+        "100",
+        "0",
+        "0",
+        "0"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": null,
+      "period_guide_candidates": [],
+      "script_refs": [
+        {
+          "i05_row_index": 9,
+          "path": "king/event69_7",
+          "floor": 2000,
+          "occurrences": 1,
+          "script_sha256": "022aaa645db2074216bfb9f87b04d8a87626ea7f9fd2b5a25b175f7eb0111634",
+          "map_grade": "DAT_SHA_MATCH_GT99_RD_MISSING"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 1481,
+      "template_id": 719,
+      "graphic": 100401,
+      "instance_nonempty_row": 1104,
+      "instance_row_fields_sha256": "3c60b17e25ee7b385aa1e0f3668ef6251c465b7dd9ebf4423340081e5016a566",
+      "template_nonempty_row": 520,
+      "template_row_fields_sha256": "280c5ef8741e08e4a37ea710bbb7e482eed494d94d22b2985a3ceb1527ac4e81",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "35",
+        "35",
+        "20",
+        "10"
+      ],
+      "initnum": "20",
+      "lvup": "5.00",
+      "elements": [
+        "0",
+        "50",
+        "50",
+        "0"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": null,
+      "period_guide_candidates": [],
+      "script_refs": [
+        {
+          "i05_row_index": 16,
+          "path": "poru/mary06",
+          "floor": 5538,
+          "occurrences": 1,
+          "script_sha256": "1fb426d776a18595cb539c28a496d97b77ed08ec19a8993d3d2ed31bbcd5923c",
+          "map_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 1482,
+      "template_id": 721,
+      "graphic": 100259,
+      "instance_nonempty_row": 1105,
+      "instance_row_fields_sha256": "c79ae20fd3c677b33f21a2c6c065233b894b6226e427d2c1aecebab3c929cb64",
+      "template_nonempty_row": 522,
+      "template_row_fields_sha256": "981b9fde65e0c229a9f8bf7c6d53f87f4c3dd11837f635d2c9dea0565fb57bd0",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "22",
+        "23",
+        "19",
+        "23"
+      ],
+      "initnum": "22",
+      "lvup": "4.50",
+      "elements": [
+        "0",
+        "0",
+        "60",
+        "40"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": {
+        "pet_id": "PET-000010",
+        "client_name": "加美",
+        "graphic": 100259
+      },
+      "period_guide_candidates": [],
+      "script_refs": [
+        {
+          "i05_row_index": 15,
+          "path": "poru/mary05",
+          "floor": 5533,
+          "occurrences": 1,
+          "script_sha256": "4350eda28fb3f5c10aea4cabfca0c286a291bb23b8f25298cc5273d9b32229a9",
+          "map_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    },
+    {
+      "award_instance_id": 1483,
+      "template_id": 720,
+      "graphic": 100432,
+      "instance_nonempty_row": 1106,
+      "instance_row_fields_sha256": "de42ba2cb4cc229482dcec4be68e29c7bec52f87d6def8a627f8be0bd293494e",
+      "template_nonempty_row": 521,
+      "template_row_fields_sha256": "3311ed4cc5cd07faf9d64c93fd2902bb4a45e42ecb93de9093627092ffa6bae5",
+      "template_pet_flag": 1,
+      "base_fields": [
+        "35",
+        "35",
+        "20",
+        "10"
+      ],
+      "initnum": "20",
+      "lvup": "5.00",
+      "elements": [
+        "0",
+        "50",
+        "50",
+        "0"
+      ],
+      "skill_slots": [
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "instance_pet_flag": null,
+      "instance_level": null,
+      "tw10_candidate": null,
+      "period_guide_candidates": [],
+      "script_refs": [
+        {
+          "i05_row_index": 14,
+          "path": "poru/mary04",
+          "floor": 5532,
+          "occurrences": 1,
+          "script_sha256": "7d92e123a9983f8f043b1619be60238948ffc9185dee7b52403fa807f137c156",
+          "map_grade": "DAT_SHA_MATCH_MAP09_VISIBLE_CANDIDATE"
+        }
+      ],
+      "actual_award_verified": false,
+      "official_same_deployment_verified": false
+    }
+  ],
+  "scripts": [
+    {
+      "path": "giiru/event/ev28_ed1",
+      "script_sha256": "76248f064cbc443ab1452c0cd18a3b12067bc51d0ca98a2bbf4ae91a891b9c4c",
+      "i05_row_indices": [
+        0
+      ],
+      "source_lines": [
+        18
+      ],
+      "ordered_numeric_literals": [
+        54
+      ],
+      "blocks": [
+        {
+          "ordinal": 0,
+          "type": "ACCEPT",
+          "type_line": 10,
+          "event_number": 31,
+          "end_flags": [
+            31
+          ],
+          "condition_sha256": "a2d158f816132f827f90a25bf643f1ed2824b3e0e75b2ed44a1d821ab693dfcd",
+          "block_sha256": "f68b5c457d715c96175ddd96c18cd540a73d70e838db55184c4e53c7a2f30e3b"
+        }
+      ]
+    },
+    {
+      "path": "giiru/event/ev28_ed2",
+      "script_sha256": "5cd64953d462ac401a2a6f59ffae8fe5ee16086d68c9f682a292cf3daad80e4c",
+      "i05_row_indices": [
+        1
+      ],
+      "source_lines": [
+        18
+      ],
+      "ordered_numeric_literals": [
+        57
+      ],
+      "blocks": [
+        {
+          "ordinal": 0,
+          "type": "ACCEPT",
+          "type_line": 10,
+          "event_number": 31,
+          "end_flags": [
+            31
+          ],
+          "condition_sha256": "a2d158f816132f827f90a25bf643f1ed2824b3e0e75b2ed44a1d821ab693dfcd",
+          "block_sha256": "66e3d14ebfd8e1d1d1e8d34dd5fd5ab7e625b3d1c9c63335a215467fd78b3cbd"
+        }
+      ]
+    },
+    {
+      "path": "giiru/event/ev28_ed3",
+      "script_sha256": "aa9ca5b780ed6bff478fc59865bc2239a37c392698259b17abe3b863635f4f46",
+      "i05_row_indices": [
+        2
+      ],
+      "source_lines": [
+        18
+      ],
+      "ordered_numeric_literals": [
+        55
+      ],
+      "blocks": [
+        {
+          "ordinal": 0,
+          "type": "ACCEPT",
+          "type_line": 10,
+          "event_number": 31,
+          "end_flags": [
+            31
+          ],
+          "condition_sha256": "a2d158f816132f827f90a25bf643f1ed2824b3e0e75b2ed44a1d821ab693dfcd",
+          "block_sha256": "2a7b52101c77c97d008da761545dcedfec8b7d4e08d00bf97e8b1fdd96ff8a5e"
+        }
+      ]
+    },
+    {
+      "path": "giiru/event/ev28_ed4",
+      "script_sha256": "660784e8ad1b2a3d1ca9592caf2ab6d1eed5d9ea77fd1f6ea8156d9544e6d2a0",
+      "i05_row_indices": [
+        3
+      ],
+      "source_lines": [
+        18
+      ],
+      "ordered_numeric_literals": [
+        56
+      ],
+      "blocks": [
+        {
+          "ordinal": 0,
+          "type": "ACCEPT",
+          "type_line": 10,
+          "event_number": 31,
+          "end_flags": [
+            31
+          ],
+          "condition_sha256": "a2d158f816132f827f90a25bf643f1ed2824b3e0e75b2ed44a1d821ab693dfcd",
+          "block_sha256": "5cd5cd019cc269480e7ccfea4d3588b2aba363a9ae4c9d51ae40ab3e86670fd5"
+        }
+      ]
+    },
+    {
+      "path": "giiru/event/ev28_ed5",
+      "script_sha256": "612086ef08cd18aece794cb58b2a9e274676527ad144146f3e3ca4da7f9a517e",
+      "i05_row_indices": [
+        4
+      ],
+      "source_lines": [
+        18
+      ],
+      "ordered_numeric_literals": [
+        481
+      ],
+      "blocks": [
+        {
+          "ordinal": 0,
+          "type": "ACCEPT",
+          "type_line": 10,
+          "event_number": 31,
+          "end_flags": [
+            31
+          ],
+          "condition_sha256": "a2d158f816132f827f90a25bf643f1ed2824b3e0e75b2ed44a1d821ab693dfcd",
+          "block_sha256": "9609b1defa55e19dcff0c1478f903678a8b45df6611ee7bc85bf2d61d155e535"
+        }
+      ]
+    },
+    {
+      "path": "king/event69_1",
+      "script_sha256": "634ff3e405b3829da55b9291cad2f98b3fbef3567a46cc048ae52a045df324e9",
+      "i05_row_indices": [
+        5
+      ],
+      "source_lines": [
+        34
+      ],
+      "ordered_numeric_literals": [
+        355
+      ],
+      "blocks": [
+        {
+          "ordinal": 2,
+          "type": "ACCEPT",
+          "type_line": 27,
+          "event_number": -1,
+          "end_flags": [
+            54
+          ],
+          "condition_sha256": "377d361f90a9ff324da4bae6f8372d2cd3a38a080a7ff8bb37bc2d52829df864",
+          "block_sha256": "b5db4f8053894e97994d45c603ca05b550d6e7dc43d654b4c738c27012c15ad8"
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/event06_1",
+      "script_sha256": "3ac3d3388f7914e497eb884de310633e5386f9aaaa784c66cc54b9ad1bbf4aae",
+      "i05_row_indices": [
+        6
+      ],
+      "source_lines": [
+        14,
+        25
+      ],
+      "ordered_numeric_literals": [
+        44,
+        47
+      ],
+      "blocks": [
+        {
+          "ordinal": 0,
+          "type": "ACCEPT",
+          "type_line": 9,
+          "event_number": 6,
+          "end_flags": [
+            6
+          ],
+          "condition_sha256": "51bcb5892e2cbf3f9da4f033600fbf4a9cd1ad01724374f3b2cecf6ec6e3f1d4",
+          "block_sha256": "bef902c733acb97aed657a890b857172721919b6b166b8aa79cd367e6695a2c6"
+        },
+        {
+          "ordinal": 1,
+          "type": "ACCEPT",
+          "type_line": 20,
+          "event_number": 6,
+          "end_flags": [
+            6
+          ],
+          "condition_sha256": "d76f6927870258756958c3ef2afd6dfaa6e6b7b41bc44bbde4ecd385054f4139",
+          "block_sha256": "76a84ad4ef2a1debbc541227c5202acc45b634d36f051abb6a02c027b861c5fe"
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/oev_ed1",
+      "script_sha256": "169693318607445365974327825fbd4c491b6161a68b7e1e552ca04a69bf2cc5",
+      "i05_row_indices": [
+        7
+      ],
+      "source_lines": [
+        19
+      ],
+      "ordered_numeric_literals": [
+        358,
+        96,
+        328,
+        309,
+        365
+      ],
+      "blocks": [
+        {
+          "ordinal": 0,
+          "type": "MESSAGE",
+          "type_line": 12,
+          "event_number": -1,
+          "end_flags": [],
+          "condition_sha256": "3d437e04aa54a8fbb45b35b7f2f3ccf5ca29f308dd35a4283d67b47fd7111c9a",
+          "block_sha256": "a9443841b91b4b20d46a70c8dbd625723b9a78529a7eb9936593d2c4a189f300"
+        }
+      ]
+    },
+    {
+      "path": "jaruga/event/oev_edb",
+      "script_sha256": "0fd527bd0817d0362b1cab22828b8f2c963e4ca88b088af6f736a6a4a254b423",
+      "i05_row_indices": [
+        8
+      ],
+      "source_lines": [
+        21
+      ],
+      "ordered_numeric_literals": [
+        338,
+        360,
+        366,
+        482,
+        482,
+        78
+      ],
+      "blocks": [
+        {
+          "ordinal": 0,
+          "type": "MESSAGE",
+          "type_line": 14,
+          "event_number": -1,
+          "end_flags": [],
+          "condition_sha256": "f7502209b61ea1e633463a05349a2897ea83fd00819e7282d41031c1060eabaa",
+          "block_sha256": "9a59feed916e2f3315c0ca395fb7419a4f1ae2509ebfdbbb5a1316d4d785a28a"
+        }
+      ]
+    },
+    {
+      "path": "king/event69_7",
+      "script_sha256": "022aaa645db2074216bfb9f87b04d8a87626ea7f9fd2b5a25b175f7eb0111634",
+      "i05_row_indices": [
+        9
+      ],
+      "source_lines": [
+        120
+      ],
+      "ordered_numeric_literals": [
+        1479
+      ],
+      "blocks": [
+        {
+          "ordinal": 12,
+          "type": "ACCEPT",
+          "type_line": 112,
+          "event_number": -1,
+          "end_flags": [
+            70
+          ],
+          "condition_sha256": "85ea03b6e674f73dfa4e126f37aeb6943bfc3bd6fb5c697d1850672953385385",
+          "block_sha256": "910b6639f3179e2784bd6783e24c964987fa19260274d9bdda9be5351da1e9f4"
+        }
+      ]
+    },
+    {
+      "path": "king/event69_24",
+      "script_sha256": "90196083dc0be26e3d61787a1e3af1cd2b3d78e5d26566c6edcaaa67ee6862e8",
+      "i05_row_indices": [
+        10
+      ],
+      "source_lines": [
+        18
+      ],
+      "ordered_numeric_literals": [
+        484
+      ],
+      "blocks": [
+        {
+          "ordinal": 1,
+          "type": "ACCEPT",
+          "type_line": 12,
+          "event_number": -1,
+          "end_flags": [
+            72
+          ],
+          "condition_sha256": "bc3c2c587801f5e60a77a08edbaf4bb5645e5598b6919da5442a40b7240c72eb",
+          "block_sha256": "b2a413ea75e0e25063a57b9bc40f58a3f289e9ed57050c341819f8c88f8a437e"
+        }
+      ]
+    },
+    {
+      "path": "poru/boy04",
+      "script_sha256": "a945359e2375c513f056178d752b9777ec62214eaade9130f3661f40c0ca4e24",
+      "i05_row_indices": [
+        11
+      ],
+      "source_lines": [
+        22
+      ],
+      "ordered_numeric_literals": [
+        352
+      ],
+      "blocks": [
+        {
+          "ordinal": 1,
+          "type": "ACCEPT",
+          "type_line": 14,
+          "event_number": 63,
+          "end_flags": [
+            63
+          ],
+          "condition_sha256": "a5c1bec5bd45150f78fa26ed2ae04cdb40036d0dab528a462d6b50555831deda",
+          "block_sha256": "d0a1c87766deb1e0f996beebf292c1d41f1efcf551b5699d51aee55ce3134291"
+        }
+      ]
+    },
+    {
+      "path": "poru/team03",
+      "script_sha256": "9d9d8714cf8c9b86f22df3e626398bf0912e05dbcc6849ef46f4913d36af25c7",
+      "i05_row_indices": [
+        12
+      ],
+      "source_lines": [
+        39
+      ],
+      "ordered_numeric_literals": [
+        333
+      ],
+      "blocks": [
+        {
+          "ordinal": 3,
+          "type": "ACCEPT",
+          "type_line": 32,
+          "event_number": 57,
+          "end_flags": [
+            57
+          ],
+          "condition_sha256": "f9ddcd0da6ccf59869a08e40f56c090c736a62ea3ca5def097a230c109f6cd2e",
+          "block_sha256": "ece36da377f6f4b4cded871218b2c3ebc80767f00117540e0ce3c2f6c52716b2"
+        }
+      ]
+    },
+    {
+      "path": "poru/mary01",
+      "script_sha256": "0c5c5fdd64ec72831cb473baf5aa39b05322dd80848aa024e0c6e9494e9b36cb",
+      "i05_row_indices": [
+        13
+      ],
+      "source_lines": [
+        13
+      ],
+      "ordered_numeric_literals": [
+        310
+      ],
+      "blocks": [
+        {
+          "ordinal": 0,
+          "type": "ACCEPT",
+          "type_line": 7,
+          "event_number": 64,
+          "end_flags": [
+            64
+          ],
+          "condition_sha256": "ee62ca533fe685453ecf7c735264e94e9d8e51c72d8b25054a2b16a2c429316f",
+          "block_sha256": "f84b57b157598185f022940c5ec5cbba0725ac5fc7b3be9b52b1f1b72afe575e"
+        }
+      ]
+    },
+    {
+      "path": "poru/mary04",
+      "script_sha256": "7d92e123a9983f8f043b1619be60238948ffc9185dee7b52403fa807f137c156",
+      "i05_row_indices": [
+        14
+      ],
+      "source_lines": [
+        39
+      ],
+      "ordered_numeric_literals": [
+        1483
+      ],
+      "blocks": [
+        {
+          "ordinal": 4,
+          "type": "ACCEPT",
+          "type_line": 34,
+          "event_number": 55,
+          "end_flags": [
+            66
+          ],
+          "condition_sha256": "29f4d71c282be376194dd13d4bb7ab5ce1390f1bb515c0de5082bce983534621",
+          "block_sha256": "10e74b56d804067b7ea3f4b916cc10a2998c0a44fc2e9c516694c9daaca79284"
+        }
+      ]
+    },
+    {
+      "path": "poru/mary05",
+      "script_sha256": "4350eda28fb3f5c10aea4cabfca0c286a291bb23b8f25298cc5273d9b32229a9",
+      "i05_row_indices": [
+        15
+      ],
+      "source_lines": [
+        42
+      ],
+      "ordered_numeric_literals": [
+        1482
+      ],
+      "blocks": [
+        {
+          "ordinal": 4,
+          "type": "ACCEPT",
+          "type_line": 37,
+          "event_number": 57,
+          "end_flags": [
+            68
+          ],
+          "condition_sha256": "edbbab66a8f4d1b7a78adf60cdc1ba921c23bfc92736b8ab6583ff2aeb91ac12",
+          "block_sha256": "df0c061348c961d02d2d3b3f48c6ead943a3bb72ccac4fa2faaeaeda5a4a973b"
+        }
+      ]
+    },
+    {
+      "path": "poru/mary06",
+      "script_sha256": "1fb426d776a18595cb539c28a496d97b77ed08ec19a8993d3d2ed31bbcd5923c",
+      "i05_row_indices": [
+        16
+      ],
+      "source_lines": [
+        37
+      ],
+      "ordered_numeric_literals": [
+        1481
+      ],
+      "blocks": [
+        {
+          "ordinal": 4,
+          "type": "ACCEPT",
+          "type_line": 32,
+          "event_number": 56,
+          "end_flags": [
+            67
+          ],
+          "condition_sha256": "56f605565c9a9e44ee937525f719c84f99b996f4523b120230c4e9cf24e34790",
+          "block_sha256": "bfabdc37722465f69965a7fc41605541a2ffea7e9f102d05d4581157e640dd93"
+        }
+      ]
+    },
+    {
+      "path": "quiz/equiz_04",
+      "script_sha256": "786a787c285ecd3821aa72cbb7262defe7d9156556dec2d8d9f9eea73b011bea",
+      "i05_row_indices": [
+        17
+      ],
+      "source_lines": [
+        23
+      ],
+      "ordered_numeric_literals": [
+        351
+      ],
+      "blocks": [
+        {
+          "ordinal": 1,
+          "type": "ACCEPT",
+          "type_line": 18,
+          "event_number": 47,
+          "end_flags": [
+            47
+          ],
+          "condition_sha256": "4f29937edb364cf27669ef8c36c82f981645f691b394a020bd3a19889989d2bb",
+          "block_sha256": "dffa942d34990af01a99f53a4bc3bb16ec0cda09535a4cec7f845e20182010e3"
+        }
+      ]
+    },
+    {
+      "path": "quiz/equiz_02",
+      "script_sha256": "c5b9ff6e85d8f392cc2a668c70de7f3c0a3adcbb0d1e5688006d7a153e999818",
+      "i05_row_indices": [
+        18,
+        19
+      ],
+      "source_lines": [
+        44
+      ],
+      "ordered_numeric_literals": [
+        14
+      ],
+      "blocks": [
+        {
+          "ordinal": 4,
+          "type": "ACCEPT",
+          "type_line": 39,
+          "event_number": 44,
+          "end_flags": [
+            44
+          ],
+          "condition_sha256": "da91e840a62c0f9fac7f10da57ea76d57163223b7986e536590cc07d8d0eab94",
+          "block_sha256": "da03ced56574be0ceac17281b1b109efff31692df3ff933d23c64d0f0cb7e1d6"
+        }
+      ]
+    },
+    {
+      "path": "sainasu/event/event15_1",
+      "script_sha256": "cb90d02b6e9ad4ba9b4e8d21c01d0077ab2b82f8de1e5f018a4ccb1a80fae129",
+      "i05_row_indices": [
+        20
+      ],
+      "source_lines": [
+        22
+      ],
+      "ordered_numeric_literals": [
+        95
+      ],
+      "blocks": [
+        {
+          "ordinal": 1,
+          "type": "ACCEPT",
+          "type_line": 16,
+          "event_number": 16,
+          "end_flags": [
+            16
+          ],
+          "condition_sha256": "677aa48c399dc1c27b5625eab82822f69bc56f263bdad2838a2cebe58cd27db4",
+          "block_sha256": "cc99484301220583f9a6c5c152cd274b87caadc5911de8f1733f7327b0103ef6"
+        }
+      ]
+    },
+    {
+      "path": "sainasu/event/oev_edc",
+      "script_sha256": "a1891aef372be0012df9f830560f513c41e8334a62ff31f26b2da0124632f037",
+      "i05_row_indices": [
+        21
+      ],
+      "source_lines": [
+        19
+      ],
+      "ordered_numeric_literals": [
+        48,
+        94,
+        350,
+        482
+      ],
+      "blocks": [
+        {
+          "ordinal": 0,
+          "type": "MESSAGE",
+          "type_line": 12,
+          "event_number": -1,
+          "end_flags": [],
+          "condition_sha256": "105d7d0c9622b0372eef4fbc82477974bfdd7628f98cb92037f08873c0906817",
+          "block_sha256": "1fa802b6c27d467fe7b767a8a24ad6ea9ae4fad94d2c2db3941721cfad148b49"
+        }
+      ]
+    },
+    {
+      "path": "sainasu/event/oev_edd",
+      "script_sha256": "e36d22aa365dae29b57eded4bb3b8dd3ed3edab0f069186ae6041e4eb45a4537",
+      "i05_row_indices": [
+        22
+      ],
+      "source_lines": [
+        27
+      ],
+      "ordered_numeric_literals": [
+        76,
+        309,
+        361,
+        96
+      ],
+      "blocks": [
+        {
+          "ordinal": 1,
+          "type": "MESSAGE",
+          "type_line": 21,
+          "event_number": -1,
+          "end_flags": [],
+          "condition_sha256": "ebb3019b413f65f20a542eec507a19dee34a1828465c6b216622f8730ce005e9",
+          "block_sha256": "b99b713393e71ce1c7ba649c5b1f772a7e36e7b8239ef52d53d4ace20cecd21a"
+        }
+      ]
+    },
+    {
+      "path": "seimu/event/event02_1",
+      "script_sha256": "63712fde0c36778b6b65af560a4c396ce8a04877243a05da41f63dd0359b8c34",
+      "i05_row_indices": [
+        23
+      ],
+      "source_lines": [
+        11,
+        52
+      ],
+      "ordered_numeric_literals": [
+        93,
+        341
+      ],
+      "blocks": [
+        {
+          "ordinal": 0,
+          "type": "ACCEPT",
+          "type_line": 4,
+          "event_number": 35,
+          "end_flags": [
+            35
+          ],
+          "condition_sha256": "728c15d55483c0e2cbfe25ccad5caca22adebf7b51cd83c2adc68b47b6cb9736",
+          "block_sha256": "f24b0d21595ad0bc1d4f58485abb712a8833ff57caeb74392aff91708f907aea"
+        },
+        {
+          "ordinal": 4,
+          "type": "ACCEPT",
+          "type_line": 45,
+          "event_number": -1,
+          "end_flags": [],
+          "condition_sha256": "8823675927029325e4442b001c276820d6bc2830dc681803d64954c4a2f91877",
+          "block_sha256": "1a3bfb1625858ec6fd22100d917a8ea293d81a16d8e3730fa5d32565b4bbd8bc"
+        }
+      ]
+    }
+  ],
+  "original_members_newly_read": false,
+  "instance_level_and_pet_flag_unverified": true,
+  "official_species_count": null,
+  "official_deployment_verified": false,
+  "actual_awards_verified": false,
+  "original_assets_published": false,
+  "next": "Reaccess exact scripts and two configured tables to recover instance levels/flags and ASCII reward branch conditions; preserve MESSAGE and repeated tokens; then resolve runtime behavior only if evidence available."
+}
