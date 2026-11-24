@@ -1,0 +1,203 @@
+{
+  "schema": "stoneage.pet55.later_fusion_hatching_comparison.r1",
+  "base_main": "664b4f8ddcef476304ead8bc648f1e15dd8605b3",
+  "comparison": {
+    "repository": "gavinlinasd/StoneAge",
+    "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "git_blobs": {
+      "gmsv/src/npc/npc_petfusion.c": "81773cd4ef88b058a0a190c8510cc7be88692a90",
+      "gmsv/src/item/item_event.c": "00e05ebe58ef3988f7e0121f2a3aa5ede78344b5",
+      "gmsv/src/char/char.c": "fcc14db98511e5e0f62e05dec74ce55c6838acfb",
+      "gmsv/src/char/pet.c": "3bbe4cb566939d7fabb45a50edb7f8060bf77f0f",
+      "gmsv/src/char/pet_event.c": "8dbc8ea1a59b00d5d688d188d64b5481fe59eafa",
+      "gmsv/src/char/enemy.c": "65e5a2e352253a214407f07425427f539db5e863",
+      "gmsv/src/include/char_base.h": "f23de0fa77b1853c4ea1a49c90237ee6e2737de0",
+      "gmsv/src/include/version.h": "af6c866fd609a39e2960236275f6bf39e7f47b2c",
+      "gmsv/src/include/pet.h": "50a97fb433f1ad820369678167dfaf3975f4e619",
+      "gmsv/src/function.c": "d297fff5e33a96539ccfa951459faddb623f2029",
+      "gmsv/data/npc/sa50/petfusion/petfusion.arg": "5c39596bec146644d43d4ab656f6747f4c85242c",
+      "gmsv/data/npc/sa50/petfusion/petfusion": "c805d9b2b79f0339ab92a1065407b77155125400",
+      "gmsv/data/npc/sa50/petfusion/petfusion.create": "654ace74fc92a59e14670e0b3b2833960f4529fe",
+      "gmsv/data/npc/sa50/petfusion/petfusion.template": "59fc2f1efd53c812235abcee8f8ebe70012467e0",
+      "gmsv/data/enemy1.txt": "bf245a391adeace09915b6e425754b54ab69a8f6",
+      "gmsv/data/enemybase1.txt": "a19a508975e3a982fada323861b35b2edab79349",
+      "gmsv/src/include/enemy.h": "e19b5251378c3a3310454ac05b357f63ce9dd38b",
+      "gmsv/src/npc/npcutil.c": "818df20378060bbc9fa63a48453b03a97679e97a"
+    },
+    "grade": "LATER_COMPARISON_SOURCE_NOT_AUTHENTICATED_OFFICIAL_DEPLOYMENT",
+    "source_read": "CONNECTOR_PINNED_TEXT_READ",
+    "byte_replay": "PENDING_CANDIDATE_CI",
+    "config": {
+      "egg_id_values_in_file_order": [
+        2055,
+        1045
+      ],
+      "lookup_namespace": "ENEMY_ID",
+      "rows": [
+        {
+          "position": 387,
+          "instance": 2055,
+          "template": 1045,
+          "graphic": 101489,
+          "instance_line": 1599,
+          "template_line": 828
+        },
+        {
+          "position": 453,
+          "instance": 2474,
+          "template": 1140,
+          "graphic": 101760,
+          "instance_line": 1991,
+          "template_line": 915
+        },
+        {
+          "position": 454,
+          "instance": 2479,
+          "template": 1145,
+          "graphic": 101489,
+          "instance_line": 1992,
+          "template_line": 916
+        }
+      ],
+      "duplicate_key_resolution": "FIRST_MATCH_IN_ORDER_STATIC_SOURCE_CONDITIONAL",
+      "npc_config_floors": [
+        2000,
+        4000,
+        7000
+      ],
+      "selected_egg_instance_if_file_loaded": 2055,
+      "other_value_instance_collision": {
+        "instance": 1045,
+        "template": 294,
+        "instance_line": 684,
+        "role": "火的使者"
+      }
+    },
+    "feature_flags": {
+      "defined": [
+        "_PET_FUSION",
+        "_NPC_FUSION",
+        "_ITEM_EDITBASES",
+        "_PET_EVOLUTION",
+        "_USER_CHARLOOPS"
+      ],
+      "commented": [
+        "_TEST_PETFUSIONTIME",
+        "_PET_FUSIONSHOWTIME"
+      ],
+      "compile_deployment_verified": false
+    },
+    "flow": {
+      "entry": "NPC_DoPetFusion",
+      "intermediate": "PETFUSION_AddEgg",
+      "set_state": "PETFUSION_SetNewEgg",
+      "feed": "ITEM_useFusionEditBase",
+      "loop": "PET_CheckIncubate",
+      "hatch": "EVOLUTION_createPetFromEnemyIndex",
+      "feed_interval_seconds": 3600,
+      "normal_fusion_initial_raise": 40,
+      "quest_egg_raise": "PARAMETER_FROM_GETEGG",
+      "loop_interval_ms": 60000,
+      "overdue_user_loop_threshold_multiplier": 2.5,
+      "overdue_user_loop_allocpoint_delta_per_component": -6,
+      "alternate_non_user_loop_threshold_multiplier": 2,
+      "alternate_non_user_loop_allocpoint_delta_per_component": -5,
+      "final_egg_flag": 1,
+      "final_raise": 0,
+      "excluded_inheritance_skill_ids": [
+        41,
+        52,
+        600,
+        601,
+        602,
+        603,
+        604,
+        614,
+        617,
+        628,
+        630,
+        631,
+        635,
+        638,
+        641
+      ]
+    },
+    "line_references": {
+      "npc_fusion": [
+        178,
+        248
+      ],
+      "egg_creation": [
+        2388,
+        2450
+      ],
+      "egg_setup": [
+        2242,
+        2386
+      ],
+      "feed": [
+        3631,
+        3765
+      ],
+      "hatch": [
+        1927,
+        2076
+      ],
+      "timer": [
+        2078,
+        2238
+      ],
+      "pool_reset": [
+        1085,
+        1121
+      ],
+      "carried_reset": [
+        1124,
+        1157
+      ],
+      "registration": [
+        344,
+        603,
+        638,
+        641
+      ],
+      "flags": [
+        213,
+        216,
+        233
+      ],
+      "feed_constant": [
+        10,
+        11
+      ],
+      "field_enum": [
+        511,
+        516
+      ],
+      "arg_merge": [
+        1072,
+        1118
+      ],
+      "arg_lookup": [
+        1140,
+        1165
+      ]
+    },
+    "field_layout": "ENUM_ORDER_ONLY_NOT_ORIGINAL_BINARY_OFFSETS"
+  },
+  "original": {
+    "prior_report": "research/pets/PET-HIGH-FIRST-54-EGG-ROLE-AND-FUNCTION-ACCEPTED-R1.json",
+    "prior_blob": "2a45004916ed0f41c37d2c49f48db79127bba289",
+    "exe_sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00",
+    "verified_prior_symbol": "_NPC_EventAddEgg",
+    "new_probe": "PENDING_CANDIDATE_CI",
+    "original_field_offsets_verified": false,
+    "same_deployment_bridge": false
+  },
+  "strict_gap_count": 67,
+  "official_acquisition_closed": 0,
+  "official_species_count": null,
+  "actual_hatching_verified": false,
+  "runtime_executed": false,
+  "original_assets_published": false
+}

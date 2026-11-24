@@ -1,0 +1,32 @@
+name: PET-HIGH-FIRST-55 pinned comparison and original hatch symbols
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_55_hatching.py'
+      - 'research/pets/PET-HIGH-FIRST-55-LATER-FUSION-HATCHING-R1.json'
+      - '.github/workflows/pet-high-first-55-hatching.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_55_hatching.py'
+      - 'research/pets/PET-HIGH-FIRST-55-LATER-FUSION-HATCHING-R1.json'
+      - '.github/workflows/pet-high-first-55-hatching.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install rarfile==4.2 libarchive-c==5.3
+      - run: sudo apt-get update -qq && sudo apt-get install -y unar binutils
+      - run: python -m tools.stoneage_pet_high_first_55_hatching --output /tmp/pet55-derived.json
+      - run: python tools/stoneage_pet_source_lookup.py --verify
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet55-derived-only
+          path: /tmp/pet55-derived.json
+          retention-days: 7
