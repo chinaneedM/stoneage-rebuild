@@ -88,6 +88,12 @@ def build(d):
     for source,arr,key,role in specs:
         for i,x in enumerate(d[source][arr]):
             add(source,[arr,i],[x.get(key)],role or x["role"],detail={k:x[k] for k in ("year","region","lane","version","version_lane","receipt","source_id","official_first_release") if k in x})
+    # Supplementary historical field references; later unqualified realm claims
+    # stay in the pinned research source, not in the active pet query.
+    for i,x in enumerate(d["hf36"]["rows"]):
+        if x["role"].startswith("UNQUALIFIED_"):
+            continue
+        add("hf36",["rows",i],[x["name"]],x["role"],detail={k:x[k] for k in ("year","region","source_id","claim")})
     return out
 def summary(entries):
     return dict(source_record_occurrences=len(entries),literal_labels=len({n for x in entries for n in x["labels"]}),unlabelled_source_occurrences=sum(not x["labels"] for x in entries),by_source=dict(sorted(collections.Counter(x["source"] for x in entries).items())),by_role=dict(sorted(collections.Counter(x["role"] for x in entries).items())),official_species_count=None,warning="Source occurrences and literal labels are not distinct species, nor official first release.")
@@ -117,6 +123,14 @@ def verify(m,d,entries):
     assert len(list(search(entries,"PET-000001",exact=True,source="tw10")))==1
     assert all(x["role"]!="PET_NAME_CANDIDATE" for x in search(entries,"馬年獸",exact=True,source="hf30_31"))
     assert len([x for x in entries if x["source"]=="hf30_31" and x["detail"].get("year")==2026 and x["role"]=="ITEM"])==7
+    hf36=d["hf36"]["rows"]
+    assert len(hf36)==48 and sum(x["role"].startswith("UNQUALIFIED_") for x in hf36)==13
+    assert sum(x["source"]=="hf36" for x in entries)==35
+    assert all(x["official_same_deployment_verified"] is False and x["official_native_pet_id"] is None and x["first_release_date"] is None for x in hf36)
+    assert all(not resolve(d,x["source"],x["pointer"])["role"].startswith("UNQUALIFIED_") for x in entries if x["source"]=="hf36")
+    assert {x["claim"]["lane"] for x in hf36 if x["name"]=="格鲁西斯"}=={"精灵觉醒2.5","特色8.5"}
+    assert any(x["claim"].get("prior_source_for_2025") for x in hf36 if x["name"]=="奇格拉" and x["year"]==2016)
+    assert any(x["claim"].get("prior_source_for_2025") for x in hf36 if x["name"]=="多格斯" and x["year"]==2016)
     assert m["expected"]["official_species_count"] is None and not m["original_assets_published"]
     print(json.dumps(summary(entries),ensure_ascii=False,indent=2))
 def main():
