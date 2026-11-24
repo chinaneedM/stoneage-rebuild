@@ -3371,3 +3371,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-24｜PET-HIGH-FIRST-16 声称7.5主档条件数值范围
 
 [最新接续记录](docs/continuity/STONEAGE-PET-HIGH-FIRST-16-TW75-FIELD-RANGES-20261124.md) · [467条逐模板派生范围](research/pets/PET-HIGH-FIRST-16-TW75-CONDITIONAL-BIRTH-GROWTH-R1.json)。26组同名多模板保留差异，雷帝斯洛两条异元素不规范化。复用后期PC默认模型计算条件Lv1基础面板与单级内部增长范围，未认证原服，独立重放待验。NEXT同源实例/技能与同期真实取得证据。原CURRENT不改，PET唯一。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-17 技能与遇敌引用链
+
+[最新接续](docs/continuity/STONEAGE-PET-HIGH-FIRST-17-SKILL-ENCOUNTER-20261124.md) · [来源限定机器目录](research/pets/PET-HIGH-FIRST-17-COMPARISON-SKILL-ENCOUNTER-R1.json)。429条全字段同后期对照模板中282有正权重地图引用，230含Lv1；40个非负技能编号均有后期扩展表定义。不认作原服抓捕或出生技能。NEXT PET18同期取得、技能学习及地图号独立反核。原CURRENT不改，PET唯一。
