@@ -195,34 +195,41 @@ def vip_menu(data, d, report):
     selected_enemy = {r[1]: r for r in d["pet10"]["source_rows"]["enemy.txt"]}
     positions = physical_lines(d["pet10"], "enemy.txt")
     reference = {f["path"]: f for f in report["projection"]["npc_source_files"]}
-    repeat = set(d["prev"]["remaining_gap_row_indices"])
+    residual = set(d["prev"]["remaining_gap_row_indices"])
     files = []
     for path in source.NPCS[:4]:
         menu = data["data/npc/" + path]
-        rows = []
-        for block in menu.split(b"}"):
-            labels = re.findall(rb"(?mi)^\s*MenuStr\s*[:=]", block)
-            fields = re.findall(rb"(?mi)^\s*VipPet\s*[:=]\s*([^\r\n]*)", block)
-            if not fields:
-                assert not labels
+        lines = menu.splitlines()
+        # A byte '}' may occur in localized text, and comments may contain a
+        # menu key. Retain line evidence without guessing the original loader.
+        fields = []
+        labels = []
+        for line_no, line in enumerate(lines, 1):
+            key = re.match(rb"^[ \t]*(MenuStr|VipPet)[ \t]*[:=][ \t]*(.*)$", line)
+            if not key:
                 continue
-            assert len(fields) == len(labels) == 1
-            value = fields[0].strip()
-            # The later loader splits the menu block by pipe and reads colon field 2,
-            # then uses only the first two comma tokens from the VipPet field.
+            if key[1] == b"MenuStr":
+                labels.append(line_no)
+            else:
+                fields.append((line_no, key[2].strip()))
+        assert len(fields) == reference[path]["key_counts"]["VipPet"], path
+        assert len(labels) == reference[path]["key_counts"]["MenuStr"], path
+        rows = []
+        for line_no, value in fields:
+            # The later loader splits pipe/colon fields and uses the first two
+            # comma tokens. MM aliases require a build macro and stay unresolved.
             arg = re.split(rb"[|:]", value, maxsplit=1)[0].strip()
             tokens = [part.strip() for part in arg.split(b",")]
             token = tokens[0]
             points = re.match(rb"[+-]?[0-9]+", tokens[1]) if len(tokens) >= 2 else None
             enemy_id = int(token) if token.isdigit() else None
             alias = re.fullmatch(rb"MM[1-4]", token)
-            # MM aliases depend on a descendant build macro. Keep those unresolved.
             instance = selected_enemy.get(enemy_id) if enemy_id is not None else None
             template = selected_base.get(instance[2]) if instance else None
             catalog = catalog_by_template.get(instance[2]) if instance else None
             exact = bool(template and catalog and template[16] == catalog[1]["row_sha256"])
             rows.append({
-                "menu_position": len(rows) + 1,
+                "physical_line": line_no,
                 "value_sha256": sha(value),
                 "enemy_id": enemy_id,
                 "conditional_alias": token.decode("ascii") if alias else None,
@@ -232,12 +239,12 @@ def vip_menu(data, d, report):
                 "selected_template_id": instance[2] if instance else None,
                 "selected_instance_physical_line": positions[instance[0] - 1] if instance else None,
                 "exact_tw75_template_position": catalog[0] if exact else None,
-                "among_67_residual_positions": bool(exact and catalog[0] in repeat),
+                "among_67_residual_positions": bool(exact and catalog[0] in residual),
             })
-        assert len(rows) == reference[path]["key_counts"]["VipPet"]
         files.append({
             "path": path,
             "create_reference_count": len(reference[path]["create_refs"]),
+            "menu_label_physical_lines": labels,
             "rows": rows,
         })
     return files
