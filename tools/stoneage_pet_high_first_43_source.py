@@ -24,9 +24,9 @@ def code_semantics():
     for x in (b'CHAR_PETID',b'CHAR_ENDEVENT',b'CHAR_LV',b'loop = atoi( buf3)',b'loop == cnt',b'NPC_EventBigSmallLastCheck'):assert x in pet,x
     spawn=section(e,b'int ENEMY_createPetFromEnemyIndex( int charaindex, int array)',b'CharNew.data[CHAR_CRITIAL]')
     assert b'ENEMYTEMP_getEnemyTempArray( array)' in spawn and b'CHAR_PETID' in spawn and b'E_T_TEMPNO' in spawn
-    add=section(n,b'BOOL NPC_EventAddPet(int meindex, int talker, char *buff2,int mode)',b'// Robin add')
+    add=section(n,b'BOOL NPC_EventAddPet(int meindex, int talker, char *buff2,int mode)',b'BOOL NPC_EventAddEgg(')
     for x in (b'i = rand()%i + 1',b'ENEMY_getInt( i, ENEMY_ID) == enemyid',b'ENEMY_createPetFromEnemyIndex( talker, i)'):assert x in add,x
-    cmp=section(n,b'BOOL NPC_EventBigSmallLastCheck(int point1,int mypoint,int flg)',b'#ifdef _CHANNEL_MODIFY')
+    cmp=section(n,b'BOOL NPC_EventBigSmallLastCheck(int point1,int mypoint,int flg)',b'void NPC_MsgDisp(')
     assert b'point1 == mypoint' in cmp
     msg=section(n,b'strstr( buf2, "MESSAGE")',b'#ifdef _ANGEL_SUMMON')
     assert b'"NomalMsg"' in msg and b'NPC_AcceptDel( meindex, talker, 0)' in msg
