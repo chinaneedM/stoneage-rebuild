@@ -3351,3 +3351,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-24｜PET-HIGH-FIRST-12：台湾保存 8.5 原头像与动作取样
 
 [最新接续记录](docs/continuity/STONEAGE-PET-HIGH-FIRST-12-TW85-INDEXED-PIXELS-20261124.md)。从保存 8.5 原包读出本批 207 个头像，补齐旧补丁未覆盖的 25 个别名。对 506 个具名物理 SPR 组各取一段，498 段的全部原帧像素复核一致。雷帝斯洛和三组年兽可按原相簿名查询。后续核长序列、特殊图块及独立同服发行证据。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-13：台湾8.5长动作及特殊RD实读
+
+[最新接续记录](docs/continuity/STONEAGE-PET-HIGH-FIRST-13-TW85-LONG-SPECIAL-20261124.md)。原六分卷再次校验，20组642帧位置，12组新增完整样本，累计510/518具名物理组，207头像保持双解码。剩余8组原失败保留；新增华义2005-11-10狗年兽预告同期证据，不当逐宠实发。NEXT PET-HIGH-FIRST-14：有界核特殊编码原证及同服主档、真实发放等字段。完整历史CURRENT不改，PET唯一模块。
