@@ -3381,3 +3381,7 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-24｜PET-HIGH-FIRST-18 宠物取得和地图原头
 
 [最新续接](docs/continuity/STONEAGE-PET-HIGH-FIRST-18-MAP-ACQUISITION-20261124.md) · [14只宠物的来源对照](docs/pets/PC-2001-STARTER-AND-CAPTURE-CROSSWALK.md)。原后期PC固定提交1284文件实读、349地图号338无原头字段歧义；四村赠宠分普通/选择模板，10个同期坐标在后期Lv1配置内，保留石龟主档和威伯元素冲突。原服实际取得未认证。NEXT PET19扩同期逐宠获得资料，不重复底层扫描。原CURRENT不变。
+
+## 2026-11-24｜PET-HIGH-FIRST-38 三只经典 PC 宠物的原件交叉核验
+
+[续接记录](docs/continuity/STONEAGE-PET-HIGH-FIRST-38-THREE-PC-FIELD-CASES-20261124.md) · [统一查询](docs/pets/UNIFIED-PC-PET-SOURCE-LOOKUP.md)。乌力布鲁和日本近名条目获实读玩家面板，威伯实例标记跨资料不同，贝洛宝利在保存版迷幻洞窟有同坐标范围的1级和34–35级配置。正式同服字段继续寻找原证，PET 保持唯一活动模块。

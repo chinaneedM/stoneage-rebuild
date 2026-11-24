@@ -8969,3 +8969,9 @@ R14包351231B/SHA7684267ab528d13ceecb23a25632543ae839225607cbda702a32736e4c4d366
 
 - 已核六分卷保存载体、原安装器和 MSI，静态解包后核对四个完整 SPR、ADRN、REAL 原件。独立双解码范围为 207 个头像及动作取样，机读产物只含派生散列。[取证与局限](continuity/STONEAGE-PET-HIGH-FIRST-12-TW85-INDEXED-PIXELS-20261124.md)
 - 原华义活动页 2006-01-17 存档、七张真实 GIF（2022／2024 回放）及两篇同期媒体报道，分别登记活动维护时间、祭司和棕熊等奖项。猴、鸡、狗年兽资料的来源各自保留。四个狗年头像为原 `adrn_158.bin` 补出的原补丁缺项。[逐宠来源](pets/TW85-YEAR-BEASTS-2004-2006.md)
+
+## 2026-11-24｜三只经典 PC 宠物的状态面板与服务端配置
+
+- 日本玩家图鉴第4、18页引用的 JPEG 已实际下载并目视，原文件摘要、尺寸、色条宽度和名称差异见附表。首页更新标记为2010-03-18，个体截图年代和服务器构建仍未知。[日本玩家图鉴](https://kbpetzukan.iinaa.net/) · [R38证据](continuity/STONEAGE-PET-HIGH-FIRST-38-THREE-PC-FIELD-CASES-20261124.md)
+- 保存混合2.5档内的 `setup.cf`、`10406` 及八份配置数据实读并逐件散列。迷幻洞窟地图与固定后期副本只相差八个名称编码字节。保存档的实例标记、配置技能及遇敌关系按文件独立记录，实际官方部署仍待证。[机读来源收据](../research/pets/PET-HIGH-FIRST-38-PC-THREE-FIELD-CASES-R1.json)
+- We Love SA 的乌力布鲁、威伯、贝洛宝利三页读取索引正文。页面摘要与玩家登记样本的取值分开记录，原始 HTML、各样本日期和服务器构建未获得。[字段和页面定位](../research/pets/PET-HIGH-FIRST-38-PC-THREE-FIELD-CASES-R1.json)

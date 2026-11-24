@@ -188,6 +188,12 @@
       "git_blob": "92993638e39a6bbaadd68022fcec3883f8e6944d",
       "expected_array": "dossiers",
       "expected_rows": 124
+    },
+    "hf38": {
+      "path": "research/pets/PET-HIGH-FIRST-38-PC-THREE-FIELD-CASES-R1.json",
+      "git_blob": "11ee3a32bd542407f7cc7b64be687bb6a239c080",
+      "expected_array": "rows",
+      "expected_rows": 3
     }
   },
   "expected": {
@@ -238,5 +244,10 @@
     "source_head": "2cb5202fde58eeb3c123212b95d2779698770e4a",
     "source_tree": "6dd5d0e973ebc63163b1f9063d34494e8ca973eb",
     "scope": "Links on existing TW10 records only. Period player reports and later numeric template references never fill same-deployment fields."
+  },
+  "supplement_hf38": {
+    "source_head": "b223cd90de554da4912ae659f4c3149e9f3ecfb3",
+    "source_tree": "96aa2b0f1575d0292bc9281c06f68b495c295fca",
+    "scope": "Three existing pet positions reference newly read Japanese panel bytes, preserved server rows, and later community catalogue observations."
   }
 }

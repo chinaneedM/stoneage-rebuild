@@ -105,6 +105,7 @@ def build(d):
     museum_by_pet = by_id(d["tw10_waei2001"]["entries"], "pet_id")
     later_by_pet = by_id(d["tw10_later2016"]["dossiers"], "pet_id")
     starters = by_id(d["hf18"]["starters"], "name")
+    field_cases = by_id(d["hf38"]["rows"], "pet_id")
     for i,x in enumerate(d["tw10"]["records"]):
         pet_id, graphic, name = x["pet_id"], x["client_graphic"], x["client_name_original"]
         album_index = album_by_graphic[graphic]
@@ -121,6 +122,11 @@ def build(d):
             link("tw10_waei2001", ["entries", museum_index], "PERIOD_NAME_ONLY_NOT_SAME_DEPLOYMENT"),
             link("tw10_later2016", ["dossiers", later_index], "LATER_NUMERIC_GRAPHIC_ONLY"),
         ]
+        if pet_id in field_cases:
+            case_index = field_cases[pet_id]
+            case = d["hf38"]["rows"][case_index]
+            assert (case["tw10_graphic"], case["original_client_name"]) == (graphic, name)
+            links.append(link("hf38", ["rows", case_index], "PC_SOURCE_CASE_NOT_SAME_DEPLOYMENT"))
         starter_index = starters.get(name)
         starter = None
         if starter_index is not None:
@@ -249,6 +255,35 @@ def verify(m,d,entries):
     assert sum(x["source"]=="hf36" for x in entries)==35
     assert all(x["official_same_deployment_verified"] is False and x["official_native_pet_id"] is None and x["first_release_date"] is None for x in hf36)
     assert all(not resolve(d,x["source"],x["pointer"])["role"].startswith("UNQUALIFIED_") for x in entries if x["source"]=="hf36")
+    cases = d["hf38"]["rows"]
+    assert {x["pet_id"] for x in cases} == {"PET-000004", "PET-000017", "PET-000021"}
+    assert sum(
+        1 for entry in entries if entry["source"] == "tw10"
+        for link in entry["linked_records"] if link["source"] == "hf38"
+    ) == 3
+    assert all(
+        row["official_tw10_native_stats"] is None and row["official_tw10_skillset"] is None
+        and row["official_tw10_acquisition_verified"] is False
+        and row["official_first_release_date"] is None for row in cases
+    )
+    wulibulu, weibo, beiluobaoli = cases
+    panel = wulibulu["japan_album_panel"]
+    assert panel["level"] == 19 and panel["visible_element_bar_center_widths_px"] == [0, 0, 56, 24]
+    assert panel["deployment_build"] is None and not panel["panel_is_birth_or_growth_series"]
+    assert weibo["japan_album_panel"]["album_name"] != weibo["japan_album_panel"]["archived_jp_operator_name_at_ordinal"]
+    (configured_2079,) = (
+        ins for template in weibo["mixed25_template_refs"] for ins in template["selected_instances"]
+        if template["file"] == "enemybase.txt" and ins["id"] == 2079
+    )
+    assert configured_2079["pet_flag"] == 0 and weibo["later_2079_instance_comparison"]["instance_pet_flag"] == 1
+    location = beiluobaoli["specific_capture_location_reference"]
+    assert location["period_printed_coordinate"] == [44, 15] and not location["encounter_or_capture_executed"]
+    assert {tuple(route["level"]) for route in location["selected_mixed25_positive_routes"]} == {(1, 1), (34, 35)}
+    assert all(
+        route["floor"] == 10406 and route["rect"][0] <= 44 <= route["rect"][2]
+        and route["rect"][1] <= 15 <= route["rect"][3]
+        for route in location["selected_mixed25_positive_routes"]
+    )
     assert {x["claim"]["lane"] for x in hf36 if x["name"]=="格鲁西斯"}=={"精灵觉醒2.5","特色8.5"}
     assert any(x["claim"].get("prior_source_for_2025") for x in hf36 if x["name"]=="奇格拉" and x["year"]==2016)
     assert any(x["claim"].get("prior_source_for_2025") for x in hf36 if x["name"]=="多格斯" and x["year"]==2016)
