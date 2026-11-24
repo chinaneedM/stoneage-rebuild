@@ -106,6 +106,7 @@ def build(d):
     later_by_pet = by_id(d["tw10_later2016"]["dossiers"], "pet_id")
     starters = by_id(d["hf18"]["starters"], "name")
     field_cases = by_id(d["hf38"]["rows"], "pet_id")
+    field_cases39 = by_id(d["hf39"]["rows"], "pet_id")
     for i,x in enumerate(d["tw10"]["records"]):
         pet_id, graphic, name = x["pet_id"], x["client_graphic"], x["client_name_original"]
         album_index = album_by_graphic[graphic]
@@ -127,6 +128,11 @@ def build(d):
             case = d["hf38"]["rows"][case_index]
             assert (case["tw10_graphic"], case["original_client_name"]) == (graphic, name)
             links.append(link("hf38", ["rows", case_index], "PC_SOURCE_CASE_NOT_SAME_DEPLOYMENT"))
+        if pet_id in field_cases39:
+            case_index = field_cases39[pet_id]
+            case = d["hf39"]["rows"][case_index]
+            assert (case["tw10_graphic"], case["original_client_name"]) == (graphic, name)
+            links.append(link("hf39", ["rows", case_index], "PC_SOURCE_CASE_NOT_SAME_DEPLOYMENT"))
         starter_index = starters.get(name)
         starter = None
         if starter_index is not None:
@@ -266,6 +272,22 @@ def verify(m,d,entries):
         and row["official_tw10_acquisition_verified"] is False
         and row["official_first_release_date"] is None for row in cases
     )
+    cases39 = d["hf39"]["rows"]
+    assert {r["pet_id"] for r in cases39} == {"PET-000014", "PET-000116", "PET-000117", "PET-000118", "PET-000124"}
+    assert sum(l["source"] == "hf39" for e in entries if e["source"] == "tw10" for l in e["linked_records"]) == 5
+    assert sum(len(r["community_fixed_table"]) for r in cases39) == 10
+    assert sum(t["pet_flag"] == 0 for r in cases39 for t in r["community_fixed_table"]) == 4
+    assert sum(len(r["mixed25_archived_projection"]) for r in cases39) == 10
+    assert sum(t["pet_flag"] == 0 for r in cases39 for t in r["mixed25_archived_projection"]) == 4
+    assert len({x["git_blob"] for x in d["hf39"]["community_sources"]}) == 1
+    assert all(r["official_tw10_native_stats"] is None and r["official_tw10_skillset"] is None and not r["official_tw10_acquisition_verified"] and r["official_first_release_date"] is None and not r["japan_album"]["actual_image_bytes_read"] for r in cases39)
+    assert sum(r["japan_album"]["exact_ordinal_name_match"] for r in cases39) == 2
+    panels39 = {r["pet_id"]: r["japan_album"]["panel"] for r in cases39 if r["japan_album"]["panel"] is not None}
+    assert len(panels39) == 4
+    assert all(p["level"] == 19 and p["original_jpeg_sha256"] is None and p["server"] is None and p["build"] is None and not p["official_tw10_identity_verified"] for p in panels39.values())
+    assert panels39["PET-000116"]["visually_estimated_elements_earth_water_fire_wind"] == [5, 5, 0, 0]
+    assert [panels39["PET-000124"][k] for k in ("hp_max", "attack", "defense", "speed")] == [199, 41, 30, 35]
+    assert all(r["period_growth_20030924"] is None or r["period_growth_20030924"]["section"] == "转宠" for r in cases39)
     wulibulu, weibo, beiluobaoli = cases
     panel = wulibulu["japan_album_panel"]
     assert panel["level"] == 19 and panel["visible_element_bar_center_widths_px"] == [0, 0, 56, 24]

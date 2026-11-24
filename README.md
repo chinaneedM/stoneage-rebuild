@@ -3385,3 +3385,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-24｜PET-HIGH-FIRST-38 三只经典 PC 宠物的原件交叉核验
 
 [续接记录](docs/continuity/STONEAGE-PET-HIGH-FIRST-38-THREE-PC-FIELD-CASES-20261124.md) · [统一查询](docs/pets/UNIFIED-PC-PET-SOURCE-LOOKUP.md)。乌力布鲁和日本近名条目获实读玩家面板，威伯实例标记跨资料不同，贝洛宝利在保存版迷幻洞窟有同坐标范围的1级和34–35级配置。正式同服字段继续寻找原证，PET 保持唯一活动模块。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-39 五只经典PC宠物的属性与取得来源隔离
+
+[最新接续记录](docs/continuity/STONEAGE-PET-HIGH-FIRST-39-FIVE-PC-FIELD-CASES-20261124.md) · [统一查询](docs/pets/UNIFIED-PC-PET-SOURCE-LOOKUP.md)。五只现有档案比对两份实际上同Git blob的社区主表、保存混合档派生数据及同期玩家文献；非宠模板与普通宠物分开，转宠成长不当原始成长，正式同部署仍待证。NEXT PET-HIGH-FIRST-40；历史CURRENT不改，PET唯一。
