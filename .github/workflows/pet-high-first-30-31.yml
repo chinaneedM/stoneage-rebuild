@@ -1,0 +1,21 @@
+name: PET-HIGH-FIRST-30-31 late PC 2019-2026 crosswalk replay
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_30_31.py'
+      - 'research/pets/PET-HIGH-FIRST-30-31-2019-2026-OBJECT-ROLE-CROSSWALK-R1.json'
+      - '.github/workflows/pet-high-first-30-31.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_30_31.py'
+      - 'research/pets/PET-HIGH-FIRST-30-31-2019-2026-OBJECT-ROLE-CROSSWALK-R1.json'
+      - '.github/workflows/pet-high-first-30-31.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/stoneage_pet_high_first_30_31.py
