@@ -21,7 +21,8 @@
       "gmsv/data/npc/sa50/petfusion/petfusion.template": "59fc2f1efd53c812235abcee8f8ebe70012467e0",
       "gmsv/data/enemy1.txt": "bf245a391adeace09915b6e425754b54ab69a8f6",
       "gmsv/data/enemybase1.txt": "a19a508975e3a982fada323861b35b2edab79349",
-      "gmsv/src/include/enemy.h": "e19b5251378c3a3310454ac05b357f63ce9dd38b"
+      "gmsv/src/include/enemy.h": "e19b5251378c3a3310454ac05b357f63ce9dd38b",
+      "gmsv/src/npc/npcutil.c": "818df20378060bbc9fa63a48453b03a97679e97a"
     },
     "grade": "LATER_COMPARISON_SOURCE_NOT_AUTHENTICATED_OFFICIAL_DEPLOYMENT",
     "source_read": "CONNECTOR_PINNED_TEXT_READ",
@@ -58,12 +59,19 @@
           "template_line": 916
         }
       ],
-      "duplicate_key_resolution": "NOT_VERIFIED",
+      "duplicate_key_resolution": "FIRST_MATCH_IN_ORDER_STATIC_SOURCE_CONDITIONAL",
       "npc_config_floors": [
         2000,
         4000,
         7000
-      ]
+      ],
+      "selected_egg_instance_if_file_loaded": 2055,
+      "other_value_instance_collision": {
+        "instance": 1045,
+        "template": 294,
+        "instance_line": 684,
+        "role": "火的使者"
+      }
     },
     "feature_flags": {
       "defined": [
@@ -165,6 +173,14 @@
       "field_enum": [
         511,
         516
+      ],
+      "arg_merge": [
+        1072,
+        1118
+      ],
+      "arg_lookup": [
+        1140,
+        1165
       ]
     },
     "field_layout": "ENUM_ORDER_ONLY_NOT_ORIGINAL_BINARY_OFFSETS"

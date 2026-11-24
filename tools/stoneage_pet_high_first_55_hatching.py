@@ -47,12 +47,18 @@ def verify_comparison(report):
     for flag in c["feature_flags"]["commented"]:
         assert any(re.match(rb"^\s*//\s*#define\s+"+flag.encode()+rb"\b",line) for line in flags),flag
         assert not any(re.match(rb"^\s*#define\s+"+flag.encode()+rb"\b",line) for line in flags),flag
+    util="gmsv/src/npc/npcutil.c"
+    has(util,"while( fgets( line, sizeof( line), fp))","strcatsafe( buf,len,  line)","NPC_Util_MargeStrFromArgFile( filename, argstr, len)","strstr( outstr, srhstr) != NULL","strcpysafe( buf, buflen, outstr2 )")
     args=data["gmsv/data/npc/sa50/petfusion/petfusion.arg"]
     assert [int(x) for x in re.findall(rb"(?m)^ADDEGGID:(\d+)",args)]==[2055,1045]
     create=data["gmsv/data/npc/sa50/petfusion/petfusion.create"]
     assert sorted(set(map(int,re.findall(rb"floorid=(\d+)",create))))==[2000,4000,7000]
     inst=data["gmsv/data/enemy1.txt"].splitlines()
     templates=data["gmsv/data/enemybase1.txt"].splitlines()
+    collision=inst[683].split(b",")
+    assert (int(collision[3]),int(collision[4]))==(1045,294)
+    assert sum(row.split(b",")[3:4]==[b"1045"] for row in inst)==1
+    assert sum(row.split(b",")[3:4]==[b"2055"] for row in inst)==1
     for row in c["config"]["rows"]:
         i=inst[row["instance_line"]-1].split(b",")
         t=templates[row["template_line"]-1].split(b",")
