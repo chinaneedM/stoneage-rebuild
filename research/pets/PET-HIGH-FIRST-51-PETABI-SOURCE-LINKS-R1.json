@@ -1,0 +1,1575 @@
+{
+  "all_selected_instance_ids_reviewed": [
+    1642,
+    2187,
+    2415,
+    2416,
+    2429,
+    2430,
+    2431,
+    2432,
+    2455,
+    2456
+  ],
+  "ci_projection_matches_local_bytes": true,
+  "compiled_vip_boundary": {
+    "bytes": 1897867,
+    "configured_functionset": "VipShop",
+    "crc32": "6e31b63a",
+    "matching_loader_located_in_preserved_exe": false,
+    "sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00",
+    "string_probes": {
+      "AddPet": {
+        "ascii_occurrences": 5,
+        "utf16le_occurrences": 0
+      },
+      "GetPet": {
+        "ascii_occurrences": 17,
+        "utf16le_occurrences": 0
+      },
+      "PETABI": {
+        "ascii_occurrences": 0,
+        "utf16le_occurrences": 0
+      },
+      "PetShopInit": {
+        "ascii_occurrences": 3,
+        "utf16le_occurrences": 0
+      },
+      "VipPet": {
+        "ascii_occurrences": 0,
+        "utf16le_occurrences": 0
+      },
+      "VipShop": {
+        "ascii_occurrences": 0,
+        "utf16le_occurrences": 0
+      }
+    },
+    "symbol_probes": {
+      "_ActionNpc_CheckMenuFree": 5165424,
+      "_Action_RunDoEventAction": 5160720,
+      "_NPC_ActionAddPet": 5142928,
+      "_NPC_ActionNewVipPet": null,
+      "_NPC_ActionVipPet": null,
+      "_NPC_PetShopInit": 4857360,
+      "_NPC_VipShopInit": null
+    },
+    "vip_functionset_template_sha256": "6399369bce79d71905c0c9ff9ad7e7c75c79b00f4404f7b7dd30b58f03be6c5b"
+  },
+  "descendant_code": {
+    "action_blob": "a89b744394079cc476e7e87f6e353d66208e0150",
+    "attribute_write_multipliers": [
+      20,
+      80,
+      80,
+      100
+    ],
+    "commit": "2f736808ff4361f5429ee919b718c88fabb60346",
+    "conditional_macro": "_NPC_GET_PETABI",
+    "preset_target_fields": [
+      "CHAR_LV",
+      "CHAR_TRANSMIGRATION",
+      "CHAR_VITAL",
+      "CHAR_STR",
+      "CHAR_TOUGH",
+      "CHAR_DEX"
+    ],
+    "repository": "BismarckDD/Stoneage",
+    "token_util_blob": "8065a372bfa0c1d4e74d39fd73b405c7b6a7b569"
+  },
+  "local_unrar_source_commit": "cacdcb8cbe1813b6151e3f92f2ccec7afe4d6a41",
+  "matching_raw_cfg_and_tables": 2207,
+  "npc_lexical_collisions": [
+    {
+      "field": "item",
+      "field_digest": "0dcb5b1a6bd6c8d57b0f10d3e2e59ed9cf1cf1bbcaea96ff559421a280f1bed3",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2431
+      ],
+      "physical_line": 7,
+      "source_path": "npc/100/sb_nusu1.arg"
+    },
+    {
+      "field": "item",
+      "field_digest": "0dcb5b1a6bd6c8d57b0f10d3e2e59ed9cf1cf1bbcaea96ff559421a280f1bed3",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2431
+      ],
+      "physical_line": 6,
+      "source_path": "npc/100/sb_nusu2.arg"
+    },
+    {
+      "field": "item",
+      "field_digest": "0dcb5b1a6bd6c8d57b0f10d3e2e59ed9cf1cf1bbcaea96ff559421a280f1bed3",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2431
+      ],
+      "physical_line": 7,
+      "source_path": "npc/100/sb_nusu3.arg"
+    },
+    {
+      "field": "GetItem",
+      "field_digest": "dec534dd97aad74033f51792f1a42f39e0ec8269cdd970c3c8627690acc61287",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        1642
+      ],
+      "physical_line": 7,
+      "source_path": "npc/genout/sp_100_183_346"
+    },
+    {
+      "field": "LimitItemNo",
+      "field_digest": "1c08de87b06464c6fa0ad746fb2158bac9c13ad6e03ec6c5b8dc82169bc1ae9c",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        1642
+      ],
+      "physical_line": 17,
+      "source_path": "npc/genout/ss_1004_17_13"
+    },
+    {
+      "field": "LimitItemNo",
+      "field_digest": "1c08de87b06464c6fa0ad746fb2158bac9c13ad6e03ec6c5b8dc82169bc1ae9c",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        1642
+      ],
+      "physical_line": 17,
+      "source_path": "npc/genout/ss_2004_17_13"
+    },
+    {
+      "field": "ItemList",
+      "field_digest": "ae55a66914674ba91938e8fb67f284bb2138528f9f0bf8204665b5b3dc7f8b1b",
+      "group_value_collisions": [
+        1169
+      ],
+      "instance_value_collisions": [],
+      "physical_line": 16,
+      "source_path": "npc/genout/ss_20607_38_13"
+    },
+    {
+      "field": "ItemList",
+      "field_digest": "47ad94e5aadaf4c98812cb050b685a9f83cac2537eb72ed03592726bd3a83cc1",
+      "group_value_collisions": [
+        1167
+      ],
+      "instance_value_collisions": [],
+      "physical_line": 16,
+      "source_path": "npc/genout/ss_20712_45_36"
+    },
+    {
+      "field": "LimitItemNo",
+      "field_digest": "1c08de87b06464c6fa0ad746fb2158bac9c13ad6e03ec6c5b8dc82169bc1ae9c",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        1642
+      ],
+      "physical_line": 17,
+      "source_path": "npc/genout/ss_3004_18_16"
+    },
+    {
+      "field": "LimitItemNo",
+      "field_digest": "1c08de87b06464c6fa0ad746fb2158bac9c13ad6e03ec6c5b8dc82169bc1ae9c",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        1642
+      ],
+      "physical_line": 17,
+      "source_path": "npc/genout/ss_4004_16_13"
+    },
+    {
+      "field": "GetRandItem",
+      "field_digest": "f475840d8ea747c8ae7cb40abebd961d64502985f36e5d24b1a713d131789545",
+      "group_value_collisions": [
+        1169,
+        1173
+      ],
+      "instance_value_collisions": [],
+      "physical_line": 14,
+      "source_path": "npc/jaruga/event/hekisei05"
+    },
+    {
+      "field": "GetRandItem",
+      "field_digest": "e3f2a8b5656de31542faf5fcae270d3150ebcfb64b68db939babc014bfda6217",
+      "group_value_collisions": [
+        1168
+      ],
+      "instance_value_collisions": [],
+      "physical_line": 14,
+      "source_path": "npc/jaruga/event/hekisei06"
+    },
+    {
+      "field": "DelItem",
+      "field_digest": "e1e2a6810462d1f79198ca7c6a0a2436af94567d2599f3fe1b9dcc761e5735b2",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2456
+      ],
+      "physical_line": 14,
+      "source_path": "npc/jaruga/event/kikukuev"
+    },
+    {
+      "field": "GetItem",
+      "field_digest": "df8ef5c6adafd76f1fd3f70579dc08ae2a84be83fabb3c7d31c7aedf7a186616",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2455
+      ],
+      "physical_line": 25,
+      "source_path": "npc/jaruga/event/kikukuev"
+    },
+    {
+      "field": "DelItem",
+      "field_digest": "e1e2a6810462d1f79198ca7c6a0a2436af94567d2599f3fe1b9dcc761e5735b2",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2456
+      ],
+      "physical_line": 26,
+      "source_path": "npc/jaruga/event/kikukuev"
+    },
+    {
+      "field": "EVENT",
+      "field_digest": "950849976248e81dd625350d747b3369fd1b0dc122c3445e4032142358a0e11a",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2456
+      ],
+      "physical_line": 33,
+      "source_path": "npc/jaruga/event/kikukuev"
+    },
+    {
+      "field": "GetItem",
+      "field_digest": "3100a40a1d2d2f7bfae1655f8b773969e41619d168ecf03643c614e6cd2a1acc",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2456
+      ],
+      "physical_line": 45,
+      "source_path": "npc/jaruga/event/kikukuev"
+    },
+    {
+      "field": "EVENT",
+      "field_digest": "9eb61aa38307019b5140ec42acebc97fffb6116438bae14db7d48ba8cc922568",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2432
+      ],
+      "physical_line": 21,
+      "source_path": "npc/poru/mary05"
+    },
+    {
+      "field": "EVENT",
+      "field_digest": "8f49bc286219215c26126601ada9e20403ce7ab783a2ee6d4ad2f64f90f2121b",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2432
+      ],
+      "physical_line": 27,
+      "source_path": "npc/poru/mary15"
+    },
+    {
+      "field": "EVENT",
+      "field_digest": "6977221efe1c585bab4cf23a3d6ed033fa2fcc12196dceb658105fa3130b2cc2",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2432
+      ],
+      "physical_line": 34,
+      "source_path": "npc/poru/mary15"
+    },
+    {
+      "field": "EVENT",
+      "field_digest": "8f49bc286219215c26126601ada9e20403ce7ab783a2ee6d4ad2f64f90f2121b",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2432
+      ],
+      "physical_line": 33,
+      "source_path": "npc/poru/team03"
+    },
+    {
+      "field": "DelItem",
+      "field_digest": "7180c873fd01e2a3013690d3dc439826c67c34ab7551ccef31a7e477cc63a7b4",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2432
+      ],
+      "physical_line": 40,
+      "source_path": "npc/poru/team03"
+    },
+    {
+      "field": "EVENT",
+      "field_digest": "a21cc03d4c0e35b67575ff2845b76b0657680f2e4f6d984b40e34c88fbd2bf12",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2415
+      ],
+      "physical_line": 19,
+      "source_path": "npc/sainasu/event/event02_1"
+    },
+    {
+      "field": "DelItem",
+      "field_digest": "e73586139fd7e89292fe8648c1d791dd3942b3b2a82d3949916e14fc7f7dc0f3",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2415
+      ],
+      "physical_line": 24,
+      "source_path": "npc/sainasu/event/event02_1"
+    },
+    {
+      "field": "EVENT",
+      "field_digest": "e482dc38f1e94b37729c954c6e154f51e3a2220455dbdb4284f1119efc6de5bd",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2415
+      ],
+      "physical_line": 10,
+      "source_path": "npc/sainasu/event/event02_2"
+    },
+    {
+      "field": "GetItem",
+      "field_digest": "179a3a7cba8fec620e19aab298f78ec797166e8b0c37b181e29f9fe69fc343b9",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2415
+      ],
+      "physical_line": 23,
+      "source_path": "npc/sainasu/event/event02_2"
+    },
+    {
+      "field": "GetItem",
+      "field_digest": "179a3a7cba8fec620e19aab298f78ec797166e8b0c37b181e29f9fe69fc343b9",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2415
+      ],
+      "physical_line": 38,
+      "source_path": "npc/sainasu/event/event02_2"
+    },
+    {
+      "field": "EVENT",
+      "field_digest": "aac613b7c12028dd31bf4a4e26d716fa8c6a090ca94ab75da91cf665f7eb904c",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2416
+      ],
+      "physical_line": 10,
+      "source_path": "npc/sainasu/event/event03_1"
+    },
+    {
+      "field": "DelItem",
+      "field_digest": "c946de5369523f2dd2609643baf0ea3e636e6f1953021a78f5f05fbf9ab49aa0",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2416
+      ],
+      "physical_line": 13,
+      "source_path": "npc/sainasu/event/event03_1"
+    },
+    {
+      "field": "GetItem",
+      "field_digest": "915c952b0c06425a86ca9f979d4dfd3a59c2a96a06369c7b9994ef9578826fd1",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2416
+      ],
+      "physical_line": 29,
+      "source_path": "npc/sainasu/event/event03_2"
+    },
+    {
+      "field": "EVENT",
+      "field_digest": "075e230efc089effdf3d2e2a85fe345d8404ac6a58ac9fb92001399721561ce0",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2429,
+        2430
+      ],
+      "physical_line": 11,
+      "source_path": "npc/sainasu/event/event13_1"
+    },
+    {
+      "field": "DelItem",
+      "field_digest": "b8d918734962289e7c4a9ba53db0b46cfa80da6fc9199973de5dab4ee2268218",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2429,
+        2430,
+        2431
+      ],
+      "physical_line": 15,
+      "source_path": "npc/sainasu/event/event13_1"
+    },
+    {
+      "field": "EVENT",
+      "field_digest": "bd1588b2c50c663b73f36e0b8a8c9ae73172bd0edbcfbb122def4f5adc1ca1f2",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2431
+      ],
+      "physical_line": 22,
+      "source_path": "npc/sainasu/event/event13_1"
+    },
+    {
+      "field": "GetItem",
+      "field_digest": "64ac28ec0dc3cb96208fc1f859e591cb2707de75f80944aaffe78ef4645fbbc2",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2431
+      ],
+      "physical_line": 24,
+      "source_path": "npc/sainasu/event/event13_1"
+    },
+    {
+      "field": "GetItem",
+      "field_digest": "04b72c86b5bf3b8b20022172ef9471fde9226f01b7f3b716108db93783a8997f",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2431
+      ],
+      "physical_line": 36,
+      "source_path": "npc/sainasu/event/event13_1"
+    },
+    {
+      "field": "EVENT",
+      "field_digest": "0c2d91526089d97a389ccd649f1a007cc3bd4a56ef6edd861bb7923e0798e109",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2432
+      ],
+      "physical_line": 27,
+      "source_path": "npc/sainasu/event/nevent01_1"
+    },
+    {
+      "field": "DelItem",
+      "field_digest": "f05abcf34549753bf140aadc00df9a3b60c906a05e9ad894430d4ae370f15829",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2432
+      ],
+      "physical_line": 32,
+      "source_path": "npc/sainasu/event/nevent01_1"
+    },
+    {
+      "field": "GetItem",
+      "field_digest": "21d236cfef11d36dbe773df56d549d537a63f3bb264893969f37066bfb6afa62",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2432
+      ],
+      "physical_line": 14,
+      "source_path": "npc/sainasu/event/nevent01_2"
+    },
+    {
+      "field": "GetItem",
+      "field_digest": "21d236cfef11d36dbe773df56d549d537a63f3bb264893969f37066bfb6afa62",
+      "group_value_collisions": [],
+      "instance_value_collisions": [
+        2432
+      ],
+      "physical_line": 24,
+      "source_path": "npc/sainasu/event/nevent01_2"
+    }
+  ],
+  "official_acquisition_closed": 0,
+  "original_payload_published": false,
+  "petabi_rows": [
+    {
+      "arg_line": 7,
+      "arg_path": "my/vipshop/vippetshop1.arg",
+      "arg_token_sha256": "aabce5d785b2170a75ce1054380d03fcfb282c8aab216a7ee68dee2a3d20f7cf",
+      "graphic_no": 100888,
+      "instance_id": 2603,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2028,
+      "instance_name": "莫拉司",
+      "instance_pet_flag": 0,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 4,
+        "level": 1,
+        "strength": 13,
+        "toughness": 10,
+        "transmigration": 0,
+        "vital": 65
+      },
+      "same_saved_spr_index_candidate": 652,
+      "template_id": 1237,
+      "template_line": 992,
+      "template_name": "莫拉司",
+      "template_pet_flag": 1,
+      "template_row_sha256": "f0104acce77f2f586e32850b1b539fa2d0b8f6e1f5d2a518a964446fba8bc1d8",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 277,
+          "template_id": 793
+        },
+        {
+          "in_prior_residual": false,
+          "position": 315,
+          "template_id": 908
+        }
+      ],
+      "vip_points": 150
+    },
+    {
+      "arg_line": 13,
+      "arg_path": "my/vipshop/vippetshop1.arg",
+      "arg_token_sha256": "fd0a782d1c2d6c9c0971bff36cd0343fd2065d6a9199084359b2865b8cb9839a",
+      "graphic_no": 100430,
+      "instance_id": 2606,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2031,
+      "instance_name": "邦達霍恩",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 10,
+        "level": 1,
+        "strength": 12,
+        "toughness": 9,
+        "transmigration": 0,
+        "vital": 37
+      },
+      "same_saved_spr_index_candidate": 393,
+      "template_id": 1240,
+      "template_line": 995,
+      "template_name": "邦達霍恩",
+      "template_pet_flag": 1,
+      "template_row_sha256": "2834bc53ee58758722b3e7d62451e8ef0cf5b8a4ce2f7ebcfe9c4b07704e4f5b",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 177,
+          "template_id": 315
+        }
+      ],
+      "vip_points": 150
+    },
+    {
+      "arg_line": 19,
+      "arg_path": "my/vipshop/vippetshop1.arg",
+      "arg_token_sha256": "0465751c3a6ca10603d66b5c05b15c1578dd9546dec29a0ec3f41bd306d8b7a4",
+      "graphic_no": 100264,
+      "instance_id": 2605,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2030,
+      "instance_name": "威威",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 6,
+        "level": 1,
+        "strength": 6,
+        "toughness": 3,
+        "transmigration": 0,
+        "vital": 17
+      },
+      "same_saved_spr_index_candidate": 254,
+      "template_id": 1239,
+      "template_line": 994,
+      "template_name": "威威",
+      "template_pet_flag": 1,
+      "template_row_sha256": "f5434c53e3928bf89f2189ef08926ba3652c69e5c17bb50e914d9aff61d11e13",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 16,
+          "template_id": 32
+        }
+      ],
+      "vip_points": 50
+    },
+    {
+      "arg_line": 25,
+      "arg_path": "my/vipshop/vippetshop1.arg",
+      "arg_token_sha256": "ace3dec60fd504b176981d9e32cff501a3252393a65ef8045cda4659033a83f0",
+      "graphic_no": 100271,
+      "instance_id": 2604,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2029,
+      "instance_name": "龜之盾",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 2,
+        "level": 1,
+        "strength": 4,
+        "toughness": 6,
+        "transmigration": 0,
+        "vital": 17
+      },
+      "same_saved_spr_index_candidate": 261,
+      "template_id": 1238,
+      "template_line": 993,
+      "template_name": "龜之盾",
+      "template_pet_flag": 1,
+      "template_row_sha256": "96d8f8849b113ae80bdee5609ab8f346db4e7e256bea8fc9cbb812cc0fb3569a",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 27,
+          "template_id": 51
+        },
+        {
+          "in_prior_residual": false,
+          "position": 192,
+          "template_id": 560
+        }
+      ],
+      "vip_points": 60
+    },
+    {
+      "arg_line": 31,
+      "arg_path": "my/vipshop/vippetshop1.arg",
+      "arg_token_sha256": "a7ba83f9ba32446cecdc9d5fd500cdd30b644c4384bdc9dc7b6ee1041031dbea",
+      "graphic_no": 100371,
+      "instance_id": 2587,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2012,
+      "instance_name": "奧卡洛斯",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 7,
+        "level": 1,
+        "strength": 12,
+        "toughness": 10,
+        "transmigration": 0,
+        "vital": 37
+      },
+      "same_saved_spr_index_candidate": 337,
+      "template_id": 1221,
+      "template_line": 972,
+      "template_name": "奧卡洛斯",
+      "template_pet_flag": 1,
+      "template_row_sha256": "423c4ae6c8ded509a741c4bbac1a5fa0fa4a1f4674a844809dcac11e5510268b",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 61,
+          "template_id": 100
+        },
+        {
+          "in_prior_residual": false,
+          "position": 169,
+          "template_id": 301
+        }
+      ],
+      "vip_points": 60
+    },
+    {
+      "arg_line": 36,
+      "arg_path": "my/vipshop/vippetshop1.arg",
+      "arg_token_sha256": "e63116cb2540b01d98761e806c089f7388165112f5b5d3ccabb3e670b25c173e",
+      "graphic_no": 100372,
+      "instance_id": 2588,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2013,
+      "instance_name": "左迪洛斯",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 7,
+        "level": 1,
+        "strength": 13,
+        "toughness": 9,
+        "transmigration": 0,
+        "vital": 46
+      },
+      "same_saved_spr_index_candidate": 338,
+      "template_id": 1222,
+      "template_line": 973,
+      "template_name": "左迪洛斯",
+      "template_pet_flag": 1,
+      "template_row_sha256": "ca7c110cdf3c060637ba6ecc9c45812419bb208589051e516b31678f2839f492",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 66,
+          "template_id": 105
+        },
+        {
+          "in_prior_residual": false,
+          "position": 170,
+          "template_id": 302
+        }
+      ],
+      "vip_points": 70
+    },
+    {
+      "arg_line": 41,
+      "arg_path": "my/vipshop/vippetshop1.arg",
+      "arg_token_sha256": "de0a51f96b3a403935ebe5adc16a756e6b3ac051e8384bd83c1fc2dcc3b80c92",
+      "graphic_no": 100373,
+      "instance_id": 2589,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2014,
+      "instance_name": "巴朵蘭恩",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 8,
+        "level": 1,
+        "strength": 14,
+        "toughness": 9,
+        "transmigration": 0,
+        "vital": 42
+      },
+      "same_saved_spr_index_candidate": 339,
+      "template_id": 1223,
+      "template_line": 974,
+      "template_name": "巴朵蘭恩",
+      "template_pet_flag": 1,
+      "template_row_sha256": "51cade536fca4ed2eb7bbc872d25d8e89eea5c975dd704dbd28938c2617f07df",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 67,
+          "template_id": 106
+        },
+        {
+          "in_prior_residual": false,
+          "position": 171,
+          "template_id": 303
+        },
+        {
+          "in_prior_residual": true,
+          "position": 208,
+          "template_id": 724
+        }
+      ],
+      "vip_points": 70
+    },
+    {
+      "arg_line": 46,
+      "arg_path": "my/vipshop/vippetshop1.arg",
+      "arg_token_sha256": "fb59ac7e4397a2afb5503f79128a80c5b7324e1cc9eb3e7f1268e86e40b2aa2b",
+      "graphic_no": 100374,
+      "instance_id": 2590,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2015,
+      "instance_name": "帖拉所伊朵",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 8,
+        "level": 1,
+        "strength": 16,
+        "toughness": 11,
+        "transmigration": 0,
+        "vital": 38
+      },
+      "same_saved_spr_index_candidate": 340,
+      "template_id": 1224,
+      "template_line": 975,
+      "template_name": "帖拉所伊朵",
+      "template_pet_flag": 1,
+      "template_row_sha256": "dea44083e3c4b7de785be576c8587d93a74e6bd121d321b14484ac52ecaa0fbe",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 172,
+          "template_id": 304
+        }
+      ],
+      "vip_points": 80
+    },
+    {
+      "arg_line": 52,
+      "arg_path": "my/vipshop/vippetshop1.arg",
+      "arg_token_sha256": "9d3223c89428c82b284d0f799cf504c6dd829b2cc83f3a0836a0e334739318bf",
+      "graphic_no": 100287,
+      "instance_id": 2591,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2016,
+      "instance_name": "利則諾頓",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 5,
+        "level": 1,
+        "strength": 12,
+        "toughness": 8,
+        "transmigration": 0,
+        "vital": 34
+      },
+      "same_saved_spr_index_candidate": 277,
+      "template_id": 1225,
+      "template_line": 977,
+      "template_name": "利則諾頓",
+      "template_pet_flag": 1,
+      "template_row_sha256": "1316ad9784d9d406de69b38ced8a96c1d7476f088ce19c511403211587be0002",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 53,
+          "template_id": 91
+        }
+      ],
+      "vip_points": 60
+    },
+    {
+      "arg_line": 57,
+      "arg_path": "my/vipshop/vippetshop1.arg",
+      "arg_token_sha256": "92153d974f552e6cc5d48c553c2f6e7981b6912703ce39acfa49b44db8e866e9",
+      "graphic_no": 100288,
+      "instance_id": 2592,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2017,
+      "instance_name": "揚奇洛斯",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 8,
+        "level": 1,
+        "strength": 16,
+        "toughness": 9,
+        "transmigration": 0,
+        "vital": 47
+      },
+      "same_saved_spr_index_candidate": 278,
+      "template_id": 1226,
+      "template_line": 978,
+      "template_name": "揚奇洛斯",
+      "template_pet_flag": 1,
+      "template_row_sha256": "823e317f48fea1ff43f2cbd84d89e45d684a6b59c17e6a67831ad48a2236a199",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 54,
+          "template_id": 92
+        }
+      ],
+      "vip_points": 60
+    },
+    {
+      "arg_line": 62,
+      "arg_path": "my/vipshop/vippetshop1.arg",
+      "arg_token_sha256": "be9d3d47b73d1906b9ea25d965e44bc3a74e1d26c098bad8aaf9462757d2222c",
+      "graphic_no": 100289,
+      "instance_id": 2593,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2018,
+      "instance_name": "邦浦洛斯",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 7,
+        "level": 1,
+        "strength": 15,
+        "toughness": 8,
+        "transmigration": 0,
+        "vital": 42
+      },
+      "same_saved_spr_index_candidate": 279,
+      "template_id": 1227,
+      "template_line": 979,
+      "template_name": "邦浦洛斯",
+      "template_pet_flag": 1,
+      "template_row_sha256": "13288769841eb99e76f4a3b0b96cb17909bcf7e9c8e80bb83e4d8090379c0e10",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 55,
+          "template_id": 93
+        }
+      ],
+      "vip_points": 70
+    },
+    {
+      "arg_line": 67,
+      "arg_path": "my/vipshop/vippetshop1.arg",
+      "arg_token_sha256": "5777d0024f04e4e446463039993c7ef67f706ba42ef645a2b81c019f6921a76f",
+      "graphic_no": 100290,
+      "instance_id": 2594,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2019,
+      "instance_name": "邦奇諾",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 7,
+        "level": 1,
+        "strength": 16,
+        "toughness": 8,
+        "transmigration": 0,
+        "vital": 36
+      },
+      "same_saved_spr_index_candidate": 280,
+      "template_id": 1228,
+      "template_line": 980,
+      "template_name": "邦奇諾",
+      "template_pet_flag": 1,
+      "template_row_sha256": "6c629ff5448ac2a7c35fc777c519aee02f4720fa6dfa3f7f8c09b2291d9b2311",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 56,
+          "template_id": 94
+        }
+      ],
+      "vip_points": 60
+    },
+    {
+      "arg_line": 72,
+      "arg_path": "my/vipshop/vippetshop1.arg",
+      "arg_token_sha256": "4d294bf5e0b5247746b058636e14fd438b0aac92bda4fc8b24b9f50317050a5f",
+      "graphic_no": 100394,
+      "instance_id": 2595,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2020,
+      "instance_name": "布魯頓",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 8,
+        "level": 1,
+        "strength": 13,
+        "toughness": 7,
+        "transmigration": 0,
+        "vital": 36
+      },
+      "same_saved_spr_index_candidate": 360,
+      "template_id": 1229,
+      "template_line": 981,
+      "template_name": "布魯頓",
+      "template_pet_flag": 1,
+      "template_row_sha256": "1c74426e2c3dbae96269d6ea4cbb833a0ef3250cbb07a06b9add55297560d863",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 57,
+          "template_id": 95
+        }
+      ],
+      "vip_points": 70
+    },
+    {
+      "arg_line": 78,
+      "arg_path": "my/vipshop/vippetshop1.arg",
+      "arg_token_sha256": "2365050bb3831cfbd594398e135c1a936468febfb731acfa3f98abe011206996",
+      "graphic_no": 100368,
+      "instance_id": 2597,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2022,
+      "instance_name": "剋剋洛斯",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 8,
+        "level": 1,
+        "strength": 8,
+        "toughness": 5,
+        "transmigration": 0,
+        "vital": 23
+      },
+      "same_saved_spr_index_candidate": 334,
+      "template_id": 1231,
+      "template_line": 984,
+      "template_name": "剋剋洛斯",
+      "template_pet_flag": 1,
+      "template_row_sha256": "d6d2bf2cf00acbcb2e36af34b59bce126d74e64cba1110b144954bae4feb7527",
+      "tw75_name_and_graphic_only_references": [],
+      "vip_points": 60
+    },
+    {
+      "arg_line": 83,
+      "arg_path": "my/vipshop/vippetshop1.arg",
+      "arg_token_sha256": "c95c185bf75a77a11bf0da253dc00ec3b4dce4f7687506cee718ee3a95ca2c70",
+      "graphic_no": 100369,
+      "instance_id": 2598,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2023,
+      "instance_name": "霍爾克",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 8,
+        "level": 1,
+        "strength": 8,
+        "toughness": 5,
+        "transmigration": 0,
+        "vital": 23
+      },
+      "same_saved_spr_index_candidate": 335,
+      "template_id": 1232,
+      "template_line": 985,
+      "template_name": "霍爾克",
+      "template_pet_flag": 1,
+      "template_row_sha256": "b62f45d95d4a4a529dd558817c4d68fb2ec62379bf546f925e3fa537ca411206",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 167,
+          "template_id": 293
+        }
+      ],
+      "vip_points": 60
+    },
+    {
+      "arg_line": 88,
+      "arg_path": "my/vipshop/vippetshop1.arg",
+      "arg_token_sha256": "91b0578cf88f08d901a2414fa11e8e673c04aacba208d66ab7e6e7571df485cd",
+      "graphic_no": 100370,
+      "instance_id": 2599,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2024,
+      "instance_name": "奇寶",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 8,
+        "level": 1,
+        "strength": 8,
+        "toughness": 5,
+        "transmigration": 0,
+        "vital": 20
+      },
+      "same_saved_spr_index_candidate": 336,
+      "template_id": 1233,
+      "template_line": 986,
+      "template_name": "奇寶",
+      "template_pet_flag": 1,
+      "template_row_sha256": "70a120c4fdb32ae45ebae5b08cdf839b467dbbe9ee91511fc7fb457c825bff03",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 168,
+          "template_id": 294
+        }
+      ],
+      "vip_points": 60
+    },
+    {
+      "arg_line": 94,
+      "arg_path": "my/vipshop/vippetshop1.arg",
+      "arg_token_sha256": "3c5c1fc434337fa9586762c3b7672caa5766b15b57630492d97f9de0da11c9b4",
+      "graphic_no": 100886,
+      "instance_id": 2600,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2025,
+      "instance_name": "里昂蛙",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 5,
+        "level": 1,
+        "strength": 13,
+        "toughness": 14,
+        "transmigration": 0,
+        "vital": 48
+      },
+      "same_saved_spr_index_candidate": 650,
+      "template_id": 1234,
+      "template_line": 988,
+      "template_name": "里昂蛙",
+      "template_pet_flag": 1,
+      "template_row_sha256": "b3c5831363f189560add1677b614d38584655f00bea02b89396abe14132a08d6",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 275,
+          "template_id": 791
+        }
+      ],
+      "vip_points": 50
+    },
+    {
+      "arg_line": 99,
+      "arg_path": "my/vipshop/vippetshop1.arg",
+      "arg_token_sha256": "bb347eb0a4ebc5dcdc7fa73cd15fb3958b29474cdd6ddcc014a560c2aaef93bb",
+      "graphic_no": 100343,
+      "instance_id": 2601,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2026,
+      "instance_name": "奇卡洛斯",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 5,
+        "level": 1,
+        "strength": 12,
+        "toughness": 13,
+        "transmigration": 0,
+        "vital": 40
+      },
+      "same_saved_spr_index_candidate": 313,
+      "template_id": 1235,
+      "template_line": 989,
+      "template_name": "奇卡洛斯",
+      "template_pet_flag": 1,
+      "template_row_sha256": "c68e8b5f228b7c7ec9c62e10916b440e5340823eb027fbffebbbb57a61984f48",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": true,
+          "position": 144,
+          "template_id": 231
+        }
+      ],
+      "vip_points": 50
+    },
+    {
+      "arg_line": 104,
+      "arg_path": "my/vipshop/vippetshop1.arg",
+      "arg_token_sha256": "486419ddee705ffa08fd5bdc054e1a54d47ffe32262895ddf3940a4c4c58dc96",
+      "graphic_no": 100345,
+      "instance_id": 2602,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2027,
+      "instance_name": "奇卡寶斯",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 5,
+        "level": 1,
+        "strength": 13,
+        "toughness": 10,
+        "transmigration": 0,
+        "vital": 41
+      },
+      "same_saved_spr_index_candidate": 315,
+      "template_id": 1236,
+      "template_line": 990,
+      "template_name": "奇卡寶斯",
+      "template_pet_flag": 1,
+      "template_row_sha256": "69fb69f9f92028f92f935802ae47892774812a42614292f13b1364554018f5e8",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 146,
+          "template_id": 233
+        }
+      ],
+      "vip_points": 50
+    },
+    {
+      "arg_line": 7,
+      "arg_path": "my/vipshop/vippetshop2.arg",
+      "arg_token_sha256": "a2c43ed4a062f58c70caca20550e73de3ce9f44d0f99e3d4b823d6a230a0fcb1",
+      "graphic_no": 100327,
+      "instance_id": 2578,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2003,
+      "instance_name": "貝魯卡",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 8,
+        "level": 1,
+        "strength": 11,
+        "toughness": 7,
+        "transmigration": 0,
+        "vital": 35
+      },
+      "same_saved_spr_index_candidate": 301,
+      "template_id": 1212,
+      "template_line": 961,
+      "template_name": "貝魯卡",
+      "template_pet_flag": 1,
+      "template_row_sha256": "5b110677177e42e98f789bbda6d3703445dc2357880ed84e850d4315a1c8e213",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 131,
+          "template_id": 191
+        }
+      ],
+      "vip_points": 60
+    },
+    {
+      "arg_line": 13,
+      "arg_path": "my/vipshop/vippetshop2.arg",
+      "arg_token_sha256": "338bfa8803f9e0ad27afec68c318648e08fae40ecebf05162dc3bdab53c3be57",
+      "graphic_no": 100328,
+      "instance_id": 2579,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2004,
+      "instance_name": "貝魯伊卡",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 8,
+        "level": 1,
+        "strength": 11,
+        "toughness": 6,
+        "transmigration": 0,
+        "vital": 28
+      },
+      "same_saved_spr_index_candidate": 302,
+      "template_id": 1213,
+      "template_line": 962,
+      "template_name": "貝魯伊卡",
+      "template_pet_flag": 1,
+      "template_row_sha256": "1cf4265eb382b7c20b38f5e055ff14af95c2af3e24a1350f715ac97a60540abb",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 132,
+          "template_id": 192
+        }
+      ],
+      "vip_points": 60
+    },
+    {
+      "arg_line": 19,
+      "arg_path": "my/vipshop/vippetshop2.arg",
+      "arg_token_sha256": "71ab2f4b709b2d1a3fe8dc995455da7e0920d4fedf0577485f1c1b672817f094",
+      "graphic_no": 100329,
+      "instance_id": 2580,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2005,
+      "instance_name": "格魯西斯",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 7,
+        "level": 1,
+        "strength": 10,
+        "toughness": 5,
+        "transmigration": 0,
+        "vital": 29
+      },
+      "same_saved_spr_index_candidate": 303,
+      "template_id": 1214,
+      "template_line": 963,
+      "template_name": "格魯西斯",
+      "template_pet_flag": 1,
+      "template_row_sha256": "731e66d1758f3fb9a6c049ddb6bfe9f6f4819036bf507ff043edf9cdd2b8686c",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 133,
+          "template_id": 193
+        }
+      ],
+      "vip_points": 60
+    },
+    {
+      "arg_line": 25,
+      "arg_path": "my/vipshop/vippetshop2.arg",
+      "arg_token_sha256": "f906b3bc792985fd6c4d19d2593f7287e26cbf2bb7cb020285b4e861a4c4ae18",
+      "graphic_no": 100330,
+      "instance_id": 2581,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2006,
+      "instance_name": "金格薩貝魯",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 9,
+        "level": 1,
+        "strength": 11,
+        "toughness": 7,
+        "transmigration": 0,
+        "vital": 31
+      },
+      "same_saved_spr_index_candidate": 304,
+      "template_id": 1215,
+      "template_line": 964,
+      "template_name": "金格薩貝魯",
+      "template_pet_flag": 1,
+      "template_row_sha256": "830d319bdccf37e253e4c91bdc09ee09bae3edddfd6236a4f1010ee485e1b60e",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 134,
+          "template_id": 194
+        }
+      ],
+      "vip_points": 70
+    },
+    {
+      "arg_line": 31,
+      "arg_path": "my/vipshop/vippetshop2.arg",
+      "arg_token_sha256": "e63cc4fcb617e3bb0f78f69186d75dcd45faa279c3d0d5d64cd78f14832078e8",
+      "graphic_no": 100351,
+      "instance_id": 2582,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2007,
+      "instance_name": "布洛多斯",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 3,
+        "level": 1,
+        "strength": 13,
+        "toughness": 13,
+        "transmigration": 0,
+        "vital": 49
+      },
+      "same_saved_spr_index_candidate": 321,
+      "template_id": 1216,
+      "template_line": 966,
+      "template_name": "布洛多斯",
+      "template_pet_flag": 1,
+      "template_row_sha256": "8fa385cbda8199cfa1e21e8e05ab7d73ad71d6dfd93cb84cf08ac98c9b971242",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 152,
+          "template_id": 251
+        }
+      ],
+      "vip_points": 60
+    },
+    {
+      "arg_line": 36,
+      "arg_path": "my/vipshop/vippetshop2.arg",
+      "arg_token_sha256": "0573d97fd591bfe48c2b2abf4fe14a03d4eb32d190763e2b56269e744cc32e41",
+      "graphic_no": 100352,
+      "instance_id": 2583,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2008,
+      "instance_name": "布林帖斯",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 4,
+        "level": 1,
+        "strength": 10,
+        "toughness": 13,
+        "transmigration": 0,
+        "vital": 59
+      },
+      "same_saved_spr_index_candidate": 322,
+      "template_id": 1217,
+      "template_line": 967,
+      "template_name": "布林帖斯",
+      "template_pet_flag": 1,
+      "template_row_sha256": "6df67b77f829b8e09bb8c08f833b37734339d49cea6c57a44911cfa266ffec68",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 153,
+          "template_id": 252
+        }
+      ],
+      "vip_points": 60
+    },
+    {
+      "arg_line": 41,
+      "arg_path": "my/vipshop/vippetshop2.arg",
+      "arg_token_sha256": "a7ba4477a26cf88da776269d7d3f0a8305366dc04d5aac5dbc580d74b3e83464",
+      "graphic_no": 100353,
+      "instance_id": 2584,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2009,
+      "instance_name": "布拉奇多斯",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 4,
+        "level": 1,
+        "strength": 14,
+        "toughness": 13,
+        "transmigration": 0,
+        "vital": 44
+      },
+      "same_saved_spr_index_candidate": 323,
+      "template_id": 1218,
+      "template_line": 968,
+      "template_name": "布拉奇多斯",
+      "template_pet_flag": 1,
+      "template_row_sha256": "30aea68360c987c3cf14b6aa8c8baa15ccd9cd50115d103302672df2bcd2dfbb",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 154,
+          "template_id": 253
+        }
+      ],
+      "vip_points": 60
+    },
+    {
+      "arg_line": 46,
+      "arg_path": "my/vipshop/vippetshop2.arg",
+      "arg_token_sha256": "7259a3878b95ed7abd6d53526919338effe90fe2ccc777a373c3067ada21818a",
+      "graphic_no": 100354,
+      "instance_id": 2585,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2010,
+      "instance_name": "斯天多斯",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 3,
+        "level": 1,
+        "strength": 11,
+        "toughness": 14,
+        "transmigration": 0,
+        "vital": 62
+      },
+      "same_saved_spr_index_candidate": 324,
+      "template_id": 1219,
+      "template_line": 969,
+      "template_name": "斯天多斯",
+      "template_pet_flag": 1,
+      "template_row_sha256": "309d612a77b4d33aec5af04300e3575d08323d4edb24661b589ef03648268577",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 155,
+          "template_id": 254
+        }
+      ],
+      "vip_points": 70
+    },
+    {
+      "arg_line": 51,
+      "arg_path": "my/vipshop/vippetshop2.arg",
+      "arg_token_sha256": "0f95fdcf05fee4b8b43d314006fa6cad7b3008fe78a6bf1cc4663c53de661097",
+      "graphic_no": 100396,
+      "instance_id": 2586,
+      "instance_level_range": [
+        1,
+        1
+      ],
+      "instance_line": 2011,
+      "instance_name": "邦恩多斯",
+      "instance_pet_flag": 1,
+      "official_delivery_verified": false,
+      "present_in_claimed_tw75_catalog_by_id": false,
+      "preset_fields": {
+        "dexterity": 5,
+        "level": 1,
+        "strength": 13,
+        "toughness": 12,
+        "transmigration": 0,
+        "vital": 57
+      },
+      "same_saved_spr_index_candidate": 362,
+      "template_id": 1220,
+      "template_line": 970,
+      "template_name": "邦恩多斯",
+      "template_pet_flag": 1,
+      "template_row_sha256": "684b2538c28e193d3c1e8aed80f4be083c6f9727a1fefdcc52a1ac6f98092895",
+      "tw75_name_and_graphic_only_references": [
+        {
+          "in_prior_residual": false,
+          "position": 156,
+          "template_id": 255
+        }
+      ],
+      "vip_points": 70
+    }
+  ],
+  "runtime_executed": false,
+  "schema": "stoneage.pet51.petabi_preserved_config_links.r1",
+  "source_authorized_reference_hits": 0,
+  "source_run_projection_git_blob": "14103aa39eba7e98c53e050394c0dff02cd0c7e2",
+  "whole_original_archive_bytes": 361255180,
+  "whole_original_archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+}

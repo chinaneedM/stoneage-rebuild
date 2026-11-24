@@ -1,0 +1,27 @@
+name: PET-HIGH-FIRST-51 original NPC and VIP census
+on:
+  push:
+    branches: [agent/pet-high-first-51-script-vip-20261124]
+    paths:
+      - 'tools/stoneage_pet_high_first_51_source.py'
+      - '.github/workflows/pet-high-first-51-source.yml'
+permissions:
+  contents: read
+jobs:
+  original-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install rarfile==4.2 libarchive-c==5.3
+      - run: sudo apt-get update -qq && sudo apt-get install -y unar
+      - run: python -m tools.stoneage_pet_high_first_51_source --output /tmp/pet51-metadata.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet51-derived-metadata-only
+          path: /tmp/pet51-metadata.json
+          retention-days: 7
+          if-no-files-found: error

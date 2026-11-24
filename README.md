@@ -3445,3 +3445,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-24｜PET-HIGH-FIRST-50 原件取得路径复验
 
 [续接与工件验收](docs/continuity/STONEAGE-PET-HIGH-FIRST-50-ORIGINAL-ACQUISITION-PREFLIGHT-20261124.md)。12 份保存档成员由 unar 与 libarchive 独立核验。67 个模板位置中 62 个精确连到选中实例表，四只新手虎已接入训练师脚本与统一查询，四种表组合均未出现正权重遇敌路径。42 个 VIP 字段分级保留，暂未新增官服发放证明。NEXT PET-HIGH-FIRST-51，仅 PET。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-51 NPC 全目录与 VIP 固定属性
+
+[续接与验收](docs/continuity/STONEAGE-PET-HIGH-FIRST-51-ORIGINAL-NPC-VIP-PETABI-20261124.md)。2,205 份保存档 NPC 文件未发现目标实例或群组的限定字段引用。28 条 PETABI 配置精确连到同包实例与模板，27 条带双宠标记，已接入查询。原部署 VIP 加载和官服实发待证。NEXT PET-HIGH-FIRST-52，仅 PET。
