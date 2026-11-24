@@ -19,7 +19,9 @@ def code_semantics():
     n,e,u=(code[p] for p in PINS)
     # Scope each check to the actual later implementation, not forward declarations.
     def section(raw,start,end):
-        x=raw[raw.index(start):];return x[:x.index(end)]
+        matches=list(re.finditer(re.escape(start)+rb'[ \t]*\r?\n[ \t]*\{',raw)) if start.startswith((b'BOOL ',b'int ')) and not start.endswith(b'\n') else []
+        offset=matches[0].start() if matches else raw.index(start)
+        x=raw[offset:];return x[:x.index(end,len(start))]
     pet=section(n,b'BOOL NPC_PetLvCheck(int meindex,int talker,char *buf,int mode)\r\n',b'int NPC_PetLvCheckType2(') if b'BOOL NPC_PetLvCheck(int meindex,int talker,char *buf,int mode)\r\n' in n else section(n,b'BOOL NPC_PetLvCheck(int meindex,int talker,char *buf,int mode)\n',b'int NPC_PetLvCheckType2(')
     for x in (b'CHAR_PETID',b'CHAR_ENDEVENT',b'CHAR_LV',b'loop = atoi( buf3)',b'loop == cnt',b'NPC_EventBigSmallLastCheck'):assert x in pet,x
     spawn=section(e,b'int ENEMY_createPetFromEnemyIndex( int charaindex, int array)',b'CharNew.data[CHAR_CRITIAL]')
