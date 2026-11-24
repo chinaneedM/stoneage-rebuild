@@ -1,0 +1,21 @@
+name: PET-HIGH-FIRST-25 2011 named source crosswalk replay
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_25.py'
+      - 'research/pets/PET-HIGH-FIRST-25-2011-NAMED-SOURCE-CROSSWALK-R1.json'
+      - '.github/workflows/pet-high-first-25.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_25.py'
+      - 'research/pets/PET-HIGH-FIRST-25-2011-NAMED-SOURCE-CROSSWALK-R1.json'
+      - '.github/workflows/pet-high-first-25.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/stoneage_pet_high_first_25.py
