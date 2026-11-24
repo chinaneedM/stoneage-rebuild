@@ -1,0 +1,51 @@
+name: PET-HIGH-FIRST-45 preserve pinned derived evidence
+on:
+  push:
+    branches: [agent/pet-high-first-45-bulk-acquisition-20261124]
+    paths:
+      - '.github/workflows/pet-high-first-45-preserve.yml'
+permissions:
+  actions: read
+  contents: write
+jobs:
+  preserve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download exact derived artifact and verify independent pins
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -eu
+          gh api repos/chinaneedM/stoneage-rebuild/actions/artifacts/14947415807/zip > /tmp/pet45-pinned.zip
+          python - <<'PY'
+          import hashlib,zipfile
+          from pathlib import Path
+          archive=Path('/tmp/pet45-pinned.zip').read_bytes()
+          assert len(archive)==87031 and hashlib.sha256(archive).hexdigest()=='bc331ea2fb9263413fd12a642cf53df1a3dd95b10dd8f575839d14852914c8aa'
+          with zipfile.ZipFile('/tmp/pet45-pinned.zip') as z:
+              assert z.namelist()==['pet45-derived.json']
+              raw=z.read('pet45-derived.json')
+          assert len(raw)==1145765 and hashlib.sha256(raw).hexdigest()=='bef97936b4217037e3578b0b223f791f3f664a88554e851424695a3481530345'
+          assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()=='5273e2c3f6a71fa9ea8a2f7b51139f280a9e9808'
+          Path('/tmp/pet45-derived.json').write_bytes(raw)
+          PY
+      - run: python -m tools.stoneage_pet_high_first_45_accept --report /tmp/pet45-derived.json --sha256 bef97936b4217037e3578b0b223f791f3f664a88554e851424695a3481530345
+      - name: Preserve only exact validated derived metadata
+        run: |
+          set -eu
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          test "$(git ls-remote origin refs/heads/agent/pet-high-first-45-bulk-acquisition-20261124 | cut -f1)" = "$GITHUB_SHA"
+          dst=research/pets/PET-HIGH-FIRST-45-BULK-ACQUISITION-R1.json
+          cp /tmp/pet45-derived.json "$dst"
+          test "$(git hash-object "$dst")" = 5273e2c3f6a71fa9ea8a2f7b51139f280a9e9808
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "$dst"
+          test "$(git diff --cached --name-only)" = "$dst"
+          git commit -m "PET45: preserve exact independently validated derived acquisition graph"
+          git push origin HEAD:refs/heads/agent/pet-high-first-45-bulk-acquisition-20261124
