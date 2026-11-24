@@ -1,12 +1,12 @@
 # 经典 PC 宠物统一来源查询（R1）
 
-一个只读入口访问25个固定Git源对象。**每项返回来源位置，不合并成物种，也不提升为官方发行。** 同名、多地区、多程序和不同时期各自保留；后期声称主档计算值与早期官方数值分开。没有引入手游、双端或私服物种。
+一个只读入口访问31个固定Git源对象。每项返回可追溯的来源位置、证据等级和独立版本。
 
 ```bash
 python3 tools/stoneage_pet_source_lookup.py --summary
 python3 tools/stoneage_pet_source_lookup.py --query 蒙奇 --exact --full
 python3 tools/stoneage_pet_source_lookup.py --query 雷帝斯洛 --variants
-python3 tools/stoneage_pet_source_lookup.py --query PET-000001 --exact --source tw10
+python3 tools/stoneage_pet_source_lookup.py --query PET-000001 --exact --source tw10 --full
 python3 tools/stoneage_pet_source_lookup.py --query 101501 --exact --source tw85_spr --full
 python3 tools/stoneage_pet_source_lookup.py --verify
 ```
@@ -15,7 +15,7 @@ python3 tools/stoneage_pet_source_lookup.py --verify
 
 |来源ID|记录单位|内容|
 |---|---|---|
-|tw10|124份原客户端名／永久研究编号|原图、动作及缺口|
+|tw10|124份原客户端名／永久研究编号|原图、动作、2001年原名比对、元素参考及取得文献|
 |cn50|305个保存相簿名槽|图组、头像哈希、2003网页及跨版图像链接|
 |tw85_grid|4程序的1889个具名相簿名槽|本地原名、头像别名、原程序区分|
 |tw85_spr|550图号的1696个具名程序路径|物理图号、冲突及原帧引用|
@@ -37,3 +37,5 @@ R35新增 `hf35`，27固定源对象；[2013年14来源位置](CN-2013-PERIOD-FI
 
 
 R36新增 `hf36` 固定来源（共28源），35早期字段参考可查询，13未认证晚期服务参考仅存源附件，不纳入查询或队列。[具体字段](PC-2015-2018-FIELD-REFERENCES.md)。
+
+R37将原零售相册、2001华义托管玩家投稿和后期数值参照接到现有124份台湾1.0研究档。普通查询显示属性对照及取得摘要，带 `--full` 可追到投稿序号、页面存档、后期模板与原客户端编译行。[证据和差异](../continuity/STONEAGE-PET-HIGH-FIRST-37-TW10-FIELD-REFERENCES-20261124.md)。

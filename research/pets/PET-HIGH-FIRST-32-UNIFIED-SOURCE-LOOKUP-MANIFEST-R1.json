@@ -170,6 +170,24 @@
       "git_blob": "8c2dc562a5e6e7d6389de7d96c6d1d83cd47f91f",
       "expected_array": "rows",
       "expected_rows": 48
+    },
+    "tw10_album": {
+      "path": "research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json",
+      "git_blob": "1aada81d7314769bf683b816cc5a8762c3bd9400",
+      "expected_array": "records",
+      "expected_rows": 124
+    },
+    "tw10_waei2001": {
+      "path": "research/pets/PET-DETAIL-EVIDENCE01-WAEI2001-WITNESSES-R1.json",
+      "git_blob": "6e8e4b620b9184c1de0a695a8bba256732075303",
+      "expected_array": "entries",
+      "expected_rows": 124
+    },
+    "tw10_later2016": {
+      "path": "research/pets/PET-DETAIL-EVIDENCE09-2016-PC-BIRTH-GROWTH-124-LV1-REFERENCE-R1.json",
+      "git_blob": "92993638e39a6bbaadd68022fcec3883f8e6944d",
+      "expected_array": "dossiers",
+      "expected_rows": 124
     }
   },
   "expected": {
@@ -188,7 +206,15 @@
     "tw10_original_portrait_count": 120,
     "tw10_missing_original_portrait_count": 4,
     "official_species_count": null,
-    "official_full_fields_certified": 0
+    "official_full_fields_certified": 0,
+    "tw10_element_reference_counts": {
+      "SINGLE_RATIO_AGREEMENT": 91,
+      "AGREEMENT_WITH_VARIANTS": 2,
+      "DISJOINT_RATIOS": 7,
+      "INVALID_WEB_RATIO": 1,
+      "NO_WEB_RATIO": 20,
+      "NO_STRICT_LATER_COMPARISON": 3
+    }
   },
   "scope": "Independent source occurrences and exact/explicit script-variant name query; not a deduplicated species or official release table",
   "historical_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
@@ -207,5 +233,10 @@
     "source_head": "ba14bd82bbd5f3aef13258b66fc50d6cef977233",
     "source_tree": "c54e05139c279403453f9a0c12ef4b2bd27433d0",
     "scope": "Field references; 35 pre-2019 source positions and 13 unqualified 2020/2022 context positions excluded from active lookup and gap queue; no new official pet admissions"
+  },
+  "supplement_hf37": {
+    "source_head": "2cb5202fde58eeb3c123212b95d2779698770e4a",
+    "source_tree": "6dd5d0e973ebc63163b1f9063d34494e8ca973eb",
+    "scope": "Links on existing TW10 records only. Period player reports and later numeric template references never fill same-deployment fields."
   }
 }

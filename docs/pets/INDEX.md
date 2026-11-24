@@ -499,3 +499,7 @@
 ## 2026-11-24｜PET-HIGH-FIRST-36 后期PC具体字段及来源隔离
 
 [逐宠字段](PC-2015-2018-FIELD-REFERENCES.md) · [机读](../../research/pets/PET-HIGH-FIRST-36-PC2012-2022-FIELD-REFERENCES-R1.json) · [续接](../continuity/STONEAGE-PET-HIGH-FIRST-36-PC-LATE-FIELD-REFERENCES-20261124.md)。35条早期参考进入查询，13条未认证晚期服务参考隔离，不扩工作队列或物种数。PET唯一。
+
+## 2026-11-24｜PET-HIGH-FIRST-37 台湾1.0属性与取得旁证
+
+[原盘重读、124份档案及属性差异](../continuity/STONEAGE-PET-HIGH-FIRST-37-TW10-FIELD-REFERENCES-20261124.md) · [统一查询](UNIFIED-PC-PET-SOURCE-LOOKUP.md)。同一入口查原客户端行、2001年玩家投稿与后期保存表。发现七份档案的可比属性互不吻合，两份另有后期属性组。正式原服字段仍待同部署证据。

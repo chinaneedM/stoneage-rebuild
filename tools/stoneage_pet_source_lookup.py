@@ -21,6 +21,62 @@ def resolve(d,source,pointer):
     x=d[source]
     for k in pointer:x=x[k]
     return x
+
+def tw10_field_reference(witness, later, starter):
+    """Compare attributed values without assigning server fields to the retail client."""
+    observed = set()
+    missing_web_elements = []
+    invalid_web_elements = []
+    acquisition = []
+    for row in witness["exact_original_printed_name_web_witnesses"]:
+        claim = row["player_submitted_four_element_claim_unverified"]
+        ordinal = row["web_ordinal"]
+        if not claim:
+            missing_web_elements.append(ordinal)
+        elif (
+            set(claim) - set("地水火風")
+            or any(type(v) is not int or not 0 <= v <= 10 for v in claim.values())
+            or sum(claim.values()) != 10
+        ):
+            invalid_web_elements.append(ordinal)
+        else:
+            observed.add(tuple(claim.get(k, 0) * 10 for k in "地水火風"))
+        if row["selected_player_claim"]:
+            acquisition.append(dict(web_ordinal=ordinal, **row["selected_player_claim"]))
+
+    candidates = []
+    for row in later["server2016_candidates"]:
+        # Exact numeric comparison includes both later tables' pet flag,
+        # graphic, numeric template fields and seven skill slots.
+        if row["crossarchive_mixed25_exact_numeric_matches"]:
+            elements = tuple(row["source_elements"][k] for k in ("earth", "water", "fire", "wind"))
+            candidates.append(dict(template_id=row["source_template_id"], elements=elements))
+    later_ratios = {c["elements"] for c in candidates}
+    if not observed:
+        status = "INVALID_WEB_RATIO" if invalid_web_elements else "NO_WEB_RATIO"
+    elif not later_ratios:
+        status = "NO_STRICT_LATER_COMPARISON"
+    elif observed == later_ratios and len(observed) == 1:
+        status = "SINGLE_RATIO_AGREEMENT"
+    elif observed & later_ratios:
+        status = "AGREEMENT_WITH_VARIANTS"
+    else:
+        status = "DISJOINT_RATIOS"
+
+    starter_reference = None
+    if starter is not None:
+        ratio = starter["historical_elements"]
+        starter_reference = dict(
+            village=starter["village"], reported_ratio=ratio,
+            differs_from_all_valid_museum_ratios=tuple(ratio) not in observed if observed else None,
+        )
+    return dict(
+        element_status=status, waei_2001_ratios=sorted(observed),
+        missing_web_elements=missing_web_elements, invalid_web_elements=invalid_web_elements,
+        later_candidates=candidates, acquisition_witnesses=acquisition,
+        period_starter_witness=starter_reference,
+    )
+
 def build(d):
     out=[]
     def add(source,pointer,labels,role,keys=(),links=(),detail=None):
@@ -35,9 +91,38 @@ def build(d):
         return res
     def link(source,pointer,qualification):
         return dict(source=source,pointer=pointer,qualification=qualification)
-    # Official original client name, local art, and separately maintained dossier.
+    # Link by source-bound dossier ID and verify the original name/graphic
+    # before comparing values. The later links do not establish species identity.
+    album_by_graphic = by_id(d["tw10_album"]["records"], "graphic_number")
+    museum_by_pet = by_id(d["tw10_waei2001"]["entries"], "pet_id")
+    later_by_pet = by_id(d["tw10_later2016"]["dossiers"], "pet_id")
+    starters = by_id(d["hf18"]["starters"], "name")
     for i,x in enumerate(d["tw10"]["records"]):
-        add("tw10",["records",i],[x["client_name_original"]],"ORIGINAL_TW10_CLIENT_NAME_ASSET",[x["pet_id"],x["client_graphic"]],detail=dict(pet_id=x["pet_id"],graphic=x["client_graphic"],original_portrait_rd=x["original_portrait_rd"],source_motion_sequences=x["source_motion_sequences"],dossier_path=x["dossier_path"],formal_missing_fields=x["formal_missing_fields"]))
+        pet_id, graphic, name = x["pet_id"], x["client_graphic"], x["client_name_original"]
+        album_index = album_by_graphic[graphic]
+        museum_index = museum_by_pet[pet_id]
+        later_index = later_by_pet[pet_id]
+        album = d["tw10_album"]["records"][album_index]
+        witness = d["tw10_waei2001"]["entries"][museum_index]
+        later = d["tw10_later2016"]["dossiers"][later_index]
+        assert album["name_as_written"] == witness["tw10_original_name"] == later["tw10_name"] == name
+        assert witness["source_tw10_graphic_number"] == later["tw10_graphic"] == graphic
+        assert witness["source_tw10_name_row_sha256"] == album["source_row_sha256"]
+        links = [
+            link("tw10_album", ["records", album_index], "SAME_RETAIL_CLIENT_ROW"),
+            link("tw10_waei2001", ["entries", museum_index], "PERIOD_NAME_ONLY_NOT_SAME_DEPLOYMENT"),
+            link("tw10_later2016", ["dossiers", later_index], "LATER_NUMERIC_GRAPHIC_ONLY"),
+        ]
+        starter_index = starters.get(name)
+        starter = None
+        if starter_index is not None:
+            starter = d["hf18"]["starters"][starter_index]
+            links.append(link("hf18", ["starters", starter_index], "PERIOD_STARTER_NAME_ONLY"))
+        add("tw10", ["records", i], [name], "ORIGINAL_TW10_CLIENT_NAME_ASSET", [pet_id, graphic], links,
+            dict(pet_id=pet_id, graphic=graphic, original_portrait_rd=x["original_portrait_rd"],
+                 source_motion_sequences=x["source_motion_sequences"], dossier_path=x["dossier_path"],
+                 formal_missing_fields=x["formal_missing_fields"],
+                 field_reference=tw10_field_reference(witness, later, starter)))
     cnrows=d["cn50"]["records"]; cnid=by_id(cnrows,"ordinal")
     artid=by_id(d["cn50_art"]["records"],"cn50_album_ordinal")
     sina_by=collections.defaultdict(list)
@@ -121,6 +206,13 @@ def verify(m,d,entries):
     assert len({(x["source"],tuple(x["pointer"])) for x in entries})==len(entries)
     assert len(list(search(entries,"蒙奇",exact=True)))>1
     assert len(list(search(entries,"PET-000001",exact=True,source="tw10")))==1
+    tw10_refs = {x["detail"]["pet_id"]: x["detail"]["field_reference"] for x in entries if x["source"] == "tw10"}
+    assert collections.Counter(r["element_status"] for r in tw10_refs.values()) == m["expected"]["tw10_element_reference_counts"]
+    assert sum(len(r["acquisition_witnesses"]) for r in tw10_refs.values()) == 8
+    assert tw10_refs["PET-000047"]["invalid_web_elements"] == [2]  # 凱比, total 4/10
+    assert tw10_refs["PET-000115"]["missing_web_elements"] == [107]  # 黑烏力, blank
+    assert tw10_refs["PET-000017"]["period_starter_witness"]["differs_from_all_valid_museum_ratios"] is True
+    assert sum(r["period_starter_witness"] is not None for r in tw10_refs.values()) == 4
     assert all(x["role"]!="PET_NAME_CANDIDATE" for x in search(entries,"馬年獸",exact=True,source="hf30_31"))
     assert len([x for x in entries if x["source"]=="hf30_31" and x["detail"].get("year")==2026 and x["role"]=="ITEM"])==7
     hf36=d["hf36"]["rows"]
