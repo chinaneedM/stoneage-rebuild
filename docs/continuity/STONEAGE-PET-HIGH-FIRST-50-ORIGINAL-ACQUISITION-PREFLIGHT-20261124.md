@@ -7,3 +7,7 @@
 本次发现保存档NPC创建索引含三份vip宠物商店参数原件及四村petmaster创建引用；另有未被CREATE引用的vippetshop5及骑宠相关m_tiger。限定提取12份原件：setup、encount、group1、group、enemy、enemy2及上述6份NPC参数。选中/未选中四种表组合分轨；按原SHA和CRC核验，复放PET45选中链，另查正权重、双标记、Lv1与无路线实例，并只公布目标数字字段和散列。NPC数值匹配仅作待证线索，GetPet单独分级，未证明任何原服实际发放。禁止用备用表补造选中配置。
 
 源运行尚待完成。NEXT 先验收该分支原件运行与工件/日志，再按实际结果独立复验、归档派生JSON，确认新增取得参考/保留缺件，必要时查对应后期VIP宠商店代码的参数命名空间。失败记录保留。未获得新官方客户端，未减少67缺件，PET唯一，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体UNKNOWN。完整CURRENT blob c89e0e33537990aa2132b47c40fef49a985a935c不改。
+
+## 源执行纠错
+
+首次[45457133731](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/45457133731)已进入原件解析但失败：备用enemy2.txt首行被误按选中表34列读取。PET10固定原件索引明确记录enemy2.txt为1494行、每行33列；enemy.txt为2087行、34列。更正为分别严格验原宽度及行数，不跳过、不补列、不改原件。首次失败无派生工件，保留失败记录。修正后重新执行；实际结果仍待证。

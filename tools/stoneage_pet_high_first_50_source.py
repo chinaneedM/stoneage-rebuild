@@ -58,8 +58,10 @@ def derive(d,m):
     instances={}; bases={}
     for bn,en,n in pairs:
         bases[bn]={x[1]:x for x in p['source_rows'][bn]}
-        raw=unique(r40.rows(m['data/'+en],34,3),3)
-        assert len(raw)==n
+        width=34 if en=='enemy.txt' else 33
+        assert p['verified_original_archive_members'][en]['field_counts']=={str(width):n}
+        raw=unique(r40.rows(m['data/'+en],width,3),3)
+        assert len(raw)==n and all(len(a)==width for _,a in raw.values()),en
         prior={x[1]:x for x in p['source_rows'][en]}
         assert prior.keys()==raw.keys() and all(prior[k][2]==int(a[4]) for k,(_,a) in raw.items())
         instances[en]=raw
