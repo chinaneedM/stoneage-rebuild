@@ -419,3 +419,8 @@
 ## 2026-11-24｜PET-HIGH-FIRST-19B 局部图号差异及26条坐标补证
 
 [第二批抓宠坐标](PC-2001-CAPTURE-COORDINATES-ADDITIONAL.md) · [机读记录](../../research/pets/PET-HIGH-FIRST-19B-GRAPHIC-AND-COORDINATE-R1.json) · [接续记录](../continuity/STONEAGE-PET-HIGH-FIRST-19B-GRAPHIC-AND-COORDINATE-20261124.md)。467模板中14条TW85异名图最近候选10条+1、4条-1；不改原ID。26条选定同期坐标与后期代表性Lv1矩形相交，非官服捕捉验收；原CURRENT不动，PET唯一。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-19C 任务、赠宠与历史未知
+
+[逐宠取得档案](PC-2001-2003-QUEST-AND-GIFT.md) · [机读数据](../../research/pets/PET-HIGH-FIRST-19C-QUEST-AND-GIFT-WITNESSES-R1.json) · [接续](../continuity/STONEAGE-PET-HIGH-FIRST-19C-QUEST-AND-GIFT-20261124.md)。58条来源分类、18项环岛奖励关系、9条JSS赠宠转述、19条2001未知；不当原服实际发放。PET唯一，原CURRENT不动。

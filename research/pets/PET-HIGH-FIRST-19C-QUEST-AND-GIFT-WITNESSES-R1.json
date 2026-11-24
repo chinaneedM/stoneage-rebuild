@@ -1,0 +1,1451 @@
+{
+  "schema": "stoneage.pet.high_first_19c.quest_gift.r1",
+  "base_candidate": "73f8645ac688c7e729325162e711ab76253e816c",
+  "source_pins_git_blob": {
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-19B-GRAPHIC-AND-COORDINATE-R1.json": "2f846a04ca1b42f23b90677912803a52795ca58d",
+    "research/pets/PET-HIGH-FIRST-18-STARTER-AND-CAPTURE-WITNESSES-R1.json": "a69fc90f207d21612f6ebf8dfb4266ac4a027a92"
+  },
+  "period_guide": {
+    "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n182_98793.html",
+    "date": "2001-06-14",
+    "source_type": "PERIOD_PLAYER_GUIDE",
+    "raw_response_sha256": null
+  },
+  "summary": {
+    "selected_claim_rows": 58,
+    "new_2001_positions": 48,
+    "previous_positions_enriched": 10,
+    "jss_reported": 9,
+    "unknown_in_2001": 19,
+    "route_reward_edges": 18,
+    "distinct_route_reward_positions": 15,
+    "exact_name_candidate_rows": 54,
+    "variant_rows": 3,
+    "unlinked_rows": 1,
+    "covered_positions_after": 88
+  },
+  "rows": [
+    {
+      "pos": 4,
+      "source_name": "乌力布鲁",
+      "master_name": "烏力布魯",
+      "claim": "JSS_GIFT_REPORTED",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 4,
+          "graphic": 100253,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            70,
+            30
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 5,
+      "source_name": "黑乌力",
+      "master_name": "黑烏力",
+      "claim": "JSS_GIFT_REPORTED",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 5,
+          "graphic": 100388,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            50,
+            0,
+            0,
+            50
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 7,
+      "source_name": "金布伊",
+      "master_name": "金布伊",
+      "claim": "RIDDLE_REWARD",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 12,
+          "graphic": 100255,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            30,
+            70
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 10,
+      "source_name": "卡布伊",
+      "master_name": "卡布伊",
+      "claim": "JSS_GIFT_REPORTED",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 15,
+          "graphic": 100258,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            100,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 29,
+      "source_name": "特洛昆",
+      "master_name": "特洛昆",
+      "claim": "GEYA_MOUNTAIN_REWARD",
+      "previously_indexed": true,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 63,
+          "graphic": 100277,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            70,
+            0,
+            0,
+            30
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 31,
+      "source_name": "柏克尔",
+      "master_name": "柏克爾",
+      "claim": "UNKNOWN_IN_2001_GUIDE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 65,
+          "graphic": 100393,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            20,
+            80
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 32,
+      "source_name": "拉奇鲁哥",
+      "master_name": "拉奇魯哥",
+      "claim": "CN_APPEARANCE_UNCONFIRMED",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 71,
+          "graphic": 100279,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            100,
+            0
+          ]
+        },
+        {
+          "id": 99,
+          "graphic": 100279,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            100,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 33,
+      "source_name": "呼拔拔",
+      "master_name": "呼拔拔",
+      "claim": "GEYA_MOUNTAIN_REWARD",
+      "previously_indexed": true,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 72,
+          "graphic": 100280,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            60,
+            40
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 34,
+      "source_name": "多萨金格",
+      "master_name": "多薩金格",
+      "claim": "SOT_C",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 73,
+          "graphic": 100281,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            60,
+            0,
+            0,
+            40
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 39,
+      "source_name": "洛克斯",
+      "master_name": "洛克斯",
+      "claim": "UNKNOWN_IN_2001_GUIDE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 85,
+          "graphic": 100389,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            50,
+            0,
+            0,
+            50
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 40,
+      "source_name": "阿伊萨",
+      "master_name": "阿伊薩",
+      "claim": "UNKNOWN_IN_2001_GUIDE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 86,
+          "graphic": 100390,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            50,
+            50,
+            0,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 41,
+      "source_name": "格洛格鲁",
+      "master_name": "格洛格魯",
+      "claim": "UNKNOWN_IN_2001_GUIDE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 87,
+          "graphic": 100391,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            60,
+            40,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 42,
+      "source_name": "朵洛将恩",
+      "master_name": "朵洛將恩",
+      "claim": "UNKNOWN_IN_2001_GUIDE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 88,
+          "graphic": 100392,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            20,
+            0,
+            0,
+            80
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 44,
+      "source_name": "利则诺顿",
+      "master_name": "利則諾頓",
+      "claim": "FIVE_BROTHERS_CAVE",
+      "previously_indexed": true,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 91,
+          "graphic": 100287,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            100,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 45,
+      "source_name": "扬奇洛斯",
+      "master_name": "揚奇洛斯",
+      "claim": "FIVE_BROTHERS_CAVE",
+      "previously_indexed": true,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 92,
+          "graphic": 100288,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            30,
+            70,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 46,
+      "source_name": "邦浦洛斯",
+      "master_name": "邦浦洛斯",
+      "claim": "FIVE_BROTHERS_CAVE_CN_UNCONFIRMED",
+      "previously_indexed": true,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 93,
+          "graphic": 100289,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            50,
+            50
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 47,
+      "source_name": "邦奇诺",
+      "master_name": "邦奇諾",
+      "claim": "FIVE_BROTHERS_CAVE",
+      "previously_indexed": true,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 94,
+          "graphic": 100290,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            100,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 48,
+      "source_name": "布鲁顿",
+      "master_name": "布魯頓",
+      "claim": "FIVE_BROTHERS_CAVE_CN_UNCONFIRMED",
+      "previously_indexed": true,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 95,
+          "graphic": 100394,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            20,
+            80
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 58,
+      "source_name": "奇拉顿",
+      "master_name": "奇拉頓",
+      "claim": "SOT_D",
+      "previously_indexed": true,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 142,
+          "graphic": 100308,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            80,
+            20,
+            0,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 59,
+      "source_name": "齐尔格尔顿",
+      "master_name": "齊爾格爾頓",
+      "claim": "CN_APPEARANCE_UNCONFIRMED",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 143,
+          "graphic": 100309,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            30,
+            70,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 60,
+      "source_name": "格尔格",
+      "master_name": "格爾格",
+      "claim": "JOT_B",
+      "previously_indexed": true,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 144,
+          "graphic": 100310,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            90,
+            10
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 61,
+      "source_name": "修宝",
+      "master_name": "修寶",
+      "claim": "KATAN_FISH",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 171,
+          "graphic": 100319,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            80,
+            20,
+            0,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 62,
+      "source_name": "卡塔宝斯",
+      "master_name": "卡拉寶斯",
+      "claim": "SOT_C",
+      "previously_indexed": false,
+      "name_variant_only": true,
+      "templates": [
+        {
+          "id": 172,
+          "graphic": 100320,
+          "join": "TW10_GRAPHIC_OTHER_NAME",
+          "raw_elements": [
+            30,
+            70,
+            0,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 63,
+      "source_name": "布克布克",
+      "master_name": "布克布克",
+      "claim": "DOCTOR_EXCHANGE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 173,
+          "graphic": 100321,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            50,
+            50,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 64,
+      "source_name": "多洛加",
+      "master_name": "多洛加",
+      "claim": "SOT_D_JOT_A_COORDINATE_INCOMPLETE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 174,
+          "graphic": 100322,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            30,
+            70,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 65,
+      "source_name": "布鲁宝",
+      "master_name": "布魯寶",
+      "claim": "SOT_C_JOT_B",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 175,
+          "graphic": 100395,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            40,
+            60
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 72,
+      "source_name": "格鲁西斯",
+      "master_name": "格魯西斯",
+      "claim": "SOT_D_JOT_A",
+      "previously_indexed": true,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 193,
+          "graphic": 100329,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            80,
+            20
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 73,
+      "source_name": "金格萨贝鲁",
+      "master_name": "金格薩貝魯",
+      "claim": "LOTTERY_FIRST_PRIZE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 194,
+          "graphic": 100330,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            30,
+            0,
+            0,
+            70
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 77,
+      "source_name": "多洛普斯",
+      "master_name": "多洛布斯",
+      "claim": "JSS_GIFT_REPORTED",
+      "previously_indexed": false,
+      "name_variant_only": true,
+      "templates": [
+        {
+          "id": 214,
+          "graphic": 100338,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            100,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 82,
+      "source_name": "奇卡洛斯",
+      "master_name": "奇卡洛斯",
+      "claim": "UNKNOWN_IN_2001_GUIDE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 231,
+          "graphic": 100343,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            30,
+            0,
+            0,
+            70
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 83,
+      "source_name": "奇娜",
+      "master_name": "奇娜",
+      "claim": "UNKNOWN_IN_2001_GUIDE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 232,
+          "graphic": 100344,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            40,
+            60,
+            0,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 85,
+      "source_name": "卡卡金宝",
+      "master_name": "卡卡金寶",
+      "claim": "JSS_GIFT_REPORTED",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 234,
+          "graphic": 100346,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            20,
+            80,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 88,
+      "source_name": "海主人",
+      "master_name": "海主人",
+      "claim": "JOT_A",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 243,
+          "graphic": 100349,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            20,
+            80,
+            0,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 89,
+      "source_name": "多鲁宝",
+      "master_name": "多魯寶",
+      "claim": "UNKNOWN_IN_2001_GUIDE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 244,
+          "graphic": 100350,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            50,
+            50,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 90,
+      "source_name": "布洛多斯",
+      "master_name": "布洛多斯",
+      "claim": "UNKNOWN_IN_2001_GUIDE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 251,
+          "graphic": 100351,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            90,
+            10,
+            0,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 91,
+      "source_name": "布尔帖斯",
+      "master_name": "布林帖斯",
+      "claim": "UNKNOWN_IN_2001_GUIDE",
+      "previously_indexed": false,
+      "name_variant_only": true,
+      "templates": [
+        {
+          "id": 252,
+          "graphic": 100352,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            30,
+            70,
+            0,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 93,
+      "source_name": "斯天多斯",
+      "master_name": "斯天多斯",
+      "claim": "JSS_GIFT_REPORTED",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 254,
+          "graphic": 100354,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            50,
+            50,
+            0,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 94,
+      "source_name": "邦恩多斯",
+      "master_name": "邦恩多斯",
+      "claim": "JSS_GIFT_REPORTED",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 255,
+          "graphic": 100396,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            20,
+            80
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 99,
+      "source_name": "帖拉格恩",
+      "master_name": "帖拉格恩",
+      "claim": "JOT_B",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 271,
+          "graphic": 100359,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            20,
+            80
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 100,
+      "source_name": "洛卡伦恩",
+      "master_name": "洛卡倫恩",
+      "claim": "UNKNOWN_IN_2001_GUIDE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 272,
+          "graphic": 100360,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            80,
+            20
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 101,
+      "source_name": "加宝格恩",
+      "master_name": "加寶格恩",
+      "claim": "UNKNOWN_IN_2001_GUIDE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 273,
+          "graphic": 100361,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            50,
+            0,
+            0,
+            50
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 102,
+      "source_name": "朵拉比斯",
+      "master_name": "朵拉比斯",
+      "claim": "KATAN_BIRDS",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 274,
+          "graphic": 100362,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            0,
+            100
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 107,
+      "source_name": "奥卡洛斯",
+      "master_name": "奧卡洛斯",
+      "claim": "SOT_C",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 100,
+          "graphic": 100371,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            60,
+            40,
+            0,
+            0
+          ]
+        },
+        {
+          "id": 301,
+          "graphic": 100371,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            60,
+            40,
+            0,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 108,
+      "source_name": "左迪洛斯",
+      "master_name": "左迪洛斯",
+      "claim": "UNKNOWN_IN_2001_GUIDE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 105,
+          "graphic": 100372,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            80,
+            20,
+            0
+          ]
+        },
+        {
+          "id": 302,
+          "graphic": 100372,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            80,
+            20,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 109,
+      "source_name": "巴朵兰恩",
+      "master_name": "巴朵蘭恩",
+      "claim": "UNKNOWN_IN_2001_GUIDE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 106,
+          "graphic": 100373,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            20,
+            80,
+            0
+          ]
+        },
+        {
+          "id": 303,
+          "graphic": 100373,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            20,
+            80,
+            0
+          ]
+        },
+        {
+          "id": 724,
+          "graphic": 100373,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            50,
+            50,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 110,
+      "source_name": "帖拉所伊朵",
+      "master_name": "帖拉所伊朵",
+      "claim": "UNKNOWN_IN_2001_GUIDE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 304,
+          "graphic": 100374,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            50,
+            50
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 111,
+      "source_name": "布伊德",
+      "master_name": "布伊德",
+      "claim": "JSS_GIFT_REPORTED",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 311,
+          "graphic": 100375,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            20,
+            0,
+            0,
+            80
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 112,
+      "source_name": "摩娜西普",
+      "master_name": "摩娜西普",
+      "claim": "GOLDEN_ANTELOPE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 312,
+          "graphic": 100376,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            0,
+            100
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 113,
+      "source_name": "卡伊霍恩",
+      "master_name": "卡伊霍恩",
+      "claim": "UNKNOWN_IN_2001_GUIDE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 313,
+          "graphic": 100377,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            80,
+            20
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 114,
+      "source_name": "拉伊霍恩",
+      "master_name": "拉伊霍恩",
+      "claim": "JSS_GIFT_REPORTED",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 314,
+          "graphic": 100378,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            50,
+            50,
+            0,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 115,
+      "source_name": "邦达霍恩",
+      "master_name": "邦達霍恩",
+      "claim": "UNKNOWN_IN_2001_GUIDE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 315,
+          "graphic": 100430,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            50,
+            50
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 116,
+      "source_name": "史多拉奇顿",
+      "master_name": "史多拉奇頓",
+      "claim": "JOT_A",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 321,
+          "graphic": 100379,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            20,
+            80,
+            0,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 117,
+      "source_name": "萨美洛斯",
+      "master_name": "薩美洛斯",
+      "claim": "UNKNOWN_IN_2001_GUIDE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 322,
+          "graphic": 100380,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            100,
+            0,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 118,
+      "source_name": "阿利给洛斯",
+      "master_name": "阿利給洛斯",
+      "claim": "JOT_B",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 323,
+          "graphic": 100381,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            50,
+            50,
+            0,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 119,
+      "source_name": "达伊诺洛斯",
+      "master_name": "達伊諾洛斯",
+      "claim": "SOT_D_SOURCE_SOUTH_LABEL",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 324,
+          "graphic": 100382,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            50,
+            50,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 120,
+      "source_name": "拉可洛斯",
+      "master_name": "拉可洛斯",
+      "claim": "UNKNOWN_IN_2001_GUIDE",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 123,
+      "source_name": "可利多洛斯",
+      "master_name": "可利多洛斯",
+      "claim": "JOT_A",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 333,
+          "graphic": 100386,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            70,
+            30,
+            0,
+            0
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "pos": 124,
+      "source_name": "诺斯多洛斯",
+      "master_name": "諾斯多洛斯",
+      "claim": "JOT_B",
+      "previously_indexed": false,
+      "name_variant_only": false,
+      "templates": [
+        {
+          "id": 334,
+          "graphic": 100387,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "raw_elements": [
+            0,
+            0,
+            90,
+            10
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    }
+  ],
+  "routes": [
+    {
+      "id": "SOT_C",
+      "date": "2003-05-29",
+      "url": "https://games.sina.com.cn/zhqu/sta/rwgl1_12.shtml",
+      "positions": [
+        34,
+        62,
+        65,
+        107
+      ],
+      "note": "South island dragon cave prerequisite; 12 checkpoints; return certificate to C checker. Listed alternatives, no probability."
+    },
+    {
+      "id": "SOT_D",
+      "date": "2003-05-29",
+      "url": "https://games.sina.com.cn/zhqu/sta/rwgl1_13.shtml",
+      "positions": [
+        58,
+        64,
+        72,
+        119
+      ],
+      "note": "North island route; 2001 row 119 says south island SOT D, retain discrepancy."
+    },
+    {
+      "id": "JOT_A",
+      "date": "2003-05-30",
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-05-30/9935.shtml",
+      "positions": [
+        64,
+        72,
+        88,
+        116,
+        123
+      ],
+      "note": "Article writes 可利洛多斯, guide writes 可利多洛斯; candidate spelling variant."
+    },
+    {
+      "id": "JOT_B",
+      "date": "2003-05-30",
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-05-30/9967.shtml",
+      "positions": [
+        60,
+        65,
+        99,
+        118,
+        124
+      ],
+      "note": "Five alternatives listed; no probability or deployment proof."
+    }
+  ],
+  "additional_sources": [
+    {
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n950_866585.html",
+      "date": "2001-06-14",
+      "positions": [
+        61,
+        102
+      ],
+      "claim": "Player describes exchanging four level-25 fish for 修宝 and subsequently four level-25 birds for 朵拉比斯; intermediate rings. Repetition condition uncertain."
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/content/2002-10-18/n258_174767.html",
+      "date": "2002-10-18",
+      "positions": [
+        7,
+        61,
+        63
+      ],
+      "claim": "Player also reports 金布伊 riddle reward, 修宝 Katan reward and 布克布克 exchange for level-30 green tiger. Not a server script."
+    },
+    {
+      "url": "https://games.sina.com.cn/zhqu/sta/cwzl/chongwu03.shtml",
+      "date": "2003-04-07",
+      "positions": [
+        73,
+        83,
+        85
+      ],
+      "claim": "Catalogue lists 金格萨贝鲁 four sacred stones, 奇娜 reincarnation reward, 卡卡金宝 frog cave capture; separate from earlier lottery/JSS/unknown claims."
+    },
+    {
+      "url": "https://games.sina.com.cn/zhqu/sta/cwzl/cwzl_3.shtml",
+      "date": null,
+      "positions": [
+        101,
+        108,
+        109,
+        110,
+        112,
+        114,
+        115,
+        120
+      ],
+      "claim": "Later catalogue lists acquisition for 加宝格恩、左迪洛斯、巴朵兰恩、帖拉所伊朵、摩娜西普、拉伊霍恩、邦达霍恩、拉可洛斯; exact page date not assigned here. 拉伊霍恩 listed as 2001 Wayi new-year dice prize; distinct from Japanese JSS claim."
+    }
+  ],
+  "original_operator_jss_award_verified": false,
+  "original_official_deployment_verified": false,
+  "original_award_probability": null,
+  "official_species_count": null
+}
