@@ -1,0 +1,656 @@
+{
+  "schema": "stoneage.pet.high_first_21.late_year_beast.r1",
+  "source_head": "03222deb8375e444b2281dc782c099d5573f9ee5",
+  "source_pins_git_blob": {
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-TW85-NATIVE-SPR-ALBUM-R1.json": "e7cff0d53585964c9d755ef1fbd2bc5531d883d6",
+    "research/pets/PET-HIGH-FIRST-TW85-ORIGINAL-PE-ALBUM-GRID-R1.json": "7fb8eceba23dea6dc90ebb18e404d6e837210eaf"
+  },
+  "scope": "Classic PC only; later community observations kept separate from original Waei history; no assumption that TW85 is final 2008 build",
+  "field_order": {
+    "elements": [
+      "earth",
+      "water",
+      "fire",
+      "wind"
+    ],
+    "stats": [
+      "hp",
+      "attack",
+      "defense",
+      "agility"
+    ]
+  },
+  "sources": {
+    "recollection": {
+      "url": "https://www.ptt.cc/bbs/StoneAge/M.1308080266.A.54B.html",
+      "date": "2011-06-15",
+      "grade": "RETROSPECTIVE_PLAYER_TEXT_READABLE",
+      "claimed_rat_skill": "opposing-element attack (example fire rat uses wind-element attack)",
+      "claimed_pig_skill": null
+    },
+    "later_chronology": {
+      "url": "https://www.lab.welovesa.com/viewthread.php?action=printable&tid=38",
+      "post_date": "2009-07-12",
+      "grade": "RETROSPECTIVE_COMPILATION_READABLE",
+      "events": [
+        {
+          "date": "2007-11-22",
+          "description": "Three Little Pigs virtual pack; contents not identified"
+        },
+        {
+          "date": "2008-01-16",
+          "description": "Mouse-themed virtual pack and year beast introduction"
+        },
+        {
+          "date": "2008-02-01",
+          "description": "Mouse year beast festival"
+        }
+      ]
+    },
+    "catalogue": {
+      "grade": "LATER_COMMUNITY_CATALOGUE_2011_ACQUISITION_LABEL_NOT_WAEI_DEPLOYMENT",
+      "raw_sha256": null
+    },
+    "exhibition_2005": {
+      "url": "https://news.17173.com/content/2005-2-24/n94_948448.html",
+      "date": "2005-02-24",
+      "grade": "PERIOD_MEDIA_FULL_TEXT",
+      "award_label": "火牛坎奈特",
+      "claim": "planned capsule prize"
+    },
+    "post_event_2005": {
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=19443",
+      "date": "2005-04-04",
+      "grade": "PERIOD_MEDIA_SEARCH_INDEX_DIRECT_403",
+      "claim": "operator reported fire bull and water demon prizes sent at first sale event; no account redemption log",
+      "award_labels": [
+        "火牛坎奈特",
+        "水魔獸"
+      ],
+      "fire_bull_alias_candidate": "奈坎特",
+      "alias_verified": false,
+      "water_demon_specific_name": null
+    }
+  },
+  "rows": [
+    {
+      "claimed_year": 2007,
+      "recollection_name": "烏薩高登",
+      "catalogue_name": "烏薩高登",
+      "catalogue_url": "https://welovesa.com/pet.php?pet_id=549&pet_type=30",
+      "website_record_id": 549,
+      "recollection_elements": [
+        8,
+        2,
+        0,
+        0
+      ],
+      "catalogue_elements": [
+        10,
+        0,
+        0,
+        0
+      ],
+      "catalogue_birth_ranges": [
+        [
+          47,
+          56
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          4,
+          6
+        ]
+      ],
+      "catalogue_growth_ranges": [
+        [
+          10.25,
+          11.09
+        ],
+        [
+          1.95,
+          2.15
+        ],
+        [
+          1.24219,
+          1.86
+        ],
+        [
+          1.06,
+          1.66406
+        ]
+      ],
+      "catalogue_skill_slots": 7,
+      "catalogue_initial_skill_labels": [
+        "攻擊",
+        "防禦"
+      ],
+      "catalogue_acquisition": "2011 summer quest (discontinued)",
+      "name_variation": false,
+      "element_conflict": true,
+      "source_matches": {
+        "master": [],
+        "grid": [],
+        "native": []
+      },
+      "official_historical_birth_growth_skill_verified": false,
+      "official_release_verified": false,
+      "official_original_graphic_id": null
+    },
+    {
+      "claimed_year": 2007,
+      "recollection_name": "烏圖高登",
+      "catalogue_name": "烏圖高登",
+      "catalogue_url": "https://welovesa.com/pet.php?pet_id=548&pet_type=30",
+      "website_record_id": 548,
+      "recollection_elements": [
+        0,
+        8,
+        2,
+        0
+      ],
+      "catalogue_elements": [
+        0,
+        10,
+        0,
+        0
+      ],
+      "catalogue_birth_ranges": [
+        [
+          50,
+          59
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          4,
+          7
+        ]
+      ],
+      "catalogue_growth_ranges": [
+        [
+          10.62,
+          11.67
+        ],
+        [
+          2.05,
+          2.24
+        ],
+        [
+          1.27907,
+          1.61
+        ],
+        [
+          1.11,
+          1.51938
+        ]
+      ],
+      "catalogue_skill_slots": 7,
+      "catalogue_initial_skill_labels": [
+        "攻擊",
+        "防禦"
+      ],
+      "catalogue_acquisition": "2011 summer quest (discontinued)",
+      "name_variation": false,
+      "element_conflict": true,
+      "source_matches": {
+        "master": [],
+        "grid": [],
+        "native": []
+      },
+      "official_historical_birth_growth_skill_verified": false,
+      "official_release_verified": false,
+      "official_original_graphic_id": null
+    },
+    {
+      "claimed_year": 2007,
+      "recollection_name": "烏米高登",
+      "catalogue_name": "烏米高登",
+      "catalogue_url": "https://welovesa.com/pet.php?pet_id=547&pet_type=30",
+      "website_record_id": 547,
+      "recollection_elements": [
+        0,
+        0,
+        8,
+        2
+      ],
+      "catalogue_elements": [
+        0,
+        0,
+        10,
+        0
+      ],
+      "catalogue_birth_ranges": [
+        [
+          41,
+          66
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          8
+        ]
+      ],
+      "catalogue_growth_ranges": [
+        [
+          9.14,
+          10.602
+        ],
+        [
+          2.17,
+          2.678
+        ],
+        [
+          1.36,
+          1.57
+        ],
+        [
+          1.25,
+          1.42
+        ]
+      ],
+      "catalogue_skill_slots": 7,
+      "catalogue_initial_skill_labels": [
+        "攻擊",
+        "防禦"
+      ],
+      "catalogue_acquisition": "2011 summer quest (discontinued)",
+      "name_variation": false,
+      "element_conflict": true,
+      "source_matches": {
+        "master": [],
+        "grid": [],
+        "native": []
+      },
+      "official_historical_birth_growth_skill_verified": false,
+      "official_release_verified": false,
+      "official_original_graphic_id": null
+    },
+    {
+      "claimed_year": 2007,
+      "recollection_name": "烏多高登",
+      "catalogue_name": "烏多高登",
+      "catalogue_url": "https://welovesa.com/pet.php?pet_id=546&pet_type=30",
+      "website_record_id": 546,
+      "recollection_elements": [
+        2,
+        0,
+        0,
+        8
+      ],
+      "catalogue_elements": [
+        0,
+        0,
+        0,
+        10
+      ],
+      "catalogue_birth_ranges": [
+        [
+          45,
+          53
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          5,
+          8
+        ]
+      ],
+      "catalogue_growth_ranges": [
+        [
+          9.7,
+          10.71
+        ],
+        [
+          2.13,
+          2.35659
+        ],
+        [
+          1.37,
+          1.57
+        ],
+        [
+          1.3,
+          1.5
+        ]
+      ],
+      "catalogue_skill_slots": 7,
+      "catalogue_initial_skill_labels": [
+        "攻擊",
+        "防禦"
+      ],
+      "catalogue_acquisition": "2011 summer quest (discontinued)",
+      "name_variation": false,
+      "element_conflict": true,
+      "source_matches": {
+        "master": [],
+        "grid": [],
+        "native": []
+      },
+      "official_historical_birth_growth_skill_verified": false,
+      "official_release_verified": false,
+      "official_original_graphic_id": null
+    },
+    {
+      "claimed_year": 2008,
+      "recollection_name": "米亞多",
+      "catalogue_name": "米多亞",
+      "catalogue_url": "https://welovesa.com/pet.php?pet_id=562&pet_type=30",
+      "website_record_id": 562,
+      "recollection_elements": [
+        8,
+        2,
+        0,
+        0
+      ],
+      "catalogue_elements": [
+        6,
+        4,
+        0,
+        0
+      ],
+      "catalogue_birth_ranges": [
+        [
+          45,
+          51
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          5,
+          7
+        ]
+      ],
+      "catalogue_growth_ranges": [
+        [
+          9.75,
+          10.32
+        ],
+        [
+          2.07,
+          2.22
+        ],
+        [
+          1.6,
+          1.8
+        ],
+        [
+          1.24,
+          1.41
+        ]
+      ],
+      "catalogue_skill_slots": 6,
+      "catalogue_initial_skill_labels": [
+        "攻擊",
+        "防禦"
+      ],
+      "catalogue_acquisition": "2011 summer quest (discontinued)",
+      "name_variation": true,
+      "element_conflict": true,
+      "source_matches": {
+        "master": [],
+        "grid": [],
+        "native": []
+      },
+      "official_historical_birth_growth_skill_verified": false,
+      "official_release_verified": false,
+      "official_original_graphic_id": null
+    },
+    {
+      "claimed_year": 2008,
+      "recollection_name": "米樂多",
+      "catalogue_name": "米樂多",
+      "catalogue_url": "https://welovesa.com/pet.php?pet_id=563&pet_type=30",
+      "website_record_id": 563,
+      "recollection_elements": [
+        0,
+        8,
+        2,
+        0
+      ],
+      "catalogue_elements": [
+        0,
+        6,
+        4,
+        0
+      ],
+      "catalogue_birth_ranges": [
+        [
+          43,
+          52
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          5,
+          7
+        ]
+      ],
+      "catalogue_growth_ranges": [
+        [
+          9.53,
+          10.55
+        ],
+        [
+          2.02,
+          2.21
+        ],
+        [
+          1.43,
+          1.58
+        ],
+        [
+          1.21,
+          1.41
+        ]
+      ],
+      "catalogue_skill_slots": 6,
+      "catalogue_initial_skill_labels": [
+        "攻擊",
+        "防禦"
+      ],
+      "catalogue_acquisition": "2011 summer quest (discontinued)",
+      "name_variation": false,
+      "element_conflict": true,
+      "source_matches": {
+        "master": [],
+        "grid": [],
+        "native": []
+      },
+      "official_historical_birth_growth_skill_verified": false,
+      "official_release_verified": false,
+      "official_original_graphic_id": null
+    },
+    {
+      "claimed_year": 2008,
+      "recollection_name": "米多多",
+      "catalogue_name": "米多多",
+      "catalogue_url": "https://welovesa.com/pet.php?pet_id=561&pet_type=30",
+      "website_record_id": 561,
+      "recollection_elements": [
+        0,
+        0,
+        8,
+        2
+      ],
+      "catalogue_elements": [
+        0,
+        0,
+        6,
+        4
+      ],
+      "catalogue_birth_ranges": [
+        [
+          41,
+          49
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          5,
+          7
+        ]
+      ],
+      "catalogue_growth_ranges": [
+        [
+          8.76,
+          9.54
+        ],
+        [
+          2.25,
+          2.39
+        ],
+        [
+          1.35,
+          1.55
+        ],
+        [
+          1.34,
+          1.46
+        ]
+      ],
+      "catalogue_skill_slots": 6,
+      "catalogue_initial_skill_labels": [
+        "攻擊",
+        "防禦"
+      ],
+      "catalogue_acquisition": "2011 summer quest (discontinued)",
+      "name_variation": false,
+      "element_conflict": true,
+      "source_matches": {
+        "master": [],
+        "grid": [],
+        "native": []
+      },
+      "official_historical_birth_growth_skill_verified": false,
+      "official_release_verified": false,
+      "official_original_graphic_id": null
+    },
+    {
+      "claimed_year": 2008,
+      "recollection_name": "米尼樂",
+      "catalogue_name": "米尼樂",
+      "catalogue_url": "https://welovesa.com/pet.php?pet_id=564&pet_type=30",
+      "website_record_id": 564,
+      "recollection_elements": [
+        2,
+        0,
+        0,
+        8
+      ],
+      "catalogue_elements": [
+        4,
+        0,
+        0,
+        6
+      ],
+      "catalogue_birth_ranges": [
+        [
+          41,
+          48
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          8
+        ]
+      ],
+      "catalogue_growth_ranges": [
+        [
+          8.84,
+          9.87
+        ],
+        [
+          2.07,
+          2.3
+        ],
+        [
+          1.4,
+          1.57
+        ],
+        [
+          1.39,
+          1.6
+        ]
+      ],
+      "catalogue_skill_slots": 6,
+      "catalogue_initial_skill_labels": [
+        "攻擊",
+        "防禦"
+      ],
+      "catalogue_acquisition": "2011 summer quest (discontinued)",
+      "name_variation": false,
+      "element_conflict": true,
+      "source_matches": {
+        "master": [],
+        "grid": [],
+        "native": []
+      },
+      "official_historical_birth_growth_skill_verified": false,
+      "official_release_verified": false,
+      "official_original_graphic_id": null
+    }
+  ],
+  "summary": {
+    "named_candidates": 8,
+    "name_variations": 1,
+    "element_conflicts": 8,
+    "master_exact_name_matches": 0,
+    "grid_exact_name_matches": 0,
+    "native_exact_name_matches": 0
+  },
+  "official_species_count": null,
+  "original_assets_published": false
+}
