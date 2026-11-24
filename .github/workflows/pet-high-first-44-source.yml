@@ -1,0 +1,27 @@
+name: PET-HIGH-FIRST-44 original window reward control replay
+on:
+  push:
+    branches: [agent/pet-high-first-44-window-reward-20261124]
+    paths:
+      - 'tools/stoneage_pet_high_first_44_source.py'
+      - '.github/workflows/pet-high-first-44-source.yml'
+permissions:
+  contents: read
+jobs:
+  original-members:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install rarfile==4.2
+      - run: sudo apt-get update -qq && sudo apt-get install -y unar
+      - run: python -m tools.stoneage_pet_high_first_44_source --output /tmp/pet44-derived.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet44-derived-metadata-only
+          path: /tmp/pet44-derived.json
+          retention-days: 7
+          if-no-files-found: error
