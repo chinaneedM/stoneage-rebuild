@@ -248,6 +248,18 @@
       "git_blob": "bc531842c068154e40b50658092fe553ff6173df",
       "expected_array": "rows",
       "expected_rows": 4
+    },
+    "hf45": {
+      "path": "research/pets/PET-HIGH-FIRST-45-BULK-ACQUISITION-R1.json",
+      "git_blob": "5273e2c3f6a71fa9ea8a2f7b51139f280a9e9808",
+      "expected_array": null,
+      "expected_rows": null
+    },
+    "hf45_floor": {
+      "path": "research/pets/PET-HIGH-FIRST-45-FLOOR-REFERENCES-R1.json",
+      "git_blob": "fa15a2a93ed820160571aef28294c029d5196666",
+      "expected_array": "rows",
+      "expected_rows": 281
     }
   },
   "expected": {
@@ -332,5 +344,10 @@
     "source_head": "7486d51627ab97cc8dabf45e7f743f70e26e8fc3",
     "source_tree": "f033655a501622f09147bf8106b997ea9c345262",
     "scope": "Four original window reward scripts; 19 pet slots, 15 distinct instance IDs, 40 item slots; primary window only, later code path candidate. No new query entries or official probability."
+  },
+  "supplement_hf45": {
+    "source_head": "137a940a9847af9d7599d327b5073bc48ad3dd7d",
+    "source_tree": "1641019fa09fe42ab5de5580c8b9d2f098983a8f",
+    "scope": "467 existing claimed TW75 rows; 440 exact shared template row hashes, 123 positive routes, 118 double flag, 94 Lv1. 129 preserved mixed25 positive templates, 2587 static routes, 281 floor references. No new query positions or official capture proof."
   }
 }

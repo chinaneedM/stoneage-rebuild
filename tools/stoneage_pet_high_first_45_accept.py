@@ -99,6 +99,42 @@ def verify(d,data):
     expected={'claimed_rows':467,'exact_shared_rows':440,'exact_shared_positive_templates':123,'mixed25_positive_templates':129,'exact_shared_double_flag_templates':sum(x['double_pet_flag_route_count']>0 for x in rows),'exact_shared_lv1_double_flag_templates':sum(x['lv1_double_flag_route_count']>0 for x in rows),'exact_positive_without_r41_or_r42':sum(x['positive_route_count']>0 and not x['previous_r41_template'] and not x['previous_r42_reward_template'] for x in rows),'mixed25_positive_routes':2587,'blank_area_group_weight_slots':9,'blank_group_enemy_weight_slots':4,'missing_group_ids':w['missing_group_ids_selected_group1_only'],'inverted_area_ids':w['inverted_coordinate_area_ids']}
     assert s==expected
     print('PET45 independently verified',json.dumps(s,ensure_ascii=False,sort_keys=True))
+def verify_floors(data):
+    def pinned(path,sha):
+        raw=(ROOT/path).read_bytes()
+        assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==sha,path
+        return raw
+    f=json.loads(pinned('research/pets/PET-HIGH-FIRST-45-FLOOR-REFERENCES-R1.json','fa15a2a93ed820160571aef28294c029d5196666'))
+    m=json.loads(pinned('research/recovered/STONEAGE-MAP-SCENE-MODULE-04-955-ORIGINAL-DAT-4166-RD-PIXEL-INDEX-R1.json','1ef8c004179128ea44ffa4fb4259748bc8c83911'))
+    names=pinned('research/recovered/STONEAGE-25-STABLE-MAP-NAMES-R1.txt','8c9e3a73cbf9a8054d5a0ad82d57582d8535b6e3').decode('utf-8')
+    assert f['source_git_blobs']=={'world20':PINS['world20'][1],'map04':'1ef8c004179128ea44ffa4fb4259748bc8c83911','later_recovered_names':'8c9e3a73cbf9a8054d5a0ad82d57582d8535b6e3','pet45':'5273e2c3f6a71fa9ea8a2f7b51139f280a9e9808'}
+    assert m['provenance']['original_mixed25_community_RAR_sha256']=='d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5'
+    dat={int(x[0].removesuffix('.dat')):(i,x) for i,x in enumerate(m['per_floor_source_rows'])}
+    assert len(dat)==955
+    ns={}
+    for i,line in enumerate(names.splitlines(),1):
+        if not line.startswith('MAP_NAME|'):continue
+        n=dict(s.split('=',1) for s in line.split('|')[1:])
+        key=int(n['floor']);assert key not in ns
+        ns[key]=(i,n)
+    p=data['projection'];area=index(p['area_metadata'],lambda x:x['id'])
+    floor_ids=sorted({area[r[0]]['floor'] for x in p['mixed25_template_routes'] for r in x['routes']})
+    assert len(floor_ids)==281 and [x['floor_id'] for x in f['rows']]==floor_ids
+    for row in f['rows']:
+        k=row['floor_id']
+        if k in dat:
+            i,x=dat[k]
+            assert row['same_archive_dat']==dict(source_row_index=i,filename=x[0],sha256=x[2],width=x[3],height=x[4],qualification='SAME_ARCHIVE_FILE_NOT_NATIVE_RUNTIME')
+        else:assert row['same_archive_dat'] is None
+        if k in ns and ns[k][1]['status']=='RESOLVED_BIG5_CP950_CONSENSUS':
+            i,n=ns[k]
+            assert row['later_recovered_name']==dict(source_line=i,source_escaped_name=n['name'],display_name_candidate=n['name'].split('%7C')[0],raw_sha256=n['raw_sha256'],qualification='RECOVERED_FLOOR_NAME_REFERENCE_NOT_SAME_DEPLOYMENT')
+        else:assert row['later_recovered_name'] is None
+    assert f['summary']=={'floor_count':281,'same_archive_dat_count':266,'recovered_name_reference_count':267}
+    assert sum(x['same_archive_dat'] is not None for x in f['rows'])==266
+    assert sum(x['later_recovered_name'] is not None for x in f['rows'])==267
+    assert not f['official_same_deployment_verified'] and not f['official_capture_verified']
+    print('PET45 floor references: 281 / 266 same archive DAT / 267 separate recovered names')
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--report',type=Path,default=REPORT);ap.add_argument('--sha256');ap.add_argument('--static',action='store_true');a=ap.parse_args()
     d=load()
@@ -106,5 +142,7 @@ def main():
         static(d);print('PET45 static graph: 467/440/123, 129 mixed25 templates, 2587 positive slots; 9+4 blank slots excluded.');return
     raw=a.report.read_bytes()
     if a.sha256:assert hashlib.sha256(raw).hexdigest()==a.sha256
-    verify(d,json.loads(raw))
+    data=json.loads(raw)
+    verify(d,data)
+    if a.report==REPORT:verify_floors(data)
 if __name__=='__main__':main()
