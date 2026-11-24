@@ -5,6 +5,7 @@ This is a research index, not a verified official pet species registry.
 """
 from pathlib import Path
 import argparse
+import gzip
 import json
 
 PATH = Path(__file__).resolve().parents[1] / "research/recovered/STONEAGE-PET-MODULE-16-SOURCE-SEPARATED-UNIFIED-CATALOG-R1.json"
@@ -18,6 +19,7 @@ PET126R_PATH = PATH.with_name("STONEAGE-PET126R-CN50-PC-ORIGINAL-ALBUM-FULL-362-
 CN50_NATIVE_PATH = PATH.parent.parent / "pets/PET-HIGH-FIRST-CN50-NATIVE-SPR-ALBUM-R1.json"
 CN50_RETENTION_PATH = PATH.parent.parent / "pets/PET-HIGH-FIRST-CN50-TW85-ART-RETENTION-R1.json"
 CN50_FUSION_PATH = PATH.parent.parent / "pets/PET-HIGH-FIRST-CN50-FUSION-PANELS-R1.json"
+CN50_PIXELS_PATH = PATH.parent.parent / "pets/PET-HIGH-FIRST-11-PC-INDEXED-PIXEL-RECEIPTS-R1.json.gz"
 CN50_SINA_PATH = PATH.parent.parent / "pets/PET-HIGH-FIRST-CN50-SINA2003-CATALOG-R1.json"
 PET41_PATH = PATH.with_name("STONEAGE-PET41-TW-EARLY-WGS-MUSEUM-R1.json")
 PET25_OFFICIAL_PATH = PATH.with_name("STONEAGE-PET25-OFFICIAL-RELEASE-ROSTER-R1.json")
@@ -116,6 +118,13 @@ def load_catalog(path=PATH):
         retention_by_ordinal = {r["cn50_album_ordinal"]: r for r in retention["records"]}
         if set(retention_by_ordinal) != set(by_ordinal) or len(retention["records"]) != len(retention_by_ordinal):
             raise ValueError("TW85 retention atlas is incomplete")
+        with gzip.open(CN50_PIXELS_PATH, "rt", encoding="utf-8") as stream:
+            pixels = json.load(stream)
+        pixels_by_ordinal = {row["ordinal"]: row for row in pixels["cn50_album"]}
+        if (pixels["scope"] != "PRESERVED_CLASSIC_PC_ASSET_EVIDENCE_ONLY"
+            or set(pixels_by_ordinal) != set(by_ordinal)
+            or len(pixels["cn50_album"]) != len(by_ordinal)):
+            raise ValueError("CN50 pixel receipts are incomplete or out of scope")
         cn50_named = []
         for raw in cn50["records"]:
             if raw["label_as_compiled_GB18030"] is None:
@@ -126,6 +135,10 @@ def load_catalog(path=PATH):
                 or route["portrait_alias"] != raw["source_raw_trailing_u32"]
                 or not route["spr_groups"]):
                 raise ValueError("CN50 native SPR route disagrees with compiled source row")
+            observation = pixels_by_ordinal[raw["ordinal"]]
+            if (observation["cn50_name_row_sha256"] != route["exe_row_sha256"]
+                or observation["portrait_selected_bitmap"] != route["portrait_lookup_after_ordered_load"]):
+                raise ValueError("CN50 pixel receipt differs from native source row")
             cn50_named.append({
                 "id": raw["record_key"], "source": raw["carrier"],
                 "name_as_written": raw["label_as_compiled_GB18030"],
@@ -151,6 +164,13 @@ def load_catalog(path=PATH):
                 "sina_2003_may_fusion_editorial_entry": may_fusion_by_ordinal.get(raw["ordinal"]),
                 "sina_2003_fusion_panel": fusion_by_ordinal.get(raw["ordinal"]),
                 "tw85_preserved_art_comparison": retention_by_ordinal[raw["ordinal"]],
+                "cn50_indexed_pixel_observation": {
+                    "portrait_blocks": [
+                        {"bitmap": number, **pixels["cn50_observed_blocks"][str(number)]}
+                        for number in observation["portrait_bitmaps_in_file_order"]
+                    ],
+                    "sample_original_spr_sequence": observation["sample"],
+                },
                 "source_evidence": "SAME_CAB_STATIC_NATIVE_SPR_TO_COMPILED_ALBUM_SLOT",
                 "official_live_release_confirmed": False,
                 # The source code resolves SPR to a slot, which can have several SPR groups.

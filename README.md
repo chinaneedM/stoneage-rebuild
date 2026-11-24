@@ -3343,3 +3343,7 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-23｜PET-HIGH-FIRST-10：旧原版真实8帧像素关联高版本原生宠名“雷帝斯洛”
 
 [源级证据与历史止点](docs/continuity/STONEAGE-PET-HIGH-FIRST-10-TW85-NAMED-PRIVATE-FRAMES-20261123.md) · [逐宠外观档案](docs/pets/TW85-SOURCE-G101501.md) · [权利安全机读](research/pets/PET-HIGH-FIRST-TW85-NAMED-PRIVATE-FRAMES-R1.json)。交叉核验2026-10-26 R30已私人真正从台湾保存8.5原ADRN/REAL解码和目视的8帧，与PET08/09同包四原程序本地名、SPR原段和每帧原RD全SHA相同：图号101501／物理组1185／原动画index1被sa/sb/sc/sd四轨都关联原名“雷帝斯洛”、相簿槽362、头像别名28429。独立头像物理RD303372原块和96×104尺寸已证，**但本轮没有新解码该头像或八帧像素**，只是精确确认先前真实可视物料的原生客户端名字候选。R30早年无名记录保留原样；原图不入Git、无官服实发/技能/成长/捕获补造。PET唯一，StageA7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、总体百分比UNKNOWN、完整历史CURRENT blob c89e0e33537990aa2132b47c40fef49a985a935c 不动。新增[2003–2004同期大陆经典PC文献分级](research/pets/PET-HIGH-FIRST-10-CLASSIC-PC-PERIOD-RAIDISILUO-R1.json)：2003-08-25大陆广1署名玩家自述使用无魔／雷帝斯洛PK、2004-01-17另一位署名玩家的技能与获取评论、2004-12-01华义产品报价页列“魔之诅咒卡”包含雷帝斯洛；三条均不冒充原服务器日志或官方出生成长和技能公式，不把后期手游混入。 NEXT PET-HIGH-FIRST-11：先检索其他已保留真实私人高版本画面与原程序姓名对应，缺源则有界选择新真实PC原字节开展私人可视恢复及同服主表补证。
+
+## 2026-11-24｜PET-HIGH-FIRST-11：大陆 5.0 宠物原像素及台湾 8.5 羊年兽头像
+
+[最新接续记录](docs/continuity/STONEAGE-PET-HIGH-FIRST-11-PC-INDEXED-PIXELS-20261124.md) · [宠物档案入口](docs/pets/INDEX.md)。大陆保存 5.0 的 305 个具名槽共 309 个头像原块均已双重解码。181 个未与台湾 1.0 建立身份关联的条目各核验一段完整原序列，覆盖 1,306 个帧位置。四种羊年兽的头像可与台湾保存 8.5 额外图号所用原记录精确对应，补入同期元素、取得与玩家成长参考。接续仍优先取得台湾 8.5 独立原容器及同运营期宠物发行材料。
