@@ -4,7 +4,7 @@ PET45 main `f292262fa245d904488f5c1ca26f89605ffae875` / tree `c4f9c102e9f3e7a9bc
 
 ## 349条既有高版模板分流
 
-从467标称7.5记录扣除118具有保存混合2.5双标记正权重路径的记录。本轮只复用16个固定源Git blob，不重新下载已验原件、不扩大官方物种统计。按记录逐项建立[取得缺件矩阵](../../research/pets/PET-HIGH-FIRST-46-ACQUISITION-GAP-MATRIX-R1.json)。
+从467标称7.5记录扣除118具有保存混合2.5双标记正权重路径的记录。本轮只复用15个固定源Git blob，不重新下载已验原件、不扩大官方物种统计。按记录逐项建立[取得缺件矩阵](../../research/pets/PET-HIGH-FIRST-46-ACQUISITION-GAP-MATRIX-R1.json)。
 
 | 取得分流（互斥） | 条数 |
 |---|---:|
