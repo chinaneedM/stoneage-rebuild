@@ -1,0 +1,27 @@
+name: PET-HIGH-FIRST-40 source member acquisition and same-carrier static replay
+on:
+  push:
+    branches: [agent/pet-high-first-40-acquisition-20261124]
+    paths:
+      - 'tools/stoneage_pet_high_first_40_acquisition.py'
+      - '.github/workflows/pet-high-first-40-source.yml'
+permissions:
+  contents: read
+jobs:
+  exact-members:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install rarfile==4.2
+      - run: sudo apt-get update -qq && sudo apt-get install -y unar
+      - run: python -m tools.stoneage_pet_high_first_40_acquisition --output /tmp/pet40-derived.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet40-derived-metadata-only
+          path: /tmp/pet40-derived.json
+          retention-days: 7
+          if-no-files-found: error
