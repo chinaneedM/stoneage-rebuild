@@ -1,0 +1,1624 @@
+{
+  "native": {
+    "anchor_rva": 586653,
+    "anchor_window_sha256": "260c61375a81adb6c6f79737b8c5496348bc7594c6fd9ff60ef81c1504bcedda",
+    "bounded_window_sha256": "46014cd3178998265d04cdfd8ad98492b996dc86fe751c894bd06a5a1d961b46",
+    "branch_edges": [
+      {
+        "from": 586656,
+        "kind": "BRANCH",
+        "to": 587020
+      },
+      {
+        "from": 586666,
+        "kind": "BRANCH",
+        "to": 587020
+      },
+      {
+        "from": 586691,
+        "kind": "BRANCH",
+        "to": 586756
+      },
+      {
+        "from": 586705,
+        "kind": "BRANCH",
+        "to": 586728
+      },
+      {
+        "from": 586776,
+        "kind": "BRANCH",
+        "to": 586983
+      },
+      {
+        "from": 586787,
+        "kind": "BRANCH",
+        "to": 586929
+      },
+      {
+        "from": 586931,
+        "kind": "BRANCH",
+        "to": 586948
+      },
+      {
+        "from": 586795,
+        "kind": "BRANCH",
+        "to": 586804
+      },
+      {
+        "from": 586722,
+        "kind": "BRANCH",
+        "to": 586715
+      },
+      {
+        "from": 586802,
+        "kind": "BRANCH",
+        "to": 586811
+      },
+      {
+        "from": 586956,
+        "kind": "BRANCH",
+        "to": 587020
+      },
+      {
+        "from": 586813,
+        "kind": "BRANCH",
+        "to": 586842
+      },
+      {
+        "from": 586960,
+        "kind": "BRANCH",
+        "to": 586975
+      },
+      {
+        "from": 586844,
+        "kind": "BRANCH",
+        "to": 586863
+      },
+      {
+        "from": 586977,
+        "kind": "BRANCH",
+        "to": 586782
+      },
+      {
+        "from": 586946,
+        "kind": "BRANCH",
+        "to": 586951
+      },
+      {
+        "from": 586969,
+        "kind": "BRANCH",
+        "to": 586962
+      },
+      {
+        "from": 586861,
+        "kind": "BRANCH",
+        "to": 586868
+      },
+      {
+        "from": 586840,
+        "kind": "BRANCH",
+        "to": 586868
+      },
+      {
+        "from": 586927,
+        "kind": "BRANCH",
+        "to": 586975
+      }
+    ],
+    "candidate_prologue_rvas": [],
+    "exits": [
+      {
+        "reason": "RETURN",
+        "rva": 586755
+      },
+      {
+        "reason": "RETURN",
+        "rva": 587019
+      },
+      {
+        "reason": "RETURN",
+        "rva": 587029
+      }
+    ],
+    "operand_facts": [
+      {
+        "operands": [
+          {
+            "base": "esi",
+            "disp": 0,
+            "index": null,
+            "scale": 1,
+            "size": 1
+          },
+          {
+            "imm": 82,
+            "size": 1
+          }
+        ],
+        "operation": "cmp",
+        "rva": 586653
+      },
+      {
+        "operands": [
+          {
+            "imm": 587020,
+            "size": 4
+          }
+        ],
+        "operation": "jne",
+        "rva": 586656
+      },
+      {
+        "operands": [
+          {
+            "base": "esi",
+            "disp": 1,
+            "index": null,
+            "scale": 1,
+            "size": 1
+          },
+          {
+            "imm": 68,
+            "size": 1
+          }
+        ],
+        "operation": "cmp",
+        "rva": 586662
+      },
+      {
+        "operands": [
+          {
+            "imm": 587020,
+            "size": 4
+          }
+        ],
+        "operation": "jne",
+        "rva": 586666
+      },
+      {
+        "operands": [
+          {
+            "reg": "al",
+            "size": 1
+          },
+          {
+            "base": "esi",
+            "disp": 2,
+            "index": null,
+            "scale": 1,
+            "size": 1
+          }
+        ],
+        "operation": "mov",
+        "rva": 586672
+      },
+      {
+        "operands": [
+          {
+            "reg": "ebx",
+            "size": 4
+          },
+          {
+            "base": "esi",
+            "disp": 4,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586675
+      },
+      {
+        "operands": [
+          {
+            "reg": "ecx",
+            "size": 4
+          },
+          {
+            "base": "esi",
+            "disp": 8,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586678
+      },
+      {
+        "operands": [
+          {
+            "base": "esp",
+            "disp": 24,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          },
+          {
+            "reg": "ebx",
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586681
+      },
+      {
+        "operands": [
+          {
+            "reg": "al",
+            "size": 1
+          },
+          {
+            "reg": "al",
+            "size": 1
+          }
+        ],
+        "operation": "test",
+        "rva": 586685
+      },
+      {
+        "operands": [
+          {
+            "base": "esp",
+            "disp": 16,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          },
+          {
+            "reg": "ecx",
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586687
+      },
+      {
+        "operands": [
+          {
+            "imm": 586756,
+            "size": 4
+          }
+        ],
+        "operation": "jne",
+        "rva": 586691
+      },
+      {
+        "operands": [
+          {
+            "reg": "edx",
+            "size": 4
+          },
+          {
+            "base": "esi",
+            "disp": 16,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          }
+        ],
+        "operation": "lea",
+        "rva": 586695
+      },
+      {
+        "operands": [
+          {
+            "reg": "eax",
+            "size": 4
+          },
+          {
+            "reg": "ebx",
+            "size": 4
+          }
+        ],
+        "operation": "imul",
+        "rva": 586698
+      },
+      {
+        "operands": [
+          {
+            "reg": "eax",
+            "size": 4
+          },
+          {
+            "reg": "eax",
+            "size": 4
+          }
+        ],
+        "operation": "test",
+        "rva": 586703
+      },
+      {
+        "operands": [
+          {
+            "imm": 586728,
+            "size": 4
+          }
+        ],
+        "operation": "jbe",
+        "rva": 586705
+      },
+      {
+        "operands": [
+          {
+            "reg": "edx",
+            "size": 4
+          },
+          {
+            "reg": "ebp",
+            "size": 4
+          }
+        ],
+        "operation": "sub",
+        "rva": 586709
+      },
+      {
+        "operands": [
+          {
+            "reg": "al",
+            "size": 1
+          },
+          {
+            "base": "edx",
+            "disp": 0,
+            "index": "ecx",
+            "scale": 1,
+            "size": 1
+          }
+        ],
+        "operation": "mov",
+        "rva": 586715
+      },
+      {
+        "operands": [
+          {
+            "base": "ecx",
+            "disp": 0,
+            "index": null,
+            "scale": 1,
+            "size": 1
+          },
+          {
+            "reg": "al",
+            "size": 1
+          }
+        ],
+        "operation": "mov",
+        "rva": 586718
+      },
+      {
+        "operands": [
+          {
+            "imm": 586715,
+            "size": 4
+          }
+        ],
+        "operation": "jne",
+        "rva": 586722
+      },
+      {
+        "operands": [
+          {
+            "reg": "ecx",
+            "size": 4
+          },
+          {
+            "base": "esp",
+            "disp": 16,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586724
+      },
+      {
+        "operands": [
+          {
+            "reg": "edx",
+            "size": 4
+          },
+          {
+            "base": "esp",
+            "disp": 52,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586728
+      },
+      {
+        "operands": [
+          {
+            "reg": "eax",
+            "size": 4
+          },
+          {
+            "base": "esp",
+            "disp": 44,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586732
+      },
+      {
+        "operands": [
+          {
+            "base": "edx",
+            "disp": 0,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          },
+          {
+            "reg": "esi",
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586737
+      },
+      {
+        "operands": [
+          {
+            "reg": "edx",
+            "size": 4
+          },
+          {
+            "base": "esp",
+            "disp": 44,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586739
+      },
+      {
+        "operands": [
+          {
+            "base": "eax",
+            "disp": 0,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          },
+          {
+            "reg": "ebx",
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586743
+      },
+      {
+        "operands": [
+          {
+            "base": "edx",
+            "disp": 0,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          },
+          {
+            "reg": "ecx",
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586749
+      },
+      {
+        "operands": [
+          {
+            "reg": "esp",
+            "size": 4
+          },
+          {
+            "imm": 16,
+            "size": 4
+          }
+        ],
+        "operation": "add",
+        "rva": 586752
+      },
+      {
+        "operands": [],
+        "operation": "ret",
+        "rva": 586755
+      },
+      {
+        "operands": [
+          {
+            "reg": "ecx",
+            "size": 4
+          },
+          {
+            "base": "esi",
+            "disp": 12,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586756
+      },
+      {
+        "operands": [
+          {
+            "reg": "ecx",
+            "size": 4
+          },
+          {
+            "reg": "esi",
+            "size": 4
+          }
+        ],
+        "operation": "add",
+        "rva": 586761
+      },
+      {
+        "operands": [
+          {
+            "reg": "esi",
+            "size": 4
+          },
+          {
+            "imm": 16,
+            "size": 4
+          }
+        ],
+        "operation": "add",
+        "rva": 586763
+      },
+      {
+        "operands": [
+          {
+            "reg": "esi",
+            "size": 4
+          },
+          {
+            "reg": "ecx",
+            "size": 4
+          }
+        ],
+        "operation": "cmp",
+        "rva": 586766
+      },
+      {
+        "operands": [
+          {
+            "base": "esp",
+            "disp": 20,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          },
+          {
+            "reg": "ecx",
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586768
+      },
+      {
+        "operands": [
+          {
+            "base": "esp",
+            "disp": 40,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          },
+          {
+            "reg": "edi",
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586772
+      },
+      {
+        "operands": [
+          {
+            "imm": 586983,
+            "size": 4
+          }
+        ],
+        "operation": "jae",
+        "rva": 586776
+      },
+      {
+        "operands": [
+          {
+            "reg": "al",
+            "size": 1
+          },
+          {
+            "base": "esi",
+            "disp": 0,
+            "index": null,
+            "scale": 1,
+            "size": 1
+          }
+        ],
+        "operation": "mov",
+        "rva": 586782
+      },
+      {
+        "operands": [
+          {
+            "reg": "al",
+            "size": 1
+          },
+          {
+            "imm": 128,
+            "size": 1
+          }
+        ],
+        "operation": "test",
+        "rva": 586785
+      },
+      {
+        "operands": [
+          {
+            "imm": 586929,
+            "size": 4
+          }
+        ],
+        "operation": "je",
+        "rva": 586787
+      },
+      {
+        "operands": [
+          {
+            "reg": "al",
+            "size": 1
+          },
+          {
+            "imm": 64,
+            "size": 1
+          }
+        ],
+        "operation": "test",
+        "rva": 586793
+      },
+      {
+        "operands": [
+          {
+            "imm": 586804,
+            "size": 4
+          }
+        ],
+        "operation": "je",
+        "rva": 586795
+      },
+      {
+        "operands": [
+          {
+            "base": "esp",
+            "disp": 36,
+            "index": null,
+            "scale": 1,
+            "size": 1
+          },
+          {
+            "imm": 0,
+            "size": 1
+          }
+        ],
+        "operation": "mov",
+        "rva": 586797
+      },
+      {
+        "operands": [
+          {
+            "imm": 586811,
+            "size": 4
+          }
+        ],
+        "operation": "jmp",
+        "rva": 586802
+      },
+      {
+        "operands": [
+          {
+            "reg": "cl",
+            "size": 1
+          },
+          {
+            "base": "esi",
+            "disp": 0,
+            "index": null,
+            "scale": 1,
+            "size": 1
+          }
+        ],
+        "operation": "mov",
+        "rva": 586804
+      },
+      {
+        "operands": [
+          {
+            "base": "esp",
+            "disp": 36,
+            "index": null,
+            "scale": 1,
+            "size": 1
+          },
+          {
+            "reg": "cl",
+            "size": 1
+          }
+        ],
+        "operation": "mov",
+        "rva": 586807
+      },
+      {
+        "operands": [
+          {
+            "reg": "al",
+            "size": 1
+          },
+          {
+            "imm": 32,
+            "size": 1
+          }
+        ],
+        "operation": "test",
+        "rva": 586811
+      },
+      {
+        "operands": [
+          {
+            "imm": 586842,
+            "size": 4
+          }
+        ],
+        "operation": "je",
+        "rva": 586813
+      },
+      {
+        "operands": [
+          {
+            "reg": "eax",
+            "size": 4
+          },
+          {
+            "imm": 15,
+            "size": 4
+          }
+        ],
+        "operation": "and",
+        "rva": 586815
+      },
+      {
+        "operands": [
+          {
+            "reg": "dl",
+            "size": 1
+          },
+          {
+            "base": "esi",
+            "disp": 0,
+            "index": null,
+            "scale": 1,
+            "size": 1
+          }
+        ],
+        "operation": "mov",
+        "rva": 586820
+      },
+      {
+        "operands": [
+          {
+            "reg": "eax",
+            "size": 4
+          },
+          {
+            "imm": 8,
+            "size": 1
+          }
+        ],
+        "operation": "shl",
+        "rva": 586822
+      },
+      {
+        "operands": [
+          {
+            "reg": "eax",
+            "size": 4
+          },
+          {
+            "imm": 8,
+            "size": 1
+          }
+        ],
+        "operation": "shl",
+        "rva": 586827
+      },
+      {
+        "operands": [
+          {
+            "reg": "al",
+            "size": 1
+          },
+          {
+            "base": "esi",
+            "disp": 0,
+            "index": null,
+            "scale": 1,
+            "size": 1
+          }
+        ],
+        "operation": "mov",
+        "rva": 586835
+      },
+      {
+        "operands": [
+          {
+            "imm": 586868,
+            "size": 4
+          }
+        ],
+        "operation": "jmp",
+        "rva": 586840
+      },
+      {
+        "operands": [
+          {
+            "reg": "al",
+            "size": 1
+          },
+          {
+            "imm": 16,
+            "size": 1
+          }
+        ],
+        "operation": "test",
+        "rva": 586842
+      },
+      {
+        "operands": [
+          {
+            "imm": 586863,
+            "size": 4
+          }
+        ],
+        "operation": "je",
+        "rva": 586844
+      },
+      {
+        "operands": [
+          {
+            "reg": "eax",
+            "size": 4
+          },
+          {
+            "imm": 15,
+            "size": 4
+          }
+        ],
+        "operation": "and",
+        "rva": 586846
+      },
+      {
+        "operands": [
+          {
+            "reg": "cl",
+            "size": 1
+          },
+          {
+            "base": "esi",
+            "disp": 0,
+            "index": null,
+            "scale": 1,
+            "size": 1
+          }
+        ],
+        "operation": "mov",
+        "rva": 586851
+      },
+      {
+        "operands": [
+          {
+            "reg": "eax",
+            "size": 4
+          },
+          {
+            "imm": 8,
+            "size": 1
+          }
+        ],
+        "operation": "shl",
+        "rva": 586853
+      },
+      {
+        "operands": [
+          {
+            "imm": 586868,
+            "size": 4
+          }
+        ],
+        "operation": "jmp",
+        "rva": 586861
+      },
+      {
+        "operands": [
+          {
+            "reg": "eax",
+            "size": 4
+          },
+          {
+            "imm": 15,
+            "size": 4
+          }
+        ],
+        "operation": "and",
+        "rva": 586863
+      },
+      {
+        "operands": [
+          {
+            "reg": "eax",
+            "size": 4
+          },
+          {
+            "base": "esp",
+            "disp": 36,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586868
+      },
+      {
+        "operands": [
+          {
+            "reg": "eax",
+            "size": 4
+          },
+          {
+            "imm": 255,
+            "size": 4
+          }
+        ],
+        "operation": "and",
+        "rva": 586874
+      },
+      {
+        "operands": [
+          {
+            "reg": "eax",
+            "size": 4
+          },
+          {
+            "imm": 16,
+            "size": 1
+          }
+        ],
+        "operation": "shl",
+        "rva": 586887
+      },
+      {
+        "operands": [
+          {
+            "reg": "ebx",
+            "size": 4
+          },
+          {
+            "base": "esp",
+            "disp": 24,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586893
+      },
+      {
+        "operands": [
+          {
+            "reg": "ecx",
+            "size": 4
+          },
+          {
+            "imm": 2,
+            "size": 1
+          }
+        ],
+        "operation": "shr",
+        "rva": 586897
+      },
+      {
+        "operands": [
+          {
+            "base": "edi",
+            "disp": 0,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          },
+          {
+            "reg": "eax",
+            "size": 4
+          }
+        ],
+        "operation": "rep stosd",
+        "rva": 586900
+      },
+      {
+        "operands": [
+          {
+            "reg": "ecx",
+            "size": 4
+          },
+          {
+            "imm": 3,
+            "size": 4
+          }
+        ],
+        "operation": "and",
+        "rva": 586904
+      },
+      {
+        "operands": [
+          {
+            "base": "edi",
+            "disp": 0,
+            "index": null,
+            "scale": 1,
+            "size": 1
+          },
+          {
+            "reg": "al",
+            "size": 1
+          }
+        ],
+        "operation": "rep stosb",
+        "rva": 586907
+      },
+      {
+        "operands": [
+          {
+            "reg": "edi",
+            "size": 4
+          },
+          {
+            "base": "esp",
+            "disp": 40,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586909
+      },
+      {
+        "operands": [
+          {
+            "reg": "ecx",
+            "size": 4
+          },
+          {
+            "base": "esp",
+            "disp": 20,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586913
+      },
+      {
+        "operands": [
+          {
+            "reg": "edi",
+            "size": 4
+          },
+          {
+            "reg": "ebp",
+            "size": 4
+          }
+        ],
+        "operation": "add",
+        "rva": 586917
+      },
+      {
+        "operands": [
+          {
+            "reg": "ebp",
+            "size": 4
+          },
+          {
+            "base": "esp",
+            "disp": 28,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586919
+      },
+      {
+        "operands": [
+          {
+            "base": "esp",
+            "disp": 40,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          },
+          {
+            "reg": "edi",
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586923
+      },
+      {
+        "operands": [
+          {
+            "imm": 586975,
+            "size": 4
+          }
+        ],
+        "operation": "jmp",
+        "rva": 586927
+      },
+      {
+        "operands": [
+          {
+            "reg": "al",
+            "size": 1
+          },
+          {
+            "imm": 16,
+            "size": 1
+          }
+        ],
+        "operation": "test",
+        "rva": 586929
+      },
+      {
+        "operands": [
+          {
+            "imm": 586948,
+            "size": 4
+          }
+        ],
+        "operation": "je",
+        "rva": 586931
+      },
+      {
+        "operands": [
+          {
+            "reg": "eax",
+            "size": 4
+          },
+          {
+            "imm": 15,
+            "size": 4
+          }
+        ],
+        "operation": "and",
+        "rva": 586933
+      },
+      {
+        "operands": [
+          {
+            "reg": "dl",
+            "size": 1
+          },
+          {
+            "base": "esi",
+            "disp": 0,
+            "index": null,
+            "scale": 1,
+            "size": 1
+          }
+        ],
+        "operation": "mov",
+        "rva": 586938
+      },
+      {
+        "operands": [
+          {
+            "reg": "eax",
+            "size": 4
+          },
+          {
+            "imm": 8,
+            "size": 1
+          }
+        ],
+        "operation": "shl",
+        "rva": 586940
+      },
+      {
+        "operands": [
+          {
+            "imm": 586951,
+            "size": 4
+          }
+        ],
+        "operation": "jmp",
+        "rva": 586946
+      },
+      {
+        "operands": [
+          {
+            "reg": "eax",
+            "size": 4
+          },
+          {
+            "imm": 15,
+            "size": 4
+          }
+        ],
+        "operation": "and",
+        "rva": 586948
+      },
+      {
+        "operands": [
+          {
+            "reg": "eax",
+            "size": 4
+          },
+          {
+            "imm": 1048575,
+            "size": 4
+          }
+        ],
+        "operation": "cmp",
+        "rva": 586951
+      },
+      {
+        "operands": [
+          {
+            "imm": 587020,
+            "size": 4
+          }
+        ],
+        "operation": "jae",
+        "rva": 586956
+      },
+      {
+        "operands": [
+          {
+            "reg": "eax",
+            "size": 4
+          },
+          {
+            "reg": "eax",
+            "size": 4
+          }
+        ],
+        "operation": "test",
+        "rva": 586958
+      },
+      {
+        "operands": [
+          {
+            "imm": 586975,
+            "size": 4
+          }
+        ],
+        "operation": "jbe",
+        "rva": 586960
+      },
+      {
+        "operands": [
+          {
+            "reg": "dl",
+            "size": 1
+          },
+          {
+            "base": "esi",
+            "disp": 0,
+            "index": null,
+            "scale": 1,
+            "size": 1
+          }
+        ],
+        "operation": "mov",
+        "rva": 586962
+      },
+      {
+        "operands": [
+          {
+            "base": "edi",
+            "disp": 0,
+            "index": null,
+            "scale": 1,
+            "size": 1
+          },
+          {
+            "reg": "dl",
+            "size": 1
+          }
+        ],
+        "operation": "mov",
+        "rva": 586964
+      },
+      {
+        "operands": [
+          {
+            "imm": 586962,
+            "size": 4
+          }
+        ],
+        "operation": "jne",
+        "rva": 586969
+      },
+      {
+        "operands": [
+          {
+            "base": "esp",
+            "disp": 40,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          },
+          {
+            "reg": "edi",
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586971
+      },
+      {
+        "operands": [
+          {
+            "reg": "esi",
+            "size": 4
+          },
+          {
+            "reg": "ecx",
+            "size": 4
+          }
+        ],
+        "operation": "cmp",
+        "rva": 586975
+      },
+      {
+        "operands": [
+          {
+            "imm": 586782,
+            "size": 4
+          }
+        ],
+        "operation": "jb",
+        "rva": 586977
+      },
+      {
+        "operands": [
+          {
+            "reg": "eax",
+            "size": 4
+          },
+          {
+            "base": "esp",
+            "disp": 16,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586983
+      },
+      {
+        "operands": [
+          {
+            "reg": "edx",
+            "size": 4
+          },
+          {
+            "base": "esp",
+            "disp": 52,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586987
+      },
+      {
+        "operands": [
+          {
+            "reg": "ecx",
+            "size": 4
+          },
+          {
+            "reg": "ebx",
+            "size": 4
+          }
+        ],
+        "operation": "imul",
+        "rva": 586994
+      },
+      {
+        "operands": [
+          {
+            "base": "edx",
+            "disp": 0,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          },
+          {
+            "reg": "ecx",
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586997
+      },
+      {
+        "operands": [
+          {
+            "reg": "ecx",
+            "size": 4
+          },
+          {
+            "base": "esp",
+            "disp": 40,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 586999
+      },
+      {
+        "operands": [
+          {
+            "reg": "edx",
+            "size": 4
+          },
+          {
+            "base": "esp",
+            "disp": 44,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 587003
+      },
+      {
+        "operands": [
+          {
+            "base": "ecx",
+            "disp": 0,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          },
+          {
+            "reg": "ebx",
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 587008
+      },
+      {
+        "operands": [
+          {
+            "base": "edx",
+            "disp": 0,
+            "index": null,
+            "scale": 1,
+            "size": 4
+          },
+          {
+            "reg": "eax",
+            "size": 4
+          }
+        ],
+        "operation": "mov",
+        "rva": 587010
+      },
+      {
+        "operands": [
+          {
+            "reg": "esp",
+            "size": 4
+          },
+          {
+            "imm": 16,
+            "size": 4
+          }
+        ],
+        "operation": "add",
+        "rva": 587016
+      },
+      {
+        "operands": [],
+        "operation": "ret",
+        "rva": 587019
+      },
+      {
+        "operands": [
+          {
+            "reg": "esp",
+            "size": 4
+          },
+          {
+            "imm": 16,
+            "size": 4
+          }
+        ],
+        "operation": "add",
+        "rva": 587026
+      },
+      {
+        "operands": [],
+        "operation": "ret",
+        "rva": 587029
+      }
+    ],
+    "operation_counts": {
+      "add": 6,
+      "and": 7,
+      "cmp": 5,
+      "dec": 2,
+      "imul": 2,
+      "inc": 9,
+      "jae": 2,
+      "jb": 1,
+      "jbe": 2,
+      "je": 5,
+      "jmp": 5,
+      "jne": 5,
+      "lea": 1,
+      "mov": 59,
+      "or": 4,
+      "pop": 12,
+      "rep stosb": 1,
+      "rep stosd": 1,
+      "ret": 3,
+      "shl": 5,
+      "shr": 1,
+      "sub": 1,
+      "test": 8,
+      "xor": 6
+    },
+    "original_executable_executed": false,
+    "reachable_instruction_count": 153
+  },
+  "native_complete_groups_before_interpretation": 510,
+  "native_rendered_pixels_verified": false,
+  "official_pet_master_verified": false,
+  "original_assets_published": false,
+  "prior_receipt_sha256": "2985c011be6f725f6df9a716fb62b90a35fee35921ab3030c95cfb5ac1dccd3d",
+  "prior_special_summary": {
+    "header_only": 2,
+    "one_extra_zero": 8
+  },
+  "scope": "PRESERVED_TW85_NATIVE_STATIC_BOUNDED_RD_CONTROL_FLOW",
+  "source_executable_sha256": "188e37b8f1ec4c1f4c04d9e59186de6907df8cda56f2fe89b4ee8705c5cc5a33"
+}
