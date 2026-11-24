@@ -38,6 +38,7 @@ def queue(d, entries):
         links = list(e["linked_records"])
         if s == "tw10":
             evidence = {"name": "ORIGINAL_CLIENT", "portrait": "ORIGINAL_RD" if x["original_portrait_rd"] is not None else "ORIGINAL_POSE_FALLBACK_ONLY", "motion": "ORIGINAL_SPR_INDEX"}
+            evidence["field_reference"] = e["detail"]["field_reference"]
             fields["official_native_id"] = "CLIENT_GRAPHIC_AND_RESEARCH_ID_ONLY"
             priority = "P2_AUTHENTICATED_EARLY_CLIENT_SERVER_FIELDS"
         elif s == "cn50":
@@ -140,6 +141,9 @@ def verify(d, entries, rows):
     assert n["hf21"]==8 and n["hf22"]==29 and n["hf23"]==8
     assert n["hf25"]==41 and n["hf26_27"]==43 and n["hf28_29"]==18 and n["hf30_31"]==54
     assert sum(r["source"]=="tw10" and r["source_evidence"]["portrait"]=="ORIGINAL_RD" for r in rows)==120
+    tw10 = [r for r in rows if r["source"] == "tw10"]
+    assert sum(len(r["source_evidence"]["field_reference"]["acquisition_witnesses"]) for r in tw10) == 8
+    assert all(r["formal_fields"]["elements"] == "NOT_CERTIFIED_SAME_DEPLOYMENT" for r in tw10)
     assert all(r["source_evidence"]["portrait"]=="PRESERVED_RD_HASH" and r["source_evidence"]["motion"]=="PRESERVED_SPR_INDEX" for r in rows if r["source"]=="cn50")
     for p, expected in {"sa.exe":(207,182),"sb.exe":(190,182),"sc.exe":(106,106),"sd.exe":(182,182)}.items():
         subset=[r for r in rows if r["source"]=="tw85_grid" and r["pointer"][1]==p]

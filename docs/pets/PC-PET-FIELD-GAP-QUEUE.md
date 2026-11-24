@@ -35,3 +35,7 @@ python3 tools/stoneage_pet_gap_queue.py --all > pet-source-gaps.json
 ## R35 增量
 
 [2013大陆状态面板、取得与成长封印](CN-2013-PERIOD-FIELD-WITNESSES.md)：13独立补缺位置，阿玛兰斯对话候选仅在R32查询保留，队列3015。三份Lv1样本非初值范围。
+
+## R37 台湾1.0原名档逐项对照
+
+现有124项均附 `source_evidence.field_reference`。可按 PET 档号核对2001投稿和后期模板的属性是否一致、存在异组、互不吻合或缺资料，并追出处。史料中的获取描述可随同查看。同部署正式字段仍等待原服证据。[逐项判断依据](../continuity/STONEAGE-PET-HIGH-FIRST-37-TW10-FIELD-REFERENCES-20261124.md)。
