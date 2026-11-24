@@ -60,3 +60,6 @@ R45在467条标称7.5既有记录显示与保存混合2.5的来源比对；123�
 
 
 R46在349个无双标记路径的标称7.5档案添加取得参考分类、主备表比较、缺件状态及原证指针（44固定源对象）。13原任务奖励、234其他来源参考、102本批缺合格参考。无新增物种或查询位置；`--full`可追原源记录。[PET46](../continuity/STONEAGE-PET-HIGH-FIRST-46-PC-ACQUISITION-GAP-20261124.md)。
+
+
+R52 对位置67、144、171、208增加 `hf52` 高版本原图鉴与普通任务／VIP异档对照链接，不增查询位置，严格取得残余67不减。[PET52](../continuity/STONEAGE-PET-HIGH-FIRST-52-NAMED-VISUAL-ACQUISITION-VARIANTS-20261124.md)。
