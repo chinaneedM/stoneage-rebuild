@@ -260,6 +260,12 @@
       "git_blob": "fa15a2a93ed820160571aef28294c029d5196666",
       "expected_array": "rows",
       "expected_rows": 281
+    },
+    "hf46": {
+      "path": "research/pets/PET-HIGH-FIRST-46-ACQUISITION-GAP-MATRIX-R1.json",
+      "git_blob": "dbbd61460cee2edd4ba2722ab90e8889fe5268e2",
+      "expected_array": "rows",
+      "expected_rows": 349
     }
   },
   "expected": {
@@ -349,5 +355,10 @@
     "source_head": "137a940a9847af9d7599d327b5073bc48ad3dd7d",
     "source_tree": "1641019fa09fe42ab5de5580c8b9d2f098983a8f",
     "scope": "467 existing claimed TW75 rows; 440 exact shared template row hashes, 123 positive routes, 118 double flag, 94 Lv1. 129 preserved mixed25 positive templates, 2587 static routes, 281 floor references. No new query positions or official capture proof."
+  },
+  "supplement_hf46": {
+    "source_head": "f292262fa245d904488f5c1ca26f89605ffae875",
+    "source_tree": "c4f9c102e9f3e7a9bc64711c8463fe6adb96be07",
+    "scope": "349 existing TW75 records without selected mixed25 double-flag routes; 13 saved task reward configurations, 234 other source references, 102 no qualified acquisition reference in this batch. Primary/alternate comparisons and historical source scopes retained; no new query entries."
   }
 }

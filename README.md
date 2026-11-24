@@ -3420,3 +3420,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-24｜PET-HIGH-FIRST-45 批量取得链与地图参考
 
 [续接记录](docs/continuity/STONEAGE-PET-HIGH-FIRST-45-PC-BULK-ACQUISITION-20261124.md)。467标称7.5模板中440完整行同指纹，123正权重遇敌、118双宠标记、94含Lv1；保存混合2.5总2587正权重槽、281楼层，266同档DAT、267旧地图名候选。新增75未覆盖双标记模板、65含Lv1，不计官方新种。NEXT PET-HIGH-FIRST-46，仅PET。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-46 取得缺件矩阵
+
+[续接记录](docs/continuity/STONEAGE-PET-HIGH-FIRST-46-PC-ACQUISITION-GAP-20261124.md)。349条无双宠标记遇敌路径模板，13原保存任务奖励配置、234其他取得参考、102本批无合格取得参考；26同号异行（6可见基础属性不同）、1主表缺号，备表无一解27冲突。保留期刊、商业、融合、后期路线的来源等级。NEXT PET-HIGH-FIRST-47，仅PET。
