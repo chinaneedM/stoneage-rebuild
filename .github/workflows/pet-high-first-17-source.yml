@@ -1,0 +1,23 @@
+name: PET-HIGH-FIRST-17 source comparison replay
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_17_comparison.py'
+      - 'research/pets/PET-HIGH-FIRST-17-COMPARISON-SKILL-ENCOUNTER-R1.json'
+      - '.github/workflows/pet-high-first-17-source.yml'
+      - 'research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_17_comparison.py'
+      - 'research/pets/PET-HIGH-FIRST-17-COMPARISON-SKILL-ENCOUNTER-R1.json'
+      - '.github/workflows/pet-high-first-17-source.yml'
+      - 'research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json'
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m tools.stoneage_pet_high_first_17_comparison

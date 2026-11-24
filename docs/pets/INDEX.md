@@ -399,3 +399,8 @@
 ## 2026-11-24｜PET-HIGH-FIRST-16 467模板条件一级面板与成长范围
 
 [逐模板条件模型](../../research/pets/PET-HIGH-FIRST-16-TW75-CONDITIONAL-BIRTH-GROWTH-R1.json) · [取证边界及续接](../continuity/STONEAGE-PET-HIGH-FIRST-16-TW75-FIELD-RANGES-20261124.md)。26组同名多模板中6组图号不同、9组出生系数不同、10组技能槽不同；雷帝斯洛335/1060原元素分别合计400/0，不改原值。Lv1未修饰面板及内部成长单项理论区间仅为声称7.5主档与已验后期PC模型交叉条件计算，不当官服出生或实测成长；远端独立重放待验。NEXT同源实例/技能和同期实服取得证据。原CURRENT不动，PET唯一。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-17 技能与遇敌引用链
+
+[逐模板来源限定目录](../../research/pets/PET-HIGH-FIRST-17-COMPARISON-SKILL-ENCOUNTER-R1.json) · [接续与证据边界](../continuity/STONEAGE-PET-HIGH-FIRST-17-SKILL-ENCOUNTER-20261124.md)。429条全字段同对照模板中282有后期正权重地图引用、230含Lv1；40个非负技能编号均有后期扩展表定义。实例标记、原模板标记、技能学习和出生严格区分，非原服认证。NEXT同期捕捉与技能学习地点反核；原CURRENT不动，PET唯一。
