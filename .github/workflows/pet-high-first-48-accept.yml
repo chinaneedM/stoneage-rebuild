@@ -1,0 +1,25 @@
+name: PET-HIGH-FIRST-48 legacy PC acquisition gap replay
+on:
+  push:
+    paths:
+      - 'research/pets/PET-HIGH-FIRST-48-*.json'
+      - 'tools/stoneage_pet_high_first_48_accept.py'
+      - '.github/workflows/pet-high-first-48-accept.yml'
+  pull_request:
+    paths:
+      - 'research/pets/PET-HIGH-FIRST-48-*.json'
+      - 'tools/stoneage_pet_high_first_48_accept.py'
+      - '.github/workflows/pet-high-first-48-accept.yml'
+permissions:
+  contents: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m tools.stoneage_pet_high_first_48_accept
+      - run: python -m tools.stoneage_pet_high_first_47_accept
