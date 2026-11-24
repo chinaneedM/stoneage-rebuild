@@ -2,6 +2,10 @@
 
 > **重要：这是一份原客户端的“具名图形候选清单”，不是官服实发物种统计；不同版本不可累加。** 原姓名保持原繁体字形，大陆5.0列是第三方保存的 PC 本地编译异名候选，不代表同服ID。完整图像仅在私人观察文件中，不进公开Git。
 
+## PET-HIGH-FIRST-12｜台湾保存 8.5 的原头像与动作（2026-11-24）
+
+本批 207 个具名头像均由同一保存 8.5 原索引和图块双重解码，含原补丁未覆盖的 25 个别名。506 个具名物理组各选一段有界动作，498 段完整解码。支持 `python -m tools.stoneage_pet_high_first_tw85_lookup --query 雷帝斯洛 --visual` 查原程序相簿行对应的头像和取样动作。[核验记录](../continuity/STONEAGE-PET-HIGH-FIRST-12-TW85-INDEXED-PIXELS-20261124.md) · [猴、鸡、狗三组年兽](TW85-YEAR-BEASTS-2004-2006.md)
+
 ## PET-HIGH-FIRST-11｜大陆 5.0 具名头像、181 段动作与台湾 8.5 羊年兽（2026-11-24）
 
 从大陆保存 5.0 原容器双重解码 **309 个头像块、1,227 个动作块**。181 个未与台湾 1.0 建立身份关联的具名槽各有一段原序列，逐帧共 1,306 处。查洛奇斯、查洛可利、查洛畢爾、查洛比克的四张头像逐字节对应台湾保存 8.5 同名条目。可用 `python -m tools.stoneage_pet16_lookup --dataset cn50_compiled_album --query 查洛 --details` 查证。 [本轮报告](../continuity/STONEAGE-PET-HIGH-FIRST-11-PC-INDEXED-PIXELS-20261124.md) · [逐图块凭证](../../research/pets/PET-HIGH-FIRST-11-PC-INDEXED-PIXEL-RECEIPTS-R1.json.gz)

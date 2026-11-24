@@ -25,6 +25,12 @@ class TestPet45(unittest.TestCase):
         expected=json.dumps(p.calculate(),ensure_ascii=False,sort_keys=True,indent=2)+"\n"
         self.assertEqual(p.OUTPUT.read_text(encoding="utf-8"),expected)
         self.assertEqual(p.ROOT.joinpath("docs/STONEAGE-PET-CHRONOLOGICAL-RESTORATION-ORDER-R1.md").read_text(encoding="utf-8").count("## PET45 2026-11-16｜台湾8.5保存包412候选图号与197,680帧原RD索引覆盖"),1)
-        self.assertEqual(p.ROOT.joinpath("research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json").read_text(encoding="utf-8").count('"PET45-TW85-SAME-CARRIER-SPR-RD-20261116"'),2)
+        queue = json.loads(p.ROOT.joinpath(
+            "research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json"
+        ).read_text(encoding="utf-8"))
+        receipts = [row for row in queue["root_source_census_receipts"]
+                    if row["id"] == "PET45-TW85-SAME-CARRIER-SPR-RD-20261116"]
+        self.assertEqual(len(receipts), 1)
+        self.assertEqual(receipts[0]["evidence_json"], p.OUTPUT.relative_to(p.ROOT).as_posix())
 if __name__=="__main__":
     unittest.main()

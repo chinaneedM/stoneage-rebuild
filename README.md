@@ -3347,3 +3347,7 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-24｜PET-HIGH-FIRST-11：大陆 5.0 宠物原像素及台湾 8.5 羊年兽头像
 
 [最新接续记录](docs/continuity/STONEAGE-PET-HIGH-FIRST-11-PC-INDEXED-PIXELS-20261124.md) · [宠物档案入口](docs/pets/INDEX.md)。大陆保存 5.0 的 305 个具名槽共 309 个头像原块均已双重解码。181 个未与台湾 1.0 建立身份关联的条目各核验一段完整原序列，覆盖 1,306 个帧位置。四种羊年兽的头像可与台湾保存 8.5 额外图号所用原记录精确对应，补入同期元素、取得与玩家成长参考。接续仍优先取得台湾 8.5 独立原容器及同运营期宠物发行材料。
+
+## 2026-11-24｜PET-HIGH-FIRST-12：台湾保存 8.5 原头像与动作取样
+
+[最新接续记录](docs/continuity/STONEAGE-PET-HIGH-FIRST-12-TW85-INDEXED-PIXELS-20261124.md)。从保存 8.5 原包读出本批 207 个头像，补齐旧补丁未覆盖的 25 个别名。对 506 个具名物理 SPR 组各取一段，498 段的全部原帧像素复核一致。雷帝斯洛和三组年兽可按原相簿名查询。后续核长序列、特殊图块及独立同服发行证据。
