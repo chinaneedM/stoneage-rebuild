@@ -1,0 +1,836 @@
+{
+  "schema": "stoneage.pet_high_first_47.period_acquisition_gap_review.r1",
+  "base_head": "4d31273535d86c69c4d01464d0e57348e9c2af0d",
+  "base_tree": "933106de2459aa660d80a82fdc8e91d438b64f20",
+  "scope": "classic PC only; 102 PET46 bounded gap rows; source name/element claims, not official deployment",
+  "input_git_blobs": {
+    "research/pets/PET-HIGH-FIRST-46-ACQUISITION-GAP-MATRIX-R1.json": "dbbd61460cee2edd4ba2722ab90e8889fe5268e2",
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-21-LATE-YEAR-BEAST-SOURCE-R1.json": "9fce8211744aa2d1e76e63975942add7c1fdaff8",
+    "research/pets/PET-HIGH-FIRST-22-JP-KR-NAMED-INDEX-R1.json": "bc0b4920cc5954c8b847d07f1342b3f5674d5b1c",
+    "research/pets/PET-HIGH-FIRST-23-2009-ACQUISITION-DOSSIERS-R1.json": "bae00ecbbbbef8f250de6d982574061c69fa359c",
+    "research/pets/PET-HIGH-FIRST-28-29-2014-2018-OBJECT-ROLE-CROSSWALK-R1.json": "ddb9712839b4b491775ff32fad33f3f25b169eea"
+  },
+  "sources": [
+    {
+      "id": "CN20030407A",
+      "url": "https://games.sina.com.cn/zhqu/sta/cwzl/chongwu02.shtml",
+      "date": "2003-04-07",
+      "grade": "PERIOD_PLAYER_SUBMISSION_HOSTED_BY_SINA"
+    },
+    {
+      "id": "CN20030407B",
+      "url": "https://games.sina.com.cn/zhqu/sta/cwzl/chongwu03.shtml",
+      "date": "2003-04-07",
+      "grade": "PERIOD_PLAYER_SUBMISSION_HOSTED_BY_SINA"
+    }
+  ],
+  "prior_reports_reviewed": [
+    {
+      "path": "research/pets/PET-HIGH-FIRST-21-LATE-YEAR-BEAST-SOURCE-R1.json",
+      "git_blob": "9fce8211744aa2d1e76e63975942add7c1fdaff8",
+      "rows_reviewed": 8,
+      "matched_source_template_pairs": 0
+    },
+    {
+      "path": "research/pets/PET-HIGH-FIRST-22-JP-KR-NAMED-INDEX-R1.json",
+      "git_blob": "bc0b4920cc5954c8b847d07f1342b3f5674d5b1c",
+      "rows_reviewed": 29,
+      "matched_source_template_pairs": 0
+    },
+    {
+      "path": "research/pets/PET-HIGH-FIRST-23-2009-ACQUISITION-DOSSIERS-R1.json",
+      "git_blob": "bae00ecbbbbef8f250de6d982574061c69fa359c",
+      "rows_reviewed": 8,
+      "matched_source_template_pairs": 0
+    },
+    {
+      "path": "research/pets/PET-HIGH-FIRST-28-29-2014-2018-OBJECT-ROLE-CROSSWALK-R1.json",
+      "git_blob": "ddb9712839b4b491775ff32fad33f3f25b169eea",
+      "rows_reviewed": 93,
+      "matched_source_template_pairs": 8
+    }
+  ],
+  "context_only_links": [
+    {
+      "source_row_index": 14,
+      "tw75_row_index": 310,
+      "template_id": 901,
+      "name": "葛雷基歐",
+      "role": "PET_NAME_CANDIDATE",
+      "group": 2,
+      "qualification": "CONTEXT_NOT_QUALIFIED_ACQUISITION"
+    },
+    {
+      "source_row_index": 32,
+      "tw75_row_index": 69,
+      "template_id": 109,
+      "name": "庫胖達",
+      "role": "AMBIGUOUS_OBJECT",
+      "group": 9,
+      "qualification": "CONTEXT_NOT_QUALIFIED_ACQUISITION"
+    },
+    {
+      "source_row_index": 33,
+      "tw75_row_index": 68,
+      "template_id": 108,
+      "name": "胖達利",
+      "role": "AMBIGUOUS_OBJECT",
+      "group": 9,
+      "qualification": "CONTEXT_NOT_QUALIFIED_ACQUISITION"
+    },
+    {
+      "source_row_index": 34,
+      "tw75_row_index": 462,
+      "template_id": 1182,
+      "name": "布伊酷",
+      "role": "AMBIGUOUS_OBJECT",
+      "group": 9,
+      "qualification": "CONTEXT_NOT_QUALIFIED_ACQUISITION"
+    },
+    {
+      "source_row_index": 58,
+      "tw75_row_index": 95,
+      "template_id": 135,
+      "name": "史奈克特",
+      "role": "ENCOUNTER_LABEL",
+      "group": 16,
+      "qualification": "CONTEXT_NOT_QUALIFIED_ACQUISITION"
+    },
+    {
+      "source_row_index": 58,
+      "tw75_row_index": 344,
+      "template_id": 993,
+      "name": "史奈克特",
+      "role": "ENCOUNTER_LABEL",
+      "group": 16,
+      "qualification": "CONTEXT_NOT_QUALIFIED_ACQUISITION"
+    },
+    {
+      "source_row_index": 59,
+      "tw75_row_index": 96,
+      "template_id": 136,
+      "name": "葛利斯奈",
+      "role": "ENCOUNTER_LABEL",
+      "group": 16,
+      "qualification": "CONTEXT_NOT_QUALIFIED_ACQUISITION"
+    },
+    {
+      "source_row_index": 59,
+      "tw75_row_index": 345,
+      "template_id": 994,
+      "name": "葛利斯奈",
+      "role": "ENCOUNTER_LABEL",
+      "group": 16,
+      "qualification": "CONTEXT_NOT_QUALIFIED_ACQUISITION"
+    }
+  ],
+  "period_links": [
+    {
+      "template_id": 6,
+      "source": "CN20030407A",
+      "printed_number": "转",
+      "printed_name": "乌力斯坦",
+      "printed_elements": [
+        50,
+        0,
+        0,
+        50
+      ],
+      "claim": "人物转生奖励；四村与转数对应",
+      "kind": "REBIRTH_REWARD",
+      "rendered_line": 33,
+      "tw75_row_index": 5,
+      "master_name": "烏力斯坦",
+      "graphic": 100252,
+      "row_sha256": "aa824f47b432d6201b055596cd85bd90a66c34365f7ac87b339d3ec68c1f8a97",
+      "master_elements": [
+        50,
+        0,
+        0,
+        50
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_PERIOD_PLAYER_CLAIM_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "template_id": 99,
+      "source": "CN20030407A",
+      "printed_number": "057",
+      "printed_name": "拉奇鲁哥",
+      "printed_elements": [
+        0,
+        0,
+        100,
+        0
+      ],
+      "claim": "吉鲁岛坐标458,523",
+      "kind": "WILD_LOCATION_CLAIM",
+      "rendered_line": 119,
+      "tw75_row_index": 60,
+      "master_name": "拉奇魯哥",
+      "graphic": 100279,
+      "row_sha256": "604492c9f71775ce0430019a2969df1a56adf297a7f3c58f00bcfdfdc244e395",
+      "master_elements": [
+        0,
+        0,
+        100,
+        0
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_PERIOD_PLAYER_CLAIM_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "template_id": 759,
+      "source": "CN20030407A",
+      "printed_number": "087",
+      "printed_name": "里拉拉",
+      "printed_elements": [
+        0,
+        100,
+        0,
+        0
+      ],
+      "claim": "第四弹来吉卡",
+      "kind": "COMMERCIAL_CARD_CLAIM",
+      "rendered_line": 172,
+      "tw75_row_index": 243,
+      "master_name": "里拉拉",
+      "graphic": 100854,
+      "row_sha256": "8d98b2f61586c1a5b502fd04c4e154a34ac121dfef952512c0f38b761421b9ac",
+      "master_elements": [
+        0,
+        100,
+        0,
+        0
+      ],
+      "selected_table_status": "SAME_ID_NONIDENTICAL_ROW",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_PERIOD_PLAYER_CLAIM_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "template_id": 1061,
+      "source": "CN20030407A",
+      "printed_number": "002",
+      "printed_name": "乌力乌力",
+      "printed_elements": [
+        0,
+        40,
+        60,
+        0
+      ],
+      "claim": "萨姆吉尔村出生赠宠",
+      "kind": "STARTER_CLAIM",
+      "rendered_line": 31,
+      "tw75_row_index": 402,
+      "master_name": "烏力烏力",
+      "graphic": 100251,
+      "row_sha256": "876fcf45af6fd1c9f6a33015b9d13452e9e0d5a254ccb4412acc53e5cfdf2215",
+      "master_elements": [
+        0,
+        40,
+        60,
+        0
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_PERIOD_PLAYER_CLAIM_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "template_id": 1062,
+      "source": "CN20030407A",
+      "printed_number": "090",
+      "printed_name": "凯比",
+      "printed_elements": [
+        20,
+        0,
+        0,
+        80
+      ],
+      "claim": "玛丽娜丝村出生赠宠",
+      "kind": "STARTER_CLAIM",
+      "rendered_line": 177,
+      "tw75_row_index": 403,
+      "master_name": "凱比",
+      "graphic": 100296,
+      "row_sha256": "4e480cd4fb82b107fa5be35481a618e98c1e3a1ab16ed19889a9d50bbdec219c",
+      "master_elements": [
+        20,
+        0,
+        0,
+        80
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_PERIOD_PLAYER_CLAIM_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "template_id": 1063,
+      "source": "CN20030407A",
+      "printed_number": "082",
+      "printed_name": "克克尔",
+      "printed_elements": [
+        0,
+        70,
+        30,
+        0
+      ],
+      "claim": "加加村出生赠宠",
+      "kind": "STARTER_CLAIM",
+      "rendered_line": 165,
+      "tw75_row_index": 404,
+      "master_name": "克克爾",
+      "graphic": 100292,
+      "row_sha256": "b46cbc023d2a813d77fb4e294a46a26dfaf1e9aaa31499806478cd022570d60c",
+      "master_elements": [
+        0,
+        70,
+        30,
+        0
+      ],
+      "selected_table_status": "SAME_ID_NONIDENTICAL_ROW",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_PERIOD_PLAYER_CLAIM_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "template_id": 1064,
+      "source": "CN20030407A",
+      "printed_number": "028",
+      "printed_name": "威伯",
+      "printed_elements": [
+        60,
+        0,
+        0,
+        40
+      ],
+      "claim": "卡鲁它那村出生赠宠",
+      "kind": "STARTER_CLAIM",
+      "rendered_line": 68,
+      "tw75_row_index": 405,
+      "master_name": "威伯",
+      "graphic": 100266,
+      "row_sha256": "ea62e2d64453b0608f8f7ec77d8840c4593f057bbd725cf61c37d05e4239f543",
+      "master_elements": [
+        60,
+        0,
+        0,
+        40
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_PERIOD_PLAYER_CLAIM_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "template_id": 105,
+      "source": "CN20030407B",
+      "printed_number": "194",
+      "printed_name": "左迪洛斯",
+      "printed_elements": [
+        0,
+        80,
+        20,
+        0
+      ],
+      "claim": "猜谜三兄弟任务奖励",
+      "kind": "QUEST_REWARD_CLAIM",
+      "rendered_line": 128,
+      "tw75_row_index": 66,
+      "master_name": "左迪洛斯",
+      "graphic": 100372,
+      "row_sha256": "4f64ded05756b4766d0d841da7413b3b69266dd06ecc871981134a916ba8341b",
+      "master_elements": [
+        0,
+        80,
+        20,
+        0
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_PERIOD_PLAYER_CLAIM_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "template_id": 106,
+      "source": "CN20030407B",
+      "printed_number": "195",
+      "printed_name": "巴朵兰恩",
+      "printed_elements": [
+        0,
+        20,
+        80,
+        0
+      ],
+      "claim": "红暴任务",
+      "kind": "QUEST_REWARD_CLAIM",
+      "rendered_line": 129,
+      "tw75_row_index": 67,
+      "master_name": "巴朵蘭恩",
+      "graphic": 100373,
+      "row_sha256": "dd9fea1fe302f2c197ce01ae5d4d3a4fc12f28ffe4057c0077c5f9b42cdcef9f",
+      "master_elements": [
+        0,
+        20,
+        80,
+        0
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_PERIOD_PLAYER_CLAIM_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "template_id": 724,
+      "source": "CN20030407B",
+      "printed_number": "195",
+      "printed_name": "巴朵兰恩",
+      "printed_elements": [
+        0,
+        20,
+        80,
+        0
+      ],
+      "claim": "红暴任务",
+      "kind": "QUEST_REWARD_CLAIM",
+      "rendered_line": 129,
+      "tw75_row_index": 208,
+      "master_name": "巴朵蘭恩",
+      "graphic": 100373,
+      "row_sha256": "f5239f237c9cf3429f9cca9d2e25b8473306028ed8bd95ab49f841426c08040d",
+      "master_elements": [
+        0,
+        50,
+        50,
+        0
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "qualification": "NAME_MATCH_ELEMENT_CONFLICT_DO_NOT_ASSIGN",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "template_id": 232,
+      "source": "CN20030407B",
+      "printed_number": "146",
+      "printed_name": "奇娜",
+      "printed_elements": [
+        40,
+        60,
+        0,
+        0
+      ],
+      "claim": "人物转生奖励；四村与转数对应",
+      "kind": "REBIRTH_REWARD",
+      "rendered_line": 70,
+      "tw75_row_index": 145,
+      "master_name": "奇娜",
+      "graphic": 100344,
+      "row_sha256": "5802e3cd97d6157d01333f6cb77b821429f55a28562cadd8de3c3ce08227f008",
+      "master_elements": [
+        40,
+        60,
+        0,
+        0
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_PERIOD_PLAYER_CLAIM_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "template_id": 272,
+      "source": "CN20030407B",
+      "printed_number": "178",
+      "printed_name": "洛卡伦恩",
+      "printed_elements": [
+        0,
+        0,
+        80,
+        20
+      ],
+      "claim": "人物转生奖励；四村与转数对应",
+      "kind": "REBIRTH_REWARD",
+      "rendered_line": 103,
+      "tw75_row_index": 162,
+      "master_name": "洛卡倫恩",
+      "graphic": 100360,
+      "row_sha256": "b7e8c0798b9eae83c673f8a017c61f57c5756769224aabee39db74dd31d7a997",
+      "master_elements": [
+        0,
+        0,
+        80,
+        20
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_PERIOD_PLAYER_CLAIM_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "template_id": 304,
+      "source": "CN20030407B",
+      "printed_number": "196",
+      "printed_name": "帖拉所伊朵",
+      "printed_elements": [
+        0,
+        0,
+        50,
+        50
+      ],
+      "claim": "第五次转生奖励",
+      "kind": "REBIRTH_REWARD",
+      "rendered_line": 130,
+      "tw75_row_index": 172,
+      "master_name": "帖拉所伊朵",
+      "graphic": 100374,
+      "row_sha256": "1d4137af4e88529d58134272bb37492e83233ce492ea0ece1753945b4bab1f3b",
+      "master_elements": [
+        0,
+        0,
+        50,
+        50
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_PERIOD_PLAYER_CLAIM_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "template_id": 777,
+      "source": "CN20030407B",
+      "printed_number": "126",
+      "printed_name": "佩露夏",
+      "printed_elements": [
+        0,
+        100,
+        0,
+        0
+      ],
+      "claim": "华义五转135级赠宠",
+      "kind": "REBIRTH_REWARD",
+      "rendered_line": 42,
+      "tw75_row_index": 261,
+      "master_name": "佩露夏",
+      "graphic": 100872,
+      "row_sha256": "9f185b4be2c6dfdb35185995764239be26a4aab819794b939ace04d9360978b7",
+      "master_elements": [
+        0,
+        100,
+        0,
+        0
+      ],
+      "selected_table_status": "SAME_ID_NONIDENTICAL_ROW",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_PERIOD_PLAYER_CLAIM_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "template_id": 901,
+      "source": "CN20030407B",
+      "printed_number": "225",
+      "printed_name": "葛雷基欧",
+      "printed_elements": [
+        80,
+        0,
+        0,
+        20
+      ],
+      "claim": "延年益兽包或年兽卡",
+      "kind": "COMMERCIAL_CARD_CLAIM",
+      "rendered_line": 160,
+      "tw75_row_index": 310,
+      "master_name": "葛雷基歐",
+      "graphic": 101152,
+      "row_sha256": "448b6d664c3084910b474d35c43cad5e5d25cf2dec8dafa7689c25c3df768909",
+      "master_elements": [
+        80,
+        0,
+        0,
+        20
+      ],
+      "selected_table_status": "SAME_ID_NONIDENTICAL_ROW",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_PERIOD_PLAYER_CLAIM_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "template_id": 903,
+      "source": "CN20030407B",
+      "printed_number": "227",
+      "printed_name": "葛雷吉鲁",
+      "printed_elements": [
+        0,
+        0,
+        80,
+        20
+      ],
+      "claim": "延年益兽包或年兽卡",
+      "kind": "COMMERCIAL_CARD_CLAIM",
+      "rendered_line": 162,
+      "tw75_row_index": 312,
+      "master_name": "葛雷吉魯",
+      "graphic": 101154,
+      "row_sha256": "6b7299f1dd6a0be0b8c327f07439003e61c828007b1807eb67a8aa382aeeab2b",
+      "master_elements": [
+        0,
+        0,
+        80,
+        20
+      ],
+      "selected_table_status": "SAME_ID_NONIDENTICAL_ROW",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_PERIOD_PLAYER_CLAIM_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "template_id": 904,
+      "source": "CN20030407B",
+      "printed_number": "228",
+      "printed_name": "葛雷马恩",
+      "printed_elements": [
+        0,
+        0,
+        20,
+        80
+      ],
+      "claim": "延年益兽包或年兽卡",
+      "kind": "COMMERCIAL_CARD_CLAIM",
+      "rendered_line": 163,
+      "tw75_row_index": 313,
+      "master_name": "葛雷馬恩",
+      "graphic": 101155,
+      "row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "master_elements": [
+        0,
+        0,
+        20,
+        80
+      ],
+      "selected_table_status": "SAME_ID_NONIDENTICAL_ROW",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_PERIOD_PLAYER_CLAIM_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "template_id": 910,
+      "source": "CN20030407B",
+      "printed_number": "229",
+      "printed_name": "吉比",
+      "printed_elements": [
+        20,
+        0,
+        0,
+        80
+      ],
+      "claim": "GP卡",
+      "kind": "COMMERCIAL_CARD_CLAIM",
+      "rendered_line": 164,
+      "tw75_row_index": 316,
+      "master_name": "吉比",
+      "graphic": 101178,
+      "row_sha256": "89b24706ba421d867767646cc08161b33180e1788f3ab88522654e11ffec4c3c",
+      "master_elements": [
+        20,
+        0,
+        0,
+        80
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_PERIOD_PLAYER_CLAIM_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "template_id": 917,
+      "source": "CN20030407B",
+      "printed_number": "149",
+      "printed_name": "尤里蛙",
+      "printed_elements": [
+        30,
+        70,
+        0,
+        0
+      ],
+      "claim": "水怪任务",
+      "kind": "QUEST_REWARD_CLAIM",
+      "rendered_line": 80,
+      "tw75_row_index": 319,
+      "master_name": "尤里蛙",
+      "graphic": 100883,
+      "row_sha256": "d13d0e75cb68b97ee9b53b915521cd65e164daf446ae8d8d2060c193793a6c8f",
+      "master_elements": [
+        70,
+        30,
+        0,
+        0
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "qualification": "NAME_MATCH_ELEMENT_CONFLICT_DO_NOT_ASSIGN",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "template_id": 918,
+      "source": "CN20030407B",
+      "printed_number": "230",
+      "printed_name": "凯恩",
+      "printed_elements": [
+        0,
+        0,
+        0,
+        100
+      ],
+      "claim": "第四弹来吉卡",
+      "kind": "COMMERCIAL_CARD_CLAIM",
+      "rendered_line": 165,
+      "tw75_row_index": 320,
+      "master_name": "凱恩",
+      "graphic": 101180,
+      "row_sha256": "ec99430415c9df622f519608b612b260ac2851b31d2a773928ca13142f4c6c19",
+      "master_elements": [
+        0,
+        0,
+        0,
+        100
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_PERIOD_PLAYER_CLAIM_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "template_id": 968,
+      "source": "CN20030407B",
+      "printed_number": "240",
+      "printed_name": "艾迪希洛",
+      "printed_elements": [
+        50,
+        50,
+        0,
+        0
+      ],
+      "claim": "机豹卡",
+      "kind": "COMMERCIAL_CARD_CLAIM",
+      "rendered_line": 175,
+      "tw75_row_index": 331,
+      "master_name": "艾迪希洛",
+      "graphic": 101423,
+      "row_sha256": "5d3f9c8cd989f2448144c7243edeed5806b8c977d08ec17a3b4a6f933e81c3da",
+      "master_elements": [
+        50,
+        50,
+        0,
+        0
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_PERIOD_PLAYER_CLAIM_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    }
+  ],
+  "remaining_gap_row_indices": [
+    31,
+    32,
+    52,
+    58,
+    68,
+    69,
+    70,
+    75,
+    76,
+    84,
+    90,
+    91,
+    92,
+    95,
+    96,
+    101,
+    102,
+    103,
+    106,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    125,
+    135,
+    144,
+    151,
+    187,
+    188,
+    208,
+    222,
+    230,
+    238,
+    260,
+    268,
+    281,
+    283,
+    284,
+    293,
+    306,
+    309,
+    315,
+    317,
+    318,
+    319,
+    321,
+    330,
+    338,
+    339,
+    344,
+    345,
+    386,
+    387,
+    389,
+    390,
+    391,
+    392,
+    397,
+    398,
+    399,
+    400,
+    401,
+    412,
+    413,
+    416,
+    417,
+    436,
+    438,
+    441,
+    452,
+    453,
+    454,
+    456,
+    459,
+    462,
+    463,
+    464
+  ],
+  "summary": {
+    "initial_gap_rows": 102,
+    "compatible_claim_rows": 19,
+    "element_conflict_rows": 2,
+    "remaining_without_compatible_claim": 83,
+    "compatible_same_id_nonidentical_rows": 6,
+    "context_only_source_template_pairs": 8,
+    "official_new_species": null,
+    "official_acquisition_closed": 0
+  },
+  "official_same_deployment_verified": false,
+  "original_assets_published": false
+}
