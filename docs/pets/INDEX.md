@@ -444,3 +444,8 @@
 ## 2026-11-24｜PET-HIGH-FIRST-22 日韩具名档案
 
 [29份区域原名记录](JP-KR-2007-2009-NAMED-PETS.md) · [机读记录](../../research/pets/PET-HIGH-FIRST-22-JP-KR-NAMED-INDEX-R1.json) · [续接](../continuity/STONEAGE-PET-HIGH-FIRST-22-JP-KR-NAMED-INDEX-20261124.md)。2007年2月4只具名稀有宠、13具名宣传图链接、4组跨年名称掩码候选；非原生ID或官方首发认证。PET唯一。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-23 2009日韩取得档案
+
+[8个新具名取得档案](JP-KR-2009-ACQUISITION-DOSSIERS.md) · [机读记录](../../research/pets/PET-HIGH-FIRST-23-2009-ACQUISITION-DOSSIERS-R1.json) · [续接](../continuity/STONEAGE-PET-HIGH-FIRST-23-2009-ACQUISITION-DOSSIERS-20261124.md)。与PET22的29条去重；黑炎单样本、5条旧名复证、4个仅外观新增名目及3组未知原名奖励分开。PET唯一。
