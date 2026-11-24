@@ -108,6 +108,7 @@ def build(d):
     field_cases = by_id(d["hf38"]["rows"], "pet_id")
     field_cases39 = by_id(d["hf39"]["rows"], "pet_id")
     field_cases40 = by_id(d["hf40"]["rows"], "pet_id")
+    field_cases41 = by_id(d["hf41"]["rows"], "pet_id")
     for i,x in enumerate(d["tw10"]["records"]):
         pet_id, graphic, name = x["pet_id"], x["client_graphic"], x["client_name_original"]
         album_index = album_by_graphic[graphic]
@@ -139,6 +140,15 @@ def build(d):
             case = d["hf40"]["rows"][case_index]
             assert (case["tw10_graphic"], case["original_client_name"]) == (graphic, name)
             links.append(link("hf40", ["rows", case_index], "PC_SOURCE_ACQUISITION_NOT_SAME_DEPLOYMENT"))
+        if pet_id in field_cases41:
+            case_index = field_cases41[pet_id]
+            case = d["hf41"]["rows"][case_index]
+            assert (case["tw10_graphic"], case["original_client_name"]) == (graphic, name)
+            links.append(link("hf41", ["rows", case_index], "PC_SOURCE_GRAPHIC_CANDIDATE_NOT_SAME_DEPLOYMENT"))
+            for idx in case["archive_template_row_indices"]:
+                links.append(link("hf41_archive", ["projection", "capture_candidates", idx], "MIXED25_TEMPLATE_ROUTE_CANDIDATE_NOT_CAPTURE_PROOF"))
+            for idx in case["award_row_indices"]:
+                links.append(link("hf41_archive", ["projection", "award_commands", idx], "MIXED25_STATIC_AWARD_NOT_LIVE_ISSUE"))
         starter_index = starters.get(name)
         starter = None
         if starter_index is not None:
@@ -302,6 +312,10 @@ def verify(m,d,entries):
     assert [r["period_floor_lv1_static_match"] for r in cases40] == [None, False, True, True, None]
     assert cases40[-1]["quest_reward"]["instance_id"] == 484 and cases40[-1]["quest_reward"]["template_id"] == 315
     assert all(r["official_tw10_native_stats"] is None and r["official_tw10_skillset"] is None and not r["official_tw10_acquisition_verified"] and r["official_first_release_date"] is None for r in cases40)
+    assert len(d["hf41"]["rows"]) == 57
+    assert sum(l["source"] == "hf41" for e in entries if e["source"] == "tw10" for l in e["linked_records"]) == 57
+    assert sum(l["source"] == "hf41_archive" for e in entries if e["source"] == "tw10" for l in e["linked_records"]) == 148
+    assert all(not r["official_tw10_acquisition_verified"] and r["official_tw10_native_stats"] is None and r["official_first_release_date"] is None for r in d["hf41"]["rows"])
     wulibulu, weibo, beiluobaoli = cases
     panel = wulibulu["japan_album_panel"]
     assert panel["level"] == 19 and panel["visible_element_bar_center_widths_px"] == [0, 0, 56, 24]

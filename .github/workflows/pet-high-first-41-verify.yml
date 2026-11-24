@@ -1,0 +1,25 @@
+name: PET-HIGH-FIRST-41 acquisition crosswalk replay
+on:
+  push:
+    paths:
+      - 'research/pets/PET-HIGH-FIRST-41-*.json'
+      - 'tools/stoneage_pet_high_first_41_verify.py'
+      - '.github/workflows/pet-high-first-41-verify.yml'
+  pull_request:
+    paths:
+      - 'research/pets/PET-HIGH-FIRST-41-*.json'
+      - 'tools/stoneage_pet_high_first_41_verify.py'
+      - '.github/workflows/pet-high-first-41-verify.yml'
+permissions:
+  contents: read
+jobs:
+  static-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m tools.stoneage_pet_high_first_41_verify
+      - run: python3 tools/stoneage_pet_source_lookup.py --verify

@@ -8986,3 +8986,8 @@ R14包351231B/SHA7684267ab528d13ceecb23a25632543ae839225607cbda702a32736e4c4d366
 ## 2026-11-24｜PET-HIGH-FIRST-40 五宠同载体取得链
 
 - 保存混合2.5 RAR 184段HTTP206实际回读12,013,836字节，14件完整成员分别核对既有SHA-256与RAR CRC。源Actions 45413714992，派生JSON经独立ZIP散列及原JSON Git blob复验；不宣称整包重新取得或早期官服部署。后期PC固定源 gavinlinasd/StoneAge `1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56` 独立回读Git原件、验证配置链，五张地图44字节头有别、两层数据完全相同。详见[逐宠及来源证据](continuity/STONEAGE-PET-HIGH-FIRST-40-PC-ACQUISITION-20261124.md)。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-41 原保存猜谜及交换任务配置
+
+- 混合2.5保存RAR 31份成员实读并逐件SHA/CRC一致，源Actions 45416445759，原派生JSON与独立下载ZIP、日志重建一致。后期固定PC脚本及两主表用于独立对照，不当独立原官服双证。[来源收据及具体限制](continuity/STONEAGE-PET-HIGH-FIRST-41-PC-ACQUISITION-20261124.md)。

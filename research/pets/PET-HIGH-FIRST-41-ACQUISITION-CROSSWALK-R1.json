@@ -1,0 +1,819 @@
+{
+  "schema": "stoneage.pet41.acquisition_crosswalk.r1",
+  "scope": "GRAPHIC_CANDIDATE_LINK_NOT_SAME_DEPLOYMENT",
+  "source_head": "5158fe021a7f0580ab70ca6c74a416607d5b98b6",
+  "source_tree": "6cd989abe5c779d48d50ac98139483d84f6e2b4d",
+  "archive": {
+    "run_id": 45416445759,
+    "job_id": 138523831631,
+    "source_head": "6d167d2c7ebd940c7d7dfa4235c3441b6b757bec",
+    "artifact_id": 14931494097,
+    "api_zip_sha256": "a47ce2b725df4c98971315862b2c53019a97506c063a2d85c73f0c900f16e9f1",
+    "independent_zip_sha256": "a47ce2b725df4c98971315862b2c53019a97506c063a2d85c73f0c900f16e9f1",
+    "zip_bytes": 26912,
+    "raw_json_bytes": 240995,
+    "raw_json_sha256": "a6bd3200085787eead9240936ca8c571252ed4f7fdf36f518f822163a3fc78a3",
+    "derived_git_blob": "746107dc2265e66629d64419fb039934de9baa11",
+    "conclusion": "success"
+  },
+  "counts": {
+    "members": 31,
+    "guide_positions": 58,
+    "graphic_candidates": 57,
+    "template_rows": 145,
+    "pet_flag_templates": 86,
+    "positive_routes": 660,
+    "double_pet_flag_routes": 636,
+    "lv1_double_flag_routes": 33,
+    "templates_with_double_flag_routes": 43,
+    "templates_with_lv1_double_flag_routes": 29,
+    "guide_positions_exact_comparison_template_id_with_double_flag_routes": 38,
+    "guide_positions_exact_comparison_template_id_with_lv1_double_flag_routes": 29,
+    "awards": 3
+  },
+  "rows": [
+    {
+      "pet_id": "PET-000004",
+      "original_client_name": "烏力布魯",
+      "tw10_graphic": 100253,
+      "archive_template_row_indices": [
+        0
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000006",
+      "original_client_name": "金布伊",
+      "tw10_graphic": 100255,
+      "archive_template_row_indices": [
+        2,
+        126
+      ],
+      "award_row_indices": [
+        1
+      ],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000009",
+      "original_client_name": "卡布伊",
+      "tw10_graphic": 100258,
+      "archive_template_row_indices": [
+        3
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000028",
+      "original_client_name": "特洛昆",
+      "tw10_graphic": 100277,
+      "archive_template_row_indices": [
+        4,
+        84
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000030",
+      "original_client_name": "拉奇魯哥",
+      "tw10_graphic": 100279,
+      "archive_template_row_indices": [
+        6,
+        18,
+        65,
+        92
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000031",
+      "original_client_name": "呼拔拔",
+      "tw10_graphic": 100280,
+      "archive_template_row_indices": [
+        7,
+        64,
+        66,
+        67
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000032",
+      "original_client_name": "多薩金格",
+      "tw10_graphic": 100281,
+      "archive_template_row_indices": [
+        8,
+        86
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000038",
+      "original_client_name": "利則諾頓",
+      "tw10_graphic": 100287,
+      "archive_template_row_indices": [
+        13,
+        73,
+        85,
+        121,
+        138
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000039",
+      "original_client_name": "揚奇洛斯",
+      "tw10_graphic": 100288,
+      "archive_template_row_indices": [
+        14,
+        74,
+        122,
+        139
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000040",
+      "original_client_name": "邦浦洛斯",
+      "tw10_graphic": 100289,
+      "archive_template_row_indices": [
+        15,
+        72,
+        75,
+        140
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000041",
+      "original_client_name": "邦奇諾",
+      "tw10_graphic": 100290,
+      "archive_template_row_indices": [
+        16,
+        76,
+        89,
+        102,
+        108,
+        123,
+        141
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000051",
+      "original_client_name": "奇拉頓",
+      "tw10_graphic": 100308,
+      "archive_template_row_indices": [
+        22
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000052",
+      "original_client_name": "齊爾格爾頓",
+      "tw10_graphic": 100309,
+      "archive_template_row_indices": [
+        23
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000053",
+      "original_client_name": "格爾格",
+      "tw10_graphic": 100310,
+      "archive_template_row_indices": [
+        24
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000054",
+      "original_client_name": "修寶",
+      "tw10_graphic": 100319,
+      "archive_template_row_indices": [
+        27
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000055",
+      "original_client_name": "卡搭寶斯",
+      "tw10_graphic": 100320,
+      "archive_template_row_indices": [
+        28
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000056",
+      "original_client_name": "布克布克",
+      "tw10_graphic": 100321,
+      "archive_template_row_indices": [
+        29
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000057",
+      "original_client_name": "多洛加",
+      "tw10_graphic": 100322,
+      "archive_template_row_indices": [
+        30,
+        91
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000064",
+      "original_client_name": "格魯西斯",
+      "tw10_graphic": 100329,
+      "archive_template_row_indices": [
+        25,
+        32,
+        68,
+        70,
+        78,
+        93,
+        128
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000065",
+      "original_client_name": "金格薩貝魯",
+      "tw10_graphic": 100330,
+      "archive_template_row_indices": [
+        26,
+        33,
+        129
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000069",
+      "original_client_name": "多洛布斯",
+      "tw10_graphic": 100338,
+      "archive_template_row_indices": [
+        34,
+        82,
+        100,
+        106
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000074",
+      "original_client_name": "奇卡洛斯",
+      "tw10_graphic": 100343,
+      "archive_template_row_indices": [
+        35,
+        80,
+        94,
+        113,
+        143
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000075",
+      "original_client_name": "奇娜",
+      "tw10_graphic": 100344,
+      "archive_template_row_indices": [
+        36
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000077",
+      "original_client_name": "卡卡金寶",
+      "tw10_graphic": 100346,
+      "archive_template_row_indices": [
+        37,
+        81
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000080",
+      "original_client_name": "海主人",
+      "tw10_graphic": 100349,
+      "archive_template_row_indices": [
+        38,
+        127
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000081",
+      "original_client_name": "多魯寶",
+      "tw10_graphic": 100350,
+      "archive_template_row_indices": [
+        39
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000082",
+      "original_client_name": "布洛多斯",
+      "tw10_graphic": 100351,
+      "archive_template_row_indices": [
+        40,
+        83,
+        110,
+        130
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000083",
+      "original_client_name": "布林帖斯",
+      "tw10_graphic": 100352,
+      "archive_template_row_indices": [
+        41,
+        131
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000085",
+      "original_client_name": "斯天多斯",
+      "tw10_graphic": 100354,
+      "archive_template_row_indices": [
+        42,
+        132
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000090",
+      "original_client_name": "帖拉格恩",
+      "tw10_graphic": 100359,
+      "archive_template_row_indices": [
+        44
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000091",
+      "original_client_name": "洛卡倫恩",
+      "tw10_graphic": 100360,
+      "archive_template_row_indices": [
+        45
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000092",
+      "original_client_name": "加寶格恩",
+      "tw10_graphic": 100361,
+      "archive_template_row_indices": [
+        46
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000093",
+      "original_client_name": "朵拉比斯",
+      "tw10_graphic": 100362,
+      "archive_template_row_indices": [
+        47,
+        48
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000098",
+      "original_client_name": "奧卡洛斯",
+      "tw10_graphic": 100371,
+      "archive_template_row_indices": [
+        19,
+        49,
+        134
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000099",
+      "original_client_name": "左迪洛斯",
+      "tw10_graphic": 100372,
+      "archive_template_row_indices": [
+        20,
+        50,
+        97,
+        111,
+        135
+      ],
+      "award_row_indices": [
+        2
+      ],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000100",
+      "original_client_name": "巴朵蘭恩",
+      "tw10_graphic": 100373,
+      "archive_template_row_indices": [
+        21,
+        51,
+        88,
+        112,
+        119,
+        120,
+        136
+      ],
+      "award_row_indices": [
+        0
+      ],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000101",
+      "original_client_name": "帖拉所伊朵",
+      "tw10_graphic": 100374,
+      "archive_template_row_indices": [
+        52,
+        105,
+        125,
+        137
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000102",
+      "original_client_name": "布伊德",
+      "tw10_graphic": 100375,
+      "archive_template_row_indices": [
+        53,
+        114
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000103",
+      "original_client_name": "摩娜西普",
+      "tw10_graphic": 100376,
+      "archive_template_row_indices": [
+        54,
+        115
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000104",
+      "original_client_name": "卡伊霍恩",
+      "tw10_graphic": 100377,
+      "archive_template_row_indices": [
+        55,
+        116
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000105",
+      "original_client_name": "拉伊霍恩",
+      "tw10_graphic": 100378,
+      "archive_template_row_indices": [
+        56,
+        117
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000106",
+      "original_client_name": "史多拉奇頓",
+      "tw10_graphic": 100379,
+      "archive_template_row_indices": [
+        58,
+        79,
+        99
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000107",
+      "original_client_name": "薩美洛斯",
+      "tw10_graphic": 100380,
+      "archive_template_row_indices": [
+        59,
+        98,
+        101,
+        107
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000108",
+      "original_client_name": "阿利給洛斯",
+      "tw10_graphic": 100381,
+      "archive_template_row_indices": [
+        60,
+        71
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000109",
+      "original_client_name": "達伊諾洛斯",
+      "tw10_graphic": 100382,
+      "archive_template_row_indices": [
+        61
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000113",
+      "original_client_name": "可利多洛斯",
+      "tw10_graphic": 100386,
+      "archive_template_row_indices": [
+        62,
+        69
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000114",
+      "original_client_name": "諾斯多洛斯",
+      "tw10_graphic": 100387,
+      "archive_template_row_indices": [
+        63,
+        90
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000115",
+      "original_client_name": "黑烏力",
+      "tw10_graphic": 100388,
+      "archive_template_row_indices": [
+        1
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000116",
+      "original_client_name": "洛克斯",
+      "tw10_graphic": 100389,
+      "archive_template_row_indices": [
+        9,
+        104
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000117",
+      "original_client_name": "阿伊薩",
+      "tw10_graphic": 100390,
+      "archive_template_row_indices": [
+        10
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000118",
+      "original_client_name": "格洛格魯",
+      "tw10_graphic": 100391,
+      "archive_template_row_indices": [
+        11
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000119",
+      "original_client_name": "朵洛將恩",
+      "tw10_graphic": 100392,
+      "archive_template_row_indices": [
+        12
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000120",
+      "original_client_name": "柏克爾",
+      "tw10_graphic": 100393,
+      "archive_template_row_indices": [
+        5,
+        96
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000121",
+      "original_client_name": "布魯頓",
+      "tw10_graphic": 100394,
+      "archive_template_row_indices": [
+        17,
+        77,
+        95,
+        103,
+        109,
+        124,
+        142
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000122",
+      "original_client_name": "布魯寶",
+      "tw10_graphic": 100395,
+      "archive_template_row_indices": [
+        31
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000123",
+      "original_client_name": "邦恩多斯",
+      "tw10_graphic": 100396,
+      "archive_template_row_indices": [
+        43,
+        133
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000124",
+      "original_client_name": "邦達霍恩",
+      "tw10_graphic": 100430,
+      "archive_template_row_indices": [
+        57,
+        87,
+        118,
+        144
+      ],
+      "award_row_indices": [],
+      "official_tw10_acquisition_verified": false,
+      "official_tw10_native_stats": null,
+      "official_first_release_date": null
+    }
+  ],
+  "official_species_count": null,
+  "official_deployment_verified": false,
+  "original_assets_published": false,
+  "runtime_executed": false,
+  "next": "Resolve other already documented pet acquisition gaps using existing source, e.g. Katan fish/birds and SOT/JOT awards; no repeated name-only search."
+}
