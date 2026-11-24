@@ -464,3 +464,8 @@
 ## 2026-11-24｜PET-HIGH-FIRST-26/27 2012—2013取得、技能与初值来源关联
 
 [逐宠档案](CN-2012-2013-ACQUISITION-AND-SKILLS.md) · [机读记录](../../research/pets/PET-HIGH-FIRST-26-27-2012-2013-NAMED-ACQUISITION-CROSSWALK-R1.json) · [续接](../continuity/STONEAGE-PET-HIGH-FIRST-26-27-2012-2013-ACQUISITION-20261124.md)。43来源位置，25直接名称对应，2关联名候选，16未匹配；捕捉地点、条件初值、技能及任务输入输出分别归档，不当同服原始数值。PET唯一。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-28/29 2014—2018 PC晚期对象角色及名称关联
+
+[逐项档案](PC-2014-2018-OBJECT-ROLE-CROSSWALK.md) · [机读数据](../../research/pets/PET-HIGH-FIRST-28-29-2014-2018-OBJECT-ROLE-CROSSWALK-R1.json) · [续接](../continuity/STONEAGE-PET-HIGH-FIRST-28-29-2014-2018-20261124.md)。93来源位置，39物品、10遇敌标签；24直接名称对应，不当实际发行或物种数。原CURRENT不动，PET唯一。
