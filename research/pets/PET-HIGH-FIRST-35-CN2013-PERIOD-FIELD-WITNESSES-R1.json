@@ -1,0 +1,760 @@
+{
+  "schema": "stoneage.pet.high_first_35.cn2013.period_witness.r1",
+  "source_head": "d554d945dcc1048db51dc727bbae1e1cd7fdb095",
+  "source_tree": "f0217b6185180939f9081c6a83f4fa3db5f4388e",
+  "scope": "Classic PC source-bound period text and visually observed promotional game panels; no new client bytes or official native identity.",
+  "sources": {
+    "JAN31": {
+      "date": "2013-01-31",
+      "url": "https://games.sina.com.cn/o/n/2013-01-31/1336687495.shtml",
+      "grade": "PERIOD_OPERATOR_RELAY_TASK"
+    },
+    "FEB06": {
+      "date": "2013-02-06",
+      "url": "https://news.17173.com/content/2013-02-06/20130206151127065.shtml",
+      "grade": "PERIOD_OPERATOR_RELAY_EVENT"
+    },
+    "MAR14": {
+      "date": "2013-03-14",
+      "url": "https://games.sina.com.cn/o/n/2013-03-14/1436694517.shtml",
+      "grade": "PERIOD_OPERATOR_RELAY_PREVIEW"
+    },
+    "MAR20": {
+      "date": "2013-03-20",
+      "url": "https://games.sina.com.cn/o/n/2013-03-20/1005695518.shtml",
+      "grade": "PERIOD_OPERATOR_RELAY_EXCHANGE"
+    },
+    "MAR28": {
+      "date": "2013-03-28",
+      "url": "https://games.sina.com.cn/o/n/2013-03-28/1140697511.shtml",
+      "grade": "PERIOD_OPERATOR_RELAY_TASK"
+    },
+    "APR25": {
+      "date": "2013-04-25",
+      "url": "https://games.sina.com.cn/o/n/2013-04-25/1043702927.shtml",
+      "grade": "PERIOD_OPERATOR_RELAY_EVENT"
+    }
+  },
+  "rows": [
+    {
+      "name": "塔乌鲁斯",
+      "family": "牛头",
+      "region": "CN",
+      "year": 2013,
+      "source_ids": [
+        "JAN31"
+      ],
+      "element_label": "火、风可见",
+      "element_ratio": null,
+      "skill": {
+        "label": "涅槃",
+        "qualification": "ADVERTISED_PASSIVE_NOT_NATIVE_EXECUTION",
+        "effect": "倒地后自动复活并获水灵力量",
+        "max_triggers": 1
+      },
+      "acquisition": {
+        "kind": "PERMANENT_TASK_CLAIM",
+        "start": "2013-01-30",
+        "min_rebirth": 1,
+        "min_level": 120,
+        "repeat_after_rebirth": true,
+        "version": "UNRESOLVED"
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "panel": {
+        "url": "https://i2.sinaimg.cn/gm/2013/0131/U4511P115DT20130131133517.jpg",
+        "qualification": "WEB_RENDERED_MANUAL_INDIVIDUAL_STATUS_SAMPLE_NOT_BIRTH_RANGE",
+        "raw_sha256": null,
+        "level": 140,
+        "current_hp": null,
+        "max_hp": null,
+        "attack": null,
+        "defense": null,
+        "agility": null,
+        "loyalty": 100,
+        "element_bar": "fire_short_wind_long"
+      },
+      "panel_note": "高等级展示图；低清数值不录入，不是出生或成长样本"
+    },
+    {
+      "name": "斯帕森格",
+      "family": "蛇年兽公告具名组",
+      "region": "CN",
+      "year": 2013,
+      "source_ids": [
+        "FEB06"
+      ],
+      "element_label": null,
+      "element_ratio": null,
+      "skill": {
+        "label": "毒煞蔓延改",
+        "qualification": "ADVERTISED_GROUP_SKILL_NOT_NATIVE_EXECUTION",
+        "effect": "中毒且有机会传染周围目标",
+        "duration": null
+      },
+      "acquisition": {
+        "kind": "EVENT_GROUP_REWARD_NOT_NAME_TO_ELEMENT_JOIN",
+        "window": [
+          "2013-02-06 post maintenance",
+          "2013-02-20 post maintenance"
+        ],
+        "region_map": "吉鲁岛",
+        "daily": 1,
+        "versions": {
+          "2.5": {
+            "min_rebirth": 2,
+            "min_level": 100
+          },
+          "8.5": {
+            "min_rebirth": 3,
+            "min_level": 120
+          }
+        },
+        "group_reward_elements": [
+          "wind",
+          "fire",
+          "earth",
+          "water"
+        ],
+        "individual_reward_mapping": null
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false
+    },
+    {
+      "name": "斯帕森布",
+      "family": "蛇年兽公告具名组",
+      "region": "CN",
+      "year": 2013,
+      "source_ids": [
+        "FEB06"
+      ],
+      "element_label": null,
+      "element_ratio": null,
+      "skill": {
+        "label": "毒煞蔓延改",
+        "qualification": "ADVERTISED_GROUP_SKILL_NOT_NATIVE_EXECUTION",
+        "effect": "中毒且有机会传染周围目标",
+        "duration": null
+      },
+      "acquisition": {
+        "kind": "EVENT_GROUP_REWARD_NOT_NAME_TO_ELEMENT_JOIN",
+        "window": [
+          "2013-02-06 post maintenance",
+          "2013-02-20 post maintenance"
+        ],
+        "region_map": "吉鲁岛",
+        "daily": 1,
+        "versions": {
+          "2.5": {
+            "min_rebirth": 2,
+            "min_level": 100
+          },
+          "8.5": {
+            "min_rebirth": 3,
+            "min_level": 120
+          }
+        },
+        "group_reward_elements": [
+          "wind",
+          "fire",
+          "earth",
+          "water"
+        ],
+        "individual_reward_mapping": null
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false
+    },
+    {
+      "name": "斯帕森德",
+      "family": "蛇年兽公告具名组",
+      "region": "CN",
+      "year": 2013,
+      "source_ids": [
+        "FEB06"
+      ],
+      "element_label": null,
+      "element_ratio": null,
+      "skill": {
+        "label": "毒煞蔓延改",
+        "qualification": "ADVERTISED_GROUP_SKILL_NOT_NATIVE_EXECUTION",
+        "effect": "中毒且有机会传染周围目标",
+        "duration": null
+      },
+      "acquisition": {
+        "kind": "EVENT_GROUP_REWARD_NOT_NAME_TO_ELEMENT_JOIN",
+        "window": [
+          "2013-02-06 post maintenance",
+          "2013-02-20 post maintenance"
+        ],
+        "region_map": "吉鲁岛",
+        "daily": 1,
+        "versions": {
+          "2.5": {
+            "min_rebirth": 2,
+            "min_level": 100
+          },
+          "8.5": {
+            "min_rebirth": 3,
+            "min_level": 120
+          }
+        },
+        "group_reward_elements": [
+          "wind",
+          "fire",
+          "earth",
+          "water"
+        ],
+        "individual_reward_mapping": null
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false
+    },
+    {
+      "name": "斯帕森耶",
+      "family": "蛇年兽公告具名组",
+      "region": "CN",
+      "year": 2013,
+      "source_ids": [
+        "FEB06"
+      ],
+      "element_label": null,
+      "element_ratio": null,
+      "skill": {
+        "label": "毒煞蔓延改",
+        "qualification": "ADVERTISED_GROUP_SKILL_NOT_NATIVE_EXECUTION",
+        "effect": "中毒且有机会传染周围目标",
+        "duration": null
+      },
+      "acquisition": {
+        "kind": "EVENT_GROUP_REWARD_NOT_NAME_TO_ELEMENT_JOIN",
+        "window": [
+          "2013-02-06 post maintenance",
+          "2013-02-20 post maintenance"
+        ],
+        "region_map": "吉鲁岛",
+        "daily": 1,
+        "versions": {
+          "2.5": {
+            "min_rebirth": 2,
+            "min_level": 100
+          },
+          "8.5": {
+            "min_rebirth": 3,
+            "min_level": 120
+          }
+        },
+        "group_reward_elements": [
+          "wind",
+          "fire",
+          "earth",
+          "water"
+        ],
+        "individual_reward_mapping": null
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false
+    },
+    {
+      "name": "斯帕森艾",
+      "family": "蛇年兽公告具名组",
+      "region": "CN",
+      "year": 2013,
+      "source_ids": [
+        "FEB06"
+      ],
+      "element_label": null,
+      "element_ratio": null,
+      "skill": {
+        "label": "毒煞蔓延改",
+        "qualification": "ADVERTISED_GROUP_SKILL_NOT_NATIVE_EXECUTION",
+        "effect": "中毒且有机会传染周围目标",
+        "duration": null
+      },
+      "acquisition": {
+        "kind": "EVENT_GROUP_REWARD_NOT_NAME_TO_ELEMENT_JOIN",
+        "window": [
+          "2013-02-06 post maintenance",
+          "2013-02-20 post maintenance"
+        ],
+        "region_map": "吉鲁岛",
+        "daily": 1,
+        "versions": {
+          "2.5": {
+            "min_rebirth": 2,
+            "min_level": 100
+          },
+          "8.5": {
+            "min_rebirth": 3,
+            "min_level": 120
+          }
+        },
+        "group_reward_elements": [
+          "wind",
+          "fire",
+          "earth",
+          "water"
+        ],
+        "individual_reward_mapping": null
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false
+    },
+    {
+      "name": "迪兰基",
+      "family": "蛇年兽公告具名组",
+      "region": "CN",
+      "year": 2013,
+      "source_ids": [
+        "FEB06"
+      ],
+      "element_label": null,
+      "element_ratio": null,
+      "skill": {
+        "label": "毒煞蔓延改",
+        "qualification": "ADVERTISED_GROUP_SKILL_NOT_NATIVE_EXECUTION",
+        "effect": "中毒且有机会传染周围目标",
+        "duration": null
+      },
+      "acquisition": {
+        "kind": "EVENT_GROUP_REWARD_NOT_NAME_TO_ELEMENT_JOIN",
+        "window": [
+          "2013-02-06 post maintenance",
+          "2013-02-20 post maintenance"
+        ],
+        "region_map": "吉鲁岛",
+        "daily": 1,
+        "versions": {
+          "2.5": {
+            "min_rebirth": 2,
+            "min_level": 100
+          },
+          "8.5": {
+            "min_rebirth": 3,
+            "min_level": 120
+          }
+        },
+        "group_reward_elements": [
+          "wind",
+          "fire",
+          "earth",
+          "water"
+        ],
+        "individual_reward_mapping": null
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false
+    },
+    {
+      "name": "布鲁迪斑",
+      "family": "外观战宠",
+      "region": "CN",
+      "year": 2013,
+      "source_ids": [
+        "MAR14"
+      ],
+      "element_label": "水、火可见",
+      "element_ratio": null,
+      "skill": {
+        "label": null,
+        "qualification": "NOT_ATTESTED"
+      },
+      "acquisition": {
+        "kind": "PREVIEW_ACQUISITION_UNSPECIFIED",
+        "version": "UNRESOLVED"
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "panel": {
+        "url": "https://i0.sinaimg.cn/gm/2013/0314/U4511P115DT20130314143507.jpg",
+        "qualification": "WEB_RENDERED_MANUAL_INDIVIDUAL_STATUS_SAMPLE_NOT_BIRTH_RANGE",
+        "raw_sha256": null,
+        "level": 1,
+        "current_hp": 68,
+        "max_hp": 68,
+        "attack": 15,
+        "defense": 12,
+        "agility": 9,
+        "loyalty": 100,
+        "element_bar": "water_short_fire_long"
+      },
+      "xp": 0,
+      "next_xp": 2,
+      "appearance": "蓝色尖角长尾战宠"
+    },
+    {
+      "name": "狻猊",
+      "family": "狮形",
+      "region": "CN",
+      "year": 2013,
+      "source_ids": [
+        "MAR14"
+      ],
+      "element_label": "火、风可见",
+      "element_ratio": null,
+      "skill": {
+        "label": null,
+        "qualification": "NOT_ATTESTED"
+      },
+      "acquisition": {
+        "kind": "PREVIEW_ACQUISITION_UNSPECIFIED",
+        "version": "UNRESOLVED"
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "panel": {
+        "url": "https://i0.sinaimg.cn/gm/2013/0314/U4511P115DT20130314143503.jpg",
+        "qualification": "WEB_RENDERED_MANUAL_INDIVIDUAL_STATUS_SAMPLE_NOT_BIRTH_RANGE",
+        "raw_sha256": null,
+        "level": 1,
+        "current_hp": 69,
+        "max_hp": 71,
+        "attack": 15,
+        "defense": 9,
+        "agility": 10,
+        "loyalty": 100,
+        "element_bar": "fire_short_wind_long"
+      },
+      "xp": 0,
+      "next_xp": 2,
+      "appearance": "黑白身躯，金色头部与红尾",
+      "panel_note": "低清手读，当前HP与最大HP不同，不据当前HP推初值"
+    },
+    {
+      "name": "幻·佩露夏",
+      "family": "进化白虎",
+      "region": "CN",
+      "year": 2013,
+      "source_ids": [
+        "MAR20",
+        "APR25"
+      ],
+      "element_label": "仅水条可见",
+      "element_ratio": null,
+      "skill": {
+        "label": "虎啸",
+        "qualification": "ADVERTISED_SPECIAL_SKILL_NOT_NATIVE_EXECUTION",
+        "effect": null
+      },
+      "acquisition": {
+        "kind": "EVOLUTION_EXCHANGE",
+        "version": "CN85_CONTEXT",
+        "inputs": [
+          "佩露夏",
+          "神秘的泉水"
+        ],
+        "npc": "查罕族的祭司",
+        "map": "阿布的洞窟最底层",
+        "alternative": {
+          "kind": "EVENT_WORD_EXCHANGE",
+          "window": [
+            "2013-04-25",
+            "2013-05-06"
+          ],
+          "npc": "渔村礼包兑换者",
+          "draw_points": {
+            "2.5": 100,
+            "8.5": 1000
+          },
+          "versions": [
+            "2.5",
+            "8.5"
+          ],
+          "words": "为雅安人民祈福",
+          "reward_count": 1
+        }
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "panel": {
+        "url": "https://i0.sinaimg.cn/gm/2013/0320/U7233P115DT20130320100405.jpg",
+        "qualification": "WEB_RENDERED_MANUAL_INDIVIDUAL_STATUS_SAMPLE_NOT_BIRTH_RANGE",
+        "raw_sha256": null,
+        "level": 1,
+        "current_hp": 83,
+        "max_hp": 83,
+        "attack": 18,
+        "defense": 13,
+        "agility": 10,
+        "loyalty": 100,
+        "element_bar": "water_full_other_empty"
+      },
+      "xp": 0,
+      "next_xp": 2,
+      "visual_exchange_log": "截图聊天区显示交出普通佩露夏、获得幻·佩露夏及交出泉水；宣传截图非独立玩家实录",
+      "base_name_relation": "EXPLICIT_EVOLUTION_INPUT_NOT_SAME_TEMPLATE"
+    },
+    {
+      "name": "狮鹫",
+      "family": "鸟兽任务名",
+      "region": "CN",
+      "year": 2013,
+      "source_ids": [
+        "MAR28"
+      ],
+      "element_label": null,
+      "element_ratio": null,
+      "skill": {
+        "label": null,
+        "qualification": "NOT_ATTESTED"
+      },
+      "acquisition": {
+        "kind": "TASK_REWARD_AND_RIDING",
+        "version": "CN85_CONTEXT",
+        "min_rebirth": 5,
+        "min_level": 120,
+        "adult_rite_required": true,
+        "npc": "冒险家",
+        "map": "加加村",
+        "coordinates": [
+          105,
+          105
+        ],
+        "repeat_after_rebirth": true,
+        "riding_certificate_required": false,
+        "first_week_reduced_difficulty": true
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "growth_seal": {
+        "reported_progressive_unlock": true,
+        "dialogue_visual": "狮鹫和阿玛兰斯幼崽升到10级不能再提升，提示询问长老",
+        "initial_cap_candidate": 10,
+        "native_rule_verified": false
+      },
+      "appearance_refs": [
+        "https://i0.sinaimg.cn/gm/2013/0328/U7233P115DT20130328113917.jpg",
+        "https://i1.sinaimg.cn/gm/2013/0328/U7233P115DT20130328113941.jpg"
+      ]
+    },
+    {
+      "name": "阿玛兰斯",
+      "family": "鸟兽对话具名候选",
+      "region": "CN",
+      "year": 2013,
+      "source_ids": [
+        "MAR28"
+      ],
+      "element_label": null,
+      "element_ratio": null,
+      "skill": {
+        "label": null,
+        "qualification": "NOT_ATTESTED"
+      },
+      "acquisition": {
+        "kind": "DIALOGUE_ONLY_NO_REWARD_ATTRIBUTION",
+        "version": "CN85_CONTEXT"
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "growth_seal": {
+        "dialogue_visual": "与狮鹫同句出现幼崽10级停止提升",
+        "initial_cap_candidate": 10,
+        "native_rule_verified": false
+      },
+      "appearance_refs": [
+        "https://i1.sinaimg.cn/gm/2013/0328/U7233P115DT20130328113941.jpg"
+      ]
+    },
+    {
+      "name": "巴雅",
+      "family": "活动奖励名",
+      "region": "CN",
+      "year": 2013,
+      "source_ids": [
+        "APR25"
+      ],
+      "element_label": null,
+      "element_ratio": null,
+      "skill": {
+        "label": null,
+        "qualification": "NOT_ATTESTED"
+      },
+      "acquisition": {
+        "kind": "EVENT_WORD_EXCHANGE",
+        "window": [
+          "2013-04-25",
+          "2013-05-06"
+        ],
+        "npc": "渔村礼包兑换者",
+        "draw_points": {
+          "2.5": 100,
+          "8.5": 1000
+        },
+        "versions": [
+          "8.5"
+        ],
+        "words": "雅安祈福",
+        "reward_count": 1
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false
+    },
+    {
+      "name": "贝莱瑞贡",
+      "family": "幼年黑龙",
+      "region": "CN",
+      "year": 2013,
+      "source_ids": [
+        "APR25"
+      ],
+      "element_label": null,
+      "element_ratio": null,
+      "skill": {
+        "label": null,
+        "qualification": "NOT_ATTESTED"
+      },
+      "acquisition": {
+        "kind": "EVENT_WORD_EXCHANGE",
+        "window": [
+          "2013-04-25",
+          "2013-05-06"
+        ],
+        "npc": "渔村礼包兑换者",
+        "draw_points": {
+          "2.5": 100,
+          "8.5": 1000
+        },
+        "versions": [
+          "8.5"
+        ],
+        "words": "为雅安祈福",
+        "reward_count": 1
+      },
+      "native_pet_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "official_birth_range": null,
+      "official_growth": null,
+      "official_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "prior_source": "hf34 2012-11-12 auction; no new first release"
+    }
+  ],
+  "negative_controls": {
+    "snake_group_four_elements_not_six_identity_map": true,
+    "preview_not_release": true,
+    "individual_samples_not_birth_ranges": true,
+    "high_level_panel_not_growth_rate": true,
+    "griffin_dialogue_amalan_name_not_confirmed_reward": true,
+    "ordinary_white_tiger_not_evolved_stats": true,
+    "yaan_cn25_item_rewards_not_pets": true
+  },
+  "visual_refs": [
+    {
+      "url": "https://i3.sinaimg.cn/gm/2013/0320/U7233P115DT20130320100413.jpg",
+      "status": "WEB_RENDERED_NPC_EXCHANGE_CONFIRMATION"
+    },
+    {
+      "url": "https://i0.sinaimg.cn/gm/2013/0425/U7232P115DT20130425104303.jpg",
+      "status": "WEB_RENDERED_EVENT_EXCHANGE_CHAT_LOG"
+    },
+    {
+      "url": "https://i0.sinaimg.cn/gm/2013/0328/U7233P115DT20130328113931.jpg",
+      "status": "TIMEOUT"
+    },
+    {
+      "url": "https://i2.sinaimg.cn/gm/2013/0320/U7233P115DT20130320100421.jpg",
+      "status": "FETCH_FAILED"
+    }
+  ],
+  "new_original_client_bytes": 0,
+  "original_assets_published": false,
+  "official_species_count": null,
+  "official_full_fields_certified": 0
+}

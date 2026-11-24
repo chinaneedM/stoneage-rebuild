@@ -31,3 +31,6 @@ python3 tools/stoneage_pet_source_lookup.py --verify
 
 
 R34新增固定来源 `hf34`（16个同期字段见闻，原源清单扩为26个对象），[见逐宠补证](CN-2011-2012-PERIOD-FIELD-WITNESSES.md)。
+
+
+R35新增 `hf35`，27固定源对象；[2013年14来源位置](CN-2013-PERIOD-FIELD-WITNESSES.md)，其中一条仅对话候选，不是物种。

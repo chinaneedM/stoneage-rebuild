@@ -30,3 +30,8 @@ python3 tools/stoneage_pet_gap_queue.py --all > pet-source-gaps.json
 ## R34 增量
 
 [大陆2011—2012同期字段](CN-2011-2012-PERIOD-FIELD-WITNESSES.md)追加16个独立来源位置，队列共3002。原R33的2986为其历史验收口径；全字段同部署仍未验明。
+
+
+## R35 增量
+
+[2013大陆状态面板、取得与成长封印](CN-2013-PERIOD-FIELD-WITNESSES.md)：13独立补缺位置，阿玛兰斯对话候选仅在R32查询保留，队列3015。三份Lv1样本非初值范围。

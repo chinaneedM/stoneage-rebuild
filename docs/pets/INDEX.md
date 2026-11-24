@@ -489,3 +489,8 @@
 ## 2026-11-24｜PET-HIGH-FIRST-34 大陆2011—2012逐宠字段增证
 
 [16条具名来源档案](CN-2011-2012-PERIOD-FIELD-WITNESSES.md) · [机读记录](../../research/pets/PET-HIGH-FIRST-34-CN2011-2012-PERIOD-FIELD-WITNESSES-R1.json) · [续接](../continuity/STONEAGE-PET-HIGH-FIRST-34-CN-PERIOD-FIELDS-20261124.md)。6个明确元素比例、1个可读Lv1面板；26个固定源/3002来源位置，不当新物种或官服主档。原CURRENT不动，PET唯一。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-35 大陆2013逐宠面板与取得字段
+
+[逐宠资料](CN-2013-PERIOD-FIELD-WITNESSES.md) · [机读](../../research/pets/PET-HIGH-FIRST-35-CN2013-PERIOD-FIELD-WITNESSES-R1.json) · [续接](../continuity/STONEAGE-PET-HIGH-FIRST-35-CN2013-PERIOD-FIELDS-20261124.md)。三Lv1面板、一高等级图、狮鹫成长封印与骑乘、幻白虎进化兑换、蛇年六名与四色不强配；13个新增队列位置及1对话候选，非物种数。PET唯一。

@@ -6,6 +6,7 @@ on:
       - 'tools/stoneage_pet_source_lookup.py'
       - 'research/pets/PET-HIGH-FIRST-32-UNIFIED-SOURCE-LOOKUP-MANIFEST-R1.json'
       - 'research/pets/PET-HIGH-FIRST-34-CN2011-2012-PERIOD-FIELD-WITNESSES-R1.json'
+      - 'research/pets/PET-HIGH-FIRST-35-CN2013-PERIOD-FIELD-WITNESSES-R1.json'
       - '.github/workflows/pet-high-first-33.yml'
   pull_request:
     paths:
@@ -13,6 +14,7 @@ on:
       - 'tools/stoneage_pet_source_lookup.py'
       - 'research/pets/PET-HIGH-FIRST-32-UNIFIED-SOURCE-LOOKUP-MANIFEST-R1.json'
       - 'research/pets/PET-HIGH-FIRST-34-CN2011-2012-PERIOD-FIELD-WITNESSES-R1.json'
+      - 'research/pets/PET-HIGH-FIRST-35-CN2013-PERIOD-FIELD-WITNESSES-R1.json'
       - '.github/workflows/pet-high-first-33.yml'
   workflow_dispatch:
 permissions:
@@ -26,3 +28,4 @@ jobs:
       - run: python3 tools/stoneage_pet_gap_queue.py --query 蒙奇 > /tmp/pet-gap-query.json
       - run: python3 tools/stoneage_pet_gap_queue.py --priority P1_FREE_LATER_ORIGINAL_CLIENT > /tmp/pet-gap-priority.json
       - run: python3 tools/stoneage_pet_gap_queue.py --query 蜜雪莉雅 > /tmp/pet-gap-mixueliya.json
+      - run: python3 tools/stoneage_pet_gap_queue.py --query 幻·佩露夏 > /tmp/pet-gap-huanpeiluxia.json
