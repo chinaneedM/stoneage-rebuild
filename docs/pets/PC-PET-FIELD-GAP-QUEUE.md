@@ -54,3 +54,8 @@ python3 tools/stoneage_pet_gap_queue.py --all > pet-source-gaps.json
 ## R48 旧PC图鉴取得关联（候选）
 
 83项余缺中9项名称元素相容的旧图鉴/攻略参考，余74；原R47及正式字段不变。见[续接](../continuity/STONEAGE-PET-HIGH-FIRST-48-LEGACY-PC-ACQUISITION-GAP-20261124.md)。
+
+
+## R49 同期PC取得补证（候选）
+
+74余缺位置增7个相容参考（6原名，布尔摩两个模板共享一条报刊证据），余67；15个上下文位置未升级。见[续接](../continuity/STONEAGE-PET-HIGH-FIRST-49-DATED-PC-ACQUISITION-GAP-20261124.md)。

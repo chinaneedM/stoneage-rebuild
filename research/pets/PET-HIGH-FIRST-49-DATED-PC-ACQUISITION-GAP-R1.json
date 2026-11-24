@@ -1,0 +1,785 @@
+{
+  "schema": "stoneage.pet_high_first_49.dated_pc_acquisition_gap.r1",
+  "base_head": "f791434348a9ab83fe26056723ca6794aca809df",
+  "base_tree": "014b1ce86eaf6133f86b74c2a0217f4010f0dcd2",
+  "input_git_blobs": {
+    "research/pets/PET-HIGH-FIRST-48-LEGACY-PC-ACQUISITION-GAP-R1.json": "cc24932976455bfe12b04f3fc0c6a8775d4940c9",
+    "research/pets/PET-HIGH-FIRST-46-ACQUISITION-GAP-MATRIX-R1.json": "dbbd61460cee2edd4ba2722ab90e8889fe5268e2",
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf"
+  },
+  "scope": "74 PET48 residual template positions; bounded source search; not all rows individually exhausted; manual public text review, no raw HTML bytes; previously known sources may be reused; no new species count",
+  "sources": [
+    {
+      "id": "A",
+      "url": "https://news.17173.com/z/stoneage/content/2002-9-18/n877_793175.html?_platform=PC",
+      "date": "2002-09-18",
+      "grade": "SIGNED_PERIOD_PLAYER_GUIDE",
+      "version_scope": "3.0 stated; region/server unconfirmed"
+    },
+    {
+      "id": "B",
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-06-03/10555.shtml",
+      "date": "2003-06-03",
+      "grade": "PERIOD_PORTAL_QUEST_GUIDE",
+      "version_scope": "Beijing Wayi section; exact deployment unknown"
+    },
+    {
+      "id": "C",
+      "url": "https://software-archive.tifan.la/%E7%94%B5%E8%84%91%E6%8A%A5/2003e/50/0128.html",
+      "date": "2003-12-22",
+      "grade": "ARCHIVED_PERIOD_COMPUTER_NEWSPAPER_TEXT",
+      "version_scope": "Beijing Wayi anniversary"
+    },
+    {
+      "id": "D",
+      "url": "https://news.17173.com/content/2004-1-12/n733_650002.html",
+      "date": "2004-01-12",
+      "grade": "PERIOD_OPERATOR_STYLE_ANNOUNCEMENT_HOSTED_BY_PORTAL",
+      "version_scope": "Beijing Wayi 7.0"
+    },
+    {
+      "id": "E",
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow30.htm",
+      "date": null,
+      "grade": "UNDATED_LEGACY_PC_CATALOG",
+      "version_scope": "Version/deployment unknown"
+    },
+    {
+      "id": "F",
+      "url": "https://games.sina.com.cn/z/sta/2004-09-28/177092.shtml?from=wap",
+      "date": "2004-09-28",
+      "grade": "PERIOD_PORTAL_QUEST_GUIDE",
+      "version_scope": "7.5 stated; exact deployment unknown"
+    },
+    {
+      "id": "G",
+      "url": "https://news.17173.com/content/2011-02-23/20110223103546623.shtml",
+      "date": "2011-02-23",
+      "grade": "PERIOD_OPERATOR_STYLE_ANNOUNCEMENT_HOSTED_BY_PORTAL",
+      "version_scope": "CN Shengsi; version unknown"
+    },
+    {
+      "id": "H",
+      "url": "https://news.17173.com/content/2011-01-07/20110107095509736.shtml",
+      "date": "2011-01-07",
+      "grade": "PERIOD_OPERATOR_STYLE_ANNOUNCEMENT_HOSTED_BY_PORTAL",
+      "version_scope": "CN Shengsi closed beta promotion; version unknown"
+    },
+    {
+      "id": "I",
+      "url": "https://games.sina.com.cn/o/n/2011-12-08/1604559245.shtml",
+      "date": "2011-12-08",
+      "grade": "PERIOD_OPERATOR_STYLE_GUIDE_HOSTED_BY_PORTAL",
+      "version_scope": "CN sa.cins.cn; version unknown"
+    },
+    {
+      "id": "J",
+      "url": "https://news.17173.com/z/stoneage/banben/sa70_11.htm",
+      "date": null,
+      "grade": "UNDATED_LEGACY_PC_GUIDE",
+      "version_scope": "7.0 stated; exact deployment unknown"
+    },
+    {
+      "id": "K",
+      "url": "https://news.17173.com/z/stoneage/renwu/sa30_06.htm",
+      "date": null,
+      "grade": "SIGNED_LEGACY_PC_GUIDE",
+      "version_scope": "3.0 stated; exact deployment unknown"
+    },
+    {
+      "id": "L",
+      "url": "https://www.ptt.cc/bbs/StoneAge/M.1308080266.A.54B.html",
+      "date": "2011-06-15",
+      "grade": "RETROSPECTIVE_PLAYER_POST",
+      "version_scope": "Wayi recollection; not a release record"
+    },
+    {
+      "id": "M",
+      "url": "https://games.sina.com.cn/newgames/2004/09/091347338.shtml",
+      "date": null,
+      "grade": "PERIOD_STAFF_QA_REPORT_DATE_INCONSISTENCY",
+      "version_scope": "Text says Sep 11, URL implies Sep 9; 2004, CN/TW distinction"
+    },
+    {
+      "id": "N",
+      "url": "https://news.17173.com/z/stoneage/renwu/cwrh.htm",
+      "date": null,
+      "grade": "LEGACY_PC_FUSION_GUIDE",
+      "version_scope": "No individual acquisition route"
+    },
+    {
+      "id": "O",
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow20.htm",
+      "date": null,
+      "grade": "UNDATED_LEGACY_PC_CATALOG",
+      "version_scope": "PET48 reused; no deployment proof"
+    }
+  ],
+  "rows": [
+    {
+      "tw75_row_index": 315,
+      "template_id": 908,
+      "master_name": "莫拉司",
+      "graphic": 100888,
+      "row_sha256": "cd695593c23adc0ae7be668bca9b6ea70a1f3b03ce1b7ae90e1417b43966107e",
+      "master_elements": [
+        0,
+        70,
+        30,
+        0
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "source_name": "莫拉司",
+      "source_elements": [
+        0,
+        70,
+        30,
+        0
+      ],
+      "refs": [
+        {
+          "source_id": "A",
+          "visible_lines": [
+            60,
+            60
+          ]
+        },
+        {
+          "source_id": "B",
+          "visible_lines": [
+            42,
+            47
+          ]
+        },
+        {
+          "source_id": "B",
+          "visible_lines": [
+            52,
+            54
+          ]
+        },
+        {
+          "source_id": "O",
+          "visible_lines": [
+            94,
+            106
+          ]
+        }
+      ],
+      "acquisition_summary": "2002玩家记水怪任务交换所需Lv1；2003攻略记动物园巴克战后交出，随后交还克拉肯。原攻略同页莫拉司/莫拉斯异写。属于任务中间取得，不证明任务完成后永久持有。",
+      "kind": "QUEST_INTERMEDIATE",
+      "qualification": "COMPATIBLE_HISTORICAL_ACQUISITION_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "tw75_row_index": 319,
+      "template_id": 917,
+      "master_name": "尤里蛙",
+      "graphic": 100883,
+      "row_sha256": "d13d0e75cb68b97ee9b53b915521cd65e164daf446ae8d8d2060c193793a6c8f",
+      "master_elements": [
+        70,
+        30,
+        0,
+        0
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "source_name": "尤里蛙",
+      "source_elements": [
+        70,
+        30,
+        0,
+        0
+      ],
+      "refs": [
+        {
+          "source_id": "A",
+          "visible_lines": [
+            54,
+            54
+          ]
+        },
+        {
+          "source_id": "B",
+          "visible_lines": [
+            45,
+            50
+          ]
+        },
+        {
+          "source_id": "B",
+          "visible_lines": [
+            54,
+            60
+          ]
+        }
+      ],
+      "acquisition_summary": "小水怪任务两路线均记尤里蛙奖励；2002玩家地7水3相容，PET47另一图鉴冲突保留。",
+      "kind": "QUEST_REWARD",
+      "qualification": "COMPATIBLE_HISTORICAL_ACQUISITION_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "tw75_row_index": 116,
+      "template_id": 169,
+      "master_name": "布爾摩",
+      "graphic": 101441,
+      "row_sha256": "cc527ee40d798ece0f98d8f3f5487d0dbb42b0d53295f02418ca32b85752074f",
+      "master_elements": [
+        0,
+        0,
+        80,
+        20
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "source_name": "布尔摩",
+      "source_elements": [
+        0,
+        0,
+        80,
+        20
+      ],
+      "refs": [
+        {
+          "source_id": "C",
+          "visible_lines": [
+            17,
+            23
+          ]
+        }
+      ],
+      "acquisition_summary": "北京华义三周年活动报道：五转140级且声望5000的角色有机会经NPC领取；非实际领取记录。与1051同名同元素，不能唯一确定模板。",
+      "kind": "AMBIGUOUS_TWO_TEMPLATES_REWARD",
+      "qualification": "COMPATIBLE_HISTORICAL_ACQUISITION_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "tw75_row_index": 392,
+      "template_id": 1051,
+      "master_name": "布爾摩",
+      "graphic": 101441,
+      "row_sha256": "62c0d4b217b347b5a0a3abf1245f14c10d3d6913faf55e8b55a3fcb23a76ade7",
+      "master_elements": [
+        0,
+        0,
+        80,
+        20
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "source_name": "布尔摩",
+      "source_elements": [
+        0,
+        0,
+        80,
+        20
+      ],
+      "refs": [
+        {
+          "source_id": "C",
+          "visible_lines": [
+            17,
+            23
+          ]
+        }
+      ],
+      "acquisition_summary": "与169共享同一报道；两模板不合并，活动条件不能唯一指定其中一个。",
+      "kind": "AMBIGUOUS_TWO_TEMPLATES_REWARD",
+      "qualification": "COMPATIBLE_HISTORICAL_ACQUISITION_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "tw75_row_index": 321,
+      "template_id": 933,
+      "master_name": "菲奇亞",
+      "graphic": 101616,
+      "row_sha256": "084c999c4b0024b3bf6153dcb825c115e91ac8cba466446fd290e76675473ff6",
+      "master_elements": [
+        0,
+        0,
+        100,
+        0
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "source_name": "菲奇亚",
+      "source_elements": [
+        0,
+        0,
+        100,
+        0
+      ],
+      "refs": [
+        {
+          "source_id": "D",
+          "visible_lines": [
+            14,
+            18
+          ]
+        },
+        {
+          "source_id": "E",
+          "visible_lines": [
+            97,
+            109
+          ]
+        }
+      ],
+      "acquisition_summary": "2004年1月12日至2月29日北京华义集30种超级来吉卡，限1000只，公告限7.0服领取。旧图鉴火10，取得原记未知；跨源相容并不证明模板部署。",
+      "kind": "CROSS_SOURCE_ANNOUNCEMENT",
+      "qualification": "COMPATIBLE_HISTORICAL_ACQUISITION_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "tw75_row_index": 456,
+      "template_id": 1164,
+      "master_name": "哈利恩斯",
+      "graphic": 101816,
+      "row_sha256": "00bd75de9d2550b9e795cbc66fb355be309ac97c0732a6580bb03ce49e88b661",
+      "master_elements": [
+        0,
+        0,
+        0,
+        100
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "source_name": "哈利恩斯",
+      "source_elements": [
+        0,
+        0,
+        0,
+        100
+      ],
+      "refs": [
+        {
+          "source_id": "F",
+          "visible_lines": [
+            97,
+            98
+          ]
+        }
+      ],
+      "acquisition_summary": "7.5人物六转生攻略称击败雷尔后读日记，与魔界之门对话获圣光龙；风10。具体触发和部署未证。",
+      "kind": "QUEST_REWARD",
+      "qualification": "COMPATIBLE_HISTORICAL_ACQUISITION_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "tw75_row_index": 106,
+      "template_id": 150,
+      "master_name": "懷沃夫",
+      "graphic": 101875,
+      "row_sha256": "1d1f6800990282aac47dd90c6df692283622e47a166f89541ef200563a75ac6b",
+      "master_elements": [
+        0,
+        90,
+        10,
+        0
+      ],
+      "selected_table_status": "EXACT_SHARED_ROW",
+      "source_name": "怀沃夫",
+      "source_elements": [
+        0,
+        90,
+        10,
+        0
+      ],
+      "refs": [
+        {
+          "source_id": "G",
+          "visible_lines": [
+            27,
+            29
+          ]
+        },
+        {
+          "source_id": "G",
+          "visible_lines": [
+            38,
+            40
+          ]
+        }
+      ],
+      "acquisition_summary": "胜思2011年2月23日报道9水1火、积分商城兑换；天赋爆裂攻击为该报道所属运营时期描述，不能倒填旧版。",
+      "kind": "OPERATOR_STYLE_REWARD",
+      "qualification": "COMPATIBLE_HISTORICAL_ACQUISITION_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    }
+  ],
+  "context": [
+    {
+      "tw75_row_index": 31,
+      "template_id": 55,
+      "name": "巴羅多",
+      "refs": [
+        {
+          "source_id": "H",
+          "visible_lines": [
+            46,
+            56
+          ],
+          "locator": null
+        }
+      ],
+      "note": "巴罗多充值预存奖励，公告无元素、服务器模板ID。",
+      "qualification": "CONTEXT_OR_INCOMPLETE_OR_CONFLICT_NOT_QUALIFIED"
+    },
+    {
+      "tw75_row_index": 125,
+      "template_id": 178,
+      "name": "萊恩奇夫",
+      "refs": [
+        {
+          "source_id": "H",
+          "visible_lines": [
+            46,
+            59
+          ],
+          "locator": null
+        }
+      ],
+      "note": "莱恩奇夫充值预存奖励，公告无元素。",
+      "qualification": "CONTEXT_OR_INCOMPLETE_OR_CONFLICT_NOT_QUALIFIED"
+    },
+    {
+      "tw75_row_index": 101,
+      "template_id": 145,
+      "name": "薩德迪比",
+      "refs": [
+        {
+          "source_id": "I",
+          "visible_lines": [
+            43,
+            65
+          ],
+          "locator": null
+        }
+      ],
+      "note": "萨德迪比白天梦幻洞窟捕捉，须任务与五转140；仅称水狼，未列精确比例。",
+      "qualification": "CONTEXT_OR_INCOMPLETE_OR_CONFLICT_NOT_QUALIFIED"
+    },
+    {
+      "tw75_row_index": 102,
+      "template_id": 146,
+      "name": "薩德斯凱",
+      "refs": [
+        {
+          "source_id": "I",
+          "visible_lines": [
+            43,
+            65
+          ],
+          "locator": null
+        }
+      ],
+      "note": "萨德斯凯夜间梦幻洞窟捕捉；仅称火狼，未列精确比例。",
+      "qualification": "CONTEXT_OR_INCOMPLETE_OR_CONFLICT_NOT_QUALIFIED"
+    },
+    {
+      "tw75_row_index": 91,
+      "template_id": 131,
+      "name": "奇肯沃",
+      "refs": [
+        {
+          "source_id": "J",
+          "visible_lines": [
+            22,
+            22
+          ],
+          "locator": null
+        }
+      ],
+      "note": "7.0泪之海Lv1位置，无元素。",
+      "qualification": "CONTEXT_OR_INCOMPLETE_OR_CONFLICT_NOT_QUALIFIED"
+    },
+    {
+      "tw75_row_index": 92,
+      "template_id": 132,
+      "name": "奇肯克奈",
+      "refs": [
+        {
+          "source_id": "J",
+          "visible_lines": [
+            23,
+            23
+          ],
+          "locator": null
+        }
+      ],
+      "note": "7.0泪之海Lv1位置，无元素。",
+      "qualification": "CONTEXT_OR_INCOMPLETE_OR_CONFLICT_NOT_QUALIFIED"
+    },
+    {
+      "tw75_row_index": 317,
+      "template_id": 913,
+      "name": "古瓜",
+      "refs": [
+        {
+          "source_id": "K",
+          "visible_lines": [
+            9,
+            20
+          ],
+          "locator": null
+        }
+      ],
+      "note": "3.0古瓜任务Lv1交接及Lv100替换，无元素或模板编号，不能指定913/914。",
+      "qualification": "CONTEXT_OR_INCOMPLETE_OR_CONFLICT_NOT_QUALIFIED"
+    },
+    {
+      "tw75_row_index": 318,
+      "template_id": 914,
+      "name": "古瓜",
+      "refs": [
+        {
+          "source_id": "K",
+          "visible_lines": [
+            9,
+            20
+          ],
+          "locator": null
+        }
+      ],
+      "note": "与913相同候选；非独立发放证据。",
+      "qualification": "CONTEXT_OR_INCOMPLETE_OR_CONFLICT_NOT_QUALIFIED"
+    },
+    {
+      "tw75_row_index": 112,
+      "template_id": 165,
+      "name": "奇朋菲德",
+      "refs": [
+        {
+          "source_id": "L",
+          "visible_lines": [
+            10,
+            11
+          ],
+          "locator": null
+        },
+        {
+          "source_id": "M",
+          "visible_lines": [
+            6,
+            6
+          ],
+          "locator": null
+        }
+      ],
+      "note": "回忆2004猴年兽地8水2相容；座谈地区差异，未记逐宠取得方式。",
+      "qualification": "CONTEXT_OR_INCOMPLETE_OR_CONFLICT_NOT_QUALIFIED"
+    },
+    {
+      "tw75_row_index": 113,
+      "template_id": 166,
+      "name": "奇朋亞斯",
+      "refs": [
+        {
+          "source_id": "L",
+          "visible_lines": [
+            10,
+            11
+          ],
+          "locator": null
+        },
+        {
+          "source_id": "M",
+          "visible_lines": [
+            6,
+            6
+          ],
+          "locator": null
+        }
+      ],
+      "note": "回忆水8火2与主表水8火2相容；未记具体取得。",
+      "qualification": "CONTEXT_OR_INCOMPLETE_OR_CONFLICT_NOT_QUALIFIED"
+    },
+    {
+      "tw75_row_index": 114,
+      "template_id": 167,
+      "name": "奇朋德美",
+      "refs": [
+        {
+          "source_id": "L",
+          "visible_lines": [
+            10,
+            11
+          ],
+          "locator": null
+        },
+        {
+          "source_id": "M",
+          "visible_lines": [
+            6,
+            6
+          ],
+          "locator": null
+        }
+      ],
+      "note": "回忆火8风2相容；未记具体取得。",
+      "qualification": "CONTEXT_OR_INCOMPLETE_OR_CONFLICT_NOT_QUALIFIED"
+    },
+    {
+      "tw75_row_index": 115,
+      "template_id": 168,
+      "name": "奇朋洛依",
+      "refs": [
+        {
+          "source_id": "L",
+          "visible_lines": [
+            10,
+            11
+          ],
+          "locator": null
+        },
+        {
+          "source_id": "M",
+          "visible_lines": [
+            6,
+            6
+          ],
+          "locator": null
+        }
+      ],
+      "note": "奇朋洛伊/奇朋洛依异写，地2风8相容，但无取得方式。",
+      "qualification": "CONTEXT_OR_INCOMPLETE_OR_CONFLICT_NOT_QUALIFIED"
+    },
+    {
+      "tw75_row_index": 268,
+      "template_id": 784,
+      "name": "迪加",
+      "refs": [
+        {
+          "source_id": "A",
+          "visible_lines": [
+            47,
+            48
+          ],
+          "locator": null
+        },
+        {
+          "source_id": "B",
+          "visible_lines": [
+            61,
+            64
+          ],
+          "locator": null
+        }
+      ],
+      "note": "2002迪加地5水5与保存主表水8火2冲突；2003攻略地下水路敌方名不作捕捉。",
+      "qualification": "CONTEXT_OR_INCOMPLETE_OR_CONFLICT_NOT_QUALIFIED"
+    },
+    {
+      "tw75_row_index": 309,
+      "template_id": 854,
+      "name": "動物園養的拉斯基",
+      "refs": [
+        {
+          "source_id": "N",
+          "visible_lines": null,
+          "locator": "不可融合任务宠物名单"
+        }
+      ],
+      "note": "旧融合指南称动物园养的拉斯基为不可融合任务宠，不提供明确取得条件。",
+      "qualification": "CONTEXT_OR_INCOMPLETE_OR_CONFLICT_NOT_QUALIFIED"
+    },
+    {
+      "tw75_row_index": 330,
+      "template_id": 966,
+      "name": "萊比",
+      "refs": [
+        {
+          "source_id": "N",
+          "visible_lines": null,
+          "locator": "不可融合任务宠物名单"
+        }
+      ],
+      "note": "莱比列为不可融合任务宠，无具体取得。",
+      "qualification": "CONTEXT_OR_INCOMPLETE_OR_CONFLICT_NOT_QUALIFIED"
+    }
+  ],
+  "remaining_gap_row_indices": [
+    31,
+    32,
+    52,
+    58,
+    68,
+    69,
+    70,
+    75,
+    76,
+    84,
+    90,
+    91,
+    92,
+    95,
+    96,
+    101,
+    102,
+    103,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    117,
+    125,
+    135,
+    144,
+    187,
+    208,
+    222,
+    230,
+    238,
+    260,
+    268,
+    281,
+    283,
+    284,
+    293,
+    306,
+    309,
+    317,
+    318,
+    330,
+    344,
+    345,
+    386,
+    387,
+    390,
+    391,
+    401,
+    412,
+    413,
+    416,
+    417,
+    436,
+    438,
+    441,
+    452,
+    453,
+    454,
+    459,
+    462,
+    463,
+    464
+  ],
+  "summary": {
+    "input_remaining": 74,
+    "compatible_reference_rows": 7,
+    "distinct_compatible_names": 6,
+    "context_rows": 15,
+    "remaining_without_compatible_reference": 67,
+    "official_acquisition_closed": 0,
+    "official_new_species": null
+  },
+  "official_same_deployment_verified": false,
+  "original_assets_published": false
+}
