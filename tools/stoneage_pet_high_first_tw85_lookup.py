@@ -47,6 +47,24 @@ def attach_visual_routes(rows):
     if receipt["scope"] != SCOPE:
         raise ValueError("unexpected TW85 visual receipt scope")
     animation_by_group = {row["physical_group"]: row for row in receipt["sequences"]}
+    from tools import stoneage_pet_high_first_tw85_residual as residual
+    with gzip.open(residual.TARGET, "rt", encoding="utf-8") as stream:
+        extra = json.load(stream)
+    if extra["scope"] != residual.SCOPE:
+        raise ValueError("unexpected TW85 residual receipt scope")
+    extra_receipt = extra["observations"]
+    extra_by_group = {row["physical_group"]: row for row in extra_receipt["sequences"]}
+
+    def sample_status(group):
+        first = animation_by_group.get(group)
+        second = extra_by_group.get(group)
+        first_complete = first is not None and residual.complete(first, receipt)
+        second_complete = second is not None and residual.complete(second, extra_receipt)
+        return {"sample": first, "pet13_sample": second,
+                "pet12_sample_complete": first_complete,
+                "pet13_sample_complete": second_complete,
+                "has_complete_index_pixel_sample": first_complete or second_complete}
+
     routes_by_row = {}
     for record in atlas["records"]:
         groups = record["original_physical_sprite_occurrences"]
@@ -57,7 +75,7 @@ def attach_visual_routes(rows):
             routes_by_row.setdefault(key, []).extend({
                 "spr": record["tw85_original_spr_no_not_official_pet_id"],
                 "source_group_index": item["original_source_group_index"],
-                "sample": animation_by_group.get(item["original_source_group_index"]),
+                **sample_status(item["original_source_group_index"]),
             } for item in groups)
     for row in rows:
         key = (row["source_program"], row["slot"], row["original_row_sha256"])
