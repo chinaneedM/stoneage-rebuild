@@ -1,0 +1,4408 @@
+{
+  "schema": "stoneage.pet.late.pc.object-role.crosswalk.r1",
+  "source_head": "13b56b2deefd1e72026d33f3c69b39e3923e41a8",
+  "source_pins_git_blob": {
+    "research/recovered/STONEAGE-PET98-TW2014-SEASONAL-QUEST-PET-REWARD-GRADED-LINKS-R1.json": "d69a5e3df0375dc41686c01f8ae14547805ed5c8",
+    "research/recovered/STONEAGE-PET100-YEAR2015-CN-TW-KR-ORIGINAL-PC-PET-SOURCE-FIRST-PASS-R1.json": "e1b0f4c518eb0ba80eb3e5e2296591a8dbba735c",
+    "research/recovered/STONEAGE-PET102-TW2015-DRAGONBOAT-PLAYER-BOX-NOT-VERIFIED-PET-R1.json": "8261c013b65e68c76841ea789968106caed5fe87",
+    "research/recovered/STONEAGE-PET103-TW2015-CHRISTMAS-PLAYER-REWARDS-NOT-NATIVE-PET-R1.json": "b349a2aae497c0db5a66fdafc4aa46d48df1efd8",
+    "research/recovered/STONEAGE-PET104-TW2015-HALLOWEEN-RELAY-PRIZE-EGG-BOUNDARY-R1.json": "1fdee4c2903216fecb3e5ac480e7c753131467b5",
+    "research/recovered/STONEAGE-PET107-TW2016-BEETLE-DUANWU-2016-SOURCE-GRADES-R1.json": "8fbd4a921b50ac566a6a553263eb9c4fea902f87",
+    "research/recovered/STONEAGE-PET109-TW2016-PLAYER-PET-REWARDS-HALLOWEEN-2015-CROSSYEAR-BOUNDARY-R1.json": "0281feedc3384fdb9fa69f8dc220864ce13fbba0",
+    "research/recovered/STONEAGE-PET111-TW2017-DADI-OLDREALM-PET-ISSUANCE-SOURCE-BOUNDARY-R1.json": "ae28fb6e19bb6143ae85859ced6dd624aa399af7",
+    "research/recovered/STONEAGE-PET112-TW2017-AUGUST-BLUE-TIGER-PROMOTION-SOURCE-BOUNDARY-R1.json": "f7909f1b051f1bdd5673ec364f9c0e7d23b7fccc",
+    "research/recovered/STONEAGE-PET114-TW2018-PC-TWO-REALM-SUMMER-PET-SOURCE-BOUNDARY-R1.json": "eebe6bb9d485c9353825a49ec48e1fddcb5f6764",
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-TW85-ORIGINAL-PE-ALBUM-GRID-R1.json": "7fb8eceba23dea6dc90ebb18e404d6e837210eaf",
+    "research/pets/PET-HIGH-FIRST-TW85-NATIVE-SPR-ALBUM-R1.json": "e7cff0d53585964c9d755ef1fbd2bc5531d883d6",
+    "research/pets/PET-HIGH-FIRST-CN50-NATIVE-SPR-ALBUM-R1.json": "98fea71c051dfa887b91154a8a72d17c67b57744"
+  },
+  "receipt_paths": {
+    "98": "research/recovered/STONEAGE-PET98-TW2014-SEASONAL-QUEST-PET-REWARD-GRADED-LINKS-R1.json",
+    "100": "research/recovered/STONEAGE-PET100-YEAR2015-CN-TW-KR-ORIGINAL-PC-PET-SOURCE-FIRST-PASS-R1.json",
+    "102": "research/recovered/STONEAGE-PET102-TW2015-DRAGONBOAT-PLAYER-BOX-NOT-VERIFIED-PET-R1.json",
+    "103": "research/recovered/STONEAGE-PET103-TW2015-CHRISTMAS-PLAYER-REWARDS-NOT-NATIVE-PET-R1.json",
+    "104": "research/recovered/STONEAGE-PET104-TW2015-HALLOWEEN-RELAY-PRIZE-EGG-BOUNDARY-R1.json",
+    "107": "research/recovered/STONEAGE-PET107-TW2016-BEETLE-DUANWU-2016-SOURCE-GRADES-R1.json",
+    "109": "research/recovered/STONEAGE-PET109-TW2016-PLAYER-PET-REWARDS-HALLOWEEN-2015-CROSSYEAR-BOUNDARY-R1.json",
+    "111": "research/recovered/STONEAGE-PET111-TW2017-DADI-OLDREALM-PET-ISSUANCE-SOURCE-BOUNDARY-R1.json",
+    "112": "research/recovered/STONEAGE-PET112-TW2017-AUGUST-BLUE-TIGER-PROMOTION-SOURCE-BOUNDARY-R1.json",
+    "114": "research/recovered/STONEAGE-PET114-TW2018-PC-TWO-REALM-SUMMER-PET-SOURCE-BOUNDARY-R1.json"
+  },
+  "resource_paths": [
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json",
+    "research/pets/PET-HIGH-FIRST-TW85-ORIGINAL-PE-ALBUM-GRID-R1.json",
+    "research/pets/PET-HIGH-FIRST-TW85-NATIVE-SPR-ALBUM-R1.json",
+    "research/pets/PET-HIGH-FIRST-CN50-NATIVE-SPR-ALBUM-R1.json"
+  ],
+  "character_map": {
+    "鲁": "魯",
+    "扑": "撲",
+    "满": "滿",
+    "乌": "烏",
+    "贝": "貝",
+    "凯": "凱",
+    "欧": "歐",
+    "萨": "薩",
+    "龙": "龍",
+    "奥": "奧",
+    "顿": "頓",
+    "鸟": "鳥",
+    "蓝": "藍",
+    "红": "紅",
+    "绿": "綠",
+    "玛": "瑪",
+    "亚": "亞",
+    "诺": "諾",
+    "宝": "寶",
+    "尔": "爾",
+    "罗": "羅",
+    "斯": "斯",
+    "丽": "麗",
+    "利": "利",
+    "兰": "蘭",
+    "克": "克",
+    "恶": "惡",
+    "头": "頭",
+    "泽": "澤",
+    "格": "格",
+    "里": "里",
+    "伦": "倫",
+    "马": "馬",
+    "弗": "弗",
+    "洛": "洛",
+    "姆": "姆",
+    "特": "特",
+    "奇": "奇"
+  },
+  "groups": [
+    {
+      "year": 2014,
+      "receipt": 98,
+      "pointer": [
+        "historical_event_candidates",
+        0,
+        "candidate_rewards"
+      ],
+      "lane": "TW_TAOZHU",
+      "context": "later source: removed reward; no actual grant",
+      "labels": [
+        [
+          "三頭蛇",
+          "PET_FAMILY_OR_GENERIC"
+        ]
+      ]
+    },
+    {
+      "year": 2014,
+      "receipt": 98,
+      "pointer": [
+        "historical_event_candidates",
+        3,
+        "candidate_rewards"
+      ],
+      "lane": "TW_TAOZHU",
+      "context": "later Q&A and reposted guide",
+      "labels": [
+        [
+          "2D狼人",
+          "PET_FAMILY_OR_GENERIC"
+        ],
+        [
+          "薩格魯",
+          "PET_NAME_CANDIDATE"
+        ],
+        [
+          "黑虎／強化黑虎",
+          "PET_FAMILY_OR_GENERIC"
+        ]
+      ]
+    },
+    {
+      "year": 2015,
+      "receipt": 100,
+      "pointer": [
+        "candidate_named_pet_and_item_relations",
+        0,
+        "labels"
+      ],
+      "lane": "CN_CINS_2_5",
+      "context": "unauthenticated operator-style text mirror",
+      "labels": [
+        [
+          "三色龙魂宠物蛋",
+          "ITEM"
+        ],
+        [
+          "新春宠物蛋",
+          "ITEM"
+        ],
+        [
+          "水幻飞龙宠物蛋",
+          "ITEM"
+        ],
+        [
+          "玄武蛋",
+          "ITEM"
+        ],
+        [
+          "扑满乌力",
+          "PET_NAME_CANDIDATE"
+        ],
+        [
+          "新品暴",
+          "PET_FAMILY_OR_GENERIC"
+        ],
+        [
+          "四圣兽",
+          "PET_FAMILY_OR_GENERIC"
+        ],
+        [
+          "水飞",
+          "PET_FAMILY_OR_GENERIC"
+        ],
+        [
+          "恶魔宠物蛋",
+          "ITEM"
+        ],
+        [
+          "军绿虎骑证",
+          "ITEM"
+        ],
+        [
+          "葛雷基欧",
+          "PET_NAME_CANDIDATE"
+        ],
+        [
+          "威咔宠物蛋",
+          "ITEM"
+        ],
+        [
+          "四色兔子宠物蛋",
+          "ITEM"
+        ]
+      ]
+    },
+    {
+      "year": 2015,
+      "receipt": 100,
+      "pointer": [
+        "candidate_named_pet_and_item_relations",
+        1,
+        "labels"
+      ],
+      "lane": "CN_CINS_8_5",
+      "context": "unauthenticated operator-style text mirror",
+      "labels": [
+        [
+          "格鲁西斯",
+          "PET_NAME_CANDIDATE"
+        ],
+        [
+          "军绿虎骑宠套",
+          "ITEM"
+        ],
+        [
+          "白狼骑宠证书",
+          "ITEM"
+        ],
+        [
+          "黑飞暴骑宠套",
+          "ITEM"
+        ]
+      ]
+    },
+    {
+      "year": 2015,
+      "receipt": 100,
+      "pointer": [
+        "candidate_named_pet_and_item_relations",
+        2,
+        "labels"
+      ],
+      "lane": "TW_TAOZHU_202_REPORTED",
+      "context": "player relay and later chronology",
+      "labels": [
+        [
+          "甘巴爹玉兔",
+          "QUEST_LABEL"
+        ],
+        [
+          "瑪斯貝卡",
+          "PET_NAME_CANDIDATE"
+        ],
+        [
+          "摩洛索思",
+          "PET_NAME_CANDIDATE"
+        ],
+        [
+          "2D狼人",
+          "PET_FAMILY_OR_GENERIC"
+        ],
+        [
+          "大地之眼",
+          "ITEM"
+        ]
+      ]
+    },
+    {
+      "year": 2015,
+      "receipt": 102,
+      "pointer": [
+        "new_evidence",
+        0,
+        "claimed_item_label"
+      ],
+      "lane": "TW_TAOZHU",
+      "context": "firsthand box claim, contents unverified",
+      "labels": [
+        [
+          "三頭蛇禮盒",
+          "ITEM"
+        ]
+      ]
+    },
+    {
+      "year": 2015,
+      "receipt": 102,
+      "pointer": [
+        "new_evidence",
+        1,
+        "claimed_lottery_pet"
+      ],
+      "lane": "TW_TAOZHU",
+      "context": "later chronology, no original notice",
+      "labels": [
+        [
+          "摩洛索思（麒麟）",
+          "PET_FAMILY_OR_GENERIC"
+        ]
+      ]
+    },
+    {
+      "year": 2017,
+      "receipt": 102,
+      "pointer": [
+        "new_evidence",
+        2,
+        "reported_snakelike_rewards"
+      ],
+      "lane": "TW_TAOZHU_UNSPECIFIED_REALM",
+      "context": "2017 player account, never proof of 2015 box contents",
+      "labels": [
+        [
+          "天使蛇司卡奇",
+          "PET_NAME_CANDIDATE",
+          "司卡奇"
+        ],
+        [
+          "惡魔蛇莫里卡奇",
+          "PET_NAME_CANDIDATE",
+          "莫里卡奇"
+        ]
+      ]
+    },
+    {
+      "year": 2015,
+      "receipt": 103,
+      "pointer": [
+        "sources",
+        1,
+        "reported_results"
+      ],
+      "lane": "TW_TAOZHU",
+      "context": "firsthand reward shorthand, not actual grant logs",
+      "labels": [
+        [
+          "魯道夫",
+          "AMBIGUOUS_OBJECT"
+        ],
+        [
+          "冠軍豬",
+          "AMBIGUOUS_OBJECT"
+        ]
+      ]
+    },
+    {
+      "year": 2015,
+      "receipt": 103,
+      "pointer": [
+        "sources",
+        2,
+        "reported_labels"
+      ],
+      "lane": "TW_TAOZHU",
+      "context": "player shorthand, separately known boxes and clothing",
+      "labels": [
+        [
+          "庫胖達",
+          "AMBIGUOUS_OBJECT"
+        ],
+        [
+          "胖達利",
+          "AMBIGUOUS_OBJECT"
+        ],
+        [
+          "布伊酷",
+          "AMBIGUOUS_OBJECT"
+        ],
+        [
+          "魯道夫",
+          "AMBIGUOUS_OBJECT"
+        ],
+        [
+          "麋鹿服",
+          "ITEM"
+        ]
+      ]
+    },
+    {
+      "year": 2015,
+      "receipt": 103,
+      "pointer": [
+        "sources",
+        3,
+        "reported_reward_objects"
+      ],
+      "lane": "TW_TAOZHU",
+      "context": "explicit item types",
+      "labels": [
+        [
+          "魯道夫的韁繩",
+          "ITEM"
+        ],
+        [
+          "胖達利盒子",
+          "ITEM"
+        ],
+        [
+          "庫胖達盒子",
+          "ITEM"
+        ],
+        [
+          "獎杯 冠軍豬",
+          "ITEM"
+        ],
+        [
+          "麋鹿套裝",
+          "ITEM"
+        ],
+        [
+          "太陽神首飾Lv3",
+          "ITEM"
+        ]
+      ]
+    },
+    {
+      "year": 2015,
+      "receipt": 104,
+      "pointer": [
+        "sources",
+        0,
+        "announced_reward_names"
+      ],
+      "lane": "TW_TAOZHU",
+      "context": "operator wording relayed, no original server grants",
+      "labels": [
+        [
+          "靈魂掠奪的罐頭",
+          "ITEM"
+        ],
+        [
+          "奧樂奇",
+          "PET_NAME_CANDIDATE"
+        ],
+        [
+          "奧特森",
+          "PET_NAME_CANDIDATE"
+        ],
+        [
+          "史凱勒頓",
+          "PET_NAME_CANDIDATE"
+        ],
+        [
+          "古斯特",
+          "PET_NAME_CANDIDATE"
+        ],
+        [
+          "太陽神的首飾LV3",
+          "ITEM"
+        ],
+        [
+          "布摩爾",
+          "PET_NAME_CANDIDATE"
+        ],
+        [
+          "憤怒改的罐頭",
+          "ITEM"
+        ]
+      ]
+    },
+    {
+      "year": 2015,
+      "receipt": 104,
+      "pointer": [
+        "sources",
+        1,
+        "reported_outcome"
+      ],
+      "lane": "TW_TAOZHU",
+      "context": "player box outcome, no named live pet",
+      "labels": [
+        [
+          "骨龍蛋",
+          "ITEM"
+        ]
+      ]
+    },
+    {
+      "year": 2016,
+      "receipt": 107,
+      "pointer": [
+        "beetle",
+        "source_child_beetle_label"
+      ],
+      "lane": "TW_TAOZHU",
+      "context": "player capture and ownership report",
+      "labels": [
+        [
+          "幼甲蟲",
+          "PET_FAMILY_OR_GENERIC"
+        ]
+      ]
+    },
+    {
+      "year": 2016,
+      "receipt": 107,
+      "pointer": [
+        "beetle",
+        "player_variant_descriptor"
+      ],
+      "lane": "TW_TAOZHU",
+      "context": "player variant descriptor",
+      "labels": [
+        [
+          "風地幼甲蟲",
+          "PET_FAMILY_OR_GENERIC"
+        ]
+      ]
+    },
+    {
+      "year": 2016,
+      "receipt": 107,
+      "pointer": [
+        "dragon_boat",
+        "monster_labels_by_group",
+        "elemental_snakes"
+      ],
+      "lane": "TW_TAOZHU",
+      "context": "enemy list, not award roster",
+      "labels": [
+        [
+          "卡恩格登",
+          "ENCOUNTER_LABEL"
+        ],
+        [
+          "卡恩米茲",
+          "ENCOUNTER_LABEL"
+        ],
+        [
+          "卡恩法爾",
+          "ENCOUNTER_LABEL"
+        ],
+        [
+          "卡恩修比",
+          "ENCOUNTER_LABEL"
+        ]
+      ]
+    },
+    {
+      "year": 2016,
+      "receipt": 107,
+      "pointer": [
+        "dragon_boat",
+        "monster_labels_by_group",
+        "three_headed_snakes"
+      ],
+      "lane": "TW_TAOZHU",
+      "context": "enemy list, not award roster",
+      "labels": [
+        [
+          "史奈克特",
+          "ENCOUNTER_LABEL"
+        ],
+        [
+          "葛利斯奈",
+          "ENCOUNTER_LABEL"
+        ],
+        [
+          "艾柏瑞",
+          "ENCOUNTER_LABEL"
+        ],
+        [
+          "拉特利",
+          "ENCOUNTER_LABEL"
+        ]
+      ]
+    },
+    {
+      "year": 2016,
+      "receipt": 107,
+      "pointer": [
+        "dragon_boat",
+        "monster_labels_by_group",
+        "angel_demon"
+      ],
+      "lane": "TW_TAOZHU",
+      "context": "enemy list, spelling variant only",
+      "labels": [
+        [
+          "司卡奇",
+          "ENCOUNTER_LABEL"
+        ],
+        [
+          "莫里卡其",
+          "ENCOUNTER_LABEL",
+          "莫里卡奇"
+        ]
+      ]
+    },
+    {
+      "year": 2016,
+      "receipt": 107,
+      "pointer": [
+        "dragon_boat",
+        "reward_item_labels"
+      ],
+      "lane": "TW_TAOZHU",
+      "context": "container labels",
+      "labels": [
+        [
+          "端午蛇袋子",
+          "ITEM"
+        ],
+        [
+          "2號變種狼人福袋",
+          "ITEM"
+        ],
+        [
+          "甲蟲禮盒",
+          "ITEM"
+        ]
+      ]
+    },
+    {
+      "year": 2016,
+      "receipt": 109,
+      "pointer": [
+        "sources",
+        0,
+        "qualified_claims",
+        0
+      ],
+      "lane": "TW_TAOZHU",
+      "context": "player task guide; enhancement and alias candidate",
+      "labels": [
+        [
+          "阿米朵",
+          "PET_NAME_CANDIDATE"
+        ],
+        [
+          "米暴",
+          "PET_CONTEXT_ALIAS"
+        ]
+      ]
+    },
+    {
+      "year": 2016,
+      "receipt": 109,
+      "pointer": [
+        "sources",
+        0,
+        "qualified_claims",
+        1
+      ],
+      "lane": "TW_TAOZHU",
+      "context": "player reports skill, not original function",
+      "labels": [
+        [
+          "始祖鳥",
+          "PET_FAMILY_OR_GENERIC"
+        ]
+      ]
+    },
+    {
+      "year": 2016,
+      "receipt": 109,
+      "pointer": [
+        "sources",
+        1,
+        "reported_reward_strings"
+      ],
+      "lane": "TW_TAOZHU",
+      "context": "2025-edited guide, named 2016 event only",
+      "labels": [
+        [
+          "貓頭鷹禮盒",
+          "ITEM"
+        ],
+        [
+          "古斯特禮盒",
+          "ITEM"
+        ],
+        [
+          "遠古的恐龍蛋(史凱勒頓)",
+          "ITEM"
+        ],
+        [
+          "憤怒改技能罐頭",
+          "ITEM"
+        ],
+        [
+          "希林南瓜禮盒",
+          "ITEM"
+        ],
+        [
+          "太陽首飾",
+          "ITEM"
+        ],
+        [
+          "哥達偽裝服",
+          "ITEM"
+        ]
+      ]
+    },
+    {
+      "year": 2017,
+      "receipt": 111,
+      "pointer": [
+        "planned_dadi_policy_from_period_2017_relay",
+        "early_new_char_login_blue_tiger_reward_name"
+      ],
+      "lane": "TW_TAOZHU_DADI",
+      "context": "first wave ending 2017-05-31, announcement relay",
+      "labels": [
+        [
+          "藍虎",
+          "PET_FAMILY_OR_GENERIC"
+        ]
+      ]
+    },
+    {
+      "year": 2017,
+      "receipt": 112,
+      "pointer": [
+        "announced_second_wave",
+        "reward_pet_label"
+      ],
+      "lane": "TW_TAOZHU_DADI",
+      "context": "second wave 2017-08-30 to 11-01, not new species",
+      "labels": [
+        [
+          "藍虎",
+          "PET_FAMILY_OR_GENERIC"
+        ]
+      ]
+    },
+    {
+      "year": 2017,
+      "receipt": 112,
+      "pointer": [
+        "announced_second_wave",
+        "reward_ride_proof_labels"
+      ],
+      "lane": "TW_TAOZHU_DADI",
+      "context": "separate riding proof",
+      "labels": [
+        [
+          "藍虎證",
+          "ITEM"
+        ],
+        [
+          "藍虎騎乘證明",
+          "ITEM"
+        ]
+      ]
+    },
+    {
+      "year": 2018,
+      "receipt": 114,
+      "pointer": [
+        "player_summer_task_candidate_pet_mentions"
+      ],
+      "lane": "TW_TAOZHU_UNSPECIFIED_REALM",
+      "context": "player capture and training guide, not new release",
+      "labels": [
+        [
+          "貝洛寶利",
+          "PET_NAME_CANDIDATE"
+        ],
+        [
+          "乎拔拔",
+          "PET_NAME_CANDIDATE",
+          "呼拔拔"
+        ],
+        [
+          "紅虎",
+          "PET_FAMILY_OR_GENERIC"
+        ],
+        [
+          "綠龜",
+          "PET_FAMILY_OR_GENERIC"
+        ],
+        [
+          "凱比特",
+          "PET_NAME_CANDIDATE"
+        ],
+        [
+          "姆伊",
+          "PET_NAME_CANDIDATE"
+        ]
+      ]
+    },
+    {
+      "year": 2018,
+      "receipt": 114,
+      "pointer": [
+        "player_summer_task_candidate_pet_mentions",
+        2,
+        "linked_labels_in_player_text"
+      ],
+      "lane": "TW_TAOZHU_UNSPECIFIED_REALM",
+      "context": "player name-change context, not identity equivalence",
+      "labels": [
+        [
+          "格魯西斯",
+          "PET_CONTEXT_ALIAS"
+        ],
+        [
+          "加特利奴",
+          "PET_CONTEXT_ALIAS"
+        ],
+        [
+          "加特力奴",
+          "PET_CONTEXT_ALIAS"
+        ]
+      ]
+    },
+    {
+      "year": 2018,
+      "receipt": 114,
+      "pointer": [
+        "player_summer_item_mentions_not_native_pets"
+      ],
+      "lane": "TW_TAOZHU_UNSPECIFIED_REALM",
+      "context": "enhancement item, badge, quest item",
+      "labels": [
+        [
+          "凱恩（青龍）強化血清",
+          "ITEM"
+        ],
+        [
+          "胖胖龍徽章",
+          "ITEM"
+        ],
+        [
+          "毒磨菇",
+          "ITEM"
+        ]
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "group": 0,
+      "position": 0,
+      "year": 2014,
+      "receipt": 98,
+      "lane": "TW_TAOZHU",
+      "name": "三頭蛇",
+      "role": "PET_FAMILY_OR_GENERIC",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 1,
+      "position": 0,
+      "year": 2014,
+      "receipt": 98,
+      "lane": "TW_TAOZHU",
+      "name": "2D狼人",
+      "role": "PET_FAMILY_OR_GENERIC",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 1,
+      "position": 1,
+      "year": 2014,
+      "receipt": 98,
+      "lane": "TW_TAOZHU",
+      "name": "薩格魯",
+      "role": "PET_NAME_CANDIDATE",
+      "spellings": [
+        "薩格魯",
+        "萨格鲁"
+      ],
+      "direct": {
+        "tw75": [
+          {
+            "name": "薩格魯",
+            "template_id": 778,
+            "graphic": 100873,
+            "row_sha256": "951b689a8fc4ee6630bd3733fcfc16faabeb5094fc2dcaac355b2a6ed889e0e4",
+            "elements": [
+              0,
+              50,
+              50,
+              0
+            ],
+            "skill_slots": [
+              1,
+              2,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 234,
+            "name": "薩格魯",
+            "portrait_alias": 28197,
+            "row_sha256": "1b7c1a214e320add7c517e53334ec8a3b0214b4580fd1d9458d8dd5b7da44470"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 234,
+            "name": "薩格魯",
+            "portrait_alias": 28197,
+            "row_sha256": "1b7c1a214e320add7c517e53334ec8a3b0214b4580fd1d9458d8dd5b7da44470"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 234,
+            "name": "薩格魯",
+            "portrait_alias": 28197,
+            "row_sha256": "1b7c1a214e320add7c517e53334ec8a3b0214b4580fd1d9458d8dd5b7da44470"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 234,
+            "name": "薩格魯",
+            "portrait_alias": 28197,
+            "row_sha256": "1b7c1a214e320add7c517e53334ec8a3b0214b4580fd1d9458d8dd5b7da44470"
+          }
+        ],
+        "tw85_spr": [],
+        "cn50": [
+          {
+            "name": "萨格鲁",
+            "ordinal": 234,
+            "graphics": [
+              100873,
+              101229
+            ],
+            "portrait_sha256": "130fee087050e3cb96984d589c262755bccc25c139a34105533b11440aaab52b"
+          }
+        ]
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 1,
+      "position": 2,
+      "year": 2014,
+      "receipt": 98,
+      "lane": "TW_TAOZHU",
+      "name": "黑虎／強化黑虎",
+      "role": "PET_FAMILY_OR_GENERIC",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 2,
+      "position": 0,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "CN_CINS_2_5",
+      "name": "三色龙魂宠物蛋",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 2,
+      "position": 1,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "CN_CINS_2_5",
+      "name": "新春宠物蛋",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 2,
+      "position": 2,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "CN_CINS_2_5",
+      "name": "水幻飞龙宠物蛋",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 2,
+      "position": 3,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "CN_CINS_2_5",
+      "name": "玄武蛋",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 2,
+      "position": 4,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "CN_CINS_2_5",
+      "name": "扑满乌力",
+      "role": "PET_NAME_CANDIDATE",
+      "spellings": [
+        "扑满乌力",
+        "撲滿烏力"
+      ],
+      "direct": {
+        "tw75": [
+          {
+            "name": "撲滿烏力",
+            "template_id": 725,
+            "graphic": 100820,
+            "row_sha256": "59b35383afe337ab7379793b4daffe21bcd055eb27a096297187474816618fbd",
+            "elements": [
+              0,
+              0,
+              0,
+              100
+            ],
+            "skill_slots": [
+              1,
+              2,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 181,
+            "name": "撲滿烏力",
+            "portrait_alias": 28006,
+            "row_sha256": "005faa88a1f3f54e184f67f9c6eba04afd118f51ef0cc9e02d469499351af4c2"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 181,
+            "name": "撲滿烏力",
+            "portrait_alias": 28006,
+            "row_sha256": "005faa88a1f3f54e184f67f9c6eba04afd118f51ef0cc9e02d469499351af4c2"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 181,
+            "name": "撲滿烏力",
+            "portrait_alias": 28006,
+            "row_sha256": "005faa88a1f3f54e184f67f9c6eba04afd118f51ef0cc9e02d469499351af4c2"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 181,
+            "name": "撲滿烏力",
+            "portrait_alias": 28006,
+            "row_sha256": "005faa88a1f3f54e184f67f9c6eba04afd118f51ef0cc9e02d469499351af4c2"
+          }
+        ],
+        "tw85_spr": [],
+        "cn50": [
+          {
+            "name": "扑满乌力",
+            "ordinal": 181,
+            "graphics": [
+              100820
+            ],
+            "portrait_sha256": "4956acdaf08cfbc9bba9a67ac8fbc06a6b97796850b2055bf03e7e17c26fc5cc"
+          }
+        ]
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 2,
+      "position": 5,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "CN_CINS_2_5",
+      "name": "新品暴",
+      "role": "PET_FAMILY_OR_GENERIC",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 2,
+      "position": 6,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "CN_CINS_2_5",
+      "name": "四圣兽",
+      "role": "PET_FAMILY_OR_GENERIC",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 2,
+      "position": 7,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "CN_CINS_2_5",
+      "name": "水飞",
+      "role": "PET_FAMILY_OR_GENERIC",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 2,
+      "position": 8,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "CN_CINS_2_5",
+      "name": "恶魔宠物蛋",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 2,
+      "position": 9,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "CN_CINS_2_5",
+      "name": "军绿虎骑证",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 2,
+      "position": 10,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "CN_CINS_2_5",
+      "name": "葛雷基欧",
+      "role": "PET_NAME_CANDIDATE",
+      "spellings": [
+        "葛雷基欧",
+        "葛雷基歐"
+      ],
+      "direct": {
+        "tw75": [
+          {
+            "name": "葛雷基歐",
+            "template_id": 901,
+            "graphic": 101152,
+            "row_sha256": "448b6d664c3084910b474d35c43cad5e5d25cf2dec8dafa7689c25c3df768909",
+            "elements": [
+              80,
+              0,
+              0,
+              20
+            ],
+            "skill_slots": [
+              1,
+              2,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 281,
+            "name": "葛雷基歐",
+            "portrait_alias": 28343,
+            "row_sha256": "d2da41ad33afe73742e70b686cdd54aff65a06fdf14c7c7ca5e0a3ceb53ebc82"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 281,
+            "name": "葛雷基歐",
+            "portrait_alias": 28343,
+            "row_sha256": "d2da41ad33afe73742e70b686cdd54aff65a06fdf14c7c7ca5e0a3ceb53ebc82"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 281,
+            "name": "葛雷基歐",
+            "portrait_alias": 28343,
+            "row_sha256": "d2da41ad33afe73742e70b686cdd54aff65a06fdf14c7c7ca5e0a3ceb53ebc82"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 281,
+            "name": "葛雷基歐",
+            "portrait_alias": 28343,
+            "row_sha256": "d2da41ad33afe73742e70b686cdd54aff65a06fdf14c7c7ca5e0a3ceb53ebc82"
+          }
+        ],
+        "tw85_spr": [],
+        "cn50": [
+          {
+            "name": "葛雷基欧",
+            "ordinal": 281,
+            "graphics": [
+              101152,
+              101276
+            ],
+            "portrait_sha256": "bedc7c5ede6f78233fb0b633fa5cf03c8368318b78189246efc228375fff17b5"
+          }
+        ]
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 2,
+      "position": 11,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "CN_CINS_2_5",
+      "name": "威咔宠物蛋",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 2,
+      "position": 12,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "CN_CINS_2_5",
+      "name": "四色兔子宠物蛋",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 3,
+      "position": 0,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "CN_CINS_8_5",
+      "name": "格鲁西斯",
+      "role": "PET_NAME_CANDIDATE",
+      "spellings": [
+        "格鲁西斯",
+        "格魯西斯"
+      ],
+      "direct": {
+        "tw75": [
+          {
+            "name": "格魯西斯",
+            "template_id": 193,
+            "graphic": 100329,
+            "row_sha256": "eb872db644b4397180f4c0685d85b5169c4409e6f24ea208a99ed731f289b161",
+            "elements": [
+              0,
+              0,
+              80,
+              20
+            ],
+            "skill_slots": [
+              1,
+              2,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 79,
+            "name": "格魯西斯",
+            "portrait_alias": 28193,
+            "row_sha256": "399b0470646ec952db084a756c5fb2513398cd132922fc5acd825fe1065cb39b"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 79,
+            "name": "格魯西斯",
+            "portrait_alias": 28193,
+            "row_sha256": "399b0470646ec952db084a756c5fb2513398cd132922fc5acd825fe1065cb39b"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 79,
+            "name": "格魯西斯",
+            "portrait_alias": 28193,
+            "row_sha256": "399b0470646ec952db084a756c5fb2513398cd132922fc5acd825fe1065cb39b"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 79,
+            "name": "格魯西斯",
+            "portrait_alias": 28193,
+            "row_sha256": "399b0470646ec952db084a756c5fb2513398cd132922fc5acd825fe1065cb39b"
+          }
+        ],
+        "tw85_spr": [],
+        "cn50": [
+          {
+            "name": "格鲁西斯",
+            "ordinal": 79,
+            "graphics": [
+              100329,
+              100718
+            ],
+            "portrait_sha256": "96cfe9122c7583d8fcb8f605c608f3a9f2057b6409073e19d81b9c1a8efe01eb"
+          }
+        ]
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 3,
+      "position": 1,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "CN_CINS_8_5",
+      "name": "军绿虎骑宠套",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 3,
+      "position": 2,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "CN_CINS_8_5",
+      "name": "白狼骑宠证书",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 3,
+      "position": 3,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "CN_CINS_8_5",
+      "name": "黑飞暴骑宠套",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 4,
+      "position": 0,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "TW_TAOZHU_202_REPORTED",
+      "name": "甘巴爹玉兔",
+      "role": "QUEST_LABEL",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 4,
+      "position": 1,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "TW_TAOZHU_202_REPORTED",
+      "name": "瑪斯貝卡",
+      "role": "PET_NAME_CANDIDATE",
+      "spellings": [
+        "瑪斯貝卡",
+        "玛斯贝卡"
+      ],
+      "direct": {
+        "tw75": [
+          {
+            "name": "瑪斯貝卡",
+            "template_id": 779,
+            "graphic": 100874,
+            "row_sha256": "af26f7b4f332a1279aa61f986a13978214bb6578674961fa97eb578f5bc1e349",
+            "elements": [
+              0,
+              0,
+              50,
+              50
+            ],
+            "skill_slots": [
+              1,
+              2,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 235,
+            "name": "瑪斯貝卡",
+            "portrait_alias": 28198,
+            "row_sha256": "565f3ecba6548de8af0dd3cb618823846391b2505b2913ad6d9443556f3f47d9"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 235,
+            "name": "瑪斯貝卡",
+            "portrait_alias": 28198,
+            "row_sha256": "565f3ecba6548de8af0dd3cb618823846391b2505b2913ad6d9443556f3f47d9"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 235,
+            "name": "瑪斯貝卡",
+            "portrait_alias": 28198,
+            "row_sha256": "565f3ecba6548de8af0dd3cb618823846391b2505b2913ad6d9443556f3f47d9"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 235,
+            "name": "瑪斯貝卡",
+            "portrait_alias": 28198,
+            "row_sha256": "565f3ecba6548de8af0dd3cb618823846391b2505b2913ad6d9443556f3f47d9"
+          }
+        ],
+        "tw85_spr": [],
+        "cn50": [
+          {
+            "name": "玛斯贝卡",
+            "ordinal": 235,
+            "graphics": [
+              100874,
+              101230
+            ],
+            "portrait_sha256": "7af09711f277cdce7cc003e4813c6f100bb686dc5f2a63d0f51a76b61a408075"
+          }
+        ]
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 4,
+      "position": 2,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "TW_TAOZHU_202_REPORTED",
+      "name": "摩洛索思",
+      "role": "PET_NAME_CANDIDATE",
+      "spellings": [
+        "摩洛索思"
+      ],
+      "direct": {
+        "tw75": [],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 488,
+            "name": "摩洛索思",
+            "portrait_alias": 28584,
+            "row_sha256": "ad39dc823ea506cf99f3bbae9c8c671de78c284918adb9256b430eeaa4844907"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 488,
+            "name": "摩洛索思",
+            "portrait_alias": 28584,
+            "row_sha256": "ad39dc823ea506cf99f3bbae9c8c671de78c284918adb9256b430eeaa4844907"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 488,
+            "name": "摩洛索思",
+            "portrait_alias": 28584,
+            "row_sha256": "ad39dc823ea506cf99f3bbae9c8c671de78c284918adb9256b430eeaa4844907"
+          }
+        ],
+        "tw85_spr": [
+          {
+            "graphic": 101690,
+            "program_names": {
+              "sa.exe": "摩洛索思",
+              "sb.exe": "摩洛索思",
+              "sc.exe": null,
+              "sd.exe": "摩洛索思"
+            },
+            "conflict": false
+          },
+          {
+            "graphic": 101793,
+            "program_names": {
+              "sa.exe": "摩洛索思",
+              "sb.exe": "摩洛索思",
+              "sc.exe": null,
+              "sd.exe": "摩洛索思"
+            },
+            "conflict": false
+          },
+          {
+            "graphic": 101841,
+            "program_names": {
+              "sa.exe": "摩洛索思",
+              "sb.exe": "摩洛索思",
+              "sc.exe": null,
+              "sd.exe": "摩洛索思"
+            },
+            "conflict": false
+          },
+          {
+            "graphic": 101884,
+            "program_names": {
+              "sa.exe": "摩洛索思",
+              "sb.exe": "摩洛索思",
+              "sc.exe": null,
+              "sd.exe": "摩洛索思"
+            },
+            "conflict": false
+          },
+          {
+            "graphic": 101886,
+            "program_names": {
+              "sa.exe": "摩洛索思",
+              "sb.exe": "摩洛索思",
+              "sc.exe": null,
+              "sd.exe": "摩洛索思"
+            },
+            "conflict": false
+          },
+          {
+            "graphic": 101905,
+            "program_names": {
+              "sa.exe": "摩洛索思",
+              "sb.exe": "摩洛索思",
+              "sc.exe": null,
+              "sd.exe": "摩洛索思"
+            },
+            "conflict": false
+          }
+        ],
+        "cn50": []
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 4,
+      "position": 3,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "TW_TAOZHU_202_REPORTED",
+      "name": "2D狼人",
+      "role": "PET_FAMILY_OR_GENERIC",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 4,
+      "position": 4,
+      "year": 2015,
+      "receipt": 100,
+      "lane": "TW_TAOZHU_202_REPORTED",
+      "name": "大地之眼",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 5,
+      "position": 0,
+      "year": 2015,
+      "receipt": 102,
+      "lane": "TW_TAOZHU",
+      "name": "三頭蛇禮盒",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 6,
+      "position": 0,
+      "year": 2015,
+      "receipt": 102,
+      "lane": "TW_TAOZHU",
+      "name": "摩洛索思（麒麟）",
+      "role": "PET_FAMILY_OR_GENERIC",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 7,
+      "position": 0,
+      "year": 2017,
+      "receipt": 102,
+      "lane": "TW_TAOZHU_UNSPECIFIED_REALM",
+      "name": "天使蛇司卡奇",
+      "role": "PET_NAME_CANDIDATE",
+      "spellings": [
+        "天使蛇司卡奇"
+      ],
+      "direct": {
+        "tw75": [],
+        "tw85_album": [],
+        "tw85_spr": [],
+        "cn50": []
+      },
+      "related_label": "司卡奇",
+      "related_candidates": {
+        "tw75": [],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 540,
+            "name": "司卡奇",
+            "portrait_alias": 28637,
+            "row_sha256": "5c0729641e42a3abae2a0b4658e4bd7e4a9939eece019b5d2b2977e99c9c6660"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 540,
+            "name": "司卡奇",
+            "portrait_alias": 28637,
+            "row_sha256": "5c0729641e42a3abae2a0b4658e4bd7e4a9939eece019b5d2b2977e99c9c6660"
+          }
+        ],
+        "tw85_spr": [
+          {
+            "graphic": 101965,
+            "program_names": {
+              "sa.exe": "司卡奇",
+              "sb.exe": "布里斯卡",
+              "sc.exe": null,
+              "sd.exe": null
+            },
+            "conflict": true
+          },
+          {
+            "graphic": 101990,
+            "program_names": {
+              "sa.exe": "司卡奇",
+              "sb.exe": "司卡奇",
+              "sc.exe": null,
+              "sd.exe": null
+            },
+            "conflict": false
+          }
+        ],
+        "cn50": []
+      },
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 7,
+      "position": 1,
+      "year": 2017,
+      "receipt": 102,
+      "lane": "TW_TAOZHU_UNSPECIFIED_REALM",
+      "name": "惡魔蛇莫里卡奇",
+      "role": "PET_NAME_CANDIDATE",
+      "spellings": [
+        "惡魔蛇莫里卡奇",
+        "恶魔蛇莫里卡奇"
+      ],
+      "direct": {
+        "tw75": [],
+        "tw85_album": [],
+        "tw85_spr": [],
+        "cn50": []
+      },
+      "related_label": "莫里卡奇",
+      "related_candidates": {
+        "tw75": [],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 541,
+            "name": "莫里卡奇",
+            "portrait_alias": 28638,
+            "row_sha256": "9961ecb0e09c668cc6329c4a0b8f0482f2b7247b959340b604f7bef6e9ff9ae0"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 541,
+            "name": "莫里卡奇",
+            "portrait_alias": 28638,
+            "row_sha256": "9961ecb0e09c668cc6329c4a0b8f0482f2b7247b959340b604f7bef6e9ff9ae0"
+          }
+        ],
+        "tw85_spr": [
+          {
+            "graphic": 101966,
+            "program_names": {
+              "sa.exe": "莫里卡奇",
+              "sb.exe": "邦斯卡",
+              "sc.exe": null,
+              "sd.exe": null
+            },
+            "conflict": true
+          },
+          {
+            "graphic": 101991,
+            "program_names": {
+              "sa.exe": "莫里卡奇",
+              "sb.exe": "莫里卡奇",
+              "sc.exe": null,
+              "sd.exe": null
+            },
+            "conflict": false
+          }
+        ],
+        "cn50": []
+      },
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 8,
+      "position": 0,
+      "year": 2015,
+      "receipt": 103,
+      "lane": "TW_TAOZHU",
+      "name": "魯道夫",
+      "role": "AMBIGUOUS_OBJECT",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 8,
+      "position": 1,
+      "year": 2015,
+      "receipt": 103,
+      "lane": "TW_TAOZHU",
+      "name": "冠軍豬",
+      "role": "AMBIGUOUS_OBJECT",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 9,
+      "position": 0,
+      "year": 2015,
+      "receipt": 103,
+      "lane": "TW_TAOZHU",
+      "name": "庫胖達",
+      "role": "AMBIGUOUS_OBJECT",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 9,
+      "position": 1,
+      "year": 2015,
+      "receipt": 103,
+      "lane": "TW_TAOZHU",
+      "name": "胖達利",
+      "role": "AMBIGUOUS_OBJECT",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 9,
+      "position": 2,
+      "year": 2015,
+      "receipt": 103,
+      "lane": "TW_TAOZHU",
+      "name": "布伊酷",
+      "role": "AMBIGUOUS_OBJECT",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 9,
+      "position": 3,
+      "year": 2015,
+      "receipt": 103,
+      "lane": "TW_TAOZHU",
+      "name": "魯道夫",
+      "role": "AMBIGUOUS_OBJECT",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 9,
+      "position": 4,
+      "year": 2015,
+      "receipt": 103,
+      "lane": "TW_TAOZHU",
+      "name": "麋鹿服",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 10,
+      "position": 0,
+      "year": 2015,
+      "receipt": 103,
+      "lane": "TW_TAOZHU",
+      "name": "魯道夫的韁繩",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 10,
+      "position": 1,
+      "year": 2015,
+      "receipt": 103,
+      "lane": "TW_TAOZHU",
+      "name": "胖達利盒子",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 10,
+      "position": 2,
+      "year": 2015,
+      "receipt": 103,
+      "lane": "TW_TAOZHU",
+      "name": "庫胖達盒子",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 10,
+      "position": 3,
+      "year": 2015,
+      "receipt": 103,
+      "lane": "TW_TAOZHU",
+      "name": "獎杯 冠軍豬",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 10,
+      "position": 4,
+      "year": 2015,
+      "receipt": 103,
+      "lane": "TW_TAOZHU",
+      "name": "麋鹿套裝",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 10,
+      "position": 5,
+      "year": 2015,
+      "receipt": 103,
+      "lane": "TW_TAOZHU",
+      "name": "太陽神首飾Lv3",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 11,
+      "position": 0,
+      "year": 2015,
+      "receipt": 104,
+      "lane": "TW_TAOZHU",
+      "name": "靈魂掠奪的罐頭",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 11,
+      "position": 1,
+      "year": 2015,
+      "receipt": 104,
+      "lane": "TW_TAOZHU",
+      "name": "奧樂奇",
+      "role": "PET_NAME_CANDIDATE",
+      "spellings": [
+        "奧樂奇",
+        "奥樂奇"
+      ],
+      "direct": {
+        "tw75": [],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 568,
+            "name": "奧樂奇",
+            "portrait_alias": 28664,
+            "row_sha256": "1da97cea0381d07f52fb083bffa44461cc42a7e422780020931f6ba53c45b34c"
+          }
+        ],
+        "tw85_spr": [
+          {
+            "graphic": 102019,
+            "program_names": {
+              "sa.exe": "奧樂奇",
+              "sb.exe": null,
+              "sc.exe": null,
+              "sd.exe": null
+            },
+            "conflict": false
+          }
+        ],
+        "cn50": []
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 11,
+      "position": 2,
+      "year": 2015,
+      "receipt": 104,
+      "lane": "TW_TAOZHU",
+      "name": "奧特森",
+      "role": "PET_NAME_CANDIDATE",
+      "spellings": [
+        "奧特森",
+        "奥特森"
+      ],
+      "direct": {
+        "tw75": [],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 567,
+            "name": "奧特森",
+            "portrait_alias": 28663,
+            "row_sha256": "31f9723ba6358212c52891f36f44d6ae10f9583e122d80b4e63ba24ba3cb80c1"
+          }
+        ],
+        "tw85_spr": [
+          {
+            "graphic": 102018,
+            "program_names": {
+              "sa.exe": "奧特森",
+              "sb.exe": null,
+              "sc.exe": null,
+              "sd.exe": null
+            },
+            "conflict": false
+          }
+        ],
+        "cn50": []
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 11,
+      "position": 3,
+      "year": 2015,
+      "receipt": 104,
+      "lane": "TW_TAOZHU",
+      "name": "史凱勒頓",
+      "role": "PET_NAME_CANDIDATE",
+      "spellings": [
+        "史凱勒頓",
+        "史凯勒顿"
+      ],
+      "direct": {
+        "tw75": [],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 287,
+            "name": "史凱勒頓",
+            "portrait_alias": 28355,
+            "row_sha256": "40b8b63ff09e8a0b1c84a63afb6e9568515fdd0cabaf33bcd9944d26edc1622e"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 287,
+            "name": "史凱勒頓",
+            "portrait_alias": 28355,
+            "row_sha256": "40b8b63ff09e8a0b1c84a63afb6e9568515fdd0cabaf33bcd9944d26edc1622e"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 287,
+            "name": "史凱勒頓",
+            "portrait_alias": 28355,
+            "row_sha256": "40b8b63ff09e8a0b1c84a63afb6e9568515fdd0cabaf33bcd9944d26edc1622e"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 287,
+            "name": "史凱勒頓",
+            "portrait_alias": 28355,
+            "row_sha256": "40b8b63ff09e8a0b1c84a63afb6e9568515fdd0cabaf33bcd9944d26edc1622e"
+          }
+        ],
+        "tw85_spr": [],
+        "cn50": [
+          {
+            "name": "史凯勒顿",
+            "ordinal": 287,
+            "graphics": [
+              101158,
+              101282
+            ],
+            "portrait_sha256": "8f91c1a287d8078be1689e8a98520875ad152bc777c1cb9583f70ffde3282913"
+          }
+        ]
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 11,
+      "position": 4,
+      "year": 2015,
+      "receipt": 104,
+      "lane": "TW_TAOZHU",
+      "name": "古斯特",
+      "role": "PET_NAME_CANDIDATE",
+      "spellings": [
+        "古斯特"
+      ],
+      "direct": {
+        "tw75": [],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 288,
+            "name": "古斯特",
+            "portrait_alias": 28354,
+            "row_sha256": "685f74d4485f8fd57bb0c6dac1b51fd31cb02c1b0560160c0b62be698e7f7047"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 288,
+            "name": "古斯特",
+            "portrait_alias": 28354,
+            "row_sha256": "685f74d4485f8fd57bb0c6dac1b51fd31cb02c1b0560160c0b62be698e7f7047"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 288,
+            "name": "古斯特",
+            "portrait_alias": 28354,
+            "row_sha256": "685f74d4485f8fd57bb0c6dac1b51fd31cb02c1b0560160c0b62be698e7f7047"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 288,
+            "name": "古斯特",
+            "portrait_alias": 28354,
+            "row_sha256": "685f74d4485f8fd57bb0c6dac1b51fd31cb02c1b0560160c0b62be698e7f7047"
+          }
+        ],
+        "tw85_spr": [],
+        "cn50": [
+          {
+            "name": "古斯特",
+            "ordinal": 288,
+            "graphics": [
+              101159,
+              101283
+            ],
+            "portrait_sha256": "188f51b87e7766d177a95b0a5a75dea47d6696d61df77230811aa05d1f5ccf7c"
+          }
+        ]
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 11,
+      "position": 5,
+      "year": 2015,
+      "receipt": 104,
+      "lane": "TW_TAOZHU",
+      "name": "太陽神的首飾LV3",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 11,
+      "position": 6,
+      "year": 2015,
+      "receipt": 104,
+      "lane": "TW_TAOZHU",
+      "name": "布摩爾",
+      "role": "PET_NAME_CANDIDATE",
+      "spellings": [
+        "布摩爾",
+        "布摩尔"
+      ],
+      "direct": {
+        "tw75": [],
+        "tw85_album": [],
+        "tw85_spr": [],
+        "cn50": []
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 11,
+      "position": 7,
+      "year": 2015,
+      "receipt": 104,
+      "lane": "TW_TAOZHU",
+      "name": "憤怒改的罐頭",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 12,
+      "position": 0,
+      "year": 2015,
+      "receipt": 104,
+      "lane": "TW_TAOZHU",
+      "name": "骨龍蛋",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 13,
+      "position": 0,
+      "year": 2016,
+      "receipt": 107,
+      "lane": "TW_TAOZHU",
+      "name": "幼甲蟲",
+      "role": "PET_FAMILY_OR_GENERIC",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 14,
+      "position": 0,
+      "year": 2016,
+      "receipt": 107,
+      "lane": "TW_TAOZHU",
+      "name": "風地幼甲蟲",
+      "role": "PET_FAMILY_OR_GENERIC",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 15,
+      "position": 0,
+      "year": 2016,
+      "receipt": 107,
+      "lane": "TW_TAOZHU",
+      "name": "卡恩格登",
+      "role": "ENCOUNTER_LABEL",
+      "spellings": [
+        "卡恩格登"
+      ],
+      "direct": {
+        "tw75": [
+          {
+            "name": "卡恩格登",
+            "template_id": 957,
+            "graphic": 101284,
+            "row_sha256": "08032f6d4ca13e4ed21e41325aae138c95eb50bbf1e1646be78616f1c6c3a17f",
+            "elements": [
+              70,
+              30,
+              0,
+              0
+            ],
+            "skill_slots": [
+              1,
+              2,
+              503,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 289,
+            "name": "卡恩格登",
+            "portrait_alias": 28358,
+            "row_sha256": "9c9ed0b35ca978d9a8b3f88c6758897c22ddb27689cc547e49cf71493a5e85a2"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 289,
+            "name": "卡恩格登",
+            "portrait_alias": 28358,
+            "row_sha256": "9c9ed0b35ca978d9a8b3f88c6758897c22ddb27689cc547e49cf71493a5e85a2"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 289,
+            "name": "卡恩格登",
+            "portrait_alias": 28358,
+            "row_sha256": "9c9ed0b35ca978d9a8b3f88c6758897c22ddb27689cc547e49cf71493a5e85a2"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 289,
+            "name": "卡恩格登",
+            "portrait_alias": 28358,
+            "row_sha256": "9c9ed0b35ca978d9a8b3f88c6758897c22ddb27689cc547e49cf71493a5e85a2"
+          }
+        ],
+        "tw85_spr": [],
+        "cn50": [
+          {
+            "name": "卡恩格登",
+            "ordinal": 289,
+            "graphics": [
+              101160,
+              101284
+            ],
+            "portrait_sha256": "4bab2480f655b8312b09893e7d03d717d09c0a0443304023c045d69918185a51"
+          }
+        ]
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 15,
+      "position": 1,
+      "year": 2016,
+      "receipt": 107,
+      "lane": "TW_TAOZHU",
+      "name": "卡恩米茲",
+      "role": "ENCOUNTER_LABEL",
+      "spellings": [
+        "卡恩米茲"
+      ],
+      "direct": {
+        "tw75": [
+          {
+            "name": "卡恩米茲",
+            "template_id": 958,
+            "graphic": 101285,
+            "row_sha256": "23720a2f84e2ac4a3ba7c8c4312df3188c0419d6790508e6079404f6aef84870",
+            "elements": [
+              0,
+              70,
+              30,
+              0
+            ],
+            "skill_slots": [
+              1,
+              2,
+              503,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 290,
+            "name": "卡恩米茲",
+            "portrait_alias": 28356,
+            "row_sha256": "5d16a11e33fd5ee4ce97262f6d947ac25149b3789af8efd5dbe381e821728c9d"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 290,
+            "name": "卡恩米茲",
+            "portrait_alias": 28356,
+            "row_sha256": "5d16a11e33fd5ee4ce97262f6d947ac25149b3789af8efd5dbe381e821728c9d"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 290,
+            "name": "卡恩米茲",
+            "portrait_alias": 28356,
+            "row_sha256": "5d16a11e33fd5ee4ce97262f6d947ac25149b3789af8efd5dbe381e821728c9d"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 290,
+            "name": "卡恩米茲",
+            "portrait_alias": 28356,
+            "row_sha256": "5d16a11e33fd5ee4ce97262f6d947ac25149b3789af8efd5dbe381e821728c9d"
+          }
+        ],
+        "tw85_spr": [],
+        "cn50": []
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 15,
+      "position": 2,
+      "year": 2016,
+      "receipt": 107,
+      "lane": "TW_TAOZHU",
+      "name": "卡恩法爾",
+      "role": "ENCOUNTER_LABEL",
+      "spellings": [
+        "卡恩法爾",
+        "卡恩法尔"
+      ],
+      "direct": {
+        "tw75": [
+          {
+            "name": "卡恩法爾",
+            "template_id": 959,
+            "graphic": 101286,
+            "row_sha256": "bec61ab148ae7eddcf445c5f6cc9c972747a922486f875c4ec733311d0274e01",
+            "elements": [
+              0,
+              0,
+              70,
+              30
+            ],
+            "skill_slots": [
+              1,
+              2,
+              503,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 291,
+            "name": "卡恩法爾",
+            "portrait_alias": 28357,
+            "row_sha256": "3d689e90d8d0d285e55b66309ce111b4dc15aa29c7f4a31c49e8fd98389811e9"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 291,
+            "name": "卡恩法爾",
+            "portrait_alias": 28357,
+            "row_sha256": "3d689e90d8d0d285e55b66309ce111b4dc15aa29c7f4a31c49e8fd98389811e9"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 291,
+            "name": "卡恩法爾",
+            "portrait_alias": 28357,
+            "row_sha256": "3d689e90d8d0d285e55b66309ce111b4dc15aa29c7f4a31c49e8fd98389811e9"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 291,
+            "name": "卡恩法爾",
+            "portrait_alias": 28357,
+            "row_sha256": "3d689e90d8d0d285e55b66309ce111b4dc15aa29c7f4a31c49e8fd98389811e9"
+          }
+        ],
+        "tw85_spr": [],
+        "cn50": [
+          {
+            "name": "卡恩法尔",
+            "ordinal": 291,
+            "graphics": [
+              101162,
+              101286
+            ],
+            "portrait_sha256": "b99bc8caec4242a5bba4eac388ada24a824a6a40d5dc595baab721368ea604bf"
+          }
+        ]
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 15,
+      "position": 3,
+      "year": 2016,
+      "receipt": 107,
+      "lane": "TW_TAOZHU",
+      "name": "卡恩修比",
+      "role": "ENCOUNTER_LABEL",
+      "spellings": [
+        "卡恩修比"
+      ],
+      "direct": {
+        "tw75": [
+          {
+            "name": "卡恩修比",
+            "template_id": 960,
+            "graphic": 101287,
+            "row_sha256": "b02a5831a9089b4dd36f80a9ae0b4cb063eed21ac3af2c919c6c46974f481098",
+            "elements": [
+              30,
+              0,
+              0,
+              70
+            ],
+            "skill_slots": [
+              1,
+              2,
+              503,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 292,
+            "name": "卡恩修比",
+            "portrait_alias": 28359,
+            "row_sha256": "ccd8d90282fea56caaa1f064b8a7e8a397edf12ff9ab2356bf1d95852d11ffcc"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 292,
+            "name": "卡恩修比",
+            "portrait_alias": 28359,
+            "row_sha256": "ccd8d90282fea56caaa1f064b8a7e8a397edf12ff9ab2356bf1d95852d11ffcc"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 292,
+            "name": "卡恩修比",
+            "portrait_alias": 28359,
+            "row_sha256": "ccd8d90282fea56caaa1f064b8a7e8a397edf12ff9ab2356bf1d95852d11ffcc"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 292,
+            "name": "卡恩修比",
+            "portrait_alias": 28359,
+            "row_sha256": "ccd8d90282fea56caaa1f064b8a7e8a397edf12ff9ab2356bf1d95852d11ffcc"
+          }
+        ],
+        "tw85_spr": [],
+        "cn50": [
+          {
+            "name": "卡恩修比",
+            "ordinal": 292,
+            "graphics": [
+              101163,
+              101287
+            ],
+            "portrait_sha256": "75464b9444006c0685b959559cc726db84dd5f7ddcd6355314f6cdab47b56107"
+          }
+        ]
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 16,
+      "position": 0,
+      "year": 2016,
+      "receipt": 107,
+      "lane": "TW_TAOZHU",
+      "name": "史奈克特",
+      "role": "ENCOUNTER_LABEL",
+      "spellings": [
+        "史奈克特"
+      ],
+      "direct": {
+        "tw75": [
+          {
+            "name": "史奈克特",
+            "template_id": 135,
+            "graphic": 101722,
+            "row_sha256": "4b8344f346c27329f8f3af5b741a1925e91d994f48bc266edf83d08908cb4e82",
+            "elements": [
+              90,
+              10,
+              0,
+              0
+            ],
+            "skill_slots": [
+              1,
+              2,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          },
+          {
+            "name": "史奈克特",
+            "template_id": 993,
+            "graphic": 101448,
+            "row_sha256": "5db4704b9a7966812e0e104fa186044f020304af224e4c472d2c1009a009fd16",
+            "elements": [
+              70,
+              0,
+              0,
+              30
+            ],
+            "skill_slots": [
+              1,
+              2,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 312,
+            "name": "史奈克特",
+            "portrait_alias": 28379,
+            "row_sha256": "c286eecacbc6e36f0c1c78ca93d61c79d791dad4659bd5b3b562755b5a925f09"
+          },
+          {
+            "program": "sa.exe",
+            "slot": 438,
+            "name": "史奈克特",
+            "portrait_alias": 28506,
+            "row_sha256": "3233c071230675d516fe50d263ff93549fc771ac7822b8ff068085ceed894d1e"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 312,
+            "name": "史奈克特",
+            "portrait_alias": 28379,
+            "row_sha256": "c286eecacbc6e36f0c1c78ca93d61c79d791dad4659bd5b3b562755b5a925f09"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 438,
+            "name": "史奈克特",
+            "portrait_alias": 28506,
+            "row_sha256": "3233c071230675d516fe50d263ff93549fc771ac7822b8ff068085ceed894d1e"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 312,
+            "name": "史奈克特",
+            "portrait_alias": 28379,
+            "row_sha256": "c286eecacbc6e36f0c1c78ca93d61c79d791dad4659bd5b3b562755b5a925f09"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 438,
+            "name": "史奈克特",
+            "portrait_alias": 28506,
+            "row_sha256": "3233c071230675d516fe50d263ff93549fc771ac7822b8ff068085ceed894d1e"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 312,
+            "name": "史奈克特",
+            "portrait_alias": 28379,
+            "row_sha256": "c286eecacbc6e36f0c1c78ca93d61c79d791dad4659bd5b3b562755b5a925f09"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 438,
+            "name": "史奈克特",
+            "portrait_alias": 28506,
+            "row_sha256": "3233c071230675d516fe50d263ff93549fc771ac7822b8ff068085ceed894d1e"
+          }
+        ],
+        "tw85_spr": [
+          {
+            "graphic": 101640,
+            "program_names": {
+              "sa.exe": "史奈克特",
+              "sb.exe": "史奈克特",
+              "sc.exe": "史奈克特",
+              "sd.exe": "史奈克特"
+            },
+            "conflict": false
+          },
+          {
+            "graphic": 101722,
+            "program_names": {
+              "sa.exe": "史奈克特",
+              "sb.exe": "史奈克特",
+              "sc.exe": "史奈克特",
+              "sd.exe": "史奈克特"
+            },
+            "conflict": false
+          }
+        ],
+        "cn50": [
+          {
+            "name": "史奈克特",
+            "ordinal": 312,
+            "graphics": [
+              101307,
+              101448
+            ],
+            "portrait_sha256": "7227934cbe139e863ce749158c9333eca485a0f71d6416f5ca80d1da5067933e"
+          }
+        ]
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 16,
+      "position": 1,
+      "year": 2016,
+      "receipt": 107,
+      "lane": "TW_TAOZHU",
+      "name": "葛利斯奈",
+      "role": "ENCOUNTER_LABEL",
+      "spellings": [
+        "葛利斯奈"
+      ],
+      "direct": {
+        "tw75": [
+          {
+            "name": "葛利斯奈",
+            "template_id": 136,
+            "graphic": 101721,
+            "row_sha256": "9b5aa4d119b5ee20aff88f539afb1536e256ba38700fe67507783aae507fcdbf",
+            "elements": [
+              0,
+              0,
+              90,
+              10
+            ],
+            "skill_slots": [
+              1,
+              2,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          },
+          {
+            "name": "葛利斯奈",
+            "template_id": 994,
+            "graphic": 101449,
+            "row_sha256": "199b86919962418e87d046096cb3ef0f0b92dd6d4d6d38599cb8f9b66c7fa57e",
+            "elements": [
+              30,
+              70,
+              0,
+              0
+            ],
+            "skill_slots": [
+              1,
+              2,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 313,
+            "name": "葛利斯奈",
+            "portrait_alias": 28380,
+            "row_sha256": "a4acd9e3c77338123d1c93d30854d6bef62722c556b7a450f2cbb72f3102caab"
+          },
+          {
+            "program": "sa.exe",
+            "slot": 437,
+            "name": "葛利斯奈",
+            "portrait_alias": 28505,
+            "row_sha256": "e54340ed24877953cfa7dd95fdd9e7627ac30306fddbd640b3e543b450f5976b"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 313,
+            "name": "葛利斯奈",
+            "portrait_alias": 28380,
+            "row_sha256": "a4acd9e3c77338123d1c93d30854d6bef62722c556b7a450f2cbb72f3102caab"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 437,
+            "name": "葛利斯奈",
+            "portrait_alias": 28505,
+            "row_sha256": "e54340ed24877953cfa7dd95fdd9e7627ac30306fddbd640b3e543b450f5976b"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 313,
+            "name": "葛利斯奈",
+            "portrait_alias": 28380,
+            "row_sha256": "a4acd9e3c77338123d1c93d30854d6bef62722c556b7a450f2cbb72f3102caab"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 437,
+            "name": "葛利斯奈",
+            "portrait_alias": 28505,
+            "row_sha256": "e54340ed24877953cfa7dd95fdd9e7627ac30306fddbd640b3e543b450f5976b"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 313,
+            "name": "葛利斯奈",
+            "portrait_alias": 28380,
+            "row_sha256": "a4acd9e3c77338123d1c93d30854d6bef62722c556b7a450f2cbb72f3102caab"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 437,
+            "name": "葛利斯奈",
+            "portrait_alias": 28505,
+            "row_sha256": "e54340ed24877953cfa7dd95fdd9e7627ac30306fddbd640b3e543b450f5976b"
+          }
+        ],
+        "tw85_spr": [
+          {
+            "graphic": 101606,
+            "program_names": {
+              "sa.exe": "葛利斯奈",
+              "sb.exe": "葛利斯奈",
+              "sc.exe": "葛利斯奈",
+              "sd.exe": "葛利斯奈"
+            },
+            "conflict": false
+          },
+          {
+            "graphic": 101639,
+            "program_names": {
+              "sa.exe": "葛利斯奈",
+              "sb.exe": "葛利斯奈",
+              "sc.exe": "葛利斯奈",
+              "sd.exe": "葛利斯奈"
+            },
+            "conflict": false
+          },
+          {
+            "graphic": 101721,
+            "program_names": {
+              "sa.exe": "葛利斯奈",
+              "sb.exe": "葛利斯奈",
+              "sc.exe": "葛利斯奈",
+              "sd.exe": "葛利斯奈"
+            },
+            "conflict": false
+          }
+        ],
+        "cn50": [
+          {
+            "name": "葛利斯奈",
+            "ordinal": 313,
+            "graphics": [
+              101308,
+              101449
+            ],
+            "portrait_sha256": "d5de87c1525a28af971ddc11be98a1f2c6e8e0965a2cbafde1406cfe39dd4ed6"
+          }
+        ]
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 16,
+      "position": 2,
+      "year": 2016,
+      "receipt": 107,
+      "lane": "TW_TAOZHU",
+      "name": "艾柏瑞",
+      "role": "ENCOUNTER_LABEL",
+      "spellings": [
+        "艾柏瑞"
+      ],
+      "direct": {
+        "tw75": [
+          {
+            "name": "艾柏瑞",
+            "template_id": 121,
+            "graphic": 101723,
+            "row_sha256": "7af1898b18be54a2636be5472b3ed057448f48fbd830817bfa15d28a4fce4cde",
+            "elements": [
+              0,
+              0,
+              20,
+              80
+            ],
+            "skill_slots": [
+              1,
+              2,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          },
+          {
+            "name": "艾柏瑞",
+            "template_id": 995,
+            "graphic": 101450,
+            "row_sha256": "8dcc751680799320423f2ace519c37b3c72eea5c9ca5792b11d5dd388b57fbd1",
+            "elements": [
+              0,
+              30,
+              70,
+              0
+            ],
+            "skill_slots": [
+              1,
+              2,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 439,
+            "name": "艾柏瑞",
+            "portrait_alias": 28507,
+            "row_sha256": "2bfb58b47b2869cd5570eeff19b341c1b6ec408098c530dce8fc38dce1231dbb"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 439,
+            "name": "艾柏瑞",
+            "portrait_alias": 28507,
+            "row_sha256": "2bfb58b47b2869cd5570eeff19b341c1b6ec408098c530dce8fc38dce1231dbb"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 314,
+            "name": "艾柏瑞",
+            "portrait_alias": 28381,
+            "row_sha256": "343d07555cefedcdc46ce46f2cedc737564d030c0e2eedeb93b23e851fbe6b58"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 439,
+            "name": "艾柏瑞",
+            "portrait_alias": 28507,
+            "row_sha256": "2bfb58b47b2869cd5570eeff19b341c1b6ec408098c530dce8fc38dce1231dbb"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 439,
+            "name": "艾柏瑞",
+            "portrait_alias": 28507,
+            "row_sha256": "2bfb58b47b2869cd5570eeff19b341c1b6ec408098c530dce8fc38dce1231dbb"
+          }
+        ],
+        "tw85_spr": [
+          {
+            "graphic": 101641,
+            "program_names": {
+              "sa.exe": "艾柏瑞",
+              "sb.exe": "艾柏瑞",
+              "sc.exe": "艾柏瑞",
+              "sd.exe": "艾柏瑞"
+            },
+            "conflict": false
+          },
+          {
+            "graphic": 101723,
+            "program_names": {
+              "sa.exe": "艾柏瑞",
+              "sb.exe": "艾柏瑞",
+              "sc.exe": "艾柏瑞",
+              "sd.exe": "艾柏瑞"
+            },
+            "conflict": false
+          }
+        ],
+        "cn50": [
+          {
+            "name": "艾柏瑞",
+            "ordinal": 314,
+            "graphics": [
+              101309,
+              101450
+            ],
+            "portrait_sha256": "078d3946b12f1f5dcae14933fb83ad5c845b7c7bba37bf4bef03a827898d6a57"
+          }
+        ]
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 16,
+      "position": 3,
+      "year": 2016,
+      "receipt": 107,
+      "lane": "TW_TAOZHU",
+      "name": "拉特利",
+      "role": "ENCOUNTER_LABEL",
+      "spellings": [
+        "拉特利"
+      ],
+      "direct": {
+        "tw75": [
+          {
+            "name": "拉特利",
+            "template_id": 996,
+            "graphic": 101451,
+            "row_sha256": "ff0945128bee75fd26140b97991ae455d1cec3dacfca130399fb346e66403009",
+            "elements": [
+              0,
+              0,
+              30,
+              70
+            ],
+            "skill_slots": [
+              1,
+              2,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 315,
+            "name": "拉特利",
+            "portrait_alias": 28382,
+            "row_sha256": "12afaf0d4a16491195b1ce986999f84eaeac3850a561e76bcb33290f0dc71171"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 315,
+            "name": "拉特利",
+            "portrait_alias": 28382,
+            "row_sha256": "12afaf0d4a16491195b1ce986999f84eaeac3850a561e76bcb33290f0dc71171"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 315,
+            "name": "拉特利",
+            "portrait_alias": 28382,
+            "row_sha256": "12afaf0d4a16491195b1ce986999f84eaeac3850a561e76bcb33290f0dc71171"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 315,
+            "name": "拉特利",
+            "portrait_alias": 28382,
+            "row_sha256": "12afaf0d4a16491195b1ce986999f84eaeac3850a561e76bcb33290f0dc71171"
+          }
+        ],
+        "tw85_spr": [],
+        "cn50": [
+          {
+            "name": "拉特利",
+            "ordinal": 315,
+            "graphics": [
+              101310,
+              101451
+            ],
+            "portrait_sha256": "afd84b27769859efe8f431e3ec9dce3d30128968d88b501b86fb663cecd2c9a0"
+          }
+        ]
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 17,
+      "position": 0,
+      "year": 2016,
+      "receipt": 107,
+      "lane": "TW_TAOZHU",
+      "name": "司卡奇",
+      "role": "ENCOUNTER_LABEL",
+      "spellings": [
+        "司卡奇"
+      ],
+      "direct": {
+        "tw75": [],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 540,
+            "name": "司卡奇",
+            "portrait_alias": 28637,
+            "row_sha256": "5c0729641e42a3abae2a0b4658e4bd7e4a9939eece019b5d2b2977e99c9c6660"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 540,
+            "name": "司卡奇",
+            "portrait_alias": 28637,
+            "row_sha256": "5c0729641e42a3abae2a0b4658e4bd7e4a9939eece019b5d2b2977e99c9c6660"
+          }
+        ],
+        "tw85_spr": [
+          {
+            "graphic": 101965,
+            "program_names": {
+              "sa.exe": "司卡奇",
+              "sb.exe": "布里斯卡",
+              "sc.exe": null,
+              "sd.exe": null
+            },
+            "conflict": true
+          },
+          {
+            "graphic": 101990,
+            "program_names": {
+              "sa.exe": "司卡奇",
+              "sb.exe": "司卡奇",
+              "sc.exe": null,
+              "sd.exe": null
+            },
+            "conflict": false
+          }
+        ],
+        "cn50": []
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 17,
+      "position": 1,
+      "year": 2016,
+      "receipt": 107,
+      "lane": "TW_TAOZHU",
+      "name": "莫里卡其",
+      "role": "ENCOUNTER_LABEL",
+      "spellings": [
+        "莫里卡其"
+      ],
+      "direct": {
+        "tw75": [],
+        "tw85_album": [],
+        "tw85_spr": [],
+        "cn50": []
+      },
+      "related_label": "莫里卡奇",
+      "related_candidates": {
+        "tw75": [],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 541,
+            "name": "莫里卡奇",
+            "portrait_alias": 28638,
+            "row_sha256": "9961ecb0e09c668cc6329c4a0b8f0482f2b7247b959340b604f7bef6e9ff9ae0"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 541,
+            "name": "莫里卡奇",
+            "portrait_alias": 28638,
+            "row_sha256": "9961ecb0e09c668cc6329c4a0b8f0482f2b7247b959340b604f7bef6e9ff9ae0"
+          }
+        ],
+        "tw85_spr": [
+          {
+            "graphic": 101966,
+            "program_names": {
+              "sa.exe": "莫里卡奇",
+              "sb.exe": "邦斯卡",
+              "sc.exe": null,
+              "sd.exe": null
+            },
+            "conflict": true
+          },
+          {
+            "graphic": 101991,
+            "program_names": {
+              "sa.exe": "莫里卡奇",
+              "sb.exe": "莫里卡奇",
+              "sc.exe": null,
+              "sd.exe": null
+            },
+            "conflict": false
+          }
+        ],
+        "cn50": []
+      },
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 18,
+      "position": 0,
+      "year": 2016,
+      "receipt": 107,
+      "lane": "TW_TAOZHU",
+      "name": "端午蛇袋子",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 18,
+      "position": 1,
+      "year": 2016,
+      "receipt": 107,
+      "lane": "TW_TAOZHU",
+      "name": "2號變種狼人福袋",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 18,
+      "position": 2,
+      "year": 2016,
+      "receipt": 107,
+      "lane": "TW_TAOZHU",
+      "name": "甲蟲禮盒",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 19,
+      "position": 0,
+      "year": 2016,
+      "receipt": 109,
+      "lane": "TW_TAOZHU",
+      "name": "阿米朵",
+      "role": "PET_NAME_CANDIDATE",
+      "spellings": [
+        "阿米朵"
+      ],
+      "direct": {
+        "tw75": [
+          {
+            "name": "阿米朵",
+            "template_id": 813,
+            "graphic": 100908,
+            "row_sha256": "c835dfb84d43b9d47bbed29a1de357f4d3466ef9cca275ec98a693f46b116055",
+            "elements": [
+              40,
+              0,
+              0,
+              60
+            ],
+            "skill_slots": [
+              1,
+              2,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 269,
+            "name": "阿米朵",
+            "portrait_alias": 28307,
+            "row_sha256": "a13157ec15b824f1fa93281b332a744661e7e24132895ee83b6770999124d690"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 269,
+            "name": "阿米朵",
+            "portrait_alias": 28307,
+            "row_sha256": "a13157ec15b824f1fa93281b332a744661e7e24132895ee83b6770999124d690"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 269,
+            "name": "阿米朵",
+            "portrait_alias": 28307,
+            "row_sha256": "a13157ec15b824f1fa93281b332a744661e7e24132895ee83b6770999124d690"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 269,
+            "name": "阿米朵",
+            "portrait_alias": 28307,
+            "row_sha256": "a13157ec15b824f1fa93281b332a744661e7e24132895ee83b6770999124d690"
+          }
+        ],
+        "tw85_spr": [],
+        "cn50": [
+          {
+            "name": "阿米朵",
+            "ordinal": 269,
+            "graphics": [
+              100908,
+              101264
+            ],
+            "portrait_sha256": "9418965d55e25c1a69eb33efdb404da7efb1a66e08b9708ec34940aa5ece761e"
+          }
+        ]
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 19,
+      "position": 1,
+      "year": 2016,
+      "receipt": 109,
+      "lane": "TW_TAOZHU",
+      "name": "米暴",
+      "role": "PET_CONTEXT_ALIAS",
+      "spellings": [
+        "米暴"
+      ],
+      "direct": {
+        "tw75": [],
+        "tw85_album": [],
+        "tw85_spr": [],
+        "cn50": []
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 20,
+      "position": 0,
+      "year": 2016,
+      "receipt": 109,
+      "lane": "TW_TAOZHU",
+      "name": "始祖鳥",
+      "role": "PET_FAMILY_OR_GENERIC",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 21,
+      "position": 0,
+      "year": 2016,
+      "receipt": 109,
+      "lane": "TW_TAOZHU",
+      "name": "貓頭鷹禮盒",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 21,
+      "position": 1,
+      "year": 2016,
+      "receipt": 109,
+      "lane": "TW_TAOZHU",
+      "name": "古斯特禮盒",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 21,
+      "position": 2,
+      "year": 2016,
+      "receipt": 109,
+      "lane": "TW_TAOZHU",
+      "name": "遠古的恐龍蛋(史凱勒頓)",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 21,
+      "position": 3,
+      "year": 2016,
+      "receipt": 109,
+      "lane": "TW_TAOZHU",
+      "name": "憤怒改技能罐頭",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 21,
+      "position": 4,
+      "year": 2016,
+      "receipt": 109,
+      "lane": "TW_TAOZHU",
+      "name": "希林南瓜禮盒",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 21,
+      "position": 5,
+      "year": 2016,
+      "receipt": 109,
+      "lane": "TW_TAOZHU",
+      "name": "太陽首飾",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 21,
+      "position": 6,
+      "year": 2016,
+      "receipt": 109,
+      "lane": "TW_TAOZHU",
+      "name": "哥達偽裝服",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 22,
+      "position": 0,
+      "year": 2017,
+      "receipt": 111,
+      "lane": "TW_TAOZHU_DADI",
+      "name": "藍虎",
+      "role": "PET_FAMILY_OR_GENERIC",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 23,
+      "position": 0,
+      "year": 2017,
+      "receipt": 112,
+      "lane": "TW_TAOZHU_DADI",
+      "name": "藍虎",
+      "role": "PET_FAMILY_OR_GENERIC",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 24,
+      "position": 0,
+      "year": 2017,
+      "receipt": 112,
+      "lane": "TW_TAOZHU_DADI",
+      "name": "藍虎證",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 24,
+      "position": 1,
+      "year": 2017,
+      "receipt": 112,
+      "lane": "TW_TAOZHU_DADI",
+      "name": "藍虎騎乘證明",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 25,
+      "position": 0,
+      "year": 2018,
+      "receipt": 114,
+      "lane": "TW_TAOZHU_UNSPECIFIED_REALM",
+      "name": "貝洛寶利",
+      "role": "PET_NAME_CANDIDATE",
+      "spellings": [
+        "貝洛寶利",
+        "贝洛宝利"
+      ],
+      "direct": {
+        "tw75": [
+          {
+            "name": "貝洛寶利",
+            "template_id": 44,
+            "graphic": 100270,
+            "row_sha256": "dc1d55a95d22ef99aab7db336592f819b8631f395ca5eb60d9e1b1a7b86b2618",
+            "elements": [
+              0,
+              30,
+              70,
+              0
+            ],
+            "skill_slots": [
+              1,
+              2,
+              90,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 20,
+            "name": "貝洛寶利",
+            "portrait_alias": 28044,
+            "row_sha256": "359545c1c9542fda2a0183b65557b8a87c97114e1819962b41693a9b222a58b2"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 20,
+            "name": "貝洛寶利",
+            "portrait_alias": 28044,
+            "row_sha256": "359545c1c9542fda2a0183b65557b8a87c97114e1819962b41693a9b222a58b2"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 20,
+            "name": "貝洛寶利",
+            "portrait_alias": 28044,
+            "row_sha256": "359545c1c9542fda2a0183b65557b8a87c97114e1819962b41693a9b222a58b2"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 20,
+            "name": "貝洛寶利",
+            "portrait_alias": 28044,
+            "row_sha256": "359545c1c9542fda2a0183b65557b8a87c97114e1819962b41693a9b222a58b2"
+          }
+        ],
+        "tw85_spr": [],
+        "cn50": [
+          {
+            "name": "贝洛宝利",
+            "ordinal": 20,
+            "graphics": [
+              100270
+            ],
+            "portrait_sha256": "6217066e8aece220474259304d49f82861da5d9f4f018798813e20e2b32ca1fe"
+          }
+        ]
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 25,
+      "position": 1,
+      "year": 2018,
+      "receipt": 114,
+      "lane": "TW_TAOZHU_UNSPECIFIED_REALM",
+      "name": "乎拔拔",
+      "role": "PET_NAME_CANDIDATE",
+      "spellings": [
+        "乎拔拔"
+      ],
+      "direct": {
+        "tw75": [],
+        "tw85_album": [],
+        "tw85_spr": [],
+        "cn50": []
+      },
+      "related_label": "呼拔拔",
+      "related_candidates": {
+        "tw75": [
+          {
+            "name": "呼拔拔",
+            "template_id": 72,
+            "graphic": 100280,
+            "row_sha256": "cb9e6705cc1a079793df2529ee24fa631ed7375d735d50f70e2dcd055ebb6e2a",
+            "elements": [
+              0,
+              0,
+              60,
+              40
+            ],
+            "skill_slots": [
+              1,
+              2,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 30,
+            "name": "呼拔拔",
+            "portrait_alias": 28072,
+            "row_sha256": "fd7e436005631d3925879c8babc136c0eecbba8a6fc4208241d2027f0d1cd244"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 30,
+            "name": "呼拔拔",
+            "portrait_alias": 28072,
+            "row_sha256": "fd7e436005631d3925879c8babc136c0eecbba8a6fc4208241d2027f0d1cd244"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 30,
+            "name": "呼拔拔",
+            "portrait_alias": 28072,
+            "row_sha256": "fd7e436005631d3925879c8babc136c0eecbba8a6fc4208241d2027f0d1cd244"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 30,
+            "name": "呼拔拔",
+            "portrait_alias": 28072,
+            "row_sha256": "fd7e436005631d3925879c8babc136c0eecbba8a6fc4208241d2027f0d1cd244"
+          }
+        ],
+        "tw85_spr": [],
+        "cn50": [
+          {
+            "name": "呼拔拔",
+            "ordinal": 30,
+            "graphics": [
+              100280
+            ],
+            "portrait_sha256": "623ca845c1af7a82b45d07b9bbccb5cb564ebcee430849b624f15d613e6c30ec"
+          }
+        ]
+      },
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 25,
+      "position": 2,
+      "year": 2018,
+      "receipt": 114,
+      "lane": "TW_TAOZHU_UNSPECIFIED_REALM",
+      "name": "紅虎",
+      "role": "PET_FAMILY_OR_GENERIC",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 25,
+      "position": 3,
+      "year": 2018,
+      "receipt": 114,
+      "lane": "TW_TAOZHU_UNSPECIFIED_REALM",
+      "name": "綠龜",
+      "role": "PET_FAMILY_OR_GENERIC",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 25,
+      "position": 4,
+      "year": 2018,
+      "receipt": 114,
+      "lane": "TW_TAOZHU_UNSPECIFIED_REALM",
+      "name": "凱比特",
+      "role": "PET_NAME_CANDIDATE",
+      "spellings": [
+        "凱比特",
+        "凯比特"
+      ],
+      "direct": {
+        "tw75": [
+          {
+            "name": "凱比特",
+            "template_id": 114,
+            "graphic": 100298,
+            "row_sha256": "5a1b37bacef10ad05bc1803540f6369c7296779c0e0f78a1588ac3177922186e",
+            "elements": [
+              0,
+              0,
+              0,
+              100
+            ],
+            "skill_slots": [
+              1,
+              2,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 48,
+            "name": "凱比特",
+            "portrait_alias": 28114,
+            "row_sha256": "7020a9c7021414e1a62ec93331081fc6bdbcd525c626ca64036c41722af19dfa"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 48,
+            "name": "凱比特",
+            "portrait_alias": 28114,
+            "row_sha256": "7020a9c7021414e1a62ec93331081fc6bdbcd525c626ca64036c41722af19dfa"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 48,
+            "name": "凱比特",
+            "portrait_alias": 28114,
+            "row_sha256": "7020a9c7021414e1a62ec93331081fc6bdbcd525c626ca64036c41722af19dfa"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 48,
+            "name": "凱比特",
+            "portrait_alias": 28114,
+            "row_sha256": "7020a9c7021414e1a62ec93331081fc6bdbcd525c626ca64036c41722af19dfa"
+          }
+        ],
+        "tw85_spr": [],
+        "cn50": [
+          {
+            "name": "凯比特",
+            "ordinal": 48,
+            "graphics": [
+              100298
+            ],
+            "portrait_sha256": "3ddf968e27ed2ae59b3647199b3bc9604cc1cb28b3a3a63a13719ce097d11e4e"
+          }
+        ]
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 25,
+      "position": 5,
+      "year": 2018,
+      "receipt": 114,
+      "lane": "TW_TAOZHU_UNSPECIFIED_REALM",
+      "name": "姆伊",
+      "role": "PET_NAME_CANDIDATE",
+      "spellings": [
+        "姆伊"
+      ],
+      "direct": {
+        "tw75": [
+          {
+            "name": "姆伊",
+            "template_id": 242,
+            "graphic": 100348,
+            "row_sha256": "3646ed07a24cff162a461e4955c2b2b094d8e290729a5d63cb327d839d197343",
+            "elements": [
+              0,
+              100,
+              0,
+              0
+            ],
+            "skill_slots": [
+              1,
+              2,
+              110,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 98,
+            "name": "姆伊",
+            "portrait_alias": 28242,
+            "row_sha256": "51ebc5208f66a01c23cf8329377663c9f7f327242d6289b94aacdca49d0cab58"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 98,
+            "name": "姆伊",
+            "portrait_alias": 28242,
+            "row_sha256": "51ebc5208f66a01c23cf8329377663c9f7f327242d6289b94aacdca49d0cab58"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 98,
+            "name": "姆伊",
+            "portrait_alias": 28242,
+            "row_sha256": "51ebc5208f66a01c23cf8329377663c9f7f327242d6289b94aacdca49d0cab58"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 98,
+            "name": "姆伊",
+            "portrait_alias": 28242,
+            "row_sha256": "51ebc5208f66a01c23cf8329377663c9f7f327242d6289b94aacdca49d0cab58"
+          }
+        ],
+        "tw85_spr": [],
+        "cn50": [
+          {
+            "name": "姆伊",
+            "ordinal": 98,
+            "graphics": [
+              100348,
+              100737
+            ],
+            "portrait_sha256": "3d8eb52416773158165fec8bc111799d3eb6f35e129495cf9a4dc8c3f0e0cfd7"
+          }
+        ]
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 26,
+      "position": 0,
+      "year": 2018,
+      "receipt": 114,
+      "lane": "TW_TAOZHU_UNSPECIFIED_REALM",
+      "name": "格魯西斯",
+      "role": "PET_CONTEXT_ALIAS",
+      "spellings": [
+        "格魯西斯",
+        "格鲁西斯"
+      ],
+      "direct": {
+        "tw75": [
+          {
+            "name": "格魯西斯",
+            "template_id": 193,
+            "graphic": 100329,
+            "row_sha256": "eb872db644b4397180f4c0685d85b5169c4409e6f24ea208a99ed731f289b161",
+            "elements": [
+              0,
+              0,
+              80,
+              20
+            ],
+            "skill_slots": [
+              1,
+              2,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ],
+        "tw85_album": [
+          {
+            "program": "sa.exe",
+            "slot": 79,
+            "name": "格魯西斯",
+            "portrait_alias": 28193,
+            "row_sha256": "399b0470646ec952db084a756c5fb2513398cd132922fc5acd825fe1065cb39b"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 79,
+            "name": "格魯西斯",
+            "portrait_alias": 28193,
+            "row_sha256": "399b0470646ec952db084a756c5fb2513398cd132922fc5acd825fe1065cb39b"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 79,
+            "name": "格魯西斯",
+            "portrait_alias": 28193,
+            "row_sha256": "399b0470646ec952db084a756c5fb2513398cd132922fc5acd825fe1065cb39b"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 79,
+            "name": "格魯西斯",
+            "portrait_alias": 28193,
+            "row_sha256": "399b0470646ec952db084a756c5fb2513398cd132922fc5acd825fe1065cb39b"
+          }
+        ],
+        "tw85_spr": [],
+        "cn50": [
+          {
+            "name": "格鲁西斯",
+            "ordinal": 79,
+            "graphics": [
+              100329,
+              100718
+            ],
+            "portrait_sha256": "96cfe9122c7583d8fcb8f605c608f3a9f2057b6409073e19d81b9c1a8efe01eb"
+          }
+        ]
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 26,
+      "position": 1,
+      "year": 2018,
+      "receipt": 114,
+      "lane": "TW_TAOZHU_UNSPECIFIED_REALM",
+      "name": "加特利奴",
+      "role": "PET_CONTEXT_ALIAS",
+      "spellings": [
+        "加特利奴"
+      ],
+      "direct": {
+        "tw75": [],
+        "tw85_album": [],
+        "tw85_spr": [],
+        "cn50": []
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 26,
+      "position": 2,
+      "year": 2018,
+      "receipt": 114,
+      "lane": "TW_TAOZHU_UNSPECIFIED_REALM",
+      "name": "加特力奴",
+      "role": "PET_CONTEXT_ALIAS",
+      "spellings": [
+        "加特力奴"
+      ],
+      "direct": {
+        "tw75": [],
+        "tw85_album": [],
+        "tw85_spr": [],
+        "cn50": []
+      },
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 27,
+      "position": 0,
+      "year": 2018,
+      "receipt": 114,
+      "lane": "TW_TAOZHU_UNSPECIFIED_REALM",
+      "name": "凱恩（青龍）強化血清",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 27,
+      "position": 1,
+      "year": 2018,
+      "receipt": 114,
+      "lane": "TW_TAOZHU_UNSPECIFIED_REALM",
+      "name": "胖胖龍徽章",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    },
+    {
+      "group": 27,
+      "position": 2,
+      "year": 2018,
+      "receipt": 114,
+      "lane": "TW_TAOZHU_UNSPECIFIED_REALM",
+      "name": "毒磨菇",
+      "role": "ITEM",
+      "spellings": [],
+      "direct": null,
+      "related_label": null,
+      "related_candidates": null,
+      "official_native_pet_id": null,
+      "first_release_date": null,
+      "official_same_deployment_verified": false,
+      "actual_grant_verified": false
+    }
+  ],
+  "summary": {
+    "all": {
+      "source_positions": 93,
+      "pet_name_candidate_positions": 18,
+      "nonpet_items": 39,
+      "encounter_labels": 10,
+      "lookup_eligible": 32,
+      "direct_name_links": 24,
+      "related_only": 4,
+      "unmatched_eligible": 4
+    },
+    "by_year": {
+      "2014": {
+        "source_positions": 4,
+        "pet_name_candidate_positions": 1,
+        "nonpet_items": 0,
+        "encounter_labels": 0,
+        "lookup_eligible": 1,
+        "direct_name_links": 1,
+        "related_only": 0,
+        "unmatched_eligible": 0
+      },
+      "2015": {
+        "source_positions": 46,
+        "pet_name_candidate_positions": 10,
+        "nonpet_items": 24,
+        "encounter_labels": 0,
+        "lookup_eligible": 10,
+        "direct_name_links": 9,
+        "related_only": 0,
+        "unmatched_eligible": 1
+      },
+      "2016": {
+        "source_positions": 25,
+        "pet_name_candidate_positions": 1,
+        "nonpet_items": 10,
+        "encounter_labels": 10,
+        "lookup_eligible": 12,
+        "direct_name_links": 10,
+        "related_only": 1,
+        "unmatched_eligible": 1
+      },
+      "2017": {
+        "source_positions": 6,
+        "pet_name_candidate_positions": 2,
+        "nonpet_items": 2,
+        "encounter_labels": 0,
+        "lookup_eligible": 2,
+        "direct_name_links": 0,
+        "related_only": 2,
+        "unmatched_eligible": 0
+      },
+      "2018": {
+        "source_positions": 12,
+        "pet_name_candidate_positions": 4,
+        "nonpet_items": 3,
+        "encounter_labels": 0,
+        "lookup_eligible": 7,
+        "direct_name_links": 4,
+        "related_only": 1,
+        "unmatched_eligible": 2
+      }
+    },
+    "new_original_client_bytes": 0,
+    "official_species_count": null
+  },
+  "official_species_count": null,
+  "original_assets_published": false
+}
