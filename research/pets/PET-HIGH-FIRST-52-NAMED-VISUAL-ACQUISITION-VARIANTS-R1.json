@@ -1,0 +1,385 @@
+{
+  "schema": "stoneage.pet52.named_visual_and_acquisition_variant_crosswalk.r1",
+  "base_head": "a791169f9d1dca5a4124862e88df872ec87d58f3",
+  "base_tree": "8a13d6b472a5b21ff989de283cd085758e0d7a56",
+  "source_pins": {
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-CN50-NATIVE-SPR-ALBUM-R1.json": "98fea71c051dfa887b91154a8a72d17c67b57744",
+    "research/pets/PET-HIGH-FIRST-TW85-ORIGINAL-PE-ALBUM-GRID-R1.json": "7fb8eceba23dea6dc90ebb18e404d6e837210eaf",
+    "research/pets/PET-HIGH-FIRST-50-ORIGINAL-ACQUISITION-R1.json": "4d0b31a7fa196cf8f227a7b0b1aea7183d9598f0",
+    "research/pets/PET-HIGH-FIRST-51-PETABI-SOURCE-LINKS-R1.json": "ab826bd89e5d1f39f8f219b5a2803efba02248b9",
+    "research/pets/PET-HIGH-FIRST-42-REWARD-INSTANCE-INDEX-R1.json": "449eaf2d74fda469a05a46781da1824096c2926c",
+    "research/pets/PET-HIGH-FIRST-49-DATED-PC-ACQUISITION-GAP-R1.json": "3ae127ef6bee449a472b7b4323b09f930e1c8684",
+    "research/pets/PET-HIGH-FIRST-42-ORIGINAL-MEMBER-REPLAY-R1.json": "779077c98b745f6045733d4ba1410768e989f73e"
+  },
+  "scope": "CLASSIC_PC_SOURCE_SPECIFIC_DERIVED_METADATA_ONLY",
+  "sources": {
+    "guide2001": {
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n182_98793.html",
+      "date": "2001-06-14",
+      "grade": "PERIOD_GUIDE_UNKNOWN_ACQUISITION",
+      "locator": "飞蛤蟆系82 / 暴龙系109",
+      "claim": "两名的一级取得尚无信息"
+    },
+    "sina2003": {
+      "url": "https://games.sina.com.cn/zhqu/sta/cwzl/chongwu03.shtml",
+      "date": "2003-04-07",
+      "grade": "PERIOD_PORTAL_PLAYER_SUBMISSION",
+      "locator": "145奇卡洛斯 / 195巴朵兰恩",
+      "claim": "奇卡洛斯地3风7且取得栏空；红暴水2火8、红暴任务"
+    },
+    "frog17173": {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow19.htm",
+      "date": null,
+      "grade": "UNDATED_LEGACY_PC_PORTAL_CATALOG",
+      "locator": "145 行8–22；148 行58起",
+      "claim": "奇卡洛斯地3风7、单例血攻防敏57/10/10/5、4技、集来吉卡活动奖品；蛙洞属148卡卡金宝而非145"
+    },
+    "red2003": {
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-06-04/10857.shtml",
+      "date": "2003-06-04",
+      "grade": "PERIOD_PC_QUEST_GUIDE",
+      "locator": "正文龙王守护战、获得宠物条目，行63–69",
+      "claim": "战胜120级同名对象后龙王送小红暴；获得宠物巴朵兰恩；高等级敌人与奖励宠分开"
+    },
+    "red17173": {
+      "url": "https://news.17173.com/z/stoneage/chongwu/pet10.htm",
+      "date": null,
+      "grade": "UNDATED_LEGACY_PC_PORTAL_CATALOG",
+      "locator": "巴朵兰恩（红暴）条目",
+      "claim": "英雄岛迷失小女孩任务奖品"
+    }
+  },
+  "rows": [
+    {
+      "target_position": 144,
+      "name": "奇卡洛斯",
+      "graphic": 100343,
+      "master_variants": [
+        {
+          "position": 144,
+          "template_id": 231,
+          "row_sha256": "e8b8bb1461923631b27516afe385b63f96fe7a927092bdb7fd35b295a1f527a7",
+          "elements": [
+            30,
+            0,
+            0,
+            70
+          ],
+          "initnum": 28,
+          "skill_capacity": 4,
+          "skill_slots": [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "cn50_visual": {
+        "ordinal": 93,
+        "name": "奇卡洛斯",
+        "portrait_alias": 28231,
+        "portrait_bitmap": 7323,
+        "portrait_rd_sha256": "2a18fcf0ef5bc4e5cc5b7c071828dbce3c72780708358cc3ca38cdc549d79c32",
+        "early_relation": "EARLY_TW10_PORTRAIT_FULL_RD_SHA_EXACT",
+        "spr_groups": [
+          {
+            "animation_header_count": 56,
+            "frame_record_count": 480,
+            "held_pet_path_also_maps_to_slot": true,
+            "sha256": "df891631ea3fd5004085716fb181ee88f2efe2d31ac894c47eec4cbdd2c2dab3",
+            "spr_group": 100343
+          },
+          {
+            "animation_header_count": 104,
+            "frame_record_count": 600,
+            "held_pet_path_also_maps_to_slot": true,
+            "sha256": "1c1b71e9e7d5eaf01f585f7a4ee66b09fc944dcfb01637b234fb89c4d7cbb4ab",
+            "spr_group": 100732
+          }
+        ]
+      },
+      "tw85_program_rows": [
+        {
+          "program": "sa.exe",
+          "slot": 93,
+          "original_first_i32": 144,
+          "original_name_cp950": "奇卡洛斯",
+          "source_portrait_alias": 28231,
+          "unpacked_file_offset": 798876,
+          "original_row_sha256": "a6e07662bf51786a6c59b1436af9dcb1125c75d6eee3a93f1184d192a818ac70"
+        },
+        {
+          "program": "sb.exe",
+          "slot": 93,
+          "original_first_i32": 144,
+          "original_name_cp950": "奇卡洛斯",
+          "source_portrait_alias": 28231,
+          "unpacked_file_offset": 710172,
+          "original_row_sha256": "a6e07662bf51786a6c59b1436af9dcb1125c75d6eee3a93f1184d192a818ac70"
+        },
+        {
+          "program": "sc.exe",
+          "slot": 93,
+          "original_first_i32": 144,
+          "original_name_cp950": "奇卡洛斯",
+          "source_portrait_alias": 28231,
+          "unpacked_file_offset": 680796,
+          "original_row_sha256": "a6e07662bf51786a6c59b1436af9dcb1125c75d6eee3a93f1184d192a818ac70"
+        },
+        {
+          "program": "sd.exe",
+          "slot": 93,
+          "original_first_i32": 144,
+          "original_name_cp950": "奇卡洛斯",
+          "source_portrait_alias": 28231,
+          "unpacked_file_offset": 790412,
+          "original_row_sha256": "a6e07662bf51786a6c59b1436af9dcb1125c75d6eee3a93f1184d192a818ac70"
+        }
+      ],
+      "selected_saved_instance": {
+        "instance_id": 323,
+        "template_id": 231,
+        "match": "EXACT_ROW",
+        "level": [
+          1,
+          1
+        ],
+        "pet_flag": 1,
+        "positive_routes": 0
+      },
+      "vip_configuration": {
+        "instance_id": 2601,
+        "template_id": 1235,
+        "preset_fields": {
+          "dexterity": 5,
+          "level": 1,
+          "strength": 12,
+          "toughness": 13,
+          "transmigration": 0,
+          "vital": 40
+        },
+        "vip_points": 50,
+        "official_delivery_verified": false,
+        "matching_loader_located": false
+      },
+      "ordinary_reward": null,
+      "documentary_qualification": "PERIOD_NAMED_EVENT_REWARD_REFERENCE_ELEMENT_COMPATIBLE_NOT_TEMPLATE_PROOF",
+      "documentary_elements": [
+        30,
+        0,
+        0,
+        70
+      ],
+      "documentary_sources": [
+        "guide2001",
+        "sina2003",
+        "frog17173"
+      ],
+      "official_target_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_template_gap": true
+    },
+    {
+      "target_position": 208,
+      "name": "巴朵蘭恩",
+      "graphic": 100373,
+      "master_variants": [
+        {
+          "position": 67,
+          "template_id": 106,
+          "row_sha256": "dd9fea1fe302f2c197ce01ae5d4d3a4fc12f28ffe4057c0077c5f9b42cdcef9f",
+          "elements": [
+            0,
+            20,
+            80,
+            0
+          ],
+          "initnum": 27,
+          "skill_capacity": 4,
+          "skill_slots": [
+            1,
+            2,
+            110,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "position": 171,
+          "template_id": 303,
+          "row_sha256": "4b8a7573a855330f7dcb50556f74e28c1a836da9b822b694f26b4210352e2b97",
+          "elements": [
+            0,
+            20,
+            80,
+            0
+          ],
+          "initnum": 27,
+          "skill_capacity": 4,
+          "skill_slots": [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "position": 208,
+          "template_id": 724,
+          "row_sha256": "f5239f237c9cf3429f9cca9d2e25b8473306028ed8bd95ab49f841426c08040d",
+          "elements": [
+            0,
+            50,
+            50,
+            0
+          ],
+          "initnum": 37,
+          "skill_capacity": 7,
+          "skill_slots": [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "cn50_visual": {
+        "ordinal": 123,
+        "name": "巴朵兰恩",
+        "portrait_alias": 28303,
+        "portrait_bitmap": 7350,
+        "portrait_rd_sha256": "6f818f6885b8c88c5f4b07c3daaaa91bdb479d5d6031947884b391570f49c689",
+        "early_relation": "EARLY_TW10_PORTRAIT_FULL_RD_SHA_EXACT",
+        "spr_groups": [
+          {
+            "animation_header_count": 56,
+            "frame_record_count": 904,
+            "held_pet_path_also_maps_to_slot": true,
+            "sha256": "f3d76b5cc31542a372b4a207a2fb5b58c6eddeea45891182c53330e343563721",
+            "spr_group": 100373
+          },
+          {
+            "animation_header_count": 104,
+            "frame_record_count": 552,
+            "held_pet_path_also_maps_to_slot": true,
+            "sha256": "57d29c34eee5a83c18a2f81159a5a81f8156f04aec47209b4691cd19105d7ed9",
+            "spr_group": 100762
+          }
+        ]
+      },
+      "tw85_program_rows": [
+        {
+          "program": "sa.exe",
+          "slot": 123,
+          "original_first_i32": 194,
+          "original_name_cp950": "巴朵蘭恩",
+          "source_portrait_alias": 28303,
+          "unpacked_file_offset": 799716,
+          "original_row_sha256": "39b82b7b4b20cce26fe77b9c84e74b8779af18cb5f2f80a2e4c15e35df346dfa"
+        },
+        {
+          "program": "sb.exe",
+          "slot": 123,
+          "original_first_i32": 194,
+          "original_name_cp950": "巴朵蘭恩",
+          "source_portrait_alias": 28303,
+          "unpacked_file_offset": 711012,
+          "original_row_sha256": "39b82b7b4b20cce26fe77b9c84e74b8779af18cb5f2f80a2e4c15e35df346dfa"
+        },
+        {
+          "program": "sc.exe",
+          "slot": 123,
+          "original_first_i32": 194,
+          "original_name_cp950": "巴朵蘭恩",
+          "source_portrait_alias": 28303,
+          "unpacked_file_offset": 681636,
+          "original_row_sha256": "39b82b7b4b20cce26fe77b9c84e74b8779af18cb5f2f80a2e4c15e35df346dfa"
+        },
+        {
+          "program": "sd.exe",
+          "slot": 123,
+          "original_first_i32": 194,
+          "original_name_cp950": "巴朵蘭恩",
+          "source_portrait_alias": 28303,
+          "unpacked_file_offset": 791252,
+          "original_row_sha256": "39b82b7b4b20cce26fe77b9c84e74b8779af18cb5f2f80a2e4c15e35df346dfa"
+        }
+      ],
+      "selected_saved_instance": {
+        "instance_id": 2572,
+        "template_id": 724,
+        "match": "EXACT_ROW",
+        "level": [
+          1,
+          1
+        ],
+        "pet_flag": 1,
+        "positive_routes": 0
+      },
+      "vip_configuration": {
+        "instance_id": 2589,
+        "template_id": 1223,
+        "preset_fields": {
+          "dexterity": 8,
+          "level": 1,
+          "strength": 14,
+          "toughness": 9,
+          "transmigration": 0,
+          "vital": 42
+        },
+        "vip_points": 70,
+        "official_delivery_verified": false,
+        "matching_loader_located": false
+      },
+      "ordinary_reward": {
+        "instance_id": 352,
+        "template_id": 303,
+        "position": 171,
+        "source_script": "poru/boy04",
+        "floor": 5511,
+        "level": [
+          1,
+          1
+        ],
+        "actual_award_verified": false
+      },
+      "documentary_qualification": "ORDINARY_QUEST_REWARD_SUPPORTED_OTHER_TEMPLATE_ELEMENT_CONFLICT_FOR_TARGET",
+      "documentary_elements": [
+        0,
+        20,
+        80,
+        0
+      ],
+      "documentary_sources": [
+        "guide2001",
+        "sina2003",
+        "red2003",
+        "red17173"
+      ],
+      "official_target_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_template_gap": true
+    }
+  ],
+  "remaining_gap_before": 67,
+  "remaining_gap_after": 67,
+  "official_acquisition_closed": 0,
+  "official_species_count": null,
+  "original_assets_published": false,
+  "source_bytes_newly_extracted": false,
+  "web_html_bytes_retrieved": false,
+  "runtime_executed": false
+}
