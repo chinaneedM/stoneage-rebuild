@@ -1,0 +1,37 @@
+name: PET-HIGH-FIRST-12 TW85 source pixels
+on:
+  push:
+    branches: [agent/pet-high-first-12-20261124]
+    paths:
+      - '.github/workflows/pet-high-first-12-tw85-source.yml'
+      - 'tools/stoneage_pet_high_first_tw85_pixels.py'
+permissions:
+  contents: write
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate archived names and animation sample keys
+        run: python -c 'from tools.stoneage_pet_high_first_tw85_pixels import build_plan; print([len(section) for section in build_plan()[1:]])'
+      - name: Install static MSI reader and decoder dependency
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq msitools
+          python -m pip install Pillow
+      - name: Authenticate and statically extract archived carrier
+        run: |
+          python -m tools.stoneage_wayi85_sixpart_acquisition --work "$RUNNER_TEMP/tw85" --output "$RUNNER_TEMP/tw85-acquisition.json"
+      - name: Decode original indexed pixels and verify derived receipt
+        run: |
+          python -m tools.stoneage_pet_high_first_tw85_pixels --source-dir "$RUNNER_TEMP/tw85/msi-client/Program Files/WAYI/石器時代 魔域大冒險/data"
+          python -m tools.stoneage_pet_high_first_tw85_pixels
+      - name: Record derived metadata only
+        run: |
+          git add research/pets/PET-HIGH-FIRST-12-TW85-INDEXED-PIXELS-R1.json.gz
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'PET12: archive authenticated TW85 indexed-pixel receipt'
+          git push origin "HEAD:$GITHUB_REF"
