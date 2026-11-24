@@ -220,6 +220,25 @@ def build(d):
             ls=[link("tw85_visual",["records",visualid[g]],"SAME_PRESERVED_SPR_NUMBER_PROGRAM_ROUTES_AND_FRAME_REFERENCES")]
             add("tw85_spr",["records",i,"program_routes",program],[v["original_name_cp950"]],"PRESERVED_TW85_PROGRAM_NAMED_SPR_ROUTE",[g,v["local_album_slot"]],ls,dict(program=program,graphic=g,local_slot=v["local_album_slot"],cross_program_name_conflict=x["graphic_has_conflicting_names_across_installer_programs"]))
     gap46 = by_id(d["hf46"]["rows"], "tw75_row_index")
+    acquisition_updates = collections.defaultdict(list)
+    for source, collection in (
+        ("hf47", "period_links"), ("hf47", "context_only_links"),
+        ("hf48", "rows"), ("hf48", "context"),
+        ("hf49", "rows"), ("hf49", "context"),
+    ):
+        for ordinal, row in enumerate(d[source][collection]):
+            acquisition_updates[row["tw75_row_index"]].append(
+                link(source, [collection, ordinal], row["qualification"])
+            )
+    original50 = d["hf50"]["projection"]["records"]
+    original50_index = by_id(original50, "tw75_row_index")
+    trainer50 = by_id(d["hf50"]["projection"]["npc_source_files"], "path")["sa60/newbie/m_tiger"]
+    trainer_instances = {
+        instance_id
+        for row in d["hf50"]["projection"]["npc_source_files"][trainer50]["candidate_lines"]
+        if row["key"] == "AddPet" and row["qualification"] == "GETPET_OR_ADDPET_INSTANCE_LITERAL_CANDIDATE"
+        for instance_id in row["matching_instance_tokens"]
+    }
     acquisition45 = d["hf45"]["projection"]
     route45 = by_id(acquisition45["mixed25_template_routes"], "template_id")
     area45 = by_id(acquisition45["area_metadata"], "id")
@@ -267,6 +286,19 @@ def build(d):
             for ref in gap["additional_refs"]:
                 ls.append(link(ref["source"], ["records" if ref["source"] == "fusion2003" else "rows",ref["row_index"]], ref["qualification"]))
             gap_detail = dict(gap_state=gap["gap_state"],evidence_categories=gap["evidence_categories"],selected_table=gap["selected_table"]["status"],alternate_table=gap["alternate_table"]["status"],official_acquisition_verified=False)
+        ls.extend(acquisition_updates[i])
+        if i in original50_index:
+            j = original50_index[i]
+            original = original50[j]
+            assert (original["template_id"], original["row_sha256"]) == (k, x["row_sha256"])
+            ls.append(link("hf50", ["projection", "records", j],
+                           "SAVED_SELECTED_AND_ALTERNATE_TABLES_NOT_OFFICIAL_ACQUISITION"))
+            selected = original["source_pairs"][0]
+            if selected["match"] == "EXACT_ROW" and any(
+                ins["instance_id"] in trainer_instances for ins in selected["instances"]
+            ):
+                ls.append(link("hf50", ["projection", "npc_source_files", trainer50],
+                               "SAVED_LV1_TRAINER_REWARD_CONFIGURATION_NOT_OFFICIAL_AWARD"))
         saved_acquisition = dict(gap_classification=gap_detail,match_status=ac["match_status"],positive_route_count=ac["positive_route_count"],double_pet_flag_route_count=ac["double_pet_flag_route_count"],lv1_double_flag_route_count=ac["lv1_double_flag_route_count"],floor_candidates=floor_refs,official_acquisition_verified=False)
         add("tw75",["pet_flag_1_field_projections",i],[x["name"]],"CLAIMED_TW75_MASTER_TEMPLATE",[k,x["graphic"]],ls,dict(graphic=x["graphic"],template_id=k,elements=x["elements"],skill_slots=x["skill_slots"],conditional_lv1_panel=b["level1_unmodified_work_panel_marginal_ranges"],conditional_per_level_internal=b["per_level_internal_increment_marginal_ranges"],comparison_floor_ids=e["comparison_floor_ids"],comparison_status=e["comparison_status"],saved_mixed25_acquisition=saved_acquisition))
     # Historical observations are separate, even when names/identifiers coincide.
@@ -392,7 +424,18 @@ def verify(m,d,entries):
     g46 = [e["detail"]["saved_mixed25_acquisition"]["gap_classification"] for e in high45 if e["detail"]["saved_mixed25_acquisition"]["gap_classification"] is not None]
     assert len(g46) == 349
     assert collections.Counter(g["gap_state"] for g in g46) == d["hf46"]["summary"]["gap_state_counts"]
-    assert sum(l["source"] == "hf46" for e in high45 for l in e["linked_records"]) == 349
+    source_counts = collections.Counter(l["source"] for e in high45 for l in e["linked_records"])
+    assert {key: source_counts[key] for key in ("hf46", "hf47", "hf48", "hf49", "hf50")} == {
+        "hf46": 349, "hf47": 29, "hf48": 19, "hf49": 22, "hf50": 71,
+    }
+    for i, e in enumerate(high45):
+        for evidence in e["linked_records"]:
+            if evidence["qualification"] == "SAVED_LV1_TRAINER_REWARD_CONFIGURATION_NOT_OFFICIAL_AWARD":
+                assert e["detail"]["template_id"] in (161, 162, 163, 164)
+                assert resolve(d, evidence["source"], evidence["pointer"])["path"] == "sa60/newbie/m_tiger"
+            elif evidence["source"] in ("hf47", "hf48", "hf49", "hf50"):
+                row = resolve(d, evidence["source"], evidence["pointer"])
+                assert (row["tw75_row_index"], row["template_id"]) == (i, e["detail"]["template_id"])
     assert all(not g["official_acquisition_verified"] for g in g46)
     assert sum(e["detail"]["saved_mixed25_acquisition"]["match_status"] == "EXACT_SHARED_TEMPLATE_ROW" for e in high45) == 440
     assert sum(e["detail"]["saved_mixed25_acquisition"]["positive_route_count"] > 0 for e in high45) == 123

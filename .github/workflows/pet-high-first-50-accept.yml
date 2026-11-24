@@ -1,0 +1,43 @@
+name: PET-HIGH-FIRST-50 archive acceptance
+on:
+  push:
+    paths:
+      - 'research/pets/PET-HIGH-FIRST-50-*.json'
+      - 'tools/stoneage_pet_high_first_50_*.py'
+      - '.github/workflows/pet-high-first-50-accept.yml'
+  pull_request:
+    paths:
+      - 'research/pets/PET-HIGH-FIRST-50-*.json'
+      - 'tools/stoneage_pet_high_first_50_*.py'
+      - '.github/workflows/pet-high-first-50-accept.yml'
+permissions:
+  contents: read
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m tools.stoneage_pet_high_first_50_accept
+      - run: python -m tools.stoneage_pet_high_first_49_accept
+      - run: python tools/stoneage_pet_source_lookup.py --verify
+  independent-source:
+    if: github.event_name == 'push' && github.ref_name == 'agent/pet-high-first-50-original-alternate-acquisition-20261124'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install libarchive-c==5.3
+      - run: python -m tools.stoneage_pet_high_first_50_accept --replay-output /tmp/pet50-vip-menu.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet50-independent-vip-menu-metadata
+          path: /tmp/pet50-vip-menu.json
+          retention-days: 7
+          if-no-files-found: error
