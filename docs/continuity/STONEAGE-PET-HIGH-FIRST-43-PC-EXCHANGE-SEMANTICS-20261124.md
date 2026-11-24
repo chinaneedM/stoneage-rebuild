@@ -1,4 +1,4 @@
-# PET-HIGH-FIRST-43｜交换宠物编号与奖励列表语义（候选）
+# PET-HIGH-FIRST-43｜交换宠物编号与奖励列表语义（原件实读完成，候选验收）
 
 PET42 PR #653 68/68候选检查通过，已合并。main 39f7b9438e85850df38bf98850121a50f6368432 / tree a75fa871c102e4304675e4495bd9627123ef7a13，43/43主线检查成功；历史CURRENT仍2,709,173B/c89e0e33537990aa2132b47c40fef49a985a935c。
 
@@ -16,4 +16,12 @@ PET42 PR #653 68/68候选检查通过，已合并。main 39f7b9438e85850df38bf98
 
 后期MESSAGE+NomalMsg可走NPC_AcceptDel；GetPet多个逗号数字使用rand()%列表长度+1索引，而非抽取不同ID集合。若原分支与后期语义一致且忽略模偏差，JOT B中的482两槽/六槽（理想1/3），其他各1/6；其他三组各槽理想1/5或1/4。不是已经验证的官方概率；需确认五脚本NomalMsg存在、GetRandItem及原条件。此轮新源工作流只读setup、enemybase、itemset及五脚本8成员，固定三后期源码blob，原版权字节不入Git。
 
-**NEXT（候选未验收）：** 完成源Actions，下载ZIP及独立散列、日志重建、核实原模板名称（尤其558/292）、三个道具原名、五脚本触发控制及权重边界；接入既有奖励档案并验收。PET唯一、Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79暂停，整体UNKNOWN。
+## 原件实读与保全
+
+首次45421785789因函数内部注释误作边界失败，第二次45422539557因前置声明误作函数定义失败；修复提交6dc448f65c4dd0715383390af481a53017ef15e7，成功[源运行45422654575](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/45422654575)，job 138546069094、artifact 14934761851。7954归档头，186段HTTP206共12,144,908字节，8原件与R18 SHA/CRC一致。独立ZIP 13653B SHA256 7c8f37c34c502830160f8d952b49230a3e3714137a95d51f043908a6f069926d；JSON 53236B SHA256 d28e25ef06cec149c6797223aa525023230e19a97897bf594b730ca80b65b3de，独立日志按数字键原排序重建与ZIP原JSON blob均为8ede61a53c670a883bb7824e1d5f410d0b76463a。[派生证据](../../research/pets/PET-HIGH-FIRST-43-ORIGINAL-EXCHANGE-SEMANTICS-R1.json)。
+
+五模板原名：克邦凱斯221、加克拉222、剋剋洛斯558/292、霍爾克293；剋剋洛斯与TW1及标称7.5版克克洛斯异体，不覆盖原名或合并两模板。25为恰好等级而非捕捉等级，普通宠事件标记0为后期源码条件。三道具原名、图号与完整行SHA匹配ITEM01索引02：2564通過證明石24060，2587檢查石24055，2607火難的戒指22102。2607模板等级30非本次玩家等级条件。
+
+原五脚本六奖励指令（17独立实例号）原始条件与PET42一致。四MESSAGE块均无NomalMsg；原件仅解析此字段，**没有检查NomalWindowMsg及NomalWindowMsg1**，不得由缺失普通消息推断不发奖。后期固定npc_exchangeman.c 458–475还有NomalWindowMsg分支，条件调用NPC_AcceptDel，可能存在延迟窗口下一步；原同载体是否符合仍OPEN。四块同时有GetRandItem；JOT B与SOT D的道具列表同一，68出现两次，宠物列表各自独立，不能把道具和宠物列表作互斥或同一概率事件。理想槽权重不等于实际官服概率。统一查询补17奖励来源记录、5交换模板链接，不新增宠物物种或查询位置。
+
+**NEXT PET-HIGH-FIRST-44：** 优先只读四个SOT/JOT原脚本，核实NomalWindowMsg/NomalWindowMsg1及窗口回调、GetRandItem与GetPet执行关系（先查已有派生索引，必要时重取缺字段）。随后复用现有任务图/捕捉索引补剩余PET取得字段；无需重复8成员整批取证，不跨模块。若有未验收PR先验收。PET唯一，Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79暂停，整体UNKNOWN。

@@ -111,6 +111,15 @@ def build(d):
     field_cases41 = by_id(d["hf41"]["rows"], "pet_id")
     reward42_tw10 = {r["tw10_candidate"]["pet_id"]: r for r in d["hf42_cross"]["rows"] if r["tw10_candidate"] is not None}
     reward42_tw75 = {r["tw75_row_index"]: r for r in d["hf42_cross"]["rows"]}
+    exchange43 = d["hf43"]["projection"]
+    def exchange_links43(r):
+        out = []
+        for j, s in enumerate(exchange43["scripts"]):
+            if any(r["award_instance_id"] in c["numeric_literals"] for c in s["commands"]):
+                out.append(link("hf43", ["projection","scripts",j], "SAVED_EXCHANGE_CONTROL_AND_TOKEN_MULTIPLICITY_NOT_OFFICIAL_PROBABILITY"))
+                item_ids = {int(v) for c in s["commands"] if r["award_instance_id"] in c["numeric_literals"] for v in c["fields"]["delitem"]}
+                out.extend(link("hf43", ["projection","items",k], "CONFIGURED_EXCHANGE_ITEM_NOT_OFFICIAL_DEPLOYMENT") for k, v in enumerate(exchange43["items"]) if v["id"] in item_ids)
+        return out
     def reward_links42(r, qualification):
         i = r["reward_row_index"]
         assert d["hf42"]["rows"][i]["award_instance_id"] == d["hf42_raw"]["rows"][i]["award_instance_id"] == r["award_instance_id"]
@@ -119,7 +128,7 @@ def build(d):
                 link("hf42_raw", ["rows", i], qualification),
                 *[link("hf42_raw", ["scripts", j], "SAME_SAVED_SCRIPT_STATIC_REWARD_NOT_LIVE_ISSUE")
                   for j, s in enumerate(d["hf42_raw"]["scripts"])
-                  if any(r["award_instance_id"] in c["numeric_literals"] for c in s["commands"])]]
+                  if any(r["award_instance_id"] in c["numeric_literals"] for c in s["commands"])], *exchange_links43(r)]
 
     for i,x in enumerate(d["tw10"]["records"]):
         pet_id, graphic, name = x["pet_id"], x["client_graphic"], x["client_name_original"]
@@ -161,6 +170,9 @@ def build(d):
                 links.append(link("hf41_archive", ["projection", "capture_candidates", idx], "MIXED25_TEMPLATE_ROUTE_CANDIDATE_NOT_CAPTURE_PROOF"))
             for idx in case["award_row_indices"]:
                 links.append(link("hf41_archive", ["projection", "award_commands", idx], "MIXED25_STATIC_AWARD_NOT_LIVE_ISSUE"))
+        for j, t in enumerate(exchange43["templates"]):
+            if t["graphic"] == graphic:
+                links.append(link("hf43", ["projection","templates",j], "EXCHANGE_PREREQUISITE_TEMPLATE_GRAPHIC_CANDIDATE_NOT_IDENTITY"))
         if pet_id in reward42_tw10:
             r = reward42_tw10[pet_id]
             assert r["graphic"] == graphic and r["tw10_candidate"]["client_name"] == name
@@ -209,6 +221,9 @@ def build(d):
         k=x["template_id"];b=d["tw75_birth"]["rows"][birthid[k]];e=d["tw75_comparison"]["rows"][compid[k]]
         assert b["source_row_sha256"]==x["row_sha256"]
         ls=[link("tw75_birth",["rows",birthid[k]],"CONDITIONAL_MODEL_NOT_OFFICIAL_STATS"),link("tw75_comparison",["rows",compid[k]],"LATER_COMPARISON_ENCOUNTER_NOT_ORIGINAL_CAPTURE")]
+        for j, t in enumerate(exchange43["templates"]):
+            if t["template_id"] == k and t["graphic"] == x["graphic"]:
+                ls.append(link("hf43", ["projection","templates",j], "SAVED_EXCHANGE_PREREQUISITE_TEMPLATE_ID_GRAPHIC_NOT_DEPLOYMENT"))
         if i in reward42_tw75:
             r = reward42_tw75[i]
             assert (r["template_id"], r["graphic"], r["shared_template_row_sha256"]) == (k, x["graphic"], x["row_sha256"])
@@ -332,6 +347,11 @@ def verify(m,d,entries):
     assert [r["period_floor_lv1_static_match"] for r in cases40] == [None, False, True, True, None]
     assert cases40[-1]["quest_reward"]["instance_id"] == 484 and cases40[-1]["quest_reward"]["template_id"] == 315
     assert all(r["official_tw10_native_stats"] is None and r["official_tw10_skillset"] is None and not r["official_tw10_acquisition_verified"] and r["official_first_release_date"] is None for r in cases40)
+    assert len(d["hf43"]["projection"]["templates"]) == 5
+    assert sum(l["source"] == "hf43" and l["pointer"][:2] == ["projection","templates"] for e in entries if e["source"] == "tw10" for l in e["linked_records"]) == 5
+    assert sum(l["source"] == "hf43" and l["pointer"][:2] == ["projection","templates"] for e in entries if e["source"] == "tw75" for l in e["linked_records"]) == 5
+    for source in ("tw10","tw75"):
+        assert sum(any(l["source"] == "hf43" and l["pointer"][:2] == ["projection","scripts"] for l in e["linked_records"]) for e in entries if e["source"] == source) == 17
     assert len(d["hf42"]["rows"]) == len(d["hf42_raw"]["rows"]) == len(d["hf42_cross"]["rows"]) == 36
     assert sum(l["source"] == "hf42_cross" for e in entries if e["source"] == "tw10" for l in e["linked_records"]) == 33
     assert sum(l["source"] == "hf42_cross" for e in entries if e["source"] == "tw75" for l in e["linked_records"]) == 36
