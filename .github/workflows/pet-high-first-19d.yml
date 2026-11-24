@@ -1,0 +1,21 @@
+name: PET-HIGH-FIRST-19D directory coverage replay
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_19d.py'
+      - 'research/pets/PET-HIGH-FIRST-19D-2001-DIRECTORY-CLOSURE-R1.json'
+      - '.github/workflows/pet-high-first-19d.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_19d.py'
+      - 'research/pets/PET-HIGH-FIRST-19D-2001-DIRECTORY-CLOSURE-R1.json'
+      - '.github/workflows/pet-high-first-19d.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/stoneage_pet_high_first_19d.py

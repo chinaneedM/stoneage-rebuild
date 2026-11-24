@@ -1,0 +1,2461 @@
+{
+  "schema": "stoneage.pet.high_first_19d.directory_closure.r1",
+  "source_head": "554deab9b94be5baea3e276ce35f7f65790aa64e",
+  "source_pins_git_blob": {
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-17-COMPARISON-SKILL-ENCOUNTER-R1.json": "63af501ab483770c5c58cb2d62152ab8923dcc2b",
+    "research/pets/PET-HIGH-FIRST-18-COMPARISON-MAP-HEADERS-R1.json": "3b2bbe6d374a875baa8934d3ed8b7eca45e7b328",
+    "research/pets/PET-HIGH-FIRST-18-STARTER-AND-CAPTURE-WITNESSES-R1.json": "a69fc90f207d21612f6ebf8dfb4266ac4a027a92",
+    "research/pets/PET-HIGH-FIRST-19B-GRAPHIC-AND-COORDINATE-R1.json": "2f846a04ca1b42f23b90677912803a52795ca58d",
+    "research/pets/PET-HIGH-FIRST-19C-QUEST-AND-GIFT-WITNESSES-R1.json": "2e4e1dfcdc5787bbd5384d075741f3998f1ece5f"
+  },
+  "source": {
+    "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n182_98793.html",
+    "date": "2001-06-14",
+    "grade": "PERIOD_PLAYER_GUIDE",
+    "raw_response_sha256": null
+  },
+  "summary": {
+    "previously_covered": 88,
+    "new_positions": 36,
+    "covered": 124,
+    "source_positions": 124,
+    "status_counts": {
+      "PLACE_ONLY_NO_COORDINATES": 12,
+      "COORDINATE_INTERSECTION_MAP_HEADER_UNRESOLVED": 10,
+      "NO_INTERSECTION_IN_REPRESENTATIVE_ROUTE": 3,
+      "COORDINATE_INTERSECTION_UNAMBIGUOUS_HEADER": 10,
+      "COORDINATE_INTERSECTION_NAME_VARIANT_ONLY": 1
+    },
+    "rows_with_master_candidates": 36
+  },
+  "rows": [
+    {
+      "pos": 1,
+      "source_name": "乌力",
+      "master_name": "烏力",
+      "place": "北岛玛丽娜丝渔村周围",
+      "points": [],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 1,
+          "graphic": 100250,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 100,
+            "rect": [
+              11,
+              567,
+              155,
+              707
+            ],
+            "encounter_index": 28,
+            "encounter_row_ordinal": 8,
+            "group_id": 104,
+            "enemy_id": 140,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              30,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "UNIQUE_HEADER",
+          "map_names": [
+            "萨伊那斯"
+          ],
+          "matched_points": []
+        }
+      ],
+      "status": "PLACE_ONLY_NO_COORDINATES",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 3,
+      "source_name": "乌力斯坦",
+      "master_name": "烏力斯坦",
+      "place": "北岛玛丽娜丝渔村周围",
+      "points": [],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 3,
+          "graphic": 100252,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 100,
+            "rect": [
+              11,
+              567,
+              155,
+              707
+            ],
+            "encounter_index": 28,
+            "encounter_row_ordinal": 8,
+            "group_id": 107,
+            "enemy_id": 143,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              30,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "UNIQUE_HEADER",
+          "map_names": [
+            "萨伊那斯"
+          ],
+          "matched_points": []
+        },
+        {
+          "template_id": 6,
+          "graphic": 100252,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": null,
+          "map_status": null,
+          "map_names": [],
+          "matched_points": []
+        },
+        {
+          "template_id": 586,
+          "graphic": 100252,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": null,
+          "map_status": null,
+          "map_names": [],
+          "matched_points": []
+        }
+      ],
+      "status": "PLACE_ONLY_NO_COORDINATES",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 9,
+      "source_name": "布伊比",
+      "master_name": "布伊比",
+      "place": "南岛JOT B-2小岛",
+      "points": [
+        [
+          403,
+          187
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 14,
+          "graphic": 100257,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 200,
+            "rect": [
+              340,
+              170,
+              410,
+              211
+            ],
+            "encounter_index": 168,
+            "encounter_row_ordinal": 142,
+            "group_id": 306,
+            "enemy_id": 433,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "CONFLICTING_HEADER_FIELDS",
+          "map_names": [
+            "魔王竞技场7F|0",
+            "加鲁卡"
+          ],
+          "matched_points": [
+            [
+              403,
+              187
+            ]
+          ]
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_MAP_HEADER_UNRESOLVED",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 15,
+      "source_name": "乌宝宝",
+      "master_name": "烏寶寶",
+      "place": "南岛加加村周围",
+      "points": [],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 31,
+          "graphic": 100263,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 200,
+            "rect": [
+              550,
+              282,
+              652,
+              403
+            ],
+            "encounter_index": 87,
+            "encounter_row_ordinal": 61,
+            "group_id": 226,
+            "enemy_id": 369,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              10,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "CONFLICTING_HEADER_FIELDS",
+          "map_names": [
+            "魔王竞技场7F|0",
+            "加鲁卡"
+          ],
+          "matched_points": []
+        }
+      ],
+      "status": "PLACE_ONLY_NO_COORDINATES",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 16,
+      "source_name": "威威",
+      "master_name": "威威",
+      "place": "南岛加加村周围",
+      "points": [],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 32,
+          "graphic": 100264,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 200,
+            "rect": [
+              550,
+              282,
+              652,
+              403
+            ],
+            "encounter_index": 87,
+            "encounter_row_ordinal": 61,
+            "group_id": 229,
+            "enemy_id": 372,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              10,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "CONFLICTING_HEADER_FIELDS",
+          "map_names": [
+            "魔王竞技场7F|0",
+            "加鲁卡"
+          ],
+          "matched_points": []
+        }
+      ],
+      "status": "PLACE_ONLY_NO_COORDINATES",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 17,
+      "source_name": "乌卡鲁",
+      "master_name": "烏卡魯",
+      "place": "南岛南部",
+      "points": [
+        [
+          301,
+          496
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 33,
+          "graphic": 100265,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 200,
+            "rect": [
+              251,
+              327,
+              332,
+              446
+            ],
+            "encounter_index": 115,
+            "encounter_row_ordinal": 89,
+            "group_id": 254,
+            "enemy_id": 388,
+            "level": [
+              1,
+              2
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "CONFLICTING_HEADER_FIELDS",
+          "map_names": [
+            "魔王竞技场7F|0",
+            "加鲁卡"
+          ],
+          "matched_points": []
+        }
+      ],
+      "status": "NO_INTERSECTION_IN_REPRESENTATIVE_ROUTE",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 28,
+      "source_name": "尼可斯",
+      "master_name": "尼可斯",
+      "place": "南岛卡鲁它那村以北",
+      "points": [
+        [
+          301,
+          496
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 62,
+          "graphic": 100276,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 200,
+            "rect": [
+              251,
+              446,
+              396,
+              499
+            ],
+            "encounter_index": 114,
+            "encounter_row_ordinal": 88,
+            "group_id": 257,
+            "enemy_id": 391,
+            "level": [
+              1,
+              2
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "CONFLICTING_HEADER_FIELDS",
+          "map_names": [
+            "魔王竞技场7F|0",
+            "加鲁卡"
+          ],
+          "matched_points": [
+            [
+              301,
+              496
+            ]
+          ]
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_MAP_HEADER_UNRESOLVED",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 43,
+      "source_name": "洛奇安",
+      "master_name": "洛奇安",
+      "place": "南岛琉璃洞窟13楼",
+      "points": [],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": false,
+      "candidates": [
+        {
+          "template_id": 84,
+          "graphic": 100286,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 21013,
+            "rect": [
+              0,
+              0,
+              39,
+              39
+            ],
+            "encounter_index": 447,
+            "encounter_row_ordinal": 413,
+            "group_id": 592,
+            "enemy_id": 1136,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "UNIQUE_HEADER",
+          "map_names": [
+            "琉璃的洞窟１３楼|13"
+          ],
+          "matched_points": []
+        }
+      ],
+      "status": "PLACE_ONLY_NO_COORDINATES",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 49,
+      "source_name": "克雷尔",
+      "master_name": "克雷爾",
+      "place": "南岛卡鲁它那村周围",
+      "points": [],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 101,
+          "graphic": 100291,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 200,
+            "rect": [
+              262,
+              565,
+              333,
+              686
+            ],
+            "encounter_index": 95,
+            "encounter_row_ordinal": 69,
+            "group_id": 240,
+            "enemy_id": 382,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              10,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "CONFLICTING_HEADER_FIELDS",
+          "map_names": [
+            "魔王竞技场7F|0",
+            "加鲁卡"
+          ],
+          "matched_points": []
+        }
+      ],
+      "status": "PLACE_ONLY_NO_COORDINATES",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 51,
+      "source_name": "克洛尔",
+      "master_name": "克洛爾",
+      "place": "南岛加加村外至两桥",
+      "points": [
+        [
+          487,
+          285
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 103,
+          "graphic": 100293,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 200,
+            "rect": [
+              384,
+              238,
+              516,
+              415
+            ],
+            "encounter_index": 91,
+            "encounter_row_ordinal": 65,
+            "group_id": 234,
+            "enemy_id": 378,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "CONFLICTING_HEADER_FIELDS",
+          "map_names": [
+            "魔王竞技场7F|0",
+            "加鲁卡"
+          ],
+          "matched_points": [
+            [
+              487,
+              285
+            ]
+          ]
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_MAP_HEADER_UNRESOLVED",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 52,
+      "source_name": "里斯基",
+      "master_name": "里斯基",
+      "place": "南岛卡鲁它那村周围",
+      "points": [],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 104,
+          "graphic": 100294,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 200,
+            "rect": [
+              262,
+              565,
+              333,
+              686
+            ],
+            "encounter_index": 95,
+            "encounter_row_ordinal": 69,
+            "group_id": 243,
+            "enemy_id": 385,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              10,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "CONFLICTING_HEADER_FIELDS",
+          "map_names": [
+            "魔王竞技场7F|0",
+            "加鲁卡"
+          ],
+          "matched_points": []
+        },
+        {
+          "template_id": 589,
+          "graphic": 100294,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": null,
+          "map_status": null,
+          "map_names": [],
+          "matched_points": []
+        }
+      ],
+      "status": "PLACE_ONLY_NO_COORDINATES",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 55,
+      "source_name": "昆伊",
+      "master_name": "昆伊",
+      "place": "北岛萨姆吉尔村周围",
+      "points": [],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 113,
+          "graphic": 100297,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 100,
+            "rect": [
+              582,
+              399,
+              783,
+              560
+            ],
+            "encounter_index": 21,
+            "encounter_row_ordinal": 1,
+            "group_id": 88,
+            "enemy_id": 119,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              50,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "UNIQUE_HEADER",
+          "map_names": [
+            "萨伊那斯"
+          ],
+          "matched_points": []
+        }
+      ],
+      "status": "PLACE_ONLY_NO_COORDINATES",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 56,
+      "source_name": "凯比特",
+      "master_name": "凱比特",
+      "place": "北岛萨姆吉尔村周围",
+      "points": [],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 114,
+          "graphic": 100298,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 100,
+            "rect": [
+              582,
+              399,
+              783,
+              560
+            ],
+            "encounter_index": 21,
+            "encounter_row_ordinal": 1,
+            "group_id": 91,
+            "enemy_id": 122,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              50,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "UNIQUE_HEADER",
+          "map_names": [
+            "萨伊那斯"
+          ],
+          "matched_points": []
+        }
+      ],
+      "status": "PLACE_ONLY_NO_COORDINATES",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 66,
+      "source_name": "卡克尔",
+      "master_name": "卡克爾",
+      "place": "南岛奇喀喀村南部岬湾",
+      "points": [
+        [
+          81,
+          1140
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 181,
+          "graphic": 100323,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 200,
+            "rect": [
+              63,
+              1067,
+              112,
+              1168
+            ],
+            "encounter_index": 146,
+            "encounter_row_ordinal": 120,
+            "group_id": 260,
+            "enemy_id": 406,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "CONFLICTING_HEADER_FIELDS",
+          "map_names": [
+            "魔王竞技场7F|0",
+            "加鲁卡"
+          ],
+          "matched_points": [
+            [
+              81,
+              1140
+            ]
+          ]
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_MAP_HEADER_UNRESOLVED",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 67,
+      "source_name": "巴克",
+      "master_name": "巴克",
+      "place": "南岛奇喀喀村南部岬湾",
+      "points": [
+        [
+          81,
+          1140
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 182,
+          "graphic": 100324,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 200,
+            "rect": [
+              63,
+              1067,
+              112,
+              1168
+            ],
+            "encounter_index": 146,
+            "encounter_row_ordinal": 120,
+            "group_id": 264,
+            "enemy_id": 410,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "CONFLICTING_HEADER_FIELDS",
+          "map_names": [
+            "魔王竞技场7F|0",
+            "加鲁卡"
+          ],
+          "matched_points": [
+            [
+              81,
+              1140
+            ]
+          ]
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_MAP_HEADER_UNRESOLVED",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 70,
+      "source_name": "贝鲁卡",
+      "master_name": "貝魯卡",
+      "place": "南岛龙洞后方",
+      "points": [
+        [
+          478,
+          632
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 191,
+          "graphic": 100327,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 200,
+            "rect": [
+              419,
+              619,
+              485,
+              644
+            ],
+            "encounter_index": 150,
+            "encounter_row_ordinal": 124,
+            "group_id": 271,
+            "enemy_id": 414,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "CONFLICTING_HEADER_FIELDS",
+          "map_names": [
+            "魔王竞技场7F|0",
+            "加鲁卡"
+          ],
+          "matched_points": [
+            [
+              478,
+              632
+            ]
+          ]
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_MAP_HEADER_UNRESOLVED",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 71,
+      "source_name": "贝鲁伊卡",
+      "master_name": "貝魯伊卡",
+      "place": "南岛琉璃洞窟外",
+      "points": [
+        [
+          357,
+          361
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 192,
+          "graphic": 100328,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 200,
+            "rect": [
+              346,
+              667,
+              360,
+              743
+            ],
+            "encounter_index": 147,
+            "encounter_row_ordinal": 121,
+            "group_id": 275,
+            "enemy_id": 418,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "CONFLICTING_HEADER_FIELDS",
+          "map_names": [
+            "魔王竞技场7F|0",
+            "加鲁卡"
+          ],
+          "matched_points": []
+        }
+      ],
+      "status": "NO_INTERSECTION_IN_REPRESENTATIVE_ROUTE",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 74,
+      "source_name": "多利诺布斯",
+      "master_name": "多利諾布斯",
+      "place": "南岛加加村外至两桥",
+      "points": [],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": false,
+      "candidates": [
+        {
+          "template_id": 211,
+          "graphic": 100335,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 200,
+            "rect": [
+              384,
+              42,
+              605,
+              238
+            ],
+            "encounter_index": 90,
+            "encounter_row_ordinal": 64,
+            "group_id": 237,
+            "enemy_id": 375,
+            "level": [
+              1,
+              2
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "CONFLICTING_HEADER_FIELDS",
+          "map_names": [
+            "魔王竞技场7F|0",
+            "加鲁卡"
+          ],
+          "matched_points": []
+        },
+        {
+          "template_id": 559,
+          "graphic": 100335,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": null,
+          "map_status": null,
+          "map_names": [],
+          "matched_points": []
+        }
+      ],
+      "status": "PLACE_ONLY_NO_COORDINATES",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 75,
+      "source_name": "贝恩达斯",
+      "master_name": "貝恩達斯",
+      "place": "北岛玛丽娜丝渔村周围",
+      "points": [],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 212,
+          "graphic": 100336,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 100,
+            "rect": [
+              11,
+              567,
+              155,
+              707
+            ],
+            "encounter_index": 28,
+            "encounter_row_ordinal": 8,
+            "group_id": 113,
+            "enemy_id": 149,
+            "level": [
+              1,
+              2
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              10,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "UNIQUE_HEADER",
+          "map_names": [
+            "萨伊那斯"
+          ],
+          "matched_points": []
+        }
+      ],
+      "status": "PLACE_ONLY_NO_COORDINATES",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 76,
+      "source_name": "多利凯拉",
+      "master_name": "多利凱拉",
+      "place": "北岛玛丽娜丝渔村周围",
+      "points": [],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 213,
+          "graphic": 100337,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 100,
+            "rect": [
+              11,
+              567,
+              155,
+              707
+            ],
+            "encounter_index": 28,
+            "encounter_row_ordinal": 8,
+            "group_id": 110,
+            "enemy_id": 146,
+            "level": [
+              1,
+              2
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              10,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "UNIQUE_HEADER",
+          "map_names": [
+            "萨伊那斯"
+          ],
+          "matched_points": []
+        }
+      ],
+      "status": "PLACE_ONLY_NO_COORDINATES",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 78,
+      "source_name": "克邦凯斯",
+      "master_name": "克邦凱斯",
+      "place": "南岛卡鲁它那村浅滩",
+      "points": [
+        [
+          231,
+          560
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 221,
+          "graphic": 100339,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 200,
+            "rect": [
+              194,
+              551,
+              250,
+              577
+            ],
+            "encounter_index": 117,
+            "encounter_row_ordinal": 91,
+            "group_id": 248,
+            "enemy_id": 394,
+            "level": [
+              1,
+              2
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "CONFLICTING_HEADER_FIELDS",
+          "map_names": [
+            "魔王竞技场7F|0",
+            "加鲁卡"
+          ],
+          "matched_points": [
+            [
+              231,
+              560
+            ]
+          ]
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_MAP_HEADER_UNRESOLVED",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 81,
+      "source_name": "邦恩吉",
+      "master_name": "邦恩吉",
+      "place": "南岛阿鲁姆山运水任务；卡鲁它那村东侧",
+      "points": [
+        [
+          179,
+          740
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 224,
+          "graphic": 100342,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 200,
+            "rect": [
+              151,
+              673,
+              243,
+              749
+            ],
+            "encounter_index": 165,
+            "encounter_row_ordinal": 139,
+            "group_id": 316,
+            "enemy_id": 396,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              7
+            ]
+          },
+          "map_status": "CONFLICTING_HEADER_FIELDS",
+          "map_names": [
+            "魔王竞技场7F|0",
+            "加鲁卡"
+          ],
+          "matched_points": [
+            [
+              179,
+              740
+            ]
+          ]
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_MAP_HEADER_UNRESOLVED",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 84,
+      "source_name": "奇卡宝斯",
+      "master_name": "奇卡寶斯",
+      "place": "吉鲁岛阿斯玛鲁矿山6楼",
+      "points": [
+        [
+          5,
+          7
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 233,
+          "graphic": 100345,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 31806,
+            "rect": [
+              3,
+              5,
+              7,
+              9
+            ],
+            "encounter_index": 362,
+            "encounter_row_ordinal": 334,
+            "group_id": 498,
+            "enemy_id": 1035,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              2
+            ]
+          },
+          "map_status": "UNIQUE_HEADER",
+          "map_names": [
+            "阿斯玛鲁矿山６楼|0"
+          ],
+          "matched_points": [
+            [
+              5,
+              7
+            ]
+          ]
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_UNAMBIGUOUS_HEADER",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 86,
+      "source_name": "邦奇",
+      "master_name": "邦奇",
+      "place": "南岛水苍洞窟地下8楼",
+      "points": [
+        [
+          32,
+          4
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": false,
+      "candidates": [
+        {
+          "template_id": 241,
+          "graphic": 100347,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 21308,
+            "rect": [
+              0,
+              0,
+              39,
+              39
+            ],
+            "encounter_index": 595,
+            "encounter_row_ordinal": 557,
+            "group_id": 728,
+            "enemy_id": 1346,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              3
+            ]
+          },
+          "map_status": "UNIQUE_HEADER",
+          "map_names": [
+            "水苍的洞窟 地下8楼|0"
+          ],
+          "matched_points": [
+            [
+              32,
+              4
+            ]
+          ]
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_UNAMBIGUOUS_HEADER",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 87,
+      "source_name": "姆伊",
+      "master_name": "姆伊",
+      "place": "奇努伊海底通道霍特尔至奇努伊段",
+      "points": [
+        [
+          46,
+          29
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 242,
+          "graphic": 100348,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 31401,
+            "rect": [
+              45,
+              27,
+              52,
+              35
+            ],
+            "encounter_index": 337,
+            "encounter_row_ordinal": 309,
+            "group_id": 472,
+            "enemy_id": 1009,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              7
+            ]
+          },
+          "map_status": "UNIQUE_HEADER",
+          "map_names": [
+            "奇努伊的海底通路|10"
+          ],
+          "matched_points": [
+            [
+              46,
+              29
+            ]
+          ]
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_UNAMBIGUOUS_HEADER",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 92,
+      "source_name": "布拉奇多斯",
+      "master_name": "布拉奇多斯",
+      "place": "沙姆岛奇努伊村周围；原文另称误名布洛多斯",
+      "points": [
+        [
+          31,
+          99
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": true,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 253,
+          "graphic": 100353,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 9000,
+            "rect": [
+              56,
+              13,
+              76,
+              46
+            ],
+            "encounter_index": 1057,
+            "encounter_row_ordinal": 987,
+            "group_id": 1308,
+            "enemy_id": 332,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              96,
+              3
+            ],
+            "encounter_rate_fields": [
+              1,
+              9
+            ]
+          },
+          "map_status": "MISSING",
+          "map_names": [],
+          "matched_points": []
+        }
+      ],
+      "status": "NO_INTERSECTION_IN_REPRESENTATIVE_ROUTE",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 95,
+      "source_name": "玛恩摩",
+      "master_name": "瑪恩摩",
+      "place": "吉鲁岛采石场3楼",
+      "points": [
+        [
+          21,
+          15
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 261,
+          "graphic": 100355,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 31904,
+            "rect": [
+              18,
+              13,
+              24,
+              20
+            ],
+            "encounter_index": 381,
+            "encounter_row_ordinal": 353,
+            "group_id": 509,
+            "enemy_id": 1052,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              3
+            ]
+          },
+          "map_status": "UNIQUE_HEADER",
+          "map_names": [
+            "吉鲁采石场３楼|0"
+          ],
+          "matched_points": [
+            [
+              21,
+              15
+            ]
+          ]
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_UNAMBIGUOUS_HEADER",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 96,
+      "source_name": "恩摩摩",
+      "master_name": "恩摩摩",
+      "place": "吉鲁岛采石场5楼",
+      "points": [
+        [
+          25,
+          26
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 262,
+          "graphic": 100356,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 31906,
+            "rect": [
+              21,
+              25,
+              29,
+              33
+            ],
+            "encounter_index": 380,
+            "encounter_row_ordinal": 352,
+            "group_id": 514,
+            "enemy_id": 1056,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              3
+            ]
+          },
+          "map_status": "UNIQUE_HEADER",
+          "map_names": [
+            "吉鲁采石场５楼|0"
+          ],
+          "matched_points": [
+            [
+              25,
+              26
+            ]
+          ]
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_UNAMBIGUOUS_HEADER",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 97,
+      "source_name": "玛摩那斯",
+      "master_name": "瑪摩那斯",
+      "place": "吉鲁岛西北岬角",
+      "points": [
+        [
+          136,
+          42
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 263,
+          "graphic": 100357,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 300,
+            "rect": [
+              112,
+              37,
+              162,
+              74
+            ],
+            "encounter_index": 378,
+            "encounter_row_ordinal": 350,
+            "group_id": 448,
+            "enemy_id": 987,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              3
+            ]
+          },
+          "map_status": "UNIQUE_HEADER",
+          "map_names": [
+            "吉鲁岛"
+          ],
+          "matched_points": [
+            [
+              136,
+              42
+            ]
+          ]
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_UNAMBIGUOUS_HEADER",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 98,
+      "source_name": "玛恩摩洛斯",
+      "master_name": "瑪恩摩洛斯",
+      "place": "吉鲁岛西北",
+      "points": [
+        [
+          105,
+          147
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 264,
+          "graphic": 100358,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 300,
+            "rect": [
+              93,
+              121,
+              117,
+              157
+            ],
+            "encounter_index": 379,
+            "encounter_row_ordinal": 351,
+            "group_id": 450,
+            "enemy_id": 989,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              3
+            ]
+          },
+          "map_status": "UNIQUE_HEADER",
+          "map_names": [
+            "吉鲁岛"
+          ],
+          "matched_points": [
+            [
+              105,
+              147
+            ]
+          ]
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_UNAMBIGUOUS_HEADER",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 103,
+      "source_name": "火鸡",
+      "master_name": "火雞",
+      "place": "北岛霍特尔村周围",
+      "points": [
+        [
+          608,
+          206
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 291,
+          "graphic": 100367,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 100,
+            "rect": [
+              547,
+              115,
+              699,
+              241
+            ],
+            "encounter_index": 38,
+            "encounter_row_ordinal": 17,
+            "group_id": 164,
+            "enemy_id": 190,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "UNIQUE_HEADER",
+          "map_names": [
+            "萨伊那斯"
+          ],
+          "matched_points": [
+            [
+              608,
+              206
+            ]
+          ]
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_UNAMBIGUOUS_HEADER",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 104,
+      "source_name": "克克洛斯",
+      "master_name": "克克洛斯",
+      "place": "南岛乌鲁力村北海岸",
+      "points": [
+        [
+          624,
+          697
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 292,
+          "graphic": 100368,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 200,
+            "rect": [
+              602,
+              616,
+              695,
+              722
+            ],
+            "encounter_index": 138,
+            "encounter_row_ordinal": 112,
+            "group_id": 282,
+            "enemy_id": 398,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "CONFLICTING_HEADER_FIELDS",
+          "map_names": [
+            "魔王竞技场7F|0",
+            "加鲁卡"
+          ],
+          "matched_points": [
+            [
+              624,
+              697
+            ]
+          ]
+        },
+        {
+          "template_id": 558,
+          "graphic": 100368,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": null,
+          "map_status": null,
+          "map_names": [],
+          "matched_points": []
+        },
+        {
+          "template_id": 590,
+          "graphic": 100368,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": null,
+          "map_status": null,
+          "map_names": [],
+          "matched_points": []
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_MAP_HEADER_UNRESOLVED",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 105,
+      "source_name": "霍尔克",
+      "master_name": "霍爾克",
+      "place": "南岛乌鲁力村北海岸",
+      "points": [
+        [
+          624,
+          697
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 293,
+          "graphic": 100369,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "SAME_ID_DIFFERENT_TAIL",
+          "representative_lv1_route": {
+            "floor": 200,
+            "rect": [
+              602,
+              616,
+              695,
+              722
+            ],
+            "encounter_index": 138,
+            "encounter_row_ordinal": 112,
+            "group_id": 286,
+            "enemy_id": 402,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "CONFLICTING_HEADER_FIELDS",
+          "map_names": [
+            "魔王竞技场7F|0",
+            "加鲁卡"
+          ],
+          "matched_points": [
+            [
+              624,
+              697
+            ]
+          ]
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_MAP_HEADER_UNRESOLVED",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 106,
+      "source_name": "奇宝",
+      "master_name": "奇寶",
+      "place": "北岛霍特尔村周围",
+      "points": [
+        [
+          608,
+          206
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 294,
+          "graphic": 100370,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "SAME_ID_DIFFERENT_TAIL",
+          "representative_lv1_route": {
+            "floor": 100,
+            "rect": [
+              547,
+              115,
+              699,
+              241
+            ],
+            "encounter_index": 38,
+            "encounter_row_ordinal": 17,
+            "group_id": 164,
+            "enemy_id": 194,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              5
+            ]
+          },
+          "map_status": "UNIQUE_HEADER",
+          "map_names": [
+            "萨伊那斯"
+          ],
+          "matched_points": [
+            [
+              608,
+              206
+            ]
+          ]
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_UNAMBIGUOUS_HEADER",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 121,
+      "source_name": "巴洛洛克斯",
+      "master_name": "邦洛洛克斯",
+      "place": "北岛中央通道外",
+      "points": [
+        [
+          392,
+          463
+        ]
+      ],
+      "name_variant_only": true,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 331,
+          "graphic": 100384,
+          "join": "TW10_GRAPHIC_OTHER_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 100,
+            "rect": [
+              365,
+              440,
+              416,
+              486
+            ],
+            "encounter_index": 37,
+            "encounter_row_ordinal": 16,
+            "group_id": 118,
+            "enemy_id": 153,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              6
+            ]
+          },
+          "map_status": "UNIQUE_HEADER",
+          "map_names": [
+            "萨伊那斯"
+          ],
+          "matched_points": [
+            [
+              392,
+              463
+            ]
+          ]
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_NAME_VARIANT_ONLY",
+      "official_capture_verified": false
+    },
+    {
+      "pos": 122,
+      "source_name": "兰贝鲁斯",
+      "master_name": "蘭貝魯斯",
+      "place": "北岛盗贼洞窟地下2楼",
+      "points": [
+        [
+          30,
+          34
+        ]
+      ],
+      "name_variant_only": false,
+      "source_reports_name_error": false,
+      "source_author_claimed_personal_confirmation": true,
+      "candidates": [
+        {
+          "template_id": 332,
+          "graphic": 100385,
+          "join": "TW10_SAME_GRAPHIC_NAME",
+          "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+          "representative_lv1_route": {
+            "floor": 10702,
+            "rect": [
+              0,
+              0,
+              49,
+              49
+            ],
+            "encounter_index": 243,
+            "encounter_row_ordinal": 217,
+            "group_id": 379,
+            "enemy_id": 523,
+            "level": [
+              1,
+              1
+            ],
+            "group_item_gates": [
+              -1,
+              -1
+            ],
+            "event_fields": [
+              -1,
+              -1,
+              -1
+            ],
+            "weights": [
+              1,
+              1
+            ],
+            "encounter_rate_fields": [
+              1,
+              7
+            ]
+          },
+          "map_status": "UNIQUE_HEADER",
+          "map_names": [
+            "盗贼的洞窟地下２楼|0"
+          ],
+          "matched_points": [
+            [
+              30,
+              34
+            ]
+          ]
+        }
+      ],
+      "status": "COORDINATE_INTERSECTION_UNAMBIGUOUS_HEADER",
+      "official_capture_verified": false
+    }
+  ],
+  "official_capture_verified": false,
+  "official_species_count": null,
+  "original_assets_published": false
+}
