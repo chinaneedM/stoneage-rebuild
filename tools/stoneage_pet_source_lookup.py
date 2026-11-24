@@ -227,7 +227,7 @@ def verify(m,d,entries):
     assert tw10_refs["PET-000115"]["missing_web_elements"] == [107]  # 黑烏力, blank
     assert tw10_refs["PET-000017"]["period_starter_witness"]["differs_from_all_valid_museum_ratios"] is True
     assert sum(r["period_starter_witness"] is not None for r in tw10_refs.values()) == 4
-    assert {r["printed_number"] for r in tw10_refs["PET-000004"]["mainland_2003_catalogue_rows"]} == {4, 8}
+    assert [r["printed_number"] for r in tw10_refs["PET-000004"]["mainland_2003_catalogue_rows"]] == [4, 8]
     assert sum(bool(r["mainland_2003_catalogue_rows"]) for r in tw10_refs.values()) == 119
     assert sum(len(r["mainland_2003_catalogue_rows"]) for r in tw10_refs.values()) == 121
     assert all(

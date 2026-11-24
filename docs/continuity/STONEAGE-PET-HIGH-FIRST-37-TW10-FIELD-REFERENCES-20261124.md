@@ -31,6 +31,6 @@
 
 ## 日韩原客户端取件边界与续接
 
-本轮检索免费且可直接下载的原经典 PC 文件。日本 NHN／Gamania 的 `sa174hg.exe`、`sa174gm.exe` 与韩国 Netmarble 的 `NetmarbleStoneAge120.exe` 三个已知原发行地址都未交付可验证字节。日本同期报道可确认开放测试阶段提供官网下载，4Gamer 产品页保留新闻、影像和图片入口；档案索引请求本轮未成功，无法断言它们没有存档。精确文件名未找到可验证的公开镜像。2010 年韩国结果中的 Noeul 为玩家成长计算器，不能当游戏安装包。日韩待取得免费原件、可定位的存档副本或同部署宠物表后重开。[日本发行线索](../../research/clients/STONEAGE-JAPAN-SA174GM-GAMANIA-RECOVERY-R1.md) · [韩国原发行地址](STONEAGE-PET126U-KR2011-DIRECT-CDN-TW2026-REWARD-ROLES-20261121.md) · [日本同期发布](https://www.4gamer.net/news/history/2003.12/20031212000000detail.html)
+本轮检索免费且可直接下载的原经典 PC 文件。日本 NHN／Gamania 的 `sa174hg.exe`、`sa174gm.exe` 与韩国 Netmarble 的 `NetmarbleStoneAge120.exe` 三个已知原发行地址都未交付可验证字节。日本同期报道可确认开放测试阶段提供官网下载，4Gamer 产品页保留新闻、影像和图片入口；档案索引请求本轮未成功，无法断言它们没有存档。精确文件名未找到可验证的公开镜像。2010 年韩国结果中的 Noeul 为玩家成长计算器，不能当游戏安装包。日韩待取得免费原件、可定位的存档副本或同部署宠物表后重开。[日本发行线索](../../research/clients/STONEAGE-JAPAN-SA174GM-GAMANIA-RECOVERY-R1.md) · [韩国原发行地址](STONEAGE-PET126U-KR2011-NETMARBLE-PUBLIC-CDN-TW2026-PC-PET-REWARD-SCOPE-20261121.md) · [日本同期发布](https://www.4gamer.net/news/history/2003.12/20031212000000detail.html)
 
 **NEXT PET-HIGH-FIRST-38** 围绕本轮发现的明确差异，优先寻找能认证部署归属的可读原表，或能区分威伯、烏力布魯和貝洛寶利属性的同期原状态面板。可以从已持有较高 PC 版本反查同名、多模板和更名，按取得实证后的覆盖面继续扩展。无同版原件时保留差异及精确重开条件。PET 唯一活动模块，Stage A 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79 暂停，全项目完成率未知。
