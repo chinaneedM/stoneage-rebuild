@@ -429,3 +429,8 @@
 ## 2026-11-24｜PET-HIGH-FIRST-19D 2001目录原序覆盖闭合
 
 [专项124序入口](PC-2001-DIRECTORY-COVERAGE.md) · [机器数据](../../research/pets/PET-HIGH-FIRST-19D-2001-DIRECTORY-CLOSURE-R1.json) · [接续](../continuity/STONEAGE-PET-HIGH-FIRST-19D-2001-DIRECTORY-CLOSURE-20261124.md)。新36序累计124/124，按地图头、坐标、名称变体及未知分层；不当官方复原率。下一批高版新增宠，PET唯一。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-20 同期转蛋全文与7.5图源
+
+[逐宠档案](PC-2004-CAPSULE-NAMED-PETS.md) · [机读记录](../../research/pets/PET-HIGH-FIRST-20-CAPSULE-AND-GALLERY-R1.json) · [接续](../continuity/STONEAGE-PET-HIGH-FIRST-20-CAPSULE-AND-GALLERY-20261124.md)。7具名取得记录，10图源引用、4网页目视；不认证实发或图名。PET唯一，历史CURRENT不动。
