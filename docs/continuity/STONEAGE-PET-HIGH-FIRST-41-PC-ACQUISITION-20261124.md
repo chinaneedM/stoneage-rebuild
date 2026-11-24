@@ -22,4 +22,10 @@
 
 PET唯一、Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、总体UNKNOWN。历史CURRENT不改。
 
-**NEXT PET-HIGH-FIRST-42：** 对既有具名取得缺项继续原件优先，先查卡坦鱼鸟交换和 SOT/JOT 任务奖励，复用现有同载体提取器，定位实例、奖励分支及地图；不重复纯名字网页，不跨模块。若已存在未验收PR，先完成其验收。
+## 对旧证据的实质纠偏（不重写历史）
+
+[INTEGRATION36](../../research/recovered/STONEAGE-INTEGRATION36-QUIZ-THREE-BROTHERS-ORIGINAL-SOURCE-R1.json) 已核过 quiz.create 和六活动脚本。此次是原件再访问、扩至sink并纠正GetPet关联语义，不把早已记录的14、351指令再算为新发现。旧报告 GetPet_past_and_same_carrier 把字面数字14/351/352对照同ID的模板行，分别得到图100257、100040、100040；这三个模板并非奖励指令所选目标。R40的后期解析函数证据与R41实读实例表联合表明，应按 ENEMY_ID→实例的模板ID→模板图号查询，实际得到14→12→100255、351→302→100372、352→303→100373。旧模板行真实存在，不删除，只撤销把它们当奖励目标的解释。INTEGRATION36还区分备份352与活动quiz 14/351；R41的352来自另外的非备份sink/equiz_04，直接CREATE未见，不能当已启用。旧报告812原DAT有派生证据、810/850未有，仍不声称本轮实读地图。
+
+[INTEGRATION05](../../research/recovered/STONEAGE-INTEGRATION05-GETPET-QUEST-MAP-ORIGINAL-SOURCE-GRAPH-R1.json) 已登记24个CREATE引用、23个脚本、36个GetPet字面数字、19个楼层。其原件索引可以直接服务下一轮，避免对全NPC树重扫或重复以模板同ID当奖励。
+
+**NEXT PET-HIGH-FIRST-42：** 先使用INTEGRATION05及既有任务块目录的确切脚本、字面数字与来源指纹，通过配置选择的实例表和模板表重接奖励目标，优先卡坦鱼鸟交换和SOT/JOT相关证据；仅在确实缺字段时回读原件，定位分支及地图。不重复纯名字网页，不跨模块。若已存在未验收PR，先完成其验收。
