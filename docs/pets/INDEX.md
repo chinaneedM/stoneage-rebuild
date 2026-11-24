@@ -434,3 +434,8 @@
 ## 2026-11-24｜PET-HIGH-FIRST-20 同期转蛋全文与7.5图源
 
 [逐宠档案](PC-2004-CAPSULE-NAMED-PETS.md) · [机读记录](../../research/pets/PET-HIGH-FIRST-20-CAPSULE-AND-GALLERY-R1.json) · [接续](../continuity/STONEAGE-PET-HIGH-FIRST-20-CAPSULE-AND-GALLERY-20261124.md)。7具名取得记录，10图源引用、4网页目视；不认证实发或图名。PET唯一，历史CURRENT不动。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-21 猪鼠年兽分源档案
+
+[8条具名候选](TW-2007-2008-YEAR-BEAST-CANDIDATES.md) · [机读记录](../../research/pets/PET-HIGH-FIRST-21-LATE-YEAR-BEAST-SOURCE-R1.json) · [续接](../continuity/STONEAGE-PET-HIGH-FIRST-21-LATE-YEAR-BEAST-20261124.md)。8处元素冲突、1处异名，后期图鉴数值不反投原服；现有7.5/8.5索引无精确对应，晚期原件待补。PET唯一。
