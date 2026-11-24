@@ -218,6 +218,24 @@
       "git_blob": "746107dc2265e66629d64419fb039934de9baa11",
       "expected_array": null,
       "expected_rows": null
+    },
+    "hf42": {
+      "path": "research/pets/PET-HIGH-FIRST-42-REWARD-INSTANCE-INDEX-R1.json",
+      "git_blob": "449eaf2d74fda469a05a46781da1824096c2926c",
+      "expected_array": "rows",
+      "expected_rows": 36
+    },
+    "hf42_raw": {
+      "path": "research/pets/PET-HIGH-FIRST-42-ORIGINAL-MEMBER-REPLAY-R1.json",
+      "git_blob": "779077c98b745f6045733d4ba1410768e989f73e",
+      "expected_array": "rows",
+      "expected_rows": 36
+    },
+    "hf42_cross": {
+      "path": "research/pets/PET-HIGH-FIRST-42-EXACT-TEMPLATE-CROSSWALK-R1.json",
+      "git_blob": "c6667a6190283f4ec3ad3813c570357b18906ccc",
+      "expected_array": "rows",
+      "expected_rows": 36
     }
   },
   "expected": {
@@ -288,5 +306,10 @@
     "source_head": "5158fe021a7f0580ab70ca6c74a416607d5b98b6",
     "source_tree": "6cd989abe5c779d48d50ac98139483d84f6e2b4d",
     "scope": "57 graphic-scoped existing dossiers; 31 exact archived members, 145 template candidates and 3 award commands."
+  },
+  "supplement_hf42": {
+    "source_head": "a320a197da3a7813d26925dd4e3228cadb9156eb",
+    "source_tree": "b9131178503d1f864d629a4b582c44eb6887b18b",
+    "scope": "26 original members, 36 exact instance joins, 25 command lines, 36 exact claimed 7.5 template fingerprints, 33 TW1 graphic candidates including 2 name conflicts; 3 independent later graphic candidates."
   }
 }

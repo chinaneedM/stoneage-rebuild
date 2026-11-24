@@ -3400,3 +3400,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-24｜PET-HIGH-FIRST-41 三宠任务取得链与57图号候选
 
 [最新接续](docs/continuity/STONEAGE-PET-HIGH-FIRST-41-PC-ACQUISITION-20261124.md)。31份原保存成员实读SHA/CRC匹配，636双宠物标记正权重链、33含Lv1；金布伊14→12、左迪洛斯351→302、巴朵兰恩352→303静态任务指令。57既有档案追加来源引用，不计新种；原官服实际取得未证。NEXT PET-HIGH-FIRST-42，PET唯一，历史CURRENT不改。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-42 奖励实例批量复原
+
+[最新接续](docs/continuity/STONEAGE-PET-HIGH-FIRST-42-PC-REWARD-INSTANCE-INDEX-20261124.md)。26份原件、36个Lv1双宠标记实例、25GetPet行、36标称7.5模板行指纹相同；33 TW1图号候选（2异名）与3独立后期图号。原件与日志独立同一，官服实际取得未证。NEXT PET-HIGH-FIRST-43，PET唯一。

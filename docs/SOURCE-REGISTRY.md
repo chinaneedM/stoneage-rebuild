@@ -8991,3 +8991,8 @@ R14包351231B/SHA7684267ab528d13ceecb23a25632543ae839225607cbda702a32736e4c4d366
 ## 2026-11-24｜PET-HIGH-FIRST-41 原保存猜谜及交换任务配置
 
 - 混合2.5保存RAR 31份成员实读并逐件SHA/CRC一致，源Actions 45416445759，原派生JSON与独立下载ZIP、日志重建一致。后期固定PC脚本及两主表用于独立对照，不当独立原官服双证。[来源收据及具体限制](continuity/STONEAGE-PET-HIGH-FIRST-41-PC-ACQUISITION-20261124.md)。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-42 奖励脚本与原服务端配置
+
+26原成员取证，源Actions 45419861471、独立下载ZIP和日志重建一致；36实例与标称7.5源模板共享完整行字段指纹，不当独立官服部署证据。[原件保全和链接](continuity/STONEAGE-PET-HIGH-FIRST-42-PC-REWARD-INSTANCE-INDEX-20261124.md)。
