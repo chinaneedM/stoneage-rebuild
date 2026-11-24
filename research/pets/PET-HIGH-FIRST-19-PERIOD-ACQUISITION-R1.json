@@ -1,0 +1,1396 @@
+{
+  "schema": "stoneage.pet.high_first_19.acquisition.r1",
+  "base_head": "6ddd1e4a3f000d5a856b0ca403f4ee1f1670aef2",
+  "source_pins_git_blob": {
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-TW85-VISUAL-ACTION-REFERENCES-R1.json": "3bcfbba98cfb915b14679ba472dbc554db297018"
+  },
+  "scope": "CLASSIC_PC_ONLY; period historical claims separate from retained carrier data",
+  "sources": [
+    {
+      "id": "S1",
+      "date": "2004-05-10",
+      "region": "CN",
+      "url": "https://games.sina.com.cn/newgames/2004/05/051020773.shtml",
+      "grade": "OPERATOR_ANNOUNCEMENT_REPRINT_FULL_TEXT",
+      "claims": "7.0 slogan competition: winning entry promised one 鲁比 and one 双头狼; voting grand prize 端午毒蛇. Submission May 10–19, vote May 20–23, result planned May 24. No award receipt."
+    },
+    {
+      "id": "S2",
+      "date": "2004-06-24",
+      "region": "TW",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=15579",
+      "grade": "CONTEMPORARY_EVENT_REPORT_INDEX_ONLY_DIRECT_403",
+      "claims": "7.5 presentation report describes 狐狸女弗麗露、弗麗雅 and five additional 火風鷹人 as gifts; recipient-level delivery not demonstrated."
+    },
+    {
+      "id": "S3",
+      "date": "2004-09-13",
+      "event_date": "2004-09-11",
+      "region": "CN_TW",
+      "url": "https://games.sina.com.cn/newgames/2004/09/091347338.shtml",
+      "grade": "CONTEMPORARY_DEVELOPER_INTERVIEW_SUMMARY_FULL_TEXT",
+      "claims": "Producer explains region-specific version and pet acquisition plans in response to monkey-year pet question; Taiwan 玄武 quest acquisition contrasted with mainland route still planned. Does not identify actual mainland debut."
+    },
+    {
+      "id": "S4",
+      "date": "2004-12-11",
+      "region": "TW",
+      "url": "https://www.games.idv.tw/news.php?nid=236",
+      "operator_link_reported": "http://www.wayi.com.tw/stoneage/actives/931208/index.html",
+      "grade": "CONTEMPORARY_EVENT_REPORT_FULL_TEXT",
+      "claims": "Second family hunting contest Dec 8–22 08:00: clan leader turns designated pets in to NPC; threshold 230 tasks for lottery; named top prizes 布里薩爾、巴特、奈坎特、哈沃斯. Also reports prior availability of 布里薩爾, all-water element and separate bingo green-ant and capsule water-buffalo prizes. No winner or issuance ledger."
+    },
+    {
+      "id": "S5",
+      "date": "2004-12-14",
+      "region": "TW",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=18112",
+      "grade": "CONTEMPORARY_EVENT_REPORT_INDEX_ONLY_DIRECT_403",
+      "claims": "Christmas capsule campaign promised 布里薩爾 in addition to three pairs of pets for completing five crystal colors; no redemption proof."
+    },
+    {
+      "id": "S6",
+      "date": "2004-12-25",
+      "region": "TW",
+      "url": "https://www.games.idv.tw/news.php?nid=247",
+      "grade": "CONTEMPORARY_REPORT_INDEX_ONLY_DIRECT_403",
+      "claims": "VIP campaign mentions 女王蜂沃克比; direct source unavailable, eligibility not established from this text."
+    },
+    {
+      "id": "S7",
+      "date": "2005-04-24",
+      "region": "TW",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=1338",
+      "grade": "PERIOD_PLAYER_COMPILATION_INDEX_ONLY",
+      "claims": "Player maps foxes 弗麗雅/弗麗露 to 媚惑術, eagles 哈沃恩/哈沃斯 to 逆轉, butterflies 巴特/巴雅 to 淨化之舞. Learning claims only; not innate skill or official skill ID."
+    }
+  ],
+  "rows": [
+    {
+      "name": "弗麗雅",
+      "source_ids": [
+        "S2",
+        "S7"
+      ],
+      "template_id": 148,
+      "master_graphic": 101743,
+      "master_elements": [
+        90,
+        10,
+        0,
+        0
+      ],
+      "master_row_sha256": "20a33d53c4435355ea3478b80d6491ccba7b3c2dd9c81485ebadf4c7239ea6f6",
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "client_join_status": "TW85_NATIVE_SAME_GRAPHIC_NAME",
+      "native_names_at_master_graphic": {
+        "sa.exe": "弗麗雅",
+        "sb.exe": "弗麗雅",
+        "sc.exe": "弗麗雅",
+        "sd.exe": "弗麗雅"
+      },
+      "exact_name_album_slots": [
+        [
+          "sa.exe",
+          450
+        ],
+        [
+          "sb.exe",
+          450
+        ],
+        [
+          "sc.exe",
+          450
+        ],
+        [
+          "sd.exe",
+          450
+        ]
+      ],
+      "independent_native_named_groups": [
+        {
+          "group": 101652,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 450,
+              "portrait_alias": 28518,
+              "row_sha256": "1da2a6ea05e861f1491e9cd879bbd7cf87a0bdf00bfca3987466a7a7e597a23b"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 450,
+              "portrait_alias": 28518,
+              "row_sha256": "1da2a6ea05e861f1491e9cd879bbd7cf87a0bdf00bfca3987466a7a7e597a23b"
+            },
+            {
+              "program": "sc.exe",
+              "slot": 450,
+              "portrait_alias": 28518,
+              "row_sha256": "1da2a6ea05e861f1491e9cd879bbd7cf87a0bdf00bfca3987466a7a7e597a23b"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 450,
+              "portrait_alias": 28518,
+              "row_sha256": "1da2a6ea05e861f1491e9cd879bbd7cf87a0bdf00bfca3987466a7a7e597a23b"
+            }
+          ]
+        },
+        {
+          "group": 101734,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 450,
+              "portrait_alias": 28518,
+              "row_sha256": "1da2a6ea05e861f1491e9cd879bbd7cf87a0bdf00bfca3987466a7a7e597a23b"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 450,
+              "portrait_alias": 28518,
+              "row_sha256": "1da2a6ea05e861f1491e9cd879bbd7cf87a0bdf00bfca3987466a7a7e597a23b"
+            },
+            {
+              "program": "sc.exe",
+              "slot": 450,
+              "portrait_alias": 28518,
+              "row_sha256": "1da2a6ea05e861f1491e9cd879bbd7cf87a0bdf00bfca3987466a7a7e597a23b"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 450,
+              "portrait_alias": 28518,
+              "row_sha256": "1da2a6ea05e861f1491e9cd879bbd7cf87a0bdf00bfca3987466a7a7e597a23b"
+            }
+          ]
+        },
+        {
+          "group": 101740,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 450,
+              "portrait_alias": 28518,
+              "row_sha256": "1da2a6ea05e861f1491e9cd879bbd7cf87a0bdf00bfca3987466a7a7e597a23b"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 450,
+              "portrait_alias": 28518,
+              "row_sha256": "1da2a6ea05e861f1491e9cd879bbd7cf87a0bdf00bfca3987466a7a7e597a23b"
+            },
+            {
+              "program": "sc.exe",
+              "slot": 450,
+              "portrait_alias": 28518,
+              "row_sha256": "1da2a6ea05e861f1491e9cd879bbd7cf87a0bdf00bfca3987466a7a7e597a23b"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 450,
+              "portrait_alias": 28518,
+              "row_sha256": "1da2a6ea05e861f1491e9cd879bbd7cf87a0bdf00bfca3987466a7a7e597a23b"
+            }
+          ]
+        },
+        {
+          "group": 101743,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 450,
+              "portrait_alias": 28518,
+              "row_sha256": "1da2a6ea05e861f1491e9cd879bbd7cf87a0bdf00bfca3987466a7a7e597a23b"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 450,
+              "portrait_alias": 28518,
+              "row_sha256": "1da2a6ea05e861f1491e9cd879bbd7cf87a0bdf00bfca3987466a7a7e597a23b"
+            },
+            {
+              "program": "sc.exe",
+              "slot": 450,
+              "portrait_alias": 28518,
+              "row_sha256": "1da2a6ea05e861f1491e9cd879bbd7cf87a0bdf00bfca3987466a7a7e597a23b"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 450,
+              "portrait_alias": 28518,
+              "row_sha256": "1da2a6ea05e861f1491e9cd879bbd7cf87a0bdf00bfca3987466a7a7e597a23b"
+            }
+          ]
+        }
+      ],
+      "official_same_deployment_verified": false,
+      "actual_award_verified": false,
+      "official_birth_skill_verified": false
+    },
+    {
+      "name": "弗麗露",
+      "source_ids": [
+        "S2",
+        "S7"
+      ],
+      "template_id": 149,
+      "master_graphic": 101744,
+      "master_elements": [
+        0,
+        0,
+        90,
+        10
+      ],
+      "master_row_sha256": "fe52d340cfdc11a7ba29551195f5dd895c6612b70c5a7dc1524b0f6e66b44357",
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "client_join_status": "TW85_NATIVE_SAME_GRAPHIC_NAME",
+      "native_names_at_master_graphic": {
+        "sa.exe": "弗麗露",
+        "sb.exe": "弗麗露",
+        "sc.exe": "弗麗露",
+        "sd.exe": "弗麗露"
+      },
+      "exact_name_album_slots": [
+        [
+          "sa.exe",
+          451
+        ],
+        [
+          "sb.exe",
+          451
+        ],
+        [
+          "sc.exe",
+          451
+        ],
+        [
+          "sd.exe",
+          451
+        ]
+      ],
+      "independent_native_named_groups": [
+        {
+          "group": 101653,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 451,
+              "portrait_alias": 28519,
+              "row_sha256": "5cc750445300d3d726a3a92fb484e8a990a2a603ec449e128c37339141c28c7a"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 451,
+              "portrait_alias": 28519,
+              "row_sha256": "5cc750445300d3d726a3a92fb484e8a990a2a603ec449e128c37339141c28c7a"
+            },
+            {
+              "program": "sc.exe",
+              "slot": 451,
+              "portrait_alias": 28519,
+              "row_sha256": "5cc750445300d3d726a3a92fb484e8a990a2a603ec449e128c37339141c28c7a"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 451,
+              "portrait_alias": 28519,
+              "row_sha256": "5cc750445300d3d726a3a92fb484e8a990a2a603ec449e128c37339141c28c7a"
+            }
+          ]
+        },
+        {
+          "group": 101735,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 451,
+              "portrait_alias": 28519,
+              "row_sha256": "5cc750445300d3d726a3a92fb484e8a990a2a603ec449e128c37339141c28c7a"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 451,
+              "portrait_alias": 28519,
+              "row_sha256": "5cc750445300d3d726a3a92fb484e8a990a2a603ec449e128c37339141c28c7a"
+            },
+            {
+              "program": "sc.exe",
+              "slot": 451,
+              "portrait_alias": 28519,
+              "row_sha256": "5cc750445300d3d726a3a92fb484e8a990a2a603ec449e128c37339141c28c7a"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 451,
+              "portrait_alias": 28519,
+              "row_sha256": "5cc750445300d3d726a3a92fb484e8a990a2a603ec449e128c37339141c28c7a"
+            }
+          ]
+        },
+        {
+          "group": 101744,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 451,
+              "portrait_alias": 28519,
+              "row_sha256": "5cc750445300d3d726a3a92fb484e8a990a2a603ec449e128c37339141c28c7a"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 451,
+              "portrait_alias": 28519,
+              "row_sha256": "5cc750445300d3d726a3a92fb484e8a990a2a603ec449e128c37339141c28c7a"
+            },
+            {
+              "program": "sc.exe",
+              "slot": 451,
+              "portrait_alias": 28519,
+              "row_sha256": "5cc750445300d3d726a3a92fb484e8a990a2a603ec449e128c37339141c28c7a"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 451,
+              "portrait_alias": 28519,
+              "row_sha256": "5cc750445300d3d726a3a92fb484e8a990a2a603ec449e128c37339141c28c7a"
+            }
+          ]
+        }
+      ],
+      "official_same_deployment_verified": false,
+      "actual_award_verified": false,
+      "official_birth_skill_verified": false
+    },
+    {
+      "name": "哈沃恩",
+      "source_ids": [
+        "S7"
+      ],
+      "template_id": 176,
+      "master_graphic": 101768,
+      "master_elements": [
+        90,
+        10,
+        0,
+        0
+      ],
+      "master_row_sha256": "3cece217ad44ebee6853d39fa4bd4b40d5ccf56af052f258609841b705a4e610",
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "client_join_status": "TW85_NATIVE_SAME_GRAPHIC_NAME",
+      "native_names_at_master_graphic": {
+        "sa.exe": "哈沃恩",
+        "sb.exe": "哈沃恩",
+        "sc.exe": "哈沃恩",
+        "sd.exe": "哈沃恩"
+      },
+      "exact_name_album_slots": [
+        [
+          "sa.exe",
+          463
+        ],
+        [
+          "sb.exe",
+          463
+        ],
+        [
+          "sc.exe",
+          463
+        ],
+        [
+          "sd.exe",
+          463
+        ]
+      ],
+      "independent_native_named_groups": [
+        {
+          "group": 101665,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 463,
+              "portrait_alias": 28531,
+              "row_sha256": "fff989a5a9bfdc040ed89099e85b2105d64c398c97c1c8e9bba3aac73a93676d"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 463,
+              "portrait_alias": 28531,
+              "row_sha256": "fff989a5a9bfdc040ed89099e85b2105d64c398c97c1c8e9bba3aac73a93676d"
+            },
+            {
+              "program": "sc.exe",
+              "slot": 463,
+              "portrait_alias": 28531,
+              "row_sha256": "fff989a5a9bfdc040ed89099e85b2105d64c398c97c1c8e9bba3aac73a93676d"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 463,
+              "portrait_alias": 28531,
+              "row_sha256": "fff989a5a9bfdc040ed89099e85b2105d64c398c97c1c8e9bba3aac73a93676d"
+            }
+          ]
+        },
+        {
+          "group": 101757,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 463,
+              "portrait_alias": 28531,
+              "row_sha256": "fff989a5a9bfdc040ed89099e85b2105d64c398c97c1c8e9bba3aac73a93676d"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 463,
+              "portrait_alias": 28531,
+              "row_sha256": "fff989a5a9bfdc040ed89099e85b2105d64c398c97c1c8e9bba3aac73a93676d"
+            },
+            {
+              "program": "sc.exe",
+              "slot": 463,
+              "portrait_alias": 28531,
+              "row_sha256": "fff989a5a9bfdc040ed89099e85b2105d64c398c97c1c8e9bba3aac73a93676d"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 463,
+              "portrait_alias": 28531,
+              "row_sha256": "fff989a5a9bfdc040ed89099e85b2105d64c398c97c1c8e9bba3aac73a93676d"
+            }
+          ]
+        },
+        {
+          "group": 101768,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 463,
+              "portrait_alias": 28531,
+              "row_sha256": "fff989a5a9bfdc040ed89099e85b2105d64c398c97c1c8e9bba3aac73a93676d"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 463,
+              "portrait_alias": 28531,
+              "row_sha256": "fff989a5a9bfdc040ed89099e85b2105d64c398c97c1c8e9bba3aac73a93676d"
+            },
+            {
+              "program": "sc.exe",
+              "slot": 463,
+              "portrait_alias": 28531,
+              "row_sha256": "fff989a5a9bfdc040ed89099e85b2105d64c398c97c1c8e9bba3aac73a93676d"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 463,
+              "portrait_alias": 28531,
+              "row_sha256": "fff989a5a9bfdc040ed89099e85b2105d64c398c97c1c8e9bba3aac73a93676d"
+            }
+          ]
+        }
+      ],
+      "official_same_deployment_verified": false,
+      "actual_award_verified": false,
+      "official_birth_skill_verified": false
+    },
+    {
+      "name": "哈沃斯",
+      "source_ids": [
+        "S4",
+        "S7"
+      ],
+      "template_id": 177,
+      "master_graphic": 101767,
+      "master_elements": [
+        0,
+        0,
+        90,
+        10
+      ],
+      "master_row_sha256": "7301c5c38db162942a2c25a5a75c83381f85355775b0abd251ca8e0e291b01af",
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "client_join_status": "TW85_NATIVE_SAME_GRAPHIC_NAME",
+      "native_names_at_master_graphic": {
+        "sa.exe": "哈沃斯",
+        "sb.exe": "哈沃斯",
+        "sc.exe": "哈沃斯",
+        "sd.exe": "哈沃斯"
+      },
+      "exact_name_album_slots": [
+        [
+          "sa.exe",
+          462
+        ],
+        [
+          "sb.exe",
+          462
+        ],
+        [
+          "sc.exe",
+          462
+        ],
+        [
+          "sd.exe",
+          462
+        ]
+      ],
+      "independent_native_named_groups": [
+        {
+          "group": 101664,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 462,
+              "portrait_alias": 28530,
+              "row_sha256": "2f5149fe13958f9ee0a9a7535c1d3ec147400c56d913630ddf18d52ed55650e8"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 462,
+              "portrait_alias": 28530,
+              "row_sha256": "2f5149fe13958f9ee0a9a7535c1d3ec147400c56d913630ddf18d52ed55650e8"
+            },
+            {
+              "program": "sc.exe",
+              "slot": 462,
+              "portrait_alias": 28530,
+              "row_sha256": "2f5149fe13958f9ee0a9a7535c1d3ec147400c56d913630ddf18d52ed55650e8"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 462,
+              "portrait_alias": 28530,
+              "row_sha256": "2f5149fe13958f9ee0a9a7535c1d3ec147400c56d913630ddf18d52ed55650e8"
+            }
+          ]
+        },
+        {
+          "group": 101756,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 462,
+              "portrait_alias": 28530,
+              "row_sha256": "2f5149fe13958f9ee0a9a7535c1d3ec147400c56d913630ddf18d52ed55650e8"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 462,
+              "portrait_alias": 28530,
+              "row_sha256": "2f5149fe13958f9ee0a9a7535c1d3ec147400c56d913630ddf18d52ed55650e8"
+            },
+            {
+              "program": "sc.exe",
+              "slot": 462,
+              "portrait_alias": 28530,
+              "row_sha256": "2f5149fe13958f9ee0a9a7535c1d3ec147400c56d913630ddf18d52ed55650e8"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 462,
+              "portrait_alias": 28530,
+              "row_sha256": "2f5149fe13958f9ee0a9a7535c1d3ec147400c56d913630ddf18d52ed55650e8"
+            }
+          ]
+        },
+        {
+          "group": 101767,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 462,
+              "portrait_alias": 28530,
+              "row_sha256": "2f5149fe13958f9ee0a9a7535c1d3ec147400c56d913630ddf18d52ed55650e8"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 462,
+              "portrait_alias": 28530,
+              "row_sha256": "2f5149fe13958f9ee0a9a7535c1d3ec147400c56d913630ddf18d52ed55650e8"
+            },
+            {
+              "program": "sc.exe",
+              "slot": 462,
+              "portrait_alias": 28530,
+              "row_sha256": "2f5149fe13958f9ee0a9a7535c1d3ec147400c56d913630ddf18d52ed55650e8"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 462,
+              "portrait_alias": 28530,
+              "row_sha256": "2f5149fe13958f9ee0a9a7535c1d3ec147400c56d913630ddf18d52ed55650e8"
+            }
+          ]
+        }
+      ],
+      "official_same_deployment_verified": false,
+      "actual_award_verified": false,
+      "official_birth_skill_verified": false
+    },
+    {
+      "name": "布里薩爾",
+      "source_ids": [
+        "S4",
+        "S5"
+      ],
+      "template_id": 1177,
+      "master_graphic": 101866,
+      "master_elements": [
+        0,
+        100,
+        0,
+        0
+      ],
+      "master_row_sha256": "caf5b5d91a5300bb292199603f99524fcee10906a103ee5046a15c2215de372e",
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "client_join_status": "TW85_NATIVE_GRAPHIC_OTHER_NAME",
+      "native_names_at_master_graphic": {
+        "sa.exe": "奧斯卡",
+        "sb.exe": "奧斯卡",
+        "sd.exe": "奧斯卡"
+      },
+      "exact_name_album_slots": [
+        [
+          "sa.exe",
+          471
+        ],
+        [
+          "sb.exe",
+          471
+        ],
+        [
+          "sd.exe",
+          471
+        ]
+      ],
+      "independent_native_named_groups": [
+        {
+          "group": 101673,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 471,
+              "portrait_alias": 28539,
+              "row_sha256": "5a7b47a7e6d6bb6208e8490013be6646c1c32ed693ed2ff8124a90475bd64a50"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 471,
+              "portrait_alias": 28539,
+              "row_sha256": "5a7b47a7e6d6bb6208e8490013be6646c1c32ed693ed2ff8124a90475bd64a50"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 471,
+              "portrait_alias": 28539,
+              "row_sha256": "5a7b47a7e6d6bb6208e8490013be6646c1c32ed693ed2ff8124a90475bd64a50"
+            }
+          ]
+        },
+        {
+          "group": 101776,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 471,
+              "portrait_alias": 28539,
+              "row_sha256": "5a7b47a7e6d6bb6208e8490013be6646c1c32ed693ed2ff8124a90475bd64a50"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 471,
+              "portrait_alias": 28539,
+              "row_sha256": "5a7b47a7e6d6bb6208e8490013be6646c1c32ed693ed2ff8124a90475bd64a50"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 471,
+              "portrait_alias": 28539,
+              "row_sha256": "5a7b47a7e6d6bb6208e8490013be6646c1c32ed693ed2ff8124a90475bd64a50"
+            }
+          ]
+        },
+        {
+          "group": 101824,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 471,
+              "portrait_alias": 28539,
+              "row_sha256": "5a7b47a7e6d6bb6208e8490013be6646c1c32ed693ed2ff8124a90475bd64a50"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 471,
+              "portrait_alias": 28539,
+              "row_sha256": "5a7b47a7e6d6bb6208e8490013be6646c1c32ed693ed2ff8124a90475bd64a50"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 471,
+              "portrait_alias": 28539,
+              "row_sha256": "5a7b47a7e6d6bb6208e8490013be6646c1c32ed693ed2ff8124a90475bd64a50"
+            }
+          ]
+        },
+        {
+          "group": 101867,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 471,
+              "portrait_alias": 28539,
+              "row_sha256": "5a7b47a7e6d6bb6208e8490013be6646c1c32ed693ed2ff8124a90475bd64a50"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 471,
+              "portrait_alias": 28539,
+              "row_sha256": "5a7b47a7e6d6bb6208e8490013be6646c1c32ed693ed2ff8124a90475bd64a50"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 471,
+              "portrait_alias": 28539,
+              "row_sha256": "5a7b47a7e6d6bb6208e8490013be6646c1c32ed693ed2ff8124a90475bd64a50"
+            }
+          ]
+        }
+      ],
+      "official_same_deployment_verified": false,
+      "actual_award_verified": false,
+      "official_birth_skill_verified": false
+    },
+    {
+      "name": "沃克比",
+      "source_ids": [
+        "S6"
+      ],
+      "template_id": 1178,
+      "master_graphic": 101867,
+      "master_elements": [
+        0,
+        0,
+        70,
+        30
+      ],
+      "master_row_sha256": "e7c6e2b4715dbf135bc6dd7caea9d22a78899c794cda8c93dd88708ab6b42b11",
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "client_join_status": "TW85_NATIVE_GRAPHIC_OTHER_NAME",
+      "native_names_at_master_graphic": {
+        "sa.exe": "布里薩爾",
+        "sb.exe": "布里薩爾",
+        "sd.exe": "布里薩爾"
+      },
+      "exact_name_album_slots": [
+        [
+          "sa.exe",
+          472
+        ],
+        [
+          "sb.exe",
+          472
+        ],
+        [
+          "sd.exe",
+          472
+        ]
+      ],
+      "independent_native_named_groups": [
+        {
+          "group": 101674,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 472,
+              "portrait_alias": 28540,
+              "row_sha256": "de5438dc2ee85a5e841f02026aedbb0d10ba2e56c0e27881a1943dbed334255f"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 472,
+              "portrait_alias": 28540,
+              "row_sha256": "de5438dc2ee85a5e841f02026aedbb0d10ba2e56c0e27881a1943dbed334255f"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 472,
+              "portrait_alias": 28540,
+              "row_sha256": "de5438dc2ee85a5e841f02026aedbb0d10ba2e56c0e27881a1943dbed334255f"
+            }
+          ]
+        },
+        {
+          "group": 101777,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 472,
+              "portrait_alias": 28540,
+              "row_sha256": "de5438dc2ee85a5e841f02026aedbb0d10ba2e56c0e27881a1943dbed334255f"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 472,
+              "portrait_alias": 28540,
+              "row_sha256": "de5438dc2ee85a5e841f02026aedbb0d10ba2e56c0e27881a1943dbed334255f"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 472,
+              "portrait_alias": 28540,
+              "row_sha256": "de5438dc2ee85a5e841f02026aedbb0d10ba2e56c0e27881a1943dbed334255f"
+            }
+          ]
+        },
+        {
+          "group": 101825,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 472,
+              "portrait_alias": 28540,
+              "row_sha256": "de5438dc2ee85a5e841f02026aedbb0d10ba2e56c0e27881a1943dbed334255f"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 472,
+              "portrait_alias": 28540,
+              "row_sha256": "de5438dc2ee85a5e841f02026aedbb0d10ba2e56c0e27881a1943dbed334255f"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 472,
+              "portrait_alias": 28540,
+              "row_sha256": "de5438dc2ee85a5e841f02026aedbb0d10ba2e56c0e27881a1943dbed334255f"
+            }
+          ]
+        },
+        {
+          "group": 101868,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 472,
+              "portrait_alias": 28540,
+              "row_sha256": "de5438dc2ee85a5e841f02026aedbb0d10ba2e56c0e27881a1943dbed334255f"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 472,
+              "portrait_alias": 28540,
+              "row_sha256": "de5438dc2ee85a5e841f02026aedbb0d10ba2e56c0e27881a1943dbed334255f"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 472,
+              "portrait_alias": 28540,
+              "row_sha256": "de5438dc2ee85a5e841f02026aedbb0d10ba2e56c0e27881a1943dbed334255f"
+            }
+          ]
+        }
+      ],
+      "official_same_deployment_verified": false,
+      "actual_award_verified": false,
+      "official_birth_skill_verified": false
+    },
+    {
+      "name": "巴雅",
+      "source_ids": [
+        "S7"
+      ],
+      "template_id": 1180,
+      "master_graphic": 101869,
+      "master_elements": [
+        0,
+        0,
+        30,
+        70
+      ],
+      "master_row_sha256": "f387f19f4f593957b412df6da689f77d8c282199131e780e385aa6f45aa2f3c5",
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "client_join_status": "TW85_NATIVE_GRAPHIC_OTHER_NAME",
+      "native_names_at_master_graphic": {
+        "sa.exe": "沃斯姆",
+        "sb.exe": "沃斯姆",
+        "sd.exe": "沃斯姆"
+      },
+      "exact_name_album_slots": [
+        [
+          "sa.exe",
+          474
+        ],
+        [
+          "sb.exe",
+          474
+        ],
+        [
+          "sd.exe",
+          474
+        ]
+      ],
+      "independent_native_named_groups": [
+        {
+          "group": 101676,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 474,
+              "portrait_alias": 28542,
+              "row_sha256": "20c748b808ef79558eda9101262d7ca6b5c1b8d71c313012dd1fea1c33a16974"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 474,
+              "portrait_alias": 28542,
+              "row_sha256": "20c748b808ef79558eda9101262d7ca6b5c1b8d71c313012dd1fea1c33a16974"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 474,
+              "portrait_alias": 28542,
+              "row_sha256": "20c748b808ef79558eda9101262d7ca6b5c1b8d71c313012dd1fea1c33a16974"
+            }
+          ]
+        },
+        {
+          "group": 101779,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 474,
+              "portrait_alias": 28542,
+              "row_sha256": "20c748b808ef79558eda9101262d7ca6b5c1b8d71c313012dd1fea1c33a16974"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 474,
+              "portrait_alias": 28542,
+              "row_sha256": "20c748b808ef79558eda9101262d7ca6b5c1b8d71c313012dd1fea1c33a16974"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 474,
+              "portrait_alias": 28542,
+              "row_sha256": "20c748b808ef79558eda9101262d7ca6b5c1b8d71c313012dd1fea1c33a16974"
+            }
+          ]
+        },
+        {
+          "group": 101827,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 474,
+              "portrait_alias": 28542,
+              "row_sha256": "20c748b808ef79558eda9101262d7ca6b5c1b8d71c313012dd1fea1c33a16974"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 474,
+              "portrait_alias": 28542,
+              "row_sha256": "20c748b808ef79558eda9101262d7ca6b5c1b8d71c313012dd1fea1c33a16974"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 474,
+              "portrait_alias": 28542,
+              "row_sha256": "20c748b808ef79558eda9101262d7ca6b5c1b8d71c313012dd1fea1c33a16974"
+            }
+          ]
+        },
+        {
+          "group": 101870,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 474,
+              "portrait_alias": 28542,
+              "row_sha256": "20c748b808ef79558eda9101262d7ca6b5c1b8d71c313012dd1fea1c33a16974"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 474,
+              "portrait_alias": 28542,
+              "row_sha256": "20c748b808ef79558eda9101262d7ca6b5c1b8d71c313012dd1fea1c33a16974"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 474,
+              "portrait_alias": 28542,
+              "row_sha256": "20c748b808ef79558eda9101262d7ca6b5c1b8d71c313012dd1fea1c33a16974"
+            }
+          ]
+        }
+      ],
+      "official_same_deployment_verified": false,
+      "actual_award_verified": false,
+      "official_birth_skill_verified": false
+    },
+    {
+      "name": "巴特",
+      "source_ids": [
+        "S4",
+        "S7"
+      ],
+      "template_id": 1181,
+      "master_graphic": 101870,
+      "master_elements": [
+        70,
+        30,
+        0,
+        0
+      ],
+      "master_row_sha256": "0862cb2427be374de72151fe283778e8926d598f8ac94ce76257982574af237f",
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "client_join_status": "TW85_NATIVE_GRAPHIC_OTHER_NAME",
+      "native_names_at_master_graphic": {
+        "sa.exe": "巴雅",
+        "sb.exe": "巴雅",
+        "sd.exe": "巴雅"
+      },
+      "exact_name_album_slots": [
+        [
+          "sa.exe",
+          475
+        ],
+        [
+          "sb.exe",
+          475
+        ],
+        [
+          "sd.exe",
+          475
+        ]
+      ],
+      "independent_native_named_groups": [
+        {
+          "group": 101677,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 475,
+              "portrait_alias": 28543,
+              "row_sha256": "ab31657378a706eccd3043fb00c12fd4ba266851effb00e339136548beb6fece"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 475,
+              "portrait_alias": 28543,
+              "row_sha256": "ab31657378a706eccd3043fb00c12fd4ba266851effb00e339136548beb6fece"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 475,
+              "portrait_alias": 28543,
+              "row_sha256": "ab31657378a706eccd3043fb00c12fd4ba266851effb00e339136548beb6fece"
+            }
+          ]
+        },
+        {
+          "group": 101780,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 475,
+              "portrait_alias": 28543,
+              "row_sha256": "ab31657378a706eccd3043fb00c12fd4ba266851effb00e339136548beb6fece"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 475,
+              "portrait_alias": 28543,
+              "row_sha256": "ab31657378a706eccd3043fb00c12fd4ba266851effb00e339136548beb6fece"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 475,
+              "portrait_alias": 28543,
+              "row_sha256": "ab31657378a706eccd3043fb00c12fd4ba266851effb00e339136548beb6fece"
+            }
+          ]
+        },
+        {
+          "group": 101828,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 475,
+              "portrait_alias": 28543,
+              "row_sha256": "ab31657378a706eccd3043fb00c12fd4ba266851effb00e339136548beb6fece"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 475,
+              "portrait_alias": 28543,
+              "row_sha256": "ab31657378a706eccd3043fb00c12fd4ba266851effb00e339136548beb6fece"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 475,
+              "portrait_alias": 28543,
+              "row_sha256": "ab31657378a706eccd3043fb00c12fd4ba266851effb00e339136548beb6fece"
+            }
+          ]
+        },
+        {
+          "group": 101871,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 475,
+              "portrait_alias": 28543,
+              "row_sha256": "ab31657378a706eccd3043fb00c12fd4ba266851effb00e339136548beb6fece"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 475,
+              "portrait_alias": 28543,
+              "row_sha256": "ab31657378a706eccd3043fb00c12fd4ba266851effb00e339136548beb6fece"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 475,
+              "portrait_alias": 28543,
+              "row_sha256": "ab31657378a706eccd3043fb00c12fd4ba266851effb00e339136548beb6fece"
+            }
+          ]
+        },
+        {
+          "group": 101892,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 475,
+              "portrait_alias": 28543,
+              "row_sha256": "ab31657378a706eccd3043fb00c12fd4ba266851effb00e339136548beb6fece"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 475,
+              "portrait_alias": 28543,
+              "row_sha256": "ab31657378a706eccd3043fb00c12fd4ba266851effb00e339136548beb6fece"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 475,
+              "portrait_alias": 28543,
+              "row_sha256": "ab31657378a706eccd3043fb00c12fd4ba266851effb00e339136548beb6fece"
+            }
+          ]
+        }
+      ],
+      "official_same_deployment_verified": false,
+      "actual_award_verified": false,
+      "official_birth_skill_verified": false
+    },
+    {
+      "name": "奈坎特",
+      "source_ids": [
+        "S4"
+      ],
+      "template_id": 1186,
+      "master_graphic": 101881,
+      "master_elements": [
+        0,
+        40,
+        60,
+        0
+      ],
+      "master_row_sha256": "46644ac9393a83dc817262df543b84b62b13ae03aecef420cbcb182cb7d6ffb5",
+      "comparison_status": "SAME_ID_DIFFERENT_TAIL",
+      "client_join_status": "TW85_NATIVE_GRAPHIC_OTHER_NAME",
+      "native_names_at_master_graphic": {
+        "sa.exe": "奈宇羅",
+        "sb.exe": "奈宇羅",
+        "sd.exe": "奈宇羅"
+      },
+      "exact_name_album_slots": [
+        [
+          "sa.exe",
+          484
+        ],
+        [
+          "sb.exe",
+          484
+        ],
+        [
+          "sd.exe",
+          484
+        ]
+      ],
+      "independent_native_named_groups": [
+        {
+          "group": 101686,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 484,
+              "portrait_alias": 28558,
+              "row_sha256": "85afa213f53eee4deab6e6deb029e21aef289c50e6f746ce61a2deaa106632e5"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 484,
+              "portrait_alias": 28558,
+              "row_sha256": "85afa213f53eee4deab6e6deb029e21aef289c50e6f746ce61a2deaa106632e5"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 484,
+              "portrait_alias": 28558,
+              "row_sha256": "85afa213f53eee4deab6e6deb029e21aef289c50e6f746ce61a2deaa106632e5"
+            }
+          ]
+        },
+        {
+          "group": 101789,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 484,
+              "portrait_alias": 28558,
+              "row_sha256": "85afa213f53eee4deab6e6deb029e21aef289c50e6f746ce61a2deaa106632e5"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 484,
+              "portrait_alias": 28558,
+              "row_sha256": "85afa213f53eee4deab6e6deb029e21aef289c50e6f746ce61a2deaa106632e5"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 484,
+              "portrait_alias": 28558,
+              "row_sha256": "85afa213f53eee4deab6e6deb029e21aef289c50e6f746ce61a2deaa106632e5"
+            }
+          ]
+        },
+        {
+          "group": 101837,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 484,
+              "portrait_alias": 28558,
+              "row_sha256": "85afa213f53eee4deab6e6deb029e21aef289c50e6f746ce61a2deaa106632e5"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 484,
+              "portrait_alias": 28558,
+              "row_sha256": "85afa213f53eee4deab6e6deb029e21aef289c50e6f746ce61a2deaa106632e5"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 484,
+              "portrait_alias": 28558,
+              "row_sha256": "85afa213f53eee4deab6e6deb029e21aef289c50e6f746ce61a2deaa106632e5"
+            }
+          ]
+        },
+        {
+          "group": 101880,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 484,
+              "portrait_alias": 28558,
+              "row_sha256": "85afa213f53eee4deab6e6deb029e21aef289c50e6f746ce61a2deaa106632e5"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 484,
+              "portrait_alias": 28558,
+              "row_sha256": "85afa213f53eee4deab6e6deb029e21aef289c50e6f746ce61a2deaa106632e5"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 484,
+              "portrait_alias": 28558,
+              "row_sha256": "85afa213f53eee4deab6e6deb029e21aef289c50e6f746ce61a2deaa106632e5"
+            }
+          ]
+        },
+        {
+          "group": 101901,
+          "routes": [
+            {
+              "program": "sa.exe",
+              "slot": 484,
+              "portrait_alias": 28558,
+              "row_sha256": "85afa213f53eee4deab6e6deb029e21aef289c50e6f746ce61a2deaa106632e5"
+            },
+            {
+              "program": "sb.exe",
+              "slot": 484,
+              "portrait_alias": 28558,
+              "row_sha256": "85afa213f53eee4deab6e6deb029e21aef289c50e6f746ce61a2deaa106632e5"
+            },
+            {
+              "program": "sd.exe",
+              "slot": 484,
+              "portrait_alias": 28558,
+              "row_sha256": "85afa213f53eee4deab6e6deb029e21aef289c50e6f746ce61a2deaa106632e5"
+            }
+          ]
+        }
+      ],
+      "official_same_deployment_verified": false,
+      "actual_award_verified": false,
+      "official_birth_skill_verified": false
+    },
+    {
+      "name": "魯比",
+      "source_ids": [
+        "S1"
+      ],
+      "template_id": 965,
+      "master_graphic": 101177,
+      "master_elements": [
+        0,
+        0,
+        80,
+        20
+      ],
+      "master_row_sha256": "d237e9666e71e8a4baae0d8dcf7bdc5a8818e9e6cb4704d975da1dc197078c51",
+      "comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+      "client_join_status": "NAME_ONLY_IN_TW85_GRID",
+      "native_names_at_master_graphic": {},
+      "exact_name_album_slots": [
+        [
+          "sa.exe",
+          293
+        ],
+        [
+          "sb.exe",
+          293
+        ],
+        [
+          "sc.exe",
+          293
+        ],
+        [
+          "sd.exe",
+          293
+        ]
+      ],
+      "independent_native_named_groups": [],
+      "official_same_deployment_verified": false,
+      "actual_award_verified": false,
+      "official_birth_skill_verified": false
+    }
+  ],
+  "official_new_release_verified_count": 0,
+  "original_assets_published": false,
+  "unresolved": [
+    "CN double-headed wolf and Duanwu snake exact identities",
+    "TW fire-wind eagle event named identity not assumed",
+    "actual award receipts and original operator deployment",
+    "remaining 2001 capture directory rows"
+  ]
+}

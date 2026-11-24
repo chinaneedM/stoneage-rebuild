@@ -409,3 +409,8 @@
 ## 2026-11-24｜PET-HIGH-FIRST-18 四村赠宠与十条捕捉坐标补证
 
 [来源分层可读档案](PC-2001-STARTER-AND-CAPTURE-CROSSWALK.md) · [机器数据](../../research/pets/PET-HIGH-FIRST-18-STARTER-AND-CAPTURE-WITNESSES-R1.json) · [原地图头索引](../../research/pets/PET-HIGH-FIRST-18-COMPARISON-MAP-HEADERS-R1.json)。349地图号338无字段歧义；270个全字段匹配模板至少有一地图头。不改变原TW1同部署字段、全字段官方验收数或永久编号。原CURRENT不变，PET唯一。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-19 同期活动取得与高版图号差异
+
+[逐宠取得档案](PC-2004-2005-EVENT-ACQUISITION.md) · [机读证据](../../research/pets/PET-HIGH-FIRST-19-PERIOD-ACQUISITION-R1.json) · [连续性及下一批](../continuity/STONEAGE-PET-HIGH-FIRST-19-PERIOD-ACQUISITION-20261124.md)。十条具名主档：4同图同名、5异名图号、1仅相簿名。三份同期全文和分级索引；台陆取得差异、奖励与实际领取严格区分。PET唯一，原CURRENT不动。
