@@ -3395,3 +3395,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-24｜PET-HIGH-FIRST-40 五宠同载体取得配置
 
 [最新续接记录](docs/continuity/STONEAGE-PET-HIGH-FIRST-40-PC-ACQUISITION-20261124.md)。实际取回14份保存混合2.5原成员，70条双宠物标记正权重链、6条含1级；阿伊萨和格洛格鲁洞窟链、邦达霍恩484→315任务链；五张地图两层原数据跨载体一致。洛克斯旧攻略冲突保留，正式官服部署未验。NEXT PET-HIGH-FIRST-41，PET唯一、历史CURRENT不改。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-41 三宠任务取得链与57图号候选
+
+[最新接续](docs/continuity/STONEAGE-PET-HIGH-FIRST-41-PC-ACQUISITION-20261124.md)。31份原保存成员实读SHA/CRC匹配，636双宠物标记正权重链、33含Lv1；金布伊14→12、左迪洛斯351→302、巴朵兰恩352→303静态任务指令。57既有档案追加来源引用，不计新种；原官服实际取得未证。NEXT PET-HIGH-FIRST-42，PET唯一，历史CURRENT不改。

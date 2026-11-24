@@ -1,6 +1,6 @@
 # 经典 PC 宠物统一来源查询（R1）
 
-一个只读入口访问34个固定Git源对象。每项返回可追溯的来源位置、证据等级和独立版本。
+一个只读入口访问36个固定Git源对象。每项返回可追溯的来源位置、证据等级和独立版本。
 
 ```bash
 python3 tools/stoneage_pet_source_lookup.py --summary
@@ -45,3 +45,5 @@ R38在 `PET-000004`、`PET-000017`、`PET-000021` 下增加日本实读照片和
 R39在现有五个台湾1.0档号下增加 `hf39` 链接：区分同图号非宠模板、后期同一Git blob和2001–2003网页字段。原查询位置和补缺位置不增加；[逐档来源与NEXT](../continuity/STONEAGE-PET-HIGH-FIRST-39-FIVE-PC-FIELD-CASES-20261124.md)。
 
 R40五个既有档案增加 `hf40` 获取链：实际原保存混合2.5 14成员与后期固定源码、原地图数据比较。[取证与续接](../continuity/STONEAGE-PET-HIGH-FIRST-40-PC-ACQUISITION-20261124.md)。
+
+R41新增57个既有档案的保存混合2.5模板/取得候选链接；`--full`可追145模板及3个任务奖励指令，不增加查询位置。[来源及边界](../continuity/STONEAGE-PET-HIGH-FIRST-41-PC-ACQUISITION-20261124.md)。

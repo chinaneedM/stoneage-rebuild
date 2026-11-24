@@ -206,6 +206,18 @@
       "git_blob": "2597ed4c8c20cdd4e292caaf29f51f8050c512a0",
       "expected_array": "rows",
       "expected_rows": 5
+    },
+    "hf41": {
+      "path": "research/pets/PET-HIGH-FIRST-41-ACQUISITION-CROSSWALK-R1.json",
+      "git_blob": "be45d105ff53db3178f5ab0003e7ab39e139acc0",
+      "expected_array": "rows",
+      "expected_rows": 57
+    },
+    "hf41_archive": {
+      "path": "research/pets/PET-HIGH-FIRST-41-MIXED25-ACQUISITION-R1.json",
+      "git_blob": "746107dc2265e66629d64419fb039934de9baa11",
+      "expected_array": null,
+      "expected_rows": null
     }
   },
   "expected": {
@@ -271,5 +283,10 @@
     "source_head": "7ce31b7e70e4746492616fb367d6cf819e98ebe2",
     "source_tree": "f9bbb021c422c54b48994efdda11f1d158eb9a39",
     "scope": "Five existing source-scoped pet dossiers; 14 exact mixed25 members and fixed later public PC data/quest code crosswalk."
+  },
+  "supplement_hf41": {
+    "source_head": "5158fe021a7f0580ab70ca6c74a416607d5b98b6",
+    "source_tree": "6cd989abe5c779d48d50ac98139483d84f6e2b4d",
+    "scope": "57 graphic-scoped existing dossiers; 31 exact archived members, 145 template candidates and 3 award commands."
   }
 }
