@@ -1,0 +1,21 @@
+name: PET-HIGH-FIRST-26-27 2012-2013 acquisition crosswalk replay
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_26_27.py'
+      - 'research/pets/PET-HIGH-FIRST-26-27-2012-2013-NAMED-ACQUISITION-CROSSWALK-R1.json'
+      - '.github/workflows/pet-high-first-26-27.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_26_27.py'
+      - 'research/pets/PET-HIGH-FIRST-26-27-2012-2013-NAMED-ACQUISITION-CROSSWALK-R1.json'
+      - '.github/workflows/pet-high-first-26-27.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/stoneage_pet_high_first_26_27.py

@@ -459,3 +459,8 @@
 ## 2026-11-24｜PET-HIGH-FIRST-25 2011大陆与台湾逐名来源关联
 
 [逐宠档案](CN-TW-2011-NAMED-PETS.md) · [机读记录](../../research/pets/PET-HIGH-FIRST-25-2011-NAMED-SOURCE-CROSSWALK-R1.json) · [续接](../continuity/STONEAGE-PET-HIGH-FIRST-25-2011-NAMED-SOURCE-CROSSWALK-20261124.md)。41来源位置，25直接名对应、3仅修饰名候选、13未匹配；不当官方物种总数。PET唯一。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-26/27 2012—2013取得、技能与初值来源关联
+
+[逐宠档案](CN-2012-2013-ACQUISITION-AND-SKILLS.md) · [机读记录](../../research/pets/PET-HIGH-FIRST-26-27-2012-2013-NAMED-ACQUISITION-CROSSWALK-R1.json) · [续接](../continuity/STONEAGE-PET-HIGH-FIRST-26-27-2012-2013-ACQUISITION-20261124.md)。43来源位置，25直接名称对应，2关联名候选，16未匹配；捕捉地点、条件初值、技能及任务输入输出分别归档，不当同服原始数值。PET唯一。
