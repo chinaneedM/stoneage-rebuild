@@ -11,3 +11,5 @@
 ## 源执行纠错
 
 首次[45457133731](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/45457133731)已进入原件解析但失败：备用enemy2.txt首行被误按选中表34列读取。PET10固定原件索引明确记录enemy2.txt为1494行、每行33列；enemy.txt为2087行、34列。更正为分别严格验原宽度及行数，不跳过、不补列、不改原件。首次失败无派生工件，保留失败记录。修正后重新执行；实际结果仍待证。
+
+第二次[45457842476](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/45457842476)通过宽度阶段，发现备用实例表第6行以旧ID列误读为重复2。根据固定PET10行序全量反核：选中表ID/模板列（从0计）3/4，备用候选2/3；新程序要求1494及2087个原行ID/模板全量对应，不能只凭少数样例推断。备用表后续等级/宠物标志的字段语义尚未核实，本轮留null，正权重路径与双标志资格分开；第二次失败保留且无派生工件。新程序另区分明确GetPet/AddPet数值字段与一般词法命中。后期独立代码对照（非同部署）：pimpcapital/longzoro-sa@57b14e2bb373ba851c14db28a239273e4a8831bb，gmsv/src/npc/npc_vipshop.c blob 7f571bab0a612b7b3f684f2702b43c13b9bfe5b3，188–205行，菜单确认调用ActionNpc_CheckMenuFree；gavinlinasd/StoneAge@1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56，gmsv/src/npc/npc_eventaction.c blob 85010d54104dfff9d386b30c2ba33dbe26d1e4e6，133–157行FREE条件与动作调用，940–975行AddPet按ENEMY_ID解析而不是ENEMY_TEMPNO。原件菜单字段须实读才可关联，不证明同部署或实际兑换。

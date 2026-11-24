@@ -60,11 +60,18 @@ def derive(d,m):
         bases[bn]={x[1]:x for x in p['source_rows'][bn]}
         width=34 if en=='enemy.txt' else 33
         assert p['verified_original_archive_members'][en]['field_counts']=={str(width):n}
-        raw=unique(r40.rows(m['data/'+en],width,3),3)
-        assert len(raw)==n and all(len(a)==width for _,a in raw.values()),en
-        prior={x[1]:x for x in p['source_rows'][en]}
-        assert prior.keys()==raw.keys() and all(prior[k][2]==int(a[4]) for k,(_,a) in raw.items())
+        # Verify candidate ID/template positions across EVERY exact preserved index row.
+        prior=p['source_rows'][en]
+        rows=r40.rows(m['data/'+en],width,3 if en=='enemy.txt' else 2)
+        assert len(rows)==n and all(len(a)==width for _,a in rows),en
+        idcol=3 if en=='enemy.txt' else 2
+        tcol=idcol+1
+        assert all((r40.num(a[idcol]),r40.num(a[tcol]))==(v[1],v[2]) for (_,a),v in zip(rows,prior)),en
+        raw=unique(rows,idcol)
         instances[en]=raw
+    # Alternate width/ID/template mapping verified, but do not assume that its
+    # omitted column precedes every later field. Flag/level remain unresolved.
+    instance_schema={'enemy.txt':{'id':3,'template':4,'pet_flag':13,'levels':[5,6]},'enemy2.txt':{'id':2,'template':3,'pet_flag':None,'levels':None}}
     records=[]
     target_ids={t['template_id'] for _,t in targets}
     for i,t in targets:
@@ -72,7 +79,7 @@ def derive(d,m):
         for bn,en,_ in pairs:
             b=bases[bn].get(tid)
             match='ABSENT' if b is None else 'EXACT_ROW' if b[16]==t['row_sha256'] else 'SAME_ID_DIFFERENT_ROW'
-            inst={eid:dict(instance_id=eid,physical_line=line,pet_flag=int(a[13]),level=r40.level(a),raw_level_fields=list(map(int,a[5:7]))) for eid,(line,a) in instances[en].items() if int(a[4])==tid}
+            inst={eid:dict(instance_id=eid,physical_line=line,pet_flag=r40.num(a[13]) if en=='enemy.txt' else None,level=r40.level(a) if en=='enemy.txt' else None,raw_level_fields=list(map(r40.num,a[5:7])) if en=='enemy.txt' else None) for eid,(line,a) in instances[en].items() if r40.num(a[instance_schema[en]['template']])==tid}
             pair=dict(base=bn,enemy=en,match=match,base_row_sha256=b[16] if b else None,base_pet_flag=b[3] if b else None,instances=list(inst.values()),group_variants=[])
             for gn,gt in groups.items():
                 refs=[]
@@ -87,7 +94,7 @@ def derive(d,m):
                 selected=bn=='enemybase.txt' and gn=='group1.txt'
                 if selected and match=='EXACT_ROW':
                     assert (positive,double,lv1)==tuple(old['claimed_tw75_rows'][i][k] for k in ('positive_route_count','double_pet_flag_route_count','lv1_double_flag_route_count'))
-                pair['group_variants'].append(dict(group=gn,configuration='SELECTED' if selected else 'ALTERNATE_NOT_SELECTED',group_memberships=refs,positive_routes=positive,double_flag_routes=double,lv1_double_flag_routes=lv1))
+                pair['group_variants'].append(dict(group=gn,configuration='SELECTED' if selected else 'ALTERNATE_NOT_SELECTED',group_memberships=refs,positive_routes=positive,double_flag_routes=double if en=='enemy.txt' else None,lv1_double_flag_routes=lv1 if en=='enemy.txt' else None))
             item['source_pairs'].append(pair)
         records.append(item)
     # Scan numeric tokens only, never publish raw commercial text.
@@ -119,10 +126,10 @@ def derive(d,m):
             if ins or tids:
                 # GetPet syntax is source-defined but actual award, conditions,
                 # and even active NPC deployment remain unverified.
-                matches.append(dict(line=line_no,key=key,source_line_sha256=r40.sha(line),matching_instance_tokens=ins,matching_template_tokens=tids,qualification='GETPET_INSTANCE_LITERAL_CANDIDATE' if key.lower()=='getpet' and re.fullmatch(rb'[0-9, \t]+',val) else 'NUMERIC_LEXICAL_MATCH_NAMESPACE_UNVERIFIED'))
+                matches.append(dict(line=line_no,key=key,source_line_sha256=r40.sha(line),matching_instance_tokens=ins,matching_template_tokens=tids,qualification='GETPET_OR_ADDPET_INSTANCE_LITERAL_CANDIDATE' if key.lower() in ('getpet','addpet') and re.fullmatch(rb'[0-9, \t]+',val) else 'NUMERIC_LEXICAL_MATCH_NAMESPACE_UNVERIFIED'))
         files.append(dict(path=f,source_sha256=k[2],source_bytes=k[1],create_refs=creates,key_counts=dict(keys),candidate_lines=matches))
     s=dict(target_rows=len(records),selected_exact_with_instance=sum(x['source_pairs'][0]['match']=='EXACT_ROW' and bool(x['source_pairs'][0]['instances']) for x in records),selected_with_instance=sum(bool(x['source_pairs'][0]['instances']) for x in records),alternate_exact_with_instance=sum(x['source_pairs'][1]['match']=='EXACT_ROW' and bool(x['source_pairs'][1]['instances']) for x in records),alternate_exact_positive_double_templates=sum(any(p['match']=='EXACT_ROW' and v['configuration']=='ALTERNATE_NOT_SELECTED' and v['double_flag_routes'] for p in x['source_pairs'] for v in p['group_variants']) for x in records),npc_member_count=len(files),npc_candidate_lines=sum(len(f['candidate_lines']) for f in files))
-    return dict(records=records,npc_source_files=files,summary=s,official_acquisition_verified=False,official_species_count=None,runtime_executed=False,alternate_config_deployed=False)
+    return dict(instance_schema=instance_schema,records=records,npc_source_files=files,summary=s,official_acquisition_verified=False,official_species_count=None,runtime_executed=False,alternate_config_deployed=False)
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--output',required=True,type=Path);a=ap.parse_args()
     d=load();inv={x['path']:x for x in d['r18']['all_server_occurrences']}
