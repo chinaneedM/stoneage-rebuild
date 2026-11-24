@@ -119,6 +119,9 @@ def build(d):
                 out.append(link("hf43", ["projection","scripts",j], "SAVED_EXCHANGE_CONTROL_AND_TOKEN_MULTIPLICITY_NOT_OFFICIAL_PROBABILITY"))
                 item_ids = {int(v) for c in s["commands"] if r["award_instance_id"] in c["numeric_literals"] for v in c["fields"]["delitem"]}
                 out.extend(link("hf43", ["projection","items",k], "CONFIGURED_EXCHANGE_ITEM_NOT_OFFICIAL_DEPLOYMENT") for k, v in enumerate(exchange43["items"]) if v["id"] in item_ids)
+        for j, s in enumerate(d["hf44"]["rows"]):
+            if r["award_instance_id"] in s["pet_slots"]:
+                out.append(link("hf44", ["rows",j], "SAVED_WINDOW_AND_REWARD_SLOTS_NOT_OFFICIAL_EXECUTION"))
         return out
     def reward_links42(r, qualification):
         i = r["reward_row_index"]
@@ -347,6 +350,11 @@ def verify(m,d,entries):
     assert [r["period_floor_lv1_static_match"] for r in cases40] == [None, False, True, True, None]
     assert cases40[-1]["quest_reward"]["instance_id"] == 484 and cases40[-1]["quest_reward"]["template_id"] == 315
     assert all(r["official_tw10_native_stats"] is None and r["official_tw10_skillset"] is None and not r["official_tw10_acquisition_verified"] and r["official_first_release_date"] is None for r in cases40)
+    assert len(d["hf44"]["rows"]) == 4
+    assert len({n for s in d["hf44"]["rows"] for n in s["pet_slots"]}) == 15
+    for source in ("tw10","tw75"):
+        assert sum(any(l["source"] == "hf44" for l in e["linked_records"]) for e in entries if e["source"] == source) == 15
+        assert sum(l["source"] == "hf44" for e in entries if e["source"] == source for l in e["linked_records"]) == 18
     assert len(d["hf43"]["projection"]["templates"]) == 5
     assert sum(l["source"] == "hf43" and l["pointer"][:2] == ["projection","templates"] for e in entries if e["source"] == "tw10" for l in e["linked_records"]) == 5
     assert sum(l["source"] == "hf43" and l["pointer"][:2] == ["projection","templates"] for e in entries if e["source"] == "tw75" for l in e["linked_records"]) == 5

@@ -242,6 +242,12 @@
       "git_blob": "8ede61a53c670a883bb7824e1d5f410d0b76463a",
       "expected_array": null,
       "expected_rows": null
+    },
+    "hf44": {
+      "path": "research/pets/PET-HIGH-FIRST-44-ORIGINAL-WINDOW-REWARD-R1.json",
+      "git_blob": "bc531842c068154e40b50658092fe553ff6173df",
+      "expected_array": "rows",
+      "expected_rows": 4
     }
   },
   "expected": {
@@ -321,5 +327,10 @@
   "supplement_hf43": {
     "source_head": "39f7b9438e85850df38bf98850121a50f6368432",
     "scope": "8 exact original members, 5 exchange prerequisites, 3 items, 5 scripts, 6 reward commands / 17 distinct reward IDs; 4 MESSAGE blocks no NomalMsg; NomalWindowMsg unresolved. No new query entries."
+  },
+  "supplement_hf44": {
+    "source_head": "7486d51627ab97cc8dabf45e7f743f70e26e8fc3",
+    "source_tree": "f033655a501622f09147bf8106b997ea9c345262",
+    "scope": "Four original window reward scripts; 19 pet slots, 15 distinct instance IDs, 40 item slots; primary window only, later code path candidate. No new query entries or official probability."
   }
 }

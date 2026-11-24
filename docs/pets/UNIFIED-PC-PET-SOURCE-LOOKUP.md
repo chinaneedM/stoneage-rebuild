@@ -51,3 +51,6 @@ R41新增57个既有档案的保存混合2.5模板/取得候选链接；`--full`
 R42增36个标称7.5模板行精确指纹奖励链接，33个TW1图号候选（31同名、2异名），26原成员实读、36个Lv1双标记实例。39固定源对象；`--source tw75 --query 瑪蕾菲雅 --exact --full` 可追奖励脚本，原正式发行未证。[详档](../continuity/STONEAGE-PET-HIGH-FIRST-42-PC-REWARD-INSTANCE-INDEX-20261124.md)。
 
 R43补17个既有奖励记录与5交换模板来源，40个固定源对象，三个道具原行指纹、条件和列表重复数均可追溯。SOT/JOT同部署窗口执行未证，不当官方概率。[详档](../continuity/STONEAGE-PET-HIGH-FIRST-43-PC-EXCHANGE-SEMANTICS-20261124.md)。
+
+
+R44追加四原窗口控制记录（41个固定源对象），现有奖励候选可用 `--full` 追19宠物槽与40道具槽及条件；15不同实例，未新增查询位置，不宣称实际发奖。[原件](../continuity/STONEAGE-PET-HIGH-FIRST-44-PC-WINDOW-REWARD-20261124.md)。
