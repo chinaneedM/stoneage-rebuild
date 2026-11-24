@@ -479,3 +479,8 @@
 ## 2026-11-24｜PET-HIGH-FIRST-32 统一来源查询入口
 
 [使用说明](UNIFIED-PC-PET-SOURCE-LOOKUP.md) · [固定源清单](../../research/pets/PET-HIGH-FIRST-32-UNIFIED-SOURCE-LOOKUP-MANIFEST-R1.json) · [查询工具](../../tools/stoneage_pet_source_lookup.py) · [续接](../continuity/STONEAGE-PET-HIGH-FIRST-32-UNIFIED-LOOKUP-20261124.md)。25个源对象统一只读检索，保留原版本/程序/图号与历史记录分轨。原CURRENT不动，PET唯一。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-33 逐条字段缺件队列
+
+[字段恢复队列](PC-PET-FIELD-GAP-QUEUE.md) · [查询工具](../../tools/stoneage_pet_gap_queue.py) · [续接](../continuity/STONEAGE-PET-HIGH-FIRST-33-FIELD-GAP-QUEUE-20261124.md)。2986来源位置，非物种。四轨精确原行散列关联，正式字段仍须同部署取证。PET唯一，原CURRENT不动。
