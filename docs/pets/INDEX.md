@@ -454,3 +454,8 @@
 ## 2026-11-24｜PET-HIGH-FIRST-24 大陆2010五鲸两雷龙
 
 [逐宠档案](CN-2010-WHALE-DRAGON-MERMAID.md) · [机读数据](../../research/pets/PET-HIGH-FIRST-24-CN2010-NAMED-PANEL-CROSSWALK-R1.json) · [接续](../continuity/STONEAGE-PET-HIGH-FIRST-24-CN2010-NAMED-PANEL-CROSSWALK-20261124.md)。7面板、5完整四围样本、2部分样本、1人鱼通称；4名TW85原图鉴同名，保留跨程序冲突与独立版本条件区间。无新2010原客户端，PET唯一。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-25 2011大陆与台湾逐名来源关联
+
+[逐宠档案](CN-TW-2011-NAMED-PETS.md) · [机读记录](../../research/pets/PET-HIGH-FIRST-25-2011-NAMED-SOURCE-CROSSWALK-R1.json) · [续接](../continuity/STONEAGE-PET-HIGH-FIRST-25-2011-NAMED-SOURCE-CROSSWALK-20261124.md)。41来源位置，25直接名对应、3仅修饰名候选、13未匹配；不当官方物种总数。PET唯一。

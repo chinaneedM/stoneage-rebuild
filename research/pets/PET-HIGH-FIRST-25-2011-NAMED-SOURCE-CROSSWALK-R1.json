@@ -1,0 +1,3045 @@
+{
+  "schema": "stoneage.pet.high_first_25.2011_source_attestation_name_crosswalk.r1",
+  "source_head": "a2a963989deacbba19df7a3af1b7c5909c1359b8",
+  "source_pins_git_blob": {
+    "research/recovered/STONEAGE-PET85-YEAR2011-CN85-TW-OFFICIAL-PET-EVENT-CANDIDATES-R1.json": "e6a6fce5f548203c09d9a8c1caca4a2c4dd0dbf4",
+    "research/recovered/STONEAGE-PET86-YEAR2011-CN-NAMED-PETS-TW-HK-KR-JP-SOURCE-BOUNDARIES-R1.json": "63a2e9355befac9747c48e7733643307e51a614a",
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-TW85-ORIGINAL-PE-ALBUM-GRID-R1.json": "7fb8eceba23dea6dc90ebb18e404d6e837210eaf",
+    "research/pets/PET-HIGH-FIRST-TW85-NATIVE-SPR-ALBUM-R1.json": "e7cff0d53585964c9d755ef1fbd2bc5531d883d6",
+    "research/pets/PET-HIGH-FIRST-CN50-NATIVE-SPR-ALBUM-R1.json": "98fea71c051dfa887b91154a8a72d17c67b57744"
+  },
+  "scope": "Existing classic PC 2011 CN/TW period receipts; exact literal/explicit simplified-traditional spelling matches to independent preserved source indexes, not historical identity.",
+  "character_map": {
+    "诺": "諾",
+    "奥": "奧",
+    "顿": "頓",
+    "扑": "撲",
+    "满": "滿",
+    "乌": "烏",
+    "鱼": "魚",
+    "尔": "爾",
+    "亚": "亞",
+    "宝": "寶",
+    "鸡": "雞",
+    "则": "則",
+    "鲁": "魯",
+    "齐": "齊",
+    "怀": "懷",
+    "阔": "闊",
+    "达": "達",
+    "贝": "貝"
+  },
+  "qualified_label_stems": {
+    "狂暴版朵巴奈特": "朵巴奈特",
+    "猴子蒙奇": "蒙奇",
+    "人鱼艾尔摩米": "艾尔摩米"
+  },
+  "rows": [
+    {
+      "receipt": "PET85",
+      "position": 0,
+      "source_id": "CN2011-JAN27-NAMED-PET-EXCHANGE",
+      "name": "狂暴版朵巴奈特",
+      "region": "CN",
+      "version_lane": "CN85_CONTEXT_NOT_NATIVE_VERIFIED",
+      "source_class": "VARIANT_SKILL_RAGE_NOT_NEW_SPECIES",
+      "advertised_skill": "狂暴攻击",
+      "exact_name_spellings": [
+        "狂暴版朵巴奈特"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [],
+        "tw85_album_slots": [],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": "朵巴奈特",
+      "stem_candidates": {
+        "claimed_tw75_templates": [
+          {
+            "name": "朵巴奈特",
+            "template_id": 811,
+            "graphic": 100906,
+            "physical_line": 610,
+            "row_sha256": "5295b02d170744095c1bea9e63449f833e77bbf75d8ca5cd815f9bb2df9c7f57"
+          },
+          {
+            "name": "朵巴奈特",
+            "template_id": 979,
+            "graphic": 100906,
+            "physical_line": 777,
+            "row_sha256": "a1217d217b77d0bd4e25da0e158bc930854b8902a1fce5c45aee8abdf22ba8ef"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 267,
+            "name": "朵巴奈特",
+            "portrait_alias": 28305,
+            "row_sha256": "2c3e638174ad7f98fb2382e25f827772acaebd5b0337a9ff1e9fe0cc298e4c48"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 267,
+            "name": "朵巴奈特",
+            "portrait_alias": 28305,
+            "row_sha256": "2c3e638174ad7f98fb2382e25f827772acaebd5b0337a9ff1e9fe0cc298e4c48"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 267,
+            "name": "朵巴奈特",
+            "portrait_alias": 28305,
+            "row_sha256": "2c3e638174ad7f98fb2382e25f827772acaebd5b0337a9ff1e9fe0cc298e4c48"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 267,
+            "name": "朵巴奈特",
+            "portrait_alias": 28305,
+            "row_sha256": "2c3e638174ad7f98fb2382e25f827772acaebd5b0337a9ff1e9fe0cc298e4c48"
+          }
+        ],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": [
+          {
+            "name": "朵巴奈特",
+            "ordinal": 267,
+            "portrait_rd_sha256": "d7f1b47769163bd1568a6d2fdeb1c5e9f96838180e8216798286f060b9b20816",
+            "graphics": [
+              100906,
+              101262
+            ]
+          }
+        ]
+      },
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET85",
+      "position": 1,
+      "source_id": "CN2011-JAN27-NAMED-PET-EXCHANGE",
+      "name": "史卡皮诺",
+      "region": "CN",
+      "version_lane": "CN85_CONTEXT_NOT_NATIVE_VERIFIED",
+      "source_class": "RANDOM_REDEMPTION_OPTION",
+      "advertised_skill": "精准；深层注射",
+      "exact_name_spellings": [
+        "史卡皮诺",
+        "史卡皮諾"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "史卡皮諾",
+            "template_id": 35,
+            "graphic": 101612,
+            "physical_line": 35,
+            "row_sha256": "2aa99f92cfdb7c05a3bcd565e371f5435370c180e1f3f6875827df73e3825189"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 410,
+            "name": "史卡皮諾",
+            "portrait_alias": 28478,
+            "row_sha256": "860733c0e9e09b36c459b5ea43b06eac6f5bd3be13a874a82036dfe06ffc1a23"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 410,
+            "name": "史卡皮諾",
+            "portrait_alias": 28478,
+            "row_sha256": "860733c0e9e09b36c459b5ea43b06eac6f5bd3be13a874a82036dfe06ffc1a23"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 410,
+            "name": "史卡皮諾",
+            "portrait_alias": 28478,
+            "row_sha256": "860733c0e9e09b36c459b5ea43b06eac6f5bd3be13a874a82036dfe06ffc1a23"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 410,
+            "name": "史卡皮諾",
+            "portrait_alias": 28478,
+            "row_sha256": "860733c0e9e09b36c459b5ea43b06eac6f5bd3be13a874a82036dfe06ffc1a23"
+          }
+        ],
+        "tw85_extra_spr": [
+          {
+            "graphic": 101579,
+            "conflicting_names": false,
+            "program_names": {
+              "sa.exe": "史卡皮諾",
+              "sb.exe": "史卡皮諾",
+              "sc.exe": "史卡皮諾",
+              "sd.exe": "史卡皮諾"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1263,
+                "original_spr_segment_sha256": "3392da7ffb2bc55e11e85fafbbf88b312e45eb39a40c88a9ec226efc3c6a49b8",
+                "original_animation_header_count": 1
+              }
+            ]
+          },
+          {
+            "graphic": 101612,
+            "conflicting_names": false,
+            "program_names": {
+              "sa.exe": "史卡皮諾",
+              "sb.exe": "史卡皮諾",
+              "sc.exe": "史卡皮諾",
+              "sd.exe": "史卡皮諾"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1296,
+                "original_spr_segment_sha256": "a747ea29d4cd5784c69b17de1a3d27440a728f0f022ae7ef5aae396b5b4b184b",
+                "original_animation_header_count": 56
+              }
+            ]
+          }
+        ],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET85",
+      "position": 2,
+      "source_id": "CN2011-JAN27-NAMED-PET-EXCHANGE",
+      "name": "史卡皮克",
+      "region": "CN",
+      "version_lane": "CN85_CONTEXT_NOT_NATIVE_VERIFIED",
+      "source_class": "RANDOM_REDEMPTION_OPTION",
+      "advertised_skill": "精准；深层注射",
+      "exact_name_spellings": [
+        "史卡皮克"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "史卡皮克",
+            "template_id": 36,
+            "graphic": 101613,
+            "physical_line": 36,
+            "row_sha256": "c8fe353d217f831524fdd268f45d0f571795145e3f92d64b8fa3fd0c55b72385"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 411,
+            "name": "史卡皮克",
+            "portrait_alias": 28479,
+            "row_sha256": "84a4533a677d3185d4759cf84d8fde3398ea59fee550cc85fd811f26a3bcd18d"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 411,
+            "name": "史卡皮克",
+            "portrait_alias": 28479,
+            "row_sha256": "84a4533a677d3185d4759cf84d8fde3398ea59fee550cc85fd811f26a3bcd18d"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 411,
+            "name": "史卡皮克",
+            "portrait_alias": 28479,
+            "row_sha256": "84a4533a677d3185d4759cf84d8fde3398ea59fee550cc85fd811f26a3bcd18d"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 411,
+            "name": "史卡皮克",
+            "portrait_alias": 28479,
+            "row_sha256": "84a4533a677d3185d4759cf84d8fde3398ea59fee550cc85fd811f26a3bcd18d"
+          }
+        ],
+        "tw85_extra_spr": [
+          {
+            "graphic": 101580,
+            "conflicting_names": false,
+            "program_names": {
+              "sa.exe": "史卡皮克",
+              "sb.exe": "史卡皮克",
+              "sc.exe": "史卡皮克",
+              "sd.exe": "史卡皮克"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1264,
+                "original_spr_segment_sha256": "8d63cad8c270dd39daee3ac9a42c5dd08b0adc47f4c6e9be08f600b32db33788",
+                "original_animation_header_count": 1
+              }
+            ]
+          },
+          {
+            "graphic": 101613,
+            "conflicting_names": false,
+            "program_names": {
+              "sa.exe": "史卡皮克",
+              "sb.exe": "史卡皮克",
+              "sc.exe": "史卡皮克",
+              "sd.exe": "史卡皮克"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1297,
+                "original_spr_segment_sha256": "58f6696a404ff683016edf6eebc80c6c7c609f8c14257c2cb0ee01c592088f46",
+                "original_animation_header_count": 56
+              }
+            ]
+          }
+        ],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET85",
+      "position": 3,
+      "source_id": "CN2011-JAN27-NAMED-PET-EXCHANGE",
+      "name": "史卡皮奥",
+      "region": "CN",
+      "version_lane": "CN85_CONTEXT_NOT_NATIVE_VERIFIED",
+      "source_class": "RANDOM_REDEMPTION_OPTION",
+      "advertised_skill": "精准；深层注射",
+      "exact_name_spellings": [
+        "史卡皮奥",
+        "史卡皮奧"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "史卡皮奧",
+            "template_id": 37,
+            "graphic": 101614,
+            "physical_line": 37,
+            "row_sha256": "e7819cff2cf18daf57dfc3f3e5139576c22cbc5fa14e956702a1b87b9c81698d"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 412,
+            "name": "史卡皮奧",
+            "portrait_alias": 28480,
+            "row_sha256": "4ba3d4fa3fefb65d016d45577ca1d9803cbf7ac2800c411b89776de7eb409a73"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 412,
+            "name": "史卡皮奧",
+            "portrait_alias": 28480,
+            "row_sha256": "4ba3d4fa3fefb65d016d45577ca1d9803cbf7ac2800c411b89776de7eb409a73"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 412,
+            "name": "史卡皮奧",
+            "portrait_alias": 28480,
+            "row_sha256": "4ba3d4fa3fefb65d016d45577ca1d9803cbf7ac2800c411b89776de7eb409a73"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 412,
+            "name": "史卡皮奧",
+            "portrait_alias": 28480,
+            "row_sha256": "4ba3d4fa3fefb65d016d45577ca1d9803cbf7ac2800c411b89776de7eb409a73"
+          }
+        ],
+        "tw85_extra_spr": [
+          {
+            "graphic": 101581,
+            "conflicting_names": false,
+            "program_names": {
+              "sa.exe": "史卡皮奧",
+              "sb.exe": "史卡皮奧",
+              "sc.exe": "史卡皮奧",
+              "sd.exe": "史卡皮奧"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1265,
+                "original_spr_segment_sha256": "bc2bbc7629a03ff0065b73a5a0e11bebf3eeef02cd58bab605ab75ead4475ebd",
+                "original_animation_header_count": 1
+              }
+            ]
+          },
+          {
+            "graphic": 101614,
+            "conflicting_names": false,
+            "program_names": {
+              "sa.exe": "史卡皮奧",
+              "sb.exe": "史卡皮奧",
+              "sc.exe": "史卡皮奧",
+              "sd.exe": "史卡皮奧"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1298,
+                "original_spr_segment_sha256": "1c08b93a800ce2493c94dd2f6a146c1c4eb08695fe77b494906cd6308d1c0fd0",
+                "original_animation_header_count": 56
+              }
+            ]
+          }
+        ],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET85",
+      "position": 4,
+      "source_id": "CN2011-JAN27-NAMED-PET-EXCHANGE",
+      "name": "史卡皮顿",
+      "region": "CN",
+      "version_lane": "CN85_CONTEXT_NOT_NATIVE_VERIFIED",
+      "source_class": "RANDOM_REDEMPTION_OPTION",
+      "advertised_skill": "精准；深层注射",
+      "exact_name_spellings": [
+        "史卡皮顿",
+        "史卡皮頓"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "史卡皮頓",
+            "template_id": 38,
+            "graphic": 101615,
+            "physical_line": 38,
+            "row_sha256": "b4c0de854abf4ce45c7e83a57664feaa50582726989df413c37087677bfaa4e0"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 413,
+            "name": "史卡皮頓",
+            "portrait_alias": 28481,
+            "row_sha256": "50e02638f5cfa0bdafcbad03d68fadbca799cdae0da4e5a7a890f8ae83937583"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 413,
+            "name": "史卡皮頓",
+            "portrait_alias": 28481,
+            "row_sha256": "50e02638f5cfa0bdafcbad03d68fadbca799cdae0da4e5a7a890f8ae83937583"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 413,
+            "name": "史卡皮頓",
+            "portrait_alias": 28481,
+            "row_sha256": "50e02638f5cfa0bdafcbad03d68fadbca799cdae0da4e5a7a890f8ae83937583"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 413,
+            "name": "史卡皮頓",
+            "portrait_alias": 28481,
+            "row_sha256": "50e02638f5cfa0bdafcbad03d68fadbca799cdae0da4e5a7a890f8ae83937583"
+          }
+        ],
+        "tw85_extra_spr": [
+          {
+            "graphic": 101582,
+            "conflicting_names": false,
+            "program_names": {
+              "sa.exe": "史卡皮頓",
+              "sb.exe": "史卡皮頓",
+              "sc.exe": "史卡皮頓",
+              "sd.exe": "史卡皮頓"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1266,
+                "original_spr_segment_sha256": "493d18304e54179c008b77ce2afd866ed312a644e9e72efd81665d9102654725",
+                "original_animation_header_count": 1
+              }
+            ]
+          },
+          {
+            "graphic": 101615,
+            "conflicting_names": false,
+            "program_names": {
+              "sa.exe": "史卡皮頓",
+              "sb.exe": "史卡皮頓",
+              "sc.exe": "史卡皮頓",
+              "sd.exe": "史卡皮頓"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1299,
+                "original_spr_segment_sha256": "61bf1e857ea4136b4043ac78830904d019f4eade7dd0f67043c2602654767126",
+                "original_animation_header_count": 56
+              }
+            ]
+          }
+        ],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET85",
+      "position": 5,
+      "source_id": "CN2011-JUN20-HONOR-SHOP-PLANNED",
+      "name": "扑满乌力",
+      "region": "CN",
+      "version_lane": "CN85_CONTEXT_NOT_NATIVE_VERIFIED",
+      "source_class": "FUTURE_DATED_SHOP_EXAMPLE",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "扑满乌力",
+        "撲滿烏力"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "撲滿烏力",
+            "template_id": 725,
+            "graphic": 100820,
+            "physical_line": 524,
+            "row_sha256": "59b35383afe337ab7379793b4daffe21bcd055eb27a096297187474816618fbd"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 181,
+            "name": "撲滿烏力",
+            "portrait_alias": 28006,
+            "row_sha256": "005faa88a1f3f54e184f67f9c6eba04afd118f51ef0cc9e02d469499351af4c2"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 181,
+            "name": "撲滿烏力",
+            "portrait_alias": 28006,
+            "row_sha256": "005faa88a1f3f54e184f67f9c6eba04afd118f51ef0cc9e02d469499351af4c2"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 181,
+            "name": "撲滿烏力",
+            "portrait_alias": 28006,
+            "row_sha256": "005faa88a1f3f54e184f67f9c6eba04afd118f51ef0cc9e02d469499351af4c2"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 181,
+            "name": "撲滿烏力",
+            "portrait_alias": 28006,
+            "row_sha256": "005faa88a1f3f54e184f67f9c6eba04afd118f51ef0cc9e02d469499351af4c2"
+          }
+        ],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": [
+          {
+            "name": "扑满乌力",
+            "ordinal": 181,
+            "portrait_rd_sha256": "4956acdaf08cfbc9bba9a67ac8fbc06a6b97796850b2055bf03e7e17c26fc5cc",
+            "graphics": [
+              100820
+            ]
+          }
+        ]
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET85",
+      "position": 6,
+      "source_id": "CN2011-JUN20-HONOR-SHOP-PLANNED",
+      "name": "猴子蒙奇",
+      "region": "CN",
+      "version_lane": "CN85_CONTEXT_NOT_NATIVE_VERIFIED",
+      "source_class": "FUTURE_DATED_SHOP_EXAMPLE",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "猴子蒙奇"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [],
+        "tw85_album_slots": [],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": "蒙奇",
+      "stem_candidates": {
+        "claimed_tw75_templates": [
+          {
+            "name": "蒙奇",
+            "template_id": 969,
+            "graphic": 101412,
+            "physical_line": 767,
+            "row_sha256": "7bd9c862d10b2bde2e86414bfb3c04de59e1ee45aae95c7644040515f0660fcc"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 294,
+            "name": "蒙奇",
+            "portrait_alias": 28362,
+            "row_sha256": "53446eb428c483593f88becc5c92191f7342ec55f1d2279888a96db57001327e"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 294,
+            "name": "蒙奇",
+            "portrait_alias": 28362,
+            "row_sha256": "53446eb428c483593f88becc5c92191f7342ec55f1d2279888a96db57001327e"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 294,
+            "name": "蒙奇",
+            "portrait_alias": 28362,
+            "row_sha256": "53446eb428c483593f88becc5c92191f7342ec55f1d2279888a96db57001327e"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 294,
+            "name": "蒙奇",
+            "portrait_alias": 28362,
+            "row_sha256": "53446eb428c483593f88becc5c92191f7342ec55f1d2279888a96db57001327e"
+          }
+        ],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": [
+          {
+            "name": "蒙奇",
+            "ordinal": 294,
+            "portrait_rd_sha256": "c435e2e2f7b8089191dd58708296597e5bf86f59f3bfac608391542aad2c875a",
+            "graphics": [
+              101165,
+              101289,
+              101412
+            ]
+          }
+        ]
+      },
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET85",
+      "position": 7,
+      "source_id": "CN2011-JUN20-HONOR-SHOP-PLANNED",
+      "name": "人鱼艾尔摩米",
+      "region": "CN",
+      "version_lane": "CN85_CONTEXT_NOT_NATIVE_VERIFIED",
+      "source_class": "FUTURE_DATED_SHOP_EXAMPLE",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "人鱼艾尔摩米",
+        "人魚艾爾摩米"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [],
+        "tw85_album_slots": [],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": "艾尔摩米",
+      "stem_candidates": {
+        "claimed_tw75_templates": [
+          {
+            "name": "艾爾摩米",
+            "template_id": 1119,
+            "graphic": 101575,
+            "physical_line": 908,
+            "row_sha256": "6f2a6b98648cecfb0f4a76d689402a83dcdafeb4c4a9db9b7174b5f04ef19185"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 406,
+            "name": "艾爾摩米",
+            "portrait_alias": 28475,
+            "row_sha256": "3889d4c3130b40bf6a04584f00ebe323a9cdb68c2ed1b67e18d08cd1c6264e0b"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 406,
+            "name": "艾爾摩米",
+            "portrait_alias": 28475,
+            "row_sha256": "3889d4c3130b40bf6a04584f00ebe323a9cdb68c2ed1b67e18d08cd1c6264e0b"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 406,
+            "name": "艾爾摩米",
+            "portrait_alias": 28475,
+            "row_sha256": "3889d4c3130b40bf6a04584f00ebe323a9cdb68c2ed1b67e18d08cd1c6264e0b"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 406,
+            "name": "艾爾摩米",
+            "portrait_alias": 28475,
+            "row_sha256": "3889d4c3130b40bf6a04584f00ebe323a9cdb68c2ed1b67e18d08cd1c6264e0b"
+          }
+        ],
+        "tw85_extra_spr": [
+          {
+            "graphic": 101575,
+            "conflicting_names": false,
+            "program_names": {
+              "sa.exe": "艾爾摩米",
+              "sb.exe": "艾爾摩米",
+              "sc.exe": "艾爾摩米",
+              "sd.exe": "艾爾摩米"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1257,
+                "original_spr_segment_sha256": "17aa6b851efb18374ad0f0f9803c548f7fe8ddca03536e6a3caaeee2c1bac556",
+                "original_animation_header_count": 56
+              }
+            ]
+          }
+        ],
+        "cn50_named_slots": []
+      },
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET85",
+      "position": 8,
+      "source_id": "CN2011-JUL08-HONOR-SHOP-CURRENT",
+      "name": "夏克",
+      "region": "CN",
+      "version_lane": "CN85_CONTEXT_NOT_NATIVE_VERIFIED",
+      "source_class": "OPERATOR_CURRENT_TENSE_SHOP_CLAIM",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "夏克"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 549,
+            "name": "夏克",
+            "portrait_alias": 28646,
+            "row_sha256": "31cbbefc3f87a739d009ccb04a95e32bbf5cd85ef12e281cb77f8a3d6d9bfdb8"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 549,
+            "name": "夏克",
+            "portrait_alias": 28646,
+            "row_sha256": "31cbbefc3f87a739d009ccb04a95e32bbf5cd85ef12e281cb77f8a3d6d9bfdb8"
+          }
+        ],
+        "tw85_extra_spr": [
+          {
+            "graphic": 101974,
+            "conflicting_names": true,
+            "program_names": {
+              "sa.exe": "夏克",
+              "sb.exe": "洛狄雷諾",
+              "sc.exe": null,
+              "sd.exe": null
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1660,
+                "original_spr_segment_sha256": "9e4fdfc7f5e83b97ee8253e1dad8f452b3ab70103501e5173d8e80480ead8b42",
+                "original_animation_header_count": 104
+              }
+            ]
+          },
+          {
+            "graphic": 101999,
+            "conflicting_names": false,
+            "program_names": {
+              "sa.exe": "夏克",
+              "sb.exe": "夏克",
+              "sc.exe": null,
+              "sd.exe": null
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1687,
+                "original_spr_segment_sha256": "b7d190ea1bf4147c340e0c70b37a22d11d3de334d714c1c73baee63f1753eac0",
+                "original_animation_header_count": 56
+              }
+            ]
+          }
+        ],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET85",
+      "position": 9,
+      "source_id": "CN2011-JUL08-HONOR-SHOP-CURRENT",
+      "name": "多芬",
+      "region": "CN",
+      "version_lane": "CN85_CONTEXT_NOT_NATIVE_VERIFIED",
+      "source_class": "OPERATOR_CURRENT_TENSE_SHOP_CLAIM",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "多芬"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "多芬",
+            "template_id": 123,
+            "graphic": 101705,
+            "physical_line": 123,
+            "row_sha256": "b8e97000455f6b649ead7091f14a71957682705be5d15a2aef030b46ce03493e"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 421,
+            "name": "多芬",
+            "portrait_alias": 28489,
+            "row_sha256": "f785b4e389997c41b436f85e39c2674ecbf7aa3e4b8a0828b0b5ba37dd88bf24"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 421,
+            "name": "多芬",
+            "portrait_alias": 28489,
+            "row_sha256": "f785b4e389997c41b436f85e39c2674ecbf7aa3e4b8a0828b0b5ba37dd88bf24"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 421,
+            "name": "多芬",
+            "portrait_alias": 28489,
+            "row_sha256": "f785b4e389997c41b436f85e39c2674ecbf7aa3e4b8a0828b0b5ba37dd88bf24"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 421,
+            "name": "多芬",
+            "portrait_alias": 28489,
+            "row_sha256": "f785b4e389997c41b436f85e39c2674ecbf7aa3e4b8a0828b0b5ba37dd88bf24"
+          }
+        ],
+        "tw85_extra_spr": [
+          {
+            "graphic": 101590,
+            "conflicting_names": false,
+            "program_names": {
+              "sa.exe": "多芬",
+              "sb.exe": "多芬",
+              "sc.exe": "多芬",
+              "sd.exe": "多芬"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1274,
+                "original_spr_segment_sha256": "86177eee18c6593e831cc989dd0d376b43418446f86a13f5dc090532e8eaca89",
+                "original_animation_header_count": 1
+              }
+            ]
+          },
+          {
+            "graphic": 101623,
+            "conflicting_names": false,
+            "program_names": {
+              "sa.exe": "多芬",
+              "sb.exe": "多芬",
+              "sc.exe": "多芬",
+              "sd.exe": "多芬"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1307,
+                "original_spr_segment_sha256": "24f8ca79928993663bfa34856afbddd16e5f881fc917b1e60951220664173d70",
+                "original_animation_header_count": 1
+              }
+            ]
+          },
+          {
+            "graphic": 101705,
+            "conflicting_names": false,
+            "program_names": {
+              "sa.exe": "多芬",
+              "sb.exe": "多芬",
+              "sc.exe": "多芬",
+              "sd.exe": "多芬"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1389,
+                "original_spr_segment_sha256": "c3325d755e2bebdb13cf0dc78c0149302b71b6dba3feda7da3121c583be249f6",
+                "original_animation_header_count": 56
+              }
+            ]
+          }
+        ],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET85",
+      "position": 10,
+      "source_id": "CN2011-JUL08-HONOR-SHOP-CURRENT",
+      "name": "洛奇斯德",
+      "region": "CN",
+      "version_lane": "CN85_CONTEXT_NOT_NATIVE_VERIFIED",
+      "source_class": "OPERATOR_CURRENT_TENSE_SHOP_CLAIM",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "洛奇斯德"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "洛奇斯德",
+            "template_id": 1047,
+            "graphic": 101442,
+            "physical_line": 844,
+            "row_sha256": "ab640f96ffaf6e3f9efea509074a02dc30cb6de115dc664d6ee302474d8479e3"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 306,
+            "name": "洛奇斯德",
+            "portrait_alias": 28370,
+            "row_sha256": "a323578e228e2d7392fd8f765b4d0de26dc9775ba387ece3ce70232897c1c5e2"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 306,
+            "name": "洛奇斯德",
+            "portrait_alias": 28370,
+            "row_sha256": "a323578e228e2d7392fd8f765b4d0de26dc9775ba387ece3ce70232897c1c5e2"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 306,
+            "name": "洛奇斯德",
+            "portrait_alias": 28370,
+            "row_sha256": "a323578e228e2d7392fd8f765b4d0de26dc9775ba387ece3ce70232897c1c5e2"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 306,
+            "name": "洛奇斯德",
+            "portrait_alias": 28370,
+            "row_sha256": "a323578e228e2d7392fd8f765b4d0de26dc9775ba387ece3ce70232897c1c5e2"
+          }
+        ],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": [
+          {
+            "name": "洛奇斯德",
+            "ordinal": 306,
+            "portrait_rd_sha256": "3ad86f279601cba6ef7baa235e9bd4b8e2af474304f68d18d4d6fb627c5a2305",
+            "graphics": [
+              101301,
+              101433,
+              101442
+            ]
+          }
+        ]
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 0,
+      "source_id": "CNVIP",
+      "name": "戈力多",
+      "region": "CN",
+      "version_lane": "CN85",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_PRESENT_TENSE_VIP_SHOP",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "戈力多"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [],
+        "tw85_album_slots": [],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 1,
+      "source_id": "CNVIP",
+      "name": "戈力拉",
+      "region": "CN",
+      "version_lane": "CN85",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_PRESENT_TENSE_VIP_SHOP",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "戈力拉"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [],
+        "tw85_album_slots": [],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 2,
+      "source_id": "CNVIP",
+      "name": "古丁巴拉",
+      "region": "CN",
+      "version_lane": "CN85",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_PRESENT_TENSE_VIP_SHOP",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "古丁巴拉"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [],
+        "tw85_album_slots": [],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 3,
+      "source_id": "CNVIP",
+      "name": "古丁亚拉",
+      "region": "CN",
+      "version_lane": "CN85",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_PRESENT_TENSE_VIP_SHOP",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "古丁亚拉",
+        "古丁亞拉"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [],
+        "tw85_album_slots": [],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 4,
+      "source_id": "CNVIP",
+      "name": "古丁拉尔",
+      "region": "CN",
+      "version_lane": "CN85",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_PRESENT_TENSE_VIP_SHOP",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "古丁拉尔",
+        "古丁拉爾"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [],
+        "tw85_album_slots": [],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 5,
+      "source_id": "CNVIP",
+      "name": "古丁格格",
+      "region": "CN",
+      "version_lane": "CN85",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_PRESENT_TENSE_VIP_SHOP",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "古丁格格"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [],
+        "tw85_album_slots": [],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 6,
+      "source_id": "CNREINFORCE",
+      "name": "克克洛斯",
+      "region": "CN",
+      "version_lane": "CN_UNKNOWN",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_STRENGTHENED_OLD_PETS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "克克洛斯"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "克克洛斯",
+            "template_id": 292,
+            "graphic": 100368,
+            "physical_line": 230,
+            "row_sha256": "2178fdefb72c5f66d19393f328f66133d98125a107d03bdc9bab06f572ced3e7"
+          },
+          {
+            "name": "克克洛斯",
+            "template_id": 558,
+            "graphic": 100368,
+            "physical_line": 379,
+            "row_sha256": "42446c37e93f7a1658e9ae2cecf2f9b7fbb00db2a87e945d8d93e7000c64c0ff"
+          },
+          {
+            "name": "克克洛斯",
+            "template_id": 590,
+            "graphic": 100368,
+            "physical_line": 411,
+            "row_sha256": "4fba53e43502511070c9e4fea9d392c55c9f584a2d282a54d1f23588eef33445"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 118,
+            "name": "克克洛斯",
+            "portrait_alias": 28292,
+            "row_sha256": "e27c8baef439892e18cd930acedbf4d2ff62da8f1ce1951862a5f087e4341631"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 118,
+            "name": "克克洛斯",
+            "portrait_alias": 28292,
+            "row_sha256": "e27c8baef439892e18cd930acedbf4d2ff62da8f1ce1951862a5f087e4341631"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 118,
+            "name": "克克洛斯",
+            "portrait_alias": 28292,
+            "row_sha256": "e27c8baef439892e18cd930acedbf4d2ff62da8f1ce1951862a5f087e4341631"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 118,
+            "name": "克克洛斯",
+            "portrait_alias": 28292,
+            "row_sha256": "e27c8baef439892e18cd930acedbf4d2ff62da8f1ce1951862a5f087e4341631"
+          }
+        ],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": [
+          {
+            "name": "克克洛斯",
+            "ordinal": 118,
+            "portrait_rd_sha256": "8c2e8d8496509dcc1ac9a50dab8905016f575966c1b16574a676c1e73af14aad",
+            "graphics": [
+              100368,
+              100757
+            ]
+          }
+        ]
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 7,
+      "source_id": "CNREINFORCE",
+      "name": "霍尔克",
+      "region": "CN",
+      "version_lane": "CN_UNKNOWN",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_STRENGTHENED_OLD_PETS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "霍尔克",
+        "霍爾克"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "霍爾克",
+            "template_id": 293,
+            "graphic": 100369,
+            "physical_line": 231,
+            "row_sha256": "f897d466a68cc4324c2995956a627ef2f2174de99809f7445a5c30b2a9aecf6a"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 119,
+            "name": "霍爾克",
+            "portrait_alias": 28293,
+            "row_sha256": "0f33a0a123486c4c613509948eef8d0566dab03f2230a3461c5fe33f03462322"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 119,
+            "name": "霍爾克",
+            "portrait_alias": 28293,
+            "row_sha256": "0f33a0a123486c4c613509948eef8d0566dab03f2230a3461c5fe33f03462322"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 119,
+            "name": "霍爾克",
+            "portrait_alias": 28293,
+            "row_sha256": "0f33a0a123486c4c613509948eef8d0566dab03f2230a3461c5fe33f03462322"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 119,
+            "name": "霍爾克",
+            "portrait_alias": 28293,
+            "row_sha256": "0f33a0a123486c4c613509948eef8d0566dab03f2230a3461c5fe33f03462322"
+          }
+        ],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": [
+          {
+            "name": "霍尔克",
+            "ordinal": 119,
+            "portrait_rd_sha256": "76043081cf4e4e5cb05eedfcf4eeab40a728a61f4a4ad3aab6e75f5313e7e57e",
+            "graphics": [
+              100369,
+              100758
+            ]
+          }
+        ]
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 8,
+      "source_id": "CNREINFORCE",
+      "name": "奇宝",
+      "region": "CN",
+      "version_lane": "CN_UNKNOWN",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_STRENGTHENED_OLD_PETS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "奇宝",
+        "奇寶"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "奇寶",
+            "template_id": 294,
+            "graphic": 100370,
+            "physical_line": 232,
+            "row_sha256": "2e803d6d13040ab65a9331345fcd224483ab8ac13996660b8f0474790c87c720"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 120,
+            "name": "奇寶",
+            "portrait_alias": 28294,
+            "row_sha256": "256519e2ed95faeb76b4b513d4f419284b69bfe9ca76b9c4ed25474c527bc336"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 120,
+            "name": "奇寶",
+            "portrait_alias": 28294,
+            "row_sha256": "256519e2ed95faeb76b4b513d4f419284b69bfe9ca76b9c4ed25474c527bc336"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 120,
+            "name": "奇寶",
+            "portrait_alias": 28294,
+            "row_sha256": "256519e2ed95faeb76b4b513d4f419284b69bfe9ca76b9c4ed25474c527bc336"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 120,
+            "name": "奇寶",
+            "portrait_alias": 28294,
+            "row_sha256": "256519e2ed95faeb76b4b513d4f419284b69bfe9ca76b9c4ed25474c527bc336"
+          }
+        ],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": [
+          {
+            "name": "奇宝",
+            "ordinal": 120,
+            "portrait_rd_sha256": "cb2755a181260023dfd18bfb4b4b6918792d6999b43061553abff59de356dbe7",
+            "graphics": [
+              100370,
+              100759
+            ]
+          }
+        ]
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 9,
+      "source_id": "CNREINFORCE",
+      "name": "火鸡",
+      "region": "CN",
+      "version_lane": "CN_UNKNOWN",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_STRENGTHENED_OLD_PETS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "火鸡",
+        "火雞"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "火雞",
+            "template_id": 291,
+            "graphic": 100367,
+            "physical_line": 229,
+            "row_sha256": "aa33bf7542c2bed35d3f464d1963f27d44f31ea1f17798a9d8229c526fa55a68"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 117,
+            "name": "火雞",
+            "portrait_alias": 28291,
+            "row_sha256": "75c9980fe490c3537bc8a852412473d1d158273727548cadf49fc1c7bf9cc4f4"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 117,
+            "name": "火雞",
+            "portrait_alias": 28291,
+            "row_sha256": "75c9980fe490c3537bc8a852412473d1d158273727548cadf49fc1c7bf9cc4f4"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 117,
+            "name": "火雞",
+            "portrait_alias": 28291,
+            "row_sha256": "75c9980fe490c3537bc8a852412473d1d158273727548cadf49fc1c7bf9cc4f4"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 117,
+            "name": "火雞",
+            "portrait_alias": 28291,
+            "row_sha256": "75c9980fe490c3537bc8a852412473d1d158273727548cadf49fc1c7bf9cc4f4"
+          }
+        ],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": [
+          {
+            "name": "火鸡",
+            "ordinal": 117,
+            "portrait_rd_sha256": "38b5edb3c659a7f60f8fd4b50bea615db8ae53abdca5d935c975cb69ee334346",
+            "graphics": [
+              100367,
+              100756
+            ]
+          }
+        ]
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 10,
+      "source_id": "CNREINFORCE",
+      "name": "邦奇诺",
+      "region": "CN",
+      "version_lane": "CN_UNKNOWN",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_STRENGTHENED_OLD_PETS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "邦奇诺",
+        "邦奇諾"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "邦奇諾",
+            "template_id": 94,
+            "graphic": 100290,
+            "physical_line": 94,
+            "row_sha256": "1340995134b9d6386c42476f45054d73a0edb56db316519a7de9fb37ab4e4d3a"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 40,
+            "name": "邦奇諾",
+            "portrait_alias": 28094,
+            "row_sha256": "0c915cb115f7626f7852141d454e96dba7871f31285ea5f8f1ba1145afffa981"
+          },
+          {
+            "program": "sa.exe",
+            "slot": 469,
+            "name": "邦奇諾",
+            "portrait_alias": 28537,
+            "row_sha256": "09dff4064d75ebdc9040edb1532a1486b31a616f2536afb1686103e7324bfcf9"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 40,
+            "name": "邦奇諾",
+            "portrait_alias": 28094,
+            "row_sha256": "0c915cb115f7626f7852141d454e96dba7871f31285ea5f8f1ba1145afffa981"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 469,
+            "name": "邦奇諾",
+            "portrait_alias": 28537,
+            "row_sha256": "09dff4064d75ebdc9040edb1532a1486b31a616f2536afb1686103e7324bfcf9"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 40,
+            "name": "邦奇諾",
+            "portrait_alias": 28094,
+            "row_sha256": "0c915cb115f7626f7852141d454e96dba7871f31285ea5f8f1ba1145afffa981"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 40,
+            "name": "邦奇諾",
+            "portrait_alias": 28094,
+            "row_sha256": "0c915cb115f7626f7852141d454e96dba7871f31285ea5f8f1ba1145afffa981"
+          }
+        ],
+        "tw85_extra_spr": [
+          {
+            "graphic": 101671,
+            "conflicting_names": true,
+            "program_names": {
+              "sa.exe": "邦奇諾",
+              "sb.exe": "邦奇諾",
+              "sc.exe": null,
+              "sd.exe": "火人龍"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1355,
+                "original_spr_segment_sha256": "5dcf5da5f530ff0b47515923bdb1cf098656fa9d195bcac66960138ce1361bf2",
+                "original_animation_header_count": 1
+              }
+            ]
+          },
+          {
+            "graphic": 101774,
+            "conflicting_names": true,
+            "program_names": {
+              "sa.exe": "邦奇諾",
+              "sb.exe": "邦奇諾",
+              "sc.exe": null,
+              "sd.exe": "火人龍"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1458,
+                "original_spr_segment_sha256": "b448c893458b26db0b648139c3cb5e8ebed3f7e18c8d7d6cdbf1e8e328e52e2c",
+                "original_animation_header_count": 1
+              }
+            ]
+          },
+          {
+            "graphic": 101822,
+            "conflicting_names": true,
+            "program_names": {
+              "sa.exe": "邦奇諾",
+              "sb.exe": "邦奇諾",
+              "sc.exe": null,
+              "sd.exe": "火人龍"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1506,
+                "original_spr_segment_sha256": "8690f6ebd87e7aece5bace82ffbfc305de6561e9b6f8b8fef2c3354909527313",
+                "original_animation_header_count": 56
+              }
+            ]
+          }
+        ],
+        "cn50_named_slots": [
+          {
+            "name": "邦奇诺",
+            "ordinal": 40,
+            "portrait_rd_sha256": "7250da8af84f59289b3dac4118d7ea7f05eae5448f16ea9fa91c5172953c4c9e",
+            "graphics": [
+              100290
+            ]
+          }
+        ]
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 11,
+      "source_id": "CNREINFORCE",
+      "name": "利则诺顿",
+      "region": "CN",
+      "version_lane": "CN_UNKNOWN",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_STRENGTHENED_OLD_PETS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "利则诺顿",
+        "利則諾頓"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "利則諾頓",
+            "template_id": 91,
+            "graphic": 100287,
+            "physical_line": 91,
+            "row_sha256": "0846694d945b8ead82d8b2a77d99edaf9c926c1e796458d576b9203c5ff4323b"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 37,
+            "name": "利則諾頓",
+            "portrait_alias": 28091,
+            "row_sha256": "57bfda72f2d51b9e42fc3da2bd89af62ab33fa5eea5def737c32410f3d95b609"
+          },
+          {
+            "program": "sa.exe",
+            "slot": 467,
+            "name": "利則諾頓",
+            "portrait_alias": 28535,
+            "row_sha256": "abb4738bfca4506ee34d45b752dc604d73fcdf52289617fc471bbf88468f2d41"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 37,
+            "name": "利則諾頓",
+            "portrait_alias": 28091,
+            "row_sha256": "57bfda72f2d51b9e42fc3da2bd89af62ab33fa5eea5def737c32410f3d95b609"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 467,
+            "name": "利則諾頓",
+            "portrait_alias": 28535,
+            "row_sha256": "abb4738bfca4506ee34d45b752dc604d73fcdf52289617fc471bbf88468f2d41"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 37,
+            "name": "利則諾頓",
+            "portrait_alias": 28091,
+            "row_sha256": "57bfda72f2d51b9e42fc3da2bd89af62ab33fa5eea5def737c32410f3d95b609"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 37,
+            "name": "利則諾頓",
+            "portrait_alias": 28091,
+            "row_sha256": "57bfda72f2d51b9e42fc3da2bd89af62ab33fa5eea5def737c32410f3d95b609"
+          }
+        ],
+        "tw85_extra_spr": [
+          {
+            "graphic": 101669,
+            "conflicting_names": true,
+            "program_names": {
+              "sa.exe": "利則諾頓",
+              "sb.exe": "利則諾頓",
+              "sc.exe": null,
+              "sd.exe": "地人龍"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1353,
+                "original_spr_segment_sha256": "42c8876306494b2fc72f2cf40a7f287b475ad6ecb4e38a348676f48d017208f8",
+                "original_animation_header_count": 1
+              }
+            ]
+          },
+          {
+            "graphic": 101772,
+            "conflicting_names": true,
+            "program_names": {
+              "sa.exe": "利則諾頓",
+              "sb.exe": "利則諾頓",
+              "sc.exe": null,
+              "sd.exe": "地人龍"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1456,
+                "original_spr_segment_sha256": "672e6888c8e6acfce1ef4f745b530c123a81628ca92fbc5216738a7cf5a6dd9e",
+                "original_animation_header_count": 1
+              }
+            ]
+          },
+          {
+            "graphic": 101818,
+            "conflicting_names": true,
+            "program_names": {
+              "sa.exe": "利則諾頓",
+              "sb.exe": "利則諾頓",
+              "sc.exe": null,
+              "sd.exe": "地人龍"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1502,
+                "original_spr_segment_sha256": "1c62cba1f4c7488f77bd49c921e780babf31c057f3f29c4f0300128db86a1b6d",
+                "original_animation_header_count": 1
+              }
+            ]
+          },
+          {
+            "graphic": 101820,
+            "conflicting_names": true,
+            "program_names": {
+              "sa.exe": "利則諾頓",
+              "sb.exe": "利則諾頓",
+              "sc.exe": null,
+              "sd.exe": "地人龍"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1504,
+                "original_spr_segment_sha256": "b5fd293bc12f4b4e4cee3a9ecb8c877fcbe51de65cea979fcf3a11eb523298ee",
+                "original_animation_header_count": 56
+              }
+            ]
+          }
+        ],
+        "cn50_named_slots": [
+          {
+            "name": "利则诺顿",
+            "ordinal": 37,
+            "portrait_rd_sha256": "54d907d6c1591d39df1238b6940479873125bd47309e57277570cd34ce2a0424",
+            "graphics": [
+              100287
+            ]
+          }
+        ]
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 12,
+      "source_id": "CNREINFORCE",
+      "name": "邦浦洛斯",
+      "region": "CN",
+      "version_lane": "CN_UNKNOWN",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_STRENGTHENED_OLD_PETS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "邦浦洛斯"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "邦浦洛斯",
+            "template_id": 93,
+            "graphic": 100289,
+            "physical_line": 93,
+            "row_sha256": "f34bef898e13f1dd9b5489f8330f93714b4c1f916e5bb648e100c5a65d882765"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 39,
+            "name": "邦浦洛斯",
+            "portrait_alias": 28093,
+            "row_sha256": "f57d61bb035e2c219ac11a5b117c27bb1ec91c626d9813e8e357eca692c41b50"
+          },
+          {
+            "program": "sa.exe",
+            "slot": 479,
+            "name": "邦浦洛斯",
+            "portrait_alias": 28547,
+            "row_sha256": "4203820950de09781cf79777febb7a696dd70eb81007f45d657dea6f777d5de5"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 39,
+            "name": "邦浦洛斯",
+            "portrait_alias": 28093,
+            "row_sha256": "f57d61bb035e2c219ac11a5b117c27bb1ec91c626d9813e8e357eca692c41b50"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 479,
+            "name": "邦浦洛斯",
+            "portrait_alias": 28547,
+            "row_sha256": "4203820950de09781cf79777febb7a696dd70eb81007f45d657dea6f777d5de5"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 39,
+            "name": "邦浦洛斯",
+            "portrait_alias": 28093,
+            "row_sha256": "f57d61bb035e2c219ac11a5b117c27bb1ec91c626d9813e8e357eca692c41b50"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 39,
+            "name": "邦浦洛斯",
+            "portrait_alias": 28093,
+            "row_sha256": "f57d61bb035e2c219ac11a5b117c27bb1ec91c626d9813e8e357eca692c41b50"
+          }
+        ],
+        "tw85_extra_spr": [
+          {
+            "graphic": 101681,
+            "conflicting_names": true,
+            "program_names": {
+              "sa.exe": "邦浦洛斯",
+              "sb.exe": "邦浦洛斯",
+              "sc.exe": null,
+              "sd.exe": "灰人龍"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1365,
+                "original_spr_segment_sha256": "e3bbd4c9d3c69ec6cd4a2aa7f0fe6b1242a220f90364da6834b1fc3779ecd24a",
+                "original_animation_header_count": 1
+              }
+            ]
+          },
+          {
+            "graphic": 101784,
+            "conflicting_names": true,
+            "program_names": {
+              "sa.exe": "邦浦洛斯",
+              "sb.exe": "邦浦洛斯",
+              "sc.exe": null,
+              "sd.exe": "灰人龍"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1468,
+                "original_spr_segment_sha256": "3d05d9221ddf6fc5742634120b90645cd3943a8e9b9f1c1328b97d5d718557a5",
+                "original_animation_header_count": 1
+              }
+            ]
+          },
+          {
+            "graphic": 101832,
+            "conflicting_names": true,
+            "program_names": {
+              "sa.exe": "邦浦洛斯",
+              "sb.exe": "邦浦洛斯",
+              "sc.exe": null,
+              "sd.exe": "灰人龍"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1516,
+                "original_spr_segment_sha256": "0da2e4e5978babee3168685e596a2b3d79ca56987cb3600920d5e189ed8ae986",
+                "original_animation_header_count": 1
+              }
+            ]
+          },
+          {
+            "graphic": 101875,
+            "conflicting_names": true,
+            "program_names": {
+              "sa.exe": "邦浦洛斯",
+              "sb.exe": "邦浦洛斯",
+              "sc.exe": null,
+              "sd.exe": "灰人龍"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1561,
+                "original_spr_segment_sha256": "a2f70ba4820ebef82e195732c1a177fa2fc4662f01a5820498a5b9437c262229",
+                "original_animation_header_count": 56
+              }
+            ]
+          },
+          {
+            "graphic": 101896,
+            "conflicting_names": true,
+            "program_names": {
+              "sa.exe": "邦浦洛斯",
+              "sb.exe": "邦浦洛斯",
+              "sc.exe": null,
+              "sd.exe": "灰人龍"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1582,
+                "original_spr_segment_sha256": "d2810826de14e6eea4c15db27395835019b89a1daa992116b671cee5304f173b",
+                "original_animation_header_count": 1
+              }
+            ]
+          }
+        ],
+        "cn50_named_slots": [
+          {
+            "name": "邦浦洛斯",
+            "ordinal": 39,
+            "portrait_rd_sha256": "4ebed7f824ba1f06a732af87f6c6055c96ea8d1ee0627fa1e0b16649e95b1ec7",
+            "graphics": [
+              100289
+            ]
+          }
+        ]
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 13,
+      "source_id": "CNREINFORCE",
+      "name": "布鲁顿",
+      "region": "CN",
+      "version_lane": "CN_UNKNOWN",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_STRENGTHENED_OLD_PETS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "布鲁顿",
+        "布魯頓"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "布魯頓",
+            "template_id": 95,
+            "graphic": 100394,
+            "physical_line": 95,
+            "row_sha256": "93970f8cbf0153211b9a930502efe3c1064e1869e17ffe35493553121f7f1a40"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 144,
+            "name": "布魯頓",
+            "portrait_alias": 28095,
+            "row_sha256": "46140e83ec56ea66d07cab06fae751b76e706bcb5b182e3a3fa25b4875f089f1"
+          },
+          {
+            "program": "sa.exe",
+            "slot": 470,
+            "name": "布魯頓",
+            "portrait_alias": 28538,
+            "row_sha256": "16eae4cf53f80920619aee3c12950430c8a4c12dccd1df68fe30e045960d2f92"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 144,
+            "name": "布魯頓",
+            "portrait_alias": 28095,
+            "row_sha256": "46140e83ec56ea66d07cab06fae751b76e706bcb5b182e3a3fa25b4875f089f1"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 470,
+            "name": "布魯頓",
+            "portrait_alias": 28538,
+            "row_sha256": "16eae4cf53f80920619aee3c12950430c8a4c12dccd1df68fe30e045960d2f92"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 144,
+            "name": "布魯頓",
+            "portrait_alias": 28095,
+            "row_sha256": "46140e83ec56ea66d07cab06fae751b76e706bcb5b182e3a3fa25b4875f089f1"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 144,
+            "name": "布魯頓",
+            "portrait_alias": 28095,
+            "row_sha256": "46140e83ec56ea66d07cab06fae751b76e706bcb5b182e3a3fa25b4875f089f1"
+          }
+        ],
+        "tw85_extra_spr": [
+          {
+            "graphic": 101672,
+            "conflicting_names": true,
+            "program_names": {
+              "sa.exe": "布魯頓",
+              "sb.exe": "布魯頓",
+              "sc.exe": null,
+              "sd.exe": "風人龍"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1356,
+                "original_spr_segment_sha256": "826fa93f38f03493a1a5a79f70a3db5084d89f429797e9aade2052c6cca6df8e",
+                "original_animation_header_count": 1
+              }
+            ]
+          },
+          {
+            "graphic": 101775,
+            "conflicting_names": true,
+            "program_names": {
+              "sa.exe": "布魯頓",
+              "sb.exe": "布魯頓",
+              "sc.exe": null,
+              "sd.exe": "風人龍"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1459,
+                "original_spr_segment_sha256": "0f4fb4824527a07961dbb61424c85e4cce9250be2cd301ee65a4d003c456199d",
+                "original_animation_header_count": 1
+              }
+            ]
+          },
+          {
+            "graphic": 101823,
+            "conflicting_names": true,
+            "program_names": {
+              "sa.exe": "布魯頓",
+              "sb.exe": "布魯頓",
+              "sc.exe": null,
+              "sd.exe": "風人龍"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1507,
+                "original_spr_segment_sha256": "c44bbbb356e7ee0f6d529caf8e16247ec8bb0d7333a786904832511f712012bd",
+                "original_animation_header_count": 56
+              }
+            ]
+          }
+        ],
+        "cn50_named_slots": [
+          {
+            "name": "布鲁顿",
+            "ordinal": 144,
+            "portrait_rd_sha256": "07fd10d8145f3fc2c303cdc1578e582f4c79239d51f60fd9e61f902ad9ff9abd",
+            "graphics": [
+              100394,
+              100783
+            ]
+          }
+        ]
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 14,
+      "source_id": "CNREINFORCE",
+      "name": "奥卡洛斯",
+      "region": "CN",
+      "version_lane": "CN_UNKNOWN",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_STRENGTHENED_OLD_PETS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "奥卡洛斯",
+        "奧卡洛斯"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "奧卡洛斯",
+            "template_id": 100,
+            "graphic": 100371,
+            "physical_line": 100,
+            "row_sha256": "a0898adbad7e06b47f7951de3d2cd3e023c37f25838f8d9807c341a4312db0c0"
+          },
+          {
+            "name": "奧卡洛斯",
+            "template_id": 301,
+            "graphic": 100371,
+            "physical_line": 233,
+            "row_sha256": "1f7c3a9f57e4d208743ba7b22fcfd2087b9f32b8d9927fa3edb0e78b8a800302"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 121,
+            "name": "奧卡洛斯",
+            "portrait_alias": 28301,
+            "row_sha256": "db2028ae6c633d8015051324156d8ab82a444e15907786146ab0760c8f6baf84"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 121,
+            "name": "奧卡洛斯",
+            "portrait_alias": 28301,
+            "row_sha256": "db2028ae6c633d8015051324156d8ab82a444e15907786146ab0760c8f6baf84"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 121,
+            "name": "奧卡洛斯",
+            "portrait_alias": 28301,
+            "row_sha256": "db2028ae6c633d8015051324156d8ab82a444e15907786146ab0760c8f6baf84"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 121,
+            "name": "奧卡洛斯",
+            "portrait_alias": 28301,
+            "row_sha256": "db2028ae6c633d8015051324156d8ab82a444e15907786146ab0760c8f6baf84"
+          }
+        ],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": [
+          {
+            "name": "奥卡洛斯",
+            "ordinal": 121,
+            "portrait_rd_sha256": "f6b644efbcac4b5278e5137a1c81fc5abde3499b48b8b67f145609ab429079c4",
+            "graphics": [
+              100371,
+              100760
+            ]
+          }
+        ]
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 15,
+      "source_id": "CNSEPT",
+      "name": "洛斯恩",
+      "region": "CN",
+      "version_lane": "CN_DUAL_UNRESOLVED",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_SHOWCASE_AND_DUAL_BUILD_CARDS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "洛斯恩"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [],
+        "tw85_album_slots": [],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 16,
+      "source_id": "CNSEPT",
+      "name": "洛斯奇",
+      "region": "CN",
+      "version_lane": "CN_DUAL_UNRESOLVED",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_SHOWCASE_AND_DUAL_BUILD_CARDS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "洛斯奇"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [],
+        "tw85_album_slots": [],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 17,
+      "source_id": "CNSEPT",
+      "name": "洛斯德",
+      "region": "CN",
+      "version_lane": "CN_DUAL_UNRESOLVED",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_SHOWCASE_AND_DUAL_BUILD_CARDS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "洛斯德"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [],
+        "tw85_album_slots": [],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 18,
+      "source_id": "CNSEPT",
+      "name": "洛斯奈",
+      "region": "CN",
+      "version_lane": "CN_DUAL_UNRESOLVED",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_SHOWCASE_AND_DUAL_BUILD_CARDS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "洛斯奈"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [],
+        "tw85_album_slots": [],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 19,
+      "source_id": "CNSEPT",
+      "name": "齐尔格尔顿",
+      "region": "CN",
+      "version_lane": "CN25",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_SHOWCASE_AND_DUAL_BUILD_CARDS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "齐尔格尔顿",
+        "齊爾格爾頓"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "齊爾格爾頓",
+            "template_id": 143,
+            "graphic": 100309,
+            "physical_line": 143,
+            "row_sha256": "9de61cab5324fce7176585e628ffc31e13ea7375fe18c98531a26c7ff86d3f43"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 59,
+            "name": "齊爾格爾頓",
+            "portrait_alias": 28143,
+            "row_sha256": "19321e43e2baeac49bc6133602a4b78ecb219ababe3b25cdb63ed2769d0405bf"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 59,
+            "name": "齊爾格爾頓",
+            "portrait_alias": 28143,
+            "row_sha256": "19321e43e2baeac49bc6133602a4b78ecb219ababe3b25cdb63ed2769d0405bf"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 59,
+            "name": "齊爾格爾頓",
+            "portrait_alias": 28143,
+            "row_sha256": "19321e43e2baeac49bc6133602a4b78ecb219ababe3b25cdb63ed2769d0405bf"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 59,
+            "name": "齊爾格爾頓",
+            "portrait_alias": 28143,
+            "row_sha256": "19321e43e2baeac49bc6133602a4b78ecb219ababe3b25cdb63ed2769d0405bf"
+          }
+        ],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": [
+          {
+            "name": "齐尔格尔顿",
+            "ordinal": 59,
+            "portrait_rd_sha256": "eac02c9c1ba4782d99b686bf46b8b963be9b4500b38714f15d61bdb53d1d4d2e",
+            "graphics": [
+              100309
+            ]
+          }
+        ]
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 20,
+      "source_id": "CNSEPT",
+      "name": "朵巴奈特",
+      "region": "CN",
+      "version_lane": "CN85",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_SHOWCASE_AND_DUAL_BUILD_CARDS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "朵巴奈特"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "朵巴奈特",
+            "template_id": 811,
+            "graphic": 100906,
+            "physical_line": 610,
+            "row_sha256": "5295b02d170744095c1bea9e63449f833e77bbf75d8ca5cd815f9bb2df9c7f57"
+          },
+          {
+            "name": "朵巴奈特",
+            "template_id": 979,
+            "graphic": 100906,
+            "physical_line": 777,
+            "row_sha256": "a1217d217b77d0bd4e25da0e158bc930854b8902a1fce5c45aee8abdf22ba8ef"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 267,
+            "name": "朵巴奈特",
+            "portrait_alias": 28305,
+            "row_sha256": "2c3e638174ad7f98fb2382e25f827772acaebd5b0337a9ff1e9fe0cc298e4c48"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 267,
+            "name": "朵巴奈特",
+            "portrait_alias": 28305,
+            "row_sha256": "2c3e638174ad7f98fb2382e25f827772acaebd5b0337a9ff1e9fe0cc298e4c48"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 267,
+            "name": "朵巴奈特",
+            "portrait_alias": 28305,
+            "row_sha256": "2c3e638174ad7f98fb2382e25f827772acaebd5b0337a9ff1e9fe0cc298e4c48"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 267,
+            "name": "朵巴奈特",
+            "portrait_alias": 28305,
+            "row_sha256": "2c3e638174ad7f98fb2382e25f827772acaebd5b0337a9ff1e9fe0cc298e4c48"
+          }
+        ],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": [
+          {
+            "name": "朵巴奈特",
+            "ordinal": 267,
+            "portrait_rd_sha256": "d7f1b47769163bd1568a6d2fdeb1c5e9f96838180e8216798286f060b9b20816",
+            "graphics": [
+              100906,
+              101262
+            ]
+          }
+        ]
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 21,
+      "source_id": "CNOCT",
+      "name": "怀肯沃",
+      "region": "CN",
+      "version_lane": "CN_DUAL_UNRESOLVED",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_WOLVES_AND_DUAL_BUILD_CARDS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "怀肯沃",
+        "懷肯沃"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [],
+        "tw85_album_slots": [],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 22,
+      "source_id": "CNOCT",
+      "name": "阔尔达",
+      "region": "CN",
+      "version_lane": "CN_DUAL_UNRESOLVED",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_WOLVES_AND_DUAL_BUILD_CARDS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "阔尔达",
+        "闊爾達"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [],
+        "tw85_album_slots": [],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 23,
+      "source_id": "CNOCT",
+      "name": "怀沃夫",
+      "region": "CN",
+      "version_lane": "CN_DUAL_UNRESOLVED",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_WOLVES_AND_DUAL_BUILD_CARDS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "怀沃夫",
+        "懷沃夫"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "懷沃夫",
+            "template_id": 150,
+            "graphic": 101875,
+            "physical_line": 150,
+            "row_sha256": "1d1f6800990282aac47dd90c6df692283622e47a166f89541ef200563a75ac6b"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 480,
+            "name": "懷沃夫",
+            "portrait_alias": 28548,
+            "row_sha256": "e975492f3452ebd22cdad289b297766efad87c75ea53278b257f6fd551e9cb89"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 480,
+            "name": "懷沃夫",
+            "portrait_alias": 28548,
+            "row_sha256": "e975492f3452ebd22cdad289b297766efad87c75ea53278b257f6fd551e9cb89"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 480,
+            "name": "懷沃夫",
+            "portrait_alias": 28548,
+            "row_sha256": "e975492f3452ebd22cdad289b297766efad87c75ea53278b257f6fd551e9cb89"
+          }
+        ],
+        "tw85_extra_spr": [
+          {
+            "graphic": 101682,
+            "conflicting_names": false,
+            "program_names": {
+              "sa.exe": "懷沃夫",
+              "sb.exe": "懷沃夫",
+              "sc.exe": null,
+              "sd.exe": "懷沃夫"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1366,
+                "original_spr_segment_sha256": "8440de927565e4ad87a36b516d4ad5ecf58a1e7d974db0e41040afe775dca49d",
+                "original_animation_header_count": 1
+              }
+            ]
+          },
+          {
+            "graphic": 101785,
+            "conflicting_names": false,
+            "program_names": {
+              "sa.exe": "懷沃夫",
+              "sb.exe": "懷沃夫",
+              "sc.exe": null,
+              "sd.exe": "懷沃夫"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1469,
+                "original_spr_segment_sha256": "6c9951e112dc66cb4ae93a26ff2b301d9cb91eec9f7b0a0b8375054b8992ee16",
+                "original_animation_header_count": 1
+              }
+            ]
+          },
+          {
+            "graphic": 101833,
+            "conflicting_names": false,
+            "program_names": {
+              "sa.exe": "懷沃夫",
+              "sb.exe": "懷沃夫",
+              "sc.exe": null,
+              "sd.exe": "懷沃夫"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1517,
+                "original_spr_segment_sha256": "4b0f9473b361f275d8d085d429cb2dba55e906c6c50fe6eb8201d02c188817a9",
+                "original_animation_header_count": 1
+              }
+            ]
+          },
+          {
+            "graphic": 101876,
+            "conflicting_names": false,
+            "program_names": {
+              "sa.exe": "懷沃夫",
+              "sb.exe": "懷沃夫",
+              "sc.exe": null,
+              "sd.exe": "懷沃夫"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1562,
+                "original_spr_segment_sha256": "c0afd8cee1b8c00652c9d2c035ef8025407502d22ccdfe90160318aaae87ba69",
+                "original_animation_header_count": 56
+              }
+            ]
+          },
+          {
+            "graphic": 101897,
+            "conflicting_names": false,
+            "program_names": {
+              "sa.exe": "懷沃夫",
+              "sb.exe": "懷沃夫",
+              "sc.exe": null,
+              "sd.exe": "懷沃夫"
+            },
+            "occurrences": [
+              {
+                "source_occurrence_index": 1583,
+                "original_spr_segment_sha256": "a265b65c70504dd6e082f1c1d8a20d0f3edf3e1d509a54e4d6bc50e4cb47802e",
+                "original_animation_header_count": 1
+              }
+            ]
+          }
+        ],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 24,
+      "source_id": "CNOCT",
+      "name": "阔米尔",
+      "region": "CN",
+      "version_lane": "CN_DUAL_UNRESOLVED",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_WOLVES_AND_DUAL_BUILD_CARDS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "阔米尔",
+        "闊米爾"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [],
+        "tw85_album_slots": [],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": []
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 25,
+      "source_id": "CNOCT",
+      "name": "贝洛金",
+      "region": "CN",
+      "version_lane": "CN25",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_WOLVES_AND_DUAL_BUILD_CARDS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "贝洛金",
+        "貝洛金"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "貝洛金",
+            "template_id": 739,
+            "graphic": 100834,
+            "physical_line": 538,
+            "row_sha256": "c31482b8937038b2ca5ca66cf50b1bd1c7a785d8c54215abd89740170748deba"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 195,
+            "name": "貝洛金",
+            "portrait_alias": 28045,
+            "row_sha256": "bccc64032bef9b24da1a355515cbc4cbd1128f193a4f384555c657747aa1b166"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 195,
+            "name": "貝洛金",
+            "portrait_alias": 28045,
+            "row_sha256": "bccc64032bef9b24da1a355515cbc4cbd1128f193a4f384555c657747aa1b166"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 195,
+            "name": "貝洛金",
+            "portrait_alias": 28045,
+            "row_sha256": "bccc64032bef9b24da1a355515cbc4cbd1128f193a4f384555c657747aa1b166"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 195,
+            "name": "貝洛金",
+            "portrait_alias": 28045,
+            "row_sha256": "bccc64032bef9b24da1a355515cbc4cbd1128f193a4f384555c657747aa1b166"
+          }
+        ],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": [
+          {
+            "name": "贝洛金",
+            "ordinal": 195,
+            "portrait_rd_sha256": "6eee19eb32ef2dbf18d040b622995906a227c76ecc90129ddecd4617c1db46b8",
+            "graphics": [
+              100834,
+              101190
+            ]
+          }
+        ]
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 26,
+      "source_id": "CNOCT",
+      "name": "戈登尔顿",
+      "region": "CN",
+      "version_lane": "CN85",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_WOLVES_AND_DUAL_BUILD_CARDS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "戈登尔顿",
+        "戈登爾頓"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "戈登爾頓",
+            "template_id": 768,
+            "graphic": 100863,
+            "physical_line": 567,
+            "row_sha256": "c6c88a9de28a98d8f146219fb2c2c2ffe4206413d3713a02058d53cecae4f75c"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 224,
+            "name": "戈登爾頓",
+            "portrait_alias": 28148,
+            "row_sha256": "2f56af8dde73e149400e2e7b479eb85f5697dd2bd7af5f9a79b63d3cbb283050"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 224,
+            "name": "戈登爾頓",
+            "portrait_alias": 28148,
+            "row_sha256": "2f56af8dde73e149400e2e7b479eb85f5697dd2bd7af5f9a79b63d3cbb283050"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 224,
+            "name": "戈登爾頓",
+            "portrait_alias": 28148,
+            "row_sha256": "2f56af8dde73e149400e2e7b479eb85f5697dd2bd7af5f9a79b63d3cbb283050"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 224,
+            "name": "戈登爾頓",
+            "portrait_alias": 28148,
+            "row_sha256": "2f56af8dde73e149400e2e7b479eb85f5697dd2bd7af5f9a79b63d3cbb283050"
+          }
+        ],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": [
+          {
+            "name": "戈登尔顿",
+            "ordinal": 224,
+            "portrait_rd_sha256": "24ac390974ade9dbe1a531427377a6bf8e0e0e8641061202b3a424d4de8ddc4b",
+            "graphics": [
+              100863,
+              101219
+            ]
+          }
+        ]
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 27,
+      "source_id": "CNDEC",
+      "name": "乌拉拉",
+      "region": "CN",
+      "version_lane": "CN25",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_DUAL_BUILD_CARDS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "乌拉拉",
+        "烏拉拉"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "烏拉拉",
+            "template_id": 738,
+            "graphic": 100833,
+            "physical_line": 537,
+            "row_sha256": "9f7f2eae5e2f58c236299258fd153d532f233b26f2fccbe5bfa2eba52bfa35df"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 194,
+            "name": "烏拉拉",
+            "portrait_alias": 28038,
+            "row_sha256": "76db3a4fc304083310f5cbe3c72890da394a5c0269b3c13636f1e7befc229251"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 194,
+            "name": "烏拉拉",
+            "portrait_alias": 28038,
+            "row_sha256": "76db3a4fc304083310f5cbe3c72890da394a5c0269b3c13636f1e7befc229251"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 194,
+            "name": "烏拉拉",
+            "portrait_alias": 28038,
+            "row_sha256": "76db3a4fc304083310f5cbe3c72890da394a5c0269b3c13636f1e7befc229251"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 194,
+            "name": "烏拉拉",
+            "portrait_alias": 28038,
+            "row_sha256": "76db3a4fc304083310f5cbe3c72890da394a5c0269b3c13636f1e7befc229251"
+          }
+        ],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": [
+          {
+            "name": "乌拉拉",
+            "ordinal": 194,
+            "portrait_rd_sha256": "0f2ea16005fcdaaad21d59badf58f820da8b6dc213ec303f8decd171756a874b",
+            "graphics": [
+              100833,
+              101189
+            ]
+          }
+        ]
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 28,
+      "source_id": "CNDEC",
+      "name": "格尔希洛",
+      "region": "CN",
+      "version_lane": "CN85",
+      "source_class": "CONTEMPORANEOUS_OPERATOR_DUAL_BUILD_CARDS",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "格尔希洛",
+        "格爾希洛"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "格爾希洛",
+            "template_id": 766,
+            "graphic": 100861,
+            "physical_line": 565,
+            "row_sha256": "451987dcd4dac4af8faceeda218844a03e74e44adf775728ffe142a8e91acd41"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 222,
+            "name": "格爾希洛",
+            "portrait_alias": 28146,
+            "row_sha256": "f4636091e8c8a3fcc57daebdf89416093ad909fbe67f817aea25444ba290a55a"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 222,
+            "name": "格爾希洛",
+            "portrait_alias": 28146,
+            "row_sha256": "f4636091e8c8a3fcc57daebdf89416093ad909fbe67f817aea25444ba290a55a"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 222,
+            "name": "格爾希洛",
+            "portrait_alias": 28146,
+            "row_sha256": "f4636091e8c8a3fcc57daebdf89416093ad909fbe67f817aea25444ba290a55a"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 222,
+            "name": "格爾希洛",
+            "portrait_alias": 28146,
+            "row_sha256": "f4636091e8c8a3fcc57daebdf89416093ad909fbe67f817aea25444ba290a55a"
+          }
+        ],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": [
+          {
+            "name": "格尔希洛",
+            "ordinal": 222,
+            "portrait_rd_sha256": "1dcd8d15dcf547ef958129454c0cf3c382b3bbdc2bec0d0979035e6619db9ba2",
+            "graphics": [
+              100861,
+              101217
+            ]
+          }
+        ]
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    },
+    {
+      "receipt": "PET86",
+      "position": 29,
+      "source_id": "TWSUMMER",
+      "name": "阿米朵",
+      "region": "TW",
+      "version_lane": "TW_UNKNOWN",
+      "source_class": "CONTEMPORANEOUS_PLAYER_REPORT_NOT_OPERATOR_ORIGINAL",
+      "advertised_skill": null,
+      "exact_name_spellings": [
+        "阿米朵"
+      ],
+      "direct": {
+        "claimed_tw75_templates": [
+          {
+            "name": "阿米朵",
+            "template_id": 813,
+            "graphic": 100908,
+            "physical_line": 612,
+            "row_sha256": "c835dfb84d43b9d47bbed29a1de357f4d3466ef9cca275ec98a693f46b116055"
+          }
+        ],
+        "tw85_album_slots": [
+          {
+            "program": "sa.exe",
+            "slot": 269,
+            "name": "阿米朵",
+            "portrait_alias": 28307,
+            "row_sha256": "a13157ec15b824f1fa93281b332a744661e7e24132895ee83b6770999124d690"
+          },
+          {
+            "program": "sb.exe",
+            "slot": 269,
+            "name": "阿米朵",
+            "portrait_alias": 28307,
+            "row_sha256": "a13157ec15b824f1fa93281b332a744661e7e24132895ee83b6770999124d690"
+          },
+          {
+            "program": "sc.exe",
+            "slot": 269,
+            "name": "阿米朵",
+            "portrait_alias": 28307,
+            "row_sha256": "a13157ec15b824f1fa93281b332a744661e7e24132895ee83b6770999124d690"
+          },
+          {
+            "program": "sd.exe",
+            "slot": 269,
+            "name": "阿米朵",
+            "portrait_alias": 28307,
+            "row_sha256": "a13157ec15b824f1fa93281b332a744661e7e24132895ee83b6770999124d690"
+          }
+        ],
+        "tw85_extra_spr": [],
+        "cn50_named_slots": [
+          {
+            "name": "阿米朵",
+            "ordinal": 269,
+            "portrait_rd_sha256": "9418965d55e25c1a69eb33efdb404da7efb1a66e08b9708ec34940aa5ece761e",
+            "graphics": [
+              100908,
+              101264
+            ]
+          }
+        ]
+      },
+      "qualified_label_stem": null,
+      "stem_candidates": null,
+      "native_2011_pet_id": null,
+      "original_2011_growth": null,
+      "original_2011_skill_ids": null,
+      "actual_grant_verified": false,
+      "first_release_date": null
+    }
+  ],
+  "related_2010_mermaid_identity": "UNKNOWN; 2011 人鱼艾尔摩米 is a named shop example, not proof of 2010 generic reward identity",
+  "event_contract_source": "PET85.exact_event_contracts",
+  "source_skill_claims_reference": "PET86.skill_claims",
+  "summary": {
+    "source_attestations": 41,
+    "distinct_source_labels": 41,
+    "direct_name_matches": 25,
+    "qualified_stem_only": 3,
+    "unmatched": 13,
+    "tw85_album_matches": 25,
+    "tw75_template_matches": 24,
+    "cn50_matches": 18,
+    "new_original_2011_client_bytes": 0
+  },
+  "official_species_count": null,
+  "original_assets_published": false
+}
