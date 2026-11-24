@@ -424,3 +424,8 @@
 ## 2026-11-24｜PET-HIGH-FIRST-19C 任务、赠宠与历史未知
 
 [逐宠取得档案](PC-2001-2003-QUEST-AND-GIFT.md) · [机读数据](../../research/pets/PET-HIGH-FIRST-19C-QUEST-AND-GIFT-WITNESSES-R1.json) · [接续](../continuity/STONEAGE-PET-HIGH-FIRST-19C-QUEST-AND-GIFT-20261124.md)。58条来源分类、18项环岛奖励关系、9条JSS赠宠转述、19条2001未知；不当原服实际发放。PET唯一，原CURRENT不动。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-19D 2001目录原序覆盖闭合
+
+[专项124序入口](PC-2001-DIRECTORY-COVERAGE.md) · [机器数据](../../research/pets/PET-HIGH-FIRST-19D-2001-DIRECTORY-CLOSURE-R1.json) · [接续](../continuity/STONEAGE-PET-HIGH-FIRST-19D-2001-DIRECTORY-CLOSURE-20261124.md)。新36序累计124/124，按地图头、坐标、名称变体及未知分层；不当官方复原率。下一批高版新增宠，PET唯一。
