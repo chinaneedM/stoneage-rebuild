@@ -44,3 +44,8 @@ python3 tools/stoneage_pet_gap_queue.py --all > pet-source-gaps.json
 ## R46 高版本取得补缺分流
 
 349条无保存版双宠标记遇敌路径的既有TW75记录按来源资格分流，13有原任务奖励配置、234有其他来源参考、102本批无合格取得参考。没有新增队列位置，也未宣称任何官方取得字段关闭。[逐条矩阵与续接](../continuity/STONEAGE-PET-HIGH-FIRST-46-PC-ACQUISITION-GAP-20261124.md)。
+
+
+## R47 同期取得补证
+
+对102条R46缺件补充19条同期名称元素相容的玩家取得记载，2条异元素冲突、8个仅上下文关联，余83条无相容记载；不改变正式字段、总位置或历史R46口径。[续接](../continuity/STONEAGE-PET-HIGH-FIRST-47-PC-PERIOD-ACQUISITION-GAP-20261124.md)。

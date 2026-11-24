@@ -9016,3 +9016,8 @@ R14包351231B/SHA7684267ab528d13ceecb23a25632543ae839225607cbda702a32736e4c4d366
 ## 2026-11-24｜PET46 来源交叉缺件矩阵
 
 复用15固定Git原派生/同期证言源，未新增外部源或重取原件；按完整行指纹、图号/模板、精确名称、后期异部署资格分开。349既有模板逐项可追源、26同号异行与1缺号的主备表差异；[矩阵与限制](continuity/STONEAGE-PET-HIGH-FIRST-46-PC-ACQUISITION-GAP-20261124.md)。
+
+
+## 2026-11-24｜PET47 同期取得缺件补证
+
+新浪2003-04-07网友投稿：[第1页](https://games.sina.com.cn/zhqu/sta/cwzl/chongwu02.shtml)、[第2页](https://games.sina.com.cn/zhqu/sta/cwzl/chongwu03.shtml)；可见文本复查、未获取原HTML哈希。R21/22/23/28/29固定源复用，见[逐条来源和限制](continuity/STONEAGE-PET-HIGH-FIRST-47-PC-PERIOD-ACQUISITION-GAP-20261124.md)。不认作同部署发放或首发。
