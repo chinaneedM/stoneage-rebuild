@@ -240,6 +240,7 @@ def build(d):
         for instance_id in row["matching_instance_tokens"]
     }
     variant52_by_position = {v["position"]: j for j, row in enumerate(d["hf52"]["rows"]) for v in row["master_variants"]}
+    special56_by_position = by_id(d["hf56"]["rows"], "position")
     egg54_by_position = {row["position"]: j for j,row in enumerate(d["hf54"]["rows"])}
     reward53_by_position = {row["position"]: j for j,row in enumerate(d["hf53"]["rows"])}
     petabi51 = d["hf51_petabi"]["petabi_rows"]
@@ -295,6 +296,15 @@ def build(d):
                 ls.append(link(ref["source"], ["records" if ref["source"] == "fusion2003" else "rows",ref["row_index"]], ref["qualification"]))
             gap_detail = dict(gap_state=gap["gap_state"],evidence_categories=gap["evidence_categories"],selected_table=gap["selected_table"]["status"],alternate_table=gap["alternate_table"]["status"],official_acquisition_verified=False)
         ls.extend(acquisition_updates[i])
+        if i in special56_by_position:
+            j56 = special56_by_position[i]
+            r56 = d["hf56"]["rows"][j56]
+            assert (r56["template"], r56["graphic"], r56["name"]) == (k, x["graphic"], x["name"])
+            ls.append(link("hf56", ["rows", j56], r56["qualification"]))
+            if "preflight_index" in r56:
+                ls.append(link("hf56_preflight", ["rows", r56["preflight_index"]], "LATER_COMPARISON_ROLE_NOT_OFFICIAL_DEPLOYMENT"))
+            for h56 in r56["source_hit_indices"]:
+                ls.append(link("hf56_replay", ["scan", "typed_candidate_lines", h56], "SAVED_TYPED_REFERENCE_CANDIDATE_NOT_OFFICIAL_AWARD"))
         if i in egg54_by_position:
             j54 = egg54_by_position[i]
             ls.append(link("hf54", ["rows", j54], d["hf54"]["rows"][j54]["grade"]))
@@ -458,6 +468,9 @@ def verify(m,d,entries):
         "hf46": 349, "hf47": 29, "hf48": 19, "hf49": 22, "hf50": 71,
     }
     assert source_counts["hf51_petabi"] == 33
+    assert source_counts["hf56"] == 10 and source_counts["hf56_replay"] == 14 and source_counts["hf56_preflight"] == 5
+    assert {i for i,e in enumerate(high45) if any(l["source"]=="hf56" for l in e["linked_records"])} == {108,109,110,111,144,187,309,317,318,401}
+    assert all(r["retain_strict_gap"] and not r["official_acquisition_verified"] for r in d["hf56"]["rows"])
     assert source_counts["hf54"] == 3
     assert {i for i,e in enumerate(high45) if any(l["source"]=="hf54" for l in e["linked_records"])} == {387,453,454}
     assert source_counts["hf53"] == 4

@@ -1,0 +1,27 @@
+name: PET-HIGH-FIRST-56 retained evidence acceptance
+on:
+  push:
+    paths:
+      - 'research/pets/PET-HIGH-FIRST-56-SOURCE-*-R1.json'
+      - 'tools/stoneage_pet_high_first_56_accept.py'
+      - 'tools/stoneage_pet_source_lookup.py'
+      - '.github/workflows/pet-high-first-56-accept.yml'
+  pull_request:
+    paths:
+      - 'research/pets/PET-HIGH-FIRST-56-SOURCE-*-R1.json'
+      - 'tools/stoneage_pet_high_first_56_accept.py'
+      - 'tools/stoneage_pet_source_lookup.py'
+      - '.github/workflows/pet-high-first-56-accept.yml'
+permissions:
+  contents: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m tools.stoneage_pet_high_first_56_accept
+      - run: python tools/stoneage_pet_source_lookup.py --verify
+      - run: python tools/stoneage_pet_gap_queue.py --verify

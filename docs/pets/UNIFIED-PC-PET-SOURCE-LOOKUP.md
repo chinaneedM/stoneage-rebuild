@@ -69,3 +69,6 @@ R53 追加位置68、75、144、208的 `hf53` 取得参考，区分2001–2003�
 
 
 R54 追加位置387、453、454的 `hf54` 对象分类及原函数/后续GetEgg分层证据，不能认定孵化结果或新物种。严格缺口67。[PET54](../continuity/STONEAGE-PET-HIGH-FIRST-54-EGG-ROLE-AND-FUNCTION-20261124.md)。
+
+
+R56 追加十个现有TW75模板位置的角色及原NPC候选指针（55固定源对象），14条原扫描候选及5个后期角色可追溯；12条既有训练奖励、2条未绑定的暂不用VIP数值候选，不增加查询位置或关闭严格缺口。[PET56](../continuity/STONEAGE-PET-HIGH-FIRST-56-SPECIAL-ROLE-PREFLIGHT-20261124.md)。
