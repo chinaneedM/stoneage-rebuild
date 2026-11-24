@@ -503,3 +503,7 @@
 ## 2026-11-24｜PET-HIGH-FIRST-37 台湾1.0属性与取得旁证
 
 [原盘重读、124份档案及属性差异](../continuity/STONEAGE-PET-HIGH-FIRST-37-TW10-FIELD-REFERENCES-20261124.md) · [统一查询](UNIFIED-PC-PET-SOURCE-LOOKUP.md)。同一入口查原客户端行、2001年玩家投稿与后期保存表。发现七份档案的可比属性互不吻合，两份另有后期属性组。正式原服字段仍待同部署证据。
+
+## 2026-11-24｜PET-HIGH-FIRST-38 三只原名宠物的具体字段
+
+[两张日本面板与三只宠物的原配置](../continuity/STONEAGE-PET-HIGH-FIRST-38-THREE-PC-FIELD-CASES-20261124.md) · [机读回执](../../research/pets/PET-HIGH-FIRST-38-PC-THREE-FIELD-CASES-R1.json)。乌力布鲁日本面板约火7风3，威伯2079实例标记跨来源有差异，贝洛宝利的迷幻洞窟配置在攻略坐标上同时包含1级和34–35级。

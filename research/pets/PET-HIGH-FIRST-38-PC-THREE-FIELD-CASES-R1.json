@@ -1,0 +1,1043 @@
+{
+  "schema": "stoneage.pet.high_first_38.case_evidence.r1",
+  "source_head": "b223cd90de554da4912ae659f4c3149e9f3ecfb3",
+  "source_tree": "96aa2b0f1575d0292bc9281c06f68b495c295fca",
+  "input_git_sources": {
+    "tw10_album": {
+      "path": "research/recovered/STONEAGE-PET39-TW10-RETAIL-CLIENT-ALBUM-R1.json",
+      "git_blob": "1aada81d7314769bf683b816cc5a8762c3bd9400"
+    },
+    "tw75_claim": {
+      "path": "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json",
+      "git_blob": "fec03646d7c7e4e287f9347c306119cc626d6abf"
+    },
+    "gavin_comparison": {
+      "path": "research/pets/PET-HIGH-FIRST-17-COMPARISON-SKILL-ENCOUNTER-R1.json",
+      "git_blob": "63af501ab483770c5c58cb2d62152ab8923dcc2b"
+    },
+    "jp_operator_names": {
+      "path": "research/recovered/STONEAGE-JP-OFFICIAL-PET-CATALOG-R1.json",
+      "git_blob": "85e99d6fd6a7ca27eeaa3987510a6bcc1d701708"
+    }
+  },
+  "scope": "Classic PC original sources and archival comparison only; no official TW1.0 server validation.",
+  "mixed25_archive": {
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "official_deployment_verified": false
+  },
+  "private_archive_members": {
+    "setup.cf": {
+      "bytes": 9715,
+      "sha256": "b4936c103efb7b3cad359e5c85c7965187306883a68c0be712ece6c374e3b12d",
+      "crc32": "3681dc01"
+    },
+    "10406": {
+      "bytes": 10044,
+      "sha256": "67d305b22361b272ebc4ad2cbcc317eb54adb82ade3cb13329312222f15777b7",
+      "crc32": "8ec7f192"
+    },
+    "enemybase.txt": {
+      "bytes": 147750,
+      "sha256": "1be7d5226798f7abaabe1f1e74aa1533fcd10e3eaf43f6497d63afa91df3e8b7",
+      "crc32": "29258170"
+    },
+    "enemybase2.txt": {
+      "bytes": 94248,
+      "sha256": "8ecb23231ae1aeb21fe943c7b459f0c0d10ef3599aedfeaeccca783b077f5fd4",
+      "crc32": "38193760"
+    },
+    "enemy.txt": {
+      "bytes": 222463,
+      "sha256": "cc7418d3b6726f1c458fef9e44a24696d05f076b67c62a56ed2293e26ae63bb6",
+      "crc32": "0d60e57d"
+    },
+    "enemy2.txt": {
+      "bytes": 153425,
+      "sha256": "507f173136b7f070e4a09bff4e067b3aada9ae8e49cfc99605dd67a57d6c1ba5",
+      "crc32": "ee7c8835"
+    },
+    "petskill.txt": {
+      "bytes": 15112,
+      "sha256": "f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4",
+      "crc32": "309a3165"
+    },
+    "petskill1.txt": {
+      "bytes": 5410,
+      "sha256": "3afc4591f906fe5c7bb921f4599dbee5a7bfe7ba6f4c518d2bb894e365453a72",
+      "crc32": "87919f6e"
+    },
+    "encount.txt": {
+      "bytes": 43420,
+      "sha256": "70bbd997d98508a0587df183b5bdd48222ff42db91bf21bea632e0ed6f2fea87",
+      "crc32": "d58f5903"
+    },
+    "group1.txt": {
+      "bytes": 70176,
+      "sha256": "4a02f2a3fa3d2dcf5589d8a2a560313c35d5a0a7e5e0589cc8df5f7df159ea8f",
+      "crc32": "b7a6ed50"
+    }
+  },
+  "mixed25_configured_file_basenames": {
+    "encountfile": "encount.txt",
+    "enemyfile": "enemy.txt",
+    "enemybasefile": "enemybase.txt",
+    "groupfile": "group1.txt",
+    "petskillfile2": "petskill.txt",
+    "petskillfile1": "petskill.txt"
+  },
+  "skill_definitions_from_configured_petskill": {
+    "1": {
+      "name": "攻擊",
+      "row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+      "physical_line": 2
+    },
+    "2": {
+      "name": "防禦",
+      "row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+      "physical_line": 3
+    },
+    "11": {
+      "name": "三段攻擊",
+      "row_sha256": "da3bd3b71232fa597368d954dfc89d5e1c29b9e7686e57f140361aff9feabd8b",
+      "physical_line": 6
+    },
+    "90": {
+      "name": "混亂攻擊",
+      "row_sha256": "549294531250d92e2f17aaacced02068dde9b381a3cf6aaf6d9ec924b92edd14",
+      "physical_line": 20
+    },
+    "150": {
+      "name": "不防守戰法",
+      "row_sha256": "980f40a464b6c9406072496e2b4e7bfde76e18ed14c8ab7360cd38d538080a2c",
+      "physical_line": 26
+    },
+    "540": {
+      "name": "修復",
+      "row_sha256": "b2d786c7d8a555d7137740a6c0da204b14e41af8d8942feb78ea27a93371df8f",
+      "physical_line": 67
+    }
+  },
+  "japan_player_album_home": "https://kbpetzukan.iinaa.net/",
+  "japan_player_album_home_actual_bytes": {
+    "bytes": 12748,
+    "sha256": "adb86e0b150ddc289a392fc10c9a55b33665c6552bd14ae9f2cb6bc1950f33cf",
+    "crc32": "1c8cea0b"
+  },
+  "original_files_published": false,
+  "new_official_species_count": 0,
+  "rows": [
+    {
+      "pet_id": "PET-000004",
+      "original_client_name": "烏力布魯",
+      "tw10_graphic": 100253,
+      "player_catalogue": {
+        "site": "We Love SA",
+        "url": "https://welovesa.com/pet.php?pet_id=004&pet_type=1",
+        "access": "INDEXED_PAGE_BODY_READ_DIRECT_PULL_TIMED_OUT",
+        "deployment_build": null,
+        "published_sample_dates": null,
+        "elements": [
+          0,
+          7,
+          3,
+          0
+        ],
+        "summarized_level1_bounds": [
+          [
+            18,
+            19
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "summarized_growth_bands": [
+          [
+            9.2,
+            9.3
+          ],
+          [
+            1.53,
+            1.61
+          ],
+          [
+            1.2,
+            1.4
+          ],
+          [
+            1.76,
+            1.78
+          ]
+        ],
+        "skill_slot_capacity": 6,
+        "skills": [
+          "攻擊",
+          "不防守戰法",
+          "三段攻擊"
+        ],
+        "separately_printed_zero_rebirth_lv1_samples": [
+          [
+            30,
+            6,
+            7,
+            4
+          ],
+          [
+            30,
+            6,
+            7,
+            4
+          ],
+          [
+            19,
+            3,
+            3,
+            3
+          ],
+          [
+            20,
+            3,
+            3,
+            3
+          ],
+          [
+            66,
+            12,
+            9,
+            13
+          ]
+        ]
+      },
+      "japan_album_panel": {
+        "access": "ORIGINAL_PUBLIC_JPEG_BYTES_READ_AND_VISUALLY_INSPECTED",
+        "page": "https://kbpetzukan.iinaa.net/petg0/al4.html",
+        "image": "https://kbpetzukan.iinaa.net/petg0/4no1.jpg",
+        "jpeg": {
+          "bytes": 65986,
+          "sha256": "a9940f6ae42a9e9acf206b2f488d581a585a678a16e5dff79c38a05cb936045a",
+          "crc32": "3f239abc"
+        },
+        "dimensions": [
+          274,
+          368
+        ],
+        "album_ordinal": 4,
+        "album_name": "ウリブル",
+        "archived_jp_operator_name_at_ordinal": "ウリブル",
+        "name_relation": "EXACT_JAPANESE_ALBUM_AND_OPERATOR_WEB_LABEL_ONLY",
+        "album_context": "JAPAN_CLASSIC_PC_PLAYER_DU_KB_ALBUM",
+        "site_catalogue_update": "2010-03-18",
+        "screenshot_date": null,
+        "deployment_build": null,
+        "level": 19,
+        "experience": 13128,
+        "hp": [
+          187,
+          187
+        ],
+        "attack": 30,
+        "defense": 29,
+        "agility": 35,
+        "trust": 100,
+        "visible_element_bar_center_widths_px": [
+          0,
+          0,
+          56,
+          24
+        ],
+        "approximate_elements_earth_water_fire_wind": [
+          0,
+          0,
+          7,
+          3
+        ],
+        "panel_is_birth_or_growth_series": false
+      },
+      "mixed25_template_refs": [
+        {
+          "file": "enemybase.txt",
+          "physical_line": 4,
+          "row_sha256": "783cd2fc89e6733e2d0112bac81a2d20b3420fe5bfab0f2f2929c15328117a3d",
+          "id": 4,
+          "name": "烏力布魯",
+          "graphic": 100253,
+          "pet_flag": 1,
+          "elements": [
+            0,
+            0,
+            70,
+            30
+          ],
+          "skills": [
+            1,
+            150,
+            11,
+            null,
+            null,
+            null,
+            null
+          ],
+          "capacity": 7,
+          "instance_file": "enemy.txt",
+          "instance_count": 2,
+          "selected_instances": [
+            {
+              "id": 12,
+              "physical_line": 8,
+              "row_sha256": "7cc0aa59bfdbebd75414d497ec943d528ef64f9acbb2f39c857e212f0c5774d9",
+              "level": [
+                1,
+                1
+              ],
+              "pet_flag": 1
+            },
+            {
+              "id": 1442,
+              "physical_line": 1069,
+              "row_sha256": "35b06e48d6defa0abe6c2ba8fc1c7280625087e0d5fe3e20330524da68bfd5b1",
+              "level": [
+                15,
+                15
+              ],
+              "pet_flag": 1
+            }
+          ],
+          "positive_encounter_references": 0
+        },
+        {
+          "file": "enemybase2.txt",
+          "physical_line": 4,
+          "row_sha256": "566e62984f8cc459b4fedc49fde9779d40a4e938d5a9472e049dda9943bea18c",
+          "id": 4,
+          "name": "烏力布魯",
+          "graphic": 100253,
+          "pet_flag": 1,
+          "elements": [
+            0,
+            0,
+            70,
+            30
+          ],
+          "skills": [
+            1,
+            150,
+            11,
+            null,
+            null,
+            null,
+            null
+          ],
+          "capacity": 7,
+          "instance_file": "enemy2.txt",
+          "instance_count": 2,
+          "selected_instances": [
+            {
+              "id": 12,
+              "physical_line": 8,
+              "row_sha256": "f519440b4e039a9948e937858fb0b4c1cc79f71320dfd683aa089d7f55fb310a",
+              "level": [
+                1,
+                1
+              ],
+              "pet_flag": 1
+            },
+            {
+              "id": 1442,
+              "physical_line": 1069,
+              "row_sha256": "921660eff253f8297c56462a08fe4e8fd0fe58f589c30b7f6bd6413d7d7180bb",
+              "level": [
+                15,
+                15
+              ],
+              "pet_flag": 1
+            }
+          ]
+        }
+      ],
+      "tw75_claimed_template_ids": [
+        4
+      ],
+      "official_tw10_native_stats": null,
+      "official_tw10_skillset": null,
+      "official_tw10_acquisition_verified": false,
+      "official_first_release_date": null
+    },
+    {
+      "pet_id": "PET-000017",
+      "original_client_name": "威伯",
+      "tw10_graphic": 100266,
+      "player_catalogue": {
+        "site": "We Love SA",
+        "url": "https://welovesa.com/pet.php?pet_id=028&pet_type=4",
+        "access": "INDEXED_PAGE_BODY_READ_DIRECT_PULL_TIMED_OUT",
+        "deployment_build": null,
+        "published_sample_dates": null,
+        "elements": [
+          6,
+          0,
+          0,
+          4
+        ],
+        "summarized_level1_bounds": [
+          [
+            27,
+            33
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            5,
+            7
+          ]
+        ],
+        "summarized_growth_bands": [
+          [
+            8.15,
+            9.3
+          ],
+          [
+            1.458,
+            1.657
+          ],
+          [
+            1.194,
+            1.463
+          ],
+          [
+            1.7,
+            1.944
+          ]
+        ],
+        "skill_slot_capacity": 6,
+        "skills": [
+          "攻擊",
+          "防禦"
+        ],
+        "separately_printed_zero_rebirth_lv1_samples": [
+          [
+            32,
+            5,
+            4,
+            6
+          ],
+          [
+            32,
+            5,
+            4,
+            7
+          ]
+        ]
+      },
+      "japan_album_panel": {
+        "access": "ORIGINAL_PUBLIC_JPEG_BYTES_READ_AND_VISUALLY_INSPECTED",
+        "page": "https://kbpetzukan.iinaa.net/petg1/al18.html",
+        "image": "https://kbpetzukan.iinaa.net/petg1/18no1.jpg",
+        "jpeg": {
+          "bytes": 71140,
+          "sha256": "acf4ae58392950049746e880bdccc3f62478eae5e650c13da7395c1a422dab4e",
+          "crc32": "b66f970b"
+        },
+        "dimensions": [
+          273,
+          365
+        ],
+        "album_ordinal": 18,
+        "album_name": "ウィーバー",
+        "archived_jp_operator_name_at_ordinal": "ウィーパー",
+        "name_relation": "JAPANESE_SAME_SLOT_SPELLING_DIFFERS_CROSS_REGION_IDENTITY_UNVERIFIED",
+        "album_context": "JAPAN_CLASSIC_PC_PLAYER_DU_KB_ALBUM",
+        "site_catalogue_update": "2010-03-18",
+        "screenshot_date": null,
+        "deployment_build": null,
+        "level": 19,
+        "experience": 14144,
+        "hp": [
+          173,
+          173
+        ],
+        "attack": 31,
+        "defense": 30,
+        "agility": 41,
+        "trust": 100,
+        "visible_element_bar_center_widths_px": [
+          49,
+          0,
+          0,
+          32
+        ],
+        "approximate_elements_earth_water_fire_wind": [
+          6,
+          0,
+          0,
+          4
+        ],
+        "panel_is_birth_or_growth_series": false
+      },
+      "mixed25_template_refs": [
+        {
+          "file": "enemybase.txt",
+          "physical_line": 34,
+          "row_sha256": "a9c2ec7a4864bcead0bb9238c5620e0f8d1cb32e69faa091c80a5039a6dc6f39",
+          "id": 34,
+          "name": "威伯",
+          "graphic": 100266,
+          "pet_flag": 1,
+          "elements": [
+            60,
+            0,
+            0,
+            40
+          ],
+          "skills": [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "capacity": 6,
+          "instance_file": "enemy.txt",
+          "instance_count": 7,
+          "selected_instances": [
+            {
+              "id": 4,
+              "physical_line": 4,
+              "row_sha256": "c2b9a1bccd09bae5c1eb103111e71ad57ef8a0a4101cadbefa7acfe35f4d0f65",
+              "level": [
+                1,
+                1
+              ],
+              "pet_flag": 1
+            },
+            {
+              "id": 451,
+              "physical_line": 291,
+              "row_sha256": "7d3f0da5403bb7f407c0c24e80956bbd480d14801a3008107de5798c257b768e",
+              "level": [
+                20,
+                30
+              ],
+              "pet_flag": 1
+            },
+            {
+              "id": 2115,
+              "physical_line": 1597,
+              "row_sha256": "5fba00797f0e98335890a2253aa0403027642963ce4c05ef619f5042a9d61558",
+              "level": [
+                1,
+                3
+              ],
+              "pet_flag": 1
+            }
+          ],
+          "positive_encounter_references": 2
+        },
+        {
+          "file": "enemybase.txt",
+          "physical_line": 861,
+          "row_sha256": "ea62e2d64453b0608f8f7ec77d8840c4593f057bbd725cf61c37d05e4239f543",
+          "id": 1064,
+          "name": "威伯",
+          "graphic": 100266,
+          "pet_flag": 1,
+          "elements": [
+            60,
+            0,
+            0,
+            40
+          ],
+          "skills": [
+            1,
+            2,
+            540,
+            null,
+            null,
+            null,
+            null
+          ],
+          "capacity": 6,
+          "instance_file": "enemy.txt",
+          "instance_count": 1,
+          "selected_instances": [
+            {
+              "id": 2079,
+              "physical_line": 1565,
+              "row_sha256": "4ce5a7bb168ab96b05e57f5a11c2fe1274bae32e1a43bef4b852e030ac306da7",
+              "level": [
+                1,
+                1
+              ],
+              "pet_flag": 0
+            }
+          ],
+          "positive_encounter_references": 0
+        },
+        {
+          "file": "enemybase2.txt",
+          "physical_line": 19,
+          "row_sha256": "eb6529acb36ef2cf1bc15fa4b2d63b20c8b1552b9b339b2613a239f564359c5c",
+          "id": 34,
+          "name": "威伯",
+          "graphic": 100266,
+          "pet_flag": 1,
+          "elements": [
+            60,
+            0,
+            0,
+            40
+          ],
+          "skills": [
+            1,
+            2,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "capacity": 6,
+          "instance_file": "enemy2.txt",
+          "instance_count": 5,
+          "selected_instances": [
+            {
+              "id": 4,
+              "physical_line": 4,
+              "row_sha256": "006805450134c8b3fad56115cdb812428993170d837804aa0e10a94503d51d05",
+              "level": [
+                1,
+                1
+              ],
+              "pet_flag": 1
+            },
+            {
+              "id": 451,
+              "physical_line": 291,
+              "row_sha256": "e45913ec5d545f64a885922b58bc593e8a8c09eb5244c79a280adb310fe3c7ce",
+              "level": [
+                20,
+                30
+              ],
+              "pet_flag": 1
+            }
+          ]
+        }
+      ],
+      "tw75_claimed_template_ids": [
+        34,
+        1064
+      ],
+      "official_tw10_native_stats": null,
+      "official_tw10_skillset": null,
+      "official_tw10_acquisition_verified": false,
+      "official_first_release_date": null,
+      "later_2079_instance_comparison": {
+        "source_file": "gmsv/data/enemy1.txt",
+        "git_blob": "bf245a391adeace09915b6e425754b54ab69a8f6",
+        "physical_line": 1623,
+        "instance_id": 2079,
+        "template_id": 1064,
+        "level": [
+          1,
+          1
+        ],
+        "instance_pet_flag": 1,
+        "row_sha256": "5e7a708fb458d92175ac577b44d33ae50a11c9488653669795cdbaf748b39df4"
+      }
+    },
+    {
+      "pet_id": "PET-000021",
+      "original_client_name": "貝洛寶利",
+      "tw10_graphic": 100270,
+      "player_catalogue": {
+        "site": "We Love SA",
+        "url": "https://welovesa.com/pet.php?pet_id=036&pet_type=5",
+        "access": "INDEXED_PAGE_BODY_READ_DIRECT_PULL_TIMED_OUT",
+        "deployment_build": null,
+        "published_sample_dates": null,
+        "elements": [
+          0,
+          3,
+          7,
+          0
+        ],
+        "summarized_level1_bounds": [
+          [
+            38,
+            46
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "summarized_growth_bands": [
+          [
+            9.9,
+            10.313
+          ],
+          [
+            1.21,
+            1.444
+          ],
+          [
+            1.96,
+            2.081
+          ],
+          [
+            0.8,
+            0.9
+          ]
+        ],
+        "skill_slot_capacity": 5,
+        "skills": [
+          "攻擊",
+          "防禦",
+          "混亂攻擊"
+        ],
+        "separately_printed_zero_rebirth_lv1_samples": [
+          [
+            44,
+            5,
+            9,
+            3
+          ],
+          [
+            43,
+            6,
+            9,
+            3
+          ],
+          [
+            48,
+            8,
+            10,
+            5
+          ]
+        ]
+      },
+      "japan_album_panel": null,
+      "mixed25_template_refs": [
+        {
+          "file": "enemybase.txt",
+          "physical_line": 44,
+          "row_sha256": "dc1d55a95d22ef99aab7db336592f819b8631f395ca5eb60d9e1b1a7b86b2618",
+          "id": 44,
+          "name": "貝洛寶利",
+          "graphic": 100270,
+          "pet_flag": 1,
+          "elements": [
+            0,
+            30,
+            70,
+            0
+          ],
+          "skills": [
+            1,
+            2,
+            90,
+            null,
+            null,
+            null,
+            null
+          ],
+          "capacity": 5,
+          "instance_file": "enemy.txt",
+          "instance_count": 11,
+          "selected_instances": [
+            {
+              "id": 35,
+              "physical_line": 25,
+              "row_sha256": "b79e711405e1db762dc8037ea79ae1b2b15975cfd705f06be9bfb659d15d6fe0",
+              "level": [
+                1,
+                1
+              ],
+              "pet_flag": 1
+            },
+            {
+              "id": 530,
+              "physical_line": 368,
+              "row_sha256": "8994b4b57a5a37a38d4cdd2c3ff32b9fd434eb57b1427fa75335846ea9539215",
+              "level": [
+                1,
+                1
+              ],
+              "pet_flag": 1
+            },
+            {
+              "id": 533,
+              "physical_line": 371,
+              "row_sha256": "7745fec85e7481f04a5db80bc0e2fb764960f67cdf74f45fd3d901701a5acad4",
+              "level": [
+                34,
+                35
+              ],
+              "pet_flag": 1
+            }
+          ],
+          "positive_encounter_references": 24
+        },
+        {
+          "file": "enemybase.txt",
+          "physical_line": 457,
+          "row_sha256": "da6cc8a69ee2498858502ec76476d88c931ec72d9ab54ebbf07f4278189b9be0",
+          "id": 656,
+          "name": "貝洛寶利",
+          "graphic": 100270,
+          "pet_flag": 0,
+          "elements": [
+            0,
+            30,
+            70,
+            0
+          ],
+          "skills": [
+            90,
+            30,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "capacity": 5,
+          "instance_file": "enemy.txt",
+          "instance_count": 1,
+          "selected_instances": [
+            {
+              "id": 1233,
+              "physical_line": 866,
+              "row_sha256": "4ab63ddbb8631bb0c4a4e19a5386084649b30feda63f6764f30ce7d746a6bc4e",
+              "level": [
+                63,
+                65
+              ],
+              "pet_flag": 0
+            }
+          ],
+          "positive_encounter_references": 0
+        },
+        {
+          "file": "enemybase2.txt",
+          "physical_line": 23,
+          "row_sha256": "f06652b9e72e1d9655801a9694e8013e1f3fcd4cf80f6b304805ade023e63aa0",
+          "id": 44,
+          "name": "貝洛寶利",
+          "graphic": 100270,
+          "pet_flag": 1,
+          "elements": [
+            0,
+            30,
+            70,
+            0
+          ],
+          "skills": [
+            1,
+            2,
+            90,
+            null,
+            null,
+            null,
+            null
+          ],
+          "capacity": 5,
+          "instance_file": "enemy2.txt",
+          "instance_count": 11,
+          "selected_instances": [
+            {
+              "id": 35,
+              "physical_line": 25,
+              "row_sha256": "14df1777fc76a685c1d76b7fd2bd581f013a1aa5f25514109b094085e0c3a9be",
+              "level": [
+                1,
+                1
+              ],
+              "pet_flag": 1
+            },
+            {
+              "id": 530,
+              "physical_line": 368,
+              "row_sha256": "f11bb1cb98424c5a642134dc27aedbec3f37c1e4d3e2f4650428ec5ac9ec48d0",
+              "level": [
+                1,
+                1
+              ],
+              "pet_flag": 1
+            },
+            {
+              "id": 533,
+              "physical_line": 371,
+              "row_sha256": "9fa04f4587e406584298821a47aa7cf8f6677ba831954ddb0f8cb21eedfcdf24",
+              "level": [
+                34,
+                35
+              ],
+              "pet_flag": 1
+            }
+          ]
+        },
+        {
+          "file": "enemybase2.txt",
+          "physical_line": 249,
+          "row_sha256": "da6cc8a69ee2498858502ec76476d88c931ec72d9ab54ebbf07f4278189b9be0",
+          "id": 656,
+          "name": "貝洛寶利",
+          "graphic": 100270,
+          "pet_flag": 0,
+          "elements": [
+            0,
+            30,
+            70,
+            0
+          ],
+          "skills": [
+            90,
+            30,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "capacity": 5,
+          "instance_file": "enemy2.txt",
+          "instance_count": 1,
+          "selected_instances": [
+            {
+              "id": 1233,
+              "physical_line": 866,
+              "row_sha256": "a4c77017ba31f1198d0b0d383133a21a53de8c95c1c5a62a687a5ae14e91828b",
+              "level": [
+                63,
+                65
+              ],
+              "pet_flag": 0
+            }
+          ]
+        }
+      ],
+      "tw75_claimed_template_ids": [
+        44
+      ],
+      "official_tw10_native_stats": null,
+      "official_tw10_skillset": null,
+      "official_tw10_acquisition_verified": false,
+      "official_first_release_date": null,
+      "archive_map_10406": {
+        "floor": 10406,
+        "size": [
+          50,
+          50
+        ],
+        "archive_header_name": "迷幻洞窟|0",
+        "archive_label_encoding": "cp950",
+        "comparison_label_encoding": "gb18030",
+        "archive_sha256": "67d305b22361b272ebc4ad2cbcc317eb54adb82ade3cb13329312222f15777b7",
+        "later_comparison_blob": "cff22221531790086f0d1a587723f419b2a1812b",
+        "shared_tile_and_object_body_sha256": "c3b4f7f6ec8c50bdbd744e8d7c27a26fcfc1cfb40b352762fcbab759cc9faedb",
+        "different_file_byte_offsets": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "specific_capture_location_reference": {
+        "guide_url": "https://news.17173.com/z/stoneage/content/2001-6-14/n182_98793.html",
+        "guide_date": "2001-06-14",
+        "guide_ordinal": 22,
+        "period_printed_coordinate": [
+          44,
+          15
+        ],
+        "selected_mixed25_positive_routes": [
+          {
+            "floor": 10406,
+            "rect": [
+              0,
+              0,
+              49,
+              49
+            ],
+            "index": 252,
+            "encounter_line": 226,
+            "encounter_sha256": "11e548a387be55643a2c2ffa3156fdac2cfd035d31f93f00a8d6c5104e1ffa8e",
+            "group": 388,
+            "group_line": 277,
+            "group_row_sha256": "da6b52d01d2f1b5cea4839a72740d296b409ad6be6353a4258603f6620af7a81",
+            "enemy": 533,
+            "level": [
+              34,
+              35
+            ],
+            "weights": [
+              20,
+              1
+            ]
+          },
+          {
+            "floor": 10406,
+            "rect": [
+              0,
+              0,
+              49,
+              49
+            ],
+            "index": 252,
+            "encounter_line": 226,
+            "encounter_sha256": "11e548a387be55643a2c2ffa3156fdac2cfd035d31f93f00a8d6c5104e1ffa8e",
+            "group": 385,
+            "group_line": 274,
+            "group_row_sha256": "7c3deca54cb5397bdccb79897e9cfe4d11d4b8ac40414ffbd7df30d8d94928b9",
+            "enemy": 530,
+            "level": [
+              1,
+              1
+            ],
+            "weights": [
+              1,
+              1
+            ]
+          }
+        ],
+        "encounter_or_capture_executed": false
+      },
+      "japanese_label_only": {
+        "album_ordinal": 22,
+        "archived_jp_operator_name_at_ordinal": "ペロポリ",
+        "player_album_label": "ベロポリ",
+        "html_detail_link_present": false
+      }
+    }
+  ]
+}
