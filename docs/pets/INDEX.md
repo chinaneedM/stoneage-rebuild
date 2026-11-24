@@ -394,3 +394,8 @@
 ## 2026-11-24｜PET-HIGH-FIRST-15 声称华义7.5主档及原生RD静态路径
 
 [主档可查询目录](TW75-CLAIMED-MASTER-CENSUS.md) · [467条字段投影](../../research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json) · [接续记录](../continuity/STONEAGE-PET-HIGH-FIRST-15-TW85-NATIVE-RD-20261124.md)。2012原帖公开文件实得960行56列，467条PETFLG=1、438不同原名、493非宠物标记；917/960与Gavin后期保存表50字段一致，243条宠物模板与TW1/TW85同名同图号。官服资格未证，原生完整组510/518、207头像不变。NEXT PET-HIGH-FIRST-16优先主档字段、初值成长及真实发行，不增加官服物种统计。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-16 467模板条件一级面板与成长范围
+
+[逐模板条件模型](../../research/pets/PET-HIGH-FIRST-16-TW75-CONDITIONAL-BIRTH-GROWTH-R1.json) · [取证边界及续接](../continuity/STONEAGE-PET-HIGH-FIRST-16-TW75-FIELD-RANGES-20261124.md)。26组同名多模板中6组图号不同、9组出生系数不同、10组技能槽不同；雷帝斯洛335/1060原元素分别合计400/0，不改原值。Lv1未修饰面板及内部成长单项理论区间仅为声称7.5主档与已验后期PC模型交叉条件计算，不当官服出生或实测成长；远端独立重放待验。NEXT同源实例/技能和同期实服取得证据。原CURRENT不动，PET唯一。

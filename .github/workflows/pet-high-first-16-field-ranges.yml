@@ -1,0 +1,27 @@
+name: PET-HIGH-FIRST-16 conditional master field ranges
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_tw75_conditional_ranges.py'
+      - 'research/pets/PET-HIGH-FIRST-16-TW75-CONDITIONAL-BIRTH-GROWTH-R1.json'
+      - '.github/workflows/pet-high-first-16-field-ranges.yml'
+      - 'research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json'
+      - 'tools/stoneage_pet_growth_model.py'
+      - 'tools/stoneage_pet_detail30_base_panel.py'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_tw75_conditional_ranges.py'
+      - 'research/pets/PET-HIGH-FIRST-16-TW75-CONDITIONAL-BIRTH-GROWTH-R1.json'
+      - '.github/workflows/pet-high-first-16-field-ranges.yml'
+      - 'research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json'
+      - 'tools/stoneage_pet_growth_model.py'
+      - 'tools/stoneage_pet_detail30_base_panel.py'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m tools.stoneage_pet_high_first_tw75_conditional_ranges
