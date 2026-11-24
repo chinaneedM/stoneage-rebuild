@@ -474,3 +474,8 @@
 ## 2026-11-24｜PET-HIGH-FIRST-30/31 2019—2026 PC晚期来源与名称关联
 
 [逐项档案](PC-2019-2026-OBJECT-ROLE-CROSSWALK.md) · [机读数据](../../research/pets/PET-HIGH-FIRST-30-31-2019-2026-OBJECT-ROLE-CROSSWALK-R1.json) · [续接](../continuity/STONEAGE-PET-HIGH-FIRST-30-31-2019-2026-20261124.md)。122来源位置，39物品，48直接名称对应；2006/2019八名称、2017/2020三名称与2024匿名池隔离。2026仅来源所及，非官方首发验收。PET唯一。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-32 统一来源查询入口
+
+[使用说明](UNIFIED-PC-PET-SOURCE-LOOKUP.md) · [固定源清单](../../research/pets/PET-HIGH-FIRST-32-UNIFIED-SOURCE-LOOKUP-MANIFEST-R1.json) · [查询工具](../../tools/stoneage_pet_source_lookup.py) · [续接](../continuity/STONEAGE-PET-HIGH-FIRST-32-UNIFIED-LOOKUP-20261124.md)。25个源对象统一只读检索，保留原版本/程序/图号与历史记录分轨。原CURRENT不动，PET唯一。

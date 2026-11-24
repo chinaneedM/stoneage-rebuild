@@ -1,0 +1,178 @@
+{
+  "schema": "stoneage.pet.source_scoped_lookup.r1",
+  "source_head": "a2e266b47ec8bb04ba6064bac977f23d0c6e58c3",
+  "source_tree": "8834e0341192f5e70e913c210ce9cbfec8402c55",
+  "sources": {
+    "tw10": {
+      "path": "research/pets/PET-DETAIL-EVIDENCE31-TW10-FIELD-COVERAGE-R1.json",
+      "git_blob": "2a7fd05d70cb6679634fdbbb16a5ee0437ca4aaf",
+      "expected_array": "records",
+      "expected_rows": 124
+    },
+    "cn50": {
+      "path": "research/pets/PET-HIGH-FIRST-CN50-NATIVE-SPR-ALBUM-R1.json",
+      "git_blob": "98fea71c051dfa887b91154a8a72d17c67b57744",
+      "expected_array": "records",
+      "expected_rows": 305
+    },
+    "cn50_art": {
+      "path": "research/pets/PET-HIGH-FIRST-CN50-TW85-ART-RETENTION-R1.json",
+      "git_blob": "afb666ecb451aa1cd43fb8a903403419f6b31cff",
+      "expected_array": "records",
+      "expected_rows": 305
+    },
+    "tw85_grid": {
+      "path": "research/pets/PET-HIGH-FIRST-TW85-ORIGINAL-PE-ALBUM-GRID-R1.json",
+      "git_blob": "7fb8eceba23dea6dc90ebb18e404d6e837210eaf",
+      "expected_array": null,
+      "expected_rows": null
+    },
+    "tw85_spr": {
+      "path": "research/pets/PET-HIGH-FIRST-TW85-NATIVE-SPR-ALBUM-R1.json",
+      "git_blob": "e7cff0d53585964c9d755ef1fbd2bc5531d883d6",
+      "expected_array": "records",
+      "expected_rows": 550
+    },
+    "tw85_visual": {
+      "path": "research/pets/PET-HIGH-FIRST-TW85-VISUAL-ACTION-REFERENCES-R1.json",
+      "git_blob": "3bcfbba98cfb915b14679ba472dbc554db297018",
+      "expected_array": "records",
+      "expected_rows": 550
+    },
+    "tw75": {
+      "path": "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json",
+      "git_blob": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+      "expected_array": "pet_flag_1_field_projections",
+      "expected_rows": 467
+    },
+    "tw75_birth": {
+      "path": "research/pets/PET-HIGH-FIRST-16-TW75-CONDITIONAL-BIRTH-GROWTH-R1.json",
+      "git_blob": "8cb864a78f1ff2b3c89ae1739ac485968d104c10",
+      "expected_array": "rows",
+      "expected_rows": 467
+    },
+    "tw75_comparison": {
+      "path": "research/pets/PET-HIGH-FIRST-17-COMPARISON-SKILL-ENCOUNTER-R1.json",
+      "git_blob": "63af501ab483770c5c58cb2d62152ab8923dcc2b",
+      "expected_array": "rows",
+      "expected_rows": 467
+    },
+    "sina2003": {
+      "path": "research/pets/PET-HIGH-FIRST-CN50-SINA2003-CATALOG-R1.json",
+      "git_blob": "a9d12067f0746e1163f6a01568fb747697c5da6e",
+      "expected_array": "rows",
+      "expected_rows": 237
+    },
+    "fusion2003": {
+      "path": "research/pets/PET-HIGH-FIRST-CN50-FUSION-PANELS-R1.json",
+      "git_blob": "060e290573b0b0075a462015a10f6e810fd33dec",
+      "expected_array": "records",
+      "expected_rows": 41
+    },
+    "hf18": {
+      "path": "research/pets/PET-HIGH-FIRST-18-STARTER-AND-CAPTURE-WITNESSES-R1.json",
+      "git_blob": "a69fc90f207d21612f6ebf8dfb4266ac4a027a92",
+      "expected_array": "coordinate_cases",
+      "expected_rows": 10
+    },
+    "hf19": {
+      "path": "research/pets/PET-HIGH-FIRST-19-PERIOD-ACQUISITION-R1.json",
+      "git_blob": "a6e06539febfdb8155982765d150cda31f0c7aae",
+      "expected_array": "rows",
+      "expected_rows": 10
+    },
+    "hf19b": {
+      "path": "research/pets/PET-HIGH-FIRST-19B-GRAPHIC-AND-COORDINATE-R1.json",
+      "git_blob": "2f846a04ca1b42f23b90677912803a52795ca58d",
+      "expected_array": "coordinate_cases",
+      "expected_rows": 26
+    },
+    "hf19c": {
+      "path": "research/pets/PET-HIGH-FIRST-19C-QUEST-AND-GIFT-WITNESSES-R1.json",
+      "git_blob": "2e4e1dfcdc5787bbd5384d075741f3998f1ece5f",
+      "expected_array": "rows",
+      "expected_rows": 58
+    },
+    "hf19d": {
+      "path": "research/pets/PET-HIGH-FIRST-19D-2001-DIRECTORY-CLOSURE-R1.json",
+      "git_blob": "030e57dd6240671b5080b9311586e2be80f0c1d0",
+      "expected_array": "rows",
+      "expected_rows": 36
+    },
+    "hf20": {
+      "path": "research/pets/PET-HIGH-FIRST-20-CAPSULE-AND-GALLERY-R1.json",
+      "git_blob": "fdc41b87e5ed59a1b910f954dbd6ce399742fafc",
+      "expected_array": "rows",
+      "expected_rows": 7
+    },
+    "hf21": {
+      "path": "research/pets/PET-HIGH-FIRST-21-LATE-YEAR-BEAST-SOURCE-R1.json",
+      "git_blob": "9fce8211744aa2d1e76e63975942add7c1fdaff8",
+      "expected_array": "rows",
+      "expected_rows": 8
+    },
+    "hf22": {
+      "path": "research/pets/PET-HIGH-FIRST-22-JP-KR-NAMED-INDEX-R1.json",
+      "git_blob": "bc0b4920cc5954c8b847d07f1342b3f5674d5b1c",
+      "expected_array": "rows",
+      "expected_rows": 29
+    },
+    "hf23": {
+      "path": "research/pets/PET-HIGH-FIRST-23-2009-ACQUISITION-DOSSIERS-R1.json",
+      "git_blob": "bae00ecbbbbef8f250de6d982574061c69fa359c",
+      "expected_array": "records",
+      "expected_rows": 8
+    },
+    "hf24": {
+      "path": "research/pets/PET-HIGH-FIRST-24-CN2010-NAMED-PANEL-CROSSWALK-R1.json",
+      "git_blob": "b64e622b140b103780df2d3735eb544bf2b32c1f",
+      "expected_array": "rows",
+      "expected_rows": 8
+    },
+    "hf25": {
+      "path": "research/pets/PET-HIGH-FIRST-25-2011-NAMED-SOURCE-CROSSWALK-R1.json",
+      "git_blob": "f71f280e84d10d94cf9a0a75c5d9995a725f615c",
+      "expected_array": "rows",
+      "expected_rows": 41
+    },
+    "hf26_27": {
+      "path": "research/pets/PET-HIGH-FIRST-26-27-2012-2013-NAMED-ACQUISITION-CROSSWALK-R1.json",
+      "git_blob": "14350e55aa4ea3269c741088e51a21cfcad57e85",
+      "expected_array": "rows",
+      "expected_rows": 43
+    },
+    "hf28_29": {
+      "path": "research/pets/PET-HIGH-FIRST-28-29-2014-2018-OBJECT-ROLE-CROSSWALK-R1.json",
+      "git_blob": "ddb9712839b4b491775ff32fad33f3f25b169eea",
+      "expected_array": "rows",
+      "expected_rows": 93
+    },
+    "hf30_31": {
+      "path": "research/pets/PET-HIGH-FIRST-30-31-2019-2026-OBJECT-ROLE-CROSSWALK-R1.json",
+      "git_blob": "ebc2bbf641a6fe87687bd74c0927805b8b811f2e",
+      "expected_array": "rows",
+      "expected_rows": 122
+    }
+  },
+  "expected": {
+    "tw85_grid_program_counts": {
+      "sa.exe": 508,
+      "sb.exe": 491,
+      "sc.exe": 407,
+      "sd.exe": 483
+    },
+    "tw85_named_route_counts": {
+      "sa.exe": 508,
+      "sb.exe": 497,
+      "sc.exe": 227,
+      "sd.exe": 464
+    },
+    "tw10_original_portrait_count": 120,
+    "tw10_missing_original_portrait_count": 4,
+    "official_species_count": null,
+    "official_full_fields_certified": 0
+  },
+  "scope": "Independent source occurrences and exact/explicit script-variant name query; not a deduplicated species or official release table",
+  "historical_current_blob": "c89e0e33537990aa2132b47c40fef49a985a935c",
+  "original_assets_published": false
+}

@@ -1,0 +1,22 @@
+name: PET-HIGH-FIRST-32 unified source lookup replay
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_source_lookup.py'
+      - 'research/pets/PET-HIGH-FIRST-32-UNIFIED-SOURCE-LOOKUP-MANIFEST-R1.json'
+      - '.github/workflows/pet-high-first-32.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_source_lookup.py'
+      - 'research/pets/PET-HIGH-FIRST-32-UNIFIED-SOURCE-LOOKUP-MANIFEST-R1.json'
+      - '.github/workflows/pet-high-first-32.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/stoneage_pet_source_lookup.py --verify
+      - run: python3 tools/stoneage_pet_source_lookup.py --query 蒙奇 --exact --full > /tmp/stoneage-mengqi.json
