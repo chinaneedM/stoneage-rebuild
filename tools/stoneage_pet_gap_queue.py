@@ -25,7 +25,7 @@ def queue(d, entries):
     for e in entries:
         s, ptr = e["source"], e["pointer"]
         x = resolve(d, s, ptr)
-        if s not in CORE | LATE | {"hf21", "hf22", "hf23"}:
+        if s not in CORE | LATE | {"hf21", "hf22", "hf23", "hf34"}:
             continue
         # Only independently named acquisition dossiers for Japan/Korea.
         # Appearance-only, generic rewards, and re-attestation rows stay in R32.
@@ -73,6 +73,21 @@ def queue(d, entries):
             evidence = {"name":"CLAIMED_MASTER_ROW", "client_join_status":x["client_join_status"], "comparison_status":x["comparison_status"]}
             fields.update(official_native_id="CLAIMED_TEMPLATE_ID_ONLY", birth_stats="CONDITIONAL_MODEL_RANGE", initial_ranges="CONDITIONAL_MODEL_RANGE", elements="CLAIMED_MASTER_VALUES", growth="CONDITIONAL_MODEL_INCREMENT", innate_skills="CLAIMED_MASTER_SKILL_SLOTS", capture="LATER_COMPARISON_FLOOR_REFERENCE" if detail["comparison_floor_ids"] else "NOT_INDEXED_IN_COMPARISON")
             priority = "P1_AUTHENTICATE_CLAIMED_MASTER_DEPLOYMENT"
+        elif s == "hf34":
+            evidence = {"name":"PERIOD_NAMED_FIELD_WITNESS",
+                        "source_ids":x["source_ids"], "family":x["family"],
+                        "reported_element_ratio":x["element_ratio"],
+                        "reported_element_label":x["element_label"],
+                        "period_skill":x["skill"], "period_acquisition":x["acquisition"]}
+            if x["element_ratio"] is not None or x["element_label"] is not None:
+                fields["elements"] = "PERIOD_REPORTED_ELEMENT_NOT_NATIVE_MASTER"
+            if x["skill"]["label"] is not None:
+                fields["innate_skills"] = "PERIOD_SKILL_CLAIM_NOT_INNATE_VERIFIED"
+            fields["award"] = "PERIOD_EXCHANGE_OR_AUCTION_CLAIM"
+            if x.get("panel"):
+                fields["birth_stats"] = "PERIOD_INDIVIDUAL_LV1_PANEL_NOT_RANGE"
+                evidence["status_sample"] = x["panel"]
+            priority = "P1_FREE_LATER_ORIGINAL_CLIENT"
         elif s == "hf21":
             evidence = {"name":"LATE_RECOLLECTION_AND_CATALOGUE", "element_conflict":x["element_conflict"]}
             fields.update(initial_ranges="LATER_CATALOGUE_ONLY", elements="CONFLICTING_RECOLLECTION_CATALOGUE", growth="LATER_CATALOGUE_ONLY", innate_skills="LATER_CATALOGUE_ONLY", award="LATER_CATALOGUE_CLAIM_ONLY")
@@ -118,7 +133,13 @@ def verify(d, entries, rows):
         for l in r["linked_records"]: resolve(d,l["source"],l["pointer"])
     assert not any(r["source"] in {"hf28_29","hf30_31"} and resolve(d,r["source"],r["pointer"])["role"]!="PET_NAME_CANDIDATE" for r in rows)
     assert not any(r["source"]=="hf30_31" and resolve(d,r["source"],r["pointer"])["year"]==2026 for r in rows)
-    assert len(rows)==2986, len(rows)
+    assert n["hf34"]==16
+    assert sum(x["element_ratio"] is not None for x in d["hf34"]["rows"])==6
+    assert sum(bool(x.get("panel")) for x in d["hf34"]["rows"])==1
+    assert all(x["official_same_deployment_verified"] is False and x["official_birth_range"] is None and x["first_release_date"] is None for x in d["hf34"]["rows"])
+    panel = next(x["panel"] for x in d["hf34"]["rows"] if x["name"]=="蜜雪莉雅")
+    assert [panel[k] for k in ("max_hp","attack","defense","agility")]==[69,15,7,14]
+    assert len(rows)==3002, len(rows)
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)

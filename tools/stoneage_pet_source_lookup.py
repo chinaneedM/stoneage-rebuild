@@ -84,7 +84,7 @@ def build(d):
       ("hf23","appearance_only_relations","name","APPEARANCE_ONLY"),("hf23","unresolved_reward_labels","label","UNRESOLVED_REWARD_LABEL"),
       ("hf23","existing_named_dossier_attestations","name","ADDITIONAL_HISTORICAL_WITNESS"),
       ("hf24","rows","name","CN2010_PANEL_OR_REWARD_WITNESS"),("hf25","rows","name","2011_SOURCE_WITNESS"),
-      ("hf26_27","rows","name","2012_2013_SOURCE_WITNESS"),("hf28_29","rows","name",None),("hf30_31","rows","name",None)]
+      ("hf26_27","rows","name","2012_2013_SOURCE_WITNESS"),("hf28_29","rows","name",None),("hf30_31","rows","name",None),("hf34","rows","name","PERIOD_CN2011_2012_FIELD_WITNESS")]
     for source,arr,key,role in specs:
         for i,x in enumerate(d[source][arr]):
             add(source,[arr,i],[x.get(key)],role or x["role"],detail={k:x[k] for k in ("year","region","lane","version","version_lane","receipt","source_id","official_first_release") if k in x})
