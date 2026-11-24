@@ -1,0 +1,27 @@
+name: PET-HIGH-FIRST-54 original egg reference probe
+on:
+  push:
+    branches: [agent/pet-high-first-54-egg-source-20261124]
+    paths:
+      - 'tools/stoneage_pet_high_first_54_source.py'
+      - '.github/workflows/pet-high-first-54-source.yml'
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install rarfile==4.2 libarchive-c==5.3
+      - run: sudo apt-get update -qq && sudo apt-get install -y unar binutils
+      - run: python -m tools.stoneage_pet_high_first_54_source --output /tmp/pet54-metadata.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet54-derived-metadata-only
+          path: /tmp/pet54-metadata.json
+          retention-days: 7
+          if-no-files-found: error
