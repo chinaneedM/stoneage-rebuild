@@ -1,0 +1,25 @@
+name: PET-HIGH-FIRST-53 commercial and honor reward reference acceptance
+on:
+  push:
+    paths:
+      - 'research/pets/PET-HIGH-FIRST-53-COMMERCIAL-HONOR-REWARD-REFERENCES-R1.json'
+      - 'tools/stoneage_pet_high_first_53_accept.py'
+      - '.github/workflows/pet-high-first-53-accept.yml'
+  pull_request:
+    paths:
+      - 'research/pets/PET-HIGH-FIRST-53-COMMERCIAL-HONOR-REWARD-REFERENCES-R1.json'
+      - 'tools/stoneage_pet_high_first_53_accept.py'
+      - '.github/workflows/pet-high-first-53-accept.yml'
+permissions:
+  contents: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m tools.stoneage_pet_high_first_53_accept
+      - run: python tools/stoneage_pet_source_lookup.py --verify
