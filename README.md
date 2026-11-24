@@ -3405,3 +3405,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-24｜PET-HIGH-FIRST-42 奖励实例批量复原
 
 [最新接续](docs/continuity/STONEAGE-PET-HIGH-FIRST-42-PC-REWARD-INSTANCE-INDEX-20261124.md)。26份原件、36个Lv1双宠标记实例、25GetPet行、36标称7.5模板行指纹相同；33 TW1图号候选（2异名）与3独立后期图号。原件与日志独立同一，官服实际取得未证。NEXT PET-HIGH-FIRST-43，PET唯一。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-43 交换条件和奖励列表
+
+[最新接续](docs/continuity/STONEAGE-PET-HIGH-FIRST-43-PC-EXCHANGE-SEMANTICS-20261124.md)。8原成员、5交换模板、3道具、6指令及17奖励实例，后期代码编号语义和条件槽权重；原件与日志一致。窗口消息分支待证，NEXT PET-HIGH-FIRST-44，仅PET。

@@ -236,6 +236,12 @@
       "git_blob": "c6667a6190283f4ec3ad3813c570357b18906ccc",
       "expected_array": "rows",
       "expected_rows": 36
+    },
+    "hf43": {
+      "path": "research/pets/PET-HIGH-FIRST-43-ORIGINAL-EXCHANGE-SEMANTICS-R1.json",
+      "git_blob": "8ede61a53c670a883bb7824e1d5f410d0b76463a",
+      "expected_array": null,
+      "expected_rows": null
     }
   },
   "expected": {
@@ -311,5 +317,9 @@
     "source_head": "a320a197da3a7813d26925dd4e3228cadb9156eb",
     "source_tree": "b9131178503d1f864d629a4b582c44eb6887b18b",
     "scope": "26 original members, 36 exact instance joins, 25 command lines, 36 exact claimed 7.5 template fingerprints, 33 TW1 graphic candidates including 2 name conflicts; 3 independent later graphic candidates."
+  },
+  "supplement_hf43": {
+    "source_head": "39f7b9438e85850df38bf98850121a50f6368432",
+    "scope": "8 exact original members, 5 exchange prerequisites, 3 items, 5 scripts, 6 reward commands / 17 distinct reward IDs; 4 MESSAGE blocks no NomalMsg; NomalWindowMsg unresolved. No new query entries."
   }
 }

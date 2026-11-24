@@ -8996,3 +8996,8 @@ R14包351231B/SHA7684267ab528d13ceecb23a25632543ae839225607cbda702a32736e4c4d366
 ## 2026-11-24｜PET-HIGH-FIRST-42 奖励脚本与原服务端配置
 
 26原成员取证，源Actions 45419861471、独立下载ZIP和日志重建一致；36实例与标称7.5源模板共享完整行字段指纹，不当独立官服部署证据。[原件保全和链接](continuity/STONEAGE-PET-HIGH-FIRST-42-PC-REWARD-INSTANCE-INDEX-20261124.md)。
+
+
+## 2026-11-24｜PET43交换条件原件
+
+8原成员，源运行45422654575与独立ZIP/日志一致；3原道具与ITEM01索引02同指纹，5交换模板，5原脚本。后期三个固定C源码仅解释语义。[保全记录](continuity/STONEAGE-PET-HIGH-FIRST-43-PC-EXCHANGE-SEMANTICS-20261124.md)。
