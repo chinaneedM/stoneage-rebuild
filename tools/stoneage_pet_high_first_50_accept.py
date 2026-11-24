@@ -208,20 +208,27 @@ def vip_menu(data, d, report):
                 continue
             assert len(fields) == len(labels) == 1
             value = fields[0].strip()
-            m = re.fullmatch(rb"([0-9]+|MM[1-4])\s*,\s*(-?[0-9]+)", value)
-            assert m is not None, (path, sha(value), len(value))
-            token, price = m.groups()
+            # The later loader splits the menu block by pipe and reads colon field 2,
+            # then uses only the first two comma tokens from the VipPet field.
+            arg = re.split(rb"[|:]", value, maxsplit=1)[0].strip()
+            tokens = [part.strip() for part in arg.split(b",")]
+            token = tokens[0]
+            points = re.match(rb"[+-]?[0-9]+", tokens[1]) if len(tokens) >= 2 else None
+            enemy_id = int(token) if token.isdigit() else None
+            alias = re.fullmatch(rb"MM[1-4]", token)
             # MM aliases depend on a descendant build macro. Keep those unresolved.
-            instance = selected_enemy.get(int(token)) if token.isdigit() else None
+            instance = selected_enemy.get(enemy_id) if enemy_id is not None else None
             template = selected_base.get(instance[2]) if instance else None
             catalog = catalog_by_template.get(instance[2]) if instance else None
             exact = bool(template and catalog and template[16] == catalog[1]["row_sha256"])
             rows.append({
                 "menu_position": len(rows) + 1,
                 "value_sha256": sha(value),
-                "enemy_id": int(token) if token.isdigit() else None,
-                "conditional_alias": None if token.isdigit() else token.decode("ascii"),
-                "raw_vip_points": int(price),
+                "enemy_id": enemy_id,
+                "conditional_alias": token.decode("ascii") if alias else None,
+                "raw_vip_points": int(points[0]) if points else None,
+                "comma_field_count": len(tokens),
+                "unparsed_value": (enemy_id is None and alias is None) or points is None,
                 "selected_template_id": instance[2] if instance else None,
                 "selected_instance_physical_line": positions[instance[0] - 1] if instance else None,
                 "exact_tw75_template_position": catalog[0] if exact else None,
@@ -262,7 +269,8 @@ def main():
             print("PET50_VIP", f["path"], f["create_reference_count"], len(f["rows"]),
                   sum(r["selected_template_id"] is not None for r in f["rows"]),
                   sum(r["exact_tw75_template_position"] is not None for r in f["rows"]),
-                  sum(r["among_67_residual_positions"] for r in f["rows"]))
+                  sum(r["among_67_residual_positions"] for r in f["rows"]),
+                  sum(r["unparsed_value"] for r in f["rows"]))
         print("PET50_REPLAY_REPORT", len(raw), sha(raw), source.r40.git_blob(raw))
 
 
