@@ -1,0 +1,204 @@
+{
+  "schema": "stoneage.pet56.special_role_preflight.r1",
+  "base_main": "4ef7f7b2d156468f1cb2de28deb2b0ad6d26c317",
+  "scope": "CLASSIC_PC_SOURCE_SPECIFIC_NOT_OFFICIAL_DEPLOYMENT",
+  "later_source": {
+    "repo": "gavinlinasd/StoneAge",
+    "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "pins": {
+      "gmsv/data/enemy1.txt": "bf245a391adeace09915b6e425754b54ab69a8f6",
+      "gmsv/data/enemybase1.txt": "a19a508975e3a982fada323861b35b2edab79349",
+      "gmsv/data/npc/eden1/zoo2/event83_19": "08e52a26298d8a21a2e662784a8e0177f4b0c6ba",
+      "gmsv/data/npc/eden1/zoo2/event83_1a": "baac89fb129ebd8525c1ac3699caad3363a6c29a",
+      "gmsv/data/npc/eden1/zoo1/manager82_01": "ff2dcc994f7f900ed9de6ef41ab8b50e578d2bd8",
+      "gmsv/data/npc/eden1/zoo2/event83a.create": "b0436fbfd893b78ed99d50619657058ab5da5eb2"
+    }
+  },
+  "rows": [
+    {
+      "position": 309,
+      "name": "動物園養的拉斯基",
+      "template": 854,
+      "instance": 1733,
+      "graphic": 100853,
+      "level": [
+        1,
+        1
+      ],
+      "elements": [
+        0,
+        0,
+        60,
+        40
+      ],
+      "later_instance_line": 1308,
+      "later_template_line": 642,
+      "role": "LATER_CONFIG_QUEST_INTERMEDIATE",
+      "official_acquisition_verified": false
+    },
+    {
+      "position": 317,
+      "name": "古瓜",
+      "template": 913,
+      "instance": 1816,
+      "graphic": 100015,
+      "level": [
+        1,
+        1
+      ],
+      "elements": [
+        100,
+        0,
+        0,
+        0
+      ],
+      "later_instance_line": 1381,
+      "later_template_line": 697,
+      "role": "DOCUMENTARY_LEVEL_MATCH_QUEST_INTERMEDIATE_NOT_EXACT_SCRIPT",
+      "official_acquisition_verified": false
+    },
+    {
+      "position": 318,
+      "name": "古瓜",
+      "template": 914,
+      "instance": 1818,
+      "graphic": 100018,
+      "level": [
+        100,
+        100
+      ],
+      "elements": [
+        100,
+        0,
+        0,
+        0
+      ],
+      "later_instance_line": 1382,
+      "later_template_line": 698,
+      "role": "DOCUMENTARY_LEVEL_MATCH_QUEST_INTERMEDIATE_NOT_EXACT_SCRIPT",
+      "official_acquisition_verified": false
+    },
+    {
+      "position": 187,
+      "name": "雷帝斯洛",
+      "template": 335,
+      "instance": 2105,
+      "graphic": 101437,
+      "level": [
+        1,
+        1
+      ],
+      "elements": [
+        100,
+        100,
+        100,
+        100
+      ],
+      "later_instance_line": 1647,
+      "later_template_line": 241,
+      "role": "ALL_ELEMENT_SAME_NAME_VARIANT_NOT_IDENTIFIED_WITH_OFFICIAL_CARD",
+      "official_acquisition_verified": false
+    },
+    {
+      "position": 401,
+      "name": "雷帝斯洛",
+      "template": 1060,
+      "instance": 2080,
+      "graphic": 101501,
+      "level": [
+        1,
+        1
+      ],
+      "elements": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "later_instance_line": 1624,
+      "later_template_line": 843,
+      "role": "ZERO_ELEMENT_CANDIDATE_COMPATIBLE_WITH_PERIOD_PLAYER_DESCRIPTION_NOT_DEPLOYMENT",
+      "official_acquisition_verified": false
+    }
+  ],
+  "zoo": {
+    "getpet": 1733,
+    "getpet_line": 72,
+    "condition_line": 60,
+    "create_binding_line": 191,
+    "ordinary_template": 758,
+    "ordinary_delete_line": 107,
+    "task_template": 854,
+    "other_players_task_pet_delete_line": 125,
+    "manager_condition_line": 13,
+    "manager_delete_line": 17,
+    "manager_reward_line": 19,
+    "manager_required_templates": [
+      905,
+      786,
+      854
+    ],
+    "manager_reward_instance": 1563,
+    "manager_reward_template": 730,
+    "reward_instance_line": 1143
+  },
+  "documentary": [
+    {
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-06-03/10646.shtml",
+      "date": "2003-06-03",
+      "lines": [
+        103,
+        111
+      ],
+      "grade": "PERIOD_EDITORIAL_GUIDE",
+      "summary": "席格交宠、先报平安、归还三宠、最终奖布伊胖"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/content/2002-5-25/n686_602272.html",
+      "date": "2002-05-25",
+      "lines": [
+        18,
+        25
+      ],
+      "grade": "PERIOD_PLAYER_GUIDE",
+      "summary": "归还三只、红兔先报平安"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/content/2003-4-7/n219_135231.html?_platform=PC",
+      "date": "2003-04-07",
+      "lines": [
+        18,
+        22
+      ],
+      "grade": "PERIOD_PLAYER_GUIDE",
+      "summary": "作者称在5.0做3.0任务，三只一并交还"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/renwu/sa30_06.htm",
+      "date": null,
+      "lines": [
+        9,
+        20
+      ],
+      "grade": "OLD_PC_GUIDE_UNDATED",
+      "summary": "1级古瓜交出后领取100级古瓜"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/content/2004-1-17/n471_387688.html",
+      "date": "2004-01-17",
+      "grade": "PERIOD_PLAYER_COMMENTARY",
+      "summary": "无魔称无属性，使用技能后全属性；不确定同一模板、变形或实际部署"
+    }
+  ],
+  "original_manifest": {
+    "blob": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "npc_files": 2205,
+    "later_zoo_paths_present": false,
+    "scan": "PENDING_BOUNDED_ALL_67_TYPED_REFERENCES"
+  },
+  "strict_gap_count": 67,
+  "official_acquisition_closed": 0,
+  "official_species_count": null,
+  "original_payload_published": false,
+  "runtime_executed": false
+}

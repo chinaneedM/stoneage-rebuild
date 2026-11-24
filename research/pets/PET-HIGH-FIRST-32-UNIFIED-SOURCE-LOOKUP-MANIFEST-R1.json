@@ -314,6 +314,24 @@
       "git_blob": "2a45004916ed0f41c37d2c49f48db79127bba289",
       "expected_array": "rows",
       "expected_rows": 3
+    },
+    "hf56": {
+      "path": "research/pets/PET-HIGH-FIRST-56-SOURCE-CUSTODY-R1.json",
+      "git_blob": "142976ab261a145eae33a51707701fd041514b3f",
+      "expected_array": "rows",
+      "expected_rows": 10
+    },
+    "hf56_replay": {
+      "path": "research/pets/PET-HIGH-FIRST-56-SOURCE-REPLAY-45475208972-R1.json",
+      "git_blob": "c2116d86e55c6d4eb10fcdac9f76e6ae168c557d",
+      "expected_array": null,
+      "expected_rows": null
+    },
+    "hf56_preflight": {
+      "path": "research/pets/PET-HIGH-FIRST-56-SPECIAL-ROLE-PREFLIGHT-R1.json",
+      "git_blob": "d5a98f0711d36b17dca3fe5786f1fb9b63a3c5b9",
+      "expected_array": "rows",
+      "expected_rows": 5
     }
   },
   "expected": {
@@ -408,5 +426,10 @@
     "source_head": "f292262fa245d904488f5c1ca26f89605ffae875",
     "source_tree": "c4f9c102e9f3e7a9bc64711c8463fe6adb96be07",
     "scope": "349 existing TW75 records without selected mixed25 double-flag routes; 13 saved task reward configurations, 234 other source references, 102 no qualified acquisition reference in this batch. Primary/alternate comparisons and historical source scopes retained; no new query entries."
+  },
+  "supplement_hf56": {
+    "source_head": "2a5f2e3710af5f666467786066fc0f428bf8a424",
+    "source_tree": "09d16a498a2987583af07c2152a08ce1f7142756",
+    "scope": "67 original selected acquisition gap templates, 70 distinct instances, 14 structured candidate lines in 3 files; 10 existing template-position classifications; 12 previously recorded trainer AddPet lines and 2 unreferenced reserved VIP candidates, no official acquisition closure."
   }
 }
