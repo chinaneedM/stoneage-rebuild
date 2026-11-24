@@ -3430,3 +3430,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-24｜PET-HIGH-FIRST-47 同期取得补缺
 
 [续接记录](docs/continuity/STONEAGE-PET-HIGH-FIRST-47-PC-PERIOD-ACQUISITION-GAP-20261124.md)。102条缺件中19条同期名称元素相容、2条同名元素冲突、8个仅上下文关联；余83条无相容记载。正式取得未闭合。NEXT PET-HIGH-FIRST-48，仅PET。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-48 旧PC图鉴取得缺件
+
+[续接记录](docs/continuity/STONEAGE-PET-HIGH-FIRST-48-LEGACY-PC-ACQUISITION-GAP-20261124.md)。83余缺项中9条相容参考、74尚缺，未认证官服实际取得。NEXT PET-HIGH-FIRST-49，PET唯一。
