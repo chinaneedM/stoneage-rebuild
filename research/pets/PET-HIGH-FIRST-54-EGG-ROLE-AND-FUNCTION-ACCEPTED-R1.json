@@ -1,0 +1,190 @@
+{
+  "schema": "stoneage.pet54.egg_role_and_function_accepted.r1",
+  "base_main": "765a44b668330a3d54acb120f62fa98be22d0f22",
+  "source_candidate": "bcba173ffda82914d4d060c4dc9e82ed9ff04457",
+  "source_pins": {
+    "research/pets/PET-HIGH-FIRST-54-EGG-ROLE-PREFLIGHT-R1.json": "fc90028cca505df3cce3d4370898d311e15909d3",
+    "research/pets/PET-HIGH-FIRST-54-ORIGINAL-EGG-REFERENCE-PROBE-R1.json": "0b0e787110e95b17d1593be7534d25c9a9d191ce",
+    "research/pets/PET-HIGH-FIRST-54-EGG-FUNCTION-STATIC-PROBE-R1.json": "937c14dc4c727c2ab6be2bf73d5620ff7dc3aa82"
+  },
+  "custody": {
+    "original_scan": {
+      "run": 45467953788,
+      "job": 138707808416,
+      "artifact": 14956965438,
+      "zip_bytes": 55641,
+      "zip_sha256": "bbef41bff6900b8fc3709e7352f6c404fadf0846fd82e9234eb6241defd47b72",
+      "json_bytes": 427240,
+      "json_sha256": "254dbb336efb194a0c10e4801c0a5ea091839133e5db2c0f7af860c545ae58a1",
+      "json_git_blob": "0b0e787110e95b17d1593be7534d25c9a9d191ce"
+    },
+    "function_scan": {
+      "run": 45469473230,
+      "job": 138713181004,
+      "artifact": 14956176883,
+      "zip_bytes": 67875,
+      "zip_sha256": "57e71fde4060a6b54d6da5793aadeff4f1dd8b888c5ca1d22d356dfb2617795d",
+      "json_bytes": 49994,
+      "json_sha256": "a846432596125251300dae90a7e2a421e17aa7ec790da381d133797bc14e4d46",
+      "json_git_blob": "937c14dc4c727c2ab6be2bf73d5620ff7dc3aa82",
+      "prior_json_in_zip_byte_identical": true
+    },
+    "zip_and_json_verified_independently": true
+  },
+  "original_npc": {
+    "member_count": 2207,
+    "npc_file_count": 2205,
+    "member_bytes": 2300545,
+    "headers_visited": 7954,
+    "range_receipts": 184,
+    "range_bytes": 12013836,
+    "lexical_candidate_count": 765,
+    "typed_id_candidate_count": 0,
+    "numeric_collision_count": 33,
+    "ascii_term_hit_count": 0,
+    "target_name_or_hatch_term_count": 0
+  },
+  "original_executable": {
+    "sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00",
+    "function": "_NPC_EventAddEgg",
+    "start": 4896128,
+    "next_symbol": "_NPC_EventAddPet",
+    "next_symbol_address": 4897696,
+    "instructions": 409,
+    "direct_calls": 49,
+    "incoming": [
+      {
+        "containing_symbols": [
+          "_NPC_EventAdd"
+        ],
+        "opcode_class": "call",
+        "site": 4905870
+      },
+      {
+        "containing_symbols": [
+          "_NPC_AcceptDel"
+        ],
+        "opcode_class": "call",
+        "site": 4918854
+      }
+    ],
+    "body_sha256": "64eedb52caadf27d08624af832bcf20c5246a480e3807a0888d5aeb8dceba171",
+    "selected_calls": [
+      "_rand",
+      "_getStringFromIndexWithDelim_body",
+      "_atoi",
+      "_ENEMY_getEnemyNum",
+      "_ENEMY_getInt",
+      "_ENEMY_createPetFromEnemyIndex",
+      "_CHAR_getCharPet",
+      "_CHAR_setMaxExpFromLevel",
+      "_LogPet"
+    ],
+    "target_id_immediates": [],
+    "semantic_grade": "ORIGINAL_STATIC_PET_CREATION_ENTRY_NOT_EXECUTED_HATCH_RULE"
+  },
+  "later_comparison": {
+    "repo": "gavinlinasd/StoneAge",
+    "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "path": "gmsv/src/npc/npc_exchangeman.c",
+    "git_blob": "5d74290ed6f27163e0698b4375d5dc5e187c77c4",
+    "line_ranges": [
+      [
+        2592,
+        2604
+      ],
+      [
+        3220,
+        3228
+      ],
+      [
+        3480,
+        3609
+      ]
+    ],
+    "command": "GetEgg",
+    "parameter_order": [
+      "egg_enemy_instance_id",
+      "offspring_enemy_instance_id",
+      "raise_count"
+    ],
+    "offspring_id_converted_to_template": true,
+    "random_selection_candidate": true,
+    "pet_slot_check": true,
+    "fields": [
+      [
+        "CHAR_FUSIONBEIT",
+        1
+      ],
+      [
+        "CHAR_FUSIONCODE",
+        -1
+      ],
+      [
+        "CHAR_FUSIONRAISE",
+        "raise"
+      ],
+      [
+        "CHAR_FUSIONINDEX",
+        "offspring_template"
+      ],
+      [
+        "CHAR_FUSIONTIMELIMIT",
+        "time(NULL)"
+      ]
+    ],
+    "same_build_or_deployment_verified": false,
+    "original_argument_layout_verified": false,
+    "actual_hatching_verified": false
+  },
+  "rows": [
+    {
+      "position": 387,
+      "name": "寵物蛋",
+      "template_id": 1045,
+      "graphic": 101489,
+      "selected_instance_id": 2055,
+      "source_preflight_row": 0,
+      "grade": "EGG_INTERMEDIATE_OBJECT_CANDIDATE_NOT_DISTINCT_SPECIES",
+      "original_getegg_mapping_verified": false,
+      "later_code_mapping_to_this_template_verified": false,
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 453,
+      "name": "美拉",
+      "template_id": 1140,
+      "graphic": 101760,
+      "selected_instance_id": 2474,
+      "source_preflight_row": 1,
+      "grade": "NAMED_PET_CANDIDATE",
+      "original_getegg_mapping_verified": false,
+      "later_code_mapping_to_this_template_verified": false,
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 454,
+      "name": "美拉蛋",
+      "template_id": 1145,
+      "graphic": 101489,
+      "selected_instance_id": 2479,
+      "source_preflight_row": 2,
+      "grade": "EGG_INTERMEDIATE_OBJECT_CANDIDATE_NOT_DISTINCT_SPECIES",
+      "original_getegg_mapping_verified": false,
+      "later_code_mapping_to_this_template_verified": false,
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    }
+  ],
+  "strict_gap_count": 67,
+  "official_acquisition_closed": 0,
+  "official_species_count": null,
+  "original_assets_published": false,
+  "runtime_executed": false,
+  "actual_hatch_result_verified": false
+}

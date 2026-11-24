@@ -1,0 +1,505 @@
+{
+  "schema": "stoneage.pet54.egg_role_source_preflight.r1",
+  "base_head": "765a44b668330a3d54acb120f62fa98be22d0f22",
+  "base_tree": "7dfdeb6b60e59df122c83b3f66e8d1ed26c6a482",
+  "scope": "CLASSIC_PC_PRESERVED_SOURCE_NOT_DEPLOYMENT",
+  "source_pins": {
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-50-ORIGINAL-ACQUISITION-R1.json": "4d0b31a7fa196cf8f227a7b0b1aea7183d9598f0",
+    "research/recovered/STONEAGE-PET-MODULE-10-ORIGINAL-MIXED25-SERVER-TABLES-R1.json": "25a37aeb134fb180e322e7dc335029b7374452d8",
+    "research/pets/PET-HIGH-FIRST-TW85-ORIGINAL-PE-ALBUM-GRID-R1.json": "7fb8eceba23dea6dc90ebb18e404d6e837210eaf",
+    "research/recovered/STONEAGE-TW2002-FUSION-HATCHING-SOURCE-R1.json": "59afd2a17916452f6985ccaa6b871fcc0e35c826",
+    "research/pets/PET-HIGH-FIRST-49-DATED-PC-ACQUISITION-GAP-R1.json": "3ae127ef6bee449a472b7b4323b09f930e1c8684",
+    "research/pets/PET-HIGH-FIRST-51-PETABI-SOURCE-LINKS-R1.json": "ab826bd89e5d1f39f8f219b5a2803efba02248b9"
+  },
+  "rows": [
+    {
+      "position": 387,
+      "name": "寵物蛋",
+      "template_id": 1045,
+      "graphic": 101489,
+      "master_row_sha256": "07657ddf2565077f88cbff68b846e158740513895201fac4c69b70ec12b9fe25",
+      "base_fields": [
+        20,
+        10,
+        10,
+        10
+      ],
+      "initnum": 10,
+      "elements": [
+        100,
+        0,
+        0,
+        0
+      ],
+      "skill_capacity": 7,
+      "source_pairs": [
+        {
+          "base": "enemybase.txt",
+          "base_pet_flag": 1,
+          "base_row_sha256": "07657ddf2565077f88cbff68b846e158740513895201fac4c69b70ec12b9fe25",
+          "enemy": "enemy.txt",
+          "group_variants": [
+            {
+              "configuration": "SELECTED",
+              "double_flag_routes": 0,
+              "group": "group1.txt",
+              "group_memberships": [],
+              "lv1_double_flag_routes": 0,
+              "positive_routes": 0
+            },
+            {
+              "configuration": "ALTERNATE_NOT_SELECTED",
+              "double_flag_routes": 0,
+              "group": "group.txt",
+              "group_memberships": [],
+              "lv1_double_flag_routes": 0,
+              "positive_routes": 0
+            }
+          ],
+          "instances": [
+            {
+              "instance_id": 2055,
+              "level": [
+                1,
+                1
+              ],
+              "pet_flag": 1,
+              "physical_line": 1541,
+              "raw_level_fields": [
+                1,
+                1
+              ]
+            }
+          ],
+          "match": "EXACT_ROW"
+        },
+        {
+          "base": "enemybase2.txt",
+          "base_pet_flag": 1,
+          "base_row_sha256": "51240647cfd715c321c380f79236bd11df2f3e6a2df1010ad29c8236949826ff",
+          "enemy": "enemy2.txt",
+          "group_variants": [
+            {
+              "configuration": "ALTERNATE_NOT_SELECTED",
+              "double_flag_routes": null,
+              "group": "group1.txt",
+              "group_memberships": [],
+              "lv1_double_flag_routes": null,
+              "positive_routes": 0
+            },
+            {
+              "configuration": "ALTERNATE_NOT_SELECTED",
+              "double_flag_routes": null,
+              "group": "group.txt",
+              "group_memberships": [],
+              "lv1_double_flag_routes": null,
+              "positive_routes": 0
+            }
+          ],
+          "instances": [],
+          "match": "SAME_ID_DIFFERENT_ROW"
+        }
+      ],
+      "selected_base_row": [
+        842,
+        1045,
+        101489,
+        1,
+        "10",
+        "4.50",
+        "20",
+        "10",
+        "10",
+        "10",
+        "100",
+        "0",
+        "0",
+        "0",
+        7,
+        [
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "07657ddf2565077f88cbff68b846e158740513895201fac4c69b70ec12b9fe25"
+      ],
+      "alternate_base_row": [
+        634,
+        1045,
+        101489,
+        1,
+        "10",
+        "4.50",
+        "20",
+        "10",
+        "10",
+        "10",
+        "100",
+        "0",
+        "0",
+        "0",
+        7,
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "51240647cfd715c321c380f79236bd11df2f3e6a2df1010ad29c8236949826ff"
+      ],
+      "source_named_album_rows": [
+        {
+          "program": "sa.exe",
+          "slot": 353,
+          "original_first_i32": 296,
+          "original_name_cp950": "寵物蛋",
+          "source_portrait_alias": 28420,
+          "unpacked_file_offset": 806156,
+          "original_row_sha256": "4163bc8d4a27daf7ca7045cb685e9022a1c9fab5ec6c253157d9227853f71981"
+        },
+        {
+          "program": "sb.exe",
+          "slot": 353,
+          "original_first_i32": 296,
+          "original_name_cp950": "寵物蛋",
+          "source_portrait_alias": 28420,
+          "unpacked_file_offset": 717452,
+          "original_row_sha256": "4163bc8d4a27daf7ca7045cb685e9022a1c9fab5ec6c253157d9227853f71981"
+        },
+        {
+          "program": "sc.exe",
+          "slot": 353,
+          "original_first_i32": 296,
+          "original_name_cp950": "寵物蛋",
+          "source_portrait_alias": 28420,
+          "unpacked_file_offset": 688076,
+          "original_row_sha256": "4163bc8d4a27daf7ca7045cb685e9022a1c9fab5ec6c253157d9227853f71981"
+        },
+        {
+          "program": "sd.exe",
+          "slot": 353,
+          "original_first_i32": 296,
+          "original_name_cp950": "寵物蛋",
+          "source_portrait_alias": 28420,
+          "unpacked_file_offset": 797692,
+          "original_row_sha256": "4163bc8d4a27daf7ca7045cb685e9022a1c9fab5ec6c253157d9227853f71981"
+        }
+      ],
+      "client_join_status": "NAME_ONLY_IN_TW85_GRID",
+      "role": "EGG_INTERMEDIATE_OBJECT_CANDIDATE_NOT_DISTINCT_SPECIES",
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "actual_hatching_verified": false,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 453,
+      "name": "美拉",
+      "template_id": 1140,
+      "graphic": 101760,
+      "master_row_sha256": "61f0ad4acaf901a798fef4fcfc97a6c3cf20859dc2da9bd8cf5a846a35c14f1a",
+      "base_fields": [
+        20,
+        38,
+        53,
+        24
+      ],
+      "initnum": 35,
+      "elements": [
+        100,
+        0,
+        0,
+        0
+      ],
+      "skill_capacity": 7,
+      "source_pairs": [
+        {
+          "base": "enemybase.txt",
+          "base_pet_flag": 1,
+          "base_row_sha256": "452dc93bd8d13f13b34577be9c5901b6d0c51ab594321bab5c559a189489676e",
+          "enemy": "enemy.txt",
+          "group_variants": [
+            {
+              "configuration": "SELECTED",
+              "double_flag_routes": 0,
+              "group": "group1.txt",
+              "group_memberships": [],
+              "lv1_double_flag_routes": 0,
+              "positive_routes": 0
+            },
+            {
+              "configuration": "ALTERNATE_NOT_SELECTED",
+              "double_flag_routes": 0,
+              "group": "group.txt",
+              "group_memberships": [],
+              "lv1_double_flag_routes": 0,
+              "positive_routes": 0
+            }
+          ],
+          "instances": [
+            {
+              "instance_id": 2474,
+              "level": [
+                1,
+                1
+              ],
+              "pet_flag": 1,
+              "physical_line": 1933,
+              "raw_level_fields": [
+                1,
+                1
+              ]
+            }
+          ],
+          "match": "SAME_ID_DIFFERENT_ROW"
+        },
+        {
+          "base": "enemybase2.txt",
+          "base_pet_flag": null,
+          "base_row_sha256": null,
+          "enemy": "enemy2.txt",
+          "group_variants": [
+            {
+              "configuration": "ALTERNATE_NOT_SELECTED",
+              "double_flag_routes": null,
+              "group": "group1.txt",
+              "group_memberships": [],
+              "lv1_double_flag_routes": null,
+              "positive_routes": 0
+            },
+            {
+              "configuration": "ALTERNATE_NOT_SELECTED",
+              "double_flag_routes": null,
+              "group": "group.txt",
+              "group_memberships": [],
+              "lv1_double_flag_routes": null,
+              "positive_routes": 0
+            }
+          ],
+          "instances": [],
+          "match": "ABSENT"
+        }
+      ],
+      "selected_base_row": [
+        929,
+        1140,
+        101760,
+        1,
+        "35",
+        "4.50",
+        "20",
+        "38",
+        "53",
+        "24",
+        "100",
+        "0",
+        "0",
+        "0",
+        7,
+        [
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "452dc93bd8d13f13b34577be9c5901b6d0c51ab594321bab5c559a189489676e"
+      ],
+      "alternate_base_row": null,
+      "source_named_album_rows": [
+        {
+          "program": "sa.exe",
+          "slot": 456,
+          "original_first_i32": 399,
+          "original_name_cp950": "美拉",
+          "source_portrait_alias": 28524,
+          "unpacked_file_offset": 809040,
+          "original_row_sha256": "52c759bd8a626c60fcec3d1673dc04c866240f7ea8eb7542d60f60d0b8fddffb"
+        },
+        {
+          "program": "sb.exe",
+          "slot": 456,
+          "original_first_i32": 399,
+          "original_name_cp950": "美拉",
+          "source_portrait_alias": 28524,
+          "unpacked_file_offset": 720336,
+          "original_row_sha256": "52c759bd8a626c60fcec3d1673dc04c866240f7ea8eb7542d60f60d0b8fddffb"
+        },
+        {
+          "program": "sc.exe",
+          "slot": 456,
+          "original_first_i32": 399,
+          "original_name_cp950": "美拉",
+          "source_portrait_alias": 28524,
+          "unpacked_file_offset": 690960,
+          "original_row_sha256": "52c759bd8a626c60fcec3d1673dc04c866240f7ea8eb7542d60f60d0b8fddffb"
+        },
+        {
+          "program": "sd.exe",
+          "slot": 456,
+          "original_first_i32": 399,
+          "original_name_cp950": "美拉",
+          "source_portrait_alias": 28524,
+          "unpacked_file_offset": 800576,
+          "original_row_sha256": "52c759bd8a626c60fcec3d1673dc04c866240f7ea8eb7542d60f60d0b8fddffb"
+        }
+      ],
+      "client_join_status": "TW85_NATIVE_SAME_GRAPHIC_NAME",
+      "role": "NAMED_PET_CANDIDATE",
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "actual_hatching_verified": false,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 454,
+      "name": "美拉蛋",
+      "template_id": 1145,
+      "graphic": 101489,
+      "master_row_sha256": "61f9ab7106764f6bc09d5c11ccda8f4901b8250fdc6522edd092653f9d19a536",
+      "base_fields": [
+        20,
+        37,
+        52,
+        24
+      ],
+      "initnum": 35,
+      "elements": [
+        100,
+        0,
+        0,
+        0
+      ],
+      "skill_capacity": 7,
+      "source_pairs": [
+        {
+          "base": "enemybase.txt",
+          "base_pet_flag": 1,
+          "base_row_sha256": "61f9ab7106764f6bc09d5c11ccda8f4901b8250fdc6522edd092653f9d19a536",
+          "enemy": "enemy.txt",
+          "group_variants": [
+            {
+              "configuration": "SELECTED",
+              "double_flag_routes": 0,
+              "group": "group1.txt",
+              "group_memberships": [],
+              "lv1_double_flag_routes": 0,
+              "positive_routes": 0
+            },
+            {
+              "configuration": "ALTERNATE_NOT_SELECTED",
+              "double_flag_routes": 0,
+              "group": "group.txt",
+              "group_memberships": [],
+              "lv1_double_flag_routes": 0,
+              "positive_routes": 0
+            }
+          ],
+          "instances": [
+            {
+              "instance_id": 2479,
+              "level": [
+                1,
+                1
+              ],
+              "pet_flag": 1,
+              "physical_line": 1934,
+              "raw_level_fields": [
+                1,
+                1
+              ]
+            }
+          ],
+          "match": "EXACT_ROW"
+        },
+        {
+          "base": "enemybase2.txt",
+          "base_pet_flag": null,
+          "base_row_sha256": null,
+          "enemy": "enemy2.txt",
+          "group_variants": [
+            {
+              "configuration": "ALTERNATE_NOT_SELECTED",
+              "double_flag_routes": null,
+              "group": "group1.txt",
+              "group_memberships": [],
+              "lv1_double_flag_routes": null,
+              "positive_routes": 0
+            },
+            {
+              "configuration": "ALTERNATE_NOT_SELECTED",
+              "double_flag_routes": null,
+              "group": "group.txt",
+              "group_memberships": [],
+              "lv1_double_flag_routes": null,
+              "positive_routes": 0
+            }
+          ],
+          "instances": [],
+          "match": "ABSENT"
+        }
+      ],
+      "selected_base_row": [
+        930,
+        1145,
+        101489,
+        1,
+        "35",
+        "4.50",
+        "20",
+        "37",
+        "52",
+        "24",
+        "100",
+        "0",
+        "0",
+        "0",
+        7,
+        [
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "61f9ab7106764f6bc09d5c11ccda8f4901b8250fdc6522edd092653f9d19a536"
+      ],
+      "alternate_base_row": null,
+      "source_named_album_rows": [],
+      "client_join_status": "NO_QUALIFIED_NAME_GRAPHIC_LINK",
+      "role": "EGG_INTERMEDIATE_OBJECT_CANDIDATE_NOT_DISTINCT_SPECIES",
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "actual_hatching_verified": false,
+      "retain_strict_gap": true
+    }
+  ],
+  "documented_2002_stage_order": [
+    "THREE_DIFFERENT_PETS_WITH_SPECIAL_DRUG",
+    "ONE_PET_EGG",
+    "SPECIAL_FEED_HATCHING",
+    "NEW_THIRD_GENERATION_PET"
+  ],
+  "documentary_native_egg_id": null,
+  "documentary_to_saved_template_bridge_verified": false,
+  "same_graphic_does_not_identify_hatch_result": true,
+  "strict_gap_count": 67,
+  "official_species_count": null,
+  "official_acquisition_closed": 0,
+  "original_assets_published": false,
+  "new_original_source_bytes": false,
+  "runtime_executed": false,
+  "source_probe_status": "PENDING_ORIGINAL_SOURCE_JOB"
+}
