@@ -240,6 +240,7 @@ def build(d):
         for instance_id in row["matching_instance_tokens"]
     }
     variant52_by_position = {v["position"]: j for j, row in enumerate(d["hf52"]["rows"]) for v in row["master_variants"]}
+    reward53_by_position = {row["position"]: j for j,row in enumerate(d["hf53"]["rows"])}
     petabi51 = d["hf51_petabi"]["petabi_rows"]
     petabi_by_tw75 = collections.defaultdict(list)
     for ordinal, row in enumerate(petabi51):
@@ -293,6 +294,9 @@ def build(d):
                 ls.append(link(ref["source"], ["records" if ref["source"] == "fusion2003" else "rows",ref["row_index"]], ref["qualification"]))
             gap_detail = dict(gap_state=gap["gap_state"],evidence_categories=gap["evidence_categories"],selected_table=gap["selected_table"]["status"],alternate_table=gap["alternate_table"]["status"],official_acquisition_verified=False)
         ls.extend(acquisition_updates[i])
+        if i in reward53_by_position:
+            j53 = reward53_by_position[i]
+            ls.append(link("hf53", ["rows", j53], d["hf53"]["rows"][j53]["grade"]))
         if i in variant52_by_position:
             ls.append(link("hf52", ["rows", variant52_by_position[i]], "NAMED_VISUAL_AND_ACQUISITION_VARIANT_COMPARISON_NOT_SAME_DEPLOYMENT"))
         ls.extend(link("hf51_petabi", ["petabi_rows", j],
@@ -450,6 +454,8 @@ def verify(m,d,entries):
         "hf46": 349, "hf47": 29, "hf48": 19, "hf49": 22, "hf50": 71,
     }
     assert source_counts["hf51_petabi"] == 33
+    assert source_counts["hf53"] == 4
+    assert {i for i,e in enumerate(high45) if any(l["source"]=="hf53" for l in e["linked_records"])} == {68,75,144,208}
     assert source_counts["hf52"] == 4
     assert {i for i,e in enumerate(high45) if any(l["source"]=="hf52" for l in e["linked_records"])} == {67,144,171,208}
     preset_lookup = [e for e in entries if e["source"] == "hf51_petabi"]

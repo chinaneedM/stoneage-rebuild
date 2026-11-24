@@ -1,0 +1,237 @@
+{
+  "schema": "stoneage.pet53.period_commercial_and_honor_reward_reference.r1",
+  "base_head": "ff8f13c0a83a935b360a8a2d11a7b9c6737151c3",
+  "base_tree": "4c0fb2c7ea603cd1b6d815a9180df2a91a7ac10f",
+  "scope": "CLASSIC_PC_ONLY_SEPARATE_OPERATOR_ERAS",
+  "source_pins": {
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-49-DATED-PC-ACQUISITION-GAP-R1.json": "3ae127ef6bee449a472b7b4323b09f930e1c8684",
+    "research/pets/PET-HIGH-FIRST-50-ORIGINAL-ACQUISITION-R1.json": "4d0b31a7fa196cf8f227a7b0b1aea7183d9598f0",
+    "research/pets/PET-HIGH-FIRST-52-NAMED-VISUAL-ACQUISITION-VARIANTS-R1.json": "6fdfcc6b039fafe59f5cda3fbb541e00eed6e118",
+    "research/pets/PET-HIGH-FIRST-47-PERIOD-ACQUISITION-GAP-R1.json": "3b1b236017469dc0cd83e94d1a646a8080d486a3"
+  },
+  "sources": {
+    "red_review": {
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-05-12/5305.shtml",
+      "date": "2003-05-12",
+      "grade": "PERIOD_MULTI_AUTHOR_PLAYER_SUBMISSIONS_SINGLE_PAGE",
+      "locator": "正文32行：畅饮蓝带、cuicuiycf0441；另有其他署名投稿",
+      "claim": "老手削暴包抽奖红暴有7技能格；同页另一投稿明确水5火5，与任务水2火8不同。作者不提供原服务器记录。"
+    },
+    "red_catalog": {
+      "url": "https://news.17173.com/z/stoneage/content/2003-8-14/n314_231133.html",
+      "date": "2003-08-14",
+      "grade": "PERIOD_PLAYER_SUBMISSION",
+      "locator": "17行，黄金·太阳",
+      "claim": "老手削暴包红暴水5火5；作者对成长和技能的看法不作公式或范围。"
+    },
+    "red_july": {
+      "url": "https://news.17173.com/z/stoneage/content/2003-7-26/n131_47188.html",
+      "date": "2003-07-26",
+      "grade": "PERIOD_PLAYER_SUBMISSION",
+      "locator": "14–19行，狗狗大米",
+      "claim": "2.0老手削暴包红暴水5火5。"
+    },
+    "red_personal": {
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-04-23/2502.shtml",
+      "date": "2003-04-23",
+      "grade": "PERIOD_FIRST_PERSON_PLAYER_CLAIM",
+      "locator": "正文第四章，史地",
+      "claim": "玩家自述2.0在网通八时期抽中红暴，报告单只成长4.8，未给元素、技能格、原ID。"
+    },
+    "red_early": {
+      "url": "https://news.17173.com/z/stoneage/content/2001-12-7/n936_852883.html",
+      "date": "2001-12-07",
+      "grade": "PERIOD_FIRST_PERSON_PACKAGE_AND_SERVER_CONTEXT",
+      "locator": "13–16及49–50行，蓝蓝",
+      "claim": "自述购买老手削暴包且抽奖曾因2.0服务器未开而等待；深圳一11月29日开2.0为该作者说法，非全国发售日。"
+    },
+    "red_april": {
+      "url": "https://news.17173.com/z/stoneage/content/2002-4-12/n838_754387.html",
+      "date": "2002-04-12",
+      "grade": "PERIOD_PLAYER_SUBMISSION",
+      "locator": "14行",
+      "claim": "红暴包与后来的红暴任务分开；一周间隔为投稿说法，未经运营公告复证。"
+    },
+    "panda": {
+      "url": "https://games.sina.com.cn/o/n/2012-02-09/1338581086.shtml",
+      "date": "2012-02-09",
+      "grade": "PERIOD_OPERATOR_ATTRIBUTED_PROMOTIONAL_REPORT",
+      "locator": "正文胖达利、胖达多段及荣誉商城换购段；末段明确广东胜思运营",
+      "claim": "胖达利风火、胖达多水火；参加生存者证明、急速练宠、战败的勇者等任务赚荣誉兑换；同篇提及8.5及2.5服务器，未逐宠指定适用服或原ID。"
+    },
+    "gold_prior": {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow19.htm",
+      "date": null,
+      "grade": "PRIOR_UNDATED_PC_CATALOG",
+      "locator": "145奇卡洛斯",
+      "claim": "集来吉卡活动奖品；PET52已记录，不重复计新增。"
+    },
+    "card3": {
+      "url": "https://news.17173.com/z/stoneage/banben/sa40-cq.htm",
+      "date": null,
+      "grade": "PERIOD_PRODUCT_PROMOTION",
+      "locator": "第三弹来吉卡段",
+      "claim": "集30种赠白虎，截止2002-10-30，不具名奇卡洛斯。"
+    },
+    "card5": {
+      "url": "https://games.sina.com.cn/newgames/2003/12/121510013.shtml",
+      "date": "2003-12-15",
+      "grade": "OPERATOR_ANNOUNCEMENT_REPRINT",
+      "locator": "活动方法及6种任务卡",
+      "claim": "任意三张指定任务卡可换随机奖品宝箱；未列奇卡洛斯。"
+    }
+  },
+  "rows": [
+    {
+      "position": 208,
+      "refs": [
+        "red_review",
+        "red_catalog",
+        "red_july",
+        "red_personal",
+        "red_early",
+        "red_april"
+      ],
+      "grade": "PERIOD_COMMERCIAL_PACK_NAME_RATIO_AND_CAPACITY_COMPATIBLE_NOT_DEPLOYMENT",
+      "ratio": [
+        0,
+        50,
+        50,
+        0
+      ],
+      "capacity": 7,
+      "reference_new": true,
+      "claim": "老手削暴包抽奖；同期投稿对水5火5与7技能格均有记述，另有抽中者自述，不证模板号或实际服务器日志。",
+      "name": "巴朵蘭恩",
+      "template_id": 724,
+      "graphic": 100373,
+      "row_sha256": "f5239f237c9cf3429f9cca9d2e25b8473306028ed8bd95ab49f841426c08040d",
+      "elements": [
+        0,
+        50,
+        50,
+        0
+      ],
+      "skill_capacity": 7,
+      "selected_saved_instance_ids": [
+        2572
+      ],
+      "positive_routes": 0,
+      "official_same_deployment_verified": false,
+      "actual_award_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 68,
+      "refs": [
+        "panda"
+      ],
+      "grade": "LATER_OPERATOR_NAMED_REWARD_ELEMENT_TYPES_COMPATIBLE_EXACT_RATIO_UNKNOWN",
+      "ratio": null,
+      "capacity": null,
+      "reference_new": true,
+      "claim": "胜思2012年荣誉商城换购，风火属性组合，未给比例；不能倒填早期华义部署。",
+      "name": "胖達利",
+      "template_id": 108,
+      "graphic": 101719,
+      "row_sha256": "e7617d882dc1b8e84a198540be6f31712ccec19f7c58ae871d8d54277501da42",
+      "elements": [
+        0,
+        0,
+        50,
+        50
+      ],
+      "skill_capacity": 6,
+      "selected_saved_instance_ids": [
+        2395
+      ],
+      "positive_routes": 0,
+      "official_same_deployment_verified": false,
+      "actual_award_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 75,
+      "refs": [
+        "panda"
+      ],
+      "grade": "LATER_OPERATOR_NAMED_REWARD_ELEMENT_TYPES_COMPATIBLE_EXACT_RATIO_UNKNOWN",
+      "ratio": null,
+      "capacity": null,
+      "reference_new": true,
+      "claim": "胜思2012年荣誉商城换购，水火属性组合，未给比例；不能倒填早期华义部署。",
+      "name": "胖達多",
+      "template_id": 115,
+      "graphic": 101720,
+      "row_sha256": "c55e86429f8a24e687eadfe681e7ef3ddd24fd19125605531445367767d69f41",
+      "elements": [
+        0,
+        50,
+        50,
+        0
+      ],
+      "skill_capacity": 6,
+      "selected_saved_instance_ids": [
+        2397
+      ],
+      "positive_routes": 0,
+      "official_same_deployment_verified": false,
+      "actual_award_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 144,
+      "refs": [
+        "gold_prior",
+        "card3",
+        "card5"
+      ],
+      "grade": "PRIOR_NAMED_REWARD_ONLY_NO_NEW_OPERATOR_PRIZE_IDENTITY",
+      "ratio": [
+        30,
+        0,
+        0,
+        70
+      ],
+      "capacity": null,
+      "reference_new": false,
+      "claim": "旧图鉴已记集来吉卡奖励；第三弹白虎与超级来吉卡神秘宝箱公告均不具名金蛙，不能确定其卡片期数、时间或发放。",
+      "name": "奇卡洛斯",
+      "template_id": 231,
+      "graphic": 100343,
+      "row_sha256": "e8b8bb1461923631b27516afe385b63f96fe7a927092bdb7fd35b295a1f527a7",
+      "elements": [
+        30,
+        0,
+        0,
+        70
+      ],
+      "skill_capacity": 4,
+      "selected_saved_instance_ids": [
+        323
+      ],
+      "positive_routes": 0,
+      "official_same_deployment_verified": false,
+      "actual_award_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    }
+  ],
+  "prior_gap_count": 67,
+  "strict_gap_count": 67,
+  "new_compatible_documentary_reference_positions": [
+    68,
+    75,
+    208
+  ],
+  "official_acquisition_closed": 0,
+  "official_species_count": null,
+  "original_assets_published": false,
+  "raw_web_html_retrieved": false,
+  "new_original_source_bytes": false,
+  "runtime_executed": false
+}
