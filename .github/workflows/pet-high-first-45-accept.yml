@@ -1,0 +1,25 @@
+name: PET-HIGH-FIRST-45 bulk acquisition acceptance replay
+on:
+  push:
+    paths:
+      - 'research/pets/PET-HIGH-FIRST-45-*.json'
+      - 'tools/stoneage_pet_high_first_45_accept.py'
+      - '.github/workflows/pet-high-first-45-accept.yml'
+  pull_request:
+    paths:
+      - 'research/pets/PET-HIGH-FIRST-45-*.json'
+      - 'tools/stoneage_pet_high_first_45_accept.py'
+      - '.github/workflows/pet-high-first-45-accept.yml'
+permissions:
+  contents: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m tools.stoneage_pet_high_first_45_accept --sha256 bef97936b4217037e3578b0b223f791f3f664a88554e851424695a3481530345
+      - run: python3 tools/stoneage_pet_source_lookup.py --verify

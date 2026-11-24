@@ -3415,3 +3415,8 @@ The original 2D StoneAge pet module remains the sole Stage A active content modu
 ## 2026-11-24｜PET-HIGH-FIRST-44 四组任务奖励窗口
 
 [续接记录](docs/continuity/STONEAGE-PET-HIGH-FIRST-44-PC-WINDOW-REWARD-20261124.md)。四原脚本均有主窗口、无后续窗口，19宠物槽/15实例及40道具槽；固定后期代码明确发奖先宠后道具。原件派生ZIP与日志独立一致，未证官方运行或概率。NEXT PET-HIGH-FIRST-45，PET唯一。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-45 批量取得链与地图参考
+
+[续接记录](docs/continuity/STONEAGE-PET-HIGH-FIRST-45-PC-BULK-ACQUISITION-20261124.md)。467标称7.5模板中440完整行同指纹，123正权重遇敌、118双宠标记、94含Lv1；保存混合2.5总2587正权重槽、281楼层，266同档DAT、267旧地图名候选。新增75未覆盖双标记模板、65含Lv1，不计官方新种。NEXT PET-HIGH-FIRST-46，仅PET。
