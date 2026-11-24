@@ -1,0 +1,559 @@
+{
+  "schema": "stoneage.pet.high_first_23.2009_acquisition_dossiers.r1",
+  "source_head": "53ffd9e8fdc72458dd82bb90254bd3c9d61f6ed8",
+  "source_pins_git_blob": {
+    "research/recovered/STONEAGE-PET80-YEAR2009-JP-KR-OFFICIAL-PET-PARTIAL-SOURCE-AUDIT-R1.json": "76ffbb8bc7e090ba83a89e31e540ab2ed9420ce0",
+    "research/recovered/STONEAGE-PET81-KR2009-COW-SNOWLEOPARD-SOURCE-AUDIT-R1.json": "8a1cd95a74b5a8a86ce24cebc1016df00e52c2c1",
+    "research/recovered/STONEAGE-PET82-YEAR2009-FIVE-REGION-SOURCE-BOUNDED-AUDIT-R1.json": "72fee65264e09e38bd7ec31a1370255bfae4bda4",
+    "research/recovered/STONEAGE-JP2009-GUILD-HAKUEN-SOURCE-R1.json": "d266f3e07728f9bff2cb39aea9df24639a8028fd",
+    "research/recovered/STONEAGE-JP2009-KOKUEN-SOURCE-R1.json": "61c91c3d4316bd0b1c0a5262bfb907a88577f886",
+    "research/pets/PET-HIGH-FIRST-22-JP-KR-NAMED-INDEX-R1.json": "bc0b4920cc5954c8b847d07f1342b3f5674d5b1c"
+  },
+  "scope": "2009 original classic PC Japan and Korea source-bound records; additive to PET22, not global species",
+  "records": [
+    {
+      "research_id": "PC-JP-HAKUEN",
+      "region": "JP",
+      "original_name": "ハクエン",
+      "attestation": {
+        "date": "2009-04-28",
+        "url": "https://www.4gamer.net/games/013/G001377/20090428039/",
+        "grade": "PERIOD_OPERATOR_RELEASE_RECHECKED"
+      },
+      "acquisition": {
+        "kind": "LIMITED_RANDOM_ITEM_AND_EXCHANGE",
+        "window": [
+          "2009-04-28",
+          "2009-05-12"
+        ],
+        "price_gstone": 400,
+        "shop_npc": "便利商店スタッフ",
+        "ticket": "白炎チケット",
+        "exchange_targets": [
+          "白炎の袋",
+          "白炎スタンプ"
+        ],
+        "random_items_per_bag": 1,
+        "declared_bag_item_types": 7,
+        "visible_named_rows": 6,
+        "unidentified_item_count": 1,
+        "pet_exchange_ticket": "白炎交換チケット",
+        "exchange_npc": "白炎系交換員",
+        "absolute_rates": null,
+        "guaranteed_pet": false
+      },
+      "official_first_release": null,
+      "native_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "base_stat_ranges": null,
+      "element_values": null,
+      "growth_formula": null,
+      "innate_skills": null,
+      "skill_slots": null,
+      "riding": null,
+      "wild_spawn_coordinates": null,
+      "actual_player_grant_verified": false,
+      "visual_refs": [
+        {
+          "url": "https://www.4gamer.net/games/013/G001377/20090428039/TN/003.gif",
+          "association": "ARTICLE_NAMED_PET_HEADING",
+          "current_access": "UNSUPPORTED_GIF",
+          "sha256": null
+        }
+      ]
+    },
+    {
+      "research_id": "PC-JP-KOKUEN",
+      "region": "JP",
+      "original_name": "コクエン",
+      "attestation": {
+        "date": "2009-06-29",
+        "reported_campaign_start": "2009-06-23",
+        "url": "https://www.4gamer.net/games/013/G001377/20090629031/",
+        "grade": "PERIOD_OPERATOR_RELEASE_RECHECKED"
+      },
+      "acquisition": {
+        "kind": "LIMITED_RANDOM_ITEM_AND_EXCHANGE",
+        "window": [
+          "2009-06-23",
+          "2009-07-21"
+        ],
+        "bag": {
+          "name": "黒炎の袋",
+          "price": 400,
+          "currency_as_written": "Gstone",
+          "random_item_count": 1,
+          "declared_item_types": 6,
+          "listed_item_types": [
+            "耐久のほら貝袋(黒炎)",
+            "気力のほら貝袋(黒炎)",
+            "黒炎変身薬",
+            "黒炎変身鎧チケット",
+            "黒炎再抽選チケット",
+            "黒炎交換チケット"
+          ],
+          "outcome_probabilities": null,
+          "pet_guaranteed_on_open": false,
+          "item_id": null
+        },
+        "conversion": {
+          "eligible_base_item_names_as_written": [
+            "耐久のほら貝袋",
+            "気力のほら貝袋",
+            "黒炎変身薬"
+          ],
+          "base_names_to_suffixed_table_names_same_id": null,
+          "mixed_total_for_armor_ticket": 10,
+          "example_mixture_counts": [
+            3,
+            1,
+            6
+          ],
+          "example_is_exclusive_required_recipe": false,
+          "armor_tickets_for_reroll_ticket": 5,
+          "reroll_tickets_for_pet_ticket": 5,
+          "item_consumption_or_atomicity_verified": false,
+          "guaranteed_bag_open_count_for_pet": null,
+          "expected_gstone_cost_for_pet": null
+        },
+        "exchange_npc": {
+          "name": "黒炎系交換員",
+          "location_label": "CP交換所",
+          "npc_id": null,
+          "coordinates": null
+        },
+        "pet_ticket": "黒炎交換チケット",
+        "absolute_rates": null,
+        "guaranteed_pet": false
+      },
+      "official_first_release": null,
+      "native_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "base_stat_ranges": null,
+      "element_values": null,
+      "growth_formula": null,
+      "innate_skills": null,
+      "skill_slots": null,
+      "riding": null,
+      "wild_spawn_coordinates": null,
+      "actual_player_grant_verified": false,
+      "visual_refs": [
+        {
+          "url": "https://www.4gamer.net/games/013/G001377/20090629031/SS/001.jpg",
+          "bytes": 68476,
+          "sha256": "2949b7719977756fe0789b25f687122ba1b9c0381979bd8bf95e606f7bca59a0",
+          "format": "JPEG",
+          "size": [
+            270,
+            363
+          ],
+          "mode": "RGB",
+          "association": "NAMED_PET_STATUS_PANEL",
+          "current_access": "RECHECK_IMAGE_FAILED_REUSE_PRIOR_PINNED_TRANSCRIPTION",
+          "hash_scope": "previous acquired source image, not new bytes"
+        }
+      ],
+      "status_samples": [
+        {
+          "name": "コクエン",
+          "level": 1,
+          "exp_display": 0,
+          "next_display": 2,
+          "hp_display": [
+            72,
+            72
+          ],
+          "attack_display": 18,
+          "defense_display": 19,
+          "agility_display": 15,
+          "loyalty_display": 0,
+          "element_numeric_values": null,
+          "original_sprite_or_model_id": null,
+          "source_sha256": "2949b7719977756fe0789b25f687122ba1b9c0381979bd8bf95e606f7bca59a0",
+          "scope": "ONE_PROMOTIONAL_STATUS_PANEL_SAMPLE_NOT_BASE_RANGE_OR_AUTHENTICATED_RUNTIME",
+          "species_base_values": false
+        }
+      ]
+    },
+    {
+      "research_id": "PC-KR-COW-MILK",
+      "region": "KR",
+      "original_name": "젖소",
+      "attestation": {
+        "date": "2009-04-29",
+        "url": "https://www.gamechosun.co.kr/webzine/article/view.php?no=59534",
+        "same_origin_reprint": "https://www.inven.co.kr/webzine/news/?news=20964",
+        "grade": "PERIOD_CJ_RELEASE_RECHECKED"
+      },
+      "acquisition": {
+        "kind": "BATTLE_EVENT_PET_OFFER",
+        "event": "RETURN_OF_THE_COWS",
+        "end_date": "2009-05-10",
+        "start_date": null,
+        "mechanism": "battle_specific_monster_then_once_daily_event_pet_award_opportunity",
+        "offer_frequency_per_day": 1,
+        "complete_cow_roster": false,
+        "monster_name": null,
+        "probability": null
+      },
+      "official_first_release": null,
+      "native_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "base_stat_ranges": null,
+      "element_values": null,
+      "growth_formula": null,
+      "innate_skills": null,
+      "skill_slots": null,
+      "riding": null,
+      "wild_spawn_coordinates": null,
+      "actual_player_grant_verified": false
+    },
+    {
+      "research_id": "PC-KR-COW-BLACK",
+      "region": "KR",
+      "original_name": "흑우",
+      "attestation": {
+        "date": "2009-04-29",
+        "url": "https://www.gamechosun.co.kr/webzine/article/view.php?no=59534",
+        "same_origin_reprint": "https://www.inven.co.kr/webzine/news/?news=20964",
+        "grade": "PERIOD_CJ_RELEASE_RECHECKED"
+      },
+      "acquisition": {
+        "kind": "BATTLE_EVENT_PET_OFFER",
+        "event": "RETURN_OF_THE_COWS",
+        "end_date": "2009-05-10",
+        "start_date": null,
+        "mechanism": "battle_specific_monster_then_once_daily_event_pet_award_opportunity",
+        "offer_frequency_per_day": 1,
+        "complete_cow_roster": false,
+        "monster_name": null,
+        "probability": null
+      },
+      "official_first_release": null,
+      "native_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "base_stat_ranges": null,
+      "element_values": null,
+      "growth_formula": null,
+      "innate_skills": null,
+      "skill_slots": null,
+      "riding": null,
+      "wild_spawn_coordinates": null,
+      "actual_player_grant_verified": false
+    },
+    {
+      "research_id": "PC-KR-COW-FIRE",
+      "region": "KR",
+      "original_name": "화우",
+      "attestation": {
+        "date": "2009-04-29",
+        "url": "https://www.gamechosun.co.kr/webzine/article/view.php?no=59534",
+        "same_origin_reprint": "https://www.inven.co.kr/webzine/news/?news=20964",
+        "grade": "PERIOD_CJ_RELEASE_RECHECKED"
+      },
+      "acquisition": {
+        "kind": "BATTLE_EVENT_PET_OFFER",
+        "event": "RETURN_OF_THE_COWS",
+        "end_date": "2009-05-10",
+        "start_date": null,
+        "mechanism": "battle_specific_monster_then_once_daily_event_pet_award_opportunity",
+        "offer_frequency_per_day": 1,
+        "complete_cow_roster": false,
+        "monster_name": null,
+        "probability": null
+      },
+      "official_first_release": null,
+      "native_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "base_stat_ranges": null,
+      "element_values": null,
+      "growth_formula": null,
+      "innate_skills": null,
+      "skill_slots": null,
+      "riding": null,
+      "wild_spawn_coordinates": null,
+      "actual_player_grant_verified": false
+    },
+    {
+      "research_id": "PC-KR-HANU",
+      "region": "KR",
+      "original_name": "하누",
+      "attestation": {
+        "date": "2009-04-29",
+        "url": "https://www.gamechosun.co.kr/webzine/article/view.php?no=59534",
+        "same_origin_reprint": "https://www.inven.co.kr/webzine/news/?news=20964",
+        "grade": "PERIOD_CJ_RELEASE_RECHECKED"
+      },
+      "acquisition": {
+        "kind": "BATTLE_EVENT_PET_OFFER",
+        "event": "RETURN_OF_THE_COWS",
+        "end_date": "2009-05-10",
+        "start_date": null,
+        "mechanism": "battle_specific_monster_then_once_daily_event_pet_award_opportunity",
+        "offer_frequency_per_day": 1,
+        "complete_cow_roster": false,
+        "monster_name": null,
+        "probability": null
+      },
+      "official_first_release": null,
+      "native_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "base_stat_ranges": null,
+      "element_values": null,
+      "growth_formula": null,
+      "innate_skills": null,
+      "skill_slots": null,
+      "riding": null,
+      "wild_spawn_coordinates": null,
+      "actual_player_grant_verified": false
+    },
+    {
+      "research_id": "PC-KR-SNOW-LEOPARD",
+      "region": "KR",
+      "original_name": "설표",
+      "attestation": {
+        "date": "2009-04-29",
+        "url": "https://www.gamechosun.co.kr/webzine/article/view.php?no=59534",
+        "same_origin_reprint": "https://www.inven.co.kr/webzine/news/?news=20964",
+        "grade": "PERIOD_CJ_RELEASE_RECHECKED"
+      },
+      "acquisition": {
+        "kind": "TEMPORARY_ADOPTION_ELIGIBILITY",
+        "event": "ENDANGERED_SNOW_LEOPARD_TEMPORARY_ADOPTION",
+        "end_date": "2009-05-10",
+        "start_date": null,
+        "mechanism": "temporary_adoption_then_level_30_grants_formal_adoption_ELIGIBILITY",
+        "required_level_for_eligibility": 30,
+        "automatic_permanent_grant_verified": false
+      },
+      "official_first_release": null,
+      "native_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "base_stat_ranges": null,
+      "element_values": null,
+      "growth_formula": null,
+      "innate_skills": null,
+      "skill_slots": null,
+      "riding": null,
+      "wild_spawn_coordinates": null,
+      "actual_player_grant_verified": false
+    },
+    {
+      "research_id": "PC-KR-PLATIUS",
+      "region": "KR",
+      "original_name": "플라티우스",
+      "attestation": {
+        "date": "2009-07-28",
+        "url": "https://www.gamemeca.com/view.php?gid=79470",
+        "grade": "PERIOD_CJ_RELEASE_RECHECKED"
+      },
+      "acquisition": {
+        "kind": "LIMITED_QUEST_NPC_REWARD",
+        "window": [
+          "2009-07-28",
+          "2009-08-16"
+        ],
+        "quest_npc_name": null,
+        "quest_requirements": null,
+        "map_piece_count_separate_item_reward": 6
+      },
+      "official_first_release": null,
+      "native_id": null,
+      "original_sprite_id": null,
+      "original_animation": null,
+      "base_stat_ranges": null,
+      "element_values": null,
+      "growth_formula": null,
+      "innate_skills": null,
+      "skill_slots": null,
+      "riding": null,
+      "wild_spawn_coordinates": null,
+      "actual_player_grant_verified": false,
+      "source_creature_description": "수장룡 펫"
+    }
+  ],
+  "appearance_only_relations": [
+    {
+      "region": "JP",
+      "name": "フロークス",
+      "source_date": "2009-10-13",
+      "url": "https://www.4gamer.net/games/013/G001377/20091013047/",
+      "kind": "TRANSFORMATION_ARMOR_TARGET_NOT_OBTAINABLE_PET_PROOF",
+      "linked_named_dossier": null,
+      "native_id": null,
+      "actual_pet_grant_verified": false
+    },
+    {
+      "region": "JP",
+      "name": "シグア",
+      "source_date": "2009-10-13",
+      "url": "https://www.4gamer.net/games/013/G001377/20091013047/",
+      "kind": "TRANSFORMATION_ARMOR_TARGET_NOT_OBTAINABLE_PET_PROOF",
+      "linked_named_dossier": null,
+      "native_id": null,
+      "actual_pet_grant_verified": false
+    },
+    {
+      "region": "JP",
+      "name": "テスペント",
+      "source_date": "2009-10-13",
+      "url": "https://www.4gamer.net/games/013/G001377/20091013047/",
+      "kind": "TRANSFORMATION_ARMOR_TARGET_NOT_OBTAINABLE_PET_PROOF",
+      "linked_named_dossier": null,
+      "native_id": null,
+      "actual_pet_grant_verified": false
+    },
+    {
+      "region": "JP",
+      "name": "コクエン",
+      "source_date": "2009-10-13",
+      "url": "https://www.4gamer.net/games/013/G001377/20091013047/",
+      "kind": "TRANSFORMATION_ARMOR_TARGET_NOT_OBTAINABLE_PET_PROOF",
+      "linked_named_dossier": "PC-JP-KOKUEN",
+      "native_id": null,
+      "actual_pet_grant_verified": false
+    },
+    {
+      "region": "JP",
+      "name": "セイリュウ",
+      "source_date": "2009-10-13",
+      "url": "https://www.4gamer.net/games/013/G001377/20091013047/",
+      "kind": "TRANSFORMATION_ARMOR_TARGET_NOT_OBTAINABLE_PET_PROOF",
+      "linked_named_dossier": null,
+      "native_id": null,
+      "actual_pet_grant_verified": false
+    }
+  ],
+  "unresolved_reward_labels": [
+    {
+      "label": "氷龍",
+      "ticket": "氷龍チケット",
+      "operator_new_pet_claim": true,
+      "source_date": "2009-10-13",
+      "url": "https://www.4gamer.net/games/013/G001377/20091013047/",
+      "exact_native_name": null,
+      "native_id": null,
+      "actual_player_grant_verified": false
+    },
+    {
+      "label": "黒龍",
+      "ticket": "黒龍チケット",
+      "operator_new_pet_claim": null,
+      "source_date": "2009-10-13",
+      "url": "https://www.4gamer.net/games/013/G001377/20091013047/",
+      "exact_native_name": null,
+      "native_id": null,
+      "actual_player_grant_verified": false
+    },
+    {
+      "label": "狐系",
+      "ticket": "狐チケット",
+      "choice_count": 4,
+      "source_date": "2009-10-13",
+      "url": "https://www.4gamer.net/games/013/G001377/20091013047/",
+      "exact_native_name": null,
+      "native_id": null,
+      "actual_player_grant_verified": false
+    }
+  ],
+  "existing_named_dossier_attestations": [
+    {
+      "region": "JP",
+      "name": "フクゥーリ",
+      "date": "2009-10-07",
+      "url": "https://www.4gamer.net/games/013/G001377/20091007007/",
+      "kind": "REPEAT_CAPTURE_CAMPAIGN",
+      "event_window": [
+        "2009-10-06",
+        "2009-11-04"
+      ],
+      "visual": {
+        "url": "https://www.4gamer.net/games/013/G001377/20091007007/TN/004.gif",
+        "association": "ARTICLE_NAMED_PET_HEADING",
+        "current_access": "UNSUPPORTED_GIF",
+        "sha256": null
+      },
+      "existing_pet22": true
+    },
+    {
+      "region": "JP",
+      "name": "ベガルガー",
+      "date": "2009-10-13",
+      "url": "https://www.4gamer.net/games/013/G001377/20091013047/",
+      "kind": "STATUS_REROLL_ELIGIBILITY",
+      "existing_pet22": true
+    },
+    {
+      "region": "JP",
+      "name": "ゴッドサーベル",
+      "date": "2009-10-13",
+      "url": "https://www.4gamer.net/games/013/G001377/20091013047/",
+      "kind": "STATUS_REROLL_ELIGIBILITY",
+      "existing_pet22": true
+    },
+    {
+      "region": "JP",
+      "name": "ベルロイガー",
+      "date": "2009-10-13",
+      "url": "https://www.4gamer.net/games/013/G001377/20091013047/",
+      "kind": "STATUS_REROLL_ELIGIBILITY",
+      "existing_pet22": true
+    },
+    {
+      "region": "JP",
+      "name": "ギルシス",
+      "date": "2009-10-13",
+      "url": "https://www.4gamer.net/games/013/G001377/20091013047/",
+      "kind": "STATUS_REROLL_ELIGIBILITY",
+      "existing_pet22": true
+    }
+  ],
+  "operator_population_statement": {
+    "source_date": "2009-10-07",
+    "url": "https://www.4gamer.net/games/013/G001377/20091007007/",
+    "japan_claimed_pet_types": 229,
+    "previous_2008_claim": "over 200",
+    "official_worldwide_population": null,
+    "net_new_species_count": null
+  },
+  "planned_unverified_december_updates": {
+    "id": "JP2009-DIGIPARK-1126-DEC-FUTURE",
+    "region": "JP",
+    "attestation_date": "2009-11-26",
+    "url": "https://www.4gamer.net/games/013/G001377/20091126051/",
+    "kind": "REUSED_PERIOD_DIGIPARK_ORIGINAL_2009_DEC_PLANS_NOT_ACTUAL_PATCH",
+    "planned_2009_dates": [
+      "2009-12-01",
+      "2009-12-22",
+      "2009-12-29"
+    ],
+    "planned_2010_dates": [
+      "2010-01-12",
+      "2010-01-19"
+    ],
+    "notice_allows_schedule_change": true,
+    "actual_dec_updates_verified": false,
+    "new_pets_named": false
+  },
+  "summary": {
+    "new_named_acquisition_dossiers": 8,
+    "new_jp": 2,
+    "new_kr": 6,
+    "existing_pet22_name_reattestations": 5,
+    "combined_bounded_acquisition_or_other_pet22_named_records": 37,
+    "appearance_only_names_not_in_new_or_previous_dossiers": 4,
+    "unresolved_label_groups": 3,
+    "prior_pinned_status_samples": 1,
+    "new_raw_client_bytes": 0,
+    "new_raw_image_bytes": 0
+  },
+  "official_species_count": null,
+  "original_assets_published": false
+}

@@ -1,0 +1,21 @@
+name: PET-HIGH-FIRST-23 acquisition dossiers replay
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_23.py'
+      - 'research/pets/PET-HIGH-FIRST-23-2009-ACQUISITION-DOSSIERS-R1.json'
+      - '.github/workflows/pet-high-first-23.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_23.py'
+      - 'research/pets/PET-HIGH-FIRST-23-2009-ACQUISITION-DOSSIERS-R1.json'
+      - '.github/workflows/pet-high-first-23.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/stoneage_pet_high_first_23.py
