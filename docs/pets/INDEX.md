@@ -439,3 +439,8 @@
 ## 2026-11-24｜PET-HIGH-FIRST-21 猪鼠年兽分源档案
 
 [8条具名候选](TW-2007-2008-YEAR-BEAST-CANDIDATES.md) · [机读记录](../../research/pets/PET-HIGH-FIRST-21-LATE-YEAR-BEAST-SOURCE-R1.json) · [续接](../continuity/STONEAGE-PET-HIGH-FIRST-21-LATE-YEAR-BEAST-20261124.md)。8处元素冲突、1处异名，后期图鉴数值不反投原服；现有7.5/8.5索引无精确对应，晚期原件待补。PET唯一。
+
+
+## 2026-11-24｜PET-HIGH-FIRST-22 日韩具名档案
+
+[29份区域原名记录](JP-KR-2007-2009-NAMED-PETS.md) · [机读记录](../../research/pets/PET-HIGH-FIRST-22-JP-KR-NAMED-INDEX-R1.json) · [续接](../continuity/STONEAGE-PET-HIGH-FIRST-22-JP-KR-NAMED-INDEX-20261124.md)。2007年2月4只具名稀有宠、13具名宣传图链接、4组跨年名称掩码候选；非原生ID或官方首发认证。PET唯一。
