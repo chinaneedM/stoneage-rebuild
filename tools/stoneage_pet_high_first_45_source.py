@@ -53,15 +53,15 @@ def derive(d,members):
         ((line,b),)=ai[area['id']]
         assert (line,int(b[1]),list(map(int,b[2:6])))==(area['source_line'],area['floor'],area['raw_rectangle'])
         assert [x.decode('ascii') for x in b[6:10]]==area['raw_fields_6_9']
-        assert all((int(b[10+slot]),int(b[20+slot]))==(gid,int(weight)) for slot,gid,weight,_ in area['group_slots'])
+        assert all((int(b[10+slot]),b[20+slot].decode('ascii'))==(gid,weight) for slot,gid,weight,_ in area['group_slots'])
         area_rows[area['id']]={'id':area['id'],'source_line':line,'floor':area['floor'],'raw_rectangle':area['raw_rectangle'],'raw_event_fields':list(map(r40.num,b[30:33])),'raw_rate_fields':list(map(r40.num,b[6:8])),'inverted_rectangle':area['id'] in w['inverted_coordinate_area_ids']}
     routes=collections.defaultdict(list)
     for area in w['source_areas']:
         for slot,gid,gw,status in area['group_slots']:
-            if status!='GROUP_FOUND' or int(gw)<=0:continue
+            if status!='GROUP_FOUND' or not gw or int(gw)<=0:continue
             g=groups[gid]
             for es,eid,ew,estatus in g['enemy_slots']:
-                if estatus!='INSTANCE_FOUND' or int(ew)<=0:continue
+                if estatus!='INSTANCE_FOUND' or not ew or int(ew)<=0:continue
                 e=instance_rows[eid];t=templates[e['template_id']];b=bases[t['id']]
                 assert (t['graphic'],t['raw_petflag'])==(b[2],b[3])
                 if t['raw_petflag']!=1:continue
@@ -85,7 +85,7 @@ def derive(d,members):
     assert sum(r['positive_route_count']>0 for r in rows)==123
     # Keep mixed25-only or mismatched IDs in their own source namespace too.
     all_routes=[{'template_id':tid,'graphic':bases[tid][2],'source_template_row_sha256':bases[tid][16],'routes':rr} for tid,rr in sorted(routes.items())]
-    return {'claimed_tw75_rows':rows,'mixed25_template_routes':all_routes,'route_columns':['area_id','area_group_slot','group_id','group_enemy_slot','enemy_instance_id','area_group_weight','group_enemy_weight'],'instance_metadata':list(instance_rows.values()),'area_metadata':list(area_rows.values()),'summary':{'claimed_rows':len(rows),'exact_shared_rows':440,'exact_shared_positive_templates':123,'mixed25_positive_templates':len(routes),'exact_shared_double_flag_templates':sum(r['double_pet_flag_route_count']>0 for r in rows),'exact_shared_lv1_double_flag_templates':sum(r['lv1_double_flag_route_count']>0 for r in rows),'exact_positive_without_r41_or_r42':sum(r['positive_route_count']>0 and not r['previous_r41_template'] and not r['previous_r42_reward_template'] for r in rows),'mixed25_positive_routes':sum(map(len,routes.values())),'missing_group_ids':w['missing_group_ids_selected_group1_only'],'inverted_area_ids':w['inverted_coordinate_area_ids']},'original_game_executed':False,'official_same_deployment_verified':False,'official_capture_verified':False}
+    return {'claimed_tw75_rows':rows,'mixed25_template_routes':all_routes,'route_columns':['area_id','area_group_slot','group_id','group_enemy_slot','enemy_instance_id','area_group_weight','group_enemy_weight'],'instance_metadata':list(instance_rows.values()),'area_metadata':list(area_rows.values()),'summary':{'claimed_rows':len(rows),'exact_shared_rows':440,'exact_shared_positive_templates':123,'mixed25_positive_templates':len(routes),'exact_shared_double_flag_templates':sum(r['double_pet_flag_route_count']>0 for r in rows),'exact_shared_lv1_double_flag_templates':sum(r['lv1_double_flag_route_count']>0 for r in rows),'exact_positive_without_r41_or_r42':sum(r['positive_route_count']>0 and not r['previous_r41_template'] and not r['previous_r42_reward_template'] for r in rows),'mixed25_positive_routes':sum(map(len,routes.values())),'blank_area_group_weight_slots':sum(not x[2] for a in w['source_areas'] for x in a['group_slots']),'blank_group_enemy_weight_slots':sum(not x[2] for g in w['source_resolved_groups'] for x in g['enemy_slots']),'missing_group_ids':w['missing_group_ids_selected_group1_only'],'inverted_area_ids':w['inverted_coordinate_area_ids']},'original_game_executed':False,'official_same_deployment_verified':False,'official_capture_verified':False}
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--output',type=Path,required=True);args=ap.parse_args()
     d=load();w=d['world20']
