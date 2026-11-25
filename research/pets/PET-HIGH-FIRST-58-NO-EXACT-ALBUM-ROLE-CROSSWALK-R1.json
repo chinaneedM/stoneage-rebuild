@@ -1,0 +1,384 @@
+{
+  "schema": "stoneage.pet58.no_exact_album_role_crosswalk.r1",
+  "date": "2026-11-25",
+  "scope": "十个高版本保存模板缺同名相册的位置。图形共享和角色关系各自记录，模板不合并。",
+  "source_head": "c1ca85c281bd5fbb16437404b00c6026e357d4c2",
+  "source_tree": "868accff7da07b648fa1363928e1cd7e72630971",
+  "field_comparison_order": [
+    "base",
+    "initnum",
+    "lvup_literal",
+    "elements",
+    "skill_slots"
+  ],
+  "documentary_retrieval": "公开页面可见正文与段落定位，未保存原HTML字节。",
+  "documentary_sources": {
+    "pig_17173": {
+      "url": "https://news.17173.com/z/stoneage/renwu/sa40_05.htm",
+      "page_date": null,
+      "version_label": "4.0",
+      "lines": [
+        6,
+        34
+      ],
+      "grade": "ATTRIBUTED_PLAYER_GUIDE",
+      "finding": "微笑赢家记述小猪森林暂领50级莱比，练至60级后找欧弟交任务，得到另名乌力莱德。"
+    },
+    "quest_index_2003": {
+      "url": "https://games.sina.com.cn/zhqu/sta/rwgl.shtml",
+      "page_date": "2003-04-04",
+      "version_label": "4.0",
+      "lines": [
+        27,
+        40
+      ],
+      "grade": "PERIOD_MEDIA_INDEX",
+      "finding": "收录风城小猪任务题名，未给莱比等级或具体首发日期。"
+    },
+    "dragon_2003": {
+      "url": "https://games.sina.com.cn/zhqu/sta/50renwu4.shtml",
+      "page_date": "2003-04-03",
+      "version_label": "5.0",
+      "lines": [
+        27,
+        36
+      ],
+      "grade": "PERIOD_GUIDE",
+      "finding": "攻略写阿谷拔交出约20级的布洛多多，练到80级后由库沙达收回并给号角。原文有不洛多多、20-级字样。"
+    },
+    "dragon_review_2003": {
+      "url": "https://news.17173.com/z/stoneage/content/2003-2-17/n910_826302.html",
+      "page_date": "2003-02-17",
+      "version_label": "5.0",
+      "lines": [
+        10,
+        39
+      ],
+      "grade": "ATTRIBUTED_PERIOD_PLAYER_REVIEW",
+      "finding": "天空战记001把任务名布洛多多与普通宠阿米朵称为同类；对F线用了捕捉措辞，又列阿米朵为环岛奖品，并说自己未走F线。"
+    },
+    "eot_f_2003": {
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-06-03/10614.shtml",
+      "page_date": "2003-06-03",
+      "version_label": "5.0（专区目录归类）",
+      "lines": [
+        73,
+        96
+      ],
+      "grade": "PERIOD_GUIDE_REWARD_LIST",
+      "finding": "终点检查员随机给赠品，宠物清单含阿米朵。页面实例领到的是克拉尔。"
+    },
+    "catalogue_2003": {
+      "url": "https://games.sina.com.cn/zhqu/sta/cwzl/chongwu03.shtml",
+      "page_date": "2003-04-07",
+      "version_label": null,
+      "lines": [
+        125,
+        135
+      ],
+      "grade": "PERIOD_PLAYER_CATALOGUE",
+      "finding": "第199条把阿米朵列为EOT F环岛任务奖品，地4风6。199为网页序号。"
+    },
+    "zoo_2003": {
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-06-03/10646.shtml",
+      "page_date": "2003-06-03",
+      "version_label": "3.0（专区目录归类）",
+      "lines": [
+        27,
+        37,
+        103,
+        111
+      ],
+      "grade": "PERIOD_GUIDE",
+      "finding": "记录席格交出失踪的拉斯基，玩家送回三只动物后获布伊胖。该页未给拉斯基模板编号。"
+    },
+    "gugua_17173": {
+      "url": "https://news.17173.com/z/stoneage/renwu/sa30_06.htm",
+      "page_date": null,
+      "version_label": "3.0",
+      "anchor": "培养古瓜",
+      "grade": "PLAYER_GUIDE",
+      "finding": "叙述先领1级古瓜、交给欧司马，随后找姆罗伊取得100级古瓜。",
+      "lines": [
+        13,
+        25
+      ]
+    },
+    "gugua_2003": {
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-06-05/10997.shtml",
+      "page_date": "2003-06-05",
+      "version_label": "3.0（专区目录归类）",
+      "lines": [
+        45,
+        64
+      ],
+      "grade": "PERIOD_GUIDE",
+      "finding": "支持古瓜为伴随任务的对象并最终归队，未写明100级。"
+    }
+  },
+  "rows": [
+    {
+      "position": 108,
+      "name": "新手貝魯卡",
+      "template_id": 161,
+      "graphic": 100327,
+      "master_row_sha256": "26bf74dbb3eae136c6875fb1704a4c8231abc8e0eb9e7b6fc7c9e506147b874c",
+      "selected_instance_id": 2481,
+      "selected_level": [
+        1,
+        1
+      ],
+      "selected_instance_pet_flag": 1,
+      "role": "SAVED_TRAINER_REWARD_VARIANT",
+      "related_position": 131,
+      "other_same_graphic_positions": [
+        131
+      ],
+      "compared_fields_differ": [
+        "base",
+        "initnum",
+        "lvup_literal"
+      ],
+      "documentary_sources": [],
+      "official_acquisition_verified": false,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 109,
+      "name": "新手貝魯伊卡",
+      "template_id": 162,
+      "graphic": 100328,
+      "master_row_sha256": "a1c01650eaf1d15f97764f6e54e93bde3bf3df67e71e96e987b591916407eade",
+      "selected_instance_id": 2482,
+      "selected_level": [
+        1,
+        1
+      ],
+      "selected_instance_pet_flag": 1,
+      "role": "SAVED_TRAINER_REWARD_VARIANT",
+      "related_position": 132,
+      "other_same_graphic_positions": [
+        132
+      ],
+      "compared_fields_differ": [
+        "base",
+        "initnum",
+        "lvup_literal"
+      ],
+      "documentary_sources": [],
+      "official_acquisition_verified": false,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 110,
+      "name": "新手格魯西斯",
+      "template_id": 163,
+      "graphic": 100329,
+      "master_row_sha256": "23eccb993bab5bd8f9179addf5cf9ad6ae1d92049e2b624f39cec600f0046f36",
+      "selected_instance_id": 2483,
+      "selected_level": [
+        1,
+        1
+      ],
+      "selected_instance_pet_flag": 1,
+      "role": "SAVED_TRAINER_REWARD_VARIANT",
+      "related_position": 133,
+      "other_same_graphic_positions": [
+        133,
+        189
+      ],
+      "compared_fields_differ": [
+        "base",
+        "initnum",
+        "lvup_literal"
+      ],
+      "documentary_sources": [],
+      "official_acquisition_verified": false,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 111,
+      "name": "新手金格薩貝魯",
+      "template_id": 164,
+      "graphic": 100330,
+      "master_row_sha256": "a37db0aabd1a185e4eb637702b6e2a4730a44a2b29014c44b710b24bcde8b1db",
+      "selected_instance_id": 2484,
+      "selected_level": [
+        1,
+        1
+      ],
+      "selected_instance_pet_flag": 1,
+      "role": "SAVED_TRAINER_REWARD_VARIANT",
+      "related_position": 134,
+      "other_same_graphic_positions": [
+        134
+      ],
+      "compared_fields_differ": [
+        "base",
+        "initnum",
+        "lvup_literal",
+        "skill_slots"
+      ],
+      "documentary_sources": [],
+      "official_acquisition_verified": false,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 309,
+      "name": "動物園養的拉斯基",
+      "template_id": 854,
+      "graphic": 100853,
+      "master_row_sha256": "55a80d138a068cdfcad57f34e99d4d64dd0e90a62871bc616cc291d1f3d7b379",
+      "selected_instance_id": 1733,
+      "selected_level": [
+        1,
+        1
+      ],
+      "selected_instance_pet_flag": 1,
+      "role": "LATER_ZOO_RETURN_OBJECT_CANDIDATE",
+      "related_position": 242,
+      "other_same_graphic_positions": [
+        242
+      ],
+      "compared_fields_differ": [
+        "base",
+        "initnum",
+        "lvup_literal"
+      ],
+      "documentary_sources": [
+        "zoo_2003"
+      ],
+      "official_acquisition_verified": false,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 317,
+      "name": "古瓜",
+      "template_id": 913,
+      "graphic": 100015,
+      "master_row_sha256": "f9664e606019d1874649c34bdb6aab676c13cd9c82d27b81818778d94c60c97e",
+      "selected_instance_id": 1816,
+      "selected_level": [
+        1,
+        1
+      ],
+      "selected_instance_pet_flag": 1,
+      "role": "REPORTED_GUGUA_TEMPORARY_LV1_STAGE",
+      "related_position": null,
+      "other_same_graphic_positions": [],
+      "compared_fields_differ": null,
+      "documentary_sources": [
+        "gugua_17173",
+        "gugua_2003"
+      ],
+      "official_acquisition_verified": false,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 318,
+      "name": "古瓜",
+      "template_id": 914,
+      "graphic": 100018,
+      "master_row_sha256": "8b6beaa55d514393dbd1681b3883d2aa4e4389e1fb088f718949219f8e85bc99",
+      "selected_instance_id": 1818,
+      "selected_level": [
+        100,
+        100
+      ],
+      "selected_instance_pet_flag": 1,
+      "role": "REPORTED_GUGUA_TEMPORARY_LV100_STAGE",
+      "related_position": null,
+      "other_same_graphic_positions": [],
+      "compared_fields_differ": null,
+      "documentary_sources": [
+        "gugua_17173",
+        "gugua_2003"
+      ],
+      "official_acquisition_verified": false,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 330,
+      "name": "萊比",
+      "template_id": 966,
+      "graphic": 100821,
+      "master_row_sha256": "6fdf44c24743488ec9bae9095d59fe2873e38d22ab3c807c348374442ce800d6",
+      "selected_instance_id": 1929,
+      "selected_level": [
+        50,
+        50
+      ],
+      "selected_instance_pet_flag": 0,
+      "role": "REPORTED_LAIBI_TEMPORARY_TRANSFER_LEVEL_MATCH",
+      "related_position": 210,
+      "other_same_graphic_positions": [
+        210
+      ],
+      "compared_fields_differ": [],
+      "documentary_sources": [
+        "pig_17173",
+        "quest_index_2003"
+      ],
+      "official_acquisition_verified": false,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 386,
+      "name": "布洛多多",
+      "template_id": 1042,
+      "graphic": 100908,
+      "master_row_sha256": "19b7c59d8c8a7ce6bd2cde9e8e82ef8ccd40b0d3d3239ea7b3839a41e83ee201",
+      "selected_instance_id": 2048,
+      "selected_level": [
+        20,
+        20
+      ],
+      "selected_instance_pet_flag": 0,
+      "role": "REPORTED_BULUODUODUO_TEMPORARY_TRANSFER_LEVEL_MATCH",
+      "related_position": 297,
+      "other_same_graphic_positions": [
+        297
+      ],
+      "compared_fields_differ": [
+        "initnum"
+      ],
+      "documentary_sources": [
+        "dragon_2003",
+        "dragon_review_2003",
+        "eot_f_2003",
+        "catalogue_2003"
+      ],
+      "official_acquisition_verified": false,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 454,
+      "name": "美拉蛋",
+      "template_id": 1145,
+      "graphic": 101489,
+      "master_row_sha256": "61f9ab7106764f6bc09d5c11ccda8f4901b8250fdc6522edd092653f9d19a536",
+      "selected_instance_id": 2479,
+      "selected_level": [
+        1,
+        1
+      ],
+      "selected_instance_pet_flag": 1,
+      "role": "RETAINED_EGG_OBJECT_CANDIDATE",
+      "related_position": 387,
+      "other_same_graphic_positions": [
+        387
+      ],
+      "compared_fields_differ": [
+        "base",
+        "initnum"
+      ],
+      "documentary_sources": [],
+      "official_acquisition_verified": false,
+      "retain_strict_gap": true
+    }
+  ],
+  "reopen_on": "取得可溯源的同部署原NPC脚本及加载证据、同版官服发放/回收记录，或能识别具体模板的原版实玩记录。",
+  "new_official_acquisition_closures": 0,
+  "strict_residual_positions": 67,
+  "official_species_count": null
+}

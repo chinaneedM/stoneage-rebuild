@@ -240,6 +240,13 @@ def build(d):
         for instance_id in row["matching_instance_tokens"]
     }
     variant52_by_position = {v["position"]: j for j, row in enumerate(d["hf52"]["rows"]) for v in row["master_variants"]}
+    roles58 = collections.defaultdict(list)
+    for j, row in enumerate(d["hf58"]["rows"]):
+        roles58[row["position"]].append(link("hf58", ["rows", j], row["role"]))
+        if row["related_position"] is not None:
+            roles58[row["related_position"]].append(
+                link("hf58", ["rows", j], "SHARED_GRAPHIC_WITH_SEPARATE_ROLE_CANDIDATE")
+            )
     coverage57_by_position = by_id(d["hf57"]["rows"], "position")
     special56_by_position = by_id(d["hf56"]["rows"], "position")
     egg54_by_position = {row["position"]: j for j,row in enumerate(d["hf54"]["rows"])}
@@ -297,6 +304,7 @@ def build(d):
                 ls.append(link(ref["source"], ["records" if ref["source"] == "fusion2003" else "rows",ref["row_index"]], ref["qualification"]))
             gap_detail = dict(gap_state=gap["gap_state"],evidence_categories=gap["evidence_categories"],selected_table=gap["selected_table"]["status"],alternate_table=gap["alternate_table"]["status"],official_acquisition_verified=False)
         ls.extend(acquisition_updates[i])
+        ls.extend(roles58[i])
         if i in coverage57_by_position:
             j57 = coverage57_by_position[i]
             r57 = d["hf57"]["rows"][j57]
@@ -477,6 +485,38 @@ def verify(m,d,entries):
     assert source_counts["hf57"] == 67
     assert {i for i,e in enumerate(high45) if any(l["source"]=="hf57" for l in e["linked_records"])} == set(d["hf49"]["remaining_gap_row_indices"])
     assert all(r["retain_strict_gap"] and not r["official_acquisition_verified"] for r in d["hf57"]["rows"])
+    roles58 = d["hf58"]["rows"]
+    master58 = d["tw75"]["pet_flag_1_field_projections"]
+    originals58 = {r["tw75_row_index"]: r for r in d["hf50"]["projection"]["records"]}
+    assert [r["position"] for r in roles58] == d["hf57"]["summary"]["positions_without_exact_name_grid"]
+    assert source_counts["hf58"] == 18
+    assert d["hf58"]["strict_residual_positions"] == len(d["hf49"]["remaining_gap_row_indices"])
+    assert d["hf58"]["new_official_acquisition_closures"] == 0 and d["hf58"]["official_species_count"] is None
+    for j, role in enumerate(roles58):
+        i = role["position"]
+        master = master58[i]
+        assert (role["template_id"], role["name"], role["graphic"], role["master_row_sha256"]) == (
+            master["template_id"], master["name"], master["graphic"], master["row_sha256"])
+        selected = originals58[i]["source_pairs"][0]
+        assert selected["match"] == "EXACT_ROW" and selected["base_row_sha256"] == master["row_sha256"]
+        instance, = selected["instances"]
+        assert (role["selected_instance_id"], role["selected_level"], role["selected_instance_pet_flag"]) == (
+            instance["instance_id"], instance["level"], instance["pet_flag"])
+        assert role["retain_strict_gap"] and not role["official_acquisition_verified"]
+        assert set(role["documentary_sources"]) <= d["hf58"]["documentary_sources"].keys()
+        same_graphic = [n for n, candidate in enumerate(master58)
+                        if n != i and candidate["graphic"] == master["graphic"]]
+        assert role["other_same_graphic_positions"] == same_graphic
+        assert any(l["source"] == "hf58" and l["pointer"] == ["rows", j] and l["qualification"] == role["role"]
+                   for l in high45[i]["linked_records"])
+        other = role["related_position"]
+        if other is not None:
+            assert other in same_graphic and master58[other]["row_sha256"] != master["row_sha256"]
+            assert role["compared_fields_differ"] == [
+                k for k in d["hf58"]["field_comparison_order"] if master[k] != master58[other][k]]
+            assert any(l["source"] == "hf58" and l["pointer"] == ["rows", j]
+                       and l["qualification"] == "SHARED_GRAPHIC_WITH_SEPARATE_ROLE_CANDIDATE"
+                       for l in high45[other]["linked_records"])
     assert source_counts["hf56"] == 10 and source_counts["hf56_replay"] == 14 and source_counts["hf56_preflight"] == 5
     assert {i for i,e in enumerate(high45) if any(l["source"]=="hf56" for l in e["linked_records"])} == {108,109,110,111,144,187,309,317,318,401}
     assert all(r["retain_strict_gap"] and not r["official_acquisition_verified"] for r in d["hf56"]["rows"])
