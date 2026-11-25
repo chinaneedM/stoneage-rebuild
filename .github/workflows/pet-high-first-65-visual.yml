@@ -1,0 +1,27 @@
+name: PET-HIGH-FIRST-65 full visual index
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_65_full_visual.py'
+      - '.github/workflows/pet-high-first-65-visual.yml'
+      - 'docs/continuity/STONEAGE-PET-HIGH-FIRST-65-FULL-VISUAL-INDEX-20261125.md'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_65_full_visual.py'
+      - '.github/workflows/pet-high-first-65-visual.yml'
+      - 'docs/continuity/STONEAGE-PET-HIGH-FIRST-65-FULL-VISUAL-INDEX-20261125.md'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m tools.stoneage_pet_high_first_65_full_visual --output "$RUNNER_TEMP/pet65.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet65-full-visual-index
+          path: ${{ runner.temp }}/pet65.json
+          retention-days: 7
+          if-no-files-found: error
