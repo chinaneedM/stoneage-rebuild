@@ -1,0 +1,27 @@
+name: PET-HIGH-FIRST-68 RD boundary
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_68_rd_boundary.py'
+      - '.github/workflows/pet-high-first-68-rd-boundary.yml'
+      - 'docs/continuity/STONEAGE-PET-HIGH-FIRST-68-RD-BOUNDARY-20261125.md'
+      - 'research/pets/PET-HIGH-FIRST-68-*'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_68_rd_boundary.py'
+      - '.github/workflows/pet-high-first-68-rd-boundary.yml'
+      - 'docs/continuity/STONEAGE-PET-HIGH-FIRST-68-RD-BOUNDARY-20261125.md'
+      - 'research/pets/PET-HIGH-FIRST-68-*'
+    types: [opened, synchronize, reopened, ready_for_review]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          test "$(git hash-object research/pets/PET-HIGH-FIRST-68-RD-BOUNDARY-R1.json)" = "3648e9b85a85cdb95b6c5207c548de8ecf177d5a"
+          test "$(git hash-object research/pets/PET-HIGH-FIRST-68-RD-BOUNDARY-SUMMARY-R1.json)" = "bf296c3bcf07b4992e3af34c69f5dc9e7f808127"
+          python -m tools.stoneage_pet_high_first_68_rd_boundary
