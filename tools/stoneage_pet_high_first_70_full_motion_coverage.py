@@ -217,5 +217,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument("--output",type=Path);a=p.parse_args()
     report=derive()
     if a.output:a.output.write_bytes(gzip.compress(bulk.stable(report),compresslevel=6,mtime=0))
+    snapshot=json.loads((P/"PET-HIGH-FIRST-70-FULL-MOTION-COVERAGE-SUMMARY-R1.json").read_bytes())
+    assert snapshot["summary"]==report["summary"], "fixed replay summary mismatch"
     print("PET70_SUMMARY="+json.dumps(report["summary"],sort_keys=True,separators=(",",":")),flush=True)
 if __name__=="__main__":main()
