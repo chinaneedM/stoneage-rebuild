@@ -113,7 +113,6 @@ def derive():
         assert len(b["index_pixels_sha256"])==64
         cn_keys[(b["rd_sha256"],b["rd_bytes"],b["width"],b["height"])].append(int(n))
     assert len(d["cn_pixels"]["cn50_observed_blocks"])==1536
-    tw_keys=defaultdict(list)
     tw_observed={}
     receipts=[d["tw_pixels"],d["tw_long"]["observations"],d["tw60"]["observations"]]
     assert all(r["source_files"]==receipts[0]["source_files"] for r in receipts)
@@ -185,5 +184,7 @@ def main():
     a=argparse.ArgumentParser(description=__doc__);a.add_argument("--output",type=Path);args=a.parse_args()
     report=derive()
     if args.output:args.output.write_text(json.dumps(report,ensure_ascii=False,sort_keys=True,separators=(",",":"))+"\n",encoding="utf-8")
+    snapshot=json.loads((ROOT/"research/pets/PET-HIGH-FIRST-66-MOTION-INHERITANCE-SUMMARY-R1.json").read_bytes())
+    assert snapshot["summary"]==report["summary"], "coverage summary differs from fixed replay"
     print("PET66_SUMMARY="+json.dumps(report["summary"],sort_keys=True,separators=(",",":")))
 if __name__=="__main__":main()

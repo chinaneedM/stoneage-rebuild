@@ -4,11 +4,13 @@ on:
     paths:
       - 'tools/stoneage_pet_high_first_66_motion_inheritance.py'
       - 'docs/continuity/STONEAGE-PET-HIGH-FIRST-66-MOTION-INHERITANCE-20261125.md'
+      - 'research/pets/PET-HIGH-FIRST-66-MOTION-INHERITANCE-SUMMARY-R1.json'
       - '.github/workflows/pet-high-first-66-motion.yml'
   pull_request:
     paths:
       - 'tools/stoneage_pet_high_first_66_motion_inheritance.py'
       - 'docs/continuity/STONEAGE-PET-HIGH-FIRST-66-MOTION-INHERITANCE-20261125.md'
+      - 'research/pets/PET-HIGH-FIRST-66-MOTION-INHERITANCE-SUMMARY-R1.json'
       - '.github/workflows/pet-high-first-66-motion.yml'
 permissions:
   contents: read
