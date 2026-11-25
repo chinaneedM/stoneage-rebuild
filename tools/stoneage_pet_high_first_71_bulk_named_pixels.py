@@ -174,6 +174,8 @@ def main():
         RECEIPT.write_bytes(gzip.compress(bulk.stable(report),compresslevel=6,mtime=0))
         SUMMARY.write_bytes(bulk.stable(summary))
     else:
+        assert blob(RECEIPT.read_bytes())=="157cdf72e74ecb328a15e16771cb36e18735ca08"
+        assert blob(SUMMARY.read_bytes())=="c55a2c74e03ca8af7d41b5888b290106ffe260c3"
         report=json.loads(gzip.decompress(RECEIPT.read_bytes()))
         summary=verify(report,old,rows)
         assert SUMMARY.read_bytes()==bulk.stable(summary)
