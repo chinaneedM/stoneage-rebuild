@@ -1,0 +1,29 @@
+name: PET-HIGH-FIRST-72 geometry and residual group source screen
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_72_geometry_residual.py'
+      - '.github/workflows/pet-high-first-72-geometry-residual.yml'
+      - 'docs/continuity/STONEAGE-PET-HIGH-FIRST-72-GEOMETRY-RESIDUAL-20261125.md'
+      - 'research/pets/PET-HIGH-FIRST-72-*'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_72_geometry_residual.py'
+      - '.github/workflows/pet-high-first-72-geometry-residual.yml'
+      - 'docs/continuity/STONEAGE-PET-HIGH-FIRST-72-GEOMETRY-RESIDUAL-20261125.md'
+      - 'research/pets/PET-HIGH-FIRST-72-*'
+    types: [opened, synchronize, reopened, ready_for_review]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m tools.stoneage_pet_high_first_72_geometry_residual --output "$RUNNER_TEMP/pet72.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet72-derived-residual
+          path: ${{ runner.temp }}/pet72.json
+          retention-days: 7
