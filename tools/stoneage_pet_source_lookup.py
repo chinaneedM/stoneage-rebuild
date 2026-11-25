@@ -255,6 +255,8 @@ def build(d):
         int(bitmap) for bitmap, index in observations60["frame_bitmap_to_adrn_index"].items()
         if observations60["observed_blocks"][str(index)]["status"] == "DUAL_DECODED_INDEX_PIXELS"
     }
+    residual62 = by_id(d["hf62"]["rows"], "position")
+    variants63 = by_id(d["hf63"]["rows"], "position")
     skills61 = d["hf61"]
     skills61_by_position = by_id(skills61["rows"], "position")
     skill_definitions61 = by_id(skills61["configured_skill_definitions"], "skill_id")
@@ -331,6 +333,12 @@ def build(d):
                                  if bitmaps and bitmaps <= decoded_bitmaps60
                                  else "SAVED_TW85_INDEX_PIXEL_SAMPLE_HAS_UNSUPPORTED_BLOCKS")
                 ls.append(link("hf60", ["observations", "sequences", j60], qualification))
+        for source, positions in (("hf62", residual62), ("hf63", variants63)):
+            if i in positions:
+                j = positions[i]
+                row = d[source]["rows"][j]
+                assert (row["template_id"], row["graphic"], row["row_sha256"]) == (k, x["graphic"], x["row_sha256"])
+                ls.append(link(source, ["rows", j], "SOURCE_BOUNDED_RESIDUAL_REVIEW_NOT_OFFICIAL_ACQUISITION"))
         if i in skills61_by_position:
             j61 = skills61_by_position[i]
             row61 = skills61["rows"][j61]
@@ -528,6 +536,8 @@ def verify(m,d,entries):
         assert actual60 == expected60.get(i, set()) and len(links60) == len(actual60)
     assert set(d["hf61"]["qualification"].values()) == {False}
     assert [r["position"] for r in d["hf61"]["rows"]] == d["hf49"]["remaining_gap_row_indices"]
+    assert source_counts["hf62"] == 67 and source_counts["hf63"] == 13
+    assert {i for i,e in enumerate(high45) if any(l["source"]=="hf63" for l in e["linked_records"])} == {r["position"] for r in d["hf63"]["rows"]}
     assert source_counts["hf61"] == 67 + 135
     for row61 in d["hf61"]["rows"]:
         links61 = [l for l in high45[row61["position"]]["linked_records"] if l["source"] == "hf61"]

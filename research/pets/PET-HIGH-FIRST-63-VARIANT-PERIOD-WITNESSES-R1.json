@@ -1,0 +1,1334 @@
+{
+  "schema": "stoneage.pet63.variant_and_period_witness_review.r1",
+  "base_head": "ef88f99cfe2677a92f98caf43c00e30cd0defea0",
+  "base_tree": "9f8eb72545b699c78379bceefb7986538a0ed72b",
+  "source_pins": {
+    "residual": {
+      "path": "research/pets/PET-HIGH-FIRST-62-RESIDUAL-ACQUISITION-REVIEW-R1.json",
+      "blob": "e57921f1ef3260ba298f4e06788ca1c6b78aa47b"
+    },
+    "comparison": {
+      "path": "research/pets/PET-HIGH-FIRST-17-COMPARISON-SKILL-ENCOUNTER-R1.json",
+      "blob": "63af501ab483770c5c58cb2d62152ab8923dcc2b"
+    },
+    "original": {
+      "path": "research/recovered/STONEAGE-PET-MODULE-10-ORIGINAL-MIXED25-SERVER-TABLES-R1.json",
+      "blob": "25a37aeb134fb180e322e7dc335029b7374452d8"
+    },
+    "master": {
+      "path": "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json",
+      "blob": "fec03646d7c7e4e287f9347c306119cc626d6abf"
+    },
+    "acquisition": {
+      "path": "research/pets/PET-HIGH-FIRST-50-ORIGINAL-ACQUISITION-R1.json",
+      "blob": "4d0b31a7fa196cf8f227a7b0b1aea7183d9598f0"
+    }
+  },
+  "documentary_sources": {
+    "fusion2003": {
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-05-15/5848.shtml",
+      "date": "2003-05-15",
+      "grade": "CONTEMPORARY_PLAYER_SUBMISSION",
+      "locator": "catalogue rows 256–257, recipe cells blank; rows 258–259 likewise blank",
+      "region": "CN"
+    },
+    "quiz2005": {
+      "url": "https://forum.gamer.com.tw/Co.php?bsn=60144&sn=2614",
+      "date": "2005-06-24",
+      "date_type": "VISIBLE_EDIT_DATE",
+      "grade": "CONTEMPORARY_PLAYER_RECOLLECTION",
+      "locator": "第4題，二代、三代端午獸；search-index visible text, direct open HTTP403; no HTML custody",
+      "region": "TW"
+    },
+    "quizMay": {
+      "url": "https://forum.gamer.com.tw/C.php?bsn=60144&snA=791",
+      "date": "2005-05-31",
+      "date_type": "VISIBLE_EDIT_DATE_OF_REPLY_11",
+      "grade": "CONTEMPORARY_PLAYER_REFERENCE",
+      "locator": "11樓，第8題，NO.078/410；作者注明寵物情報網",
+      "region": "TW"
+    },
+    "wiki256": {
+      "url": "https://wiki2.gamer.com.tw/wiki.php?f=M&n=2198%3A2004%E5%8F%B2%E5%A5%88%E5%85%8B%E7%89%B9&ss=2198",
+      "date": null,
+      "grade": "UNDATED_PLAYER_CATALOGUE",
+      "locator": "NO.256 屬性、取得方法、技能數目；四圍全零占位非實測",
+      "region": "TW"
+    },
+    "wiki257": {
+      "url": "https://wiki2.gamer.com.tw/wiki.php?f=M&n=2198%3A2004%E8%91%9B%E5%88%A9%E6%96%AF%E5%A5%88&ss=2198",
+      "date": null,
+      "grade": "UNDATED_PLAYER_CATALOGUE",
+      "locator": "NO.257 屬性、取得方法、技能數目；四圍全零占位非實測",
+      "region": "TW"
+    },
+    "black2005": {
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=1340",
+      "date": "2005-04-24",
+      "date_type": "VISIBLE_EDIT_DATE",
+      "grade": "CONTEMPORARY_PLAYER_REFERENCE",
+      "locator": "罐頭特殊技能 MP攻擊2，風城外黑雞洞、瑞里希爾，打怪取技能罐頭",
+      "region": "TW"
+    },
+    "chicken2003": {
+      "url": "https://news.17173.com/z/stoneage/content/2003-12-25/n137_53826.html",
+      "date": "2003-12-25",
+      "grade": "CONTEMPORARY_PLAYER_REFERENCE",
+      "locator": "7.0 寵物部分末尾，奇肯沃、奇肯克奈 Lv1 泪之海；無比例/座標",
+      "region": "CN"
+    },
+    "chicken2007": {
+      "url": "https://news.17173.com/z/stoneage/content/2007-04-04/1175676383.shtml",
+      "date": "2007-04-04",
+      "grade": "PLAYER_REFERENCE_PREVIOUSLY_RECORDED_PET51",
+      "locator": "珊瑚裝備，兩名Lv130–140擊殺素材",
+      "region": "CN"
+    },
+    "wolves2011": {
+      "url": "https://games.sina.com.cn/o/n/2011-12-08/1604559245.shtml",
+      "date": "2011-12-08",
+      "grade": "PLAYER_REFERENCE_PREVIOUSLY_RECORDED_PET49",
+      "locator": "夢幻洞窟日夜雙頭狼，無精確元素比例",
+      "region": "CN"
+    },
+    "mela2011": {
+      "url": "https://news.17173.com/content/2011-01-20/20110120103447876.shtml",
+      "date": "2011-01-20",
+      "grade": "LATER_OPERATOR_PROMOTION_VIA_PRESS",
+      "locator": "玄武美拉段；勝思不刪檔封測，地之聖獸",
+      "region": "CN"
+    },
+    "melaSkill2011": {
+      "url": "https://games.sina.com.cn/o/n/2011-11-17/1530550915.shtml",
+      "date": "2011-11-17",
+      "grade": "LATER_OPERATOR_PROMOTION_VIA_PRESS",
+      "locator": "蛇王封印石，可習得鐵壁的美拉及龜系；非美拉取得",
+      "region": "CN"
+    },
+    "otherSnake2004": {
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=18112",
+      "date": "2004-12-14",
+      "grade": "CONTEMPORARY_PRESS_OPERATOR_EVENT",
+      "locator": "第三重水晶集大獎，另有一獎送艾柏瑞或拉特利；未具名256/257",
+      "region": "TW"
+    }
+  },
+  "documentary_retrieval": "Search-visible public text; no original HTML byte custody; no original official client or same-deployment source newly obtained. No assertion of first discovery in all prior archives.",
+  "target_positions": [
+    70,
+    91,
+    92,
+    101,
+    102,
+    293,
+    344,
+    345,
+    453
+  ],
+  "supplemental_positions": [
+    31,
+    32,
+    135,
+    238
+  ],
+  "rows": [
+    {
+      "position": 31,
+      "template_id": 55,
+      "name": "巴羅多",
+      "graphic": 101617,
+      "row_sha256": "ff24ed2fa6b7e1a5c9bd2e53f9247921d281718389195b4cbff9c89cffc1e705",
+      "elements": [
+        20,
+        80,
+        0,
+        0
+      ],
+      "skill_capacity": 7,
+      "tables": [
+        {
+          "name": "enemybase.txt",
+          "match": "EXACT_ROW",
+          "row_sha256": "ff24ed2fa6b7e1a5c9bd2e53f9247921d281718389195b4cbff9c89cffc1e705",
+          "visible_differences": {}
+        },
+        {
+          "name": "enemybase2.txt",
+          "match": "ABSENT",
+          "row_sha256": null,
+          "visible_differences": null
+        }
+      ],
+      "same_name_other_positions": [],
+      "selected_instances": [
+        {
+          "instance_id": 2260,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1,
+          "physical_line": 1731,
+          "raw_level_fields": [
+            1,
+            1
+          ]
+        }
+      ],
+      "alternate_instances": [],
+      "selected_group_memberships": [],
+      "later_comparison": {
+        "status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "instance_count": 1,
+        "petflag1_lv1_count": 1,
+        "positive_reference_count": 0
+      },
+      "witnesses": [
+        {
+          "source": "quiz2005",
+          "catalogue_no": 359,
+          "elements": [
+            20,
+            80,
+            0,
+            0
+          ],
+          "kind": "PLAYER_REPORTED_2003_PACK_AND_2004_EVENT_REWARD",
+          "ratio_matches": true,
+          "capacity_matches": null
+        }
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 32,
+      "template_id": 56,
+      "name": "巴羅特",
+      "graphic": 101618,
+      "row_sha256": "ae2648e0b9a7ae6bbbb0e5f978d6792271278604e6fc4e8fa0ad18bea91021b1",
+      "elements": [
+        0,
+        0,
+        20,
+        80
+      ],
+      "skill_capacity": 7,
+      "tables": [
+        {
+          "name": "enemybase.txt",
+          "match": "EXACT_ROW",
+          "row_sha256": "ae2648e0b9a7ae6bbbb0e5f978d6792271278604e6fc4e8fa0ad18bea91021b1",
+          "visible_differences": {}
+        },
+        {
+          "name": "enemybase2.txt",
+          "match": "ABSENT",
+          "row_sha256": null,
+          "visible_differences": null
+        }
+      ],
+      "same_name_other_positions": [],
+      "selected_instances": [
+        {
+          "instance_id": 2261,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1,
+          "physical_line": 1732,
+          "raw_level_fields": [
+            1,
+            1
+          ]
+        }
+      ],
+      "alternate_instances": [],
+      "selected_group_memberships": [],
+      "later_comparison": {
+        "status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "instance_count": 1,
+        "petflag1_lv1_count": 1,
+        "positive_reference_count": 0
+      },
+      "witnesses": [
+        {
+          "source": "quiz2005",
+          "catalogue_no": 360,
+          "elements": [
+            0,
+            0,
+            20,
+            80
+          ],
+          "kind": "PLAYER_REPORTED_2003_PACK_AND_2004_EVENT_REWARD",
+          "ratio_matches": true,
+          "capacity_matches": null
+        }
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 70,
+      "template_id": 110,
+      "name": "里德爾",
+      "graphic": 101729,
+      "row_sha256": "9dc08c91162271f43f93483514b7f31534e99e0030f5a9946137ab5b13411e0c",
+      "elements": [
+        0,
+        0,
+        70,
+        30
+      ],
+      "skill_capacity": 4,
+      "tables": [
+        {
+          "name": "enemybase.txt",
+          "match": "SAME_ID_DIFFERENT_ROW",
+          "row_sha256": "3cf83f754c9ad5d28ecf75819109658d3d13a66be525537bf19008fd370ef08b",
+          "visible_differences": {}
+        },
+        {
+          "name": "enemybase2.txt",
+          "match": "ABSENT",
+          "row_sha256": null,
+          "visible_differences": null
+        }
+      ],
+      "same_name_other_positions": [],
+      "selected_instances": [
+        {
+          "instance_id": 2399,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1,
+          "physical_line": 1865,
+          "raw_level_fields": [
+            1,
+            1
+          ]
+        }
+      ],
+      "alternate_instances": [],
+      "selected_group_memberships": [],
+      "later_comparison": {
+        "status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "instance_count": 1,
+        "petflag1_lv1_count": 1,
+        "positive_reference_count": 0
+      },
+      "witnesses": [],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 91,
+      "template_id": 131,
+      "name": "奇肯沃",
+      "graphic": 101717,
+      "row_sha256": "9ed781c238b7698a7aa5801d34f88dfc6009904c80c6222dea92415896633ed4",
+      "elements": [
+        80,
+        0,
+        0,
+        20
+      ],
+      "skill_capacity": 5,
+      "tables": [
+        {
+          "name": "enemybase.txt",
+          "match": "EXACT_ROW",
+          "row_sha256": "9ed781c238b7698a7aa5801d34f88dfc6009904c80c6222dea92415896633ed4",
+          "visible_differences": {}
+        },
+        {
+          "name": "enemybase2.txt",
+          "match": "ABSENT",
+          "row_sha256": null,
+          "visible_differences": null
+        }
+      ],
+      "same_name_other_positions": [],
+      "selected_instances": [
+        {
+          "instance_id": 2415,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1,
+          "physical_line": 1880,
+          "raw_level_fields": [
+            1,
+            1
+          ]
+        },
+        {
+          "instance_id": 2429,
+          "level": [
+            150,
+            200
+          ],
+          "pet_flag": 0,
+          "physical_line": 1893,
+          "raw_level_fields": [
+            150,
+            200
+          ]
+        },
+        {
+          "instance_id": 2431,
+          "level": [
+            131,
+            140
+          ],
+          "pet_flag": 0,
+          "physical_line": 1895,
+          "raw_level_fields": [
+            131,
+            140
+          ]
+        }
+      ],
+      "alternate_instances": [],
+      "selected_group_memberships": [
+        {
+          "enemy_id": 2431,
+          "enemy_weight": 1,
+          "group_id": 1167,
+          "group_line": 985,
+          "positive_area_slots": [],
+          "slot": 1
+        },
+        {
+          "enemy_id": 2431,
+          "enemy_weight": 1,
+          "group_id": 1168,
+          "group_line": 986,
+          "positive_area_slots": [],
+          "slot": 1
+        },
+        {
+          "enemy_id": 2429,
+          "enemy_weight": 1,
+          "group_id": 1171,
+          "group_line": 989,
+          "positive_area_slots": [],
+          "slot": 1
+        }
+      ],
+      "later_comparison": {
+        "status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "instance_count": 3,
+        "petflag1_lv1_count": 1,
+        "positive_reference_count": 0
+      },
+      "witnesses": [
+        {
+          "source": "chicken2003",
+          "elements": null,
+          "kind": "LV1_APPEARANCE_NOT_CAPTURE_PROOF",
+          "ratio_matches": null,
+          "capacity_matches": null
+        },
+        {
+          "source": "chicken2007",
+          "elements": null,
+          "kind": "HIGH_LEVEL_ENEMY_MATERIAL_DROP",
+          "ratio_matches": null,
+          "capacity_matches": null
+        }
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 92,
+      "template_id": 132,
+      "name": "奇肯克奈",
+      "graphic": 101718,
+      "row_sha256": "8f7f5354f99a64cd42cc9182c564756ef3715169c217506e0ae5fea64df90187",
+      "elements": [
+        0,
+        100,
+        0,
+        0
+      ],
+      "skill_capacity": 5,
+      "tables": [
+        {
+          "name": "enemybase.txt",
+          "match": "EXACT_ROW",
+          "row_sha256": "8f7f5354f99a64cd42cc9182c564756ef3715169c217506e0ae5fea64df90187",
+          "visible_differences": {}
+        },
+        {
+          "name": "enemybase2.txt",
+          "match": "ABSENT",
+          "row_sha256": null,
+          "visible_differences": null
+        }
+      ],
+      "same_name_other_positions": [],
+      "selected_instances": [
+        {
+          "instance_id": 2416,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1,
+          "physical_line": 1881,
+          "raw_level_fields": [
+            1,
+            1
+          ]
+        },
+        {
+          "instance_id": 2430,
+          "level": [
+            150,
+            200
+          ],
+          "pet_flag": 0,
+          "physical_line": 1894,
+          "raw_level_fields": [
+            150,
+            200
+          ]
+        },
+        {
+          "instance_id": 2432,
+          "level": [
+            131,
+            140
+          ],
+          "pet_flag": 0,
+          "physical_line": 1896,
+          "raw_level_fields": [
+            131,
+            140
+          ]
+        }
+      ],
+      "alternate_instances": [],
+      "selected_group_memberships": [
+        {
+          "enemy_id": 2432,
+          "enemy_weight": 1,
+          "group_id": 1169,
+          "group_line": 987,
+          "positive_area_slots": [],
+          "slot": 1
+        },
+        {
+          "enemy_id": 2432,
+          "enemy_weight": 1,
+          "group_id": 1170,
+          "group_line": 988,
+          "positive_area_slots": [],
+          "slot": 3
+        },
+        {
+          "enemy_id": 2430,
+          "enemy_weight": 1,
+          "group_id": 1173,
+          "group_line": 991,
+          "positive_area_slots": [],
+          "slot": 1
+        }
+      ],
+      "later_comparison": {
+        "status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "instance_count": 3,
+        "petflag1_lv1_count": 1,
+        "positive_reference_count": 0
+      },
+      "witnesses": [
+        {
+          "source": "chicken2003",
+          "elements": null,
+          "kind": "LV1_APPEARANCE_NOT_CAPTURE_PROOF",
+          "ratio_matches": null,
+          "capacity_matches": null
+        },
+        {
+          "source": "chicken2007",
+          "elements": null,
+          "kind": "HIGH_LEVEL_ENEMY_MATERIAL_DROP",
+          "ratio_matches": null,
+          "capacity_matches": null
+        }
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 101,
+      "template_id": 145,
+      "name": "薩德迪比",
+      "graphic": 101737,
+      "row_sha256": "818280e49f7cd6e506e2522274a9e25f190b203bfdc875b7ceecaf331a88f190",
+      "elements": [
+        10,
+        90,
+        0,
+        0
+      ],
+      "skill_capacity": 7,
+      "tables": [
+        {
+          "name": "enemybase.txt",
+          "match": "EXACT_ROW",
+          "row_sha256": "818280e49f7cd6e506e2522274a9e25f190b203bfdc875b7ceecaf331a88f190",
+          "visible_differences": {}
+        },
+        {
+          "name": "enemybase2.txt",
+          "match": "ABSENT",
+          "row_sha256": null,
+          "visible_differences": null
+        }
+      ],
+      "same_name_other_positions": [],
+      "selected_instances": [
+        {
+          "instance_id": 2455,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1,
+          "physical_line": 1918,
+          "raw_level_fields": [
+            1,
+            1
+          ]
+        }
+      ],
+      "alternate_instances": [],
+      "selected_group_memberships": [
+        {
+          "enemy_id": 2455,
+          "enemy_weight": 1,
+          "group_id": 1297,
+          "group_line": 1115,
+          "positive_area_slots": [],
+          "slot": 0
+        }
+      ],
+      "later_comparison": {
+        "status": "NO_SAME_ID",
+        "instance_count": 1,
+        "petflag1_lv1_count": 1,
+        "positive_reference_count": 0
+      },
+      "witnesses": [
+        {
+          "source": "wolves2011",
+          "elements": null,
+          "kind": "REPORTED_DAY_CAPTURE_NO_RATIO",
+          "ratio_matches": null,
+          "capacity_matches": null
+        }
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 102,
+      "template_id": 146,
+      "name": "薩德斯凱",
+      "graphic": 101736,
+      "row_sha256": "076eb541436d1183207cd2992bb484c8e3e0a8c8b46e33e01837b742970a30a7",
+      "elements": [
+        0,
+        0,
+        90,
+        10
+      ],
+      "skill_capacity": 7,
+      "tables": [
+        {
+          "name": "enemybase.txt",
+          "match": "EXACT_ROW",
+          "row_sha256": "076eb541436d1183207cd2992bb484c8e3e0a8c8b46e33e01837b742970a30a7",
+          "visible_differences": {}
+        },
+        {
+          "name": "enemybase2.txt",
+          "match": "ABSENT",
+          "row_sha256": null,
+          "visible_differences": null
+        }
+      ],
+      "same_name_other_positions": [],
+      "selected_instances": [
+        {
+          "instance_id": 2456,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1,
+          "physical_line": 1919,
+          "raw_level_fields": [
+            1,
+            1
+          ]
+        }
+      ],
+      "alternate_instances": [],
+      "selected_group_memberships": [
+        {
+          "enemy_id": 2456,
+          "enemy_weight": 1,
+          "group_id": 1298,
+          "group_line": 1116,
+          "positive_area_slots": [],
+          "slot": 0
+        }
+      ],
+      "later_comparison": {
+        "status": "NO_SAME_ID",
+        "instance_count": 1,
+        "petflag1_lv1_count": 1,
+        "positive_reference_count": 0
+      },
+      "witnesses": [
+        {
+          "source": "wolves2011",
+          "elements": null,
+          "kind": "REPORTED_NIGHT_CAPTURE_NO_RATIO",
+          "ratio_matches": null,
+          "capacity_matches": null
+        }
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 135,
+      "template_id": 203,
+      "name": "帖伊諾斯",
+      "graphic": 101819,
+      "row_sha256": "a8fb9b5aeec2da55b2a4eb85b9af70f02525ebb584bdf8be69fbaf3e777fed95",
+      "elements": [
+        0,
+        0,
+        50,
+        50
+      ],
+      "skill_capacity": 7,
+      "tables": [
+        {
+          "name": "enemybase.txt",
+          "match": "EXACT_ROW",
+          "row_sha256": "a8fb9b5aeec2da55b2a4eb85b9af70f02525ebb584bdf8be69fbaf3e777fed95",
+          "visible_differences": {}
+        },
+        {
+          "name": "enemybase2.txt",
+          "match": "ABSENT",
+          "row_sha256": null,
+          "visible_differences": null
+        }
+      ],
+      "same_name_other_positions": [],
+      "selected_instances": [
+        {
+          "instance_id": 2546,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1,
+          "physical_line": 1978,
+          "raw_level_fields": [
+            1,
+            1
+          ]
+        }
+      ],
+      "alternate_instances": [],
+      "selected_group_memberships": [],
+      "later_comparison": {
+        "status": "SAME_ID_DIFFERENT_TAIL",
+        "instance_count": 1,
+        "petflag1_lv1_count": 1,
+        "positive_reference_count": 0
+      },
+      "witnesses": [
+        {
+          "source": "quizMay",
+          "catalogue_no": 410,
+          "elements": [
+            0,
+            0,
+            50,
+            50
+          ],
+          "kind": "PLAYER_REPORTED_SIXTH_REBIRTH_STARTER",
+          "ratio_matches": true,
+          "capacity_matches": null
+        }
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 238,
+      "template_id": 754,
+      "name": "邦諾斯娜",
+      "graphic": 100849,
+      "row_sha256": "5ac8e4e08ac204c4516acaada9ee7b7233bf612c46be06d495e651feba0f05f0",
+      "elements": [
+        0,
+        0,
+        80,
+        20
+      ],
+      "skill_capacity": 4,
+      "tables": [
+        {
+          "name": "enemybase.txt",
+          "match": "EXACT_ROW",
+          "row_sha256": "5ac8e4e08ac204c4516acaada9ee7b7233bf612c46be06d495e651feba0f05f0",
+          "visible_differences": {}
+        },
+        {
+          "name": "enemybase2.txt",
+          "match": "SAME_ID_DIFFERENT_ROW",
+          "row_sha256": "b7f51a9e53eb76f3181cdcdc10ff70340ad495fc6bf589c707ddfb680708511a",
+          "visible_differences": {
+            "initnum": {
+              "claimed": 33,
+              "saved": 26
+            },
+            "base": {
+              "claimed": [
+                27,
+                47,
+                20,
+                28
+              ],
+              "saved": [
+                29,
+                42,
+                16,
+                23
+              ]
+            },
+            "elements": {
+              "claimed": [
+                0,
+                0,
+                80,
+                20
+              ],
+              "saved": [
+                0,
+                50,
+                50,
+                0
+              ]
+            }
+          }
+        }
+      ],
+      "same_name_other_positions": [],
+      "selected_instances": [
+        {
+          "instance_id": 1588,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 0,
+          "physical_line": 1167,
+          "raw_level_fields": [
+            1,
+            1
+          ]
+        }
+      ],
+      "alternate_instances": [
+        {
+          "instance_id": 1588,
+          "level": null,
+          "pet_flag": null,
+          "physical_line": 1206,
+          "raw_level_fields": null
+        }
+      ],
+      "selected_group_memberships": [],
+      "later_comparison": {
+        "status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "instance_count": 1,
+        "petflag1_lv1_count": 1,
+        "positive_reference_count": 0
+      },
+      "witnesses": [
+        {
+          "source": "quizMay",
+          "catalogue_no": 78,
+          "elements": [
+            0,
+            0,
+            80,
+            20
+          ],
+          "kind": "PLAYER_REPORTED_CARD_AND_2004_CAPTURE_EVENT_PRIZE",
+          "ratio_matches": true,
+          "capacity_matches": null
+        }
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 293,
+      "template_id": 809,
+      "name": "瑞里西爾",
+      "graphic": 100904,
+      "row_sha256": "ce6dafdb18b96d79e8bbf87bd1b2d1515d2a00632a83baedb54b81dd71de6beb",
+      "elements": [
+        60,
+        0,
+        0,
+        40
+      ],
+      "skill_capacity": 6,
+      "tables": [
+        {
+          "name": "enemybase.txt",
+          "match": "SAME_ID_DIFFERENT_ROW",
+          "row_sha256": "78ada3f27b2c590391ece55e81725a1a931bf7b1aa6d19fd3fb1e3daf3c57ccf",
+          "visible_differences": {}
+        },
+        {
+          "name": "enemybase2.txt",
+          "match": "SAME_ID_DIFFERENT_ROW",
+          "row_sha256": "e430efc282e890e5a50d0cf0658ced428e82922f14a7a1820cef61144a424e65",
+          "visible_differences": {
+            "base": {
+              "claimed": [
+                24,
+                34,
+                16,
+                49
+              ],
+              "saved": [
+                24,
+                28,
+                15,
+                49
+              ]
+            },
+            "skill_slots": {
+              "claimed": [
+                1,
+                2,
+                210,
+                null,
+                null,
+                null,
+                null
+              ],
+              "saved": [
+                1,
+                2,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            }
+          }
+        }
+      ],
+      "same_name_other_positions": [],
+      "selected_instances": [
+        {
+          "instance_id": 1642,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 0,
+          "physical_line": 1221,
+          "raw_level_fields": [
+            1,
+            1
+          ]
+        },
+        {
+          "instance_id": 2187,
+          "level": [
+            101,
+            110
+          ],
+          "pet_flag": 0,
+          "physical_line": 1663,
+          "raw_level_fields": [
+            101,
+            110
+          ]
+        }
+      ],
+      "alternate_instances": [
+        {
+          "instance_id": 1642,
+          "level": null,
+          "pet_flag": null,
+          "physical_line": 1260,
+          "raw_level_fields": null
+        }
+      ],
+      "selected_group_memberships": [
+        {
+          "enemy_id": 2187,
+          "enemy_weight": 1,
+          "group_id": 1194,
+          "group_line": 1012,
+          "positive_area_slots": [],
+          "slot": 0
+        },
+        {
+          "enemy_id": 2187,
+          "enemy_weight": 1,
+          "group_id": 1195,
+          "group_line": 1013,
+          "positive_area_slots": [],
+          "slot": 2
+        },
+        {
+          "enemy_id": 2187,
+          "enemy_weight": 1,
+          "group_id": 1196,
+          "group_line": 1014,
+          "positive_area_slots": [],
+          "slot": 0
+        },
+        {
+          "enemy_id": 1642,
+          "enemy_weight": 1,
+          "group_id": 1196,
+          "group_line": 1014,
+          "positive_area_slots": [],
+          "slot": 1
+        }
+      ],
+      "later_comparison": {
+        "status": "SAME_ID_DIFFERENT_TAIL",
+        "instance_count": 2,
+        "petflag1_lv1_count": 1,
+        "positive_reference_count": 0
+      },
+      "witnesses": [
+        {
+          "source": "black2005",
+          "source_name": "瑞里希爾",
+          "elements": null,
+          "kind": "ENEMY_SKILL_ITEM_DROP_NAME_VARIANT_NOT_PET_ACQUISITION",
+          "ratio_matches": null,
+          "capacity_matches": null
+        }
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 344,
+      "template_id": 993,
+      "name": "史奈克特",
+      "graphic": 101448,
+      "row_sha256": "5db4704b9a7966812e0e104fa186044f020304af224e4c472d2c1009a009fd16",
+      "elements": [
+        70,
+        0,
+        0,
+        30
+      ],
+      "skill_capacity": 7,
+      "tables": [
+        {
+          "name": "enemybase.txt",
+          "match": "EXACT_ROW",
+          "row_sha256": "5db4704b9a7966812e0e104fa186044f020304af224e4c472d2c1009a009fd16",
+          "visible_differences": {}
+        },
+        {
+          "name": "enemybase2.txt",
+          "match": "EXACT_ROW",
+          "row_sha256": "5db4704b9a7966812e0e104fa186044f020304af224e4c472d2c1009a009fd16",
+          "visible_differences": {}
+        }
+      ],
+      "same_name_other_positions": [
+        {
+          "position": 95,
+          "template_id": 135,
+          "graphic": 101722,
+          "elements": [
+            90,
+            10,
+            0,
+            0
+          ]
+        }
+      ],
+      "selected_instances": [],
+      "alternate_instances": [],
+      "selected_group_memberships": [],
+      "later_comparison": {
+        "status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "instance_count": 1,
+        "petflag1_lv1_count": 1,
+        "positive_reference_count": 0
+      },
+      "witnesses": [
+        {
+          "source": "fusion2003",
+          "catalogue_no": 256,
+          "elements": [
+            70,
+            0,
+            0,
+            30
+          ],
+          "kind": "CATALOGUE_NAME_RATIO_EMPTY_RECIPE",
+          "ratio_matches": true,
+          "capacity_matches": null
+        },
+        {
+          "source": "quiz2005",
+          "catalogue_no": 256,
+          "elements": [
+            70,
+            0,
+            0,
+            30
+          ],
+          "kind": "PLAYER_REPORTED_2004_EVENT_PRIZE",
+          "ratio_matches": true,
+          "capacity_matches": null
+        },
+        {
+          "source": "wiki256",
+          "catalogue_no": 256,
+          "elements": [
+            70,
+            0,
+            0,
+            30
+          ],
+          "capacity": 7,
+          "kind": "PLAYER_CATALOGUE_2004_EVENT_PRIZE",
+          "ratio_matches": true,
+          "capacity_matches": true
+        }
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 345,
+      "template_id": 994,
+      "name": "葛利斯奈",
+      "graphic": 101449,
+      "row_sha256": "199b86919962418e87d046096cb3ef0f0b92dd6d4d6d38599cb8f9b66c7fa57e",
+      "elements": [
+        30,
+        70,
+        0,
+        0
+      ],
+      "skill_capacity": 7,
+      "tables": [
+        {
+          "name": "enemybase.txt",
+          "match": "EXACT_ROW",
+          "row_sha256": "199b86919962418e87d046096cb3ef0f0b92dd6d4d6d38599cb8f9b66c7fa57e",
+          "visible_differences": {}
+        },
+        {
+          "name": "enemybase2.txt",
+          "match": "EXACT_ROW",
+          "row_sha256": "199b86919962418e87d046096cb3ef0f0b92dd6d4d6d38599cb8f9b66c7fa57e",
+          "visible_differences": {}
+        }
+      ],
+      "same_name_other_positions": [
+        {
+          "position": 96,
+          "template_id": 136,
+          "graphic": 101721,
+          "elements": [
+            0,
+            0,
+            90,
+            10
+          ]
+        }
+      ],
+      "selected_instances": [],
+      "alternate_instances": [],
+      "selected_group_memberships": [],
+      "later_comparison": {
+        "status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "instance_count": 1,
+        "petflag1_lv1_count": 1,
+        "positive_reference_count": 0
+      },
+      "witnesses": [
+        {
+          "source": "fusion2003",
+          "catalogue_no": 257,
+          "elements": [
+            30,
+            70,
+            0,
+            0
+          ],
+          "kind": "CATALOGUE_NAME_RATIO_EMPTY_RECIPE",
+          "ratio_matches": true,
+          "capacity_matches": null
+        },
+        {
+          "source": "quiz2005",
+          "catalogue_no": 257,
+          "elements": [
+            30,
+            70,
+            0,
+            0
+          ],
+          "kind": "PLAYER_REPORTED_2004_EVENT_PRIZE",
+          "ratio_matches": true,
+          "capacity_matches": null
+        },
+        {
+          "source": "wiki257",
+          "catalogue_no": 257,
+          "elements": [
+            30,
+            70,
+            0,
+            0
+          ],
+          "capacity": 7,
+          "kind": "PLAYER_CATALOGUE_2004_EVENT_PRIZE",
+          "ratio_matches": true,
+          "capacity_matches": true
+        }
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "position": 453,
+      "template_id": 1140,
+      "name": "美拉",
+      "graphic": 101760,
+      "row_sha256": "61f0ad4acaf901a798fef4fcfc97a6c3cf20859dc2da9bd8cf5a846a35c14f1a",
+      "elements": [
+        100,
+        0,
+        0,
+        0
+      ],
+      "skill_capacity": 7,
+      "tables": [
+        {
+          "name": "enemybase.txt",
+          "match": "SAME_ID_DIFFERENT_ROW",
+          "row_sha256": "452dc93bd8d13f13b34577be9c5901b6d0c51ab594321bab5c559a189489676e",
+          "visible_differences": {}
+        },
+        {
+          "name": "enemybase2.txt",
+          "match": "ABSENT",
+          "row_sha256": null,
+          "visible_differences": null
+        }
+      ],
+      "same_name_other_positions": [],
+      "selected_instances": [
+        {
+          "instance_id": 2474,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1,
+          "physical_line": 1933,
+          "raw_level_fields": [
+            1,
+            1
+          ]
+        }
+      ],
+      "alternate_instances": [],
+      "selected_group_memberships": [],
+      "later_comparison": {
+        "status": "SAME_ID_DIFFERENT_TAIL",
+        "instance_count": 1,
+        "petflag1_lv1_count": 1,
+        "positive_reference_count": 0
+      },
+      "witnesses": [
+        {
+          "source": "mela2011",
+          "elements": null,
+          "kind": "LATER_OPERATOR_NAMED_EARTH_SACRED_BEAST",
+          "ratio_matches": null,
+          "capacity_matches": null
+        },
+        {
+          "source": "melaSkill2011",
+          "elements": null,
+          "kind": "LATER_LEARNABLE_SKILL_NOT_PET_ACQUISITION",
+          "ratio_matches": null,
+          "capacity_matches": null
+        }
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    }
+  ],
+  "summary": {
+    "reviewed_positions": 13,
+    "compatible_named_acquisition_reference_positions": [
+      31,
+      32,
+      135,
+      238,
+      344,
+      345
+    ],
+    "strict_gap_count": 67,
+    "new_official_acquisition_closures": 0
+  },
+  "official_species_count": null,
+  "original_assets_published": false,
+  "runtime_executed": false
+}
