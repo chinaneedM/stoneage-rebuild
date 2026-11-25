@@ -1,0 +1,2192 @@
+{
+  "configured_paths": {
+    "petskillfile1": "./data/petskill.txt",
+    "petskillfile2": "./data/petskill.txt"
+  },
+  "configured_skill_definitions": [
+    {
+      "callback": "PETSKILL_NormalAttack",
+      "line": 2,
+      "name": "攻擊",
+      "numeric_fields": {
+        "COST": 2,
+        "FIELD": 1,
+        "ID": 1,
+        "ILLEGAL": 1000,
+        "TARGET": 6
+      },
+      "row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+      "skill_id": 1
+    },
+    {
+      "callback": "PETSKILL_NormalGuard",
+      "line": 3,
+      "name": "防禦",
+      "numeric_fields": {
+        "COST": 2,
+        "FIELD": 1,
+        "ID": 2,
+        "ILLEGAL": 1000,
+        "TARGET": 5
+      },
+      "row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+      "skill_id": 2
+    },
+    {
+      "callback": "PETSKILL_Refresh",
+      "line": 91,
+      "name": "破除沉默",
+      "numeric_fields": {
+        "COST": 2,
+        "FIELD": 1,
+        "ID": 583,
+        "ILLEGAL": 2000,
+        "TARGET": 2
+      },
+      "row_sha256": "147dec81834d2306f4a7e055e4750d4146dc3a595f2bfacb8eb4a69082c29cbe",
+      "skill_id": 583
+    },
+    {
+      "callback": "PETSKILL_BecomePig",
+      "line": 129,
+      "name": "烏力化",
+      "numeric_fields": {
+        "COST": 2,
+        "FIELD": 1,
+        "ID": 631,
+        "ILLEGAL": 20000,
+        "TARGET": 7
+      },
+      "row_sha256": "094304948168806b58e43ebc7b8c4ab0424ade481a6eabb82b44ed5e771c2054",
+      "skill_id": 631
+    },
+    {
+      "callback": "PETSKILL_2BattleTimid",
+      "line": 134,
+      "name": "狂獅怒吼",
+      "numeric_fields": {
+        "COST": 2,
+        "FIELD": 1,
+        "ID": 636,
+        "ILLEGAL": 10000,
+        "TARGET": 7
+      },
+      "row_sha256": "390547b31e3f784f9f3529c8aa8e6062af4a06f0ee4fb327307af4dacf287e41",
+      "skill_id": 636
+    },
+    {
+      "callback": "PETSKILL_BattleModel",
+      "line": 136,
+      "name": "群蜂亂舞",
+      "numeric_fields": {
+        "COST": 3,
+        "FIELD": 1,
+        "ID": 638,
+        "ILLEGAL": 10000,
+        "TARGET": 3
+      },
+      "row_sha256": "6c6afa8759e172929e2b7123055050dded871abb75c53588d508cf9da1ffd13d",
+      "skill_id": 638
+    }
+  ],
+  "qualification": {
+    "native_runtime_verified": false,
+    "official_acquisition_verified": false,
+    "official_birth_skills_verified": false,
+    "original_table_published": false
+  },
+  "rows": [
+    {
+      "graphic": 101617,
+      "position": 31,
+      "row_sha256": "ff24ed2fa6b7e1a5c9bd2e53f9247921d281718389195b4cbff9c89cffc1e705",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 55
+    },
+    {
+      "graphic": 101618,
+      "position": 32,
+      "row_sha256": "ae2648e0b9a7ae6bbbb0e5f978d6792271278604e6fc4e8fa0ad18bea91021b1",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 56
+    },
+    {
+      "graphic": 101621,
+      "position": 52,
+      "row_sha256": "33c4ec0fcd6f21a045e47662a14f36d1e20d4956e7aaf62449d334c55940af5f",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 90
+    },
+    {
+      "graphic": 101622,
+      "position": 58,
+      "row_sha256": "49f0364ec1aea763035496176f0fb2fcf900c214b7bcd046f088c414f822cc97",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 96
+    },
+    {
+      "graphic": 101719,
+      "position": 68,
+      "row_sha256": "e7617d882dc1b8e84a198540be6f31712ccec19f7c58ae871d8d54277501da42",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 108
+    },
+    {
+      "graphic": 101713,
+      "position": 69,
+      "row_sha256": "2e186aedc03231221df4a1e93b6ef25d8707aa8e44175313c061025d3a145959",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 109
+    },
+    {
+      "graphic": 101729,
+      "position": 70,
+      "row_sha256": "9dc08c91162271f43f93483514b7f31534e99e0030f5a9946137ab5b13411e0c",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [],
+          "template_match": "SAME_ID_DIFFERENT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 110
+    },
+    {
+      "graphic": 101720,
+      "position": 75,
+      "row_sha256": "c55e86429f8a24e687eadfe681e7ef3ddd24fd19125605531445367767d69f41",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 115
+    },
+    {
+      "graphic": 101714,
+      "position": 76,
+      "row_sha256": "7e0be0c479dcc2cffd1bc456e3be76d137fd1a5406c64f76ec84f81ba620ff24",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 116
+    },
+    {
+      "graphic": 101706,
+      "position": 84,
+      "row_sha256": "36821a1c3e895474594992b7c7148fe4452180c4b5f6e0dc5cf711d55618f722",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 124
+    },
+    {
+      "graphic": 101712,
+      "position": 90,
+      "row_sha256": "1b2d3564b013022bbccb998ac1ad99283af16cdb65ad2ce632c04e0ca9b9866d",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 130
+    },
+    {
+      "graphic": 101717,
+      "position": 91,
+      "row_sha256": "9ed781c238b7698a7aa5801d34f88dfc6009904c80c6222dea92415896633ed4",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 131
+    },
+    {
+      "graphic": 101718,
+      "position": 92,
+      "row_sha256": "8f7f5354f99a64cd42cc9182c564756ef3715169c217506e0ae5fea64df90187",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 132
+    },
+    {
+      "graphic": 101722,
+      "position": 95,
+      "row_sha256": "4b8344f346c27329f8f3af5b741a1925e91d994f48bc266edf83d08908cb4e82",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 135
+    },
+    {
+      "graphic": 101721,
+      "position": 96,
+      "row_sha256": "9b5aa4d119b5ee20aff88f539afb1536e256ba38700fe67507783aae507fcdbf",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 136
+    },
+    {
+      "graphic": 101737,
+      "position": 101,
+      "row_sha256": "818280e49f7cd6e506e2522274a9e25f190b203bfdc875b7ceecaf331a88f190",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 145
+    },
+    {
+      "graphic": 101736,
+      "position": 102,
+      "row_sha256": "076eb541436d1183207cd2992bb484c8e3e0a8c8b46e33e01837b742970a30a7",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 146
+    },
+    {
+      "graphic": 101748,
+      "position": 103,
+      "row_sha256": "fd3180b3ae38bfdd40fc0138d715b5e0f2e5e27b92ebf2d1896008c5c6d8d07e",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 147
+    },
+    {
+      "graphic": 100327,
+      "position": 108,
+      "row_sha256": "26bf74dbb3eae136c6875fb1704a4c8231abc8e0eb9e7b6fc7c9e506147b874c",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 161
+    },
+    {
+      "graphic": 100328,
+      "position": 109,
+      "row_sha256": "a1c01650eaf1d15f97764f6e54e93bde3bf3df67e71e96e987b591916407eade",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 162
+    },
+    {
+      "graphic": 100329,
+      "position": 110,
+      "row_sha256": "23eccb993bab5bd8f9179addf5cf9ad6ae1d92049e2b624f39cec600f0046f36",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 163
+    },
+    {
+      "graphic": 100330,
+      "position": 111,
+      "row_sha256": "a37db0aabd1a185e4eb637702b6e2a4730a44a2b29014c44b710b24bcde8b1db",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 164
+    },
+    {
+      "graphic": 101762,
+      "position": 112,
+      "row_sha256": "759e1aa7b92511b70b5f602bc7f7eb32d31d52438f0b2aa651e5bb4711750638",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            },
+            {
+              "definition_line": 91,
+              "definition_row_sha256": "147dec81834d2306f4a7e055e4750d4146dc3a595f2bfacb8eb4a69082c29cbe",
+              "skill_id": 583,
+              "slot_index": 2
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 165
+    },
+    {
+      "graphic": 101763,
+      "position": 113,
+      "row_sha256": "0f9d03846e09d0ac12efaaca1ba5e95db3e5fb8a776447bf13dc385c335ce181",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            },
+            {
+              "definition_line": 91,
+              "definition_row_sha256": "147dec81834d2306f4a7e055e4750d4146dc3a595f2bfacb8eb4a69082c29cbe",
+              "skill_id": 583,
+              "slot_index": 2
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 166
+    },
+    {
+      "graphic": 101764,
+      "position": 114,
+      "row_sha256": "64386a77570aa7a25c327de0db770ce6e0ce364edf0bc918b6e2f71e4dddac4d",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            },
+            {
+              "definition_line": 91,
+              "definition_row_sha256": "147dec81834d2306f4a7e055e4750d4146dc3a595f2bfacb8eb4a69082c29cbe",
+              "skill_id": 583,
+              "slot_index": 2
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 167
+    },
+    {
+      "graphic": 101765,
+      "position": 115,
+      "row_sha256": "5061894754fa263d18286e302b81d3b37762109cc281dd419cd29a0fb9e2ffdd",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            },
+            {
+              "definition_line": 91,
+              "definition_row_sha256": "147dec81834d2306f4a7e055e4750d4146dc3a595f2bfacb8eb4a69082c29cbe",
+              "skill_id": 583,
+              "slot_index": 2
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 168
+    },
+    {
+      "graphic": 101766,
+      "position": 117,
+      "row_sha256": "5cd409377e74fc89f60abea3393ef4ae59a9edd2b0b450fa8ba7bf63480e162b",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            },
+            {
+              "definition_line": 129,
+              "definition_row_sha256": "094304948168806b58e43ebc7b8c4ab0424ade481a6eabb82b44ed5e771c2054",
+              "skill_id": 631,
+              "slot_index": 2
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 170
+    },
+    {
+      "graphic": 101872,
+      "position": 125,
+      "row_sha256": "f77f8cb9c3f3228a4d10dd99b2d3734f7c48db9a9e16dcfc02e104a9587e2183",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            },
+            {
+              "definition_line": 134,
+              "definition_row_sha256": "390547b31e3f784f9f3529c8aa8e6062af4a06f0ee4fb327307af4dacf287e41",
+              "skill_id": 636,
+              "slot_index": 2
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 178
+    },
+    {
+      "graphic": 101819,
+      "position": 135,
+      "row_sha256": "a8fb9b5aeec2da55b2a4eb85b9af70f02525ebb584bdf8be69fbaf3e777fed95",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 203
+    },
+    {
+      "graphic": 100343,
+      "position": 144,
+      "row_sha256": "e8b8bb1461923631b27516afe385b63f96fe7a927092bdb7fd35b295a1f527a7",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "SAME_ID_DIFFERENT_ROW"
+        }
+      },
+      "template_id": 231
+    },
+    {
+      "graphic": 101437,
+      "position": 187,
+      "row_sha256": "22dae34a0f8ef4efc321d750c53362684e321226457222a4cff91e78baae5276",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 335
+    },
+    {
+      "graphic": 100373,
+      "position": 208,
+      "row_sha256": "f5239f237c9cf3429f9cca9d2e25b8473306028ed8bd95ab49f841426c08040d",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "dc221cfe49f0d1aa6fcb64dae35ad9108a720b3eae4e1420df7e60556c4c8293",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "5c2bb0b2d65902faac3777f660a4629de459b245739f621eaa0d53174bdc9d3f",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        }
+      },
+      "template_id": 724
+    },
+    {
+      "graphic": 100833,
+      "position": 222,
+      "row_sha256": "9f7f2eae5e2f58c236299258fd153d532f233b26f2fccbe5bfa2eba52bfa35df",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "SAME_ID_DIFFERENT_ROW"
+        }
+      },
+      "template_id": 738
+    },
+    {
+      "graphic": 100841,
+      "position": 230,
+      "row_sha256": "fc7113b58c488f9c99374e410514d566b0a0bf00f9d68ce35b8396c46729b69d",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "SAME_ID_DIFFERENT_ROW"
+        }
+      },
+      "template_id": 746
+    },
+    {
+      "graphic": 100849,
+      "position": 238,
+      "row_sha256": "5ac8e4e08ac204c4516acaada9ee7b7233bf612c46be06d495e651feba0f05f0",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "SAME_ID_DIFFERENT_ROW"
+        }
+      },
+      "template_id": 754
+    },
+    {
+      "graphic": 100871,
+      "position": 260,
+      "row_sha256": "03c1ae71422a35f5a353ccf32a367802b4d18f1349b8f020f6c43525209631ea",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "SAME_ID_DIFFERENT_ROW"
+        }
+      },
+      "template_id": 776
+    },
+    {
+      "graphic": 100879,
+      "position": 268,
+      "row_sha256": "a650415ca5774a1601f6f4ead0c866ff2430f6328b9a7f4e98c8748933c5532c",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "SAME_ID_DIFFERENT_ROW"
+        }
+      },
+      "template_id": 784
+    },
+    {
+      "graphic": 100892,
+      "position": 281,
+      "row_sha256": "c8328dbeb1d5b77658242a1094b1d643fa3898070362d0240a7ed7cb5d38c134",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "SAME_ID_DIFFERENT_ROW"
+        }
+      },
+      "template_id": 797
+    },
+    {
+      "graphic": 100894,
+      "position": 283,
+      "row_sha256": "1c4ce61d78a3ace87e7dd0f397e94b451ceb0a6b71eda445e3053069d0674c8b",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "SAME_ID_DIFFERENT_ROW"
+        }
+      },
+      "template_id": 799
+    },
+    {
+      "graphic": 100895,
+      "position": 284,
+      "row_sha256": "02fdf3330758dd1215a8319d0f94b650b44a82ca8dcbaec2f81fb43a838e61f4",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "SAME_ID_DIFFERENT_ROW"
+        }
+      },
+      "template_id": 800
+    },
+    {
+      "graphic": 100904,
+      "position": 293,
+      "row_sha256": "ce6dafdb18b96d79e8bbf87bd1b2d1515d2a00632a83baedb54b81dd71de6beb",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [],
+          "template_match": "SAME_ID_DIFFERENT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "SAME_ID_DIFFERENT_ROW"
+        }
+      },
+      "template_id": 809
+    },
+    {
+      "graphic": 100917,
+      "position": 306,
+      "row_sha256": "6d117fe7b62d3fb87819af406bb078bdbd810bbe2d1d07ca77f5ac6a07d4280c",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "SAME_ID_DIFFERENT_ROW"
+        }
+      },
+      "template_id": 822
+    },
+    {
+      "graphic": 100853,
+      "position": 309,
+      "row_sha256": "55a80d138a068cdfcad57f34e99d4d64dd0e90a62871bc616cc291d1f3d7b379",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "dc221cfe49f0d1aa6fcb64dae35ad9108a720b3eae4e1420df7e60556c4c8293",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "5c2bb0b2d65902faac3777f660a4629de459b245739f621eaa0d53174bdc9d3f",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        }
+      },
+      "template_id": 854
+    },
+    {
+      "graphic": 100015,
+      "position": 317,
+      "row_sha256": "f9664e606019d1874649c34bdb6aab676c13cd9c82d27b81818778d94c60c97e",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "SAME_ID_DIFFERENT_ROW"
+        }
+      },
+      "template_id": 913
+    },
+    {
+      "graphic": 100018,
+      "position": 318,
+      "row_sha256": "8b6beaa55d514393dbd1681b3883d2aa4e4389e1fb088f718949219f8e85bc99",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "SAME_ID_DIFFERENT_ROW"
+        }
+      },
+      "template_id": 914
+    },
+    {
+      "graphic": 100821,
+      "position": 330,
+      "row_sha256": "6fdf44c24743488ec9bae9095d59fe2873e38d22ab3c807c348374442ce800d6",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "dc221cfe49f0d1aa6fcb64dae35ad9108a720b3eae4e1420df7e60556c4c8293",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "5c2bb0b2d65902faac3777f660a4629de459b245739f621eaa0d53174bdc9d3f",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        }
+      },
+      "template_id": 966
+    },
+    {
+      "graphic": 101448,
+      "position": 344,
+      "row_sha256": "5db4704b9a7966812e0e104fa186044f020304af224e4c472d2c1009a009fd16",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "dc221cfe49f0d1aa6fcb64dae35ad9108a720b3eae4e1420df7e60556c4c8293",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "5c2bb0b2d65902faac3777f660a4629de459b245739f621eaa0d53174bdc9d3f",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        }
+      },
+      "template_id": 993
+    },
+    {
+      "graphic": 101449,
+      "position": 345,
+      "row_sha256": "199b86919962418e87d046096cb3ef0f0b92dd6d4d6d38599cb8f9b66c7fa57e",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "dc221cfe49f0d1aa6fcb64dae35ad9108a720b3eae4e1420df7e60556c4c8293",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "5c2bb0b2d65902faac3777f660a4629de459b245739f621eaa0d53174bdc9d3f",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        }
+      },
+      "template_id": 994
+    },
+    {
+      "graphic": 100908,
+      "position": 386,
+      "row_sha256": "19b7c59d8c8a7ce6bd2cde9e8e82ef8ccd40b0d3d3239ea7b3839a41e83ee201",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "dc221cfe49f0d1aa6fcb64dae35ad9108a720b3eae4e1420df7e60556c4c8293",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "5c2bb0b2d65902faac3777f660a4629de459b245739f621eaa0d53174bdc9d3f",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        }
+      },
+      "template_id": 1042
+    },
+    {
+      "graphic": 101489,
+      "position": 387,
+      "row_sha256": "07657ddf2565077f88cbff68b846e158740513895201fac4c69b70ec12b9fe25",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "SAME_ID_DIFFERENT_ROW"
+        }
+      },
+      "template_id": 1045
+    },
+    {
+      "graphic": 101439,
+      "position": 390,
+      "row_sha256": "574ad61b2d2e033d0076025304c051b7d3c21eb844e6f3dd59fdaa27c1d65cea",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "SAME_ID_DIFFERENT_ROW"
+        }
+      },
+      "template_id": 1049
+    },
+    {
+      "graphic": 101440,
+      "position": 391,
+      "row_sha256": "f6de5526b50432122eed3b82be34306c2849c3d25a501bdb44a93c350369378a",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "SAME_ID_DIFFERENT_ROW"
+        }
+      },
+      "template_id": 1050
+    },
+    {
+      "graphic": 101501,
+      "position": 401,
+      "row_sha256": "29fa18adda9b58472d0324356a730f152fe1f0eeb0ebb21497f3514ce9a34f05",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 1060
+    },
+    {
+      "graphic": 101561,
+      "position": 412,
+      "row_sha256": "3971dc39ed54a421191ab81e05ee711cef1baf4c6044a36b05e5ab41c4e3e79e",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 1071
+    },
+    {
+      "graphic": 101560,
+      "position": 413,
+      "row_sha256": "cca640dc0aa1c9a463bca08a159aa71306acca98fd41473e4188ca2ada24fbc5",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 1072
+    },
+    {
+      "graphic": 101570,
+      "position": 416,
+      "row_sha256": "6397cdcd0be504b7274cbae338e598d47a628fbb387650e2446be478dac815fa",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 1075
+    },
+    {
+      "graphic": 101571,
+      "position": 417,
+      "row_sha256": "04f7473677754f75cb091a45093a1ee5a9f6c1b4f13fb4a2d57d9eae9889fc46",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 1076
+    },
+    {
+      "graphic": 101545,
+      "position": 436,
+      "row_sha256": "a02886f3e266213a70aba64bf596b4d71dc9da24620e578442f1aa6333ae17cc",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 1099
+    },
+    {
+      "graphic": 101546,
+      "position": 438,
+      "row_sha256": "a8628f2e007d456277c8b578f0c1947899e43ecb31eb1999c35958a4f30caa4c",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 1103
+    },
+    {
+      "graphic": 101565,
+      "position": 441,
+      "row_sha256": "9a76f807e1681a06a5a4ea6142ea2be4e6e57cee090f019c6d5e704be130bbf4",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 1106
+    },
+    {
+      "graphic": 101578,
+      "position": 452,
+      "row_sha256": "9622c0761c37db94a8ee7680da548de5ba4261c3d2ede56e3e03f4a60446abd2",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 1133
+    },
+    {
+      "graphic": 101760,
+      "position": 453,
+      "row_sha256": "61f0ad4acaf901a798fef4fcfc97a6c3cf20859dc2da9bd8cf5a846a35c14f1a",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [],
+          "template_match": "SAME_ID_DIFFERENT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 1140
+    },
+    {
+      "graphic": 101489,
+      "position": 454,
+      "row_sha256": "61f9ab7106764f6bc09d5c11ccda8f4901b8250fdc6522edd092653f9d19a536",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 1145
+    },
+    {
+      "graphic": 101868,
+      "position": 459,
+      "row_sha256": "5ad2237c7f32b1ed1ddaf0e055b1dd55e06085ef60512121ee1d27550f0af955",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            },
+            {
+              "definition_line": 136,
+              "definition_row_sha256": "6c6afa8759e172929e2b7123055050dded871abb75c53588d508cf9da1ffd13d",
+              "skill_id": 638,
+              "slot_index": 2
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 1179
+    },
+    {
+      "graphic": 101876,
+      "position": 462,
+      "row_sha256": "857ea382bb238722ca669c9902df0fb5cd12f6aa3c6bfe8a0430ceb9b3ecc652",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 1182
+    },
+    {
+      "graphic": 101879,
+      "position": 463,
+      "row_sha256": "916145962a8ffc8864efdcc1287793c54c6c2dcf5fdbe9b474c313c84c87ba5d",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 1184
+    },
+    {
+      "graphic": 101880,
+      "position": 464,
+      "row_sha256": "5e88c29e36dd93340419ac42a2b2c531b15ff3b51ce337290de6e82eb647e0b7",
+      "scope": {
+        "petskill.txt": {
+          "source_slots": [
+            {
+              "definition_line": 2,
+              "definition_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+              "skill_id": 1,
+              "slot_index": 0
+            },
+            {
+              "definition_line": 3,
+              "definition_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+              "skill_id": 2,
+              "slot_index": 1
+            }
+          ],
+          "template_match": "EXACT_ROW"
+        },
+        "petskill1.txt": {
+          "source_slots": [],
+          "template_match": "ABSENT"
+        }
+      },
+      "template_id": 1185
+    }
+  ],
+  "schema": "stoneage.pet61.same_archive_residual_skill_slots.r1",
+  "source_git_blobs": {
+    "pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "pets/PET-HIGH-FIRST-17-COMPARISON-SKILL-ENCOUNTER-R1.json": "63af501ab483770c5c58cb2d62152ab8923dcc2b",
+    "pets/PET-HIGH-FIRST-50-ORIGINAL-ACQUISITION-R1.json": "4d0b31a7fa196cf8f227a7b0b1aea7183d9598f0",
+    "recovered/STONEAGE-PET-MODULE-10-ORIGINAL-MIXED25-SERVER-TABLES-R1.json": "25a37aeb134fb180e322e7dc335029b7374452d8",
+    "recovered/STONEAGE-PRESERVED-PET-SKILL-SOURCE-R45.json": "dd3baaf7e8edda43ef2e136d35f09d1da6717571"
+  },
+  "source_receipt": {
+    "actual_range_bytes": 12013836,
+    "members": [
+      {
+        "bytes": 15112,
+        "compressed_bytes": 5087,
+        "compressed_payload_sha256": "30bad9bf9f7c828b80ebbe05d061b196eb94d67bff1e3de97158283721ce44de",
+        "compression_method": 53,
+        "crc32": 815411557,
+        "data_offset": 359875629,
+        "flags": 37568,
+        "header_offset": 359875455,
+        "header_sha256": "05616e504db91b3aaeffbeafc0091eb29fd1867cf6e099e4bf443895d23714f3",
+        "independent_decoded_bytes_equal": true,
+        "libarchive_version_number": 3008005,
+        "path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/petskill.txt",
+        "sha256": "f9cefefda40e3a5de9b8cdcb9f8d5c75cd768257bb9b12f7591e86d61fe2f6d4",
+        "unar_return_code": 0
+      },
+      {
+        "bytes": 9715,
+        "compressed_bytes": 4172,
+        "compressed_payload_sha256": "1ba77f491e170a41407062159d72c184f02b240b794cedb6ba90d3832fab0918",
+        "compression_method": 53,
+        "crc32": 914480129,
+        "data_offset": 360516927,
+        "flags": 37568,
+        "header_offset": 360516773,
+        "header_sha256": "c953d11775fa19c279f71ef4380f11a6c40de5eb296e6caf785a12bc1b6d8730",
+        "independent_decoded_bytes_equal": true,
+        "libarchive_version_number": 3008005,
+        "path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/setup.cf",
+        "sha256": "b4936c103efb7b3cad359e5c85c7965187306883a68c0be712ece6c374e3b12d",
+        "unar_return_code": 0
+      }
+    ],
+    "range_requests": 184
+  },
+  "summary": {
+    "petskill.txt": {
+      "exact_templates": 64,
+      "positive_skill_slots": 135,
+      "skill_ids": [
+        1,
+        2,
+        583,
+        631,
+        636,
+        638
+      ]
+    },
+    "petskill1.txt": {
+      "exact_templates": 6,
+      "positive_skill_slots": 12,
+      "skill_ids": [
+        1,
+        2
+      ]
+    }
+  }
+}

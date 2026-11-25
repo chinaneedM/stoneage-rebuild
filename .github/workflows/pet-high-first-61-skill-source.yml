@@ -45,3 +45,5 @@ jobs:
       - uses: actions/checkout@v4
       - run: python -m tools.stoneage_pet_high_first_61_skills
       - run: python -m unittest tests.test_stoneage_preserved_pet_skill_r45 tests.test_stoneage_pet19_skill_gap_audit
+      - run: python tools/stoneage_pet_source_lookup.py --verify
+      - run: python tools/stoneage_pet_gap_queue.py --verify

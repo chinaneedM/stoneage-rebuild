@@ -80,3 +80,5 @@ R58 为其中十个缺同名相册的位置添加角色，另从八个既有同�
 R59 的独立像素凭证复算补充了 66 个图组的使用范围。39 组有同保存包的动作取样，7 组在另一保存包有精确 SPR/RD 取样，20 组尚缺所比对凭证的完整取样。[PET59](../continuity/STONEAGE-PET-HIGH-FIRST-59-RESIDUAL-PIXEL-RECEIPTS-20261125.md)。
 
 R60 从同一台湾保存 8.5 原包补齐余下 20 组的完整动作取样，123 个图块均经两套解码器核对。用 `--query 古瓜 --source tw75 --exact --full` 可查两份模板各自的 `hf60` 动作链接。[PET60](../continuity/STONEAGE-PET-HIGH-FIRST-60-TW85-REMAINING-PIXELS-20261125.md)。
+
+R61 为 67 个严格取得余缺的现有模板添加同档技能核查。64 条全行匹配，135 个正数槽可追至原配置的六条定义。用 `--query 烏力王 --source tw75 --exact --full` 查看有证模板的 `hf61` 技能链接。[PET61](../continuity/STONEAGE-PET-HIGH-FIRST-61-RESIDUAL-SKILL-DEFINITIONS-20261125.md)。
