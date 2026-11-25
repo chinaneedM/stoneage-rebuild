@@ -40,7 +40,6 @@ jobs:
             --acquisition "$RUNNER_TEMP/tw85-acquisition.json" --receipt "$RUNNER_TEMP/pet60-receipt.json"
           python -m tools.stoneage_pet_high_first_60_source_pixels --receipt "$RUNNER_TEMP/pet60-receipt.json"
           sha256sum "$RUNNER_TEMP/pet60-receipt.json"
-          gzip -nc "$RUNNER_TEMP/pet60-receipt.json" | base64 -w 180 | sed 's/^/PET60_RECEIPT /'
       - uses: actions/upload-artifact@v4
         with:
           name: pet60-derived-original-pixel-receipt
@@ -54,3 +53,5 @@ jobs:
       - uses: actions/checkout@v4
       - run: python -m tools.stoneage_pet_high_first_60_source_pixels
       - run: python -m unittest tests.test_stoneage_pet_high_first_tw85_pixels tests.test_stoneage_pet45_tw85_source_join
+      - run: python tools/stoneage_pet_source_lookup.py --verify
+      - run: python tools/stoneage_pet_gap_queue.py --verify
