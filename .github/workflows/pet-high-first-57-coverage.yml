@@ -30,6 +30,8 @@ jobs:
             python -m tools.stoneage_pet_high_first_57_coverage --write
             python -m tools.stoneage_pet_high_first_57_coverage
           fi
+      - run: python tools/stoneage_pet_source_lookup.py --verify
+      - run: python tools/stoneage_pet_gap_queue.py --verify
       - uses: actions/upload-artifact@v4
         with:
           name: pet57-derived-coverage
