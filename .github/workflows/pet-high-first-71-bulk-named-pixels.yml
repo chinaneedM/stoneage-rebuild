@@ -1,0 +1,28 @@
+name: PET-HIGH-FIRST-71 bulk named original pixels
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_71_bulk_named_pixels.py'
+      - '.github/workflows/pet-high-first-71-bulk-named-pixels.yml'
+      - 'docs/continuity/STONEAGE-PET-HIGH-FIRST-71-BULK-NAMED-PIXELS-20261125.md'
+      - 'research/pets/PET-HIGH-FIRST-71-*'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_71_bulk_named_pixels.py'
+      - '.github/workflows/pet-high-first-71-bulk-named-pixels.yml'
+      - 'docs/continuity/STONEAGE-PET-HIGH-FIRST-71-BULK-NAMED-PIXELS-20261125.md'
+      - 'research/pets/PET-HIGH-FIRST-71-*'
+    types: [opened, synchronize, reopened, ready_for_review]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install Pillow
+      - run: python -m tools.stoneage_pet_high_first_71_bulk_named_pixels
