@@ -111,6 +111,9 @@ def main():
     p=argparse.ArgumentParser();p.add_argument("--output",type=Path);a=p.parse_args()
     r=derive()
     if a.output:a.output.write_bytes(pet71.bulk.stable(r))
+    snap=read(ROOT/"research/pets/PET-HIGH-FIRST-72-GEOMETRY-RESIDUAL-SUMMARY-R1.json")
+    assert snap["summary"]==r["summary"] and snap["geometry_records"]==r["geometry_records"]
+    print("PET72_POSITIVE_RESIDUAL="+json.dumps([x for x in r["residual_groups"] if x["status"]=="EARLIER_NAMED_OR_SELECTED_EXACT_SPR_CANDIDATE"],ensure_ascii=False,sort_keys=True,separators=(",",":")),flush=True)
     print("PET72_SUMMARY="+json.dumps(r["summary"],ensure_ascii=False,sort_keys=True,separators=(",",":")),flush=True)
     print("PET72_GEOMETRY="+json.dumps(r["geometry_records"],ensure_ascii=False,sort_keys=True,separators=(",",":")),flush=True)
 if __name__=="__main__":main()
