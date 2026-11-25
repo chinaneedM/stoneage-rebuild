@@ -141,5 +141,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument("--output",type=Path);a=p.parse_args()
     report=derive()
     if a.output:a.output.write_text(json.dumps(report,ensure_ascii=False,sort_keys=True,separators=(",",":"))+"\n",encoding="utf-8")
+    snapshot=json.loads((ROOT/"research/pets/PET-HIGH-FIRST-69-FULL-NATIVE-ROUTES-SUMMARY-R1.json").read_bytes())
+    assert snapshot["summary"]==report["summary"], "fixed replay summary mismatch"
     print("PET69_SUMMARY="+json.dumps(report["summary"],sort_keys=True,separators=(",",":")),flush=True)
 if __name__=="__main__":main()
