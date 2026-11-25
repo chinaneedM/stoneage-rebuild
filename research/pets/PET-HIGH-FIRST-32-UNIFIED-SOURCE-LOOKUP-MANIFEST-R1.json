@@ -356,6 +356,18 @@
       "git_blob": "6ec78a6e303f2e83d616a976e0c71a97330d27df",
       "expected_array": "rows",
       "expected_rows": 67
+    },
+    "hf62": {
+      "path": "research/pets/PET-HIGH-FIRST-62-RESIDUAL-ACQUISITION-REVIEW-R1.json",
+      "git_blob": "e57921f1ef3260ba298f4e06788ca1c6b78aa47b",
+      "expected_array": "rows",
+      "expected_rows": 67
+    },
+    "hf63": {
+      "path": "research/pets/PET-HIGH-FIRST-63-VARIANT-PERIOD-WITNESSES-R1.json",
+      "git_blob": "5affe17f1f280214e5a7fd41f8299912405bda10",
+      "expected_array": "rows",
+      "expected_rows": 13
     }
   },
   "expected": {
@@ -474,5 +486,10 @@
     "source_head": "df0390124a0e11a1434aa5fc1ac41b0890409a12",
     "source_tree": "cf3c7e225c33e1323fbac45f9c5fb5d31f4a9f73",
     "scope": "67 existing residual positions; 64 exact primary templates, 135 configured skill slots and six original definitions. Alternate six exact templates retained separately."
+  },
+  "supplement_hf63": {
+    "source_head": "ef88f99cfe2677a92f98caf43c00e30cd0defea0",
+    "source_tree": "9f8eb72545b699c78379bceefb7986538a0ed72b",
+    "scope": "67 existing residual review links and 13 focused variant/documentary links; 6 name+ratio-compatible player acquisition references, no official closure or new positions."
   }
 }
