@@ -72,3 +72,9 @@ R54 追加位置387、453、454的 `hf54` 对象分类及原函数/后续GetEgg�
 
 
 R56 追加十个现有TW75模板位置的角色及原NPC候选指针（55固定源对象），14条原扫描候选及5个后期角色可追溯；12条既有训练奖励、2条未绑定的暂不用VIP数值候选，不增加查询位置或关闭严格缺口。[PET56](../continuity/STONEAGE-PET-HIGH-FIRST-56-SPECIAL-ROLE-PREFLIGHT-20261124.md)。
+
+R57 在 67 个余缺位置添加高版本保存图组、原帧绑定与相册候选。[PET57](../continuity/STONEAGE-PET-HIGH-FIRST-57-RESIDUAL-VISUAL-COVERAGE-20261124.md)。
+
+R58 为其中十个缺同名相册的位置添加角色，另从八个既有同图模板提供反向链接。用 `--query 萊比 --source tw75 --exact --full` 查看莱比角色和同图的乌力莱德模板。[PET58](../continuity/STONEAGE-PET-HIGH-FIRST-58-PC-TASK-ROLE-CROSSWALK-20261125.md)。
+
+R59 的独立像素凭证复算补充了 66 个图组的使用范围。39 组有同保存包的动作取样，7 组在另一保存包有精确 SPR/RD 取样，20 组尚缺所比对凭证的完整取样。[PET59](../continuity/STONEAGE-PET-HIGH-FIRST-59-RESIDUAL-PIXEL-RECEIPTS-20261125.md)。
