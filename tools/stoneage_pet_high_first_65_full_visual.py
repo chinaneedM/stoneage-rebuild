@@ -99,7 +99,7 @@ def derive():
             if b and b["status"]=="DUAL_DECODED_INDEX_PIXELS":
                 assert (b["adrn_sha256"],b["rd_sha256"],b["bitmap"])==(n["adrn_sha256"],n["rd_sha256"],n["bitmap"])
                 direct_decoded.append(i)
-            for cn in cn_by_alias[a]:
+            for cn in cn_by_alias.get(a, []):
                 p=cn_pixels[cn["ordinal"]];b=blocks[str(p["portrait_selected_bitmap"])]
                 if b["index_pixels_sha256"] and b["rd_sha256"]==n["rd_sha256"] and (b["width"],b["height"])==(n["width"],n["height"]):
                     cross.append(dict(native_index=i,cn50_ordinal=cn["ordinal"],rd_sha256=n["rd_sha256"]))
@@ -155,7 +155,7 @@ def derive():
     for a in aliases:position_counts[a["status"]]+=len(a["program_positions"])
     assert sum(status_counts.values())==508 and sum(position_counts.values())==1889
     # Cross-carrier CN relationship counts not same-build name claims.
-    cn_grid_positions=sum(len(grid[a]) for a in cn_by_alias if a in grid)
+    cn_grid_positions=sum(len(grid[a]) for a,rows in cn_by_alias.items() if rows and a in grid)
     assert cn_grid_positions==1220
     summary=dict(alias_count=508,program_positions=1889,alias_name_conflicts=6,alias_status=dict(status_counts),position_status=dict(position_counts),
         cn50_same_numeric_alias_positions=cn_grid_positions,extra_native_route_positions=len(route_slots),
