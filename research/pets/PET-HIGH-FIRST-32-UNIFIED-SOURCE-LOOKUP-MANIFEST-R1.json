@@ -332,6 +332,12 @@
       "git_blob": "d5a98f0711d36b17dca3fe5786f1fb9b63a3c5b9",
       "expected_array": "rows",
       "expected_rows": 5
+    },
+    "hf57": {
+      "path": "research/pets/PET-HIGH-FIRST-57-RESIDUAL-VISUAL-COVERAGE-R1.json",
+      "git_blob": "c291a0a597ba1b6270191c561f10401293df161e",
+      "expected_array": "rows",
+      "expected_rows": 67
     }
   },
   "expected": {
@@ -431,5 +437,10 @@
     "source_head": "2a5f2e3710af5f666467786066fc0f428bf8a424",
     "source_tree": "09d16a498a2987583af07c2152a08ce1f7142756",
     "scope": "67 original selected acquisition gap templates, 70 distinct instances, 14 structured candidate lines in 3 files; 10 existing template-position classifications; 12 previously recorded trainer AddPet lines and 2 unreferenced reserved VIP candidates, no official acquisition closure."
+  },
+  "supplement_hf57": {
+    "source_head": "a40baab08d0e2770bf560dde952e71aa894606f8",
+    "source_tree": "f765cdc22c2ef3d5252b5c9e7801457fe5431502",
+    "scope": "67 existing residual template positions; complete same-number TW85 physical group and frame mapping coverage, 57 exact written-name album candidates, 56 alias candidates; no official identity or acquisition closure."
   }
 }

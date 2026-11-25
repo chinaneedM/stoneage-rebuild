@@ -1,0 +1,39 @@
+name: PET-HIGH-FIRST-57 all residual high-version visual coverage
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_57_coverage.py'
+      - 'research/pets/PET-HIGH-FIRST-57-RESIDUAL-VISUAL-COVERAGE-R1.json'
+      - 'research/pets/PET-HIGH-FIRST-57-FREE-CLIENT-POINTERS-R1.json'
+      - '.github/workflows/pet-high-first-57-coverage.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_57_coverage.py'
+      - 'research/pets/PET-HIGH-FIRST-57-RESIDUAL-VISUAL-COVERAGE-R1.json'
+      - '.github/workflows/pet-high-first-57-coverage.yml'
+permissions:
+  contents: read
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Derive or verify all residual material references
+        run: |
+          if test -f research/pets/PET-HIGH-FIRST-57-RESIDUAL-VISUAL-COVERAGE-R1.json; then
+            python -m tools.stoneage_pet_high_first_57_coverage
+          else
+            python -m tools.stoneage_pet_high_first_57_coverage --write
+            python -m tools.stoneage_pet_high_first_57_coverage
+          fi
+      - run: python tools/stoneage_pet_source_lookup.py --verify
+      - run: python tools/stoneage_pet_gap_queue.py --verify
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet57-derived-coverage
+          path: research/pets/PET-HIGH-FIRST-57-RESIDUAL-VISUAL-COVERAGE-R1.json
+          retention-days: 7
