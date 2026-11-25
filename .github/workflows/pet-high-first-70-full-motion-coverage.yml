@@ -1,0 +1,29 @@
+name: PET-HIGH-FIRST-70 full motion coverage
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_70_full_motion_coverage.py'
+      - '.github/workflows/pet-high-first-70-full-motion-coverage.yml'
+      - 'docs/continuity/STONEAGE-PET-HIGH-FIRST-70-FULL-MOTION-COVERAGE-20261125.md'
+      - 'research/pets/PET-HIGH-FIRST-70-*'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_70_full_motion_coverage.py'
+      - '.github/workflows/pet-high-first-70-full-motion-coverage.yml'
+      - 'docs/continuity/STONEAGE-PET-HIGH-FIRST-70-FULL-MOTION-COVERAGE-20261125.md'
+      - 'research/pets/PET-HIGH-FIRST-70-*'
+    types: [opened, synchronize, reopened, ready_for_review]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m tools.stoneage_pet_high_first_70_full_motion_coverage --output "${{ runner.temp }}/pet70.json.gz"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet70-derived-motion-matrix
+          path: ${{ runner.temp }}/pet70.json.gz
+          retention-days: 7
