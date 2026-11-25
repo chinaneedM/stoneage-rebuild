@@ -338,6 +338,12 @@
       "git_blob": "c291a0a597ba1b6270191c561f10401293df161e",
       "expected_array": "rows",
       "expected_rows": 67
+    },
+    "hf58": {
+      "path": "research/pets/PET-HIGH-FIRST-58-NO-EXACT-ALBUM-ROLE-CROSSWALK-R1.json",
+      "git_blob": "05abda998bd2ee7c7f24101468f14de96a1dbcea",
+      "expected_array": "rows",
+      "expected_rows": 10
     }
   },
   "expected": {
@@ -442,5 +448,9 @@
     "source_head": "a40baab08d0e2770bf560dde952e71aa894606f8",
     "source_tree": "f765cdc22c2ef3d5252b5c9e7801457fe5431502",
     "scope": "67 existing residual template positions; complete same-number TW85 physical group and frame mapping coverage, 57 exact written-name album candidates, 56 alias candidates; no official identity or acquisition closure."
+  },
+  "supplement_hf58": {
+    "source_head": "c1ca85c281bd5fbb16437404b00c6026e357d4c2",
+    "scope": "Role crosswalk for 10 existing TW75 records with no exact TW85 album label and eight existing shared-graphic counterpart links. No alias promotion, new record positions or official closures."
   }
 }
