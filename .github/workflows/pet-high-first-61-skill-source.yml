@@ -1,0 +1,49 @@
+name: PET-HIGH-FIRST-61 same-archive skill sources
+on:
+  push:
+    branches: [agent/pet-high-first-61-skill-source-20261125, main]
+    paths:
+      - '.github/workflows/pet-high-first-61-skill-source.yml'
+      - 'tools/stoneage_pet_high_first_61_skills.py'
+      - 'research/pets/PET-HIGH-FIRST-61-RESIDUAL-SKILL-DEFINITIONS-R1.json'
+  pull_request:
+    paths:
+      - '.github/workflows/pet-high-first-61-skill-source.yml'
+      - 'tools/stoneage_pet_high_first_61_skills.py'
+      - 'research/pets/PET-HIGH-FIRST-61-RESIDUAL-SKILL-DEFINITIONS-R1.json'
+permissions:
+  contents: read
+jobs:
+  original-source:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/agent/pet-high-first-61-skill-source-20261125'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m tools.stoneage_pet_high_first_61_skills --plan-only
+      - run: python -m pip install rarfile==4.2 libarchive-c==5.3
+      - run: sudo apt-get update -qq && sudo apt-get install -y unar libarchive-tools
+      - name: Reacquire and inspect the two pinned source members
+        run: |
+          python -m tools.stoneage_pet_high_first_61_skills --read-original --report "$RUNNER_TEMP/pet61-receipt.json"
+          python -m tools.stoneage_pet_high_first_61_skills --report "$RUNNER_TEMP/pet61-receipt.json"
+          sha256sum "$RUNNER_TEMP/pet61-receipt.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet61-derived-skill-receipt
+          path: ${{ runner.temp }}/pet61-receipt.json
+          retention-days: 7
+          if-no-files-found: error
+  verify:
+    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m tools.stoneage_pet_high_first_61_skills
+      - run: python -m unittest tests.test_stoneage_preserved_pet_skill_r45 tests.test_stoneage_pet19_skill_gap_audit
+      - run: python tools/stoneage_pet_source_lookup.py --verify
+      - run: python tools/stoneage_pet_gap_queue.py --verify

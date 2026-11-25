@@ -350,6 +350,12 @@
       "git_blob": "8791199ccbf374495a50b9bc479ababe22c77edf",
       "expected_array": null,
       "expected_rows": null
+    },
+    "hf61": {
+      "path": "research/pets/PET-HIGH-FIRST-61-RESIDUAL-SKILL-DEFINITIONS-R1.json",
+      "git_blob": "6ec78a6e303f2e83d616a976e0c71a97330d27df",
+      "expected_array": "rows",
+      "expected_rows": 67
     }
   },
   "expected": {
@@ -463,5 +469,10 @@
     "source_head": "b30f83d1550005a23fdec6905652b8d65a812d29",
     "source_tree": "0cfd26436676392cba8caa498616d74c6d32e831",
     "scope": "20 exact saved-TW85 physical groups and 123 dual-decoded index bitmaps. Links on existing positions only."
+  },
+  "supplement_hf61": {
+    "source_head": "df0390124a0e11a1434aa5fc1ac41b0890409a12",
+    "source_tree": "cf3c7e225c33e1323fbac45f9c5fb5d31f4a9f73",
+    "scope": "67 existing residual positions; 64 exact primary templates, 135 configured skill slots and six original definitions. Alternate six exact templates retained separately."
   }
 }

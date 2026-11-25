@@ -255,6 +255,9 @@ def build(d):
         int(bitmap) for bitmap, index in observations60["frame_bitmap_to_adrn_index"].items()
         if observations60["observed_blocks"][str(index)]["status"] == "DUAL_DECODED_INDEX_PIXELS"
     }
+    skills61 = d["hf61"]
+    skills61_by_position = by_id(skills61["rows"], "position")
+    skill_definitions61 = by_id(skills61["configured_skill_definitions"], "skill_id")
     special56_by_position = by_id(d["hf56"]["rows"], "position")
     egg54_by_position = {row["position"]: j for j,row in enumerate(d["hf54"]["rows"])}
     reward53_by_position = {row["position"]: j for j,row in enumerate(d["hf53"]["rows"])}
@@ -328,6 +331,15 @@ def build(d):
                                  if bitmaps and bitmaps <= decoded_bitmaps60
                                  else "SAVED_TW85_INDEX_PIXEL_SAMPLE_HAS_UNSUPPORTED_BLOCKS")
                 ls.append(link("hf60", ["observations", "sequences", j60], qualification))
+        if i in skills61_by_position:
+            j61 = skills61_by_position[i]
+            row61 = skills61["rows"][j61]
+            assert (row61["template_id"], row61["graphic"], row61["row_sha256"]) == (k, x["graphic"], x["row_sha256"])
+            slots61 = row61["scope"]["petskill.txt"]
+            ls.append(link("hf61", ["rows", j61], slots61["template_match"] + "_SAVED_MIXED25_SKILL_REFERENCE"))
+            for skill_id in sorted({slot["skill_id"] for slot in slots61["source_slots"]}):
+                ls.append(link("hf61", ["configured_skill_definitions", skill_definitions61[skill_id]],
+                               "SAVED_MIXED25_CONFIGURED_SKILL_DEFINITION_NOT_OFFICIAL_EFFECT"))
         if i in special56_by_position:
             j56 = special56_by_position[i]
             r56 = d["hf56"]["rows"][j56]
@@ -514,6 +526,14 @@ def verify(m,d,entries):
         links60 = [l for l in item["linked_records"] if l["source"] == "hf60"]
         actual60 = {resolve(d, l["source"], l["pointer"])["physical_group"] for l in links60}
         assert actual60 == expected60.get(i, set()) and len(links60) == len(actual60)
+    assert set(d["hf61"]["qualification"].values()) == {False}
+    assert [r["position"] for r in d["hf61"]["rows"]] == d["hf49"]["remaining_gap_row_indices"]
+    assert source_counts["hf61"] == 67 + 135
+    for row61 in d["hf61"]["rows"]:
+        links61 = [l for l in high45[row61["position"]]["linked_records"] if l["source"] == "hf61"]
+        assert {resolve(d, l["source"], l["pointer"])["skill_id"] for l in links61
+                if l["pointer"][0] == "configured_skill_definitions"} == {
+                    slot["skill_id"] for slot in row61["scope"]["petskill.txt"]["source_slots"]}
     roles58 = d["hf58"]["rows"]
     master58 = d["tw75"]["pet_flag_1_field_projections"]
     originals58 = {r["tw75_row_index"]: r for r in d["hf50"]["projection"]["records"]}
