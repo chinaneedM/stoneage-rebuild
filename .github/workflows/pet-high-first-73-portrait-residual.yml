@@ -1,0 +1,48 @@
+name: PET-HIGH-FIRST-73 original portraits and residual motion
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_73_portrait_residual.py'
+      - '.github/workflows/pet-high-first-73-portrait-residual.yml'
+      - 'docs/continuity/STONEAGE-PET-HIGH-FIRST-73-PORTRAIT-RESIDUAL-20261125.md'
+      - 'research/pets/PET-HIGH-FIRST-73-*'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_73_portrait_residual.py'
+      - '.github/workflows/pet-high-first-73-portrait-residual.yml'
+      - 'docs/continuity/STONEAGE-PET-HIGH-FIRST-73-PORTRAIT-RESIDUAL-20261125.md'
+      - 'research/pets/PET-HIGH-FIRST-73-*'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install Pillow
+      - run: python -m tools.stoneage_pet_high_first_73_portrait_residual
+      - name: Independent original derived artifact custody
+        if: github.event_name == 'push' && github.ref == 'refs/heads/agent/pet-high-first-73-portrait-residual-20261125'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh api repos/chinaneedM/stoneage-rebuild/actions/artifacts/14996285410/zip > "$RUNNER_TEMP/pet73.zip"
+          printf '%s  %s\n' 2242579a5f14234e7e3d254b3a29d302aae7d1a51ff3c09258fa19a78d8c51aa "$RUNNER_TEMP/pet73.zip" | sha256sum -c -
+          python - "$RUNNER_TEMP/pet73.zip" <<'PY'
+          import hashlib, pathlib, sys, zipfile
+          paths = ["PET-HIGH-FIRST-73-PORTRAIT-RESIDUAL-R1.json", "PET-HIGH-FIRST-73-PORTRAIT-RESIDUAL-SUMMARY-R1.json"]
+          with zipfile.ZipFile(sys.argv[1]) as z:
+              assert len(z.namelist()) == 2
+              for p in paths:
+                  names = [n for n in z.namelist() if pathlib.PurePosixPath(n).name == p]
+                  assert len(names) == 1
+                  b = z.read(names[0])
+                  assert b == pathlib.Path("research/pets",p).read_bytes()
+                  print("PET73_ARTIFACT_MATCH",p,hashlib.sha256(b).hexdigest())
+          PY
