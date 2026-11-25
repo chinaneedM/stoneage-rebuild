@@ -1,0 +1,29 @@
+name: PET-HIGH-FIRST-69 full native routes
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_69_full_native_routes.py'
+      - '.github/workflows/pet-high-first-69-full-native-routes.yml'
+      - 'docs/continuity/STONEAGE-PET-HIGH-FIRST-69-FULL-NATIVE-ROUTES-20261125.md'
+      - 'research/pets/PET-HIGH-FIRST-69-*'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_69_full_native_routes.py'
+      - '.github/workflows/pet-high-first-69-full-native-routes.yml'
+      - 'docs/continuity/STONEAGE-PET-HIGH-FIRST-69-FULL-NATIVE-ROUTES-20261125.md'
+      - 'research/pets/PET-HIGH-FIRST-69-*'
+    types: [opened, synchronize, reopened, ready_for_review]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m tools.stoneage_pet_high_first_69_full_native_routes --output "${{ runner.temp }}/pet69.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet69-derived-routes
+          path: ${{ runner.temp }}/pet69.json
+          retention-days: 7
