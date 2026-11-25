@@ -82,3 +82,6 @@ R59 的独立像素凭证复算补充了 66 个图组的使用范围。39 组有
 R60 从同一台湾保存 8.5 原包补齐余下 20 组的完整动作取样，123 个图块均经两套解码器核对。用 `--query 古瓜 --source tw75 --exact --full` 可查两份模板各自的 `hf60` 动作链接。[PET60](../continuity/STONEAGE-PET-HIGH-FIRST-60-TW85-REMAINING-PIXELS-20261125.md)。
 
 R61 为 67 个严格取得余缺的现有模板添加同档技能核查。64 条全行匹配，135 个正数槽可追至原配置的六条定义。用 `--query 烏力王 --source tw75 --exact --full` 查看有证模板的 `hf61` 技能链接。[PET61](../continuity/STONEAGE-PET-HIGH-FIRST-61-RESIDUAL-SKILL-DEFINITIONS-20261125.md)。
+
+
+R74（候选）：统一接入保存版TW85具名程序位置、全部肖像物理候选、原动作组及负几何记录。`--full` 可追精确原行和色板凭证，普通查询显示来源分级视觉参考；TW75仅同图号候选，TW1/CN50要求完整SPR同散列，均不证明同服身份。实际生成并验收后生效。[续接](../continuity/STONEAGE-PET-HIGH-FIRST-74-UNIFIED-VISUAL-20261125.md)。

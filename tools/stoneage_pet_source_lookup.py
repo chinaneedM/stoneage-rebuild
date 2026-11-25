@@ -419,7 +419,62 @@ def build(d):
         if x["role"].startswith("UNQUALIFIED_"):
             continue
         add("hf36",["rows",i],[x["name"]],x["role"],detail={k:x[k] for k in ("year","region","source_id","claim")})
+    if "hf74" in d:attach_visual(d,out)
     return out
+
+def attach_visual(d, entries):
+    """Attach PET74 projections to existing identities without adding pet records."""
+    v=d["hf74"]; p=d["hf73"]
+    assert not any(v[k] for k in ("official_identity_verified","original_runtime_verified","original_assets_published"))
+    for e in entries:
+        source=e["source"];detail=e["detail"];raw=resolve(d,source,e["pointer"])
+        position=None;group_ids=[];grade=None
+        if source=="tw85_grid":
+            position=f"{detail['program']}:{detail['slot']}"
+            row=v["positions"][position]
+            assert (row["name"],row["row_sha256"],row["portrait_alias"])==(raw["original_name_cp950"],raw["original_row_sha256"],raw["source_portrait_alias"])
+            group_ids=row["group_ids"];grade="SAME_PROGRAM_ORIGINAL_ALBUM_ROW_AND_STATIC_ROUTES"
+        elif source=="tw85_spr":
+            position=f"{detail['program']}:{detail['local_slot']}"
+            row=v["positions"][position]
+            assert (row["name"],row["row_sha256"],row["portrait_alias"])==(raw["original_name_cp950"],raw["original_album_row_sha256"],raw["original_portrait_alias_u32"])
+            group_ids=[i for i in row["group_ids"] if v["groups"][i]["graphic"]==detail["graphic"]]
+            assert group_ids
+            grade="SAME_PROGRAM_ORIGINAL_NAMED_SPR_ROUTE"
+        elif source=="tw75":
+            group_ids=v["graphics"][str(detail["graphic"])]
+            grade="CROSS_SOURCE_NUMERIC_GRAPHIC_ONLY_NOT_IDENTITY"
+        elif source=="cn50":
+            wanted={(g["spr_group"],g["sha256"]) for g in raw["spr_groups"]}
+            group_ids=[i for g,h in sorted(wanted) for i in v["graphics"].get(str(g),[]) if v["groups"][i]["spr_sha256"]==h]
+            grade="EXACT_CROSS_CARRIER_SPR_NOT_IDENTITY"
+        elif source=="tw10":
+            album=next(resolve(d,l["source"],l["pointer"]) for l in e["linked_records"] if l["source"]=="tw10_album")
+            group_ids=[i for i in v["graphics"].get(str(detail["graphic"]),[]) if v["groups"][i]["spr_sha256"]==album["spr_original_segment_sha256"]]
+            grade="EXACT_CROSS_CARRIER_SPR_NOT_IDENTITY"
+        else:continue
+        if position is None and not group_ids:continue
+        def attach(src,pointer,q):
+            e["linked_records"].append(dict(source=src,pointer=pointer,qualification=q))
+        visual=dict(qualification=grade,motion_groups=[dict(group_index=int(i),**v["groups"][i]) for i in group_ids],
+                    original_runtime_verified=False,official_identity_verified=False)
+        if position is not None:
+            row=v["positions"][position];alias=str(row["portrait_alias"])
+            assert row["portrait_rows"]==[i for i,n in p["aliases"][alias]]
+            visual.update(portrait_alias=int(alias),portrait_status=row["portrait_status"],portrait_rows=row["portrait_rows"],
+                          album_position_motion_status=row["motion_status"])
+            attach("hf74",["positions",position],grade)
+            attach("hf73",["aliases",alias],"SAME_CARRIER_ALL_PHYSICAL_PORTRAIT_ALIAS_CANDIDATES")
+            for i in row["portrait_rows"]:
+                attach("hf73",["observations",str(i)],"STRICT_ORIGINAL_INDEXED_PIXEL_RECEIPT_NOT_RENDERED_COLOR")
+        for i in group_ids:
+            attach("hf74",["groups",i],grade)
+            for j in v["groups"][i]["geometry_indices"]:
+                attach("hf72",["geometry_records",j],"ORIGINAL_NEGATIVE_GEOMETRY_RUNTIME_UNRESOLVED")
+            if i=="363":attach("hf73",["frame_indices"],"EXACT_EARLIER_SELECTED_MOTION_RD_NOT_LIVE_IDENTITY")
+        attach("hf73",["palette_file_receipts"],"SAME_CARRIER_ORIGINAL_PALETTE_BYTES_NOT_RUNTIME_SELECTION")
+        detail["visual_reference"]=visual
+
 def summary(entries):
     return dict(source_record_occurrences=len(entries),literal_labels=len({n for x in entries for n in x["labels"]}),unlabelled_source_occurrences=sum(not x["labels"] for x in entries),by_source=dict(sorted(collections.Counter(x["source"] for x in entries).items())),by_role=dict(sorted(collections.Counter(x["role"] for x in entries).items())),official_species_count=None,warning="Source occurrences and literal labels are not distinct species, nor official first release.")
 def search(entries,query,exact=False,variants=False,char_map=None,source=None):
@@ -644,6 +699,17 @@ def verify(m,d,entries):
     assert {x["claim"]["lane"] for x in hf36 if x["name"]=="格鲁西斯"}=={"精灵觉醒2.5","特色8.5"}
     assert any(x["claim"].get("prior_source_for_2025") for x in hf36 if x["name"]=="奇格拉" and x["year"]==2016)
     assert any(x["claim"].get("prior_source_for_2025") for x in hf36 if x["name"]=="多格斯" and x["year"]==2016)
+    if "hf74" in d:
+        visual_entries=[e for e in entries if e.get("detail") and "visual_reference" in e["detail"]]
+        vc=collections.Counter(e["source"] for e in visual_entries)
+        assert vc["tw85_grid"]==1889 and vc["tw85_spr"]==1696 and vc["tw75"]==467
+        assert all(not e["detail"]["visual_reference"]["original_runtime_verified"] and not e["detail"]["visual_reference"]["official_identity_verified"] for e in visual_entries)
+        grid=[e for e in visual_entries if e["source"]=="tw85_grid"]
+        assert all(e["detail"]["visual_reference"]["portrait_status"]=="ALL_STRICT" for e in grid)
+        assert collections.Counter(e["detail"]["visual_reference"]["album_position_motion_status"] for e in grid)=={"ALL_CANVAS_COMPLETE":1883,"SOME_CANVAS_COMPLETE":6}
+        assert sum(any(l["source"]=="hf72" for l in e["linked_records"]) for e in grid)==6
+        assert all(e["detail"]["visual_reference"]["qualification"]=="CROSS_SOURCE_NUMERIC_GRAPHIC_ONLY_NOT_IDENTITY" for e in visual_entries if e["source"]=="tw75")
+        print("PET74_LOOKUP="+json.dumps(dict(vc),sort_keys=True),flush=True)
     assert m["expected"]["official_species_count"] is None and not m["original_assets_published"]
     print(json.dumps(summary(entries),ensure_ascii=False,indent=2))
 def main():
