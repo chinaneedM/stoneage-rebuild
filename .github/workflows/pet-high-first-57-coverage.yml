@@ -3,13 +3,17 @@ on:
   push:
     paths:
       - 'tools/stoneage_pet_high_first_57_coverage.py'
+      - 'tools/stoneage_pet_high_first_59_pixels.py'
       - 'research/pets/PET-HIGH-FIRST-57-RESIDUAL-VISUAL-COVERAGE-R1.json'
       - 'research/pets/PET-HIGH-FIRST-57-FREE-CLIENT-POINTERS-R1.json'
+      - 'research/pets/PET-HIGH-FIRST-59-RESIDUAL-PIXEL-RECEIPTS-R1.json'
       - '.github/workflows/pet-high-first-57-coverage.yml'
   pull_request:
     paths:
       - 'tools/stoneage_pet_high_first_57_coverage.py'
+      - 'tools/stoneage_pet_high_first_59_pixels.py'
       - 'research/pets/PET-HIGH-FIRST-57-RESIDUAL-VISUAL-COVERAGE-R1.json'
+      - 'research/pets/PET-HIGH-FIRST-59-RESIDUAL-PIXEL-RECEIPTS-R1.json'
       - '.github/workflows/pet-high-first-57-coverage.yml'
 permissions:
   contents: read
@@ -32,6 +36,7 @@ jobs:
           fi
       - run: python tools/stoneage_pet_source_lookup.py --verify
       - run: python tools/stoneage_pet_gap_queue.py --verify
+      - run: python -m tools.stoneage_pet_high_first_59_pixels
       - uses: actions/upload-artifact@v4
         with:
           name: pet57-derived-coverage
