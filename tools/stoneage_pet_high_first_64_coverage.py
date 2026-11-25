@@ -163,6 +163,9 @@ def main():
         print(json.dumps(dict(summary=s,rows=rows),ensure_ascii=False,indent=2,sort_keys=True))
     else:
         compact={k:{f:v[f] for f in ("positions","portrait","motion","acquisition","family")} for k,v in s["by_source"].items()}
-        print("PET64_SUMMARY="+json.dumps({**s,"by_source":compact},ensure_ascii=False,sort_keys=True,separators=(",",":")))
+        actual={**s,"by_source":compact}
+        snapshot=json.loads((ROOT/"research/pets/PET-HIGH-FIRST-64-MODULE-COVERAGE-SUMMARY-R1.json").read_bytes())
+        assert snapshot["summary"]==actual, "durable coverage summary differs from replay"
+        print("PET64_SUMMARY="+json.dumps(actual,ensure_ascii=False,sort_keys=True,separators=(",",":")))
 if __name__=="__main__":
     main()
