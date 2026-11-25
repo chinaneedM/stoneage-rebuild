@@ -1,0 +1,27 @@
+name: PET-HIGH-FIRST-67 bulk original motion pixels
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_67_bulk_pixels.py'
+      - 'docs/continuity/STONEAGE-PET-HIGH-FIRST-67-BULK-PIXELS-20261125.md'
+      - '.github/workflows/pet-high-first-67-bulk-pixels.yml'
+      - 'research/pets/PET-HIGH-FIRST-67-*'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_67_bulk_pixels.py'
+      - 'docs/continuity/STONEAGE-PET-HIGH-FIRST-67-BULK-PIXELS-20261125.md'
+      - '.github/workflows/pet-high-first-67-bulk-pixels.yml'
+      - 'research/pets/PET-HIGH-FIRST-67-*'
+    types: [opened, synchronize, reopened, ready_for_review]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          test "$(git hash-object research/pets/PET-HIGH-FIRST-67-BULK-PIXELS-R1.json.gz)" = "1801e69665de0d67ea7d15dce5396c267bb65374"
+          test "$(git hash-object research/pets/PET-HIGH-FIRST-67-BULK-PIXELS-SUMMARY-R1.json)" = "0cc6e1b49b36efd65219b27a0d96108ad8041c89"
+          python -m tools.stoneage_pet_high_first_67_bulk_pixels
