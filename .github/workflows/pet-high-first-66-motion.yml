@@ -1,0 +1,29 @@
+name: PET-HIGH-FIRST-66 motion inheritance
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_66_motion_inheritance.py'
+      - 'docs/continuity/STONEAGE-PET-HIGH-FIRST-66-MOTION-INHERITANCE-20261125.md'
+      - 'research/pets/PET-HIGH-FIRST-66-MOTION-INHERITANCE-SUMMARY-R1.json'
+      - '.github/workflows/pet-high-first-66-motion.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_66_motion_inheritance.py'
+      - 'docs/continuity/STONEAGE-PET-HIGH-FIRST-66-MOTION-INHERITANCE-20261125.md'
+      - 'research/pets/PET-HIGH-FIRST-66-MOTION-INHERITANCE-SUMMARY-R1.json'
+      - '.github/workflows/pet-high-first-66-motion.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m tools.stoneage_pet_high_first_66_motion_inheritance --output "$RUNNER_TEMP/pet66.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet66-motion-inheritance
+          path: ${{ runner.temp }}/pet66.json
+          retention-days: 7
+          if-no-files-found: error
