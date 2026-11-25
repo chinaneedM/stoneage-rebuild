@@ -77,8 +77,10 @@ def derive():
         if 100250<=n<=102050:by_graphic[n].append(record)
         else:outside.append(record)
     assert sum(map(len,by_graphic.values()))+len(outside)==1739
-    assert master<=by_graphic.keys()
-    assert sum(len(by_graphic[n]) for n in master)==427
+    all_graphics=set(by_graphic)|{x['graphic'] for x in outside}
+    assert master<=all_graphics
+    assert sum(len(by_graphic[n]) for n in master if n in by_graphic)+sum(x['pet68_canvas_scope'] for x in outside)==427
+    assert master-set(by_graphic)=={100015,100018}
     prior={r["tw85_original_spr_number"]:r for r in old["records"]}
     assert set(prior)=={g for g in by_graphic if g>=101501}
     positions=defaultdict(list);rows=[];counts={p:Counter() for p in programs}
@@ -125,7 +127,7 @@ def derive():
     assert len(pos)==1889
     new=[x for x in pos if x["route_status"]=="NEW_EARLY_ROUTE"]
     summary=dict(total_source_groups=1739,compared_graphic_numbers=len(rows),compared_physical_groups=sum(map(len,by_graphic.values())),
-        outside_scope_physical_groups=len(outside),early_graphic_numbers=sum(g<=101500 for g in by_graphic),
+        outside_scope_physical_groups=len(outside),outside_scope_pet68_graphics=sorted(master-set(by_graphic)),early_graphic_numbers=sum(g<=101500 for g in by_graphic),
         high_graphic_numbers=len(prior),program_positions=len(pos),position_status=dict(pc),
         new_early_positions_with_any_pet68_canvas=sum(x["any_pet68_canvas_route"] for x in new),
         new_early_positions_with_all_routes_pet68_canvas=sum(x["all_route_groups_pet68_canvas"] for x in new),
