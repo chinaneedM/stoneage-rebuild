@@ -344,6 +344,12 @@
       "git_blob": "05abda998bd2ee7c7f24101468f14de96a1dbcea",
       "expected_array": "rows",
       "expected_rows": 10
+    },
+    "hf60": {
+      "path": "research/pets/PET-HIGH-FIRST-60-TW85-REMAINING-PIXELS-R1.json",
+      "git_blob": "8791199ccbf374495a50b9bc479ababe22c77edf",
+      "expected_array": null,
+      "expected_rows": null
     }
   },
   "expected": {
@@ -452,5 +458,10 @@
   "supplement_hf58": {
     "source_head": "c1ca85c281bd5fbb16437404b00c6026e357d4c2",
     "scope": "Role crosswalk for 10 existing TW75 records with no exact TW85 album label and eight existing shared-graphic counterpart links. No alias promotion, new record positions or official closures."
+  },
+  "supplement_hf60": {
+    "source_head": "b30f83d1550005a23fdec6905652b8d65a812d29",
+    "source_tree": "0cfd26436676392cba8caa498616d74c6d32e831",
+    "scope": "20 exact saved-TW85 physical groups and 123 dual-decoded index bitmaps. Links on existing positions only."
   }
 }

@@ -248,6 +248,13 @@ def build(d):
                 link("hf58", ["rows", j], "SHARED_GRAPHIC_WITH_SEPARATE_ROLE_CANDIDATE")
             )
     coverage57_by_position = by_id(d["hf57"]["rows"], "position")
+    observations60 = d["hf60"]["observations"]
+    sequences60 = observations60["sequences"]
+    sequence60_by_group = by_id(sequences60, "physical_group")
+    decoded_bitmaps60 = {
+        int(bitmap) for bitmap, index in observations60["frame_bitmap_to_adrn_index"].items()
+        if observations60["observed_blocks"][str(index)]["status"] == "DUAL_DECODED_INDEX_PIXELS"
+    }
     special56_by_position = by_id(d["hf56"]["rows"], "position")
     egg54_by_position = {row["position"]: j for j,row in enumerate(d["hf54"]["rows"])}
     reward53_by_position = {row["position"]: j for j,row in enumerate(d["hf53"]["rows"])}
@@ -310,6 +317,17 @@ def build(d):
             r57 = d["hf57"]["rows"][j57]
             assert (r57["template_id"], r57["graphic"], r57["master_row_sha256"]) == (k, x["graphic"], x["row_sha256"])
             ls.append(link("hf57", ["rows", j57], "SAME_NUMBER_PHYSICAL_ASSET_AND_INDEPENDENT_NAME_EVIDENCE_NOT_OFFICIAL_IDENTITY"))
+            for group in r57["tw85_physical_groups"]:
+                j60 = sequence60_by_group.get(group["group_index"])
+                if j60 is None:
+                    continue
+                sample = sequences60[j60]
+                assert (sample["spr"], sample["spr_segment_sha256"]) == (group["graphic"], group["segment_sha256"])
+                bitmaps = {frame[0] for frame in sample["frames"] if frame[0] is not None}
+                qualification = ("SAVED_TW85_COMPLETE_DUAL_DECODED_INDEX_PIXEL_SAMPLE"
+                                 if bitmaps and bitmaps <= decoded_bitmaps60
+                                 else "SAVED_TW85_INDEX_PIXEL_SAMPLE_HAS_UNSUPPORTED_BLOCKS")
+                ls.append(link("hf60", ["observations", "sequences", j60], qualification))
         if i in special56_by_position:
             j56 = special56_by_position[i]
             r56 = d["hf56"]["rows"][j56]
@@ -485,6 +503,17 @@ def verify(m,d,entries):
     assert source_counts["hf57"] == 67
     assert {i for i,e in enumerate(high45) if any(l["source"]=="hf57" for l in e["linked_records"])} == set(d["hf49"]["remaining_gap_row_indices"])
     assert all(r["retain_strict_gap"] and not r["official_acquisition_verified"] for r in d["hf57"]["rows"])
+    source60 = d["hf60"]
+    assert all(source60[key] is False for key in
+               ("official_release_verified", "native_runtime_verified", "original_assets_published"))
+    groups60 = {s["physical_group"] for s in source60["observations"]["sequences"]}
+    assert len(groups60) == 20
+    expected60 = {r["position"]: {g["group_index"] for g in r["tw85_physical_groups"]} & groups60
+                  for r in d["hf57"]["rows"]}
+    for i, item in enumerate(high45):
+        links60 = [l for l in item["linked_records"] if l["source"] == "hf60"]
+        actual60 = {resolve(d, l["source"], l["pointer"])["physical_group"] for l in links60}
+        assert actual60 == expected60.get(i, set()) and len(links60) == len(actual60)
     roles58 = d["hf58"]["rows"]
     master58 = d["tw75"]["pet_flag_1_field_projections"]
     originals58 = {r["tw75_row_index"]: r for r in d["hf50"]["projection"]["records"]}

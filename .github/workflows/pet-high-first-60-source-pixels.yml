@@ -1,0 +1,57 @@
+name: PET-HIGH-FIRST-60 remaining TW85 original pixel samples
+on:
+  push:
+    branches: [agent/pet-high-first-60-source-pixels-20261125, main]
+    paths:
+      - '.github/workflows/pet-high-first-60-source-pixels.yml'
+      - 'tools/stoneage_pet_high_first_60_source_pixels.py'
+      - 'tools/stoneage_pet_high_first_tw85_pixels.py'
+      - 'research/pets/PET-HIGH-FIRST-60-TW85-REMAINING-PIXELS-R1.json'
+  pull_request:
+    paths:
+      - '.github/workflows/pet-high-first-60-source-pixels.yml'
+      - 'tools/stoneage_pet_high_first_60_source_pixels.py'
+      - 'tools/stoneage_pet_high_first_tw85_pixels.py'
+      - 'research/pets/PET-HIGH-FIRST-60-TW85-REMAINING-PIXELS-R1.json'
+permissions:
+  contents: read
+jobs:
+  original-source:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/agent/pet-high-first-60-source-pixels-20261125'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m tools.stoneage_pet_high_first_60_source_pixels --plan-only
+      - name: Install static MSI and pixel decoder dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq msitools
+          python -m pip install Pillow
+      - name: Authenticate and statically extract the six-part saved carrier
+        run: python -m tools.stoneage_wayi85_sixpart_acquisition --work "$RUNNER_TEMP/tw85" --output "$RUNNER_TEMP/tw85-acquisition.json"
+      - name: Read original frames with two independent decoders
+        run: |
+          python -m tools.stoneage_pet_high_first_60_source_pixels \
+            --source-dir "$RUNNER_TEMP/tw85/msi-client/Program Files/WAYI/石器時代 魔域大冒險/data" \
+            --acquisition "$RUNNER_TEMP/tw85-acquisition.json" --receipt "$RUNNER_TEMP/pet60-receipt.json"
+          python -m tools.stoneage_pet_high_first_60_source_pixels --receipt "$RUNNER_TEMP/pet60-receipt.json"
+          sha256sum "$RUNNER_TEMP/pet60-receipt.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet60-derived-original-pixel-receipt
+          path: ${{ runner.temp }}/pet60-receipt.json
+          retention-days: 7
+  verify:
+    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m tools.stoneage_pet_high_first_60_source_pixels
+      - run: python -m unittest tests.test_stoneage_pet_high_first_tw85_pixels tests.test_stoneage_pet45_tw85_source_join
+      - run: python tools/stoneage_pet_source_lookup.py --verify
+      - run: python tools/stoneage_pet_gap_queue.py --verify

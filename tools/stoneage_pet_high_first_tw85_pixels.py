@@ -54,10 +54,17 @@ def build_plan():
             index = group['original_source_group_index']
             if index in known:
                 raise ValueError(f'duplicate physical SPR group: {index}')
-            known[index] = (row['tw85_original_spr_no_not_official_pet_id'], group)
+            known[index] = (row['tw85_original_spr_no_not_official_pet_id'],
+                            group['original_full_spr_segment_sha256'])
     if (len(known), len(aliases)) != (518, 207):
         raise ValueError('PET09 named source scope changed')
+    sequences = select_sequences(known)
+    selected = {sequence['physical_group'] for sequence in sequences}
+    return atlas, sorted(aliases), sorted(set(known) - selected), sequences
 
+
+def select_sequences(known):
+    """Choose one bounded original sequence per requested physical SPR group."""
     choices = {}
     for row in source_rows(ANIMATION):
         index = int(row['group_index'])
@@ -70,12 +77,12 @@ def build_plan():
             choices[index] = (score, row)
     sequences = {}
     for index, (_, row) in choices.items():
-        number, group = known[index]
+        number, segment_sha = known[index]
         if int(row['spr_no']) != number:
             raise ValueError(f'physical SPR group drift: {index}')
         sequences[index] = {
             'spr': number, 'physical_group': index,
-            'spr_segment_sha256': group['original_full_spr_segment_sha256'],
+            'spr_segment_sha256': segment_sha,
             'animation_index': int(row['anim_index']), 'direction': int(row['direction']),
             'action': int(row['anim_no']), 'duration_word': int(row['duration']), 'frames': [],
         }
@@ -91,7 +98,7 @@ def build_plan():
     for index, sequence in sequences.items():
         if len(sequence['frames']) != int(choices[index][1]['frame_count']):
             raise ValueError(f'original header/frame mismatch: {index}')
-    return atlas, sorted(aliases), sorted(set(known) - sequences.keys()), [sequences[i] for i in sorted(sequences)]
+    return [sequences[i] for i in sorted(sequences)]
 
 
 def native_candidates(wanted, frames):
