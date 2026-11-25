@@ -1,0 +1,60 @@
+{
+  "schema": "stoneage.pet65.full_visual_summary.r1",
+  "source_candidate": "088afde4fd4444ca7a894ebd8c06f50bf09b7ad7",
+  "source_tree": "95a482bf1ce2495aa9d03c51aa642db65dc3549a",
+  "source_runs": [
+    {
+      "run": 45549459097,
+      "job": 138986870746,
+      "artifacts": [
+        {
+          "id": 14992713392,
+          "size": 202304,
+          "digest": "sha256:60ebb99f7355782cf378588be5b7c9268502ea5203b45841f92533120e727671",
+          "expired": false
+        }
+      ]
+    },
+    {
+      "run": 45549463568,
+      "job": 138986884354,
+      "artifacts": [
+        {
+          "id": 14993167513,
+          "size": 202304,
+          "digest": "sha256:e77b9477415dcef59ea61c17c6b1ef5aaeb288e425002243a1ecb6f946274394",
+          "expired": false
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "alias_count": 508,
+    "alias_name_conflicts": 6,
+    "alias_status": {
+      "EXACT_CN50_RD_DECODED_REFERENCE": 301,
+      "SAME_CARRIER_DECODED": 207
+    },
+    "aliases_need_direct_source_read": 301,
+    "aliases_need_original_census": 0,
+    "cn50_same_numeric_alias_positions": 1220,
+    "extra_native_route_positions": 685,
+    "master_distinct_graphics": 425,
+    "master_positions": 467,
+    "master_unique_group_count": 427,
+    "master_with_all_physical_groups_mapped": 467,
+    "master_with_cn50_exact_name_and_spr": 142,
+    "master_with_cn50_exact_spr": 343,
+    "master_with_direct_bounded_sample": 147,
+    "master_with_exact_name_grid": 439,
+    "master_with_exact_name_native_route": 104,
+    "master_with_physical_graphic": 467,
+    "new_official_acquisition_closures": 0,
+    "official_species_count": null,
+    "position_status": {
+      "EXACT_CN50_RD_DECODED_REFERENCE": 1204,
+      "SAME_CARRIER_DECODED": 685
+    },
+    "program_positions": 1889
+  }
+}

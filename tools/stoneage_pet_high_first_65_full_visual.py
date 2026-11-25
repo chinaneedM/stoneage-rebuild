@@ -180,5 +180,7 @@ def main():
     a=p.parse_args()
     report=derive()
     if a.output:a.output.write_text(json.dumps(report,ensure_ascii=False,sort_keys=True,separators=(",",":"))+"\n",encoding="utf-8")
+    snapshot=json.loads((ROOT/"research/pets/PET-HIGH-FIRST-65-FULL-VISUAL-SUMMARY-R1.json").read_bytes())
+    assert snapshot["summary"]==report["summary"], "coverage summary differs from fixed replay"
     print("PET65_SUMMARY="+json.dumps(report["summary"],ensure_ascii=False,sort_keys=True,separators=(",",":")))
 if __name__=="__main__":main()
