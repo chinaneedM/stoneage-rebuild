@@ -1,0 +1,41 @@
+name: PET107 permanent derived evidence receipt
+on:
+  push:
+    branches: ['agent/pet-high-first-104-cn70-archive-index-20261126']
+    paths:
+      - 'research/pets/PET-HIGH-FIRST-107-CN70-TORRENT-METADATA-R1.json'
+      - '.github/workflows/pet-high-first-107-derived-receipt.yml'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  receipt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/actions/artifacts/15114239837/zip > "$RUNNER_TEMP/pet107.zip"
+          python - <<'PY'
+          import hashlib,json,os,zipfile
+          from pathlib import Path
+          z=Path(os.environ["RUNNER_TEMP"])/"pet107.zip"
+          b=z.read_bytes()
+          assert len(b)==1629 and hashlib.sha256(b).hexdigest()=="38a9bd51717b54837890d399d1dc5d98f9bc81dce7c21cd65f7042550bea577e"
+          with zipfile.ZipFile(z) as f:
+              assert f.namelist()==["pet107.json"]
+              raw=f.read("pet107.json")
+          assert hashlib.sha256(raw).hexdigest()=="ca1d8bbc61d40d47747c92178745a21980141fdeede96fda2bd22a07528e2601"
+          assert raw==Path("research/pets/PET-HIGH-FIRST-107-CN70-TORRENT-METADATA-R1.json").read_bytes()
+          r=json.loads(raw)
+          m=r["metadata"]
+          assert r["torrent_result"]=="EXACT_STORED_MEMBER_CRC_VERIFIED"
+          assert m["declared_total_bytes"]==891735251 and m["piece_count"]==1701 and m["piece_length"]==524288
+          assert m["files"]==[{"length":891735251,"path":["STONEAGE7.rar"]}]
+          assert not r["full_original_client_verified"] and not r["original_assets_published"] and r["official_closures"]==0
+          assert not m["peer_or_tracker_contacted"] and m["declared_lengths_not_original_payload_verified"]
+          assert len(r["new_route_page_replays"])==3 and all(not x["download_link_candidates"] for x in r["new_route_page_replays"])
+          print("PET107_PERMANENT_RECEIPT_OK")
+          PY
