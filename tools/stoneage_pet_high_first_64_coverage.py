@@ -4,6 +4,7 @@ import gzip
 import json
 import sys
 from collections import Counter, defaultdict
+from contextlib import redirect_stdout
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
@@ -28,12 +29,45 @@ def pinned():
         out[k] = json.loads(gzip.decompress(raw) if path.endswith(".gz") else raw)
     return out
 
-def derive():
+def apply_current_visual(row, visual):
+    """Keep current visual observations beside independently sourced formal fields."""
+    groups = visual["motion_groups"]
+    group_status = Counter(group["status"] for group in groups)
+    row["current_visual_source"] = {
+        "qualification": visual["qualification"],
+        "physical_group_indices": [group["group_index"] for group in groups],
+        "group_status": dict(group_status),
+    }
+    if row["source"] == "tw85_grid":
+        assert visual["portrait_status"] == "ALL_STRICT"
+        row["portrait"] = "PRESERVED_NATIVE_ALIAS_ALL_PHYSICAL_ROWS_STRICT"
+        row["motion"] = visual["album_position_motion_status"]
+        row["linked_groups"] = len(groups)
+        row.pop("groups_with_sample", None)
+        row["groups_with_complete_canvas"] = group_status["STRICT_COMPLETE"] + group_status["BOUNDED_COMPLETE"]
+        row["current_visual_source"].update(
+            portrait_alias=visual["portrait_alias"], portrait_rows=visual["portrait_rows"],
+        )
+    elif row["source"] == "tw75":
+        assert groups and set(group_status) <= {"STRICT_COMPLETE", "BOUNDED_COMPLETE"}
+        if row["motion"] != "NOT_ASSESSED_BY_THIS_PASS":
+            row["residual_motion_reference"] = row["motion"]
+        grade = "BOUNDED" if group_status["BOUNDED_COMPLETE"] else "STRICT"
+        row["motion"] = f"TW85_NUMERIC_GRAPHIC_{grade}_COMPLETE"
+
+
+def derive(current=False):
     manifest,d=load()
     entries=build(d)
     verify_lookup(manifest,d,entries)
     rows=queue(d,entries)
     verify_queue(d,entries,rows)
+    current_visual = {
+        (entry["source"], tuple(entry["pointer"])): entry["detail"]["visual_reference"]
+        for entry in entries if entry["detail"] and "visual_reference" in entry["detail"]
+    } if current else {}
+    if current:
+        assert len(current_visual) == 4481
     z=pinned()
     atlas={x["pet_id"]:x for x in z["early_atlas"]["profiles"]}
     early_groups={x["graphic"]:x for x in z["early_motion"]["groups"]}
@@ -120,6 +154,8 @@ def derive():
                 v["acquisition"]="HISTORICAL_REFERENCE_NOT_OFFICIAL_SAME_DEPLOYMENT"
             else:
                 v["acquisition"]="NO_ACQUISITION_FIELD_IN_QUEUE_PROJECTION"
+        if current and source in {"tw10", "cn50", "tw85_grid", "tw75"}:
+            apply_current_visual(v, current_visual[source, tuple(ptr)])
         out.append(v)
     assert len(out)==3015 and len({(r["source"],tuple(r["pointer"])) for r in out})==3015
     assert all(not r["official_full_fields_certified"] for r in out)
@@ -140,7 +176,13 @@ def derive():
     assert by_source["cn50"]["motion"]["PRESERVED_ONE_SEQUENCE_DECODED"]==181
     assert by_source["tw75"]["acquisition"]["SAVED_DOUBLE_FLAG_POSITIVE_ROUTE"]==118
     assert by_source["tw75"]["acquisition"]["STRICT_RESIDUAL_REVIEWED_NOT_CLOSED"]==67
-    assert by_source["tw85_grid"]["motion"]["NOT_ASSESSED_IN_EXTRA_SUBSET"]==1204
+    if current:
+        assert by_source["tw85_grid"]["portrait"] == {"PRESERVED_NATIVE_ALIAS_ALL_PHYSICAL_ROWS_STRICT": 1889}
+        assert by_source["tw85_grid"]["motion"] == {"ALL_CANVAS_COMPLETE": 1883, "SOME_CANVAS_COMPLETE": 6}
+        assert by_source["tw75"]["motion"] == {"TW85_NUMERIC_GRAPHIC_BOUNDED_COMPLETE": 37, "TW85_NUMERIC_GRAPHIC_STRICT_COMPLETE": 430}
+        assert sum("residual_motion_reference" in row for row in out) == 67
+    else:
+        assert by_source["tw85_grid"]["motion"]["NOT_ASSESSED_IN_EXTRA_SUBSET"]==1204
     history=z["chronology"]
     annual=Counter(x["research_gate"] for x in history["yearly_work_queue"])
     assert annual=={"SOURCE_BOUNDED_REVIEWED":27,"NOT_YEAR_AUDITED":1}
@@ -151,16 +193,29 @@ def derive():
         additional_vip_positions_outside_queue=len(vip),chronological_year_status=dict(annual),chronology_frontier=2026,
         official_species_count=None,official_full_fields_certified=0,
         scope="Queue positions only. No deduplicated species total. Unassessed is not absent. Actual index pixel receipts are bounded; not proof of palette, timing, official identity or gameplay.")
+    if current:
+        summary["visual_projection"] = dict(
+            newer_evidence="PET74", lookup_positions_with_visual=len(current_visual),
+            queue_positions_with_visual=sum("current_visual_source" in row for row in out),
+            official_fields_reclassified=0,
+        )
     return summary,out
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("--all",action="store_true")
     p.add_argument("--source")
+    p.add_argument("--current", action="store_true", help="include the unified lookup's current visual evidence")
     a=p.parse_args()
-    s,rows=derive()
+    if a.current:
+        with redirect_stdout(sys.stderr):
+            s, rows = derive(current=True)
+    else:
+        s, rows = derive()
     if a.source:rows=[r for r in rows if r["source"]==a.source]
     if a.all or a.source:
         print(json.dumps(dict(summary=s,rows=rows),ensure_ascii=False,indent=2,sort_keys=True))
+    elif a.current:
+        print(json.dumps(s,ensure_ascii=False,indent=2,sort_keys=True))
     else:
         compact={k:{f:v[f] for f in ("positions","portrait","motion","acquisition","family")} for k,v in s["by_source"].items()}
         actual={**s,"by_source":compact}
