@@ -464,6 +464,12 @@
       "git_blob": "5735ddc1117a8a6fb2f9417327ec242e4fd06192",
       "expected_array": "original_skillshop_CREATE_to_parameter_rows",
       "expected_rows": 21
+    },
+    "hf89": {
+      "path": "research/pets/PET-HIGH-FIRST-89-SPECIAL-SKILL-PERIOD-REFERENCES-R1.json",
+      "git_blob": "6be7a836aeaa3d9ae8178c749aa487cdb65ffa4b",
+      "expected_array": "rows",
+      "expected_rows": 19
     }
   },
   "expected": {
@@ -618,5 +624,11 @@
     "matching_positions": 440,
     "slots_without_shop_reference": 37,
     "position_shop_links": 6636
+  },
+  "supplement_hf89": {
+    "scope": "19 configured skills without exact saved shop reference; 10 skill-level period witnesses, 1 item-only context, 8 uncorroborated; no deployment promotion.",
+    "positions": 37,
+    "configured_slots": 37,
+    "skill_level_witness_slots": 21
   }
 }
