@@ -1,0 +1,40 @@
+name: PET102 TW85 bounded embedded pet master source screen
+on:
+  push:
+    branches: ['agent/pet-high-first-102-tw85-embedded-master-screen-20261126']
+    paths:
+      - 'tools/stoneage_pet_high_first_102_tw85_master_screen.py'
+      - '.github/workflows/pet-high-first-102-tw85-master-screen.yml'
+permissions:
+  contents: read
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m tools.stoneage_pet_high_first_102_tw85_master_screen --self-test
+      - run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq upx-ucl p7zip-full innoextract msitools
+      - name: Authenticate preserved TW85 source container
+        run: |
+          python -m tools.stoneage_wayi85_sixpart_acquisition \
+            --work "$RUNNER_TEMP/pet102-tw85" --output "$RUNNER_TEMP/pet102-custody.json"
+      - name: New static scan, never run original executables
+        run: |
+          python -m tools.stoneage_pet_high_first_102_tw85_master_screen \
+            --source-root "$RUNNER_TEMP/pet102-tw85/msi-client" \
+            --output "$RUNNER_TEMP/pet102-report.json"
+          sha256sum "$RUNNER_TEMP/pet102-report.json" "$RUNNER_TEMP/pet102-custody.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet102-tw85-master-screen-derived-only
+          path: |
+            ${{ runner.temp }}/pet102-report.json
+            ${{ runner.temp }}/pet102-custody.json
+          if-no-files-found: error
+          retention-days: 15
