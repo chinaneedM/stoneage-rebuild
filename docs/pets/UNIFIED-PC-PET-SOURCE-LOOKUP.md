@@ -163,3 +163,15 @@ python tools/stoneage_pet_source_lookup.py --documentary --source cn2004_trainer
 python tools/stoneage_pet_source_lookup.py --documentary --source pet25_release --query 艾迪希洛 --exact --full
 ```
 [材料对账与限制](../continuity/STONEAGE-PET-HISTORICAL-DOCUMENTARY-20261126.md)。
+
+
+## 年份／地区／版本历史查阅
+`--history` 复用28份固定年度源报告、156个实际地区审查块、12个明确版本日期主张及9个既有PC发行事件子集。1999—2010未单列港澳；2011起六区；2026截至11月20日仍OPEN。原名称及日期类型、来源路径与Git blob／指针可追溯。版本筛选仅命中明确索引标签，非同部署身份或全版本检索；年区报告是上下文。无匹配不等于无宠物，9事件不是全史发行数。带 `--full` 展开匹配原记录（可能含历史排除范围说明，不纳入活跃宠物）。
+```sh
+python tools/stoneage_pet_source_lookup.py --history --summary
+python tools/stoneage_pet_source_lookup.py --history --year 2002 --region CN --full
+python tools/stoneage_pet_source_lookup.py --history --year 2026 --region TW --full
+python tools/stoneage_pet_source_lookup.py --history --version 2.0
+python tools/stoneage_pet_source_lookup.py --history --query ハクエン --exact --full
+```
+[年区证据接入说明](../continuity/STONEAGE-PET-YEAR-REGION-ACCESS-20261126.md)。
