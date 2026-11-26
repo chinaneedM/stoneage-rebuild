@@ -9,11 +9,40 @@ from stoneage_pet_high_first_64_coverage import derive
 ROOT=Path(__file__).resolve().parents[1]
 def hist(items):
     return dict(sorted(Counter(items).items()))
+def portrait_reference(m,d):
+    path=ROOT/"research/pets/PET-WHOLE-REVIEW-TW75-TW85-PORTRAIT-REFERENCE-R1.json"
+    raw=path.read_bytes()
+    assert blob(raw)=="b1259033e3e966bae556afde00801eac8372c7d9"
+    report=json.loads(raw)
+    assert report["source_pins"]=={k:m["sources"][k]["git_blob"] for k in ("tw75","hf74")}
+    assert not any(report["limits"].values())
+    positions=d["hf74"]["positions"]
+    named={}
+    for k,p in positions.items():
+        named.setdefault(p["name"],[]).append((k,p))
+    expected=[]
+    for i,x in enumerate(d["tw75"]["pet_flag_1_field_projections"]):
+        matches=named.get(x["name"],[])
+        exact=[(k,p) for k,p in matches if x["graphic"] in p["graphics"]]
+        assert all(p["portrait_status"]=="ALL_STRICT" for k,p in exact)
+        aliases=sorted({p["portrait_alias"] for k,p in exact})
+        grade=("EXACT_NAME_GRAPHIC_UNIQUE_ALIAS" if len(aliases)==1 else "EXACT_NAME_GRAPHIC_MULTIPLE_ALIAS") if exact else ("NAME_ONLY" if matches else "NO_EXACT_NAME")
+        expected.append(dict(index=i,template_id=x["template_id"],row_sha256=x["row_sha256"],name=x["name"],graphic=x["graphic"],grade=grade,
+            exact_positions=sorted(k for k,p in exact),
+            name_only_positions=sorted(k for k,p in matches if x["graphic"] not in p["graphics"]),
+            portrait_aliases=aliases,portrait_rows=sorted({j for k,p in exact for j in p["portrait_rows"]})))
+    assert expected==report["rows"]
+    assert report["metrics"]==dict(positions=467,grades=hist(x["grade"] for x in expected),distinct_exact_aliases=len({a for x in expected for a in x["portrait_aliases"]}))
+    assert report["metrics"]["grades"]=={"EXACT_NAME_GRAPHIC_UNIQUE_ALIAS":424,"NAME_ONLY":15,"NO_EXACT_NAME":28}
+    assert report["metrics"]["distinct_exact_aliases"]==401
+    return report
 def review():
     m,d=load(); entries=build(d);verify(m,d,entries)
     rows=queue(d,entries,current=True)
     verify_queue(d,entries,[r for r in rows if r["source"]!="cn85_original"])
     prior,visual=derive(current=True)
+    portrait_ref=portrait_reference(m,d)
+    portrait_by_index={x['index']:x for x in portrait_ref['rows']}
     key=lambda r:(r["source"],tuple(r["pointer"]))
     v={key(r):r for r in visual}
     keys={key(x) for x in rows}
@@ -31,7 +60,7 @@ def review():
             if k in v:
                 old=v[k]
                 assert row["formal_fields"]==old["formal_fields"]
-                portraits.append(old["portrait"]); motions.append(old["motion"])
+                portraits.append("CROSS_CARRIER_EXACT_NAME_GRAPHIC_DECODED_ALIAS" if source=="tw75" and portrait_by_index[row["pointer"][1]]["grade"]=="EXACT_NAME_GRAPHIC_UNIQUE_ALIAS" else old["portrait"]); motions.append(old["motion"])
                 acquisitions.append(old["acquisition"]);families.append(old["family"])
             else:
                 assert source=="cn85_original"
@@ -53,6 +82,7 @@ def review():
     assert cn["portrait"]=={"ORIGINAL_RD_LENGTH_DISCREPANCY":1,"ORIGINAL_RD_MULTIPLE_CANDIDATES":4,"ORIGINAL_RD_SINGLE_CANDIDATE":543}
     assert out["tw85_grid"]["motion"]=={"ALL_CANVAS_COMPLETE":1883,"SOME_CANVAS_COMPLETE":6}
     assert out["cn50"]["motion"]=={"ALL_CANVAS_COMPLETE":21,"ALL_STRICT":284}
+    assert out["tw75"]["portrait"]=={"CROSS_CARRIER_EXACT_NAME_GRAPHIC_DECODED_ALIAS":424,"NOT_ASSESSED_BY_THIS_PASS":43}
     assert out["tw75"]["acquisition"]["STRICT_RESIDUAL_REVIEWED_NOT_CLOSED"]==67
     chronology=json.loads((ROOT/"research/recovered/STONEAGE-PET27-GLOBAL-YEAR-VERSION-WORK-QUEUE-R1.json").read_bytes())
     years=chronology["yearly_work_queue"]
@@ -70,7 +100,7 @@ def review():
         manifest_sources=len(m["sources"]),lookup_occurrences=len(entries),queue_positions=len(rows),
         historical_queue_positions=len(v),by_source=out,
         formal_field_totals={k:hist(r["formal_fields"][k] for r in rows) for k in FORMAL},
-        selected_master_grades=master_grades,configured_skill_definitions=len(master["configured_skill_definitions"]),
+        tw75_tw85_portrait_reference=portrait_ref["metrics"],selected_master_grades=master_grades,configured_skill_definitions=len(master["configured_skill_definitions"]),
         supplementary_manifest_evidence={k:m[k] for k in ("supplement_hf76","supplement_hf87","supplement_hf91","supplement_hf93","supplement_hf95","supplement_hf96","supplement_hf99","supplement_pet124")},
         chronology=[dict(year=x["year"],research_gate=x["research_gate"],historically_complete=x["historically_complete"],historical_species_count=x["historical_species_count"]) for x in years],
         official_species_count=None,official_full_fields_certified=0,module_source_bounded_closed=False,original_runtime_verified=False,original_assets_published=False,
@@ -80,6 +110,6 @@ def review():
                      "Source availability/custody and remaining obtainable materials require separate final reconciliation before user acceptance."])
 if __name__=="__main__":
     result=review()
-    print("PET_WHOLE_REVIEW_PASS "+json.dumps({k:result[k] for k in ("manifest_sources","lookup_occurrences","queue_positions","formal_field_totals","selected_master_grades","configured_skill_definitions")},ensure_ascii=False,sort_keys=True))
+    print("PET_WHOLE_REVIEW_PASS "+json.dumps({k:result[k] for k in ("manifest_sources","lookup_occurrences","queue_positions","formal_field_totals","selected_master_grades","configured_skill_definitions","tw75_tw85_portrait_reference")},ensure_ascii=False,sort_keys=True))
     print("PET_WHOLE_VISUAL="+json.dumps({k:{f:v[f] for f in ("positions","portrait","motion","acquisition")} for k,v in result["by_source"].items()},ensure_ascii=False,sort_keys=True))
     Path("pet-whole-module-review.json").write_text(json.dumps(result,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
