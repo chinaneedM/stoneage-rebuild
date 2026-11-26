@@ -1,0 +1,506 @@
+{
+  "schema": "stoneage.pet98.skill_variant_instance_roles.r1",
+  "base_head": "39b6796a50286d61c97ceb677f4d7ca0eab72604",
+  "base_tree": "41680b1567273f2fec461a6c0570483bfae6681a",
+  "input_git_blobs": {
+    "research/pets/PET-HIGH-FIRST-96-TEMPLATE-COLLISION-MATRIX-R1.json": "79e4acc5e52d1f383942e2d3cc51576fc4271dc8",
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-76-SELECTED-MASTER-FIELDS-R1.json": "0005e7d7943907c01024f5dd24132b126e4bb3f3",
+    "research/pets/PET-HIGH-FIRST-42-EXACT-TEMPLATE-CROSSWALK-R1.json": "c6667a6190283f4ec3ad3813c570357b18906ccc",
+    "research/pets/PET-HIGH-FIRST-42-REWARD-INSTANCE-INDEX-R1.json": "449eaf2d74fda469a05a46781da1824096c2926c",
+    "research/pets/PET-HIGH-FIRST-17-COMPARISON-SKILL-ENCOUNTER-R1.json": "63af501ab483770c5c58cb2d62152ab8923dcc2b"
+  },
+  "scope": "HF96 same-name same-graphic pairs differing only in skill_slots. Saved configured definitions, exact reward crosswalk and later comparison kept separate. No claim of native runtime, official birth skills or acquisition.",
+  "summary": {
+    "pairs": 9,
+    "positions": 18,
+    "both_selected_exact": 8,
+    "changed_positive_slot_occurrences": 9,
+    "distinct_changed_skill_ids": 8,
+    "selected_definition_occurrences": 8,
+    "comparison_only_occurrences": 1,
+    "reward_pair_count": 3,
+    "official_closures": 0
+  },
+  "rows": [
+    {
+      "collision_index": 2,
+      "left": {
+        "position": 1,
+        "template_id": 2,
+        "row_sha256": "f899e3c726eefc1f078b8a01bc179f997064a8337ceea90025f9322246272123",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          2,
+          2,
+          0
+        ],
+        "selected_reward_crosswalk_index": null,
+        "selected_reward_row_index": null,
+        "later_comparison_row_index": 1,
+        "later_comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "later_comparison_instance_count": 6,
+        "later_comparison_positive_reference_count": 7,
+        "official_birth_skills_verified": false
+      },
+      "right": {
+        "position": 402,
+        "template_id": 1061,
+        "row_sha256": "876fcf45af6fd1c9f6a33015b9d13452e9e0d5a254ccb4412acc53e5cfdf2215",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_crosswalk_index": null,
+        "selected_reward_row_index": null,
+        "later_comparison_row_index": 402,
+        "later_comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "later_comparison_instance_count": 1,
+        "later_comparison_positive_reference_count": 0,
+        "official_birth_skills_verified": false
+      },
+      "changed_slots": [
+        {
+          "slot_index": 2,
+          "left": null,
+          "right": 201,
+          "left_evidence": null,
+          "right_evidence": {
+            "skill_id": 201,
+            "selected_definition_index": 18,
+            "later_comparison_definition_index": 19,
+            "qualification": "SAVED_CONFIGURED_SLOT_DEFINITION_NOT_BIRTH_PROOF"
+          }
+        }
+      ],
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 10,
+      "left": {
+        "position": 18,
+        "template_id": 34,
+        "row_sha256": "a9c2ec7a4864bcead0bb9238c5620e0f8d1cb32e69faa091c80a5039a6dc6f39",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          2,
+          2,
+          0
+        ],
+        "selected_reward_crosswalk_index": null,
+        "selected_reward_row_index": null,
+        "later_comparison_row_index": 18,
+        "later_comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "later_comparison_instance_count": 7,
+        "later_comparison_positive_reference_count": 7,
+        "official_birth_skills_verified": false
+      },
+      "right": {
+        "position": 405,
+        "template_id": 1064,
+        "row_sha256": "ea62e2d64453b0608f8f7ec77d8840c4593f057bbd725cf61c37d05e4239f543",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_crosswalk_index": null,
+        "selected_reward_row_index": null,
+        "later_comparison_row_index": 405,
+        "later_comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "later_comparison_instance_count": 1,
+        "later_comparison_positive_reference_count": 0,
+        "official_birth_skills_verified": false
+      },
+      "changed_slots": [
+        {
+          "slot_index": 2,
+          "left": null,
+          "right": 540,
+          "left_evidence": null,
+          "right_evidence": {
+            "skill_id": 540,
+            "selected_definition_index": 22,
+            "later_comparison_definition_index": 23,
+            "qualification": "SAVED_CONFIGURED_SLOT_DEFINITION_NOT_BIRTH_PROOF"
+          }
+        }
+      ],
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 17,
+      "left": {
+        "position": 61,
+        "template_id": 100,
+        "row_sha256": "a0898adbad7e06b47f7951de3d2cd3e023c37f25838f8d9807c341a4312db0c0",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_crosswalk_index": null,
+        "selected_reward_row_index": null,
+        "later_comparison_row_index": 61,
+        "later_comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "later_comparison_instance_count": 1,
+        "later_comparison_positive_reference_count": 0,
+        "official_birth_skills_verified": false
+      },
+      "right": {
+        "position": 169,
+        "template_id": 301,
+        "row_sha256": "1f7c3a9f57e4d208743ba7b22fcfd2087b9f32b8d9927fa3edb0e78b8a800302",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          35,
+          35,
+          1
+        ],
+        "selected_reward_crosswalk_index": 20,
+        "selected_reward_row_index": 20,
+        "later_comparison_row_index": 169,
+        "later_comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "later_comparison_instance_count": 6,
+        "later_comparison_positive_reference_count": 41,
+        "official_birth_skills_verified": false
+      },
+      "changed_slots": [
+        {
+          "slot_index": 3,
+          "left": 80,
+          "right": null,
+          "left_evidence": {
+            "skill_id": 80,
+            "selected_definition_index": 12,
+            "later_comparison_definition_index": 12,
+            "qualification": "SAVED_CONFIGURED_SLOT_DEFINITION_NOT_BIRTH_PROOF"
+          },
+          "right_evidence": null
+        }
+      ],
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 18,
+      "left": {
+        "position": 63,
+        "template_id": 102,
+        "row_sha256": "8778cd1dc285be816c546802eed0b171938976d6426e977c55dabd781b63aef0",
+        "selected_grade": "SAME_ID_NONIDENTICAL_ROW",
+        "selected_route_counts": null,
+        "selected_reward_crosswalk_index": null,
+        "selected_reward_row_index": null,
+        "later_comparison_row_index": 63,
+        "later_comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "later_comparison_instance_count": 6,
+        "later_comparison_positive_reference_count": 7,
+        "official_birth_skills_verified": false
+      },
+      "right": {
+        "position": 404,
+        "template_id": 1063,
+        "row_sha256": "b46cbc023d2a813d77fb4e294a46a26dfaf1e9aaa31499806478cd022570d60c",
+        "selected_grade": "SAME_ID_NONIDENTICAL_ROW",
+        "selected_route_counts": null,
+        "selected_reward_crosswalk_index": null,
+        "selected_reward_row_index": null,
+        "later_comparison_row_index": 404,
+        "later_comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "later_comparison_instance_count": 1,
+        "later_comparison_positive_reference_count": 0,
+        "official_birth_skills_verified": false
+      },
+      "changed_slots": [
+        {
+          "slot_index": 2,
+          "left": null,
+          "right": 572,
+          "left_evidence": null,
+          "right_evidence": {
+            "skill_id": 572,
+            "selected_definition_index": null,
+            "later_comparison_definition_index": 27,
+            "qualification": "NO_EXACT_SELECTED_SLOT_COMPARISON_ONLY"
+          }
+        }
+      ],
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 20,
+      "left": {
+        "position": 66,
+        "template_id": 105,
+        "row_sha256": "4f64ded05756b4766d0d841da7413b3b69266dd06ecc871981134a916ba8341b",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_crosswalk_index": null,
+        "selected_reward_row_index": null,
+        "later_comparison_row_index": 66,
+        "later_comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "later_comparison_instance_count": 1,
+        "later_comparison_positive_reference_count": 0,
+        "official_birth_skills_verified": false
+      },
+      "right": {
+        "position": 170,
+        "template_id": 302,
+        "row_sha256": "4ee5141c63814cbca7694bed974057772254de3d18634a0e9aed2072bbbf57d1",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_crosswalk_index": 21,
+        "selected_reward_row_index": 21,
+        "later_comparison_row_index": 170,
+        "later_comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "later_comparison_instance_count": 1,
+        "later_comparison_positive_reference_count": 0,
+        "official_birth_skills_verified": false
+      },
+      "changed_slots": [
+        {
+          "slot_index": 3,
+          "left": 90,
+          "right": null,
+          "left_evidence": {
+            "skill_id": 90,
+            "selected_definition_index": 13,
+            "later_comparison_definition_index": 13,
+            "qualification": "SAVED_CONFIGURED_SLOT_DEFINITION_NOT_BIRTH_PROOF"
+          },
+          "right_evidence": null
+        }
+      ],
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 21,
+      "left": {
+        "position": 67,
+        "template_id": 106,
+        "row_sha256": "dd9fea1fe302f2c197ce01ae5d4d3a4fc12f28ffe4057c0077c5f9b42cdcef9f",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_crosswalk_index": null,
+        "selected_reward_row_index": null,
+        "later_comparison_row_index": 67,
+        "later_comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "later_comparison_instance_count": 2,
+        "later_comparison_positive_reference_count": 0,
+        "official_birth_skills_verified": false
+      },
+      "right": {
+        "position": 171,
+        "template_id": 303,
+        "row_sha256": "4b8a7573a855330f7dcb50556f74e28c1a836da9b822b694f26b4210352e2b97",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          9,
+          9,
+          0
+        ],
+        "selected_reward_crosswalk_index": 22,
+        "selected_reward_row_index": 22,
+        "later_comparison_row_index": 171,
+        "later_comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "later_comparison_instance_count": 3,
+        "later_comparison_positive_reference_count": 9,
+        "official_birth_skills_verified": false
+      },
+      "changed_slots": [
+        {
+          "slot_index": 2,
+          "left": 110,
+          "right": null,
+          "left_evidence": {
+            "skill_id": 110,
+            "selected_definition_index": 15,
+            "later_comparison_definition_index": 15,
+            "qualification": "SAVED_CONFIGURED_SLOT_DEFINITION_NOT_BIRTH_PROOF"
+          },
+          "right_evidence": null
+        }
+      ],
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 23,
+      "left": {
+        "position": 72,
+        "template_id": 112,
+        "row_sha256": "60b7b120f72600d8ce052660779fdae6942d43b01f3246f40e132475a82c8ee5",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          8,
+          8,
+          0
+        ],
+        "selected_reward_crosswalk_index": null,
+        "selected_reward_row_index": null,
+        "later_comparison_row_index": 72,
+        "later_comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "later_comparison_instance_count": 8,
+        "later_comparison_positive_reference_count": 13,
+        "official_birth_skills_verified": false
+      },
+      "right": {
+        "position": 403,
+        "template_id": 1062,
+        "row_sha256": "4e480cd4fb82b107fa5be35481a618e98c1e3a1ab16ed19889a9d50bbdec219c",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_crosswalk_index": null,
+        "selected_reward_row_index": null,
+        "later_comparison_row_index": 403,
+        "later_comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "later_comparison_instance_count": 1,
+        "later_comparison_positive_reference_count": 0,
+        "official_birth_skills_verified": false
+      },
+      "changed_slots": [
+        {
+          "slot_index": 2,
+          "left": null,
+          "right": 200,
+          "left_evidence": null,
+          "right_evidence": {
+            "skill_id": 200,
+            "selected_definition_index": 17,
+            "later_comparison_definition_index": 18,
+            "qualification": "SAVED_CONFIGURED_SLOT_DEFINITION_NOT_BIRTH_PROOF"
+          }
+        }
+      ],
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 32,
+      "left": {
+        "position": 116,
+        "template_id": 169,
+        "row_sha256": "cc527ee40d798ece0f98d8f3f5487d0dbb42b0d53295f02418ca32b85752074f",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_crosswalk_index": null,
+        "selected_reward_row_index": null,
+        "later_comparison_row_index": 116,
+        "later_comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "later_comparison_instance_count": 1,
+        "later_comparison_positive_reference_count": 0,
+        "official_birth_skills_verified": false
+      },
+      "right": {
+        "position": 392,
+        "template_id": 1051,
+        "row_sha256": "62c0d4b217b347b5a0a3abf1245f14c10d3d6913faf55e8b55a3fcb23a76ade7",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_crosswalk_index": null,
+        "selected_reward_row_index": null,
+        "later_comparison_row_index": 392,
+        "later_comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "later_comparison_instance_count": 1,
+        "later_comparison_positive_reference_count": 0,
+        "official_birth_skills_verified": false
+      },
+      "changed_slots": [
+        {
+          "slot_index": 2,
+          "left": 541,
+          "right": null,
+          "left_evidence": {
+            "skill_id": 541,
+            "selected_definition_index": 23,
+            "later_comparison_definition_index": 24,
+            "qualification": "SAVED_CONFIGURED_SLOT_DEFINITION_NOT_BIRTH_PROOF"
+          },
+          "right_evidence": null
+        }
+      ],
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 50,
+      "left": {
+        "position": 295,
+        "template_id": 811,
+        "row_sha256": "5295b02d170744095c1bea9e63449f833e77bbf75d8ca5cd815f9bb2df9c7f57",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_crosswalk_index": null,
+        "selected_reward_row_index": null,
+        "later_comparison_row_index": 295,
+        "later_comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "later_comparison_instance_count": 2,
+        "later_comparison_positive_reference_count": 46,
+        "official_birth_skills_verified": false
+      },
+      "right": {
+        "position": 333,
+        "template_id": 979,
+        "row_sha256": "a1217d217b77d0bd4e25da0e158bc930854b8902a1fce5c45aee8abdf22ba8ef",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_crosswalk_index": null,
+        "selected_reward_row_index": null,
+        "later_comparison_row_index": 333,
+        "later_comparison_status": "EXACT_NONNAME_50_FIELD_TAIL",
+        "later_comparison_instance_count": 1,
+        "later_comparison_positive_reference_count": 4,
+        "official_birth_skills_verified": false
+      },
+      "changed_slots": [
+        {
+          "slot_index": 2,
+          "left": null,
+          "right": 541,
+          "left_evidence": null,
+          "right_evidence": {
+            "skill_id": 541,
+            "selected_definition_index": 23,
+            "later_comparison_definition_index": 24,
+            "qualification": "SAVED_CONFIGURED_SLOT_DEFINITION_NOT_BIRTH_PROOF"
+          }
+        }
+      ],
+      "official_identity_verified": false
+    }
+  ],
+  "original_assets_published": false
+}

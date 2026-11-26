@@ -524,6 +524,12 @@
       "git_blob": "9ec1db8ba770994f560730828690b62986ff108f",
       "expected_array": "rows",
       "expected_rows": 10
+    },
+    "hf98": {
+      "path": "research/pets/PET-HIGH-FIRST-98-SKILL-VARIANT-INSTANCE-ROLES-R1.json",
+      "git_blob": "c2f9cab4bc2d75f3dca89fe118f3578eaacbc839",
+      "expected_array": "rows",
+      "expected_rows": 9
     }
   },
   "expected": {
@@ -773,6 +779,17 @@
     "exact_pairs_right_no_positive": 1,
     "right_floor_125_pairs": 3,
     "right_floor_20901_20902_pairs": 2,
+    "official_closures": 0
+  },
+  "supplement_hf98": {
+    "pairs": 9,
+    "positions": 18,
+    "both_selected_exact": 8,
+    "changed_positive_slot_occurrences": 9,
+    "distinct_changed_skill_ids": 8,
+    "selected_definition_occurrences": 8,
+    "comparison_only_occurrences": 1,
+    "reward_pair_count": 3,
     "official_closures": 0
   }
 }
