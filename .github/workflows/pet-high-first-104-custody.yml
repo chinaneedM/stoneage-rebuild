@@ -1,0 +1,38 @@
+name: PET104 custody and PET105 bounded archived source preflight
+on:
+  push:
+    branches: ['agent/pet-high-first-104-cn70-archive-index-20261126']
+    paths:
+      - 'tools/stoneage_pet_high_first_104_accept.py'
+      - '.github/workflows/pet-high-first-104-custody.yml'
+permissions:
+  contents: read
+jobs:
+  preserve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      actions: read
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify source index artifact and bounded replay
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh api repos/${{ github.repository }}/actions/artifacts/15114760222/zip > "$RUNNER_TEMP/pet104.zip"
+          python -m tools.stoneage_pet_high_first_104_accept --artifact "$RUNNER_TEMP/pet104.zip" --replay
+          python -m tools.stoneage_pet_high_first_104_accept
+      - name: Retain metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/pets/PET-HIGH-FIRST-104-CN70-ARCHIVE-INDEX-R1.json research/pets/PET-HIGH-FIRST-104-CUSTODY-R1.json research/pets/PET-HIGH-FIRST-105-CN70-ARCHIVE-REPLAY-PREFLIGHT-R1.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'PET104–105: preserve verified index and bounded replay metadata'
+            git push origin HEAD:agent/pet-high-first-104-cn70-archive-index-20261126
+          fi
