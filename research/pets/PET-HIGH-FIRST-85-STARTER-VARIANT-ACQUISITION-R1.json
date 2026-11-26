@@ -1,0 +1,336 @@
+{
+  "schema": "stoneage.pet_high_first_85.starter_variant_acquisition.r1",
+  "base_head": "add1334bc9185210ed4fa7f703f694f282d94bc4",
+  "base_tree": "6adc8d996194e49cc8be42a85eb42e9c0df6e034",
+  "input_git_blobs": {
+    "research/pets/PET-HIGH-FIRST-84-LATE-PC-ACQUISITION-REFERENCES-R1.json": "b45c2066113d69b474cf62eaad2145805f7fc438",
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-46-ACQUISITION-GAP-MATRIX-R1.json": "dbbd61460cee2edd4ba2722ab90e8889fe5268e2",
+    "docs/specs/STONEAGE-WAYI2003-NEWBIE-RIDING-PLAN-R1.md": "b1a4d1924c686af05171917f97ceb7c038a9b9f6",
+    "docs/specs/STONEAGE-SCENE37-NEWBIE-COURIER-QUEST-PLAYER-SOURCE-R1.md": "9186a7badcde46d2aef6b05fbc6a826e85aeb29d"
+  },
+  "scope": "36 PET84 residual positions; one dated name/element-compatible reward reference and four source-pinned starter-variant pairs. No promotion from shared graphics to official identity.",
+  "rows": [
+    {
+      "tw75_row_index": 222,
+      "template_id": 738,
+      "master_name": "烏拉拉",
+      "graphic": 100833,
+      "row_sha256": "9f7f2eae5e2f58c236299258fd153d532f233b26f2fccbe5bfa2eba52bfa35df",
+      "master_elements": [
+        90,
+        0,
+        0,
+        10
+      ],
+      "source_elements": [
+        90,
+        0,
+        0,
+        10
+      ],
+      "source": {
+        "url": "https://games.sina.com.cn/o/n/2011-12-16/1513562553.shtml",
+        "date": "2011-12-16",
+        "visible_lines": [
+          29,
+          46
+        ],
+        "grade": "DATED_PERIOD_OPERATOR_PROMOTIONAL_REPORT",
+        "version_scope": "CN CINS 2.5 starter card",
+        "raw_html_sha256": null
+      },
+      "acquisition_summary": "大陆胜思2.5新手卡奖励；2011-12-01同期稿明确领取并激活，8.5礼卡为另一宠物。",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_DATED_PC_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    }
+  ],
+  "starter_variants": [
+    {
+      "tw75_row_index": 108,
+      "template_id": 161,
+      "master_name": "新手貝魯卡",
+      "graphic": 100327,
+      "row_sha256": "26bf74dbb3eae136c6875fb1704a4c8231abc8e0eb9e7b6fc7c9e506147b874c",
+      "master_elements": [
+        60,
+        40,
+        0,
+        0
+      ],
+      "base": [
+        16,
+        20,
+        13,
+        22
+      ],
+      "initnum": 17,
+      "lvup_literal": "4.00",
+      "ordinary": {
+        "template_id": 191,
+        "name": "貝魯卡",
+        "graphic": 100327,
+        "row_sha256": "3ff2c38a75d61a71a5a4c1c955efe41f1664f14c5e79b7cb02fadc00d95c0fba",
+        "elements": [
+          60,
+          40,
+          0,
+          0
+        ],
+        "base": [
+          23,
+          28,
+          16,
+          25
+        ],
+        "initnum": 24,
+        "lvup_literal": "4.50"
+      },
+      "raw_base_sum": [
+        71,
+        92
+      ],
+      "evidence": "FAMILY_CONTEXT_ONLY",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "tw75_row_index": 109,
+      "template_id": 162,
+      "master_name": "新手貝魯伊卡",
+      "graphic": 100328,
+      "row_sha256": "a1c01650eaf1d15f97764f6e54e93bde3bf3df67e71e96e987b591916407eade",
+      "master_elements": [
+        0,
+        0,
+        30,
+        70
+      ],
+      "base": [
+        16,
+        20,
+        10,
+        25
+      ],
+      "initnum": 17,
+      "lvup_literal": "4.00",
+      "ordinary": {
+        "template_id": 192,
+        "name": "貝魯伊卡",
+        "graphic": 100328,
+        "row_sha256": "8436f06f06fdfaec664a49c44f0be3366c91a3239f603f868d2a28fcdcef84fb",
+        "elements": [
+          0,
+          0,
+          30,
+          70
+        ],
+        "base": [
+          21,
+          30,
+          13,
+          28
+        ],
+        "initnum": 23,
+        "lvup_literal": "4.50"
+      },
+      "raw_base_sum": [
+        71,
+        92
+      ],
+      "evidence": "FAMILY_CONTEXT_ONLY",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "tw75_row_index": 110,
+      "template_id": 163,
+      "master_name": "新手格魯西斯",
+      "graphic": 100329,
+      "row_sha256": "23eccb993bab5bd8f9179addf5cf9ad6ae1d92049e2b624f39cec600f0046f36",
+      "master_elements": [
+        0,
+        0,
+        80,
+        20
+      ],
+      "base": [
+        19,
+        20,
+        10,
+        22
+      ],
+      "initnum": 17,
+      "lvup_literal": "4.00",
+      "ordinary": {
+        "template_id": 193,
+        "name": "格魯西斯",
+        "graphic": 100329,
+        "row_sha256": "eb872db644b4397180f4c0685d85b5169c4409e6f24ea208a99ed731f289b161",
+        "elements": [
+          0,
+          0,
+          80,
+          20
+        ],
+        "base": [
+          20,
+          30,
+          13,
+          28
+        ],
+        "initnum": 21,
+        "lvup_literal": "4.50"
+      },
+      "raw_base_sum": [
+        71,
+        91
+      ],
+      "evidence": "NAMED_PERIOD_PLAYER_REWARD_PREFIX_VARIANT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "tw75_row_index": 111,
+      "template_id": 164,
+      "master_name": "新手金格薩貝魯",
+      "graphic": 100330,
+      "row_sha256": "a37db0aabd1a185e4eb637702b6e2a4730a44a2b29014c44b710b24bcde8b1db",
+      "master_elements": [
+        30,
+        0,
+        0,
+        70
+      ],
+      "base": [
+        16,
+        21,
+        11,
+        23
+      ],
+      "initnum": 17,
+      "lvup_literal": "4.00",
+      "ordinary": {
+        "template_id": 194,
+        "name": "金格薩貝魯",
+        "graphic": 100330,
+        "row_sha256": "64d4fe784e0754064b770044bef506aad392f04cbded11d3383244b3e72968d6",
+        "elements": [
+          30,
+          0,
+          0,
+          70
+        ],
+        "base": [
+          19,
+          29,
+          18,
+          29
+        ],
+        "initnum": 25,
+        "lvup_literal": "4.50"
+      },
+      "raw_base_sum": [
+        71,
+        95
+      ],
+      "evidence": "NAMED_PERIOD_OPERATOR_STARTER_MOUNT_WITHOUT_EXACT_PREFIX_OR_ELEMENTS",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    }
+  ],
+  "supplementary_sources": [
+    {
+      "url": "https://news.17173.com/content/2011-12-01/20111201113412530.shtml",
+      "date": "2011-12-01",
+      "visible_lines": [
+        19,
+        34
+      ],
+      "grade": "DATED_PERIOD_PROMOTIONAL_REPORT",
+      "summary": "大陆2.5领取激活新手卡奖励乌拉拉；玛丽娜丝庄园训练师送虎，未命名虎模板。"
+    },
+    {
+      "url": "https://games.sina.com.cn/zhqu/sta/cwzl/cwzl_2.shtml",
+      "date": "2003-04-03",
+      "visible_lines": [
+        28,
+        31,
+        74
+      ],
+      "grade": "DATED_PERIOD_PLAYER_GUIDE",
+      "summary": "乌拉拉地9风1，取得栏空；不将2011奖励倒填2003。"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/content/2006-04-09/1144585015.shtml?_platform=PC",
+      "date": "2006-04-09",
+      "visible_lines": [
+        58,
+        69
+      ],
+      "grade": "DATED_PERIOD_PLAYER_GUIDE",
+      "summary": "初始30级以下货运任务，目标10/20/31级、成人礼后庄园领新手虎，明确举新手的格鲁西斯，称能力约野生一半、限领一次。非公式；与已有SCENE37链高度相似，非独立部署证明。"
+    },
+    {
+      "url": "https://news.17173.com/content/2012-07-04/20120704151723074.shtml",
+      "date": "2012-07-04",
+      "visible_lines": [
+        33,
+        36
+      ],
+      "grade": "DATED_PERIOD_PROMOTIONAL_REPORT",
+      "summary": "新玩家可在玛丽娜丝庄园训练师领金虎，普通金虎另有四圣石任务路线；未给原名新手前缀、属性比例或模板ID。"
+    }
+  ],
+  "remaining_without_new_later_reference": [
+    31,
+    32,
+    75,
+    76,
+    90,
+    91,
+    92,
+    95,
+    96,
+    103,
+    108,
+    109,
+    110,
+    111,
+    187,
+    208,
+    268,
+    281,
+    293,
+    306,
+    309,
+    317,
+    318,
+    330,
+    344,
+    345,
+    386,
+    387,
+    416,
+    417,
+    436,
+    438,
+    452,
+    453,
+    454
+  ],
+  "summary": {
+    "strict_reference_queue_unchanged": 67,
+    "input_later_residual": 36,
+    "new_later_name_element_reference_rows": 1,
+    "cumulative_later_reference_rows": 32,
+    "residual_without_this_new_layer": 35,
+    "starter_variant_context_rows": 4,
+    "official_acquisition_closed": 0,
+    "new_original_client_bytes": 0,
+    "official_species_count": null
+  },
+  "official_same_deployment_verified": false,
+  "original_assets_published": false
+}
