@@ -9032,3 +9032,8 @@ R14包351231B/SHA7684267ab528d13ceecb23a25632543ae839225607cbda702a32736e4c4d366
 ## 2026-11-26｜旧台湾服六组宠物面板转引
 
 - [PTT 石器板 2011-07-07 转引](https://www.ptt.cc/bbs/StoneAge/M.1310015071.A.E53.html)标注资料来自巴哈石器精华区。搜索索引保留 12 条有初始和期末面板的记录，直接页面为 403。原样本日期、服务端版本和装备状态未得。[PET77 来源等级与联合验算](continuity/STONEAGE-PET-HIGH-FIRST-77-PLAYER-PANEL-WITNESSES-20261126.md)。
+
+
+## 2026-11-26｜2012 年葛雷馬恩玩家面板与截图
+
+5 篇公开 PTT 镜像共 17 条转录读数，原 JPEG 实取并核到一份 Lv122 期末面板。截图未覆盖唯一区分两套出生模型的 72 血记录；该记录期末敏捷另有算术冲突。2011 年转引正文实取后复核原 12 条。来源版本仍待证。[PET78 来源和散列](continuity/STONEAGE-PET-HIGH-FIRST-78-2012-HORSE-PANEL-WITNESSES-20261126.md)。

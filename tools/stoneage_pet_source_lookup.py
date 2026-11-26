@@ -278,6 +278,7 @@ def build(d):
     witnesses77 = collections.defaultdict(list)
     for index, witness in enumerate(d.get("hf77", {}).get("rows", [])):
         witnesses77[witness["template_id"]].append((index, witness))
+    horse78 = d.get("hf78")
     birthid=by_id(d["tw75_birth"]["rows"],"template_id");compid=by_id(d["tw75_comparison"]["rows"],"template_id")
     for i,x in enumerate(d["tw75"]["pet_flag_1_field_projections"]):
         k=x["template_id"];b=d["tw75_birth"]["rows"][birthid[k]];e=d["tw75_comparison"]["rows"][compid[k]]
@@ -413,6 +414,11 @@ def build(d):
         for index, witness in witnesses77.get(k, []):
             assert x["name"] == witness["name"]
             ls.append(link("hf77", ["rows", index], "REPOSTED_PLAYER_PANEL_NAME_WITNESS_NOT_SAME_DEPLOYMENT"))
+        if horse78 and k == horse78["template_id"]:
+            assert x["name"] == horse78["name"]
+            ls.extend(link("hf78", ["posts", j], "DATED_PLAYER_PANEL_NAME_WITNESS_NOT_SAME_DEPLOYMENT")
+                      for j in range(len(horse78["posts"])))
+            ls.append(link("hf78", ["photo"], "PLAYER_SCREENSHOT_FINAL_PANEL_ONLY"))
         add("tw75", ["pet_flag_1_field_projections", i], [x["name"]], "CLAIMED_TW75_MASTER_TEMPLATE", [k, x["graphic"]], ls, detail)
     for i, row in enumerate(petabi51):
         add("hf51_petabi", ["petabi_rows", i], [row["template_name"], row["instance_name"]],
@@ -657,6 +663,9 @@ def verify(m,d,entries):
     if "hf77" in d:
         assert source_counts["hf77"] == 12
         assert d["hf77"]["official_same_deployment_verified"] is False
+    if "hf78" in d:
+        assert source_counts["hf78"] == 6
+        assert d["hf78"]["same_deployment_birth_and_growth_proven"] is False
     for row61 in d["hf61"]["rows"]:
         links61 = [l for l in high45[row61["position"]]["linked_records"] if l["source"] == "hf61"]
         assert {resolve(d, l["source"], l["pointer"])["skill_id"] for l in links61
