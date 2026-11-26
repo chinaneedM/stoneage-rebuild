@@ -1,0 +1,4 @@
+# 2013大陆官方更新服务器独立小文件取证（候选）
+2026-11-26，fresh main 17d44e26243d8fa3747f8fb69a2ac7fed6c79311/tree 8adc19d8c3b85ed194d5a8829ad1146b0b3e605d，CURRENT c89e0e33537990aa2132b47c40fef49a985a935c/2709173B保留。PR718 PET122仍执行（源04a150d0218ca23c8530f62c8e7a947a6e3997e4），两项辅助检查success。此候选独立于大包读取，不改变最高NEXT，不修改其分支，不重复请求大包。
+PET115实际20121030005014官方页列出update5.cinsgame.com/saupdate/StoneAge.exe。PET116 CDX存在20130130111551 200、digest XFFGC5Y643VKHJTY7YOUB3L73BUPZ7DF、WARC length47080（非原文件准确字节数）；其早先前缀访问连接拒绝。PET119以来同站存档可读，故仅一次独立小文件全读（2MiB上限，35秒socket timeout），CDX散列及PE边界核验，不执行；只记录固定宠物资源路径词元，不发表二进制。另首次限定该官方更新目录CDX前缀，2010–2016、200行上限，保留真实200文件路径，注明截断；不自动批量抓取、不猜文件内容。若无新可读原件/路径则停止，不重复访问。
+NEXT：PET122 #718仍最高，先收口；若本支取得新路径/小程序则仅按实际证据决定是否定向取得宠物资源。正式字段闭合0，67严格取得余缺不变，PET唯一，Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，总体UNKNOWN。
