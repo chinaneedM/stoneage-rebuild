@@ -8,13 +8,13 @@
   "base_main_tree_at_adoption": "f4bcc2d164779a6fca746222834c30d94f7e2774",
   "current_state_complete_historical_git_blob_unmodified": "c89e0e33537990aa2132b47c40fef49a985a935c",
   "architecture": {
-    "work_axis": "ONE_ACTIVE_CONTENT_MODULE_UNTIL_SOURCE_BOUNDED_REVIEW_AND_EXPLICIT_USER_UNLOCK",
+    "work_axis": "ONE_ACTIVE_CONTENT_MODULE_UNTIL_ACTUAL_COMPLETE_CONTENT_RESTORATION_AND_EXPLICIT_USER_UNLOCK",
     "chronology_axis": "SINGLE_OLDEST_TO_NEWEST_HISTORICAL_YEAR_SPINE_WITH_REGION_OPERATOR_PRODUCT_VERSION_LANES",
     "independence": "MODULE_SEQUENCE_IS_NOT_YEAR_SEQUENCE; each later module restarts its own earliest year, reusing verified common version identifiers rather than rewriting history",
     "provenance_axis": "QUALIFIED_SOURCE_FACTS_AND_CANDIDATES_WITH_SOURCE_PINS_AND_EXPLICIT_NEGATIVE_BOUNDARIES",
     "shared_lookup_goal": "A year/version can list historical qualified pets, maps, NPC, items, quests and gameplay as separately proven modules",
     "current_active_module": "PET",
-    "next_frontier": "PET-OFFICIAL-CHRONOLOGY-01_PROVISIONAL_1999_THROUGH_2000",
+    "next_frontier": "PET_INTEGRATED_PER_PET_COMPLETE_PROFILE_AND_OFFLINE_ATLAS",
     "current_research_frontier_year_provisional": 1999,
     "current_project_phase": "STAGE_A_HISTORICAL_RESTORATION",
     "future_single_player_design": "DESIGN_FUTURE_SEPARATE_NOT_ACTIVE"
@@ -201,5 +201,32 @@
     "chronology_pc_only_documentary_records": 9,
     "exclude_mobile_records_from_query_and_statistics": true,
     "old_github_commits_not_authoritative_current_scope": true
+  },
+  "pet_actual_restoration_gate_20261126": {
+    "user_explicit": true,
+    "protocol_section": 29,
+    "source_bounded_review_is_not_completion": true,
+    "prior_closure_request_withdrawn": true,
+    "active_module": "PET",
+    "source_bounded_delivery_receipts_retained": true,
+    "required_fields": [
+      "identity_and_version",
+      "family",
+      "elements",
+      "initial_hp_attack_defense_agility_ranges",
+      "individual_and_total_growth_ranges",
+      "innate_and_learnable_skills",
+      "capture_locations_coordinates_levels",
+      "all_acquisition_methods",
+      "encyclopedia_text",
+      "portrait_model_actions_directions",
+      "evolution_fusion_rebirth_riding_relations",
+      "provenance_conflicts_missing_vs_not_applicable"
+    ],
+    "required_deliverable": "INTEGRATED_PRIVATE_OFFLINE_VISUAL_PER_PET_ATLAS",
+    "missing_fields_are_not_complete": true,
+    "explicit_user_acceptance_and_switch_required": true,
+    "npc_unlocked": false,
+    "official_species_count": null
   }
 }
