@@ -1,0 +1,101 @@
+{
+  "capture_result": "EXACT_CAPTURE_REPLAYED",
+  "expected_capture_sha256": "d9693c19c66db2109031ee2811732ede3d4d8e0586aa84bce948bc3b04bd1011",
+  "full_original_client_verified": false,
+  "new_route_index": {
+    "final_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fdown.17173.com%2Findex.php%3Ffile%3Dshiqi%2FStoneAge70.rar&output=json&from=2003&to=2008&limit=100&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength",
+    "http_status": 200,
+    "kind": "WAYBACK_CDX",
+    "metadata": {
+      "limit_reached": false,
+      "row_count": 3,
+      "rows": [
+        {
+          "digest": "DH525MBHTG3LSAZX5BTHIYSGAVJI5CZR",
+          "length": "2525",
+          "mimetype": "text/html",
+          "original": "http://down.17173.com:80/index.php?file=shiqi/StoneAge70.rar",
+          "statuscode": "200",
+          "timestamp": "20031221150024"
+        },
+        {
+          "digest": "D73VFJMSSI7B6WO2QNVAAYOWERN3HAMW",
+          "length": "2484",
+          "mimetype": "text/html",
+          "original": "http://down.17173.com:80/index.php?file=shiqi/StoneAge70.rar",
+          "statuscode": "200",
+          "timestamp": "20040219053208"
+        },
+        {
+          "digest": "OYDKANMK5G2BJAXXT6474QOXPPMWFBWF",
+          "length": "2485",
+          "mimetype": "text/html",
+          "original": "http://down.17173.com:80/index.php?file=shiqi/StoneAge70.rar",
+          "statuscode": "200",
+          "timestamp": "20040616193538"
+        }
+      ]
+    },
+    "original_payload_downloaded": false,
+    "request_url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fdown.17173.com%2Findex.php%3Ffile%3Dshiqi%2FStoneAge70.rar&output=json&from=2003&to=2008&limit=100&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength",
+    "response_bytes": 498,
+    "response_sha256": "ed3aa91ee94c0704d9cd3155e8be4e6b9fe501f7cb59e5f31b5fb65f2dc18adb",
+    "result": "METADATA_PARSED",
+    "target_or_query": "http://down.17173.com/index.php?file=shiqi/StoneAge70.rar"
+  },
+  "official_closures": 0,
+  "original_assets_published": false,
+  "prior_blob": "802a6200640abb4721c07959118c01fffaf42eb0",
+  "response_bytes": 34268,
+  "response_range": "bytes 0-34267/34268",
+  "response_sha256": "d9693c19c66db2109031ee2811732ede3d4d8e0586aa84bce948bc3b04bd1011",
+  "response_status": 206,
+  "schema": "stoneage.pet106.cn70.rar4_capture_structure.r1",
+  "structure": {
+    "blocks": [
+      {
+        "available_data_bytes": 0,
+        "complete_data_extent": true,
+        "declared_data_bytes": 0,
+        "flags": "0x0",
+        "header_bytes": 13,
+        "header_crc_valid": true,
+        "offset": 7,
+        "type": "0x73"
+      },
+      {
+        "available_data_bytes": 34183,
+        "complete_data_extent": true,
+        "declared_data_bytes": 34183,
+        "encrypted": false,
+        "file_crc32": "a5c6411c",
+        "filename_candidate": "STONEAGE7.rar.torrent",
+        "filename_hex": "53544f4e45414745372e7261722e746f7272656e74",
+        "flags": "0x9020",
+        "header_bytes": 58,
+        "header_crc_valid": true,
+        "method": "0x30",
+        "offset": 20,
+        "packed_bytes": 34183,
+        "split_after": false,
+        "split_before": false,
+        "type": "0x74",
+        "unpacked_bytes": 34183
+      },
+      {
+        "available_data_bytes": 0,
+        "complete_data_extent": true,
+        "declared_data_bytes": 0,
+        "flags": "0x4000",
+        "header_bytes": 7,
+        "header_crc_valid": true,
+        "offset": 34261,
+        "type": "0x7b"
+      }
+    ],
+    "capture_bytes": 34268,
+    "full_original_client_verified": false,
+    "member_data_crc_verified": false,
+    "stop": "END_HEADER_PRESENT"
+  }
+}
