@@ -596,6 +596,12 @@ def build(d):
             ls.extend(link(src, pointer, "EXACT_NAME_REFERENCE_NOT_OFFICIAL_IDENTITY") for src, pointer in targets)
             add("hf94", ["rows", j], [row["name"]], "LATE_COMMUNITY_CATALOGUE_REFERENCE", [],
                 ls, dict(family=row["family"], catalogue=row["catalogue"], official_identity_verified=False))
+    if "hf98" in d:
+        positions98 = {e["pointer"][1]: e for e in out if e["source"] == "tw75"}
+        for j, row in enumerate(d["hf98"]["rows"]):
+            for side in ("left", "right"):
+                positions98[row[side]["position"]]["linked_records"].append(
+                    link("hf98", ["rows", j], "SAVED_SKILL_VARIANT_NOT_OFFICIAL_BIRTH"))
     if "hf97" in d:
         positions97 = {e["pointer"][1]: e for e in out if e["source"] == "tw75"}
         for j, row in enumerate(d["hf97"]["rows"]):
@@ -1121,6 +1127,62 @@ def verify(m,d,entries):
         assert grid_count == 5 and sum(bool(r["year_beast_recollection"]) for r in late["rows"]) == 4
         assert sum(r["year_beast_recollection"]["name_variant"] for r in late["rows"] if r["year_beast_recollection"]) == 1
         assert late["summary"]["official_closures"] == 0
+    if "hf98" in d:
+        variants98 = d["hf98"]
+        for path, sha in variants98["input_git_blobs"].items():
+            assert blob((ROOT / path).read_bytes()) == sha
+        master98 = d["tw75"]["pet_flag_1_field_projections"]
+        selected98 = d["hf76"]
+        cross98 = d["hf42_cross"]["rows"]
+        reward98 = d["hf42"]["rows"]
+        later98 = d["tw75_comparison"]
+        def side98(z):
+            i = z["position"]
+            a, s, c = master98[i], selected98["rows"][i], later98["rows"][i]
+            assert a["template_id"] == z["template_id"] == c["template_id"]
+            assert a["row_sha256"] == z["row_sha256"] == s["row_sha256"]
+            wi = next((j for j,q in enumerate(cross98) if q["tw75_row_index"] == i and q["shared_template_row_sha256"] == a["row_sha256"]), None)
+            ri = None if wi is None else cross98[wi]["reward_row_index"]
+            if ri is not None:
+                rr = reward98[ri]
+                assert rr["template_id"] == a["template_id"] and rr["award_instance_id"] == z["reward_instance_id"]
+                assert rr["skill_slots"] == a["skill_slots"]
+            return dict(position=i,template_id=z["template_id"],row_sha256=z["row_sha256"],selected_grade=z["selected_table_grade"],
+                selected_route_counts=z["route_counts"],selected_reward_crosswalk_index=wi,selected_reward_row_index=ri,
+                later_comparison_row_index=i,later_comparison_status=c["comparison_status"],later_comparison_instance_count=c["comparison_instance_count"],
+                later_comparison_positive_reference_count=c["positive_reference_count"],official_birth_skills_verified=False)
+        def slot98(z,j,skill):
+            if skill is None or skill <= 0:
+                return None
+            s = selected98["rows"][z["position"]]
+            record = next((q for q in s["configured_skill_slots"] if q["slot_index"] == j and q["skill_id"] == skill), None)
+            di = next((i for i,q in enumerate(selected98["configured_skill_definitions"]) if q["skill_id"] == skill), None)
+            ci = next((i for i,q in enumerate(later98["skill_ids"]) if q["id"] == skill), None)
+            if record is not None:
+                assert di is not None and record["definition_row_sha256"] == selected98["configured_skill_definitions"][di]["row_sha256"]
+            return dict(skill_id=skill,selected_definition_index=di if record is not None else None,later_comparison_definition_index=ci,
+                qualification="SAVED_CONFIGURED_SLOT_DEFINITION_NOT_BIRTH_PROOF" if record is not None else "NO_EXACT_SELECTED_SLOT_COMPARISON_ONLY")
+        expected98 = []
+        for i,p in enumerate(d["hf96"]["rows"]):
+            if p["relation"] != "SAME_NAME_GRAPHIC" or p["differing_projected_fields"] != ["skill_slots"]:
+                continue
+            lft,rgt = p["left"],p["right"]
+            lslots,rslots = [master98[z["position"]]["skill_slots"] for z in (lft,rgt)]
+            changed = [dict(slot_index=j,left=a,right=b,left_evidence=slot98(lft,j,a),right_evidence=slot98(rgt,j,b))
+                for j,(a,b) in enumerate(zip(lslots,rslots)) if a != b]
+            expected98.append(dict(collision_index=i,left=side98(lft),right=side98(rgt),changed_slots=changed,official_identity_verified=False))
+        assert variants98["rows"] == expected98
+        ev98 = [d[k] for r in expected98 for d in r["changed_slots"] for k in ("left_evidence","right_evidence") if d[k] is not None]
+        stat98 = dict(pairs=len(expected98),positions=len({r[s]["position"] for r in expected98 for s in ("left","right")}),
+            both_selected_exact=sum(all(r[s]["selected_grade"] == "EXACT_SHARED_TEMPLATE_ROW" for s in ("left","right")) for r in expected98),
+            changed_positive_slot_occurrences=len(ev98),distinct_changed_skill_ids=len({e["skill_id"] for e in ev98}),
+            selected_definition_occurrences=sum(e["selected_definition_index"] is not None for e in ev98),
+            comparison_only_occurrences=sum(e["selected_definition_index"] is None and e["later_comparison_definition_index"] is not None for e in ev98),
+            reward_pair_count=sum(any(r[s]["selected_reward_row_index"] is not None for s in ("left","right")) for r in expected98),official_closures=0)
+        assert variants98["summary"] == stat98 == m["supplement_hf98"]
+        assert len(expected98) == 9
+        assert {(e["pointer"][1],l["pointer"][1]) for e in high45 for l in e["linked_records"] if l["source"] == "hf98"} == {(r[s]["position"],j) for j,r in enumerate(expected98) for s in ("left","right")}
+        assert sum(l["source"] == "hf98" for e in entries for l in e["linked_records"]) == 18
     if "hf97" in d:
         roles97 = d["hf97"]
         for path, sha in roles97["input_git_blobs"].items():
