@@ -1152,7 +1152,7 @@ def verify(m,d,entries):
         assert collision["rows"] == expected
         count = collections.Counter
         linked = {r[s]["position"] for r in expected for s in ("left","right")}
-        summary = dict(positions=len(source), pairs=len(expected), linked_positions=len(linked),
+        collision_summary = dict(positions=len(source), pairs=len(expected), linked_positions=len(linked),
             relation_counts=dict(count(r["relation"] for r in expected)),
             field_difference_counts=dict(count(f for r in expected for f in r["differing_projected_fields"])),
             both_selected_exact=sum(r["both_selected_exact"] for r in expected),
@@ -1161,7 +1161,7 @@ def verify(m,d,entries):
             same_name_graphic_no_projected_difference=sum(r["relation"] == "SAME_NAME_GRAPHIC" and not r["differing_projected_fields"] for r in expected),
             same_name_graphic_skill_slots_only=sum(r["relation"] == "SAME_NAME_GRAPHIC" and r["differing_projected_fields"] == ["skill_slots"] for r in expected),
             official_closures=0)
-        assert collision["summary"] == summary == m["supplement_hf96"]
+        assert collision["summary"] == collision_summary == m["supplement_hf96"]
         assert len(expected) == 55 and len(linked) == 89
         assert {(e["pointer"][1], l["pointer"][1]) for e in high45 for l in e["linked_records"] if l["source"] == "hf96"} == {(r[s]["position"], j) for j,r in enumerate(expected) for s in ("left","right")}
         assert sum(l["source"] == "hf96" for e in entries for l in e["linked_records"]) == 110
