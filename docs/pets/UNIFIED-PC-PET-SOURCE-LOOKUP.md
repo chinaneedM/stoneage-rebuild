@@ -185,3 +185,13 @@ python tools/stoneage_pet_source_lookup.py --annual-names --region KR --query �
 python tools/stoneage_pet_source_lookup.py --annual-names --year 2023 --query 里拉拉 --exact --full
 ``
 [补接来源及限制](../continuity/STONEAGE-PET-ANNUAL-NAMES-20261126.md)。
+
+
+## 年审从属报告补接（候选）
+现有 `--annual-names` 同时独立返回 PET88/89/114/116/117/119 的从属证据（59源位置、43宠物名候选位置、16角色/异名/物品上下文）。与原年度及文献目录非加总关系，保留同年区同字面引用，原版本和来源不变。例：
+```sh
+python tools/stoneage_pet_source_lookup.py --annual-names --year 2012 --query 呼拔拔 --exact --full
+python tools/stoneage_pet_source_lookup.py --annual-names --year 2018 --query 貝洛寶利 --exact --full
+python tools/stoneage_pet_source_lookup.py --annual-names --year 2020 --query 米尼樂 --exact --full
+```
+[从属来源核对与限制](../continuity/STONEAGE-PET-ANNUAL-SUBORDINATE-20261126.md)。

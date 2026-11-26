@@ -87,15 +87,55 @@ def verify(rows,spec,counts):
     assert not filtered(rows,2026) and len(filtered(rows,2026,context=True))==1
     matched={r["label"] for r in pet if r["candidate_refs"][r["label"]]}
     return dict(schema="stoneage.pet.annual_named_access.r1",annual_receipts_checked=28,selected_audit_years=len(expected["years"]),source_label_occurrences=len(rows),pet_label_occurrences=len(pet),context_only_occurrences=len(ctx),distinct_literal_pet_labels=len(names),labels_with_exact_candidate=len(matched),labels_without_exact_candidate=sorted(names-matched),candidate_links_not_identity=sum(len(v) for r in pet for v in r["candidate_refs"].values()),by_region=dict(Counter(r["region"] for r in pet)),by_role=dict(Counter(r["role"] for r in rows)),new_official_release_certifications=0,official_species_count=None,source_bounded_closed=False,**counts)
+SUBORDINATE="research/pets/PET-ANNUAL-SUBORDINATE-NAMES-R1.json"
+def subordinate_rows(annual):
+    spec=json.loads((ROOT/SUBORDINATE).read_bytes())
+    pinned={k:read_pin(v["path"],v["git_blob"]) for k,v in spec["pins"].items()}
+    assert set(pinned)=={"88","89","114","116","117","119"}
+    rows=[]
+    for e in spec["selection"]:
+        k=str(e["receipt"]); p=spec["pins"][k]; d=pinned[k]
+        assert d["year"]==p["year"]
+        raw=resolve(d,e["pointer"]); label=e["label"]; src=resolve(d,e["anchor"])
+        assert isinstance(raw,str) and (label in raw if e["text"] else label==raw)
+        assert p["region"] in ("CN","TW") and "MOBILE" not in e["grade"]
+        rows.append(dict(year=p["year"],region=p["region"],receipt="PET"+k,label=label,role=e["role"],evidence_grade=e["grade"],context_only=e["context_only"],source=ref(p["path"],p["git_blob"],e["pointer"]),source_container=ref(p["path"],p["git_blob"],e["anchor"]),pet_labels=[] if e["context_only"] else [label],original_field=raw,record=resolve(d,e["pointer"][:-1]),source_record=src,first_release_verified=False,official_same_deployment_identity_verified=False,native_runtime_verified=False,global_unique_species_counted=False))
+    attach_names(rows)
+    doc=defaultdict(list)
+    for row in make_rows(materials()):
+        for name in row["pet_labels"]:
+            doc[name].append(dict(directory="documentary",source=row["source"],path=row["source_path"],git_blob=row["git_blob"],pointer=row["pointer"],label=name,qualification="EXACT_LITERAL_LABEL_ONLY_NOT_IDENTITY"))
+    for r in rows:
+        r["annual_literal_refs"]=[a["source"] for a in annual if a["year"]==r["year"] and a["region"]==r["region"] and a["label"]==r["label"]]
+        for label in r["pet_labels"]:r["candidate_refs"][label]+=doc[label]
+    pet=[r for r in rows if not r["context_only"]]; ctx=[r for r in rows if r["context_only"]]
+    expected=spec["expected"]; names={r["label"] for r in pet}
+    assert len(rows)==expected["records"]==59 and len(pet)==expected["petRecords"]==43 and len(ctx)==expected["contextRecords"]==16 and len(names)==expected["distinctPetLabels"]==38
+    assert len({(r["receipt"],tuple(r["source"]["pointer"]),r["label"]) for r in rows})==len(rows)
+    assert all(not r[k] for r in rows for k in ("first_release_verified","official_same_deployment_identity_verified","native_runtime_verified","global_unique_species_counted"))
+    assert not any(r["candidate_refs"] for r in ctx)
+    assert all(l["qualification"]=="EXACT_LITERAL_LABEL_ONLY_NOT_IDENTITY" and l["label"]==r["label"] for r in pet for l in r["candidate_refs"][r["label"]])
+    assert len(filtered(rows,2012,"CN","塔斯夫",True))==2
+    assert not filtered(rows,2012,"CN","坏肯沃",True)
+    assert len(filtered(rows,2018,"TW","貝洛寶利",True))==1
+    assert not filtered(rows,2020,"TW","米尼樂",True) and len(filtered(rows,2020,"TW","米尼樂",True,True))==1
+    assert not filtered(rows,q="血清",exact=True) and len(filtered(rows,q="血清",exact=True,context=True))==1
+    assert all(not filtered(rows,q=n,exact=True,context=True) for n in ("푸곤","칼로","메카기로","巧克洛兒"))
+    matched={r["label"] for r in pet if r["candidate_refs"][r["label"]]}
+    return rows,dict(source_reports=6,source_positions=len(rows),pet_label_positions=len(pet),context_positions=len(ctx),distinct_literal_pet_labels=len(names),labels_with_exact_candidate=len(matched),labels_without_exact_candidate=sorted(names-matched),positions_with_same_year_region_annual_label=sum(bool(r["annual_literal_refs"]) for r in rows),new_official_release_certifications=0,official_species_count=None,limitations=spec["limitations"])
+
 def run(args):
     if args.source or args.version or args.variants: raise SystemExit("annual names support year, region and literal label only")
     if args.exact and not args.query: raise SystemExit("--exact requires --query")
     rows,spec,counts=load_rows(); report=verify(rows,spec,counts)
+    sub,sub_report=subordinate_rows(rows); report["subordinate_report_non_additive"]=sub_report
     if args.verify:
         print("PET_ANNUAL_NAMES_PASS "+json.dumps(report,ensure_ascii=False,sort_keys=True));return
     if args.summary or not any((args.year,args.region,args.query)):
         print(json.dumps(dict(**report,limitations=spec["limitations"]),ensure_ascii=False,indent=2));return
     hits=filtered(rows,args.year,args.region,args.query,args.exact,True)
+    sub_hits=filtered(sub,args.year,args.region,args.query,args.exact,True)
     if not args.full:
         hits=[{k:v for k,v in r.items() if k not in ("record","source_record","original_field")} for r in hits]
-    print(json.dumps(dict(filters=dict(year=args.year,region=args.region,query=args.query,exact=args.exact),pet_label_evidence=[r for r in hits if not r["context_only"]],context_not_pet_release=[r for r in hits if r["context_only"]],official_species_count=None,limitations=spec["limitations"]),ensure_ascii=False,indent=2))
+        sub_hits=[{k:v for k,v in r.items() if k not in ("record","source_record","original_field")} for r in sub_hits]
+    print(json.dumps(dict(subordinate_pet_label_evidence=[r for r in sub_hits if not r["context_only"]],subordinate_context_not_pet_release=[r for r in sub_hits if r["context_only"]],filters=dict(year=args.year,region=args.region,query=args.query,exact=args.exact),pet_label_evidence=[r for r in hits if not r["context_only"]],context_not_pet_release=[r for r in hits if r["context_only"]],official_species_count=None,limitations=spec["limitations"]),ensure_ascii=False,indent=2))
