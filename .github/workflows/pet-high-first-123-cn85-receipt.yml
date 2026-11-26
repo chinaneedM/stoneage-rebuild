@@ -1,0 +1,24 @@
+name: PET123 independent CN85 archive and shared table receipt
+on:
+  push:
+    branches: ['agent/pet-high-first-122-cn85-complete-transfer-20261126']
+    paths:
+      - 'tools/stoneage_pet_high_first_123_cn85_receipt.py'
+      - '.github/workflows/pet-high-first-123-cn85-receipt.yml'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  receipt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/actions/artifacts/15120807113/zip > "$RUNNER_TEMP/pet122.zip"
+          python -m tools.stoneage_pet_high_first_123_cn85_receipt --artifact "$RUNNER_TEMP/pet122.zip"
