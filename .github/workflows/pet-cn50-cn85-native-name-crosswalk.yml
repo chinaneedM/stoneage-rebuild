@@ -1,0 +1,20 @@
+name: CN50 CN85 original compiled name crosswalk replay
+on:
+  push:
+    branches: ['agent/pet-cn50-cn85-native-name-crosswalk-20261126']
+    paths:
+      - 'tools/stoneage_pet_cn50_cn85_native_name_crosswalk.py'
+      - 'research/pets/PET-CN50-CN85-NATIVE-NAME-CROSSWALK-R1.json'
+      - '.github/workflows/pet-cn50-cn85-native-name-crosswalk.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m tools.stoneage_pet_cn50_cn85_native_name_crosswalk
