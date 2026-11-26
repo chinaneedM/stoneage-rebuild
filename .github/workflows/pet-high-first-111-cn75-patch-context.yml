@@ -1,0 +1,31 @@
+name: PET111 CN75 patch route source context
+on:
+  push:
+    branches: ['agent/pet-high-first-108-cn75-archive-routes-20261126']
+    paths:
+      - 'tools/stoneage_pet_high_first_111_cn75_patch_context.py'
+      - '.github/workflows/pet-high-first-111-cn75-patch-context.yml'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m tools.stoneage_pet_high_first_111_cn75_patch_context --self-test
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/actions/artifacts/15115382389/zip > "$RUNNER_TEMP/pet110.zip"
+          python -m tools.stoneage_pet_high_first_111_cn75_patch_context --artifact "$RUNNER_TEMP/pet110.zip" --output "$RUNNER_TEMP/pet111.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet111-cn75-patch-route-context
+          path: ${{ runner.temp }}/pet111.json
+          if-no-files-found: error
+          retention-days: 15
