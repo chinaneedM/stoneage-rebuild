@@ -1,0 +1,2092 @@
+{
+  "schema": "stoneage.pet96.template_collision_matrix.r1",
+  "base_head": "b08910e2878347b6a583b9522ed81073388a41bc",
+  "base_tree": "59a34b1ea0e5b451a85c5e82a5c051aba139f657",
+  "input_git_blobs": {
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-76-SELECTED-MASTER-FIELDS-R1.json": "0005e7d7943907c01024f5dd24132b126e4bb3f3",
+    "research/pets/PET-HIGH-FIRST-16-TW75-CONDITIONAL-BIRTH-GROWTH-R1.json": "8cb864a78f1ff2b3c89ae1739ac485968d104c10"
+  },
+  "scope": "Exhaustive unordered pairs within 467 claimed TW75 pet-flag-1 template positions sharing exact name or numeric graphic. No transitive merge; not an official species census. Selected-route counts exposed only for exact shared rows, not actual historical acquisition. Rank is conditional PET16 model.",
+  "fields_compared": [
+    "name",
+    "graphic",
+    "elements",
+    "base",
+    "initnum",
+    "lvup_literal",
+    "skill_slot_capacity",
+    "skill_slots"
+  ],
+  "summary": {
+    "positions": 467,
+    "pairs": 55,
+    "linked_positions": 89,
+    "relation_counts": {
+      "SAME_GRAPHIC_DIFFERENT_NAME": 23,
+      "SAME_NAME_GRAPHIC": 26,
+      "SAME_NAME_DIFFERENT_GRAPHIC": 6
+    },
+    "field_difference_counts": {
+      "name": 23,
+      "base": 25,
+      "skill_slots": 12,
+      "elements": 10,
+      "initnum": 21,
+      "skill_slot_capacity": 12,
+      "graphic": 6,
+      "lvup_literal": 7
+    },
+    "both_selected_exact": 49,
+    "selected_route_or_reward_reference_differs": 33,
+    "conditional_rank_differs": 14,
+    "same_name_graphic_no_projected_difference": 10,
+    "same_name_graphic_skill_slots_only": 9,
+    "official_closures": 0
+  },
+  "rows": [
+    {
+      "left": {
+        "position": 0,
+        "template_id": 1,
+        "row_sha256": "5f3b4e824a0e85221f470e43f3dc3528103a7060f4927108c072287f79c506bd",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "5f3b4e824a0e85221f470e43f3dc3528103a7060f4927108c072287f79c506bd",
+        "rank": 5,
+        "route_counts": [
+          65,
+          10,
+          3
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 59,
+        "template_id": 97,
+        "row_sha256": "eafd5e0df1a28c453652241a0c6afc8e0c54c4960197118e278048a61723ed62",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "eafd5e0df1a28c453652241a0c6afc8e0c54c4960197118e278048a61723ed62",
+        "rank": 5,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 0,
+        "template_id": 1,
+        "row_sha256": "5f3b4e824a0e85221f470e43f3dc3528103a7060f4927108c072287f79c506bd",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "5f3b4e824a0e85221f470e43f3dc3528103a7060f4927108c072287f79c506bd",
+        "rank": 5,
+        "route_counts": [
+          65,
+          10,
+          3
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 202,
+        "template_id": 716,
+        "row_sha256": "b09dde18941a40c376c3d7ca13893c2db3501c5a4865930589d27ea9cf3e5475",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "b09dde18941a40c376c3d7ca13893c2db3501c5a4865930589d27ea9cf3e5475",
+        "rank": 5,
+        "route_counts": [
+          2,
+          2,
+          2
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name",
+        "base"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 1,
+        "template_id": 2,
+        "row_sha256": "f899e3c726eefc1f078b8a01bc179f997064a8337ceea90025f9322246272123",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "f899e3c726eefc1f078b8a01bc179f997064a8337ceea90025f9322246272123",
+        "rank": 5,
+        "route_counts": [
+          2,
+          2,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 402,
+        "template_id": 1061,
+        "row_sha256": "876fcf45af6fd1c9f6a33015b9d13452e9e0d5a254ccb4412acc53e5cfdf2215",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "876fcf45af6fd1c9f6a33015b9d13452e9e0d5a254ccb4412acc53e5cfdf2215",
+        "rank": 5,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [
+        "skill_slots"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 2,
+        "template_id": 3,
+        "row_sha256": "3b3d929e08d01e641dd9a53cb2b0e371cd115928b43cf1e4b6d1c0710b06c9d7",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "3b3d929e08d01e641dd9a53cb2b0e371cd115928b43cf1e4b6d1c0710b06c9d7",
+        "rank": 5,
+        "route_counts": [
+          13,
+          12,
+          4
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 5,
+        "template_id": 6,
+        "row_sha256": "aa824f47b432d6201b055596cd85bd90a66c34365f7ac87b339d3ec68c1f8a97",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "aa824f47b432d6201b055596cd85bd90a66c34365f7ac87b339d3ec68c1f8a97",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [
+        "elements",
+        "base",
+        "initnum",
+        "skill_slot_capacity"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 2,
+        "template_id": 3,
+        "row_sha256": "3b3d929e08d01e641dd9a53cb2b0e371cd115928b43cf1e4b6d1c0710b06c9d7",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "3b3d929e08d01e641dd9a53cb2b0e371cd115928b43cf1e4b6d1c0710b06c9d7",
+        "rank": 5,
+        "route_counts": [
+          13,
+          12,
+          4
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 193,
+        "template_id": 586,
+        "row_sha256": "e5404d03d1f9a2b854ef06ec091cf4241e38bb89d1304f048adf6a6e2c3138bd",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "e5404d03d1f9a2b854ef06ec091cf4241e38bb89d1304f048adf6a6e2c3138bd",
+        "rank": 5,
+        "route_counts": [
+          3,
+          3,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 2,
+        "template_id": 3,
+        "row_sha256": "3b3d929e08d01e641dd9a53cb2b0e371cd115928b43cf1e4b6d1c0710b06c9d7",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "3b3d929e08d01e641dd9a53cb2b0e371cd115928b43cf1e4b6d1c0710b06c9d7",
+        "rank": 5,
+        "route_counts": [
+          13,
+          12,
+          4
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 203,
+        "template_id": 717,
+        "row_sha256": "4afd22b96544c57ca760a455bb4a35dd9e407bb3d5db5adcfb78b7d2510ebb22",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "4afd22b96544c57ca760a455bb4a35dd9e407bb3d5db5adcfb78b7d2510ebb22",
+        "rank": 5,
+        "route_counts": [
+          2,
+          2,
+          2
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 5,
+        "template_id": 6,
+        "row_sha256": "aa824f47b432d6201b055596cd85bd90a66c34365f7ac87b339d3ec68c1f8a97",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "aa824f47b432d6201b055596cd85bd90a66c34365f7ac87b339d3ec68c1f8a97",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 193,
+        "template_id": 586,
+        "row_sha256": "e5404d03d1f9a2b854ef06ec091cf4241e38bb89d1304f048adf6a6e2c3138bd",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "e5404d03d1f9a2b854ef06ec091cf4241e38bb89d1304f048adf6a6e2c3138bd",
+        "rank": 5,
+        "route_counts": [
+          3,
+          3,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [
+        "elements",
+        "base",
+        "initnum",
+        "skill_slot_capacity"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 5,
+        "template_id": 6,
+        "row_sha256": "aa824f47b432d6201b055596cd85bd90a66c34365f7ac87b339d3ec68c1f8a97",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "aa824f47b432d6201b055596cd85bd90a66c34365f7ac87b339d3ec68c1f8a97",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 203,
+        "template_id": 717,
+        "row_sha256": "4afd22b96544c57ca760a455bb4a35dd9e407bb3d5db5adcfb78b7d2510ebb22",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "4afd22b96544c57ca760a455bb4a35dd9e407bb3d5db5adcfb78b7d2510ebb22",
+        "rank": 5,
+        "route_counts": [
+          2,
+          2,
+          2
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name",
+        "elements",
+        "base",
+        "initnum",
+        "skill_slot_capacity"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 6,
+        "template_id": 11,
+        "row_sha256": "a7b78e74da508e58ce0211d169ba56b33d198970845a6ce54426ee64945739fe",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "a7b78e74da508e58ce0211d169ba56b33d198970845a6ce54426ee64945739fe",
+        "rank": 2,
+        "route_counts": [
+          34,
+          34,
+          1
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 194,
+        "template_id": 587,
+        "row_sha256": "41aabc5853af1836d4c6876fa5ee558563d01557f8535d65aae0a8d9b0d6b7c0",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "41aabc5853af1836d4c6876fa5ee558563d01557f8535d65aae0a8d9b0d6b7c0",
+        "rank": 2,
+        "route_counts": [
+          2,
+          2,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 11,
+        "template_id": 21,
+        "row_sha256": "ba9f931dcfddb0a9fbcc2d90bb85281c9bedb6c7afad8e64606d5e5bbe65dea4",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "ba9f931dcfddb0a9fbcc2d90bb85281c9bedb6c7afad8e64606d5e5bbe65dea4",
+        "rank": 3,
+        "route_counts": [
+          39,
+          39,
+          1
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 207,
+        "template_id": 721,
+        "row_sha256": "981b9fde65e0c229a9f8bf7c6d53f87f4c3dd11837f635d2c9dea0565fb57bd0",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "981b9fde65e0c229a9f8bf7c6d53f87f4c3dd11837f635d2c9dea0565fb57bd0",
+        "rank": 3,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": 1482
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 18,
+        "template_id": 34,
+        "row_sha256": "a9c2ec7a4864bcead0bb9238c5620e0f8d1cb32e69faa091c80a5039a6dc6f39",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "a9c2ec7a4864bcead0bb9238c5620e0f8d1cb32e69faa091c80a5039a6dc6f39",
+        "rank": 5,
+        "route_counts": [
+          2,
+          2,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 405,
+        "template_id": 1064,
+        "row_sha256": "ea62e2d64453b0608f8f7ec77d8840c4593f057bbd725cf61c37d05e4239f543",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "ea62e2d64453b0608f8f7ec77d8840c4593f057bbd725cf61c37d05e4239f543",
+        "rank": 5,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [
+        "skill_slots"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 27,
+        "template_id": 51,
+        "row_sha256": "5803d649bda7830b60e2b7cc188aa96f5980e96ff07358f80d5e7b39d4ef7522",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "5803d649bda7830b60e2b7cc188aa96f5980e96ff07358f80d5e7b39d4ef7522",
+        "rank": 4,
+        "route_counts": [
+          25,
+          25,
+          1
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 192,
+        "template_id": 560,
+        "row_sha256": "5db370b0f83c4c92ad8b03026dd4f51cd7012a36990497feedbe96fec84d9e60",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "5db370b0f83c4c92ad8b03026dd4f51cd7012a36990497feedbe96fec84d9e60",
+        "rank": 4,
+        "route_counts": [
+          1,
+          1,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 29,
+        "template_id": 53,
+        "row_sha256": "209cbc082b6dfe7dbc46668b4103554c44a0f0753c1e4859c0f7618bd6e0f2bb",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "209cbc082b6dfe7dbc46668b4103554c44a0f0753c1e4859c0f7618bd6e0f2bb",
+        "rank": 4,
+        "route_counts": [
+          21,
+          21,
+          1
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 195,
+        "template_id": 588,
+        "row_sha256": "b89f63327e22509fcc22a6800349644be63c0827298b2a3a5dbc7b5fcc8ead79",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "b89f63327e22509fcc22a6800349644be63c0827298b2a3a5dbc7b5fcc8ead79",
+        "rank": 4,
+        "route_counts": [
+          2,
+          2,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 38,
+        "template_id": 71,
+        "row_sha256": "69c730c063ffeff03c62ee01e1018143a29d1023c32a17a545ca0e873b0a24e0",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "69c730c063ffeff03c62ee01e1018143a29d1023c32a17a545ca0e873b0a24e0",
+        "rank": 2,
+        "route_counts": [
+          12,
+          12,
+          1
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 60,
+        "template_id": 99,
+        "row_sha256": "604492c9f71775ce0430019a2969df1a56adf297a7f3c58f00bcfdfdc244e395",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "604492c9f71775ce0430019a2969df1a56adf297a7f3c58f00bcfdfdc244e395",
+        "rank": 2,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 56,
+        "template_id": 94,
+        "row_sha256": "1340995134b9d6386c42476f45054d73a0edb56db316519a7de9fb37ab4e4d3a",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "1340995134b9d6386c42476f45054d73a0edb56db316519a7de9fb37ab4e4d3a",
+        "rank": 1,
+        "route_counts": [
+          8,
+          8,
+          1
+        ],
+        "reward_instance_id": 57
+      },
+      "right": {
+        "position": 200,
+        "template_id": 695,
+        "row_sha256": "d929e6c7d440ec50707049921f81328414cd6498a3446886c4748c828a8c33a2",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "d929e6c7d440ec50707049921f81328414cd6498a3446886c4748c828a8c33a2",
+        "rank": 3,
+        "route_counts": [
+          4,
+          4,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name",
+        "base"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 57,
+        "template_id": 95,
+        "row_sha256": "93970f8cbf0153211b9a930502efe3c1064e1869e17ffe35493553121f7f1a40",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "93970f8cbf0153211b9a930502efe3c1064e1869e17ffe35493553121f7f1a40",
+        "rank": 1,
+        "route_counts": [
+          17,
+          17,
+          1
+        ],
+        "reward_instance_id": 481
+      },
+      "right": {
+        "position": 201,
+        "template_id": 696,
+        "row_sha256": "365beb28745aab83974f660820bc8161b05ceceb4a9cb0e720d1837560cb8b55",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "365beb28745aab83974f660820bc8161b05ceceb4a9cb0e720d1837560cb8b55",
+        "rank": 3,
+        "route_counts": [
+          4,
+          4,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name",
+        "base"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 59,
+        "template_id": 97,
+        "row_sha256": "eafd5e0df1a28c453652241a0c6afc8e0c54c4960197118e278048a61723ed62",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "eafd5e0df1a28c453652241a0c6afc8e0c54c4960197118e278048a61723ed62",
+        "rank": 5,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 202,
+        "template_id": 716,
+        "row_sha256": "b09dde18941a40c376c3d7ca13893c2db3501c5a4865930589d27ea9cf3e5475",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "b09dde18941a40c376c3d7ca13893c2db3501c5a4865930589d27ea9cf3e5475",
+        "rank": 5,
+        "route_counts": [
+          2,
+          2,
+          2
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name",
+        "base"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 61,
+        "template_id": 100,
+        "row_sha256": "a0898adbad7e06b47f7951de3d2cd3e023c37f25838f8d9807c341a4312db0c0",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "a0898adbad7e06b47f7951de3d2cd3e023c37f25838f8d9807c341a4312db0c0",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 169,
+        "template_id": 301,
+        "row_sha256": "1f7c3a9f57e4d208743ba7b22fcfd2087b9f32b8d9927fa3edb0e78b8a800302",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "1f7c3a9f57e4d208743ba7b22fcfd2087b9f32b8d9927fa3edb0e78b8a800302",
+        "rank": 0,
+        "route_counts": [
+          35,
+          35,
+          1
+        ],
+        "reward_instance_id": 350
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [
+        "skill_slots"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 63,
+        "template_id": 102,
+        "row_sha256": "8778cd1dc285be816c546802eed0b171938976d6426e977c55dabd781b63aef0",
+        "selected_table_grade": "SAME_ID_NONIDENTICAL_ROW",
+        "selected_row_sha256": "8ef9cfb9f23b7f5a91b3529a2fc7d4e0ae5f2431e9e22a8921d2d9e3c4821e1c",
+        "rank": 5,
+        "route_counts": null,
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 404,
+        "template_id": 1063,
+        "row_sha256": "b46cbc023d2a813d77fb4e294a46a26dfaf1e9aaa31499806478cd022570d60c",
+        "selected_table_grade": "SAME_ID_NONIDENTICAL_ROW",
+        "selected_row_sha256": "5d74a4ecbfbc00c6dcf8cf89125294baf09de3e41bb69f94aa554ba140850efb",
+        "rank": 5,
+        "route_counts": null,
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [
+        "skill_slots"
+      ],
+      "both_selected_exact": false,
+      "selected_route_or_reward_reference_differs": null,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 65,
+        "template_id": 104,
+        "row_sha256": "a2e042aeb188f8aeaeeadc97cdc76298983017c86858db1e03d46877daa36c2c",
+        "selected_table_grade": "SAME_ID_NONIDENTICAL_ROW",
+        "selected_row_sha256": "0734b9dd871f11aa5c53f5a4fef1dd40f635c0c71b24d74bf6fb13c0cb1e55c7",
+        "rank": 5,
+        "route_counts": null,
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 196,
+        "template_id": 589,
+        "row_sha256": "258230f7f766a9e9377a09f4bcad7a9c87635932ac5625e8ede7e568251a1f5f",
+        "selected_table_grade": "SAME_ID_NONIDENTICAL_ROW",
+        "selected_row_sha256": "d2df03d1199ca506c72c9d78b6c2a746d1c745ef9dc141d26671e3183bd30089",
+        "rank": 5,
+        "route_counts": null,
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [],
+      "both_selected_exact": false,
+      "selected_route_or_reward_reference_differs": null,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 66,
+        "template_id": 105,
+        "row_sha256": "4f64ded05756b4766d0d841da7413b3b69266dd06ecc871981134a916ba8341b",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "4f64ded05756b4766d0d841da7413b3b69266dd06ecc871981134a916ba8341b",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 170,
+        "template_id": 302,
+        "row_sha256": "4ee5141c63814cbca7694bed974057772254de3d18634a0e9aed2072bbbf57d1",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "4ee5141c63814cbca7694bed974057772254de3d18634a0e9aed2072bbbf57d1",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": 351
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [
+        "skill_slots"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 67,
+        "template_id": 106,
+        "row_sha256": "dd9fea1fe302f2c197ce01ae5d4d3a4fc12f28ffe4057c0077c5f9b42cdcef9f",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "dd9fea1fe302f2c197ce01ae5d4d3a4fc12f28ffe4057c0077c5f9b42cdcef9f",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 171,
+        "template_id": 303,
+        "row_sha256": "4b8a7573a855330f7dcb50556f74e28c1a836da9b822b694f26b4210352e2b97",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "4b8a7573a855330f7dcb50556f74e28c1a836da9b822b694f26b4210352e2b97",
+        "rank": 0,
+        "route_counts": [
+          9,
+          9,
+          0
+        ],
+        "reward_instance_id": 352
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [
+        "skill_slots"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 67,
+        "template_id": 106,
+        "row_sha256": "dd9fea1fe302f2c197ce01ae5d4d3a4fc12f28ffe4057c0077c5f9b42cdcef9f",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "dd9fea1fe302f2c197ce01ae5d4d3a4fc12f28ffe4057c0077c5f9b42cdcef9f",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 208,
+        "template_id": 724,
+        "row_sha256": "f5239f237c9cf3429f9cca9d2e25b8473306028ed8bd95ab49f841426c08040d",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "f5239f237c9cf3429f9cca9d2e25b8473306028ed8bd95ab49f841426c08040d",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [
+        "elements",
+        "initnum",
+        "skill_slot_capacity",
+        "skill_slots"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 72,
+        "template_id": 112,
+        "row_sha256": "60b7b120f72600d8ce052660779fdae6942d43b01f3246f40e132475a82c8ee5",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "60b7b120f72600d8ce052660779fdae6942d43b01f3246f40e132475a82c8ee5",
+        "rank": 5,
+        "route_counts": [
+          8,
+          8,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 403,
+        "template_id": 1062,
+        "row_sha256": "4e480cd4fb82b107fa5be35481a618e98c1e3a1ab16ed19889a9d50bbdec219c",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "4e480cd4fb82b107fa5be35481a618e98c1e3a1ab16ed19889a9d50bbdec219c",
+        "rank": 5,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [
+        "skill_slots"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 81,
+        "template_id": 121,
+        "row_sha256": "7af1898b18be54a2636be5472b3ed057448f48fbd830817bfa15d28a4fce4cde",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "7af1898b18be54a2636be5472b3ed057448f48fbd830817bfa15d28a4fce4cde",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 346,
+        "template_id": 995,
+        "row_sha256": "8dcc751680799320423f2ace519c37b3c72eea5c9ca5792b11d5dd388b57fbd1",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "8dcc751680799320423f2ace519c37b3c72eea5c9ca5792b11d5dd388b57fbd1",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_DIFFERENT_GRAPHIC",
+      "differing_projected_fields": [
+        "graphic",
+        "elements",
+        "base",
+        "initnum",
+        "skill_slot_capacity"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 95,
+        "template_id": 135,
+        "row_sha256": "4b8344f346c27329f8f3af5b741a1925e91d994f48bc266edf83d08908cb4e82",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "4b8344f346c27329f8f3af5b741a1925e91d994f48bc266edf83d08908cb4e82",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 344,
+        "template_id": 993,
+        "row_sha256": "5db4704b9a7966812e0e104fa186044f020304af224e4c472d2c1009a009fd16",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "5db4704b9a7966812e0e104fa186044f020304af224e4c472d2c1009a009fd16",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_DIFFERENT_GRAPHIC",
+      "differing_projected_fields": [
+        "graphic",
+        "elements",
+        "base",
+        "initnum"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 96,
+        "template_id": 136,
+        "row_sha256": "9b5aa4d119b5ee20aff88f539afb1536e256ba38700fe67507783aae507fcdbf",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "9b5aa4d119b5ee20aff88f539afb1536e256ba38700fe67507783aae507fcdbf",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 345,
+        "template_id": 994,
+        "row_sha256": "199b86919962418e87d046096cb3ef0f0b92dd6d4d6d38599cb8f9b66c7fa57e",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "199b86919962418e87d046096cb3ef0f0b92dd6d4d6d38599cb8f9b66c7fa57e",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_DIFFERENT_GRAPHIC",
+      "differing_projected_fields": [
+        "graphic",
+        "elements",
+        "base",
+        "initnum"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 108,
+        "template_id": 161,
+        "row_sha256": "26bf74dbb3eae136c6875fb1704a4c8231abc8e0eb9e7b6fc7c9e506147b874c",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "26bf74dbb3eae136c6875fb1704a4c8231abc8e0eb9e7b6fc7c9e506147b874c",
+        "rank": 5,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 131,
+        "template_id": 191,
+        "row_sha256": "3ff2c38a75d61a71a5a4c1c955efe41f1664f14c5e79b7cb02fadc00d95c0fba",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "3ff2c38a75d61a71a5a4c1c955efe41f1664f14c5e79b7cb02fadc00d95c0fba",
+        "rank": 2,
+        "route_counts": [
+          75,
+          75,
+          1
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name",
+        "base",
+        "initnum",
+        "lvup_literal",
+        "skill_slot_capacity"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 109,
+        "template_id": 162,
+        "row_sha256": "a1c01650eaf1d15f97764f6e54e93bde3bf3df67e71e96e987b591916407eade",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "a1c01650eaf1d15f97764f6e54e93bde3bf3df67e71e96e987b591916407eade",
+        "rank": 5,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 132,
+        "template_id": 192,
+        "row_sha256": "8436f06f06fdfaec664a49c44f0be3366c91a3239f603f868d2a28fcdcef84fb",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "8436f06f06fdfaec664a49c44f0be3366c91a3239f603f868d2a28fcdcef84fb",
+        "rank": 2,
+        "route_counts": [
+          80,
+          80,
+          1
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name",
+        "base",
+        "initnum",
+        "lvup_literal",
+        "skill_slot_capacity"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 110,
+        "template_id": 163,
+        "row_sha256": "23eccb993bab5bd8f9179addf5cf9ad6ae1d92049e2b624f39cec600f0046f36",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "23eccb993bab5bd8f9179addf5cf9ad6ae1d92049e2b624f39cec600f0046f36",
+        "rank": 5,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 133,
+        "template_id": 193,
+        "row_sha256": "eb872db644b4397180f4c0685d85b5169c4409e6f24ea208a99ed731f289b161",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "eb872db644b4397180f4c0685d85b5169c4409e6f24ea208a99ed731f289b161",
+        "rank": 2,
+        "route_counts": [
+          9,
+          9,
+          1
+        ],
+        "reward_instance_id": 309
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name",
+        "base",
+        "initnum",
+        "lvup_literal",
+        "skill_slot_capacity"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 110,
+        "template_id": 163,
+        "row_sha256": "23eccb993bab5bd8f9179addf5cf9ad6ae1d92049e2b624f39cec600f0046f36",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "23eccb993bab5bd8f9179addf5cf9ad6ae1d92049e2b624f39cec600f0046f36",
+        "rank": 5,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 189,
+        "template_id": 524,
+        "row_sha256": "8f4357d1a7c295b219bbcc45f0530a74de0a42f10d12f685557080ab47becc9e",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "8f4357d1a7c295b219bbcc45f0530a74de0a42f10d12f685557080ab47becc9e",
+        "rank": 2,
+        "route_counts": [
+          1,
+          1,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name",
+        "base",
+        "initnum",
+        "lvup_literal",
+        "skill_slot_capacity"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 111,
+        "template_id": 164,
+        "row_sha256": "a37db0aabd1a185e4eb637702b6e2a4730a44a2b29014c44b710b24bcde8b1db",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "a37db0aabd1a185e4eb637702b6e2a4730a44a2b29014c44b710b24bcde8b1db",
+        "rank": 5,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 134,
+        "template_id": 194,
+        "row_sha256": "64d4fe784e0754064b770044bef506aad392f04cbded11d3383244b3e72968d6",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "64d4fe784e0754064b770044bef506aad392f04cbded11d3383244b3e72968d6",
+        "rank": 1,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": 310
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name",
+        "base",
+        "initnum",
+        "lvup_literal",
+        "skill_slot_capacity",
+        "skill_slots"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 116,
+        "template_id": 169,
+        "row_sha256": "cc527ee40d798ece0f98d8f3f5487d0dbb42b0d53295f02418ca32b85752074f",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "cc527ee40d798ece0f98d8f3f5487d0dbb42b0d53295f02418ca32b85752074f",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 392,
+        "template_id": 1051,
+        "row_sha256": "62c0d4b217b347b5a0a3abf1245f14c10d3d6913faf55e8b55a3fcb23a76ade7",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "62c0d4b217b347b5a0a3abf1245f14c10d3d6913faf55e8b55a3fcb23a76ade7",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [
+        "skill_slots"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 133,
+        "template_id": 193,
+        "row_sha256": "eb872db644b4397180f4c0685d85b5169c4409e6f24ea208a99ed731f289b161",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "eb872db644b4397180f4c0685d85b5169c4409e6f24ea208a99ed731f289b161",
+        "rank": 2,
+        "route_counts": [
+          9,
+          9,
+          1
+        ],
+        "reward_instance_id": 309
+      },
+      "right": {
+        "position": 189,
+        "template_id": 524,
+        "row_sha256": "8f4357d1a7c295b219bbcc45f0530a74de0a42f10d12f685557080ab47becc9e",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "8f4357d1a7c295b219bbcc45f0530a74de0a42f10d12f685557080ab47becc9e",
+        "rank": 2,
+        "route_counts": [
+          1,
+          1,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name",
+        "base"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 136,
+        "template_id": 211,
+        "row_sha256": "821897d8b4a637f8800ec18c19559f29443f5cdd4096105a37835b89cb0b5a1f",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "821897d8b4a637f8800ec18c19559f29443f5cdd4096105a37835b89cb0b5a1f",
+        "rank": 3,
+        "route_counts": [
+          20,
+          20,
+          1
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 191,
+        "template_id": 559,
+        "row_sha256": "57822109558fc0ad5f6754fcf69b2ee607cca7e2b993707ce5dcab050ba7c8f4",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "57822109558fc0ad5f6754fcf69b2ee607cca7e2b993707ce5dcab050ba7c8f4",
+        "rank": 3,
+        "route_counts": [
+          1,
+          1,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 139,
+        "template_id": 214,
+        "row_sha256": "21abec550a7f7e7d334ebe62f0fa8de17650096ccaaefe53acf2d99ab004f76c",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "21abec550a7f7e7d334ebe62f0fa8de17650096ccaaefe53acf2d99ab004f76c",
+        "rank": 4,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 198,
+        "template_id": 693,
+        "row_sha256": "372de8d7148ad9a862b6b0c8f54f6fa4a01d0e39595c1d70c6c41d44d3743815",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "372de8d7148ad9a862b6b0c8f54f6fa4a01d0e39595c1d70c6c41d44d3743815",
+        "rank": 5,
+        "route_counts": [
+          4,
+          4,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name",
+        "base"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 166,
+        "template_id": 292,
+        "row_sha256": "2178fdefb72c5f66d19393f328f66133d98125a107d03bdc9bab06f572ced3e7",
+        "selected_table_grade": "SAME_ID_NONIDENTICAL_ROW",
+        "selected_row_sha256": "7422664f9e96afe4e6f780620ef4185f90bbb8f4447c922d543bf6475bbb92a4",
+        "rank": 3,
+        "route_counts": null,
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 190,
+        "template_id": 558,
+        "row_sha256": "42446c37e93f7a1658e9ae2cecf2f9b7fbb00db2a87e945d8d93e7000c64c0ff",
+        "selected_table_grade": "SAME_ID_NONIDENTICAL_ROW",
+        "selected_row_sha256": "2122b8f1556a4a259553d1ad3db1c2c5ca4bbdb5d84d4fb7e92c831f22d7961f",
+        "rank": 3,
+        "route_counts": null,
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [],
+      "both_selected_exact": false,
+      "selected_route_or_reward_reference_differs": null,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 166,
+        "template_id": 292,
+        "row_sha256": "2178fdefb72c5f66d19393f328f66133d98125a107d03bdc9bab06f572ced3e7",
+        "selected_table_grade": "SAME_ID_NONIDENTICAL_ROW",
+        "selected_row_sha256": "7422664f9e96afe4e6f780620ef4185f90bbb8f4447c922d543bf6475bbb92a4",
+        "rank": 3,
+        "route_counts": null,
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 197,
+        "template_id": 590,
+        "row_sha256": "4fba53e43502511070c9e4fea9d392c55c9f584a2d282a54d1f23588eef33445",
+        "selected_table_grade": "SAME_ID_NONIDENTICAL_ROW",
+        "selected_row_sha256": "6984b681e350b47e8f6798e81d5587a658178dcd8513cab4c74b2bede3994872",
+        "rank": 3,
+        "route_counts": null,
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [],
+      "both_selected_exact": false,
+      "selected_route_or_reward_reference_differs": null,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 171,
+        "template_id": 303,
+        "row_sha256": "4b8a7573a855330f7dcb50556f74e28c1a836da9b822b694f26b4210352e2b97",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "4b8a7573a855330f7dcb50556f74e28c1a836da9b822b694f26b4210352e2b97",
+        "rank": 0,
+        "route_counts": [
+          9,
+          9,
+          0
+        ],
+        "reward_instance_id": 352
+      },
+      "right": {
+        "position": 208,
+        "template_id": 724,
+        "row_sha256": "f5239f237c9cf3429f9cca9d2e25b8473306028ed8bd95ab49f841426c08040d",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "f5239f237c9cf3429f9cca9d2e25b8473306028ed8bd95ab49f841426c08040d",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [
+        "elements",
+        "initnum",
+        "skill_slot_capacity"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 179,
+        "template_id": 322,
+        "row_sha256": "89c0c529ef397225c2af735fbc5b58a6ec31a9908dacee5b457e87ea73b99124",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "89c0c529ef397225c2af735fbc5b58a6ec31a9908dacee5b457e87ea73b99124",
+        "rank": 0,
+        "route_counts": [
+          6,
+          6,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 199,
+        "template_id": 694,
+        "row_sha256": "59c08cbc6e71db12f3ac8d26794e87276aa6fb0261720988942d373c111b6372",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "59c08cbc6e71db12f3ac8d26794e87276aa6fb0261720988942d373c111b6372",
+        "rank": 3,
+        "route_counts": [
+          4,
+          4,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name",
+        "base"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 187,
+        "template_id": 335,
+        "row_sha256": "22dae34a0f8ef4efc321d750c53362684e321226457222a4cff91e78baae5276",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "22dae34a0f8ef4efc321d750c53362684e321226457222a4cff91e78baae5276",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 339,
+        "template_id": 986,
+        "row_sha256": "a98522c81716ed77088ba55ffd401407a94c543299da0a052a204fc78c90b822",
+        "selected_table_grade": "SAME_ID_NONIDENTICAL_ROW",
+        "selected_row_sha256": "ccbb175481adc5e47366c60a36be5bfc2a8be23e0266ca07b7fcca61f5ba32fa",
+        "rank": 0,
+        "route_counts": null,
+        "reward_instance_id": null
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name",
+        "elements",
+        "base"
+      ],
+      "both_selected_exact": false,
+      "selected_route_or_reward_reference_differs": null,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 187,
+        "template_id": 335,
+        "row_sha256": "22dae34a0f8ef4efc321d750c53362684e321226457222a4cff91e78baae5276",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "22dae34a0f8ef4efc321d750c53362684e321226457222a4cff91e78baae5276",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 401,
+        "template_id": 1060,
+        "row_sha256": "29fa18adda9b58472d0324356a730f152fe1f0eeb0ebb21497f3514ce9a34f05",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "29fa18adda9b58472d0324356a730f152fe1f0eeb0ebb21497f3514ce9a34f05",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_DIFFERENT_GRAPHIC",
+      "differing_projected_fields": [
+        "graphic",
+        "elements"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 188,
+        "template_id": 401,
+        "row_sha256": "413d65b8ba21c9a4a739a8847bc8de5300978a62357edd96c8a8a3cc8a484d4f",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "413d65b8ba21c9a4a739a8847bc8de5300978a62357edd96c8a8a3cc8a484d4f",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 204,
+        "template_id": 718,
+        "row_sha256": "1d7e737ee254a94aee09654a7e7ddfb4bed8fdcf99090d578b01d88918eb58b1",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "1d7e737ee254a94aee09654a7e7ddfb4bed8fdcf99090d578b01d88918eb58b1",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": 1479
+      },
+      "relation": "SAME_NAME_DIFFERENT_GRAPHIC",
+      "differing_projected_fields": [
+        "graphic"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 190,
+        "template_id": 558,
+        "row_sha256": "42446c37e93f7a1658e9ae2cecf2f9b7fbb00db2a87e945d8d93e7000c64c0ff",
+        "selected_table_grade": "SAME_ID_NONIDENTICAL_ROW",
+        "selected_row_sha256": "2122b8f1556a4a259553d1ad3db1c2c5ca4bbdb5d84d4fb7e92c831f22d7961f",
+        "rank": 3,
+        "route_counts": null,
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 197,
+        "template_id": 590,
+        "row_sha256": "4fba53e43502511070c9e4fea9d392c55c9f584a2d282a54d1f23588eef33445",
+        "selected_table_grade": "SAME_ID_NONIDENTICAL_ROW",
+        "selected_row_sha256": "6984b681e350b47e8f6798e81d5587a658178dcd8513cab4c74b2bede3994872",
+        "rank": 3,
+        "route_counts": null,
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [],
+      "both_selected_exact": false,
+      "selected_route_or_reward_reference_differs": null,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 193,
+        "template_id": 586,
+        "row_sha256": "e5404d03d1f9a2b854ef06ec091cf4241e38bb89d1304f048adf6a6e2c3138bd",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "e5404d03d1f9a2b854ef06ec091cf4241e38bb89d1304f048adf6a6e2c3138bd",
+        "rank": 5,
+        "route_counts": [
+          3,
+          3,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 203,
+        "template_id": 717,
+        "row_sha256": "4afd22b96544c57ca760a455bb4a35dd9e407bb3d5db5adcfb78b7d2510ebb22",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "4afd22b96544c57ca760a455bb4a35dd9e407bb3d5db5adcfb78b7d2510ebb22",
+        "rank": 5,
+        "route_counts": [
+          2,
+          2,
+          2
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 210,
+        "template_id": 726,
+        "row_sha256": "b5df5d0656e8b2d1c2735f4140175e188b29444a109cdadb5d00032669c43ad3",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "b5df5d0656e8b2d1c2735f4140175e188b29444a109cdadb5d00032669c43ad3",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 330,
+        "template_id": 966,
+        "row_sha256": "6fdf44c24743488ec9bae9095d59fe2873e38d22ab3c807c348374442ce800d6",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "6fdf44c24743488ec9bae9095d59fe2873e38d22ab3c807c348374442ce800d6",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 214,
+        "template_id": 730,
+        "row_sha256": "495484aeb0df897c9c3056101b756233897e660bbfa5b6aa9f200d9aaeb24688",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "495484aeb0df897c9c3056101b756233897e660bbfa5b6aa9f200d9aaeb24688",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 314,
+        "template_id": 905,
+        "row_sha256": "8efae97a51f7de7a654f58358db872da7e18e8ae7a49fc4010c9c3047ebb10b8",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "8efae97a51f7de7a654f58358db872da7e18e8ae7a49fc4010c9c3047ebb10b8",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name",
+        "initnum"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 242,
+        "template_id": 758,
+        "row_sha256": "b5aaf93e56203bb027148666fceb02792cae7b2b7c810eeb1adf175291e89e38",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "b5aaf93e56203bb027148666fceb02792cae7b2b7c810eeb1adf175291e89e38",
+        "rank": 1,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 309,
+        "template_id": 854,
+        "row_sha256": "55a80d138a068cdfcad57f34e99d4d64dd0e90a62871bc616cc291d1f3d7b379",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "55a80d138a068cdfcad57f34e99d4d64dd0e90a62871bc616cc291d1f3d7b379",
+        "rank": 2,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name",
+        "base",
+        "initnum",
+        "lvup_literal"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 272,
+        "template_id": 788,
+        "row_sha256": "6a3849d2b2c4467fd96f7b278bcc118dae2725eea95780a3e25ba131d2cfdec0",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "6a3849d2b2c4467fd96f7b278bcc118dae2725eea95780a3e25ba131d2cfdec0",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 319,
+        "template_id": 917,
+        "row_sha256": "d13d0e75cb68b97ee9b53b915521cd65e164daf446ae8d8d2060c193793a6c8f",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "d13d0e75cb68b97ee9b53b915521cd65e164daf446ae8d8d2060c193793a6c8f",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [
+        "base",
+        "initnum"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 277,
+        "template_id": 793,
+        "row_sha256": "90ab80781d84c156fcf682de90f906378ad85afc07aa7836eccb4819158f160d",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "90ab80781d84c156fcf682de90f906378ad85afc07aa7836eccb4819158f160d",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 315,
+        "template_id": 908,
+        "row_sha256": "cd695593c23adc0ae7be668bca9b6ea70a1f3b03ce1b7ae90e1417b43966107e",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "cd695593c23adc0ae7be668bca9b6ea70a1f3b03ce1b7ae90e1417b43966107e",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [
+        "base",
+        "initnum",
+        "skill_slot_capacity"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 295,
+        "template_id": 811,
+        "row_sha256": "5295b02d170744095c1bea9e63449f833e77bbf75d8ca5cd815f9bb2df9c7f57",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "5295b02d170744095c1bea9e63449f833e77bbf75d8ca5cd815f9bb2df9c7f57",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 333,
+        "template_id": 979,
+        "row_sha256": "a1217d217b77d0bd4e25da0e158bc930854b8902a1fce5c45aee8abdf22ba8ef",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "a1217d217b77d0bd4e25da0e158bc930854b8902a1fce5c45aee8abdf22ba8ef",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [
+        "skill_slots"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 296,
+        "template_id": 812,
+        "row_sha256": "c5cb0e0c123207042ad00b2b12313121b2122c7bc52d690387222bea2b24ceea",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "c5cb0e0c123207042ad00b2b12313121b2122c7bc52d690387222bea2b24ceea",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 385,
+        "template_id": 1036,
+        "row_sha256": "cd2e20ab103f3cbed440eb8c1d9c04e7079b7dfc329093ce0b2a2d584aadfcde",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "cd2e20ab103f3cbed440eb8c1d9c04e7079b7dfc329093ce0b2a2d584aadfcde",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_GRAPHIC",
+      "differing_projected_fields": [
+        "base",
+        "initnum",
+        "lvup_literal",
+        "skill_slots"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 297,
+        "template_id": 813,
+        "row_sha256": "c835dfb84d43b9d47bbed29a1de357f4d3466ef9cca275ec98a693f46b116055",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "c835dfb84d43b9d47bbed29a1de357f4d3466ef9cca275ec98a693f46b116055",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 386,
+        "template_id": 1042,
+        "row_sha256": "19b7c59d8c8a7ce6bd2cde9e8e82ef8ccd40b0d3d3239ea7b3839a41e83ee201",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "19b7c59d8c8a7ce6bd2cde9e8e82ef8ccd40b0d3d3239ea7b3839a41e83ee201",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name",
+        "initnum"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 317,
+        "template_id": 913,
+        "row_sha256": "f9664e606019d1874649c34bdb6aab676c13cd9c82d27b81818778d94c60c97e",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "f9664e606019d1874649c34bdb6aab676c13cd9c82d27b81818778d94c60c97e",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 318,
+        "template_id": 914,
+        "row_sha256": "8b6beaa55d514393dbd1681b3883d2aa4e4389e1fb088f718949219f8e85bc99",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "8b6beaa55d514393dbd1681b3883d2aa4e4389e1fb088f718949219f8e85bc99",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_NAME_DIFFERENT_GRAPHIC",
+      "differing_projected_fields": [
+        "graphic",
+        "base",
+        "initnum"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "left": {
+        "position": 387,
+        "template_id": 1045,
+        "row_sha256": "07657ddf2565077f88cbff68b846e158740513895201fac4c69b70ec12b9fe25",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "07657ddf2565077f88cbff68b846e158740513895201fac4c69b70ec12b9fe25",
+        "rank": 5,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "right": {
+        "position": 454,
+        "template_id": 1145,
+        "row_sha256": "61f9ab7106764f6bc09d5c11ccda8f4901b8250fdc6522edd092653f9d19a536",
+        "selected_table_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_row_sha256": "61f9ab7106764f6bc09d5c11ccda8f4901b8250fdc6522edd092653f9d19a536",
+        "rank": 0,
+        "route_counts": [
+          0,
+          0,
+          0
+        ],
+        "reward_instance_id": null
+      },
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "differing_projected_fields": [
+        "name",
+        "base",
+        "initnum"
+      ],
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    }
+  ],
+  "original_assets_published": false
+}

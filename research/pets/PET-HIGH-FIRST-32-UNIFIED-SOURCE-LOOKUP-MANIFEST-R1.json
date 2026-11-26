@@ -512,6 +512,12 @@
       "git_blob": "67ebe7717422e6ececc56e50bce31065bb72e2c0",
       "expected_array": "rows",
       "expected_rows": 7
+    },
+    "hf96": {
+      "path": "research/pets/PET-HIGH-FIRST-96-TEMPLATE-COLLISION-MATRIX-R1.json",
+      "git_blob": "79e4acc5e52d1f383942e2d3cc51576fc4271dc8",
+      "expected_array": "rows",
+      "expected_rows": 55
     }
   },
   "expected": {
@@ -723,5 +729,31 @@
     "fusion_only_positions": 1,
     "official_closures": 0,
     "new_original_bytes": 0
+  },
+  "supplement_hf96": {
+    "positions": 467,
+    "pairs": 55,
+    "linked_positions": 89,
+    "relation_counts": {
+      "SAME_GRAPHIC_DIFFERENT_NAME": 23,
+      "SAME_NAME_GRAPHIC": 26,
+      "SAME_NAME_DIFFERENT_GRAPHIC": 6
+    },
+    "field_difference_counts": {
+      "name": 23,
+      "base": 25,
+      "skill_slots": 12,
+      "elements": 10,
+      "initnum": 21,
+      "skill_slot_capacity": 12,
+      "graphic": 6,
+      "lvup_literal": 7
+    },
+    "both_selected_exact": 49,
+    "selected_route_or_reward_reference_differs": 33,
+    "conditional_rank_differs": 14,
+    "same_name_graphic_no_projected_difference": 10,
+    "same_name_graphic_skill_slots_only": 9,
+    "official_closures": 0
   }
 }
