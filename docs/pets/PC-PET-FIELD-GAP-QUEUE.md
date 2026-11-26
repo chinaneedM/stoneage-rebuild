@@ -59,3 +59,13 @@ python3 tools/stoneage_pet_gap_queue.py --all > pet-source-gaps.json
 ## R49 同期PC取得补证（候选）
 
 74余缺位置增7个相容参考（6原名，布尔摩两个模板共享一条报刊证据），余67；15个上下文位置未升级。见[续接](../continuity/STONEAGE-PET-HIGH-FIRST-49-DATED-PC-ACQUISITION-GAP-20261124.md)。
+
+## 当前覆盖
+
+```bash
+python3 -m tools.stoneage_pet_high_first_64_coverage --current
+python3 -m tools.stoneage_pet_high_first_64_coverage --current --source tw85_grid
+python3 -m tools.stoneage_pet_high_first_64_coverage --current --source tw75
+```
+
+当前视图在原 3,015 个待核位置中接入 2,785 个可追溯的 PET74 视觉引用。保存台湾 8.5 的 1,889 个具名位置均有严格肖像凭证，1,883 个位置的所有关联图组有完整动作画布凭证。标称台湾 7.5 的 467 个模板可按图号查到严格或有界的台湾 8.5 动作候选，模板与官服身份仍需同部署证明。台湾 1.0、大陆 5.0 的原件观察与跨载体对应分别显示。原 PET64 命令仍可重放当时发布的摘要。[覆盖与正式字段缺口](../continuity/STONEAGE-PET-HIGH-FIRST-75-CURRENT-COVERAGE-20261126.md)

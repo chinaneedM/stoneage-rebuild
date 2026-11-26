@@ -21,6 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python -m tools.stoneage_pet_high_first_64_coverage
+      - run: python -m tools.stoneage_pet_high_first_64_coverage --current > "$RUNNER_TEMP/pet-current-coverage.json"
       - run: python -m tools.stoneage_pet_high_first_64_coverage --all > "$RUNNER_TEMP/pet64-coverage.json"
       - uses: actions/upload-artifact@v4
         with:
