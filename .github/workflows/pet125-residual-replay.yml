@@ -1,0 +1,23 @@
+name: PET125 exact residual replay
+on:
+  push:
+    branches: ['agent/pet125-residual-crosscheck-20261126']
+    paths:
+      - 'tools/stoneage_pet125_residual_replay.py'
+      - '.github/workflows/pet125-residual-replay.yml'
+      - 'research/pets/PET-HIGH-FIRST-125-CN85-RESIDUAL-CROSSCHECK-R1.json'
+      - 'docs/continuity/STONEAGE-PET125-RESIDUAL-CROSSCHECK-20261126.md'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python tools/stoneage_pet125_residual_replay.py
+      - run: python tools/stoneage_pet_source_lookup.py --verify
+      - run: python tools/stoneage_pet_gap_queue.py --current --verify
