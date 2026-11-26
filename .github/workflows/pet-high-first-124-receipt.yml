@@ -1,0 +1,24 @@
+name: PET124 independent original album receipt
+on:
+  push:
+    branches: ['agent/pet-high-first-124-cn85-native-album-20261126']
+    paths:
+      - 'tools/stoneage_pet_high_first_124_receipt.py'
+      - '.github/workflows/pet-high-first-124-receipt.yml'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/actions/artifacts/15122797517/zip > "$RUNNER_TEMP/pet124.zip"
+          python -m tools.stoneage_pet_high_first_124_receipt "$RUNNER_TEMP/pet124.zip"
