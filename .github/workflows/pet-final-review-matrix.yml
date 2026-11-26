@@ -1,0 +1,30 @@
+name: PET final review matrix
+on:
+  push:
+    branches: ['agent/pet-final-review-matrix-20261126']
+    paths:
+      - 'tools/stoneage_pet_final_review_matrix.py'
+      - 'tools/stoneage_pet_source_lookup.py'
+      - 'research/pets/PET-HIGH-FIRST-32-UNIFIED-SOURCE-LOOKUP-MANIFEST-R1.json'
+      - 'docs/pets/UNIFIED-PC-PET-SOURCE-LOOKUP.md'
+      - 'docs/continuity/STONEAGE-PET-FINAL-REVIEW-MATRIX-20261126.md'
+      - '.github/workflows/pet-final-review-matrix.yml'
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: PYTHONPATH=. python tools/stoneage_pet_final_review_matrix.py
+      - run: python tools/stoneage_pet_residual_visual_review.py
+      - run: python tools/stoneage_pet_gap_queue.py --current --verify
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-final-review-matrix
+          path: pet-final-review-matrix.json
+          if-no-files-found: error

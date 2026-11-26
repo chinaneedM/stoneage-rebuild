@@ -631,7 +631,36 @@ def build(d):
         attach_cn50_motion(d, out)
     if "cn85_original" in d:
         attach_cn85_original(d, out, add, link)
+    if "review_tw75_portrait" in d and "review_residual_visual" in d:
+        attach_review_visual(d, out, link)
     return out
+
+def attach_review_visual(d, entries, link):
+    portraits=d["review_tw75_portrait"]
+    residual=d["review_residual_visual"]
+    assert not any(portraits["limits"].values()) and not any(residual["limits"].values())
+    tw75_residual={r["index"]:(i,r) for i,r in enumerate(residual["tw75_rows"])}
+    cn85_residual={r["ordinal"]:(i,r) for i,r in enumerate(residual["cn85_rows"])}
+    for e in entries:
+        if e["source"]=="tw75":
+            i=e["pointer"][1]; r=portraits["rows"][i]
+            original=resolve(d,"tw75",e["pointer"])
+            assert r["index"]==i and r["row_sha256"]==original["row_sha256"]
+            e["detail"]["review_portrait_reference"]={k:r[k] for k in ("grade","portrait_aliases","portrait_rows","exact_positions")}
+            e["detail"]["review_portrait_reference"]["same_build_verified"]=False
+            e["linked_records"].append(link("review_tw75_portrait",["rows",i],"CROSS_CARRIER_REFERENCE_NOT_SAME_BUILD_PORTRAIT"))
+            if i in tw75_residual:
+                j,z=tw75_residual[i]
+                e["detail"]["review_portrait_conflict"]={k:z[k] for k in ("grade","tw85_aliases","tw85_graphics","cn85_exact_name_face_rd_ordinals")}
+                e["linked_records"].append(link("review_residual_visual",["tw75_rows",j],"GRAPHIC_CONFLICT_OR_NO_QUALIFIED_NAME_NOT_IDENTITY"))
+        elif e["source"]=="cn85_original":
+            o=e["detail"]["physical_ordinal"]
+            if o in cn85_residual:
+                j,r=cn85_residual[o]
+                assert not e["detail"]["ordinal_spr_candidates"] and not e["detail"]["slot_spr_candidates"]
+                assert r["name"]==e["labels"][0] and r["face"]==e["detail"]["compiled_face"]
+                e["detail"]["review_motion_reference"]={"grade":r["grade"],"cn50_positions":[x["ordinal"] for x in r["cn50"]],"tw85_positions":[x["position"] for x in r["tw85"]],"native_selector_verified":False}
+                e["linked_records"].append(link("review_residual_visual",["cn85_rows",j],"EXACT_CROSS_CARRIER_RD_SPR_REFERENCE_NOT_NATIVE_SELECTOR"))
 
 def attach_cn85_original(d, entries, add, link):
     full=d["cn85_original"]["analysis"]
@@ -1561,6 +1590,17 @@ def verify(m,d,entries):
         assert list(search(entries,"艾柏瑞",exact=True,source="cn85_original"))[0]["detail"]["physical_ordinal"] == 439
         assert list(search(entries,"ordinal:314",exact=True,source="cn85_original"))[0]["labels"] == ["艾比斯"]
         print("PET124_FULL_LOOKUP_PASS 548 named positions, 540 labels, 552 RD candidates, 304 same-label exact RD, 594 exact SPR links",flush=True)
+    if "review_tw75_portrait" in d:
+        tw=[e for e in entries if e["source"]=="tw75"]
+        cn=[e for e in entries if e["source"]=="cn85_original"]
+        assert len(tw)==467 and len(cn)==548
+        assert collections.Counter(e["detail"]["review_portrait_reference"]["grade"] for e in tw)=={"EXACT_NAME_GRAPHIC_UNIQUE_ALIAS":424,"NAME_ONLY":15,"NO_EXACT_NAME":28}
+        assert sum("review_portrait_conflict" in e["detail"] for e in tw)==43
+        assert collections.Counter(e["detail"]["review_motion_reference"]["grade"] for e in cn if "review_motion_reference" in e["detail"])=={"CN50_EXACT_NAME_FACE_RD_SPR":61,"TW85_NAME_VARIANT_EXACT_FACE_RD_SPR":70}
+        assert all(not e["detail"]["review_portrait_reference"]["same_build_verified"] for e in tw)
+        assert all(not e["detail"]["review_motion_reference"]["native_selector_verified"] for e in cn if "review_motion_reference" in e["detail"])
+        assert len(entries)==5924
+        print("PET_REVIEW_LOOKUP_PASS 467 portrait projections, 43 conflicts, 131 motion references; unchanged query occurrences",flush=True)
     assert m["expected"]["official_species_count"] is None and not m["original_assets_published"]
     print(json.dumps(summary(entries),ensure_ascii=False,indent=2))
 def main():

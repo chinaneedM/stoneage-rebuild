@@ -124,3 +124,16 @@ R94 为R93未匹配主档的8个名称追加独立资料站详情参考条目，
 python tools/stoneage_pet_source_lookup.py --source cn85_original --query 艾柏瑞 --exact --full
 python tools/stoneage_pet_source_lookup.py --source cn85_original --query ordinal:314 --exact --full
 ```
+
+
+## 整体复审后视觉引用（2026-11-26）
+
+98个固定派生来源对象，5924查询位置不变；当前缺件队列3563来源位置。原入口不变：
+```bash
+python3 tools/stoneage_pet_source_lookup.py --query 烏力 --source tw75 --exact --full
+python3 tools/stoneage_pet_source_lookup.py --query 雷帝斯洛 --source tw75 --exact --full
+python3 tools/stoneage_pet_source_lookup.py --query ordinal:228 --source cn85_original --exact --full
+python3 tools/stoneage_pet_source_lookup.py --query ordinal:375 --source cn85_original --exact --full
+PYTHONPATH=. python3 tools/stoneage_pet_final_review_matrix.py
+```
+`review_portrait_reference` 467条（424同名同图号唯一参考）；`review_portrait_conflict` 43条保留名称/图号冲突；`review_motion_reference` 131条分别引用61 CN50和70 TW85的原RD与完整SPR段散列证据。带 --full 展开固定的完整来源行。不得将候选作为同版本原头像、原生动作选择器或官服真实发宠；没有新增正式物种认证。七维复审脚本生成派生 JSON 矩阵，尚不表示模块结项。
