@@ -1,0 +1,1078 @@
+{
+  "active_module": "PET",
+  "annual_names": {
+    "annual_receipts_checked": 28,
+    "by_region": {
+      "CN": 16,
+      "JP": 11,
+      "KR": 19,
+      "TW": 94
+    },
+    "by_role": {
+      "ADVERTISED_OR_QUEST_PET_CANDIDATE": 2,
+      "ADVERTISED_PET_LABEL": 2,
+      "ADVERTISED_PRIZE_POOL": 13,
+      "ADVERTISED_PROBABILITY_CHANGE": 2,
+      "DISPUTED_OPEN_STATUS_PET_LABEL": 1,
+      "ENCOUNTER_ENEMY_NOT_PET_RELEASE": 12,
+      "EXCHANGE_INPUT_LABEL": 6,
+      "OLDER_YEAR_SHOP_REFERENCE": 3,
+      "OPERATOR_GIFT_OR_EXISTING_PET_REFERENCE": 3,
+      "OPERATOR_NAMED_OBTAINABLE_QUEST_REWARD": 2,
+      "OPERATOR_NAMED_REWARD_CANDIDATE": 5,
+      "OPERATOR_REPORTED_ACTUAL_AWARD": 4,
+      "OPERATOR_REPORTED_EXCHANGE_INPUT": 1,
+      "OPERATOR_WEB_LISTED_LABEL": 1,
+      "PERIOD_PRIZE_OR_SHOP_PET_LABEL": 3,
+      "PET_FAMILY_CONTEXT_NOT_INDIVIDUAL_SPECIES": 1,
+      "PLAYER_CATALOGUE_LABEL": 14,
+      "PLAYER_CATALOGUE_LABEL_MAY_BE_UNOPENED": 7,
+      "PLAYER_DISCONTINUATION_CLAIM": 6,
+      "PLAYER_GUIDE_OR_POSSESSION_CANDIDATE": 4,
+      "PLAYER_GUIDE_PET_CANDIDATE": 4,
+      "PLAYER_HEARSAY_PET_LABEL": 1,
+      "PLAYER_LIST_PET_CANDIDATE": 12,
+      "PLAYER_PRIZE_CANDIDATE": 2,
+      "PLAYER_RELAYED_FAMILY_REWARD_CONTEXT": 1,
+      "PLAYER_RELAYED_PRIZE_CANDIDATE": 18,
+      "PLAYER_REPORTED_FIRSTHAND_REWARD": 1,
+      "PLAYER_REPORTED_POSSIBLE_REWARD": 1,
+      "PLAYER_TASK_PET_CANDIDATE": 1,
+      "PROMOTIONAL_PET_CANDIDATE": 1,
+      "PROMOTIONAL_PET_REFERENCE": 2,
+      "RETROSPECTIVE_PET_NAME_CANDIDATE": 12,
+      "REWARD_OBJECT_KIND_UNVERIFIED": 2,
+      "RIDING_FUNCTION_REFERENCE": 6,
+      "TASK_NPC_LABEL_NOT_PET_RELEASE": 4,
+      "TRAINING_PET_FAMILY_CONTEXT": 1
+    },
+    "candidate_links_not_identity": 1015,
+    "context_only_occurrences": 21,
+    "current_occurrences": 5924,
+    "distinct_literal_pet_labels": 113,
+    "labels_with_exact_candidate": 94,
+    "labels_without_exact_candidate": [
+      "ガーヴィ",
+      "ヴァンレム",
+      "普格多基",
+      "火風鷹人",
+      "牛头人",
+      "鸡年兽",
+      "黑雞",
+      "고르고르",
+      "고르돈",
+      "그램고르",
+      "도라비스",
+      "라고고",
+      "메가죠",
+      "몽몽",
+      "무이",
+      "바렌이노",
+      "복우리",
+      "웅이",
+      "타쿠"
+    ],
+    "limitations": [
+      "Explicit curated name fields and selected literal narrative labels only; not exhaustive extraction of linked subordinate reports.",
+      "Receipt year is audit context, not first release or source publication date.",
+      "Context-only labels are enemies, NPCs, family expressions or ambiguous reward objects, not candidate species.",
+      "Original names stay literal; no language conversion, private-server or mobile additions."
+    ],
+    "new_official_release_certifications": 0,
+    "official_species_count": null,
+    "pet16_rows": 2792,
+    "pet_label_occurrences": 140,
+    "schema": "stoneage.pet.annual_named_access.r1",
+    "selected_audit_years": 23,
+    "source_bounded_closed": false,
+    "source_label_occurrences": 161,
+    "subordinate_report_non_additive": {
+      "context_positions": 16,
+      "distinct_literal_pet_labels": 38,
+      "labels_with_exact_candidate": 36,
+      "labels_without_exact_candidate": [
+        "水火貓卡蘿麗",
+        "風地貓卡芙娜"
+      ],
+      "limitations": [
+        "Separate source positions may repeat annual, documentary, current or same-thread evidence; never add counts.",
+        "A short name, role, variant or literal link is not a same-build identity. No new release certification."
+      ],
+      "new_official_release_certifications": 0,
+      "official_species_count": null,
+      "pet_label_positions": 43,
+      "positions_with_same_year_region_annual_label": 6,
+      "source_positions": 59,
+      "source_reports": 6
+    },
+    "unmatched_literal_reconciliation": {
+      "alternate_labels_with_directory_candidates": [
+        "普格多基",
+        "水火貓卡蘿麗",
+        "風地貓卡芙娜"
+      ],
+      "later_recollection_or_hearsay": 8,
+      "official_identity_promotions": 0,
+      "official_species_count": null,
+      "period_report_root_labels": 11,
+      "short_label_same_receipt": 2,
+      "unmatched_literal_labels": 21
+    }
+  },
+  "chronology": {
+    "active_module": "PET",
+    "annual_receipts_verified": 28,
+    "documented_release_event_subset_not_species": 9,
+    "family_or_card_records": 3,
+    "named_pet_event_records": 5,
+    "official_species_count": null,
+    "open_years": [
+      2026
+    ],
+    "region_year_receipts": 156,
+    "schema": "stoneage.pet.chronology_access.r1",
+    "separate_HK_MO_receipts_from": 2011,
+    "source_bounded_closed": false,
+    "source_bounded_reviewed_years": 27,
+    "unnamed_pair_event_records": 1,
+    "version_date_claims_not_pet_release_proofs": 12,
+    "years": [
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "a02170dcda8d90b9840bbb0ad51024927a668097",
+          "path": "research/recovered/STONEAGE-PET36-1999-SOURCE-BOUNDED-YEAR-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [
+          "HK_MO"
+        ],
+        "year": 1999,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "c6fb493eaa88b9f56790c02b801e125cb3e5901e",
+          "path": "research/recovered/STONEAGE-PET50-YEAR2000-SOURCE-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [
+          "HK_MO"
+        ],
+        "year": 2000,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "626bb774b0515f53ca7899e449bdcae1a69eaff8",
+          "path": "research/recovered/STONEAGE-PET60-YEAR2001-SOURCE-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [
+          "HK_MO"
+        ],
+        "year": 2001,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [
+          "CN-PC-3-GP",
+          "CN-PC-3-YEAR",
+          "CN-PC-4-DRAGONBOAT",
+          "CN-PC-4-MECHLEOPARD"
+        ],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "d533101ac8b7868139b5d196bcdead6b8561ae5f",
+          "path": "research/recovered/STONEAGE-PET64-YEAR2002-SOURCE-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [
+          "HK_MO"
+        ],
+        "year": 2002,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [
+          "CN-PC-MONKEY-2003"
+        ],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "f462366e91c607aa940c54799634bc90c7da4d90",
+          "path": "research/recovered/STONEAGE-PET68-YEAR2003-SOURCE-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [
+          "HK_MO"
+        ],
+        "year": 2003,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "3bac4653e993d5b66d7dca817bf0f7e5ddfc7087",
+          "path": "research/recovered/STONEAGE-PET71-YEAR2004-FIVE-REGION-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [
+          "HK_MO"
+        ],
+        "year": 2004,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "1be46d54d87717f66d80079ec5f4cc663dc0af64",
+          "path": "research/recovered/STONEAGE-PET73-YEAR2005-FIVE-REGION-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [
+          "HK_MO"
+        ],
+        "year": 2005,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [
+          "JP-2006-TWO-MYSTERY"
+        ],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "f822e63a02fe8dcfa3830eaab349e4f3d611e425",
+          "path": "research/recovered/STONEAGE-PET75-YEAR2006-FIVE-REGION-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [
+          "HK_MO"
+        ],
+        "year": 2006,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "f61941248234bc2bda973aefcb8704b521cc08dc",
+          "path": "research/recovered/STONEAGE-PET76-YEAR2007-FIVE-REGION-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [
+          "HK_MO"
+        ],
+        "year": 2007,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [
+          "JP-2008-FUKUURI"
+        ],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "2c11fcfac035d7059eebacb42805a362f7384334",
+          "path": "research/recovered/STONEAGE-PET79-YEAR2008-FIVE-REGION-SOURCE-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [
+          "HK_MO"
+        ],
+        "year": 2008,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [
+          "JP-2009-HAKUEN",
+          "JP-2009-KOKUEN"
+        ],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "72fee65264e09e38bd7ec31a1370255bfae4bda4",
+          "path": "research/recovered/STONEAGE-PET82-YEAR2009-FIVE-REGION-SOURCE-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [
+          "HK_MO"
+        ],
+        "year": 2009,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "e0230d57155d5914ab89eeb4dc24f3f2044e0157",
+          "path": "research/recovered/STONEAGE-PET84-YEAR2010-DRAGONS-FIVE-REGION-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [
+          "HK_MO"
+        ],
+        "year": 2010,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "93affd3b80711fba50c02de5cc654ed1f229d84b",
+          "path": "research/recovered/STONEAGE-PET87-YEAR2011-CN-TW-HKMO-JP-KR-OTHER-SOURCE-BOUNDED-ANNUAL-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "HK_MO",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [],
+        "year": 2011,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "2a0a61d0060c50d0fceb7ba30cf2a976710b49a4",
+          "path": "research/recovered/STONEAGE-PET90-YEAR2012-CN-TW-HKMO-KR-JP-OTHER-BOUNDED-ANNUAL-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "HK_MO",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [],
+        "year": 2012,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "315fa9078616dcb8bdd85d88015b2d9ac41e4f47",
+          "path": "research/recovered/STONEAGE-PET94-YEAR2013-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "HK_MO",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [],
+        "year": 2013,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "b37ebcc91628829d441e3f182fc4c9798e886719",
+          "path": "research/recovered/STONEAGE-PET99-YEAR2014-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "HK_MO",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [],
+        "year": 2014,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "e7eaa5aa458fcfc1fabf3aeb010ebfafe63a6478",
+          "path": "research/recovered/STONEAGE-PET105-YEAR2015-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "HK_MO",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [],
+        "year": 2015,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "6f3e992093e467437f82ef0db62132b4892caae1",
+          "path": "research/recovered/STONEAGE-PET110-YEAR2016-SIX-REGION-ORIGINAL-PC-PET-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "HK_MO",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [],
+        "year": 2016,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "33efefe4b205fdbe715e072671bce9d73c8a7d25",
+          "path": "research/recovered/STONEAGE-PET113-YEAR2017-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "HK_MO",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [],
+        "year": 2017,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "a3cad63ab1ac2f9993bcfc9d6dee29a85d5c6b04",
+          "path": "research/recovered/STONEAGE-PET115-YEAR2018-SIX-REGION-ORIGINAL-PC-PET-SOURCE-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "HK_MO",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [],
+        "year": 2018,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "2dc730d3becc4e1ef42f8d8d8b67a2a8c6ef7638",
+          "path": "research/recovered/STONEAGE-PET118-YEAR2019-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "HK_MO",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [],
+        "year": 2019,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "6705c9c6ad5cdd8f6074582034a50f928cbdd192",
+          "path": "research/recovered/STONEAGE-PET120-YEAR2020-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "HK_MO",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [],
+        "year": 2020,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "cbd9ea801ebbad8db3cfe4b35b2847b97b550ac1",
+          "path": "research/recovered/STONEAGE-PET121-YEAR2021-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "HK_MO",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [],
+        "year": 2021,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "d027d270061e34f82f879da8d72345ee01245ffc",
+          "path": "research/recovered/STONEAGE-PET122-YEAR2022-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "HK_MO",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [],
+        "year": 2022,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "8353f69e8b7cedea26f7b96b0107769b77372752",
+          "path": "research/recovered/STONEAGE-PET123-YEAR2023-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "HK_MO",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [],
+        "year": 2023,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "bcbd4ff58a0c6f1f059e2bf9ad1c85d54c9bef9c",
+          "path": "research/recovered/STONEAGE-PET124-YEAR2024-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "HK_MO",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [],
+        "year": 2024,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": null,
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "81cc05981b0abf0d2e2c2417aa2f65397d83f484",
+          "path": "research/recovered/STONEAGE-PET125-YEAR2025-SIX-REGION-CLASSIC-PC-BOUNDED-AUDIT-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "HK_MO",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [],
+        "year": 2025,
+        "year_closeout_allowed": false,
+        "year_review_status": "SOURCE_BOUNDED_REVIEWED"
+      },
+      {
+        "as_of_date": "2026-11-20",
+        "documented_release_event_subset_ids": [],
+        "historical_global_species_count": null,
+        "historically_complete": false,
+        "receipt": {
+          "git_blob": "376730e8679b17454812abdedde319007fc44180",
+          "path": "research/recovered/STONEAGE-PET126-YEAR2026-YTD-CLASSIC-PC-SOURCE-AND-MODULE-GAPS-R1.json",
+          "pointer": []
+        },
+        "regions_recorded": [
+          "CN",
+          "TW",
+          "HK_MO",
+          "KR",
+          "JP",
+          "OTHER"
+        ],
+        "separate_region_receipt_not_recorded": [],
+        "year": 2026,
+        "year_closeout_allowed": false,
+        "year_review_status": "NOT_YEAR_AUDITED"
+      }
+    ]
+  },
+  "current": {
+    "by_role": {
+      "2011_SOURCE_WITNESS": 41,
+      "2012_2013_SOURCE_WITNESS": 43,
+      "ADDITIONAL_HISTORICAL_WITNESS": 5,
+      "AMBIGUOUS_OBJECT": 8,
+      "APPEARANCE_ONLY": 5,
+      "AUTHENTICATED_CN2012_COMPILED_NAME_POSITION": 548,
+      "CAPSULE_WITNESS": 7,
+      "CAPTURE_WITNESS": 36,
+      "CLAIMED_TW75_MASTER_TEMPLATE": 467,
+      "CN2010_PANEL_OR_REWARD_WITNESS": 8,
+      "DIRECTORY_WITNESS": 36,
+      "ENCOUNTER_LABEL": 16,
+      "ITEM": 78,
+      "JP_KR_ACQUISITION_WITNESS": 8,
+      "JP_KR_NAMED_WITNESS": 29,
+      "LATE_COMMUNITY_CATALOGUE_REFERENCE": 8,
+      "NPC_TASK_LABEL": 4,
+      "ORIGINAL_TW10_CLIENT_NAME_ASSET": 124,
+      "PERIOD_2003_CATALOGUE_NAME_LINK": 221,
+      "PERIOD_ACQUISITION_NAME": 10,
+      "PERIOD_CN2011_2012_FIELD_WITNESS": 16,
+      "PERIOD_CN2013_FIELD_WITNESS": 14,
+      "PERIOD_FUSION_PANEL_SAMPLE": 41,
+      "PERIOD_MEDIA_OLDER_ACQUISITION": 4,
+      "PERIOD_PLAYER_CAPTURE_AND_ENHANCEMENT": 1,
+      "PERIOD_PLAYER_CAPTURE_UNLOCK": 2,
+      "PERIOD_PLAYER_ELEMENT_REFERENCE": 2,
+      "PERIOD_PLAYER_RELAY_RANDOM_REWARD": 5,
+      "PERIOD_PLAYER_REPORTED_ABSENCE_UNCERTAIN": 1,
+      "PERIOD_PLAYER_REPORTED_REWARD": 5,
+      "PERIOD_PLAYER_REPORTED_REWARD_ROUTE_UNRESOLVED": 5,
+      "PERIOD_PLAYER_TASK_INPUT": 4,
+      "PERIOD_RELAY_OF_STAT_ADJUSTMENT_INTENT": 1,
+      "PERIOD_RELAY_STAT_COMPARISON_REFERENCE": 1,
+      "PET_CONTEXT_ALIAS": 4,
+      "PET_FAMILY_OR_GENERIC": 30,
+      "PET_NAME_CANDIDATE": 72,
+      "PRESERVED_CN50_COMPILED_ALBUM": 305,
+      "PRESERVED_TW85_PROGRAM_LOCAL_ALBUM": 1889,
+      "PRESERVED_TW85_PROGRAM_NAMED_SPR_ROUTE": 1696,
+      "PRESERVED_VIP_PRESET_INSTANCE_FLAG_CONFLICT": 1,
+      "PRESERVED_VIP_PRESET_PET_CANDIDATE": 27,
+      "PURPORTED_OPERATOR_REHOST_QUEST_INPUT": 3,
+      "PURPORTED_OPERATOR_REHOST_REWARD_CANDIDATE": 1,
+      "QUEST_GIFT_WITNESS": 58,
+      "QUEST_LABEL": 1,
+      "SKILL_LABEL": 1,
+      "STARTER_WITNESS": 4,
+      "TASK_PET_LABEL": 1,
+      "UNRESOLVED_CATALOGUE_ROW": 16,
+      "UNRESOLVED_REWARD_LABEL": 3,
+      "YEAR_BEAST_RECOLLECTION": 8
+    },
+    "by_source": {
+      "cn50": 305,
+      "cn85_original": 548,
+      "fusion2003": 41,
+      "hf18": 14,
+      "hf19": 10,
+      "hf19b": 26,
+      "hf19c": 58,
+      "hf19d": 36,
+      "hf20": 7,
+      "hf21": 8,
+      "hf22": 29,
+      "hf23": 21,
+      "hf24": 8,
+      "hf25": 41,
+      "hf26_27": 43,
+      "hf28_29": 93,
+      "hf30_31": 122,
+      "hf34": 16,
+      "hf35": 14,
+      "hf36": 35,
+      "hf51_petabi": 28,
+      "hf94": 8,
+      "sina2003": 237,
+      "tw10": 124,
+      "tw75": 467,
+      "tw85_grid": 1889,
+      "tw85_spr": 1696
+    },
+    "literal_labels": 1046,
+    "official_species_count": null,
+    "source_record_occurrences": 5924,
+    "unlabelled_source_occurrences": 16,
+    "warning": "Source occurrences and literal labels are not distinct species, nor official first release."
+  },
+  "documentary": {
+    "by_kind": {
+      "award_claim": 9,
+      "commission": 6,
+      "documented_release": 9,
+      "evolution_base": 4,
+      "guide_census": 1,
+      "guide_family_range": 28,
+      "habitat": 21,
+      "regional_count_snapshot": 2,
+      "special_skill_claim": 15,
+      "starter_claim": 4,
+      "trainer_conflict": 5,
+      "trainer_skill_claim": 30,
+      "unconfirmed_release_lead": 6
+    },
+    "candidate_references_not_identity": 526,
+    "current_occurrences": 5924,
+    "documentary_records": 140,
+    "exact_pet_label_candidates": 42,
+    "labels_with_exact_directory_candidate": 42,
+    "labels_without_exact_directory_candidate": [],
+    "new_release_certifications": 0,
+    "official_release_events_previously_documented": 9,
+    "official_species_count": null,
+    "pet16_rows": 2792,
+    "records_with_any_candidate": 63,
+    "schema": "stoneage.pet.documentary_lookup.r1",
+    "source_bounded_closed": false,
+    "source_pins": 7
+  },
+  "full_query_probes": 8,
+  "historically_complete": false,
+  "korean_archive": {
+    "schema": "stoneage.pet.kr_archive_access.r1",
+    "source_blobs": {
+      "research/pets/PET-KR2002-IMAGE-CDX-CI-OBSERVED-R1.json": "740aa67da47b7e5aadc8c76426243635417fed05",
+      "research/pets/PET-KR2002-STATIC-CI-OBSERVED-R1.json": "618b0d92f6a75ebe83c006b93a093229cdd69260",
+      "research/pets/PET-KR2003-GIF-PAYLOAD-CI-OBSERVED-R1.json": "1c0ab623772c91fb1cf66fa44b99be87aec6d717",
+      "research/pets/PET-KR2003-GIF-RETRY-CI-OBSERVED-R1.json": "dbef9c310a5821df0f240cb054baa411058e8447"
+    },
+    "summary": {
+      "animated_gifs": 3,
+      "decoded_frames": 54,
+      "distinct_reference_paths": 159,
+      "exact_decoded_gifs": 32,
+      "historical_scope": "2002 page references; 2003 GIF captures; not a native client or roster",
+      "initial_transport_errors_resolved": 12,
+      "new_official_identities": 0,
+      "numbered_decoded_gifs": 18,
+      "numbered_references": 96,
+      "official_species_count": null,
+      "original_assets_published": false,
+      "original_bytes_transiently_read": 215866,
+      "page_image_occurrences": 204,
+      "pet_module_closed": false,
+      "private_originals_retained": false,
+      "source_bounded_archive_query_finished": true,
+      "static_gifs": 29,
+      "unmatched_reference_paths": 127
+    }
+  },
+  "legacy": {
+    "module_closed": false,
+    "named_counts": {
+      "cn_official_web": 98,
+      "jp_official_web": 124,
+      "mixed25_main": 10
+    },
+    "namespace_counts": {
+      "cn_official_web": 104,
+      "jp_official_web": 124,
+      "later2016_graphics": 598,
+      "later2016_templates": 1024,
+      "mixed25_alternative": 316,
+      "mixed25_main": 495,
+      "tw10_visual": 131
+    },
+    "official_release_promotions": 0,
+    "official_species_count": null,
+    "overlap_with_current_lookup": "NOT_ADDITIVE_NOT_DEDUPLICATED",
+    "schema": "stoneage.pet16.legacy_access.r1",
+    "source_blob": "fdb7d9aade2df62d1a1e06b2d2f9e383693ed980",
+    "source_evidence_pins": 9,
+    "supplements": {
+      "cn_web_image_references": 7,
+      "jp_single_attempt_unavailable": 2,
+      "jp_web_images_including_parent": 23,
+      "missing_2016_skill_slots": 102,
+      "missing_mixed25_alternative_skill_slots": 12,
+      "official_promotions": 0,
+      "verified_supplement_files": 9
+    },
+    "total_source_rows": 2792,
+    "unknown_cn_web_names": 6
+  },
+  "matrix": {
+    "carrier_groups": 15,
+    "field_queue_positions": 3563,
+    "git_blob": "8a3694119db2c0b83dbe6b0c54fc7d912a8493c6",
+    "official_full_fields_certified": 0,
+    "pinned_sources": 98,
+    "seven_dimensions": [
+      {
+        "closed": false,
+        "grade": "VERIFIED_SOURCE + MISSING_SOURCE",
+        "id": "PROVENANCE_CARRIERS",
+        "observed": "98 pinned derivative sources, 15 carrier groups reviewed, original bytes not reaccessed; additional provenance ledger reconciliation required.",
+        "remaining": "JSS1999 early authentic client, KR2000 original, official later version builds and same-deployment server pet master still missing",
+        "reopen": "A legally accessible source-qualified original client/patch or service-side master with region/operator/build and full bytes"
+      },
+      {
+        "closed": false,
+        "grade": "VERIFIED_SOURCE + CROSS_CARRIER_CANDIDATE",
+        "id": "IDENTITY_NAMES_ATLAS",
+        "observed": "5924 occurrences, 3563 queue positions; nine retained documentary release events separate; no global deduplicated official roster.",
+        "remaining": "No certified same-deployment pet species ID/name/graphic/server live issuance chain and no authoritative global total",
+        "reopen": "Exact original official pet master or original version-qualified issue/gameplay showing same pet identity and active availability"
+      },
+      {
+        "closed": false,
+        "grade": "VERIFIED_SOURCE + CROSS_CARRIER_CANDIDATE + UNVERIFIED_RUNTIME",
+        "id": "2D_PIXELS_ACTIONS",
+        "observed": "TW1 120 original portraits and four pose fallbacks; CN50 305 portrait/motion positions; TW85 1889 portraits and 6 partial motion positions; TW75 424 strict references and 43 conflicts; CN2012 417 arithmetic and 131 cross-carrier motion references.",
+        "remaining": "Five bounded decoding cases remain bounded; TW1 original native frame timing and palette selection, four portraits, later original pixel sources and native rendering OPEN",
+        "reopen": "Exact same-build bitmap source or qualified later carrier, native selector/animation evidence, no cross-year promotion"
+      },
+      {
+        "closed": false,
+        "grade": "CROSS_CARRIER_CANDIDATE + MISSING_SOURCE",
+        "id": "STATS_GROWTH",
+        "observed": "467 conditional models, 440 exact shared template rows, 26 same-ID differences, one no match; native formula/deployment not proven.",
+        "remaining": "Official original TW1 server growth formula, base stats, values and actual level-up behavior not present in accepted proof",
+        "reopen": "Official same-build pet source/master and controlled original runtime growth evidence"
+      },
+      {
+        "closed": false,
+        "grade": "CROSS_CARRIER_CANDIDATE + UNVERIFIED_RUNTIME",
+        "id": "SKILLS_RULES",
+        "observed": "38 configured definitions, 941 slots; historical own-table missing-skill residues retained; matching official runtime rules open.",
+        "remaining": "Original early PC pet skills and learning restrictions, active deployment, handler effects still missing",
+        "reopen": "Matching same-configuration skill definitions and original version-qualified handler/skill execution"
+      },
+      {
+        "closed": false,
+        "grade": "CROSS_CARRIER_CANDIDATE + MISSING_SOURCE + UNVERIFIED_RUNTIME",
+        "id": "PET_ACQUISITION_ACTIONS",
+        "observed": "118 double-flag routes, 13 static task reward configurations, 67 strict residual positions; conditional routes not actual official grants.",
+        "remaining": "Actual official same-server capture/award/fusion/riding outcomes, rates, encounters and issuance unverified",
+        "reopen": "Authenticated service build with reward/capture configuration plus original gameplay or operator live issuance proof"
+      },
+      {
+        "closed": false,
+        "grade": "VERIFIED_SOURCE + MISSING_SOURCE",
+        "id": "RIGHTS_PRIVATE_SOURCE_ACCESS",
+        "observed": "Private custody receipts and derived hashes retained, current legal byte access not retested, publication/use rights open.",
+        "remaining": "Commercial art licensing and permission to publish/use in new game unresolved; other version carriers not certified",
+        "reopen": "Separate legal rights clearance or independently authorized replacements; new original byte-custody audit"
+      }
+    ]
+  },
+  "official_species_count": null,
+  "original_assets_published": false,
+  "post_matrix_carrier_notes": {
+    "CN2013_UPDATER": "Path tokens only, not original pet payload; no identity promotion",
+    "KR2002_2003": "Exact original responses and GIF bytes transiently verified, separate source paths; original images not retained privately"
+  },
+  "remaining": [
+    "User review of bounded delivery and explicit module transition authorization.",
+    "Reopen only material source or field gaps using the matrix conditions; 2026 remains open."
+  ],
+  "schema": "stoneage.pet.module_delivery_review.r1",
+  "scope": "Fixed accessible source delivery and actual lookup smoke test, not exhaustive discovery or historical completion. Independent source counts overlap and are not additive.",
+  "source_bounded_closed": false,
+  "user_authorized_switch_to_npc": false,
+  "verified_query_modes": 6
+}
