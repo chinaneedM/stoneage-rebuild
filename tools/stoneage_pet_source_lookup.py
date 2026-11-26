@@ -596,6 +596,12 @@ def build(d):
             ls.extend(link(src, pointer, "EXACT_NAME_REFERENCE_NOT_OFFICIAL_IDENTITY") for src, pointer in targets)
             add("hf94", ["rows", j], [row["name"]], "LATE_COMMUNITY_CATALOGUE_REFERENCE", [],
                 ls, dict(family=row["family"], catalogue=row["catalogue"], official_identity_verified=False))
+    if "hf96" in d:
+        by_position = {e["pointer"][1]: e for e in out if e["source"] == "tw75"}
+        for j, row in enumerate(d["hf96"]["rows"]):
+            for side in ("left", "right"):
+                by_position[row[side]["position"]]["linked_records"].append(
+                    link("hf96", ["rows", j], "SAME_NAME_OR_GRAPHIC_NOT_IDENTITY"))
     if "hf95" in d:
         for j, row in enumerate(d["hf95"]["rows"]):
             for e in out:
@@ -1109,6 +1115,56 @@ def verify(m,d,entries):
         assert grid_count == 5 and sum(bool(r["year_beast_recollection"]) for r in late["rows"]) == 4
         assert sum(r["year_beast_recollection"]["name_variant"] for r in late["rows"] if r["year_beast_recollection"]) == 1
         assert late["summary"]["official_closures"] == 0
+    if "hf96" in d:
+        collision = d["hf96"]
+        for path, sha in collision["input_git_blobs"].items():
+            assert blob((ROOT / path).read_bytes()) == sha
+        source = d["tw75"]["pet_flag_1_field_projections"]
+        selected = d["hf76"]["rows"]
+        ranges = d["tw75_birth"]["rows"]
+        fields = ["name","graphic","elements","base","initnum","lvup_literal","skill_slot_capacity","skill_slots"]
+        assert collision["fields_compared"] == fields
+        assert len(source) == len(selected) == len(ranges) == 467
+        def collision_position(i):
+            a, b, c = source[i], selected[i], ranges[i]
+            assert a["template_id"] == b["template_id"] == c["template_id"]
+            assert a["row_sha256"] == b["row_sha256"] == c["source_row_sha256"]
+            exact = b["selected_table_grade"] == "EXACT_SHARED_TEMPLATE_ROW"
+            return dict(position=i, template_id=a["template_id"], row_sha256=a["row_sha256"],
+                        selected_table_grade=b["selected_table_grade"], selected_row_sha256=b["selected_row_sha256"],
+                        rank=c["rank"], route_counts=[b["positive_route_count"], b["double_pet_flag_route_count"],
+                        b["lv1_double_pet_flag_route_count"]] if exact else None,
+                        reward_instance_id=b["saved_reward_instance_id"] if exact else None)
+        expected = []
+        for i, a in enumerate(source):
+            for j in range(i+1, len(source)):
+                b = source[j]
+                if a["name"] != b["name"] and a["graphic"] != b["graphic"]:
+                    continue
+                relation = ("SAME_NAME_GRAPHIC" if a["graphic"] == b["graphic"] else "SAME_NAME_DIFFERENT_GRAPHIC") if a["name"] == b["name"] else "SAME_GRAPHIC_DIFFERENT_NAME"
+                left, right = collision_position(i), collision_position(j)
+                both = left["route_counts"] is not None and right["route_counts"] is not None
+                differs = (left["route_counts"], left["reward_instance_id"]) != (right["route_counts"], right["reward_instance_id"])
+                expected.append(dict(left=left,right=right,relation=relation,
+                    differing_projected_fields=[key for key in fields if a[key] != b[key]],
+                    both_selected_exact=both, selected_route_or_reward_reference_differs=differs if both else None,
+                    official_identity_verified=False))
+        assert collision["rows"] == expected
+        count = collections.Counter
+        linked = {r[s]["position"] for r in expected for s in ("left","right")}
+        collision_summary = dict(positions=len(source), pairs=len(expected), linked_positions=len(linked),
+            relation_counts=dict(count(r["relation"] for r in expected)),
+            field_difference_counts=dict(count(f for r in expected for f in r["differing_projected_fields"])),
+            both_selected_exact=sum(r["both_selected_exact"] for r in expected),
+            selected_route_or_reward_reference_differs=sum(r["selected_route_or_reward_reference_differs"] is True for r in expected),
+            conditional_rank_differs=sum(r["left"]["rank"] != r["right"]["rank"] for r in expected),
+            same_name_graphic_no_projected_difference=sum(r["relation"] == "SAME_NAME_GRAPHIC" and not r["differing_projected_fields"] for r in expected),
+            same_name_graphic_skill_slots_only=sum(r["relation"] == "SAME_NAME_GRAPHIC" and r["differing_projected_fields"] == ["skill_slots"] for r in expected),
+            official_closures=0)
+        assert collision["summary"] == collision_summary == m["supplement_hf96"]
+        assert len(expected) == 55 and len(linked) == 89
+        assert {(e["pointer"][1], l["pointer"][1]) for e in high45 for l in e["linked_records"] if l["source"] == "hf96"} == {(r[s]["position"], j) for j,r in enumerate(expected) for s in ("left","right")}
+        assert sum(l["source"] == "hf96" for e in entries for l in e["linked_records"]) == 110
     if "hf95" in d:
         late_skill = d["hf95"]
         for path, sha in late_skill["input_git_blobs"].items():
