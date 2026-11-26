@@ -578,6 +578,18 @@
       "git_blob": "26763873998c93075342028752c40074fe472934",
       "expected_array": "rows",
       "expected_rows": 305
+    },
+    "review_tw75_portrait": {
+      "path": "research/pets/PET-WHOLE-REVIEW-TW75-TW85-PORTRAIT-REFERENCE-R1.json",
+      "git_blob": "b1259033e3e966bae556afde00801eac8372c7d9",
+      "expected_array": "rows",
+      "expected_rows": 467
+    },
+    "review_residual_visual": {
+      "path": "research/pets/PET-WHOLE-REVIEW-RESIDUAL-VISUAL-R1.json",
+      "git_blob": "320dbf690fc184434659debe7c60408a62135454",
+      "expected_array": "cn85_rows",
+      "expected_rows": 131
     }
   },
   "expected": {
@@ -869,5 +881,13 @@
   "supplement_pet124": {
     "scope": "Full original 548 named positions, 540 literal labels, 552 RD candidates; historical queue retained, current 3563 source positions; no official field closures.",
     "source_head": "87fcc6f8c411d90e4baa636332645bd6f0ba026f"
+  },
+  "supplement_whole_review_visual": {
+    "scope": "Retained reference grades; no new query occurrences or identity promotions",
+    "tw75_positions": 467,
+    "tw75_strict_reference": 424,
+    "tw75_residual": 43,
+    "cn85_cross_carrier_motion_reference": 131,
+    "official_closures": 0
   }
 }
