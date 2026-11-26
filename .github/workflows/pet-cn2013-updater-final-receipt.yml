@@ -1,0 +1,24 @@
+name: CN2013 updater final independent receipt
+on:
+  push:
+    branches: ['agent/pet-cn2013-updater-resource-index-20261126']
+    paths:
+      - 'tools/stoneage_pet_cn2013_updater_final_receipt.py'
+      - '.github/workflows/pet-cn2013-updater-final-receipt.yml'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  receipt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/actions/artifacts/15120033978/zip > "$RUNNER_TEMP/updater.zip"
+          python -m tools.stoneage_pet_cn2013_updater_final_receipt --artifact "$RUNNER_TEMP/updater.zip"
