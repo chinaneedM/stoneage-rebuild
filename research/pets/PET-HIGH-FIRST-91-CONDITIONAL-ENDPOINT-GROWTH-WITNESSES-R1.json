@@ -1,0 +1,2665 @@
+{
+  "schema": "stoneage.pet91.conditional_endpoint_growth_witnesses.r1",
+  "base_head": "7a331f877b011083c68d3753edab8bd49a207e5b",
+  "base_tree": "11ceef4dffade7086bc619185c48020083dc4737",
+  "input_git_blobs": {
+    "research/pets/PET-HIGH-FIRST-76-SELECTED-MASTER-FIELDS-R1.json": "0005e7d7943907c01024f5dd24132b126e4bb3f3",
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-77-PLAYER-PANEL-WITNESSES-R1.json": "6ebbcd96359f3462dd0e7b7424ed3823305074cc",
+    "research/pets/PET-HIGH-FIRST-78-2012-HORSE-PANEL-WITNESSES-R1.json": "9a187a56056a188d632130cc7adbe6d9ce1daba9",
+    "tools/stoneage_pet_growth_model.py": "29910ff8b5e59fcd1a7ee306dd624ac467769853",
+    "tools/stoneage_pet_detail30_base_panel.py": "364005a85983a93a286873bcd2f94b71a14da06b"
+  },
+  "search": "restricted constructive witness: fixed rank roll, per-level ten allocation points all assigned to one stat, aggregate mode counts; missing witness is not impossibility",
+  "scope": "12 indexed repost records (direct 403) and 17 dated 2012 player records; level 1 assumption, no equipment or rebirth, baseline panel only",
+  "rows": [
+    {
+      "source": "hf77",
+      "pointer": [
+        "rows",
+        0
+      ],
+      "position": 239,
+      "template_id": 755,
+      "claimed_row_sha256": "47855258b200826c5e0c3749dafe5634de65b8880c826ce46f7a89bb46d356a1",
+      "saved_row_sha256": "91148c636e4b0fbda05111a2dd916aafdadb82faf906022836c38da26429e037",
+      "assumed_initial_level": 1,
+      "final_level": 120,
+      "initial": [
+        57,
+        15,
+        7,
+        7
+      ],
+      "final": [
+        1256,
+        323,
+        162,
+        167
+      ],
+      "reported_arithmetic_conflicts": null,
+      "claimed_witness": {
+        "offsets": [
+          -2,
+          -1,
+          1,
+          2
+        ],
+        "birth_allocation_counts": [
+          5,
+          5,
+          0,
+          0
+        ],
+        "rank": 0,
+        "rank_roll": 482,
+        "level_allocation_mode_counts": [
+          47,
+          33,
+          15,
+          24
+        ],
+        "start_internal": [
+          810,
+          1350,
+          459,
+          702
+        ],
+        "end_internal": [
+          17346,
+          28671,
+          10833,
+          16729
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -2,
+          -2,
+          1,
+          1
+        ],
+        "birth_allocation_counts": [
+          3,
+          6,
+          0,
+          1
+        ],
+        "rank": 0,
+        "rank_roll": 482,
+        "level_allocation_mode_counts": [
+          22,
+          45,
+          15,
+          37
+        ],
+        "start_internal": [
+          810,
+          1350,
+          459,
+          702
+        ],
+        "end_internal": [
+          17336,
+          28738,
+          10833,
+          16758
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf77",
+      "pointer": [
+        "rows",
+        1
+      ],
+      "position": 239,
+      "template_id": 755,
+      "claimed_row_sha256": "47855258b200826c5e0c3749dafe5634de65b8880c826ce46f7a89bb46d356a1",
+      "saved_row_sha256": "91148c636e4b0fbda05111a2dd916aafdadb82faf906022836c38da26429e037",
+      "assumed_initial_level": 1,
+      "final_level": 120,
+      "initial": [
+        58,
+        14,
+        7,
+        8
+      ],
+      "final": [
+        1312,
+        319,
+        175,
+        168
+      ],
+      "reported_arithmetic_conflicts": null,
+      "claimed_witness": {
+        "offsets": [
+          -2,
+          0,
+          1,
+          2
+        ],
+        "birth_allocation_counts": [
+          6,
+          0,
+          0,
+          4
+        ],
+        "rank": 0,
+        "rank_roll": 490,
+        "level_allocation_mode_counts": [
+          66,
+          0,
+          35,
+          18
+        ],
+        "start_internal": [
+          837,
+          1242,
+          459,
+          810
+        ],
+        "end_internal": [
+          18589,
+          28017,
+          12051,
+          16805
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -2,
+          -2,
+          1,
+          2
+        ],
+        "birth_allocation_counts": [
+          4,
+          2,
+          0,
+          4
+        ],
+        "rank": 0,
+        "rank_roll": 489,
+        "level_allocation_mode_counts": [
+          43,
+          24,
+          34,
+          18
+        ],
+        "start_internal": [
+          837,
+          1242,
+          459,
+          810
+        ],
+        "end_internal": [
+          18609,
+          28003,
+          12002,
+          16805
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf77",
+      "pointer": [
+        "rows",
+        2
+      ],
+      "position": 239,
+      "template_id": 755,
+      "claimed_row_sha256": "47855258b200826c5e0c3749dafe5634de65b8880c826ce46f7a89bb46d356a1",
+      "saved_row_sha256": "91148c636e4b0fbda05111a2dd916aafdadb82faf906022836c38da26429e037",
+      "assumed_initial_level": 1,
+      "final_level": 120,
+      "initial": [
+        58,
+        14,
+        7,
+        8
+      ],
+      "final": [
+        1292,
+        331,
+        162,
+        170
+      ],
+      "reported_arithmetic_conflicts": null,
+      "claimed_witness": {
+        "offsets": [
+          -2,
+          1,
+          1,
+          2
+        ],
+        "birth_allocation_counts": [
+          5,
+          0,
+          0,
+          5
+        ],
+        "rank": 0,
+        "rank_roll": 484,
+        "level_allocation_mode_counts": [
+          59,
+          23,
+          10,
+          27
+        ],
+        "start_internal": [
+          810,
+          1269,
+          459,
+          837
+        ],
+        "end_internal": [
+          18041,
+          29386,
+          10697,
+          17035
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -2,
+          -1,
+          0,
+          2
+        ],
+        "birth_allocation_counts": [
+          4,
+          1,
+          1,
+          4
+        ],
+        "rank": 0,
+        "rank_roll": 488,
+        "level_allocation_mode_counts": [
+          33,
+          43,
+          18,
+          25
+        ],
+        "start_internal": [
+          837,
+          1242,
+          459,
+          810
+        ],
+        "end_internal": [
+          18043,
+          29410,
+          10605,
+          17029
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf77",
+      "pointer": [
+        "rows",
+        3
+      ],
+      "position": 261,
+      "template_id": 777,
+      "claimed_row_sha256": "9f185b4be2c6dfdb35185995764239be26a4aab819794b939ace04d9360978b7",
+      "saved_row_sha256": "10355387d0d292f3e0b9ac7da8ff591bb689cfab98b5c50a2d40e968ba53618e",
+      "assumed_initial_level": 1,
+      "final_level": 125,
+      "initial": [
+        64,
+        15,
+        9,
+        9
+      ],
+      "final": [
+        1334,
+        321,
+        188,
+        193
+      ],
+      "reported_arithmetic_conflicts": null,
+      "claimed_witness": {
+        "offsets": [
+          -2,
+          -2,
+          1,
+          2
+        ],
+        "birth_allocation_counts": [
+          5,
+          3,
+          2,
+          0
+        ],
+        "rank": 0,
+        "rank_roll": 481,
+        "level_allocation_mode_counts": [
+          51,
+          47,
+          14,
+          12
+        ],
+        "start_internal": [
+          900,
+          1320,
+          660,
+          900
+        ],
+        "end_internal": [
+          18228,
+          28004,
+          13236,
+          19332
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -2,
+          -2,
+          -2,
+          0
+        ],
+        "birth_allocation_counts": [
+          1,
+          2,
+          4,
+          3
+        ],
+        "rank": 0,
+        "rank_roll": 478,
+        "level_allocation_mode_counts": [
+          18,
+          39,
+          41,
+          26
+        ],
+        "start_internal": [
+          870,
+          1320,
+          660,
+          960
+        ],
+        "end_internal": [
+          18226,
+          27992,
+          13251,
+          19320
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf77",
+      "pointer": [
+        "rows",
+        4
+      ],
+      "position": 310,
+      "template_id": 901,
+      "claimed_row_sha256": "448b6d664c3084910b474d35c43cad5e5d25cf2dec8dafa7689c25c3df768909",
+      "saved_row_sha256": "b0be513517601d4d023fbc701b01990e645adfb2655734650f9205ae1c9402ac",
+      "assumed_initial_level": 1,
+      "final_level": 121,
+      "initial": [
+        83,
+        20,
+        15,
+        10
+      ],
+      "final": [
+        1311,
+        316,
+        238,
+        160
+      ],
+      "reported_arithmetic_conflicts": null,
+      "claimed_witness": {
+        "offsets": [
+          1,
+          1,
+          2,
+          2
+        ],
+        "birth_allocation_counts": [
+          3,
+          4,
+          1,
+          2
+        ],
+        "rank": 0,
+        "rank_roll": 480,
+        "level_allocation_mode_counts": [
+          38,
+          41,
+          16,
+          25
+        ],
+        "start_internal": [
+          1092,
+          1755,
+          1170,
+          1014
+        ],
+        "end_internal": [
+          17316,
+          27243,
+          18618,
+          16014
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -1,
+          1,
+          2,
+          2
+        ],
+        "birth_allocation_counts": [
+          3,
+          4,
+          1,
+          2
+        ],
+        "rank": 0,
+        "rank_roll": 480,
+        "level_allocation_mode_counts": [
+          38,
+          41,
+          16,
+          25
+        ],
+        "start_internal": [
+          1092,
+          1755,
+          1170,
+          1014
+        ],
+        "end_internal": [
+          17316,
+          27243,
+          18618,
+          16014
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf77",
+      "pointer": [
+        "rows",
+        5
+      ],
+      "position": 310,
+      "template_id": 901,
+      "claimed_row_sha256": "448b6d664c3084910b474d35c43cad5e5d25cf2dec8dafa7689c25c3df768909",
+      "saved_row_sha256": "b0be513517601d4d023fbc701b01990e645adfb2655734650f9205ae1c9402ac",
+      "assumed_initial_level": 1,
+      "final_level": 120,
+      "initial": [
+        83,
+        19,
+        16,
+        10
+      ],
+      "final": [
+        1294,
+        306,
+        240,
+        160
+      ],
+      "reported_arithmetic_conflicts": null,
+      "claimed_witness": {
+        "offsets": [
+          1,
+          1,
+          2,
+          2
+        ],
+        "birth_allocation_counts": [
+          3,
+          1,
+          4,
+          2
+        ],
+        "rank": 0,
+        "rank_roll": 479,
+        "level_allocation_mode_counts": [
+          38,
+          26,
+          25,
+          30
+        ],
+        "start_internal": [
+          1092,
+          1638,
+          1287,
+          1014
+        ],
+        "end_internal": [
+          17077,
+          26210,
+          18909,
+          16020
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -1,
+          1,
+          2,
+          2
+        ],
+        "birth_allocation_counts": [
+          3,
+          1,
+          4,
+          2
+        ],
+        "rank": 0,
+        "rank_roll": 479,
+        "level_allocation_mode_counts": [
+          38,
+          26,
+          25,
+          30
+        ],
+        "start_internal": [
+          1092,
+          1638,
+          1287,
+          1014
+        ],
+        "end_internal": [
+          17077,
+          26210,
+          18909,
+          16020
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf77",
+      "pointer": [
+        "rows",
+        6
+      ],
+      "position": 311,
+      "template_id": 902,
+      "claimed_row_sha256": "1063648c3709a71ca6ea1d68d119e400ef1d35c099549dd8a0af5331885c3f71",
+      "saved_row_sha256": "a5ea9f52d8f05fd6dc56a3cd95da3b171583c7d015a2de3b13974bedf91920c5",
+      "assumed_initial_level": 1,
+      "final_level": 120,
+      "initial": [
+        87,
+        20,
+        14,
+        10
+      ],
+      "final": [
+        1357,
+        313,
+        224,
+        161
+      ],
+      "reported_arithmetic_conflicts": null,
+      "claimed_witness": {
+        "offsets": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "birth_allocation_counts": [
+          2,
+          2,
+          2,
+          4
+        ],
+        "rank": 0,
+        "rank_roll": 476,
+        "level_allocation_mode_counts": [
+          27,
+          33,
+          28,
+          31
+        ],
+        "start_internal": [
+          1209,
+          1716,
+          1092,
+          1092
+        ],
+        "end_internal": [
+          18900,
+          26981,
+          17073,
+          16115
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          0,
+          2,
+          2,
+          2
+        ],
+        "birth_allocation_counts": [
+          2,
+          2,
+          2,
+          4
+        ],
+        "rank": 0,
+        "rank_roll": 476,
+        "level_allocation_mode_counts": [
+          27,
+          33,
+          28,
+          31
+        ],
+        "start_internal": [
+          1209,
+          1716,
+          1092,
+          1092
+        ],
+        "end_internal": [
+          18900,
+          26981,
+          17073,
+          16115
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf77",
+      "pointer": [
+        "rows",
+        7
+      ],
+      "position": 312,
+      "template_id": 903,
+      "claimed_row_sha256": "6b7299f1dd6a0be0b8c327f07439003e61c828007b1807eb67a8aa382aeeab2b",
+      "saved_row_sha256": "50d1079ce96b06c907da8c6ab7b6e8c344552d9147daf550ce3068c42bd5af81",
+      "assumed_initial_level": 1,
+      "final_level": 120,
+      "initial": [
+        82,
+        21,
+        15,
+        9
+      ],
+      "final": [
+        1283,
+        335,
+        225,
+        159
+      ],
+      "reported_arithmetic_conflicts": null,
+      "claimed_witness": {
+        "offsets": [
+          1,
+          2,
+          2,
+          1
+        ],
+        "birth_allocation_counts": [
+          2,
+          1,
+          5,
+          2
+        ],
+        "rank": 0,
+        "rank_roll": 479,
+        "level_allocation_mode_counts": [
+          26,
+          28,
+          26,
+          39
+        ],
+        "start_internal": [
+          1053,
+          1833,
+          1209,
+          975
+        ],
+        "end_internal": [
+          16462,
+          29357,
+          17213,
+          15937
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -1,
+          2,
+          2,
+          1
+        ],
+        "birth_allocation_counts": [
+          2,
+          1,
+          5,
+          2
+        ],
+        "rank": 0,
+        "rank_roll": 479,
+        "level_allocation_mode_counts": [
+          26,
+          28,
+          26,
+          39
+        ],
+        "start_internal": [
+          1053,
+          1833,
+          1209,
+          975
+        ],
+        "end_internal": [
+          16462,
+          29357,
+          17213,
+          15937
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf77",
+      "pointer": [
+        "rows",
+        8
+      ],
+      "position": 312,
+      "template_id": 903,
+      "claimed_row_sha256": "6b7299f1dd6a0be0b8c327f07439003e61c828007b1807eb67a8aa382aeeab2b",
+      "saved_row_sha256": "50d1079ce96b06c907da8c6ab7b6e8c344552d9147daf550ce3068c42bd5af81",
+      "assumed_initial_level": 1,
+      "final_level": 120,
+      "initial": [
+        86,
+        20,
+        14,
+        10
+      ],
+      "final": [
+        1304,
+        333,
+        225,
+        160
+      ],
+      "reported_arithmetic_conflicts": null,
+      "claimed_witness": {
+        "offsets": [
+          0,
+          1,
+          2,
+          2
+        ],
+        "birth_allocation_counts": [
+          7,
+          0,
+          1,
+          2
+        ],
+        "rank": 0,
+        "rank_roll": 486,
+        "level_allocation_mode_counts": [
+          41,
+          30,
+          23,
+          25
+        ],
+        "start_internal": [
+          1209,
+          1755,
+          1053,
+          1014
+        ],
+        "end_internal": [
+          17022,
+          29167,
+          17151,
+          16043
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -2,
+          1,
+          2,
+          2
+        ],
+        "birth_allocation_counts": [
+          7,
+          0,
+          1,
+          2
+        ],
+        "rank": 0,
+        "rank_roll": 486,
+        "level_allocation_mode_counts": [
+          41,
+          30,
+          23,
+          25
+        ],
+        "start_internal": [
+          1209,
+          1755,
+          1053,
+          1014
+        ],
+        "end_internal": [
+          17022,
+          29167,
+          17151,
+          16043
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf77",
+      "pointer": [
+        "rows",
+        9
+      ],
+      "position": 313,
+      "template_id": 904,
+      "claimed_row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "saved_row_sha256": "65e0206db37f862a19eee824f289e157bd71d0626b6dea4a499c10e750626648",
+      "assumed_initial_level": 1,
+      "final_level": 48,
+      "initial": [
+        82,
+        19,
+        13,
+        13
+      ],
+      "final": [
+        556,
+        135,
+        92,
+        88
+      ],
+      "reported_arithmetic_conflicts": null,
+      "claimed_witness": {
+        "offsets": [
+          -1,
+          2,
+          2,
+          2
+        ],
+        "birth_allocation_counts": [
+          5,
+          0,
+          2,
+          3
+        ],
+        "rank": 0,
+        "rank_roll": 484,
+        "level_allocation_mode_counts": [
+          21,
+          11,
+          10,
+          5
+        ],
+        "start_internal": [
+          1053,
+          1638,
+          1014,
+          1365
+        ],
+        "end_internal": [
+          7043,
+          11707,
+          6946,
+          8848
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -2,
+          1,
+          2,
+          2
+        ],
+        "birth_allocation_counts": [
+          4,
+          1,
+          2,
+          3
+        ],
+        "rank": 0,
+        "rank_roll": 483,
+        "level_allocation_mode_counts": [
+          16,
+          15,
+          11,
+          5
+        ],
+        "start_internal": [
+          1053,
+          1638,
+          1014,
+          1365
+        ],
+        "end_internal": [
+          7038,
+          11664,
+          6958,
+          8843
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf77",
+      "pointer": [
+        "rows",
+        10
+      ],
+      "position": 313,
+      "template_id": 904,
+      "claimed_row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "saved_row_sha256": "65e0206db37f862a19eee824f289e157bd71d0626b6dea4a499c10e750626648",
+      "assumed_initial_level": 1,
+      "final_level": 120,
+      "initial": [
+        82,
+        20,
+        13,
+        13
+      ],
+      "final": [
+        1294,
+        313,
+        213,
+        207
+      ],
+      "reported_arithmetic_conflicts": null,
+      "claimed_witness": {
+        "offsets": [
+          1,
+          1,
+          2,
+          2
+        ],
+        "birth_allocation_counts": [
+          3,
+          4,
+          1,
+          2
+        ],
+        "rank": 0,
+        "rank_roll": 483,
+        "level_allocation_mode_counts": [
+          35,
+          36,
+          26,
+          22
+        ],
+        "start_internal": [
+          1053,
+          1755,
+          975,
+          1326
+        ],
+        "end_internal": [
+          16453,
+          27045,
+          15934,
+          20708
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -1,
+          1,
+          2,
+          2
+        ],
+        "birth_allocation_counts": [
+          3,
+          4,
+          1,
+          2
+        ],
+        "rank": 0,
+        "rank_roll": 483,
+        "level_allocation_mode_counts": [
+          35,
+          36,
+          26,
+          22
+        ],
+        "start_internal": [
+          1053,
+          1755,
+          975,
+          1326
+        ],
+        "end_internal": [
+          16453,
+          27045,
+          15934,
+          20708
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf77",
+      "pointer": [
+        "rows",
+        11
+      ],
+      "position": 313,
+      "template_id": 904,
+      "claimed_row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "saved_row_sha256": "65e0206db37f862a19eee824f289e157bd71d0626b6dea4a499c10e750626648",
+      "assumed_initial_level": 1,
+      "final_level": 120,
+      "initial": [
+        84,
+        20,
+        13,
+        12
+      ],
+      "final": [
+        1299,
+        307,
+        213,
+        208
+      ],
+      "reported_arithmetic_conflicts": null,
+      "claimed_witness": {
+        "offsets": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "birth_allocation_counts": [
+          4,
+          3,
+          2,
+          1
+        ],
+        "rank": 0,
+        "rank_roll": 477,
+        "level_allocation_mode_counts": [
+          42,
+          18,
+          29,
+          30
+        ],
+        "start_internal": [
+          1092,
+          1755,
+          1014,
+          1287
+        ],
+        "end_internal": [
+          16674,
+          26419,
+          15972,
+          20815
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -1,
+          2,
+          2,
+          2
+        ],
+        "birth_allocation_counts": [
+          4,
+          3,
+          2,
+          1
+        ],
+        "rank": 0,
+        "rank_roll": 477,
+        "level_allocation_mode_counts": [
+          42,
+          18,
+          29,
+          30
+        ],
+        "start_internal": [
+          1092,
+          1755,
+          1014,
+          1287
+        ],
+        "end_internal": [
+          16674,
+          26419,
+          15972,
+          20815
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf78",
+      "pointer": [
+        "posts",
+        0,
+        "rows",
+        0
+      ],
+      "position": 313,
+      "template_id": 904,
+      "claimed_row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "saved_row_sha256": "65e0206db37f862a19eee824f289e157bd71d0626b6dea4a499c10e750626648",
+      "assumed_initial_level": 1,
+      "final_level": 122,
+      "initial": [
+        81,
+        18,
+        11,
+        14
+      ],
+      "final": [
+        1268,
+        302,
+        195,
+        212
+      ],
+      "reported_arithmetic_conflicts": [],
+      "claimed_witness": {
+        "offsets": [
+          -2,
+          2,
+          0,
+          2
+        ],
+        "birth_allocation_counts": [
+          6,
+          0,
+          0,
+          4
+        ],
+        "rank": 0,
+        "rank_roll": 477,
+        "level_allocation_mode_counts": [
+          67,
+          7,
+          17,
+          30
+        ],
+        "start_internal": [
+          1053,
+          1638,
+          858,
+          1404
+        ],
+        "end_internal": [
+          16302,
+          26174,
+          14258,
+          21236
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -2,
+          -1,
+          -2,
+          2
+        ],
+        "birth_allocation_counts": [
+          5,
+          1,
+          0,
+          4
+        ],
+        "rank": 0,
+        "rank_roll": 488,
+        "level_allocation_mode_counts": [
+          34,
+          32,
+          35,
+          20
+        ],
+        "start_internal": [
+          1092,
+          1560,
+          780,
+          1404
+        ],
+        "end_internal": [
+          16310,
+          26118,
+          14232,
+          21240
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf78",
+      "pointer": [
+        "posts",
+        1,
+        "rows",
+        0
+      ],
+      "position": 313,
+      "template_id": 904,
+      "claimed_row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "saved_row_sha256": "65e0206db37f862a19eee824f289e157bd71d0626b6dea4a499c10e750626648",
+      "assumed_initial_level": 1,
+      "final_level": 120,
+      "initial": [
+        76,
+        17,
+        13,
+        14
+      ],
+      "final": [
+        1183,
+        282,
+        204,
+        208
+      ],
+      "reported_arithmetic_conflicts": [],
+      "claimed_witness": {
+        "offsets": [
+          -2,
+          -2,
+          1,
+          2
+        ],
+        "birth_allocation_counts": [
+          3,
+          0,
+          3,
+          4
+        ],
+        "rank": 0,
+        "rank_roll": 478,
+        "level_allocation_mode_counts": [
+          33,
+          25,
+          33,
+          28
+        ],
+        "start_internal": [
+          936,
+          1482,
+          1014,
+          1404
+        ],
+        "end_internal": [
+          14420,
+          24221,
+          15569,
+          20836
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -2,
+          -2,
+          -1,
+          2
+        ],
+        "birth_allocation_counts": [
+          1,
+          0,
+          5,
+          4
+        ],
+        "rank": 0,
+        "rank_roll": 478,
+        "level_allocation_mode_counts": [
+          11,
+          25,
+          55,
+          28
+        ],
+        "start_internal": [
+          936,
+          1482,
+          1014,
+          1404
+        ],
+        "end_internal": [
+          14435,
+          24221,
+          15554,
+          20836
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf78",
+      "pointer": [
+        "posts",
+        1,
+        "rows",
+        1
+      ],
+      "position": 313,
+      "template_id": 904,
+      "claimed_row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "saved_row_sha256": "65e0206db37f862a19eee824f289e157bd71d0626b6dea4a499c10e750626648",
+      "assumed_initial_level": 1,
+      "final_level": 120,
+      "initial": [
+        78,
+        19,
+        12,
+        12
+      ],
+      "final": [
+        1193,
+        301,
+        197,
+        195
+      ],
+      "reported_arithmetic_conflicts": [],
+      "claimed_witness": {
+        "offsets": [
+          -2,
+          -2,
+          2,
+          1
+        ],
+        "birth_allocation_counts": [
+          5,
+          5,
+          0,
+          0
+        ],
+        "rank": 0,
+        "rank_roll": 478,
+        "level_allocation_mode_counts": [
+          38,
+          62,
+          4,
+          15
+        ],
+        "start_internal": [
+          1014,
+          1677,
+          936,
+          1209
+        ],
+        "end_internal": [
+          14738,
+          26192,
+          14694,
+          19526
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -2,
+          -2,
+          -1,
+          1
+        ],
+        "birth_allocation_counts": [
+          3,
+          5,
+          2,
+          0
+        ],
+        "rank": 0,
+        "rank_roll": 482,
+        "level_allocation_mode_counts": [
+          13,
+          57,
+          37,
+          12
+        ],
+        "start_internal": [
+          1014,
+          1677,
+          897,
+          1209
+        ],
+        "end_internal": [
+          14741,
+          26190,
+          14692,
+          19516
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf78",
+      "pointer": [
+        "posts",
+        2,
+        "rows",
+        0
+      ],
+      "position": 313,
+      "template_id": 904,
+      "claimed_row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "saved_row_sha256": "65e0206db37f862a19eee824f289e157bd71d0626b6dea4a499c10e750626648",
+      "assumed_initial_level": 1,
+      "final_level": 121,
+      "initial": [
+        80,
+        19,
+        14,
+        13
+      ],
+      "final": [
+        1261,
+        311,
+        213,
+        209
+      ],
+      "reported_arithmetic_conflicts": [],
+      "claimed_witness": {
+        "offsets": [
+          0,
+          2,
+          2,
+          2
+        ],
+        "birth_allocation_counts": [
+          2,
+          0,
+          5,
+          3
+        ],
+        "rank": 0,
+        "rank_roll": 474,
+        "level_allocation_mode_counts": [
+          32,
+          30,
+          28,
+          30
+        ],
+        "start_internal": [
+          975,
+          1638,
+          1131,
+          1365
+        ],
+        "end_internal": [
+          15559,
+          26928,
+          16035,
+          20925
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -2,
+          2,
+          2,
+          2
+        ],
+        "birth_allocation_counts": [
+          2,
+          0,
+          5,
+          3
+        ],
+        "rank": 0,
+        "rank_roll": 474,
+        "level_allocation_mode_counts": [
+          32,
+          30,
+          28,
+          30
+        ],
+        "start_internal": [
+          975,
+          1638,
+          1131,
+          1365
+        ],
+        "end_internal": [
+          15559,
+          26928,
+          16035,
+          20925
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf78",
+      "pointer": [
+        "posts",
+        3,
+        "rows",
+        0
+      ],
+      "position": 313,
+      "template_id": 904,
+      "claimed_row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "saved_row_sha256": "65e0206db37f862a19eee824f289e157bd71d0626b6dea4a499c10e750626648",
+      "assumed_initial_level": 1,
+      "final_level": 122,
+      "initial": [
+        76,
+        18,
+        12,
+        11
+      ],
+      "final": [
+        1191,
+        298,
+        194,
+        185
+      ],
+      "reported_arithmetic_conflicts": [],
+      "claimed_witness": {
+        "offsets": [
+          -2,
+          -2,
+          -2,
+          -1
+        ],
+        "birth_allocation_counts": [
+          5,
+          2,
+          3,
+          0
+        ],
+        "rank": 0,
+        "rank_roll": 488,
+        "level_allocation_mode_counts": [
+          34,
+          42,
+          37,
+          8
+        ],
+        "start_internal": [
+          1014,
+          1560,
+          897,
+          1131
+        ],
+        "end_internal": [
+          15022,
+          26003,
+          14447,
+          18584
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -2,
+          -2,
+          -2,
+          -2
+        ],
+        "birth_allocation_counts": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "rank": 0,
+        "rank_roll": 483,
+        "level_allocation_mode_counts": [
+          13,
+          47,
+          40,
+          21
+        ],
+        "start_internal": [
+          1014,
+          1560,
+          897,
+          1170
+        ],
+        "end_internal": [
+          15069,
+          25959,
+          14433,
+          18513
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf78",
+      "pointer": [
+        "posts",
+        3,
+        "rows",
+        1
+      ],
+      "position": 313,
+      "template_id": 904,
+      "claimed_row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "saved_row_sha256": "65e0206db37f862a19eee824f289e157bd71d0626b6dea4a499c10e750626648",
+      "assumed_initial_level": 1,
+      "final_level": 122,
+      "initial": [
+        73,
+        19,
+        12,
+        12
+      ],
+      "final": [
+        1200,
+        290,
+        212,
+        188
+      ],
+      "reported_arithmetic_conflicts": [],
+      "claimed_witness": {
+        "offsets": [
+          -2,
+          -2,
+          1,
+          1
+        ],
+        "birth_allocation_counts": [
+          1,
+          7,
+          2,
+          0
+        ],
+        "rank": 0,
+        "rank_roll": 474,
+        "level_allocation_mode_counts": [
+          46,
+          30,
+          45,
+          0
+        ],
+        "start_internal": [
+          858,
+          1755,
+          975,
+          1209
+        ],
+        "end_internal": [
+          14999,
+          24945,
+          16279,
+          18875
+        ]
+      },
+      "saved_witness": null,
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf78",
+      "pointer": [
+        "posts",
+        3,
+        "rows",
+        2
+      ],
+      "position": 313,
+      "template_id": 904,
+      "claimed_row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "saved_row_sha256": "65e0206db37f862a19eee824f289e157bd71d0626b6dea4a499c10e750626648",
+      "assumed_initial_level": 1,
+      "final_level": 122,
+      "initial": [
+        80,
+        18,
+        13,
+        13
+      ],
+      "final": [
+        1236,
+        290,
+        210,
+        203
+      ],
+      "reported_arithmetic_conflicts": [],
+      "claimed_witness": {
+        "offsets": [
+          -2,
+          -1,
+          2,
+          2
+        ],
+        "birth_allocation_counts": [
+          6,
+          1,
+          1,
+          2
+        ],
+        "rank": 0,
+        "rank_roll": 472,
+        "level_allocation_mode_counts": [
+          55,
+          22,
+          29,
+          15
+        ],
+        "start_internal": [
+          1053,
+          1560,
+          975,
+          1326
+        ],
+        "end_internal": [
+          15617,
+          24858,
+          16011,
+          20302
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -2,
+          -2,
+          1,
+          2
+        ],
+        "birth_allocation_counts": [
+          4,
+          2,
+          2,
+          2
+        ],
+        "rank": 0,
+        "rank_roll": 473,
+        "level_allocation_mode_counts": [
+          31,
+          34,
+          41,
+          15
+        ],
+        "start_internal": [
+          1053,
+          1560,
+          975,
+          1326
+        ],
+        "end_internal": [
+          15609,
+          24851,
+          16011,
+          20302
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf78",
+      "pointer": [
+        "posts",
+        3,
+        "rows",
+        3
+      ],
+      "position": 313,
+      "template_id": 904,
+      "claimed_row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "saved_row_sha256": "65e0206db37f862a19eee824f289e157bd71d0626b6dea4a499c10e750626648",
+      "assumed_initial_level": 1,
+      "final_level": 122,
+      "initial": [
+        78,
+        18,
+        11,
+        12
+      ],
+      "final": [
+        1195,
+        291,
+        186,
+        204
+      ],
+      "reported_arithmetic_conflicts": [],
+      "claimed_witness": {
+        "offsets": [
+          -2,
+          -2,
+          -2,
+          0
+        ],
+        "birth_allocation_counts": [
+          6,
+          2,
+          0,
+          2
+        ],
+        "rank": 0,
+        "rank_roll": 485,
+        "level_allocation_mode_counts": [
+          37,
+          29,
+          22,
+          33
+        ],
+        "start_internal": [
+          1053,
+          1560,
+          780,
+          1248
+        ],
+        "end_internal": [
+          15087,
+          25216,
+          13573,
+          20410
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -2,
+          -2,
+          -2,
+          -2
+        ],
+        "birth_allocation_counts": [
+          4,
+          2,
+          0,
+          4
+        ],
+        "rank": 0,
+        "rank_roll": 485,
+        "level_allocation_mode_counts": [
+          12,
+          29,
+          22,
+          58
+        ],
+        "start_internal": [
+          1053,
+          1560,
+          780,
+          1248
+        ],
+        "end_internal": [
+          15072,
+          25216,
+          13573,
+          20425
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf78",
+      "pointer": [
+        "posts",
+        3,
+        "rows",
+        4
+      ],
+      "position": 313,
+      "template_id": 904,
+      "claimed_row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "saved_row_sha256": "65e0206db37f862a19eee824f289e157bd71d0626b6dea4a499c10e750626648",
+      "assumed_initial_level": 1,
+      "final_level": 122,
+      "initial": [
+        77,
+        18,
+        11,
+        14
+      ],
+      "final": [
+        1242,
+        287,
+        188,
+        212
+      ],
+      "reported_arithmetic_conflicts": [],
+      "claimed_witness": {
+        "offsets": [
+          -2,
+          -1,
+          -1,
+          2
+        ],
+        "birth_allocation_counts": [
+          4,
+          1,
+          0,
+          5
+        ],
+        "rank": 0,
+        "rank_roll": 479,
+        "level_allocation_mode_counts": [
+          64,
+          14,
+          17,
+          26
+        ],
+        "start_internal": [
+          975,
+          1560,
+          819,
+          1443
+        ],
+        "end_internal": [
+          16147,
+          24738,
+          13735,
+          21204
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -2,
+          -2,
+          0,
+          0
+        ],
+        "birth_allocation_counts": [
+          2,
+          2,
+          0,
+          6
+        ],
+        "rank": 0,
+        "rank_roll": 478,
+        "level_allocation_mode_counts": [
+          42,
+          25,
+          2,
+          52
+        ],
+        "start_internal": [
+          975,
+          1560,
+          858,
+          1404
+        ],
+        "end_internal": [
+          16180,
+          24661,
+          13657,
+          21203
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf78",
+      "pointer": [
+        "posts",
+        3,
+        "rows",
+        5
+      ],
+      "position": 313,
+      "template_id": 904,
+      "claimed_row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "saved_row_sha256": "65e0206db37f862a19eee824f289e157bd71d0626b6dea4a499c10e750626648",
+      "assumed_initial_level": 1,
+      "final_level": 122,
+      "initial": [
+        76,
+        20,
+        13,
+        12
+      ],
+      "final": [
+        1230,
+        314,
+        214,
+        200
+      ],
+      "reported_arithmetic_conflicts": [],
+      "claimed_witness": {
+        "offsets": [
+          -2,
+          0,
+          1,
+          2
+        ],
+        "birth_allocation_counts": [
+          2,
+          5,
+          2,
+          1
+        ],
+        "rank": 0,
+        "rank_roll": 484,
+        "level_allocation_mode_counts": [
+          36,
+          45,
+          38,
+          2
+        ],
+        "start_internal": [
+          897,
+          1755,
+          975,
+          1287
+        ],
+        "end_internal": [
+          14882,
+          27313,
+          16230,
+          20019
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -2,
+          -2,
+          1,
+          2
+        ],
+        "birth_allocation_counts": [
+          0,
+          7,
+          2,
+          1
+        ],
+        "rank": 0,
+        "rank_roll": 484,
+        "level_allocation_mode_counts": [
+          11,
+          70,
+          38,
+          2
+        ],
+        "start_internal": [
+          897,
+          1755,
+          975,
+          1287
+        ],
+        "end_internal": [
+          14856,
+          27328,
+          16230,
+          20019
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf78",
+      "pointer": [
+        "posts",
+        3,
+        "rows",
+        6
+      ],
+      "position": 313,
+      "template_id": 904,
+      "claimed_row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "saved_row_sha256": "65e0206db37f862a19eee824f289e157bd71d0626b6dea4a499c10e750626648",
+      "assumed_initial_level": 1,
+      "final_level": 122,
+      "initial": [
+        72,
+        19,
+        11,
+        12
+      ],
+      "final": [
+        1160,
+        302,
+        187,
+        154
+      ],
+      "reported_arithmetic_conflicts": [
+        {
+          "field": "quick",
+          "exact_increment": "142/121",
+          "reported_average": "1.42"
+        }
+      ],
+      "claimed_witness": null,
+      "saved_witness": null,
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf78",
+      "pointer": [
+        "posts",
+        3,
+        "rows",
+        7
+      ],
+      "position": 313,
+      "template_id": 904,
+      "claimed_row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "saved_row_sha256": "65e0206db37f862a19eee824f289e157bd71d0626b6dea4a499c10e750626648",
+      "assumed_initial_level": 1,
+      "final_level": 122,
+      "initial": [
+        78,
+        18,
+        14,
+        11
+      ],
+      "final": [
+        1215,
+        257,
+        211,
+        185
+      ],
+      "reported_arithmetic_conflicts": [
+        {
+          "field": "attack",
+          "exact_increment": "239/121",
+          "reported_average": "2.22"
+        }
+      ],
+      "claimed_witness": null,
+      "saved_witness": null,
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf78",
+      "pointer": [
+        "posts",
+        3,
+        "rows",
+        8
+      ],
+      "position": 313,
+      "template_id": 904,
+      "claimed_row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "saved_row_sha256": "65e0206db37f862a19eee824f289e157bd71d0626b6dea4a499c10e750626648",
+      "assumed_initial_level": 1,
+      "final_level": 122,
+      "initial": [
+        81,
+        19,
+        12,
+        12
+      ],
+      "final": [
+        1270,
+        306,
+        190,
+        191
+      ],
+      "reported_arithmetic_conflicts": [],
+      "claimed_witness": {
+        "offsets": [
+          -2,
+          2,
+          0,
+          0
+        ],
+        "birth_allocation_counts": [
+          7,
+          0,
+          2,
+          1
+        ],
+        "rank": 0,
+        "rank_roll": 474,
+        "level_allocation_mode_counts": [
+          81,
+          19,
+          5,
+          16
+        ],
+        "start_internal": [
+          1092,
+          1638,
+          936,
+          1209
+        ],
+        "end_internal": [
+          16878,
+          26610,
+          13755,
+          19143
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -2,
+          -1,
+          0,
+          1
+        ],
+        "birth_allocation_counts": [
+          5,
+          3,
+          2,
+          0
+        ],
+        "rank": 0,
+        "rank_roll": 474,
+        "level_allocation_mode_counts": [
+          56,
+          56,
+          4,
+          5
+        ],
+        "start_internal": [
+          1092,
+          1638,
+          936,
+          1209
+        ],
+        "end_internal": [
+          16913,
+          26590,
+          13708,
+          19115
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf78",
+      "pointer": [
+        "posts",
+        3,
+        "rows",
+        9
+      ],
+      "position": 313,
+      "template_id": 904,
+      "claimed_row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "saved_row_sha256": "65e0206db37f862a19eee824f289e157bd71d0626b6dea4a499c10e750626648",
+      "assumed_initial_level": 1,
+      "final_level": 122,
+      "initial": [
+        79,
+        18,
+        11,
+        12
+      ],
+      "final": [
+        1246,
+        288,
+        189,
+        192
+      ],
+      "reported_arithmetic_conflicts": [],
+      "claimed_witness": {
+        "offsets": [
+          -2,
+          -2,
+          -2,
+          0
+        ],
+        "birth_allocation_counts": [
+          7,
+          2,
+          0,
+          1
+        ],
+        "rank": 0,
+        "rank_roll": 487,
+        "level_allocation_mode_counts": [
+          68,
+          19,
+          26,
+          8
+        ],
+        "start_internal": [
+          1092,
+          1560,
+          780,
+          1209
+        ],
+        "end_internal": [
+          16698,
+          24857,
+          13791,
+          19259
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -2,
+          -2,
+          -2,
+          -2
+        ],
+        "birth_allocation_counts": [
+          5,
+          2,
+          0,
+          3
+        ],
+        "rank": 0,
+        "rank_roll": 487,
+        "level_allocation_mode_counts": [
+          42,
+          19,
+          27,
+          33
+        ],
+        "start_internal": [
+          1092,
+          1560,
+          780,
+          1209
+        ],
+        "end_internal": [
+          16660,
+          24857,
+          13840,
+          19282
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf78",
+      "pointer": [
+        "posts",
+        3,
+        "rows",
+        10
+      ],
+      "position": 313,
+      "template_id": 904,
+      "claimed_row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "saved_row_sha256": "65e0206db37f862a19eee824f289e157bd71d0626b6dea4a499c10e750626648",
+      "assumed_initial_level": 1,
+      "final_level": 122,
+      "initial": [
+        77,
+        18,
+        12,
+        11
+      ],
+      "final": [
+        1225,
+        293,
+        187,
+        185
+      ],
+      "reported_arithmetic_conflicts": [],
+      "claimed_witness": {
+        "offsets": [
+          -2,
+          -2,
+          -1,
+          0
+        ],
+        "birth_allocation_counts": [
+          5,
+          2,
+          3,
+          0
+        ],
+        "rank": 0,
+        "rank_roll": 478,
+        "level_allocation_mode_counts": [
+          65,
+          42,
+          13,
+          1
+        ],
+        "start_internal": [
+          1014,
+          1560,
+          936,
+          1170
+        ],
+        "end_internal": [
+          16234,
+          25477,
+          13660,
+          18521
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -2,
+          -2,
+          -1,
+          -1
+        ],
+        "birth_allocation_counts": [
+          3,
+          3,
+          4,
+          0
+        ],
+        "rank": 0,
+        "rank_roll": 473,
+        "level_allocation_mode_counts": [
+          45,
+          45,
+          14,
+          17
+        ],
+        "start_internal": [
+          1014,
+          1599,
+          975,
+          1131
+        ],
+        "end_internal": [
+          16242,
+          25418,
+          13612,
+          18507
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf78",
+      "pointer": [
+        "posts",
+        3,
+        "rows",
+        11
+      ],
+      "position": 313,
+      "template_id": 904,
+      "claimed_row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "saved_row_sha256": "65e0206db37f862a19eee824f289e157bd71d0626b6dea4a499c10e750626648",
+      "assumed_initial_level": 1,
+      "final_level": 122,
+      "initial": [
+        77,
+        18,
+        12,
+        12
+      ],
+      "final": [
+        1213,
+        288,
+        188,
+        198
+      ],
+      "reported_arithmetic_conflicts": [],
+      "claimed_witness": {
+        "offsets": [
+          -2,
+          -2,
+          0,
+          -1
+        ],
+        "birth_allocation_counts": [
+          5,
+          2,
+          1,
+          2
+        ],
+        "rank": 0,
+        "rank_roll": 481,
+        "level_allocation_mode_counts": [
+          51,
+          28,
+          5,
+          37
+        ],
+        "start_internal": [
+          1014,
+          1560,
+          897,
+          1209
+        ],
+        "end_internal": [
+          15683,
+          24926,
+          13842,
+          19804
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -2,
+          -2,
+          -1,
+          1
+        ],
+        "birth_allocation_counts": [
+          2,
+          2,
+          4,
+          2
+        ],
+        "rank": 0,
+        "rank_roll": 468,
+        "level_allocation_mode_counts": [
+          38,
+          40,
+          21,
+          22
+        ],
+        "start_internal": [
+          975,
+          1560,
+          975,
+          1287
+        ],
+        "end_internal": [
+          15708,
+          24857,
+          13820,
+          19844
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    },
+    {
+      "source": "hf78",
+      "pointer": [
+        "posts",
+        4,
+        "rows",
+        0
+      ],
+      "position": 313,
+      "template_id": 904,
+      "claimed_row_sha256": "5265aa40ff002553082e7d3727b6449ef69f982ea5340dbbcce9ff2079f5ee7d",
+      "saved_row_sha256": "65e0206db37f862a19eee824f289e157bd71d0626b6dea4a499c10e750626648",
+      "assumed_initial_level": 1,
+      "final_level": 122,
+      "initial": [
+        81,
+        19,
+        13,
+        13
+      ],
+      "final": [
+        1251,
+        314,
+        215,
+        211
+      ],
+      "reported_arithmetic_conflicts": [],
+      "claimed_witness": {
+        "offsets": [
+          -2,
+          1,
+          2,
+          2
+        ],
+        "birth_allocation_counts": [
+          6,
+          1,
+          1,
+          2
+        ],
+        "rank": 0,
+        "rank_roll": 484,
+        "level_allocation_mode_counts": [
+          38,
+          34,
+          25,
+          24
+        ],
+        "start_internal": [
+          1053,
+          1638,
+          975,
+          1326
+        ],
+        "end_internal": [
+          15136,
+          27228,
+          16211,
+          21136
+        ]
+      },
+      "saved_witness": {
+        "offsets": [
+          -2,
+          -1,
+          2,
+          2
+        ],
+        "birth_allocation_counts": [
+          4,
+          3,
+          1,
+          2
+        ],
+        "rank": 0,
+        "rank_roll": 484,
+        "level_allocation_mode_counts": [
+          14,
+          58,
+          25,
+          24
+        ],
+        "start_internal": [
+          1053,
+          1638,
+          975,
+          1326
+        ],
+        "end_internal": [
+          15156,
+          27228,
+          16211,
+          21136
+        ]
+      },
+      "qualification": "CONDITIONAL_CONSTRUCTED_PATH_NOT_OBSERVED_RANDOM_ROLLS"
+    }
+  ],
+  "summary": {
+    "samples": 29,
+    "both_witnesses": 26,
+    "claimed_witness_only": 1,
+    "saved_witness_only": 0,
+    "no_constructed_witness": 2,
+    "arithmetic_conflict_samples": 2,
+    "official_closures": 0
+  },
+  "original_rolls_observed": false,
+  "probability_inferred": false,
+  "official_variant_resolved": false
+}
