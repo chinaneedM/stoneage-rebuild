@@ -1,0 +1,515 @@
+{
+  "schema": "stoneage.pet_high_first_84.late_pc_acquisition_references.r1",
+  "base_head": "53db7788cbf462dfc70890308226f1880f10e9ea",
+  "base_tree": "45b98da6cb75922b1e2cf5e67b887eb42e8763ae",
+  "input_git_blobs": {
+    "research/pets/PET-HIGH-FIRST-83-LATE-PC-ACQUISITION-REFERENCES-R1.json": "2168fd2c0ae0f253eec56846a1f14bee458015d4",
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-46-ACQUISITION-GAP-MATRIX-R1.json": "dbbd61460cee2edd4ba2722ab90e8889fe5268e2"
+  },
+  "scope": "40 PET83 residual positions, bounded later catalogue and legacy portal review; 3 numeric matches plus one explicit no-element semantic match, strict PET49 queue retained",
+  "rows": [
+    {
+      "tw75_row_index": 260,
+      "template_id": 776,
+      "master_name": "普魯夏",
+      "graphic": 100871,
+      "row_sha256": "03c1ae71422a35f5a353ccf32a367802b4d18f1349b8f020f6c43525209631ea",
+      "master_elements": [
+        30,
+        70,
+        0,
+        0
+      ],
+      "source_elements": [
+        30,
+        70,
+        0,
+        0
+      ],
+      "element_compatibility_basis": "EXPLICIT_NUMERIC",
+      "source_element_semantics": null,
+      "client_join_status": "NAME_ONLY_IN_TW85_GRID",
+      "source": {
+        "url": "https://welovesa.com/pet.php?pet_id=125&pet_type=16",
+        "visible_lines": [
+          64,
+          70
+        ],
+        "grade": "LATER_COMMUNITY_CATALOG_MIXED_SERVICE_UNDATED",
+        "date": null,
+        "raw_html_sha256": null
+      },
+      "acquisition_summary": "商城积分兑换或蓝蓝福袋包（绝版）",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_LATER_PC_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "tw75_row_index": 283,
+      "template_id": 799,
+      "master_name": "固力摩",
+      "graphic": 100894,
+      "row_sha256": "1c4ce61d78a3ace87e7dd0f397e94b451ceb0a6b71eda445e3053069d0674c8b",
+      "master_elements": [
+        80,
+        0,
+        0,
+        20
+      ],
+      "source_elements": [
+        80,
+        0,
+        0,
+        20
+      ],
+      "element_compatibility_basis": "EXPLICIT_NUMERIC",
+      "source_element_semantics": null,
+      "client_join_status": "NAME_ONLY_IN_TW85_GRID",
+      "source": {
+        "url": "https://welovesa.com/pet.php?pet_id=173&pet_type=22",
+        "visible_lines": [
+          64,
+          70
+        ],
+        "grade": "LATER_COMMUNITY_CATALOG_MIXED_SERVICE_UNDATED",
+        "date": null,
+        "raw_html_sha256": null
+      },
+      "acquisition_summary": "2011暑假任务活动（绝版）",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_LATER_PC_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "tw75_row_index": 284,
+      "template_id": 800,
+      "master_name": "摩吉摩吉",
+      "graphic": 100895,
+      "row_sha256": "02fdf3330758dd1215a8319d0f94b650b44a82ca8dcbaec2f81fb43a838e61f4",
+      "master_elements": [
+        20,
+        80,
+        0,
+        0
+      ],
+      "source_elements": [
+        20,
+        80,
+        0,
+        0
+      ],
+      "element_compatibility_basis": "EXPLICIT_NUMERIC",
+      "source_element_semantics": null,
+      "client_join_status": "NAME_ONLY_IN_TW85_GRID",
+      "source": {
+        "url": "https://welovesa.com/pet.php?pet_id=174&pet_type=22",
+        "visible_lines": [
+          64,
+          70
+        ],
+        "grade": "LATER_COMMUNITY_CATALOG_MIXED_SERVICE_UNDATED",
+        "date": null,
+        "raw_html_sha256": null
+      },
+      "acquisition_summary": "石器520宠爱包或稀奇古怪箱包（均标绝版）",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_LATER_PC_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "tw75_row_index": 401,
+      "template_id": 1060,
+      "master_name": "雷帝斯洛",
+      "graphic": 101501,
+      "row_sha256": "29fa18adda9b58472d0324356a730f152fe1f0eeb0ebb21497f3514ce9a34f05",
+      "master_elements": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "source_elements": null,
+      "element_compatibility_basis": "EXPLICIT_NO_ELEMENT_TEXT_NOT_NUMERIC",
+      "source_element_semantics": "無屬性",
+      "client_join_status": "TW85_NATIVE_SAME_GRAPHIC_NAME",
+      "source": {
+        "url": "https://welovesa.com/pet.php?pet_id=306&pet_type=47",
+        "visible_lines": [
+          61,
+          67
+        ],
+        "grade": "LATER_COMMUNITY_CATALOG_MIXED_SERVICE_UNDATED",
+        "date": null,
+        "raw_html_sha256": null
+      },
+      "acquisition_summary": "商城积分兑换、夏季及周年转转乐（页面标绝版）",
+      "qualification": "NAME_ELEMENT_COMPATIBLE_LATER_PC_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    }
+  ],
+  "context": [
+    {
+      "tw75_row_index": 187,
+      "template_id": 335,
+      "master_name": "雷帝斯洛",
+      "graphic": 101437,
+      "row_sha256": "22dae34a0f8ef4efc321d750c53362684e321226457222a4cff91e78baae5276",
+      "master_elements": [
+        100,
+        100,
+        100,
+        100
+      ],
+      "source_elements": null,
+      "source_url": "https://welovesa.com/pet.php?pet_id=306&pet_type=47",
+      "visible_lines": [
+        61,
+        67
+      ],
+      "status": "ELEMENT_SEMANTIC_CONFLICT",
+      "note": "同名但全100异常行与图鉴无属性描述不相容；不能共享1060取得参考",
+      "official_acquisition_verified": false
+    },
+    {
+      "tw75_row_index": 95,
+      "template_id": 135,
+      "master_name": "史奈克特",
+      "graphic": 101722,
+      "row_sha256": "4b8344f346c27329f8f3af5b741a1925e91d994f48bc266edf83d08908cb4e82",
+      "master_elements": [
+        90,
+        10,
+        0,
+        0
+      ],
+      "source_elements": [
+        70,
+        0,
+        0,
+        30
+      ],
+      "source_url": "https://news.17173.com/z/stoneage/chongwu/petshow37.htm",
+      "visible_lines": [
+        8,
+        21
+      ],
+      "status": "ELEMENT_CONFLICT_AND_NOT_APPEARED",
+      "note": "图鉴地7风3，不合此行且记未出现",
+      "official_acquisition_verified": false
+    },
+    {
+      "tw75_row_index": 96,
+      "template_id": 136,
+      "master_name": "葛利斯奈",
+      "graphic": 101721,
+      "row_sha256": "9b5aa4d119b5ee20aff88f539afb1536e256ba38700fe67507783aae507fcdbf",
+      "master_elements": [
+        0,
+        0,
+        90,
+        10
+      ],
+      "source_elements": [
+        30,
+        70,
+        0,
+        0
+      ],
+      "source_url": "https://news.17173.com/z/stoneage/chongwu/petshow37.htm",
+      "visible_lines": [
+        23,
+        35
+      ],
+      "status": "ELEMENT_CONFLICT_AND_NOT_APPEARED",
+      "note": "图鉴地3水7，不合此行且记未出现",
+      "official_acquisition_verified": false
+    },
+    {
+      "tw75_row_index": 344,
+      "template_id": 993,
+      "master_name": "史奈克特",
+      "graphic": 101448,
+      "row_sha256": "5db4704b9a7966812e0e104fa186044f020304af224e4c472d2c1009a009fd16",
+      "master_elements": [
+        70,
+        0,
+        0,
+        30
+      ],
+      "source_elements": [
+        70,
+        0,
+        0,
+        30
+      ],
+      "source_url": "https://news.17173.com/z/stoneage/chongwu/petshow37.htm",
+      "visible_lines": [
+        8,
+        21
+      ],
+      "status": "MATCHED_NOT_APPEARED",
+      "note": "地7风3相合，原页记孵化后宠物但出现地点未出现，不认定已实装或实际孵化",
+      "official_acquisition_verified": false
+    },
+    {
+      "tw75_row_index": 345,
+      "template_id": 994,
+      "master_name": "葛利斯奈",
+      "graphic": 101449,
+      "row_sha256": "199b86919962418e87d046096cb3ef0f0b92dd6d4d6d38599cb8f9b66c7fa57e",
+      "master_elements": [
+        30,
+        70,
+        0,
+        0
+      ],
+      "source_elements": [
+        30,
+        70,
+        0,
+        0
+      ],
+      "source_url": "https://news.17173.com/z/stoneage/chongwu/petshow37.htm",
+      "visible_lines": [
+        23,
+        35
+      ],
+      "status": "MATCHED_NOT_APPEARED",
+      "note": "地3水7相合，原页记孵化后宠物但出现地点未出现",
+      "official_acquisition_verified": false
+    },
+    {
+      "tw75_row_index": 222,
+      "template_id": 738,
+      "master_name": "烏拉拉",
+      "graphic": 100833,
+      "row_sha256": "9f7f2eae5e2f58c236299258fd153d532f233b26f2fccbe5bfa2eba52bfa35df",
+      "master_elements": [
+        90,
+        0,
+        0,
+        10
+      ],
+      "source_elements": [
+        90,
+        0,
+        0,
+        10
+      ],
+      "source_url": "https://news.17173.com/z/stoneage/chongwu/petshow04.htm",
+      "visible_lines": [
+        122,
+        138
+      ],
+      "status": "MATCHED_TESTING",
+      "note": "属性相合，一级和出现地点均测试中",
+      "official_acquisition_verified": false
+    },
+    {
+      "tw75_row_index": 436,
+      "template_id": 1099,
+      "master_name": "華雷斯",
+      "graphic": 101545,
+      "row_sha256": "a02886f3e266213a70aba64bf596b4d71dc9da24620e578442f1aa6333ae17cc",
+      "master_elements": [
+        30,
+        70,
+        0,
+        0
+      ],
+      "source_elements": [
+        30,
+        70,
+        0,
+        0
+      ],
+      "source_url": "https://news.17173.com/z/stoneage/chongwu/petshow48.htm",
+      "visible_lines": [
+        192,
+        205
+      ],
+      "status": "MATCHED_TESTING",
+      "note": "属性相合，一级和出现地点均测试中",
+      "official_acquisition_verified": false
+    },
+    {
+      "tw75_row_index": 438,
+      "template_id": 1103,
+      "master_name": "克利多斯",
+      "graphic": 101546,
+      "row_sha256": "a8628f2e007d456277c8b578f0c1947899e43ecb31eb1999c35958a4f30caa4c",
+      "master_elements": [
+        70,
+        0,
+        0,
+        30
+      ],
+      "source_elements": [
+        70,
+        0,
+        0,
+        30
+      ],
+      "source_url": "https://news.17173.com/z/stoneage/chongwu/petshow48.htm",
+      "visible_lines": [
+        206,
+        233
+      ],
+      "status": "MATCHED_TESTING_DUPLICATE",
+      "note": "两个图鉴编号321、322同名同属性，均测试中；不唯一映射",
+      "official_acquisition_verified": false
+    },
+    {
+      "tw75_row_index": 416,
+      "template_id": 1075,
+      "master_name": "貝沃特",
+      "graphic": 101570,
+      "row_sha256": "6397cdcd0be504b7274cbae338e598d47a628fbb387650e2446be478dac815fa",
+      "master_elements": [
+        100,
+        0,
+        0,
+        0
+      ],
+      "source_elements": null,
+      "source_url": "https://news.17173.com/z/stoneage/chongwu/petshow48.htm",
+      "visible_lines": [
+        551,
+        564
+      ],
+      "status": "NAME_ONLY_GIFT_RATIO_UNKNOWN",
+      "note": "民国92年初一次购买两个月包月的赠品，属性栏空；仅名相合",
+      "official_acquisition_verified": false
+    },
+    {
+      "tw75_row_index": 417,
+      "template_id": 1076,
+      "master_name": "貝恩斯",
+      "graphic": 101571,
+      "row_sha256": "04f7473677754f75cb091a45093a1ee5a9f6c1b4f13fb4a2d57d9eae9889fc46",
+      "master_elements": [
+        0,
+        0,
+        100,
+        0
+      ],
+      "source_elements": null,
+      "source_url": "https://news.17173.com/z/stoneage/chongwu/petshow48.htm",
+      "visible_lines": [
+        565,
+        578
+      ],
+      "status": "NAME_ONLY_GIFT_RATIO_UNKNOWN",
+      "note": "同一赠品说明，属性栏空；不证明一定同时赠两只",
+      "official_acquisition_verified": false
+    },
+    {
+      "tw75_row_index": 268,
+      "template_id": 784,
+      "master_name": "迪加",
+      "graphic": 100879,
+      "row_sha256": "a650415ca5774a1601f6f4ead0c866ff2430f6328b9a7f4e98c8748933c5532c",
+      "master_elements": [
+        0,
+        80,
+        20,
+        0
+      ],
+      "source_elements": [
+        0,
+        80,
+        20,
+        0
+      ],
+      "source_url": "https://games.sina.com.cn/zhqu/sta/cwzl/chongwu03.shtml",
+      "visible_lines": [
+        64,
+        65
+      ],
+      "status": "MATCHED_NO_ACQUISITION",
+      "note": "2003-04-07玩家投稿水8火2相合但取得栏为空",
+      "official_acquisition_verified": false
+    }
+  ],
+  "supplementary_sources": [
+    {
+      "url": "https://games.sina.com.cn/zhqu/sta/cwzl/chongwu03.shtml",
+      "date": "2003-04-07",
+      "visible_lines": [
+        28,
+        101
+      ],
+      "grade": "DATED_PERIOD_PLAYER_GUIDE",
+      "summary": "普魯夏、固力摩、摩吉摩吉已列原名相容属性，取得栏空；后期取得不可倒填2003。"
+    },
+    {
+      "url": "https://forum.gamer.com.tw/Co.php?bPage=0&bsn=1571&sn=199291&subbsn=10",
+      "grade": "SEARCH_INDEX_ONLY_DIRECT_403",
+      "summary": "暑假攻略索引列固力摩，原文403；不作独立实读或确定奖励流程。"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow.htm",
+      "grade": "LEGACY_INDEX_UNDATED",
+      "visible_lines": [
+        27,
+        79
+      ],
+      "summary": "巴罗多、巴罗特、波比、宠物蛋有名称和图鉴编号索引但无独立链接，不能据此确认属性或取得。"
+    }
+  ],
+  "remaining_without_new_later_reference": [
+    31,
+    32,
+    75,
+    76,
+    90,
+    91,
+    92,
+    95,
+    96,
+    103,
+    108,
+    109,
+    110,
+    111,
+    187,
+    208,
+    222,
+    268,
+    281,
+    293,
+    306,
+    309,
+    317,
+    318,
+    330,
+    344,
+    345,
+    386,
+    387,
+    416,
+    417,
+    436,
+    438,
+    452,
+    453,
+    454
+  ],
+  "summary": {
+    "strict_reference_queue_unchanged": 67,
+    "input_later_residual": 40,
+    "new_later_name_element_reference_rows": 4,
+    "numeric_element_matches": 3,
+    "explicit_no_element_semantic_matches": 1,
+    "cumulative_later_reference_rows": 31,
+    "residual_without_this_new_layer": 36,
+    "context_rows": 11,
+    "official_acquisition_closed": 0,
+    "new_original_client_bytes": 0,
+    "official_species_count": null
+  },
+  "official_same_deployment_verified": false,
+  "original_assets_published": false
+}
