@@ -530,6 +530,12 @@
       "git_blob": "c2f9cab4bc2d75f3dca89fe118f3578eaacbc839",
       "expected_array": "rows",
       "expected_rows": 9
+    },
+    "hf99": {
+      "path": "research/pets/PET-HIGH-FIRST-99-NUMERIC-VARIANT-BOUNDARIES-R1.json",
+      "git_blob": "4519c8ab33c9ba3558779ecb460760bf4387cc9b",
+      "expected_array": "rows",
+      "expected_rows": 36
     }
   },
   "expected": {
@@ -790,6 +796,23 @@
     "selected_definition_occurrences": 8,
     "comparison_only_occurrences": 1,
     "reward_pair_count": 3,
+    "official_closures": 0
+  },
+  "supplement_hf99": {
+    "pairs": 36,
+    "distinct_positions": 58,
+    "relation_counts": {
+      "SAME_GRAPHIC_DIFFERENT_NAME": 23,
+      "SAME_NAME_GRAPHIC": 7,
+      "SAME_NAME_DIFFERENT_GRAPHIC": 6
+    },
+    "panel_range_different_pairs": 29,
+    "growth_range_different_pairs": 25,
+    "panel_any_disjoint_pairs": 15,
+    "panel_all_disjoint_pairs": 6,
+    "growth_any_disjoint_pairs": 1,
+    "both_selected_exact": 35,
+    "selected_route_or_reward_reference_differs": 21,
     "official_closures": 0
   }
 }
