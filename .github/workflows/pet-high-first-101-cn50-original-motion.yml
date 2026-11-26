@@ -1,54 +1,24 @@
 name: PET101 CN50 retained original motion acceptance
 on:
   push:
-    branches: [agent/pet-high-first-100-cn50-full-motion-preflight-20261126]
+    branches: [main, agent/pet-high-first-100-cn50-full-motion-preflight-20261126]
     paths:
       - '.github/workflows/pet-high-first-101-cn50-original-motion.yml'
       - 'tools/stoneage_pet_high_first_101_accept.py'
+      - 'research/pets/PET-HIGH-FIRST-10*'
+      - 'tools/stoneage_pet_source_lookup.py'
+      - 'tools/stoneage_pet_high_first_64_coverage.py'
   pull_request:
     paths:
       - '.github/workflows/pet-high-first-101-cn50-original-motion.yml'
       - 'tools/stoneage_pet_high_first_101_accept.py'
-      - 'research/pets/PET-HIGH-FIRST-101-*'
+      - 'research/pets/PET-HIGH-FIRST-10*'
       - 'tools/stoneage_pet_source_lookup.py'
       - 'tools/stoneage_pet_high_first_64_coverage.py'
 permissions:
   contents: read
 jobs:
-  preserve:
-    if: github.event_name == 'push'
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    permissions:
-      actions: read
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - run: python -m pip install Pillow
-      - name: Verify original derived ZIP and generate projection
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-          gh api repos/${{ github.repository }}/actions/artifacts/15111326113/zip > "$RUNNER_TEMP/pet101.zip"
-          python -m tools.stoneage_pet_high_first_101_accept --artifact "$RUNNER_TEMP/pet101.zip"
-          python -m tools.stoneage_pet_high_first_101_accept
-          python -m tools.stoneage_pet_source_lookup --verify
-          python -m tools.stoneage_pet_high_first_64_coverage --current > "$RUNNER_TEMP/pet101-coverage.json"
-      - name: Preserve verified derived metadata
-        run: |
-          git config user.name stoneage-recovery-bot
-          git config user.email stoneage-recovery-bot@users.noreply.github.com
-          git add research/pets/PET-HIGH-FIRST-101-CN50-MOTION-PROJECTION-R1.json research/pets/PET-HIGH-FIRST-101-CUSTODY-R1.json research/pets/PET-HIGH-FIRST-32-UNIFIED-SOURCE-LOOKUP-MANIFEST-R1.json
-          if ! git diff --cached --quiet; then
-            git commit -m 'PET101: preserve audited native CN50 full motion projection and custody'
-            git push origin HEAD:agent/pet-high-first-100-cn50-full-motion-preflight-20261126
-          fi
   replay:
-    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -60,3 +30,5 @@ jobs:
       - run: python -m tools.stoneage_pet_high_first_101_accept
       - run: python -m tools.stoneage_pet_source_lookup --verify
       - run: python -m tools.stoneage_pet_high_first_64_coverage --current > "$RUNNER_TEMP/pet101-coverage.json"
+      - run: python -m tools.stoneage_pet_high_first_64_coverage
+      - run: python -m tools.stoneage_pet_gap_queue --verify
