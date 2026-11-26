@@ -627,7 +627,32 @@ def build(d):
                     e["linked_records"].append(link("hf95", ["rows", j], row["role"]))
     if "hf74" in d:
         attach_visual(d, out)
+    if "hf101" in d:
+        attach_cn50_motion(d, out)
     return out
+
+def attach_cn50_motion(d, entries):
+    """Keep native CN50 full-motion evidence separate from prior cross-carrier comparisons."""
+    p = d["hf101"]
+    assert p["official_identity_verified"] is False and p["original_runtime_verified"] is False
+    for e in entries:
+        if e["source"] != "cn50":
+            continue
+        raw = resolve(d, e["source"], e["pointer"])
+        key = str(raw["ordinal"])
+        row = p["positions"][key]
+        assert (row["name"], row["row_sha256"]) == (raw["compiled_name"], raw["exe_row_sha256"])
+        groups = [dict(group_index=int(i), **p["groups"][i]) for i in row["group_ids"]]
+        assert {(g["graphic"], g["spr_sha256"]) for g in groups} == {(g["spr_group"], g["sha256"]) for g in raw["spr_groups"]}
+        grade = "CN50_NATIVE_ALBUM_EXACT_RD_NOT_OFFICIAL_IDENTITY"
+        e["detail"]["cn50_motion_reference"] = dict(qualification=grade, motion_status=row["status"], motion_groups=groups, original_runtime_verified=False, official_identity_verified=False)
+        e["linked_records"].append(dict(source="hf101", pointer=["positions", key], qualification=grade))
+        for i in row["group_ids"]:
+            e["linked_records"].append(dict(source="hf101", pointer=["groups", i], qualification=grade))
+        for i in sorted({i for g in groups for i in g["new_original_rows"]}, key=int):
+            e["linked_records"].append(dict(source="hf101_raw", pointer=["observations", i], qualification="ORIGINAL_CN50_DUAL_DECODED_INDEX_PIXELS"))
+        e["linked_records"].append(dict(source="hf101_custody", pointer=[], qualification="DERIVED_ARTIFACT_CUSTODY"))
+
 
 def visual_group_links(group_id, group, qualification):
     yield dict(source="hf74", pointer=["groups", group_id], qualification=qualification)
@@ -1470,6 +1495,13 @@ def verify(m,d,entries):
         assert len(residual[0]["linked_original_records"][0]["record"]) == 344
         assert visual_graphic(d, -1)["results"] == []
         print("PET74_LOOKUP="+json.dumps(dict(vc),sort_keys=True),flush=True)
+    if "hf101" in d:
+        cn = [e for e in entries if e["source"] == "cn50"]
+        refs = [e["detail"]["cn50_motion_reference"] for e in cn]
+        assert len(cn)==305 and collections.Counter(r["motion_status"] for r in refs)=={"ALL_STRICT":284,"ALL_CANVAS_COMPLETE":21}
+        assert all(not r["original_runtime_verified"] and not r["official_identity_verified"] for r in refs)
+        assert {l["pointer"][1] for e in cn for l in e["linked_records"] if l["source"]=="hf101_raw"}==set(d["hf101_raw"]["observations"])
+        assert all(e["source"]=="cn50" for e in entries if e.get("detail") and "cn50_motion_reference" in e["detail"])
     assert m["expected"]["official_species_count"] is None and not m["original_assets_published"]
     print(json.dumps(summary(entries),ensure_ascii=False,indent=2))
 def main():
