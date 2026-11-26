@@ -1,0 +1,28 @@
+name: PET offline atlas integration R1
+on:
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_offline_atlas.py'
+      - 'tests/test_stoneage_pet_offline_atlas.py'
+      - 'tests/browser_pet_offline_atlas.py'
+      - '.github/workflows/pet-offline-atlas-r1.yml'
+      - 'docs/PROJECT-CONTINUITY-PROTOCOL-R1.md'
+  workflow_dispatch:
+jobs:
+  atlas:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_pet_offline_atlas.py'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_project_two_axis_governance.py'
+      - run: python tools/stoneage_pet_offline_atlas.py --output pet-source-atlas-r1.html
+      - run: python -m pip install playwright==1.51.0
+      - run: python -m playwright install --with-deps chromium
+      - run: python tests/browser_pet_offline_atlas.py pet-source-atlas-r1.html
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-source-atlas-r1
+          path: pet-source-atlas-r1.html
