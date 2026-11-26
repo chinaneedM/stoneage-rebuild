@@ -149,3 +149,6 @@ python tools/stoneage_pet_source_lookup.py --legacy-pet16 --source later2016_tem
 python tools/stoneage_pet_source_lookup.py --legacy-pet16 --source tw10_visual --query graphic:100015 --exact --full
 ```
 [七维验收与历史目录补交](../continuity/STONEAGE-PET16-LEDGER-RECONCILE-20261126.md)。
+
+
+PET16 图像与缺技能凭证：旧日本网页23个已获图像位置（含父记录）、大陆网页7个已获图像位置，保留失败和未知名称；后期2016选中技能表102缺槽、混合备表12缺槽，可在旧查询的 `supplemental_evidence` 中按原位置追溯。没有新增原生SPR或官服发行认证。[完整七维矩阵](../../research/pets/PET-FINAL-REVIEW-MATRIX-R1.json)。
