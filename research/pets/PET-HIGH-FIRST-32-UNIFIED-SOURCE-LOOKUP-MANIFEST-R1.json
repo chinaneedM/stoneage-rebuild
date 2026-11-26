@@ -518,6 +518,12 @@
       "git_blob": "79e4acc5e52d1f383942e2d3cc51576fc4271dc8",
       "expected_array": "rows",
       "expected_rows": 55
+    },
+    "hf97": {
+      "path": "research/pets/PET-HIGH-FIRST-97-EQUAL-PROFILE-INSTANCE-ROLES-R1.json",
+      "git_blob": "9ec1db8ba770994f560730828690b62986ff108f",
+      "expected_array": "rows",
+      "expected_rows": 10
     }
   },
   "expected": {
@@ -754,6 +760,19 @@
     "conditional_rank_differs": 14,
     "same_name_graphic_no_projected_difference": 10,
     "same_name_graphic_skill_slots_only": 9,
+    "official_closures": 0
+  },
+  "supplement_hf97": {
+    "pairs": 10,
+    "both_exact_pairs": 6,
+    "unassessed_pairs": 4,
+    "distinct_positions": 17,
+    "exact_pairs_with_lv1_left": 6,
+    "exact_pairs_with_lv1_right": 0,
+    "exact_pairs_right_positive": 5,
+    "exact_pairs_right_no_positive": 1,
+    "right_floor_125_pairs": 3,
+    "right_floor_20901_20902_pairs": 2,
     "official_closures": 0
   }
 }
