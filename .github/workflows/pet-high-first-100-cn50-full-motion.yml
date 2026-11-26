@@ -1,0 +1,32 @@
+name: PET-HIGH-FIRST-100 CN50 full motion preflight
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_100_cn50_full_motion.py'
+      - '.github/workflows/pet-high-first-100-cn50-full-motion.yml'
+      - 'research/pets/PET-HIGH-FIRST-100-*'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_100_cn50_full_motion.py'
+      - '.github/workflows/pet-high-first-100-cn50-full-motion.yml'
+      - 'research/pets/PET-HIGH-FIRST-100-*'
+    types: [opened, synchronize, reopened, ready_for_review]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install Pillow
+      - run: python -m tools.stoneage_pet_high_first_100_cn50_full_motion --output "$RUNNER_TEMP/pet100-cn50.json.gz"
+      - run: sha256sum "$RUNNER_TEMP/pet100-cn50.json.gz"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet100-cn50-preflight
+          path: ${{ runner.temp }}/pet100-cn50.json.gz
+          retention-days: 30
