@@ -1611,17 +1611,23 @@ def main():
     modes.add_argument("--legacy-pet16",action="store_true",help="search the retained PET16 independent source namespaces")
     modes.add_argument("--documentary",action="store_true",help="search historical commission, skill and release evidence separately")
     modes.add_argument("--history",action="store_true",help="browse pinned annual and regional historical evidence")
+    modes.add_argument("--annual-names",action="store_true",help="search literal named evidence in annual source receipts")
     p.add_argument("--year",type=int,choices=range(1999,2027));p.add_argument("--region",choices=("CN","TW","HK_MO","KR","JP","OTHER"));p.add_argument("--version",help="exact explicitly indexed version label, history only")
     query.add_argument("--visual-graphic", type=int, help="exact preserved TW85 graphic number, including residual groups")
     p.add_argument("--exact",action="store_true");p.add_argument("--variants",action="store_true")
     p.add_argument("--source");p.add_argument("--full",action="store_true");p.add_argument("--summary",action="store_true");p.add_argument("--verify",action="store_true")
     args=p.parse_args()
+    if args.annual_names:
+        if args.visual_graphic is not None: p.error("--annual-names and --visual-graphic are separate lookups")
+        from stoneage_pet_annual_names import run
+        run(args)
+        return
     if args.history:
         if args.visual_graphic is not None: p.error("--history and --visual-graphic are separate lookups")
         from stoneage_pet_history_access import run
         run(args)
         return
-    if any((args.year,args.region,args.version)): p.error("--year, --region and --version require --history")
+    if any((args.year,args.region,args.version)): p.error("--year, --region and --version require --history or --annual-names (version history only)")
     if args.documentary:
         if args.visual_graphic is not None: p.error("--documentary and --visual-graphic are separate lookups")
         from stoneage_pet_documentary_access import run
