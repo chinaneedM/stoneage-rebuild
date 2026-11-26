@@ -1,10 +1,6 @@
 name: PET102 TW85 bounded embedded pet master source screen
 on:
-  push:
-    branches: ['agent/pet-high-first-102-tw85-embedded-master-screen-20261126']
-    paths:
-      - 'tools/stoneage_pet_high_first_102_tw85_master_screen.py'
-      - '.github/workflows/pet-high-first-102-tw85-master-screen.yml'
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:

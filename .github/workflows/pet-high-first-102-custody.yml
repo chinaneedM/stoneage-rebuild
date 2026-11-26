@@ -1,38 +1,25 @@
-name: PET102 original source derived receipt custody
+name: PET102 retained original source screen replay
 on:
   push:
-    branches: ['agent/pet-high-first-102-tw85-embedded-master-screen-20261126']
     paths:
+      - 'tools/stoneage_pet_high_first_102*.py'
+      - 'research/pets/PET-HIGH-FIRST-102-*'
       - '.github/workflows/pet-high-first-102-custody.yml'
-      - 'tools/stoneage_pet_high_first_102_accept.py'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_102*.py'
+      - 'research/pets/PET-HIGH-FIRST-102-*'
+      - '.github/workflows/pet-high-first-102-custody.yml'
 permissions:
   contents: read
 jobs:
-  preserve:
+  replay:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    permissions:
-      actions: read
-      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Independently download and verify source-derived ZIP
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-          gh api repos/${{ github.repository }}/actions/artifacts/15113441720/zip > "$RUNNER_TEMP/pet102.zip"
-          python -m tools.stoneage_pet_high_first_102_accept --artifact "$RUNNER_TEMP/pet102.zip"
-          python -m tools.stoneage_pet_high_first_102_accept
-      - name: Preserve derived report and minimized custody only
-        run: |
-          git config user.name stoneage-recovery-bot
-          git config user.email stoneage-recovery-bot@users.noreply.github.com
-          git add research/pets/PET-HIGH-FIRST-102-TW85-EMBEDDED-MASTER-SCREEN-R1.json research/pets/PET-HIGH-FIRST-102-CUSTODY-R1.json
-          if ! git diff --cached --quiet; then
-            git commit -m 'PET102: preserve verified bounded original source screen and custody'
-            git push origin HEAD:agent/pet-high-first-102-tw85-embedded-master-screen-20261126
-          fi
+      - run: python -m tools.stoneage_pet_high_first_102_tw85_master_screen --self-test
+      - run: python -m tools.stoneage_pet_high_first_102_accept

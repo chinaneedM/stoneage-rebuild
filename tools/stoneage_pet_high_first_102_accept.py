@@ -47,6 +47,23 @@ def verify_report(raw):
     summary=dict(bytes_scanned=sum(x["scanned_bytes"] for x in r["files"].values()),distinct_signatures=len(patterns),files=len(names),signature_hit_files=0,signature_layouts=sorted({k[0] for k in patterns}),stride_candidate_files=0,token_hit_files=len(tokens))
     assert r["summary"]==summary
     assert (summary["bytes_scanned"],summary["distinct_signatures"],summary["token_hit_files"])==(4936120,2291,4)
+    # Bounded post-screen classification: data-section literal positions only.
+    expected_album={"sa.exe":36,"sb.exe":35,"sc.exe":21,"sd.exe":34}
+    assert set(tokens)==set(expected_album)
+    for name,count in expected_album.items():
+        assert tokens[name]=={"album_":{"ascii":count},"album_13":{"ascii":1},"savedata.dat":{"ascii":1},"auto.dat":{"ascii":1},"AISetting.dat":{"ascii":1}}
+        x=r["files"][name]
+        for h in x["token_hits"]:
+            for i in h["offsets"]:
+                assert any(sec["name"]==".data" and sec["file_offset"]<=i and i+len(h["token"])<=sec["file_offset"]+sec["raw_size"] for sec in x["pe_sections"])
+        hits=next(h["offsets"] for h in x["token_hits"] if h["token"]=="album_")
+        gaps=[b-a for a,b in zip(hits,hits[1:])]
+        assert sorted(gaps)==[20]*(count-2)+[36]
+        assert next(h["offsets"] for h in x["token_hits"] if h["token"]=="album_13")[0] in hits
+    assert sum(expected_album.values())==126
+    assert not any("album" in p.lower() for p in inv)
+    for name in ("Startup.exe","StoneAge2.exe"):
+        assert r["files"][name]["known_album_grid_probe"]=={"anchors":[],"status":"ANCHOR_MISSING_OR_NONUNIQUE"}
     return summary,tokens
 def receipt(archive):
     z=archive.read_bytes();assert len(z)==71105 and src.sha(z)==ZIP_SHA
