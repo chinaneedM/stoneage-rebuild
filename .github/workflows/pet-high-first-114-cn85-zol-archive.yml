@@ -1,0 +1,26 @@
+name: PET114 CN85 2011 ZOL archive distribution identity
+on:
+  push:
+    branches: ['agent/pet-high-first-114-cn85-zol-archive-20261126']
+    paths:
+      - 'tools/stoneage_pet_high_first_114_cn85_zol_archive.py'
+      - '.github/workflows/pet-high-first-114-cn85-zol-archive.yml'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m tools.stoneage_pet_high_first_114_cn85_zol_archive --self-test
+      - run: python -m tools.stoneage_pet_high_first_114_cn85_zol_archive --output "$RUNNER_TEMP/pet114.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet114-cn85-zol-archive-metadata
+          path: ${{ runner.temp }}/pet114.json
+          if-no-files-found: error
+          retention-days: 15
