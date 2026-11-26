@@ -1,0 +1,2013 @@
+{
+  "schema": "stoneage.pet99.numeric_variant_boundaries.r1",
+  "base_head": "cd8b824d18c82bcbbe9b65d767e18f066d477027",
+  "base_tree": "756b9350e0d07d4f9bdb4dfb78673867f8a6f99b",
+  "input_git_blobs": {
+    "research/pets/PET-HIGH-FIRST-96-TEMPLATE-COLLISION-MATRIX-R1.json": "79e4acc5e52d1f383942e2d3cc51576fc4271dc8",
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-16-TW75-CONDITIONAL-BIRTH-GROWTH-R1.json": "8cb864a78f1ff2b3c89ae1739ac485968d104c10"
+  },
+  "scope": "Remaining HF96 pairs after HF97 equal-profile and HF98 skill-only pairs. All 36 pairs retained, including name/graphic-only differences. Conditional PET16 marginal interval comparisons, not joint support, empirical distributions, runtime validation or official birth/growth verification. Selected configuration routes and rewards remain qualified. No inferred identity or species count.",
+  "panel_order": [
+    "max_hp",
+    "attack",
+    "defense",
+    "quick"
+  ],
+  "internal_order": [
+    "vital",
+    "strength",
+    "toughness",
+    "dexterity"
+  ],
+  "summary": {
+    "pairs": 36,
+    "distinct_positions": 58,
+    "relation_counts": {
+      "SAME_GRAPHIC_DIFFERENT_NAME": 23,
+      "SAME_NAME_GRAPHIC": 7,
+      "SAME_NAME_DIFFERENT_GRAPHIC": 6
+    },
+    "panel_range_different_pairs": 29,
+    "growth_range_different_pairs": 25,
+    "panel_any_disjoint_pairs": 15,
+    "panel_all_disjoint_pairs": 6,
+    "growth_any_disjoint_pairs": 1,
+    "both_selected_exact": 35,
+    "selected_route_or_reward_reference_differs": 21,
+    "official_closures": 0
+  },
+  "rows": [
+    {
+      "collision_index": 0,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 0,
+        "template_id": 1,
+        "row_sha256": "5f3b4e824a0e85221f470e43f3dc3528103a7060f4927108c072287f79c506bd",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          65,
+          10,
+          3
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 5
+      },
+      "right": {
+        "position": 59,
+        "template_id": 97,
+        "row_sha256": "eafd5e0df1a28c453652241a0c6afc8e0c54c4960197118e278048a61723ed62",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 5
+      },
+      "differing_projected_fields": [
+        "name"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 1,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 0,
+        "template_id": 1,
+        "row_sha256": "5f3b4e824a0e85221f470e43f3dc3528103a7060f4927108c072287f79c506bd",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          65,
+          10,
+          3
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 5
+      },
+      "right": {
+        "position": 202,
+        "template_id": 716,
+        "row_sha256": "b09dde18941a40c376c3d7ca13893c2db3501c5a4865930589d27ea9cf3e5475",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          2,
+          2,
+          2
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 5
+      },
+      "differing_projected_fields": [
+        "name",
+        "base"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 3,
+      "relation": "SAME_NAME_GRAPHIC",
+      "left": {
+        "position": 2,
+        "template_id": 3,
+        "row_sha256": "3b3d929e08d01e641dd9a53cb2b0e371cd115928b43cf1e4b6d1c0710b06c9d7",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          13,
+          12,
+          4
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 5
+      },
+      "right": {
+        "position": 5,
+        "template_id": 6,
+        "row_sha256": "aa824f47b432d6201b055596cd85bd90a66c34365f7ac87b339d3ec68c1f8a97",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "differing_projected_fields": [
+        "elements",
+        "base",
+        "initnum",
+        "skill_slot_capacity"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 5,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 2,
+        "template_id": 3,
+        "row_sha256": "3b3d929e08d01e641dd9a53cb2b0e371cd115928b43cf1e4b6d1c0710b06c9d7",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          13,
+          12,
+          4
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 5
+      },
+      "right": {
+        "position": 203,
+        "template_id": 717,
+        "row_sha256": "4afd22b96544c57ca760a455bb4a35dd9e407bb3d5db5adcfb78b7d2510ebb22",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          2,
+          2,
+          2
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 5
+      },
+      "differing_projected_fields": [
+        "name"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 6,
+      "relation": "SAME_NAME_GRAPHIC",
+      "left": {
+        "position": 5,
+        "template_id": 6,
+        "row_sha256": "aa824f47b432d6201b055596cd85bd90a66c34365f7ac87b339d3ec68c1f8a97",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "right": {
+        "position": 193,
+        "template_id": 586,
+        "row_sha256": "e5404d03d1f9a2b854ef06ec091cf4241e38bb89d1304f048adf6a6e2c3138bd",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          3,
+          3,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 5
+      },
+      "differing_projected_fields": [
+        "elements",
+        "base",
+        "initnum",
+        "skill_slot_capacity"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 7,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 5,
+        "template_id": 6,
+        "row_sha256": "aa824f47b432d6201b055596cd85bd90a66c34365f7ac87b339d3ec68c1f8a97",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "right": {
+        "position": 203,
+        "template_id": 717,
+        "row_sha256": "4afd22b96544c57ca760a455bb4a35dd9e407bb3d5db5adcfb78b7d2510ebb22",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          2,
+          2,
+          2
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 5
+      },
+      "differing_projected_fields": [
+        "name",
+        "elements",
+        "base",
+        "initnum",
+        "skill_slot_capacity"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 9,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 11,
+        "template_id": 21,
+        "row_sha256": "ba9f931dcfddb0a9fbcc2d90bb85281c9bedb6c7afad8e64606d5e5bbe65dea4",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          39,
+          39,
+          1
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 3
+      },
+      "right": {
+        "position": 207,
+        "template_id": 721,
+        "row_sha256": "981b9fde65e0c229a9f8bf7c6d53f87f4c3dd11837f635d2c9dea0565fb57bd0",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": 1482,
+        "conditional_rank": 3
+      },
+      "differing_projected_fields": [
+        "name"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 14,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 56,
+        "template_id": 94,
+        "row_sha256": "1340995134b9d6386c42476f45054d73a0edb56db316519a7de9fb37ab4e4d3a",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          8,
+          8,
+          1
+        ],
+        "selected_reward_instance_id": 57,
+        "conditional_rank": 1
+      },
+      "right": {
+        "position": 200,
+        "template_id": 695,
+        "row_sha256": "d929e6c7d440ec50707049921f81328414cd6498a3446886c4748c828a8c33a2",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          4,
+          4,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 3
+      },
+      "differing_projected_fields": [
+        "name",
+        "base"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 15,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 57,
+        "template_id": 95,
+        "row_sha256": "93970f8cbf0153211b9a930502efe3c1064e1869e17ffe35493553121f7f1a40",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          17,
+          17,
+          1
+        ],
+        "selected_reward_instance_id": 481,
+        "conditional_rank": 1
+      },
+      "right": {
+        "position": 201,
+        "template_id": 696,
+        "row_sha256": "365beb28745aab83974f660820bc8161b05ceceb4a9cb0e720d1837560cb8b55",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          4,
+          4,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 3
+      },
+      "differing_projected_fields": [
+        "name",
+        "base"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 16,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 59,
+        "template_id": 97,
+        "row_sha256": "eafd5e0df1a28c453652241a0c6afc8e0c54c4960197118e278048a61723ed62",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 5
+      },
+      "right": {
+        "position": 202,
+        "template_id": 716,
+        "row_sha256": "b09dde18941a40c376c3d7ca13893c2db3501c5a4865930589d27ea9cf3e5475",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          2,
+          2,
+          2
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 5
+      },
+      "differing_projected_fields": [
+        "name",
+        "base"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 22,
+      "relation": "SAME_NAME_GRAPHIC",
+      "left": {
+        "position": 67,
+        "template_id": 106,
+        "row_sha256": "dd9fea1fe302f2c197ce01ae5d4d3a4fc12f28ffe4057c0077c5f9b42cdcef9f",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "right": {
+        "position": 208,
+        "template_id": 724,
+        "row_sha256": "f5239f237c9cf3429f9cca9d2e25b8473306028ed8bd95ab49f841426c08040d",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "differing_projected_fields": [
+        "elements",
+        "initnum",
+        "skill_slot_capacity",
+        "skill_slots"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            0,
+            1
+          ]
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 24,
+      "relation": "SAME_NAME_DIFFERENT_GRAPHIC",
+      "left": {
+        "position": 81,
+        "template_id": 121,
+        "row_sha256": "7af1898b18be54a2636be5472b3ed057448f48fbd830817bfa15d28a4fce4cde",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "right": {
+        "position": 346,
+        "template_id": 995,
+        "row_sha256": "8dcc751680799320423f2ace519c37b3c72eea5c9ca5792b11d5dd388b57fbd1",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "differing_projected_fields": [
+        "graphic",
+        "elements",
+        "base",
+        "initnum",
+        "skill_slot_capacity"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            3
+          ]
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            3
+          ]
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 25,
+      "relation": "SAME_NAME_DIFFERENT_GRAPHIC",
+      "left": {
+        "position": 95,
+        "template_id": 135,
+        "row_sha256": "4b8344f346c27329f8f3af5b741a1925e91d994f48bc266edf83d08908cb4e82",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "right": {
+        "position": 344,
+        "template_id": 993,
+        "row_sha256": "5db4704b9a7966812e0e104fa186044f020304af224e4c472d2c1009a009fd16",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "differing_projected_fields": [
+        "graphic",
+        "elements",
+        "base",
+        "initnum"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 26,
+      "relation": "SAME_NAME_DIFFERENT_GRAPHIC",
+      "left": {
+        "position": 96,
+        "template_id": 136,
+        "row_sha256": "9b5aa4d119b5ee20aff88f539afb1536e256ba38700fe67507783aae507fcdbf",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "right": {
+        "position": 345,
+        "template_id": 994,
+        "row_sha256": "199b86919962418e87d046096cb3ef0f0b92dd6d4d6d38599cb8f9b66c7fa57e",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "differing_projected_fields": [
+        "graphic",
+        "elements",
+        "base",
+        "initnum"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            1
+          ]
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            1
+          ]
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 27,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 108,
+        "template_id": 161,
+        "row_sha256": "26bf74dbb3eae136c6875fb1704a4c8231abc8e0eb9e7b6fc7c9e506147b874c",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 5
+      },
+      "right": {
+        "position": 131,
+        "template_id": 191,
+        "row_sha256": "3ff2c38a75d61a71a5a4c1c955efe41f1664f14c5e79b7cb02fadc00d95c0fba",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          75,
+          75,
+          1
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 2
+      },
+      "differing_projected_fields": [
+        "name",
+        "base",
+        "initnum",
+        "lvup_literal",
+        "skill_slot_capacity"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            0,
+            1
+          ]
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            0,
+            1
+          ]
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 28,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 109,
+        "template_id": 162,
+        "row_sha256": "a1c01650eaf1d15f97764f6e54e93bde3bf3df67e71e96e987b591916407eade",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 5
+      },
+      "right": {
+        "position": 132,
+        "template_id": 192,
+        "row_sha256": "8436f06f06fdfaec664a49c44f0be3366c91a3239f603f868d2a28fcdcef84fb",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          80,
+          80,
+          1
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 2
+      },
+      "differing_projected_fields": [
+        "name",
+        "base",
+        "initnum",
+        "lvup_literal",
+        "skill_slot_capacity"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            1
+          ]
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            0,
+            1
+          ]
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 29,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 110,
+        "template_id": 163,
+        "row_sha256": "23eccb993bab5bd8f9179addf5cf9ad6ae1d92049e2b624f39cec600f0046f36",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 5
+      },
+      "right": {
+        "position": 133,
+        "template_id": 193,
+        "row_sha256": "eb872db644b4397180f4c0685d85b5169c4409e6f24ea208a99ed731f289b161",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          9,
+          9,
+          1
+        ],
+        "selected_reward_instance_id": 309,
+        "conditional_rank": 2
+      },
+      "differing_projected_fields": [
+        "name",
+        "base",
+        "initnum",
+        "lvup_literal",
+        "skill_slot_capacity"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            1
+          ]
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 30,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 110,
+        "template_id": 163,
+        "row_sha256": "23eccb993bab5bd8f9179addf5cf9ad6ae1d92049e2b624f39cec600f0046f36",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 5
+      },
+      "right": {
+        "position": 189,
+        "template_id": 524,
+        "row_sha256": "8f4357d1a7c295b219bbcc45f0530a74de0a42f10d12f685557080ab47becc9e",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          1,
+          1,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 2
+      },
+      "differing_projected_fields": [
+        "name",
+        "base",
+        "initnum",
+        "lvup_literal",
+        "skill_slot_capacity"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            1,
+            3
+          ]
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 31,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 111,
+        "template_id": 164,
+        "row_sha256": "a37db0aabd1a185e4eb637702b6e2a4730a44a2b29014c44b710b24bcde8b1db",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 5
+      },
+      "right": {
+        "position": 134,
+        "template_id": 194,
+        "row_sha256": "64d4fe784e0754064b770044bef506aad392f04cbded11d3383244b3e72968d6",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": 310,
+        "conditional_rank": 1
+      },
+      "differing_projected_fields": [
+        "name",
+        "base",
+        "initnum",
+        "lvup_literal",
+        "skill_slot_capacity",
+        "skill_slots"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            1,
+            2,
+            3
+          ]
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 33,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 133,
+        "template_id": 193,
+        "row_sha256": "eb872db644b4397180f4c0685d85b5169c4409e6f24ea208a99ed731f289b161",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          9,
+          9,
+          1
+        ],
+        "selected_reward_instance_id": 309,
+        "conditional_rank": 2
+      },
+      "right": {
+        "position": 189,
+        "template_id": 524,
+        "row_sha256": "8f4357d1a7c295b219bbcc45f0530a74de0a42f10d12f685557080ab47becc9e",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          1,
+          1,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 2
+      },
+      "differing_projected_fields": [
+        "name",
+        "base"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 35,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 139,
+        "template_id": 214,
+        "row_sha256": "21abec550a7f7e7d334ebe62f0fa8de17650096ccaaefe53acf2d99ab004f76c",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 4
+      },
+      "right": {
+        "position": 198,
+        "template_id": 693,
+        "row_sha256": "372de8d7148ad9a862b6b0c8f54f6fa4a01d0e39595c1d70c6c41d44d3743815",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          4,
+          4,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 5
+      },
+      "differing_projected_fields": [
+        "name",
+        "base"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 38,
+      "relation": "SAME_NAME_GRAPHIC",
+      "left": {
+        "position": 171,
+        "template_id": 303,
+        "row_sha256": "4b8a7573a855330f7dcb50556f74e28c1a836da9b822b694f26b4210352e2b97",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          9,
+          9,
+          0
+        ],
+        "selected_reward_instance_id": 352,
+        "conditional_rank": 0
+      },
+      "right": {
+        "position": 208,
+        "template_id": 724,
+        "row_sha256": "f5239f237c9cf3429f9cca9d2e25b8473306028ed8bd95ab49f841426c08040d",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "differing_projected_fields": [
+        "elements",
+        "initnum",
+        "skill_slot_capacity"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            0,
+            1
+          ]
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 39,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 179,
+        "template_id": 322,
+        "row_sha256": "89c0c529ef397225c2af735fbc5b58a6ec31a9908dacee5b457e87ea73b99124",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          6,
+          6,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "right": {
+        "position": 199,
+        "template_id": 694,
+        "row_sha256": "59c08cbc6e71db12f3ac8d26794e87276aa6fb0261720988942d373c111b6372",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          4,
+          4,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 3
+      },
+      "differing_projected_fields": [
+        "name",
+        "base"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 40,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 187,
+        "template_id": 335,
+        "row_sha256": "22dae34a0f8ef4efc321d750c53362684e321226457222a4cff91e78baae5276",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "right": {
+        "position": 339,
+        "template_id": 986,
+        "row_sha256": "a98522c81716ed77088ba55ffd401407a94c543299da0a052a204fc78c90b822",
+        "selected_grade": "SAME_ID_NONIDENTICAL_ROW",
+        "selected_route_counts": null,
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "differing_projected_fields": [
+        "name",
+        "elements",
+        "base"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": false,
+      "selected_route_or_reward_reference_differs": null,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 41,
+      "relation": "SAME_NAME_DIFFERENT_GRAPHIC",
+      "left": {
+        "position": 187,
+        "template_id": 335,
+        "row_sha256": "22dae34a0f8ef4efc321d750c53362684e321226457222a4cff91e78baae5276",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "right": {
+        "position": 401,
+        "template_id": 1060,
+        "row_sha256": "29fa18adda9b58472d0324356a730f152fe1f0eeb0ebb21497f3514ce9a34f05",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "differing_projected_fields": [
+        "graphic",
+        "elements"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 42,
+      "relation": "SAME_NAME_DIFFERENT_GRAPHIC",
+      "left": {
+        "position": 188,
+        "template_id": 401,
+        "row_sha256": "413d65b8ba21c9a4a739a8847bc8de5300978a62357edd96c8a8a3cc8a484d4f",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "right": {
+        "position": 204,
+        "template_id": 718,
+        "row_sha256": "1d7e737ee254a94aee09654a7e7ddfb4bed8fdcf99090d578b01d88918eb58b1",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": 1479,
+        "conditional_rank": 0
+      },
+      "differing_projected_fields": [
+        "graphic"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 44,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 193,
+        "template_id": 586,
+        "row_sha256": "e5404d03d1f9a2b854ef06ec091cf4241e38bb89d1304f048adf6a6e2c3138bd",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          3,
+          3,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 5
+      },
+      "right": {
+        "position": 203,
+        "template_id": 717,
+        "row_sha256": "4afd22b96544c57ca760a455bb4a35dd9e407bb3d5db5adcfb78b7d2510ebb22",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          2,
+          2,
+          2
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 5
+      },
+      "differing_projected_fields": [
+        "name"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": true,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 45,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 210,
+        "template_id": 726,
+        "row_sha256": "b5df5d0656e8b2d1c2735f4140175e188b29444a109cdadb5d00032669c43ad3",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "right": {
+        "position": 330,
+        "template_id": 966,
+        "row_sha256": "6fdf44c24743488ec9bae9095d59fe2873e38d22ab3c807c348374442ce800d6",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "differing_projected_fields": [
+        "name"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 46,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 214,
+        "template_id": 730,
+        "row_sha256": "495484aeb0df897c9c3056101b756233897e660bbfa5b6aa9f200d9aaeb24688",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "right": {
+        "position": 314,
+        "template_id": 905,
+        "row_sha256": "8efae97a51f7de7a654f58358db872da7e18e8ae7a49fc4010c9c3047ebb10b8",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "differing_projected_fields": [
+        "name",
+        "initnum"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            0
+          ]
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 47,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 242,
+        "template_id": 758,
+        "row_sha256": "b5aaf93e56203bb027148666fceb02792cae7b2b7c810eeb1adf175291e89e38",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 1
+      },
+      "right": {
+        "position": 309,
+        "template_id": 854,
+        "row_sha256": "55a80d138a068cdfcad57f34e99d4d64dd0e90a62871bc616cc291d1f3d7b379",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 2
+      },
+      "differing_projected_fields": [
+        "name",
+        "base",
+        "initnum",
+        "lvup_literal"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 48,
+      "relation": "SAME_NAME_GRAPHIC",
+      "left": {
+        "position": 272,
+        "template_id": 788,
+        "row_sha256": "6a3849d2b2c4467fd96f7b278bcc118dae2725eea95780a3e25ba131d2cfdec0",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "right": {
+        "position": 319,
+        "template_id": 917,
+        "row_sha256": "d13d0e75cb68b97ee9b53b915521cd65e164daf446ae8d8d2060c193793a6c8f",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "differing_projected_fields": [
+        "base",
+        "initnum"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            2
+          ]
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            2
+          ]
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 49,
+      "relation": "SAME_NAME_GRAPHIC",
+      "left": {
+        "position": 277,
+        "template_id": 793,
+        "row_sha256": "90ab80781d84c156fcf682de90f906378ad85afc07aa7836eccb4819158f160d",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "right": {
+        "position": 315,
+        "template_id": 908,
+        "row_sha256": "cd695593c23adc0ae7be668bca9b6ea70a1f3b03ce1b7ae90e1417b43966107e",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "differing_projected_fields": [
+        "base",
+        "initnum",
+        "skill_slot_capacity"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            0,
+            1
+          ]
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            0
+          ]
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 51,
+      "relation": "SAME_NAME_GRAPHIC",
+      "left": {
+        "position": 296,
+        "template_id": 812,
+        "row_sha256": "c5cb0e0c123207042ad00b2b12313121b2122c7bc52d690387222bea2b24ceea",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "right": {
+        "position": 385,
+        "template_id": 1036,
+        "row_sha256": "cd2e20ab103f3cbed440eb8c1d9c04e7079b7dfc329093ce0b2a2d584aadfcde",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "differing_projected_fields": [
+        "base",
+        "initnum",
+        "lvup_literal",
+        "skill_slots"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 52,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 297,
+        "template_id": 813,
+        "row_sha256": "c835dfb84d43b9d47bbed29a1de357f4d3466ef9cca275ec98a693f46b116055",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "right": {
+        "position": 386,
+        "template_id": 1042,
+        "row_sha256": "19b7c59d8c8a7ce6bd2cde9e8e82ef8ccd40b0d3d3239ea7b3839a41e83ee201",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "differing_projected_fields": [
+        "name",
+        "initnum"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": true,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 53,
+      "relation": "SAME_NAME_DIFFERENT_GRAPHIC",
+      "left": {
+        "position": 317,
+        "template_id": 913,
+        "row_sha256": "f9664e606019d1874649c34bdb6aab676c13cd9c82d27b81818778d94c60c97e",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "right": {
+        "position": 318,
+        "template_id": 914,
+        "row_sha256": "8b6beaa55d514393dbd1681b3883d2aa4e4389e1fb088f718949219f8e85bc99",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "differing_projected_fields": [
+        "graphic",
+        "base",
+        "initnum"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": []
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 54,
+      "relation": "SAME_GRAPHIC_DIFFERENT_NAME",
+      "left": {
+        "position": 387,
+        "template_id": 1045,
+        "row_sha256": "07657ddf2565077f88cbff68b846e158740513895201fac4c69b70ec12b9fe25",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 5
+      },
+      "right": {
+        "position": 454,
+        "template_id": 1145,
+        "row_sha256": "61f9ab7106764f6bc09d5c11ccda8f4901b8250fdc6522edd092653f9d19a536",
+        "selected_grade": "EXACT_SHARED_TEMPLATE_ROW",
+        "selected_route_counts": [
+          0,
+          0,
+          0
+        ],
+        "selected_reward_instance_id": null,
+        "conditional_rank": 0
+      },
+      "differing_projected_fields": [
+        "name",
+        "base",
+        "initnum"
+      ],
+      "comparisons": {
+        "level1_internal_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "level1_unmodified_work_panel_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "per_level_internal_increment_marginal_ranges": {
+          "equal": false,
+          "disjoint_components": [
+            1,
+            2
+          ]
+        }
+      },
+      "both_selected_exact": true,
+      "selected_route_or_reward_reference_differs": false,
+      "official_identity_verified": false
+    }
+  ],
+  "original_assets_published": false
+}

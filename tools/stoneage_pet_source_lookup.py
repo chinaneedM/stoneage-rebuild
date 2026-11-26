@@ -596,6 +596,12 @@ def build(d):
             ls.extend(link(src, pointer, "EXACT_NAME_REFERENCE_NOT_OFFICIAL_IDENTITY") for src, pointer in targets)
             add("hf94", ["rows", j], [row["name"]], "LATE_COMMUNITY_CATALOGUE_REFERENCE", [],
                 ls, dict(family=row["family"], catalogue=row["catalogue"], official_identity_verified=False))
+    if "hf99" in d:
+        positions99 = {e["pointer"][1]: e for e in out if e["source"] == "tw75"}
+        for j, row in enumerate(d["hf99"]["rows"]):
+            for side in ("left", "right"):
+                positions99[row[side]["position"]]["linked_records"].append(
+                    link("hf99", ["rows", j], "CONDITIONAL_MARGINAL_VARIANT_NOT_OFFICIAL_IDENTITY"))
     if "hf98" in d:
         positions98 = {e["pointer"][1]: e for e in out if e["source"] == "tw75"}
         for j, row in enumerate(d["hf98"]["rows"]):
@@ -1127,6 +1133,47 @@ def verify(m,d,entries):
         assert grid_count == 5 and sum(bool(r["year_beast_recollection"]) for r in late["rows"]) == 4
         assert sum(r["year_beast_recollection"]["name_variant"] for r in late["rows"] if r["year_beast_recollection"]) == 1
         assert late["summary"]["official_closures"] == 0
+    if "hf99" in d:
+        numeric99 = d["hf99"]
+        for path, sha in numeric99["input_git_blobs"].items():
+            assert blob((ROOT / path).read_bytes()) == sha
+        master99 = d["tw75"]["pet_flag_1_field_projections"]
+        birth99 = d["tw75_birth"]
+        assert numeric99["panel_order"] == birth99["panel_order"] and numeric99["internal_order"] == birth99["internal_order"]
+        def numeric_side99(z):
+            i = z["position"]
+            a, r = master99[i], birth99["rows"][i]
+            assert a["template_id"] == z["template_id"] == r["template_id"]
+            assert a["row_sha256"] == z["row_sha256"] == r["source_row_sha256"]
+            return dict(position=i,template_id=z["template_id"],row_sha256=z["row_sha256"],selected_grade=z["selected_table_grade"],
+                selected_route_counts=z["route_counts"],selected_reward_instance_id=z["reward_instance_id"],conditional_rank=r["rank"])
+        keys99 = ["level1_internal_marginal_ranges","level1_unmodified_work_panel_marginal_ranges","per_level_internal_increment_marginal_ranges"]
+        expected99 = []
+        for i,p in enumerate(d["hf96"]["rows"]):
+            if p["relation"] == "SAME_NAME_GRAPHIC" and p["differing_projected_fields"] in ([],["skill_slots"]):
+                continue
+            lft,rgt = numeric_side99(p["left"]),numeric_side99(p["right"])
+            l,r = [birth99["rows"][z["position"]] for z in (lft,rgt)]
+            comparisons = {k:dict(equal=l[k] == r[k],disjoint_components=[j for j,(a,b) in enumerate(zip(l[k],r[k])) if max(a[0],b[0]) > min(a[1],b[1])]) for k in keys99}
+            expected99.append(dict(collision_index=i,relation=p["relation"],left=lft,right=rgt,differing_projected_fields=p["differing_projected_fields"],
+                comparisons=comparisons,both_selected_exact=p["both_selected_exact"],selected_route_or_reward_reference_differs=p["selected_route_or_reward_reference_differs"],official_identity_verified=False))
+        assert numeric99["rows"] == expected99
+        panel99,growth99 = keys99[1:]
+        stat99 = dict(pairs=len(expected99),distinct_positions=len({r[s]["position"] for r in expected99 for s in ("left","right")}),
+            relation_counts=dict(collections.Counter(r["relation"] for r in expected99)),
+            panel_range_different_pairs=sum(not r["comparisons"][panel99]["equal"] for r in expected99),
+            growth_range_different_pairs=sum(not r["comparisons"][growth99]["equal"] for r in expected99),
+            panel_any_disjoint_pairs=sum(bool(r["comparisons"][panel99]["disjoint_components"]) for r in expected99),
+            panel_all_disjoint_pairs=sum(len(r["comparisons"][panel99]["disjoint_components"]) == 4 for r in expected99),
+            growth_any_disjoint_pairs=sum(bool(r["comparisons"][growth99]["disjoint_components"]) for r in expected99),
+            both_selected_exact=sum(r["both_selected_exact"] for r in expected99),
+            selected_route_or_reward_reference_differs=sum(r["selected_route_or_reward_reference_differs"] is True for r in expected99),official_closures=0)
+        assert numeric99["summary"] == stat99 == m["supplement_hf99"]
+        assert len(expected99) == 36
+        partition99 = [[r["collision_index"] for r in d[k]["rows"]] for k in ("hf97","hf98","hf99")]
+        assert sorted(i for part in partition99 for i in part) == list(range(len(d["hf96"]["rows"])))
+        assert {(e["pointer"][1],l["pointer"][1]) for e in high45 for l in e["linked_records"] if l["source"] == "hf99"} == {(r[s]["position"],j) for j,r in enumerate(expected99) for s in ("left","right")}
+        assert sum(l["source"] == "hf99" for e in entries for l in e["linked_records"]) == 72
     if "hf98" in d:
         variants98 = d["hf98"]
         for path, sha in variants98["input_git_blobs"].items():
