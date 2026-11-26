@@ -494,6 +494,12 @@
       "git_blob": "f69ee743f12ae1d8ee5c67d744c96801572b1618",
       "expected_array": "rows",
       "expected_rows": 255
+    },
+    "hf93": {
+      "path": "research/pets/PET-HIGH-FIRST-93-DATED-FAMILY-CLAIMS-R1.json",
+      "git_blob": "f88f42ae946a33d38502c5fc18b3993085795c65",
+      "expected_array": "rows",
+      "expected_rows": 38
     }
   },
   "expected": {
@@ -680,5 +686,12 @@
     },
     "reference_rows": 260,
     "official_closures": 0
+  },
+  "supplement_hf93": {
+    "scope": "Three dated historical sources; source-specific catalogue family labels, no official family code or first release promotion.",
+    "claims": 38,
+    "linked_positions": 31,
+    "links": 32,
+    "official_family_closures": 0
   }
 }

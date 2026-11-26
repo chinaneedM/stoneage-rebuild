@@ -312,6 +312,12 @@ def build(d):
             endpoint91_positions[row["position"]].append(j)
     dated92 = d.get("hf92")
     dated92_positions = {r["position"]: j for j, r in enumerate(dated92["rows"])} if dated92 else {}
+    families93 = d.get("hf93")
+    families93_positions = collections.defaultdict(list)
+    if families93:
+        for j, row in enumerate(families93["rows"]):
+            for candidate in row["candidates"]:
+                families93_positions[candidate["position"]].append((j, candidate))
     witnesses77 = collections.defaultdict(list)
     for index, witness in enumerate(d.get("hf77", {}).get("rows", [])):
         witnesses77[witness["template_id"]].append((index, witness))
@@ -514,6 +520,16 @@ def build(d):
             ls.append(link("hf92", ["rows", ix], "DATED_CATALOGUE_COMPATIBILITY_NOT_OFFICIAL_RELEASE"))
             for ref in dated["refs"]:
                 ls.append(link("sina2003", ["rows", ref["catalogue_index"]], "DATED_CATALOGUE_CANDIDATE_" + dated["grade"]))
+        if i in families93_positions:
+            refs = families93_positions[i]
+            detail["dated_family_references"] = []
+            for j, candidate in refs:
+                claim = families93["rows"][j]
+                assert candidate["template_row_sha256"] == x["row_sha256"]
+                detail["dated_family_references"].append(dict(
+                    family=claim["family"], source_date=families93["sources"][claim["source"]]["date"],
+                    element_status=candidate["element_status"], official_family_verified=False))
+                ls.append(link("hf93", ["rows", j], "SOURCE_FAMILY_LABEL_" + candidate["element_status"]))
         for index, witness in witnesses77.get(k, []):
             assert x["name"] == witness["name"]
             ls.append(link("hf77", ["rows", index], "REPOSTED_PLAYER_PANEL_NAME_WITNESS_NOT_SAME_DEPLOYMENT"))
@@ -1006,6 +1022,35 @@ def verify(m,d,entries):
         assert source_counts["hf92"] == 255 and dated["summary"]["official_closures"] == 0
         for j, row in enumerate(expected):
             assert sum(l["source"] == "hf92" and l["pointer"] == ["rows", j] for l in high45[row["position"]]["linked_records"]) == 1
+    if "hf93" in d:
+        family_report = d["hf93"]
+        for path, sha in family_report["input_git_blobs"].items():
+            assert blob((ROOT / path).read_bytes()) == sha
+        def norm93(name):
+            return "".join(family_report["character_equivalences"].get(ch, ch) for ch in name)
+        claims = family_report["rows"]
+        assert len(claims) == 38 and len(family_report["sources"]) == 3
+        assert collections.Counter(r["source"] for r in claims) == {0: 24, 1: 1, 2: 13}
+        counts = collections.Counter()
+        linked = set()
+        for j, claim in enumerate(claims):
+            expected = []
+            for i, pet in enumerate(d["tw75"]["pet_flag_1_field_projections"]):
+                if norm93(pet["name"]) != norm93(claim["name"]):
+                    continue
+                elements = claim["reported_elements"]
+                status = "NOT_REPORTED" if elements is None else "COMPATIBLE" if elements == pet["elements"] else "CONFLICT"
+                expected.append(dict(position=i, template_id=pet["template_id"],
+                    template_row_sha256=pet["row_sha256"], name=pet["name"], element_status=status))
+                counts[status] += 1
+                linked.add(i)
+                assert sum(l["source"] == "hf93" and l["pointer"] == ["rows", j] for l in high45[i]["linked_records"]) == 1
+            assert expected == claim["candidates"]
+            assert not claim["official_family_verified"] and not claim["official_release_verified"]
+        assert counts == {"COMPATIBLE": 26, "CONFLICT": 1, "NOT_REPORTED": 5}
+        assert len(linked) == 31 and source_counts["hf93"] == 32
+        assert sum(not row["candidates"] for row in claims) == 8
+        assert family_report["summary"]["official_family_closures"] == 0
     roles58 = d["hf58"]["rows"]
     master58 = d["tw75"]["pet_flag_1_field_projections"]
     originals58 = {r["tw75_row_index"]: r for r in d["hf50"]["projection"]["records"]}
