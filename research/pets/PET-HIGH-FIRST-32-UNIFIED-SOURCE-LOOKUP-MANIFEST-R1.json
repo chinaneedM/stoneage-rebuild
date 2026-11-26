@@ -458,6 +458,12 @@
       "git_blob": "a18c6d69c49069f54e4139f916e64d90d387dbfd",
       "expected_array": "rows",
       "expected_rows": 1
+    },
+    "hf88_skillshop": {
+      "path": "research/recovered/STONEAGE-GAMEPLAY03-ORIGINAL-21-PET-SKILL-SHOP-SOURCE-R1.json",
+      "git_blob": "5735ddc1117a8a6fb2f9417327ec242e4fd06192",
+      "expected_array": "original_skillshop_CREATE_to_parameter_rows",
+      "expected_rows": 21
     }
   },
   "expected": {
@@ -604,5 +610,13 @@
     "compatible_reference_positions_since_hf81": 34,
     "remaining_without_added_reference": 33,
     "earlier_compatible_reference_positions_in_residual": 5
+  },
+  "supplement_hf88": {
+    "scope": "Saved mixed25 configured skill definitions joined to original NPC skillshop lists by exact primary skill row SHA256. NPC offers are not species-specific learnability, fees, or original official runtime.",
+    "matching_skill_ids": 19,
+    "matching_slots": 904,
+    "matching_positions": 440,
+    "slots_without_shop_reference": 37,
+    "position_shop_links": 6636
   }
 }

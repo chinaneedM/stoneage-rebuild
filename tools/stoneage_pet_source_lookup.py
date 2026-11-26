@@ -292,6 +292,13 @@ def build(d):
     floor45 = by_id(d["hf45_floor"]["rows"], "floor_id")
     master76 = d.get("hf76")
     definitions76 = by_id(master76["configured_skill_definitions"], "skill_id") if master76 else {}
+    shop88 = d.get("hf88_skillshop")
+    shop88_ids = by_id(shop88["source_skill_id_master_presence_candidates"], "skill_id") if shop88 else {}
+    shop88_routes = collections.defaultdict(list)
+    if shop88:
+        for j, shop in enumerate(shop88["original_skillshop_CREATE_to_parameter_rows"]):
+            for skill_id in set(shop["source_pet_skill_ids_ordered"]):
+                shop88_routes[skill_id].append(j)
     witnesses77 = collections.defaultdict(list)
     for index, witness in enumerate(d.get("hf77", {}).get("rows", [])):
         witnesses77[witness["template_id"]].append((index, witness))
@@ -417,11 +424,27 @@ def build(d):
             exact = grade == "EXACT_SHARED_TEMPLATE_ROW"
             ls.append(link("hf76", ["rows", i], grade + "_PRESERVED_SELECTED_TABLE"))
             skills = []
+            shop_links = set()
             for slot in row["configured_skill_slots"]:
                 j = definitions76[slot["skill_id"]]
                 definition = master76["configured_skill_definitions"][j]
-                skills.append(dict(slot_index=slot["slot_index"], skill_id=slot["skill_id"], name=definition["name"]))
+                skill = dict(slot_index=slot["slot_index"], skill_id=slot["skill_id"], name=definition["name"])
+                if shop88:
+                    sid = slot["skill_id"]
+                    same_definition = sid in shop88_ids and (
+                        shop88["source_skill_id_master_presence_candidates"][shop88_ids[sid]]["primary_petskill_txt"]["row_sha256"]
+                        == definition["row_sha256"])
+                    routes = shop88_routes[sid] if same_definition else []
+                    skill["saved_skillshop_reference"] = dict(
+                        qualification="EXACT_PRIMARY_SKILL_ROW_AND_SAVED_SHOP_LIST" if routes else "NO_EXACT_REFERENCE_IN_SELECTED_21_SHOPS",
+                        shop_indices=routes,
+                        species_can_learn_verified=False, official_runtime_verified=False)
+                    shop_links.update(routes)
+                skills.append(skill)
                 ls.append(link("hf76", ["configured_skill_definitions", j], "SAVED_CONFIGURED_SKILL_NOT_BIRTH_SKILL_PROOF"))
+            for j in sorted(shop_links):
+                ls.append(link("hf88_skillshop", ["original_skillshop_CREATE_to_parameter_rows", j],
+                               "SAVED_SKILL_SHOP_LIST_NOT_SPECIES_LEARNABILITY_OR_OFFICIAL_RUNTIME"))
             detail["saved_selected_master_fields"] = dict(
                 qualification=grade, selected_row_sha256=row["selected_row_sha256"],
                 matched_birth_inputs={key: x[key] for key in ("base", "initnum", "lvup_literal")} if exact else None,
@@ -727,6 +750,31 @@ def verify(m,d,entries):
         assert sum(bool(row["fields_differing_from_claim"]) for row in verified76) == 6
         assert sum(row["saved_reward_instance_id"] is not None for row in verified76) == 36
         assert all(row["matched_birth_inputs"] is not None or not row["configured_skill_slots"] for row in verified76)
+    if "hf88_skillshop" in d:
+        shop = d["hf88_skillshop"]
+        assert len(shop["original_skillshop_CREATE_to_parameter_rows"]) == 21
+        assert shop["summary"]["distinct_skill_IDs"] == 23
+        all_slots = [slot for row in verified76 for slot in row["configured_skill_slots"]]
+        linked = [slot for slot in all_slots if slot["saved_skillshop_reference"]["shop_indices"]]
+        assert len(all_slots) == 941 and len(linked) == 904
+        assert len({slot["skill_id"] for slot in linked}) == 19
+        assert sum(any(slot["saved_skillshop_reference"]["shop_indices"] for slot in row["configured_skill_slots"])
+                   for row in verified76) == 440
+        assert source_counts["hf88_skillshop"] == 6636
+        definitions = {row["skill_id"]: row for row in d["hf76"]["configured_skill_definitions"]}
+        master_rows = {row["skill_id"]: row for row in shop["source_skill_id_master_presence_candidates"]}
+        for entry, row in zip(high45, verified76):
+            expected_shops = set()
+            for slot in row["configured_skill_slots"]:
+                ref = slot["saved_skillshop_reference"]
+                sid = slot["skill_id"]
+                exact = sid in master_rows and master_rows[sid]["primary_petskill_txt"]["row_sha256"] == definitions[sid]["row_sha256"]
+                expected = [j for j, p in enumerate(shop["original_skillshop_CREATE_to_parameter_rows"])
+                            if exact and sid in p["source_pet_skill_ids_ordered"]]
+                assert ref["shop_indices"] == expected
+                assert not ref["species_can_learn_verified"] and not ref["official_runtime_verified"]
+                expected_shops.update(expected)
+            assert {l["pointer"][1] for l in entry["linked_records"] if l["source"] == "hf88_skillshop"} == expected_shops
     roles58 = d["hf58"]["rows"]
     master58 = d["tw75"]["pet_flag_1_field_projections"]
     originals58 = {r["tw75_row_index"]: r for r in d["hf50"]["projection"]["records"]}
