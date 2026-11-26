@@ -536,6 +536,24 @@
       "git_blob": "4519c8ab33c9ba3558779ecb460760bf4387cc9b",
       "expected_array": "rows",
       "expected_rows": 36
+    },
+    "hf101": {
+      "path": "research/pets/PET-HIGH-FIRST-101-CN50-MOTION-PROJECTION-R1.json",
+      "git_blob": "02b686d84c6c3dc4aba19e4444fd5af2e623a01d",
+      "expected_array": null,
+      "expected_rows": null
+    },
+    "hf101_raw": {
+      "path": "research/pets/PET-HIGH-FIRST-101-CN50-ORIGINAL-RD-R1.json",
+      "git_blob": "f7a50af4bb440008a227d1522d65004dd38a58a6",
+      "expected_array": null,
+      "expected_rows": null
+    },
+    "hf101_custody": {
+      "path": "research/pets/PET-HIGH-FIRST-101-CUSTODY-R1.json",
+      "git_blob": "a5a1accecd434a7648baf921da237f7b662e0878",
+      "expected_array": null,
+      "expected_rows": null
     }
   },
   "expected": {
@@ -814,5 +832,9 @@
     "both_selected_exact": 35,
     "selected_route_or_reward_reference_differs": 21,
     "official_closures": 0
+  },
+  "supplement_hf101": {
+    "scope": "Native CN50 album exact RD full-motion evidence, not official identity, runtime or palette selection.",
+    "source_head": "b33783ffa7c05ef3c7f38cf5f7354f692d79d5a4"
   }
 }
