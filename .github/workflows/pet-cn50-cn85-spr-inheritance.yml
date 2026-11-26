@@ -1,0 +1,20 @@
+name: CN50 CN85 exact SPR inheritance replay
+on:
+  push:
+    branches: ['agent/pet-cn50-cn85-spr-inheritance-20261126']
+    paths:
+      - 'research/pets/PET-CN50-CN85-SPR-INHERITANCE-R1.json'
+      - 'tools/stoneage_pet_cn50_cn85_spr_inheritance.py'
+      - '.github/workflows/pet-cn50-cn85-spr-inheritance.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m tools.stoneage_pet_cn50_cn85_spr_inheritance
