@@ -470,6 +470,18 @@
       "git_blob": "6be7a836aeaa3d9ae8178c749aa487cdb65ffa4b",
       "expected_array": "rows",
       "expected_rows": 19
+    },
+    "hf90": {
+      "path": "research/pets/PET-HIGH-FIRST-90-FUSION-PANEL-JOINT-WITNESSES-R1.json",
+      "git_blob": "70eb657de9479f1af6e91c7f60703a36afe02ef1",
+      "expected_array": "rows",
+      "expected_rows": 41
+    },
+    "hf55_fusion": {
+      "path": "research/pets/PET-HIGH-FIRST-55-LATER-FUSION-HATCHING-R1.json",
+      "git_blob": "502654e78d3f1d855a665db1ee56ab3d7644a052",
+      "expected_array": null,
+      "expected_rows": null
     }
   },
   "expected": {
@@ -630,5 +642,11 @@
     "positions": 37,
     "configured_slots": 37,
     "skill_level_witness_slots": 21
+  },
+  "supplement_hf90": {
+    "scope": "41 archived editorial fusion panels jointly reachable under conditional descendant birth model; eight existing configured skill slots match later comparison exclusion IDs; fix hf89 misindexed master definition links.",
+    "positions": 41,
+    "comparison_exclusion_slots": 8,
+    "official_closures": 0
   }
 }
