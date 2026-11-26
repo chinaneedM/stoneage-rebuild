@@ -9027,3 +9027,8 @@ R14包351231B/SHA7684267ab528d13ceecb23a25632543ae839225607cbda702a32736e4c4d366
 
 - 保存混合 2.5 社区 RAR 重核全包 SHA-256，两个解包实现覆盖 2,205 份 NPC 原文件及两个选中表，另验同包 GMSV。后期固定 PC 源树可解释 PETABI 格式，不能认定是本包编译源。[原件、源码与归档凭证](continuity/STONEAGE-PET-HIGH-FIRST-51-ORIGINAL-NPC-VIP-PETABI-20261124.md)
 - 17173 于 2007-04-04 发布的珊瑚装备玩家攻略，在第 70–71 行列出奇肯沃、奇肯克奈高等级战斗及物品掉落。其角色与 7.0 专区目录的 Lv1 出现说法分开保留。[历史页面](https://news.17173.com/z/stoneage/content/2007-04-04/1175676383.shtml)
+
+
+## 2026-11-26｜旧台湾服六组宠物面板转引
+
+- [PTT 石器板 2011-07-07 转引](https://www.ptt.cc/bbs/StoneAge/M.1310015071.A.E53.html)标注资料来自巴哈石器精华区。搜索索引保留 12 条有初始和期末面板的记录，直接页面为 403。原样本日期、服务端版本和装备状态未得。[PET77 来源等级与联合验算](continuity/STONEAGE-PET-HIGH-FIRST-77-PLAYER-PANEL-WITNESSES-20261126.md)。

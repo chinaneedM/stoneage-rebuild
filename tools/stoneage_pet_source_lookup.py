@@ -275,6 +275,9 @@ def build(d):
     floor45 = by_id(d["hf45_floor"]["rows"], "floor_id")
     master76 = d.get("hf76")
     definitions76 = by_id(master76["configured_skill_definitions"], "skill_id") if master76 else {}
+    witnesses77 = collections.defaultdict(list)
+    for index, witness in enumerate(d.get("hf77", {}).get("rows", [])):
+        witnesses77[witness["template_id"]].append((index, witness))
     birthid=by_id(d["tw75_birth"]["rows"],"template_id");compid=by_id(d["tw75_comparison"]["rows"],"template_id")
     for i,x in enumerate(d["tw75"]["pet_flag_1_field_projections"]):
         k=x["template_id"];b=d["tw75_birth"]["rows"][birthid[k]];e=d["tw75_comparison"]["rows"][compid[k]]
@@ -407,6 +410,9 @@ def build(d):
                 configured_skill_slots=skills, saved_reward_instance_id=row["saved_reward_instance_id"],
                 official_deployment_verified=False,
             )
+        for index, witness in witnesses77.get(k, []):
+            assert x["name"] == witness["name"]
+            ls.append(link("hf77", ["rows", index], "REPOSTED_PLAYER_PANEL_NAME_WITNESS_NOT_SAME_DEPLOYMENT"))
         add("tw75", ["pet_flag_1_field_projections", i], [x["name"]], "CLAIMED_TW75_MASTER_TEMPLATE", [k, x["graphic"]], ls, detail)
     for i, row in enumerate(petabi51):
         add("hf51_petabi", ["petabi_rows", i], [row["template_name"], row["instance_name"]],
@@ -648,6 +654,9 @@ def verify(m,d,entries):
     assert source_counts["hf62"] == 67 and source_counts["hf63"] == 13
     assert {i for i,e in enumerate(high45) if any(l["source"]=="hf63" for l in e["linked_records"])} == {r["position"] for r in d["hf63"]["rows"]}
     assert source_counts["hf61"] == 67 + 135
+    if "hf77" in d:
+        assert source_counts["hf77"] == 12
+        assert d["hf77"]["official_same_deployment_verified"] is False
     for row61 in d["hf61"]["rows"]:
         links61 = [l for l in high45[row61["position"]]["linked_records"] if l["source"] == "hf61"]
         assert {resolve(d, l["source"], l["pointer"])["skill_id"] for l in links61
