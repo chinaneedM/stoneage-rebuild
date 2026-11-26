@@ -35,8 +35,29 @@ class TwoAxisGovernance(unittest.TestCase):
         self.assertEqual(modules[0]["status"],"ACTIVE")
         self.assertTrue(all(x["status"]=="LOCKED_NOT_ACTIVE" for x in modules[1:]))
         self.assertEqual(d["architecture"]["current_active_module"],"PET")
-        self.assertIn("PET-OFFICIAL-CHRONOLOGY-01",d["architecture"]["next_frontier"])
+        self.assertEqual(d["architecture"]["next_frontier"],"PET_INTEGRATED_PER_PET_COMPLETE_PROFILE_AND_OFFLINE_ATLAS")
         self.assertIn("单一",self.module)
+
+    def test_actual_restoration_gate_not_bounded_review(self):
+        d=self.d
+        gate=d["pet_actual_restoration_gate_20261126"]
+        self.assertIn("## 29. Actual complete pet restoration",self.protocol)
+        self.assertEqual(d["architecture"]["work_axis"],"ONE_ACTIVE_CONTENT_MODULE_UNTIL_ACTUAL_COMPLETE_CONTENT_RESTORATION_AND_EXPLICIT_USER_UNLOCK")
+        self.assertEqual(d["module_switch_gate"],"ACTUAL_COMPLETE_PET_ROSTER_FIELDS_ASSETS_OFFLINE_ATLAS_AND_EXPLICIT_USER_ACCEPTANCE")
+        for key in ("source_bounded_review_is_not_completion","prior_closure_request_withdrawn","missing_fields_are_not_complete","explicit_user_acceptance_and_switch_required","source_bounded_delivery_receipts_retained"):
+            self.assertIs(gate[key],True,key)
+        self.assertIs(gate["npc_unlocked"],False)
+        self.assertIsNone(gate["official_species_count"])
+        self.assertEqual(gate["active_module"],"PET")
+        self.assertEqual(gate["required_deliverable"],"INTEGRATED_PRIVATE_OFFLINE_VISUAL_PER_PET_ATLAS")
+        self.assertEqual(set(gate["required_fields"]),{
+            "identity_and_version","family","elements","initial_hp_attack_defense_agility_ranges",
+            "individual_and_total_growth_ranges","innate_and_learnable_skills",
+            "capture_locations_coordinates_levels","all_acquisition_methods","encyclopedia_text",
+            "portrait_model_actions_directions","evolution_fusion_rebirth_riding_relations",
+            "provenance_conflicts_missing_vs_not_applicable"})
+        constitution=(DOC/"STONEAGE-GLOBAL-TWO-AXIS-RESTORATION-CONSTITUTION-R1.md").read_text(encoding="utf-8")
+        self.assertIn("2026-11-26 实际完整复原验收",constitution)
 
     def test_year_axis_is_not_one_module_frontier(self):
         d=self.d
