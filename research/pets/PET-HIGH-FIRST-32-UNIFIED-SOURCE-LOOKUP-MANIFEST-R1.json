@@ -416,6 +416,42 @@
       "git_blob": "40d55cd091bee456c0609303b903f30b280e7de0",
       "expected_array": "pages",
       "expected_rows": 6
+    },
+    "hf81": {
+      "path": "research/pets/PET-HIGH-FIRST-81-LATE-PC-ACQUISITION-REFERENCES-R1.json",
+      "git_blob": "9a5b75b365b67d4231a15b71212f90ba451d7359",
+      "expected_array": "rows",
+      "expected_rows": 11
+    },
+    "hf82": {
+      "path": "research/pets/PET-HIGH-FIRST-82-LATE-PC-ACQUISITION-REFERENCES-R1.json",
+      "git_blob": "ad65c7935db726ab54b3823234bdc1b04e0bf9bc",
+      "expected_array": "rows",
+      "expected_rows": 8
+    },
+    "hf83": {
+      "path": "research/pets/PET-HIGH-FIRST-83-LATE-PC-ACQUISITION-REFERENCES-R1.json",
+      "git_blob": "2168fd2c0ae0f253eec56846a1f14bee458015d4",
+      "expected_array": "rows",
+      "expected_rows": 8
+    },
+    "hf84": {
+      "path": "research/pets/PET-HIGH-FIRST-84-LATE-PC-ACQUISITION-REFERENCES-R1.json",
+      "git_blob": "b45c2066113d69b474cf62eaad2145805f7fc438",
+      "expected_array": "rows",
+      "expected_rows": 4
+    },
+    "hf85": {
+      "path": "research/pets/PET-HIGH-FIRST-85-STARTER-VARIANT-ACQUISITION-R1.json",
+      "git_blob": "0420bd51d0629ab19972a7710e98877f5e9e3144",
+      "expected_array": "rows",
+      "expected_rows": 1
+    },
+    "hf86": {
+      "path": "research/pets/PET-HIGH-FIRST-86-TASK-ACQUISITION-BOUNDARIES-R1.json",
+      "git_blob": "19cce2787fc6aa75dd1d6cb6751980dafe192c87",
+      "expected_array": "rows",
+      "expected_rows": 1
     }
   },
   "expected": {
@@ -549,5 +585,11 @@
     "source_head": "27c1b622e878ed396cf9a034d82dcbf581f02dd5",
     "source_run_id": 45762610249,
     "scope": "440 exact preserved rows; 941 slots resolve to 38 configured original skill definitions. Conditional models, static acquisition and official releases retain independent evidence grades."
+  },
+  "supplement_hf86": {
+    "scope": "Attach 81–86 bounded acquisition/context references to existing TW75 positions only; no new occurrences or formal fields.",
+    "strict_gap": 67,
+    "compatible_reference_positions": 33,
+    "remaining_without_added_reference": 34
   }
 }

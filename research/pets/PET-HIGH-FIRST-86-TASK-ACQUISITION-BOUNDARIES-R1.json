@@ -1,0 +1,492 @@
+{
+  "schema": "stoneage.pet_high_first_86.task_acquisition_boundaries.r1",
+  "base_head": "d13b7a10548771b86d80859659a847e6fecf8df1",
+  "base_tree": "4ad2643050395feedca25cc407460eecb9a2851b",
+  "input_git_blobs": {
+    "research/pets/PET-HIGH-FIRST-85-STARTER-VARIANT-ACQUISITION-R1.json": "0420bd51d0629ab19972a7710e98877f5e9e3144",
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-46-ACQUISITION-GAP-MATRIX-R1.json": "dbbd61460cee2edd4ba2722ab90e8889fe5268e2",
+    "research/pets/PET-HIGH-FIRST-49-DATED-PC-ACQUISITION-GAP-R1.json": "3ae127ef6bee449a472b7b4323b09f930e1c8684"
+  },
+  "scope": "35 PET85 residual positions; one exact-name element-compatible cross-document reward reference and task/egg/context distinctions; no raw original HTML, no same-deployment proof.",
+  "rows": [
+    {
+      "tw75_row_index": 268,
+      "template_id": 784,
+      "master_name": "迪加",
+      "graphic": 100879,
+      "row_sha256": "a650415ca5774a1601f6f4ead0c866ff2430f6328b9a7f4e98c8748933c5532c",
+      "master_elements": [
+        0,
+        80,
+        20,
+        0
+      ],
+      "source_elements": [
+        0,
+        80,
+        20,
+        0
+      ],
+      "qualification": "NAME_ELEMENT_COMPATIBLE_DATED_PC_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "sources": [
+        {
+          "url": "https://games.sina.com.cn/zhqu/sta/cwzl/chongwu03.shtml",
+          "date": "2003-04-07",
+          "visible_lines": [
+            27,
+            29,
+            64
+          ],
+          "role": "PERIOD_ELEMENT_WITNESS"
+        },
+        {
+          "url": "https://games.sina.com.cn/zhqu/sta/article/2003-06-03/10610.shtml",
+          "date": "2003-06-03",
+          "visible_lines": [
+            22,
+            29,
+            73,
+            94
+          ],
+          "role": "PERIOD_ACQUISITION_WITNESS"
+        },
+        {
+          "url": "https://news.17173.com/z/stoneage/content/2003-2-17/n910_826302.html",
+          "date": "2003-02-17",
+          "visible_lines": [
+            36,
+            40
+          ],
+          "role": "PERIOD_PLAYER_REWARD_LIST"
+        }
+      ],
+      "acquisition": {
+        "kind": "RANDOM_QUEST_REWARD",
+        "quest": "伊甸环岛活动 EOT E路线",
+        "level_requirement_literal": 100,
+        "prerequisite": "金飞任务",
+        "repeatable": true,
+        "checkpoints": 12,
+        "final_map": "尼克斯水城",
+        "final_coordinates": [
+          61,
+          96
+        ],
+        "reward_pool_size": 5,
+        "probability": null
+      },
+      "note": "属性页与取得页分源；保留PET49的2002地5水5冲突，不将来源匹配当成同部署。",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    }
+  ],
+  "context": [
+    {
+      "tw75_row_index": 386,
+      "template_id": 1042,
+      "master_name": "布洛多多",
+      "graphic": 100908,
+      "row_sha256": "19b7c59d8c8a7ce6bd2cde9e8e82ef8ccd40b0d3d3239ea7b3839a41e83ee201",
+      "master_elements": [
+        40,
+        0,
+        0,
+        60
+      ],
+      "qualification": "TASK_VARIANT_NAMED_RELATION_NOT_EXACT_TEMPLATE",
+      "note": "2002攻略记20级任务土暴交付，升50级交回后得号角；2003玩家称布洛多多学名阿米朵，但EOT F奖池明确名为阿米朵。两模板同图号、元素、base，INITNUM不同；不共享永久取得。",
+      "sources": [
+        {
+          "url": "https://news.17173.com/z/stoneage/content/2002-11-6/n782_698433.html?_platform=PC",
+          "date": "2002-11-06",
+          "visible_lines": [
+            19,
+            28,
+            59,
+            61,
+            77,
+            79
+          ],
+          "role": "TASK_HANDOVER_WITNESS"
+        },
+        {
+          "url": "https://news.17173.com/z/stoneage/content/2003-2-17/n910_826302.html",
+          "date": "2003-02-17",
+          "visible_lines": [
+            15,
+            22
+          ],
+          "role": "PLAYER_NAME_RELATION"
+        },
+        {
+          "url": "https://games.sina.com.cn/zhqu/sta/article/2003-06-03/10614.shtml",
+          "date": "2003-06-03",
+          "visible_lines": [
+            73,
+            96
+          ],
+          "role": "NORMAL_AMIDO_REWARD_WITNESS"
+        }
+      ],
+      "official_acquisition_verified": false,
+      "ordinary_variant": {
+        "template_id": 813,
+        "row_sha256": "c835dfb84d43b9d47bbed29a1de357f4d3466ef9cca275ec98a693f46b116055",
+        "graphic": 100908,
+        "elements": [
+          40,
+          0,
+          0,
+          60
+        ],
+        "base": [
+          26,
+          34,
+          29,
+          26
+        ],
+        "initnum": 27
+      },
+      "task_variant": {
+        "base": [
+          26,
+          34,
+          29,
+          26
+        ],
+        "initnum": 26
+      },
+      "task_received_level": 20,
+      "task_return_level": 50,
+      "permanent_retention_verified": false
+    },
+    {
+      "tw75_row_index": 309,
+      "template_id": 854,
+      "master_name": "動物園養的拉斯基",
+      "graphic": 100853,
+      "row_sha256": "55a80d138a068cdfcad57f34e99d4d64dd0e90a62871bc616cc291d1f3d7b379",
+      "master_elements": [
+        0,
+        0,
+        60,
+        40
+      ],
+      "qualification": "TASK_RETURN_CONTEXT_NOT_PERMANENT_ACQUISITION",
+      "note": "救出后须带回报平安并交还动物园；最终奖励为布伊胖。已有旧来源复核，不作为新永久取得。",
+      "sources": [
+        {
+          "url": "https://games.sina.com.cn/zhqu/sta/article/2003-06-03/10646.shtml",
+          "date": "2003-06-03",
+          "visible_lines": [
+            103,
+            107
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "tw75_row_index": 317,
+      "template_id": 913,
+      "master_name": "古瓜",
+      "graphic": 100015,
+      "row_sha256": "f9664e606019d1874649c34bdb6aab676c13cd9c82d27b81818778d94c60c97e",
+      "master_elements": [
+        100,
+        0,
+        0,
+        0
+      ],
+      "qualification": "SAME_NAME_TASK_TEMPLATE_UNRESOLVED",
+      "note": "古瓜任务有交接，但源表同名同属性不同图号，不能选定对应模板；PET49既有上下文保留。",
+      "sources": [
+        {
+          "url": "https://news.17173.com/z/stoneage/content/2002-10-26/n264_180931.html?_platform=PC",
+          "date": "2002-10-26",
+          "visible_lines": [
+            14,
+            15
+          ]
+        }
+      ],
+      "official_acquisition_verified": false,
+      "base": [
+        26,
+        32,
+        21,
+        23
+      ],
+      "initnum": 20
+    },
+    {
+      "tw75_row_index": 318,
+      "template_id": 914,
+      "master_name": "古瓜",
+      "graphic": 100018,
+      "row_sha256": "8b6beaa55d514393dbd1681b3883d2aa4e4389e1fb088f718949219f8e85bc99",
+      "master_elements": [
+        100,
+        0,
+        0,
+        0
+      ],
+      "qualification": "SAME_NAME_TASK_TEMPLATE_UNRESOLVED",
+      "note": "古瓜任务有交接，但源表同名同属性不同图号，不能选定对应模板；PET49既有上下文保留。",
+      "sources": [
+        {
+          "url": "https://news.17173.com/z/stoneage/content/2002-10-26/n264_180931.html?_platform=PC",
+          "date": "2002-10-26",
+          "visible_lines": [
+            14,
+            15
+          ]
+        }
+      ],
+      "official_acquisition_verified": false,
+      "base": [
+        27,
+        37,
+        21,
+        24
+      ],
+      "initnum": 23
+    },
+    {
+      "tw75_row_index": 387,
+      "template_id": 1045,
+      "master_name": "寵物蛋",
+      "graphic": 101489,
+      "row_sha256": "07657ddf2565077f88cbff68b846e158740513895201fac4c69b70ec12b9fe25",
+      "master_elements": [
+        100,
+        0,
+        0,
+        0
+      ],
+      "qualification": "SHARED_EGG_GRAPHIC_NOT_SHARED_ACQUISITION",
+      "note": "两蛋模板同图号与元素但base及INITNUM不等；同期融合攻略只证明通用宠物蛋，不证明美拉蛋同机制或指定主表ID。",
+      "sources": [
+        {
+          "url": "https://news.17173.com/z/stoneage/content/2003-7-8/n971_888054.html?_platform=PC",
+          "date": "2003-07-08",
+          "visible_lines": [
+            18,
+            23
+          ]
+        },
+        {
+          "url": "https://games.sina.com.cn/z/sta/2004-04-06/122906.shtml",
+          "date": "2004-04-06",
+          "visible_lines": [
+            24,
+            24
+          ]
+        }
+      ],
+      "official_acquisition_verified": false,
+      "base": [
+        20,
+        10,
+        10,
+        10
+      ],
+      "initnum": 10
+    },
+    {
+      "tw75_row_index": 454,
+      "template_id": 1145,
+      "master_name": "美拉蛋",
+      "graphic": 101489,
+      "row_sha256": "61f9ab7106764f6bc09d5c11ccda8f4901b8250fdc6522edd092653f9d19a536",
+      "master_elements": [
+        100,
+        0,
+        0,
+        0
+      ],
+      "qualification": "SHARED_EGG_GRAPHIC_NOT_SHARED_ACQUISITION",
+      "note": "两蛋模板同图号与元素但base及INITNUM不等；同期融合攻略只证明通用宠物蛋，不证明美拉蛋同机制或指定主表ID。",
+      "sources": [
+        {
+          "url": "https://news.17173.com/z/stoneage/content/2003-7-8/n971_888054.html?_platform=PC",
+          "date": "2003-07-08",
+          "visible_lines": [
+            18,
+            23
+          ]
+        },
+        {
+          "url": "https://games.sina.com.cn/z/sta/2004-04-06/122906.shtml",
+          "date": "2004-04-06",
+          "visible_lines": [
+            24,
+            24
+          ]
+        }
+      ],
+      "official_acquisition_verified": false,
+      "base": [
+        20,
+        37,
+        52,
+        24
+      ],
+      "initnum": 35
+    },
+    {
+      "tw75_row_index": 416,
+      "template_id": 1075,
+      "master_name": "貝沃特",
+      "graphic": 101570,
+      "row_sha256": "6397cdcd0be504b7274cbae338e598d47a628fbb387650e2446be478dac815fa",
+      "master_elements": [
+        100,
+        0,
+        0,
+        0
+      ],
+      "qualification": "NAME_ONLY_GIFT_RATIO_UNKNOWN",
+      "note": "原17173图鉴记2003年初一次两个月包月赠品，属性栏仍空；本轮未找到合格比例证据。",
+      "sources": [
+        {
+          "url": "https://news.17173.com/z/stoneage/chongwu/petshow48.htm",
+          "date": null,
+          "visible_lines": [
+            551,
+            564
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "tw75_row_index": 417,
+      "template_id": 1076,
+      "master_name": "貝恩斯",
+      "graphic": 101571,
+      "row_sha256": "04f7473677754f75cb091a45093a1ee5a9f6c1b4f13fb4a2d57d9eae9889fc46",
+      "master_elements": [
+        0,
+        0,
+        100,
+        0
+      ],
+      "qualification": "NAME_ONLY_GIFT_RATIO_UNKNOWN",
+      "note": "原17173图鉴记2003年初一次两个月包月赠品，属性栏仍空；本轮未找到合格比例证据。",
+      "sources": [
+        {
+          "url": "https://news.17173.com/z/stoneage/chongwu/petshow48.htm",
+          "date": null,
+          "visible_lines": [
+            565,
+            578
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "tw75_row_index": 91,
+      "template_id": 131,
+      "master_name": "奇肯沃",
+      "graphic": 101717,
+      "row_sha256": "9ed781c238b7698a7aa5801d34f88dfc6009904c80c6222dea92415896633ed4",
+      "master_elements": [
+        80,
+        0,
+        0,
+        20
+      ],
+      "qualification": "PERIOD_LOCATION_ONLY_NO_ELEMENT_RATIO",
+      "note": "2003-11-21同期7.0玩家稿载泪之海一级出现，未写元素或精确坐标；与已存来源相容但可能转载，不重复计独立取得证明。",
+      "sources": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-11-21/71680.shtml?from=wap",
+          "date": "2003-11-21",
+          "visible_lines": [
+            24,
+            24
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    },
+    {
+      "tw75_row_index": 92,
+      "template_id": 132,
+      "master_name": "奇肯克奈",
+      "graphic": 101718,
+      "row_sha256": "8f7f5354f99a64cd42cc9182c564756ef3715169c217506e0ae5fea64df90187",
+      "master_elements": [
+        0,
+        100,
+        0,
+        0
+      ],
+      "qualification": "PERIOD_LOCATION_ONLY_NO_ELEMENT_RATIO",
+      "note": "2003-11-21同期7.0玩家稿载泪之海一级出现，未写元素或精确坐标；与已存来源相容但可能转载，不重复计独立取得证明。",
+      "sources": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-11-21/71680.shtml?from=wap",
+          "date": "2003-11-21",
+          "visible_lines": [
+            24,
+            24
+          ]
+        }
+      ],
+      "official_acquisition_verified": false
+    }
+  ],
+  "remaining_without_new_later_reference": [
+    31,
+    32,
+    75,
+    76,
+    90,
+    91,
+    92,
+    95,
+    96,
+    103,
+    108,
+    109,
+    110,
+    111,
+    187,
+    208,
+    281,
+    293,
+    306,
+    309,
+    317,
+    318,
+    330,
+    344,
+    345,
+    386,
+    387,
+    416,
+    417,
+    436,
+    438,
+    452,
+    453,
+    454
+  ],
+  "summary": {
+    "strict_reference_queue_unchanged": 67,
+    "input_later_residual": 35,
+    "new_later_name_element_reference_rows": 1,
+    "cumulative_later_reference_rows": 33,
+    "residual_without_this_new_layer": 34,
+    "context_rows": 10,
+    "official_acquisition_closed": 0,
+    "new_original_client_bytes": 0,
+    "official_species_count": null
+  },
+  "official_same_deployment_verified": false,
+  "original_assets_published": false
+}

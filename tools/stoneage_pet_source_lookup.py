@@ -230,6 +230,22 @@ def build(d):
             acquisition_updates[row["tw75_row_index"]].append(
                 link(source, [collection, ordinal], row["qualification"])
             )
+    # Later acquisition supplements are linked to existing source positions, never new pets.
+    for source, collections_to_link in (
+        ("hf81", ("rows",)), ("hf82", ("rows", "conflicts")),
+        ("hf83", ("rows", "context")), ("hf84", ("rows", "context")),
+        ("hf85", ("rows", "starter_variants")), ("hf86", ("rows", "context")),
+    ):
+        for collection in collections_to_link:
+            for ordinal, row in enumerate(d[source][collection]):
+                i = row["tw75_row_index"]
+                native = d["tw75"]["pet_flag_1_field_projections"][i]
+                assert row["template_id"] == native["template_id"] and row["master_name"] == native["name"]
+                if "row_sha256" in row:
+                    assert row["row_sha256"] == native["row_sha256"]
+                assert row["official_acquisition_verified"] is False
+                grade = row.get("qualification", row.get("status", row.get("evidence", "CONTEXT_ONLY_NOT_QUALIFIED")))
+                acquisition_updates[i].append(link(source, [collection, ordinal], grade))
     original50 = d["hf50"]["projection"]["records"]
     original50_index = by_id(original50, "tw75_row_index")
     trainer50 = by_id(d["hf50"]["projection"]["npc_source_files"], "path")["sa60/newbie/m_tiger"]
@@ -640,6 +656,24 @@ def verify(m,d,entries):
     assert len(g46) == 349
     assert collections.Counter(g["gap_state"] for g in g46) == d["hf46"]["summary"]["gap_state_counts"]
     source_counts = collections.Counter(l["source"] for e in high45 for l in e["linked_records"])
+    strict = d["hf49"]["remaining_gap_row_indices"]
+    remaining = list(strict)
+    matched = set()
+    for source in ("hf81", "hf82", "hf83", "hf84", "hf85", "hf86"):
+        supplement = d[source]
+        assert supplement["official_same_deployment_verified"] is False and supplement["original_assets_published"] is False
+        for j, row in enumerate(supplement["rows"]):
+            i = row["tw75_row_index"]
+            native = d["tw75"]["pet_flag_1_field_projections"][i]
+            assert i in remaining and i not in matched
+            assert row["row_sha256"] == native["row_sha256"] and row["master_elements"] == native["elements"]
+            assert row["official_acquisition_verified"] is False and row["official_first_release"] is None
+            assert sum(l["source"] == source and l["pointer"] == ["rows", j] for l in high45[i]["linked_records"]) == 1
+            matched.add(i)
+        remaining = [i for i in remaining if i not in matched]
+        assert remaining == supplement["remaining_without_new_later_reference"]
+    assert len(strict) == 67 and len(matched) == 33 and len(remaining) == 34
+
     assert {key: source_counts[key] for key in ("hf46", "hf47", "hf48", "hf49", "hf50")} == {
         "hf46": 349, "hf47": 29, "hf48": 19, "hf49": 22, "hf50": 71,
     }
