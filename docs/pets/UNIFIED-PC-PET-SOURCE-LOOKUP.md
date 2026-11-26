@@ -93,3 +93,6 @@ R76 在标称台湾 7.5 的 467 个现有位置增加保存档主表核查。可
 python tools/stoneage_pet_source_lookup.py --source tw75 --query 烏力 --exact --full
 python tools/stoneage_pet_source_lookup.py --source tw75 --query 901 --exact --full
 ```
+
+
+R88 将21处原保存版技能学习配置按技能ID与主表定义原行SHA-256精确连接到440个已匹配模板的904个正技能槽。带 `--full` 可追原参数路径、楼层、倍率字面及配置列表；这不证明特定宠物可学习或官方运行。[取证与边界](../continuity/STONEAGE-PET-HIGH-FIRST-88-SAVED-SKILLSHOP-LINKS-20261126.md)
