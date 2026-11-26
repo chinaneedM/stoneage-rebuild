@@ -114,3 +114,13 @@ R93 挂接2002、2003、2013三个经典PC同期来源的明确系别标签，38
 
 
 R94 为R93未匹配主档的8个名称追加独立资料站详情参考条目，并连接5个现有原8.5相册位置及1个大陆同期记载。资料站区间及2006年兽回忆的元素冲突分开保留，不作为官服主档。新增8个查询来源条目不增加认证物种或原资源位置。[取证](../continuity/STONEAGE-PET-HIGH-FIRST-94-LATE-FAMILY-CATALOGUE-REFERENCES-20261126.md)
+
+
+## 大陆2012认证原包名称查询（候选）
+
+新增独立来源 `cn85_original`：8.5免费版及2.5收费版两个原程序的相同编译表，521具名位置、513不同字面。原始物理位置、槽、脸号以 `ordinal:`、`slot:`、`face:` 前缀检索，避免混用图号。保留49个未解析记录长度间隔及57个已知空位，不把它们当宠物。既有大陆5.0的305档可查看 `cn85_compiled_crosswalk`；304四字段相同，艾柏瑞/艾比斯保留异位、异名。仅客户端编译字段，未证原生选择器、原图、实际发行或服务端属性。历史3015位置缺件队列暂不变，PET124原件处理验收后再协调增量。
+
+```sh
+python tools/stoneage_pet_source_lookup.py --source cn85_original --query 艾柏瑞 --exact --full
+python tools/stoneage_pet_source_lookup.py --source cn85_original --query ordinal:314 --exact --full
+```

@@ -629,7 +629,49 @@ def build(d):
         attach_visual(d, out)
     if "hf101" in d:
         attach_cn50_motion(d, out)
+    if "cn85_original" in d:
+        attach_cn85_original(d, out, add, link)
     return out
+
+def attach_cn85_original(d, entries, add, link):
+    """Two identical table segments in two original programs, one source-position inventory."""
+    tables = d["cn85_original"]["analysis"]["compiled_table_candidates"]
+    cross = d["cn50_cn85_crosswalk"]
+    assert d["cn85_original"]["original_client_verified"] and cross["official_closures"] == 0
+    assert [tables[i]["program"] for i in (1, 2)] == ["sa_85_free.exe", "sa_25_payment.exe"]
+    old = {row["cn50"]["ordinal"]: (i, row) for i, row in enumerate(cross["rows"])}
+    old_named = collections.defaultdict(list)
+    for i, row in enumerate(cross["rows"]):
+        if row["cn50"]["slot"] >= 0:
+            old_named[row["cn50"]["name"]].append(i)
+    for e in entries:
+        if e["source"] != "cn50":
+            continue
+        row = resolve(d, "cn50", e["pointer"])
+        i, match = old[row["ordinal"]]
+        assert match["cn50"]["name"] == row["compiled_name"]
+        e["detail"]["cn85_compiled_crosswalk"] = match
+        e["linked_records"].append(link("cn50_cn85_crosswalk", ["rows", i], "COMPILED_FIELDS_ONLY_NOT_SERVER_IDENTITY"))
+    for segment, start in enumerate((0, 593)):
+        a, b = (tables[i]["candidates"][segment] for i in (1, 2))
+        assert a["entries"] == b["entries"] and a["table_source_sha256"] == b["table_source_sha256"]
+        for j, row in enumerate(a["entries"]):
+            if row["slot"] < 0:
+                continue
+            ordinal = start + j
+            ptr = ["analysis", "compiled_table_candidates", 1, "candidates", segment, "entries", j]
+            counterpart = ["analysis", "compiled_table_candidates", 2, "candidates", segment, "entries", j]
+            links = [link("cn85_original", counterpart, "EXACT_SECOND_PROGRAM_COMPILED_TABLE_NOT_RUNTIME")]
+            for i in old_named[row["name"]]:
+                links.append(link("cn50_cn85_crosswalk", ["rows", i], "SAME_COMPILED_NAME_NOT_SERVER_IDENTITY"))
+            if ordinal in old and old[ordinal][1]["cn50"]["name"] != row["name"]:
+                links.append(link("cn50_cn85_crosswalk", ["rows", old[ordinal][0]], "SAME_PHYSICAL_POSITION_DIFFERENT_COMPILED_LABEL"))
+            add("cn85_original", ptr, [row["name"]], "AUTHENTICATED_CN2012_COMPILED_NAME_POSITION",
+                ["ordinal:"+str(ordinal), "slot:"+str(row["slot"]), "face:"+str(row["face"])], links,
+                dict(physical_ordinal=ordinal, compiled_slot=row["slot"], compiled_face=row["face"],
+                     programs=[tables[i]["program"] for i in (1, 2)], segment_sha256=a["table_source_sha256"],
+                     native_selector_verified=False, original_portrait_verified=False,
+                     official_release_verified=False, same_deployment_server_fields_verified=False))
 
 def attach_cn50_motion(d, entries):
     """Keep native CN50 full-motion evidence separate from prior cross-carrier comparisons."""
@@ -1502,6 +1544,19 @@ def verify(m,d,entries):
         assert all(not r["original_runtime_verified"] and not r["official_identity_verified"] for r in refs)
         assert {l["pointer"][1] for e in cn for l in e["linked_records"] if l["source"]=="hf101_raw"}==set(d["hf101_raw"]["observations"])
         assert all(e["source"]=="cn50" for e in entries if e.get("detail") and "cn50_motion_reference" in e["detail"])
+    if "cn85_original" in d:
+        cn85 = [e for e in entries if e["source"] == "cn85_original"]
+        cn50 = [e for e in entries if e["source"] == "cn50"]
+        assert len(cn85) == 521 and len({e["labels"][0] for e in cn85}) == 513
+        assert len({e["detail"]["compiled_slot"] for e in cn85}) == len({e["detail"]["compiled_face"] for e in cn85}) == 521
+        assert len(cn50) == 305 and all("cn85_compiled_crosswalk" in e["detail"] for e in cn50)
+        assert sum(e["detail"]["cn85_compiled_crosswalk"]["exact_same_ordinal"] for e in cn50) == 304
+        assert all(not e["detail"][k] for e in cn85 for k in ("native_selector_verified","original_portrait_verified","official_release_verified","same_deployment_server_fields_verified"))
+        assert all(not 544 <= e["detail"]["physical_ordinal"] < 593 for e in cn85)
+        assert len(list(search(entries,"艾柏瑞",exact=True,source="cn85_original"))) == 1
+        assert list(search(entries,"艾柏瑞",exact=True,source="cn85_original"))[0]["detail"]["physical_ordinal"] == 439
+        assert list(search(entries,"ordinal:314",exact=True,source="cn85_original"))[0]["labels"] == ["艾比斯"]
+        print("CN85_ORIGINAL_LOOKUP_PASS 521 named positions, 513 labels, 305 backward references",flush=True)
     assert m["expected"]["official_species_count"] is None and not m["original_assets_published"]
     print(json.dumps(summary(entries),ensure_ascii=False,indent=2))
 def main():
