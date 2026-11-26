@@ -1,0 +1,31 @@
+name: PET107 CN70 historical torrent metadata and archive link replay
+on:
+  push:
+    branches: ['agent/pet-high-first-104-cn70-archive-index-20261126']
+    paths:
+      - 'tools/stoneage_pet_high_first_107_cn70_torrent_metadata.py'
+      - '.github/workflows/pet-high-first-107-cn70-torrent-metadata.yml'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m tools.stoneage_pet_high_first_107_cn70_torrent_metadata --self-test
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/actions/artifacts/15115016195/zip > "$RUNNER_TEMP/pet106.zip"
+          python -m tools.stoneage_pet_high_first_107_cn70_torrent_metadata --artifact "$RUNNER_TEMP/pet106.zip" --output "$RUNNER_TEMP/pet107.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet107-cn70-torrent-derived-metadata
+          path: ${{ runner.temp }}/pet107.json
+          if-no-files-found: error
+          retention-days: 15
