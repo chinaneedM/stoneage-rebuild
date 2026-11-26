@@ -1,0 +1,23 @@
+name: PET residual visual review
+on:
+  push:
+    branches: ['agent/pet-residual-visual-review-20261126']
+    paths:
+      - 'tools/stoneage_pet_residual_visual_review.py'
+      - 'research/pets/PET-WHOLE-REVIEW-RESIDUAL-VISUAL-R1.json'
+      - '.github/workflows/pet-residual-visual-review.yml'
+      - 'docs/continuity/STONEAGE-PET-RESIDUAL-VISUAL-REVIEW-20261126.md'
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: PYTHONPATH=. python tools/stoneage_pet_residual_visual_review.py
+      - run: python tools/stoneage_pet_source_lookup.py --verify
+      - run: python tools/stoneage_pet_gap_queue.py --current --verify
