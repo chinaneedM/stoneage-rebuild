@@ -15,3 +15,13 @@ NEXT：先验证候选精确CI、实际HTML和浏览器搜索/筛选/分页，�
 候选 `7cab473f9e543006a536bda2546f99fe242e70dd` 已实证7/7 Actions成功，专项 [run 45850912072](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/45850912072) 生成 HTML，artifact15132418569 / ZIP956939B / API digest sha256:adf5d77c861017fcce4127eb93e9b0f23abf2aa5081a8dc56ba236a9f3c8acae（未独立下载）。本修订追加124档原证Git blob校验和实际 file:// Chromium 自动化测试；仍须精确新候选 Actions。私人原图材料仅检索到旧124图概览与重建脚本，未在本轮读取并验证原图资产，不宣称完成。
 
 2026-11-26 后续：候选15b8bc037dfe9ae1f3ec172d1c996122d19b3643 的专项 run45851123719/job140017440469 在档案原证散列断言失败，浏览器步骤未运行。实查候选树与历史PET31索引124项，120完全一致、4项PET-000116至119已由PET32/33合法追加高版本头像候选。逐一读取旧/新8个Git blob做递归字段差异，仅新增appearance.cross_version_original_portrait_rd_candidates及provenance.sources后追加一条来源；其余字段完全不变。保留原PET31不可变，明确四组旧→新散列，严格验证每组两候选及TW1原头像仍缺，其他120项保持严格散列核验。待新候选CI及浏览器实测，不改正式字段。
+
+## 私人图鉴实际整合（2026-11-26）
+
+候选2dd910d38b082ab1ab79b03b75b421f6a3650e0a 的专项 run45851596393/job140019082926：档案单测、双轴治理单测及HTML生成均成功；Playwright安装浏览器及依赖失败，未执行实际file://测试。将CI runner明确固定为ubuntu-24.04，待新精确候选验证。
+
+独立下载旧已通过候选7cab473的公开纯数据HTML artifact15132418569，ZIP SHA256 adf5d77c861017fcce4127eb93e9b0f23abf2aa5081a8dc56ba236a9f3c8acae。私人资料库旧图鉴ZIP实际读取与完整CRC/SHA核验，将124个已有档案的原2D图像、动作数据与同一离线资料页面整合。图像及动作以来源ID绑定，不新增物种，不把后期配置当早期原服。私人整合包 StoneAge-PET-Integrated-Private-R1.zip，85,186,362 B，SHA256 371efef584b2287ecbd55e8723fc3c585d969f399a176b4b924c28d638cfa665；同目录构建脚本 StoneAge-PET-Integrated-Private-R1-build.py，SHA256 7d3aa5b436c97caeca06796f8ac0bdce96487663a59b3a0a07289a31a5a5ae49。两文件已保存私人资料库；不将原素材或私人ZIP提交公开仓库。
+
+实际浏览器内存DOM测试：5924来源记录显示、40/页、分页、来源过滤、乌力编号命中、真实头像96×104与原姿态28×52所引用PNG独立解码、动作2方向7与下一帧40×48、播放/暂停、PET-000116本版缺头像回退68×93、TW75条件数值展示、负向搜索；零页面错误、零外网请求。环境浏览器限制未能实证file://直接导航与图像加载，不能夸大为全浏览器验收。私人包仍仅覆盖已有124档原图与动作，5924是来源记录，不能解释为宠物数量。未取得的正式属性、技能、成长及获取字段保持未知。
+
+NEXT：继续补齐高版本正式宠物逐条档案并整合其余五查询目录；扩展图像动作及实际文件浏览器验收，按§29逐项审计缺件。PET继续唯一活动，历史整体完成UNKNOWN。
