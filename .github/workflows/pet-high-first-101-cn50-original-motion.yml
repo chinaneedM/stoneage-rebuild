@@ -31,4 +31,4 @@ jobs:
       - run: python -m tools.stoneage_pet_source_lookup --verify
       - run: python -m tools.stoneage_pet_high_first_64_coverage --current > "$RUNNER_TEMP/pet101-coverage.json"
       - run: python -m tools.stoneage_pet_high_first_64_coverage
-      - run: python -m tools.stoneage_pet_gap_queue --verify
+      - run: python tools/stoneage_pet_gap_queue.py --verify
