@@ -1612,11 +1612,17 @@ def main():
     modes.add_argument("--documentary",action="store_true",help="search historical commission, skill and release evidence separately")
     modes.add_argument("--history",action="store_true",help="browse pinned annual and regional historical evidence")
     modes.add_argument("--annual-names",action="store_true",help="search literal named evidence in annual source receipts")
+    modes.add_argument("--kr-archive",action="store_true",help="browse Korean archived page image references independently")
     p.add_argument("--year",type=int,choices=range(1999,2027));p.add_argument("--region",choices=("CN","TW","HK_MO","KR","JP","OTHER"));p.add_argument("--version",help="exact explicitly indexed version label, history only")
     query.add_argument("--visual-graphic", type=int, help="exact preserved TW85 graphic number, including residual groups")
     p.add_argument("--exact",action="store_true");p.add_argument("--variants",action="store_true")
     p.add_argument("--source");p.add_argument("--full",action="store_true");p.add_argument("--summary",action="store_true");p.add_argument("--verify",action="store_true")
     args=p.parse_args()
+    if args.kr_archive:
+        if args.visual_graphic is not None or any((args.year,args.region,args.version,args.source,args.variants)): p.error("--kr-archive uses literal image path queries only")
+        from stoneage_pet_kr_archive_access import run
+        run(args)
+        return
     if args.annual_names:
         if args.visual_graphic is not None: p.error("--annual-names and --visual-graphic are separate lookups")
         from stoneage_pet_annual_names import run
