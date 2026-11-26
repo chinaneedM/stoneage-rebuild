@@ -1,0 +1,32 @@
+name: PET-HIGH-FIRST-74 unified visual references
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_74_unified_visual.py'
+      - 'tools/stoneage_pet_source_lookup.py'
+      - 'research/pets/PET-HIGH-FIRST-74-*'
+      - 'research/pets/PET-HIGH-FIRST-32-UNIFIED-SOURCE-LOOKUP-MANIFEST-R1.json'
+      - '.github/workflows/pet-high-first-74-unified-visual.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_74_unified_visual.py'
+      - 'tools/stoneage_pet_source_lookup.py'
+      - 'research/pets/PET-HIGH-FIRST-74-*'
+      - 'research/pets/PET-HIGH-FIRST-32-UNIFIED-SOURCE-LOOKUP-MANIFEST-R1.json'
+      - '.github/workflows/pet-high-first-74-unified-visual.yml'
+    types: [opened, synchronize, reopened, ready_for_review]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install Pillow
+      - run: python -m tools.stoneage_pet_high_first_74_unified_visual
+      - run: python -m tools.stoneage_pet_source_lookup --visual-graphic 100400 --full > "$RUNNER_TEMP/pet74-residual.json"
+      - run: python -m tools.stoneage_pet_source_lookup --query 古瓜 --source tw75 --exact --full > "$RUNNER_TEMP/pet74-tw75.json"
