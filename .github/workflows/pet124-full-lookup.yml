@@ -1,0 +1,24 @@
+name: PET124 full lookup and current field queue
+on:
+  push:
+    branches: ['agent/pet124-full-lookup-20261126']
+    paths:
+      - 'tools/stoneage_pet_source_lookup.py'
+      - 'tools/stoneage_pet_gap_queue.py'
+      - 'research/pets/PET-HIGH-FIRST-32-UNIFIED-SOURCE-LOOKUP-MANIFEST-R1.json'
+      - '.github/workflows/pet124-full-lookup.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python tools/stoneage_pet_source_lookup.py --verify
+      - run: python tools/stoneage_pet_gap_queue.py --verify
+      - run: python tools/stoneage_pet_gap_queue.py --current --verify
+      - run: python tools/stoneage_pet_source_lookup.py --source cn85_original --query ordinal:547 --exact --full
