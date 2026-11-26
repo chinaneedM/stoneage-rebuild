@@ -488,6 +488,12 @@
       "git_blob": "fd074895ec2460325cdaf2e82b08037786551b80",
       "expected_array": "rows",
       "expected_rows": 29
+    },
+    "hf92": {
+      "path": "research/pets/PET-HIGH-FIRST-92-DATED-CATALOGUE-CROSSWALK-R1.json",
+      "git_blob": "f69ee743f12ae1d8ee5c67d744c96801572b1618",
+      "expected_array": "rows",
+      "expected_rows": 255
     }
   },
   "expected": {
@@ -661,6 +667,18 @@
     "claimed_witness_only": 1,
     "saved_witness_only": 0,
     "no_constructed_witness": 2,
+    "official_closures": 0
+  },
+  "supplement_hf92": {
+    "scope": "Dated editorial catalogue joined via preserved CN50 graphic plus checked name and elements to TW75 claimed template; not release certification.",
+    "positions": 255,
+    "grades": {
+      "UNIQUE_NAME_GRAPHIC_ELEMENT_COMPATIBLE": 223,
+      "REBIRTH_LABEL_COMPATIBLE": 1,
+      "GRAPHIC_ONLY_DIFFERENT_NAME": 19,
+      "ELEMENT_CONFLICT": 12
+    },
+    "reference_rows": 260,
     "official_closures": 0
   }
 }
