@@ -1,0 +1,68 @@
+{
+  "schema": "stoneage.pet100.cn50.preflight.observed_ci.r1",
+  "source_head": "204c19fa25ce701b2545f7c54059fdb4f324705c",
+  "gzip_sha256": "7d634ea436c8e9b29f387c217e4b1761e8823c34d58b269513aff723ca14f536",
+  "runs": [
+    {
+      "run": 45808010259,
+      "job": 139868232951,
+      "artifact": 15110622631,
+      "zip_sha256": "bac6158ea923b46ff9902cfc99fd369c4fe4623d2b1bb50165c41e1845dbe1ab",
+      "zip_bytes": 9049857
+    },
+    {
+      "run": 45808000667,
+      "job": 139868200375,
+      "artifact": 15109962815,
+      "zip_sha256": "fe925a17211d90c6aeac66ace94d247f0fbab4916718971179ffd3d2d21f7ccc",
+      "zip_bytes": 9049857
+    }
+  ],
+  "summary": {
+    "bitmap_grade": {
+      "BOUNDED_EXACT_RD_RECEIPT": 28,
+      "READ_ORIGINAL_REQUIRED": 90,
+      "STRICT_EXACT_RD_RECEIPT": 142150
+    },
+    "distinct_bitmaps": 142268,
+    "exact_receipt_sources": {
+      "CN50_PET11": 1367,
+      "TW10_PET15_STRICT_SCOPE": 29887,
+      "TW85_PET67": 43720,
+      "TW85_PET68_BOUNDED": 19,
+      "TW85_PET71": 67176,
+      "TW85_PET71_BOUNDED": 9
+    },
+    "frame_grade": {
+      "BOUNDED_EXACT_RD_RECEIPT": 40,
+      "READ_ORIGINAL_REQUIRED": 122,
+      "STRICT_EXACT_RD_RECEIPT": 272770
+    },
+    "group_grade": {
+      "BOUNDED_COMPLETE": 21,
+      "INCOMPLETE": 13,
+      "STRICT_COMPLETE": 560
+    },
+    "new_original_bytes": 0,
+    "official_closures": 0,
+    "official_species_count": null,
+    "original_runtime_verified": false,
+    "physical_groups": 594,
+    "position_grade": {
+      "ALL_CANVAS_COMPLETE": 20,
+      "ALL_STRICT": 272,
+      "SOURCE_GAPS_REMAIN": 13
+    },
+    "positions": 305,
+    "read_target_distinct_rd_keys": 76,
+    "read_target_native_rows": 90,
+    "sequence_grade": {
+      "BOUNDED_COMPLETE": 32,
+      "INCOMPLETE": 24,
+      "SENTINEL_ONLY": 128,
+      "STRICT_COMPLETE": 42391
+    }
+  },
+  "artifact_download_verified": false,
+  "official_closures": 0
+}
