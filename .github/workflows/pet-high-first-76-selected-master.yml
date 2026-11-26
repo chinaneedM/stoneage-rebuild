@@ -1,0 +1,70 @@
+name: PET-HIGH-FIRST-76 selected archived master fields
+on:
+  push:
+    branches: [agent/pet-high-first-76-selected-master-20261126]
+    paths:
+      - '.github/workflows/pet-high-first-76-selected-master.yml'
+      - 'tools/stoneage_pet_high_first_76_master.py'
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      artifact_id: ${{ steps.upload.outputs.artifact-id }}
+      artifact_digest: ${{ steps.upload.outputs.artifact-digest }}
+      report_sha256: ${{ steps.extract.outputs.report_sha256 }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m tools.stoneage_pet_high_first_76_master --plan-only
+      - run: python -m pip install rarfile==4.2 libarchive-c==5.3
+      - run: sudo apt-get update -qq && sudo apt-get install -y unar libarchive-tools
+      - id: extract
+        run: |
+          report="$RUNNER_TEMP/PET-HIGH-FIRST-76-SELECTED-MASTER-FIELDS-R1.json"
+          python -m tools.stoneage_pet_high_first_76_master --read-original --report "$report"
+          sha256sum "$report" | awk '{ print "report_sha256=" $1 }' >> "$GITHUB_OUTPUT"
+      - id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: pet76-derived-master-fields
+          path: ${{ runner.temp }}/PET-HIGH-FIRST-76-SELECTED-MASTER-FIELDS-R1.json
+          retention-days: 7
+          if-no-files-found: error
+  archive:
+    needs: source
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      actions: read
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify independent artifact download and retain derived report
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARTIFACT_ID: ${{ needs.source.outputs.artifact_id }}
+          ARTIFACT_DIGEST: ${{ needs.source.outputs.artifact_digest }}
+          REPORT_DIGEST: ${{ needs.source.outputs.report_sha256 }}
+        run: |
+          set -euo pipefail
+          archive="$RUNNER_TEMP/pet76.zip"
+          report=research/pets/PET-HIGH-FIRST-76-SELECTED-MASTER-FIELDS-R1.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$ARTIFACT_ID/zip" > "$archive"
+          printf '%s  %s\n' "${ARTIFACT_DIGEST#sha256:}" "$archive" | sha256sum -c -
+          python - "$archive" "$report" <<'PY'
+          import pathlib, sys, zipfile
+          path = pathlib.Path(sys.argv[2])
+          with zipfile.ZipFile(sys.argv[1]) as archive:
+              assert archive.namelist() == [path.name]
+              path.write_bytes(archive.read(path.name))
+          PY
+          printf '%s  %s\n' "$REPORT_DIGEST" "$report" | sha256sum -c -
+          python -m tools.stoneage_pet_high_first_76_master
+          git add -- "$report"
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'PET76: retain dual-decoded archived master field evidence'
+          git push origin "HEAD:$GITHUB_REF"
