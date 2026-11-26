@@ -1,0 +1,26 @@
+name: PET108 CN75 original distribution archive and independent media indexes
+on:
+  push:
+    branches: ['agent/pet-high-first-108-cn75-archive-routes-20261126']
+    paths:
+      - 'tools/stoneage_pet_high_first_108_cn75_archive_routes.py'
+      - '.github/workflows/pet-high-first-108-cn75-archive-routes.yml'
+permissions:
+  contents: read
+jobs:
+  archive-index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m tools.stoneage_pet_high_first_108_cn75_archive_routes --self-test
+      - run: python -m tools.stoneage_pet_high_first_108_cn75_archive_routes --output "$RUNNER_TEMP/pet108.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet108-cn75-archive-route-metadata
+          path: ${{ runner.temp }}/pet108.json
+          if-no-files-found: error
+          retention-days: 15
