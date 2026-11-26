@@ -1,82 +1,62 @@
-name: PET100 custody and PET101 CN50 remaining original motion
+name: PET101 CN50 retained original motion acceptance
 on:
   push:
     branches: [agent/pet-high-first-100-cn50-full-motion-preflight-20261126]
     paths:
       - '.github/workflows/pet-high-first-101-cn50-original-motion.yml'
-      - 'tools/stoneage_pet_high_first_101_cn50_original_motion.py'
+      - 'tools/stoneage_pet_high_first_101_accept.py'
+  pull_request:
+    paths:
+      - '.github/workflows/pet-high-first-101-cn50-original-motion.yml'
+      - 'tools/stoneage_pet_high_first_101_accept.py'
+      - 'research/pets/PET-HIGH-FIRST-101-*'
+      - 'tools/stoneage_pet_source_lookup.py'
+      - 'tools/stoneage_pet_high_first_64_coverage.py'
 permissions:
-  actions: read
-  contents: write
-concurrency:
-  group: pet100-custody-cn50-original
-  cancel-in-progress: false
+  contents: read
 jobs:
-  source:
+  preserve:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
-    timeout-minutes: 65
+    timeout-minutes: 15
+    permissions:
+      actions: read
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - run: python -m pip install Pillow
-      - name: Verify both original preflight artifact ZIPs and exact semantic replay
+      - name: Verify original derived ZIP and generate projection
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-          gh api repos/${{ github.repository }}/actions/artifacts/15110622631/zip > "$RUNNER_TEMP/pet100-pr.zip"
-          gh api repos/${{ github.repository }}/actions/artifacts/15109962815/zip > "$RUNNER_TEMP/pet100-push.zip"
-          python -m tools.stoneage_pet_high_first_100_cn50_full_motion --output "$RUNNER_TEMP/replay.json.gz"
-          python - <<'PY'
-          import gzip,hashlib,json,os,pathlib,zipfile
-          root=pathlib.Path("research/pets")
-          tmp=pathlib.Path(os.environ["RUNNER_TEMP"])
-          observed=json.loads((root/"PET-HIGH-FIRST-100-CI-OBSERVED-R1.json").read_text())
-          data=(tmp/"replay.json.gz").read_bytes()
-          sha=lambda b:hashlib.sha256(b).hexdigest()
-          assert sha(data)==observed["gzip_sha256"]
-          assert json.loads(gzip.decompress(data))["summary"]==observed["summary"]
-          for run,name in zip(observed["runs"],["pet100-pr.zip","pet100-push.zip"]):
-              z=(tmp/name).read_bytes()
-              assert len(z)==run["zip_bytes"] and sha(z)==run["zip_sha256"]
-              with zipfile.ZipFile(tmp/name) as f:
-                  assert f.namelist()==["pet100-cn50.json.gz"]
-                  assert f.read("pet100-cn50.json.gz")==data
-          dest=root/"PET-HIGH-FIRST-100-CN50-FULL-MOTION-PREFLIGHT-R1.json.gz"
-          dest.write_bytes(data)
-          report=json.loads(gzip.decompress(data))
-          assert report["original_assets_published"] is False and report["summary"]["official_closures"]==0
-          observed["artifact_download_verified"]=True
-          observed["raw_json_sha256"]=sha(gzip.decompress(data))
-          observed["report_git_blob_sha"]=hashlib.sha1(b"blob "+str(len(data)).encode()+b"\0"+data).hexdigest()
-          observed["report_bytes"]=len(data)
-          (root/"PET-HIGH-FIRST-100-CUSTODY-R1.json").write_text(json.dumps(observed,sort_keys=True,indent=2)+"\n")
-          PY
-      - name: Preserve independently verified preflight only
+          gh api repos/${{ github.repository }}/actions/artifacts/15111326113/zip > "$RUNNER_TEMP/pet101.zip"
+          python -m tools.stoneage_pet_high_first_101_accept --artifact "$RUNNER_TEMP/pet101.zip"
+          python -m tools.stoneage_pet_high_first_101_accept
+          python -m tools.stoneage_pet_source_lookup --verify
+          python -m tools.stoneage_pet_high_first_64_coverage --current > "$RUNNER_TEMP/pet101-coverage.json"
+      - name: Preserve verified derived metadata
         run: |
           git config user.name stoneage-recovery-bot
           git config user.email stoneage-recovery-bot@users.noreply.github.com
-          git add research/pets/PET-HIGH-FIRST-100-CN50-FULL-MOTION-PREFLIGHT-R1.json.gz research/pets/PET-HIGH-FIRST-100-CUSTODY-R1.json
-          git commit -m 'PET100: retain exact dual-artifact preflight and custody'
-          git push origin HEAD:agent/pet-high-first-100-cn50-full-motion-preflight-20261126
-      - name: Verify original target plan
-        run: python -m tools.stoneage_pet_high_first_101_cn50_original_motion --plan-only --output "$RUNNER_TEMP/pet101.json"
-      - name: Install static decompressor
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq cabextract
-      - name: Authenticate original CAB and dual-decode remaining exact RD targets
-        run: |
-          python -m tools.stoneage_pet_high_first_101_cn50_original_motion --output "$RUNNER_TEMP/pet101.json"
-          sha256sum "$RUNNER_TEMP/pet101.json"
-      - uses: actions/upload-artifact@v4
+          git add research/pets/PET-HIGH-FIRST-101-CN50-MOTION-PROJECTION-R1.json research/pets/PET-HIGH-FIRST-101-CUSTODY-R1.json research/pets/PET-HIGH-FIRST-32-UNIFIED-SOURCE-LOOKUP-MANIFEST-R1.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'PET101: preserve audited native CN50 full motion projection and custody'
+            git push origin HEAD:agent/pet-high-first-100-cn50-full-motion-preflight-20261126
+          fi
+  replay:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
-          name: pet101-cn50-original-rd-derived
-          path: ${{ runner.temp }}/pet101.json
-          retention-days: 30
-      - name: Retain original-source derived receipt only
-        run: |
-          cp "$RUNNER_TEMP/pet101.json" research/pets/PET-HIGH-FIRST-101-CN50-ORIGINAL-RD-R1.json
-          git add research/pets/PET-HIGH-FIRST-101-CN50-ORIGINAL-RD-R1.json
-          git commit -m 'PET101: retain actual original CN50 residual RD read and dual-decoder results'
-          git push origin HEAD:agent/pet-high-first-100-cn50-full-motion-preflight-20261126
+          python-version: '3.11'
+      - run: python -m pip install Pillow
+      - run: python -m tools.stoneage_pet_high_first_101_accept
+      - run: python -m tools.stoneage_pet_source_lookup --verify
+      - run: python -m tools.stoneage_pet_high_first_64_coverage --current > "$RUNNER_TEMP/pet101-coverage.json"

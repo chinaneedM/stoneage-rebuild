@@ -66,8 +66,10 @@ def derive(current=False):
         (entry["source"], tuple(entry["pointer"])): entry["detail"]["visual_reference"]
         for entry in entries if entry["detail"] and "visual_reference" in entry["detail"]
     } if current else {}
+    cn50_current = {tuple(e["pointer"]):e["detail"]["cn50_motion_reference"] for e in entries if current and e["source"]=="cn50" and "cn50_motion_reference" in e["detail"]}
     if current:
         assert len(current_visual) == 4481
+        assert not cn50_current or len(cn50_current)==305
     z=pinned()
     atlas={x["pet_id"]:x for x in z["early_atlas"]["profiles"]}
     early_groups={x["graphic"]:x for x in z["early_motion"]["groups"]}
@@ -156,6 +158,11 @@ def derive(current=False):
                 v["acquisition"]="NO_ACQUISITION_FIELD_IN_QUEUE_PROJECTION"
         if current and source in {"tw10", "cn50", "tw85_grid", "tw75"}:
             apply_current_visual(v, current_visual[source, tuple(ptr)])
+        if current and source=="cn50" and cn50_current:
+            ref=cn50_current[tuple(ptr)]
+            v["prior_motion_reference"]=v["motion"]
+            v["motion"]=ref["motion_status"]
+            v["cn50_native_motion_source"]=dict(qualification=ref["qualification"], physical_group_indices=[g["group_index"] for g in ref["motion_groups"]], group_status=dict(Counter(g["status"] for g in ref["motion_groups"])))
         out.append(v)
     assert len(out)==3015 and len({(r["source"],tuple(r["pointer"])) for r in out})==3015
     assert all(not r["official_full_fields_certified"] for r in out)
@@ -173,7 +180,10 @@ def derive(current=False):
         assert all(sum(v.values())==info["positions"] for v in info["formal_fields"].values())
     assert by_source["tw10"]["portrait"]=={"ORIGINAL_POSE_FALLBACK_NOT_PORTRAIT":4,"ORIGINAL_RD_DECODED":120}
     assert by_source["cn50"]["portrait"]=={"PRESERVED_RD_DECODED":305}
-    assert by_source["cn50"]["motion"]["PRESERVED_ONE_SEQUENCE_DECODED"]==181
+    if current and cn50_current:
+        assert by_source["cn50"]["motion"]=={"ALL_STRICT":284,"ALL_CANVAS_COMPLETE":21}
+    else:
+        assert by_source["cn50"]["motion"]["PRESERVED_ONE_SEQUENCE_DECODED"]==181
     assert by_source["tw75"]["acquisition"]["SAVED_DOUBLE_FLAG_POSITIVE_ROUTE"]==118
     assert by_source["tw75"]["acquisition"]["STRICT_RESIDUAL_REVIEWED_NOT_CLOSED"]==67
     if current:
@@ -195,7 +205,8 @@ def derive(current=False):
         scope="Queue positions only. No deduplicated species total. Unassessed is not absent. Actual index pixel receipts are bounded; not proof of palette, timing, official identity or gameplay.")
     if current:
         summary["visual_projection"] = dict(
-            newer_evidence="PET74", lookup_positions_with_visual=len(current_visual),
+            newer_evidence="PET74+PET101" if cn50_current else "PET74", lookup_positions_with_visual=len(current_visual),
+            cn50_native_full_motion_positions=len(cn50_current),
             queue_positions_with_visual=sum("current_visual_source" in row for row in out),
             official_fields_reclassified=0,
         )
