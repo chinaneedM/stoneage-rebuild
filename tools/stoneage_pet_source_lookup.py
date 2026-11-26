@@ -634,44 +634,42 @@ def build(d):
     return out
 
 def attach_cn85_original(d, entries, add, link):
-    """Two identical table segments in two original programs, one source-position inventory."""
-    tables = d["cn85_original"]["analysis"]["compiled_table_candidates"]
-    cross = d["cn50_cn85_crosswalk"]
-    assert d["cn85_original"]["original_client_verified"] and cross["official_closures"] == 0
-    assert [tables[i]["program"] for i in (1, 2)] == ["sa_85_free.exe", "sa_25_payment.exe"]
-    old = {row["cn50"]["ordinal"]: (i, row) for i, row in enumerate(cross["rows"])}
-    old_named = collections.defaultdict(list)
-    for i, row in enumerate(cross["rows"]):
-        if row["cn50"]["slot"] >= 0:
-            old_named[row["cn50"]["name"]].append(i)
+    full=d["cn85_original"]["analysis"]
+    a,b=full["programs"]
+    assert full["table_full_span_equal"] and a["entries"]==b["entries"]
+    old=d["cn50_cn85_crosswalk"]["rows"]
+    visual={x["ordinal"]:(i,x) for i,x in enumerate(full["resource_links"]["rows"])}
+    inherited={x["cn50_ordinal"]:(i,x) for i,x in enumerate(d["cn50_cn85_spr_inheritance"]["rows"])}
+    names=collections.defaultdict(list)
+    for i,x in enumerate(old):
+        if x["cn50"]["slot"]>=0:
+            names[x["cn50"]["name"]].append(i)
     for e in entries:
-        if e["source"] != "cn50":
-            continue
-        row = resolve(d, "cn50", e["pointer"])
-        i, match = old[row["ordinal"]]
-        assert match["cn50"]["name"] == row["compiled_name"]
-        e["detail"]["cn85_compiled_crosswalk"] = match
-        e["linked_records"].append(link("cn50_cn85_crosswalk", ["rows", i], "COMPILED_FIELDS_ONLY_NOT_SERVER_IDENTITY"))
-    for segment, start in enumerate((0, 593)):
-        a, b = (tables[i]["candidates"][segment] for i in (1, 2))
-        assert a["entries"] == b["entries"] and a["table_source_sha256"] == b["table_source_sha256"]
-        for j, row in enumerate(a["entries"]):
-            if row["slot"] < 0:
-                continue
-            ordinal = start + j
-            ptr = ["analysis", "compiled_table_candidates", 1, "candidates", segment, "entries", j]
-            counterpart = ["analysis", "compiled_table_candidates", 2, "candidates", segment, "entries", j]
-            links = [link("cn85_original", counterpart, "EXACT_SECOND_PROGRAM_COMPILED_TABLE_NOT_RUNTIME")]
-            for i in old_named[row["name"]]:
-                links.append(link("cn50_cn85_crosswalk", ["rows", i], "SAME_COMPILED_NAME_NOT_SERVER_IDENTITY"))
-            if ordinal in old and old[ordinal][1]["cn50"]["name"] != row["name"]:
-                links.append(link("cn50_cn85_crosswalk", ["rows", old[ordinal][0]], "SAME_PHYSICAL_POSITION_DIFFERENT_COMPILED_LABEL"))
-            add("cn85_original", ptr, [row["name"]], "AUTHENTICATED_CN2012_COMPILED_NAME_POSITION",
-                ["ordinal:"+str(ordinal), "slot:"+str(row["slot"]), "face:"+str(row["face"])], links,
-                dict(physical_ordinal=ordinal, compiled_slot=row["slot"], compiled_face=row["face"],
-                     programs=[tables[i]["program"] for i in (1, 2)], segment_sha256=a["table_source_sha256"],
-                     native_selector_verified=False, original_portrait_verified=False,
-                     official_release_verified=False, same_deployment_server_fields_verified=False))
+        if e["source"]!="cn50":continue
+        x=resolve(d,"cn50",e["pointer"])
+        o=x["ordinal"]
+        i,v=visual[o]
+        j,z=inherited[o]
+        assert old[o]["cn50"]["name"]==x["compiled_name"]==z["cn50_name"]
+        e["detail"]["cn85_compiled_crosswalk"]=old[o]
+        e["detail"]["cn85_exact_spr_reference"]=z["groups"]
+        e["detail"]["cn85_same_ordinal_rd_reference"]=dict(same_label=x["compiled_name"]==v["compiled_label"],exact_rd_hash=any(y["rd_sha256"]==x["portrait_lookup_rd_sha256"] for y in v["face_map_number_candidates"]),identity_verified=False)
+        e["linked_records"].extend([link("cn50_cn85_crosswalk",["rows",o],"COMPILED_FIELDS_ONLY_NOT_SERVER_IDENTITY"),link("cn50_cn85_spr_inheritance",["rows",j],"EXACT_OLD_SPR_SEGMENTS_NOT_NATIVE_SELECTOR"),link("cn85_original",["analysis","resource_links","rows",i],"SAME_ORDINAL_RD_COMPARISON_NOT_IDENTITY")])
+    for o,x in enumerate(a["entries"]):
+        if not x["strict_old_parser"] or x["slot"]<0:continue
+        i,v=visual[o]
+        assert all(x[k]==v[k] for k in ("ordinal","slot","face","compiled_label"))
+        links=[link("cn85_original",["analysis","programs",1,"entries",o],"EXACT_SECOND_PROGRAM_COMPILED_TABLE_NOT_RUNTIME"),link("cn85_original",["analysis","resource_links","rows",i],"ORIGINAL_RD_MAP_NUMBER_CANDIDATES_NOT_RENDERED")]
+        for j in names[x["compiled_label"]]:
+            links.append(link("cn50_cn85_crosswalk",["rows",j],"SAME_COMPILED_NAME_NOT_SERVER_IDENTITY"))
+        if o<len(old) and old[o]["cn50"]["name"]!=x["compiled_label"]:
+            links.append(link("cn50_cn85_crosswalk",["rows",o],"SAME_PHYSICAL_POSITION_DIFFERENT_COMPILED_LABEL"))
+        if o in inherited:
+            links.append(link("cn50_cn85_spr_inheritance",["rows",inherited[o][0]],"EXACT_OLD_SPR_SEGMENTS_AT_OLD_POSITION_NOT_NATIVE_SELECTOR"))
+        rd=v["face_map_number_candidates"]
+        grade="ORIGINAL_RD_LENGTH_DISCREPANCY" if any(y["rd_size_field"]!=y["size"] for y in rd) else ("ORIGINAL_RD_MULTIPLE_CANDIDATES" if len(rd)>1 else "ORIGINAL_RD_SINGLE_CANDIDATE")
+        add("cn85_original",["analysis","programs",0,"entries",o],[x["compiled_label"]],"AUTHENTICATED_CN2012_COMPILED_NAME_POSITION",["ordinal:"+str(o),"slot:"+str(x["slot"]),"face:"+str(x["face"])],links,dict(physical_ordinal=o,compiled_slot=x["slot"],compiled_face=x["face"],programs=[a["program"],b["program"]],source_record_sha256=x["source_record_sha256"],portrait_candidate_grade=grade,original_rd_candidates=rd,ordinal_spr_candidates=v["ordinal_spr_group_indices"],slot_spr_candidates=v["slot_spr_group_indices"],native_selector_verified=False,original_portrait_verified=False,official_release_verified=False,same_deployment_server_fields_verified=False))
+
 
 def attach_cn50_motion(d, entries):
     """Keep native CN50 full-motion evidence separate from prior cross-carrier comparisons."""
@@ -1547,16 +1545,22 @@ def verify(m,d,entries):
     if "cn85_original" in d:
         cn85 = [e for e in entries if e["source"] == "cn85_original"]
         cn50 = [e for e in entries if e["source"] == "cn50"]
-        assert len(cn85) == 521 and len({e["labels"][0] for e in cn85}) == 513
-        assert len({e["detail"]["compiled_slot"] for e in cn85}) == len({e["detail"]["compiled_face"] for e in cn85}) == 521
+        assert len(cn85) == 548 and len({e["labels"][0] for e in cn85}) == 540
+        assert len({e["detail"]["compiled_slot"] for e in cn85}) == len({e["detail"]["compiled_face"] for e in cn85}) == 548
         assert len(cn50) == 305 and all("cn85_compiled_crosswalk" in e["detail"] for e in cn50)
         assert sum(e["detail"]["cn85_compiled_crosswalk"]["exact_same_ordinal"] for e in cn50) == 304
         assert all(not e["detail"][k] for e in cn85 for k in ("native_selector_verified","original_portrait_verified","official_release_verified","same_deployment_server_fields_verified"))
-        assert all(not 544 <= e["detail"]["physical_ordinal"] < 593 for e in cn85)
+        assert sum(544 <= e["detail"]["physical_ordinal"] < 593 for e in cn85)==27
+        assert collections.Counter(e["detail"]["portrait_candidate_grade"] for e in cn85)=={"ORIGINAL_RD_SINGLE_CANDIDATE":543,"ORIGINAL_RD_MULTIPLE_CANDIDATES":4,"ORIGINAL_RD_LENGTH_DISCREPANCY":1}
+        assert sum(len(e["detail"]["original_rd_candidates"]) for e in cn85)==552
+        assert sum(e["detail"]["cn85_same_ordinal_rd_reference"]["same_label"] and e["detail"]["cn85_same_ordinal_rd_reference"]["exact_rd_hash"] for e in cn50)==304
+        assert sum(len(e["detail"]["cn85_exact_spr_reference"]) for e in cn50)==594
+        assert len(list(search(entries,"ordinal:547",exact=True,source="cn85_original")))==1
+        assert not list(search(entries,"ordinal:544",exact=True,source="cn85_original"))
         assert len(list(search(entries,"艾柏瑞",exact=True,source="cn85_original"))) == 1
         assert list(search(entries,"艾柏瑞",exact=True,source="cn85_original"))[0]["detail"]["physical_ordinal"] == 439
         assert list(search(entries,"ordinal:314",exact=True,source="cn85_original"))[0]["labels"] == ["艾比斯"]
-        print("CN85_ORIGINAL_LOOKUP_PASS 521 named positions, 513 labels, 305 backward references",flush=True)
+        print("PET124_FULL_LOOKUP_PASS 548 named positions, 540 labels, 552 RD candidates, 304 same-label exact RD, 594 exact SPR links",flush=True)
     assert m["expected"]["official_species_count"] is None and not m["original_assets_published"]
     print(json.dumps(summary(entries),ensure_ascii=False,indent=2))
 def main():
