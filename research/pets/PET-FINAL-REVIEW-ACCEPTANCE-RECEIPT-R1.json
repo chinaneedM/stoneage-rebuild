@@ -15,10 +15,17 @@
     "zip_sha256": "22d6a4d23e8c80aa339f492f59d147113619f02229c0de7b91520916b7ee8948",
     "json_bytes": 65087,
     "json_sha256": "ffda80773b20cfafcf45385648d749000d49bb3f3924f053c1b4a8e98acf2649",
-    "json_git_blob_if_archived": "8a3694119db2c0b83dbe6b0c54fc7d912a8493c6",
     "independently_downloaded_and_crc_checked": true,
-    "full_json_committed": false,
-    "replay_script": "tools/stoneage_pet_final_review_matrix.py"
+    "full_json_committed": true,
+    "replay_script": "tools/stoneage_pet_final_review_matrix.py",
+    "archived_path": "research/pets/PET-FINAL-REVIEW-MATRIX-R1.json",
+    "archived_git_blob": "8a3694119db2c0b83dbe6b0c54fc7d912a8493c6",
+    "independent_replay": {
+      "candidate": "dfe709bb149328bb338a1486043bb8093ea3b7e5",
+      "run": 45838280752,
+      "job": 139972847595,
+      "sha256_match": true
+    }
   },
   "counts": {
     "manifest_sources": 98,

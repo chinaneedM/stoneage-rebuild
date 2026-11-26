@@ -1,0 +1,26 @@
+name: PET16 retained visual and skill receipts
+on:
+  push:
+    branches: ['agent/pet16-source-receipts-20261126']
+    paths:
+      - 'tools/stoneage_pet_legacy_access.py'
+      - 'research/pets/PET-FINAL-REVIEW-MATRIX-R1.json'
+      - '.github/workflows/pet16-supplemental-receipts.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python tools/stoneage_pet_source_lookup.py --legacy-pet16 --verify
+      - run: python tools/stoneage_pet_source_lookup.py --legacy-pet16 --source jp_official_web --query web_ordinal:3 --exact --full
+      - run: python tools/stoneage_pet_source_lookup.py --legacy-pet16 --source cn_official_web --query web_ordinal:84 --exact --full
+      - run: python tools/stoneage_pet_source_lookup.py --legacy-pet16 --source later2016_templates --query COMMUNITY2016:1781 --exact --full
+      - run: python tools/stoneage_pet_source_lookup.py --legacy-pet16 --source mixed25_alternative --query MIXED25_ALTERNATIVE:547 --exact --full
+      - run: python tools/stoneage_pet_source_lookup.py --verify
+      - run: PYTHONPATH=. python tools/stoneage_pet_final_review_matrix.py
+      - run: cmp pet-final-review-matrix.json research/pets/PET-FINAL-REVIEW-MATRIX-R1.json

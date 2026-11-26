@@ -1,0 +1,5 @@
+# PET 历史目录图像及技能缺件接入、完整七维矩阵归档（候选）
+2026-11-26。基线 main c2519ccb6f58a18a58336d9fad63b58fc44eac59/tree bd71dd929b3654ba3628a6fbfd6dc3064df13af5；PR729 精确候选 dfe709bb149328bb338a1486043bb8093ea3b7e5 15/15成功，run45838280752/job139972847595，旧2792行检索/9原来源及七维报告SHA复算通过。CURRENT历史blob c89e0e33537990aa2132b47c40fef49a985a935c 保持。
+已将实际下载并核验的PR728完整派生矩阵（65087B，Git blob 8a3694119db2c0b83dbe6b0c54fc7d912a8493c6，原JSON SHA ffda80773b20cfafcf45385648d749000d49bb3f3924f053c1b4a8e98acf2649）写入候选树 [报告](../../research/pets/PET-FINAL-REVIEW-MATRIX-R1.json) 与 [收据](../../research/pets/PET-FINAL-REVIEW-ACCEPTANCE-RECEIPT-R1.json)，非原商业素材。
+旧PET16精确接回既有9份补充来源：JP图鉴13原合格（含1父记录）+10后续原图观察=23，2单次不可得保留；CN同字面原图URL、原网页序位、原名称三项一致7图（含2未知名不猜身份）；2016选中表102缺失技能槽，mixed25备表12缺失技能槽，按原行/模板/图号/槽位逐项回接。只增加可追溯记录，不宣称本轮重取原图，不能将旧网页GIF/JPEG视为原生SPR。其他表同数字技能ID不自动替代。当前98/5924/3563与PET16 2792均不变、不相加作物种。
+**NEXT**：精确候选CI验收；继续材料总账对账，尤其同期PC具名取得/技能原定义及遗漏官方文献（如CN20旧委托/栖地目录），只在能精确来源匹配时联接；确认所有已取得合格材料都进入可交付目录。当前仍PET锁、未获换模块批准、2026 OPEN，Stage A 7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，历史完整与官方物种数UNKNOWN。
