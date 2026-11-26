@@ -1,0 +1,470 @@
+{
+  "schema": "stoneage.pet_high_first_83.late_pc_acquisition_references.r1",
+  "base_head": "bbfd2df3c0bbee77fe07404f18db41f5d9656345",
+  "base_tree": "35ba3c77bed743f6112319c52a9a1f09bc32db95",
+  "input_git_blobs": {
+    "research/pets/PET-HIGH-FIRST-82-LATE-PC-ACQUISITION-REFERENCES-R1.json": "ad65c7935db726ab54b3823234bdc1b04e0bf9bc",
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-46-ACQUISITION-GAP-MATRIX-R1.json": "dbbd61460cee2edd4ba2722ab90e8889fe5268e2"
+  },
+  "scope": "48 PET82 residual positions, bounded direct public catalogue review; strict PET49 queue retained",
+  "rows": [
+    {
+      "tw75_row_index": 52,
+      "template_id": 90,
+      "master_name": "畢可斯",
+      "graphic": 101621,
+      "row_sha256": "33c4ec0fcd6f21a045e47662a14f36d1e20d4956e7aaf62449d334c55940af5f",
+      "master_elements": [
+        90,
+        10,
+        0,
+        0
+      ],
+      "source_elements": [
+        90,
+        10,
+        0,
+        0
+      ],
+      "client_join_status": "TW85_NATIVE_SAME_GRAPHIC_NAME",
+      "source": {
+        "url": "https://welovesa.com/pet.php?pet_id=363&pet_type=56",
+        "visible_lines": [
+          60,
+          66
+        ],
+        "grade": "LATER_COMMUNITY_CATALOG_MIXED_SERVICE_UNDATED",
+        "date": null,
+        "raw_html_sha256": null
+      },
+      "acquisition_summary": "莫那卡一级出现（485,205），须携南北莫那卡黄金鱼",
+      "kind": "WILD_CONDITIONAL",
+      "conditions": {
+        "map": "莫那卡",
+        "coordinates": [
+          485,
+          205
+        ],
+        "required_items": [
+          "南莫那卡黃金魚",
+          "北莫那卡黃金魚"
+        ],
+        "level": 1
+      },
+      "qualification": "NAME_ELEMENT_COMPATIBLE_LATER_PC_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "tw75_row_index": 58,
+      "template_id": 96,
+      "master_name": "畢卡斯",
+      "graphic": 101622,
+      "row_sha256": "49f0364ec1aea763035496176f0fb2fcf900c214b7bcd046f088c414f822cc97",
+      "master_elements": [
+        0,
+        0,
+        90,
+        10
+      ],
+      "source_elements": [
+        0,
+        0,
+        90,
+        10
+      ],
+      "client_join_status": "TW85_NATIVE_SAME_GRAPHIC_NAME",
+      "source": {
+        "url": "https://welovesa.com/pet.php?pet_id=364&pet_type=56",
+        "visible_lines": [
+          60,
+          66
+        ],
+        "grade": "LATER_COMMUNITY_CATALOG_MIXED_SERVICE_UNDATED",
+        "date": null,
+        "raw_html_sha256": null
+      },
+      "acquisition_summary": "莫那卡一级出现（454,212），须携南北莫那卡黄金鱼",
+      "kind": "WILD_CONDITIONAL",
+      "conditions": {
+        "map": "莫那卡",
+        "coordinates": [
+          454,
+          212
+        ],
+        "required_items": [
+          "南莫那卡黃金魚",
+          "北莫那卡黃金魚"
+        ],
+        "level": 1
+      },
+      "qualification": "NAME_ELEMENT_COMPATIBLE_LATER_PC_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "tw75_row_index": 135,
+      "template_id": 203,
+      "master_name": "帖伊諾斯",
+      "graphic": 101819,
+      "row_sha256": "a8fb9b5aeec2da55b2a4eb85b9af70f02525ebb584bdf8be69fbaf3e777fed95",
+      "master_elements": [
+        0,
+        0,
+        50,
+        50
+      ],
+      "source_elements": [
+        0,
+        0,
+        50,
+        50
+      ],
+      "client_join_status": "TW85_NATIVE_SAME_GRAPHIC_NAME",
+      "source": {
+        "url": "https://welovesa.com/pet.php?pet_id=410&pet_type=10",
+        "visible_lines": [
+          70,
+          76
+        ],
+        "grade": "LATER_COMMUNITY_CATALOG_MIXED_SERVICE_UNDATED",
+        "date": null,
+        "raw_html_sha256": null
+      },
+      "acquisition_summary": "勇者大乱斗200积分兑换，或完成魔法道馆一挑战",
+      "kind": "EVENT_REDEMPTION",
+      "conditions": {
+        "alternatives": [
+          {
+            "event": "勇者大亂鬥",
+            "points": 200
+          },
+          {
+            "event": "魔法道館一",
+            "challenge_completed": true
+          }
+        ]
+      },
+      "qualification": "NAME_ELEMENT_COMPATIBLE_LATER_PC_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "tw75_row_index": 230,
+      "template_id": 746,
+      "master_name": "卡拉龜",
+      "graphic": 100841,
+      "row_sha256": "fc7113b58c488f9c99374e410514d566b0a0bf00f9d68ce35b8396c46729b69d",
+      "master_elements": [
+        40,
+        60,
+        0,
+        0
+      ],
+      "source_elements": [
+        40,
+        60,
+        0,
+        0
+      ],
+      "client_join_status": "NAME_ONLY_IN_TW85_GRID",
+      "source": {
+        "url": "https://welovesa.com/pet.php?pet_id=048&pet_type=6",
+        "visible_lines": [
+          64,
+          69
+        ],
+        "grade": "LATER_COMMUNITY_CATALOG_MIXED_SERVICE_UNDATED",
+        "date": null,
+        "raw_html_sha256": null
+      },
+      "acquisition_summary": "群狮献瑞包",
+      "kind": "PACKAGE",
+      "conditions": null,
+      "qualification": "NAME_ELEMENT_COMPATIBLE_LATER_PC_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "tw75_row_index": 238,
+      "template_id": 754,
+      "master_name": "邦諾斯娜",
+      "graphic": 100849,
+      "row_sha256": "5ac8e4e08ac204c4516acaada9ee7b7233bf612c46be06d495e651feba0f05f0",
+      "master_elements": [
+        0,
+        0,
+        80,
+        20
+      ],
+      "source_elements": [
+        0,
+        0,
+        80,
+        20
+      ],
+      "client_join_status": "NAME_ONLY_IN_TW85_GRID",
+      "source": {
+        "url": "https://welovesa.com/pet.php?pet_id=078&pet_type=10",
+        "visible_lines": [
+          70,
+          75
+        ],
+        "grade": "LATER_COMMUNITY_CATALOG_MIXED_SERVICE_UNDATED",
+        "date": null,
+        "raw_html_sha256": null
+      },
+      "acquisition_summary": "恐龙复活纪念彩蛋（绝版）",
+      "kind": "PACKAGE",
+      "conditions": null,
+      "qualification": "NAME_ELEMENT_COMPATIBLE_LATER_PC_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "tw75_row_index": 412,
+      "template_id": 1071,
+      "master_name": "瑪那斯",
+      "graphic": 101561,
+      "row_sha256": "3971dc39ed54a421191ab81e05ee711cef1baf4c6044a36b05e5ab41c4e3e79e",
+      "master_elements": [
+        80,
+        0,
+        0,
+        20
+      ],
+      "source_elements": [
+        80,
+        0,
+        0,
+        20
+      ],
+      "client_join_status": "TW85_NATIVE_SAME_GRAPHIC_NAME",
+      "source": {
+        "url": "https://welovesa.com/pet.php?pet_id=336&pet_type=29",
+        "visible_lines": [
+          75,
+          80
+        ],
+        "grade": "LATER_COMMUNITY_CATALOG_MIXED_SERVICE_UNDATED",
+        "date": null,
+        "raw_html_sha256": null
+      },
+      "acquisition_summary": "迷失之海冲浪包（绝版）",
+      "kind": "PACKAGE",
+      "conditions": null,
+      "qualification": "NAME_ELEMENT_COMPATIBLE_LATER_PC_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "tw75_row_index": 413,
+      "template_id": 1072,
+      "master_name": "西考",
+      "graphic": 101560,
+      "row_sha256": "cca640dc0aa1c9a463bca08a159aa71306acca98fd41473e4188ca2ada24fbc5",
+      "master_elements": [
+        0,
+        0,
+        80,
+        20
+      ],
+      "source_elements": [
+        0,
+        0,
+        80,
+        20
+      ],
+      "client_join_status": "TW85_NATIVE_SAME_GRAPHIC_NAME",
+      "source": {
+        "url": "https://welovesa.com/pet.php?pet_id=335&pet_type=29",
+        "visible_lines": [
+          75,
+          80
+        ],
+        "grade": "LATER_COMMUNITY_CATALOG_MIXED_SERVICE_UNDATED",
+        "date": null,
+        "raw_html_sha256": null
+      },
+      "acquisition_summary": "迷失之海冲浪包（绝版）",
+      "kind": "PACKAGE",
+      "conditions": null,
+      "qualification": "NAME_ELEMENT_COMPATIBLE_LATER_PC_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    },
+    {
+      "tw75_row_index": 441,
+      "template_id": 1106,
+      "master_name": "夏斯德",
+      "graphic": 101565,
+      "row_sha256": "9a76f807e1681a06a5a4ea6142ea2be4e6e57cee090f019c6d5e704be130bbf4",
+      "master_elements": [
+        0,
+        60,
+        40,
+        0
+      ],
+      "source_elements": [
+        0,
+        60,
+        40,
+        0
+      ],
+      "client_join_status": "TW85_NATIVE_SAME_GRAPHIC_NAME",
+      "source": {
+        "url": "https://welovesa.com/pet.php?pet_id=340&pet_type=29",
+        "visible_lines": [
+          75,
+          80
+        ],
+        "grade": "LATER_COMMUNITY_CATALOG_MIXED_SERVICE_UNDATED",
+        "date": null,
+        "raw_html_sha256": null
+      },
+      "acquisition_summary": "迷失之海冲浪包（绝版）",
+      "kind": "PACKAGE",
+      "conditions": null,
+      "qualification": "NAME_ELEMENT_COMPATIBLE_LATER_PC_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    }
+  ],
+  "context": [
+    {
+      "tw75_row_index": 293,
+      "template_id": 809,
+      "master_name": "瑞里西爾",
+      "master_elements": [
+        60,
+        0,
+        0,
+        40
+      ],
+      "source_url": "https://welovesa.com/pet.php?pet_id=191&pet_type=24",
+      "visible_lines": [
+        64,
+        70
+      ],
+      "note": "华义GM骑宠，取得栏为空；不推断玩家可取得",
+      "qualification": "CONTEXT_ONLY_NOT_QUALIFIED",
+      "official_acquisition_verified": false
+    },
+    {
+      "tw75_row_index": 306,
+      "template_id": 822,
+      "master_name": "諾克斯",
+      "master_elements": [
+        0,
+        50,
+        50,
+        0
+      ],
+      "source_url": "https://welovesa.com/pet.php?pet_id=222&pet_type=28",
+      "visible_lines": [
+        64,
+        70
+      ],
+      "note": "名称元素相合，出没及一级出没栏为空",
+      "qualification": "CONTEXT_ONLY_NOT_QUALIFIED",
+      "official_acquisition_verified": false
+    },
+    {
+      "tw75_row_index": 281,
+      "template_id": 797,
+      "master_name": "哥斯哥斯",
+      "master_elements": [
+        80,
+        0,
+        0,
+        20
+      ],
+      "source_url": "https://welovesa.com/pet.php?pet_id=167&pet_type=21",
+      "visible_lines": [
+        64,
+        69
+      ],
+      "note": "动物园任务伊甸园中出现，一级栏为空，不证明永久捕捉",
+      "qualification": "CONTEXT_ONLY_NOT_QUALIFIED",
+      "official_acquisition_verified": false
+    }
+  ],
+  "supplementary_sources": [
+    {
+      "url": "https://welovesa.com/mission.php?mission_id=597&mission_type=15",
+      "grade": "SAME_SITE_QUEST_GUIDE",
+      "summary": "Both birds are enemies near 451,194 in northern fish quest; distinct from individual Lv1 encounter coordinates."
+    },
+    {
+      "url": "https://welovesa.com/mission.php?mission_id=75&mission_type=15",
+      "grade": "SAME_SITE_QUEST_GUIDE",
+      "summary": "Bird element ratios independently stated in same site's quest text; site is not independent deployment evidence."
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/content/2003-12-25/n137_53826.html?_platform=PC",
+      "date": "2003-12-25",
+      "visible_lines": [
+        261,
+        265
+      ],
+      "grade": "DATED_PERIOD_PLAYER_GUIDE",
+      "summary": "Both 奇肯沃 and 奇肯克奈 Lv1 appear in 泪之海, but no element ratio or precise coordinate; retained context, not promoted."
+    }
+  ],
+  "remaining_without_new_later_reference": [
+    31,
+    32,
+    75,
+    76,
+    90,
+    91,
+    92,
+    95,
+    96,
+    103,
+    108,
+    109,
+    110,
+    111,
+    187,
+    208,
+    222,
+    260,
+    268,
+    281,
+    283,
+    284,
+    293,
+    306,
+    309,
+    317,
+    318,
+    330,
+    344,
+    345,
+    386,
+    387,
+    401,
+    416,
+    417,
+    436,
+    438,
+    452,
+    453,
+    454
+  ],
+  "summary": {
+    "strict_reference_queue_unchanged": 67,
+    "input_later_residual": 48,
+    "new_later_name_element_reference_rows": 8,
+    "cumulative_later_reference_rows": 27,
+    "residual_without_this_new_layer": 40,
+    "context_only_rows": 3,
+    "official_acquisition_closed": 0,
+    "new_original_client_bytes": 0,
+    "official_species_count": null
+  },
+  "official_same_deployment_verified": false,
+  "original_assets_published": false
+}
