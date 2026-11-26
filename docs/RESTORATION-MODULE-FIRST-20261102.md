@@ -276,3 +276,8 @@ PET118 2019来源有界年审已合并，当前最早未审年份2020。新增[P
 ## 2026-11-20 — PET126C：原台湾 1.0 PC 私人零售包重新取得并独立复查（仍未模块结项）
 
 [真实原件再访问及 124 条同版本宠物具名图形验证](continuity/STONEAGE-PET126C-TW10-ORIGINAL-BYTES-REACCESS-20261120.md)／[安全派生收据](../research/recovered/STONEAGE-PET126C-TW10-ORIGINAL-SOURCE-REACCESS-R1.json)：从私人文件库本轮**实际**重取 `P3H.zip`，整包372626292B SHA-256匹配，379/379全成员 SHA/CRC 重读（375原`source/`成员）。独立静态复查 `sa_3.exe` 原编译相册181位置的124具名／57空，124同包SPR组、6944动作序列/70236帧引用、120可定位原REAL头像和4个缺头像。**全部与已登记PET39旧实证一致，不记新种或官服已发宠；原生游戏未执行**。此次实质进展是原件重新可访问并复现；2026仍`NOT_YEAR_AUDITED`，PET`SOURCE_BOUNDED_PARTIAL`，NEXT **PET126D**核同版本其它技能／ID／实际发放可用源，形成七维终审收据。无原版权资源公开、无付费卖盘/手游，旧CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c`原样保留，Stage A 7PARTIAL+2OPEN、B/wiki gated、R79暂停、总体完成率未知。
+
+
+## 2026-11-26 — PET 全量档案与离线图鉴交付门槛（覆盖旧有界止点）
+
+按[连续性协议§29](PROJECT-CONTINUITY-PROTOCOL-R1.md#29-pet-full-restoration-and-offline-research-atlas-acceptance--2026-11-26)，已取得来源的查询验收并非模块完成。PET继续唯一活动，先把现存各版本来源整合成统一离线档案入口，再按逐字段缺口恢复官方版本名录、初值、成长、技能、图鉴、原图动作及取得条件。来源位置不等于物种；不把未取得历史材料当完成，未得明确批准不转NPC。[当前续接](continuity/STONEAGE-PET-FULL-ATLAS-INTEGRATION-20261126.md)。

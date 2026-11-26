@@ -344,3 +344,16 @@ Canonical restart:
 ```text
 继续《石器时代》项目：chinaneedM/stoneage-rebuild，main。按 docs/PROJECT-CONTINUITY-PROTOCOL-R1.md 的远端最新规范恢复并继续推进。
 ```
+
+
+## 29. PET full restoration and offline research atlas acceptance — 2026-11-26
+
+User clarification supersedes the earlier source-bounded module stop interpretation (§§17,19,22 and subsequent delivery-review NEXTs): **the PET module is not complete merely because an acquired-source catalogue, a query tool or a bounded review passes.** The user requires full per-pet restoration and a unified usable offline atlas for subsequent design reference. Historical source-bounded reviews remain useful evidence, not permission to rotate modules.
+
+- Maintain a version/region/operator-scoped official classic PC roster with stable research IDs where identity is evidenced. Separate source occurrences, literal names, assets, non-pet roles and later/community candidates; never add them into a species count.
+- Per pet and version expose name/aliases/series, identity and release qualification, elements, original level-1 values and ranges, growth and its algorithm/ranges, innate and learnable skills, portrait/encyclopedia, original 2D sprites and actions, capture map/coordinates/levels, reward/other acquisition conditions, and field-specific provenance/conflicts/unknowns. Distinguish observed sample from population range, conditional model from official algorithm, configuration from actual release/acquisition.
+- Integrate all available qualifying data into one offline, browsable research atlas, not a 124-entry early-version-only viewer. Preserve original visual resources privately and support local, source-qualified display; a hash/metadata-only display is not visual restoration. Do not expose proprietary materials publicly. Source-specific candidate rows may be browsed but are not official dossiers merely because they have a display card.
+- Existing source lookup and seven-dimensional matrix are inputs; reuse them and avoid a second competing source database. Report exact per-field missing evidence and coverage separately from actual historical completeness. Missing sources remain OPEN; neither lack of access nor the user's standalone “继续” constitutes authorization to close PET.
+- PET remains the sole active module until the restored content and atlas are genuinely reviewed against this gate and the user explicitly approves transition. Stage A 7 PARTIAL + 2 OPEN, B/wiki GATED, R79 paused and historical overall completion UNKNOWN remain unchanged. No mobile, paid-source hunt, private-server official promotion, or invented fields.
+
+Current work: [PET atlas integration continuation](continuity/STONEAGE-PET-FULL-ATLAS-INTEGRATION-20261126.md). Its NEXT supersedes the old delivery receipt's bounded-stop request.

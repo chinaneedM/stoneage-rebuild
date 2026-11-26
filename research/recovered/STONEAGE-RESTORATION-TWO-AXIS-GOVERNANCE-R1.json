@@ -201,5 +201,35 @@
     "chronology_pc_only_documentary_records": 9,
     "exclude_mobile_records_from_query_and_statistics": true,
     "old_github_commits_not_authoritative_current_scope": true
+  },
+  "pet_full_restoration_gate_20261126": {
+    "effective_date": "2026-11-26",
+    "supersedes_source_bounded_completion_interpretation": true,
+    "source_bounded_review_is_module_completion": false,
+    "active_module": "PET",
+    "required_deliverables": [
+      "VERSIONED_OFFICIAL_PC_ROSTER",
+      "PER_PET_FIELD_PROVENANCE_AND_GAPS",
+      "UNIFIED_OFFLINE_ATLAS_WITH_PRIVATE_SOURCE_QUALIFIED_VISUALS"
+    ],
+    "required_profile_fields": [
+      "identity_and_release",
+      "name_aliases_series",
+      "elements",
+      "level1_values_and_ranges",
+      "growth_algorithm_and_ranges",
+      "innate_and_learnable_skills",
+      "portrait_and_encyclopedia",
+      "original_2d_sprite_actions",
+      "capture_location_coordinates_level",
+      "other_acquisition_conditions",
+      "field_provenance_conflicts_unknowns"
+    ],
+    "source_occurrences_are_species": false,
+    "unknown_is_complete": false,
+    "explicit_user_transition_approval_required": true,
+    "stage_B_authorized": false,
+    "official_species_count": null,
+    "historically_complete": false
   }
 }
