@@ -1,0 +1,162 @@
+{
+  "declared_total_bytes": 1351371747,
+  "official_closures": 0,
+  "original_assets_published": false,
+  "original_client_verified": false,
+  "prior_artifact": 15118206490,
+  "prior_git_blob": "a7cafeecd667df4917bc84b4f56685a6af58f8fc",
+  "prior_report_sha256": "38780cd8ceae3ab990bc25f9de94a87ba34c2c5e50af5aefe38468ae011dcd22",
+  "prior_zip_sha256": "5e1c54c9b5f1733b564b16044664b8f6c5e172c277a4a3ae312bff457e296435",
+  "results": [
+    {
+      "cdx": {
+        "digest": "HPHIMJS3N6XJWPGDS3LNPYHDAHFPDCZB",
+        "length": "1351783621",
+        "mimetype": "application/zip",
+        "original": "http://download1.cinsgame.com/StoneAge.zip",
+        "statuscode": "200",
+        "timestamp": "20120508023725"
+      },
+      "central_range": {
+        "response_bytes": 499,
+        "response_sha256": "a827e31613f3fda811eb314758364390db382f96f11396268fa41258a7d00a3d",
+        "result": "WITHIN_VERIFIED_TAIL"
+      },
+      "directory_result": "CENTRAL_DIRECTORY_PARSED",
+      "entries": [
+        {
+          "compressed_bytes": 130,
+          "crc32": "0a050b70",
+          "flags": 0,
+          "local_header_offset": 0,
+          "method": 8,
+          "name": "layout.bin",
+          "name_bytes_sha256": "a2264407435d494e802c173b8ba22c50e6428a450fb95f080dd35939b4a7f99f",
+          "uncompressed_bytes": 455
+        },
+        {
+          "compressed_bytes": 197732,
+          "crc32": "59aa62d5",
+          "flags": 0,
+          "local_header_offset": 170,
+          "method": 8,
+          "name": "setup.exe",
+          "name_bytes_sha256": "e4fd277eda17a946afd024f2d1478243e70df236282cbeeb36e764d492f74247",
+          "uncompressed_bytes": 460248
+        },
+        {
+          "compressed_bytes": 346,
+          "crc32": "67c13626",
+          "flags": 0,
+          "local_header_offset": 197941,
+          "method": 8,
+          "name": "setup.ini",
+          "name_bytes_sha256": "ce545921990c58cdec210c808c6ad9f9442ce3328dfa9cb1af04bc858274945c",
+          "uncompressed_bytes": 482
+        },
+        {
+          "compressed_bytes": 142717,
+          "crc32": "d3a4bb9f",
+          "flags": 0,
+          "local_header_offset": 198326,
+          "method": 8,
+          "name": "setup.inx",
+          "name_bytes_sha256": "d9c3c717d9aa8838ad5f945968b2af59b7f1084a678fbe8ecdb99261b1e81e61",
+          "uncompressed_bytes": 217465
+        },
+        {
+          "compressed_bytes": 107803,
+          "crc32": "0d7a400f",
+          "flags": 0,
+          "local_header_offset": 341082,
+          "method": 8,
+          "name": "_Setup.dll",
+          "name_bytes_sha256": "97b388f5bc0e1f201d524b9d8ff14246c8527e0d69ddc7c3bef3ff29e8f76474",
+          "uncompressed_bytes": 385968
+        },
+        {
+          "compressed_bytes": 459245,
+          "crc32": "0975d131",
+          "flags": 0,
+          "local_header_offset": 448925,
+          "method": 8,
+          "name": "data1.cab",
+          "name_bytes_sha256": "98b0b28fa6a756e37c77a07965b45040171979a3439ff6dc0d5f6f8b4ace8208",
+          "uncompressed_bytes": 460036
+        },
+        {
+          "compressed_bytes": 28999,
+          "crc32": "3fa042e2",
+          "flags": 0,
+          "local_header_offset": 908209,
+          "method": 8,
+          "name": "data1.hdr",
+          "name_bytes_sha256": "2742d4a41acb4adca675691921f831f1506126af03f288131ddb2453c3b96d1d",
+          "uncompressed_bytes": 84658
+        },
+        {
+          "compressed_bytes": 1350028988,
+          "crc32": "bbb92da7",
+          "flags": 0,
+          "local_header_offset": 937247,
+          "method": 8,
+          "name": "data2.cab",
+          "name_bytes_sha256": "b21412684ebc87c322b7375013c58ae813f3d1150f648438bfec07a5794854d6",
+          "uncompressed_bytes": 1350226505
+        },
+        {
+          "compressed_bytes": 404911,
+          "crc32": "e6af1256",
+          "flags": 0,
+          "local_header_offset": 1350966274,
+          "method": 8,
+          "name": "ISSetup.dll",
+          "name_bytes_sha256": "ee260272ad1e7f813d39adc8981c27b9cae5b0606a15eae8cbc5b20c4fe32d52",
+          "uncompressed_bytes": 492164
+        }
+      ],
+      "eocd": {
+        "central_bytes": 499,
+        "central_offset": 1351371226,
+        "comment_bytes": 0,
+        "entries": 9,
+        "eocd_offset": 1351371725
+      },
+      "replay_url": "https://web.archive.org/web/20120508023725id_/http://download1.cinsgame.com/StoneAge.zip",
+      "tail": {
+        "content_length": "65557",
+        "content_range": "bytes 1351306190-1351371746/1351371747",
+        "end": 1351371746,
+        "requested_bytes": 65557,
+        "response_bytes": 65557,
+        "response_sha256": "836e5e19e1858d29433a1f534f4db83efaaef448c01a56386f8cd8111c3c089b",
+        "result": "EXACT_RANGE",
+        "start": 1351306190,
+        "status": 206
+      }
+    },
+    {
+      "cdx": {
+        "digest": "26NA7ULLBKYI24KJYFYWPQZ7BJQH63UA",
+        "length": "104765456",
+        "mimetype": "application/zip",
+        "original": "http://download1.cinsgame.com/StoneAge.zip",
+        "statuscode": "200",
+        "timestamp": "20120113130058"
+      },
+      "replay_url": "https://web.archive.org/web/20120113130058id_/http://download1.cinsgame.com/StoneAge.zip",
+      "tail": {
+        "content_length": "65557",
+        "content_range": "bytes 1351306190-1351371746/1351371747",
+        "end": 1351371746,
+        "requested_bytes": 65557,
+        "response_bytes": 0,
+        "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "result": "RANGE_LENGTH_MISMATCH",
+        "start": 1351306190,
+        "status": 206
+      }
+    }
+  ],
+  "schema": "stoneage.pet117.cn85.zip_directory.r1"
+}

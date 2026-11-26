@@ -1,0 +1,40 @@
+name: PET120 CN85 full original archive and targeted resource extraction
+on:
+  push:
+    branches: ['agent/pet-high-first-114-cn85-zol-archive-20261126']
+    paths:
+      - 'tools/stoneage_pet_high_first_120_cn85_original_resource_preflight.py'
+      - '.github/workflows/pet-high-first-120-cn85-original-resource-preflight.yml'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    permissions:
+      actions: read
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: sudo apt-get update -qq && sudo apt-get install -y unshield
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/actions/artifacts/15119150171/zip > "$RUNNER_TEMP/pet119.zip"
+          python -m tools.stoneage_pet_high_first_120_cn85_original_resource_preflight --artifact "$RUNNER_TEMP/pet119.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet120-cn85-original-resource-metadata
+          path: research/pets/PET-HIGH-FIRST-120-CN85-ORIGINAL-RESOURCE-PREFLIGHT-R1.json
+          if-no-files-found: error
+          retention-days: 15
+      - name: Retain derived metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/pets/PET-HIGH-FIRST-120-CN85-ORIGINAL-RESOURCE-PREFLIGHT-R1.json
+          git commit -m 'PET120: retain original archive and selected resource preflight metadata'
+          git push origin HEAD:agent/pet-high-first-114-cn85-zol-archive-20261126

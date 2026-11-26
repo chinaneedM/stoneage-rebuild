@@ -1,0 +1,40 @@
+name: PET119 CN85 paired CAB HDR and PET118 custody
+on:
+  push:
+    branches: ['agent/pet-high-first-114-cn85-zol-archive-20261126']
+    paths:
+      - 'tools/stoneage_pet_high_first_119_cn85_cab_hdr_pair.py'
+      - '.github/workflows/pet-high-first-119-cn85-cab-hdr-pair.yml'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      actions: read
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: sudo apt-get update -qq && sudo apt-get install -y unshield
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/actions/artifacts/15119015145/zip > "$RUNNER_TEMP/pet118.zip"
+          python -m tools.stoneage_pet_high_first_119_cn85_cab_hdr_pair --artifact "$RUNNER_TEMP/pet118.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet119-cn85-cab-hdr-pair-metadata
+          path: research/pets/PET-HIGH-FIRST-119-CN85-CAB-HDR-PAIR-R1.json
+          if-no-files-found: error
+          retention-days: 15
+      - name: Retain derived metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/pets/PET-HIGH-FIRST-119-CN85-CAB-HDR-PAIR-R1.json
+          git commit -m 'PET119: retain paired CAB HDR range and directory metadata'
+          git push origin HEAD:agent/pet-high-first-114-cn85-zol-archive-20261126

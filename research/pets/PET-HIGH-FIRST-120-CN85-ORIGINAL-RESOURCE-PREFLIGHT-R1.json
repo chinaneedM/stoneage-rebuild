@@ -1,0 +1,42 @@
+{
+  "blocker": "BOUNDED_FULL_TRANSFER_INCOMPLETE",
+  "capture": {
+    "digest": "HPHIMJS3N6XJWPGDS3LNPYHDAHFPDCZB",
+    "length": "1351783621",
+    "mimetype": "application/zip",
+    "original": "http://download1.cinsgame.com/StoneAge.zip",
+    "statuscode": "200",
+    "timestamp": "20120508023725"
+  },
+  "official_closures": 0,
+  "original_assets_published": false,
+  "original_client_verified": false,
+  "pet_payload_extracted": false,
+  "prior_artifact": 15119150171,
+  "prior_report_git_blob": "1f07c9ad89d4506abf31ca8c8927b747a56c253a",
+  "prior_report_sha256": "d31a242ab213e1118341d045040e2b1a6c604b39b85c432416db19b77f5c0800",
+  "prior_zip_sha256": "fde43bbfb777e563612467f99e34f2984144a5b8d6d0aa1b8aa78f0083ada3b4",
+  "schema": "stoneage.pet120.cn85.original_resource_preflight.r1",
+  "selected_resources": [],
+  "transfer": {
+    "attempts": [
+      {
+        "bytes": 504365056,
+        "content_length": "1351371747",
+        "content_range": "bytes 0-1351371746/1351371747",
+        "end": 1351371746,
+        "error": "overall transfer deadline",
+        "error_type": "TimeoutError",
+        "result": "ACCESS_ERROR",
+        "start": 0,
+        "status": 206
+      }
+    ],
+    "bytes": 0,
+    "cdx_digest_matches": false,
+    "complete": false,
+    "sha1_base32": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "zip_members": []
+}

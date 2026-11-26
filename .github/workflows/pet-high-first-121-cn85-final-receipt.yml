@@ -1,0 +1,24 @@
+name: PET121 CN85 independent final archive receipt
+on:
+  push:
+    branches: ['agent/pet-high-first-114-cn85-zol-archive-20261126']
+    paths:
+      - 'tools/stoneage_pet_high_first_121_cn85_final_receipt.py'
+      - '.github/workflows/pet-high-first-121-cn85-final-receipt.yml'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  receipt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/actions/artifacts/15120460742/zip > "$RUNNER_TEMP/pet120.zip"
+          python -m tools.stoneage_pet_high_first_121_cn85_final_receipt --artifact "$RUNNER_TEMP/pet120.zip"

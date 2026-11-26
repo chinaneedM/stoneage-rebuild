@@ -1,0 +1,31 @@
+name: PET116 CN85 exact client and patch archive preflight
+on:
+  push:
+    branches: ['agent/pet-high-first-114-cn85-zol-archive-20261126']
+    paths:
+      - 'tools/stoneage_pet_high_first_116_cn85_file_archive.py'
+      - '.github/workflows/pet-high-first-116-cn85-file-archive.yml'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m tools.stoneage_pet_high_first_116_cn85_file_archive --self-test
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/actions/artifacts/15116469533/zip > "$RUNNER_TEMP/pet115.zip"
+          python -m tools.stoneage_pet_high_first_116_cn85_file_archive --artifact "$RUNNER_TEMP/pet115.zip" --output "$RUNNER_TEMP/pet116.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet116-cn85-exact-file-archive
+          path: ${{ runner.temp }}/pet116.json
+          if-no-files-found: error
+          retention-days: 15

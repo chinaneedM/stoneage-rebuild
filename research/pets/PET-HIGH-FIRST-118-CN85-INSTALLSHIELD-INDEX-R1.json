@@ -1,0 +1,69 @@
+{
+  "capture": {
+    "digest": "HPHIMJS3N6XJWPGDS3LNPYHDAHFPDCZB",
+    "length": "1351783621",
+    "mimetype": "application/zip",
+    "original": "http://download1.cinsgame.com/StoneAge.zip",
+    "statuscode": "200",
+    "timestamp": "20120508023725"
+  },
+  "installshield_directory": {
+    "result": "MISSING_VERIFIED_MEMBERS"
+  },
+  "members": [
+    {
+      "expected_crc32": "67c13626",
+      "name": "setup.ini",
+      "range": {
+        "end": 198325,
+        "error": "HTTP Error 502: Bad Gateway",
+        "error_type": "HTTPError",
+        "requested_bytes": 385,
+        "result": "ACCESS_OR_PARSE_ERROR",
+        "start": 197941
+      },
+      "result": "RANGE_UNAVAILABLE"
+    },
+    {
+      "expected_crc32": "0975d131",
+      "first_four_hex": "49536328",
+      "name": "data1.cab",
+      "range": {
+        "content_length": "459284",
+        "content_range": "bytes 448925-908208/1351371747",
+        "end": 908208,
+        "requested_bytes": 459284,
+        "response_bytes": 459284,
+        "response_sha256": "08d34ee991f6aff9c205694d2decedc6c5892d4bf2e92cbc63527b0414a13c2d",
+        "result": "EXACT_RANGE",
+        "start": 448925,
+        "status": 206
+      },
+      "result": "CRC_VERIFIED_MEMBER",
+      "uncompressed_bytes": 460036,
+      "uncompressed_sha256": "af4900c3a7829093a267c2c216a917ae951143d06ca401a7650075695029dec5"
+    },
+    {
+      "expected_crc32": "3fa042e2",
+      "name": "data1.hdr",
+      "range": {
+        "end": 937246,
+        "error": "The read operation timed out",
+        "error_type": "TimeoutError",
+        "requested_bytes": 29038,
+        "result": "ACCESS_OR_PARSE_ERROR",
+        "start": 908209
+      },
+      "result": "RANGE_UNAVAILABLE"
+    }
+  ],
+  "official_closures": 0,
+  "original_assets_published": false,
+  "original_client_verified": false,
+  "pet_payload_extracted": false,
+  "prior_artifact": 15118386642,
+  "prior_report_git_blob": "7449e7397e4fe6c1386b8c69008ee1eb46b83c8c",
+  "prior_report_sha256": "11962df9697f7dacf33374d2c41010ea75bc0f2587dda189b1fc543743abdc71",
+  "prior_zip_sha256": "a80fd5ae7a5784fb42669e2b1203483a583b60785d67a126aee5fcc18c4d68d3",
+  "schema": "stoneage.pet118.cn85.installshield_index.r1"
+}
