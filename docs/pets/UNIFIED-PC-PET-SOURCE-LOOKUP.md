@@ -195,3 +195,12 @@ python tools/stoneage_pet_source_lookup.py --annual-names --year 2018 --query �
 python tools/stoneage_pet_source_lookup.py --annual-names --year 2020 --query 米尼樂 --exact --full
 ```
 [从属来源核对与限制](../continuity/STONEAGE-PET-ANNUAL-SUBORDINATE-20261126.md)。
+
+## 年审未匹配名称的具体来源及异文（候选）
+`--annual-names` 对仍无精确目录候选的21个原字面标签增加 `unmatched_literal_reconciliation`。11个同期报告名称追到原保留PET69/70/72来源行，8个后期回忆或传闻不升级；两个2020长名以PET119同一来源简称接目录候选。有限繁简转换及普格多基/普德多基异文保留不同等级，不当身份；2005台湾8.0奖品「卡芙娜」名称早于2020鼠年任务，不证明同一部署或首发。
+```sh
+python tools/stoneage_pet_source_lookup.py --annual-names --year 2020 --query 風地貓卡芙娜 --exact --full
+python tools/stoneage_pet_source_lookup.py --annual-names --year 2005 --query ヴァンレム --exact --full
+python tools/stoneage_pet_source_lookup.py --annual-names --year 2006 --query 普格多基 --exact --full
+```
+[续接及边界](../continuity/STONEAGE-PET-ANNUAL-UNMATCHED-20261126.md)。

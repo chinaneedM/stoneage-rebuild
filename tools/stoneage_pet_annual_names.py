@@ -124,11 +124,94 @@ def subordinate_rows(annual):
     matched={r["label"] for r in pet if r["candidate_refs"][r["label"]]}
     return rows,dict(source_reports=6,source_positions=len(rows),pet_label_positions=len(pet),context_positions=len(ctx),distinct_literal_pet_labels=len(names),labels_with_exact_candidate=len(matched),labels_without_exact_candidate=sorted(names-matched),positions_with_same_year_region_annual_label=sum(bool(r["annual_literal_refs"]) for r in rows),new_official_release_certifications=0,official_species_count=None,limitations=spec["limitations"])
 
+# Explicit retained source positions for the annual names whose literal lookup
+# did not hit the other directories. These are not new release attestations.
+UNMATCHED_ROOTS={
+    "69":("research/recovered/STONEAGE-PET69-YEAR2004-TW75-CNMONKEY-JPAVATAR-R1.json","1907642781be40e6f870c22f6371c1832a35bef2"),
+    "70":("research/recovered/STONEAGE-PET70-2004-KR-RIDES-CN75-STAGED-TW-XUANWU-R1.json","8b784a97135aefe3896859e184b0ee71cf9146f4"),
+    "72":("research/recovered/STONEAGE-PET72-YEAR2005-CN-TW-JP-KR-SOURCE-R1.json","c71fbd26d908761af8cee1dee42289f6cee06c6c"),
+}
+ROOT_LABELS={
+    "火風鷹人":("69",["region_sources",0,"generic_hawk_label"],"GENERIC_ELEMENT_FAMILY_LABEL_NOT_NATIVE_NAME"),
+    **{n:("70",["source_records",0,"named_ride_pets_as_written",i],"RIDING_ROLE_NOT_FIRST_SPECIES_RELEASE") for i,n in enumerate(("라고고","무이","도라비스","고르돈"))},
+    **{n:("72",["source_records",0,"names",i],"CN75_PROMOTION_NOT_ACTUAL_GRANT") for i,n in enumerate(("牛头人","鸡年兽"))},
+    "ガーヴィ":("72",["source_records",9,"names",0],"CONTEST_PRIZE_PROMISE_NOT_ACTUAL_GRANT"),
+    "ヴァンレム":("72",["source_records",10,"names",0],"SHOP_BAG_PLAN_NOT_ACTUAL_GRANT"),
+    **{n:("72",["source_records",11,"names",i],"RIDING_ROLE_NOT_FIRST_SPECIES_RELEASE") for i,n in enumerate(("고르고르","타쿠"))},
+}
+LITERAL_ALTERNATES={
+    "火風鷹人":("火风鹰人","SCRIPT_FORM_ONLY"),
+    "牛头人":("牛頭人","SCRIPT_FORM_ONLY"),
+    "鸡年兽":("雞年獸","SCRIPT_FORM_ONLY"),
+    "黑雞":("黑鸡","SCRIPT_FORM_ONLY"),
+    "普格多基":("普德多基","CONFLICTING_CHARACTER_NOT_A_SCRIPT_VARIANT"),
+    "風地貓卡芙娜":("卡芙娜","DESCRIPTIVE_PREFIX_AND_SHORT_LABEL_SAME_SOURCE"),
+    "水火貓卡蘿麗":("卡蘿麗","DESCRIPTIVE_PREFIX_AND_SHORT_LABEL_SAME_SOURCE"),
+}
+def reconcile_unmatched(annual,sub,report,sub_report):
+    expected=set(report["labels_without_exact_candidate"]) | set(sub_report["labels_without_exact_candidate"])
+    assert len(expected)==21 and len(ROOT_LABELS)==11
+    assert set(ROOT_LABELS)|{"普格多基","黑雞","그램고르","웅이","메가죠","바렌이노","복우리","몽몽","風地貓卡芙娜","水火貓卡蘿麗"}==expected
+    docs={k:read_pin(*p) for k,p in UNMATCHED_ROOTS.items()}
+    probes=[dict(pet_labels=[alt]) for alt,kind in LITERAL_ALTERNATES.values()]
+    attach_names(probes)
+    documentary=make_rows(materials())
+    alt_refs={}
+    for (label,(alt,kind)),p in zip(LITERAL_ALTERNATES.items(),probes):
+        refs=list(p["candidate_refs"][alt])
+        for r in documentary:
+            if alt in r["pet_labels"]:
+                refs.append(dict(directory="documentary",source=r["source"],path=r["source_path"],git_blob=r["git_blob"],pointer=r["pointer"],label=alt,qualification="EXACT_LITERAL_LABEL_ONLY_NOT_IDENTITY"))
+        assert all(r["label"]==alt for r in refs)
+        alt_refs[label]=dict(alternate_label=alt,qualification=kind,directory_candidates=refs,annual_or_subordinate_mentions=[r["source"] for r in annual+sub if r["label"]==alt],same_deployment_identity_verified=False)
+    result=[]
+    for label in sorted(expected):
+        rows=[r for r in annual+sub if r["label"]==label and not r["context_only"]]
+        assert rows and all(not r["candidate_refs"][label] for r in rows)
+        assert len({(r["year"],r["region"]) for r in rows})==1
+        year,region=rows[0]["year"],rows[0]["region"]
+        roots=[]
+        if label in ROOT_LABELS:
+            key,pointer,kind=ROOT_LABELS[label]; d=docs[key]
+            assert resolve(d,pointer)==label
+            container=pointer[:2]
+            source=resolve(d,container)
+            assert source["region"]==region and d["year"]==year
+            roots.append(dict(source=ref(*UNMATCHED_ROOTS[key],pointer),source_container=ref(*UNMATCHED_ROOTS[key],container),record=source,qualification=kind))
+            status="RETAINED_PERIOD_REPORT_NO_NATIVE_ID"
+        elif label in ("風地貓卡芙娜","水火貓卡蘿麗"):
+            alt,kind=LITERAL_ALTERNATES[label]
+            ctx=[r for r in sub if r["receipt"]=="PET119" and r["label"]==alt and r["context_only"]]
+            assert len(ctx)==1 and ctx[0]["source_container"]==rows[0]["source_container"]
+            roots.append(dict(source=ctx[0]["source"],source_container=ctx[0]["source_container"],qualification="SAME_RECEIPT_SHORT_LABEL_NOT_NEW_PET"))
+            status="SAME_RECEIPT_SHORT_LABEL_REFERENCE"
+        else:
+            status="LATER_RECOLLECTION_OR_HEARSAY_NO_NATIVE_ID"
+        # The TW 2005 prize notice is earlier than the 2020 task and contains
+        # the short label, but is not proof of identical server pet or grant.
+        if label=="風地貓卡芙娜":
+            pointer=["source_records",4,"promoted_prizes",1]
+            assert resolve(docs["72"],pointer)=="卡芙娜"
+            roots.append(dict(source=ref(*UNMATCHED_ROOTS["72"],pointer),source_container=ref(*UNMATCHED_ROOTS["72"],["source_records",4]),record=docs["72"]["source_records"][4],qualification="EARLIER_2005_PRIZE_LABEL_NOT_SAME_DEPLOYMENT_OR_FIRST_RELEASE"))
+        if label=="鸡年兽":
+            pointer=["source_records",5,"name_candidate"]
+            assert resolve(docs["72"],pointer)=="雞年獸"
+            roots.append(dict(source=ref(*UNMATCHED_ROOTS["72"],pointer),source_container=ref(*UNMATCHED_ROOTS["72"],["source_records",5]),record=docs["72"]["source_records"][5],qualification="TW_LATER_CHRONOLOGY_NOT_CN75_SAME_ID"))
+        item=dict(label=label,year=year,region=region,status=status,original_refs=[r["source"] for r in rows],original_source_containers=[r["source_container"] for r in rows],evidence_grades=sorted({r["evidence_grade"] for r in rows}),retained_source_refs=roots,alternate=alt_refs.get(label),reopen_trigger="QUALIFIED_ORIGINAL_PC_SAME_BUILD_NAME_ID_GRAPHIC_AND_DATED_OPERATOR_OR_ACTUAL_ACQUISITION_EVIDENCE",official_same_deployment_identity_verified=False,first_release_verified=False,global_unique_species_counted=False)
+        result.append(item)
+    assert sum(x["status"]=="RETAINED_PERIOD_REPORT_NO_NATIVE_ID" for x in result)==11
+    assert sum(x["status"]=="SAME_RECEIPT_SHORT_LABEL_REFERENCE" for x in result)==2
+    assert all(x["alternate"]["directory_candidates"] for x in result if x["status"]=="SAME_RECEIPT_SHORT_LABEL_REFERENCE")
+    assert all(not x["official_same_deployment_identity_verified"] and not x["first_release_verified"] for x in result)
+    return result,dict(unmatched_literal_labels=len(result),period_report_root_labels=11,short_label_same_receipt=2,later_recollection_or_hearsay=8,alternate_labels_with_directory_candidates=sorted(x["label"] for x in result if x["alternate"] and x["alternate"]["directory_candidates"]),official_identity_promotions=0,official_species_count=None)
+
 def run(args):
     if args.source or args.version or args.variants: raise SystemExit("annual names support year, region and literal label only")
     if args.exact and not args.query: raise SystemExit("--exact requires --query")
     rows,spec,counts=load_rows(); report=verify(rows,spec,counts)
     sub,sub_report=subordinate_rows(rows); report["subordinate_report_non_additive"]=sub_report
+    reconciliation,reconciliation_report=reconcile_unmatched(rows,sub,report,sub_report)
+    report["unmatched_literal_reconciliation"]=reconciliation_report
     if args.verify:
         print("PET_ANNUAL_NAMES_PASS "+json.dumps(report,ensure_ascii=False,sort_keys=True));return
     if args.summary or not any((args.year,args.region,args.query)):
@@ -138,4 +221,7 @@ def run(args):
     if not args.full:
         hits=[{k:v for k,v in r.items() if k not in ("record","source_record","original_field")} for r in hits]
         sub_hits=[{k:v for k,v in r.items() if k not in ("record","source_record","original_field")} for r in sub_hits]
-    print(json.dumps(dict(subordinate_pet_label_evidence=[r for r in sub_hits if not r["context_only"]],subordinate_context_not_pet_release=[r for r in sub_hits if r["context_only"]],filters=dict(year=args.year,region=args.region,query=args.query,exact=args.exact),pet_label_evidence=[r for r in hits if not r["context_only"]],context_not_pet_release=[r for r in hits if r["context_only"]],official_species_count=None,limitations=spec["limitations"]),ensure_ascii=False,indent=2))
+    reconciliation_hits=[r for r in reconciliation if (args.year is None or r["year"]==args.year) and (args.region is None or r["region"]==args.region) and (not args.query or (args.query==r["label"] if args.exact else args.query in r["label"]))]
+    if not args.full:
+        reconciliation_hits=[dict(r,retained_source_refs=[{k:v for k,v in x.items() if k!="record"} for x in r["retained_source_refs"]]) for r in reconciliation_hits]
+    print(json.dumps(dict(unmatched_literal_reconciliation=reconciliation_hits,subordinate_pet_label_evidence=[r for r in sub_hits if not r["context_only"]],subordinate_context_not_pet_release=[r for r in sub_hits if r["context_only"]],filters=dict(year=args.year,region=args.region,query=args.query,exact=args.exact),pet_label_evidence=[r for r in hits if not r["context_only"]],context_not_pet_release=[r for r in hits if r["context_only"]],official_species_count=None,limitations=spec["limitations"]),ensure_ascii=False,indent=2))
