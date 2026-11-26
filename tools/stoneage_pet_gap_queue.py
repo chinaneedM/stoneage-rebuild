@@ -13,7 +13,7 @@ LATE = {"hf25", "hf26_27", "hf28_29", "hf30_31"}
 def present_arrays(obj):
     return isinstance(obj, dict) and any(isinstance(v, list) and v for v in obj.values())
 
-def queue(d, entries):
+def queue(d, entries, current=False):
     route_index = defaultdict(list)
     for x in entries:
         if x["source"] == "tw85_spr":
@@ -25,7 +25,7 @@ def queue(d, entries):
     for e in entries:
         s, ptr = e["source"], e["pointer"]
         x = resolve(d, s, ptr)
-        if s not in CORE | LATE | {"hf21", "hf22", "hf23", "hf34", "hf35"}:
+        if s not in CORE | LATE | {"hf21", "hf22", "hf23", "hf34", "hf35"} and not (current and s=="cn85_original"):
             continue
         # Only independently named acquisition dossiers for Japan/Korea.
         # Appearance-only, generic rewards, and re-attestation rows stay in R32.
@@ -53,6 +53,11 @@ def queue(d, entries):
                 if l["source"] == "fusion2003":
                     fields["birth_stats"] = "PERIOD_INDIVIDUAL_LV1_PANEL_NAME_LINK_ONLY"
             priority = "P2_PRESERVED_CN50_SERVER_AND_RELEASE_FIELDS"
+        elif s == "cn85_original":
+            detail=e["detail"]
+            evidence={"name":"AUTHENTICATED_ORIGINAL_COMPILED_TABLE","portrait":detail["portrait_candidate_grade"],"motion":"ARITHMETIC_CANDIDATES_NOT_NATIVE_SELECTOR" if detail["ordinal_spr_candidates"] or detail["slot_spr_candidates"] else "NO_ARITHMETIC_CANDIDATE_NOT_ABSENT"}
+            fields["official_native_id"]="COMPILED_SLOT_AND_FACE_ONLY"
+            priority="P1_AUTHENTICATED_CN2012_SERVER_AND_NATIVE_SELECTOR_FIELDS"
         elif s == "tw85_grid":
             p = ptr[1]
             matches = route_index[(p,x["slot"],x["original_row_sha256"])]
@@ -176,9 +181,19 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("--source");p.add_argument("--priority");p.add_argument("--query")
     p.add_argument("--all",action="store_true");p.add_argument("--verify",action="store_true")
+    p.add_argument("--current",action="store_true",help="include PET124 authenticated original CN2012 positions")
     args=p.parse_args()
-    m,d=load(); entries=build(d); rows=queue(d,entries)
-    if args.verify: verify(d,entries,rows)
+    m,d=load(); entries=build(d); rows=queue(d,entries,current=args.current)
+    if args.verify:
+        verify(d,entries,[r for r in rows if r["source"]!="cn85_original"])
+        if args.current:
+            cn=[r for r in rows if r["source"]=="cn85_original"]
+            assert len(rows)==3563 and len(cn)==548
+            assert Counter(r["source_evidence"]["portrait"] for r in cn)=={"ORIGINAL_RD_SINGLE_CANDIDATE":543,"ORIGINAL_RD_MULTIPLE_CANDIDATES":4,"ORIGINAL_RD_LENGTH_DISCREPANCY":1}
+            assert all(not r["official_same_deployment_certified"] and set(r["formal_fields"])==set(FORMAL) for r in cn)
+            for r in cn:
+                for l in r["linked_records"]:resolve(d,l["source"],l["pointer"])
+            print("PET124_CURRENT_GAP_QUEUE_PASS 3563 source positions; historical 3015 retained")
     if args.source: rows=[r for r in rows if r["source"]==args.source]
     if args.priority: rows=[r for r in rows if r["priority"]==args.priority]
     if args.query:
