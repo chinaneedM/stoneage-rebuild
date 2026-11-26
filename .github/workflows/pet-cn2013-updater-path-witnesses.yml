@@ -1,0 +1,38 @@
+name: PET CN2013 updater receipt and public path witnesses
+on:
+  push:
+    branches: ['agent/pet-cn2013-updater-resource-index-20261126']
+    paths:
+      - 'tools/stoneage_pet_cn2013_updater_path_witnesses.py'
+      - '.github/workflows/pet-cn2013-updater-path-witnesses.yml'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/actions/artifacts/15119463843/zip > "$RUNNER_TEMP/updater.zip"
+          python -m tools.stoneage_pet_cn2013_updater_path_witnesses --artifact "$RUNNER_TEMP/updater.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-cn2013-updater-path-witnesses
+          path: research/pets/PET-CN2013-UPDATER-PATH-WITNESSES-R1.json
+          if-no-files-found: error
+      - name: Retain derived metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/pets/PET-CN2013-UPDATER-PATH-WITNESSES-R1.json
+          git commit -m 'PET: retain CN2013 original updater public path witnesses'
+          git push origin HEAD:agent/pet-cn2013-updater-resource-index-20261126
