@@ -1,0 +1,27 @@
+name: PET-HIGH-FIRST-76 selected archived master fields
+on:
+  push:
+    paths:
+      - '.github/workflows/pet-high-first-76-selected-master.yml'
+      - 'tools/stoneage_pet_high_first_76_master.py'
+      - 'tools/stoneage_pet_source_lookup.py'
+      - 'research/pets/PET-HIGH-FIRST-76-SELECTED-MASTER-FIELDS-R1.json'
+  pull_request:
+    paths:
+      - '.github/workflows/pet-high-first-76-selected-master.yml'
+      - 'tools/stoneage_pet_high_first_76_master.py'
+      - 'tools/stoneage_pet_source_lookup.py'
+      - 'research/pets/PET-HIGH-FIRST-76-SELECTED-MASTER-FIELDS-R1.json'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m tools.stoneage_pet_high_first_76_master
+      - run: python tools/stoneage_pet_source_lookup.py --verify
+      - run: python tools/stoneage_pet_gap_queue.py --verify
+      - run: python -m tools.stoneage_pet_high_first_64_coverage --current > "$RUNNER_TEMP/pet76-coverage.json"
+      - run: python tools/stoneage_pet_source_lookup.py --source tw75 --query 901 --exact --full > "$RUNNER_TEMP/pet76-conflict.json"

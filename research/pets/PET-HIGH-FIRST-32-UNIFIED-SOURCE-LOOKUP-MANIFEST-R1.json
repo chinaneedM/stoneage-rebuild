@@ -392,6 +392,12 @@
       "git_blob": "3648e9b85a85cdb95b6c5207c548de8ecf177d5a",
       "expected_array": null,
       "expected_rows": null
+    },
+    "hf76": {
+      "path": "research/pets/PET-HIGH-FIRST-76-SELECTED-MASTER-FIELDS-R1.json",
+      "git_blob": "0005e7d7943907c01024f5dd24132b126e4bb3f3",
+      "expected_array": "rows",
+      "expected_rows": 467
     }
   },
   "expected": {
@@ -520,5 +526,10 @@
     "source_head": "68f6f7548fc9fcfc57e35c0a4d8a0996d13959a8",
     "source_tree": "5d27797b0d74bb56bd56deea496f44fc063a81d9",
     "scope": "Existing lookup positions only; original visual evidence, not official species or runtime proof."
+  },
+  "supplement_hf76": {
+    "source_head": "27c1b622e878ed396cf9a034d82dcbf581f02dd5",
+    "source_run_id": 45762610249,
+    "scope": "440 exact preserved rows; 941 slots resolve to 38 configured original skill definitions. Conditional models, static acquisition and official releases retain independent evidence grades."
   }
 }

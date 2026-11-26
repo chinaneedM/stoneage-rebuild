@@ -86,3 +86,10 @@ R61 为 67 个严格取得余缺的现有模板添加同档技能核查。64 条
 
 
 R74 接入保存版 TW8.5 的 1,889 个具名程序位置，保留同别名下全部物理肖像候选、原动作覆盖等级及两条未解的非正尺寸记录。`--full` 可追原行、肖像和两版色板文件凭证。标称 TW7.5 按原图号查看候选，台湾 1.0 和大陆 5.0 依图号及完整 SPR 散列查看跨版本对应。用 `--visual-graphic` 可查原 TW8.5 物理图组，包括相册无具名路由的 `100400`，图号与物理组号均属于原资源命名空间。官服身份、实际调色及原客户端渲染仍待证。[取证与续接](../continuity/STONEAGE-PET-HIGH-FIRST-74-UNIFIED-VISUAL-20261125.md)
+
+R76 在标称台湾 7.5 的 467 个现有位置增加保存档主表核查。可查同指纹的出生参数、配置技能名和已有取得配置，也可用模板编号检索同号异行的基础值差异。初值区间与成长增量仍是后期 PC 算法的条件计算，官服实际出生技能和取得待证。[字段核查](../continuity/STONEAGE-PET-HIGH-FIRST-76-SELECTED-MASTER-FIELDS-20261126.md)
+
+```sh
+python tools/stoneage_pet_source_lookup.py --source tw75 --query 烏力 --exact --full
+python tools/stoneage_pet_source_lookup.py --source tw75 --query 901 --exact --full
+```
