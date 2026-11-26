@@ -556,8 +556,8 @@
       "expected_rows": null
     },
     "cn85_original": {
-      "path": "research/pets/PET-HIGH-FIRST-122-CN85-COMPLETE-TRANSFER-R1.json",
-      "git_blob": "a6ed895e5b6b18ebaa1c02e809da5a17937dd176",
+      "path": "research/pets/PET-HIGH-FIRST-124-CN85-NATIVE-ALBUM-R1.json",
+      "git_blob": "17a42f4de1d9e508b580c88de70bb012d7e03c9b",
       "expected_array": null,
       "expected_rows": null
     },
@@ -566,6 +566,18 @@
       "git_blob": "74c0c112fed4597ee8135228625b7c3fea81a245",
       "expected_array": "rows",
       "expected_rows": 362
+    },
+    "cn85_original_partial": {
+      "path": "research/pets/PET-HIGH-FIRST-122-CN85-COMPLETE-TRANSFER-R1.json",
+      "git_blob": "a6ed895e5b6b18ebaa1c02e809da5a17937dd176",
+      "expected_array": null,
+      "expected_rows": null
+    },
+    "cn50_cn85_spr_inheritance": {
+      "path": "research/pets/PET-CN50-CN85-SPR-INHERITANCE-R1.json",
+      "git_blob": "26763873998c93075342028752c40074fe472934",
+      "expected_array": "rows",
+      "expected_rows": 305
     }
   },
   "expected": {
@@ -853,5 +865,9 @@
     "scope": "Authenticated 2012 distribution: 521 named compiled positions shared by two executables, 513 literal names; no native selector, server identity or release certification. Historical 3015-position field queue remains separate pending PET124.",
     "source_head": "ad12800baf81ffd59c54ca09d7917202598e0b6e",
     "official_closures": 0
+  },
+  "supplement_pet124": {
+    "scope": "Full original 548 named positions, 540 literal labels, 552 RD candidates; historical queue retained, current 3563 source positions; no official field closures.",
+    "source_head": "87fcc6f8c411d90e4baa636332645bd6f0ba026f"
   }
 }
