@@ -1,11 +1,12 @@
 name: PET annual named evidence access
 on:
   push:
-    branches: ['agent/pet-annual-names-20261126']
+    branches: ['agent/pet-annual-names-20261126', 'agent/pet-annual-subordinate-20261126']
     paths:
       - 'tools/stoneage_pet_annual_names.py'
       - 'tools/stoneage_pet_source_lookup.py'
       - 'research/pets/PET-ANNUAL-NAMED-EVIDENCE-SELECTION-R1.json'
+      - 'research/pets/PET-ANNUAL-SUBORDINATE-NAMES-R1.json'
       - '.github/workflows/pet-annual-names.yml'
 permissions:
   contents: read
@@ -22,6 +23,9 @@ jobs:
       - run: python tools/stoneage_pet_source_lookup.py --annual-names --region KR --query 도에디크 --exact --full
       - run: python tools/stoneage_pet_source_lookup.py --annual-names --year 2023 --query 里拉拉 --exact --full
       - run: python tools/stoneage_pet_source_lookup.py --annual-names --year 2025 --query 雷爾的意念 --exact --full
+      - run: python tools/stoneage_pet_source_lookup.py --annual-names --year 2012 --query 呼拔拔 --exact --full
+      - run: python tools/stoneage_pet_source_lookup.py --annual-names --year 2018 --query 貝洛寶利 --exact --full
+      - run: python tools/stoneage_pet_source_lookup.py --annual-names --year 2020 --query 米尼樂 --exact --full
       - run: python tools/stoneage_pet_source_lookup.py --history --verify
       - run: python tools/stoneage_pet_source_lookup.py --documentary --verify
       - run: python tools/stoneage_pet_source_lookup.py --legacy-pet16 --verify
