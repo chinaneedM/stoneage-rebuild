@@ -27,6 +27,14 @@ class AtlasTest(unittest.TestCase):
         tw=[x for x in d["rows"] if x["source"]=="tw10"]
         late=[x for x in d["rows"] if x["source"]=="tw75"]
         self.assertEqual(len(tw),124)
+        self.assertEqual(len(d["profiles"]),124)
+        w=d["profiles"]["PET-000001"]["profile"]
+        self.assertEqual(w["names"]["original_client"],"烏力")
+        self.assertEqual(w["appearance"]["graphic_number"],100250)
+        self.assertEqual(w["appearance"]["action_sequences"]["source_sequences"],56)
+        self.assertIsNone(w["combat_stats"]["initial_stat_ranges"]["minimum"]["derived_hp"])
+        self.assertIsNone(w["acquisition"]["original_capture"]["map_name"])
+        self.assertFalse(w["status"]["all_fields_historically_complete"])
         self.assertEqual(len(late),467)
         self.assertTrue(all("field_reference" in x["detail"] for x in tw))
         self.assertTrue(all({"conditional_lv1_panel","conditional_per_level_internal","elements","skill_slots","saved_mixed25_acquisition"} <= set(x["detail"]) for x in late))

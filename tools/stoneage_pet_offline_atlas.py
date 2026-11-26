@@ -18,7 +18,22 @@ def payload():
     lookup.verify(manifest, data, rows)
     sources = {k: {"path": v["path"], "git_blob": v["git_blob"]}
                for k, v in manifest["sources"].items()}
+    profiles = {}
+    for row in rows:
+        if row["source"] != "tw10":
+            continue
+        detail = row["detail"]
+        path = detail["dossier_path"]
+        assert path.startswith("research/pets/profiles/") and ".." not in Path(path).parts
+        raw = (lookup.ROOT / path).read_bytes()
+        profile = json.loads(raw)
+        assert profile["profile_id"] == detail["pet_id"]
+        assert profile["names"]["original_client"] in row["labels"]
+        assert profile["appearance"]["graphic_number"] == detail["graphic"]
+        assert not profile["status"]["all_fields_historically_complete"]
+        profiles[profile["profile_id"]] = {"path": path, "git_blob": lookup.blob(raw), "profile": profile}
     return {
+        "profiles": profiles,
         "schema": "stoneage.pet.offline_source_atlas.r1",
         "summary": lookup.summary(rows),
         "fields": FIELDS,
@@ -68,7 +83,20 @@ function show(r){
   json(p,"配置技能槽（非官服出生技能）",v.skill_slots);
   json(p,"保存档取得／地图配置（非正式抓捕证明）",v.saved_mixed25_acquisition);
  }
- if(r.source==="tw10"&&r.detail)json(p,"原零售名档的独立字段参考",r.detail.field_reference);
+ if(r.source==="tw10"&&r.detail){
+  const q=d.profiles[r.detail.pet_id], f=q.profile;
+  json(p,"原零售档案编号与来源",{id:f.profile_id,version:f.version_scope,path:q.path,git_blob:q.git_blob});
+  json(p,"名称、系列与官服身份",{names:f.names,family:f.encyclopedia.category_or_family,identity:f.actual_official_pet_identity});
+  json(p,"属性与一级初值范围（null = 未证）",f.combat_stats);
+  json(p,"成长与算法（null = 未证）",f.growth);
+  json(p,"原生技能（null = 未证）",f.skills);
+  json(p,"捕捉和其他取得（null = 未证）",f.acquisition);
+  json(p,"图鉴、头像及动作原证索引",{encyclopedia:f.encyclopedia,appearance:f.appearance});
+  json(p,"融合／进化／骑乘",f.pet_systems);
+  json(p,"私人观察凭证（本页不含原图）",f.provenance);
+  json(p,"独立同期及后期字段参考，不回填官方值",r.detail.field_reference);
+  json(p,"仍需证据",f.next_evidence_gap);
+ }
  json(p,"现存来源字段和视觉证据索引",r.detail);
  json(p,"关联来源及资格（本地仓库路径可追溯）",r.linked_records.map(x=>({source:x.source,pointer:x.pointer,qualification:x.qualification,file:d.sources[x.source]})));
 }
