@@ -1607,11 +1607,18 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     query=p.add_mutually_exclusive_group()
     query.add_argument("--query")
-    p.add_argument("--legacy-pet16",action="store_true",help="search the retained PET16 independent source namespaces")
+    modes=p.add_mutually_exclusive_group()
+    modes.add_argument("--legacy-pet16",action="store_true",help="search the retained PET16 independent source namespaces")
+    modes.add_argument("--documentary",action="store_true",help="search historical commission, skill and release evidence separately")
     query.add_argument("--visual-graphic", type=int, help="exact preserved TW85 graphic number, including residual groups")
     p.add_argument("--exact",action="store_true");p.add_argument("--variants",action="store_true")
     p.add_argument("--source");p.add_argument("--full",action="store_true");p.add_argument("--summary",action="store_true");p.add_argument("--verify",action="store_true")
     args=p.parse_args()
+    if args.documentary:
+        if args.visual_graphic is not None: p.error("--documentary and --visual-graphic are separate lookups")
+        from stoneage_pet_documentary_access import run
+        run(args)
+        return
     if args.legacy_pet16:
         if args.visual_graphic is not None: p.error("--legacy-pet16 and --visual-graphic are separate lookups")
         from stoneage_pet_legacy_access import run
