@@ -841,12 +841,13 @@ def verify(m,d,entries):
             assert [(z["skill_id"], z["row_sha256"]) for z in actual] == [
                 (z["skill_id"], z["definition_row_sha256"]) for z in row["configured_skill_slots"]]
     if "hf90" in d:
-        if __package__:
-            from .stoneage_pet_growth_model import project_pet_birth
-            from .stoneage_pet_detail30_base_panel import project_pet_source_base_panel
-        else:
-            from stoneage_pet_growth_model import project_pet_birth
-            from stoneage_pet_detail30_base_panel import project_pet_source_base_panel
+        # The growth model imports its dependencies via the tools package.
+        # Support both direct script invocation and python -m tools.... .
+        if not __package__:
+            import sys
+            sys.path.insert(0, str(ROOT))
+        from tools.stoneage_pet_growth_model import project_pet_birth
+        from tools.stoneage_pet_detail30_base_panel import project_pet_source_base_panel
         joint = d["hf90"]
         assert len(joint["rows"]) == 41
         assert {row["fusion_index"] for row in joint["rows"]} == set(range(41))
