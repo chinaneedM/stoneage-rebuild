@@ -1,0 +1,3936 @@
+{
+  "official_closures": 0,
+  "original_assets_published": false,
+  "original_client_verified": false,
+  "pet_payload_extracted": false,
+  "prior_artifact": 15119015145,
+  "prior_report_git_blob": "2c285b74328471e7050dfb6956bbcdc257edaff3",
+  "prior_report_sha256": "a54f441b2a9547067209cf6c683ec463ef406a9bc2b975a9f87a80e43b1c6a5e",
+  "prior_zip_sha256": "d8062558fc44d47682bff5a94eeb983858d5b5d26dc34c116cd6358929c31f4b",
+  "results": [
+    {
+      "attempts": [
+        {
+          "kind": "PAIR",
+          "range": {
+            "content_length": "488322",
+            "content_range": "bytes 448925-937246/1351371747",
+            "end": 937246,
+            "requested_bytes": 488322,
+            "response_bytes": 488322,
+            "response_sha256": "d29d44ea511a01161574b4e8b497a87912b11189c8d6e012b56070eee2a50842",
+            "result": "EXACT_RANGE",
+            "start": 448925,
+            "status": 206
+          }
+        }
+      ],
+      "cab_matches_pet118": true,
+      "cdx": {
+        "digest": "HPHIMJS3N6XJWPGDS3LNPYHDAHFPDCZB",
+        "length": "1351783621",
+        "mimetype": "application/zip",
+        "original": "http://download1.cinsgame.com/StoneAge.zip",
+        "statuscode": "200",
+        "timestamp": "20120508023725"
+      },
+      "directory": {
+        "all_entries": [
+          {
+            "name": "Files\\AISetting.dat",
+            "size": 9860
+          },
+          {
+            "name": "Files\\adrn_185.bin",
+            "size": 36719200
+          },
+          {
+            "name": "Files\\adrntrue_5.bin",
+            "size": 34440
+          },
+          {
+            "name": "Files\\album_47.dat",
+            "size": 4515984
+          },
+          {
+            "name": "Files\\auto.dat",
+            "size": 550010
+          },
+          {
+            "name": "Files\\battle_2.bin",
+            "size": 187500
+          },
+          {
+            "name": "Files\\battletxt_2.txt",
+            "size": 5844
+          },
+          {
+            "name": "Files\\blacklist.txt",
+            "size": 0
+          },
+          {
+            "name": "Files\\channel.dat",
+            "size": 3
+          },
+          {
+            "name": "Files\\chathis.dat",
+            "size": 16708
+          },
+          {
+            "name": "Files\\chatreg.dat",
+            "size": 2372
+          },
+          {
+            "name": "Files\\data_1.bin",
+            "size": 4
+          },
+          {
+            "name": "Files\\mail.dat",
+            "size": 611840
+          },
+          {
+            "name": "Files\\real_185.bin",
+            "size": 1839180217
+          },
+          {
+            "name": "Files\\realtrue_13.bin",
+            "size": 40829843
+          },
+          {
+            "name": "Files\\savedata.dat",
+            "size": 128
+          },
+          {
+            "name": "Files\\sound_3.bin",
+            "size": 2696934
+          },
+          {
+            "name": "Files\\soundaddr_3.txt",
+            "size": 691
+          },
+          {
+            "name": "Files\\spr_155.bin",
+            "size": 9309056
+          },
+          {
+            "name": "Files\\spradrn_155.bin",
+            "size": 22044
+          },
+          {
+            "name": "Files\\battleMap\\battle00.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle01.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle02.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle03.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle04.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle05.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle06.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle07.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle08.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle09.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle10.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle100.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle101.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle102.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle103.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle104.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle105.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle106.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle107.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle108.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle109.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle11.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle110.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle111.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle112.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle113.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle114.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle115.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle116.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle117.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle118.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle119.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle12.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle120.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle121.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle122.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle123.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle124.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle125.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle126.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle127.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle128.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle129.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle13.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle130.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle131.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle132.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle133.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle134.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle135.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle136.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle137.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle138.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle139.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle14.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle140.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle141.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle142.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle143.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle144.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle145.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle146.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle147.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle148.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle149.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle15.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle150.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle151.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle152.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle153.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle154.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle155.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle156.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle157.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle158.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle159.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle16.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle160.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle161.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle162.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle163.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle164.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle165.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle166.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle167.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle168.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle169.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle17.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle170.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle171.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle172.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle173.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle174.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle175.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle176.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle177.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle178.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle179.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle18.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle180.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle181.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle182.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle183.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle184.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle185.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle186.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle187.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle188.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle189.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle19.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle190.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle191.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle192.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle193.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle194.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle195.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle196.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle197.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle198.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle199.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle20.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle200.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle201.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle202.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle203.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle204.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle205.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle206.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle207.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle208.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle209.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle21.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle210.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle211.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle212.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle213.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle214.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle215.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle216.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle217.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle218.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle219.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle22.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle23.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle24.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle25.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle26.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle27.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle28.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle29.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle30.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle31.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle32.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle33.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle34.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle35.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle36.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle37.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle38.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle39.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle40.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle41.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle42.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle43.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle44.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle45.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle46.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle47.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle48.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle49.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle50.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle51.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle52.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle53.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle54.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle55.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle56.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle57.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle58.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle59.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle60.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle61.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle62.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle63.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle64.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle65.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle66.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle67.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle68.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle69.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle70.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle71.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle72.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle73.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle74.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle75.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle76.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle77.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle78.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle79.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle80.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle81.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle82.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle83.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle84.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle85.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle86.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle87.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle88.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle89.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle90.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle91.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle92.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle93.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle94.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle95.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle96.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle97.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle98.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\battleMap\\battle99.sab",
+            "size": 804
+          },
+          {
+            "name": "Files\\bgm\\sabgm_b0.wav",
+            "size": 2116016
+          },
+          {
+            "name": "Files\\bgm\\sabgm_b1.wav",
+            "size": 2609812
+          },
+          {
+            "name": "Files\\bgm\\sabgm_b2.wav",
+            "size": 2647296
+          },
+          {
+            "name": "Files\\bgm\\sabgm_b3.wav",
+            "size": 2647900
+          },
+          {
+            "name": "Files\\bgm\\sabgm_b4.wav",
+            "size": 4182684
+          },
+          {
+            "name": "Files\\bgm\\sabgm_d0.wav",
+            "size": 3599256
+          },
+          {
+            "name": "Files\\bgm\\sabgm_d1.wav",
+            "size": 3024432
+          },
+          {
+            "name": "Files\\bgm\\sabgm_d2.wav",
+            "size": 3763916
+          },
+          {
+            "name": "Files\\bgm\\sabgm_f0.wav",
+            "size": 5014108
+          },
+          {
+            "name": "Files\\bgm\\sabgm_f1.wav",
+            "size": 3227978
+          },
+          {
+            "name": "Files\\bgm\\sabgm_f2.wav",
+            "size": 2731686
+          },
+          {
+            "name": "Files\\bgm\\sabgm_s0.wav",
+            "size": 346812
+          },
+          {
+            "name": "Files\\bgm\\sabgm_s1.wav",
+            "size": 1285762
+          },
+          {
+            "name": "Files\\bgm\\sabgm_t0.wav",
+            "size": 3136338
+          },
+          {
+            "name": "Files\\bgm\\sabgm_t1.wav",
+            "size": 5931756
+          },
+          {
+            "name": "Files\\bgm\\sabgm_t10.wav",
+            "size": 6186284
+          },
+          {
+            "name": "Files\\bgm\\sabgm_t11.wav",
+            "size": 2228340
+          },
+          {
+            "name": "Files\\bgm\\sabgm_t12.wav",
+            "size": 911016
+          },
+          {
+            "name": "Files\\bgm\\sabgm_t2.wav",
+            "size": 2687096
+          },
+          {
+            "name": "Files\\bgm\\sabgm_t3.wav",
+            "size": 3597580
+          },
+          {
+            "name": "Files\\bgm\\sabgm_t4.wav",
+            "size": 3524304
+          },
+          {
+            "name": "Files\\bgm\\sabgm_t5.wav",
+            "size": 3828074
+          },
+          {
+            "name": "Files\\bgm\\sabgm_t6.wav",
+            "size": 3415166
+          },
+          {
+            "name": "Files\\bgm\\sabgm_t7.wav",
+            "size": 4725078
+          },
+          {
+            "name": "Files\\bgm\\sabgm_t8.wav",
+            "size": 5303852
+          },
+          {
+            "name": "Files\\bgm\\sabgm_t9.wav",
+            "size": 5953580
+          },
+          {
+            "name": "Files\\bin\\MultiDialog.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\bin\\activities.bin",
+            "size": 1613
+          },
+          {
+            "name": "Files\\bin\\petlifetype.bin",
+            "size": 303
+          },
+          {
+            "name": "Files\\bin\\quest.bin",
+            "size": 1091
+          },
+          {
+            "name": "Files\\bin\\shopsellitems.bin",
+            "size": 38025
+          },
+          {
+            "name": "Files\\skin\\default\\base.bmp",
+            "size": 101520
+          },
+          {
+            "name": "Files\\skin\\default\\down_arrow_g.bmp",
+            "size": 1440
+          },
+          {
+            "name": "Files\\skin\\default\\down_arrow_r.bmp",
+            "size": 1440
+          },
+          {
+            "name": "Files\\skin\\default\\up_arrow_g.bmp",
+            "size": 1440
+          },
+          {
+            "name": "Files\\skin\\default\\up_arrow_r.bmp",
+            "size": 1440
+          },
+          {
+            "name": "Files\\download\\sa_25_payment.exe",
+            "size": 950272
+          },
+          {
+            "name": "Files\\download\\sa_85_free.exe",
+            "size": 1060864
+          },
+          {
+            "name": "Files\\gui\\ItemsMall.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\ItemsMall2.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\ItemsMall2_25_Payment.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\ItemsMall3.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\ItemsMall3_25_Payment.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\ItemsMall4.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\ItemsMall4_25_Payment.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\ItemsMall_25_Payment.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\MultiDialog.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\NormalTopWin.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\OpenShop.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\PetList.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\PetMail.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\PetStatus.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\PetStore.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\Quest.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\TeamList.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\Trans.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\obj\\ItemsMall.obj",
+            "size": 20424
+          },
+          {
+            "name": "Files\\obj\\ItemsMall2.obj",
+            "size": 4037
+          },
+          {
+            "name": "Files\\obj\\ItemsMall2_25_Payment.obj",
+            "size": 4151
+          },
+          {
+            "name": "Files\\obj\\ItemsMall3.obj",
+            "size": 1499
+          },
+          {
+            "name": "Files\\obj\\ItemsMall3_25_Payment.obj",
+            "size": 1556
+          },
+          {
+            "name": "Files\\obj\\ItemsMall4.obj",
+            "size": 4081
+          },
+          {
+            "name": "Files\\obj\\ItemsMall4_25_Payment.obj",
+            "size": 4195
+          },
+          {
+            "name": "Files\\obj\\ItemsMall_25_Payment.obj",
+            "size": 19224
+          },
+          {
+            "name": "Files\\obj\\MultiDialog.obj",
+            "size": 5462
+          },
+          {
+            "name": "Files\\obj\\NewUI.obj",
+            "size": 3914
+          },
+          {
+            "name": "Files\\obj\\global.obj",
+            "size": 1621
+          },
+          {
+            "name": "Files\\obj\\normaltopwin.obj",
+            "size": 647
+          },
+          {
+            "name": "Files\\obj\\quest.obj",
+            "size": 13343
+          },
+          {
+            "name": "Files\\pal\\PALET_1.SAP",
+            "size": 708
+          },
+          {
+            "name": "Files\\pal\\PALET_10.SAP",
+            "size": 708
+          },
+          {
+            "name": "Files\\pal\\PALET_11.SAP",
+            "size": 708
+          },
+          {
+            "name": "Files\\pal\\PALET_12.SAP",
+            "size": 708
+          },
+          {
+            "name": "Files\\pal\\PALET_13.SAP",
+            "size": 708
+          },
+          {
+            "name": "Files\\pal\\PALET_14.SAP",
+            "size": 708
+          },
+          {
+            "name": "Files\\pal\\PALET_15.SAP",
+            "size": 708
+          },
+          {
+            "name": "Files\\pal\\PALET_2.SAP",
+            "size": 708
+          },
+          {
+            "name": "Files\\pal\\PALET_3.SAP",
+            "size": 708
+          },
+          {
+            "name": "Files\\pal\\PALET_4.SAP",
+            "size": 708
+          },
+          {
+            "name": "Files\\pal\\PALET_5.SAP",
+            "size": 708
+          },
+          {
+            "name": "Files\\pal\\PALET_6.SAP",
+            "size": 708
+          },
+          {
+            "name": "Files\\pal\\PALET_7.SAP",
+            "size": 708
+          },
+          {
+            "name": "Files\\pal\\PALET_8.SAP",
+            "size": 708
+          },
+          {
+            "name": "Files\\pal\\PALET_9.SAP",
+            "size": 708
+          },
+          {
+            "name": "Files\\pal\\Palet_0.sap",
+            "size": 708
+          },
+          {
+            "name": "Files\\se\\sa1_01.wav",
+            "size": 66156
+          },
+          {
+            "name": "Files\\se\\sa1_02.wav",
+            "size": 53162
+          },
+          {
+            "name": "Files\\se\\sa1_03.wav",
+            "size": 5728
+          },
+          {
+            "name": "Files\\se\\sa1_04.wav",
+            "size": 13312
+          },
+          {
+            "name": "Files\\se\\sa1_05.wav",
+            "size": 27122
+          },
+          {
+            "name": "Files\\se\\sa1_06.wav",
+            "size": 20864
+          },
+          {
+            "name": "Files\\se\\sa1_07.wav",
+            "size": 36544
+          },
+          {
+            "name": "Files\\se\\sa1_08.wav",
+            "size": 47984
+          },
+          {
+            "name": "Files\\se\\sa1_09.wav",
+            "size": 24210
+          },
+          {
+            "name": "Files\\se\\sa1_10.wav",
+            "size": 46380
+          },
+          {
+            "name": "Files\\se\\sa1_11.wav",
+            "size": 31980
+          },
+          {
+            "name": "Files\\se\\sa1_12.wav",
+            "size": 25644
+          },
+          {
+            "name": "Files\\se\\sa1_13.wav",
+            "size": 219136
+          },
+          {
+            "name": "Files\\se\\sa1_14.wav",
+            "size": 4416
+          },
+          {
+            "name": "Files\\se\\sa1_15.wav",
+            "size": 6026
+          },
+          {
+            "name": "Files\\se\\sa1_16.wav",
+            "size": 26024
+          },
+          {
+            "name": "Files\\se\\sa1_17.wav",
+            "size": 12122
+          },
+          {
+            "name": "Files\\se\\sa1_18.wav",
+            "size": 41884
+          },
+          {
+            "name": "Files\\se\\sa1_19.wav",
+            "size": 33756
+          },
+          {
+            "name": "Files\\se\\sa1_20.wav",
+            "size": 25628
+          },
+          {
+            "name": "Files\\se\\sa1_21.wav",
+            "size": 25916
+          },
+          {
+            "name": "Files\\se\\sa1_22.wav",
+            "size": 52704
+          },
+          {
+            "name": "Files\\se\\sa1_23.wav",
+            "size": 26798
+          },
+          {
+            "name": "Files\\se\\sa2_01.wav",
+            "size": 10600
+          },
+          {
+            "name": "Files\\se\\sa2_02.wav",
+            "size": 113952
+          },
+          {
+            "name": "Files\\se\\sa2_03.wav",
+            "size": 210684
+          },
+          {
+            "name": "Files\\se\\sa2_04.wav",
+            "size": 154140
+          },
+          {
+            "name": "Files\\se\\sa2_05.wav",
+            "size": 155136
+          },
+          {
+            "name": "Files\\se\\sa2_06.wav",
+            "size": 9230
+          },
+          {
+            "name": "Files\\se\\sa2_07.wav",
+            "size": 85504
+          },
+          {
+            "name": "Files\\se\\sa2_08.wav",
+            "size": 120608
+          },
+          {
+            "name": "Files\\se\\sa2_09.wav",
+            "size": 120352
+          },
+          {
+            "name": "Files\\se\\sa2_10.wav",
+            "size": 9452
+          },
+          {
+            "name": "Files\\se\\sa2_12.wav",
+            "size": 35648
+          },
+          {
+            "name": "Files\\se\\sa3_01.wav",
+            "size": 16524
+          },
+          {
+            "name": "Files\\se\\sa3_02.wav",
+            "size": 9156
+          },
+          {
+            "name": "Files\\se\\sa3_03.wav",
+            "size": 151552
+          },
+          {
+            "name": "Files\\se\\sa3_04.wav",
+            "size": 276992
+          },
+          {
+            "name": "Files\\se\\sa3_05.wav",
+            "size": 207360
+          },
+          {
+            "name": "Files\\se\\sa3_06.wav",
+            "size": 15084
+          },
+          {
+            "name": "Files\\se\\sa3_07.wav",
+            "size": 126208
+          },
+          {
+            "name": "Files\\se\\sa3_08.wav",
+            "size": 34830
+          },
+          {
+            "name": "Files\\se\\sa3_09.wav",
+            "size": 153600
+          },
+          {
+            "name": "Files\\se\\saam_01.wav",
+            "size": 27180
+          },
+          {
+            "name": "Files\\se\\saam_02.wav",
+            "size": 11760
+          },
+          {
+            "name": "Files\\se\\saam_03.wav",
+            "size": 20136
+          },
+          {
+            "name": "Files\\se\\saam_04.wav",
+            "size": 37736
+          },
+          {
+            "name": "Files\\se\\saam_05.wav",
+            "size": 33610
+          },
+          {
+            "name": "Files\\se\\saam_06.wav",
+            "size": 21764
+          },
+          {
+            "name": "Files\\se\\saam_07.wav",
+            "size": 47916
+          },
+          {
+            "name": "Files\\se\\saam_08.wav",
+            "size": 35140
+          },
+          {
+            "name": "Files\\se\\saam_09.wav",
+            "size": 25580
+          },
+          {
+            "name": "Files\\se\\saam_10.wav",
+            "size": 27108
+          },
+          {
+            "name": "Files\\se\\saam_11.wav",
+            "size": 38444
+          },
+          {
+            "name": "Files\\se\\saam_12.wav",
+            "size": 23852
+          },
+          {
+            "name": "Files\\se\\saam_13.wav",
+            "size": 24172
+          },
+          {
+            "name": "Files\\se\\saam_14.wav",
+            "size": 35436
+          },
+          {
+            "name": "Files\\se\\saam_15.wav",
+            "size": 5362
+          },
+          {
+            "name": "Files\\se\\saam_16.wav",
+            "size": 5362
+          },
+          {
+            "name": "Files\\se\\saam_17.wav",
+            "size": 33838
+          },
+          {
+            "name": "Files\\se\\saam_18.wav",
+            "size": 35108
+          },
+          {
+            "name": "Files\\se\\saam_19.wav",
+            "size": 38508
+          },
+          {
+            "name": "Files\\se\\saam_20.wav",
+            "size": 56940
+          },
+          {
+            "name": "Files\\se\\saam_21.wav",
+            "size": 32492
+          },
+          {
+            "name": "Files\\se\\saam_22.wav",
+            "size": 31340
+          },
+          {
+            "name": "Files\\se\\saam_23.wav",
+            "size": 42092
+          },
+          {
+            "name": "Files\\se\\saam_24.wav",
+            "size": 41452
+          },
+          {
+            "name": "Files\\se\\saam_25.wav",
+            "size": 42156
+          },
+          {
+            "name": "Files\\se\\saam_26.wav",
+            "size": 86818
+          },
+          {
+            "name": "Files\\se\\saam_27.wav",
+            "size": 37676
+          },
+          {
+            "name": "Files\\se\\sad_01.wav",
+            "size": 3020
+          },
+          {
+            "name": "Files\\se\\sad_02.wav",
+            "size": 2968
+          },
+          {
+            "name": "Files\\se\\sad_03.wav",
+            "size": 2038
+          },
+          {
+            "name": "Files\\se\\sad_04.wav",
+            "size": 5144
+          },
+          {
+            "name": "Files\\se\\sad_05.wav",
+            "size": 4818
+          },
+          {
+            "name": "Files\\se\\sae_01.wav",
+            "size": 7760
+          },
+          {
+            "name": "Files\\se\\sae_02.wav",
+            "size": 6752
+          },
+          {
+            "name": "Files\\se\\sae_03.wav",
+            "size": 10964
+          },
+          {
+            "name": "Files\\se\\sae_04.wav",
+            "size": 9110
+          },
+          {
+            "name": "Files\\se\\sae_05.wav",
+            "size": 11056
+          },
+          {
+            "name": "Files\\se\\sae_06.wav",
+            "size": 7164
+          },
+          {
+            "name": "Files\\se\\sae_07.wav",
+            "size": 30896
+          },
+          {
+            "name": "Files\\se\\sae_08.wav",
+            "size": 14738
+          },
+          {
+            "name": "Files\\se\\sae_09.wav",
+            "size": 11192
+          },
+          {
+            "name": "Files\\se\\sae_10.wav",
+            "size": 13744
+          },
+          {
+            "name": "Files\\se\\sae_11.wav",
+            "size": 16652
+          },
+          {
+            "name": "Files\\se\\sae_12.wav",
+            "size": 25086
+          },
+          {
+            "name": "Files\\se\\sae_13.wav",
+            "size": 15536
+          },
+          {
+            "name": "Files\\se\\sae_14.wav",
+            "size": 27740
+          },
+          {
+            "name": "Files\\se\\sae_15.wav",
+            "size": 17776
+          },
+          {
+            "name": "Files\\se\\sae_16.wav",
+            "size": 4904
+          },
+          {
+            "name": "Files\\se\\sae_17.wav",
+            "size": 10384
+          },
+          {
+            "name": "Files\\se\\sae_18.wav",
+            "size": 7362
+          },
+          {
+            "name": "Files\\se\\sae_19.wav",
+            "size": 11626
+          },
+          {
+            "name": "Files\\se\\sae_20.wav",
+            "size": 5616
+          },
+          {
+            "name": "Files\\se\\sae_21.wav",
+            "size": 7008
+          },
+          {
+            "name": "Files\\se\\sae_22.wav",
+            "size": 6730
+          },
+          {
+            "name": "Files\\se\\sae_23.wav",
+            "size": 14704
+          },
+          {
+            "name": "Files\\se\\sae_24.wav",
+            "size": 25370
+          },
+          {
+            "name": "Files\\se\\sae_25.wav",
+            "size": 37492
+          },
+          {
+            "name": "Files\\se\\sae_26.wav",
+            "size": 3188
+          },
+          {
+            "name": "Files\\se\\sae_27.wav",
+            "size": 21754
+          },
+          {
+            "name": "Files\\se\\sae_28.wav",
+            "size": 9532
+          },
+          {
+            "name": "Files\\se\\sae_29.wav",
+            "size": 4710
+          },
+          {
+            "name": "Files\\se\\sae_30.wav",
+            "size": 10452
+          },
+          {
+            "name": "Files\\se\\sae_31.wav",
+            "size": 17308
+          },
+          {
+            "name": "Files\\se\\sae_32.wav",
+            "size": 10602
+          },
+          {
+            "name": "Files\\se\\sak_01.wav",
+            "size": 158488
+          },
+          {
+            "name": "Files\\se\\sak_02.wav",
+            "size": 152112
+          },
+          {
+            "name": "Files\\se\\sak_03.wav",
+            "size": 16304
+          },
+          {
+            "name": "Files\\se\\sak_04.wav",
+            "size": 26756
+          },
+          {
+            "name": "Files\\se\\sak_05.wav",
+            "size": 14130
+          },
+          {
+            "name": "Files\\se\\sak_06.wav",
+            "size": 284248
+          },
+          {
+            "name": "Files\\se\\sak_07.wav",
+            "size": 35006
+          },
+          {
+            "name": "Files\\se\\sak_08.wav",
+            "size": 561276
+          },
+          {
+            "name": "Files\\se\\sak_09a.wav",
+            "size": 30276
+          },
+          {
+            "name": "Files\\se\\sak_09b.wav",
+            "size": 198514
+          },
+          {
+            "name": "Files\\se\\sak_10.wav",
+            "size": 60080
+          },
+          {
+            "name": "Files\\se\\sak_11.wav",
+            "size": 19498
+          },
+          {
+            "name": "Files\\se\\sak_12.wav",
+            "size": 19676
+          },
+          {
+            "name": "Files\\se\\sak_13.wav",
+            "size": 53936
+          },
+          {
+            "name": "Files\\se\\sak_14.wav",
+            "size": 32238
+          },
+          {
+            "name": "Files\\se\\sak_15.wav",
+            "size": 15786
+          },
+          {
+            "name": "Files\\se\\sak_16.wav",
+            "size": 9440
+          },
+          {
+            "name": "Files\\se\\sak_17.wav",
+            "size": 67564
+          },
+          {
+            "name": "Files\\se\\sak_91.wav",
+            "size": 18480
+          },
+          {
+            "name": "Files\\se\\sak_92.wav",
+            "size": 44504
+          },
+          {
+            "name": "Files\\se\\sak_93.wav",
+            "size": 8382
+          },
+          {
+            "name": "Files\\se\\sak_94.wav",
+            "size": 62850
+          },
+          {
+            "name": "Files\\se\\sak_98.wav",
+            "size": 75950
+          },
+          {
+            "name": "Files\\se\\sam_01.wav",
+            "size": 21690
+          },
+          {
+            "name": "Files\\se\\sam_02.wav",
+            "size": 27440
+          },
+          {
+            "name": "Files\\se\\sam_03.wav",
+            "size": 43632
+          },
+          {
+            "name": "Files\\se\\sam_04.wav",
+            "size": 8646
+          },
+          {
+            "name": "Files\\se\\sam_05.wav",
+            "size": 11440
+          },
+          {
+            "name": "Files\\se\\sam_06.wav",
+            "size": 12496
+          },
+          {
+            "name": "Files\\se\\sam_07.wav",
+            "size": 19184
+          },
+          {
+            "name": "Files\\se\\sam_08.wav",
+            "size": 18672
+          },
+          {
+            "name": "Files\\se\\sam_09.wav",
+            "size": 19440
+          },
+          {
+            "name": "Files\\se\\sam_10.wav",
+            "size": 192626
+          },
+          {
+            "name": "Files\\se\\sam_11.wav",
+            "size": 192626
+          },
+          {
+            "name": "Files\\se\\sam_12.wav",
+            "size": 192626
+          },
+          {
+            "name": "Files\\se\\sam_13.wav",
+            "size": 13520
+          },
+          {
+            "name": "Files\\se\\sam_14.wav",
+            "size": 16464
+          },
+          {
+            "name": "Files\\se\\sam_15.wav",
+            "size": 24430
+          },
+          {
+            "name": "Files\\se\\sam_16.wav",
+            "size": 23152
+          },
+          {
+            "name": "Files\\se\\sam_17.wav",
+            "size": 15020
+          },
+          {
+            "name": "Files\\se\\sam_18.wav",
+            "size": 18892
+          },
+          {
+            "name": "Files\\se\\sam_19.wav",
+            "size": 13552
+          },
+          {
+            "name": "Files\\se\\sam_20.wav",
+            "size": 21522
+          },
+          {
+            "name": "Files\\se\\sam_21.wav",
+            "size": 23548
+          },
+          {
+            "name": "Files\\se\\sam_22.wav",
+            "size": 74558
+          },
+          {
+            "name": "Files\\se\\sam_23.wav",
+            "size": 11452
+          },
+          {
+            "name": "Files\\se\\sam_24.wav",
+            "size": 19248
+          },
+          {
+            "name": "Files\\se\\sap_01.wav",
+            "size": 1168
+          },
+          {
+            "name": "Files\\se\\sap_02.wav",
+            "size": 2670
+          },
+          {
+            "name": "Files\\se\\sap_03.wav",
+            "size": 3296
+          },
+          {
+            "name": "Files\\se\\sap_04.wav",
+            "size": 1512
+          },
+          {
+            "name": "Files\\se\\sap_05.wav",
+            "size": 5490
+          },
+          {
+            "name": "Files\\se\\sap_06.wav",
+            "size": 22832
+          },
+          {
+            "name": "Files\\se\\sap_07.wav",
+            "size": 81892
+          },
+          {
+            "name": "Files\\se\\sap_08.wav",
+            "size": 5086
+          },
+          {
+            "name": "Files\\se\\sap_09.wav",
+            "size": 5984
+          },
+          {
+            "name": "Files\\se\\sap_10.wav",
+            "size": 7142
+          },
+          {
+            "name": "Files\\se\\sap_11.wav",
+            "size": 11524
+          },
+          {
+            "name": "Files\\se\\sap_12.wav",
+            "size": 15854
+          },
+          {
+            "name": "Files\\se\\sap_13.wav",
+            "size": 12912
+          },
+          {
+            "name": "Files\\se\\sap_14.wav",
+            "size": 5144
+          },
+          {
+            "name": "Files\\se\\sas_01.wav",
+            "size": 2974
+          },
+          {
+            "name": "Files\\se\\sas_02.wav",
+            "size": 11868
+          },
+          {
+            "name": "Files\\se\\sas_03.wav",
+            "size": 4004
+          },
+          {
+            "name": "Files\\se\\sas_04.wav",
+            "size": 6410
+          },
+          {
+            "name": "Files\\se\\sas_05.wav",
+            "size": 12572
+          },
+          {
+            "name": "Files\\se\\sas_06.wav",
+            "size": 38128
+          },
+          {
+            "name": "Files\\se\\sas_07.wav",
+            "size": 32624
+          },
+          {
+            "name": "Files\\se\\sas_08.wav",
+            "size": 28208
+          },
+          {
+            "name": "Files\\se\\sas_09.wav",
+            "size": 19412
+          },
+          {
+            "name": "Files\\se\\sas_10.wav",
+            "size": 50032
+          },
+          {
+            "name": "Files\\se\\sas_11.wav",
+            "size": 32496
+          },
+          {
+            "name": "Files\\se\\sas_12.wav",
+            "size": 15036
+          },
+          {
+            "name": "Files\\se\\sas_13.wav",
+            "size": 12732
+          },
+          {
+            "name": "Files\\se\\sas_15.wav",
+            "size": 42044
+          },
+          {
+            "name": "Files\\se\\sas_16.wav",
+            "size": 37182
+          },
+          {
+            "name": "Files\\se\\sas_17.wav",
+            "size": 4028
+          },
+          {
+            "name": "Files\\se\\sas_18.wav",
+            "size": 22428
+          },
+          {
+            "name": "Files\\se\\sas_19.wav",
+            "size": 7708
+          },
+          {
+            "name": "Files\\se\\sas_20.wav",
+            "size": 3938
+          },
+          {
+            "name": "Files\\se\\sas_21.wav",
+            "size": 4028
+          },
+          {
+            "name": "Files\\se\\sas_33.wav",
+            "size": 15660
+          },
+          {
+            "name": "Files\\se\\sas_34.wav",
+            "size": 42668
+          },
+          {
+            "name": "Files\\se\\sas_35.wav",
+            "size": 41516
+          },
+          {
+            "name": "Files\\se\\sax_01.wav",
+            "size": 440964
+          },
+          {
+            "name": "Files\\se\\sax_02.wav",
+            "size": 529164
+          },
+          {
+            "name": "Files\\se\\sax_03.wav",
+            "size": 440964
+          },
+          {
+            "name": "<Support>Non-SelfRegistering\\isrt.dll",
+            "size": 208304
+          },
+          {
+            "name": "<Support>Non-SelfRegistering\\default.pal",
+            "size": 1168
+          },
+          {
+            "name": "<Support>Misc i64 Support Files\\ISBEW64.exe",
+            "size": 246192
+          },
+          {
+            "name": "DefaultComponent\\CyberDraw.dll",
+            "size": 274491
+          },
+          {
+            "name": "DefaultComponent\\Draw555.dll",
+            "size": 45056
+          },
+          {
+            "name": "DefaultComponent\\Draw565.dll",
+            "size": 45056
+          },
+          {
+            "name": "DefaultComponent\\MyDraw.dll",
+            "size": 57344
+          },
+          {
+            "name": "DefaultComponent\\MyMemDll.dll",
+            "size": 53248
+          },
+          {
+            "name": "DefaultComponent\\MySystem.dll",
+            "size": 45056
+          },
+          {
+            "name": "DefaultComponent\\StoneAge.exe",
+            "size": 282624
+          },
+          {
+            "name": "DefaultComponent\\StoneageNg.dll",
+            "size": 1040384
+          },
+          {
+            "name": "DefaultComponent\\UnicodeToMbcs.dll",
+            "size": 45056
+          },
+          {
+            "name": "DefaultComponent\\free_85_port_config.xml",
+            "size": 1499
+          },
+          {
+            "name": "DefaultComponent\\libeay32.dll",
+            "size": 1015808
+          },
+          {
+            "name": "DefaultComponent\\lua5.1.dll",
+            "size": 167936
+          },
+          {
+            "name": "DefaultComponent\\msvcr71.dll",
+            "size": 348160
+          },
+          {
+            "name": "DefaultComponent\\payment_25_port_config.xml",
+            "size": 1330
+          },
+          {
+            "name": "DefaultComponent\\pipFactory.dll",
+            "size": 130464
+          },
+          {
+            "name": "DefaultComponent\\sa_25_payment.exe",
+            "size": 950272
+          },
+          {
+            "name": "DefaultComponent\\sa_85_free.exe",
+            "size": 1060864
+          },
+          {
+            "name": "DefaultComponent\\yy-45.7z",
+            "size": 14801646
+          },
+          {
+            "name": "<Support>Misc x64 Support Files\\ISBEW64.exe",
+            "size": 120240
+          },
+          {
+            "name": "<Support>Build Generated Support Files\\FontData.ini",
+            "size": 39
+          },
+          {
+            "name": "<Support>Build Generated Support Files\\DIFxData.ini",
+            "size": 86
+          },
+          {
+            "name": "Files1\\01.bmp",
+            "size": 46112
+          },
+          {
+            "name": "Files1\\02.bmp",
+            "size": 35024
+          },
+          {
+            "name": "Files1\\03.bmp",
+            "size": 35024
+          },
+          {
+            "name": "Files1\\04.bmp",
+            "size": 35024
+          },
+          {
+            "name": "Files1\\05.bmp",
+            "size": 35024
+          },
+          {
+            "name": "Files1\\06.bmp",
+            "size": 35024
+          },
+          {
+            "name": "Files1\\07.bmp",
+            "size": 60536
+          },
+          {
+            "name": "Files1\\08.bmp",
+            "size": 60536
+          },
+          {
+            "name": "Files1\\09.bmp",
+            "size": 60536
+          },
+          {
+            "name": "Files1\\10.bmp",
+            "size": 60536
+          },
+          {
+            "name": "Files1\\11.bmp",
+            "size": 60536
+          },
+          {
+            "name": "Files1\\14.bmp",
+            "size": 4692
+          },
+          {
+            "name": "Files1\\145101.bmp",
+            "size": 1108024
+          },
+          {
+            "name": "Files1\\1451011.bmp",
+            "size": 1363256
+          },
+          {
+            "name": "Files1\\15.bmp",
+            "size": 4692
+          },
+          {
+            "name": "Files1\\84.bmp",
+            "size": 17336
+          },
+          {
+            "name": "Files1\\85.bmp",
+            "size": 17336
+          },
+          {
+            "name": "Files2\\100.dat",
+            "size": 3840008
+          },
+          {
+            "name": "Files2\\100.dat.ani",
+            "size": 0
+          },
+          {
+            "name": "Files2\\1000.dat",
+            "size": 153608
+          },
+          {
+            "name": "Files2\\10001.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\10007.dat",
+            "size": 21608
+          },
+          {
+            "name": "Files2\\1001.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\1002.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\1003.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\1005.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\1006.dat",
+            "size": 7208
+          },
+          {
+            "name": "Files2\\1009.dat",
+            "size": 14408
+          },
+          {
+            "name": "Files2\\1012.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\1013.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\1014.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\1020.dat",
+            "size": 3758
+          },
+          {
+            "name": "Files2\\10201.dat",
+            "size": 14408
+          },
+          {
+            "name": "Files2\\10202.dat",
+            "size": 14408
+          },
+          {
+            "name": "Files2\\10204.dat",
+            "size": 60008
+          },
+          {
+            "name": "Files2\\1021.dat",
+            "size": 351656
+          },
+          {
+            "name": "Files2\\1022.dat",
+            "size": 1358
+          },
+          {
+            "name": "Files2\\1040.dat",
+            "size": 38408
+          },
+          {
+            "name": "Files2\\1041.dat",
+            "size": 2408
+          },
+          {
+            "name": "Files2\\1045.dat",
+            "size": 872
+          },
+          {
+            "name": "Files2\\10920.dat",
+            "size": 60008
+          },
+          {
+            "name": "Files2\\110.dat",
+            "size": 12428
+          },
+          {
+            "name": "Files2\\1100.dat",
+            "size": 117008
+          },
+          {
+            "name": "Files2\\11001.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\111.dat",
+            "size": 3440
+          },
+          {
+            "name": "Files2\\11107.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\112.dat",
+            "size": 1448
+          },
+          {
+            "name": "Files2\\11203.dat",
+            "size": 29408
+          },
+          {
+            "name": "Files2\\11204.dat",
+            "size": 29408
+          },
+          {
+            "name": "Files2\\113.dat",
+            "size": 734
+          },
+          {
+            "name": "Files2\\114.dat",
+            "size": 734
+          },
+          {
+            "name": "Files2\\115.dat",
+            "size": 734
+          },
+          {
+            "name": "Files2\\116.dat",
+            "size": 12158
+          },
+          {
+            "name": "Files2\\117.dat",
+            "size": 360008
+          },
+          {
+            "name": "Files2\\121.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\1214.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\1215.dat",
+            "size": 3758
+          },
+          {
+            "name": "Files2\\122.dat",
+            "size": 360008
+          },
+          {
+            "name": "Files2\\130.dat",
+            "size": 21608
+          },
+          {
+            "name": "Files2\\1400.dat",
+            "size": 135008
+          },
+          {
+            "name": "Files2\\141.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\152.ani",
+            "size": 720
+          },
+          {
+            "name": "Files2\\153.ani",
+            "size": 660
+          },
+          {
+            "name": "Files2\\154.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\155.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\157.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\15901.dat",
+            "size": 60008
+          },
+          {
+            "name": "Files2\\17003.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\17005.ani",
+            "size": 80
+          },
+          {
+            "name": "Files2\\200.dat",
+            "size": 5760008
+          },
+          {
+            "name": "Files2\\2000.dat",
+            "size": 135008
+          },
+          {
+            "name": "Files2\\20006.dat",
+            "size": 19208
+          },
+          {
+            "name": "Files2\\2001.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\2002.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\2003.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\2004.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\2005.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\2006.dat",
+            "size": 7208
+          },
+          {
+            "name": "Files2\\2009.dat",
+            "size": 14408
+          },
+          {
+            "name": "Files2\\201.dat",
+            "size": 7208
+          },
+          {
+            "name": "Files2\\2011.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\2012.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\2014.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\2020.dat",
+            "size": 3758
+          },
+          {
+            "name": "Files2\\2030.dat",
+            "size": 38408
+          },
+          {
+            "name": "Files2\\21007.dat",
+            "size": 21608
+          },
+          {
+            "name": "Files2\\21201.dat",
+            "size": 86408
+          },
+          {
+            "name": "Files2\\21308.dat",
+            "size": 9608
+          },
+          {
+            "name": "Files2\\300.dat",
+            "size": 2160008
+          },
+          {
+            "name": "Files2\\3000.dat",
+            "size": 135008
+          },
+          {
+            "name": "Files2\\3001.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\30012.dat",
+            "size": 14408
+          },
+          {
+            "name": "Files2\\30017.ani",
+            "size": 1200
+          },
+          {
+            "name": "Files2\\3002.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\3003.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\3004.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\3005.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\3006.dat",
+            "size": 7208
+          },
+          {
+            "name": "Files2\\3012.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\3020.dat",
+            "size": 3758
+          },
+          {
+            "name": "Files2\\3021.dat",
+            "size": 351656
+          },
+          {
+            "name": "Files2\\3022.dat",
+            "size": 1358
+          },
+          {
+            "name": "Files2\\3030.dat",
+            "size": 38408
+          },
+          {
+            "name": "Files2\\30305.dat",
+            "size": 29408
+          },
+          {
+            "name": "Files2\\3033.dat",
+            "size": 872
+          },
+          {
+            "name": "Files2\\3038.dat",
+            "size": 872
+          },
+          {
+            "name": "Files2\\30504.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\30605.dat",
+            "size": 2258
+          },
+          {
+            "name": "Files2\\30670.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\30691.dat",
+            "size": 60008
+          },
+          {
+            "name": "Files2\\30695.dat",
+            "size": 21608
+          },
+          {
+            "name": "Files2\\31705.dat",
+            "size": 21008
+          },
+          {
+            "name": "Files2\\32003.dat",
+            "size": 21608
+          },
+          {
+            "name": "Files2\\32004.dat",
+            "size": 21608
+          },
+          {
+            "name": "Files2\\32020.dat",
+            "size": 60008
+          },
+          {
+            "name": "Files2\\3400.dat",
+            "size": 86408
+          },
+          {
+            "name": "Files2\\40.dat",
+            "size": 2408
+          },
+          {
+            "name": "Files2\\400.dat",
+            "size": 134108
+          },
+          {
+            "name": "Files2\\4000.dat",
+            "size": 135008
+          },
+          {
+            "name": "Files2\\4002.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\4003.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\4005.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\4006.dat",
+            "size": 7208
+          },
+          {
+            "name": "Files2\\4009.dat",
+            "size": 14408
+          },
+          {
+            "name": "Files2\\4020.dat",
+            "size": 3758
+          },
+          {
+            "name": "Files2\\4030.dat",
+            "size": 38408
+          },
+          {
+            "name": "Files2\\500.dat",
+            "size": 3840008
+          },
+          {
+            "name": "Files2\\5001.dat",
+            "size": 7208
+          },
+          {
+            "name": "Files2\\5003.dat",
+            "size": 7208
+          },
+          {
+            "name": "Files2\\5103.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\5507.dat",
+            "size": 60008
+          },
+          {
+            "name": "Files2\\5540.dat",
+            "size": 3840008
+          },
+          {
+            "name": "Files2\\5543.dat",
+            "size": 21608
+          },
+          {
+            "name": "Files2\\5576.dat",
+            "size": 60008
+          },
+          {
+            "name": "Files2\\6000.dat",
+            "size": 64592
+          },
+          {
+            "name": "Files2\\60040.dat",
+            "size": 3008
+          },
+          {
+            "name": "Files2\\60049.dat",
+            "size": 29408
+          },
+          {
+            "name": "Files2\\60050.dat",
+            "size": 37808
+          },
+          {
+            "name": "Files2\\60051.dat",
+            "size": 64808
+          },
+          {
+            "name": "Files2\\60052.dat",
+            "size": 25208
+          },
+          {
+            "name": "Files2\\60054.dat",
+            "size": 48608
+          },
+          {
+            "name": "Files2\\60056.dat",
+            "size": 36008
+          },
+          {
+            "name": "Files2\\6006.dat",
+            "size": 7208
+          },
+          {
+            "name": "Files2\\61000.dat",
+            "size": 960008
+          },
+          {
+            "name": "Files2\\61001.dat",
+            "size": 960008
+          },
+          {
+            "name": "Files2\\61100.dat",
+            "size": 2160008
+          },
+          {
+            "name": "Files2\\61115.dat",
+            "size": 2408
+          },
+          {
+            "name": "Files2\\700.dat",
+            "size": 960008
+          },
+          {
+            "name": "Files2\\7000.dat",
+            "size": 240008
+          },
+          {
+            "name": "Files2\\7002.dat",
+            "size": 28808
+          },
+          {
+            "name": "Files2\\7016.dat",
+            "size": 2168
+          },
+          {
+            "name": "Files2\\7021.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\704.dat",
+            "size": 960008
+          },
+          {
+            "name": "Files2\\708.dat",
+            "size": 960008
+          },
+          {
+            "name": "Files2\\7100.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\7111.dat",
+            "size": 9608
+          },
+          {
+            "name": "Files2\\7116.dat",
+            "size": 1358
+          },
+          {
+            "name": "Files2\\7119.dat",
+            "size": 5258
+          },
+          {
+            "name": "Files2\\7120.dat",
+            "size": 2408
+          },
+          {
+            "name": "Files2\\7121.dat",
+            "size": 908
+          },
+          {
+            "name": "Files2\\7134.dat",
+            "size": 9608
+          },
+          {
+            "name": "Files2\\7136.dat",
+            "size": 9608
+          },
+          {
+            "name": "Files2\\7203.dat",
+            "size": 9608
+          },
+          {
+            "name": "Files2\\7400.dat",
+            "size": 153608
+          },
+          {
+            "name": "Files2\\7402.dat",
+            "size": 180008
+          },
+          {
+            "name": "Files2\\7405.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\7407.dat",
+            "size": 7208
+          },
+          {
+            "name": "Files2\\7409.dat",
+            "size": 14408
+          },
+          {
+            "name": "Files2\\7410.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\7500.ani",
+            "size": 60
+          },
+          {
+            "name": "Files2\\7503.ani",
+            "size": 20
+          },
+          {
+            "name": "Files2\\7503.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\7530.ani",
+            "size": 40
+          },
+          {
+            "name": "Files2\\7530.dat",
+            "size": 60008
+          },
+          {
+            "name": "Files2\\7532.dat",
+            "size": 6152
+          },
+          {
+            "name": "Files2\\7600.ani",
+            "size": 140
+          },
+          {
+            "name": "Files2\\777.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\800.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\805.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\806.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\8107.ani",
+            "size": 20
+          },
+          {
+            "name": "Files2\\8108.ani",
+            "size": 20
+          },
+          {
+            "name": "Files2\\811.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\8116.ani",
+            "size": 2880
+          },
+          {
+            "name": "Files2\\8117.ani",
+            "size": 2880
+          },
+          {
+            "name": "Files2\\8118.ani",
+            "size": 2880
+          },
+          {
+            "name": "Files2\\8119.ani",
+            "size": 2880
+          },
+          {
+            "name": "Files2\\8120.ani",
+            "size": 2880
+          },
+          {
+            "name": "Files2\\8124.ani",
+            "size": 2880
+          },
+          {
+            "name": "Files2\\8125.ani",
+            "size": 2880
+          },
+          {
+            "name": "Files2\\8126.ani",
+            "size": 2880
+          },
+          {
+            "name": "Files2\\817.dat",
+            "size": 1440008
+          },
+          {
+            "name": "Files2\\8216.dat",
+            "size": 9608
+          },
+          {
+            "name": "Files2\\8218.dat",
+            "size": 9608
+          },
+          {
+            "name": "Files2\\8221.dat",
+            "size": 96008
+          },
+          {
+            "name": "Files2\\84.ani",
+            "size": 140
+          },
+          {
+            "name": "Files2\\85.ani",
+            "size": 80
+          },
+          {
+            "name": "Files2\\850.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\851.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\9000.dat",
+            "size": 48608
+          },
+          {
+            "name": "Files2\\9001.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\9030.dat",
+            "size": 86408
+          },
+          {
+            "name": "Files2\\92.ani",
+            "size": 60
+          },
+          {
+            "name": "Files2\\93.ani",
+            "size": 20
+          },
+          {
+            "name": "Files2\\94.ani",
+            "size": 20
+          },
+          {
+            "name": "Files2\\95.ani",
+            "size": 140
+          },
+          {
+            "name": "Files2\\999.dat",
+            "size": 240008
+          },
+          {
+            "name": "Files2\\bgm0.dat",
+            "size": 2
+          },
+          {
+            "name": "Files2\\bgm1.dat",
+            "size": 2
+          },
+          {
+            "name": "Files2\\bgm2.dat",
+            "size": 2
+          },
+          {
+            "name": "<Support>Chinese (Simplified) String Tables\\StringTable-0804-Chinese (Simplified).ips",
+            "size": 391
+          },
+          {
+            "name": "<Support>Misc Support Files\\corecomp.ini",
+            "size": 65503
+          },
+          {
+            "name": "<Support>Misc Support Files\\dotnetinstaller.exe",
+            "size": 10672
+          },
+          {
+            "name": "<Support>Language Independent OS Independent Files\\license.rtf",
+            "size": 11493
+          },
+          {
+            "name": "<Support>Chinese (Simplified) Files\\_IsRes.dll",
+            "size": 84480
+          },
+          {
+            "name": "files",
+            "size": 758
+          }
+        ],
+        "candidate_entries": [
+          {
+            "name": "Files\\AISetting.dat",
+            "size": 9860
+          },
+          {
+            "name": "Files\\adrn_185.bin",
+            "size": 36719200
+          },
+          {
+            "name": "Files\\adrntrue_5.bin",
+            "size": 34440
+          },
+          {
+            "name": "Files\\album_47.dat",
+            "size": 4515984
+          },
+          {
+            "name": "Files\\auto.dat",
+            "size": 550010
+          },
+          {
+            "name": "Files\\battle_2.bin",
+            "size": 187500
+          },
+          {
+            "name": "Files\\channel.dat",
+            "size": 3
+          },
+          {
+            "name": "Files\\chathis.dat",
+            "size": 16708
+          },
+          {
+            "name": "Files\\chatreg.dat",
+            "size": 2372
+          },
+          {
+            "name": "Files\\data_1.bin",
+            "size": 4
+          },
+          {
+            "name": "Files\\mail.dat",
+            "size": 611840
+          },
+          {
+            "name": "Files\\real_185.bin",
+            "size": 1839180217
+          },
+          {
+            "name": "Files\\realtrue_13.bin",
+            "size": 40829843
+          },
+          {
+            "name": "Files\\savedata.dat",
+            "size": 128
+          },
+          {
+            "name": "Files\\sound_3.bin",
+            "size": 2696934
+          },
+          {
+            "name": "Files\\spr_155.bin",
+            "size": 9309056
+          },
+          {
+            "name": "Files\\spradrn_155.bin",
+            "size": 22044
+          },
+          {
+            "name": "Files\\bin\\MultiDialog.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\bin\\activities.bin",
+            "size": 1613
+          },
+          {
+            "name": "Files\\bin\\petlifetype.bin",
+            "size": 303
+          },
+          {
+            "name": "Files\\bin\\quest.bin",
+            "size": 1091
+          },
+          {
+            "name": "Files\\bin\\shopsellitems.bin",
+            "size": 38025
+          },
+          {
+            "name": "Files\\gui\\ItemsMall.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\ItemsMall2.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\ItemsMall2_25_Payment.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\ItemsMall3.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\ItemsMall3_25_Payment.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\ItemsMall4.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\ItemsMall4_25_Payment.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\ItemsMall_25_Payment.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\MultiDialog.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\NormalTopWin.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\OpenShop.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\PetList.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\PetMail.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\PetStatus.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\PetStore.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\Quest.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\TeamList.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files\\gui\\Trans.bin",
+            "size": 40516
+          },
+          {
+            "name": "Files2\\100.dat",
+            "size": 3840008
+          },
+          {
+            "name": "Files2\\1000.dat",
+            "size": 153608
+          },
+          {
+            "name": "Files2\\10001.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\10007.dat",
+            "size": 21608
+          },
+          {
+            "name": "Files2\\1001.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\1002.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\1003.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\1005.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\1006.dat",
+            "size": 7208
+          },
+          {
+            "name": "Files2\\1009.dat",
+            "size": 14408
+          },
+          {
+            "name": "Files2\\1012.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\1013.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\1014.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\1020.dat",
+            "size": 3758
+          },
+          {
+            "name": "Files2\\10201.dat",
+            "size": 14408
+          },
+          {
+            "name": "Files2\\10202.dat",
+            "size": 14408
+          },
+          {
+            "name": "Files2\\10204.dat",
+            "size": 60008
+          },
+          {
+            "name": "Files2\\1021.dat",
+            "size": 351656
+          },
+          {
+            "name": "Files2\\1022.dat",
+            "size": 1358
+          },
+          {
+            "name": "Files2\\1040.dat",
+            "size": 38408
+          },
+          {
+            "name": "Files2\\1041.dat",
+            "size": 2408
+          },
+          {
+            "name": "Files2\\1045.dat",
+            "size": 872
+          },
+          {
+            "name": "Files2\\10920.dat",
+            "size": 60008
+          },
+          {
+            "name": "Files2\\110.dat",
+            "size": 12428
+          },
+          {
+            "name": "Files2\\1100.dat",
+            "size": 117008
+          },
+          {
+            "name": "Files2\\11001.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\111.dat",
+            "size": 3440
+          },
+          {
+            "name": "Files2\\11107.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\112.dat",
+            "size": 1448
+          },
+          {
+            "name": "Files2\\11203.dat",
+            "size": 29408
+          },
+          {
+            "name": "Files2\\11204.dat",
+            "size": 29408
+          },
+          {
+            "name": "Files2\\113.dat",
+            "size": 734
+          },
+          {
+            "name": "Files2\\114.dat",
+            "size": 734
+          },
+          {
+            "name": "Files2\\115.dat",
+            "size": 734
+          },
+          {
+            "name": "Files2\\116.dat",
+            "size": 12158
+          },
+          {
+            "name": "Files2\\117.dat",
+            "size": 360008
+          },
+          {
+            "name": "Files2\\121.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\1214.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\1215.dat",
+            "size": 3758
+          },
+          {
+            "name": "Files2\\122.dat",
+            "size": 360008
+          },
+          {
+            "name": "Files2\\130.dat",
+            "size": 21608
+          },
+          {
+            "name": "Files2\\1400.dat",
+            "size": 135008
+          },
+          {
+            "name": "Files2\\141.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\154.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\155.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\157.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\15901.dat",
+            "size": 60008
+          },
+          {
+            "name": "Files2\\17003.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\200.dat",
+            "size": 5760008
+          },
+          {
+            "name": "Files2\\2000.dat",
+            "size": 135008
+          },
+          {
+            "name": "Files2\\20006.dat",
+            "size": 19208
+          },
+          {
+            "name": "Files2\\2001.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\2002.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\2003.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\2004.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\2005.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\2006.dat",
+            "size": 7208
+          },
+          {
+            "name": "Files2\\2009.dat",
+            "size": 14408
+          },
+          {
+            "name": "Files2\\201.dat",
+            "size": 7208
+          },
+          {
+            "name": "Files2\\2011.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\2012.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\2014.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\2020.dat",
+            "size": 3758
+          },
+          {
+            "name": "Files2\\2030.dat",
+            "size": 38408
+          },
+          {
+            "name": "Files2\\21007.dat",
+            "size": 21608
+          },
+          {
+            "name": "Files2\\21201.dat",
+            "size": 86408
+          },
+          {
+            "name": "Files2\\21308.dat",
+            "size": 9608
+          },
+          {
+            "name": "Files2\\300.dat",
+            "size": 2160008
+          },
+          {
+            "name": "Files2\\3000.dat",
+            "size": 135008
+          },
+          {
+            "name": "Files2\\3001.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\30012.dat",
+            "size": 14408
+          },
+          {
+            "name": "Files2\\3002.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\3003.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\3004.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\3005.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\3006.dat",
+            "size": 7208
+          },
+          {
+            "name": "Files2\\3012.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\3020.dat",
+            "size": 3758
+          },
+          {
+            "name": "Files2\\3021.dat",
+            "size": 351656
+          },
+          {
+            "name": "Files2\\3022.dat",
+            "size": 1358
+          },
+          {
+            "name": "Files2\\3030.dat",
+            "size": 38408
+          },
+          {
+            "name": "Files2\\30305.dat",
+            "size": 29408
+          },
+          {
+            "name": "Files2\\3033.dat",
+            "size": 872
+          },
+          {
+            "name": "Files2\\3038.dat",
+            "size": 872
+          },
+          {
+            "name": "Files2\\30504.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\30605.dat",
+            "size": 2258
+          },
+          {
+            "name": "Files2\\30670.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\30691.dat",
+            "size": 60008
+          },
+          {
+            "name": "Files2\\30695.dat",
+            "size": 21608
+          },
+          {
+            "name": "Files2\\31705.dat",
+            "size": 21008
+          },
+          {
+            "name": "Files2\\32003.dat",
+            "size": 21608
+          },
+          {
+            "name": "Files2\\32004.dat",
+            "size": 21608
+          },
+          {
+            "name": "Files2\\32020.dat",
+            "size": 60008
+          },
+          {
+            "name": "Files2\\3400.dat",
+            "size": 86408
+          },
+          {
+            "name": "Files2\\40.dat",
+            "size": 2408
+          },
+          {
+            "name": "Files2\\400.dat",
+            "size": 134108
+          },
+          {
+            "name": "Files2\\4000.dat",
+            "size": 135008
+          },
+          {
+            "name": "Files2\\4002.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\4003.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\4005.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\4006.dat",
+            "size": 7208
+          },
+          {
+            "name": "Files2\\4009.dat",
+            "size": 14408
+          },
+          {
+            "name": "Files2\\4020.dat",
+            "size": 3758
+          },
+          {
+            "name": "Files2\\4030.dat",
+            "size": 38408
+          },
+          {
+            "name": "Files2\\500.dat",
+            "size": 3840008
+          },
+          {
+            "name": "Files2\\5001.dat",
+            "size": 7208
+          },
+          {
+            "name": "Files2\\5003.dat",
+            "size": 7208
+          },
+          {
+            "name": "Files2\\5103.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\5507.dat",
+            "size": 60008
+          },
+          {
+            "name": "Files2\\5540.dat",
+            "size": 3840008
+          },
+          {
+            "name": "Files2\\5543.dat",
+            "size": 21608
+          },
+          {
+            "name": "Files2\\5576.dat",
+            "size": 60008
+          },
+          {
+            "name": "Files2\\6000.dat",
+            "size": 64592
+          },
+          {
+            "name": "Files2\\60040.dat",
+            "size": 3008
+          },
+          {
+            "name": "Files2\\60049.dat",
+            "size": 29408
+          },
+          {
+            "name": "Files2\\60050.dat",
+            "size": 37808
+          },
+          {
+            "name": "Files2\\60051.dat",
+            "size": 64808
+          },
+          {
+            "name": "Files2\\60052.dat",
+            "size": 25208
+          },
+          {
+            "name": "Files2\\60054.dat",
+            "size": 48608
+          },
+          {
+            "name": "Files2\\60056.dat",
+            "size": 36008
+          },
+          {
+            "name": "Files2\\6006.dat",
+            "size": 7208
+          },
+          {
+            "name": "Files2\\61000.dat",
+            "size": 960008
+          },
+          {
+            "name": "Files2\\61001.dat",
+            "size": 960008
+          },
+          {
+            "name": "Files2\\61100.dat",
+            "size": 2160008
+          },
+          {
+            "name": "Files2\\61115.dat",
+            "size": 2408
+          },
+          {
+            "name": "Files2\\700.dat",
+            "size": 960008
+          },
+          {
+            "name": "Files2\\7000.dat",
+            "size": 240008
+          },
+          {
+            "name": "Files2\\7002.dat",
+            "size": 28808
+          },
+          {
+            "name": "Files2\\7016.dat",
+            "size": 2168
+          },
+          {
+            "name": "Files2\\7021.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\704.dat",
+            "size": 960008
+          },
+          {
+            "name": "Files2\\708.dat",
+            "size": 960008
+          },
+          {
+            "name": "Files2\\7100.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\7111.dat",
+            "size": 9608
+          },
+          {
+            "name": "Files2\\7116.dat",
+            "size": 1358
+          },
+          {
+            "name": "Files2\\7119.dat",
+            "size": 5258
+          },
+          {
+            "name": "Files2\\7120.dat",
+            "size": 2408
+          },
+          {
+            "name": "Files2\\7121.dat",
+            "size": 908
+          },
+          {
+            "name": "Files2\\7134.dat",
+            "size": 9608
+          },
+          {
+            "name": "Files2\\7136.dat",
+            "size": 9608
+          },
+          {
+            "name": "Files2\\7203.dat",
+            "size": 9608
+          },
+          {
+            "name": "Files2\\7400.dat",
+            "size": 153608
+          },
+          {
+            "name": "Files2\\7402.dat",
+            "size": 180008
+          },
+          {
+            "name": "Files2\\7405.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\7407.dat",
+            "size": 7208
+          },
+          {
+            "name": "Files2\\7409.dat",
+            "size": 14408
+          },
+          {
+            "name": "Files2\\7410.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\7503.dat",
+            "size": 5408
+          },
+          {
+            "name": "Files2\\7530.dat",
+            "size": 60008
+          },
+          {
+            "name": "Files2\\7532.dat",
+            "size": 6152
+          },
+          {
+            "name": "Files2\\777.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\800.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\805.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\806.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\811.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\817.dat",
+            "size": 1440008
+          },
+          {
+            "name": "Files2\\8216.dat",
+            "size": 9608
+          },
+          {
+            "name": "Files2\\8218.dat",
+            "size": 9608
+          },
+          {
+            "name": "Files2\\8221.dat",
+            "size": 96008
+          },
+          {
+            "name": "Files2\\850.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\851.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\9000.dat",
+            "size": 48608
+          },
+          {
+            "name": "Files2\\9001.dat",
+            "size": 15008
+          },
+          {
+            "name": "Files2\\9030.dat",
+            "size": 86408
+          },
+          {
+            "name": "Files2\\999.dat",
+            "size": 240008
+          },
+          {
+            "name": "Files2\\bgm0.dat",
+            "size": 2
+          },
+          {
+            "name": "Files2\\bgm1.dat",
+            "size": 2
+          },
+          {
+            "name": "Files2\\bgm2.dat",
+            "size": 2
+          }
+        ],
+        "parsed_entries": 759,
+        "result": "DIRECTORY_LISTED",
+        "returncode": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 25804,
+        "stdout_sha256": "3667fe2d144e5b7cf7f040eb6965ea55024c74f2baca173e426ee816b75f577d"
+      },
+      "members": [
+        {
+          "first_four_hex": "49536328",
+          "name": "data1.cab",
+          "result": "CRC_VERIFIED_MEMBER",
+          "uncompressed_bytes": 460036,
+          "uncompressed_sha256": "af4900c3a7829093a267c2c216a917ae951143d06ca401a7650075695029dec5"
+        },
+        {
+          "first_four_hex": "49536328",
+          "name": "data1.hdr",
+          "result": "CRC_VERIFIED_MEMBER",
+          "uncompressed_bytes": 84658,
+          "uncompressed_sha256": "5b6bbfc648ae86c15314bae2b0529094c8278d5bd1842ee27b54bf11e295fb32"
+        }
+      ]
+    }
+  ],
+  "schema": "stoneage.pet119.cn85.cab_hdr_pair.r1"
+}
