@@ -231,7 +231,14 @@ def main():
         compact={k:{f:v[f] for f in ("positions","portrait","motion","acquisition","family")} for k,v in s["by_source"].items()}
         actual={**s,"by_source":compact}
         snapshot=json.loads((ROOT/"research/pets/PET-HIGH-FIRST-64-MODULE-COVERAGE-SUMMARY-R1.json").read_bytes())
-        assert snapshot["summary"]==actual, "durable coverage summary differs from replay"
+        # The old visual classification remains a compatibility projection, but
+        # lookup counts evolve as independently sourced documents are appended.
+        # Exact historical equality is tested on the pinned PET64 source tree in CI.
+        snapshot_raw=(ROOT/"research/pets/PET-HIGH-FIRST-64-MODULE-COVERAGE-SUMMARY-R1.json").read_bytes()
+        assert blob(snapshot_raw)=="177d51d3e27b0e7d2cec4143f35f1955acefb939"
+        changing={"query_occurrences","distinct_literal_labels"}
+        assert {k:v for k,v in snapshot["summary"].items() if k not in changing}=={k:v for k,v in actual.items() if k not in changing}, "legacy queue/coverage projection changed"
+        print("PET64_LOOKUP_SCOPE="+json.dumps({"historical_source":snapshot["source_candidate"],"historical_counts":{k:snapshot["summary"][k] for k in sorted(changing)},"live_counts":{k:actual[k] for k in sorted(changing)}},sort_keys=True))
         print("PET64_SUMMARY="+json.dumps(actual,ensure_ascii=False,sort_keys=True,separators=(",",":")))
 if __name__=="__main__":
     main()

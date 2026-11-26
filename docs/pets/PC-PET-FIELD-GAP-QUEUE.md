@@ -73,3 +73,5 @@ python3 -m tools.stoneage_pet_high_first_64_coverage --current --source tw75
 ## PET100–101 大陆5.0全动作补全
 
 305个具名相册位置全部具有本载体原始RD证据所支持的全动作画布（284全严格、21含有界画布）；594个物理组572严格、22有界。90原件读取全部双解码通过，剩余目标0。查询 `--source cn50 --full` 返回 `cn50_motion_reference` 和原行凭证链接；覆盖 `--current --source cn50` 采用新原件等级并保留 `prior_motion_reference` 及跨载体参考。原PET64历史口径保持。此项不证官服身份、原生运行、色板或正式数值。[续接及来源验收](../continuity/STONEAGE-PET-HIGH-FIRST-100-CN50-FULL-MOTION-PREFLIGHT-20261126.md)。
+
+PET64不带 `--current` 的命令使用旧视觉分类及实时查询计数，保留历史摘要固定源口径；CI另从原PET64源提交 `61d43361cfaa9b285f69800fecb7d4d394435430` 完整重放历史摘要。当前与历史查询总数不得混为同一口径。

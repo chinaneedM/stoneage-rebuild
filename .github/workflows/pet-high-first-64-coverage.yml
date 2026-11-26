@@ -20,6 +20,28 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+      - name: Exact historical PET64 replay on the original source tree
+        uses: actions/checkout@v4
+        with:
+          ref: 61d43361cfaa9b285f69800fecb7d4d394435430
+          path: pet64-history
+          persist-credentials: false
+      - name: Compare original summary without overwriting the immutable receipt
+        run: |
+          set -euo pipefail
+          test "$(git -C pet64-history rev-parse HEAD)" = 61d43361cfaa9b285f69800fecb7d4d394435430
+          test "$(git -C pet64-history rev-parse HEAD^{tree})" = 26fd6217e7dbc44d836234d353fed87b3c2a765c
+          (cd pet64-history && python -m tools.stoneage_pet_high_first_64_coverage) > "$RUNNER_TEMP/pet64-historical.txt"
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          r=json.loads(Path("research/pets/PET-HIGH-FIRST-64-MODULE-COVERAGE-SUMMARY-R1.json").read_bytes())
+          assert (r["source_candidate"],r["source_tree"])==("61d43361cfaa9b285f69800fecb7d4d394435430","26fd6217e7dbc44d836234d353fed87b3c2a765c")
+          lines=Path(os.environ["RUNNER_TEMP"],"pet64-historical.txt").read_text().splitlines()
+          matches=[json.loads(x.split("=",1)[1]) for x in lines if x.startswith("PET64_SUMMARY=")]
+          assert matches==[r["summary"]], "exact historical summary differs"
+          print("PET64_EXACT_HISTORICAL_REPLAY_OK")
+          PY
       - run: python -m tools.stoneage_pet_high_first_64_coverage
       - run: python -m tools.stoneage_pet_high_first_64_coverage --current > "$RUNNER_TEMP/pet-current-coverage.json"
       - run: python -m tools.stoneage_pet_high_first_64_coverage --all > "$RUNNER_TEMP/pet64-coverage.json"
