@@ -204,3 +204,15 @@ python tools/stoneage_pet_source_lookup.py --annual-names --year 2005 --query �
 python tools/stoneage_pet_source_lookup.py --annual-names --year 2006 --query 普格多基 --exact --full
 ```
 [续接及边界](../continuity/STONEAGE-PET-ANNUAL-UNMATCHED-20261126.md)。
+
+
+## 韩国2002官网／2003图像捕获独立查询
+
+`--kr-archive` 查159个不同网页图片引用路径，包含204次引用、96个编号式GIF；32个精确捕获GIF（18编号、14其他）均完成CDX摘要与实际解码验证，54帧。其余127个路径在有界CDX查询未命中，不证历史不存在。捕获年份与网页年份分离；不认定为32种宠物或原生SPR动作，未持久化原图像。带 `--full` 返回原网页引用位置、精确捕获时间、原始散列及逐帧派生信息，保留首次运输错误记录。
+
+```sh
+python tools/stoneage_pet_source_lookup.py --kr-archive --summary
+python tools/stoneage_pet_source_lookup.py --kr-archive --query 4_024.gif --exact --full
+python tools/stoneage_pet_source_lookup.py --kr-archive --query 4_001.gif --exact --full
+```
+[韩国来源交付和边界](../continuity/STONEAGE-PET-KR-ARCHIVE-DELIVERY-20261126.md)。此模式独立于既有5924个具名／来源位置和PET16，不增正式身份数。
