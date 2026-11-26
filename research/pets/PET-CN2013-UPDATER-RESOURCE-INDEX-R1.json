@@ -1,0 +1,64 @@
+{
+  "index": {
+    "entries": [],
+    "error": "HTTP Error 503: Service Unavailable",
+    "error_type": "HTTPError",
+    "result": "ACCESS_ERROR",
+    "url": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fupdate5.cinsgame.com%2Fsaupdate%2F&matchType=prefix&output=json&from=2010&to=2016&limit=200&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength"
+  },
+  "official_closures": 0,
+  "original_assets_published": false,
+  "original_client_verified": false,
+  "pet_payload_extracted": false,
+  "prior_source_git_blob": "a7cafeecd667df4917bc84b4f56685a6af58f8fc",
+  "schema": "stoneage.pet.cn2013.updater_resource_index.r1",
+  "updater": {
+    "cdx": {
+      "digest": "XFFGC5Y643VKHJTY7YOUB3L73BUPZ7DF",
+      "length": "47080",
+      "mimetype": "application/x-msdownload",
+      "original": "http://update5.cinsgame.com/saupdate/StoneAge.exe",
+      "statuscode": "200",
+      "timestamp": "20130130111551"
+    },
+    "cdx_digest_matches": true,
+    "content_type": "application/x-msdownload",
+    "pe": {
+      "coff_timestamp": 1348623337,
+      "machine": 332,
+      "sections": [
+        {
+          "name": ".text",
+          "raw_offset": 4096,
+          "raw_size": 45056
+        },
+        {
+          "name": ".rdata",
+          "raw_offset": 49152,
+          "raw_size": 20480
+        },
+        {
+          "name": ".data",
+          "raw_offset": 69632,
+          "raw_size": 4096
+        },
+        {
+          "name": ".rsrc",
+          "raw_offset": 73728,
+          "raw_size": 45056
+        }
+      ]
+    },
+    "resource_path_tokens": [
+      "sa_25_payment.exe",
+      "sa_85_free.exe"
+    ],
+    "response_bytes": 118784,
+    "response_sha256": "e926a5f5a0eb6ae409b680a6a57f2ced65137328332e4efebcd92cb6f21d1a2e",
+    "result": "HTTP_200_BOUNDED",
+    "sha1_base32": "XFFGC5Y643VKHJTY7YOUB3L73BUPZ7DF",
+    "status": 200,
+    "url": "https://web.archive.org/web/20130130111551id_/http://update5.cinsgame.com/saupdate/StoneAge.exe",
+    "verified_original_updater": true
+  }
+}

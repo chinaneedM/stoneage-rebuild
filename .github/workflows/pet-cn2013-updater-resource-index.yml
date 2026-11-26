@@ -1,0 +1,33 @@
+name: PET CN2013 independent small updater and resource index
+on:
+  push:
+    branches: ['agent/pet-cn2013-updater-resource-index-20261126']
+    paths:
+      - 'tools/stoneage_pet_cn2013_updater_resource_index.py'
+      - '.github/workflows/pet-cn2013-updater-resource-index.yml'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m tools.stoneage_pet_cn2013_updater_resource_index
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-cn2013-updater-derived-index
+          path: research/pets/PET-CN2013-UPDATER-RESOURCE-INDEX-R1.json
+          if-no-files-found: error
+      - name: Retain metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/pets/PET-CN2013-UPDATER-RESOURCE-INDEX-R1.json
+          git commit -m 'PET: retain CN2013 updater and resource index result'
+          git push origin HEAD:agent/pet-cn2013-updater-resource-index-20261126
