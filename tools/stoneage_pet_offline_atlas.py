@@ -12,6 +12,27 @@ FIELDS = [
     "捕获地点、坐标、等级", "任务、奖励及其他取得", "来源、冲突、未知"
 ]
 
+# PET31 is an immutable historical audit; PET32/33 subsequently appended
+# later-carrier portrait variants to these four dossiers, not TW1 portraits.
+PORTRAIT_SUPERSESSIONS = {
+    "PET-000116": [
+        "c30074eea6d3a512dd770e98128dacf7c24b5949",
+        "12b9cf7eacffffb79a99a969a0f548fd44de3f29"
+    ],
+    "PET-000117": [
+        "7c26aa68f09a78a1aa3fd604a9b43012ab27c5c7",
+        "b273779f037a3964adb038cff1f4631d1bf5ba9f"
+    ],
+    "PET-000118": [
+        "478fb629a402e008239cbcdfc3d4310c8c6de9c6",
+        "951fcb88fd6ccb4892546068072c11b4f246ef5c"
+    ],
+    "PET-000119": [
+        "0c5af1a2d02e12da747f257e2219d361a59c6053",
+        "b95ce83701681c66713e0e963c2aaacdf4f941bb"
+    ]
+}
+
 def payload():
     manifest, data = lookup.load()
     rows = lookup.build(data)
@@ -27,13 +48,24 @@ def payload():
         assert path.startswith("research/pets/profiles/") and ".." not in Path(path).parts
         raw = (lookup.ROOT / path).read_bytes()
         source_row = lookup.resolve(data, row["source"], row["pointer"])
-        assert lookup.blob(raw) == source_row["dossier_git_blob"]
+        current_blob = lookup.blob(raw)
+        audit_blob = source_row["dossier_git_blob"]
+        if detail["pet_id"] in PORTRAIT_SUPERSESSIONS:
+            assert [audit_blob, current_blob] == PORTRAIT_SUPERSESSIONS[detail["pet_id"]]
+        else:
+            assert current_blob == audit_blob
         profile = json.loads(raw)
         assert profile["profile_id"] == detail["pet_id"]
         assert profile["names"]["original_client"] in row["labels"]
         assert profile["appearance"]["graphic_number"] == detail["graphic"]
         assert not profile["status"]["all_fields_historically_complete"]
-        profiles[profile["profile_id"]] = {"path": path, "git_blob": lookup.blob(raw), "profile": profile}
+        if detail["pet_id"] in PORTRAIT_SUPERSESSIONS:
+            candidates = profile["appearance"]["cross_version_original_portrait_rd_candidates"]
+            assert candidates["original_TW10_portrait_remains_missing"]
+            assert candidates["original_TW10_source_RDto_appearance_portrait_not_backfilled"]
+            assert len(candidates["TW85_saved_PC_higher_variants"]) == 2
+            assert profile["appearance"]["portrait"]["source_rd_bitmap_number"] is None
+        profiles[profile["profile_id"]] = {"path": path, "git_blob": current_blob, "historical_audit_git_blob": audit_blob, "profile": profile}
     return {
         "profiles": profiles,
         "schema": "stoneage.pet.offline_source_atlas.r1",
@@ -87,7 +119,7 @@ function show(r){
  }
  if(r.source==="tw10"&&r.detail){
   const q=d.profiles[r.detail.pet_id], f=q.profile;
-  json(p,"原零售档案编号与来源",{id:f.profile_id,version:f.version_scope,path:q.path,git_blob:q.git_blob});
+  json(p,"原零售档案编号与来源",{id:f.profile_id,version:f.version_scope,path:q.path,git_blob:q.git_blob,historical_audit_git_blob:q.historical_audit_git_blob});
   json(p,"名称、系列与官服身份",{names:f.names,family:f.encyclopedia.category_or_family,identity:f.actual_official_pet_identity});
   json(p,"属性与一级初值范围（null = 未证）",f.combat_stats);
   json(p,"成长与算法（null = 未证）",f.growth);

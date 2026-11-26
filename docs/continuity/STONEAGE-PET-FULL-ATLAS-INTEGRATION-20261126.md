@@ -13,3 +13,5 @@ python tools/stoneage_pet_offline_atlas.py --output pet-source-atlas-r1.html
 NEXT：先验证候选精确CI、实际HTML和浏览器搜索/筛选/分页，再复用既有私人原像素资料，实现按来源位置对照真实头像与动作；整合其他五查询目录并建立逐宠字段专门展示和逐项缺件验收。优先丰富高版本PC资料，再作向下兼容；不切NPC，不进行新游戏设计。不得把本候选的HTML输出计为新增正式宠物或完整模块。
 
 候选 `7cab473f9e543006a536bda2546f99fe242e70dd` 已实证7/7 Actions成功，专项 [run 45850912072](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/45850912072) 生成 HTML，artifact15132418569 / ZIP956939B / API digest sha256:adf5d77c861017fcce4127eb93e9b0f23abf2aa5081a8dc56ba236a9f3c8acae（未独立下载）。本修订追加124档原证Git blob校验和实际 file:// Chromium 自动化测试；仍须精确新候选 Actions。私人原图材料仅检索到旧124图概览与重建脚本，未在本轮读取并验证原图资产，不宣称完成。
+
+2026-11-26 后续：候选15b8bc037dfe9ae1f3ec172d1c996122d19b3643 的专项 run45851123719/job140017440469 在档案原证散列断言失败，浏览器步骤未运行。实查候选树与历史PET31索引124项，120完全一致、4项PET-000116至119已由PET32/33合法追加高版本头像候选。逐一读取旧/新8个Git blob做递归字段差异，仅新增appearance.cross_version_original_portrait_rd_candidates及provenance.sources后追加一条来源；其余字段完全不变。保留原PET31不可变，明确四组旧→新散列，严格验证每组两候选及TW1原头像仍缺，其他120项保持严格散列核验。待新候选CI及浏览器实测，不改正式字段。

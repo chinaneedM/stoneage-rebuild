@@ -28,6 +28,11 @@ class AtlasTest(unittest.TestCase):
         late=[x for x in d["rows"] if x["source"]=="tw75"]
         self.assertEqual(len(tw),124)
         self.assertEqual(len(d["profiles"]),124)
+        self.assertEqual({k for k,v in d["profiles"].items() if v["git_blob"] != v["historical_audit_git_blob"]}, set(atlas.PORTRAIT_SUPERSESSIONS))
+        for k in atlas.PORTRAIT_SUPERSESSIONS:
+            f=d["profiles"][k]["profile"]["appearance"]
+            self.assertIsNone(f["portrait"]["source_rd_bitmap_number"])
+            self.assertEqual(len(f["cross_version_original_portrait_rd_candidates"]["TW85_saved_PC_higher_variants"]),2)
         w=d["profiles"]["PET-000001"]["profile"]
         self.assertEqual(w["names"]["original_client"],"烏力")
         self.assertEqual(w["appearance"]["graphic_number"],100250)
