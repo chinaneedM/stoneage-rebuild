@@ -1,0 +1,151 @@
+{
+  "schema": "stoneage.pet95.late_skill_qualifications.r1",
+  "base_head": "5bf73e9412c94fd36a35404eb436fb0a926ceea4",
+  "base_tree": "80875a015b91c944b9b2825071562dff483e981f",
+  "input_git_blobs": {
+    "research/pets/PET-HIGH-FIRST-94-LATE-FAMILY-CATALOGUE-REFERENCES-R1.json": "354e2aeaea8806def8386f9c070f78e9d5414374"
+  },
+  "source": {
+    "url": "https://www.lovesa.cc/thread-16-1-1.html",
+    "observed_post_date": "2020-08-29",
+    "origin": "Attributed repost from Bahamut rain29346, further edited by Love SA",
+    "qualification": "LATER_EDITED_COMMUNITY_REPOST_NOT_INDEPENDENT_PERIOD_OR_OPERATOR_EVIDENCE",
+    "observed_lines": [
+      51,
+      53
+    ],
+    "raw_html_sha256": null
+  },
+  "blocked_sources": [
+    {
+      "url": "https://forum.gamer.com.tw/C.php?bsn=1571&snA=71792",
+      "status": 403,
+      "action": "Do not promote cached excerpt to release or named reward proof"
+    },
+    {
+      "url": "https://wiki2.gamer.com.tw/wiki.php?f=M&n=2198%3A%E7%81%AB%E7%8B%97%E5%B9%B4-%E7%95%A2%E6%A0%BC%E5%A4%9A%E5%9F%BA&ss=2198",
+      "status": 403
+    },
+    {
+      "url": "https://wiki2.gamer.com.tw/wiki.php?f=M&n=2198%3A%E6%B0%B4%E7%8B%97%E5%B9%B4-%E5%93%88%E6%96%AF%E5%A4%9A%E5%9F%BA&ss=2198",
+      "status": 403
+    }
+  ],
+  "rows": [
+    {
+      "hf94_index": 2,
+      "name": "索維爾",
+      "skill": "狂野之心",
+      "source_lines": [
+        139,
+        144
+      ],
+      "role": "REPORTED_ELIGIBILITY_NOT_BIRTH_SKILL",
+      "effect_claim": "Single target attack increase for five turns; nominal increment 50% of attack, reported observed increment 50% of defense; unresolved bug claim.",
+      "effect_conflict": true,
+      "official_skill_verified": false,
+      "official_birth_skill_verified": false,
+      "runtime_verified": false
+    },
+    {
+      "hf94_index": 3,
+      "name": "索迪斯",
+      "skill": "狂野之心",
+      "source_lines": [
+        139,
+        144
+      ],
+      "role": "REPORTED_ELIGIBILITY_NOT_BIRTH_SKILL",
+      "effect_claim": "Same reported nominal/observed stat-base discrepancy; no separate test trace.",
+      "effect_conflict": true,
+      "official_skill_verified": false,
+      "official_birth_skill_verified": false,
+      "runtime_verified": false
+    },
+    {
+      "hf94_index": 4,
+      "name": "布魯多基",
+      "skill": "挑釁反擊",
+      "source_lines": [
+        150,
+        152
+      ],
+      "role": "REPORTED_ELIGIBILITY_NOT_BIRTH_SKILL",
+      "effect_claim": "Reported forced targeting and one 50% damage reflection, with three action rounds of effect; no server code or runtime trace.",
+      "effect_conflict": false,
+      "official_skill_verified": false,
+      "official_birth_skill_verified": false,
+      "runtime_verified": false
+    },
+    {
+      "hf94_index": 5,
+      "name": "哈斯多基",
+      "skill": "挑釁反擊",
+      "source_lines": [
+        150,
+        152
+      ],
+      "role": "REPORTED_ELIGIBILITY_NOT_BIRTH_SKILL",
+      "effect_claim": "Reported forced targeting and one 50% damage reflection, with three action rounds of effect; no server code or runtime trace.",
+      "effect_conflict": false,
+      "official_skill_verified": false,
+      "official_birth_skill_verified": false,
+      "runtime_verified": false
+    },
+    {
+      "hf94_index": 6,
+      "name": "畢格多基",
+      "skill": "挑釁反擊",
+      "source_lines": [
+        150,
+        152
+      ],
+      "role": "REPORTED_ELIGIBILITY_NOT_BIRTH_SKILL",
+      "effect_claim": "Reported forced targeting and one 50% damage reflection, with three action rounds of effect; no server code or runtime trace.",
+      "effect_conflict": false,
+      "official_skill_verified": false,
+      "official_birth_skill_verified": false,
+      "runtime_verified": false
+    },
+    {
+      "hf94_index": 7,
+      "name": "普德多基",
+      "skill": "挑釁反擊",
+      "source_lines": [
+        150,
+        152
+      ],
+      "role": "REPORTED_ELIGIBILITY_NOT_BIRTH_SKILL",
+      "effect_claim": "Reported forced targeting and one 50% damage reflection, with three action rounds of effect; no server code or runtime trace.",
+      "effect_conflict": false,
+      "official_skill_verified": false,
+      "official_birth_skill_verified": false,
+      "runtime_verified": false
+    },
+    {
+      "hf94_index": 1,
+      "name": "多奇",
+      "skill": "淨化之風",
+      "source_lines": [
+        159,
+        160
+      ],
+      "role": "FUSION_FORM_ONLY_IDENTITY_UNRESOLVED",
+      "effect_claim": "Reported equivalence to level-2 advanced cleansing; source explicitly refers to fusion form, not unrestricted base pet.",
+      "effect_conflict": false,
+      "official_skill_verified": false,
+      "official_birth_skill_verified": false,
+      "runtime_verified": false
+    }
+  ],
+  "summary": {
+    "existing_name_positions": 7,
+    "distinct_reported_skills": 3,
+    "eligible_reference_positions": 6,
+    "nominal_observed_conflict_positions": 2,
+    "fusion_only_positions": 1,
+    "official_closures": 0,
+    "new_original_bytes": 0
+  },
+  "original_assets_published": false
+}
