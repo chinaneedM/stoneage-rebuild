@@ -1,0 +1,1520 @@
+{
+  "schema": "stoneage.pet_high_first_87.residual_acquisition_reconciliation.r1",
+  "base_head": "2bcbe2a9ebf94e8b39000310384055f989577f59",
+  "base_tree": "650fd04d38280c19859703ccb9437f24b8ce9daf",
+  "input_git_blobs": {
+    "research/pets/PET-HIGH-FIRST-86-TASK-ACQUISITION-BOUNDARIES-R1.json": "19cce2787fc6aa75dd1d6cb6751980dafe192c87",
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/pets/PET-HIGH-FIRST-62-RESIDUAL-ACQUISITION-REVIEW-R1.json": "e57921f1ef3260ba298f4e06788ca1c6b78aa47b",
+    "research/pets/PET-HIGH-FIRST-63-VARIANT-PERIOD-WITNESSES-R1.json": "5affe17f1f280214e5a7fd41f8299912405bda10",
+    "research/pets/PET-HIGH-FIRST-53-COMMERCIAL-HONOR-REWARD-REFERENCES-R1.json": "d0d6317382636bf14caf811eb1102e3b41f85da2",
+    "research/pets/PET-HIGH-FIRST-50-ORIGINAL-ACQUISITION-R1.json": "4d0b31a7fa196cf8f227a7b0b1aea7183d9598f0",
+    "research/pets/PET-HIGH-FIRST-58-NO-EXACT-ALBUM-ROLE-CROSSWALK-R1.json": "05abda998bd2ee7c7f24101468f14de96a1dbcea"
+  },
+  "scope": "One new bounded row link; reconcile earlier retained source references and all 33 remaining positions; no new original payload or official field closure.",
+  "rows": [
+    {
+      "tw75_row_index": 452,
+      "template_id": 1133,
+      "master_name": "波比",
+      "graphic": 101578,
+      "row_sha256": "9622c0761c37db94a8ee7680da548de5ba4261c3d2ede56e3e03f4a60446abd2",
+      "master_elements": [
+        0,
+        0,
+        20,
+        80
+      ],
+      "source_elements": [
+        0,
+        0,
+        20,
+        80
+      ],
+      "qualification": "NAME_ELEMENT_COMPATIBLE_LEGACY_AND_DATED_PC_REFERENCE_NOT_SAME_DEPLOYMENT",
+      "sources": [
+        {
+          "url": "https://news.17173.com/z/stoneage/chongwu/petshow30.htm",
+          "date": null,
+          "visible_lines": [
+            169,
+            182
+          ],
+          "grade": "LEGACY_PC_PORTAL_CATALOG_UNDATED_PAGE",
+          "claim": "353 波比火2风8，活动奖品，出没测试中；5技能格为该图鉴字段，不覆盖保存主表。"
+        },
+        {
+          "url": "https://games.sina.com.cn/newgames/2003/11/11138274.shtml",
+          "date": "2003-11-13",
+          "event_date": "2003-11-12",
+          "visible_lines": [
+            5,
+            12
+          ],
+          "grade": "DATED_OPERATOR_ATTRIBUTED_EVENT_REPORT",
+          "claim": "转生宠物收集活动，指定三宠之一交GM，合资格首位交换者获波比；报道描述以奇娜完成交换。"
+        }
+      ],
+      "acquisition": {
+        "kind": "OPERATOR_EVENT_FIRST_QUALIFYING_EXCHANGE_REWARD",
+        "map": "森林洞窟山顶",
+        "eligible_exchange_pets": [
+          "多魯寶",
+          "洛卡倫恩",
+          "奇娜"
+        ],
+        "reported_exchanged_pet": "奇娜",
+        "guaranteed_for_all_participants": false,
+        "actual_transaction_log_verified": false
+      },
+      "note": "实际发奖为运营战报的文字主张，不是服务端交易日志；未认证同部署模板ID或首次发行。",
+      "official_acquisition_verified": false,
+      "official_first_release": null
+    }
+  ],
+  "residual": [
+    {
+      "tw75_row_index": 31,
+      "template_id": 55,
+      "master_name": "巴羅多",
+      "graphic": 101617,
+      "row_sha256": "ff24ed2fa6b7e1a5c9bd2e53f9247921d281718389195b4cbff9c89cffc1e705",
+      "master_elements": [
+        20,
+        80,
+        0,
+        0
+      ],
+      "category": "EXISTING_COMPATIBLE_DOCUMENTARY_REFERENCE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2260,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": {
+        "source": "hf63",
+        "position": 31,
+        "qualification": "PREEXISTING_PLAYER_OR_INDEX_REFERENCE_NOT_NEW",
+        "witnesses": [
+          {
+            "source": "quiz2005",
+            "catalogue_no": 359,
+            "elements": [
+              20,
+              80,
+              0,
+              0
+            ],
+            "kind": "PLAYER_REPORTED_2003_PACK_AND_2004_EVENT_REWARD",
+            "ratio_matches": true,
+            "capacity_matches": null
+          }
+        ]
+      },
+      "reopen_on": [
+        "DATED_OPERATOR_OR_PLAY_RECORD_IDENTIFYING_VARIANT"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 32,
+      "template_id": 56,
+      "master_name": "巴羅特",
+      "graphic": 101618,
+      "row_sha256": "ae2648e0b9a7ae6bbbb0e5f978d6792271278604e6fc4e8fa0ad18bea91021b1",
+      "master_elements": [
+        0,
+        0,
+        20,
+        80
+      ],
+      "category": "EXISTING_COMPATIBLE_DOCUMENTARY_REFERENCE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2261,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": {
+        "source": "hf63",
+        "position": 32,
+        "qualification": "PREEXISTING_PLAYER_OR_INDEX_REFERENCE_NOT_NEW",
+        "witnesses": [
+          {
+            "source": "quiz2005",
+            "catalogue_no": 360,
+            "elements": [
+              0,
+              0,
+              20,
+              80
+            ],
+            "kind": "PLAYER_REPORTED_2003_PACK_AND_2004_EVENT_REWARD",
+            "ratio_matches": true,
+            "capacity_matches": null
+          }
+        ]
+      },
+      "reopen_on": [
+        "NEW_ACCESSIBLE_SAME_DEPLOYMENT_ACQUISITION_SOURCE"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 75,
+      "template_id": 115,
+      "master_name": "胖達多",
+      "graphic": 101720,
+      "row_sha256": "c55e86429f8a24e687eadfe681e7ef3ddd24fd19125605531445367767d69f41",
+      "master_elements": [
+        0,
+        50,
+        50,
+        0
+      ],
+      "category": "REQUIRES_NEW_SOURCE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2397,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "DATED_OPERATOR_OR_PLAY_RECORD_IDENTIFYING_VARIANT"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 76,
+      "template_id": 116,
+      "master_name": "歐胖達",
+      "graphic": 101714,
+      "row_sha256": "7e0be0c479dcc2cffd1bc456e3be76d137fd1a5406c64f76ec84f81ba620ff24",
+      "master_elements": [
+        0,
+        0,
+        50,
+        50
+      ],
+      "category": "REQUIRES_NEW_SOURCE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2398,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "NEW_ACCESSIBLE_SAME_DEPLOYMENT_ACQUISITION_SOURCE"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 90,
+      "template_id": 130,
+      "master_name": "奇路卡",
+      "graphic": 101712,
+      "row_sha256": "1b2d3564b013022bbccb998ac1ad99283af16cdb65ad2ce632c04e0ca9b9866d",
+      "master_elements": [
+        20,
+        80,
+        0,
+        0
+      ],
+      "category": "REQUIRES_NEW_SOURCE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2414,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "NEW_ACCESSIBLE_SAME_DEPLOYMENT_ACQUISITION_SOURCE"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 91,
+      "template_id": 131,
+      "master_name": "奇肯沃",
+      "graphic": 101717,
+      "row_sha256": "9ed781c238b7698a7aa5801d34f88dfc6009904c80c6222dea92415896633ed4",
+      "master_elements": [
+        80,
+        0,
+        0,
+        20
+      ],
+      "category": "NAMED_LV1_LOCATION_NO_POSITIVE_SAVED_ROUTE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2415,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        },
+        {
+          "instance_id": 2429,
+          "level": [
+            150,
+            200
+          ],
+          "pet_flag": 0
+        },
+        {
+          "instance_id": 2431,
+          "level": [
+            131,
+            140
+          ],
+          "pet_flag": 0
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "SAME_BUILD_SCRIPT_OR_POSITIVE_REGION_ENTRY",
+        "DATED_OPERATOR_OR_PLAY_RECORD_IDENTIFYING_VARIANT"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 92,
+      "template_id": 132,
+      "master_name": "奇肯克奈",
+      "graphic": 101718,
+      "row_sha256": "8f7f5354f99a64cd42cc9182c564756ef3715169c217506e0ae5fea64df90187",
+      "master_elements": [
+        0,
+        100,
+        0,
+        0
+      ],
+      "category": "NAMED_LV1_LOCATION_NO_POSITIVE_SAVED_ROUTE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2416,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        },
+        {
+          "instance_id": 2430,
+          "level": [
+            150,
+            200
+          ],
+          "pet_flag": 0
+        },
+        {
+          "instance_id": 2432,
+          "level": [
+            131,
+            140
+          ],
+          "pet_flag": 0
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "SAME_BUILD_SCRIPT_OR_POSITIVE_REGION_ENTRY",
+        "DATED_OPERATOR_OR_PLAY_RECORD_IDENTIFYING_VARIANT"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 95,
+      "template_id": 135,
+      "master_name": "史奈克特",
+      "graphic": 101722,
+      "row_sha256": "4b8344f346c27329f8f3af5b741a1925e91d994f48bc266edf83d08908cb4e82",
+      "master_elements": [
+        90,
+        10,
+        0,
+        0
+      ],
+      "category": "REQUIRES_NEW_SOURCE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2419,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "NEW_ACCESSIBLE_SAME_DEPLOYMENT_ACQUISITION_SOURCE"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 96,
+      "template_id": 136,
+      "master_name": "葛利斯奈",
+      "graphic": 101721,
+      "row_sha256": "9b5aa4d119b5ee20aff88f539afb1536e256ba38700fe67507783aae507fcdbf",
+      "master_elements": [
+        0,
+        0,
+        90,
+        10
+      ],
+      "category": "REQUIRES_NEW_SOURCE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2420,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "NEW_ACCESSIBLE_SAME_DEPLOYMENT_ACQUISITION_SOURCE"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 103,
+      "template_id": 147,
+      "master_name": "佛克斯",
+      "graphic": 101748,
+      "row_sha256": "fd3180b3ae38bfdd40fc0138d715b5e0f2e5e27b92ebf2d1896008c5c6d8d07e",
+      "master_elements": [
+        0,
+        0,
+        20,
+        80
+      ],
+      "category": "REQUIRES_NEW_SOURCE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2461,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "NEW_ACCESSIBLE_SAME_DEPLOYMENT_ACQUISITION_SOURCE"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 108,
+      "template_id": 161,
+      "master_name": "新手貝魯卡",
+      "graphic": 100327,
+      "row_sha256": "26bf74dbb3eae136c6875fb1704a4c8231abc8e0eb9e7b6fc7c9e506147b874c",
+      "master_elements": [
+        60,
+        40,
+        0,
+        0
+      ],
+      "category": "SAVED_TRAINER_SCRIPT_LITERAL",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2481,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [
+        {
+          "path": "npc/sa60/newbie/m_tiger",
+          "line": 44,
+          "line_sha256": "c34a47d09b35e51df88eb8f6b86183b2e76a7dcbf5d05cae51c12e69fe6cb626"
+        },
+        {
+          "path": "npc/sa60/newbie/m_tiger",
+          "line": 54,
+          "line_sha256": "c34a47d09b35e51df88eb8f6b86183b2e76a7dcbf5d05cae51c12e69fe6cb626"
+        },
+        {
+          "path": "npc/sa60/newbie/m_tiger",
+          "line": 63,
+          "line_sha256": "c34a47d09b35e51df88eb8f6b86183b2e76a7dcbf5d05cae51c12e69fe6cb626"
+        }
+      ],
+      "prior_role": "SAVED_TRAINER_REWARD_VARIANT",
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "TRAINER_DEPLOYMENT_OR_ACTUAL_AWARD"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 109,
+      "template_id": 162,
+      "master_name": "新手貝魯伊卡",
+      "graphic": 100328,
+      "row_sha256": "a1c01650eaf1d15f97764f6e54e93bde3bf3df67e71e96e987b591916407eade",
+      "master_elements": [
+        0,
+        0,
+        30,
+        70
+      ],
+      "category": "SAVED_TRAINER_SCRIPT_LITERAL",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2482,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [
+        {
+          "path": "npc/sa60/newbie/m_tiger",
+          "line": 101,
+          "line_sha256": "416550d8cb0635345bd76e02cc662e5658737dde8cb178e064e1c427d8b75309"
+        },
+        {
+          "path": "npc/sa60/newbie/m_tiger",
+          "line": 110,
+          "line_sha256": "416550d8cb0635345bd76e02cc662e5658737dde8cb178e064e1c427d8b75309"
+        },
+        {
+          "path": "npc/sa60/newbie/m_tiger",
+          "line": 119,
+          "line_sha256": "416550d8cb0635345bd76e02cc662e5658737dde8cb178e064e1c427d8b75309"
+        }
+      ],
+      "prior_role": "SAVED_TRAINER_REWARD_VARIANT",
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "TRAINER_DEPLOYMENT_OR_ACTUAL_AWARD"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 110,
+      "template_id": 163,
+      "master_name": "新手格魯西斯",
+      "graphic": 100329,
+      "row_sha256": "23eccb993bab5bd8f9179addf5cf9ad6ae1d92049e2b624f39cec600f0046f36",
+      "master_elements": [
+        0,
+        0,
+        80,
+        20
+      ],
+      "category": "SAVED_TRAINER_SCRIPT_LITERAL",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2483,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [
+        {
+          "path": "npc/sa60/newbie/m_tiger",
+          "line": 17,
+          "line_sha256": "047db8188e0e1b8a8eec5de6461c0f72fe8a3aa5627778a2f80368fb3c3944fd"
+        },
+        {
+          "path": "npc/sa60/newbie/m_tiger",
+          "line": 26,
+          "line_sha256": "047db8188e0e1b8a8eec5de6461c0f72fe8a3aa5627778a2f80368fb3c3944fd"
+        },
+        {
+          "path": "npc/sa60/newbie/m_tiger",
+          "line": 35,
+          "line_sha256": "047db8188e0e1b8a8eec5de6461c0f72fe8a3aa5627778a2f80368fb3c3944fd"
+        }
+      ],
+      "prior_role": "SAVED_TRAINER_REWARD_VARIANT",
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "TRAINER_DEPLOYMENT_OR_ACTUAL_AWARD"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 111,
+      "template_id": 164,
+      "master_name": "新手金格薩貝魯",
+      "graphic": 100330,
+      "row_sha256": "a37db0aabd1a185e4eb637702b6e2a4730a44a2b29014c44b710b24bcde8b1db",
+      "master_elements": [
+        30,
+        0,
+        0,
+        70
+      ],
+      "category": "SAVED_TRAINER_SCRIPT_LITERAL",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2484,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [
+        {
+          "path": "npc/sa60/newbie/m_tiger",
+          "line": 73,
+          "line_sha256": "c6aa35d1d9be0dfab99e25379af166c4943971e2eea5575d016cd58d7eb9cc10"
+        },
+        {
+          "path": "npc/sa60/newbie/m_tiger",
+          "line": 82,
+          "line_sha256": "c6aa35d1d9be0dfab99e25379af166c4943971e2eea5575d016cd58d7eb9cc10"
+        },
+        {
+          "path": "npc/sa60/newbie/m_tiger",
+          "line": 91,
+          "line_sha256": "c6aa35d1d9be0dfab99e25379af166c4943971e2eea5575d016cd58d7eb9cc10"
+        }
+      ],
+      "prior_role": "SAVED_TRAINER_REWARD_VARIANT",
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "TRAINER_DEPLOYMENT_OR_ACTUAL_AWARD"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 187,
+      "template_id": 335,
+      "master_name": "雷帝斯洛",
+      "graphic": 101437,
+      "row_sha256": "22dae34a0f8ef4efc321d750c53362684e321226457222a4cff91e78baae5276",
+      "master_elements": [
+        100,
+        100,
+        100,
+        100
+      ],
+      "category": "REQUIRES_NEW_SOURCE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2105,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "NEW_ACCESSIBLE_SAME_DEPLOYMENT_ACQUISITION_SOURCE"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 208,
+      "template_id": 724,
+      "master_name": "巴朵蘭恩",
+      "graphic": 100373,
+      "row_sha256": "f5239f237c9cf3429f9cca9d2e25b8473306028ed8bd95ab49f841426c08040d",
+      "master_elements": [
+        0,
+        50,
+        50,
+        0
+      ],
+      "category": "EXISTING_COMPATIBLE_DOCUMENTARY_REFERENCE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2572,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": {
+        "source": "hf53",
+        "position": 208,
+        "qualification": "PERIOD_COMMERCIAL_PACK_NAME_RATIO_AND_CAPACITY_COMPATIBLE_NOT_DEPLOYMENT"
+      },
+      "reopen_on": [
+        "DATED_OPERATOR_OR_PLAY_RECORD_IDENTIFYING_VARIANT"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 281,
+      "template_id": 797,
+      "master_name": "哥斯哥斯",
+      "graphic": 100892,
+      "row_sha256": "c8328dbeb1d5b77658242a1094b1d643fa3898070362d0240a7ed7cb5d38c134",
+      "master_elements": [
+        80,
+        0,
+        0,
+        20
+      ],
+      "category": "REQUIRES_NEW_SOURCE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 1630,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 0
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "NEW_ACCESSIBLE_SAME_DEPLOYMENT_ACQUISITION_SOURCE"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 293,
+      "template_id": 809,
+      "master_name": "瑞里西爾",
+      "graphic": 100904,
+      "row_sha256": "ce6dafdb18b96d79e8bbf87bd1b2d1515d2a00632a83baedb54b81dd71de6beb",
+      "master_elements": [
+        60,
+        0,
+        0,
+        40
+      ],
+      "category": "REQUIRES_NEW_SOURCE",
+      "selected_match": "SAME_ID_DIFFERENT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 1642,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 0
+        },
+        {
+          "instance_id": 2187,
+          "level": [
+            101,
+            110
+          ],
+          "pet_flag": 0
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "EXACT_SAME_DEPLOYMENT_MASTER_ROW",
+        "SAME_BUILD_SCRIPT_OR_POSITIVE_REGION_ENTRY"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 306,
+      "template_id": 822,
+      "master_name": "諾克斯",
+      "graphic": 100917,
+      "row_sha256": "6d117fe7b62d3fb87819af406bb078bdbd810bbe2d1d07ca77f5ac6a07d4280c",
+      "master_elements": [
+        0,
+        50,
+        50,
+        0
+      ],
+      "category": "REQUIRES_NEW_SOURCE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 1655,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 0
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "NEW_ACCESSIBLE_SAME_DEPLOYMENT_ACQUISITION_SOURCE"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 309,
+      "template_id": 854,
+      "master_name": "動物園養的拉斯基",
+      "graphic": 100853,
+      "row_sha256": "55a80d138a068cdfcad57f34e99d4d64dd0e90a62871bc616cc291d1f3d7b379",
+      "master_elements": [
+        0,
+        0,
+        60,
+        40
+      ],
+      "category": "TEMPORARY_TASK_ROLE_CANDIDATE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 1733,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": "LATER_ZOO_RETURN_OBJECT_CANDIDATE",
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "TASK_ROLE_OR_HANDOVER_SAME_DEPLOYMENT",
+        "DATED_OPERATOR_OR_PLAY_RECORD_IDENTIFYING_VARIANT"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 317,
+      "template_id": 913,
+      "master_name": "古瓜",
+      "graphic": 100015,
+      "row_sha256": "f9664e606019d1874649c34bdb6aab676c13cd9c82d27b81818778d94c60c97e",
+      "master_elements": [
+        100,
+        0,
+        0,
+        0
+      ],
+      "category": "TEMPORARY_TASK_ROLE_CANDIDATE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 1816,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": "REPORTED_GUGUA_TEMPORARY_LV1_STAGE",
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "TASK_ROLE_OR_HANDOVER_SAME_DEPLOYMENT",
+        "DATED_OPERATOR_OR_PLAY_RECORD_IDENTIFYING_VARIANT"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 318,
+      "template_id": 914,
+      "master_name": "古瓜",
+      "graphic": 100018,
+      "row_sha256": "8b6beaa55d514393dbd1681b3883d2aa4e4389e1fb088f718949219f8e85bc99",
+      "master_elements": [
+        100,
+        0,
+        0,
+        0
+      ],
+      "category": "TEMPORARY_TASK_ROLE_CANDIDATE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 1818,
+          "level": [
+            100,
+            100
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": "REPORTED_GUGUA_TEMPORARY_LV100_STAGE",
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "TASK_ROLE_OR_HANDOVER_SAME_DEPLOYMENT",
+        "DATED_OPERATOR_OR_PLAY_RECORD_IDENTIFYING_VARIANT"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 330,
+      "template_id": 966,
+      "master_name": "萊比",
+      "graphic": 100821,
+      "row_sha256": "6fdf44c24743488ec9bae9095d59fe2873e38d22ab3c807c348374442ce800d6",
+      "master_elements": [
+        0,
+        80,
+        20,
+        0
+      ],
+      "category": "TEMPORARY_TASK_ROLE_CANDIDATE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 1929,
+          "level": [
+            50,
+            50
+          ],
+          "pet_flag": 0
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": "REPORTED_LAIBI_TEMPORARY_TRANSFER_LEVEL_MATCH",
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "TASK_ROLE_OR_HANDOVER_SAME_DEPLOYMENT",
+        "DATED_OPERATOR_OR_PLAY_RECORD_IDENTIFYING_VARIANT"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 344,
+      "template_id": 993,
+      "master_name": "史奈克特",
+      "graphic": 101448,
+      "row_sha256": "5db4704b9a7966812e0e104fa186044f020304af224e4c472d2c1009a009fd16",
+      "master_elements": [
+        70,
+        0,
+        0,
+        30
+      ],
+      "category": "EXISTING_COMPATIBLE_DOCUMENTARY_REFERENCE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": {
+        "source": "hf63",
+        "position": 344,
+        "qualification": "PREEXISTING_PLAYER_OR_INDEX_REFERENCE_NOT_NEW",
+        "witnesses": [
+          {
+            "source": "quiz2005",
+            "catalogue_no": 256,
+            "elements": [
+              70,
+              0,
+              0,
+              30
+            ],
+            "kind": "PLAYER_REPORTED_2004_EVENT_PRIZE",
+            "ratio_matches": true,
+            "capacity_matches": null
+          },
+          {
+            "source": "wiki256",
+            "catalogue_no": 256,
+            "elements": [
+              70,
+              0,
+              0,
+              30
+            ],
+            "capacity": 7,
+            "kind": "PLAYER_CATALOGUE_2004_EVENT_PRIZE",
+            "ratio_matches": true,
+            "capacity_matches": true
+          }
+        ]
+      },
+      "reopen_on": [
+        "SAME_DEPLOYMENT_INSTANCE_OR_ISSUANCE"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 345,
+      "template_id": 994,
+      "master_name": "葛利斯奈",
+      "graphic": 101449,
+      "row_sha256": "199b86919962418e87d046096cb3ef0f0b92dd6d4d6d38599cb8f9b66c7fa57e",
+      "master_elements": [
+        30,
+        70,
+        0,
+        0
+      ],
+      "category": "EXISTING_COMPATIBLE_DOCUMENTARY_REFERENCE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": {
+        "source": "hf63",
+        "position": 345,
+        "qualification": "PREEXISTING_PLAYER_OR_INDEX_REFERENCE_NOT_NEW",
+        "witnesses": [
+          {
+            "source": "quiz2005",
+            "catalogue_no": 257,
+            "elements": [
+              30,
+              70,
+              0,
+              0
+            ],
+            "kind": "PLAYER_REPORTED_2004_EVENT_PRIZE",
+            "ratio_matches": true,
+            "capacity_matches": null
+          },
+          {
+            "source": "wiki257",
+            "catalogue_no": 257,
+            "elements": [
+              30,
+              70,
+              0,
+              0
+            ],
+            "capacity": 7,
+            "kind": "PLAYER_CATALOGUE_2004_EVENT_PRIZE",
+            "ratio_matches": true,
+            "capacity_matches": true
+          }
+        ]
+      },
+      "reopen_on": [
+        "SAME_DEPLOYMENT_INSTANCE_OR_ISSUANCE"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 386,
+      "template_id": 1042,
+      "master_name": "布洛多多",
+      "graphic": 100908,
+      "row_sha256": "19b7c59d8c8a7ce6bd2cde9e8e82ef8ccd40b0d3d3239ea7b3839a41e83ee201",
+      "master_elements": [
+        40,
+        0,
+        0,
+        60
+      ],
+      "category": "TEMPORARY_TASK_ROLE_CANDIDATE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2048,
+          "level": [
+            20,
+            20
+          ],
+          "pet_flag": 0
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": "REPORTED_BULUODUODUO_TEMPORARY_TRANSFER_LEVEL_MATCH",
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "TASK_ROLE_OR_HANDOVER_SAME_DEPLOYMENT"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 387,
+      "template_id": 1045,
+      "master_name": "寵物蛋",
+      "graphic": 101489,
+      "row_sha256": "07657ddf2565077f88cbff68b846e158740513895201fac4c69b70ec12b9fe25",
+      "master_elements": [
+        100,
+        0,
+        0,
+        0
+      ],
+      "category": "EGG_OR_HATCH_MAPPING_UNRESOLVED",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2055,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "EXACT_EGG_OR_PET_OUTPUT_MAPPING"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 416,
+      "template_id": 1075,
+      "master_name": "貝沃特",
+      "graphic": 101570,
+      "row_sha256": "6397cdcd0be504b7274cbae338e598d47a628fbb387650e2446be478dac815fa",
+      "master_elements": [
+        100,
+        0,
+        0,
+        0
+      ],
+      "category": "REQUIRES_NEW_SOURCE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2091,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "NEW_ACCESSIBLE_SAME_DEPLOYMENT_ACQUISITION_SOURCE"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 417,
+      "template_id": 1076,
+      "master_name": "貝恩斯",
+      "graphic": 101571,
+      "row_sha256": "04f7473677754f75cb091a45093a1ee5a9f6c1b4f13fb4a2d57d9eae9889fc46",
+      "master_elements": [
+        0,
+        0,
+        100,
+        0
+      ],
+      "category": "REQUIRES_NEW_SOURCE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2092,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "NEW_ACCESSIBLE_SAME_DEPLOYMENT_ACQUISITION_SOURCE"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 436,
+      "template_id": 1099,
+      "master_name": "華雷斯",
+      "graphic": 101545,
+      "row_sha256": "a02886f3e266213a70aba64bf596b4d71dc9da24620e578442f1aa6333ae17cc",
+      "master_elements": [
+        30,
+        70,
+        0,
+        0
+      ],
+      "category": "REQUIRES_NEW_SOURCE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2127,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "NEW_ACCESSIBLE_SAME_DEPLOYMENT_ACQUISITION_SOURCE"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 438,
+      "template_id": 1103,
+      "master_name": "克利多斯",
+      "graphic": 101546,
+      "row_sha256": "a8628f2e007d456277c8b578f0c1947899e43ecb31eb1999c35958a4f30caa4c",
+      "master_elements": [
+        70,
+        0,
+        0,
+        30
+      ],
+      "category": "REQUIRES_NEW_SOURCE",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2131,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "NEW_ACCESSIBLE_SAME_DEPLOYMENT_ACQUISITION_SOURCE"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 453,
+      "template_id": 1140,
+      "master_name": "美拉",
+      "graphic": 101760,
+      "row_sha256": "61f0ad4acaf901a798fef4fcfc97a6c3cf20859dc2da9bd8cf5a846a35c14f1a",
+      "master_elements": [
+        100,
+        0,
+        0,
+        0
+      ],
+      "category": "EGG_OR_HATCH_MAPPING_UNRESOLVED",
+      "selected_match": "SAME_ID_DIFFERENT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2474,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": null,
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "EXACT_SAME_DEPLOYMENT_MASTER_ROW",
+        "EXACT_EGG_OR_PET_OUTPUT_MAPPING"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    },
+    {
+      "tw75_row_index": 454,
+      "template_id": 1145,
+      "master_name": "美拉蛋",
+      "graphic": 101489,
+      "row_sha256": "61f9ab7106764f6bc09d5c11ccda8f4901b8250fdc6522edd092653f9d19a536",
+      "master_elements": [
+        100,
+        0,
+        0,
+        0
+      ],
+      "category": "EGG_OR_HATCH_MAPPING_UNRESOLVED",
+      "selected_match": "EXACT_ROW",
+      "selected_instances": [
+        {
+          "instance_id": 2479,
+          "level": [
+            1,
+            1
+          ],
+          "pet_flag": 1
+        }
+      ],
+      "selected_positive_routes": 0,
+      "original_npc_candidates": [],
+      "prior_role": "RETAINED_EGG_OBJECT_CANDIDATE",
+      "prior_documentary_references": null,
+      "reopen_on": [
+        "TASK_ROLE_OR_HANDOVER_SAME_DEPLOYMENT",
+        "EXACT_EGG_OR_PET_OUTPUT_MAPPING"
+      ],
+      "official_acquisition_verified": false,
+      "official_first_release": null,
+      "retain_strict_gap": true
+    }
+  ],
+  "rechecked_prior_sources": [
+    {
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-05-12/5305.shtml",
+      "grade": "DIRECT_VISIBLE_PERIOD_PLAYER_TEXT",
+      "result": "同页区分水5火5红暴包和水2火8普通红暴，复核HF53；不重算新发现。"
+    },
+    {
+      "url": "https://forum.gamer.com.tw/C.php?bsn=60144&snA=791",
+      "grade": "SEARCH_INDEX_ONLY",
+      "result": "巴罗多名称、比例及2003/2004奖励索引；正文未独立验证。"
+    },
+    {
+      "url": "https://forum.gamer.com.tw/Co.php?bsn=60144&sn=2614",
+      "grade": "SEARCH_INDEX_ONLY_DIRECT_403",
+      "result": "巴罗特比例与端午奖励索引；403。"
+    },
+    {
+      "url": "https://wiki2.gamer.com.tw/wiki.php?f=M&n=2198%3A2004%E5%8F%B2%E5%A5%88%E5%85%8B%E7%89%B9&ss=2198",
+      "grade": "PREVIOUS_RETAINED_WITNESS_DIRECT_403",
+      "result": "本轮403，保留既有证据等级。"
+    },
+    {
+      "url": "https://wiki2.gamer.com.tw/wiki.php?f=M&n=2198%3A2004%E8%91%9B%E5%88%A9%E6%96%AF%E5%A5%88&ss=2198",
+      "grade": "PREVIOUS_RETAINED_WITNESS_DIRECT_403",
+      "result": "本轮403，保留既有证据等级。"
+    }
+  ],
+  "remaining_without_new_later_reference": [
+    31,
+    32,
+    75,
+    76,
+    90,
+    91,
+    92,
+    95,
+    96,
+    103,
+    108,
+    109,
+    110,
+    111,
+    187,
+    208,
+    281,
+    293,
+    306,
+    309,
+    317,
+    318,
+    330,
+    344,
+    345,
+    386,
+    387,
+    416,
+    417,
+    436,
+    438,
+    453,
+    454
+  ],
+  "summary": {
+    "strict_reference_queue_unchanged": 67,
+    "input_later_residual": 34,
+    "new_later_name_element_reference_rows": 1,
+    "cumulative_later_reference_rows": 34,
+    "residual_without_this_new_layer": 33,
+    "prior_compatible_reference_positions_within_residual": 5,
+    "union_of_supplement_and_prior_compatible_positions": 39,
+    "residual_without_either_compatible_layer": 28,
+    "category_counts": {
+      "EXISTING_COMPATIBLE_DOCUMENTARY_REFERENCE": 5,
+      "REQUIRES_NEW_SOURCE": 14,
+      "NAMED_LV1_LOCATION_NO_POSITIVE_SAVED_ROUTE": 2,
+      "SAVED_TRAINER_SCRIPT_LITERAL": 4,
+      "TEMPORARY_TASK_ROLE_CANDIDATE": 5,
+      "EGG_OR_HATCH_MAPPING_UNRESOLVED": 3
+    },
+    "official_acquisition_closed": 0,
+    "new_original_client_bytes": 0,
+    "official_species_count": null
+  },
+  "official_same_deployment_verified": false,
+  "original_assets_published": false
+}
