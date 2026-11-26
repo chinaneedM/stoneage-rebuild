@@ -1,0 +1,25 @@
+name: PET102 retained original source screen replay
+on:
+  push:
+    paths:
+      - 'tools/stoneage_pet_high_first_102*.py'
+      - 'research/pets/PET-HIGH-FIRST-102-*'
+      - '.github/workflows/pet-high-first-102-custody.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_high_first_102*.py'
+      - 'research/pets/PET-HIGH-FIRST-102-*'
+      - '.github/workflows/pet-high-first-102-custody.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m tools.stoneage_pet_high_first_102_tw85_master_screen --self-test
+      - run: python -m tools.stoneage_pet_high_first_102_accept
