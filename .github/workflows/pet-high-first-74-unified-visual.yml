@@ -18,37 +18,15 @@ on:
 permissions:
   contents: read
 jobs:
-  generate:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/agent/pet-high-first-74-unified-visual-20261125' && startsWith(github.event.head_commit.message, 'PET-HIGH-FIRST-74:')
-    permissions:
-      contents: write
-    runs-on: ubuntu-latest
-    timeout-minutes: 25
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - run: python -m pip install Pillow
-      - run: python -m tools.stoneage_pet_high_first_74_unified_visual --generate
-      - run: |
-          git add research/pets/PET-HIGH-FIRST-74-UNIFIED-VISUAL-R1.json research/pets/PET-HIGH-FIRST-32-UNIFIED-SOURCE-LOOKUP-MANIFEST-R1.json
-          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'PET74: archive verified lookup projection'
-          git push origin "HEAD:$GITHUB_REF"
   verify:
-    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main' || !startsWith(github.event.head_commit.message, 'PET-HIGH-FIRST-74:')
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - run: python -m pip install Pillow
-      - run: |
-          if test -f research/pets/PET-HIGH-FIRST-74-UNIFIED-VISUAL-R1.json; then
-            python -m tools.stoneage_pet_high_first_74_unified_visual
-          else
-            python -m tools.stoneage_pet_source_lookup --verify
-            python -m py_compile tools/stoneage_pet_high_first_74_unified_visual.py
-          fi
+      - run: python -m tools.stoneage_pet_high_first_74_unified_visual
+      - run: python -m tools.stoneage_pet_source_lookup --visual-graphic 100400 --full > "$RUNNER_TEMP/pet74-residual.json"
+      - run: python -m tools.stoneage_pet_source_lookup --query 古瓜 --source tw75 --exact --full > "$RUNNER_TEMP/pet74-tw75.json"

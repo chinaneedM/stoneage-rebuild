@@ -1,6 +1,6 @@
 # 经典 PC 宠物统一来源查询（R1）
 
-一个只读入口访问36个固定Git源对象。每项返回可追溯的来源位置、证据等级和独立版本。
+一个只读入口访问固定的 Git 来源对象。每项返回可追溯的来源位置、证据等级和独立版本。
 
 ```bash
 python3 tools/stoneage_pet_source_lookup.py --summary
@@ -8,6 +8,7 @@ python3 tools/stoneage_pet_source_lookup.py --query 蒙奇 --exact --full
 python3 tools/stoneage_pet_source_lookup.py --query 雷帝斯洛 --variants
 python3 tools/stoneage_pet_source_lookup.py --query PET-000001 --exact --source tw10 --full
 python3 tools/stoneage_pet_source_lookup.py --query 101501 --exact --source tw85_spr --full
+python3 tools/stoneage_pet_source_lookup.py --visual-graphic 100400 --full
 python3 tools/stoneage_pet_source_lookup.py --verify
 ```
 
@@ -84,4 +85,4 @@ R60 从同一台湾保存 8.5 原包补齐余下 20 组的完整动作取样，1
 R61 为 67 个严格取得余缺的现有模板添加同档技能核查。64 条全行匹配，135 个正数槽可追至原配置的六条定义。用 `--query 烏力王 --source tw75 --exact --full` 查看有证模板的 `hf61` 技能链接。[PET61](../continuity/STONEAGE-PET-HIGH-FIRST-61-RESIDUAL-SKILL-DEFINITIONS-20261125.md)。
 
 
-R74（候选）：统一接入保存版TW85具名程序位置、全部肖像物理候选、原动作组及负几何记录。`--full` 可追精确原行和色板凭证，普通查询显示来源分级视觉参考；TW75仅同图号候选，TW1/CN50要求完整SPR同散列，均不证明同服身份。实际生成并验收后生效。[续接](../continuity/STONEAGE-PET-HIGH-FIRST-74-UNIFIED-VISUAL-20261125.md)。
+R74 接入保存版 TW8.5 的 1,889 个具名程序位置，保留同别名下全部物理肖像候选、原动作覆盖等级及两条未解的非正尺寸记录。`--full` 可追原行、肖像和两版色板文件凭证。标称 TW7.5 按原图号查看候选，台湾 1.0 和大陆 5.0 依图号及完整 SPR 散列查看跨版本对应。用 `--visual-graphic` 可查原 TW8.5 物理图组，包括相册无具名路由的 `100400`，图号与物理组号均属于原资源命名空间。官服身份、实际调色及原客户端渲染仍待证。[取证与续接](../continuity/STONEAGE-PET-HIGH-FIRST-74-UNIFIED-VISUAL-20261125.md)

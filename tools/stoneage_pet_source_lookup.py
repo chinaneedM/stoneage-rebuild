@@ -419,8 +419,21 @@ def build(d):
         if x["role"].startswith("UNQUALIFIED_"):
             continue
         add("hf36",["rows",i],[x["name"]],x["role"],detail={k:x[k] for k in ("year","region","source_id","claim")})
-    if "hf74" in d:attach_visual(d,out)
+    if "hf74" in d:
+        attach_visual(d, out)
     return out
+
+def visual_group_links(group_id, group, qualification):
+    yield dict(source="hf74", pointer=["groups", group_id], qualification=qualification)
+    for index in group["geometry_indices"]:
+        yield dict(source="hf72", pointer=["geometry_records", index],
+                   qualification="ORIGINAL_NONPOSITIVE_GEOMETRY_RUNTIME_UNRESOLVED")
+    for bitmap in group.get("boundary_bitmaps", []):
+        yield dict(source="hf68_tw85_boundary", pointer=["observations", str(bitmap)],
+                   qualification="BOUNDED_CANVAS_STRICT_DECODE_REJECTED")
+    if group["status"] == "EARLIER_SELECTED_EXACT_SPR_AND_RD":
+        yield dict(source="hf73", pointer=["frame_indices"],
+                   qualification="EXACT_EARLIER_SELECTED_MOTION_RD_NOT_LIVE_IDENTITY")
 
 def attach_visual(d, entries):
     """Attach PET74 projections to existing identities without adding pet records."""
@@ -468,12 +481,27 @@ def attach_visual(d, entries):
             for i in row["portrait_rows"]:
                 attach("hf73",["observations",str(i)],"STRICT_ORIGINAL_INDEXED_PIXEL_RECEIPT_NOT_RENDERED_COLOR")
         for i in group_ids:
-            attach("hf74",["groups",i],grade)
-            for j in v["groups"][i]["geometry_indices"]:
-                attach("hf72",["geometry_records",j],"ORIGINAL_NEGATIVE_GEOMETRY_RUNTIME_UNRESOLVED")
-            if i=="363":attach("hf73",["frame_indices"],"EXACT_EARLIER_SELECTED_MOTION_RD_NOT_LIVE_IDENTITY")
-        attach("hf73",["palette_file_receipts"],"SAME_CARRIER_ORIGINAL_PALETTE_BYTES_NOT_RUNTIME_SELECTION")
+            e["linked_records"].extend(visual_group_links(i, v["groups"][i], grade))
+        attach("hf73",["palette_file_receipts"],"PRESERVED_TW10_TW85_PALETTE_BYTES_NOT_RUNTIME_SELECTION")
         detail["visual_reference"]=visual
+
+def visual_graphic(d, graphic, full=False):
+    """Return physical TW85 groups for one exact graphic number, including residuals."""
+    projection = d["hf74"]
+    results = []
+    for group_id in projection["graphics"].get(str(graphic), []):
+        group = projection["groups"][group_id]
+        result = dict(group_index=int(group_id), **group)
+        if full:
+            links = visual_group_links(group_id, group, "TW85_PHYSICAL_GROUP_NOT_PET_ID")
+            result["linked_original_records"] = [
+                dict(link, record=resolve(d, link["source"], link["pointer"]))
+                for link in links if link["source"] != "hf74"
+            ]
+        results.append(result)
+    return dict(graphic=graphic, carrier="PRESERVED_TW85", physical_group_occurrences=len(results),
+                official_species_count=None, official_identity_verified=False,
+                original_runtime_verified=False, results=results)
 
 def summary(entries):
     return dict(source_record_occurrences=len(entries),literal_labels=len({n for x in entries for n in x["labels"]}),unlabelled_source_occurrences=sum(not x["labels"] for x in entries),by_source=dict(sorted(collections.Counter(x["source"] for x in entries).items())),by_role=dict(sorted(collections.Counter(x["role"] for x in entries).items())),official_species_count=None,warning="Source occurrences and literal labels are not distinct species, nor official first release.")
@@ -709,14 +737,32 @@ def verify(m,d,entries):
         assert collections.Counter(e["detail"]["visual_reference"]["album_position_motion_status"] for e in grid)=={"ALL_CANVAS_COMPLETE":1883,"SOME_CANVAS_COMPLETE":6}
         assert sum(any(l["source"]=="hf72" for l in e["linked_records"]) for e in grid)==6
         assert all(e["detail"]["visual_reference"]["qualification"]=="CROSS_SOURCE_NUMERIC_GRAPHIC_ONLY_NOT_IDENTITY" for e in visual_entries if e["source"]=="tw75")
+        master = [e["detail"]["visual_reference"]["motion_groups"] for e in visual_entries if e["source"] == "tw75"]
+        assert len(master) == 467 and all(groups for groups in master)
+        assert all(g["status"] in ("STRICT_COMPLETE", "BOUNDED_COMPLETE") for groups in master for g in groups)
+        assert sum(all(g["status"] == "STRICT_COMPLETE" for g in groups) for groups in master) == 430
+        residual = visual_graphic(d, 100400, full=True)["results"]
+        assert [g["group_index"] for g in residual] == [363]
+        assert residual[0]["status"] == "EARLIER_SELECTED_EXACT_SPR_AND_RD"
+        assert len(residual[0]["linked_original_records"][0]["record"]) == 344
+        assert visual_graphic(d, -1)["results"] == []
         print("PET74_LOOKUP="+json.dumps(dict(vc),sort_keys=True),flush=True)
     assert m["expected"]["official_species_count"] is None and not m["original_assets_published"]
     print(json.dumps(summary(entries),ensure_ascii=False,indent=2))
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--query");p.add_argument("--exact",action="store_true");p.add_argument("--variants",action="store_true")
+    query=p.add_mutually_exclusive_group()
+    query.add_argument("--query")
+    query.add_argument("--visual-graphic", type=int, help="exact preserved TW85 graphic number, including residual groups")
+    p.add_argument("--exact",action="store_true");p.add_argument("--variants",action="store_true")
     p.add_argument("--source");p.add_argument("--full",action="store_true");p.add_argument("--summary",action="store_true");p.add_argument("--verify",action="store_true")
-    args=p.parse_args();m,d=load();entries=build(d)
+    args=p.parse_args();m,d=load()
+    if args.visual_graphic is not None:
+        if args.source or args.verify or args.summary:
+            p.error("--visual-graphic is a separate physical-group lookup")
+        print(json.dumps(visual_graphic(d, args.visual_graphic, args.full), ensure_ascii=False, indent=2))
+        return
+    entries=build(d)
     if args.verify:verify(m,d,entries);return
     if args.source and args.source not in m["sources"]:p.error("unknown source ID")
     if args.summary or not args.query:print(json.dumps(summary(entries),ensure_ascii=False,indent=2));return
