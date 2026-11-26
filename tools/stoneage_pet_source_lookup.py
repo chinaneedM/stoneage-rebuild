@@ -1126,7 +1126,7 @@ def verify(m,d,entries):
             matched = [e for e in entries if e["source"] == "hf94" and e["pointer"] == ["rows", row["hf94_index"]]]
             assert len(matched) == 1
             assert [l["pointer"] for l in matched[0]["linked_records"] if l["source"] == "hf95"] == [["rows", j]]
-        assert source_counts["hf95"] == 7
+        assert sum(l["source"] == "hf95" for e in entries for l in e["linked_records"]) == 7
         assert sum(r["effect_conflict"] for r in late_skill["rows"]) == 2
         assert len({r["skill"] for r in late_skill["rows"]}) == 3
         assert late_skill["summary"]["official_closures"] == 0
