@@ -1,0 +1,26 @@
+name: PET106 bounded CN70 RAR4 archive structure
+on:
+  push:
+    branches: ['agent/pet-high-first-104-cn70-archive-index-20261126']
+    paths:
+      - 'tools/stoneage_pet_high_first_106_cn70_rar4_capture.py'
+      - '.github/workflows/pet-high-first-106-cn70-rar4-capture.yml'
+permissions:
+  contents: read
+jobs:
+  inspect-capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m tools.stoneage_pet_high_first_106_cn70_rar4_capture --self-test
+      - run: python -m tools.stoneage_pet_high_first_106_cn70_rar4_capture --output "$RUNNER_TEMP/pet106.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet106-cn70-rar4-capture-metadata
+          path: ${{ runner.temp }}/pet106.json
+          if-no-files-found: error
+          retention-days: 15
