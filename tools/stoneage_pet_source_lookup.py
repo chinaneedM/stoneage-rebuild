@@ -305,6 +305,11 @@ def build(d):
     joint90_positions = by_id(joint90["rows"], "position") if joint90 else {}
     joint90_fusion = by_id(joint90["rows"], "fusion_index") if joint90 else {}
     excluded90 = {(r["position"], r["slot_index"]): j for j, r in enumerate(joint90["inheritance_rows"])} if joint90 else {}
+    endpoint91 = d.get("hf91")
+    endpoint91_positions = collections.defaultdict(list)
+    if endpoint91:
+        for j, row in enumerate(endpoint91["rows"]):
+            endpoint91_positions[row["position"]].append(j)
     witnesses77 = collections.defaultdict(list)
     for index, witness in enumerate(d.get("hf77", {}).get("rows", [])):
         witnesses77[witness["template_id"]].append((index, witness))
@@ -487,6 +492,16 @@ def build(d):
                 official_birth_verified=False, official_fusion_verified=False)
             ls.append(link("hf90", ["rows", ix], "JOINT_MODEL_COMPATIBILITY_ONLY"))
             ls.append(link("fusion2003", ["records", joint["fusion_index"]], "PERIOD_FUSION_PANEL_NOT_NATURAL_BIRTH_PROOF"))
+        if i in endpoint91_positions:
+            refs = [endpoint91["rows"][j] for j in endpoint91_positions[i]]
+            detail["conditional_endpoint_growth_witnesses"] = dict(
+                sample_count=len(refs), both_witnesses=sum(r["claimed_witness"] is not None and r["saved_witness"] is not None for r in refs),
+                claimed_witnesses=sum(r["claimed_witness"] is not None for r in refs),
+                saved_witnesses=sum(r["saved_witness"] is not None for r in refs),
+                official_variant_resolved=False, original_rolls_observed=False,
+                null_witness_is_exclusion=False)
+            for j in endpoint91_positions[i]:
+                ls.append(link("hf91", ["rows", j], "CONDITIONAL_ENDPOINT_WITNESS_NOT_OBSERVED_GROWTH"))
         for index, witness in witnesses77.get(k, []):
             assert x["name"] == witness["name"]
             ls.append(link("hf77", ["rows", index], "REPOSTED_PLAYER_PANEL_NAME_WITNESS_NOT_SAME_DEPLOYMENT"))
@@ -882,6 +897,62 @@ def verify(m,d,entries):
         assert all(not r["same_deployment_verified"] for r in joint["inheritance_rows"])
         assert source_counts["hf90"] == 49 and source_counts["hf55_fusion"] == 8
         assert not joint["probability_inferred"] and joint["summary"]["official_fields_closed"] == 0
+    if "hf91" in d:
+        if not __package__:
+            import sys
+            if str(ROOT) not in sys.path:
+                sys.path.insert(0, str(ROOT))
+        from tools.stoneage_pet_growth_model import project_pet_birth, advance_pet_growth, PetLevelGrowthRolls
+        from tools.stoneage_pet_detail30_base_panel import project_pet_source_base_panel
+        endpoint = d["hf91"]
+        for path, sha in endpoint["input_git_blobs"].items():
+            assert blob((ROOT / path).read_bytes()) == sha
+        assert not endpoint["official_variant_resolved"] and not endpoint["original_rolls_observed"] and not endpoint["probability_inferred"]
+        expected_sources = {("hf77", ("rows", j)) for j in range(len(d["hf77"]["rows"]))}
+        expected_sources |= {("hf78", ("posts", i, "rows", j)) for i, post in enumerate(d["hf78"]["posts"])
+                             for j in range(len(post["rows"]))}
+        assert len(expected_sources) == len(endpoint["rows"]) == 29
+        assert {(row["source"], tuple(row["pointer"])) for row in endpoint["rows"]} == expected_sources
+        counts = collections.Counter()
+        paths_replayed = 0
+        for j, row in enumerate(endpoint["rows"]):
+            i = row["position"]
+            pet = d["tw75"]["pet_flag_1_field_projections"][i]
+            variant = d["hf76"]["rows"][i]
+            sample = resolve(d, row["source"], row["pointer"])
+            assert row["template_id"] == pet["template_id"] == variant["template_id"]
+            assert row["template_id"] == (sample["template_id"] if row["source"] == "hf77" else d["hf78"]["template_id"])
+            assert row["claimed_row_sha256"] == pet["row_sha256"] and row["saved_row_sha256"] == variant["selected_row_sha256"]
+            assert (row["initial"], row["final"], row["final_level"]) == (sample["initial"], sample["final"], sample["final_level"])
+            assert row["reported_arithmetic_conflicts"] == sample.get("published_arithmetic_conflicts")
+            assert row["assumed_initial_level"] == 1 and row["final_level"] > 1
+            assert sum(l["source"] == "hf91" and l["pointer"] == ["rows", j] for l in high45[i]["linked_records"]) == 1
+            counts[(row["claimed_witness"] is not None, row["saved_witness"] is not None)] += 1
+            for label, base in (("claimed", pet["base"]), ("saved", variant["selected_fields_differing_from_claim"]["base"])):
+                witness = row[label + "_witness"]
+                if witness is None:
+                    continue
+                assert len(witness["birth_allocation_counts"]) == len(witness["level_allocation_mode_counts"]) == 4
+                assert all(type(n) is int and n >= 0 for n in witness["birth_allocation_counts"] + witness["level_allocation_mode_counts"])
+                assert sum(witness["birth_allocation_counts"]) == 10
+                rolls = [k for k, n in enumerate(witness["birth_allocation_counts"]) for _ in range(n)]
+                birth = project_pet_birth(template_base=base, init_num=pet["initnum"], lvup_point=0,
+                                          level=1, offsets=witness["offsets"], birth_rolls=rolls)
+                assert birth.rank == witness["rank"] and list(birth.internal_stats) == witness["start_internal"]
+                assert sum(witness["level_allocation_mode_counts"]) == row["final_level"] - 1
+                level_rolls = [PetLevelGrowthRolls((k,) * 10, witness["rank_roll"])
+                               for k, n in enumerate(witness["level_allocation_mode_counts"]) for _ in range(n)]
+                result = advance_pet_growth(birth.individualized_growth_base, birth.rank, birth.internal_stats, 0, level_rolls)
+                assert result.levels_gained == row["final_level"] - 1
+                assert list(result.end_internal_stats) == witness["end_internal"]
+                for raw, observed in ((birth.internal_stats, row["initial"]), (result.end_internal_stats, row["final"])):
+                    panel = project_pet_source_base_panel(raw)
+                    assert [panel.max_hp, panel.attack, panel.defense, panel.quick] == observed
+                paths_replayed += 1
+        assert counts == {(True, True): 26, (True, False): 1, (False, False): 2}
+        assert paths_replayed == 53 and source_counts["hf91"] == 29
+        assert sum(bool(row["reported_arithmetic_conflicts"]) for row in endpoint["rows"]) == 2
+        assert endpoint["summary"]["official_closures"] == 0
     roles58 = d["hf58"]["rows"]
     master58 = d["tw75"]["pet_flag_1_field_projections"]
     originals58 = {r["tw75_row_index"]: r for r in d["hf50"]["projection"]["records"]}
