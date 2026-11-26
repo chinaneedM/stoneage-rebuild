@@ -583,6 +583,19 @@ def build(d):
         if x["role"].startswith("UNQUALIFIED_"):
             continue
         add("hf36",["rows",i],[x["name"]],x["role"],detail={k:x[k] for k in ("year","region","source_id","claim")})
+    if "hf94" in d:
+        for j, row in enumerate(d["hf94"]["rows"]):
+            targets = [("tw85_grid", ["programs", c["program"], "source_records", c["index"]]) for c in row["grid_candidates"]]
+            if row["older_cn_reference"]:
+                ref = row["older_cn_reference"]
+                targets.append((ref["source"], ref["pointer"]))
+            for e in out:
+                if (e["source"], e["pointer"]) in targets:
+                    e["linked_records"].append(link("hf94", ["rows", j], "LATE_NAME_CATALOGUE_REFERENCE_NOT_SAME_DEPLOYMENT"))
+            ls = [link("hf93", ["rows", row["family_claim_index"]], "DATED_FAMILY_LABEL_NOT_NATIVE_CODE")]
+            ls.extend(link(src, pointer, "EXACT_NAME_REFERENCE_NOT_OFFICIAL_IDENTITY") for src, pointer in targets)
+            add("hf94", ["rows", j], [row["name"]], "LATE_COMMUNITY_CATALOGUE_REFERENCE", [],
+                ls, dict(family=row["family"], catalogue=row["catalogue"], official_identity_verified=False))
     if "hf74" in d:
         attach_visual(d, out)
     return out
@@ -1051,6 +1064,46 @@ def verify(m,d,entries):
         assert len(linked) == 31 and source_counts["hf93"] == 32
         assert sum(not row["candidates"] for row in claims) == 8
         assert family_report["summary"]["official_family_closures"] == 0
+    if "hf94" in d:
+        late = d["hf94"]
+        for path, sha in late["input_git_blobs"].items():
+            assert blob((ROOT / path).read_bytes()) == sha
+        expected = [i for i, row in enumerate(d["hf93"]["rows"]) if not row["candidates"]]
+        assert [r["family_claim_index"] for r in late["rows"]] == expected
+        grid_count = 0
+        for j, row in enumerate(late["rows"]):
+            claim = d["hf93"]["rows"][row["family_claim_index"]]
+            assert (row["name"], row["family"]) == (claim["name"], claim["family"])
+            refs = []
+            for program, branch in d["tw85_grid"]["programs"].items():
+                for i, raw in enumerate(branch["source_records"]):
+                    if raw["original_name_cp950"] != row["name"]:
+                        continue
+                    refs.append(dict(program=program, index=i, slot=raw["slot"], portrait_alias=raw["source_portrait_alias"],
+                        row_sha256=raw["original_row_sha256"], visual_pointer=["positions", f"{program}:{raw['slot']}"]))
+            assert refs == row["grid_candidates"]
+            for ref in refs:
+                visual = resolve(d, "hf74", ref["visual_pointer"])
+                assert visual["row_sha256"] == ref["row_sha256"]
+                assert visual["portrait_alias"] == ref["portrait_alias"]
+                assert visual["name"] == row["name"]
+            grid_count += len(refs)
+            cat = row["catalogue"]
+            assert sum(cat["elements"]) == 10 and cat["skill_slots"] == 7 and cat["raw_html_sha256"] is None
+            if row["older_cn_reference"]:
+                ref = row["older_cn_reference"]
+                source = resolve(d, ref["source"], ref["pointer"])
+                assert source["name"] == row["name"] and source["element_ratio"] == cat["elements"]
+                assert ref["element_compatible"]
+            if row["year_beast_recollection"]:
+                ref = row["year_beast_recollection"]
+                assert sum(ref["reported_elements"]) == 10 and ref["reported_elements"] != cat["elements"]
+                assert ref["element_conflict"] and ref["name_variant"] == (ref["reported_name"] != row["name"])
+            assert not row["official_identity_verified"] and not row["official_birth_growth_verified"] and not row["official_release_verified"]
+            assert len([e for e in entries if e["source"] == "hf94" and e["pointer"] == ["rows", j]]) == 1
+        assert grid_count == 5 and sum(bool(r["year_beast_recollection"]) for r in late["rows"]) == 4
+        assert sum(r["year_beast_recollection"]["name_variant"] for r in late["rows"] if r["year_beast_recollection"]) == 1
+        assert late["summary"]["official_closures"] == 0
     roles58 = d["hf58"]["rows"]
     master58 = d["tw75"]["pet_flag_1_field_projections"]
     originals58 = {r["tw75_row_index"]: r for r in d["hf50"]["projection"]["records"]}
