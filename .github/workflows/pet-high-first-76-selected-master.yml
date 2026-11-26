@@ -10,6 +10,8 @@ on:
       - 'tools/stoneage_pet_high_first_77_panel_witnesses.py'
       - 'research/pets/PET-HIGH-FIRST-78-2012-HORSE-PANEL-WITNESSES-R1.json'
       - 'tools/stoneage_pet_high_first_78_horse_witnesses.py'
+      - 'research/pets/PET-HIGH-FIRST-79-CATALOGUE-PANEL-SCREEN-R1.json'
+      - 'tools/stoneage_pet_high_first_79_catalogue_panels.py'
   pull_request:
     paths:
       - '.github/workflows/pet-high-first-76-selected-master.yml'
@@ -20,6 +22,8 @@ on:
       - 'tools/stoneage_pet_high_first_77_panel_witnesses.py'
       - 'research/pets/PET-HIGH-FIRST-78-2012-HORSE-PANEL-WITNESSES-R1.json'
       - 'tools/stoneage_pet_high_first_78_horse_witnesses.py'
+      - 'research/pets/PET-HIGH-FIRST-79-CATALOGUE-PANEL-SCREEN-R1.json'
+      - 'tools/stoneage_pet_high_first_79_catalogue_panels.py'
 permissions:
   contents: read
 jobs:
@@ -31,6 +35,7 @@ jobs:
       - run: python -m tools.stoneage_pet_high_first_76_master
       - run: python -m tools.stoneage_pet_high_first_77_panel_witnesses
       - run: python -m tools.stoneage_pet_high_first_78_horse_witnesses
+      - run: python -m tools.stoneage_pet_high_first_79_catalogue_panels
       - run: python tools/stoneage_pet_source_lookup.py --verify
       - run: python tools/stoneage_pet_gap_queue.py --verify
       - run: python -m tools.stoneage_pet_high_first_64_coverage --current > "$RUNNER_TEMP/pet76-coverage.json"
