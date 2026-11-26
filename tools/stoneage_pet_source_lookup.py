@@ -596,6 +596,11 @@ def build(d):
             ls.extend(link(src, pointer, "EXACT_NAME_REFERENCE_NOT_OFFICIAL_IDENTITY") for src, pointer in targets)
             add("hf94", ["rows", j], [row["name"]], "LATE_COMMUNITY_CATALOGUE_REFERENCE", [],
                 ls, dict(family=row["family"], catalogue=row["catalogue"], official_identity_verified=False))
+    if "hf95" in d:
+        for j, row in enumerate(d["hf95"]["rows"]):
+            for e in out:
+                if e["source"] == "hf94" and e["pointer"] == ["rows", row["hf94_index"]]:
+                    e["linked_records"].append(link("hf95", ["rows", j], row["role"]))
     if "hf74" in d:
         attach_visual(d, out)
     return out
@@ -1104,6 +1109,27 @@ def verify(m,d,entries):
         assert grid_count == 5 and sum(bool(r["year_beast_recollection"]) for r in late["rows"]) == 4
         assert sum(r["year_beast_recollection"]["name_variant"] for r in late["rows"] if r["year_beast_recollection"]) == 1
         assert late["summary"]["official_closures"] == 0
+    if "hf95" in d:
+        late_skill = d["hf95"]
+        for path, sha in late_skill["input_git_blobs"].items():
+            assert blob((ROOT / path).read_bytes()) == sha
+        assert late_skill["source"]["qualification"] == "LATER_EDITED_COMMUNITY_REPOST_NOT_INDEPENDENT_PERIOD_OR_OPERATOR_EVIDENCE"
+        assert [r["hf94_index"] for r in late_skill["rows"]] == [2,3,4,5,6,7,1]
+        for j, row in enumerate(late_skill["rows"]):
+            old = d["hf94"]["rows"][row["hf94_index"]]
+            assert old["name"] == row["name"]
+            if row["role"] != "FUSION_FORM_ONLY_IDENTITY_UNRESOLVED":
+                assert old["additional_skill_reference"] == row["skill"]
+            else:
+                assert old["additional_skill_reference"] is None
+            assert not any(row[k] for k in ("official_skill_verified", "official_birth_skill_verified", "runtime_verified"))
+            matched = [e for e in entries if e["source"] == "hf94" and e["pointer"] == ["rows", row["hf94_index"]]]
+            assert len(matched) == 1
+            assert [l["pointer"] for l in matched[0]["linked_records"] if l["source"] == "hf95"] == [["rows", j]]
+        assert source_counts["hf95"] == 7
+        assert sum(r["effect_conflict"] for r in late_skill["rows"]) == 2
+        assert len({r["skill"] for r in late_skill["rows"]}) == 3
+        assert late_skill["summary"]["official_closures"] == 0
     roles58 = d["hf58"]["rows"]
     master58 = d["tw75"]["pet_flag_1_field_projections"]
     originals58 = {r["tw75_row_index"]: r for r in d["hf50"]["projection"]["records"]}

@@ -506,6 +506,12 @@
       "git_blob": "354e2aeaea8806def8386f9c070f78e9d5414374",
       "expected_array": "rows",
       "expected_rows": 8
+    },
+    "hf95": {
+      "path": "research/pets/PET-HIGH-FIRST-95-LATE-SKILL-QUALIFICATIONS-R1.json",
+      "git_blob": "67ebe7717422e6ececc56e50bce31065bb72e2c0",
+      "expected_array": "rows",
+      "expected_rows": 7
     }
   },
   "expected": {
@@ -708,5 +714,14 @@
     "year_beast_element_conflicts": 4,
     "year_beast_name_variant": 1,
     "official_closures": 0
+  },
+  "supplement_hf95": {
+    "existing_name_positions": 7,
+    "distinct_reported_skills": 3,
+    "eligible_reference_positions": 6,
+    "nominal_observed_conflict_positions": 2,
+    "fusion_only_positions": 1,
+    "official_closures": 0,
+    "new_original_bytes": 0
   }
 }
