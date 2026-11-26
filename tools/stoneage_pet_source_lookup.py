@@ -310,6 +310,8 @@ def build(d):
     if endpoint91:
         for j, row in enumerate(endpoint91["rows"]):
             endpoint91_positions[row["position"]].append(j)
+    dated92 = d.get("hf92")
+    dated92_positions = {r["position"]: j for j, r in enumerate(dated92["rows"])} if dated92 else {}
     witnesses77 = collections.defaultdict(list)
     for index, witness in enumerate(d.get("hf77", {}).get("rows", [])):
         witnesses77[witness["template_id"]].append((index, witness))
@@ -502,6 +504,16 @@ def build(d):
                 null_witness_is_exclusion=False)
             for j in endpoint91_positions[i]:
                 ls.append(link("hf91", ["rows", j], "CONDITIONAL_ENDPOINT_WITNESS_NOT_OBSERVED_GROWTH"))
+        if i in dated92_positions:
+            ix = dated92_positions[i]
+            dated = dated92["rows"][ix]
+            assert dated["template_row_sha256"] == x["row_sha256"]
+            detail["dated_catalogue_crosswalk"] = dict(
+                grade=dated["grade"], catalogue_date="2003-04-07", official_release_verified=False,
+                first_release_date=None)
+            ls.append(link("hf92", ["rows", ix], "DATED_CATALOGUE_COMPATIBILITY_NOT_OFFICIAL_RELEASE"))
+            for ref in dated["refs"]:
+                ls.append(link("sina2003", ["rows", ref["catalogue_index"]], "DATED_CATALOGUE_CANDIDATE_" + dated["grade"]))
         for index, witness in witnesses77.get(k, []):
             assert x["name"] == witness["name"]
             ls.append(link("hf77", ["rows", index], "REPOSTED_PLAYER_PANEL_NAME_WITNESS_NOT_SAME_DEPLOYMENT"))
@@ -953,6 +965,47 @@ def verify(m,d,entries):
         assert paths_replayed == 53 and source_counts["hf91"] == 29
         assert sum(bool(row["reported_arithmetic_conflicts"]) for row in endpoint["rows"]) == 2
         assert endpoint["summary"]["official_closures"] == 0
+    if "hf92" in d:
+        dated = d["hf92"]
+        for path, sha in dated["input_git_blobs"].items():
+            assert blob((ROOT / path).read_bytes()) == sha
+        equivalences = dated["character_equivalences"]
+        def norm92(name):
+            return "".join(equivalences.get(ch, ch) for ch in name if not ch.isspace())
+        by_graphic = collections.defaultdict(list)
+        by_ordinal = collections.defaultdict(list)
+        for j, cn in enumerate(d["cn50"]["records"]):
+            for graphic in {g["spr_group"] for g in cn["spr_groups"]}:
+                by_graphic[graphic].append((j, cn))
+        for k, row in enumerate(d["sina2003"]["rows"]):
+            by_ordinal[row["cn50_album_ordinal_by_name_only"]].append((k, row))
+        expected = []
+        for i, pet in enumerate(d["tw75"]["pet_flag_1_field_projections"]):
+            refs = []
+            for j, cn in by_graphic[pet["graphic"]]:
+                for k, row in by_ordinal[cn["ordinal"]]:
+                    refs.append(dict(cn50_index=j, cn50_ordinal=cn["ordinal"], cn50_name=cn["compiled_name"],
+                        cn50_row_sha256=cn["exe_row_sha256"], graphic=pet["graphic"], catalogue_index=k,
+                        catalogue_row_sha256=row["normalized_row_sha256"], printed_number=row["printed_number"],
+                        rebirth_label=row["rebirth_variant_label"], name_match=norm92(pet["name"]) == norm92(cn["compiled_name"]),
+                        element_match=[row["reported_elements"].get(e, 0)*10 for e in ("earth","water","fire","wind")] == pet["elements"]))
+            if not refs:
+                continue
+            strict = [r for r in refs if r["name_match"] and r["element_match"]]
+            if len(strict) == 1:
+                grade = "REBIRTH_LABEL_COMPATIBLE" if strict[0]["rebirth_label"] else "UNIQUE_NAME_GRAPHIC_ELEMENT_COMPATIBLE"
+            elif strict:
+                grade = "AMBIGUOUS_COMPATIBLE"
+            else:
+                grade = "ELEMENT_CONFLICT" if any(r["name_match"] for r in refs) else "GRAPHIC_ONLY_DIFFERENT_NAME"
+            expected.append(dict(position=i, template_id=pet["template_id"], template_row_sha256=pet["row_sha256"],
+                name=pet["name"], grade=grade, refs=refs, official_release_verified=False, first_release_date=None))
+        assert expected == dated["rows"]
+        assert collections.Counter(r["grade"] for r in expected) == {"UNIQUE_NAME_GRAPHIC_ELEMENT_COMPATIBLE":223,"REBIRTH_LABEL_COMPATIBLE":1,"GRAPHIC_ONLY_DIFFERENT_NAME":19,"ELEMENT_CONFLICT":12}
+        assert len(expected) == 255 and sum(len(r["refs"]) for r in expected) == 260
+        assert source_counts["hf92"] == 255 and dated["summary"]["official_closures"] == 0
+        for j, row in enumerate(expected):
+            assert sum(l["source"] == "hf92" and l["pointer"] == ["rows", j] for l in high45[row["position"]]["linked_records"]) == 1
     roles58 = d["hf58"]["rows"]
     master58 = d["tw75"]["pet_flag_1_field_projections"]
     originals58 = {r["tw75_row_index"]: r for r in d["hf50"]["projection"]["records"]}
