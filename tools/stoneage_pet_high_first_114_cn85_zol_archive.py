@@ -21,7 +21,7 @@ def verify():
     d=json.loads(raw);assert not d["original_client_verified"] and d["official_closures"]==0
 def norm(url):
     u=urllib.parse.urlsplit(url)
-    return (u.hostname,u.path.lower(),sorted((k.lower(),v) for k,v in urllib.parse.parse_qsl(u.query,keep_blank_values=True)))
+    return (u.hostname,u.path.lower(),tuple(sorted((k.lower(),v) for k,v in urllib.parse.parse_qsl(u.query,keep_blank_values=True))))
 def select(rows):
     # Separate page and redirect endpoint. At most two distinct digests each.
     groups={norm(t):[] for t in TARGETS}
@@ -91,6 +91,12 @@ def selftest():
     assert extract_redirect("https://web.archive.org/web/20110622000000id_/http://example.invalid/a.exe")=="http://example.invalid/a.exe"
     assert extract_redirect("http://a:b@example.invalid/a.exe") is None
     assert not select([{"result":"METADATA_PARSED","target_or_query":TARGETS[0],"metadata":{"rows":[]}}])
+    sample=dict(timestamp="20110622000000",original=TARGETS[0],statuscode="200",mimetype="text/html",digest="TEST",length="100")
+    sample2=dict(sample,original=TARGETS[1],timestamp="20110623000000")
+    sample3=dict(sample,original=TARGETS[2],digest="OTHER")
+    rows=[dict(result="METADATA_PARSED",target_or_query=t,metadata=dict(rows=[x])) for t,x in zip(TARGETS[:3],[sample,sample2,sample3])]
+    assert select(rows)==[sample,sample3]
+    assert norm(TARGETS[-1])==norm("http://youxi.zol.com.cn/down.php?subcatid=62&softid=357206&site=11")
     print("PET114_SELFTEST_OK")
 def main():
     p=argparse.ArgumentParser();p.add_argument("--self-test",action="store_true");p.add_argument("--output",type=Path);a=p.parse_args();selftest()
