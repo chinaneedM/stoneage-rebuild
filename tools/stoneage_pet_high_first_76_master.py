@@ -1,6 +1,7 @@
 """Trace all claimed TW75 templates to the selected preserved server tables."""
 import argparse
 from collections import Counter
+import csv
 import json
 from pathlib import Path
 import tempfile
@@ -11,6 +12,9 @@ from tools.stoneage_pet_source_lookup import ROOT, blob
 
 
 REPORT = ROOT / "research/pets/PET-HIGH-FIRST-76-SELECTED-MASTER-FIELDS-R1.json"
+REPORT_BLOB = "0005e7d7943907c01024f5dd24132b126e4bb3f3"
+CLIENT_INVENTORY = ROOT / "research/recovered/STONEAGE-WAYI85-MSI-CLIENT-PAYLOAD-R1.json"
+CLIENT_INVENTORY_BLOB = "18a68c9d4275763ef0ed7a347cca940cffe0fee2"
 PINS = {
     "master": pet61.PINS["master"],
     "tables": pet61.PINS["tables"],
@@ -160,6 +164,22 @@ def verify(report, d, derived):
         assert earlier == definitions[earlier["skill_id"]]
 
 
+def verify_client_inventory():
+    raw = CLIENT_INVENTORY.read_bytes()
+    if blob(raw) != CLIENT_INVENTORY_BLOB:
+        raise ValueError("saved TW85 MSI inventory changed")
+    table = json.loads(raw)["inspection"]["msi_tables"]["File"].splitlines()
+    # MSI tables have two schema rows after the column names.
+    files = list(csv.DictReader([table[0], *table[3:]], delimiter="\t"))
+    assert len(files) == len({row["File"] for row in files}) == 557
+    assert sum(int(row["FileSize"]) for row in files) == 1808555613
+    names = {row["FileName"].split("|")[-1].casefold() for row in files}
+    server_names = {"enemybase.txt", "enemybase1.txt", "enemybase2.txt", "enemy.txt", "enemy2.txt",
+                    "petskill.txt", "petskill1.txt", "petskill2.txt", "encount.txt", "group1.txt", "setup.cf"}
+    assert not (names & server_names)
+    print("PET76_TW85_MSI: 557 file rows verified; no standalone file under the checked server table names")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     modes = parser.add_mutually_exclusive_group()
@@ -185,7 +205,11 @@ def main():
         raw = data.encode()
         print("PET76_RECEIPT", len(raw), source.sha(raw), blob(raw))
     elif not args.plan_only:
-        verify(json.loads(args.report.read_bytes()), d, derived)
+        raw = args.report.read_bytes()
+        if args.report == REPORT and blob(raw) != REPORT_BLOB:
+            raise ValueError("accepted original derived report blob has changed")
+        verify(json.loads(raw), d, derived)
+        verify_client_inventory()
     print("PET76_SUMMARY=" + json.dumps(summary, sort_keys=True, separators=(",", ":")))
 
 

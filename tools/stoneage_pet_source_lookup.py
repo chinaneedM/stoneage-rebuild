@@ -273,6 +273,8 @@ def build(d):
     area45 = by_id(acquisition45["area_metadata"], "id")
     instance45 = by_id(acquisition45["instance_metadata"], "id")
     floor45 = by_id(d["hf45_floor"]["rows"], "floor_id")
+    master76 = d.get("hf76")
+    definitions76 = by_id(master76["configured_skill_definitions"], "skill_id") if master76 else {}
     birthid=by_id(d["tw75_birth"]["rows"],"template_id");compid=by_id(d["tw75_comparison"]["rows"],"template_id")
     for i,x in enumerate(d["tw75"]["pet_flag_1_field_projections"]):
         k=x["template_id"];b=d["tw75_birth"]["rows"][birthid[k]];e=d["tw75_comparison"]["rows"][compid[k]]
@@ -381,7 +383,31 @@ def build(d):
                 ls.append(link("hf50", ["projection", "npc_source_files", trainer50],
                                "SAVED_LV1_TRAINER_REWARD_CONFIGURATION_NOT_OFFICIAL_AWARD"))
         saved_acquisition = dict(gap_classification=gap_detail,match_status=ac["match_status"],positive_route_count=ac["positive_route_count"],double_pet_flag_route_count=ac["double_pet_flag_route_count"],lv1_double_flag_route_count=ac["lv1_double_flag_route_count"],floor_candidates=floor_refs,official_acquisition_verified=False)
-        add("tw75",["pet_flag_1_field_projections",i],[x["name"]],"CLAIMED_TW75_MASTER_TEMPLATE",[k,x["graphic"]],ls,dict(graphic=x["graphic"],template_id=k,elements=x["elements"],skill_slots=x["skill_slots"],conditional_lv1_panel=b["level1_unmodified_work_panel_marginal_ranges"],conditional_per_level_internal=b["per_level_internal_increment_marginal_ranges"],comparison_floor_ids=e["comparison_floor_ids"],comparison_status=e["comparison_status"],saved_mixed25_acquisition=saved_acquisition))
+        detail = dict(graphic=x["graphic"], template_id=k, elements=x["elements"], skill_slots=x["skill_slots"],
+                      conditional_lv1_panel=b["level1_unmodified_work_panel_marginal_ranges"],
+                      conditional_per_level_internal=b["per_level_internal_increment_marginal_ranges"],
+                      comparison_floor_ids=e["comparison_floor_ids"], comparison_status=e["comparison_status"],
+                      saved_mixed25_acquisition=saved_acquisition)
+        if master76:
+            row = master76["rows"][i]
+            assert (row["position"], row["template_id"], row["graphic"], row["row_sha256"]) == (i, k, x["graphic"], x["row_sha256"])
+            grade = row["selected_table_grade"]
+            exact = grade == "EXACT_SHARED_TEMPLATE_ROW"
+            ls.append(link("hf76", ["rows", i], grade + "_PRESERVED_SELECTED_TABLE"))
+            skills = []
+            for slot in row["configured_skill_slots"]:
+                j = definitions76[slot["skill_id"]]
+                definition = master76["configured_skill_definitions"][j]
+                skills.append(dict(slot_index=slot["slot_index"], skill_id=slot["skill_id"], name=definition["name"]))
+                ls.append(link("hf76", ["configured_skill_definitions", j], "SAVED_CONFIGURED_SKILL_NOT_BIRTH_SKILL_PROOF"))
+            detail["saved_selected_master_fields"] = dict(
+                qualification=grade, selected_row_sha256=row["selected_row_sha256"],
+                matched_birth_inputs={key: x[key] for key in ("base", "initnum", "lvup_literal")} if exact else None,
+                fields_differing_from_claim=row["selected_fields_differing_from_claim"],
+                configured_skill_slots=skills, saved_reward_instance_id=row["saved_reward_instance_id"],
+                official_deployment_verified=False,
+            )
+        add("tw75", ["pet_flag_1_field_projections", i], [x["name"]], "CLAIMED_TW75_MASTER_TEMPLATE", [k, x["graphic"]], ls, detail)
     for i, row in enumerate(petabi51):
         add("hf51_petabi", ["petabi_rows", i], [row["template_name"], row["instance_name"]],
             "PRESERVED_VIP_PRESET_PET_CANDIDATE" if row["instance_pet_flag"] == row["template_pet_flag"] == 1
@@ -627,6 +653,14 @@ def verify(m,d,entries):
         assert {resolve(d, l["source"], l["pointer"])["skill_id"] for l in links61
                 if l["pointer"][0] == "configured_skill_definitions"} == {
                     slot["skill_id"] for slot in row61["scope"]["petskill.txt"]["source_slots"]}
+    if "hf76" in d:
+        assert source_counts["hf76"] == 467 + 941
+        assert set(d["hf76"]["qualification"].values()) == {False}
+        verified76 = [entry["detail"]["saved_selected_master_fields"] for entry in high45]
+        assert sum(row["matched_birth_inputs"] is not None for row in verified76) == 440
+        assert sum(bool(row["fields_differing_from_claim"]) for row in verified76) == 6
+        assert sum(row["saved_reward_instance_id"] is not None for row in verified76) == 36
+        assert all(row["matched_birth_inputs"] is not None or not row["configured_skill_slots"] for row in verified76)
     roles58 = d["hf58"]["rows"]
     master58 = d["tw75"]["pet_flag_1_field_projections"]
     originals58 = {r["tw75_row_index"]: r for r in d["hf50"]["projection"]["records"]}
