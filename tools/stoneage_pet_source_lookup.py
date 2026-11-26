@@ -235,6 +235,7 @@ def build(d):
         ("hf81", ("rows",)), ("hf82", ("rows", "conflicts")),
         ("hf83", ("rows", "context")), ("hf84", ("rows", "context")),
         ("hf85", ("rows", "starter_variants")), ("hf86", ("rows", "context")),
+        ("hf87", ("rows", "residual")),
     ):
         for collection in collections_to_link:
             for ordinal, row in enumerate(d[source][collection]):
@@ -659,7 +660,7 @@ def verify(m,d,entries):
     strict = d["hf49"]["remaining_gap_row_indices"]
     remaining = list(strict)
     matched = set()
-    for source in ("hf81", "hf82", "hf83", "hf84", "hf85", "hf86"):
+    for source in ("hf81", "hf82", "hf83", "hf84", "hf85", "hf86", "hf87"):
         supplement = d[source]
         assert supplement["official_same_deployment_verified"] is False and supplement["original_assets_published"] is False
         for j, row in enumerate(supplement["rows"]):
@@ -672,7 +673,14 @@ def verify(m,d,entries):
             matched.add(i)
         remaining = [i for i in remaining if i not in matched]
         assert remaining == supplement["remaining_without_new_later_reference"]
-    assert len(strict) == 67 and len(matched) == 33 and len(remaining) == 34
+    assert len(strict) == 67 and len(matched) == 34 and len(remaining) == 33
+    residual87 = d["hf87"]["residual"]
+    assert [r["tw75_row_index"] for r in residual87] == remaining
+    assert all(r["retain_strict_gap"] and not r["official_acquisition_verified"] and r["selected_positive_routes"] == 0 for r in residual87)
+    assert collections.Counter(r["category"] for r in residual87) == d["hf87"]["summary"]["category_counts"]
+    assert {r["tw75_row_index"] for r in residual87 if r["prior_documentary_references"] is not None} == {31, 32, 208, 344, 345}
+    for j, row in enumerate(residual87):
+        assert sum(l["source"] == "hf87" and l["pointer"] == ["residual", j] for l in high45[row["tw75_row_index"]]["linked_records"]) == 1
 
     assert {key: source_counts[key] for key in ("hf46", "hf47", "hf48", "hf49", "hf50")} == {
         "hf46": 349, "hf47": 29, "hf48": 19, "hf49": 22, "hf50": 71,

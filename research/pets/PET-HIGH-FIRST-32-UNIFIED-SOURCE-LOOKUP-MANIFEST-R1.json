@@ -452,6 +452,12 @@
       "git_blob": "19cce2787fc6aa75dd1d6cb6751980dafe192c87",
       "expected_array": "rows",
       "expected_rows": 1
+    },
+    "hf87": {
+      "path": "research/pets/PET-HIGH-FIRST-87-RESIDUAL-ACQUISITION-RECONCILIATION-R1.json",
+      "git_blob": "a18c6d69c49069f54e4139f916e64d90d387dbfd",
+      "expected_array": "rows",
+      "expected_rows": 1
     }
   },
   "expected": {
@@ -591,5 +597,12 @@
     "strict_gap": 67,
     "compatible_reference_positions": 33,
     "remaining_without_added_reference": 34
+  },
+  "supplement_hf87": {
+    "scope": "Attach new Bobi source reference; reconcile original-source residual classifications and pre-existing documentary references without treating them as new.",
+    "strict_gap": 67,
+    "compatible_reference_positions_since_hf81": 34,
+    "remaining_without_added_reference": 33,
+    "earlier_compatible_reference_positions_in_residual": 5
   }
 }
