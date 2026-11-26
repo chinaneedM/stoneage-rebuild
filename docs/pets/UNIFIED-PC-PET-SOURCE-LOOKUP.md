@@ -96,3 +96,6 @@ python tools/stoneage_pet_source_lookup.py --source tw75 --query 901 --exact --f
 
 
 R88 将21处原保存版技能学习配置按技能ID与主表定义原行SHA-256精确连接到440个已匹配模板的904个正技能槽。带 `--full` 可追原参数路径、楼层、倍率字面及配置列表；这不证明特定宠物可学习或官方运行。[取证与边界](../continuity/STONEAGE-PET-HIGH-FIRST-88-SAVED-SKILLSHOP-LINKS-20261126.md)
+
+
+R89 将保存版无精确学习点的19种技能、37个技能槽接入同期独立参考；10种技能有同期效果/学习/具名宠参考，另1种仅同名道具上下文，8种仍无合格同期参考。原字段不改，保留地区与数值差异。[取证](../continuity/STONEAGE-PET-HIGH-FIRST-89-SPECIAL-SKILL-PERIOD-REFERENCES-20261126.md)

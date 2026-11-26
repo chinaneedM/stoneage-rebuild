@@ -1,0 +1,860 @@
+{
+  "schema": "stoneage.pet.special_skill_reference.r1",
+  "base_head": "18f9e379ba12c76aa229878c75716ec80715bae1",
+  "base_tree": "b22f369a5dbb894c26b6664aa8a11ff4cd5759ba",
+  "input_git_blobs": {
+    "research/pets/PET-HIGH-FIRST-76-SELECTED-MASTER-FIELDS-R1.json": "0005e7d7943907c01024f5dd24132b126e4bb3f3",
+    "research/pets/PET-HIGH-FIRST-15-TW75-MASTER-FIELD-CATALOG-R1.json": "fec03646d7c7e4e287f9347c306119cc626d6abf",
+    "research/recovered/STONEAGE-GAMEPLAY03-ORIGINAL-21-PET-SKILL-SHOP-SOURCE-R1.json": "5735ddc1117a8a6fb2f9417327ec242e4fd06192"
+  },
+  "sources": [
+    {
+      "date": "2003-05-07",
+      "url": "https://news.17173.com/z/stoneage/content/2003-5-7/n80_996575.html?_platform=PC",
+      "grade": "DATED_PLAYER_SKILL_LIST",
+      "raw_html_verified": false
+    },
+    {
+      "date": "2003-09-05",
+      "url": "https://news.17173.com/z/stoneage/content/2003-9-5/n993_910134.html?_platform=PC",
+      "grade": "DATED_PLAYER_SKILL_LIST_SICHUAN2_SELF_IDENTIFIED",
+      "raw_html_verified": false
+    },
+    {
+      "date": "2003-01-08",
+      "url": "https://news.17173.com/z/stoneage/content/2003-1-8/n852_768685.html",
+      "grade": "DATED_PLAYER_PET_REVIEW",
+      "raw_html_verified": false
+    },
+    {
+      "date": "2003-01-27",
+      "url": "https://news.17173.com/z/stoneage/content/2003-1-27/n741_657936.html?_platform=PC",
+      "grade": "DATED_PLAYER_PET_REVIEW",
+      "raw_html_verified": false
+    },
+    {
+      "date": "2004-02-09",
+      "url": "https://games.sina.com.cn/z/sta/2004-02-09/103462.shtml?from=wap",
+      "grade": "DATED_PORTAL_FUSION_GUIDE_PLAYER_CONTRIBUTION",
+      "raw_html_verified": false
+    },
+    {
+      "date": "2004-09-27",
+      "url": "https://news.17173.com/z/stoneage/content/2004-9-27/n312_228432.html",
+      "grade": "DATED_PLAYER_REGION_DIFFERENCE",
+      "raw_html_verified": false
+    },
+    {
+      "date": "2003-02-18",
+      "url": "https://news.17173.com/z/stoneage/content/2003-2-18/n736_652809.html?_platform=PC",
+      "grade": "DATED_PLAYER_REPORTED_BATTLE",
+      "raw_html_verified": false
+    },
+    {
+      "date": "2003-12-27",
+      "url": "https://news.17173.com/z/stoneage/content/2003-12-27/n432_348641.html?_platform=PC",
+      "grade": "DATED_PLAYER_VERSION_REVIEW",
+      "raw_html_verified": false
+    }
+  ],
+  "rows": [
+    {
+      "skill_id": 210,
+      "definition_sha256": "17dd2b7498b195328d92dcd904c97fef36c9f18f7114ff4ca819060b4025a15b",
+      "name": "落馬術",
+      "callback": "PETSKILL_FallGround",
+      "configured_positions": [
+        {
+          "position": 294,
+          "template_id": 810,
+          "template_sha256": "0f8bddc4a72a1ef1db203309d23d08f14788f585255cd30695b7762ccbad7c3f",
+          "name": "塔斯夫",
+          "slot_index": 2
+        },
+        {
+          "position": 316,
+          "template_id": 910,
+          "template_sha256": "89b24706ba421d867767646cc08161b33180e1788f3ab88522654e11ffec4c3c",
+          "name": "吉比",
+          "slot_index": 2
+        },
+        {
+          "position": 385,
+          "template_id": 1036,
+          "template_sha256": "cd2e20ab103f3cbed440eb8c1d9c04e7079b7dfc329093ce0b2a2d584aadfcde",
+          "name": "斑尼迪克",
+          "slot_index": 2
+        }
+      ],
+      "witnesses": [
+        {
+          "source": 0,
+          "visible_lines": [
+            26,
+            27
+          ],
+          "kind": "LEARNING_LOCATION_CANDIDATE",
+          "claim": "落马；加加庄园(37,56)紧邻条目，非原NPC配置。",
+          "positions": []
+        },
+        {
+          "source": 2,
+          "visible_lines": [
+            37,
+            39
+          ],
+          "kind": "NAMED_PET_BIRTH_SKILL_CLAIM",
+          "claim": "吉比被作者称有天生落马技能。",
+          "positions": [
+            316
+          ]
+        }
+      ],
+      "same_deployment_learnability_verified": false,
+      "official_birth_skill_verified": false,
+      "official_runtime_verified": false
+    },
+    {
+      "skill_id": 503,
+      "definition_sha256": "f449380f6b9eec5c9915a85cb2234b44b63f0d8f076c8a3f81aac57319e422d2",
+      "name": "嗜血技",
+      "callback": "PETSKILL_DamageToHp",
+      "configured_positions": [
+        {
+          "position": 323,
+          "template_id": 957,
+          "template_sha256": "08032f6d4ca13e4ed21e41325aae138c95eb50bbf1e1646be78616f1c6c3a17f",
+          "name": "卡恩格登",
+          "slot_index": 2
+        },
+        {
+          "position": 324,
+          "template_id": 958,
+          "template_sha256": "23720a2f84e2ac4a3ba7c8c4312df3188c0419d6790508e6079404f6aef84870",
+          "name": "卡恩米茲",
+          "slot_index": 2
+        },
+        {
+          "position": 325,
+          "template_id": 959,
+          "template_sha256": "bec61ab148ae7eddcf445c5f6cc9c972747a922486f875c4ec733311d0274e01",
+          "name": "卡恩法爾",
+          "slot_index": 2
+        },
+        {
+          "position": 326,
+          "template_id": 960,
+          "template_sha256": "b02a5831a9089b4dd36f80a9ae0b4cb063eed21ac3af2c919c6c46974f481098",
+          "name": "卡恩修比",
+          "slot_index": 2
+        }
+      ],
+      "witnesses": [
+        {
+          "source": 0,
+          "visible_lines": [
+            24,
+            25
+          ],
+          "kind": "LEARNING_LOCATION_CANDIDATE",
+          "claim": "降攻30%，吸收伤害50%；紧邻萨姆吉尔(69,72)。",
+          "positions": []
+        },
+        {
+          "source": 2,
+          "visible_lines": [
+            49,
+            60
+          ],
+          "kind": "NAMED_FAMILY_ELEMENT_COMPATIBLE",
+          "claim": "端午兽四系描述嗜血与虚弱；四元素比例吻合，米兹一名页面乱码，不当精确同名。",
+          "positions": [
+            323,
+            324,
+            325,
+            326
+          ]
+        }
+      ],
+      "same_deployment_learnability_verified": false,
+      "official_birth_skill_verified": false,
+      "official_runtime_verified": false
+    },
+    {
+      "skill_id": 506,
+      "definition_sha256": "599d145a23fe45bc58ceecb44f4cd45d612f6d01bac5d98c89438164c89c7e79",
+      "name": "MP攻擊",
+      "callback": "PETSKILL_MpDamage",
+      "configured_positions": [
+        {
+          "position": 320,
+          "template_id": 918,
+          "template_sha256": "ec99430415c9df622f519608b612b260ac2851b31d2a773928ca13142f4c6c19",
+          "name": "凱恩",
+          "slot_index": 2
+        }
+      ],
+      "witnesses": [
+        {
+          "source": 0,
+          "visible_lines": [
+            20,
+            20
+          ],
+          "kind": "EFFECT_CLAIM",
+          "claim": "攻击减50%，对方MP减50%。",
+          "positions": []
+        },
+        {
+          "source": 1,
+          "visible_lines": [
+            80,
+            80
+          ],
+          "kind": "CONFLICTING_EFFECT_CLAIM",
+          "claim": "攻击减30%，对方MP减50%。",
+          "positions": []
+        },
+        {
+          "source": 2,
+          "visible_lines": [
+            45,
+            47
+          ],
+          "kind": "NAMED_PET_ELEMENT_COMPATIBLE",
+          "claim": "全风凯恩与MP攻击相联；降攻30%、减MP50%。",
+          "positions": [
+            320
+          ]
+        }
+      ],
+      "same_deployment_learnability_verified": false,
+      "official_birth_skill_verified": false,
+      "official_runtime_verified": false
+    },
+    {
+      "skill_id": 540,
+      "definition_sha256": "b2d786c7d8a555d7137740a6c0da204b14e41af8d8942feb78ea27a93371df8f",
+      "name": "修復",
+      "callback": "PETSKILL_Fixitem",
+      "configured_positions": [
+        {
+          "position": 405,
+          "template_id": 1064,
+          "template_sha256": "ea62e2d64453b0608f8f7ec77d8840c4593f057bbd725cf61c37d05e4239f543",
+          "name": "威伯",
+          "slot_index": 2
+        }
+      ],
+      "witnesses": [
+        {
+          "source": 1,
+          "visible_lines": [
+            81,
+            81
+          ],
+          "kind": "EFFECT_CLAIM",
+          "claim": "修理受损道具，未说明适用宠物与学习点。",
+          "positions": []
+        }
+      ],
+      "same_deployment_learnability_verified": false,
+      "official_birth_skill_verified": false,
+      "official_runtime_verified": false
+    },
+    {
+      "skill_id": 541,
+      "definition_sha256": "b46e9cbce75ac9e080590405e3680fadf30891ca03baaa400a787992e158cde1",
+      "name": "狂暴攻擊",
+      "callback": "PETSKILL_WildViolentAttack",
+      "configured_positions": [
+        {
+          "position": 116,
+          "template_id": 169,
+          "template_sha256": "cc527ee40d798ece0f98d8f3f5487d0dbb42b0d53295f02418ca32b85752074f",
+          "name": "布爾摩",
+          "slot_index": 2
+        },
+        {
+          "position": 329,
+          "template_id": 965,
+          "template_sha256": "d237e9666e71e8a4baae0d8dcf7bdc5a8818e9e6cb4704d975da1dc197078c51",
+          "name": "魯比",
+          "slot_index": 2
+        },
+        {
+          "position": 333,
+          "template_id": 979,
+          "template_sha256": "a1217d217b77d0bd4e25da0e158bc930854b8902a1fce5c45aee8abdf22ba8ef",
+          "name": "朵巴奈特",
+          "slot_index": 2
+        }
+      ],
+      "witnesses": [
+        {
+          "source": 0,
+          "visible_lines": [
+            39,
+            39
+          ],
+          "kind": "EFFECT_CLAIM",
+          "claim": "攻击+100%、防御-30%、命中-30%。",
+          "positions": []
+        },
+        {
+          "source": 1,
+          "visible_lines": [
+            76,
+            76
+          ],
+          "kind": "EFFECT_CLAIM",
+          "claim": "同上述比例，另列3至10次攻击。",
+          "positions": []
+        },
+        {
+          "source": 2,
+          "visible_lines": [
+            41,
+            43
+          ],
+          "kind": "NAMED_PET_ELEMENT_COMPATIBLE",
+          "claim": "火8风2鲁比被称天生狂暴，未证同服。",
+          "positions": [
+            329
+          ]
+        }
+      ],
+      "same_deployment_learnability_verified": false,
+      "official_birth_skill_verified": false,
+      "official_runtime_verified": false
+    },
+    {
+      "skill_id": 542,
+      "definition_sha256": "4e38ad1186ba2bb1730f8f4abe32e97269756e67cf7dbb45c1ff63837bf80db9",
+      "name": "疾速攻擊",
+      "callback": "PETSKILL_SpeedyAttack",
+      "configured_positions": [
+        {
+          "position": 331,
+          "template_id": 968,
+          "template_sha256": "5d3f9c8cd989f2448144c7243edeed5806b8c977d08ec17a3b4a6f933e81c3da",
+          "name": "艾迪希洛",
+          "slot_index": 2
+        }
+      ],
+      "witnesses": [
+        {
+          "source": 0,
+          "visible_lines": [
+            38,
+            38
+          ],
+          "kind": "EFFECT_CLAIM",
+          "claim": "防御-30%、敏捷+30%。",
+          "positions": []
+        },
+        {
+          "source": 3,
+          "visible_lines": [
+            28,
+            33
+          ],
+          "kind": "NAMED_PET_ELEMENT_COMPATIBLE",
+          "claim": "地5水5艾迪希洛的特技描述同上述比例。",
+          "positions": [
+            331
+          ]
+        }
+      ],
+      "same_deployment_learnability_verified": false,
+      "official_birth_skill_verified": false,
+      "official_runtime_verified": false
+    },
+    {
+      "skill_id": 543,
+      "definition_sha256": "0301f7f9ea095c7fc3c6932d1e4087200247c4fd3473918b30524aab507cbe82",
+      "name": "破除防禦之2",
+      "callback": "PETSKILL_GuardBreak2",
+      "configured_positions": [
+        {
+          "position": 252,
+          "template_id": 768,
+          "template_sha256": "c6c88a9de28a98d8f146219fb2c2c2ffe4206413d3713a02058d53cecae4f75c",
+          "name": "戈登爾頓",
+          "slot_index": 2
+        }
+      ],
+      "witnesses": [
+        {
+          "source": 0,
+          "visible_lines": [
+            41,
+            47
+          ],
+          "kind": "ANNOUNCED_SKILL_NOT_LIVE",
+          "claim": "作者列为6.0拟开放技能，关联金猩猩，不能定位模板。",
+          "positions": []
+        },
+        {
+          "source": 1,
+          "visible_lines": [
+            21,
+            22
+          ],
+          "kind": "EFFECT_CLAIM",
+          "claim": "目标防御时攻击+30%，否则-30%。",
+          "positions": []
+        }
+      ],
+      "same_deployment_learnability_verified": false,
+      "official_birth_skill_verified": false,
+      "official_runtime_verified": false
+    },
+    {
+      "skill_id": 580,
+      "definition_sha256": "07c3dd6563be5806826a2383766fd7f4c8759f56f0388c81219348f66bdc2eec",
+      "name": "沉默",
+      "callback": "PETSKILL_Nocast",
+      "configured_positions": [
+        {
+          "position": 332,
+          "template_id": 969,
+          "template_sha256": "7bd9c862d10b2bde2e86414bfb3c04de59e1ee45aae95c7644040515f0660fcc",
+          "name": "蒙奇",
+          "slot_index": 2
+        }
+      ],
+      "witnesses": [
+        {
+          "source": 0,
+          "visible_lines": [
+            40,
+            40
+          ],
+          "kind": "EFFECT_CLAIM",
+          "claim": "作者称敌方全体禁咒3回合。",
+          "positions": []
+        },
+        {
+          "source": 1,
+          "visible_lines": [
+            62,
+            62
+          ],
+          "kind": "TARGET_SCOPE_UNCERTAIN",
+          "claim": "作者描述命中对象不能施放精灵或魔法。",
+          "positions": []
+        },
+        {
+          "source": 6,
+          "visible_lines": [
+            10,
+            22
+          ],
+          "kind": "NAMED_PET_REPORTED_BATTLE",
+          "claim": "玩家记蒙奇在4.0推出、5.0团战使用沉默；非原日志。",
+          "positions": [
+            332
+          ]
+        },
+        {
+          "source": 7,
+          "visible_lines": [
+            1,
+            100
+          ],
+          "kind": "NAMED_PET_LEARNING_CLAIM",
+          "claim": "7.0攻略称猴子可学沉默；未列NPC、费用或源部署。",
+          "positions": [
+            332
+          ]
+        }
+      ],
+      "same_deployment_learnability_verified": false,
+      "official_birth_skill_verified": false,
+      "official_runtime_verified": false
+    },
+    {
+      "skill_id": 583,
+      "definition_sha256": "147dec81834d2306f4a7e055e4750d4146dc3a595f2bfacb8eb4a69082c29cbe",
+      "name": "破除沉默",
+      "callback": "PETSKILL_Refresh",
+      "configured_positions": [
+        {
+          "position": 112,
+          "template_id": 165,
+          "template_sha256": "759e1aa7b92511b70b5f602bc7f7eb32d31d52438f0b2aa651e5bb4711750638",
+          "name": "奇朋菲德",
+          "slot_index": 2
+        },
+        {
+          "position": 113,
+          "template_id": 166,
+          "template_sha256": "0f9d03846e09d0ac12efaaca1ba5e95db3e5fb8a776447bf13dc385c335ce181",
+          "name": "奇朋亞斯",
+          "slot_index": 2
+        },
+        {
+          "position": 114,
+          "template_id": 167,
+          "template_sha256": "64386a77570aa7a25c327de0db770ce6e0ce364edf0bc918b6e2f71e4dddac4d",
+          "name": "奇朋德美",
+          "slot_index": 2
+        },
+        {
+          "position": 115,
+          "template_id": 168,
+          "template_sha256": "5061894754fa263d18286e302b81d3b37762109cc281dd419cd29a0fb9e2ffdd",
+          "name": "奇朋洛依",
+          "slot_index": 2
+        }
+      ],
+      "witnesses": [
+        {
+          "source": 7,
+          "visible_lines": [
+            1,
+            100
+          ],
+          "kind": "ITEM_ROLE_CONTEXT_ONLY",
+          "claim": "破除沉默罐头解除沉默；不是奇朋四宠技能槽、学习点或原技能ID证明。",
+          "positions": []
+        }
+      ],
+      "same_deployment_learnability_verified": false,
+      "official_birth_skill_verified": false,
+      "official_runtime_verified": false
+    },
+    {
+      "skill_id": 600,
+      "definition_sha256": "fa62dffc35be9583a340a73610a08e91035eda7f2b1f10433efea1fdc7f54e02",
+      "name": "暗月變身",
+      "callback": "PETSKILL_Vary",
+      "configured_positions": [
+        {
+          "position": 334,
+          "template_id": 981,
+          "template_sha256": "181513c2f705399a0ea75e9819b651c49d3eb15f2c259d4994e60efeb7255f67",
+          "name": "格林巴肯",
+          "slot_index": 2
+        },
+        {
+          "position": 335,
+          "template_id": 982,
+          "template_sha256": "18cf048ec2c36992a7ad1588a22d84ac727cc0f467d10d166661c3f93cc079e9",
+          "name": "雷恩巴肯",
+          "slot_index": 2
+        },
+        {
+          "position": 336,
+          "template_id": 983,
+          "template_sha256": "1f0bdf56261f92db7aef2567774f85d8b3784e4f3428e0b396e3f6383fe6c439",
+          "name": "法亞巴肯",
+          "slot_index": 2
+        },
+        {
+          "position": 337,
+          "template_id": 984,
+          "template_sha256": "1fb1f6cac337d180c399055e1a9fadee9944ad550428066ca8dcc6468dc0415f",
+          "name": "奇歐巴肯",
+          "slot_index": 2
+        }
+      ],
+      "witnesses": [
+        {
+          "source": 0,
+          "visible_lines": [
+            14,
+            14
+          ],
+          "kind": "EFFECT_CLAIM",
+          "claim": "攻敏+30%、魔法防御减半、5回合。",
+          "positions": []
+        },
+        {
+          "source": 1,
+          "visible_lines": [
+            75,
+            75
+          ],
+          "kind": "EFFECT_CLAIM",
+          "claim": "同攻敏、魔防、持续回合说法。",
+          "positions": []
+        },
+        {
+          "source": 3,
+          "visible_lines": [
+            34,
+            45
+          ],
+          "kind": "NAMED_FAMILY_ELEMENT_COMPATIBLE",
+          "claim": "四狼人名称和比例相容；作者描述防御减半，是否仅魔防保留区别。",
+          "positions": [
+            334,
+            335,
+            336,
+            337
+          ]
+        },
+        {
+          "source": 4,
+          "visible_lines": [
+            37,
+            41
+          ],
+          "kind": "FUSION_RESTRICTION_CLAIM",
+          "claim": "攻略将暗月变身列不可遗传，四狼人列不可融合；不是原程序验证。",
+          "positions": [
+            334,
+            335,
+            336,
+            337
+          ]
+        }
+      ],
+      "same_deployment_learnability_verified": false,
+      "official_birth_skill_verified": false,
+      "official_runtime_verified": false
+    },
+    {
+      "skill_id": 625,
+      "definition_sha256": "1a5735773ec59e81273aef209e2e45ef81e7b0d2de80bab57ebd32ea4f3a1b99",
+      "name": "媚惑術",
+      "callback": "PETSKILL_BecomeFox",
+      "configured_positions": [
+        {
+          "position": 104,
+          "template_id": 148,
+          "template_sha256": "20a33d53c4435355ea3478b80d6491ccba7b3c2dd9c81485ebadf4c7239ea6f6",
+          "name": "弗麗雅",
+          "slot_index": 2
+        },
+        {
+          "position": 105,
+          "template_id": 149,
+          "template_sha256": "fe52d340cfdc11a7ba29551195f5dd895c6612b70c5a7dc1524b0f6e66b44357",
+          "name": "弗麗露",
+          "slot_index": 2
+        }
+      ],
+      "witnesses": [],
+      "same_deployment_learnability_verified": false,
+      "official_birth_skill_verified": false,
+      "official_runtime_verified": false
+    },
+    {
+      "skill_id": 627,
+      "definition_sha256": "8af1f89a1f62b7bfecba2b14091f42aede289557e4b91fdd7cb5beaa90067a6b",
+      "name": "難得糊塗",
+      "callback": "PETSKILL_Combined",
+      "configured_positions": [
+        {
+          "position": 107,
+          "template_id": 160,
+          "template_sha256": "d4690bfee86acbab00f232dc9fe3ada50136c6545a1ea86a702863e923822d27",
+          "name": "倫迪",
+          "slot_index": 2
+        }
+      ],
+      "witnesses": [],
+      "same_deployment_learnability_verified": false,
+      "official_birth_skill_verified": false,
+      "official_runtime_verified": false
+    },
+    {
+      "skill_id": 631,
+      "definition_sha256": "094304948168806b58e43ebc7b8c4ab0424ade481a6eabb82b44ed5e771c2054",
+      "name": "烏力化",
+      "callback": "PETSKILL_BecomePig",
+      "configured_positions": [
+        {
+          "position": 117,
+          "template_id": 170,
+          "template_sha256": "5cd409377e74fc89f60abea3393ef4ae59a9edd2b0b450fa8ba7bf63480e162b",
+          "name": "烏力王",
+          "slot_index": 2
+        }
+      ],
+      "witnesses": [],
+      "same_deployment_learnability_verified": false,
+      "official_birth_skill_verified": false,
+      "official_runtime_verified": false
+    },
+    {
+      "skill_id": 632,
+      "definition_sha256": "9e3a97082cbe0af0451b68d15cd841d2dd37d440f4467395d0b9f4dd870f8933",
+      "name": "逆轉",
+      "callback": "PETSKILL_Combined",
+      "configured_positions": [
+        {
+          "position": 123,
+          "template_id": 176,
+          "template_sha256": "3cece217ad44ebee6853d39fa4bd4b40d5ccf56af052f258609841b705a4e610",
+          "name": "哈沃恩",
+          "slot_index": 2
+        },
+        {
+          "position": 124,
+          "template_id": 177,
+          "template_sha256": "7301c5c38db162942a2c25a5a75c83381f85355775b0abd251ca8e0e291b01af",
+          "name": "哈沃斯",
+          "slot_index": 2
+        }
+      ],
+      "witnesses": [],
+      "same_deployment_learnability_verified": false,
+      "official_birth_skill_verified": false,
+      "official_runtime_verified": false
+    },
+    {
+      "skill_id": 635,
+      "definition_sha256": "56c48c875a097cbc9a9bbe9b16067a84415caa6c8027cf6ea63b7430c5d1fdfe",
+      "name": "黑烏力化",
+      "callback": "PETSKILL_BecomePig",
+      "configured_positions": [
+        {
+          "position": 455,
+          "template_id": 1147,
+          "template_sha256": "046467613771f6f7b0c15a850385b8ff44acd41d760c316f6aaa2cd4f4360feb",
+          "name": "黑烏力王",
+          "slot_index": 2
+        }
+      ],
+      "witnesses": [],
+      "same_deployment_learnability_verified": false,
+      "official_birth_skill_verified": false,
+      "official_runtime_verified": false
+    },
+    {
+      "skill_id": 636,
+      "definition_sha256": "390547b31e3f784f9f3529c8aa8e6062af4a06f0ee4fb327307af4dacf287e41",
+      "name": "狂獅怒吼",
+      "callback": "PETSKILL_2BattleTimid",
+      "configured_positions": [
+        {
+          "position": 125,
+          "template_id": 178,
+          "template_sha256": "f77f8cb9c3f3228a4d10dd99b2d3734f7c48db9a9e16dcfc02e104a9587e2183",
+          "name": "萊恩奇夫",
+          "slot_index": 2
+        },
+        {
+          "position": 126,
+          "template_id": 179,
+          "template_sha256": "b2f5c44344ca8c57c17add435b6350d54bf76e790e86368c86150b3afed85f38",
+          "name": "萊恩洛克",
+          "slot_index": 2
+        }
+      ],
+      "witnesses": [
+        {
+          "source": 5,
+          "visible_lines": [
+            15,
+            45
+          ],
+          "kind": "NAMED_PET_REGION_DIFFERENCE",
+          "claim": "莱恩洛克狂狮怒吼：攻-50%、敏+30%、迫使对方宠物回栏；文章称当时大陆尚未开放狮子技能，另一地区文字破损，不能补定。",
+          "positions": [
+            126
+          ]
+        }
+      ],
+      "same_deployment_learnability_verified": false,
+      "official_birth_skill_verified": false,
+      "official_runtime_verified": false
+    },
+    {
+      "skill_id": 637,
+      "definition_sha256": "771e3eeb203e52da0a8a3de70343123114fd15b966843c622c196663a2f9d680",
+      "name": "淨化之舞",
+      "callback": "PETSKILL_Combined",
+      "configured_positions": [
+        {
+          "position": 460,
+          "template_id": 1180,
+          "template_sha256": "f387f19f4f593957b412df6da689f77d8c282199131e780e385aa6f45aa2f3c5",
+          "name": "巴雅",
+          "slot_index": 2
+        },
+        {
+          "position": 461,
+          "template_id": 1181,
+          "template_sha256": "0862cb2427be374de72151fe283778e8926d598f8ac94ce76257982574af237f",
+          "name": "巴特",
+          "slot_index": 2
+        }
+      ],
+      "witnesses": [],
+      "same_deployment_learnability_verified": false,
+      "official_birth_skill_verified": false,
+      "official_runtime_verified": false
+    },
+    {
+      "skill_id": 638,
+      "definition_sha256": "6c6afa8759e172929e2b7123055050dded871abb75c53588d508cf9da1ffd13d",
+      "name": "群蜂亂舞",
+      "callback": "PETSKILL_BattleModel",
+      "configured_positions": [
+        {
+          "position": 458,
+          "template_id": 1178,
+          "template_sha256": "e7c6e2b4715dbf135bc6dd7caea9d22a78899c794cda8c93dd88708ab6b42b11",
+          "name": "沃克比",
+          "slot_index": 2
+        },
+        {
+          "position": 459,
+          "template_id": 1179,
+          "template_sha256": "5ad2237c7f32b1ed1ddaf0e055b1dd55e06085ef60512121ee1d27550f0af955",
+          "name": "沃斯姆",
+          "slot_index": 2
+        }
+      ],
+      "witnesses": [],
+      "same_deployment_learnability_verified": false,
+      "official_birth_skill_verified": false,
+      "official_runtime_verified": false
+    },
+    {
+      "skill_id": 640,
+      "definition_sha256": "1b6791a2b129246d718dcddded02df57b28acbeff4206cf07efd820a73f13f83",
+      "name": "憾甲一擊",
+      "callback": "PETSKILL_Regret",
+      "configured_positions": [
+        {
+          "position": 465,
+          "template_id": 1186,
+          "template_sha256": "46644ac9393a83dc817262df543b84b62b13ae03aecef420cbcb182cb7d6ffb5",
+          "name": "奈坎特",
+          "slot_index": 2
+        }
+      ],
+      "witnesses": [],
+      "same_deployment_learnability_verified": false,
+      "official_birth_skill_verified": false,
+      "official_runtime_verified": false
+    }
+  ],
+  "blocked_sources": [
+    {
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=1338",
+      "status": "403_BODY_UNAVAILABLE"
+    },
+    {
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=3221",
+      "status": "403_BODY_UNAVAILABLE"
+    }
+  ],
+  "summary": {
+    "unlinked_skill_ids": 19,
+    "configured_slots": 37,
+    "positions": 37,
+    "skill_level_period_witness_ids": 10,
+    "slots_with_skill_level_witness": 21,
+    "context_only_ids": 1,
+    "without_period_witness_ids": 8,
+    "official_skill_closures": 0
+  },
+  "original_assets_published": false
+}

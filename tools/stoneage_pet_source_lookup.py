@@ -299,6 +299,8 @@ def build(d):
         for j, shop in enumerate(shop88["original_skillshop_CREATE_to_parameter_rows"]):
             for skill_id in set(shop["source_pet_skill_ids_ordered"]):
                 shop88_routes[skill_id].append(j)
+    special89 = d.get("hf89")
+    special89_ids = by_id(special89["rows"], "skill_id") if special89 else {}
     witnesses77 = collections.defaultdict(list)
     for index, witness in enumerate(d.get("hf77", {}).get("rows", [])):
         witnesses77[witness["template_id"]].append((index, witness))
@@ -440,6 +442,18 @@ def build(d):
                         shop_indices=routes,
                         species_can_learn_verified=False, official_runtime_verified=False)
                     shop_links.update(routes)
+                if slot["skill_id"] in special89_ids:
+                    j = special89_ids[slot["skill_id"]]
+                    ref = special89["rows"][j]
+                    assert ref["definition_sha256"] == definition["row_sha256"]
+                    assert any(p["position"] == i and p["template_sha256"] == x["row_sha256"]
+                               and p["slot_index"] == slot["slot_index"] for p in ref["configured_positions"])
+                    skill["period_special_skill_reference"] = dict(
+                        qualification="DATED_SKILL_LEVEL_REFERENCE" if any(
+                            w["kind"] != "ITEM_ROLE_CONTEXT_ONLY" for w in ref["witnesses"])
+                            else "ITEM_CONTEXT_ONLY" if ref["witnesses"] else "NO_QUALIFIED_PERIOD_REFERENCE_IN_BATCH",
+                        same_deployment_verified=False)
+                    ls.append(link("hf89", ["rows", j], "SPECIAL_SKILL_REFERENCE_NOT_OFFICIAL_LEARNABILITY"))
                 skills.append(skill)
                 ls.append(link("hf76", ["configured_skill_definitions", j], "SAVED_CONFIGURED_SKILL_NOT_BIRTH_SKILL_PROOF"))
             for j in sorted(shop_links):
@@ -775,6 +789,23 @@ def verify(m,d,entries):
                 assert not ref["species_can_learn_verified"] and not ref["official_runtime_verified"]
                 expected_shops.update(expected)
             assert {l["pointer"][1] for l in entry["linked_records"] if l["source"] == "hf88_skillshop"} == expected_shops
+    if "hf89" in d:
+        special = d["hf89"]["rows"]
+        assert len(special) == 19 and len({r["skill_id"] for r in special}) == 19
+        expected = {(r["skill_id"], p["position"], p["slot_index"], p["template_sha256"])
+                    for r in special for p in r["configured_positions"]}
+        actual = {(slot["skill_id"], i, slot["slot_index"], d["tw75"]["pet_flag_1_field_projections"][i]["row_sha256"])
+                  for i, row in enumerate(verified76) for slot in row["configured_skill_slots"]
+                  if not slot["saved_skillshop_reference"]["shop_indices"]}
+        assert actual == expected and len(actual) == 37
+        assert source_counts["hf89"] == 37
+        refs = [slot["period_special_skill_reference"] for row in verified76 for slot in row["configured_skill_slots"]
+                if "period_special_skill_reference" in slot]
+        assert collections.Counter(ref["qualification"] for ref in refs) == {
+            "DATED_SKILL_LEVEL_REFERENCE": 21, "ITEM_CONTEXT_ONLY": 4, "NO_QUALIFIED_PERIOD_REFERENCE_IN_BATCH": 12}
+        assert all(not ref["same_deployment_verified"] for ref in refs)
+        assert all(not r["same_deployment_learnability_verified"] and not r["official_birth_skill_verified"]
+                   and not r["official_runtime_verified"] for r in special)
     roles58 = d["hf58"]["rows"]
     master58 = d["tw75"]["pet_flag_1_field_projections"]
     originals58 = {r["tw75_row_index"]: r for r in d["hf50"]["projection"]["records"]}
