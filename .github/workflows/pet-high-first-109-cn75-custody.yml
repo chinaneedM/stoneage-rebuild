@@ -1,0 +1,41 @@
+name: PET109 retained CN75 index and bounded serial replay
+on:
+  push:
+    branches: ['agent/pet-high-first-108-cn75-archive-routes-20261126']
+    paths:
+      - 'tools/stoneage_pet_high_first_109_cn75_custody.py'
+      - '.github/workflows/pet-high-first-109-cn75-custody.yml'
+permissions:
+  contents: read
+jobs:
+  preserve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    permissions:
+      actions: read
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/actions/artifacts/15116410155/zip > "$RUNNER_TEMP/pet108.zip"
+          python -m tools.stoneage_pet_high_first_109_cn75_custody --artifact "$RUNNER_TEMP/pet108.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet109-cn75-derived-evidence
+          path: |
+            research/pets/PET-HIGH-FIRST-108-CUSTODY-R1.json
+            research/pets/PET-HIGH-FIRST-109-CN75-BOUNDED-REPLAY-R1.json
+          if-no-files-found: error
+          retention-days: 15
+      - name: Retain metadata only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/pets/PET-HIGH-FIRST-108-CN75-ARCHIVE-ROUTES-R1.json research/pets/PET-HIGH-FIRST-108-CUSTODY-R1.json research/pets/PET-HIGH-FIRST-109-CN75-BOUNDED-REPLAY-R1.json
+          git commit -m 'PET108–109: retain verified index and bounded serial replay metadata'
+          git push origin HEAD:agent/pet-high-first-108-cn75-archive-routes-20261126
