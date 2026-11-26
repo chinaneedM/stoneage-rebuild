@@ -596,6 +596,12 @@ def build(d):
             ls.extend(link(src, pointer, "EXACT_NAME_REFERENCE_NOT_OFFICIAL_IDENTITY") for src, pointer in targets)
             add("hf94", ["rows", j], [row["name"]], "LATE_COMMUNITY_CATALOGUE_REFERENCE", [],
                 ls, dict(family=row["family"], catalogue=row["catalogue"], official_identity_verified=False))
+    if "hf97" in d:
+        positions97 = {e["pointer"][1]: e for e in out if e["source"] == "tw75"}
+        for j, row in enumerate(d["hf97"]["rows"]):
+            for side in ("left", "right"):
+                positions97[row[side]["position"]]["linked_records"].append(
+                    link("hf97", ["rows", j], row["qualification"]))
     if "hf96" in d:
         by_position = {e["pointer"][1]: e for e in out if e["source"] == "tw75"}
         for j, row in enumerate(d["hf96"]["rows"]):
@@ -1115,6 +1121,55 @@ def verify(m,d,entries):
         assert grid_count == 5 and sum(bool(r["year_beast_recollection"]) for r in late["rows"]) == 4
         assert sum(r["year_beast_recollection"]["name_variant"] for r in late["rows"] if r["year_beast_recollection"]) == 1
         assert late["summary"]["official_closures"] == 0
+    if "hf97" in d:
+        roles97 = d["hf97"]
+        for path, sha in roles97["input_git_blobs"].items():
+            assert blob((ROOT / path).read_bytes()) == sha
+        proj97 = d["hf45"]["projection"]
+        floor97 = d["hf45_floor"]["rows"]
+        areas97 = {a["id"]: i for i,a in enumerate(proj97["area_metadata"])}
+        instances97 = {a["id"]: i for i,a in enumerate(proj97["instance_metadata"])}
+        routes97 = {a["template_id"]: i for i,a in enumerate(proj97["mixed25_template_routes"])}
+        floor_indices97 = {a["floor_id"]: i for i,a in enumerate(floor97)}
+        def role_side97(s):
+            row = proj97["claimed_tw75_rows"][s["position"]]
+            assert row["template_id"] == s["template_id"] and row["tw75_row_sha256"] == s["row_sha256"]
+            base = dict(position=s["position"], template_id=s["template_id"], official_acquisition_verified=False)
+            if s["selected_table_grade"] != "EXACT_SHARED_TEMPLATE_ROW":
+                return dict(base, grade="NO_EXACT_SELECTED_ROW_NOT_ASSESSED", **{k: None for k in ("route_index","positive_route_count","double_flag_route_count","lv1_double_flag_route_count","instance_indices","area_indices","group_ids","floor_ids","floor_reference_indices","pet_flag_1_instance_levels")})
+            ri = routes97.get(s["template_id"])
+            rr = [] if ri is None else proj97["mixed25_template_routes"][ri]["routes"]
+            if ri is not None:
+                assert proj97["mixed25_template_routes"][ri]["source_template_row_sha256"] == s["row_sha256"]
+            def inst(r):
+                return proj97["instance_metadata"][instances97[r[4]]]
+            pet = [r for r in rr if inst(r)["pet_flag"] == 1]
+            lv1 = [r for r in pet if inst(r)["level"][0] <= 1 <= inst(r)["level"][1]]
+            assert [len(rr),len(pet),len(lv1)] == s["route_counts"]
+            fl = sorted({proj97["area_metadata"][areas97[r[0]]]["floor"] for r in pet})
+            pet_idx = sorted({instances97[r[4]] for r in pet})
+            levels = [dict(instance_index=i,id=proj97["instance_metadata"][i]["id"],level=proj97["instance_metadata"][i]["level"]) for i in pet_idx]
+            return dict(base, grade="SAVED_POSITIVE_DOUBLE_FLAG_ROUTES" if pet else "SAVED_POSITIVE_NON_DOUBLE_FLAG_ONLY" if rr else "NO_POSITIVE_ROUTE_IN_RETAINED_PROJECTION",
+                route_index=ri,positive_route_count=len(rr),double_flag_route_count=len(pet),lv1_double_flag_route_count=len(lv1),
+                instance_indices=sorted({instances97[r[4]] for r in rr}),area_indices=sorted({areas97[r[0]] for r in rr}),
+                group_ids=sorted({r[2] for r in pet}),floor_ids=fl,floor_reference_indices=[floor_indices97.get(x) for x in fl],pet_flag_1_instance_levels=levels)
+        expected97 = [dict(collision_index=i,left=role_side97(r["left"]),right=role_side97(r["right"]),
+            qualification="BOTH_EXACT_PROJECTED_FIELDS_EQUAL_NOT_FULL_ROW_OR_IDENTITY" if r["both_selected_exact"] else "NO_EXACT_SELECTED_ROW_DO_NOT_INFER_ZERO_ROUTES",official_identity_verified=False)
+            for i,r in enumerate(d["hf96"]["rows"]) if r["relation"] == "SAME_NAME_GRAPHIC" and not r["differing_projected_fields"]]
+        assert roles97["rows"] == expected97
+        exact97 = [r for r in expected97 if r["qualification"].startswith("BOTH")]
+        summary97 = dict(pairs=len(expected97),both_exact_pairs=len(exact97),unassessed_pairs=len(expected97)-len(exact97),
+            distinct_positions=len({r[s]["position"] for r in expected97 for s in ("left","right")}),
+            exact_pairs_with_lv1_left=sum(r["left"]["lv1_double_flag_route_count"] > 0 for r in exact97),
+            exact_pairs_with_lv1_right=sum(r["right"]["lv1_double_flag_route_count"] > 0 for r in exact97),
+            exact_pairs_right_positive=sum(r["right"]["double_flag_route_count"] > 0 for r in exact97),
+            exact_pairs_right_no_positive=sum(r["right"]["positive_route_count"] == 0 for r in exact97),
+            right_floor_125_pairs=sum(r["right"]["floor_ids"] == [125] for r in exact97),
+            right_floor_20901_20902_pairs=sum(r["right"]["floor_ids"] in ([20901],[20902]) for r in exact97),official_closures=0)
+        assert roles97["summary"] == summary97 == m["supplement_hf97"]
+        assert len(expected97) == 10 and len(exact97) == 6
+        assert {(e["pointer"][1], l["pointer"][1]) for e in high45 for l in e["linked_records"] if l["source"] == "hf97"} == {(r[s]["position"],j) for j,r in enumerate(expected97) for s in ("left","right")}
+        assert sum(l["source"] == "hf97" for e in entries for l in e["linked_records"]) == 20
     if "hf96" in d:
         collision = d["hf96"]
         for path, sha in collision["input_git_blobs"].items():

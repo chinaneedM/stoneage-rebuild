@@ -1,0 +1,1100 @@
+{
+  "schema": "stoneage.pet97.equal_profile_instance_roles.r1",
+  "base_head": "a1004e47310d4eea5e2c9b9d649c823169d86214",
+  "base_tree": "efb50f8d996420104ae1d384b188e41c29c9cc79",
+  "input_git_blobs": {
+    "research/pets/PET-HIGH-FIRST-96-TEMPLATE-COLLISION-MATRIX-R1.json": "79e4acc5e52d1f383942e2d3cc51576fc4271dc8",
+    "research/pets/PET-HIGH-FIRST-45-BULK-ACQUISITION-R1.json": "5273e2c3f6a71fa9ea8a2f7b51139f280a9e9808",
+    "research/pets/PET-HIGH-FIRST-45-FLOOR-REFERENCES-R1.json": "fa15a2a93ed820160571aef28294c029d5196666"
+  },
+  "scope": "Only ten HF96 exact-name-and-graphic pairs with no differences in eight projected fields. Positive routes, instances, group and floor references from retained HF45 projection; not a fresh original extraction or official capture proof. No exact selected row means null, not zero. Left/right follow ascending template position, not historical or variant order.",
+  "summary": {
+    "pairs": 10,
+    "both_exact_pairs": 6,
+    "unassessed_pairs": 4,
+    "distinct_positions": 17,
+    "exact_pairs_with_lv1_left": 6,
+    "exact_pairs_with_lv1_right": 0,
+    "exact_pairs_right_positive": 5,
+    "exact_pairs_right_no_positive": 1,
+    "right_floor_125_pairs": 3,
+    "right_floor_20901_20902_pairs": 2,
+    "official_closures": 0
+  },
+  "rows": [
+    {
+      "collision_index": 4,
+      "left": {
+        "position": 2,
+        "template_id": 3,
+        "grade": "SAVED_POSITIVE_DOUBLE_FLAG_ROUTES",
+        "route_index": 2,
+        "positive_route_count": 13,
+        "double_flag_route_count": 12,
+        "lv1_double_flag_route_count": 4,
+        "instance_indices": [
+          1,
+          17,
+          18,
+          19,
+          61,
+          531
+        ],
+        "area_indices": [
+          7,
+          8,
+          9,
+          10,
+          31,
+          32,
+          33,
+          34,
+          41,
+          59,
+          600,
+          616
+        ],
+        "group_ids": [
+          107,
+          108,
+          109,
+          170,
+          776
+        ],
+        "floor_ids": [
+          100,
+          997,
+          11304,
+          11305
+        ],
+        "floor_reference_indices": [
+          2,
+          11,
+          82,
+          83
+        ],
+        "pet_flag_1_instance_levels": [
+          {
+            "instance_index": 1,
+            "id": 11,
+            "level": [
+              1,
+              1
+            ]
+          },
+          {
+            "instance_index": 17,
+            "id": 143,
+            "level": [
+              1,
+              1
+            ]
+          },
+          {
+            "instance_index": 18,
+            "id": 144,
+            "level": [
+              2,
+              3
+            ]
+          },
+          {
+            "instance_index": 19,
+            "id": 145,
+            "level": [
+              3,
+              5
+            ]
+          },
+          {
+            "instance_index": 61,
+            "id": 256,
+            "level": [
+              15,
+              20
+            ]
+          }
+        ],
+        "official_acquisition_verified": false
+      },
+      "right": {
+        "position": 193,
+        "template_id": 586,
+        "grade": "SAVED_POSITIVE_DOUBLE_FLAG_ROUTES",
+        "route_index": 109,
+        "positive_route_count": 3,
+        "double_flag_route_count": 3,
+        "lv1_double_flag_route_count": 0,
+        "instance_indices": [
+          426
+        ],
+        "area_indices": [
+          420,
+          421,
+          422
+        ],
+        "group_ids": [
+          607,
+          608
+        ],
+        "floor_ids": [
+          125
+        ],
+        "floor_reference_indices": [
+          6
+        ],
+        "pet_flag_1_instance_levels": [
+          {
+            "instance_index": 426,
+            "id": 1170,
+            "level": [
+              15,
+              25
+            ]
+          }
+        ],
+        "official_acquisition_verified": false
+      },
+      "qualification": "BOTH_EXACT_PROJECTED_FIELDS_EQUAL_NOT_FULL_ROW_OR_IDENTITY",
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 8,
+      "left": {
+        "position": 6,
+        "template_id": 11,
+        "grade": "SAVED_POSITIVE_DOUBLE_FLAG_ROUTES",
+        "route_index": 3,
+        "positive_route_count": 34,
+        "double_flag_route_count": 34,
+        "lv1_double_flag_route_count": 1,
+        "instance_indices": [
+          28,
+          29,
+          30,
+          31,
+          313,
+          314,
+          315
+        ],
+        "area_indices": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          23,
+          24,
+          43,
+          46,
+          309,
+          310,
+          311,
+          312,
+          313,
+          314,
+          315,
+          316
+        ],
+        "group_ids": [
+          120,
+          121,
+          122,
+          128,
+          129,
+          205,
+          478,
+          479,
+          480,
+          487,
+          488,
+          489
+        ],
+        "floor_ids": [
+          100,
+          31701,
+          31702,
+          31703,
+          31704,
+          31705,
+          31706
+        ],
+        "floor_reference_indices": [
+          2,
+          243,
+          244,
+          245,
+          246,
+          247,
+          248
+        ],
+        "pet_flag_1_instance_levels": [
+          {
+            "instance_index": 28,
+            "id": 156,
+            "level": [
+              1,
+              1
+            ]
+          },
+          {
+            "instance_index": 29,
+            "id": 157,
+            "level": [
+              8,
+              10
+            ]
+          },
+          {
+            "instance_index": 30,
+            "id": 158,
+            "level": [
+              9,
+              11
+            ]
+          },
+          {
+            "instance_index": 31,
+            "id": 159,
+            "level": [
+              10,
+              12
+            ]
+          },
+          {
+            "instance_index": 313,
+            "id": 1016,
+            "level": [
+              50,
+              52
+            ]
+          },
+          {
+            "instance_index": 314,
+            "id": 1017,
+            "level": [
+              52,
+              54
+            ]
+          },
+          {
+            "instance_index": 315,
+            "id": 1018,
+            "level": [
+              54,
+              56
+            ]
+          }
+        ],
+        "official_acquisition_verified": false
+      },
+      "right": {
+        "position": 194,
+        "template_id": 587,
+        "grade": "SAVED_POSITIVE_DOUBLE_FLAG_ROUTES",
+        "route_index": 110,
+        "positive_route_count": 2,
+        "double_flag_route_count": 2,
+        "lv1_double_flag_route_count": 0,
+        "instance_indices": [
+          427
+        ],
+        "area_indices": [
+          421,
+          422
+        ],
+        "group_ids": [
+          608
+        ],
+        "floor_ids": [
+          125
+        ],
+        "floor_reference_indices": [
+          6
+        ],
+        "pet_flag_1_instance_levels": [
+          {
+            "instance_index": 427,
+            "id": 1171,
+            "level": [
+              15,
+              25
+            ]
+          }
+        ],
+        "official_acquisition_verified": false
+      },
+      "qualification": "BOTH_EXACT_PROJECTED_FIELDS_EQUAL_NOT_FULL_ROW_OR_IDENTITY",
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 11,
+      "left": {
+        "position": 27,
+        "template_id": 51,
+        "grade": "SAVED_POSITIVE_DOUBLE_FLAG_ROUTES",
+        "route_index": 18,
+        "positive_route_count": 25,
+        "double_flag_route_count": 25,
+        "lv1_double_flag_route_count": 1,
+        "instance_indices": [
+          8,
+          9,
+          10,
+          68,
+          71,
+          72,
+          73,
+          74,
+          492,
+          493,
+          494
+        ],
+        "area_indices": [
+          3,
+          4,
+          5,
+          6,
+          13,
+          15,
+          47,
+          48,
+          50,
+          53,
+          237,
+          474,
+          475,
+          476,
+          477
+        ],
+        "group_ids": [
+          95,
+          96,
+          97,
+          101,
+          176,
+          178,
+          183,
+          184,
+          185,
+          186,
+          192,
+          193,
+          194,
+          195,
+          685,
+          686,
+          687,
+          688,
+          689
+        ],
+        "floor_ids": [
+          100,
+          10001,
+          10002,
+          10003,
+          10006,
+          11204,
+          11205,
+          11206,
+          11207
+        ],
+        "floor_reference_indices": [
+          2,
+          22,
+          23,
+          24,
+          27,
+          67,
+          68,
+          69,
+          70
+        ],
+        "pet_flag_1_instance_levels": [
+          {
+            "instance_index": 8,
+            "id": 125,
+            "level": [
+              1,
+              2
+            ]
+          },
+          {
+            "instance_index": 9,
+            "id": 126,
+            "level": [
+              3,
+              4
+            ]
+          },
+          {
+            "instance_index": 10,
+            "id": 127,
+            "level": [
+              4,
+              6
+            ]
+          },
+          {
+            "instance_index": 68,
+            "id": 263,
+            "level": [
+              6,
+              8
+            ]
+          },
+          {
+            "instance_index": 71,
+            "id": 267,
+            "level": [
+              20,
+              22
+            ]
+          },
+          {
+            "instance_index": 72,
+            "id": 268,
+            "level": [
+              21,
+              23
+            ]
+          },
+          {
+            "instance_index": 73,
+            "id": 269,
+            "level": [
+              21,
+              23
+            ]
+          },
+          {
+            "instance_index": 74,
+            "id": 270,
+            "level": [
+              28,
+              30
+            ]
+          },
+          {
+            "instance_index": 492,
+            "id": 1255,
+            "level": [
+              55,
+              56
+            ]
+          },
+          {
+            "instance_index": 493,
+            "id": 1256,
+            "level": [
+              56,
+              57
+            ]
+          },
+          {
+            "instance_index": 494,
+            "id": 1257,
+            "level": [
+              57,
+              58
+            ]
+          }
+        ],
+        "official_acquisition_verified": false
+      },
+      "right": {
+        "position": 192,
+        "template_id": 560,
+        "grade": "SAVED_POSITIVE_DOUBLE_FLAG_ROUTES",
+        "route_index": 108,
+        "positive_route_count": 1,
+        "double_flag_route_count": 1,
+        "lv1_double_flag_route_count": 0,
+        "instance_indices": [
+          364
+        ],
+        "area_indices": [
+          370
+        ],
+        "group_ids": [
+          550
+        ],
+        "floor_ids": [
+          20901
+        ],
+        "floor_reference_indices": [
+          124
+        ],
+        "pet_flag_1_instance_levels": [
+          {
+            "instance_index": 364,
+            "id": 1079,
+            "level": [
+              9,
+              11
+            ]
+          }
+        ],
+        "official_acquisition_verified": false
+      },
+      "qualification": "BOTH_EXACT_PROJECTED_FIELDS_EQUAL_NOT_FULL_ROW_OR_IDENTITY",
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 12,
+      "left": {
+        "position": 29,
+        "template_id": 53,
+        "grade": "SAVED_POSITIVE_DOUBLE_FLAG_ROUTES",
+        "route_index": 20,
+        "positive_route_count": 21,
+        "double_flag_route_count": 21,
+        "lv1_double_flag_route_count": 1,
+        "instance_indices": [
+          200,
+          201,
+          202,
+          366,
+          446,
+          449,
+          452
+        ],
+        "area_indices": [
+          205,
+          206,
+          207,
+          208,
+          209,
+          370,
+          447,
+          448,
+          449,
+          459,
+          460,
+          461
+        ],
+        "group_ids": [
+          360,
+          361,
+          362,
+          366,
+          367,
+          550,
+          552,
+          553,
+          629,
+          632,
+          635,
+          638
+        ],
+        "floor_ids": [
+          11001,
+          11002,
+          11003,
+          11004,
+          11005,
+          20901,
+          30001,
+          30002,
+          30003,
+          30013,
+          30014,
+          30015
+        ],
+        "floor_reference_indices": [
+          59,
+          60,
+          61,
+          62,
+          63,
+          124,
+          170,
+          171,
+          172,
+          182,
+          183,
+          184
+        ],
+        "pet_flag_1_instance_levels": [
+          {
+            "instance_index": 200,
+            "id": 499,
+            "level": [
+              1,
+              1
+            ]
+          },
+          {
+            "instance_index": 201,
+            "id": 500,
+            "level": [
+              10,
+              12
+            ]
+          },
+          {
+            "instance_index": 202,
+            "id": 501,
+            "level": [
+              12,
+              14
+            ]
+          },
+          {
+            "instance_index": 366,
+            "id": 1081,
+            "level": [
+              6,
+              14
+            ]
+          },
+          {
+            "instance_index": 446,
+            "id": 1190,
+            "level": [
+              56,
+              57
+            ]
+          },
+          {
+            "instance_index": 449,
+            "id": 1195,
+            "level": [
+              57,
+              58
+            ]
+          },
+          {
+            "instance_index": 452,
+            "id": 1198,
+            "level": [
+              58,
+              59
+            ]
+          }
+        ],
+        "official_acquisition_verified": false
+      },
+      "right": {
+        "position": 195,
+        "template_id": 588,
+        "grade": "SAVED_POSITIVE_DOUBLE_FLAG_ROUTES",
+        "route_index": 111,
+        "positive_route_count": 2,
+        "double_flag_route_count": 2,
+        "lv1_double_flag_route_count": 0,
+        "instance_indices": [
+          428
+        ],
+        "area_indices": [
+          421,
+          422
+        ],
+        "group_ids": [
+          608
+        ],
+        "floor_ids": [
+          125
+        ],
+        "floor_reference_indices": [
+          6
+        ],
+        "pet_flag_1_instance_levels": [
+          {
+            "instance_index": 428,
+            "id": 1172,
+            "level": [
+              15,
+              25
+            ]
+          }
+        ],
+        "official_acquisition_verified": false
+      },
+      "qualification": "BOTH_EXACT_PROJECTED_FIELDS_EQUAL_NOT_FULL_ROW_OR_IDENTITY",
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 13,
+      "left": {
+        "position": 38,
+        "template_id": 71,
+        "grade": "SAVED_POSITIVE_DOUBLE_FLAG_ROUTES",
+        "route_index": 27,
+        "positive_route_count": 12,
+        "double_flag_route_count": 12,
+        "lv1_double_flag_route_count": 1,
+        "instance_indices": [
+          302,
+          303,
+          465,
+          468,
+          654
+        ],
+        "area_indices": [
+          281,
+          301,
+          302,
+          453,
+          454,
+          455,
+          615
+        ],
+        "group_ids": [
+          462,
+          463,
+          466,
+          650,
+          654,
+          657,
+          784
+        ],
+        "floor_ids": [
+          300,
+          5540,
+          30007,
+          30008,
+          30009
+        ],
+        "floor_reference_indices": [
+          8,
+          21,
+          176,
+          177,
+          178
+        ],
+        "pet_flag_1_instance_levels": [
+          {
+            "instance_index": 302,
+            "id": 997,
+            "level": [
+              1,
+              1
+            ]
+          },
+          {
+            "instance_index": 303,
+            "id": 998,
+            "level": [
+              41,
+              43
+            ]
+          },
+          {
+            "instance_index": 465,
+            "id": 1211,
+            "level": [
+              62,
+              63
+            ]
+          },
+          {
+            "instance_index": 468,
+            "id": 1214,
+            "level": [
+              63,
+              64
+            ]
+          },
+          {
+            "instance_index": 654,
+            "id": 1499,
+            "level": [
+              20,
+              25
+            ]
+          }
+        ],
+        "official_acquisition_verified": false
+      },
+      "right": {
+        "position": 60,
+        "template_id": 99,
+        "grade": "NO_POSITIVE_ROUTE_IN_RETAINED_PROJECTION",
+        "route_index": null,
+        "positive_route_count": 0,
+        "double_flag_route_count": 0,
+        "lv1_double_flag_route_count": 0,
+        "instance_indices": [],
+        "area_indices": [],
+        "group_ids": [],
+        "floor_ids": [],
+        "floor_reference_indices": [],
+        "pet_flag_1_instance_levels": [],
+        "official_acquisition_verified": false
+      },
+      "qualification": "BOTH_EXACT_PROJECTED_FIELDS_EQUAL_NOT_FULL_ROW_OR_IDENTITY",
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 19,
+      "left": {
+        "position": 65,
+        "template_id": 104,
+        "grade": "NO_EXACT_SELECTED_ROW_NOT_ASSESSED",
+        "route_index": null,
+        "positive_route_count": null,
+        "double_flag_route_count": null,
+        "lv1_double_flag_route_count": null,
+        "instance_indices": null,
+        "area_indices": null,
+        "group_ids": null,
+        "floor_ids": null,
+        "floor_reference_indices": null,
+        "pet_flag_1_instance_levels": null,
+        "official_acquisition_verified": false
+      },
+      "right": {
+        "position": 196,
+        "template_id": 589,
+        "grade": "NO_EXACT_SELECTED_ROW_NOT_ASSESSED",
+        "route_index": null,
+        "positive_route_count": null,
+        "double_flag_route_count": null,
+        "lv1_double_flag_route_count": null,
+        "instance_indices": null,
+        "area_indices": null,
+        "group_ids": null,
+        "floor_ids": null,
+        "floor_reference_indices": null,
+        "pet_flag_1_instance_levels": null,
+        "official_acquisition_verified": false
+      },
+      "qualification": "NO_EXACT_SELECTED_ROW_DO_NOT_INFER_ZERO_ROUTES",
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 34,
+      "left": {
+        "position": 136,
+        "template_id": 211,
+        "grade": "SAVED_POSITIVE_DOUBLE_FLAG_ROUTES",
+        "route_index": 66,
+        "positive_route_count": 20,
+        "double_flag_route_count": 20,
+        "lv1_double_flag_route_count": 1,
+        "instance_indices": [
+          96,
+          97,
+          98,
+          148
+        ],
+        "area_indices": [
+          63,
+          64,
+          65,
+          66,
+          67,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          369
+        ],
+        "group_ids": [
+          237,
+          238,
+          239,
+          308
+        ],
+        "floor_ids": [
+          200
+        ],
+        "floor_reference_indices": [
+          7
+        ],
+        "pet_flag_1_instance_levels": [
+          {
+            "instance_index": 96,
+            "id": 375,
+            "level": [
+              1,
+              2
+            ]
+          },
+          {
+            "instance_index": 97,
+            "id": 376,
+            "level": [
+              3,
+              5
+            ]
+          },
+          {
+            "instance_index": 98,
+            "id": 377,
+            "level": [
+              4,
+              6
+            ]
+          },
+          {
+            "instance_index": 148,
+            "id": 431,
+            "level": [
+              6,
+              9
+            ]
+          }
+        ],
+        "official_acquisition_verified": false
+      },
+      "right": {
+        "position": 191,
+        "template_id": 559,
+        "grade": "SAVED_POSITIVE_DOUBLE_FLAG_ROUTES",
+        "route_index": 107,
+        "positive_route_count": 1,
+        "double_flag_route_count": 1,
+        "lv1_double_flag_route_count": 0,
+        "instance_indices": [
+          363
+        ],
+        "area_indices": [
+          371
+        ],
+        "group_ids": [
+          546
+        ],
+        "floor_ids": [
+          20902
+        ],
+        "floor_reference_indices": [
+          125
+        ],
+        "pet_flag_1_instance_levels": [
+          {
+            "instance_index": 363,
+            "id": 1078,
+            "level": [
+              16,
+              18
+            ]
+          }
+        ],
+        "official_acquisition_verified": false
+      },
+      "qualification": "BOTH_EXACT_PROJECTED_FIELDS_EQUAL_NOT_FULL_ROW_OR_IDENTITY",
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 36,
+      "left": {
+        "position": 166,
+        "template_id": 292,
+        "grade": "NO_EXACT_SELECTED_ROW_NOT_ASSESSED",
+        "route_index": null,
+        "positive_route_count": null,
+        "double_flag_route_count": null,
+        "lv1_double_flag_route_count": null,
+        "instance_indices": null,
+        "area_indices": null,
+        "group_ids": null,
+        "floor_ids": null,
+        "floor_reference_indices": null,
+        "pet_flag_1_instance_levels": null,
+        "official_acquisition_verified": false
+      },
+      "right": {
+        "position": 190,
+        "template_id": 558,
+        "grade": "NO_EXACT_SELECTED_ROW_NOT_ASSESSED",
+        "route_index": null,
+        "positive_route_count": null,
+        "double_flag_route_count": null,
+        "lv1_double_flag_route_count": null,
+        "instance_indices": null,
+        "area_indices": null,
+        "group_ids": null,
+        "floor_ids": null,
+        "floor_reference_indices": null,
+        "pet_flag_1_instance_levels": null,
+        "official_acquisition_verified": false
+      },
+      "qualification": "NO_EXACT_SELECTED_ROW_DO_NOT_INFER_ZERO_ROUTES",
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 37,
+      "left": {
+        "position": 166,
+        "template_id": 292,
+        "grade": "NO_EXACT_SELECTED_ROW_NOT_ASSESSED",
+        "route_index": null,
+        "positive_route_count": null,
+        "double_flag_route_count": null,
+        "lv1_double_flag_route_count": null,
+        "instance_indices": null,
+        "area_indices": null,
+        "group_ids": null,
+        "floor_ids": null,
+        "floor_reference_indices": null,
+        "pet_flag_1_instance_levels": null,
+        "official_acquisition_verified": false
+      },
+      "right": {
+        "position": 197,
+        "template_id": 590,
+        "grade": "NO_EXACT_SELECTED_ROW_NOT_ASSESSED",
+        "route_index": null,
+        "positive_route_count": null,
+        "double_flag_route_count": null,
+        "lv1_double_flag_route_count": null,
+        "instance_indices": null,
+        "area_indices": null,
+        "group_ids": null,
+        "floor_ids": null,
+        "floor_reference_indices": null,
+        "pet_flag_1_instance_levels": null,
+        "official_acquisition_verified": false
+      },
+      "qualification": "NO_EXACT_SELECTED_ROW_DO_NOT_INFER_ZERO_ROUTES",
+      "official_identity_verified": false
+    },
+    {
+      "collision_index": 43,
+      "left": {
+        "position": 190,
+        "template_id": 558,
+        "grade": "NO_EXACT_SELECTED_ROW_NOT_ASSESSED",
+        "route_index": null,
+        "positive_route_count": null,
+        "double_flag_route_count": null,
+        "lv1_double_flag_route_count": null,
+        "instance_indices": null,
+        "area_indices": null,
+        "group_ids": null,
+        "floor_ids": null,
+        "floor_reference_indices": null,
+        "pet_flag_1_instance_levels": null,
+        "official_acquisition_verified": false
+      },
+      "right": {
+        "position": 197,
+        "template_id": 590,
+        "grade": "NO_EXACT_SELECTED_ROW_NOT_ASSESSED",
+        "route_index": null,
+        "positive_route_count": null,
+        "double_flag_route_count": null,
+        "lv1_double_flag_route_count": null,
+        "instance_indices": null,
+        "area_indices": null,
+        "group_ids": null,
+        "floor_ids": null,
+        "floor_reference_indices": null,
+        "pet_flag_1_instance_levels": null,
+        "official_acquisition_verified": false
+      },
+      "qualification": "NO_EXACT_SELECTED_ROW_DO_NOT_INFER_ZERO_ROUTES",
+      "official_identity_verified": false
+    }
+  ],
+  "original_assets_published": false
+}
