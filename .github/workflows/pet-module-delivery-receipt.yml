@@ -1,0 +1,23 @@
+name: PET module delivery receipt exact replay
+on:
+  push:
+    branches: ['agent/pet-module-delivery-receipt-20261126']
+    paths:
+      - 'research/pets/PET-MODULE-DELIVERY-REVIEW-CI-OBSERVED-R1.json'
+      - '.github/workflows/pet-module-delivery-receipt.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python tools/stoneage_pet_module_delivery_review.py
+      - run: cmp pet-module-delivery-review.json research/pets/PET-MODULE-DELIVERY-REVIEW-CI-OBSERVED-R1.json
+      - run: sha256sum pet-module-delivery-review.json research/pets/PET-MODULE-DELIVERY-REVIEW-CI-OBSERVED-R1.json
+      - run: PYTHONPATH=. python tools/stoneage_pet_final_review_matrix.py
+      - run: cmp pet-final-review-matrix.json research/pets/PET-FINAL-REVIEW-MATRIX-R1.json
