@@ -152,3 +152,14 @@ python tools/stoneage_pet_source_lookup.py --legacy-pet16 --source tw10_visual -
 
 
 PET16 图像与缺技能凭证：旧日本网页23个已获图像位置（含父记录）、大陆网页7个已获图像位置，保留失败和未知名称；后期2016选中技能表102缺槽、混合备表12缺槽，可在旧查询的 `supplemental_evidence` 中按原位置追溯。没有新增原生SPR或官服发行认证。[完整七维矩阵](../../research/pets/PET-FINAL-REVIEW-MATRIX-R1.json)。
+
+
+## 历史文献查询（独立于现行来源位置与PET16）
+`--documentary` 直接检索已归档委托/栖息地、技能教学及矛盾、初期玩家取得记载、发行事件和未证线索。原名称的候选链接仅表示字面匹配；不推断同版身份、实际遭遇或原技能效果，不把140文献位置叠加为宠物数量。带 `--full` 展开源证据及版本限定。
+```sh
+python tools/stoneage_pet_source_lookup.py --documentary --summary
+python tools/stoneage_pet_source_lookup.py --documentary --source cn20_commission --query 乌力 --exact --full
+python tools/stoneage_pet_source_lookup.py --documentary --source cn2004_trainers --query 猛毒攻击 --exact --full
+python tools/stoneage_pet_source_lookup.py --documentary --source pet25_release --query 艾迪希洛 --exact --full
+```
+[材料对账与限制](../continuity/STONEAGE-PET-HISTORICAL-DOCUMENTARY-20261126.md)。
