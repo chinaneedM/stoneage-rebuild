@@ -1,0 +1,26 @@
+name: PET16 retained source catalogue access
+on:
+  push:
+    branches: ['agent/pet16-ledger-reconcile-20261126']
+    paths:
+      - 'tools/stoneage_pet_legacy_access.py'
+      - 'tools/stoneage_pet_source_lookup.py'
+      - 'docs/pets/UNIFIED-PC-PET-SOURCE-LOOKUP.md'
+      - '.github/workflows/pet16-legacy-access.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python tools/stoneage_pet_source_lookup.py --legacy-pet16 --verify
+      - run: python tools/stoneage_pet_source_lookup.py --legacy-pet16 --source jp_official_web --query ウーリ --exact --full
+      - run: python tools/stoneage_pet_source_lookup.py --legacy-pet16 --source cn_official_web --query web_ordinal:1 --exact --full
+      - run: python tools/stoneage_pet_source_lookup.py --verify
+      - run: python tools/stoneage_pet_gap_queue.py --current --verify
+      - run: PYTHONPATH=. python tools/stoneage_pet_final_review_matrix.py
+      - run: echo "ffda80773b20cfafcf45385648d749000d49bb3f3924f053c1b4a8e98acf2649  pet-final-review-matrix.json" | sha256sum -c -

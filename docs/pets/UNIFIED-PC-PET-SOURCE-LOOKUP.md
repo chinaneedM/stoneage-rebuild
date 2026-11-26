@@ -137,3 +137,15 @@ python3 tools/stoneage_pet_source_lookup.py --query ordinal:375 --source cn85_or
 PYTHONPATH=. python3 tools/stoneage_pet_final_review_matrix.py
 ```
 `review_portrait_reference` 467条（424同名同图号唯一参考）；`review_portrait_conflict` 43条保留名称/图号冲突；`review_motion_reference` 131条分别引用61 CN50和70 TW85的原RD与完整SPR段散列证据。带 --full 展开固定的完整来源行。不得将候选作为同版本原头像、原生动作选择器或官服真实发宠；没有新增正式物种认证。七维复审脚本生成派生 JSON 矩阵，尚不表示模块结项。
+
+
+## PET16 历史分源目录（独立查询模式）
+同一个查询命令的 `--legacy-pet16` 模式回到固定旧目录2,792条来源行，保留七个命名空间。与当前5,924位置有交叉，不能相加计物种。社区配置仅技术参考、原SPR不证明物种，日/大陆运营图鉴不证明实际发宠；大陆6个未知名保留。
+```sh
+python tools/stoneage_pet_source_lookup.py --legacy-pet16 --summary
+python tools/stoneage_pet_source_lookup.py --legacy-pet16 --source jp_official_web --query ウーリ --exact --full
+python tools/stoneage_pet_source_lookup.py --legacy-pet16 --source cn_official_web --query web_ordinal:1 --exact --full
+python tools/stoneage_pet_source_lookup.py --legacy-pet16 --source later2016_templates --query COMMUNITY2016:1 --exact --full
+python tools/stoneage_pet_source_lookup.py --legacy-pet16 --source tw10_visual --query graphic:100015 --exact --full
+```
+[七维验收与历史目录补交](../continuity/STONEAGE-PET16-LEDGER-RECONCILE-20261126.md)。

@@ -1,0 +1,31 @@
+{
+  "schema": "stoneage.pet.final_review.acceptance_receipt.r1",
+  "candidate": "6f7f7f259d3cb0a4794ee7069a22d3cdcc08cd80",
+  "merged_main": "c571455d30ce7475649e4ffc58bb45baecb0e336",
+  "pr": 728,
+  "run": 45836650959,
+  "job": 139967176229,
+  "exact_candidate_actions": {
+    "success": 10,
+    "total": 10
+  },
+  "artifact": {
+    "id": 15127080519,
+    "zip_bytes": 11792,
+    "zip_sha256": "22d6a4d23e8c80aa339f492f59d147113619f02229c0de7b91520916b7ee8948",
+    "json_bytes": 65087,
+    "json_sha256": "ffda80773b20cfafcf45385648d749000d49bb3f3924f053c1b4a8e98acf2649",
+    "json_git_blob_if_archived": "8a3694119db2c0b83dbe6b0c54fc7d912a8493c6",
+    "independently_downloaded_and_crc_checked": true,
+    "full_json_committed": false,
+    "replay_script": "tools/stoneage_pet_final_review_matrix.py"
+  },
+  "counts": {
+    "manifest_sources": 98,
+    "lookup_occurrences": 5924,
+    "queue_positions": 3563,
+    "carrier_groups": 15
+  },
+  "official_species_count": null,
+  "source_bounded_closed": false
+}

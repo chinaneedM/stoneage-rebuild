@@ -1,0 +1,4 @@
+# PET16 历史源目录补交与七维验收凭证（候选）
+2026-11-26。基线 main c571455d30ce7475649e4ffc58bb45baecb0e336/tree d374138411386c0e3d91931008f6053fbec78c75；历史 CURRENT c89e0e33537990aa2132b47c40fef49a985a935c 不变。PR728 精确候选 6f7f7f259d3cb0a4794ee7069a22d3cdcc08cd80 10/10 Actions 成功；run45836650959/job139967176229/工件15127080519，ZIP独立下载11792B与API SHA一致，CRC无错误；JSON65087B SHA及Git blob预期值见 [验收收据](../../research/pets/PET-FINAL-REVIEW-ACCEPTANCE-RECEIPT-R1.json)。完整JSON本轮未写入Git，原候选脚本可复算并核对散列；不可把预期blob当已经存储的对象。
+PET16固定旧目录2792行独立命名空间：后期2016配置1024、图号索引598，mixed25主表495、备表316，TW1原SPR观察131，日本运营网页124、大陆华义网页104（98具名、6未知）。既有当前98源5924查询位置不改变、不累加为8716宠物；旧资料可能重叠，图号与配置不证明官服身份，备表不假定同时启用，运营图鉴不等于真实发宠。现有统一命令增加 --legacy-pet16，按命名空间、原ID、原名、graphic:/template:/web_ordinal:检索，可展开原行及指针。九份PET16源凭证逐Git blob复查；不重下载或改写旧目录。
+**NEXT**：验收本候选精确Actions，复查未纳入PET16与现行98对象的其余材料总账（包括现有日/大陆私有视觉凭证和技能定义等），只补实际检索/字段缺口，最终审查可得源是否处理完毕。仍须用户接受来源有界止点才能换NPC。Stage A 7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，2026 OPEN，全球正式物种总数UNKNOWN。
