@@ -1,0 +1,29 @@
+name: PET Korean 2002 exact image reference CDX probe
+on:
+  push:
+    branches: ['agent/pet-kr2002-image-cdx-20261126']
+    paths:
+      - 'tools/stoneage_pet_kr2002_image_cdx.py'
+      - 'research/pets/PET-KR2002-STATIC-CI-OBSERVED-R1.json'
+      - '.github/workflows/pet-kr2002-image-cdx.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python tools/stoneage_pet_kr2002_image_cdx.py --verify
+      - run: python tools/stoneage_pet_kr2002_image_cdx.py > pet-kr2002-image-cdx.json
+      - run: cat pet-kr2002-image-cdx.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-kr2002-image-cdx-derived
+          path: pet-kr2002-image-cdx.json
+      - run: python tools/stoneage_pet_source_lookup.py --annual-names --verify
+      - run: PYTHONPATH=. python tools/stoneage_pet_final_review_matrix.py
+      - run: cmp pet-final-review-matrix.json research/pets/PET-FINAL-REVIEW-MATRIX-R1.json
