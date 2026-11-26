@@ -301,6 +301,10 @@ def build(d):
                 shop88_routes[skill_id].append(j)
     special89 = d.get("hf89")
     special89_ids = by_id(special89["rows"], "skill_id") if special89 else {}
+    joint90 = d.get("hf90")
+    joint90_positions = by_id(joint90["rows"], "position") if joint90 else {}
+    joint90_fusion = by_id(joint90["rows"], "fusion_index") if joint90 else {}
+    excluded90 = {(r["position"], r["slot_index"]): j for j, r in enumerate(joint90["inheritance_rows"])} if joint90 else {}
     witnesses77 = collections.defaultdict(list)
     for index, witness in enumerate(d.get("hf77", {}).get("rows", [])):
         witnesses77[witness["template_id"]].append((index, witness))
@@ -443,8 +447,8 @@ def build(d):
                         species_can_learn_verified=False, official_runtime_verified=False)
                     shop_links.update(routes)
                 if slot["skill_id"] in special89_ids:
-                    j = special89_ids[slot["skill_id"]]
-                    ref = special89["rows"][j]
+                    special_index = special89_ids[slot["skill_id"]]
+                    ref = special89["rows"][special_index]
                     assert ref["definition_sha256"] == definition["row_sha256"]
                     assert any(p["position"] == i and p["template_sha256"] == x["row_sha256"]
                                and p["slot_index"] == slot["slot_index"] for p in ref["configured_positions"])
@@ -453,7 +457,15 @@ def build(d):
                             w["kind"] != "ITEM_ROLE_CONTEXT_ONLY" for w in ref["witnesses"])
                             else "ITEM_CONTEXT_ONLY" if ref["witnesses"] else "NO_QUALIFIED_PERIOD_REFERENCE_IN_BATCH",
                         same_deployment_verified=False)
-                    ls.append(link("hf89", ["rows", j], "SPECIAL_SKILL_REFERENCE_NOT_OFFICIAL_LEARNABILITY"))
+                    ls.append(link("hf89", ["rows", special_index], "SPECIAL_SKILL_REFERENCE_NOT_OFFICIAL_LEARNABILITY"))
+                if (i, slot["slot_index"]) in excluded90:
+                    ix = excluded90[(i, slot["slot_index"])]
+                    exclusion = joint90["inheritance_rows"][ix]
+                    assert exclusion["skill_id"] == slot["skill_id"]
+                    skill["later_comparison_fusion_exclusion"] = dict(
+                        qualification=exclusion["qualification"], same_deployment_verified=False)
+                    ls.append(link("hf90", ["inheritance_rows", ix], "NUMERIC_EXCLUSION_LATER_COMPARISON_ONLY"))
+                    ls.append(link("hf55_fusion", ["comparison", "flow", "excluded_inheritance_skill_ids"], "LATER_COMPARISON_NOT_OFFICIAL_INHERITANCE"))
                 skills.append(skill)
                 ls.append(link("hf76", ["configured_skill_definitions", j], "SAVED_CONFIGURED_SKILL_NOT_BIRTH_SKILL_PROOF"))
             for j in sorted(shop_links):
@@ -466,6 +478,15 @@ def build(d):
                 configured_skill_slots=skills, saved_reward_instance_id=row["saved_reward_instance_id"],
                 official_deployment_verified=False,
             )
+        if i in joint90_positions:
+            ix = joint90_positions[i]
+            joint = joint90["rows"][ix]
+            assert joint["template_row_sha256"] == x["row_sha256"]
+            detail["conditional_joint_panel_witness"] = dict(
+                observed_panel=joint["observed_panel"], qualification=joint["qualification"],
+                official_birth_verified=False, official_fusion_verified=False)
+            ls.append(link("hf90", ["rows", ix], "JOINT_MODEL_COMPATIBILITY_ONLY"))
+            ls.append(link("fusion2003", ["records", joint["fusion_index"]], "PERIOD_FUSION_PANEL_NOT_NATURAL_BIRTH_PROOF"))
         for index, witness in witnesses77.get(k, []):
             assert x["name"] == witness["name"]
             ls.append(link("hf77", ["rows", index], "REPOSTED_PLAYER_PANEL_NAME_WITNESS_NOT_SAME_DEPLOYMENT"))
@@ -494,7 +515,12 @@ def build(d):
         ls=[link("cn50",["records",cnid[o]],"NAME_ONLY_CATALOGUE_JOIN")] if o in cnid else []
         add("sina2003",["rows",i],labels,"PERIOD_2003_CATALOGUE_NAME_LINK" if labels else "UNRESOLVED_CATALOGUE_ROW",[x["printed_number"]],ls,dict(reported_elements=x["reported_elements"],level_one_acquisition_cell_has_text=x["level_one_acquisition_cell_has_text"],innate_skill_cell_has_text=x["innate_skill_cell_has_text"]))
     for i,x in enumerate(d["fusion2003"]["records"]):
-        add("fusion2003",["records",i],[x["displayed_name"]],"PERIOD_FUSION_PANEL_SAMPLE",[x["printed_number"]])
+        ls = []
+        if i in joint90_fusion:
+            ix = joint90_fusion[i]
+            ls = [link("hf90", ["rows", ix], "JOINT_MODEL_COMPATIBILITY_ONLY"),
+                  link("tw75", ["pet_flag_1_field_projections", joint90["rows"][ix]["position"]], "NAME_ELEMENT_COMPATIBILITY_NOT_SAME_DEPLOYMENT")]
+        add("fusion2003",["records",i],[x["displayed_name"]],"PERIOD_FUSION_PANEL_SAMPLE",[x["printed_number"]],ls)
     specs=[
       ("hf18","starters","name","STARTER_WITNESS"),("hf18","coordinate_cases","name","CAPTURE_WITNESS"),
       ("hf19","rows","name","PERIOD_ACQUISITION_NAME"),("hf19b","coordinate_cases","source_name","CAPTURE_WITNESS"),
@@ -806,6 +832,55 @@ def verify(m,d,entries):
         assert all(not ref["same_deployment_verified"] for ref in refs)
         assert all(not r["same_deployment_learnability_verified"] and not r["official_birth_skill_verified"]
                    and not r["official_runtime_verified"] for r in special)
+    # A resolved pointer is insufficient: verify each definition ID and hash.
+    if "hf76" in d:
+        for entry, row in zip(high45, d["hf76"]["rows"]):
+            actual = [resolve(d, l["source"], l["pointer"])
+                      for l in entry["linked_records"]
+                      if l["source"] == "hf76" and l["pointer"][0] == "configured_skill_definitions"]
+            assert [(z["skill_id"], z["row_sha256"]) for z in actual] == [
+                (z["skill_id"], z["definition_row_sha256"]) for z in row["configured_skill_slots"]]
+    if "hf90" in d:
+        if __package__:
+            from .stoneage_pet_growth_model import project_pet_birth
+            from .stoneage_pet_detail30_base_panel import project_pet_source_base_panel
+        else:
+            from stoneage_pet_growth_model import project_pet_birth
+            from stoneage_pet_detail30_base_panel import project_pet_source_base_panel
+        joint = d["hf90"]
+        assert len(joint["rows"]) == 41
+        assert {row["fusion_index"] for row in joint["rows"]} == set(range(41))
+        assert len({row["position"] for row in joint["rows"]}) == 41
+        assert sum(row["selected_archive_grade"] == "EXACT_SHARED_TEMPLATE_ROW" for row in joint["rows"]) == 40
+        for row in joint["rows"]:
+            i = row["position"]
+            pet = d["tw75"]["pet_flag_1_field_projections"][i]
+            sample = d["fusion2003"]["records"][row["fusion_index"]]
+            assert (pet["name"], pet["elements"], pet["row_sha256"]) == (row["name"], row["elements"], row["template_row_sha256"])
+            assert sample["displayed_name"] == pet["name"]
+            assert [sample["image"]["observed_elements"][e] * 10 for e in ("earth","water","fire","wind")] == pet["elements"]
+            assert sample["image"]["sha256"] == row["panel_image_sha256"]
+            assert d["hf76"]["rows"][i]["selected_table_grade"] == row["selected_archive_grade"]
+            assert not row["official_birth_verified"] and not row["official_fusion_verified"]
+            witness = row["witness"]
+            rolls = [j for j, n in enumerate(witness["allocation_counts"]) for _ in range(n)]
+            birth = project_pet_birth(template_base=pet["base"], init_num=pet["initnum"], lvup_point=0,
+                                      level=1, offsets=witness["offsets"], birth_rolls=rolls)
+            assert list(birth.internal_stats) == witness["internal_stats"]
+            panel = project_pet_source_base_panel(birth.internal_stats)
+            stats = sample["image"]["observed_stats"]
+            assert [panel.max_hp, panel.attack, panel.defense, panel.quick] == row["observed_panel"] == [
+                stats["max_hp"], stats["attack"], stats["defense"], stats["agility"]]
+            assert all(lo <= value <= hi for value, (lo, hi) in zip(row["observed_panel"], row["marginal_ranges"]))
+        excluded = set(d["hf55_fusion"]["comparison"]["flow"]["excluded_inheritance_skill_ids"])
+        expected = {(i, slot["slot_index"], slot["skill_id"], slot["definition_row_sha256"])
+                    for i, row in enumerate(d["hf76"]["rows"]) for slot in row["configured_skill_slots"]
+                    if slot["skill_id"] in excluded}
+        actual = {(r["position"], r["slot_index"], r["skill_id"], r["skill_definition_sha256"]) for r in joint["inheritance_rows"]}
+        assert expected == actual and len(actual) == 8
+        assert all(not r["same_deployment_verified"] for r in joint["inheritance_rows"])
+        assert source_counts["hf90"] == 49 and source_counts["hf55_fusion"] == 8
+        assert not joint["probability_inferred"] and joint["summary"]["official_fields_closed"] == 0
     roles58 = d["hf58"]["rows"]
     master58 = d["tw75"]["pet_flag_1_field_projections"]
     originals58 = {r["tw75_row_index"]: r for r in d["hf50"]["projection"]["records"]}
