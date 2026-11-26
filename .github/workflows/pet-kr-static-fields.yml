@@ -1,0 +1,29 @@
+name: PET Korea 2002 static fields and material classification
+on:
+  push:
+    branches: ['agent/pet-kr-material-fields-20261126']
+    paths:
+      - 'tools/stoneage_pet_kr_static_fields.py'
+      - 'research/pets/PET-KR-ARCHIVE-REPLAY-CI-OBSERVED-R1.json'
+      - '.github/workflows/pet-kr-static-fields.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python tools/stoneage_pet_kr_static_fields.py --verify
+      - run: python tools/stoneage_pet_kr_static_fields.py > pet-kr-static-fields.json
+      - run: cat pet-kr-static-fields.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-kr-static-fields-derived
+          path: pet-kr-static-fields.json
+      - run: python tools/stoneage_pet_source_lookup.py --annual-names --verify
+      - run: PYTHONPATH=. python tools/stoneage_pet_final_review_matrix.py
+      - run: cmp pet-final-review-matrix.json research/pets/PET-FINAL-REVIEW-MATRIX-R1.json

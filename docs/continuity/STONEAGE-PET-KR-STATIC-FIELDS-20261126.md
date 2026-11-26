@@ -1,0 +1,4 @@
+# 韩国 2002 官网原页与下载材料静态分类候选
+基线 main 0af9b2e38e151cbc3d2d47a14fcb28f53ca935b3 / tree db89bc757e4a27c38ef4ee94733628c8d890d2d6。CURRENT c89e0e33537990aa2132b47c40fef49a985a935c / 2709173B 保留；完整 Git blob 读取，SOURCE-REGISTRY 同样回退完整 blob 674b15ee41e5e20230934d39ed8c6c2a3cf928f0。旧候选 b7a89bdb13f0e5d1d95567060540e4ad16ec324d 的 run45843539835/job139991186140 日志完整 JSON 持久化候选，artifact15128732749 ZIP digest 为 API 报告值，尚未独立下载 ZIP。15/15 原响应确证，三材料 RAR 1493067B、两 PE 各622592B；原站七页的96个编号 GIF路径仅网页参考。
+新候选重用精确时间戳、CDX SHA1 及旧实取 SHA256 双校验。仅取直接 HTML 行内短字段候选、编号图片路径、PE 头/节及版本签名候选、RAR4 文件头及有限技术文件名；不执行 EXE、不解压 RAR 文件内容、不持久化原商业资源、不判定同服身份。短字段尚待语义人工审阅，文件头不等于客户端证明。旧最终矩阵/lookup 不变。
+NEXT：验收候选精确 Actions 和派生结果，依据实读内容确定是否有可用宠物名称/数值/图像关系及三材料真实用途，持久化有界证据，再继续宠物模块终审。若响应或解析失败，记录准确失败原因，不将未取得证据作缺失。PET 锁定，2026 OPEN，全球正式物种总数 UNKNOWN，Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79 暂停。
