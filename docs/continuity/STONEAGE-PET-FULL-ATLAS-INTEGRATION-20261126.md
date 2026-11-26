@@ -11,3 +11,5 @@ python tools/stoneage_pet_offline_atlas.py --output pet-source-atlas-r1.html
 该页只涵盖现有主查询，不含另五个独立查询目录的整合，不含实际原图或原始动画播放，未达到完整图鉴。正式字段不因展示升级；缺原服同部署主档，不能将条件范围认作官服数据。源位置、字面与物种数不等价。历史整体完成UNKNOWN，Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。
 
 NEXT：先验证候选精确CI、实际HTML和浏览器搜索/筛选/分页，再复用既有私人原像素资料，实现按来源位置对照真实头像与动作；整合其他五查询目录并建立逐宠字段专门展示和逐项缺件验收。优先丰富高版本PC资料，再作向下兼容；不切NPC，不进行新游戏设计。不得把本候选的HTML输出计为新增正式宠物或完整模块。
+
+候选 `7cab473f9e543006a536bda2546f99fe242e70dd` 已实证7/7 Actions成功，专项 [run 45850912072](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/45850912072) 生成 HTML，artifact15132418569 / ZIP956939B / API digest sha256:adf5d77c861017fcce4127eb93e9b0f23abf2aa5081a8dc56ba236a9f3c8acae（未独立下载）。本修订追加124档原证Git blob校验和实际 file:// Chromium 自动化测试；仍须精确新候选 Actions。私人原图材料仅检索到旧124图概览与重建脚本，未在本轮读取并验证原图资产，不宣称完成。

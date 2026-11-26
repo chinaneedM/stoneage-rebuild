@@ -26,6 +26,8 @@ def payload():
         path = detail["dossier_path"]
         assert path.startswith("research/pets/profiles/") and ".." not in Path(path).parts
         raw = (lookup.ROOT / path).read_bytes()
+        source_row = lookup.resolve(data, row["source"], row["pointer"])
+        assert lookup.blob(raw) == source_row["dossier_git_blob"]
         profile = json.loads(raw)
         assert profile["profile_id"] == detail["pet_id"]
         assert profile["names"]["original_client"] in row["labels"]
