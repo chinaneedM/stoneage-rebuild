@@ -175,3 +175,13 @@ python tools/stoneage_pet_source_lookup.py --history --version 2.0
 python tools/stoneage_pet_source_lookup.py --history --query ハクエン --exact --full
 ```
 [年区证据接入说明](../continuity/STONEAGE-PET-YEAR-REGION-ACCESS-20261126.md)。
+
+
+## 年审具名证据补查
+`--annual-names` 对28份年度收据中明确选取的原名称字段及原文字面证据逐一查阅。161个原位置（140宠物名证据、21非宠物身份上下文）不是新增物种或完整历史发行名录。支持按审查年份、地区、原名称过滤；`--full` 展开原字段、原来源及候选链接。日期语义独立，未作同版身份提升；敌人、NPC、未证奖品等另栏。未穷尽各年审引用的从属报告。
+```sh
+python tools/stoneage_pet_source_lookup.py --annual-names --summary
+python tools/stoneage_pet_source_lookup.py --annual-names --region KR --query 도에디크 --exact --full
+python tools/stoneage_pet_source_lookup.py --annual-names --year 2023 --query 里拉拉 --exact --full
+``
+[补接来源及限制](../continuity/STONEAGE-PET-ANNUAL-NAMES-20261126.md)。
