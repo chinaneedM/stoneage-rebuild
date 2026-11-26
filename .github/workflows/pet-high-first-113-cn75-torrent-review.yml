@@ -1,0 +1,30 @@
+name: PET113 CN75 exact torrent identity review
+on:
+  push:
+    branches: ['agent/pet-high-first-108-cn75-archive-routes-20261126']
+    paths:
+      - 'tools/stoneage_pet_high_first_113_cn75_torrent_review.py'
+      - '.github/workflows/pet-high-first-113-cn75-torrent-review.yml'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/actions/artifacts/15116282300/zip > "$RUNNER_TEMP/pet112.zip"
+          python -m tools.stoneage_pet_high_first_113_cn75_torrent_review --artifact "$RUNNER_TEMP/pet112.zip" --output "$RUNNER_TEMP/pet113.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet113-cn75-torrent-identity-review
+          path: ${{ runner.temp }}/pet113.json
+          if-no-files-found: error
+          retention-days: 15

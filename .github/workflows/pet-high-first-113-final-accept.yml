@@ -1,0 +1,24 @@
+name: PET113 final CN75 archival identity receipt acceptance
+on:
+  push:
+    branches: ['agent/pet-high-first-108-cn75-archive-routes-20261126']
+    paths:
+      - 'tools/stoneage_pet_high_first_113_accept.py'
+      - 'research/pets/PET-HIGH-FIRST-113-CN75-TORRENT-IDENTITY-REVIEW-R1.json'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  accept:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/actions/artifacts/15116447669/zip > "$RUNNER_TEMP/pet113.zip"
+          python -m tools.stoneage_pet_high_first_113_accept --artifact "$RUNNER_TEMP/pet113.zip"

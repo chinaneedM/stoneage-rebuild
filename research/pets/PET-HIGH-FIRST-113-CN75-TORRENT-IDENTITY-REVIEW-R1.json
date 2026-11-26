@@ -1,0 +1,116 @@
+{
+  "official_closures": 0,
+  "original_assets_published": false,
+  "original_client_verified": false,
+  "peer_or_tracker_contacted": false,
+  "prior_artifact": 15116282300,
+  "prior_report_git_blob": "a5dc9d2bdae37f36b3c4900d701f9cbe9c8bae1c",
+  "prior_report_sha256": "cd92ad584fa70bf41113ab0587807fa966f3775d4ff45edc8ca2d4f8f2639bdf",
+  "prior_zip_sha256": "67f22d7de1ff497b65f9dd28127c12d936657efeb5200fefa5a003afa70935fe",
+  "results": [
+    {
+      "bencode_valid": true,
+      "cdx": {
+        "digest": "4Q3FZWKKEUGKFLKWI4NXUBEDIY5XEA24",
+        "length": "29942",
+        "mimetype": "text/plain",
+        "original": "http://210.51.191.171:80/StoneAge75.rar.torrent",
+        "statuscode": "200",
+        "timestamp": "20040913021227"
+      },
+      "cdx_digest_matches": true,
+      "cdx_sha1_base32_recomputed": "4Q3FZWKKEUGKFLKWI4NXUBEDIY5XEA24",
+      "declared_length_candidate": 770632364,
+      "expected_single_rar": true,
+      "has_files": false,
+      "has_length": true,
+      "info_bencode_sha256": "6076881fd771f159d34db0d298d2eb23a4f99a86d7ac157efebb2bcfb3c1664f",
+      "metadata": {
+        "creation_date_unverified": 1094726443,
+        "declared_lengths_not_original_payload_verified": true,
+        "declared_total_bytes": 770632364,
+        "files": [
+          {
+            "length": 770632364,
+            "path": [
+              "StoneAge75.rar"
+            ]
+          }
+        ],
+        "info_bencode_sha256": "6076881fd771f159d34db0d298d2eb23a4f99a86d7ac157efebb2bcfb3c1664f",
+        "mode": "SINGLE_FILE",
+        "name": "StoneAge75.rar",
+        "peer_or_tracker_contacted": false,
+        "piece_count": 1470,
+        "piece_hashes_sha256": "4a9ce7d4da0b84c7acc611668c9637e2d787bad2fe4b59971e8eacddfe1a4c58",
+        "piece_length": 524288,
+        "torrent_metadata_bytes": 29609,
+        "torrent_metadata_sha256": "2bb78d0dd2a1949d72b7945e4be891e91b5a0f7ce1607fde2aa0e2b37fda3ce7"
+      },
+      "metadata_consistent": true,
+      "name_candidate": "StoneAge75.rar",
+      "name_matches_expected": true,
+      "piece_hash_bytes": 29400,
+      "piece_length_candidate": 524288,
+      "prior_response_sha256": "2bb78d0dd2a1949d72b7945e4be891e91b5a0f7ce1607fde2aa0e2b37fda3ce7",
+      "replay_url": "https://web.archive.org/web/20040913021227id_/http://210.51.191.171:80/StoneAge75.rar.torrent",
+      "response_bytes": 29609,
+      "response_sha256": "2bb78d0dd2a1949d72b7945e4be891e91b5a0f7ce1607fde2aa0e2b37fda3ce7",
+      "result": "EXACT_REPLAY_VERIFIED",
+      "status": 200
+    },
+    {
+      "bencode_valid": true,
+      "cdx": {
+        "digest": "5Z3WAPKHYO4YQNMSES4FKZUHWGDCIXE7",
+        "length": "30233",
+        "mimetype": "text/plain",
+        "original": "http://219.238.234.163:80/StoneAge75.rar.torrent",
+        "statuscode": "200",
+        "timestamp": "20041116033726"
+      },
+      "cdx_digest_matches": true,
+      "cdx_sha1_base32_recomputed": "5Z3WAPKHYO4YQNMSES4FKZUHWGDCIXE7",
+      "declared_length_candidate": 779056544,
+      "expected_single_rar": false,
+      "failure_stage": "EXPECTED_SINGLE_RAR_IDENTITY",
+      "has_files": false,
+      "has_length": true,
+      "info_bencode_sha256": "d63510ac49490958f93404d4dc2c9a3e92d289ac880f6dae4531434e6aacdf2e",
+      "metadata": {
+        "creation_date_unverified": 1100231073,
+        "declared_lengths_not_original_payload_verified": true,
+        "declared_total_bytes": 779056544,
+        "files": [
+          {
+            "length": 779056544,
+            "path": [
+              "stoneage7.5.rar"
+            ]
+          }
+        ],
+        "info_bencode_sha256": "d63510ac49490958f93404d4dc2c9a3e92d289ac880f6dae4531434e6aacdf2e",
+        "mode": "SINGLE_FILE",
+        "name": "stoneage7.5.rar",
+        "peer_or_tracker_contacted": false,
+        "piece_count": 1486,
+        "piece_hashes_sha256": "a580063953575b620c777ead524ba2a8467062620efbb714a526067a7d8f3755",
+        "piece_length": 524288,
+        "torrent_metadata_bytes": 29885,
+        "torrent_metadata_sha256": "d991215661734796a75e9ede55630cd4729a343d968d5e233f067cfdb0d5791b"
+      },
+      "metadata_consistent": true,
+      "name_candidate": "stoneage7.5.rar",
+      "name_matches_expected": false,
+      "piece_hash_bytes": 29720,
+      "piece_length_candidate": 524288,
+      "prior_response_sha256": "d991215661734796a75e9ede55630cd4729a343d968d5e233f067cfdb0d5791b",
+      "replay_url": "https://web.archive.org/web/20041116033726id_/http://219.238.234.163:80/StoneAge75.rar.torrent",
+      "response_bytes": 29885,
+      "response_sha256": "d991215661734796a75e9ede55630cd4729a343d968d5e233f067cfdb0d5791b",
+      "result": "EXACT_REPLAY_VERIFIED",
+      "status": 200
+    }
+  ],
+  "schema": "stoneage.pet113.cn75.torrent_identity_review.r1"
+}

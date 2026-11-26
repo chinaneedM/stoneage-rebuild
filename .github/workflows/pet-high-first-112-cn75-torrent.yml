@@ -1,0 +1,39 @@
+name: PET112 CN75 torrent archival metadata and custody
+on:
+  push:
+    branches: ['agent/pet-high-first-108-cn75-archive-routes-20261126']
+    paths:
+      - 'tools/stoneage_pet_high_first_112_cn75_torrent.py'
+      - '.github/workflows/pet-high-first-112-cn75-torrent.yml'
+permissions:
+  contents: read
+jobs:
+  preserve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    permissions:
+      actions: read
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/actions/artifacts/15114803857/zip > "$RUNNER_TEMP/pet111.zip"
+          python -m tools.stoneage_pet_high_first_112_cn75_torrent --artifact "$RUNNER_TEMP/pet111.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet112-cn75-torrent-derived-metadata
+          path: research/pets/PET-HIGH-FIRST-112-CN75-TORRENT-PREFLIGHT-R1.json
+          if-no-files-found: error
+          retention-days: 15
+      - name: Retain derived reports only
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/pets/PET-HIGH-FIRST-111-CN75-PATCH-CONTEXT-R1.json research/pets/PET-HIGH-FIRST-112-CN75-TORRENT-PREFLIGHT-R1.json
+          git commit -m 'PET111–112: retain verified archive context and torrent preflight metadata'
+          git push origin HEAD:agent/pet-high-first-108-cn75-archive-routes-20261126
