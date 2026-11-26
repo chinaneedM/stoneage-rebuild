@@ -1,0 +1,25 @@
+name: PET whole-module current coverage review
+on:
+  push:
+    branches: ['agent/pet126-whole-module-review-20261126']
+    paths:
+      - 'tools/stoneage_pet_whole_module_review.py'
+      - '.github/workflows/pet-whole-module-review.yml'
+      - 'docs/continuity/STONEAGE-PET-WHOLE-MODULE-REVIEW-20261126.md'
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: PYTHONPATH=. python tools/stoneage_pet_whole_module_review.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-whole-module-derived-review
+          path: pet-whole-module-review.json
+          if-no-files-found: error
