@@ -1,0 +1,184 @@
+{
+  "schema": "stoneage.pet-atlas-r50.portal-catalogue-receipt-r1",
+  "date": "2026-11-27",
+  "parent": "2e365f95d44db0838fb639583bd68d127d08d4cd",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "source_grade": "LEGACY_PC_PORTAL_UNDATED_BUILD_UNVERIFIED",
+  "sources": [
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow11.htm",
+      "range": [
+        81,
+        88
+      ],
+      "family": "克克尔",
+      "access": "FULL_SEARCH_CACHE_DIRECT_OPEN_FAILED"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow12.htm",
+      "range": [
+        89,
+        96
+      ],
+      "family": "凯比",
+      "access": "FULL_SEARCH_CACHE_DIRECT_OPEN_FAILED"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow13.htm",
+      "range": [
+        97,
+        104
+      ],
+      "family": "格尔顿",
+      "access": "DIRECT_RENDERED"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow14.htm",
+      "range": [
+        105,
+        112
+      ],
+      "family": "布克",
+      "access": "DIRECT_RENDERED"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow15.htm",
+      "range": [
+        113,
+        120
+      ],
+      "family": "卡克尔",
+      "access": "FULL_SEARCH_CACHE_DIRECT_OPEN_FAILED"
+    }
+  ],
+  "summary": {
+    "new_catalogue_positions": 40,
+    "cumulative_catalogue_positions": 136,
+    "birth_range_rows": 20,
+    "birth_mixed_rows": 1,
+    "birth_missing_rows": 2,
+    "birth_scalar_rows": 17,
+    "full_growth_endpoint_rows": 13,
+    "growth_scalar_rows": 0,
+    "partial_growth_rows": 5,
+    "unknown_growth_rows": 22,
+    "lv1_location_reward_rows": 29,
+    "capacity_known": 40,
+    "reference_edges": 181,
+    "linked_positions": 181,
+    "by_lane": {
+      "tw10": 20,
+      "cn50": 40,
+      "tw75": 43,
+      "sina2003": 38,
+      "cn85_original": 40
+    },
+    "by_grade": {
+      "normalized_detail_name": 70,
+      "literal_detail_name": 108,
+      "index_name_candidate": 3
+    },
+    "element_comparison": {
+      "unknown": 100,
+      "equal": 76,
+      "conflict": 5
+    },
+    "unmatched_numbers": []
+  },
+  "source_access_counts": {
+    "direct_rendered": 16,
+    "full_search_cache_direct_open_failed": 24
+  },
+  "conflicts": {
+    "index_detail": {
+      "number": 96,
+      "detail": "司卡特",
+      "index": "可卡特",
+      "qualification": "separate candidate, no merge; no detail literal matches"
+    },
+    "malformed_growth": {
+      "number": 92,
+      "field": "attack",
+      "literal": "?～??",
+      "qualification": "unknown"
+    },
+    "birth_missing": [
+      94,
+      118
+    ],
+    "coordinates": [
+      {
+        "numbers": [
+          113,
+          114
+        ],
+        "literal": "81.1140",
+        "qualification": "retained without correction"
+      },
+      {
+        "number": 102,
+        "portal": "9.4",
+        "prior_R31": "9.43",
+        "qualification": "different source reports, do not overwrite"
+      }
+    ]
+  },
+  "private_files": [
+    [
+      "StoneAge-PET-R50-Portal-Catalogue.zip",
+      4990619,
+      "302fdf4baa662ba81fc28deae0821ce314c51724d69f7187a794edf1f82b4bd6"
+    ],
+    [
+      "R50-portal-catalogue.json",
+      null,
+      "0e5ba0eeb62426bf86dce5bd2f4e9829b9fa9d6bc5dc2ad8417ecff7c62f13ce"
+    ],
+    [
+      "r50-facts.tsv",
+      null,
+      "ebd3a21eb8e54187e08a464a5b4ee37613ec5972e336a9056324ccd689530b31"
+    ],
+    [
+      "build_r50.py",
+      null,
+      "ff3b8dacd9bd0edb88ce5a94d45621f713f28b70d539d2d1dc04617a915210ca"
+    ],
+    [
+      "test_r50.py",
+      null,
+      "7a43c4e15c4a99310c22a76961d34408e4f33474188199cb448f707542f96bcd"
+    ],
+    [
+      "R50-build.log",
+      null,
+      "26efd9e739b222a4d03c7fd227b89876f6499e7fc389422b4601dbd79ec10ab2"
+    ],
+    [
+      "R50-browser.log",
+      null,
+      "14515c483d5c1aa4684fc873f9f0a1f8f07ba09716dc27af5a681727beb41bf8"
+    ]
+  ],
+  "prior_zip": "a65bac0bb29c151dfb5097991ec873235c6df5f7a885f072482c568b2f4f8886",
+  "custody": "private Library /石器时代",
+  "verification": {
+    "zip_crc": "PASS",
+    "prior_data_exact_equal": true,
+    "prior_25_gifs_exact_equal": true,
+    "chromium_document_replay": "PASS",
+    "index_count": 136,
+    "number_checks": 14,
+    "alias_search": 1,
+    "profile_checks": 3,
+    "requests_aborted": true,
+    "windows_direct_launch": false
+  },
+  "raw_source_bytes_authenticated": false,
+  "official_closures": 0,
+  "source_positions": 6207,
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Continue unprocessed portal pages 16–20 and later, using direct rendered pages first and marking full search-cache records separately when direct access fails; preserve numerical/identity conflicts, no blocked bulk retry."
+}
