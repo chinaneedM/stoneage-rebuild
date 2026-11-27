@@ -1,0 +1,1360 @@
+{
+  "schema": "stoneage.pet.atlas_r78.sea_dragon_role_routes.r1",
+  "date": "2026-11-27",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "parent": "b0bbf65ac6352fa7b33b15cd3bbd5472a3573f2e",
+  "comparison": {
+    "repo": "gavinlinasd/StoneAge",
+    "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "pins": {
+      "enemy1.txt": "bf245a391adeace09915b6e425754b54ab69a8f6",
+      "group1.txt": "1be75eb3e56ab16d4b433146ec59538ad651c874",
+      "encount.txt": "89da97a15ea866a36f26ec3bb7ab5490f3eccc5f",
+      "enemybase1.txt": "a19a508975e3a982fada323861b35b2edab79349",
+      "setup.cf": "bd834cd1a7dfa3af6e14210d0cdf15b217b0e72f",
+      "enemy.h": "e19b5251378c3a3310454ac05b357f63ce9dd38b"
+    },
+    "configured_tables": [
+      "enemy1.txt",
+      "enemybase1.txt",
+      "group1.txt",
+      "encount.txt"
+    ],
+    "prior_hf17_blob": "63af501ab483770c5c58cb2d62152ab8923dcc2b",
+    "prior_hf87_blob": "a18c6d69c49069f54e4139f916e64d90d387dbfd",
+    "map_header_blob": "3b2bbe6d374a875baa8934d3ed8b7eca45e7b328"
+  },
+  "summary": {
+    "instances": 6,
+    "lv1_instances": 2,
+    "high_level_instances": 4,
+    "group_refs": 6,
+    "raw_route_refs": 38,
+    "positive_route_refs": 37,
+    "blank_weight_route_refs": 1,
+    "positive_regions": 10,
+    "raw_regions": 11,
+    "per_template": [
+      {
+        "template": 131,
+        "positive_region_count": 10,
+        "raw_region_count": 10
+      },
+      {
+        "template": 132,
+        "positive_region_count": 8,
+        "raw_region_count": 9
+      }
+    ],
+    "drop_item_ids": 12,
+    "official_closures": 0
+  },
+  "enemies": [
+    {
+      "line": 1938,
+      "name": "火水龙",
+      "instance": 2415,
+      "template": 131,
+      "level": [
+        1,
+        1
+      ],
+      "pet_flag": 1,
+      "drops": []
+    },
+    {
+      "line": 1939,
+      "name": "地水龙",
+      "instance": 2416,
+      "template": 132,
+      "level": [
+        1,
+        1
+      ],
+      "pet_flag": 1,
+      "drops": []
+    },
+    {
+      "line": 1951,
+      "name": "200奇肯沃",
+      "instance": 2429,
+      "template": 131,
+      "level": [
+        150,
+        200
+      ],
+      "pet_flag": 0,
+      "drops": [
+        {
+          "item_id": 1728,
+          "configured_itemprob": 13
+        },
+        {
+          "item_id": 1729,
+          "configured_itemprob": 10
+        },
+        {
+          "item_id": 1730,
+          "configured_itemprob": 8
+        }
+      ]
+    },
+    {
+      "line": 1952,
+      "name": "200奇肯克奈",
+      "instance": 2430,
+      "template": 132,
+      "level": [
+        150,
+        200
+      ],
+      "pet_flag": 0,
+      "drops": [
+        {
+          "item_id": 1743,
+          "configured_itemprob": 13
+        },
+        {
+          "item_id": 1744,
+          "configured_itemprob": 10
+        },
+        {
+          "item_id": 1745,
+          "configured_itemprob": 8
+        }
+      ]
+    },
+    {
+      "line": 1953,
+      "name": "140奇肯沃",
+      "instance": 2431,
+      "template": 131,
+      "level": [
+        131,
+        140
+      ],
+      "pet_flag": 0,
+      "drops": [
+        {
+          "item_id": 1731,
+          "configured_itemprob": 13
+        },
+        {
+          "item_id": 1738,
+          "configured_itemprob": 10
+        },
+        {
+          "item_id": 1739,
+          "configured_itemprob": 8
+        }
+      ]
+    },
+    {
+      "line": 1954,
+      "name": "140奇肯克奈",
+      "instance": 2432,
+      "template": 132,
+      "level": [
+        131,
+        140
+      ],
+      "pet_flag": 0,
+      "drops": [
+        {
+          "item_id": 1740,
+          "configured_itemprob": 13
+        },
+        {
+          "item_id": 1741,
+          "configured_itemprob": 10
+        },
+        {
+          "item_id": 1742,
+          "configured_itemprob": 8
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "line": 971,
+      "id": 1167,
+      "hits": [
+        {
+          "instance": 2431,
+          "weight": 1
+        }
+      ],
+      "valid_enemy_count": 2,
+      "item_gates": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "line": 972,
+      "id": 1168,
+      "hits": [
+        {
+          "instance": 2431,
+          "weight": 1
+        }
+      ],
+      "valid_enemy_count": 2,
+      "item_gates": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "line": 973,
+      "id": 1169,
+      "hits": [
+        {
+          "instance": 2432,
+          "weight": 1
+        }
+      ],
+      "valid_enemy_count": 2,
+      "item_gates": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "line": 974,
+      "id": 1170,
+      "hits": [
+        {
+          "instance": 2432,
+          "weight": 1
+        }
+      ],
+      "valid_enemy_count": 4,
+      "item_gates": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "line": 975,
+      "id": 1171,
+      "hits": [
+        {
+          "instance": 2429,
+          "weight": 1
+        }
+      ],
+      "valid_enemy_count": 2,
+      "item_gates": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "line": 977,
+      "id": 1173,
+      "hits": [
+        {
+          "instance": 2430,
+          "weight": 1
+        }
+      ],
+      "valid_enemy_count": 2,
+      "item_gates": [
+        -1,
+        -1
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "line": 888,
+      "index": 944,
+      "floor": 817,
+      "rect": [
+        168,
+        255,
+        253,
+        265
+      ],
+      "group": 1171,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2429
+      ]
+    },
+    {
+      "line": 890,
+      "index": 946,
+      "floor": 817,
+      "rect": [
+        43,
+        293,
+        104,
+        343
+      ],
+      "group": 1173,
+      "weight": null,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2430
+      ]
+    },
+    {
+      "line": 892,
+      "index": 948,
+      "floor": 817,
+      "rect": [
+        105,
+        373,
+        143,
+        428
+      ],
+      "group": 1171,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2429
+      ]
+    },
+    {
+      "line": 894,
+      "index": 950,
+      "floor": 817,
+      "rect": [
+        144,
+        383,
+        208,
+        428
+      ],
+      "group": 1167,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2431
+      ]
+    },
+    {
+      "line": 894,
+      "index": 950,
+      "floor": 817,
+      "rect": [
+        144,
+        383,
+        208,
+        428
+      ],
+      "group": 1168,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2431
+      ]
+    },
+    {
+      "line": 894,
+      "index": 950,
+      "floor": 817,
+      "rect": [
+        144,
+        383,
+        208,
+        428
+      ],
+      "group": 1169,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2432
+      ]
+    },
+    {
+      "line": 894,
+      "index": 950,
+      "floor": 817,
+      "rect": [
+        144,
+        383,
+        208,
+        428
+      ],
+      "group": 1170,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2432
+      ]
+    },
+    {
+      "line": 894,
+      "index": 950,
+      "floor": 817,
+      "rect": [
+        144,
+        383,
+        208,
+        428
+      ],
+      "group": 1173,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2430
+      ]
+    },
+    {
+      "line": 895,
+      "index": 951,
+      "floor": 817,
+      "rect": [
+        160,
+        321,
+        213,
+        382
+      ],
+      "group": 1167,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2431
+      ]
+    },
+    {
+      "line": 895,
+      "index": 951,
+      "floor": 817,
+      "rect": [
+        160,
+        321,
+        213,
+        382
+      ],
+      "group": 1168,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2431
+      ]
+    },
+    {
+      "line": 895,
+      "index": 951,
+      "floor": 817,
+      "rect": [
+        160,
+        321,
+        213,
+        382
+      ],
+      "group": 1169,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2432
+      ]
+    },
+    {
+      "line": 895,
+      "index": 951,
+      "floor": 817,
+      "rect": [
+        160,
+        321,
+        213,
+        382
+      ],
+      "group": 1170,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2432
+      ]
+    },
+    {
+      "line": 896,
+      "index": 952,
+      "floor": 817,
+      "rect": [
+        144,
+        428,
+        197,
+        478
+      ],
+      "group": 1167,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2431
+      ]
+    },
+    {
+      "line": 896,
+      "index": 952,
+      "floor": 817,
+      "rect": [
+        144,
+        428,
+        197,
+        478
+      ],
+      "group": 1168,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2431
+      ]
+    },
+    {
+      "line": 896,
+      "index": 952,
+      "floor": 817,
+      "rect": [
+        144,
+        428,
+        197,
+        478
+      ],
+      "group": 1169,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2432
+      ]
+    },
+    {
+      "line": 896,
+      "index": 952,
+      "floor": 817,
+      "rect": [
+        144,
+        428,
+        197,
+        478
+      ],
+      "group": 1170,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2432
+      ]
+    },
+    {
+      "line": 896,
+      "index": 952,
+      "floor": 817,
+      "rect": [
+        144,
+        428,
+        197,
+        478
+      ],
+      "group": 1171,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2429
+      ]
+    },
+    {
+      "line": 897,
+      "index": 953,
+      "floor": 817,
+      "rect": [
+        96,
+        429,
+        143,
+        492
+      ],
+      "group": 1167,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2431
+      ]
+    },
+    {
+      "line": 897,
+      "index": 953,
+      "floor": 817,
+      "rect": [
+        96,
+        429,
+        143,
+        492
+      ],
+      "group": 1168,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2431
+      ]
+    },
+    {
+      "line": 897,
+      "index": 953,
+      "floor": 817,
+      "rect": [
+        96,
+        429,
+        143,
+        492
+      ],
+      "group": 1169,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2432
+      ]
+    },
+    {
+      "line": 897,
+      "index": 953,
+      "floor": 817,
+      "rect": [
+        96,
+        429,
+        143,
+        492
+      ],
+      "group": 1170,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2432
+      ]
+    },
+    {
+      "line": 898,
+      "index": 954,
+      "floor": 817,
+      "rect": [
+        22,
+        120,
+        45,
+        129
+      ],
+      "group": 1167,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2431
+      ]
+    },
+    {
+      "line": 898,
+      "index": 954,
+      "floor": 817,
+      "rect": [
+        22,
+        120,
+        45,
+        129
+      ],
+      "group": 1168,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2431
+      ]
+    },
+    {
+      "line": 898,
+      "index": 954,
+      "floor": 817,
+      "rect": [
+        22,
+        120,
+        45,
+        129
+      ],
+      "group": 1169,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2432
+      ]
+    },
+    {
+      "line": 898,
+      "index": 954,
+      "floor": 817,
+      "rect": [
+        22,
+        120,
+        45,
+        129
+      ],
+      "group": 1170,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2432
+      ]
+    },
+    {
+      "line": 898,
+      "index": 954,
+      "floor": 817,
+      "rect": [
+        22,
+        120,
+        45,
+        129
+      ],
+      "group": 1173,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2430
+      ]
+    },
+    {
+      "line": 899,
+      "index": 955,
+      "floor": 817,
+      "rect": [
+        19,
+        115,
+        29,
+        119
+      ],
+      "group": 1167,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2431
+      ]
+    },
+    {
+      "line": 899,
+      "index": 955,
+      "floor": 817,
+      "rect": [
+        19,
+        115,
+        29,
+        119
+      ],
+      "group": 1168,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2431
+      ]
+    },
+    {
+      "line": 899,
+      "index": 955,
+      "floor": 817,
+      "rect": [
+        19,
+        115,
+        29,
+        119
+      ],
+      "group": 1169,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2432
+      ]
+    },
+    {
+      "line": 899,
+      "index": 955,
+      "floor": 817,
+      "rect": [
+        19,
+        115,
+        29,
+        119
+      ],
+      "group": 1170,
+      "weight": 1,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2432
+      ]
+    },
+    {
+      "line": 908,
+      "index": 964,
+      "floor": 817,
+      "rect": [
+        209,
+        383,
+        217,
+        391
+      ],
+      "group": 1167,
+      "weight": 15,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2431
+      ]
+    },
+    {
+      "line": 908,
+      "index": 964,
+      "floor": 817,
+      "rect": [
+        209,
+        383,
+        217,
+        391
+      ],
+      "group": 1168,
+      "weight": 15,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2431
+      ]
+    },
+    {
+      "line": 908,
+      "index": 964,
+      "floor": 817,
+      "rect": [
+        209,
+        383,
+        217,
+        391
+      ],
+      "group": 1169,
+      "weight": 15,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2432
+      ]
+    },
+    {
+      "line": 908,
+      "index": 964,
+      "floor": 817,
+      "rect": [
+        209,
+        383,
+        217,
+        391
+      ],
+      "group": 1170,
+      "weight": 15,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2432
+      ]
+    },
+    {
+      "line": 909,
+      "index": 965,
+      "floor": 817,
+      "rect": [
+        149,
+        319,
+        159,
+        332
+      ],
+      "group": 1167,
+      "weight": 20,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2431
+      ]
+    },
+    {
+      "line": 909,
+      "index": 965,
+      "floor": 817,
+      "rect": [
+        149,
+        319,
+        159,
+        332
+      ],
+      "group": 1168,
+      "weight": 20,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2431
+      ]
+    },
+    {
+      "line": 909,
+      "index": 965,
+      "floor": 817,
+      "rect": [
+        149,
+        319,
+        159,
+        332
+      ],
+      "group": 1169,
+      "weight": 20,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2432
+      ]
+    },
+    {
+      "line": 909,
+      "index": 965,
+      "floor": 817,
+      "rect": [
+        149,
+        319,
+        159,
+        332
+      ],
+      "group": 1170,
+      "weight": 20,
+      "rate": [
+        1,
+        3
+      ],
+      "event": [
+        null,
+        null,
+        null
+      ],
+      "instances": [
+        2432
+      ]
+    }
+  ],
+  "per_instance": [
+    {
+      "instance": 2415,
+      "template": 131,
+      "level": [
+        1,
+        1
+      ],
+      "pet_flag": 1,
+      "raw_group_refs": 0,
+      "positive_route_refs": 0,
+      "positive_regions": 0
+    },
+    {
+      "instance": 2416,
+      "template": 132,
+      "level": [
+        1,
+        1
+      ],
+      "pet_flag": 1,
+      "raw_group_refs": 0,
+      "positive_route_refs": 0,
+      "positive_regions": 0
+    },
+    {
+      "instance": 2429,
+      "template": 131,
+      "level": [
+        150,
+        200
+      ],
+      "pet_flag": 0,
+      "raw_group_refs": 1,
+      "positive_route_refs": 3,
+      "positive_regions": 3
+    },
+    {
+      "instance": 2430,
+      "template": 132,
+      "level": [
+        150,
+        200
+      ],
+      "pet_flag": 0,
+      "raw_group_refs": 1,
+      "positive_route_refs": 2,
+      "positive_regions": 2
+    },
+    {
+      "instance": 2431,
+      "template": 131,
+      "level": [
+        131,
+        140
+      ],
+      "pet_flag": 0,
+      "raw_group_refs": 2,
+      "positive_route_refs": 16,
+      "positive_regions": 8
+    },
+    {
+      "instance": 2432,
+      "template": 132,
+      "level": [
+        131,
+        140
+      ],
+      "pet_flag": 0,
+      "raw_group_refs": 2,
+      "positive_route_refs": 16,
+      "positive_regions": 8
+    }
+  ],
+  "map": {
+    "floor": 817,
+    "status": "UNIQUE_HEADER",
+    "candidates": [
+      {
+        "path": "gmsv/data/map/80map/817",
+        "blob": "0063e5d5eeffeb33740105701139d74a486bbfa7",
+        "names": {
+          "gb18030": "泪之海海底|0",
+          "cp950": "濡眳漆漆菁|0"
+        },
+        "width": 400,
+        "height": 600
+      }
+    ]
+  },
+  "period_sources": [
+    {
+      "url": "https://games.sina.com.cn/z/sta/2003-11-21/71680.shtml?from=wap",
+      "date": "2003-11-21",
+      "line": 24,
+      "grade": "DATED_PLAYER_LV1_LOCALITY_REFERENCE",
+      "claim": "Both names listed with 泪之海 locality but no coordinate."
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/content/2003-12-25/n137_53826.html",
+      "date": "2003-12-25",
+      "lines": [
+        261,
+        265
+      ],
+      "grade": "DATED_OVERLAPPING_PLAYER_COMPILATION_NOT_INDEPENDENT",
+      "claim": "Same Lv1 locality, no coordinate; overlapping text not independent confirmation."
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/content/2007-04-04/1175676383.shtml",
+      "date": "2007-04-04",
+      "lines": [
+        70,
+        71
+      ],
+      "grade": "DATED_PLAYER_BATTLE_DROP_REPORT",
+      "claim": "Both names at Lv130–140 associated with coral and volcanic fragments. No exact capture or per-item mapping."
+    }
+  ],
+  "qualification": [
+    "Raw configured group slots and weights are not runtime encounter probability. Blank weight not positive. Six group IDs unique and all member IDs resolve; no full runtime or official deployment proof.",
+    "Prior HF17 zero capture references remains correct: the six groups exclusively reference pet_flag0 enemy instances. No positive route found for Lv1 instances2415/2416 in configured group1.",
+    "Itemset6 content unavailable through text connector (size2777181; blob eac985796b59286c547db2abce7b3d604a5e6226), twelve drop IDs and literal itemprob fields preserved without names or percentage claim.",
+    "Map name only from existing pinned header; no original new binary asset; no user-facing atlas repackaging this unit."
+  ],
+  "r74": {
+    "corrected_run": 46019855149,
+    "conclusion": "failure",
+    "bytes": 0,
+    "predecessor_run": 46019841786,
+    "predecessor_status": "in_progress",
+    "predecessor_conclusion": null
+  },
+  "strict67": "unchanged",
+  "official_closures": 0,
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Preserve new role-specific enemy-route evidence, seek authenticated original Lv1 capture, item dictionary only if accessible without duplicate archive transfer, and other unresolved official master/skill/acquisition sources. No repeated R74 transfer."
+}
