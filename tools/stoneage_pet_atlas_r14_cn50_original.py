@@ -18,7 +18,7 @@ PINS={
 "research/pets/PET-HIGH-FIRST-101-CN50-ORIGINAL-RD-R1.json":"f7a50af4bb440008a227d1522d65004dd38a58a6",
 "research/recovered/cn50-resource-metadata/MANIFEST-R1.json":"5063cf2fade4e0739ac35c38a90dfff1a43db960",
 "research/recovered/cn50-resource-metadata/ADRN-R1.tsv.gz":"127670eaf2bc19ba9d15776d090a8307058f729d",
-"research/pets/PET-ATLAS-R8-SESSION-PUBLIC.pem":"c7fced628655332ad1b6ad34385e385fddde2e6f"}
+"research/pets/PET-ATLAS-20261127-RECOVERY-PUBLIC.pem":"d0429134219d9e95b2d080825389227d3c17718d"}
 def sha(b):return hashlib.sha256(b).hexdigest()
 def stable(d):return json.dumps(d,ensure_ascii=False,sort_keys=True,separators=(",",":"))
 def pinned(p):
