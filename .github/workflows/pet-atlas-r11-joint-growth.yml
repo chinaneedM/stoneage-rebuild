@@ -1,0 +1,28 @@
+name: PET atlas R11 joint conditional growth
+on:
+  push:
+    branches: [pet-atlas-r11-joint-growth-20261127]
+    paths:
+      - 'tools/stoneage_pet_atlas_r11_joint_growth.py'
+      - '.github/workflows/pet-atlas-r11-joint-growth.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_atlas_r11_joint_growth.py'
+      - '.github/workflows/pet-atlas-r11-joint-growth.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m tools.stoneage_pet_atlas_r11_joint_growth --output "$RUNNER_TEMP/r11-conditional-growth.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-r11-derived-growth
+          path: ${{ runner.temp }}/r11-conditional-growth.json
+          if-no-files-found: error
