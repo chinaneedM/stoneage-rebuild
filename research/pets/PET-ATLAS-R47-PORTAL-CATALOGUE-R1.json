@@ -1,0 +1,246 @@
+{
+  "schema": "stoneage.pet-atlas-r47.portal-catalogue-receipt-r1",
+  "date": "2026-11-27",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "parent": "1c180891087ffbea2b9a9e31fe830d6c872bde9a",
+  "source_grade": "LEGACY_PC_PORTAL_UNDATED_BUILD_UNVERIFIED",
+  "sources": [
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow10.htm",
+      "numbers": [
+        73,
+        80
+      ],
+      "family": "human-dragon candidate (corrupt heading)",
+      "lines": [
+        8,
+        147
+      ]
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow24.htm",
+      "numbers": [
+        185,
+        192
+      ],
+      "family": "chicken",
+      "lines": [
+        16,
+        567
+      ]
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow26.htm",
+      "numbers": [
+        201,
+        208
+      ],
+      "family": "antelope",
+      "lines": [
+        16,
+        577
+      ]
+    }
+  ],
+  "source_date_verified": false,
+  "raw_source_bytes_authenticated": false,
+  "summary": {
+    "catalogue_positions": 24,
+    "birth_range_rows": 13,
+    "birth_scalar_rows": 10,
+    "birth_missing_rows": 1,
+    "full_growth_endpoint_rows": 9,
+    "partial_growth_rows": 2,
+    "unknown_growth_rows": 13,
+    "lv1_location_reward_rows": 18,
+    "name_reference_edges": 109,
+    "linked_positions": 109,
+    "literal_edges": 79,
+    "script_or_whitespace_name_only_edges": 30,
+    "by_lane": {
+      "tw10": 14,
+      "cn50": 22,
+      "tw75": 24,
+      "sina2003": 22,
+      "cn85_original": 27
+    },
+    "unmatched_source_numbers": [
+      79,
+      207
+    ]
+  },
+  "row_reference_counts": [
+    [
+      73,
+      "利则诺顿",
+      6
+    ],
+    [
+      74,
+      "扬奇洛斯",
+      6
+    ],
+    [
+      75,
+      "邦浦洛斯",
+      6
+    ],
+    [
+      76,
+      "邦奇诺",
+      6
+    ],
+    [
+      77,
+      "布鲁顿",
+      6
+    ],
+    [
+      78,
+      "邦诺斯娜",
+      4
+    ],
+    [
+      79,
+      "扬格斯",
+      0
+    ],
+    [
+      80,
+      "迪基格斯",
+      4
+    ],
+    [
+      185,
+      "火 鸡",
+      5
+    ],
+    [
+      186,
+      "克克洛斯",
+      7
+    ],
+    [
+      187,
+      "霍尔克",
+      5
+    ],
+    [
+      188,
+      "奇 宝",
+      5
+    ],
+    [
+      189,
+      "格里兰",
+      4
+    ],
+    [
+      190,
+      "摩 里",
+      4
+    ],
+    [
+      191,
+      "瑞里西尔",
+      4
+    ],
+    [
+      192,
+      "塔斯夫",
+      4
+    ],
+    [
+      201,
+      "布伊德",
+      5
+    ],
+    [
+      202,
+      "摩娜西普",
+      5
+    ],
+    [
+      203,
+      "卡伊霍恩",
+      5
+    ],
+    [
+      204,
+      "拉伊霍恩",
+      5
+    ],
+    [
+      205,
+      "邦达霍恩",
+      5
+    ],
+    [
+      206,
+      "布莱兹",
+      4
+    ],
+    [
+      207,
+      "布伊伦斯",
+      0
+    ],
+    [
+      208,
+      "伊夫霍恩",
+      4
+    ]
+  ],
+  "private_files": [
+    [
+      "StoneAge-PET-R47-Portal-Catalogue.zip",
+      4957998,
+      "46db6eefefb79830dd2d8d28810a0eb5af7f3fd8aea6b4f32be75b549a1ca046"
+    ],
+    [
+      "R47-portal-catalogue.json",
+      45418,
+      "69b02ac68dbf5c1931c5d5a5e669ed6ff38ab27a4ad5642c7ae86db1111aeef2"
+    ],
+    [
+      "build_r47.py",
+      null,
+      "7acf365fe6c1b920182ba755451e761d97cc073316a278200b8e1c997482c48a"
+    ],
+    [
+      "test_r47.py",
+      null,
+      "3ef6d8008afd2f871ca39a82f73d247f07f5ea8635f002980ed438c0fd23a049"
+    ],
+    [
+      "r47-facts.tsv",
+      null,
+      "c43fe7c0bfa46317b9dac4d512efb4ae5cbc8b514f93d7daa7ad5a061b341028"
+    ],
+    [
+      "R47-browser.log",
+      null,
+      "9618486b6499131c131d582d92f29669a1a5af2af74aeb0402ad8c3b0ae46d52"
+    ]
+  ],
+  "custody": "private Library /石器时代",
+  "prior_r43_zip": "5f0c0734cfea116c6204b4ccd9e6f56e1d57fdc7581427667ead9a26c0844ebf",
+  "verification": {
+    "prior_data_keys_and_6207_rows_exact_equal": true,
+    "prior_25_gifs_exact_equal": true,
+    "zip_crc": "PASS",
+    "chromium_document_replay": "PASS",
+    "number_checks": 6,
+    "name_checks": 1,
+    "profile_lane_checks": 4,
+    "unrelated_profile_regression": 1,
+    "network_requests_aborted": true,
+    "actual_windows_file_launch": false
+  },
+  "official_closures": 0,
+  "source_positions": 6207,
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Continue remaining directly accessible 17173 legacy catalogue pages, compare each report with original name/element identities and existing evidence, preserve uncertain date and scalar/unknown endpoints, and investigate 79/207 name variants without automatically merging. No repeated blocked bulk transfer."
+}
