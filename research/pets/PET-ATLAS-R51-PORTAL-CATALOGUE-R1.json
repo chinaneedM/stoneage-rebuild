@@ -1,0 +1,204 @@
+{
+  "schema": "stoneage.pet-atlas-r51.portal-catalogue-receipt-r1",
+  "date": "2026-11-27",
+  "parent": "71edc145ceae523a923cff18ecf452b68fd0b16d",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "source_grade": "LEGACY_PC_PORTAL_UNDATED_BUILD_UNVERIFIED",
+  "sources": [
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow16.htm",
+      "range": [
+        121,
+        128
+      ],
+      "family": "老虎",
+      "access": "DIRECT_RENDERED"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow17.htm",
+      "range": [
+        129,
+        136
+      ],
+      "family": "犀牛",
+      "access": "DIRECT_RENDERED"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow18.htm",
+      "range": [
+        137,
+        144
+      ],
+      "family": "鲨鱼",
+      "access": "FULL_SEARCH_CACHE_DIRECT_OPEN_FAILED"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow19.htm",
+      "range": [
+        145,
+        152
+      ],
+      "family": "飞天蛙",
+      "access": "FULL_SEARCH_CACHE_DIRECT_OPEN_FAILED"
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow20.htm",
+      "range": [
+        153,
+        160
+      ],
+      "family": "海主人",
+      "access": "DIRECT_RENDERED"
+    }
+  ],
+  "summary": {
+    "new_catalogue_positions": 40,
+    "cumulative_catalogue_positions": 176,
+    "birth_range_rows": 16,
+    "birth_mixed_rows": 0,
+    "birth_missing_rows": 2,
+    "birth_scalar_rows": 22,
+    "full_growth_endpoint_rows": 12,
+    "growth_scalar_rows": 0,
+    "partial_growth_rows": 2,
+    "unknown_growth_rows": 26,
+    "lv1_location_reward_rows": 31,
+    "capacity_known": 40,
+    "reference_edges": 172,
+    "linked_positions": 172,
+    "by_lane": {
+      "tw10": 20,
+      "cn50": 40,
+      "tw75": 43,
+      "sina2003": 29,
+      "cn85_original": 40
+    },
+    "by_grade": {
+      "normalized_detail_name": 57,
+      "literal_detail_name": 102,
+      "index_name_candidate": 13
+    },
+    "element_comparison": {
+      "unknown": 100,
+      "equal": 69,
+      "conflict": 3
+    },
+    "unmatched_numbers": []
+  },
+  "source_access_counts": {
+    "direct_rendered": 24,
+    "full_search_cache_direct_open_failed": 16
+  },
+  "conflicts": {
+    "duplicate_growth": {
+      "numbers": [
+        138,
+        146
+      ],
+      "source_endpoints": [
+        "10.30~9.970",
+        "2.151~2.03",
+        "1.383~1.20",
+        "1.11~1"
+      ],
+      "qualification": "possible duplication; not corrected"
+    },
+    "birth_missing": [
+      142
+    ],
+    "unassigned_birth": {
+      "number": 151,
+      "values": [
+        49,
+        9,
+        8
+      ],
+      "qualification": "one missing column position unverified, all four formal fields unknown"
+    },
+    "index_detail": [
+      {
+        "number": 135,
+        "detail": "米迪布斯",
+        "index": "迪米布斯"
+      },
+      {
+        "number": 136,
+        "detail": "波洛布斯",
+        "index": "玻洛布斯"
+      },
+      {
+        "number": 151,
+        "detail": "艾里蛙",
+        "index": "艾尔蛙"
+      },
+      {
+        "number": 158,
+        "detail": "莫拉斯",
+        "index": "莫拉司"
+      }
+    ],
+    "prior_index_leads": {
+      "63": "鲁拉其斯",
+      "72": "朵洛将恩",
+      "qualification": "cached index names now observed; earlier R49 data not altered; compare next"
+    }
+  },
+  "private_files": [
+    [
+      "StoneAge-PET-R51-Portal-Catalogue.zip",
+      5000698,
+      "d5e7fc5dd22ae1288629d1e00bb38bd9b1c58ee16b77b7f76e9e7e15e60a704a"
+    ],
+    [
+      "R51-portal-catalogue.json",
+      null,
+      "7da5697b332f10962253cf6526061ce64b8c767d9896359a1424014411376ded"
+    ],
+    [
+      "r51-facts.tsv",
+      null,
+      "cb9bc28a92eb95838a13f71d9913090342d6675db68528a060ce6c717d98b372"
+    ],
+    [
+      "build_r51.py",
+      null,
+      "fc05391cd6b7027938ec7fa87e7a8d1008a5e0571bfc70c220f2b9a888285a77"
+    ],
+    [
+      "test_r51.py",
+      null,
+      "79e9921161fe91cbe1c09b894219c13fbb809f5e3bfd016a9aeb8dc2ae1ed277"
+    ],
+    [
+      "R51-build.log",
+      null,
+      "f97909302958b55267c0d2ca299cf05c232c3617b2d2d7d94fa7dcb9719e56e6"
+    ],
+    [
+      "R51-browser.log",
+      null,
+      "9784c333c6b2b387d9c6726f754fee030af2b084365abc85db2ef4af9347842c"
+    ]
+  ],
+  "prior_zip": "302fdf4baa662ba81fc28deae0821ce314c51724d69f7187a794edf1f82b4bd6",
+  "custody": "private Library /石器时代",
+  "verification": {
+    "zip_crc": "PASS",
+    "prior_data_exact_equal": true,
+    "prior_25_gifs_exact_equal": true,
+    "chromium_document_replay": "PASS",
+    "index_count": 176,
+    "number_checks": 16,
+    "alias_search": 1,
+    "profile_checks": 3,
+    "requests_aborted": true,
+    "windows_direct_launch": false
+  },
+  "raw_source_bytes_authenticated": false,
+  "official_closures": 0,
+  "source_positions": 6207,
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Continue previously unprocessed portal pages 21–23,25,27 onward. Independently compare cached index leads 63鲁拉其斯 and72朵洛将恩 against original and conditional fields; no automatic alias promotion. Page30 and later may have noncontiguous printed numbers; use actual rows, not assumed eight per page. No blocked bulk retry."
+}
