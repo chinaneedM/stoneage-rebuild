@@ -1,0 +1,41 @@
+name: PET atlas R14 CN50 original pixels
+on:
+  push:
+    branches: [pet-atlas-r14-cn50-original-20261127]
+    paths:
+      - 'tools/stoneage_pet_atlas_r14_cn50_original.py'
+      - '.github/workflows/pet-atlas-r14-cn50-original.yml'
+permissions:
+  contents: read
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow cryptography==46.0.4
+      - run: python -m tools.stoneage_pet_atlas_r14_cn50_original --plan-only
+  source:
+    needs: plan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 100
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: sudo apt-get update -qq && sudo apt-get install -y cabextract
+      - run: python -m pip install Pillow cryptography==46.0.4
+      - run: python -m tools.stoneage_pet_atlas_r14_cn50_original --output "$RUNNER_TEMP/r14" --public-key research/pets/PET-ATLAS-20261127-RECOVERY-PUBLIC.pem
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pet-atlas-r14-cn50-private
+          path: |
+            ${{ runner.temp }}/r14/private.enc
+            ${{ runner.temp }}/r14/envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - if: always()
+        run: rm -rf "$RUNNER_TEMP/r14"
