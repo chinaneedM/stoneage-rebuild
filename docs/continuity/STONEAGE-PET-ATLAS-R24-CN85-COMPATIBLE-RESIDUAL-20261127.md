@@ -274,3 +274,8 @@ Fresh main 6d1323d8560e60953657fa963cf6bc663fec82d9/tree f9a6269907df052e3a4e997
 ## Actual R71 period panel references (2026-11-27)
 
 [Separate R71 checkpoint](STONEAGE-PET-ATLAS-R71-PERIOD-PANEL-REFERENCES-20261127.md). Three direct period screenshots, three conditional joint panels reachable; 29 original visual gaps retained; no official closure. NEXT actual source evidence, not repeated extraction.
+
+
+## Actual R72 TW75 cross-version visual references (2026-11-27)
+
+[Separate R72 checkpoint](STONEAGE-PET-ATLAS-R72-TW75-CROSS-VERSION-VISUAL-REFERENCES-20261127.md). 15 additional two-lane named actual previews, all46 program references original RD portrait hash match, 14 without same-name reference; all29 strict qualification gaps retained. Private integrated 467-profile R72 with 331 preview frame positions verified. NEXT 14 remaining named gaps and original source fields; preserve all official boundaries.
