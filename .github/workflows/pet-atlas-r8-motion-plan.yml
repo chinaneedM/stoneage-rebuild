@@ -1,0 +1,24 @@
+name: PET atlas R8 strict residual plan verification
+on:
+  push:
+    branches: [pet-atlas-r8-motion-plan-20261127]
+    paths:
+      - 'tools/stoneage_pet_atlas_r8_motion_batches.py'
+      - '.github/workflows/pet-atlas-r8-motion-plan.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_pet_atlas_r8_motion_batches.py'
+      - '.github/workflows/pet-atlas-r8-motion-plan.yml'
+permissions:
+  contents: read
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow cryptography==46.0.4
+      - run: python -m tools.stoneage_pet_atlas_r8_motion_batches --plan-only
