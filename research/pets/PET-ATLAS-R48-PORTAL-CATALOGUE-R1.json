@@ -1,0 +1,255 @@
+{
+  "schema": "stoneage.pet-atlas-r48.portal-catalogue-receipt-r1",
+  "date": "2026-11-27",
+  "parent": "492c2e59ca47611f833c70af4966fa25f03c2bc3",
+  "base_main": "6d1323d8560e60953657fa963cf6bc663fec82d9",
+  "source_grade": "LEGACY_PC_PORTAL_UNDATED_BUILD_UNVERIFIED",
+  "sources": [
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow01.htm",
+      "range": [
+        1,
+        8
+      ],
+      "lines": [
+        8,
+        143
+      ]
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow02.htm",
+      "range": [
+        9,
+        16
+      ],
+      "lines": [
+        16,
+        583
+      ]
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow03.htm",
+      "range": [
+        17,
+        24
+      ],
+      "lines": [
+        16,
+        582
+      ]
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow04.htm",
+      "range": [
+        25,
+        32
+      ],
+      "lines": [
+        16,
+        578
+      ]
+    }
+  ],
+  "index": {
+    "url": "https://news.17173.com/z/stoneage/chongwu/petshow.htm",
+    "grade": "SEARCH_CACHED_RENDERED_INDEX_DIRECT_OPEN_TIMEOUT"
+  },
+  "summary": {
+    "new_catalogue_positions": 32,
+    "cumulative_catalogue_positions": 56,
+    "birth_range_rows": 17,
+    "birth_scalar_rows": 15,
+    "full_growth_endpoint_rows": 12,
+    "growth_scalar_rows": 1,
+    "partial_growth_rows": 5,
+    "unknown_growth_rows": 14,
+    "lv1_location_reward_rows": 26,
+    "capacity_known": 31,
+    "reference_edges": 161,
+    "linked_positions": 155,
+    "by_lane": {
+      "tw10": 19,
+      "cn50": 35,
+      "tw75": 40,
+      "sina2003": 32,
+      "cn85_original": 35
+    },
+    "by_grade": {
+      "normalized_detail_name": 59,
+      "quarantined_detail_name_conflict": 6,
+      "literal_detail_name": 74,
+      "index_name_candidate": 22
+    },
+    "element_comparison": {
+      "unknown": 89,
+      "equal": 66,
+      "conflict": 6
+    },
+    "unmatched_numbers": []
+  },
+  "conflict_examples": [
+    {
+      "number": 8,
+      "detail": "乌力布鲁",
+      "index": "乌力固力",
+      "reported_elements": [
+        6,
+        0,
+        0,
+        4
+      ],
+      "reported_panel": [
+        39,
+        6,
+        7,
+        7
+      ],
+      "detail_template": 4,
+      "detail_elements": [
+        0,
+        0,
+        7,
+        3
+      ],
+      "detail_conditional_ranges": [
+        [
+          17,
+          22
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "index_template": 727,
+      "index_elements": [
+        6,
+        0,
+        0,
+        4
+      ],
+      "index_conditional_ranges": [
+        [
+          36,
+          48
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          8
+        ]
+      ],
+      "qualification": "INDEX_NAME_COMPATIBLE_DETAIL_NAME_QUARANTINED"
+    },
+    {
+      "number": 24,
+      "detail": "加加比",
+      "index": "比比加",
+      "template": 734,
+      "elements": "equal",
+      "panel_overlap": 4
+    },
+    {
+      "number": 79,
+      "detail": "扬格斯",
+      "index": "杨格斯",
+      "template": 755,
+      "reported_elements": [
+        0,
+        0,
+        2,
+        8
+      ],
+      "template_elements": [
+        0,
+        0,
+        8,
+        2
+      ],
+      "panel_overlap": 4,
+      "qualification": "ELEMENT_CONFLICT"
+    },
+    {
+      "number": 207,
+      "detail": "布伊伦斯",
+      "index": "布依伦斯",
+      "template": 816,
+      "elements": "equal",
+      "panel_overlap": 4
+    }
+  ],
+  "private_files": [
+    [
+      "StoneAge-PET-R48-Portal-Catalogue.zip",
+      4971805,
+      "d252bf44b71a23269c291efeda4466cdf0ab0773e2f65dfe600d02bc0736f887"
+    ],
+    [
+      "R48-portal-catalogue.json",
+      null,
+      "3cc001d6aeb88d1c29236d570c37ed21379a8eb405cc418391a2f18c2703bd17"
+    ],
+    [
+      "build_r48.py",
+      null,
+      "45c69d3dd581a2b8a064a0d378d849191f7d7403de3ba81c4d1a191f51edd139"
+    ],
+    [
+      "test_r48.py",
+      null,
+      "7b09ba2b78abe704aa8f7b8aa4bfaac211dcf50af91de135ad7e70d564055199"
+    ],
+    [
+      "r48-facts.tsv",
+      null,
+      "c6ce6ee17560d74b00097d79ff3b19d746ca2f92220de0144ffc6c8ce65ce656"
+    ],
+    [
+      "R48-build.log",
+      null,
+      "4aea10fd23713f52208040bd51640463725c3882a031c883a9c83b606599e3ee"
+    ],
+    [
+      "R48-browser.log",
+      null,
+      "1d694bdf500485093052b9cb8529785f7bf9dd0292781a0f68664d10ac5149ef"
+    ]
+  ],
+  "prior_zip": "46db6eefefb79830dd2d8d28810a0eb5af7f3fd8aea6b4f32be75b549a1ca046",
+  "custody": "private Library /石器时代",
+  "verification": {
+    "zip_crc": "PASS",
+    "prior_data_exact_equal": true,
+    "prior_25_gifs_exact_equal": true,
+    "chromium_document_replay": "PASS",
+    "index_count": 56,
+    "number_checks": 11,
+    "alias_search": 1,
+    "profile_checks": 5,
+    "prior_regression": 1,
+    "requests_aborted": true,
+    "windows_direct_launch": false
+  },
+  "raw_source_bytes_authenticated": false,
+  "official_closures": 0,
+  "source_positions": 6207,
+  "strict67": "UNCHANGED",
+  "pet": "ACTIVE",
+  "npc": "LOCKED",
+  "next": "Continue zero-padded portal detail pages 05–09 then remaining accessible pages not yet covered; preserve index/detail discrepancies and compare known elements independently. No original server claims or repeat blocked archive transfer."
+}
