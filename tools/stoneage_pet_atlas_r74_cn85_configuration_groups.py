@@ -75,7 +75,7 @@ def export(out,pub):
             e=secure.seal(folder,pub,out/f"batch-{batch}")
             print("R74_BATCH="+stable(dict(batch=batch,summary=report["summary"],cipher_sha256=e["cipher_sha256"])),flush=True)
             shutil.rmtree(folder)
-        common=dict(schema="stoneage.pet.atlas_r24.cn85_compatible_residual.r1",source_files=files,source_archive_sha256=t["sha256"],source_pins=PINS|{r18.REF:r18.PIN,REF:PIN},r73_receipt_blob=PIN,configuration_graphic_reference_only=True,official_identity_verified=False,native_selector_verified=False,original_palette_runtime_verified=False,original_assets_published=False)
+        common=dict(schema="stoneage.pet.atlas_r74.cn85_configuration_groups.r1",source_files=files,source_archive_sha256=t["sha256"],source_pins=PINS|{r18.REF:r18.PIN,REF:PIN},r73_receipt_blob=PIN,configuration_graphic_reference_only=True,official_identity_verified=False,native_selector_verified=False,original_palette_runtime_verified=False,original_assets_published=False)
         with real.open("rb") as f,mmap.mmap(f.fileno(),0,access=mmap.ACCESS_READ) as mm:
             for b,start in enumerate(range(0,len(selected),50),1):
                 ids=selected[start:start+50];folder=root/f"motion-{b}";folder.mkdir()
